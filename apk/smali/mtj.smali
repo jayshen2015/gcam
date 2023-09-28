@@ -1,32 +1,36 @@
-.class final Lmtj;
-.super Lmtm;
+.class public final Lmtj;
+.super Lmtt;
 
 
 # instance fields
-.field final synthetic a:Lmtq;
+.field final synthetic a:Lcom/google/android/libraries/oliveoil/natives/BitmapNativeBuffer;
 
 
 # direct methods
-.method public constructor <init>(Lmtq;)V
+.method public constructor <init>(Lcom/google/android/libraries/oliveoil/natives/BitmapNativeBuffer;)V
     .locals 0
 
-    iput-object p1, p0, Lmtj;->a:Lmtq;
+    iput-object p1, p0, Lmtj;->a:Lcom/google/android/libraries/oliveoil/natives/BitmapNativeBuffer;
 
-    invoke-direct {p0, p1}, Lmtm;-><init>(Lmtq;)V
+    invoke-virtual {p1}, Lcom/google/android/libraries/oliveoil/natives/BitmapNativeBuffer;->a()Ljava/nio/ByteBuffer;
+
+    move-result-object p1
+
+    invoke-direct {p0, p1}, Lmtt;-><init>(Ljava/lang/Object;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final bridge synthetic a(I)Ljava/lang/Object;
-    .locals 2
+.method protected final bridge synthetic b(Ljava/lang/Object;)V
+    .locals 0
 
-    new-instance v0, Lmto;
+    check-cast p1, Ljava/nio/ByteBuffer;
 
-    iget-object v1, p0, Lmtj;->a:Lmtq;
+    iget-object p1, p0, Lmtj;->a:Lcom/google/android/libraries/oliveoil/natives/BitmapNativeBuffer;
 
-    invoke-direct {v0, v1, p1}, Lmto;-><init>(Lmtq;I)V
+    invoke-virtual {p1}, Lcom/google/android/libraries/oliveoil/natives/BitmapNativeBuffer;->b()V
 
-    return-object v0
+    return-void
 .end method

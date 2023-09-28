@@ -1,19 +1,30 @@
-.class public interface abstract Lkct;
+.class public final Lkct;
 .super Ljava/lang/Object;
 
 
-# virtual methods
-.method public abstract e(Lkbo;)V
-.end method
+# static fields
+.field public static final a:Lpoq;
 
-.method public abstract f(Lkll;Lkbo;Z)V
-.end method
 
-.method public abstract g(Lkll;)V
-.end method
+# direct methods
+.method static constructor <clinit>()V
+    .locals 5
 
-.method public abstract h(Lkll;)V
-.end method
+    sget-object v0, Lkcj;->c:Lkcj;
 
-.method public abstract i()V
+    sget-object v1, Lkcu;->c:Lkcu;
+
+    sget-object v2, Lkcu;->c:Lkcu;
+
+    sget-object v3, Lpry;->k:Lpry;
+
+    const v4, 0xb706546
+
+    invoke-static {v0, v1, v2, v4, v3}, Lppd;->I(Lpqm;Ljava/lang/Object;Lpqm;ILpry;)Lpoq;
+
+    move-result-object v0
+
+    sput-object v0, Lkct;->a:Lpoq;
+
+    return-void
 .end method

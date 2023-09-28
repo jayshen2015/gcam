@@ -2,21 +2,25 @@
 .super Ljava/lang/Object;
 
 
-# static fields
-.field public static final a:Lfiw;
+# instance fields
+.field public final a:Lfjv;
+
+.field public final b:F
+
+.field public final c:J
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
+.method public constructor <init>(Lfjv;FJ)V
+    .locals 0
 
-    new-instance v0, Lfiw;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const/16 v1, 0xa
+    iput-object p1, p0, Lfju;->a:Lfjv;
 
-    invoke-direct {v0, v1}, Lfiw;-><init>(I)V
+    iput p2, p0, Lfju;->b:F
 
-    sput-object v0, Lfju;->a:Lfiw;
+    iput-wide p3, p0, Lfju;->c:J
 
     return-void
 .end method

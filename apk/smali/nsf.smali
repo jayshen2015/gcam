@@ -1,67 +1,67 @@
-.class public final synthetic Lnsf;
-.super Ljava/lang/Object;
+.class public final Lnsf;
+.super Lqlu;
 
-# interfaces
-.implements Lcom/google/googlex/gcam/hdrplus/BaseFrameAeCallback;
+
+# annotations
+.annotation runtime Lqlw;
+    b = "com.google.android.libraries.vision.visionkit.f250.internal.uploader.work.F250Worker"
+    c = "F250Worker.kt"
+    d = "pauseOrFailInProgressUploads"
+    e = {
+        0x6c,
+        0x82,
+        0x95
+    }
+.end annotation
 
 
 # instance fields
-.field public final synthetic a:Landroidx/wear/ambient/AmbientMode$AmbientController;
+.field public a:Ljava/lang/Object;
+
+.field public b:Ljava/lang/Object;
+
+.field public c:Ljava/lang/Object;
+
+.field public synthetic d:Ljava/lang/Object;
+
+.field final synthetic e:Lcom/google/android/libraries/vision/visionkit/f250/internal/uploader/work/F250Worker;
+
+.field public f:I
 
 
 # direct methods
-.method public synthetic constructor <init>(Landroidx/wear/ambient/AmbientMode$AmbientController;[B[B[B)V
+.method public constructor <init>(Lcom/google/android/libraries/vision/visionkit/f250/internal/uploader/work/F250Worker;Lqlh;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lnsf;->e:Lcom/google/android/libraries/vision/visionkit/f250/internal/uploader/work/F250Worker;
 
-    iput-object p1, p0, Lnsf;->a:Landroidx/wear/ambient/AmbientMode$AmbientController;
+    invoke-direct {p0, p2}, Lqlu;-><init>(Lqlh;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final accept(IJ)V
-    .locals 2
+.method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 1
 
-    iget-object p1, p0, Lnsf;->a:Landroidx/wear/ambient/AmbientMode$AmbientController;
+    iput-object p1, p0, Lnsf;->d:Ljava/lang/Object;
 
-    new-instance v0, Lcom/google/googlex/gcam/AeResults;
+    iget p1, p0, Lnsf;->f:I
 
-    const/4 v1, 0x1
+    const/high16 v0, -0x80000000
 
-    invoke-direct {v0, p2, p3, v1}, Lcom/google/googlex/gcam/AeResults;-><init>(JZ)V
+    or-int/2addr p1, v0
 
-    iget-object p1, p1, Landroidx/wear/ambient/AmbientMode$AmbientController;->a:Ljava/lang/Object;
+    iput p1, p0, Lnsf;->f:I
 
-    check-cast p1, Leea;
+    iget-object p1, p0, Lnsf;->e:Lcom/google/android/libraries/vision/visionkit/f250/internal/uploader/work/F250Worker;
 
-    iget p2, p1, Leea;->s:I
+    const/4 v0, 0x0
 
-    if-ne p2, v1, :cond_0
+    invoke-virtual {p1, v0, p0}, Lcom/google/android/libraries/vision/visionkit/f250/internal/uploader/work/F250Worker;->l(Lnrl;Lqlh;)Ljava/lang/Object;
 
-    goto :goto_0
+    move-result-object p1
 
-    :cond_0
-    const/4 v1, 0x0
-
-    :goto_0
-    invoke-static {v1}, Lmoz;->p(Z)V
-
-    iget-object p2, p1, Leea;->l:Leec;
-
-    invoke-virtual {p2}, Leec;->a()Lmqp;
-
-    move-result-object p2
-
-    invoke-virtual {p2}, Lmqp;->c()Ljava/lang/Object;
-
-    move-result-object p2
-
-    check-cast p2, Lecl;
-
-    invoke-interface {p2, p1, v0}, Lecl;->j(Leea;Lcom/google/googlex/gcam/AeResults;)V
-
-    return-void
+    return-object p1
 .end method

@@ -52,12 +52,12 @@
 
 
 # virtual methods
-.method public final a()F
+.method public final a()I
     .locals 2
 
     iget-wide v0, p0, Lcom/google/googlex/gcam/FrameMetadata;->a:J
 
-    invoke-static {v0, v1, p0}, Lcom/google/googlex/gcam/GcamModuleJNI;->FrameMetadata_actual_exposure_time_ms_get(JLcom/google/googlex/gcam/FrameMetadata;)F
+    invoke-static {v0, v1, p0}, Lcom/google/googlex/gcam/GcamModuleJNI;->FrameMetadata_sensor_id_get(JLcom/google/googlex/gcam/FrameMetadata;)I
 
     move-result v0
 
@@ -160,70 +160,12 @@
 .method protected final finalize()V
     .locals 0
 
-    invoke-virtual {p0}, Lcom/google/googlex/gcam/FrameMetadata;->k()V
+    invoke-virtual {p0}, Lcom/google/googlex/gcam/FrameMetadata;->h()V
 
     return-void
 .end method
 
-.method public final g()Lcom/google/googlex/gcam/FaceInfoVector;
-    .locals 5
-
-    iget-wide v0, p0, Lcom/google/googlex/gcam/FrameMetadata;->a:J
-
-    invoke-static {v0, v1, p0}, Lcom/google/googlex/gcam/GcamModuleJNI;->FrameMetadata_faces_get(JLcom/google/googlex/gcam/FrameMetadata;)J
-
-    move-result-wide v0
-
-    const-wide/16 v2, 0x0
-
-    cmp-long v4, v0, v2
-
-    if-nez v4, :cond_0
-
-    const/4 v0, 0x0
-
-    return-object v0
-
-    :cond_0
-    new-instance v2, Lcom/google/googlex/gcam/FaceInfoVector;
-
-    const/4 v3, 0x0
-
-    invoke-direct {v2, v0, v1, v3}, Lcom/google/googlex/gcam/FaceInfoVector;-><init>(JZ)V
-
-    return-object v2
-.end method
-
-.method public final h()Lcom/google/googlex/gcam/HalAfMetadata;
-    .locals 5
-
-    iget-wide v0, p0, Lcom/google/googlex/gcam/FrameMetadata;->a:J
-
-    invoke-static {v0, v1, p0}, Lcom/google/googlex/gcam/GcamModuleJNI;->FrameMetadata_hal_af_metadata_get(JLcom/google/googlex/gcam/FrameMetadata;)J
-
-    move-result-wide v0
-
-    const-wide/16 v2, 0x0
-
-    cmp-long v4, v0, v2
-
-    if-nez v4, :cond_0
-
-    const/4 v0, 0x0
-
-    return-object v0
-
-    :cond_0
-    new-instance v2, Lcom/google/googlex/gcam/HalAfMetadata;
-
-    const/4 v3, 0x0
-
-    invoke-direct {v2, v0, v1, v3}, Lcom/google/googlex/gcam/HalAfMetadata;-><init>(JZ)V
-
-    return-object v2
-.end method
-
-.method public final i()Lcom/google/googlex/gcam/LiveHdrMetadata;
+.method public final g()Lcom/google/googlex/gcam/LiveHdrMetadata;
     .locals 5
 
     iget-wide v0, p0, Lcom/google/googlex/gcam/FrameMetadata;->a:J
@@ -252,23 +194,7 @@
     return-object v2
 .end method
 
-.method public final j()Lnrg;
-    .locals 2
-
-    iget-wide v0, p0, Lcom/google/googlex/gcam/FrameMetadata;->a:J
-
-    invoke-static {v0, v1, p0}, Lcom/google/googlex/gcam/GcamModuleJNI;->FrameMetadata_sensor_id_get(JLcom/google/googlex/gcam/FrameMetadata;)I
-
-    move-result v0
-
-    invoke-static {v0}, Lnrg;->a(I)Lnrg;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public final declared-synchronized k()V
+.method public final declared-synchronized h()V
     .locals 5
 
     monitor-enter p0
@@ -310,7 +236,7 @@
     throw v0
 .end method
 
-.method public final l(Lcom/google/googlex/gcam/FloatArray4;)V
+.method public final i(Lcom/google/googlex/gcam/FloatArray4;)V
     .locals 6
 
     iget-wide v0, p0, Lcom/google/googlex/gcam/FrameMetadata;->a:J
@@ -326,12 +252,10 @@
     return-void
 .end method
 
-.method public final m(Lnql;)V
+.method public final j(I)V
     .locals 2
 
     iget-wide v0, p0, Lcom/google/googlex/gcam/FrameMetadata;->a:J
-
-    iget p1, p1, Lnql;->c:I
 
     invoke-static {v0, v1, p0, p1}, Lcom/google/googlex/gcam/GcamModuleJNI;->FrameMetadata_flash_set(JLcom/google/googlex/gcam/FrameMetadata;I)V
 

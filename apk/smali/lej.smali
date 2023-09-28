@@ -1,73 +1,40 @@
-.class Llej;
-.super Ljava/lang/Object;
-
-# interfaces
-.implements Llel;
-
-
-# instance fields
-.field protected final a:Llel;
+.class public final Llej;
+.super Ljava/io/IOException;
 
 
 # direct methods
-.method public constructor <init>(Llel;)V
-    .locals 0
+.method public constructor <init>(Llek;Ljava/lang/Throwable;)V
+    .locals 2
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-static {p1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
-    iput-object p1, p0, Llej;->a:Llel;
+    move-result-object p1
 
-    return-void
-.end method
+    invoke-static {p1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
+    move-result-object v0
 
-# virtual methods
-.method public final a(Lldy;)V
-    .locals 1
+    invoke-virtual {v0}, Ljava/lang/String;->length()I
 
-    iget-object v0, p0, Llej;->a:Llel;
+    move-result v0
 
-    invoke-interface {v0, p1}, Llel;->a(Lldy;)V
+    new-instance v1, Ljava/lang/StringBuilder;
 
-    return-void
-.end method
+    add-int/lit8 v0, v0, 0x25
 
-.method public final b(J)V
-    .locals 1
+    invoke-direct {v1, v0}, Ljava/lang/StringBuilder;-><init>(I)V
 
-    iget-object v0, p0, Llej;->a:Llel;
+    const-string v0, "fail to create media codec with mime "
 
-    invoke-interface {v0, p1, p2}, Llel;->b(J)V
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    return-void
-.end method
+    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-.method public final c(Landroid/media/MediaCodec$BufferInfo;)V
-    .locals 1
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    iget-object v0, p0, Llej;->a:Llel;
+    move-result-object p1
 
-    invoke-interface {v0, p1}, Llel;->c(Landroid/media/MediaCodec$BufferInfo;)V
-
-    return-void
-.end method
-
-.method public final d()V
-    .locals 1
-
-    iget-object v0, p0, Llej;->a:Llel;
-
-    invoke-interface {v0}, Llel;->d()V
-
-    return-void
-.end method
-
-.method public e(I)V
-    .locals 1
-
-    iget-object v0, p0, Llej;->a:Llel;
-
-    invoke-interface {v0, p1}, Llel;->e(I)V
+    invoke-direct {p0, p1, p2}, Ljava/io/IOException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
 
     return-void
 .end method

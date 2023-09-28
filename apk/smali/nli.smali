@@ -1,182 +1,118 @@
-.class public final Lnli;
-.super Lnws;
-
-# interfaces
-.implements Lnxz;
-
-
-# static fields
-.field public static final e:Lnli;
-
-.field private static volatile f:Lnyf;
+.class final Lnli;
+.super Ljava/lang/Object;
 
 
 # instance fields
-.field public a:I
+.field public a:Lnmf;
 
-.field public b:Z
-
-.field public c:Z
-
-.field public d:Z
+.field private b:Ljava/util/List;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
-
-    new-instance v0, Lnli;
-
-    invoke-direct {v0}, Lnli;-><init>()V
-
-    sput-object v0, Lnli;->e:Lnli;
-
-    const-class v1, Lnli;
-
-    invoke-static {v1, v0}, Lnws;->aa(Ljava/lang/Class;Lnws;)V
-
-    return-void
-.end method
-
-.method private constructor <init>()V
+.method public constructor <init>()V
     .locals 0
 
-    invoke-direct {p0}, Lnws;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method protected final a(ILjava/lang/Object;)Ljava/lang/Object;
-    .locals 3
+.method public final a()Lnlp;
+    .locals 4
 
-    add-int/lit8 p1, p1, -0x1
+    iget-object v0, p0, Lnli;->a:Lnmf;
 
-    const/4 p2, 0x1
+    if-eqz v0, :cond_1
 
-    packed-switch p1, :pswitch_data_0
+    iget-object v1, p0, Lnli;->b:Ljava/util/List;
 
-    :pswitch_0
-    const/4 p1, 0x0
-
-    return-object p1
-
-    :pswitch_1
-    sget-object p1, Lnli;->f:Lnyf;
-
-    if-nez p1, :cond_1
-
-    const-class p2, Lnli;
-
-    monitor-enter p2
-
-    :try_start_0
-    sget-object p1, Lnli;->f:Lnyf;
-
-    if-nez p1, :cond_0
-
-    new-instance p1, Lnwo;
-
-    sget-object v0, Lnli;->e:Lnli;
-
-    invoke-direct {p1, v0}, Lnwo;-><init>(Lnws;)V
-
-    sput-object p1, Lnli;->f:Lnyf;
-
-    :cond_0
-    monitor-exit p2
+    if-nez v1, :cond_0
 
     goto :goto_0
 
-    :catchall_0
-    move-exception p1
+    :cond_0
+    new-instance v2, Lnlp;
 
-    monitor-exit p2
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    invoke-direct {v2, v0, v1}, Lnlp;-><init>(Lnmf;Ljava/util/List;)V
 
-    throw p1
+    return-object v2
 
     :cond_1
     :goto_0
-    return-object p1
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    :pswitch_2
-    sget-object p1, Lnli;->e:Lnli;
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    return-object p1
+    iget-object v1, p0, Lnli;->a:Lnmf;
 
-    :pswitch_3
-    new-instance p1, Lnwn;
+    if-nez v1, :cond_2
 
-    sget-object p2, Lnli;->e:Lnli;
+    const-string v1, " text"
 
-    invoke-direct {p1, p2}, Lnwn;-><init>(Lnws;)V
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    return-object p1
+    :cond_2
+    iget-object v1, p0, Lnli;->b:Ljava/util/List;
 
-    :pswitch_4
-    new-instance p1, Lnli;
+    if-nez v1, :cond_3
 
-    invoke-direct {p1}, Lnli;-><init>()V
+    const-string v1, " textWordBoxes"
 
-    return-object p1
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    :pswitch_5
-    const-string p1, "a"
+    :cond_3
+    new-instance v1, Ljava/lang/IllegalStateException;
 
-    const-string v0, "\u0001\u0003\u0000\u0001\u0001\u0003\u0003\u0000\u0000\u0000\u0001\u1007\u0000\u0002\u1007\u0001\u0003\u1007\u0002"
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
-    const/4 v1, 0x4
+    move-result-object v0
 
-    new-array v1, v1, [Ljava/lang/Object;
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
-    const/4 v2, 0x0
+    move-result-object v2
 
-    aput-object p1, v1, v2
+    invoke-virtual {v2}, Ljava/lang/String;->length()I
 
-    const-string p1, "b"
+    move-result v2
 
-    aput-object p1, v1, p2
+    new-instance v3, Ljava/lang/StringBuilder;
 
-    const/4 p1, 0x2
+    add-int/lit8 v2, v2, 0x1c
 
-    const-string p2, "c"
+    invoke-direct {v3, v2}, Ljava/lang/StringBuilder;-><init>(I)V
 
-    aput-object p2, v1, p1
+    const-string v2, "Missing required properties:"
 
-    const/4 p1, 0x3
+    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string p2, "d"
+    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    aput-object p2, v1, p1
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    sget-object p1, Lnli;->e:Lnli;
+    move-result-object v0
 
-    invoke-static {p1, v0, v1}, Lnli;->X(Lnxy;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-direct {v1, v0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 
-    move-result-object p1
+    throw v1
+.end method
 
-    return-object p1
+.method public final b(Ljava/util/List;)V
+    .locals 1
 
-    :pswitch_6
-    invoke-static {p2}, Ljava/lang/Byte;->valueOf(B)Ljava/lang/Byte;
+    if-eqz p1, :cond_0
 
-    move-result-object p1
+    iput-object p1, p0, Lnli;->b:Ljava/util/List;
 
-    return-object p1
+    return-void
 
-    nop
+    :cond_0
+    new-instance p1, Ljava/lang/NullPointerException;
 
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_6
-        :pswitch_0
-        :pswitch_5
-        :pswitch_4
-        :pswitch_3
-        :pswitch_2
-        :pswitch_1
-    .end packed-switch
+    const-string v0, "Null textWordBoxes"
+
+    invoke-direct {p1, v0}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
+
+    throw p1
 .end method

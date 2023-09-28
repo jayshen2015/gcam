@@ -1,242 +1,333 @@
 .class public final Lsh;
-.super Ljava/lang/Object;
+.super Landroid/app/Activity;
 
 
 # instance fields
-.field public final a:J
+.field private a:Landroid/content/ComponentName;
 
-.field public final b:Lqy;
+.field private b:I
 
-.field public final c:Ljava/lang/Throwable;
-
-.field public final d:I
+.field private c:[I
 
 
 # direct methods
-.method public synthetic constructor <init>(ILqy;Ljava/lang/Throwable;I)V
-    .locals 4
+.method public constructor <init>()V
+    .locals 0
 
-    and-int/lit8 v0, p4, 0x2
-
-    if-eqz v0, :cond_0
-
-    invoke-static {}, Landroid/os/SystemClock;->elapsedRealtimeNanos()J
-
-    move-result-wide v0
-
-    goto :goto_0
-
-    :cond_0
-    const-wide/16 v0, 0x0
-
-    :goto_0
-    and-int/lit8 v2, p4, 0x4
-
-    const/4 v3, 0x0
-
-    if-eqz v2, :cond_1
-
-    move-object p2, v3
-
-    :cond_1
-    and-int/lit8 p4, p4, 0x8
-
-    if-eqz p4, :cond_2
-
-    move-object p3, v3
-
-    :cond_2
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput p1, p0, Lsh;->d:I
-
-    iput-wide v0, p0, Lsh;->a:J
-
-    iput-object p2, p0, Lsh;->b:Lqy;
-
-    iput-object p3, p0, Lsh;->c:Ljava/lang/Throwable;
+    invoke-direct {p0}, Landroid/app/Activity;-><init>()V
 
     return-void
 .end method
 
+.method private final a()V
+    .locals 5
 
-# virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 7
+    iget-object v0, p0, Lsh;->a:Landroid/content/ComponentName;
+
+    iget v1, p0, Lsh;->b:I
+
+    iget-object v2, p0, Lsh;->c:[I
+
+    new-instance v3, Landroid/content/Intent;
+
+    const-string v4, "com.google.android.clockwork.home.complications.ACTION_CHOOSE_PROVIDER"
+
+    invoke-direct {v3, v4}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
+
+    const-string v4, "android.support.wearable.complications.EXTRA_WATCH_FACE_COMPONENT_NAME"
+
+    invoke-virtual {v3, v4, v0}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Landroid/os/Parcelable;)Landroid/content/Intent;
+
+    const-string v0, "android.support.wearable.complications.EXTRA_COMPLICATION_ID"
+
+    invoke-virtual {v3, v0, v1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
+
+    const-string v0, "android.support.wearable.complications.EXTRA_SUPPORTED_TYPES"
+
+    invoke-virtual {v3, v0, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;[I)Landroid/content/Intent;
 
     const/4 v0, 0x1
 
-    if-ne p0, p1, :cond_0
+    invoke-virtual {p0, v3, v0}, Lsh;->startActivityForResult(Landroid/content/Intent;I)V
 
-    return v0
-
-    :cond_0
-    instance-of v1, p1, Lsh;
-
-    const/4 v2, 0x0
-
-    if-nez v1, :cond_1
-
-    return v2
-
-    :cond_1
-    check-cast p1, Lsh;
-
-    iget v1, p0, Lsh;->d:I
-
-    iget v3, p1, Lsh;->d:I
-
-    if-eq v1, v3, :cond_2
-
-    return v2
-
-    :cond_2
-    iget-wide v3, p0, Lsh;->a:J
-
-    iget-wide v5, p1, Lsh;->a:J
-
-    cmp-long v1, v3, v5
-
-    if-nez v1, :cond_5
-
-    iget-object v1, p0, Lsh;->b:Lqy;
-
-    iget-object v3, p1, Lsh;->b:Lqy;
-
-    invoke-static {v1, v3}, Lone;->c(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-nez v1, :cond_3
-
-    return v2
-
-    :cond_3
-    iget-object v1, p0, Lsh;->c:Ljava/lang/Throwable;
-
-    iget-object p1, p1, Lsh;->c:Ljava/lang/Throwable;
-
-    invoke-static {v1, p1}, Lone;->c(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result p1
-
-    if-nez p1, :cond_4
-
-    return v2
-
-    :cond_4
-    return v0
-
-    :cond_5
-    return v2
+    return-void
 .end method
 
-.method public final hashCode()I
-    .locals 4
+.method private final b()Z
+    .locals 1
 
-    iget v0, p0, Lsh;->d:I
+    const-string v0, "com.google.android.wearable.permission.RECEIVE_COMPLICATION_DATA_PRIVILEGED"
 
-    mul-int/lit8 v0, v0, 0x1f
+    invoke-static {p0, v0}, Laan;->b(Landroid/content/Context;Ljava/lang/String;)I
 
-    iget-wide v1, p0, Lsh;->a:J
+    move-result v0
 
-    invoke-static {v1, v2}, Lnm;->e(J)I
+    if-eqz v0, :cond_1
 
-    move-result v1
+    const-string v0, "com.google.android.wearable.permission.RECEIVE_COMPLICATION_DATA"
 
-    iget-object v2, p0, Lsh;->b:Lqy;
+    invoke-static {p0, v0}, Laan;->b(Landroid/content/Context;Ljava/lang/String;)I
 
-    const/4 v3, 0x0
+    move-result v0
 
-    if-nez v2, :cond_0
-
-    const/4 v2, 0x0
+    if-nez v0, :cond_0
 
     goto :goto_0
 
     :cond_0
-    iget v2, v2, Lqy;->a:I
+    const/4 v0, 0x0
 
-    :goto_0
-    add-int/2addr v0, v1
-
-    mul-int/lit8 v0, v0, 0x1f
-
-    add-int/2addr v0, v2
-
-    mul-int/lit8 v0, v0, 0x1f
-
-    iget-object v1, p0, Lsh;->c:Ljava/lang/Throwable;
-
-    if-nez v1, :cond_1
-
-    goto :goto_1
+    return v0
 
     :cond_1
-    invoke-virtual {v1}, Ljava/lang/Throwable;->hashCode()I
-
-    move-result v3
-
-    :goto_1
-    add-int/2addr v0, v3
+    :goto_0
+    const/4 v0, 0x1
 
     return v0
 .end method
 
-.method public final toString()Ljava/lang/String;
-    .locals 3
 
-    new-instance v0, Ljava/lang/StringBuilder;
+# virtual methods
+.method protected final onActivityResult(IILandroid/content/Intent;)V
+    .locals 1
 
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+    const/4 v0, 0x1
 
-    const-string v1, "ClosingInfo(reason="
+    if-ne p1, v0, :cond_0
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {p0, p2, p3}, Lsh;->setResult(ILandroid/content/Intent;)V
 
-    iget v1, p0, Lsh;->d:I
+    invoke-virtual {p0}, Lsh;->finish()V
 
-    invoke-static {v1}, Lkk;->c(I)Ljava/lang/String;
+    :cond_0
+    return-void
+.end method
 
-    move-result-object v1
+.method protected final onCreate(Landroid/os/Bundle;)V
+    .locals 5
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    const v0, 0x1030010
 
-    const-string v1, ", closingTimestamp="
+    invoke-virtual {p0, v0}, Lsh;->setTheme(I)V
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-super {p0, p1}, Landroid/app/Activity;->onCreate(Landroid/os/Bundle;)V
 
-    iget-wide v1, p0, Lsh;->a:J
+    invoke-virtual {p0}, Lsh;->getIntent()Landroid/content/Intent;
 
-    invoke-static {v1, v2}, Lvl;->b(J)Ljava/lang/String;
+    move-result-object p1
 
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const-string v1, ", errorCode="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-object v1, p0, Lsh;->b:Lqy;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const-string v1, ", exception="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-object v1, p0, Lsh;->c:Ljava/lang/Throwable;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const/16 v1, 0x29
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {p1}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v0
 
-    return-object v0
+    invoke-virtual {v0}, Ljava/lang/String;->hashCode()I
+
+    move-result v1
+
+    const/4 v2, 0x1
+
+    const/4 v3, 0x0
+
+    sparse-switch v1, :sswitch_data_0
+
+    :cond_0
+    goto :goto_0
+
+    :sswitch_0
+    const-string v1, "android.support.wearable.complications.ACTION_START_PROVIDER_CHOOSER"
+
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    const/4 v0, 0x0
+
+    goto :goto_1
+
+    :sswitch_1
+    const-string v1, "android.support.wearable.complications.ACTION_PERMISSION_REQUEST_ONLY"
+
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    const/4 v0, 0x1
+
+    goto :goto_1
+
+    :goto_0
+    const/4 v0, -0x1
+
+    :goto_1
+    const-string v1, "com.google.android.wearable.permission.RECEIVE_COMPLICATION_DATA"
+
+    const-string v4, "android.support.wearable.complications.EXTRA_WATCH_FACE_COMPONENT_NAME"
+
+    packed-switch v0, :pswitch_data_0
+
+    new-instance p1, Ljava/lang/IllegalStateException;
+
+    const-string v0, "Unrecognised intent action."
+
+    invoke-direct {p1, v0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw p1
+
+    :pswitch_0
+    invoke-virtual {p1, v4}, Landroid/content/Intent;->getParcelableExtra(Ljava/lang/String;)Landroid/os/Parcelable;
+
+    move-result-object p1
+
+    check-cast p1, Landroid/content/ComponentName;
+
+    iput-object p1, p0, Lsh;->a:Landroid/content/ComponentName;
+
+    invoke-direct {p0}, Lsh;->b()Z
+
+    move-result p1
+
+    if-eqz p1, :cond_1
+
+    invoke-virtual {p0}, Lsh;->finish()V
+
+    return-void
+
+    :cond_1
+    new-array p1, v2, [Ljava/lang/String;
+
+    aput-object v1, p1, v3
+
+    const/4 v0, 0x2
+
+    invoke-static {p0, p1, v0}, Laan;->a(Landroid/app/Activity;[Ljava/lang/String;I)V
+
+    return-void
+
+    :pswitch_1
+    invoke-virtual {p1, v4}, Landroid/content/Intent;->getParcelableExtra(Ljava/lang/String;)Landroid/os/Parcelable;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/content/ComponentName;
+
+    iput-object v0, p0, Lsh;->a:Landroid/content/ComponentName;
+
+    const-string v0, "android.support.wearable.complications.EXTRA_COMPLICATION_ID"
+
+    invoke-virtual {p1, v0, v3}, Landroid/content/Intent;->getIntExtra(Ljava/lang/String;I)I
+
+    move-result v0
+
+    iput v0, p0, Lsh;->b:I
+
+    const-string v0, "android.support.wearable.complications.EXTRA_SUPPORTED_TYPES"
+
+    invoke-virtual {p1, v0}, Landroid/content/Intent;->getIntArrayExtra(Ljava/lang/String;)[I
+
+    move-result-object p1
+
+    iput-object p1, p0, Lsh;->c:[I
+
+    invoke-direct {p0}, Lsh;->b()Z
+
+    move-result p1
+
+    if-eqz p1, :cond_2
+
+    invoke-direct {p0}, Lsh;->a()V
+
+    return-void
+
+    :cond_2
+    new-array p1, v2, [Ljava/lang/String;
+
+    aput-object v1, p1, v3
+
+    invoke-static {p0, p1, v2}, Laan;->a(Landroid/app/Activity;[Ljava/lang/String;I)V
+
+    return-void
+
+    :sswitch_data_0
+    .sparse-switch
+        -0x73d4bad -> :sswitch_1
+        0x545559e3 -> :sswitch_0
+    .end sparse-switch
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
+.end method
+
+.method public final onRequestPermissionsResult(I[Ljava/lang/String;[I)V
+    .locals 1
+
+    array-length p2, p3
+
+    if-nez p2, :cond_0
+
+    return-void
+
+    :cond_0
+    const/4 p2, 0x0
+
+    aget p3, p3, p2
+
+    if-nez p3, :cond_2
+
+    const/4 p3, 0x1
+
+    if-ne p1, p3, :cond_1
+
+    invoke-direct {p0}, Lsh;->a()V
+
+    goto :goto_0
+
+    :cond_1
+    invoke-virtual {p0}, Lsh;->finish()V
+
+    :goto_0
+    iget-object p1, p0, Lsh;->a:Landroid/content/ComponentName;
+
+    new-instance p3, Landroid/content/Intent;
+
+    const-string v0, "android.support.wearable.complications.ACTION_REQUEST_UPDATE_ALL_ACTIVE"
+
+    invoke-direct {p3, v0}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
+
+    const-string v0, "com.google.android.wearable.app"
+
+    invoke-virtual {p3, v0}, Landroid/content/Intent;->setPackage(Ljava/lang/String;)Landroid/content/Intent;
+
+    const-string v0, "android.support.wearable.complications.EXTRA_WATCH_FACE_COMPONENT"
+
+    invoke-virtual {p3, v0, p1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Landroid/os/Parcelable;)Landroid/content/Intent;
+
+    new-instance p1, Landroid/content/Intent;
+
+    const-string v0, ""
+
+    invoke-direct {p1, v0}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
+
+    invoke-static {p0, p2, p1, p2}, Landroid/app/PendingIntent;->getActivity(Landroid/content/Context;ILandroid/content/Intent;I)Landroid/app/PendingIntent;
+
+    move-result-object p1
+
+    const-string p2, "android.support.wearable.complications.EXTRA_PENDING_INTENT"
+
+    invoke-virtual {p3, p2, p1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Landroid/os/Parcelable;)Landroid/content/Intent;
+
+    invoke-virtual {p0, p3}, Lsh;->sendBroadcast(Landroid/content/Intent;)V
+
+    return-void
+
+    :cond_2
+    invoke-virtual {p0}, Lsh;->finish()V
+
+    return-void
 .end method

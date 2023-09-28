@@ -1,35 +1,32 @@
 .class public final Lbfe;
 .super Ljava/lang/Object;
 
-# interfaces
-.implements Lbfu;
-
 
 # instance fields
-.field public final synthetic a:Ljava/lang/Object;
+.field public final a:Lbmb;
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/Object;)V
-    .locals 0
+.method public constructor <init>()V
+    .locals 1
 
-    iput-object p1, p0, Lbfe;->a:Ljava/lang/Object;
+    const/4 v0, 0x0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0, v0}, Lbfe;-><init>([B)V
 
     return-void
 .end method
 
+.method public constructor <init>([B)V
+    .locals 0
 
-# virtual methods
-.method public final toString()Ljava/lang/String;
-    .locals 1
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iget-object v0, p0, Lbfe;->a:Ljava/lang/Object;
+    new-instance p1, Lbfc;
 
-    invoke-virtual {v0}, Ljava/lang/Object;->toString()Ljava/lang/String;
+    invoke-direct {p1}, Lbfc;-><init>()V
 
-    move-result-object v0
+    iput-object p1, p0, Lbfe;->a:Lbmb;
 
-    return-object v0
+    return-void
 .end method

@@ -1,301 +1,276 @@
-.class final Lood;
-.super Looe;
+.class public abstract Lood;
+.super Ljava/util/AbstractCollection;
 
 # interfaces
-.implements Ljava/util/Iterator;
-.implements Loku;
+.implements Ljava/io/Serializable;
 
 
-# instance fields
-.field public a:Loku;
-
-.field private b:I
-
-.field private c:Ljava/lang/Object;
-
-.field private d:Ljava/util/Iterator;
+# static fields
+.field private static final pK:[Ljava/lang/Object;
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 1
 
-    invoke-direct {p0}, Looe;-><init>()V
+    const/4 v0, 0x0
+
+    new-array v0, v0, [Ljava/lang/Object;
+
+    sput-object v0, Lood;->pK:[Ljava/lang/Object;
 
     return-void
 .end method
 
-.method private final f()Ljava/lang/Throwable;
-    .locals 3
+.method public constructor <init>()V
+    .locals 0
 
-    iget v0, p0, Lood;->b:I
+    invoke-direct {p0}, Ljava/util/AbstractCollection;-><init>()V
 
-    packed-switch v0, :pswitch_data_0
-
-    new-instance v0, Ljava/lang/IllegalStateException;
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, "Unexpected state of the iterator: "
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget v2, p0, Lood;->b:I
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    goto :goto_0
-
-    :pswitch_0
-    new-instance v0, Ljava/lang/IllegalStateException;
-
-    const-string v1, "Iterator has failed."
-
-    invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    goto :goto_0
-
-    :pswitch_1
-    new-instance v0, Ljava/util/NoSuchElementException;
-
-    invoke-direct {v0}, Ljava/util/NoSuchElementException;-><init>()V
-
-    :goto_0
-    return-object v0
-
-    :pswitch_data_0
-    .packed-switch 0x4
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
+    return-void
 .end method
 
 
 # virtual methods
-.method public final a(Ljava/lang/Object;Loku;)Ljava/lang/Object;
-    .locals 0
-
-    iput-object p1, p0, Lood;->c:Ljava/lang/Object;
-
-    const/4 p1, 0x3
-
-    iput p1, p0, Lood;->b:I
-
-    iput-object p2, p0, Lood;->a:Loku;
-
-    sget-object p1, Lolc;->a:Lolc;
-
-    return-object p1
-.end method
-
-.method public final b(Ljava/util/Iterator;Loku;)Ljava/lang/Object;
+.method public A()[Ljava/lang/Object;
     .locals 1
 
-    invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v0
-
-    if-nez v0, :cond_0
-
-    sget-object p1, Lojk;->a:Lojk;
-
-    return-object p1
-
-    :cond_0
-    iput-object p1, p0, Lood;->d:Ljava/util/Iterator;
-
-    const/4 p1, 0x2
-
-    iput p1, p0, Lood;->b:I
-
-    iput-object p2, p0, Lood;->a:Loku;
-
-    sget-object p1, Lolc;->a:Lolc;
-
-    return-object p1
-.end method
-
-.method public final d()Lola;
-    .locals 1
-
-    sget-object v0, Lolb;->a:Lolb;
+    const/4 v0, 0x0
 
     return-object v0
 .end method
 
-.method public final e(Ljava/lang/Object;)V
+.method public final add(Ljava/lang/Object;)Z
     .locals 0
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
 
-    invoke-static {p1}, Lljr;->aO(Ljava/lang/Object;)V
+    new-instance p1, Ljava/lang/UnsupportedOperationException;
 
-    const/4 p1, 0x4
+    invoke-direct {p1}, Ljava/lang/UnsupportedOperationException;-><init>()V
 
-    iput p1, p0, Lood;->b:I
-
-    return-void
+    throw p1
 .end method
 
-.method public final hasNext()Z
-    .locals 3
+.method public final addAll(Ljava/util/Collection;)Z
+    .locals 0
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
 
-    :goto_0
-    iget v0, p0, Lood;->b:I
+    new-instance p1, Ljava/lang/UnsupportedOperationException;
 
-    const/4 v1, 0x1
+    invoke-direct {p1}, Ljava/lang/UnsupportedOperationException;-><init>()V
 
-    const/4 v2, 0x0
-
-    packed-switch v0, :pswitch_data_0
-
-    invoke-direct {p0}, Lood;->f()Ljava/lang/Throwable;
-
-    move-result-object v0
-
-    throw v0
-
-    :pswitch_0
-    const/4 v0, 0x0
-
-    return v0
-
-    :pswitch_1
-    return v1
-
-    :pswitch_2
-    iget-object v0, p0, Lood;->d:Ljava/util/Iterator;
-
-    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    const/4 v0, 0x2
-
-    iput v0, p0, Lood;->b:I
-
-    return v1
-
-    :cond_0
-    iput-object v2, p0, Lood;->d:Ljava/util/Iterator;
-
-    :pswitch_3
-    const/4 v0, 0x5
-
-    iput v0, p0, Lood;->b:I
-
-    iget-object v0, p0, Lood;->a:Loku;
-
-    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    iput-object v2, p0, Lood;->a:Loku;
-
-    sget-object v1, Lojk;->a:Lojk;
-
-    invoke-interface {v0, v1}, Loku;->e(Ljava/lang/Object;)V
-
-    goto :goto_0
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_3
-        :pswitch_2
-        :pswitch_1
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
+    throw p1
 .end method
 
-.method public final next()Ljava/lang/Object;
-    .locals 2
-
-    iget v0, p0, Lood;->b:I
-
-    packed-switch v0, :pswitch_data_0
-
-    invoke-direct {p0}, Lood;->f()Ljava/lang/Throwable;
-
-    move-result-object v0
-
-    throw v0
-
-    :pswitch_0
-    const/4 v0, 0x0
-
-    iput v0, p0, Lood;->b:I
-
-    iget-object v0, p0, Lood;->c:Ljava/lang/Object;
-
-    const/4 v1, 0x0
-
-    iput-object v1, p0, Lood;->c:Ljava/lang/Object;
-
-    return-object v0
-
-    :pswitch_1
-    const/4 v0, 0x1
-
-    iput v0, p0, Lood;->b:I
-
-    iget-object v0, p0, Lood;->d:Ljava/util/Iterator;
-
-    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v0
-
-    return-object v0
-
-    :pswitch_2
-    invoke-virtual {p0}, Lood;->hasNext()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    invoke-virtual {p0}, Lood;->next()Ljava/lang/Object;
-
-    move-result-object v0
-
-    return-object v0
-
-    :cond_0
-    new-instance v0, Ljava/util/NoSuchElementException;
-
-    invoke-direct {v0}, Ljava/util/NoSuchElementException;-><init>()V
-
-    throw v0
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_2
-        :pswitch_2
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
-.end method
-
-.method public final remove()V
-    .locals 2
+.method public final clear()V
+    .locals 1
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
 
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
-    const-string v1, "Operation is not supported for read-only collection"
+    invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V
 
-    invoke-direct {v0, v1}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
+    throw v0
+.end method
+
+.method public abstract contains(Ljava/lang/Object;)Z
+.end method
+
+.method public abstract gH()Loti;
+.end method
+
+.method public abstract gI()Z
+.end method
+
+.method public bridge synthetic iterator()Ljava/util/Iterator;
+    .locals 1
+
+    invoke-virtual {p0}, Lood;->gH()Loti;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public final remove(Ljava/lang/Object;)Z
+    .locals 0
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
+
+    new-instance p1, Ljava/lang/UnsupportedOperationException;
+
+    invoke-direct {p1}, Ljava/lang/UnsupportedOperationException;-><init>()V
+
+    throw p1
+.end method
+
+.method public final removeAll(Ljava/util/Collection;)Z
+    .locals 0
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
+
+    new-instance p1, Ljava/lang/UnsupportedOperationException;
+
+    invoke-direct {p1}, Ljava/lang/UnsupportedOperationException;-><init>()V
+
+    throw p1
+.end method
+
+.method public final retainAll(Ljava/util/Collection;)Z
+    .locals 0
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
+
+    new-instance p1, Ljava/lang/UnsupportedOperationException;
+
+    invoke-direct {p1}, Ljava/lang/UnsupportedOperationException;-><init>()V
+
+    throw p1
+.end method
+
+.method public final toArray()[Ljava/lang/Object;
+    .locals 1
+
+    sget-object v0, Lood;->pK:[Ljava/lang/Object;
+
+    invoke-virtual {p0, v0}, Lood;->toArray([Ljava/lang/Object;)[Ljava/lang/Object;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public final toArray([Ljava/lang/Object;)[Ljava/lang/Object;
+    .locals 3
+
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    invoke-virtual {p0}, Lood;->size()I
+
+    move-result v0
+
+    array-length v1, p1
+
+    if-ge v1, v0, :cond_1
+
+    invoke-virtual {p0}, Lood;->A()[Ljava/lang/Object;
+
+    move-result-object v1
+
+    if-nez v1, :cond_0
+
+    invoke-static {p1, v0}, Lobr;->N([Ljava/lang/Object;I)[Ljava/lang/Object;
+
+    move-result-object p1
+
+    goto :goto_0
+
+    :cond_0
+    invoke-virtual {p0}, Lood;->z()I
+
+    move-result v0
+
+    invoke-virtual {p0}, Lood;->y()I
+
+    move-result v2
+
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    move-result-object p1
+
+    invoke-static {v1, v0, v2, p1}, Ljava/util/Arrays;->copyOfRange([Ljava/lang/Object;IILjava/lang/Class;)[Ljava/lang/Object;
+
+    move-result-object p1
+
+    return-object p1
+
+    :cond_1
+    if-le v1, v0, :cond_2
+
+    const/4 v1, 0x0
+
+    aput-object v1, p1, v0
+
+    :cond_2
+    :goto_0
+    const/4 v0, 0x0
+
+    invoke-virtual {p0, p1, v0}, Lood;->x([Ljava/lang/Object;I)I
+
+    return-object p1
+.end method
+
+.method public v()Loom;
+    .locals 1
+
+    const/4 v0, 0x0
+
+    throw v0
+.end method
+
+.method writeReplace()Ljava/lang/Object;
+    .locals 2
+
+    new-instance v0, Look;
+
+    invoke-virtual {p0}, Lood;->toArray()[Ljava/lang/Object;
+
+    move-result-object v1
+
+    invoke-direct {v0, v1}, Look;-><init>([Ljava/lang/Object;)V
+
+    return-object v0
+.end method
+
+.method public x([Ljava/lang/Object;I)I
+    .locals 3
+
+    invoke-virtual {p0}, Lood;->gH()Loti;
+
+    move-result-object v0
+
+    :goto_0
+    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    add-int/lit8 v1, p2, 0x1
+
+    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v2
+
+    aput-object v2, p1, p2
+
+    move p2, v1
+
+    goto :goto_0
+
+    :cond_0
+    return p2
+.end method
+
+.method public y()I
+    .locals 1
+
+    new-instance v0, Ljava/lang/UnsupportedOperationException;
+
+    invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V
+
+    throw v0
+.end method
+
+.method public z()I
+    .locals 1
+
+    new-instance v0, Ljava/lang/UnsupportedOperationException;
+
+    invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V
 
     throw v0
 .end method

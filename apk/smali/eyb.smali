@@ -1,323 +1,202 @@
-.class public final Leyb;
-.super Ljava/lang/Object;
+.class final Leyb;
+.super Ljlj;
 
 
-# static fields
-.field public static final synthetic a:I
+# instance fields
+.field final synthetic a:Leam;
 
-.field private static final b:Lnak;
+.field final synthetic b:Lfwt;
 
-.field private static final c:Ljava/text/NumberFormat;
+.field final synthetic c:Lfly;
+
+.field final synthetic d:Lfle;
+
+.field final synthetic e:Lddf;
+
+.field final synthetic f:Lfks;
+
+.field final synthetic g:Leyg;
+
+.field final synthetic h:Lhjn;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
+.method public constructor <init>(Leyg;Leam;Lfwt;Lfly;Lfle;Lddf;Lhjn;Lfks;)V
+    .locals 0
 
-    const-string v0, "com/google/android/apps/camera/legacy/lightcycle/util/MetadataUtils"
+    iput-object p1, p0, Leyb;->g:Leyg;
 
-    invoke-static {v0}, Lnak;->h(Ljava/lang/String;)Lnak;
+    iput-object p2, p0, Leyb;->a:Leam;
 
-    move-result-object v0
+    iput-object p3, p0, Leyb;->b:Lfwt;
 
-    sput-object v0, Leyb;->b:Lnak;
+    iput-object p4, p0, Leyb;->c:Lfly;
 
-    sget-object v0, Ljava/util/Locale;->US:Ljava/util/Locale;
+    iput-object p5, p0, Leyb;->d:Lfle;
 
-    invoke-static {v0}, Ljava/text/NumberFormat;->getInstance(Ljava/util/Locale;)Ljava/text/NumberFormat;
+    iput-object p6, p0, Leyb;->e:Lddf;
 
-    move-result-object v0
+    iput-object p7, p0, Leyb;->h:Lhjn;
 
-    sput-object v0, Leyb;->c:Ljava/text/NumberFormat;
+    iput-object p8, p0, Leyb;->f:Lfks;
+
+    invoke-direct {p0}, Ljlj;-><init>()V
 
     return-void
 .end method
 
-.method public static a(Ljava/util/Map$Entry;)Ljava/lang/Double;
-    .locals 3
 
-    :try_start_0
-    sget-object v0, Leyb;->c:Ljava/text/NumberFormat;
+# virtual methods
+.method public final onShutterButtonClick()V
+    .locals 2
 
-    invoke-interface {p0}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
+    iget-object v0, p0, Leyb;->g:Leyg;
 
-    move-result-object v1
+    iget-object v0, v0, Leyg;->T:Lfwc;
 
-    check-cast v1, Ljava/lang/String;
+    if-nez v0, :cond_0
 
-    invoke-virtual {v0, v1}, Ljava/text/NumberFormat;->parse(Ljava/lang/String;)Ljava/lang/Number;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/Number;->doubleValue()D
-
-    move-result-wide v0
-
-    invoke-static {v0, v1}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
-
-    move-result-object p0
-    :try_end_0
-    .catch Ljava/text/ParseException; {:try_start_0 .. :try_end_0} :catch_0
-
-    return-object p0
-
-    :catch_0
-    move-exception v0
-
-    sget-object v1, Leyb;->b:Lnak;
-
-    invoke-virtual {v1}, Lnaf;->c()Lnaz;
-
-    move-result-object v1
-
-    check-cast v1, Lnah;
-
-    invoke-interface {v1, v0}, Lnah;->h(Ljava/lang/Throwable;)Lnaz;
-
-    move-result-object v0
-
-    check-cast v0, Lnah;
-
-    const/16 v1, 0x7fe
-
-    invoke-interface {v0, v1}, Lnah;->G(I)Lnaz;
-
-    move-result-object v0
-
-    check-cast v0, Lnah;
-
-    invoke-interface {p0}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
-
-    move-result-object v1
-
-    invoke-interface {p0}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
-
-    move-result-object p0
-
-    const-string v2, "Parse double failed for %s ,value:%s"
-
-    invoke-interface {v0, v2, v1, p0}, Lnah;->z(Ljava/lang/String;Ljava/lang/Object;Ljava/lang/Object;)V
-
-    const/4 p0, 0x0
-
-    return-object p0
-.end method
-
-.method public static b(Ljava/util/Map$Entry;)Ljava/lang/Integer;
-    .locals 3
-
-    :try_start_0
-    invoke-interface {p0}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/lang/String;
-
-    invoke-static {v0}, Ljava/lang/Integer;->valueOf(Ljava/lang/String;)Ljava/lang/Integer;
-
-    move-result-object p0
-    :try_end_0
-    .catch Ljava/lang/NumberFormatException; {:try_start_0 .. :try_end_0} :catch_0
-
-    return-object p0
-
-    :catch_0
-    move-exception v0
-
-    sget-object v1, Leyb;->b:Lnak;
-
-    invoke-virtual {v1}, Lnaf;->c()Lnaz;
-
-    move-result-object v1
-
-    check-cast v1, Lnah;
-
-    invoke-interface {v1, v0}, Lnah;->h(Ljava/lang/Throwable;)Lnaz;
-
-    move-result-object v0
-
-    check-cast v0, Lnah;
-
-    const/16 v1, 0x7ff
-
-    invoke-interface {v0, v1}, Lnah;->G(I)Lnaz;
-
-    move-result-object v0
-
-    check-cast v0, Lnah;
-
-    invoke-interface {p0}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
-
-    move-result-object v1
-
-    invoke-interface {p0}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
-
-    move-result-object p0
-
-    const-string v2, "Parse integer failed for %s ,value:%s"
-
-    invoke-interface {v0, v2, v1, p0}, Lnah;->z(Ljava/lang/String;Ljava/lang/Object;Ljava/lang/Object;)V
-
-    const/4 p0, 0x0
-
-    return-object p0
-.end method
-
-.method public static c(D)Ljava/lang/String;
-    .locals 3
-
-    invoke-static {p0, p1}, Ljava/lang/Math;->abs(D)D
-
-    move-result-wide p0
-
-    const/4 v0, 0x2
-
-    invoke-static {p0, p1, v0}, Landroid/location/Location;->convert(DI)Ljava/lang/String;
-
-    move-result-object p0
-
-    const-string p1, ":"
-
-    invoke-virtual {p0, p1}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
-
-    move-result-object p0
-
-    array-length p1, p0
-
-    const/4 v1, 0x3
-
-    const/4 v2, 0x0
-
-    if-eq p1, v1, :cond_0
-
-    return-object v2
+    return-void
 
     :cond_0
-    :try_start_0
-    sget-object p1, Leyb;->c:Ljava/text/NumberFormat;
+    invoke-virtual {v0}, Lfwc;->h()Lhdi;
 
-    aget-object v1, p0, v0
+    move-result-object v0
 
-    invoke-virtual {p1, v1}, Ljava/text/NumberFormat;->parse(Ljava/lang/String;)Ljava/lang/Number;
+    iget-object v0, v0, Lhdi;->f:Llco;
 
-    move-result-object p1
-    :try_end_0
-    .catch Ljava/text/ParseException; {:try_start_0 .. :try_end_0} :catch_0
+    check-cast v0, Llce;
 
-    invoke-virtual {p1}, Ljava/lang/Number;->floatValue()F
+    iget-object v0, v0, Llce;->d:Ljava/lang/Object;
 
-    move-result p1
+    check-cast v0, Ljava/lang/Boolean;
 
-    const/high16 v0, 0x447a0000    # 1000.0f
+    invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
 
-    mul-float p1, p1, v0
+    move-result v0
 
-    const/4 v0, 0x0
+    if-eqz v0, :cond_3
 
-    aget-object v0, p0, v0
+    iget-object v0, p0, Leyb;->a:Leam;
 
-    const/4 v1, 0x1
+    invoke-virtual {v0}, Leam;->n()Z
 
-    aget-object p0, p0, v1
+    move-result v0
 
-    new-instance v1, Ljava/lang/StringBuilder;
+    if-eqz v0, :cond_3
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+    iget-object v0, p0, Leyb;->a:Leam;
 
-    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0}, Leam;->o()Z
 
-    const-string v0, "/1,"
+    move-result v0
 
-    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    if-eqz v0, :cond_1
 
-    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    iget-object v0, p0, Leyb;->b:Lfwt;
 
-    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0}, Lfwt;->a()V
 
-    float-to-int p0, p1
+    iget-object v0, p0, Leyb;->c:Lfly;
 
-    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v0}, Lflr;->b()V
 
-    const-string p0, "/1000"
+    iget-object v0, p0, Leyb;->d:Lfle;
 
-    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0}, Lfle;->c()V
 
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    return-void
 
-    move-result-object p0
+    :cond_1
+    iget-object v0, p0, Leyb;->b:Lfwt;
 
-    return-object p0
+    invoke-virtual {v0}, Lfwt;->a()V
 
-    :catch_0
-    move-exception p1
+    iget-object v0, p0, Leyb;->c:Lfly;
 
-    sget-object p1, Leyb;->b:Lnak;
+    invoke-virtual {v0}, Lflr;->a()V
 
-    invoke-virtual {p1}, Lnaf;->c()Lnaz;
+    iget-object v0, p0, Leyb;->d:Lfle;
 
-    move-result-object p1
+    invoke-virtual {v0}, Lfle;->c()V
 
-    check-cast p1, Lnah;
+    iget-object v0, p0, Leyb;->e:Lddf;
 
-    const/16 v1, 0x800
+    sget-object v1, Lddm;->D:Lddg;
 
-    invoke-interface {p1, v1}, Lnah;->G(I)Lnaz;
+    invoke-interface {v0, v1}, Lddf;->k(Lddg;)Z
 
-    move-result-object p1
+    move-result v0
 
-    check-cast p1, Lnah;
+    if-eqz v0, :cond_2
 
-    aget-object p0, p0, v0
+    iget-object v0, p0, Leyb;->h:Lhjn;
 
-    const-string v0, "Could not parse float: %s"
+    invoke-virtual {v0}, Lhjn;->e()V
 
-    invoke-interface {p1, v0, p0}, Lnah;->r(Ljava/lang/String;Ljava/lang/Object;)V
+    :cond_2
+    return-void
 
-    return-object v2
-.end method
+    :cond_3
+    iget-object v0, p0, Leyb;->f:Lfks;
 
-.method public static varargs d(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
-    .locals 1
+    invoke-virtual {v0}, Ljgs;->f()V
 
-    sget-object v0, Ljava/util/Locale;->US:Ljava/util/Locale;
+    iget-object v0, p0, Leyb;->g:Leyg;
 
-    invoke-static {v0, p0, p1}, Ljava/lang/String;->format(Ljava/util/Locale;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {v0}, Leyg;->H(Leyg;)V
 
-    move-result-object p0
+    iget-object v0, p0, Leyb;->g:Leyg;
 
-    return-object p0
-.end method
+    iget-object v0, v0, Leyg;->N:Lijp;
 
-.method public static e(Ljava/util/Map$Entry;)Ljava/util/Date;
-    .locals 3
+    invoke-virtual {v0}, Lijp;->f()V
 
-    :try_start_0
-    new-instance v0, Ljava/util/Date;
+    iget-object v0, p0, Leyb;->g:Leyg;
 
-    invoke-interface {p0}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
+    iget-object v1, v0, Leyg;->p:Ljac;
+
+    invoke-virtual {v1}, Ljac;->e()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_4
+
+    invoke-virtual {v0}, Leyg;->u()V
+
+    return-void
+
+    :cond_4
+    iget-object v1, v0, Leyg;->q:Llda;
+
+    invoke-interface {v1}, Llda;->fA()Ljava/lang/Object;
 
     move-result-object v1
 
-    check-cast v1, Ljava/lang/String;
+    check-cast v1, Lhti;
 
-    invoke-static {v1}, Ljava/lang/Long;->parseLong(Ljava/lang/String;)J
+    iget v1, v1, Lhti;->g:I
 
-    move-result-wide v1
+    if-lez v1, :cond_5
 
-    invoke-direct {v0, v1, v2}, Ljava/util/Date;-><init>(J)V
-    :try_end_0
-    .catch Ljava/lang/NumberFormatException; {:try_start_0 .. :try_end_0} :catch_0
+    invoke-virtual {v0, v1}, Leyg;->D(I)V
 
-    return-object v0
+    return-void
 
-    :catch_0
-    move-exception v0
+    :cond_5
+    invoke-virtual {v0}, Leyg;->F()V
 
-    invoke-interface {p0}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
+    return-void
+.end method
 
-    invoke-interface {p0}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
+.method public final onShutterTouchStart()V
+    .locals 1
 
-    const/4 p0, 0x0
+    iget-object v0, p0, Leyb;->g:Leyg;
 
-    return-object p0
+    iget-object v0, v0, Leyg;->N:Lijp;
+
+    invoke-virtual {v0}, Lijp;->e()V
+
+    return-void
 .end method

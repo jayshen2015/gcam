@@ -3,20 +3,20 @@
 
 
 # static fields
-.field public static final a:Ledu;
+.field public static final a:Lefb;
 
 
 # direct methods
 .method static constructor <clinit>()V
     .locals 2
 
-    new-instance v0, Ledu;
+    new-instance v0, Lefb;
 
-    const/4 v1, 0x7
+    const/4 v1, 0x4
 
-    invoke-direct {v0, v1}, Ledu;-><init>(I)V
+    invoke-direct {v0, v1}, Lefb;-><init>(I)V
 
-    sput-object v0, Lefm;->a:Ledu;
+    sput-object v0, Lefm;->a:Lefb;
 
     return-void
 .end method

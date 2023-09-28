@@ -238,25 +238,32 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    monitor-exit p0
-
     if-nez p1, :cond_0
 
     const/4 p1, 0x1
+
+    :goto_0
+    monitor-exit p0
 
     return p1
 
     :cond_0
     const/4 p1, 0x0
 
-    return p1
+    goto :goto_0
 
     :catchall_0
     move-exception p1
 
     monitor-exit p0
 
+    goto :goto_2
+
+    :goto_1
     throw p1
+
+    :goto_2
+    goto :goto_1
 .end method
 
 .method public final declared-synchronized f(Lcom/google/android/apps/camera/stats/timing/TimingSession;)V
@@ -273,11 +280,9 @@
 
     invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    new-instance v0, Lhdg;
+    new-instance v0, Liip;
 
-    const/16 v1, 0xe
-
-    invoke-direct {v0, p0, p1, v1}, Lhdg;-><init>(Lcom/google/android/apps/camera/stats/Instrumentation;Lcom/google/android/apps/camera/stats/timing/TimingSession;I)V
+    invoke-direct {v0, p0, p1}, Liip;-><init>(Lcom/google/android/apps/camera/stats/Instrumentation;Lcom/google/android/apps/camera/stats/timing/TimingSession;)V
 
     invoke-interface {p1, v0}, Lcom/google/android/apps/camera/stats/timing/TimingSession;->b(Ljava/lang/Runnable;)V
     :try_end_0

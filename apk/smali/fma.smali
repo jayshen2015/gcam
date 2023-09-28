@@ -1,87 +1,33 @@
-.class final Lfma;
+.class public final synthetic Lfma;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lgxw;
+.implements Llie;
 
 
 # instance fields
-.field final synthetic a:Ljava/lang/Runnable;
+.field public final synthetic a:Llxn;
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/Runnable;)V
+.method public synthetic constructor <init>(Llxn;)V
     .locals 0
 
-    iput-object p1, p0, Lfma;->a:Ljava/lang/Runnable;
-
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lfma;->a:Llxn;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a()V
-    .locals 0
+.method public final close()V
+    .locals 1
 
-    return-void
-.end method
+    iget-object v0, p0, Lfma;->a:Llxn;
 
-.method public final synthetic b()V
-    .locals 0
-
-    return-void
-.end method
-
-.method public final synthetic c(Lfce;)V
-    .locals 0
-
-    return-void
-.end method
-
-.method public final synthetic d(Landroid/graphics/Bitmap;)V
-    .locals 0
-
-    return-void
-.end method
-
-.method public final synthetic e()V
-    .locals 0
-
-    return-void
-.end method
-
-.method public final synthetic f(Lmqp;)V
-    .locals 0
-
-    return-void
-.end method
-
-.method public final synthetic g(IILjava/lang/Throwable;)V
-    .locals 0
-
-    return-void
-.end method
-
-.method public final synthetic h(IILjava/lang/Throwable;)V
-    .locals 0
-
-    return-void
-.end method
-
-.method public final synthetic i(II)V
-    .locals 0
-
-    return-void
-.end method
-
-.method public final j(II)V
-    .locals 0
-
-    iget-object p1, p0, Lfma;->a:Ljava/lang/Runnable;
-
-    invoke-interface {p1}, Ljava/lang/Runnable;->run()V
+    invoke-virtual {v0}, Llxn;->close()V
 
     return-void
 .end method

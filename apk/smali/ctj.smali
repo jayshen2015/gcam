@@ -1,109 +1,72 @@
-.class public final Lctj;
-.super Lkfg;
+.class final Lctj;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Landroid/animation/Animator$AnimatorListener;
 
 
 # instance fields
-.field final synthetic a:Lctl;
+.field final synthetic a:Z
+
+.field final synthetic b:Lctl;
 
 
 # direct methods
-.method public constructor <init>(Lctl;)V
+.method public constructor <init>(Lctl;Z)V
     .locals 0
 
-    iput-object p1, p0, Lctj;->a:Lctl;
+    iput-object p1, p0, Lctj;->b:Lctl;
 
-    invoke-direct {p0}, Lkfg;-><init>()V
+    iput-boolean p2, p0, Lctj;->a:Z
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final bh(Lkfj;J)V
-    .locals 2
+.method public final onAnimationCancel(Landroid/animation/Animator;)V
+    .locals 0
 
-    iget-object v0, p0, Lctj;->a:Lctl;
+    return-void
+.end method
 
-    iget-object v0, v0, Lctl;->c:Ljava/lang/Object;
+.method public final onAnimationEnd(Landroid/animation/Animator;)V
+    .locals 1
 
-    monitor-enter v0
+    iget-object p1, p0, Lctj;->b:Lctl;
 
-    :try_start_0
-    iget-object v1, p0, Lctj;->a:Lctl;
+    const/4 v0, 0x0
 
-    iget-object v1, v1, Lctl;->k:Lkfj;
+    iput-object v0, p1, Lctl;->m:Landroid/animation/ObjectAnimator;
 
-    invoke-virtual {p1, v1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+    return-void
+.end method
 
-    move-result v1
+.method public final onAnimationRepeat(Landroid/animation/Animator;)V
+    .locals 0
 
-    if-eqz v1, :cond_0
+    return-void
+.end method
 
-    sget-object p1, Lctl;->a:Lnak;
+.method public final onAnimationStart(Landroid/animation/Animator;)V
+    .locals 1
 
-    invoke-virtual {p1}, Lnaf;->c()Lnaz;
+    iget-object p1, p0, Lctj;->b:Lctl;
 
-    move-result-object p1
+    iget-object p1, p1, Lctl;->f:Ljeg;
 
-    check-cast p1, Lnah;
+    iget-boolean v0, p0, Lctj;->a:Z
 
-    const/16 v1, 0x264
+    if-eqz v0, :cond_0
 
-    invoke-interface {p1, v1}, Lnah;->G(I)Lnaz;
-
-    move-result-object p1
-
-    check-cast p1, Lnah;
-
-    const-string v1, "onBufferLost in viewfinderStream => frame number: %d"
-
-    invoke-interface {p1, v1, p2, p3}, Lnah;->q(Ljava/lang/String;J)V
-
-    goto :goto_0
-
-    :cond_0
-    iget-object v1, p0, Lctj;->a:Lctl;
-
-    iget-object v1, v1, Lctl;->l:Lkfj;
-
-    invoke-virtual {p1, v1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
-
-    move-result p1
-
-    if-eqz p1, :cond_1
-
-    sget-object p1, Lctl;->a:Lnak;
-
-    invoke-virtual {p1}, Lnaf;->c()Lnaz;
-
-    move-result-object p1
-
-    check-cast p1, Lnah;
-
-    const/16 v1, 0x263
-
-    invoke-interface {p1, v1}, Lnah;->G(I)Lnaz;
-
-    move-result-object p1
-
-    check-cast p1, Lnah;
-
-    const-string v1, "onBufferLost in recordingStream => frame number: %d"
-
-    invoke-interface {p1, v1, p2, p3}, Lnah;->q(Ljava/lang/String;J)V
-
-    :cond_1
-    :goto_0
-    monitor-exit v0
+    invoke-virtual {p1}, Ljea;->b()V
 
     return-void
 
-    :catchall_0
-    move-exception p1
+    :cond_0
+    invoke-virtual {p1}, Ljea;->c()V
 
-    monitor-exit v0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw p1
+    return-void
 .end method

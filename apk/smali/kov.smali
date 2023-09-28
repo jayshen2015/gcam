@@ -1,47 +1,38 @@
-.class public final Lkov;
-.super Ljava/lang/Object;
-
-# interfaces
-.implements Lkow;
-
-
-# instance fields
-.field protected final a:Lkow;
+.class final Lkov;
+.super Lmip;
 
 
 # direct methods
-.method public constructor <init>(Lkow;)V
+.method public constructor <init>()V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lkov;->a:Lkow;
+    invoke-direct {p0}, Lmip;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Ljava/util/List;
-    .locals 1
+.method public final bridge synthetic u(Landroid/content/Context;Landroid/os/Looper;Lkmf;Ljava/lang/Object;Lkik;Lkil;)Lkie;
+    .locals 6
 
-    iget-object v0, p0, Lkov;->a:Lkow;
+    check-cast p4, Lkic;
 
-    invoke-interface {v0}, Lkow;->a()Ljava/util/List;
+    new-instance p4, Lkph;
 
-    move-result-object v0
+    move-object v0, p4
 
-    return-object v0
-.end method
+    move-object v1, p1
 
-.method public final j()Lkgd;
-    .locals 1
+    move-object v2, p2
 
-    iget-object v0, p0, Lkov;->a:Lkow;
+    move-object v3, p5
 
-    invoke-interface {v0}, Lkow;->j()Lkgd;
+    move-object v4, p6
 
-    move-result-object v0
+    move-object v5, p3
 
-    return-object v0
+    invoke-direct/range {v0 .. v5}, Lkph;-><init>(Landroid/content/Context;Landroid/os/Looper;Lkik;Lkil;Lkmf;)V
+
+    return-object p4
 .end method

@@ -1,7 +1,17 @@
-.class public interface abstract Lkrt;
-.super Ljava/lang/Object;
+.class public final Lkrt;
+.super Lbmn;
+
+# interfaces
+.implements Landroid/os/IInterface;
 
 
-# virtual methods
-.method public abstract a()Lnox;
+# direct methods
+.method public constructor <init>(Landroid/os/IBinder;)V
+    .locals 1
+
+    const-string v0, "com.google.android.gms.learning.internal.training.IInAppTrainer"
+
+    invoke-direct {p0, p1, v0}, Lbmn;-><init>(Landroid/os/IBinder;Ljava/lang/String;)V
+
+    return-void
 .end method

@@ -1,170 +1,110 @@
 .class public final Lnge;
-.super Lnws;
-
-# interfaces
-.implements Lnxz;
+.super Landroid/content/BroadcastReceiver;
 
 
 # static fields
-.field public static final c:Lnge;
+.field public static final a:Ljava/lang/Object;
 
-.field private static volatile d:Lnyf;
+.field public static volatile b:Z
 
-
-# instance fields
-.field public a:I
-
-.field public b:I
+.field static final c:Lnes;
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 2
+    .locals 1
 
-    new-instance v0, Lnge;
+    new-instance v0, Ljava/lang/Object;
 
-    invoke-direct {v0}, Lnge;-><init>()V
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
-    sput-object v0, Lnge;->c:Lnge;
+    sput-object v0, Lnge;->a:Ljava/lang/Object;
 
-    const-class v1, Lnge;
+    invoke-static {}, Lnes;->b()Lnes;
 
-    invoke-static {v1, v0}, Lnws;->aa(Ljava/lang/Class;Lnws;)V
+    move-result-object v0
+
+    sput-object v0, Lnge;->c:Lnes;
 
     return-void
 .end method
 
-.method private constructor <init>()V
+.method public constructor <init>()V
     .locals 0
 
-    invoke-direct {p0}, Lnws;-><init>()V
+    invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method protected final a(ILjava/lang/Object;)Ljava/lang/Object;
-    .locals 3
+.method public final onReceive(Landroid/content/Context;Landroid/content/Intent;)V
+    .locals 2
 
-    add-int/lit8 p1, p1, -0x1
+    const-string p1, "com.google.android.gms.phenotype.PACKAGE_NAME"
 
-    const/4 p2, 0x1
+    invoke-virtual {p2, p1}, Landroid/content/Intent;->getStringExtra(Ljava/lang/String;)Ljava/lang/String;
 
-    packed-switch p1, :pswitch_data_0
-
-    :pswitch_0
-    const/4 p1, 0x0
-
-    return-object p1
-
-    :pswitch_1
-    sget-object p1, Lnge;->d:Lnyf;
-
-    if-nez p1, :cond_1
-
-    const-class p2, Lnge;
-
-    monitor-enter p2
-
-    :try_start_0
-    sget-object p1, Lnge;->d:Lnyf;
+    move-result-object p1
 
     if-nez p1, :cond_0
 
-    new-instance p1, Lnwo;
-
-    sget-object v0, Lnge;->c:Lnge;
-
-    invoke-direct {p1, v0}, Lnwo;-><init>(Lnws;)V
-
-    sput-object p1, Lnge;->d:Lnyf;
+    return-void
 
     :cond_0
-    monitor-exit p2
+    sget-object p2, Lnge;->c:Lnes;
 
-    goto :goto_0
+    invoke-virtual {p2}, Long;->entrySet()Ljava/util/Set;
 
-    :catchall_0
-    move-exception p1
+    move-result-object p2
 
-    monitor-exit p2
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    invoke-interface {p2}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
 
-    throw p1
+    move-result-object p2
 
     :cond_1
     :goto_0
-    return-object p1
+    invoke-interface {p2}, Ljava/util/Iterator;->hasNext()Z
 
-    :pswitch_2
-    sget-object p1, Lnge;->c:Lnge;
+    move-result v0
 
-    return-object p1
+    if-eqz v0, :cond_2
 
-    :pswitch_3
-    new-instance p1, Lnwn;
+    invoke-interface {p2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    sget-object p2, Lnge;->c:Lnge;
+    move-result-object v0
 
-    invoke-direct {p1, p2}, Lnwn;-><init>(Lnws;)V
+    check-cast v0, Ljava/util/Map$Entry;
 
-    return-object p1
+    invoke-interface {v0}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
-    :pswitch_4
-    new-instance p1, Lnge;
+    move-result-object v1
 
-    invoke-direct {p1}, Lnge;-><init>()V
+    check-cast v1, Lojd;
 
-    return-object p1
+    iget-object v1, v1, Lojd;->a:Ljava/lang/Object;
 
-    :pswitch_5
-    const-string p1, "a"
+    check-cast v1, Ljava/lang/String;
 
-    const-string v0, "\u0001\u0001\u0000\u0001\u0001\u0001\u0001\u0000\u0000\u0000\u0001\u100c\u0000"
+    invoke-virtual {v1, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    const/4 v1, 0x3
+    move-result v1
 
-    new-array v1, v1, [Ljava/lang/Object;
+    if-eqz v1, :cond_1
 
-    const/4 v2, 0x0
+    invoke-interface {v0}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
-    aput-object p1, v1, v2
+    move-result-object v0
 
-    const-string p1, "b"
+    check-cast v0, Lnfi;
 
-    aput-object p1, v1, p2
+    iget-object v0, v0, Lnfi;->a:Lnfm;
 
-    const/4 p1, 0x2
+    invoke-virtual {v0}, Lnfm;->c()V
 
-    sget-object p2, Lkuf;->l:Lnww;
+    goto :goto_0
 
-    aput-object p2, v1, p1
-
-    sget-object p1, Lnge;->c:Lnge;
-
-    invoke-static {p1, v0, v1}, Lnge;->X(Lnxy;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object p1
-
-    return-object p1
-
-    :pswitch_6
-    invoke-static {p2}, Ljava/lang/Byte;->valueOf(B)Ljava/lang/Byte;
-
-    move-result-object p1
-
-    return-object p1
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_6
-        :pswitch_0
-        :pswitch_5
-        :pswitch_4
-        :pswitch_3
-        :pswitch_2
-        :pswitch_1
-    .end packed-switch
+    :cond_2
+    return-void
 .end method

@@ -16,19 +16,19 @@
 .method public final onReceive(Landroid/content/Context;Landroid/content/Intent;)V
     .locals 5
 
-    const-string v0, "com.google.android.apps.camera.wear.INSTALL_WEAR"
-
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v0
 
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    const-string v1, "com.google.android.apps.camera.wear.INSTALL_WEAR"
+
+    invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
     if-eqz v0, :cond_3
 
-    const v0, 0x7f1405ad
+    const v0, 0x7f14051f
 
     const/4 v1, 0x0
 
@@ -126,7 +126,7 @@
 
     invoke-virtual {p1, v0}, Landroid/content/Context;->sendBroadcast(Landroid/content/Intent;)V
 
-    sget v0, Labo;->a:I
+    sget v0, Ldl;->a:I
 
     const-string v0, "notification"
 
@@ -146,7 +146,7 @@
 
     move-result p2
 
-    invoke-static {p1}, Lamp;->a(Landroid/content/Context;)Lamp;
+    invoke-static {p1}, Lafp;->a(Landroid/content/Context;)Lafp;
 
     move-result-object v1
 
@@ -168,7 +168,7 @@
 
     move-result-object p1
 
-    invoke-virtual {v1, p1}, Lamp;->d(Landroid/content/Intent;)V
+    invoke-virtual {v1, p1}, Lafp;->d(Landroid/content/Intent;)V
 
     return-void
 

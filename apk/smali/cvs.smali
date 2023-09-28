@@ -1,53 +1,137 @@
-.class public final Lcvs;
+.class final Lcvs;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Logk;
+.implements Lphh;
 
 
 # instance fields
-.field private final a:Loiw;
+.field final synthetic a:Lcvt;
+
+.field private final synthetic b:I
 
 
 # direct methods
-.method public constructor <init>(Loiw;)V
+.method public constructor <init>(Lcvt;I)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput p2, p0, Lcvs;->b:I
 
-    iput-object p1, p0, Lcvs;->a:Loiw;
+    iput-object p1, p0, Lcvs;->a:Lcvt;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Lcvr;
-    .locals 3
+.method public final a(Ljava/lang/Throwable;)V
+    .locals 4
 
-    iget-object v0, p0, Lcvs;->a:Loiw;
+    iget p1, p0, Lcvs;->b:I
 
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
+    packed-switch p1, :pswitch_data_0
 
-    move-result-object v0
+    new-instance p1, Ldlr;
 
-    check-cast v0, Lcvr;
+    sget-object v0, Llju;->m:Llju;
 
-    new-instance v1, Lcvr;
+    const/4 v1, 0x2
+
+    new-array v1, v1, [Llwd;
 
     const/4 v2, 0x0
 
-    invoke-direct {v1, v0, v2, v2}, Lcvr;-><init>(Lcvr;[B[B)V
+    sget-object v3, Llwd;->b:Llwd;
 
-    return-object v1
+    aput-object v3, v1, v2
+
+    const/4 v2, 0x1
+
+    sget-object v3, Llwd;->a:Llwd;
+
+    aput-object v3, v1, v2
+
+    const-string v2, "Failed to open any of the available camera"
+
+    invoke-direct {p1, v2, v0, v1}, Ldlr;-><init>(Ljava/lang/String;Llju;[Llwd;)V
+
+    throw p1
+
+    :pswitch_0
+    new-instance p1, Llvz;
+
+    invoke-direct {p1}, Llvz;-><init>()V
+
+    throw p1
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method
 
-.method public final bridge synthetic get()Ljava/lang/Object;
-    .locals 1
+.method public final synthetic b(Ljava/lang/Object;)V
+    .locals 4
 
-    invoke-virtual {p0}, Lcvs;->a()Lcvr;
+    iget v0, p0, Lcvs;->b:I
 
-    move-result-object v0
+    packed-switch v0, :pswitch_data_0
 
-    return-object v0
+    check-cast p1, Lcxs;
+
+    iget-object v0, p0, Lcvs;->a:Lcvt;
+
+    iget-object v1, v0, Lcvt;->a:Ljtx;
+
+    invoke-virtual {v1}, Ljtx;->o()I
+
+    move-result v1
+
+    iget-object v2, p0, Lcvs;->a:Lcvt;
+
+    iget-object v2, v2, Lcvt;->a:Ljtx;
+
+    invoke-virtual {v2}, Ljtx;->n()I
+
+    move-result v2
+
+    const/4 v3, 0x3
+
+    invoke-virtual {v0, p1, v1, v2, v3}, Lcvt;->d(Lcxs;III)V
+
+    return-void
+
+    :pswitch_0
+    check-cast p1, Lcxs;
+
+    iget-object v0, p0, Lcvs;->a:Lcvt;
+
+    iget-object v1, v0, Lcvt;->a:Ljtx;
+
+    invoke-virtual {v1}, Ljtx;->m()I
+
+    move-result v1
+
+    iget-object v2, p0, Lcvs;->a:Lcvt;
+
+    iget-object v2, v2, Lcvt;->a:Ljtx;
+
+    invoke-virtual {v2}, Ljtx;->l()I
+
+    move-result v2
+
+    const/4 v3, 0x2
+
+    invoke-virtual {v0, p1, v1, v2, v3}, Lcvt;->d(Lcxs;III)V
+
+    return-void
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

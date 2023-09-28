@@ -1,94 +1,51 @@
-.class public final Lhkv;
+.class public final synthetic Lhkv;
 .super Ljava/lang/Object;
 
-
-# static fields
-.field public static final a:Lnak;
+# interfaces
+.implements Llie;
 
 
 # instance fields
-.field public final b:Landroid/util/LruCache;
+.field public final synthetic a:Lqkg;
+
+.field public final synthetic b:Lqkg;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
-
-    const-string v0, "com/google/android/apps/camera/storage/ProcessingMediaThumbnailCache"
-
-    invoke-static {v0}, Lnak;->h(Ljava/lang/String;)Lnak;
-
-    move-result-object v0
-
-    sput-object v0, Lhkv;->a:Lnak;
-
-    return-void
-.end method
-
-.method public constructor <init>()V
-    .locals 1
+.method public synthetic constructor <init>(Lqkg;Lqkg;)V
+    .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    new-instance v0, Lhku;
+    iput-object p1, p0, Lhkv;->a:Lqkg;
 
-    invoke-direct {v0}, Lhku;-><init>()V
-
-    iput-object v0, p0, Lhkv;->b:Landroid/util/LruCache;
+    iput-object p2, p0, Lhkv;->b:Lqkg;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Lgxy;)Landroid/graphics/Bitmap;
-    .locals 1
+.method public final close()V
+    .locals 2
 
-    iget-object v0, p0, Lhkv;->b:Landroid/util/LruCache;
+    iget-object v0, p0, Lhkv;->a:Lqkg;
 
-    invoke-virtual {v0, p1}, Landroid/util/LruCache;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    iget-object v1, p0, Lhkv;->b:Lqkg;
 
-    move-result-object p1
+    invoke-interface {v0}, Lqkg;->get()Ljava/lang/Object;
 
-    check-cast p1, Llpu;
+    move-result-object v0
 
-    if-eqz p1, :cond_0
+    check-cast v0, Ldvp;
 
-    iget-object p1, p1, Llpu;->b:Ljava/lang/Object;
+    invoke-interface {v1}, Lqkg;->get()Ljava/lang/Object;
 
-    check-cast p1, Landroid/graphics/Bitmap;
+    move-result-object v1
 
-    return-object p1
+    check-cast v1, Ldvq;
 
-    :cond_0
-    const/4 p1, 0x0
+    invoke-virtual {v0, v1}, Ldvp;->e(Ldvq;)V
 
-    return-object p1
-.end method
-
-.method public final b(Lgxy;)Ljava/lang/Integer;
-    .locals 1
-
-    iget-object v0, p0, Lhkv;->b:Landroid/util/LruCache;
-
-    invoke-virtual {v0, p1}, Landroid/util/LruCache;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object p1
-
-    check-cast p1, Llpu;
-
-    if-eqz p1, :cond_0
-
-    iget p1, p1, Llpu;->a:I
-
-    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object p1
-
-    return-object p1
-
-    :cond_0
-    const/4 p1, 0x0
-
-    return-object p1
+    return-void
 .end method

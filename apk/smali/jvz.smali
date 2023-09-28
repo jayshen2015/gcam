@@ -1,75 +1,71 @@
-.class final Ljvz;
+.class public final synthetic Ljvz;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Ljwb;
+.implements Landroid/view/View$OnClickListener;
 
 
 # instance fields
-.field final synthetic a:Ljava/lang/Object;
+.field public final synthetic a:Ljwd;
+
+.field private final synthetic b:I
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/Object;)V
+.method public synthetic constructor <init>(Ljwd;I)V
     .locals 0
 
-    iput-object p1, p0, Ljvz;->a:Ljava/lang/Object;
+    iput p2, p0, Ljvz;->b:I
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Ljvz;->a:Ljwd;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Lkai;Ljava/util/concurrent/Executor;)Lkad;
-    .locals 3
-
-    iget-object v0, p0, Ljvz;->a:Ljava/lang/Object;
-
-    new-instance v1, Ljoq;
-
-    const/16 v2, 0xd
-
-    invoke-direct {v1, p1, v0, v2}, Ljoq;-><init>(Lkai;Ljava/lang/Object;I)V
-
-    invoke-interface {p2, v1}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
-
-    sget-object p1, Ljwa;->a:Lkad;
-
-    return-object p1
-.end method
-
-.method public final bm()Ljava/lang/Object;
+.method public final onClick(Landroid/view/View;)V
     .locals 1
 
-    iget-object v0, p0, Ljvz;->a:Ljava/lang/Object;
+    iget p1, p0, Ljvz;->b:I
 
-    return-object v0
-.end method
+    packed-switch p1, :pswitch_data_0
 
-.method public final bn(Ljava/lang/Object;)V
-    .locals 0
+    iget-object p1, p0, Ljvz;->a:Ljwd;
+
+    iget-object p1, p1, Ljwd;->b:Ljvb;
+
+    invoke-virtual {p1}, Ljuy;->c()V
 
     return-void
-.end method
 
-.method public final toString()Ljava/lang/String;
-    .locals 2
+    :pswitch_0
+    iget-object p1, p0, Ljvz;->a:Ljwd;
 
-    const-string v0, "Prop.of"
+    iget-object p1, p1, Ljwd;->a:Ljvx;
 
-    invoke-static {v0}, Lmoz;->z(Ljava/lang/String;)Lmqo;
+    invoke-virtual {p1}, Ljvr;->d()V
 
-    move-result-object v0
+    return-void
 
-    iget-object v1, p0, Ljvz;->a:Ljava/lang/Object;
+    :pswitch_1
+    iget-object p1, p0, Ljvz;->a:Ljwd;
 
-    invoke-virtual {v0, v1}, Lmqo;->a(Ljava/lang/Object;)V
+    iget-object v0, p1, Ljwd;->a:Ljvx;
 
-    invoke-virtual {v0}, Lmqo;->toString()Ljava/lang/String;
+    invoke-virtual {v0}, Ljvr;->a()V
 
-    move-result-object v0
+    iget-object p1, p1, Ljwd;->b:Ljvb;
 
-    return-object v0
+    invoke-virtual {p1}, Ljuy;->b()V
+
+    return-void
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method

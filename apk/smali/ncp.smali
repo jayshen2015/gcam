@@ -3,89 +3,68 @@
 
 
 # instance fields
-.field public final a:Lndu;
+.field public final a:Lqkg;
 
-.field public final b:Ljava/lang/String;
+.field public final b:Lqkg;
+
+.field public final c:Lqkg;
+
+.field public final d:Lqkg;
 
 
 # direct methods
-.method public constructor <init>(Lndu;Ljava/lang/String;)V
-    .locals 1
+.method public constructor <init>(Lqkg;Lqkg;Lqkg;Lqkg;)V
+    .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const-string v0, "parser"
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    invoke-static {p1, v0}, Lndd;->h(Ljava/lang/Object;Ljava/lang/String;)V
+    iput-object p1, p0, Lncp;->a:Lqkg;
 
-    iput-object p1, p0, Lncp;->a:Lndu;
+    invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    const-string p1, "message"
+    iput-object p2, p0, Lncp;->b:Lqkg;
 
-    invoke-static {p2, p1}, Lndd;->h(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-virtual {p3}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    iput-object p2, p0, Lncp;->b:Ljava/lang/String;
+    iput-object p3, p0, Lncp;->c:Lqkg;
+
+    iput-object p4, p0, Lncp;->d:Lqkg;
 
     return-void
 .end method
 
+.method public constructor <init>(Lqkg;Lqkg;Lqkg;Lqkg;[B)V
+    .locals 0
 
-# virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 3
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    instance-of v0, p1, Lncp;
+    iput-object p1, p0, Lncp;->d:Lqkg;
 
-    const/4 v1, 0x0
+    iput-object p2, p0, Lncp;->a:Lqkg;
 
-    if-eqz v0, :cond_0
+    invoke-virtual {p3}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    check-cast p1, Lncp;
+    iput-object p3, p0, Lncp;->c:Lqkg;
 
-    iget-object v0, p0, Lncp;->a:Lndu;
+    iput-object p4, p0, Lncp;->b:Lqkg;
 
-    iget-object v2, p1, Lncp;->a:Lndu;
-
-    invoke-virtual {v0, v2}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    iget-object v0, p0, Lncp;->b:Ljava/lang/String;
-
-    iget-object p1, p1, Lncp;->b:Ljava/lang/String;
-
-    invoke-virtual {v0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result p1
-
-    if-eqz p1, :cond_0
-
-    const/4 p1, 0x1
-
-    return p1
-
-    :cond_0
-    return v1
+    return-void
 .end method
 
-.method public final hashCode()I
-    .locals 2
+.method public constructor <init>(Lqkg;Lqkg;Lqkg;Lqkg;[B[B)V
+    .locals 0
 
-    iget-object v0, p0, Lncp;->a:Lndu;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-virtual {v0}, Ljava/lang/Object;->hashCode()I
+    iput-object p1, p0, Lncp;->a:Lqkg;
 
-    move-result v0
+    iput-object p2, p0, Lncp;->d:Lqkg;
 
-    iget-object v1, p0, Lncp;->b:Ljava/lang/String;
+    iput-object p3, p0, Lncp;->b:Lqkg;
 
-    invoke-virtual {v1}, Ljava/lang/String;->hashCode()I
+    iput-object p4, p0, Lncp;->c:Lqkg;
 
-    move-result v1
-
-    xor-int/2addr v0, v1
-
-    return v0
+    return-void
 .end method

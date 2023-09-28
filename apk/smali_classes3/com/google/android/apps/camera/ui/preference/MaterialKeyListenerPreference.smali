@@ -61,14 +61,14 @@
 
 
 # virtual methods
-.method protected final G(ZLjava/lang/Object;)V
+.method protected final E(ZLjava/lang/Object;)V
     .locals 0
 
     if-eqz p1, :cond_0
 
     const-string p1, "-1"
 
-    invoke-virtual {p0, p1}, Landroidx/preference/Preference;->w(Ljava/lang/String;)Ljava/lang/String;
+    invoke-virtual {p0, p1}, Landroidx/preference/Preference;->u(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p1
 
@@ -86,7 +86,7 @@
 .end method
 
 .method protected final c()V
-    .locals 4
+    .locals 5
 
     iget-object v0, p0, Landroidx/preference/Preference;->q:Ljava/lang/CharSequence;
 
@@ -96,11 +96,25 @@
 
     invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/String;->length()I
+
+    move-result v1
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    add-int/lit8 v1, v1, 0xc
+
+    invoke-direct {v2, v1}, Ljava/lang/StringBuilder;-><init>(I)V
 
     const-string v1, "Bind Key to "
 
-    invoke-virtual {v1, v0}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
+    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v0
 
@@ -110,27 +124,47 @@
 
     iget-object v1, p0, Lcom/google/android/apps/camera/ui/preference/MaterialKeyListenerPreference;->g:Ljava/lang/String;
 
-    new-instance v2, Ljava/lang/StringBuilder;
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+    move-result-object v2
 
-    const-string v3, "Current Key Bind: "
+    invoke-virtual {v2}, Ljava/lang/String;->length()I
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result v2
 
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/lang/String;->length()I
+
+    move-result v3
+
+    new-instance v4, Ljava/lang/StringBuilder;
+
+    add-int/lit8 v2, v2, 0x33
+
+    add-int/2addr v2, v3
+
+    invoke-direct {v4, v2}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string v2, "Current Key Bind: "
+
+    invoke-virtual {v4, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     const-string v0, " (Key Code: "
 
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v4, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     const-string v0, ")\nPress key to rebind"
 
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v0
 
@@ -182,13 +216,13 @@
     :cond_0
     new-instance v0, Landroid/view/KeyEvent;
 
+    const/4 v1, 0x0
+
     invoke-static {p1}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
 
-    move-result v1
+    move-result v2
 
-    const/4 v2, 0x0
-
-    invoke-direct {v0, v2, v1}, Landroid/view/KeyEvent;-><init>(II)V
+    invoke-direct {v0, v1, v2}, Landroid/view/KeyEvent;-><init>(II)V
 
     invoke-virtual {v0}, Landroid/view/KeyEvent;->getUnicodeChar()I
 
@@ -207,15 +241,17 @@
     goto :goto_0
 
     :cond_1
-    int-to-char v0, v1
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    new-instance v1, Ljava/lang/StringBuilder;
+    const/4 v2, 0x1
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v0, v2}, Ljava/lang/StringBuilder;-><init>(I)V
 
-    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+    int-to-char v1, v1
 
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v0
 
@@ -274,19 +310,17 @@
 
     invoke-virtual {p0, v0}, Landroidx/preference/Preference;->n(Ljava/lang/CharSequence;)V
 
-    invoke-virtual {p0, p1}, Landroidx/preference/Preference;->ad(Ljava/lang/String;)V
+    invoke-virtual {p0, p1}, Landroidx/preference/Preference;->ab(Ljava/lang/String;)V
 
     invoke-virtual {p0}, Landroidx/preference/Preference;->j()Z
 
     move-result p1
 
-    invoke-virtual {p0, p1}, Landroidx/preference/Preference;->B(Z)V
+    invoke-virtual {p0, p1}, Landroidx/preference/Preference;->z(Z)V
 
     invoke-virtual {p0}, Landroidx/preference/Preference;->d()V
 
     return-void
-
-    nop
 
     :sswitch_data_0
     .sparse-switch
@@ -306,7 +340,7 @@
 
     iget-object v0, p0, Lcom/google/android/apps/camera/ui/preference/MaterialKeyListenerPreference;->h:Ljava/lang/String;
 
-    invoke-static {v0}, Lmqr;->b(Ljava/lang/String;)Z
+    invoke-static {v0}, Loje;->d(Ljava/lang/String;)Z
 
     move-result v1
 

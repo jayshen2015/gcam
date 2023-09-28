@@ -1,66 +1,74 @@
 .class public final Lbmt;
 .super Ljava/lang/Object;
 
-# interfaces
-.implements Landroid/hardware/Camera$PreviewCallback;
-
 
 # instance fields
-.field public final a:Landroidx/wear/ambient/AmbientMode$AmbientController;
+.field public final a:Lbnl;
 
-.field private final b:Landroid/os/Handler;
+.field public final b:Lddf;
+
+.field public final c:Liud;
+
+.field private final d:Llar;
 
 
 # direct methods
-.method private constructor <init>(Landroid/os/Handler;Landroidx/wear/ambient/AmbientMode$AmbientController;[B)V
+.method public constructor <init>(Llar;Lbnl;Lddf;Liud;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lbmt;->b:Landroid/os/Handler;
+    iput-object p1, p0, Lbmt;->d:Llar;
 
-    iput-object p2, p0, Lbmt;->a:Landroidx/wear/ambient/AmbientMode$AmbientController;
+    iput-object p2, p0, Lbmt;->a:Lbnl;
+
+    iput-object p3, p0, Lbmt;->b:Lddf;
+
+    iput-object p4, p0, Lbmt;->c:Liud;
 
     return-void
 .end method
 
-.method public static a(Landroid/os/Handler;Landroidx/wear/ambient/AmbientMode$AmbientController;)Lbmt;
-    .locals 2
-
-    const/4 v0, 0x0
-
-    if-eqz p0, :cond_1
-
-    if-nez p1, :cond_0
-
-    goto :goto_0
-
-    :cond_0
-    new-instance v1, Lbmt;
-
-    invoke-direct {v1, p0, p1, v0}, Lbmt;-><init>(Landroid/os/Handler;Landroidx/wear/ambient/AmbientMode$AmbientController;[B)V
-
-    return-object v1
-
-    :cond_1
-    :goto_0
-    return-object v0
-.end method
-
 
 # virtual methods
-.method public final onPreviewFrame([BLandroid/hardware/Camera;)V
-    .locals 2
+.method public final a(Llco;)Llie;
+    .locals 3
 
-    iget-object p2, p0, Lbmt;->b:Landroid/os/Handler;
+    iget-object v0, p0, Lbmt;->d:Llar;
 
-    new-instance v0, Lbem;
+    new-instance v1, Lbms;
 
-    const/4 v1, 0x6
+    const/4 v2, 0x1
 
-    invoke-direct {v0, p0, p1, v1}, Lbem;-><init>(Lbmt;[BI)V
+    invoke-direct {v1, p0, v2}, Lbms;-><init>(Lbmt;I)V
 
-    invoke-virtual {p2, v0}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
+    invoke-virtual {v0, v1}, Llar;->execute(Ljava/lang/Runnable;)V
+
+    new-instance v0, Lbmr;
+
+    invoke-direct {v0, p0}, Lbmr;-><init>(Lbmt;)V
+
+    iget-object v1, p0, Lbmt;->d:Llar;
+
+    invoke-interface {p1, v0, v1}, Llco;->a(Llij;Ljava/util/concurrent/Executor;)Llie;
+
+    move-result-object p1
+
+    return-object p1
+.end method
+
+.method public final b()V
+    .locals 3
+
+    iget-object v0, p0, Lbmt;->d:Llar;
+
+    new-instance v1, Lbms;
+
+    const/4 v2, 0x0
+
+    invoke-direct {v1, p0, v2}, Lbms;-><init>(Lbmt;I)V
+
+    invoke-virtual {v0, v1}, Llar;->execute(Ljava/lang/Runnable;)V
 
     return-void
 .end method

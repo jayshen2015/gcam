@@ -1,22 +1,13 @@
-.class final Lbcs;
-.super Laqa;
-
-
-# direct methods
-.method public constructor <init>(Lapt;)V
-    .locals 0
-
-    invoke-direct {p0, p1}, Laqa;-><init>(Lapt;)V
-
-    return-void
-.end method
+.class interface abstract Lbcs;
+.super Ljava/lang/Object;
 
 
 # virtual methods
-.method public final d()Ljava/lang/String;
-    .locals 1
+.method public abstract a(Ljava/lang/Object;)I
+.end method
 
-    const-string v0, "UPDATE workspec SET state=? WHERE id=?"
+.method public abstract b()I
+.end method
 
-    return-object v0
+.method public abstract c(I)Ljava/lang/Object;
 .end method

@@ -1,23 +1,71 @@
-.class public interface abstract Lldp;
+.class final Lldp;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Ljava/lang/AutoCloseable;
-.implements Landroid/media/AudioRouting;
+.implements Llff;
+
+
+# instance fields
+.field final synthetic a:Lldv;
+
+
+# direct methods
+.method public constructor <init>(Lldv;)V
+    .locals 0
+
+    iput-object p1, p0, Lldp;->a:Lldv;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method
 
 
 # virtual methods
-.method public abstract a()Landroid/media/AudioFormat;
+.method public final f()V
+    .locals 1
+
+    iget-object v0, p0, Lldp;->a:Lldv;
+
+    invoke-virtual {v0}, Lldv;->b()V
+
+    return-void
 .end method
 
-.method public abstract b(Ljava/nio/ByteBuffer;I)Lldo;
+.method public final fE(Llga;)V
+    .locals 0
+
+    iget-object p1, p0, Lldp;->a:Lldv;
+
+    invoke-virtual {p1}, Lldv;->b()V
+
+    return-void
 .end method
 
-.method public abstract c()V
+.method public final g()V
+    .locals 0
+
+    return-void
 .end method
 
-.method public abstract close()V
+.method public final h()V
+    .locals 1
+
+    iget-object v0, p0, Lldp;->a:Lldv;
+
+    invoke-virtual {v0}, Lldv;->b()V
+
+    return-void
 .end method
 
-.method public abstract d()V
+.method public final i()V
+    .locals 0
+
+    return-void
+.end method
+
+.method public final j(JJ)V
+    .locals 0
+
+    return-void
 .end method

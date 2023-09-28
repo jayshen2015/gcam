@@ -3,11 +3,5 @@
 
 
 # virtual methods
-.method public abstract a()V
-.end method
-
-.method public abstract b()V
-.end method
-
-.method public abstract c(Lkpb;)V
+.method public abstract e(Lhin;Ljava/util/concurrent/Executor;Ljava/util/Set;Lhsa;Lojc;)V
 .end method

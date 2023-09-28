@@ -2,11 +2,11 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lkad;
+.implements Landroid/view/View$OnClickListener;
 
 
 # instance fields
-.field public synthetic f$0:Lcom/google/android/apps/camera/bottombar/BottomBarController;
+.field public final synthetic f$0:Lcom/google/android/apps/camera/bottombar/BottomBarController;
 
 
 # direct methods
@@ -22,12 +22,12 @@
 
 
 # virtual methods
-.method public final close()V
+.method public final onClick(Landroid/view/View;)V
     .locals 1
 
     iget-object v0, p0, Lcom/google/android/apps/camera/bottombar/BottomBarController$$ExternalSyntheticLambda1;->f$0:Lcom/google/android/apps/camera/bottombar/BottomBarController;
 
-    invoke-virtual {v0}, Lcom/google/android/apps/camera/bottombar/BottomBarController;->lambda$makeClickableAwhile$1$com-google-android-apps-camera-bottombar-BottomBarController()V
+    invoke-virtual {v0, p1}, Lcom/google/android/apps/camera/bottombar/BottomBarController;->lambda$wireListeners$11$com-google-android-apps-camera-bottombar-BottomBarController(Landroid/view/View;)V
 
     return-void
 .end method

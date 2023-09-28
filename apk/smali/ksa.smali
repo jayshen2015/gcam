@@ -1,26 +1,30 @@
-.class public final Lksa;
-.super Ljava/lang/Object;
+.class final Lksa;
+.super Lkkk;
 
 
-# static fields
-.field public static final a:Lkrx;
-
-.field public static final b:Lksb;
+# instance fields
+.field final synthetic a:Lkvm;
 
 
 # direct methods
-.method static constructor <clinit>()V
+.method public constructor <init>(Lkvm;)V
+    .locals 0
+
+    iput-object p1, p0, Lksa;->a:Lkvm;
+
+    invoke-direct {p0}, Lkkk;-><init>()V
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public final b(Lcom/google/android/gms/common/api/Status;)V
     .locals 1
 
-    sget-object v0, Lkrx;->a:Lkrx;
+    iget-object v0, p0, Lksa;->a:Lkvm;
 
-    sput-object v0, Lksa;->a:Lkrx;
-
-    new-instance v0, Lksc;
-
-    invoke-direct {v0}, Lksc;-><init>()V
-
-    sput-object v0, Lksa;->b:Lksb;
+    invoke-static {p1, v0}, Lmip;->dB(Lcom/google/android/gms/common/api/Status;Lkvm;)V
 
     return-void
 .end method

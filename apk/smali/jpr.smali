@@ -1,89 +1,55 @@
 .class final Ljpr;
-.super Ljpn;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Llij;
 
 
 # instance fields
-.field private final a:Ljed;
-
-.field private final b:Ljpo;
-
-.field private final c:Ljnt;
+.field final synthetic a:Lcom/google/android/apps/camera/ui/gridlines/GridLinesUi;
 
 
 # direct methods
-.method public constructor <init>(Ljpo;Ljed;Ljnt;[B)V
+.method public constructor <init>(Lcom/google/android/apps/camera/ui/gridlines/GridLinesUi;)V
     .locals 0
 
-    invoke-direct {p0}, Ljpn;-><init>()V
+    iput-object p1, p0, Ljpr;->a:Lcom/google/android/apps/camera/ui/gridlines/GridLinesUi;
 
-    iput-object p1, p0, Ljpr;->b:Ljpo;
-
-    iput-object p2, p0, Ljpr;->a:Ljed;
-
-    iput-object p3, p0, Ljpr;->c:Ljnt;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final c(Lcom/google/android/gms/common/api/Status;)V
-    .locals 1
+.method public final bridge synthetic fB(Ljava/lang/Object;)V
+    .locals 2
 
-    invoke-virtual {p1}, Lcom/google/android/gms/common/api/Status;->b()Z
+    check-cast p1, Ljava/lang/Integer;
 
-    move-result v0
+    iget-object v0, p0, Ljpr;->a:Lcom/google/android/apps/camera/ui/gridlines/GridLinesUi;
 
-    if-nez v0, :cond_0
+    invoke-virtual {p1}, Ljava/lang/Integer;->intValue()I
 
-    iget-object v0, p0, Ljpr;->a:Ljed;
+    move-result p1
 
-    invoke-interface {v0, p1}, Ljed;->c(Ljava/lang/Object;)V
+    invoke-static {p1}, Ljbp;->a(I)Ljbp;
 
-    return-void
+    move-result-object p1
 
-    :cond_0
-    iget-object p1, p0, Ljpr;->a:Ljed;
+    iget-object v1, v0, Lcom/google/android/apps/camera/ui/gridlines/GridLinesUi;->b:Ljbl;
 
-    sget-object v0, Lcom/google/android/gms/common/api/Status;->a:Lcom/google/android/gms/common/api/Status;
+    iget-object v0, v0, Lcom/google/android/apps/camera/ui/gridlines/GridLinesUi;->a:Ljava/util/Map;
 
-    invoke-interface {p1, v0}, Ljed;->c(Ljava/lang/Object;)V
+    invoke-interface {v0, p1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
-    return-void
-.end method
+    move-result-object p1
 
-.method public final d(Lcom/google/android/gms/common/api/Status;)V
-    .locals 1
+    check-cast p1, Ljbm;
 
-    invoke-virtual {p1}, Lcom/google/android/gms/common/api/Status;->b()Z
+    invoke-static {p1}, Lobr;->ao(Ljava/lang/Object;)Ljava/lang/Object;
 
-    move-result v0
-
-    if-nez v0, :cond_0
-
-    iget-object v0, p0, Ljpr;->a:Ljed;
-
-    invoke-interface {v0, p1}, Ljed;->c(Ljava/lang/Object;)V
-
-    return-void
-
-    :cond_0
-    iget-object p1, p0, Ljpr;->c:Ljnt;
-
-    if-nez p1, :cond_1
-
-    iget-object p1, p0, Ljpr;->a:Ljed;
-
-    sget-object v0, Lcom/google/android/gms/common/api/Status;->a:Lcom/google/android/gms/common/api/Status;
-
-    invoke-interface {p1, v0}, Ljed;->c(Ljava/lang/Object;)V
-
-    return-void
-
-    :cond_1
-    iget-object v0, p0, Ljpr;->b:Ljpo;
-
-    invoke-virtual {v0, p1, p0}, Ljpo;->e(Ljnt;Ljpn;)V
+    invoke-virtual {v1, p1}, Ljbl;->a(Ljbm;)V
 
     return-void
 .end method

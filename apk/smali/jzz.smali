@@ -1,81 +1,40 @@
-.class public final Ljzz;
-.super Lkaa;
+.class final Ljzz;
+.super Lkbz;
+
+
+# instance fields
+.field final synthetic a:Lkab;
 
 
 # direct methods
-.method public constructor <init>(Ljava/util/NavigableMap;)V
+.method public constructor <init>(Lkab;)V
     .locals 0
 
-    invoke-direct {p0, p1}, Lkaa;-><init>(Ljava/util/NavigableMap;)V
+    iput-object p1, p0, Ljzz;->a:Lkab;
+
+    invoke-direct {p0, p1}, Lkbz;-><init>(Lkcb;)V
 
     return-void
 .end method
 
-.method private final a()Ljava/lang/Object;
-    .locals 2
-
-    invoke-virtual {p0}, Lkaa;->size()I
-
-    move-result v0
-
-    const/16 v1, 0x2328
-
-    if-le v0, v1, :cond_0
-
-    invoke-super {p0}, Lkaa;->navigableKeySet()Ljava/util/NavigableSet;
-
-    move-result-object v0
-
-    invoke-static {v0}, Ljava/util/Collections;->min(Ljava/util/Collection;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/lang/Comparable;
-
-    invoke-super {p0, v0}, Lkaa;->remove(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    return-object v0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    return-object v0
-.end method
-
 
 # virtual methods
-.method public final put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 0
+.method public final a()V
+    .locals 2
 
-    invoke-super {p0, p1, p2}, Lkaa;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    iget-object v0, p0, Ljzz;->a:Lkab;
 
-    move-result-object p1
+    iget-object v0, v0, Lkab;->a:Lihu;
 
-    if-eqz p1, :cond_0
+    invoke-virtual {v0}, Lihu;->e()V
 
-    return-object p1
+    iget-object v0, p0, Ljzz;->a:Lkab;
 
-    :cond_0
-    invoke-direct {p0}, Ljzz;->a()Ljava/lang/Object;
+    iget-object v1, v0, Lkab;->a:Lihu;
 
-    move-result-object p1
+    iget-object v0, v0, Lkab;->c:Lihw;
 
-    return-object p1
-.end method
-
-.method public final putAll(Ljava/util/Map;)V
-    .locals 0
-
-    invoke-super {p0, p1}, Lkaa;->putAll(Ljava/util/Map;)V
-
-    :cond_0
-    invoke-direct {p0}, Ljzz;->a()Ljava/lang/Object;
-
-    move-result-object p1
-
-    if-nez p1, :cond_0
+    invoke-virtual {v1, v0}, Lihu;->g(Lihw;)V
 
     return-void
 .end method

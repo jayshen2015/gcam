@@ -16,7 +16,7 @@
 .method public final a()Landroid/widget/TextView;
     .locals 1
 
-    const v0, 0x7f0b027b
+    const v0, 0x7f0b022a
 
     invoke-virtual {p0, v0}, Lcom/google/android/apps/camera/ui/elapsedtimeui/ElapsedTimerView;->findViewById(I)Landroid/view/View;
 
@@ -30,7 +30,7 @@
 .method public final b()Landroid/widget/TextView;
     .locals 1
 
-    const v0, 0x7f0b02b8
+    const v0, 0x7f0b0250
 
     invoke-virtual {p0, v0}, Lcom/google/android/apps/camera/ui/elapsedtimeui/ElapsedTimerView;->findViewById(I)Landroid/view/View;
 
@@ -58,9 +58,15 @@
 
     check-cast v0, Landroid/view/LayoutInflater;
 
-    const v1, 0x7f0e0053
+    const v1, 0x7f0e004f
 
     invoke-virtual {v0, v1, p0}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;)Landroid/view/View;
+
+    const/4 v0, 0x1
+
+    const/4 v1, 0x0
+
+    invoke-virtual {p0, v0, v1}, Lcom/google/android/apps/camera/ui/elapsedtimeui/ElapsedTimerView;->setLayerType(ILandroid/graphics/Paint;)V
 
     return-void
 .end method

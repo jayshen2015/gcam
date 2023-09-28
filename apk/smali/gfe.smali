@@ -1,105 +1,345 @@
-.class public final enum Lgfe;
-.super Ljava/lang/Enum;
-
-# interfaces
-.implements Lgee;
-
-
-# static fields
-.field public static final enum a:Lgfe;
-
-.field public static final enum b:Lgfe;
-
-.field private static final synthetic f:[Lgfe;
+.class public final Lgfe;
+.super Ljava/lang/Object;
 
 
 # instance fields
-.field public final c:I
+.field private a:Ljava/util/List;
 
-.field public final d:I
-
-.field public final e:Ljava/lang/String;
+.field private b:I
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 13
+.method public constructor <init>()V
+    .locals 1
 
-    const-string v5, "RawPhoto"
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    new-instance v6, Lgfe;
+    const/4 v0, 0x1
 
-    const-string v1, "RAW_CAPTURE_ENABLED"
+    iput v0, p0, Lgfe;->b:I
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public final declared-synchronized a()V
+    .locals 2
+
+    monitor-enter p0
+
+    :try_start_0
+    iget v0, p0, Lgfe;->b:I
+
+    const/4 v1, 0x1
+
+    if-ne v0, v1, :cond_0
+
+    goto :goto_0
+
+    :cond_0
+    const/4 v1, 0x0
+
+    :goto_0
+    invoke-static {v1}, Lobr;->aQ(Z)V
+
+    const/4 v0, 0x4
+
+    iput v0, p0, Lgfe;->b:I
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    monitor-exit p0
+
+    return-void
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit p0
+
+    throw v0
+.end method
+
+.method public final declared-synchronized b()V
+    .locals 2
+
+    monitor-enter p0
+
+    :try_start_0
+    iget v0, p0, Lgfe;->b:I
+
+    const/4 v1, 0x1
+
+    if-ne v0, v1, :cond_0
+
+    goto :goto_0
+
+    :cond_0
+    const/4 v1, 0x0
+
+    :goto_0
+    invoke-static {v1}, Lobr;->aQ(Z)V
+
+    const/4 v0, 0x3
+
+    iput v0, p0, Lgfe;->b:I
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    monitor-exit p0
+
+    return-void
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit p0
+
+    throw v0
+.end method
+
+.method public final declared-synchronized c(Loom;)V
+    .locals 0
+
+    monitor-enter p0
+
+    :try_start_0
+    iput-object p1, p0, Lgfe;->a:Ljava/util/List;
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    monitor-exit p0
+
+    return-void
+
+    :catchall_0
+    move-exception p1
+
+    monitor-exit p0
+
+    throw p1
+.end method
+
+.method public final declared-synchronized d()V
+    .locals 2
+
+    monitor-enter p0
+
+    :try_start_0
+    iget v0, p0, Lgfe;->b:I
+
+    const/4 v1, 0x1
+
+    if-ne v0, v1, :cond_0
+
+    goto :goto_0
+
+    :cond_0
+    const/4 v1, 0x0
+
+    :goto_0
+    invoke-static {v1}, Lobr;->aQ(Z)V
+
+    const/4 v0, 0x2
+
+    iput v0, p0, Lgfe;->b:I
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    monitor-exit p0
+
+    return-void
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit p0
+
+    throw v0
+.end method
+
+.method public final declared-synchronized e(Lpoy;)V
+    .locals 7
+
+    monitor-enter p0
+
+    :try_start_0
+    iget-object v0, p0, Lgfe;->a:Ljava/util/List;
+
+    const/4 v1, 0x0
+
+    if-eqz v0, :cond_4
+
+    iget-boolean v2, p1, Lpoy;->c:Z
+
+    if-eqz v2, :cond_0
+
+    invoke-virtual {p1}, Lpoy;->m()V
+
+    iput-boolean v1, p1, Lpoy;->c:Z
+
+    :cond_0
+    iget-object v2, p1, Lpoy;->b:Lppd;
+
+    check-cast v2, Lpcw;
+
+    sget-object v3, Lpcw;->m:Lpcw;
+
+    invoke-static {}, Lpcw;->A()Lppm;
+
+    move-result-object v3
+
+    iput-object v3, v2, Lpcw;->i:Lppm;
 
     const/4 v2, 0x0
 
-    const v3, 0x7f08025a
+    :goto_0
+    invoke-interface {v0}, Ljava/util/List;->size()I
 
-    const v4, 0x7f14045b
+    move-result v3
 
-    move-object v0, v6
+    if-ge v2, v3, :cond_4
 
-    invoke-direct/range {v0 .. v5}, Lgfe;-><init>(Ljava/lang/String;IIILjava/lang/String;)V
+    sget-object v3, Lpcz;->c:Lpcz;
 
-    sput-object v6, Lgfe;->a:Lgfe;
+    invoke-virtual {v3}, Lppd;->m()Lpoy;
 
-    const-string v12, "BackPhotoFlash"
+    move-result-object v3
 
-    new-instance v0, Lgfe;
+    invoke-interface {v0, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
-    const-string v8, "FLASH_ON"
+    move-result-object v4
 
-    const/4 v9, 0x1
+    check-cast v4, Ljava/lang/Long;
 
-    const v10, 0x7f080349
+    invoke-virtual {v4}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    const v11, 0x7f1401af
+    invoke-virtual {v4}, Ljava/lang/Long;->longValue()J
 
-    move-object v7, v0
+    move-result-wide v4
 
-    invoke-direct/range {v7 .. v12}, Lgfe;-><init>(Ljava/lang/String;IIILjava/lang/String;)V
+    long-to-int v5, v4
 
-    sput-object v0, Lgfe;->b:Lgfe;
+    iget-boolean v4, v3, Lpoy;->c:Z
 
-    const/4 v1, 0x2
+    if-eqz v4, :cond_1
 
-    new-array v1, v1, [Lgfe;
+    invoke-virtual {v3}, Lpoy;->m()V
 
-    aput-object v6, v1, v2
+    iput-boolean v1, v3, Lpoy;->c:Z
 
-    const/4 v2, 0x1
+    :cond_1
+    iget-object v4, v3, Lpoy;->b:Lppd;
 
-    aput-object v0, v1, v2
+    check-cast v4, Lpcz;
 
-    sput-object v1, Lgfe;->f:[Lgfe;
+    iget v6, v4, Lpcz;->a:I
+
+    or-int/lit8 v6, v6, 0x1
+
+    iput v6, v4, Lpcz;->a:I
+
+    iput v5, v4, Lpcz;->b:I
+
+    invoke-virtual {v3}, Lpoy;->h()Lppd;
+
+    move-result-object v3
+
+    check-cast v3, Lpcz;
+
+    iget-boolean v4, p1, Lpoy;->c:Z
+
+    if-eqz v4, :cond_2
+
+    invoke-virtual {p1}, Lpoy;->m()V
+
+    iput-boolean v1, p1, Lpoy;->c:Z
+
+    :cond_2
+    iget-object v4, p1, Lpoy;->b:Lppd;
+
+    check-cast v4, Lpcw;
+
+    invoke-virtual {v3}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    iget-object v5, v4, Lpcw;->i:Lppm;
+
+    invoke-interface {v5}, Lppm;->c()Z
+
+    move-result v6
+
+    if-nez v6, :cond_3
+
+    invoke-static {v5}, Lppd;->B(Lppm;)Lppm;
+
+    move-result-object v5
+
+    iput-object v5, v4, Lpcw;->i:Lppm;
+
+    :cond_3
+    iget-object v4, v4, Lpcw;->i:Lppm;
+
+    invoke-interface {v4, v3}, Lppm;->add(Ljava/lang/Object;)Z
+
+    add-int/lit8 v2, v2, 0x1
+
+    goto :goto_0
+
+    :cond_4
+    iget v0, p0, Lgfe;->b:I
+
+    iget-boolean v2, p1, Lpoy;->c:Z
+
+    if-eqz v2, :cond_5
+
+    invoke-virtual {p1}, Lpoy;->m()V
+
+    iput-boolean v1, p1, Lpoy;->c:Z
+
+    :cond_5
+    iget-object p1, p1, Lpoy;->b:Lppd;
+
+    check-cast p1, Lpcw;
+
+    add-int/lit8 v1, v0, -0x1
+
+    sget-object v2, Lpcw;->m:Lpcw;
+
+    if-eqz v0, :cond_6
+
+    iput v1, p1, Lpcw;->k:I
+
+    iget v0, p1, Lpcw;->a:I
+
+    or-int/lit16 v0, v0, 0x100
+
+    iput v0, p1, Lpcw;->a:I
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    monitor-exit p0
 
     return-void
-.end method
 
-.method private constructor <init>(Ljava/lang/String;IIILjava/lang/String;)V
-    .locals 0
+    :cond_6
+    const/4 p1, 0x0
 
-    invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+    :try_start_1
+    throw p1
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    iput p3, p0, Lgfe;->c:I
+    :catchall_0
+    move-exception p1
 
-    iput p4, p0, Lgfe;->d:I
+    monitor-exit p0
 
-    iput-object p5, p0, Lgfe;->e:Ljava/lang/String;
+    goto :goto_2
 
-    return-void
-.end method
+    :goto_1
+    throw p1
 
-.method public static values()[Lgfe;
-    .locals 1
-
-    sget-object v0, Lgfe;->f:[Lgfe;
-
-    invoke-virtual {v0}, [Lgfe;->clone()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, [Lgfe;
-
-    return-object v0
+    :goto_2
+    goto :goto_1
 .end method

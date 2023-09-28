@@ -1,30 +1,34 @@
 .class public final Llam;
-.super Llak;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Ljava/util/concurrent/Executor;
+.implements Llas;
+
+
+# instance fields
+.field private final a:Landroid/os/Handler;
 
 
 # direct methods
-.method public constructor <init>()V
+.method public constructor <init>(Landroid/os/Handler;)V
     .locals 0
 
-    invoke-direct {p0}, Llak;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Llam;->a:Landroid/os/Handler;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()I
+.method public final execute(Ljava/lang/Runnable;)V
     .locals 1
 
-    const/16 v0, 0x10
+    iget-object v0, p0, Llam;->a:Landroid/os/Handler;
 
-    return v0
-.end method
+    invoke-virtual {v0, p1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-.method public final b()Ljava/lang/String;
-    .locals 1
-
-    const-string v0, "UInt16"
-
-    return-object v0
+    return-void
 .end method

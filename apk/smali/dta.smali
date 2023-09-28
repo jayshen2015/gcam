@@ -1,37 +1,16 @@
-.class public final synthetic Ldta;
+.class final Ldta;
 .super Ljava/lang/Object;
-
-# interfaces
-.implements Ldsw;
-
-
-# static fields
-.field public static final synthetic a:Ldta;
 
 
 # instance fields
-.field private final synthetic b:I
+.field final synthetic a:I
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
-
-    new-instance v0, Ldta;
-
-    const/4 v1, 0x2
-
-    invoke-direct {v0, v1}, Ldta;-><init>(I)V
-
-    sput-object v0, Ldta;->a:Ldta;
-
-    return-void
-.end method
-
-.method public synthetic constructor <init>(I)V
+.method public constructor <init>(I)V
     .locals 0
 
-    iput p1, p0, Ldta;->b:I
+    iput p1, p0, Ldta;->a:I
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -40,12 +19,24 @@
 
 
 # virtual methods
-.method public final e()Z
-    .locals 2
+.method public final a(I)I
+    .locals 1
 
-    iget v0, p0, Ldta;->b:I
+    iget v0, p0, Ldta;->a:I
 
-    const/4 v1, 0x0
+    if-ne p1, v0, :cond_0
 
-    return v1
+    const/4 p1, 0x1
+
+    goto :goto_0
+
+    :cond_0
+    const/4 p1, 0x0
+
+    :goto_0
+    invoke-static {p1}, Lobr;->aF(Z)V
+
+    iget p1, p0, Ldta;->a:I
+
+    return p1
 .end method

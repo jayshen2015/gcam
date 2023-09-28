@@ -2,158 +2,98 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Ljwb;
+.implements Lpys;
 
 
 # instance fields
-.field public final a:Lfuz;
+.field private final a:Lqkg;
 
-.field private final b:Z
+.field private final b:Lqkg;
 
-.field private final c:Lgcd;
-
-.field private final d:Lgcd;
+.field private final c:Lqkg;
 
 
 # direct methods
-.method public constructor <init>(Ljwb;Ljwb;Lfuz;Lgcc;)V
-    .locals 1
+.method public constructor <init>(Lqkg;Lqkg;Lqkg;)V
+    .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p3, p0, Lgce;->a:Lfuz;
+    iput-object p1, p0, Lgce;->a:Lqkg;
 
-    new-instance v0, Lgcd;
+    iput-object p2, p0, Lgce;->b:Lqkg;
 
-    invoke-direct {v0, p1, p4}, Lgcd;-><init>(Ljwb;Lgcc;)V
-
-    iput-object v0, p0, Lgce;->c:Lgcd;
-
-    new-instance p1, Lgcd;
-
-    invoke-direct {p1, p2, p4}, Lgcd;-><init>(Ljwb;Lgcc;)V
-
-    iput-object p1, p0, Lgce;->d:Lgcd;
-
-    invoke-virtual {p3}, Lklw;->I()Z
-
-    move-result p1
-
-    iput-boolean p1, p0, Lgce;->b:Z
+    iput-object p3, p0, Lgce;->c:Lqkg;
 
     return-void
+.end method
+
+.method public static a(Lqkg;Lqkg;Lqkg;)Lgce;
+    .locals 1
+
+    new-instance v0, Lgce;
+
+    invoke-direct {v0, p0, p1, p2}, Lgce;-><init>(Lqkg;Lqkg;Lqkg;)V
+
+    return-object v0
 .end method
 
 
 # virtual methods
-.method public final a(Lkai;Ljava/util/concurrent/Executor;)Lkad;
+.method public final b()Lgcn;
     .locals 4
 
-    new-instance v0, Ljuf;
+    iget-object v0, p0, Lgce;->a:Lqkg;
 
-    invoke-direct {v0}, Ljuf;-><init>()V
+    invoke-interface {v0}, Lqkg;->get()Ljava/lang/Object;
 
-    iget-object v1, p0, Lgce;->c:Lgcd;
+    move-result-object v0
 
-    new-instance v2, Lecf;
+    check-cast v0, Lddf;
 
-    const/16 v3, 0xc
+    iget-object v1, p0, Lgce;->b:Lqkg;
 
-    invoke-direct {v2, p0, p1, v3}, Lecf;-><init>(Lgce;Lkai;I)V
-
-    invoke-virtual {v1, v2, p2}, Ljwi;->a(Lkai;Ljava/util/concurrent/Executor;)Lkad;
+    invoke-interface {v1}, Lqkg;->get()Ljava/lang/Object;
 
     move-result-object v1
 
-    invoke-virtual {v0, v1}, Ljuf;->d(Lkad;)V
+    check-cast v1, Lgco;
 
-    iget-object v1, p0, Lgce;->d:Lgcd;
+    iget-object v2, p0, Lgce;->c:Lqkg;
 
-    new-instance v2, Lecf;
+    invoke-interface {v2}, Lqkg;->get()Ljava/lang/Object;
 
-    const/16 v3, 0xd
+    move-result-object v2
 
-    invoke-direct {v2, p0, p1, v3}, Lecf;-><init>(Lgce;Lkai;I)V
+    check-cast v2, Lgee;
 
-    invoke-virtual {v1, v2, p2}, Ljwi;->a(Lkai;Ljava/util/concurrent/Executor;)Lkad;
+    sget-object v3, Ldds;->x:Lddg;
 
-    move-result-object p1
+    invoke-interface {v0, v3}, Lddf;->k(Lddg;)Z
 
-    invoke-virtual {v0, p1}, Ljuf;->d(Lkad;)V
+    move-result v0
 
-    return-object v0
-.end method
+    const/4 v3, 0x1
 
-.method public final bridge synthetic bm()Ljava/lang/Object;
-    .locals 2
-
-    iget-boolean v0, p0, Lgce;->b:Z
-
-    if-nez v0, :cond_0
-
-    sget-object v0, Lgcc;->b:Lgcc;
+    if-ne v3, v0, :cond_0
 
     goto :goto_0
 
     :cond_0
-    iget-object v0, p0, Lgce;->a:Lfuz;
-
-    invoke-virtual {v0}, Lklw;->k()Lklv;
-
-    move-result-object v0
-
-    sget-object v1, Lklv;->a:Lklv;
-
-    if-ne v0, v1, :cond_1
-
-    iget-object v0, p0, Lgce;->d:Lgcd;
-
-    invoke-virtual {v0}, Ljwi;->bm()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lgcc;
-
-    goto :goto_0
-
-    :cond_1
-    iget-object v0, p0, Lgce;->c:Lgcd;
-
-    invoke-virtual {v0}, Ljwi;->bm()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lgcc;
+    move-object v1, v2
 
     :goto_0
-    return-object v0
+    invoke-static {v1}, Lqmd;->ae(Ljava/lang/Object;)V
+
+    return-object v1
 .end method
 
-.method public final bridge synthetic bn(Ljava/lang/Object;)V
-    .locals 2
+.method public final bridge synthetic get()Ljava/lang/Object;
+    .locals 1
 
-    check-cast p1, Lgcc;
-
-    iget-object v0, p0, Lgce;->a:Lfuz;
-
-    invoke-virtual {v0}, Lklw;->k()Lklv;
+    invoke-virtual {p0}, Lgce;->b()Lgcn;
 
     move-result-object v0
 
-    sget-object v1, Lklv;->a:Lklv;
-
-    if-ne v0, v1, :cond_0
-
-    iget-object v0, p0, Lgce;->d:Lgcd;
-
-    invoke-virtual {v0, p1}, Ljwi;->bn(Ljava/lang/Object;)V
-
-    return-void
-
-    :cond_0
-    iget-object v0, p0, Lgce;->c:Lgcd;
-
-    invoke-virtual {v0, p1}, Ljwi;->bn(Ljava/lang/Object;)V
-
-    return-void
+    return-object v0
 .end method

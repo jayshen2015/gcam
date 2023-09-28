@@ -1,294 +1,534 @@
 .class public final Ldhx;
 .super Ljava/lang/Object;
 
+# interfaces
+.implements Lpys;
 
-# static fields
-.field public static final a:Ldhk;
 
-.field public static final b:Ldhk;
+# instance fields
+.field private final a:Lqkg;
 
-.field public static final c:Ldhk;
-
-.field public static final d:Ldhk;
-
-.field public static final e:Ldhj;
-
-.field public static final f:Ldhj;
-
-.field public static final g:Ldhj;
-
-.field public static final h:Ldhj;
-
-.field public static final i:Ldhj;
-
-.field public static final j:Ldhj;
-
-.field public static final k:Ldhj;
-
-.field public static final l:Ldhj;
+.field private final synthetic b:I
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 4
+.method public constructor <init>(Lqkg;I)V
+    .locals 0
 
-    new-instance v0, Lnoc;
+    iput p2, p0, Ldhx;->b:I
 
-    invoke-direct {v0}, Lnoc;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const-string v1, "camera.lasagna"
+    iput-object p1, p0, Ldhx;->a:Lqkg;
 
-    iput-object v1, v0, Lnoc;->b:Ljava/lang/Object;
+    return-void
+.end method
 
-    invoke-virtual {v0}, Lnoc;->t()Ldhj;
+.method public static a(Lqkg;)Ldhx;
+    .locals 2
 
-    move-result-object v0
+    new-instance v0, Ldhx;
 
-    sput-object v0, Ldhx;->e:Ldhj;
+    const/16 v1, 0xf
 
-    new-instance v0, Lnoc;
+    invoke-direct {v0, p0, v1}, Ldhx;-><init>(Lqkg;I)V
 
-    invoke-direct {v0}, Lnoc;-><init>()V
+    return-object v0
+.end method
 
-    const-string v1, "camera.lasagna_options"
 
-    iput-object v1, v0, Lnoc;->b:Ljava/lang/Object;
+# virtual methods
+.method public final synthetic get()Ljava/lang/Object;
+    .locals 5
 
-    invoke-virtual {v0}, Lnoc;->t()Ldhj;
-
-    move-result-object v0
-
-    sput-object v0, Ldhx;->f:Ldhj;
-
-    new-instance v0, Lnoc;
-
-    invoke-direct {v0}, Lnoc;-><init>()V
-
-    const-string v1, "camera.lasagna_type_0_option"
-
-    iput-object v1, v0, Lnoc;->b:Ljava/lang/Object;
-
-    new-instance v0, Lnoc;
-
-    invoke-direct {v0}, Lnoc;-><init>()V
-
-    const-string v1, "camera.lasagna_bottom_layer"
-
-    iput-object v1, v0, Lnoc;->b:Ljava/lang/Object;
-
-    invoke-virtual {v0}, Lnoc;->t()Ldhj;
-
-    move-result-object v0
-
-    sput-object v0, Ldhx;->g:Ldhj;
-
-    new-instance v0, Lnoc;
-
-    invoke-direct {v0}, Lnoc;-><init>()V
-
-    const-string v1, "camera.lasagna_tr_options"
-
-    iput-object v1, v0, Lnoc;->b:Ljava/lang/Object;
-
-    new-instance v0, Lnoc;
-
-    invoke-direct {v0}, Lnoc;-><init>()V
-
-    const-string v1, "camera.lasagna_smarts"
-
-    iput-object v1, v0, Lnoc;->b:Ljava/lang/Object;
-
-    new-instance v0, Lnoc;
-
-    invoke-direct {v0}, Lnoc;-><init>()V
-
-    const-string v1, "camera.lasagna_smarts_session_frequency"
-
-    iput-object v1, v0, Lnoc;->b:Ljava/lang/Object;
-
-    invoke-virtual {v0}, Lnoc;->l()Ldhk;
-
-    move-result-object v0
-
-    sput-object v0, Ldhx;->a:Ldhk;
-
-    new-instance v0, Lnoc;
-
-    invoke-direct {v0}, Lnoc;-><init>()V
-
-    const-string v1, "camera.lasagna.hfr"
-
-    iput-object v1, v0, Lnoc;->b:Ljava/lang/Object;
-
-    invoke-virtual {v0}, Lnoc;->t()Ldhj;
-
-    move-result-object v0
-
-    sput-object v0, Ldhx;->h:Ldhj;
-
-    new-instance v0, Lnoc;
-
-    invoke-direct {v0}, Lnoc;-><init>()V
-
-    const-string v1, "camera.lasagna.max_psl_duration"
-
-    iput-object v1, v0, Lnoc;->b:Ljava/lang/Object;
+    iget v0, p0, Ldhx;->b:I
 
     const/4 v1, 0x0
 
-    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-static {v1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     move-result-object v1
 
-    const/16 v2, 0xb
+    const-wide/16 v2, 0x5
 
-    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    const/4 v4, 0x1
 
-    move-result-object v2
+    packed-switch v0, :pswitch_data_0
 
-    invoke-static {v1, v2}, Lmym;->f(Ljava/lang/Comparable;Ljava/lang/Comparable;)Lmym;
+    iget-object v0, p0, Ldhx;->a:Lqkg;
 
-    move-result-object v2
-
-    sget-object v3, Lmug;->a:Lmug;
-
-    invoke-static {v2, v3}, Lmtx;->a(Lmym;Lmuh;)Lmtx;
-
-    move-result-object v2
-
-    iput-object v2, v0, Lnoc;->a:Ljava/lang/Object;
-
-    invoke-virtual {v0}, Lnoc;->l()Ldhk;
+    invoke-interface {v0}, Lqkg;->get()Ljava/lang/Object;
 
     move-result-object v0
 
-    sput-object v0, Ldhx;->b:Ldhk;
+    check-cast v0, Ldqw;
 
-    new-instance v0, Lnoc;
-
-    invoke-direct {v0}, Lnoc;-><init>()V
-
-    const-string v2, "camera.lasagna.max_psl_frame_count"
-
-    iput-object v2, v0, Lnoc;->b:Ljava/lang/Object;
-
-    invoke-virtual {v0}, Lnoc;->l()Ldhk;
+    invoke-static {v0}, Lenl;->H(Ldqw;)Ldte;
 
     move-result-object v0
 
-    sput-object v0, Ldhx;->c:Ldhk;
+    iput v4, v0, Ldte;->a:I
 
-    new-instance v0, Lnoc;
+    sget-object v1, Ljava/util/concurrent/TimeUnit;->MINUTES:Ljava/util/concurrent/TimeUnit;
 
-    invoke-direct {v0}, Lnoc;-><init>()V
+    invoke-virtual {v0, v2, v3, v1}, Ldte;->c(JLjava/util/concurrent/TimeUnit;)V
 
-    const-string v2, "camera.lasagna.shot_type"
+    invoke-virtual {v0}, Ldte;->b()V
 
-    iput-object v2, v0, Lnoc;->b:Ljava/lang/Object;
+    invoke-virtual {v0}, Ldte;->a()Ldsz;
 
-    const/4 v2, 0x3
+    move-result-object v0
 
-    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    return-object v0
 
-    move-result-object v2
+    :pswitch_0
+    iget-object v0, p0, Ldhx;->a:Lqkg;
 
-    invoke-static {v1, v2}, Lmym;->f(Ljava/lang/Comparable;Ljava/lang/Comparable;)Lmym;
+    invoke-interface {v0}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ldqw;
+
+    invoke-static {v0}, Lenl;->H(Ldqw;)Ldte;
+
+    move-result-object v0
+
+    iput v4, v0, Ldte;->a:I
+
+    sget-object v1, Ljava/util/concurrent/TimeUnit;->MINUTES:Ljava/util/concurrent/TimeUnit;
+
+    invoke-virtual {v0, v2, v3, v1}, Ldte;->c(JLjava/util/concurrent/TimeUnit;)V
+
+    invoke-virtual {v0}, Ldte;->b()V
+
+    invoke-virtual {v0}, Ldte;->a()Ldsz;
+
+    move-result-object v0
+
+    return-object v0
+
+    :pswitch_1
+    iget-object v0, p0, Ldhx;->a:Lqkg;
+
+    invoke-interface {v0}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ldqw;
+
+    invoke-static {v0}, Lenl;->H(Ldqw;)Ldte;
+
+    move-result-object v0
+
+    iput v4, v0, Ldte;->a:I
+
+    sget-object v1, Ljava/util/concurrent/TimeUnit;->MINUTES:Ljava/util/concurrent/TimeUnit;
+
+    invoke-virtual {v0, v2, v3, v1}, Ldte;->c(JLjava/util/concurrent/TimeUnit;)V
+
+    invoke-virtual {v0}, Ldte;->b()V
+
+    invoke-virtual {v0}, Ldte;->a()Ldsz;
+
+    move-result-object v0
+
+    return-object v0
+
+    :pswitch_2
+    iget-object v0, p0, Ldhx;->a:Lqkg;
+
+    invoke-interface {v0}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ldqw;
+
+    invoke-static {v0}, Lenl;->H(Ldqw;)Ldte;
+
+    move-result-object v0
+
+    iput v4, v0, Ldte;->a:I
+
+    sget-object v1, Ljava/util/concurrent/TimeUnit;->MINUTES:Ljava/util/concurrent/TimeUnit;
+
+    invoke-virtual {v0, v2, v3, v1}, Ldte;->c(JLjava/util/concurrent/TimeUnit;)V
+
+    invoke-virtual {v0}, Ldte;->b()V
+
+    invoke-virtual {v0}, Ldte;->a()Ldsz;
+
+    move-result-object v0
+
+    return-object v0
+
+    :pswitch_3
+    iget-object v0, p0, Ldhx;->a:Lqkg;
+
+    invoke-interface {v0}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ldqw;
+
+    invoke-static {v0}, Lenl;->H(Ldqw;)Ldte;
+
+    move-result-object v0
+
+    iput v4, v0, Ldte;->a:I
+
+    sget-object v1, Ljava/util/concurrent/TimeUnit;->MINUTES:Ljava/util/concurrent/TimeUnit;
+
+    invoke-virtual {v0, v2, v3, v1}, Ldte;->c(JLjava/util/concurrent/TimeUnit;)V
+
+    invoke-virtual {v0}, Ldte;->b()V
+
+    invoke-virtual {v0}, Ldte;->a()Ldsz;
+
+    move-result-object v0
+
+    return-object v0
+
+    :pswitch_4
+    iget-object v0, p0, Ldhx;->a:Lqkg;
+
+    invoke-interface {v0}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Llap;
+
+    const-string v1, "FeatureCentral"
+
+    invoke-static {v1}, Lmip;->bM(Ljava/lang/String;)Ljava/util/concurrent/ExecutorService;
 
     move-result-object v1
 
-    sget-object v2, Lmug;->a:Lmug;
+    new-instance v2, Llax;
 
-    invoke-static {v1, v2}, Lmtx;->a(Lmym;Lmuh;)Lmtx;
+    invoke-direct {v2, v1}, Llax;-><init>(Ljava/util/concurrent/Executor;)V
+
+    invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    new-instance v3, Ldqr;
+
+    invoke-direct {v3, v1}, Ldqr;-><init>(Ljava/util/concurrent/ExecutorService;)V
+
+    invoke-virtual {v0, v3}, Llap;->c(Llie;)V
+
+    return-object v2
+
+    :pswitch_5
+    new-instance v0, Ldqh;
+
+    invoke-direct {v0}, Ldqh;-><init>()V
+
+    iget-object v1, p0, Ldhx;->a:Lqkg;
+
+    invoke-interface {v1}, Lqkg;->get()Ljava/lang/Object;
 
     move-result-object v1
 
-    iput-object v1, v0, Lnoc;->a:Ljava/lang/Object;
+    check-cast v1, Llco;
 
-    invoke-virtual {v0}, Lnoc;->l()Ldhk;
+    new-instance v2, Ldqe;
 
-    move-result-object v0
+    invoke-direct {v2, v0, v1}, Ldqe;-><init>(Ldqh;Llco;)V
 
-    sput-object v0, Ldhx;->d:Ldhk;
+    return-object v2
 
-    new-instance v0, Lnoc;
+    :pswitch_6
+    iget-object v0, p0, Ldhx;->a:Lqkg;
 
-    invoke-direct {v0}, Lnoc;-><init>()V
-
-    const-string v1, "camera.lasagna.slowraw_shot_analysis_debug"
-
-    iput-object v1, v0, Lnoc;->b:Ljava/lang/Object;
-
-    new-instance v0, Lnoc;
-
-    invoke-direct {v0}, Lnoc;-><init>()V
-
-    const-string v1, "camera.lasagna.use_darwinn"
-
-    iput-object v1, v0, Lnoc;->b:Ljava/lang/Object;
-
-    invoke-virtual {v0}, Lnoc;->t()Ldhj;
+    invoke-interface {v0}, Lqkg;->get()Ljava/lang/Object;
 
     move-result-object v0
 
-    sput-object v0, Ldhx;->i:Ldhj;
+    check-cast v0, Lddf;
 
-    new-instance v0, Lnoc;
+    sget-object v2, Lddl;->a:Lddi;
 
-    invoke-direct {v0}, Lnoc;-><init>()V
+    invoke-interface {v0}, Lddf;->e()V
 
-    const-string v1, "camera.lasagna.td"
+    return-object v1
 
-    iput-object v1, v0, Lnoc;->b:Ljava/lang/Object;
+    :pswitch_7
+    iget-object v0, p0, Ldhx;->a:Lqkg;
 
-    new-instance v0, Lnoc;
-
-    invoke-direct {v0}, Lnoc;-><init>()V
-
-    const-string v1, "camera.lasagna.ct"
-
-    iput-object v1, v0, Lnoc;->b:Ljava/lang/Object;
-
-    new-instance v0, Lnoc;
-
-    invoke-direct {v0}, Lnoc;-><init>()V
-
-    const-string v1, "camera.lasagna.motion_model"
-
-    iput-object v1, v0, Lnoc;->b:Ljava/lang/Object;
-
-    invoke-virtual {v0}, Lnoc;->u()Ldhj;
+    invoke-interface {v0}, Lqkg;->get()Ljava/lang/Object;
 
     move-result-object v0
 
-    sput-object v0, Ldhx;->j:Ldhj;
+    check-cast v0, Ldqa;
 
-    new-instance v0, Lnoc;
-
-    invoke-direct {v0}, Lnoc;-><init>()V
-
-    const-string v1, "camera.lasagna.saliency_model"
-
-    iput-object v1, v0, Lnoc;->b:Ljava/lang/Object;
-
-    invoke-virtual {v0}, Lnoc;->u()Ldhj;
+    invoke-virtual {v0}, Ldqa;->a()Llco;
 
     move-result-object v0
 
-    sput-object v0, Ldhx;->k:Ldhj;
+    invoke-static {v0}, Lqmd;->ae(Ljava/lang/Object;)V
 
-    new-instance v0, Lnoc;
+    return-object v0
 
-    invoke-direct {v0}, Lnoc;-><init>()V
+    :pswitch_8
+    iget-object v0, p0, Ldhx;->a:Lqkg;
 
-    const-string v1, "camera.lasagna.scene_classification_model"
+    check-cast v0, Leej;
 
-    iput-object v1, v0, Lnoc;->b:Ljava/lang/Object;
-
-    invoke-virtual {v0}, Lnoc;->u()Ldhj;
+    invoke-virtual {v0}, Leej;->b()Llco;
 
     move-result-object v0
 
-    sput-object v0, Ldhx;->l:Ldhj;
+    new-instance v1, Ldow;
 
-    return-void
+    invoke-direct {v1, v0}, Ldow;-><init>(Llco;)V
+
+    return-object v1
+
+    :pswitch_9
+    iget-object v0, p0, Ldhx;->a:Lqkg;
+
+    invoke-interface {v0}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lddf;
+
+    sget-object v1, Ldda;->i:Lddg;
+
+    invoke-interface {v0, v1}, Lddf;->k(Lddg;)Z
+
+    move-result v0
+
+    invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    move-result-object v0
+
+    return-object v0
+
+    :pswitch_a
+    iget-object v0, p0, Ldhx;->a:Lqkg;
+
+    invoke-interface {v0}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lddf;
+
+    sget-object v2, Ldda;->a:Lddi;
+
+    invoke-interface {v0}, Lddf;->e()V
+
+    return-object v1
+
+    :pswitch_b
+    iget-object v0, p0, Ldhx;->a:Lqkg;
+
+    invoke-interface {v0}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lddf;
+
+    sget-object v1, Ldda;->h:Lddg;
+
+    invoke-interface {v0, v1}, Lddf;->k(Lddg;)Z
+
+    move-result v0
+
+    invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    move-result-object v0
+
+    return-object v0
+
+    :pswitch_c
+    iget-object v0, p0, Ldhx;->a:Lqkg;
+
+    invoke-interface {v0}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lddf;
+
+    sget-object v1, Ldda;->g:Lddg;
+
+    invoke-interface {v0, v1}, Lddf;->k(Lddg;)Z
+
+    move-result v0
+
+    invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    move-result-object v0
+
+    return-object v0
+
+    :pswitch_d
+    iget-object v0, p0, Ldhx;->a:Lqkg;
+
+    invoke-interface {v0}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lddf;
+
+    sget-object v2, Ldda;->a:Lddi;
+
+    invoke-interface {v0}, Lddf;->e()V
+
+    return-object v1
+
+    :pswitch_e
+    iget-object v0, p0, Ldhx;->a:Lqkg;
+
+    invoke-interface {v0}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lddf;
+
+    sget-object v1, Ldda;->c:Lddg;
+
+    invoke-interface {v0, v1}, Lddf;->k(Lddg;)Z
+
+    move-result v1
+
+    if-eq v4, v1, :cond_0
+
+    goto :goto_0
+
+    :cond_0
+    const/4 v4, 0x3
+
+    :goto_0
+    sget-object v1, Ldda;->d:Lddg;
+
+    invoke-interface {v0, v1}, Lddf;->k(Lddg;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    or-int/lit8 v4, v4, 0x4
+
+    :cond_1
+    invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v0
+
+    return-object v0
+
+    :pswitch_f
+    iget-object v0, p0, Ldhx;->a:Lqkg;
+
+    invoke-interface {v0}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/Class;
+
+    new-instance v0, Ldkq;
+
+    invoke-direct {v0}, Ldkq;-><init>()V
+
+    return-object v0
+
+    :pswitch_10
+    iget-object v0, p0, Ldhx;->a:Lqkg;
+
+    invoke-interface {v0}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lddf;
+
+    new-instance v1, Ldkm;
+
+    invoke-direct {v1, v0}, Ldkm;-><init>(Lddf;)V
+
+    return-object v1
+
+    :pswitch_11
+    iget-object v0, p0, Ldhx;->a:Lqkg;
+
+    invoke-interface {v0}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lddf;
+
+    new-instance v1, Ldji;
+
+    invoke-direct {v1, v0}, Ldji;-><init>(Lddf;)V
+
+    return-object v1
+
+    :pswitch_12
+    iget-object v0, p0, Ldhx;->a:Lqkg;
+
+    invoke-interface {v0}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ldib;
+
+    new-instance v1, Ldhu;
+
+    invoke-direct {v1, v0}, Ldhu;-><init>(Ldib;)V
+
+    return-object v1
+
+    :pswitch_13
+    iget-object v0, p0, Ldhx;->a:Lqkg;
+
+    check-cast v0, Lemp;
+
+    invoke-virtual {v0}, Lemp;->a()Landroid/content/Context;
+
+    move-result-object v0
+
+    const-class v1, Lcom/google/android/apps/camera/debug/shottracker/db/ShotDatabase;
+
+    const-string v2, "shot_db"
+
+    invoke-static {v0, v1, v2}, Lfw;->i(Landroid/content/Context;Ljava/lang/Class;Ljava/lang/String;)Laig;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Laig;->d()V
+
+    invoke-virtual {v0}, Laig;->a()Laii;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/google/android/apps/camera/debug/shottracker/db/ShotDatabase;
+
+    invoke-static {v0}, Lqmd;->ae(Ljava/lang/Object;)V
+
+    return-object v0
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_13
+        :pswitch_12
+        :pswitch_11
+        :pswitch_10
+        :pswitch_f
+        :pswitch_e
+        :pswitch_d
+        :pswitch_c
+        :pswitch_b
+        :pswitch_a
+        :pswitch_9
+        :pswitch_8
+        :pswitch_7
+        :pswitch_6
+        :pswitch_5
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method

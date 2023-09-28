@@ -3,124 +3,150 @@
 
 
 # instance fields
-.field public a:Ljfh;
+.field public final a:Landroid/graphics/Rect;
 
-.field public b:Ljfh;
-
-.field public c:Ljfb;
-
-.field public d:[Ljca;
-
-.field public e:I
-
-.field private final f:Ljava/lang/Runnable;
+.field public final b:I
 
 
 # direct methods
 .method public constructor <init>()V
-    .locals 1
+    .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    sget-object v0, Lhck;->m:Lhck;
-
-    iput-object v0, p0, Ljfg;->f:Ljava/lang/Runnable;
 
     return-void
 .end method
 
+.method public constructor <init>(Landroid/graphics/Rect;I)V
+    .locals 0
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Ljfg;->a:Landroid/graphics/Rect;
+
+    iput p2, p0, Ljfg;->b:I
+
+    return-void
+.end method
+
+.method public static a()Ljff;
+    .locals 1
+
+    new-instance v0, Ljff;
+
+    invoke-direct {v0}, Ljff;-><init>()V
+
+    return-object v0
+.end method
+
 
 # virtual methods
-.method public final a()Ldja;
-    .locals 10
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 4
 
-    iget-object v0, p0, Ljfg;->a:Ljfh;
+    const/4 v0, 0x1
 
-    const/4 v1, 0x1
+    if-ne p1, p0, :cond_0
+
+    return v0
+
+    :cond_0
+    instance-of v1, p1, Ljfg;
 
     const/4 v2, 0x0
 
-    if-eqz v0, :cond_0
+    if-eqz v1, :cond_1
 
-    const/4 v0, 0x1
+    check-cast p1, Ljfg;
 
-    goto :goto_0
+    iget-object v1, p0, Ljfg;->a:Landroid/graphics/Rect;
 
-    :cond_0
-    const/4 v0, 0x0
+    iget-object v3, p1, Ljfg;->a:Landroid/graphics/Rect;
 
-    :goto_0
-    const-string v3, "Must set register function"
+    invoke-virtual {v1, v3}, Landroid/graphics/Rect;->equals(Ljava/lang/Object;)Z
 
-    invoke-static {v0, v3}, Ljhp;->T(ZLjava/lang/Object;)V
+    move-result v1
 
-    iget-object v0, p0, Ljfg;->b:Ljfh;
+    if-eqz v1, :cond_1
 
-    if-eqz v0, :cond_1
+    iget v1, p0, Ljfg;->b:I
 
-    const/4 v0, 0x1
+    iget p1, p1, Ljfg;->b:I
 
-    goto :goto_1
+    if-ne v1, p1, :cond_1
+
+    return v0
 
     :cond_1
-    const/4 v0, 0x0
+    return v2
+.end method
 
-    :goto_1
-    const-string v3, "Must set unregister function"
+.method public final hashCode()I
+    .locals 2
 
-    invoke-static {v0, v3}, Ljhp;->T(ZLjava/lang/Object;)V
+    iget-object v0, p0, Ljfg;->a:Landroid/graphics/Rect;
 
-    iget-object v0, p0, Ljfg;->c:Ljfb;
+    invoke-virtual {v0}, Landroid/graphics/Rect;->hashCode()I
 
-    if-eqz v0, :cond_2
+    move-result v0
 
-    goto :goto_2
+    const v1, 0xf4243
 
-    :cond_2
-    const/4 v1, 0x0
+    xor-int/2addr v0, v1
 
-    :goto_2
-    const-string v0, "Must set holder"
+    mul-int v0, v0, v1
 
-    invoke-static {v1, v0}, Ljhp;->T(ZLjava/lang/Object;)V
+    iget v1, p0, Ljfg;->b:I
 
-    iget-object v0, p0, Ljfg;->c:Ljfb;
+    xor-int/2addr v0, v1
 
-    iget-object v0, v0, Ljfb;->b:Ljez;
+    return v0
+.end method
 
-    const-string v1, "Key must not be null"
+.method public final toString()Ljava/lang/String;
+    .locals 4
 
-    invoke-static {v0, v1}, Ljhp;->ac(Ljava/lang/Object;Ljava/lang/Object;)V
+    iget-object v0, p0, Ljfg;->a:Landroid/graphics/Rect;
 
-    new-instance v0, Ldja;
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
-    new-instance v3, Lkxq;
+    move-result-object v0
 
-    iget-object v1, p0, Ljfg;->c:Ljfb;
+    iget v1, p0, Ljfg;->b:I
 
-    iget-object v2, p0, Ljfg;->d:[Ljca;
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
-    iget v4, p0, Ljfg;->e:I
+    move-result-object v2
 
-    invoke-direct {v3, p0, v1, v2, v4}, Lkxq;-><init>(Ljfg;Ljfb;[Ljca;I)V
+    invoke-virtual {v2}, Ljava/lang/String;->length()I
 
-    new-instance v4, Landroidx/wear/ambient/AmbientMode$AmbientController;
+    move-result v2
 
-    invoke-direct {v4, p0}, Landroidx/wear/ambient/AmbientMode$AmbientController;-><init>(Ljfg;)V
+    new-instance v3, Ljava/lang/StringBuilder;
 
-    iget-object v5, p0, Ljfg;->f:Ljava/lang/Runnable;
+    add-int/lit8 v2, v2, 0x26
 
-    const/4 v6, 0x0
+    invoke-direct {v3, v2}, Ljava/lang/StringBuilder;-><init>(I)V
 
-    const/4 v7, 0x0
+    const-string v2, "RoundedRect{rect="
 
-    const/4 v8, 0x0
+    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const/4 v9, 0x0
+    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-object v2, v0
+    const-string v0, ", radius="
 
-    invoke-direct/range {v2 .. v9}, Ldja;-><init>(Lkxq;Landroidx/wear/ambient/AmbientMode$AmbientController;Ljava/lang/Runnable;[B[B[B[B)V
+    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    const-string v0, "}"
+
+    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
 
     return-object v0
 .end method

@@ -1,50 +1,51 @@
-.class public final Lien;
-.super Landroid/view/ViewOutlineProvider;
+.class public final synthetic Lien;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Lj$/util/function/Consumer;
 
 
 # instance fields
-.field final synthetic a:Lcom/google/android/apps/camera/ui/shutterbutton/ShutterButton;
+.field public final synthetic a:Lojc;
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/apps/camera/ui/shutterbutton/ShutterButton;)V
+.method public synthetic constructor <init>(Lojc;)V
     .locals 0
 
-    iput-object p1, p0, Lien;->a:Lcom/google/android/apps/camera/ui/shutterbutton/ShutterButton;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0}, Landroid/view/ViewOutlineProvider;-><init>()V
+    iput-object p1, p0, Lien;->a:Lojc;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final getOutline(Landroid/view/View;Landroid/graphics/Outline;)V
+.method public final accept(Ljava/lang/Object;)V
     .locals 1
 
-    new-instance p1, Landroid/graphics/Rect;
+    iget-object v0, p0, Lien;->a:Lojc;
 
-    invoke-direct {p1}, Landroid/graphics/Rect;-><init>()V
+    check-cast p1, Liek;
 
-    iget-object v0, p0, Lien;->a:Lcom/google/android/apps/camera/ui/shutterbutton/ShutterButton;
-
-    invoke-static {v0}, Lcom/google/android/apps/camera/ui/shutterbutton/ShutterButton;->-$$Nest$fgetbuttonRect(Lcom/google/android/apps/camera/ui/shutterbutton/ShutterButton;)Landroid/graphics/RectF;
+    invoke-virtual {v0}, Lojc;->f()Ljava/lang/Object;
 
     move-result-object v0
 
-    invoke-virtual {v0, p1}, Landroid/graphics/RectF;->round(Landroid/graphics/Rect;)V
+    check-cast v0, Landroid/graphics/ColorFilter;
 
-    iget-object v0, p0, Lien;->a:Lcom/google/android/apps/camera/ui/shutterbutton/ShutterButton;
-
-    invoke-virtual {v0}, Lcom/google/android/apps/camera/ui/shutterbutton/ShutterButton;->getCurrentSpec()Lifr;
-
-    move-result-object v0
-
-    iget v0, v0, Lifr;->t:I
-
-    int-to-float v0, v0
-
-    invoke-virtual {p2, p1, v0}, Landroid/graphics/Outline;->setRoundRect(Landroid/graphics/Rect;F)V
+    invoke-virtual {p1, v0}, Liek;->setColorFilter(Landroid/graphics/ColorFilter;)V
 
     return-void
+.end method
+
+.method public final synthetic andThen(Lj$/util/function/Consumer;)Lj$/util/function/Consumer;
+    .locals 0
+
+    invoke-static {p0, p1}, Lj$/util/function/Consumer$-CC;->$default$andThen(Lj$/util/function/Consumer;Lj$/util/function/Consumer;)Lj$/util/function/Consumer;
+
+    move-result-object p1
+
+    return-object p1
 .end method

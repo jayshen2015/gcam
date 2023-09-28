@@ -1,83 +1,58 @@
-.class public final Llfj;
+.class public interface abstract Llfj;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Llfg;
-
-
-# instance fields
-.field public final a:Ljava/lang/Object;
-
-
-# direct methods
-.method public constructor <init>(Ljava/lang/Object;)V
-    .locals 0
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Llfj;->a:Ljava/lang/Object;
-
-    return-void
-.end method
+.implements Llie;
 
 
 # virtual methods
-.method public final a()Lkzf;
-    .locals 1
-
-    sget-object v0, Lkze;->a:Lkzf;
-
-    return-object v0
+.method public abstract a()I
 .end method
 
-.method public final c()Ljava/lang/Object;
-    .locals 1
-
-    iget-object v0, p0, Llfj;->a:Ljava/lang/Object;
-
-    return-object v0
+.method public abstract b()Landroid/media/MediaCodec;
 .end method
 
-.method public final close()V
-    .locals 0
-
-    return-void
+.method public abstract c()Lojc;
 .end method
 
-.method public final cu()Ljava/lang/Object;
-    .locals 1
-
-    const/4 v0, 0x0
-
-    throw v0
+.method public abstract d()Lojc;
 .end method
 
-.method public final toString()Ljava/lang/String;
-    .locals 3
+.method public abstract e()Lojc;
+.end method
 
-    iget-object v0, p0, Llfj;->a:Ljava/lang/Object;
+.method public abstract f()Lojc;
+.end method
 
-    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+.method public abstract g()Lpht;
+.end method
 
-    move-result-object v0
+.method public abstract h()Lpht;
+.end method
 
-    new-instance v1, Ljava/lang/StringBuilder;
+.method public abstract i()Lpht;
+.end method
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+.method public abstract j(Llff;)Lpht;
+.end method
 
-    const-string v2, "non-owning["
+.method public abstract k()Lpht;
+.end method
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+.method public abstract l(Landroid/media/MediaFormat;)V
+.end method
 
-    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+.method public abstract m(Ljava/io/FileDescriptor;)V
+.end method
 
-    const-string v0, "]"
+.method public abstract n(ILandroid/media/MediaCodec$BufferInfo;)V
+.end method
 
-    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+.method public abstract o(Ljava/lang/Object;)V
+.end method
 
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+.method public abstract p()Lojc;
+.end method
 
-    move-result-object v0
-
-    return-object v0
+.method public abstract q(F)V
 .end method

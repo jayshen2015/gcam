@@ -1,115 +1,227 @@
 .class public final Lkfr;
 .super Ljava/lang/Object;
 
-# interfaces
-.implements Lkdz;
-
-
-# static fields
-.field static final a:Ljava/lang/Integer;
-
-.field public static final b:[Landroid/hardware/camera2/params/MeteringRectangle;
-
 
 # instance fields
-.field public c:Ljava/lang/Integer;
+.field public a:Ljava/util/Set;
 
-.field public d:Ljava/lang/Integer;
+.field public b:Ljava/lang/String;
 
-.field public e:Ljava/lang/Integer;
+.field private c:Z
 
-.field public f:Ljava/lang/Integer;
+.field private d:Z
 
-.field public g:Ljava/lang/Integer;
+.field private e:Z
 
-.field public h:[Landroid/hardware/camera2/params/MeteringRectangle;
+.field private f:Ljava/lang/String;
 
-.field public i:[Landroid/hardware/camera2/params/MeteringRectangle;
+.field private g:Landroid/accounts/Account;
 
-.field public j:[Landroid/hardware/camera2/params/MeteringRectangle;
+.field private h:Ljava/lang/String;
+
+.field private i:Ljava/util/Map;
 
 
 # direct methods
-.method static constructor <clinit>()V
+.method public constructor <init>()V
     .locals 1
-
-    const/4 v0, -0x1
-
-    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v0
-
-    sput-object v0, Lkfr;->a:Ljava/lang/Integer;
-
-    const/4 v0, 0x0
-
-    new-array v0, v0, [Landroid/hardware/camera2/params/MeteringRectangle;
-
-    sput-object v0, Lkfr;->b:[Landroid/hardware/camera2/params/MeteringRectangle;
-
-    return-void
-.end method
-
-.method private constructor <init>(Ljava/lang/Integer;Ljava/lang/Integer;Ljava/lang/Integer;Ljava/lang/Integer;Ljava/lang/Integer;[Landroid/hardware/camera2/params/MeteringRectangle;[Landroid/hardware/camera2/params/MeteringRectangle;[Landroid/hardware/camera2/params/MeteringRectangle;)V
-    .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lkfr;->c:Ljava/lang/Integer;
+    new-instance v0, Ljava/util/HashSet;
 
-    iput-object p2, p0, Lkfr;->d:Ljava/lang/Integer;
+    invoke-direct {v0}, Ljava/util/HashSet;-><init>()V
 
-    iput-object p3, p0, Lkfr;->e:Ljava/lang/Integer;
+    iput-object v0, p0, Lkfr;->a:Ljava/util/Set;
 
-    iput-object p4, p0, Lkfr;->f:Ljava/lang/Integer;
+    new-instance v0, Ljava/util/HashMap;
 
-    iput-object p5, p0, Lkfr;->g:Ljava/lang/Integer;
+    invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
-    iput-object p6, p0, Lkfr;->h:[Landroid/hardware/camera2/params/MeteringRectangle;
-
-    iput-object p7, p0, Lkfr;->i:[Landroid/hardware/camera2/params/MeteringRectangle;
-
-    iput-object p8, p0, Lkfr;->j:[Landroid/hardware/camera2/params/MeteringRectangle;
+    iput-object v0, p0, Lkfr;->i:Ljava/util/Map;
 
     return-void
 .end method
 
-.method static b()Lkfr;
-    .locals 10
+.method public constructor <init>(Lcom/google/android/gms/auth/api/signin/GoogleSignInOptions;)V
+    .locals 2
 
-    new-instance v9, Lkfr;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    sget-object v5, Lkfr;->a:Ljava/lang/Integer;
+    new-instance v0, Ljava/util/HashSet;
 
-    sget-object v8, Lkfr;->b:[Landroid/hardware/camera2/params/MeteringRectangle;
+    invoke-direct {v0}, Ljava/util/HashSet;-><init>()V
 
-    move-object v0, v9
+    iput-object v0, p0, Lkfr;->a:Ljava/util/Set;
 
-    move-object v1, v5
+    new-instance v0, Ljava/util/HashMap;
 
-    move-object v2, v5
+    invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
-    move-object v3, v5
+    iput-object v0, p0, Lkfr;->i:Ljava/util/Map;
 
-    move-object v4, v5
+    invoke-static {p1}, Lmip;->dk(Ljava/lang/Object;)Ljava/lang/Object;
 
-    move-object v6, v8
+    new-instance v0, Ljava/util/HashSet;
 
-    move-object v7, v8
+    sget-object v1, Lcom/google/android/gms/auth/api/signin/GoogleSignInOptions;->a:Lcom/google/android/gms/common/api/Scope;
 
-    invoke-direct/range {v0 .. v8}, Lkfr;-><init>(Ljava/lang/Integer;Ljava/lang/Integer;Ljava/lang/Integer;Ljava/lang/Integer;Ljava/lang/Integer;[Landroid/hardware/camera2/params/MeteringRectangle;[Landroid/hardware/camera2/params/MeteringRectangle;[Landroid/hardware/camera2/params/MeteringRectangle;)V
+    iget-object v1, p1, Lcom/google/android/gms/auth/api/signin/GoogleSignInOptions;->i:Ljava/util/ArrayList;
 
-    return-object v9
+    invoke-direct {v0, v1}, Ljava/util/HashSet;-><init>(Ljava/util/Collection;)V
+
+    iput-object v0, p0, Lkfr;->a:Ljava/util/Set;
+
+    iget-boolean v0, p1, Lcom/google/android/gms/auth/api/signin/GoogleSignInOptions;->l:Z
+
+    iput-boolean v0, p0, Lkfr;->c:Z
+
+    iget-boolean v0, p1, Lcom/google/android/gms/auth/api/signin/GoogleSignInOptions;->m:Z
+
+    iput-boolean v0, p0, Lkfr;->d:Z
+
+    iget-boolean v0, p1, Lcom/google/android/gms/auth/api/signin/GoogleSignInOptions;->k:Z
+
+    iput-boolean v0, p0, Lkfr;->e:Z
+
+    iget-object v0, p1, Lcom/google/android/gms/auth/api/signin/GoogleSignInOptions;->n:Ljava/lang/String;
+
+    iput-object v0, p0, Lkfr;->f:Ljava/lang/String;
+
+    iget-object v0, p1, Lcom/google/android/gms/auth/api/signin/GoogleSignInOptions;->j:Landroid/accounts/Account;
+
+    iput-object v0, p0, Lkfr;->g:Landroid/accounts/Account;
+
+    iget-object v0, p1, Lcom/google/android/gms/auth/api/signin/GoogleSignInOptions;->o:Ljava/lang/String;
+
+    iput-object v0, p0, Lkfr;->h:Ljava/lang/String;
+
+    iget-object v0, p1, Lcom/google/android/gms/auth/api/signin/GoogleSignInOptions;->p:Ljava/util/ArrayList;
+
+    invoke-static {v0}, Lcom/google/android/gms/auth/api/signin/GoogleSignInOptions;->c(Ljava/util/List;)Ljava/util/Map;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lkfr;->i:Ljava/util/Map;
+
+    iget-object p1, p1, Lcom/google/android/gms/auth/api/signin/GoogleSignInOptions;->q:Ljava/lang/String;
+
+    iput-object p1, p0, Lkfr;->b:Ljava/lang/String;
+
+    return-void
 .end method
 
 
 # virtual methods
-.method public final a()Lkea;
-    .locals 1
+.method public final a()Lcom/google/android/gms/auth/api/signin/GoogleSignInOptions;
+    .locals 12
 
-    new-instance v0, Lkfq;
+    iget-object v0, p0, Lkfr;->a:Ljava/util/Set;
 
-    invoke-direct {v0, p0}, Lkfq;-><init>(Lkfr;)V
+    sget-object v1, Lcom/google/android/gms/auth/api/signin/GoogleSignInOptions;->e:Lcom/google/android/gms/common/api/Scope;
+
+    invoke-interface {v0, v1}, Ljava/util/Set;->contains(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lkfr;->a:Ljava/util/Set;
+
+    sget-object v1, Lcom/google/android/gms/auth/api/signin/GoogleSignInOptions;->d:Lcom/google/android/gms/common/api/Scope;
+
+    invoke-interface {v0, v1}, Ljava/util/Set;->contains(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lkfr;->a:Ljava/util/Set;
+
+    sget-object v1, Lcom/google/android/gms/auth/api/signin/GoogleSignInOptions;->d:Lcom/google/android/gms/common/api/Scope;
+
+    invoke-interface {v0, v1}, Ljava/util/Set;->remove(Ljava/lang/Object;)Z
+
+    :cond_0
+    iget-boolean v0, p0, Lkfr;->e:Z
+
+    if-eqz v0, :cond_2
+
+    iget-object v0, p0, Lkfr;->g:Landroid/accounts/Account;
+
+    if-eqz v0, :cond_1
+
+    iget-object v0, p0, Lkfr;->a:Ljava/util/Set;
+
+    invoke-interface {v0}, Ljava/util/Set;->isEmpty()Z
+
+    move-result v0
+
+    if-nez v0, :cond_2
+
+    :cond_1
+    invoke-virtual {p0}, Lkfr;->b()V
+
+    :cond_2
+    new-instance v0, Lcom/google/android/gms/auth/api/signin/GoogleSignInOptions;
+
+    new-instance v3, Ljava/util/ArrayList;
+
+    iget-object v1, p0, Lkfr;->a:Ljava/util/Set;
+
+    invoke-direct {v3, v1}, Ljava/util/ArrayList;-><init>(Ljava/util/Collection;)V
+
+    const/4 v2, 0x3
+
+    iget-object v4, p0, Lkfr;->g:Landroid/accounts/Account;
+
+    iget-boolean v5, p0, Lkfr;->e:Z
+
+    iget-boolean v6, p0, Lkfr;->c:Z
+
+    iget-boolean v7, p0, Lkfr;->d:Z
+
+    iget-object v8, p0, Lkfr;->f:Ljava/lang/String;
+
+    iget-object v9, p0, Lkfr;->h:Ljava/lang/String;
+
+    iget-object v10, p0, Lkfr;->i:Ljava/util/Map;
+
+    iget-object v11, p0, Lkfr;->b:Ljava/lang/String;
+
+    move-object v1, v0
+
+    invoke-direct/range {v1 .. v11}, Lcom/google/android/gms/auth/api/signin/GoogleSignInOptions;-><init>(ILjava/util/ArrayList;Landroid/accounts/Account;ZZZLjava/lang/String;Ljava/lang/String;Ljava/util/Map;Ljava/lang/String;)V
 
     return-object v0
+.end method
+
+.method public final b()V
+    .locals 2
+
+    iget-object v0, p0, Lkfr;->a:Ljava/util/Set;
+
+    sget-object v1, Lcom/google/android/gms/auth/api/signin/GoogleSignInOptions;->c:Lcom/google/android/gms/common/api/Scope;
+
+    invoke-interface {v0, v1}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
+
+    return-void
+.end method
+
+.method public final varargs c(Lcom/google/android/gms/common/api/Scope;[Lcom/google/android/gms/common/api/Scope;)V
+    .locals 1
+
+    iget-object v0, p0, Lkfr;->a:Ljava/util/Set;
+
+    invoke-interface {v0, p1}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
+
+    iget-object p1, p0, Lkfr;->a:Ljava/util/Set;
+
+    invoke-static {p2}, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
+
+    move-result-object p2
+
+    invoke-interface {p1, p2}, Ljava/util/Set;->addAll(Ljava/util/Collection;)Z
+
+    return-void
 .end method

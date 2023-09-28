@@ -1,241 +1,253 @@
-.class final Lkjh;
+.class public final Lkjh;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lnoj;
+.implements Landroid/app/Application$ActivityLifecycleCallbacks;
+.implements Landroid/content/ComponentCallbacks2;
+
+
+# static fields
+.field public static final a:Lkjh;
 
 
 # instance fields
-.field final synthetic a:Ljuf;
+.field public final b:Ljava/util/concurrent/atomic/AtomicBoolean;
 
-.field final synthetic b:Lkiq;
+.field public final c:Ljava/util/concurrent/atomic/AtomicBoolean;
 
-.field final synthetic c:Ljava/util/List;
+.field public final d:Ljava/util/ArrayList;
 
-.field final synthetic d:Ljava/util/List;
-
-.field final synthetic e:Lkji;
+.field public e:Z
 
 
 # direct methods
-.method public constructor <init>(Lkji;Ljuf;Lkiq;Ljava/util/List;Ljava/util/List;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 1
 
-    iput-object p1, p0, Lkjh;->e:Lkji;
+    new-instance v0, Lkjh;
 
-    iput-object p2, p0, Lkjh;->a:Ljuf;
+    invoke-direct {v0}, Lkjh;-><init>()V
 
-    iput-object p3, p0, Lkjh;->b:Lkiq;
+    sput-object v0, Lkjh;->a:Lkjh;
 
-    iput-object p4, p0, Lkjh;->c:Ljava/util/List;
+    return-void
+.end method
 
-    iput-object p5, p0, Lkjh;->d:Ljava/util/List;
+.method private constructor <init>()V
+    .locals 1
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    new-instance v0, Ljava/util/concurrent/atomic/AtomicBoolean;
+
+    invoke-direct {v0}, Ljava/util/concurrent/atomic/AtomicBoolean;-><init>()V
+
+    iput-object v0, p0, Lkjh;->b:Ljava/util/concurrent/atomic/AtomicBoolean;
+
+    new-instance v0, Ljava/util/concurrent/atomic/AtomicBoolean;
+
+    invoke-direct {v0}, Ljava/util/concurrent/atomic/AtomicBoolean;-><init>()V
+
+    iput-object v0, p0, Lkjh;->c:Ljava/util/concurrent/atomic/AtomicBoolean;
+
+    new-instance v0, Ljava/util/ArrayList;
+
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+
+    iput-object v0, p0, Lkjh;->d:Ljava/util/ArrayList;
+
+    const/4 v0, 0x0
+
+    iput-boolean v0, p0, Lkjh;->e:Z
+
     return-void
+.end method
+
+.method private final a(Z)V
+    .locals 5
+
+    sget-object v0, Lkjh;->a:Lkjh;
+
+    monitor-enter v0
+
+    :try_start_0
+    iget-object v1, p0, Lkjh;->d:Ljava/util/ArrayList;
+
+    invoke-virtual {v1}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
+
+    move-result-object v1
+
+    :goto_0
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_0
+
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Lkjx;
+
+    iget-object v2, v2, Lkjx;->a:Lkkg;
+
+    iget-object v2, v2, Lkkg;->o:Landroid/os/Handler;
+
+    const/4 v3, 0x1
+
+    invoke-static {p1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    move-result-object v4
+
+    invoke-virtual {v2, v3, v4}, Landroid/os/Handler;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
+
+    move-result-object v3
+
+    invoke-virtual {v2, v3}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
+
+    goto :goto_0
+
+    :cond_0
+    monitor-exit v0
+
+    return-void
+
+    :catchall_0
+    move-exception p1
+
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    goto :goto_2
+
+    :goto_1
+    throw p1
+
+    :goto_2
+    goto :goto_1
 .end method
 
 
 # virtual methods
-.method public final a(Ljava/lang/Throwable;)V
-    .locals 5
+.method public final onActivityCreated(Landroid/app/Activity;Landroid/os/Bundle;)V
+    .locals 2
 
-    iget-object v0, p0, Lkjh;->e:Lkji;
+    iget-object p1, p0, Lkjh;->b:Ljava/util/concurrent/atomic/AtomicBoolean;
 
-    iget-object v0, v0, Lkji;->b:Lkaq;
+    const/4 p2, 0x1
 
-    iget-object v1, p0, Lkjh;->b:Lkiq;
+    const/4 v0, 0x0
 
-    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+    invoke-virtual {p1, p2, v0}, Ljava/util/concurrent/atomic/AtomicBoolean;->compareAndSet(ZZ)Z
 
-    move-result-object v1
+    move-result p1
 
-    iget-object v2, p0, Lkjh;->c:Ljava/util/List;
+    iget-object v1, p0, Lkjh;->c:Ljava/util/concurrent/atomic/AtomicBoolean;
 
-    invoke-virtual {v2}, Ljava/lang/Object;->toString()Ljava/lang/String;
+    invoke-virtual {v1, p2}, Ljava/util/concurrent/atomic/AtomicBoolean;->set(Z)V
 
-    move-result-object v2
+    if-eqz p1, :cond_0
 
-    new-instance v3, Ljava/lang/StringBuilder;
+    invoke-direct {p0, v0}, Lkjh;->a(Z)V
 
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+    :cond_0
+    return-void
+.end method
 
-    const-string v4, "Failed to finalize outputs for "
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v1, " using "
-
-    invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-interface {v0, v1, p1}, Lkaq;->j(Ljava/lang/String;Ljava/lang/Throwable;)V
-
-    iget-object p1, p0, Lkjh;->b:Lkiq;
-
-    invoke-virtual {p1}, Lkiq;->h()V
+.method public final onActivityDestroyed(Landroid/app/Activity;)V
+    .locals 0
 
     return-void
 .end method
 
-.method public final bridge synthetic b(Ljava/lang/Object;)V
-    .locals 5
-
-    check-cast p1, Ljava/util/List;
-
-    iget-object v0, p0, Lkjh;->a:Ljuf;
-
-    invoke-virtual {v0}, Ljuf;->b()Z
-
-    move-result v0
-
-    const-string v1, " using "
-
-    if-eqz v0, :cond_0
-
-    iget-object p1, p0, Lkjh;->e:Lkji;
-
-    iget-object p1, p1, Lkji;->b:Lkaq;
-
-    iget-object v0, p0, Lkjh;->b:Lkiq;
-
-    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v0
-
-    iget-object v2, p0, Lkjh;->c:Ljava/util/List;
-
-    invoke-virtual {v2}, Ljava/lang/Object;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v4, "Refusing to finalize outputs for "
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-interface {p1, v0}, Lkaq;->f(Ljava/lang/String;)V
+.method public final onActivityPaused(Landroid/app/Activity;)V
+    .locals 0
 
     return-void
+.end method
 
-    :cond_0
-    if-eqz p1, :cond_1
+.method public final onActivityResumed(Landroid/app/Activity;)V
+    .locals 3
 
-    invoke-interface {p1}, Ljava/util/List;->isEmpty()Z
+    iget-object p1, p0, Lkjh;->b:Ljava/util/concurrent/atomic/AtomicBoolean;
+
+    const/4 v0, 0x1
+
+    const/4 v1, 0x0
+
+    invoke-virtual {p1, v0, v1}, Ljava/util/concurrent/atomic/AtomicBoolean;->compareAndSet(ZZ)Z
 
     move-result p1
 
-    if-nez p1, :cond_1
+    iget-object v2, p0, Lkjh;->c:Ljava/util/concurrent/atomic/AtomicBoolean;
 
-    iget-object p1, p0, Lkjh;->e:Lkji;
+    invoke-virtual {v2, v0}, Ljava/util/concurrent/atomic/AtomicBoolean;->set(Z)V
 
-    iget-object p1, p1, Lkji;->b:Lkaq;
+    if-eqz p1, :cond_0
 
-    iget-object v0, p0, Lkjh;->b:Lkiq;
+    invoke-direct {p0, v1}, Lkjh;->a(Z)V
 
-    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+    :cond_0
+    return-void
+.end method
 
-    move-result-object v0
-
-    iget-object v2, p0, Lkjh;->c:Ljava/util/List;
-
-    invoke-virtual {v2}, Ljava/lang/Object;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v4, "Finalizing outputs for "
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-interface {p1, v0}, Lkaq;->f(Ljava/lang/String;)V
-
-    iget-object p1, p0, Lkjh;->b:Lkiq;
-
-    iget-object v0, p0, Lkjh;->d:Ljava/util/List;
-
-    invoke-virtual {p1, v0}, Lkiq;->c(Ljava/util/List;)V
+.method public final onActivitySaveInstanceState(Landroid/app/Activity;Landroid/os/Bundle;)V
+    .locals 0
 
     return-void
+.end method
 
-    :cond_1
-    iget-object p1, p0, Lkjh;->e:Lkji;
+.method public final onActivityStarted(Landroid/app/Activity;)V
+    .locals 0
 
-    iget-object p1, p1, Lkji;->b:Lkaq;
+    return-void
+.end method
 
-    iget-object v0, p0, Lkjh;->b:Lkiq;
+.method public final onActivityStopped(Landroid/app/Activity;)V
+    .locals 0
 
-    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+    return-void
+.end method
 
-    move-result-object v0
+.method public final onConfigurationChanged(Landroid/content/res/Configuration;)V
+    .locals 0
 
-    iget-object v2, p0, Lkjh;->c:Ljava/util/List;
+    return-void
+.end method
 
-    invoke-virtual {v2}, Ljava/lang/Object;->toString()Ljava/lang/String;
+.method public final onLowMemory()V
+    .locals 0
 
-    move-result-object v2
+    return-void
+.end method
 
-    new-instance v3, Ljava/lang/StringBuilder;
+.method public final onTrimMemory(I)V
+    .locals 2
 
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+    const/16 v0, 0x14
 
-    const-string v4, "Failed to finalize outputs for "
+    if-ne p1, v0, :cond_0
 
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    iget-object p1, p0, Lkjh;->b:Ljava/util/concurrent/atomic/AtomicBoolean;
 
-    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    const/4 v0, 0x0
 
-    invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    const/4 v1, 0x1
 
-    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {p1, v0, v1}, Ljava/util/concurrent/atomic/AtomicBoolean;->compareAndSet(ZZ)Z
 
-    const-string v0, ". The list of outputs was null or empty!"
+    move-result p1
 
-    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    if-eqz p1, :cond_0
 
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    iget-object p1, p0, Lkjh;->c:Ljava/util/concurrent/atomic/AtomicBoolean;
 
-    move-result-object v0
+    invoke-virtual {p1, v1}, Ljava/util/concurrent/atomic/AtomicBoolean;->set(Z)V
 
-    invoke-interface {p1, v0}, Lkaq;->i(Ljava/lang/String;)V
+    invoke-direct {p0, v1}, Lkjh;->a(Z)V
 
-    iget-object p1, p0, Lkjh;->b:Lkiq;
-
-    invoke-virtual {p1}, Lkiq;->h()V
-
+    :cond_0
     return-void
 .end method

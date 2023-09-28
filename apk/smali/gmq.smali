@@ -1,143 +1,149 @@
-.class public final Lgmq;
+.class final Lgmq;
 .super Ljava/lang/Object;
 
+# interfaces
+.implements Lphh;
 
-# static fields
-.field private static final a:Lnak;
+
+# instance fields
+.field final synthetic a:Lgmr;
+
+.field final synthetic b:Lgmo;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
+.method public constructor <init>(Lgmr;Lgmo;)V
+    .locals 0
 
-    const-string v0, "com/google/android/apps/camera/pixelcamerakit/payloadprocessor/HdrPlusPayloadUtils"
+    iput-object p1, p0, Lgmq;->a:Lgmr;
 
-    invoke-static {v0}, Lnak;->h(Ljava/lang/String;)Lnak;
+    iput-object p2, p0, Lgmq;->b:Lgmo;
 
-    move-result-object v0
-
-    sput-object v0, Lgmq;->a:Lnak;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
-.method public static a(Lgli;Z)Lkou;
+
+# virtual methods
+.method public final a(Ljava/lang/Throwable;)V
     .locals 3
 
-    iget-object v0, p0, Lgli;->a:Lkeb;
+    iget-object v0, p0, Lgmq;->a:Lgmr;
 
-    invoke-interface {v0}, Lkeb;->c()Lkou;
+    iget-object v0, v0, Lgmr;->a:Llis;
 
-    move-result-object v0
+    invoke-static {p1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
-    const/4 v1, 0x0
+    move-result-object p1
 
-    if-nez v0, :cond_0
+    invoke-static {p1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
-    sget-object p0, Lgmq;->a:Lnak;
+    move-result-object v1
 
-    invoke-virtual {p0}, Lnaf;->c()Lnaz;
-
-    move-result-object p0
-
-    const-string p1, "Couldn\'t acquire metadata from the frame."
-
-    const/16 v0, 0xbdd
-
-    invoke-static {p0, p1, v0}, Ld;->g(Lnaz;Ljava/lang/String;C)V
-
-    return-object v1
-
-    :cond_0
-    invoke-virtual {p0}, Lgli;->h()Z
-
-    move-result v2
-
-    if-eqz v2, :cond_3
-
-    if-eqz p1, :cond_1
-
-    invoke-virtual {p0}, Lgli;->a()Lkfj;
-
-    move-result-object p0
-
-    invoke-interface {p0}, Lkfj;->c()Lkll;
-
-    move-result-object p0
-
-    iget-object p0, p0, Lkll;->a:Ljava/lang/String;
-
-    goto :goto_0
-
-    :cond_1
-    invoke-virtual {p0}, Lgli;->b()Lkfj;
-
-    move-result-object p0
-
-    if-nez p0, :cond_2
-
-    return-object v1
-
-    :cond_2
-    invoke-interface {p0}, Lkfj;->c()Lkll;
-
-    move-result-object p0
-
-    iget-object p0, p0, Lkll;->a:Ljava/lang/String;
-
-    :goto_0
-    invoke-static {v0, p0}, Lgmq;->b(Lkou;Ljava/lang/String;)Lkou;
-
-    move-result-object v0
-
-    goto :goto_1
-
-    :cond_3
-    :goto_1
-    return-object v0
-.end method
-
-.method public static b(Lkou;Ljava/lang/String;)Lkou;
-    .locals 3
-
-    invoke-interface {p0}, Lkou;->g()Ljava/util/Map;
-
-    move-result-object v0
-
-    invoke-interface {v0}, Ljava/util/Map;->isEmpty()Z
+    invoke-virtual {v1}, Ljava/lang/String;->length()I
 
     move-result v1
 
-    if-nez v1, :cond_1
+    new-instance v2, Ljava/lang/StringBuilder;
 
-    invoke-interface {v0, p1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    add-int/lit8 v1, v1, 0x20
+
+    invoke-direct {v2, v1}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string v1, "Unable to log capture metadata: "
+
+    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-interface {v0, p1}, Llis;->d(Ljava/lang/String;)V
+
+    return-void
+.end method
+
+.method public final bridge synthetic b(Ljava/lang/Object;)V
+    .locals 4
+
+    check-cast p1, Ljava/util/List;
+
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    const/4 v0, 0x0
+
+    invoke-static {p1, v0}, Lohh;->r(Ljava/lang/Iterable;I)Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Lkoq;
+    check-cast v0, Ljava/lang/String;
+
+    const/4 v1, 0x1
+
+    invoke-static {p1, v1}, Lohh;->r(Ljava/lang/Iterable;I)Ljava/lang/Object;
+
+    move-result-object p1
+
+    check-cast p1, Ljava/lang/String;
+
+    iget-object v1, p0, Lgmq;->a:Lgmr;
+
+    iget-object v1, v1, Lgmr;->a:Llis;
+
+    const-string v2, "Capture Metadata"
+
+    invoke-static {v2}, Lobr;->ba(Ljava/lang/String;)Lojb;
+
+    move-result-object v2
+
+    const-string v3, "Input"
+
+    invoke-virtual {v2, v3, v0}, Lojb;->b(Ljava/lang/String;Ljava/lang/Object;)V
+
+    const-string v0, "Reprocessing"
+
+    invoke-virtual {v2, v0, p1}, Lojb;->b(Ljava/lang/String;Ljava/lang/Object;)V
+
+    iget-object p1, p0, Lgmq;->b:Lgmo;
+
+    iget-object p1, p1, Lgmo;->e:Lojc;
+
+    const-string v0, "NPF"
+
+    invoke-virtual {v2, v0, p1}, Lojb;->b(Ljava/lang/String;Ljava/lang/Object;)V
+
+    invoke-virtual {v2}, Lojb;->toString()Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-static {p1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-virtual {p1}, Ljava/lang/String;->length()I
+
+    move-result v0
+
+    const-string v2, "Capture Metadata: "
 
     if-eqz v0, :cond_0
 
-    new-instance p0, Lkot;
+    invoke-virtual {v2, p1}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
 
-    invoke-direct {p0, v0}, Lkot;-><init>(Lkoq;)V
+    move-result-object p1
 
     goto :goto_0
 
     :cond_0
-    sget-object v0, Lgmq;->a:Lnak;
+    new-instance p1, Ljava/lang/String;
 
-    invoke-virtual {v0}, Lnaf;->c()Lnaz;
+    invoke-direct {p1, v2}, Ljava/lang/String;-><init>(Ljava/lang/String;)V
 
-    move-result-object v0
-
-    const-string v1, "Physical metadata is null for images from camera %s"
-
-    const/16 v2, 0xbde
-
-    invoke-static {v0, v1, p1, v2}, Ld;->j(Lnaz;Ljava/lang/String;Ljava/lang/Object;C)V
-
-    :cond_1
     :goto_0
-    return-object p0
+    invoke-interface {v1, p1}, Llis;->g(Ljava/lang/String;)V
+
+    return-void
 .end method

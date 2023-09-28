@@ -1,88 +1,55 @@
-.class public Lcyd;
-.super Lcys;
+.class public final synthetic Lcyd;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Lj$/util/function/Consumer;
 
 
 # instance fields
-.field public final e:Lcom/google/android/apps/camera/bottombar/BottomBarController;
-
-.field public final f:Liff;
-
-.field public final g:Libj;
-
-.field public final h:Lczx;
-
-.field public final i:Ldhi;
-
-.field public j:Lcys;
-
-.field public final k:Ldfa;
+.field public final synthetic a:Lcye;
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/apps/camera/bottombar/BottomBarController;Liff;Libj;Ldfa;Lczx;Ldhi;[B[B)V
+.method public synthetic constructor <init>(Lcye;)V
     .locals 0
 
-    invoke-direct {p0}, Lcys;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lcyd;->e:Lcom/google/android/apps/camera/bottombar/BottomBarController;
-
-    iput-object p2, p0, Lcyd;->f:Liff;
-
-    iput-object p3, p0, Lcyd;->g:Libj;
-
-    iput-object p4, p0, Lcyd;->k:Ldfa;
-
-    iput-object p5, p0, Lcyd;->h:Lczx;
-
-    iput-object p6, p0, Lcyd;->i:Ldhi;
+    iput-object p1, p0, Lcyd;->a:Lcye;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final bx()I
-    .locals 1
+.method public final accept(Ljava/lang/Object;)V
+    .locals 2
 
-    iget-object v0, p0, Lcyd;->j:Lcys;
+    iget-object v0, p0, Lcyd;->a:Lcye;
 
-    invoke-virtual {v0}, Lcys;->bx()I
+    check-cast p1, Lcxy;
 
-    move-result v0
+    iget-object v0, v0, Lcye;->b:Lcom/google/android/apps/camera/camerafatalerror/CameraFatalErrorTrackerDatabase;
 
-    return v0
-.end method
+    invoke-virtual {v0}, Lcom/google/android/apps/camera/camerafatalerror/CameraFatalErrorTrackerDatabase;->t()Lcxt;
 
-.method public final k()V
-    .locals 3
+    move-result-object v0
 
-    iget-object v0, p0, Lcyd;->k:Ldfa;
+    new-instance v1, Lcxs;
 
-    invoke-virtual {v0}, Ldfa;->h()V
+    invoke-direct {v1, p1}, Lcxs;-><init>(Lcxy;)V
 
-    iget-object v0, p0, Lcyd;->e:Lcom/google/android/apps/camera/bottombar/BottomBarController;
-
-    const/4 v1, 0x0
-
-    const/4 v2, 0x1
-
-    invoke-virtual {v0, v1, v2}, Lcom/google/android/apps/camera/bottombar/BottomBarController;->stopRecording(ZZ)V
-
-    iget-object v0, p0, Lcyd;->f:Liff;
-
-    invoke-interface {v0}, Liff;->aa()V
-
-    iget-object v0, p0, Lcyd;->h:Lczx;
-
-    invoke-interface {v0, v2}, Lczx;->i(Z)V
-
-    iget-object v0, p0, Lcyd;->g:Libj;
-
-    invoke-interface {v0, v2}, Libj;->v(Z)V
-
-    iget-object v0, p0, Lcyd;->g:Libj;
-
-    invoke-interface {v0, v2}, Libj;->l(Z)V
+    invoke-virtual {v0, v1}, Lcxt;->b(Lcxs;)V
 
     return-void
+.end method
+
+.method public final synthetic andThen(Lj$/util/function/Consumer;)Lj$/util/function/Consumer;
+    .locals 0
+
+    invoke-static {p0, p1}, Lj$/util/function/Consumer$-CC;->$default$andThen(Lj$/util/function/Consumer;Lj$/util/function/Consumer;)Lj$/util/function/Consumer;
+
+    move-result-object p1
+
+    return-object p1
 .end method

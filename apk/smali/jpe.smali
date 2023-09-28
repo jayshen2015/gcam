@@ -1,50 +1,73 @@
 .class public final Ljpe;
-.super Ljph;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Ljpd;
 
 
 # instance fields
-.field final synthetic a:Ljde;
-
-.field final synthetic b:Ljnt;
+.field private final a:Ljava/lang/String;
 
 
 # direct methods
-.method public constructor <init>(Ljde;Lkgd;Ljnt;[B[B[B)V
+.method public constructor <init>(Ljava/lang/String;)V
     .locals 0
 
-    iput-object p1, p0, Ljpe;->a:Ljde;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p3, p0, Ljpe;->b:Ljnt;
-
-    const/4 p1, 0x0
-
-    invoke-direct {p0, p2, p1, p1}, Ljph;-><init>(Lkgd;[B[B)V
+    iput-object p1, p0, Ljpe;->a:Ljava/lang/String;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final bridge synthetic c(Ljava/lang/Object;)V
-    .locals 1
+.method public final a(Ljava/lang/String;)V
+    .locals 4
 
-    check-cast p1, Lcom/google/android/gms/common/api/Status;
+    iget-object v0, p0, Ljpe;->a:Ljava/lang/String;
 
-    iget-object p1, p0, Ljpe;->a:Ljde;
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
-    iget-object p1, p1, Ljde;->e:Ljcy;
+    move-result-object v1
 
-    check-cast p1, Ljpi;
+    invoke-virtual {v1}, Ljava/lang/String;->length()I
 
-    iget-object v0, p0, Ljpe;->b:Ljnt;
+    move-result v1
 
-    iput-object v0, p1, Ljpi;->a:Ljnt;
+    invoke-virtual {p1}, Ljava/lang/String;->length()I
 
-    iget-object p1, p0, Ljpe;->c:Lkgd;
+    move-result v2
 
-    const/4 v0, 0x0
+    new-instance v3, Ljava/lang/StringBuilder;
 
-    invoke-virtual {p1, v0}, Lkgd;->i(Ljava/lang/Object;)V
+    add-int/lit8 v1, v1, 0x1
+
+    add-int/2addr v1, v2
+
+    invoke-direct {v3, v1}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v0, ":"
+
+    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v3, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-static {p1}, Landroid/os/Trace;->beginSection(Ljava/lang/String;)V
+
+    return-void
+.end method
+
+.method public final b()V
+    .locals 0
+
+    invoke-static {}, Landroid/os/Trace;->endSection()V
 
     return-void
 .end method

@@ -1,145 +1,89 @@
-.class public final Lebg;
+.class public final synthetic Lebg;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Logk;
+.implements Llwz;
 
 
 # instance fields
-.field private final a:Loiw;
-
-.field private final b:Loiw;
-
-.field private final c:Loiw;
-
-.field private final d:Loiw;
-
-.field private final e:Loiw;
-
-.field private final f:Loiw;
+.field public final synthetic a:Lcom/google/googlex/gcam/GyroSampleVector;
 
 
 # direct methods
-.method public constructor <init>(Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;)V
+.method public synthetic constructor <init>(Lcom/google/googlex/gcam/GyroSampleVector;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lebg;->a:Loiw;
-
-    iput-object p2, p0, Lebg;->b:Loiw;
-
-    iput-object p3, p0, Lebg;->c:Loiw;
-
-    iput-object p4, p0, Lebg;->d:Loiw;
-
-    iput-object p5, p0, Lebg;->e:Loiw;
-
-    iput-object p6, p0, Lebg;->f:Loiw;
+    iput-object p1, p0, Lebg;->a:Lcom/google/googlex/gcam/GyroSampleVector;
 
     return-void
 .end method
 
-.method public static a(Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;)Lebg;
-    .locals 8
-
-    new-instance v7, Lebg;
-
-    move-object v0, v7
-
-    move-object v1, p0
-
-    move-object v2, p1
-
-    move-object v3, p2
-
-    move-object v4, p3
-
-    move-object v5, p4
-
-    move-object v6, p5
-
-    invoke-direct/range {v0 .. v6}, Lebg;-><init>(Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;)V
-
-    return-object v7
-.end method
-
 
 # virtual methods
-.method public final b()Ldqx;
-    .locals 8
+.method public final a(Ljava/util/List;)V
+    .locals 7
 
-    iget-object v0, p0, Lebg;->a:Loiw;
+    iget-object v6, p0, Lebg;->a:Lcom/google/googlex/gcam/GyroSampleVector;
 
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
+    sget-object v0, Lebi;->b:Llig;
 
-    move-result-object v0
+    invoke-interface {p1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
-    move-object v2, v0
+    move-result-object p1
 
-    check-cast v2, Ljuf;
+    :goto_0
+    invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
 
-    iget-object v0, p0, Lebg;->b:Loiw;
+    move-result v0
 
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
+    if-eqz v0, :cond_0
 
-    move-result-object v0
-
-    move-object v3, v0
-
-    check-cast v3, Lecd;
-
-    iget-object v0, p0, Lebg;->c:Loiw;
-
-    check-cast v0, Lelt;
-
-    invoke-virtual {v0}, Lelt;->a()Ljvs;
-
-    move-result-object v4
-
-    iget-object v0, p0, Lebg;->d:Loiw;
-
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
+    invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v0
 
-    move-object v5, v0
+    check-cast v0, Llxc;
 
-    check-cast v5, Ljwb;
+    new-instance v5, Lcom/google/googlex/gcam/GyroSample;
 
-    iget-object v0, p0, Lebg;->e:Loiw;
+    invoke-direct {v5}, Lcom/google/googlex/gcam/GyroSample;-><init>()V
 
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
+    iget-wide v1, v0, Llxc;->e:J
 
-    move-result-object v0
+    iget-wide v3, v5, Lcom/google/googlex/gcam/GyroSample;->a:J
 
-    move-object v6, v0
+    invoke-static {v3, v4, v5, v1, v2}, Lcom/google/googlex/gcam/GcamModuleJNI;->GyroSample_timestamp_ns_set(JLcom/google/googlex/gcam/GyroSample;J)V
 
-    check-cast v6, Lebl;
+    iget v1, v0, Llxc;->f:F
 
-    iget-object v0, p0, Lebg;->f:Loiw;
+    iget-wide v2, v5, Lcom/google/googlex/gcam/GyroSample;->a:J
 
-    check-cast v0, Lkao;
+    invoke-static {v2, v3, v5, v1}, Lcom/google/googlex/gcam/GcamModuleJNI;->GyroSample_x_set(JLcom/google/googlex/gcam/GyroSample;F)V
 
-    invoke-virtual {v0}, Lkao;->a()Lkaq;
+    iget v1, v0, Llxc;->g:F
 
-    move-result-object v7
+    iget-wide v2, v5, Lcom/google/googlex/gcam/GyroSample;->a:J
 
-    new-instance v0, Ldqx;
+    invoke-static {v2, v3, v5, v1}, Lcom/google/googlex/gcam/GcamModuleJNI;->GyroSample_y_set(JLcom/google/googlex/gcam/GyroSample;F)V
 
-    move-object v1, v0
+    iget v0, v0, Llxc;->h:F
 
-    invoke-direct/range {v1 .. v7}, Ldqx;-><init>(Ljuf;Lecd;Ljvs;Ljwb;Lebl;Lkaq;)V
+    iget-wide v1, v5, Lcom/google/googlex/gcam/GyroSample;->a:J
 
-    return-object v0
-.end method
+    invoke-static {v1, v2, v5, v0}, Lcom/google/googlex/gcam/GcamModuleJNI;->GyroSample_z_set(JLcom/google/googlex/gcam/GyroSample;F)V
 
-.method public final bridge synthetic get()Ljava/lang/Object;
-    .locals 1
+    iget-wide v0, v6, Lcom/google/googlex/gcam/GyroSampleVector;->a:J
 
-    invoke-virtual {p0}, Lebg;->b()Ldqx;
+    iget-wide v3, v5, Lcom/google/googlex/gcam/GyroSample;->a:J
 
-    move-result-object v0
+    move-object v2, v6
 
-    return-object v0
+    invoke-static/range {v0 .. v5}, Lcom/google/googlex/gcam/GcamModuleJNI;->GyroSampleVector_add(JLcom/google/googlex/gcam/GyroSampleVector;JLcom/google/googlex/gcam/GyroSample;)V
+
+    goto :goto_0
+
+    :cond_0
+    return-void
 .end method

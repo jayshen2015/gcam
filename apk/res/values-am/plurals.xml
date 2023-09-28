@@ -1,12 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <plurals name="accessibility_timelapse_manual_record_speed_desc">
-        <item quantity="other">የረዘመ ጊዜ %d የጊዜያት ፍጥነት</item>
-        <item quantity="one">የረዘመ ጊዜ %d የጊዜ ፍጥነት</item>
-    </plurals>
-    <plurals name="number_of_cropped_face">
-        <item quantity="other">%d ተከርክመዋል።</item>
-        <item quantity="one">%d ተከርክሟል።</item>
+    <plurals name="number_of_faces_announcement">
+        <item quantity="other">%1$d መልኮች።</item>
+        <item quantity="one">%1$d መልኮች።</item>
     </plurals>
     <plurals name="photos_remaining">
         <item quantity="other">%s ፎቶዎች ገደማ</item>
@@ -17,8 +13,8 @@
         <item quantity="one">(%1$d መተግበሪያዎች ተመርጠዋል)</item>
     </plurals>
     <plurals name="social_share_info">
-        <item quantity="other">ከካሜራው ሆነው ፎቶዎችን እና ቪዲዮዎችን በማኅበራዊ መተግበሪያዎች ላይ በፍጥነት ያጋሩ። እስከ %1$d መተግበሪያዎች ድረስ ያጋሩ። በተቆለፈ አቃፊ ውስጥ የተቀመጡ ፎቶዎች እና ቪዲዮዎች ሊጋሩ አይችሉም።</item>
-        <item quantity="one">ከካሜራው ሆነው ፎቶዎችን እና ቪዲዮዎችን በማኅበራዊ መተግበሪያዎች ላይ በፍጥነት ያጋሩ። እስከ %1$d መተግበሪያዎች ድረስ ያጋሩ። በተቆለፈ አቃፊ ውስጥ የተቀመጡ ፎቶዎች እና ቪዲዮዎች ሊጋሩ አይችሉም።</item>
+        <item quantity="other">ከዚያው ከካሜራው ሆነው ፎቶዎችን እና ቪዲዮዎችን በማኅበራዊ መተግበሪያዎች ላይ በፍጥነት ያጋሩ። እስከ %1$d መተግበሪያዎች ድረስ ያጋሩ። በተቆለፈ አቃፊ ውስጥ የተቀመጡ ፎቶዎች እና ቪዲዮዎች ሊጋሩ አይችሉም።</item>
+        <item quantity="one">ከዚያው ከካሜራው ሆነው ፎቶዎችን እና ቪዲዮዎችን በማኅበራዊ መተግበሪያዎች ላይ በፍጥነት ያጋሩ። እስከ %1$d መተግበሪያዎች ድረስ ያጋሩ። በተቆለፈ አቃፊ ውስጥ የተቀመጡ ፎቶዎች እና ቪዲዮዎች ሊጋሩ አይችሉም።</item>
     </plurals>
     <plurals name="social_share_select_error">
         <item quantity="other">እስከ %1$d መተግበሪያዎች ድረስ ይምረጡ</item>

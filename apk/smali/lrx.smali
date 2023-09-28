@@ -1,157 +1,152 @@
 .class public final Llrx;
 .super Ljava/lang/Object;
 
-# interfaces
-.implements Llre;
+
+# instance fields
+.field public final a:Llrw;
+
+.field public final b:Llyp;
 
 
 # direct methods
-.method public constructor <init>()V
+.method public constructor <init>(Llyp;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    iput-object p1, p0, Llrx;->b:Llyp;
+
+    new-instance p1, Llrw;
+
+    invoke-direct {p1, p0}, Llrw;-><init>(Llrx;)V
+
+    iput-object p1, p0, Llrx;->a:Llrw;
+
     return-void
-.end method
-
-.method public static final b(Lkte;)Ljava/io/InputStream;
-    .locals 5
-
-    iget-object v0, p0, Lkte;->d:Ljava/lang/Object;
-
-    iget-object v1, p0, Lkte;->a:Ljava/lang/Object;
-
-    check-cast v1, Landroid/net/Uri;
-
-    invoke-interface {v0, v1}, Llsb;->d(Landroid/net/Uri;)Ljava/io/InputStream;
-
-    move-result-object v0
-
-    new-instance v1, Ljava/util/ArrayList;
-
-    invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
-
-    invoke-interface {v1, v0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-
-    iget-object v2, p0, Lkte;->c:Ljava/lang/Object;
-
-    invoke-interface {v2}, Ljava/util/List;->isEmpty()Z
-
-    move-result v2
-
-    if-nez v2, :cond_3
-
-    iget-object v2, p0, Lkte;->c:Ljava/lang/Object;
-
-    new-instance v3, Ljava/util/ArrayList;
-
-    invoke-direct {v3}, Ljava/util/ArrayList;-><init>()V
-
-    invoke-interface {v2}, Ljava/util/List;->iterator()Ljava/util/Iterator;
-
-    move-result-object v2
-
-    :cond_0
-    :goto_0
-    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v4
-
-    if-eqz v4, :cond_1
-
-    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v4
-
-    check-cast v4, Llsf;
-
-    invoke-interface {v4}, Llsf;->a()Llsd;
-
-    move-result-object v4
-
-    if-eqz v4, :cond_0
-
-    invoke-interface {v3, v4}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-
-    goto :goto_0
-
-    :cond_1
-    invoke-interface {v3}, Ljava/util/List;->isEmpty()Z
-
-    move-result v2
-
-    if-nez v2, :cond_2
-
-    new-instance v2, Llrb;
-
-    invoke-direct {v2, v0, v3}, Llrb;-><init>(Ljava/io/InputStream;Ljava/util/List;)V
-
-    goto :goto_1
-
-    :cond_2
-    const/4 v2, 0x0
-
-    :goto_1
-    if-eqz v2, :cond_3
-
-    invoke-interface {v1, v2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-
-    :cond_3
-    iget-object p0, p0, Lkte;->b:Ljava/lang/Object;
-
-    invoke-interface {p0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
-
-    move-result-object p0
-
-    :goto_2
-    invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_4
-
-    invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Llsg;
-
-    invoke-static {v1}, Llyh;->S(Ljava/lang/Iterable;)Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Ljava/io/InputStream;
-
-    invoke-interface {v0}, Llsg;->c()Ljava/io/InputStream;
-
-    move-result-object v0
-
-    invoke-interface {v1, v0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-
-    goto :goto_2
-
-    :cond_4
-    invoke-static {v1}, Ljava/util/Collections;->reverse(Ljava/util/List;)V
-
-    const/4 p0, 0x0
-
-    invoke-interface {v1, p0}, Ljava/util/List;->get(I)Ljava/lang/Object;
-
-    move-result-object p0
-
-    check-cast p0, Ljava/io/InputStream;
-
-    return-object p0
 .end method
 
 
 # virtual methods
-.method public final bridge synthetic a(Lkte;)Ljava/lang/Object;
-    .locals 0
+.method public final a(Ljava/lang/String;II)V
+    .locals 3
 
-    invoke-static {p1}, Llrx;->b(Lkte;)Ljava/io/InputStream;
+    iget-object v0, p0, Llrx;->a:Llrw;
+
+    iget-object v0, v0, Llrw;->c:Llyb;
+
+    const/4 v1, 0x3
+
+    new-array v1, v1, [Ljava/lang/Object;
+
+    const/4 v2, 0x0
+
+    aput-object p1, v1, v2
+
+    invoke-static {p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object p1
 
-    return-object p1
+    const/4 p2, 0x1
+
+    aput-object p1, v1, p2
+
+    invoke-static {p3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object p1
+
+    const/4 p2, 0x2
+
+    aput-object p1, v1, p2
+
+    invoke-interface {v0, v1}, Llyb;->a([Ljava/lang/Object;)V
+
+    return-void
+.end method
+
+.method public final b(IZ)V
+    .locals 3
+
+    iget-object v0, p0, Llrx;->a:Llrw;
+
+    iget-object v0, v0, Llrw;->f:Llyb;
+
+    const/4 v1, 0x2
+
+    new-array v1, v1, [Ljava/lang/Object;
+
+    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object p1
+
+    const/4 v2, 0x0
+
+    aput-object p1, v1, v2
+
+    invoke-static {p2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    move-result-object p1
+
+    const/4 p2, 0x1
+
+    aput-object p1, v1, p2
+
+    invoke-interface {v0, v1}, Llyb;->a([Ljava/lang/Object;)V
+
+    return-void
+.end method
+
+.method public final c(Ljava/lang/String;Ljava/lang/String;IIII)V
+    .locals 3
+
+    iget-object v0, p0, Llrx;->a:Llrw;
+
+    iget-object v0, v0, Llrw;->h:Llyb;
+
+    const/4 v1, 0x6
+
+    new-array v1, v1, [Ljava/lang/Object;
+
+    const/4 v2, 0x0
+
+    aput-object p1, v1, v2
+
+    const/4 p1, 0x1
+
+    aput-object p2, v1, p1
+
+    invoke-static {p3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object p1
+
+    const/4 p2, 0x2
+
+    aput-object p1, v1, p2
+
+    invoke-static {p4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object p1
+
+    const/4 p2, 0x3
+
+    aput-object p1, v1, p2
+
+    invoke-static {p5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object p1
+
+    const/4 p2, 0x4
+
+    aput-object p1, v1, p2
+
+    invoke-static {p6}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object p1
+
+    const/4 p2, 0x5
+
+    aput-object p1, v1, p2
+
+    invoke-interface {v0, v1}, Llyb;->a([Ljava/lang/Object;)V
+
+    return-void
 .end method

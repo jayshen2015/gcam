@@ -1,39 +1,67 @@
-.class public final Ljqf;
-.super Ljava/lang/Object;
-
-# interfaces
-.implements Landroid/content/ServiceConnection;
+.class final Ljqf;
+.super Ljlj;
 
 
 # instance fields
-.field private final synthetic a:I
+.field final synthetic a:Ljqi;
 
 
 # direct methods
-.method public constructor <init>(I)V
+.method public constructor <init>(Ljqi;)V
     .locals 0
 
-    iput p1, p0, Ljqf;->a:I
+    iput-object p1, p0, Ljqf;->a:Ljqi;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljlj;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onServiceConnected(Landroid/content/ComponentName;Landroid/os/IBinder;)V
-    .locals 0
+.method public final onShutterButtonClick()V
+    .locals 1
 
-    iget p1, p0, Ljqf;->a:I
+    iget-object v0, p0, Ljqf;->a:Ljqi;
 
-    return-void
-.end method
+    iget-object v0, v0, Ljqi;->j:Lpyn;
 
-.method public final onServiceDisconnected(Landroid/content/ComponentName;)V
-    .locals 0
+    invoke-interface {v0}, Lpyn;->get()Ljava/lang/Object;
 
-    iget p1, p0, Ljqf;->a:I
+    move-result-object v0
 
+    check-cast v0, Lbzg;
+
+    invoke-virtual {v0}, Lbzg;->g()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Ljqf;->a:Ljqi;
+
+    iget-object v0, v0, Ljqi;->j:Lpyn;
+
+    invoke-interface {v0}, Lpyn;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lbzg;
+
+    invoke-virtual {v0}, Lbzg;->b()V
+
+    iget-object v0, p0, Ljqf;->a:Ljqi;
+
+    iget-object v0, v0, Ljqi;->j:Lpyn;
+
+    invoke-interface {v0}, Lpyn;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lbzg;
+
+    invoke-virtual {v0}, Lbzg;->a()V
+
+    :cond_0
     return-void
 .end method

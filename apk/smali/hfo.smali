@@ -1,223 +1,101 @@
-.class public Lhfo;
+.class public final synthetic Lhfo;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lhfh;
+.implements Lcom/google/googlex/gcam/base/function/LongStringConsumer;
 
 
 # instance fields
-.field public final synthetic b:Lhfq;
+.field public final synthetic a:Lega;
 
 
 # direct methods
-.method public constructor <init>(Lhfq;)V
+.method public synthetic constructor <init>(Lega;)V
     .locals 0
 
-    iput-object p1, p0, Lhfo;->b:Lhfq;
-
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lhfo;->a:Lega;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public a()V
+.method public final accept(JLjava/lang/String;)V
     .locals 3
 
-    iget-object v0, p0, Lhfo;->b:Lhfq;
+    iget-object p1, p0, Lhfo;->a:Lega;
 
-    const/4 v1, 0x0
+    const/4 p2, 0x0
 
-    const/4 v2, 0x1
+    :try_start_0
+    invoke-static {p3, p2}, Landroid/util/Base64;->decode(Ljava/lang/String;I)[B
 
-    invoke-virtual {v0, v1, v2}, Lhfq;->r(ZZ)V
+    move-result-object p3
 
-    return-void
-.end method
-
-.method public final synthetic b(Lchd;Z)V
-    .locals 0
-
-    return-void
-.end method
-
-.method public final synthetic bN()V
-    .locals 0
-
-    return-void
-.end method
-
-.method public bP()Z
-    .locals 1
-
-    const/4 v0, 0x1
-
-    return v0
-.end method
-
-.method public final synthetic cj()V
-    .locals 0
-
-    return-void
-.end method
-
-.method public final synthetic d(Lchd;Z)V
-    .locals 0
-
-    return-void
-.end method
-
-.method public final f()V
-    .locals 3
-
-    iget-object v0, p0, Lhfo;->b:Lhfq;
-
-    invoke-static {v0}, Lhfq;->t(Lhfq;)V
-
-    iget-object v0, p0, Lhfo;->b:Lhfq;
-
-    iget-object v1, v0, Lhfq;->t:Lchd;
-
-    invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    invoke-virtual {v0, v1}, Lhfq;->q(Lchd;)Lnou;
+    invoke-static {}, Lpos;->b()Lpos;
 
     move-result-object v0
 
-    new-instance v1, Lgij;
+    sget-object v1, Lpdo;->a:Lpdo;
 
-    const/4 v2, 0x6
+    invoke-static {v1, p3, v0}, Lppd;->s(Lppd;[BLpos;)Lppd;
 
-    invoke-direct {v1, p0, v2}, Lgij;-><init>(Lhfo;I)V
+    move-result-object p3
 
-    invoke-static {}, Ljvd;->l()Ljava/util/concurrent/Executor;
+    check-cast p3, Lpdo;
+    :try_end_0
+    .catch Lppp; {:try_start_0 .. :try_end_0} :catch_0
 
-    move-result-object v2
+    goto :goto_0
 
-    invoke-static {v0, v1, v2}, Ljvd;->t(Lnou;Ljzs;Ljava/util/concurrent/Executor;)V
+    :catch_0
+    move-exception p3
 
-    iget-object v0, p0, Lhfo;->b:Lhfq;
+    sget-object v0, Lhfw;->a:Louj;
 
-    iget-object v1, v0, Lhfq;->l:Lhet;
+    invoke-virtual {v0}, Loue;->c()Lova;
 
-    iget-object v0, v0, Lhfq;->t:Lchd;
+    move-result-object v0
 
-    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    const/16 v1, 0x974
 
-    invoke-interface {v1, v0}, Lhet;->g(Lchd;)V
+    const-string v2, "Error deserializing native portrait logs: %s"
 
-    iget-object v0, p0, Lhfo;->b:Lhfq;
+    invoke-static {v0, v2, p3, v1}, Ld;->u(Lova;Ljava/lang/String;Ljava/lang/Object;C)V
 
-    iget-object v0, v0, Lhfq;->k:Lhfs;
+    sget-object p3, Lpdo;->a:Lpdo;
 
-    const/4 v1, 0x1
+    :goto_0
+    iget-object p1, p1, Lega;->c:Legd;
 
-    iput-boolean v1, v0, Lhfs;->e:Z
+    iget-object p1, p1, Legd;->g:Lpoy;
 
-    invoke-virtual {v0}, Lhfs;->a()Landroid/animation/Animator;
+    iget-boolean v0, p1, Lpoy;->c:Z
 
-    move-result-object v1
+    if-eqz v0, :cond_0
 
-    invoke-static {v1}, Lmvv;->l(Ljava/lang/Object;)Lmvv;
+    invoke-virtual {p1}, Lpoy;->m()V
 
-    move-result-object v1
+    iput-boolean p2, p1, Lpoy;->c:Z
 
-    invoke-virtual {v0, v1}, Lhfs;->d(Ljava/util/List;)V
+    :cond_0
+    iget-object p1, p1, Lpoy;->b:Lppd;
 
-    iget-object v0, p0, Lhfo;->b:Lhfq;
+    check-cast p1, Lpdn;
 
-    iget-object v0, v0, Lhfq;->r:Lhfv;
+    sget-object p2, Lpdn;->f:Lpdn;
 
-    invoke-interface {v0}, Lhfv;->e()V
+    invoke-virtual {p3}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    return-void
-.end method
+    iput-object p3, p1, Lpdn;->e:Lpdo;
 
-.method public final g()V
-    .locals 2
+    iget p2, p1, Lpdn;->a:I
 
-    iget-object v0, p0, Lhfo;->b:Lhfq;
+    or-int/lit8 p2, p2, 0x8
 
-    iget-object v0, v0, Lhfq;->k:Lhfs;
-
-    invoke-virtual {v0}, Lhfs;->b()Landroid/animation/Animator;
-
-    move-result-object v1
-
-    invoke-static {v1}, Lmvv;->l(Ljava/lang/Object;)Lmvv;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Lhfs;->d(Ljava/util/List;)V
-
-    const/4 v1, 0x0
-
-    iput-boolean v1, v0, Lhfs;->e:Z
-
-    return-void
-.end method
-
-.method public final synthetic h()V
-    .locals 0
-
-    return-void
-.end method
-
-.method public final synthetic i()V
-    .locals 0
-
-    return-void
-.end method
-
-.method public final synthetic j()V
-    .locals 0
-
-    return-void
-.end method
-
-.method public k()V
-    .locals 0
-
-    return-void
-.end method
-
-.method public final synthetic l(Landroid/content/pm/ResolveInfo;)V
-    .locals 0
-
-    return-void
-.end method
-
-.method public m()V
-    .locals 0
-
-    return-void
-.end method
-
-.method public final synthetic n()V
-    .locals 0
-
-    return-void
-.end method
-
-.method public final o()V
-    .locals 2
-
-    iget-object v0, p0, Lhfo;->b:Lhfq;
-
-    iget-object v1, v0, Lhfq;->l:Lhet;
-
-    iget-object v0, v0, Lhfq;->t:Lchd;
-
-    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    invoke-interface {v1, v0}, Lhet;->g(Lchd;)V
-
-    return-void
-.end method
-
-.method public final synthetic p(J)V
-    .locals 0
+    iput p2, p1, Lpdn;->a:I
 
     return-void
 .end method

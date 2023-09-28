@@ -1,301 +1,125 @@
-.class public final Lbqu;
-.super Ljava/io/FilterInputStream;
+.class public final synthetic Lbqu;
+.super Ljava/lang/Object;
 
 # interfaces
-.implements Lj$/io/InputStreamRetargetInterface;
-
-
-# static fields
-.field private static final a:[B
-
-.field private static final b:I
+.implements Landroid/content/DialogInterface$OnClickListener;
 
 
 # instance fields
-.field private final c:B
+.field public final synthetic a:Lbqz;
 
-.field private d:I
+.field private final synthetic b:I
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
+.method public synthetic constructor <init>(Lbqz;I)V
+    .locals 0
 
-    const/16 v0, 0x1d
+    iput p2, p0, Lbqu;->b:I
 
-    new-array v0, v0, [B
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    fill-array-data v0, :array_0
-
-    sput-object v0, Lbqu;->a:[B
-
-    const/16 v0, 0x1f
-
-    sput v0, Lbqu;->b:I
+    iput-object p1, p0, Lbqu;->a:Lbqz;
 
     return-void
-
-    :array_0
-    .array-data 1
-        -0x1t
-        -0x1ft
-        0x0t
-        0x1ct
-        0x45t
-        0x78t
-        0x69t
-        0x66t
-        0x0t
-        0x0t
-        0x4dt
-        0x4dt
-        0x0t
-        0x0t
-        0x0t
-        0x0t
-        0x0t
-        0x8t
-        0x0t
-        0x1t
-        0x1t
-        0x12t
-        0x0t
-        0x2t
-        0x0t
-        0x0t
-        0x0t
-        0x1t
-        0x0t
-    .end array-data
-.end method
-
-.method public constructor <init>(Ljava/io/InputStream;I)V
-    .locals 2
-
-    invoke-direct {p0, p1}, Ljava/io/FilterInputStream;-><init>(Ljava/io/InputStream;)V
-
-    const/4 p1, -0x1
-
-    if-lt p2, p1, :cond_0
-
-    const/16 p1, 0x8
-
-    if-gt p2, p1, :cond_0
-
-    int-to-byte p1, p2
-
-    iput-byte p1, p0, Lbqu;->c:B
-
-    return-void
-
-    :cond_0
-    new-instance p1, Ljava/lang/IllegalArgumentException;
-
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v1, "Cannot add invalid orientation: "
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0, p2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p2
-
-    invoke-direct {p1, p2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw p1
 .end method
 
 
 # virtual methods
-.method public final mark(I)V
-    .locals 0
+.method public final onClick(Landroid/content/DialogInterface;I)V
+    .locals 4
 
-    new-instance p1, Ljava/lang/UnsupportedOperationException;
+    iget p1, p0, Lbqu;->b:I
 
-    invoke-direct {p1}, Ljava/lang/UnsupportedOperationException;-><init>()V
+    const/4 p2, 0x0
 
-    throw p1
-.end method
+    invoke-static {p2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
-.method public final markSupported()Z
-    .locals 1
+    move-result-object p2
 
-    const/4 v0, 0x0
+    packed-switch p1, :pswitch_data_0
 
-    return v0
-.end method
+    iget-object p1, p0, Lbqu;->a:Lbqz;
 
-.method public final read()I
-    .locals 2
+    iget-object v0, p1, Lbqz;->g:Lpih;
 
-    iget v0, p0, Lbqu;->d:I
+    invoke-virtual {v0, p2}, Lpih;->o(Ljava/lang/Object;)Z
 
-    const/4 v1, 0x2
+    iget-object p1, p1, Lbqz;->b:Lbrc;
 
-    if-lt v0, v1, :cond_2
+    const-string p2, "Required camera permissions were not granted."
 
-    sget v1, Lbqu;->b:I
+    invoke-virtual {p1, p2}, Lbrc;->a(Ljava/lang/String;)V
 
-    if-le v0, v1, :cond_0
+    return-void
 
-    goto :goto_0
+    :pswitch_0
+    iget-object p1, p0, Lbqu;->a:Lbqz;
 
-    :cond_0
-    if-ne v0, v1, :cond_1
+    new-instance v0, Landroid/content/Intent;
 
-    iget-byte v0, p0, Lbqu;->c:B
+    const-string v1, "android.settings.APPLICATION_DETAILS_SETTINGS"
 
-    goto :goto_1
+    invoke-direct {v0, v1}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    :cond_1
-    add-int/lit8 v0, v0, -0x2
+    const-string v1, "android.intent.category.DEFAULT"
 
-    sget-object v1, Lbqu;->a:[B
+    invoke-virtual {v0, v1}, Landroid/content/Intent;->addCategory(Ljava/lang/String;)Landroid/content/Intent;
 
-    aget-byte v0, v1, v0
+    iget-object v1, p1, Lbqz;->a:Landroid/app/Activity;
 
-    and-int/lit16 v0, v0, 0xff
+    invoke-virtual {v1}, Landroid/app/Activity;->getPackageName()Ljava/lang/String;
 
-    goto :goto_1
+    move-result-object v1
 
-    :cond_2
-    :goto_0
-    invoke-super {p0}, Ljava/io/FilterInputStream;->read()I
+    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
-    move-result v0
+    move-result-object v1
 
-    :goto_1
-    const/4 v1, -0x1
+    const-string v2, "package:"
 
-    if-eq v0, v1, :cond_3
+    invoke-virtual {v1}, Ljava/lang/String;->length()I
 
-    iget v1, p0, Lbqu;->d:I
+    move-result v3
 
-    add-int/lit8 v1, v1, 0x1
+    if-eqz v3, :cond_0
 
-    iput v1, p0, Lbqu;->d:I
+    invoke-virtual {v2, v1}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
 
-    :cond_3
-    return v0
-.end method
-
-.method public final read([BII)I
-    .locals 3
-
-    iget v0, p0, Lbqu;->d:I
-
-    sget v1, Lbqu;->b:I
-
-    if-le v0, v1, :cond_0
-
-    invoke-super {p0, p1, p2, p3}, Ljava/io/FilterInputStream;->read([BII)I
-
-    move-result p1
+    move-result-object v1
 
     goto :goto_0
 
     :cond_0
-    if-ne v0, v1, :cond_1
+    new-instance v1, Ljava/lang/String;
 
-    iget-byte p3, p0, Lbqu;->c:B
-
-    aput-byte p3, p1, p2
-
-    const/4 p1, 0x1
-
-    goto :goto_0
-
-    :cond_1
-    const/4 v2, 0x2
-
-    if-ge v0, v2, :cond_2
-
-    sub-int/2addr v2, v0
-
-    invoke-super {p0, p1, p2, v2}, Ljava/io/FilterInputStream;->read([BII)I
-
-    move-result p1
-
-    goto :goto_0
-
-    :cond_2
-    sub-int/2addr v1, v0
-
-    invoke-static {v1, p3}, Ljava/lang/Math;->min(II)I
-
-    move-result p3
-
-    sget-object v0, Lbqu;->a:[B
-
-    iget v1, p0, Lbqu;->d:I
-
-    add-int/lit8 v1, v1, -0x2
-
-    invoke-static {v0, v1, p1, p2, p3}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
-
-    move p1, p3
+    invoke-direct {v1, v2}, Ljava/lang/String;-><init>(Ljava/lang/String;)V
 
     :goto_0
-    if-lez p1, :cond_3
+    invoke-static {v1}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
 
-    iget p2, p0, Lbqu;->d:I
+    move-result-object v1
 
-    add-int/2addr p2, p1
+    invoke-virtual {v0, v1}, Landroid/content/Intent;->setData(Landroid/net/Uri;)Landroid/content/Intent;
 
-    iput p2, p0, Lbqu;->d:I
+    iget-object v1, p1, Lbqz;->i:Lemb;
 
-    :cond_3
-    return p1
-.end method
+    invoke-virtual {v1, v0}, Lemb;->b(Landroid/content/Intent;)V
 
-.method public final reset()V
-    .locals 1
+    iget-object v0, p1, Lbqz;->g:Lpih;
 
-    new-instance v0, Ljava/lang/UnsupportedOperationException;
+    invoke-virtual {v0, p2}, Lpih;->o(Ljava/lang/Object;)Z
 
-    invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V
+    iget-object p1, p1, Lbqz;->b:Lbrc;
 
-    throw v0
-.end method
+    const-string p2, "Closing until required permissions are granted."
 
-.method public final skip(J)J
-    .locals 3
+    invoke-virtual {p1, p2}, Lbrc;->a(Ljava/lang/String;)V
 
-    invoke-super {p0, p1, p2}, Ljava/io/FilterInputStream;->skip(J)J
+    return-void
 
-    move-result-wide p1
-
-    const-wide/16 v0, 0x0
-
-    cmp-long v2, p1, v0
-
-    if-lez v2, :cond_0
-
-    iget v0, p0, Lbqu;->d:I
-
-    int-to-long v0, v0
-
-    add-long/2addr v0, p1
-
-    long-to-int v1, v0
-
-    iput v1, p0, Lbqu;->d:I
-
-    :cond_0
-    return-wide p1
-.end method
-
-.method public final synthetic transferTo(Ljava/io/OutputStream;)J
-    .locals 2
-
-    invoke-static {p0, p1}, Lj$/io/DesugarInputStream;->transferTo(Ljava/io/InputStream;Ljava/io/OutputStream;)J
-
-    move-result-wide v0
-
-    return-wide v0
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

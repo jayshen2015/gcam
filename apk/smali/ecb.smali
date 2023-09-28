@@ -1,54 +1,98 @@
-.class public final Lecb;
-.super Ljava/lang/Object;
+.class public final enum Lecb;
+.super Ljava/lang/Enum;
 
 
 # static fields
-.field public static final a:J
+.field public static final enum a:Lecb;
 
+.field public static final enum b:Lecb;
 
-# instance fields
-.field public b:Ljava/util/HashMap;
+.field public static final enum c:Lecb;
+
+.field public static final enum d:Lecb;
+
+.field private static final synthetic e:[Lecb;
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 3
+    .locals 9
 
-    sget-object v0, Ljava/util/concurrent/TimeUnit;->SECONDS:Ljava/util/concurrent/TimeUnit;
+    new-instance v0, Lecb;
 
-    const-wide/16 v1, 0x1
+    const-string v1, "REGULAR"
 
-    invoke-virtual {v0, v1, v2}, Ljava/util/concurrent/TimeUnit;->toNanos(J)J
+    const/4 v2, 0x0
 
-    move-result-wide v0
+    invoke-direct {v0, v1, v2}, Lecb;-><init>(Ljava/lang/String;I)V
 
-    sput-wide v0, Lecb;->a:J
+    sput-object v0, Lecb;->a:Lecb;
+
+    new-instance v1, Lecb;
+
+    const-string v3, "PORTRAIT"
+
+    const/4 v4, 0x1
+
+    invoke-direct {v1, v3, v4}, Lecb;-><init>(Ljava/lang/String;I)V
+
+    sput-object v1, Lecb;->b:Lecb;
+
+    new-instance v3, Lecb;
+
+    const-string v5, "LONG_EXPOSURE"
+
+    const/4 v6, 0x2
+
+    invoke-direct {v3, v5, v6}, Lecb;-><init>(Ljava/lang/String;I)V
+
+    sput-object v3, Lecb;->c:Lecb;
+
+    new-instance v5, Lecb;
+
+    const-string v7, "MOTION_BLUR"
+
+    const/4 v8, 0x3
+
+    invoke-direct {v5, v7, v8}, Lecb;-><init>(Ljava/lang/String;I)V
+
+    sput-object v5, Lecb;->d:Lecb;
+
+    const/4 v7, 0x4
+
+    new-array v7, v7, [Lecb;
+
+    aput-object v0, v7, v2
+
+    aput-object v1, v7, v4
+
+    aput-object v3, v7, v6
+
+    aput-object v5, v7, v8
+
+    sput-object v7, Lecb;->e:[Lecb;
 
     return-void
 .end method
 
-.method public constructor <init>(Ljvs;Ljava/util/concurrent/Executor;Ljuf;)V
-    .locals 2
+.method private constructor <init>(Ljava/lang/String;I)V
+    .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    new-instance v0, Ljava/util/HashMap;
-
-    invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
-
-    iput-object v0, p0, Lecb;->b:Ljava/util/HashMap;
-
-    new-instance v0, Ldsk;
-
-    const/4 v1, 0x3
-
-    invoke-direct {v0, p0, v1}, Ldsk;-><init>(Lecb;I)V
-
-    invoke-interface {p1, v0, p2}, Ljvs;->a(Lkai;Ljava/util/concurrent/Executor;)Lkad;
-
-    move-result-object p1
-
-    invoke-virtual {p3, p1}, Ljuf;->d(Lkad;)V
+    invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
+.end method
+
+.method public static values()[Lecb;
+    .locals 1
+
+    sget-object v0, Lecb;->e:[Lecb;
+
+    invoke-virtual {v0}, [Lecb;->clone()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, [Lecb;
+
+    return-object v0
 .end method

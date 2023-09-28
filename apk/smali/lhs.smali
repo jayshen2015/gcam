@@ -1,250 +1,535 @@
-.class final Llhs;
-.super Llhv;
+.class public final Llhs;
+.super Ljava/lang/Object;
 
 
 # static fields
 .field public static final a:Llhs;
 
+.field public static final b:Llhs;
+
+.field public static final c:Llhs;
+
+
+# instance fields
+.field public final d:I
+
+.field public final e:I
+
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 1
+    .locals 5
 
-    new-instance v0, Llhs;
+    const/4 v0, 0x4
 
-    invoke-direct {v0}, Llhs;-><init>()V
+    const/4 v1, 0x3
 
-    sput-object v0, Llhs;->a:Llhs;
+    invoke-static {v0, v1}, Llhs;->i(II)Llhs;
+
+    move-result-object v2
+
+    sput-object v2, Llhs;->a:Llhs;
+
+    const/16 v2, 0x10
+
+    const/16 v3, 0x9
+
+    invoke-static {v2, v3}, Llhs;->i(II)Llhs;
+
+    move-result-object v4
+
+    sput-object v4, Llhs;->b:Llhs;
+
+    invoke-static {v1, v0}, Llhs;->i(II)Llhs;
+
+    move-result-object v0
+
+    sput-object v0, Llhs;->c:Llhs;
+
+    invoke-static {v3, v2}, Llhs;->i(II)Llhs;
 
     return-void
 .end method
 
-.method private constructor <init>()V
+.method private constructor <init>(II)V
     .locals 0
 
-    invoke-direct {p0}, Llhv;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput p1, p0, Llhs;->d:I
+
+    iput p2, p0, Llhs;->e:I
 
     return-void
+.end method
+
+.method public static e(Llig;)Llhs;
+    .locals 1
+
+    invoke-virtual {p0}, Llig;->k()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    iget v0, p0, Llig;->a:I
+
+    iget p0, p0, Llig;->b:I
+
+    invoke-static {v0, p0}, Llhs;->i(II)Llhs;
+
+    move-result-object p0
+
+    return-object p0
+
+    :cond_0
+    iget v0, p0, Llig;->b:I
+
+    iget p0, p0, Llig;->a:I
+
+    invoke-static {v0, p0}, Llhs;->i(II)Llhs;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public static g(Landroid/util/Size;)Llhs;
+    .locals 1
+
+    invoke-virtual {p0}, Landroid/util/Size;->getWidth()I
+
+    move-result v0
+
+    invoke-virtual {p0}, Landroid/util/Size;->getHeight()I
+
+    move-result p0
+
+    invoke-static {v0, p0}, Llhs;->i(II)Llhs;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public static h(Llig;)Llhs;
+    .locals 1
+
+    iget v0, p0, Llig;->a:I
+
+    iget p0, p0, Llig;->b:I
+
+    invoke-static {v0, p0}, Llhs;->i(II)Llhs;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public static i(II)Llhs;
+    .locals 3
+
+    int-to-long v0, p0
+
+    invoke-static {v0, v1}, Ljava/math/BigInteger;->valueOf(J)Ljava/math/BigInteger;
+
+    move-result-object v0
+
+    int-to-long v1, p1
+
+    invoke-static {v1, v2}, Ljava/math/BigInteger;->valueOf(J)Ljava/math/BigInteger;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Ljava/math/BigInteger;->gcd(Ljava/math/BigInteger;)Ljava/math/BigInteger;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/math/BigInteger;->intValue()I
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    div-int/2addr p0, v0
+
+    :cond_0
+    if-eqz v0, :cond_1
+
+    div-int/2addr p1, v0
+
+    :cond_1
+    new-instance v0, Llhs;
+
+    invoke-direct {v0, p0, p1}, Llhs;-><init>(II)V
+
+    return-object v0
 .end method
 
 
 # virtual methods
-.method public final bridge synthetic a(Ljava/lang/String;Ljava/lang/Object;)Lnxy;
-    .locals 3
+.method public final a(F)F
+    .locals 1
 
-    check-cast p2, Ljava/lang/Long;
+    iget v0, p0, Llhs;->e:I
 
-    invoke-virtual {p2}, Ljava/lang/Long;->intValue()I
+    int-to-float v0, v0
 
-    move-result p2
+    mul-float p1, p1, v0
 
-    if-nez p2, :cond_0
+    iget v0, p0, Llhs;->d:I
 
-    const/4 p1, 0x0
+    int-to-float v0, v0
 
-    goto :goto_0
+    div-float/2addr p1, v0
 
-    :cond_0
-    sget-object v0, Loye;->d:Loye;
+    return p1
+.end method
 
-    invoke-virtual {v0}, Lnws;->O()Lnwn;
+.method public final b()F
+    .locals 2
+
+    iget v0, p0, Llhs;->d:I
+
+    int-to-float v0, v0
+
+    iget v1, p0, Llhs;->e:I
+
+    int-to-float v1, v1
+
+    div-float/2addr v0, v1
+
+    return v0
+.end method
+
+.method public final c(Landroid/graphics/Rect;)Landroid/graphics/Rect;
+    .locals 5
+
+    invoke-virtual {p1}, Landroid/graphics/Rect;->width()I
+
+    move-result v0
+
+    invoke-virtual {p1}, Landroid/graphics/Rect;->height()I
+
+    move-result v1
+
+    invoke-static {v0, v1}, Llhs;->i(II)Llhs;
 
     move-result-object v0
 
-    iget-object v1, v0, Lnwn;->b:Lnws;
+    invoke-virtual {p0, v0}, Llhs;->l(Llhs;)Z
 
-    invoke-virtual {v1}, Lnws;->ac()Z
+    move-result v0
 
-    move-result v1
+    if-eqz v0, :cond_0
 
-    if-nez v1, :cond_1
+    invoke-virtual {p1}, Landroid/graphics/Rect;->width()I
 
-    invoke-virtual {v0}, Lnwn;->p()V
+    move-result v0
 
-    :cond_1
-    iget-object v1, v0, Lnwn;->b:Lnws;
+    iget v1, p0, Llhs;->e:I
 
-    check-cast v1, Loye;
+    mul-int v0, v0, v1
 
-    iget v2, v1, Loye;->a:I
+    iget v1, p0, Llhs;->d:I
 
-    or-int/lit8 v2, v2, 0x1
+    div-int/2addr v0, v1
 
-    iput v2, v1, Loye;->a:I
+    iget v1, p1, Landroid/graphics/Rect;->top:I
 
-    iput p2, v1, Loye;->b:I
+    invoke-virtual {p1}, Landroid/graphics/Rect;->height()I
 
-    if-eqz p1, :cond_3
+    move-result v2
 
-    invoke-static {p1}, Lljr;->f(Ljava/lang/String;)Loyf;
+    sub-int/2addr v2, v0
 
-    move-result-object p1
+    div-int/lit8 v2, v2, 0x2
 
-    iget-object p2, v0, Lnwn;->b:Lnws;
+    add-int/2addr v1, v2
 
-    invoke-virtual {p2}, Lnws;->ac()Z
+    iget v2, p1, Landroid/graphics/Rect;->left:I
 
-    move-result p2
+    iget v3, p1, Landroid/graphics/Rect;->left:I
 
-    if-nez p2, :cond_2
-
-    invoke-virtual {v0}, Lnwn;->p()V
-
-    :cond_2
-    iget-object p2, v0, Lnwn;->b:Lnws;
-
-    check-cast p2, Loye;
-
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    iput-object p1, p2, Loye;->c:Loyf;
-
-    iget p1, p2, Loye;->a:I
-
-    or-int/lit8 p1, p1, 0x2
-
-    iput p1, p2, Loye;->a:I
-
-    :cond_3
-    invoke-virtual {v0}, Lnwn;->i()Lnws;
-
-    move-result-object p1
-
-    check-cast p1, Loye;
-
-    :goto_0
-    return-object p1
-.end method
-
-.method public final synthetic b(Lnxy;Lnxy;)Lnxy;
-    .locals 2
-
-    check-cast p1, Loye;
-
-    check-cast p2, Loye;
-
-    if-eqz p1, :cond_6
-
-    if-eqz p2, :cond_6
-
-    iget v0, p1, Loye;->a:I
-
-    and-int/lit8 v0, v0, 0x1
-
-    const/4 v1, 0x0
-
-    if-eqz v0, :cond_5
-
-    iget v0, p1, Loye;->b:I
-
-    iget p2, p2, Loye;->b:I
-
-    sub-int/2addr v0, p2
-
-    if-nez v0, :cond_0
-
-    move-object p1, v1
-
-    goto :goto_0
-
-    :cond_0
-    sget-object p2, Loye;->d:Loye;
-
-    invoke-virtual {p2}, Lnws;->O()Lnwn;
-
-    move-result-object p2
-
-    iget v1, p1, Loye;->a:I
-
-    and-int/lit8 v1, v1, 0x2
-
-    if-eqz v1, :cond_3
-
-    iget-object p1, p1, Loye;->c:Loyf;
-
-    if-nez p1, :cond_1
-
-    sget-object p1, Loyf;->d:Loyf;
-
-    :cond_1
-    iget-object v1, p2, Lnwn;->b:Lnws;
-
-    invoke-virtual {v1}, Lnws;->ac()Z
-
-    move-result v1
-
-    if-nez v1, :cond_2
-
-    invoke-virtual {p2}, Lnwn;->p()V
-
-    :cond_2
-    iget-object v1, p2, Lnwn;->b:Lnws;
-
-    check-cast v1, Loye;
-
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    iput-object p1, v1, Loye;->c:Loyf;
-
-    iget p1, v1, Loye;->a:I
-
-    or-int/lit8 p1, p1, 0x2
-
-    iput p1, v1, Loye;->a:I
-
-    :cond_3
-    iget-object p1, p2, Lnwn;->b:Lnws;
-
-    invoke-virtual {p1}, Lnws;->ac()Z
+    invoke-virtual {p1}, Landroid/graphics/Rect;->width()I
 
     move-result p1
 
-    if-nez p1, :cond_4
+    new-instance v4, Landroid/graphics/Rect;
 
-    invoke-virtual {p2}, Lnwn;->p()V
+    add-int/2addr v3, p1
 
-    :cond_4
-    iget-object p1, p2, Lnwn;->b:Lnws;
+    add-int/2addr v0, v1
 
-    check-cast p1, Loye;
+    invoke-direct {v4, v2, v1, v3, v0}, Landroid/graphics/Rect;-><init>(IIII)V
 
-    iget v1, p1, Loye;->a:I
-
-    or-int/lit8 v1, v1, 0x1
-
-    iput v1, p1, Loye;->a:I
-
-    iput v0, p1, Loye;->b:I
-
-    invoke-virtual {p2}, Lnwn;->i()Lnws;
-
-    move-result-object p1
-
-    check-cast p1, Loye;
-
-    goto :goto_0
-
-    :cond_5
-    move-object p1, v1
-
-    :cond_6
-    :goto_0
-    return-object p1
-.end method
-
-.method public final bridge synthetic c(Lnxy;)Ljava/lang/String;
-    .locals 0
-
-    check-cast p1, Loye;
-
-    iget-object p1, p1, Loye;->c:Loyf;
-
-    if-nez p1, :cond_0
-
-    sget-object p1, Loyf;->d:Loyf;
+    return-object v4
 
     :cond_0
-    iget-object p1, p1, Loyf;->c:Ljava/lang/String;
+    invoke-virtual {p1}, Landroid/graphics/Rect;->height()I
 
-    return-object p1
+    move-result v0
+
+    iget v1, p0, Llhs;->d:I
+
+    mul-int v0, v0, v1
+
+    iget v1, p0, Llhs;->e:I
+
+    div-int/2addr v0, v1
+
+    iget v1, p1, Landroid/graphics/Rect;->left:I
+
+    invoke-virtual {p1}, Landroid/graphics/Rect;->width()I
+
+    move-result v2
+
+    sub-int/2addr v2, v0
+
+    div-int/lit8 v2, v2, 0x2
+
+    add-int/2addr v1, v2
+
+    iget v2, p1, Landroid/graphics/Rect;->top:I
+
+    iget v3, p1, Landroid/graphics/Rect;->top:I
+
+    invoke-virtual {p1}, Landroid/graphics/Rect;->height()I
+
+    move-result p1
+
+    new-instance v4, Landroid/graphics/Rect;
+
+    add-int/2addr v0, v1
+
+    add-int/2addr v3, p1
+
+    invoke-direct {v4, v1, v2, v0, v3}, Landroid/graphics/Rect;-><init>(IIII)V
+
+    return-object v4
+.end method
+
+.method public final d()Llhs;
+    .locals 2
+
+    iget v0, p0, Llhs;->d:I
+
+    iget v1, p0, Llhs;->e:I
+
+    if-lt v0, v1, :cond_0
+
+    return-object p0
+
+    :cond_0
+    invoke-virtual {p0}, Llhs;->j()Llhs;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 4
+
+    const/4 v0, 0x1
+
+    if-ne p0, p1, :cond_0
+
+    return v0
+
+    :cond_0
+    instance-of v1, p1, Llhs;
+
+    const/4 v2, 0x0
+
+    if-nez v1, :cond_1
+
+    return v2
+
+    :cond_1
+    check-cast p1, Llhs;
+
+    iget v1, p0, Llhs;->e:I
+
+    iget v3, p1, Llhs;->e:I
+
+    if-ne v1, v3, :cond_2
+
+    iget v1, p0, Llhs;->d:I
+
+    iget p1, p1, Llhs;->d:I
+
+    if-ne v1, p1, :cond_2
+
+    return v0
+
+    :cond_2
+    return v2
+.end method
+
+.method public final f()Llhs;
+    .locals 2
+
+    iget v0, p0, Llhs;->d:I
+
+    iget v1, p0, Llhs;->e:I
+
+    if-gt v0, v1, :cond_0
+
+    return-object p0
+
+    :cond_0
+    invoke-virtual {p0}, Llhs;->j()Llhs;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public final hashCode()I
+    .locals 3
+
+    const/4 v0, 0x2
+
+    new-array v0, v0, [Ljava/lang/Object;
+
+    iget v1, p0, Llhs;->d:I
+
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v1
+
+    const/4 v2, 0x0
+
+    aput-object v1, v0, v2
+
+    iget v1, p0, Llhs;->e:I
+
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v1
+
+    const/4 v2, 0x1
+
+    aput-object v1, v0, v2
+
+    invoke-static {v0}, Ljava/util/Arrays;->hashCode([Ljava/lang/Object;)I
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public final j()Llhs;
+    .locals 2
+
+    iget v0, p0, Llhs;->e:I
+
+    iget v1, p0, Llhs;->d:I
+
+    invoke-static {v0, v1}, Llhs;->i(II)Llhs;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public final k(Llhs;)Z
+    .locals 4
+
+    invoke-virtual {p0}, Llhs;->b()F
+
+    move-result v0
+
+    invoke-virtual {p1}, Llhs;->b()F
+
+    move-result p1
+
+    sub-float/2addr v0, p1
+
+    invoke-static {v0}, Ljava/lang/Math;->abs(F)F
+
+    move-result p1
+
+    float-to-double v0, p1
+
+    const-wide v2, 0x3f9999999999999aL    # 0.025
+
+    cmpg-double p1, v0, v2
+
+    if-gez p1, :cond_0
+
+    const/4 p1, 0x1
+
+    return p1
+
+    :cond_0
+    const/4 p1, 0x0
+
+    return p1
+.end method
+
+.method public final l(Llhs;)Z
+    .locals 2
+
+    iget v0, p0, Llhs;->d:I
+
+    iget v1, p1, Llhs;->e:I
+
+    mul-int v0, v0, v1
+
+    iget p1, p1, Llhs;->d:I
+
+    iget v1, p0, Llhs;->e:I
+
+    mul-int p1, p1, v1
+
+    if-le v0, p1, :cond_0
+
+    const/4 p1, 0x1
+
+    return p1
+
+    :cond_0
+    const/4 p1, 0x0
+
+    return p1
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .locals 3
+
+    const/4 v0, 0x2
+
+    new-array v0, v0, [Ljava/lang/Object;
+
+    iget v1, p0, Llhs;->d:I
+
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v1
+
+    const/4 v2, 0x0
+
+    aput-object v1, v0, v2
+
+    iget v1, p0, Llhs;->e:I
+
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v1
+
+    const/4 v2, 0x1
+
+    aput-object v1, v0, v2
+
+    const/4 v1, 0x0
+
+    const-string v2, "AspectRatio[%d:%d]"
+
+    invoke-static {v1, v2, v0}, Ljava/lang/String;->format(Ljava/util/Locale;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
 .end method

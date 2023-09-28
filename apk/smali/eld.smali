@@ -1,274 +1,99 @@
 .class public final Leld;
 .super Ljava/lang/Object;
 
+# interfaces
+.implements Lpys;
+
 
 # instance fields
-.field public a:F
+.field private final a:Lqkg;
 
-.field public b:Ljava/lang/Object;
+.field private final b:Lqkg;
 
-.field public c:Ljava/lang/Object;
+.field private final c:Lqkg;
 
-.field private final d:Ljava/lang/Object;
-
-.field private e:J
-
-.field private f:I
+.field private final d:Lqkg;
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/Object;)V
-    .locals 2
+.method public constructor <init>(Lqkg;Lqkg;Lqkg;Lqkg;)V
+    .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const/4 v0, 0x0
+    iput-object p1, p0, Leld;->a:Lqkg;
 
-    iput v0, p0, Leld;->a:F
+    iput-object p2, p0, Leld;->b:Lqkg;
 
-    const/4 v0, 0x4
+    iput-object p3, p0, Leld;->c:Lqkg;
 
-    iput v0, p0, Leld;->f:I
-
-    iput-object p1, p0, Leld;->d:Ljava/lang/Object;
-
-    iput-object p1, p0, Leld;->b:Ljava/lang/Object;
-
-    iput-object p1, p0, Leld;->c:Ljava/lang/Object;
-
-    invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
-
-    move-result-wide v0
-
-    iput-wide v0, p0, Leld;->e:J
+    iput-object p4, p0, Leld;->d:Lqkg;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()V
-    .locals 2
+.method public final a()Lehc;
+    .locals 7
 
-    const/4 v0, 0x0
+    iget-object v0, p0, Leld;->a:Lqkg;
 
-    iput v0, p0, Leld;->a:F
+    check-cast v0, Lemd;
 
-    const/4 v0, 0x4
+    invoke-virtual {v0}, Lemd;->a()Landroid/content/Context;
 
-    iput v0, p0, Leld;->f:I
+    move-result-object v2
 
-    iget-object v0, p0, Leld;->d:Ljava/lang/Object;
+    iget-object v0, p0, Leld;->b:Lqkg;
 
-    iput-object v0, p0, Leld;->b:Ljava/lang/Object;
-
-    iput-object v0, p0, Leld;->c:Ljava/lang/Object;
-
-    invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
-
-    move-result-wide v0
-
-    iput-wide v0, p0, Leld;->e:J
-
-    return-void
-.end method
-
-.method public final b()V
-    .locals 8
-
-    invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
-
-    move-result-wide v0
-
-    iget-wide v2, p0, Leld;->e:J
-
-    sub-long v2, v0, v2
-
-    iput-wide v0, p0, Leld;->e:J
-
-    iget v0, p0, Leld;->f:I
-
-    add-int/lit8 v1, v0, -0x1
-
-    if-eqz v0, :cond_6
-
-    const/4 v4, 0x1
-
-    const/4 v5, 0x3
-
-    const/high16 v6, 0x43480000    # 200.0f
-
-    const/high16 v7, 0x3f800000    # 1.0f
-
-    packed-switch v1, :pswitch_data_0
-
-    new-instance v1, Ljava/lang/RuntimeException;
-
-    packed-switch v0, :pswitch_data_1
-
-    const-string v0, "FADED_OUT"
-
-    goto :goto_0
-
-    :pswitch_0
-    iget-object v0, p0, Leld;->c:Ljava/lang/Object;
-
-    iget-object v1, p0, Leld;->d:Ljava/lang/Object;
-
-    if-eq v0, v1, :cond_0
-
-    iput-object v0, p0, Leld;->b:Ljava/lang/Object;
-
-    iput v4, p0, Leld;->f:I
-
-    iget v0, p0, Leld;->a:F
-
-    long-to-float v1, v2
-
-    div-float/2addr v1, v6
-
-    add-float/2addr v0, v1
-
-    iput v0, p0, Leld;->a:F
-
-    cmpl-float v0, v0, v7
-
-    if-ltz v0, :cond_0
-
-    iput v7, p0, Leld;->a:F
-
-    :cond_0
-    return-void
-
-    :pswitch_1
-    iget v0, p0, Leld;->a:F
-
-    long-to-float v1, v2
-
-    div-float/2addr v1, v6
-
-    sub-float/2addr v0, v1
-
-    iput v0, p0, Leld;->a:F
-
-    iget-object v1, p0, Leld;->c:Ljava/lang/Object;
-
-    iget-object v2, p0, Leld;->b:Ljava/lang/Object;
-
-    if-ne v1, v2, :cond_1
-
-    iput v4, p0, Leld;->f:I
-
-    return-void
-
-    :cond_1
-    const/4 v2, 0x0
-
-    cmpg-float v0, v0, v2
-
-    if-gtz v0, :cond_2
-
-    iput v2, p0, Leld;->a:F
-
-    const/4 v0, 0x4
-
-    iput v0, p0, Leld;->f:I
-
-    iput-object v1, p0, Leld;->b:Ljava/lang/Object;
-
-    :cond_2
-    return-void
-
-    :pswitch_2
-    iget-object v0, p0, Leld;->c:Ljava/lang/Object;
-
-    iget-object v1, p0, Leld;->b:Ljava/lang/Object;
-
-    if-eq v0, v1, :cond_3
-
-    iput v5, p0, Leld;->f:I
-
-    :cond_3
-    return-void
-
-    :pswitch_3
-    iget v0, p0, Leld;->a:F
-
-    long-to-float v1, v2
-
-    div-float/2addr v1, v6
-
-    add-float/2addr v0, v1
-
-    iput v0, p0, Leld;->a:F
-
-    cmpl-float v0, v0, v7
-
-    if-ltz v0, :cond_5
-
-    iput v7, p0, Leld;->a:F
-
-    iget-object v0, p0, Leld;->c:Ljava/lang/Object;
-
-    iget-object v1, p0, Leld;->b:Ljava/lang/Object;
-
-    if-eq v0, v1, :cond_4
-
-    iput v5, p0, Leld;->f:I
-
-    return-void
-
-    :cond_4
-    const/4 v0, 0x2
-
-    iput v0, p0, Leld;->f:I
-
-    :cond_5
-    return-void
-
-    :pswitch_4
-    const-string v0, "FADING_OUT"
-
-    goto :goto_0
-
-    :pswitch_5
-    const-string v0, "FADED_IN"
-
-    goto :goto_0
-
-    :pswitch_6
-    const-string v0, "FADING_IN"
-
-    :goto_0
-    const-string v2, "Unhandled FadeState: "
-
-    invoke-virtual {v2, v0}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
+    invoke-interface {v0}, Lqkg;->get()Ljava/lang/Object;
 
     move-result-object v0
 
-    invoke-direct {v1, v0}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
+    move-object v3, v0
 
-    throw v1
+    check-cast v3, Liki;
 
-    :cond_6
-    const/4 v0, 0x0
+    iget-object v0, p0, Leld;->c:Lqkg;
 
-    throw v0
+    invoke-interface {v0}, Lqkg;->get()Ljava/lang/Object;
 
-    nop
+    move-result-object v0
 
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_3
-        :pswitch_2
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
+    check-cast v0, Likj;
 
-    :pswitch_data_1
-    .packed-switch 0x1
-        :pswitch_6
-        :pswitch_5
-        :pswitch_4
-    .end packed-switch
+    iget-object v1, p0, Leld;->d:Lqkg;
+
+    invoke-interface {v1}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v1
+
+    move-object v5, v1
+
+    check-cast v5, Ljava/util/Set;
+
+    invoke-virtual {v0, v3}, Likj;->a(Liki;)Lkme;
+
+    move-result-object v4
+
+    new-instance v0, Lehc;
+
+    const/4 v6, 0x0
+
+    move-object v1, v0
+
+    invoke-direct/range {v1 .. v6}, Lehc;-><init>(Landroid/content/Context;Liki;Lkme;Ljava/util/Set;[B)V
+
+    return-object v0
+.end method
+
+.method public final bridge synthetic get()Ljava/lang/Object;
+    .locals 1
+
+    invoke-virtual {p0}, Leld;->a()Lehc;
+
+    move-result-object v0
+
+    return-object v0
 .end method

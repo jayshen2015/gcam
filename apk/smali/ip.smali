@@ -1,313 +1,185 @@
-.class public final Lip;
-.super Landroid/widget/EditText;
+.class final Lip;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Ljv;
 
 
 # instance fields
-.field private final a:Lij;
+.field final synthetic a:Liy;
 
-.field private final b:Ljp;
-
-.field private final c:Lbby;
-
-.field private d:Landroidx/wear/ambient/AmbientMode$AmbientController;
+.field private final b:Ljv;
 
 
 # direct methods
-.method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
-    .locals 4
+.method public constructor <init>(Liy;Ljv;)V
+    .locals 0
 
-    invoke-static {p1}, Lnh;->a(Landroid/content/Context;)V
+    iput-object p1, p0, Lip;->a:Liy;
 
-    const v0, 0x7f040256
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0, p1, p2, v0}, Landroid/widget/EditText;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
-
-    invoke-virtual {p0}, Lip;->getContext()Landroid/content/Context;
-
-    move-result-object p1
-
-    invoke-static {p0, p1}, Lnf;->d(Landroid/view/View;Landroid/content/Context;)V
-
-    new-instance p1, Lij;
-
-    invoke-direct {p1, p0}, Lij;-><init>(Landroid/view/View;)V
-
-    iput-object p1, p0, Lip;->a:Lij;
-
-    invoke-virtual {p1, p2, v0}, Lij;->d(Landroid/util/AttributeSet;I)V
-
-    new-instance p1, Ljp;
-
-    invoke-direct {p1, p0}, Ljp;-><init>(Landroid/widget/TextView;)V
-
-    iput-object p1, p0, Lip;->b:Ljp;
-
-    invoke-virtual {p1, p2, v0}, Ljp;->b(Landroid/util/AttributeSet;I)V
-
-    invoke-virtual {p1}, Ljp;->a()V
-
-    new-instance p1, Lbby;
-
-    const/4 v1, 0x0
-
-    invoke-direct {p1, p0, v1}, Lbby;-><init>(Landroid/widget/EditText;[B)V
-
-    iput-object p1, p0, Lip;->c:Lbby;
-
-    invoke-virtual {p1, p2, v0}, Lbby;->m(Landroid/util/AttributeSet;I)V
-
-    invoke-virtual {p0}, Lip;->getKeyListener()Landroid/text/method/KeyListener;
-
-    move-result-object p1
-
-    invoke-static {p1}, Lbby;->n(Landroid/text/method/KeyListener;)Z
-
-    move-result p2
-
-    if-eqz p2, :cond_1
-
-    invoke-super {p0}, Landroid/widget/EditText;->isFocusable()Z
-
-    move-result p2
-
-    invoke-super {p0}, Landroid/widget/EditText;->isClickable()Z
-
-    move-result v0
-
-    invoke-super {p0}, Landroid/widget/EditText;->isLongClickable()Z
-
-    move-result v1
-
-    invoke-super {p0}, Landroid/widget/EditText;->getInputType()I
-
-    move-result v2
-
-    invoke-static {p1}, Lbby;->o(Landroid/text/method/KeyListener;)Landroid/text/method/KeyListener;
-
-    move-result-object v3
-
-    if-ne v3, p1, :cond_0
-
-    goto :goto_0
-
-    :cond_0
-    invoke-super {p0, v3}, Landroid/widget/EditText;->setKeyListener(Landroid/text/method/KeyListener;)V
-
-    invoke-super {p0, v2}, Landroid/widget/EditText;->setRawInputType(I)V
-
-    invoke-super {p0, p2}, Landroid/widget/EditText;->setFocusable(Z)V
-
-    invoke-super {p0, v0}, Landroid/widget/EditText;->setClickable(Z)V
-
-    invoke-super {p0, v1}, Landroid/widget/EditText;->setLongClickable(Z)V
+    iput-object p2, p0, Lip;->b:Ljv;
 
     return-void
-
-    :cond_1
-    :goto_0
-    return-void
-.end method
-
-.method private final a()Landroidx/wear/ambient/AmbientMode$AmbientController;
-    .locals 1
-
-    iget-object v0, p0, Lip;->d:Landroidx/wear/ambient/AmbientMode$AmbientController;
-
-    if-nez v0, :cond_0
-
-    new-instance v0, Landroidx/wear/ambient/AmbientMode$AmbientController;
-
-    invoke-direct {v0, p0}, Landroidx/wear/ambient/AmbientMode$AmbientController;-><init>(Lip;)V
-
-    iput-object v0, p0, Lip;->d:Landroidx/wear/ambient/AmbientMode$AmbientController;
-
-    :cond_0
-    iget-object v0, p0, Lip;->d:Landroidx/wear/ambient/AmbientMode$AmbientController;
-
-    return-object v0
 .end method
 
 
 # virtual methods
-.method protected final drawableStateChanged()V
-    .locals 1
+.method public final a(Ljw;)V
+    .locals 2
 
-    invoke-super {p0}, Landroid/widget/EditText;->drawableStateChanged()V
+    iget-object v0, p0, Lip;->b:Ljv;
 
-    iget-object v0, p0, Lip;->a:Lij;
+    check-cast v0, Ljy;
+
+    iget-object v1, v0, Ljy;->a:Landroid/view/ActionMode$Callback;
+
+    invoke-virtual {v0, p1}, Ljy;->e(Ljw;)Landroid/view/ActionMode;
+
+    move-result-object p1
+
+    invoke-interface {v1, p1}, Landroid/view/ActionMode$Callback;->onDestroyActionMode(Landroid/view/ActionMode;)V
+
+    iget-object p1, p0, Lip;->a:Liy;
+
+    iget-object v0, p1, Liy;->n:Landroid/widget/PopupWindow;
 
     if-eqz v0, :cond_0
 
-    invoke-virtual {v0}, Lij;->c()V
+    iget-object p1, p1, Liy;->g:Landroid/view/Window;
+
+    invoke-virtual {p1}, Landroid/view/Window;->getDecorView()Landroid/view/View;
+
+    move-result-object p1
+
+    iget-object v0, p0, Lip;->a:Liy;
+
+    iget-object v0, v0, Liy;->o:Ljava/lang/Runnable;
+
+    invoke-virtual {p1, v0}, Landroid/view/View;->removeCallbacks(Ljava/lang/Runnable;)Z
 
     :cond_0
-    iget-object v0, p0, Lip;->b:Ljp;
+    iget-object p1, p0, Lip;->a:Liy;
+
+    iget-object v0, p1, Liy;->m:Landroid/support/v7/widget/ActionBarContextView;
 
     if-eqz v0, :cond_1
 
-    invoke-virtual {v0}, Ljp;->a()V
+    invoke-virtual {p1}, Liy;->z()V
+
+    iget-object p1, p0, Lip;->a:Liy;
+
+    iget-object v0, p1, Liy;->m:Landroid/support/v7/widget/ActionBarContextView;
+
+    invoke-static {v0}, Lgl;->p(Landroid/view/View;)Lgo;
+
+    move-result-object v0
+
+    const/4 v1, 0x0
+
+    invoke-virtual {v0, v1}, Lgo;->b(F)V
+
+    iput-object v0, p1, Liy;->p:Lgo;
+
+    iget-object p1, p0, Lip;->a:Liy;
+
+    iget-object p1, p1, Liy;->p:Lgo;
+
+    new-instance v0, Lio;
+
+    invoke-direct {v0, p0}, Lio;-><init>(Lip;)V
+
+    invoke-virtual {p1, v0}, Lgo;->d(Lgp;)V
 
     :cond_1
+    iget-object p1, p0, Lip;->a:Liy;
+
+    const/4 v0, 0x0
+
+    iput-object v0, p1, Liy;->l:Ljw;
+
+    iget-object p1, p1, Liy;->s:Landroid/view/ViewGroup;
+
+    invoke-static {p1}, Lgl;->D(Landroid/view/View;)V
+
     return-void
 .end method
 
-.method public final getCustomSelectionActionModeCallback()Landroid/view/ActionMode$Callback;
-    .locals 1
+.method public final b(Ljw;Landroid/view/MenuItem;)Z
+    .locals 3
 
-    invoke-super {p0}, Landroid/widget/EditText;->getCustomSelectionActionModeCallback()Landroid/view/ActionMode$Callback;
+    iget-object v0, p0, Lip;->b:Ljv;
 
-    move-result-object v0
+    check-cast v0, Ljy;
 
-    invoke-static {v0}, Labm;->g(Landroid/view/ActionMode$Callback;)V
+    iget-object v1, v0, Ljy;->a:Landroid/view/ActionMode$Callback;
 
-    return-object v0
-.end method
-
-.method public final bridge synthetic getText()Ljava/lang/CharSequence;
-    .locals 1
-
-    invoke-virtual {p0}, Lip;->getText()Landroid/text/Editable;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public final getTextClassifier()Landroid/view/textclassifier/TextClassifier;
-    .locals 1
-
-    invoke-direct {p0}, Lip;->a()Landroidx/wear/ambient/AmbientMode$AmbientController;
-
-    move-result-object v0
-
-    iget-object v0, v0, Landroidx/wear/ambient/AmbientMode$AmbientController;->a:Ljava/lang/Object;
-
-    check-cast v0, Landroid/widget/EditText;
-
-    invoke-super {v0}, Landroid/widget/EditText;->getTextClassifier()Landroid/view/textclassifier/TextClassifier;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public final onCreateInputConnection(Landroid/view/inputmethod/EditorInfo;)Landroid/view/inputmethod/InputConnection;
-    .locals 1
-
-    invoke-super {p0, p1}, Landroid/widget/EditText;->onCreateInputConnection(Landroid/view/inputmethod/EditorInfo;)Landroid/view/inputmethod/InputConnection;
-
-    move-result-object v0
-
-    invoke-static {v0, p1, p0}, Ldr;->b(Landroid/view/inputmethod/InputConnection;Landroid/view/inputmethod/EditorInfo;Landroid/view/View;)V
-
-    iget-object p1, p0, Lip;->c:Lbby;
-
-    invoke-virtual {p1, v0}, Lbby;->p(Landroid/view/inputmethod/InputConnection;)Landroid/view/inputmethod/InputConnection;
+    invoke-virtual {v0, p1}, Ljy;->e(Ljw;)Landroid/view/ActionMode;
 
     move-result-object p1
 
-    return-object p1
+    new-instance v2, Llf;
+
+    iget-object v0, v0, Ljy;->b:Landroid/content/Context;
+
+    invoke-direct {v2, v0, p2}, Llf;-><init>(Landroid/content/Context;Les;)V
+
+    invoke-interface {v1, p1, v2}, Landroid/view/ActionMode$Callback;->onActionItemClicked(Landroid/view/ActionMode;Landroid/view/MenuItem;)Z
+
+    move-result p1
+
+    return p1
 .end method
 
-.method public final setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
-    .locals 0
+.method public final c(Ljw;Landroid/view/Menu;)Z
+    .locals 2
 
-    invoke-super {p0, p1}, Landroid/widget/EditText;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
+    iget-object v0, p0, Lip;->b:Ljv;
 
-    iget-object p1, p0, Lip;->a:Lij;
+    check-cast v0, Ljy;
 
-    if-eqz p1, :cond_0
+    iget-object v1, v0, Ljy;->a:Landroid/view/ActionMode$Callback;
 
-    invoke-virtual {p1}, Lij;->i()V
-
-    :cond_0
-    return-void
-.end method
-
-.method public final setBackgroundResource(I)V
-    .locals 1
-
-    invoke-super {p0, p1}, Landroid/widget/EditText;->setBackgroundResource(I)V
-
-    iget-object v0, p0, Lip;->a:Lij;
-
-    if-eqz v0, :cond_0
-
-    invoke-virtual {v0, p1}, Lij;->e(I)V
-
-    :cond_0
-    return-void
-.end method
-
-.method public final setCompoundDrawables(Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;)V
-    .locals 0
-
-    invoke-super {p0, p1, p2, p3, p4}, Landroid/widget/EditText;->setCompoundDrawables(Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;)V
-
-    iget-object p1, p0, Lip;->b:Ljp;
-
-    if-eqz p1, :cond_0
-
-    invoke-virtual {p1}, Ljp;->a()V
-
-    :cond_0
-    return-void
-.end method
-
-.method public final setCompoundDrawablesRelative(Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;)V
-    .locals 0
-
-    invoke-super {p0, p1, p2, p3, p4}, Landroid/widget/EditText;->setCompoundDrawablesRelative(Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;)V
-
-    iget-object p1, p0, Lip;->b:Ljp;
-
-    if-eqz p1, :cond_0
-
-    invoke-virtual {p1}, Ljp;->a()V
-
-    :cond_0
-    return-void
-.end method
-
-.method public final setKeyListener(Landroid/text/method/KeyListener;)V
-    .locals 0
-
-    invoke-static {p1}, Lbby;->o(Landroid/text/method/KeyListener;)Landroid/text/method/KeyListener;
+    invoke-virtual {v0, p1}, Ljy;->e(Ljw;)Landroid/view/ActionMode;
 
     move-result-object p1
 
-    invoke-super {p0, p1}, Landroid/widget/EditText;->setKeyListener(Landroid/text/method/KeyListener;)V
+    invoke-virtual {v0, p2}, Ljy;->f(Landroid/view/Menu;)Landroid/view/Menu;
 
-    return-void
+    move-result-object p2
+
+    invoke-interface {v1, p1, p2}, Landroid/view/ActionMode$Callback;->onCreateActionMode(Landroid/view/ActionMode;Landroid/view/Menu;)Z
+
+    move-result p1
+
+    return p1
 .end method
 
-.method public final setTextAppearance(Landroid/content/Context;I)V
-    .locals 1
+.method public final d(Ljw;Landroid/view/Menu;)V
+    .locals 2
 
-    invoke-super {p0, p1, p2}, Landroid/widget/EditText;->setTextAppearance(Landroid/content/Context;I)V
+    iget-object v0, p0, Lip;->a:Liy;
 
-    iget-object v0, p0, Lip;->b:Ljp;
+    iget-object v0, v0, Liy;->s:Landroid/view/ViewGroup;
 
-    if-eqz v0, :cond_0
+    invoke-static {v0}, Lgl;->D(Landroid/view/View;)V
 
-    invoke-virtual {v0, p1, p2}, Ljp;->c(Landroid/content/Context;I)V
+    iget-object v0, p0, Lip;->b:Ljv;
 
-    :cond_0
-    return-void
-.end method
+    check-cast v0, Ljy;
 
-.method public final setTextClassifier(Landroid/view/textclassifier/TextClassifier;)V
-    .locals 1
+    iget-object v1, v0, Ljy;->a:Landroid/view/ActionMode$Callback;
 
-    invoke-direct {p0}, Lip;->a()Landroidx/wear/ambient/AmbientMode$AmbientController;
+    invoke-virtual {v0, p1}, Ljy;->e(Ljw;)Landroid/view/ActionMode;
 
-    move-result-object v0
+    move-result-object p1
 
-    iget-object v0, v0, Landroidx/wear/ambient/AmbientMode$AmbientController;->a:Ljava/lang/Object;
+    invoke-virtual {v0, p2}, Ljy;->f(Landroid/view/Menu;)Landroid/view/Menu;
 
-    check-cast v0, Landroid/widget/EditText;
+    move-result-object p2
 
-    invoke-super {v0, p1}, Landroid/widget/EditText;->setTextClassifier(Landroid/view/textclassifier/TextClassifier;)V
+    invoke-interface {v1, p1, p2}, Landroid/view/ActionMode$Callback;->onPrepareActionMode(Landroid/view/ActionMode;Landroid/view/Menu;)Z
 
     return-void
 .end method

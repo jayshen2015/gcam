@@ -1,116 +1,75 @@
 .class public final Lemp;
 .super Ljava/lang/Object;
 
-
-# static fields
-.field public static final a:Lemp;
-
-.field public static final b:Lemp;
-
-.field public static final c:Lemp;
-
-.field public static final d:Lemp;
-
-.field public static final e:Lemp;
-
-.field public static final f:Lemp;
-
-.field public static final g:Lemp;
-
-.field public static final h:Lemp;
-
-.field public static final i:Lemp;
+# interfaces
+.implements Lpys;
 
 
 # instance fields
-.field public final j:I
+.field private final a:Leml;
+
+.field private final synthetic b:I
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
+.method public constructor <init>(Leml;I)V
+    .locals 0
 
-    new-instance v0, Lemp;
+    iput p2, p0, Lemp;->b:I
 
-    const/4 v1, 0x3
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {v0, v1}, Lemp;-><init>(I)V
-
-    sput-object v0, Lemp;->a:Lemp;
-
-    new-instance v0, Lemp;
-
-    const/4 v1, 0x5
-
-    invoke-direct {v0, v1}, Lemp;-><init>(I)V
-
-    sput-object v0, Lemp;->b:Lemp;
-
-    new-instance v0, Lemp;
-
-    const/4 v1, 0x7
-
-    invoke-direct {v0, v1}, Lemp;-><init>(I)V
-
-    sput-object v0, Lemp;->c:Lemp;
-
-    new-instance v0, Lemp;
-
-    const/16 v1, 0x8
-
-    invoke-direct {v0, v1}, Lemp;-><init>(I)V
-
-    sput-object v0, Lemp;->d:Lemp;
-
-    new-instance v0, Lemp;
-
-    const/16 v1, 0xb
-
-    invoke-direct {v0, v1}, Lemp;-><init>(I)V
-
-    sput-object v0, Lemp;->e:Lemp;
-
-    new-instance v0, Lemp;
-
-    const/16 v1, 0xc
-
-    invoke-direct {v0, v1}, Lemp;-><init>(I)V
-
-    sput-object v0, Lemp;->f:Lemp;
-
-    new-instance v0, Lemp;
-
-    const/16 v1, 0xf
-
-    invoke-direct {v0, v1}, Lemp;-><init>(I)V
-
-    sput-object v0, Lemp;->g:Lemp;
-
-    new-instance v0, Lemp;
-
-    const/16 v1, 0x12
-
-    invoke-direct {v0, v1}, Lemp;-><init>(I)V
-
-    sput-object v0, Lemp;->h:Lemp;
-
-    new-instance v0, Lemp;
-
-    const/16 v1, 0x1d
-
-    invoke-direct {v0, v1}, Lemp;-><init>(I)V
-
-    sput-object v0, Lemp;->i:Lemp;
+    iput-object p1, p0, Lemp;->a:Leml;
 
     return-void
 .end method
 
-.method public constructor <init>(I)V
-    .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+# virtual methods
+.method public final a()Landroid/content/Context;
+    .locals 1
 
-    iput p1, p0, Lemp;->j:I
+    iget v0, p0, Lemp;->b:I
 
-    return-void
+    packed-switch v0, :pswitch_data_0
+
+    :pswitch_0
+    iget-object v0, p0, Lemp;->a:Leml;
+
+    iget-object v0, v0, Leml;->b:Landroid/content/Context;
+
+    return-object v0
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
+.end method
+
+.method public final synthetic get()Ljava/lang/Object;
+    .locals 1
+
+    iget v0, p0, Lemp;->b:I
+
+    packed-switch v0, :pswitch_data_0
+
+    invoke-virtual {p0}, Lemp;->a()Landroid/content/Context;
+
+    move-result-object v0
+
+    return-object v0
+
+    :pswitch_0
+    invoke-virtual {p0}, Lemp;->a()Landroid/content/Context;
+
+    move-result-object v0
+
+    return-object v0
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

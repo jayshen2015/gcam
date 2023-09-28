@@ -1,24 +1,246 @@
-.class final Ljch;
-.super Ljck;
+.class public final Ljch;
+.super Ljava/lang/Object;
+
+
+# instance fields
+.field public final a:Z
+
+.field public final b:Loom;
+
+.field private final c:Z
+
+.field private final d:Z
 
 
 # direct methods
-.method public constructor <init>([B)V
+.method public constructor <init>()V
     .locals 0
 
-    invoke-direct {p0, p1}, Ljck;-><init>([B)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
+.method public constructor <init>(ZZZLoom;)V
+    .locals 0
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-boolean p1, p0, Ljch;->a:Z
+
+    iput-boolean p2, p0, Ljch;->c:Z
+
+    iput-boolean p3, p0, Ljch;->d:Z
+
+    iput-object p4, p0, Ljch;->b:Loom;
+
+    return-void
+.end method
+
+.method public static a()Ljcg;
+    .locals 2
+
+    new-instance v0, Ljcg;
+
+    invoke-direct {v0}, Ljcg;-><init>()V
+
+    const/4 v1, 0x0
+
+    invoke-virtual {v0, v1}, Ljcg;->b(Z)V
+
+    invoke-virtual {v0, v1}, Ljcg;->c(Z)V
+
+    invoke-virtual {v0, v1}, Ljcg;->d(Z)V
+
+    invoke-static {}, Loom;->l()Loom;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Ljcg;->e(Loom;)V
+
+    return-object v0
+.end method
+
 
 # virtual methods
-.method protected final b()[B
-    .locals 1
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 4
 
-    const-string v0, "0\u0082\u0004C0\u0082\u0003+\u00a0\u0003\u0002\u0001\u0002\u0002\t\u0000\u00c2\u00e0\u0087FdJ0\u008d0\r\u0006\t*\u0086H\u0086\u00f7\r\u0001\u0001\u0004\u0005\u00000t1\u000b0\t\u0006\u0003U\u0004\u0006\u0013\u0002US1\u00130\u0011\u0006\u0003U\u0004\u0008\u0013\nCalifornia1\u00160\u0014\u0006\u0003U\u0004\u0007\u0013\rMountain View1\u00140\u0012\u0006\u0003U\u0004\n\u0013\u000bGoogle Inc.1\u00100\u000e\u0006\u0003U\u0004\u000b\u0013\u0007Android1\u00100\u000e\u0006\u0003U\u0004\u0003\u0013\u0007Android0\u001e\u0017\r080821231334Z\u0017\r360107231334Z0t1\u000b0\t\u0006\u0003U\u0004\u0006\u0013\u0002US1\u00130\u0011\u0006\u0003U\u0004\u0008\u0013\nCalifornia1\u00160\u0014\u0006\u0003U\u0004\u0007\u0013\rMountain View1\u00140\u0012\u0006\u0003U\u0004\n\u0013\u000bGoogle Inc.1\u00100\u000e\u0006\u0003U\u0004\u000b\u0013\u0007Android1\u00100\u000e\u0006\u0003U\u0004\u0003\u0013\u0007Android0\u0082\u0001 0\r\u0006\t*\u0086H\u0086\u00f7\r\u0001\u0001\u0001\u0005\u0000\u0003\u0082\u0001\r\u00000\u0082\u0001\u0008\u0002\u0082\u0001\u0001\u0000\u00abV.\u0000\u00d8;\u00a2\u0008\u00ae\n\u0096o\u0012N)\u00da\u0011\u00f2\u00abV\u00d0\u008fX\u00e2\u00cc\u00a9\u0013\u0003\u00e9\u00b7T\u00d3r\u00f6@\u00a7\u001b\u001d\u00cb\u0013\tgbNFV\u00a7wj\u0092\u0019=\u00b2\u00e5\u00bf\u00b7$\u00a9\u001ew\u0018\u008b\u000ejG\u00a4;3\u00d9`\u009bw\u00181E\u00cc\u00df{.Xft\u00c9\u00e1V[\u001fLjYU\u00bf\u00f2Q\u00a6=\u00ab\u00f9\u00c5\\\'\"\"R\u00e8u\u00e4\u00f8\u0015Jd_\u0089qh\u00c0\u00b1\u00bf\u00c6\u0012\u00ea\u00bfxWi\u00bb4\u00aay\u0084\u00dc~.\u00a2vL\u00ae\u0083\u0007\u00d8\u00c1qT\u00d7\u00ee_d\u00a5\u001aD\u00a6\u0002\u00c2I\u0005AW\u00dc\u0002\u00cd_\\\u000eU\u00fb\u00ef\u0085\u0019\u00fb\u00e3\'\u00f0\u00b1Q\u0016\u0092\u00c5\u00a0o\u0019\u00d1\u0083\u0085\u00f5\u00c4\u00db\u00c2\u00d6\u00b9?h\u00cc)y\u00c7\u000e\u0018\u00ab\u0093\u0086k;\u00d5\u00db\u0089\u0099U*\u000e;L\u0099\u00dfX\u00fb\u0091\u008b\u00ed\u00c1\u0082\u00ba5\u00e0\u0003\u00c1\u00b4\u00b1\r\u00d2D\u00a8\u00ee$\u00ff\u00fd38r\u00abR!\u0098^\u00da\u00b0\u00fc\r\u000b\u0014[j\u00a1\u0092\u0085\u008ey\u0002\u0001\u0003\u00a3\u0081\u00d90\u0081\u00d60\u001d\u0006\u0003U\u001d\u000e\u0004\u0016\u0004\u0014\u00c7}\u008c\u00c2!\u0017V%\u009a\u007f\u00d3\u0082\u00dfk\u00e3\u0098\u00e4\u00d7\u0086\u00a50\u0081\u00a6\u0006\u0003U\u001d#\u0004\u0081\u009e0\u0081\u009b\u0080\u0014\u00c7}\u008c\u00c2!\u0017V%\u009a\u007f\u00d3\u0082\u00dfk\u00e3\u0098\u00e4\u00d7\u0086\u00a5\u00a1x\u00a4v0t1\u000b0\t\u0006\u0003U\u0004\u0006\u0013\u0002US1\u00130\u0011\u0006\u0003U\u0004\u0008\u0013\nCalifornia1\u00160\u0014\u0006\u0003U\u0004\u0007\u0013\rMountain View1\u00140\u0012\u0006\u0003U\u0004\n\u0013\u000bGoogle Inc.1\u00100\u000e\u0006\u0003U\u0004\u000b\u0013\u0007Android1\u00100\u000e\u0006\u0003U\u0004\u0003\u0013\u0007Android\u0082\t\u0000\u00c2\u00e0\u0087FdJ0\u008d0\u000c\u0006\u0003U\u001d\u0013\u0004\u00050\u0003\u0001\u0001\u00ff0\r\u0006\t*\u0086H\u0086\u00f7\r\u0001\u0001\u0004\u0005\u0000\u0003\u0082\u0001\u0001\u0000m\u00d2R\u00ce\u00ef\u00850,6\n\u00aa\u00ce\u0093\u009b\u00cf\u00f2\u00cc\u00a9\u0004\u00bb]z\u0016a\u00f8\u00aeF\u00b2\u0099B\u0004\u00d0\u00ffJh\u00c7\u00ed\u001aS\u001e\u00c4YZb<\u00e6\u0007c\u00b1g)zz\u00e3W\u0012\u00c4\u0007\u00f2\u0008\u00f0\u00cb\u0010\u0094)\u0012M{\u0010b\u0019\u00c0\u0084\u00ca>\u00b3\u00f9\u00ad_\u00b8q\u00ef\u0092&\u009a\u008b\u00e2\u008b\u00f1mD\u00c8\u00d9\u00a0\u008el\u00b2\u00f0\u0005\u00bb?\u00e2\u00cb\u0096D~\u0086\u008es\u0010v\u00adE\u00b3?`\t\u00ea\u0019\u00c1a\u00e6&A\u00aa\u0099\'\u001d\u00fdR(\u00c5\u00c5\u0087\u0087]\u00db\u007fE\'X\u00d6a\u00f6\u00cc\u000c\u00cc\u00b75.BL\u00c46\\R52\u00f72Q7Y<J\u00e3A\u00f4\u00dbA\u00ed\u00da\r\u000b\u0010q\u00a7\u00c4@\u00f0\u00fe\u009e\u00a0\u001c\u00b6\'\u00cagCi\u00d0\u0084\u00bd/\u00d9\u0011\u00ff\u0006\u00cd\u00bf,\u00fa\u0010\u00dc\u000f\u0089:\u00e3Wb\u0091\u0090H\u00c7\u00ef\u00c6LqD\u0017\u0083B\u00f7\u0005\u0081\u00c9\u00deW:\u00f5[9\r\u00d7\u00fd\u00b9A\u00861\u0089]_u\u009f0\u0011&\u0087\u00ffb\u0014\u0010\u00c0i0\u008a"
+    const/4 v0, 0x1
 
-    invoke-static {v0}, Ljgw;->c(Ljava/lang/String;)[B
+    if-ne p1, p0, :cond_0
+
+    return v0
+
+    :cond_0
+    instance-of v1, p1, Ljch;
+
+    const/4 v2, 0x0
+
+    if-eqz v1, :cond_1
+
+    check-cast p1, Ljch;
+
+    iget-boolean v1, p0, Ljch;->a:Z
+
+    iget-boolean v3, p1, Ljch;->a:Z
+
+    if-ne v1, v3, :cond_1
+
+    iget-boolean v1, p0, Ljch;->c:Z
+
+    iget-boolean v3, p1, Ljch;->c:Z
+
+    if-ne v1, v3, :cond_1
+
+    iget-boolean v1, p0, Ljch;->d:Z
+
+    iget-boolean v3, p1, Ljch;->d:Z
+
+    if-ne v1, v3, :cond_1
+
+    iget-object v1, p0, Ljch;->b:Loom;
+
+    iget-object p1, p1, Ljch;->b:Loom;
+
+    invoke-static {v1, p1}, Lobr;->an(Ljava/util/List;Ljava/lang/Object;)Z
+
+    move-result p1
+
+    if-eqz p1, :cond_1
+
+    return v0
+
+    :cond_1
+    return v2
+.end method
+
+.method public final hashCode()I
+    .locals 6
+
+    iget-boolean v0, p0, Ljch;->a:Z
+
+    const/16 v1, 0x4d5
+
+    const/16 v2, 0x4cf
+
+    const/4 v3, 0x1
+
+    if-eq v3, v0, :cond_0
+
+    const/16 v0, 0x4d5
+
+    goto :goto_0
+
+    :cond_0
+    const/16 v0, 0x4cf
+
+    :goto_0
+    const v4, 0xf4243
+
+    xor-int/2addr v0, v4
+
+    mul-int v0, v0, v4
+
+    iget-boolean v5, p0, Ljch;->c:Z
+
+    if-eq v3, v5, :cond_1
+
+    const/16 v5, 0x4d5
+
+    goto :goto_1
+
+    :cond_1
+    const/16 v5, 0x4cf
+
+    :goto_1
+    xor-int/2addr v0, v5
+
+    mul-int v0, v0, v4
+
+    iget-boolean v5, p0, Ljch;->d:Z
+
+    if-eq v3, v5, :cond_2
+
+    goto :goto_2
+
+    :cond_2
+    const/16 v1, 0x4cf
+
+    :goto_2
+    xor-int/2addr v0, v1
+
+    mul-int v0, v0, v4
+
+    iget-object v1, p0, Ljch;->b:Loom;
+
+    invoke-virtual {v1}, Loom;->hashCode()I
+
+    move-result v1
+
+    xor-int/2addr v0, v1
+
+    return v0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .locals 6
+
+    iget-boolean v0, p0, Ljch;->a:Z
+
+    iget-boolean v1, p0, Ljch;->c:Z
+
+    iget-boolean v2, p0, Ljch;->d:Z
+
+    iget-object v3, p0, Ljch;->b:Loom;
+
+    invoke-static {v3}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-static {v3}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-virtual {v4}, Ljava/lang/String;->length()I
+
+    move-result v4
+
+    new-instance v5, Ljava/lang/StringBuilder;
+
+    add-int/lit16 v4, v4, 0x94
+
+    invoke-direct {v5, v4}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string v4, "LensPostCaptureFeatureCapability{supportDocumentScanning="
+
+    invoke-virtual {v5, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v5, v0}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    const-string v0, ", supportTextFilterIntent="
+
+    invoke-virtual {v5, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v5, v1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    const-string v0, ", supportTranslate="
+
+    invoke-virtual {v5, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v5, v2}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    const-string v0, ", supportedTranslateLanguages="
+
+    invoke-virtual {v5, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v5, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v0, "}"
+
+    invoke-virtual {v5, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v0
 

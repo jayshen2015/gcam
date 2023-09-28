@@ -2,122 +2,57 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lkye;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field public final synthetic a:J
+.field public final synthetic a:Lpht;
 
-.field private final synthetic b:I
+.field public final synthetic b:Lpih;
+
+.field public final synthetic c:Landroid/media/MediaFormat;
 
 
 # direct methods
-.method public synthetic constructor <init>(JI)V
+.method public synthetic constructor <init>(Lpht;Lpih;Landroid/media/MediaFormat;)V
     .locals 0
-
-    iput p3, p0, Lfrk;->b:I
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-wide p1, p0, Lfrk;->a:J
+    iput-object p1, p0, Lfrk;->a:Lpht;
+
+    iput-object p2, p0, Lfrk;->b:Lpih;
+
+    iput-object p3, p0, Lfrk;->c:Landroid/media/MediaFormat;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 5
+.method public final run()V
+    .locals 3
 
-    iget v0, p0, Lfrk;->b:I
+    iget-object v0, p0, Lfrk;->a:Lpht;
 
-    const/4 v1, 0x1
+    iget-object v1, p0, Lfrk;->b:Lpih;
 
-    invoke-static {v1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+    iget-object v2, p0, Lfrk;->c:Landroid/media/MediaFormat;
 
-    move-result-object v1
+    invoke-interface {v0}, Lpht;->isCancelled()Z
 
-    packed-switch v0, :pswitch_data_0
+    move-result v0
 
-    iget-wide v0, p0, Lfrk;->a:J
+    if-eqz v0, :cond_0
 
-    check-cast p1, Llcn;
+    const/4 v0, 0x0
 
-    invoke-interface {p1}, Llcn;->f()Landroid/opengl/EGLDisplay;
+    invoke-virtual {v1, v0}, Lpih;->cancel(Z)Z
 
-    move-result-object v2
+    return-void
 
-    invoke-interface {p1}, Llcn;->g()Landroid/opengl/EGLSurface;
+    :cond_0
+    invoke-virtual {v1, v2}, Lpih;->o(Ljava/lang/Object;)Z
 
-    move-result-object p1
-
-    invoke-static {v2, p1, v0, v1}, Landroid/opengl/EGLExt;->eglPresentationTimeANDROID(Landroid/opengl/EGLDisplay;Landroid/opengl/EGLSurface;J)Z
-
-    sget-object p1, Lkyd;->a:Lkyd;
-
-    return-object p1
-
-    :pswitch_0
-    iget-wide v2, p0, Lfrk;->a:J
-
-    check-cast p1, Llcn;
-
-    invoke-interface {p1}, Llcn;->f()Landroid/opengl/EGLDisplay;
-
-    move-result-object v0
-
-    invoke-interface {p1}, Llcn;->g()Landroid/opengl/EGLSurface;
-
-    move-result-object p1
-
-    invoke-static {v0, p1, v2, v3}, Landroid/opengl/EGLExt;->eglPresentationTimeANDROID(Landroid/opengl/EGLDisplay;Landroid/opengl/EGLSurface;J)Z
-
-    return-object v1
-
-    :pswitch_1
-    iget-wide v2, p0, Lfrk;->a:J
-
-    check-cast p1, Llcn;
-
-    sget-object v0, Lenn;->a:Lnak;
-
-    invoke-interface {p1}, Llcn;->f()Landroid/opengl/EGLDisplay;
-
-    move-result-object v0
-
-    invoke-interface {p1}, Llcn;->g()Landroid/opengl/EGLSurface;
-
-    move-result-object p1
-
-    invoke-static {v0, p1, v2, v3}, Landroid/opengl/EGLExt;->eglPresentationTimeANDROID(Landroid/opengl/EGLDisplay;Landroid/opengl/EGLSurface;J)Z
-
-    return-object v1
-
-    :pswitch_2
-    iget-wide v2, p0, Lfrk;->a:J
-
-    check-cast p1, Llcn;
-
-    invoke-interface {p1}, Llcn;->k()V
-
-    invoke-interface {p1}, Llcn;->f()Landroid/opengl/EGLDisplay;
-
-    move-result-object v0
-
-    invoke-interface {p1}, Llcn;->g()Landroid/opengl/EGLSurface;
-
-    move-result-object v4
-
-    invoke-static {v0, v4, v2, v3}, Landroid/opengl/EGLExt;->eglPresentationTimeANDROID(Landroid/opengl/EGLDisplay;Landroid/opengl/EGLSurface;J)Z
-
-    invoke-interface {p1}, Llcn;->m()V
-
-    return-object v1
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_2
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
+    return-void
 .end method

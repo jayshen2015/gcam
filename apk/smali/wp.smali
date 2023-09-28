@@ -2,38 +2,87 @@
 .super Ljava/lang/Object;
 
 
-# static fields
-.field public static final a:[I
+# instance fields
+.field public a:Landroid/graphics/drawable/Drawable;
+
+.field public final synthetic b:Landroidx/cardview/widget/CardView;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
+.method public constructor <init>(Landroidx/cardview/widget/CardView;)V
+    .locals 0
 
-    const/16 v0, 0xd
+    iput-object p1, p0, Lwp;->b:Landroidx/cardview/widget/CardView;
 
-    new-array v0, v0, [I
-
-    fill-array-data v0, :array_0
-
-    sput-object v0, Lwp;->a:[I
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
+.end method
 
-    :array_0
-    .array-data 4
-        0x101013f
-        0x1010140
-        0x7f0400ed
-        0x7f0400ee
-        0x7f0400ef
-        0x7f0400f1
-        0x7f0400f2
-        0x7f0400f3
-        0x7f0401dd
-        0x7f0401de
-        0x7f0401df
-        0x7f0401e0
-        0x7f0401e1
-    .end array-data
+
+# virtual methods
+.method public final a(IIII)V
+    .locals 2
+
+    iget-object v0, p0, Lwp;->b:Landroidx/cardview/widget/CardView;
+
+    iget-object v0, v0, Landroidx/cardview/widget/CardView;->d:Landroid/graphics/Rect;
+
+    invoke-virtual {v0, p1, p2, p3, p4}, Landroid/graphics/Rect;->set(IIII)V
+
+    iget-object v0, p0, Lwp;->b:Landroidx/cardview/widget/CardView;
+
+    iget-object v1, v0, Landroidx/cardview/widget/CardView;->c:Landroid/graphics/Rect;
+
+    iget v1, v1, Landroid/graphics/Rect;->left:I
+
+    add-int/2addr p1, v1
+
+    iget-object v1, p0, Lwp;->b:Landroidx/cardview/widget/CardView;
+
+    iget-object v1, v1, Landroidx/cardview/widget/CardView;->c:Landroid/graphics/Rect;
+
+    iget v1, v1, Landroid/graphics/Rect;->top:I
+
+    add-int/2addr p2, v1
+
+    iget-object v1, p0, Lwp;->b:Landroidx/cardview/widget/CardView;
+
+    iget-object v1, v1, Landroidx/cardview/widget/CardView;->c:Landroid/graphics/Rect;
+
+    iget v1, v1, Landroid/graphics/Rect;->right:I
+
+    add-int/2addr p3, v1
+
+    iget-object v1, p0, Lwp;->b:Landroidx/cardview/widget/CardView;
+
+    iget-object v1, v1, Landroidx/cardview/widget/CardView;->c:Landroid/graphics/Rect;
+
+    iget v1, v1, Landroid/graphics/Rect;->bottom:I
+
+    add-int/2addr p4, v1
+
+    invoke-static {v0, p1, p2, p3, p4}, Landroidx/cardview/widget/CardView;->a(Landroidx/cardview/widget/CardView;IIII)V
+
+    return-void
+.end method
+
+.method public final b()Z
+    .locals 1
+
+    iget-object v0, p0, Lwp;->b:Landroidx/cardview/widget/CardView;
+
+    iget-boolean v0, v0, Landroidx/cardview/widget/CardView;->b:Z
+
+    return v0
+.end method
+
+.method public final c()Z
+    .locals 1
+
+    iget-object v0, p0, Lwp;->b:Landroidx/cardview/widget/CardView;
+
+    iget-boolean v0, v0, Landroidx/cardview/widget/CardView;->a:Z
+
+    return v0
 .end method

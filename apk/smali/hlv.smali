@@ -2,279 +2,136 @@
 .super Ljava/lang/Object;
 
 
-# static fields
-.field public static final a:Lhlv;
-
-
 # instance fields
-.field public final b:J
+.field public a:Z
 
-.field public final c:J
+.field public b:Z
 
-.field private final d:J
+.field public c:I
 
-.field private final e:J
+.field public d:F
+
+.field public e:J
+
+.field public f:F
+
+.field public g:J
+
+.field public final h:Ljava/util/concurrent/ConcurrentLinkedQueue;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 8
-
-    const-wide/16 v2, -0x1
-
-    const-wide/16 v4, 0x0
-
-    const-wide/16 v6, 0x0
-
-    move-wide v0, v2
-
-    invoke-static/range {v0 .. v7}, Lhlv;->a(JJJJ)Lhlv;
-
-    move-result-object v0
-
-    sput-object v0, Lhlv;->a:Lhlv;
-
-    return-void
-.end method
-
 .method public constructor <init>()V
-    .locals 0
+    .locals 3
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    const/4 v0, 0x0
+
+    iput-boolean v0, p0, Lhlv;->a:Z
+
+    const/high16 v0, -0x80000000
+
+    iput v0, p0, Lhlv;->c:I
+
+    const/4 v0, 0x1
+
+    iput v0, p0, Lhlv;->d:F
+
+    const-wide/16 v1, 0x0
+
+    iput-wide v1, p0, Lhlv;->e:J
+
+    iput v0, p0, Lhlv;->f:F
+
+    iput-wide v1, p0, Lhlv;->g:J
+
+    new-instance v0, Ljava/util/concurrent/ConcurrentLinkedQueue;
+
+    invoke-direct {v0}, Ljava/util/concurrent/ConcurrentLinkedQueue;-><init>()V
+
+    iput-object v0, p0, Lhlv;->h:Ljava/util/concurrent/ConcurrentLinkedQueue;
+
     return-void
-.end method
-
-.method public constructor <init>(JJJJ)V
-    .locals 0
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-wide p1, p0, Lhlv;->b:J
-
-    iput-wide p3, p0, Lhlv;->c:J
-
-    iput-wide p5, p0, Lhlv;->d:J
-
-    iput-wide p7, p0, Lhlv;->e:J
-
-    return-void
-.end method
-
-.method public static a(JJJJ)Lhlv;
-    .locals 10
-
-    new-instance v9, Lhlv;
-
-    move-object v0, v9
-
-    move-wide v1, p0
-
-    move-wide v3, p2
-
-    move-wide v5, p4
-
-    move-wide/from16 v7, p6
-
-    invoke-direct/range {v0 .. v8}, Lhlv;-><init>(JJJJ)V
-
-    return-object v9
 .end method
 
 
 # virtual methods
-.method public final b()Z
-    .locals 5
+.method public final a(Lhlu;)V
+    .locals 1
 
-    iget-wide v0, p0, Lhlv;->e:J
+    iget-object v0, p0, Lhlv;->h:Ljava/util/concurrent/ConcurrentLinkedQueue;
 
-    iget-wide v2, p0, Lhlv;->b:J
+    invoke-virtual {v0, p1}, Ljava/util/concurrent/ConcurrentLinkedQueue;->add(Ljava/lang/Object;)Z
 
-    cmp-long v4, v0, v2
-
-    if-gez v4, :cond_0
-
-    const/4 v0, 0x1
-
-    return v0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    return v0
+    return-void
 .end method
 
-.method public final c()Z
-    .locals 5
+.method public final b(Lhlu;)V
+    .locals 1
 
-    iget-wide v0, p0, Lhlv;->d:J
+    iget-object v0, p0, Lhlv;->h:Ljava/util/concurrent/ConcurrentLinkedQueue;
 
-    iget-wide v2, p0, Lhlv;->b:J
+    invoke-virtual {v0, p1}, Ljava/util/concurrent/ConcurrentLinkedQueue;->remove(Ljava/lang/Object;)Z
 
-    cmp-long v4, v0, v2
-
-    if-gez v4, :cond_0
-
-    const/4 v0, 0x1
-
-    return v0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    return v0
+    return-void
 .end method
 
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 7
+.method public final c(Z)V
+    .locals 2
 
-    const/4 v0, 0x1
+    iput-boolean p1, p0, Lhlv;->a:Z
 
-    if-ne p1, p0, :cond_0
+    iget-object v0, p0, Lhlv;->h:Ljava/util/concurrent/ConcurrentLinkedQueue;
 
-    return v0
-
-    :cond_0
-    instance-of v1, p1, Lhlv;
-
-    const/4 v2, 0x0
-
-    if-eqz v1, :cond_1
-
-    check-cast p1, Lhlv;
-
-    iget-wide v3, p0, Lhlv;->b:J
-
-    iget-wide v5, p1, Lhlv;->b:J
-
-    cmp-long v1, v3, v5
-
-    if-nez v1, :cond_1
-
-    iget-wide v3, p0, Lhlv;->c:J
-
-    iget-wide v5, p1, Lhlv;->c:J
-
-    cmp-long v1, v3, v5
-
-    if-nez v1, :cond_1
-
-    iget-wide v3, p0, Lhlv;->d:J
-
-    iget-wide v5, p1, Lhlv;->d:J
-
-    cmp-long v1, v3, v5
-
-    if-nez v1, :cond_1
-
-    iget-wide v3, p0, Lhlv;->e:J
-
-    iget-wide v5, p1, Lhlv;->e:J
-
-    cmp-long p1, v3, v5
-
-    if-nez p1, :cond_1
-
-    return v0
-
-    :cond_1
-    return v2
-.end method
-
-.method public final hashCode()I
-    .locals 7
-
-    iget-wide v0, p0, Lhlv;->b:J
-
-    const/16 v2, 0x20
-
-    ushr-long v3, v0, v2
-
-    xor-long/2addr v0, v3
-
-    iget-wide v3, p0, Lhlv;->c:J
-
-    ushr-long v5, v3, v2
-
-    xor-long/2addr v3, v5
-
-    iget-wide v5, p0, Lhlv;->d:J
-
-    long-to-int v2, v5
-
-    iget-wide v5, p0, Lhlv;->e:J
-
-    long-to-int v6, v5
-
-    long-to-int v1, v0
-
-    const v0, 0xf4243
-
-    xor-int/2addr v1, v0
-
-    mul-int v1, v1, v0
-
-    long-to-int v4, v3
-
-    xor-int/2addr v1, v4
-
-    mul-int v1, v1, v0
-
-    xor-int/2addr v1, v2
-
-    mul-int v1, v1, v0
-
-    xor-int v0, v1, v6
-
-    return v0
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .locals 10
-
-    iget-wide v0, p0, Lhlv;->b:J
-
-    iget-wide v2, p0, Lhlv;->c:J
-
-    iget-wide v4, p0, Lhlv;->d:J
-
-    iget-wide v6, p0, Lhlv;->e:J
-
-    new-instance v8, Ljava/lang/StringBuilder;
-
-    invoke-direct {v8}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v9, "SpaceAvailability{rawAvailableBytes="
-
-    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v8, v0, v1}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    const-string v0, ", totalBytes="
-
-    invoke-virtual {v8, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v8, v2, v3}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    const-string v0, ", videoThresholdBytes="
-
-    invoke-virtual {v8, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v8, v4, v5}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    const-string v0, ", photoThresholdBytes="
-
-    invoke-virtual {v8, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v8, v6, v7}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    const-string v0, "}"
-
-    invoke-virtual {v8, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v8}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v0}, Ljava/util/concurrent/ConcurrentLinkedQueue;->iterator()Ljava/util/Iterator;
 
     move-result-object v0
 
-    return-object v0
+    :goto_0
+    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Lhlu;
+
+    invoke-interface {v1, p1}, Lhlu;->b(Z)V
+
+    goto :goto_0
+
+    :cond_0
+    return-void
+.end method
+
+.method public final d()Z
+    .locals 6
+
+    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
+
+    move-result-wide v0
+
+    iget-wide v2, p0, Lhlv;->e:J
+
+    const-wide/16 v4, 0x1388
+
+    add-long/2addr v2, v4
+
+    cmp-long v4, v0, v2
+
+    if-gtz v4, :cond_0
+
+    const/4 v0, 0x1
+
+    return v0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    return v0
 .end method

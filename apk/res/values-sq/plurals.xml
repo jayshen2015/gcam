@@ -1,12 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <plurals name="accessibility_timelapse_manual_record_speed_desc">
-        <item quantity="other">Shpejtësia %d herë më e lartë e \"Regjistrimit me intervale\"</item>
-        <item quantity="one">Shpejtësia %d herë më e lartë e \"Regjistrimit me intervale\"</item>
-    </plurals>
-    <plurals name="number_of_cropped_face">
-        <item quantity="other">%d u prenë.</item>
-        <item quantity="one">Një u pre.</item>
+    <plurals name="number_of_faces_announcement">
+        <item quantity="other">%1$d fytyra.</item>
+        <item quantity="one">%1$d fytyrë.</item>
     </plurals>
     <plurals name="photos_remaining">
         <item quantity="other">Rreth %s fotografi</item>
@@ -17,8 +13,8 @@
         <item quantity="one">(U zgjodh %1$d aplikacion)</item>
     </plurals>
     <plurals name="social_share_info">
-        <item quantity="other">Ndaj me shpejtësi fotografitë dhe videot në aplikacionet sociale nga \"Kamera\". Zgjidh deri në %1$d aplikacione. Fotografitë dhe videot e ruajtura në \"Dosjen e kyçur\" nuk mund të ndahen.</item>
-        <item quantity="one">Ndaj me shpejtësi fotografitë dhe videot në aplikacionet sociale nga \"Kamera\". Zgjidh %1$d aplikacion. Fotografitë dhe videot e ruajtura në \"Dosjen e kyçur\" nuk mund të ndahen.</item>
+        <item quantity="other">Ndaj me shpejtësi fotografitë dhe videot në aplikacionet sociale direkt nga \"Kamera\". Zgjidh deri në %1$d aplikacione. Fotografitë dhe videot e ruajtura në \"Dosjen e kyçur\" nuk mund të ndahen.</item>
+        <item quantity="one">Ndaj me shpejtësi fotografitë dhe videot në aplikacionet sociale direkt nga \"Kamera\". Zgjidh %1$d aplikacion. Fotografitë dhe videot e ruajtura në \"Dosjen e kyçur\" nuk mund të ndahen.</item>
     </plurals>
     <plurals name="social_share_select_error">
         <item quantity="other">Zgjidh deri në %1$d aplikacione</item>

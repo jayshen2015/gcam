@@ -1,240 +1,349 @@
-.class public final Lewp;
-.super Ljava/lang/Thread;
+.class public final synthetic Lewp;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Lpgk;
+
+
+# static fields
+.field public static final synthetic a:Lewp;
+
+.field public static final synthetic b:Lewp;
+
+.field public static final synthetic c:Lewp;
+
+.field public static final synthetic d:Lewp;
+
+.field public static final synthetic e:Lewp;
+
+.field public static final synthetic f:Lewp;
+
+.field public static final synthetic g:Lewp;
+
+.field public static final synthetic h:Lewp;
 
 
 # instance fields
-.field public final a:Ljava/util/concurrent/ArrayBlockingQueue;
-
-.field public b:Z
-
-.field private c:Lexz;
-
-.field private d:Ljava/lang/Boolean;
+.field private final synthetic i:I
 
 
 # direct methods
-.method public constructor <init>()V
+.method static synthetic constructor <clinit>()V
     .locals 2
 
-    invoke-direct {p0}, Ljava/lang/Thread;-><init>()V
+    new-instance v0, Lewp;
 
-    new-instance v0, Ljava/util/concurrent/ArrayBlockingQueue;
+    const/16 v1, 0x8
 
-    const/16 v1, 0x32
+    invoke-direct {v0, v1}, Lewp;-><init>(I)V
 
-    invoke-direct {v0, v1}, Ljava/util/concurrent/ArrayBlockingQueue;-><init>(I)V
+    sput-object v0, Lewp;->h:Lewp;
 
-    iput-object v0, p0, Lewp;->a:Ljava/util/concurrent/ArrayBlockingQueue;
+    new-instance v0, Lewp;
 
-    const/4 v0, 0x0
+    const/4 v1, 0x7
 
-    iput-boolean v0, p0, Lewp;->b:Z
+    invoke-direct {v0, v1}, Lewp;-><init>(I)V
+
+    sput-object v0, Lewp;->g:Lewp;
+
+    new-instance v0, Lewp;
+
+    const/4 v1, 0x6
+
+    invoke-direct {v0, v1}, Lewp;-><init>(I)V
+
+    sput-object v0, Lewp;->f:Lewp;
+
+    new-instance v0, Lewp;
+
+    const/4 v1, 0x5
+
+    invoke-direct {v0, v1}, Lewp;-><init>(I)V
+
+    sput-object v0, Lewp;->e:Lewp;
+
+    new-instance v0, Lewp;
+
+    const/4 v1, 0x4
+
+    invoke-direct {v0, v1}, Lewp;-><init>(I)V
+
+    sput-object v0, Lewp;->d:Lewp;
+
+    new-instance v0, Lewp;
+
+    const/4 v1, 0x2
+
+    invoke-direct {v0, v1}, Lewp;-><init>(I)V
+
+    sput-object v0, Lewp;->c:Lewp;
+
+    new-instance v0, Lewp;
+
+    const/4 v1, 0x1
+
+    invoke-direct {v0, v1}, Lewp;-><init>(I)V
+
+    sput-object v0, Lewp;->b:Lewp;
+
+    new-instance v0, Lewp;
 
     const/4 v1, 0x0
 
-    iput-object v1, p0, Lewp;->c:Lexz;
+    invoke-direct {v0, v1}, Lewp;-><init>(I)V
 
-    invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+    sput-object v0, Lewp;->a:Lewp;
 
-    move-result-object v0
+    return-void
+.end method
 
-    iput-object v0, p0, Lewp;->d:Ljava/lang/Boolean;
+.method public synthetic constructor <init>(I)V
+    .locals 0
+
+    iput p1, p0, Lewp;->i:I
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final declared-synchronized a(Lexz;)V
-    .locals 1
+.method public final a(Ljava/lang/Object;)Lpht;
+    .locals 7
 
-    monitor-enter p0
+    iget v0, p0, Lewp;->i:I
 
-    :try_start_0
-    invoke-virtual {p0}, Lewp;->isInterrupted()Z
+    const/4 v1, 0x0
 
-    move-result v0
+    packed-switch v0, :pswitch_data_0
 
-    if-nez v0, :cond_0
+    check-cast p1, Landroid/net/Uri;
 
-    invoke-virtual {p0}, Lewp;->isAlive()Z
+    const-string p1, ""
 
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    iput-object p1, p0, Lewp;->c:Lexz;
-
-    const/4 p1, 0x1
-
-    invoke-static {p1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+    invoke-static {p1}, Lplk;->V(Ljava/lang/Object;)Lpht;
 
     move-result-object p1
 
-    iput-object p1, p0, Lewp;->d:Ljava/lang/Boolean;
+    return-object p1
 
-    invoke-super {p0}, Ljava/lang/Thread;->interrupt()V
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    :pswitch_0
+    check-cast p1, Lkig;
 
-    monitor-exit p0
+    new-instance v0, Lnew;
 
-    return-void
+    invoke-virtual {p1}, Lkig;->a()I
 
-    :cond_0
-    :try_start_1
-    new-instance p1, Ljava/lang/RuntimeException;
+    move-result v1
 
-    const-string v0, "IncrementalAligner is already shut down."
-
-    invoke-direct {p1, v0}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
-
-    throw p1
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    :catchall_0
-    move-exception p1
-
-    monitor-exit p0
-
-    throw p1
-.end method
-
-.method public final interrupt()V
-    .locals 2
-
-    iget-object v0, p0, Lewp;->a:Ljava/util/concurrent/ArrayBlockingQueue;
-
-    const-string v1, "Poison Pill"
-
-    invoke-virtual {v0, v1}, Ljava/util/concurrent/ArrayBlockingQueue;->add(Ljava/lang/Object;)Z
-
-    return-void
-.end method
-
-.method public final run()V
-    .locals 7
-
-    :cond_0
-    invoke-virtual {p0}, Lewp;->isInterrupted()Z
-
-    move-result v0
-
-    if-nez v0, :cond_5
-
-    new-instance v0, Ljava/util/ArrayList;
-
-    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
-
-    const/4 v1, 0x1
-
-    :try_start_0
-    iget-object v2, p0, Lewp;->a:Ljava/util/concurrent/ArrayBlockingQueue;
-
-    invoke-virtual {v2}, Ljava/util/concurrent/ArrayBlockingQueue;->take()Ljava/lang/Object;
+    invoke-virtual {p1}, Lkig;->getMessage()Ljava/lang/String;
 
     move-result-object v2
 
-    check-cast v2, Ljava/lang/String;
+    invoke-direct {v0, v1, v2, p1}, Lnew;-><init>(ILjava/lang/String;Ljava/lang/Throwable;)V
 
-    iput-boolean v1, p0, Lewp;->b:Z
+    throw v0
 
-    invoke-virtual {v0, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    :pswitch_1
+    check-cast p1, Ljava/util/List;
 
-    :goto_0
-    iget-object v2, p0, Lewp;->a:Ljava/util/concurrent/ArrayBlockingQueue;
+    if-nez p1, :cond_0
 
-    invoke-virtual {v2}, Ljava/util/concurrent/ArrayBlockingQueue;->isEmpty()Z
+    new-instance p1, Ljava/lang/IllegalStateException;
 
-    move-result v2
+    invoke-direct {p1}, Ljava/lang/IllegalStateException;-><init>()V
 
-    if-nez v2, :cond_1
+    invoke-static {p1}, Lplk;->U(Ljava/lang/Throwable;)Lpht;
 
-    iget-object v2, p0, Lewp;->a:Ljava/util/concurrent/ArrayBlockingQueue;
-
-    invoke-virtual {v2}, Ljava/util/concurrent/ArrayBlockingQueue;->take()Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Ljava/lang/String;
-
-    invoke-virtual {v0, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-    :try_end_0
-    .catch Ljava/lang/InterruptedException; {:try_start_0 .. :try_end_0} :catch_0
+    move-result-object p1
 
     goto :goto_0
 
-    :catch_0
-    move-exception v2
+    :cond_0
+    invoke-interface {p1, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
-    invoke-virtual {p0}, Lewp;->interrupt()V
+    move-result-object v0
+
+    check-cast v0, Llmw;
+
+    const/4 v1, 0x1
+
+    invoke-interface {p1, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object p1
+
+    check-cast p1, Llmw;
+
+    iget-wide v1, v0, Llmw;->c:J
+
+    iget-wide v3, p1, Llmw;->c:J
+
+    cmp-long v5, v1, v3
+
+    if-lez v5, :cond_1
+
+    invoke-static {v0}, Lplk;->V(Ljava/lang/Object;)Lpht;
+
+    move-result-object p1
+
+    goto :goto_0
 
     :cond_1
-    invoke-interface {v0}, Ljava/util/List;->size()I
+    invoke-static {p1}, Lplk;->V(Ljava/lang/Object;)Lpht;
 
-    move-result v2
+    move-result-object p1
 
-    const/4 v3, 0x0
+    :goto_0
+    return-object p1
 
-    const/4 v4, 0x0
+    :pswitch_2
+    check-cast p1, Ljava/util/List;
 
-    :goto_1
-    if-ge v4, v2, :cond_4
+    if-eqz p1, :cond_5
 
-    invoke-interface {v0, v4}, Ljava/util/List;->get(I)Ljava/lang/Object;
+    invoke-interface {p1}, Ljava/util/List;->isEmpty()Z
 
-    move-result-object v5
+    move-result v0
 
-    check-cast v5, Ljava/lang/String;
-
-    const-string v6, "Poison Pill"
-
-    invoke-virtual {v6, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v5
-
-    if-eqz v5, :cond_2
+    if-eqz v0, :cond_2
 
     goto :goto_2
 
     :cond_2
-    iget-object v5, p0, Lewp;->d:Ljava/lang/Boolean;
+    invoke-interface {p1, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
-    invoke-virtual {v5}, Ljava/lang/Boolean;->booleanValue()Z
+    move-result-object v0
 
-    move-result v5
+    check-cast v0, Llmw;
 
-    if-eqz v5, :cond_3
+    invoke-interface {p1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
-    goto :goto_2
+    move-result-object p1
 
     :cond_3
-    sget-object v5, Lewr;->a:Ljava/lang/Object;
+    :goto_1
+    invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
 
-    invoke-static {}, Lcom/google/android/apps/lightcycle/panorama/LightCycleNative;->AlignNextImage()V
+    move-result v1
 
-    add-int/lit8 v4, v4, 0x1
+    if-eqz v1, :cond_4
+
+    invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Llmw;
+
+    iget-wide v2, v1, Llmw;->c:J
+
+    const-wide/16 v4, -0x1
+
+    cmp-long v6, v2, v4
+
+    if-lez v6, :cond_3
+
+    move-object v0, v1
 
     goto :goto_1
 
     :cond_4
-    const/4 v1, 0x0
+    invoke-static {v0}, Lplk;->V(Ljava/lang/Object;)Lpht;
 
-    :goto_2
-    iput-boolean v3, p0, Lewp;->b:Z
+    move-result-object p1
 
-    if-eqz v1, :cond_0
+    goto :goto_3
 
     :cond_5
-    iget-object v0, p0, Lewp;->c:Lexz;
+    :goto_2
+    new-instance p1, Ljava/lang/IllegalStateException;
 
-    if-eqz v0, :cond_6
+    const-string v0, "Null or empty frame results for keys."
 
-    const/4 v1, 0x0
+    invoke-direct {p1, v0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 
-    invoke-interface {v0, v1}, Lexz;->a(Ljava/lang/Object;)V
+    invoke-static {p1}, Lplk;->U(Ljava/lang/Throwable;)Lpht;
+
+    move-result-object p1
+
+    :goto_3
+    return-object p1
+
+    :pswitch_3
+    check-cast p1, Ljava/lang/Throwable;
+
+    new-instance v0, Ljava/lang/IllegalStateException;
+
+    const-string v1, "Error updating preview surfaceview"
+
+    invoke-direct {v0, v1, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
+
+    throw v0
+
+    :pswitch_4
+    check-cast p1, Lhin;
+
+    iget-object v0, p1, Lhin;->l:Lbug;
+
+    iget-object v0, p1, Lhin;->a:Lmad;
+
+    invoke-static {p1}, Lplk;->V(Ljava/lang/Object;)Lpht;
+
+    move-result-object p1
+
+    return-object p1
+
+    :pswitch_5
+    check-cast p1, Lfiw;
+
+    if-eqz p1, :cond_6
+
+    invoke-interface {p1}, Lfiw;->a()Lpht;
+
+    move-result-object p1
+
+    goto :goto_4
 
     :cond_6
-    return-void
+    const/4 p1, 0x0
+
+    invoke-static {p1}, Lplk;->V(Ljava/lang/Object;)Lpht;
+
+    move-result-object p1
+
+    :goto_4
+    return-object p1
+
+    :pswitch_6
+    check-cast p1, Ljava/lang/Throwable;
+
+    invoke-static {p1}, Lplk;->U(Ljava/lang/Throwable;)Lpht;
+
+    move-result-object p1
+
+    return-object p1
+
+    :pswitch_7
+    check-cast p1, Lgfu;
+
+    invoke-interface {p1}, Lgfu;->h()Lhdi;
+
+    move-result-object p1
+
+    iget-object p1, p1, Lhdi;->g:Lpht;
+
+    return-object p1
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_7
+        :pswitch_6
+        :pswitch_5
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method

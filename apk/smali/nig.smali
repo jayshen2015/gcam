@@ -1,212 +1,288 @@
 .class public final Lnig;
-.super Lnws;
+.super Lbu;
 
 # interfaces
-.implements Lnxz;
-
-
-# static fields
-.field public static final i:Lnig;
-
-.field private static volatile j:Lnyf;
+.implements Laez;
 
 
 # instance fields
-.field public a:I
+.field public a:Lcom/google/android/libraries/social/licenses/LicenseMenuActivity;
 
-.field public b:J
-
-.field public c:J
-
-.field public d:J
-
-.field public e:I
-
-.field public f:I
-
-.field public g:I
-
-.field public h:I
+.field private b:Landroid/widget/ArrayAdapter;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
-
-    new-instance v0, Lnig;
-
-    invoke-direct {v0}, Lnig;-><init>()V
-
-    sput-object v0, Lnig;->i:Lnig;
-
-    const-class v1, Lnig;
-
-    invoke-static {v1, v0}, Lnws;->aa(Ljava/lang/Class;Lnws;)V
-
-    return-void
-.end method
-
-.method private constructor <init>()V
+.method public constructor <init>()V
     .locals 0
 
-    invoke-direct {p0}, Lnws;-><init>()V
+    invoke-direct {p0}, Lbu;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method protected final a(ILjava/lang/Object;)Ljava/lang/Object;
-    .locals 3
+.method public final A(Landroid/view/LayoutInflater;Landroid/view/ViewGroup;Landroid/os/Bundle;)Landroid/view/View;
+    .locals 1
 
-    add-int/lit8 p1, p1, -0x1
+    const p3, 0x7f0e0070
 
-    const/4 p2, 0x1
+    const/4 v0, 0x0
 
-    packed-switch p1, :pswitch_data_0
+    invoke-virtual {p1, p3, p2, v0}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 
-    :pswitch_0
-    const/4 p1, 0x0
+    move-result-object p1
 
     return-object p1
+.end method
 
-    :pswitch_1
-    sget-object p1, Lnig;->j:Lnyf;
+.method public final J()V
+    .locals 4
 
-    if-nez p1, :cond_1
+    invoke-super {p0}, Lbu;->J()V
 
-    const-class p2, Lnig;
+    invoke-virtual {p0}, Lbu;->w()Lby;
 
-    monitor-enter p2
+    move-result-object v0
 
-    :try_start_0
-    sget-object p1, Lnig;->j:Lnyf;
+    invoke-static {v0}, Lafa;->a(Laee;)Lafa;
 
-    if-nez p1, :cond_0
+    move-result-object v0
 
-    new-instance p1, Lnwo;
+    iget-object v1, v0, Lafa;->a:Lafe;
 
-    sget-object v0, Lnig;->i:Lnig;
+    iget-boolean v1, v1, Lafe;->c:Z
 
-    invoke-direct {p1, v0}, Lnwo;-><init>(Lnws;)V
+    if-nez v1, :cond_3
 
-    sput-object p1, Lnig;->j:Lnyf;
+    invoke-static {}, Landroid/os/Looper;->getMainLooper()Landroid/os/Looper;
+
+    move-result-object v1
+
+    invoke-static {}, Landroid/os/Looper;->myLooper()Landroid/os/Looper;
+
+    move-result-object v2
+
+    if-ne v1, v2, :cond_2
+
+    const/4 v1, 0x2
+
+    invoke-static {v1}, Lafa;->b(I)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v2, "destroyLoader in "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string v2, " of 54321"
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     :cond_0
-    monitor-exit p2
+    iget-object v1, v0, Lafa;->a:Lafe;
 
-    goto :goto_0
+    const v2, 0xd431
 
-    :catchall_0
-    move-exception p1
+    invoke-virtual {v1, v2}, Lafe;->a(I)Lafb;
 
-    monitor-exit p2
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    move-result-object v1
 
-    throw p1
+    if-eqz v1, :cond_1
+
+    invoke-virtual {v1}, Lafb;->j()V
+
+    iget-object v0, v0, Lafa;->a:Lafe;
+
+    iget-object v0, v0, Lafe;->b:Lxg;
+
+    iget-object v1, v0, Lxg;->c:[I
+
+    iget v3, v0, Lxg;->e:I
+
+    invoke-static {v1, v3, v2}, Lxb;->a([III)I
+
+    move-result v1
+
+    if-ltz v1, :cond_1
+
+    iget-object v2, v0, Lxg;->d:[Ljava/lang/Object;
+
+    aget-object v2, v2, v1
+
+    sget-object v3, Lxg;->a:Ljava/lang/Object;
+
+    if-eq v2, v3, :cond_1
+
+    iget-object v2, v0, Lxg;->d:[Ljava/lang/Object;
+
+    sget-object v3, Lxg;->a:Ljava/lang/Object;
+
+    aput-object v3, v2, v1
+
+    const/4 v1, 0x1
+
+    iput-boolean v1, v0, Lxg;->b:Z
 
     :cond_1
-    :goto_0
-    return-object p1
+    return-void
 
-    :pswitch_2
-    sget-object p1, Lnig;->i:Lnig;
+    :cond_2
+    new-instance v0, Ljava/lang/IllegalStateException;
 
-    return-object p1
+    const-string v1, "destroyLoader must be called on the main thread"
 
-    :pswitch_3
-    new-instance p1, Lnwn;
+    invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 
-    sget-object p2, Lnig;->i:Lnig;
+    throw v0
 
-    invoke-direct {p1, p2}, Lnwn;-><init>(Lnws;)V
+    :cond_3
+    new-instance v0, Ljava/lang/IllegalStateException;
 
-    return-object p1
+    const-string v1, "Called while creating a loader"
 
-    :pswitch_4
-    new-instance p1, Lnig;
+    invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 
-    invoke-direct {p1}, Lnig;-><init>()V
+    throw v0
+.end method
 
-    return-object p1
+.method public final M(Landroid/view/View;Landroid/os/Bundle;)V
+    .locals 4
 
-    :pswitch_5
-    const-string p1, "a"
+    invoke-virtual {p0}, Lbu;->w()Lby;
 
-    const-string v0, "\u0001\u0007\u0000\u0001\u0001\u0007\u0007\u0000\u0000\u0000\u0001\u1002\u0000\u0002\u1002\u0001\u0003\u1002\u0002\u0004\u1004\u0003\u0005\u1004\u0004\u0006\u1004\u0005\u0007\u1004\u0006"
+    move-result-object p2
 
-    const/16 v1, 0x8
+    new-instance v0, Landroid/widget/ArrayAdapter;
 
-    new-array v1, v1, [Ljava/lang/Object;
+    new-instance v1, Ljava/util/ArrayList;
 
-    const/4 v2, 0x0
+    invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
 
-    aput-object p1, v1, v2
+    const v2, 0x7f0e006d
 
-    const-string p1, "b"
+    const v3, 0x7f0b018e
 
-    aput-object p1, v1, p2
+    invoke-direct {v0, p2, v2, v3, v1}, Landroid/widget/ArrayAdapter;-><init>(Landroid/content/Context;IILjava/util/List;)V
 
-    const/4 p1, 0x2
+    iput-object v0, p0, Lnig;->b:Landroid/widget/ArrayAdapter;
 
-    const-string p2, "c"
+    invoke-static {p2}, Lafa;->a(Laee;)Lafa;
 
-    aput-object p2, v1, p1
+    move-result-object p2
 
-    const/4 p1, 0x3
+    const v0, 0xd431
 
-    const-string p2, "d"
+    invoke-virtual {p2, v0, p0}, Lafa;->c(ILaez;)V
 
-    aput-object p2, v1, p1
+    const p2, 0x7f0b0191
 
-    const/4 p1, 0x4
-
-    const-string p2, "e"
-
-    aput-object p2, v1, p1
-
-    const/4 p1, 0x5
-
-    const-string p2, "f"
-
-    aput-object p2, v1, p1
-
-    const/4 p1, 0x6
-
-    const-string p2, "g"
-
-    aput-object p2, v1, p1
-
-    const/4 p1, 0x7
-
-    const-string p2, "h"
-
-    aput-object p2, v1, p1
-
-    sget-object p1, Lnig;->i:Lnig;
-
-    invoke-static {p1, v0, v1}, Lnig;->X(Lnxy;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {p1, p2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
     move-result-object p1
 
-    return-object p1
+    check-cast p1, Landroid/widget/ListView;
 
-    :pswitch_6
-    invoke-static {p2}, Ljava/lang/Byte;->valueOf(B)Ljava/lang/Byte;
+    iget-object p2, p0, Lnig;->b:Landroid/widget/ArrayAdapter;
+
+    invoke-virtual {p1, p2}, Landroid/widget/ListView;->setAdapter(Landroid/widget/ListAdapter;)V
+
+    new-instance p2, Lnif;
+
+    invoke-direct {p2, p0}, Lnif;-><init>(Lnig;)V
+
+    invoke-virtual {p1, p2}, Landroid/widget/ListView;->setOnItemClickListener(Landroid/widget/AdapterView$OnItemClickListener;)V
+
+    return-void
+.end method
+
+.method public final a()Lafh;
+    .locals 2
+
+    new-instance v0, Lnie;
+
+    invoke-virtual {p0}, Lbu;->w()Lby;
+
+    move-result-object v1
+
+    invoke-direct {v0, v1}, Lnie;-><init>(Landroid/content/Context;)V
+
+    return-object v0
+.end method
+
+.method public final bridge synthetic c(Ljava/lang/Object;)V
+    .locals 1
+
+    check-cast p1, Ljava/util/List;
+
+    iget-object v0, p0, Lnig;->b:Landroid/widget/ArrayAdapter;
+
+    invoke-virtual {v0}, Landroid/widget/ArrayAdapter;->clear()V
+
+    iget-object v0, p0, Lnig;->b:Landroid/widget/ArrayAdapter;
+
+    invoke-virtual {v0, p1}, Landroid/widget/ArrayAdapter;->addAll(Ljava/util/Collection;)V
+
+    iget-object p1, p0, Lnig;->b:Landroid/widget/ArrayAdapter;
+
+    invoke-virtual {p1}, Landroid/widget/ArrayAdapter;->notifyDataSetChanged()V
+
+    return-void
+.end method
+
+.method public final d()V
+    .locals 1
+
+    iget-object v0, p0, Lnig;->b:Landroid/widget/ArrayAdapter;
+
+    invoke-virtual {v0}, Landroid/widget/ArrayAdapter;->clear()V
+
+    iget-object v0, p0, Lnig;->b:Landroid/widget/ArrayAdapter;
+
+    invoke-virtual {v0}, Landroid/widget/ArrayAdapter;->notifyDataSetChanged()V
+
+    return-void
+.end method
+
+.method public final e()V
+    .locals 1
+
+    invoke-super {p0}, Lbu;->e()V
+
+    const/4 v0, 0x0
+
+    iput-object v0, p0, Lnig;->a:Lcom/google/android/libraries/social/licenses/LicenseMenuActivity;
+
+    return-void
+.end method
+
+.method public final gv(Landroid/content/Context;)V
+    .locals 1
+
+    invoke-super {p0, p1}, Lbu;->gv(Landroid/content/Context;)V
+
+    invoke-virtual {p0}, Lbu;->w()Lby;
 
     move-result-object p1
 
-    return-object p1
+    instance-of v0, p1, Lcom/google/android/libraries/social/licenses/LicenseMenuActivity;
 
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_6
-        :pswitch_0
-        :pswitch_5
-        :pswitch_4
-        :pswitch_3
-        :pswitch_2
-        :pswitch_1
-    .end packed-switch
+    if-eqz v0, :cond_0
+
+    check-cast p1, Lcom/google/android/libraries/social/licenses/LicenseMenuActivity;
+
+    iput-object p1, p0, Lnig;->a:Lcom/google/android/libraries/social/licenses/LicenseMenuActivity;
+
+    :cond_0
+    return-void
 .end method

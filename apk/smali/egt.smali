@@ -1,22 +1,40 @@
-.class public final Legt;
-.super Ljava/lang/Object;
+.class final Legt;
+.super Lejh;
 
 
-# static fields
-.field public static final a:Ledu;
+# instance fields
+.field final synthetic a:Legv;
 
 
 # direct methods
-.method static constructor <clinit>()V
+.method public constructor <init>(Legv;)V
+    .locals 0
+
+    iput-object p1, p0, Legt;->a:Legv;
+
+    invoke-direct {p0}, Lejh;-><init>()V
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public final a()V
     .locals 2
 
-    new-instance v0, Ledu;
+    iget-object v0, p0, Legt;->a:Legv;
 
-    const/16 v1, 0xc
+    iget-object v0, v0, Legv;->a:Lihu;
 
-    invoke-direct {v0, v1}, Ledu;-><init>(I)V
+    invoke-virtual {v0}, Lihu;->e()V
 
-    sput-object v0, Legt;->a:Ledu;
+    iget-object v0, p0, Legt;->a:Legv;
+
+    iget-object v1, v0, Legv;->a:Lihu;
+
+    iget-object v0, v0, Legv;->c:Lihw;
+
+    invoke-virtual {v1, v0}, Lihu;->g(Lihw;)V
 
     return-void
 .end method

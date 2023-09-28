@@ -1,30 +1,31 @@
 .class final Lex;
-.super Landroid/content/BroadcastReceiver;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Lez;
 
 
 # instance fields
-.field final synthetic a:Ley;
+.field private final a:Landroid/os/IBinder;
 
 
 # direct methods
-.method public constructor <init>(Ley;)V
+.method public constructor <init>(Landroid/os/IBinder;)V
     .locals 0
 
-    iput-object p1, p0, Lex;->a:Ley;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
+    iput-object p1, p0, Lex;->a:Landroid/os/IBinder;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onReceive(Landroid/content/Context;Landroid/content/Intent;)V
-    .locals 0
+.method public final asBinder()Landroid/os/IBinder;
+    .locals 1
 
-    iget-object p1, p0, Lex;->a:Ley;
+    iget-object v0, p0, Lex;->a:Landroid/os/IBinder;
 
-    invoke-virtual {p1}, Ley;->b()V
-
-    return-void
+    return-object v0
 .end method

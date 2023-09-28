@@ -1,146 +1,201 @@
 .class public final Lmkw;
-.super Lmjy;
+.super Ljava/lang/Object;
+
+
+# static fields
+.field public static final a:[[S
+
+.field public static final b:[S
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 4
 
-    invoke-direct {p0}, Lmjy;-><init>()V
+    const/16 v0, 0xa
+
+    new-array v0, v0, [[S
+
+    const/4 v1, 0x2
+
+    new-array v2, v1, [S
+
+    fill-array-data v2, :array_0
+
+    const/4 v3, 0x0
+
+    aput-object v2, v0, v3
+
+    new-array v2, v1, [S
+
+    fill-array-data v2, :array_1
+
+    const/4 v3, 0x1
+
+    aput-object v2, v0, v3
+
+    new-array v2, v1, [S
+
+    fill-array-data v2, :array_2
+
+    aput-object v2, v0, v1
+
+    new-array v2, v1, [S
+
+    fill-array-data v2, :array_3
+
+    const/4 v3, 0x3
+
+    aput-object v2, v0, v3
+
+    new-array v2, v1, [S
+
+    fill-array-data v2, :array_4
+
+    const/4 v3, 0x4
+
+    aput-object v2, v0, v3
+
+    new-array v2, v1, [S
+
+    fill-array-data v2, :array_5
+
+    const/4 v3, 0x5
+
+    aput-object v2, v0, v3
+
+    new-array v2, v1, [S
+
+    fill-array-data v2, :array_6
+
+    const/4 v3, 0x6
+
+    aput-object v2, v0, v3
+
+    new-array v2, v1, [S
+
+    fill-array-data v2, :array_7
+
+    const/4 v3, 0x7
+
+    aput-object v2, v0, v3
+
+    new-array v2, v1, [S
+
+    fill-array-data v2, :array_8
+
+    const/16 v3, 0x8
+
+    aput-object v2, v0, v3
+
+    new-array v1, v1, [S
+
+    fill-array-data v1, :array_9
+
+    const/16 v2, 0x9
+
+    aput-object v1, v0, v2
+
+    sput-object v0, Lmkw;->a:[[S
+
+    new-array v0, v3, [S
+
+    fill-array-data v0, :array_a
+
+    sput-object v0, Lmkw;->b:[S
 
     return-void
+
+    :array_0
+    .array-data 2
+        0x2s
+        0x2s
+    .end array-data
+
+    :array_1
+    .array-data 2
+        0x1s
+        0x1s
+    .end array-data
+
+    :array_2
+    .array-data 2
+        0x5s
+        0x6s
+    .end array-data
+
+    :array_3
+    .array-data 2
+        0x5s
+        0x1s
+    .end array-data
+
+    :array_4
+    .array-data 2
+        0x6s
+        0x6s
+    .end array-data
+
+    :array_5
+    .array-data 2
+        0x6s
+        0x7s
+    .end array-data
+
+    :array_6
+    .array-data 2
+        0x9s
+        0x9s
+    .end array-data
+
+    :array_7
+    .array-data 2
+        0x9s
+        0xas
+    .end array-data
+
+    :array_8
+    .array-data 2
+        0x4s
+        0x4s
+    .end array-data
+
+    :array_9
+    .array-data 2
+        0x8s
+        0x9s
+    .end array-data
+
+    :array_a
+    .array-data 2
+        0x2s
+        0x8s
+        0xds
+        0x1s
+        0x4s
+        0x5s
+        0x10s
+        0x12s
+    .end array-data
 .end method
 
-.method private static K(F)F
-    .locals 4
+.method public static a(Landroid/media/MediaFormat;Ljava/lang/String;)I
+    .locals 1
 
-    float-to-double v0, p0
+    invoke-virtual {p0, p1}, Landroid/media/MediaFormat;->containsKey(Ljava/lang/String;)Z
 
-    const-wide v2, 0x400921fb54442d18L    # Math.PI
+    move-result v0
 
-    invoke-static {v0, v1}, Ljava/lang/Double;->isNaN(D)Z
+    if-eqz v0, :cond_0
 
-    mul-double v0, v0, v2
+    invoke-virtual {p0, p1}, Landroid/media/MediaFormat;->getInteger(Ljava/lang/String;)I
 
-    const-wide/high16 v2, 0x4000000000000000L    # 2.0
-
-    div-double/2addr v0, v2
-
-    invoke-static {v0, v1}, Ljava/lang/Math;->cos(D)D
-
-    move-result-wide v0
-
-    const-wide/high16 v2, 0x3ff0000000000000L    # 1.0
-
-    sub-double/2addr v2, v0
-
-    double-to-float p0, v2
+    move-result p0
 
     return p0
-.end method
-
-.method private static L(F)F
-    .locals 4
-
-    float-to-double v0, p0
-
-    const-wide v2, 0x400921fb54442d18L    # Math.PI
-
-    invoke-static {v0, v1}, Ljava/lang/Double;->isNaN(D)Z
-
-    mul-double v0, v0, v2
-
-    const-wide/high16 v2, 0x4000000000000000L    # 2.0
-
-    div-double/2addr v0, v2
-
-    invoke-static {v0, v1}, Ljava/lang/Math;->sin(D)D
-
-    move-result-wide v0
-
-    double-to-float p0, v0
-
-    return p0
-.end method
-
-
-# virtual methods
-.method public final e(Lcom/google/android/material/tabs/TabLayout;Landroid/view/View;Landroid/view/View;FLandroid/graphics/drawable/Drawable;)V
-    .locals 2
-
-    invoke-static {p1, p2}, Lmkw;->d(Lcom/google/android/material/tabs/TabLayout;Landroid/view/View;)Landroid/graphics/RectF;
-
-    move-result-object p2
-
-    invoke-static {p1, p3}, Lmkw;->d(Lcom/google/android/material/tabs/TabLayout;Landroid/view/View;)Landroid/graphics/RectF;
-
-    move-result-object p1
-
-    iget p3, p2, Landroid/graphics/RectF;->left:F
-
-    iget v0, p1, Landroid/graphics/RectF;->left:F
-
-    cmpg-float p3, p3, v0
-
-    if-gez p3, :cond_0
-
-    invoke-static {p4}, Lmkw;->K(F)F
-
-    move-result p3
-
-    invoke-static {p4}, Lmkw;->L(F)F
-
-    move-result p4
-
-    goto :goto_0
 
     :cond_0
-    invoke-static {p4}, Lmkw;->L(F)F
+    const/4 p0, 0x0
 
-    move-result p3
-
-    invoke-static {p4}, Lmkw;->K(F)F
-
-    move-result p4
-
-    :goto_0
-    iget v0, p2, Landroid/graphics/RectF;->left:F
-
-    float-to-int v0, v0
-
-    iget v1, p1, Landroid/graphics/RectF;->left:F
-
-    float-to-int v1, v1
-
-    invoke-static {v0, v1, p3}, Lmev;->b(IIF)I
-
-    move-result p3
-
-    invoke-virtual {p5}, Landroid/graphics/drawable/Drawable;->getBounds()Landroid/graphics/Rect;
-
-    move-result-object v0
-
-    iget v0, v0, Landroid/graphics/Rect;->top:I
-
-    iget p2, p2, Landroid/graphics/RectF;->right:F
-
-    float-to-int p2, p2
-
-    iget p1, p1, Landroid/graphics/RectF;->right:F
-
-    float-to-int p1, p1
-
-    invoke-static {p2, p1, p4}, Lmev;->b(IIF)I
-
-    move-result p1
-
-    invoke-virtual {p5}, Landroid/graphics/drawable/Drawable;->getBounds()Landroid/graphics/Rect;
-
-    move-result-object p2
-
-    iget p2, p2, Landroid/graphics/Rect;->bottom:I
-
-    invoke-virtual {p5, p3, v0, p1, p2}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
-
-    return-void
+    return p0
 .end method

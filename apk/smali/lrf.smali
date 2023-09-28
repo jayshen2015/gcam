@@ -1,36 +1,33 @@
-.class public final Llrf;
+.class public final synthetic Llrf;
 .super Ljava/lang/Object;
 
+# interfaces
+.implements Llie;
 
-# static fields
-.field public static final a:Landroid/accounts/Account;
+
+# instance fields
+.field public final synthetic a:Ljava/util/concurrent/locks/ReentrantLock;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 3
+.method public synthetic constructor <init>(Ljava/util/concurrent/locks/ReentrantLock;)V
+    .locals 0
 
-    new-instance v0, Landroid/accounts/Account;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const-string v1, "shared"
-
-    const-string v2, "mobstore"
-
-    invoke-direct {v0, v1, v2}, Landroid/accounts/Account;-><init>(Ljava/lang/String;Ljava/lang/String;)V
-
-    sput-object v0, Llrf;->a:Landroid/accounts/Account;
+    iput-object p1, p0, Llrf;->a:Ljava/util/concurrent/locks/ReentrantLock;
 
     return-void
 .end method
 
-.method static a(Landroid/accounts/Account;)Z
+
+# virtual methods
+.method public final close()V
     .locals 1
 
-    sget-object v0, Llrf;->a:Landroid/accounts/Account;
+    iget-object v0, p0, Llrf;->a:Ljava/util/concurrent/locks/ReentrantLock;
 
-    invoke-virtual {v0, p0}, Landroid/accounts/Account;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v0}, Ljava/util/concurrent/locks/ReentrantLock;->unlock()V
 
-    move-result p0
-
-    return p0
+    return-void
 .end method

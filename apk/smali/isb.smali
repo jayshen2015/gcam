@@ -1,40 +1,87 @@
-.class final Lisb;
-.super Landroid/animation/AnimatorListenerAdapter;
+.class public final synthetic Lisb;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Landroid/view/View$OnLayoutChangeListener;
 
 
 # instance fields
-.field final synthetic a:Lisi;
+.field public final synthetic a:Landroid/widget/ImageView;
 
 
 # direct methods
-.method public constructor <init>(Lisi;)V
+.method public synthetic constructor <init>(Landroid/widget/ImageView;)V
     .locals 0
 
-    iput-object p1, p0, Lisb;->a:Lisi;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
+    iput-object p1, p0, Lisb;->a:Landroid/widget/ImageView;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onAnimationEnd(Landroid/animation/Animator;)V
-    .locals 2
+.method public final onLayoutChange(Landroid/view/View;IIIIIIII)V
+    .locals 0
 
-    iget-object v0, p0, Lisb;->a:Lisi;
+    iget-object p2, p0, Lisb;->a:Landroid/widget/ImageView;
 
-    iget-object v0, v0, Lisi;->C:Ljwb;
+    sget p3, Lcom/google/android/apps/camera/toast/EducationToastView;->c:I
 
-    sget-object v1, Lgdi;->a:Ljava/lang/Byte;
+    invoke-virtual {p1}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
 
-    invoke-interface {v0, v1}, Ljwb;->bn(Ljava/lang/Object;)V
+    move-result-object p3
 
-    iget-object v0, p0, Lisb;->a:Lisi;
+    check-cast p3, Landroid/view/View;
 
-    iget-object v0, v0, Lisi;->af:Landroid/animation/AnimatorListenerAdapter;
+    invoke-virtual {p3}, Landroid/view/View;->getDisplay()Landroid/view/Display;
 
-    invoke-virtual {p1, v0}, Landroid/animation/Animator;->removeListener(Landroid/animation/Animator$AnimatorListener;)V
+    move-result-object p3
+
+    invoke-virtual {p1}, Landroid/view/View;->getContext()Landroid/content/Context;
+
+    move-result-object p1
+
+    invoke-static {p3, p1}, Ljrz;->a(Landroid/view/Display;Landroid/content/Context;)Ljrz;
+
+    move-result-object p1
+
+    invoke-virtual {p1}, Ljrz;->ordinal()I
+
+    move-result p1
+
+    const p3, 0x7f08055f
+
+    packed-switch p1, :pswitch_data_0
+
+    invoke-virtual {p2, p3}, Landroid/widget/ImageView;->setImageResource(I)V
 
     return-void
+
+    :pswitch_0
+    const p1, 0x7f080560
+
+    invoke-virtual {p2, p1}, Landroid/widget/ImageView;->setImageResource(I)V
+
+    return-void
+
+    :pswitch_1
+    const p1, 0x7f080561
+
+    invoke-virtual {p2, p1}, Landroid/widget/ImageView;->setImageResource(I)V
+
+    return-void
+
+    :pswitch_2
+    invoke-virtual {p2, p3}, Landroid/widget/ImageView;->setImageResource(I)V
+
+    return-void
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method

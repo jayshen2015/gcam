@@ -1,64 +1,39 @@
-.class final Lfim;
+.class public final Lfim;
 .super Ljava/lang/Object;
+
+# interfaces
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field public final a:Lkaf;
+.field private final a:Lfhi;
 
-.field public final b:J
-
-.field public final c:Lnph;
-
-.field public final d:Lnph;
-
-.field public final e:Lnph;
-
-.field public final f:Lnph;
-
-.field public volatile g:Z
-
-.field public final h:I
+.field private final b:Lfik;
 
 
 # direct methods
-.method public constructor <init>(Lkaf;JI)V
-    .locals 1
+.method public constructor <init>(Lfhi;Lfik;)V
+    .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-static {}, Lnph;->g()Lnph;
+    iput-object p1, p0, Lfim;->a:Lfhi;
 
-    move-result-object v0
+    iput-object p2, p0, Lfim;->b:Lfik;
 
-    iput-object v0, p0, Lfim;->c:Lnph;
+    return-void
+.end method
 
-    invoke-static {}, Lnph;->g()Lnph;
 
-    move-result-object v0
+# virtual methods
+.method public final run()V
+    .locals 2
 
-    iput-object v0, p0, Lfim;->d:Lnph;
+    iget-object v0, p0, Lfim;->a:Lfhi;
 
-    invoke-static {}, Lnph;->g()Lnph;
+    iget-object v1, p0, Lfim;->b:Lfik;
 
-    move-result-object v0
-
-    iput-object v0, p0, Lfim;->e:Lnph;
-
-    invoke-static {}, Lnph;->g()Lnph;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lfim;->f:Lnph;
-
-    const/4 v0, 0x0
-
-    iput-boolean v0, p0, Lfim;->g:Z
-
-    iput-object p1, p0, Lfim;->a:Lkaf;
-
-    iput-wide p2, p0, Lfim;->b:J
-
-    iput p4, p0, Lfim;->h:I
+    invoke-virtual {v0, v1}, Lfhi;->g(Lfik;)V
 
     return-void
 .end method

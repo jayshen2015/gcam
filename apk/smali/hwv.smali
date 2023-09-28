@@ -1,47 +1,80 @@
-.class final Lhwv;
-.super Landroid/net/ConnectivityManager$NetworkCallback;
+.class public final Lhwv;
+.super Ljava/lang/Object;
 
 
-# instance fields
-.field final synthetic a:Lhwy;
+# static fields
+.field private static final a:Louj;
 
 
 # direct methods
-.method public constructor <init>(Lhwy;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 1
 
-    iput-object p1, p0, Lhwv;->a:Lhwy;
+    const-string v0, "com/google/android/apps/camera/sideline/util/SidelineCoreUtils"
 
-    invoke-direct {p0}, Landroid/net/ConnectivityManager$NetworkCallback;-><init>()V
+    invoke-static {v0}, Louj;->h(Ljava/lang/String;)Louj;
+
+    move-result-object v0
+
+    sput-object v0, Lhwv;->a:Louj;
 
     return-void
 .end method
 
+.method public static a(Landroid/content/Context;I)J
+    .locals 2
 
-# virtual methods
-.method public final onCapabilitiesChanged(Landroid/net/Network;Landroid/net/NetworkCapabilities;)V
-    .locals 1
+    :try_start_0
+    invoke-virtual {p0}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
 
-    invoke-super {p0, p1, p2}, Landroid/net/ConnectivityManager$NetworkCallback;->onCapabilitiesChanged(Landroid/net/Network;Landroid/net/NetworkCapabilities;)V
+    move-result-object p0
 
-    iget-object p1, p0, Lhwv;->a:Lhwy;
+    const-string v0, "com.google.pixel.camera.hal"
 
-    iget-object p1, p1, Lhwy;->a:Landroid/content/Context;
+    const/high16 v1, 0x40000000    # 2.0f
 
-    invoke-static {p1}, Linb;->w(Landroid/content/Context;)I
+    or-int/2addr p1, v1
 
-    move-result p1
+    invoke-virtual {p0, v0, p1}, Landroid/content/pm/PackageManager;->getPackageInfo(Ljava/lang/String;I)Landroid/content/pm/PackageInfo;
 
-    iget-object p2, p0, Lhwv;->a:Lhwy;
+    move-result-object p0
 
-    iget v0, p2, Lhwy;->c:I
+    invoke-virtual {p0}, Landroid/content/pm/PackageInfo;->getLongVersionCode()J
 
-    if-eq p1, v0, :cond_0
+    move-result-wide p0
+    :try_end_0
+    .catch Landroid/content/pm/PackageManager$NameNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
 
-    const/4 p1, 0x0
+    return-wide p0
 
-    invoke-virtual {p2, p1}, Lhwy;->b(Z)V
+    :catch_0
+    move-exception p0
 
-    :cond_0
-    return-void
+    sget-object p0, Lhwv;->a:Louj;
+
+    invoke-virtual {p0}, Loue;->c()Lova;
+
+    move-result-object p0
+
+    const/16 p1, 0xaa5
+
+    const-string v0, "Camera HAL package not found."
+
+    invoke-static {p0, v0, p1}, Ld;->v(Lova;Ljava/lang/String;C)V
+
+    const-wide/16 p0, -0x1
+
+    return-wide p0
+.end method
+
+.method public static b(Landroid/content/Context;)J
+    .locals 2
+
+    const/4 v0, 0x0
+
+    invoke-static {p0, v0}, Lhwv;->a(Landroid/content/Context;I)J
+
+    move-result-wide v0
+
+    return-wide v0
 .end method

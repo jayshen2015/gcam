@@ -67,7 +67,7 @@
 
     const/high16 v2, 0x40000000    # 2.0f
 
-    invoke-static {v2}, Likp;->b(F)I
+    invoke-static {v2}, Ljsa;->b(F)I
 
     move-result v2
 

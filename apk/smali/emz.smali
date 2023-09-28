@@ -1,156 +1,67 @@
 .class public final Lemz;
 .super Ljava/lang/Object;
 
+# interfaces
+.implements Lpys;
 
-# static fields
-.field public static final a:Lmvv;
+
+# instance fields
+.field private final a:Lqkg;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 15
+.method public constructor <init>(Lqkg;)V
+    .locals 0
 
-    const-class v0, Lcom/google/android/apps/camera/jni/eisutil/FrameUtilNative;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const/16 v1, 0x12
+    iput-object p1, p0, Lemz;->a:Lqkg;
 
-    new-array v14, v1, [Ljava/lang/Class;
+    return-void
+.end method
 
-    const/4 v1, 0x0
+.method public static b(Lemr;)Landroid/os/PowerManager;
+    .locals 1
 
-    aput-object v0, v14, v1
+    sget-object v0, Lemr;->j:Lemq;
 
-    const/4 v0, 0x1
+    invoke-interface {p0, v0}, Lemr;->a(Lemq;)Ljava/lang/Object;
 
-    const-class v1, Lemq;
+    move-result-object p0
 
-    aput-object v1, v14, v0
+    check-cast p0, Landroid/os/PowerManager;
 
-    const/4 v0, 0x2
+    invoke-static {p0}, Lqmd;->ae(Ljava/lang/Object;)V
 
-    const-class v1, Lcom/google/android/apps/camera/jni/facebeautification/GpuRetoucherNative;
+    return-object p0
+.end method
 
-    aput-object v1, v14, v0
 
-    const/4 v0, 0x3
+# virtual methods
+.method public final a()Landroid/os/PowerManager;
+    .locals 1
 
-    const-class v1, Lcom/google/android/apps/camera/jni/faceobfuscation/GpuRedactorNative;
+    iget-object v0, p0, Lemz;->a:Lqkg;
 
-    aput-object v1, v14, v0
-
-    const/4 v0, 0x4
-
-    const-class v1, Lcom/google/android/apps/camera/jni/gyro/GyroQueueNative;
-
-    aput-object v1, v14, v0
-
-    const/4 v0, 0x5
-
-    const-class v1, Lcom/google/android/libraries/camera/jni/graphics/HardwareBuffers;
-
-    aput-object v1, v14, v0
-
-    const/4 v0, 0x6
-
-    const-class v1, Lcom/google/android/apps/camera/processing/imagebackend/ImgUtilNative;
-
-    aput-object v1, v14, v0
-
-    const/4 v0, 0x7
-
-    const-class v1, Lcom/google/android/libraries/camera/jni/jpeg/JpegUtilNative;
-
-    aput-object v1, v14, v0
-
-    const/16 v0, 0x8
-
-    const-class v1, Lcom/google/android/apps/camera/jni/lensoffset/LensOffsetQueueNative;
-
-    aput-object v1, v14, v0
-
-    const/16 v0, 0x9
-
-    const-class v1, Lcom/google/android/apps/camera/debug/logorcrash/LogOrCrash;
-
-    aput-object v1, v14, v0
-
-    const/16 v0, 0xa
-
-    const-class v1, Lcom/google/android/apps/camera/jni/mallopt/Mallopt;
-
-    aput-object v1, v14, v0
-
-    const/16 v0, 0xb
-
-    const-class v1, Lcom/google/android/apps/camera/jni/microvideotonemap/MicrovideoToneMapNative;
-
-    aput-object v1, v14, v0
-
-    const/16 v0, 0xc
-
-    const-class v1, Lcom/google/android/apps/camera/jni/federatedphoto/ModeSuggestionClient;
-
-    aput-object v1, v14, v0
-
-    const/16 v0, 0xd
-
-    const-class v1, Lcom/google/android/libraries/camera/gyro/hardwarebuffer/ReadHardwareBufferJniFunctions;
-
-    aput-object v1, v14, v0
-
-    const/16 v0, 0xe
-
-    const-class v1, Lgtl;
-
-    aput-object v1, v14, v0
-
-    const/16 v0, 0xf
-
-    const-class v1, Lcom/google/android/apps/camera/jni/tracking/RoiTrackerNative;
-
-    aput-object v1, v14, v0
-
-    const/16 v0, 0x10
-
-    const-class v1, Lcom/google/android/apps/camera/jni/surface/SurfaceNative;
-
-    aput-object v1, v14, v0
-
-    const/16 v0, 0x11
-
-    const-class v1, Lcom/google/android/libraries/camera/jni/yuv/YuvUtilNative;
-
-    aput-object v1, v14, v0
-
-    const-class v2, Lcom/google/android/apps/camera/jni/aesthetic/AestheticScorerNima;
-
-    const-class v3, Lcom/google/android/apps/camera/jni/aesthetic/AestheticScorerNimaV2;
-
-    const-class v4, Lcom/google/android/libraries/oliveoil/bufferflinger/BufferFlinger;
-
-    const-class v5, Ldez;
-
-    const-class v6, Lcom/google/android/apps/camera/async/tt/CpuSets;
-
-    const-class v7, Ldnf;
-
-    const-class v8, Lcom/google/android/apps/camera/jni/eis/EisNative;
-
-    const-class v9, Lcom/google/android/apps/camera/jni/facebeautification/FaceBeautificationNative;
-
-    const-class v10, Lcom/google/android/apps/camera/processing/imagebackend/FaceUtilNative;
-
-    const-class v11, Lcom/google/android/apps/camera/facemetadata/jni/FaceMetadataNative;
-
-    const-class v12, Lcom/google/android/apps/camera/facemetadata/conversions/jni/MeshWarpInverseNative;
-
-    const-class v13, Lcom/google/android/apps/camera/moments/FastMomentsHdrImpl;
-
-    invoke-static/range {v2 .. v14}, Lmvv;->q(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;[Ljava/lang/Object;)Lmvv;
+    invoke-interface {v0}, Lqkg;->get()Ljava/lang/Object;
 
     move-result-object v0
 
-    sput-object v0, Lemz;->a:Lmvv;
+    check-cast v0, Lemr;
 
-    return-void
+    invoke-static {v0}, Lemz;->b(Lemr;)Landroid/os/PowerManager;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public final bridge synthetic get()Ljava/lang/Object;
+    .locals 1
+
+    invoke-virtual {p0}, Lemz;->a()Landroid/os/PowerManager;
+
+    move-result-object v0
+
+    return-object v0
 .end method

@@ -1,71 +1,62 @@
 .class final Loow;
-.super Loox;
+.super Loti;
 
 
 # instance fields
-.field private final a:Ljava/util/concurrent/Future;
+.field final a:Loti;
+
+.field final synthetic b:Looz;
 
 
 # direct methods
-.method public constructor <init>(Ljava/util/concurrent/Future;)V
+.method public constructor <init>(Looz;)V
     .locals 0
 
-    invoke-direct {p0}, Loox;-><init>()V
+    iput-object p1, p0, Loow;->b:Looz;
 
-    iput-object p1, p0, Loow;->a:Ljava/util/concurrent/Future;
+    invoke-direct {p0}, Loti;-><init>()V
+
+    iget-object p1, p1, Looz;->a:Loor;
+
+    invoke-virtual {p1}, Loor;->t()Lope;
+
+    move-result-object p1
+
+    invoke-virtual {p1}, Lope;->gH()Loti;
+
+    move-result-object p1
+
+    iput-object p1, p0, Loow;->a:Loti;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final bridge synthetic a(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 0
-
-    check-cast p1, Ljava/lang/Throwable;
-
-    invoke-virtual {p0, p1}, Loow;->b(Ljava/lang/Throwable;)V
-
-    sget-object p1, Lojk;->a:Lojk;
-
-    return-object p1
-.end method
-
-.method public final b(Ljava/lang/Throwable;)V
+.method public final hasNext()Z
     .locals 1
 
-    if-eqz p1, :cond_0
+    iget-object v0, p0, Loow;->a:Loti;
 
-    iget-object p1, p0, Loow;->a:Ljava/util/concurrent/Future;
+    invoke-virtual {v0}, Loti;->hasNext()Z
 
-    const/4 v0, 0x0
+    move-result v0
 
-    invoke-interface {p1, v0}, Ljava/util/concurrent/Future;->cancel(Z)Z
-
-    :cond_0
-    return-void
+    return v0
 .end method
 
-.method public final toString()Ljava/lang/String;
-    .locals 3
+.method public final next()Ljava/lang/Object;
+    .locals 1
 
-    iget-object v0, p0, Loow;->a:Ljava/util/concurrent/Future;
+    iget-object v0, p0, Loow;->a:Loti;
 
-    new-instance v1, Ljava/lang/StringBuilder;
+    invoke-virtual {v0}, Loti;->next()Ljava/lang/Object;
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+    move-result-object v0
 
-    const-string v2, "CancelFutureOnCancel["
+    check-cast v0, Ljava/util/Map$Entry;
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const-string v0, "]"
-
-    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-interface {v0}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
     move-result-object v0
 

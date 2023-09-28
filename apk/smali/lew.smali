@@ -1,36 +1,32 @@
 .class public final Llew;
-.super Llff;
+.super Ljava/lang/Object;
 
 
 # instance fields
-.field final synthetic a:Lcom/google/android/libraries/oliveoil/natives/BitmapNativeBuffer;
+.field public final a:Lojc;
+
+.field public final b:Lleb;
+
+.field public c:Z
+
+.field public d:Lles;
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/libraries/oliveoil/natives/BitmapNativeBuffer;)V
-    .locals 0
+.method public constructor <init>(Lleb;)V
+    .locals 1
 
-    iput-object p1, p0, Llew;->a:Lcom/google/android/libraries/oliveoil/natives/BitmapNativeBuffer;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-virtual {p1}, Lcom/google/android/libraries/oliveoil/natives/BitmapNativeBuffer;->a()Ljava/nio/ByteBuffer;
+    sget-object v0, Loih;->a:Loih;
 
-    move-result-object p1
+    iput-object v0, p0, Llew;->a:Lojc;
 
-    invoke-direct {p0, p1}, Llff;-><init>(Ljava/lang/Object;)V
+    const/4 v0, 0x0
 
-    return-void
-.end method
+    iput-boolean v0, p0, Llew;->c:Z
 
-
-# virtual methods
-.method protected final bridge synthetic b(Ljava/lang/Object;)V
-    .locals 0
-
-    check-cast p1, Ljava/nio/ByteBuffer;
-
-    iget-object p1, p0, Llew;->a:Lcom/google/android/libraries/oliveoil/natives/BitmapNativeBuffer;
-
-    invoke-virtual {p1}, Lcom/google/android/libraries/oliveoil/natives/BitmapNativeBuffer;->b()V
+    iput-object p1, p0, Llew;->b:Lleb;
 
     return-void
 .end method

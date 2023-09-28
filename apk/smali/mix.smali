@@ -1,64 +1,46 @@
-.class final Lmix;
-.super Landroid/animation/AnimatorListenerAdapter;
+.class public final Lmix;
+.super Ljava/lang/Object;
 
 
 # instance fields
-.field final synthetic a:Lmiz;
+.field public a:Lmjc;
+
+.field public b:I
+
+.field public c:J
+
+.field public d:I
+
+.field public e:Lmiy;
+
+.field public f:Lmiw;
+
+.field public g:Lmiz;
 
 
 # direct methods
-.method public constructor <init>(Lmiz;)V
-    .locals 0
-
-    iput-object p1, p0, Lmix;->a:Lmiz;
-
-    invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
-
-    return-void
-.end method
-
-
-# virtual methods
-.method public final onAnimationEnd(Landroid/animation/Animator;)V
+.method public constructor <init>()V
     .locals 2
 
-    invoke-super {p0, p1}, Landroid/animation/AnimatorListenerAdapter;->onAnimationEnd(Landroid/animation/Animator;)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iget-object p1, p0, Lmix;->a:Lmiz;
+    new-instance v0, Lmja;
 
-    invoke-static {p1}, Lmiz;->i(Lmiz;)V
+    invoke-direct {v0}, Lmja;-><init>()V
 
-    iget-object p1, p0, Lmix;->a:Lmiz;
+    iput-object v0, p0, Lmix;->a:Lmjc;
 
-    iget-object v0, p1, Lmiz;->f:Ljava/util/List;
+    const/4 v0, -0x1
 
-    if-eqz v0, :cond_0
+    iput v0, p0, Lmix;->b:I
 
-    iget-boolean v1, p1, Lmiz;->g:Z
+    const-wide/16 v0, -0x1
 
-    if-nez v1, :cond_0
+    iput-wide v0, p0, Lmix;->c:J
 
-    invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+    const/4 v0, 0x1
 
-    move-result-object v0
+    iput v0, p0, Lmix;->d:I
 
-    :goto_0
-    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_0
-
-    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Latc;
-
-    invoke-virtual {v1, p1}, Latc;->b(Landroid/graphics/drawable/Drawable;)V
-
-    goto :goto_0
-
-    :cond_0
     return-void
 .end method

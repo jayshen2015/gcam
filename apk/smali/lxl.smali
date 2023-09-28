@@ -1,36 +1,26 @@
-.class public final Llxl;
-.super Laqc;
+.class public interface abstract Llxl;
+.super Ljava/lang/Object;
 
-
-# direct methods
-.method public constructor <init>()V
-    .locals 2
-
-    const/4 v0, 0x2
-
-    const/4 v1, 0x3
-
-    invoke-direct {p0, v0, v1}, Laqc;-><init>(II)V
-
-    return-void
-.end method
+# interfaces
+.implements Ljava/lang/AutoCloseable;
+.implements Landroid/media/AudioRouting;
 
 
 # virtual methods
-.method public final a(Laqp;)V
-    .locals 1
+.method public abstract a()I
+.end method
 
-    const-string v0, "ALTER TABLE ResourceEntity ADD COLUMN title TEXT"
+.method public abstract b()Landroid/media/AudioFormat;
+.end method
 
-    invoke-interface {p1, v0}, Laqp;->g(Ljava/lang/String;)V
+.method public abstract c()V
+.end method
 
-    const-string v0, "ALTER TABLE AnnotachmentEntity ADD COLUMN contentHash TEXT"
+.method public abstract close()V
+.end method
 
-    invoke-interface {p1, v0}, Laqp;->g(Ljava/lang/String;)V
+.method public abstract d()V
+.end method
 
-    const-string v0, "ALTER TABLE ResourceEntity ADD COLUMN relations BLOB"
-
-    invoke-interface {p1, v0}, Laqp;->g(Ljava/lang/String;)V
-
-    return-void
+.method public abstract e(Ljava/nio/ByteBuffer;I)Llgp;
 .end method

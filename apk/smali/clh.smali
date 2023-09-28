@@ -1,22 +1,37 @@
-.class public final Lclh;
+.class public final synthetic Lclh;
 .super Ljava/lang/Object;
 
+# interfaces
+.implements Llmu;
 
-# static fields
-.field public static final a:Lcla;
+
+# instance fields
+.field public final synthetic a:Lclp;
 
 
 # direct methods
-.method static constructor <clinit>()V
+.method public synthetic constructor <init>(Lclp;)V
+    .locals 0
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lclh;->a:Lclp;
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public final a(Llrr;)V
     .locals 2
 
-    new-instance v0, Lcla;
+    iget-object v0, p0, Lclh;->a:Lclp;
 
-    const/4 v1, 0x2
+    new-instance v1, Lclj;
 
-    invoke-direct {v0, v1}, Lcla;-><init>(I)V
+    invoke-direct {v1, v0}, Lclj;-><init>(Lclp;)V
 
-    sput-object v0, Lclh;->a:Lcla;
+    invoke-static {p1, v1}, Lmip;->bj(Llrr;Llnn;)V
 
     return-void
 .end method

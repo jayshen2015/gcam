@@ -2,250 +2,276 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Logk;
+.implements Lhko;
 
 
 # instance fields
-.field private final synthetic a:I
+.field public final a:Ldtg;
+
+.field private final b:[Lhkn;
+
+.field private final c:Ljava/lang/Object;
 
 
 # direct methods
-.method public constructor <init>(I)V
-    .locals 0
+.method public constructor <init>()V
+    .locals 4
 
-    iput p1, p0, Lhkr;->a:I
+    sget-object v0, Ljava/util/concurrent/TimeUnit;->SECONDS:Ljava/util/concurrent/TimeUnit;
+
+    sget-object v1, Ljava/util/concurrent/TimeUnit;->MILLISECONDS:Ljava/util/concurrent/TimeUnit;
+
+    const-wide/16 v2, 0x7530
+
+    invoke-virtual {v0, v2, v3, v1}, Ljava/util/concurrent/TimeUnit;->convert(JLjava/util/concurrent/TimeUnit;)J
+
+    move-result-wide v0
+
+    const-wide/16 v2, 0x1e
+
+    mul-long v0, v0, v2
+
+    long-to-int v1, v0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    new-instance v0, Ljava/lang/Object;
+
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+
+    iput-object v0, p0, Lhkr;->c:Ljava/lang/Object;
+
+    new-instance v0, Ldtg;
+
+    invoke-direct {v0, v1}, Ldtg;-><init>(I)V
+
+    iput-object v0, p0, Lhkr;->a:Ldtg;
+
+    new-array v0, v1, [Lhkn;
+
+    iput-object v0, p0, Lhkr;->b:[Lhkn;
 
     return-void
 .end method
 
-.method public static a()Lhkp;
+
+# virtual methods
+.method public final a()I
     .locals 1
 
-    new-instance v0, Lhkp;
+    iget-object v0, p0, Lhkr;->b:[Lhkn;
 
-    invoke-direct {v0}, Lhkp;-><init>()V
+    array-length v0, v0
+
+    return v0
+.end method
+
+.method public final b()Ldrc;
+    .locals 1
+
+    iget-object v0, p0, Lhkr;->a:Ldtg;
 
     return-object v0
 .end method
 
+.method public final c(J)Lhkn;
+    .locals 2
 
-# virtual methods
-.method public final synthetic get()Ljava/lang/Object;
-    .locals 3
+    iget-object v0, p0, Lhkr;->c:Ljava/lang/Object;
 
-    iget v0, p0, Lhkr;->a:I
+    monitor-enter v0
 
-    const/4 v1, 0x0
+    :try_start_0
+    iget-object v1, p0, Lhkr;->a:Ldtg;
 
-    invoke-static {v1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+    invoke-virtual {v1, p1, p2}, Ldtg;->g(J)I
 
-    move-result-object v2
+    move-result p1
 
-    packed-switch v0, :pswitch_data_0
+    if-ltz p1, :cond_0
 
-    invoke-static {}, Lnph;->g()Lnph;
+    iget-object p2, p0, Lhkr;->b:[Lhkn;
 
-    move-result-object v0
+    aget-object p1, p2, p1
 
-    return-object v0
+    goto :goto_0
 
-    :pswitch_0
-    new-instance v0, Ljava/util/concurrent/atomic/AtomicReference;
+    :cond_0
+    const/4 p1, 0x0
 
-    invoke-direct {v0}, Ljava/util/concurrent/atomic/AtomicReference;-><init>()V
+    :goto_0
+    monitor-exit v0
 
-    return-object v0
+    return-object p1
 
-    :pswitch_1
-    new-instance v0, Ljvk;
+    :catchall_0
+    move-exception p1
 
-    new-array v1, v1, [Lhyb;
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    invoke-direct {v0, v1}, Ljvk;-><init>(Ljava/lang/Object;)V
+    throw p1
+.end method
 
-    return-object v0
+.method public final d(J)Lhkn;
+    .locals 7
 
-    :pswitch_2
-    new-instance v0, Lhxt;
+    iget-object v0, p0, Lhkr;->c:Ljava/lang/Object;
 
-    invoke-direct {v0}, Lhxt;-><init>()V
+    monitor-enter v0
 
-    return-object v0
+    :try_start_0
+    iget-object v1, p0, Lhkr;->a:Ldtg;
 
-    :pswitch_3
-    new-instance v0, Ljvk;
+    invoke-virtual {v1}, Ldtg;->e()I
 
-    invoke-direct {v0, v2}, Ljvk;-><init>(Ljava/lang/Object;)V
+    move-result v1
 
-    return-object v0
+    const/4 v2, 0x0
 
-    :pswitch_4
-    new-instance v0, Lhsh;
+    if-gtz v1, :cond_0
 
-    invoke-direct {v0}, Lhsh;-><init>()V
+    monitor-exit v0
 
-    return-object v0
+    return-object v2
 
-    :pswitch_5
-    const-string v0, "trk-roi"
+    :cond_0
+    iget-object v1, p0, Lhkr;->a:Ldtg;
 
-    invoke-static {v0}, Ljvd;->f(Ljava/lang/String;)Ljava/util/concurrent/ExecutorService;
+    invoke-virtual {v1, p1, p2}, Ldtg;->c(J)I
 
-    move-result-object v0
+    move-result v3
 
-    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    invoke-virtual {v1, v3}, Ldtg;->f(I)I
 
-    return-object v0
+    move-result v1
 
-    :pswitch_6
-    const-string v0, "trk-analysis"
+    iget-object v3, p0, Lhkr;->a:Ldtg;
 
-    invoke-static {v0}, Ljvd;->f(Ljava/lang/String;)Ljava/util/concurrent/ExecutorService;
+    invoke-virtual {v3, p1, p2}, Ldtg;->d(J)I
 
-    move-result-object v0
+    move-result v4
 
-    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    invoke-virtual {v3, v4}, Ldtg;->f(I)I
 
-    return-object v0
+    move-result v3
 
-    :pswitch_7
-    const-string v0, "trk-deinit"
+    if-ltz v1, :cond_1
 
-    invoke-static {v0}, Ljvd;->f(Ljava/lang/String;)Ljava/util/concurrent/ExecutorService;
+    iget-object v4, p0, Lhkr;->b:[Lhkn;
 
-    move-result-object v0
+    aget-object v1, v4, v1
 
-    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    goto :goto_0
 
-    return-object v0
+    :cond_1
+    move-object v1, v2
 
-    :pswitch_8
-    new-instance v0, Ljuf;
+    :goto_0
+    if-ltz v3, :cond_2
 
-    invoke-direct {v0}, Ljuf;-><init>()V
+    iget-object v2, p0, Lhkr;->b:[Lhkn;
 
-    return-object v0
+    aget-object v2, v2, v3
 
-    :pswitch_9
-    const-string v0, "CheetahExecutor"
+    goto :goto_1
 
-    invoke-static {v0}, Ljvd;->f(Ljava/lang/String;)Ljava/util/concurrent/ExecutorService;
+    :cond_2
+    :goto_1
+    if-nez v1, :cond_3
 
-    move-result-object v0
+    monitor-exit v0
 
-    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    return-object v2
 
-    return-object v0
+    :cond_3
+    if-nez v2, :cond_4
 
-    :pswitch_a
-    invoke-static {}, Ljhp;->ap()Ljwm;
+    monitor-exit v0
 
-    move-result-object v0
+    return-object v1
 
-    return-object v0
+    :cond_4
+    iget-wide v3, v1, Lhkn;->a:J
 
-    :pswitch_b
-    invoke-static {}, Ljhp;->ax()Ljyx;
+    sub-long v3, p1, v3
 
-    move-result-object v0
+    iget-wide v5, v2, Lhkn;->a:J
 
-    return-object v0
+    sub-long/2addr v5, p1
 
-    :pswitch_c
-    new-instance v0, Ljvk;
+    cmp-long p1, v3, v5
 
-    invoke-direct {v0, v2}, Ljvk;-><init>(Ljava/lang/Object;)V
+    if-gez p1, :cond_5
 
-    return-object v0
+    goto :goto_2
 
-    :pswitch_d
-    new-instance v0, Ljvk;
+    :cond_5
+    move-object v1, v2
 
-    sget-object v1, Lhmt;->a:Lhmt;
+    :goto_2
+    monitor-exit v0
 
-    invoke-direct {v0, v1}, Ljvk;-><init>(Ljava/lang/Object;)V
+    return-object v1
 
-    return-object v0
+    :catchall_0
+    move-exception p1
 
-    :pswitch_e
-    new-instance v0, Ljvk;
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    sget-object v1, Ljava/lang/Boolean;->FALSE:Ljava/lang/Boolean;
+    throw p1
+.end method
 
-    invoke-direct {v0, v1}, Ljvk;-><init>(Ljava/lang/Object;)V
+.method public final e()V
+    .locals 0
 
-    return-object v0
+    return-void
+.end method
 
-    :pswitch_f
-    sget-object v0, Landroid/os/Environment;->DIRECTORY_PICTURES:Ljava/lang/String;
+.method public final f(Lhkn;)V
+    .locals 5
 
-    invoke-static {v0}, Landroid/os/Environment;->getExternalStoragePublicDirectory(Ljava/lang/String;)Ljava/io/File;
+    :try_start_0
+    iget-object v0, p0, Lhkr;->c:Ljava/lang/Object;
 
-    move-result-object v0
+    monitor-enter v0
+    :try_end_0
+    .catch Ljava/lang/IllegalArgumentException; {:try_start_0 .. :try_end_0} :catch_0
 
-    new-instance v1, Ljava/io/File;
+    :try_start_1
+    iget-object v1, p0, Lhkr;->b:[Lhkn;
 
-    const-string v2, "Raw"
+    iget-object v2, p0, Lhkr;->a:Ldtg;
 
-    invoke-direct {v1, v0, v2}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
+    iget-wide v3, p1, Lhkn;->a:J
 
-    new-instance v0, Lhlc;
+    invoke-virtual {v2, v3, v4}, Ldtg;->b(J)I
 
-    invoke-direct {v0, v1}, Lhlc;-><init>(Ljava/io/File;)V
+    move-result v2
 
-    return-object v0
+    aput-object p1, v1, v2
 
-    :pswitch_10
-    invoke-static {}, Ljfc;->g()Lhlc;
+    monitor-exit v0
 
-    move-result-object v0
+    return-void
 
-    return-object v0
+    :catchall_0
+    move-exception p1
 
-    :pswitch_11
-    new-instance v0, Lhkv;
+    monitor-exit v0
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    invoke-direct {v0}, Lhkv;-><init>()V
+    :try_start_2
+    throw p1
+    :try_end_2
+    .catch Ljava/lang/IllegalArgumentException; {:try_start_2 .. :try_end_2} :catch_0
 
-    return-object v0
+    :catch_0
+    move-exception p1
 
-    :pswitch_12
-    new-instance v0, Lkrf;
-
-    invoke-direct {v0}, Lkrf;-><init>()V
-
-    return-object v0
-
-    :pswitch_13
-    invoke-static {}, Lhkr;->a()Lhkp;
-
-    move-result-object v0
-
-    return-object v0
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_13
-        :pswitch_12
-        :pswitch_11
-        :pswitch_10
-        :pswitch_f
-        :pswitch_e
-        :pswitch_d
-        :pswitch_c
-        :pswitch_b
-        :pswitch_a
-        :pswitch_9
-        :pswitch_8
-        :pswitch_7
-        :pswitch_6
-        :pswitch_5
-        :pswitch_4
-        :pswitch_3
-        :pswitch_2
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
+    return-void
 .end method

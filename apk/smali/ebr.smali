@@ -1,22 +1,22 @@
 .class public final Lebr;
-.super Ljava/lang/Object;
-
-
-# static fields
-.field public static final a:Lduq;
+.super Ljava/lang/RuntimeException;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
+.method public constructor <init>(Ljava/lang/String;)V
+    .locals 0
 
-    new-instance v0, Lduq;
+    invoke-direct {p0, p1}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
 
-    const/16 v1, 0x12
+    return-void
+.end method
 
-    invoke-direct {v0, v1}, Lduq;-><init>(I)V
+.method public constructor <init>(Ljava/lang/Throwable;)V
+    .locals 1
 
-    sput-object v0, Lebr;->a:Lduq;
+    const-string v0, "Error processing secondary payload."
+
+    invoke-direct {p0, v0, p1}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
 
     return-void
 .end method

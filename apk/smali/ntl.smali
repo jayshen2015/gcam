@@ -2,18 +2,22 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Ljkc;
+.implements Lqco;
 
 
 # instance fields
-.field final synthetic a:Lnph;
+.field final synthetic a:Lnuj;
+
+.field final synthetic b:Lnqh;
 
 
 # direct methods
-.method public constructor <init>(Lnph;)V
+.method public constructor <init>(Lnuj;Lnqh;)V
     .locals 0
 
-    iput-object p1, p0, Lntl;->a:Lnph;
+    iput-object p1, p0, Lntl;->a:Lnuj;
+
+    iput-object p2, p0, Lntl;->b:Lnqh;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -22,30 +26,28 @@
 
 
 # virtual methods
-.method public final a(ILjava/lang/String;)V
-    .locals 2
+.method public final bridge synthetic a(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 4
 
-    iget-object v0, p0, Lntl;->a:Lnph;
+    check-cast p1, Ljava/util/List;
 
-    new-instance v1, Lntn;
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    invoke-direct {v1, p1, p2}, Lntn;-><init>(ILjava/lang/String;)V
+    iget-object v0, p0, Lntl;->a:Lnuj;
 
-    invoke-virtual {v0, v1}, Lnph;->a(Ljava/lang/Throwable;)Z
+    iget-object v1, p0, Lntl;->b:Lnqh;
 
-    return-void
-.end method
+    const/4 v2, 0x0
 
-.method public final b([B[B)V
-    .locals 0
+    const/16 v3, 0x79
 
-    iget-object p2, p0, Lntl;->a:Lnph;
-
-    invoke-static {p1}, Lmqp;->h(Ljava/lang/Object;)Lmqp;
+    invoke-static {v0, v1, p1, v2, v3}, Lnuj;->b(Lnuj;Lnqh;Ljava/util/List;Ljava/util/List;I)Lnuj;
 
     move-result-object p1
 
-    invoke-virtual {p2, p1}, Lnph;->e(Ljava/lang/Object;)Z
+    const/16 v0, 0x8
 
-    return-void
+    invoke-virtual {p1, v0, v2}, Lnuj;->c(ILjava/lang/Throwable;)V
+
+    return-object p1
 .end method

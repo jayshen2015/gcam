@@ -1,19 +1,22 @@
-.class public interface abstract Lhpy;
+.class public final Lhpy;
 .super Ljava/lang/Object;
 
 
-# virtual methods
-.method public abstract a(JLkeb;Lkpb;Lhqc;ZLmqp;)V
-.end method
+# static fields
+.field public static final a:Lhig;
 
-.method public abstract b(FFFJ)V
-.end method
 
-.method public abstract c()V
-.end method
+# direct methods
+.method static constructor <clinit>()V
+    .locals 2
 
-.method public abstract d()Z
-.end method
+    new-instance v0, Lhig;
 
-.method public abstract e(ZIILandroidx/wear/ambient/AmbientModeSupport$AmbientController;)V
+    const/16 v1, 0x13
+
+    invoke-direct {v0, v1}, Lhig;-><init>(I)V
+
+    sput-object v0, Lhpy;->a:Lhig;
+
+    return-void
 .end method

@@ -1,363 +1,174 @@
-.class public abstract Lhdr;
-.super Ljava/lang/Object;
-
-# interfaces
-.implements Lhdx;
+.class public final enum Lhdr;
+.super Ljava/lang/Enum;
 
 
-# instance fields
-.field private a:Ljava/util/concurrent/ScheduledFuture;
+# static fields
+.field public static final enum a:Lhdr;
 
-.field private final b:Ljava/lang/String;
+.field public static final enum b:Lhdr;
 
-.field private final c:Ljava/util/concurrent/atomic/AtomicBoolean;
+.field public static final enum c:Lhdr;
 
-.field private d:Z
+.field public static final enum d:Lhdr;
 
-.field private e:Lheb;
+.field public static final enum e:Lhdr;
 
-.field private f:I
+.field public static final enum f:Lhdr;
 
-.field private g:I
+.field public static final enum g:Lhdr;
 
-.field private h:I
+.field public static final enum h:Lhdr;
 
-.field protected final i:Ljava/util/concurrent/ScheduledExecutorService;
+.field public static final enum i:Lhdr;
 
-.field private j:I
-
-.field private k:Lhec;
-
-.field private final l:Ljew;
+.field private static final synthetic j:[Lhdr;
 
 
 # direct methods
-.method public constructor <init>(Ljava/util/concurrent/ScheduledExecutorService;Ljew;Ljava/lang/String;[B[B[B[B)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 16
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance v0, Lhdr;
 
-    iput-object p1, p0, Lhdr;->i:Ljava/util/concurrent/ScheduledExecutorService;
-
-    new-instance p1, Ljava/util/concurrent/atomic/AtomicBoolean;
-
-    const/4 p4, 0x0
-
-    invoke-direct {p1, p4}, Ljava/util/concurrent/atomic/AtomicBoolean;-><init>(Z)V
-
-    iput-object p1, p0, Lhdr;->c:Ljava/util/concurrent/atomic/AtomicBoolean;
-
-    iput-object p2, p0, Lhdr;->l:Ljew;
-
-    iput-object p3, p0, Lhdr;->b:Ljava/lang/String;
-
-    return-void
-.end method
-
-
-# virtual methods
-.method public final a()V
-    .locals 2
-
-    iget-object v0, p0, Lhdr;->a:Ljava/util/concurrent/ScheduledFuture;
-
-    if-eqz v0, :cond_0
-
-    const/4 v1, 0x1
-
-    invoke-interface {v0, v1}, Ljava/util/concurrent/ScheduledFuture;->cancel(Z)Z
-
-    :cond_0
-    return-void
-.end method
-
-.method public final b(Lhec;)V
-    .locals 4
-
-    iput-object p1, p0, Lhdr;->k:Lhec;
-
-    invoke-virtual {p0}, Lhdr;->d()Lhdq;
-
-    move-result-object p1
-
-    iget-object v0, p1, Lhdq;->c:Lheb;
-
-    iget-object v1, v0, Lheb;->h:Ljava/lang/Runnable;
-
-    if-eqz v1, :cond_0
-
-    invoke-virtual {v0}, Lheb;->b()Lhea;
-
-    move-result-object v0
-
-    new-instance v2, Lhdg;
-
-    const/4 v3, 0x6
-
-    invoke-direct {v2, p0, v1, v3}, Lhdg;-><init>(Lhdr;Ljava/lang/Runnable;I)V
-
-    iput-object v2, v0, Lhea;->f:Ljava/lang/Runnable;
-
-    invoke-virtual {v0}, Lhea;->a()Lheb;
-
-    move-result-object v0
-
-    goto :goto_0
-
-    :cond_0
-    :goto_0
-    iput-object v0, p0, Lhdr;->e:Lheb;
-
-    iget v0, p1, Lhdq;->a:I
-
-    iput v0, p0, Lhdr;->f:I
-
-    iget p1, p1, Lhdq;->b:I
-
-    iput p1, p0, Lhdr;->h:I
-
-    return-void
-.end method
-
-.method public c(Lkli;)V
-    .locals 0
-
-    invoke-virtual {p0}, Lhdr;->g()V
-
-    const/4 p1, 0x0
-
-    iput p1, p0, Lhdr;->j:I
-
-    return-void
-.end method
-
-.method protected abstract d()Lhdq;
-.end method
-
-.method protected abstract e(Lkou;)Z
-.end method
-
-.method protected f(Lkou;)Z
-    .locals 0
-
-    const/4 p1, 0x0
-
-    return p1
-.end method
-
-.method public final g()V
-    .locals 3
-
-    iget-object v0, p0, Lhdr;->c:Ljava/util/concurrent/atomic/AtomicBoolean;
-
-    const/4 v1, 0x1
+    const-string v1, "RAW_HDRPLUS"
 
     const/4 v2, 0x0
 
-    invoke-virtual {v0, v1, v2}, Ljava/util/concurrent/atomic/AtomicBoolean;->compareAndSet(ZZ)Z
+    invoke-direct {v0, v1, v2}, Lhdr;-><init>(Ljava/lang/String;I)V
 
-    move-result v0
+    sput-object v0, Lhdr;->a:Lhdr;
 
-    if-eqz v0, :cond_0
+    new-instance v1, Lhdr;
 
-    iget-object v0, p0, Lhdr;->k:Lhec;
+    const-string v3, "RAW_ULTRAWIDE"
 
-    if-eqz v0, :cond_0
+    const/4 v4, 0x1
 
-    invoke-interface {v0}, Lhec;->a()V
+    invoke-direct {v1, v3, v4}, Lhdr;-><init>(Ljava/lang/String;I)V
 
-    :cond_0
-    return-void
-.end method
+    sput-object v1, Lhdr;->b:Lhdr;
 
-.method public final i(Lkou;)V
-    .locals 6
+    new-instance v3, Lhdr;
 
-    iget v0, p0, Lhdr;->g:I
+    const-string v5, "RAW_WIDE"
 
-    const/4 v1, 0x1
+    const/4 v6, 0x2
 
-    add-int/2addr v0, v1
+    invoke-direct {v3, v5, v6}, Lhdr;-><init>(Ljava/lang/String;I)V
 
-    iput v0, p0, Lhdr;->g:I
+    sput-object v3, Lhdr;->c:Lhdr;
 
-    iget v2, p0, Lhdr;->f:I
+    new-instance v5, Lhdr;
 
-    if-ge v0, v2, :cond_0
+    const-string v7, "RAW_TELE"
 
-    return-void
+    const/4 v8, 0x3
 
-    :cond_0
-    const/4 v0, 0x0
+    invoke-direct {v5, v7, v8}, Lhdr;-><init>(Ljava/lang/String;I)V
 
-    iput v0, p0, Lhdr;->g:I
+    sput-object v5, Lhdr;->d:Lhdr;
 
-    invoke-virtual {p0, p1}, Lhdr;->f(Lkou;)Z
+    new-instance v7, Lhdr;
 
-    move-result v2
+    const-string v9, "PD"
 
-    if-eqz v2, :cond_1
+    const/4 v10, 0x4
 
-    iget p1, p0, Lhdr;->f:I
+    invoke-direct {v7, v9, v10}, Lhdr;-><init>(Ljava/lang/String;I)V
 
-    iput p1, p0, Lhdr;->g:I
+    sput-object v7, Lhdr;->e:Lhdr;
 
-    return-void
+    new-instance v9, Lhdr;
 
-    :cond_1
-    invoke-virtual {p0, p1}, Lhdr;->e(Lkou;)Z
+    const-string v11, "DEPTH"
 
-    move-result p1
+    const/4 v12, 0x5
 
-    if-eqz p1, :cond_2
+    invoke-direct {v9, v11, v12}, Lhdr;-><init>(Ljava/lang/String;I)V
 
-    iget p1, p0, Lhdr;->j:I
+    sput-object v9, Lhdr;->f:Lhdr;
 
-    add-int/2addr p1, v1
+    new-instance v11, Lhdr;
 
-    iget v2, p0, Lhdr;->h:I
+    const-string v13, "YUV_LARGE"
 
-    invoke-static {p1, v2}, Ljava/lang/Math;->min(II)I
+    const/4 v14, 0x6
 
-    move-result p1
+    invoke-direct {v11, v13, v14}, Lhdr;-><init>(Ljava/lang/String;I)V
 
-    iput p1, p0, Lhdr;->j:I
+    sput-object v11, Lhdr;->g:Lhdr;
 
-    goto :goto_0
+    new-instance v13, Lhdr;
 
-    :cond_2
-    iput v0, p0, Lhdr;->j:I
+    const-string v15, "YUV_ANALYSIS"
 
-    const/4 p1, 0x0
+    const/4 v14, 0x7
 
-    :goto_0
-    iget v2, p0, Lhdr;->h:I
+    invoke-direct {v13, v15, v14}, Lhdr;-><init>(Ljava/lang/String;I)V
 
-    if-ne p1, v2, :cond_4
+    sput-object v13, Lhdr;->h:Lhdr;
 
-    iget-boolean p1, p0, Lhdr;->d:Z
+    new-instance v15, Lhdr;
 
-    if-eqz p1, :cond_3
+    const-string v14, "VIEWFINDER"
 
-    goto :goto_1
+    const/16 v12, 0x8
 
-    :cond_3
-    iput-boolean v1, p0, Lhdr;->d:Z
+    invoke-direct {v15, v14, v12}, Lhdr;-><init>(Ljava/lang/String;I)V
 
-    iget-object p1, p0, Lhdr;->l:Ljew;
+    sput-object v15, Lhdr;->i:Lhdr;
 
-    iget-object v2, p0, Lhdr;->b:Ljava/lang/String;
+    const/16 v14, 0x9
 
-    invoke-virtual {p1, v2}, Ljew;->ac(Ljava/lang/String;)Z
+    new-array v14, v14, [Lhdr;
 
-    move-result p1
+    aput-object v0, v14, v2
 
-    if-eqz p1, :cond_4
+    aput-object v1, v14, v4
 
-    iget-object p1, p0, Lhdr;->c:Ljava/util/concurrent/atomic/AtomicBoolean;
+    aput-object v3, v14, v6
 
-    invoke-virtual {p1, v0, v1}, Ljava/util/concurrent/atomic/AtomicBoolean;->compareAndSet(ZZ)Z
+    aput-object v5, v14, v8
 
-    move-result p1
+    aput-object v7, v14, v10
 
-    if-eqz p1, :cond_7
+    const/4 v0, 0x5
 
-    iget-object p1, p0, Lhdr;->k:Lhec;
+    aput-object v9, v14, v0
 
-    if-eqz p1, :cond_7
+    const/4 v0, 0x6
 
-    iget-object v0, p0, Lhdr;->e:Lheb;
+    aput-object v11, v14, v0
 
-    invoke-interface {p1, v0}, Lhec;->b(Lheb;)V
+    const/4 v0, 0x7
 
-    return-void
+    aput-object v13, v14, v0
 
-    :cond_4
-    :goto_1
-    iget-object p1, p0, Lhdr;->c:Ljava/util/concurrent/atomic/AtomicBoolean;
+    aput-object v15, v14, v12
 
-    invoke-virtual {p1, v1, v0}, Ljava/util/concurrent/atomic/AtomicBoolean;->compareAndSet(ZZ)Z
-
-    move-result p1
-
-    if-eqz p1, :cond_7
-
-    iget-object p1, p0, Lhdr;->k:Lhec;
-
-    if-eqz p1, :cond_7
-
-    iget-object v0, p0, Lhdr;->e:Lheb;
-
-    iget-wide v0, v0, Lheb;->a:J
-
-    const/16 v2, 0xe
-
-    const-wide/16 v3, 0x0
-
-    cmp-long v5, v0, v3
-
-    if-nez v5, :cond_5
-
-    iget-object v0, p0, Lhdr;->i:Ljava/util/concurrent/ScheduledExecutorService;
-
-    new-instance v1, Lhbi;
-
-    invoke-direct {v1, p1, v2}, Lhbi;-><init>(Lhec;I)V
-
-    sget-object p1, Ljava/util/concurrent/TimeUnit;->MILLISECONDS:Ljava/util/concurrent/TimeUnit;
-
-    const-wide/16 v2, 0x3e8
-
-    invoke-interface {v0, v1, v2, v3, p1}, Ljava/util/concurrent/ScheduledExecutorService;->schedule(Ljava/lang/Runnable;JLjava/util/concurrent/TimeUnit;)Ljava/util/concurrent/ScheduledFuture;
-
-    move-result-object p1
-
-    iput-object p1, p0, Lhdr;->a:Ljava/util/concurrent/ScheduledFuture;
-
-    return-void
-
-    :cond_5
-    cmp-long v5, v0, v3
-
-    if-lez v5, :cond_6
-
-    iget-object v3, p0, Lhdr;->i:Ljava/util/concurrent/ScheduledExecutorService;
-
-    new-instance v4, Lhbi;
-
-    invoke-direct {v4, p1, v2}, Lhbi;-><init>(Lhec;I)V
-
-    sget-object p1, Ljava/util/concurrent/TimeUnit;->MILLISECONDS:Ljava/util/concurrent/TimeUnit;
-
-    invoke-interface {v3, v4, v0, v1, p1}, Ljava/util/concurrent/ScheduledExecutorService;->schedule(Ljava/lang/Runnable;JLjava/util/concurrent/TimeUnit;)Ljava/util/concurrent/ScheduledFuture;
-
-    move-result-object p1
-
-    iput-object p1, p0, Lhdr;->a:Ljava/util/concurrent/ScheduledFuture;
-
-    return-void
-
-    :cond_6
-    invoke-interface {p1}, Lhec;->a()V
-
-    :cond_7
-    return-void
-.end method
-
-.method public v()V
-    .locals 2
-
-    iget-object v0, p0, Lhdr;->c:Ljava/util/concurrent/atomic/AtomicBoolean;
-
-    const/4 v1, 0x0
-
-    invoke-virtual {v0, v1}, Ljava/util/concurrent/atomic/AtomicBoolean;->set(Z)V
+    sput-object v14, Lhdr;->j:[Lhdr;
 
     return-void
 .end method
 
-.method public w()V
+.method private constructor <init>(Ljava/lang/String;I)V
     .locals 0
 
+    invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
     return-void
+.end method
+
+.method public static values()[Lhdr;
+    .locals 1
+
+    sget-object v0, Lhdr;->j:[Lhdr;
+
+    invoke-virtual {v0}, [Lhdr;->clone()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, [Lhdr;
+
+    return-object v0
 .end method

@@ -1,75 +1,123 @@
-.class public final Logx;
+.class public final synthetic Logx;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lmrl;
-
-
-# static fields
-.field public static final a:Logx;
+.implements Lj$/util/function/Consumer;
 
 
 # instance fields
-.field private final b:Lmrl;
+.field public final synthetic a:[B
+
+.field private final synthetic b:I
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
+.method public synthetic constructor <init>([BI)V
+    .locals 0
 
-    new-instance v0, Logx;
-
-    invoke-direct {v0}, Logx;-><init>()V
-
-    sput-object v0, Logx;->a:Logx;
-
-    return-void
-.end method
-
-.method public constructor <init>()V
-    .locals 1
-
-    new-instance v0, Logz;
-
-    invoke-direct {v0}, Logz;-><init>()V
-
-    invoke-static {v0}, Llkj;->E(Ljava/lang/Object;)Lmrl;
-
-    move-result-object v0
+    iput p2, p0, Logx;->b:I
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-static {v0}, Llkj;->D(Lmrl;)Lmrl;
-
-    move-result-object v0
-
-    iput-object v0, p0, Logx;->b:Lmrl;
+    iput-object p1, p0, Logx;->a:[B
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final bridge synthetic a()Ljava/lang/Object;
-    .locals 1
+.method public final accept(Ljava/lang/Object;)V
+    .locals 2
 
-    invoke-virtual {p0}, Logx;->b()Logy;
+    iget v0, p0, Logx;->b:I
 
-    move-result-object v0
+    packed-switch v0, :pswitch_data_0
 
-    return-object v0
+    iget-object v0, p0, Logx;->a:[B
+
+    check-cast p1, Lmip;
+
+    invoke-virtual {p1, v0}, Lmip;->q([B)V
+
+    return-void
+
+    :pswitch_0
+    iget-object v0, p0, Logx;->a:[B
+
+    check-cast p1, Ljava/io/OutputStream;
+
+    :try_start_0
+    invoke-virtual {p1, v0}, Ljava/io/OutputStream;->write([B)V
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
+
+    return-void
+
+    :catch_0
+    move-exception p1
+
+    sget-object v1, Lohb;->a:Louj;
+
+    invoke-virtual {v1}, Loue;->b()Lova;
+
+    move-result-object v1
+
+    check-cast v1, Loug;
+
+    invoke-interface {v1, p1}, Loug;->h(Ljava/lang/Throwable;)Lova;
+
+    move-result-object p1
+
+    check-cast p1, Loug;
+
+    const/16 v1, 0xe65
+
+    invoke-interface {p1, v1}, Loug;->G(I)Lova;
+
+    move-result-object p1
+
+    check-cast p1, Loug;
+
+    array-length v0, v0
+
+    const-string v1, "Failed to write %d bytes of processed audio to the output stream."
+
+    invoke-interface {p1, v1, v0}, Loug;->p(Ljava/lang/String;I)V
+
+    return-void
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method
 
-.method public final b()Logy;
+.method public final synthetic andThen(Lj$/util/function/Consumer;)Lj$/util/function/Consumer;
     .locals 1
 
-    iget-object v0, p0, Logx;->b:Lmrl;
+    iget v0, p0, Logx;->b:I
 
-    invoke-interface {v0}, Lmrl;->a()Ljava/lang/Object;
+    packed-switch v0, :pswitch_data_0
 
-    move-result-object v0
+    invoke-static {p0, p1}, Lj$/util/function/Consumer$-CC;->$default$andThen(Lj$/util/function/Consumer;Lj$/util/function/Consumer;)Lj$/util/function/Consumer;
 
-    check-cast v0, Logy;
+    move-result-object p1
 
-    return-object v0
+    return-object p1
+
+    :pswitch_0
+    invoke-static {p0, p1}, Lj$/util/function/Consumer$-CC;->$default$andThen(Lj$/util/function/Consumer;Lj$/util/function/Consumer;)Lj$/util/function/Consumer;
+
+    move-result-object p1
+
+    return-object p1
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

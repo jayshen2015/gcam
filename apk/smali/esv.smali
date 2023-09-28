@@ -1,28 +1,59 @@
-.class public final Lesv;
+.class public Lesv;
 .super Ljava/lang/Object;
 
-
-# instance fields
-.field public final a:Lesh;
-
-.field public final b:Lerz;
-
-.field public final c:Lese;
-
-.field public d:Ljava/lang/Object;
+# interfaces
+.implements Lihs;
 
 
 # direct methods
-.method public constructor <init>(Lesh;Lerz;Lese;)V
+.method public constructor <init>()V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lesv;->a:Lesh;
+    return-void
+.end method
 
-    iput-object p2, p0, Lesv;->b:Lerz;
 
-    iput-object p3, p0, Lesv;->c:Lese;
+# virtual methods
+.method public a()V
+    .locals 0
+
+    return-void
+.end method
+
+.method public b()V
+    .locals 0
+
+    return-void
+.end method
+
+.method public c()V
+    .locals 0
+
+    return-void
+.end method
+
+.method public d()V
+    .locals 0
+
+    return-void
+.end method
+
+.method public synthetic f()V
+    .locals 0
+
+    return-void
+.end method
+
+.method public synthetic g()V
+    .locals 0
+
+    return-void
+.end method
+
+.method public synthetic h()V
+    .locals 0
 
     return-void
 .end method

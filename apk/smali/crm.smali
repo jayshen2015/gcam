@@ -1,99 +1,119 @@
-.class public final Lcrm;
-.super Ljwh;
+.class Lcrm;
+.super Lcsa;
+
+
+# instance fields
+.field final synthetic b:Lcro;
 
 
 # direct methods
-.method public constructor <init>(Ldbf;Ldhi;Lgzp;Lgzp;)V
-    .locals 2
+.method public constructor <init>(Lcro;)V
+    .locals 0
 
-    const/4 v0, 0x3
+    iput-object p1, p0, Lcrm;->b:Lcro;
 
-    new-array v0, v0, [Ljvs;
-
-    const/4 v1, 0x0
-
-    aput-object p3, v0, v1
-
-    const/4 p3, 0x1
-
-    aput-object p4, v0, p3
-
-    const/4 p3, 0x2
-
-    iget-object p1, p1, Ldbf;->b:Ljwb;
-
-    aput-object p1, v0, p3
-
-    invoke-static {v0}, Ljvw;->b([Ljvs;)Ljvs;
-
-    move-result-object p1
-
-    invoke-direct {p0, p1}, Ljwh;-><init>(Ljvs;)V
-
-    sget-object p1, Ldif;->a:Ldhj;
-
-    invoke-interface {p2}, Ldhi;->e()V
+    invoke-direct {p0}, Lcsa;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method protected final bridge synthetic d(Ljava/lang/Object;)Ljava/lang/Object;
+.method public c()V
     .locals 3
 
-    check-cast p1, Ljava/util/List;
+    iget-object v0, p0, Lcrm;->b:Lcro;
 
-    const/4 v0, 0x0
+    iget-object v1, v0, Lcro;->f:Lddf;
 
-    invoke-interface {p1, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
+    sget-object v2, Ldcu;->J:Lddg;
 
-    move-result-object v0
+    invoke-interface {v1, v2}, Lddf;->k(Lddg;)Z
 
-    check-cast v0, Lgyt;
+    move-result v1
 
-    const/4 v1, 0x1
+    if-eqz v1, :cond_1
 
-    invoke-interface {p1, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
+    iget-object v1, v0, Lcro;->j:Lojc;
+
+    invoke-virtual {v1}, Lojc;->g()Z
+
+    move-result v1
+
+    const/4 v2, 0x0
+
+    if-eqz v1, :cond_0
+
+    iget-object v1, v0, Lcro;->j:Lojc;
+
+    invoke-virtual {v1}, Lojc;->c()Ljava/lang/Object;
 
     move-result-object v1
 
-    check-cast v1, Lgyt;
+    check-cast v1, Lctw;
 
-    const/4 v2, 0x2
+    invoke-interface {v1, v2}, Lctw;->g(Z)V
 
-    invoke-interface {p1, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
+    :cond_0
+    iget-object v1, v0, Lcro;->h:Ljfn;
 
-    move-result-object p1
+    invoke-interface {v1, v2}, Ljfn;->v(Z)V
 
-    check-cast p1, Lklv;
+    iget-object v1, v0, Lcro;->h:Ljfn;
 
-    sget-object v2, Lklv;->b:Lklv;
-
-    invoke-virtual {v2, p1}, Lklv;->equals(Ljava/lang/Object;)Z
-
-    move-result v2
-
-    if-nez v2, :cond_1
-
-    sget-object v0, Lklv;->a:Lklv;
-
-    invoke-virtual {v0, p1}, Lklv;->equals(Ljava/lang/Object;)Z
-
-    move-result p1
-
-    if-eqz p1, :cond_0
-
-    move-object v0, v1
+    invoke-interface {v1, v2}, Ljfn;->l(Z)V
 
     goto :goto_0
 
-    :cond_0
-    sget-object p1, Lgyt;->a:Lgyt;
-
-    return-object p1
-
     :cond_1
+    iget-object v1, v0, Lcro;->m:Ljjp;
+
+    invoke-virtual {v1}, Ljjp;->b()V
+
     :goto_0
-    return-object v0
+    iget-object v1, v0, Lcro;->i:Lcsb;
+
+    invoke-virtual {v1}, Lcsb;->b()V
+
+    iget-object v1, v0, Lcro;->e:Lcom/google/android/apps/camera/bottombar/BottomBarController;
+
+    invoke-virtual {v1}, Lcom/google/android/apps/camera/bottombar/BottomBarController;->startHfrRecording()V
+
+    iget-object v0, v0, Lcro;->g:Ljlb;
+
+    invoke-interface {v0}, Ljlb;->M()V
+
+    return-void
+.end method
+
+.method public final f()V
+    .locals 2
+
+    iget-object v0, p0, Lcrm;->b:Lcro;
+
+    iput-object p0, v0, Lcro;->l:Lcsa;
+
+    iget-object v0, v0, Lcro;->k:Lgtg;
+
+    const/4 v1, 0x0
+
+    iput-boolean v1, v0, Lgtg;->ax:Z
+
+    return-void
+.end method
+
+.method public final fK()Z
+    .locals 1
+
+    const/4 v0, 0x0
+
+    return v0
+.end method
+
+.method public final j()I
+    .locals 1
+
+    const/4 v0, 0x1
+
+    return v0
 .end method

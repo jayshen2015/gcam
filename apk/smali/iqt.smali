@@ -1,65 +1,57 @@
-.class final Liqt;
+.class public final Liqt;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lhfv;
+.implements Lpys;
 
 
 # instance fields
-.field final synthetic a:Liqu;
+.field private final a:Lqkg;
 
 
 # direct methods
-.method public constructor <init>(Liqu;)V
+.method public constructor <init>(Lqkg;)V
     .locals 0
 
-    iput-object p1, p0, Liqt;->a:Liqu;
-
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Liqt;->a:Lqkg;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a()V
-    .locals 0
+.method public final a()Liqs;
+    .locals 4
 
-    return-void
+    iget-object v0, p0, Liqt;->a:Lqkg;
+
+    check-cast v0, Lirb;
+
+    invoke-virtual {v0}, Lirb;->a()Lira;
+
+    move-result-object v0
+
+    invoke-static {}, Lgfp;->e()Lenl;
+
+    move-result-object v1
+
+    new-instance v2, Liqs;
+
+    const/4 v3, 0x0
+
+    invoke-direct {v2, v0, v1, v3}, Liqs;-><init>(Lira;Lenl;[B)V
+
+    return-object v2
 .end method
 
-.method public final b()V
-    .locals 2
+.method public final bridge synthetic get()Ljava/lang/Object;
+    .locals 1
 
-    iget-object v0, p0, Liqt;->a:Liqu;
+    invoke-virtual {p0}, Liqt;->a()Liqs;
 
-    const/4 v1, 0x0
+    move-result-object v0
 
-    iput-boolean v1, v0, Liqu;->d:Z
-
-    return-void
-.end method
-
-.method public final synthetic c()V
-    .locals 0
-
-    return-void
-.end method
-
-.method public final d()V
-    .locals 2
-
-    iget-object v0, p0, Liqt;->a:Liqu;
-
-    const/4 v1, 0x1
-
-    iput-boolean v1, v0, Liqu;->d:Z
-
-    return-void
-.end method
-
-.method public final synthetic e()V
-    .locals 0
-
-    return-void
+    return-object v0
 .end method

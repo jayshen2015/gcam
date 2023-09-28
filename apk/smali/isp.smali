@@ -1,36 +1,65 @@
 .class final Lisp;
-.super Landroid/animation/AnimatorListenerAdapter;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Lgtu;
 
 
 # instance fields
-.field final synthetic a:Lita;
+.field final synthetic a:Lisq;
 
 
 # direct methods
-.method public constructor <init>(Lita;)V
+.method public constructor <init>(Lisq;)V
     .locals 0
 
-    iput-object p1, p0, Lisp;->a:Lita;
+    iput-object p1, p0, Lisp;->a:Lisq;
 
-    invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onAnimationStart(Landroid/animation/Animator;)V
+.method public final a()V
+    .locals 2
+
+    iget-object v0, p0, Lisp;->a:Lisq;
+
+    iget-object v1, v0, Lisq;->i:Lie;
+
+    if-eqz v1, :cond_0
+
+    invoke-virtual {v0}, Lisq;->c()V
+
+    :cond_0
+    return-void
+.end method
+
+.method public final synthetic b()V
+    .locals 0
+
+    return-void
+.end method
+
+.method public final synthetic c()V
+    .locals 0
+
+    return-void
+.end method
+
+.method public final d()V
     .locals 1
 
-    invoke-super {p0, p1}, Landroid/animation/AnimatorListenerAdapter;->onAnimationEnd(Landroid/animation/Animator;)V
+    iget-object v0, p0, Lisp;->a:Lisq;
 
-    iget-object p1, p0, Lisp;->a:Lita;
+    iget-object v0, v0, Lisq;->i:Lie;
 
-    iget-object p1, p1, Lita;->t:Lcom/google/android/apps/camera/zoomui/view/ZoomSliderView;
+    if-eqz v0, :cond_0
 
-    const/16 v0, 0x8
+    invoke-virtual {v0}, Lie;->hide()V
 
-    invoke-virtual {p1, v0}, Lcom/google/android/apps/camera/zoomui/view/ZoomSliderView;->setVisibility(I)V
-
+    :cond_0
     return-void
 .end method

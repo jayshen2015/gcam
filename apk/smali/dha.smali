@@ -1,46 +1,22 @@
-.class public final Ldha;
+.class public interface abstract Ldha;
 .super Ljava/lang/Object;
 
 
-# static fields
-.field public static final synthetic a:I
+# virtual methods
+.method public abstract a()Ljava/util/List;
+.end method
 
+.method public abstract b(JJ)V
+.end method
 
-# direct methods
-.method static constructor <clinit>()V
-    .locals 2
+.method public abstract c()V
+.end method
 
-    new-instance v0, Lnoc;
+.method public abstract d(Ljrl;)V
+.end method
 
-    invoke-direct {v0}, Lnoc;-><init>()V
+.method public abstract e()V
+.end method
 
-    const-string v1, "camera.anglerfish_enabled"
-
-    iput-object v1, v0, Lnoc;->b:Ljava/lang/Object;
-
-    new-instance v0, Lnoc;
-
-    invoke-direct {v0}, Lnoc;-><init>()V
-
-    const-string v1, "camera.anglerfish_rectiface_enabled"
-
-    iput-object v1, v0, Lnoc;->b:Ljava/lang/Object;
-
-    new-instance v0, Lnoc;
-
-    invoke-direct {v0}, Lnoc;-><init>()V
-
-    const-string v1, "camera.anglerfish_save_original"
-
-    iput-object v1, v0, Lnoc;->b:Ljava/lang/Object;
-
-    new-instance v0, Lnoc;
-
-    invoke-direct {v0}, Lnoc;-><init>()V
-
-    const-string v1, "camera.force_anglerfish.RESTART"
-
-    iput-object v1, v0, Lnoc;->b:Ljava/lang/Object;
-
-    return-void
+.method public abstract f()V
 .end method

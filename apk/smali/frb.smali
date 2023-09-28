@@ -1,148 +1,57 @@
 .class final Lfrb;
 .super Ljava/lang/Object;
 
+# interfaces
+.implements Lmsx;
+
 
 # instance fields
-.field a:I
-
-.field b:I
-
-.field c:I
-
-.field d:I
-
-.field e:I
-
-.field f:I
-
-.field g:I
-
-.field h:I
+.field final synthetic a:Lfrc;
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 1
+.method public constructor <init>(Lfrc;)V
+    .locals 0
+
+    iput-object p1, p0, Lfrb;->a:Lfrc;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    const/4 v0, 0x0
-
-    iput v0, p0, Lfrb;->a:I
-
-    iput v0, p0, Lfrb;->b:I
-
-    iput v0, p0, Lfrb;->c:I
-
-    iput v0, p0, Lfrb;->d:I
-
-    iput v0, p0, Lfrb;->e:I
-
-    iput v0, p0, Lfrb;->f:I
-
-    iput v0, p0, Lfrb;->g:I
-
-    iput v0, p0, Lfrb;->h:I
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final toString()Ljava/lang/String;
-    .locals 4
+.method public final b(Ljava/nio/ByteBuffer;Landroid/media/MediaCodec$BufferInfo;)V
+    .locals 1
 
-    sget-object v0, Ljava/util/Locale;->US:Ljava/util/Locale;
+    iget-object v0, p0, Lfrb;->a:Lfrc;
 
-    const/16 v1, 0x8
+    iget-object v0, v0, Lfrc;->a:Lmln;
 
-    new-array v1, v1, [Ljava/lang/Object;
+    invoke-interface {v0, p1, p2}, Lmln;->b(Ljava/nio/ByteBuffer;Landroid/media/MediaCodec$BufferInfo;)V
 
-    iget v2, p0, Lfrb;->f:I
+    return-void
+.end method
 
-    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+.method public final close()V
+    .locals 2
 
-    move-result-object v2
+    iget-object v0, p0, Lfrb;->a:Lfrc;
 
-    const/4 v3, 0x0
+    iget-object v0, v0, Lfrc;->a:Lmln;
 
-    aput-object v2, v1, v3
+    invoke-interface {v0}, Lmln;->close()V
 
-    iget v2, p0, Lfrb;->a:I
+    iget-object v0, p0, Lfrb;->a:Lfrc;
 
-    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    iget-object v0, v0, Lfrc;->b:Lpih;
 
-    move-result-object v2
+    new-instance v1, Ljava/lang/Object;
 
-    const/4 v3, 0x1
+    invoke-direct {v1}, Ljava/lang/Object;-><init>()V
 
-    aput-object v2, v1, v3
+    invoke-virtual {v0, v1}, Lpih;->o(Ljava/lang/Object;)Z
 
-    iget v2, p0, Lfrb;->h:I
-
-    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v2
-
-    const/4 v3, 0x2
-
-    aput-object v2, v1, v3
-
-    iget v2, p0, Lfrb;->d:I
-
-    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v2
-
-    const/4 v3, 0x3
-
-    aput-object v2, v1, v3
-
-    iget v2, p0, Lfrb;->g:I
-
-    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v2
-
-    const/4 v3, 0x4
-
-    aput-object v2, v1, v3
-
-    iget v2, p0, Lfrb;->c:I
-
-    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v2
-
-    const/4 v3, 0x5
-
-    aput-object v2, v1, v3
-
-    iget v2, p0, Lfrb;->e:I
-
-    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v2
-
-    const/4 v3, 0x6
-
-    aput-object v2, v1, v3
-
-    iget v2, p0, Lfrb;->b:I
-
-    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v2
-
-    const/4 v3, 0x7
-
-    aput-object v2, v1, v3
-
-    const-string v2, "Counts: has %d ready, %d in-flight, %d failed. In the frame buffer: %d not connected, %d main shots (ignored), %d not qualified, %d already started and %d waiting to launch"
-
-    invoke-static {v0, v2, v1}, Ljava/lang/String;->format(Ljava/util/Locale;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v0
-
-    return-object v0
+    return-void
 .end method

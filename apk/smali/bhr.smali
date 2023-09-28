@@ -1,119 +1,119 @@
-.class final Lbhr;
+.class public final Lbhr;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lbhp;
+.implements Lazv;
 
 
 # instance fields
-.field private final a:Lblt;
+.field private final a:Lbhe;
 
-.field private b:F
+.field private final synthetic b:I
 
 
 # direct methods
-.method public constructor <init>(Ljava/util/List;)V
-    .locals 1
+.method public constructor <init>(Lbhe;I)V
+    .locals 0
+
+    iput p2, p0, Lbhr;->b:I
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const/high16 v0, -0x40800000    # -1.0f
-
-    iput v0, p0, Lbhr;->b:F
-
-    const/4 v0, 0x0
-
-    invoke-interface {p1, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
-
-    move-result-object p1
-
-    check-cast p1, Lblt;
-
-    iput-object p1, p0, Lbhr;->a:Lblt;
+    iput-object p1, p0, Lbhr;->a:Lbhe;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()F
+.method public final synthetic a(Ljava/lang/Object;IILazt;)Lbcl;
+    .locals 6
+
+    iget v0, p0, Lbhr;->b:I
+
+    packed-switch v0, :pswitch_data_0
+
+    check-cast p1, Ljava/nio/ByteBuffer;
+
+    iget-object v0, p0, Lbhr;->a:Lbhe;
+
+    new-instance v1, Lbhl;
+
+    iget-object v2, v0, Lbhe;->g:Ljava/util/List;
+
+    iget-object v3, v0, Lbhe;->f:Lbct;
+
+    invoke-direct {v1, p1, v2, v3}, Lbhl;-><init>(Ljava/nio/ByteBuffer;Ljava/util/List;Lbct;)V
+
+    sget-object v5, Lbhe;->e:Lbhd;
+
+    move v2, p2
+
+    move v3, p3
+
+    move-object v4, p4
+
+    invoke-virtual/range {v0 .. v5}, Lbhe;->a(Lbho;IILazt;Lbhd;)Lbcl;
+
+    move-result-object p1
+
+    return-object p1
+
+    :pswitch_0
+    check-cast p1, Landroid/os/ParcelFileDescriptor;
+
+    iget-object v0, p0, Lbhr;->a:Lbhe;
+
+    new-instance v1, Lbhn;
+
+    iget-object v2, v0, Lbhe;->g:Ljava/util/List;
+
+    iget-object v3, v0, Lbhe;->f:Lbct;
+
+    invoke-direct {v1, p1, v2, v3}, Lbhn;-><init>(Landroid/os/ParcelFileDescriptor;Ljava/util/List;Lbct;)V
+
+    sget-object v5, Lbhe;->e:Lbhd;
+
+    move v2, p2
+
+    move v3, p3
+
+    move-object v4, p4
+
+    invoke-virtual/range {v0 .. v5}, Lbhe;->a(Lbho;IILazt;Lbhd;)Lbcl;
+
+    move-result-object p1
+
+    return-object p1
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
+.end method
+
+.method public final synthetic b(Ljava/lang/Object;Lazt;)Z
     .locals 1
 
-    iget-object v0, p0, Lbhr;->a:Lblt;
+    iget p2, p0, Lbhr;->b:I
 
-    invoke-virtual {v0}, Lblt;->b()F
+    const/4 v0, 0x1
 
-    move-result v0
+    packed-switch p2, :pswitch_data_0
+
+    check-cast p1, Ljava/nio/ByteBuffer;
 
     return v0
-.end method
 
-.method public final b()F
-    .locals 1
-
-    iget-object v0, p0, Lbhr;->a:Lblt;
-
-    invoke-virtual {v0}, Lblt;->c()F
-
-    move-result v0
+    :pswitch_0
+    check-cast p1, Landroid/os/ParcelFileDescriptor;
 
     return v0
-.end method
 
-.method public final c()Lblt;
-    .locals 1
-
-    iget-object v0, p0, Lbhr;->a:Lblt;
-
-    return-object v0
-.end method
-
-.method public final d(F)Z
-    .locals 1
-
-    iget v0, p0, Lbhr;->b:F
-
-    cmpl-float v0, v0, p1
-
-    if-nez v0, :cond_0
-
-    const/4 p1, 0x1
-
-    return p1
-
-    :cond_0
-    iput p1, p0, Lbhr;->b:F
-
-    const/4 p1, 0x0
-
-    return p1
-.end method
-
-.method public final e()Z
-    .locals 1
-
-    const/4 v0, 0x0
-
-    return v0
-.end method
-
-.method public final f(F)Z
-    .locals 0
-
-    iget-object p1, p0, Lbhr;->a:Lblt;
-
-    invoke-virtual {p1}, Lblt;->e()Z
-
-    move-result p1
-
-    if-nez p1, :cond_0
-
-    const/4 p1, 0x1
-
-    return p1
-
-    :cond_0
-    const/4 p1, 0x0
-
-    return p1
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

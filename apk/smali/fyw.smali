@@ -1,68 +1,42 @@
-.class public final Lfyw;
+.class final Lfyw;
 .super Ljava/lang/Object;
+
+# interfaces
+.implements Llmu;
 
 
 # instance fields
-.field public final a:Ljava/util/Map;
-
-.field public final b:Ljava/util/Map;
-
-.field public final c:Ljava/util/Map;
-
-.field public final d:Ljava/util/Set;
-
-.field public final e:Lmqp;
-
-.field public f:Lmqp;
-
-.field public final g:Ljava/util/List;
+.field final synthetic a:Lfyx;
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 1
+.method public constructor <init>(Lfyx;)V
+    .locals 0
+
+    iput-object p1, p0, Lfyw;->a:Lfyx;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    new-instance v0, Ljava/util/HashSet;
+    return-void
+.end method
 
-    invoke-direct {v0}, Ljava/util/HashSet;-><init>()V
 
-    iput-object v0, p0, Lfyw;->d:Ljava/util/Set;
+# virtual methods
+.method public final a(Llrr;)V
+    .locals 1
 
-    new-instance v0, Ljava/util/HashMap;
+    invoke-virtual {p1}, Llrr;->a()Llmr;
 
-    invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
+    move-result-object p1
 
-    iput-object v0, p0, Lfyw;->a:Ljava/util/Map;
+    if-eqz p1, :cond_0
 
-    new-instance v0, Ljava/util/HashMap;
+    new-instance v0, Lfyv;
 
-    invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
+    invoke-direct {v0, p0, p1}, Lfyv;-><init>(Lfyw;Llmr;)V
 
-    iput-object v0, p0, Lfyw;->b:Ljava/util/Map;
+    invoke-interface {p1, v0}, Llmr;->j(Lmip;)V
 
-    new-instance v0, Ljava/util/HashMap;
-
-    invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
-
-    iput-object v0, p0, Lfyw;->c:Ljava/util/Map;
-
-    sget-object v0, Lmpx;->a:Lmpx;
-
-    iput-object v0, p0, Lfyw;->f:Lmqp;
-
-    iput-object v0, p0, Lfyw;->e:Lmqp;
-
-    new-instance v0, Ljava/util/ArrayList;
-
-    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
-
-    new-instance v0, Ljava/util/ArrayList;
-
-    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
-
-    iput-object v0, p0, Lfyw;->g:Ljava/util/List;
-
+    :cond_0
     return-void
 .end method

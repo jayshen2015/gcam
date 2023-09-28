@@ -2,11 +2,11 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Landroid/view/View$OnLongClickListener;
+.implements Landroid/animation/ValueAnimator$AnimatorUpdateListener;
 
 
 # instance fields
-.field public synthetic f$0:Lcom/google/android/apps/camera/bottombar/RoundedThumbnailView;
+.field public final synthetic f$0:Lcom/google/android/apps/camera/bottombar/RoundedThumbnailView;
 
 
 # direct methods
@@ -22,14 +22,12 @@
 
 
 # virtual methods
-.method public final onLongClick(Landroid/view/View;)Z
+.method public final onAnimationUpdate(Landroid/animation/ValueAnimator;)V
     .locals 1
 
     iget-object v0, p0, Lcom/google/android/apps/camera/bottombar/RoundedThumbnailView$$ExternalSyntheticLambda0;->f$0:Lcom/google/android/apps/camera/bottombar/RoundedThumbnailView;
 
-    invoke-virtual {v0, p1}, Lcom/google/android/apps/camera/bottombar/RoundedThumbnailView;->lambda$initialize$0$com-google-android-apps-camera-bottombar-RoundedThumbnailView(Landroid/view/View;)Z
+    invoke-virtual {v0, p1}, Lcom/google/android/apps/camera/bottombar/RoundedThumbnailView;->lambda$runBurstFlashAnimation$3$com-google-android-apps-camera-bottombar-RoundedThumbnailView(Landroid/animation/ValueAnimator;)V
 
-    move-result p1
-
-    return p1
+    return-void
 .end method

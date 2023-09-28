@@ -1,181 +1,77 @@
-.class public Lhfn;
+.class public final synthetic Lhfn;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lhfh;
+.implements Lcom/google/googlex/gcam/base/function/LongFloatConsumer;
 
 
 # instance fields
-.field public final synthetic b:Lhfq;
+.field public final synthetic a:Lega;
 
 
 # direct methods
-.method public constructor <init>(Lhfq;)V
+.method public synthetic constructor <init>(Lega;)V
     .locals 0
 
-    iput-object p1, p0, Lhfn;->b:Lhfq;
-
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lhfn;->a:Lega;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public a()V
-    .locals 3
+.method public final accept(JF)V
+    .locals 2
 
-    iget-object v0, p0, Lhfn;->b:Lhfq;
+    iget-object p1, p0, Lhfn;->a:Lega;
 
-    const/4 v1, 0x0
+    sget-object p2, Lhfw;->a:Louj;
 
-    const/4 v2, 0x1
+    if-eqz p1, :cond_2
 
-    invoke-virtual {v0, v1, v2}, Lhfq;->r(ZZ)V
+    const/4 p2, 0x0
 
-    return-void
-.end method
+    const/4 v0, 0x0
 
-.method public final synthetic b(Lchd;Z)V
-    .locals 0
+    cmpl-float v1, p3, v0
 
-    return-void
-.end method
+    if-ltz v1, :cond_0
 
-.method public final synthetic bN()V
-    .locals 0
+    const/high16 v1, 0x3f800000    # 1.0f
 
-    return-void
-.end method
+    cmpg-float v1, p3, v1
 
-.method public bP()Z
-    .locals 1
+    if-gtz v1, :cond_0
 
-    const/4 v0, 0x1
+    const/4 p2, 0x1
 
-    return v0
-.end method
+    goto :goto_0
 
-.method public final synthetic cj()V
-    .locals 0
+    :cond_0
+    :goto_0
+    invoke-static {p2}, Lobr;->aF(Z)V
 
-    return-void
-.end method
+    cmpl-float p2, p3, v0
 
-.method public final synthetic d(Lchd;Z)V
-    .locals 0
+    if-nez p2, :cond_1
 
-    return-void
-.end method
+    iget-object p2, p1, Lega;->c:Legd;
 
-.method public final f()V
-    .locals 3
+    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
-    iget-object v0, p0, Lhfn;->b:Lhfq;
+    move-result-wide v0
 
-    invoke-static {v0}, Lhfq;->t(Lhfq;)V
+    iput-wide v0, p2, Legd;->c:J
 
-    iget-object v0, p0, Lhfn;->b:Lhfq;
+    :cond_1
+    iget-object p1, p1, Lega;->a:Lgoh;
 
-    iget-object v1, v0, Lhfq;->t:Lchd;
+    sget-object p2, Lecn;->a:Ljti;
 
-    invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    invoke-interface {p1, p2, p3}, Lgoh;->a(Ljti;F)V
 
-    invoke-virtual {v0, v1}, Lhfq;->q(Lchd;)Lnou;
-
-    move-result-object v0
-
-    new-instance v1, Lgij;
-
-    const/4 v2, 0x5
-
-    invoke-direct {v1, p0, v2}, Lgij;-><init>(Lhfn;I)V
-
-    invoke-static {}, Ljvd;->l()Ljava/util/concurrent/Executor;
-
-    move-result-object v2
-
-    invoke-static {v0, v1, v2}, Ljvd;->t(Lnou;Ljzs;Ljava/util/concurrent/Executor;)V
-
-    iget-object v0, p0, Lhfn;->b:Lhfq;
-
-    iget-object v1, v0, Lhfq;->l:Lhet;
-
-    iget-object v0, v0, Lhfq;->t:Lchd;
-
-    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    invoke-interface {v1, v0}, Lhet;->g(Lchd;)V
-
-    iget-object v0, p0, Lhfn;->b:Lhfq;
-
-    iget-object v0, v0, Lhfq;->r:Lhfv;
-
-    invoke-interface {v0}, Lhfv;->d()V
-
-    return-void
-.end method
-
-.method public final synthetic g()V
-    .locals 0
-
-    return-void
-.end method
-
-.method public final synthetic h()V
-    .locals 0
-
-    return-void
-.end method
-
-.method public final synthetic i()V
-    .locals 0
-
-    return-void
-.end method
-
-.method public final synthetic j()V
-    .locals 0
-
-    return-void
-.end method
-
-.method public k()V
-    .locals 0
-
-    return-void
-.end method
-
-.method public l(Landroid/content/pm/ResolveInfo;)V
-    .locals 1
-
-    iget-object v0, p0, Lhfn;->b:Lhfq;
-
-    iput-object p1, v0, Lhfq;->u:Landroid/content/pm/ResolveInfo;
-
-    return-void
-.end method
-
-.method public final synthetic m()V
-    .locals 0
-
-    return-void
-.end method
-
-.method public final synthetic n()V
-    .locals 0
-
-    return-void
-.end method
-
-.method public final synthetic o()V
-    .locals 0
-
-    return-void
-.end method
-
-.method public final synthetic p(J)V
-    .locals 0
-
+    :cond_2
     return-void
 .end method

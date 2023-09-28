@@ -13,7 +13,7 @@
 
 
 # virtual methods
-.method public abstract a(Lkvy;)V
+.method public abstract a(Lmhy;)V
 .end method
 
 .method public abstract build()Lcom/google/android/libraries/lens/lenslite/api/LinkConfig;

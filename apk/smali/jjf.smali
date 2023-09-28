@@ -1,78 +1,47 @@
-.class public final Ljjf;
-.super Ljhn;
+.class public final synthetic Ljjf;
+.super Ljava/lang/Object;
 
-
-# static fields
-.field public static final CREATOR:Landroid/os/Parcelable$Creator;
+# interfaces
+.implements Lbur;
 
 
 # instance fields
-.field public a:I
+.field public final synthetic a:Ljjj;
 
-.field b:I
+.field public final synthetic b:Llar;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
-
-    new-instance v0, Ljhi;
-
-    const/4 v1, 0x7
-
-    invoke-direct {v0, v1}, Ljhi;-><init>(I)V
-
-    sput-object v0, Ljjf;->CREATOR:Landroid/os/Parcelable$Creator;
-
-    return-void
-.end method
-
-.method public constructor <init>()V
-    .locals 2
-
-    const/4 v0, 0x3
-
-    const/4 v1, 0x0
-
-    invoke-direct {p0, v0, v1}, Ljjf;-><init>(II)V
-
-    return-void
-.end method
-
-.method public constructor <init>(II)V
+.method public synthetic constructor <init>(Ljjj;Llar;)V
     .locals 0
 
-    invoke-direct {p0}, Ljhn;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput p1, p0, Ljjf;->a:I
+    iput-object p1, p0, Ljjf;->a:Ljjj;
 
-    iput p2, p0, Ljjf;->b:I
+    iput-object p2, p0, Ljjf;->b:Llar;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final writeToParcel(Landroid/os/Parcel;I)V
-    .locals 2
+.method public final a(Ljava/lang/Throwable;)V
+    .locals 4
 
-    invoke-static {p1}, Ljhp;->a(Landroid/os/Parcel;)I
+    iget-object p1, p0, Ljjf;->a:Ljjj;
 
-    move-result p2
+    iget-object v0, p0, Ljjf;->b:Llar;
 
-    iget v0, p0, Ljjf;->a:I
+    new-instance v1, Ljjh;
 
-    const/4 v1, 0x2
+    const/4 v2, 0x1
 
-    invoke-static {p1, v1, v0}, Ljhp;->g(Landroid/os/Parcel;II)V
+    const/4 v3, 0x0
 
-    iget v0, p0, Ljjf;->b:I
+    invoke-direct {v1, p1, v2, v3}, Ljjh;-><init>(Ljjj;I[B)V
 
-    const/4 v1, 0x3
-
-    invoke-static {p1, v1, v0}, Ljhp;->g(Landroid/os/Parcel;II)V
-
-    invoke-static {p1, p2}, Ljhp;->c(Landroid/os/Parcel;I)V
+    invoke-virtual {v0, v1}, Llar;->execute(Ljava/lang/Runnable;)V
 
     return-void
 .end method

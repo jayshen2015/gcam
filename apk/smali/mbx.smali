@@ -1,63 +1,87 @@
 .class public final Lmbx;
-.super Lolh;
+.super Ljava/lang/Object;
 
-
-# annotations
-.annotation runtime Lolj;
-    b = "com.google.android.libraries.vision.visionkit.f250.internal.uploader.work.upload.OneAttachmentUploader"
-    c = "OneAttachmentUploader.kt"
-    d = "updateHandle"
-    e = {
-        0x4b
-    }
-.end annotation
+# interfaces
+.implements Lpys;
 
 
 # instance fields
-.field public synthetic a:Ljava/lang/Object;
+.field private final a:Lqkg;
 
-.field public b:I
+.field private final b:Lqkg;
 
-.field public c:Lmbi;
-
-.field public d:Llwq;
-
-.field final synthetic e:Ldqx;
+.field private final c:Lqkg;
 
 
 # direct methods
-.method public constructor <init>(Ldqx;Loku;[B[B)V
+.method public constructor <init>(Lqkg;Lqkg;Lqkg;)V
     .locals 0
 
-    iput-object p1, p0, Lmbx;->e:Ldqx;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0, p2}, Lolh;-><init>(Loku;)V
+    iput-object p1, p0, Lmbx;->a:Lqkg;
+
+    iput-object p2, p0, Lmbx;->b:Lqkg;
+
+    iput-object p3, p0, Lmbx;->c:Lqkg;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final b(Ljava/lang/Object;)Ljava/lang/Object;
+.method public final a()Lmbw;
+    .locals 8
+
+    iget-object v0, p0, Lmbx;->a:Lqkg;
+
+    invoke-interface {v0}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    move-object v2, v0
+
+    check-cast v2, Lmip;
+
+    iget-object v0, p0, Lmbx;->b:Lqkg;
+
+    invoke-interface {v0}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    move-object v3, v0
+
+    check-cast v3, Lljf;
+
+    iget-object v0, p0, Lmbx;->c:Lqkg;
+
+    check-cast v0, Lliq;
+
+    invoke-virtual {v0}, Lliq;->a()Llis;
+
+    move-result-object v4
+
+    new-instance v0, Lmbw;
+
+    const/4 v5, 0x0
+
+    const/4 v6, 0x0
+
+    const/4 v7, 0x0
+
+    move-object v1, v0
+
+    invoke-direct/range {v1 .. v7}, Lmbw;-><init>(Lmip;Lljf;Llis;[B[B[B)V
+
+    return-object v0
+.end method
+
+.method public final bridge synthetic get()Ljava/lang/Object;
     .locals 1
 
-    iput-object p1, p0, Lmbx;->a:Ljava/lang/Object;
+    invoke-virtual {p0}, Lmbx;->a()Lmbw;
 
-    iget p1, p0, Lmbx;->b:I
+    move-result-object v0
 
-    const/high16 v0, -0x80000000
-
-    or-int/2addr p1, v0
-
-    iput p1, p0, Lmbx;->b:I
-
-    iget-object p1, p0, Lmbx;->e:Ldqx;
-
-    const/4 v0, 0x0
-
-    invoke-virtual {p1, v0, v0, p0}, Ldqx;->p(Lmbi;Ljava/lang/String;Loku;)Ljava/lang/Object;
-
-    move-result-object p1
-
-    return-object p1
+    return-object v0
 .end method

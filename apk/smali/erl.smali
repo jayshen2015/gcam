@@ -6,24 +6,20 @@
 
 
 # instance fields
-.field public final synthetic a:Lert;
+.field public final synthetic a:J
 
-.field public final synthetic b:Lika;
-
-.field public final synthetic c:Lnph;
+.field public final synthetic b:Lplj;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lert;Lika;Lnph;)V
+.method public synthetic constructor <init>(JLplj;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lerl;->a:Lert;
+    iput-wide p1, p0, Lerl;->a:J
 
-    iput-object p2, p0, Lerl;->b:Lika;
-
-    iput-object p3, p0, Lerl;->c:Lnph;
+    iput-object p3, p0, Lerl;->b:Lplj;
 
     return-void
 .end method
@@ -33,49 +29,41 @@
 .method public final run()V
     .locals 6
 
-    iget-object v0, p0, Lerl;->a:Lert;
+    iget-wide v0, p0, Lerl;->a:J
 
-    iget-object v1, p0, Lerl;->b:Lika;
+    iget-object v2, p0, Lerl;->b:Lplj;
 
-    iget-object v2, p0, Lerl;->c:Lnph;
+    sget-object v3, Lerp;->a:Louj;
 
-    iget-object v3, v0, Lert;->k:Lkbc;
+    invoke-virtual {v3}, Loue;->c()Lova;
 
-    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+    move-result-object v3
 
-    move-result-object v1
+    sget-object v4, Lovl;->a:Lovd;
 
-    new-instance v4, Ljava/lang/StringBuilder;
+    const-string v5, "LasagnaProcSession"
 
-    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-interface {v3, v4, v5}, Lova;->g(Lovd;Ljava/lang/Object;)Lova;
 
-    const-string v5, "doSelectMode "
+    move-result-object v3
 
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    check-cast v3, Loug;
 
-    invoke-virtual {v4, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    const/16 v4, 0x5a4
 
-    const-string v1, " disconnectSync"
+    invoke-interface {v3, v4}, Loug;->G(I)Lova;
 
-    invoke-virtual {v4, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result-object v3
 
-    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    check-cast v3, Loug;
 
-    move-result-object v1
+    const-string v4, "Couldn\'t submit frame %s."
 
-    invoke-interface {v3, v1}, Lkbc;->e(Ljava/lang/String;)V
+    invoke-interface {v3, v4, v0, v1}, Loug;->q(Ljava/lang/String;J)V
 
-    iget-object v1, v0, Lert;->g:Lkbx;
+    iget-object v0, v2, Lplj;->d:Ljava/lang/Runnable;
 
-    invoke-interface {v1}, Lkbx;->b()V
-
-    iget-object v0, v0, Lert;->k:Lkbc;
-
-    invoke-interface {v0}, Lkbc;->f()V
-
-    const/4 v0, 0x0
-
-    invoke-virtual {v2, v0}, Lnph;->e(Ljava/lang/Object;)Z
+    invoke-interface {v0}, Ljava/lang/Runnable;->run()V
 
     return-void
 .end method

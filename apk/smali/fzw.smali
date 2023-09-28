@@ -1,55 +1,182 @@
-.class public final Lfzw;
-.super Ljava/lang/Object;
+.class final Lfzw;
+.super Lcom/google/android/apps/camera/bottombar/BottomBarListener;
 
-# interfaces
-.implements Lfzy;
+
+# instance fields
+.field final synthetic a:Lfzx;
 
 
 # direct methods
-.method public constructor <init>()V
+.method public constructor <init>(Lfzx;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lfzw;->a:Lfzx;
+
+    invoke-direct {p0}, Lcom/google/android/apps/camera/bottombar/BottomBarListener;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic b()V
-    .locals 0
+.method public final onCameraSwitchButtonClicked()V
+    .locals 2
+
+    iget-object v0, p0, Lfzw;->a:Lfzx;
+
+    iget-object v0, v0, Lfzx;->m:Ljava/lang/Object;
+
+    monitor-enter v0
+
+    :try_start_0
+    iget-object v1, p0, Lfzw;->a:Lfzx;
+
+    iget-object v1, v1, Lfzx;->l:Lcfe;
+
+    invoke-virtual {v1}, Lcfe;->d()V
+
+    monitor-exit v0
 
     return-void
+
+    :catchall_0
+    move-exception v1
+
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw v1
 .end method
 
-.method public final bridge synthetic bn(Ljava/lang/Object;)V
-    .locals 0
+.method public final onPauseButtonClicked()V
+    .locals 2
 
-    check-cast p1, Ljava/lang/Void;
+    iget-object v0, p0, Lfzw;->a:Lfzx;
+
+    iget-object v0, v0, Lfzx;->m:Ljava/lang/Object;
+
+    monitor-enter v0
+
+    :try_start_0
+    iget-object v1, p0, Lfzw;->a:Lfzx;
+
+    iget-object v1, v1, Lfzx;->l:Lcfe;
+
+    invoke-virtual {v1}, Lcfe;->e()V
+
+    iget-object v1, p0, Lfzw;->a:Lfzx;
+
+    iget-object v1, v1, Lfzx;->n:Lcgx;
+
+    invoke-virtual {v1}, Lcgx;->f()V
+
+    monitor-exit v0
 
     return-void
+
+    :catchall_0
+    move-exception v1
+
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw v1
 .end method
 
-.method public final e(I)V
-    .locals 0
+.method public final onResumeButtonClicked()V
+    .locals 2
+
+    iget-object v0, p0, Lfzw;->a:Lfzx;
+
+    iget-object v0, v0, Lfzx;->m:Ljava/lang/Object;
+
+    monitor-enter v0
+
+    :try_start_0
+    iget-object v1, p0, Lfzw;->a:Lfzx;
+
+    iget-object v1, v1, Lfzx;->l:Lcfe;
+
+    invoke-virtual {v1}, Lcfe;->g()V
+
+    iget-object v1, p0, Lfzw;->a:Lfzx;
+
+    iget-object v1, v1, Lfzx;->n:Lcgx;
+
+    invoke-virtual {v1}, Lcgx;->g()V
+
+    monitor-exit v0
 
     return-void
+
+    :catchall_0
+    move-exception v1
+
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw v1
 .end method
 
-.method public final f(Z)V
-    .locals 0
+.method public final onSnapshotButtonClicked()V
+    .locals 2
+
+    iget-object v0, p0, Lfzw;->a:Lfzx;
+
+    iget-object v0, v0, Lfzx;->m:Ljava/lang/Object;
+
+    monitor-enter v0
+
+    :try_start_0
+    iget-object v1, p0, Lfzw;->a:Lfzx;
+
+    iget-object v1, v1, Lfzx;->l:Lcfe;
+
+    invoke-virtual {v1}, Lcfe;->i()V
+
+    monitor-exit v0
 
     return-void
+
+    :catchall_0
+    move-exception v1
+
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw v1
 .end method
 
-.method public final g(J)V
-    .locals 0
+.method public final onThumbnailButtonClicked()V
+    .locals 2
+
+    iget-object v0, p0, Lfzw;->a:Lfzx;
+
+    iget-object v0, v0, Lfzx;->m:Ljava/lang/Object;
+
+    monitor-enter v0
+
+    :try_start_0
+    iget-object v1, p0, Lfzw;->a:Lfzx;
+
+    iget-object v1, v1, Lfzx;->l:Lcfe;
+
+    invoke-virtual {v1}, Lcfe;->j()V
+
+    monitor-exit v0
 
     return-void
-.end method
 
-.method public final h()V
-    .locals 0
+    :catchall_0
+    move-exception v1
 
-    return-void
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw v1
 .end method

@@ -1,1501 +1,463 @@
 .class public final Lmou;
-.super Ljava/io/InputStream;
-
-# interfaces
-.implements Lj$/io/InputStreamRetargetInterface;
-.implements Lmon;
+.super Ljava/lang/Object;
 
 
 # static fields
-.field public static final a:Lnak;
+.field public static final a:Lmou;
+
+.field public static final b:Lmou;
 
 
 # instance fields
-.field public final b:Ljava/io/PipedOutputStream;
-
-.field public final c:Lmow;
-
-.field private final d:Ljava/util/concurrent/atomic/AtomicReference;
-
-.field private final e:Ljava/io/PipedInputStream;
-
-.field private final f:Lmoy;
-
-.field private g:Lj$/util/Optional;
-
-.field private final h:Lmpk;
-
-.field private volatile i:Ljava/lang/Thread;
+.field public final c:[F
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 1
+    .locals 2
 
-    const-string v0, "com/google/babelfish/device/avenh/l2l/speechenhancer2/SpeechEnhancerImpl"
+    const/16 v0, 0x9
 
-    invoke-static {v0}, Lnak;->h(Ljava/lang/String;)Lnak;
+    new-array v1, v0, [F
+
+    fill-array-data v1, :array_0
+
+    invoke-static {v1}, Lmou;->a([F)Lmou;
+
+    move-result-object v1
+
+    sput-object v1, Lmou;->a:Lmou;
+
+    new-array v0, v0, [F
+
+    fill-array-data v0, :array_1
+
+    invoke-static {v0}, Lmou;->a([F)Lmou;
 
     move-result-object v0
 
-    sput-object v0, Lmou;->a:Lnak;
+    sput-object v0, Lmou;->b:Lmou;
+
+    return-void
+
+    nop
+
+    :array_0
+    .array-data 4
+        0x3f800000    # 1.0f
+        0x0
+        0x0
+        0x0
+        -0x40800000    # -1.0f
+        0x0
+        0x0
+        0x0
+        0x3f800000    # 1.0f
+    .end array-data
+
+    :array_1
+    .array-data 4
+        -0x40800000    # -1.0f
+        0x0
+        0x0
+        0x0
+        0x3f800000    # 1.0f
+        0x0
+        0x0
+        0x0
+        0x3f800000    # 1.0f
+    .end array-data
+.end method
+
+.method private constructor <init>([F)V
+    .locals 2
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    array-length v0, p1
+
+    const/16 v1, 0x9
+
+    if-ne v0, v1, :cond_0
+
+    const/4 v0, 0x1
+
+    goto :goto_0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    :goto_0
+    invoke-static {v0}, Lobr;->aF(Z)V
+
+    iput-object p1, p0, Lmou;->c:[F
 
     return-void
 .end method
 
-.method public constructor <init>(Lmow;Lmpk;Ljava/io/PipedInputStream;Ljava/io/PipedOutputStream;Lmoy;)V
+.method public static a([F)Lmou;
     .locals 2
 
-    invoke-direct {p0}, Ljava/io/InputStream;-><init>()V
+    new-instance v0, Lmou;
 
-    new-instance v0, Ljava/util/concurrent/atomic/AtomicReference;
+    array-length v1, p0
 
-    sget-object v1, Lmot;->a:Lmot;
+    invoke-static {p0, v1}, Ljava/util/Arrays;->copyOf([FI)[F
 
-    invoke-direct {v0, v1}, Ljava/util/concurrent/atomic/AtomicReference;-><init>(Ljava/lang/Object;)V
+    move-result-object p0
 
-    iput-object v0, p0, Lmou;->d:Ljava/util/concurrent/atomic/AtomicReference;
+    invoke-direct {v0, p0}, Lmou;-><init>([F)V
 
-    invoke-static {}, Lj$/util/Optional;->empty()Lj$/util/Optional;
+    return-object v0
+.end method
+
+.method public static b()Lmou;
+    .locals 1
+
+    const/16 v0, 0x9
+
+    new-array v0, v0, [F
+
+    fill-array-data v0, :array_0
+
+    invoke-static {v0}, Lmou;->a([F)Lmou;
 
     move-result-object v0
 
-    iput-object v0, p0, Lmou;->g:Lj$/util/Optional;
+    return-object v0
 
-    const/4 v0, 0x0
-
-    iput-object v0, p0, Lmou;->i:Ljava/lang/Thread;
-
-    iput-object p1, p0, Lmou;->c:Lmow;
-
-    iput-object p2, p0, Lmou;->h:Lmpk;
-
-    iput-object p3, p0, Lmou;->e:Ljava/io/PipedInputStream;
-
-    iput-object p4, p0, Lmou;->b:Ljava/io/PipedOutputStream;
-
-    iput-object p5, p0, Lmou;->f:Lmoy;
-
-    return-void
+    :array_0
+    .array-data 4
+        0x3f800000    # 1.0f
+        0x0
+        0x0
+        0x0
+        0x3f800000    # 1.0f
+        0x0
+        0x0
+        0x0
+        0x3f800000    # 1.0f
+    .end array-data
 .end method
 
 
 # virtual methods
-.method public final a()V
-    .locals 4
+.method public final c(Lmou;)Lmou;
+    .locals 11
 
-    iget-object v0, p0, Lmou;->d:Ljava/util/concurrent/atomic/AtomicReference;
+    invoke-virtual {p1}, Lmou;->d()[F
 
-    invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicReference;->get()Ljava/lang/Object;
+    move-result-object p1
 
-    move-result-object v0
+    const/16 v0, 0x9
 
-    sget-object v1, Lmot;->a:Lmot;
+    new-array v0, v0, [F
 
-    const/4 v2, 0x1
+    const/4 v1, 0x0
 
-    const/4 v3, 0x0
-
-    if-eq v0, v1, :cond_0
-
-    iget-object v0, p0, Lmou;->d:Ljava/util/concurrent/atomic/AtomicReference;
-
-    invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicReference;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    sget-object v1, Lmot;->b:Lmot;
-
-    if-eq v0, v1, :cond_0
-
-    const/4 v0, 0x1
-
-    goto :goto_0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    :goto_0
-    const-string v1, "\'flush()\' must be called before calling \'provideRawAudio()\'."
-
-    invoke-static {v0, v1}, Lmoz;->q(ZLjava/lang/Object;)V
-
-    iget-object v0, p0, Lmou;->d:Ljava/util/concurrent/atomic/AtomicReference;
-
-    invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicReference;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    sget-object v1, Lmot;->c:Lmot;
-
-    if-eq v0, v1, :cond_1
-
-    const/4 v0, 0x1
-
-    goto :goto_1
-
-    :cond_1
-    const/4 v0, 0x0
-
-    :goto_1
-    const-string v1, "\'start()\' must be called before calling \'flush()\'."
-
-    invoke-static {v0, v1}, Lmoz;->q(ZLjava/lang/Object;)V
-
-    iget-object v0, p0, Lmou;->d:Ljava/util/concurrent/atomic/AtomicReference;
-
-    invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicReference;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    sget-object v1, Lmot;->f:Lmot;
-
-    if-eq v0, v1, :cond_2
-
-    iget-object v0, p0, Lmou;->d:Ljava/util/concurrent/atomic/AtomicReference;
-
-    invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicReference;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    sget-object v1, Lmot;->g:Lmot;
-
-    if-eq v0, v1, :cond_2
-
-    const/4 v0, 0x1
-
-    goto :goto_2
-
-    :cond_2
-    const/4 v0, 0x0
-
-    :goto_2
-    const-string v1, "Can\'t call \'flush()\' after calling \'shutdown()\'."
-
-    invoke-static {v0, v1}, Lmoz;->q(ZLjava/lang/Object;)V
-
-    iget-object v0, p0, Lmou;->c:Lmow;
-
-    iget v0, v0, Lmow;->h:I
-
-    const/4 v1, 0x2
-
-    if-ne v0, v1, :cond_3
-
-    goto :goto_3
-
-    :cond_3
     const/4 v2, 0x0
 
-    :goto_3
-    const-string v0, "raw audio interface type is set to \'InputStream\' - calls to flush() aren\'t allowed in this mode."
+    :goto_0
+    const/4 v3, 0x3
 
-    invoke-static {v2, v0}, Lmoz;->q(ZLjava/lang/Object;)V
-
-    iget-object v0, p0, Lmou;->d:Ljava/util/concurrent/atomic/AtomicReference;
-
-    invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicReference;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    sget-object v1, Lmot;->e:Lmot;
-
-    if-ne v0, v1, :cond_4
-
-    iget-object v0, p0, Lmou;->d:Ljava/util/concurrent/atomic/AtomicReference;
-
-    invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicReference;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lmot;
-
-    invoke-virtual {v0}, Lmot;->name()Ljava/lang/String;
-
-    return-void
-
-    :cond_4
-    iget-object v0, p0, Lmou;->f:Lmoy;
-
-    invoke-interface {v0}, Lmoy;->flush()V
-
-    iget-object v0, p0, Lmou;->c:Lmow;
-
-    iget-object v0, v0, Lmow;->a:Lj$/util/Optional;
-
-    sget-object v1, Lfah;->r:Lfah;
-
-    invoke-virtual {v0, v1}, Lj$/util/Optional;->ifPresent(Ljava/util/function/Consumer;)V
-
-    return-void
-.end method
-
-.method public final available()I
-    .locals 2
-
-    iget-object v0, p0, Lmou;->c:Lmow;
-
-    iget v0, v0, Lmow;->i:I
-
-    const/4 v0, 0x0
-
-    const-string v1, "To use InputStream methods on SpeechEnhancer, set the \'processed audio interface type\' to \'INPUT_STREAM\' when creating the SpeechEnhancer instance."
-
-    invoke-static {v0, v1}, Lmoz;->q(ZLjava/lang/Object;)V
-
-    iget-object v0, p0, Lmou;->e:Ljava/io/PipedInputStream;
-
-    invoke-virtual {v0}, Ljava/io/PipedInputStream;->available()I
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public final b()V
-    .locals 5
-
-    iget-object v0, p0, Lmou;->d:Ljava/util/concurrent/atomic/AtomicReference;
-
-    sget-object v1, Lmot;->a:Lmot;
-
-    sget-object v2, Lmot;->b:Lmot;
-
-    :cond_0
-    invoke-virtual {v0, v1, v2}, Ljava/util/concurrent/atomic/AtomicReference;->compareAndSet(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result v3
-
-    if-eqz v3, :cond_2
-
-    invoke-static {}, Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lmou;->i:Ljava/lang/Thread;
-
-    iget-object v0, p0, Lmou;->c:Lmow;
-
-    iget v1, v0, Lmow;->h:I
-
-    const/4 v2, 0x1
-
-    if-ne v1, v2, :cond_1
-
-    new-instance v1, Lmpa;
-
-    iget-object v0, v0, Lmow;->b:Lj$/util/Optional;
-
-    invoke-virtual {v0}, Lj$/util/Optional;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/io/InputStream;
-
-    new-instance v2, Landroidx/wear/ambient/AmbientMode$AmbientController;
-
-    invoke-direct {v2, p0}, Landroidx/wear/ambient/AmbientMode$AmbientController;-><init>(Lmou;)V
-
-    iget-object v3, p0, Lmou;->c:Lmow;
-
-    iget-object v3, v3, Lmow;->c:Lnow;
+    if-ge v2, v3, :cond_2
 
     const/4 v4, 0x0
 
-    invoke-direct {v1, v0, v2, v3, v4}, Lmpa;-><init>(Ljava/io/InputStream;Landroidx/wear/ambient/AmbientMode$AmbientController;Ljava/util/concurrent/ExecutorService;[B)V
+    :goto_1
+    if-ge v4, v3, :cond_1
 
-    invoke-static {v1}, Lj$/util/Optional;->of(Ljava/lang/Object;)Lj$/util/Optional;
+    const/4 v5, 0x0
 
-    move-result-object v0
+    :goto_2
+    if-ge v5, v3, :cond_0
 
-    iput-object v0, p0, Lmou;->g:Lj$/util/Optional;
+    mul-int/lit8 v6, v2, 0x3
 
-    :cond_1
-    iget-object v0, p0, Lmou;->d:Ljava/util/concurrent/atomic/AtomicReference;
+    add-int v7, v6, v4
 
-    sget-object v1, Lmot;->c:Lmot;
+    aget v8, v0, v7
 
-    invoke-virtual {v0, v1}, Ljava/util/concurrent/atomic/AtomicReference;->set(Ljava/lang/Object;)V
+    iget-object v9, p0, Lmou;->c:[F
 
-    return-void
+    mul-int/lit8 v10, v5, 0x3
 
-    :cond_2
-    invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicReference;->get()Ljava/lang/Object;
+    add-int/2addr v10, v4
 
-    move-result-object v3
+    aget v9, v9, v10
 
-    if-eq v3, v1, :cond_0
+    add-int/2addr v6, v5
 
-    return-void
-.end method
+    aget v6, p1, v6
 
-.method public final c(Ljava/nio/ByteBuffer;)V
-    .locals 4
+    mul-float v9, v9, v6
 
-    iget-object v0, p0, Lmou;->d:Ljava/util/concurrent/atomic/AtomicReference;
+    add-float/2addr v8, v9
 
-    invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicReference;->get()Ljava/lang/Object;
+    aput v8, v0, v7
 
-    move-result-object v0
+    add-int/lit8 v5, v5, 0x1
 
-    sget-object v1, Lmot;->a:Lmot;
-
-    const/4 v2, 0x1
-
-    const/4 v3, 0x0
-
-    if-eq v0, v1, :cond_0
-
-    iget-object v0, p0, Lmou;->d:Ljava/util/concurrent/atomic/AtomicReference;
-
-    invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicReference;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    sget-object v1, Lmot;->b:Lmot;
-
-    if-eq v0, v1, :cond_0
-
-    const/4 v0, 0x1
-
-    goto :goto_0
+    goto :goto_2
 
     :cond_0
-    const/4 v0, 0x0
-
-    :goto_0
-    const-string v1, "\'initialize()\' must be called before calling \'provideRawAudio()\'."
-
-    invoke-static {v0, v1}, Lmoz;->q(ZLjava/lang/Object;)V
-
-    iget-object v0, p0, Lmou;->d:Ljava/util/concurrent/atomic/AtomicReference;
-
-    invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicReference;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    sget-object v1, Lmot;->c:Lmot;
-
-    if-eq v0, v1, :cond_1
-
-    const/4 v0, 0x1
+    add-int/lit8 v4, v4, 0x1
 
     goto :goto_1
 
     :cond_1
-    const/4 v0, 0x0
+    add-int/lit8 v2, v2, 0x1
 
-    :goto_1
-    const-string v1, "\'start()\' must be called before calling \'provideRawAudio()\'."
-
-    invoke-static {v0, v1}, Lmoz;->q(ZLjava/lang/Object;)V
-
-    iget-object v0, p0, Lmou;->d:Ljava/util/concurrent/atomic/AtomicReference;
-
-    invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicReference;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    sget-object v1, Lmot;->f:Lmot;
-
-    if-eq v0, v1, :cond_2
-
-    iget-object v0, p0, Lmou;->d:Ljava/util/concurrent/atomic/AtomicReference;
-
-    invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicReference;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    sget-object v1, Lmot;->g:Lmot;
-
-    if-eq v0, v1, :cond_2
-
-    const/4 v0, 0x1
-
-    goto :goto_2
+    goto :goto_0
 
     :cond_2
-    const/4 v0, 0x0
-
-    :goto_2
-    const-string v1, "Can\'t call \'provideRawAudio()\' after calling \'shutdown()\'."
-
-    invoke-static {v0, v1}, Lmoz;->q(ZLjava/lang/Object;)V
-
-    iget-object v0, p0, Lmou;->c:Lmow;
-
-    iget v0, v0, Lmow;->h:I
-
-    const/4 v1, 0x2
-
-    if-ne v0, v1, :cond_3
-
-    goto :goto_3
-
-    :cond_3
-    const/4 v2, 0x0
-
-    :goto_3
-    const-string v0, "raw audio interface type is set to \'InputStream\' - calls to provideRawAudio() aren\'t allowed in this mode."
-
-    invoke-static {v2, v0}, Lmoz;->q(ZLjava/lang/Object;)V
-
-    iget-object v0, p0, Lmou;->d:Ljava/util/concurrent/atomic/AtomicReference;
-
-    invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicReference;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    sget-object v1, Lmot;->e:Lmot;
-
-    if-ne v0, v1, :cond_4
-
-    iget-object p1, p0, Lmou;->d:Ljava/util/concurrent/atomic/AtomicReference;
-
-    invoke-virtual {p1}, Ljava/util/concurrent/atomic/AtomicReference;->get()Ljava/lang/Object;
+    invoke-static {v0}, Lmou;->a([F)Lmou;
 
     move-result-object p1
 
-    check-cast p1, Lmot;
-
-    invoke-virtual {p1}, Lmot;->name()Ljava/lang/String;
-
-    return-void
-
-    :cond_4
-    invoke-virtual {p0, p1}, Lmou;->i(Ljava/nio/ByteBuffer;)V
-
-    return-void
+    return-object p1
 .end method
 
-.method public final d(Lmpl;)V
+.method public final d()[F
+    .locals 2
+
+    iget-object v0, p0, Lmou;->c:[F
+
+    array-length v1, v0
+
+    invoke-static {v0, v1}, Ljava/util/Arrays;->copyOf([FI)[F
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public final e([F)[F
     .locals 9
 
-    iget-object v0, p0, Lmou;->d:Ljava/util/concurrent/atomic/AtomicReference;
+    iget-object v0, p0, Lmou;->c:[F
 
-    invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicReference;->get()Ljava/lang/Object;
+    const/4 v1, 0x6
 
-    move-result-object v0
+    aget v1, v0, v1
 
-    sget-object v1, Lmot;->a:Lmot;
-
-    const/4 v2, 0x1
-
-    const/4 v3, 0x0
-
-    if-eq v0, v1, :cond_1
-
-    iget-object v0, p0, Lmou;->d:Ljava/util/concurrent/atomic/AtomicReference;
-
-    invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicReference;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    sget-object v1, Lmot;->b:Lmot;
-
-    if-eq v0, v1, :cond_0
-
-    const/4 v0, 0x1
-
-    goto :goto_0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    goto :goto_0
-
-    :cond_1
-    const/4 v0, 0x0
-
-    :goto_0
-    const-string v1, "\'initialize()\' must be called before calling \'provideVideoFrame()\'."
-
-    invoke-static {v0, v1}, Lmoz;->q(ZLjava/lang/Object;)V
-
-    iget-object v0, p0, Lmou;->d:Ljava/util/concurrent/atomic/AtomicReference;
-
-    invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicReference;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    sget-object v1, Lmot;->c:Lmot;
-
-    if-eq v0, v1, :cond_2
-
-    const/4 v0, 0x1
-
-    goto :goto_1
-
-    :cond_2
-    const/4 v0, 0x0
-
-    :goto_1
-    const-string v1, "\'start()\' must be called before calling \'provideVideoFrame()\'."
-
-    invoke-static {v0, v1}, Lmoz;->q(ZLjava/lang/Object;)V
-
-    iget-object v0, p0, Lmou;->d:Ljava/util/concurrent/atomic/AtomicReference;
-
-    invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicReference;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    sget-object v1, Lmot;->f:Lmot;
-
-    if-eq v0, v1, :cond_3
-
-    iget-object v0, p0, Lmou;->d:Ljava/util/concurrent/atomic/AtomicReference;
-
-    invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicReference;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    sget-object v1, Lmot;->g:Lmot;
-
-    if-eq v0, v1, :cond_3
-
-    goto :goto_2
-
-    :cond_3
     const/4 v2, 0x0
 
-    :goto_2
-    const-string v0, "Can\'t call \'provideVideoFrame()\' after calling \'shutdown()\'."
+    aget v3, p1, v2
 
-    invoke-static {v2, v0}, Lmoz;->q(ZLjava/lang/Object;)V
+    const/4 v4, 0x7
 
-    iget-object v0, p0, Lmou;->d:Ljava/util/concurrent/atomic/AtomicReference;
+    aget v4, v0, v4
 
-    invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicReference;->get()Ljava/lang/Object;
+    const/4 v5, 0x1
 
-    move-result-object v0
+    aget v6, p1, v5
 
-    sget-object v1, Lmot;->e:Lmot;
+    mul-float v1, v1, v3
 
-    if-ne v0, v1, :cond_4
+    mul-float v4, v4, v6
 
-    iget-object p1, p0, Lmou;->d:Ljava/util/concurrent/atomic/AtomicReference;
+    add-float/2addr v1, v4
 
-    invoke-virtual {p1}, Ljava/util/concurrent/atomic/AtomicReference;->get()Ljava/lang/Object;
+    const/16 v4, 0x8
 
-    move-result-object p1
+    aget v4, v0, v4
 
-    check-cast p1, Lmot;
+    add-float/2addr v1, v4
 
-    invoke-virtual {p1}, Lmot;->name()Ljava/lang/String;
+    const/4 v4, 0x2
 
-    return-void
+    new-array v7, v4, [F
 
-    :cond_4
-    iget-object v0, p0, Lmou;->h:Lmpk;
+    aget v8, v0, v2
 
-    iget-object v1, v0, Lmpk;->b:Lmph;
+    mul-float v8, v8, v3
 
-    iget-boolean v1, v1, Lmph;->b:Z
+    aget v3, v0, v5
 
-    if-nez v1, :cond_5
+    mul-float v3, v3, v6
 
-    goto/16 :goto_4
+    add-float/2addr v8, v3
 
-    :cond_5
-    iget-object v1, v0, Lmpk;->c:Lmpi;
+    aget v3, v0, v4
 
-    invoke-virtual {v1}, Lmpi;->b()V
+    add-float/2addr v8, v3
 
-    sget-object v1, Lnmh;->a:Lnmh;
+    div-float/2addr v8, v1
 
-    invoke-static {}, Lj$/time/Instant;->now()Lj$/time/Instant;
+    aput v8, v7, v2
 
-    move-result-object v1
+    const/4 v3, 0x3
 
-    iget-object v2, v0, Lmpk;->g:Lj$/time/Instant;
+    aget v3, v0, v3
 
-    sget-object v3, Lj$/time/Instant;->EPOCH:Lj$/time/Instant;
+    aget v2, p1, v2
 
-    invoke-virtual {v2, v3}, Lj$/time/Instant;->isAfter(Lj$/time/Instant;)Z
+    mul-float v3, v3, v2
 
-    move-result v2
+    const/4 v2, 0x4
 
-    if-eqz v2, :cond_6
+    aget v2, v0, v2
 
-    iget-object v2, v0, Lmpk;->g:Lj$/time/Instant;
+    aget p1, p1, v5
 
-    invoke-static {v2, v1}, Lj$/time/Duration;->between(Lj$/time/temporal/Temporal;Lj$/time/temporal/Temporal;)Lj$/time/Duration;
+    mul-float v2, v2, p1
 
-    move-result-object v2
+    add-float/2addr v3, v2
 
-    goto :goto_3
+    const/4 p1, 0x5
 
-    :cond_6
-    iget-object v2, v0, Lmpk;->b:Lmph;
+    aget p1, v0, p1
 
-    iget-object v2, v2, Lmph;->h:Lj$/time/Duration;
+    add-float/2addr v3, p1
 
-    const-wide/16 v3, 0x1
+    div-float/2addr v3, v1
 
-    invoke-virtual {v2, v3, v4}, Lj$/time/Duration;->plusSeconds(J)Lj$/time/Duration;
+    aput v3, v7, v5
 
-    move-result-object v2
+    return-object v7
+.end method
 
-    :goto_3
-    iget-object v3, v0, Lmpk;->b:Lmph;
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 1
 
-    iget-object v3, v3, Lmph;->h:Lj$/time/Duration;
+    if-ne p1, p0, :cond_0
 
-    invoke-virtual {v2, v3}, Lj$/time/Duration;->compareTo(Lj$/time/Duration;)I
+    const/4 p1, 0x1
 
-    move-result v2
+    return p1
 
-    if-ltz v2, :cond_8
+    :cond_0
+    instance-of v0, p1, Lmou;
 
-    iput-object v1, v0, Lmpk;->g:Lj$/time/Instant;
+    if-nez v0, :cond_1
 
-    iget-object v1, v0, Lmpk;->c:Lmpi;
-
-    invoke-virtual {v1}, Lmpi;->a()D
-
-    move-result-wide v1
-
-    iget-object v3, v0, Lmpk;->b:Lmph;
-
-    iget v4, v3, Lmph;->d:I
-
-    int-to-double v4, v4
-
-    iget v3, v3, Lmph;->e:I
-
-    int-to-double v6, v3
-
-    cmpg-double v3, v1, v4
-
-    if-ltz v3, :cond_7
-
-    cmpl-double v3, v1, v6
-
-    if-lez v3, :cond_8
-
-    :cond_7
-    iget-object v3, v0, Lmpk;->k:Llhz;
-
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v8, "StoredVideoFrameProcessor: current input FPS ("
-
-    invoke-virtual {v3, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    double-to-int v1, v1
-
-    invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    const-string v1, ") is outside the allowed range ("
-
-    invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    double-to-int v1, v4
-
-    invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    const-string v1, ", "
-
-    invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    double-to-int v1, v6
-
-    invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    const-string v1, ")."
-
-    invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    sget-object v2, Lmpk;->a:Lnak;
-
-    invoke-virtual {v2}, Lnaf;->c()Lnaz;
-
-    move-result-object v2
-
-    const-string v3, "%s"
-
-    const/16 v4, 0x11e7
-
-    invoke-static {v2, v3, v1, v4}, Ld;->j(Lnaz;Ljava/lang/String;Ljava/lang/Object;C)V
-
-    sget-object v1, Lmpk;->a:Lnak;
-
-    invoke-virtual {v1}, Lnaf;->c()Lnaz;
-
-    move-result-object v1
-
-    const-string v2, "SVFP: Input FPS warning"
-
-    const/16 v3, 0x11e8
-
-    invoke-static {v1, v2, v3}, Ld;->g(Lnaz;Ljava/lang/String;C)V
-
-    :cond_8
-    :goto_4
-    iget v1, v0, Lmpk;->j:I
-
-    add-int/lit8 v2, v1, -0x1
-
-    if-eqz v1, :cond_9
-
-    packed-switch v2, :pswitch_data_0
-
-    return-void
-
-    :pswitch_0
-    iget-object v0, v0, Lmpk;->i:Ljava/util/concurrent/atomic/AtomicReference;
-
-    invoke-virtual {v0, p1}, Ljava/util/concurrent/atomic/AtomicReference;->set(Ljava/lang/Object;)V
-
-    return-void
-
-    :cond_9
     const/4 p1, 0x0
 
-    throw p1
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
-.end method
-
-.method public final e(D)V
-    .locals 5
-
-    iget-object v0, p0, Lmou;->d:Ljava/util/concurrent/atomic/AtomicReference;
-
-    invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicReference;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    sget-object v1, Lmot;->a:Lmot;
-
-    const/4 v2, 0x1
-
-    const/4 v3, 0x0
-
-    if-eq v0, v1, :cond_0
-
-    iget-object v0, p0, Lmou;->d:Ljava/util/concurrent/atomic/AtomicReference;
-
-    invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicReference;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    sget-object v1, Lmot;->b:Lmot;
-
-    if-eq v0, v1, :cond_0
-
-    const/4 v0, 0x1
-
-    goto :goto_0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    :goto_0
-    const-string v1, "\'initialize()\' must be called before calling \'setMixRawAudioRatio()\'."
-
-    invoke-static {v0, v1}, Lmoz;->q(ZLjava/lang/Object;)V
-
-    iget-object v0, p0, Lmou;->d:Ljava/util/concurrent/atomic/AtomicReference;
-
-    invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicReference;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    sget-object v1, Lmot;->f:Lmot;
-
-    if-eq v0, v1, :cond_1
-
-    iget-object v0, p0, Lmou;->d:Ljava/util/concurrent/atomic/AtomicReference;
-
-    invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicReference;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    sget-object v1, Lmot;->g:Lmot;
-
-    if-eq v0, v1, :cond_1
-
-    const/4 v0, 0x1
-
-    goto :goto_1
+    return p1
 
     :cond_1
-    const/4 v0, 0x0
+    check-cast p1, Lmou;
 
-    :goto_1
-    const-string v1, "Can\'t call \'setMixRawAudioRatio()\' after calling \'shutdown()\'."
+    iget-object v0, p0, Lmou;->c:[F
 
-    invoke-static {v0, v1}, Lmoz;->q(ZLjava/lang/Object;)V
+    iget-object p1, p1, Lmou;->c:[F
 
-    const-wide/16 v0, 0x0
-
-    cmpl-double v4, p1, v0
-
-    if-ltz v4, :cond_2
-
-    const-wide/high16 v0, 0x3ff0000000000000L    # 1.0
-
-    cmpg-double v4, p1, v0
-
-    if-gtz v4, :cond_2
-
-    goto :goto_2
-
-    :cond_2
-    const/4 v2, 0x0
-
-    :goto_2
-    invoke-static {p1, p2}, Ljava/lang/String;->valueOf(D)Ljava/lang/String;
-
-    move-result-object v0
-
-    const-string v1, "ratio must be 0-1 (got %s)"
-
-    invoke-static {v2, v1, v0}, Lmoz;->j(ZLjava/lang/String;Ljava/lang/Object;)V
-
-    iget-object v0, p0, Lmou;->f:Lmoy;
-
-    invoke-interface {v0, p1, p2}, Lmoy;->setRawAudioMixingRatio(D)V
-
-    return-void
-.end method
-
-.method public final f()V
-    .locals 4
-
-    iget-object v0, p0, Lmou;->d:Ljava/util/concurrent/atomic/AtomicReference;
-
-    invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicReference;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    sget-object v1, Lmot;->a:Lmot;
-
-    const/4 v2, 0x1
-
-    const/4 v3, 0x0
-
-    if-eq v0, v1, :cond_0
-
-    iget-object v0, p0, Lmou;->d:Ljava/util/concurrent/atomic/AtomicReference;
-
-    invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicReference;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    sget-object v1, Lmot;->b:Lmot;
-
-    if-eq v0, v1, :cond_0
-
-    const/4 v0, 0x1
-
-    goto :goto_0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    :goto_0
-    const-string v1, "call \'initialize()\' before calling \'start()\'."
-
-    invoke-static {v0, v1}, Lmoz;->q(ZLjava/lang/Object;)V
-
-    iget-object v0, p0, Lmou;->d:Ljava/util/concurrent/atomic/AtomicReference;
-
-    invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicReference;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    sget-object v1, Lmot;->f:Lmot;
-
-    if-eq v0, v1, :cond_1
-
-    iget-object v0, p0, Lmou;->d:Ljava/util/concurrent/atomic/AtomicReference;
-
-    invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicReference;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    sget-object v1, Lmot;->g:Lmot;
-
-    if-eq v0, v1, :cond_1
-
-    const/4 v0, 0x1
-
-    goto :goto_1
-
-    :cond_1
-    const/4 v0, 0x0
-
-    :goto_1
-    const-string v1, "can\'t call \'start()\' after calling \'stop()\'."
-
-    invoke-static {v0, v1}, Lmoz;->q(ZLjava/lang/Object;)V
-
-    iget-object v0, p0, Lmou;->d:Ljava/util/concurrent/atomic/AtomicReference;
-
-    invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicReference;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    sget-object v1, Lmot;->e:Lmot;
-
-    if-eq v0, v1, :cond_2
-
-    const/4 v0, 0x1
-
-    goto :goto_2
-
-    :cond_2
-    const/4 v0, 0x0
-
-    :goto_2
-    const-string v1, "can\'t call \'start()\' while paused. Use \'resume()\' instead."
-
-    invoke-static {v0, v1}, Lmoz;->q(ZLjava/lang/Object;)V
-
-    invoke-static {}, Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
-
-    move-result-object v0
-
-    iget-object v1, p0, Lmou;->i:Ljava/lang/Thread;
-
-    if-ne v0, v1, :cond_3
-
-    goto :goto_3
-
-    :cond_3
-    const/4 v2, 0x0
-
-    :goto_3
-    const-string v0, "\'start\' must be called from the thread that was used to call initialize()"
-
-    invoke-static {v2, v0}, Lmoz;->q(ZLjava/lang/Object;)V
-
-    iget-object v0, p0, Lmou;->d:Ljava/util/concurrent/atomic/AtomicReference;
-
-    invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicReference;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    sget-object v1, Lmot;->c:Lmot;
-
-    if-eq v0, v1, :cond_4
-
-    iget-object v0, p0, Lmou;->d:Ljava/util/concurrent/atomic/AtomicReference;
-
-    invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicReference;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lmot;
-
-    invoke-virtual {v0}, Lmot;->name()Ljava/lang/String;
-
-    return-void
-
-    :cond_4
-    iget-object v0, p0, Lmou;->h:Lmpk;
-
-    invoke-virtual {v0}, Lmpk;->start()V
-
-    iget-object v0, p0, Lmou;->g:Lj$/util/Optional;
-
-    sget-object v1, Lfah;->q:Lfah;
-
-    invoke-virtual {v0, v1}, Lj$/util/Optional;->ifPresent(Ljava/util/function/Consumer;)V
-
-    iget-object v0, p0, Lmou;->d:Ljava/util/concurrent/atomic/AtomicReference;
-
-    sget-object v1, Lmot;->d:Lmot;
-
-    invoke-virtual {v0, v1}, Ljava/util/concurrent/atomic/AtomicReference;->set(Ljava/lang/Object;)V
-
-    iget-object v0, p0, Lmou;->d:Ljava/util/concurrent/atomic/AtomicReference;
-
-    invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicReference;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lmot;
-
-    invoke-virtual {v0}, Lmot;->name()Ljava/lang/String;
-
-    return-void
-.end method
-
-.method public final g()V
-    .locals 4
-
-    iget-object v0, p0, Lmou;->d:Ljava/util/concurrent/atomic/AtomicReference;
-
-    invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicReference;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    sget-object v1, Lmot;->a:Lmot;
-
-    const/4 v2, 0x1
-
-    const/4 v3, 0x0
-
-    if-eq v0, v1, :cond_0
-
-    iget-object v0, p0, Lmou;->d:Ljava/util/concurrent/atomic/AtomicReference;
-
-    invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicReference;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    sget-object v1, Lmot;->b:Lmot;
-
-    if-eq v0, v1, :cond_0
-
-    const/4 v0, 0x1
-
-    goto :goto_0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    :goto_0
-    const-string v1, "call \'initialize()\' before calling \'stop()\'."
-
-    invoke-static {v0, v1}, Lmoz;->q(ZLjava/lang/Object;)V
-
-    iget-object v0, p0, Lmou;->d:Ljava/util/concurrent/atomic/AtomicReference;
-
-    invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicReference;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    sget-object v1, Lmot;->c:Lmot;
-
-    if-eq v0, v1, :cond_1
-
-    const/4 v0, 0x1
-
-    goto :goto_1
-
-    :cond_1
-    const/4 v0, 0x0
-
-    :goto_1
-    const-string v1, "call \'start()\' before calling \'stop()\'."
-
-    invoke-static {v0, v1}, Lmoz;->q(ZLjava/lang/Object;)V
-
-    invoke-static {}, Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
-
-    move-result-object v0
-
-    iget-object v1, p0, Lmou;->i:Ljava/lang/Thread;
-
-    if-ne v0, v1, :cond_2
-
-    const/4 v0, 0x1
-
-    goto :goto_2
-
-    :cond_2
-    const/4 v0, 0x0
-
-    :goto_2
-    const-string v1, "\'stop\' must be called from the thread that was used to call initialize()"
-
-    invoke-static {v0, v1}, Lmoz;->q(ZLjava/lang/Object;)V
-
-    iget-object v0, p0, Lmou;->d:Ljava/util/concurrent/atomic/AtomicReference;
-
-    invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicReference;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    sget-object v1, Lmot;->f:Lmot;
-
-    if-eq v0, v1, :cond_4
-
-    iget-object v0, p0, Lmou;->d:Ljava/util/concurrent/atomic/AtomicReference;
-
-    invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicReference;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    sget-object v1, Lmot;->g:Lmot;
-
-    if-ne v0, v1, :cond_3
-
-    goto :goto_3
-
-    :cond_3
-    iget-object v0, p0, Lmou;->d:Ljava/util/concurrent/atomic/AtomicReference;
-
-    sget-object v1, Lmot;->f:Lmot;
-
-    invoke-virtual {v0, v1}, Ljava/util/concurrent/atomic/AtomicReference;->set(Ljava/lang/Object;)V
-
-    iget-object v0, p0, Lmou;->d:Ljava/util/concurrent/atomic/AtomicReference;
-
-    invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicReference;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lmot;
-
-    invoke-virtual {v0}, Lmot;->name()Ljava/lang/String;
-
-    iget-object v0, p0, Lmou;->h:Lmpk;
-
-    iget-object v1, v0, Lmpk;->f:Ljava/util/concurrent/atomic/AtomicBoolean;
-
-    invoke-virtual {v1, v3}, Ljava/util/concurrent/atomic/AtomicBoolean;->set(Z)V
-
-    iget-object v0, v0, Lmpk;->e:Lmpj;
-
-    check-cast v0, Lmpf;
-
-    iget-object v0, v0, Lmpf;->b:Ljava/util/concurrent/atomic/AtomicBoolean;
-
-    invoke-virtual {v0, v2}, Ljava/util/concurrent/atomic/AtomicBoolean;->set(Z)V
-
-    iget-object v0, p0, Lmou;->g:Lj$/util/Optional;
-
-    sget-object v1, Lfah;->s:Lfah;
-
-    invoke-virtual {v0, v1}, Lj$/util/Optional;->ifPresent(Ljava/util/function/Consumer;)V
-
-    iget-object v0, p0, Lmou;->d:Ljava/util/concurrent/atomic/AtomicReference;
-
-    sget-object v1, Lmot;->g:Lmot;
-
-    invoke-virtual {v0, v1}, Ljava/util/concurrent/atomic/AtomicReference;->set(Ljava/lang/Object;)V
-
-    iget-object v0, p0, Lmou;->d:Ljava/util/concurrent/atomic/AtomicReference;
-
-    invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicReference;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lmot;
-
-    invoke-virtual {v0}, Lmot;->name()Ljava/lang/String;
-
-    return-void
-
-    :cond_4
-    :goto_3
-    iget-object v0, p0, Lmou;->d:Ljava/util/concurrent/atomic/AtomicReference;
-
-    invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicReference;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lmot;
-
-    invoke-virtual {v0}, Lmot;->name()Ljava/lang/String;
-
-    return-void
-.end method
-
-.method public final h()V
-    .locals 5
-
-    iget-object v0, p0, Lmou;->d:Ljava/util/concurrent/atomic/AtomicReference;
-
-    invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicReference;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    sget-object v1, Lmot;->a:Lmot;
-
-    const/4 v2, 0x1
-
-    const/4 v3, 0x0
-
-    if-eq v0, v1, :cond_0
-
-    iget-object v0, p0, Lmou;->d:Ljava/util/concurrent/atomic/AtomicReference;
-
-    invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicReference;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    sget-object v1, Lmot;->b:Lmot;
-
-    if-eq v0, v1, :cond_0
-
-    const/4 v0, 0x1
-
-    goto :goto_0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    :goto_0
-    const-string v1, "\'initialize()\' must be called before calling \'setMixAllSpeechRatio()\'."
-
-    invoke-static {v0, v1}, Lmoz;->q(ZLjava/lang/Object;)V
-
-    iget-object v0, p0, Lmou;->d:Ljava/util/concurrent/atomic/AtomicReference;
-
-    invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicReference;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    sget-object v1, Lmot;->f:Lmot;
-
-    if-eq v0, v1, :cond_1
-
-    iget-object v0, p0, Lmou;->d:Ljava/util/concurrent/atomic/AtomicReference;
-
-    invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicReference;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    sget-object v1, Lmot;->g:Lmot;
-
-    if-eq v0, v1, :cond_1
-
-    const/4 v3, 0x1
-
-    goto :goto_1
-
-    :cond_1
-    :goto_1
-    const-string v0, "Can\'t call \'setMixAllSpeechRatio()\' after calling \'shutdown()\'."
-
-    invoke-static {v3, v0}, Lmoz;->q(ZLjava/lang/Object;)V
-
-    const-wide/high16 v0, 0x3ff0000000000000L    # 1.0
-
-    invoke-static {v0, v1}, Ljava/lang/String;->valueOf(D)Ljava/lang/String;
-
-    move-result-object v3
-
-    const-string v4, "ratio must be 0-1 (got %s)"
-
-    invoke-static {v2, v4, v3}, Lmoz;->j(ZLjava/lang/String;Ljava/lang/Object;)V
-
-    iget-object v2, p0, Lmou;->f:Lmoy;
-
-    invoke-interface {v2, v0, v1}, Lmoy;->setAllSpeechMixingRatio(D)V
-
-    return-void
-.end method
-
-.method public final i(Ljava/nio/ByteBuffer;)V
-    .locals 3
-
-    invoke-virtual {p1}, Ljava/nio/ByteBuffer;->hasRemaining()Z
-
-    move-result v0
-
-    const-string v1, "audio buffer can\'t be empty"
-
-    invoke-static {v0, v1}, Lmoz;->f(ZLjava/lang/Object;)V
-
-    iget-object v0, p0, Lmou;->c:Lmow;
-
-    iget v1, v0, Lmow;->h:I
-
-    const/4 v2, 0x1
-
-    if-ne v1, v2, :cond_0
-
-    iget-object v0, v0, Lmow;->a:Lj$/util/Optional;
-
-    new-instance v1, Lfah;
-
-    const/16 v2, 0x14
-
-    invoke-direct {v1, v2}, Lfah;-><init>(I)V
-
-    invoke-virtual {v0, v1}, Lj$/util/Optional;->ifPresent(Ljava/util/function/Consumer;)V
-
-    :cond_0
-    invoke-virtual {p1}, Ljava/nio/ByteBuffer;->remaining()I
-
-    move-result v0
-
-    new-array v0, v0, [B
-
-    invoke-virtual {p1, v0}, Ljava/nio/ByteBuffer;->get([B)Ljava/nio/ByteBuffer;
-
-    iget-object p1, p0, Lmou;->f:Lmoy;
-
-    invoke-interface {p1, v0}, Lmoy;->provideRawAudio([B)V
-
-    return-void
-.end method
-
-.method public final read()I
-    .locals 4
-
-    iget-object v0, p0, Lmou;->c:Lmow;
-
-    iget v0, v0, Lmow;->i:I
-
-    const-string v0, "To use InputStream methods on SpeechEnhancer, set the \'processed audio interface type\' to \'INPUT_STREAM\' when creating the SpeechEnhancer instance."
-
-    const/4 v1, 0x0
-
-    invoke-static {v1, v0}, Lmoz;->q(ZLjava/lang/Object;)V
-
-    iget-object v0, p0, Lmou;->d:Ljava/util/concurrent/atomic/AtomicReference;
-
-    invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicReference;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    sget-object v2, Lmot;->a:Lmot;
-
-    const/4 v3, 0x1
-
-    if-eq v0, v2, :cond_0
-
-    iget-object v0, p0, Lmou;->d:Ljava/util/concurrent/atomic/AtomicReference;
-
-    invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicReference;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    sget-object v2, Lmot;->b:Lmot;
-
-    if-eq v0, v2, :cond_0
-
-    const/4 v0, 0x1
-
-    goto :goto_0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    :goto_0
-    const-string v2, "\'initialize()\' must be called before calling \'read()\'."
-
-    invoke-static {v0, v2}, Lmoz;->q(ZLjava/lang/Object;)V
-
-    iget-object v0, p0, Lmou;->d:Ljava/util/concurrent/atomic/AtomicReference;
-
-    invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicReference;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    sget-object v2, Lmot;->c:Lmot;
-
-    if-eq v0, v2, :cond_1
-
-    const/4 v1, 0x1
-
-    goto :goto_1
-
-    :cond_1
-    :goto_1
-    const-string v0, "\'start()\' must be called before calling \'read()\'."
-
-    invoke-static {v1, v0}, Lmoz;->q(ZLjava/lang/Object;)V
-
-    iget-object v0, p0, Lmou;->e:Ljava/io/PipedInputStream;
-
-    invoke-virtual {v0}, Ljava/io/PipedInputStream;->read()I
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public final read([BII)I
-    .locals 4
-
-    iget-object v0, p0, Lmou;->c:Lmow;
-
-    iget v0, v0, Lmow;->i:I
-
-    const-string v0, "To use InputStream methods on SpeechEnhancer, set the \'processed audio interface type\' to \'INPUT_STREAM\' when creating the SpeechEnhancer instance."
-
-    const/4 v1, 0x0
-
-    invoke-static {v1, v0}, Lmoz;->q(ZLjava/lang/Object;)V
-
-    iget-object v0, p0, Lmou;->d:Ljava/util/concurrent/atomic/AtomicReference;
-
-    invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicReference;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    sget-object v2, Lmot;->a:Lmot;
-
-    const/4 v3, 0x1
-
-    if-eq v0, v2, :cond_0
-
-    iget-object v0, p0, Lmou;->d:Ljava/util/concurrent/atomic/AtomicReference;
-
-    invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicReference;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    sget-object v2, Lmot;->b:Lmot;
-
-    if-eq v0, v2, :cond_0
-
-    const/4 v0, 0x1
-
-    goto :goto_0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    :goto_0
-    const-string v2, "\'initialize()\' must be called before calling \'read()\'."
-
-    invoke-static {v0, v2}, Lmoz;->q(ZLjava/lang/Object;)V
-
-    iget-object v0, p0, Lmou;->d:Ljava/util/concurrent/atomic/AtomicReference;
-
-    invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicReference;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    sget-object v2, Lmot;->c:Lmot;
-
-    if-eq v0, v2, :cond_1
-
-    const/4 v1, 0x1
-
-    goto :goto_1
-
-    :cond_1
-    :goto_1
-    const-string v0, "\'start()\' must be called before calling \'read()\'."
-
-    invoke-static {v1, v0}, Lmoz;->q(ZLjava/lang/Object;)V
-
-    iget-object v0, p0, Lmou;->e:Ljava/io/PipedInputStream;
-
-    invoke-virtual {v0, p1, p2, p3}, Ljava/io/PipedInputStream;->read([BII)I
+    invoke-static {v0, p1}, Ljava/util/Arrays;->equals([F[F)Z
 
     move-result p1
 
     return p1
 .end method
 
-.method public final synthetic transferTo(Ljava/io/OutputStream;)J
-    .locals 2
+.method public final hashCode()I
+    .locals 1
 
-    invoke-static {p0, p1}, Lj$/io/DesugarInputStream;->transferTo(Ljava/io/InputStream;Ljava/io/OutputStream;)J
+    iget-object v0, p0, Lmou;->c:[F
 
-    move-result-wide v0
+    invoke-static {v0}, Ljava/util/Arrays;->hashCode([F)I
 
-    return-wide v0
+    move-result v0
+
+    return v0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .locals 11
+
+    iget-object v0, p0, Lmou;->c:[F
+
+    const/4 v1, 0x0
+
+    aget v1, v0, v1
+
+    const/4 v2, 0x1
+
+    aget v2, v0, v2
+
+    const/4 v3, 0x2
+
+    aget v3, v0, v3
+
+    const/4 v4, 0x3
+
+    aget v4, v0, v4
+
+    const/4 v5, 0x4
+
+    aget v5, v0, v5
+
+    const/4 v6, 0x5
+
+    aget v6, v0, v6
+
+    const/4 v7, 0x6
+
+    aget v7, v0, v7
+
+    const/4 v8, 0x7
+
+    aget v8, v0, v8
+
+    const/16 v9, 0x8
+
+    aget v0, v0, v9
+
+    new-instance v9, Ljava/lang/StringBuilder;
+
+    const/16 v10, 0x99
+
+    invoke-direct {v9, v10}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string v10, "["
+
+    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v9, v1}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
+
+    const-string v1, ", "
+
+    invoke-virtual {v9, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v9, v2}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v9, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v9, v3}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
+
+    const-string v2, "; "
+
+    invoke-virtual {v9, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v9, v4}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v9, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v9, v5}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v9, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v9, v6}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v9, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v9, v7}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v9, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v9, v8}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v9, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v9, v0}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
+
+    const-string v0, "]"
+
+    invoke-virtual {v9, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v9}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
 .end method

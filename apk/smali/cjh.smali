@@ -2,110 +2,68 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Ljui;
-
-
-# static fields
-.field public static final a:Lnak;
+.implements Lcjg;
 
 
 # instance fields
-.field public final b:Ljava/util/concurrent/BlockingQueue;
-
-.field public final c:Ljava/lang/ThreadLocal;
-
-.field public final d:Ljava/util/ArrayList;
-
-.field private final e:Ljui;
+.field private final a:Lleh;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
-
-    const-string v0, "com/google/android/apps/camera/async/mainthread/EagerMainThreadExecutor"
-
-    invoke-static {v0}, Lnak;->h(Ljava/lang/String;)Lnak;
-
-    move-result-object v0
-
-    sput-object v0, Lcjh;->a:Lnak;
-
-    return-void
-.end method
-
-.method public constructor <init>(Ljui;I)V
-    .locals 1
+.method public constructor <init>(Lleh;)V
+    .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    new-instance v0, Lcjg;
-
-    invoke-direct {v0}, Lcjg;-><init>()V
-
-    iput-object v0, p0, Lcjh;->c:Ljava/lang/ThreadLocal;
-
-    new-instance v0, Ljava/util/ArrayList;
-
-    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
-
-    iput-object v0, p0, Lcjh;->d:Ljava/util/ArrayList;
-
-    new-instance v0, Ljava/util/concurrent/ArrayBlockingQueue;
-
-    invoke-direct {v0, p2}, Ljava/util/concurrent/ArrayBlockingQueue;-><init>(I)V
-
-    iput-object v0, p0, Lcjh;->b:Ljava/util/concurrent/BlockingQueue;
-
-    iput-object p1, p0, Lcjh;->e:Ljui;
+    iput-object p1, p0, Lcjh;->a:Lleh;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final execute(Ljava/lang/Runnable;)V
+.method public final a()Landroid/util/Range;
     .locals 2
 
-    iget-object v0, p0, Lcjh;->b:Ljava/util/concurrent/BlockingQueue;
+    iget-object v0, p0, Lcjh;->a:Lleh;
 
-    invoke-interface {v0, p1}, Ljava/util/concurrent/BlockingQueue;->offer(Ljava/lang/Object;)Z
+    invoke-virtual {v0}, Lleh;->a()I
 
     move-result v0
 
-    if-eqz v0, :cond_1
+    const/16 v1, 0x1e
 
-    iget-object p1, p0, Lcjh;->c:Ljava/lang/ThreadLocal;
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    invoke-virtual {p1}, Ljava/lang/ThreadLocal;->get()Ljava/lang/Object;
+    move-result-object v1
 
-    move-result-object p1
+    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    check-cast p1, Ljava/lang/Boolean;
+    move-result-object v0
 
-    invoke-virtual {p1}, Ljava/lang/Boolean;->booleanValue()Z
+    invoke-static {v1, v0}, Landroid/util/Range;->create(Ljava/lang/Comparable;Ljava/lang/Comparable;)Landroid/util/Range;
 
-    move-result p1
+    move-result-object v0
 
-    if-nez p1, :cond_0
+    return-object v0
+.end method
 
-    iget-object p1, p0, Lcjh;->e:Ljui;
+.method public final b()Landroid/util/Range;
+    .locals 1
 
-    new-instance v0, Lcdw;
+    iget-object v0, p0, Lcjh;->a:Lleh;
 
-    const/16 v1, 0xd
+    invoke-virtual {v0}, Lleh;->a()I
 
-    invoke-direct {v0, p0, v1}, Lcdw;-><init>(Lcjh;I)V
+    move-result v0
 
-    invoke-interface {p1, v0}, Ljui;->execute(Ljava/lang/Runnable;)V
+    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    :cond_0
-    return-void
+    move-result-object v0
 
-    :cond_1
-    iget-object v0, p0, Lcjh;->e:Ljui;
+    invoke-static {v0, v0}, Landroid/util/Range;->create(Ljava/lang/Comparable;Ljava/lang/Comparable;)Landroid/util/Range;
 
-    invoke-interface {v0, p1}, Ljui;->execute(Ljava/lang/Runnable;)V
+    move-result-object v0
 
-    return-void
+    return-object v0
 .end method

@@ -1,42 +1,44 @@
 .class final Lhui;
-.super Lhte;
-
-
-# instance fields
-.field final synthetic b:Lhtg;
+.super Lhto;
 
 
 # direct methods
-.method public constructor <init>(Lhtg;)V
+.method public constructor <init>(Lhub;Ljava/lang/String;)V
     .locals 0
 
-    iput-object p1, p0, Lhui;->b:Lhtg;
-
-    invoke-direct {p0, p1}, Lhte;-><init>(Lhtg;)V
+    invoke-direct {p0, p1, p2}, Lhto;-><init>(Lhub;Ljava/lang/String;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final b(Lfuz;Ljuf;)V
-    .locals 1
+.method protected final bridge synthetic c()Ljava/lang/Object;
+    .locals 2
 
-    iget-object v0, p0, Lhui;->b:Lhtg;
+    iget-object v0, p0, Lhui;->a:Lhub;
 
-    iget-object v0, v0, Lhtg;->e:Lhiu;
+    iget-object v1, p0, Lhui;->b:Ljava/lang/String;
 
-    invoke-virtual {v0}, Lhiu;->e()V
+    invoke-virtual {v0, v1}, Lhub;->e(Ljava/lang/String;)Ljava/lang/String;
 
-    invoke-super {p0, p1, p2}, Lhte;->b(Lfuz;Ljuf;)V
+    move-result-object v0
 
-    iget-object p1, p0, Lhui;->b:Lhtg;
+    return-object v0
+.end method
 
-    iget-object p2, p1, Lhtg;->e:Lhiu;
+.method public final bridge synthetic fB(Ljava/lang/Object;)V
+    .locals 2
 
-    iget-object p1, p1, Lhtg;->g:Lhiw;
+    check-cast p1, Ljava/lang/String;
 
-    invoke-virtual {p2, p1}, Lhiu;->g(Lhiw;)V
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    iget-object v0, p0, Lhui;->a:Lhub;
+
+    iget-object v1, p0, Lhui;->b:Ljava/lang/String;
+
+    invoke-virtual {v0, v1, p1}, Lhub;->k(Ljava/lang/String;Ljava/lang/String;)V
 
     return-void
 .end method

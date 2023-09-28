@@ -1,700 +1,186 @@
 .class public final Lnkx;
 .super Ljava/lang/Object;
 
-# interfaces
-.implements Lnww;
-
-
-# static fields
-.field static final a:Lnww;
-
-.field static final b:Lnww;
-
-.field static final c:Lnww;
-
-.field static final d:Lnww;
-
-.field static final e:Lnww;
-
-.field static final f:Lnww;
-
-.field static final g:Lnww;
-
-.field static final h:Lnww;
-
-.field static final i:Lnww;
-
-.field static final j:Lnww;
-
-.field static final k:Lnww;
-
-.field static final l:Lnww;
-
-.field static final m:Lnww;
-
-.field static final n:Lnww;
-
-.field static final o:Lnww;
-
-.field static final p:Lnww;
-
-.field public static final q:Lnww;
-
-.field public static final r:Lnww;
-
-.field public static final s:Lnww;
-
-.field public static final t:Lnww;
-
-.field public static final u:Lnww;
-
 
 # instance fields
-.field private final synthetic v:I
+.field public final a:Lpqm;
+
+.field public final b:Lpos;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
-
-    new-instance v0, Lnkx;
-
-    const/16 v1, 0x14
-
-    invoke-direct {v0, v1}, Lnkx;-><init>(I)V
-
-    sput-object v0, Lnkx;->u:Lnww;
-
-    new-instance v0, Lnkx;
-
-    const/16 v1, 0x13
-
-    invoke-direct {v0, v1}, Lnkx;-><init>(I)V
-
-    sput-object v0, Lnkx;->t:Lnww;
-
-    new-instance v0, Lnkx;
-
-    const/16 v1, 0x12
-
-    invoke-direct {v0, v1}, Lnkx;-><init>(I)V
-
-    sput-object v0, Lnkx;->s:Lnww;
-
-    new-instance v0, Lnkx;
-
-    const/16 v1, 0x11
-
-    invoke-direct {v0, v1}, Lnkx;-><init>(I)V
-
-    sput-object v0, Lnkx;->r:Lnww;
-
-    new-instance v0, Lnkx;
-
-    const/16 v1, 0x10
-
-    invoke-direct {v0, v1}, Lnkx;-><init>(I)V
-
-    sput-object v0, Lnkx;->q:Lnww;
-
-    new-instance v0, Lnkx;
-
-    const/16 v1, 0xf
-
-    invoke-direct {v0, v1}, Lnkx;-><init>(I)V
-
-    sput-object v0, Lnkx;->p:Lnww;
-
-    new-instance v0, Lnkx;
-
-    const/16 v1, 0xe
-
-    invoke-direct {v0, v1}, Lnkx;-><init>(I)V
-
-    sput-object v0, Lnkx;->o:Lnww;
-
-    new-instance v0, Lnkx;
-
-    const/16 v1, 0xd
-
-    invoke-direct {v0, v1}, Lnkx;-><init>(I)V
-
-    sput-object v0, Lnkx;->n:Lnww;
-
-    new-instance v0, Lnkx;
-
-    const/16 v1, 0xc
-
-    invoke-direct {v0, v1}, Lnkx;-><init>(I)V
-
-    sput-object v0, Lnkx;->m:Lnww;
-
-    new-instance v0, Lnkx;
-
-    const/16 v1, 0xb
-
-    invoke-direct {v0, v1}, Lnkx;-><init>(I)V
-
-    sput-object v0, Lnkx;->l:Lnww;
-
-    new-instance v0, Lnkx;
-
-    const/16 v1, 0xa
-
-    invoke-direct {v0, v1}, Lnkx;-><init>(I)V
-
-    sput-object v0, Lnkx;->k:Lnww;
-
-    new-instance v0, Lnkx;
-
-    const/16 v1, 0x9
-
-    invoke-direct {v0, v1}, Lnkx;-><init>(I)V
-
-    sput-object v0, Lnkx;->j:Lnww;
-
-    new-instance v0, Lnkx;
-
-    const/16 v1, 0x8
-
-    invoke-direct {v0, v1}, Lnkx;-><init>(I)V
-
-    sput-object v0, Lnkx;->i:Lnww;
-
-    new-instance v0, Lnkx;
-
-    const/4 v1, 0x7
-
-    invoke-direct {v0, v1}, Lnkx;-><init>(I)V
-
-    sput-object v0, Lnkx;->h:Lnww;
-
-    new-instance v0, Lnkx;
-
-    const/4 v1, 0x6
-
-    invoke-direct {v0, v1}, Lnkx;-><init>(I)V
-
-    sput-object v0, Lnkx;->g:Lnww;
-
-    new-instance v0, Lnkx;
-
-    const/4 v1, 0x5
-
-    invoke-direct {v0, v1}, Lnkx;-><init>(I)V
-
-    sput-object v0, Lnkx;->f:Lnww;
-
-    new-instance v0, Lnkx;
-
-    const/4 v1, 0x4
-
-    invoke-direct {v0, v1}, Lnkx;-><init>(I)V
-
-    sput-object v0, Lnkx;->e:Lnww;
-
-    new-instance v0, Lnkx;
-
-    const/4 v1, 0x3
-
-    invoke-direct {v0, v1}, Lnkx;-><init>(I)V
-
-    sput-object v0, Lnkx;->d:Lnww;
-
-    new-instance v0, Lnkx;
-
-    const/4 v1, 0x2
-
-    invoke-direct {v0, v1}, Lnkx;-><init>(I)V
-
-    sput-object v0, Lnkx;->c:Lnww;
-
-    new-instance v0, Lnkx;
-
-    const/4 v1, 0x1
-
-    invoke-direct {v0, v1}, Lnkx;-><init>(I)V
-
-    sput-object v0, Lnkx;->b:Lnww;
-
-    new-instance v0, Lnkx;
-
-    const/4 v1, 0x0
-
-    invoke-direct {v0, v1}, Lnkx;-><init>(I)V
-
-    sput-object v0, Lnkx;->a:Lnww;
-
-    return-void
-.end method
-
-.method private constructor <init>(I)V
+.method public constructor <init>()V
     .locals 0
-
-    iput p1, p0, Lnkx;->v:I
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
+.method public constructor <init>(Lpqm;Lpos;)V
+    .locals 0
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    if-eqz p1, :cond_1
+
+    iput-object p1, p0, Lnkx;->a:Lpqm;
+
+    if-eqz p2, :cond_0
+
+    iput-object p2, p0, Lnkx;->b:Lpos;
+
+    return-void
+
+    :cond_0
+    new-instance p1, Ljava/lang/NullPointerException;
+
+    const-string p2, "Null extensionRegistryLite"
+
+    invoke-direct {p1, p2}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
+
+    throw p1
+
+    :cond_1
+    new-instance p1, Ljava/lang/NullPointerException;
+
+    const-string p2, "Null defaultValue"
+
+    invoke-direct {p1, p2}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
+
+    throw p1
+.end method
+
 
 # virtual methods
-.method public final a(I)Z
+.method public final equals(Ljava/lang/Object;)Z
     .locals 4
 
-    iget v0, p0, Lnkx;->v:I
+    const/4 v0, 0x1
 
-    const/4 v1, 0x0
+    if-ne p1, p0, :cond_0
+
+    return v0
+
+    :cond_0
+    instance-of v1, p1, Lnkx;
 
     const/4 v2, 0x0
 
-    const/4 v3, 0x1
+    if-eqz v1, :cond_1
 
-    packed-switch v0, :pswitch_data_0
+    check-cast p1, Lnkx;
 
-    invoke-static {p1}, Lkwp;->ay(I)I
+    iget-object v1, p0, Lnkx;->a:Lpqm;
 
-    move-result p1
+    iget-object v3, p1, Lnkx;->a:Lpqm;
 
-    if-eqz p1, :cond_5
+    invoke-virtual {v1, v3}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
 
-    return v3
+    move-result v1
 
-    :pswitch_0
-    invoke-static {p1}, Lnsy;->c(I)I
+    if-eqz v1, :cond_1
 
-    move-result p1
+    iget-object v1, p0, Lnkx;->b:Lpos;
 
-    if-eqz p1, :cond_0
+    iget-object p1, p1, Lnkx;->b:Lpos;
 
-    return v3
-
-    :cond_0
-    return v2
-
-    :pswitch_1
-    packed-switch p1, :pswitch_data_1
-
-    return v2
-
-    :pswitch_2
-    return v3
-
-    :pswitch_3
-    packed-switch p1, :pswitch_data_2
-
-    return v2
-
-    :pswitch_4
-    return v3
-
-    :pswitch_5
-    invoke-static {p1}, Lnsy;->m(I)I
+    invoke-virtual {v1, p1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
 
     move-result p1
 
     if-eqz p1, :cond_1
 
-    return v3
+    return v0
 
     :cond_1
     return v2
+.end method
 
-    :pswitch_6
-    packed-switch p1, :pswitch_data_3
+.method public final hashCode()I
+    .locals 2
 
-    return v2
+    iget-object v0, p0, Lnkx;->a:Lpqm;
 
-    :pswitch_7
-    return v3
+    invoke-virtual {v0}, Ljava/lang/Object;->hashCode()I
 
-    :pswitch_8
-    invoke-static {p1}, Lndd;->p(I)I
+    move-result v0
 
-    move-result p1
+    const v1, 0xf4243
 
-    if-eqz p1, :cond_2
+    xor-int/2addr v0, v1
 
-    return v3
+    mul-int v0, v0, v1
 
-    :cond_2
-    return v2
+    iget-object v1, p0, Lnkx;->b:Lpos;
 
-    :pswitch_9
-    sget-object v0, Lnlm;->a:Lnlm;
+    invoke-virtual {v1}, Ljava/lang/Object;->hashCode()I
 
-    packed-switch p1, :pswitch_data_4
+    move-result v1
 
-    goto :goto_0
+    xor-int/2addr v0, v1
 
-    :pswitch_a
-    sget-object v1, Lnlm;->f:Lnlm;
+    return v0
+.end method
 
-    goto :goto_0
+.method public final toString()Ljava/lang/String;
+    .locals 5
 
-    :pswitch_b
-    sget-object v1, Lnlm;->e:Lnlm;
+    iget-object v0, p0, Lnkx;->a:Lpqm;
 
-    goto :goto_0
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
-    :pswitch_c
-    sget-object v1, Lnlm;->d:Lnlm;
+    move-result-object v0
 
-    goto :goto_0
+    iget-object v1, p0, Lnkx;->b:Lpos;
 
-    :pswitch_d
-    sget-object v1, Lnlm;->c:Lnlm;
+    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
-    goto :goto_0
+    move-result-object v1
 
-    :pswitch_e
-    sget-object v1, Lnlm;->b:Lnlm;
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
-    goto :goto_0
+    move-result-object v2
 
-    :pswitch_f
-    sget-object v1, Lnlm;->a:Lnlm;
+    invoke-virtual {v2}, Ljava/lang/String;->length()I
 
-    :goto_0
-    if-eqz v1, :cond_3
+    move-result v2
 
-    return v3
+    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
-    :cond_3
-    return v2
+    move-result-object v3
 
-    :pswitch_10
-    packed-switch p1, :pswitch_data_5
+    invoke-virtual {v3}, Ljava/lang/String;->length()I
 
-    return v2
+    move-result v3
 
-    :pswitch_11
-    return v3
+    new-instance v4, Ljava/lang/StringBuilder;
 
-    :pswitch_12
-    packed-switch p1, :pswitch_data_6
+    add-int/lit8 v2, v2, 0x36
 
-    return v2
+    add-int/2addr v2, v3
 
-    :pswitch_13
-    return v3
+    invoke-direct {v4, v2}, Ljava/lang/StringBuilder;-><init>(I)V
 
-    :pswitch_14
-    packed-switch p1, :pswitch_data_7
+    const-string v2, "ProtoSerializer{defaultValue="
 
-    return v2
+    invoke-virtual {v4, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    :pswitch_15
-    return v3
+    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    :pswitch_16
-    packed-switch p1, :pswitch_data_8
+    const-string v0, ", extensionRegistryLite="
 
-    return v2
+    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    :pswitch_17
-    return v3
+    invoke-virtual {v4, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    :pswitch_18
-    packed-switch p1, :pswitch_data_9
+    const-string v0, "}"
 
-    return v2
+    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    :pswitch_19
-    return v3
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    :pswitch_1a
-    sget-object v0, Lnlc;->a:Lnlc;
+    move-result-object v0
 
-    packed-switch p1, :pswitch_data_a
-
-    goto :goto_1
-
-    :pswitch_1b
-    sget-object v1, Lnlc;->g:Lnlc;
-
-    goto :goto_1
-
-    :pswitch_1c
-    sget-object v1, Lnlc;->f:Lnlc;
-
-    goto :goto_1
-
-    :pswitch_1d
-    sget-object v1, Lnlc;->e:Lnlc;
-
-    goto :goto_1
-
-    :pswitch_1e
-    sget-object v1, Lnlc;->d:Lnlc;
-
-    goto :goto_1
-
-    :pswitch_1f
-    sget-object v1, Lnlc;->c:Lnlc;
-
-    goto :goto_1
-
-    :pswitch_20
-    sget-object v1, Lnlc;->b:Lnlc;
-
-    goto :goto_1
-
-    :pswitch_21
-    sget-object v1, Lnlc;->a:Lnlc;
-
-    :goto_1
-    if-eqz v1, :cond_4
-
-    return v3
-
-    :cond_4
-    return v2
-
-    :pswitch_22
-    packed-switch p1, :pswitch_data_b
-
-    return v2
-
-    :pswitch_23
-    return v3
-
-    :pswitch_24
-    packed-switch p1, :pswitch_data_c
-
-    return v2
-
-    :pswitch_25
-    return v3
-
-    :pswitch_26
-    packed-switch p1, :pswitch_data_d
-
-    return v2
-
-    :pswitch_27
-    return v3
-
-    :pswitch_28
-    packed-switch p1, :pswitch_data_e
-
-    return v2
-
-    :pswitch_29
-    return v3
-
-    :pswitch_2a
-    packed-switch p1, :pswitch_data_f
-
-    return v2
-
-    :pswitch_2b
-    return v3
-
-    :pswitch_2c
-    packed-switch p1, :pswitch_data_10
-
-    return v2
-
-    :pswitch_2d
-    return v3
-
-    :pswitch_2e
-    packed-switch p1, :pswitch_data_11
-
-    return v2
-
-    :pswitch_2f
-    return v3
-
-    :cond_5
-    return v2
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_2e
-        :pswitch_2c
-        :pswitch_2a
-        :pswitch_28
-        :pswitch_26
-        :pswitch_24
-        :pswitch_22
-        :pswitch_1a
-        :pswitch_18
-        :pswitch_16
-        :pswitch_14
-        :pswitch_12
-        :pswitch_10
-        :pswitch_9
-        :pswitch_8
-        :pswitch_6
-        :pswitch_5
-        :pswitch_3
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
-
-    :pswitch_data_1
-    .packed-switch 0x0
-        :pswitch_2
-        :pswitch_2
-        :pswitch_2
-        :pswitch_2
-    .end packed-switch
-
-    :pswitch_data_2
-    .packed-switch 0x0
-        :pswitch_4
-        :pswitch_4
-        :pswitch_4
-    .end packed-switch
-
-    :pswitch_data_3
-    .packed-switch 0x0
-        :pswitch_7
-        :pswitch_7
-        :pswitch_7
-        :pswitch_7
-        :pswitch_7
-    .end packed-switch
-
-    :pswitch_data_4
-    .packed-switch 0x0
-        :pswitch_f
-        :pswitch_e
-        :pswitch_d
-        :pswitch_c
-        :pswitch_b
-        :pswitch_a
-    .end packed-switch
-
-    :pswitch_data_5
-    .packed-switch 0x0
-        :pswitch_11
-        :pswitch_11
-        :pswitch_11
-        :pswitch_11
-        :pswitch_11
-    .end packed-switch
-
-    :pswitch_data_6
-    .packed-switch 0x0
-        :pswitch_13
-        :pswitch_13
-        :pswitch_13
-        :pswitch_13
-        :pswitch_13
-        :pswitch_13
-        :pswitch_13
-        :pswitch_13
-    .end packed-switch
-
-    :pswitch_data_7
-    .packed-switch 0x0
-        :pswitch_15
-        :pswitch_15
-        :pswitch_15
-    .end packed-switch
-
-    :pswitch_data_8
-    .packed-switch 0x0
-        :pswitch_17
-        :pswitch_17
-        :pswitch_17
-        :pswitch_17
-        :pswitch_17
-        :pswitch_17
-        :pswitch_17
-        :pswitch_17
-        :pswitch_17
-        :pswitch_17
-        :pswitch_17
-    .end packed-switch
-
-    :pswitch_data_9
-    .packed-switch 0x0
-        :pswitch_19
-        :pswitch_19
-    .end packed-switch
-
-    :pswitch_data_a
-    .packed-switch 0x0
-        :pswitch_21
-        :pswitch_20
-        :pswitch_1f
-        :pswitch_1e
-        :pswitch_1d
-        :pswitch_1c
-        :pswitch_1b
-    .end packed-switch
-
-    :pswitch_data_b
-    .packed-switch 0x0
-        :pswitch_23
-        :pswitch_23
-        :pswitch_23
-    .end packed-switch
-
-    :pswitch_data_c
-    .packed-switch 0x0
-        :pswitch_25
-        :pswitch_25
-        :pswitch_25
-        :pswitch_25
-        :pswitch_25
-        :pswitch_25
-        :pswitch_25
-        :pswitch_25
-        :pswitch_25
-    .end packed-switch
-
-    :pswitch_data_d
-    .packed-switch 0x0
-        :pswitch_27
-        :pswitch_27
-        :pswitch_27
-        :pswitch_27
-    .end packed-switch
-
-    :pswitch_data_e
-    .packed-switch 0x0
-        :pswitch_29
-        :pswitch_29
-        :pswitch_29
-    .end packed-switch
-
-    :pswitch_data_f
-    .packed-switch 0x0
-        :pswitch_2b
-        :pswitch_2b
-        :pswitch_2b
-        :pswitch_2b
-        :pswitch_2b
-        :pswitch_2b
-        :pswitch_2b
-        :pswitch_2b
-        :pswitch_2b
-        :pswitch_2b
-        :pswitch_2b
-        :pswitch_2b
-        :pswitch_2b
-        :pswitch_2b
-        :pswitch_2b
-    .end packed-switch
-
-    :pswitch_data_10
-    .packed-switch 0x0
-        :pswitch_2d
-        :pswitch_2d
-        :pswitch_2d
-        :pswitch_2d
-        :pswitch_2d
-    .end packed-switch
-
-    :pswitch_data_11
-    .packed-switch 0x0
-        :pswitch_2f
-        :pswitch_2f
-    .end packed-switch
+    return-object v0
 .end method

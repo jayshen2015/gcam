@@ -1,45 +1,46 @@
-.class public final Lepu;
-.super Ljava/lang/Object;
-
-# interfaces
-.implements Logk;
+.class final Lepu;
+.super Landroid/graphics/drawable/Animatable2$AnimationCallback;
 
 
 # instance fields
-.field private final a:Loiw;
+.field final synthetic a:Landroid/graphics/drawable/AnimatedVectorDrawable;
+
+.field final synthetic b:Lepw;
 
 
 # direct methods
-.method public constructor <init>(Loiw;)V
+.method public constructor <init>(Lepw;Landroid/graphics/drawable/AnimatedVectorDrawable;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lepu;->b:Lepw;
 
-    iput-object p1, p0, Lepu;->a:Loiw;
+    iput-object p2, p0, Lepu;->a:Landroid/graphics/drawable/AnimatedVectorDrawable;
+
+    invoke-direct {p0}, Landroid/graphics/drawable/Animatable2$AnimationCallback;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Lcvr;
-    .locals 2
+.method public final onAnimationEnd(Landroid/graphics/drawable/Drawable;)V
+    .locals 3
 
-    iget-object v0, p0, Lepu;->a:Loiw;
+    iget-object p1, p0, Lepu;->b:Lepw;
 
-    new-instance v1, Lcvr;
+    iget-object p1, p1, Lepw;->a:Llar;
 
-    invoke-direct {v1, v0}, Lcvr;-><init>(Loiw;)V
+    iget-object v0, p0, Lepu;->a:Landroid/graphics/drawable/AnimatedVectorDrawable;
 
-    return-object v1
-.end method
+    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-.method public final bridge synthetic get()Ljava/lang/Object;
-    .locals 1
+    new-instance v1, Lfkm;
 
-    invoke-virtual {p0}, Lepu;->a()Lcvr;
+    const/4 v2, 0x1
 
-    move-result-object v0
+    invoke-direct {v1, v0, v2}, Lfkm;-><init>(Landroid/graphics/drawable/AnimatedVectorDrawable;I)V
 
-    return-object v0
+    invoke-virtual {p1, v1}, Llar;->execute(Ljava/lang/Runnable;)V
+
+    return-void
 .end method

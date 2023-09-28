@@ -1,13 +1,23 @@
-.class public interface abstract Lfdd;
+.class final Lfdd;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lkad;
+.implements Lawc;
+
+
+# direct methods
+.method public constructor <init>()V
+    .locals 0
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method
 
 
 # virtual methods
-.method public abstract a(ZZLklv;Z)V
-.end method
+.method public final a([B)V
+    .locals 0
 
-.method public abstract b(ZLklv;Z)V
+    return-void
 .end method

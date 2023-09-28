@@ -1,98 +1,119 @@
-.class public final enum Lecy;
-.super Ljava/lang/Enum;
+.class public final synthetic Lecy;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Lcom/google/googlex/gcam/hdrplus/EncodedBlobCallback;
 
 
-# static fields
-.field public static final enum a:Lecy;
+# instance fields
+.field public final synthetic a:Ledd;
 
-.field public static final enum b:Lecy;
-
-.field public static final enum c:Lecy;
-
-.field public static final enum d:Lecy;
-
-.field private static final synthetic e:[Lecy;
+.field private final synthetic b:I
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 9
-
-    new-instance v0, Lecy;
-
-    const-string v1, "REGULAR"
-
-    const/4 v2, 0x0
-
-    invoke-direct {v0, v1, v2}, Lecy;-><init>(Ljava/lang/String;I)V
-
-    sput-object v0, Lecy;->a:Lecy;
-
-    new-instance v1, Lecy;
-
-    const-string v3, "PORTRAIT"
-
-    const/4 v4, 0x1
-
-    invoke-direct {v1, v3, v4}, Lecy;-><init>(Ljava/lang/String;I)V
-
-    sput-object v1, Lecy;->b:Lecy;
-
-    new-instance v3, Lecy;
-
-    const-string v5, "LONG_EXPOSURE"
-
-    const/4 v6, 0x2
-
-    invoke-direct {v3, v5, v6}, Lecy;-><init>(Ljava/lang/String;I)V
-
-    sput-object v3, Lecy;->c:Lecy;
-
-    new-instance v5, Lecy;
-
-    const-string v7, "MOTION_BLUR"
-
-    const/4 v8, 0x3
-
-    invoke-direct {v5, v7, v8}, Lecy;-><init>(Ljava/lang/String;I)V
-
-    sput-object v5, Lecy;->d:Lecy;
-
-    const/4 v7, 0x4
-
-    new-array v7, v7, [Lecy;
-
-    aput-object v0, v7, v2
-
-    aput-object v1, v7, v4
-
-    aput-object v3, v7, v6
-
-    aput-object v5, v7, v8
-
-    sput-object v7, Lecy;->e:[Lecy;
-
-    return-void
-.end method
-
-.method private constructor <init>(Ljava/lang/String;I)V
+.method public synthetic constructor <init>(Ledd;I)V
     .locals 0
 
-    invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+    iput p2, p0, Lecy;->b:I
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lecy;->a:Ledd;
 
     return-void
 .end method
 
-.method public static values()[Lecy;
-    .locals 1
 
-    sget-object v0, Lecy;->e:[Lecy;
+# virtual methods
+.method public final onDataAvailable(ILjava/nio/ByteBuffer;II)V
+    .locals 3
 
-    invoke-virtual {v0}, [Lecy;->clone()Ljava/lang/Object;
+    iget p1, p0, Lecy;->b:I
 
-    move-result-object v0
+    const/4 v0, 0x0
 
-    check-cast v0, [Lecy;
+    const/4 v1, 0x1
 
-    return-object v0
+    packed-switch p1, :pswitch_data_0
+
+    iget-object p1, p0, Lecy;->a:Ledd;
+
+    invoke-virtual {p2}, Ljava/nio/ByteBuffer;->capacity()I
+
+    iget p3, p1, Ledd;->q:I
+
+    if-ne p3, v1, :cond_1
+
+    const/4 v0, 0x1
+
+    goto :goto_1
+
+    :pswitch_0
+    iget-object p1, p0, Lecy;->a:Ledd;
+
+    invoke-virtual {p2}, Ljava/nio/ByteBuffer;->capacity()I
+
+    iget v2, p1, Ledd;->q:I
+
+    if-ne v2, v1, :cond_0
+
+    const/4 v0, 0x1
+
+    goto :goto_0
+
+    :cond_0
+    :goto_0
+    invoke-static {v0}, Lobr;->aQ(Z)V
+
+    iget-object p1, p1, Ledd;->m:Ledf;
+
+    invoke-virtual {p1}, Ledf;->c()Lojc;
+
+    move-result-object p1
+
+    invoke-virtual {p1}, Lojc;->c()Ljava/lang/Object;
+
+    move-result-object p1
+
+    check-cast p1, Lebs;
+
+    new-instance v0, Lece;
+
+    invoke-direct {v0, p2, p3, p4}, Lece;-><init>(Ljava/nio/ByteBuffer;II)V
+
+    invoke-interface {p1, v0}, Lebs;->a(Lece;)V
+
+    return-void
+
+    :cond_1
+    :goto_1
+    invoke-static {v0}, Lobr;->aQ(Z)V
+
+    iget-object p1, p1, Ledd;->m:Ledf;
+
+    invoke-virtual {p1}, Ledf;->b()Lojc;
+
+    move-result-object p1
+
+    invoke-virtual {p1}, Lojc;->c()Ljava/lang/Object;
+
+    move-result-object p1
+
+    check-cast p1, Lebp;
+
+    new-instance p3, Ldzf;
+
+    invoke-direct {p3, p2}, Ldzf;-><init>(Ljava/nio/ByteBuffer;)V
+
+    invoke-interface {p1, p3}, Lebp;->a(Ldzf;)V
+
+    return-void
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

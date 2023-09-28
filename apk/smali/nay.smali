@@ -1,163 +1,48 @@
-.class public Lnay;
+.class public final Lnay;
 .super Ljava/lang/Object;
 
-# interfaces
-.implements Lnaz;
+
+# static fields
+.field public static final a:Louj;
+
+
+# instance fields
+.field public final b:Lmxl;
+
+.field public final c:Lpyn;
+
+.field public final d:Lphw;
 
 
 # direct methods
-.method public constructor <init>()V
+.method static constructor <clinit>()V
+    .locals 1
+
+    const-string v0, "com/google/android/libraries/performance/primes/metrics/startup/StartupMetricRecordingService"
+
+    invoke-static {v0}, Louj;->h(Ljava/lang/String;)Louj;
+
+    move-result-object v0
+
+    sput-object v0, Lnay;->a:Louj;
+
+    return-void
+.end method
+
+.method public constructor <init>(Lmxm;Lphw;Ljava/util/concurrent/Executor;Lpyn;Lqkg;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    return-void
-.end method
+    iput-object p4, p0, Lnay;->c:Lpyn;
 
+    iput-object p2, p0, Lnay;->d:Lphw;
 
-# virtual methods
-.method public final A(Ljava/lang/String;Ljava/lang/Object;Z)V
-    .locals 0
+    invoke-virtual {p1, p3, p4, p5}, Lmxm;->a(Ljava/util/concurrent/Executor;Lpyn;Lqkg;)Lmxl;
 
-    return-void
-.end method
+    move-result-object p1
 
-.method public final B(Ljava/lang/String;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V
-    .locals 0
-
-    return-void
-.end method
-
-.method public final C(Ljava/lang/String;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V
-    .locals 0
-
-    return-void
-.end method
-
-.method public final D(Ljava/lang/String;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V
-    .locals 0
-
-    return-void
-.end method
-
-.method public final G(I)Lnaz;
-    .locals 0
-
-    return-object p0
-.end method
-
-.method public final H(Ljava/util/concurrent/TimeUnit;)Lnaz;
-    .locals 1
-
-    const-string v0, "time unit"
-
-    invoke-static {p1, v0}, Lndd;->h(Ljava/lang/Object;Ljava/lang/String;)V
-
-    return-object p0
-.end method
-
-.method public final I(FF)V
-    .locals 0
-
-    return-void
-.end method
-
-.method public final J(FLjava/lang/Object;)V
-    .locals 0
-
-    return-void
-.end method
-
-.method public final g(Lnbc;Ljava/lang/Object;)Lnaz;
-    .locals 0
-
-    return-object p0
-.end method
-
-.method public final h(Ljava/lang/Throwable;)Lnaz;
-    .locals 0
-
-    return-object p0
-.end method
-
-.method public final i(Lnbe;)Lnaz;
-    .locals 1
-
-    const-string v0, "stack size"
-
-    invoke-static {p1, v0}, Lndd;->h(Ljava/lang/Object;Ljava/lang/String;)V
-
-    return-object p0
-.end method
-
-.method public final o(Ljava/lang/String;)V
-    .locals 0
-
-    return-void
-.end method
-
-.method public final p(Ljava/lang/String;I)V
-    .locals 0
-
-    return-void
-.end method
-
-.method public final q(Ljava/lang/String;J)V
-    .locals 0
-
-    return-void
-.end method
-
-.method public final r(Ljava/lang/String;Ljava/lang/Object;)V
-    .locals 0
-
-    return-void
-.end method
-
-.method public final s(Ljava/lang/String;II)V
-    .locals 0
-
-    return-void
-.end method
-
-.method public final t(Ljava/lang/String;IJ)V
-    .locals 0
-
-    return-void
-.end method
-
-.method public final u(Ljava/lang/String;ILjava/lang/Object;)V
-    .locals 0
-
-    return-void
-.end method
-
-.method public final v(Ljava/lang/String;JJ)V
-    .locals 0
-
-    return-void
-.end method
-
-.method public final w(Ljava/lang/String;JLjava/lang/Object;)V
-    .locals 0
-
-    return-void
-.end method
-
-.method public final x(Ljava/lang/String;Ljava/lang/Object;I)V
-    .locals 0
-
-    return-void
-.end method
-
-.method public final y(Ljava/lang/String;Ljava/lang/Object;J)V
-    .locals 0
-
-    return-void
-.end method
-
-.method public final z(Ljava/lang/String;Ljava/lang/Object;Ljava/lang/Object;)V
-    .locals 0
+    iput-object p1, p0, Lnay;->b:Lmxl;
 
     return-void
 .end method

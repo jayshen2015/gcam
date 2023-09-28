@@ -1,176 +1,163 @@
 .class public final Lmek;
-.super Lnws;
+.super Ljava/lang/Object;
 
 # interfaces
-.implements Lnxz;
-
-
-# static fields
-.field public static final d:Lmek;
-
-.field private static volatile e:Lnyf;
+.implements Lmec;
 
 
 # instance fields
-.field public a:I
+.field public final a:Landroid/content/Context;
 
-.field public b:F
+.field private b:Lojc;
 
-.field public c:Ljava/lang/String;
+.field private final c:Ljava/lang/Object;
+
+.field private final d:Lkhx;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
+.method public constructor <init>(Landroid/content/Context;Lkhx;[B)V
+    .locals 0
 
-    new-instance v0, Lmek;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {v0}, Lmek;-><init>()V
+    sget-object p3, Loih;->a:Loih;
 
-    sput-object v0, Lmek;->d:Lmek;
+    iput-object p3, p0, Lmek;->b:Lojc;
 
-    const-class v1, Lmek;
+    new-instance p3, Ljava/lang/Object;
 
-    invoke-static {v1, v0}, Lnws;->aa(Ljava/lang/Class;Lnws;)V
+    invoke-direct {p3}, Ljava/lang/Object;-><init>()V
 
-    return-void
-.end method
+    iput-object p3, p0, Lmek;->c:Ljava/lang/Object;
 
-.method private constructor <init>()V
-    .locals 1
+    iput-object p1, p0, Lmek;->a:Landroid/content/Context;
 
-    invoke-direct {p0}, Lnws;-><init>()V
-
-    const-string v0, ""
-
-    iput-object v0, p0, Lmek;->c:Ljava/lang/String;
+    iput-object p2, p0, Lmek;->d:Lkhx;
 
     return-void
 .end method
 
 
 # virtual methods
-.method protected final a(ILjava/lang/Object;)Ljava/lang/Object;
-    .locals 3
+.method public final a()Z
+    .locals 2
 
-    add-int/lit8 p1, p1, -0x1
+    iget-object v0, p0, Lmek;->c:Ljava/lang/Object;
 
-    const/4 p2, 0x1
-
-    packed-switch p1, :pswitch_data_0
-
-    :pswitch_0
-    const/4 p1, 0x0
-
-    return-object p1
-
-    :pswitch_1
-    sget-object p1, Lmek;->e:Lnyf;
-
-    if-nez p1, :cond_1
-
-    const-class p2, Lmek;
-
-    monitor-enter p2
+    monitor-enter v0
 
     :try_start_0
-    sget-object p1, Lmek;->e:Lnyf;
+    iget-object v1, p0, Lmek;->b:Lojc;
 
-    if-nez p1, :cond_0
+    invoke-virtual {v1}, Lojc;->g()Z
 
-    new-instance p1, Lnwo;
+    move-result v1
 
-    sget-object v0, Lmek;->d:Lmek;
+    if-eqz v1, :cond_0
 
-    invoke-direct {p1, v0}, Lnwo;-><init>(Lnws;)V
+    iget-object v1, p0, Lmek;->b:Lojc;
 
-    sput-object p1, Lmek;->e:Lnyf;
+    invoke-virtual {v1}, Lojc;->c()Ljava/lang/Object;
 
-    :cond_0
-    monitor-exit p2
+    move-result-object v1
+
+    check-cast v1, Ljava/lang/Boolean;
+
+    invoke-virtual {v1}, Ljava/lang/Boolean;->booleanValue()Z
+
+    move-result v1
 
     goto :goto_0
 
-    :catchall_0
-    move-exception p1
+    :cond_0
+    invoke-virtual {p0}, Lmek;->b()Z
 
-    monitor-exit p2
+    move-result v1
+
+    :goto_0
+    monitor-exit v0
+
+    return v1
+
+    :catchall_0
+    move-exception v1
+
+    monitor-exit v0
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    throw p1
+    throw v1
+.end method
 
-    :cond_1
+.method public final b()Z
+    .locals 4
+
+    iget-object v0, p0, Lmek;->c:Ljava/lang/Object;
+
+    monitor-enter v0
+
+    const/4 v1, 0x0
+
+    :try_start_0
+    iget-object v2, p0, Lmek;->d:Lkhx;
+
+    iget-object v2, v2, Lkhx;->a:Landroid/content/Context;
+
+    invoke-virtual {v2}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+
+    move-result-object v2
+
+    const-string v3, "multi_cb"
+
+    invoke-static {v2, v3}, Landroid/provider/Settings$Global;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;)I
+
+    move-result v2
+
+    const/4 v3, 0x1
+
+    if-ne v2, v3, :cond_0
+
+    goto :goto_0
+
+    :cond_0
+    const/4 v3, 0x0
+
     :goto_0
-    return-object p1
+    invoke-static {v3}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
-    :pswitch_2
-    sget-object p1, Lmek;->d:Lmek;
+    move-result-object v2
 
-    return-object p1
+    invoke-static {v2}, Lojc;->i(Ljava/lang/Object;)Lojc;
 
-    :pswitch_3
-    new-instance p1, Lnwn;
+    move-result-object v2
 
-    sget-object p2, Lmek;->d:Lmek;
+    iput-object v2, p0, Lmek;->b:Lojc;
+    :try_end_0
+    .catch Landroid/provider/Settings$SettingNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    invoke-direct {p1, p2}, Lnwn;-><init>(Lnws;)V
+    :try_start_1
+    monitor-exit v0
 
-    return-object p1
+    return v3
 
-    :pswitch_4
-    new-instance p1, Lmek;
+    :catchall_0
+    move-exception v1
 
-    invoke-direct {p1}, Lmek;-><init>()V
+    goto :goto_1
 
-    return-object p1
+    :catch_0
+    move-exception v2
 
-    :pswitch_5
-    const-string p1, "a"
+    monitor-exit v0
 
-    const-string v0, "\u0001\u0002\u0000\u0001\u0002\u0004\u0002\u0000\u0000\u0000\u0002\u1001\u0001\u0004\u1008\u0003"
+    return v1
 
-    const/4 v1, 0x3
+    :goto_1
+    monitor-exit v0
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    new-array v1, v1, [Ljava/lang/Object;
-
-    const/4 v2, 0x0
-
-    aput-object p1, v1, v2
-
-    const-string p1, "b"
-
-    aput-object p1, v1, p2
-
-    const/4 p1, 0x2
-
-    const-string p2, "c"
-
-    aput-object p2, v1, p1
-
-    sget-object p1, Lmek;->d:Lmek;
-
-    invoke-static {p1, v0, v1}, Lmek;->X(Lnxy;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object p1
-
-    return-object p1
-
-    :pswitch_6
-    invoke-static {p2}, Ljava/lang/Byte;->valueOf(B)Ljava/lang/Byte;
-
-    move-result-object p1
-
-    return-object p1
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_6
-        :pswitch_0
-        :pswitch_5
-        :pswitch_4
-        :pswitch_3
-        :pswitch_2
-        :pswitch_1
-    .end packed-switch
+    throw v1
 .end method

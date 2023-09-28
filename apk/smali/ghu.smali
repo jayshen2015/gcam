@@ -1,337 +1,239 @@
 .class public final Lghu;
 .super Ljava/lang/Object;
 
-# interfaces
-.implements Lghh;
-
 
 # static fields
-.field private static final b:Lnak;
+.field public static final a:Louj;
 
 
 # instance fields
-.field public final a:Lgvu;
+.field public final b:Llar;
 
-.field private final c:Ljuh;
+.field public final c:Lbxj;
 
-.field private final d:Z
+.field public final d:Ljava/util/concurrent/Executor;
 
-.field private e:I
+.field public final e:Lgqy;
 
-.field private final f:Ljava/lang/Object;
+.field public final f:Lhpb;
 
-.field private final g:Lbkb;
+.field public final g:Landroid/util/DisplayMetrics;
+
+.field public final h:Lcom/google/android/apps/camera/stats/timing/CameraActivityTiming;
+
+.field public final i:Lijn;
+
+.field public final j:Lojc;
+
+.field public final k:Ljrl;
+
+.field public final l:Lcvo;
+
+.field public final m:Lojc;
+
+.field public n:Lght;
+
+.field public final o:Llwf;
+
+.field public final p:Lfbf;
+
+.field public final q:Lnez;
+
+.field private final r:Llkd;
 
 
 # direct methods
 .method static constructor <clinit>()V
     .locals 1
 
-    const-string v0, "com/google/android/apps/camera/pixelcamerakit/aaa/illumination/SelfieFlashIlluminationController"
+    const-string v0, "com/google/android/apps/camera/one/capture/CaptureOneCameraCreator"
 
-    invoke-static {v0}, Lnak;->h(Ljava/lang/String;)Lnak;
+    invoke-static {v0}, Louj;->h(Ljava/lang/String;)Louj;
 
     move-result-object v0
 
-    sput-object v0, Lghu;->b:Lnak;
+    sput-object v0, Lghu;->a:Louj;
 
     return-void
 .end method
 
-.method public constructor <init>(Lgvu;Ljuh;Lbkb;Ldhi;[B[B[B)V
-    .locals 0
+.method public constructor <init>(Llar;Lbxj;Lhpb;Ljava/util/concurrent/Executor;Lgqy;Llwf;Landroid/util/DisplayMetrics;Lcom/google/android/apps/camera/stats/timing/CameraActivityTiming;Lijn;Lcvo;Llkd;Lojc;Lfbf;Lojc;Lnez;Ljrl;[B)V
+    .locals 2
+
+    move-object v0, p0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    new-instance p5, Ljava/lang/Object;
+    move-object v1, p1
 
-    invoke-direct {p5}, Ljava/lang/Object;-><init>()V
+    iput-object v1, v0, Lghu;->b:Llar;
 
-    iput-object p5, p0, Lghu;->f:Ljava/lang/Object;
+    move-object v1, p2
 
-    iput-object p1, p0, Lghu;->a:Lgvu;
+    iput-object v1, v0, Lghu;->c:Lbxj;
 
-    iput-object p2, p0, Lghu;->c:Ljuh;
+    move-object v1, p4
 
-    iput-object p3, p0, Lghu;->g:Lbkb;
+    iput-object v1, v0, Lghu;->d:Ljava/util/concurrent/Executor;
 
-    sget-object p1, Ldho;->aD:Ldhj;
+    move-object v1, p5
 
-    invoke-interface {p4, p1}, Ldhi;->k(Ldhj;)Z
+    iput-object v1, v0, Lghu;->e:Lgqy;
 
-    move-result p1
+    move-object v1, p3
 
-    iput-boolean p1, p0, Lghu;->d:Z
+    iput-object v1, v0, Lghu;->f:Lhpb;
+
+    move-object v1, p6
+
+    iput-object v1, v0, Lghu;->o:Llwf;
+
+    move-object v1, p7
+
+    iput-object v1, v0, Lghu;->g:Landroid/util/DisplayMetrics;
+
+    move-object v1, p8
+
+    iput-object v1, v0, Lghu;->h:Lcom/google/android/apps/camera/stats/timing/CameraActivityTiming;
+
+    move-object v1, p9
+
+    iput-object v1, v0, Lghu;->i:Lijn;
+
+    move-object v1, p13
+
+    iput-object v1, v0, Lghu;->p:Lfbf;
+
+    move-object/from16 v1, p14
+
+    iput-object v1, v0, Lghu;->j:Lojc;
+
+    move-object/from16 v1, p15
+
+    iput-object v1, v0, Lghu;->q:Lnez;
+
+    move-object/from16 v1, p16
+
+    iput-object v1, v0, Lghu;->k:Ljrl;
+
+    move-object v1, p10
+
+    iput-object v1, v0, Lghu;->l:Lcvo;
+
+    move-object v1, p11
+
+    iput-object v1, v0, Lghu;->r:Llkd;
+
+    move-object v1, p12
+
+    iput-object v1, v0, Lghu;->m:Lojc;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Lker;)Lghg;
-    .locals 11
+.method public final a(Lfvx;)Lfwm;
+    .locals 3
 
-    new-instance v0, Lght;
+    iget-object v0, p0, Lghu;->o:Llwf;
 
-    const/4 v1, 0x0
+    iget-object v1, p1, Lfvx;->a:Llvs;
 
-    invoke-direct {v0, v1}, Lght;-><init>(I)V
+    invoke-virtual {v0, v1}, Llwf;->f(Llvs;)Lghx;
 
-    :try_start_0
-    iget-object v2, p0, Lghu;->f:Ljava/lang/Object;
+    new-instance v0, Lfwh;
 
-    monitor-enter v2
-    :try_end_0
-    .catch Ljava/util/concurrent/ExecutionException; {:try_start_0 .. :try_end_0} :catch_3
-    .catch Lkdf; {:try_start_0 .. :try_end_0} :catch_2
-    .catch Ljava/util/concurrent/CancellationException; {:try_start_0 .. :try_end_0} :catch_1
+    iget-object v1, p1, Lfvx;->a:Llvs;
 
-    :try_start_1
-    iget v3, p0, Lghu;->e:I
+    iget-object v2, p1, Lfvx;->d:Ljnl;
 
-    const/4 v4, 0x1
+    iget-object v2, v2, Ljnl;->a:Llig;
 
-    add-int/2addr v3, v4
+    invoke-direct {v0, v1, v2}, Lfwh;-><init>(Llvs;Llig;)V
 
-    iput v3, p0, Lghu;->e:I
+    new-instance v1, Lfwm;
 
-    if-ne v3, v4, :cond_1
+    invoke-direct {v1, p1, v0}, Lfwm;-><init>(Lfvx;Lfwh;)V
 
-    invoke-interface {p1}, Lker;->a()Lkdz;
-
-    move-result-object v3
-
-    const/4 v5, 0x5
-
-    invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v5
-
-    move-object v6, v3
-
-    check-cast v6, Lkhs;
-
-    iput-object v5, v6, Lkhs;->c:Ljava/lang/Integer;
-
-    iget-boolean v5, p0, Lghu;->d:Z
-
-    const/4 v6, 0x2
-
-    if-eq v4, v5, :cond_0
-
-    const/4 v5, 0x0
-
-    goto :goto_0
-
-    :cond_0
-    const/4 v5, 0x2
-
-    :goto_0
-    invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v5
-
-    move-object v7, v3
-
-    check-cast v7, Lkhs;
-
-    iput-object v5, v7, Lkhs;->e:Ljava/lang/Integer;
-
-    check-cast v3, Lkhs;
-
-    invoke-virtual {v3}, Lkhs;->d()Lkht;
-
-    move-result-object v3
-
-    invoke-interface {p1, v3}, Lker;->d(Lkea;)Lnou;
-
-    move-result-object p1
-
-    invoke-static {}, Lnph;->g()Lnph;
-
-    move-result-object v3
-
-    iget-object v5, p0, Lghu;->c:Ljuh;
-
-    new-instance v7, Lghq;
-
-    invoke-direct {v7, p0, v3}, Lghq;-><init>(Lghu;Lnph;)V
-
-    invoke-virtual {v5, v7}, Ljuh;->execute(Ljava/lang/Runnable;)V
-
-    new-array v5, v6, [Lnou;
-
-    aput-object p1, v5, v1
-
-    aput-object v3, v5, v4
-
-    invoke-static {v5}, Lnsy;->y([Lnou;)Lnou;
-
-    move-result-object p1
-
-    invoke-interface {p1}, Lnou;->get()Ljava/lang/Object;
-
-    invoke-interface {v3}, Lnou;->get()Ljava/lang/Object;
-
-    move-result-object p1
-
-    check-cast p1, Ljad;
-
-    iget-object v4, p0, Lghu;->g:Lbkb;
-
-    iget-wide v5, p1, Ljad;->a:J
-
-    new-instance p1, Lgdg;
-
-    invoke-direct {p1, v5, v6}, Lgdg;-><init>(J)V
-
-    new-instance v5, Lghm;
-
-    invoke-direct {v5, p1}, Lghm;-><init>(Lgdg;)V
-
-    iget-object v1, v4, Lbkb;->a:Ljava/lang/Object;
-
-    check-cast v1, Lgfz;
-
-    invoke-virtual {v1, v5}, Lgfz;->n(Lkfg;)V
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    :try_start_2
-    iget-object v1, p1, Lgdg;->a:Lnph;
-
-    new-instance v10, Lfqt;
-
-    const/16 v6, 0xe
-
-    const/4 v7, 0x0
-
-    const/4 v8, 0x0
-
-    const/4 v9, 0x0
-
-    move-object v3, v10
-
-    invoke-direct/range {v3 .. v9}, Lfqt;-><init>(Lbkb;Lghm;I[B[B[B)V
-
-    sget-object v3, Lnnv;->a:Lnnv;
-
-    invoke-interface {v1, v10, v3}, Lnou;->d(Ljava/lang/Runnable;Ljava/util/concurrent/Executor;)V
-
-    iget-object p1, p1, Lgdg;->a:Lnph;
-
-    invoke-interface {p1}, Lnou;->get()Ljava/lang/Object;
-
-    move-result-object p1
-
-    check-cast p1, Ljava/lang/Boolean;
-
-    invoke-virtual {p1}, Ljava/lang/Boolean;->booleanValue()Z
-    :try_end_2
-    .catch Ljava/util/concurrent/ExecutionException; {:try_start_2 .. :try_end_2} :catch_0
-    .catchall {:try_start_2 .. :try_end_2} :catchall_0
-
-    goto :goto_1
-
-    :catch_0
-    move-exception p1
-
-    :try_start_3
-    new-instance v1, Ljava/lang/RuntimeException;
-
-    invoke-direct {v1, p1}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/Throwable;)V
-
-    throw v1
-
-    :cond_1
-    :goto_1
-    monitor-exit v2
-
-    goto :goto_3
-
-    :catchall_0
-    move-exception p1
-
-    monitor-exit v2
-    :try_end_3
-    .catchall {:try_start_3 .. :try_end_3} :catchall_0
-
-    :try_start_4
-    throw p1
-    :try_end_4
-    .catch Ljava/util/concurrent/ExecutionException; {:try_start_4 .. :try_end_4} :catch_3
-    .catch Lkdf; {:try_start_4 .. :try_end_4} :catch_2
-    .catch Ljava/util/concurrent/CancellationException; {:try_start_4 .. :try_end_4} :catch_1
-
-    :catch_1
-    move-exception p1
-
-    goto :goto_2
-
-    :catch_2
-    move-exception p1
-
-    goto :goto_2
-
-    :catch_3
-    move-exception p1
-
-    :goto_2
-    sget-object v1, Lghu;->b:Lnak;
-
-    invoke-virtual {v1}, Lnaf;->b()Lnaz;
-
-    move-result-object v1
-
-    const-string v2, "Couldn\'t turn on selfie flash"
-
-    const/16 v3, 0xa6b
-
-    invoke-static {v1, v2, v3, p1}, Ld;->h(Lnaz;Ljava/lang/String;CLjava/lang/Throwable;)V
-
-    :goto_3
-    return-object v0
+    return-object v1
 .end method
 
-.method public final b()V
-    .locals 4
+.method public final b(Lfvx;Lpht;)Lpht;
+    .locals 0
 
-    iget-object v0, p0, Lghu;->f:Ljava/lang/Object;
+    invoke-virtual {p0, p1}, Lghu;->a(Lfvx;)Lfwm;
 
-    monitor-enter v0
+    move-result-object p1
 
-    :try_start_0
-    iget v1, p0, Lghu;->e:I
+    invoke-virtual {p0, p1, p2}, Lghu;->c(Lfwm;Lpht;)Lpht;
 
-    if-lez v1, :cond_0
+    move-result-object p1
 
-    add-int/lit8 v1, v1, -0x1
+    return-object p1
+.end method
 
-    iput v1, p0, Lghu;->e:I
+.method public final c(Lfwm;Lpht;)Lpht;
+    .locals 2
 
-    if-nez v1, :cond_0
+    iget-object v0, p0, Lghu;->r:Llkd;
 
-    iget-object v1, p0, Lghu;->c:Ljuh;
+    iget-object v1, p1, Lfwm;->a:Lfvx;
 
-    new-instance v2, Lghc;
+    iget-object v1, v1, Lfvx;->a:Llvs;
 
-    const/4 v3, 0x6
+    invoke-interface {v0, v1}, Llkd;->d(Llvs;)V
 
-    invoke-direct {v2, p0, v3}, Lghc;-><init>(Lghu;I)V
+    new-instance v0, Lghn;
 
-    invoke-virtual {v1, v2}, Ljuh;->execute(Ljava/lang/Runnable;)V
+    invoke-direct {v0, p0, p1, p2}, Lghn;-><init>(Lghu;Lfwm;Lpht;)V
 
-    :cond_0
-    monitor-exit v0
+    iget-object p1, p0, Lghu;->d:Ljava/util/concurrent/Executor;
+
+    invoke-static {v0, p1}, Lplk;->aa(Lpgj;Ljava/util/concurrent/Executor;)Lpht;
+
+    move-result-object p1
+
+    return-object p1
+.end method
+
+.method public final d()V
+    .locals 2
+
+    iget-object v0, p0, Lghu;->d:Ljava/util/concurrent/Executor;
+
+    new-instance v1, Lghq;
+
+    invoke-direct {v1, p0}, Lghq;-><init>(Lghu;)V
+
+    invoke-interface {v0, v1}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
+
+    return-void
+.end method
+
+.method public final e()V
+    .locals 2
+
+    iget-object v0, p0, Lghu;->n:Lght;
+
+    if-nez v0, :cond_0
 
     return-void
 
-    :catchall_0
-    move-exception v1
+    :cond_0
+    iget-object v1, v0, Lght;->b:Lgfu;
 
-    monitor-exit v0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    invoke-interface {v1}, Lgfu;->close()V
 
-    throw v1
+    iget-object v0, v0, Lght;->c:Lpht;
+
+    const/4 v1, 0x1
+
+    invoke-interface {v0, v1}, Lpht;->cancel(Z)Z
+
+    const/4 v0, 0x0
+
+    iput-object v0, p0, Lghu;->n:Lght;
+
+    return-void
 .end method

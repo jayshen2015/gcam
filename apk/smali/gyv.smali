@@ -1,90 +1,69 @@
-.class public final enum Lgyv;
-.super Ljava/lang/Enum;
+.class public final Lgyv;
+.super Ljava/lang/Object;
 
-
-# static fields
-.field public static final enum a:Lgyv;
-
-.field public static final enum b:Lgyv;
-
-.field public static final enum c:Lgyv;
-
-.field private static final synthetic e:[Lgyv;
+# interfaces
+.implements Lpys;
 
 
 # instance fields
-.field public final d:I
+.field private final a:Lqkg;
+
+.field private final b:Lqkg;
+
+.field private final c:Lqkg;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 7
+.method public constructor <init>(Lqkg;Lqkg;Lqkg;)V
+    .locals 0
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lgyv;->a:Lqkg;
+
+    iput-object p2, p0, Lgyv;->b:Lqkg;
+
+    iput-object p3, p0, Lgyv;->c:Lqkg;
+
+    return-void
+.end method
+
+.method public static a(Lqkg;Lqkg;Lqkg;)Lgyv;
+    .locals 1
 
     new-instance v0, Lgyv;
 
-    const-string v1, "LASAGNA_TR_SMALL"
+    invoke-direct {v0, p0, p1, p2}, Lgyv;-><init>(Lqkg;Lqkg;Lqkg;)V
 
-    const/4 v2, 0x0
-
-    invoke-direct {v0, v1, v2, v2}, Lgyv;-><init>(Ljava/lang/String;II)V
-
-    sput-object v0, Lgyv;->a:Lgyv;
-
-    new-instance v1, Lgyv;
-
-    const-string v3, "LASAGNA_TR_MEDIUM"
-
-    const/4 v4, 0x1
-
-    invoke-direct {v1, v3, v4, v4}, Lgyv;-><init>(Ljava/lang/String;II)V
-
-    sput-object v1, Lgyv;->b:Lgyv;
-
-    new-instance v3, Lgyv;
-
-    const-string v5, "LASAGNA_TR_LARGE"
-
-    const/4 v6, 0x2
-
-    invoke-direct {v3, v5, v6, v6}, Lgyv;-><init>(Ljava/lang/String;II)V
-
-    sput-object v3, Lgyv;->c:Lgyv;
-
-    const/4 v5, 0x3
-
-    new-array v5, v5, [Lgyv;
-
-    aput-object v0, v5, v2
-
-    aput-object v1, v5, v4
-
-    aput-object v3, v5, v6
-
-    sput-object v5, Lgyv;->e:[Lgyv;
-
-    return-void
+    return-object v0
 .end method
 
-.method private constructor <init>(Ljava/lang/String;II)V
-    .locals 0
 
-    invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+# virtual methods
+.method public final b()Lmeh;
+    .locals 5
 
-    iput p3, p0, Lgyv;->d:I
+    iget-object v0, p0, Lgyv;->a:Lqkg;
 
-    return-void
+    iget-object v1, p0, Lgyv;->b:Lqkg;
+
+    iget-object v2, p0, Lgyv;->c:Lqkg;
+
+    new-instance v3, Lmeh;
+
+    const/4 v4, 0x0
+
+    invoke-direct {v3, v0, v1, v2, v4}, Lmeh;-><init>(Lqkg;Lqkg;Lqkg;[C)V
+
+    return-object v3
 .end method
 
-.method public static values()[Lgyv;
+.method public final bridge synthetic get()Ljava/lang/Object;
     .locals 1
 
-    sget-object v0, Lgyv;->e:[Lgyv;
-
-    invoke-virtual {v0}, [Lgyv;->clone()Ljava/lang/Object;
+    invoke-virtual {p0}, Lgyv;->b()Lmeh;
 
     move-result-object v0
-
-    check-cast v0, [Lgyv;
 
     return-object v0
 .end method

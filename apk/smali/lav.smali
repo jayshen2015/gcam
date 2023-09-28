@@ -1,44 +1,84 @@
 .class public final Llav;
-.super Ljava/lang/RuntimeException;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Ljava/util/concurrent/Executor;
+
+
+# instance fields
+.field private final a:Llar;
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/String;)V
+.method public constructor <init>(Llar;)V
     .locals 0
 
-    invoke-direct {p0, p1}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Llav;->a:Llar;
 
     return-void
 .end method
 
-.method public static a(Lldg;)Llav;
-    .locals 3
 
-    new-instance v0, Llav;
+# virtual methods
+.method public final execute(Ljava/lang/Runnable;)V
+    .locals 4
 
-    invoke-virtual {p0}, Ljava/lang/Object;->toString()Ljava/lang/String;
+    invoke-static {}, Llar;->d()Z
 
-    move-result-object p0
+    move-result v0
 
-    new-instance v1, Ljava/lang/StringBuilder;
+    if-eqz v0, :cond_0
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-interface {p1}, Ljava/lang/Runnable;->run()V
 
-    const-string v2, "Could not create EGL context for version "
+    return-void
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    :cond_0
+    invoke-static {}, Lpih;->f()Lpih;
 
-    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result-object v0
 
-    const-string p0, "."
+    iget-object v1, p0, Llav;->a:Llar;
 
-    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    new-instance v2, Llau;
 
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    const/4 v3, 0x0
 
-    move-result-object p0
+    invoke-direct {v2, p1, v0, v3}, Llau;-><init>(Ljava/lang/Runnable;Lpih;I)V
 
-    invoke-direct {v0, p0}, Llav;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v1, v2}, Llar;->execute(Ljava/lang/Runnable;)V
 
-    return-object v0
+    :try_start_0
+    invoke-virtual {v0}, Lpih;->get()Ljava/lang/Object;
+    :try_end_0
+    .catch Ljava/lang/InterruptedException; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Ljava/util/concurrent/ExecutionException; {:try_start_0 .. :try_end_0} :catch_0
+
+    return-void
+
+    :catch_0
+    move-exception p1
+
+    new-instance v0, Ljava/lang/RuntimeException;
+
+    invoke-direct {v0, p1}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/Throwable;)V
+
+    throw v0
+
+    :catch_1
+    move-exception p1
+
+    invoke-static {}, Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/Thread;->interrupt()V
+
+    new-instance v0, Ljava/lang/RuntimeException;
+
+    invoke-direct {v0, p1}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/Throwable;)V
+
+    throw v0
 .end method

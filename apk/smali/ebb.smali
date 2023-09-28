@@ -1,86 +1,77 @@
 .class public final Lebb;
 .super Ljava/lang/Object;
 
+# interfaces
+.implements Liho;
+
+
+# static fields
+.field public static final a:Louj;
+
 
 # instance fields
-.field final synthetic a:Lgyq;
+.field public final b:Lqkg;
 
-.field final synthetic b:Z
+.field public final c:Lddf;
 
-.field public final synthetic c:Z
+.field public final d:Lljf;
 
-.field public final synthetic d:Z
+.field public final e:Lojc;
 
-.field final synthetic e:Z
+.field public final f:Lojc;
 
-.field public final synthetic f:Z
-
-.field public final synthetic g:Lgcc;
-
-.field final synthetic h:Z
-
-.field final synthetic i:Z
-
-.field public final synthetic j:Z
-
-.field public final synthetic k:Z
-
-.field public final synthetic l:Z
-
-.field public final synthetic m:Z
+.field private final g:Lpht;
 
 
 # direct methods
-.method public constructor <init>(Lgyq;ZZZZZLgcc;ZZZZZZ)V
+.method static constructor <clinit>()V
+    .locals 1
+
+    const-string v0, "com/google/android/apps/camera/hdrplus/HdrPlusPrewarmBehavior"
+
+    invoke-static {v0}, Louj;->h(Ljava/lang/String;)Louj;
+
+    move-result-object v0
+
+    sput-object v0, Lebb;->a:Louj;
+
+    return-void
+.end method
+
+.method public constructor <init>(Lqkg;Lddf;Lljf;Lojc;Lojc;Lpht;)V
     .locals 0
 
-    iput-object p1, p0, Lebb;->a:Lgyq;
-
-    iput-boolean p2, p0, Lebb;->b:Z
-
-    iput-boolean p3, p0, Lebb;->c:Z
-
-    iput-boolean p4, p0, Lebb;->d:Z
-
-    iput-boolean p5, p0, Lebb;->e:Z
-
-    iput-boolean p6, p0, Lebb;->f:Z
-
-    iput-object p7, p0, Lebb;->g:Lgcc;
-
-    iput-boolean p8, p0, Lebb;->h:Z
-
-    iput-boolean p9, p0, Lebb;->i:Z
-
-    iput-boolean p10, p0, Lebb;->j:Z
-
-    iput-boolean p11, p0, Lebb;->k:Z
-
-    iput-boolean p12, p0, Lebb;->l:Z
-
-    iput-boolean p13, p0, Lebb;->m:Z
-
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lebb;->b:Lqkg;
+
+    iput-object p2, p0, Lebb;->c:Lddf;
+
+    iput-object p3, p0, Lebb;->d:Lljf;
+
+    iput-object p4, p0, Lebb;->e:Lojc;
+
+    iput-object p5, p0, Lebb;->f:Lojc;
+
+    iput-object p6, p0, Lebb;->g:Lpht;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Lgyq;
-    .locals 1
+.method public final run()V
+    .locals 3
 
-    iget-boolean v0, p0, Lebb;->b:Z
+    iget-object v0, p0, Lebb;->g:Lpht;
 
-    if-eqz v0, :cond_0
+    new-instance v1, Leba;
 
-    iget-object v0, p0, Lebb;->a:Lgyq;
+    invoke-direct {v1, p0}, Leba;-><init>(Lebb;)V
 
-    goto :goto_0
+    sget-object v2, Lpgr;->a:Lpgr;
 
-    :cond_0
-    sget-object v0, Lgyq;->a:Lgyq;
+    invoke-static {v0, v1, v2}, Lmip;->ca(Lpht;Llht;Ljava/util/concurrent/Executor;)V
 
-    :goto_0
-    return-object v0
+    return-void
 .end method

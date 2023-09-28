@@ -1,210 +1,101 @@
-.class public final Lkug;
-.super Lnws;
-
-# interfaces
-.implements Lnxz;
-
-
-# static fields
-.field public static final f:Lkug;
-
-.field private static volatile g:Lnyf;
-
-
-# instance fields
-.field public a:I
-
-.field public b:Ljava/lang/String;
-
-.field public c:Ljava/lang/String;
-
-.field public d:I
-
-.field public e:I
+.class final Lkug;
+.super Lmip;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
+.method public constructor <init>()V
+    .locals 0
 
-    new-instance v0, Lkug;
-
-    invoke-direct {v0}, Lkug;-><init>()V
-
-    sput-object v0, Lkug;->f:Lkug;
-
-    const-class v1, Lkug;
-
-    invoke-static {v1, v0}, Lnws;->aa(Ljava/lang/Class;Lnws;)V
-
-    return-void
-.end method
-
-.method private constructor <init>()V
-    .locals 1
-
-    invoke-direct {p0}, Lnws;-><init>()V
-
-    const-string v0, ""
-
-    iput-object v0, p0, Lkug;->b:Ljava/lang/String;
-
-    iput-object v0, p0, Lkug;->c:Ljava/lang/String;
-
-    const/4 v0, -0x1
-
-    iput v0, p0, Lkug;->d:I
-
-    iput v0, p0, Lkug;->e:I
+    invoke-direct {p0}, Lmip;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method protected final a(ILjava/lang/Object;)Ljava/lang/Object;
-    .locals 3
+.method public final bridge synthetic u(Landroid/content/Context;Landroid/os/Looper;Lkmf;Ljava/lang/Object;Lkik;Lkil;)Lkie;
+    .locals 7
 
-    add-int/lit8 p1, p1, -0x1
+    check-cast p4, Lkuj;
 
-    const/4 p2, 0x1
+    new-instance p4, Lkuo;
 
-    packed-switch p1, :pswitch_data_0
+    iget-object v0, p3, Lkmf;->g:Lkuj;
 
-    :pswitch_0
-    const/4 p1, 0x0
+    iget-object v0, p3, Lkmf;->h:Ljava/lang/Integer;
 
-    return-object p1
+    new-instance v4, Landroid/os/Bundle;
 
-    :pswitch_1
-    sget-object p1, Lkug;->g:Lnyf;
+    invoke-direct {v4}, Landroid/os/Bundle;-><init>()V
 
-    if-nez p1, :cond_1
+    iget-object v1, p3, Lkmf;->a:Landroid/accounts/Account;
 
-    const-class p2, Lkug;
+    const-string v2, "com.google.android.gms.signin.internal.clientRequestedAccount"
 
-    monitor-enter p2
+    invoke-virtual {v4, v2, v1}, Landroid/os/Bundle;->putParcelable(Ljava/lang/String;Landroid/os/Parcelable;)V
 
-    :try_start_0
-    sget-object p1, Lkug;->g:Lnyf;
+    if-eqz v0, :cond_0
 
-    if-nez p1, :cond_0
+    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
 
-    new-instance p1, Lnwo;
+    move-result v0
 
-    sget-object v0, Lkug;->f:Lkug;
+    const-string v1, "com.google.android.gms.common.internal.ClientSettings.sessionId"
 
-    invoke-direct {p1, v0}, Lnwo;-><init>(Lnws;)V
-
-    sput-object p1, Lkug;->g:Lnyf;
+    invoke-virtual {v4, v1, v0}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
 
     :cond_0
-    monitor-exit p2
+    const-string v0, "com.google.android.gms.signin.internal.offlineAccessRequested"
 
-    goto :goto_0
+    const/4 v1, 0x0
 
-    :catchall_0
-    move-exception p1
+    invoke-virtual {v4, v0, v1}, Landroid/os/Bundle;->putBoolean(Ljava/lang/String;Z)V
 
-    monitor-exit p2
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    const-string v0, "com.google.android.gms.signin.internal.idTokenRequested"
 
-    throw p1
+    invoke-virtual {v4, v0, v1}, Landroid/os/Bundle;->putBoolean(Ljava/lang/String;Z)V
 
-    :cond_1
-    :goto_0
-    return-object p1
-
-    :pswitch_2
-    sget-object p1, Lkug;->f:Lkug;
-
-    return-object p1
-
-    :pswitch_3
-    new-instance p1, Lnwn;
-
-    sget-object p2, Lkug;->f:Lkug;
-
-    invoke-direct {p1, p2}, Lnwn;-><init>(Lnws;)V
-
-    return-object p1
-
-    :pswitch_4
-    new-instance p1, Lkug;
-
-    invoke-direct {p1}, Lkug;-><init>()V
-
-    return-object p1
-
-    :pswitch_5
-    const-string p1, "a"
-
-    const-string v0, "\u0001\u0004\u0000\u0001\u0001\u0004\u0004\u0000\u0000\u0000\u0001\u1008\u0000\u0002\u1008\u0001\u0003\u100c\u0002\u0004\u100c\u0003"
-
-    const/4 v1, 0x7
-
-    new-array v1, v1, [Ljava/lang/Object;
+    const-string v0, "com.google.android.gms.signin.internal.serverClientId"
 
     const/4 v2, 0x0
 
-    aput-object p1, v1, v2
+    invoke-virtual {v4, v0, v2}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
-    const-string p1, "b"
+    const/4 v0, 0x1
 
-    aput-object p1, v1, p2
+    const-string v3, "com.google.android.gms.signin.internal.usePromptModeForAuthCode"
 
-    const/4 p1, 0x2
+    invoke-virtual {v4, v3, v0}, Landroid/os/Bundle;->putBoolean(Ljava/lang/String;Z)V
 
-    const-string p2, "c"
+    const-string v0, "com.google.android.gms.signin.internal.forceCodeForRefreshToken"
 
-    aput-object p2, v1, p1
+    invoke-virtual {v4, v0, v1}, Landroid/os/Bundle;->putBoolean(Ljava/lang/String;Z)V
 
-    const/4 p1, 0x3
+    const-string v0, "com.google.android.gms.signin.internal.hostedDomain"
 
-    const-string p2, "d"
+    invoke-virtual {v4, v0, v2}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
-    aput-object p2, v1, p1
+    const-string v0, "com.google.android.gms.signin.internal.logSessionId"
 
-    sget-object p1, Lkuf;->a:Lnww;
+    invoke-virtual {v4, v0, v2}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
-    const/4 p2, 0x6
+    const-string v0, "com.google.android.gms.signin.internal.waitForAccessTokenRefresh"
 
-    aput-object p1, v1, p2
+    invoke-virtual {v4, v0, v1}, Landroid/os/Bundle;->putBoolean(Ljava/lang/String;Z)V
 
-    const/4 p2, 0x4
+    move-object v0, p4
 
-    aput-object p1, v1, p2
+    move-object v1, p1
 
-    const/4 p1, 0x5
+    move-object v2, p2
 
-    const-string p2, "e"
+    move-object v3, p3
 
-    aput-object p2, v1, p1
+    move-object v5, p5
 
-    sget-object p1, Lkug;->f:Lkug;
+    move-object v6, p6
 
-    invoke-static {p1, v0, v1}, Lkug;->X(Lnxy;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-direct/range {v0 .. v6}, Lkuo;-><init>(Landroid/content/Context;Landroid/os/Looper;Lkmf;Landroid/os/Bundle;Lkik;Lkil;)V
 
-    move-result-object p1
-
-    return-object p1
-
-    :pswitch_6
-    invoke-static {p2}, Ljava/lang/Byte;->valueOf(B)Ljava/lang/Byte;
-
-    move-result-object p1
-
-    return-object p1
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_6
-        :pswitch_0
-        :pswitch_5
-        :pswitch_4
-        :pswitch_3
-        :pswitch_2
-        :pswitch_1
-    .end packed-switch
+    return-object p4
 .end method

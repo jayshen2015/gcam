@@ -1,20 +1,20 @@
 .class public Lcom/google/android/apps/camera/legacy/app/activity/CameraImageActivity;
-.super Leqw;
+.super Letd;
 
 
 # instance fields
-.field private t:Z
+.field private o:Z
 
 
 # direct methods
 .method public constructor <init>()V
     .locals 1
 
-    invoke-direct {p0}, Leqw;-><init>()V
+    invoke-direct {p0}, Letd;-><init>()V
 
     const/4 v0, 0x0
 
-    iput-boolean v0, p0, Lcom/google/android/apps/camera/legacy/app/activity/CameraImageActivity;->t:Z
+    iput-boolean v0, p0, Lcom/google/android/apps/camera/legacy/app/activity/CameraImageActivity;->o:Z
 
     return-void
 .end method
@@ -24,13 +24,13 @@
 .method public final isVoiceInteractionRoot()Z
     .locals 1
 
-    invoke-super {p0}, Leqw;->isVoiceInteractionRoot()Z
+    invoke-super {p0}, Letd;->isVoiceInteractionRoot()Z
 
     move-result v0
 
     if-nez v0, :cond_1
 
-    iget-boolean v0, p0, Lcom/google/android/apps/camera/legacy/app/activity/CameraImageActivity;->t:Z
+    iget-boolean v0, p0, Lcom/google/android/apps/camera/legacy/app/activity/CameraImageActivity;->o:Z
 
     if-eqz v0, :cond_0
 
@@ -49,11 +49,11 @@
 .end method
 
 .method protected final onCreate(Landroid/os/Bundle;)V
-    .locals 44
+    .locals 36
 
     move-object/from16 v0, p0
 
-    invoke-super/range {p0 .. p1}, Leqw;->onCreate(Landroid/os/Bundle;)V
+    invoke-super/range {p0 .. p1}, Letd;->onCreate(Landroid/os/Bundle;)V
 
     invoke-virtual/range {p0 .. p0}, Lcom/google/android/apps/camera/legacy/app/activity/CameraImageActivity;->getApplicationContext()Landroid/content/Context;
 
@@ -61,15 +61,15 @@
 
     check-cast v1, Lcom/google/android/apps/camera/legacy/app/app/CameraApp;
 
-    invoke-virtual {v1}, Lcom/google/android/apps/camera/legacy/app/app/CameraApp;->f()Lerw;
+    invoke-virtual {v1}, Lcom/google/android/apps/camera/legacy/app/app/CameraApp;->d()Leuv;
 
     move-result-object v1
 
-    invoke-virtual/range {p0 .. p0}, Leqw;->o()Lva;
+    invoke-virtual/range {p0 .. p0}, Letd;->l()Lete;
 
     move-result-object v2
 
-    invoke-virtual/range {p0 .. p0}, Leqw;->p()Lgxb;
+    invoke-virtual/range {p0 .. p0}, Letd;->k()Lemb;
 
     move-result-object v3
 
@@ -77,721 +77,579 @@
 
     invoke-virtual {v3}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    check-cast v1, Lesh;
+    check-cast v1, Lewb;
 
-    iget-object v1, v1, Lesh;->a:Lesh;
+    iget-object v1, v1, Lewb;->d:Lewb;
 
-    invoke-static {v3}, Ldwh;->c(Lgxb;)Ldwh;
+    invoke-static {v3}, Lemd;->b(Lemb;)Lemd;
 
     move-result-object v17
 
-    invoke-static {v3}, Lelo;->b(Lgxb;)Lelo;
+    invoke-static {v3}, Leme;->b(Lemb;)Leme;
 
     move-result-object v15
 
-    invoke-static {v2}, Leqz;->b(Lva;)Leqz;
-
-    move-result-object v14
-
-    iget-object v4, v1, Lesh;->E:Loiw;
-
-    iget-object v5, v1, Lesh;->u:Loiw;
-
-    invoke-static {v4, v5, v14}, Lcdl;->a(Loiw;Loiw;Loiw;)Lcdl;
+    invoke-static {v2}, Letg;->a(Lete;)Letg;
 
     move-result-object v4
 
-    invoke-static {v4}, Logj;->b(Loiw;)Loiw;
+    iget-object v5, v1, Lewb;->F:Lqkg;
+
+    iget-object v6, v1, Lewb;->w:Lqkg;
+
+    invoke-static {v5, v6, v4}, Lbng;->b(Lqkg;Lqkg;Lqkg;)Lbng;
 
     move-result-object v4
 
-    iget-object v5, v1, Lesh;->F:Loiw;
-
-    invoke-static {v4, v5}, Lcbk;->d(Loiw;Loiw;)Lcbk;
+    invoke-static {v4}, Lpyr;->b(Lqkg;)Lqkg;
 
     move-result-object v4
 
-    invoke-static {v4}, Logj;->b(Loiw;)Loiw;
+    iget-object v5, v1, Lewb;->G:Lqkg;
+
+    invoke-static {v4, v5}, Lbmw;->d(Lqkg;Lqkg;)Lbmw;
 
     move-result-object v4
 
-    iget-object v5, v1, Lesh;->fk:Loiw;
-
-    invoke-static {v5, v4}, Lcbk;->c(Loiw;Loiw;)Lcbk;
+    invoke-static {v4}, Lpyr;->b(Lqkg;)Lqkg;
 
     move-result-object v4
 
-    invoke-static {v4}, Logj;->b(Loiw;)Loiw;
+    iget-object v5, v1, Lewb;->bI:Lqkg;
+
+    invoke-static {v5, v4}, Lbmw;->c(Lqkg;Lqkg;)Lbmw;
+
+    move-result-object v4
+
+    invoke-static {v4}, Lpyr;->b(Lqkg;)Lqkg;
 
     move-result-object v18
 
-    invoke-static {v2}, Lerb;->b(Lva;)Lerb;
+    invoke-static {v2}, Leti;->a(Lete;)Leti;
 
     move-result-object v19
 
-    invoke-static {v2}, Lerc;->b(Lva;)Lerc;
+    invoke-static {v2}, Letj;->a(Lete;)Letj;
 
-    move-result-object v13
+    move-result-object v4
 
-    iget-object v4, v1, Lesh;->ej:Loiw;
+    iget-object v5, v1, Lewb;->cw:Lqkg;
 
-    iget-object v5, v1, Lesh;->D:Loiw;
+    iget-object v6, v1, Lewb;->az:Lqkg;
 
-    invoke-static {v4, v5}, Lhas;->b(Loiw;Loiw;)Lhas;
+    invoke-static {v5, v6}, Lhvp;->b(Lqkg;Lqkg;)Lhvp;
 
     move-result-object v20
 
-    iget-object v7, v1, Lesh;->fP:Loiw;
+    iget-object v7, v1, Lewb;->cO:Lqkg;
 
-    iget-object v8, v1, Lesh;->fQ:Loiw;
+    iget-object v8, v1, Lewb;->cP:Lqkg;
 
-    iget-object v9, v1, Lesh;->fR:Loiw;
+    iget-object v9, v1, Lewb;->cQ:Lqkg;
 
-    iget-object v10, v1, Lesh;->fS:Loiw;
+    iget-object v10, v1, Lewb;->cR:Lqkg;
 
-    iget-object v11, v1, Lesh;->fT:Loiw;
+    iget-object v11, v1, Lewb;->cS:Lqkg;
 
-    iget-object v12, v1, Lesh;->fU:Loiw;
+    iget-object v12, v1, Lewb;->cT:Lqkg;
 
-    iget-object v6, v1, Lesh;->f:Loiw;
+    iget-object v13, v1, Lewb;->i:Lqkg;
 
-    iget-object v5, v1, Lesh;->r:Loiw;
+    iget-object v14, v1, Lewb;->t:Lqkg;
 
-    iget-object v4, v1, Lesh;->l:Loiw;
+    iget-object v6, v1, Lewb;->o:Lqkg;
 
-    iget-object v0, v1, Lesh;->i:Loiw;
+    iget-object v5, v1, Lewb;->l:Lqkg;
 
-    move-object/from16 v16, v4
-
-    move-object v4, v13
-
-    move-object/from16 v21, v5
+    move-object/from16 v16, v5
 
     move-object/from16 v5, v17
 
-    move-object/from16 v22, v6
+    move-object/from16 v21, v6
 
     move-object/from16 v6, v20
 
-    move-object/from16 p1, v2
+    move-object v0, v15
 
-    move-object v2, v13
+    move-object/from16 v15, v21
 
-    move-object/from16 v13, v22
+    invoke-static/range {v4 .. v16}, Lcly;->a(Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;)Lcly;
 
-    move-object/from16 v22, v14
+    move-result-object v4
 
-    move-object/from16 v14, v21
-
-    move-object/from16 v21, v3
-
-    move-object v3, v15
-
-    move-object/from16 v15, v16
-
-    move-object/from16 v16, v0
-
-    invoke-static/range {v4 .. v16}, Leob;->a(Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;)Leob;
-
-    move-result-object v0
-
-    invoke-static {v0}, Logj;->b(Loiw;)Loiw;
+    invoke-static {v4}, Lpyr;->b(Lqkg;)Lqkg;
 
     move-result-object v7
 
-    iget-object v0, v1, Lesh;->fl:Loiw;
+    iget-object v4, v1, Lewb;->bJ:Lqkg;
 
-    invoke-static {v3, v0}, Lglw;->d(Loiw;Loiw;)Lglw;
+    invoke-static {v0, v4}, Lhgg;->b(Lqkg;Lqkg;)Lhgg;
 
-    move-result-object v0
+    move-result-object v4
 
-    invoke-static {v0}, Logj;->b(Loiw;)Loiw;
+    invoke-static {v4}, Lpyr;->b(Lqkg;)Lqkg;
 
     move-result-object v8
 
-    iget-object v9, v1, Lesh;->D:Loiw;
+    iget-object v9, v1, Lewb;->az:Lqkg;
 
     move-object/from16 v4, v19
 
-    move-object v6, v3
+    move-object v6, v0
 
-    invoke-static/range {v4 .. v9}, Ldpp;->e(Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;)Ldpp;
+    invoke-static/range {v4 .. v9}, Ledj;->c(Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;)Ledj;
 
-    move-result-object v0
+    move-result-object v4
 
-    invoke-static {v0}, Logj;->b(Loiw;)Loiw;
+    invoke-static {v4}, Lpyr;->b(Lqkg;)Lqkg;
 
     move-result-object v10
 
-    iget-object v6, v1, Lesh;->l:Loiw;
+    iget-object v6, v1, Lewb;->o:Lqkg;
 
-    iget-object v8, v1, Lesh;->h:Loiw;
+    iget-object v8, v1, Lewb;->k:Lqkg;
 
-    iget-object v9, v1, Lesh;->f:Loiw;
+    iget-object v9, v1, Lewb;->i:Lqkg;
 
     move-object/from16 v4, v17
 
-    move-object v5, v3
+    move-object v5, v0
 
     move-object/from16 v7, v18
 
-    invoke-static/range {v4 .. v10}, Lgoq;->c(Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;)Lgoq;
-
-    move-result-object v0
-
-    invoke-static {v0}, Logj;->b(Loiw;)Loiw;
-
-    move-result-object v0
-
-    iget-object v4, v1, Lesh;->ab:Loiw;
-
-    invoke-static {v4}, Lful;->b(Loiw;)Lful;
-
-    move-result-object v5
-
-    iget-object v4, v1, Lesh;->l:Loiw;
-
-    invoke-static {v3, v2, v4}, Lhhs;->d(Loiw;Loiw;Loiw;)Lhhs;
-
-    move-result-object v2
-
-    invoke-static {v2}, Logj;->b(Loiw;)Loiw;
-
-    move-result-object v2
-
-    iget-object v6, v1, Lesh;->aa:Loiw;
-
-    iget-object v7, v1, Lesh;->ab:Loiw;
-
-    iget-object v9, v1, Lesh;->L:Loiw;
-
-    move-object/from16 v4, v22
-
-    move-object v8, v2
-
-    invoke-static/range {v4 .. v9}, Lgbo;->b(Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;)Lgbo;
+    invoke-static/range {v4 .. v10}, Liwa;->a(Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;)Liwa;
 
     move-result-object v4
 
-    invoke-static {v4}, Logj;->b(Loiw;)Loiw;
+    invoke-static {v4}, Lpyr;->b(Lqkg;)Lqkg;
+
+    move-result-object v13
+
+    iget-object v4, v1, Lewb;->v:Lqkg;
+
+    iget-object v5, v1, Lewb;->ac:Lqkg;
+
+    iget-object v6, v1, Lewb;->i:Lqkg;
+
+    invoke-static {v4, v5, v6}, Lhvh;->b(Lqkg;Lqkg;Lqkg;)Lhvh;
+
+    move-result-object v11
+
+    iget-object v4, v1, Lewb;->az:Lqkg;
+
+    iget-object v5, v1, Lewb;->cZ:Lqkg;
+
+    iget-object v6, v1, Lewb;->i:Lqkg;
+
+    invoke-static {v4, v5, v6}, Lcpk;->b(Lqkg;Lqkg;Lqkg;)Lcpk;
+
+    move-result-object v12
+
+    invoke-static {v3}, Lemk;->a(Lemb;)Lemk;
+
+    move-result-object v4
+
+    iget-object v5, v1, Lewb;->o:Lqkg;
+
+    invoke-static {v4, v5}, Lbmw;->b(Lqkg;Lqkg;)Lbmw;
+
+    move-result-object v4
+
+    invoke-static {v4}, Lpyr;->b(Lqkg;)Lqkg;
 
     move-result-object v14
 
-    invoke-static {v2}, Lhqq;->a(Loiw;)Lhqq;
+    iget-object v7, v1, Lewb;->t:Lqkg;
 
-    move-result-object v2
+    iget-object v8, v1, Lewb;->r:Lqkg;
 
-    invoke-static {v2}, Logj;->b(Loiw;)Loiw;
+    iget-object v9, v1, Lewb;->aw:Lqkg;
 
-    move-result-object v2
-
-    invoke-static/range {v21 .. v21}, Lelu;->b(Lgxb;)Lelu;
-
-    move-result-object v4
-
-    iget-object v5, v1, Lesh;->l:Loiw;
-
-    invoke-static {v4, v5}, Lcbk;->b(Loiw;Loiw;)Lcbk;
-
-    move-result-object v4
-
-    invoke-static {v4}, Logj;->b(Loiw;)Loiw;
-
-    move-result-object v10
-
-    iget-object v7, v1, Lesh;->r:Loiw;
-
-    iget-object v8, v1, Lesh;->o:Loiw;
-
-    iget-object v9, v1, Lesh;->al:Loiw;
+    iget-object v10, v1, Lewb;->i:Lqkg;
 
     move-object/from16 v4, v17
 
-    move-object v5, v10
+    move-object v5, v14
 
-    move-object v6, v3
+    move-object v6, v0
 
-    invoke-static/range {v4 .. v9}, Lcco;->e(Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;)Lcco;
-
-    move-result-object v4
-
-    invoke-static {v4}, Logj;->b(Loiw;)Loiw;
-
-    move-result-object v25
-
-    invoke-static/range {p1 .. p1}, Leqy;->b(Lva;)Leqy;
+    invoke-static/range {v4 .. v10}, Lcax;->c(Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;)Lcax;
 
     move-result-object v4
 
-    iget-object v5, v1, Lesh;->l:Loiw;
+    invoke-static {v4}, Lpyr;->b(Lqkg;)Lqkg;
 
-    invoke-static {v5, v4, v3}, Lcpb;->a(Loiw;Loiw;Loiw;)Lcpb;
+    move-result-object v7
 
-    move-result-object v4
+    invoke-static {v2}, Letf;->a(Lete;)Letf;
 
-    invoke-static {v4}, Logj;->b(Loiw;)Loiw;
+    move-result-object v2
 
-    move-result-object v32
+    iget-object v4, v1, Lewb;->o:Lqkg;
 
-    iget-object v4, v1, Lesh;->l:Loiw;
+    invoke-static {v4, v2, v0}, Lcso;->a(Lqkg;Lqkg;Lqkg;)Lcso;
 
-    iget-object v5, v1, Lesh;->fj:Loiw;
+    move-result-object v2
 
-    iget-object v6, v1, Lesh;->al:Loiw;
+    invoke-static {v2}, Lpyr;->b(Lqkg;)Lqkg;
 
-    iget-object v7, v1, Lesh;->o:Loiw;
+    move-result-object v27
+
+    iget-object v5, v1, Lewb;->o:Lqkg;
+
+    iget-object v6, v1, Lewb;->bF:Lqkg;
+
+    iget-object v8, v1, Lewb;->aw:Lqkg;
+
+    iget-object v9, v1, Lewb;->r:Lqkg;
+
+    move-object/from16 v10, v27
+
+    invoke-static/range {v5 .. v10}, Lbqq;->b(Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;)Lbqq;
+
+    move-result-object v2
+
+    invoke-static {v2}, Lpyr;->b(Lqkg;)Lqkg;
+
+    move-result-object v30
+
+    iget-object v7, v1, Lewb;->t:Lqkg;
+
+    iget-object v8, v1, Lewb;->r:Lqkg;
+
+    iget-object v9, v1, Lewb;->aw:Lqkg;
+
+    iget-object v10, v1, Lewb;->i:Lqkg;
+
+    move-object/from16 v4, v17
+
+    move-object v5, v14
+
+    move-object v6, v0
+
+    invoke-static/range {v4 .. v10}, Lcax;->a(Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;)Lcax;
+
+    move-result-object v2
+
+    invoke-static {v2}, Lpyr;->b(Lqkg;)Lqkg;
+
+    move-result-object v21
+
+    iget-object v2, v1, Lewb;->o:Lqkg;
+
+    iget-object v4, v1, Lewb;->bF:Lqkg;
+
+    iget-object v5, v1, Lewb;->aw:Lqkg;
+
+    iget-object v6, v1, Lewb;->t:Lqkg;
+
+    iget-object v7, v1, Lewb;->r:Lqkg;
+
+    move-object/from16 v22, v2
 
     move-object/from16 v23, v4
 
     move-object/from16 v24, v5
 
-    move-object/from16 v26, v6
+    move-object/from16 v25, v6
 
-    move-object/from16 v27, v7
+    move-object/from16 v26, v7
 
-    move-object/from16 v28, v32
+    invoke-static/range {v21 .. v27}, Lcax;->b(Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;)Lcax;
 
-    invoke-static/range {v23 .. v28}, Lcco;->f(Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;)Lcco;
+    move-result-object v2
 
-    move-result-object v4
+    invoke-static {v2}, Lpyr;->b(Lqkg;)Lqkg;
 
-    invoke-static {v4}, Logj;->b(Loiw;)Loiw;
+    move-result-object v31
+
+    invoke-static {v3}, Lemj;->b(Lemb;)Lemj;
 
     move-result-object v35
 
-    iget-object v7, v1, Lesh;->r:Loiw;
+    iget-object v2, v1, Lewb;->ac:Lqkg;
 
-    iget-object v8, v1, Lesh;->o:Loiw;
+    iget-object v4, v1, Lewb;->o:Lqkg;
 
-    iget-object v9, v1, Lesh;->al:Loiw;
+    iget-object v5, v1, Lewb;->bF:Lqkg;
 
-    move-object/from16 v4, v17
+    iget-object v6, v1, Lewb;->aw:Lqkg;
 
-    move-object v5, v10
+    iget-object v7, v1, Lewb;->aS:Lqkg;
 
-    move-object v6, v3
+    move-object/from16 v28, v2
 
-    invoke-static/range {v4 .. v9}, Lcco;->d(Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;)Lcco;
+    move-object/from16 v29, v4
 
-    move-result-object v4
+    move-object/from16 v32, v5
 
-    invoke-static {v4}, Logj;->b(Loiw;)Loiw;
+    move-object/from16 v33, v6
 
-    move-result-object v26
+    move-object/from16 v34, v7
 
-    iget-object v4, v1, Lesh;->l:Loiw;
-
-    iget-object v5, v1, Lesh;->fj:Loiw;
-
-    iget-object v6, v1, Lesh;->al:Loiw;
-
-    iget-object v7, v1, Lesh;->r:Loiw;
-
-    iget-object v8, v1, Lesh;->o:Loiw;
-
-    move-object/from16 v27, v4
-
-    move-object/from16 v28, v5
-
-    move-object/from16 v29, v6
-
-    move-object/from16 v30, v7
-
-    move-object/from16 v31, v8
-
-    invoke-static/range {v26 .. v32}, Lcqi;->a(Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;)Lcqi;
-
-    move-result-object v4
-
-    invoke-static {v4}, Logj;->b(Loiw;)Loiw;
-
-    move-result-object v36
-
-    invoke-static/range {v21 .. v21}, Lels;->b(Lgxb;)Lels;
-
-    move-result-object v40
-
-    invoke-static/range {v40 .. v40}, Lcko;->b(Loiw;)Lcko;
-
-    move-result-object v4
-
-    invoke-static {v4}, Logj;->b(Loiw;)Loiw;
-
-    move-result-object v15
-
-    iget-object v4, v1, Lesh;->av:Loiw;
-
-    iget-object v5, v1, Lesh;->l:Loiw;
-
-    iget-object v6, v1, Lesh;->fj:Loiw;
-
-    iget-object v7, v1, Lesh;->al:Loiw;
-
-    iget-object v8, v1, Lesh;->ba:Loiw;
-
-    iget-object v9, v1, Lesh;->f:Loiw;
-
-    iget-object v10, v1, Lesh;->bM:Loiw;
-
-    move-object/from16 v33, v4
-
-    move-object/from16 v34, v5
-
-    move-object/from16 v37, v6
-
-    move-object/from16 v38, v7
-
-    move-object/from16 v39, v8
-
-    move-object/from16 v41, v9
-
-    move-object/from16 v42, v10
-
-    move-object/from16 v43, v15
-
-    invoke-static/range {v33 .. v43}, Ldur;->a(Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;)Ldur;
-
-    move-result-object v4
-
-    invoke-static {v4}, Logj;->b(Loiw;)Loiw;
-
-    move-result-object v6
-
-    invoke-static/range {v21 .. v21}, Lelt;->b(Lgxb;)Lelt;
-
-    move-result-object v16
-
-    iget-object v7, v1, Lesh;->f:Loiw;
-
-    iget-object v8, v1, Lesh;->D:Loiw;
-
-    iget-object v10, v1, Lesh;->bM:Loiw;
-
-    iget-object v12, v1, Lesh;->ab:Loiw;
-
-    move-object v4, v3
-
-    move-object/from16 v5, v22
-
-    move-object v9, v2
-
-    move-object v11, v14
-
-    move-object/from16 v13, v16
-
-    invoke-static/range {v4 .. v13}, Lcld;->e(Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;)Lcld;
-
-    move-result-object v4
-
-    invoke-static {v4}, Logj;->b(Loiw;)Loiw;
-
-    move-result-object v13
-
-    iget-object v5, v1, Lesh;->t:Loiw;
-
-    iget-object v6, v1, Lesh;->av:Loiw;
-
-    iget-object v7, v1, Lesh;->cJ:Loiw;
-
-    iget-object v8, v1, Lesh;->D:Loiw;
-
-    iget-object v9, v1, Lesh;->fA:Loiw;
-
-    iget-object v11, v1, Lesh;->f:Loiw;
-
-    move-object v4, v14
-
-    move-object/from16 v10, v22
-
-    move-object v12, v2
-
-    move-object/from16 v14, v16
-
-    invoke-static/range {v4 .. v14}, Lhnz;->a(Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;)Lhnz;
+    invoke-static/range {v28 .. v35}, Lbtq;->a(Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;)Lbtq;
 
     move-result-object v2
 
-    invoke-static {v2}, Logj;->b(Loiw;)Loiw;
+    invoke-static {v2}, Lpyr;->b(Lqkg;)Lqkg;
 
-    move-result-object v7
+    move-result-object v2
 
-    iget-object v8, v1, Lesh;->D:Loiw;
+    iget-object v6, v1, Lewb;->ac:Lqkg;
 
-    iget-object v2, v1, Lesh;->fY:Loiw;
+    iget-object v8, v1, Lewb;->az:Lqkg;
 
-    iget-object v4, v1, Lesh;->f:Loiw;
+    iget-object v10, v1, Lewb;->cp:Lqkg;
 
-    invoke-static {v8, v2, v4}, Lcwf;->a(Loiw;Loiw;Loiw;)Lcwf;
-
-    move-result-object v9
-
-    iget-object v6, v1, Lesh;->av:Loiw;
-
-    iget-object v10, v1, Lesh;->fI:Loiw;
-
-    move-object v4, v3
+    move-object v4, v0
 
     move-object/from16 v5, v19
 
+    move-object v7, v11
+
+    move-object v9, v12
+
     move-object/from16 v11, v20
 
-    move-object v12, v15
+    move-object v12, v2
 
-    invoke-static/range {v4 .. v12}, Licr;->a(Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;)Licr;
-
-    move-result-object v2
-
-    invoke-virtual {v1}, Lesh;->B()Z
-
-    move-result v4
-
-    invoke-virtual {v1}, Lesh;->z()Z
-
-    move-result v5
-
-    invoke-virtual {v1}, Lesh;->A()Z
-
-    move-result v6
-
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
+    invoke-static/range {v4 .. v12}, Ljho;->b(Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;)Ljho;
 
     move-result-object v0
 
-    check-cast v0, Lhzh;
+    invoke-virtual {v1}, Lewb;->z()Z
 
-    iget-object v3, v1, Lesh;->f:Loiw;
+    move-result v5
 
-    invoke-interface {v3}, Loiw;->get()Ljava/lang/Object;
+    invoke-virtual {v1}, Lewb;->x()Z
 
-    move-result-object v3
+    move-result v6
 
-    check-cast v3, Ldhi;
+    invoke-virtual {v1}, Lewb;->y()Z
 
-    invoke-static {v3}, Lhqq;->b(Ldhi;)Ljew;
+    move-result v7
 
-    move-result-object v12
+    invoke-interface {v13}, Lqkg;->get()Ljava/lang/Object;
 
-    move-object/from16 v3, v21
+    move-result-object v2
 
-    iget-object v3, v3, Lgxb;->a:Ljava/lang/Object;
+    check-cast v2, Ljcw;
 
-    iget-object v7, v1, Lesh;->r:Loiw;
+    iget-object v4, v1, Lewb;->i:Lqkg;
 
-    invoke-interface {v7}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v7
-
-    move-object v13, v7
-
-    check-cast v13, Lfbz;
-
-    iget-object v7, v1, Lesh;->fm:Loiw;
-
-    invoke-interface {v7}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v7
-
-    move-object v14, v7
-
-    check-cast v14, Lcvr;
-
-    iget-object v7, v1, Lesh;->cJ:Loiw;
-
-    invoke-interface {v7}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v7
-
-    move-object v15, v7
-
-    check-cast v15, Lkha;
-
-    iget-object v1, v1, Lesh;->D:Loiw;
-
-    invoke-interface {v1}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Lgzn;
-
-    new-instance v16, Lemm;
-
-    move-object v11, v3
-
-    check-cast v11, Landroid/app/Activity;
-
-    const/4 v9, 0x0
-
-    const/4 v10, 0x0
-
-    const/16 v17, 0x0
-
-    move-object/from16 v3, v16
-
-    move-object v7, v12
-
-    move-object v8, v11
-
-    move-object/from16 p1, v1
-
-    move-object v1, v11
-
-    move-object/from16 v11, v17
-
-    invoke-direct/range {v3 .. v11}, Lemm;-><init>(ZZZLjew;Landroid/app/Activity;[B[B[B)V
-
-    invoke-static/range {v16 .. v16}, Llkj;->D(Lmrl;)Lmrl;
-
-    move-result-object v3
-
-    invoke-static {}, Lduq;->a()Ldin;
+    invoke-interface {v4}, Lqkg;->get()Ljava/lang/Object;
 
     move-result-object v4
 
-    new-instance v5, Landroid/content/Intent;
+    check-cast v4, Lddf;
+
+    invoke-static {v4}, Lirk;->a(Lddf;)Ljtx;
+
+    move-result-object v11
+
+    iget-object v3, v3, Lemb;->a:Landroid/app/Activity;
+
+    iget-object v4, v1, Lewb;->t:Lqkg;
+
+    invoke-interface {v4}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v4
+
+    move-object v12, v4
+
+    check-cast v12, Lfjs;
+
+    iget-object v4, v1, Lewb;->ck:Lqkg;
+
+    invoke-interface {v4}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v4
+
+    move-object v13, v4
+
+    check-cast v13, Lkhx;
+
+    iget-object v4, v1, Lewb;->db:Lqkg;
+
+    invoke-interface {v4}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v4
+
+    move-object v14, v4
+
+    check-cast v14, Llqv;
+
+    iget-object v1, v1, Lewb;->az:Lqkg;
+
+    invoke-interface {v1}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Lhug;
+
+    new-instance v15, Lenf;
+
+    const/4 v10, 0x0
+
+    move-object v4, v15
+
+    move-object v8, v11
+
+    move-object v9, v3
+
+    invoke-direct/range {v4 .. v10}, Lenf;-><init>(ZZZLjtx;Landroid/app/Activity;[B)V
+
+    invoke-static {v15}, Lobr;->au(Lojz;)Lojz;
+
+    move-result-object v4
+
+    invoke-static {}, Ldug;->a()Ldei;
+
+    move-result-object v5
+
+    new-instance v6, Landroid/content/Intent;
 
     invoke-virtual/range {p0 .. p0}, Lcom/google/android/apps/camera/legacy/app/activity/CameraImageActivity;->getIntent()Landroid/content/Intent;
 
-    move-result-object v6
+    move-result-object v7
 
-    invoke-direct {v5, v6}, Landroid/content/Intent;-><init>(Landroid/content/Intent;)V
+    invoke-direct {v6, v7}, Landroid/content/Intent;-><init>(Landroid/content/Intent;)V
 
-    sget-object v6, Ldin;->a:Ldin;
+    sget-object v7, Ldei;->a:Ldei;
 
-    invoke-virtual {v4, v6}, Ldin;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v5, v7}, Ldei;->equals(Ljava/lang/Object;)Z
 
-    move-result v4
-
-    const/4 v6, 0x1
-
-    const/4 v7, 0x0
-
-    if-eqz v4, :cond_0
-
-    const-string v4, "gca_eng_fake_viroot"
-
-    invoke-virtual {v5, v4, v7}, Landroid/content/Intent;->getBooleanExtra(Ljava/lang/String;Z)Z
-
-    move-result v4
-
-    if-eqz v4, :cond_0
+    move-result v5
 
     const/4 v7, 0x1
+
+    const/4 v8, 0x0
+
+    if-eqz v5, :cond_0
+
+    const-string v5, "gca_eng_fake_viroot"
+
+    invoke-virtual {v6, v5, v8}, Landroid/content/Intent;->getBooleanExtra(Ljava/lang/String;Z)Z
+
+    move-result v5
+
+    if-eqz v5, :cond_0
+
+    const/4 v8, 0x1
 
     goto :goto_0
 
     :cond_0
     :goto_0
-    move-object/from16 v4, p0
+    move-object/from16 v5, p0
 
-    iput-boolean v7, v4, Lcom/google/android/apps/camera/legacy/app/activity/CameraImageActivity;->t:Z
+    iput-boolean v8, v5, Lcom/google/android/apps/camera/legacy/app/activity/CameraImageActivity;->o:Z
 
     invoke-virtual/range {p0 .. p0}, Lcom/google/android/apps/camera/legacy/app/activity/CameraImageActivity;->isVoiceInteractionRoot()Z
 
-    move-result v7
+    move-result v8
 
-    if-eqz v7, :cond_1
+    if-eqz v8, :cond_1
 
-    const-class v7, Lcom/google/android/apps/camera/legacy/app/activity/main/CameraVoiceActivity;
+    const-class v8, Lcom/google/android/apps/camera/legacy/app/activity/main/CameraVoiceActivity;
 
-    invoke-virtual {v5, v4, v7}, Landroid/content/Intent;->setClass(Landroid/content/Context;Ljava/lang/Class;)Landroid/content/Intent;
+    invoke-virtual {v6, v5, v8}, Landroid/content/Intent;->setClass(Landroid/content/Context;Ljava/lang/Class;)Landroid/content/Intent;
 
     goto :goto_1
 
     :cond_1
-    const-class v7, Lcom/google/android/apps/camera/legacy/app/activity/main/CameraActivity;
+    const-class v8, Lcom/google/android/apps/camera/legacy/app/activity/main/CameraActivity;
 
-    invoke-virtual {v5, v4, v7}, Landroid/content/Intent;->setClass(Landroid/content/Context;Ljava/lang/Class;)Landroid/content/Intent;
+    invoke-virtual {v6, v5, v8}, Landroid/content/Intent;->setClass(Landroid/content/Context;Ljava/lang/Class;)Landroid/content/Intent;
 
     :goto_1
-    const/high16 v7, 0x10000000
+    const/high16 v8, 0x10000000
 
-    invoke-virtual {v5, v7}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
+    invoke-virtual {v6, v8}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
 
     invoke-virtual/range {p0 .. p0}, Lcom/google/android/apps/camera/legacy/app/activity/CameraImageActivity;->getIntent()Landroid/content/Intent;
 
-    move-result-object v7
+    move-result-object v8
 
-    invoke-virtual {v7}, Landroid/content/Intent;->getAction()Ljava/lang/String;
+    invoke-virtual {v8}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     invoke-virtual/range {p0 .. p0}, Lcom/google/android/apps/camera/legacy/app/activity/CameraImageActivity;->isVoiceInteractionRoot()Z
 
-    invoke-static {v5, v1, v3, v15}, Lemn;->b(Landroid/content/Intent;Landroid/app/Activity;Lmrl;Lkha;)Lmqp;
+    invoke-static {v6, v3, v4, v14}, Leng;->b(Landroid/content/Intent;Landroid/app/Activity;Lojz;Llqv;)Lojc;
 
-    move-result-object v22
+    move-result-object v21
 
-    move-object/from16 v23, v5
+    move-object/from16 v22, v6
+
+    move-object/from16 v23, v2
 
     move-object/from16 v24, v0
 
-    move-object/from16 v25, v2
+    move-object/from16 v25, v11
 
-    move-object/from16 v26, v12
+    move-object/from16 v26, v3
 
-    move-object/from16 v27, v1
+    move-object/from16 v27, v12
 
     move-object/from16 v28, v13
 
-    move-object/from16 v29, v14
+    move-object/from16 v29, v4
 
-    move-object/from16 v30, v3
+    move-object/from16 v30, v1
 
-    move-object/from16 v31, p1
+    move-object/from16 v31, v14
 
-    move-object/from16 v32, v15
+    invoke-static/range {v21 .. v31}, Leng;->c(Lojc;Landroid/content/Intent;Ljcw;Lqkg;Ljtx;Landroid/app/Activity;Lfjs;Lkhx;Lojz;Lhug;Llqv;)Lojc;
 
-    invoke-static/range {v22 .. v32}, Lemn;->c(Lmqp;Landroid/content/Intent;Lhzh;Loiw;Ljew;Landroid/app/Activity;Lfbz;Lcvr;Lmrl;Lgzn;Lkha;)Lmqp;
+    move-result-object v4
 
-    move-result-object v3
+    invoke-virtual {v4}, Lojc;->g()Z
 
-    invoke-virtual {v3}, Lmqp;->g()Z
+    move-result v8
 
-    move-result v7
+    xor-int/2addr v7, v8
 
-    xor-int/2addr v6, v7
+    invoke-static {v6, v7, v3, v1}, Leng;->a(Landroid/content/Intent;ZLandroid/app/Activity;Lhug;)V
 
-    move-object/from16 v7, p1
+    invoke-virtual {v3, v6}, Landroid/app/Activity;->setIntent(Landroid/content/Intent;)V
 
-    invoke-static {v5, v6, v1, v7}, Lemn;->a(Landroid/content/Intent;ZLandroid/app/Activity;Lgzn;)V
+    invoke-virtual {v4}, Lojc;->g()Z
 
-    invoke-virtual {v1, v5}, Landroid/app/Activity;->setIntent(Landroid/content/Intent;)V
+    move-result v1
 
-    invoke-virtual {v3}, Lmqp;->g()Z
+    if-eqz v1, :cond_2
 
-    move-result v6
+    invoke-virtual {v4}, Lojc;->c()Ljava/lang/Object;
 
-    if-eqz v6, :cond_2
+    move-result-object v1
 
-    invoke-virtual {v3}, Lmqp;->c()Ljava/lang/Object;
+    move-object/from16 v21, v1
 
-    move-result-object v3
+    check-cast v21, Ljrl;
 
-    move-object/from16 v22, v3
-
-    check-cast v22, Lika;
+    move-object/from16 v22, v2
 
     move-object/from16 v23, v0
 
-    move-object/from16 v24, v2
+    move-object/from16 v24, v11
 
-    move-object/from16 v25, v12
+    move-object/from16 v25, v3
 
-    move-object/from16 v26, v1
+    move-object/from16 v26, v12
 
     move-object/from16 v27, v13
 
-    move-object/from16 v28, v14
-
-    invoke-static/range {v22 .. v28}, Lemn;->d(Lika;Lhzh;Loiw;Ljew;Landroid/app/Activity;Lfbz;Lcvr;)Z
+    invoke-static/range {v21 .. v27}, Leng;->d(Ljrl;Ljcw;Lqkg;Ljtx;Landroid/app/Activity;Lfjs;Lkhx;)Z
 
     move-result v0
 
     if-nez v0, :cond_3
 
     :cond_2
-    invoke-virtual {v1, v5}, Landroid/app/Activity;->startActivity(Landroid/content/Intent;)V
+    invoke-virtual {v3, v6}, Landroid/app/Activity;->startActivity(Landroid/content/Intent;)V
 
     :cond_3
-    invoke-virtual/range {p0 .. p0}, Lfbc;->finish()V
+    invoke-virtual/range {p0 .. p0}, Lfio;->finish()V
 
     return-void
 .end method

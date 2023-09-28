@@ -1,34 +1,28 @@
-.class final Lnne;
-.super Lnnf;
-
-
-# direct methods
-.method public constructor <init>(Lnou;Lmqi;)V
-    .locals 0
-
-    invoke-direct {p0, p1, p2}, Lnnf;-><init>(Lnou;Ljava/lang/Object;)V
-
-    return-void
-.end method
+.class public final Lnne;
+.super Lohh;
 
 
 # virtual methods
-.method public final bridge synthetic g(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+.method public final equals(Ljava/lang/Object;)Z
     .locals 0
 
-    check-cast p1, Lmqi;
+    const/4 p1, 0x0
 
-    invoke-interface {p1, p2}, Lmqi;->apply(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object p1
-
-    return-object p1
+    throw p1
 .end method
 
-.method public final h(Ljava/lang/Object;)V
-    .locals 0
+.method public final hashCode()I
+    .locals 1
 
-    invoke-virtual {p0, p1}, Lnnb;->e(Ljava/lang/Object;)Z
+    const/4 v0, 0x0
 
-    return-void
+    throw v0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .locals 1
+
+    const/4 v0, 0x0
+
+    throw v0
 .end method

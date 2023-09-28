@@ -1,64 +1,105 @@
-.class final Ljvt;
-.super Ljwh;
+.class Ljvt;
+.super Ljvr;
 
 
 # instance fields
-.field final synthetic a:Lmqi;
-
-.field final synthetic b:Ljvs;
+.field final synthetic b:Ljvx;
 
 
 # direct methods
-.method public constructor <init>(Ljvs;Lmqi;Ljvs;)V
+.method public constructor <init>(Ljvx;)V
     .locals 0
 
-    iput-object p2, p0, Ljvt;->a:Lmqi;
+    iput-object p1, p0, Ljvt;->b:Ljvx;
 
-    iput-object p3, p0, Ljvt;->b:Ljvs;
-
-    invoke-direct {p0, p1}, Ljwh;-><init>(Ljvs;)V
+    invoke-direct {p0}, Ljvr;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method protected final d(Ljava/lang/Object;)Ljava/lang/Object;
+.method public b()V
     .locals 1
 
-    iget-object v0, p0, Ljvt;->a:Lmqi;
+    iget-object v0, p0, Ljvt;->b:Ljvx;
 
-    invoke-interface {v0, p1}, Lmqi;->apply(Ljava/lang/Object;)Ljava/lang/Object;
+    iget-object v0, v0, Ljvx;->e:Landroid/widget/VideoView;
 
-    move-result-object p1
+    invoke-virtual {v0}, Landroid/widget/VideoView;->pause()V
 
-    return-object p1
+    return-void
 .end method
 
-.method public final toString()Ljava/lang/String;
-    .locals 3
+.method public c()V
+    .locals 2
 
-    const-string v0, "TransformedObs"
+    iget-object v0, p0, Ljvt;->b:Ljvx;
 
-    invoke-static {v0}, Lmoz;->z(Ljava/lang/String;)Lmqo;
+    iget-object v0, v0, Ljvx;->d:Ljvy;
 
-    move-result-object v0
+    const/4 v1, 0x0
 
-    iget-object v1, p0, Ljvt;->b:Ljvs;
+    invoke-interface {v0, v1}, Ljvy;->b(I)V
 
-    const-string v2, "input"
+    return-void
+.end method
 
-    invoke-virtual {v0, v2, v1}, Lmqo;->b(Ljava/lang/String;Ljava/lang/Object;)V
+.method public d()V
+    .locals 1
 
-    iget-object v1, p0, Ljvt;->a:Lmqi;
+    iget-object v0, p0, Ljvt;->b:Ljvx;
 
-    const-string v2, "func"
+    iget-object v0, v0, Ljvx;->e:Landroid/widget/VideoView;
 
-    invoke-virtual {v0, v2, v1}, Lmqo;->b(Ljava/lang/String;Ljava/lang/Object;)V
+    invoke-virtual {v0}, Landroid/widget/VideoView;->pause()V
 
-    invoke-virtual {v0}, Lmqo;->toString()Ljava/lang/String;
+    return-void
+.end method
 
-    move-result-object v0
+.method public final f()V
+    .locals 2
 
-    return-object v0
+    iget-object v0, p0, Ljvt;->b:Ljvx;
+
+    iget-object v0, v0, Ljvx;->e:Landroid/widget/VideoView;
+
+    invoke-virtual {v0}, Landroid/widget/VideoView;->start()V
+
+    iget-object v0, p0, Ljvt;->b:Ljvx;
+
+    iget-object v0, v0, Ljvx;->d:Ljvy;
+
+    check-cast v0, Ljwd;
+
+    const/4 v1, 0x0
+
+    iput-boolean v1, v0, Ljwd;->m:Z
+
+    iget-boolean v1, v0, Ljwd;->n:Z
+
+    if-eqz v1, :cond_0
+
+    invoke-virtual {v0}, Ljwd;->c()V
+
+    :cond_0
+    iget-object v0, p0, Ljvt;->b:Ljvx;
+
+    iget-object v0, v0, Ljvx;->g:Ljvo;
+
+    invoke-virtual {v0}, Ljvl;->f()V
+
+    return-void
+.end method
+
+.method public final g()V
+    .locals 1
+
+    iget-object v0, p0, Ljvt;->b:Ljvx;
+
+    iget-object v0, v0, Ljvx;->g:Ljvo;
+
+    invoke-virtual {v0}, Ljvl;->g()V
+
+    return-void
 .end method

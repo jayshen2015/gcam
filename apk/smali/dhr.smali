@@ -1,108 +1,106 @@
-.class public final Ldhr;
-.super Ljava/lang/Object;
-
-
-# static fields
-.field public static final a:Ldhj;
-
-.field public static final b:Ldhj;
-
-.field public static final c:Ldhj;
-
-.field public static final d:Ldhj;
+.class final Ldhr;
+.super Ldhq;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
+.method public constructor <init>(Ldhs;J)V
+    .locals 3
 
-    new-instance v0, Lnoc;
+    sget-object v0, Lhsr;->a:Lhsr;
 
-    invoke-direct {v0}, Lnoc;-><init>()V
+    const/4 v1, 0x0
 
-    const-string v1, "camera.enable_imax"
+    const-string v2, "STUB"
 
-    iput-object v1, v0, Lnoc;->b:Ljava/lang/Object;
+    invoke-static {v1, p2, p3, v2, v0}, Lhsq;->a(Lhsp;JLjava/lang/String;Lhsr;)Lhsq;
 
-    invoke-virtual {v0}, Lnoc;->q()Ldhj;
+    move-result-object p2
 
-    move-result-object v0
+    iget-object p3, p1, Ldhs;->f:Lj$/time/Clock;
 
-    sput-object v0, Ldhr;->a:Ldhj;
+    invoke-virtual {p3}, Lj$/time/Clock;->instant()Lj$/time/Instant;
 
-    new-instance v0, Lnoc;
+    move-result-object p3
 
-    invoke-direct {v0}, Lnoc;-><init>()V
+    invoke-direct {p0, p1, p2, p3}, Ldhq;-><init>(Ldhs;Lhsq;Lj$/time/Instant;)V
 
-    const-string v1, "camera.imax_keep_models"
+    return-void
+.end method
 
-    iput-object v1, v0, Lnoc;->b:Ljava/lang/Object;
 
-    new-instance v0, Lnoc;
+# virtual methods
+.method public final a()V
+    .locals 1
 
-    invoke-direct {v0}, Lnoc;-><init>()V
+    const-string v0, "ShotStub: canceled"
 
-    const-string v1, "camera.imax_ois"
+    invoke-virtual {p0, v0}, Ldhq;->e(Ljava/lang/String;)V
 
-    iput-object v1, v0, Lnoc;->b:Ljava/lang/Object;
+    return-void
+.end method
 
-    new-instance v0, Lnoc;
+.method public final b()V
+    .locals 1
 
-    invoke-direct {v0}, Lnoc;-><init>()V
+    const-string v0, "ShotStub: deleted"
 
-    const-string v1, "camera.imax_show_axis"
+    invoke-virtual {p0, v0}, Ldhq;->e(Ljava/lang/String;)V
 
-    iput-object v1, v0, Lnoc;->b:Ljava/lang/Object;
+    return-void
+.end method
 
-    new-instance v0, Lnoc;
+.method public final c(Ljava/lang/String;)V
+    .locals 0
 
-    invoke-direct {v0}, Lnoc;-><init>()V
+    invoke-virtual {p0, p1}, Ldhq;->f(Ljava/lang/String;)V
 
-    const-string v1, "camera.imax_live_tex"
+    return-void
+.end method
 
-    iput-object v1, v0, Lnoc;->b:Ljava/lang/Object;
+.method public final d(Lj$/time/Instant;Ljava/lang/String;)V
+    .locals 0
 
-    new-instance v0, Lnoc;
+    invoke-virtual {p0, p2}, Ldhq;->f(Ljava/lang/String;)V
 
-    invoke-direct {v0}, Lnoc;-><init>()V
+    return-void
+.end method
 
-    const-string v1, "camera.imax_hdrnet_input"
+.method public final g(Ljava/lang/Integer;)V
+    .locals 0
 
-    iput-object v1, v0, Lnoc;->b:Ljava/lang/Object;
+    const-string p1, "ShotStub: makingProgress"
 
-    invoke-virtual {v0}, Lnoc;->t()Ldhj;
+    invoke-virtual {p0, p1}, Ldhq;->f(Ljava/lang/String;)V
 
-    move-result-object v0
+    return-void
+.end method
 
-    sput-object v0, Ldhr;->b:Ldhj;
+.method public final h(Lj$/time/Instant;)V
+    .locals 0
 
-    new-instance v0, Lnoc;
+    const-string p1, "ShotStub: markStuck"
 
-    invoke-direct {v0}, Lnoc;-><init>()V
+    invoke-virtual {p0, p1}, Ldhq;->e(Ljava/lang/String;)V
 
-    const-string v1, "camera.imax_reg_weight"
+    return-void
+.end method
 
-    iput-object v1, v0, Lnoc;->b:Ljava/lang/Object;
+.method public final i()V
+    .locals 1
 
-    invoke-virtual {v0}, Lnoc;->s()Ldhj;
+    const-string v0, "ShotStub: persisted"
 
-    move-result-object v0
+    invoke-virtual {p0, v0}, Ldhq;->e(Ljava/lang/String;)V
 
-    sput-object v0, Ldhr;->c:Ldhj;
+    return-void
+.end method
 
-    new-instance v0, Lnoc;
+.method public final j()V
+    .locals 1
 
-    invoke-direct {v0}, Lnoc;-><init>()V
+    const-string v0, "ShotStub: started"
 
-    const-string v1, "camera.imax_sum_weight"
-
-    iput-object v1, v0, Lnoc;->b:Ljava/lang/Object;
-
-    invoke-virtual {v0}, Lnoc;->s()Ldhj;
-
-    move-result-object v0
-
-    sput-object v0, Ldhr;->d:Ldhj;
+    invoke-virtual {p0, v0}, Ldhq;->e(Ljava/lang/String;)V
 
     return-void
 .end method

@@ -1,22 +1,16 @@
-.class public final Lfqd;
+.class public interface abstract Lfqd;
 .super Ljava/lang/Object;
 
+# interfaces
+.implements Lmln;
 
-# static fields
-.field public static final a:Lfnn;
 
+# virtual methods
+.method public abstract c()V
+.end method
 
-# direct methods
-.method static constructor <clinit>()V
-    .locals 2
+.method public abstract d(J)V
+.end method
 
-    new-instance v0, Lfnn;
-
-    const/16 v1, 0xc
-
-    invoke-direct {v0, v1}, Lfnn;-><init>(I)V
-
-    sput-object v0, Lfqd;->a:Lfnn;
-
-    return-void
+.method public abstract e(Lmln;J)Lfqe;
 .end method

@@ -1,79 +1,90 @@
-.class abstract Lgyy;
+.class public final synthetic Lgyy;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Ljwb;
+.implements Llmu;
 
 
 # instance fields
-.field protected final a:Lgzi;
-
-.field protected final b:Ljava/lang/String;
+.field public final synthetic a:Lgza;
 
 
 # direct methods
-.method public constructor <init>(Lgzi;Ljava/lang/String;)V
+.method public synthetic constructor <init>(Lgza;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lgyy;->a:Lgzi;
-
-    iput-object p2, p0, Lgyy;->b:Ljava/lang/String;
+    iput-object p1, p0, Lgyy;->a:Lgza;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Lkai;Ljava/util/concurrent/Executor;)Lkad;
-    .locals 1
+.method public final a(Llrr;)V
+    .locals 4
 
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    iget-object v0, p0, Lgyy;->a:Lgza;
 
-    invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    iget-boolean v1, v0, Lgza;->g:Z
 
-    new-instance v0, Lgyx;
+    if-eqz v1, :cond_0
 
-    invoke-direct {v0, p0, p1, p2}, Lgyx;-><init>(Lgyy;Lkai;Ljava/util/concurrent/Executor;)V
-
-    iget-object p1, p0, Lgyy;->a:Lgzi;
-
-    invoke-virtual {p1, v0}, Lgzi;->f(Lgyo;)V
-
-    iget-object p1, p0, Lgyy;->b:Ljava/lang/String;
-
-    invoke-virtual {v0, p1}, Lgyx;->a(Ljava/lang/String;)V
-
-    return-object v0
-.end method
-
-.method public final bm()Ljava/lang/Object;
-    .locals 3
-
-    invoke-virtual {p0}, Lgyy;->c()Ljava/lang/Object;
-
-    move-result-object v0
-
-    if-eqz v0, :cond_0
-
-    return-object v0
+    goto :goto_1
 
     :cond_0
-    new-instance v0, Ljava/lang/NullPointerException;
+    monitor-enter v0
 
-    iget-object v1, p0, Lgyy;->b:Ljava/lang/String;
+    :try_start_0
+    iget-object v1, v0, Lgza;->c:Ljava/util/List;
 
-    const-string v2, "Null value for setting: "
-
-    invoke-virtual {v2, v1}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v1}, Loom;->j(Ljava/util/Collection;)Loom;
 
     move-result-object v1
 
-    invoke-direct {v0, v1}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    throw v0
-.end method
+    invoke-interface {v1}, Ljava/util/List;->size()I
 
-.method protected abstract c()Ljava/lang/Object;
+    move-result v0
+
+    const/4 v2, 0x0
+
+    :goto_0
+    if-ge v2, v0, :cond_1
+
+    invoke-interface {v1, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v3
+
+    check-cast v3, Llmu;
+
+    invoke-interface {v3, p1}, Llmu;->a(Llrr;)V
+
+    add-int/lit8 v2, v2, 0x1
+
+    goto :goto_0
+
+    :cond_1
+    :goto_1
+    return-void
+
+    :catchall_0
+    move-exception p1
+
+    :try_start_1
+    monitor-exit v0
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    goto :goto_3
+
+    :goto_2
+    throw p1
+
+    :goto_3
+    goto :goto_2
 .end method

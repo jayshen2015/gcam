@@ -1,106 +1,200 @@
-.class final Lhep;
-.super Lhfn;
+.class public final synthetic Lhep;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field final synthetic a:Lhes;
+.field public final synthetic a:Lheq;
+
+.field public final synthetic b:Llmr;
 
 
 # direct methods
-.method public constructor <init>(Lhes;)V
+.method public synthetic constructor <init>(Lheq;Llmr;)V
     .locals 0
 
-    iput-object p1, p0, Lhep;->a:Lhes;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0, p1}, Lhfn;-><init>(Lhfq;)V
+    iput-object p1, p0, Lhep;->a:Lheq;
+
+    iput-object p2, p0, Lhep;->b:Llmr;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()V
-    .locals 2
+.method public final run()V
+    .locals 11
 
-    iget-object v0, p0, Lhep;->a:Lhes;
+    iget-object v0, p0, Lhep;->a:Lheq;
 
-    iget-object v0, v0, Lhes;->a:Lhiu;
+    iget-object v1, p0, Lhep;->b:Llmr;
 
-    invoke-virtual {v0}, Lhiu;->e()V
+    invoke-interface {v1}, Llmr;->b()Llmw;
 
-    invoke-super {p0}, Lhfn;->a()V
+    move-result-object v2
 
-    iget-object v0, p0, Lhep;->a:Lhes;
+    if-nez v2, :cond_0
 
-    iget-object v1, v0, Lhes;->a:Lhiu;
+    goto/16 :goto_1
 
-    iget-object v0, v0, Lhes;->c:Lhiw;
+    :cond_0
+    iget-object v3, v0, Lheq;->c:Lhcg;
 
-    invoke-virtual {v1, v0}, Lhiu;->g(Lhiw;)V
+    invoke-virtual {v3, v1}, Lhcg;->a(Llmr;)Lhcf;
 
-    return-void
-.end method
+    move-result-object v3
 
-.method public final bP()Z
-    .locals 2
+    invoke-virtual {v3}, Lhcf;->e()Lmad;
 
-    iget-object v0, p0, Lhep;->a:Lhes;
+    move-result-object v7
 
-    iget-object v0, v0, Lhes;->a:Lhiu;
+    if-eqz v7, :cond_6
 
-    invoke-virtual {v0}, Lhiu;->e()V
+    invoke-interface {v1}, Llmr;->c()Llzv;
 
-    iget-object v0, p0, Lhep;->a:Lhes;
+    move-result-object v6
 
-    iget-object v1, v0, Lhes;->a:Lhiu;
+    if-nez v6, :cond_1
 
-    iget-object v0, v0, Lhes;->b:Lhiw;
-
-    invoke-virtual {v1, v0}, Lhiu;->g(Lhiw;)V
-
-    const/4 v0, 0x1
-
-    return v0
-.end method
-
-.method public final k()V
-    .locals 2
-
-    iget-object v0, p0, Lhep;->a:Lhes;
-
-    iget-object v0, v0, Lhes;->a:Lhiu;
-
-    invoke-virtual {v0}, Lhiu;->e()V
-
-    iget-object v0, p0, Lhep;->a:Lhes;
-
-    iget-object v1, v0, Lhes;->a:Lhiu;
-
-    iget-object v0, v0, Lhes;->b:Lhiw;
-
-    invoke-virtual {v1, v0}, Lhiu;->g(Lhiw;)V
+    invoke-interface {v7}, Lmad;->close()V
 
     return-void
-.end method
 
-.method public final l(Landroid/content/pm/ResolveInfo;)V
-    .locals 1
+    :cond_1
+    iget-object v1, v0, Lheq;->b:Lebe;
 
-    iget-object v0, p0, Lhep;->a:Lhes;
+    invoke-interface {v1, v6}, Lebe;->x(Llzv;)Z
 
-    iget-object v0, v0, Lhes;->a:Lhiu;
+    move-result v1
 
-    invoke-virtual {v0}, Lhiu;->e()V
+    if-nez v1, :cond_2
 
-    invoke-super {p0, p1}, Lhfn;->l(Landroid/content/pm/ResolveInfo;)V
+    invoke-interface {v7}, Lmad;->close()V
 
-    iget-object p1, p0, Lhep;->a:Lhes;
+    return-void
 
-    iget-object v0, p1, Lhes;->a:Lhiu;
+    :cond_2
+    invoke-virtual {v3}, Lhcf;->d()Lmad;
 
-    iget-object p1, p1, Lhes;->g:Lhiw;
+    move-result-object v8
 
-    invoke-virtual {v0, p1}, Lhiu;->g(Lhiw;)V
+    invoke-virtual {v3}, Lhcf;->f()Lmad;
 
+    move-result-object v10
+
+    const/4 v1, 0x0
+
+    if-eqz v10, :cond_3
+
+    invoke-virtual {v3}, Lhcf;->b()Llnx;
+
+    move-result-object v4
+
+    if-eqz v4, :cond_3
+
+    invoke-interface {v4}, Llnx;->c()Llvs;
+
+    move-result-object v1
+
+    iget-object v1, v1, Llvs;->a:Ljava/lang/String;
+
+    invoke-static {v6, v1}, Lhdw;->b(Llzv;Ljava/lang/String;)Llzv;
+
+    move-result-object v1
+
+    move-object v9, v1
+
+    goto :goto_0
+
+    :cond_3
+    move-object v9, v1
+
+    :goto_0
+    new-instance v1, Llap;
+
+    invoke-direct {v1}, Llap;-><init>()V
+
+    invoke-virtual {v1, v7}, Llap;->c(Llie;)V
+
+    if-eqz v10, :cond_4
+
+    invoke-virtual {v1, v10}, Llap;->c(Llie;)V
+
+    :cond_4
+    if-eqz v8, :cond_5
+
+    invoke-virtual {v1, v8}, Llap;->c(Llie;)V
+
+    :cond_5
+    :try_start_0
+    invoke-virtual {v3}, Lhcf;->a()Llnx;
+
+    move-result-object v3
+
+    invoke-interface {v3}, Llnx;->c()Llvs;
+
+    move-result-object v3
+
+    iget-object v3, v3, Llvs;->a:Ljava/lang/String;
+
+    invoke-static {v6, v3}, Lhdw;->b(Llzv;Ljava/lang/String;)Llzv;
+
+    move-result-object v3
+
+    iget-object v4, v0, Lheq;->b:Lebe;
+
+    invoke-interface {v4, v3}, Lebe;->a(Llzv;)I
+
+    move-result v5
+
+    iget-object v3, v0, Lheq;->e:Ljava/util/HashSet;
+
+    invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v4
+
+    invoke-virtual {v3, v4}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
+
+    iget-object v4, v0, Lheq;->b:Lebe;
+
+    invoke-interface/range {v4 .. v10}, Lebe;->C(ILlzv;Lmad;Lmad;Llzv;Lmad;)Z
+
+    move-result v3
+
+    if-eqz v3, :cond_6
+
+    iget-object v0, v0, Lheq;->d:Llmv;
+
+    invoke-interface {v0, v2}, Llmv;->o(Llmw;)Z
+    :try_end_0
+    .catch Ljava/lang/RuntimeException; {:try_start_0 .. :try_end_0} :catch_0
+
+    return-void
+
+    :catch_0
+    move-exception v0
+
+    sget-object v2, Lheq;->a:Louj;
+
+    invoke-virtual {v2}, Loue;->b()Lova;
+
+    move-result-object v2
+
+    const/16 v3, 0x96c
+
+    const-string v4, "Error binning frame"
+
+    invoke-static {v2, v4, v3, v0}, Ld;->w(Lova;Ljava/lang/String;CLjava/lang/Throwable;)V
+
+    invoke-interface {v1}, Llie;->close()V
+
+    return-void
+
+    :cond_6
+    :goto_1
     return-void
 .end method

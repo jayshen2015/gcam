@@ -2,94 +2,278 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Logk;
+.implements Llie;
 
 
 # instance fields
-.field private final a:Loiw;
+.field public final a:Lgsc;
 
-.field private final b:Loiw;
+.field private final b:Ljava/lang/Object;
 
-.field private final c:Loiw;
+.field private final c:Ljava/util/Queue;
 
-.field private final d:Loiw;
+.field private d:I
 
-.field private final e:Loiw;
+.field private final e:Llce;
+
+.field private volatile f:Z
 
 
 # direct methods
-.method public constructor <init>(Loiw;Loiw;Loiw;Loiw;Loiw;)V
-    .locals 0
+.method public constructor <init>(I)V
+    .locals 1
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lgjw;->a:Loiw;
+    new-instance v0, Ljava/lang/Object;
 
-    iput-object p2, p0, Lgjw;->b:Loiw;
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p3, p0, Lgjw;->c:Loiw;
+    iput-object v0, p0, Lgjw;->b:Ljava/lang/Object;
 
-    iput-object p4, p0, Lgjw;->d:Loiw;
+    const/4 v0, 0x0
 
-    iput-object p5, p0, Lgjw;->e:Loiw;
+    iput-boolean v0, p0, Lgjw;->f:Z
+
+    iput p1, p0, Lgjw;->d:I
+
+    new-instance p1, Ljava/util/LinkedList;
+
+    invoke-direct {p1}, Ljava/util/LinkedList;-><init>()V
+
+    iput-object p1, p0, Lgjw;->c:Ljava/util/Queue;
+
+    new-instance p1, Lgsc;
+
+    invoke-direct {p1}, Lgsc;-><init>()V
+
+    iput-object p1, p0, Lgjw;->a:Lgsc;
+
+    new-instance p1, Llce;
+
+    iget v0, p0, Lgjw;->d:I
+
+    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v0
+
+    invoke-direct {p1, v0}, Llce;-><init>(Ljava/lang/Object;)V
+
+    iput-object p1, p0, Lgjw;->e:Llce;
 
     return-void
 .end method
 
-.method public static a(Loiw;Loiw;Loiw;Loiw;Loiw;)Lgjw;
-    .locals 7
+.method private final c(Lgjt;Lgsa;Lpih;)V
+    .locals 1
 
-    new-instance v6, Lgjw;
+    invoke-interface {p1}, Lgjt;->a()Lpht;
 
-    move-object v0, v6
+    move-result-object p1
 
-    move-object v1, p0
+    new-instance v0, Lgju;
 
-    move-object v2, p1
+    invoke-direct {v0, p0, p3, p2}, Lgju;-><init>(Lgjw;Lpih;Lgsa;)V
 
-    move-object v3, p2
+    sget-object p2, Lpgr;->a:Lpgr;
 
-    move-object v4, p3
+    invoke-static {p1, v0, p2}, Lplk;->af(Lpht;Lphh;Ljava/util/concurrent/Executor;)V
 
-    move-object v5, p4
-
-    invoke-direct/range {v0 .. v5}, Lgjw;-><init>(Loiw;Loiw;Loiw;Loiw;Loiw;)V
-
-    return-object v6
+    return-void
 .end method
 
 
 # virtual methods
-.method public final b()Ldqx;
-    .locals 8
+.method public final a(Lgjt;)Lpht;
+    .locals 5
 
-    iget-object v1, p0, Lgjw;->a:Loiw;
+    iget-boolean v0, p0, Lgjw;->f:Z
 
-    iget-object v2, p0, Lgjw;->b:Loiw;
+    if-eqz v0, :cond_0
 
-    iget-object v3, p0, Lgjw;->c:Loiw;
+    invoke-interface {p1}, Lgjt;->b()Lpht;
 
-    iget-object v4, p0, Lgjw;->d:Loiw;
+    move-result-object p1
 
-    iget-object v5, p0, Lgjw;->e:Loiw;
+    return-object p1
 
-    new-instance v7, Ldqx;
-
-    const/4 v6, 0x0
-
-    move-object v0, v7
-
-    invoke-direct/range {v0 .. v6}, Ldqx;-><init>(Loiw;Loiw;Loiw;Loiw;Loiw;[C)V
-
-    return-object v7
-.end method
-
-.method public final bridge synthetic get()Ljava/lang/Object;
-    .locals 1
-
-    invoke-virtual {p0}, Lgjw;->b()Ldqx;
+    :cond_0
+    invoke-static {}, Lpih;->f()Lpih;
 
     move-result-object v0
 
+    iget-object v1, p0, Lgjw;->a:Lgsc;
+
+    iget-object v2, v1, Lgsc;->a:Ljava/lang/Object;
+
+    monitor-enter v2
+
+    :try_start_0
+    iget-object v3, v1, Llce;->d:Ljava/lang/Object;
+
+    check-cast v3, Ljava/lang/Integer;
+
+    invoke-virtual {v3}, Ljava/lang/Integer;->intValue()I
+
+    move-result v3
+
+    add-int/lit8 v3, v3, 0x1
+
+    invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v3
+
+    invoke-virtual {v1, v3}, Llce;->fB(Ljava/lang/Object;)V
+
+    monitor-exit v2
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_1
+
+    new-instance v2, Lgsb;
+
+    invoke-direct {v2, v1}, Lgsb;-><init>(Lgsc;)V
+
+    iget-object v1, p0, Lgjw;->b:Ljava/lang/Object;
+
+    monitor-enter v1
+
+    :try_start_1
+    iget v3, p0, Lgjw;->d:I
+
+    if-lez v3, :cond_1
+
+    iget-object v3, p0, Lgjw;->c:Ljava/util/Queue;
+
+    invoke-interface {v3}, Ljava/util/Queue;->isEmpty()Z
+
+    move-result v3
+
+    invoke-static {v3}, Lobr;->aQ(Z)V
+
+    iget v3, p0, Lgjw;->d:I
+
+    add-int/lit8 v3, v3, -0x1
+
+    iput v3, p0, Lgjw;->d:I
+
+    iget-object v4, p0, Lgjw;->e:Llce;
+
+    invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v3
+
+    invoke-virtual {v4, v3}, Llce;->fB(Ljava/lang/Object;)V
+
+    monitor-exit v1
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    invoke-direct {p0, p1, v2, v0}, Lgjw;->c(Lgjt;Lgsa;Lpih;)V
+
     return-object v0
+
+    :cond_1
+    :try_start_2
+    iget-object v3, p0, Lgjw;->c:Ljava/util/Queue;
+
+    new-instance v4, Lgjv;
+
+    invoke-direct {v4, p1, v2, v0}, Lgjv;-><init>(Lgjt;Lgsa;Lpih;)V
+
+    invoke-interface {v3, v4}, Ljava/util/Queue;->add(Ljava/lang/Object;)Z
+
+    monitor-exit v1
+
+    return-object v0
+
+    :catchall_0
+    move-exception p1
+
+    monitor-exit v1
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
+
+    throw p1
+
+    :catchall_1
+    move-exception p1
+
+    :try_start_3
+    monitor-exit v2
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_1
+
+    throw p1
+.end method
+
+.method public final b()V
+    .locals 3
+
+    iget-object v0, p0, Lgjw;->b:Ljava/lang/Object;
+
+    monitor-enter v0
+
+    :try_start_0
+    iget-object v1, p0, Lgjw;->c:Ljava/util/Queue;
+
+    invoke-interface {v1}, Ljava/util/Queue;->poll()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Lgjv;
+
+    if-nez v1, :cond_0
+
+    iget v1, p0, Lgjw;->d:I
+
+    add-int/lit8 v1, v1, 0x1
+
+    iput v1, p0, Lgjw;->d:I
+
+    iget-object v2, p0, Lgjw;->e:Llce;
+
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v1
+
+    invoke-virtual {v2, v1}, Llce;->fB(Ljava/lang/Object;)V
+
+    monitor-exit v0
+
+    return-void
+
+    :cond_0
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    iget-object v0, v1, Lgjv;->a:Lgjt;
+
+    iget-object v2, v1, Lgjv;->c:Lpih;
+
+    iget-object v1, v1, Lgjv;->b:Lgsa;
+
+    invoke-direct {p0, v0, v1, v2}, Lgjw;->c(Lgjt;Lgsa;Lpih;)V
+
+    return-void
+
+    :catchall_0
+    move-exception v1
+
+    :try_start_1
+    monitor-exit v0
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    throw v1
+.end method
+
+.method public final close()V
+    .locals 1
+
+    const/4 v0, 0x1
+
+    iput-boolean v0, p0, Lgjw;->f:Z
+
+    return-void
 .end method

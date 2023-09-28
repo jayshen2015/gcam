@@ -1,2081 +1,320 @@
-.class public final Lcco;
-.super Ljava/lang/Object;
+.class final Lcco;
+.super Landroid/database/sqlite/SQLiteOpenHelper;
 
-# interfaces
-.implements Logk;
+
+# static fields
+.field private static final a:Louj;
 
 
 # instance fields
-.field private final a:Loiw;
+.field private final b:Landroid/content/Context;
 
-.field private final b:Loiw;
+.field private final c:Ljava/lang/String;
 
-.field private final c:Loiw;
+.field private final d:Loom;
 
-.field private final d:Loiw;
+.field private final e:I
 
-.field private final e:Loiw;
-
-.field private final f:Loiw;
-
-.field private final synthetic g:I
+.field private f:Z
 
 
 # direct methods
-.method public constructor <init>(Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;I)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 1
 
-    iput p7, p0, Lcco;->g:I
+    const-string v0, "com/google/android/apps/camera/brella/examplestore/lib/VersionedSqliteOpenHelper"
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-static {v0}, Louj;->h(Ljava/lang/String;)Louj;
 
-    iput-object p1, p0, Lcco;->a:Loiw;
+    move-result-object v0
 
-    iput-object p2, p0, Lcco;->b:Loiw;
-
-    iput-object p3, p0, Lcco;->c:Loiw;
-
-    iput-object p4, p0, Lcco;->d:Loiw;
-
-    iput-object p5, p0, Lcco;->e:Loiw;
-
-    iput-object p6, p0, Lcco;->f:Loiw;
+    sput-object v0, Lcco;->a:Louj;
 
     return-void
 .end method
 
-.method public constructor <init>(Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;I[B)V
-    .locals 0
+.method public constructor <init>(Landroid/content/Context;Loom;)V
+    .locals 3
 
-    iput p7, p0, Lcco;->g:I
+    invoke-virtual {p2}, Loom;->size()I
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    move-result v0
 
-    iput-object p1, p0, Lcco;->f:Loiw;
+    const-string v1, "example_store_ng"
 
-    iput-object p2, p0, Lcco;->a:Loiw;
+    const/4 v2, 0x0
 
-    iput-object p3, p0, Lcco;->d:Loiw;
+    invoke-direct {p0, p1, v1, v2, v0}, Landroid/database/sqlite/SQLiteOpenHelper;-><init>(Landroid/content/Context;Ljava/lang/String;Landroid/database/sqlite/SQLiteDatabase$CursorFactory;I)V
 
-    iput-object p4, p0, Lcco;->b:Loiw;
+    iput-object p1, p0, Lcco;->b:Landroid/content/Context;
 
-    iput-object p5, p0, Lcco;->c:Loiw;
+    iput-object v1, p0, Lcco;->c:Ljava/lang/String;
 
-    iput-object p6, p0, Lcco;->e:Loiw;
+    iput-object p2, p0, Lcco;->d:Loom;
 
-    return-void
-.end method
+    invoke-virtual {p2}, Loom;->size()I
 
-.method public constructor <init>(Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;I[B[B)V
-    .locals 0
+    move-result p1
 
-    iput p7, p0, Lcco;->g:I
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lcco;->b:Loiw;
-
-    iput-object p2, p0, Lcco;->f:Loiw;
-
-    iput-object p3, p0, Lcco;->a:Loiw;
-
-    iput-object p4, p0, Lcco;->c:Loiw;
-
-    iput-object p5, p0, Lcco;->e:Loiw;
-
-    iput-object p6, p0, Lcco;->d:Loiw;
+    iput p1, p0, Lcco;->e:I
 
     return-void
-.end method
-
-.method public constructor <init>(Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;I[C)V
-    .locals 0
-
-    iput p7, p0, Lcco;->g:I
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lcco;->e:Loiw;
-
-    iput-object p2, p0, Lcco;->c:Loiw;
-
-    iput-object p3, p0, Lcco;->f:Loiw;
-
-    iput-object p4, p0, Lcco;->d:Loiw;
-
-    iput-object p5, p0, Lcco;->a:Loiw;
-
-    iput-object p6, p0, Lcco;->b:Loiw;
-
-    return-void
-.end method
-
-.method public constructor <init>(Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;I[C[B)V
-    .locals 0
-
-    iput p7, p0, Lcco;->g:I
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lcco;->f:Loiw;
-
-    iput-object p2, p0, Lcco;->e:Loiw;
-
-    iput-object p3, p0, Lcco;->a:Loiw;
-
-    iput-object p4, p0, Lcco;->b:Loiw;
-
-    iput-object p5, p0, Lcco;->c:Loiw;
-
-    iput-object p6, p0, Lcco;->d:Loiw;
-
-    return-void
-.end method
-
-.method public constructor <init>(Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;I[F)V
-    .locals 0
-
-    iput p7, p0, Lcco;->g:I
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lcco;->e:Loiw;
-
-    iput-object p2, p0, Lcco;->b:Loiw;
-
-    iput-object p3, p0, Lcco;->f:Loiw;
-
-    iput-object p4, p0, Lcco;->a:Loiw;
-
-    iput-object p5, p0, Lcco;->c:Loiw;
-
-    iput-object p6, p0, Lcco;->d:Loiw;
-
-    return-void
-.end method
-
-.method public constructor <init>(Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;I[I)V
-    .locals 0
-
-    iput p7, p0, Lcco;->g:I
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lcco;->a:Loiw;
-
-    iput-object p2, p0, Lcco;->f:Loiw;
-
-    iput-object p3, p0, Lcco;->c:Loiw;
-
-    iput-object p4, p0, Lcco;->b:Loiw;
-
-    iput-object p5, p0, Lcco;->d:Loiw;
-
-    iput-object p6, p0, Lcco;->e:Loiw;
-
-    return-void
-.end method
-
-.method public constructor <init>(Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;I[S)V
-    .locals 0
-
-    iput p7, p0, Lcco;->g:I
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lcco;->a:Loiw;
-
-    iput-object p2, p0, Lcco;->d:Loiw;
-
-    iput-object p3, p0, Lcco;->b:Loiw;
-
-    iput-object p4, p0, Lcco;->c:Loiw;
-
-    iput-object p5, p0, Lcco;->f:Loiw;
-
-    iput-object p6, p0, Lcco;->e:Loiw;
-
-    return-void
-.end method
-
-.method public constructor <init>(Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;I[Z)V
-    .locals 0
-
-    iput p7, p0, Lcco;->g:I
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lcco;->b:Loiw;
-
-    iput-object p2, p0, Lcco;->a:Loiw;
-
-    iput-object p3, p0, Lcco;->c:Loiw;
-
-    iput-object p4, p0, Lcco;->f:Loiw;
-
-    iput-object p5, p0, Lcco;->e:Loiw;
-
-    iput-object p6, p0, Lcco;->d:Loiw;
-
-    return-void
-.end method
-
-.method public constructor <init>(Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;I[[B)V
-    .locals 0
-
-    iput p7, p0, Lcco;->g:I
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lcco;->b:Loiw;
-
-    iput-object p2, p0, Lcco;->f:Loiw;
-
-    iput-object p3, p0, Lcco;->c:Loiw;
-
-    iput-object p4, p0, Lcco;->e:Loiw;
-
-    iput-object p5, p0, Lcco;->a:Loiw;
-
-    iput-object p6, p0, Lcco;->d:Loiw;
-
-    return-void
-.end method
-
-.method public constructor <init>(Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;I[[C)V
-    .locals 0
-
-    iput p7, p0, Lcco;->g:I
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lcco;->a:Loiw;
-
-    iput-object p2, p0, Lcco;->d:Loiw;
-
-    iput-object p3, p0, Lcco;->c:Loiw;
-
-    iput-object p4, p0, Lcco;->e:Loiw;
-
-    iput-object p5, p0, Lcco;->f:Loiw;
-
-    iput-object p6, p0, Lcco;->b:Loiw;
-
-    return-void
-.end method
-
-.method public constructor <init>(Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;I[[F)V
-    .locals 0
-
-    iput p7, p0, Lcco;->g:I
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lcco;->f:Loiw;
-
-    iput-object p2, p0, Lcco;->a:Loiw;
-
-    iput-object p3, p0, Lcco;->c:Loiw;
-
-    iput-object p4, p0, Lcco;->b:Loiw;
-
-    iput-object p5, p0, Lcco;->d:Loiw;
-
-    iput-object p6, p0, Lcco;->e:Loiw;
-
-    return-void
-.end method
-
-.method public constructor <init>(Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;I[[I)V
-    .locals 0
-
-    iput p7, p0, Lcco;->g:I
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lcco;->f:Loiw;
-
-    iput-object p2, p0, Lcco;->a:Loiw;
-
-    iput-object p3, p0, Lcco;->c:Loiw;
-
-    iput-object p4, p0, Lcco;->d:Loiw;
-
-    iput-object p5, p0, Lcco;->b:Loiw;
-
-    iput-object p6, p0, Lcco;->e:Loiw;
-
-    return-void
-.end method
-
-.method public constructor <init>(Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;I[[S)V
-    .locals 0
-
-    iput p7, p0, Lcco;->g:I
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lcco;->f:Loiw;
-
-    iput-object p2, p0, Lcco;->c:Loiw;
-
-    iput-object p3, p0, Lcco;->a:Loiw;
-
-    iput-object p4, p0, Lcco;->e:Loiw;
-
-    iput-object p5, p0, Lcco;->b:Loiw;
-
-    iput-object p6, p0, Lcco;->d:Loiw;
-
-    return-void
-.end method
-
-.method public constructor <init>(Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;I[[Z)V
-    .locals 0
-
-    iput p7, p0, Lcco;->g:I
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lcco;->f:Loiw;
-
-    iput-object p2, p0, Lcco;->b:Loiw;
-
-    iput-object p3, p0, Lcco;->e:Loiw;
-
-    iput-object p4, p0, Lcco;->c:Loiw;
-
-    iput-object p5, p0, Lcco;->d:Loiw;
-
-    iput-object p6, p0, Lcco;->a:Loiw;
-
-    return-void
-.end method
-
-.method public constructor <init>(Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;I[[[B)V
-    .locals 0
-
-    iput p7, p0, Lcco;->g:I
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lcco;->c:Loiw;
-
-    iput-object p2, p0, Lcco;->f:Loiw;
-
-    iput-object p3, p0, Lcco;->e:Loiw;
-
-    iput-object p4, p0, Lcco;->d:Loiw;
-
-    iput-object p5, p0, Lcco;->a:Loiw;
-
-    iput-object p6, p0, Lcco;->b:Loiw;
-
-    return-void
-.end method
-
-.method public constructor <init>(Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;I[[[C)V
-    .locals 0
-
-    iput p7, p0, Lcco;->g:I
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lcco;->c:Loiw;
-
-    iput-object p2, p0, Lcco;->f:Loiw;
-
-    iput-object p3, p0, Lcco;->e:Loiw;
-
-    iput-object p4, p0, Lcco;->d:Loiw;
-
-    iput-object p5, p0, Lcco;->a:Loiw;
-
-    iput-object p6, p0, Lcco;->b:Loiw;
-
-    return-void
-.end method
-
-.method public constructor <init>(Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;I[[[F)V
-    .locals 0
-
-    iput p7, p0, Lcco;->g:I
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lcco;->c:Loiw;
-
-    iput-object p2, p0, Lcco;->d:Loiw;
-
-    iput-object p3, p0, Lcco;->a:Loiw;
-
-    iput-object p4, p0, Lcco;->b:Loiw;
-
-    iput-object p5, p0, Lcco;->e:Loiw;
-
-    iput-object p6, p0, Lcco;->f:Loiw;
-
-    return-void
-.end method
-
-.method public constructor <init>(Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;I[[[I)V
-    .locals 0
-
-    iput p7, p0, Lcco;->g:I
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lcco;->b:Loiw;
-
-    iput-object p2, p0, Lcco;->d:Loiw;
-
-    iput-object p3, p0, Lcco;->e:Loiw;
-
-    iput-object p4, p0, Lcco;->c:Loiw;
-
-    iput-object p5, p0, Lcco;->a:Loiw;
-
-    iput-object p6, p0, Lcco;->f:Loiw;
-
-    return-void
-.end method
-
-.method public constructor <init>(Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;I[[[S)V
-    .locals 0
-
-    iput p7, p0, Lcco;->g:I
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lcco;->d:Loiw;
-
-    iput-object p2, p0, Lcco;->b:Loiw;
-
-    iput-object p3, p0, Lcco;->f:Loiw;
-
-    iput-object p4, p0, Lcco;->e:Loiw;
-
-    iput-object p5, p0, Lcco;->a:Loiw;
-
-    iput-object p6, p0, Lcco;->c:Loiw;
-
-    return-void
-.end method
-
-.method public constructor <init>(Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;I[[[Z)V
-    .locals 0
-
-    iput p7, p0, Lcco;->g:I
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lcco;->f:Loiw;
-
-    iput-object p2, p0, Lcco;->c:Loiw;
-
-    iput-object p3, p0, Lcco;->b:Loiw;
-
-    iput-object p4, p0, Lcco;->a:Loiw;
-
-    iput-object p5, p0, Lcco;->e:Loiw;
-
-    iput-object p6, p0, Lcco;->d:Loiw;
-
-    return-void
-.end method
-
-.method public static a(Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;)Lcco;
-    .locals 9
-
-    new-instance v8, Lcco;
-
-    const/4 v7, 0x0
-
-    move-object v0, v8
-
-    move-object v1, p0
-
-    move-object v2, p1
-
-    move-object v3, p2
-
-    move-object v4, p3
-
-    move-object v5, p4
-
-    move-object v6, p5
-
-    invoke-direct/range {v0 .. v7}, Lcco;-><init>(Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;I)V
-
-    return-object v8
-.end method
-
-.method public static b(Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;)Lcco;
-    .locals 10
-
-    new-instance v9, Lcco;
-
-    const/4 v7, 0x1
-
-    const/4 v8, 0x0
-
-    move-object v0, v9
-
-    move-object v1, p0
-
-    move-object v2, p1
-
-    move-object v3, p2
-
-    move-object v4, p3
-
-    move-object v5, p4
-
-    move-object v6, p5
-
-    invoke-direct/range {v0 .. v8}, Lcco;-><init>(Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;I[B)V
-
-    return-object v9
-.end method
-
-.method public static c(Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;)Lcco;
-    .locals 10
-
-    new-instance v9, Lcco;
-
-    const/4 v7, 0x7
-
-    const/4 v8, 0x0
-
-    move-object v0, v9
-
-    move-object v1, p0
-
-    move-object v2, p1
-
-    move-object v3, p2
-
-    move-object v4, p3
-
-    move-object v5, p4
-
-    move-object v6, p5
-
-    invoke-direct/range {v0 .. v8}, Lcco;-><init>(Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;I[[B)V
-
-    return-object v9
-.end method
-
-.method public static d(Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;)Lcco;
-    .locals 10
-
-    new-instance v9, Lcco;
-
-    const/16 v7, 0xd
-
-    const/4 v8, 0x0
-
-    move-object v0, v9
-
-    move-object v1, p0
-
-    move-object v2, p1
-
-    move-object v3, p2
-
-    move-object v4, p3
-
-    move-object v5, p4
-
-    move-object v6, p5
-
-    invoke-direct/range {v0 .. v8}, Lcco;-><init>(Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;I[[[B)V
-
-    return-object v9
-.end method
-
-.method public static e(Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;)Lcco;
-    .locals 10
-
-    new-instance v9, Lcco;
-
-    const/16 v7, 0xe
-
-    const/4 v8, 0x0
-
-    move-object v0, v9
-
-    move-object v1, p0
-
-    move-object v2, p1
-
-    move-object v3, p2
-
-    move-object v4, p3
-
-    move-object v5, p4
-
-    move-object v6, p5
-
-    invoke-direct/range {v0 .. v8}, Lcco;-><init>(Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;I[[[C)V
-
-    return-object v9
-.end method
-
-.method public static f(Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;)Lcco;
-    .locals 10
-
-    new-instance v9, Lcco;
-
-    const/16 v7, 0xf
-
-    const/4 v8, 0x0
-
-    move-object v0, v9
-
-    move-object v1, p0
-
-    move-object v2, p1
-
-    move-object v3, p2
-
-    move-object v4, p3
-
-    move-object v5, p4
-
-    move-object v6, p5
-
-    invoke-direct/range {v0 .. v8}, Lcco;-><init>(Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;I[[[S)V
-
-    return-object v9
 .end method
 
 
 # virtual methods
-.method public final synthetic get()Ljava/lang/Object;
-    .locals 15
+.method public final getWritableDatabase()Landroid/database/sqlite/SQLiteDatabase;
+    .locals 4
 
-    iget v0, p0, Lcco;->g:I
-
-    packed-switch v0, :pswitch_data_0
-
-    iget-object v0, p0, Lcco;->f:Loiw;
-
-    check-cast v0, Lest;
-
-    invoke-virtual {v0}, Lest;->a()Lmqp;
-
-    move-result-object v2
-
-    iget-object v0, p0, Lcco;->e:Loiw;
-
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
+    :try_start_0
+    invoke-super {p0}, Landroid/database/sqlite/SQLiteOpenHelper;->getWritableDatabase()Landroid/database/sqlite/SQLiteDatabase;
 
     move-result-object v0
+    :try_end_0
+    .catch Landroid/database/sqlite/SQLiteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    move-object v3, v0
+    goto :goto_0
 
-    check-cast v3, Ldgj;
+    :catch_0
+    move-exception v0
 
-    iget-object v0, p0, Lcco;->a:Loiw;
+    sget-object v1, Lcco;->a:Louj;
 
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    move-object v4, v0
-
-    check-cast v4, Lgft;
-
-    iget-object v0, p0, Lcco;->b:Loiw;
-
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    move-object v5, v0
-
-    check-cast v5, Ljwb;
-
-    iget-object v0, p0, Lcco;->c:Loiw;
-
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    move-object v6, v0
-
-    check-cast v6, Ljava/util/concurrent/ScheduledExecutorService;
-
-    iget-object v0, p0, Lcco;->d:Loiw;
-
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    move-object v7, v0
-
-    check-cast v7, Lfbz;
-
-    new-instance v0, Ldgh;
-
-    move-object v1, v0
-
-    invoke-direct/range {v1 .. v7}, Ldgh;-><init>(Lmqp;Ldgj;Lgft;Ljwb;Ljava/util/concurrent/ScheduledExecutorService;Lfbz;)V
-
-    return-object v0
-
-    :pswitch_0
-    iget-object v0, p0, Lcco;->b:Loiw;
-
-    check-cast v0, Lest;
-
-    invoke-virtual {v0}, Lest;->a()Lmqp;
-
-    move-result-object v2
-
-    iget-object v0, p0, Lcco;->f:Loiw;
-
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    move-object v3, v0
-
-    check-cast v3, Ldfy;
-
-    iget-object v0, p0, Lcco;->a:Loiw;
-
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    move-object v4, v0
-
-    check-cast v4, Lgft;
-
-    iget-object v0, p0, Lcco;->c:Loiw;
-
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    move-object v5, v0
-
-    check-cast v5, Ljwb;
-
-    iget-object v0, p0, Lcco;->e:Loiw;
-
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    move-object v6, v0
-
-    check-cast v6, Ljava/util/concurrent/ScheduledExecutorService;
-
-    iget-object v0, p0, Lcco;->d:Loiw;
-
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    move-object v7, v0
-
-    check-cast v7, Lfbz;
-
-    new-instance v0, Ldfv;
-
-    move-object v1, v0
-
-    invoke-direct/range {v1 .. v7}, Ldfv;-><init>(Lmqp;Ldfy;Lgft;Ljwb;Ljava/util/concurrent/ScheduledExecutorService;Lfbz;)V
-
-    return-object v0
-
-    :pswitch_1
-    iget-object v0, p0, Lcco;->c:Loiw;
-
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    move-object v2, v0
-
-    check-cast v2, Ldfv;
-
-    iget-object v0, p0, Lcco;->d:Loiw;
-
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    move-object v3, v0
-
-    check-cast v3, Ldgh;
-
-    iget-object v0, p0, Lcco;->a:Loiw;
-
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    move-object v4, v0
-
-    check-cast v4, Ldgb;
-
-    iget-object v0, p0, Lcco;->b:Loiw;
-
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    move-object v5, v0
-
-    check-cast v5, Ldne;
-
-    iget-object v0, p0, Lcco;->e:Loiw;
-
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    move-object v6, v0
-
-    check-cast v6, Ldfo;
-
-    iget-object v0, p0, Lcco;->f:Loiw;
-
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    move-object v7, v0
-
-    check-cast v7, Ldfb;
-
-    new-instance v0, Ldfa;
-
-    const/4 v8, 0x0
-
-    const/4 v9, 0x0
-
-    move-object v1, v0
-
-    invoke-direct/range {v1 .. v9}, Ldfa;-><init>(Ldfv;Ldgh;Ldgb;Ldne;Ldfo;Ldfb;[B[B)V
-
-    return-object v0
-
-    :pswitch_2
-    iget-object v0, p0, Lcco;->f:Loiw;
-
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    new-instance v3, Lcvr;
-
-    invoke-direct {v3}, Lcvr;-><init>()V
-
-    iget-object v1, p0, Lcco;->c:Loiw;
-
-    check-cast v1, Ldel;
-
-    invoke-virtual {v1}, Ldel;->a()Ldek;
-
-    move-result-object v4
-
-    iget-object v1, p0, Lcco;->b:Loiw;
-
-    invoke-interface {v1}, Loiw;->get()Ljava/lang/Object;
+    invoke-virtual {v1}, Loue;->b()Lova;
 
     move-result-object v1
 
-    move-object v5, v1
+    const/16 v2, 0xff
 
-    check-cast v5, Lkbi;
+    const-string v3, "Error opening database, deleting the database and trying again"
 
-    iget-object v1, p0, Lcco;->a:Loiw;
+    invoke-static {v1, v3, v2, v0}, Ld;->w(Lova;Ljava/lang/String;CLjava/lang/Throwable;)V
 
-    check-cast v1, Ldfk;
+    iget-object v1, p0, Lcco;->b:Landroid/content/Context;
 
-    invoke-virtual {v1}, Ldfk;->a()Ldga;
+    iget-object v2, p0, Lcco;->c:Ljava/lang/String;
 
-    move-result-object v6
-
-    iget-object v1, p0, Lcco;->e:Loiw;
-
-    check-cast v1, Ldwh;
-
-    invoke-virtual {v1}, Ldwh;->a()Landroid/content/Context;
-
-    move-result-object v7
-
-    iget-object v1, p0, Lcco;->d:Loiw;
-
-    invoke-interface {v1}, Loiw;->get()Ljava/lang/Object;
+    invoke-virtual {v1, v2}, Landroid/content/Context;->getDatabasePath(Ljava/lang/String;)Ljava/io/File;
 
     move-result-object v1
 
-    move-object v8, v1
+    invoke-static {v1}, Landroid/database/sqlite/SQLiteDatabase;->deleteDatabase(Ljava/io/File;)Z
 
-    check-cast v8, Lkbc;
+    move-result v1
 
-    new-instance v11, Ldes;
+    if-eqz v1, :cond_1
 
-    move-object v2, v0
-
-    check-cast v2, Ldeg;
-
-    const/4 v9, 0x0
-
-    const/4 v10, 0x0
-
-    move-object v1, v11
-
-    invoke-direct/range {v1 .. v10}, Ldes;-><init>(Ldeg;Lcvr;Ldek;Lkbi;Ldga;Landroid/content/Context;Lkbc;[B[B)V
-
-    return-object v11
-
-    :pswitch_3
-    iget-object v0, p0, Lcco;->b:Loiw;
-
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
+    :try_start_1
+    invoke-super {p0}, Landroid/database/sqlite/SQLiteOpenHelper;->getWritableDatabase()Landroid/database/sqlite/SQLiteDatabase;
 
     move-result-object v0
+    :try_end_1
+    .catch Landroid/database/sqlite/SQLiteException; {:try_start_1 .. :try_end_1} :catch_2
 
-    check-cast v0, Ljuh;
+    :goto_0
+    iget-boolean v1, p0, Lcco;->f:Z
 
-    iget-object v0, p0, Lcco;->d:Loiw;
+    if-eqz v1, :cond_0
 
-    check-cast v0, Lhhx;
-
-    invoke-virtual {v0}, Lhhx;->a()Lmqp;
-
-    iget-object v0, p0, Lcco;->e:Loiw;
-
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/util/concurrent/Executor;
-
-    iget-object v0, p0, Lcco;->c:Loiw;
-
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ldhi;
-
-    iget-object v1, p0, Lcco;->a:Loiw;
-
-    check-cast v1, Lhhx;
-
-    invoke-virtual {v1}, Lhhx;->a()Lmqp;
-
-    iget-object v1, p0, Lcco;->f:Loiw;
-
-    invoke-interface {v1}, Loiw;->get()Ljava/lang/Object;
+    invoke-virtual {v0}, Landroid/database/sqlite/SQLiteDatabase;->getPath()Ljava/lang/String;
 
     move-result-object v1
 
-    check-cast v1, Ldew;
+    invoke-virtual {v0}, Landroid/database/sqlite/SQLiteDatabase;->close()V
 
-    new-instance v1, Lden;
+    new-instance v0, Ljava/io/File;
 
-    invoke-direct {v1, v0}, Lden;-><init>(Ldhi;)V
+    invoke-direct {v0, v1}, Ljava/io/File;-><init>(Ljava/lang/String;)V
 
-    return-object v1
+    invoke-static {v0}, Landroid/database/sqlite/SQLiteDatabase;->deleteDatabase(Ljava/io/File;)Z
 
-    :pswitch_4
-    iget-object v0, p0, Lcco;->d:Loiw;
+    const/4 v0, 0x0
 
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
+    iput-boolean v0, p0, Lcco;->f:Z
 
-    move-result-object v0
-
-    move-object v2, v0
-
-    check-cast v2, Ljuh;
-
-    iget-object v0, p0, Lcco;->b:Loiw;
-
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
+    :try_start_2
+    invoke-super {p0}, Landroid/database/sqlite/SQLiteOpenHelper;->getWritableDatabase()Landroid/database/sqlite/SQLiteDatabase;
 
     move-result-object v0
+    :try_end_2
+    .catch Landroid/database/sqlite/SQLiteException; {:try_start_2 .. :try_end_2} :catch_1
 
-    move-object v3, v0
+    goto :goto_1
 
-    check-cast v3, Ldde;
+    :catch_1
+    move-exception v0
 
-    iget-object v0, p0, Lcco;->f:Loiw;
+    sget-object v1, Lcco;->a:Louj;
 
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    move-object v4, v0
-
-    check-cast v4, Ldca;
-
-    iget-object v0, p0, Lcco;->e:Loiw;
-
-    check-cast v0, Ldbs;
-
-    invoke-virtual {v0}, Ldbs;->a()Lcvr;
-
-    move-result-object v5
-
-    iget-object v0, p0, Lcco;->a:Loiw;
-
-    check-cast v0, Lkao;
-
-    invoke-virtual {v0}, Lkao;->a()Lkaq;
-
-    move-result-object v6
-
-    iget-object v0, p0, Lcco;->c:Loiw;
-
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    move-object v7, v0
-
-    check-cast v7, Ldbt;
-
-    new-instance v0, Ldfa;
-
-    const/4 v8, 0x0
-
-    move-object v1, v0
-
-    invoke-direct/range {v1 .. v8}, Ldfa;-><init>(Ljuh;Ldde;Ldca;Lcvr;Lkaq;Ldbt;[B)V
-
-    return-object v0
-
-    :pswitch_5
-    iget-object v0, p0, Lcco;->c:Loiw;
-
-    check-cast v0, Ldwh;
-
-    invoke-virtual {v0}, Ldwh;->a()Landroid/content/Context;
-
-    move-result-object v2
-
-    iget-object v0, p0, Lcco;->f:Loiw;
-
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    move-object v3, v0
-
-    check-cast v3, Lcdx;
-
-    iget-object v0, p0, Lcco;->e:Loiw;
-
-    check-cast v0, Lelo;
-
-    invoke-virtual {v0}, Lelo;->a()Landroid/app/Activity;
-
-    move-result-object v4
-
-    iget-object v0, p0, Lcco;->d:Loiw;
-
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    move-object v5, v0
-
-    check-cast v5, Lfbz;
-
-    iget-object v0, p0, Lcco;->a:Loiw;
-
-    check-cast v0, Lkao;
-
-    invoke-virtual {v0}, Lkao;->a()Lkaq;
-
-    move-result-object v6
-
-    iget-object v0, p0, Lcco;->b:Loiw;
-
-    check-cast v0, Ldbs;
-
-    invoke-virtual {v0}, Ldbs;->a()Lcvr;
-
-    move-result-object v7
-
-    new-instance v0, Ldbp;
-
-    const/4 v8, 0x0
-
-    move-object v1, v0
-
-    invoke-direct/range {v1 .. v8}, Ldbp;-><init>(Landroid/content/Context;Lcdx;Landroid/app/Activity;Lfbz;Lkaq;Lcvr;[B)V
-
-    return-object v0
-
-    :pswitch_6
-    iget-object v0, p0, Lcco;->c:Loiw;
-
-    check-cast v0, Ldwh;
-
-    invoke-virtual {v0}, Ldwh;->a()Landroid/content/Context;
-
-    move-result-object v2
-
-    iget-object v0, p0, Lcco;->f:Loiw;
-
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    move-object v3, v0
-
-    check-cast v3, Lcdx;
-
-    iget-object v0, p0, Lcco;->e:Loiw;
-
-    check-cast v0, Lelo;
-
-    invoke-virtual {v0}, Lelo;->a()Landroid/app/Activity;
-
-    move-result-object v4
-
-    iget-object v0, p0, Lcco;->d:Loiw;
-
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    move-object v5, v0
-
-    check-cast v5, Lfbz;
-
-    iget-object v0, p0, Lcco;->a:Loiw;
-
-    check-cast v0, Lkao;
-
-    invoke-virtual {v0}, Lkao;->a()Lkaq;
-
-    move-result-object v6
-
-    iget-object v0, p0, Lcco;->b:Loiw;
-
-    check-cast v0, Ldbs;
-
-    invoke-virtual {v0}, Ldbs;->a()Lcvr;
-
-    move-result-object v7
-
-    new-instance v0, Ldbi;
-
-    const/4 v8, 0x0
-
-    move-object v1, v0
-
-    invoke-direct/range {v1 .. v8}, Ldbi;-><init>(Landroid/content/Context;Lcdx;Landroid/app/Activity;Lfbz;Lkaq;Lcvr;[B)V
-
-    return-object v0
-
-    :pswitch_7
-    iget-object v0, p0, Lcco;->f:Loiw;
-
-    check-cast v0, Ldwh;
-
-    invoke-virtual {v0}, Ldwh;->a()Landroid/content/Context;
-
-    move-result-object v2
-
-    iget-object v0, p0, Lcco;->a:Loiw;
-
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    move-object v3, v0
-
-    check-cast v3, Lhpu;
-
-    iget-object v0, p0, Lcco;->c:Loiw;
-
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    move-object v4, v0
-
-    check-cast v4, Ljvk;
-
-    iget-object v0, p0, Lcco;->b:Loiw;
-
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    move-object v5, v0
-
-    check-cast v5, Ljwb;
-
-    iget-object v0, p0, Lcco;->d:Loiw;
-
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    move-object v6, v0
-
-    check-cast v6, Ljwb;
-
-    iget-object v0, p0, Lcco;->e:Loiw;
-
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    move-object v7, v0
-
-    check-cast v7, Ldhi;
-
-    new-instance v0, Lczr;
-
-    move-object v1, v0
-
-    invoke-direct/range {v1 .. v7}, Lczr;-><init>(Landroid/content/Context;Lhpu;Ljvk;Ljwb;Ljwb;Ldhi;)V
-
-    return-object v0
-
-    :pswitch_8
-    iget-object v0, p0, Lcco;->f:Loiw;
-
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    move-object v2, v0
-
-    check-cast v2, Lcom/google/android/apps/camera/bottombar/BottomBarController;
-
-    iget-object v0, p0, Lcco;->b:Loiw;
-
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    move-object v3, v0
-
-    check-cast v3, Liff;
-
-    iget-object v0, p0, Lcco;->e:Loiw;
-
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    move-object v4, v0
-
-    check-cast v4, Lhwu;
-
-    iget-object v0, p0, Lcco;->c:Loiw;
-
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    move-object v5, v0
-
-    check-cast v5, Libj;
-
-    iget-object v0, p0, Lcco;->d:Loiw;
-
-    check-cast v0, Lcyt;
-
-    invoke-virtual {v0}, Lcyt;->a()Ldfa;
-
-    move-result-object v6
-
-    iget-object v0, p0, Lcco;->a:Loiw;
-
-    check-cast v0, Lcrj;
-
-    invoke-virtual {v0}, Lcrj;->a()Lmqp;
-
-    move-result-object v7
-
-    new-instance v0, Lcxz;
-
-    const/4 v8, 0x0
-
-    const/4 v9, 0x0
-
-    move-object v1, v0
-
-    invoke-direct/range {v1 .. v9}, Lcxz;-><init>(Lcom/google/android/apps/camera/bottombar/BottomBarController;Liff;Lhwu;Libj;Ldfa;Lmqp;[B[B)V
-
-    return-object v0
-
-    :pswitch_9
-    iget-object v0, p0, Lcco;->f:Loiw;
-
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    move-object v2, v0
-
-    check-cast v2, Lcom/google/android/apps/camera/bottombar/BottomBarController;
-
-    iget-object v0, p0, Lcco;->a:Loiw;
-
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    move-object v3, v0
-
-    check-cast v3, Liff;
-
-    iget-object v0, p0, Lcco;->c:Loiw;
-
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    move-object v4, v0
-
-    check-cast v4, Libj;
-
-    iget-object v0, p0, Lcco;->d:Loiw;
-
-    check-cast v0, Lcyt;
-
-    invoke-virtual {v0}, Lcyt;->a()Ldfa;
-
-    move-result-object v5
-
-    iget-object v0, p0, Lcco;->b:Loiw;
-
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    move-object v6, v0
-
-    check-cast v6, Lczx;
-
-    iget-object v0, p0, Lcco;->e:Loiw;
-
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    move-object v7, v0
-
-    check-cast v7, Ldhi;
-
-    new-instance v0, Lcxl;
-
-    const/4 v8, 0x0
-
-    const/4 v9, 0x0
-
-    move-object v1, v0
-
-    invoke-direct/range {v1 .. v9}, Lcxl;-><init>(Lcom/google/android/apps/camera/bottombar/BottomBarController;Liff;Libj;Ldfa;Lczx;Ldhi;[B[B)V
-
-    return-object v0
-
-    :pswitch_a
-    iget-object v0, p0, Lcco;->f:Loiw;
-
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    move-object v2, v0
-
-    check-cast v2, Lctv;
-
-    iget-object v0, p0, Lcco;->c:Loiw;
-
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    move-object v3, v0
-
-    check-cast v3, Lcsa;
-
-    iget-object v0, p0, Lcco;->a:Loiw;
-
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    move-object v4, v0
-
-    check-cast v4, Lico;
-
-    iget-object v0, p0, Lcco;->e:Loiw;
-
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    move-object v5, v0
-
-    check-cast v5, Lcvx;
-
-    iget-object v0, p0, Lcco;->b:Loiw;
-
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    move-object v6, v0
-
-    check-cast v6, Ldbf;
-
-    iget-object v0, p0, Lcco;->d:Loiw;
-
-    check-cast v0, Lcwr;
-
-    invoke-virtual {v0}, Lcwr;->a()Lcwq;
-
-    move-result-object v7
-
-    new-instance v0, Lcwl;
-
-    move-object v1, v0
-
-    invoke-direct/range {v1 .. v7}, Lcwl;-><init>(Lctv;Lcsa;Lico;Lcvx;Ldbf;Lcwq;)V
-
-    return-object v0
-
-    :pswitch_b
-    iget-object v0, p0, Lcco;->a:Loiw;
-
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    move-object v2, v0
-
-    check-cast v2, Lcwc;
-
-    iget-object v0, p0, Lcco;->d:Loiw;
-
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    move-object v3, v0
-
-    check-cast v3, Lcwe;
-
-    iget-object v0, p0, Lcco;->c:Loiw;
-
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    move-object v4, v0
-
-    check-cast v4, Ljvk;
-
-    iget-object v0, p0, Lcco;->e:Loiw;
-
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    move-object v5, v0
-
-    check-cast v5, Lcwa;
-
-    iget-object v0, p0, Lcco;->f:Loiw;
-
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    move-object v6, v0
-
-    check-cast v6, Lcvz;
-
-    iget-object v0, p0, Lcco;->b:Loiw;
-
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    move-object v7, v0
-
-    check-cast v7, Ljwb;
-
-    new-instance v0, Lcwh;
-
-    move-object v1, v0
-
-    invoke-direct/range {v1 .. v7}, Lcwh;-><init>(Lcwc;Lcwe;Ljvk;Lcwa;Lcvz;Ljwb;)V
-
-    return-object v0
-
-    :pswitch_c
-    iget-object v0, p0, Lcco;->b:Loiw;
-
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    move-object v3, v0
-
-    check-cast v3, Lknz;
-
-    iget-object v0, p0, Lcco;->f:Loiw;
-
-    check-cast v0, Lfwp;
-
-    invoke-virtual {v0}, Lfwp;->a()Lkli;
-
-    move-result-object v4
-
-    iget-object v0, p0, Lcco;->c:Loiw;
-
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    move-object v2, v0
-
-    check-cast v2, Lily;
-
-    iget-object v0, p0, Lcco;->e:Loiw;
-
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    move-object v5, v0
-
-    check-cast v5, Limq;
-
-    iget-object v0, p0, Lcco;->a:Loiw;
-
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    move-object v6, v0
-
-    check-cast v6, Ldhi;
-
-    iget-object v0, p0, Lcco;->d:Loiw;
-
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    move-object v7, v0
-
-    check-cast v7, Ljvs;
-
-    new-instance v0, Lmrd;
-
-    move-object v1, v0
-
-    invoke-direct/range {v1 .. v7}, Lmrd;-><init>(Lily;Lknz;Lkli;Limq;Ldhi;Ljvs;)V
-
-    return-object v0
-
-    :pswitch_d
-    iget-object v0, p0, Lcco;->e:Loiw;
-
-    check-cast v0, Ldwh;
-
-    invoke-virtual {v0}, Ldwh;->a()Landroid/content/Context;
-
-    move-result-object v2
-
-    iget-object v0, p0, Lcco;->b:Loiw;
-
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    move-object v3, v0
-
-    check-cast v3, Ldhi;
-
-    iget-object v0, p0, Lcco;->f:Loiw;
-
-    check-cast v0, Lerc;
-
-    invoke-virtual {v0}, Lerc;->a()Lfak;
-
-    move-result-object v4
-
-    iget-object v0, p0, Lcco;->a:Loiw;
-
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    move-object v5, v0
-
-    check-cast v5, Ljuh;
-
-    iget-object v0, p0, Lcco;->c:Loiw;
-
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    move-object v6, v0
-
-    check-cast v6, Ljava/util/concurrent/Executor;
-
-    iget-object v0, p0, Lcco;->d:Loiw;
-
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    move-object v7, v0
-
-    check-cast v7, Lkbc;
-
-    new-instance v0, Lcih;
-
-    move-object v1, v0
-
-    invoke-direct/range {v1 .. v7}, Lcih;-><init>(Landroid/content/Context;Ldhi;Lfak;Ljuh;Ljava/util/concurrent/Executor;Lkbc;)V
-
-    return-object v0
-
-    :pswitch_e
-    iget-object v9, p0, Lcco;->b:Loiw;
-
-    iget-object v10, p0, Lcco;->a:Loiw;
-
-    iget-object v11, p0, Lcco;->c:Loiw;
-
-    iget-object v0, p0, Lcco;->f:Loiw;
-
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    move-object v12, v0
-
-    check-cast v12, Ljava/util/concurrent/Executor;
-
-    iget-object v0, p0, Lcco;->e:Loiw;
-
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    move-object v13, v0
-
-    check-cast v13, Ljava/util/concurrent/Executor;
-
-    iget-object v0, p0, Lcco;->d:Loiw;
-
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    move-object v14, v0
-
-    check-cast v14, Lkbc;
-
-    new-instance v0, Ldfa;
-
-    move-object v8, v0
-
-    invoke-direct/range {v8 .. v14}, Ldfa;-><init>(Loiw;Loiw;Loiw;Ljava/util/concurrent/Executor;Ljava/util/concurrent/Executor;Lkbc;)V
-
-    return-object v0
-
-    :pswitch_f
-    iget-object v0, p0, Lcco;->a:Loiw;
-
-    check-cast v0, Ldwl;
-
-    invoke-virtual {v0}, Ldwl;->a()Landroid/content/res/Resources;
-
-    move-result-object v2
-
-    iget-object v0, p0, Lcco;->f:Loiw;
-
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    move-object v3, v0
-
-    check-cast v3, Ljvs;
-
-    iget-object v0, p0, Lcco;->c:Loiw;
-
-    check-cast v0, Ldwh;
-
-    invoke-virtual {v0}, Ldwh;->a()Landroid/content/Context;
-
-    move-result-object v4
-
-    iget-object v0, p0, Lcco;->b:Loiw;
-
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    move-object v5, v0
-
-    check-cast v5, Lell;
-
-    iget-object v0, p0, Lcco;->d:Loiw;
-
-    check-cast v0, Litb;
-
-    invoke-virtual {v0}, Litb;->a()Litm;
-
-    move-result-object v6
-
-    iget-object v0, p0, Lcco;->e:Loiw;
-
-    check-cast v0, Lcft;
-
-    invoke-virtual {v0}, Lcft;->a()Lcgi;
-
-    move-result-object v7
-
-    new-instance v0, Lcgd;
-
-    move-object v1, v0
-
-    invoke-direct/range {v1 .. v7}, Lcgd;-><init>(Landroid/content/res/Resources;Ljvs;Landroid/content/Context;Lell;Litm;Lcgi;)V
-
-    return-object v0
-
-    :pswitch_10
-    iget-object v0, p0, Lcco;->a:Loiw;
-
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    move-object v6, v0
-
-    check-cast v6, Ljvk;
-
-    iget-object v0, p0, Lcco;->d:Loiw;
-
-    check-cast v0, Lhnl;
-
-    invoke-virtual {v0}, Lhnl;->a()Lhna;
-
-    move-result-object v5
-
-    iget-object v0, p0, Lcco;->b:Loiw;
-
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    move-object v3, v0
-
-    check-cast v3, Lhnb;
-
-    iget-object v0, p0, Lcco;->c:Loiw;
-
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    move-object v4, v0
-
-    check-cast v4, Ljuh;
-
-    iget-object v0, p0, Lcco;->f:Loiw;
-
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ldhi;
-
-    iget-object v1, p0, Lcco;->e:Loiw;
-
-    invoke-interface {v1}, Loiw;->get()Ljava/lang/Object;
+    invoke-virtual {v1}, Loue;->b()Lova;
 
     move-result-object v1
 
-    move-object v2, v1
+    const/16 v2, 0xfe
 
-    check-cast v2, Lchl;
+    const-string v3, "Error getting database after downgrading"
 
-    sget-object v1, Ldho;->bX:Ldhj;
+    invoke-static {v1, v3, v2, v0}, Ld;->w(Lova;Ljava/lang/String;CLjava/lang/Throwable;)V
 
-    invoke-interface {v0, v1}, Ldhi;->l(Ldhj;)Z
+    throw v0
 
-    move-result v0
+    :cond_0
+    :goto_1
+    return-object v0
 
-    if-eqz v0, :cond_0
+    :catch_2
+    move-exception v0
 
-    new-instance v0, Lcfu;
+    sget-object v1, Lcco;->a:Louj;
 
-    const/4 v7, 0x0
+    invoke-virtual {v1}, Loue;->b()Lova;
 
-    move-object v1, v0
+    move-result-object v1
 
-    invoke-direct/range {v1 .. v7}, Lcfu;-><init>(Lchl;Lhnb;Ljuh;Lhna;Ljvk;I)V
+    const/16 v2, 0x100
 
-    invoke-static {v0}, Linb;->z(Ljava/lang/Runnable;)Lhip;
+    const-string v3, "failed to get the database after recreating"
 
-    move-result-object v0
+    invoke-static {v1, v3, v2, v0}, Ld;->w(Lova;Ljava/lang/String;CLjava/lang/Throwable;)V
+
+    throw v0
+
+    :cond_1
+    sget-object v1, Lcco;->a:Louj;
+
+    invoke-virtual {v1}, Loue;->b()Lova;
+
+    move-result-object v1
+
+    check-cast v1, Loug;
+
+    invoke-interface {v1, v0}, Loug;->h(Ljava/lang/Throwable;)Lova;
+
+    move-result-object v1
+
+    check-cast v1, Loug;
+
+    const/16 v2, 0x101
+
+    invoke-interface {v1, v2}, Loug;->G(I)Lova;
+
+    move-result-object v1
+
+    check-cast v1, Loug;
+
+    iget-object v2, p0, Lcco;->c:Ljava/lang/String;
+
+    const-string v3, "Deletion of %s failed"
+
+    invoke-interface {v1, v3, v2}, Loug;->r(Ljava/lang/String;Ljava/lang/Object;)V
+
+    throw v0
+.end method
+
+.method public final onCreate(Landroid/database/sqlite/SQLiteDatabase;)V
+    .locals 2
+
+    iget v0, p0, Lcco;->e:I
+
+    const/4 v1, 0x0
+
+    invoke-virtual {p0, p1, v1, v0}, Lcco;->onUpgrade(Landroid/database/sqlite/SQLiteDatabase;II)V
+
+    return-void
+.end method
+
+.method public final onDowngrade(Landroid/database/sqlite/SQLiteDatabase;II)V
+    .locals 0
+
+    const/4 p1, 0x1
+
+    iput-boolean p1, p0, Lcco;->f:Z
+
+    return-void
+.end method
+
+.method public final onUpgrade(Landroid/database/sqlite/SQLiteDatabase;II)V
+    .locals 3
+
+    const/4 v0, 0x0
+
+    const/4 v1, 0x1
+
+    if-ltz p2, :cond_0
+
+    const/4 v2, 0x1
 
     goto :goto_0
 
     :cond_0
-    sget-object v0, Lcdk;->g:Lcdk;
+    const/4 v2, 0x0
 
     :goto_0
-    return-object v0
+    invoke-static {v2}, Lobr;->aF(Z)V
 
-    :pswitch_11
-    iget-object v0, p0, Lcco;->e:Loiw;
+    if-ge p2, p3, :cond_1
 
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
+    const/4 v2, 0x1
 
-    move-result-object v0
+    goto :goto_1
 
-    move-object v2, v0
+    :cond_1
+    const/4 v2, 0x0
 
-    check-cast v2, Lcdn;
+    :goto_1
+    invoke-static {v2}, Lobr;->aF(Z)V
 
-    iget-object v0, p0, Lcco;->c:Loiw;
+    iget v2, p0, Lcco;->e:I
 
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
+    if-ne p3, v2, :cond_2
 
-    move-result-object v0
+    const/4 v0, 0x1
 
-    move-object v3, v0
+    goto :goto_2
 
-    check-cast v3, Ldbz;
+    :cond_2
+    :goto_2
+    invoke-static {v0}, Lobr;->aF(Z)V
 
-    iget-object v0, p0, Lcco;->f:Loiw;
+    invoke-virtual {p1}, Landroid/database/sqlite/SQLiteDatabase;->beginTransaction()V
 
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
+    :goto_3
+    if-ge p2, p3, :cond_3
 
-    move-result-object v0
+    :try_start_0
+    iget-object v0, p0, Lcco;->d:Loom;
 
-    move-object v4, v0
-
-    check-cast v4, Lcom/google/android/apps/camera/stats/timing/CameraActivityTiming;
-
-    iget-object v0, p0, Lcco;->d:Loiw;
-
-    check-cast v0, Ldbs;
-
-    invoke-virtual {v0}, Ldbs;->a()Lcvr;
-
-    move-result-object v5
-
-    iget-object v0, p0, Lcco;->a:Loiw;
-
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
+    invoke-virtual {v0, p2}, Loom;->get(I)Ljava/lang/Object;
 
     move-result-object v0
 
-    move-object v6, v0
+    check-cast v0, Ljava/lang/String;
 
-    check-cast v6, Ldns;
+    invoke-virtual {p1, v0}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
 
-    iget-object v0, p0, Lcco;->b:Loiw;
+    add-int/lit8 p2, p2, 0x1
 
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
+    goto :goto_3
 
-    move-result-object v0
+    :cond_3
+    invoke-virtual {p1}, Landroid/database/sqlite/SQLiteDatabase;->setTransactionSuccessful()V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    move-object v7, v0
+    invoke-virtual {p1}, Landroid/database/sqlite/SQLiteDatabase;->endTransaction()V
 
-    check-cast v7, Ljava/util/concurrent/Executor;
+    return-void
 
-    new-instance v0, Lcdo;
+    :catchall_0
+    move-exception p2
 
-    const/4 v8, 0x0
+    invoke-virtual {p1}, Landroid/database/sqlite/SQLiteDatabase;->endTransaction()V
 
-    move-object v1, v0
+    goto :goto_5
 
-    invoke-direct/range {v1 .. v8}, Lcdo;-><init>(Lcdn;Ldbz;Lcom/google/android/apps/camera/stats/timing/CameraActivityTiming;Lcvr;Ldns;Ljava/util/concurrent/Executor;[B)V
+    :goto_4
+    throw p2
 
-    return-object v0
-
-    :pswitch_12
-    iget-object v0, p0, Lcco;->f:Loiw;
-
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    move-object v2, v0
-
-    check-cast v2, Lftu;
-
-    iget-object v0, p0, Lcco;->a:Loiw;
-
-    check-cast v0, Lfud;
-
-    invoke-virtual {v0}, Lfud;->b()Lbkb;
-
-    move-result-object v3
-
-    iget-object v0, p0, Lcco;->d:Loiw;
-
-    check-cast v0, Lcdb;
-
-    invoke-virtual {v0}, Lcdb;->a()Lcda;
-
-    move-result-object v4
-
-    iget-object v0, p0, Lcco;->b:Loiw;
-
-    check-cast v0, Lccs;
-
-    invoke-virtual {v0}, Lccs;->a()Ljava/lang/Boolean;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
-
-    move-result v5
-
-    iget-object v0, p0, Lcco;->c:Loiw;
-
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    move-object v6, v0
-
-    check-cast v6, Ldhi;
-
-    iget-object v0, p0, Lcco;->e:Loiw;
-
-    check-cast v0, Lfwp;
-
-    invoke-virtual {v0}, Lfwp;->a()Lkli;
-
-    move-result-object v7
-
-    new-instance v0, Lcbh;
-
-    const/4 v8, 0x0
-
-    const/4 v9, 0x0
-
-    const/4 v10, 0x0
-
-    move-object v1, v0
-
-    invoke-direct/range {v1 .. v10}, Lcbh;-><init>(Lftu;Lbkb;Lcda;ZLdhi;Lkli;[B[B[B)V
-
-    return-object v0
-
-    :pswitch_13
-    iget-object v0, p0, Lcco;->a:Loiw;
-
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    move-object v2, v0
-
-    check-cast v2, Lfbz;
-
-    iget-object v0, p0, Lcco;->b:Loiw;
-
-    check-cast v0, Lccs;
-
-    invoke-virtual {v0}, Lccs;->a()Ljava/lang/Boolean;
-
-    move-result-object v3
-
-    iget-object v0, p0, Lcco;->c:Loiw;
-
-    check-cast v0, Lfwp;
-
-    invoke-virtual {v0}, Lfwp;->a()Lkli;
-
-    move-result-object v4
-
-    iget-object v0, p0, Lcco;->d:Loiw;
-
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    move-object v5, v0
-
-    check-cast v5, Ljvs;
-
-    iget-object v0, p0, Lcco;->e:Loiw;
-
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lily;
-
-    iget-object v1, p0, Lcco;->f:Loiw;
-
-    check-cast v1, Lijz;
-
-    invoke-virtual {v1}, Lijz;->a()Lika;
-
-    move-result-object v7
-
-    new-instance v8, Lccn;
-
-    invoke-virtual {v0}, Lily;->f()Lkli;
-
-    move-result-object v0
-
-    invoke-interface {v0}, Lkli;->i()Lkll;
-
-    move-result-object v6
-
-    move-object v1, v8
-
-    invoke-direct/range {v1 .. v7}, Lccn;-><init>(Lfbz;Ljava/lang/Boolean;Lkli;Ljvs;Lkll;Lika;)V
-
-    return-object v8
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_13
-        :pswitch_12
-        :pswitch_11
-        :pswitch_10
-        :pswitch_f
-        :pswitch_e
-        :pswitch_d
-        :pswitch_c
-        :pswitch_b
-        :pswitch_a
-        :pswitch_9
-        :pswitch_8
-        :pswitch_7
-        :pswitch_6
-        :pswitch_5
-        :pswitch_4
-        :pswitch_3
-        :pswitch_2
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
+    :goto_5
+    goto :goto_4
 .end method

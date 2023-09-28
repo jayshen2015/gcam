@@ -1,277 +1,98 @@
-.class public final Lnmd;
-.super Ljava/lang/Object;
-
-# interfaces
-.implements Ljava/io/Serializable;
+.class public final enum Lnmd;
+.super Ljava/lang/Enum;
 
 
 # static fields
-.field private static final b:Lnmd;
+.field public static final enum a:Lnmd;
 
+.field public static final enum b:Lnmd;
 
-# instance fields
-.field public final a:I
+.field public static final enum c:Lnmd;
 
-.field private final c:[I
+.field public static final enum d:Lnmd;
+
+.field private static final synthetic e:[Lnmd;
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 2
+    .locals 9
 
     new-instance v0, Lnmd;
 
-    const/4 v1, 0x0
+    const-string v1, "PHOTO_OCR"
 
-    new-array v1, v1, [I
+    const/4 v2, 0x0
 
-    invoke-direct {v0, v1}, Lnmd;-><init>([I)V
+    invoke-direct {v0, v1, v2}, Lnmd;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lnmd;->b:Lnmd;
+    sput-object v0, Lnmd;->a:Lnmd;
+
+    new-instance v1, Lnmd;
+
+    const-string v3, "BARHOPPER"
+
+    const/4 v4, 0x1
+
+    invoke-direct {v1, v3, v4}, Lnmd;-><init>(Ljava/lang/String;I)V
+
+    sput-object v1, Lnmd;->b:Lnmd;
+
+    new-instance v3, Lnmd;
+
+    const-string v5, "PHILEASSTORM"
+
+    const/4 v6, 0x2
+
+    invoke-direct {v3, v5, v6}, Lnmd;-><init>(Ljava/lang/String;I)V
+
+    sput-object v3, Lnmd;->c:Lnmd;
+
+    new-instance v5, Lnmd;
+
+    const-string v7, "NONE"
+
+    const/4 v8, 0x3
+
+    invoke-direct {v5, v7, v8}, Lnmd;-><init>(Ljava/lang/String;I)V
+
+    sput-object v5, Lnmd;->d:Lnmd;
+
+    const/4 v7, 0x4
+
+    new-array v7, v7, [Lnmd;
+
+    aput-object v0, v7, v2
+
+    aput-object v1, v7, v4
+
+    aput-object v3, v7, v6
+
+    aput-object v5, v7, v8
+
+    sput-object v7, Lnmd;->e:[Lnmd;
 
     return-void
 .end method
 
-.method public constructor <init>([I)V
-    .locals 1
+.method private constructor <init>(Ljava/lang/String;I)V
+    .locals 0
 
-    array-length v0, p1
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lnmd;->c:[I
-
-    iput v0, p0, Lnmd;->a:I
+    invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
 .end method
 
-
-# virtual methods
-.method public final a(I)I
+.method public static values()[Lnmd;
     .locals 1
 
-    iget v0, p0, Lnmd;->a:I
+    sget-object v0, Lnmd;->e:[Lnmd;
 
-    invoke-static {p1, v0}, Lmoz;->w(II)V
-
-    iget-object v0, p0, Lnmd;->c:[I
-
-    aget p1, v0, p1
-
-    return p1
-.end method
-
-.method public final b()Z
-    .locals 1
-
-    iget v0, p0, Lnmd;->a:I
-
-    if-nez v0, :cond_0
-
-    const/4 v0, 0x1
-
-    return v0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    return v0
-.end method
-
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 5
-
-    const/4 v0, 0x1
-
-    if-ne p1, p0, :cond_0
-
-    return v0
-
-    :cond_0
-    instance-of v1, p1, Lnmd;
-
-    const/4 v2, 0x0
-
-    if-nez v1, :cond_1
-
-    return v2
-
-    :cond_1
-    check-cast p1, Lnmd;
-
-    iget v1, p0, Lnmd;->a:I
-
-    iget v3, p1, Lnmd;->a:I
-
-    if-ne v1, v3, :cond_4
-
-    const/4 v1, 0x0
-
-    :goto_0
-    iget v3, p0, Lnmd;->a:I
-
-    if-ge v1, v3, :cond_3
-
-    invoke-virtual {p0, v1}, Lnmd;->a(I)I
-
-    move-result v3
-
-    invoke-virtual {p1, v1}, Lnmd;->a(I)I
-
-    move-result v4
-
-    if-eq v3, v4, :cond_2
-
-    return v2
-
-    :cond_2
-    add-int/lit8 v1, v1, 0x1
-
-    goto :goto_0
-
-    :cond_3
-    return v0
-
-    :cond_4
-    return v2
-.end method
-
-.method public final hashCode()I
-    .locals 3
-
-    const/4 v0, 0x0
-
-    const/4 v1, 0x1
-
-    :goto_0
-    iget v2, p0, Lnmd;->a:I
-
-    if-ge v0, v2, :cond_0
-
-    mul-int/lit8 v1, v1, 0x1f
-
-    iget-object v2, p0, Lnmd;->c:[I
-
-    aget v2, v2, v0
-
-    add-int/2addr v1, v2
-
-    add-int/lit8 v0, v0, 0x1
-
-    goto :goto_0
-
-    :cond_0
-    return v1
-.end method
-
-.method readResolve()Ljava/lang/Object;
-    .locals 1
-
-    invoke-virtual {p0}, Lnmd;->b()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    sget-object v0, Lnmd;->b:Lnmd;
-
-    return-object v0
-
-    :cond_0
-    return-object p0
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .locals 3
-
-    invoke-virtual {p0}, Lnmd;->b()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    const-string v0, "[]"
-
-    return-object v0
-
-    :cond_0
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    iget v1, p0, Lnmd;->a:I
-
-    mul-int/lit8 v1, v1, 0x5
-
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(I)V
-
-    const/16 v1, 0x5b
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
-
-    iget-object v1, p0, Lnmd;->c:[I
-
-    const/4 v2, 0x0
-
-    aget v1, v1, v2
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    const/4 v1, 0x1
-
-    :goto_0
-    iget v2, p0, Lnmd;->a:I
-
-    if-ge v1, v2, :cond_1
-
-    const-string v2, ", "
-
-    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-object v2, p0, Lnmd;->c:[I
-
-    aget v2, v2, v1
-
-    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    add-int/lit8 v1, v1, 0x1
-
-    goto :goto_0
-
-    :cond_1
-    const/16 v1, 0x5d
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v0}, [Lnmd;->clone()Ljava/lang/Object;
 
     move-result-object v0
 
+    check-cast v0, [Lnmd;
+
     return-object v0
-.end method
-
-.method writeReplace()Ljava/lang/Object;
-    .locals 4
-
-    iget v0, p0, Lnmd;->a:I
-
-    iget-object v1, p0, Lnmd;->c:[I
-
-    array-length v2, v1
-
-    if-ge v0, v2, :cond_0
-
-    new-instance v2, Lnmd;
-
-    const/4 v3, 0x0
-
-    invoke-static {v1, v3, v0}, Ljava/util/Arrays;->copyOfRange([III)[I
-
-    move-result-object v0
-
-    invoke-direct {v2, v0}, Lnmd;-><init>([I)V
-
-    return-object v2
-
-    :cond_0
-    return-object p0
 .end method

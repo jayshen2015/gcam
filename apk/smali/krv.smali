@@ -1,52 +1,28 @@
-.class public final Lkrv;
+.class public interface abstract Lkrv;
 .super Ljava/lang/Object;
 
-
-# instance fields
-.field public a:Landroid/content/Context;
-
-.field public b:Lmqp;
-
-.field public c:Lmqp;
-
-.field public d:Lmqp;
-
-.field public e:B
-
-
-# direct methods
-.method public constructor <init>()V
-    .locals 0
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
-.end method
-
-.method public constructor <init>([B)V
-    .locals 0
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    sget-object p1, Lmpx;->a:Lmpx;
-
-    iput-object p1, p0, Lkrv;->b:Lmqp;
-
-    iput-object p1, p0, Lkrv;->c:Lmqp;
-
-    iput-object p1, p0, Lkrv;->d:Lmqp;
-
-    return-void
-.end method
+# interfaces
+.implements Landroid/os/IInterface;
 
 
 # virtual methods
-.method public final a()V
-    .locals 1
+.method public abstract e(Landroid/content/Intent;II)I
+.end method
 
-    const/4 v0, 0x1
+.method public abstract f(Landroid/content/Intent;)Landroid/os/IBinder;
+.end method
 
-    iput-byte v0, p0, Lkrv;->e:B
+.method public abstract g(Lkoh;)V
+.end method
 
-    return-void
+.method public abstract h()V
+.end method
+
+.method public abstract i(Landroid/content/Intent;)V
+.end method
+
+.method public abstract j(I)V
+.end method
+
+.method public abstract k(Landroid/content/Intent;)Z
 .end method

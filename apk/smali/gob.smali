@@ -1,96 +1,176 @@
 .class public final Lgob;
-.super Lhdn;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Lgof;
 
 
 # instance fields
-.field public final a:Lflf;
+.field public final a:Lgfs;
 
-.field private final d:Landroid/content/res/Resources;
+.field public final b:Llar;
+
+.field public final c:Ljava/util/concurrent/atomic/AtomicBoolean;
+
+.field public final d:Lhsa;
+
+.field private final e:Ljava/util/concurrent/atomic/AtomicBoolean;
+
+.field private f:Lgoe;
 
 
 # direct methods
-.method public constructor <init>(Landroid/content/res/Resources;Ljava/util/concurrent/ScheduledExecutorService;Ljew;Lflf;[B[B[B[B)V
+.method public constructor <init>(Lgfs;Llar;Lhsa;)V
     .locals 0
 
-    invoke-direct {p0}, Lhdn;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lgob;->d:Landroid/content/res/Resources;
+    iput-object p1, p0, Lgob;->a:Lgfs;
 
-    iput-object p4, p0, Lgob;->a:Lflf;
+    iput-object p2, p0, Lgob;->b:Llar;
+
+    iput-object p3, p0, Lgob;->d:Lhsa;
+
+    new-instance p1, Ljava/util/concurrent/atomic/AtomicBoolean;
+
+    const/4 p2, 0x0
+
+    invoke-direct {p1, p2}, Ljava/util/concurrent/atomic/AtomicBoolean;-><init>(Z)V
+
+    iput-object p1, p0, Lgob;->e:Ljava/util/concurrent/atomic/AtomicBoolean;
+
+    new-instance p1, Ljava/util/concurrent/atomic/AtomicBoolean;
+
+    const/4 p2, 0x1
+
+    invoke-direct {p1, p2}, Ljava/util/concurrent/atomic/AtomicBoolean;-><init>(Z)V
+
+    iput-object p1, p0, Lgob;->c:Ljava/util/concurrent/atomic/AtomicBoolean;
 
     return-void
 .end method
 
 
 # virtual methods
-.method protected final c()Lhdm;
-    .locals 4
+.method public final a()Lgoe;
+    .locals 2
 
-    invoke-static {}, Lheb;->a()Lhea;
+    iget-object v0, p0, Lgob;->e:Ljava/util/concurrent/atomic/AtomicBoolean;
 
-    move-result-object v0
+    const/4 v1, 0x1
 
-    iget-object v1, p0, Lgob;->d:Landroid/content/res/Resources;
+    invoke-virtual {v0, v1}, Ljava/util/concurrent/atomic/AtomicBoolean;->getAndSet(Z)Z
 
-    const v2, 0x7f1403bd
+    move-result v0
 
-    invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
+    xor-int/2addr v0, v1
 
-    move-result-object v1
+    invoke-static {v0}, Lobr;->aQ(Z)V
 
-    iput-object v1, v0, Lhea;->a:Ljava/lang/String;
+    new-instance v0, Lgnw;
 
-    iget-object v1, p0, Lgob;->d:Landroid/content/res/Resources;
+    invoke-direct {v0, p0}, Lgnw;-><init>(Lgob;)V
 
-    const v2, 0x7f080377
+    iput-object v0, p0, Lgob;->f:Lgoe;
 
-    const/4 v3, 0x0
+    return-object v0
+.end method
 
-    invoke-virtual {v1, v2, v3}, Landroid/content/res/Resources;->getDrawable(ILandroid/content/res/Resources$Theme;)Landroid/graphics/drawable/Drawable;
+.method public final b()Lgoe;
+    .locals 2
 
-    move-result-object v1
+    iget-object v0, p0, Lgob;->e:Ljava/util/concurrent/atomic/AtomicBoolean;
 
-    iput-object v1, v0, Lhea;->b:Landroid/graphics/drawable/Drawable;
+    const/4 v1, 0x1
 
-    new-instance v1, Lghc;
+    invoke-virtual {v0, v1}, Ljava/util/concurrent/atomic/AtomicBoolean;->getAndSet(Z)Z
 
-    const/16 v2, 0x9
+    move-result v0
 
-    invoke-direct {v1, p0, v2}, Lghc;-><init>(Lgob;I)V
+    xor-int/2addr v0, v1
 
-    iput-object v1, v0, Lhea;->c:Ljava/lang/Runnable;
+    invoke-static {v0}, Lobr;->aQ(Z)V
 
-    const-wide/16 v1, 0x1388
+    new-instance v0, Lgny;
 
-    invoke-virtual {v0, v1, v2}, Lhea;->e(J)V
+    invoke-direct {v0, p0}, Lgny;-><init>(Lgob;)V
 
-    invoke-virtual {v0}, Lhea;->a()Lheb;
+    iput-object v0, p0, Lgob;->f:Lgoe;
 
-    move-result-object v0
+    return-object v0
+.end method
 
-    invoke-static {}, Lhdm;->a()Lkxz;
+.method public final c()Lgoe;
+    .locals 2
 
-    move-result-object v1
+    iget-object v0, p0, Lgob;->e:Ljava/util/concurrent/atomic/AtomicBoolean;
 
-    iput-object v0, v1, Lkxz;->a:Ljava/lang/Object;
+    const/4 v1, 0x1
 
-    const/4 v0, 0x2
+    invoke-virtual {v0, v1}, Ljava/util/concurrent/atomic/AtomicBoolean;->getAndSet(Z)Z
 
-    invoke-virtual {v1, v0}, Lkxz;->f(I)V
+    move-result v0
 
-    const/4 v0, 0x5
+    xor-int/2addr v0, v1
 
-    invoke-virtual {v1, v0}, Lkxz;->g(I)V
+    invoke-static {v0}, Lobr;->aQ(Z)V
 
-    sget-object v0, Lika;->g:Lika;
+    new-instance v0, Lgoa;
 
-    invoke-virtual {v1, v0}, Lkxz;->e(Lika;)V
+    invoke-direct {v0, p0}, Lgoa;-><init>(Lgob;)V
 
-    invoke-virtual {v1}, Lkxz;->h()V
+    iput-object v0, p0, Lgob;->f:Lgoe;
 
-    invoke-virtual {v1}, Lkxz;->d()Lhdm;
+    return-object v0
+.end method
+
+.method public final d()Lgoe;
+    .locals 1
+
+    iget-object v0, p0, Lgob;->f:Lgoe;
+
+    return-object v0
+.end method
+
+.method public final e()Lgoe;
+    .locals 1
+
+    iget-object v0, p0, Lgob;->f:Lgoe;
+
+    if-eqz v0, :cond_0
+
+    return-object v0
+
+    :cond_0
+    invoke-virtual {p0}, Lgob;->c()Lgoe;
 
     move-result-object v0
 
     return-object v0
+.end method
+
+.method public final f()V
+    .locals 2
+
+    iget-object v0, p0, Lgob;->b:Llar;
+
+    new-instance v1, Lgnu;
+
+    invoke-direct {v1, p0}, Lgnu;-><init>(Lgob;)V
+
+    invoke-virtual {v0, v1}, Llar;->execute(Ljava/lang/Runnable;)V
+
+    return-void
+.end method
+
+.method public final g()V
+    .locals 2
+
+    iget-object v0, p0, Lgob;->e:Ljava/util/concurrent/atomic/AtomicBoolean;
+
+    const/4 v1, 0x0
+
+    invoke-virtual {v0, v1}, Ljava/util/concurrent/atomic/AtomicBoolean;->set(Z)V
+
+    return-void
 .end method

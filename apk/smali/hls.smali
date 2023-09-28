@@ -1,277 +1,364 @@
 .class public final Lhls;
-.super Lhdo;
-
-# interfaces
-.implements Lfaz;
-.implements Lfan;
-.implements Lezh;
-
-
-# instance fields
-.field public final b:Landroid/content/Context;
-
-.field public final c:Lgus;
-
-.field public final d:Lfbz;
-
-.field public final e:Ldhi;
-
-.field public f:Z
-
-.field private final g:Ljwb;
-
-.field private final h:Ljuh;
-
-.field private final i:Lfak;
-
-.field private j:Lheb;
-
-.field private k:J
-
-.field private final l:Ldqx;
+.super Ljava/lang/Object;
 
 
 # direct methods
-.method public constructor <init>(Landroid/content/Context;Ljwb;Lgus;Ldqx;Lfbz;Ljuh;Lfak;Ldhi;[B[B[B)V
+.method public constructor <init>()V
     .locals 0
 
-    invoke-direct {p0}, Lhdo;-><init>()V
-
-    const-wide/16 p9, -0x1
-
-    iput-wide p9, p0, Lhls;->k:J
-
-    iput-object p1, p0, Lhls;->b:Landroid/content/Context;
-
-    iput-object p2, p0, Lhls;->g:Ljwb;
-
-    iput-object p3, p0, Lhls;->c:Lgus;
-
-    iput-object p4, p0, Lhls;->l:Ldqx;
-
-    iput-object p5, p0, Lhls;->d:Lfbz;
-
-    iput-object p6, p0, Lhls;->h:Ljuh;
-
-    iput-object p7, p0, Lhls;->i:Lfak;
-
-    iput-object p8, p0, Lhls;->e:Ldhi;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
-
-# virtual methods
-.method public final b(Lhec;)V
+.method public constructor <init>(Lddf;)V
     .locals 1
 
-    invoke-super {p0, p1}, Lhdo;->b(Lhec;)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iget-object p1, p0, Lhls;->h:Ljuh;
+    sget-object v0, Lddl;->a:Lddi;
 
-    iget-object v0, p0, Lhls;->i:Lfak;
-
-    invoke-static {p1, v0, p0}, Lfcr;->e(Ljuh;Lfak;Lfaz;)V
+    invoke-interface {p1}, Lddf;->b()V
 
     return-void
 .end method
 
-.method public final bL(Landroid/content/Intent;)V
+.method public static a()V
+    .locals 1
+
+    const-class v0, Lhls;
+
+    invoke-static {v0}, Llil;->a(Ljava/lang/Class;)V
+
+    return-void
+.end method
+
+.method public static final b(Lhkn;Ljava/util/Collection;)F
+    .locals 10
+
+    invoke-interface {p1}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
+
+    move-result-object p1
+
+    const-wide v0, 0x7fffffffffffffffL
+
+    move-wide v2, v0
+
+    :cond_0
+    :goto_0
+    invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v4
+
+    if-eqz v4, :cond_1
+
+    invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v4
+
+    check-cast v4, Lhkn;
+
+    if-eq p0, v4, :cond_0
+
+    sget-object v5, Ljava/util/concurrent/TimeUnit;->MILLISECONDS:Ljava/util/concurrent/TimeUnit;
+
+    iget-wide v6, p0, Lhkn;->a:J
+
+    iget-wide v8, v4, Lhkn;->a:J
+
+    sub-long/2addr v6, v8
+
+    sget-object v4, Ljava/util/concurrent/TimeUnit;->NANOSECONDS:Ljava/util/concurrent/TimeUnit;
+
+    invoke-virtual {v5, v6, v7, v4}, Ljava/util/concurrent/TimeUnit;->convert(JLjava/util/concurrent/TimeUnit;)J
+
+    move-result-wide v4
+
+    invoke-static {v4, v5}, Ljava/lang/Math;->abs(J)J
+
+    move-result-wide v4
+
+    cmp-long v6, v4, v2
+
+    if-gez v6, :cond_0
+
+    move-wide v2, v4
+
+    goto :goto_0
+
+    :cond_1
+    cmp-long p0, v2, v0
+
+    if-nez p0, :cond_2
+
+    const/4 p0, 0x0
+
+    return p0
+
+    :cond_2
+    long-to-float p0, v2
+
+    return p0
+.end method
+
+.method public static c(I)I
     .locals 0
 
-    const/4 p1, 0x0
+    add-int/lit8 p0, p0, -0x1
 
-    iput-boolean p1, p0, Lhls;->f:Z
-
-    return-void
+    return p0
 .end method
 
-.method public final bQ()V
+.method public static d(I)I
+    .locals 1
+
+    const/4 v0, 0x2
+
+    packed-switch p0, :pswitch_data_0
+
+    return v0
+
+    :pswitch_0
+    const/4 p0, 0x3
+
+    return p0
+
+    :pswitch_1
+    return v0
+
+    :pswitch_2
+    const/4 p0, 0x1
+
+    return p0
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
+.end method
+
+.method public static e(I)I
+    .locals 0
+
+    add-int/lit8 p0, p0, -0x1
+
+    return p0
+.end method
+
+.method public static f(I)I
+    .locals 0
+
+    add-int/lit8 p0, p0, -0x1
+
+    return p0
+.end method
+
+.method public static g(I)I
+    .locals 0
+
+    add-int/lit8 p0, p0, -0x1
+
+    return p0
+.end method
+
+.method public static h(I)I
+    .locals 3
+
+    packed-switch p0, :pswitch_data_0
+
+    new-instance v0, Ljava/lang/RuntimeException;
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    const/16 v2, 0x20
+
+    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string v2, "Unknown aspect ratio "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p0
+
+    invoke-direct {v0, p0}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+
+    :pswitch_0
+    const/4 p0, 0x3
+
+    return p0
+
+    :pswitch_1
+    const/4 p0, 0x2
+
+    return p0
+
+    :pswitch_2
+    const/4 p0, 0x1
+
+    return p0
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
+.end method
+
+.method public static i(Lhsa;)V
     .locals 1
 
     const/4 v0, 0x0
 
-    iput-boolean v0, p0, Lhls;->f:Z
+    invoke-interface {p0, v0}, Lhsa;->S(Ljava/lang/Integer;)V
 
     return-void
 .end method
 
-.method public final e(Lhlv;)V
-    .locals 7
+.method public static j()V
+    .locals 2
 
-    iget-boolean v0, p0, Lhls;->f:Z
+    new-instance v0, Ljava/lang/UnsupportedOperationException;
 
-    if-nez v0, :cond_7
+    const-string v1, "Only used by Burst and Photosphere sessions"
 
-    iget-object v0, p0, Lhls;->l:Ldqx;
+    invoke-direct {v0, v1}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {v0, p1}, Ldqx;->s(Lhlv;)Lhln;
+    throw v0
+.end method
 
-    move-result-object v0
+.method public static k()Lpht;
+    .locals 2
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
 
-    iget-object v1, p0, Lhls;->g:Ljwb;
+    new-instance v0, Ljava/lang/UnsupportedOperationException;
 
-    invoke-interface {v1}, Ljwb;->bm()Ljava/lang/Object;
+    const-string v1, "Not supported for CaptureSessions unless overridden"
 
-    move-result-object v1
+    invoke-direct {v0, v1}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
 
-    check-cast v1, Lika;
+    throw v0
+.end method
 
-    sget-object v2, Lika;->b:Lika;
+.method public static l(Ljava/util/UUID;ZLjava/lang/String;ZLast;)V
+    .locals 4
 
-    if-eq v1, v2, :cond_0
+    const-string v0, "http://ns.google.com/photos/1.0/creations/"
 
-    sget-object v2, Lika;->g:Lika;
+    const-string v1, "http://ns.google.com/photos/1.0/camera/"
 
-    if-eq v1, v2, :cond_0
+    :try_start_0
+    sget-object v2, Lasv;->a:Lato;
 
-    sget-object v2, Lika;->m:Lika;
+    const-string v3, "GCreations"
 
-    if-ne v1, v2, :cond_1
+    invoke-virtual {v2, v0, v3}, Lato;->c(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    sget-object v2, Lasv;->a:Lato;
+
+    const-string v3, "GCamera"
+
+    invoke-virtual {v2, v1, v3}, Lato;->c(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    const-string v2, "CameraBurstID"
+
+    invoke-virtual {p0}, Ljava/util/UUID;->toString()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-interface {p4, v0, v2, v3}, Last;->c(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Object;)V
+
+    const-string v0, "BurstID"
+
+    invoke-virtual {p0}, Ljava/util/UUID;->toString()Ljava/lang/String;
+
+    move-result-object p0
+
+    invoke-interface {p4, v1, v0, p0}, Last;->c(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Object;)V
+
+    if-eqz p1, :cond_0
+
+    const-string p0, "BurstPrimary"
+
+    const-string p1, "1"
+
+    invoke-interface {p4, v1, p0, p1}, Last;->c(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Object;)V
 
     :cond_0
-    iget-boolean v2, v0, Lhln;->c:Z
+    if-eqz p3, :cond_1
 
-    if-nez v2, :cond_3
+    sget-object p0, Lmcy;->b:[Ljava/lang/String;
 
-    :cond_1
-    sget-object v2, Lika;->c:Lika;
+    const/4 p1, 0x0
 
-    if-ne v1, v2, :cond_2
+    :goto_0
+    const/4 p3, 0x2
 
-    iget-boolean v0, v0, Lhln;->d:Z
+    if-ge p1, p3, :cond_1
 
-    if-eqz v0, :cond_2
+    aget-object p3, p0, p1
+
+    new-instance v0, Latx;
+
+    const/16 v1, 0x200
+
+    invoke-direct {v0, v1}, Latx;-><init>(I)V
+
+    new-instance v1, Latx;
+
+    invoke-direct {v1}, Latx;-><init>()V
+
+    const-string v2, "DisableAutoCreation"
+
+    invoke-interface {p4, v2, v0, p3, v1}, Last;->g(Ljava/lang/String;Latx;Ljava/lang/String;Latx;)V
+
+    add-int/lit8 p1, p1, 0x1
 
     goto :goto_0
 
+    :cond_1
+    sget-object p0, Ldxh;->a:Ldxh;
+
+    invoke-virtual {p0}, Ldxh;->c()Ljava/lang/String;
+
+    move-result-object p0
+
+    invoke-virtual {p0, p2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result p0
+
+    if-nez p0, :cond_2
+
+    invoke-static {p4, p2}, Lmde;->k(Last;Ljava/lang/String;)V
+    :try_end_0
+    .catch Lass; {:try_start_0 .. :try_end_0} :catch_0
+
+    return-void
+
     :cond_2
-    const-wide/16 v0, -0x1
-
-    iput-wide v0, p0, Lhls;->k:J
-
-    invoke-virtual {p0}, Lhdo;->c()V
-
     return-void
 
-    :cond_3
-    :goto_0
-    iget-wide v0, p0, Lhls;->k:J
+    :catch_0
+    move-exception p0
 
-    const-wide/16 v2, 0x0
+    new-instance p1, Ljava/lang/RuntimeException;
 
-    cmp-long v4, v0, v2
+    invoke-direct {p1, p0}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/Throwable;)V
 
-    if-ltz v4, :cond_5
+    goto :goto_2
 
-    iget-wide v4, p1, Lhlv;->b:J
-
-    cmp-long v6, v4, v0
-
-    if-gez v6, :cond_4
-
-    goto :goto_1
-
-    :cond_4
-    return-void
-
-    :cond_5
     :goto_1
-    iget-wide v0, p1, Lhlv;->b:J
+    throw p1
 
-    const-wide/32 v4, -0x17d7840
-
-    add-long/2addr v0, v4
-
-    invoke-static {v2, v3, v0, v1}, Ljava/lang/Math;->max(JJ)J
-
-    move-result-wide v0
-
-    iput-wide v0, p0, Lhls;->k:J
-
-    iget-object p1, p0, Lhls;->j:Lheb;
-
-    if-nez p1, :cond_6
-
-    iget-object p1, p0, Lhls;->b:Landroid/content/Context;
-
-    invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
-
-    move-result-object p1
-
-    invoke-static {}, Lheb;->a()Lhea;
-
-    move-result-object v0
-
-    const v1, 0x7f1404f9
-
-    invoke-virtual {p1, v1}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
-
-    move-result-object v1
-
-    iput-object v1, v0, Lhea;->a:Ljava/lang/String;
-
-    const v1, 0x7f08037c
-
-    const/4 v2, 0x0
-
-    invoke-virtual {p1, v1, v2}, Landroid/content/res/Resources;->getDrawable(ILandroid/content/res/Resources$Theme;)Landroid/graphics/drawable/Drawable;
-
-    move-result-object p1
-
-    iput-object p1, v0, Lhea;->b:Landroid/graphics/drawable/Drawable;
-
-    const-wide/16 v1, 0x1770
-
-    invoke-virtual {v0, v1, v2}, Lhea;->e(J)V
-
-    new-instance p1, Lhfi;
-
-    const/16 v1, 0x14
-
-    invoke-direct {p1, p0, v1}, Lhfi;-><init>(Lhls;I)V
-
-    iput-object p1, v0, Lhea;->c:Ljava/lang/Runnable;
-
-    new-instance p1, Lhma;
-
-    const/4 v1, 0x1
-
-    invoke-direct {p1, p0, v1}, Lhma;-><init>(Lhls;I)V
-
-    iput-object p1, v0, Lhea;->f:Ljava/lang/Runnable;
-
-    invoke-virtual {v0}, Lhea;->a()Lheb;
-
-    move-result-object p1
-
-    iput-object p1, p0, Lhls;->j:Lheb;
-
-    :cond_6
-    iget-object p1, p0, Lhls;->j:Lheb;
-
-    invoke-virtual {p0, p1}, Lhdo;->d(Lheb;)V
-
-    return-void
-
-    :cond_7
-    iget-object p1, p0, Lhls;->e:Ldhi;
-
-    sget-object v0, Ldhq;->a:Ldhk;
-
-    invoke-interface {p1}, Ldhi;->c()V
-
-    return-void
-.end method
-
-.method public final v()V
-    .locals 2
-
-    invoke-super {p0}, Lhdo;->v()V
-
-    const-wide/16 v0, -0x1
-
-    iput-wide v0, p0, Lhls;->k:J
-
-    return-void
+    :goto_2
+    goto :goto_1
 .end method

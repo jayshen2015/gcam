@@ -1,453 +1,321 @@
-.class public final synthetic Llnv;
+.class public final Llnv;
 .super Ljava/lang/Object;
-
-# interfaces
-.implements Lnno;
 
 
 # instance fields
-.field public final synthetic a:Lcom/google/android/libraries/performance/primes/transmitter/clearcut/ClearcutMetricSnapshotTransmitter;
+.field public final a:Z
 
-.field public final synthetic b:Landroid/content/Context;
+.field public final b:I
 
-.field public final synthetic c:Lozv;
+.field public final c:I
 
-.field public final synthetic d:Llnr;
+.field public final d:I
 
 
 # direct methods
-.method public synthetic constructor <init>(Lcom/google/android/libraries/performance/primes/transmitter/clearcut/ClearcutMetricSnapshotTransmitter;Landroid/content/Context;Lozv;Llnr;)V
+.method public constructor <init>()V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Llnv;->a:Lcom/google/android/libraries/performance/primes/transmitter/clearcut/ClearcutMetricSnapshotTransmitter;
+    return-void
+.end method
 
-    iput-object p2, p0, Llnv;->b:Landroid/content/Context;
+.method public constructor <init>(IIIZ)V
+    .locals 0
 
-    iput-object p3, p0, Llnv;->c:Lozv;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p4, p0, Llnv;->d:Llnr;
+    iput p1, p0, Llnv;->b:I
+
+    iput p2, p0, Llnv;->c:I
+
+    iput p3, p0, Llnv;->d:I
+
+    iput-boolean p4, p0, Llnv;->a:Z
 
     return-void
 .end method
 
+.method public static a()Llnu;
+    .locals 2
+
+    new-instance v0, Llnu;
+
+    invoke-direct {v0}, Llnu;-><init>()V
+
+    const/4 v1, 0x0
+
+    invoke-virtual {v0, v1}, Llnu;->d(Z)V
+
+    return-object v0
+.end method
+
 
 # virtual methods
-.method public final a(Ljava/lang/Object;)Lnou;
-    .locals 6
+.method public final b()Z
+    .locals 2
 
-    iget-object v0, p0, Llnv;->a:Lcom/google/android/libraries/performance/primes/transmitter/clearcut/ClearcutMetricSnapshotTransmitter;
+    iget v0, p0, Llnv;->b:I
 
-    iget-object v1, p0, Llnv;->b:Landroid/content/Context;
+    const/4 v1, 0x4
 
-    iget-object v2, p0, Llnv;->c:Lozv;
+    if-eq v0, v1, :cond_1
 
-    iget-object v3, p0, Llnv;->d:Llnr;
+    const/4 v1, 0x2
 
-    check-cast p1, Ljava/lang/Boolean;
-
-    invoke-virtual {p1}, Ljava/lang/Boolean;->booleanValue()Z
-
-    move-result p1
-
-    if-eqz p1, :cond_13
-
-    iget-object p1, v3, Llnr;->b:Ljava/lang/String;
-
-    iget-boolean v4, v3, Llnr;->d:Z
-
-    if-eqz v4, :cond_2
-
-    iget-object v4, v0, Lcom/google/android/libraries/performance/primes/transmitter/clearcut/ClearcutMetricSnapshotTransmitter;->c:Ljbf;
-
-    if-nez v4, :cond_1
-
-    monitor-enter v0
-
-    :try_start_0
-    iget-object v4, v0, Lcom/google/android/libraries/performance/primes/transmitter/clearcut/ClearcutMetricSnapshotTransmitter;->c:Ljbf;
-
-    if-nez v4, :cond_0
-
-    sget-object v4, Ljbf;->j:Ljava/util/List;
-
-    sget-object v4, Lffe;->f:Lffe;
-
-    sget-object v5, Ljbk;->a:Ljbk;
-
-    invoke-static {v1}, Ljhp;->ab(Ljava/lang/Object;)V
-
-    invoke-static {p1}, Ljhp;->Z(Ljava/lang/String;)V
-
-    sget-object v5, Ljbk;->f:Ljava/util/EnumSet;
-
-    invoke-static {v5}, Ljhp;->ab(Ljava/lang/Object;)V
-
-    invoke-static {v5}, Ljbc;->b(Ljava/util/EnumSet;)V
-
-    invoke-static {v1, p1, v4, v5}, Ljcb;->d(Landroid/content/Context;Ljava/lang/String;Lmrl;Ljava/util/EnumSet;)Ljbf;
-
-    move-result-object p1
-
-    iput-object p1, v0, Lcom/google/android/libraries/performance/primes/transmitter/clearcut/ClearcutMetricSnapshotTransmitter;->c:Ljbf;
-
-    move-object v4, p1
+    if-ne v0, v1, :cond_0
 
     goto :goto_0
 
     :cond_0
-    :goto_0
-    monitor-exit v0
+    const/4 v0, 0x0
 
-    goto :goto_2
-
-    :catchall_0
-    move-exception p1
-
-    monitor-exit v0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw p1
+    return v0
 
     :cond_1
-    goto :goto_2
+    :goto_0
+    const/4 v0, 0x1
 
-    :cond_2
-    iget-object v4, v0, Lcom/google/android/libraries/performance/primes/transmitter/clearcut/ClearcutMetricSnapshotTransmitter;->b:Ljbf;
+    return v0
+.end method
 
-    if-nez v4, :cond_4
+.method public final c()Z
+    .locals 2
 
-    monitor-enter v0
+    iget v0, p0, Llnv;->d:I
 
-    :try_start_1
-    iget-object v4, v0, Lcom/google/android/libraries/performance/primes/transmitter/clearcut/ClearcutMetricSnapshotTransmitter;->b:Ljbf;
+    const/4 v1, 0x4
 
-    if-nez v4, :cond_3
+    if-eq v0, v1, :cond_1
 
-    sget-object v4, Ljbf;->j:Ljava/util/List;
+    const/4 v1, 0x2
 
-    sget-object v4, Lffe;->f:Lffe;
+    if-ne v0, v1, :cond_0
 
-    sget-object v5, Ljbk;->e:Ljava/util/EnumSet;
+    goto :goto_0
 
-    invoke-static {v1}, Ljhp;->ab(Ljava/lang/Object;)V
+    :cond_0
+    const/4 v0, 0x0
 
-    invoke-static {p1}, Ljhp;->Z(Ljava/lang/String;)V
+    return v0
 
-    invoke-static {v1, p1, v4, v5}, Ljcb;->d(Landroid/content/Context;Ljava/lang/String;Lmrl;Ljava/util/EnumSet;)Ljbf;
+    :cond_1
+    :goto_0
+    const/4 v0, 0x1
 
-    move-result-object p1
+    return v0
+.end method
 
-    iput-object p1, v0, Lcom/google/android/libraries/performance/primes/transmitter/clearcut/ClearcutMetricSnapshotTransmitter;->b:Ljbf;
+.method public final d()Z
+    .locals 2
 
-    move-object v4, p1
+    iget v0, p0, Llnv;->c:I
 
-    goto :goto_1
+    const/4 v1, 0x1
 
-    :cond_3
-    :goto_1
-    monitor-exit v0
+    if-eq v0, v1, :cond_0
 
-    goto :goto_2
+    return v1
 
-    :catchall_1
-    move-exception p1
+    :cond_0
+    const/4 v0, 0x0
 
-    monitor-exit v0
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_1
+    return v0
+.end method
 
-    throw p1
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 5
 
-    :cond_4
-    :goto_2
-    invoke-virtual {v4, v2}, Ljbf;->e(Lnxy;)Ljbd;
+    const/4 v0, 0x1
 
-    move-result-object p1
+    if-ne p1, p0, :cond_0
 
-    sget-object v0, Loic;->a:Loic;
+    return v0
 
-    invoke-virtual {v0}, Loic;->b()Loid;
+    :cond_0
+    instance-of v1, p1, Llnv;
 
-    move-result-object v0
+    const/4 v2, 0x0
 
-    invoke-interface {v0, v1}, Loid;->a(Landroid/content/Context;)Z
+    if-eqz v1, :cond_5
 
-    move-result v0
+    check-cast p1, Llnv;
 
-    if-eqz v0, :cond_5
+    iget v1, p0, Llnv;->b:I
 
-    sget-object v0, Lcom/google/android/libraries/performance/primes/transmitter/clearcut/ClearcutMetricSnapshotTransmitter;->a:Lmrl;
-
-    invoke-interface {v0}, Lmrl;->a()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lkru;
-
-    invoke-static {v1, v0}, Lksw;->a(Landroid/content/Context;Lkru;)Lksw;
-
-    move-result-object v0
-
-    iput-object v0, p1, Ljbd;->h:Lksw;
-
-    :cond_5
-    iget-object v0, v3, Llnr;->e:Ljava/lang/String;
-
-    invoke-static {v0}, Lmqr;->b(Ljava/lang/String;)Z
-
-    move-result v1
-
-    if-nez v1, :cond_8
-
-    iget-object v1, p1, Ljbd;->a:Ljbc;
-
-    invoke-virtual {v1}, Ljbc;->c()Z
-
-    move-result v1
-
-    if-nez v1, :cond_7
-
-    iget-object v1, p1, Ljbd;->i:Lnwp;
-
-    iget-object v2, v1, Lnwn;->b:Lnws;
-
-    invoke-virtual {v2}, Lnws;->ac()Z
-
-    move-result v2
-
-    if-nez v2, :cond_6
-
-    invoke-virtual {v1}, Lnwn;->p()V
-
-    :cond_6
-    iget-object v1, v1, Lnwp;->b:Lnws;
-
-    check-cast v1, Loga;
-
-    sget-object v2, Loga;->i:Loga;
-
-    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    iget v2, v1, Loga;->a:I
-
-    const/high16 v4, 0x1000000
-
-    or-int/2addr v2, v4
-
-    iput v2, v1, Loga;->a:I
-
-    iput-object v0, v1, Loga;->h:Ljava/lang/String;
-
-    goto :goto_3
-
-    :cond_7
-    new-instance p1, Ljava/lang/IllegalStateException;
-
-    const-string v0, "setZwiebackCookieOverride forbidden on deidentified logger"
-
-    invoke-direct {p1, v0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw p1
-
-    :cond_8
-    :goto_3
-    iget-boolean v0, v3, Llnr;->d:Z
-
-    if-nez v0, :cond_12
-
-    iget v0, v3, Llnr;->a:I
-
-    and-int/lit8 v0, v0, 0x2
-
-    if-eqz v0, :cond_b
-
-    iget-object v0, v3, Llnr;->c:Ljava/lang/String;
-
-    iget-object v1, p1, Ljbd;->a:Ljbc;
-
-    invoke-virtual {v1}, Ljbc;->c()Z
-
-    move-result v1
-
-    if-nez v1, :cond_a
-
-    iget-object v1, p1, Ljbd;->c:Ljava/util/ArrayList;
-
-    if-nez v1, :cond_9
-
-    new-instance v1, Ljava/util/ArrayList;
-
-    invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
-
-    iput-object v1, p1, Ljbd;->c:Ljava/util/ArrayList;
-
-    :cond_9
-    iget-object v1, p1, Ljbd;->c:Ljava/util/ArrayList;
-
-    invoke-virtual {v1, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    goto :goto_4
-
-    :cond_a
-    new-instance p1, Ljava/lang/IllegalArgumentException;
-
-    const-string v0, "addMendelPackage forbidden on deidentified logger"
-
-    invoke-direct {p1, v0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw p1
-
-    :cond_b
-    :goto_4
-    iget v0, v3, Llnr;->a:I
-
-    and-int/lit8 v0, v0, 0x10
-
-    if-eqz v0, :cond_d
-
-    iget-object v0, v3, Llnr;->f:Ljava/lang/String;
-
-    iget-object v1, p1, Ljbd;->a:Ljbc;
-
-    iget-object v1, v1, Ljbc;->h:Ljava/util/EnumSet;
-
-    sget-object v2, Ljbk;->d:Ljbk;
-
-    invoke-virtual {v1, v2}, Ljava/util/EnumSet;->contains(Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_c
-
-    iput-object v0, p1, Ljbd;->e:Ljava/lang/String;
-
-    goto :goto_5
-
-    :cond_c
-    new-instance p1, Ljava/lang/IllegalStateException;
-
-    const-string v0, "setUploadAccountName forbidden on deidentified logger"
-
-    invoke-direct {p1, v0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw p1
-
-    :cond_d
-    :goto_5
-    iget-object v0, v3, Llnr;->g:Lnwy;
-
-    invoke-interface {v0}, Ljava/util/List;->isEmpty()Z
-
-    move-result v1
-
-    if-nez v1, :cond_12
-
-    invoke-interface {v0}, Ljava/util/Collection;->toArray()[Ljava/lang/Object;
-
-    move-result-object v0
-
-    array-length v1, v0
-
-    new-array v2, v1, [I
-
-    const/4 v3, 0x0
+    iget v3, p1, Llnv;->b:I
 
     const/4 v4, 0x0
 
-    :goto_6
-    if-ge v4, v1, :cond_e
+    if-eqz v1, :cond_4
 
-    aget-object v5, v0, v4
+    if-ne v1, v3, :cond_3
 
-    invoke-virtual {v5}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    iget v1, p0, Llnv;->c:I
 
-    check-cast v5, Ljava/lang/Number;
+    iget v3, p1, Llnv;->c:I
 
-    invoke-virtual {v5}, Ljava/lang/Number;->intValue()I
+    if-eqz v1, :cond_2
 
-    move-result v5
+    if-ne v1, v3, :cond_3
 
-    aput v5, v2, v4
+    iget v1, p0, Llnv;->d:I
 
-    add-int/lit8 v4, v4, 0x1
+    iget v3, p1, Llnv;->d:I
 
-    goto :goto_6
+    if-eqz v1, :cond_1
 
-    :cond_e
-    iget-object v0, p1, Ljbd;->a:Ljbc;
+    if-ne v1, v3, :cond_3
 
-    invoke-virtual {v0}, Ljbc;->c()Z
+    iget-boolean v1, p0, Llnv;->a:Z
 
-    move-result v0
+    iget-boolean p1, p1, Llnv;->a:Z
 
-    if-nez v0, :cond_11
+    if-ne v1, p1, :cond_3
 
-    if-nez v1, :cond_f
+    return v0
 
-    goto :goto_8
+    :cond_1
+    throw v4
 
-    :cond_f
-    iget-object v0, p1, Ljbd;->d:Ljava/util/ArrayList;
+    :cond_2
+    throw v4
 
-    if-nez v0, :cond_10
+    :cond_3
+    return v2
 
-    new-instance v0, Ljava/util/ArrayList;
+    :cond_4
+    throw v4
 
-    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+    :cond_5
+    return v2
+.end method
 
-    iput-object v0, p1, Ljbd;->d:Ljava/util/ArrayList;
+.method public final hashCode()I
+    .locals 4
 
-    goto :goto_7
+    iget v0, p0, Llnv;->b:I
 
-    :cond_10
-    :goto_7
-    if-ge v3, v1, :cond_12
+    invoke-static {v0}, Lmip;->bd(I)V
 
-    aget v0, v2, v3
+    iget v1, p0, Llnv;->c:I
 
-    iget-object v4, p1, Ljbd;->d:Ljava/util/ArrayList;
+    invoke-static {v1}, Lmip;->bd(I)V
 
-    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    iget v2, p0, Llnv;->d:I
+
+    invoke-static {v2}, Lmip;->bd(I)V
+
+    const v3, 0xf4243
+
+    xor-int/2addr v0, v3
+
+    mul-int v0, v0, v3
+
+    xor-int/2addr v0, v1
+
+    mul-int v0, v0, v3
+
+    xor-int/2addr v0, v2
+
+    mul-int v0, v0, v3
+
+    iget-boolean v1, p0, Llnv;->a:Z
+
+    const/4 v2, 0x1
+
+    if-eq v2, v1, :cond_0
+
+    const/16 v1, 0x4d5
+
+    goto :goto_0
+
+    :cond_0
+    const/16 v1, 0x4cf
+
+    :goto_0
+    xor-int/2addr v0, v1
+
+    return v0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .locals 8
+
+    iget v0, p0, Llnv;->b:I
+
+    invoke-static {v0}, Lmip;->bc(I)Ljava/lang/String;
 
     move-result-object v0
 
-    invoke-virtual {v4, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    iget v1, p0, Llnv;->c:I
 
-    add-int/lit8 v3, v3, 0x1
+    invoke-static {v1}, Lmip;->bc(I)Ljava/lang/String;
 
-    goto :goto_7
+    move-result-object v1
 
-    :cond_11
-    new-instance p1, Ljava/lang/IllegalArgumentException;
+    iget v2, p0, Llnv;->d:I
 
-    const-string v0, "addExperimentIds forbidden on deidentified logger"
+    invoke-static {v2}, Lmip;->bc(I)Ljava/lang/String;
 
-    invoke-direct {p1, v0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+    move-result-object v2
 
-    throw p1
+    iget-boolean v3, p0, Llnv;->a:Z
 
-    :cond_12
-    :goto_8
-    invoke-virtual {p1}, Ljbd;->a()Ljdl;
+    invoke-virtual {v0}, Ljava/lang/String;->length()I
 
-    move-result-object p1
+    move-result v4
 
-    invoke-static {p1}, Ljhp;->ae(Ljdl;)Ljot;
+    invoke-virtual {v1}, Ljava/lang/String;->length()I
 
-    move-result-object p1
+    move-result v5
 
-    invoke-static {p1}, Lktf;->b(Ljot;)Lnou;
+    invoke-virtual {v2}, Ljava/lang/String;->length()I
 
-    move-result-object p1
+    move-result v6
 
-    goto :goto_9
+    new-instance v7, Ljava/lang/StringBuilder;
 
-    :cond_13
-    sget-object p1, Lnor;->a:Lnou;
+    add-int/lit8 v4, v4, 0x3a
 
-    :goto_9
-    return-object p1
+    add-int/2addr v4, v5
+
+    add-int/2addr v4, v6
+
+    invoke-direct {v7, v4}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string v4, "Spec3A{exposure="
+
+    invoke-virtual {v7, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v7, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v0, ", focus="
+
+    invoke-virtual {v7, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v7, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v0, ", whiteBalance="
+
+    invoke-virtual {v7, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v7, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v0, ", forCapture="
+
+    invoke-virtual {v7, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v7, v3}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    const-string v0, "}"
+
+    invoke-virtual {v7, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v7}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
 .end method

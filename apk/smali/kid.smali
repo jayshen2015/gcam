@@ -1,51 +1,20 @@
-.class public final Lkid;
+.class public interface abstract Lkid;
 .super Ljava/lang/Object;
 
-# interfaces
-.implements Logk;
 
-
-# instance fields
-.field private final a:Loiw;
+# static fields
+.field public static final r:Lkic;
 
 
 # direct methods
-.method public constructor <init>(Loiw;)V
-    .locals 0
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lkid;->a:Loiw;
-
-    return-void
-.end method
-
-
-# virtual methods
-.method public final a()Lloi;
-    .locals 2
-
-    iget-object v0, p0, Lkid;->a:Loiw;
-
-    check-cast v0, Lknp;
-
-    invoke-virtual {v0}, Lknp;->a()Lknq;
-
-    move-result-object v0
-
-    new-instance v1, Lloi;
-
-    invoke-direct {v1, v0}, Lloi;-><init>(Lknq;)V
-
-    return-object v1
-.end method
-
-.method public final bridge synthetic get()Ljava/lang/Object;
+.method static constructor <clinit>()V
     .locals 1
 
-    invoke-virtual {p0}, Lkid;->a()Lloi;
+    new-instance v0, Lkic;
 
-    move-result-object v0
+    invoke-direct {v0}, Lkic;-><init>()V
 
-    return-object v0
+    sput-object v0, Lkid;->r:Lkic;
+
+    return-void
 .end method

@@ -1,95 +1,143 @@
-.class final Lfoz;
-.super Lkoy;
+.class public final Lfoz;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Lfpl;
+
+
+# static fields
+.field private static final a:Louj;
 
 
 # instance fields
-.field final a:Ljava/util/concurrent/atomic/AtomicBoolean;
-
-.field final synthetic b:J
-
-.field final synthetic c:Lkpb;
-
-.field final synthetic d:Lfpa;
+.field private final b:Lhsp;
 
 
 # direct methods
-.method public constructor <init>(Lfpa;Lkpb;JLkpb;)V
+.method static constructor <clinit>()V
+    .locals 1
+
+    const-string v0, "com/google/android/apps/camera/microvideo/NoOpMicrovideoSession"
+
+    invoke-static {v0}, Louj;->h(Ljava/lang/String;)Louj;
+
+    move-result-object v0
+
+    sput-object v0, Lfoz;->a:Louj;
+
+    return-void
+.end method
+
+.method public constructor <init>(Lhsp;)V
     .locals 0
 
-    iput-object p1, p0, Lfoz;->d:Lfpa;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-wide p3, p0, Lfoz;->b:J
-
-    iput-object p5, p0, Lfoz;->c:Lkpb;
-
-    invoke-direct {p0, p2}, Lkoy;-><init>(Lkpb;)V
-
-    new-instance p1, Ljava/util/concurrent/atomic/AtomicBoolean;
-
-    const/4 p2, 0x0
-
-    invoke-direct {p1, p2}, Ljava/util/concurrent/atomic/AtomicBoolean;-><init>(Z)V
-
-    iput-object p1, p0, Lfoz;->a:Ljava/util/concurrent/atomic/AtomicBoolean;
+    iput-object p1, p0, Lfoz;->b:Lhsp;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final close()V
-    .locals 6
+.method public final a(Likc;Lhsc;Lojc;JLiij;)Lpht;
+    .locals 0
 
-    iget-object v0, p0, Lfoz;->a:Ljava/util/concurrent/atomic/AtomicBoolean;
+    new-instance p1, Ljava/lang/RuntimeException;
 
-    const/4 v1, 0x1
+    iget-object p2, p0, Lfoz;->b:Lhsp;
 
-    invoke-virtual {v0, v1}, Ljava/util/concurrent/atomic/AtomicBoolean;->getAndSet(Z)Z
+    invoke-static {p2}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
-    move-result v0
+    move-result-object p2
 
-    if-nez v0, :cond_0
+    invoke-static {p2}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
-    iget-object v0, p0, Lfoz;->d:Lfpa;
+    move-result-object p3
 
-    iget-object v0, v0, Lfpa;->c:Lfry;
+    invoke-virtual {p3}, Ljava/lang/String;->length()I
 
-    iget-object v0, v0, Lfry;->b:Ljava/lang/Object;
+    move-result p3
 
-    const/4 v1, 0x0
+    new-instance p4, Ljava/lang/StringBuilder;
 
-    new-array v2, v1, [Ljava/lang/Object;
+    add-int/lit8 p3, p3, 0x1f
 
-    check-cast v0, Lkte;
+    invoke-direct {p4, p3}, Ljava/lang/StringBuilder;-><init>(I)V
 
-    invoke-virtual {v0, v2}, Lkte;->d([Ljava/lang/Object;)V
+    const-string p3, "No in-flight session found for "
 
-    iget-object v0, p0, Lfoz;->d:Lfpa;
+    invoke-virtual {p4, p3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget-object v0, v0, Lfpa;->c:Lfry;
+    invoke-virtual {p4, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget-object v0, v0, Lfry;->a:Ljava/lang/Object;
+    invoke-virtual {p4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
+    move-result-object p2
 
-    move-result-wide v2
+    invoke-direct {p1, p2}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
 
-    iget-wide v4, p0, Lfoz;->b:J
+    invoke-static {p1}, Lplk;->U(Ljava/lang/Throwable;)Lpht;
 
-    sub-long/2addr v2, v4
+    move-result-object p1
 
-    new-array v1, v1, [Ljava/lang/Object;
+    return-object p1
+.end method
 
-    check-cast v0, Lkte;
+.method public final b(Likc;Ljava/io/InputStream;Lhsc;Lojc;JLjava/lang/String;Liij;)Lpht;
+    .locals 0
 
-    long-to-double v2, v2
+    :try_start_0
+    invoke-virtual {p4}, Lojc;->f()Ljava/lang/Object;
 
-    invoke-virtual {v0, v2, v3, v1}, Lkte;->e(D[Ljava/lang/Object;)V
+    move-result-object p4
 
-    :cond_0
-    iget-object v0, p0, Lfoz;->c:Lkpb;
+    check-cast p4, Lcom/google/android/libraries/camera/exif/ExifInterface;
 
-    invoke-interface {v0}, Lkpb;->close()V
+    iget-object p5, p3, Lhsc;->a:Lmak;
+
+    invoke-static {p2, p4, p5}, Lmip;->Q(Ljava/io/InputStream;Lcom/google/android/libraries/camera/exif/ExifInterface;Lmak;)J
+
+    move-result-wide p4
+
+    invoke-interface {p8, p4, p5}, Liij;->e(J)V
+
+    invoke-virtual {p3}, Lhsc;->c()V
+
+    invoke-static {p1}, Lplk;->V(Ljava/lang/Object;)Lpht;
+
+    move-result-object p1
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
+
+    return-object p1
+
+    :catch_0
+    move-exception p1
+
+    sget-object p2, Lfoz;->a:Louj;
+
+    invoke-virtual {p2}, Loue;->b()Lova;
+
+    move-result-object p2
+
+    const/16 p4, 0x728
+
+    const-string p5, "Error while saving jpeg in finishMicrovideo"
+
+    invoke-static {p2, p5, p4, p1}, Ld;->w(Lova;Ljava/lang/String;CLjava/lang/Throwable;)V
+
+    invoke-virtual {p3}, Lhsc;->b()V
+
+    invoke-static {p1}, Lplk;->U(Ljava/lang/Throwable;)Lpht;
+
+    move-result-object p1
+
+    return-object p1
+.end method
+
+.method public final c()V
+    .locals 0
 
     return-void
 .end method

@@ -1,305 +1,905 @@
-.class public final synthetic Llqx;
+.class public final Llqx;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Landroid/widget/AdapterView$OnItemClickListener;
+.implements Llie;
 
 
 # instance fields
-.field public final synthetic a:Ljava/lang/Object;
+.field private final a:Llrl;
 
-.field private final synthetic b:I
+.field private final b:Llap;
+
+.field private final c:Llxn;
+
+.field private final d:Llrk;
+
+.field private final e:Ljava/lang/Runnable;
+
+.field private f:Z
+
+.field private g:Z
 
 
 # direct methods
-.method public constructor <init>(Ljg;I)V
-    .locals 0
+.method public constructor <init>(Lmxm;Lncp;Llxn;Ljava/lang/Runnable;Lltd;Llrg;[B[B[B)V
+    .locals 16
 
-    iput p2, p0, Llqx;->b:I
+    move-object/from16 v0, p0
 
-    iput-object p1, p0, Llqx;->a:Ljava/lang/Object;
+    move-object/from16 v1, p1
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    move-object/from16 v2, p2
 
-    return-void
-.end method
+    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-.method public synthetic constructor <init>(Llqy;I)V
-    .locals 0
+    const/4 v3, 0x0
 
-    iput p2, p0, Llqx;->b:I
+    iput-boolean v3, v0, Llqx;->f:Z
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-boolean v3, v0, Llqx;->g:Z
 
-    iput-object p1, p0, Llqx;->a:Ljava/lang/Object;
+    move-object/from16 v3, p3
 
-    return-void
-.end method
+    iput-object v3, v0, Llqx;->c:Llxn;
 
-.method public constructor <init>(Lmln;I)V
-    .locals 0
+    move-object/from16 v3, p4
 
-    iput p2, p0, Llqx;->b:I
+    iput-object v3, v0, Llqx;->e:Ljava/lang/Runnable;
 
-    iput-object p1, p0, Llqx;->a:Ljava/lang/Object;
+    new-instance v3, Llap;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {v3}, Llap;-><init>()V
+
+    iput-object v3, v0, Llqx;->b:Llap;
+
+    new-instance v15, Llrl;
+
+    iget-object v4, v1, Lmxm;->f:Lqkg;
+
+    check-cast v4, Llpn;
+
+    invoke-virtual {v4}, Llpn;->a()Llnf;
+
+    move-result-object v5
+
+    iget-object v4, v1, Lmxm;->c:Lqkg;
+
+    invoke-interface {v4}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v4
+
+    move-object v6, v4
+
+    check-cast v6, Llqn;
+
+    invoke-virtual {v6}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    iget-object v4, v1, Lmxm;->b:Lqkg;
+
+    invoke-interface {v4}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v4
+
+    iget-object v7, v1, Lmxm;->e:Lqkg;
+
+    invoke-interface {v7}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v7
+
+    move-object v8, v7
+
+    check-cast v8, Llom;
+
+    invoke-virtual {v8}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    iget-object v7, v1, Lmxm;->a:Lqkg;
+
+    invoke-interface {v7}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v7
+
+    move-object v9, v7
+
+    check-cast v9, Lloy;
+
+    invoke-virtual {v9}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    iget-object v1, v1, Lmxm;->d:Lqkg;
+
+    invoke-interface {v1}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v1
+
+    move-object v10, v1
+
+    check-cast v10, Lmip;
+
+    invoke-virtual {v10}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    move-object v7, v4
+
+    check-cast v7, Lncp;
+
+    const/4 v13, 0x0
+
+    const/4 v14, 0x0
+
+    const/4 v1, 0x0
+
+    move-object v4, v15
+
+    move-object/from16 v11, p5
+
+    move-object/from16 v12, p6
+
+    move-object/from16 p3, v3
+
+    move-object v3, v15
+
+    move-object v15, v1
+
+    invoke-direct/range {v4 .. v15}, Llrl;-><init>(Llnf;Llqn;Lncp;Llom;Lloy;Lmip;Lltd;Llrg;[B[B[B)V
+
+    iput-object v3, v0, Llqx;->a:Llrl;
+
+    new-instance v1, Llrk;
+
+    iget-object v4, v2, Lncp;->d:Lqkg;
+
+    invoke-interface {v4}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v4
+
+    move-object v5, v4
+
+    check-cast v5, Llol;
+
+    invoke-virtual {v5}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    iget-object v4, v2, Lncp;->a:Lqkg;
+
+    check-cast v4, Llpl;
+
+    invoke-virtual {v4}, Llpl;->a()Llvp;
+
+    move-result-object v6
+
+    iget-object v4, v2, Lncp;->c:Lqkg;
+
+    check-cast v4, Lliq;
+
+    invoke-virtual {v4}, Lliq;->a()Llis;
+
+    move-result-object v7
+
+    iget-object v2, v2, Lncp;->b:Lqkg;
+
+    check-cast v2, Llpn;
+
+    invoke-virtual {v2}, Llpn;->a()Llnf;
+
+    move-result-object v8
+
+    move-object v4, v1
+
+    move-object v9, v3
+
+    move-object/from16 v10, p6
+
+    invoke-direct/range {v4 .. v10}, Llrk;-><init>(Llol;Llvp;Llis;Llnf;Llrl;Llrg;)V
+
+    iput-object v1, v0, Llqx;->d:Llrk;
+
+    move-object/from16 v2, p3
+
+    invoke-virtual {v2, v1}, Llap;->c(Llie;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onItemClick(Landroid/widget/AdapterView;Landroid/view/View;IJ)V
-    .locals 7
+.method public final declared-synchronized a()Llmp;
+    .locals 2
 
-    iget v0, p0, Llqx;->b:I
+    monitor-enter p0
 
-    packed-switch v0, :pswitch_data_0
+    :try_start_0
+    iget-boolean v0, p0, Llqx;->f:Z
 
-    const/4 p1, 0x0
+    if-nez v0, :cond_0
 
-    if-gez p3, :cond_3
+    iget-object v0, p0, Llqx;->d:Llrk;
 
-    iget-object v0, p0, Llqx;->a:Ljava/lang/Object;
+    invoke-virtual {v0}, Llrk;->a()Llrs;
 
-    check-cast v0, Lmln;
+    move-result-object v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    iget-object v0, v0, Lmln;->a:Llg;
+    monitor-exit p0
 
-    invoke-virtual {v0}, Llg;->u()Z
+    return-object v0
 
-    move-result v1
+    :cond_0
+    :try_start_1
+    new-instance v0, Lllv;
 
-    if-nez v1, :cond_2
+    const-string v1, "getConfig3ABuilder() cannot be called after the session is closed."
 
-    move-object v0, p1
+    invoke-direct {v0, v1}, Lllv;-><init>(Ljava/lang/String;)V
+
+    throw v0
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit p0
+
+    throw v0
+.end method
+
+.method public final declared-synchronized b()Llpc;
+    .locals 2
+
+    monitor-enter p0
+
+    :try_start_0
+    iget-boolean v0, p0, Llqx;->f:Z
+
+    if-nez v0, :cond_0
+
+    iget-object v0, p0, Llqx;->a:Llrl;
+
+    invoke-virtual {v0}, Llrl;->a()Llpc;
+
+    move-result-object v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    monitor-exit p0
+
+    return-object v0
+
+    :cond_0
+    :try_start_1
+    new-instance v0, Lllv;
+
+    const-string v1, "getRequestBuilder() cannot be called after the session is closed."
+
+    invoke-direct {v0, v1}, Lllv;-><init>(Ljava/lang/String;)V
+
+    throw v0
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit p0
+
+    throw v0
+.end method
+
+.method public final declared-synchronized c(Llnv;Z)Lpht;
+    .locals 1
+
+    monitor-enter p0
+
+    :try_start_0
+    iget-boolean v0, p0, Llqx;->f:Z
+
+    if-nez v0, :cond_0
+
+    iget-object v0, p0, Llqx;->d:Llrk;
+
+    invoke-virtual {v0, p1, p2}, Llrk;->b(Llnv;Z)Lpht;
+
+    move-result-object p1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    monitor-exit p0
+
+    return-object p1
+
+    :cond_0
+    :try_start_1
+    new-instance p1, Lllv;
+
+    const-string p2, "trigger3A() cannot be called after the session is closed."
+
+    invoke-direct {p1, p2}, Lllv;-><init>(Ljava/lang/String;)V
+
+    throw p1
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    :catchall_0
+    move-exception p1
+
+    monitor-exit p0
+
+    throw p1
+.end method
+
+.method public final close()V
+    .locals 4
+
+    iget-object v0, p0, Llqx;->d:Llrk;
+
+    iget-object v0, v0, Llrk;->a:Ljava/util/concurrent/ExecutorService;
+
+    invoke-interface {v0}, Ljava/util/concurrent/ExecutorService;->shutdownNow()Ljava/util/List;
+
+    monitor-enter p0
+
+    :try_start_0
+    iget-boolean v0, p0, Llqx;->g:Z
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    if-eqz v0, :cond_0
+
+    :try_start_1
+    iget-object v0, p0, Llqx;->a:Llrl;
+
+    invoke-virtual {p0}, Llqx;->b()Llpc;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Llpc;->b()Llpd;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Llrl;->f(Llpd;)V
+
+    const/4 v0, 0x0
+
+    iput-boolean v0, p0, Llqx;->g:Z
+    :try_end_1
+    .catch Lllv; {:try_start_1 .. :try_end_1} :catch_0
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     goto :goto_0
 
-    :pswitch_0
-    iget-object p1, p0, Llqx;->a:Ljava/lang/Object;
+    :catch_0
+    move-exception v0
 
-    check-cast p1, Ljg;
+    :try_start_2
+    const-string v1, "CAM_RequestProcessorSess"
 
-    iget-object p1, p1, Ljg;->d:Ljj;
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
-    invoke-virtual {p1, p3}, Ljj;->setSelection(I)V
+    move-result-object v0
 
-    iget-object p1, p0, Llqx;->a:Ljava/lang/Object;
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
-    check-cast p1, Ljg;
+    move-result-object v2
 
-    iget-object p1, p1, Ljg;->d:Ljj;
+    invoke-virtual {v2}, Ljava/lang/String;->length()I
 
-    invoke-virtual {p1}, Ljj;->getOnItemClickListener()Landroid/widget/AdapterView$OnItemClickListener;
+    move-result v2
 
-    move-result-object p1
+    add-int/lit8 v2, v2, 0x28
 
-    if-eqz p1, :cond_0
+    new-instance v3, Ljava/lang/StringBuilder;
 
-    iget-object p1, p0, Llqx;->a:Ljava/lang/Object;
+    invoke-direct {v3, v2}, Ljava/lang/StringBuilder;-><init>(I)V
 
-    check-cast p1, Ljg;
+    const-string v2, "Failed to resume last repeating request "
 
-    iget-object p4, p1, Ljg;->d:Ljj;
+    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget-object p1, p1, Ljg;->b:Landroid/widget/ListAdapter;
+    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-interface {p1, p3}, Landroid/widget/ListAdapter;->getItemId(I)J
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-wide v0
+    move-result-object v0
 
-    invoke-virtual {p4, p2, p3, v0, v1}, Ljj;->performItemClick(Landroid/view/View;IJ)Z
+    invoke-static {v1, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
     :cond_0
-    iget-object p1, p0, Llqx;->a:Ljava/lang/Object;
+    :goto_0
+    const/4 v0, 0x1
 
-    check-cast p1, Llg;
+    iput-boolean v0, p0, Llqx;->f:Z
 
-    invoke-virtual {p1}, Llg;->k()V
+    monitor-exit p0
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
-    return-void
+    iget-object v0, p0, Llqx;->b:Llap;
 
-    :pswitch_1
-    iget-object p2, p0, Llqx;->a:Ljava/lang/Object;
+    invoke-virtual {v0}, Llap;->close()V
 
-    invoke-virtual {p1, p3}, Landroid/widget/AdapterView;->getItemAtPosition(I)Ljava/lang/Object;
+    iget-object v0, p0, Llqx;->c:Llxn;
 
-    move-result-object p1
+    invoke-virtual {v0}, Llxn;->close()V
 
-    check-cast p1, Llqv;
+    iget-object v0, p0, Llqx;->e:Ljava/lang/Runnable;
 
-    check-cast p2, Llqy;
+    if-eqz v0, :cond_1
 
-    iget-object p2, p2, Llqy;->a:Lcom/google/android/libraries/social/licenses/LicenseMenuActivity;
-
-    if-eqz p2, :cond_1
-
-    const-class p3, Lcom/google/android/libraries/social/licenses/LicenseActivity;
-
-    new-instance p4, Landroid/content/Intent;
-
-    invoke-direct {p4, p2, p3}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
-
-    const-string p3, "license"
-
-    invoke-virtual {p4, p3, p1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Landroid/os/Parcelable;)Landroid/content/Intent;
-
-    invoke-virtual {p2, p4}, Lcom/google/android/libraries/social/licenses/LicenseMenuActivity;->startActivity(Landroid/content/Intent;)V
+    invoke-interface {v0}, Ljava/lang/Runnable;->run()V
 
     :cond_1
     return-void
 
-    :cond_2
-    iget-object v0, v0, Llg;->e:Lkm;
+    :catchall_0
+    move-exception v0
 
-    invoke-virtual {v0}, Lkm;->getSelectedItem()Ljava/lang/Object;
+    :try_start_3
+    monitor-exit p0
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_0
 
-    move-result-object v0
+    throw v0
+.end method
 
-    goto :goto_0
+.method public final declared-synchronized d(ZZZZ)Lpht;
+    .locals 1
 
-    :cond_3
-    iget-object v0, p0, Llqx;->a:Ljava/lang/Object;
+    monitor-enter p0
 
-    check-cast v0, Lmln;
+    :try_start_0
+    iget-boolean v0, p0, Llqx;->f:Z
 
-    invoke-virtual {v0}, Lmln;->getAdapter()Landroid/widget/ListAdapter;
+    if-nez v0, :cond_0
 
-    move-result-object v0
+    iget-object v0, p0, Llqx;->d:Llrk;
 
-    invoke-interface {v0, p3}, Landroid/widget/ListAdapter;->getItem(I)Ljava/lang/Object;
-
-    move-result-object v0
-
-    :goto_0
-    iget-object v1, p0, Llqx;->a:Ljava/lang/Object;
-
-    check-cast v1, Lmln;
-
-    invoke-virtual {v1, v0}, Lmln;->a(Ljava/lang/Object;)V
-
-    iget-object v0, p0, Llqx;->a:Ljava/lang/Object;
-
-    check-cast v0, Lmln;
-
-    invoke-virtual {v0}, Lmln;->getOnItemClickListener()Landroid/widget/AdapterView$OnItemClickListener;
-
-    move-result-object v1
-
-    if-eqz v1, :cond_8
-
-    if-eqz p2, :cond_5
-
-    if-gez p3, :cond_4
-
-    goto :goto_1
-
-    :cond_4
-    move-object v3, p2
-
-    move v4, p3
-
-    move-wide v5, p4
-
-    goto :goto_4
-
-    :cond_5
-    :goto_1
-    iget-object p2, p0, Llqx;->a:Ljava/lang/Object;
-
-    check-cast p2, Lmln;
-
-    iget-object p2, p2, Lmln;->a:Llg;
-
-    invoke-virtual {p2}, Llg;->u()Z
-
-    move-result p3
-
-    if-nez p3, :cond_6
-
-    move-object p2, p1
-
-    goto :goto_2
-
-    :cond_6
-    iget-object p1, p2, Llg;->e:Lkm;
-
-    invoke-virtual {p1}, Lkm;->getSelectedView()Landroid/view/View;
+    invoke-virtual {v0, p1, p2, p3, p4}, Llrk;->c(ZZZZ)Lpht;
 
     move-result-object p1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    move-object p2, p1
+    monitor-exit p0
 
-    :goto_2
-    iget-object p1, p0, Llqx;->a:Ljava/lang/Object;
+    return-object p1
 
-    check-cast p1, Lmln;
+    :cond_0
+    :try_start_1
+    new-instance p1, Lllv;
 
-    iget-object p1, p1, Lmln;->a:Llg;
+    const-string p2, "unlock3A() cannot be called after the session is closed."
 
-    invoke-virtual {p1}, Llg;->o()I
+    invoke-direct {p1, p2}, Lllv;-><init>(Ljava/lang/String;)V
 
-    move-result p3
+    throw p1
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    iget-object p1, p0, Llqx;->a:Ljava/lang/Object;
+    :catchall_0
+    move-exception p1
 
-    check-cast p1, Lmln;
+    monitor-exit p0
 
-    iget-object p1, p1, Lmln;->a:Llg;
+    throw p1
+.end method
 
-    invoke-virtual {p1}, Llg;->u()Z
+.method public final declared-synchronized e(Llmq;Z)Lpht;
+    .locals 1
 
-    move-result p4
+    monitor-enter p0
 
-    if-nez p4, :cond_7
+    :try_start_0
+    iget-boolean v0, p0, Llqx;->f:Z
 
-    const-wide/high16 p4, -0x8000000000000000L
+    if-nez v0, :cond_0
 
-    goto :goto_3
+    iget-object v0, p0, Llqx;->d:Llrk;
 
-    :cond_7
-    iget-object p1, p1, Llg;->e:Lkm;
+    invoke-virtual {v0, p1, p2}, Llrk;->d(Llmq;Z)Lpht;
 
-    invoke-virtual {p1}, Lkm;->getSelectedItemId()J
+    move-result-object p1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    move-result-wide p4
+    monitor-exit p0
 
-    :goto_3
-    move-object v3, p2
+    return-object p1
 
-    move v4, p3
+    :cond_0
+    :try_start_1
+    new-instance p1, Lllv;
 
-    move-wide v5, p4
+    const-string p2, "update3A() cannot be called after the session is closed."
 
-    :goto_4
-    iget-object p1, p0, Llqx;->a:Ljava/lang/Object;
+    invoke-direct {p1, p2}, Lllv;-><init>(Ljava/lang/String;)V
 
-    check-cast p1, Lmln;
+    throw p1
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    iget-object p1, p1, Lmln;->a:Llg;
+    :catchall_0
+    move-exception p1
 
-    iget-object v2, p1, Llg;->e:Lkm;
+    monitor-exit p0
 
-    invoke-interface/range {v1 .. v6}, Landroid/widget/AdapterView$OnItemClickListener;->onItemClick(Landroid/widget/AdapterView;Landroid/view/View;IJ)V
+    throw p1
+.end method
 
-    :cond_8
-    iget-object p1, p0, Llqx;->a:Ljava/lang/Object;
+.method public final declared-synchronized f()V
+    .locals 2
 
-    check-cast p1, Lmln;
+    monitor-enter p0
 
-    iget-object p1, p1, Lmln;->a:Llg;
+    :try_start_0
+    iget-boolean v0, p0, Llqx;->f:Z
 
-    invoke-virtual {p1}, Llg;->k()V
+    if-nez v0, :cond_0
+
+    iget-object v0, p0, Llqx;->a:Llrl;
+
+    invoke-virtual {v0}, Llrl;->c()V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    monitor-exit p0
 
     return-void
 
-    nop
+    :cond_0
+    :try_start_1
+    new-instance v0, Lllv;
 
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
+    const-string v1, "abortCaptures() cannot be called after the session is closed."
+
+    invoke-direct {v0, v1}, Lllv;-><init>(Ljava/lang/String;)V
+
+    throw v0
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit p0
+
+    throw v0
+.end method
+
+.method public final declared-synchronized g()V
+    .locals 2
+
+    monitor-enter p0
+
+    :try_start_0
+    iget-boolean v0, p0, Llqx;->f:Z
+
+    if-nez v0, :cond_0
+
+    const/4 v0, 0x1
+
+    iput-boolean v0, p0, Llqx;->g:Z
+
+    iget-object v0, p0, Llqx;->a:Llrl;
+
+    invoke-virtual {v0}, Llrl;->d()V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    monitor-exit p0
+
+    return-void
+
+    :cond_0
+    :try_start_1
+    new-instance v0, Lllv;
+
+    const-string v1, "stopRepeating() cannot be called after the session is closed."
+
+    invoke-direct {v0, v1}, Lllv;-><init>(Ljava/lang/String;)V
+
+    throw v0
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit p0
+
+    throw v0
+.end method
+
+.method public final declared-synchronized h(Ljava/util/List;Ljava/util/List;)V
+    .locals 1
+
+    monitor-enter p0
+
+    :try_start_0
+    iget-boolean v0, p0, Llqx;->f:Z
+
+    if-nez v0, :cond_0
+
+    iget-object v0, p0, Llqx;->a:Llrl;
+
+    invoke-virtual {v0, p1, p2}, Llrl;->e(Ljava/util/List;Ljava/util/List;)V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    monitor-exit p0
+
+    return-void
+
+    :cond_0
+    :try_start_1
+    new-instance p1, Lllv;
+
+    const-string p2, "submit() cannot be called after the session is closed."
+
+    invoke-direct {p1, p2}, Lllv;-><init>(Ljava/lang/String;)V
+
+    throw p1
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    :catchall_0
+    move-exception p1
+
+    monitor-exit p0
+
+    throw p1
+.end method
+
+.method public final declared-synchronized i(Llpd;)V
+    .locals 1
+
+    monitor-enter p0
+
+    :try_start_0
+    iget-boolean v0, p0, Llqx;->f:Z
+
+    if-nez v0, :cond_0
+
+    iget-object v0, p0, Llqx;->a:Llrl;
+
+    invoke-virtual {v0, p1}, Llrl;->f(Llpd;)V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    monitor-exit p0
+
+    return-void
+
+    :cond_0
+    :try_start_1
+    new-instance p1, Lllv;
+
+    const-string v0, "setRepeating() cannot be called after the session is closed."
+
+    invoke-direct {p1, v0}, Lllv;-><init>(Ljava/lang/String;)V
+
+    throw p1
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    :catchall_0
+    move-exception p1
+
+    monitor-exit p0
+
+    throw p1
+.end method
+
+.method public final declared-synchronized j(Llpd;Ljava/util/Set;)V
+    .locals 1
+
+    monitor-enter p0
+
+    :try_start_0
+    iget-boolean v0, p0, Llqx;->f:Z
+
+    if-nez v0, :cond_0
+
+    iget-object v0, p0, Llqx;->a:Llrl;
+
+    invoke-virtual {v0, p1, p2}, Llrl;->g(Llpd;Ljava/util/Set;)V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    monitor-exit p0
+
+    return-void
+
+    :cond_0
+    :try_start_1
+    new-instance p1, Lllv;
+
+    const-string p2, "submit() cannot be called after the session is closed."
+
+    invoke-direct {p1, p2}, Lllv;-><init>(Ljava/lang/String;)V
+
+    throw p1
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    :catchall_0
+    move-exception p1
+
+    monitor-exit p0
+
+    throw p1
+.end method
+
+.method public final declared-synchronized k(Llmq;)Lpht;
+    .locals 1
+
+    monitor-enter p0
+
+    :try_start_0
+    iget-boolean v0, p0, Llqx;->f:Z
+
+    if-nez v0, :cond_0
+
+    iget-object v0, p0, Llqx;->d:Llrk;
+
+    invoke-virtual {v0, p1}, Llrk;->e(Llmq;)Lpht;
+
+    move-result-object p1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    monitor-exit p0
+
+    return-object p1
+
+    :cond_0
+    :try_start_1
+    new-instance p1, Lllv;
+
+    const-string v0, "lock3AImmediately() with config3a cannot be called after the session is closed."
+
+    invoke-direct {p1, v0}, Lllv;-><init>(Ljava/lang/String;)V
+
+    throw p1
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    :catchall_0
+    move-exception p1
+
+    monitor-exit p0
+
+    throw p1
+.end method
+
+.method public final declared-synchronized l(Llmq;)V
+    .locals 1
+
+    monitor-enter p0
+
+    :try_start_0
+    iget-boolean v0, p0, Llqx;->f:Z
+
+    if-nez v0, :cond_0
+
+    iget-object v0, p0, Llqx;->d:Llrk;
+
+    invoke-virtual {v0, p1}, Llrk;->f(Llmq;)V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    monitor-exit p0
+
+    return-void
+
+    :cond_0
+    :try_start_1
+    new-instance p1, Lllv;
+
+    const-string v0, "updateConfig3AWithLocksRetained() cannot be called after the session is closed."
+
+    invoke-direct {p1, v0}, Lllv;-><init>(Ljava/lang/String;)V
+
+    throw p1
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    :catchall_0
+    move-exception p1
+
+    monitor-exit p0
+
+    throw p1
+.end method
+
+.method public final declared-synchronized m(Llmq;)V
+    .locals 1
+
+    monitor-enter p0
+
+    :try_start_0
+    iget-boolean v0, p0, Llqx;->f:Z
+
+    if-nez v0, :cond_0
+
+    iget-object v0, p0, Llqx;->d:Llrk;
+
+    invoke-virtual {v0, p1}, Llrk;->g(Llmq;)V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    monitor-exit p0
+
+    return-void
+
+    :cond_0
+    :try_start_1
+    new-instance p1, Lllv;
+
+    const-string v0, "submit3A() cannot be called after the session is closed."
+
+    invoke-direct {p1, v0}, Lllv;-><init>(Ljava/lang/String;)V
+
+    throw p1
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    :catchall_0
+    move-exception p1
+
+    monitor-exit p0
+
+    throw p1
+.end method
+
+.method public final declared-synchronized n(Ljava/util/Set;Lmip;)V
+    .locals 1
+
+    monitor-enter p0
+
+    :try_start_0
+    iget-boolean v0, p0, Llqx;->f:Z
+
+    if-nez v0, :cond_0
+
+    iget-object v0, p0, Llqx;->a:Llrl;
+
+    invoke-virtual {v0}, Llrl;->a()Llpc;
+
+    move-result-object v0
+
+    invoke-virtual {v0, p1}, Llpc;->e(Ljava/util/Set;)V
+
+    invoke-virtual {v0, p2}, Llpc;->g(Lmip;)V
+
+    iget-object p1, p0, Llqx;->a:Llrl;
+
+    invoke-virtual {v0}, Llpc;->b()Llpd;
+
+    move-result-object p2
+
+    invoke-virtual {p1, p2}, Llrl;->h(Llpd;)V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    monitor-exit p0
+
+    return-void
+
+    :cond_0
+    :try_start_1
+    new-instance p1, Lllv;
+
+    const-string p2, "submit(parameters, listener) cannot be called after the session is closed."
+
+    invoke-direct {p1, p2}, Lllv;-><init>(Ljava/lang/String;)V
+
+    throw p1
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    :catchall_0
+    move-exception p1
+
+    monitor-exit p0
+
+    throw p1
 .end method

@@ -1,61 +1,41 @@
-.class public final Lmjq;
+.class final Lmjq;
 .super Ljava/lang/Object;
 
+# interfaces
+.implements Ljava/util/concurrent/Executor;
 
-# static fields
-.field public static final a:[I
 
-.field public static final b:[I
+# instance fields
+.field final synthetic a:Lmjr;
+
+.field private final b:Ljava/util/concurrent/Executor;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 3
+.method public constructor <init>(Lmjr;Ljava/util/concurrent/Executor;)V
+    .locals 0
 
-    const v0, 0x101057f
+    iput-object p1, p0, Lmjq;->a:Lmjr;
 
-    const v1, 0x7f0403e5
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const v2, 0x10104b6
-
-    filled-new-array {v2, v0, v1}, [I
-
-    move-result-object v0
-
-    sput-object v0, Lmjq;->a:[I
-
-    const/16 v0, 0x13
-
-    new-array v0, v0, [I
-
-    fill-array-data v0, :array_0
-
-    sput-object v0, Lmjq;->b:[I
+    iput-object p2, p0, Lmjq;->b:Ljava/util/concurrent/Executor;
 
     return-void
+.end method
 
-    nop
 
-    :array_0
-    .array-data 4
-        0x1010095
-        0x1010096
-        0x1010097
-        0x1010098
-        0x101009a
-        0x101009b
-        0x1010161
-        0x1010162
-        0x1010163
-        0x1010164
-        0x10103ac
-        0x10104b6
-        0x10104b7
-        0x1010570
-        0x1010585
-        0x7f0402c9
-        0x7f0402e3
-        0x7f040647
-        0x7f040696
-    .end array-data
+# virtual methods
+.method public final execute(Ljava/lang/Runnable;)V
+    .locals 2
+
+    iget-object v0, p0, Lmjq;->b:Ljava/util/concurrent/Executor;
+
+    new-instance v1, Lmjp;
+
+    invoke-direct {v1, p0, p1}, Lmjp;-><init>(Lmjq;Ljava/lang/Runnable;)V
+
+    invoke-interface {v0, v1}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
+
+    return-void
 .end method

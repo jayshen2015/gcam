@@ -1,108 +1,157 @@
 .class public final Lkru;
-.super Ljava/lang/Object;
+.super Lbmn;
 
-
-# instance fields
-.field public final a:I
-
-.field public final b:I
+# interfaces
+.implements Lkrv;
 
 
 # direct methods
-.method public constructor <init>(II)V
-    .locals 0
+.method public constructor <init>(Landroid/os/IBinder;)V
+    .locals 1
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const-string v0, "com.google.android.gms.learning.internal.training.IInAppTrainingService"
 
-    iput p1, p0, Lkru;->a:I
-
-    iput p2, p0, Lkru;->b:I
+    invoke-direct {p0, p1, v0}, Lbmn;-><init>(Landroid/os/IBinder;Ljava/lang/String;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 3
+.method public final e(Landroid/content/Intent;II)I
+    .locals 1
 
-    instance-of v0, p1, Lkru;
+    invoke-virtual {p0}, Lbmn;->a()Landroid/os/Parcel;
 
-    const/4 v1, 0x0
+    move-result-object v0
 
-    if-nez v0, :cond_0
+    invoke-static {v0, p1}, Lbmp;->c(Landroid/os/Parcel;Landroid/os/Parcelable;)V
 
-    return v1
+    invoke-virtual {v0, p2}, Landroid/os/Parcel;->writeInt(I)V
 
-    :cond_0
-    check-cast p1, Lkru;
+    invoke-virtual {v0, p3}, Landroid/os/Parcel;->writeInt(I)V
 
-    iget v0, p0, Lkru;->a:I
+    const/4 p1, 0x5
 
-    iget v2, p1, Lkru;->a:I
+    invoke-virtual {p0, p1, v0}, Lbmn;->y(ILandroid/os/Parcel;)Landroid/os/Parcel;
 
-    if-ne v0, v2, :cond_1
+    move-result-object p1
 
-    iget v0, p0, Lkru;->b:I
+    invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
-    iget p1, p1, Lkru;->b:I
+    move-result p2
 
-    if-ne v0, p1, :cond_1
+    invoke-virtual {p1}, Landroid/os/Parcel;->recycle()V
+
+    return p2
+.end method
+
+.method public final f(Landroid/content/Intent;)Landroid/os/IBinder;
+    .locals 1
+
+    invoke-virtual {p0}, Lbmn;->a()Landroid/os/Parcel;
+
+    move-result-object v0
+
+    invoke-static {v0, p1}, Lbmp;->c(Landroid/os/Parcel;Landroid/os/Parcelable;)V
+
+    const/4 p1, 0x3
+
+    invoke-virtual {p0, p1, v0}, Lbmn;->y(ILandroid/os/Parcel;)Landroid/os/Parcel;
+
+    move-result-object p1
+
+    invoke-virtual {p1}, Landroid/os/Parcel;->readStrongBinder()Landroid/os/IBinder;
+
+    move-result-object v0
+
+    invoke-virtual {p1}, Landroid/os/Parcel;->recycle()V
+
+    return-object v0
+.end method
+
+.method public final g(Lkoh;)V
+    .locals 1
+
+    invoke-virtual {p0}, Lbmn;->a()Landroid/os/Parcel;
+
+    move-result-object v0
+
+    invoke-static {v0, p1}, Lbmp;->e(Landroid/os/Parcel;Landroid/os/IInterface;)V
 
     const/4 p1, 0x1
 
-    return p1
+    invoke-virtual {p0, p1, v0}, Lbmn;->z(ILandroid/os/Parcel;)V
 
-    :cond_1
-    return v1
+    return-void
 .end method
 
-.method public final hashCode()I
-    .locals 3
+.method public final h()V
+    .locals 2
 
-    iget v0, p0, Lkru;->a:I
-
-    const v1, -0x79209ddf
-
-    iget v2, p0, Lkru;->b:I
-
-    filled-new-array {v0, v1, v2}, [I
+    invoke-virtual {p0}, Lbmn;->a()Landroid/os/Parcel;
 
     move-result-object v0
 
-    invoke-static {v0}, Ljava/util/Arrays;->hashCode([I)I
+    const/4 v1, 0x2
+
+    invoke-virtual {p0, v1, v0}, Lbmn;->z(ILandroid/os/Parcel;)V
+
+    return-void
+.end method
+
+.method public final i(Landroid/content/Intent;)V
+    .locals 1
+
+    invoke-virtual {p0}, Lbmn;->a()Landroid/os/Parcel;
+
+    move-result-object v0
+
+    invoke-static {v0, p1}, Lbmp;->c(Landroid/os/Parcel;Landroid/os/Parcelable;)V
+
+    const/4 p1, 0x7
+
+    invoke-virtual {p0, p1, v0}, Lbmn;->z(ILandroid/os/Parcel;)V
+
+    return-void
+.end method
+
+.method public final j(I)V
+    .locals 1
+
+    invoke-virtual {p0}, Lbmn;->a()Landroid/os/Parcel;
+
+    move-result-object v0
+
+    invoke-virtual {v0, p1}, Landroid/os/Parcel;->writeInt(I)V
+
+    const/4 p1, 0x4
+
+    invoke-virtual {p0, p1, v0}, Lbmn;->z(ILandroid/os/Parcel;)V
+
+    return-void
+.end method
+
+.method public final k(Landroid/content/Intent;)Z
+    .locals 1
+
+    invoke-virtual {p0}, Lbmn;->a()Landroid/os/Parcel;
+
+    move-result-object v0
+
+    invoke-static {v0, p1}, Lbmp;->c(Landroid/os/Parcel;Landroid/os/Parcelable;)V
+
+    const/4 p1, 0x6
+
+    invoke-virtual {p0, p1, v0}, Lbmn;->y(ILandroid/os/Parcel;)Landroid/os/Parcel;
+
+    move-result-object p1
+
+    invoke-static {p1}, Lbmp;->f(Landroid/os/Parcel;)Z
 
     move-result v0
 
+    invoke-virtual {p1}, Landroid/os/Parcel;->recycle()V
+
     return v0
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .locals 4
-
-    iget v0, p0, Lkru;->a:I
-
-    iget v1, p0, Lkru;->b:I
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v3, "java_hash="
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    const-string v0, ",feature_hash=-2032180703,res="
-
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    return-object v0
 .end method

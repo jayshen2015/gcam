@@ -1,66 +1,60 @@
-.class final Ldcz;
-.super Lapo;
+.class public final Ldcz;
+.super Ljava/lang/Object;
+
+
+# static fields
+.field public static final a:Lddg;
+
+.field public static final b:Lddg;
+
+.field public static final c:Lddg;
 
 
 # direct methods
-.method public constructor <init>(Lapt;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 2
 
-    invoke-direct {p0, p1}, Lapo;-><init>(Lapt;)V
+    new-instance v0, Lddh;
 
-    return-void
-.end method
+    invoke-direct {v0}, Lddh;-><init>()V
 
+    const-string v1, "camera.dualev.singleKnob"
 
-# virtual methods
-.method public final bridge synthetic b(Larf;Ljava/lang/Object;)V
-    .locals 3
+    iput-object v1, v0, Lddh;->a:Ljava/lang/String;
 
-    check-cast p2, Ldcx;
+    invoke-virtual {v0}, Lddh;->f()Lddg;
 
-    iget-object v0, p2, Ldcx;->a:Lddd;
+    move-result-object v0
 
-    invoke-virtual {v0}, Lddd;->ordinal()I
+    sput-object v0, Ldcz;->a:Lddg;
 
-    move-result v0
+    new-instance v0, Lddh;
 
-    int-to-long v0, v0
+    invoke-direct {v0}, Lddh;-><init>()V
 
-    const/4 v2, 0x1
+    const-string v1, "camera.dualev.nightFactor"
 
-    invoke-virtual {p1, v2, v0, v1}, Lare;->e(IJ)V
+    iput-object v1, v0, Lddh;->a:Ljava/lang/String;
 
-    iget v0, p2, Ldcx;->b:I
+    invoke-virtual {v0}, Lddh;->d()Lddg;
 
-    int-to-long v0, v0
+    move-result-object v0
 
-    const/4 v2, 0x2
+    sput-object v0, Ldcz;->b:Lddg;
 
-    invoke-virtual {p1, v2, v0, v1}, Lare;->e(IJ)V
+    new-instance v0, Lddh;
 
-    iget v0, p2, Ldcx;->c:I
+    invoke-direct {v0}, Lddh;-><init>()V
 
-    int-to-long v0, v0
+    const-string v1, "camera.dualev.limitUltrawide"
 
-    const/4 v2, 0x3
+    iput-object v1, v0, Lddh;->a:Ljava/lang/String;
 
-    invoke-virtual {p1, v2, v0, v1}, Lare;->e(IJ)V
+    invoke-virtual {v0}, Lddh;->f()Lddg;
 
-    iget p2, p2, Ldcx;->d:I
+    move-result-object v0
 
-    int-to-long v0, p2
-
-    const/4 p2, 0x4
-
-    invoke-virtual {p1, p2, v0, v1}, Lare;->e(IJ)V
+    sput-object v0, Ldcz;->c:Lddg;
 
     return-void
-.end method
-
-.method public final d()Ljava/lang/String;
-    .locals 1
-
-    const-string v0, "INSERT OR IGNORE INTO `HardwareHelpDialogCounts` (`reason`,`impressionsBeforeReboot`,`impressionsAfterReboot`,`rebootCount`) VALUES (?,?,?,?)"
-
-    return-object v0
 .end method

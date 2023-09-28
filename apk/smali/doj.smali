@@ -1,103 +1,113 @@
 .class public final Ldoj;
-.super Landroid/widget/ImageView;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Lpys;
 
 
 # instance fields
-.field public final a:Landroid/view/accessibility/AccessibilityManager;
+.field private final a:Lqkg;
 
-.field public final b:I
+.field private final b:Lqkg;
 
-.field public final c:I
+.field private final c:Lqkg;
 
-.field public d:F
-
-.field public e:F
-
-.field public f:F
+.field private final d:Lqkg;
 
 
 # direct methods
-.method public constructor <init>(Landroid/content/Context;)V
-    .locals 1
+.method public constructor <init>(Lqkg;Lqkg;Lqkg;Lqkg;)V
+    .locals 0
 
-    invoke-direct {p0, p1}, Landroid/widget/ImageView;-><init>(Landroid/content/Context;)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const-string v0, "accessibility"
+    iput-object p1, p0, Ldoj;->a:Lqkg;
 
-    invoke-virtual {p1, v0}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+    iput-object p2, p0, Ldoj;->b:Lqkg;
 
-    move-result-object p1
+    iput-object p3, p0, Ldoj;->c:Lqkg;
 
-    check-cast p1, Landroid/view/accessibility/AccessibilityManager;
-
-    iput-object p1, p0, Ldoj;->a:Landroid/view/accessibility/AccessibilityManager;
-
-    invoke-virtual {p0}, Ldoj;->getResources()Landroid/content/res/Resources;
-
-    move-result-object p1
-
-    const v0, 0x7f07012f
-
-    invoke-virtual {p1, v0}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
-
-    move-result p1
-
-    iput p1, p0, Ldoj;->b:I
-
-    invoke-virtual {p0}, Ldoj;->getResources()Landroid/content/res/Resources;
-
-    move-result-object p1
-
-    const v0, 0x7f070131
-
-    invoke-virtual {p1, v0}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
-
-    move-result p1
-
-    iput p1, p0, Ldoj;->c:I
+    iput-object p4, p0, Ldoj;->d:Lqkg;
 
     return-void
 .end method
 
+.method public static b(Lqkg;Lqkg;Lqkg;Lqkg;)Ldoj;
+    .locals 1
+
+    new-instance v0, Ldoj;
+
+    invoke-direct {v0, p0, p1, p2, p3}, Ldoj;-><init>(Lqkg;Lqkg;Lqkg;Lqkg;)V
+
+    return-object v0
+.end method
+
 
 # virtual methods
-.method public final a(F)V
-    .locals 3
+.method public final a()Ldoi;
+    .locals 9
 
-    const/high16 v0, 0x3f800000    # 1.0f
+    invoke-static {}, Ldln;->a()Lgjw;
 
-    cmpl-float v0, p1, v0
+    move-result-object v1
 
-    if-gtz v0, :cond_0
+    iget-object v0, p0, Ldoj;->a:Lqkg;
 
-    const/4 v0, 0x0
+    invoke-interface {v0}, Lqkg;->get()Ljava/lang/Object;
 
-    cmpg-float v0, p1, v0
+    move-result-object v0
 
-    if-ltz v0, :cond_0
+    move-object v2, v0
 
-    iput p1, p0, Ldoj;->d:F
+    check-cast v2, Ljava/util/concurrent/Executor;
 
-    return-void
+    iget-object v0, p0, Ldoj;->b:Lqkg;
 
-    :cond_0
-    new-instance v0, Ljava/lang/IllegalArgumentException;
+    invoke-interface {v0}, Lqkg;->get()Ljava/lang/Object;
 
-    new-instance v1, Ljava/lang/StringBuilder;
+    move-result-object v0
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+    move-object v3, v0
 
-    const-string v2, "Illegal fraction: "
+    check-cast v3, Ljtx;
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    iget-object v0, p0, Ldoj;->c:Lqkg;
 
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
+    invoke-interface {v0}, Lqkg;->get()Ljava/lang/Object;
 
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    move-result-object v0
 
-    move-result-object p1
+    move-object v4, v0
 
-    invoke-direct {v0, p1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+    check-cast v4, Lddf;
 
-    throw v0
+    iget-object v0, p0, Ldoj;->d:Lqkg;
+
+    check-cast v0, Lliq;
+
+    invoke-virtual {v0}, Lliq;->a()Llis;
+
+    move-result-object v5
+
+    new-instance v8, Ldoi;
+
+    const/4 v6, 0x0
+
+    const/4 v7, 0x0
+
+    move-object v0, v8
+
+    invoke-direct/range {v0 .. v7}, Ldoi;-><init>(Lgjw;Ljava/util/concurrent/Executor;Ljtx;Lddf;Llis;[B[B)V
+
+    return-object v8
+.end method
+
+.method public final bridge synthetic get()Ljava/lang/Object;
+    .locals 1
+
+    invoke-virtual {p0}, Ldoj;->a()Ldoi;
+
+    move-result-object v0
+
+    return-object v0
 .end method

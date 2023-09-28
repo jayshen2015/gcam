@@ -1,44 +1,85 @@
-.class final Ljmw;
-.super Ljmn;
+.class public final Ljmw;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Lpys;
 
 
 # instance fields
-.field final synthetic a:Ljava/lang/Object;
+.field private final a:Lqkg;
 
-.field final synthetic b:Lkgd;
+.field private final b:Lqkg;
+
+.field private final c:Lqkg;
+
+.field private final d:Lqkg;
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/Object;Lkgd;[B[B)V
+.method public constructor <init>(Lqkg;Lqkg;Lqkg;Lqkg;)V
     .locals 0
 
-    iput-object p1, p0, Ljmw;->a:Ljava/lang/Object;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p2, p0, Ljmw;->b:Lkgd;
+    iput-object p1, p0, Ljmw;->a:Lqkg;
 
-    invoke-direct {p0}, Ljmn;-><init>()V
+    iput-object p2, p0, Ljmw;->b:Lqkg;
+
+    iput-object p3, p0, Ljmw;->c:Lqkg;
+
+    iput-object p4, p0, Ljmw;->d:Lqkg;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final e(Ljml;)V
-    .locals 2
+.method public final a()Ljmv;
+    .locals 4
 
-    iget-object p1, p1, Ljml;->a:Lcom/google/android/gms/common/api/Status;
+    iget-object v0, p0, Ljmw;->a:Lqkg;
 
-    iget-object v0, p0, Ljmw;->a:Ljava/lang/Object;
+    check-cast v0, Lemh;
 
-    iget-object v1, p0, Ljmw;->b:Lkgd;
+    invoke-virtual {v0}, Lemh;->a()Landroid/view/WindowManager;
 
-    invoke-static {p1, v0, v1}, Ljhp;->ak(Lcom/google/android/gms/common/api/Status;Ljava/lang/Object;Lkgd;)V
+    move-result-object v0
 
-    return-void
+    iget-object v1, p0, Ljmw;->b:Lqkg;
+
+    invoke-interface {v1}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Lddf;
+
+    iget-object v2, p0, Ljmw;->c:Lqkg;
+
+    check-cast v2, Llhr;
+
+    invoke-virtual {v2}, Llhr;->a()Llvq;
+
+    move-result-object v2
+
+    iget-object v3, p0, Ljmw;->d:Lqkg;
+
+    check-cast v3, Lftf;
+
+    invoke-virtual {v3}, Lftf;->a()Ljava/lang/String;
+
+    new-instance v3, Ljmv;
+
+    invoke-direct {v3, v0, v1, v2}, Ljmv;-><init>(Landroid/view/WindowManager;Lddf;Llvq;)V
+
+    return-object v3
 .end method
 
-.method public final f()V
-    .locals 0
+.method public final bridge synthetic get()Ljava/lang/Object;
+    .locals 1
 
-    return-void
+    invoke-virtual {p0}, Ljmw;->a()Ljmv;
+
+    move-result-object v0
+
+    return-object v0
 .end method

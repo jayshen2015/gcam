@@ -2,17 +2,6 @@
 .super Ljava/lang/Object;
 
 
-# annotations
-.annotation system Ldalvik/annotation/Signature;
-    value = {
-        "<T:",
-        "Ljava/lang/Object;",
-        ">",
-        "Ljava/lang/Object;"
-    }
-.end annotation
-
-
 # virtual methods
 .method public abstract characteristics()I
 .end method
@@ -20,7 +9,7 @@
 .method public abstract estimateSize()J
 .end method
 
-.method public abstract forEachRemaining(Ljava/util/function/Consumer;)V
+.method public abstract forEachRemaining(Lj$/util/function/Consumer;)V
 .end method
 
 .method public abstract getComparator()Ljava/util/Comparator;
@@ -32,14 +21,7 @@
 .method public abstract hasCharacteristics(I)Z
 .end method
 
-.method public abstract tryAdvance(Ljava/util/function/Consumer;)Z
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Ljava/util/function/Consumer<",
-            "-TT;>;)Z"
-        }
-    .end annotation
+.method public abstract tryAdvance(Lj$/util/function/Consumer;)Z
 .end method
 
 .method public abstract trySplit()Lj$/util/Spliterator;

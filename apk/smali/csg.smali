@@ -1,76 +1,123 @@
-.class public final Lcsg;
-.super Ljava/lang/Object;
+.class public Lcsg;
+.super Lcsa;
 
 
 # instance fields
-.field public final a:Lcqv;
+.field public final e:Lcom/google/android/apps/camera/bottombar/BottomBarController;
 
-.field public final b:Libj;
+.field public final f:Ljlb;
 
-.field public final c:Ljuh;
+.field public final g:Ljak;
 
-.field public d:Lcha;
+.field public final h:Ljfn;
 
-.field public e:Leg;
+.field public final i:Lcsb;
 
-.field public final f:Ljew;
+.field public final j:Lojc;
+
+.field public final k:Lgtg;
+
+.field public l:Lcsa;
 
 
 # direct methods
-.method public constructor <init>(Ljew;Lcqv;Libj;Ljuh;[B[B[B)V
+.method public constructor <init>(Lcom/google/android/apps/camera/bottombar/BottomBarController;Ljlb;Ljak;Ljfn;Lcsb;Lojc;Lgtg;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Lcsa;-><init>()V
 
-    iput-object p1, p0, Lcsg;->f:Ljew;
+    iput-object p1, p0, Lcsg;->e:Lcom/google/android/apps/camera/bottombar/BottomBarController;
 
-    iput-object p2, p0, Lcsg;->a:Lcqv;
+    iput-object p2, p0, Lcsg;->f:Ljlb;
 
-    iput-object p3, p0, Lcsg;->b:Libj;
+    iput-object p3, p0, Lcsg;->g:Ljak;
 
-    iput-object p4, p0, Lcsg;->c:Ljuh;
+    iput-object p4, p0, Lcsg;->h:Ljfn;
+
+    iput-object p5, p0, Lcsg;->i:Lcsb;
+
+    iput-object p6, p0, Lcsg;->j:Lojc;
+
+    iput-object p7, p0, Lcsg;->k:Lgtg;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Landroid/content/DialogInterface$OnClickListener;
-    .locals 2
+.method public final fK()Z
+    .locals 1
 
-    new-instance v0, Lcdc;
+    iget-object v0, p0, Lcsg;->l:Lcsa;
 
-    const/4 v1, 0x6
+    invoke-virtual {v0}, Lcsa;->fK()Z
 
-    invoke-direct {v0, p0, v1}, Lcdc;-><init>(Lcsg;I)V
+    move-result v0
 
-    return-object v0
+    return v0
 .end method
 
-.method public final b()Landroid/content/DialogInterface$OnClickListener;
-    .locals 2
+.method public final j()I
+    .locals 1
 
-    new-instance v0, Lcdc;
+    iget-object v0, p0, Lcsg;->l:Lcsa;
 
-    const/4 v1, 0x5
+    invoke-virtual {v0}, Lcsa;->j()I
 
-    invoke-direct {v0, p0, v1}, Lcdc;-><init>(Lcsg;I)V
+    move-result v0
 
-    return-object v0
+    return v0
 .end method
 
-.method public final c()V
-    .locals 3
+.method public final k()V
+    .locals 2
 
-    iget-object v0, p0, Lcsg;->c:Ljuh;
+    iget-object v0, p0, Lcsg;->i:Lcsb;
 
-    new-instance v1, Lcqf;
+    invoke-virtual {v0}, Lcsb;->d()V
 
-    const/16 v2, 0xe
+    iget-object v0, p0, Lcsg;->e:Lcom/google/android/apps/camera/bottombar/BottomBarController;
 
-    invoke-direct {v1, p0, v2}, Lcqf;-><init>(Lcsg;I)V
+    invoke-virtual {v0}, Lcom/google/android/apps/camera/bottombar/BottomBarController;->stopRecording()V
 
-    invoke-virtual {v0, v1}, Ljuh;->execute(Ljava/lang/Runnable;)V
+    iget-object v0, p0, Lcsg;->h:Ljfn;
+
+    const/4 v1, 0x1
+
+    invoke-interface {v0, v1}, Ljfn;->v(Z)V
+
+    iget-object v0, p0, Lcsg;->h:Ljfn;
+
+    invoke-interface {v0, v1}, Ljfn;->l(Z)V
+
+    iget-object v0, p0, Lcsg;->f:Ljlb;
+
+    invoke-interface {v0}, Ljlb;->ag()V
+
+    iget-object v0, p0, Lcsg;->g:Ljak;
+
+    invoke-virtual {v0, v1}, Ljak;->d(Z)V
+
+    iget-object v0, p0, Lcsg;->j:Lojc;
+
+    invoke-virtual {v0}, Lojc;->g()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lcsg;->j:Lojc;
+
+    invoke-virtual {v0}, Lojc;->c()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lcuj;
+
+    invoke-interface {v0}, Lcuj;->n()V
+
+    :cond_0
+    invoke-static {}, Ljxn;->d()V
 
     return-void
 .end method

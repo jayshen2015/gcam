@@ -1,441 +1,738 @@
 .class public final Ledn;
 .super Ljava/lang/Object;
 
+# interfaces
+.implements Lpys;
+
 
 # instance fields
-.field public a:Lcom/google/googlex/gcam/InterleavedImageU8;
+.field private final a:Lqkg;
 
-.field public b:Leej;
-
-.field public c:Landroid/hardware/HardwareBuffer;
-
-.field public d:J
-
-.field public e:Ldrb;
-
-.field public f:Lcom/google/googlex/gcam/InterleavedImageU8;
-
-.field public g:Lgtk;
-
-.field public h:Lcom/google/googlex/gcam/ShotParams;
-
-.field public i:B
-
-.field public j:Lebb;
-
-.field public k:Lgkr;
-
-.field public l:Lgxb;
-
-.field private m:Lcom/google/googlex/gcam/ShotMetadata;
-
-.field private n:Lkab;
-
-.field private o:Lkou;
-
-.field private p:Lnou;
+.field private final synthetic b:I
 
 
 # direct methods
-.method public constructor <init>()V
+.method public constructor <init>(Lqkg;I)V
     .locals 0
 
+    iput p2, p0, Ledn;->b:I
+
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Ledn;->a:Lqkg;
 
     return-void
 .end method
 
-.method public constructor <init>(Ledo;)V
+.method public static a(Lqkg;)Ledn;
     .locals 2
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance v0, Ledn;
 
-    iget-object v0, p1, Ledo;->a:Lcom/google/googlex/gcam/InterleavedImageU8;
+    const/4 v1, 0x0
 
-    iput-object v0, p0, Ledn;->a:Lcom/google/googlex/gcam/InterleavedImageU8;
+    invoke-direct {v0, p0, v1}, Ledn;-><init>(Lqkg;I)V
 
-    iget-object v0, p1, Ledo;->b:Leej;
+    return-object v0
+.end method
 
-    iput-object v0, p0, Ledn;->b:Leej;
+.method public static b(Lqkg;)Ledn;
+    .locals 2
 
-    iget-object v0, p1, Ledo;->c:Landroid/hardware/HardwareBuffer;
+    new-instance v0, Ledn;
 
-    iput-object v0, p0, Ledn;->c:Landroid/hardware/HardwareBuffer;
+    const/4 v1, 0x1
 
-    iget-object v0, p1, Ledo;->d:Lcom/google/googlex/gcam/ShotMetadata;
+    invoke-direct {v0, p0, v1}, Ledn;-><init>(Lqkg;I)V
 
-    iput-object v0, p0, Ledn;->m:Lcom/google/googlex/gcam/ShotMetadata;
+    return-object v0
+.end method
 
-    iget-object v0, p1, Ledo;->e:Lkab;
+.method public static c(Lqkg;)Ledn;
+    .locals 2
 
-    iput-object v0, p0, Ledn;->n:Lkab;
+    new-instance v0, Ledn;
 
-    iget-object v0, p1, Ledo;->f:Lkou;
+    const/4 v1, 0x2
 
-    iput-object v0, p0, Ledn;->o:Lkou;
+    invoke-direct {v0, p0, v1}, Ledn;-><init>(Lqkg;I)V
 
-    iget-wide v0, p1, Ledo;->g:J
+    return-object v0
+.end method
 
-    iput-wide v0, p0, Ledn;->d:J
+.method public static d(Lqkg;)Ledn;
+    .locals 2
 
-    iget-object v0, p1, Ledo;->m:Lebb;
+    new-instance v0, Ledn;
 
-    iput-object v0, p0, Ledn;->j:Lebb;
+    const/4 v1, 0x3
 
-    iget-object v0, p1, Ledo;->o:Lgxb;
+    invoke-direct {v0, p0, v1}, Ledn;-><init>(Lqkg;I)V
 
-    iput-object v0, p0, Ledn;->l:Lgxb;
+    return-object v0
+.end method
 
-    iget-object v0, p1, Ledo;->h:Lnou;
+.method public static e(Lqkg;)Ledn;
+    .locals 2
 
-    iput-object v0, p0, Ledn;->p:Lnou;
+    new-instance v0, Ledn;
 
-    iget-object v0, p1, Ledo;->n:Lgkr;
+    const/4 v1, 0x4
 
-    iput-object v0, p0, Ledn;->k:Lgkr;
+    invoke-direct {v0, p0, v1}, Ledn;-><init>(Lqkg;I)V
 
-    iget-object v0, p1, Ledo;->i:Ldrb;
+    return-object v0
+.end method
 
-    iput-object v0, p0, Ledn;->e:Ldrb;
+.method public static f(Lqkg;)Ledn;
+    .locals 2
 
-    iget-object v0, p1, Ledo;->j:Lcom/google/googlex/gcam/InterleavedImageU8;
+    new-instance v0, Ledn;
 
-    iput-object v0, p0, Ledn;->f:Lcom/google/googlex/gcam/InterleavedImageU8;
+    const/4 v1, 0x5
 
-    iget-object v0, p1, Ledo;->k:Lgtk;
+    invoke-direct {v0, p0, v1}, Ledn;-><init>(Lqkg;I)V
 
-    iput-object v0, p0, Ledn;->g:Lgtk;
+    return-object v0
+.end method
 
-    iget-object p1, p1, Ledo;->l:Lcom/google/googlex/gcam/ShotParams;
+.method public static g(Lqkg;)Ledn;
+    .locals 2
 
-    iput-object p1, p0, Ledn;->h:Lcom/google/googlex/gcam/ShotParams;
+    new-instance v0, Ledn;
 
-    const/4 p1, 0x1
+    const/16 v1, 0x8
 
-    iput-byte p1, p0, Ledn;->i:B
+    invoke-direct {v0, p0, v1}, Ledn;-><init>(Lqkg;I)V
 
-    return-void
+    return-object v0
+.end method
+
+.method public static h(Lqkg;)Ledn;
+    .locals 2
+
+    new-instance v0, Ledn;
+
+    const/16 v1, 0x9
+
+    invoke-direct {v0, p0, v1}, Ledn;-><init>(Lqkg;I)V
+
+    return-object v0
+.end method
+
+.method public static i(Lqkg;)Ledn;
+    .locals 2
+
+    new-instance v0, Ledn;
+
+    const/16 v1, 0xa
+
+    invoke-direct {v0, p0, v1}, Ledn;-><init>(Lqkg;I)V
+
+    return-object v0
+.end method
+
+.method public static j(Lqkg;)Ledn;
+    .locals 2
+
+    new-instance v0, Ledn;
+
+    const/16 v1, 0xb
+
+    invoke-direct {v0, p0, v1}, Ledn;-><init>(Lqkg;I)V
+
+    return-object v0
+.end method
+
+.method public static k(Lqkg;)Ledn;
+    .locals 2
+
+    new-instance v0, Ledn;
+
+    const/16 v1, 0xc
+
+    invoke-direct {v0, p0, v1}, Ledn;-><init>(Lqkg;I)V
+
+    return-object v0
+.end method
+
+.method public static l(Lqkg;)Ledn;
+    .locals 2
+
+    new-instance v0, Ledn;
+
+    const/16 v1, 0xd
+
+    invoke-direct {v0, p0, v1}, Ledn;-><init>(Lqkg;I)V
+
+    return-object v0
 .end method
 
 
 # virtual methods
-.method public final a()Ledo;
-    .locals 25
+.method public final synthetic get()Ljava/lang/Object;
+    .locals 4
 
-    move-object/from16 v0, p0
+    iget v0, p0, Ledn;->b:I
 
-    iget-byte v1, v0, Ledn;->i:B
+    const/4 v1, 0x1
 
-    const/4 v2, 0x1
+    invoke-static {v1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
-    if-ne v1, v2, :cond_5
+    move-result-object v2
 
-    iget-object v7, v0, Ledn;->m:Lcom/google/googlex/gcam/ShotMetadata;
+    packed-switch v0, :pswitch_data_0
 
-    if-eqz v7, :cond_5
+    iget-object v0, p0, Ledn;->a:Lqkg;
 
-    iget-object v8, v0, Ledn;->n:Lkab;
+    check-cast v0, Legw;
 
-    if-eqz v8, :cond_5
+    invoke-virtual {v0}, Legw;->a()Legv;
 
-    iget-object v9, v0, Ledn;->o:Lkou;
+    move-result-object v0
 
-    if-eqz v9, :cond_5
+    return-object v0
 
-    iget-object v12, v0, Ledn;->j:Lebb;
+    :pswitch_0
+    iget-object v0, p0, Ledn;->a:Lqkg;
 
-    if-eqz v12, :cond_5
+    check-cast v0, Lemd;
 
-    iget-object v14, v0, Ledn;->p:Lnou;
+    invoke-virtual {v0}, Lemd;->a()Landroid/content/Context;
 
-    if-eqz v14, :cond_5
+    move-result-object v0
 
-    iget-object v15, v0, Ledn;->k:Lgkr;
+    new-instance v1, Lehl;
 
-    if-nez v15, :cond_0
+    invoke-direct {v1, v0}, Lehl;-><init>(Landroid/content/Context;)V
 
-    goto :goto_1
+    return-object v1
+
+    :pswitch_1
+    iget-object v0, p0, Ledn;->a:Lqkg;
+
+    invoke-interface {v0}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lehl;
+
+    invoke-static {v0}, Lqmd;->ae(Ljava/lang/Object;)V
+
+    return-object v0
+
+    :pswitch_2
+    iget-object v0, p0, Ledn;->a:Lqkg;
+
+    check-cast v0, Lemd;
+
+    invoke-virtual {v0}, Lemd;->a()Landroid/content/Context;
+
+    move-result-object v0
+
+    const-string v1, "sensor"
+
+    invoke-virtual {v0, v1}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/hardware/SensorManager;
+
+    invoke-static {v0}, Lobr;->ao(Ljava/lang/Object;)Ljava/lang/Object;
+
+    new-instance v1, Lekf;
+
+    invoke-direct {v1, v0}, Lekf;-><init>(Landroid/hardware/SensorManager;)V
+
+    return-object v1
+
+    :pswitch_3
+    iget-object v0, p0, Ledn;->a:Lqkg;
+
+    invoke-interface {v0}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lekf;
+
+    new-instance v1, Leke;
+
+    invoke-direct {v1}, Leke;-><init>()V
+
+    iput-object v0, v1, Leke;->e:Lekf;
+
+    invoke-virtual {v1}, Leke;->f()V
+
+    return-object v1
+
+    :pswitch_4
+    iget-object v0, p0, Ledn;->a:Lqkg;
+
+    invoke-interface {v0}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/opengl/GLSurfaceView;
+
+    new-instance v1, Legy;
+
+    invoke-direct {v1, v0}, Legy;-><init>(Landroid/opengl/GLSurfaceView;)V
+
+    return-object v1
+
+    :pswitch_5
+    iget-object v0, p0, Ledn;->a:Lqkg;
+
+    check-cast v0, Legf;
+
+    invoke-virtual {v0}, Legf;->a()Lege;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lojc;->i(Ljava/lang/Object;)Lojc;
+
+    move-result-object v0
+
+    return-object v0
+
+    :pswitch_6
+    iget-object v0, p0, Ledn;->a:Lqkg;
+
+    invoke-interface {v0}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ldzy;
+
+    invoke-static {}, Lope;->D()Lopc;
+
+    move-result-object v1
+
+    invoke-virtual {v0}, Ldzy;->e()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    sget-object v0, Lkda;->s:Landroid/hardware/camera2/CaptureRequest$Key;
+
+    invoke-static {v0, v2, v1}, Lenl;->w(Landroid/hardware/camera2/CaptureRequest$Key;Ljava/lang/Object;Lopc;)V
+
+    sget-object v0, Lkdb;->a:Landroid/hardware/camera2/CaptureRequest$Key;
+
+    invoke-static {v0, v2, v1}, Lenl;->w(Landroid/hardware/camera2/CaptureRequest$Key;Ljava/lang/Object;Lopc;)V
+
+    sget-object v0, Lkdb;->e:Landroid/hardware/camera2/CaptureRequest$Key;
+
+    invoke-static {v0, v2, v1}, Lenl;->w(Landroid/hardware/camera2/CaptureRequest$Key;Ljava/lang/Object;Lopc;)V
+
+    sget-object v0, Lkdb;->f:Landroid/hardware/camera2/CaptureRequest$Key;
+
+    invoke-static {v0, v2, v1}, Lenl;->w(Landroid/hardware/camera2/CaptureRequest$Key;Ljava/lang/Object;Lopc;)V
+
+    sget-object v0, Lkdb;->g:Landroid/hardware/camera2/CaptureRequest$Key;
+
+    invoke-static {v0, v2, v1}, Lenl;->w(Landroid/hardware/camera2/CaptureRequest$Key;Ljava/lang/Object;Lopc;)V
 
     :cond_0
-    new-instance v1, Ledo;
+    invoke-virtual {v1}, Lopc;->f()Lope;
 
-    move-object v3, v1
+    move-result-object v0
 
-    iget-object v4, v0, Ledn;->a:Lcom/google/googlex/gcam/InterleavedImageU8;
+    invoke-static {v0}, Lqmd;->ae(Ljava/lang/Object;)V
 
-    iget-object v5, v0, Ledn;->b:Leej;
+    return-object v0
 
-    iget-object v6, v0, Ledn;->c:Landroid/hardware/HardwareBuffer;
+    :pswitch_7
+    iget-object v0, p0, Ledn;->a:Lqkg;
 
-    iget-wide v10, v0, Ledn;->d:J
+    sget-object v1, Lkdd;->i:Landroid/hardware/camera2/CaptureRequest$Key;
 
-    iget-object v13, v0, Ledn;->l:Lgxb;
+    if-eqz v1, :cond_1
 
-    iget-object v2, v0, Ledn;->e:Ldrb;
+    sget-object v1, Lkdd;->i:Landroid/hardware/camera2/CaptureRequest$Key;
 
-    move-object/from16 v16, v2
+    invoke-interface {v0}, Lqkg;->get()Ljava/lang/Object;
 
-    iget-object v2, v0, Ledn;->f:Lcom/google/googlex/gcam/InterleavedImageU8;
+    move-result-object v0
 
-    move-object/from16 v17, v2
+    check-cast v0, Llco;
 
-    iget-object v2, v0, Ledn;->g:Lgtk;
+    sget-object v2, Lbxe;->t:Lbxe;
 
-    move-object/from16 v18, v2
+    invoke-static {v0, v2}, Llcv;->j(Llco;Loiu;)Llco;
 
-    iget-object v2, v0, Ledn;->h:Lcom/google/googlex/gcam/ShotParams;
+    move-result-object v0
 
-    move-object/from16 v19, v2
+    invoke-static {v1, v0}, Lfcy;->m(Landroid/hardware/camera2/CaptureRequest$Key;Llco;)Llco;
 
-    const/16 v20, 0x0
-
-    const/16 v21, 0x0
-
-    const/16 v22, 0x0
-
-    const/16 v23, 0x0
-
-    const/16 v24, 0x0
-
-    invoke-direct/range {v3 .. v24}, Ledo;-><init>(Lcom/google/googlex/gcam/InterleavedImageU8;Leej;Landroid/hardware/HardwareBuffer;Lcom/google/googlex/gcam/ShotMetadata;Lkab;Lkou;JLebb;Lgxb;Lnou;Lgkr;Ldrb;Lcom/google/googlex/gcam/InterleavedImageU8;Lgtk;Lcom/google/googlex/gcam/ShotParams;[B[B[B[B[B)V
-
-    iget-object v2, v1, Ledo;->a:Lcom/google/googlex/gcam/InterleavedImageU8;
-
-    if-eqz v2, :cond_1
-
-    const/4 v2, 0x1
+    move-result-object v0
 
     goto :goto_0
 
     :cond_1
-    const/4 v2, 0x0
+    invoke-static {}, Lfcy;->l()Lgjm;
+
+    move-result-object v0
+
+    invoke-static {v0}, Llcv;->g(Ljava/lang/Object;)Llco;
+
+    move-result-object v0
 
     :goto_0
-    iget-object v3, v1, Ledo;->b:Leej;
+    invoke-static {v0}, Lqmd;->ae(Ljava/lang/Object;)V
 
-    if-eqz v3, :cond_2
+    return-object v0
 
-    add-int/lit8 v2, v2, 0x1
+    :pswitch_8
+    iget-object v0, p0, Ledn;->a:Lqkg;
+
+    invoke-interface {v0}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ldzy;
+
+    sget-object v0, Lkdd;->j:Landroid/hardware/camera2/CaptureRequest$Key;
+
+    if-eqz v0, :cond_2
+
+    sget-object v0, Lkdd;->j:Landroid/hardware/camera2/CaptureRequest$Key;
+
+    invoke-static {v0, v2}, Lmip;->be(Landroid/hardware/camera2/CaptureRequest$Key;Ljava/lang/Object;)Llnq;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lope;->H(Ljava/lang/Object;)Lope;
+
+    move-result-object v0
+
+    goto :goto_1
 
     :cond_2
-    iget-object v3, v1, Ledo;->c:Landroid/hardware/HardwareBuffer;
+    sget-object v0, Lorx;->a:Lorx;
 
-    if-eqz v3, :cond_3
+    :goto_1
+    invoke-static {v0}, Lqmd;->ae(Ljava/lang/Object;)V
 
-    add-int/lit8 v2, v2, 0x1
+    return-object v0
+
+    :pswitch_9
+    iget-object v0, p0, Ledn;->a:Lqkg;
+
+    invoke-interface {v0}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lddf;
+
+    sget-object v2, Lddm;->X:Lddg;
+
+    invoke-interface {v0, v2}, Lddf;->k(Lddg;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_3
+
+    sget-object v0, Lkcy;->a:Landroid/hardware/camera2/CaptureRequest$Key;
+
+    if-eqz v0, :cond_3
+
+    sget-object v0, Lkcy;->a:Landroid/hardware/camera2/CaptureRequest$Key;
+
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v1
+
+    invoke-static {v0, v1}, Lmip;->be(Landroid/hardware/camera2/CaptureRequest$Key;Ljava/lang/Object;)Llnq;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lope;->H(Ljava/lang/Object;)Lope;
+
+    move-result-object v0
+
+    goto :goto_2
 
     :cond_3
-    const/4 v3, 0x1
+    sget-object v0, Lorx;->a:Lorx;
 
-    if-ne v2, v3, :cond_4
+    :goto_2
+    invoke-static {v0}, Lqmd;->ae(Ljava/lang/Object;)V
 
-    return-object v1
+    return-object v0
 
-    :cond_4
-    new-instance v1, Ljava/lang/IllegalArgumentException;
+    :pswitch_a
+    iget-object v0, p0, Ledn;->a:Lqkg;
 
-    new-instance v3, Ljava/lang/StringBuilder;
+    invoke-interface {v0}, Lqkg;->get()Ljava/lang/Object;
 
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+    move-result-object v0
 
-    const-string v4, "We need exactly one image set; we have "
+    check-cast v0, Lojc;
 
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    sget-object v1, Lbxe;->s:Lbxe;
 
-    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v1}, Lojc;->b(Loiu;)Lojc;
 
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    move-result-object v0
+
+    return-object v0
+
+    :pswitch_b
+    iget-object v0, p0, Ledn;->a:Lqkg;
+
+    invoke-interface {v0}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lpih;
+
+    const/4 v1, 0x0
+
+    invoke-static {v1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    move-result-object v1
+
+    new-instance v2, Llce;
+
+    invoke-static {v1}, Llcv;->g(Ljava/lang/Object;)Llco;
+
+    move-result-object v1
+
+    invoke-direct {v2, v1}, Llce;-><init>(Ljava/lang/Object;)V
+
+    new-instance v1, Llcu;
+
+    invoke-direct {v1, v2}, Llcu;-><init>(Llce;)V
+
+    sget-object v3, Lpgr;->a:Lpgr;
+
+    invoke-static {v0, v1, v3}, Lplk;->af(Lpht;Lphh;Ljava/util/concurrent/Executor;)V
+
+    invoke-static {v2}, Llcg;->c(Llco;)Llco;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lqmd;->ae(Ljava/lang/Object;)V
+
+    return-object v0
+
+    :pswitch_c
+    iget-object v0, p0, Ledn;->a:Lqkg;
+
+    check-cast v0, Levv;
+
+    invoke-virtual {v0}, Levv;->a()Lojc;
+
+    move-result-object v0
+
+    check-cast v0, Lojj;
+
+    iget-object v0, v0, Lojj;->a:Ljava/lang/Object;
+
+    check-cast v0, Lefh;
+
+    return-object v0
+
+    :pswitch_d
+    iget-object v0, p0, Ledn;->a:Lqkg;
+
+    invoke-interface {v0}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lddf;
+
+    :try_start_0
+    sget-object v2, Lddm;->a:Lddi;
+
+    invoke-interface {v0, v2}, Lddf;->a(Lddi;)Lojc;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lojc;->g()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_4
+
+    invoke-static {}, Lew;->f()[I
 
     move-result-object v2
 
-    invoke-direct {v1, v2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v0}, Lojc;->c()Ljava/lang/Object;
 
-    throw v1
+    move-result-object v0
 
-    :cond_5
-    :goto_1
-    new-instance v1, Ljava/lang/StringBuilder;
+    check-cast v0, Ljava/lang/Integer;
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
 
-    iget-object v2, v0, Ledn;->m:Lcom/google/googlex/gcam/ShotMetadata;
+    move-result v0
 
-    if-nez v2, :cond_6
+    aget v0, v2, v0
+    :try_end_0
+    .catch Ljava/lang/RuntimeException; {:try_start_0 .. :try_end_0} :catch_0
 
-    const-string v2, " shotMetadata"
+    if-eq v0, v1, :cond_4
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {}, Lenl;->y()Z
 
-    :cond_6
-    iget-object v2, v0, Ledn;->n:Lkab;
+    move-result v0
 
-    if-nez v2, :cond_7
+    if-eqz v0, :cond_4
 
-    const-string v2, " orientation"
+    new-instance v0, Lefc;
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-direct {v0}, Lefc;-><init>()V
 
-    :cond_7
-    iget-object v2, v0, Ledn;->o:Lkou;
+    goto :goto_3
 
-    if-nez v2, :cond_8
+    :catch_0
+    move-exception v0
 
-    const-string v2, " metadata"
+    sget-object v1, Leff;->a:Louj;
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    :cond_8
-    iget-byte v2, v0, Ledn;->i:B
-
-    if-nez v2, :cond_9
-
-    const-string v2, " timestampNs"
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    :cond_9
-    iget-object v2, v0, Ledn;->j:Lebb;
-
-    if-nez v2, :cond_a
-
-    const-string v2, " gcaShotSettings"
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    :cond_a
-    iget-object v2, v0, Ledn;->p:Lnou;
-
-    if-nez v2, :cond_b
-
-    const-string v2, " mergedPdData"
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    :cond_b
-    iget-object v2, v0, Ledn;->k:Lgkr;
-
-    if-nez v2, :cond_c
-
-    const-string v2, " pictureTakerParameters"
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    :cond_c
-    new-instance v2, Ljava/lang/IllegalStateException;
-
-    invoke-virtual {v1}, Ljava/lang/Object;->toString()Ljava/lang/String;
+    invoke-virtual {v1}, Loue;->c()Lova;
 
     move-result-object v1
 
-    const-string v3, "Missing required properties:"
+    const/16 v2, 0x462
 
-    invoke-virtual {v3, v1}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
+    const-string v3, "In getFlagValue caught %s"
 
-    move-result-object v1
+    invoke-static {v1, v3, v0, v2}, Ld;->u(Lova;Ljava/lang/String;Ljava/lang/Object;C)V
 
-    invoke-direct {v2, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+    :cond_4
+    new-instance v0, Lefg;
 
-    throw v2
-.end method
+    invoke-direct {v0}, Lefg;-><init>()V
 
-.method public final b()V
-    .locals 1
+    :goto_3
+    return-object v0
 
-    const/4 v0, 0x0
+    :pswitch_e
+    iget-object v0, p0, Ledn;->a:Lqkg;
 
-    iput-object v0, p0, Ledn;->b:Leej;
+    invoke-interface {v0}, Lqkg;->get()Ljava/lang/Object;
 
-    iput-object v0, p0, Ledn;->a:Lcom/google/googlex/gcam/InterleavedImageU8;
+    move-result-object v0
 
-    iput-object v0, p0, Ledn;->c:Landroid/hardware/HardwareBuffer;
+    check-cast v0, Lhcg;
 
-    return-void
-.end method
+    new-instance v1, Leef;
 
-.method public final c(Lnou;)V
-    .locals 1
+    invoke-direct {v1, v0}, Leef;-><init>(Lhcg;)V
 
-    if-eqz p1, :cond_0
+    return-object v1
 
-    iput-object p1, p0, Ledn;->p:Lnou;
+    :pswitch_f
+    iget-object v0, p0, Ledn;->a:Lqkg;
 
-    return-void
+    invoke-interface {v0}, Lqkg;->get()Ljava/lang/Object;
 
-    :cond_0
-    new-instance p1, Ljava/lang/NullPointerException;
+    move-result-object v0
 
-    const-string v0, "Null mergedPdData"
+    check-cast v0, Llce;
 
-    invoke-direct {p1, v0}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
+    invoke-static {v0}, Llci;->c(Llco;)Llco;
 
-    throw p1
-.end method
+    move-result-object v0
 
-.method public final d(Lkou;)V
-    .locals 1
+    invoke-static {v0}, Lqmd;->ae(Ljava/lang/Object;)V
 
-    if-eqz p1, :cond_0
+    return-object v0
 
-    iput-object p1, p0, Ledn;->o:Lkou;
+    :pswitch_10
+    iget-object v0, p0, Ledn;->a:Lqkg;
 
-    return-void
+    check-cast v0, Leej;
 
-    :cond_0
-    new-instance p1, Ljava/lang/NullPointerException;
+    invoke-virtual {v0}, Leej;->b()Llco;
 
-    const-string v0, "Null metadata"
+    move-result-object v0
 
-    invoke-direct {p1, v0}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
+    invoke-interface {v0}, Llco;->fA()Ljava/lang/Object;
 
-    throw p1
-.end method
+    move-result-object v0
 
-.method public final e(Lkab;)V
-    .locals 1
+    check-cast v0, Lgjm;
 
-    if-eqz p1, :cond_0
+    iget-object v0, v0, Lgjm;->a:Ljava/util/Set;
 
-    iput-object p1, p0, Ledn;->n:Lkab;
+    invoke-static {v0}, Lqmd;->ae(Ljava/lang/Object;)V
 
-    return-void
+    return-object v0
 
-    :cond_0
-    new-instance p1, Ljava/lang/NullPointerException;
+    :pswitch_11
+    iget-object v0, p0, Ledn;->a:Lqkg;
 
-    const-string v0, "Null orientation"
+    invoke-interface {v0}, Lqkg;->get()Ljava/lang/Object;
 
-    invoke-direct {p1, v0}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
+    move-result-object v0
 
-    throw p1
-.end method
+    check-cast v0, Llce;
 
-.method public final f(Lcom/google/googlex/gcam/ShotMetadata;)V
-    .locals 1
+    invoke-static {v0}, Llci;->c(Llco;)Llco;
 
-    if-eqz p1, :cond_0
+    move-result-object v0
 
-    iput-object p1, p0, Ledn;->m:Lcom/google/googlex/gcam/ShotMetadata;
+    invoke-static {v0}, Lqmd;->ae(Ljava/lang/Object;)V
 
-    return-void
+    return-object v0
 
-    :cond_0
-    new-instance p1, Ljava/lang/NullPointerException;
+    :pswitch_12
+    iget-object v0, p0, Ledn;->a:Lqkg;
 
-    const-string v0, "Null shotMetadata"
+    invoke-interface {v0}, Lqkg;->get()Ljava/lang/Object;
 
-    invoke-direct {p1, v0}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
+    move-result-object v0
 
-    throw p1
-.end method
+    check-cast v0, Lgig;
 
-.method public final g(J)V
-    .locals 0
+    new-instance v1, Lecd;
 
-    iput-wide p1, p0, Ledn;->d:J
+    invoke-direct {v1, v0}, Lecd;-><init>(Lgig;)V
 
-    const/4 p1, 0x1
+    return-object v1
 
-    iput-byte p1, p0, Ledn;->i:B
+    :pswitch_13
+    iget-object v0, p0, Ledn;->a:Lqkg;
 
-    return-void
+    check-cast v0, Leab;
+
+    invoke-virtual {v0}, Leab;->a()Leaa;
+
+    move-result-object v0
+
+    new-instance v1, Ledm;
+
+    invoke-direct {v1, v0}, Ledm;-><init>(Leaa;)V
+
+    return-object v1
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_13
+        :pswitch_12
+        :pswitch_11
+        :pswitch_10
+        :pswitch_f
+        :pswitch_e
+        :pswitch_d
+        :pswitch_c
+        :pswitch_b
+        :pswitch_a
+        :pswitch_9
+        :pswitch_8
+        :pswitch_7
+        :pswitch_6
+        :pswitch_5
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method

@@ -1,74 +1,212 @@
-.class final Ljz;
-.super Landroid/animation/AnimatorListenerAdapter;
+.class public final Ljz;
+.super Landroid/view/ActionMode;
 
 
 # instance fields
-.field final synthetic a:Lmo;
+.field final a:Landroid/content/Context;
 
-.field final synthetic b:Landroid/view/ViewPropertyAnimator;
-
-.field final synthetic c:Landroid/view/View;
-
-.field final synthetic d:Lkf;
+.field final b:Ljw;
 
 
 # direct methods
-.method public constructor <init>(Lkf;Lmo;Landroid/view/ViewPropertyAnimator;Landroid/view/View;)V
+.method public constructor <init>(Landroid/content/Context;Ljw;)V
     .locals 0
 
-    iput-object p1, p0, Ljz;->d:Lkf;
+    invoke-direct {p0}, Landroid/view/ActionMode;-><init>()V
 
-    iput-object p2, p0, Ljz;->a:Lmo;
+    iput-object p1, p0, Ljz;->a:Landroid/content/Context;
 
-    iput-object p3, p0, Ljz;->b:Landroid/view/ViewPropertyAnimator;
-
-    iput-object p4, p0, Ljz;->c:Landroid/view/View;
-
-    invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
+    iput-object p2, p0, Ljz;->b:Ljw;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onAnimationEnd(Landroid/animation/Animator;)V
+.method public final finish()V
     .locals 1
 
-    iget-object p1, p0, Ljz;->b:Landroid/view/ViewPropertyAnimator;
+    iget-object v0, p0, Ljz;->b:Ljw;
 
-    const/4 v0, 0x0
-
-    invoke-virtual {p1, v0}, Landroid/view/ViewPropertyAnimator;->setListener(Landroid/animation/Animator$AnimatorListener;)Landroid/view/ViewPropertyAnimator;
-
-    iget-object p1, p0, Ljz;->c:Landroid/view/View;
-
-    const/high16 v0, 0x3f800000    # 1.0f
-
-    invoke-virtual {p1, v0}, Landroid/view/View;->setAlpha(F)V
-
-    iget-object p1, p0, Ljz;->d:Lkf;
-
-    iget-object v0, p0, Ljz;->a:Lmo;
-
-    invoke-virtual {p1, v0}, Llv;->l(Lmo;)V
-
-    iget-object p1, p0, Ljz;->d:Lkf;
-
-    iget-object p1, p1, Lkf;->f:Ljava/util/ArrayList;
-
-    iget-object v0, p0, Ljz;->a:Lmo;
-
-    invoke-virtual {p1, v0}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
-
-    iget-object p1, p0, Ljz;->d:Lkf;
-
-    invoke-virtual {p1}, Lkf;->a()V
+    invoke-virtual {v0}, Ljw;->f()V
 
     return-void
 .end method
 
-.method public final onAnimationStart(Landroid/animation/Animator;)V
-    .locals 0
+.method public final getCustomView()Landroid/view/View;
+    .locals 1
+
+    iget-object v0, p0, Ljz;->b:Ljw;
+
+    invoke-virtual {v0}, Ljw;->c()Landroid/view/View;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public final getMenu()Landroid/view/Menu;
+    .locals 3
+
+    new-instance v0, Lln;
+
+    iget-object v1, p0, Ljz;->a:Landroid/content/Context;
+
+    iget-object v2, p0, Ljz;->b:Ljw;
+
+    invoke-virtual {v2}, Ljw;->a()Landroid/view/Menu;
+
+    move-result-object v2
+
+    invoke-direct {v0, v1, v2}, Lln;-><init>(Landroid/content/Context;Ler;)V
+
+    return-object v0
+.end method
+
+.method public final getMenuInflater()Landroid/view/MenuInflater;
+    .locals 1
+
+    iget-object v0, p0, Ljz;->b:Ljw;
+
+    invoke-virtual {v0}, Ljw;->b()Landroid/view/MenuInflater;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public final getSubtitle()Ljava/lang/CharSequence;
+    .locals 1
+
+    iget-object v0, p0, Ljz;->b:Ljw;
+
+    invoke-virtual {v0}, Ljw;->d()Ljava/lang/CharSequence;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public final getTag()Ljava/lang/Object;
+    .locals 1
+
+    iget-object v0, p0, Ljz;->b:Ljw;
+
+    iget-object v0, v0, Ljw;->d:Ljava/lang/Object;
+
+    return-object v0
+.end method
+
+.method public final getTitle()Ljava/lang/CharSequence;
+    .locals 1
+
+    iget-object v0, p0, Ljz;->b:Ljw;
+
+    invoke-virtual {v0}, Ljw;->e()Ljava/lang/CharSequence;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public final getTitleOptionalHint()Z
+    .locals 1
+
+    iget-object v0, p0, Ljz;->b:Ljw;
+
+    iget-boolean v0, v0, Ljw;->e:Z
+
+    return v0
+.end method
+
+.method public final invalidate()V
+    .locals 1
+
+    iget-object v0, p0, Ljz;->b:Ljw;
+
+    invoke-virtual {v0}, Ljw;->g()V
+
+    return-void
+.end method
+
+.method public final isTitleOptional()Z
+    .locals 1
+
+    iget-object v0, p0, Ljz;->b:Ljw;
+
+    invoke-virtual {v0}, Ljw;->n()Z
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public final setCustomView(Landroid/view/View;)V
+    .locals 1
+
+    iget-object v0, p0, Ljz;->b:Ljw;
+
+    invoke-virtual {v0, p1}, Ljw;->h(Landroid/view/View;)V
+
+    return-void
+.end method
+
+.method public final setSubtitle(I)V
+    .locals 1
+
+    iget-object v0, p0, Ljz;->b:Ljw;
+
+    invoke-virtual {v0, p1}, Ljw;->i(I)V
+
+    return-void
+.end method
+
+.method public final setSubtitle(Ljava/lang/CharSequence;)V
+    .locals 1
+
+    iget-object v0, p0, Ljz;->b:Ljw;
+
+    invoke-virtual {v0, p1}, Ljw;->j(Ljava/lang/CharSequence;)V
+
+    return-void
+.end method
+
+.method public final setTag(Ljava/lang/Object;)V
+    .locals 1
+
+    iget-object v0, p0, Ljz;->b:Ljw;
+
+    iput-object p1, v0, Ljw;->d:Ljava/lang/Object;
+
+    return-void
+.end method
+
+.method public final setTitle(I)V
+    .locals 1
+
+    iget-object v0, p0, Ljz;->b:Ljw;
+
+    invoke-virtual {v0, p1}, Ljw;->k(I)V
+
+    return-void
+.end method
+
+.method public final setTitle(Ljava/lang/CharSequence;)V
+    .locals 1
+
+    iget-object v0, p0, Ljz;->b:Ljw;
+
+    invoke-virtual {v0, p1}, Ljw;->l(Ljava/lang/CharSequence;)V
+
+    return-void
+.end method
+
+.method public final setTitleOptionalHint(Z)V
+    .locals 1
+
+    iget-object v0, p0, Ljz;->b:Ljw;
+
+    invoke-virtual {v0, p1}, Ljw;->m(Z)V
 
     return-void
 .end method

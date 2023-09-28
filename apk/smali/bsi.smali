@@ -2,147 +2,163 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Ljava/lang/Appendable;
+.implements Lgmt;
 
 
 # instance fields
-.field private final a:Ljava/lang/Appendable;
+.field private final a:Lbrg;
 
-.field private b:Z
+.field private final b:Lpht;
+
+.field private final c:Lgmt;
+
+.field private d:Lgjs;
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/Appendable;)V
-    .locals 1
+.method public constructor <init>(Lbrg;Lpht;Lgmt;)V
+    .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const/4 v0, 0x1
+    iput-object p1, p0, Lbsi;->a:Lbrg;
 
-    iput-boolean v0, p0, Lbsi;->b:Z
+    iput-object p2, p0, Lbsi;->b:Lpht;
 
-    iput-object p1, p0, Lbsi;->a:Ljava/lang/Appendable;
+    iput-object p3, p0, Lbsi;->c:Lgmt;
 
     return-void
 .end method
 
-.method private static final a(Ljava/lang/CharSequence;)Ljava/lang/CharSequence;
-    .locals 0
-
-    if-nez p0, :cond_0
-
-    const-string p0, ""
-
-    :cond_0
-    return-object p0
-.end method
-
 
 # virtual methods
-.method public final append(C)Ljava/lang/Appendable;
-    .locals 3
+.method public final a(Lmad;Lpht;)V
+    .locals 5
 
-    iget-boolean v0, p0, Lbsi;->b:Z
+    invoke-interface {p1}, Lmad;->a()I
 
-    const/4 v1, 0x0
+    move-result v0
+
+    const/16 v1, 0x23
+
+    if-ne v0, v1, :cond_2
+
+    iget-object v0, p0, Lbsi;->d:Lgjs;
 
     if-eqz v0, :cond_0
 
-    iput-boolean v1, p0, Lbsi;->b:Z
+    invoke-interface {p1}, Lmad;->d()J
 
-    iget-object v0, p0, Lbsi;->a:Ljava/lang/Appendable;
+    move-result-wide v0
 
-    const-string v2, "  "
+    iget-object v2, p0, Lbsi;->d:Lgjs;
 
-    invoke-interface {v0, v2}, Ljava/lang/Appendable;->append(Ljava/lang/CharSequence;)Ljava/lang/Appendable;
+    invoke-virtual {v2}, Lmaa;->d()J
+
+    move-result-wide v2
+
+    cmp-long v4, v0, v2
+
+    if-lez v4, :cond_2
 
     :cond_0
-    const/16 v0, 0xa
+    new-instance v0, Llwk;
 
-    if-ne p1, v0, :cond_1
+    const/4 v1, 0x2
 
-    const/4 v1, 0x1
+    invoke-direct {v0, p1, v1}, Llwk;-><init>(Lmad;I)V
 
-    goto :goto_0
+    iget-object p1, p0, Lbsi;->d:Lgjs;
+
+    if-eqz p1, :cond_1
+
+    invoke-virtual {p1}, Lmaa;->close()V
 
     :cond_1
-    :goto_0
-    iput-boolean v1, p0, Lbsi;->b:Z
+    new-instance p1, Lgjs;
 
-    iget-object v0, p0, Lbsi;->a:Ljava/lang/Appendable;
+    new-instance v1, Llwl;
 
-    invoke-interface {v0, p1}, Ljava/lang/Appendable;->append(C)Ljava/lang/Appendable;
+    invoke-direct {v1, v0}, Llwl;-><init>(Lmad;)V
 
-    return-object p0
+    invoke-direct {p1, v1, p2}, Lgjs;-><init>(Lmad;Lpht;)V
+
+    iput-object p1, p0, Lbsi;->d:Lgjs;
+
+    move-object p1, v0
+
+    :cond_2
+    iget-object v0, p0, Lbsi;->c:Lgmt;
+
+    new-instance v1, Llwl;
+
+    invoke-direct {v1, p1}, Llwl;-><init>(Lmad;)V
+
+    invoke-interface {v0, v1, p2}, Lgmt;->a(Lmad;Lpht;)V
+
+    return-void
 .end method
 
-.method public final append(Ljava/lang/CharSequence;)Ljava/lang/Appendable;
-    .locals 2
-
-    invoke-static {p1}, Lbsi;->a(Ljava/lang/CharSequence;)Ljava/lang/CharSequence;
-
-    move-result-object p1
-
-    invoke-interface {p1}, Ljava/lang/CharSequence;->length()I
-
-    move-result v0
-
-    const/4 v1, 0x0
-
-    invoke-virtual {p0, p1, v1, v0}, Lbsi;->append(Ljava/lang/CharSequence;II)Ljava/lang/Appendable;
-
-    return-object p0
-.end method
-
-.method public final append(Ljava/lang/CharSequence;II)Ljava/lang/Appendable;
+.method public final close()V
     .locals 3
 
-    iget-boolean v0, p0, Lbsi;->b:Z
+    iget-object v0, p0, Lbsi;->d:Lgjs;
 
-    const/4 v1, 0x0
+    if-eqz v0, :cond_1
+
+    iget-object v0, p0, Lbsi;->b:Lpht;
+
+    invoke-static {v0}, Lmip;->bY(Lpht;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lbro;
 
     if-eqz v0, :cond_0
 
-    iput-boolean v1, p0, Lbsi;->b:Z
+    iget-object v1, p0, Lbsi;->a:Lbrg;
 
-    iget-object v0, p0, Lbsi;->a:Ljava/lang/Appendable;
+    invoke-virtual {v1}, Lbrg;->a()Llco;
 
-    const-string v2, "  "
+    move-result-object v1
 
-    invoke-interface {v0, v2}, Ljava/lang/Appendable;->append(Ljava/lang/CharSequence;)Ljava/lang/Appendable;
+    invoke-interface {v1}, Llco;->fA()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Ljava/lang/Integer;
+
+    invoke-virtual {v1}, Ljava/lang/Integer;->intValue()I
+
+    move-result v1
+
+    invoke-static {v1}, Llic;->b(I)Llic;
+
+    move-result-object v1
+
+    iget-object v2, p0, Lbsi;->d:Lgjs;
+
+    invoke-static {v2}, Lhin;->b(Lgjs;)Lhim;
+
+    move-result-object v2
+
+    iput-object v1, v2, Lhim;->c:Llic;
+
+    invoke-virtual {v2}, Lhim;->a()Lhin;
+
+    move-result-object v1
+
+    invoke-interface {v0, v1}, Lbro;->f(Lhin;)V
 
     :cond_0
-    invoke-static {p1}, Lbsi;->a(Ljava/lang/CharSequence;)Ljava/lang/CharSequence;
+    iget-object v0, p0, Lbsi;->d:Lgjs;
 
-    move-result-object p1
-
-    invoke-interface {p1}, Ljava/lang/CharSequence;->length()I
-
-    move-result v0
-
-    if-lez v0, :cond_1
-
-    add-int/lit8 v0, p3, -0x1
-
-    invoke-interface {p1, v0}, Ljava/lang/CharSequence;->charAt(I)C
-
-    move-result v0
-
-    const/16 v2, 0xa
-
-    if-ne v0, v2, :cond_1
-
-    const/4 v1, 0x1
-
-    goto :goto_0
+    invoke-virtual {v0}, Lmaa;->close()V
 
     :cond_1
-    :goto_0
-    iput-boolean v1, p0, Lbsi;->b:Z
+    iget-object v0, p0, Lbsi;->c:Lgmt;
 
-    iget-object v0, p0, Lbsi;->a:Ljava/lang/Appendable;
+    invoke-interface {v0}, Lgmt;->close()V
 
-    invoke-interface {v0, p1, p2, p3}, Ljava/lang/Appendable;->append(Ljava/lang/CharSequence;II)Ljava/lang/Appendable;
-
-    return-object p0
+    return-void
 .end method

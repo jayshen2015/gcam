@@ -2,46 +2,36 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Ljava/util/function/Consumer;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field public final synthetic a:Lnph;
+.field public final synthetic a:Lhgq;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lnph;)V
+.method public synthetic constructor <init>(Lhgq;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lhgp;->a:Lnph;
+    iput-object p1, p0, Lhgp;->a:Lhgq;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final accept(Ljava/lang/Object;)V
+.method public final run()V
     .locals 1
 
-    iget-object v0, p0, Lhgp;->a:Lnph;
+    iget-object v0, p0, Lhgp;->a:Lhgq;
 
-    check-cast p1, Landroid/animation/Animator;
+    iget-object v0, v0, Lhgq;->a:Lcom/google/android/apps/camera/prewarm/ProcessingBoostService;
 
-    sget-object p1, Ljava/lang/Boolean;->TRUE:Ljava/lang/Boolean;
+    iget-object v0, v0, Lcom/google/android/apps/camera/prewarm/ProcessingBoostService;->a:Leah;
 
-    invoke-virtual {v0, p1}, Lnph;->e(Ljava/lang/Object;)Z
+    invoke-virtual {v0}, Leah;->a()V
 
     return-void
-.end method
-
-.method public final synthetic andThen(Ljava/util/function/Consumer;)Ljava/util/function/Consumer;
-    .locals 0
-
-    invoke-static {p0, p1}, Lj$/util/function/Consumer$-CC;->$default$andThen(Ljava/util/function/Consumer;Ljava/util/function/Consumer;)Ljava/util/function/Consumer;
-
-    move-result-object p1
-
-    return-object p1
 .end method

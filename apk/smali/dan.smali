@@ -1,316 +1,199 @@
-.class public final Ldan;
-.super Lhsc;
+.class public final synthetic Ldan;
+.super Ljava/lang/Object;
 
 # interfaces
-.implements Ldap;
-
-
-# static fields
-.field public static final a:Ljava/lang/Integer;
+.implements Liho;
 
 
 # instance fields
-.field private final b:Ldhi;
+.field public final synthetic a:Lpyn;
+
+.field public final synthetic b:Ljava/util/Set;
+
+.field public final synthetic c:Lddf;
+
+.field public final synthetic d:Llda;
+
+.field public final synthetic e:Lhyc;
+
+.field private final synthetic f:I
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
-
-    const/4 v0, 0x1
-
-    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v0
-
-    sput-object v0, Ldan;->a:Ljava/lang/Integer;
-
-    return-void
-.end method
-
-.method public constructor <init>(Landroid/content/Context;Lhrz;Ldhi;)V
+.method public synthetic constructor <init>(Lhyc;Lpyn;Ljava/util/Set;Lddf;Llda;I)V
     .locals 0
 
-    invoke-direct {p0, p1, p2}, Lhsc;-><init>(Landroid/content/Context;Lhrz;)V
+    iput p6, p0, Ldan;->f:I
 
-    iput-object p3, p0, Ldan;->b:Ldhi;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Ldan;->e:Lhyc;
+
+    iput-object p2, p0, Ldan;->a:Lpyn;
+
+    iput-object p3, p0, Ldan;->b:Ljava/util/Set;
+
+    iput-object p4, p0, Ldan;->c:Lddf;
+
+    iput-object p5, p0, Ldan;->d:Llda;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()V
-    .locals 11
+.method public final run()V
+    .locals 8
 
-    iget-object v0, p0, Ldan;->g:Landroid/content/Context;
+    iget v0, p0, Ldan;->f:I
 
-    new-instance v3, Ljava/util/ArrayList;
+    packed-switch v0, :pswitch_data_0
 
-    invoke-direct {v3}, Ljava/util/ArrayList;-><init>()V
+    iget-object v0, p0, Ldan;->e:Lhyc;
 
-    new-instance v1, Ljava/util/ArrayList;
+    iget-object v1, p0, Ldan;->a:Lpyn;
 
-    invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
+    iget-object v2, p0, Ldan;->b:Ljava/util/Set;
 
-    new-instance v2, Lhsa;
+    iget-object v3, p0, Ldan;->c:Lddf;
 
-    const v4, 0x7f1404eb
+    iget-object v4, p0, Ldan;->d:Llda;
 
-    invoke-virtual {v0, v4}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+    invoke-interface {v1}, Lpyn;->get()Ljava/lang/Object;
 
     move-result-object v5
 
-    const v4, 0x7f1404ea
+    check-cast v5, Liat;
 
-    invoke-virtual {v0, v4}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+    invoke-static {}, Liav;->a()Liau;
 
     move-result-object v6
 
-    const-string v4, "https://www.gstatic.com/aiux/gca/stabilization/Standard_EDUPanel_376x320.gif"
+    const-string v7, "PitchRollIndicatorHUD"
 
-    invoke-static {v4}, Ligo;->i(Ljava/lang/Object;)Ligo;
+    iput-object v7, v6, Liau;->a:Ljava/lang/String;
 
-    move-result-object v4
-
-    invoke-static {v4}, Lmvv;->l(Ljava/lang/Object;)Lmvv;
-
-    move-result-object v7
-
-    const v4, 0x7f1404e9
-
-    invoke-virtual {v0, v4}, Landroid/content/Context;->getString(I)Ljava/lang/String;
-
-    move-result-object v8
-
-    const v10, 0x7f1404e2
-
-    invoke-virtual {v0, v10}, Landroid/content/Context;->getString(I)Ljava/lang/String;
-
-    move-result-object v9
-
-    move-object v4, v2
-
-    invoke-direct/range {v4 .. v9}, Lhsa;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/util/List;Ljava/lang/String;Ljava/lang/String;)V
-
-    invoke-interface {v3, v2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-
-    const v2, 0x7f1404ef
-
-    invoke-virtual {v0, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+    invoke-static {v2}, Lope;->F(Ljava/util/Collection;)Lope;
 
     move-result-object v2
 
-    invoke-interface {v1, v2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+    invoke-virtual {v6, v2}, Liau;->c(Lope;)V
 
-    iget-object v2, p0, Ldan;->b:Ldhi;
+    sget-object v2, Llwd;->b:Llwd;
 
-    sget-object v4, Ldgu;->V:Ldhj;
-
-    invoke-interface {v2, v4}, Ldhi;->l(Ldhj;)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_0
-
-    new-instance v2, Lhsa;
-
-    const v4, 0x7f1404e5
-
-    invoke-virtual {v0, v4}, Landroid/content/Context;->getString(I)Ljava/lang/String;
-
-    move-result-object v5
-
-    const v4, 0x7f1404e4
-
-    invoke-virtual {v0, v4}, Landroid/content/Context;->getString(I)Ljava/lang/String;
-
-    move-result-object v6
-
-    const-string v4, "https://www.gstatic.com/aiux/gca/stabilization/Locked_EDUPanel_376x320.gif"
-
-    invoke-static {v4}, Ligo;->i(Ljava/lang/Object;)Ligo;
-
-    move-result-object v4
-
-    invoke-static {v4}, Lmvv;->l(Ljava/lang/Object;)Lmvv;
-
-    move-result-object v7
-
-    const v4, 0x7f1404e3
-
-    invoke-virtual {v0, v4}, Landroid/content/Context;->getString(I)Ljava/lang/String;
-
-    move-result-object v8
-
-    invoke-virtual {v0, v10}, Landroid/content/Context;->getString(I)Ljava/lang/String;
-
-    move-result-object v9
-
-    move-object v4, v2
-
-    invoke-direct/range {v4 .. v9}, Lhsa;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/util/List;Ljava/lang/String;Ljava/lang/String;)V
-
-    invoke-interface {v3, v2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-
-    const v2, 0x7f1404ed
-
-    invoke-virtual {v0, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+    invoke-static {v2}, Lope;->H(Ljava/lang/Object;)Lope;
 
     move-result-object v2
 
-    invoke-interface {v1, v2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+    invoke-virtual {v6, v2}, Liau;->b(Lope;)V
 
-    :cond_0
-    iget-object v2, p0, Ldan;->b:Ldhi;
+    sget-object v2, Ldcv;->m:Lddg;
 
-    sget-object v4, Ldgu;->W:Ldhj;
-
-    invoke-interface {v2, v4}, Ldhi;->l(Ldhj;)Z
+    invoke-interface {v3, v2}, Lddf;->k(Lddg;)Z
 
     move-result v2
 
-    if-eqz v2, :cond_1
+    xor-int/lit8 v2, v2, 0x1
 
-    new-instance v2, Lhsa;
+    invoke-virtual {v6, v2}, Liau;->e(Z)V
 
-    const v4, 0x7f1404e1
+    invoke-virtual {v6, v4}, Liau;->d(Llda;)V
 
-    invoke-virtual {v0, v4}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+    invoke-interface {v1}, Lpyn;->get()Ljava/lang/Object;
 
-    move-result-object v5
+    move-result-object v1
 
-    const v4, 0x7f1404e0
+    check-cast v1, Lian;
 
-    invoke-virtual {v0, v4}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+    invoke-static {v1}, Lojc;->i(Ljava/lang/Object;)Lojc;
 
-    move-result-object v6
+    move-result-object v1
 
-    const-string v4, "https://www.gstatic.com/aiux/gca/stabilization/Active_EDUPanel_376x320.gif"
+    iput-object v1, v6, Liau;->b:Lojc;
 
-    invoke-static {v4}, Ligo;->i(Ljava/lang/Object;)Ligo;
+    invoke-virtual {v6}, Liau;->a()Liav;
 
-    move-result-object v4
+    move-result-object v1
 
-    invoke-static {v4}, Lmvv;->l(Ljava/lang/Object;)Lmvv;
-
-    move-result-object v7
-
-    const v4, 0x7f1404df
-
-    invoke-virtual {v0, v4}, Landroid/content/Context;->getString(I)Ljava/lang/String;
-
-    move-result-object v8
-
-    invoke-virtual {v0, v10}, Landroid/content/Context;->getString(I)Ljava/lang/String;
-
-    move-result-object v9
-
-    move-object v4, v2
-
-    invoke-direct/range {v4 .. v9}, Lhsa;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/util/List;Ljava/lang/String;Ljava/lang/String;)V
-
-    invoke-interface {v3, v2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-
-    const v2, 0x7f1404ec
-
-    invoke-virtual {v0, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-interface {v1, v2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-
-    :cond_1
-    iget-object v2, p0, Ldan;->b:Ldhi;
-
-    sget-object v4, Ldgu;->X:Ldhj;
-
-    invoke-interface {v2, v4}, Ldhi;->l(Ldhj;)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_2
-
-    new-instance v2, Lhsa;
-
-    const v4, 0x7f1404e8
-
-    invoke-virtual {v0, v4}, Landroid/content/Context;->getString(I)Ljava/lang/String;
-
-    move-result-object v5
-
-    const v4, 0x7f1404e7
-
-    invoke-virtual {v0, v4}, Landroid/content/Context;->getString(I)Ljava/lang/String;
-
-    move-result-object v6
-
-    const-string v4, "https://www.gstatic.com/aiux/gca/stabilization/Panning_EDUPanel_376x320.gif"
-
-    invoke-static {v4}, Ligo;->i(Ljava/lang/Object;)Ligo;
-
-    move-result-object v4
-
-    invoke-static {v4}, Lmvv;->l(Ljava/lang/Object;)Lmvv;
-
-    move-result-object v7
-
-    const v4, 0x7f1404e6
-
-    invoke-virtual {v0, v4}, Landroid/content/Context;->getString(I)Ljava/lang/String;
-
-    move-result-object v8
-
-    invoke-virtual {v0, v10}, Landroid/content/Context;->getString(I)Ljava/lang/String;
-
-    move-result-object v9
-
-    move-object v4, v2
-
-    invoke-direct/range {v4 .. v9}, Lhsa;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/util/List;Ljava/lang/String;Ljava/lang/String;)V
-
-    invoke-interface {v3, v2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-
-    const v2, 0x7f1404ee
-
-    invoke-virtual {v0, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-interface {v1, v0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-
-    :cond_2
-    invoke-virtual {p0}, Lhsc;->c()Landroid/view/View;
-
-    move-result-object v0
-
-    sget-object v2, Ldan;->a:Ljava/lang/Integer;
-
-    invoke-virtual {v2}, Ljava/lang/Integer;->intValue()I
-
-    const/4 v4, 0x1
-
-    new-instance v5, Ldam;
-
-    invoke-direct {v5}, Ldam;-><init>()V
-
-    new-instance v6, Leoi;
-
-    const/4 v2, 0x1
-
-    invoke-direct {v6, v1, v2}, Leoi;-><init>(Ljava/util/List;I)V
-
-    move-object v1, p0
-
-    move-object v2, v0
-
-    invoke-virtual/range {v1 .. v6}, Lhsc;->d(Landroid/view/View;Ljava/util/List;ILmlb;Lmli;)Landroidx/viewpager2/widget/ViewPager2;
-
-    const/4 v1, 0x3
-
-    const/4 v2, 0x0
-
-    invoke-virtual {p0, v1, v0, v2}, Lhsc;->e(ILandroid/view/View;Landroidx/wear/ambient/AmbientMode$AmbientController;)V
+    invoke-virtual {v0, v5, v1}, Lhyc;->a(Liat;Liav;)V
 
     return-void
+
+    :pswitch_0
+    iget-object v0, p0, Ldan;->e:Lhyc;
+
+    iget-object v1, p0, Ldan;->a:Lpyn;
+
+    iget-object v2, p0, Ldan;->b:Ljava/util/Set;
+
+    iget-object v3, p0, Ldan;->c:Lddf;
+
+    iget-object v4, p0, Ldan;->d:Llda;
+
+    invoke-interface {v1}, Lpyn;->get()Ljava/lang/Object;
+
+    move-result-object v5
+
+    check-cast v5, Liat;
+
+    invoke-static {}, Liav;->a()Liau;
+
+    move-result-object v6
+
+    const-string v7, "UpDownIndicatorHUD"
+
+    iput-object v7, v6, Liau;->a:Ljava/lang/String;
+
+    invoke-static {v2}, Lope;->F(Ljava/util/Collection;)Lope;
+
+    move-result-object v2
+
+    invoke-virtual {v6, v2}, Liau;->c(Lope;)V
+
+    sget-object v2, Llwd;->b:Llwd;
+
+    invoke-static {v2}, Lope;->H(Ljava/lang/Object;)Lope;
+
+    move-result-object v2
+
+    invoke-virtual {v6, v2}, Liau;->b(Lope;)V
+
+    sget-object v2, Ldcv;->m:Lddg;
+
+    invoke-interface {v3, v2}, Lddf;->k(Lddg;)Z
+
+    move-result v2
+
+    xor-int/lit8 v2, v2, 0x1
+
+    invoke-virtual {v6, v2}, Liau;->e(Z)V
+
+    invoke-virtual {v6, v4}, Liau;->d(Llda;)V
+
+    invoke-interface {v1}, Lpyn;->get()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Lian;
+
+    invoke-static {v1}, Lojc;->i(Ljava/lang/Object;)Lojc;
+
+    move-result-object v1
+
+    iput-object v1, v6, Liau;->b:Lojc;
+
+    invoke-virtual {v6}, Liau;->a()Liav;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v5, v1}, Lhyc;->a(Liat;Liav;)V
+
+    return-void
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

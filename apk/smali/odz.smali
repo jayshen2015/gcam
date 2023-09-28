@@ -1,326 +1,174 @@
-.class public final Lodz;
-.super Ljava/lang/Object;
+.class final Lodz;
+.super Loen;
 
 
-# static fields
-.field public static final a:Ljava/lang/String;
+# instance fields
+.field final synthetic a:Ljava/lang/String;
+
+.field final synthetic b:Lofi;
+
+.field final synthetic c:Loed;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
-
-    const-class v0, Lodz;
-
-    invoke-virtual {v0}, Ljava/lang/Class;->getSimpleName()Ljava/lang/String;
-
-    move-result-object v0
-
-    sput-object v0, Lodz;->a:Ljava/lang/String;
-
-    return-void
-.end method
-
-.method public constructor <init>()V
+.method public constructor <init>(Loed;Lofi;Ljava/lang/String;Lofi;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lodz;->c:Loed;
+
+    iput-object p3, p0, Lodz;->a:Ljava/lang/String;
+
+    iput-object p4, p0, Lodz;->b:Lofi;
+
+    invoke-direct {p0, p2}, Loen;-><init>(Lofi;)V
 
     return-void
 .end method
 
-.method public static a(Lnxx;Ljava/lang/String;IZLandroid/content/Context;)Lnxy;
-    .locals 6
 
-    const-string v0, "Error reading parameters: "
+# virtual methods
+.method protected final a()V
+    .locals 7
+
+    const/4 v0, 0x0
+
+    :try_start_0
+    iget-object v1, p0, Lodz;->c:Loed;
+
+    iget-object v2, v1, Loed;->a:Loew;
+
+    iget-object v2, v2, Loew;->j:Landroid/os/IInterface;
+
+    iget-object v3, v1, Loed;->b:Ljava/lang/String;
+
+    iget-object v4, p0, Lodz;->a:Ljava/lang/String;
+
+    new-instance v5, Landroid/os/Bundle;
+
+    invoke-direct {v5}, Landroid/os/Bundle;-><init>()V
+
+    invoke-static {}, Loed;->b()Landroid/os/Bundle;
+
+    move-result-object v6
+
+    invoke-virtual {v5, v6}, Landroid/os/Bundle;->putAll(Landroid/os/Bundle;)V
+
+    const-string v6, "package.name"
+
+    invoke-virtual {v5, v6, v4}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
+    :try_end_0
+    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_1
+
+    :try_start_1
+    iget-object v4, v1, Loed;->c:Landroid/content/Context;
+
+    invoke-virtual {v4}, Landroid/content/Context;->getPackageName()Ljava/lang/String;
+
+    move-result-object v4
+
+    iget-object v1, v1, Loed;->c:Landroid/content/Context;
+
+    invoke-virtual {v1}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
+
+    move-result-object v1
+
+    invoke-virtual {v1, v4, v0}, Landroid/content/pm/PackageManager;->getPackageInfo(Ljava/lang/String;I)Landroid/content/pm/PackageInfo;
+
+    move-result-object v1
+
+    iget v1, v1, Landroid/content/pm/PackageInfo;->versionCode:I
+
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v1
+    :try_end_1
+    .catch Landroid/content/pm/PackageManager$NameNotFoundException; {:try_start_1 .. :try_end_1} :catch_0
+    .catch Landroid/os/RemoteException; {:try_start_1 .. :try_end_1} :catch_1
+
+    goto :goto_0
+
+    :catch_0
+    move-exception v1
+
+    :try_start_2
+    sget-object v1, Loed;->e:Loxk;
+
+    const-string v4, "The current version of the app could not be retrieved"
+
+    new-array v6, v0, [Ljava/lang/Object;
+
+    invoke-virtual {v1, v4, v6}, Loxk;->g(Ljava/lang/String;[Ljava/lang/Object;)V
 
     const/4 v1, 0x0
 
-    :try_start_0
-    new-instance v2, Ljava/io/BufferedInputStream;
+    :goto_0
+    if-eqz v1, :cond_0
 
-    new-instance v3, Ljava/io/FileInputStream;
+    const-string v4, "app.version.code"
 
-    invoke-static {p1, p4}, Lodz;->b(Ljava/lang/String;Landroid/content/Context;)Ljava/io/File;
+    invoke-virtual {v1}, Ljava/lang/Integer;->intValue()I
 
-    move-result-object p1
+    move-result v1
 
-    invoke-direct {v3, p1}, Ljava/io/FileInputStream;-><init>(Ljava/io/File;)V
-
-    invoke-direct {v2, v3}, Ljava/io/BufferedInputStream;-><init>(Ljava/io/InputStream;)V
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_1
-
-    const/16 p1, 0x8
-
-    :try_start_1
-    invoke-static {p1}, Ljava/nio/ByteBuffer;->allocate(I)Ljava/nio/ByteBuffer;
-
-    move-result-object p1
-
-    invoke-virtual {p1}, Ljava/nio/ByteBuffer;->array()[B
-
-    move-result-object p4
-
-    invoke-virtual {p1}, Ljava/nio/ByteBuffer;->array()[B
-
-    move-result-object v3
-
-    array-length v3, v3
-
-    const/4 v4, 0x0
-
-    invoke-virtual {v2, p4, v4, v3}, Ljava/io/InputStream;->read([BII)I
-
-    move-result p4
-    :try_end_1
-    .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_0
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    const-string v3, "Error parsing param record: end of stream."
-
-    const/4 v5, -0x1
-
-    if-ne p4, v5, :cond_0
-
-    :try_start_2
-    sget-object p1, Lodz;->a:Ljava/lang/String;
-
-    invoke-static {p1, v3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
-
-    move-object p2, v1
-
-    goto :goto_0
+    invoke-virtual {v5, v4, v1}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
 
     :cond_0
-    invoke-virtual {p1}, Ljava/nio/ByteBuffer;->getInt()I
+    new-instance v1, Loec;
 
-    move-result p4
+    iget-object v4, p0, Lodz;->c:Loed;
 
-    invoke-virtual {p1}, Ljava/nio/ByteBuffer;->getInt()I
+    iget-object v6, p0, Lodz;->b:Lofi;
 
-    move-result p1
+    invoke-direct {v1, v4, v6}, Loec;-><init>(Loed;Lofi;)V
 
-    if-eq p4, p2, :cond_1
+    move-object v4, v2
 
-    sget-object p1, Lodz;->a:Ljava/lang/String;
+    check-cast v4, Lbmn;
 
-    const-string p2, "Error parsing param record: incorrect sentinel."
+    invoke-virtual {v4}, Lbmn;->a()Landroid/os/Parcel;
 
-    invoke-static {p1, p2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+    move-result-object v4
 
-    move-object p2, v1
+    invoke-virtual {v4, v3}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    goto :goto_0
+    invoke-static {v4, v5}, Lbmp;->c(Landroid/os/Parcel;Landroid/os/Parcelable;)V
 
-    :cond_1
-    new-array p2, p1, [B
+    invoke-static {v4, v1}, Lbmp;->e(Landroid/os/Parcel;Landroid/os/IInterface;)V
 
-    invoke-virtual {v2, p2, v4, p1}, Ljava/io/InputStream;->read([BII)I
+    check-cast v2, Lbmn;
 
-    move-result p1
+    const/4 v1, 0x2
 
-    if-ne p1, v5, :cond_2
-
-    sget-object p1, Lodz;->a:Ljava/lang/String;
-
-    invoke-static {p1, v3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-virtual {v2, v1, v4}, Lbmn;->A(ILandroid/os/Parcel;)V
     :try_end_2
-    .catch Ljava/io/IOException; {:try_start_2 .. :try_end_2} :catch_0
-    .catchall {:try_start_2 .. :try_end_2} :catchall_0
+    .catch Landroid/os/RemoteException; {:try_start_2 .. :try_end_2} :catch_1
 
-    move-object p2, v1
-
-    goto :goto_0
-
-    :catchall_0
-    move-exception p1
-
-    goto :goto_1
-
-    :catch_0
-    move-exception p1
-
-    :try_start_3
-    sget-object p2, Lodz;->a:Ljava/lang/String;
-
-    invoke-virtual {p1}, Ljava/io/IOException;->toString()Ljava/lang/String;
-
-    move-result-object p1
-
-    invoke-static {p1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object p1
-
-    invoke-virtual {v0, p1}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object p1
-
-    invoke-static {p2, p1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
-    :try_end_3
-    .catchall {:try_start_3 .. :try_end_3} :catchall_0
-
-    move-object p2, v1
-
-    :cond_2
-    :goto_0
-    :try_start_4
-    invoke-virtual {v2}, Ljava/io/InputStream;->close()V
-    :try_end_4
-    .catch Ljava/io/IOException; {:try_start_4 .. :try_end_4} :catch_1
-    .catch Ljava/io/FileNotFoundException; {:try_start_4 .. :try_end_4} :catch_4
-    .catch Ljava/lang/IllegalStateException; {:try_start_4 .. :try_end_4} :catch_3
-
-    goto :goto_3
+    return-void
 
     :catch_1
-    move-exception p1
+    move-exception v1
 
-    goto :goto_3
+    sget-object v2, Loed;->e:Loxk;
 
-    :catchall_1
-    move-exception p1
+    const/4 v3, 0x1
 
-    move-object v2, v1
+    new-array v3, v3, [Ljava/lang/Object;
 
-    :goto_1
-    if-eqz v2, :cond_3
+    iget-object v4, p0, Lodz;->a:Ljava/lang/String;
 
-    :try_start_5
-    invoke-virtual {v2}, Ljava/io/InputStream;->close()V
-    :try_end_5
-    .catch Ljava/io/IOException; {:try_start_5 .. :try_end_5} :catch_2
-    .catch Ljava/io/FileNotFoundException; {:try_start_5 .. :try_end_5} :catch_4
-    .catch Ljava/lang/IllegalStateException; {:try_start_5 .. :try_end_5} :catch_3
+    aput-object v4, v3, v0
 
-    goto :goto_2
+    const-string v0, "requestUpdateInfo(%s)"
 
-    :catch_2
-    move-exception p2
+    invoke-virtual {v2, v1, v0, v3}, Loxk;->h(Ljava/lang/Throwable;Ljava/lang/String;[Ljava/lang/Object;)V
 
-    :cond_3
-    :goto_2
-    :try_start_6
-    throw p1
-    :try_end_6
-    .catch Ljava/io/FileNotFoundException; {:try_start_6 .. :try_end_6} :catch_4
-    .catch Ljava/lang/IllegalStateException; {:try_start_6 .. :try_end_6} :catch_3
+    iget-object v0, p0, Lodz;->b:Lofi;
 
-    :catch_3
-    move-exception p1
+    new-instance v2, Ljava/lang/RuntimeException;
 
-    sget-object p2, Lodz;->a:Ljava/lang/String;
+    invoke-direct {v2, v1}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/Throwable;)V
 
-    invoke-virtual {p1}, Ljava/lang/Object;->toString()Ljava/lang/String;
+    invoke-virtual {v0, v2}, Lofi;->a(Ljava/lang/Exception;)V
 
-    move-result-object p1
-
-    invoke-virtual {v0, p1}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object p1
-
-    invoke-static {p2, p1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
-
-    move-object p2, v1
-
-    goto :goto_3
-
-    :catch_4
-    move-exception p1
-
-    if-eqz p3, :cond_4
-
-    invoke-virtual {p1}, Ljava/lang/Object;->toString()Ljava/lang/String;
-
-    move-object p2, v1
-
-    goto :goto_3
-
-    :cond_4
-    move-object p2, v1
-
-    :goto_3
-    if-nez p2, :cond_5
-
-    return-object v1
-
-    :cond_5
-    :try_start_7
-    invoke-interface {p0, p2}, Lnxx;->d([B)Lnxx;
-
-    move-result-object p0
-
-    invoke-interface {p0}, Lnxx;->l()Lnxy;
-
-    move-result-object p0
-    :try_end_7
-    .catch Lnxd; {:try_start_7 .. :try_end_7} :catch_5
-
-    return-object p0
-
-    :catch_5
-    move-exception p0
-
-    sget-object p1, Lodz;->a:Ljava/lang/String;
-
-    const-string p2, "Error reading params from ContentProvider"
-
-    invoke-static {p1, p2, p0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
-
-    return-object v1
-.end method
-
-.method public static b(Ljava/lang/String;Landroid/content/Context;)Ljava/io/File;
-    .locals 2
-
-    new-instance v0, Ljava/io/File;
-
-    invoke-virtual {p1}, Landroid/content/Context;->getFilesDir()Ljava/io/File;
-
-    move-result-object p1
-
-    const-string v1, "Cardboard"
-
-    invoke-direct {v0, p1, v1}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
-
-    invoke-virtual {v0}, Ljava/io/File;->exists()Z
-
-    move-result p1
-
-    if-nez p1, :cond_0
-
-    invoke-virtual {v0}, Ljava/io/File;->mkdirs()Z
-
-    goto :goto_0
-
-    :cond_0
-    invoke-virtual {v0}, Ljava/io/File;->isDirectory()Z
-
-    move-result p1
-
-    if-eqz p1, :cond_1
-
-    :goto_0
-    new-instance p1, Ljava/io/File;
-
-    invoke-direct {p1, v0, p0}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
-
-    return-object p1
-
-    :cond_1
-    new-instance p0, Ljava/lang/IllegalStateException;
-
-    invoke-virtual {v0}, Ljava/lang/Object;->toString()Ljava/lang/String;
-
-    move-result-object p1
-
-    const-string v0, " already exists as a file, but is expected to be a directory."
-
-    invoke-virtual {p1, v0}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object p1
-
-    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw p0
+    return-void
 .end method

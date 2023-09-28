@@ -1,12 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <plurals name="accessibility_timelapse_manual_record_speed_desc">
-        <item quantity="other">延時攝影 %d 倍速</item>
-        <item quantity="one">延時攝影 %d 倍速</item>
-    </plurals>
-    <plurals name="number_of_cropped_face">
-        <item quantity="other">裁剪咗 %d 個面孔。</item>
-        <item quantity="one">裁剪咗 1 個面孔。</item>
+    <plurals name="number_of_faces_announcement">
+        <item quantity="other">%1$d 張臉孔。</item>
+        <item quantity="one">%1$d 張臉孔。</item>
     </plurals>
     <plurals name="photos_remaining">
         <item quantity="other">約 %s 張相片</item>

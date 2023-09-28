@@ -1,22 +1,25 @@
-.class public final Lfnv;
+.class public interface abstract Lfnv;
 .super Ljava/lang/Object;
 
+# interfaces
+.implements Lfpk;
 
-# static fields
-.field public static final a:Lnak;
 
+# virtual methods
+.method public abstract c()V
+.end method
 
-# direct methods
-.method static constructor <clinit>()V
-    .locals 1
+.method public abstract d()V
+.end method
 
-    const-string v0, "com/google/android/apps/camera/modules/slowmotion/SlowMotionModeModule"
+.method public abstract g(Z)V
+.end method
 
-    invoke-static {v0}, Lnak;->h(Ljava/lang/String;)Lnak;
+.method public abstract i(I)V
+.end method
 
-    move-result-object v0
+.method public abstract j(Lfox;)V
+.end method
 
-    sput-object v0, Lfnv;->a:Lnak;
-
-    return-void
+.method public abstract k(Lfox;)V
 .end method

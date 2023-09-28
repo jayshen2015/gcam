@@ -1,96 +1,80 @@
-.class final Lijp;
-.super Ljava/lang/Object;
-
-# interfaces
-.implements Landroid/view/ScaleGestureDetector$OnScaleGestureListener;
+.class public final Lijp;
+.super Lijs;
 
 
 # instance fields
-.field final synthetic a:Litm;
+.field public a:Llji;
+
+.field private final b:Lljf;
 
 
 # direct methods
-.method public constructor <init>(Litm;)V
-    .locals 0
+.method public constructor <init>(Lmcx;Lljf;)V
+    .locals 1
 
-    iput-object p1, p0, Lijp;->a:Litm;
+    invoke-static {}, Lijo;->values()[Lijo;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    move-result-object v0
+
+    invoke-direct {p0, p1, v0}, Lijs;-><init>(Lmcx;[Ljava/lang/Enum;)V
+
+    iput-object p2, p0, Lijp;->b:Lljf;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onScale(Landroid/view/ScaleGestureDetector;)Z
+.method public final c()J
+    .locals 2
+
+    sget-object v0, Lijo;->a:Lijo;
+
+    invoke-virtual {p0, v0}, Lijs;->g(Ljava/lang/Enum;)J
+
+    move-result-wide v0
+
+    return-wide v0
+.end method
+
+.method public final d()J
+    .locals 2
+
+    sget-object v0, Lijo;->b:Lijo;
+
+    invoke-virtual {p0, v0}, Lijs;->g(Ljava/lang/Enum;)J
+
+    move-result-wide v0
+
+    return-wide v0
+.end method
+
+.method public final e()V
     .locals 1
 
-    iget-object v0, p0, Lijp;->a:Litm;
+    sget-object v0, Lijo;->a:Lijo;
 
-    invoke-virtual {p1}, Landroid/view/ScaleGestureDetector;->getScaleFactor()F
+    invoke-virtual {p0, v0}, Lijs;->i(Ljava/lang/Enum;)V
 
-    move-result p1
-
-    invoke-interface {v0, p1}, Litm;->u(F)V
-
-    const/4 p1, 0x1
-
-    return p1
+    return-void
 .end method
 
-.method public final onScaleBegin(Landroid/view/ScaleGestureDetector;)Z
-    .locals 0
+.method public final f()V
+    .locals 2
 
-    iget-object p1, p0, Lijp;->a:Litm;
+    sget-object v0, Lijo;->b:Lijo;
 
-    invoke-interface {p1}, Litm;->v()V
+    invoke-virtual {p0, v0}, Lijs;->i(Ljava/lang/Enum;)V
 
-    const/4 p1, 0x1
+    iget-object v0, p0, Lijp;->b:Lljf;
 
-    return p1
-.end method
+    const-string v1, "Shutter.FramesTaken"
 
-.method public final onScaleEnd(Landroid/view/ScaleGestureDetector;)V
-    .locals 3
+    invoke-interface {v0, v1}, Lljf;->a(Ljava/lang/String;)Llji;
 
-    invoke-virtual {p1}, Landroid/view/ScaleGestureDetector;->getScaleFactor()F
+    move-result-object v0
 
-    iget-object p1, p0, Lijp;->a:Litm;
-
-    check-cast p1, Lisi;
-
-    iget-object v0, p1, Lisi;->E:Lita;
-
-    invoke-virtual {v0}, Lisk;->p()V
-
-    iget-boolean v0, p1, Lisi;->m:Z
-
-    if-nez v0, :cond_0
-
-    iget-object v0, p1, Lisi;->E:Lita;
-
-    invoke-virtual {v0}, Lita;->F()V
-
-    :cond_0
-    iget-object v0, p1, Lisi;->E:Lita;
-
-    iget v1, p1, Lisi;->Z:F
-
-    iget-object p1, p1, Lisi;->h:Ljwb;
-
-    invoke-interface {p1}, Ljwb;->bm()Ljava/lang/Object;
-
-    move-result-object p1
-
-    check-cast p1, Ljava/lang/Float;
-
-    invoke-virtual {p1}, Ljava/lang/Float;->floatValue()F
-
-    move-result p1
-
-    const/4 v2, 0x4
-
-    invoke-virtual {v0, v2, v1, p1}, Lita;->J(IFF)V
+    iput-object v0, p0, Lijp;->a:Llji;
 
     return-void
 .end method

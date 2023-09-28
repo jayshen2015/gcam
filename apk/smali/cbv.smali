@@ -1,278 +1,235 @@
 .class public final Lcbv;
-.super Lkfg;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Lkqg;
+
+
+# static fields
+.field public static final a:Louj;
 
 
 # instance fields
-.field public final a:Lklv;
+.field public final b:Ljava/util/Deque;
 
-.field public b:F
+.field public final c:Ljava/util/concurrent/atomic/AtomicReference;
 
-.field public c:Lgyp;
+.field public final d:Ljava/util/concurrent/atomic/AtomicInteger;
 
-.field private final d:Lkaq;
+.field private final e:Lccn;
 
-.field private final e:Ljwb;
+.field private final f:Ljava/util/concurrent/ExecutorService;
 
-.field private final f:Lcbw;
-
-.field private final g:Lend;
+.field private final g:Lccu;
 
 
 # direct methods
-.method public constructor <init>(Lkaq;Ljuf;Lfuz;Leah;Ljwb;Ljwb;Lfbz;Ljvs;)V
-    .locals 2
+.method static constructor <clinit>()V
+    .locals 1
 
-    invoke-direct {p0}, Lkfg;-><init>()V
+    const-string v0, "com/google/android/apps/camera/brella/examplestore/lib/CamExampleIterator"
 
-    const/4 v0, 0x0
-
-    iput v0, p0, Lcbv;->b:F
-
-    sget-object v0, Lgyp;->a:Lgyp;
-
-    iput-object v0, p0, Lcbv;->c:Lgyp;
-
-    const-string v0, "LowLightAfLock"
-
-    invoke-interface {p1, v0}, Lkaq;->a(Ljava/lang/String;)Lkaq;
-
-    move-result-object p1
-
-    iput-object p1, p0, Lcbv;->d:Lkaq;
-
-    invoke-virtual {p3}, Lklw;->k()Lklv;
+    invoke-static {v0}, Louj;->h(Ljava/lang/String;)Louj;
 
     move-result-object v0
 
-    iput-object v0, p0, Lcbv;->a:Lklv;
+    sput-object v0, Lcbv;->a:Louj;
 
-    sget-object v1, Lklv;->a:Lklv;
+    return-void
+.end method
 
-    if-eq v0, v1, :cond_0
+.method public constructor <init>(Lccn;Lccu;Lccs;Ljava/util/concurrent/ExecutorService;)V
+    .locals 0
 
-    goto :goto_0
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    :cond_0
-    move-object p5, p6
+    iput-object p4, p0, Lcbv;->f:Ljava/util/concurrent/ExecutorService;
 
-    :goto_0
-    iput-object p5, p0, Lcbv;->e:Ljwb;
+    iput-object p1, p0, Lcbv;->e:Lccn;
 
-    new-instance p6, Lend;
+    iput-object p2, p0, Lcbv;->g:Lccu;
 
-    invoke-direct {p6, p8}, Lend;-><init>(Ljvs;)V
+    new-instance p1, Ljava/util/concurrent/atomic/AtomicReference;
 
-    iput-object p6, p0, Lcbv;->g:Lend;
+    invoke-direct {p1, p3}, Ljava/util/concurrent/atomic/AtomicReference;-><init>(Ljava/lang/Object;)V
 
-    new-instance p6, Lcbw;
+    iput-object p1, p0, Lcbv;->c:Ljava/util/concurrent/atomic/AtomicReference;
 
-    invoke-virtual {v0}, Lklv;->name()Ljava/lang/String;
+    new-instance p1, Ljava/util/ArrayDeque;
 
-    move-result-object p8
+    invoke-direct {p1}, Ljava/util/ArrayDeque;-><init>()V
 
-    invoke-static {p8}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+    iput-object p1, p0, Lcbv;->b:Ljava/util/Deque;
 
-    move-result-object p8
+    new-instance p1, Ljava/util/concurrent/atomic/AtomicInteger;
 
-    const-string v0, "cuttlef-af-"
+    invoke-direct {p1}, Ljava/util/concurrent/atomic/AtomicInteger;-><init>()V
 
-    invoke-virtual {v0, p8}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object p8
-
-    invoke-direct {p6, p3, p4, p1, p8}, Lcbw;-><init>(Lfuz;Leah;Lkaq;Ljava/lang/String;)V
-
-    invoke-virtual {p2, p6}, Ljuf;->d(Lkad;)V
-
-    iput-object p6, p0, Lcbv;->f:Lcbw;
-
-    invoke-virtual {p6}, Lcbw;->b()V
-
-    new-instance p1, Lccp;
-
-    const/4 p3, 0x1
-
-    invoke-direct {p1, p0, p7, p3}, Lccp;-><init>(Lcbv;Lfbz;I)V
-
-    sget-object p3, Lnnv;->a:Lnnv;
-
-    invoke-interface {p5, p1, p3}, Ljwb;->a(Lkai;Ljava/util/concurrent/Executor;)Lkad;
-
-    move-result-object p1
-
-    invoke-virtual {p2, p1}, Ljuf;->d(Lkad;)V
+    iput-object p1, p0, Lcbv;->d:Ljava/util/concurrent/atomic/AtomicInteger;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final bC(Lkou;)V
-    .locals 3
+.method public final a(Lkrd;)V
+    .locals 6
 
-    sget-object v0, Landroid/hardware/camera2/CaptureResult;->LENS_FOCUS_DISTANCE:Landroid/hardware/camera2/CaptureResult$Key;
+    iget-object v0, p0, Lcbv;->b:Ljava/util/Deque;
 
-    invoke-interface {p1, v0}, Lkou;->d(Landroid/hardware/camera2/CaptureResult$Key;)Ljava/lang/Object;
+    monitor-enter v0
 
-    move-result-object v0
+    :try_start_0
+    iget-object v1, p0, Lcbv;->b:Ljava/util/Deque;
 
-    check-cast v0, Ljava/lang/Float;
-
-    invoke-static {v0}, Llkj;->C(Ljava/lang/Object;)V
-
-    invoke-virtual {v0}, Ljava/lang/Float;->floatValue()F
-
-    move-result v0
-
-    iput v0, p0, Lcbv;->b:F
-
-    iget-object v0, p0, Lcbv;->f:Lcbw;
-
-    invoke-virtual {v0, p1}, Lcbw;->a(Lkou;)V
-
-    iget-object v0, p0, Lcbv;->g:Lend;
-
-    iget-object v1, v0, Lend;->b:Ljava/lang/Object;
-
-    invoke-interface {v1}, Ljvs;->bm()Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Ljava/lang/Boolean;
-
-    invoke-virtual {v1}, Ljava/lang/Boolean;->booleanValue()Z
+    invoke-interface {v1}, Ljava/util/Deque;->isEmpty()Z
 
     move-result v1
 
     if-nez v1, :cond_0
 
-    const/4 p1, 0x0
+    sget-object v1, Lphq;->a:Lpht;
 
-    iput p1, v0, Lend;->a:I
+    monitor-exit v0
+
+    goto :goto_3
+
+    :cond_0
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    iget-object v0, p0, Lcbv;->e:Lccn;
+
+    iget-object v1, p0, Lcbv;->g:Lccu;
+
+    iget-object v2, p0, Lcbv;->c:Ljava/util/concurrent/atomic/AtomicReference;
+
+    invoke-virtual {v2}, Ljava/util/concurrent/atomic/AtomicReference;->get()Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Lccs;
+
+    iget-object v3, p0, Lcbv;->g:Lccu;
+
+    iget v3, v3, Lccu;->g:I
+
+    const/16 v4, 0x64
+
+    if-lez v3, :cond_1
+
+    iget-object v5, p0, Lcbv;->d:Ljava/util/concurrent/atomic/AtomicInteger;
+
+    invoke-virtual {v5}, Ljava/util/concurrent/atomic/AtomicInteger;->get()I
+
+    move-result v5
+
+    sub-int/2addr v3, v5
+
+    invoke-static {v4, v3}, Ljava/lang/Math;->min(II)I
+
+    move-result v4
 
     goto :goto_0
 
-    :cond_0
-    iget v1, v0, Lend;->a:I
+    :cond_1
+    :goto_0
+    iget-boolean v3, v1, Lccu;->i:Z
 
-    add-int/lit8 v1, v1, 0x1
+    const/4 v5, 0x1
 
-    const/4 v2, 0x5
+    if-eqz v3, :cond_3
 
-    invoke-static {v1, v2}, Ljava/lang/Math;->min(II)I
+    iget-object v3, v1, Lccu;->h:Lppm;
 
-    move-result v1
+    invoke-interface {v3}, Lppm;->size()I
 
-    iput v1, v0, Lend;->a:I
+    move-result v3
 
-    if-lt v1, v2, :cond_1
+    if-gtz v3, :cond_2
 
-    iget-object v0, p0, Lcbv;->f:Lcbw;
+    goto :goto_1
 
-    invoke-virtual {v0}, Lcbw;->c()Z
+    :cond_2
+    const/4 v5, 0x0
 
-    move-result v0
+    goto :goto_1
 
-    if-nez v0, :cond_1
+    :cond_3
+    :goto_1
+    const-string v3, "Cannot get both session and media records.Please select only one."
 
-    iget-object v0, p0, Lcbv;->e:Ljwb;
+    invoke-static {v5, v3}, Lobr;->aG(ZLjava/lang/Object;)V
 
-    invoke-interface {v0}, Ljwb;->bm()Ljava/lang/Object;
+    iget-boolean v3, v1, Lccu;->i:Z
 
-    move-result-object v0
+    if-eqz v3, :cond_4
 
-    check-cast v0, Ljava/lang/Integer;
+    new-instance v3, Lcce;
 
-    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
+    invoke-direct {v3, v0, v1, v2, v4}, Lcce;-><init>(Lccn;Lccu;Lccs;I)V
 
-    move-result v0
+    iget-object v0, v0, Lccn;->e:Ljava/util/concurrent/ExecutorService;
 
-    sget-object v1, Lgyp;->a:Lgyp;
-
-    iget v1, v1, Lgyp;->f:I
-
-    if-ne v0, v1, :cond_2
-
-    sget-object v0, Landroid/hardware/camera2/CaptureResult;->CONTROL_AF_STATE:Landroid/hardware/camera2/CaptureResult$Key;
-
-    invoke-interface {p1, v0}, Lkou;->d(Landroid/hardware/camera2/CaptureResult$Key;)Ljava/lang/Object;
-
-    move-result-object p1
-
-    check-cast p1, Ljava/lang/Integer;
-
-    invoke-static {p1}, Llkj;->C(Ljava/lang/Object;)V
-
-    invoke-virtual {p1}, Ljava/lang/Integer;->intValue()I
-
-    move-result p1
-
-    invoke-static {p1}, Lgry;->a(I)Lgry;
-
-    move-result-object p1
-
-    sget-object v0, Lgry;->g:Lgry;
-
-    if-ne p1, v0, :cond_2
-
-    iget-object p1, p0, Lcbv;->d:Lkaq;
-
-    const-string v0, "Locking AF"
-
-    invoke-interface {p1, v0}, Lkaq;->f(Ljava/lang/String;)V
-
-    iget-object p1, p0, Lcbv;->e:Ljwb;
-
-    sget-object v0, Lgyp;->b:Lgyp;
-
-    iget v0, v0, Lgyp;->f:I
-
-    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-static {v3, v0}, Lplk;->aa(Lpgj;Ljava/util/concurrent/Executor;)Lpht;
 
     move-result-object v0
 
-    invoke-interface {p1, v0}, Ljwb;->bn(Ljava/lang/Object;)V
+    goto :goto_2
+
+    :cond_4
+    new-instance v3, Lccd;
+
+    invoke-direct {v3, v0, v1, v2, v4}, Lccd;-><init>(Lccn;Lccu;Lccs;I)V
+
+    iget-object v0, v0, Lccn;->e:Ljava/util/concurrent/ExecutorService;
+
+    invoke-static {v3, v0}, Lplk;->aa(Lpgj;Ljava/util/concurrent/Executor;)Lpht;
+
+    move-result-object v0
+
+    :goto_2
+    new-instance v1, Lcbt;
+
+    invoke-direct {v1, p0}, Lcbt;-><init>(Lcbv;)V
+
+    iget-object v2, p0, Lcbv;->f:Ljava/util/concurrent/ExecutorService;
+
+    invoke-static {v0, v1, v2}, Lpgb;->h(Lpht;Loiu;Ljava/util/concurrent/Executor;)Lpht;
+
+    move-result-object v1
+
+    :goto_3
+    new-instance v0, Lcbu;
+
+    invoke-direct {v0, p0, p1}, Lcbu;-><init>(Lcbv;Lkrd;)V
+
+    iget-object p1, p0, Lcbv;->f:Ljava/util/concurrent/ExecutorService;
+
+    invoke-static {v1, v0, p1}, Lplk;->af(Lpht;Lphh;Ljava/util/concurrent/Executor;)V
 
     return-void
 
-    :cond_1
-    :goto_0
-    iget-object p1, p0, Lcbv;->e:Ljwb;
+    :catchall_0
+    move-exception p1
 
-    invoke-interface {p1}, Ljwb;->bm()Ljava/lang/Object;
+    :try_start_1
+    monitor-exit v0
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    move-result-object p1
+    throw p1
+.end method
 
-    check-cast p1, Ljava/lang/Integer;
+.method public final b()V
+    .locals 0
 
-    invoke-virtual {p1}, Ljava/lang/Integer;->intValue()I
+    return-void
+.end method
 
-    move-result p1
+.method public final close()V
+    .locals 0
 
-    sget-object v0, Lgyp;->b:Lgyp;
-
-    iget v0, v0, Lgyp;->f:I
-
-    if-ne p1, v0, :cond_2
-
-    iget-object p1, p0, Lcbv;->d:Lkaq;
-
-    const-string v0, "Unlocking AF"
-
-    invoke-interface {p1, v0}, Lkaq;->f(Ljava/lang/String;)V
-
-    iget-object p1, p0, Lcbv;->e:Ljwb;
-
-    sget-object v0, Lgyp;->a:Lgyp;
-
-    iget v0, v0, Lgyp;->f:I
-
-    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v0
-
-    invoke-interface {p1, v0}, Ljwb;->bn(Ljava/lang/Object;)V
-
-    :cond_2
     return-void
 .end method

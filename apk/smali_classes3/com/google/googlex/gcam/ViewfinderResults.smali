@@ -3,9 +3,9 @@
 
 
 # instance fields
-.field public transient a:J
+.field protected transient a:Z
 
-.field protected transient b:Z
+.field private transient b:J
 
 
 # direct methods
@@ -28,9 +28,9 @@
 
     const/4 v0, 0x1
 
-    iput-boolean v0, p0, Lcom/google/googlex/gcam/ViewfinderResults;->b:Z
+    iput-boolean v0, p0, Lcom/google/googlex/gcam/ViewfinderResults;->a:Z
 
-    iput-wide p1, p0, Lcom/google/googlex/gcam/ViewfinderResults;->a:J
+    iput-wide p1, p0, Lcom/google/googlex/gcam/ViewfinderResults;->b:J
 
     return-void
 .end method
@@ -40,7 +40,7 @@
 .method public final a()F
     .locals 2
 
-    iget-wide v0, p0, Lcom/google/googlex/gcam/ViewfinderResults;->a:J
+    iget-wide v0, p0, Lcom/google/googlex/gcam/ViewfinderResults;->b:J
 
     invoke-static {v0, v1, p0}, Lcom/google/googlex/gcam/GcamModuleJNI;->ViewfinderResults_gyro_speed_rad_per_sec_get(JLcom/google/googlex/gcam/ViewfinderResults;)F
 
@@ -55,7 +55,7 @@
     monitor-enter p0
 
     :try_start_0
-    iget-wide v0, p0, Lcom/google/googlex/gcam/ViewfinderResults;->a:J
+    iget-wide v0, p0, Lcom/google/googlex/gcam/ViewfinderResults;->b:J
 
     const-wide/16 v2, 0x0
 
@@ -63,18 +63,18 @@
 
     if-eqz v4, :cond_1
 
-    iget-boolean v4, p0, Lcom/google/googlex/gcam/ViewfinderResults;->b:Z
+    iget-boolean v4, p0, Lcom/google/googlex/gcam/ViewfinderResults;->a:Z
 
     if-eqz v4, :cond_0
 
     const/4 v4, 0x0
 
-    iput-boolean v4, p0, Lcom/google/googlex/gcam/ViewfinderResults;->b:Z
+    iput-boolean v4, p0, Lcom/google/googlex/gcam/ViewfinderResults;->a:Z
 
     invoke-static {v0, v1}, Lcom/google/googlex/gcam/GcamModuleJNI;->delete_ViewfinderResults(J)V
 
     :cond_0
-    iput-wide v2, p0, Lcom/google/googlex/gcam/ViewfinderResults;->a:J
+    iput-wide v2, p0, Lcom/google/googlex/gcam/ViewfinderResults;->b:J
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 

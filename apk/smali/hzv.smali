@@ -1,60 +1,59 @@
-.class final Lhzv;
-.super Liak;
+.class public final synthetic Lhzv;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field final synthetic a:Lhzy;
+.field public final synthetic a:Lhzz;
+
+.field private final synthetic b:I
 
 
 # direct methods
-.method public constructor <init>(Lhzy;)V
+.method public synthetic constructor <init>(Lhzz;I)V
     .locals 0
 
-    iput-object p1, p0, Lhzv;->a:Lhzy;
+    iput p2, p0, Lhzv;->b:I
 
-    invoke-direct {p0, p1}, Liak;-><init>(Lian;)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lhzv;->a:Lhzz;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()V
-    .locals 2
+.method public final run()V
+    .locals 1
 
-    iget-object v0, p0, Lhzv;->a:Lhzy;
+    iget v0, p0, Lhzv;->b:I
 
-    iget-object v0, v0, Lhzy;->a:Lhiu;
+    packed-switch v0, :pswitch_data_0
 
-    invoke-virtual {v0}, Lhiu;->e()V
+    iget-object v0, p0, Lhzv;->a:Lhzz;
 
-    iget-object v0, p0, Lhzv;->a:Lhzy;
+    iget-object v0, v0, Lhzz;->b:Lcom/google/android/apps/camera/smarts/SmartsUiGleamingView;
 
-    iget-object v1, v0, Lhzy;->a:Lhiu;
-
-    iget-object v0, v0, Lhzy;->b:Lhiw;
-
-    invoke-virtual {v1, v0}, Lhiu;->g(Lhiw;)V
+    invoke-virtual {v0}, Lcom/google/android/apps/camera/smarts/SmartsUiGleamingView;->a()V
 
     return-void
-.end method
 
-.method public final b()V
-    .locals 2
+    :pswitch_0
+    iget-object v0, p0, Lhzv;->a:Lhzz;
 
-    iget-object v0, p0, Lhzv;->a:Lhzy;
+    iget-object v0, v0, Lhzz;->b:Lcom/google/android/apps/camera/smarts/SmartsUiGleamingView;
 
-    iget-object v0, v0, Lhzy;->a:Lhiu;
-
-    invoke-virtual {v0}, Lhiu;->e()V
-
-    iget-object v0, p0, Lhzv;->a:Lhzy;
-
-    iget-object v1, v0, Lhzy;->a:Lhiu;
-
-    iget-object v0, v0, Lhzy;->c:Lhiw;
-
-    invoke-virtual {v1, v0}, Lhiu;->g(Lhiw;)V
+    invoke-virtual {v0}, Lcom/google/android/apps/camera/smarts/SmartsUiGleamingView;->a()V
 
     return-void
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

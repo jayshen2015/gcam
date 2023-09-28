@@ -1,239 +1,186 @@
-.class public final Lfrp;
+.class public final synthetic Lfrp;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lfri;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field private final a:Landroid/media/MediaFormat;
+.field public final synthetic a:Lfrr;
 
-.field private final b:Llbd;
-
-.field private final c:Lgvb;
-
-.field private final d:Lkli;
-
-.field private e:Lfpq;
+.field private final synthetic b:I
 
 
 # direct methods
-.method public constructor <init>(Landroid/media/MediaFormat;Llbd;Lgvb;Lkli;)V
-    .locals 1
+.method public synthetic constructor <init>(Lfrr;I)V
+    .locals 0
+
+    iput p2, p0, Lfrp;->b:I
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const/4 v0, 0x0
-
-    iput-object v0, p0, Lfrp;->e:Lfpq;
-
-    iput-object p1, p0, Lfrp;->a:Landroid/media/MediaFormat;
-
-    iput-object p2, p0, Lfrp;->b:Llbd;
-
-    iput-object p3, p0, Lfrp;->c:Lgvb;
-
-    iput-object p4, p0, Lfrp;->d:Lkli;
+    iput-object p1, p0, Lfrp;->a:Lfrr;
 
     return-void
-.end method
-
-.method private final c()V
-    .locals 5
-
-    iget-object v0, p0, Lfrp;->a:Landroid/media/MediaFormat;
-
-    const-string v1, "color-format"
-
-    const v2, 0x7f000789
-
-    invoke-virtual {v0, v1, v2}, Landroid/media/MediaFormat;->setInteger(Ljava/lang/String;I)V
-
-    :try_start_0
-    iget-object v0, p0, Lfrp;->a:Landroid/media/MediaFormat;
-
-    iget-object v1, p0, Lfrp;->b:Llbd;
-
-    const-string v2, "mime"
-
-    invoke-virtual {v0, v2}, Landroid/media/MediaFormat;->getString(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    invoke-static {v2}, Landroid/media/MediaCodec;->createEncoderByType(Ljava/lang/String;)Landroid/media/MediaCodec;
-
-    move-result-object v2
-
-    invoke-static {v1}, Lldf;->a(Llbd;)Lldf;
-
-    move-result-object v3
-
-    new-instance v4, Lfpo;
-
-    invoke-direct {v4, v2, v0, v1, v3}, Lfpo;-><init>(Landroid/media/MediaCodec;Landroid/media/MediaFormat;Llbd;Lldf;)V
-
-    new-instance v0, Ljava/util/concurrent/atomic/AtomicInteger;
-
-    const/4 v1, 0x0
-
-    invoke-direct {v0, v1}, Ljava/util/concurrent/atomic/AtomicInteger;-><init>(I)V
-
-    new-instance v2, Lfpt;
-
-    invoke-direct {v2, v0, v4}, Lfpt;-><init>(Ljava/util/concurrent/atomic/AtomicInteger;Lfpq;)V
-
-    new-instance v0, Lfps;
-
-    invoke-direct {v0, v2, v1}, Lfps;-><init>(Lfpq;I)V
-
-    new-instance v1, Lfps;
-
-    const/4 v2, 0x1
-
-    invoke-direct {v1, v0, v2}, Lfps;-><init>(Lfpq;I)V
-
-    iput-object v1, p0, Lfrp;->e:Lfpq;
-    :try_end_0
-    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
-
-    return-void
-
-    :catch_0
-    move-exception v0
-
-    new-instance v1, Ljava/lang/IllegalStateException;
-
-    const-string v2, "Could not create image encoder!"
-
-    invoke-direct {v1, v2, v0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
-
-    throw v1
 .end method
 
 
 # virtual methods
-.method public final declared-synchronized a(Lkxy;Lkab;)Lfpz;
-    .locals 7
+.method public final run()V
+    .locals 5
 
-    monitor-enter p0
+    iget v0, p0, Lfrp;->b:I
 
-    :try_start_0
-    iget-object p2, p0, Lfrp;->e:Lfpq;
+    const/4 v1, 0x1
 
-    if-nez p2, :cond_0
+    packed-switch v0, :pswitch_data_0
 
-    invoke-direct {p0}, Lfrp;->c()V
+    iget-object v0, p0, Lfrp;->a:Lfrr;
+
+    invoke-virtual {v0}, Lfrr;->g()V
+
+    return-void
+
+    :pswitch_0
+    iget-object v0, p0, Lfrp;->a:Lfrr;
+
+    invoke-virtual {v0}, Lfrr;->g()V
+
+    return-void
+
+    :pswitch_1
+    iget-object v0, p0, Lfrp;->a:Lfrr;
+
+    iget-boolean v2, v0, Lfrr;->t:Z
+
+    if-nez v2, :cond_0
+
+    iget-object v2, v0, Lfrr;->l:Ljava/util/concurrent/atomic/AtomicLong;
+
+    const-wide/16 v3, 0x0
+
+    invoke-virtual {v2, v3, v4}, Ljava/util/concurrent/atomic/AtomicLong;->set(J)V
 
     :cond_0
-    new-instance p2, Lfpr;
+    iput-boolean v1, v0, Lfrr;->t:Z
 
-    iget-object v1, p0, Lfrp;->e:Lfpq;
+    iget-object v2, v0, Lfrr;->c:Lfqy;
 
-    invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    invoke-virtual {v2, v1}, Lfqy;->b(Z)V
 
-    iget-object v0, p0, Lfrp;->c:Lgvb;
+    invoke-virtual {v0}, Lfrr;->g()V
 
-    iget-object v2, p0, Lfrp;->d:Lkli;
+    return-void
 
-    invoke-interface {v2}, Lkli;->k()Lklv;
+    :pswitch_2
+    iget-object v0, p0, Lfrp;->a:Lfrr;
+
+    invoke-virtual {v0}, Lfrr;->h()V
+
+    iget-object v1, v0, Lfrr;->d:Landroid/os/Handler;
+
+    new-instance v2, Lfrp;
+
+    const/4 v3, 0x0
+
+    invoke-direct {v2, v0, v3}, Lfrp;-><init>(Lfrr;I)V
+
+    invoke-virtual {v1, v2}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
+
+    return-void
+
+    :pswitch_3
+    iget-object v0, p0, Lfrp;->a:Lfrr;
+
+    iget-boolean v2, v0, Lfrr;->t:Z
+
+    if-nez v2, :cond_1
+
+    invoke-virtual {v0}, Lfrr;->f()V
+
+    return-void
+
+    :cond_1
+    iput-boolean v1, v0, Lfrr;->s:Z
+
+    invoke-virtual {v0}, Lfrr;->g()V
+
+    return-void
+
+    :pswitch_4
+    iget-object v0, p0, Lfrp;->a:Lfrr;
+
+    iget-object v2, v0, Lfrr;->a:Lfpo;
+
+    invoke-interface {v2}, Lfpo;->h()V
+
+    iget-object v2, v0, Lfrr;->f:Lojc;
+
+    invoke-virtual {v2}, Lojc;->g()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_2
+
+    iget-object v2, v0, Lfrr;->f:Lojc;
+
+    invoke-virtual {v2}, Lojc;->c()Ljava/lang/Object;
 
     move-result-object v2
 
-    invoke-interface {v0, v2}, Lgvb;->h(Lklv;)Z
+    check-cast v2, Lfqi;
 
-    move-result v0
+    invoke-interface {v2, v0}, Lfqi;->d(Lfqh;)V
 
-    if-eqz v0, :cond_1
+    :cond_2
+    iput-boolean v1, v0, Lfrr;->h:Z
 
-    sget-object v0, Lfsc;->d:Lbkb;
+    iget-object v1, v0, Lfrr;->d:Landroid/os/Handler;
 
-    move-object v3, v0
+    invoke-virtual {v1}, Landroid/os/Handler;->getLooper()Landroid/os/Looper;
 
-    goto :goto_0
+    move-result-object v1
 
-    :cond_1
-    sget-object v0, Lfsc;->c:Lbkb;
+    invoke-virtual {v1}, Landroid/os/Looper;->quitSafely()V
 
-    move-object v3, v0
+    iget-object v1, v0, Lfrr;->e:Landroid/os/Handler;
 
-    :goto_0
-    const/4 v4, 0x0
+    invoke-virtual {v1}, Landroid/os/Handler;->getLooper()Landroid/os/Looper;
 
-    const/4 v5, 0x0
+    move-result-object v1
 
-    const/4 v6, 0x0
+    invoke-virtual {v1}, Landroid/os/Looper;->quitSafely()V
 
-    move-object v0, p2
+    iget-object v1, v0, Lfrr;->p:Lfrv;
 
-    move-object v2, p1
+    invoke-virtual {v1}, Lfrv;->close()V
 
-    invoke-direct/range {v0 .. v6}, Lfpr;-><init>(Lfpq;Lkxy;Lbkb;[B[B[B)V
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    iget-object v1, v0, Lfrr;->q:Lmqk;
 
-    monitor-exit p0
+    invoke-virtual {v1}, Lmqk;->close()V
 
-    return-object p2
+    iget-object v1, v0, Lfrr;->r:Lmri;
 
-    :catchall_0
-    move-exception p1
+    invoke-virtual {v1}, Lmri;->close()V
 
-    monitor-exit p0
+    iget-object v1, v0, Lfrr;->o:Lmpi;
 
-    throw p1
-.end method
+    invoke-interface {v1}, Lmpi;->close()V
 
-.method public final declared-synchronized b()V
-    .locals 1
+    iget-object v0, v0, Lfrr;->b:Lfrm;
 
-    monitor-enter p0
-
-    :try_start_0
-    invoke-direct {p0}, Lfrp;->c()V
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    monitor-exit p0
+    invoke-interface {v0}, Lfrm;->e()V
 
     return-void
 
-    :catchall_0
-    move-exception v0
+    nop
 
-    monitor-exit p0
-
-    throw v0
-.end method
-
-.method public final declared-synchronized close()V
-    .locals 1
-
-    monitor-enter p0
-
-    :try_start_0
-    iget-object v0, p0, Lfrp;->e:Lfpq;
-
-    if-eqz v0, :cond_0
-
-    invoke-interface {v0}, Lfpq;->close()V
-
-    :cond_0
-    iget-object v0, p0, Lfrp;->b:Llbd;
-
-    invoke-interface {v0}, Llbd;->close()V
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    monitor-exit p0
-
-    return-void
-
-    :catchall_0
-    move-exception v0
-
-    monitor-exit p0
-
-    throw v0
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method

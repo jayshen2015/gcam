@@ -1,97 +1,97 @@
-.class public interface abstract Ljzd;
+.class public final synthetic Ljzd;
 .super Ljava/lang/Object;
+
+# interfaces
+.implements Ljava/lang/Runnable;
+
+
+# instance fields
+.field public final synthetic a:Ljzf;
+
+.field public final synthetic b:Z
+
+.field public final synthetic c:Z
+
+.field private final synthetic d:I
+
+
+# direct methods
+.method public synthetic constructor <init>(Ljzf;ZZI)V
+    .locals 0
+
+    iput p4, p0, Ljzd;->d:I
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Ljzd;->a:Ljzf;
+
+    iput-boolean p2, p0, Ljzd;->b:Z
+
+    iput-boolean p3, p0, Ljzd;->c:Z
+
+    return-void
+.end method
 
 
 # virtual methods
-.method public abstract A(I)V
-.end method
+.method public final run()V
+    .locals 3
 
-.method public abstract B(II)V
-.end method
+    iget v0, p0, Ljzd;->d:I
 
-.method public abstract C()V
-.end method
+    packed-switch v0, :pswitch_data_0
 
-.method public abstract D()V
-.end method
+    iget-object v0, p0, Ljzd;->a:Ljzf;
 
-.method public abstract E()V
-.end method
+    iget-boolean v1, p0, Ljzd;->b:Z
 
-.method public abstract a()Landroid/media/MediaRecorder;
-.end method
+    iget-boolean v2, p0, Ljzd;->c:Z
 
-.method public abstract b()Landroid/view/Surface;
-.end method
+    if-eqz v1, :cond_1
 
-.method public abstract c()V
-.end method
+    iget-object v1, v0, Ljzf;->f:Ljzq;
 
-.method public abstract d()V
-.end method
+    invoke-virtual {v1, v2}, Ljzi;->c(Z)V
 
-.method public abstract e()V
-.end method
+    invoke-virtual {v0}, Ljzf;->f()V
 
-.method public abstract f()V
-.end method
+    return-void
 
-.method public abstract g()V
-.end method
+    :pswitch_0
+    iget-object v0, p0, Ljzd;->a:Ljzf;
 
-.method public abstract h(I)V
-.end method
+    iget-boolean v1, p0, Ljzd;->b:Z
 
-.method public abstract i(I)V
-.end method
+    iget-boolean v2, p0, Ljzd;->c:Z
 
-.method public abstract j(I)V
-.end method
+    if-eqz v1, :cond_0
 
-.method public abstract k(I)V
-.end method
+    invoke-virtual {v0}, Ljzf;->f()V
 
-.method public abstract l(I)V
-.end method
+    iget-object v0, v0, Ljzf;->f:Ljzq;
 
-.method public abstract m(D)V
-.end method
+    invoke-virtual {v0, v2}, Ljzi;->a(Z)V
 
-.method public abstract n(Landroid/view/Surface;)V
-.end method
+    return-void
 
-.method public abstract o(FF)V
-.end method
+    :cond_0
+    iget-object v0, v0, Ljzf;->f:Ljzq;
 
-.method public abstract p(I)V
-.end method
+    invoke-virtual {v0, v2}, Ljzi;->b(Z)V
 
-.method public abstract q(J)V
-.end method
+    return-void
 
-.method public abstract r(Ljava/io/FileDescriptor;)V
-.end method
+    :cond_1
+    iget-object v0, v0, Ljzf;->f:Ljzq;
 
-.method public abstract s(Landroid/media/MediaRecorder$OnErrorListener;)V
-.end method
+    invoke-virtual {v0, v2}, Ljzi;->gt(Z)V
 
-.method public abstract t(Landroid/media/MediaRecorder$OnInfoListener;)V
-.end method
+    return-void
 
-.method public abstract u(I)V
-.end method
+    nop
 
-.method public abstract v(Ljava/io/FileDescriptor;)V
-.end method
-
-.method public abstract w(Ljava/lang/String;)V
-.end method
-
-.method public abstract x(I)V
-.end method
-
-.method public abstract y(I)V
-.end method
-
-.method public abstract z(I)V
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

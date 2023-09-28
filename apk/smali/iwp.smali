@@ -1,42 +1,33 @@
-.class public final Liwp;
+.class final Liwp;
 .super Ljava/lang/Object;
+
+# interfaces
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field public a:Z
-
-.field public b:I
-
-.field public c:I
-
-.field public d:I
-
-.field public e:F
-
-.field public f:F
-
-.field public g:F
-
-.field public h:F
-
-.field public i:F
-
-.field public j:F
-
-.field public k:F
-
-.field public l:I
+.field final synthetic a:Liwt;
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 1
+.method public constructor <init>(Liwt;)V
+    .locals 0
+
+    iput-object p1, p0, Liwp;->a:Liwt;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const/4 v0, 0x2
+    return-void
+.end method
 
-    iput v0, p0, Liwp;->l:I
+
+# virtual methods
+.method public final run()V
+    .locals 1
+
+    iget-object v0, p0, Liwp;->a:Liwt;
+
+    invoke-virtual {v0}, Liwo;->a()V
 
     return-void
 .end method

@@ -1,28 +1,33 @@
-.class public final Llvf;
-.super Lllj;
+.class public final synthetic Llvf;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Landroid/media/ImageReader$OnImageAvailableListener;
 
 
-# static fields
-.field public static final a:Llvf;
+# instance fields
+.field public final synthetic a:Lmaf;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
+.method public synthetic constructor <init>(Lmaf;)V
+    .locals 0
 
-    new-instance v0, Llvf;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {v0}, Llvf;-><init>()V
-
-    sput-object v0, Llvf;->a:Llvf;
+    iput-object p1, p0, Llvf;->a:Lmaf;
 
     return-void
 .end method
 
-.method private constructor <init>()V
+
+# virtual methods
+.method public final onImageAvailable(Landroid/media/ImageReader;)V
     .locals 0
 
-    invoke-direct {p0}, Lllj;-><init>()V
+    iget-object p1, p0, Llvf;->a:Lmaf;
+
+    invoke-interface {p1}, Lmaf;->a()V
 
     return-void
 .end method

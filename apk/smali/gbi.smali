@@ -1,22 +1,63 @@
-.class public final Lgbi;
+.class final Lgbi;
 .super Ljava/lang/Object;
 
+# interfaces
+.implements Lgbg;
 
-# static fields
-.field public static final a:Lgaw;
+
+# instance fields
+.field final synthetic a:Lgbg;
+
+.field private final synthetic b:I
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
+.method public constructor <init>(Lgbg;I)V
+    .locals 0
 
-    new-instance v0, Lgaw;
+    iput p2, p0, Lgbi;->b:I
 
-    const/4 v1, 0x6
+    iput-object p1, p0, Lgbi;->a:Lgbg;
 
-    invoke-direct {v0, v1}, Lgaw;-><init>(I)V
-
-    sput-object v0, Lgbi;->a:Lgaw;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
+.end method
+
+
+# virtual methods
+.method public final a(Lmad;Lgbf;)Lgbe;
+    .locals 0
+
+    const/4 p1, 0x0
+
+    throw p1
+.end method
+
+.method public final close()V
+    .locals 1
+
+    iget v0, p0, Lgbi;->b:I
+
+    packed-switch v0, :pswitch_data_0
+
+    iget-object v0, p0, Lgbi;->a:Lgbg;
+
+    invoke-interface {v0}, Lgbg;->close()V
+
+    return-void
+
+    :pswitch_0
+    iget-object v0, p0, Lgbi;->a:Lgbg;
+
+    invoke-interface {v0}, Lgbg;->close()V
+
+    return-void
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

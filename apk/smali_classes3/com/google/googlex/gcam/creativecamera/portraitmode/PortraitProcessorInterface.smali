@@ -26,7 +26,7 @@
     return-void
 .end method
 
-.method public constructor <init>(JJZ)V
+.method public constructor <init>(JJ)V
     .locals 3
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -50,7 +50,7 @@
     invoke-static {}, Lcom/google/googlex/gcam/creativecamera/portraitmode/PortraitProcessorInterface;->init()V
 
     :cond_0
-    invoke-direct/range {p0 .. p5}, Lcom/google/googlex/gcam/creativecamera/portraitmode/PortraitProcessorInterface;->create(JJZ)J
+    invoke-direct {p0, p1, p2, p3, p4}, Lcom/google/googlex/gcam/creativecamera/portraitmode/PortraitProcessorInterface;->create(JJ)J
 
     move-result-wide p1
 
@@ -59,10 +59,10 @@
     return-void
 .end method
 
-.method private native create(JJZ)J
+.method private native create(JJ)J
 .end method
 
-.method private native createWithLevels(JJIIZZ)J
+.method private native createWithLevels(JJIIZ)J
 .end method
 
 .method private native delete(J)V
@@ -87,5 +87,5 @@
     return-void
 .end method
 
-.method public native processImpl(JJJJJJJZ)Z
+.method public native processImpl(JJJJJJJI)Z
 .end method

@@ -1,62 +1,88 @@
-.class public final Lmdc;
+.class final Lmdc;
 .super Ljava/lang/Object;
 
 
 # instance fields
-.field private final a:D
+.field final a:[B
 
-.field private final b:D
+.field final b:I
+
+.field final c:I
+
+.field final d:I
 
 
 # direct methods
-.method public constructor <init>(Llyf;I)V
+.method public constructor <init>([BIII)V
     .locals 4
-
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iget-wide v0, p1, Llyf;->f:J
+    const/4 v0, 0x1
 
-    invoke-static {v0, v1}, Llyh;->g(J)D
+    const/4 v1, 0x0
 
-    move-result-wide v2
+    if-ltz p3, :cond_0
 
-    iput-wide v2, p0, Lmdc;->a:D
+    const/4 v2, 0x1
 
-    int-to-long p1, p2
+    goto :goto_0
 
-    sub-long/2addr v0, p1
+    :cond_0
+    const/4 v2, 0x0
 
-    invoke-static {v0, v1}, Llyh;->g(J)D
+    :goto_0
+    const-string v3, "offset must be >= 0"
 
-    move-result-wide p1
+    invoke-static {v2, v3}, Lobr;->aG(ZLjava/lang/Object;)V
 
-    iput-wide p1, p0, Lmdc;->b:D
+    if-lez p4, :cond_1
+
+    const/4 v2, 0x1
+
+    goto :goto_1
+
+    :cond_1
+    const/4 v2, 0x0
+
+    :goto_1
+    const-string v3, "length must be > 0"
+
+    invoke-static {v2, v3}, Lobr;->aG(ZLjava/lang/Object;)V
+
+    array-length v2, p1
+
+    if-gt p4, v2, :cond_2
+
+    goto :goto_2
+
+    :cond_2
+    const/4 v0, 0x0
+
+    :goto_2
+    const-string v1, "length exceeds data length"
+
+    invoke-static {v0, v1}, Lobr;->aG(ZLjava/lang/Object;)V
+
+    iput-object p1, p0, Lmdc;->a:[B
+
+    iput p2, p0, Lmdc;->d:I
+
+    iput p3, p0, Lmdc;->b:I
+
+    iput p4, p0, Lmdc;->c:I
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(J)D
-    .locals 2
+.method final a()I
+    .locals 1
 
-    iget-wide v0, p0, Lmdc;->b:D
+    iget v0, p0, Lmdc;->c:I
 
-    long-to-double p1, p1
+    add-int/lit8 v0, v0, 0x2
 
-    invoke-static {p1, p2}, Ljava/lang/Double;->isNaN(D)Z
-
-    add-double/2addr v0, p1
-
-    iget-wide p1, p0, Lmdc;->a:D
-
-    div-double/2addr v0, p1
-
-    invoke-static {v0, v1}, Llyh;->f(D)D
-
-    move-result-wide p1
-
-    return-wide p1
+    return v0
 .end method

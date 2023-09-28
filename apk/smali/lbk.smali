@@ -1,216 +1,139 @@
-.class public Llbk;
+.class public final Llbk;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Llbi;
+.implements Llie;
 
 
 # instance fields
-.field private final a:Lkzc;
+.field public final a:Ljava/lang/Object;
 
-.field public final b:Llbd;
+.field public b:Ljava/lang/Runnable;
+
+.field private final c:Llbi;
+
+.field private final d:Ljava/lang/Runnable;
 
 
 # direct methods
-.method protected constructor <init>(Llbd;Lkzc;)V
+.method public constructor <init>(Llbi;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Llbk;->b:Llbd;
+    iput-object p1, p0, Llbk;->c:Llbi;
 
-    iput-object p2, p0, Llbk;->a:Lkzc;
+    new-instance p1, Ljava/lang/Object;
 
-    invoke-interface {p1}, Llbd;->g()Z
+    invoke-direct {p1}, Ljava/lang/Object;-><init>()V
 
-    move-result p1
+    iput-object p1, p0, Llbk;->a:Ljava/lang/Object;
 
-    if-eqz p1, :cond_0
+    new-instance p1, Llbj;
 
-    invoke-static {p2}, Llpm;->i(Lkzc;)Ljava/lang/Object;
+    invoke-direct {p1, p0}, Llbj;-><init>(Llbk;)V
 
-    move-result-object p1
-
-    if-nez p1, :cond_0
-
-    const-string p1, "GLContextObject"
-
-    const-string p2, "Creating non-ready GL object on GL thread. This will likely cause a deadlock."
-
-    invoke-static {p1, p2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
-
-    :cond_0
-    sget-boolean p1, Llat;->a:Z
+    iput-object p1, p0, Llbk;->d:Ljava/lang/Runnable;
 
     return-void
-.end method
-
-.method public static d(Llbd;Ljava/util/concurrent/Callable;)Lkzc;
-    .locals 1
-
-    invoke-interface {p0}, Llbd;->g()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    :try_start_0
-    invoke-interface {p1}, Ljava/util/concurrent/Callable;->call()Ljava/lang/Object;
-
-    move-result-object p0
-
-    invoke-static {p0}, Llpm;->f(Ljava/lang/Object;)Lkzc;
-
-    move-result-object p0
-    :try_end_0
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
-
-    return-object p0
-
-    :catch_0
-    move-exception p0
-
-    invoke-static {p0}, Lkzd;->a(Ljava/lang/Throwable;)Lkzd;
-
-    move-result-object p0
-
-    invoke-static {p0}, Lnsy;->A(Ljava/lang/Throwable;)Lnou;
-
-    move-result-object p0
-
-    invoke-static {p0}, Llpm;->d(Lnou;)Lkzc;
-
-    move-result-object p0
-
-    return-object p0
-
-    :cond_0
-    invoke-static {p0, p1}, Llpm;->e(Ljava/util/concurrent/Executor;Ljava/util/concurrent/Callable;)Lkzc;
-
-    move-result-object p0
-
-    return-object p0
 .end method
 
 
 # virtual methods
-.method public a()Lkzf;
+.method public final a()V
     .locals 2
 
-    sget-boolean v0, Llat;->a:Z
+    iget-object v0, p0, Llbk;->a:Ljava/lang/Object;
 
-    sget-object v0, Lfrj;->e:Lfrj;
+    monitor-enter v0
 
-    new-instance v1, Lkyf;
+    const/4 v1, 0x0
 
-    invoke-direct {v1}, Lkyf;-><init>()V
+    :try_start_0
+    iput-object v1, p0, Llbk;->b:Ljava/lang/Runnable;
 
-    invoke-virtual {p0, v0, v1}, Llbk;->e(Llcj;Lkye;)Lkzc;
+    iget-object v1, p0, Llbk;->c:Llbi;
 
-    move-result-object v0
+    invoke-virtual {v1}, Llbi;->b()V
 
-    invoke-static {v0}, Lkzf;->j(Lkzc;)Lkzf;
+    monitor-exit v0
 
-    move-result-object v0
+    return-void
 
-    return-object v0
+    :catchall_0
+    move-exception v1
+
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw v1
 .end method
 
-.method public final c()Llcv;
+.method public final b(Ljava/lang/Runnable;)V
     .locals 2
 
-    iget-object v0, p0, Llbk;->b:Llbd;
+    iget-object v0, p0, Llbk;->a:Ljava/lang/Object;
 
-    invoke-interface {v0}, Llbd;->g()Z
+    monitor-enter v0
 
-    move-result v0
+    :try_start_0
+    iput-object p1, p0, Llbk;->b:Ljava/lang/Runnable;
 
-    if-eqz v0, :cond_0
+    iget-object p1, p0, Llbk;->c:Llbi;
 
-    invoke-virtual {p0}, Llbk;->f()Llcv;
+    iget-object v1, p0, Llbk;->d:Ljava/lang/Runnable;
 
-    move-result-object v0
+    invoke-virtual {p1, v1}, Llbi;->execute(Ljava/lang/Runnable;)V
 
-    return-object v0
+    monitor-exit v0
 
-    :cond_0
-    new-instance v0, Ljava/lang/IllegalStateException;
+    return-void
 
-    const-string v1, "raw should only be called from the GLContext thread"
+    :catchall_0
+    move-exception p1
 
-    invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    throw v0
+    throw p1
 .end method
 
 .method public final close()V
-    .locals 1
-
-    invoke-virtual {p0}, Llbk;->a()Lkzf;
-
-    move-result-object v0
-
-    invoke-static {v0}, Llpm;->j(Lkzc;)Ljava/lang/Object;
-
-    return-void
-.end method
-
-.method public final e(Llcj;Lkye;)Lkzc;
     .locals 2
 
-    iget-object v0, p0, Llbk;->b:Llbd;
+    iget-object v0, p0, Llbk;->a:Ljava/lang/Object;
 
-    new-instance v1, Llbj;
+    monitor-enter v0
 
-    invoke-direct {v1, p0, p2, p1}, Llbj;-><init>(Llbk;Lkye;Llcj;)V
+    :try_start_0
+    iget-object v1, p0, Llbk;->b:Ljava/lang/Runnable;
 
-    invoke-static {v0, v1}, Llbk;->d(Llbd;Ljava/util/concurrent/Callable;)Lkzc;
+    if-eqz v1, :cond_0
 
-    move-result-object p1
+    const/4 v1, 0x0
 
-    return-object p1
-.end method
-
-.method public final f()Llcv;
-    .locals 2
-
-    iget-object v0, p0, Llbk;->b:Llbd;
-
-    invoke-interface {v0}, Llbd;->g()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_1
-
-    iget-object v0, p0, Llbk;->a:Lkzc;
-
-    invoke-static {v0}, Llpm;->i(Lkzc;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Llcv;
-
-    if-eqz v0, :cond_0
-
-    return-object v0
+    iput-object v1, p0, Llbk;->b:Ljava/lang/Runnable;
 
     :cond_0
-    new-instance v0, Ljava/lang/RuntimeException;
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    const-string v1, "Waiting for incomplete GL object while on GL thread. This deadlocks the process."
+    iget-object v0, p0, Llbk;->c:Llbi;
 
-    invoke-direct {v0, v1}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v0}, Llbi;->close()V
 
-    throw v0
+    return-void
 
-    :cond_1
-    iget-object v0, p0, Llbk;->a:Lkzc;
+    :catchall_0
+    move-exception v1
 
-    invoke-static {v0}, Llpm;->j(Lkzc;)Ljava/lang/Object;
+    :try_start_1
+    monitor-exit v0
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    move-result-object v0
-
-    check-cast v0, Llcv;
-
-    return-object v0
+    throw v1
 .end method

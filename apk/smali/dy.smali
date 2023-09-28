@@ -1,143 +1,146 @@
-.class public abstract Ldy;
+.class public final Ldy;
 .super Ljava/lang/Object;
 
 
+# instance fields
+.field public final a:Landroid/graphics/Shader;
+
+.field public b:I
+
+.field private final c:Landroid/content/res/ColorStateList;
+
+
 # direct methods
-.method public constructor <init>()V
+.method public constructor <init>(Landroid/graphics/Shader;Landroid/content/res/ColorStateList;I)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    iput-object p1, p0, Ldy;->a:Landroid/graphics/Shader;
+
+    iput-object p2, p0, Ldy;->c:Landroid/content/res/ColorStateList;
+
+    iput p3, p0, Ldy;->b:I
+
     return-void
+.end method
+
+.method public static a(I)Ldy;
+    .locals 2
+
+    new-instance v0, Ldy;
+
+    const/4 v1, 0x0
+
+    invoke-direct {v0, v1, v1, p0}, Ldy;-><init>(Landroid/graphics/Shader;Landroid/content/res/ColorStateList;I)V
+
+    return-object v0
 .end method
 
 
 # virtual methods
-.method public abstract a()I
-.end method
-
-.method public b()Landroid/content/Context;
+.method public final b()Z
     .locals 1
 
-    const/4 v0, 0x0
+    iget-object v0, p0, Ldy;->a:Landroid/graphics/Shader;
 
-    throw v0
-.end method
+    if-eqz v0, :cond_0
 
-.method public c(Lfw;)Lfx;
-    .locals 0
+    const/4 v0, 0x1
 
-    const/4 p1, 0x0
+    return v0
 
-    return-object p1
-.end method
-
-.method public d(Z)V
-    .locals 0
-
-    const/4 p1, 0x0
-
-    throw p1
-.end method
-
-.method public e()V
-    .locals 0
-
-    return-void
-.end method
-
-.method public f(Z)V
-    .locals 0
-
-    const/4 p1, 0x0
-
-    throw p1
-.end method
-
-.method public abstract g(Z)V
-.end method
-
-.method public h(Z)V
-    .locals 0
-
-    const/4 p1, 0x0
-
-    throw p1
-.end method
-
-.method public abstract i(Ljava/lang/CharSequence;)V
-.end method
-
-.method public j(Ljava/lang/CharSequence;)V
-    .locals 0
-
-    const/4 p1, 0x0
-
-    throw p1
-.end method
-
-.method public k()Z
-    .locals 1
-
+    :cond_0
     const/4 v0, 0x0
 
     return v0
 .end method
 
-.method public l()Z
+.method public final c()Z
     .locals 1
 
-    const/4 v0, 0x0
+    iget-object v0, p0, Ldy;->a:Landroid/graphics/Shader;
 
-    throw v0
-.end method
+    if-nez v0, :cond_0
 
-.method public m()Z
-    .locals 1
+    iget-object v0, p0, Ldy;->c:Landroid/content/res/ColorStateList;
 
+    if-eqz v0, :cond_0
+
+    invoke-virtual {v0}, Landroid/content/res/ColorStateList;->isStateful()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    const/4 v0, 0x1
+
+    return v0
+
+    :cond_0
     const/4 v0, 0x0
 
     return v0
 .end method
 
-.method public n(ILandroid/view/KeyEvent;)Z
-    .locals 0
+.method public final d([I)Z
+    .locals 2
 
-    const/4 p1, 0x0
+    invoke-virtual {p0}, Ldy;->c()Z
 
-    throw p1
-.end method
+    move-result v0
 
-.method public o(Landroid/view/KeyEvent;)Z
-    .locals 0
+    if-eqz v0, :cond_0
 
+    iget-object v0, p0, Ldy;->c:Landroid/content/res/ColorStateList;
+
+    invoke-virtual {v0}, Landroid/content/res/ColorStateList;->getDefaultColor()I
+
+    move-result v1
+
+    invoke-virtual {v0, p1, v1}, Landroid/content/res/ColorStateList;->getColorForState([II)I
+
+    move-result p1
+
+    iget v0, p0, Ldy;->b:I
+
+    if-eq p1, v0, :cond_0
+
+    iput p1, p0, Ldy;->b:I
+
+    const/4 p1, 0x1
+
+    return p1
+
+    :cond_0
     const/4 p1, 0x0
 
     return p1
 .end method
 
-.method public p()Z
+.method public final e()Z
     .locals 1
 
+    invoke-virtual {p0}, Ldy;->b()Z
+
+    move-result v0
+
+    if-nez v0, :cond_1
+
+    iget v0, p0, Ldy;->b:I
+
+    if-eqz v0, :cond_0
+
+    goto :goto_0
+
+    :cond_0
     const/4 v0, 0x0
 
     return v0
-.end method
 
-.method public q()V
-    .locals 0
+    :cond_1
+    :goto_0
+    const/4 v0, 0x1
 
-    return-void
-.end method
-
-.method public abstract r()V
-.end method
-
-.method public abstract s()V
-.end method
-
-.method public abstract t()V
-.end method
-
-.method public abstract u()V
+    return v0
 .end method

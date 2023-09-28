@@ -1,172 +1,88 @@
-.class public final synthetic Lfej;
-.super Ljava/lang/Object;
-
-# interfaces
-.implements Lmqs;
+.class public final Lfej;
+.super Lfcr;
 
 
 # instance fields
-.field public final synthetic a:J
-
-.field private final synthetic b:I
+.field private e:I
 
 
 # direct methods
-.method public synthetic constructor <init>(JI)V
-    .locals 0
+.method public constructor <init>()V
+    .locals 2
 
-    iput p3, p0, Lfej;->b:I
+    invoke-direct {p0}, Lfcr;-><init>()V
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const/4 v0, 0x0
 
-    iput-wide p1, p0, Lfej;->a:J
+    iput v0, p0, Lfej;->e:I
+
+    const-string v0, "uniform mat4 uMvpMatrix;                   \nattribute vec4 aPosition;                   \nattribute vec2 aTextureCoord;               \nvarying vec2 vTexCoord;                     \nvoid main()                                 \n{                                           \n   gl_Position = uMvpMatrix * aPosition;    \n   vTexCoord = aTextureCoord;               \n}                                           \n"
+
+    const-string v1, "precision highp float;                            \nuniform float uAlphaFactor;                         \nvarying vec2 vTexCoord;                             \nuniform sampler2D sTexture;                         \nvoid main()                                         \n{                                                   \n  vec4 texcolor;                                    \n  texcolor = texture2D( sTexture, vTexCoord );      \n  texcolor.a = uAlphaFactor;                        \n  gl_FragColor = texcolor;                          \n}                                                   \n"
+
+    invoke-static {v0, v1}, Lfej;->a(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v0
+
+    iput v0, p0, Lfej;->d:I
+
+    const-string v1, "aPosition"
+
+    invoke-static {v0, v1}, Lfej;->h(ILjava/lang/String;)I
+
+    move-result v0
+
+    iput v0, p0, Lfej;->a:I
+
+    iget v0, p0, Lfej;->d:I
+
+    const-string v1, "aTextureCoord"
+
+    invoke-static {v0, v1}, Lfej;->h(ILjava/lang/String;)I
+
+    move-result v0
+
+    iput v0, p0, Lfej;->b:I
+
+    iget v0, p0, Lfej;->d:I
+
+    const-string v1, "uMvpMatrix"
+
+    invoke-static {v0, v1}, Lfej;->i(ILjava/lang/String;)I
+
+    move-result v0
+
+    iput v0, p0, Lfej;->c:I
+
+    iget v0, p0, Lfej;->d:I
+
+    const-string v1, "uAlphaFactor"
+
+    invoke-static {v0, v1}, Lfej;->i(ILjava/lang/String;)I
+
+    move-result v0
+
+    iput v0, p0, Lfej;->e:I
+
+    invoke-virtual {p0}, Lfcr;->c()V
+
+    iget v0, p0, Lfej;->e:I
+
+    const v1, 0x3f666666    # 0.9f
+
+    invoke-static {v0, v1}, Landroid/opengl/GLES20;->glUniform1f(IF)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Ljava/lang/Object;)Z
-    .locals 8
+.method public final j(F)V
+    .locals 1
 
-    iget v0, p0, Lfej;->b:I
+    iget v0, p0, Lfej;->e:I
 
-    const/4 v1, 0x1
+    invoke-static {v0, p1}, Landroid/opengl/GLES20;->glUniform1f(IF)V
 
-    const/4 v2, 0x0
-
-    packed-switch v0, :pswitch_data_0
-
-    iget-wide v3, p0, Lfej;->a:J
-
-    check-cast p1, Lkhr;
-
-    invoke-virtual {p1}, Lkhr;->b()Lkeg;
-
-    move-result-object p1
-
-    if-eqz p1, :cond_5
-
-    iget-wide v5, p1, Lkeg;->b:J
-
-    cmp-long p1, v5, v3
-
-    if-nez p1, :cond_5
-
-    return v1
-
-    :pswitch_0
-    iget-wide v3, p0, Lfej;->a:J
-
-    check-cast p1, Lkhr;
-
-    invoke-virtual {p1}, Lkhr;->b()Lkeg;
-
-    move-result-object p1
-
-    if-eqz p1, :cond_0
-
-    iget-wide v5, p1, Lkeg;->b:J
-
-    cmp-long p1, v5, v3
-
-    if-nez p1, :cond_0
-
-    return v1
-
-    :cond_0
-    return v2
-
-    :pswitch_1
-    iget-wide v3, p0, Lfej;->a:J
-
-    check-cast p1, Lkhr;
-
-    invoke-virtual {p1}, Lkhr;->b()Lkeg;
-
-    move-result-object v0
-
-    invoke-virtual {p1}, Lkhr;->f()Z
-
-    move-result v5
-
-    if-eqz v5, :cond_4
-
-    if-eqz v0, :cond_3
-
-    iget-wide v5, v0, Lkeg;->b:J
-
-    cmp-long v7, v5, v3
-
-    if-gtz v7, :cond_1
-
-    const/4 v1, 0x0
-
-    goto :goto_0
-
-    :cond_1
-    invoke-virtual {p1}, Lkhr;->a()Lkeb;
-
-    move-result-object p1
-
-    if-nez p1, :cond_2
-
-    :try_start_0
-    sget-object p1, Lfen;->a:Lnak;
-
-    invoke-virtual {p1}, Lnaf;->c()Lnaz;
-
-    move-result-object p1
-
-    check-cast p1, Lnah;
-
-    const/16 v1, 0x870
-
-    invoke-interface {p1, v1}, Lnah;->G(I)Lnaz;
-
-    move-result-object p1
-
-    check-cast p1, Lnah;
-
-    const-string v1, "The frame at %d is null!"
-
-    iget-wide v3, v0, Lkeg;->b:J
-
-    invoke-interface {p1, v1, v3, v4}, Lnah;->q(Ljava/lang/String;J)V
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    const/4 v1, 0x0
-
-    goto :goto_0
-
-    :catchall_0
-    move-exception p1
-
-    throw p1
-
-    :cond_2
-    invoke-interface {p1}, Lkeb;->close()V
-
-    goto :goto_0
-
-    :cond_3
-    const/4 v1, 0x0
-
-    goto :goto_0
-
-    :cond_4
-    const/4 v1, 0x0
-
-    :goto_0
-    return v1
-
-    :cond_5
-    return v2
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
+    return-void
 .end method

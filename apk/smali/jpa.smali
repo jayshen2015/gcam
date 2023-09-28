@@ -1,191 +1,115 @@
 .class public final Ljpa;
-.super Ljhn;
+.super Ljava/lang/Object;
 
-
-# static fields
-.field public static final CREATOR:Landroid/os/Parcelable$Creator;
+# interfaces
+.implements Ljfi;
 
 
 # instance fields
-.field public final a:Z
-
-.field public final b:Z
-
-.field private final c:Ljava/util/List;
+.field final synthetic a:Lcom/google/android/apps/camera/ui/views/ViewfinderCover;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 3
+.method public constructor <init>(Lcom/google/android/apps/camera/ui/views/ViewfinderCover;)V
+    .locals 0
 
-    new-instance v0, Ljpa;
+    iput-object p1, p0, Ljpa;->a:Lcom/google/android/apps/camera/ui/views/ViewfinderCover;
 
-    const/4 v1, 0x0
-
-    const/4 v2, 0x0
-
-    invoke-direct {v0, v1, v2, v2}, Ljpa;-><init>(Ljava/util/List;ZZ)V
-
-    new-instance v0, Ljnd;
-
-    const/16 v1, 0xf
-
-    invoke-direct {v0, v1}, Ljnd;-><init>(I)V
-
-    sput-object v0, Ljpa;->CREATOR:Landroid/os/Parcelable$Creator;
-
-    return-void
-.end method
-
-.method public constructor <init>(Ljava/util/List;ZZ)V
-    .locals 1
-
-    invoke-direct {p0}, Ljhn;-><init>()V
-
-    if-nez p1, :cond_0
-
-    new-instance p1, Ljava/util/ArrayList;
-
-    const/4 v0, 0x0
-
-    invoke-direct {p1, v0}, Ljava/util/ArrayList;-><init>(I)V
-
-    goto :goto_0
-
-    :cond_0
-    new-instance v0, Ljava/util/ArrayList;
-
-    invoke-direct {v0, p1}, Ljava/util/ArrayList;-><init>(Ljava/util/Collection;)V
-
-    move-object p1, v0
-
-    :goto_0
-    iput-object p1, p0, Ljpa;->c:Ljava/util/List;
-
-    iput-boolean p2, p0, Ljpa;->a:Z
-
-    iput-boolean p3, p0, Ljpa;->b:Z
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 4
+.method public final b()Lojc;
+    .locals 1
 
-    const/4 v0, 0x1
+    iget-object v0, p0, Ljpa;->a:Lcom/google/android/apps/camera/ui/views/ViewfinderCover;
 
-    if-ne p1, p0, :cond_0
+    invoke-virtual {v0}, Lcom/google/android/apps/camera/ui/views/ViewfinderCover;->b()Lojc;
 
-    return v0
+    move-result-object v0
 
-    :cond_0
-    instance-of v1, p1, Ljpa;
-
-    const/4 v2, 0x0
-
-    if-nez v1, :cond_1
-
-    return v2
-
-    :cond_1
-    check-cast p1, Ljpa;
-
-    iget-object v1, p0, Ljpa;->c:Ljava/util/List;
-
-    iget-object v3, p1, Ljpa;->c:Ljava/util/List;
-
-    invoke-static {v1, v3}, Ljhp;->af(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_2
-
-    iget-boolean v1, p0, Ljpa;->a:Z
-
-    invoke-static {v1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
-
-    move-result-object v1
-
-    iget-boolean p1, p1, Ljpa;->a:Z
-
-    invoke-static {p1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
-
-    move-result-object p1
-
-    invoke-static {v1, p1}, Ljhp;->af(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result p1
-
-    if-eqz p1, :cond_2
-
-    return v0
-
-    :cond_2
-    return v2
+    return-object v0
 .end method
 
-.method public final hashCode()I
-    .locals 3
+.method public final c()Lojc;
+    .locals 1
 
-    const/4 v0, 0x2
+    iget-object v0, p0, Ljpa;->a:Lcom/google/android/apps/camera/ui/views/ViewfinderCover;
 
-    new-array v0, v0, [Ljava/lang/Object;
+    invoke-virtual {v0}, Lcom/google/android/apps/camera/ui/views/ViewfinderCover;->c()Lojc;
 
-    const/4 v1, 0x0
+    move-result-object v0
 
-    iget-object v2, p0, Ljpa;->c:Ljava/util/List;
-
-    aput-object v2, v0, v1
-
-    iget-boolean v1, p0, Ljpa;->a:Z
-
-    invoke-static {v1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
-
-    move-result-object v1
-
-    const/4 v2, 0x1
-
-    aput-object v1, v0, v2
-
-    invoke-static {v0}, Ljava/util/Arrays;->hashCode([Ljava/lang/Object;)I
-
-    move-result v0
-
-    return v0
+    return-object v0
 .end method
 
-.method public final writeToParcel(Landroid/os/Parcel;I)V
-    .locals 2
+.method public final d(Z)V
+    .locals 1
 
-    invoke-static {p1}, Ljhp;->a(Landroid/os/Parcel;)I
+    iget-object p1, p0, Ljpa;->a:Lcom/google/android/apps/camera/ui/views/ViewfinderCover;
 
-    move-result p2
+    iget-object v0, p1, Lcom/google/android/apps/camera/ui/views/ViewfinderCover;->e:Landroid/widget/ImageView;
 
-    new-instance v0, Ljava/util/ArrayList;
+    iget-object p1, p1, Lcom/google/android/apps/camera/ui/views/ViewfinderCover;->f:Landroid/graphics/drawable/AnimatedVectorDrawable;
 
-    iget-object v1, p0, Ljpa;->c:Ljava/util/List;
+    invoke-virtual {v0, p1}, Landroid/widget/ImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    invoke-direct {v0, v1}, Ljava/util/ArrayList;-><init>(Ljava/util/Collection;)V
+    iget-object p1, p0, Ljpa;->a:Lcom/google/android/apps/camera/ui/views/ViewfinderCover;
 
-    const/4 v1, 0x1
+    iget-object p1, p1, Lcom/google/android/apps/camera/ui/views/ViewfinderCover;->i:Ljfj;
 
-    invoke-static {p1, v1, v0}, Ljhp;->t(Landroid/os/Parcel;ILjava/util/List;)V
+    invoke-virtual {p1}, Ljfj;->m()V
 
-    iget-boolean v0, p0, Ljpa;->a:Z
+    iget-object p1, p0, Ljpa;->a:Lcom/google/android/apps/camera/ui/views/ViewfinderCover;
 
-    const/4 v1, 0x2
+    iget-object p1, p1, Lcom/google/android/apps/camera/ui/views/ViewfinderCover;->f:Landroid/graphics/drawable/AnimatedVectorDrawable;
 
-    invoke-static {p1, v1, v0}, Ljhp;->d(Landroid/os/Parcel;IZ)V
-
-    iget-boolean v0, p0, Ljpa;->b:Z
-
-    const/4 v1, 0x3
-
-    invoke-static {p1, v1, v0}, Ljhp;->d(Landroid/os/Parcel;IZ)V
-
-    invoke-static {p1, p2}, Ljhp;->c(Landroid/os/Parcel;I)V
+    invoke-virtual {p1}, Landroid/graphics/drawable/AnimatedVectorDrawable;->start()V
 
     return-void
+.end method
+
+.method public final e()V
+    .locals 1
+
+    iget-object v0, p0, Ljpa;->a:Lcom/google/android/apps/camera/ui/views/ViewfinderCover;
+
+    invoke-virtual {v0}, Lcom/google/android/apps/camera/ui/views/ViewfinderCover;->e()V
+
+    return-void
+.end method
+
+.method public final f()V
+    .locals 1
+
+    iget-object v0, p0, Ljpa;->a:Lcom/google/android/apps/camera/ui/views/ViewfinderCover;
+
+    invoke-virtual {v0}, Lcom/google/android/apps/camera/ui/views/ViewfinderCover;->f()V
+
+    return-void
+.end method
+
+.method public final g(Ljrl;)V
+    .locals 0
+
+    return-void
+.end method
+
+.method public final h()Z
+    .locals 1
+
+    const/4 v0, 0x0
+
+    throw v0
+.end method
+
+.method public final i()Z
+    .locals 1
+
+    const/4 v0, 0x0
+
+    return v0
 .end method

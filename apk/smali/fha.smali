@@ -1,40 +1,54 @@
-.class public final Lfha;
+.class public final synthetic Lfha;
 .super Ljava/lang/Object;
+
+# interfaces
+.implements Lj$/util/function/Consumer;
 
 
 # instance fields
-.field public final a:J
-
-.field public final b:F
-
-.field public final c:F
+.field public final synthetic a:Landroid/content/res/Configuration;
 
 
 # direct methods
-.method public constructor <init>(FFJ)V
+.method public synthetic constructor <init>(Landroid/content/res/Configuration;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput p1, p0, Lfha;->c:F
-
-    iput p2, p0, Lfha;->b:F
-
-    iput-wide p3, p0, Lfha;->a:J
+    iput-object p1, p0, Lfha;->a:Landroid/content/res/Configuration;
 
     return-void
 .end method
 
-.method public constructor <init>(JFF)V
+
+# virtual methods
+.method public final accept(Ljava/lang/Object;)V
+    .locals 2
+
+    iget-object v0, p0, Lfha;->a:Landroid/content/res/Configuration;
+
+    check-cast p1, Lfik;
+
+    sget v1, Lfhv;->k:I
+
+    instance-of v1, p1, Lfgm;
+
+    if-eqz v1, :cond_0
+
+    check-cast p1, Lfgm;
+
+    invoke-interface {p1, v0}, Lfgm;->y(Landroid/content/res/Configuration;)V
+
+    :cond_0
+    return-void
+.end method
+
+.method public final synthetic andThen(Lj$/util/function/Consumer;)Lj$/util/function/Consumer;
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-static {p0, p1}, Lj$/util/function/Consumer$-CC;->$default$andThen(Lj$/util/function/Consumer;Lj$/util/function/Consumer;)Lj$/util/function/Consumer;
 
-    iput-wide p1, p0, Lfha;->a:J
+    move-result-object p1
 
-    iput p3, p0, Lfha;->b:F
-
-    iput p4, p0, Lfha;->c:F
-
-    return-void
+    return-object p1
 .end method

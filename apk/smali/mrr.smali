@@ -1,38 +1,33 @@
-.class public final Lmrr;
-.super Ljava/lang/RuntimeException;
+.class public final synthetic Lmrr;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Ljava/lang/Runnable;
+
+
+# instance fields
+.field public final synthetic a:Lmrp;
 
 
 # direct methods
-.method public constructor <init>()V
+.method public synthetic constructor <init>(Lmrp;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/RuntimeException;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lmrr;->a:Lmrp;
 
     return-void
 .end method
 
-.method public constructor <init>(Ljava/lang/String;)V
-    .locals 0
 
-    invoke-direct {p0, p1}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
+# virtual methods
+.method public final run()V
+    .locals 1
 
-    return-void
-.end method
+    iget-object v0, p0, Lmrr;->a:Lmrp;
 
-.method public constructor <init>(Ljava/lang/Throwable;)V
-    .locals 0
-
-    invoke-direct {p0, p1}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/Throwable;)V
-
-    return-void
-.end method
-
-.method public constructor <init>(Ljava/lang/Throwable;[B)V
-    .locals 0
-
-    const-string p2, "Initialize library failed."
-
-    invoke-direct {p0, p2, p1}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
+    invoke-interface {v0}, Lmrp;->c()V
 
     return-void
 .end method

@@ -1,256 +1,174 @@
 .class public final Lmnm;
 .super Ljava/lang/Object;
 
-# interfaces
-.implements Ljava/lang/Runnable;
-.implements Lmnu;
-
 
 # instance fields
-.field private a:Lmnt;
+.field public final a:Lmoa;
 
-.field private b:Lmnt;
+.field public final b:[Ljava/lang/Object;
 
-.field private final c:Z
+.field public final c:[Lmnc;
 
-.field private d:Z
+.field public volatile d:Z
 
-.field private e:Z
-
-.field private f:Z
+.field private final e:Ljava/util/concurrent/atomic/AtomicInteger;
 
 
 # direct methods
-.method public constructor <init>(Lmnt;Z)V
-    .locals 1
+.method public constructor <init>(Ljava/lang/Iterable;)V
+    .locals 5
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    invoke-static {}, Lmoa;->i()Lmoa;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lmnm;->a:Lmoa;
+
     const/4 v0, 0x0
-
-    iput-boolean v0, p0, Lmnm;->f:Z
-
-    iput-object p1, p0, Lmnm;->a:Lmnt;
-
-    iput-object p1, p0, Lmnm;->b:Lmnt;
-
-    const/4 p1, 0x0
-
-    invoke-static {p1}, Llho;->l(Ljava/lang/Thread;)Z
-
-    move-result p1
-
-    iput-boolean p1, p0, Lmnm;->c:Z
-
-    iput-boolean p2, p0, Lmnm;->f:Z
-
-    return-void
-.end method
-
-.method private final b()V
-    .locals 1
-
-    const/4 v0, 0x1
 
     iput-boolean v0, p0, Lmnm;->d:Z
 
-    iget-boolean v0, p0, Lmnm;->c:Z
+    invoke-static {p1}, Lohh;->q(Ljava/lang/Iterable;)I
 
-    if-eqz v0, :cond_0
+    move-result v1
 
-    iget-boolean v0, p0, Lmnm;->e:Z
+    new-array v2, v1, [Ljava/lang/Object;
 
-    if-nez v0, :cond_0
+    iput-object v2, p0, Lmnm;->b:[Ljava/lang/Object;
 
-    invoke-static {}, Llho;->k()Z
+    new-array v2, v1, [Lmnc;
+
+    iput-object v2, p0, Lmnm;->c:[Lmnc;
+
+    new-instance v2, Ljava/util/concurrent/atomic/AtomicInteger;
+
+    invoke-direct {v2, v1}, Ljava/util/concurrent/atomic/AtomicInteger;-><init>(I)V
+
+    iput-object v2, p0, Lmnm;->e:Ljava/util/concurrent/atomic/AtomicInteger;
+
+    invoke-interface {p1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
+
+    move-result-object p1
+
+    :goto_0
+    invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Lmnb;
+
+    sget-object v2, Lpgr;->a:Lpgr;
+
+    new-instance v3, Lmnk;
+
+    invoke-direct {v3, p0, v0}, Lmnk;-><init>(Lmnm;I)V
+
+    new-instance v4, Lmnl;
+
+    invoke-direct {v4, p0, v0}, Lmnl;-><init>(Lmnm;I)V
+
+    invoke-interface {v1, v2, v3, v4}, Lmnb;->c(Ljava/util/concurrent/Executor;Lmlu;Lmlu;)Lmnb;
+
+    move-result-object v1
+
+    sget-object v2, Lmmg;->a:Lmmg;
+
+    invoke-interface {v1, v2}, Lmnb;->h(Lmmg;)V
+
+    add-int/lit8 v0, v0, 0x1
+
+    goto :goto_0
 
     :cond_0
-    const/4 v0, 0x0
-
-    iput-object v0, p0, Lmnm;->a:Lmnt;
-
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Lnou;)V
-    .locals 1
+.method public final a()V
+    .locals 5
+
+    iget-object v0, p0, Lmnm;->e:Ljava/util/concurrent/atomic/AtomicInteger;
+
+    invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicInteger;->decrementAndGet()I
+
+    move-result v0
+
+    if-nez v0, :cond_4
 
     iget-boolean v0, p0, Lmnm;->d:Z
 
-    if-nez v0, :cond_1
+    if-eqz v0, :cond_3
 
-    iget-boolean v0, p0, Lmnm;->e:Z
+    iget-object v0, p0, Lmnm;->c:[Lmnc;
 
-    if-nez v0, :cond_0
+    array-length v1, v0
 
-    const/4 v0, 0x1
+    const/4 v2, 0x0
 
-    iput-boolean v0, p0, Lmnm;->e:Z
+    const/4 v3, 0x0
 
-    sget-object v0, Lnnv;->a:Lnnv;
+    :goto_0
+    if-ge v3, v1, :cond_1
 
-    invoke-interface {p1, p0, v0}, Lnou;->d(Ljava/lang/Runnable;Ljava/util/concurrent/Executor;)V
+    aget-object v4, v0, v3
 
-    return-void
+    if-eqz v4, :cond_0
+
+    if-nez v2, :cond_0
+
+    move-object v2, v4
 
     :cond_0
-    new-instance p1, Ljava/lang/IllegalStateException;
-
-    const-string v0, "Signal is already attached to future"
-
-    invoke-direct {p1, v0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw p1
-
-    :cond_1
-    new-instance p1, Ljava/lang/IllegalStateException;
-
-    const-string v0, "Span was already closed. Did you attach it to a future after calling Tracer.endSpan()?"
-
-    invoke-direct {p1, v0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw p1
-.end method
-
-.method public final close()V
-    .locals 8
-
-    iget-object v0, p0, Lmnm;->b:Lmnt;
-
-    const/4 v1, 0x0
-
-    :try_start_0
-    iput-object v1, p0, Lmnm;->b:Lmnt;
-
-    iget-boolean v1, p0, Lmnm;->e:Z
-
-    if-eqz v1, :cond_0
+    add-int/lit8 v3, v3, 0x1
 
     goto :goto_0
 
-    :cond_0
-    iget-boolean v1, p0, Lmnm;->d:Z
-
-    if-nez v1, :cond_3
-
-    invoke-direct {p0}, Lmnm;->b()V
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    :goto_0
-    if-eqz v0, :cond_1
-
-    invoke-interface {v0}, Lmnt;->close()V
-
     :cond_1
-    iget-boolean v0, p0, Lmnm;->f:Z
+    if-eqz v2, :cond_2
 
-    if-eqz v0, :cond_2
+    iget-object v0, p0, Lmnm;->a:Lmoa;
 
-    sget-object v0, Lmnl;->a:Lmnl;
+    invoke-virtual {v0, v2}, Lmoa;->l(Lmnc;)V
 
-    sget-object v1, Lmoc;->b:Ljava/lang/ThreadLocal;
+    return-void
 
-    invoke-virtual {v1}, Ljava/lang/ThreadLocal;->get()Ljava/lang/Object;
+    :cond_2
+    iget-object v0, p0, Lmnm;->a:Lmoa;
+
+    new-instance v1, Ljava/lang/AssertionError;
+
+    const-string v2, "Result list was marked as having an exception,but no exception was found"
+
+    invoke-direct {v1, v2}, Ljava/lang/AssertionError;-><init>(Ljava/lang/Object;)V
+
+    invoke-static {v1}, Lmnc;->a(Ljava/lang/Throwable;)Lmnc;
 
     move-result-object v1
 
-    check-cast v1, Lmob;
+    invoke-virtual {v0, v1}, Lmoa;->l(Lmnc;)V
 
-    invoke-static {v1, v0}, Lmoc;->c(Lmob;Lmnt;)Lmnt;
-
-    :cond_2
     return-void
 
     :cond_3
-    :try_start_1
-    new-instance v1, Ljava/lang/IllegalStateException;
+    iget-object v0, p0, Lmnm;->a:Lmoa;
 
-    const-string v2, "Span was already closed!"
+    iget-object v1, p0, Lmnm;->b:[Ljava/lang/Object;
 
-    invoke-direct {v1, v2}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+    invoke-static {v1}, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
 
-    throw v1
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+    move-result-object v1
 
-    :catchall_0
-    move-exception v1
-
-    if-eqz v0, :cond_4
-
-    :try_start_2
-    invoke-interface {v0}, Lmnt;->close()V
-    :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_1
-
-    goto :goto_1
-
-    :catchall_1
-    move-exception v0
-
-    :try_start_3
-    const-class v2, Ljava/lang/Throwable;
-
-    const-string v3, "addSuppressed"
-
-    const/4 v4, 0x1
-
-    new-array v5, v4, [Ljava/lang/Class;
-
-    const-class v6, Ljava/lang/Throwable;
-
-    const/4 v7, 0x0
-
-    aput-object v6, v5, v7
-
-    invoke-virtual {v2, v3, v5}, Ljava/lang/Class;->getDeclaredMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
-
-    move-result-object v2
-
-    new-array v3, v4, [Ljava/lang/Object;
-
-    aput-object v0, v3, v7
-
-    invoke-virtual {v2, v1, v3}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
-    :try_end_3
-    .catch Ljava/lang/Exception; {:try_start_3 .. :try_end_3} :catch_0
-
-    goto :goto_1
-
-    :catch_0
-    move-exception v0
+    invoke-virtual {v0, v1}, Lmoa;->k(Ljava/lang/Object;)V
 
     :cond_4
-    :goto_1
-    throw v1
-.end method
-
-.method public final run()V
-    .locals 1
-
-    iget-boolean v0, p0, Lmnm;->d:Z
-
-    if-nez v0, :cond_1
-
-    iget-boolean v0, p0, Lmnm;->e:Z
-
-    if-nez v0, :cond_0
-
-    goto :goto_0
-
-    :cond_0
-    invoke-direct {p0}, Lmnm;->b()V
-
-    return-void
-
-    :cond_1
-    :goto_0
-    sget-object v0, Llbl;->c:Llbl;
-
-    invoke-static {v0}, Llho;->j(Ljava/lang/Runnable;)V
-
     return-void
 .end method

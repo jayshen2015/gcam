@@ -155,54 +155,64 @@
 
     if-eqz v0, :cond_3
 
-    invoke-static {p0}, Ljeq;->c(Landroid/content/Context;)Ljeq;
+    invoke-static {p0}, Lkkg;->c(Landroid/content/Context;)Lkkg;
 
     move-result-object v0
 
-    new-instance v1, Ljby;
+    new-instance v1, Lkhi;
 
     const/16 v2, 0x16
 
     const/4 v3, 0x0
 
-    invoke-direct {v1, v2, v3}, Ljby;-><init>(ILandroid/app/PendingIntent;)V
+    invoke-direct {v1, v2, v3}, Lkhi;-><init>(ILandroid/app/PendingIntent;)V
 
     invoke-virtual {p0}, Lcom/google/android/gms/common/api/GoogleApiActivity;->getIntent()Landroid/content/Intent;
 
     move-result-object v2
 
-    const-string v3, "failing_client_id"
+    const/4 v3, -0x1
 
-    const/4 v5, -0x1
+    const-string v5, "failing_client_id"
 
-    invoke-virtual {v2, v3, v5}, Landroid/content/Intent;->getIntExtra(Ljava/lang/String;I)I
+    invoke-virtual {v2, v5, v3}, Landroid/content/Intent;->getIntExtra(Ljava/lang/String;I)I
 
     move-result v2
 
-    invoke-virtual {v0, v1, v2}, Ljeq;->d(Ljby;I)V
+    invoke-virtual {v0, v1, v2}, Lkkg;->e(Lkhi;I)V
 
     goto :goto_1
 
     :cond_3
-    invoke-virtual {v2}, Ljava/lang/Object;->toString()Ljava/lang/String;
+    invoke-static {v2}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v0
 
-    new-instance v2, Ljava/lang/StringBuilder;
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+    move-result-object v2
 
-    const-string v5, "Activity not found while launching "
+    invoke-virtual {v2}, Ljava/lang/String;->length()I
 
-    invoke-virtual {v2, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result v2
 
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    new-instance v5, Ljava/lang/StringBuilder;
+
+    add-int/lit8 v2, v2, 0x24
+
+    invoke-direct {v5, v2}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string v2, "Activity not found while launching "
+
+    invoke-virtual {v5, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v5, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     const-string v0, "."
 
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v5, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v0
 
@@ -215,6 +225,10 @@
     move-result v2
 
     if-eqz v2, :cond_4
+
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v0
 
     const-string v2, " This may occur when resolving Google Play services connection issues on emulators with Google APIs but not Google Play Store."
 
@@ -233,17 +247,17 @@
     return-void
 
     :cond_5
-    invoke-static {v3}, Ljhp;->ab(Ljava/lang/Object;)V
+    invoke-static {v3}, Lmip;->dk(Ljava/lang/Object;)Ljava/lang/Object;
 
     invoke-virtual {v3}, Ljava/lang/Integer;->intValue()I
 
     move-result v0
 
-    sget-object v1, Ljcd;->a:Ljcd;
+    sget-object v1, Lkhm;->a:Lkhm;
 
     const/4 v2, 0x2
 
-    invoke-virtual {v1, p0, v0, v2, p0}, Ljcd;->c(Landroid/app/Activity;IILandroid/content/DialogInterface$OnCancelListener;)V
+    invoke-virtual {v1, p0, v0, v2, p0}, Lkhm;->d(Landroid/app/Activity;IILandroid/content/DialogInterface$OnCancelListener;)V
 
     iput v4, p0, Lcom/google/android/gms/common/api/GoogleApiActivity;->a:I
 
@@ -279,7 +293,7 @@
 
     if-eqz p1, :cond_1
 
-    invoke-static {p0}, Ljeq;->c(Landroid/content/Context;)Ljeq;
+    invoke-static {p0}, Lkkg;->c(Landroid/content/Context;)Lkkg;
 
     move-result-object p1
 
@@ -288,32 +302,32 @@
     goto :goto_0
 
     :pswitch_0
-    new-instance p2, Ljby;
+    new-instance p2, Lkhi;
 
     const/16 p3, 0xd
 
     const/4 v0, 0x0
 
-    invoke-direct {p2, p3, v0}, Ljby;-><init>(ILandroid/app/PendingIntent;)V
+    invoke-direct {p2, p3, v0}, Lkhi;-><init>(ILandroid/app/PendingIntent;)V
 
     invoke-virtual {p0}, Lcom/google/android/gms/common/api/GoogleApiActivity;->getIntent()Landroid/content/Intent;
 
     move-result-object p3
 
-    const-string v0, "failing_client_id"
+    const/4 v0, -0x1
 
-    const/4 v1, -0x1
+    const-string v1, "failing_client_id"
 
-    invoke-virtual {p3, v0, v1}, Landroid/content/Intent;->getIntExtra(Ljava/lang/String;I)I
+    invoke-virtual {p3, v1, v0}, Landroid/content/Intent;->getIntExtra(Ljava/lang/String;I)I
 
     move-result p3
 
-    invoke-virtual {p1, p2, p3}, Ljeq;->d(Ljby;I)V
+    invoke-virtual {p1, p2, p3}, Lkkg;->e(Lkhi;I)V
 
     goto :goto_0
 
     :pswitch_1
-    invoke-virtual {p1}, Ljeq;->e()V
+    invoke-virtual {p1}, Lkkg;->f()V
 
     goto :goto_0
 
@@ -386,11 +400,11 @@
 .method protected final onSaveInstanceState(Landroid/os/Bundle;)V
     .locals 2
 
-    const-string v0, "resolution"
+    iget v0, p0, Lcom/google/android/gms/common/api/GoogleApiActivity;->a:I
 
-    iget v1, p0, Lcom/google/android/gms/common/api/GoogleApiActivity;->a:I
+    const-string v1, "resolution"
 
-    invoke-virtual {p1, v0, v1}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
+    invoke-virtual {p1, v1, v0}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
 
     invoke-super {p0, p1}, Landroid/app/Activity;->onSaveInstanceState(Landroid/os/Bundle;)V
 

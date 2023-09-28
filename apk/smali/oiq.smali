@@ -1,103 +1,71 @@
 .class public final Loiq;
-.super Ljava/lang/Object;
-
-# interfaces
-.implements Loip;
+.super Loio;
 
 
 # static fields
-.field public static final a:Llqb;
+.field static final a:I
+
+.field public static final b:Loiq;
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 8
+    .locals 1
 
-    sget-object v0, Lmza;->a:Lmza;
+    const/16 v0, 0x1f
 
-    const-string v4, "com.google.android.libraries.performance.primes"
+    invoke-static {v0}, Ljava/lang/Integer;->numberOfLeadingZeros(I)I
 
-    const-string v0, "CLIENT_LOGGING_PROD"
+    move-result v0
 
-    invoke-static {v0}, Lmwn;->H(Ljava/lang/Object;)Lmwn;
+    sput v0, Loiq;->a:I
 
-    move-result-object v5
+    new-instance v0, Loiq;
 
-    :try_start_0
-    const-string v1, "9"
+    invoke-direct {v0}, Loiq;-><init>()V
 
-    const-string v0, "EOgHGAQ"
-
-    const/4 v2, 0x3
-
-    invoke-static {v0, v2}, Landroid/util/Base64;->decode(Ljava/lang/String;I)[B
-
-    move-result-object v0
-
-    sget-object v2, Lozu;->d:Lozu;
-
-    array-length v3, v0
-
-    sget-object v6, Lnwh;->a:Lnwh;
-
-    const/4 v7, 0x0
-
-    invoke-static {v2, v0, v7, v3, v6}, Lnws;->Q(Lnws;[BIILnwh;)Lnws;
-
-    move-result-object v0
-
-    invoke-static {v0}, Lnws;->ae(Lnws;)V
-
-    move-object v2, v0
-
-    check-cast v2, Lozu;
-
-    sget-object v3, Llqd;->r:Llqd;
-
-    const/4 v6, 0x1
-
-    const/4 v7, 0x1
-
-    invoke-static/range {v1 .. v7}, Llqf;->d(Ljava/lang/String;Ljava/lang/Object;Llqe;Ljava/lang/String;Ljava/util/Set;ZZ)Llqb;
-
-    move-result-object v0
-
-    sput-object v0, Loiq;->a:Llqb;
-    :try_end_0
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+    sput-object v0, Loiq;->b:Loiq;
 
     return-void
-
-    :catch_0
-    move-exception v0
-
-    new-instance v1, Ljava/lang/AssertionError;
-
-    invoke-direct {v1, v0}, Ljava/lang/AssertionError;-><init>(Ljava/lang/Object;)V
-
-    throw v1
 .end method
 
 .method public constructor <init>()V
-    .locals 0
+    .locals 1
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const-string v0, "CharMatcher.whitespace()"
+
+    invoke-direct {p0, v0}, Loio;-><init>(Ljava/lang/String;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Landroid/content/Context;)Lozu;
-    .locals 1
+.method public final b(C)Z
+    .locals 2
 
-    sget-object v0, Loiq;->a:Llqb;
+    const v0, 0x6449bf0a
 
-    invoke-virtual {v0, p1}, Llqb;->b(Landroid/content/Context;)Ljava/lang/Object;
+    mul-int v0, v0, p1
 
-    move-result-object p1
+    sget v1, Loiq;->a:I
 
-    check-cast p1, Lozu;
+    ushr-int/2addr v0, v1
 
-    return-object p1
+    const-string v1, "\u2002\u3000\r\u0085\u200a\u2005\u2000\u3000\u2029\u000b\u3000\u2008\u2003\u205f\u3000\u1680\t \u2006\u2001\u202f\u00a0\u000c\u2009\u3000\u2004\u3000\u3000\u2028\n\u2007\u3000"
+
+    invoke-virtual {v1, v0}, Ljava/lang/String;->charAt(I)C
+
+    move-result v0
+
+    if-ne v0, p1, :cond_0
+
+    const/4 p1, 0x1
+
+    return p1
+
+    :cond_0
+    const/4 p1, 0x0
+
+    return p1
 .end method

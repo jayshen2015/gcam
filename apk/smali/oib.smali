@@ -1,103 +1,208 @@
 .class public final Loib;
-.super Ljava/lang/Object;
+.super Lppd;
 
 # interfaces
-.implements Loia;
+.implements Lpqn;
 
 
 # static fields
-.field public static final a:Llqb;
+.field public static final h:Loib;
+
+.field private static volatile i:Lpqs;
+
+
+# instance fields
+.field public a:I
+
+.field public b:Z
+
+.field public c:I
+
+.field public d:I
+
+.field public e:Z
+
+.field public f:Lppj;
+
+.field public g:F
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 8
+    .locals 2
 
-    sget-object v0, Lmza;->a:Lmza;
+    new-instance v0, Loib;
 
-    const-string v4, "com.google.android.libraries.performance.primes"
+    invoke-direct {v0}, Loib;-><init>()V
 
-    const-string v0, "CLIENT_LOGGING_PROD"
+    sput-object v0, Loib;->h:Loib;
 
-    invoke-static {v0}, Lmwn;->H(Ljava/lang/Object;)Lmwn;
+    const-class v1, Loib;
 
-    move-result-object v5
-
-    :try_start_0
-    const-string v1, "8"
-
-    const-string v0, "EOgHGAQ"
-
-    const/4 v2, 0x3
-
-    invoke-static {v0, v2}, Landroid/util/Base64;->decode(Ljava/lang/String;I)[B
-
-    move-result-object v0
-
-    sget-object v2, Lozu;->d:Lozu;
-
-    array-length v3, v0
-
-    sget-object v6, Lnwh;->a:Lnwh;
-
-    const/4 v7, 0x0
-
-    invoke-static {v2, v0, v7, v3, v6}, Lnws;->Q(Lnws;[BIILnwh;)Lnws;
-
-    move-result-object v0
-
-    invoke-static {v0}, Lnws;->ae(Lnws;)V
-
-    move-object v2, v0
-
-    check-cast v2, Lozu;
-
-    sget-object v3, Llqd;->n:Llqd;
-
-    const/4 v6, 0x1
-
-    const/4 v7, 0x1
-
-    invoke-static/range {v1 .. v7}, Llqf;->d(Ljava/lang/String;Ljava/lang/Object;Llqe;Ljava/lang/String;Ljava/util/Set;ZZ)Llqb;
-
-    move-result-object v0
-
-    sput-object v0, Loib;->a:Llqb;
-    :try_end_0
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+    invoke-static {v1, v0}, Lppd;->F(Ljava/lang/Class;Lppd;)V
 
     return-void
-
-    :catch_0
-    move-exception v0
-
-    new-instance v1, Ljava/lang/AssertionError;
-
-    invoke-direct {v1, v0}, Ljava/lang/AssertionError;-><init>(Ljava/lang/Object;)V
-
-    throw v1
 .end method
 
-.method public constructor <init>()V
-    .locals 0
+.method private constructor <init>()V
+    .locals 1
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Lppd;-><init>()V
+
+    sget-object v0, Lpow;->b:Lpow;
+
+    iput-object v0, p0, Loib;->f:Lppj;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Landroid/content/Context;)Lozu;
-    .locals 1
+.method protected final a(ILjava/lang/Object;)Ljava/lang/Object;
+    .locals 2
 
-    sget-object v0, Loib;->a:Llqb;
+    add-int/lit8 p1, p1, -0x1
 
-    invoke-virtual {v0, p1}, Llqb;->b(Landroid/content/Context;)Ljava/lang/Object;
+    const/4 p2, 0x1
+
+    packed-switch p1, :pswitch_data_0
+
+    :pswitch_0
+    const/4 p1, 0x0
+
+    return-object p1
+
+    :pswitch_1
+    sget-object p1, Loib;->i:Lpqs;
+
+    if-nez p1, :cond_1
+
+    const-class p2, Loib;
+
+    monitor-enter p2
+
+    :try_start_0
+    sget-object p1, Loib;->i:Lpqs;
+
+    if-nez p1, :cond_0
+
+    new-instance p1, Lpoz;
+
+    sget-object v0, Loib;->h:Loib;
+
+    invoke-direct {p1, v0}, Lpoz;-><init>(Lppd;)V
+
+    sput-object p1, Loib;->i:Lpqs;
+
+    :cond_0
+    monitor-exit p2
+
+    goto :goto_0
+
+    :catchall_0
+    move-exception p1
+
+    monitor-exit p2
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw p1
+
+    :cond_1
+    :goto_0
+    return-object p1
+
+    :pswitch_2
+    sget-object p1, Loib;->h:Loib;
+
+    return-object p1
+
+    :pswitch_3
+    new-instance p1, Lpoy;
+
+    sget-object p2, Loib;->h:Loib;
+
+    invoke-direct {p1, p2}, Lpoy;-><init>(Lppd;)V
+
+    return-object p1
+
+    :pswitch_4
+    new-instance p1, Loib;
+
+    invoke-direct {p1}, Loib;-><init>()V
+
+    return-object p1
+
+    :pswitch_5
+    const/4 p1, 0x7
+
+    new-array p1, p1, [Ljava/lang/Object;
+
+    const/4 v0, 0x0
+
+    const-string v1, "a"
+
+    aput-object v1, p1, v0
+
+    const-string v0, "b"
+
+    aput-object v0, p1, p2
+
+    const/4 p2, 0x2
+
+    const-string v0, "c"
+
+    aput-object v0, p1, p2
+
+    const/4 p2, 0x3
+
+    const-string v0, "d"
+
+    aput-object v0, p1, p2
+
+    const/4 p2, 0x4
+
+    const-string v0, "e"
+
+    aput-object v0, p1, p2
+
+    const/4 p2, 0x5
+
+    const-string v0, "f"
+
+    aput-object v0, p1, p2
+
+    const/4 p2, 0x6
+
+    const-string v0, "g"
+
+    aput-object v0, p1, p2
+
+    sget-object p2, Loib;->h:Loib;
+
+    const-string v0, "\u0000\u0007\u0000\u0000\u0001\u0007\u0007\u0000\u0001\u0000\u0001\u000f\u0002\u0007\u0003\u000b\u0004\u000c\u0005\u0007\u0006$\u0007\u0001"
+
+    invoke-static {p2, v0, p1}, Loib;->E(Lpqm;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p1
 
-    check-cast p1, Lozu;
+    return-object p1
+
+    :pswitch_6
+    invoke-static {p2}, Ljava/lang/Byte;->valueOf(B)Ljava/lang/Byte;
+
+    move-result-object p1
 
     return-object p1
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_6
+        :pswitch_0
+        :pswitch_5
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+    .end packed-switch
 .end method

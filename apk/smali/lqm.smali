@@ -1,30 +1,33 @@
-.class public final Llqm;
+.class public final synthetic Llqm;
 .super Ljava/lang/Object;
 
+# interfaces
+.implements Llie;
 
-# static fields
-.field public static final a:Landroid/net/Uri;
+
+# instance fields
+.field public final synthetic a:Llqn;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
+.method public synthetic constructor <init>(Llqn;)V
+    .locals 0
 
-    sget-object v0, Llqn;->a:Landroid/net/Uri;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const-string v1, "status"
+    iput-object p1, p0, Llqm;->a:Llqn;
 
-    invoke-static {v0, v1}, Landroid/net/Uri;->withAppendedPath(Landroid/net/Uri;Ljava/lang/String;)Landroid/net/Uri;
+    return-void
+.end method
 
-    move-result-object v0
 
-    sput-object v0, Llqm;->a:Landroid/net/Uri;
+# virtual methods
+.method public final close()V
+    .locals 1
 
-    const-string v0, "version"
+    iget-object v0, p0, Llqm;->a:Llqn;
 
-    const-string v1, "state"
-
-    invoke-static {v0, v1}, Lmvv;->m(Ljava/lang/Object;Ljava/lang/Object;)Lmvv;
+    invoke-virtual {v0}, Llqn;->w()V
 
     return-void
 .end method

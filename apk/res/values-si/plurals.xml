@@ -1,12 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <plurals name="accessibility_timelapse_manual_record_speed_desc">
-        <item quantity="other">කාලය ගෙවීයාම %d කාල වේගය</item>
-        <item quantity="one">කාලය ගෙවීයාම %d කාල වේගය</item>
-    </plurals>
-    <plurals name="number_of_cropped_face">
-        <item quantity="other">%d කප්පාදු කරන ලදි.</item>
-        <item quantity="one">%d කප්පාදු කරන ලදි.</item>
+    <plurals name="number_of_faces_announcement">
+        <item quantity="other">මුහුණු %1$d.</item>
+        <item quantity="one">මුහුණු %1$d.</item>
     </plurals>
     <plurals name="photos_remaining">
         <item quantity="other">ඡායාරූප %sක් පමණ</item>
@@ -17,8 +13,8 @@
         <item quantity="one">(යෙදුම් %1$dක් තෝරන ලදි)</item>
     </plurals>
     <plurals name="social_share_info">
-        <item quantity="other">කැමරාවේ සිට සමාජ යෙදුම්වල ඡායාරූප සහ වීඩියෝ ඉක්මනින් බෙදා ගන්න. යෙදුම් %1$dක් දක්වා තෝරන්න. අගුලු දැමූ ෆෝල්ඩරයට සුරකින ලද ඡායාරූප සහ වීඩියෝ බෙදා ගත නොහැකිය.</item>
-        <item quantity="one">කැමරාවේ සිට සමාජ යෙදුම්වල ඡායාරූප සහ වීඩියෝ ඉක්මනින් බෙදා ගන්න. යෙදුම් %1$dක් දක්වා තෝරන්න. අගුලු දැමූ ෆෝල්ඩරයට සුරකින ලද ඡායාරූප සහ වීඩියෝ බෙදා ගත නොහැකිය.</item>
+        <item quantity="other">කැමරාවේ සිටම සමාජ යෙදුම්වල ඡායාරූප සහ වීඩියෝ ඉක්මනින් බෙදා ගන්න. යෙදුම් %1$dක් දක්වා තෝරන්න. අගුලු දැමූ ෆෝල්ඩරයට සුරකින ලද ඡායාරූප සහ වීඩියෝ බෙදා ගත නොහැකිය.</item>
+        <item quantity="one">කැමරාවේ සිටම සමාජ යෙදුම්වල ඡායාරූප සහ වීඩියෝ ඉක්මනින් බෙදා ගන්න. යෙදුම් %1$dක් දක්වා තෝරන්න. අගුලු දැමූ ෆෝල්ඩරයට සුරකින ලද ඡායාරූප සහ වීඩියෝ බෙදා ගත නොහැකිය.</item>
     </plurals>
     <plurals name="social_share_select_error">
         <item quantity="other">යෙදුම් %1$dක් දක්වා තෝරන්න</item>

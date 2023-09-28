@@ -1,5 +1,5 @@
 .class public Lcom/google/android/gms/auth/api/signin/GoogleSignInAccount;
-.super Ljhn;
+.super Lkno;
 
 # interfaces
 .implements Lcom/google/android/gms/common/internal/ReflectedParcelable;
@@ -12,40 +12,40 @@
 # instance fields
 .field final a:I
 
-.field public final b:Ljava/lang/String;
+.field public b:Ljava/lang/String;
 
-.field public final c:Ljava/lang/String;
+.field public c:Ljava/lang/String;
 
-.field public final d:Ljava/lang/String;
+.field public d:Ljava/lang/String;
 
-.field public final e:Ljava/lang/String;
+.field public e:Ljava/lang/String;
 
-.field public final f:Landroid/net/Uri;
+.field public f:Landroid/net/Uri;
 
 .field public g:Ljava/lang/String;
 
-.field public final h:J
+.field public h:J
 
-.field public final i:Ljava/lang/String;
+.field public i:Ljava/lang/String;
 
-.field public final j:Ljava/util/List;
+.field public j:Ljava/util/List;
 
-.field public final k:Ljava/lang/String;
+.field public k:Ljava/lang/String;
 
-.field public final l:Ljava/lang/String;
+.field public l:Ljava/lang/String;
 
-.field private final m:Ljava/util/Set;
+.field private m:Ljava/util/Set;
 
 
 # direct methods
 .method static constructor <clinit>()V
     .locals 2
 
-    new-instance v0, Lob;
+    new-instance v0, Lsi;
 
-    const/16 v1, 0x12
+    const/16 v1, 0xf
 
-    invoke-direct {v0, v1}, Lob;-><init>(I)V
+    invoke-direct {v0, v1}, Lsi;-><init>(I)V
 
     sput-object v0, Lcom/google/android/gms/auth/api/signin/GoogleSignInAccount;->CREATOR:Landroid/os/Parcelable$Creator;
 
@@ -55,7 +55,7 @@
 .method public constructor <init>(ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Landroid/net/Uri;Ljava/lang/String;JLjava/lang/String;Ljava/util/List;Ljava/lang/String;Ljava/lang/String;)V
     .locals 1
 
-    invoke-direct {p0}, Ljhn;-><init>()V
+    invoke-direct {p0}, Lkno;-><init>()V
 
     new-instance v0, Ljava/util/HashSet;
 
@@ -152,7 +152,7 @@
 
     move-result-object v2
 
-    invoke-virtual {p1, v2}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+    invoke-interface {p1, v2}, Ljava/util/Set;->equals(Ljava/lang/Object;)Z
 
     move-result p1
 
@@ -175,15 +175,15 @@
 
     add-int/lit16 v0, v0, 0x20f
 
+    mul-int/lit8 v0, v0, 0x1f
+
     invoke-virtual {p0}, Lcom/google/android/gms/auth/api/signin/GoogleSignInAccount;->a()Ljava/util/Set;
 
     move-result-object v1
 
-    invoke-virtual {v1}, Ljava/lang/Object;->hashCode()I
+    invoke-interface {v1}, Ljava/util/Set;->hashCode()I
 
     move-result v1
-
-    mul-int/lit8 v0, v0, 0x1f
 
     add-int/2addr v0, v1
 
@@ -193,7 +193,7 @@
 .method public final writeToParcel(Landroid/os/Parcel;I)V
     .locals 3
 
-    invoke-static {p1}, Ljhp;->a(Landroid/os/Parcel;)I
+    invoke-static {p1}, Lmip;->ct(Landroid/os/Parcel;)I
 
     move-result v0
 
@@ -201,75 +201,75 @@
 
     const/4 v2, 0x1
 
-    invoke-static {p1, v2, v1}, Ljhp;->g(Landroid/os/Parcel;II)V
+    invoke-static {p1, v2, v1}, Lmip;->cA(Landroid/os/Parcel;II)V
 
     iget-object v1, p0, Lcom/google/android/gms/auth/api/signin/GoogleSignInAccount;->b:Ljava/lang/String;
 
     const/4 v2, 0x2
 
-    invoke-static {p1, v2, v1}, Ljhp;->p(Landroid/os/Parcel;ILjava/lang/String;)V
+    invoke-static {p1, v2, v1}, Lmip;->cI(Landroid/os/Parcel;ILjava/lang/String;)V
 
     iget-object v1, p0, Lcom/google/android/gms/auth/api/signin/GoogleSignInAccount;->c:Ljava/lang/String;
 
     const/4 v2, 0x3
 
-    invoke-static {p1, v2, v1}, Ljhp;->p(Landroid/os/Parcel;ILjava/lang/String;)V
+    invoke-static {p1, v2, v1}, Lmip;->cI(Landroid/os/Parcel;ILjava/lang/String;)V
 
     iget-object v1, p0, Lcom/google/android/gms/auth/api/signin/GoogleSignInAccount;->d:Ljava/lang/String;
 
     const/4 v2, 0x4
 
-    invoke-static {p1, v2, v1}, Ljhp;->p(Landroid/os/Parcel;ILjava/lang/String;)V
+    invoke-static {p1, v2, v1}, Lmip;->cI(Landroid/os/Parcel;ILjava/lang/String;)V
 
     iget-object v1, p0, Lcom/google/android/gms/auth/api/signin/GoogleSignInAccount;->e:Ljava/lang/String;
 
     const/4 v2, 0x5
 
-    invoke-static {p1, v2, v1}, Ljhp;->p(Landroid/os/Parcel;ILjava/lang/String;)V
+    invoke-static {p1, v2, v1}, Lmip;->cI(Landroid/os/Parcel;ILjava/lang/String;)V
 
     iget-object v1, p0, Lcom/google/android/gms/auth/api/signin/GoogleSignInAccount;->f:Landroid/net/Uri;
 
     const/4 v2, 0x6
 
-    invoke-static {p1, v2, v1, p2}, Ljhp;->o(Landroid/os/Parcel;ILandroid/os/Parcelable;I)V
+    invoke-static {p1, v2, v1, p2}, Lmip;->cH(Landroid/os/Parcel;ILandroid/os/Parcelable;I)V
 
     iget-object p2, p0, Lcom/google/android/gms/auth/api/signin/GoogleSignInAccount;->g:Ljava/lang/String;
 
     const/4 v1, 0x7
 
-    invoke-static {p1, v1, p2}, Ljhp;->p(Landroid/os/Parcel;ILjava/lang/String;)V
+    invoke-static {p1, v1, p2}, Lmip;->cI(Landroid/os/Parcel;ILjava/lang/String;)V
 
     iget-wide v1, p0, Lcom/google/android/gms/auth/api/signin/GoogleSignInAccount;->h:J
 
     const/16 p2, 0x8
 
-    invoke-static {p1, p2, v1, v2}, Ljhp;->h(Landroid/os/Parcel;IJ)V
+    invoke-static {p1, p2, v1, v2}, Lmip;->cB(Landroid/os/Parcel;IJ)V
 
     iget-object p2, p0, Lcom/google/android/gms/auth/api/signin/GoogleSignInAccount;->i:Ljava/lang/String;
 
     const/16 v1, 0x9
 
-    invoke-static {p1, v1, p2}, Ljhp;->p(Landroid/os/Parcel;ILjava/lang/String;)V
+    invoke-static {p1, v1, p2}, Lmip;->cI(Landroid/os/Parcel;ILjava/lang/String;)V
 
     iget-object p2, p0, Lcom/google/android/gms/auth/api/signin/GoogleSignInAccount;->j:Ljava/util/List;
 
     const/16 v1, 0xa
 
-    invoke-static {p1, v1, p2}, Ljhp;->t(Landroid/os/Parcel;ILjava/util/List;)V
+    invoke-static {p1, v1, p2}, Lmip;->cM(Landroid/os/Parcel;ILjava/util/List;)V
 
     iget-object p2, p0, Lcom/google/android/gms/auth/api/signin/GoogleSignInAccount;->k:Ljava/lang/String;
 
     const/16 v1, 0xb
 
-    invoke-static {p1, v1, p2}, Ljhp;->p(Landroid/os/Parcel;ILjava/lang/String;)V
+    invoke-static {p1, v1, p2}, Lmip;->cI(Landroid/os/Parcel;ILjava/lang/String;)V
 
     iget-object p2, p0, Lcom/google/android/gms/auth/api/signin/GoogleSignInAccount;->l:Ljava/lang/String;
 
     const/16 v1, 0xc
 
-    invoke-static {p1, v1, p2}, Ljhp;->p(Landroid/os/Parcel;ILjava/lang/String;)V
+    invoke-static {p1, v1, p2}, Lmip;->cI(Landroid/os/Parcel;ILjava/lang/String;)V
 
-    invoke-static {p1, v0}, Ljhp;->c(Landroid/os/Parcel;I)V
+    invoke-static {p1, v0}, Lmip;->cv(Landroid/os/Parcel;I)V
 
     return-void
 .end method

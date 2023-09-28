@@ -1,30 +1,45 @@
-.class final Ljao;
-.super Ljaw;
+.class public final synthetic Ljao;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Landroid/view/View$OnClickListener;
 
 
-# instance fields
-.field final synthetic a:Ljap;
+# static fields
+.field public static final synthetic a:Ljao;
 
 
 # direct methods
-.method public constructor <init>(Ljap;)V
+.method static synthetic constructor <clinit>()V
+    .locals 1
+
+    new-instance v0, Ljao;
+
+    invoke-direct {v0}, Ljao;-><init>()V
+
+    sput-object v0, Ljao;->a:Ljao;
+
+    return-void
+.end method
+
+.method private synthetic constructor <init>()V
     .locals 0
 
-    iput-object p1, p0, Ljao;->a:Ljap;
-
-    invoke-direct {p0}, Ljaw;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final c(Lcom/google/android/gms/common/api/Status;)V
-    .locals 1
+.method public final onClick(Landroid/view/View;)V
+    .locals 0
 
-    iget-object v0, p0, Ljao;->a:Ljap;
+    invoke-virtual {p1}, Landroid/view/View;->getContext()Landroid/content/Context;
 
-    invoke-virtual {v0, p1}, Ljap;->i(Ljdq;)V
+    move-result-object p1
+
+    invoke-static {p1}, Lcom/google/android/apps/camera/ui/eduimageview/EduImageView;->c(Landroid/content/Context;)V
 
     return-void
 .end method

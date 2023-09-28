@@ -2,21 +2,29 @@
 .super Ljava/lang/Object;
 
 
-# static fields
-.field public static final a:Lnak;
+# instance fields
+.field public final a:Ldwz;
+
+.field public final b:Ldwz;
+
+.field public final c:Ldwz;
+
+.field public final d:Landroid/content/UriMatcher;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
+.method public constructor <init>(Landroid/content/UriMatcher;Ldwz;Ldwz;Ldwz;)V
+    .locals 0
 
-    const-string v0, "com/google/android/apps/camera/framestore/AudioModule"
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-static {v0}, Lnak;->h(Ljava/lang/String;)Lnak;
+    iput-object p1, p0, Ldxa;->d:Landroid/content/UriMatcher;
 
-    move-result-object v0
+    iput-object p2, p0, Ldxa;->a:Ldwz;
 
-    sput-object v0, Ldxa;->a:Lnak;
+    iput-object p3, p0, Ldxa;->b:Ldwz;
+
+    iput-object p4, p0, Ldxa;->c:Ldwz;
 
     return-void
 .end method

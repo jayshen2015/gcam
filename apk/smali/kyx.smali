@@ -1,113 +1,56 @@
 .class public final Lkyx;
-.super Ljava/lang/Object;
-
-# interfaces
-.implements Lkzg;
-
-
-# instance fields
-.field final synthetic a:Ljava/lang/Object;
-
-.field private final synthetic b:I
+.super Lkxb;
 
 
 # direct methods
-.method public constructor <init>(Lkzc;I)V
+.method public constructor <init>(Lkim;)V
     .locals 0
 
-    iput p2, p0, Lkyx;->b:I
-
-    iput-object p1, p0, Lkyx;->a:Ljava/lang/Object;
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
-.end method
-
-.method public constructor <init>(Llhe;I[B)V
-    .locals 0
-
-    iput p2, p0, Lkyx;->b:I
-
-    iput-object p1, p0, Lkyx;->a:Ljava/lang/Object;
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0, p1}, Lkxb;-><init>(Lkim;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Ljava/lang/Object;Ljava/util/concurrent/Executor;)Lkzc;
-    .locals 3
+.method protected final bridge synthetic a(Lcom/google/android/gms/common/api/Status;)Lkiv;
+    .locals 2
 
-    iget v0, p0, Lkyx;->b:I
+    new-instance v0, Lkyy;
 
-    packed-switch v0, :pswitch_data_0
+    new-instance v1, Ljava/util/ArrayList;
 
-    iget-object v0, p0, Lkyx;->a:Ljava/lang/Object;
+    invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
 
-    new-instance v1, Lkzh;
+    invoke-direct {v0, p1, v1}, Lkyy;-><init>(Lcom/google/android/gms/common/api/Status;Ljava/util/List;)V
 
-    const/4 v2, 0x2
+    return-object v0
+.end method
 
-    invoke-direct {v1, p1, v2}, Lkzh;-><init>(Ljava/lang/Object;I)V
+.method protected final synthetic b(Lkhz;)V
+    .locals 2
 
-    invoke-interface {v0, p2, v1}, Lkzc;->a(Ljava/util/concurrent/Executor;Lkye;)Lkzc;
+    check-cast p1, Lkzq;
 
-    move-result-object p1
-
-    return-object p1
-
-    :pswitch_0
-    iget-object p1, p0, Lkyx;->a:Ljava/lang/Object;
-
-    return-object p1
-
-    :pswitch_1
-    iget-object v0, p0, Lkyx;->a:Ljava/lang/Object;
-
-    check-cast v0, Llhe;
-
-    invoke-virtual {v0}, Llhe;->f()Lkzf;
-
-    move-result-object v0
-
-    invoke-static {p1}, Llpm;->o(Ljava/lang/Object;)Lkye;
+    invoke-virtual {p1}, Lkmb;->u()Landroid/os/IInterface;
 
     move-result-object p1
 
-    invoke-virtual {v0, p2, p1}, Lkzf;->a(Ljava/util/concurrent/Executor;Lkye;)Lkzc;
+    check-cast p1, Lkyo;
 
-    move-result-object p1
+    new-instance v0, Lkzn;
 
-    return-object p1
+    invoke-direct {v0, p0}, Lkzn;-><init>(Lkjj;)V
 
-    :pswitch_2
-    iget-object v0, p0, Lkyx;->a:Ljava/lang/Object;
+    invoke-virtual {p1}, Lbmn;->a()Landroid/os/Parcel;
 
-    check-cast v0, Llhe;
+    move-result-object v1
 
-    invoke-virtual {v0}, Llhe;->f()Lkzf;
+    invoke-static {v1, v0}, Lbmp;->e(Landroid/os/Parcel;Landroid/os/IInterface;)V
 
-    move-result-object v0
+    const/16 v0, 0xf
 
-    invoke-static {p1}, Llpm;->o(Ljava/lang/Object;)Lkye;
+    invoke-virtual {p1, v0, v1}, Lbmn;->z(ILandroid/os/Parcel;)V
 
-    move-result-object p1
-
-    invoke-virtual {v0, p2, p1}, Lkzf;->a(Ljava/util/concurrent/Executor;Lkye;)Lkzc;
-
-    move-result-object p1
-
-    return-object p1
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_2
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
+    return-void
 .end method

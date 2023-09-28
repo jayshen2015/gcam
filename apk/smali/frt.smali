@@ -2,52 +2,74 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lfqq;
+.implements Lmlk;
+
+
+# instance fields
+.field public final a:Lfoa;
+
+.field private final b:Lmlk;
 
 
 # direct methods
-.method public constructor <init>()V
+.method public constructor <init>(Lmlk;Lfoa;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lfrt;->b:Lmlk;
+
+    iput-object p2, p0, Lfrt;->a:Lfoa;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Liac;Lcom/google/googlex/gcam/YuvWriteView;Lkpb;Lcom/google/googlex/gcam/ShotMetadata;)Lkpb;
+.method public final a()Lmln;
     .locals 2
 
-    new-instance p3, Leej;
+    iget-object v0, p0, Lfrt;->b:Lmlk;
 
-    iget-object p1, p1, Liac;->c:Ljava/lang/Object;
+    invoke-interface {v0}, Lmlk;->a()Lmln;
 
-    check-cast p1, Ljava/lang/Long;
+    move-result-object v0
 
-    invoke-virtual {p1}, Ljava/lang/Long;->longValue()J
+    new-instance v1, Lfrs;
 
-    move-result-wide v0
+    invoke-direct {v1, p0, v0}, Lfrs;-><init>(Lfrt;Lmln;)V
 
-    invoke-direct {p3, p2, v0, v1}, Leej;-><init>(Lcom/google/googlex/gcam/YuvWriteView;J)V
-
-    return-object p3
+    return-object v1
 .end method
 
-.method public final b(Liac;Landroid/hardware/HardwareBuffer;Lcom/google/googlex/gcam/ShotMetadata;)Lkpb;
-    .locals 2
+.method public final b()Lpht;
+    .locals 1
 
-    new-instance p3, Lkmt;
+    iget-object v0, p0, Lfrt;->b:Lmlk;
 
-    iget-object p1, p1, Liac;->c:Ljava/lang/Object;
+    invoke-interface {v0}, Lmlk;->b()Lpht;
 
-    check-cast p1, Ljava/lang/Long;
+    move-result-object v0
 
-    invoke-virtual {p1}, Ljava/lang/Long;->longValue()J
+    return-object v0
+.end method
 
-    move-result-wide v0
+.method public final c()V
+    .locals 1
 
-    invoke-direct {p3, p2, v0, v1}, Lkmt;-><init>(Landroid/hardware/HardwareBuffer;J)V
+    iget-object v0, p0, Lfrt;->b:Lmlk;
 
-    return-object p3
+    invoke-interface {v0}, Lmlk;->c()V
+
+    return-void
+.end method
+
+.method public final d()V
+    .locals 1
+
+    iget-object v0, p0, Lfrt;->b:Lmlk;
+
+    invoke-interface {v0}, Lmlk;->d()V
+
+    return-void
 .end method

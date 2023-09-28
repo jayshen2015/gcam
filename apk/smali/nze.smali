@@ -1,71 +1,113 @@
-.class final Lnze;
-.super Ljava/lang/Object;
+.class abstract Lnze;
+.super Landroid/animation/AnimatorListenerAdapter;
 
 # interfaces
-.implements Ljava/security/PrivilegedExceptionAction;
+.implements Landroid/animation/ValueAnimator$AnimatorUpdateListener;
+
+
+# instance fields
+.field private a:Z
+
+.field final synthetic b:Lnzf;
+
+.field private c:F
+
+.field private d:F
 
 
 # direct methods
-.method public constructor <init>()V
+.method public constructor <init>(Lnzf;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lnze;->b:Lnzf;
+
+    invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final bridge synthetic run()Ljava/lang/Object;
-    .locals 7
+.method protected abstract a()F
+.end method
 
-    const-class v0, Lsun/misc/Unsafe;
+.method public final onAnimationEnd(Landroid/animation/Animator;)V
+    .locals 1
 
-    invoke-virtual {v0}, Ljava/lang/Class;->getDeclaredFields()[Ljava/lang/reflect/Field;
+    iget-object p1, p0, Lnze;->b:Lnzf;
 
-    move-result-object v1
+    iget v0, p0, Lnze;->d:F
 
-    array-length v2, v1
+    float-to-int v0, v0
 
-    const/4 v3, 0x0
+    int-to-float v0, v0
 
-    :goto_0
-    const/4 v4, 0x0
+    invoke-virtual {p1, v0}, Lnzf;->k(F)V
 
-    if-ge v3, v2, :cond_1
+    const/4 p1, 0x0
 
-    aget-object v5, v1, v3
+    iput-boolean p1, p0, Lnze;->a:Z
 
-    const/4 v6, 0x1
+    return-void
+.end method
 
-    invoke-virtual {v5, v6}, Ljava/lang/reflect/Field;->setAccessible(Z)V
+.method public final onAnimationUpdate(Landroid/animation/ValueAnimator;)V
+    .locals 3
 
-    invoke-virtual {v5, v4}, Ljava/lang/reflect/Field;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    iget-boolean v0, p0, Lnze;->a:Z
 
-    move-result-object v4
+    if-nez v0, :cond_1
 
-    invoke-virtual {v0, v4}, Ljava/lang/Class;->isInstance(Ljava/lang/Object;)Z
+    iget-object v0, p0, Lnze;->b:Lnzf;
 
-    move-result v5
+    iget-object v0, v0, Lnzf;->i:Lobu;
 
-    if-eqz v5, :cond_0
+    if-nez v0, :cond_0
 
-    invoke-virtual {v0, v4}, Ljava/lang/Class;->cast(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    move-object v4, v0
-
-    check-cast v4, Lsun/misc/Unsafe;
-
-    goto :goto_1
-
-    :cond_0
-    add-int/lit8 v3, v3, 0x1
+    const/4 v0, 0x0
 
     goto :goto_0
 
+    :cond_0
+    invoke-virtual {v0}, Lobu;->a()F
+
+    move-result v0
+
+    :goto_0
+    iput v0, p0, Lnze;->c:F
+
+    invoke-virtual {p0}, Lnze;->a()F
+
+    move-result v0
+
+    iput v0, p0, Lnze;->d:F
+
+    const/4 v0, 0x1
+
+    iput-boolean v0, p0, Lnze;->a:Z
+
     :cond_1
-    :goto_1
-    return-object v4
+    iget-object v0, p0, Lnze;->b:Lnzf;
+
+    iget v1, p0, Lnze;->c:F
+
+    iget v2, p0, Lnze;->d:F
+
+    sub-float/2addr v2, v1
+
+    invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedFraction()F
+
+    move-result p1
+
+    mul-float v2, v2, p1
+
+    add-float/2addr v1, v2
+
+    float-to-int p1, v1
+
+    int-to-float p1, p1
+
+    invoke-virtual {v0, p1}, Lnzf;->k(F)V
+
+    return-void
 .end method

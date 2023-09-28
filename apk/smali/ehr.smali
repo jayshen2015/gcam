@@ -1,40 +1,74 @@
-.class final Lehr;
-.super Lejn;
+.class public final Lehr;
+.super Ljava/lang/Object;
 
 
 # instance fields
-.field final synthetic a:Lehs;
+.field public final a:Lehl;
+
+.field public final b:Lejd;
+
+.field public final c:Ljlb;
+
+.field public final d:Lcom/google/android/apps/camera/bottombar/BottomBarController;
+
+.field public final e:Lepj;
+
+.field public final f:Lehj;
+
+.field public final g:Lddf;
+
+.field public final h:Llij;
+
+.field public final i:Lcom/google/android/apps/camera/bottombar/BottomBarListener;
+
+.field public final j:Ljli;
+
+.field public final k:Lepi;
+
+.field public final l:Llap;
 
 
 # direct methods
-.method public constructor <init>(Lehs;)V
+.method public constructor <init>(Lehl;Lejd;Llap;Ljlb;Leig;Lcom/google/android/apps/camera/bottombar/BottomBarController;Lepj;Lehj;Llij;Lddf;)V
     .locals 0
 
-    iput-object p1, p0, Lehr;->a:Lehs;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0, p1}, Lejn;-><init>(Lejo;)V
+    iput-object p1, p0, Lehr;->a:Lehl;
 
-    return-void
-.end method
+    iput-object p2, p0, Lehr;->b:Lejd;
 
+    iput-object p3, p0, Lehr;->l:Llap;
 
-# virtual methods
-.method public final b()V
-    .locals 2
+    iput-object p4, p0, Lehr;->c:Ljlb;
 
-    iget-object v0, p0, Lehr;->a:Lehs;
+    iput-object p6, p0, Lehr;->d:Lcom/google/android/apps/camera/bottombar/BottomBarController;
 
-    iget-object v0, v0, Lehs;->a:Lhiu;
+    iput-object p7, p0, Lehr;->e:Lepj;
 
-    invoke-virtual {v0}, Lhiu;->e()V
+    iput-object p8, p0, Lehr;->f:Lehj;
 
-    iget-object v0, p0, Lehr;->a:Lehs;
+    iput-object p10, p0, Lehr;->g:Lddf;
 
-    iget-object v1, v0, Lehs;->a:Lhiu;
+    iput-object p9, p0, Lehr;->h:Llij;
 
-    iget-object v0, v0, Lehs;->b:Lhiw;
+    new-instance p1, Leho;
 
-    invoke-virtual {v1, v0}, Lhiu;->g(Lhiw;)V
+    invoke-direct {p1, p5}, Leho;-><init>(Leig;)V
+
+    iput-object p1, p0, Lehr;->i:Lcom/google/android/apps/camera/bottombar/BottomBarListener;
+
+    new-instance p1, Lehp;
+
+    invoke-direct {p1, p0}, Lehp;-><init>(Lehr;)V
+
+    iput-object p1, p0, Lehr;->k:Lepi;
+
+    new-instance p1, Lehq;
+
+    invoke-direct {p1, p5}, Lehq;-><init>(Leig;)V
+
+    iput-object p1, p0, Lehr;->j:Ljli;
 
     return-void
 .end method

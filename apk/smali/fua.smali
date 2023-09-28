@@ -1,69 +1,44 @@
 .class public final Lfua;
 .super Ljava/lang/Object;
 
-# interfaces
-.implements Lfuc;
 
-
-# static fields
-.field public static final a:[Landroid/hardware/camera2/params/MeteringRectangle;
+# instance fields
+.field private final a:Ldyx;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 8
-
-    const/4 v0, 0x1
-
-    new-array v0, v0, [Landroid/hardware/camera2/params/MeteringRectangle;
-
-    new-instance v7, Landroid/hardware/camera2/params/MeteringRectangle;
-
-    const/4 v2, 0x0
-
-    const/4 v3, 0x0
-
-    const/4 v4, 0x0
-
-    const/4 v5, 0x0
-
-    const/4 v6, 0x0
-
-    move-object v1, v7
-
-    invoke-direct/range {v1 .. v6}, Landroid/hardware/camera2/params/MeteringRectangle;-><init>(IIIII)V
-
-    const/4 v1, 0x0
-
-    aput-object v7, v0, v1
-
-    sput-object v0, Lfua;->a:[Landroid/hardware/camera2/params/MeteringRectangle;
-
-    return-void
-.end method
-
-.method public constructor <init>()V
+.method public constructor <init>(Ldyx;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lfua;->a:Ldyx;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Landroid/graphics/Rect;)[Landroid/hardware/camera2/params/MeteringRectangle;
-    .locals 0
+.method public final a(Lhjz;Lhjz;)F
+    .locals 1
 
-    sget-object p1, Lfua;->a:[Landroid/hardware/camera2/params/MeteringRectangle;
+    iget-object v0, p0, Lfua;->a:Ldyx;
 
-    return-object p1
+    invoke-virtual {v0}, Ldyx;->d()V
+
+    iget-object v0, p0, Lfua;->a:Ldyx;
+
+    invoke-virtual {v0, p1, p2}, Ldyx;->a(Lhjz;Lhjz;)F
+
+    move-result p1
+
+    return p1
 .end method
 
-.method public final b(Landroid/graphics/Rect;)[Landroid/hardware/camera2/params/MeteringRectangle;
-    .locals 0
+.method public final toString()Ljava/lang/String;
+    .locals 1
 
-    sget-object p1, Lfua;->a:[Landroid/hardware/camera2/params/MeteringRectangle;
+    const-string v0, "GyroFrameDistanceMetric"
 
-    return-object p1
+    return-object v0
 .end method

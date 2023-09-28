@@ -1,59 +1,54 @@
-.class public Liad;
+.class public final synthetic Liad;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lhis;
+.implements Ljava/lang/Runnable;
+
+
+# instance fields
+.field public final synthetic a:Liag;
 
 
 # direct methods
-.method public constructor <init>()V
+.method public synthetic constructor <init>(Liag;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Liad;->a:Liag;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public a()V
-    .locals 0
+.method public final run()V
+    .locals 4
 
-    return-void
-.end method
+    iget-object v0, p0, Liad;->a:Liag;
 
-.method public b()V
-    .locals 0
+    iget-object v1, v0, Liag;->b:Ljava/util/concurrent/atomic/AtomicBoolean;
 
-    return-void
-.end method
+    const/4 v2, 0x1
 
-.method public c()V
-    .locals 0
+    invoke-virtual {v1, v2}, Ljava/util/concurrent/atomic/AtomicBoolean;->set(Z)V
 
-    return-void
-.end method
+    iget-object v1, v0, Liag;->c:Ljava/util/concurrent/atomic/AtomicBoolean;
 
-.method public d()V
-    .locals 0
+    const/4 v3, 0x0
 
-    return-void
-.end method
+    invoke-virtual {v1, v2, v3}, Ljava/util/concurrent/atomic/AtomicBoolean;->compareAndSet(ZZ)Z
 
-.method public synthetic f()V
-    .locals 0
+    move-result v1
 
-    return-void
-.end method
+    if-eqz v1, :cond_0
 
-.method public synthetic g()V
-    .locals 0
+    iget-object v0, v0, Liag;->d:Liay;
 
-    return-void
-.end method
+    if-eqz v0, :cond_0
 
-.method public synthetic h()V
-    .locals 0
+    invoke-interface {v0}, Liay;->a()V
 
+    :cond_0
     return-void
 .end method

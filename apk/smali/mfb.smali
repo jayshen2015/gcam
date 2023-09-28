@@ -2,123 +2,93 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Landroid/view/View$OnUnhandledKeyEventListener;
+.implements Lkiw;
 
 
 # instance fields
-.field public final synthetic a:Landroid/view/View;
-
-.field public final synthetic b:Lcom/google/android/material/appbar/AppBarLayout;
+.field public final synthetic a:Lpih;
 
 
 # direct methods
-.method public synthetic constructor <init>(Landroid/view/View;Lcom/google/android/material/appbar/AppBarLayout;)V
+.method public synthetic constructor <init>(Lpih;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lmfb;->a:Landroid/view/View;
-
-    iput-object p2, p0, Lmfb;->b:Lcom/google/android/material/appbar/AppBarLayout;
+    iput-object p1, p0, Lmfb;->a:Lpih;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onUnhandledKeyEvent(Landroid/view/View;Landroid/view/KeyEvent;)Z
-    .locals 8
+.method public final a(Lkiv;)V
+    .locals 3
 
-    iget-object p1, p0, Lmfb;->a:Landroid/view/View;
+    iget-object v0, p0, Lmfb;->a:Lpih;
 
-    iget-object v0, p0, Lmfb;->b:Lcom/google/android/material/appbar/AppBarLayout;
+    invoke-interface {p1}, Lkiv;->a()Lcom/google/android/gms/common/api/Status;
 
-    invoke-virtual {p2}, Landroid/view/KeyEvent;->getAction()I
+    move-result-object v1
+
+    iget v1, v1, Lcom/google/android/gms/common/api/Status;->g:I
+
+    const/16 v2, 0x10
+
+    if-eq v1, v2, :cond_2
+
+    invoke-interface {p1}, Lkiv;->a()Lcom/google/android/gms/common/api/Status;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Lcom/google/android/gms/common/api/Status;->b()Z
 
     move-result v1
-
-    const/4 v2, 0x0
-
-    const/4 v3, 0x1
 
     if-eqz v1, :cond_0
 
-    invoke-virtual {p2}, Landroid/view/KeyEvent;->getAction()I
+    invoke-virtual {v0, p1}, Lpih;->o(Ljava/lang/Object;)Z
 
-    move-result v1
-
-    if-ne v1, v3, :cond_4
+    return-void
 
     :cond_0
-    invoke-virtual {p2}, Landroid/view/KeyEvent;->getKeyCode()I
+    invoke-interface {p1}, Lkiv;->a()Lcom/google/android/gms/common/api/Status;
 
-    move-result p2
+    move-result-object v1
 
-    const/16 v1, 0x13
+    iget-object v1, v1, Lcom/google/android/gms/common/api/Status;->i:Landroid/app/PendingIntent;
 
-    if-eq p2, v1, :cond_3
+    if-eqz v1, :cond_1
 
-    const/16 v1, 0x118
+    new-instance v1, Lkit;
 
-    if-eq p2, v1, :cond_3
+    invoke-interface {p1}, Lkiv;->a()Lcom/google/android/gms/common/api/Status;
 
-    const/16 v1, 0x5c
+    move-result-object p1
 
-    if-ne p2, v1, :cond_1
+    invoke-direct {v1, p1}, Lkit;-><init>(Lcom/google/android/gms/common/api/Status;)V
 
-    goto :goto_0
+    invoke-virtual {v0, v1}, Lpih;->a(Ljava/lang/Throwable;)Z
+
+    return-void
 
     :cond_1
-    const/16 v1, 0x14
+    new-instance v1, Lkig;
 
-    if-eq p2, v1, :cond_2
+    invoke-interface {p1}, Lkiv;->a()Lcom/google/android/gms/common/api/Status;
 
-    const/16 v1, 0x119
+    move-result-object p1
 
-    if-eq p2, v1, :cond_2
+    invoke-direct {v1, p1}, Lkig;-><init>(Lcom/google/android/gms/common/api/Status;)V
 
-    const/16 v1, 0x5d
+    invoke-virtual {v0, v1}, Lpih;->a(Ljava/lang/Throwable;)Z
 
-    if-ne p2, v1, :cond_4
+    return-void
 
     :cond_2
-    invoke-virtual {p1}, Landroid/view/View;->getScrollY()I
+    const/4 p1, 0x0
 
-    move-result p1
+    invoke-virtual {v0, p1}, Lpih;->cancel(Z)Z
 
-    if-lez p1, :cond_4
-
-    invoke-virtual {v0, v2}, Lcom/google/android/material/appbar/AppBarLayout;->i(Z)V
-
-    goto :goto_1
-
-    :cond_3
-    :goto_0
-    invoke-virtual {p1}, Landroid/view/View;->getScrollY()I
-
-    move-result p2
-
-    int-to-double v4, p2
-
-    invoke-virtual {p1}, Landroid/view/View;->getMeasuredHeight()I
-
-    move-result p1
-
-    int-to-double p1, p1
-
-    const-wide v6, 0x3fb999999999999aL    # 0.1
-
-    invoke-static {p1, p2}, Ljava/lang/Double;->isNaN(D)Z
-
-    mul-double p1, p1, v6
-
-    cmpg-double v1, v4, p1
-
-    if-gez v1, :cond_4
-
-    invoke-virtual {v0, v3}, Lcom/google/android/material/appbar/AppBarLayout;->i(Z)V
-
-    :cond_4
-    :goto_1
-    return v2
+    return-void
 .end method

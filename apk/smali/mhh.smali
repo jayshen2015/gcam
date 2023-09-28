@@ -1,83 +1,110 @@
 .class public final Lmhh;
-.super Landroid/animation/AnimatorListenerAdapter;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Lcom/google/android/libraries/lens/lenslite/dynamicloading/DLLinkResultListener;
 
 
 # instance fields
-.field final synthetic a:Lmhq;
+.field final synthetic a:Lpos;
 
-.field private b:Z
+.field final synthetic b:Lmgv;
 
 
 # direct methods
-.method public constructor <init>(Lmhq;)V
+.method public constructor <init>(Lpos;Lmgv;)V
     .locals 0
 
-    iput-object p1, p0, Lmhh;->a:Lmhq;
+    iput-object p1, p0, Lmhh;->a:Lpos;
 
-    invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
+    iput-object p2, p0, Lmhh;->b:Lmgv;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onAnimationCancel(Landroid/animation/Animator;)V
-    .locals 0
+.method public final onResultUpdate(Ljava/util/List;Ljava/nio/ByteBuffer;)V
+    .locals 1
 
-    const/4 p1, 0x1
+    invoke-static {}, Lmgu;->a()Lmgt;
 
-    iput-boolean p1, p0, Lmhh;->b:Z
+    move-result-object v0
+
+    invoke-virtual {v0, p1}, Lmgt;->b(Ljava/util/List;)V
+
+    iget-object p1, p0, Lmhh;->a:Lpos;
+
+    invoke-static {p2, p1}, Lmhi;->a(Ljava/nio/ByteBuffer;Lpos;)Lmhe;
+
+    move-result-object p1
+
+    invoke-virtual {v0, p1}, Lmgt;->d(Lmhe;)V
+
+    sget-object p1, Lmgw;->b:Lmgw;
+
+    invoke-virtual {v0, p1}, Lmgt;->c(Lmgw;)V
+
+    iget-object p1, p0, Lmhh;->b:Lmgv;
+
+    invoke-virtual {v0}, Lmgt;->a()Lmgu;
+
+    move-result-object p2
+
+    invoke-interface {p1, p2}, Lmgv;->a(Lmgu;)V
 
     return-void
 .end method
 
-.method public final onAnimationEnd(Landroid/animation/Animator;)V
-    .locals 2
+.method public final onResultUpdate(Ljava/util/List;Ljava/nio/ByteBuffer;Ljava/nio/ByteBuffer;)V
+    .locals 1
 
-    iget-object p1, p0, Lmhh;->a:Lmhq;
+    invoke-static {}, Lmgu;->a()Lmgt;
 
-    const/4 v0, 0x0
+    move-result-object v0
 
-    iput v0, p1, Lmhq;->A:I
+    invoke-virtual {v0, p1}, Lmgt;->b(Ljava/util/List;)V
 
-    const/4 v1, 0x0
+    iget-object p1, p0, Lmhh;->a:Lpos;
 
-    iput-object v1, p1, Lmhq;->v:Landroid/animation/Animator;
+    invoke-static {p2, p1}, Lmhi;->a(Ljava/nio/ByteBuffer;Lpos;)Lmhe;
 
-    iget-boolean v1, p0, Lmhh;->b:Z
+    move-result-object p1
 
-    if-nez v1, :cond_0
+    invoke-virtual {v0, p1}, Lmgt;->d(Lmhe;)V
 
-    iget-object p1, p1, Lmhq;->B:Lcom/google/android/material/floatingactionbutton/FloatingActionButton;
+    iget-object p1, p0, Lmhh;->a:Lpos;
 
-    const/4 v1, 0x4
+    :try_start_0
+    sget-object p2, Lmgw;->b:Lmgw;
 
-    invoke-virtual {p1, v1, v0}, Lmii;->g(IZ)V
+    invoke-static {p2, p3, p1}, Lppd;->r(Lppd;Ljava/nio/ByteBuffer;Lpos;)Lppd;
 
-    :cond_0
-    return-void
-.end method
+    move-result-object p1
 
-.method public final onAnimationStart(Landroid/animation/Animator;)V
-    .locals 3
+    check-cast p1, Lmgw;
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    iget-object v0, p0, Lmhh;->a:Lmhq;
+    goto :goto_0
 
-    iget-object v0, v0, Lmhq;->B:Lcom/google/android/material/floatingactionbutton/FloatingActionButton;
+    :catch_0
+    move-exception p1
 
-    const/4 v1, 0x0
+    sget-object p1, Lmgw;->b:Lmgw;
 
-    invoke-virtual {v0, v1, v1}, Lmii;->g(IZ)V
+    :goto_0
+    invoke-virtual {v0, p1}, Lmgt;->c(Lmgw;)V
 
-    iget-object v0, p0, Lmhh;->a:Lmhq;
+    iget-object p1, p0, Lmhh;->b:Lmgv;
 
-    const/4 v2, 0x1
+    invoke-virtual {v0}, Lmgt;->a()Lmgu;
 
-    iput v2, v0, Lmhq;->A:I
+    move-result-object p2
 
-    iput-object p1, v0, Lmhq;->v:Landroid/animation/Animator;
-
-    iput-boolean v1, p0, Lmhh;->b:Z
+    invoke-interface {p1, p2}, Lmgv;->a(Lmgu;)V
 
     return-void
 .end method

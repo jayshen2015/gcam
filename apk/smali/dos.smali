@@ -1,59 +1,30 @@
-.class public Ldos;
+.class public final Ldos;
 .super Ljava/lang/Object;
 
-# interfaces
-.implements Lhis;
+
+# instance fields
+.field public final a:Lmad;
+
+.field public final b:Lhtf;
+
+.field public final c:Llzv;
+
+.field public final d:Lojc;
 
 
 # direct methods
-.method public constructor <init>()V
+.method public constructor <init>(Lmad;Lhtf;Llzv;Lojc;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    return-void
-.end method
+    iput-object p1, p0, Ldos;->a:Lmad;
 
+    iput-object p2, p0, Ldos;->b:Lhtf;
 
-# virtual methods
-.method public a()V
-    .locals 0
+    iput-object p3, p0, Ldos;->c:Llzv;
 
-    return-void
-.end method
-
-.method public b(IIF)V
-    .locals 0
-
-    return-void
-.end method
-
-.method public c(Z)V
-    .locals 0
-
-    return-void
-.end method
-
-.method public d(ZZ)V
-    .locals 0
-
-    return-void
-.end method
-
-.method public synthetic f()V
-    .locals 0
-
-    return-void
-.end method
-
-.method public synthetic g()V
-    .locals 0
-
-    return-void
-.end method
-
-.method public synthetic h()V
-    .locals 0
+    iput-object p4, p0, Ldos;->d:Lojc;
 
     return-void
 .end method

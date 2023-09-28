@@ -1,90 +1,33 @@
-.class final Llcp;
-.super Llch;
+.class public final synthetic Llcp;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Llij;
 
 
 # instance fields
-.field final synthetic g:Llcn;
-
-.field final synthetic h:Llfg;
+.field public final synthetic a:Ljava/lang/Runnable;
 
 
 # direct methods
-.method public constructor <init>(Lldg;Landroid/opengl/EGLDisplay;Landroid/opengl/EGLSurface;Landroid/opengl/EGLContext;Landroid/opengl/EGLConfig;Llaq;Llcn;Llfg;)V
-    .locals 9
+.method public synthetic constructor <init>(Ljava/lang/Runnable;)V
+    .locals 0
 
-    move-object v8, p0
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    move-object/from16 v0, p7
-
-    iput-object v0, v8, Llcp;->g:Llcn;
-
-    move-object/from16 v0, p8
-
-    iput-object v0, v8, Llcp;->h:Llfg;
-
-    const/4 v6, 0x0
-
-    move-object v0, p0
-
-    move-object v1, p1
-
-    move-object v2, p2
-
-    move-object v3, p3
-
-    move-object v4, p4
-
-    move-object v5, p5
-
-    move-object v7, p6
-
-    invoke-direct/range {v0 .. v7}, Llch;-><init>(Lldg;Landroid/opengl/EGLDisplay;Landroid/opengl/EGLSurface;Landroid/opengl/EGLContext;Landroid/opengl/EGLConfig;ILlaq;)V
+    iput-object p1, p0, Llcp;->a:Ljava/lang/Runnable;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final b()Lkzf;
-    .locals 3
+.method public final fB(Ljava/lang/Object;)V
+    .locals 0
 
-    :try_start_0
-    iget-object v0, p0, Llcp;->g:Llcn;
+    iget-object p1, p0, Llcp;->a:Ljava/lang/Runnable;
 
-    invoke-interface {v0}, Llcn;->k()V
+    invoke-interface {p1}, Ljava/lang/Runnable;->run()V
 
-    iget-object v0, p0, Llcp;->h:Llfg;
-
-    invoke-interface {v0}, Llfg;->a()Lkzf;
-
-    move-result-object v0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    return-object v0
-
-    :catchall_0
-    move-exception v0
-
-    iget-object v1, p0, Llcp;->h:Llfg;
-
-    invoke-interface {v1}, Llfg;->a()Lkzf;
-
-    move-result-object v1
-
-    sget-object v2, Lnnv;->a:Lnnv;
-
-    invoke-static {v0}, Llpm;->p(Ljava/lang/Throwable;)Lkye;
-
-    move-result-object v0
-
-    invoke-virtual {v1, v2, v0}, Lkzf;->a(Ljava/util/concurrent/Executor;Lkye;)Lkzc;
-
-    move-result-object v0
-
-    invoke-static {v0}, Lkzf;->j(Lkzc;)Lkzf;
-
-    move-result-object v0
-
-    return-object v0
+    return-void
 .end method

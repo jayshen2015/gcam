@@ -1,182 +1,38 @@
-.class final Lhuo;
-.super Lhtw;
-
-
-# instance fields
-.field final synthetic b:Lhva;
+.class public final Lhuo;
+.super Lldn;
 
 
 # direct methods
-.method public constructor <init>(Lhva;)V
+.method public constructor <init>(Llda;)V
     .locals 0
 
-    iput-object p1, p0, Lhuo;->b:Lhva;
-
-    invoke-direct {p0, p1}, Lhtw;-><init>(Lhtz;)V
+    invoke-direct {p0, p1}, Lldn;-><init>(Llda;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()V
-    .locals 2
+.method protected final synthetic b(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 0
 
-    iget-object v0, p0, Lhuo;->b:Lhva;
+    check-cast p1, Ljava/lang/String;
 
-    iget-object v0, v0, Lhva;->q:Lhiu;
+    invoke-static {p1}, Lhtk;->a(Ljava/lang/String;)Lhtk;
 
-    invoke-virtual {v0}, Lhiu;->e()V
+    move-result-object p1
 
-    invoke-super {p0}, Lhtw;->a()V
-
-    iget-object v0, p0, Lhuo;->b:Lhva;
-
-    iget-object v1, v0, Lhva;->q:Lhiu;
-
-    iget-object v0, v0, Lhva;->w:Lhiw;
-
-    invoke-virtual {v1, v0}, Lhiu;->g(Lhiw;)V
-
-    return-void
+    return-object p1
 .end method
 
-.method public final c()V
-    .locals 2
+.method protected final synthetic c(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 0
 
-    iget-object v0, p0, Lhuo;->b:Lhva;
+    check-cast p1, Lhtk;
 
-    iget-object v0, v0, Lhva;->q:Lhiu;
+    invoke-virtual {p1}, Lhtk;->name()Ljava/lang/String;
 
-    invoke-virtual {v0}, Lhiu;->e()V
+    move-result-object p1
 
-    iget-object v0, p0, Lhuo;->b:Lhva;
-
-    iget-object v1, v0, Lhva;->q:Lhiu;
-
-    iget-object v0, v0, Lhva;->r:Lhiw;
-
-    invoke-virtual {v1, v0}, Lhiu;->g(Lhiw;)V
-
-    return-void
-.end method
-
-.method public final d()V
-    .locals 2
-
-    iget-object v0, p0, Lhuo;->b:Lhva;
-
-    iget-object v0, v0, Lhva;->q:Lhiu;
-
-    invoke-virtual {v0}, Lhiu;->e()V
-
-    iget-object v0, p0, Lhuo;->b:Lhva;
-
-    iget-object v1, v0, Lhva;->q:Lhiu;
-
-    iget-object v0, v0, Lhva;->s:Lhiw;
-
-    invoke-virtual {v1, v0}, Lhiu;->g(Lhiw;)V
-
-    return-void
-.end method
-
-.method public final i()V
-    .locals 2
-
-    iget-object v0, p0, Lhuo;->b:Lhva;
-
-    iget-object v0, v0, Lhva;->q:Lhiu;
-
-    invoke-virtual {v0}, Lhiu;->e()V
-
-    iget-object v0, p0, Lhuo;->b:Lhva;
-
-    iget-object v1, v0, Lhva;->q:Lhiu;
-
-    iget-object v0, v0, Lhva;->t:Lhiw;
-
-    invoke-virtual {v1, v0}, Lhiu;->g(Lhiw;)V
-
-    return-void
-.end method
-
-.method public final k()V
-    .locals 2
-
-    iget-object v0, p0, Lhuo;->b:Lhva;
-
-    iget-object v0, v0, Lhva;->q:Lhiu;
-
-    invoke-virtual {v0}, Lhiu;->e()V
-
-    iget-object v0, p0, Lhuo;->b:Lhva;
-
-    iget-object v1, v0, Lhva;->q:Lhiu;
-
-    iget-object v0, v0, Lhva;->w:Lhiw;
-
-    invoke-virtual {v1, v0}, Lhiu;->g(Lhiw;)V
-
-    return-void
-.end method
-
-.method public final l()V
-    .locals 2
-
-    iget-object v0, p0, Lhuo;->b:Lhva;
-
-    iget-object v0, v0, Lhva;->q:Lhiu;
-
-    invoke-virtual {v0}, Lhiu;->e()V
-
-    iget-object v0, p0, Lhuo;->b:Lhva;
-
-    iget-object v1, v0, Lhva;->q:Lhiu;
-
-    iget-object v0, v0, Lhva;->x:Lhiw;
-
-    invoke-virtual {v1, v0}, Lhiu;->g(Lhiw;)V
-
-    return-void
-.end method
-
-.method public final p()V
-    .locals 2
-
-    iget-object v0, p0, Lhuo;->b:Lhva;
-
-    iget-object v0, v0, Lhva;->q:Lhiu;
-
-    invoke-virtual {v0}, Lhiu;->e()V
-
-    iget-object v0, p0, Lhuo;->b:Lhva;
-
-    iget-object v1, v0, Lhva;->q:Lhiu;
-
-    iget-object v0, v0, Lhva;->C:Lhiw;
-
-    invoke-virtual {v1, v0}, Lhiu;->g(Lhiw;)V
-
-    return-void
-.end method
-
-.method public final q()V
-    .locals 2
-
-    iget-object v0, p0, Lhuo;->b:Lhva;
-
-    iget-object v0, v0, Lhva;->q:Lhiu;
-
-    invoke-virtual {v0}, Lhiu;->e()V
-
-    iget-object v0, p0, Lhuo;->b:Lhva;
-
-    iget-object v1, v0, Lhva;->q:Lhiu;
-
-    iget-object v0, v0, Lhva;->B:Lhiw;
-
-    invoke-virtual {v1, v0}, Lhiu;->g(Lhiw;)V
-
-    return-void
+    return-object p1
 .end method

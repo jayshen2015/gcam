@@ -1,188 +1,207 @@
-.class public final Lnqg;
-.super Ljava/lang/Object;
+.class final Lnqg;
+.super Lqnp;
 
-
-# static fields
-.field public static final a:Lnqg;
-
-.field public static final b:Lnqg;
-
-.field public static final c:Lnqg;
-
-.field public static final d:Lnqg;
-
-.field public static final e:Lnqg;
-
-.field public static final f:Lnqg;
-
-.field public static final g:Lnqg;
-
-.field public static final h:Lnqg;
-
-.field public static final i:[Lnqg;
-
-.field private static k:I
+# interfaces
+.implements Lqmj;
 
 
 # instance fields
-.field public final j:I
+.field final synthetic a:Lnqh;
 
-.field private final l:Ljava/lang/String;
+.field private final synthetic b:I
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 10
-
-    new-instance v0, Lnqg;
-
-    const-string v1, "kUnknown"
-
-    const/4 v2, -0x1
-
-    invoke-direct {v0, v1, v2}, Lnqg;-><init>(Ljava/lang/String;I)V
-
-    sput-object v0, Lnqg;->a:Lnqg;
-
-    new-instance v1, Lnqg;
-
-    const-string v2, "kDeprecatedSingleExp"
-
-    const/4 v3, 0x0
-
-    invoke-direct {v1, v2, v3}, Lnqg;-><init>(Ljava/lang/String;I)V
-
-    sput-object v1, Lnqg;->b:Lnqg;
-
-    new-instance v2, Lnqg;
-
-    const-string v4, "kShortExp"
-
-    invoke-direct {v2, v4}, Lnqg;-><init>(Ljava/lang/String;)V
-
-    sput-object v2, Lnqg;->c:Lnqg;
-
-    new-instance v4, Lnqg;
-
-    const-string v5, "kDeprecatedLongExp"
-
-    invoke-direct {v4, v5}, Lnqg;-><init>(Ljava/lang/String;)V
-
-    sput-object v4, Lnqg;->d:Lnqg;
-
-    new-instance v5, Lnqg;
-
-    const-string v6, "kBracketedExp"
-
-    invoke-direct {v5, v6}, Lnqg;-><init>(Ljava/lang/String;)V
-
-    sput-object v5, Lnqg;->e:Lnqg;
-
-    new-instance v6, Lnqg;
-
-    const-string v7, "kPostShutterAf"
-
-    invoke-direct {v6, v7}, Lnqg;-><init>(Ljava/lang/String;)V
-
-    sput-object v6, Lnqg;->f:Lnqg;
-
-    new-instance v7, Lnqg;
-
-    const-string v8, "kUltraShortExp"
-
-    invoke-direct {v7, v8}, Lnqg;-><init>(Ljava/lang/String;)V
-
-    sput-object v7, Lnqg;->g:Lnqg;
-
-    new-instance v8, Lnqg;
-
-    const-string v9, "kInvalidBurstFrameType"
-
-    invoke-direct {v8, v9}, Lnqg;-><init>(Ljava/lang/String;)V
-
-    sput-object v8, Lnqg;->h:Lnqg;
-
-    const/16 v9, 0x8
-
-    new-array v9, v9, [Lnqg;
-
-    aput-object v0, v9, v3
-
-    const/4 v0, 0x1
-
-    aput-object v1, v9, v0
-
-    const/4 v0, 0x2
-
-    aput-object v2, v9, v0
-
-    const/4 v0, 0x3
-
-    aput-object v4, v9, v0
-
-    const/4 v0, 0x4
-
-    aput-object v5, v9, v0
-
-    const/4 v0, 0x5
-
-    aput-object v6, v9, v0
-
-    const/4 v0, 0x6
-
-    aput-object v7, v9, v0
-
-    const/4 v0, 0x7
-
-    aput-object v8, v9, v0
-
-    sput-object v9, Lnqg;->i:[Lnqg;
-
-    sput v3, Lnqg;->k:I
-
-    return-void
-.end method
-
-.method private constructor <init>(Ljava/lang/String;)V
-    .locals 1
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lnqg;->l:Ljava/lang/String;
-
-    sget p1, Lnqg;->k:I
-
-    add-int/lit8 v0, p1, 0x1
-
-    sput v0, Lnqg;->k:I
-
-    iput p1, p0, Lnqg;->j:I
-
-    return-void
-.end method
-
-.method private constructor <init>(Ljava/lang/String;I)V
+.method public constructor <init>(Lnqh;I)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput p2, p0, Lnqg;->b:I
 
-    iput-object p1, p0, Lnqg;->l:Ljava/lang/String;
+    iput-object p1, p0, Lnqg;->a:Lnqh;
 
-    iput p2, p0, Lnqg;->j:I
+    const/4 p1, 0x0
 
-    add-int/lit8 p2, p2, 0x1
-
-    sput p2, Lnqg;->k:I
+    invoke-direct {p0, p1}, Lqnp;-><init>(I)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final toString()Ljava/lang/String;
-    .locals 1
+.method public final synthetic invoke()Ljava/lang/Object;
+    .locals 5
 
-    iget-object v0, p0, Lnqg;->l:Ljava/lang/String;
+    iget v0, p0, Lnqg;->b:I
 
+    packed-switch v0, :pswitch_data_0
+
+    iget-object v0, p0, Lnqg;->a:Lnqh;
+
+    iget-object v1, v0, Lnqh;->g:Ljava/lang/String;
+
+    const/4 v2, 0x0
+
+    if-nez v1, :cond_6
+
+    :goto_0
+    goto/16 :goto_2
+
+    :pswitch_0
+    new-instance v0, Ljava/util/LinkedHashSet;
+
+    invoke-direct {v0}, Ljava/util/LinkedHashSet;-><init>()V
+
+    iget-object v1, p0, Lnqg;->a:Lnqh;
+
+    iget-object v2, v1, Lnqh;->i:Lpop;
+
+    if-eqz v2, :cond_0
+
+    new-instance v3, Lnmw;
+
+    invoke-direct {v3, v2}, Lnmw;-><init>(Lpop;)V
+
+    invoke-interface {v0, v3}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
+
+    :cond_0
+    iget-object v2, v1, Lnqh;->j:Lpop;
+
+    if-eqz v2, :cond_1
+
+    new-instance v3, Lnmq;
+
+    invoke-direct {v3, v2}, Lnmq;-><init>(Lpop;)V
+
+    invoke-interface {v0, v3}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
+
+    :cond_1
+    iget-object v2, v1, Lnqh;->k:Lpop;
+
+    if-eqz v2, :cond_2
+
+    new-instance v3, Lnmx;
+
+    invoke-direct {v3, v2}, Lnmx;-><init>(Lpop;)V
+
+    invoke-interface {v0, v3}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
+
+    :cond_2
+    iget-boolean v2, v1, Lnqh;->l:Z
+
+    if-eqz v2, :cond_3
+
+    sget-object v2, Lnmv;->a:Lnmv;
+
+    invoke-interface {v0, v2}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
+
+    :cond_3
+    iget-object v2, v1, Lnqh;->m:Ljava/util/List;
+
+    invoke-interface {v2}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
+
+    move-result-object v2
+
+    :goto_1
+    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v3
+
+    if-eqz v3, :cond_4
+
+    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v3
+
+    check-cast v3, Loyj;
+
+    new-instance v4, Lnnc;
+
+    invoke-direct {v4, v3}, Lnnc;-><init>(Loyj;)V
+
+    invoke-interface {v0, v4}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
+
+    goto :goto_1
+
+    :cond_4
+    iget-object v1, v1, Lnqh;->n:Ljava/lang/String;
+
+    if-eqz v1, :cond_5
+
+    new-instance v2, Lnnf;
+
+    invoke-direct {v2, v1}, Lnnf;-><init>(Ljava/lang/String;)V
+
+    invoke-interface {v0, v2}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
+
+    :cond_5
     return-object v0
+
+    :cond_6
+    iget-object v1, v0, Lnqh;->h:Ljava/lang/String;
+
+    if-nez v1, :cond_7
+
+    goto :goto_0
+
+    :cond_7
+    sget-object v1, Lplv;->d:Lplv;
+
+    invoke-virtual {v1}, Lppd;->m()Lpoy;
+
+    move-result-object v1
+
+    iget-object v2, v0, Lnqh;->g:Ljava/lang/String;
+
+    iget-boolean v3, v1, Lpoy;->c:Z
+
+    if-eqz v3, :cond_8
+
+    invoke-virtual {v1}, Lpoy;->m()V
+
+    const/4 v3, 0x0
+
+    iput-boolean v3, v1, Lpoy;->c:Z
+
+    :cond_8
+    iget-object v3, v1, Lpoy;->b:Lppd;
+
+    check-cast v3, Lplv;
+
+    invoke-virtual {v2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    iget v4, v3, Lplv;->a:I
+
+    or-int/lit8 v4, v4, 0x1
+
+    iput v4, v3, Lplv;->a:I
+
+    iput-object v2, v3, Lplv;->b:Ljava/lang/String;
+
+    iget-object v0, v0, Lnqh;->h:Ljava/lang/String;
+
+    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    or-int/lit8 v2, v4, 0x2
+
+    iput v2, v3, Lplv;->a:I
+
+    iput-object v0, v3, Lplv;->c:Ljava/lang/String;
+
+    invoke-virtual {v1}, Lpoy;->h()Lppd;
+
+    move-result-object v0
+
+    move-object v2, v0
+
+    check-cast v2, Lplv;
+
+    :goto_2
+    return-object v2
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

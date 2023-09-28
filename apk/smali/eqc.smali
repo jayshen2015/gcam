@@ -1,48 +1,67 @@
-.class public interface abstract Leqc;
+.class public final synthetic Leqc;
 .super Ljava/lang/Object;
 
+# interfaces
+.implements Llie;
 
-# static fields
-.field public static final t:Lilz;
+
+# instance fields
+.field public final synthetic a:Ljava/util/concurrent/Future;
+
+.field private final synthetic b:I
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
+.method public synthetic constructor <init>(Ljava/util/concurrent/Future;I)V
+    .locals 0
 
-    new-instance v0, Lilz;
+    iput p2, p0, Leqc;->b:I
 
-    const/high16 v1, 0x42700000    # 60.0f
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {v0, v1}, Lilz;-><init>(F)V
-
-    sput-object v0, Leqc;->t:Lilz;
+    iput-object p1, p0, Leqc;->a:Ljava/util/concurrent/Future;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public abstract a()Lkad;
-.end method
+.method public final close()V
+    .locals 2
 
-.method public abstract b(Leea;Leqg;Lnsz;Ljava/lang/Runnable;Leqf;)Lnou;
-.end method
+    iget v0, p0, Leqc;->b:I
 
-.method public abstract c(Leea;Ljava/lang/Runnable;)V
-.end method
+    const/4 v1, 0x0
 
-.method public abstract d(Lkpb;Lcom/google/googlex/gcam/FrameMetadata;)V
-.end method
+    packed-switch v0, :pswitch_data_0
 
-.method public abstract e(Leqb;)V
-.end method
+    iget-object v0, p0, Leqc;->a:Ljava/util/concurrent/Future;
 
-.method public abstract g(IJ)V
-.end method
+    invoke-interface {v0, v1}, Ljava/util/concurrent/Future;->cancel(Z)Z
 
-.method public abstract h(Leqb;)V
-.end method
+    return-void
 
-.method public abstract j(Lgkr;Lnph;)Lkad;
+    :pswitch_0
+    iget-object v0, p0, Leqc;->a:Ljava/util/concurrent/Future;
+
+    invoke-interface {v0, v1}, Ljava/util/concurrent/Future;->cancel(Z)Z
+
+    return-void
+
+    :pswitch_1
+    iget-object v0, p0, Leqc;->a:Ljava/util/concurrent/Future;
+
+    const/4 v1, 0x1
+
+    invoke-interface {v0, v1}, Ljava/util/concurrent/Future;->cancel(Z)Z
+
+    return-void
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method

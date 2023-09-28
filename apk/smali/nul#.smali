@@ -1,79 +1,53 @@
-.class public final synthetic Lnul;
-.super Ljava/lang/Object;
+.class final Lnul;
+.super Lqnp;
 
 # interfaces
-.implements Lktx;
+.implements Lqmu;
 
 
 # instance fields
-.field public final synthetic a:Lcom/google/lens/sdk/LensApi;
-
-.field public final synthetic b:Lnup;
-
-.field public final synthetic c:J
-
-.field public final synthetic d:Landroid/app/Activity;
+.field final synthetic a:Lnpe;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lcom/google/lens/sdk/LensApi;Lnup;JLandroid/app/Activity;)V
+.method public constructor <init>(Lnpe;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lnul;->a:Lnpe;
 
-    iput-object p1, p0, Lnul;->a:Lcom/google/lens/sdk/LensApi;
+    const/4 p1, 0x1
 
-    iput-object p2, p0, Lnul;->b:Lnup;
-
-    iput-wide p3, p0, Lnul;->c:J
-
-    iput-object p5, p0, Lnul;->d:Landroid/app/Activity;
+    invoke-direct {p0, p1}, Lqnp;-><init>(I)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(I)V
-    .locals 6
+.method public final bridge synthetic a(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 4
 
-    iget-object v0, p0, Lnul;->a:Lcom/google/lens/sdk/LensApi;
+    check-cast p1, Ljava/lang/Number;
 
-    iget-object v1, p0, Lnul;->b:Lnup;
+    invoke-virtual {p1}, Ljava/lang/Number;->doubleValue()D
 
-    iget-wide v2, p0, Lnul;->c:J
+    iget-object p1, p0, Lnul;->a:Lnpe;
 
-    iget-object v4, p0, Lnul;->d:Landroid/app/Activity;
+    iget-object v0, p1, Lnpe;->h:Lnpk;
 
-    const/4 v5, 0x2
+    iget-wide v0, v0, Lnpk;->f:D
 
-    if-ne p1, v5, :cond_1
+    iget-wide v2, p1, Lnpe;->d:J
 
-    iget-object p1, v1, Lnup;->c:Ljava/lang/Long;
+    long-to-double v2, v2
 
-    if-nez p1, :cond_0
+    invoke-static {v2, v3}, Ljava/lang/Double;->isNaN(D)Z
 
-    invoke-virtual {v1}, Lnup;->d()Loem;
+    mul-double v0, v0, v2
+
+    invoke-static {v0, v1}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
 
     move-result-object p1
 
-    invoke-static {v2, v3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    move-result-object v1
-
-    iput-object v1, p1, Loem;->c:Ljava/lang/Object;
-
-    invoke-virtual {p1}, Loem;->b()Lnup;
-
-    move-result-object v1
-
-    :cond_0
-    invoke-virtual {v0, v1}, Lcom/google/lens/sdk/LensApi;->d(Lnup;)V
-
-    return-void
-
-    :cond_1
-    invoke-static {v4}, Lcom/google/lens/sdk/LensApi;->h(Landroid/app/Activity;)V
-
-    return-void
+    return-object p1
 .end method

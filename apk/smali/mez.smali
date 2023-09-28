@@ -2,315 +2,223 @@
 .super Ljava/lang/Object;
 
 
-# instance fields
-.field public a:I
+# static fields
+.field public static final synthetic a:I
 
-.field public b:I
+.field private static b:Landroid/os/UserManager;
 
-.field private final c:J
-
-.field private final d:J
-
-.field private final e:Landroid/animation/TimeInterpolator;
+.field private static volatile c:Z
 
 
 # direct methods
-.method public constructor <init>(JJLandroid/animation/TimeInterpolator;)V
+.method static constructor <clinit>()V
     .locals 1
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     const/4 v0, 0x0
 
-    iput v0, p0, Lmez;->a:I
-
-    const/4 v0, 0x1
-
-    iput v0, p0, Lmez;->b:I
-
-    iput-wide p1, p0, Lmez;->c:J
-
-    iput-wide p3, p0, Lmez;->d:J
-
-    iput-object p5, p0, Lmez;->e:Landroid/animation/TimeInterpolator;
+    sput-boolean v0, Lmez;->c:Z
 
     return-void
 .end method
 
+.method private constructor <init>()V
+    .locals 0
 
-# virtual methods
-.method public final a()Landroid/animation/TimeInterpolator;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method
+
+.method public static a(Landroid/content/Context;)Landroid/content/Context;
     .locals 1
 
-    iget-object v0, p0, Lmez;->e:Landroid/animation/TimeInterpolator;
+    invoke-virtual {p0}, Landroid/content/Context;->isDeviceProtectedStorage()Z
+
+    move-result v0
 
     if-eqz v0, :cond_0
 
-    return-object v0
+    return-object p0
 
     :cond_0
-    sget-object v0, Lmev;->b:Landroid/animation/TimeInterpolator;
+    invoke-virtual {p0}, Landroid/content/Context;->createDeviceProtectedStorageContext()Landroid/content/Context;
 
-    return-object v0
+    move-result-object p0
+
+    return-object p0
 .end method
 
-.method public final b(Landroid/animation/Animator;)V
-    .locals 2
+.method public static b(Landroid/content/Context;)Z
+    .locals 0
 
-    iget-wide v0, p0, Lmez;->c:J
+    invoke-static {p0}, Lmez;->d(Landroid/content/Context;)Z
 
-    invoke-virtual {p1, v0, v1}, Landroid/animation/Animator;->setStartDelay(J)V
+    move-result p0
 
-    iget-wide v0, p0, Lmez;->d:J
+    if-nez p0, :cond_0
 
-    invoke-virtual {p1, v0, v1}, Landroid/animation/Animator;->setDuration(J)Landroid/animation/Animator;
+    const/4 p0, 0x1
 
-    invoke-virtual {p0}, Lmez;->a()Landroid/animation/TimeInterpolator;
+    return p0
 
-    move-result-object v0
+    :cond_0
+    const/4 p0, 0x0
 
-    invoke-virtual {p1, v0}, Landroid/animation/Animator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
+    return p0
+.end method
 
-    instance-of v0, p1, Landroid/animation/ValueAnimator;
+.method public static c(Landroid/content/Context;)Z
+    .locals 0
+
+    invoke-static {p0}, Lmez;->d(Landroid/content/Context;)Z
+
+    move-result p0
+
+    if-eqz p0, :cond_0
+
+    const/4 p0, 0x1
+
+    return p0
+
+    :cond_0
+    const/4 p0, 0x0
+
+    return p0
+.end method
+
+.method private static d(Landroid/content/Context;)Z
+    .locals 7
+
+    sget-boolean v0, Lmez;->c:Z
+
+    const/4 v1, 0x1
 
     if-eqz v0, :cond_0
 
-    iget v0, p0, Lmez;->a:I
-
-    check-cast p1, Landroid/animation/ValueAnimator;
-
-    invoke-virtual {p1, v0}, Landroid/animation/ValueAnimator;->setRepeatCount(I)V
-
-    iget v0, p0, Lmez;->b:I
-
-    invoke-virtual {p1, v0}, Landroid/animation/ValueAnimator;->setRepeatMode(I)V
+    return v1
 
     :cond_0
-    return-void
-.end method
+    const-class v0, Lmez;
 
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 6
+    monitor-enter v0
 
-    if-ne p0, p1, :cond_0
+    :try_start_0
+    sget-boolean v2, Lmez;->c:Z
 
-    const/4 p1, 0x1
+    if-eqz v2, :cond_1
 
-    return p1
-
-    :cond_0
-    instance-of v0, p1, Lmez;
-
-    const/4 v1, 0x0
-
-    if-nez v0, :cond_1
+    monitor-exit v0
 
     return v1
 
     :cond_1
-    check-cast p1, Lmez;
+    const/4 v2, 0x1
 
-    iget-wide v2, p0, Lmez;->c:J
+    :goto_0
+    const/4 v3, 0x2
 
-    iget-wide v4, p1, Lmez;->c:J
+    const/4 v4, 0x0
 
-    cmp-long v0, v2, v4
+    const/4 v5, 0x0
 
-    if-nez v0, :cond_3
+    if-gt v2, v3, :cond_5
 
-    iget-wide v2, p0, Lmez;->d:J
+    sget-object v3, Lmez;->b:Landroid/os/UserManager;
 
-    iget-wide v4, p1, Lmez;->d:J
+    if-nez v3, :cond_2
 
-    cmp-long v0, v2, v4
+    const-class v3, Landroid/os/UserManager;
 
-    if-nez v0, :cond_3
+    invoke-virtual {p0, v3}, Landroid/content/Context;->getSystemService(Ljava/lang/Class;)Ljava/lang/Object;
 
-    iget v0, p0, Lmez;->a:I
+    move-result-object v3
 
-    iget v2, p1, Lmez;->a:I
+    check-cast v3, Landroid/os/UserManager;
 
-    if-ne v0, v2, :cond_3
-
-    iget v0, p0, Lmez;->b:I
-
-    iget v2, p1, Lmez;->b:I
-
-    if-eq v0, v2, :cond_2
-
-    return v1
+    sput-object v3, Lmez;->b:Landroid/os/UserManager;
 
     :cond_2
-    invoke-virtual {p0}, Lmez;->a()Landroid/animation/TimeInterpolator;
+    sget-object v3, Lmez;->b:Landroid/os/UserManager;
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    move-result-object v0
+    if-nez v3, :cond_3
 
-    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    const/4 v5, 0x1
 
-    move-result-object v0
-
-    invoke-virtual {p1}, Lmez;->a()Landroid/animation/TimeInterpolator;
-
-    move-result-object p1
-
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    move-result-object p1
-
-    invoke-virtual {v0, p1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
-
-    move-result p1
-
-    return p1
+    goto :goto_2
 
     :cond_3
-    return v1
-.end method
+    :try_start_1
+    invoke-virtual {v3}, Landroid/os/UserManager;->isUserUnlocked()Z
 
-.method public final hashCode()I
-    .locals 7
+    move-result v6
 
-    iget-wide v0, p0, Lmez;->c:J
+    if-nez v6, :cond_4
 
-    const/16 v2, 0x20
+    invoke-static {}, Landroid/os/Process;->myUserHandle()Landroid/os/UserHandle;
 
-    ushr-long v3, v0, v2
+    move-result-object v6
 
-    xor-long/2addr v0, v3
+    invoke-virtual {v3, v6}, Landroid/os/UserManager;->isUserRunning(Landroid/os/UserHandle;)Z
 
-    iget-wide v3, p0, Lmez;->d:J
+    move-result p0
+    :try_end_1
+    .catch Ljava/lang/NullPointerException; {:try_start_1 .. :try_end_1} :catch_0
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    ushr-long v5, v3, v2
+    if-nez p0, :cond_5
 
-    xor-long/2addr v3, v5
+    :cond_4
+    const/4 v5, 0x1
 
-    invoke-virtual {p0}, Lmez;->a()Landroid/animation/TimeInterpolator;
+    goto :goto_1
 
-    move-result-object v2
+    :catch_0
+    move-exception v3
 
-    invoke-virtual {v2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    :try_start_2
+    const-string v5, "DirectBootUtils"
 
-    move-result-object v2
+    const-string v6, "Failed to check if user is unlocked."
 
-    invoke-virtual {v2}, Ljava/lang/Object;->hashCode()I
+    invoke-static {v5, v6, v3}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    move-result v2
+    sput-object v4, Lmez;->b:Landroid/os/UserManager;
 
-    long-to-int v1, v0
+    add-int/lit8 v2, v2, 0x1
 
-    mul-int/lit8 v1, v1, 0x1f
+    goto :goto_0
 
-    long-to-int v0, v3
+    :cond_5
+    :goto_1
+    if-eqz v5, :cond_6
 
-    add-int/2addr v1, v0
+    sput-object v4, Lmez;->b:Landroid/os/UserManager;
 
-    mul-int/lit8 v1, v1, 0x1f
+    :cond_6
+    :goto_2
+    if-eqz v5, :cond_7
 
-    add-int/2addr v1, v2
+    sput-boolean v1, Lmez;->c:Z
 
-    mul-int/lit8 v1, v1, 0x1f
+    :cond_7
+    monitor-exit v0
 
-    iget v0, p0, Lmez;->a:I
+    return v5
 
-    add-int/2addr v1, v0
+    :catchall_0
+    move-exception p0
 
-    mul-int/lit8 v1, v1, 0x1f
+    monitor-exit v0
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
-    iget v0, p0, Lmez;->b:I
+    goto :goto_4
 
-    add-int/2addr v1, v0
+    :goto_3
+    throw p0
 
-    return v1
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .locals 3
-
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
-    const/16 v1, 0xa
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
-
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/Class;->getName()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const/16 v1, 0x7b
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
-
-    invoke-static {p0}, Ljava/lang/System;->identityHashCode(Ljava/lang/Object;)I
-
-    move-result v1
-
-    invoke-static {v1}, Ljava/lang/Integer;->toHexString(I)Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v1, " delay: "
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-wide v1, p0, Lmez;->c:J
-
-    invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    const-string v1, " duration: "
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-wide v1, p0, Lmez;->d:J
-
-    invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    const-string v1, " interpolator: "
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {p0}, Lmez;->a()Landroid/animation/TimeInterpolator;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const-string v1, " repeatCount: "
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget v1, p0, Lmez;->a:I
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    const-string v1, " repeatMode: "
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget v1, p0, Lmez;->b:I
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    const-string v1, "}\n"
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    return-object v0
+    :goto_4
+    goto :goto_3
 .end method

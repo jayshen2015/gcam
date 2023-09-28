@@ -1,170 +1,137 @@
-.class public final Lipo;
-.super Lnws;
+.class public final synthetic Lipo;
+.super Ljava/lang/Object;
 
 # interfaces
-.implements Lnxz;
-
-
-# static fields
-.field public static final c:Lipo;
-
-.field private static volatile d:Lnyf;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field public a:Lnvt;
+.field public final synthetic a:Lipr;
 
-.field public b:J
+.field private final synthetic b:I
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
+.method public synthetic constructor <init>(Lipr;I)V
+    .locals 0
 
-    new-instance v0, Lipo;
+    iput p2, p0, Lipo;->b:I
 
-    invoke-direct {v0}, Lipo;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    sput-object v0, Lipo;->c:Lipo;
-
-    const-class v1, Lipo;
-
-    invoke-static {v1, v0}, Lnws;->aa(Ljava/lang/Class;Lnws;)V
-
-    return-void
-.end method
-
-.method private constructor <init>()V
-    .locals 1
-
-    invoke-direct {p0}, Lnws;-><init>()V
-
-    sget-object v0, Lnvt;->b:Lnvt;
-
-    iput-object v0, p0, Lipo;->a:Lnvt;
+    iput-object p1, p0, Lipo;->a:Lipr;
 
     return-void
 .end method
 
 
 # virtual methods
-.method protected final a(ILjava/lang/Object;)Ljava/lang/Object;
-    .locals 3
+.method public final run()V
+    .locals 4
 
-    add-int/lit8 p1, p1, -0x1
+    iget v0, p0, Lipo;->b:I
 
-    const/4 p2, 0x1
+    packed-switch v0, :pswitch_data_0
 
-    packed-switch p1, :pswitch_data_0
+    iget-object v0, p0, Lipo;->a:Lipr;
+
+    sget-object v1, Lipr;->a:Louj;
+
+    invoke-virtual {v1}, Loue;->c()Lova;
+
+    move-result-object v1
+
+    const/16 v2, 0xc23
+
+    const-string v3, "Device temperature is too high that may impact video quality."
+
+    invoke-static {v1, v3, v2}, Ld;->v(Lova;Ljava/lang/String;C)V
+
+    iget-object v1, v0, Lipr;->g:Ljhh;
+
+    sget-object v2, Lims;->f:Lims;
+
+    iget-object v0, v0, Lipr;->j:Liqj;
+
+    invoke-virtual {v0}, Liqj;->h()Z
+
+    move-result v0
+
+    invoke-virtual {v1, v2, v0}, Ljhh;->e(Lims;Z)V
+
+    return-void
 
     :pswitch_0
-    const/4 p1, 0x0
+    iget-object v0, p0, Lipo;->a:Lipr;
 
-    return-object p1
+    iget-object v1, v0, Lipr;->j:Liqj;
+
+    invoke-virtual {v1}, Liqj;->b()V
+
+    iget-object v0, v0, Lipr;->m:Lipc;
+
+    iget-object v0, v0, Lipc;->a:Lipf;
+
+    iget-object v0, v0, Lipf;->e:Ljava/util/concurrent/atomic/AtomicBoolean;
+
+    const/4 v1, 0x0
+
+    invoke-virtual {v0, v1}, Ljava/util/concurrent/atomic/AtomicBoolean;->set(Z)V
+
+    return-void
 
     :pswitch_1
-    sget-object p1, Lipo;->d:Lnyf;
+    iget-object v0, p0, Lipo;->a:Lipr;
 
-    if-nez p1, :cond_1
+    sget-object v1, Lipr;->a:Louj;
 
-    const-class p2, Lipo;
+    invoke-virtual {v1}, Loue;->c()Lova;
 
-    monitor-enter p2
+    move-result-object v1
 
-    :try_start_0
-    sget-object p1, Lipo;->d:Lnyf;
+    const/16 v2, 0xc22
 
-    if-nez p1, :cond_0
+    const-string v3, "Device temperature is too high to do recording."
 
-    new-instance p1, Lnwo;
+    invoke-static {v1, v3, v2}, Ld;->v(Lova;Ljava/lang/String;C)V
 
-    sget-object v0, Lipo;->c:Lipo;
+    iget-object v1, v0, Lipr;->j:Liqj;
 
-    invoke-direct {p1, v0}, Lnwo;-><init>(Lnws;)V
+    invoke-virtual {v1}, Liqj;->a()V
 
-    sput-object p1, Lipo;->d:Lnyf;
+    iget-object v1, v0, Lipr;->g:Ljhh;
 
-    :cond_0
-    monitor-exit p2
+    sget-object v2, Lims;->g:Lims;
 
-    goto :goto_0
+    iget-object v3, v0, Lipr;->j:Liqj;
 
-    :catchall_0
-    move-exception p1
+    invoke-virtual {v3}, Liqj;->h()Z
 
-    monitor-exit p2
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    move-result v3
 
-    throw p1
+    invoke-virtual {v1, v2, v3}, Ljhh;->e(Lims;Z)V
 
-    :cond_1
-    :goto_0
-    return-object p1
+    iget-object v0, v0, Lipr;->m:Lipc;
 
-    :pswitch_2
-    sget-object p1, Lipo;->c:Lipo;
+    iget-object v1, v0, Lipc;->a:Lipf;
 
-    return-object p1
+    iget-object v1, v1, Lipf;->e:Ljava/util/concurrent/atomic/AtomicBoolean;
 
-    :pswitch_3
-    new-instance p1, Lnwn;
+    const/4 v2, 0x1
 
-    sget-object p2, Lipo;->c:Lipo;
+    invoke-virtual {v1, v2}, Ljava/util/concurrent/atomic/AtomicBoolean;->set(Z)V
 
-    invoke-direct {p1, p2}, Lnwn;-><init>(Lnws;)V
+    iget-object v0, v0, Lipc;->a:Lipf;
 
-    return-object p1
+    invoke-virtual {v0}, Lipf;->c()V
 
-    :pswitch_4
-    new-instance p1, Lipo;
-
-    invoke-direct {p1}, Lipo;-><init>()V
-
-    return-object p1
-
-    :pswitch_5
-    const-string p1, "a"
-
-    const-string v0, "\u0000\u0002\u0000\u0000\u0001\u0002\u0002\u0000\u0000\u0000\u0001\n\u0002\u0002"
-
-    const/4 v1, 0x2
-
-    new-array v1, v1, [Ljava/lang/Object;
-
-    const/4 v2, 0x0
-
-    aput-object p1, v1, v2
-
-    const-string p1, "b"
-
-    aput-object p1, v1, p2
-
-    sget-object p1, Lipo;->c:Lipo;
-
-    invoke-static {p1, v0, v1}, Lipo;->X(Lnxy;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object p1
-
-    return-object p1
-
-    :pswitch_6
-    invoke-static {p2}, Ljava/lang/Byte;->valueOf(B)Ljava/lang/Byte;
-
-    move-result-object p1
-
-    return-object p1
+    return-void
 
     nop
 
     :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_6
-        :pswitch_0
-        :pswitch_5
-        :pswitch_4
-        :pswitch_3
-        :pswitch_2
         :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method

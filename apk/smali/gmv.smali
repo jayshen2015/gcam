@@ -1,67 +1,40 @@
-.class final Lgmv;
-.super Ljava/lang/Object;
-
-# interfaces
-.implements Lecv;
+.class public final Lgmv;
+.super Lmaa;
 
 
 # instance fields
-.field final synthetic a:Lgmx;
-
-.field final synthetic b:Lgkr;
+.field private final a:Ljava/util/concurrent/atomic/AtomicBoolean;
 
 
 # direct methods
-.method public constructor <init>(Lgmx;Lgkr;[B[B)V
-    .locals 0
+.method public constructor <init>(Lmad;)V
+    .locals 1
 
-    iput-object p1, p0, Lgmv;->a:Lgmx;
+    invoke-direct {p0, p1}, Lmaa;-><init>(Lmad;)V
 
-    iput-object p2, p0, Lgmv;->b:Lgkr;
+    new-instance p1, Ljava/util/concurrent/atomic/AtomicBoolean;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const/4 v0, 0x0
+
+    invoke-direct {p1, v0}, Ljava/util/concurrent/atomic/AtomicBoolean;-><init>(Z)V
+
+    iput-object p1, p0, Lgmv;->a:Ljava/util/concurrent/atomic/AtomicBoolean;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Leea;Lcom/google/googlex/gcam/InterleavedImageU8;Lcom/google/googlex/gcam/ShotMetadata;)V
-    .locals 0
+.method public final close()V
+    .locals 2
 
-    invoke-virtual {p1}, Leea;->a()I
+    invoke-super {p0}, Lmaa;->close()V
 
-    iget-object p1, p1, Leea;->d:Ljava/util/List;
+    iget-object v0, p0, Lgmv;->a:Ljava/util/concurrent/atomic/AtomicBoolean;
 
-    invoke-virtual {p0, p2, p3, p1}, Lgmv;->b(Lcom/google/googlex/gcam/InterleavedImageU8;Lcom/google/googlex/gcam/ShotMetadata;Ljava/util/List;)V
+    const/4 v1, 0x1
 
-    return-void
-.end method
-
-.method public final b(Lcom/google/googlex/gcam/InterleavedImageU8;Lcom/google/googlex/gcam/ShotMetadata;Ljava/util/List;)V
-    .locals 3
-
-    iget-object v0, p0, Lgmv;->a:Lgmx;
-
-    iget-object v0, v0, Lgmx;->b:Lmqp;
-
-    invoke-virtual {v0}, Lmqp;->c()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ledk;
-
-    iget-object v1, p0, Lgmv;->b:Lgkr;
-
-    sget-object v2, Lefz;->c:Lefz;
-
-    invoke-interface {v0, v1, v2}, Ledk;->d(Lgkr;Lefz;)Ledm;
-
-    move-result-object v0
-
-    invoke-interface {v0, p1, p2, p3}, Ledm;->e(Lcom/google/googlex/gcam/InterleavedImageU8;Lcom/google/googlex/gcam/ShotMetadata;Ljava/util/List;)V
-
-    invoke-interface {v0}, Ledm;->close()V
+    invoke-virtual {v0, v1}, Ljava/util/concurrent/atomic/AtomicBoolean;->getAndSet(Z)Z
 
     return-void
 .end method

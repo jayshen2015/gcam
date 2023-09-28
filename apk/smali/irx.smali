@@ -1,95 +1,23 @@
-.class public final synthetic Lirx;
+.class public final Lirx;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lkad;
+.implements Landroid/widget/SeekBar$OnSeekBarChangeListener;
 
 
 # instance fields
-.field public final synthetic a:Ljava/lang/Object;
+.field final synthetic a:Lisa;
 
-.field private final synthetic b:I
+.field final synthetic b:Lirz;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lisi;I)V
+.method public constructor <init>(Lirz;Lisa;)V
     .locals 0
 
-    iput p2, p0, Lirx;->b:I
+    iput-object p1, p0, Lirx;->b:Lirz;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lirx;->a:Ljava/lang/Object;
-
-    return-void
-.end method
-
-.method public constructor <init>(Ljava/lang/Object;I)V
-    .locals 0
-
-    iput p2, p0, Lirx;->b:I
-
-    iput-object p1, p0, Lirx;->a:Ljava/lang/Object;
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
-.end method
-
-.method public synthetic constructor <init>(Ljava/util/concurrent/locks/ReentrantLock;I)V
-    .locals 0
-
-    iput p2, p0, Lirx;->b:I
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lirx;->a:Ljava/lang/Object;
-
-    return-void
-.end method
-
-.method public synthetic constructor <init>(Lkcx;I)V
-    .locals 0
-
-    iput p2, p0, Lirx;->b:I
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lirx;->a:Ljava/lang/Object;
-
-    return-void
-.end method
-
-.method public synthetic constructor <init>(Lkgw;I)V
-    .locals 0
-
-    iput p2, p0, Lirx;->b:I
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lirx;->a:Ljava/lang/Object;
-
-    return-void
-.end method
-
-.method public synthetic constructor <init>(Lkgz;I)V
-    .locals 0
-
-    iput p2, p0, Lirx;->b:I
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lirx;->a:Ljava/lang/Object;
-
-    return-void
-.end method
-
-.method public constructor <init>(Lrb;I)V
-    .locals 0
-
-    iput p2, p0, Lirx;->b:I
-
-    iput-object p1, p0, Lirx;->a:Ljava/lang/Object;
+    iput-object p2, p0, Lirx;->a:Lisa;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -98,88 +26,50 @@
 
 
 # virtual methods
-.method public final close()V
+.method public final onProgressChanged(Landroid/widget/SeekBar;IZ)V
     .locals 2
 
-    iget v0, p0, Lirx;->b:I
+    instance-of v0, p1, Lirr;
 
-    packed-switch v0, :pswitch_data_0
+    if-eqz v0, :cond_1
 
-    iget-object v0, p0, Lirx;->a:Ljava/lang/Object;
+    move-object v0, p1
 
-    invoke-interface {v0}, Lrb;->close()V
+    check-cast v0, Lirr;
+
+    invoke-virtual {v0, p2}, Lirr;->c(I)Liqm;
+
+    move-result-object v1
+
+    invoke-virtual {v0}, Lirr;->invalidate()V
+
+    iget-object v0, p0, Lirx;->b:Lirz;
+
+    invoke-virtual {v0, p2}, Lirz;->e(I)V
+
+    if-eqz p3, :cond_0
+
+    invoke-static {p1}, Ljty;->e(Landroid/view/View;)V
+
+    :cond_0
+    iget-object p1, p0, Lirx;->a:Lisa;
+
+    if-eqz p1, :cond_1
+
+    invoke-interface {p1, v1}, Lisa;->b(Liqm;)V
+
+    :cond_1
+    return-void
+.end method
+
+.method public final onStartTrackingTouch(Landroid/widget/SeekBar;)V
+    .locals 0
 
     return-void
+.end method
 
-    :pswitch_0
-    iget-object v0, p0, Lirx;->a:Ljava/lang/Object;
-
-    check-cast v0, Ljava/util/concurrent/locks/ReentrantLock;
-
-    invoke-virtual {v0}, Ljava/util/concurrent/locks/ReentrantLock;->unlock()V
+.method public final onStopTrackingTouch(Landroid/widget/SeekBar;)V
+    .locals 0
 
     return-void
-
-    :pswitch_1
-    iget-object v0, p0, Lirx;->a:Ljava/lang/Object;
-
-    check-cast v0, Lkgz;
-
-    invoke-virtual {v0}, Lkgz;->d()V
-
-    return-void
-
-    :pswitch_2
-    iget-object v0, p0, Lirx;->a:Ljava/lang/Object;
-
-    check-cast v0, Lkgw;
-
-    invoke-virtual {v0}, Lkgw;->p()V
-
-    return-void
-
-    :pswitch_3
-    iget-object v0, p0, Lirx;->a:Ljava/lang/Object;
-
-    check-cast v0, Lkcx;
-
-    invoke-virtual {v0}, Lkcx;->f()V
-
-    :pswitch_4
-    return-void
-
-    :pswitch_5
-    iget-object v0, p0, Lirx;->a:Ljava/lang/Object;
-
-    check-cast v0, Lisi;
-
-    invoke-virtual {v0}, Lisi;->n()V
-
-    return-void
-
-    :pswitch_6
-    iget-object v0, p0, Lirx;->a:Ljava/lang/Object;
-
-    check-cast v0, Lisi;
-
-    const/4 v1, 0x1
-
-    invoke-virtual {v0, v1}, Lisi;->I(Z)V
-
-    invoke-virtual {v0}, Lisi;->p()V
-
-    return-void
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_6
-        :pswitch_5
-        :pswitch_4
-        :pswitch_3
-        :pswitch_2
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
 .end method

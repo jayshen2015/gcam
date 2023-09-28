@@ -1,77 +1,43 @@
 .class public final Ldsi;
 .super Ljava/lang/Object;
 
+# interfaces
+.implements Landroid/hardware/SensorEventListener;
 
-# static fields
-.field private static final a:Lnak;
+
+# instance fields
+.field final synthetic a:Ldsz;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
+.method public constructor <init>(Ldsz;)V
+    .locals 0
 
-    const-string v0, "com/google/android/apps/camera/faceobfuscation/api/ThumbnailObfuscator"
+    iput-object p1, p0, Ldsi;->a:Ldsz;
 
-    invoke-static {v0}, Lnak;->h(Ljava/lang/String;)Lnak;
-
-    move-result-object v0
-
-    sput-object v0, Ldsi;->a:Lnak;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
-.method public static a(Ldsa;Landroid/graphics/Bitmap;Lmqp;)Landroid/graphics/Bitmap;
-    .locals 2
 
-    :try_start_0
-    new-instance v0, Ldsc;
+# virtual methods
+.method public final onAccuracyChanged(Landroid/hardware/Sensor;I)V
+    .locals 0
 
-    const/4 v1, 0x1
+    return-void
+.end method
 
-    invoke-direct {v0, p1, v1}, Ldsc;-><init>(Landroid/graphics/Bitmap;I)V
+.method public final onSensorChanged(Landroid/hardware/SensorEvent;)V
+    .locals 3
 
-    invoke-interface {p0, v0, p2}, Ldsa;->b(Ldry;Lmqp;)Lnou;
+    iget-object v0, p0, Ldsi;->a:Ldsz;
 
-    move-result-object p0
+    iget-wide v1, p1, Landroid/hardware/SensorEvent;->timestamp:J
 
-    invoke-interface {p0}, Lnou;->get()Ljava/lang/Object;
+    iget-object p1, p1, Landroid/hardware/SensorEvent;->values:[F
 
-    move-result-object p0
+    invoke-virtual {v0, v1, v2, p1}, Ldsz;->h(J[F)V
 
-    check-cast p0, Ldrz;
-
-    invoke-interface {p0}, Ldrz;->a()Ljava/lang/Object;
-
-    move-result-object p0
-
-    check-cast p0, Landroid/graphics/Bitmap;
-    :try_end_0
-    .catch Ljava/lang/InterruptedException; {:try_start_0 .. :try_end_0} :catch_1
-    .catch Ljava/util/concurrent/ExecutionException; {:try_start_0 .. :try_end_0} :catch_0
-
-    return-object p0
-
-    :catch_0
-    move-exception p0
-
-    goto :goto_0
-
-    :catch_1
-    move-exception p0
-
-    :goto_0
-    sget-object p2, Ldsi;->a:Lnak;
-
-    invoke-virtual {p2}, Lnaf;->c()Lnaz;
-
-    move-result-object p2
-
-    const-string v0, "Can\'t apply face obfuscation post-processing for thumbnail"
-
-    const/16 v1, 0x464
-
-    invoke-static {p2, v0, v1, p0}, Ld;->h(Lnaz;Ljava/lang/String;CLjava/lang/Throwable;)V
-
-    return-object p1
+    return-void
 .end method

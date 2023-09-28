@@ -1,83 +1,119 @@
-.class public final synthetic Legi;
+.class public final Legi;
 .super Ljava/lang/Object;
-
-# interfaces
-.implements Legm;
 
 
 # instance fields
-.field public final synthetic a:Ljvs;
-
-.field public final synthetic b:Lhnb;
+.field public final a:Landroid/util/DisplayMetrics;
 
 
 # direct methods
-.method public synthetic constructor <init>(Ljvs;Lhnb;)V
+.method public constructor <init>(Landroid/util/DisplayMetrics;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Legi;->a:Ljvs;
-
-    iput-object p2, p0, Legi;->b:Lhnb;
+    iput-object p1, p0, Legi;->a:Landroid/util/DisplayMetrics;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Ljava/lang/String;)Ljava/lang/String;
-    .locals 3
+.method public final a(Lcom/google/googlex/gcam/InterleavedImageU8;)Landroid/graphics/Bitmap;
+    .locals 11
 
-    iget-object v0, p0, Legi;->a:Ljvs;
+    sget-object v0, Landroid/graphics/Bitmap$Config;->ARGB_8888:Landroid/graphics/Bitmap$Config;
 
-    iget-object v1, p0, Legi;->b:Lhnb;
+    iget-object v1, p0, Legi;->a:Landroid/util/DisplayMetrics;
 
-    invoke-interface {v0}, Ljvs;->bm()Ljava/lang/Object;
+    invoke-virtual {p1}, Lcom/google/googlex/gcam/InterleavedImageU8;->b()I
+
+    move-result v2
+
+    invoke-virtual {p1}, Lcom/google/googlex/gcam/InterleavedImageU8;->a()I
+
+    move-result v3
+
+    invoke-static {v1, v2, v3, v0}, Landroid/graphics/Bitmap;->createBitmap(Landroid/util/DisplayMetrics;IILandroid/graphics/Bitmap$Config;)Landroid/graphics/Bitmap;
 
     move-result-object v0
 
-    check-cast v0, Ljava/lang/Boolean;
-
-    invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
-
-    move-result v0
-
-    xor-int/lit8 v0, v0, 0x1
-
-    invoke-interface {v1}, Lhnb;->e()Lhna;
+    invoke-static {v0}, Lpjh;->a(Landroid/graphics/Bitmap;)Lpjh;
 
     move-result-object v1
 
-    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v1
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
-    invoke-virtual {v2, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string p1, "\n==HAWK Summary==\n  Throttled: "
-
-    invoke-virtual {v2, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    const-string p1, "\n  Level: "
-
-    invoke-virtual {v2, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string p1, "\n"
-
-    invoke-virtual {v2, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    :try_start_0
+    invoke-virtual {p1}, Lcom/google/googlex/gcam/InterleavedImageU8;->c()Lcom/google/googlex/gcam/InterleavedReadViewU8;
 
     move-result-object p1
 
-    return-object p1
+    iget-object v2, v1, Lpjh;->a:Lcom/google/googlex/gcam/InterleavedWriteViewU8;
+
+    iget-wide v3, p1, Lcom/google/googlex/gcam/InterleavedReadViewU8;->a:J
+
+    invoke-static {v2}, Lcom/google/googlex/gcam/InterleavedWriteViewU8;->a(Lcom/google/googlex/gcam/InterleavedWriteViewU8;)J
+
+    move-result-wide v5
+
+    const/4 p1, 0x1
+
+    const/4 v2, 0x0
+
+    const-wide/16 v7, 0x0
+
+    cmp-long v9, v3, v7
+
+    if-eqz v9, :cond_0
+
+    const/4 v9, 0x1
+
+    goto :goto_0
+
+    :cond_0
+    const/4 v9, 0x0
+
+    :goto_0
+    const-string v10, "src is null"
+
+    invoke-static {v9, v10}, Lobr;->aG(ZLjava/lang/Object;)V
+
+    cmp-long v9, v5, v7
+
+    if-eqz v9, :cond_1
+
+    goto :goto_1
+
+    :cond_1
+    const/4 p1, 0x0
+
+    :goto_1
+    const-string v2, "dst is null"
+
+    invoke-static {p1, v2}, Lobr;->aG(ZLjava/lang/Object;)V
+
+    const/4 p1, 0x5
+
+    invoke-static {v3, v4, p1, v5, v6}, Lcom/google/googlex/gcam/image/ImageUtils;->simpleRgbToAnyRgbImpl(JIJ)Z
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    invoke-virtual {v1}, Lpjh;->close()V
+
+    return-object v0
+
+    :catchall_0
+    move-exception p1
+
+    :try_start_1
+    invoke-virtual {v1}, Lpjh;->close()V
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_1
+
+    goto :goto_2
+
+    :catchall_1
+    move-exception v0
+
+    :goto_2
+    throw p1
 .end method

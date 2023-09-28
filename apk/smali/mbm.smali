@@ -1,104 +1,89 @@
 .class public final Lmbm;
 .super Ljava/lang/Object;
 
+# interfaces
+.implements Lpys;
 
-# static fields
-.field public static final a:Lnbj;
+
+# instance fields
+.field private final a:Lqkg;
+
+.field private final b:Lqkg;
+
+.field private final c:Lqkg;
+
+.field private final d:Lqkg;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
+.method public constructor <init>(Lqkg;Lqkg;Lqkg;Lqkg;)V
+    .locals 0
 
-    const-string v0, "F250UploadClient"
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-static {v0}, Lnbj;->h(Ljava/lang/String;)Lnbj;
+    iput-object p1, p0, Lmbm;->a:Lqkg;
 
-    move-result-object v0
+    iput-object p2, p0, Lmbm;->b:Lqkg;
 
-    sput-object v0, Lmbm;->a:Lnbj;
+    iput-object p3, p0, Lmbm;->c:Lqkg;
+
+    iput-object p4, p0, Lmbm;->d:Lqkg;
 
     return-void
 .end method
 
-.method public static final a(Llpu;)Ljava/lang/String;
-    .locals 4
 
-    iget-object p0, p0, Llpu;->b:Ljava/lang/Object;
+# virtual methods
+.method public final a()Lmbl;
+    .locals 5
 
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    iget-object v0, p0, Lmbm;->a:Lqkg;
 
-    sget-object v0, Looj;->a:Ljava/nio/charset/Charset;
+    check-cast v0, Likv;
 
-    new-instance v1, Ljava/io/InputStreamReader;
-
-    check-cast p0, Ljava/io/InputStream;
-
-    invoke-direct {v1, p0, v0}, Ljava/io/InputStreamReader;-><init>(Ljava/io/InputStream;Ljava/nio/charset/Charset;)V
-
-    new-instance p0, Ljava/io/BufferedReader;
-
-    const/16 v0, 0x2000
-
-    invoke-direct {p0, v1, v0}, Ljava/io/BufferedReader;-><init>(Ljava/io/Reader;I)V
-
-    :try_start_0
-    new-instance v1, Ljava/io/StringWriter;
-
-    invoke-direct {v1}, Ljava/io/StringWriter;-><init>()V
-
-    new-array v0, v0, [C
-
-    invoke-virtual {p0, v0}, Ljava/io/Reader;->read([C)I
-
-    move-result v2
-
-    :goto_0
-    if-ltz v2, :cond_0
-
-    const/4 v3, 0x0
-
-    invoke-virtual {v1, v0, v3, v2}, Ljava/io/Writer;->write([CII)V
-
-    invoke-virtual {p0, v0}, Ljava/io/Reader;->read([C)I
-
-    move-result v2
-
-    goto :goto_0
-
-    :cond_0
-    invoke-virtual {v1}, Ljava/io/StringWriter;->toString()Ljava/lang/String;
+    invoke-virtual {v0}, Likv;->a()Lmbj;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    iget-object v1, p0, Lmbm;->b:Lqkg;
 
-    const/4 v1, 0x0
+    check-cast v1, Lmav;
 
-    invoke-static {p0, v1}, Lolp;->c(Ljava/io/Closeable;Ljava/lang/Throwable;)V
+    invoke-virtual {v1}, Lmav;->a()Lmxm;
+
+    move-result-object v1
+
+    iget-object v2, p0, Lmbm;->c:Lqkg;
+
+    check-cast v2, Lmbh;
+
+    invoke-virtual {v2}, Lmbh;->a()Lmbg;
+
+    move-result-object v2
+
+    iget-object v3, p0, Lmbm;->d:Lqkg;
+
+    invoke-interface {v3}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v3
+
+    check-cast v3, Lmaq;
+
+    new-instance v3, Lmbl;
+
+    const/4 v4, 0x0
+
+    invoke-direct {v3, v0, v1, v2, v4}, Lmbl;-><init>(Lmbj;Lmxm;Lmbg;[B)V
+
+    return-object v3
+.end method
+
+.method public final bridge synthetic get()Ljava/lang/Object;
+    .locals 1
+
+    invoke-virtual {p0}, Lmbm;->a()Lmbl;
+
+    move-result-object v0
 
     return-object v0
-
-    :catchall_0
-    move-exception v0
-
-    :try_start_1
-    throw v0
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_1
-
-    :catchall_1
-    move-exception v1
-
-    invoke-static {p0, v0}, Lolp;->c(Ljava/io/Closeable;Ljava/lang/Throwable;)V
-
-    goto :goto_2
-
-    :goto_1
-    throw v1
-
-    :goto_2
-    goto :goto_1
 .end method

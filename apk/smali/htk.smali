@@ -1,174 +1,84 @@
-.class public Lhtk;
-.super Lhir;
+.class public final enum Lhtk;
+.super Ljava/lang/Enum;
 
 
-# instance fields
-.field public final synthetic b:Lhtl;
+# static fields
+.field public static final enum a:Lhtk;
+
+.field public static final enum b:Lhtk;
+
+.field private static final synthetic c:[Lhtk;
 
 
 # direct methods
-.method public constructor <init>(Lhtl;)V
-    .locals 11
+.method static constructor <clinit>()V
+    .locals 5
 
-    iput-object p1, p0, Lhtk;->b:Lhtl;
+    new-instance v0, Lhtk;
 
-    invoke-direct {p0}, Lhir;-><init>()V
+    const-string v1, "SIXTEEN_BY_NINE"
 
-    const/16 v0, 0xd
+    const/4 v2, 0x0
 
-    new-array v1, v0, [Lhiz;
+    invoke-direct {v0, v1, v2}, Lhtk;-><init>(Ljava/lang/String;I)V
 
-    const-string v2, "CameraUi.SocialShare"
+    sput-object v0, Lhtk;->a:Lhtk;
 
-    invoke-static {v2}, Ljcb;->j(Ljava/lang/String;)Lhiz;
+    new-instance v1, Lhtk;
 
-    move-result-object v2
+    const-string v3, "THREE_BY_FOUR"
 
-    const/4 v3, 0x0
+    const/4 v4, 0x1
 
-    aput-object v2, v1, v3
+    invoke-direct {v1, v3, v4}, Lhtk;-><init>(Ljava/lang/String;I)V
 
-    iget-object v2, p1, Lhtl;->b:Leoa;
+    sput-object v1, Lhtk;->b:Lhtk;
 
-    invoke-virtual {v2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    const/4 v3, 0x2
 
-    new-instance v3, Lhth;
+    new-array v3, v3, [Lhtk;
 
-    const/16 v4, 0x8
+    aput-object v0, v3, v2
 
-    invoke-direct {v3, v2, v4}, Lhth;-><init>(Leoa;I)V
+    aput-object v1, v3, v4
 
-    const/4 v2, 0x1
-
-    aput-object v3, v1, v2
-
-    iget-object v2, p1, Lhtl;->d:Lgeh;
-
-    invoke-virtual {v2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    new-instance v3, Lhth;
-
-    const/16 v5, 0x9
-
-    invoke-direct {v3, v2, v5}, Lhth;-><init>(Lgeh;I)V
-
-    const/4 v2, 0x2
-
-    aput-object v3, v1, v2
-
-    new-instance v2, Lhth;
-
-    const/4 v3, 0x6
-
-    invoke-direct {v2, p0, v3}, Lhth;-><init>(Lhtk;I)V
-
-    const/4 v6, 0x3
-
-    aput-object v2, v1, v6
-
-    new-instance v2, Lhth;
-
-    const/4 v6, 0x7
-
-    invoke-direct {v2, p0, v6}, Lhth;-><init>(Lhtk;I)V
-
-    const/4 v7, 0x4
-
-    aput-object v2, v1, v7
-
-    iget-object v2, p1, Lhtl;->f:Lhwu;
-
-    invoke-virtual {v2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    new-instance v7, Lhth;
-
-    const/16 v8, 0xa
-
-    invoke-direct {v7, v2, v8}, Lhth;-><init>(Lhwu;I)V
-
-    const/4 v2, 0x5
-
-    aput-object v7, v1, v2
-
-    iget-object v7, p1, Lhtl;->e:Litm;
-
-    new-instance v9, Lhth;
-
-    const/16 v10, 0xb
-
-    invoke-direct {v9, v7, v10}, Lhth;-><init>(Litm;I)V
-
-    aput-object v9, v1, v3
-
-    iget-object v3, p1, Lhtl;->j:Licb;
-
-    invoke-virtual {v3}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    new-instance v7, Lhth;
-
-    const/16 v9, 0xc
-
-    invoke-direct {v7, v3, v9}, Lhth;-><init>(Licb;I)V
-
-    aput-object v7, v1, v6
-
-    iget-object v6, p1, Lhtl;->h:Liff;
-
-    invoke-virtual {v6}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    new-instance v7, Lhth;
-
-    invoke-direct {v7, v6, v0}, Lhth;-><init>(Liff;I)V
-
-    aput-object v7, v1, v4
-
-    iget-object p1, p1, Lhtl;->c:Lcom/google/android/apps/camera/bottombar/BottomBarController;
-
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    new-instance v0, Lhth;
-
-    const/16 v4, 0xe
-
-    invoke-direct {v0, p1, v4}, Lhth;-><init>(Lcom/google/android/apps/camera/bottombar/BottomBarController;I)V
-
-    aput-object v0, v1, v5
-
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    new-instance v0, Lhth;
-
-    const/16 v4, 0xf
-
-    invoke-direct {v0, p1, v4}, Lhth;-><init>(Lcom/google/android/apps/camera/bottombar/BottomBarController;I)V
-
-    aput-object v0, v1, v8
-
-    invoke-virtual {v3}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    new-instance p1, Lhth;
-
-    const/16 v0, 0x10
-
-    invoke-direct {p1, v3, v0}, Lhth;-><init>(Licb;I)V
-
-    aput-object p1, v1, v10
-
-    new-instance p1, Lhth;
-
-    invoke-direct {p1, p0, v2}, Lhth;-><init>(Lhtk;I)V
-
-    aput-object p1, v1, v9
-
-    invoke-virtual {p0, v1}, Lhir;->a([Lhiz;)V
+    sput-object v3, Lhtk;->c:[Lhtk;
 
     return-void
 .end method
 
-
-# virtual methods
-.method public d()V
+.method private constructor <init>(Ljava/lang/String;I)V
     .locals 0
 
+    invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
     return-void
+.end method
+
+.method public static a(Ljava/lang/String;)Lhtk;
+    .locals 1
+
+    const-class v0, Lhtk;
+
+    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
+
+    move-result-object p0
+
+    check-cast p0, Lhtk;
+
+    return-object p0
+.end method
+
+.method public static values()[Lhtk;
+    .locals 1
+
+    sget-object v0, Lhtk;->c:[Lhtk;
+
+    invoke-virtual {v0}, [Lhtk;->clone()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, [Lhtk;
+
+    return-object v0
 .end method

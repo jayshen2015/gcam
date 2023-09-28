@@ -1,24 +1,83 @@
-.class public final Lojc;
-.super Ljava/lang/Error;
+.class public abstract Lojc;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Ljava/io/Serializable;
+
+
+# static fields
+.field private static final serialVersionUID:J
 
 
 # direct methods
 .method public constructor <init>()V
-    .locals 1
+    .locals 0
 
-    const/4 v0, 0x0
-
-    invoke-direct {p0, v0}, Lojc;-><init>([B)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
-.method public constructor <init>([B)V
-    .locals 0
+.method public static h(Ljava/lang/Object;)Lojc;
+    .locals 1
 
-    const-string p1, "An operation is not implemented: Not yet implemented."
+    if-nez p0, :cond_0
 
-    invoke-direct {p0, p1}, Ljava/lang/Error;-><init>(Ljava/lang/String;)V
+    sget-object p0, Loih;->a:Loih;
 
-    return-void
+    goto :goto_0
+
+    :cond_0
+    new-instance v0, Lojj;
+
+    invoke-direct {v0, p0}, Lojj;-><init>(Ljava/lang/Object;)V
+
+    move-object p0, v0
+
+    :goto_0
+    return-object p0
+.end method
+
+.method public static i(Ljava/lang/Object;)Lojc;
+    .locals 1
+
+    new-instance v0, Lojj;
+
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    invoke-direct {v0, p0}, Lojj;-><init>(Ljava/lang/Object;)V
+
+    return-object v0
+.end method
+
+
+# virtual methods
+.method public abstract a(Lojc;)Lojc;
+.end method
+
+.method public abstract b(Loiu;)Lojc;
+.end method
+
+.method public abstract c()Ljava/lang/Object;
+.end method
+
+.method public abstract d(Lojz;)Ljava/lang/Object;
+.end method
+
+.method public abstract e(Ljava/lang/Object;)Ljava/lang/Object;
+.end method
+
+.method public abstract equals(Ljava/lang/Object;)Z
+.end method
+
+.method public abstract f()Ljava/lang/Object;
+.end method
+
+.method public abstract g()Z
+.end method
+
+.method public abstract hashCode()I
+.end method
+
+.method public abstract toString()Ljava/lang/String;
 .end method

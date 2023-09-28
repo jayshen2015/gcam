@@ -2,98 +2,104 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Logk;
+.implements Lpys;
 
 
 # instance fields
-.field private final a:Loiw;
+.field private final a:Lqkg;
 
-.field private final b:Loiw;
+.field private final b:Lqkg;
 
-.field private final c:Loiw;
+.field private final c:Lqkg;
+
+.field private final d:Lqkg;
+
+.field private final e:Lqkg;
+
+.field private final f:Lqkg;
 
 
 # direct methods
-.method public constructor <init>(Loiw;Loiw;Loiw;)V
+.method public constructor <init>(Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lfjb;->a:Loiw;
+    iput-object p1, p0, Lfjb;->a:Lqkg;
 
-    iput-object p2, p0, Lfjb;->b:Loiw;
+    iput-object p2, p0, Lfjb;->b:Lqkg;
 
-    iput-object p3, p0, Lfjb;->c:Loiw;
+    iput-object p3, p0, Lfjb;->c:Lqkg;
+
+    iput-object p4, p0, Lfjb;->d:Lqkg;
+
+    iput-object p5, p0, Lfjb;->e:Lqkg;
+
+    iput-object p6, p0, Lfjb;->f:Lqkg;
 
     return-void
 .end method
 
-.method public static b(Loiw;Loiw;Loiw;)Lfjb;
-    .locals 1
-
-    new-instance v0, Lfjb;
-
-    invoke-direct {v0, p0, p1, p2}, Lfjb;-><init>(Loiw;Loiw;Loiw;)V
-
-    return-object v0
-.end method
-
 
 # virtual methods
-.method public final a()Landroid/media/MediaFormat;
+.method public final a()Lfja;
     .locals 8
 
-    iget-object v0, p0, Lfjb;->a:Loiw;
+    iget-object v0, p0, Lfjb;->a:Lqkg;
 
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
+    check-cast v0, Lemp;
 
-    move-result-object v0
+    invoke-virtual {v0}, Lemp;->a()Landroid/content/Context;
 
-    check-cast v0, Ldhi;
+    move-result-object v2
 
-    iget-object v1, p0, Lfjb;->b:Loiw;
+    iget-object v0, p0, Lfjb;->b:Lqkg;
 
-    check-cast v1, Lfjj;
-
-    invoke-virtual {v1}, Lfjj;->a()Ljava/lang/String;
-
-    move-result-object v5
-
-    iget-object v1, p0, Lfjb;->c:Loiw;
-
-    invoke-interface {v1}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v1
-
-    move-object v2, v1
-
-    check-cast v2, Lkaf;
-
-    const v3, 0xb71b00
-
-    const v4, 0x3e6eeeef
-
-    sget-object v1, Ldho;->aa:Ldhj;
-
-    invoke-interface {v0, v1}, Ldhi;->l(Ldhj;)Z
-
-    move-result v6
-
-    sget-object v1, Ldhv;->a:Ldhk;
-
-    invoke-interface {v0}, Ldhi;->e()V
-
-    sget-object v1, Ldhv;->v:Ldhj;
-
-    invoke-interface {v0, v1}, Ldhi;->l(Ldhj;)Z
-
-    move-result v7
-
-    invoke-static/range {v2 .. v7}, Lfwt;->h(Lkaf;IFLjava/lang/String;ZZ)Landroid/media/MediaFormat;
+    invoke-interface {v0}, Lqkg;->get()Ljava/lang/Object;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    move-object v3, v0
+
+    check-cast v3, Lhuf;
+
+    iget-object v4, p0, Lfjb;->c:Lqkg;
+
+    iget-object v0, p0, Lfjb;->d:Lqkg;
+
+    invoke-interface {v0}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    move-object v5, v0
+
+    check-cast v5, Llar;
+
+    iget-object v0, p0, Lfjb;->e:Lqkg;
+
+    invoke-interface {v0}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    move-object v6, v0
+
+    check-cast v6, Lljf;
+
+    iget-object v0, p0, Lfjb;->f:Lqkg;
+
+    invoke-interface {v0}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    move-object v7, v0
+
+    check-cast v7, Ljava/util/concurrent/Executor;
+
+    new-instance v0, Lfja;
+
+    move-object v1, v0
+
+    invoke-direct/range {v1 .. v7}, Lfja;-><init>(Landroid/content/Context;Lhuf;Lqkg;Llar;Lljf;Ljava/util/concurrent/Executor;)V
 
     return-object v0
 .end method
@@ -101,7 +107,7 @@
 .method public final bridge synthetic get()Ljava/lang/Object;
     .locals 1
 
-    invoke-virtual {p0}, Lfjb;->a()Landroid/media/MediaFormat;
+    invoke-virtual {p0}, Lfjb;->a()Lfja;
 
     move-result-object v0
 

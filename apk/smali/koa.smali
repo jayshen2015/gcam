@@ -2,21 +2,27 @@
 .super Ljava/lang/Object;
 
 
-# static fields
-.field public static final a:Lkhz;
+# annotations
+.annotation runtime Ljava/lang/Deprecated;
+.end annotation
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
+.method public static a(Ljava/io/Closeable;)V
+    .locals 0
 
-    new-instance v0, Lkhz;
+    if-eqz p0, :cond_0
 
-    const/4 v1, 0x4
+    :try_start_0
+    invoke-interface {p0}, Ljava/io/Closeable;->close()V
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
-    invoke-direct {v0, v1}, Lkhz;-><init>(I)V
+    return-void
 
-    sput-object v0, Lkoa;->a:Lkhz;
+    :catch_0
+    move-exception p0
 
+    :cond_0
     return-void
 .end method

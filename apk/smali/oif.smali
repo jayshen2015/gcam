@@ -1,75 +1,30 @@
-.class public final Loif;
-.super Ljava/lang/Object;
-
-# interfaces
-.implements Lmrl;
-
-
-# static fields
-.field public static final a:Loif;
-
-
-# instance fields
-.field private final b:Lmrl;
+.class final Loif;
+.super Loke;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
-
-    new-instance v0, Loif;
-
-    invoke-direct {v0}, Loif;-><init>()V
-
-    sput-object v0, Loif;->a:Loif;
-
-    return-void
-.end method
-
 .method public constructor <init>()V
-    .locals 1
+    .locals 0
 
-    new-instance v0, Loih;
-
-    invoke-direct {v0}, Loih;-><init>()V
-
-    invoke-static {v0}, Llkj;->E(Ljava/lang/Object;)Lmrl;
-
-    move-result-object v0
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    invoke-static {v0}, Llkj;->D(Lmrl;)Lmrl;
-
-    move-result-object v0
-
-    iput-object v0, p0, Loif;->b:Lmrl;
+    invoke-direct {p0}, Loke;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final bridge synthetic a()Ljava/lang/Object;
-    .locals 1
+.method public final a()J
+    .locals 3
 
-    invoke-virtual {p0}, Loif;->b()Loig;
+    sget-object v0, Ljava/util/concurrent/TimeUnit;->MILLISECONDS:Ljava/util/concurrent/TimeUnit;
 
-    move-result-object v0
+    invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
-    return-object v0
-.end method
+    move-result-wide v1
 
-.method public final b()Loig;
-    .locals 1
+    invoke-virtual {v0, v1, v2}, Ljava/util/concurrent/TimeUnit;->toNanos(J)J
 
-    iget-object v0, p0, Loif;->b:Lmrl;
+    move-result-wide v0
 
-    invoke-interface {v0}, Lmrl;->a()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Loig;
-
-    return-object v0
+    return-wide v0
 .end method

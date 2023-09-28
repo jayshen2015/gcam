@@ -3,133 +3,245 @@
 
 
 # instance fields
-.field public final a:Lolz;
+.field public final a:Lwl;
 
-.field public final b:Ljava/lang/Object;
+.field public final b:Landroid/util/ArrayMap;
 
-.field public c:I
-
-.field public d:Lora;
-
-.field public e:Z
-
-.field private final f:Lopu;
+.field private final c:Landroid/content/Context;
 
 
 # direct methods
-.method public constructor <init>(Lopu;Lolz;)V
+.method public constructor <init>(Landroid/content/Context;Lwn;Lwl;)V
     .locals 0
+
+    invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    invoke-virtual {p3}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lvr;->f:Lopu;
+    iput-object p1, p0, Lvr;->c:Landroid/content/Context;
 
-    iput-object p2, p0, Lvr;->a:Lolz;
+    iput-object p3, p0, Lvr;->a:Lwl;
 
-    new-instance p1, Ljava/lang/Object;
+    new-instance p1, Landroid/util/ArrayMap;
 
-    invoke-direct {p1}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p1}, Landroid/util/ArrayMap;-><init>()V
 
-    iput-object p1, p0, Lvr;->b:Ljava/lang/Object;
-
-    monitor-enter p1
-
-    :try_start_0
-    invoke-virtual {p0}, Lvr;->a()V
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    monitor-exit p1
+    iput-object p1, p0, Lvr;->b:Landroid/util/ArrayMap;
 
     return-void
-
-    :catchall_0
-    move-exception p2
-
-    monitor-exit p1
-
-    throw p2
 .end method
 
 
 # virtual methods
-.method public final a()V
-    .locals 4
+.method public final a(Ljava/lang/String;Z)Lvo;
+    .locals 10
 
-    iget-object v0, p0, Lvr;->f:Lopu;
+    invoke-static {}, Landroid/os/SystemClock;->elapsedRealtimeNanos()J
 
-    new-instance v1, Lvq;
+    move-result-wide v0
 
-    const/4 v2, 0x0
+    new-instance v2, Ljava/lang/StringBuilder;
 
-    invoke-direct {v1, p0, v2}, Lvq;-><init>(Lvr;Loku;)V
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    const/4 v3, 0x3
+    const-string v3, "Camera-"
 
-    invoke-static {v0, v2, v1, v3}, Lone;->j(Lopu;Lola;Lomo;I)Lora;
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v0
+    invoke-virtual {v2, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iput-object v0, p0, Lvr;->d:Lora;
+    const-string v3, "#readCameraMetadata"
 
-    return-void
-.end method
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-.method public final b()V
-    .locals 4
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    iget-object v0, p0, Lvr;->b:Ljava/lang/Object;
-
-    monitor-enter v0
+    move-result-object v2
 
     :try_start_0
-    iget-boolean v1, p0, Lvr;->e:Z
+    invoke-static {v2}, Landroid/os/Trace;->beginSection(Ljava/lang/String;)V
     :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    if-eqz v1, :cond_0
-
-    monitor-exit v0
-
-    return-void
-
-    :cond_0
-    const/4 v1, 0x1
+    .catchall {:try_start_0 .. :try_end_0} :catchall_1
 
     :try_start_1
-    iput-boolean v1, p0, Lvr;->e:Z
+    iget-object v2, p0, Lvr;->c:Landroid/content/Context;
 
-    iget-object v1, p0, Lvr;->d:Lora;
+    const-string v3, "camera"
 
-    if-eqz v1, :cond_1
+    invoke-virtual {v2, v3}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 
-    invoke-static {v1}, Lopx;->k(Lora;)V
+    move-result-object v2
 
-    :cond_1
-    const/4 v1, 0x0
+    if-eqz v2, :cond_1
 
-    iput-object v1, p0, Lvr;->d:Lora;
+    check-cast v2, Landroid/hardware/camera2/CameraManager;
+
+    invoke-virtual {v2, p1}, Landroid/hardware/camera2/CameraManager;->getCameraCharacteristics(Ljava/lang/String;)Landroid/hardware/camera2/CameraCharacteristics;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    new-instance v3, Lvo;
+
+    invoke-direct {v3, p1, v2}, Lvo;-><init>(Ljava/lang/String;Landroid/hardware/camera2/CameraCharacteristics;)V
+
+    invoke-static {}, Landroid/os/SystemClock;->elapsedRealtimeNanos()J
+
+    move-result-wide v4
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    monitor-exit v0
+    sub-long/2addr v4, v0
 
-    iget-object v0, p0, Lvr;->f:Lopu;
+    const/4 v0, 0x1
 
-    new-instance v2, Lvp;
+    if-eq v0, p2, :cond_0
 
-    invoke-direct {v2, p0, v1}, Lvp;-><init>(Lvr;Loku;)V
+    const-string p2, ""
 
-    const/4 v3, 0x3
+    goto :goto_0
 
-    invoke-static {v0, v1, v2, v3}, Lone;->j(Lopu;Lola;Lomo;I)Lora;
+    :cond_0
+    const-string p2, " (redacted)"
 
-    return-void
+    :goto_0
+    :try_start_2
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v2, "Loaded metadata for "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-static {p1}, Lve;->b(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string v2, " in "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v6, "%."
+
+    invoke-virtual {v2, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const/4 v6, 0x3
+
+    invoke-virtual {v2, v6}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    const-string v6, "f ms"
+
+    invoke-virtual {v2, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    new-array v6, v0, [Ljava/lang/Object;
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
+
+    const/4 v7, 0x0
+
+    long-to-double v4, v4
+
+    const-wide v8, 0x412e848000000000L    # 1000000.0
+
+    invoke-static {v4, v5}, Ljava/lang/Double;->isNaN(D)Z
+
+    div-double/2addr v4, v8
+
+    :try_start_3
+    invoke-static {v4, v5}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
+
+    move-result-object v4
+
+    aput-object v4, v6, v7
+
+    const/4 v4, 0x0
+
+    invoke-static {v6, v0}, Ljava/util/Arrays;->copyOf([Ljava/lang/Object;I)[Ljava/lang/Object;
+
+    move-result-object v0
+
+    invoke-static {v4, v2, v0}, Ljava/lang/String;->format(Ljava/util/Locale;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_0
+
+    invoke-static {}, Landroid/os/Trace;->endSection()V
+
+    return-object v3
+
+    :cond_1
+    :try_start_4
+    new-instance p2, Ljava/lang/NullPointerException;
+
+    const-string v0, "null cannot be cast to non-null type android.hardware.camera2.CameraManager"
+
+    invoke-direct {p2, v0}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
+
+    throw p2
+    :try_end_4
+    .catchall {:try_start_4 .. :try_end_4} :catchall_0
 
     :catchall_0
-    move-exception v1
+    move-exception p2
 
-    monitor-exit v0
+    :try_start_5
+    new-instance v0, Ljava/lang/IllegalStateException;
 
-    throw v1
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v2, "Failed to load metadata for "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-static {p1}, Lve;->b(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const/16 p1, 0x21
+
+    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-direct {v0, p1, p2}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
+
+    throw v0
+    :try_end_5
+    .catchall {:try_start_5 .. :try_end_5} :catchall_1
+
+    :catchall_1
+    move-exception p1
+
+    invoke-static {}, Landroid/os/Trace;->endSection()V
+
+    throw p1
 .end method

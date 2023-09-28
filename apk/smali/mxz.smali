@@ -1,126 +1,99 @@
-.class final Lmxz;
-.super Ljava/util/AbstractCollection;
+.class public final Lmxz;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Lmxo;
 
 
 # instance fields
-.field final synthetic a:Lmst;
+.field public final a:Lphw;
+
+.field public final b:Lpyn;
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 0
+.method public constructor <init>(Lmxm;Landroid/content/Context;Lphw;Lpyn;Lqkg;Lqkg;)V
+    .locals 2
 
-    invoke-direct {p0}, Ljava/util/AbstractCollection;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    return-void
-.end method
+    new-instance v0, Ljava/util/concurrent/atomic/AtomicBoolean;
 
-.method public constructor <init>(Lmst;)V
-    .locals 0
+    const/4 v1, 0x0
 
-    iput-object p1, p0, Lmxz;->a:Lmst;
+    invoke-direct {v0, v1}, Ljava/util/concurrent/atomic/AtomicBoolean;-><init>(Z)V
 
-    invoke-direct {p0}, Ljava/util/AbstractCollection;-><init>()V
+    new-instance v0, Landroid/content/IntentFilter;
+
+    const-string v1, "android.intent.action.BATTERY_CHANGED"
+
+    invoke-direct {v0, v1}, Landroid/content/IntentFilter;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {p1, p3, p4, p5}, Lmxm;->a(Ljava/util/concurrent/Executor;Lpyn;Lqkg;)Lmxl;
+
+    move-object p1, p2
+
+    check-cast p1, Landroid/app/Application;
+
+    iput-object p3, p0, Lmxz;->a:Lphw;
+
+    iput-object p4, p0, Lmxz;->b:Lpyn;
+
+    new-instance p1, Lmxw;
+
+    invoke-direct {p1, p0, p2}, Lmxw;-><init>(Lmxz;Landroid/content/Context;)V
+
+    invoke-static {p1}, Lobr;->au(Lojz;)Lojz;
+
+    new-instance p1, Lmxx;
+
+    invoke-direct {p1, p6}, Lmxx;-><init>(Lqkg;)V
+
+    invoke-static {p1}, Lobr;->au(Lojz;)Lojz;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final clear()V
+.method public final declared-synchronized a()V
     .locals 1
 
-    iget-object v0, p0, Lmxz;->a:Lmst;
+    monitor-enter p0
 
-    invoke-interface {v0}, Lmxy;->j()V
+    :try_start_0
+    iget-object v0, p0, Lmxz;->b:Lpyn;
+
+    invoke-interface {v0}, Lpyn;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lmxv;
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    monitor-exit p0
 
     return-void
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit p0
+
+    throw v0
 .end method
 
-.method public final contains(Ljava/lang/Object;)Z
+.method public final t()V
     .locals 2
 
-    instance-of v0, p1, Ljava/util/Map$Entry;
+    new-instance v0, Lmxy;
 
-    if-eqz v0, :cond_0
+    invoke-direct {v0, p0}, Lmxy;-><init>(Lmxz;)V
 
-    check-cast p1, Ljava/util/Map$Entry;
+    iget-object v1, p0, Lmxz;->a:Lphw;
 
-    iget-object v0, p0, Lmxz;->a:Lmst;
+    invoke-static {v0, v1}, Lplk;->Y(Ljava/lang/Runnable;Ljava/util/concurrent/Executor;)Lpht;
 
-    invoke-interface {p1}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
-
-    move-result-object v1
-
-    invoke-interface {p1}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
-
-    move-result-object p1
-
-    invoke-interface {v0, v1, p1}, Lmxy;->s(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result p1
-
-    return p1
-
-    :cond_0
-    const/4 p1, 0x0
-
-    return p1
-.end method
-
-.method public final iterator()Ljava/util/Iterator;
-    .locals 2
-
-    iget-object v0, p0, Lmxz;->a:Lmst;
-
-    new-instance v1, Lmsc;
-
-    check-cast v0, Lmsp;
-
-    invoke-direct {v1, v0}, Lmsc;-><init>(Lmsp;)V
-
-    return-object v1
-.end method
-
-.method public final remove(Ljava/lang/Object;)Z
-    .locals 2
-
-    instance-of v0, p1, Ljava/util/Map$Entry;
-
-    if-eqz v0, :cond_0
-
-    check-cast p1, Ljava/util/Map$Entry;
-
-    iget-object v0, p0, Lmxz;->a:Lmst;
-
-    invoke-interface {p1}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
-
-    move-result-object v1
-
-    invoke-interface {p1}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
-
-    move-result-object p1
-
-    invoke-interface {v0, v1, p1}, Lmxy;->u(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result p1
-
-    return p1
-
-    :cond_0
-    const/4 p1, 0x0
-
-    return p1
-.end method
-
-.method public final size()I
-    .locals 1
-
-    iget-object v0, p0, Lmxz;->a:Lmst;
-
-    check-cast v0, Lmsp;
-
-    iget v0, v0, Lmsp;->b:I
-
-    return v0
+    return-void
 .end method

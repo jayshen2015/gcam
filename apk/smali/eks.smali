@@ -1,253 +1,397 @@
-.class final Leks;
-.super Ljava/lang/Thread;
+.class public final Leks;
+.super Ljava/lang/Object;
+
+
+# static fields
+.field private static final a:Louj;
 
 
 # instance fields
-.field final synthetic a:Lekt;
+.field private final b:Landroid/media/MediaMuxer;
+
+.field private final c:I
+
+.field private final d:Ljava/util/concurrent/CountDownLatch;
+
+.field private e:I
 
 
 # direct methods
-.method public constructor <init>(Lekt;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 1
 
-    iput-object p1, p0, Leks;->a:Lekt;
+    const-string v0, "com/google/android/apps/camera/imax/cyclops/video/MultiTrackMuxer"
 
-    const-string p1, "EncoderDrainerDrainThread"
+    invoke-static {v0}, Louj;->h(Ljava/lang/String;)Louj;
 
-    invoke-direct {p0, p1}, Ljava/lang/Thread;-><init>(Ljava/lang/String;)V
+    move-result-object v0
+
+    sput-object v0, Leks;->a:Louj;
 
     return-void
 .end method
 
+.method public constructor <init>(Ljava/lang/String;I)V
+    .locals 2
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    new-instance v0, Ljava/util/concurrent/CountDownLatch;
+
+    const/4 v1, 0x1
+
+    invoke-direct {v0, v1}, Ljava/util/concurrent/CountDownLatch;-><init>(I)V
+
+    iput-object v0, p0, Leks;->d:Ljava/util/concurrent/CountDownLatch;
+
+    const/4 v0, 0x0
+
+    iput v0, p0, Leks;->e:I
+
+    iput p2, p0, Leks;->c:I
+
+    :try_start_0
+    new-instance p2, Landroid/media/MediaMuxer;
+
+    invoke-direct {p2, p1, v0}, Landroid/media/MediaMuxer;-><init>(Ljava/lang/String;I)V
+
+    iput-object p2, p0, Leks;->b:Landroid/media/MediaMuxer;
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
+
+    return-void
+
+    :catch_0
+    move-exception p1
+
+    new-instance p2, Ljava/lang/RuntimeException;
+
+    const-string v0, "MediaMuxer creation failed"
+
+    invoke-direct {p2, v0, p1}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
+
+    throw p2
+.end method
+
 
 # virtual methods
-.method public final run()V
-    .locals 11
+.method public final declared-synchronized a(Landroid/media/MediaFormat;)I
+    .locals 2
+
+    monitor-enter p0
+
+    :try_start_0
+    invoke-virtual {p0}, Leks;->d()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    sget-object p1, Leks;->a:Louj;
+
+    invoke-virtual {p1}, Loue;->b()Lova;
+
+    move-result-object p1
+
+    check-cast p1, Loug;
+
+    const/16 v0, 0x4d8
+
+    invoke-interface {p1, v0}, Loug;->G(I)Lova;
+
+    move-result-object p1
+
+    check-cast p1, Loug;
+
+    const-string v0, "addTrack called after muxer was started with %d tracks"
+
+    iget v1, p0, Leks;->e:I
+
+    invoke-interface {p1, v0, v1}, Loug;->p(Ljava/lang/String;I)V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    const/4 p1, -0x1
+
+    monitor-exit p0
+
+    return p1
 
     :cond_0
+    :try_start_1
+    iget-object v0, p0, Leks;->b:Landroid/media/MediaMuxer;
+
+    invoke-virtual {v0, p1}, Landroid/media/MediaMuxer;->addTrack(Landroid/media/MediaFormat;)I
+
+    move-result p1
+
+    iget v0, p0, Leks;->e:I
+
+    add-int/lit8 v0, v0, 0x1
+
+    iput v0, p0, Leks;->e:I
+
+    iget v1, p0, Leks;->c:I
+
+    if-ne v0, v1, :cond_1
+
+    iget-object v0, p0, Leks;->b:Landroid/media/MediaMuxer;
+
+    invoke-virtual {v0}, Landroid/media/MediaMuxer;->start()V
+
+    iget-object v0, p0, Leks;->d:Ljava/util/concurrent/CountDownLatch;
+
+    invoke-virtual {v0}, Ljava/util/concurrent/CountDownLatch;->countDown()V
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    :cond_1
+    monitor-exit p0
+
+    return p1
+
+    :catchall_0
+    move-exception p1
+
+    monitor-exit p0
+
+    throw p1
+.end method
+
+.method public final declared-synchronized b()V
+    .locals 5
+
+    monitor-enter p0
+
+    :try_start_0
+    iget v0, p0, Leks;->e:I
+
+    if-gtz v0, :cond_0
+
+    sget-object v0, Leks;->a:Louj;
+
+    invoke-virtual {v0}, Loue;->b()Lova;
+
+    move-result-object v0
+
+    const-string v1, "stopTrack called but no tracks were added!"
+
+    const/16 v2, 0x4dc
+
+    invoke-static {v0, v1, v2}, Ld;->v(Lova;Ljava/lang/String;C)V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    monitor-exit p0
+
+    return-void
+
+    :cond_0
+    :try_start_1
+    invoke-virtual {p0}, Leks;->d()Z
+
+    move-result v0
+
+    if-nez v0, :cond_1
+
+    sget-object v0, Leks;->a:Louj;
+
+    invoke-virtual {v0}, Loue;->b()Lova;
+
+    move-result-object v0
+
+    const-string v1, "stopTrack called but the muxer is not started!"
+
+    const/16 v2, 0x4db
+
+    invoke-static {v0, v1, v2}, Ld;->v(Lova;Ljava/lang/String;C)V
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
     :goto_0
-    iget-object v0, p0, Leks;->a:Lekt;
+    monitor-exit p0
 
-    iget-boolean v1, v0, Lekt;->g:Z
+    return-void
 
-    if-nez v1, :cond_9
+    :cond_1
+    :try_start_2
+    iget v0, p0, Leks;->e:I
 
-    iget-object v1, v0, Lekt;->b:Lekq;
+    add-int/lit8 v0, v0, -0x1
 
-    invoke-interface {v1}, Lekq;->a()Landroid/media/MediaCodec;
+    iput v0, p0, Leks;->e:I
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
+
+    if-lez v0, :cond_2
+
+    goto :goto_0
+
+    :cond_2
+    :try_start_3
+    iget-object v0, p0, Leks;->b:Landroid/media/MediaMuxer;
+
+    invoke-virtual {v0}, Landroid/media/MediaMuxer;->stop()V
+    :try_end_3
+    .catch Ljava/lang/IllegalStateException; {:try_start_3 .. :try_end_3} :catch_0
+    .catchall {:try_start_3 .. :try_end_3} :catchall_0
+
+    goto :goto_1
+
+    :catch_0
+    move-exception v0
+
+    :try_start_4
+    sget-object v1, Leks;->a:Louj;
+
+    invoke-virtual {v1}, Loue;->b()Lova;
 
     move-result-object v1
 
-    invoke-virtual {v1}, Landroid/media/MediaCodec;->getOutputBuffers()[Ljava/nio/ByteBuffer;
+    const-string v2, "%s"
 
-    move-result-object v2
-
-    :cond_1
-    :goto_1
-    iget-boolean v3, v0, Lekt;->i:Z
-
-    if-eqz v3, :cond_0
-
-    new-instance v3, Landroid/media/MediaCodec$BufferInfo;
-
-    invoke-direct {v3}, Landroid/media/MediaCodec$BufferInfo;-><init>()V
-
-    const/4 v4, 0x1
-
-    const-wide/32 v5, 0x3d090
-
-    :try_start_0
-    invoke-virtual {v1, v3, v5, v6}, Landroid/media/MediaCodec;->dequeueOutputBuffer(Landroid/media/MediaCodec$BufferInfo;J)I
-
-    move-result v5
-    :try_end_0
-    .catch Ljava/lang/IllegalStateException; {:try_start_0 .. :try_end_0} :catch_0
-
-    const/4 v6, -0x1
-
-    if-ne v5, v6, :cond_3
-
-    iget-boolean v3, v0, Lekt;->g:Z
-
-    if-eqz v3, :cond_2
-
-    iget v3, v0, Lekt;->l:I
-
-    if-nez v3, :cond_1
-
-    :cond_2
-    sget-object v0, Lekt;->a:Lnak;
-
-    invoke-virtual {v0}, Lnaf;->c()Lnaz;
-
-    move-result-object v0
-
-    const-string v1, "MediaCodec timed out."
-
-    const/16 v2, 0x617
-
-    invoke-static {v0, v1, v2}, Ld;->g(Lnaz;Ljava/lang/String;C)V
-
-    goto :goto_0
-
-    :cond_3
-    const/4 v6, -0x3
-
-    if-ne v5, v6, :cond_4
-
-    invoke-virtual {v1}, Landroid/media/MediaCodec;->getOutputBuffers()[Ljava/nio/ByteBuffer;
-
-    move-result-object v2
-
-    goto :goto_1
-
-    :cond_4
-    const/4 v6, -0x2
-
-    if-ne v5, v6, :cond_5
-
-    invoke-virtual {v1}, Landroid/media/MediaCodec;->getOutputFormat()Landroid/media/MediaFormat;
+    invoke-virtual {v0}, Ljava/lang/IllegalStateException;->getMessage()Ljava/lang/String;
 
     move-result-object v3
 
-    iget-object v4, v0, Lekt;->c:Leku;
+    const/16 v4, 0x4da
 
-    invoke-virtual {v4, v3}, Leku;->a(Landroid/media/MediaFormat;)I
+    invoke-static {v1, v2, v3, v4, v0}, Ld;->x(Lova;Ljava/lang/String;Ljava/lang/Object;CLjava/lang/Throwable;)V
+    :try_end_4
+    .catchall {:try_start_4 .. :try_end_4} :catchall_0
 
-    move-result v3
+    :goto_1
+    :try_start_5
+    iget-object v0, p0, Leks;->b:Landroid/media/MediaMuxer;
 
-    iput v3, v0, Lekt;->f:I
+    invoke-virtual {v0}, Landroid/media/MediaMuxer;->release()V
+    :try_end_5
+    .catch Ljava/lang/IllegalStateException; {:try_start_5 .. :try_end_5} :catch_1
+    .catchall {:try_start_5 .. :try_end_5} :catchall_0
 
-    goto :goto_1
+    monitor-exit p0
 
-    :cond_5
-    if-ltz v5, :cond_1
+    return-void
 
-    aget-object v6, v2, v5
+    :catch_1
+    move-exception v0
 
-    if-nez v6, :cond_6
+    :try_start_6
+    sget-object v1, Leks;->a:Louj;
 
-    sget-object v0, Lekt;->a:Lnak;
+    invoke-virtual {v1}, Loue;->b()Lova;
 
-    invoke-virtual {v0}, Lnaf;->b()Lnaz;
+    move-result-object v1
 
-    move-result-object v0
+    const-string v2, "%s"
 
-    check-cast v0, Lnah;
+    invoke-virtual {v0}, Ljava/lang/IllegalStateException;->getMessage()Ljava/lang/String;
 
-    const/16 v1, 0x616
+    move-result-object v3
 
-    invoke-interface {v0, v1}, Lnah;->G(I)Lnaz;
+    const/16 v4, 0x4d9
 
-    move-result-object v0
+    invoke-static {v1, v2, v3, v4, v0}, Ld;->x(Lova;Ljava/lang/String;Ljava/lang/Object;CLjava/lang/Throwable;)V
+    :try_end_6
+    .catchall {:try_start_6 .. :try_end_6} :catchall_0
 
-    check-cast v0, Lnah;
+    monitor-exit p0
 
-    const-string v1, "encoderOutputBuffer %s was null"
-
-    invoke-interface {v0, v1, v5}, Lnah;->p(Ljava/lang/String;I)V
-
-    goto :goto_0
-
-    :cond_6
-    iget v7, v3, Landroid/media/MediaCodec$BufferInfo;->flags:I
-
-    and-int/lit8 v7, v7, 0x2
-
-    const/4 v8, 0x0
-
-    if-eqz v7, :cond_7
-
-    iput v8, v3, Landroid/media/MediaCodec$BufferInfo;->size:I
-
-    :cond_7
-    iget v7, v3, Landroid/media/MediaCodec$BufferInfo;->size:I
-
-    if-eqz v7, :cond_8
-
-    invoke-virtual {v6}, Ljava/nio/ByteBuffer;->rewind()Ljava/nio/Buffer;
-
-    invoke-virtual {v6}, Ljava/nio/ByteBuffer;->remaining()I
-
-    move-result v7
-
-    new-array v7, v7, [B
-
-    invoke-virtual {v6, v7}, Ljava/nio/ByteBuffer;->get([B)Ljava/nio/ByteBuffer;
-
-    invoke-static {v7}, Ljava/nio/ByteBuffer;->wrap([B)Ljava/nio/ByteBuffer;
-
-    move-result-object v6
-
-    iget v7, v0, Lekt;->l:I
-
-    add-int/2addr v7, v4
-
-    iput v7, v0, Lekt;->l:I
-
-    iget-object v7, v0, Lekt;->e:Ljava/lang/Object;
-
-    monitor-enter v7
-
-    :try_start_1
-    iget-object v9, v0, Lekt;->d:Ljava/util/Queue;
-
-    new-instance v10, Lgxb;
-
-    invoke-direct {v10, v6, v3}, Lgxb;-><init>(Ljava/nio/ByteBuffer;Landroid/media/MediaCodec$BufferInfo;)V
-
-    invoke-interface {v9, v10}, Ljava/util/Queue;->offer(Ljava/lang/Object;)Z
-
-    iget-object v6, v0, Lekt;->e:Ljava/lang/Object;
-
-    invoke-virtual {v6}, Ljava/lang/Object;->notifyAll()V
-
-    monitor-exit v7
-
-    goto :goto_2
+    return-void
 
     :catchall_0
     move-exception v0
 
-    monitor-exit v7
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+    monitor-exit p0
 
+    goto :goto_3
+
+    :goto_2
     throw v0
 
-    :cond_8
-    :goto_2
-    invoke-virtual {v1, v5, v8}, Landroid/media/MediaCodec;->releaseOutputBuffer(IZ)V
+    :goto_3
+    goto :goto_2
+.end method
 
-    iget v3, v3, Landroid/media/MediaCodec$BufferInfo;->flags:I
+.method public final c(ILjava/nio/ByteBuffer;Landroid/media/MediaCodec$BufferInfo;)V
+    .locals 2
 
-    and-int/lit8 v3, v3, 0x4
+    :try_start_0
+    iget-object v0, p0, Leks;->d:Ljava/util/concurrent/CountDownLatch;
 
-    if-eqz v3, :cond_1
+    invoke-virtual {v0}, Ljava/util/concurrent/CountDownLatch;->await()V
+    :try_end_0
+    .catch Ljava/lang/InterruptedException; {:try_start_0 .. :try_end_0} :catch_1
 
-    iput-boolean v4, v0, Lekt;->g:Z
+    :try_start_1
+    iget-object v0, p0, Leks;->b:Landroid/media/MediaMuxer;
 
-    goto/16 :goto_0
+    invoke-virtual {v0, p1, p2, p3}, Landroid/media/MediaMuxer;->writeSampleData(ILjava/nio/ByteBuffer;Landroid/media/MediaCodec$BufferInfo;)V
+    :try_end_1
+    .catch Ljava/lang/IllegalArgumentException; {:try_start_1 .. :try_end_1} :catch_0
+
+    return-void
 
     :catch_0
-    move-exception v1
+    move-exception p1
 
-    sget-object v2, Lekt;->a:Lnak;
+    sget-object p2, Leks;->a:Louj;
 
-    invoke-virtual {v2}, Lnaf;->b()Lnaz;
+    invoke-virtual {p2}, Loue;->b()Lova;
 
-    move-result-object v2
+    move-result-object p2
 
-    const-string v3, "Illegal state when dequeueing output buffer"
+    invoke-virtual {p1}, Ljava/lang/IllegalArgumentException;->getMessage()Ljava/lang/String;
 
-    const/16 v5, 0x618
+    move-result-object p3
 
-    invoke-static {v2, v3, v5, v1}, Ld;->h(Lnaz;Ljava/lang/String;CLjava/lang/Throwable;)V
+    const/16 v0, 0x4dd
 
-    iput-boolean v4, v0, Lekt;->g:Z
+    const-string v1, "%s"
 
-    goto/16 :goto_0
+    invoke-static {p2, v1, p3, v0, p1}, Ld;->x(Lova;Ljava/lang/String;Ljava/lang/Object;CLjava/lang/Throwable;)V
 
-    :cond_9
     return-void
+
+    :catch_1
+    move-exception p1
+
+    sget-object p1, Leks;->a:Louj;
+
+    invoke-virtual {p1}, Loue;->b()Lova;
+
+    move-result-object p1
+
+    const/16 p2, 0x4de
+
+    const-string p3, "writeSampleData called but muxer was not started!"
+
+    invoke-static {p1, p3, p2}, Ld;->v(Lova;Ljava/lang/String;C)V
+
+    return-void
+.end method
+
+.method public final d()Z
+    .locals 5
+
+    iget-object v0, p0, Leks;->d:Ljava/util/concurrent/CountDownLatch;
+
+    invoke-virtual {v0}, Ljava/util/concurrent/CountDownLatch;->getCount()J
+
+    move-result-wide v0
+
+    const-wide/16 v2, 0x0
+
+    cmp-long v4, v0, v2
+
+    if-nez v4, :cond_0
+
+    const/4 v0, 0x1
+
+    return v0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    return v0
 .end method

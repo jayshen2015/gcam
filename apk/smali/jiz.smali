@@ -1,32 +1,71 @@
 .class public final Ljiz;
 .super Ljava/lang/Object;
 
+# interfaces
+.implements Ljjd;
 
-# static fields
-.field public static final a:Ligo;
 
-.field private static final b:Ljfc;
+# instance fields
+.field private final a:Lljp;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 4
+.method public constructor <init>(Lljp;)V
+    .locals 0
 
-    new-instance v0, Ljiv;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {v0}, Ljiv;-><init>()V
+    iput-object p1, p0, Ljiz;->a:Lljp;
 
-    sput-object v0, Ljiz;->b:Ljfc;
+    return-void
+.end method
 
-    new-instance v1, Ligo;
 
-    const-string v2, "Feedback.API"
+# virtual methods
+.method public final a()V
+    .locals 2
 
-    const/4 v3, 0x0
+    iget-object v0, p0, Ljiz;->a:Lljp;
 
-    invoke-direct {v1, v2, v0, v3, v3}, Ligo;-><init>(Ljava/lang/String;Ljfc;[B[B)V
+    const/4 v1, 0x3
 
-    sput-object v1, Ljiz;->a:Ligo;
+    invoke-interface {v0, v1}, Lljp;->a(I)V
+
+    return-void
+.end method
+
+.method public final b()V
+    .locals 2
+
+    iget-object v0, p0, Ljiz;->a:Lljp;
+
+    const/4 v1, 0x1
+
+    invoke-interface {v0, v1}, Lljp;->a(I)V
+
+    return-void
+.end method
+
+.method public final c()V
+    .locals 2
+
+    iget-object v0, p0, Ljiz;->a:Lljp;
+
+    const/4 v1, 0x2
+
+    invoke-interface {v0, v1}, Lljp;->a(I)V
+
+    return-void
+.end method
+
+.method public final d()V
+    .locals 2
+
+    iget-object v0, p0, Ljiz;->a:Lljp;
+
+    const/4 v1, 0x2
+
+    invoke-interface {v0, v1}, Lljp;->a(I)V
 
     return-void
 .end method

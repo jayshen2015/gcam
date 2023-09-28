@@ -1,224 +1,390 @@
 .class public final Lnls;
-.super Lnws;
-
-# interfaces
-.implements Lnxz;
+.super Ljava/lang/Object;
 
 
 # static fields
-.field public static final g:Lnls;
+.field public static final a:Ljava/lang/String;
 
-.field private static volatile i:Lnyf;
+.field public static final b:Ljava/lang/String;
+
+.field public static final c:Ljava/lang/String;
+
+.field public static final d:Ljava/lang/String;
+
+.field public static final e:Ljava/lang/String;
+
+.field private static final o:Ljava/lang/String;
+
+.field private static final p:Ljava/lang/String;
+
+.field private static final q:Ljava/lang/String;
+
+.field private static final r:Ljava/lang/String;
+
+.field private static final s:Ljava/lang/String;
 
 
 # instance fields
-.field public a:I
+.field public f:Ljava/util/regex/Pattern;
 
-.field public b:Lnlr;
+.field public g:Ljava/util/regex/Pattern;
 
-.field public c:Ljava/lang/String;
+.field public h:Ljava/util/regex/Pattern;
 
-.field public d:I
+.field public i:Ljava/util/regex/Pattern;
 
-.field public e:Ljava/lang/String;
+.field public j:Ljava/util/regex/Pattern;
 
-.field public f:Lnlx;
+.field public k:Ljava/util/regex/Pattern;
 
-.field private h:B
+.field public l:Ljava/util/regex/Pattern;
+
+.field public m:Ljava/util/regex/Pattern;
+
+.field public n:Ljava/util/List;
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 2
+    .locals 7
 
-    new-instance v0, Lnls;
+    sget-object v0, Lnlr;->b:Ljava/lang/String;
 
-    invoke-direct {v0}, Lnls;-><init>()V
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
-    sput-object v0, Lnls;->g:Lnls;
+    move-result-object v1
 
-    const-class v1, Lnls;
+    invoke-virtual {v1}, Ljava/lang/String;->length()I
 
-    invoke-static {v1, v0}, Lnws;->aa(Ljava/lang/Class;Lnws;)V
+    move-result v1
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    add-int/lit8 v1, v1, 0x2d
+
+    invoke-direct {v2, v1}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string v1, "[\\p{L}\\p{N}]([\\p{L}\\p{N}]|[.\\-])*(?<!www)\\.("
+
+    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v0, ")"
+
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    sput-object v1, Lnls;->o:Ljava/lang/String;
+
+    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/String;->length()I
+
+    move-result v2
+
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    add-int/lit8 v2, v2, 0x12
+
+    invoke-direct {v3, v2}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v1, "(?<!www)(:[0-9]+)?"
+
+    invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    sput-object v1, Lnls;->p:Ljava/lang/String;
+
+    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/String;->length()I
+
+    move-result v2
+
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    add-int/lit8 v2, v2, 0x1c
+
+    invoke-direct {v3, v2}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string v2, "(((http(s)?:(//)?)|(www\\.))"
+
+    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    sput-object v0, Lnls;->q:Ljava/lang/String;
+
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/String;->length()I
+
+    move-result v1
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    add-int/lit8 v1, v1, 0x69
+
+    invoke-direct {v2, v1}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string v1, "(("
+
+    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v0, ")(/([+~%/.\\-_\\p{L}\\p{N}]*)?\\??([\\-_+=&;,%@.\\p{L}\\p{N}]*)#?([.!/\\\\\\p{L}\\p{N}\\-_]*[!/\\\\\\p{L}\\p{N}\\-_]))?)"
+
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    sput-object v0, Lnls;->r:Ljava/lang/String;
+
+    sget-object v1, Lnlr;->a:Ljava/lang/String;
+
+    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/String;->length()I
+
+    move-result v2
+
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    add-int/lit16 v2, v2, 0xec
+
+    invoke-direct {v3, v2}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string v2, "((((http(s)?:(//)?)|(www\\.))\\s?[\\p{L}\\p{N}]([\\p{L}\\p{N}]|[.\\-\\s]){0,14})|([\\p{L}\\p{N}]([\\p{L}\\p{N}]|[.\\-])*(?<!www)))(\\.("
+
+    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v1, "))\\b(:[0-9]+)?(/([+~%/.\\-_\\p{L}\\p{N}]*)?\\??([\\-_+=&;,%@.\\p{L}\\p{N}]*)#?([.!/\\\\\\p{L}\\p{N}\\-_]*[!/\\\\\\p{L}\\p{N}\\-_]))?"
+
+    invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    sput-object v1, Lnls;->s:Ljava/lang/String;
+
+    sget-object v2, Lnlr;->c:Ljava/lang/String;
+
+    invoke-static {v2}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/lang/String;->length()I
+
+    move-result v3
+
+    new-instance v4, Ljava/lang/StringBuilder;
+
+    add-int/lit8 v3, v3, 0x55
+
+    invoke-direct {v4, v3}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string v3, "(?i)(((http(s)?:(//)?)|(www\\.))\\s?[\\p{L}\\p{N}]([\\p{L}\\p{N}]|[.\\-\\s]){0,28}?\\.\\s*)("
+
+    invoke-virtual {v4, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v4, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v2, ")\\b"
+
+    invoke-virtual {v4, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    sput-object v2, Lnls;->a:Ljava/lang/String;
+
+    sget-object v2, Lnlr;->d:Ljava/lang/String;
+
+    sget-object v3, Lnlr;->c:Ljava/lang/String;
+
+    invoke-static {v2}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-virtual {v4}, Ljava/lang/String;->length()I
+
+    move-result v4
+
+    invoke-static {v3}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-virtual {v5}, Ljava/lang/String;->length()I
+
+    move-result v5
+
+    new-instance v6, Ljava/lang/StringBuilder;
+
+    add-int/lit8 v4, v4, 0x3d
+
+    add-int/2addr v4, v5
+
+    invoke-direct {v6, v4}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string v4, "(?i)("
+
+    invoke-virtual {v6, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v6, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v2, "(?=\\s?[\\p{L}\\p{N}]([\\p{L}\\p{N}]|[.\\-\\s]){0,28}?\\.\\s*("
+
+    invoke-virtual {v6, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v6, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v2, ")))"
+
+    invoke-virtual {v6, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    sput-object v2, Lnls;->b:Ljava/lang/String;
+
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/String;->length()I
+
+    move-result v2
+
+    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/lang/String;->length()I
+
+    move-result v3
+
+    new-instance v4, Ljava/lang/StringBuilder;
+
+    add-int/lit8 v2, v2, 0x1
+
+    add-int/2addr v2, v3
+
+    invoke-direct {v4, v2}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v0, "|"
+
+    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v4, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    sput-object v0, Lnls;->c:Ljava/lang/String;
+
+    sget-object v0, Lnlr;->a:Ljava/lang/String;
+
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/String;->length()I
+
+    move-result v1
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    add-int/lit8 v1, v1, 0x4d
+
+    invoke-direct {v2, v1}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string v1, "(?i)\\b(w{1,2}\\.)([\\p{L}\\p{N}]([\\p{L}\\p{N}]|[.\\-])*(?<!www)\\.(?:"
+
+    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v0, ")(:[0-9]+)?)\\b"
+
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    sput-object v1, Lnls;->d:Ljava/lang/String;
+
+    sget-object v1, Lnlr;->a:Ljava/lang/String;
+
+    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/String;->length()I
+
+    move-result v2
+
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    add-int/lit8 v2, v2, 0x2d
+
+    invoke-direct {v3, v2}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string v2, "(?i)\\b(f{2}acebook|f{2}b)(\\.(?:"
+
+    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    sput-object v0, Lnls;->e:Ljava/lang/String;
 
     return-void
 .end method
 
-.method private constructor <init>()V
-    .locals 1
+.method public constructor <init>()V
+    .locals 0
 
-    invoke-direct {p0}, Lnws;-><init>()V
-
-    const/4 v0, 0x2
-
-    iput-byte v0, p0, Lnls;->h:B
-
-    const-string v0, ""
-
-    iput-object v0, p0, Lnls;->c:Ljava/lang/String;
-
-    iput-object v0, p0, Lnls;->e:Ljava/lang/String;
-
-    sget-object v0, Lnyi;->b:Lnyi;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
-.end method
-
-
-# virtual methods
-.method protected final a(ILjava/lang/Object;)Ljava/lang/Object;
-    .locals 3
-
-    add-int/lit8 p1, p1, -0x1
-
-    const/4 v0, 0x1
-
-    const/4 v1, 0x0
-
-    packed-switch p1, :pswitch_data_0
-
-    :pswitch_0
-    if-nez p2, :cond_2
-
-    const/4 v0, 0x0
-
-    goto :goto_1
-
-    :pswitch_1
-    sget-object p1, Lnls;->i:Lnyf;
-
-    if-nez p1, :cond_1
-
-    const-class p2, Lnls;
-
-    monitor-enter p2
-
-    :try_start_0
-    sget-object p1, Lnls;->i:Lnyf;
-
-    if-nez p1, :cond_0
-
-    new-instance p1, Lnwo;
-
-    sget-object v0, Lnls;->g:Lnls;
-
-    invoke-direct {p1, v0}, Lnwo;-><init>(Lnws;)V
-
-    sput-object p1, Lnls;->i:Lnyf;
-
-    :cond_0
-    monitor-exit p2
-
-    goto :goto_0
-
-    :catchall_0
-    move-exception p1
-
-    monitor-exit p2
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw p1
-
-    :cond_1
-    :goto_0
-    return-object p1
-
-    :pswitch_2
-    sget-object p1, Lnls;->g:Lnls;
-
-    return-object p1
-
-    :pswitch_3
-    new-instance p1, Lnwn;
-
-    sget-object p2, Lnls;->g:Lnls;
-
-    invoke-direct {p1, p2}, Lnwn;-><init>(Lnws;)V
-
-    return-object p1
-
-    :pswitch_4
-    new-instance p1, Lnls;
-
-    invoke-direct {p1}, Lnls;-><init>()V
-
-    return-object p1
-
-    :pswitch_5
-    const-string p1, "a"
-
-    const-string p2, "\u0001\u0005\u0000\u0001\u0001\u0008\u0005\u0000\u0000\u0004\u0001\u1509\u0000\u0002\u1508\u0001\u0003\u1504\u0002\u0004\u1008\u0003\u0008\u1409\n"
-
-    const/4 v2, 0x6
-
-    new-array v2, v2, [Ljava/lang/Object;
-
-    aput-object p1, v2, v1
-
-    const-string p1, "b"
-
-    aput-object p1, v2, v0
-
-    const/4 p1, 0x2
-
-    const-string v0, "c"
-
-    aput-object v0, v2, p1
-
-    const/4 p1, 0x3
-
-    const-string v0, "d"
-
-    aput-object v0, v2, p1
-
-    const/4 p1, 0x4
-
-    const-string v0, "e"
-
-    aput-object v0, v2, p1
-
-    const/4 p1, 0x5
-
-    const-string v0, "f"
-
-    aput-object v0, v2, p1
-
-    sget-object p1, Lnls;->g:Lnls;
-
-    invoke-static {p1, p2, v2}, Lnls;->X(Lnxy;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object p1
-
-    return-object p1
-
-    :pswitch_6
-    iget-byte p1, p0, Lnls;->h:B
-
-    invoke-static {p1}, Ljava/lang/Byte;->valueOf(B)Ljava/lang/Byte;
-
-    move-result-object p1
-
-    return-object p1
-
-    :cond_2
-    :goto_1
-    iput-byte v0, p0, Lnls;->h:B
-
-    const/4 p1, 0x0
-
-    return-object p1
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_6
-        :pswitch_0
-        :pswitch_5
-        :pswitch_4
-        :pswitch_3
-        :pswitch_2
-        :pswitch_1
-    .end packed-switch
 .end method

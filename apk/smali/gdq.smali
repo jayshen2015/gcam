@@ -2,70 +2,122 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Ljava/util/function/Consumer;
+.implements Lmlu;
 
 
 # instance fields
-.field public final synthetic a:Lgdv;
+.field public final synthetic a:J
 
-.field public final synthetic b:Lgej;
-
-.field public final synthetic c:Lgec;
-
-.field public final synthetic d:I
+.field private final synthetic b:I
 
 
 # direct methods
-.method public synthetic constructor <init>(Lgdv;Lgej;Lgec;I)V
+.method public synthetic constructor <init>(JI)V
     .locals 0
+
+    iput p3, p0, Lgdq;->b:I
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lgdq;->a:Lgdv;
-
-    iput-object p2, p0, Lgdq;->b:Lgej;
-
-    iput-object p3, p0, Lgdq;->c:Lgec;
-
-    iput p4, p0, Lgdq;->d:I
+    iput-wide p1, p0, Lgdq;->a:J
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final accept(Ljava/lang/Object;)V
-    .locals 4
+.method public final a(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 5
 
-    iget-object v0, p0, Lgdq;->a:Lgdv;
+    iget v0, p0, Lgdq;->b:I
 
-    iget-object v1, p0, Lgdq;->b:Lgej;
+    const/4 v1, 0x1
 
-    iget-object v2, p0, Lgdq;->c:Lgec;
+    invoke-static {v1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
-    iget v3, p0, Lgdq;->d:I
+    move-result-object v1
 
-    check-cast p1, Lgei;
+    packed-switch v0, :pswitch_data_0
 
-    invoke-interface {p1}, Lgei;->i()Ljwb;
+    iget-wide v0, p0, Lgdq;->a:J
 
-    move-result-object p1
+    check-cast p1, Lmqq;
 
-    invoke-interface {p1, v1}, Ljwb;->bn(Ljava/lang/Object;)V
+    invoke-interface {p1}, Lmqq;->f()Landroid/opengl/EGLDisplay;
 
-    iget-object p1, v0, Lgdv;->j:Lgel;
+    move-result-object v2
 
-    invoke-interface {p1, v1, v2, v3}, Lgel;->bU(Lgej;Lgec;I)V
-
-    return-void
-.end method
-
-.method public final synthetic andThen(Ljava/util/function/Consumer;)Ljava/util/function/Consumer;
-    .locals 0
-
-    invoke-static {p0, p1}, Lj$/util/function/Consumer$-CC;->$default$andThen(Ljava/util/function/Consumer;Ljava/util/function/Consumer;)Ljava/util/function/Consumer;
+    invoke-interface {p1}, Lmqq;->g()Landroid/opengl/EGLSurface;
 
     move-result-object p1
+
+    invoke-static {v2, p1, v0, v1}, Landroid/opengl/EGLExt;->eglPresentationTimeANDROID(Landroid/opengl/EGLDisplay;Landroid/opengl/EGLSurface;J)Z
+
+    sget-object p1, Lmlt;->a:Lmlt;
 
     return-object p1
+
+    :pswitch_0
+    iget-wide v2, p0, Lgdq;->a:J
+
+    check-cast p1, Lmqq;
+
+    invoke-interface {p1}, Lmqq;->i()V
+
+    invoke-interface {p1}, Lmqq;->f()Landroid/opengl/EGLDisplay;
+
+    move-result-object v0
+
+    invoke-interface {p1}, Lmqq;->g()Landroid/opengl/EGLSurface;
+
+    move-result-object v4
+
+    invoke-static {v0, v4, v2, v3}, Landroid/opengl/EGLExt;->eglPresentationTimeANDROID(Landroid/opengl/EGLDisplay;Landroid/opengl/EGLSurface;J)Z
+
+    invoke-interface {p1}, Lmqq;->k()V
+
+    return-object v1
+
+    :pswitch_1
+    iget-wide v2, p0, Lgdq;->a:J
+
+    check-cast p1, Lmqq;
+
+    sget-object v0, Leot;->a:Louj;
+
+    invoke-interface {p1}, Lmqq;->f()Landroid/opengl/EGLDisplay;
+
+    move-result-object v0
+
+    invoke-interface {p1}, Lmqq;->g()Landroid/opengl/EGLSurface;
+
+    move-result-object p1
+
+    invoke-static {v0, p1, v2, v3}, Landroid/opengl/EGLExt;->eglPresentationTimeANDROID(Landroid/opengl/EGLDisplay;Landroid/opengl/EGLSurface;J)Z
+
+    return-object v1
+
+    :pswitch_2
+    iget-wide v2, p0, Lgdq;->a:J
+
+    check-cast p1, Lmqq;
+
+    invoke-interface {p1}, Lmqq;->f()Landroid/opengl/EGLDisplay;
+
+    move-result-object v0
+
+    invoke-interface {p1}, Lmqq;->g()Landroid/opengl/EGLSurface;
+
+    move-result-object p1
+
+    invoke-static {v0, p1, v2, v3}, Landroid/opengl/EGLExt;->eglPresentationTimeANDROID(Landroid/opengl/EGLDisplay;Landroid/opengl/EGLSurface;J)Z
+
+    return-object v1
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method

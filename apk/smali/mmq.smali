@@ -1,162 +1,181 @@
 .class final Lmmq;
-.super Lmmk;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field final synthetic a:Landroid/os/IBinder;
+.field protected final a:Lmoa;
 
-.field final synthetic b:Lmms;
+.field protected final b:Lpht;
+
+.field protected final c:Lmmn;
+
+.field protected final d:Lmmn;
+
+.field protected final e:Ljava/util/concurrent/Executor;
+
+.field protected final f:Lmwp;
 
 
 # direct methods
-.method public constructor <init>(Lmms;Landroid/os/IBinder;)V
+.method public constructor <init>(Lpht;Lmmn;Lmmn;Ljava/util/concurrent/Executor;Lmwp;[B[B[B)V
     .locals 0
 
-    iput-object p1, p0, Lmmq;->b:Lmms;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p2, p0, Lmmq;->a:Landroid/os/IBinder;
+    invoke-static {}, Lmoa;->i()Lmoa;
 
-    invoke-direct {p0}, Lmmk;-><init>()V
+    move-result-object p6
+
+    iput-object p6, p0, Lmmq;->a:Lmoa;
+
+    iput-object p1, p0, Lmmq;->b:Lpht;
+
+    iput-object p2, p0, Lmmq;->c:Lmmn;
+
+    iput-object p3, p0, Lmmq;->d:Lmmn;
+
+    iput-object p4, p0, Lmmq;->e:Ljava/util/concurrent/Executor;
+
+    iput-object p5, p0, Lmmq;->f:Lmwp;
+
+    return-void
+.end method
+
+.method private final b(Ljava/lang/Throwable;)V
+    .locals 2
+
+    invoke-static {p1}, Lmnc;->a(Ljava/lang/Throwable;)Lmnc;
+
+    move-result-object p1
+
+    iget-object v0, p0, Lmmq;->d:Lmmn;
+
+    if-eqz v0, :cond_0
+
+    :try_start_0
+    iget-object v0, p0, Lmmq;->e:Ljava/util/concurrent/Executor;
+
+    new-instance v1, Lmmp;
+
+    invoke-direct {v1, p0, p1}, Lmmp;-><init>(Lmmq;Lmnc;)V
+
+    invoke-interface {v0, v1}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    return-void
+
+    :catchall_0
+    move-exception p1
+
+    invoke-virtual {p0, p1}, Lmmq;->a(Ljava/lang/Throwable;)V
+
+    return-void
+
+    :cond_0
+    iget-object v0, p0, Lmmq;->a:Lmoa;
+
+    invoke-virtual {v0, p1}, Lmoa;->l(Lmnc;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()V
-    .locals 4
+.method protected final a(Ljava/lang/Throwable;)V
+    .locals 1
 
-    iget-object v0, p0, Lmmq;->b:Lmms;
+    iget-object v0, p0, Lmmq;->a:Lmoa;
 
-    iget-object v0, v0, Lmms;->a:Ljava/lang/Object;
+    invoke-static {p1}, Lmnc;->a(Ljava/lang/Throwable;)Lmnc;
 
-    iget-object v1, p0, Lmmq;->a:Landroid/os/IBinder;
+    move-result-object p1
 
-    if-nez v1, :cond_0
+    invoke-virtual {v0, p1}, Lmoa;->l(Lmnc;)V
 
-    const/4 v1, 0x0
+    return-void
+.end method
 
-    goto :goto_0
-
-    :cond_0
-    const-string v2, "com.google.android.play.core.appupdate.protocol.IAppUpdateService"
-
-    invoke-interface {v1, v2}, Landroid/os/IBinder;->queryLocalInterface(Ljava/lang/String;)Landroid/os/IInterface;
-
-    move-result-object v2
-
-    instance-of v3, v2, Lmmc;
-
-    if-eqz v3, :cond_1
-
-    move-object v1, v2
-
-    check-cast v1, Lmmc;
-
-    goto :goto_0
-
-    :cond_1
-    new-instance v2, Lmmc;
-
-    invoke-direct {v2, v1}, Lmmc;-><init>(Landroid/os/IBinder;)V
-
-    move-object v1, v2
-
-    :goto_0
-    check-cast v0, Lmmt;
-
-    iput-object v1, v0, Lmmt;->k:Landroid/os/IInterface;
-
-    iget-object v0, p0, Lmmq;->b:Lmms;
-
-    iget-object v0, v0, Lmms;->a:Ljava/lang/Object;
-
-    const/4 v1, 0x0
+.method public final run()V
+    .locals 3
 
     :try_start_0
-    move-object v2, v0
+    iget-object v0, p0, Lmmq;->b:Lpht;
 
-    check-cast v2, Lmmt;
-
-    iget-object v2, v2, Lmmt;->k:Landroid/os/IInterface;
-
-    check-cast v2, Lcbe;
-
-    iget-object v2, v2, Lcbe;->a:Landroid/os/IBinder;
-
-    move-object v3, v0
-
-    check-cast v3, Lmmt;
-
-    iget-object v3, v3, Lmmt;->h:Landroid/os/IBinder$DeathRecipient;
-
-    invoke-interface {v2, v3, v1}, Landroid/os/IBinder;->linkToDeath(Landroid/os/IBinder$DeathRecipient;I)V
-    :try_end_0
-    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
-
-    goto :goto_1
-
-    :catch_0
-    move-exception v2
-
-    check-cast v0, Lmmt;
-
-    iget-object v0, v0, Lmmt;->l:Llzz;
-
-    new-array v1, v1, [Ljava/lang/Object;
-
-    const-string v3, "linkToDeath failed"
-
-    invoke-virtual {v0, v2, v3, v1}, Llzz;->e(Ljava/lang/Throwable;Ljava/lang/String;[Ljava/lang/Object;)V
-
-    :goto_1
-    iget-object v0, p0, Lmmq;->b:Lmms;
-
-    iget-object v0, v0, Lmms;->a:Ljava/lang/Object;
-
-    check-cast v0, Lmmt;
-
-    invoke-static {v0}, Lmmt;->d(Lmmt;)V
-
-    iget-object v0, p0, Lmmq;->b:Lmms;
-
-    iget-object v0, v0, Lmms;->a:Ljava/lang/Object;
-
-    check-cast v0, Lmmt;
-
-    iget-object v0, v0, Lmmt;->b:Ljava/util/List;
-
-    invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+    invoke-static {v0}, Lplk;->I(Ljava/util/concurrent/Future;)Ljava/lang/Object;
 
     move-result-object v0
 
-    :goto_2
-    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
+    if-nez v0, :cond_0
 
-    move-result v1
+    new-instance v0, Ljava/lang/IllegalStateException;
 
-    if-eqz v1, :cond_2
+    const-string v1, "Result value is null"
 
-    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 
-    move-result-object v1
-
-    check-cast v1, Ljava/lang/Runnable;
-
-    invoke-interface {v1}, Ljava/lang/Runnable;->run()V
-
-    goto :goto_2
-
-    :cond_2
-    iget-object v0, p0, Lmmq;->b:Lmms;
-
-    iget-object v0, v0, Lmms;->a:Ljava/lang/Object;
-
-    check-cast v0, Lmmt;
-
-    iget-object v0, v0, Lmmt;->b:Ljava/util/List;
-
-    invoke-interface {v0}, Ljava/util/List;->clear()V
+    invoke-virtual {p0, v0}, Lmmq;->a(Ljava/lang/Throwable;)V
+    :try_end_0
+    .catch Ljava/util/concurrent/ExecutionException; {:try_start_0 .. :try_end_0} :catch_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_1
 
     return-void
+
+    :cond_0
+    :try_start_1
+    iget-object v1, p0, Lmmq;->e:Ljava/util/concurrent/Executor;
+
+    new-instance v2, Lmmo;
+
+    invoke-direct {v2, p0, v0}, Lmmo;-><init>(Lmmq;Ljava/lang/Object;)V
+
+    invoke-interface {v1, v2}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    return-void
+
+    :catchall_0
+    move-exception v0
+
+    :try_start_2
+    invoke-virtual {p0, v0}, Lmmq;->a(Ljava/lang/Throwable;)V
+    :try_end_2
+    .catch Ljava/util/concurrent/ExecutionException; {:try_start_2 .. :try_end_2} :catch_0
+    .catchall {:try_start_2 .. :try_end_2} :catchall_1
+
+    return-void
+
+    :catchall_1
+    move-exception v0
+
+    invoke-direct {p0, v0}, Lmmq;->b(Ljava/lang/Throwable;)V
+
+    return-void
+
+    :catch_0
+    move-exception v0
+
+    invoke-virtual {v0}, Ljava/util/concurrent/ExecutionException;->getCause()Ljava/lang/Throwable;
+
+    move-result-object v0
+
+    invoke-direct {p0, v0}, Lmmq;->b(Ljava/lang/Throwable;)V
+
+    return-void
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .locals 1
+
+    iget-object v0, p0, Lmmq;->c:Lmmn;
+
+    invoke-virtual {v0}, Ljava/lang/Object;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
 .end method

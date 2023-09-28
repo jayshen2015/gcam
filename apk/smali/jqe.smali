@@ -1,61 +1,59 @@
-.class public final Ljqe;
+.class final Ljqe;
 .super Ljava/lang/Object;
 
+# interfaces
+.implements Lgtu;
 
-# static fields
-.field public static final a:Ligo;
-    .annotation runtime Ljava/lang/Deprecated;
-    .end annotation
-.end field
 
-.field private static final b:Ljfc;
+# instance fields
+.field final synthetic a:Landroid/view/View;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 4
+.method public constructor <init>(Landroid/view/View;)V
+    .locals 0
 
-    new-instance v0, Ljqc;
+    iput-object p1, p0, Ljqe;->a:Landroid/view/View;
 
-    invoke-direct {v0}, Ljqc;-><init>()V
-
-    sput-object v0, Ljqe;->b:Ljfc;
-
-    new-instance v1, Ligo;
-
-    const-string v2, "Wearable.API"
-
-    const/4 v3, 0x0
-
-    invoke-direct {v1, v2, v0, v3, v3}, Ligo;-><init>(Ljava/lang/String;Ljfc;[B[B)V
-
-    sput-object v1, Ljqe;->a:Ligo;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
-.method public static a(Landroid/content/Context;)Ljde;
-    .locals 9
 
-    new-instance v8, Ljde;
+# virtual methods
+.method public final a()V
+    .locals 2
 
-    sget-object v4, Ljdd;->a:Ljdd;
+    iget-object v0, p0, Ljqe;->a:Landroid/view/View;
 
-    sget-object v2, Ljqe;->a:Ligo;
+    const/4 v1, 0x1
 
-    sget-object v3, Ljqd;->a:Ljqd;
+    invoke-virtual {v0, v1}, Landroid/view/View;->setFocusable(Z)V
 
-    const/4 v5, 0x0
+    return-void
+.end method
 
-    const/4 v6, 0x0
+.method public final synthetic b()V
+    .locals 0
 
-    const/4 v7, 0x0
+    return-void
+.end method
 
-    move-object v0, v8
+.method public final synthetic c()V
+    .locals 0
 
-    move-object v1, p0
+    return-void
+.end method
 
-    invoke-direct/range {v0 .. v7}, Ljde;-><init>(Landroid/content/Context;Ligo;Ljcy;Ljdd;[B[B[B)V
+.method public final d()V
+    .locals 2
 
-    return-object v8
+    iget-object v0, p0, Ljqe;->a:Landroid/view/View;
+
+    const/4 v1, 0x0
+
+    invoke-virtual {v0, v1}, Landroid/view/View;->setFocusable(Z)V
+
+    return-void
 .end method

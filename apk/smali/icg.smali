@@ -2,740 +2,1250 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Licf;
+.implements Lpys;
 
 
 # instance fields
-.field private final a:I
+.field private final a:Lqkg;
 
-.field private final b:Z
+.field private final b:Lqkg;
 
-.field private final c:Landroid/content/Context;
+.field private final c:Lqkg;
 
-.field private final d:Z
+.field private final d:Lqkg;
 
-.field private final e:Landroid/view/View$OnClickListener;
+.field private final e:Lqkg;
 
-.field private final f:Lice;
+.field private final f:Lqkg;
 
-.field private final g:I
+.field private final g:Lqkg;
 
-.field private h:I
+.field private final h:Lqkg;
 
-.field private i:Ljava/util/Date;
+.field private final i:Lqkg;
 
-.field private j:Lcom/google/android/apps/camera/ui/notificationchip/NotificationChipView;
-
-.field private k:Ljava/util/Date;
-
-.field private l:Ljava/lang/String;
-
-.field private m:Lhyn;
-
-.field private final n:I
+.field private final synthetic j:I
 
 
 # direct methods
-.method public constructor <init>(Landroid/content/Context;Ljava/lang/String;IIZLandroid/view/View$OnClickListener;Lice;ZI)V
+.method public constructor <init>(Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;I)V
     .locals 0
+
+    iput p10, p0, Licg;->j:I
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Licg;->c:Landroid/content/Context;
+    iput-object p1, p0, Licg;->a:Lqkg;
 
-    iput-object p2, p0, Licg;->l:Ljava/lang/String;
+    iput-object p2, p0, Licg;->b:Lqkg;
 
-    iput p3, p0, Licg;->a:I
+    iput-object p3, p0, Licg;->c:Lqkg;
 
-    iput p4, p0, Licg;->n:I
+    iput-object p4, p0, Licg;->d:Lqkg;
 
-    iput-boolean p5, p0, Licg;->b:Z
+    iput-object p5, p0, Licg;->e:Lqkg;
 
-    iput-object p6, p0, Licg;->e:Landroid/view/View$OnClickListener;
+    iput-object p6, p0, Licg;->f:Lqkg;
 
-    iput-object p7, p0, Licg;->f:Lice;
+    iput-object p7, p0, Licg;->g:Lqkg;
 
-    iput-boolean p8, p0, Licg;->d:Z
+    iput-object p8, p0, Licg;->h:Lqkg;
 
-    iput p9, p0, Licg;->g:I
+    iput-object p9, p0, Licg;->i:Lqkg;
+
+    return-void
+.end method
+
+.method public constructor <init>(Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;I[B)V
+    .locals 0
+
+    iput p10, p0, Licg;->j:I
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Licg;->d:Lqkg;
+
+    iput-object p2, p0, Licg;->a:Lqkg;
+
+    iput-object p3, p0, Licg;->f:Lqkg;
+
+    iput-object p4, p0, Licg;->e:Lqkg;
+
+    iput-object p5, p0, Licg;->b:Lqkg;
+
+    iput-object p6, p0, Licg;->g:Lqkg;
+
+    iput-object p7, p0, Licg;->i:Lqkg;
+
+    iput-object p8, p0, Licg;->h:Lqkg;
+
+    iput-object p9, p0, Licg;->c:Lqkg;
+
+    return-void
+.end method
+
+.method public constructor <init>(Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;I[C)V
+    .locals 0
+
+    iput p10, p0, Licg;->j:I
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Licg;->e:Lqkg;
+
+    iput-object p2, p0, Licg;->a:Lqkg;
+
+    iput-object p3, p0, Licg;->g:Lqkg;
+
+    iput-object p4, p0, Licg;->f:Lqkg;
+
+    iput-object p5, p0, Licg;->c:Lqkg;
+
+    iput-object p6, p0, Licg;->d:Lqkg;
+
+    iput-object p7, p0, Licg;->h:Lqkg;
+
+    iput-object p8, p0, Licg;->i:Lqkg;
+
+    iput-object p9, p0, Licg;->b:Lqkg;
+
+    return-void
+.end method
+
+.method public constructor <init>(Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;I[F)V
+    .locals 0
+
+    iput p10, p0, Licg;->j:I
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Licg;->a:Lqkg;
+
+    iput-object p2, p0, Licg;->e:Lqkg;
+
+    iput-object p3, p0, Licg;->d:Lqkg;
+
+    iput-object p4, p0, Licg;->f:Lqkg;
+
+    iput-object p5, p0, Licg;->h:Lqkg;
+
+    iput-object p6, p0, Licg;->b:Lqkg;
+
+    iput-object p7, p0, Licg;->i:Lqkg;
+
+    iput-object p8, p0, Licg;->g:Lqkg;
+
+    iput-object p9, p0, Licg;->c:Lqkg;
+
+    return-void
+.end method
+
+.method public constructor <init>(Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;I[I)V
+    .locals 0
+
+    iput p10, p0, Licg;->j:I
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Licg;->d:Lqkg;
+
+    iput-object p2, p0, Licg;->f:Lqkg;
+
+    iput-object p3, p0, Licg;->c:Lqkg;
+
+    iput-object p4, p0, Licg;->i:Lqkg;
+
+    iput-object p5, p0, Licg;->h:Lqkg;
+
+    iput-object p6, p0, Licg;->a:Lqkg;
+
+    iput-object p7, p0, Licg;->b:Lqkg;
+
+    iput-object p8, p0, Licg;->e:Lqkg;
+
+    iput-object p9, p0, Licg;->g:Lqkg;
+
+    return-void
+.end method
+
+.method public constructor <init>(Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;I[S)V
+    .locals 0
+
+    iput p10, p0, Licg;->j:I
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Licg;->b:Lqkg;
+
+    iput-object p2, p0, Licg;->e:Lqkg;
+
+    iput-object p3, p0, Licg;->f:Lqkg;
+
+    iput-object p4, p0, Licg;->d:Lqkg;
+
+    iput-object p5, p0, Licg;->c:Lqkg;
+
+    iput-object p6, p0, Licg;->g:Lqkg;
+
+    iput-object p7, p0, Licg;->a:Lqkg;
+
+    iput-object p8, p0, Licg;->h:Lqkg;
+
+    iput-object p9, p0, Licg;->i:Lqkg;
+
+    return-void
+.end method
+
+.method public constructor <init>(Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;I[Z)V
+    .locals 0
+
+    iput p10, p0, Licg;->j:I
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Licg;->g:Lqkg;
+
+    iput-object p2, p0, Licg;->e:Lqkg;
+
+    iput-object p3, p0, Licg;->b:Lqkg;
+
+    iput-object p4, p0, Licg;->d:Lqkg;
+
+    iput-object p5, p0, Licg;->c:Lqkg;
+
+    iput-object p6, p0, Licg;->i:Lqkg;
+
+    iput-object p7, p0, Licg;->f:Lqkg;
+
+    iput-object p8, p0, Licg;->h:Lqkg;
+
+    iput-object p9, p0, Licg;->a:Lqkg;
+
+    return-void
+.end method
+
+.method public constructor <init>(Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;I[[B)V
+    .locals 0
+
+    iput p10, p0, Licg;->j:I
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Licg;->h:Lqkg;
+
+    iput-object p2, p0, Licg;->g:Lqkg;
+
+    iput-object p3, p0, Licg;->f:Lqkg;
+
+    iput-object p4, p0, Licg;->a:Lqkg;
+
+    iput-object p5, p0, Licg;->c:Lqkg;
+
+    iput-object p6, p0, Licg;->i:Lqkg;
+
+    iput-object p7, p0, Licg;->d:Lqkg;
+
+    iput-object p8, p0, Licg;->b:Lqkg;
+
+    iput-object p9, p0, Licg;->e:Lqkg;
+
+    return-void
+.end method
+
+.method public constructor <init>(Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;I[[C)V
+    .locals 0
+
+    iput p10, p0, Licg;->j:I
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Licg;->c:Lqkg;
+
+    iput-object p2, p0, Licg;->b:Lqkg;
+
+    iput-object p3, p0, Licg;->d:Lqkg;
+
+    iput-object p4, p0, Licg;->f:Lqkg;
+
+    iput-object p5, p0, Licg;->h:Lqkg;
+
+    iput-object p6, p0, Licg;->i:Lqkg;
+
+    iput-object p7, p0, Licg;->e:Lqkg;
+
+    iput-object p8, p0, Licg;->a:Lqkg;
+
+    iput-object p9, p0, Licg;->g:Lqkg;
+
+    return-void
+.end method
+
+.method public constructor <init>(Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;I[[S)V
+    .locals 0
+
+    iput p10, p0, Licg;->j:I
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Licg;->c:Lqkg;
+
+    iput-object p2, p0, Licg;->i:Lqkg;
+
+    iput-object p3, p0, Licg;->g:Lqkg;
+
+    iput-object p4, p0, Licg;->d:Lqkg;
+
+    iput-object p5, p0, Licg;->h:Lqkg;
+
+    iput-object p6, p0, Licg;->b:Lqkg;
+
+    iput-object p7, p0, Licg;->f:Lqkg;
+
+    iput-object p8, p0, Licg;->e:Lqkg;
+
+    iput-object p9, p0, Licg;->a:Lqkg;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()I
-    .locals 1
+.method public final synthetic get()Ljava/lang/Object;
+    .locals 17
 
-    iget v0, p0, Licg;->a:I
+    move-object/from16 v0, p0
 
-    add-int/lit16 v0, v0, 0x1f4
+    iget v1, v0, Licg;->j:I
 
-    return v0
-.end method
+    packed-switch v1, :pswitch_data_0
 
-.method public final b()Lelm;
-    .locals 1
+    iget-object v1, v0, Licg;->c:Lqkg;
 
-    sget-object v0, Lelm;->a:Lelm;
-
-    return-object v0
-.end method
-
-.method public final synthetic c()Ljava/lang/Object;
-    .locals 1
-
-    invoke-static {}, Lfcr;->f()Ljava/lang/Object;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public final synthetic d()Ljava/lang/Runnable;
-    .locals 1
-
-    const/4 v0, 0x0
-
-    return-object v0
-.end method
-
-.method public final e()Ljava/util/Date;
-    .locals 1
-
-    iget-object v0, p0, Licg;->k:Ljava/util/Date;
-
-    return-object v0
-.end method
-
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 7
-
-    const/4 v0, 0x1
-
-    if-ne p0, p1, :cond_0
-
-    return v0
-
-    :cond_0
-    instance-of v1, p1, Licg;
-
-    const/4 v2, 0x0
-
-    if-nez v1, :cond_1
-
-    return v2
-
-    :cond_1
-    check-cast p1, Licg;
-
-    iget v1, p0, Licg;->a:I
-
-    iget v3, p1, Licg;->a:I
-
-    if-ne v1, v3, :cond_2
-
-    iget-boolean v1, p0, Licg;->b:Z
-
-    iget-boolean v3, p1, Licg;->b:Z
-
-    if-ne v1, v3, :cond_2
-
-    iget v1, p0, Licg;->n:I
-
-    iget v3, p1, Licg;->n:I
-
-    if-ne v1, v3, :cond_2
-
-    iget-object v1, p0, Licg;->l:Ljava/lang/String;
-
-    iget-object v3, p1, Licg;->l:Ljava/lang/String;
-
-    invoke-static {v1, v3}, Lj$/util/Objects;->equals(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_2
-
-    iget-object v1, p0, Licg;->e:Landroid/view/View$OnClickListener;
-
-    iget-object v3, p1, Licg;->e:Landroid/view/View$OnClickListener;
-
-    invoke-static {v1, v3}, Lj$/util/Objects;->equals(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_2
-
-    iget-object v1, p0, Licg;->f:Lice;
-
-    iget-object v3, p1, Licg;->f:Lice;
-
-    invoke-static {v1, v3}, Lj$/util/Objects;->equals(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_2
-
-    iget-object v1, p0, Licg;->i:Ljava/util/Date;
-
-    if-eqz v1, :cond_2
-
-    iget-object v3, p1, Licg;->i:Ljava/util/Date;
-
-    if-eqz v3, :cond_2
-
-    invoke-virtual {v1}, Ljava/util/Date;->getTime()J
-
-    move-result-wide v3
-
-    iget-object p1, p1, Licg;->i:Ljava/util/Date;
-
-    invoke-virtual {p1}, Ljava/util/Date;->getTime()J
-
-    move-result-wide v5
-
-    cmp-long p1, v3, v5
-
-    if-nez p1, :cond_2
-
-    return v0
-
-    :cond_2
-    return v2
-.end method
-
-.method public final f(Ljava/lang/Runnable;)V
-    .locals 2
-
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    move-result-object p1
-
-    new-instance v0, Ljava/lang/UnsupportedOperationException;
-
-    invoke-virtual {p1}, Ljava/lang/Class;->getName()Ljava/lang/String;
-
-    move-result-object p1
-
-    invoke-static {p1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object p1
-
-    const-string v1, "Unsupported Operation delayedHide(Runnable) in: "
-
-    invoke-virtual {v1, p1}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object p1
-
-    invoke-direct {v0, p1}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-.end method
-
-.method public final g()V
-    .locals 6
-
-    iget-object v0, p0, Licg;->j:Lcom/google/android/apps/camera/ui/notificationchip/NotificationChipView;
-
-    iget-object v1, v0, Lcom/google/android/apps/camera/ui/notificationchip/NotificationChipView;->h:Ljdc;
-
-    iget-object v1, v1, Ljdc;->a:Ljava/lang/Object;
-
-    check-cast v1, Landroid/animation/AnimatorSet;
-
-    invoke-virtual {v1}, Landroid/animation/AnimatorSet;->end()V
-
-    const/16 v1, 0x8
-
-    invoke-virtual {v0, v1}, Lcom/google/android/apps/camera/ui/notificationchip/NotificationChipView;->setVisibility(I)V
-
-    iget-boolean v1, v0, Lcom/google/android/apps/camera/ui/notificationchip/NotificationChipView;->c:Z
-
-    if-nez v1, :cond_0
-
-    invoke-virtual {v0}, Lcom/google/android/apps/camera/ui/notificationchip/NotificationChipView;->a()V
-
-    :cond_0
-    iget-object v1, v0, Lcom/google/android/apps/camera/ui/notificationchip/NotificationChipView;->d:Lice;
-
-    if-eqz v1, :cond_1
-
-    new-instance v2, Ljava/util/Date;
-
-    invoke-direct {v2}, Ljava/util/Date;-><init>()V
-
-    invoke-virtual {v2}, Ljava/util/Date;->getTime()J
-
-    move-result-wide v2
-
-    iget-wide v4, v0, Lcom/google/android/apps/camera/ui/notificationchip/NotificationChipView;->f:J
-
-    sub-long/2addr v2, v4
-
-    invoke-interface {v1, v2, v3}, Lice;->a(J)V
-
-    :cond_1
-    return-void
-.end method
-
-.method public final h()V
-    .locals 2
-
-    iget-object v0, p0, Licg;->j:Lcom/google/android/apps/camera/ui/notificationchip/NotificationChipView;
-
-    invoke-virtual {v0}, Lcom/google/android/apps/camera/ui/notificationchip/NotificationChipView;->a()V
-
-    iget-object v0, p0, Licg;->j:Lcom/google/android/apps/camera/ui/notificationchip/NotificationChipView;
-
-    iget-object v1, v0, Lcom/google/android/apps/camera/ui/notificationchip/NotificationChipView;->h:Ljdc;
-
-    iget-object v1, v1, Ljdc;->b:Ljava/lang/Object;
-
-    check-cast v1, Landroid/animation/AnimatorSet;
-
-    invoke-virtual {v1}, Landroid/animation/AnimatorSet;->isRunning()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_0
-
-    iget-object v0, v0, Lcom/google/android/apps/camera/ui/notificationchip/NotificationChipView;->h:Ljdc;
-
-    iget-object v0, v0, Ljdc;->b:Ljava/lang/Object;
-
-    check-cast v0, Landroid/animation/AnimatorSet;
-
-    invoke-virtual {v0}, Landroid/animation/AnimatorSet;->reverse()V
-
-    :cond_0
-    iget-object v0, p0, Licg;->j:Lcom/google/android/apps/camera/ui/notificationchip/NotificationChipView;
-
-    iget v1, p0, Licg;->a:I
-
-    invoke-virtual {v0, v1}, Lcom/google/android/apps/camera/ui/notificationchip/NotificationChipView;->c(I)V
-
-    return-void
-.end method
-
-.method public final hashCode()I
-    .locals 3
-
-    const/4 v0, 0x7
-
-    new-array v0, v0, [Ljava/lang/Object;
-
-    iget v1, p0, Licg;->a:I
-
-    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-interface {v1}, Lqkg;->get()Ljava/lang/Object;
 
     move-result-object v1
 
-    const/4 v2, 0x0
+    move-object v3, v1
 
-    aput-object v1, v0, v2
+    check-cast v3, Lnrm;
 
-    iget v1, p0, Licg;->n:I
+    iget-object v1, v0, Licg;->i:Lqkg;
 
-    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v1
-
-    const/4 v2, 0x1
-
-    aput-object v1, v0, v2
-
-    iget-boolean v1, p0, Licg;->b:Z
-
-    invoke-static {v1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+    invoke-interface {v1}, Lqkg;->get()Ljava/lang/Object;
 
     move-result-object v1
 
-    const/4 v2, 0x2
+    move-object v4, v1
 
-    aput-object v1, v0, v2
+    check-cast v4, Lnoq;
 
-    const/4 v1, 0x3
+    iget-object v1, v0, Licg;->g:Lqkg;
 
-    iget-object v2, p0, Licg;->l:Ljava/lang/String;
-
-    aput-object v2, v0, v1
-
-    const/4 v1, 0x4
-
-    iget-object v2, p0, Licg;->e:Landroid/view/View$OnClickListener;
-
-    aput-object v2, v0, v1
-
-    const/4 v1, 0x5
-
-    iget-object v2, p0, Licg;->f:Lice;
-
-    aput-object v2, v0, v1
-
-    const/4 v1, 0x6
-
-    iget-object v2, p0, Licg;->i:Ljava/util/Date;
-
-    aput-object v2, v0, v1
-
-    invoke-static {v0}, Lj$/util/Objects;->hash([Ljava/lang/Object;)I
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public final i(Ljava/util/Date;)V
-    .locals 0
-
-    iput-object p1, p0, Licg;->k:Ljava/util/Date;
-
-    return-void
-.end method
-
-.method public final j()V
-    .locals 8
-
-    iget v0, p0, Licg;->g:I
-
-    const/4 v1, -0x1
-
-    const/4 v2, 0x1
-
-    if-eq v0, v1, :cond_1
-
-    iget v1, p0, Licg;->h:I
-
-    if-lt v1, v0, :cond_0
-
-    return-void
-
-    :cond_0
-    add-int/2addr v1, v2
-
-    iput v1, p0, Licg;->h:I
-
-    :cond_1
-    new-instance v0, Ljava/util/Date;
-
-    invoke-direct {v0}, Ljava/util/Date;-><init>()V
-
-    iput-object v0, p0, Licg;->i:Ljava/util/Date;
-
-    iget-object v0, p0, Licg;->c:Landroid/content/Context;
-
-    check-cast v0, Landroid/app/Activity;
-
-    const v1, 0x7f0b0263
-
-    invoke-virtual {v0, v1}, Landroid/app/Activity;->findViewById(I)Landroid/view/View;
-
-    move-result-object v0
-
-    check-cast v0, Lcom/google/android/apps/camera/ui/notificationchip/NotificationChipView;
-
-    iput-object v0, p0, Licg;->j:Lcom/google/android/apps/camera/ui/notificationchip/NotificationChipView;
-
-    iget-object v1, p0, Licg;->l:Ljava/lang/String;
-
-    iget v3, p0, Licg;->a:I
-
-    iget-boolean v4, p0, Licg;->b:Z
-
-    iget-object v5, p0, Licg;->e:Landroid/view/View$OnClickListener;
-
-    iget-object v6, p0, Licg;->f:Lice;
-
-    iput v3, v0, Lcom/google/android/apps/camera/ui/notificationchip/NotificationChipView;->b:I
-
-    iput-boolean v4, v0, Lcom/google/android/apps/camera/ui/notificationchip/NotificationChipView;->c:Z
-
-    iput-object v6, v0, Lcom/google/android/apps/camera/ui/notificationchip/NotificationChipView;->d:Lice;
-
-    invoke-virtual {v0, v1}, Lcom/google/android/apps/camera/ui/notificationchip/NotificationChipView;->setText(Ljava/lang/CharSequence;)V
-
-    invoke-virtual {v0, v5}, Lcom/google/android/apps/camera/ui/notificationchip/NotificationChipView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
-
-    new-instance v1, Lhxc;
-
-    const/16 v3, 0x14
-
-    invoke-direct {v1, v0, v3}, Lhxc;-><init>(Lcom/google/android/apps/camera/ui/notificationchip/NotificationChipView;I)V
-
-    iput-object v1, v0, Lcom/google/android/apps/camera/ui/notificationchip/NotificationChipView;->g:Ljava/lang/Runnable;
-
-    invoke-virtual {v0}, Lcom/google/android/apps/camera/ui/notificationchip/NotificationChipView;->getParent()Landroid/view/ViewParent;
+    invoke-interface {v1}, Lqkg;->get()Ljava/lang/Object;
 
     move-result-object v1
 
-    check-cast v1, Landroid/view/ViewGroup;
+    move-object v5, v1
 
-    new-instance v3, Lhcl;
+    check-cast v5, Lntg;
 
-    const/4 v4, 0x6
+    iget-object v1, v0, Licg;->d:Lqkg;
 
-    invoke-direct {v3, v0, v4}, Lhcl;-><init>(Lcom/google/android/apps/camera/ui/notificationchip/NotificationChipView;I)V
-
-    invoke-virtual {v1, v3}, Landroid/view/ViewGroup;->addOnLayoutChangeListener(Landroid/view/View$OnLayoutChangeListener;)V
-
-    new-instance v1, Landroid/view/animation/LinearInterpolator;
-
-    invoke-direct {v1}, Landroid/view/animation/LinearInterpolator;-><init>()V
-
-    const/16 v3, 0xc8
-
-    invoke-static {v3, v1}, Likd;->b(ILandroid/view/animation/Interpolator;)Likd;
+    invoke-interface {v1}, Lqkg;->get()Ljava/lang/Object;
 
     move-result-object v1
 
-    const-string v4, "alpha"
+    move-object v6, v1
 
-    const/4 v5, 0x0
+    check-cast v6, Lnre;
 
-    const/high16 v6, 0x3f800000    # 1.0f
+    iget-object v1, v0, Licg;->h:Lqkg;
 
-    invoke-virtual {v1, v0, v4, v5, v6}, Likd;->c(Ljava/lang/Object;Ljava/lang/String;FF)V
-
-    iput v3, v1, Likd;->a:I
-
-    const-string v3, "scaleX"
-
-    const/high16 v7, 0x3f000000    # 0.5f
-
-    invoke-virtual {v1, v0, v3, v7, v6}, Likd;->c(Ljava/lang/Object;Ljava/lang/String;FF)V
-
-    const-string v3, "scaleY"
-
-    invoke-virtual {v1, v0, v3, v7, v6}, Likd;->c(Ljava/lang/Object;Ljava/lang/String;FF)V
-
-    iget-object v3, v0, Lcom/google/android/apps/camera/ui/notificationchip/NotificationChipView;->h:Ljdc;
-
-    invoke-virtual {v1}, Likd;->a()Landroid/animation/AnimatorSet;
+    invoke-interface {v1}, Lqkg;->get()Ljava/lang/Object;
 
     move-result-object v1
 
-    iput-object v1, v3, Ljdc;->a:Ljava/lang/Object;
+    move-object v7, v1
 
-    new-instance v1, Landroid/view/animation/LinearInterpolator;
+    check-cast v7, Lohh;
 
-    invoke-direct {v1}, Landroid/view/animation/LinearInterpolator;-><init>()V
+    iget-object v1, v0, Licg;->b:Lqkg;
 
-    const/16 v3, 0x1f4
-
-    invoke-static {v3, v1}, Likd;->b(ILandroid/view/animation/Interpolator;)Likd;
+    invoke-interface {v1}, Lqkg;->get()Ljava/lang/Object;
 
     move-result-object v1
 
-    invoke-virtual {v1, v0, v4, v6, v5}, Likd;->c(Ljava/lang/Object;Ljava/lang/String;FF)V
+    move-object v8, v1
 
-    iget-object v0, v0, Lcom/google/android/apps/camera/ui/notificationchip/NotificationChipView;->h:Ljdc;
+    check-cast v8, Lnov;
 
-    invoke-virtual {v1}, Likd;->a()Landroid/animation/AnimatorSet;
+    iget-object v1, v0, Licg;->f:Lqkg;
 
-    move-result-object v1
-
-    iput-object v1, v0, Ljdc;->b:Ljava/lang/Object;
-
-    iget-object v0, p0, Licg;->j:Lcom/google/android/apps/camera/ui/notificationchip/NotificationChipView;
-
-    iget-object v1, p0, Licg;->m:Lhyn;
-
-    iput-object v1, v0, Lcom/google/android/apps/camera/ui/notificationchip/NotificationChipView;->e:Lhyn;
-
-    invoke-virtual {v0}, Lcom/google/android/apps/camera/ui/notificationchip/NotificationChipView;->getLineCount()I
-
-    move-result v1
-
-    if-le v1, v2, :cond_2
-
-    iget-object v1, v0, Lcom/google/android/apps/camera/ui/notificationchip/NotificationChipView;->a:Landroid/content/Context;
-
-    const v2, 0x7f0802f1
-
-    invoke-virtual {v1, v2}, Landroid/content/Context;->getDrawable(I)Landroid/graphics/drawable/Drawable;
+    invoke-interface {v1}, Lqkg;->get()Ljava/lang/Object;
 
     move-result-object v1
 
-    goto :goto_0
+    move-object v9, v1
 
-    :cond_2
-    iget-object v1, v0, Lcom/google/android/apps/camera/ui/notificationchip/NotificationChipView;->a:Landroid/content/Context;
+    check-cast v9, Lnoc;
 
-    const v2, 0x7f0802f0
+    iget-object v1, v0, Licg;->e:Lqkg;
 
-    invoke-virtual {v1, v2}, Landroid/content/Context;->getDrawable(I)Landroid/graphics/drawable/Drawable;
-
-    move-result-object v1
-
-    :goto_0
-    invoke-virtual {v0, v1}, Lcom/google/android/apps/camera/ui/notificationchip/NotificationChipView;->setBackground(Landroid/graphics/drawable/Drawable;)V
-
-    iget-object v1, v0, Lcom/google/android/apps/camera/ui/notificationchip/NotificationChipView;->a:Landroid/content/Context;
-
-    invoke-virtual {v1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+    invoke-interface {v1}, Lqkg;->get()Ljava/lang/Object;
 
     move-result-object v1
 
-    const v2, 0x7f070550
+    move-object v10, v1
 
-    invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
+    check-cast v10, Lmdf;
 
-    move-result v1
+    iget-object v1, v0, Licg;->a:Lqkg;
 
-    iget-object v2, v0, Lcom/google/android/apps/camera/ui/notificationchip/NotificationChipView;->a:Landroid/content/Context;
+    invoke-interface {v1}, Lqkg;->get()Ljava/lang/Object;
 
-    invoke-virtual {v2}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+    move-result-object v1
 
-    move-result-object v2
+    move-object v11, v1
 
-    const v3, 0x7f070552
+    check-cast v11, Lnom;
 
-    invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
+    new-instance v1, Lnty;
 
-    move-result v2
+    const/4 v12, 0x0
 
-    iget-object v3, v0, Lcom/google/android/apps/camera/ui/notificationchip/NotificationChipView;->a:Landroid/content/Context;
+    const/4 v13, 0x0
 
-    invoke-virtual {v3}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+    move-object v2, v1
+
+    invoke-direct/range {v2 .. v13}, Lnty;-><init>(Lnrm;Lnoq;Lntg;Lnre;Lohh;Lnov;Lnoc;Lmdf;Lnom;[B[B)V
+
+    return-object v1
+
+    :pswitch_0
+    iget-object v1, v0, Licg;->c:Lqkg;
+
+    invoke-interface {v1}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v1
+
+    move-object v3, v1
+
+    check-cast v3, Lcom/google/android/libraries/vision/visionkit/f250/internal/airlock/room/F250RoomDatabase;
+
+    iget-object v1, v0, Licg;->b:Lqkg;
+
+    invoke-interface {v1}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v1
+
+    move-object v4, v1
+
+    check-cast v4, Lnov;
+
+    iget-object v1, v0, Licg;->d:Lqkg;
+
+    invoke-interface {v1}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v1
+
+    move-object v5, v1
+
+    check-cast v5, Lnrm;
+
+    iget-object v1, v0, Licg;->f:Lqkg;
+
+    invoke-interface {v1}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v1
+
+    move-object v6, v1
+
+    check-cast v6, Lnoc;
+
+    iget-object v1, v0, Licg;->h:Lqkg;
+
+    invoke-interface {v1}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v1
+
+    move-object v7, v1
+
+    check-cast v7, Lnom;
+
+    iget-object v1, v0, Licg;->i:Lqkg;
+
+    invoke-interface {v1}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v1
+
+    move-object v8, v1
+
+    check-cast v8, Lnox;
+
+    iget-object v1, v0, Licg;->e:Lqkg;
+
+    invoke-interface {v1}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v1
+
+    move-object v9, v1
+
+    check-cast v9, Lmdf;
+
+    iget-object v1, v0, Licg;->a:Lqkg;
+
+    invoke-interface {v1}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v1
+
+    move-object v10, v1
+
+    check-cast v10, Lnrk;
+
+    iget-object v1, v0, Licg;->g:Lqkg;
+
+    invoke-interface {v1}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v1
+
+    move-object v11, v1
+
+    check-cast v11, Lqbt;
+
+    new-instance v1, Lnog;
+
+    move-object v2, v1
+
+    invoke-direct/range {v2 .. v11}, Lnog;-><init>(Lcom/google/android/libraries/vision/visionkit/f250/internal/airlock/room/F250RoomDatabase;Lnov;Lnrm;Lnoc;Lnom;Lnox;Lmdf;Lnrk;Lqbt;)V
+
+    return-object v1
+
+    :pswitch_1
+    iget-object v1, v0, Licg;->h:Lqkg;
+
+    check-cast v1, Lmxn;
+
+    invoke-virtual {v1}, Lmxn;->a()Lmxm;
 
     move-result-object v3
 
-    const v4, 0x7f070551
+    iget-object v1, v0, Licg;->g:Lqkg;
 
-    invoke-virtual {v3, v4}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
+    check-cast v1, Lemp;
 
-    move-result v3
-
-    iget-object v4, v0, Lcom/google/android/apps/camera/ui/notificationchip/NotificationChipView;->a:Landroid/content/Context;
-
-    invoke-virtual {v4}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+    invoke-virtual {v1}, Lemp;->a()Landroid/content/Context;
 
     move-result-object v4
 
-    const v5, 0x7f07054f
+    iget-object v1, v0, Licg;->f:Lqkg;
 
-    invoke-virtual {v4, v5}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
+    invoke-interface {v1}, Lqkg;->get()Ljava/lang/Object;
 
-    move-result v4
+    move-result-object v1
 
-    invoke-virtual {v0, v1, v2, v3, v4}, Lcom/google/android/apps/camera/ui/notificationchip/NotificationChipView;->setPaddingRelative(IIII)V
+    move-object v5, v1
 
-    invoke-virtual {v0}, Lcom/google/android/apps/camera/ui/notificationchip/NotificationChipView;->b()V
+    check-cast v5, Lmwe;
 
-    iget-object v1, v0, Lcom/google/android/apps/camera/ui/notificationchip/NotificationChipView;->h:Ljdc;
+    iget-object v1, v0, Licg;->a:Lqkg;
 
-    iget-object v1, v1, Ljdc;->a:Ljava/lang/Object;
+    invoke-interface {v1}, Lqkg;->get()Ljava/lang/Object;
 
-    check-cast v1, Landroid/animation/AnimatorSet;
+    move-result-object v1
 
-    invoke-virtual {v1}, Landroid/animation/AnimatorSet;->start()V
+    move-object v6, v1
 
-    const/4 v1, 0x0
+    check-cast v6, Ljava/util/concurrent/Executor;
 
-    invoke-virtual {v0, v1}, Lcom/google/android/apps/camera/ui/notificationchip/NotificationChipView;->setVisibility(I)V
+    iget-object v1, v0, Licg;->c:Lqkg;
 
-    const v1, 0x8000
+    check-cast v1, Lmyp;
 
-    invoke-virtual {v0, v1}, Lcom/google/android/apps/camera/ui/notificationchip/NotificationChipView;->sendAccessibilityEvent(I)V
+    invoke-virtual {v1}, Lmyp;->a()Lmyo;
 
-    iget-boolean v1, v0, Lcom/google/android/apps/camera/ui/notificationchip/NotificationChipView;->c:Z
+    move-result-object v7
 
-    if-nez v1, :cond_3
+    iget-object v8, v0, Licg;->i:Lqkg;
 
-    iget v1, v0, Lcom/google/android/apps/camera/ui/notificationchip/NotificationChipView;->b:I
+    iget-object v1, v0, Licg;->d:Lqkg;
 
-    invoke-virtual {v0, v1}, Lcom/google/android/apps/camera/ui/notificationchip/NotificationChipView;->c(I)V
+    invoke-static {v1}, Lpyr;->a(Lqkg;)Lpyn;
 
-    :cond_3
-    new-instance v1, Ljava/util/Date;
+    move-result-object v9
 
-    invoke-direct {v1}, Ljava/util/Date;-><init>()V
+    iget-object v10, v0, Licg;->b:Lqkg;
 
-    invoke-virtual {v1}, Ljava/util/Date;->getTime()J
+    iget-object v11, v0, Licg;->e:Lqkg;
 
-    move-result-wide v1
+    new-instance v1, Lmyt;
 
-    iput-wide v1, v0, Lcom/google/android/apps/camera/ui/notificationchip/NotificationChipView;->f:J
+    move-object v2, v1
 
-    return-void
-.end method
+    invoke-direct/range {v2 .. v11}, Lmyt;-><init>(Lmxm;Landroid/content/Context;Lmwe;Ljava/util/concurrent/Executor;Lmyn;Lqkg;Lpyn;Lqkg;Lqkg;)V
 
-.method public final synthetic k()Z
-    .locals 1
+    return-object v1
 
-    const/4 v0, 0x0
+    :pswitch_2
+    iget-object v1, v0, Licg;->a:Lqkg;
 
-    return v0
-.end method
+    check-cast v1, Lmxn;
 
-.method public final l()Z
-    .locals 1
+    invoke-virtual {v1}, Lmxn;->a()Lmxm;
 
-    iget-boolean v0, p0, Licg;->d:Z
+    move-result-object v3
 
-    return v0
-.end method
+    iget-object v1, v0, Licg;->e:Lqkg;
 
-.method public final m()Z
-    .locals 1
+    check-cast v1, Lemp;
 
-    iget-boolean v0, p0, Licg;->b:Z
+    invoke-virtual {v1}, Lemp;->a()Landroid/content/Context;
 
-    return v0
-.end method
+    move-result-object v4
 
-.method public final synthetic n()Z
-    .locals 1
+    iget-object v1, v0, Licg;->d:Lqkg;
 
-    const/4 v0, 0x1
+    invoke-interface {v1}, Lqkg;->get()Ljava/lang/Object;
 
-    return v0
-.end method
+    move-result-object v1
 
-.method public final synthetic o()Z
-    .locals 1
+    move-object v5, v1
 
-    const/4 v0, 0x1
+    check-cast v5, Ljava/util/concurrent/Executor;
 
-    return v0
-.end method
+    iget-object v1, v0, Licg;->f:Lqkg;
 
-.method public final p()I
-    .locals 1
+    invoke-static {v1}, Lpyr;->a(Lqkg;)Lpyn;
 
-    iget v0, p0, Licg;->n:I
+    move-result-object v6
 
-    return v0
-.end method
+    iget-object v1, v0, Licg;->h:Lqkg;
 
-.method public final q(IZZLiko;Lhyn;)V
-    .locals 0
+    check-cast v1, Levv;
 
-    iput-object p5, p0, Licg;->m:Lhyn;
+    invoke-virtual {v1}, Levv;->a()Lojc;
 
-    return-void
-.end method
+    move-result-object v7
 
-.method public final r()Ljava/util/Date;
-    .locals 1
+    iget-object v1, v0, Licg;->b:Lqkg;
 
-    iget-object v0, p0, Licg;->i:Ljava/util/Date;
+    invoke-interface {v1}, Lqkg;->get()Ljava/lang/Object;
 
-    return-object v0
-.end method
+    move-result-object v1
 
-.method public final s(Ljava/lang/String;)V
-    .locals 1
+    move-object v8, v1
 
-    iput-object p1, p0, Licg;->l:Ljava/lang/String;
+    check-cast v8, Lmwe;
 
-    iget-object v0, p0, Licg;->j:Lcom/google/android/apps/camera/ui/notificationchip/NotificationChipView;
+    iget-object v1, v0, Licg;->i:Lqkg;
 
-    if-eqz v0, :cond_0
+    check-cast v1, Lnch;
 
-    invoke-virtual {v0, p1}, Lcom/google/android/apps/camera/ui/notificationchip/NotificationChipView;->setText(Ljava/lang/CharSequence;)V
+    invoke-virtual {v1}, Lnch;->a()Lnox;
 
-    :cond_0
-    return-void
+    move-result-object v9
+
+    iget-object v1, v0, Licg;->g:Lqkg;
+
+    check-cast v1, Lpyt;
+
+    iget-object v1, v1, Lpyt;->a:Ljava/lang/Object;
+
+    move-object v10, v1
+
+    check-cast v10, Lojc;
+
+    iget-object v11, v0, Licg;->c:Lqkg;
+
+    new-instance v1, Lmyi;
+
+    const/4 v12, 0x0
+
+    move-object v2, v1
+
+    invoke-direct/range {v2 .. v12}, Lmyi;-><init>(Lmxm;Landroid/content/Context;Ljava/util/concurrent/Executor;Lpyn;Lojc;Lmwe;Lnox;Lojc;Lqkg;[B)V
+
+    return-object v1
+
+    :pswitch_3
+    iget-object v1, v0, Licg;->g:Lqkg;
+
+    check-cast v1, Lmxn;
+
+    invoke-virtual {v1}, Lmxn;->a()Lmxm;
+
+    move-result-object v3
+
+    iget-object v1, v0, Licg;->e:Lqkg;
+
+    check-cast v1, Lemp;
+
+    invoke-virtual {v1}, Lemp;->a()Landroid/content/Context;
+
+    move-result-object v4
+
+    iget-object v1, v0, Licg;->b:Lqkg;
+
+    invoke-interface {v1}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v1
+
+    move-object v5, v1
+
+    check-cast v5, Lmwe;
+
+    iget-object v1, v0, Licg;->d:Lqkg;
+
+    invoke-interface {v1}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v1
+
+    move-object v6, v1
+
+    check-cast v6, Lphw;
+
+    iget-object v1, v0, Licg;->c:Lqkg;
+
+    invoke-static {v1}, Lpyr;->a(Lqkg;)Lpyn;
+
+    move-result-object v7
+
+    iget-object v1, v0, Licg;->i:Lqkg;
+
+    check-cast v1, Lmxb;
+
+    invoke-virtual {v1}, Lmxb;->a()Lmxa;
+
+    move-result-object v8
+
+    iget-object v1, v0, Licg;->f:Lqkg;
+
+    check-cast v1, Lmwl;
+
+    invoke-virtual {v1}, Lmwl;->a()Lmwk;
+
+    move-result-object v9
+
+    iget-object v10, v0, Licg;->h:Lqkg;
+
+    iget-object v1, v0, Licg;->a:Lqkg;
+
+    invoke-interface {v1}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v1
+
+    move-object v11, v1
+
+    check-cast v11, Ljava/util/concurrent/Executor;
+
+    new-instance v1, Lmwr;
+
+    move-object v2, v1
+
+    invoke-direct/range {v2 .. v11}, Lmwr;-><init>(Lmxm;Landroid/content/Context;Lmwe;Lphw;Lpyn;Lmxa;Lmwk;Lqkg;Ljava/util/concurrent/Executor;)V
+
+    return-object v1
+
+    :pswitch_4
+    iget-object v1, v0, Licg;->d:Lqkg;
+
+    check-cast v1, Llwt;
+
+    invoke-virtual {v1}, Llwt;->a()Llws;
+
+    move-result-object v3
+
+    iget-object v1, v0, Licg;->f:Lqkg;
+
+    invoke-interface {v1}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v1
+
+    move-object v4, v1
+
+    check-cast v4, Lmip;
+
+    iget-object v1, v0, Licg;->c:Lqkg;
+
+    check-cast v1, Lliq;
+
+    invoke-virtual {v1}, Lliq;->a()Llis;
+
+    move-result-object v5
+
+    iget-object v1, v0, Licg;->i:Lqkg;
+
+    invoke-interface {v1}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v1
+
+    move-object v6, v1
+
+    check-cast v6, Lljf;
+
+    iget-object v1, v0, Licg;->h:Lqkg;
+
+    invoke-interface {v1}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v1
+
+    move-object v7, v1
+
+    check-cast v7, Lmos;
+
+    iget-object v1, v0, Licg;->a:Lqkg;
+
+    check-cast v1, Llry;
+
+    invoke-virtual {v1}, Llry;->a()Llrx;
+
+    move-result-object v8
+
+    iget-object v1, v0, Licg;->b:Lqkg;
+
+    invoke-interface {v1}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v1
+
+    move-object v9, v1
+
+    check-cast v9, Llzh;
+
+    iget-object v1, v0, Licg;->e:Lqkg;
+
+    check-cast v1, Llpl;
+
+    invoke-virtual {v1}, Llpl;->a()Llvp;
+
+    move-result-object v10
+
+    iget-object v1, v0, Licg;->g:Lqkg;
+
+    invoke-interface {v1}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v1
+
+    move-object v11, v1
+
+    check-cast v11, Llxv;
+
+    new-instance v1, Llue;
+
+    const/4 v12, 0x0
+
+    const/4 v13, 0x0
+
+    const/4 v14, 0x0
+
+    const/4 v15, 0x0
+
+    move-object v2, v1
+
+    invoke-direct/range {v2 .. v15}, Llue;-><init>(Lmae;Lmip;Llis;Lljf;Lmos;Llrx;Llzh;Llvp;Llxv;[B[B[B[B)V
+
+    return-object v1
+
+    :pswitch_5
+    iget-object v1, v0, Licg;->b:Lqkg;
+
+    invoke-interface {v1}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v1
+
+    move-object v3, v1
+
+    check-cast v3, Lgfy;
+
+    iget-object v1, v0, Licg;->e:Lqkg;
+
+    invoke-interface {v1}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v1
+
+    move-object v4, v1
+
+    check-cast v4, Ldmh;
+
+    iget-object v1, v0, Licg;->f:Lqkg;
+
+    check-cast v1, Lfxn;
+
+    invoke-virtual {v1}, Lfxn;->a()Lbne;
+
+    move-result-object v5
+
+    iget-object v1, v0, Licg;->d:Lqkg;
+
+    invoke-interface {v1}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v1
+
+    move-object v6, v1
+
+    check-cast v6, Lddf;
+
+    iget-object v1, v0, Licg;->c:Lqkg;
+
+    check-cast v1, Lcjc;
+
+    invoke-virtual {v1}, Lcjc;->a()Lojc;
+
+    move-result-object v7
+
+    iget-object v1, v0, Licg;->g:Lqkg;
+
+    invoke-interface {v1}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v1
+
+    move-object v8, v1
+
+    check-cast v8, Lbod;
+
+    iget-object v1, v0, Licg;->a:Lqkg;
+
+    invoke-interface {v1}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v1
+
+    move-object v9, v1
+
+    check-cast v9, Ljava/util/concurrent/ScheduledExecutorService;
+
+    invoke-static {}, Lgfp;->f()Lfcy;
+
+    move-result-object v10
+
+    iget-object v1, v0, Licg;->h:Lqkg;
+
+    invoke-interface {v1}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v1
+
+    move-object v11, v1
+
+    check-cast v11, Liqj;
+
+    iget-object v1, v0, Licg;->i:Lqkg;
+
+    invoke-interface {v1}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v1
+
+    move-object v12, v1
+
+    check-cast v12, Lghf;
+
+    new-instance v1, Linx;
+
+    const/4 v13, 0x0
+
+    const/4 v14, 0x0
+
+    const/4 v15, 0x0
+
+    const/16 v16, 0x0
+
+    move-object v2, v1
+
+    invoke-direct/range {v2 .. v16}, Linx;-><init>(Lgfy;Ldmh;Lbne;Lddf;Lojc;Lbod;Ljava/util/concurrent/ScheduledExecutorService;Lfcy;Liqj;Lghf;[B[B[B[B)V
+
+    return-object v1
+
+    :pswitch_6
+    iget-object v1, v0, Licg;->e:Lqkg;
+
+    check-cast v1, Lemd;
+
+    invoke-virtual {v1}, Lemd;->a()Landroid/content/Context;
+
+    move-result-object v3
+
+    iget-object v1, v0, Licg;->a:Lqkg;
+
+    invoke-interface {v1}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v1
+
+    move-object v4, v1
+
+    check-cast v4, Lojc;
+
+    iget-object v1, v0, Licg;->g:Lqkg;
+
+    invoke-interface {v1}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v1
+
+    move-object v5, v1
+
+    check-cast v5, Lgtg;
+
+    iget-object v1, v0, Licg;->f:Lqkg;
+
+    invoke-interface {v1}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v1
+
+    move-object v6, v1
+
+    check-cast v6, Lddf;
+
+    iget-object v1, v0, Licg;->c:Lqkg;
+
+    check-cast v1, Lbwq;
+
+    invoke-virtual {v1}, Lbwq;->a()Ljava/util/concurrent/Executor;
+
+    move-result-object v7
+
+    iget-object v1, v0, Licg;->d:Lqkg;
+
+    invoke-interface {v1}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v1
+
+    move-object v8, v1
+
+    check-cast v8, Lelw;
+
+    iget-object v1, v0, Licg;->h:Lqkg;
+
+    invoke-interface {v1}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v1
+
+    move-object v9, v1
+
+    check-cast v9, Lhuf;
+
+    iget-object v1, v0, Licg;->i:Lqkg;
+
+    invoke-interface {v1}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v1
+
+    move-object v10, v1
+
+    check-cast v10, Lhug;
+
+    iget-object v1, v0, Licg;->b:Lqkg;
+
+    check-cast v1, Lcwo;
+
+    invoke-virtual {v1}, Lcwo;->a()Llco;
+
+    move-result-object v11
+
+    new-instance v1, Ligu;
+
+    move-object v2, v1
+
+    invoke-direct/range {v2 .. v11}, Ligu;-><init>(Landroid/content/Context;Lojc;Lgtg;Lddf;Ljava/util/concurrent/Executor;Lelw;Lhuf;Lhug;Llco;)V
+
+    return-object v1
+
+    :pswitch_7
+    iget-object v1, v0, Licg;->d:Lqkg;
+
+    check-cast v1, Lhxg;
+
+    invoke-virtual {v1}, Lhxg;->a()Liao;
+
+    move-result-object v3
+
+    iget-object v1, v0, Licg;->a:Lqkg;
+
+    invoke-interface {v1}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v1
+
+    move-object v4, v1
+
+    check-cast v4, Lhzo;
+
+    iget-object v1, v0, Licg;->f:Lqkg;
+
+    check-cast v1, Lemd;
+
+    invoke-virtual {v1}, Lemd;->a()Landroid/content/Context;
+
+    move-result-object v5
+
+    iget-object v1, v0, Licg;->e:Lqkg;
+
+    check-cast v1, Ljnx;
+
+    invoke-virtual {v1}, Ljnx;->a()Ljus;
+
+    move-result-object v6
+
+    iget-object v1, v0, Licg;->b:Lqkg;
+
+    invoke-interface {v1}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v1
+
+    move-object v7, v1
+
+    check-cast v7, Lcvo;
+
+    iget-object v1, v0, Licg;->g:Lqkg;
+
+    invoke-interface {v1}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v1
+
+    move-object v8, v1
+
+    check-cast v8, Lgvb;
+
+    iget-object v1, v0, Licg;->i:Lqkg;
+
+    invoke-interface {v1}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v1
+
+    move-object v9, v1
+
+    check-cast v9, Ljng;
+
+    iget-object v1, v0, Licg;->h:Lqkg;
+
+    invoke-interface {v1}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v1
+
+    move-object v10, v1
+
+    check-cast v10, Lljf;
+
+    iget-object v1, v0, Licg;->c:Lqkg;
+
+    invoke-interface {v1}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v1
+
+    move-object v11, v1
+
+    check-cast v11, Lelw;
+
+    new-instance v1, Liac;
+
+    move-object v2, v1
+
+    invoke-direct/range {v2 .. v11}, Liac;-><init>(Liao;Lhzo;Landroid/content/Context;Ljus;Lcvo;Lgvb;Ljng;Lljf;Lelw;)V
+
+    return-object v1
+
+    :pswitch_8
+    iget-object v1, v0, Licg;->a:Lqkg;
+
+    invoke-interface {v1}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v1
+
+    move-object v3, v1
+
+    check-cast v3, Lidt;
+
+    iget-object v1, v0, Licg;->b:Lqkg;
+
+    check-cast v1, Lemd;
+
+    invoke-virtual {v1}, Lemd;->a()Landroid/content/Context;
+
+    move-result-object v4
+
+    iget-object v1, v0, Licg;->c:Lqkg;
+
+    invoke-interface {v1}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v1
+
+    move-object v5, v1
+
+    check-cast v5, Lhnx;
+
+    iget-object v1, v0, Licg;->d:Lqkg;
+
+    invoke-interface {v1}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Ljava/lang/Boolean;
+
+    invoke-virtual {v1}, Ljava/lang/Boolean;->booleanValue()Z
+
+    move-result v6
+
+    iget-object v1, v0, Licg;->e:Lqkg;
+
+    invoke-interface {v1}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v1
+
+    move-object v7, v1
+
+    check-cast v7, Lbue;
+
+    iget-object v1, v0, Licg;->f:Lqkg;
+
+    invoke-interface {v1}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v1
+
+    move-object v8, v1
+
+    check-cast v8, Lddf;
+
+    iget-object v1, v0, Licg;->g:Lqkg;
+
+    invoke-interface {v1}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v1
+
+    move-object v9, v1
+
+    check-cast v9, Lhub;
+
+    iget-object v1, v0, Licg;->h:Lqkg;
+
+    invoke-interface {v1}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v1
+
+    move-object v10, v1
+
+    check-cast v10, Lhuf;
+
+    iget-object v1, v0, Licg;->i:Lqkg;
+
+    invoke-interface {v1}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v1
+
+    move-object v11, v1
+
+    check-cast v11, Lhug;
+
+    new-instance v1, Licf;
+
+    move-object v2, v1
+
+    invoke-direct/range {v2 .. v11}, Licf;-><init>(Lidt;Landroid/content/Context;Lhnx;ZLbue;Lddf;Lhub;Lhuf;Lhug;)V
+
+    return-object v1
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_8
+        :pswitch_7
+        :pswitch_6
+        :pswitch_5
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method

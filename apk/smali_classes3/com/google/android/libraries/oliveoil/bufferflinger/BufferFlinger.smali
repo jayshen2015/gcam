@@ -2,7 +2,7 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lkyk;
+.implements Lmmc;
 
 
 # static fields
@@ -49,15 +49,15 @@
 .method static constructor <clinit>()V
     .locals 2
 
-    const-string v0, "bufferflinger"
+    const-class v0, Lcom/google/android/libraries/oliveoil/bufferflinger/BufferFlinger;
 
-    const-class v1, Lcom/google/android/libraries/oliveoil/bufferflinger/BufferFlinger;
+    const-string v1, "bufferflinger"
 
-    invoke-static {v1, v0}, Lkak;->b(Ljava/lang/Class;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Llil;->b(Ljava/lang/Class;Ljava/lang/String;)V
 
     invoke-static {}, Lcom/google/android/libraries/oliveoil/bufferflinger/BufferFlinger;->nativeInit()V
 
-    invoke-virtual {v1}, Ljava/lang/Class;->getSimpleName()Ljava/lang/String;
+    invoke-virtual {v0}, Ljava/lang/Class;->getSimpleName()Ljava/lang/String;
 
     move-result-object v0
 
@@ -205,9 +205,9 @@
 
     iget-object v1, p0, Lcom/google/android/libraries/oliveoil/bufferflinger/BufferFlinger;->displayExecutor:Ljava/util/concurrent/Executor;
 
-    new-instance v2, Lcom/google/android/libraries/oliveoil/bufferflinger/BufferFlinger$$ExternalSyntheticLambda0;
+    new-instance v2, Lcom/google/android/libraries/oliveoil/bufferflinger/BufferFlinger$$ExternalSyntheticLambda1;
 
-    invoke-direct {v2, p0, v0}, Lcom/google/android/libraries/oliveoil/bufferflinger/BufferFlinger$$ExternalSyntheticLambda0;-><init>(Lcom/google/android/libraries/oliveoil/bufferflinger/BufferFlinger;Ljava/util/concurrent/Semaphore;)V
+    invoke-direct {v2, p0, v0}, Lcom/google/android/libraries/oliveoil/bufferflinger/BufferFlinger$$ExternalSyntheticLambda1;-><init>(Lcom/google/android/libraries/oliveoil/bufferflinger/BufferFlinger;Ljava/util/concurrent/Semaphore;)V
 
     invoke-interface {v1, v2}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
 
@@ -278,7 +278,7 @@
 
     iget-object v9, v8, Lcom/google/android/libraries/oliveoil/bufferflinger/BufferFlinger;->displayExecutor:Ljava/util/concurrent/Executor;
 
-    new-instance v10, Lcom/google/android/libraries/oliveoil/bufferflinger/BufferFlinger$$ExternalSyntheticLambda1;
+    new-instance v10, Lcom/google/android/libraries/oliveoil/bufferflinger/BufferFlinger$$ExternalSyntheticLambda0;
 
     move-object v0, v10
 
@@ -296,7 +296,7 @@
 
     move v7, p4
 
-    invoke-direct/range {v0 .. v7}, Lcom/google/android/libraries/oliveoil/bufferflinger/BufferFlinger$$ExternalSyntheticLambda1;-><init>(Lcom/google/android/libraries/oliveoil/bufferflinger/BufferFlinger;Lcom/google/android/libraries/oliveoil/bufferflinger/BufferFlinger$OnBufferReleasedListener;Lcom/google/android/libraries/oliveoil/bufferflinger/BufferFlinger$OnPresentationTimestampAvailableListener;Landroid/hardware/HardwareBuffer;Landroid/graphics/Rect;Landroid/graphics/Rect;I)V
+    invoke-direct/range {v0 .. v7}, Lcom/google/android/libraries/oliveoil/bufferflinger/BufferFlinger$$ExternalSyntheticLambda0;-><init>(Lcom/google/android/libraries/oliveoil/bufferflinger/BufferFlinger;Lcom/google/android/libraries/oliveoil/bufferflinger/BufferFlinger$OnBufferReleasedListener;Lcom/google/android/libraries/oliveoil/bufferflinger/BufferFlinger$OnPresentationTimestampAvailableListener;Landroid/hardware/HardwareBuffer;Landroid/graphics/Rect;Landroid/graphics/Rect;I)V
 
     invoke-interface {v9, v10}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
 
@@ -500,11 +500,19 @@
 
     invoke-virtual {v2, v3}, Ljava/nio/LongBuffer;->position(I)Ljava/nio/Buffer;
 
+    move-result-object v2
+
+    check-cast v2, Ljava/nio/LongBuffer;
+
     iget-object v2, v0, Lcom/google/android/libraries/oliveoil/bufferflinger/BufferFlinger;->idAndPtsBuffer:Ljava/nio/LongBuffer;
 
     add-int/2addr v1, v1
 
     invoke-virtual {v2, v1}, Ljava/nio/LongBuffer;->limit(I)Ljava/nio/Buffer;
+
+    move-result-object v1
+
+    check-cast v1, Ljava/nio/LongBuffer;
 
     :cond_2
     :goto_0
@@ -528,21 +536,21 @@
 
     move-result-wide v1
 
-    long-to-int v2, v1
+    iget-object v3, v0, Lcom/google/android/libraries/oliveoil/bufferflinger/BufferFlinger;->idAndPtsBuffer:Ljava/nio/LongBuffer;
 
-    iget-object v1, v0, Lcom/google/android/libraries/oliveoil/bufferflinger/BufferFlinger;->idAndPtsBuffer:Ljava/nio/LongBuffer;
-
-    invoke-virtual {v1}, Ljava/nio/LongBuffer;->get()J
+    invoke-virtual {v3}, Ljava/nio/LongBuffer;->get()J
 
     move-result-wide v3
 
-    iget-object v1, v0, Lcom/google/android/libraries/oliveoil/bufferflinger/BufferFlinger;->idToOnPtsAvailableListener:Ljava/util/Map;
+    iget-object v5, v0, Lcom/google/android/libraries/oliveoil/bufferflinger/BufferFlinger;->idToOnPtsAvailableListener:Ljava/util/Map;
+
+    long-to-int v2, v1
 
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v2
+    move-result-object v1
 
-    invoke-interface {v1, v2}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {v5, v1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v1
 

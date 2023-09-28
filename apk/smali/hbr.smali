@@ -1,113 +1,199 @@
-.class public final synthetic Lhbr;
-.super Ljava/lang/Object;
-
-# interfaces
-.implements Lhip;
+.class public final Lhbr;
+.super Lmip;
 
 
 # instance fields
-.field public final synthetic a:Lnph;
+.field private final a:Llvq;
 
-.field public final synthetic b:Logd;
+.field private final b:Llvp;
 
-.field public final synthetic c:Logd;
+.field private final c:Ljth;
 
-.field public final synthetic d:Lnph;
-
-.field public final synthetic e:Logd;
-
-.field public final synthetic f:Ljuh;
-
-.field public final synthetic g:Lcdi;
+.field private final d:Lhbq;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lnph;Logd;Logd;Lnph;Lcdi;Logd;Ljuh;)V
+.method public constructor <init>(Llvq;Llvp;Ljth;Lhbq;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Lmip;-><init>()V
 
-    iput-object p1, p0, Lhbr;->a:Lnph;
+    iput-object p1, p0, Lhbr;->a:Llvq;
 
-    iput-object p2, p0, Lhbr;->b:Logd;
+    iput-object p2, p0, Lhbr;->b:Llvp;
 
-    iput-object p3, p0, Lhbr;->c:Logd;
+    iput-object p3, p0, Lhbr;->c:Ljth;
 
-    iput-object p4, p0, Lhbr;->d:Lnph;
-
-    iput-object p5, p0, Lhbr;->g:Lcdi;
-
-    iput-object p6, p0, Lhbr;->e:Logd;
-
-    iput-object p7, p0, Lhbr;->f:Ljuh;
+    iput-object p4, p0, Lhbr;->d:Lhbq;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final run()V
+.method public final declared-synchronized b(Llzv;)V
     .locals 7
 
-    iget-object v0, p0, Lhbr;->a:Lnph;
+    monitor-enter p0
 
-    iget-object v1, p0, Lhbr;->b:Logd;
+    :try_start_0
+    sget-object v0, Lkdb;->b:Landroid/hardware/camera2/CaptureResult$Key;
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    iget-object v2, p0, Lhbr;->c:Logd;
+    if-nez v0, :cond_0
 
-    iget-object v3, p0, Lhbr;->d:Lnph;
-
-    iget-object v4, p0, Lhbr;->g:Lcdi;
-
-    iget-object v5, p0, Lhbr;->e:Logd;
-
-    iget-object v6, p0, Lhbr;->f:Ljuh;
-
-    invoke-interface {v1}, Logd;->get()Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Lhcz;
-
-    invoke-virtual {v0, v1}, Lnph;->e(Ljava/lang/Object;)Z
-
-    invoke-interface {v2}, Logd;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lhcq;
-
-    invoke-virtual {v3, v0}, Lnph;->e(Ljava/lang/Object;)Z
-
-    invoke-virtual {v4}, Lcdi;->i()Ljuf;
-
-    move-result-object v0
-
-    invoke-interface {v5}, Logd;->get()Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Lhdk;
-
-    invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    new-instance v2, Lhbi;
-
-    const/4 v3, 0x3
-
-    invoke-direct {v2, v1, v3}, Lhbi;-><init>(Lhdk;I)V
-
-    invoke-static {v2, v6}, Lnsy;->E(Ljava/lang/Runnable;Ljava/util/concurrent/Executor;)Lnou;
-
-    move-result-object v1
-
-    new-instance v2, Lhbq;
-
-    const/4 v3, 0x0
-
-    invoke-direct {v2, v1, v3}, Lhbq;-><init>(Ljava/util/concurrent/Future;I)V
-
-    invoke-virtual {v0, v2}, Ljuf;->d(Lkad;)V
+    monitor-exit p0
 
     return-void
+
+    :cond_0
+    :try_start_1
+    sget-object v0, Lkdb;->b:Landroid/hardware/camera2/CaptureResult$Key;
+
+    invoke-interface {p1, v0}, Llzv;->d(Landroid/hardware/camera2/CaptureResult$Key;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, [F
+
+    if-eqz v0, :cond_6
+
+    array-length v1, v0
+
+    const/16 v2, 0xd
+
+    if-ge v1, v2, :cond_1
+
+    goto :goto_2
+
+    :cond_1
+    const/16 v2, 0xb
+
+    aget v2, v0, v2
+
+    const/16 v3, 0xc
+
+    aget v3, v0, v3
+
+    const/16 v4, 0x10
+
+    if-le v1, v4, :cond_2
+
+    aget v0, v0, v4
+
+    goto :goto_0
+
+    :cond_2
+    const/16 v4, 0xf
+
+    if-le v1, v4, :cond_3
+
+    aget v0, v0, v4
+
+    goto :goto_0
+
+    :cond_3
+    const/4 v0, 0x0
+
+    :goto_0
+    iget-object v1, p0, Lhbr;->b:Llvp;
+
+    invoke-interface {p1}, Llzv;->g()Ljava/util/Map;
+
+    move-result-object v4
+
+    move-object v5, v4
+
+    check-cast v5, Lorw;
+
+    iget v5, v5, Lorw;->c:I
+
+    const/4 v6, 0x1
+
+    if-ne v5, v6, :cond_5
+
+    check-cast v4, Loor;
+
+    invoke-virtual {v4}, Loor;->j()Lood;
+
+    move-result-object p1
+
+    invoke-static {p1}, Lj$/util/Collection$-EL;->stream(Ljava/util/Collection;)Lj$/util/stream/Stream;
+
+    move-result-object p1
+
+    invoke-interface {p1}, Lj$/util/stream/Stream;->findFirst()Lj$/util/Optional;
+
+    move-result-object p1
+
+    invoke-virtual {p1}, Lj$/util/Optional;->get()Ljava/lang/Object;
+
+    move-result-object p1
+
+    check-cast p1, Llzr;
+
+    invoke-interface {p1}, Llzr;->e()Ljava/lang/String;
+
+    move-result-object p1
+
+    if-eqz p1, :cond_4
+
+    iget-object v4, p0, Lhbr;->a:Llvq;
+
+    invoke-interface {v4, p1}, Llvq;->d(Ljava/lang/String;)Llvs;
+
+    move-result-object p1
+
+    if-eqz p1, :cond_4
+
+    iget-object v1, p0, Lhbr;->a:Llvq;
+
+    invoke-interface {v1, p1}, Llvq;->a(Llvs;)Llvp;
+
+    move-result-object v1
+
+    goto :goto_1
+
+    :cond_4
+    goto :goto_1
+
+    :cond_5
+    sget-object v1, Landroid/hardware/camera2/CaptureResult;->LOGICAL_MULTI_CAMERA_ACTIVE_PHYSICAL_ID:Landroid/hardware/camera2/CaptureResult$Key;
+
+    invoke-interface {p1, v1}, Llzv;->d(Landroid/hardware/camera2/CaptureResult$Key;)Ljava/lang/Object;
+
+    move-result-object p1
+
+    check-cast p1, Ljava/lang/String;
+
+    iget-object v1, p0, Lhbr;->c:Ljth;
+
+    invoke-virtual {v1, p1}, Ljth;->a(Ljava/lang/String;)Llvp;
+
+    move-result-object v1
+
+    :goto_1
+    iget-object p1, p0, Lhbr;->d:Lhbq;
+
+    invoke-virtual {p1, v1, v2, v3, v0}, Lhbq;->i(Llvp;FFF)V
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    monitor-exit p0
+
+    return-void
+
+    :cond_6
+    :goto_2
+    monitor-exit p0
+
+    return-void
+
+    :catchall_0
+    move-exception p1
+
+    monitor-exit p0
+
+    throw p1
 .end method

@@ -1,56 +1,65 @@
-.class public final Ljsz;
-.super Ljhn;
+.class final Ljsz;
+.super Ljava/lang/Object;
 
-
-# static fields
-.field public static final CREATOR:Landroid/os/Parcelable$Creator;
-
-
-# instance fields
-.field public final a:I
+# interfaces
+.implements Ljsv;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
-
-    new-instance v0, Ljsy;
-
-    const/4 v1, 0x2
-
-    invoke-direct {v0, v1}, Ljsy;-><init>(I)V
-
-    sput-object v0, Ljsz;->CREATOR:Landroid/os/Parcelable$Creator;
-
-    return-void
-.end method
-
-.method public constructor <init>(I)V
+.method public constructor <init>()V
     .locals 0
 
-    invoke-direct {p0}, Ljhn;-><init>()V
-
-    iput p1, p0, Ljsz;->a:I
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final writeToParcel(Landroid/os/Parcel;I)V
-    .locals 2
+.method public final synthetic e()V
+    .locals 0
 
-    invoke-static {p1}, Ljhp;->a(Landroid/os/Parcel;)I
+    return-void
+.end method
 
-    move-result p2
+.method public final synthetic h()V
+    .locals 0
 
-    iget v0, p0, Ljsz;->a:I
+    return-void
+.end method
 
-    const/4 v1, 0x2
+.method public final synthetic i(I)V
+    .locals 0
 
-    invoke-static {p1, v1, v0}, Ljhp;->g(Landroid/os/Parcel;II)V
+    return-void
+.end method
 
-    invoke-static {p1, p2}, Ljhp;->c(Landroid/os/Parcel;I)V
+.method public final synthetic r()V
+    .locals 0
+
+    return-void
+.end method
+
+.method public final synthetic s(I)V
+    .locals 0
+
+    return-void
+.end method
+
+.method public final synthetic t()V
+    .locals 0
+
+    return-void
+.end method
+
+.method public final synthetic x()V
+    .locals 0
+
+    return-void
+.end method
+
+.method public final synthetic y(II)V
+    .locals 0
 
     return-void
 .end method

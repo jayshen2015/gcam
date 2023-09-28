@@ -1,172 +1,287 @@
 .class public final Lnsp;
-.super Lnws;
-
-# interfaces
-.implements Lnxz;
-
-
-# static fields
-.field public static final c:Lnsp;
-
-.field private static volatile e:Lnyf;
+.super Lani;
 
 
 # instance fields
-.field public a:Z
+.field final synthetic a:Lnsn;
 
-.field public b:Z
-
-.field private d:I
+.field final synthetic b:Lnrt;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
-
-    new-instance v0, Lnsp;
-
-    invoke-direct {v0}, Lnsp;-><init>()V
-
-    sput-object v0, Lnsp;->c:Lnsp;
-
-    const-class v1, Lnsp;
-
-    invoke-static {v1, v0}, Lnws;->aa(Ljava/lang/Class;Lnws;)V
-
-    return-void
-.end method
-
-.method private constructor <init>()V
+.method public constructor <init>(Lnsn;Lnrt;)V
     .locals 0
 
-    invoke-direct {p0}, Lnws;-><init>()V
+    iput-object p1, p0, Lnsp;->a:Lnsn;
+
+    iput-object p2, p0, Lnsp;->b:Lnrt;
+
+    invoke-direct {p0}, Lani;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method protected final a(ILjava/lang/Object;)Ljava/lang/Object;
-    .locals 3
+.method public final a(Landroid/content/Context;Ljava/lang/String;Landroidx/work/WorkerParameters;)Landroidx/work/ListenableWorker;
+    .locals 11
 
-    add-int/lit8 p1, p1, -0x1
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    const/4 p2, 0x1
+    invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    packed-switch p1, :pswitch_data_0
+    invoke-virtual {p3}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    :pswitch_0
-    const/4 p1, 0x0
+    const-class p1, Lcom/google/android/libraries/vision/visionkit/f250/internal/uploader/work/F250Worker;
 
-    return-object p1
+    invoke-virtual {p1}, Ljava/lang/Class;->getName()Ljava/lang/String;
 
-    :pswitch_1
-    sget-object p1, Lnsp;->e:Lnyf;
+    move-result-object p1
 
-    if-nez p1, :cond_1
+    invoke-static {p2, p1}, Lqno;->c(Ljava/lang/Object;Ljava/lang/Object;)Z
 
-    const-class p2, Lnsp;
+    move-result p1
 
-    monitor-enter p2
+    if-eqz p1, :cond_0
 
-    :try_start_0
-    sget-object p1, Lnsp;->e:Lnyf;
+    iget-object p1, p0, Lnsp;->a:Lnsn;
 
-    if-nez p1, :cond_0
+    new-instance p2, Lcom/google/android/libraries/vision/visionkit/f250/internal/uploader/work/F250Worker;
 
-    new-instance p1, Lnwo;
+    iget-object v0, p1, Lnsn;->a:Lqkg;
 
-    sget-object v0, Lnsp;->c:Lnsp;
+    invoke-interface {v0}, Lqkg;->get()Ljava/lang/Object;
 
-    invoke-direct {p1, v0}, Lnwo;-><init>(Lnws;)V
+    move-result-object v0
 
-    sput-object p1, Lnsp;->e:Lnyf;
+    move-object v1, v0
 
-    :cond_0
-    monitor-exit p2
+    check-cast v1, Lmdf;
+
+    invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    iget-object v0, p1, Lnsn;->b:Lqkg;
+
+    invoke-interface {v0}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    move-object v2, v0
+
+    check-cast v2, Lnou;
+
+    invoke-virtual {v2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    iget-object v0, p1, Lnsn;->c:Lqkg;
+
+    invoke-interface {v0}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    move-object v3, v0
+
+    check-cast v3, Lnoq;
+
+    invoke-virtual {v3}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    iget-object v0, p1, Lnsn;->d:Lqkg;
+
+    invoke-interface {v0}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    move-object v4, v0
+
+    check-cast v4, Lnth;
+
+    invoke-virtual {v4}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    iget-object v0, p1, Lnsn;->e:Lqkg;
+
+    invoke-interface {v0}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    move-object v5, v0
+
+    check-cast v5, Lnrm;
+
+    invoke-virtual {v5}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    iget-object v0, p1, Lnsn;->f:Lqkg;
+
+    check-cast v0, Lnss;
+
+    invoke-virtual {v0}, Lnss;->a()Lnsr;
+
+    move-result-object v6
+
+    iget-object v0, p1, Lnsn;->g:Lqkg;
+
+    invoke-interface {v0}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/Integer;
+
+    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
+
+    move-result v7
+
+    iget-object v0, p1, Lnsn;->h:Lqkg;
+
+    invoke-interface {v0}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    move-object v8, v0
+
+    check-cast v8, Lqqf;
+
+    invoke-virtual {v8}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    iget-object p1, p1, Lnsn;->i:Lqkg;
+
+    invoke-interface {p1}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object p1
+
+    move-object v9, p1
+
+    check-cast v9, Landroid/content/Context;
+
+    invoke-virtual {v9}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    move-object v0, p2
+
+    move-object v10, p3
+
+    invoke-direct/range {v0 .. v10}, Lcom/google/android/libraries/vision/visionkit/f250/internal/uploader/work/F250Worker;-><init>(Lmdf;Lnou;Lnoq;Lnth;Lnrm;Lnsr;ILqqf;Landroid/content/Context;Landroidx/work/WorkerParameters;)V
 
     goto :goto_0
 
-    :catchall_0
-    move-exception p1
+    :cond_0
+    const-class p1, Lcom/google/android/libraries/vision/visionkit/f250/internal/uploader/work/F250AutoWorker;
 
-    monitor-exit p2
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    invoke-virtual {p1}, Ljava/lang/Class;->getName()Ljava/lang/String;
 
-    throw p1
+    move-result-object p1
+
+    invoke-static {p2, p1}, Lqno;->c(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result p1
+
+    if-nez p1, :cond_1
+
+    const/4 p2, 0x0
+
+    :goto_0
+    return-object p2
 
     :cond_1
-    :goto_0
-    return-object p1
+    iget-object p1, p0, Lnsp;->b:Lnrt;
 
-    :pswitch_2
-    sget-object p1, Lnsp;->c:Lnsp;
+    new-instance p2, Lcom/google/android/libraries/vision/visionkit/f250/internal/uploader/work/F250AutoWorker;
 
-    return-object p1
+    iget-object v0, p1, Lnrt;->a:Lqkg;
 
-    :pswitch_3
-    new-instance p1, Lnwn;
+    invoke-interface {v0}, Lqkg;->get()Ljava/lang/Object;
 
-    sget-object p2, Lnsp;->c:Lnsp;
+    move-result-object v0
 
-    invoke-direct {p1, p2}, Lnwn;-><init>(Lnws;)V
+    move-object v1, v0
 
-    return-object p1
+    check-cast v1, Lmdf;
 
-    :pswitch_4
-    new-instance p1, Lnsp;
+    invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    invoke-direct {p1}, Lnsp;-><init>()V
+    iget-object v0, p1, Lnrt;->b:Lqkg;
 
-    return-object p1
+    invoke-interface {v0}, Lqkg;->get()Ljava/lang/Object;
 
-    :pswitch_5
-    const-string p1, "d"
+    move-result-object v0
 
-    const-string v0, "\u0001\u0002\u0000\u0001\u0001\u0002\u0002\u0000\u0000\u0000\u0001\u1007\u0000\u0002\u1007\u0001"
+    move-object v2, v0
 
-    const/4 v1, 0x3
+    check-cast v2, Lnrm;
 
-    new-array v1, v1, [Ljava/lang/Object;
+    invoke-virtual {v2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    const/4 v2, 0x0
+    iget-object v0, p1, Lnrt;->c:Lqkg;
 
-    aput-object p1, v1, v2
+    invoke-interface {v0}, Lqkg;->get()Ljava/lang/Object;
 
-    const-string p1, "a"
+    move-result-object v0
 
-    aput-object p1, v1, p2
+    move-object v3, v0
 
-    const/4 p1, 0x2
+    check-cast v3, Lnnz;
 
-    const-string p2, "b"
+    invoke-virtual {v3}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    aput-object p2, v1, p1
+    iget-object v0, p1, Lnrt;->d:Lqkg;
 
-    sget-object p1, Lnsp;->c:Lnsp;
+    check-cast v0, Lnsw;
 
-    invoke-static {p1, v0, v1}, Lnsp;->X(Lnxy;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v0}, Lnsw;->a()Lnsv;
+
+    move-result-object v4
+
+    iget-object v0, p1, Lnrt;->e:Lqkg;
+
+    invoke-interface {v0}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    move-object v5, v0
+
+    check-cast v5, Lnom;
+
+    invoke-virtual {v5}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    iget-object v0, p1, Lnrt;->f:Lqkg;
+
+    invoke-interface {v0}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    move-object v6, v0
+
+    check-cast v6, Lnrk;
+
+    invoke-virtual {v6}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    iget-object v0, p1, Lnrt;->g:Lqkg;
+
+    invoke-interface {v0}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    move-object v7, v0
+
+    check-cast v7, Lqqf;
+
+    invoke-virtual {v7}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    iget-object p1, p1, Lnrt;->h:Lqkg;
+
+    invoke-interface {p1}, Lqkg;->get()Ljava/lang/Object;
 
     move-result-object p1
 
-    return-object p1
+    move-object v8, p1
 
-    :pswitch_6
-    invoke-static {p2}, Ljava/lang/Byte;->valueOf(B)Ljava/lang/Byte;
+    check-cast v8, Landroid/content/Context;
 
-    move-result-object p1
+    invoke-virtual {v8}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    return-object p1
+    move-object v0, p2
 
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_6
-        :pswitch_0
-        :pswitch_5
-        :pswitch_4
-        :pswitch_3
-        :pswitch_2
-        :pswitch_1
-    .end packed-switch
+    move-object v9, p3
+
+    invoke-direct/range {v0 .. v9}, Lcom/google/android/libraries/vision/visionkit/f250/internal/uploader/work/F250AutoWorker;-><init>(Lmdf;Lnrm;Lnnz;Lnsv;Lnom;Lnrk;Lqqf;Landroid/content/Context;Landroidx/work/WorkerParameters;)V
+
+    return-object p2
 .end method

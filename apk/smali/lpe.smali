@@ -1,44 +1,57 @@
-.class public final Llpe;
-.super Ljava/lang/RuntimeException;
+.class public final synthetic Llpe;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Landroid/util/Printer;
 
 
 # instance fields
-.field public final a:I
+.field public final synthetic a:Landroid/util/Printer;
 
 
 # direct methods
-.method public constructor <init>(ILjava/lang/String;Ljava/lang/Throwable;)V
-    .locals 2
+.method public synthetic constructor <init>(Landroid/util/Printer;)V
+    .locals 0
 
-    if-eqz p2, :cond_0
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    new-instance v0, Ljava/lang/StringBuilder;
+    iput-object p1, p0, Llpe;->a:Landroid/util/Printer;
 
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+    return-void
+.end method
 
-    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    const-string v1, ": "
+# virtual methods
+.method public final println(Ljava/lang/String;)V
+    .locals 3
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    iget-object v0, p0, Llpe;->a:Landroid/util/Printer;
 
-    invoke-virtual {v0, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {p1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    move-result-object p1
 
-    move-result-object p2
+    invoke-virtual {p1}, Ljava/lang/String;->length()I
+
+    move-result v1
+
+    const-string v2, "  "
+
+    if-eqz v1, :cond_0
+
+    invoke-virtual {v2, p1}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object p1
 
     goto :goto_0
 
     :cond_0
-    invoke-static {p1}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
+    new-instance p1, Ljava/lang/String;
 
-    move-result-object p2
+    invoke-direct {p1, v2}, Ljava/lang/String;-><init>(Ljava/lang/String;)V
 
     :goto_0
-    invoke-direct {p0, p2, p3}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
-
-    iput p1, p0, Llpe;->a:I
+    invoke-interface {v0, p1}, Landroid/util/Printer;->println(Ljava/lang/String;)V
 
     return-void
 .end method

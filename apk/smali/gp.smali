@@ -1,21 +1,13 @@
-.class public final Lgp;
+.class public interface abstract Lgp;
 .super Ljava/lang/Object;
 
-# interfaces
-.implements Llh;
 
+# virtual methods
+.method public abstract a()V
+.end method
 
-# instance fields
-.field public final synthetic a:Lgq;
+.method public abstract b()V
+.end method
 
-
-# direct methods
-.method public constructor <init>(Lgq;)V
-    .locals 0
-
-    iput-object p1, p0, Lgp;->a:Lgq;
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
+.method public abstract c()V
 .end method

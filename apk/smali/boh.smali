@@ -2,32 +2,34 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lboj;
+.implements Ljsi;
 
 
 # instance fields
-.field public final synthetic a:Lcom/android/settingslib/widget/MainSwitchBar;
+.field public final synthetic a:Lbok;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lcom/android/settingslib/widget/MainSwitchBar;)V
+.method public synthetic constructor <init>(Lbok;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lboh;->a:Lcom/android/settingslib/widget/MainSwitchBar;
+    iput-object p1, p0, Lboh;->a:Lbok;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final bf(Z)V
-    .locals 1
+.method public final a()V
+    .locals 2
 
-    iget-object v0, p0, Lboh;->a:Lcom/android/settingslib/widget/MainSwitchBar;
+    iget-object v0, p0, Lboh;->a:Lbok;
 
-    invoke-virtual {v0, p1}, Lcom/android/settingslib/widget/MainSwitchBar;->b(Z)V
+    const/4 v1, 0x0
+
+    iput-object v1, v0, Lbok;->b:Ljsj;
 
     return-void
 .end method

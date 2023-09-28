@@ -1,76 +1,148 @@
-.class final Lmat;
-.super Lolh;
+.class public final Lmat;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Ljava/lang/Comparable;
 
 
-# annotations
-.annotation runtime Lolj;
-    b = "com.google.android.libraries.vision.visionkit.f250.internal.uploader.work.F250WorkEnqueuerImpl"
-    c = "F250WorkEnqueuerImpl.kt"
-    d = "enqueueUploadWork"
-    e = {
-        0x32,
-        0x34,
-        0x3b,
-        0x45,
-        0x93,
-        0x47
-    }
-.end annotation
+# static fields
+.field public static final a:Ljava/util/concurrent/atomic/AtomicInteger;
 
 
 # instance fields
-.field a:Ljava/lang/Object;
-
-.field b:Ljava/lang/Object;
-
-.field synthetic c:Ljava/lang/Object;
-
-.field final synthetic d:Lmav;
-
-.field e:I
-
-.field f:Llzy;
-
-.field g:Lodt;
-
-.field h:Lojx;
-
-.field i:Lojx;
+.field private final b:I
 
 
 # direct methods
-.method public constructor <init>(Lmav;Loku;)V
+.method static constructor <clinit>()V
+    .locals 2
+
+    new-instance v0, Ljava/util/concurrent/atomic/AtomicInteger;
+
+    const/4 v1, 0x0
+
+    invoke-direct {v0, v1}, Ljava/util/concurrent/atomic/AtomicInteger;-><init>(I)V
+
+    sput-object v0, Lmat;->a:Ljava/util/concurrent/atomic/AtomicInteger;
+
+    return-void
+.end method
+
+.method public constructor <init>()V
     .locals 0
 
-    iput-object p1, p0, Lmat;->d:Lmav;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0, p2}, Lolh;-><init>(Loku;)V
+    return-void
+.end method
+
+.method public constructor <init>(I)V
+    .locals 0
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput p1, p0, Lmat;->b:I
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final b(Ljava/lang/Object;)Ljava/lang/Object;
+.method public final synthetic compareTo(Ljava/lang/Object;)I
     .locals 1
 
-    iput-object p1, p0, Lmat;->c:Ljava/lang/Object;
+    check-cast p1, Lmat;
 
-    iget p1, p0, Lmat;->e:I
+    iget v0, p0, Lmat;->b:I
 
-    const/high16 v0, -0x80000000
+    iget p1, p1, Lmat;->b:I
 
-    or-int/2addr p1, v0
+    if-ne v0, p1, :cond_0
 
-    iput p1, p0, Lmat;->e:I
+    const/4 p1, 0x0
 
-    iget-object p1, p0, Lmat;->d:Lmav;
+    goto :goto_0
 
-    const/4 v0, 0x0
+    :cond_0
+    if-lt v0, p1, :cond_1
 
-    invoke-virtual {p1, v0, v0, p0}, Lmav;->b(Llzy;Laxf;Loku;)Ljava/lang/Object;
+    const/4 p1, 0x1
 
-    move-result-object p1
+    :goto_0
+    return p1
 
-    return-object p1
+    :cond_1
+    const/4 p1, -0x1
+
+    return p1
+.end method
+
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 3
+
+    const/4 v0, 0x1
+
+    if-ne p1, p0, :cond_0
+
+    return v0
+
+    :cond_0
+    instance-of v1, p1, Lmat;
+
+    const/4 v2, 0x0
+
+    if-eqz v1, :cond_1
+
+    check-cast p1, Lmat;
+
+    iget v1, p0, Lmat;->b:I
+
+    iget p1, p1, Lmat;->b:I
+
+    if-ne v1, p1, :cond_1
+
+    return v0
+
+    :cond_1
+    return v2
+.end method
+
+.method public final hashCode()I
+    .locals 2
+
+    iget v0, p0, Lmat;->b:I
+
+    const v1, 0xf4243
+
+    xor-int/2addr v0, v1
+
+    return v0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .locals 4
+
+    sget-object v0, Ljava/util/Locale;->ROOT:Ljava/util/Locale;
+
+    const/4 v1, 0x1
+
+    new-array v1, v1, [Ljava/lang/Object;
+
+    iget v2, p0, Lmat;->b:I
+
+    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v2
+
+    const/4 v3, 0x0
+
+    aput-object v2, v1, v3
+
+    const-string v2, "MediaGroup-%d"
+
+    invoke-static {v0, v2, v1}, Ljava/lang/String;->format(Ljava/util/Locale;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
 .end method

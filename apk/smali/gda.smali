@@ -1,80 +1,146 @@
 .class public final Lgda;
-.super Ljvk;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Lfpq;
 
 
 # instance fields
-.field public final a:Ljava/lang/Object;
+.field final synthetic a:Lgdj;
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 1
+.method public constructor <init>(Lgdj;)V
+    .locals 0
 
-    const/4 v0, 0x0
+    iput-object p1, p0, Lgda;->a:Lgdj;
 
-    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v0
-
-    invoke-direct {p0, v0}, Ljvk;-><init>(Ljava/lang/Object;)V
-
-    new-instance v0, Ljava/lang/Object;
-
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
-
-    iput-object v0, p0, Lgda;->a:Ljava/lang/Object;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
-.method public constructor <init>(Ldqx;[B[B[B)V
-    .locals 8
 
-    new-instance p2, Lfws;
+# virtual methods
+.method public final a(Lorj;)Z
+    .locals 4
 
-    new-instance p3, Lklz;
+    iget-object v0, p0, Lgda;->a:Lgdj;
 
-    const-wide/16 v0, 0x0
+    iget-object v0, v0, Lgdj;->d:Ljava/util/Deque;
 
-    invoke-direct {p3, v0, v1}, Lklz;-><init>(J)V
+    invoke-interface {v0}, Ljava/util/Deque;->isEmpty()Z
 
-    const/4 p4, 0x0
+    move-result v0
 
-    invoke-direct {p2, p3, p4}, Lfws;-><init>(Lkpb;Lnou;)V
+    if-eqz v0, :cond_0
 
-    invoke-direct {p0, p2}, Ljvk;-><init>(Ljava/lang/Object;)V
+    iget-object v0, p0, Lgda;->a:Lgdj;
 
-    new-instance p2, Ljvk;
+    iget-object v0, v0, Lgdj;->a:Lfuo;
 
-    sget-object p3, Leeg;->c:Leeg;
+    invoke-virtual {v0}, Lfuo;->a()J
 
-    invoke-direct {p2, p3}, Ljvk;-><init>(Ljava/lang/Object;)V
+    move-result-wide v0
 
-    iput-object p2, p0, Lgda;->a:Ljava/lang/Object;
+    const-wide/32 v2, -0x59682f00
 
-    new-instance p2, Lecf;
+    add-long/2addr v0, v2
 
-    const/4 v3, 0x4
+    invoke-static {v0, v1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
-    const/4 v4, 0x0
+    move-result-object v0
 
-    const/4 v5, 0x0
+    invoke-static {v0}, Lorj;->d(Ljava/lang/Comparable;)Lorj;
 
-    const/4 v6, 0x0
+    move-result-object v0
 
-    const/4 v7, 0x0
+    invoke-virtual {v0, p1}, Lorj;->o(Lorj;)Z
 
-    move-object v0, p2
+    move-result p1
 
-    move-object v1, p0
+    return p1
 
-    move-object v2, p1
+    :cond_0
+    iget-object v0, p0, Lgda;->a:Lgdj;
 
-    invoke-direct/range {v0 .. v7}, Lecf;-><init>(Lgda;Ldqx;I[B[B[B[B)V
+    iget-object v0, v0, Lgdj;->d:Ljava/util/Deque;
 
-    sget-object p1, Lnnv;->a:Lnnv;
+    invoke-interface {v0}, Ljava/util/Deque;->iterator()Ljava/util/Iterator;
 
-    invoke-virtual {p0, p2, p1}, Ljvk;->a(Lkai;Ljava/util/concurrent/Executor;)Lkad;
+    move-result-object v0
 
-    return-void
+    :cond_1
+    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_2
+
+    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Lgdf;
+
+    iget-object v1, v1, Lgdf;->d:Lorj;
+
+    invoke-virtual {v1, p1}, Lorj;->o(Lorj;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_1
+
+    const/4 p1, 0x1
+
+    return p1
+
+    :cond_2
+    const/4 p1, 0x0
+
+    return p1
+.end method
+
+.method public final b(Lorj;)Z
+    .locals 2
+
+    iget-object v0, p0, Lgda;->a:Lgdj;
+
+    iget-object v0, v0, Lgdj;->e:Ljava/util/Deque;
+
+    invoke-interface {v0}, Ljava/util/Deque;->iterator()Ljava/util/Iterator;
+
+    move-result-object v0
+
+    :cond_0
+    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_1
+
+    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Lgde;
+
+    invoke-virtual {v1}, Lgde;->c()Lorj;
+
+    move-result-object v1
+
+    invoke-virtual {v1, p1}, Lorj;->o(Lorj;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    const/4 p1, 0x1
+
+    return p1
+
+    :cond_1
+    const/4 p1, 0x0
+
+    return p1
 .end method

@@ -1,12 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <plurals name="accessibility_timelapse_manual_record_speed_desc">
-        <item quantity="other">ინტერვალური გადაღება %d დროის სიჩქარე</item>
-        <item quantity="one">ინტერვალური გადაღება %d დროის სიჩქარე</item>
-    </plurals>
-    <plurals name="number_of_cropped_face">
-        <item quantity="other">%d ჩამოიჭრა.</item>
-        <item quantity="one">ერთი მოჭრილი.</item>
+    <plurals name="number_of_faces_announcement">
+        <item quantity="other">%1$d სახე.</item>
+        <item quantity="one">%1$d სახე.</item>
     </plurals>
     <plurals name="photos_remaining">
         <item quantity="other">დაახლოებით %s ფოტო</item>
@@ -17,8 +13,8 @@
         <item quantity="one">(არჩეულია %1$d აპი)</item>
     </plurals>
     <plurals name="social_share_info">
-        <item quantity="other">სწრაფად გააზიარეთ ფოტოები და ვიდეოები სოციალურ აპებში კამერიდან. აირჩიეთ %1$d-მდე აპი. ჩაკეტილ საქაღალდეში შენახული ფოტოები და ვიდეოები არ გაზიარდება.</item>
-        <item quantity="one">სწრაფად გააზიარეთ ფოტოები და ვიდეოები სოციალურ აპებში კამერიდან. აირჩიეთ %1$d აპი. ჩაკეტილ საქაღალდეში შენახული ფოტოები და ვიდეოები არ გაზიარდება.</item>
+        <item quantity="other">სწრაფად გააზიარეთ ფოტოები და ვიდეოები სოციალურ აპებში პირდაპირ კამერიდან. აირჩიეთ %1$d-მდე აპი. ჩაკეტილ საქაღალდეში შენახული ფოტოები და ვიდეოები არ გაზიარდება.</item>
+        <item quantity="one">სწრაფად გააზიარეთ ფოტოები და ვიდეოები სოციალურ აპებში პირდაპირ კამერიდან. აირჩიეთ %1$d აპი. ჩაკეტილ საქაღალდეში შენახული ფოტოები და ვიდეოები არ გაზიარდება.</item>
     </plurals>
     <plurals name="social_share_select_error">
         <item quantity="other">აირჩიეთ %1$d-მდე აპი</item>

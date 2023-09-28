@@ -2,207 +2,254 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Ljcy;
-
-
-# static fields
-.field public static final a:Ljoa;
+.implements Lpys;
 
 
 # instance fields
-.field private final b:Z
+.field private final a:Ljnu;
 
-.field private final c:Z
+.field private final b:Lqkg;
 
-.field private final d:Ljava/lang/String;
+.field private final c:Lqkg;
 
-.field private final e:Z
+.field private final d:Lqkg;
 
-.field private final f:Ljava/lang/String;
+.field private final e:Lqkg;
 
-.field private final g:Ljava/lang/String;
+.field private final f:Lqkg;
 
-.field private final h:Z
+.field private final g:Lqkg;
 
-.field private final i:Ljava/lang/Long;
+.field private final h:Lqkg;
 
-.field private final j:Ljava/lang/Long;
+.field private final i:Lqkg;
+
+.field private final j:Lqkg;
+
+.field private final k:Lqkg;
+
+.field private final l:Lqkg;
+
+.field private final m:Lqkg;
+
+.field private final n:Lqkg;
+
+.field private final o:Lqkg;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
-
-    new-instance v0, Ljoa;
-
-    invoke-direct {v0}, Ljoa;-><init>()V
-
-    sput-object v0, Ljoa;->a:Ljoa;
-
-    return-void
-.end method
-
-.method public constructor <init>()V
-    .locals 2
+.method public constructor <init>(Ljnu;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;)V
+    .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const/4 v0, 0x0
+    iput-object p1, p0, Ljoa;->a:Ljnu;
 
-    iput-boolean v0, p0, Ljoa;->b:Z
+    iput-object p2, p0, Ljoa;->b:Lqkg;
 
-    iput-boolean v0, p0, Ljoa;->c:Z
+    iput-object p3, p0, Ljoa;->c:Lqkg;
 
-    const/4 v1, 0x0
+    iput-object p4, p0, Ljoa;->d:Lqkg;
 
-    iput-object v1, p0, Ljoa;->d:Ljava/lang/String;
+    iput-object p5, p0, Ljoa;->e:Lqkg;
 
-    iput-boolean v0, p0, Ljoa;->e:Z
+    iput-object p6, p0, Ljoa;->f:Lqkg;
 
-    iput-boolean v0, p0, Ljoa;->h:Z
+    iput-object p7, p0, Ljoa;->g:Lqkg;
 
-    iput-object v1, p0, Ljoa;->f:Ljava/lang/String;
+    iput-object p8, p0, Ljoa;->h:Lqkg;
 
-    iput-object v1, p0, Ljoa;->g:Ljava/lang/String;
+    iput-object p9, p0, Ljoa;->i:Lqkg;
 
-    iput-object v1, p0, Ljoa;->i:Ljava/lang/Long;
+    iput-object p10, p0, Ljoa;->j:Lqkg;
 
-    iput-object v1, p0, Ljoa;->j:Ljava/lang/Long;
+    iput-object p11, p0, Ljoa;->k:Lqkg;
+
+    iput-object p12, p0, Ljoa;->l:Lqkg;
+
+    iput-object p13, p0, Ljoa;->m:Lqkg;
+
+    iput-object p14, p0, Ljoa;->n:Lqkg;
+
+    iput-object p15, p0, Ljoa;->o:Lqkg;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 4
+.method public final bridge synthetic get()Ljava/lang/Object;
+    .locals 19
 
-    const/4 v0, 0x1
+    move-object/from16 v0, p0
 
-    if-ne p1, p0, :cond_0
+    iget-object v1, v0, Ljoa;->a:Ljnu;
 
-    return v0
+    iget-object v2, v0, Ljoa;->b:Lqkg;
 
-    :cond_0
-    instance-of v1, p1, Ljoa;
+    check-cast v2, Lemd;
 
-    const/4 v2, 0x0
+    invoke-virtual {v2}, Lemd;->a()Landroid/content/Context;
 
-    if-nez v1, :cond_1
+    move-result-object v4
 
-    return v2
+    iget-object v2, v0, Ljoa;->c:Lqkg;
 
-    :cond_1
-    check-cast p1, Ljoa;
+    check-cast v2, Letg;
 
-    iget-boolean v1, p1, Ljoa;->b:Z
-
-    iget-boolean v1, p1, Ljoa;->c:Z
-
-    iget-object v1, p1, Ljoa;->d:Ljava/lang/String;
-
-    const/4 v1, 0x0
-
-    invoke-static {v1, v1}, Ljhp;->af(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result v3
-
-    if-eqz v3, :cond_2
-
-    iget-boolean v3, p1, Ljoa;->e:Z
-
-    iget-boolean v3, p1, Ljoa;->h:Z
-
-    iget-object v3, p1, Ljoa;->f:Ljava/lang/String;
-
-    invoke-static {v1, v1}, Ljhp;->af(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result v3
-
-    if-eqz v3, :cond_2
-
-    iget-object v3, p1, Ljoa;->g:Ljava/lang/String;
-
-    invoke-static {v1, v1}, Ljhp;->af(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result v3
-
-    if-eqz v3, :cond_2
-
-    iget-object v3, p1, Ljoa;->i:Ljava/lang/Long;
-
-    invoke-static {v1, v1}, Ljhp;->af(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result v3
-
-    if-eqz v3, :cond_2
-
-    iget-object p1, p1, Ljoa;->j:Ljava/lang/Long;
-
-    invoke-static {v1, v1}, Ljhp;->af(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result p1
-
-    if-eqz p1, :cond_2
-
-    return v0
-
-    :cond_2
-    return v2
-.end method
-
-.method public final hashCode()I
-    .locals 4
-
-    const/16 v0, 0x9
-
-    new-array v0, v0, [Ljava/lang/Object;
-
-    const/4 v1, 0x0
-
-    invoke-static {v1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+    invoke-virtual {v2}, Letg;->b()Lbqg;
 
     move-result-object v2
 
-    aput-object v2, v0, v1
+    iget-object v3, v0, Ljoa;->d:Lqkg;
 
-    const/4 v1, 0x1
+    check-cast v3, Letf;
 
-    aput-object v2, v0, v1
+    invoke-virtual {v3}, Letf;->b()Lfhv;
 
-    const/4 v1, 0x2
+    move-result-object v15
 
-    const/4 v3, 0x0
+    iget-object v3, v0, Ljoa;->e:Lqkg;
 
-    aput-object v3, v0, v1
+    check-cast v3, Lpyu;
 
-    const/4 v1, 0x3
+    invoke-virtual {v3}, Lpyu;->a()Ljava/util/Map;
 
-    aput-object v2, v0, v1
+    move-result-object v3
 
-    const/4 v1, 0x4
+    iget-object v5, v0, Ljoa;->f:Lqkg;
 
-    aput-object v2, v0, v1
+    check-cast v5, Ljui;
 
-    const/4 v1, 0x5
+    invoke-virtual {v5}, Ljui;->a()Ljava/lang/Boolean;
 
-    aput-object v3, v0, v1
+    move-result-object v5
 
-    const/4 v1, 0x6
+    invoke-virtual {v5}, Ljava/lang/Boolean;->booleanValue()Z
 
-    aput-object v3, v0, v1
+    move-result v5
 
-    const/4 v1, 0x7
+    iget-object v6, v0, Ljoa;->g:Lqkg;
 
-    aput-object v3, v0, v1
+    invoke-interface {v6}, Lqkg;->get()Ljava/lang/Object;
 
-    const/16 v1, 0x8
+    move-result-object v6
 
-    aput-object v3, v0, v1
+    move-object v10, v6
 
-    invoke-static {v0}, Ljava/util/Arrays;->hashCode([Ljava/lang/Object;)I
+    check-cast v10, Lddf;
 
-    move-result v0
+    iget-object v6, v0, Ljoa;->h:Lqkg;
 
-    return v0
+    invoke-static {v6}, Lpyr;->a(Lqkg;)Lpyn;
+
+    move-result-object v11
+
+    iget-object v6, v0, Ljoa;->i:Lqkg;
+
+    invoke-static {v6}, Lpyr;->a(Lqkg;)Lpyn;
+
+    move-result-object v12
+
+    iget-object v13, v0, Ljoa;->j:Lqkg;
+
+    iget-object v6, v0, Ljoa;->k:Lqkg;
+
+    invoke-interface {v6}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v6
+
+    move-object v9, v6
+
+    check-cast v9, Ljlb;
+
+    iget-object v6, v0, Ljoa;->l:Lqkg;
+
+    invoke-interface {v6}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v6
+
+    move-object v14, v6
+
+    check-cast v14, Llar;
+
+    iget-object v6, v0, Ljoa;->m:Lqkg;
+
+    invoke-interface {v6}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v6
+
+    move-object/from16 v16, v6
+
+    check-cast v16, Lljf;
+
+    iget-object v6, v0, Ljoa;->n:Lqkg;
+
+    invoke-interface {v6}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v6
+
+    move-object/from16 v17, v6
+
+    check-cast v17, Lelw;
+
+    iget-object v6, v0, Ljoa;->o:Lqkg;
+
+    invoke-interface {v6}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v6
+
+    move-object/from16 v18, v6
+
+    check-cast v18, Lhuj;
+
+    new-instance v8, Ljgk;
+
+    invoke-virtual {v2}, Lbqg;->i()Llap;
+
+    move-result-object v2
+
+    if-eqz v5, :cond_0
+
+    invoke-static {}, Ljava/util/Collections;->emptyMap()Ljava/util/Map;
+
+    move-result-object v3
+
+    move-object v6, v3
+
+    goto :goto_0
+
+    :cond_0
+    move-object v6, v3
+
+    :goto_0
+    iget-object v1, v1, Ljnu;->b:Ljns;
+
+    iget-object v7, v1, Ljns;->i:Lcom/google/android/apps/camera/ui/modeswitcher/ModeSwitcher;
+
+    iget-object v1, v1, Ljns;->m:Lcom/google/android/apps/camera/ui/modeswitcher/MoreModesGrid;
+
+    move-object v3, v8
+
+    move-object v5, v2
+
+    move-object v2, v8
+
+    move-object v8, v1
+
+    move-object v1, v14
+
+    move-object v0, v15
+
+    move-object/from16 v15, v16
+
+    move-object/from16 v16, v17
+
+    move-object/from16 v17, v18
+
+    invoke-direct/range {v3 .. v17}, Ljgk;-><init>(Landroid/content/Context;Llap;Ljava/util/Map;Lcom/google/android/apps/camera/ui/modeswitcher/ModeSwitcher;Lcom/google/android/apps/camera/ui/modeswitcher/MoreModesGrid;Ljlb;Lddf;Lpyn;Lpyn;Lqkg;Llar;Lljf;Lelw;Lhuj;)V
+
+    invoke-static {v1, v0, v2}, Lenl;->f(Llar;Lfhv;Lfik;)V
+
+    return-object v2
 .end method

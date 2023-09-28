@@ -1,18 +1,13 @@
-.class final Lmod;
-.super Ljava/lang/Exception;
+.class public interface abstract Lmod;
+.super Ljava/lang/Object;
 
 
-# instance fields
-.field public final a:Ljava/util/concurrent/CancellationException;
+# virtual methods
+.method public abstract a()I
+.end method
 
+.method public abstract b()Ljava/lang/String;
+.end method
 
-# direct methods
-.method public constructor <init>(Ljava/util/concurrent/CancellationException;)V
-    .locals 0
-
-    invoke-direct {p0}, Ljava/lang/Exception;-><init>()V
-
-    iput-object p1, p0, Lmod;->a:Ljava/util/concurrent/CancellationException;
-
-    return-void
+.method public abstract c()I
 .end method

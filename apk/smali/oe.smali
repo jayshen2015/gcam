@@ -1,155 +1,102 @@
-.class public final synthetic Loe;
-.super Ljava/lang/Object;
+.class final Loe;
+.super Landroid/animation/AnimatorListenerAdapter;
+
+
+# instance fields
+.field final synthetic a:Lqs;
+
+.field final synthetic b:I
+
+.field final synthetic c:Landroid/view/View;
+
+.field final synthetic d:I
+
+.field final synthetic e:Landroid/view/ViewPropertyAnimator;
+
+.field final synthetic f:Lpy;
 
 
 # direct methods
-.method public static final a(Lxa;I)I
+.method public constructor <init>(Lpy;Lqs;ILandroid/view/View;ILandroid/view/ViewPropertyAnimator;)V
+    .locals 0
+
+    iput-object p1, p0, Loe;->f:Lpy;
+
+    iput-object p2, p0, Loe;->a:Lqs;
+
+    iput p3, p0, Loe;->b:I
+
+    iput-object p4, p0, Loe;->c:Landroid/view/View;
+
+    iput p5, p0, Loe;->d:I
+
+    iput-object p6, p0, Loe;->e:Landroid/view/ViewPropertyAnimator;
+
+    invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public final onAnimationCancel(Landroid/animation/Animator;)V
     .locals 1
 
-    :try_start_0
-    iget-object v0, p0, Lxa;->a:[I
-
-    iget p0, p0, Lxa;->c:I
-
-    invoke-static {v0, p0, p1}, Lxi;->a([III)I
-
-    move-result p0
-    :try_end_0
-    .catch Ljava/lang/IndexOutOfBoundsException; {:try_start_0 .. :try_end_0} :catch_0
-
-    return p0
-
-    :catch_0
-    move-exception p0
-
-    new-instance p0, Ljava/util/ConcurrentModificationException;
-
-    invoke-direct {p0}, Ljava/util/ConcurrentModificationException;-><init>()V
-
-    throw p0
-.end method
-
-.method public static final b(Lxa;Ljava/lang/Object;I)I
-    .locals 5
-
-    iget v0, p0, Lxa;->c:I
-
-    const/4 v1, -0x1
-
-    if-nez v0, :cond_0
-
-    return v1
-
-    :cond_0
-    invoke-static {p0, p2}, Loe;->a(Lxa;I)I
-
-    move-result v2
-
-    if-gez v2, :cond_1
-
-    return v2
-
-    :cond_1
-    iget-object v3, p0, Lxa;->b:[Ljava/lang/Object;
-
-    aget-object v3, v3, v2
-
-    invoke-static {p1, v3}, Lone;->c(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result v3
-
-    if-eqz v3, :cond_2
-
-    return v2
-
-    :cond_2
-    add-int/lit8 v3, v2, 0x1
-
-    :goto_0
-    if-ge v3, v0, :cond_4
-
-    iget-object v4, p0, Lxa;->a:[I
-
-    aget v4, v4, v3
-
-    if-ne v4, p2, :cond_4
-
-    iget-object v4, p0, Lxa;->b:[Ljava/lang/Object;
-
-    aget-object v4, v4, v3
-
-    invoke-static {p1, v4}, Lone;->c(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result v4
-
-    if-eqz v4, :cond_3
-
-    return v3
-
-    :cond_3
-    add-int/lit8 v3, v3, 0x1
-
-    goto :goto_0
-
-    :cond_4
-    add-int/2addr v2, v1
-
-    :goto_1
-    if-ltz v2, :cond_6
-
-    iget-object v0, p0, Lxa;->a:[I
-
-    aget v0, v0, v2
-
-    if-ne v0, p2, :cond_6
-
-    iget-object v0, p0, Lxa;->b:[Ljava/lang/Object;
-
-    aget-object v0, v0, v2
-
-    invoke-static {p1, v0}, Lone;->c(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_5
-
-    return v2
-
-    :cond_5
-    add-int/lit8 v2, v2, -0x1
-
-    goto :goto_1
-
-    :cond_6
-    xor-int/lit8 p0, v3, -0x1
-
-    return p0
-.end method
-
-.method public static final c(Lxa;)I
-    .locals 2
+    iget p1, p0, Loe;->b:I
 
     const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    if-eqz p1, :cond_0
 
-    invoke-static {p0, v0, v1}, Loe;->b(Lxa;Ljava/lang/Object;I)I
+    iget-object p1, p0, Loe;->c:Landroid/view/View;
 
-    move-result p0
+    invoke-virtual {p1, v0}, Landroid/view/View;->setTranslationX(F)V
 
-    return p0
+    :cond_0
+    iget p1, p0, Loe;->d:I
+
+    if-eqz p1, :cond_1
+
+    iget-object p1, p0, Loe;->c:Landroid/view/View;
+
+    invoke-virtual {p1, v0}, Landroid/view/View;->setTranslationY(F)V
+
+    :cond_1
+    return-void
 .end method
 
-.method public static final d(Lxa;I)V
+.method public final onAnimationEnd(Landroid/animation/Animator;)V
     .locals 1
 
-    new-array v0, p1, [I
+    iget-object p1, p0, Loe;->e:Landroid/view/ViewPropertyAnimator;
 
-    invoke-virtual {p0, v0}, Lxa;->d([I)V
+    const/4 v0, 0x0
 
-    new-array p1, p1, [Ljava/lang/Object;
+    invoke-virtual {p1, v0}, Landroid/view/ViewPropertyAnimator;->setListener(Landroid/animation/Animator$AnimatorListener;)Landroid/view/ViewPropertyAnimator;
 
-    invoke-virtual {p0, p1}, Lxa;->c([Ljava/lang/Object;)V
+    iget-object p1, p0, Loe;->f:Lpy;
+
+    iget-object v0, p0, Loe;->a:Lqs;
+
+    invoke-virtual {p1, v0}, Lpy;->a(Lqs;)V
+
+    iget-object p1, p0, Loe;->f:Lpy;
+
+    iget-object p1, p1, Lpy;->j:Ljava/util/ArrayList;
+
+    iget-object v0, p0, Loe;->a:Lqs;
+
+    invoke-virtual {p1, v0}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
+
+    iget-object p1, p0, Loe;->f:Lpy;
+
+    invoke-virtual {p1}, Lpy;->g()V
+
+    return-void
+.end method
+
+.method public final onAnimationStart(Landroid/animation/Animator;)V
+    .locals 0
 
     return-void
 .end method

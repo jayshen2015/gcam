@@ -1,138 +1,117 @@
-.class public final synthetic Lhmg;
+.class public final Lhmg;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Ljava/util/function/Predicate;
+.implements Ljuk;
 
 
 # instance fields
-.field public final synthetic a:Ljwb;
-
-.field public final synthetic b:Ljava/lang/Float;
-
-.field public final synthetic c:Logd;
+.field private final synthetic a:I
 
 
 # direct methods
-.method public synthetic constructor <init>(Ljwb;Ljava/lang/Float;Logd;)V
+.method public constructor <init>(I)V
     .locals 0
 
+    iput p1, p0, Lhmg;->a:I
+
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lhmg;->a:Ljwb;
-
-    iput-object p2, p0, Lhmg;->b:Ljava/lang/Float;
-
-    iput-object p3, p0, Lhmg;->c:Logd;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic and(Ljava/util/function/Predicate;)Ljava/util/function/Predicate;
-    .locals 0
+.method public final a(Losg;)Z
+    .locals 7
 
-    invoke-static {p0, p1}, Lj$/util/function/Predicate$-CC;->$default$and(Ljava/util/function/Predicate;Ljava/util/function/Predicate;)Ljava/util/function/Predicate;
+    iget v0, p0, Lhmg;->a:I
 
-    move-result-object p1
+    const/4 v1, 0x0
 
-    return-object p1
-.end method
+    packed-switch v0, :pswitch_data_0
 
-.method public final synthetic negate()Ljava/util/function/Predicate;
-    .locals 1
+    return v1
 
-    invoke-static {p0}, Lj$/util/function/Predicate$-CC;->$default$negate(Ljava/util/function/Predicate;)Ljava/util/function/Predicate;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public final synthetic or(Ljava/util/function/Predicate;)Ljava/util/function/Predicate;
-    .locals 0
-
-    invoke-static {p0, p1}, Lj$/util/function/Predicate$-CC;->$default$or(Ljava/util/function/Predicate;Ljava/util/function/Predicate;)Ljava/util/function/Predicate;
-
-    move-result-object p1
-
-    return-object p1
-.end method
-
-.method public final test(Ljava/lang/Object;)Z
-    .locals 4
-
-    iget-object v0, p0, Lhmg;->a:Ljwb;
-
-    iget-object v1, p0, Lhmg;->b:Ljava/lang/Float;
-
-    iget-object v2, p0, Lhmg;->c:Logd;
-
-    check-cast p1, Lgeh;
-
-    invoke-interface {v0}, Ljwb;->bm()Ljava/lang/Object;
-
-    move-result-object p1
-
-    check-cast p1, Ljava/lang/Float;
-
-    invoke-virtual {p1}, Ljava/lang/Float;->floatValue()F
-
-    move-result p1
-
-    const/high16 v3, 0x3f800000    # 1.0f
-
-    cmpl-float p1, p1, v3
-
-    if-ltz p1, :cond_0
-
-    invoke-interface {v0}, Ljwb;->bm()Ljava/lang/Object;
-
-    move-result-object p1
-
-    check-cast p1, Ljava/lang/Float;
-
-    invoke-virtual {p1}, Ljava/lang/Float;->floatValue()F
-
-    move-result p1
-
-    invoke-virtual {v1}, Ljava/lang/Float;->floatValue()F
+    :pswitch_0
+    invoke-interface {p1}, Losg;->isEmpty()Z
 
     move-result v0
 
-    cmpg-float p1, p1, v0
+    const/4 v2, 0x1
 
-    if-gtz p1, :cond_0
+    if-eqz v0, :cond_0
 
-    invoke-interface {v2}, Logd;->get()Ljava/lang/Object;
+    goto :goto_0
 
-    move-result-object p1
+    :cond_0
+    invoke-interface {p1}, Losg;->l()Loqv;
 
-    check-cast p1, Ldww;
+    move-result-object v0
 
-    invoke-interface {p1}, Ldww;->n()Ljvs;
+    invoke-interface {v0}, Loqv;->b()Ljava/lang/Object;
 
-    move-result-object p1
+    move-result-object v0
 
-    check-cast p1, Ljvk;
+    check-cast v0, Ljava/lang/Long;
 
-    iget-object p1, p1, Ljvk;->d:Ljava/lang/Object;
+    invoke-virtual {v0}, Ljava/lang/Long;->longValue()J
 
-    check-cast p1, Ljava/lang/Boolean;
+    move-result-wide v3
 
-    invoke-virtual {p1}, Ljava/lang/Boolean;->booleanValue()Z
+    invoke-interface {p1}, Losg;->g()Loqv;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Loqv;->b()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/Long;
+
+    invoke-virtual {v0}, Ljava/lang/Long;->longValue()J
+
+    move-result-wide v5
+
+    invoke-interface {p1}, Losg;->size()I
 
     move-result p1
 
-    if-nez p1, :cond_0
+    const/16 v0, 0x96
 
-    const/4 p1, 0x1
+    if-le p1, v0, :cond_1
 
-    return p1
+    const/4 v1, 0x1
 
-    :cond_0
-    const/4 p1, 0x0
+    goto :goto_0
 
-    return p1
+    :cond_1
+    sub-long/2addr v3, v5
+
+    sget-object p1, Ljava/util/concurrent/TimeUnit;->SECONDS:Ljava/util/concurrent/TimeUnit;
+
+    const-wide/16 v5, 0x5
+
+    invoke-virtual {p1, v5, v6}, Ljava/util/concurrent/TimeUnit;->toNanos(J)J
+
+    move-result-wide v5
+
+    cmp-long p1, v3, v5
+
+    if-lez p1, :cond_2
+
+    const/4 v1, 0x1
+
+    :goto_0
+    return v1
+
+    :cond_2
+    return v1
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

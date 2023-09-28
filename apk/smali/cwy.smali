@@ -2,251 +2,400 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lcxa;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field public final synthetic a:Ljava/lang/Object;
+.field public final synthetic a:Lcxc;
 
-.field private final synthetic b:I
+.field public final synthetic b:Llju;
+
+.field public final synthetic c:J
 
 
 # direct methods
-.method public synthetic constructor <init>(Lcpu;I)V
+.method public synthetic constructor <init>(Lcxc;Llju;J)V
     .locals 0
-
-    iput p2, p0, Lcwy;->b:I
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lcwy;->a:Ljava/lang/Object;
+    iput-object p1, p0, Lcwy;->a:Lcxc;
 
-    return-void
-.end method
+    iput-object p2, p0, Lcwy;->b:Llju;
 
-.method public synthetic constructor <init>(Lcxb;I)V
-    .locals 0
-
-    iput p2, p0, Lcwy;->b:I
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lcwy;->a:Ljava/lang/Object;
-
-    return-void
-.end method
-
-.method public synthetic constructor <init>(Lfoc;I)V
-    .locals 0
-
-    iput p2, p0, Lcwy;->b:I
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lcwy;->a:Ljava/lang/Object;
-
-    return-void
-.end method
-
-.method public synthetic constructor <init>(Lfoj;I)V
-    .locals 0
-
-    iput p2, p0, Lcwy;->b:I
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lcwy;->a:Ljava/lang/Object;
+    iput-wide p3, p0, Lcwy;->c:J
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Lcwx;Lcwx;Z)V
-    .locals 3
+.method public final run()V
+    .locals 15
 
-    iget v0, p0, Lcwy;->b:I
+    iget-object v0, p0, Lcwy;->a:Lcxc;
 
-    const/4 v1, 0x0
+    iget-object v1, p0, Lcwy;->b:Llju;
 
-    const/4 v2, 0x1
+    iget-wide v2, p0, Lcwy;->c:J
 
-    packed-switch v0, :pswitch_data_0
+    iget-object v4, v0, Lcxc;->d:Lcwt;
 
-    iget-object p3, p0, Lcwy;->a:Ljava/lang/Object;
+    invoke-virtual {v4}, Lcwt;->a()V
 
-    invoke-static {p1, p2}, Lcxb;->f(Lcwx;Lcwx;)Z
+    iget-object v4, v0, Lcxc;->b:Lcom/google/android/apps/camera/camerafatalerror/CameraFatalErrorTrackerDatabase;
 
-    move-result p1
+    invoke-virtual {v4}, Lcom/google/android/apps/camera/camerafatalerror/CameraFatalErrorTrackerDatabase;->r()Lcxf;
 
-    if-eqz p1, :cond_5
+    move-result-object v4
 
-    check-cast p3, Lfoj;
+    iget v5, v1, Llju;->u:I
 
-    iget-object p1, p3, Lfoj;->d:Ljuh;
+    move-object v6, v4
 
-    new-instance p2, Lfof;
+    check-cast v6, Lcxk;
 
-    invoke-direct {p2, p3, v1}, Lfof;-><init>(Lfoj;I)V
+    iget-object v7, v6, Lcxk;->a:Laii;
 
-    invoke-virtual {p1, p2}, Ljuh;->execute(Ljava/lang/Runnable;)V
+    invoke-virtual {v7}, Laii;->h()V
 
-    return-void
+    :try_start_0
+    new-instance v7, Lcxe;
 
-    :pswitch_0
-    iget-object p1, p0, Lcwy;->a:Ljava/lang/Object;
+    invoke-direct {v7, v5}, Lcxe;-><init>(I)V
 
-    check-cast p1, Lfoc;
+    move-object v8, v4
 
-    iget-object p3, p1, Lfoc;->j:Lcsa;
+    check-cast v8, Lcxk;
 
-    invoke-virtual {p3}, Lcsa;->a()Lcrz;
+    iget-object v8, v8, Lcxk;->a:Laii;
 
-    move-result-object p3
+    invoke-virtual {v8}, Laii;->g()V
 
-    iget-object p3, p3, Lcrz;->g:Ljwb;
+    move-object v8, v4
 
-    check-cast p3, Ljvk;
+    check-cast v8, Lcxk;
 
-    iget-object p3, p3, Ljvk;->d:Ljava/lang/Object;
+    iget-object v8, v8, Lcxk;->a:Laii;
 
-    check-cast p3, Lcrx;
+    invoke-virtual {v8}, Laii;->h()V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_3
 
-    sget-object v0, Lcrx;->e:Lcrx;
+    :try_start_1
+    move-object v8, v4
 
-    invoke-virtual {p3, v0}, Lcrx;->equals(Ljava/lang/Object;)Z
+    check-cast v8, Lcxk;
 
-    move-result p3
+    iget-object v8, v8, Lcxk;->b:Laia;
 
-    if-eqz p3, :cond_0
+    invoke-virtual {v8, v7}, Laia;->c(Ljava/lang/Object;)V
+
+    move-object v7, v4
+
+    check-cast v7, Lcxk;
+
+    iget-object v7, v7, Lcxk;->a:Laii;
+
+    invoke-virtual {v7}, Laii;->j()V
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_2
+
+    :try_start_2
+    move-object v7, v4
+
+    check-cast v7, Lcxk;
+
+    iget-object v7, v7, Lcxk;->a:Laii;
+
+    invoke-virtual {v7}, Laii;->i()V
+
+    const-string v7, "SELECT * FROM EnumerationErrorCounts WHERE errorCode = ?"
+
+    const/4 v8, 0x1
+
+    invoke-static {v7, v8}, Lais;->a(Ljava/lang/String;I)Lais;
+
+    move-result-object v7
+
+    int-to-long v9, v5
+
+    invoke-virtual {v7, v8, v9, v10}, Lais;->e(IJ)V
+
+    move-object v5, v4
+
+    check-cast v5, Lcxk;
+
+    iget-object v5, v5, Lcxk;->a:Laii;
+
+    invoke-virtual {v5}, Laii;->g()V
+
+    move-object v5, v4
+
+    check-cast v5, Lcxk;
+
+    iget-object v5, v5, Lcxk;->a:Laii;
+
+    const/4 v9, 0x0
+
+    invoke-static {v5, v7, v9}, Lfy;->i(Laii;Lajw;Z)Landroid/database/Cursor;
+
+    move-result-object v5
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_3
+
+    :try_start_3
+    const-string v9, "errorCode"
+
+    invoke-static {v5, v9}, Lfy;->l(Landroid/database/Cursor;Ljava/lang/String;)I
+
+    move-result v9
+
+    const-string v10, "failuresBeforeReboot"
+
+    invoke-static {v5, v10}, Lfy;->l(Landroid/database/Cursor;Ljava/lang/String;)I
+
+    move-result v10
+
+    const-string v11, "failuresAfterReboot"
+
+    invoke-static {v5, v11}, Lfy;->l(Landroid/database/Cursor;Ljava/lang/String;)I
+
+    move-result v11
+
+    const-string v12, "rebootCount"
+
+    invoke-static {v5, v12}, Lfy;->l(Landroid/database/Cursor;Ljava/lang/String;)I
+
+    move-result v12
+
+    const-string v13, "lastFailureTimestamp"
+
+    invoke-static {v5, v13}, Lfy;->l(Landroid/database/Cursor;Ljava/lang/String;)I
+
+    move-result v13
+
+    invoke-interface {v5}, Landroid/database/Cursor;->moveToFirst()Z
+
+    move-result v14
+
+    if-eqz v14, :cond_0
+
+    invoke-interface {v5, v9}, Landroid/database/Cursor;->getInt(I)I
+
+    move-result v9
+
+    new-instance v14, Lcxe;
+
+    invoke-direct {v14, v9}, Lcxe;-><init>(I)V
+
+    invoke-interface {v5, v10}, Landroid/database/Cursor;->getInt(I)I
+
+    move-result v9
+
+    iput v9, v14, Lcxe;->b:I
+
+    invoke-interface {v5, v11}, Landroid/database/Cursor;->getInt(I)I
+
+    move-result v9
+
+    iput v9, v14, Lcxe;->c:I
+
+    invoke-interface {v5, v12}, Landroid/database/Cursor;->getInt(I)I
+
+    move-result v9
+
+    iput v9, v14, Lcxe;->d:I
+
+    invoke-interface {v5, v13}, Landroid/database/Cursor;->getLong(I)J
+
+    move-result-wide v9
+
+    iput-wide v9, v14, Lcxe;->e:J
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_1
 
     goto :goto_0
 
     :cond_0
-    sget-object p3, Lcwx;->b:Lcwx;
+    const/4 v14, 0x0
 
-    invoke-virtual {p2, p3}, Lcwx;->equals(Ljava/lang/Object;)Z
+    :goto_0
+    :try_start_4
+    invoke-interface {v5}, Landroid/database/Cursor;->close()V
 
-    move-result p2
+    invoke-virtual {v7}, Lais;->j()V
 
-    if-eqz p2, :cond_1
+    check-cast v4, Lcxk;
 
-    iget-object p2, p1, Lfoc;->h:Lczq;
+    iget-object v4, v4, Lcxk;->a:Laii;
 
-    invoke-interface {p2, v2}, Lczq;->h(Z)V
+    invoke-virtual {v4}, Laii;->j()V
+    :try_end_4
+    .catchall {:try_start_4 .. :try_end_4} :catchall_3
 
-    iget-object p1, p1, Lfoc;->k:Litm;
+    iget-object v4, v6, Lcxk;->a:Laii;
 
-    invoke-interface {p1, v2}, Litm;->l(Z)V
+    invoke-virtual {v4}, Laii;->i()V
 
-    return-void
+    iget-wide v4, v14, Lcxe;->e:J
+
+    invoke-static {v2, v3, v4, v5}, Lcxc;->a(JJ)J
+
+    move-result-wide v4
+
+    iget-object v6, v0, Lcxc;->e:Lojz;
+
+    invoke-interface {v6}, Lojz;->a()Ljava/lang/Object;
+
+    move-result-object v6
+
+    check-cast v6, Ljava/lang/Integer;
+
+    invoke-virtual {v6}, Ljava/lang/Integer;->intValue()I
+
+    move-result v6
+
+    int-to-long v6, v6
+
+    cmp-long v9, v4, v6
+
+    if-ltz v9, :cond_1
+
+    iget-object v4, v0, Lcxc;->b:Lcom/google/android/apps/camera/camerafatalerror/CameraFatalErrorTrackerDatabase;
+
+    invoke-virtual {v4}, Lcom/google/android/apps/camera/camerafatalerror/CameraFatalErrorTrackerDatabase;->r()Lcxf;
+
+    move-result-object v4
+
+    invoke-virtual {v4}, Lcxf;->a()V
+
+    new-instance v14, Lcxe;
+
+    iget v1, v1, Llju;->u:I
+
+    invoke-direct {v14, v1}, Lcxe;-><init>(I)V
 
     :cond_1
-    iget-object p2, p1, Lfoc;->h:Lczq;
+    iget v1, v14, Lcxe;->d:I
 
-    invoke-interface {p2, v2}, Lczq;->d(Z)V
+    if-nez v1, :cond_2
 
-    iget-object p2, p1, Lfoc;->l:Lmrl;
+    iget v1, v14, Lcxe;->b:I
 
-    invoke-interface {p2}, Lmrl;->a()Ljava/lang/Object;
+    add-int/2addr v1, v8
 
-    move-result-object p2
+    iput v1, v14, Lcxe;->b:I
 
-    check-cast p2, Lhyt;
-
-    iget-object p2, p2, Lhyt;->a:Lhys;
-
-    iget-object p3, p2, Lhys;->i:Lhyn;
-
-    iget-object p2, p2, Lhys;->g:Liko;
-
-    invoke-static {p3, p2}, Lbze;->af(Lhyn;Liko;)Z
-
-    move-result p2
-
-    if-eqz p2, :cond_2
-
-    iget-object p1, p1, Lfoc;->k:Litm;
-
-    invoke-interface {p1}, Litm;->ab()V
-
-    return-void
+    goto :goto_1
 
     :cond_2
-    :goto_0
+    iget v1, v14, Lcxe;->c:I
+
+    add-int/2addr v1, v8
+
+    iput v1, v14, Lcxe;->c:I
+
+    :goto_1
+    iput-wide v2, v14, Lcxe;->e:J
+
+    iget-object v1, v0, Lcxc;->b:Lcom/google/android/apps/camera/camerafatalerror/CameraFatalErrorTrackerDatabase;
+
+    invoke-virtual {v1}, Lcom/google/android/apps/camera/camerafatalerror/CameraFatalErrorTrackerDatabase;->r()Lcxf;
+
+    move-result-object v1
+
+    move-object v2, v1
+
+    check-cast v2, Lcxk;
+
+    iget-object v3, v2, Lcxk;->a:Laii;
+
+    invoke-virtual {v3}, Laii;->g()V
+
+    iget-object v3, v2, Lcxk;->a:Laii;
+
+    invoke-virtual {v3}, Laii;->h()V
+
+    :try_start_5
+    move-object v3, v1
+
+    check-cast v3, Lcxk;
+
+    iget-object v3, v3, Lcxk;->c:Laia;
+
+    invoke-virtual {v3, v14}, Laia;->a(Ljava/lang/Object;)V
+
+    check-cast v1, Lcxk;
+
+    iget-object v1, v1, Lcxk;->a:Laii;
+
+    invoke-virtual {v1}, Laii;->j()V
+    :try_end_5
+    .catchall {:try_start_5 .. :try_end_5} :catchall_0
+
+    iget-object v1, v2, Lcxk;->a:Laii;
+
+    invoke-virtual {v1}, Laii;->i()V
+
+    iget v1, v14, Lcxe;->a:I
+
+    iget v2, v14, Lcxe;->b:I
+
+    iget v3, v14, Lcxe;->c:I
+
+    iget-wide v4, v14, Lcxe;->e:J
+
+    iget v4, v14, Lcxe;->d:I
+
+    iget-object v5, v0, Lcxc;->c:Lfjs;
+
+    invoke-interface {v5, v1, v2, v3, v4}, Lfjs;->b(IIII)V
+
+    const-string v1, "Suspected camera device error"
+
+    invoke-virtual {v0, v1, v8}, Lcxc;->d(Ljava/lang/String;Z)V
+
     return-void
 
-    :pswitch_1
-    iget-object v0, p0, Lcwy;->a:Ljava/lang/Object;
+    :catchall_0
+    move-exception v0
 
-    sget-object v1, Lcwx;->d:Lcwx;
+    iget-object v1, v2, Lcxk;->a:Laii;
 
-    invoke-virtual {p1, v1}, Lcwx;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v1}, Laii;->i()V
 
-    move-result p1
+    throw v0
 
-    if-eqz p1, :cond_3
+    :catchall_1
+    move-exception v0
 
-    sget-object p1, Lcwx;->b:Lcwx;
+    :try_start_6
+    invoke-interface {v5}, Landroid/database/Cursor;->close()V
 
-    invoke-virtual {p2, p1}, Lcwx;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v7}, Lais;->j()V
 
-    move-result p1
+    throw v0
 
-    if-eqz p1, :cond_3
+    :catchall_2
+    move-exception v0
 
-    if-nez p3, :cond_3
+    check-cast v4, Lcxk;
 
-    move-object p1, v0
+    iget-object v1, v4, Lcxk;->a:Laii;
 
-    check-cast p1, Lcpu;
+    invoke-virtual {v1}, Laii;->i()V
 
-    iget p3, p1, Lcpu;->H:I
+    throw v0
+    :try_end_6
+    .catchall {:try_start_6 .. :try_end_6} :catchall_3
 
-    add-int/2addr p3, v2
+    :catchall_3
+    move-exception v0
 
-    iput p3, p1, Lcpu;->H:I
+    iget-object v1, v6, Lcxk;->a:Laii;
 
-    :cond_3
-    check-cast v0, Lcpu;
+    invoke-virtual {v1}, Laii;->i()V
 
-    iget-object p1, v0, Lcpu;->E:Ljava/util/List;
-
-    invoke-interface {p1, p2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-
-    return-void
-
-    :pswitch_2
-    iget-object v0, p0, Lcwy;->a:Ljava/lang/Object;
-
-    invoke-static {p1, p2}, Lcxb;->f(Lcwx;Lcwx;)Z
-
-    move-result p1
-
-    if-nez p1, :cond_4
-
-    invoke-static {}, Ljvd;->l()Ljava/util/concurrent/Executor;
-
-    move-result-object p1
-
-    new-instance v2, Lcwz;
-
-    check-cast v0, Lcxb;
-
-    invoke-direct {v2, v0, p2, p3, v1}, Lcwz;-><init>(Lcxb;Lcwx;ZI)V
-
-    invoke-interface {p1, v2}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
-
-    :cond_4
-    return-void
-
-    :cond_5
-    return-void
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_2
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
+    throw v0
 .end method

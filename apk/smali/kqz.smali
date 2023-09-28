@@ -1,12 +1,26 @@
 .class public final Lkqz;
-.super Lkra;
+.super Ljava/lang/Object;
+
+
+# instance fields
+.field public final a:Landroid/database/sqlite/SQLiteDatabase;
+
+.field public final b:Lmdf;
+
+.field public final c:Ljava/util/Random;
 
 
 # direct methods
-.method public constructor <init>(Lkof;Lkrb;Lkaq;)V
+.method public constructor <init>(Landroid/database/sqlite/SQLiteDatabase;Lmdf;Ljava/util/Random;)V
     .locals 0
 
-    invoke-direct {p0, p1, p2, p3}, Lkra;-><init>(Lkof;Lkqq;Lkaq;)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lkqz;->a:Landroid/database/sqlite/SQLiteDatabase;
+
+    iput-object p2, p0, Lkqz;->b:Lmdf;
+
+    iput-object p3, p0, Lkqz;->c:Ljava/util/Random;
 
     return-void
 .end method

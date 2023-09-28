@@ -1,174 +1,230 @@
-.class public final Lnee;
-.super Lnef;
-
-# interfaces
-.implements Ljava/io/Serializable;
+.class final Lnee;
+.super Ljava/lang/Object;
 
 
 # static fields
-.field private static final serialVersionUID:J
+.field private static b:Lnee;
 
 
 # instance fields
-.field public final a:[B
+.field public final a:Landroid/content/Context;
+
+.field private final c:Landroid/database/ContentObserver;
 
 
 # direct methods
-.method public constructor <init>([B)V
-    .locals 0
+.method private constructor <init>()V
+    .locals 1
 
-    invoke-direct {p0}, Lnef;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    const/4 v0, 0x0
 
-    iput-object p1, p0, Lnee;->a:[B
+    iput-object v0, p0, Lnee;->a:Landroid/content/Context;
+
+    iput-object v0, p0, Lnee;->c:Landroid/database/ContentObserver;
 
     return-void
 .end method
 
+.method private constructor <init>(Landroid/content/Context;)V
+    .locals 3
 
-# virtual methods
-.method public final a()I
-    .locals 5
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iget-object v0, p0, Lnee;->a:[B
+    iput-object p1, p0, Lnee;->a:Landroid/content/Context;
 
-    array-length v0, v0
+    new-instance v0, Lned;
 
-    const/4 v1, 0x4
+    invoke-direct {v0}, Lned;-><init>()V
+
+    iput-object v0, p0, Lnee;->c:Landroid/database/ContentObserver;
+
+    invoke-virtual {p1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+
+    move-result-object p1
+
+    sget-object v1, Lkzv;->a:Landroid/net/Uri;
 
     const/4 v2, 0x1
 
-    const/4 v3, 0x0
+    invoke-virtual {p1, v1, v2, v0}, Landroid/content/ContentResolver;->registerContentObserver(Landroid/net/Uri;ZLandroid/database/ContentObserver;)V
 
-    if-lt v0, v1, :cond_0
+    return-void
+.end method
 
-    const/4 v1, 0x1
+.method static a(Landroid/content/Context;)Lnee;
+    .locals 2
+
+    const-class v0, Lnee;
+
+    monitor-enter v0
+
+    :try_start_0
+    sget-object v1, Lnee;->b:Lnee;
+
+    if-nez v1, :cond_1
+
+    const-string v1, "com.google.android.providers.gsf.permission.READ_GSERVICES"
+
+    invoke-static {p0, v1}, Ld;->k(Landroid/content/Context;Ljava/lang/String;)I
+
+    move-result v1
+
+    if-nez v1, :cond_0
+
+    new-instance v1, Lnee;
+
+    invoke-direct {v1, p0}, Lnee;-><init>(Landroid/content/Context;)V
 
     goto :goto_0
 
     :cond_0
-    const/4 v1, 0x0
+    new-instance v1, Lnee;
+
+    invoke-direct {v1}, Lnee;-><init>()V
 
     :goto_0
-    const-string v4, "HashCode#asInt() requires >= 4 bytes (it only has %s bytes)."
+    sput-object v1, Lnee;->b:Lnee;
 
-    invoke-static {v1, v4, v0}, Lmoz;->r(ZLjava/lang/String;I)V
+    :cond_1
+    sget-object p0, Lnee;->b:Lnee;
 
-    iget-object v0, p0, Lnee;->a:[B
+    monitor-exit v0
 
-    aget-byte v1, v0, v3
+    return-object p0
 
-    and-int/lit16 v1, v1, 0xff
+    :catchall_0
+    move-exception p0
 
-    aget-byte v2, v0, v2
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    and-int/lit16 v2, v2, 0xff
-
-    const/4 v3, 0x2
-
-    aget-byte v3, v0, v3
-
-    and-int/lit16 v3, v3, 0xff
-
-    const/4 v4, 0x3
-
-    aget-byte v0, v0, v4
-
-    and-int/lit16 v0, v0, 0xff
-
-    shl-int/lit8 v2, v2, 0x8
-
-    or-int/2addr v1, v2
-
-    shl-int/lit8 v2, v3, 0x10
-
-    or-int/2addr v1, v2
-
-    shl-int/lit8 v0, v0, 0x18
-
-    or-int/2addr v0, v1
-
-    return v0
+    throw p0
 .end method
 
-.method public final b()I
-    .locals 1
+.method static declared-synchronized c()V
+    .locals 3
 
-    iget-object v0, p0, Lnee;->a:[B
+    const-class v0, Lnee;
 
-    array-length v0, v0
+    monitor-enter v0
 
-    mul-int/lit8 v0, v0, 0x8
+    :try_start_0
+    sget-object v1, Lnee;->b:Lnee;
 
-    return v0
-.end method
+    if-eqz v1, :cond_0
 
-.method public final c(Lnef;)Z
-    .locals 6
+    iget-object v2, v1, Lnee;->a:Landroid/content/Context;
 
-    iget-object v0, p0, Lnee;->a:[B
+    if-eqz v2, :cond_0
 
-    array-length v0, v0
+    iget-object v1, v1, Lnee;->c:Landroid/database/ContentObserver;
 
-    invoke-virtual {p1}, Lnef;->d()[B
+    if-eqz v1, :cond_0
+
+    invoke-virtual {v2}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v1
 
-    array-length v1, v1
+    sget-object v2, Lnee;->b:Lnee;
 
-    const/4 v2, 0x0
+    iget-object v2, v2, Lnee;->c:Landroid/database/ContentObserver;
 
-    if-ne v0, v1, :cond_2
+    invoke-virtual {v1, v2}, Landroid/content/ContentResolver;->unregisterContentObserver(Landroid/database/ContentObserver;)V
 
-    const/4 v0, 0x1
+    :cond_0
+    const/4 v1, 0x0
+
+    sput-object v1, Lnee;->b:Lnee;
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    monitor-exit v0
+
+    return-void
+
+    :catchall_0
+    move-exception v1
+
+    monitor-exit v0
+
+    throw v1
+.end method
+
+
+# virtual methods
+.method public final b(Ljava/lang/String;)Ljava/lang/String;
+    .locals 4
+
+    iget-object v0, p0, Lnee;->a:Landroid/content/Context;
 
     const/4 v1, 0x0
 
-    const/4 v3, 0x1
+    if-nez v0, :cond_0
 
-    :goto_0
-    iget-object v4, p0, Lnee;->a:[B
-
-    array-length v5, v4
-
-    if-ge v1, v5, :cond_1
-
-    aget-byte v4, v4, v1
-
-    invoke-virtual {p1}, Lnef;->d()[B
-
-    move-result-object v5
-
-    aget-byte v5, v5, v1
-
-    if-ne v4, v5, :cond_0
-
-    const/4 v4, 0x1
-
-    goto :goto_1
+    return-object v1
 
     :cond_0
-    const/4 v4, 0x0
+    :try_start_0
+    new-instance v0, Lnec;
 
-    :goto_1
-    and-int/2addr v3, v4
+    invoke-direct {v0, p0, p1}, Lnec;-><init>(Lnee;Ljava/lang/String;)V
 
-    add-int/lit8 v1, v1, 0x1
+    invoke-static {v0}, Lmzi;->f(Lneb;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/String;
+    :try_end_0
+    .catch Ljava/lang/IllegalStateException; {:try_start_0 .. :try_end_0} :catch_2
+    .catch Ljava/lang/SecurityException; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Ljava/lang/NullPointerException; {:try_start_0 .. :try_end_0} :catch_0
+
+    return-object v0
+
+    :catch_0
+    move-exception v0
 
     goto :goto_0
 
+    :catch_1
+    move-exception v0
+
+    goto :goto_0
+
+    :catch_2
+    move-exception v0
+
+    :goto_0
+    invoke-static {p1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object p1
+
+    const-string v2, "Unable to read GServices for: "
+
+    invoke-virtual {p1}, Ljava/lang/String;->length()I
+
+    move-result v3
+
+    if-eqz v3, :cond_1
+
+    invoke-virtual {v2, p1}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object p1
+
+    goto :goto_1
+
     :cond_1
-    return v3
+    new-instance p1, Ljava/lang/String;
 
-    :cond_2
-    return v2
-.end method
+    invoke-direct {p1, v2}, Ljava/lang/String;-><init>(Ljava/lang/String;)V
 
-.method public final d()[B
-    .locals 1
+    :goto_1
+    const-string v2, "GservicesLoader"
 
-    iget-object v0, p0, Lnee;->a:[B
+    invoke-static {v2, p1, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    return-object v0
+    return-object v1
 .end method

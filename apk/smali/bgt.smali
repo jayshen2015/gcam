@@ -1,14 +1,18 @@
 .class public final Lbgt;
-.super Landroid/graphics/PorterDuffColorFilter;
+.super Ljava/io/IOException;
+
+
+# static fields
+.field private static final serialVersionUID:J = 0x1L
 
 
 # direct methods
-.method public constructor <init>(I)V
+.method public constructor <init>()V
     .locals 1
 
-    sget-object v0, Landroid/graphics/PorterDuff$Mode;->SRC_ATOP:Landroid/graphics/PorterDuff$Mode;
+    const-string v0, "Unexpectedly reached end of a file"
 
-    invoke-direct {p0, p1, v0}, Landroid/graphics/PorterDuffColorFilter;-><init>(ILandroid/graphics/PorterDuff$Mode;)V
+    invoke-direct {p0, v0}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
 
     return-void
 .end method

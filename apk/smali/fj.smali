@@ -1,76 +1,48 @@
-.class final Lfj;
+.class public final Lfj;
 .super Ljava/lang/Object;
-
-# interfaces
-.implements Lhi;
 
 
 # instance fields
-.field final synthetic a:Lfk;
-
-.field private b:Z
+.field public final a:Landroid/view/ContentInfo;
 
 
 # direct methods
-.method public constructor <init>(Lfk;)V
+.method public constructor <init>(Landroid/view/ContentInfo;)V
     .locals 0
 
-    iput-object p1, p0, Lfj;->a:Lfk;
-
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    invoke-static {p1}, Lew;->c(Ljava/lang/Object;)V
+
+    iput-object p1, p0, Lfj;->a:Landroid/view/ContentInfo;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Lgw;Z)V
-    .locals 1
-
-    iget-boolean p2, p0, Lfj;->b:Z
-
-    if-eqz p2, :cond_0
-
-    return-void
-
-    :cond_0
-    const/4 p2, 0x1
-
-    iput-boolean p2, p0, Lfj;->b:Z
-
-    iget-object p2, p0, Lfj;->a:Lfk;
-
-    iget-object p2, p2, Lfk;->a:Ljy;
-
-    invoke-interface {p2}, Ljy;->d()V
-
-    iget-object p2, p0, Lfj;->a:Lfk;
-
-    iget-object p2, p2, Lfk;->b:Landroid/view/Window$Callback;
-
-    const/16 v0, 0x6c
-
-    invoke-interface {p2, v0, p1}, Landroid/view/Window$Callback;->onPanelClosed(ILandroid/view/Menu;)V
-
-    const/4 p1, 0x0
-
-    iput-boolean p1, p0, Lfj;->b:Z
-
-    return-void
-.end method
-
-.method public final b(Lgw;)Z
+.method public final toString()Ljava/lang/String;
     .locals 2
 
-    iget-object v0, p0, Lfj;->a:Lfk;
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    iget-object v0, v0, Lfk;->b:Landroid/view/Window$Callback;
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    const/16 v1, 0x6c
+    const-string v1, "ContentInfoCompat{"
 
-    invoke-interface {v0, v1, p1}, Landroid/view/Window$Callback;->onMenuOpened(ILandroid/view/Menu;)Z
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const/4 p1, 0x1
+    iget-object v1, p0, Lfj;->a:Landroid/view/ContentInfo;
 
-    return p1
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string v1, "}"
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
 .end method

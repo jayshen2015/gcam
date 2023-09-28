@@ -1,105 +1,37 @@
-.class public final Liif;
-.super Landroid/animation/AnimatorListenerAdapter;
+.class public final synthetic Liif;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Lijn;
 
 
 # instance fields
-.field final synthetic a:Lcom/google/android/apps/camera/ui/views/ToggleUi;
+.field public final synthetic a:Lcom/google/android/apps/camera/stats/Instrumentation;
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/apps/camera/ui/views/ToggleUi;)V
+.method public synthetic constructor <init>(Lcom/google/android/apps/camera/stats/Instrumentation;)V
     .locals 0
 
-    iput-object p1, p0, Liif;->a:Lcom/google/android/apps/camera/ui/views/ToggleUi;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
+    iput-object p1, p0, Liif;->a:Lcom/google/android/apps/camera/stats/Instrumentation;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onAnimationEnd(Landroid/animation/Animator;Z)V
-    .locals 3
+.method public final a()Ljava/lang/Object;
+    .locals 2
 
-    sget-object p1, Lcom/google/android/apps/camera/ui/views/ToggleUi;->a:Lj$/time/Duration;
+    iget-object v0, p0, Liif;->a:Lcom/google/android/apps/camera/stats/Instrumentation;
 
-    iget-object p1, p0, Liif;->a:Lcom/google/android/apps/camera/ui/views/ToggleUi;
+    new-instance v1, Lcom/google/android/apps/camera/stats/ViewfinderJankSession;
 
-    iget-object p1, p1, Lcom/google/android/apps/camera/ui/views/ToggleUi;->c:Lcom/google/android/apps/camera/ui/views/ToggleUi$ToggleButton;
+    invoke-direct {v1}, Lcom/google/android/apps/camera/stats/ViewfinderJankSession;-><init>()V
 
-    const/4 v0, 0x0
+    invoke-virtual {v0, v1}, Lcom/google/android/apps/camera/stats/Instrumentation;->f(Lcom/google/android/apps/camera/stats/timing/TimingSession;)V
 
-    const/4 v1, 0x1
-
-    if-eq v1, p2, :cond_0
-
-    const/high16 v2, 0x3f800000    # 1.0f
-
-    goto :goto_0
-
-    :cond_0
-    const/4 v2, 0x0
-
-    :goto_0
-    invoke-virtual {p1, v2}, Lcom/google/android/apps/camera/ui/views/ToggleUi$ToggleButton;->setScaleX(F)V
-
-    iget-object p1, p0, Liif;->a:Lcom/google/android/apps/camera/ui/views/ToggleUi;
-
-    iget-object p1, p1, Lcom/google/android/apps/camera/ui/views/ToggleUi;->c:Lcom/google/android/apps/camera/ui/views/ToggleUi$ToggleButton;
-
-    invoke-virtual {p1, v2}, Lcom/google/android/apps/camera/ui/views/ToggleUi$ToggleButton;->setScaleY(F)V
-
-    iget-object p1, p0, Liif;->a:Lcom/google/android/apps/camera/ui/views/ToggleUi;
-
-    if-eqz p2, :cond_1
-
-    goto :goto_1
-
-    :cond_1
-    iget v0, p1, Lcom/google/android/apps/camera/ui/views/ToggleUi;->g:F
-
-    :goto_1
-    invoke-virtual {p1, v0}, Lcom/google/android/apps/camera/ui/views/ToggleUi;->setAlpha(F)V
-
-    iget-object p1, p0, Liif;->a:Lcom/google/android/apps/camera/ui/views/ToggleUi;
-
-    const/4 v0, 0x0
-
-    if-eq v1, p2, :cond_2
-
-    const/4 p2, 0x0
-
-    goto :goto_2
-
-    :cond_2
-    const/16 p2, 0x8
-
-    :goto_2
-    invoke-virtual {p1, p2}, Lcom/google/android/apps/camera/ui/views/ToggleUi;->setVisibility(I)V
-
-    iget-object p1, p0, Liif;->a:Lcom/google/android/apps/camera/ui/views/ToggleUi;
-
-    iget-object p1, p1, Lcom/google/android/apps/camera/ui/views/ToggleUi;->c:Lcom/google/android/apps/camera/ui/views/ToggleUi$ToggleButton;
-
-    iput-boolean v0, p1, Lcom/google/android/apps/camera/ui/views/ToggleUi$ToggleButton;->a:Z
-
-    return-void
-.end method
-
-.method public final onAnimationStart(Landroid/animation/Animator;Z)V
-    .locals 0
-
-    sget-object p1, Lcom/google/android/apps/camera/ui/views/ToggleUi;->a:Lj$/time/Duration;
-
-    if-nez p2, :cond_0
-
-    iget-object p1, p0, Liif;->a:Lcom/google/android/apps/camera/ui/views/ToggleUi;
-
-    const/4 p2, 0x0
-
-    invoke-virtual {p1, p2}, Lcom/google/android/apps/camera/ui/views/ToggleUi;->setVisibility(I)V
-
-    :cond_0
-    return-void
+    return-object v1
 .end method

@@ -1,140 +1,184 @@
 .class public final Lnvc;
-.super Ljava/io/FilterInputStream;
+.super Lppd;
 
 # interfaces
-.implements Lj$/io/InputStreamRetargetInterface;
+.implements Lpqn;
+
+
+# static fields
+.field public static final a:Lnvc;
+
+.field private static volatile e:Lpqs;
 
 
 # instance fields
-.field private a:I
+.field private b:I
+
+.field private c:Lpiw;
+
+.field private d:B
 
 
 # direct methods
-.method public constructor <init>(Ljava/io/InputStream;I)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 2
 
-    invoke-direct {p0, p1}, Ljava/io/FilterInputStream;-><init>(Ljava/io/InputStream;)V
+    new-instance v0, Lnvc;
 
-    iput p2, p0, Lnvc;->a:I
+    invoke-direct {v0}, Lnvc;-><init>()V
+
+    sput-object v0, Lnvc;->a:Lnvc;
+
+    const-class v1, Lnvc;
+
+    invoke-static {v1, v0}, Lppd;->F(Ljava/lang/Class;Lppd;)V
+
+    return-void
+.end method
+
+.method private constructor <init>()V
+    .locals 1
+
+    invoke-direct {p0}, Lppd;-><init>()V
+
+    const/4 v0, 0x2
+
+    iput-byte v0, p0, Lnvc;->d:B
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final available()I
+.method protected final a(ILjava/lang/Object;)Ljava/lang/Object;
     .locals 2
 
-    invoke-super {p0}, Ljava/io/FilterInputStream;->available()I
+    add-int/lit8 p1, p1, -0x1
 
-    move-result v0
+    const/4 v0, 0x1
 
-    iget v1, p0, Lnvc;->a:I
+    const/4 v1, 0x0
 
-    invoke-static {v0, v1}, Ljava/lang/Math;->min(II)I
+    packed-switch p1, :pswitch_data_0
 
-    move-result v0
+    :pswitch_0
+    if-nez p2, :cond_2
 
-    return v0
-.end method
+    const/4 v0, 0x0
 
-.method public final read()I
-    .locals 3
+    goto :goto_1
 
-    iget v0, p0, Lnvc;->a:I
+    :pswitch_1
+    sget-object p1, Lnvc;->e:Lpqs;
 
-    const/4 v1, -0x1
+    if-nez p1, :cond_1
 
-    if-gtz v0, :cond_0
+    const-class p2, Lnvc;
 
-    return v1
+    monitor-enter p2
+
+    :try_start_0
+    sget-object p1, Lnvc;->e:Lpqs;
+
+    if-nez p1, :cond_0
+
+    new-instance p1, Lpoz;
+
+    sget-object v0, Lnvc;->a:Lnvc;
+
+    invoke-direct {p1, v0}, Lpoz;-><init>(Lppd;)V
+
+    sput-object p1, Lnvc;->e:Lpqs;
 
     :cond_0
-    invoke-super {p0}, Ljava/io/FilterInputStream;->read()I
+    monitor-exit p2
 
-    move-result v0
+    goto :goto_0
 
-    if-ltz v0, :cond_1
+    :catchall_0
+    move-exception p1
 
-    iget v2, p0, Lnvc;->a:I
+    monitor-exit p2
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    add-int/2addr v2, v1
-
-    iput v2, p0, Lnvc;->a:I
+    throw p1
 
     :cond_1
-    return v0
-.end method
+    :goto_0
+    return-object p1
 
-.method public final read([BII)I
-    .locals 1
+    :pswitch_2
+    sget-object p1, Lnvc;->a:Lnvc;
 
-    iget v0, p0, Lnvc;->a:I
+    return-object p1
 
-    if-gtz v0, :cond_0
+    :pswitch_3
+    new-instance p1, Lpoy;
 
-    const/4 p1, -0x1
+    sget-object p2, Lnvc;->a:Lnvc;
 
-    return p1
+    invoke-direct {p1, p2}, Lpoy;-><init>(Lppd;)V
 
-    :cond_0
-    invoke-static {p3, v0}, Ljava/lang/Math;->min(II)I
+    return-object p1
 
-    move-result p3
+    :pswitch_4
+    new-instance p1, Lnvc;
 
-    invoke-super {p0, p1, p2, p3}, Ljava/io/FilterInputStream;->read([BII)I
+    invoke-direct {p1}, Lnvc;-><init>()V
 
-    move-result p1
+    return-object p1
 
-    if-ltz p1, :cond_1
+    :pswitch_5
+    const/4 p1, 0x2
 
-    iget p2, p0, Lnvc;->a:I
+    new-array p1, p1, [Ljava/lang/Object;
 
-    sub-int/2addr p2, p1
+    const-string p2, "b"
 
-    iput p2, p0, Lnvc;->a:I
+    aput-object p2, p1, v1
 
-    :cond_1
-    return p1
-.end method
+    const-string p2, "c"
 
-.method public final skip(J)J
-    .locals 2
+    aput-object p2, p1, v0
 
-    iget v0, p0, Lnvc;->a:I
+    sget-object p2, Lnvc;->a:Lnvc;
 
-    int-to-long v0, v0
+    const-string v0, "\u0001\u0001\u0000\u0001\u0002\u0002\u0001\u0000\u0000\u0001\u0002\u1409\u0001"
 
-    invoke-static {p1, p2, v0, v1}, Ljava/lang/Math;->min(JJ)J
+    invoke-static {p2, v0, p1}, Lnvc;->E(Lpqm;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/Object;
 
-    move-result-wide p1
+    move-result-object p1
 
-    invoke-super {p0, p1, p2}, Ljava/io/FilterInputStream;->skip(J)J
+    return-object p1
 
-    move-result-wide p1
+    :pswitch_6
+    iget-byte p1, p0, Lnvc;->d:B
 
-    long-to-int p2, p1
+    invoke-static {p1}, Ljava/lang/Byte;->valueOf(B)Ljava/lang/Byte;
 
-    if-ltz p2, :cond_0
+    move-result-object p1
 
-    iget p1, p0, Lnvc;->a:I
+    return-object p1
 
-    sub-int/2addr p1, p2
+    :cond_2
+    :goto_1
+    iput-byte v0, p0, Lnvc;->d:B
 
-    iput p1, p0, Lnvc;->a:I
+    const/4 p1, 0x0
 
-    :cond_0
-    int-to-long p1, p2
+    return-object p1
 
-    return-wide p1
-.end method
+    nop
 
-.method public final synthetic transferTo(Ljava/io/OutputStream;)J
-    .locals 2
-
-    invoke-static {p0, p1}, Lj$/io/DesugarInputStream;->transferTo(Ljava/io/InputStream;Ljava/io/OutputStream;)J
-
-    move-result-wide v0
-
-    return-wide v0
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_6
+        :pswitch_0
+        :pswitch_5
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+    .end packed-switch
 .end method

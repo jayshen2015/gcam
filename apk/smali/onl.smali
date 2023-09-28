@@ -1,62 +1,83 @@
-.class public final Lonl;
-.super Ljava/lang/Object;
+.class public abstract Lonl;
+.super Lone;
 
-
-# static fields
-.field public static final synthetic a:I
+# interfaces
+.implements Ljava/util/Set;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
+.method protected constructor <init>()V
+    .locals 0
 
-    :try_start_0
-    const-string v0, "kotlin.reflect.jvm.internal.ReflectionFactoryImpl"
-
-    invoke-static {v0}, Ljava/lang/Class;->forName(Ljava/lang/String;)Ljava/lang/Class;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/Class;->newInstance()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lonm;
-    :try_end_0
-    .catch Ljava/lang/ClassCastException; {:try_start_0 .. :try_end_0} :catch_3
-    .catch Ljava/lang/ClassNotFoundException; {:try_start_0 .. :try_end_0} :catch_2
-    .catch Ljava/lang/InstantiationException; {:try_start_0 .. :try_end_0} :catch_1
-    .catch Ljava/lang/IllegalAccessException; {:try_start_0 .. :try_end_0} :catch_0
-
-    return-void
-
-    :catch_0
-    move-exception v0
-
-    return-void
-
-    :catch_1
-    move-exception v0
-
-    return-void
-
-    :catch_2
-    move-exception v0
-
-    return-void
-
-    :catch_3
-    move-exception v0
+    invoke-direct {p0}, Lone;-><init>()V
 
     return-void
 .end method
 
-.method public static a(Ljava/lang/Class;)Lonx;
+
+# virtual methods
+.method protected bridge synthetic b()Ljava/util/Collection;
     .locals 1
 
-    new-instance v0, Lona;
+    const/4 v0, 0x0
 
-    invoke-direct {v0, p0}, Lona;-><init>(Ljava/lang/Class;)V
+    throw v0
+.end method
 
-    return-object v0
+.method protected abstract c()Ljava/util/Set;
+.end method
+
+.method protected final d(Ljava/util/Collection;)Z
+    .locals 0
+
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    invoke-static {p0, p1}, Lobr;->E(Ljava/util/Set;Ljava/util/Collection;)Z
+
+    move-result p1
+
+    return p1
+.end method
+
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 1
+
+    if-eq p1, p0, :cond_1
+
+    invoke-virtual {p0}, Lonl;->c()Ljava/util/Set;
+
+    move-result-object v0
+
+    invoke-interface {v0, p1}, Ljava/util/Set;->equals(Ljava/lang/Object;)Z
+
+    move-result p1
+
+    if-eqz p1, :cond_0
+
+    goto :goto_0
+
+    :cond_0
+    const/4 p1, 0x0
+
+    return p1
+
+    :cond_1
+    :goto_0
+    const/4 p1, 0x1
+
+    return p1
+.end method
+
+.method public final hashCode()I
+    .locals 1
+
+    invoke-virtual {p0}, Lonl;->c()Ljava/util/Set;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Ljava/util/Set;->hashCode()I
+
+    move-result v0
+
+    return v0
 .end method

@@ -1,42 +1,37 @@
-.class final Lixe;
-.super Landroid/view/animation/DecelerateInterpolator;
+.class public final synthetic Lixe;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Liib;
 
 
 # instance fields
-.field public final a:F
-
-.field public b:F
+.field public final synthetic a:Lgtg;
 
 
 # direct methods
-.method public constructor <init>(F)V
-    .locals 1
+.method public synthetic constructor <init>(Lgtg;)V
+    .locals 0
 
-    const/high16 v0, 0x3f000000    # 0.5f
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    mul-float v0, v0, p1
-
-    invoke-direct {p0, v0}, Landroid/view/animation/DecelerateInterpolator;-><init>(F)V
-
-    const/4 v0, 0x0
-
-    iput v0, p0, Lixe;->b:F
-
-    iput p1, p0, Lixe;->a:F
+    iput-object p1, p0, Lixe;->a:Lgtg;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final getInterpolation(F)F
-    .locals 0
+.method public final a()Llie;
+    .locals 2
 
-    iput p1, p0, Lixe;->b:F
+    iget-object v0, p0, Lixe;->a:Lgtg;
 
-    invoke-super {p0, p1}, Landroid/view/animation/DecelerateInterpolator;->getInterpolation(F)F
+    invoke-virtual {v0}, Lgtg;->l()V
 
-    move-result p1
+    new-instance v1, Lgsq;
 
-    return p1
+    invoke-direct {v1, v0}, Lgsq;-><init>(Lgtg;)V
+
+    return-object v1
 .end method

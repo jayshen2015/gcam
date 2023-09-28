@@ -1,22 +1,30 @@
-.class public final Lhmq;
+.class public final synthetic Lhmq;
 .super Ljava/lang/Object;
 
 
-# static fields
-.field public static final a:Lhkr;
+# instance fields
+.field public final synthetic a:Lhmy;
+
+.field public final synthetic b:Ljava/util/List;
+
+.field public final synthetic c:Landroid/widget/ImageView;
+
+.field public final synthetic d:Lcom/google/android/apps/camera/rewind/RewindExportShotView;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
+.method public synthetic constructor <init>(Lhmy;Ljava/util/List;Landroid/widget/ImageView;Lcom/google/android/apps/camera/rewind/RewindExportShotView;)V
+    .locals 0
 
-    new-instance v0, Lhkr;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const/4 v1, 0x5
+    iput-object p1, p0, Lhmq;->a:Lhmy;
 
-    invoke-direct {v0, v1}, Lhkr;-><init>(I)V
+    iput-object p2, p0, Lhmq;->b:Ljava/util/List;
 
-    sput-object v0, Lhmq;->a:Lhkr;
+    iput-object p3, p0, Lhmq;->c:Landroid/widget/ImageView;
+
+    iput-object p4, p0, Lhmq;->d:Lcom/google/android/apps/camera/rewind/RewindExportShotView;
 
     return-void
 .end method

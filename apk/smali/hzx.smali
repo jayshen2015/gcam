@@ -1,40 +1,39 @@
-.class final Lhzx;
-.super Liam;
+.class public final synthetic Lhzx;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field final synthetic a:Lhzy;
+.field public final synthetic a:Liap;
+
+.field public final synthetic b:Liax;
 
 
 # direct methods
-.method public constructor <init>(Lhzy;)V
+.method public synthetic constructor <init>(Liap;Liax;)V
     .locals 0
 
-    iput-object p1, p0, Lhzx;->a:Lhzy;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0, p1}, Liam;-><init>(Lian;)V
+    iput-object p1, p0, Lhzx;->a:Liap;
+
+    iput-object p2, p0, Lhzx;->b:Liax;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()V
+.method public final run()V
     .locals 2
 
-    iget-object v0, p0, Lhzx;->a:Lhzy;
+    iget-object v0, p0, Lhzx;->a:Liap;
 
-    iget-object v0, v0, Lhzy;->a:Lhiu;
+    iget-object v1, p0, Lhzx;->b:Liax;
 
-    invoke-virtual {v0}, Lhiu;->e()V
-
-    iget-object v0, p0, Lhzx;->a:Lhzy;
-
-    iget-object v1, v0, Lhzy;->a:Lhiu;
-
-    iget-object v0, v0, Lhzy;->b:Lhiw;
-
-    invoke-virtual {v1, v0}, Lhiu;->g(Lhiw;)V
+    invoke-interface {v0, v1}, Liap;->r(Liax;)V
 
     return-void
 .end method

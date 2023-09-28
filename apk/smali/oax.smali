@@ -1,160 +1,48 @@
-.class public final Loax;
-.super Lnws;
-
-# interfaces
-.implements Lnxz;
-
-
-# static fields
-.field public static final b:Loax;
-
-.field private static volatile c:Lnyf;
+.class final Loax;
+.super Landroid/animation/AnimatorListenerAdapter;
 
 
 # instance fields
-.field public a:Lnxa;
+.field final synthetic a:Loaz;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
+.method public constructor <init>(Loaz;)V
+    .locals 0
 
-    new-instance v0, Loax;
+    iput-object p1, p0, Loax;->a:Loaz;
 
-    invoke-direct {v0}, Loax;-><init>()V
-
-    sput-object v0, Loax;->b:Loax;
-
-    const-class v1, Loax;
-
-    invoke-static {v1, v0}, Lnws;->aa(Ljava/lang/Class;Lnws;)V
-
-    return-void
-.end method
-
-.method private constructor <init>()V
-    .locals 1
-
-    invoke-direct {p0}, Lnws;-><init>()V
-
-    sget-object v0, Lnyi;->b:Lnyi;
-
-    iput-object v0, p0, Loax;->a:Lnxa;
+    invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method protected final a(ILjava/lang/Object;)Ljava/lang/Object;
-    .locals 2
+.method public final onAnimationRepeat(Landroid/animation/Animator;)V
+    .locals 3
 
-    add-int/lit8 p1, p1, -0x1
+    invoke-super {p0, p1}, Landroid/animation/AnimatorListenerAdapter;->onAnimationRepeat(Landroid/animation/Animator;)V
 
-    const/4 p2, 0x1
+    iget-object p1, p0, Loax;->a:Loaz;
 
-    packed-switch p1, :pswitch_data_0
+    iget v0, p1, Loaz;->c:I
 
-    :pswitch_0
-    const/4 p1, 0x0
+    const/4 v1, 0x1
 
-    return-object p1
+    add-int/2addr v0, v1
 
-    :pswitch_1
-    sget-object p1, Loax;->c:Lnyf;
+    iget-object v2, p1, Loaz;->b:Loaf;
 
-    if-nez p1, :cond_1
+    iget-object v2, v2, Loaf;->c:[I
 
-    const-class p2, Loax;
+    array-length v2, v2
 
-    monitor-enter p2
+    rem-int/2addr v0, v2
 
-    :try_start_0
-    sget-object p1, Loax;->c:Lnyf;
+    iput v0, p1, Loaz;->c:I
 
-    if-nez p1, :cond_0
+    iput-boolean v1, p1, Loaz;->d:Z
 
-    new-instance p1, Lnwo;
-
-    sget-object v0, Loax;->b:Loax;
-
-    invoke-direct {p1, v0}, Lnwo;-><init>(Lnws;)V
-
-    sput-object p1, Loax;->c:Lnyf;
-
-    :cond_0
-    monitor-exit p2
-
-    goto :goto_0
-
-    :catchall_0
-    move-exception p1
-
-    monitor-exit p2
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw p1
-
-    :cond_1
-    :goto_0
-    return-object p1
-
-    :pswitch_2
-    sget-object p1, Loax;->b:Loax;
-
-    return-object p1
-
-    :pswitch_3
-    new-instance p1, Lnwn;
-
-    sget-object p2, Loax;->b:Loax;
-
-    invoke-direct {p1, p2}, Lnwn;-><init>(Lnws;)V
-
-    return-object p1
-
-    :pswitch_4
-    new-instance p1, Loax;
-
-    invoke-direct {p1}, Loax;-><init>()V
-
-    return-object p1
-
-    :pswitch_5
-    const-string p1, "\u0001\u0001\u0000\u0000\u0001\u0001\u0001\u0000\u0001\u0000\u0001\u001a"
-
-    new-array p2, p2, [Ljava/lang/Object;
-
-    const/4 v0, 0x0
-
-    const-string v1, "a"
-
-    aput-object v1, p2, v0
-
-    sget-object v0, Loax;->b:Loax;
-
-    invoke-static {v0, p1, p2}, Loax;->X(Lnxy;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object p1
-
-    return-object p1
-
-    :pswitch_6
-    invoke-static {p2}, Ljava/lang/Byte;->valueOf(B)Ljava/lang/Byte;
-
-    move-result-object p1
-
-    return-object p1
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_6
-        :pswitch_0
-        :pswitch_5
-        :pswitch_4
-        :pswitch_3
-        :pswitch_2
-        :pswitch_1
-    .end packed-switch
+    return-void
 .end method

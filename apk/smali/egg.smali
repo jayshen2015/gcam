@@ -1,635 +1,192 @@
-.class final Legg;
+.class public final Legg;
 .super Ljava/lang/Object;
-
-# interfaces
-.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field final synthetic a:J
+.field private final a:Llis;
 
-.field final synthetic b:Lmqp;
+.field private final b:Landroid/content/Context;
 
-.field final synthetic c:Lcom/google/android/apps/camera/hdrplus/fusion/api/FusionProgressCallback;
+.field private final c:Lqkg;
 
-.field final synthetic d:Lefx;
-
-.field final synthetic e:Lefx;
-
-.field final synthetic f:Lnph;
-
-.field final synthetic g:Legh;
+.field private final d:Lljf;
 
 
 # direct methods
-.method public constructor <init>(Legh;JLmqp;Lcom/google/android/apps/camera/hdrplus/fusion/api/FusionProgressCallback;Lefx;Lefx;Lnph;)V
-    .locals 0
-
-    iput-object p1, p0, Legg;->g:Legh;
-
-    iput-wide p2, p0, Legg;->a:J
-
-    iput-object p4, p0, Legg;->b:Lmqp;
-
-    iput-object p5, p0, Legg;->c:Lcom/google/android/apps/camera/hdrplus/fusion/api/FusionProgressCallback;
-
-    iput-object p6, p0, Legg;->d:Lefx;
-
-    iput-object p7, p0, Legg;->e:Lefx;
-
-    iput-object p8, p0, Legg;->f:Lnph;
+.method public constructor <init>(Llis;Lljf;Lqkg;Landroid/content/Context;)V
+    .locals 1
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    return-void
-.end method
+    const-string v0, "HexagonEnv"
 
-.method public static synthetic a$018(Lcom/google/googlex/gcam/InterleavedImageU8;)I
-    .locals 1
+    invoke-interface {p1, v0}, Llis;->a(Ljava/lang/String;)Llis;
 
-    invoke-virtual/range {p0 .. p0}, Lcom/google/googlex/gcam/InterleavedImageU8;->a()I
+    move-result-object p1
 
-    move-result v0
+    iput-object p1, p0, Legg;->a:Llis;
 
-    return v0
-.end method
+    iput-object p3, p0, Legg;->c:Lqkg;
 
-.method public static synthetic a$021(Legh;)Ljava/lang/String;
-    .locals 1
+    iput-object p4, p0, Legg;->b:Landroid/content/Context;
 
-    invoke-virtual/range {p0 .. p0}, Legh;->a()Ljava/lang/String;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public static synthetic a$030(Lgpc;)J
-    .locals 1
-
-    invoke-interface/range {p0 .. p0}, Lgpc;->a()J
-
-    move-result-wide v0
-
-    return-wide v0
-.end method
-
-.method public static synthetic a$038(Lgpc;)J
-    .locals 1
-
-    invoke-interface/range {p0 .. p0}, Lgpc;->a()J
-
-    move-result-wide v0
-
-    return-wide v0
-.end method
-
-.method public static synthetic a$061(Lcom/google/android/apps/camera/hdrplus/fusion/api/FusionProgressCallback;JIIZ)V
-    .locals 1
-
-    invoke-interface/range {p0 .. p5}, Lcom/google/android/apps/camera/hdrplus/fusion/api/FusionProgressCallback;->a(JIIZ)V
+    iput-object p2, p0, Legg;->d:Lljf;
 
     return-void
-.end method
-
-.method public static synthetic a$062(Lnph;Ljava/lang/Throwable;)Z
-    .locals 1
-
-    invoke-virtual/range {p0 .. p1}, Lnph;->a(Ljava/lang/Throwable;)Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public static synthetic b$016(Lcom/google/googlex/gcam/InterleavedImageU8;)I
-    .locals 1
-
-    invoke-virtual/range {p0 .. p0}, Lcom/google/googlex/gcam/InterleavedImageU8;->b()I
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public static synthetic b$020(Lcom/google/android/apps/camera/hdrplus/fusion/api/FusionProgressCallback;JLcom/google/googlex/gcam/InterleavedImageU8;Lcom/google/googlex/gcam/ShotMetadata;)V
-    .locals 1
-
-    invoke-interface/range {p0 .. p4}, Lcom/google/android/apps/camera/hdrplus/fusion/api/FusionProgressCallback;->b(JLcom/google/googlex/gcam/InterleavedImageU8;Lcom/google/googlex/gcam/ShotMetadata;)V
-
-    return-void
-.end method
-
-.method public static synthetic b$029(Lefx;)[J
-    .locals 1
-
-    invoke-virtual/range {p0 .. p0}, Lefx;->b()[J
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public static synthetic b$037(Lefx;)[J
-    .locals 1
-
-    invoke-virtual/range {p0 .. p0}, Lefx;->b()[J
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public static synthetic c$013(Lmqp;)Ljava/lang/Object;
-    .locals 1
-
-    invoke-virtual/range {p0 .. p0}, Lmqp;->c()Ljava/lang/Object;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public static synthetic c$014(Lcom/google/googlex/gcam/InterleavedImageU8;)I
-    .locals 1
-
-    invoke-virtual/range {p0 .. p0}, Lcom/google/googlex/gcam/InterleavedImageU8;->c()I
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public static synthetic c$015(Lmqp;)Ljava/lang/Object;
-    .locals 1
-
-    invoke-virtual/range {p0 .. p0}, Lmqp;->c()Ljava/lang/Object;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public static synthetic c$017(Lmqp;)Ljava/lang/Object;
-    .locals 1
-
-    invoke-virtual/range {p0 .. p0}, Lmqp;->c()Ljava/lang/Object;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public static synthetic c$019(Lmqp;)Ljava/lang/Object;
-    .locals 1
-
-    invoke-virtual/range {p0 .. p0}, Lmqp;->c()Ljava/lang/Object;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public static synthetic c$024(Lmqp;)Ljava/lang/Object;
-    .locals 1
-
-    invoke-virtual/range {p0 .. p0}, Lmqp;->c()Ljava/lang/Object;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public static synthetic c$032(Lmqp;)Ljava/lang/Object;
-    .locals 1
-
-    invoke-virtual/range {p0 .. p0}, Lmqp;->c()Ljava/lang/Object;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public static synthetic c$053(Lcom/google/android/apps/camera/hdrplus/fusion/api/FusionProgressCallback;Lcom/google/googlex/gcam/InterleavedImageU8;Lcom/google/googlex/gcam/ShotMetadata;Ljava/lang/String;)V
-    .locals 1
-
-    invoke-interface/range {p0 .. p3}, Lcom/google/android/apps/camera/hdrplus/fusion/api/FusionProgressCallback;->c(Lcom/google/googlex/gcam/InterleavedImageU8;Lcom/google/googlex/gcam/ShotMetadata;Ljava/lang/String;)V
-
-    return-void
-.end method
-
-.method public static synthetic c$057(Lmqp;)Ljava/lang/Object;
-    .locals 1
-
-    invoke-virtual/range {p0 .. p0}, Lmqp;->c()Ljava/lang/Object;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public static synthetic d$040(Legh;JJLcom/google/android/apps/camera/hdrplus/fusion/api/FusionProgressCallback;Lcom/google/googlex/gcam/ShotMetadata;Ljava/lang/String;)V
-    .locals 1
-
-    invoke-virtual/range {p0 .. p7}, Legh;->d(JJLcom/google/android/apps/camera/hdrplus/fusion/api/FusionProgressCallback;Lcom/google/googlex/gcam/ShotMetadata;Ljava/lang/String;)V
-
-    return-void
-.end method
-
-.method public static synthetic d$041(Legh;JJLcom/google/android/apps/camera/hdrplus/fusion/api/FusionProgressCallback;Lcom/google/googlex/gcam/ShotMetadata;Ljava/lang/String;)V
-    .locals 1
-
-    invoke-virtual/range {p0 .. p7}, Legh;->d(JJLcom/google/android/apps/camera/hdrplus/fusion/api/FusionProgressCallback;Lcom/google/googlex/gcam/ShotMetadata;Ljava/lang/String;)V
-
-    return-void
-.end method
-
-.method public static synthetic d$042(Legh;JJLcom/google/android/apps/camera/hdrplus/fusion/api/FusionProgressCallback;Lcom/google/googlex/gcam/ShotMetadata;Ljava/lang/String;)V
-    .locals 1
-
-    invoke-virtual/range {p0 .. p7}, Legh;->d(JJLcom/google/android/apps/camera/hdrplus/fusion/api/FusionProgressCallback;Lcom/google/googlex/gcam/ShotMetadata;Ljava/lang/String;)V
-
-    return-void
-.end method
-
-.method public static synthetic d$043(Legh;JJLcom/google/android/apps/camera/hdrplus/fusion/api/FusionProgressCallback;Lcom/google/googlex/gcam/ShotMetadata;Ljava/lang/String;)V
-    .locals 1
-
-    invoke-virtual/range {p0 .. p7}, Legh;->d(JJLcom/google/android/apps/camera/hdrplus/fusion/api/FusionProgressCallback;Lcom/google/googlex/gcam/ShotMetadata;Ljava/lang/String;)V
-
-    return-void
-.end method
-
-.method public static synthetic d$044(Legh;JJLcom/google/android/apps/camera/hdrplus/fusion/api/FusionProgressCallback;Lcom/google/googlex/gcam/ShotMetadata;Ljava/lang/String;)V
-    .locals 1
-
-    invoke-virtual/range {p0 .. p7}, Legh;->d(JJLcom/google/android/apps/camera/hdrplus/fusion/api/FusionProgressCallback;Lcom/google/googlex/gcam/ShotMetadata;Ljava/lang/String;)V
-
-    return-void
-.end method
-
-.method public static synthetic d$045(Legh;JJLcom/google/android/apps/camera/hdrplus/fusion/api/FusionProgressCallback;Lcom/google/googlex/gcam/ShotMetadata;Ljava/lang/String;)V
-    .locals 1
-
-    invoke-virtual/range {p0 .. p7}, Legh;->d(JJLcom/google/android/apps/camera/hdrplus/fusion/api/FusionProgressCallback;Lcom/google/googlex/gcam/ShotMetadata;Ljava/lang/String;)V
-
-    return-void
-.end method
-
-.method public static synthetic d$046(Legh;JJLcom/google/android/apps/camera/hdrplus/fusion/api/FusionProgressCallback;Lcom/google/googlex/gcam/ShotMetadata;Ljava/lang/String;)V
-    .locals 1
-
-    invoke-virtual/range {p0 .. p7}, Legh;->d(JJLcom/google/android/apps/camera/hdrplus/fusion/api/FusionProgressCallback;Lcom/google/googlex/gcam/ShotMetadata;Ljava/lang/String;)V
-
-    return-void
-.end method
-
-.method public static synthetic d$047(Legh;JJLcom/google/android/apps/camera/hdrplus/fusion/api/FusionProgressCallback;Lcom/google/googlex/gcam/ShotMetadata;Ljava/lang/String;)V
-    .locals 1
-
-    invoke-virtual/range {p0 .. p7}, Legh;->d(JJLcom/google/android/apps/camera/hdrplus/fusion/api/FusionProgressCallback;Lcom/google/googlex/gcam/ShotMetadata;Ljava/lang/String;)V
-
-    return-void
-.end method
-
-.method public static synthetic d$048(Legh;JJLcom/google/android/apps/camera/hdrplus/fusion/api/FusionProgressCallback;Lcom/google/googlex/gcam/ShotMetadata;Ljava/lang/String;)V
-    .locals 1
-
-    invoke-virtual/range {p0 .. p7}, Legh;->d(JJLcom/google/android/apps/camera/hdrplus/fusion/api/FusionProgressCallback;Lcom/google/googlex/gcam/ShotMetadata;Ljava/lang/String;)V
-
-    return-void
-.end method
-
-.method public static synthetic d$049(Legh;JJLcom/google/android/apps/camera/hdrplus/fusion/api/FusionProgressCallback;Lcom/google/googlex/gcam/ShotMetadata;Ljava/lang/String;)V
-    .locals 1
-
-    invoke-virtual/range {p0 .. p7}, Legh;->d(JJLcom/google/android/apps/camera/hdrplus/fusion/api/FusionProgressCallback;Lcom/google/googlex/gcam/ShotMetadata;Ljava/lang/String;)V
-
-    return-void
-.end method
-
-.method public static synthetic d$050(Legh;JJLcom/google/android/apps/camera/hdrplus/fusion/api/FusionProgressCallback;Lcom/google/googlex/gcam/ShotMetadata;Ljava/lang/String;)V
-    .locals 1
-
-    invoke-virtual/range {p0 .. p7}, Legh;->d(JJLcom/google/android/apps/camera/hdrplus/fusion/api/FusionProgressCallback;Lcom/google/googlex/gcam/ShotMetadata;Ljava/lang/String;)V
-
-    return-void
-.end method
-
-.method public static synthetic d$058(Lcom/google/android/apps/camera/hdrplus/fusion/api/FusionProgressCallback;JLigo;Lcom/google/googlex/gcam/ShotMetadata;)V
-    .locals 1
-
-    invoke-interface/range {p0 .. p4}, Lcom/google/android/apps/camera/hdrplus/fusion/api/FusionProgressCallback;->d(JLigo;Lcom/google/googlex/gcam/ShotMetadata;)V
-
-    return-void
-.end method
-
-.method public static synthetic e$022(Lkbc;Ljava/lang/String;)V
-    .locals 1
-
-    invoke-interface/range {p0 .. p1}, Lkbc;->e(Ljava/lang/String;)V
-
-    return-void
-.end method
-
-.method public static synthetic e$060(Lnph;Ljava/lang/Object;)Z
-    .locals 1
-
-    invoke-virtual/range {p0 .. p1}, Lnph;->e(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public static synthetic f$039(Lkbc;)V
-    .locals 1
-
-    invoke-interface/range {p0 .. p0}, Lkbc;->f()V
-
-    return-void
-.end method
-
-.method public static synthetic floatValue$026(Ljava/lang/Float;)F
-    .locals 1
-
-    invoke-virtual/range {p0 .. p0}, Ljava/lang/Float;->floatValue()F
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public static synthetic floatValue$027(Ljava/lang/Float;)F
-    .locals 1
-
-    invoke-virtual/range {p0 .. p0}, Ljava/lang/Float;->floatValue()F
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public static synthetic floatValue$028(Ljava/lang/Float;)F
-    .locals 1
-
-    invoke-virtual/range {p0 .. p0}, Ljava/lang/Float;->floatValue()F
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public static synthetic floatValue$034(Ljava/lang/Float;)F
-    .locals 1
-
-    invoke-virtual/range {p0 .. p0}, Ljava/lang/Float;->floatValue()F
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public static synthetic floatValue$035(Ljava/lang/Float;)F
-    .locals 1
-
-    invoke-virtual/range {p0 .. p0}, Ljava/lang/Float;->floatValue()F
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public static synthetic floatValue$036(Ljava/lang/Float;)F
-    .locals 1
-
-    invoke-virtual/range {p0 .. p0}, Ljava/lang/Float;->floatValue()F
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public static synthetic g$055(Lcom/google/googlex/gcam/InterleavedImageU8;)V
-    .locals 1
-
-    invoke-virtual/range {p0 .. p0}, Lcom/google/googlex/gcam/InterleavedImageU8;->g()V
-
-    return-void
-.end method
-
-.method public static synthetic get$025(Lj$/util/Optional;)Ljava/lang/Object;
-    .locals 1
-
-    invoke-virtual/range {p0 .. p0}, Lj$/util/Optional;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public static synthetic get$033(Lj$/util/Optional;)Ljava/lang/Object;
-    .locals 1
-
-    invoke-virtual/range {p0 .. p0}, Lj$/util/Optional;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public static synthetic get$052(Lj$/util/Optional;)Ljava/lang/Object;
-    .locals 1
-
-    invoke-virtual/range {p0 .. p0}, Lj$/util/Optional;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public static synthetic get$054(Lj$/util/Optional;)Ljava/lang/Object;
-    .locals 1
-
-    invoke-virtual/range {p0 .. p0}, Lj$/util/Optional;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public static synthetic h$007(Ldhi;Ldhj;)Lj$/util/Optional;
-    .locals 1
-
-    invoke-interface/range {p0 .. p1}, Ldhi;->h(Ldhj;)Lj$/util/Optional;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public static synthetic h$009(Ldhi;Ldhj;)Lj$/util/Optional;
-    .locals 1
-
-    invoke-interface/range {p0 .. p1}, Ldhi;->h(Ldhj;)Lj$/util/Optional;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public static synthetic h$011(Ldhi;Ldhj;)Lj$/util/Optional;
-    .locals 1
-
-    invoke-interface/range {p0 .. p1}, Ldhi;->h(Ldhj;)Lj$/util/Optional;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public static synthetic h$059(Legh;I)I
-    .locals 1
-
-    invoke-virtual/range {p0 .. p1}, Legh;->h(I)I
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public static synthetic ifPresent$056(Lj$/util/Optional;Ljava/util/function/Consumer;)V
-    .locals 1
-
-    invoke-virtual/range {p0 .. p1}, Lj$/util/Optional;->ifPresent(Ljava/util/function/Consumer;)V
-
-    return-void
-.end method
-
-.method public static synthetic isPresent$023(Lj$/util/Optional;)Z
-    .locals 1
-
-    invoke-virtual/range {p0 .. p0}, Lj$/util/Optional;->isPresent()Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public static synthetic isPresent$031(Lj$/util/Optional;)Z
-    .locals 1
-
-    invoke-virtual/range {p0 .. p0}, Lj$/util/Optional;->isPresent()Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public static synthetic isPresent$051(Lj$/util/Optional;)Z
-    .locals 1
-
-    invoke-virtual/range {p0 .. p0}, Lj$/util/Optional;->isPresent()Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public static synthetic l$001(Ldhi;Ldhj;)Z
-    .locals 1
-
-    invoke-interface/range {p0 .. p1}, Ldhi;->l(Ldhj;)Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public static synthetic l$002(Ldhi;Ldhj;)Z
-    .locals 1
-
-    invoke-interface/range {p0 .. p1}, Ldhi;->l(Ldhj;)Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public static synthetic l$003(Ldhi;Ldhj;)Z
-    .locals 1
-
-    invoke-interface/range {p0 .. p1}, Ldhi;->l(Ldhj;)Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public static synthetic l$004(Ldhi;Ldhj;)Z
-    .locals 1
-
-    invoke-interface/range {p0 .. p1}, Ldhi;->l(Ldhj;)Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public static synthetic l$005(Ldhi;Ldhj;)Z
-    .locals 1
-
-    invoke-interface/range {p0 .. p1}, Ldhi;->l(Ldhj;)Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public static synthetic l$006(Ldhi;Ldhj;)Z
-    .locals 1
-
-    invoke-interface/range {p0 .. p1}, Ldhi;->l(Ldhj;)Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public static synthetic orElse$008(Lj$/util/Optional;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 1
-
-    invoke-virtual/range {p0 .. p1}, Lj$/util/Optional;->orElse(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public static synthetic orElse$010(Lj$/util/Optional;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 1
-
-    invoke-virtual/range {p0 .. p1}, Lj$/util/Optional;->orElse(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public static synthetic orElse$012(Lj$/util/Optional;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 1
-
-    invoke-virtual/range {p0 .. p1}, Lj$/util/Optional;->orElse(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    return-object v0
 .end method
 
 
 # virtual methods
-.method public run()V
+.method public final a()V
     .locals 5
+
+    :try_start_0
+    iget-object v0, p0, Legg;->a:Llis;
+
+    const-string v1, "Loading libhalide_hexagon_host.so."
+
+    invoke-static {v1}, Lcom/agc/Log;->d(Ljava/lang/Object;)I
+
+    invoke-interface {v0, v1}, Llis;->f(Ljava/lang/String;)V
+
+    const-string v0, "halide_hexagon_host"
+
+    invoke-static {v0}, Ljava/lang/System;->loadLibrary(Ljava/lang/String;)V
+    :try_end_0
+    .catch Ljava/lang/UnsatisfiedLinkError; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+
+    :try_start_1
+    iget-object v0, p0, Legg;->c:Lqkg;
+
+    check-cast v0, Letv;
+
+    invoke-virtual {v0}, Letv;->a()Legh;
+
+    move-result-object v0
+
+    iget-object v0, v0, Legh;->a:Ljava/lang/String;
+
+    iget-object v1, p0, Legg;->d:Lljf;
+
+    const-string v2, "HexagonEnvironment#copyHexagonRemoteToDisk"
+
+    invoke-interface {v1, v2}, Lljf;->e(Ljava/lang/String;)V
+
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v0
+
+    const-string v1, "/libhalide_hexagon_remote_skel.so"
+
+    invoke-virtual {v0, v1}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v0
+
+    iget-object v1, p0, Legg;->a:Llis;
+
+    const-string v2, "Writing libhalide_hexagon_remote_skel_signed_by_testsig.so to "
+
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/lang/String;->length()I
+
+    move-result v4
+
+    if-eqz v4, :cond_0
+
+    invoke-virtual {v2, v3}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v2
+
+    goto :goto_0
+
+    :cond_0
+    new-instance v3, Ljava/lang/String;
+
+    invoke-direct {v3, v2}, Ljava/lang/String;-><init>(Ljava/lang/String;)V
+
+    move-object v2, v3
+
+    :goto_0
+    invoke-interface {v1, v2}, Llis;->f(Ljava/lang/String;)V
+
+    iget-object v1, p0, Legg;->b:Landroid/content/Context;
+
+    invoke-virtual {v1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v1
+
+    const v2, 0x7f13000f
+
+    invoke-virtual {v1, v2}, Landroid/content/res/Resources;->openRawResource(I)Ljava/io/InputStream;
+
+    move-result-object v1
+
+    new-instance v2, Ljava/io/FileOutputStream;
+
+    invoke-direct {v2, v0}, Ljava/io/FileOutputStream;-><init>(Ljava/lang/String;)V
+
+    const/16 v0, 0x400
+
+    new-array v0, v0, [B
+
+    :goto_1
+    invoke-virtual {v1, v0}, Ljava/io/InputStream;->read([B)I
+
+    move-result v3
+
+    const/4 v4, -0x1
+
+    if-eq v3, v4, :cond_1
+
+    const/4 v4, 0x0
+
+    invoke-virtual {v2, v0, v4, v3}, Ljava/io/OutputStream;->write([BII)V
+
+    goto :goto_1
+
+    :cond_1
+    invoke-virtual {v2}, Ljava/io/OutputStream;->flush()V
+
+    invoke-virtual {v1}, Ljava/io/InputStream;->close()V
+
+    invoke-virtual {v2}, Ljava/io/FileOutputStream;->close()V
+
+    iget-object v0, p0, Legg;->d:Lljf;
+
+    invoke-interface {v0}, Lljf;->f()V
+
+    return-void
+
+    :catch_0
+    move-exception v0
+
+    goto :goto_2
+
+    :catch_1
+    move-exception v0
+
+    iget-object v1, p0, Legg;->a:Llis;
+
+    const-string v2, "Failed to load Hexagon library"
+
+    invoke-static {v2}, Lcom/agc/Log;->d(Ljava/lang/Object;)I
+
+    invoke-interface {v1, v2, v0}, Llis;->i(Ljava/lang/String;Ljava/lang/Throwable;)V
+    :try_end_1
+    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_0
+
+    return-void
+
+    :goto_2
+    iget-object v1, p0, Legg;->a:Llis;
+
+    const-string v2, "Error initializing Hexagon"
+
+    invoke-interface {v1, v2, v0}, Llis;->i(Ljava/lang/String;Ljava/lang/Throwable;)V
 
     return-void
 .end method

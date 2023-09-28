@@ -2,83 +2,170 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Ljvs;
-.implements Lkad;
+.implements Lpys;
 
 
 # instance fields
-.field private final a:Lkad;
+.field private final a:Lqkg;
 
-.field private final b:Ljvs;
+.field private final b:Lqkg;
+
+.field private final c:Lqkg;
+
+.field private final d:Lqkg;
+
+.field private final e:Lqkg;
+
+.field private final f:Lqkg;
+
+.field private final g:Lqkg;
+
+.field private final h:Lqkg;
+
+.field private final i:Lqkg;
 
 
 # direct methods
-.method public constructor <init>(Ljvs;Ljava/util/concurrent/Executor;)V
-    .locals 3
+.method public constructor <init>(Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;)V
+    .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-static {p2}, Lnsy;->s(Ljava/util/concurrent/Executor;)Ljava/util/concurrent/Executor;
+    iput-object p1, p0, Lcjl;->a:Lqkg;
 
-    move-result-object p2
+    iput-object p2, p0, Lcjl;->b:Lqkg;
 
-    new-instance v0, Ljvk;
+    iput-object p3, p0, Lcjl;->c:Lqkg;
 
-    invoke-interface {p1}, Ljvs;->bm()Ljava/lang/Object;
+    iput-object p4, p0, Lcjl;->d:Lqkg;
 
-    move-result-object v1
+    iput-object p5, p0, Lcjl;->e:Lqkg;
 
-    invoke-direct {v0, v1}, Ljvk;-><init>(Ljava/lang/Object;)V
+    iput-object p6, p0, Lcjl;->f:Lqkg;
 
-    iput-object v0, p0, Lcjl;->b:Ljvs;
+    iput-object p7, p0, Lcjl;->g:Lqkg;
 
-    new-instance v1, Lcbl;
+    iput-object p8, p0, Lcjl;->h:Lqkg;
 
-    const/16 v2, 0xd
-
-    invoke-direct {v1, v0, v2}, Lcbl;-><init>(Ljvk;I)V
-
-    invoke-interface {p1, v1, p2}, Ljvs;->a(Lkai;Ljava/util/concurrent/Executor;)Lkad;
-
-    move-result-object p1
-
-    iput-object p1, p0, Lcjl;->a:Lkad;
+    iput-object p9, p0, Lcjl;->i:Lqkg;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Lkai;Ljava/util/concurrent/Executor;)Lkad;
-    .locals 1
+.method public final a()Lcjk;
+    .locals 11
 
-    iget-object v0, p0, Lcjl;->b:Ljvs;
+    iget-object v0, p0, Lcjl;->a:Lqkg;
 
-    invoke-interface {v0, p1, p2}, Ljvs;->a(Lkai;Ljava/util/concurrent/Executor;)Lkad;
+    invoke-interface {v0}, Lqkg;->get()Ljava/lang/Object;
 
-    move-result-object p1
+    move-result-object v0
 
-    return-object p1
-.end method
+    move-object v2, v0
 
-.method public final bm()Ljava/lang/Object;
-    .locals 1
+    check-cast v2, Lcka;
 
-    iget-object v0, p0, Lcjl;->b:Ljvs;
+    iget-object v0, p0, Lcjl;->b:Lqkg;
 
-    check-cast v0, Ljvk;
+    invoke-interface {v0}, Lqkg;->get()Ljava/lang/Object;
 
-    iget-object v0, v0, Ljvk;->d:Ljava/lang/Object;
+    move-result-object v0
+
+    move-object v3, v0
+
+    check-cast v3, Lbod;
+
+    iget-object v0, p0, Lcjl;->c:Lqkg;
+
+    invoke-interface {v0}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    move-object v4, v0
+
+    check-cast v4, Lggo;
+
+    iget-object v0, p0, Lcjl;->d:Lqkg;
+
+    invoke-interface {v0}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    move-object v5, v0
+
+    check-cast v5, Lbta;
+
+    invoke-static {}, Lbpw;->c()Lkoq;
+
+    move-result-object v6
+
+    iget-object v0, p0, Lcjl;->e:Lqkg;
+
+    check-cast v0, Lbpk;
+
+    invoke-virtual {v0}, Lbpk;->a()Ljava/lang/Boolean;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
+
+    move-result v7
+
+    iget-object v0, p0, Lcjl;->f:Lqkg;
+
+    invoke-interface {v0}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    move-object v8, v0
+
+    check-cast v8, Ldha;
+
+    iget-object v0, p0, Lcjl;->g:Lqkg;
+
+    invoke-interface {v0}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ldju;
+
+    iget-object v0, p0, Lcjl;->h:Lqkg;
+
+    invoke-interface {v0}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    move-object v9, v0
+
+    check-cast v9, Lddf;
+
+    iget-object v0, p0, Lcjl;->i:Lqkg;
+
+    invoke-interface {v0}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ldjy;
+
+    new-instance v0, Lcjk;
+
+    const/4 v10, 0x0
+
+    move-object v1, v0
+
+    invoke-direct/range {v1 .. v10}, Lcjk;-><init>(Lcka;Lbod;Lggo;Lbta;Lkoq;ZLdha;Lddf;[B)V
 
     return-object v0
 .end method
 
-.method public final close()V
+.method public final bridge synthetic get()Ljava/lang/Object;
     .locals 1
 
-    iget-object v0, p0, Lcjl;->a:Lkad;
+    invoke-virtual {p0}, Lcjl;->a()Lcjk;
 
-    invoke-interface {v0}, Lkad;->close()V
+    move-result-object v0
 
-    return-void
+    return-object v0
 .end method

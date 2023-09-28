@@ -1,142 +1,117 @@
-.class Lbnz;
-.super Landroid/os/Handler;
+.class public final Lbnz;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Lpys;
 
 
 # instance fields
-.field final r:Ljava/util/LinkedList;
+.field private final a:Lqkg;
+
+.field private final b:Lqkg;
+
+.field private final c:Lqkg;
+
+.field private final d:Lqkg;
 
 
 # direct methods
-.method public constructor <init>(Landroid/os/Looper;)V
-    .locals 1
+.method public constructor <init>(Lqkg;Lqkg;Lqkg;Lqkg;)V
+    .locals 0
 
-    invoke-direct {p0, p1}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    new-instance p1, Ljava/util/LinkedList;
+    iput-object p1, p0, Lbnz;->a:Lqkg;
 
-    invoke-direct {p1}, Ljava/util/LinkedList;-><init>()V
+    iput-object p2, p0, Lbnz;->b:Lqkg;
 
-    iput-object p1, p0, Lbnz;->r:Ljava/util/LinkedList;
+    iput-object p3, p0, Lbnz;->c:Lqkg;
 
-    const/4 v0, -0x1
-
-    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v0
-
-    invoke-virtual {p1, v0}, Ljava/util/LinkedList;->offerLast(Ljava/lang/Object;)Z
+    iput-object p4, p0, Lbnz;->d:Lqkg;
 
     return-void
+.end method
+
+.method public static b(Lqkg;Lqkg;Lqkg;Lqkg;)Lbnz;
+    .locals 1
+
+    new-instance v0, Lbnz;
+
+    invoke-direct {v0, p0, p1, p2, p3}, Lbnz;-><init>(Lqkg;Lqkg;Lqkg;Lqkg;)V
+
+    return-object v0
 .end method
 
 
 # virtual methods
-.method final c(I)Ljava/lang/String;
-    .locals 3
+.method public final a()Lbny;
+    .locals 11
 
-    new-instance v0, Ljava/lang/String;
+    iget-object v0, p0, Lbnz;->a:Lqkg;
 
-    const-string v1, "HIST"
-
-    invoke-direct {v0, v1}, Ljava/lang/String;-><init>(Ljava/lang/String;)V
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v0, "_ID"
-
-    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p1
-
-    iget-object v0, p0, Lbnz;->r:Ljava/util/LinkedList;
-
-    invoke-virtual {v0}, Ljava/util/LinkedList;->iterator()Ljava/util/Iterator;
+    invoke-interface {v0}, Lqkg;->get()Ljava/lang/Object;
 
     move-result-object v0
 
-    :goto_0
-    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
+    move-object v2, v0
 
-    move-result v1
+    check-cast v2, Lgsn;
 
-    if-eqz v1, :cond_0
+    invoke-static {}, Lgfp;->f()Lfcy;
 
-    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    move-result-object v3
 
-    move-result-object v1
+    iget-object v0, p0, Lbnz;->b:Lqkg;
 
-    check-cast v1, Ljava/lang/Integer;
+    check-cast v0, Lgjo;
 
-    new-instance v2, Ljava/lang/StringBuilder;
+    invoke-virtual {v0}, Lgjo;->a()Lghx;
 
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+    move-result-object v4
 
-    invoke-virtual {v2, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    iget-object v0, p0, Lbnz;->c:Lqkg;
 
-    const/16 p1, 0x5f
+    invoke-interface {v0}, Lqkg;->get()Ljava/lang/Object;
 
-    invoke-virtual {v2, p1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+    move-result-object v0
 
-    invoke-virtual {v1}, Ljava/lang/Integer;->toString()Ljava/lang/String;
+    move-object v5, v0
 
-    move-result-object p1
+    check-cast v5, Llzh;
 
-    invoke-virtual {v2, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    iget-object v0, p0, Lbnz;->d:Lqkg;
 
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-interface {v0}, Lqkg;->get()Ljava/lang/Object;
 
-    move-result-object p1
+    move-result-object v0
 
-    goto :goto_0
+    move-object v6, v0
 
-    :cond_0
-    const-string v0, "_HEND"
+    check-cast v6, Lddf;
 
-    invoke-virtual {p1, v0}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
+    new-instance v0, Lbny;
 
-    move-result-object p1
+    const/4 v7, 0x0
 
-    return-object p1
+    const/4 v8, 0x0
+
+    const/4 v9, 0x0
+
+    const/4 v10, 0x0
+
+    move-object v1, v0
+
+    invoke-direct/range {v1 .. v10}, Lbny;-><init>(Lgsn;Lfcy;Lghx;Llzh;Lddf;[B[B[B[B)V
+
+    return-object v0
 .end method
 
-.method public handleMessage(Landroid/os/Message;)V
+.method public final bridge synthetic get()Ljava/lang/Object;
     .locals 1
 
-    iget-object v0, p0, Lbnz;->r:Ljava/util/LinkedList;
+    invoke-virtual {p0}, Lbnz;->a()Lbny;
 
-    iget p1, p1, Landroid/os/Message;->what:I
+    move-result-object v0
 
-    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object p1
-
-    invoke-virtual {v0, p1}, Ljava/util/LinkedList;->offerLast(Ljava/lang/Object;)Z
-
-    :goto_0
-    iget-object p1, p0, Lbnz;->r:Ljava/util/LinkedList;
-
-    invoke-virtual {p1}, Ljava/util/LinkedList;->size()I
-
-    move-result p1
-
-    const/16 v0, 0x190
-
-    if-le p1, v0, :cond_0
-
-    iget-object p1, p0, Lbnz;->r:Ljava/util/LinkedList;
-
-    invoke-virtual {p1}, Ljava/util/LinkedList;->pollFirst()Ljava/lang/Object;
-
-    goto :goto_0
-
-    :cond_0
-    return-void
+    return-object v0
 .end method

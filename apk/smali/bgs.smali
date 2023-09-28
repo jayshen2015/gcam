@@ -1,43 +1,141 @@
-.class public final Lbgs;
+.class final Lbgs;
 .super Ljava/lang/Object;
 
+# interfaces
+.implements Lbgu;
 
-# static fields
-.field public static final a:[I
+
+# instance fields
+.field private final a:Ljava/nio/ByteBuffer;
 
 
 # direct methods
-.method static constructor <clinit>()V
+.method public constructor <init>(Ljava/nio/ByteBuffer;)V
     .locals 1
 
-    const/16 v0, 0x11
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    new-array v0, v0, [I
+    iput-object p1, p0, Lbgs;->a:Ljava/nio/ByteBuffer;
 
-    fill-array-data v0, :array_0
+    sget-object v0, Ljava/nio/ByteOrder;->BIG_ENDIAN:Ljava/nio/ByteOrder;
 
-    sput-object v0, Lbgs;->a:[I
+    invoke-virtual {p1, v0}, Ljava/nio/ByteBuffer;->order(Ljava/nio/ByteOrder;)Ljava/nio/ByteBuffer;
 
     return-void
+.end method
 
-    :array_0
-    .array-data 4
-        0x7f040427
-        0x7f040428
-        0x7f040429
-        0x7f04042a
-        0x7f04042b
-        0x7f04042c
-        0x7f04042d
-        0x7f04042e
-        0x7f04042f
-        0x7f040430
-        0x7f040431
-        0x7f040432
-        0x7f040433
-        0x7f040434
-        0x7f040435
-        0x7f040436
-        0x7f040437
-    .end array-data
+
+# virtual methods
+.method public final a()I
+    .locals 2
+
+    invoke-virtual {p0}, Lbgs;->d()S
+
+    move-result v0
+
+    shl-int/lit8 v0, v0, 0x8
+
+    invoke-virtual {p0}, Lbgs;->d()S
+
+    move-result v1
+
+    or-int/2addr v0, v1
+
+    return v0
+.end method
+
+.method public final b([BI)I
+    .locals 2
+
+    iget-object v0, p0, Lbgs;->a:Ljava/nio/ByteBuffer;
+
+    invoke-virtual {v0}, Ljava/nio/ByteBuffer;->remaining()I
+
+    move-result v0
+
+    invoke-static {p2, v0}, Ljava/lang/Math;->min(II)I
+
+    move-result p2
+
+    if-nez p2, :cond_0
+
+    const/4 p1, -0x1
+
+    return p1
+
+    :cond_0
+    iget-object v0, p0, Lbgs;->a:Ljava/nio/ByteBuffer;
+
+    const/4 v1, 0x0
+
+    invoke-virtual {v0, p1, v1, p2}, Ljava/nio/ByteBuffer;->get([BII)Ljava/nio/ByteBuffer;
+
+    return p2
+.end method
+
+.method public final c(J)J
+    .locals 2
+
+    iget-object v0, p0, Lbgs;->a:Ljava/nio/ByteBuffer;
+
+    invoke-virtual {v0}, Ljava/nio/ByteBuffer;->remaining()I
+
+    move-result v0
+
+    int-to-long v0, v0
+
+    invoke-static {v0, v1, p1, p2}, Ljava/lang/Math;->min(JJ)J
+
+    move-result-wide p1
+
+    long-to-int p2, p1
+
+    iget-object p1, p0, Lbgs;->a:Ljava/nio/ByteBuffer;
+
+    invoke-virtual {p1}, Ljava/nio/ByteBuffer;->position()I
+
+    move-result v0
+
+    add-int/2addr v0, p2
+
+    invoke-virtual {p1, v0}, Ljava/nio/ByteBuffer;->position(I)Ljava/nio/Buffer;
+
+    move-result-object p1
+
+    check-cast p1, Ljava/nio/ByteBuffer;
+
+    int-to-long p1, p2
+
+    return-wide p1
+.end method
+
+.method public final d()S
+    .locals 1
+
+    iget-object v0, p0, Lbgs;->a:Ljava/nio/ByteBuffer;
+
+    invoke-virtual {v0}, Ljava/nio/ByteBuffer;->remaining()I
+
+    move-result v0
+
+    if-lez v0, :cond_0
+
+    iget-object v0, p0, Lbgs;->a:Ljava/nio/ByteBuffer;
+
+    invoke-virtual {v0}, Ljava/nio/ByteBuffer;->get()B
+
+    move-result v0
+
+    and-int/lit16 v0, v0, 0xff
+
+    int-to-short v0, v0
+
+    return v0
+
+    :cond_0
+    new-instance v0, Lbgt;
+
+    invoke-direct {v0}, Lbgt;-><init>()V
+
+    throw v0
 .end method

@@ -1,98 +1,32 @@
-.class public abstract Lmur;
-.super Lmut;
+.class public final Lmur;
+.super Loke;
 
-# interfaces
-.implements Ljava/util/Map$Entry;
+
+# instance fields
+.field final synthetic a:Lmdf;
 
 
 # direct methods
-.method protected constructor <init>()V
+.method public constructor <init>(Lmdf;)V
     .locals 0
 
-    invoke-direct {p0}, Lmut;-><init>()V
+    iput-object p1, p0, Lmur;->a:Lmdf;
+
+    invoke-direct {p0}, Loke;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method protected bridge synthetic a()Ljava/lang/Object;
-    .locals 1
+.method public final a()J
+    .locals 2
 
-    const/4 v0, 0x0
+    iget-object v0, p0, Lmur;->a:Lmdf;
 
-    throw v0
-.end method
+    invoke-interface {v0}, Lmdf;->c()J
 
-.method protected abstract b()Ljava/util/Map$Entry;
-.end method
+    move-result-wide v0
 
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 1
-
-    invoke-virtual {p0}, Lmur;->b()Ljava/util/Map$Entry;
-
-    move-result-object v0
-
-    invoke-virtual {v0, p1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
-
-    move-result p1
-
-    return p1
-.end method
-
-.method public final getKey()Ljava/lang/Object;
-    .locals 1
-
-    invoke-virtual {p0}, Lmur;->b()Ljava/util/Map$Entry;
-
-    move-result-object v0
-
-    invoke-interface {v0}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public final getValue()Ljava/lang/Object;
-    .locals 1
-
-    invoke-virtual {p0}, Lmur;->b()Ljava/util/Map$Entry;
-
-    move-result-object v0
-
-    invoke-interface {v0}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public final hashCode()I
-    .locals 1
-
-    invoke-virtual {p0}, Lmur;->b()Ljava/util/Map$Entry;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/Object;->hashCode()I
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public setValue(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 1
-
-    invoke-virtual {p0}, Lmur;->b()Ljava/util/Map$Entry;
-
-    move-result-object v0
-
-    invoke-interface {v0, p1}, Ljava/util/Map$Entry;->setValue(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object p1
-
-    return-object p1
+    return-wide v0
 .end method

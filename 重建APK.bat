@@ -4,7 +4,7 @@ cd %~dp0
 set BASE=%~dp0
 set ROOT=%~dp0apk\
 set BP=%ROOT%build
-set apkname=AGC8.8.224_V7.0
+set apkname=AGC8.4.300_V9.9.1
 rem pkg指编译的包名，默认抖音 可以通过以下数字输入选择
 set pkg=dy
 :startA
@@ -19,6 +19,8 @@ echo.
 echo ----------------3：打包一加包名，输入数字 3 并按回车----------------------
 echo.
 echo ----------------4：打包三星包名，输入数字 4 并按回车----------------------
+echo.
+echo ----------------5：打包MTK包名，输入数字 5 并按回车----------------------
 echo.
 echo.
 echo 请选择要执行的操作：
@@ -37,10 +39,14 @@ if "%num%"=="3" (
 
 if "%num%"=="4" (
 	CALL :BuildApk  samsung
+)
+if "%num%"=="5" (
+	CALL :BuildApk  mtk
 ) 
 
+
 if "%num%"=="0" (
-	for %%i in (dy;kaka;onep;samsung) do CALL :BuildApk  %%i
+	for %%i in (mtk;kaka;onep;samsung) do CALL :BuildApk  %%i
 ) 
 
 if "%num%"=="" (

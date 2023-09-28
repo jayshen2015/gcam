@@ -1,96 +1,62 @@
-.class public Lbpe;
+.class final Lbpe;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Ljava/lang/Cloneable;
+.implements Llak;
 
 
 # instance fields
-.field public final a:Lbze;
+.field final synthetic a:Lbpf;
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 1
+.method public constructor <init>(Lbpf;)V
+    .locals 0
+
+    iput-object p1, p0, Lbpe;->a:Lbpf;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    sget-object v0, Lcac;->a:Lbze;
-
-    iput-object v0, p0, Lbpe;->a:Lbze;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Lbpe;
-    .locals 2
+.method public final bridge synthetic a(Ljava/lang/Object;Ljava/lang/Object;)Lpht;
+    .locals 0
 
-    :try_start_0
-    invoke-super {p0}, Ljava/lang/Object;->clone()Ljava/lang/Object;
+    check-cast p1, Ljava/lang/Boolean;
 
-    move-result-object v0
+    check-cast p2, Laao;
 
-    check-cast v0, Lbpe;
-    :try_end_0
-    .catch Ljava/lang/CloneNotSupportedException; {:try_start_0 .. :try_end_0} :catch_0
-
-    return-object v0
-
-    :catch_0
-    move-exception v0
-
-    new-instance v1, Ljava/lang/RuntimeException;
-
-    invoke-direct {v1, v0}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/Throwable;)V
-
-    throw v1
-.end method
-
-.method public final bridge synthetic clone()Ljava/lang/Object;
-    .locals 1
-
-    invoke-virtual {p0}, Lbpe;->a()Lbpe;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public equals(Ljava/lang/Object;)Z
-    .locals 1
-
-    instance-of v0, p1, Lbpe;
-
-    if-eqz v0, :cond_0
-
-    check-cast p1, Lbpe;
-
-    iget-object v0, p0, Lbpe;->a:Lbze;
-
-    iget-object p1, p1, Lbpe;->a:Lbze;
-
-    invoke-static {v0, p1}, Lcaw;->j(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-virtual {p1}, Ljava/lang/Boolean;->booleanValue()Z
 
     move-result p1
 
-    return p1
+    if-eqz p1, :cond_0
+
+    iget-object p1, p0, Lbpe;->a:Lbpf;
+
+    iget-object p2, p1, Lbpf;->a:Lbnl;
+
+    invoke-interface {p2}, Lbnl;->f()Ljsj;
+
+    move-result-object p2
+
+    iput-object p2, p1, Lbpf;->f:Ljsj;
+
+    iget-object p1, p0, Lbpe;->a:Lbpf;
+
+    iget-object p1, p1, Lbpf;->f:Ljsj;
+
+    new-instance p2, Lbpd;
+
+    invoke-direct {p2, p0}, Lbpd;-><init>(Lbpe;)V
+
+    invoke-interface {p1, p2}, Ljsj;->b(Ljsi;)V
 
     :cond_0
     const/4 p1, 0x0
 
-    return p1
-.end method
-
-.method public final hashCode()I
-    .locals 1
-
-    iget-object v0, p0, Lbpe;->a:Lbze;
-
-    invoke-virtual {v0}, Lbze;->hashCode()I
-
-    move-result v0
-
-    return v0
+    return-object p1
 .end method

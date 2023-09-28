@@ -1,25 +1,22 @@
-.class public interface abstract Lbzm;
+.class public final Lbzm;
 .super Ljava/lang/Object;
 
 
-# virtual methods
-.method public abstract a()Lbzm;
-.end method
+# static fields
+.field public static final a:Lbyr;
 
-.method public abstract d(Lbzk;)V
-.end method
 
-.method public abstract e(Lbzk;)V
-.end method
+# direct methods
+.method static constructor <clinit>()V
+    .locals 2
 
-.method public abstract g(Lbzk;)Z
-.end method
+    new-instance v0, Lbyr;
 
-.method public abstract h(Lbzk;)Z
-.end method
+    const/4 v1, 0x4
 
-.method public abstract i(Lbzk;)Z
-.end method
+    invoke-direct {v0, v1}, Lbyr;-><init>(I)V
 
-.method public abstract j()Z
+    sput-object v0, Lbzm;->a:Lbyr;
+
+    return-void
 .end method

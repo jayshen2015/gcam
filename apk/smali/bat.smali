@@ -1,80 +1,77 @@
-.class public abstract Lbat;
-.super Lbav;
+.class public final Lbat;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Lbaw;
+
+
+# static fields
+.field private static final a:[Ljava/lang/String;
 
 
 # instance fields
-.field private final e:Landroid/content/BroadcastReceiver;
+.field private final b:Landroid/content/ContentResolver;
 
 
 # direct methods
-.method public constructor <init>(Landroid/content/Context;Lva;[B)V
+.method static constructor <clinit>()V
+    .locals 3
+
+    const/4 v0, 0x1
+
+    new-array v0, v0, [Ljava/lang/String;
+
+    const/4 v1, 0x0
+
+    const-string v2, "_data"
+
+    aput-object v2, v0, v1
+
+    sput-object v0, Lbat;->a:[Ljava/lang/String;
+
+    return-void
+.end method
+
+.method public constructor <init>(Landroid/content/ContentResolver;)V
     .locals 0
 
-    const/4 p3, 0x0
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0, p1, p2, p3}, Lbav;-><init>(Landroid/content/Context;Lva;[B)V
-
-    new-instance p1, Lbas;
-
-    invoke-direct {p1, p0}, Lbas;-><init>(Lbat;)V
-
-    iput-object p1, p0, Lbat;->e:Landroid/content/BroadcastReceiver;
+    iput-object p1, p0, Lbat;->b:Landroid/content/ContentResolver;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public abstract a()Landroid/content/IntentFilter;
-.end method
+.method public final a(Landroid/net/Uri;)Landroid/database/Cursor;
+    .locals 6
 
-.method public abstract c(Landroid/content/Intent;)V
-.end method
+    invoke-virtual {p1}, Landroid/net/Uri;->getLastPathSegment()Ljava/lang/String;
 
-.method public final d()V
-    .locals 3
+    move-result-object p1
 
-    invoke-static {}, Laxq;->a()Laxq;
+    iget-object v0, p0, Lbat;->b:Landroid/content/ContentResolver;
 
-    sget v0, Lbau;->a:I
+    sget-object v1, Landroid/provider/MediaStore$Images$Thumbnails;->EXTERNAL_CONTENT_URI:Landroid/net/Uri;
 
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    sget-object v2, Lbat;->a:[Ljava/lang/String;
 
-    move-result-object v0
+    const/4 v3, 0x1
 
-    invoke-virtual {v0}, Ljava/lang/Class;->getSimpleName()Ljava/lang/String;
+    new-array v4, v3, [Ljava/lang/String;
 
-    iget-object v0, p0, Lbav;->a:Landroid/content/Context;
+    const/4 v3, 0x0
 
-    iget-object v1, p0, Lbat;->e:Landroid/content/BroadcastReceiver;
+    aput-object p1, v4, v3
 
-    invoke-virtual {p0}, Lbat;->a()Landroid/content/IntentFilter;
+    const-string v3, "kind = 1 AND image_id = ?"
 
-    move-result-object v2
+    const/4 v5, 0x0
 
-    invoke-virtual {v0, v1, v2}, Landroid/content/Context;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;)Landroid/content/Intent;
+    invoke-virtual/range {v0 .. v5}, Landroid/content/ContentResolver;->query(Landroid/net/Uri;[Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;)Landroid/database/Cursor;
 
-    return-void
-.end method
+    move-result-object p1
 
-.method public final e()V
-    .locals 2
-
-    invoke-static {}, Laxq;->a()Laxq;
-
-    sget v0, Lbau;->a:I
-
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/Class;->getSimpleName()Ljava/lang/String;
-
-    iget-object v0, p0, Lbav;->a:Landroid/content/Context;
-
-    iget-object v1, p0, Lbat;->e:Landroid/content/BroadcastReceiver;
-
-    invoke-virtual {v0, v1}, Landroid/content/Context;->unregisterReceiver(Landroid/content/BroadcastReceiver;)V
-
-    return-void
+    return-object p1
 .end method

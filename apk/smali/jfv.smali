@@ -1,92 +1,88 @@
-.class public abstract Ljfv;
+.class public final synthetic Ljfv;
 .super Ljava/lang/Object;
+
+# interfaces
+.implements Lacr;
 
 
 # instance fields
-.field public d:Ljava/lang/Object;
+.field public final synthetic a:Ljfx;
 
-.field public e:Z
-
-.field final synthetic f:Ljgb;
+.field public final synthetic b:I
 
 
 # direct methods
-.method public constructor <init>(Ljgb;Ljava/lang/Object;)V
+.method public synthetic constructor <init>(Ljfx;I)V
     .locals 0
-
-    iput-object p1, p0, Ljfv;->f:Ljgb;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p2, p0, Ljfv;->d:Ljava/lang/Object;
+    iput-object p1, p0, Ljfv;->a:Ljfx;
 
-    const/4 p1, 0x0
-
-    iput-boolean p1, p0, Ljfv;->e:Z
+    iput p2, p0, Ljfv;->b:I
 
     return-void
 .end method
 
 
 # virtual methods
-.method protected abstract b()V
-.end method
+.method public final a()V
+    .locals 6
 
-.method protected abstract d()V
-.end method
+    iget-object v0, p0, Ljfv;->a:Ljfx;
 
-.method public final e()V
-    .locals 1
+    iget v1, p0, Ljfv;->b:I
 
-    monitor-enter p0
+    iget-object v2, v0, Ljfx;->c:Lcom/google/android/apps/camera/ui/modeswitcher/ModeSwitcher;
 
-    const/4 v0, 0x0
+    invoke-virtual {v2}, Lcom/google/android/apps/camera/ui/modeswitcher/ModeSwitcher;->b()Ljrl;
 
-    :try_start_0
-    iput-object v0, p0, Ljfv;->d:Ljava/lang/Object;
+    move-result-object v2
 
-    monitor-exit p0
+    iget-object v3, v0, Ljfx;->c:Lcom/google/android/apps/camera/ui/modeswitcher/ModeSwitcher;
+
+    iget-object v3, v3, Lcom/google/android/apps/camera/ui/modeswitcher/ModeSwitcher;->h:Lfjs;
+
+    if-eqz v3, :cond_0
+
+    iget-object v3, v0, Ljfx;->a:Ljrl;
+
+    sget-object v4, Ljrl;->a:Ljrl;
+
+    if-eq v3, v4, :cond_0
+
+    iget-object v3, v0, Ljfx;->c:Lcom/google/android/apps/camera/ui/modeswitcher/ModeSwitcher;
+
+    iget-object v3, v3, Lcom/google/android/apps/camera/ui/modeswitcher/ModeSwitcher;->h:Lfjs;
+
+    iget-object v4, v0, Ljfx;->a:Ljrl;
+
+    invoke-virtual {v4}, Ljrl;->toString()Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-virtual {v2}, Ljrl;->toString()Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-interface {v3, v1, v4, v5}, Lfjs;->aa(ILjava/lang/String;Ljava/lang/String;)V
+
+    :cond_0
+    sget-object v1, Ljrl;->a:Ljrl;
+
+    iput-object v1, v0, Ljfx;->a:Ljrl;
+
+    const-wide/16 v3, 0x0
+
+    iput-wide v3, v0, Ljfx;->b:J
+
+    iget-object v1, v0, Ljfx;->c:Lcom/google/android/apps/camera/ui/modeswitcher/ModeSwitcher;
+
+    invoke-virtual {v1, v2}, Lcom/google/android/apps/camera/ui/modeswitcher/ModeSwitcher;->h(Ljrl;)V
+
+    const/4 v1, 0x0
+
+    invoke-virtual {v0, v1}, Ljfx;->a(Z)V
 
     return-void
-
-    :catchall_0
-    move-exception v0
-
-    monitor-exit p0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw v0
-.end method
-
-.method public final f()V
-    .locals 2
-
-    invoke-virtual {p0}, Ljfv;->e()V
-
-    iget-object v0, p0, Ljfv;->f:Ljgb;
-
-    iget-object v0, v0, Ljgb;->h:Ljava/util/ArrayList;
-
-    monitor-enter v0
-
-    :try_start_0
-    iget-object v1, p0, Ljfv;->f:Ljgb;
-
-    iget-object v1, v1, Ljgb;->h:Ljava/util/ArrayList;
-
-    invoke-virtual {v1, p0}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
-
-    monitor-exit v0
-
-    return-void
-
-    :catchall_0
-    move-exception v1
-
-    monitor-exit v0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw v1
 .end method

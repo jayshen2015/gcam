@@ -3,129 +3,181 @@
 
 
 # instance fields
-.field private final a:Loiw;
+.field public final a:F
 
-.field private final b:Ljava/lang/Object;
+.field public final b:F
+
+.field public c:F
+
+.field private final d:[I
+
+.field private final e:[F
+
+.field private final f:Landroid/graphics/RectF;
+
+.field private final g:Landroid/graphics/Paint;
+
+.field private h:F
+
+.field private final i:F
 
 
 # direct methods
-.method public constructor <init>(Loiw;Ldqx;[B[B)V
-    .locals 0
-
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+.method public constructor <init>(FFF)V
+    .locals 2
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Ltf;->a:Loiw;
+    const/4 v0, 0x2
 
-    new-instance p1, Ljava/lang/Object;
+    new-array v1, v0, [I
 
-    invoke-direct {p1}, Ljava/lang/Object;-><init>()V
+    fill-array-data v1, :array_0
 
-    iput-object p1, p0, Ltf;->b:Ljava/lang/Object;
+    iput-object v1, p0, Ltf;->d:[I
+
+    new-array v0, v0, [F
+
+    fill-array-data v0, :array_1
+
+    iput-object v0, p0, Ltf;->e:[F
+
+    new-instance v0, Landroid/graphics/RectF;
+
+    invoke-direct {v0}, Landroid/graphics/RectF;-><init>()V
+
+    iput-object v0, p0, Ltf;->f:Landroid/graphics/RectF;
+
+    new-instance v0, Landroid/graphics/Paint;
+
+    invoke-direct {v0}, Landroid/graphics/Paint;-><init>()V
+
+    iput-object v0, p0, Ltf;->g:Landroid/graphics/Paint;
+
+    iput p1, p0, Ltf;->a:F
+
+    const/4 v1, 0x0
+
+    iput v1, p0, Ltf;->b:F
+
+    iput p2, p0, Ltf;->c:F
+
+    iput p3, p0, Ltf;->i:F
+
+    add-float/2addr p2, p3
+
+    mul-float p1, p1, v1
+
+    add-float/2addr p2, p1
+
+    iput p2, p0, Ltf;->h:F
+
+    const/high16 p1, -0x1000000
+
+    invoke-virtual {v0, p1}, Landroid/graphics/Paint;->setColor(I)V
+
+    sget-object p1, Landroid/graphics/Paint$Style;->FILL:Landroid/graphics/Paint$Style;
+
+    invoke-virtual {v0, p1}, Landroid/graphics/Paint;->setStyle(Landroid/graphics/Paint$Style;)V
+
+    const/4 p1, 0x1
+
+    invoke-virtual {v0, p1}, Landroid/graphics/Paint;->setAntiAlias(Z)V
+
+    invoke-virtual {p0}, Ltf;->b()V
 
     return-void
-.end method
 
-.method public static getSwitchCameraList()[Ljava/lang/String;
-    .locals 2
+    nop
 
-    const-string v0, "0"
+    :array_0
+    .array-data 4
+        -0x1000000
+        0x0
+    .end array-data
 
-    const-string v1, "1"
-
-    filled-new-array {v0, v1}, [Ljava/lang/String;
-
-    move-result-object v0
-
-    return-object v0
+    :array_1
+    .array-data 4
+        0x3f19999a    # 0.6f
+        0x3f800000    # 1.0f
+    .end array-data
 .end method
 
 
 # virtual methods
-.method public final a()Ljava/util/List;
-    .locals 5
+.method public final a(IIII)V
+    .locals 1
 
-    iget-object v0, p0, Ltf;->b:Ljava/lang/Object;
+    iget-object v0, p0, Ltf;->f:Landroid/graphics/RectF;
 
-    monitor-enter v0
+    int-to-float p1, p1
 
-    monitor-exit v0
+    int-to-float p2, p2
 
-    iget-object v0, p0, Ltf;->a:Loiw;
+    int-to-float p3, p3
 
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
+    int-to-float p4, p4
 
-    move-result-object v0
+    invoke-virtual {v0, p1, p2, p3, p4}, Landroid/graphics/RectF;->set(FFFF)V
 
-    check-cast v0, Landroid/hardware/camera2/CameraManager;
+    invoke-virtual {p0}, Ltf;->b()V
 
-    :try_start_0
-    invoke-virtual {v0}, Landroid/hardware/camera2/CameraManager;->getCameraIdList()[Ljava/lang/String;
+    return-void
+.end method
 
-    move-result-object v0
+.method public final b()V
+    .locals 9
 
-    invoke-static {v0}, Lcom/Globals;->getCameraIdList([Ljava/lang/String;)[Ljava/lang/String;
+    iget v0, p0, Ltf;->c:F
 
-    move-result-object v0
-    :try_end_0
-    .catch Landroid/hardware/camera2/CameraAccessException; {:try_start_0 .. :try_end_0} :catch_0
+    iget v1, p0, Ltf;->i:F
 
-    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    add-float/2addr v0, v1
 
-    array-length v1, v0
+    iget v1, p0, Ltf;->a:F
 
-    if-nez v1, :cond_0
+    const/4 v2, 0x0
 
-    const-string v0, "CXCP"
+    mul-float v1, v1, v2
 
-    const-string v1, "Failed to query CameraManager#getCameraIdList: No values returned."
+    add-float/2addr v0, v1
 
-    invoke-static {v0, v1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
+    iput v0, p0, Ltf;->h:F
 
-    sget-object v0, Lojx;->a:Lojx;
+    cmpl-float v0, v0, v2
 
-    return-object v0
+    if-lez v0, :cond_0
+
+    iget-object v0, p0, Ltf;->g:Landroid/graphics/Paint;
+
+    new-instance v8, Landroid/graphics/RadialGradient;
+
+    iget-object v1, p0, Ltf;->f:Landroid/graphics/RectF;
+
+    invoke-virtual {v1}, Landroid/graphics/RectF;->centerX()F
+
+    move-result v2
+
+    iget-object v1, p0, Ltf;->f:Landroid/graphics/RectF;
+
+    invoke-virtual {v1}, Landroid/graphics/RectF;->centerY()F
+
+    move-result v3
+
+    iget v4, p0, Ltf;->h:F
+
+    iget-object v5, p0, Ltf;->d:[I
+
+    iget-object v6, p0, Ltf;->e:[F
+
+    sget-object v7, Landroid/graphics/Shader$TileMode;->MIRROR:Landroid/graphics/Shader$TileMode;
+
+    move-object v1, v8
+
+    invoke-direct/range {v1 .. v7}, Landroid/graphics/RadialGradient;-><init>(FFF[I[FLandroid/graphics/Shader$TileMode;)V
+
+    invoke-virtual {v0, v8}, Landroid/graphics/Paint;->setShader(Landroid/graphics/Shader;)Landroid/graphics/Shader;
 
     :cond_0
-    new-instance v2, Ljava/util/ArrayList;
-
-    invoke-direct {v2, v1}, Ljava/util/ArrayList;-><init>(I)V
-
-    const/4 v3, 0x0
-
-    :goto_0
-    if-ge v3, v1, :cond_1
-
-    aget-object v4, v0, v3
-
-    invoke-virtual {v4}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    invoke-static {v4}, Lrc;->a(Ljava/lang/String;)Lrc;
-
-    move-result-object v4
-
-    invoke-interface {v2, v4}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
-
-    add-int/lit8 v3, v3, 0x1
-
-    goto :goto_0
-
-    :cond_1
-    return-object v2
-
-    :catch_0
-    move-exception v0
-
-    const-string v1, "CXCP"
-
-    const-string v2, "Failed to query CameraManager#getCameraIdList!"
-
-    invoke-static {v1, v2, v0}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
-
-    const/4 v0, 0x0
-
-    return-object v0
+    return-void
 .end method

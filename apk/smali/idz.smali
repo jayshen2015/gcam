@@ -1,59 +1,95 @@
-.class final Lidz;
+.class public final synthetic Lidz;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lgtn;
+.implements Lj$/util/function/Consumer;
 
 
 # instance fields
-.field final synthetic a:Lieb;
+.field public final synthetic a:Liec;
+
+.field private final synthetic b:I
 
 
 # direct methods
-.method public constructor <init>(Lieb;)V
+.method public synthetic constructor <init>(Liec;I)V
     .locals 0
 
-    iput-object p1, p0, Lidz;->a:Lieb;
+    iput p2, p0, Lidz;->b:I
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lidz;->a:Liec;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(I)V
-    .locals 1
+.method public final accept(Ljava/lang/Object;)V
+    .locals 2
 
-    iget-object v0, p0, Lidz;->a:Lieb;
+    iget v0, p0, Lidz;->b:I
 
-    invoke-virtual {v0, p1}, Lieb;->b(I)V
+    packed-switch v0, :pswitch_data_0
+
+    iget-object v0, p0, Lidz;->a:Liec;
+
+    check-cast p1, Ljava/lang/String;
+
+    iget-object v0, v0, Liec;->c:Lhub;
+
+    const/4 v1, 0x0
+
+    invoke-virtual {v0, p1, v1}, Lhub;->l(Ljava/lang/String;Z)V
 
     return-void
+
+    :pswitch_0
+    iget-object v0, p0, Lidz;->a:Liec;
+
+    check-cast p1, Ljava/lang/String;
+
+    iget-object v0, v0, Liec;->c:Lhub;
+
+    const/4 v1, 0x1
+
+    invoke-virtual {v0, p1, v1}, Lhub;->l(Ljava/lang/String;Z)V
+
+    return-void
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method
 
-.method public final b(Z)V
-    .locals 0
-
-    return-void
-.end method
-
-.method public final c(F)V
+.method public final synthetic andThen(Lj$/util/function/Consumer;)Lj$/util/function/Consumer;
     .locals 1
 
-    iget-object v0, p0, Lidz;->a:Lieb;
+    iget v0, p0, Lidz;->b:I
 
-    invoke-virtual {v0, p1}, Lieb;->c(F)V
+    packed-switch v0, :pswitch_data_0
 
-    return-void
-.end method
+    invoke-static {p0, p1}, Lj$/util/function/Consumer$-CC;->$default$andThen(Lj$/util/function/Consumer;Lj$/util/function/Consumer;)Lj$/util/function/Consumer;
 
-.method public final d(F)V
-    .locals 1
+    move-result-object p1
 
-    iget-object v0, p0, Lidz;->a:Lieb;
+    return-object p1
 
-    invoke-virtual {v0, p1}, Lieb;->f(F)V
+    :pswitch_0
+    invoke-static {p0, p1}, Lj$/util/function/Consumer$-CC;->$default$andThen(Lj$/util/function/Consumer;Lj$/util/function/Consumer;)Lj$/util/function/Consumer;
 
-    return-void
+    move-result-object p1
+
+    return-object p1
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

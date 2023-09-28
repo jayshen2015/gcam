@@ -1,51 +1,58 @@
 .class public final Lhje;
 .super Ljava/lang/Object;
 
-# interfaces
-.implements Logk;
-
 
 # instance fields
-.field private final a:Loiw;
+.field public final a:Ljava/lang/Object;
+
+.field public final b:Ljava/util/LinkedList;
+
+.field public final c:Ljava/util/HashMap;
+
+.field public d:I
 
 
 # direct methods
-.method public constructor <init>(Loiw;)V
-    .locals 0
+.method public constructor <init>()V
+    .locals 2
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lhje;->a:Loiw;
+    const/4 v0, 0x1
+
+    const-string v1, "maxSize must be > 0."
+
+    invoke-static {v0, v1}, Lobr;->aG(ZLjava/lang/Object;)V
+
+    new-instance v0, Ljava/lang/Object;
+
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+
+    iput-object v0, p0, Lhje;->a:Ljava/lang/Object;
+
+    new-instance v0, Ljava/util/LinkedList;
+
+    invoke-direct {v0}, Ljava/util/LinkedList;-><init>()V
+
+    iput-object v0, p0, Lhje;->b:Ljava/util/LinkedList;
+
+    new-instance v0, Ljava/util/HashMap;
+
+    invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
+
+    iput-object v0, p0, Lhje;->c:Ljava/util/HashMap;
 
     return-void
 .end method
 
-
-# virtual methods
-.method public final a()Lhjd;
+.method public static final a()V
     .locals 2
 
-    iget-object v0, p0, Lhje;->a:Loiw;
+    const/4 v0, 0x1
 
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
+    const-string v1, "Size was < 0."
 
-    move-result-object v0
+    invoke-static {v0, v1}, Lobr;->aG(ZLjava/lang/Object;)V
 
-    check-cast v0, Lfbz;
-
-    new-instance v1, Lhjd;
-
-    invoke-direct {v1, v0}, Lhjd;-><init>(Lfbz;)V
-
-    return-object v1
-.end method
-
-.method public final bridge synthetic get()Ljava/lang/Object;
-    .locals 1
-
-    invoke-virtual {p0}, Lhje;->a()Lhjd;
-
-    move-result-object v0
-
-    return-object v0
+    return-void
 .end method

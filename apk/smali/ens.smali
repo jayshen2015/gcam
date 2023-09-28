@@ -2,724 +2,383 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lenv;
-.implements Lecw;
-
-
-# static fields
-.field private static final b:Lnak;
+.implements Lenr;
 
 
 # instance fields
-.field public final a:Ljava/util/Map;
+.field private final a:Ljava/lang/Object;
 
-.field private final c:Lebl;
+.field private final b:Ljava/util/Set;
 
-.field private final d:Ljava/util/concurrent/Executor;
+.field private final c:J
 
-.field private final e:I
-
-.field private final f:Lenm;
-
-.field private final g:Ldhi;
-
-.field private h:I
-
-.field private i:Z
-
-.field private final j:Lgkf;
-
-.field private final k:Lva;
-
-.field private final l:Lcvr;
+.field private d:Z
 
 
 # direct methods
-.method static constructor <clinit>()V
+.method public constructor <init>(ILlig;)V
     .locals 1
-
-    const-string v0, "com/google/android/apps/camera/kepler/AstrolapseProcessorImpl"
-
-    invoke-static {v0}, Lnak;->h(Ljava/lang/String;)Lnak;
-
-    move-result-object v0
-
-    sput-object v0, Lens;->b:Lnak;
-
-    return-void
-.end method
-
-.method public constructor <init>(Lgkf;Lebl;Lcvr;Lenm;Lva;Ldhi;Ljava/util/concurrent/Executor;[B[B[B[B[B)V
-    .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    new-instance p8, Ljava/util/HashMap;
+    new-instance v0, Ljava/lang/Object;
 
-    invoke-direct {p8}, Ljava/util/HashMap;-><init>()V
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p8, p0, Lens;->a:Ljava/util/Map;
+    iput-object v0, p0, Lens;->a:Ljava/lang/Object;
 
-    iput-object p1, p0, Lens;->j:Lgkf;
+    new-instance v0, Ljava/util/HashSet;
 
-    iput-object p2, p0, Lens;->c:Lebl;
+    invoke-direct {v0}, Ljava/util/HashSet;-><init>()V
 
-    iput-object p4, p0, Lens;->f:Lenm;
+    iput-object v0, p0, Lens;->b:Ljava/util/Set;
 
-    iput-object p5, p0, Lens;->k:Lva;
+    iget v0, p2, Llig;->a:I
 
-    iput-object p3, p0, Lens;->l:Lcvr;
+    iget p2, p2, Llig;->b:I
 
-    iput-object p7, p0, Lens;->d:Ljava/util/concurrent/Executor;
+    invoke-static {p1, v0, p2}, Lcom/google/android/apps/camera/jni/lensoffset/LensOffsetQueueNative;->createHandle(III)J
 
-    sget-object p1, Ldhq;->p:Ldhk;
+    move-result-wide p1
 
-    invoke-interface {p6, p1}, Ldhi;->a(Ldhk;)Lj$/util/Optional;
+    iput-wide p1, p0, Lens;->c:J
 
-    move-result-object p1
+    const/4 p1, 0x0
 
-    const/16 p2, 0xf
-
-    invoke-static {p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object p2
-
-    invoke-virtual {p1, p2}, Lj$/util/Optional;->orElse(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object p1
-
-    check-cast p1, Ljava/lang/Integer;
-
-    invoke-virtual {p1}, Ljava/lang/Integer;->intValue()I
-
-    move-result p1
-
-    iput p1, p0, Lens;->h:I
-
-    sget-object p1, Ldhq;->r:Ldhk;
-
-    invoke-interface {p6, p1}, Ldhi;->a(Ldhk;)Lj$/util/Optional;
-
-    move-result-object p1
-
-    const p2, 0x249f0
-
-    invoke-static {p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object p2
-
-    invoke-virtual {p1, p2}, Lj$/util/Optional;->orElse(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object p1
-
-    check-cast p1, Ljava/lang/Integer;
-
-    invoke-virtual {p1}, Ljava/lang/Integer;->intValue()I
-
-    move-result p1
-
-    iput p1, p0, Lens;->e:I
-
-    iput-object p6, p0, Lens;->g:Ldhi;
-
-    return-void
-.end method
-
-.method private final l(Leea;Ljava/lang/String;)V
-    .locals 1
-
-    iget-object v0, p0, Lens;->a:Ljava/util/Map;
-
-    invoke-interface {v0, p1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lenr;
-
-    if-eqz v0, :cond_0
-
-    iget-object v0, v0, Lenr;->c:Ljava/util/concurrent/atomic/AtomicBoolean;
-
-    invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicBoolean;->get()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    iget-object v0, p0, Lens;->f:Lenm;
-
-    invoke-virtual {v0, p1}, Lenm;->a(Leea;)V
-
-    :cond_0
-    invoke-virtual {p0, p1, p2}, Lens;->j(Leea;Ljava/lang/String;)V
+    iput-boolean p1, p0, Lens;->d:Z
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic b(Lhjg;Lebd;)V
-    .locals 0
+.method public final a(J)[F
+    .locals 4
 
-    return-void
-.end method
+    const/4 v0, 0x2
 
-.method public final c(Leea;Lecq;)V
-    .locals 1
+    new-array v0, v0, [F
 
-    const/4 v0, 0x0
+    fill-array-data v0, :array_0
 
-    iput-boolean v0, p0, Lens;->i:Z
+    iget-object v1, p0, Lens;->a:Ljava/lang/Object;
 
-    invoke-virtual {p2}, Lecq;->getMessage()Ljava/lang/String;
+    monitor-enter v1
 
-    move-result-object p2
-
-    invoke-direct {p0, p1, p2}, Lens;->l(Leea;Ljava/lang/String;)V
-
-    return-void
-.end method
-
-.method public final d(Lgxy;)V
-    .locals 3
-
-    sget-object v0, Lnbk;->a:Lnbc;
-
-    iget v0, p1, Lgxy;->a:I
-
-    iget-object v0, p0, Lens;->a:Ljava/util/Map;
-
-    invoke-interface {v0}, Ljava/util/Map;->keySet()Ljava/util/Set;
-
-    move-result-object v0
-
-    invoke-interface {v0}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
-
-    move-result-object v0
-
-    :cond_0
-    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_1
-
-    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Leea;
-
-    iget-object v2, v1, Leea;->v:Lgkr;
-
-    iget-object v2, v2, Lgkr;->c:Ljava/lang/Object;
-
-    invoke-interface {v2}, Lgxl;->h()Lgxy;
-
-    move-result-object v2
-
-    invoke-virtual {v2, p1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
-
-    move-result v2
+    :try_start_0
+    iget-boolean v2, p0, Lens;->d:Z
 
     if-eqz v2, :cond_0
 
-    goto :goto_0
+    monitor-exit v1
 
-    :cond_1
-    const/4 v1, 0x0
-
-    :goto_0
-    if-nez v1, :cond_2
-
-    return-void
-
-    :cond_2
-    const-string p1, "Shot aborted."
-
-    invoke-direct {p0, v1, p1}, Lens;->l(Leea;Ljava/lang/String;)V
-
-    return-void
-.end method
-
-.method public final e(Leea;Lkeb;)V
-    .locals 9
-
-    :try_start_0
-    iget-object v0, p0, Lens;->a:Ljava/util/Map;
-
-    invoke-interface {v0, p1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object p1
-
-    check-cast p1, Lenr;
-
-    iget-object v0, p0, Lens;->c:Lebl;
-
-    invoke-virtual {v0}, Lebl;->l()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_3
-
-    if-eqz p1, :cond_3
-
-    iget-object v0, p1, Lenr;->a:Lgmp;
-
-    iget v0, v0, Lgmp;->r:I
-
-    iget v1, p0, Lens;->h:I
-
-    if-ge v0, v1, :cond_3
-
-    invoke-interface {p2}, Lkeb;->a()Lkeb;
-
-    move-result-object v0
-
-    if-eqz v0, :cond_3
-
-    sget-object v1, Lnbk;->a:Lnbc;
-
-    iget-object v1, p1, Lenr;->a:Lgmp;
-
-    invoke-virtual {v1, v0}, Lgmp;->c(Lkeb;)V
-
-    iget-boolean v0, p0, Lens;->i:Z
-
-    iget-object v1, p0, Lens;->g:Ldhi;
-
-    sget-object v2, Ldhq;->an:Ldhj;
-
-    invoke-interface {v1, v2}, Ldhi;->l(Ldhj;)Z
-
-    move-result v1
-
-    const/4 v2, 0x0
-
-    const/4 v3, 0x1
-
-    if-nez v1, :cond_1
-
-    iget-object v1, p1, Lenr;->a:Lgmp;
-
-    iget v1, v1, Lgmp;->r:I
-
-    iget v4, p0, Lens;->h:I
-
-    if-ne v1, v4, :cond_0
-
-    const/4 v1, 0x1
-
-    goto :goto_0
+    return-object v0
 
     :cond_0
-    const/4 v1, 0x0
+    iget-wide v2, p0, Lens;->c:J
 
-    :goto_0
-    and-int/2addr v0, v1
+    invoke-static {v2, v3, p1, p2, v0}, Lcom/google/android/apps/camera/jni/lensoffset/LensOffsetQueueNative;->getLensOffsetAtTime(JJ[F)Z
+
+    move-result p1
+
+    if-nez p1, :cond_1
+
+    sget-object p1, Louj;->b:Loui;
+
+    sget-object p2, Ljava/util/concurrent/TimeUnit;->MILLISECONDS:Ljava/util/concurrent/TimeUnit;
+
+    invoke-interface {p1, p2}, Loug;->H(Ljava/util/concurrent/TimeUnit;)Lova;
+
+    :cond_1
+    monitor-exit v1
+
+    return-object v0
+
+    :catchall_0
+    move-exception p1
+
+    monitor-exit v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw p1
+
+    nop
+
+    :array_0
+    .array-data 4
+        0x0
+        0x0
+    .end array-data
+.end method
+
+.method public final b(JJ)[F
+    .locals 10
+
+    const/4 v0, 0x2
+
+    new-array v1, v0, [F
+
+    fill-array-data v1, :array_0
+
+    iget-object v2, p0, Lens;->a:Ljava/lang/Object;
+
+    monitor-enter v2
+
+    :try_start_0
+    iget-boolean v3, p0, Lens;->d:Z
+
+    if-eqz v3, :cond_0
+
+    monitor-exit v2
+
+    return-object v1
+
+    :cond_0
+    const-wide/32 v3, 0x1e8480
+
+    cmp-long v5, p3, v3
+
+    if-gez v5, :cond_1
+
+    iget-wide p3, p0, Lens;->c:J
+
+    invoke-static {p3, p4, p1, p2, v1}, Lcom/google/android/apps/camera/jni/lensoffset/LensOffsetQueueNative;->getLensOffsetAtTime(JJ[F)Z
+
+    move-result p1
+
+    if-nez p1, :cond_4
+
+    sget-object p1, Louj;->b:Loui;
+
+    sget-object p2, Ljava/util/concurrent/TimeUnit;->MILLISECONDS:Ljava/util/concurrent/TimeUnit;
+
+    invoke-interface {p1, p2}, Loug;->H(Ljava/util/concurrent/TimeUnit;)Lova;
 
     goto :goto_1
 
     :cond_1
-    :goto_1
-    if-eqz v0, :cond_3
+    const-wide/16 v5, 0x2
 
-    iget-object v0, p1, Lenr;->c:Ljava/util/concurrent/atomic/AtomicBoolean;
+    div-long/2addr p3, v5
 
-    invoke-virtual {v0, v3}, Ljava/util/concurrent/atomic/AtomicBoolean;->getAndSet(Z)Z
+    sub-long v5, p1, p3
 
-    move-result v0
+    add-long/2addr p1, p3
 
-    if-nez v0, :cond_2
+    new-array p3, v0, [F
 
-    invoke-static {}, Lnph;->g()Lnph;
+    const/4 p4, 0x0
 
-    move-result-object v0
+    const/4 v0, 0x0
 
-    iget-object v3, p0, Lens;->f:Lenm;
+    aput p4, p3, v0
 
-    iget-object v4, p1, Lenr;->b:Leea;
+    const/4 v7, 0x1
 
-    iget-object v5, p1, Lenr;->a:Lgmp;
+    aput p4, p3, v7
 
-    iget v6, p0, Lens;->h:I
+    const/4 p4, 0x0
 
-    iget-object v1, p1, Lenr;->d:Lenu;
+    :goto_0
+    cmp-long v8, v5, p1
 
-    iget-object v7, v1, Lenu;->a:Lgxn;
+    if-gez v8, :cond_3
 
-    iget-object v7, v7, Lgxn;->a:Lkph;
+    iget-wide v8, p0, Lens;->c:J
 
-    invoke-virtual {v1, v7}, Lenu;->a(Lkph;)V
+    invoke-static {v8, v9, v5, v6, p3}, Lcom/google/android/apps/camera/jni/lensoffset/LensOffsetQueueNative;->getLensOffsetAtTime(JJ[F)Z
 
-    iget-object v1, v1, Lenu;->a:Lgxn;
+    move-result v8
 
-    iget-object v7, v1, Lgxn;->a:Lkph;
+    if-nez v8, :cond_2
 
-    move-object v8, v0
+    sget-object v8, Louj;->b:Loui;
 
-    invoke-virtual/range {v3 .. v8}, Lenm;->c(Leea;Lgmp;ILkph;Lnph;)V
+    sget-object v9, Ljava/util/concurrent/TimeUnit;->MILLISECONDS:Ljava/util/concurrent/TimeUnit;
 
-    new-instance v1, Lenq;
-
-    invoke-direct {v1, p0, p1, v2}, Lenq;-><init>(Lens;Lenr;I)V
-
-    iget-object v2, p0, Lens;->d:Ljava/util/concurrent/Executor;
-
-    invoke-static {v0, v1, v2}, Lnsy;->L(Lnou;Lnoj;Ljava/util/concurrent/Executor;)V
+    invoke-interface {v8, v9}, Loug;->H(Ljava/util/concurrent/TimeUnit;)Lova;
 
     :cond_2
-    iget-object v0, p0, Lens;->f:Lenm;
+    aget v8, v1, v0
 
-    iget-object p1, p1, Lenr;->b:Leea;
+    aget v9, p3, v0
 
-    invoke-virtual {v0, p1}, Lenm;->d(Leea;)V
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    add-float/2addr v8, v9
+
+    aput v8, v1, v0
+
+    aget v8, v1, v7
+
+    aget v9, p3, v7
+
+    add-float/2addr v8, v9
+
+    aput v8, v1, v7
+
+    add-int/lit8 p4, p4, 0x1
+
+    add-long/2addr v5, v3
+
+    goto :goto_0
 
     :cond_3
-    invoke-interface {p2}, Lkeb;->close()V
+    if-lez p4, :cond_4
 
-    return-void
+    aget p1, v1, v0
+
+    int-to-float p2, p4
+
+    div-float/2addr p1, p2
+
+    aput p1, v1, v0
+
+    aget p1, v1, v7
+
+    div-float/2addr p1, p2
+
+    aput p1, v1, v7
+
+    :cond_4
+    :goto_1
+    monitor-exit v2
+
+    return-object v1
 
     :catchall_0
     move-exception p1
 
-    invoke-interface {p2}, Lkeb;->close()V
+    monitor-exit v2
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
+    goto :goto_3
+
+    :goto_2
     throw p1
+
+    :goto_3
+    goto :goto_2
+
+    nop
+
+    :array_0
+    .array-data 4
+        0x0
+        0x0
+    .end array-data
 .end method
 
-.method public final f(Leea;Lcom/google/googlex/gcam/BurstSpec;Lkou;)V
-    .locals 15
+.method public final c(JFF)V
+    .locals 8
 
-    move-object v0, p0
+    iget-object v0, p0, Lens;->a:Ljava/lang/Object;
 
-    move-object/from16 v1, p1
+    monitor-enter v0
 
-    iget-object v2, v0, Lens;->c:Lebl;
+    :try_start_0
+    iget-boolean v1, p0, Lens;->d:Z
 
-    invoke-virtual {v2}, Lebl;->l()Z
+    if-nez v1, :cond_1
 
-    move-result v2
+    iget-wide v2, p0, Lens;->c:J
 
-    if-eqz v2, :cond_0
+    move-wide v4, p1
 
-    sget-object v2, Lnbk;->a:Lnbc;
+    move v6, p3
 
-    iget-object v2, v0, Lens;->a:Ljava/util/Map;
+    move v7, p4
 
-    invoke-interface {v2, v1}, Ljava/util/Map;->containsKey(Ljava/lang/Object;)Z
+    invoke-static/range {v2 .. v7}, Lcom/google/android/apps/camera/jni/lensoffset/LensOffsetQueueNative;->processAndEnqueueLensOffset(JJFF)Z
 
-    move-result v2
+    move-result p1
 
-    xor-int/lit8 v2, v2, 0x1
+    if-eqz p1, :cond_0
 
-    invoke-static {v2}, Lmoz;->p(Z)V
+    iget-object p1, p0, Lens;->b:Ljava/util/Set;
 
-    iget-object v2, v0, Lens;->a:Ljava/util/Map;
-
-    iget-object v3, v0, Lens;->j:Lgkf;
-
-    invoke-virtual {v3}, Lgkf;->a()Lebb;
-
-    move-result-object v6
-
-    iget-object v3, v0, Lens;->k:Lva;
-
-    iget-object v4, v1, Leea;->v:Lgkr;
-
-    iget-object v4, v4, Lgkr;->c:Ljava/lang/Object;
-
-    iget-object v5, v3, Lva;->a:Ljava/lang/Object;
-
-    sget-object v7, Ldhq;->a:Ldhk;
-
-    invoke-interface {v5}, Ldhi;->f()V
-
-    new-instance v14, Lenu;
-
-    iget-object v5, v3, Lva;->b:Ljava/lang/Object;
-
-    iget-object v10, v3, Lva;->c:Ljava/lang/Object;
-
-    invoke-interface {v4}, Lgxl;->k()Lhjc;
-
-    move-result-object v11
-
-    move-object v9, v5
-
-    check-cast v9, Lkpo;
-
-    const/4 v12, 0x0
-
-    const/4 v13, 0x0
-
-    move-object v8, v14
-
-    invoke-direct/range {v8 .. v13}, Lenu;-><init>(Lkpo;Ldzf;Lhjc;[B[B)V
-
-    new-instance v3, Lenr;
-
-    new-instance v11, Lgmp;
-
-    iget-object v5, v1, Leea;->v:Lgkr;
-
-    const/4 v9, 0x0
-
-    const/4 v10, 0x0
-
-    move-object v4, v11
-
-    move-object/from16 v7, p2
-
-    move-object/from16 v8, p3
-
-    invoke-direct/range {v4 .. v10}, Lgmp;-><init>(Lgkr;Lebb;Lcom/google/googlex/gcam/BurstSpec;Lkou;[B[B)V
-
-    new-instance v4, Ljava/util/concurrent/atomic/AtomicBoolean;
-
-    invoke-direct {v4}, Ljava/util/concurrent/atomic/AtomicBoolean;-><init>()V
-
-    invoke-direct {v3, v11, v1, v4, v14}, Lenr;-><init>(Lgmp;Leea;Ljava/util/concurrent/atomic/AtomicBoolean;Lenu;)V
-
-    invoke-interface {v2, v1, v3}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    if-eqz p2, :cond_0
-
-    invoke-virtual/range {p2 .. p2}, Lcom/google/googlex/gcam/BurstSpec;->b()Lcom/google/googlex/gcam/FrameRequestVector;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Lcom/google/googlex/gcam/FrameRequestVector;->a()J
-
-    move-result-wide v1
-
-    long-to-int v2, v1
-
-    iget v1, v0, Lens;->h:I
-
-    invoke-static {v2, v1}, Ljava/lang/Math;->min(II)I
-
-    move-result v1
-
-    iput v1, v0, Lens;->h:I
-
-    :cond_0
-    return-void
-.end method
-
-.method public final g(Lgxy;)V
-    .locals 1
-
-    iget-object v0, p0, Lens;->l:Lcvr;
-
-    invoke-virtual {v0, p1}, Lcvr;->K(Lgxy;)Leeb;
+    invoke-interface {p1}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
 
     move-result-object p1
 
-    invoke-virtual {p1, p0}, Leeb;->f(Lecw;)V
+    :goto_0
+    invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
 
-    return-void
-.end method
+    move-result p2
 
-.method public final h(Leea;)V
-    .locals 3
+    if-eqz p2, :cond_0
 
-    sget-object v0, Lnbk;->a:Lnbc;
+    invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    invoke-virtual {p1}, Leea;->a()I
+    move-result-object p2
 
-    iget-object v0, p0, Lens;->a:Ljava/util/Map;
+    check-cast p2, Lenq;
 
-    invoke-interface {v0, p1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lenr;
-
-    if-eqz v0, :cond_2
-
-    iget-object v1, v0, Lenr;->c:Ljava/util/concurrent/atomic/AtomicBoolean;
-
-    invoke-virtual {v1}, Ljava/util/concurrent/atomic/AtomicBoolean;->get()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_1
-
-    iget-object v1, v0, Lenr;->a:Lgmp;
-
-    iget v1, v1, Lgmp;->r:I
-
-    iget v2, p0, Lens;->h:I
-
-    if-lt v1, v2, :cond_0
+    invoke-interface {p2}, Lenq;->a()V
 
     goto :goto_0
 
     :cond_0
-    const-string v0, "Kelper not produced since not enough frames."
-
-    invoke-direct {p0, p1, v0}, Lens;->l(Leea;Ljava/lang/String;)V
+    monitor-exit v0
 
     return-void
 
     :cond_1
-    :goto_0
-    iget-object v0, v0, Lenr;->c:Ljava/util/concurrent/atomic/AtomicBoolean;
-
-    invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicBoolean;->get()Z
-
-    move-result v0
-
-    if-nez v0, :cond_2
-
-    const-string v0, "Kepler was never initiated."
-
-    invoke-virtual {p0, p1, v0}, Lens;->j(Leea;Ljava/lang/String;)V
-
-    return-void
-
-    :cond_2
-    return-void
-.end method
-
-.method public final synthetic i(Leea;)V
-    .locals 0
-
-    return-void
-.end method
-
-.method public final j(Leea;Ljava/lang/String;)V
-    .locals 3
-
-    sget-object v0, Lens;->b:Lnak;
-
-    invoke-virtual {v0}, Lnaf;->c()Lnaz;
-
-    move-result-object v0
-
-    sget-object v1, Lnbk;->a:Lnbc;
-
-    const-string v2, "KeplerProcessorImpl"
-
-    invoke-interface {v0, v1, v2}, Lnaz;->g(Lnbc;Ljava/lang/Object;)Lnaz;
-
-    move-result-object v0
-
-    check-cast v0, Lnah;
-
-    const/16 v1, 0x67a
-
-    invoke-interface {v0, v1}, Lnah;->G(I)Lnaz;
-
-    move-result-object v0
-
-    check-cast v0, Lnah;
-
-    invoke-virtual {p1}, Leea;->a()I
-
-    move-result v1
-
-    if-nez p2, :cond_0
-
-    const-string p2, "Unknown"
-
-    :cond_0
-    const-string v2, "Shot cancelled. Shot id: %d. Reason: %s"
-
-    invoke-interface {v0, v2, v1, p2}, Lnah;->u(Ljava/lang/String;ILjava/lang/Object;)V
-
-    iget-object p2, p0, Lens;->a:Ljava/util/Map;
-
-    invoke-interface {p2, p1}, Ljava/util/Map;->remove(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object p1
-
-    check-cast p1, Lenr;
-
-    if-eqz p1, :cond_1
-
-    iget-object p2, p1, Lenr;->a:Lgmp;
-
-    invoke-virtual {p2}, Lgmp;->b()V
-
-    iget-object p1, p1, Lenr;->d:Lenu;
-
-    iget-object p2, p1, Lenu;->a:Lgxn;
-
-    invoke-virtual {p2}, Lgxn;->a()V
-
-    iget-object p2, p1, Lenu;->b:Lgxr;
-
-    invoke-virtual {p2}, Lgxr;->d()V
-
-    iget-object p1, p1, Lenu;->c:Lhjc;
-
-    check-cast p1, Lhjd;
-
-    iget-object p1, p1, Lhjd;->v:Lnph;
-
-    const/4 p2, 0x0
-
-    invoke-virtual {p1, p2}, Lnph;->e(Ljava/lang/Object;)Z
-
-    :cond_1
-    return-void
-.end method
-
-.method public final declared-synchronized k(J)V
-    .locals 3
-
-    monitor-enter p0
-
-    :try_start_0
-    sget-object v0, Lnbk;->a:Lnbc;
-
-    iget v0, p0, Lens;->e:I
-
-    int-to-long v0, v0
-
-    cmp-long v2, p1, v0
-
-    if-ltz v2, :cond_0
-
-    const/4 p1, 0x1
-
-    iput-boolean p1, p0, Lens;->i:Z
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    :cond_0
-    monitor-exit p0
+    monitor-exit v0
 
     return-void
 
     :catchall_0
     move-exception p1
 
-    monitor-exit p0
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
+    goto :goto_2
+
+    :goto_1
     throw p1
+
+    :goto_2
+    goto :goto_1
 .end method
 
-.method public final p(Leea;)V
-    .locals 1
+.method public final close()V
+    .locals 3
 
-    const/4 v0, 0x0
+    iget-object v0, p0, Lens;->a:Ljava/lang/Object;
 
-    iput-boolean v0, p0, Lens;->i:Z
+    monitor-enter v0
 
-    iget-object p1, p1, Leea;->v:Lgkr;
+    :try_start_0
+    iget-boolean v1, p0, Lens;->d:Z
 
-    iget-object p1, p1, Lgkr;->c:Ljava/lang/Object;
+    if-eqz v1, :cond_0
 
-    invoke-interface {p1}, Lgxl;->h()Lgxy;
-
-    move-result-object p1
-
-    invoke-virtual {p0, p1}, Lens;->d(Lgxy;)V
+    monitor-exit v0
 
     return-void
+
+    :cond_0
+    const/4 v1, 0x1
+
+    iput-boolean v1, p0, Lens;->d:Z
+
+    iget-wide v1, p0, Lens;->c:J
+
+    invoke-static {v1, v2}, Lcom/google/android/apps/camera/jni/lensoffset/LensOffsetQueueNative;->releaseHandle(J)V
+
+    monitor-exit v0
+
+    return-void
+
+    :catchall_0
+    move-exception v1
+
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw v1
 .end method

@@ -1,262 +1,171 @@
-.class public Ljpn;
-.super Lcbf;
+.class public final Ljpn;
+.super Ljava/lang/Object;
 
 # interfaces
-.implements Landroid/os/IInterface;
+.implements Lpys;
+
+
+# instance fields
+.field private final a:Lqkg;
+
+.field private final b:Lqkg;
+
+.field private final c:Lqkg;
+
+.field private final d:Lqkg;
+
+.field private final e:Lqkg;
+
+.field private final f:Lqkg;
+
+.field private final g:Lqkg;
+
+.field private final h:Lqkg;
+
+.field private final i:Lqkg;
+
+.field private final j:Lqkg;
+
+.field private final k:Lqkg;
+
+.field private final l:Lqkg;
+
+.field private final m:Lqkg;
+
+.field private final n:Lqkg;
+
+.field private final o:Lqkg;
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 1
+.method public constructor <init>(Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;)V
+    .locals 0
 
-    const-string v0, "com.google.android.gms.usagereporting.internal.IUsageReportingCallbacks"
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0, v0}, Lcbf;-><init>(Ljava/lang/String;)V
+    iput-object p1, p0, Ljpn;->a:Lqkg;
+
+    iput-object p2, p0, Ljpn;->b:Lqkg;
+
+    iput-object p3, p0, Ljpn;->c:Lqkg;
+
+    iput-object p4, p0, Ljpn;->d:Lqkg;
+
+    iput-object p5, p0, Ljpn;->e:Lqkg;
+
+    iput-object p6, p0, Ljpn;->f:Lqkg;
+
+    iput-object p7, p0, Ljpn;->g:Lqkg;
+
+    iput-object p8, p0, Ljpn;->h:Lqkg;
+
+    iput-object p9, p0, Ljpn;->i:Lqkg;
+
+    iput-object p10, p0, Ljpn;->j:Lqkg;
+
+    iput-object p11, p0, Ljpn;->k:Lqkg;
+
+    iput-object p12, p0, Ljpn;->l:Lqkg;
+
+    iput-object p13, p0, Ljpn;->m:Lqkg;
+
+    iput-object p14, p0, Ljpn;->n:Lqkg;
+
+    iput-object p15, p0, Ljpn;->o:Lqkg;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public b(Lcom/google/android/gms/common/api/Status;Ljpm;)V
-    .locals 0
+.method public final bridge synthetic get()Ljava/lang/Object;
+    .locals 18
 
-    new-instance p1, Ljava/lang/IllegalStateException;
+    move-object/from16 v0, p0
 
-    const-string p2, "Not implemented."
+    iget-object v1, v0, Ljpn;->a:Lqkg;
 
-    invoke-direct {p1, p2}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+    check-cast v1, Lcjc;
 
-    throw p1
-.end method
+    invoke-virtual {v1}, Lcjc;->a()Lojc;
 
-.method public c(Lcom/google/android/gms/common/api/Status;)V
-    .locals 1
+    move-result-object v3
 
-    new-instance p1, Ljava/lang/IllegalStateException;
+    iget-object v1, v0, Ljpn;->b:Lqkg;
 
-    const-string v0, "Not implemented."
+    check-cast v1, Lhlj;
 
-    invoke-direct {p1, v0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v1}, Lhlj;->a()Lojc;
 
-    throw p1
-.end method
+    move-result-object v4
 
-.method public d(Lcom/google/android/gms/common/api/Status;)V
-    .locals 1
+    iget-object v5, v0, Ljpn;->c:Lqkg;
 
-    new-instance p1, Ljava/lang/IllegalStateException;
+    iget-object v6, v0, Ljpn;->d:Lqkg;
 
-    const-string v0, "Not implemented."
+    iget-object v7, v0, Ljpn;->e:Lqkg;
 
-    invoke-direct {p1, v0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+    iget-object v8, v0, Ljpn;->f:Lqkg;
 
-    throw p1
-.end method
+    iget-object v9, v0, Ljpn;->g:Lqkg;
 
-.method protected final x(ILandroid/os/Parcel;Landroid/os/Parcel;)Z
-    .locals 1
+    iget-object v10, v0, Ljpn;->h:Lqkg;
 
-    const-string p3, "Not implemented"
+    iget-object v11, v0, Ljpn;->i:Lqkg;
 
-    const-string v0, "Not implemented."
+    iget-object v12, v0, Ljpn;->j:Lqkg;
 
-    packed-switch p1, :pswitch_data_0
+    iget-object v1, v0, Ljpn;->k:Lqkg;
 
-    const/4 p1, 0x0
+    check-cast v1, Letg;
 
-    return p1
+    invoke-virtual {v1}, Letg;->b()Lbqg;
 
-    :pswitch_0
-    sget-object p1, Landroid/app/PendingIntent;->CREATOR:Landroid/os/Parcelable$Creator;
+    move-result-object v13
 
-    invoke-static {p2, p1}, Lcbg;->a(Landroid/os/Parcel;Landroid/os/Parcelable$Creator;)Landroid/os/Parcelable;
+    iget-object v1, v0, Ljpn;->l:Lqkg;
 
-    move-result-object p1
+    invoke-interface {v1}, Lqkg;->get()Ljava/lang/Object;
 
-    check-cast p1, Landroid/app/PendingIntent;
+    move-result-object v1
 
-    invoke-static {p2}, Lcbg;->b(Landroid/os/Parcel;)V
+    move-object v14, v1
 
-    new-instance p1, Ljava/lang/IllegalStateException;
+    check-cast v14, Llco;
 
-    invoke-direct {p1, p3}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+    iget-object v1, v0, Ljpn;->m:Lqkg;
 
-    throw p1
+    check-cast v1, Letj;
 
-    :pswitch_1
-    sget-object p1, Lcom/google/android/gms/common/api/Status;->CREATOR:Landroid/os/Parcelable$Creator;
+    invoke-virtual {v1}, Letj;->b()Lfhv;
 
-    invoke-static {p2, p1}, Lcbg;->a(Landroid/os/Parcel;Landroid/os/Parcelable$Creator;)Landroid/os/Parcelable;
+    move-result-object v15
 
-    move-result-object p1
+    iget-object v1, v0, Ljpn;->n:Lqkg;
 
-    check-cast p1, Lcom/google/android/gms/common/api/Status;
+    invoke-interface {v1}, Lqkg;->get()Ljava/lang/Object;
 
-    sget-object p1, Ljpa;->CREATOR:Landroid/os/Parcelable$Creator;
+    move-result-object v1
 
-    invoke-static {p2, p1}, Lcbg;->a(Landroid/os/Parcel;Landroid/os/Parcelable$Creator;)Landroid/os/Parcelable;
+    move-object/from16 v16, v1
 
-    move-result-object p1
+    check-cast v16, Lljf;
 
-    check-cast p1, Ljpa;
+    iget-object v1, v0, Ljpn;->o:Lqkg;
 
-    invoke-static {p2}, Lcbg;->b(Landroid/os/Parcel;)V
+    invoke-interface {v1}, Lqkg;->get()Ljava/lang/Object;
 
-    new-instance p1, Ljava/lang/IllegalStateException;
+    move-result-object v1
 
-    invoke-direct {p1, p3}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+    move-object/from16 v17, v1
 
-    throw p1
+    check-cast v17, Lhuf;
 
-    :pswitch_2
-    sget-object p1, Lcom/google/android/gms/common/api/Status;->CREATOR:Landroid/os/Parcelable$Creator;
+    new-instance v1, Ljpm;
 
-    invoke-static {p2, p1}, Lcbg;->a(Landroid/os/Parcel;Landroid/os/Parcelable$Creator;)Landroid/os/Parcelable;
+    move-object v2, v1
 
-    move-result-object p1
+    invoke-direct/range {v2 .. v17}, Ljpm;-><init>(Lojc;Lojc;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lbqg;Llco;Lfhv;Lljf;Lhuf;)V
 
-    check-cast p1, Lcom/google/android/gms/common/api/Status;
-
-    invoke-static {p2}, Lcbg;->e(Landroid/os/Parcel;)Z
-
-    sget-object p1, Ljpa;->CREATOR:Landroid/os/Parcelable$Creator;
-
-    invoke-static {p2, p1}, Lcbg;->a(Landroid/os/Parcel;Landroid/os/Parcelable$Creator;)Landroid/os/Parcelable;
-
-    move-result-object p1
-
-    check-cast p1, Ljpa;
-
-    invoke-static {p2}, Lcbg;->b(Landroid/os/Parcel;)V
-
-    new-instance p1, Ljava/lang/IllegalStateException;
-
-    invoke-direct {p1, v0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw p1
-
-    :pswitch_3
-    sget-object p1, Lcom/google/android/gms/common/api/Status;->CREATOR:Landroid/os/Parcelable$Creator;
-
-    invoke-static {p2, p1}, Lcbg;->a(Landroid/os/Parcel;Landroid/os/Parcelable$Creator;)Landroid/os/Parcelable;
-
-    move-result-object p1
-
-    check-cast p1, Lcom/google/android/gms/common/api/Status;
-
-    invoke-static {p2}, Lcbg;->b(Landroid/os/Parcel;)V
-
-    new-instance p1, Ljava/lang/IllegalStateException;
-
-    invoke-direct {p1, v0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw p1
-
-    :pswitch_4
-    sget-object p1, Lcom/google/android/gms/common/api/Status;->CREATOR:Landroid/os/Parcelable$Creator;
-
-    invoke-static {p2, p1}, Lcbg;->a(Landroid/os/Parcel;Landroid/os/Parcelable$Creator;)Landroid/os/Parcelable;
-
-    move-result-object p1
-
-    check-cast p1, Lcom/google/android/gms/common/api/Status;
-
-    invoke-virtual {p2}, Landroid/os/Parcel;->createStringArrayList()Ljava/util/ArrayList;
-
-    invoke-static {p2}, Lcbg;->b(Landroid/os/Parcel;)V
-
-    new-instance p1, Ljava/lang/IllegalStateException;
-
-    invoke-direct {p1, v0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw p1
-
-    :pswitch_5
-    sget-object p1, Lcom/google/android/gms/common/api/Status;->CREATOR:Landroid/os/Parcelable$Creator;
-
-    invoke-static {p2, p1}, Lcbg;->a(Landroid/os/Parcel;Landroid/os/Parcelable$Creator;)Landroid/os/Parcelable;
-
-    move-result-object p1
-
-    check-cast p1, Lcom/google/android/gms/common/api/Status;
-
-    invoke-static {p2}, Lcbg;->b(Landroid/os/Parcel;)V
-
-    invoke-virtual {p0, p1}, Ljpn;->d(Lcom/google/android/gms/common/api/Status;)V
-
-    goto :goto_0
-
-    :pswitch_6
-    sget-object p1, Lcom/google/android/gms/common/api/Status;->CREATOR:Landroid/os/Parcelable$Creator;
-
-    invoke-static {p2, p1}, Lcbg;->a(Landroid/os/Parcel;Landroid/os/Parcelable$Creator;)Landroid/os/Parcelable;
-
-    move-result-object p1
-
-    check-cast p1, Lcom/google/android/gms/common/api/Status;
-
-    invoke-static {p2}, Lcbg;->b(Landroid/os/Parcel;)V
-
-    invoke-virtual {p0, p1}, Ljpn;->c(Lcom/google/android/gms/common/api/Status;)V
-
-    goto :goto_0
-
-    :pswitch_7
-    sget-object p1, Lcom/google/android/gms/common/api/Status;->CREATOR:Landroid/os/Parcelable$Creator;
-
-    invoke-static {p2, p1}, Lcbg;->a(Landroid/os/Parcel;Landroid/os/Parcelable$Creator;)Landroid/os/Parcelable;
-
-    move-result-object p1
-
-    check-cast p1, Lcom/google/android/gms/common/api/Status;
-
-    invoke-static {p2}, Lcbg;->b(Landroid/os/Parcel;)V
-
-    new-instance p1, Ljava/lang/IllegalStateException;
-
-    invoke-direct {p1, v0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw p1
-
-    :pswitch_8
-    sget-object p1, Lcom/google/android/gms/common/api/Status;->CREATOR:Landroid/os/Parcelable$Creator;
-
-    invoke-static {p2, p1}, Lcbg;->a(Landroid/os/Parcel;Landroid/os/Parcelable$Creator;)Landroid/os/Parcelable;
-
-    move-result-object p1
-
-    check-cast p1, Lcom/google/android/gms/common/api/Status;
-
-    sget-object p3, Ljpm;->CREATOR:Landroid/os/Parcelable$Creator;
-
-    invoke-static {p2, p3}, Lcbg;->a(Landroid/os/Parcel;Landroid/os/Parcelable$Creator;)Landroid/os/Parcelable;
-
-    move-result-object p3
-
-    check-cast p3, Ljpm;
-
-    invoke-static {p2}, Lcbg;->b(Landroid/os/Parcel;)V
-
-    invoke-virtual {p0, p1, p3}, Ljpn;->b(Lcom/google/android/gms/common/api/Status;Ljpm;)V
-
-    :goto_0
-    const/4 p1, 0x1
-
-    return p1
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x2
-        :pswitch_8
-        :pswitch_7
-        :pswitch_6
-        :pswitch_5
-        :pswitch_4
-        :pswitch_3
-        :pswitch_2
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
+    return-object v1
 .end method

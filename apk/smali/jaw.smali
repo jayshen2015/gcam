@@ -1,124 +1,38 @@
-.class public Ljaw;
-.super Lcbf;
+.class final Ljaw;
+.super Leg;
 
-# interfaces
-.implements Landroid/os/IInterface;
+
+# instance fields
+.field final synthetic a:Ljay;
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 1
+.method public constructor <init>(Ljay;)V
+    .locals 0
 
-    const-string v0, "com.google.android.gms.auth.api.signin.internal.ISignInCallbacks"
+    iput-object p1, p0, Ljaw;->a:Ljay;
 
-    invoke-direct {p0, v0}, Lcbf;-><init>(Ljava/lang/String;)V
+    invoke-direct {p0}, Leg;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public b(Lcom/google/android/gms/auth/api/signin/GoogleSignInAccount;Lcom/google/android/gms/common/api/Status;)V
-    .locals 0
-
-    new-instance p1, Ljava/lang/UnsupportedOperationException;
-
-    invoke-direct {p1}, Ljava/lang/UnsupportedOperationException;-><init>()V
-
-    throw p1
-.end method
-
-.method public c(Lcom/google/android/gms/common/api/Status;)V
-    .locals 0
-
-    new-instance p1, Ljava/lang/UnsupportedOperationException;
-
-    invoke-direct {p1}, Ljava/lang/UnsupportedOperationException;-><init>()V
-
-    throw p1
-.end method
-
-.method public d(Lcom/google/android/gms/common/api/Status;)V
-    .locals 0
-
-    new-instance p1, Ljava/lang/UnsupportedOperationException;
-
-    invoke-direct {p1}, Ljava/lang/UnsupportedOperationException;-><init>()V
-
-    throw p1
-.end method
-
-.method protected final x(ILandroid/os/Parcel;Landroid/os/Parcel;)Z
+.method public final a(Landroid/graphics/Typeface;)V
     .locals 1
 
-    packed-switch p1, :pswitch_data_0
+    iget-object v0, p0, Ljaw;->a:Ljay;
 
-    const/4 p1, 0x0
+    iget-object v0, v0, Ljay;->c:Landroid/widget/TextView;
 
-    return p1
+    invoke-virtual {v0, p1}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
 
-    :pswitch_0
-    sget-object p1, Lcom/google/android/gms/common/api/Status;->CREATOR:Landroid/os/Parcelable$Creator;
+    return-void
+.end method
 
-    invoke-static {p2, p1}, Lcbg;->a(Landroid/os/Parcel;Landroid/os/Parcelable$Creator;)Landroid/os/Parcelable;
+.method public final e()V
+    .locals 0
 
-    move-result-object p1
-
-    check-cast p1, Lcom/google/android/gms/common/api/Status;
-
-    invoke-static {p2}, Lcbg;->b(Landroid/os/Parcel;)V
-
-    invoke-virtual {p0, p1}, Ljaw;->d(Lcom/google/android/gms/common/api/Status;)V
-
-    goto :goto_0
-
-    :pswitch_1
-    sget-object p1, Lcom/google/android/gms/common/api/Status;->CREATOR:Landroid/os/Parcelable$Creator;
-
-    invoke-static {p2, p1}, Lcbg;->a(Landroid/os/Parcel;Landroid/os/Parcelable$Creator;)Landroid/os/Parcelable;
-
-    move-result-object p1
-
-    check-cast p1, Lcom/google/android/gms/common/api/Status;
-
-    invoke-static {p2}, Lcbg;->b(Landroid/os/Parcel;)V
-
-    invoke-virtual {p0, p1}, Ljaw;->c(Lcom/google/android/gms/common/api/Status;)V
-
-    goto :goto_0
-
-    :pswitch_2
-    sget-object p1, Lcom/google/android/gms/auth/api/signin/GoogleSignInAccount;->CREATOR:Landroid/os/Parcelable$Creator;
-
-    invoke-static {p2, p1}, Lcbg;->a(Landroid/os/Parcel;Landroid/os/Parcelable$Creator;)Landroid/os/Parcelable;
-
-    move-result-object p1
-
-    check-cast p1, Lcom/google/android/gms/auth/api/signin/GoogleSignInAccount;
-
-    sget-object v0, Lcom/google/android/gms/common/api/Status;->CREATOR:Landroid/os/Parcelable$Creator;
-
-    invoke-static {p2, v0}, Lcbg;->a(Landroid/os/Parcel;Landroid/os/Parcelable$Creator;)Landroid/os/Parcelable;
-
-    move-result-object v0
-
-    check-cast v0, Lcom/google/android/gms/common/api/Status;
-
-    invoke-static {p2}, Lcbg;->b(Landroid/os/Parcel;)V
-
-    invoke-virtual {p0, p1, v0}, Ljaw;->b(Lcom/google/android/gms/auth/api/signin/GoogleSignInAccount;Lcom/google/android/gms/common/api/Status;)V
-
-    :goto_0
-    invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
-
-    const/4 p1, 0x1
-
-    return p1
-
-    :pswitch_data_0
-    .packed-switch 0x65
-        :pswitch_2
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
+    return-void
 .end method

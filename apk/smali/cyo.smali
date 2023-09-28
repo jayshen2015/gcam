@@ -1,60 +1,12 @@
-.class Lcyo;
-.super Lcys;
-
-
-# instance fields
-.field final synthetic b:Lcyp;
+.class public final Lcyo;
+.super Ljava/lang/IllegalStateException;
 
 
 # direct methods
-.method public constructor <init>(Lcyp;)V
+.method public constructor <init>(Ljava/lang/String;Ljava/lang/Throwable;)V
     .locals 0
 
-    iput-object p1, p0, Lcyo;->b:Lcyp;
-
-    invoke-direct {p0}, Lcys;-><init>()V
-
-    return-void
-.end method
-
-
-# virtual methods
-.method public b()V
-    .locals 1
-
-    iget-object v0, p0, Lcyo;->b:Lcyp;
-
-    invoke-virtual {v0}, Lcyp;->k()V
-
-    return-void
-.end method
-
-.method public final bx()I
-    .locals 1
-
-    const/4 v0, 0x2
-
-    return v0
-.end method
-
-.method public d()V
-    .locals 1
-
-    iget-object v0, p0, Lcyo;->b:Lcyp;
-
-    iget-object v0, v0, Lcyp;->j:Ldfa;
-
-    invoke-virtual {v0}, Ldfa;->g()V
-
-    return-void
-.end method
-
-.method public final f()V
-    .locals 1
-
-    iget-object v0, p0, Lcyo;->b:Lcyp;
-
-    iput-object p0, v0, Lcyp;->i:Lcys;
+    invoke-direct {p0, p1, p2}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
 
     return-void
 .end method

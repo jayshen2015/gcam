@@ -1,12 +1,12 @@
 .class public final Lcom/google/android/libraries/social/licenses/LicenseMenuActivity;
-.super Lei;
+.super Lih;
 
 
 # direct methods
 .method public constructor <init>()V
     .locals 0
 
-    invoke-direct {p0}, Lei;-><init>()V
+    invoke-direct {p0}, Lih;-><init>()V
 
     return-void
 .end method
@@ -16,52 +16,52 @@
 .method protected final onCreate(Landroid/os/Bundle;)V
     .locals 2
 
-    invoke-super {p0, p1}, Lei;->onCreate(Landroid/os/Bundle;)V
+    invoke-super {p0, p1}, Lih;->onCreate(Landroid/os/Bundle;)V
 
-    const p1, 0x7f0e0074
+    const p1, 0x7f0e006f
 
-    invoke-virtual {p0, p1}, Lpl;->setContentView(I)V
+    invoke-virtual {p0, p1}, Lub;->setContentView(I)V
 
-    invoke-virtual {p0}, Lei;->i()Ldy;
+    invoke-virtual {p0}, Lih;->f()Lhu;
 
     move-result-object p1
 
     if-eqz p1, :cond_0
 
-    invoke-virtual {p0}, Lei;->i()Ldy;
+    invoke-virtual {p0}, Lih;->f()Lhu;
 
     move-result-object p1
 
     const/4 v0, 0x1
 
-    invoke-virtual {p1, v0}, Ldy;->g(Z)V
+    invoke-virtual {p1, v0}, Lhu;->g(Z)V
 
     :cond_0
-    invoke-virtual {p0}, Lbz;->bI()Lcq;
+    invoke-virtual {p0}, Lby;->fm()Lcu;
 
     move-result-object p1
 
-    const v0, 0x7f0b01d8
+    const v0, 0x7f0b0192
 
-    invoke-virtual {p1, v0}, Lcq;->d(I)Lbw;
+    invoke-virtual {p1, v0}, Lcu;->c(I)Lbu;
 
     move-result-object v1
 
-    instance-of v1, v1, Llqy;
+    instance-of v1, v1, Lnig;
 
     if-nez v1, :cond_1
 
-    new-instance v1, Llqy;
+    new-instance v1, Lnig;
 
-    invoke-direct {v1}, Llqy;-><init>()V
+    invoke-direct {v1}, Lnig;-><init>()V
 
-    invoke-virtual {p1}, Lcq;->i()Lcx;
+    invoke-virtual {p1}, Lcu;->h()Ldd;
 
     move-result-object p1
 
-    invoke-virtual {p1, v0, v1}, Lcx;->m(ILbw;)V
+    invoke-virtual {p1, v0, v1}, Ldd;->l(ILbu;)V
 
-    invoke-virtual {p1}, Lcx;->b()V
+    invoke-virtual {p1}, Ldd;->b()V
 
     :cond_1
     return-void
@@ -85,7 +85,7 @@
     return p1
 
     :cond_0
-    invoke-super {p0, p1}, Lei;->onOptionsItemSelected(Landroid/view/MenuItem;)Z
+    invoke-super {p0, p1}, Lih;->onOptionsItemSelected(Landroid/view/MenuItem;)Z
 
     move-result p1
 

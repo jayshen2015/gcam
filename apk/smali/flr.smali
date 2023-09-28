@@ -1,70 +1,77 @@
-.class public final Lflr;
+.class public Lflr;
 .super Ljava/lang/Object;
 
-
-# static fields
-.field private static final a:Lnak;
+# interfaces
+.implements Lihs;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
+.method public constructor <init>()V
+    .locals 0
 
-    const-string v0, "com/google/android/apps/camera/modules/capture/CapturePictureTakerHelper"
-
-    invoke-static {v0}, Lnak;->h(Ljava/lang/String;)Lnak;
-
-    move-result-object v0
-
-    sput-object v0, Lflr;->a:Lnak;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
-.method public static a(Lgxl;Lmbe;)V
-    .locals 1
 
-    if-nez p0, :cond_0
-
-    sget-object p0, Lflr;->a:Lnak;
-
-    invoke-virtual {p0}, Lnaf;->c()Lnaz;
-
-    move-result-object p0
-
-    const-string p1, "No active capture session to interrupt."
-
-    const/16 v0, 0x93a
-
-    invoke-static {p0, p1, v0}, Ld;->g(Lnaz;Ljava/lang/String;C)V
+# virtual methods
+.method public a()V
+    .locals 0
 
     return-void
+.end method
 
-    :cond_0
-    iget-object p1, p1, Lmbe;->i:Ljava/lang/Object;
-
-    check-cast p1, Ljvk;
-
-    iget-object p1, p1, Ljvk;->d:Ljava/lang/Object;
-
-    check-cast p1, Ljava/lang/Boolean;
-
-    invoke-virtual {p1}, Ljava/lang/Boolean;->booleanValue()Z
-
-    move-result p1
-
-    if-eqz p1, :cond_1
-
-    invoke-interface {p0}, Lgxl;->E()V
+.method public b()V
+    .locals 0
 
     return-void
+.end method
 
-    :cond_1
-    new-instance p0, Ljava/lang/IllegalStateException;
+.method public c()V
+    .locals 0
 
-    const-string p1, "Capture is not on-going, hence cannot interrupt"
+    return-void
+.end method
 
-    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+.method public d()V
+    .locals 0
 
-    throw p0
+    return-void
+.end method
+
+.method public synthetic f()V
+    .locals 0
+
+    return-void
+.end method
+
+.method public fZ()V
+    .locals 0
+
+    return-void
+.end method
+
+.method public synthetic g()V
+    .locals 0
+
+    return-void
+.end method
+
+.method public synthetic h()V
+    .locals 0
+
+    return-void
+.end method
+
+.method public i()V
+    .locals 0
+
+    return-void
+.end method
+
+.method public j()V
+    .locals 0
+
+    return-void
 .end method

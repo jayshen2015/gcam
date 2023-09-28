@@ -1,170 +1,156 @@
-.class public final Lifd;
-.super Ljava/lang/Object;
+.class final Lifd;
+.super Landroid/view/GestureDetector$SimpleOnGestureListener;
 
 
 # instance fields
-.field public final synthetic a:Life;
-
-.field private final b:Landroid/animation/Animator;
+.field final synthetic a:Life;
 
 
 # direct methods
-.method public constructor <init>(Life;Landroid/animation/Animator;)V
+.method public constructor <init>(Life;)V
     .locals 0
 
     iput-object p1, p0, Lifd;->a:Life;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p2, p0, Lifd;->b:Landroid/animation/Animator;
+    invoke-direct {p0}, Landroid/view/GestureDetector$SimpleOnGestureListener;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method final a()V
-    .locals 3
-
-    iget-object v0, p0, Lifd;->b:Landroid/animation/Animator;
-
-    const-wide/16 v1, 0x96
-
-    invoke-virtual {v0, v1, v2}, Landroid/animation/Animator;->setStartDelay(J)V
-
-    return-void
-.end method
-
-.method final b()V
+.method public final onFling(Landroid/view/MotionEvent;Landroid/view/MotionEvent;FF)Z
     .locals 2
 
-    iget-object v0, p0, Lifd;->b:Landroid/animation/Animator;
+    const/4 v0, 0x0
 
-    new-instance v1, Lifc;
+    if-eqz p1, :cond_5
 
-    invoke-direct {v1, p0}, Lifc;-><init>(Lifd;)V
+    if-nez p2, :cond_0
 
-    invoke-virtual {v0, v1}, Landroid/animation/Animator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
-
-    return-void
-.end method
-
-.method final c(Lmqp;)V
-    .locals 3
-
-    invoke-virtual {p1}, Lmqp;->g()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    iget-object v0, p0, Lifd;->b:Landroid/animation/Animator;
-
-    new-instance v1, Lgdt;
-
-    const/4 v2, 0x7
-
-    invoke-direct {v1, p0, p1, v2}, Lgdt;-><init>(Lifd;Lmqp;I)V
-
-    invoke-static {v1}, Ljvd;->K(Ljava/util/function/Consumer;)Landroid/animation/Animator$AnimatorListener;
-
-    move-result-object p1
-
-    invoke-virtual {v0, p1}, Landroid/animation/Animator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
+    goto :goto_1
 
     :cond_0
-    return-void
-.end method
-
-.method final d(I)V
-    .locals 3
-
-    iget-object v0, p0, Lifd;->b:Landroid/animation/Animator;
-
-    int-to-long v1, p1
-
-    invoke-virtual {v0, v1, v2}, Landroid/animation/Animator;->setDuration(J)Landroid/animation/Animator;
-
-    return-void
-.end method
-
-.method final e()V
-    .locals 2
-
-    iget-object v0, p0, Lifd;->b:Landroid/animation/Animator;
-
-    sget-object v1, Life;->a:Landroid/view/animation/Interpolator;
-
-    invoke-virtual {v0, v1}, Landroid/animation/Animator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
-
-    return-void
-.end method
-
-.method final f()V
-    .locals 2
-
-    iget-object v0, p0, Lifd;->b:Landroid/animation/Animator;
+    sget-object v1, Ljrz;->a:Ljrz;
 
     iget-object v1, p0, Lifd;->a:Life;
 
-    iget-object v1, v1, Life;->s:Landroid/view/animation/Interpolator;
+    iget-object v1, v1, Life;->h:Ljrz;
 
-    invoke-virtual {v0, v1}, Landroid/animation/Animator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
+    invoke-virtual {v1}, Ljrz;->ordinal()I
 
-    return-void
-.end method
+    move-result v1
 
-.method final g()V
-    .locals 2
+    packed-switch v1, :pswitch_data_0
 
-    iget-object v0, p0, Lifd;->b:Landroid/animation/Animator;
+    invoke-virtual {p2}, Landroid/view/MotionEvent;->getY()F
 
-    iget-object v1, p0, Lifd;->a:Life;
+    move-result p2
 
-    iget-object v1, v1, Life;->t:Landroid/view/animation/Interpolator;
+    invoke-virtual {p1}, Landroid/view/MotionEvent;->getY()F
 
-    invoke-virtual {v0, v1}, Landroid/animation/Animator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
+    move-result p1
 
-    return-void
-.end method
+    sub-float p1, p2, p1
 
-.method final h(Lmqp;)V
-    .locals 3
+    invoke-static {p4}, Ljava/lang/Math;->abs(F)F
 
-    invoke-virtual {p1}, Lmqp;->g()Z
+    move-result p2
 
-    move-result v0
+    goto :goto_0
 
-    if-eqz v0, :cond_0
+    :pswitch_0
+    invoke-virtual {p1}, Landroid/view/MotionEvent;->getX()F
 
-    iget-object v0, p0, Lifd;->b:Landroid/animation/Animator;
+    move-result p1
 
-    new-instance v1, Lgdt;
+    invoke-virtual {p2}, Landroid/view/MotionEvent;->getX()F
 
-    const/16 v2, 0x8
+    move-result p2
 
-    invoke-direct {v1, p0, p1, v2}, Lgdt;-><init>(Lifd;Lmqp;I)V
+    sub-float/2addr p1, p2
 
-    invoke-static {v1}, Ljvd;->L(Ljava/util/function/Consumer;)Landroid/animation/Animator$AnimatorListener;
+    invoke-static {p3}, Ljava/lang/Math;->abs(F)F
 
-    move-result-object p1
+    move-result p2
 
-    invoke-virtual {v0, p1}, Landroid/animation/Animator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
+    goto :goto_0
 
-    :cond_0
-    return-void
-.end method
+    :pswitch_1
+    invoke-virtual {p2}, Landroid/view/MotionEvent;->getX()F
 
-.method final i()V
-    .locals 2
+    move-result p2
 
-    iget-object v0, p0, Lifd;->b:Landroid/animation/Animator;
+    invoke-virtual {p1}, Landroid/view/MotionEvent;->getX()F
 
-    new-instance v1, Lifb;
+    move-result p1
 
-    invoke-direct {v1, p0}, Lifb;-><init>(Lifd;)V
+    sub-float p1, p2, p1
 
-    invoke-virtual {v0, v1}, Landroid/animation/Animator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
+    invoke-static {p3}, Ljava/lang/Math;->abs(F)F
 
-    return-void
+    move-result p2
+
+    :goto_0
+    const/high16 p3, -0x3d600000    # -80.0f
+
+    const/4 p4, 0x1
+
+    const/high16 v1, 0x43480000    # 200.0f
+
+    cmpg-float p3, p1, p3
+
+    if-gez p3, :cond_2
+
+    cmpl-float p3, p2, v1
+
+    if-lez p3, :cond_2
+
+    iget-object p1, p0, Lifd;->a:Life;
+
+    iget-object p1, p1, Life;->k:Liby;
+
+    if-eqz p1, :cond_1
+
+    invoke-virtual {p1}, Liby;->b()V
+
+    :cond_1
+    return p4
+
+    :cond_2
+    const/high16 p3, 0x42a00000    # 80.0f
+
+    cmpl-float p1, p1, p3
+
+    if-lez p1, :cond_4
+
+    cmpl-float p1, p2, v1
+
+    if-lez p1, :cond_4
+
+    iget-object p1, p0, Lifd;->a:Life;
+
+    iget-object p1, p1, Life;->k:Liby;
+
+    if-eqz p1, :cond_3
+
+    invoke-virtual {p1}, Liby;->a()V
+
+    :cond_3
+    return p4
+
+    :cond_4
+    return v0
+
+    :cond_5
+    :goto_1
+    return v0
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x1
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method

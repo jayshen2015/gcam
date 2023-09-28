@@ -1,49 +1,242 @@
-.class public final Lopz;
+.class final Lopz;
 .super Ljava/lang/Object;
 
+# interfaces
+.implements Ljava/util/Iterator;
+.implements Lj$/util/Iterator;
 
-# static fields
-.field public static final a:Loqa;
+
+# instance fields
+.field private a:Ljava/util/Iterator;
+
+.field private b:Ljava/util/Iterator;
+
+.field private c:Ljava/util/Iterator;
+
+.field private d:Ljava/util/Deque;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
+.method public constructor <init>(Ljava/util/Iterator;)V
+    .locals 1
 
-    const-string v0, "kotlinx.coroutines.main.delay"
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const/4 v1, 0x0
+    sget-object v0, Lopy;->a:Lotj;
 
-    invoke-static {v0, v1}, Lljz;->D(Ljava/lang/String;Z)Z
+    iput-object v0, p0, Lopz;->b:Ljava/util/Iterator;
 
-    move-result v0
+    iput-object p1, p0, Lopz;->c:Ljava/util/Iterator;
 
-    if-nez v0, :cond_0
+    return-void
+.end method
 
-    sget-object v0, Lopy;->c:Lopy;
 
-    goto :goto_0
+# virtual methods
+.method public final synthetic forEachRemaining(Lj$/util/function/Consumer;)V
+    .locals 0
+
+    invoke-static {p0, p1}, Lj$/util/Iterator$-CC;->$default$forEachRemaining(Ljava/util/Iterator;Lj$/util/function/Consumer;)V
+
+    return-void
+.end method
+
+.method public final hasNext()Z
+    .locals 3
 
     :cond_0
-    sget-object v0, Loqf;->a:Lopq;
-
-    sget-object v0, Lowu;->a:Lork;
+    :goto_0
+    iget-object v0, p0, Lopz;->b:Ljava/util/Iterator;
 
     invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    instance-of v1, v0, Loqa;
+    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
-    if-nez v1, :cond_1
+    move-result v0
 
-    sget-object v0, Lopy;->c:Lopy;
+    if-nez v0, :cond_8
+
+    :goto_1
+    iget-object v0, p0, Lopz;->c:Ljava/util/Iterator;
+
+    const/4 v1, 0x0
+
+    if-eqz v0, :cond_2
+
+    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v0
+
+    if-nez v0, :cond_1
+
+    goto :goto_2
+
+    :cond_1
+    iget-object v1, p0, Lopz;->c:Ljava/util/Iterator;
+
+    goto :goto_3
+
+    :cond_2
+    :goto_2
+    iget-object v0, p0, Lopz;->d:Ljava/util/Deque;
+
+    if-eqz v0, :cond_4
+
+    invoke-interface {v0}, Ljava/util/Deque;->isEmpty()Z
+
+    move-result v0
+
+    if-nez v0, :cond_3
+
+    iget-object v0, p0, Lopz;->d:Ljava/util/Deque;
+
+    invoke-interface {v0}, Ljava/util/Deque;->removeFirst()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/util/Iterator;
+
+    iput-object v0, p0, Lopz;->c:Ljava/util/Iterator;
+
+    goto :goto_1
+
+    :cond_3
+    goto :goto_3
+
+    :cond_4
+    :goto_3
+    iput-object v1, p0, Lopz;->c:Ljava/util/Iterator;
+
+    if-nez v1, :cond_5
+
+    const/4 v0, 0x0
+
+    return v0
+
+    :cond_5
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/util/Iterator;
+
+    iput-object v0, p0, Lopz;->b:Ljava/util/Iterator;
+
+    instance-of v1, v0, Lopz;
+
+    if-eqz v1, :cond_0
+
+    check-cast v0, Lopz;
+
+    iget-object v1, v0, Lopz;->b:Ljava/util/Iterator;
+
+    iput-object v1, p0, Lopz;->b:Ljava/util/Iterator;
+
+    iget-object v1, p0, Lopz;->d:Ljava/util/Deque;
+
+    if-nez v1, :cond_6
+
+    new-instance v1, Ljava/util/ArrayDeque;
+
+    invoke-direct {v1}, Ljava/util/ArrayDeque;-><init>()V
+
+    iput-object v1, p0, Lopz;->d:Ljava/util/Deque;
+
+    :cond_6
+    iget-object v1, p0, Lopz;->d:Ljava/util/Deque;
+
+    iget-object v2, p0, Lopz;->c:Ljava/util/Iterator;
+
+    invoke-interface {v1, v2}, Ljava/util/Deque;->addFirst(Ljava/lang/Object;)V
+
+    iget-object v1, v0, Lopz;->d:Ljava/util/Deque;
+
+    if-eqz v1, :cond_7
+
+    :goto_4
+    iget-object v1, v0, Lopz;->d:Ljava/util/Deque;
+
+    invoke-interface {v1}, Ljava/util/Deque;->isEmpty()Z
+
+    move-result v1
+
+    if-nez v1, :cond_7
+
+    iget-object v1, p0, Lopz;->d:Ljava/util/Deque;
+
+    iget-object v2, v0, Lopz;->d:Ljava/util/Deque;
+
+    invoke-interface {v2}, Ljava/util/Deque;->removeLast()Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Ljava/util/Iterator;
+
+    invoke-interface {v1, v2}, Ljava/util/Deque;->addFirst(Ljava/lang/Object;)V
+
+    goto :goto_4
+
+    :cond_7
+    iget-object v0, v0, Lopz;->c:Ljava/util/Iterator;
+
+    iput-object v0, p0, Lopz;->c:Ljava/util/Iterator;
 
     goto :goto_0
 
-    :cond_1
-    check-cast v0, Loqa;
+    :cond_8
+    const/4 v0, 0x1
 
-    :goto_0
-    sput-object v0, Lopz;->a:Loqa;
+    return v0
+.end method
+
+.method public final next()Ljava/lang/Object;
+    .locals 1
+
+    invoke-virtual {p0}, Lopz;->hasNext()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lopz;->b:Ljava/util/Iterator;
+
+    iput-object v0, p0, Lopz;->a:Ljava/util/Iterator;
+
+    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    return-object v0
+
+    :cond_0
+    new-instance v0, Ljava/util/NoSuchElementException;
+
+    invoke-direct {v0}, Ljava/util/NoSuchElementException;-><init>()V
+
+    throw v0
+.end method
+
+.method public final remove()V
+    .locals 2
+
+    iget-object v0, p0, Lopz;->a:Ljava/util/Iterator;
+
+    if-eqz v0, :cond_0
+
+    invoke-interface {v0}, Ljava/util/Iterator;->remove()V
+
+    const/4 v0, 0x0
+
+    iput-object v0, p0, Lopz;->a:Ljava/util/Iterator;
 
     return-void
+
+    :cond_0
+    new-instance v0, Ljava/lang/IllegalStateException;
+
+    const-string v1, "no calls to next() since the last call to remove()"
+
+    invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw v0
 .end method

@@ -1,220 +1,257 @@
 .class public final Lnju;
-.super Lnws;
-
-# interfaces
-.implements Lnxz;
-
-
-# static fields
-.field public static final h:Lnju;
-
-.field private static volatile i:Lnyf;
+.super Ljava/lang/Object;
 
 
 # instance fields
-.field public a:I
+.field public a:Ljava/lang/Boolean;
 
-.field public b:I
+.field public b:Lnjy;
 
-.field public c:I
+.field private c:Landroid/net/Uri;
 
-.field public d:I
+.field private d:Lpqm;
 
-.field public e:F
+.field private e:Lnjo;
 
-.field public f:J
+.field private f:Loom;
 
-.field public g:J
+.field private g:Ljava/lang/Boolean;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
-
-    new-instance v0, Lnju;
-
-    invoke-direct {v0}, Lnju;-><init>()V
-
-    sput-object v0, Lnju;->h:Lnju;
-
-    const-class v1, Lnju;
-
-    invoke-static {v1, v0}, Lnws;->aa(Ljava/lang/Class;Lnws;)V
-
-    return-void
-.end method
-
-.method private constructor <init>()V
+.method public constructor <init>()V
     .locals 0
 
-    invoke-direct {p0}, Lnws;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method protected final a(ILjava/lang/Object;)Ljava/lang/Object;
-    .locals 3
+.method public final a()Lnjv;
+    .locals 10
 
-    add-int/lit8 p1, p1, -0x1
+    iget-object v0, p0, Lnju;->f:Loom;
 
-    const/4 p2, 0x1
+    if-nez v0, :cond_0
 
-    packed-switch p1, :pswitch_data_0
+    invoke-static {}, Loom;->l()Loom;
 
-    :pswitch_0
-    const/4 p1, 0x0
+    move-result-object v0
 
-    return-object p1
-
-    :pswitch_1
-    sget-object p1, Lnju;->i:Lnyf;
-
-    if-nez p1, :cond_1
-
-    const-class p2, Lnju;
-
-    monitor-enter p2
-
-    :try_start_0
-    sget-object p1, Lnju;->i:Lnyf;
-
-    if-nez p1, :cond_0
-
-    new-instance p1, Lnwo;
-
-    sget-object v0, Lnju;->h:Lnju;
-
-    invoke-direct {p1, v0}, Lnwo;-><init>(Lnws;)V
-
-    sput-object p1, Lnju;->i:Lnyf;
+    iput-object v0, p0, Lnju;->f:Loom;
 
     :cond_0
-    monitor-exit p2
+    iget-object v2, p0, Lnju;->c:Landroid/net/Uri;
+
+    if-eqz v2, :cond_2
+
+    iget-object v3, p0, Lnju;->d:Lpqm;
+
+    if-eqz v3, :cond_2
+
+    iget-object v4, p0, Lnju;->e:Lnjo;
+
+    if-eqz v4, :cond_2
+
+    iget-object v6, p0, Lnju;->b:Lnjy;
+
+    if-eqz v6, :cond_2
+
+    iget-object v0, p0, Lnju;->a:Ljava/lang/Boolean;
+
+    if-eqz v0, :cond_2
+
+    iget-object v1, p0, Lnju;->g:Ljava/lang/Boolean;
+
+    if-nez v1, :cond_1
 
     goto :goto_0
 
-    :catchall_0
-    move-exception p1
+    :cond_1
+    new-instance v9, Lnjv;
 
-    monitor-exit p2
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    iget-object v5, p0, Lnju;->f:Loom;
+
+    invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
+
+    move-result v7
+
+    iget-object v0, p0, Lnju;->g:Ljava/lang/Boolean;
+
+    invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
+
+    move-result v8
+
+    move-object v1, v9
+
+    invoke-direct/range {v1 .. v8}, Lnjv;-><init>(Landroid/net/Uri;Lpqm;Lnjo;Loom;Lnjy;ZZ)V
+
+    return-object v9
+
+    :cond_2
+    :goto_0
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
+    iget-object v1, p0, Lnju;->c:Landroid/net/Uri;
+
+    if-nez v1, :cond_3
+
+    const-string v1, " uri"
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    :cond_3
+    iget-object v1, p0, Lnju;->d:Lpqm;
+
+    if-nez v1, :cond_4
+
+    const-string v1, " schema"
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    :cond_4
+    iget-object v1, p0, Lnju;->e:Lnjo;
+
+    if-nez v1, :cond_5
+
+    const-string v1, " handler"
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    :cond_5
+    iget-object v1, p0, Lnju;->b:Lnjy;
+
+    if-nez v1, :cond_6
+
+    const-string v1, " variantConfig"
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    :cond_6
+    iget-object v1, p0, Lnju;->a:Ljava/lang/Boolean;
+
+    if-nez v1, :cond_7
+
+    const-string v1, " useGeneratedExtensionRegistry"
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    :cond_7
+    iget-object v1, p0, Lnju;->g:Ljava/lang/Boolean;
+
+    if-nez v1, :cond_8
+
+    const-string v1, " enableTracing"
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    :cond_8
+    new-instance v1, Ljava/lang/IllegalStateException;
+
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/String;->length()I
+
+    move-result v2
+
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    add-int/lit8 v2, v2, 0x1c
+
+    invoke-direct {v3, v2}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string v2, "Missing required properties:"
+
+    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-direct {v1, v0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw v1
+.end method
+
+.method public final b()V
+    .locals 1
+
+    const/4 v0, 0x0
+
+    invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lnju;->g:Ljava/lang/Boolean;
+
+    return-void
+.end method
+
+.method public final c(Lnjo;)V
+    .locals 1
+
+    if-eqz p1, :cond_0
+
+    iput-object p1, p0, Lnju;->e:Lnjo;
+
+    return-void
+
+    :cond_0
+    new-instance p1, Ljava/lang/NullPointerException;
+
+    const-string v0, "Null handler"
+
+    invoke-direct {p1, v0}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
 
     throw p1
+.end method
 
-    :cond_1
-    :goto_0
-    return-object p1
+.method public final d(Lpqm;)V
+    .locals 1
 
-    :pswitch_2
-    sget-object p1, Lnju;->h:Lnju;
+    if-eqz p1, :cond_0
 
-    return-object p1
+    iput-object p1, p0, Lnju;->d:Lpqm;
 
-    :pswitch_3
-    new-instance p1, Lnwn;
+    return-void
 
-    sget-object p2, Lnju;->h:Lnju;
+    :cond_0
+    new-instance p1, Ljava/lang/NullPointerException;
 
-    invoke-direct {p1, p2}, Lnwn;-><init>(Lnws;)V
+    const-string v0, "Null schema"
 
-    return-object p1
+    invoke-direct {p1, v0}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
 
-    :pswitch_4
-    new-instance p1, Lnju;
+    throw p1
+.end method
 
-    invoke-direct {p1}, Lnju;-><init>()V
+.method public final e(Landroid/net/Uri;)V
+    .locals 1
 
-    return-object p1
+    if-eqz p1, :cond_0
 
-    :pswitch_5
-    const-string p1, "a"
+    iput-object p1, p0, Lnju;->c:Landroid/net/Uri;
 
-    const-string v0, "\u0001\u0006\u0000\u0001\u0001\u0006\u0006\u0000\u0000\u0000\u0001\u100c\u0000\u0002\u100c\u0001\u0003\u100c\u0002\u0004\u1001\u0003\u0005\u1002\u0004\u0006\u1002\u0005"
+    return-void
 
-    const/16 v1, 0xa
+    :cond_0
+    new-instance p1, Ljava/lang/NullPointerException;
 
-    new-array v1, v1, [Ljava/lang/Object;
+    const-string v0, "Null uri"
 
-    const/4 v2, 0x0
+    invoke-direct {p1, v0}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
 
-    aput-object p1, v1, v2
-
-    const-string p1, "b"
-
-    aput-object p1, v1, p2
-
-    sget-object p1, Lnjv;->b:Lnww;
-
-    const/4 p2, 0x4
-
-    aput-object p1, v1, p2
-
-    const/4 p2, 0x2
-
-    aput-object p1, v1, p2
-
-    const/4 p1, 0x3
-
-    const-string p2, "c"
-
-    aput-object p2, v1, p1
-
-    const/4 p1, 0x5
-
-    const-string p2, "d"
-
-    aput-object p2, v1, p1
-
-    const/4 p1, 0x6
-
-    sget-object p2, Lnjb;->u:Lnww;
-
-    aput-object p2, v1, p1
-
-    const/4 p1, 0x7
-
-    const-string p2, "e"
-
-    aput-object p2, v1, p1
-
-    const/16 p1, 0x8
-
-    const-string p2, "f"
-
-    aput-object p2, v1, p1
-
-    const/16 p1, 0x9
-
-    const-string p2, "g"
-
-    aput-object p2, v1, p1
-
-    sget-object p1, Lnju;->h:Lnju;
-
-    invoke-static {p1, v0, v1}, Lnju;->X(Lnxy;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object p1
-
-    return-object p1
-
-    :pswitch_6
-    invoke-static {p2}, Ljava/lang/Byte;->valueOf(B)Ljava/lang/Byte;
-
-    move-result-object p1
-
-    return-object p1
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_6
-        :pswitch_0
-        :pswitch_5
-        :pswitch_4
-        :pswitch_3
-        :pswitch_2
-        :pswitch_1
-    .end packed-switch
+    throw p1
 .end method

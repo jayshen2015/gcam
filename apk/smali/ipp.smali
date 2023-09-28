@@ -1,156 +1,110 @@
-.class public final Lipp;
-.super Lnws;
+.class public final synthetic Lipp;
+.super Ljava/lang/Object;
 
 # interfaces
-.implements Lnxz;
-
-
-# static fields
-.field public static final b:Lipp;
-
-.field private static volatile c:Lnyf;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field public a:I
+.field public final synthetic a:Lipr;
+
+.field public final synthetic b:Z
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
-
-    new-instance v0, Lipp;
-
-    invoke-direct {v0}, Lipp;-><init>()V
-
-    sput-object v0, Lipp;->b:Lipp;
-
-    const-class v1, Lipp;
-
-    invoke-static {v1, v0}, Lnws;->aa(Ljava/lang/Class;Lnws;)V
-
-    return-void
-.end method
-
-.method private constructor <init>()V
+.method public synthetic constructor <init>(Lipr;Z)V
     .locals 0
 
-    invoke-direct {p0}, Lnws;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lipp;->a:Lipr;
+
+    iput-boolean p2, p0, Lipp;->b:Z
 
     return-void
 .end method
 
 
 # virtual methods
-.method protected final a(ILjava/lang/Object;)Ljava/lang/Object;
-    .locals 2
+.method public final run()V
+    .locals 4
 
-    add-int/lit8 p1, p1, -0x1
+    iget-object v0, p0, Lipp;->a:Lipr;
 
-    const/4 p2, 0x1
+    iget-boolean v1, p0, Lipp;->b:Z
 
-    packed-switch p1, :pswitch_data_0
+    if-eqz v1, :cond_0
 
-    :pswitch_0
-    const/4 p1, 0x0
+    iget-object v1, v0, Lipr;->l:Likm;
 
-    return-object p1
+    new-instance v2, Lipk;
 
-    :pswitch_1
-    sget-object p1, Lipp;->c:Lnyf;
+    const/4 v3, 0x1
 
-    if-nez p1, :cond_1
+    invoke-direct {v2, v0, v3}, Lipk;-><init>(Lipr;I)V
 
-    const-class p2, Lipp;
+    invoke-virtual {v1, v2}, Likm;->c(Landroid/content/DialogInterface$OnClickListener;)Lie;
 
-    monitor-enter p2
+    move-result-object v1
 
-    :try_start_0
-    sget-object p1, Lipp;->c:Lnyf;
-
-    if-nez p1, :cond_0
-
-    new-instance p1, Lnwo;
-
-    sget-object v0, Lipp;->b:Lipp;
-
-    invoke-direct {p1, v0}, Lnwo;-><init>(Lnws;)V
-
-    sput-object p1, Lipp;->c:Lnyf;
-
-    :cond_0
-    monitor-exit p2
+    iput-object v1, v0, Lipr;->k:Lie;
 
     goto :goto_0
 
-    :catchall_0
-    move-exception p1
+    :cond_0
+    iget-object v1, v0, Lipr;->l:Likm;
 
-    monitor-exit p2
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    new-instance v2, Lipk;
 
-    throw p1
+    const/4 v3, 0x0
+
+    invoke-direct {v2, v0, v3}, Lipk;-><init>(Lipr;I)V
+
+    invoke-virtual {v1, v2}, Likm;->d(Landroid/content/DialogInterface$OnClickListener;)Lie;
+
+    move-result-object v1
+
+    iput-object v1, v0, Lipr;->k:Lie;
+
+    :goto_0
+    iget-object v1, v0, Lipr;->k:Lie;
+
+    new-instance v2, Lipl;
+
+    invoke-direct {v2, v0}, Lipl;-><init>(Lipr;)V
+
+    invoke-virtual {v1, v2}, Lie;->setOnDismissListener(Landroid/content/DialogInterface$OnDismissListener;)V
+
+    iget-object v1, v0, Lipr;->k:Lie;
+
+    invoke-virtual {v1}, Lie;->isShowing()Z
+
+    move-result v1
+
+    if-nez v1, :cond_1
+
+    iget-object v1, v0, Lipr;->k:Lie;
+
+    invoke-virtual {v1}, Lie;->show()V
+
+    iget-object v0, v0, Lipr;->k:Lie;
+
+    const v1, 0x102000b
+
+    invoke-virtual {v0, v1}, Lja;->findViewById(I)Landroid/view/View;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/widget/TextView;
+
+    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    invoke-static {}, Landroid/text/method/LinkMovementMethod;->getInstance()Landroid/text/method/MovementMethod;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setMovementMethod(Landroid/text/method/MovementMethod;)V
 
     :cond_1
-    :goto_0
-    return-object p1
-
-    :pswitch_2
-    sget-object p1, Lipp;->b:Lipp;
-
-    return-object p1
-
-    :pswitch_3
-    new-instance p1, Lnwn;
-
-    sget-object p2, Lipp;->b:Lipp;
-
-    invoke-direct {p1, p2}, Lnwn;-><init>(Lnws;)V
-
-    return-object p1
-
-    :pswitch_4
-    new-instance p1, Lipp;
-
-    invoke-direct {p1}, Lipp;-><init>()V
-
-    return-object p1
-
-    :pswitch_5
-    const-string p1, "\u0000\u0001\u0000\u0000\u0001\u0001\u0001\u0000\u0000\u0000\u0001\u0004"
-
-    new-array p2, p2, [Ljava/lang/Object;
-
-    const/4 v0, 0x0
-
-    const-string v1, "a"
-
-    aput-object v1, p2, v0
-
-    sget-object v0, Lipp;->b:Lipp;
-
-    invoke-static {v0, p1, p2}, Lipp;->X(Lnxy;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object p1
-
-    return-object p1
-
-    :pswitch_6
-    invoke-static {p2}, Ljava/lang/Byte;->valueOf(B)Ljava/lang/Byte;
-
-    move-result-object p1
-
-    return-object p1
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_6
-        :pswitch_0
-        :pswitch_5
-        :pswitch_4
-        :pswitch_3
-        :pswitch_2
-        :pswitch_1
-    .end packed-switch
+    return-void
 .end method

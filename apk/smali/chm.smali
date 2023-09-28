@@ -1,22 +1,52 @@
-.class public final Lchm;
+.class public final synthetic Lchm;
 .super Ljava/lang/Object;
 
+# interfaces
+.implements Loiu;
 
-# static fields
-.field public static final a:Lcep;
+
+# instance fields
+.field public final synthetic a:Lchv;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
+.method public synthetic constructor <init>(Lchv;)V
+    .locals 0
 
-    new-instance v0, Lcep;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const/4 v1, 0x6
-
-    invoke-direct {v0, v1}, Lcep;-><init>(I)V
-
-    sput-object v0, Lchm;->a:Lcep;
+    iput-object p1, p0, Lchm;->a:Lchv;
 
     return-void
+.end method
+
+
+# virtual methods
+.method public final a(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 2
+
+    iget-object v0, p0, Lchm;->a:Lchv;
+
+    check-cast p1, Litz;
+
+    invoke-static {p1}, Lchv;->i(Litz;)Landroid/graphics/PointF;
+
+    move-result-object v1
+
+    invoke-virtual {p1}, Litz;->c()Z
+
+    move-result p1
+
+    if-nez p1, :cond_0
+
+    return-object v1
+
+    :cond_0
+    iget-object p1, v0, Lchv;->n:Lnle;
+
+    invoke-virtual {p1, v1}, Lnle;->k(Landroid/graphics/PointF;)Landroid/graphics/PointF;
+
+    move-result-object p1
+
+    return-object p1
 .end method

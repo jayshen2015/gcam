@@ -1,43 +1,93 @@
-.class public final Lkyq;
-.super Ljava/util/concurrent/atomic/AtomicReference;
+.class final Lkyq;
+.super Lkzl;
+
+
+# instance fields
+.field private final a:Ljava/lang/ref/WeakReference;
+
+.field private final b:Ljava/lang/ref/WeakReference;
 
 
 # direct methods
-.method public constructor <init>()V
+.method public constructor <init>(Ljava/util/Map;Ljava/lang/Object;Lkjj;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/util/concurrent/atomic/AtomicReference;-><init>()V
+    invoke-direct {p0, p3}, Lkzl;-><init>(Lkjj;)V
 
-    return-void
-.end method
+    new-instance p3, Ljava/lang/ref/WeakReference;
 
-.method public constructor <init>([B)V
-    .locals 0
+    invoke-direct {p3, p1}, Ljava/lang/ref/WeakReference;-><init>(Ljava/lang/Object;)V
 
-    const/4 p1, 0x0
+    iput-object p3, p0, Lkyq;->a:Ljava/lang/ref/WeakReference;
 
-    invoke-direct {p0, p1}, Ljava/util/concurrent/atomic/AtomicReference;-><init>(Ljava/lang/Object;)V
+    new-instance p1, Ljava/lang/ref/WeakReference;
+
+    invoke-direct {p1, p2}, Ljava/lang/ref/WeakReference;-><init>(Ljava/lang/Object;)V
+
+    iput-object p1, p0, Lkyq;->b:Ljava/lang/ref/WeakReference;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Lkyk;)V
-    .locals 1
+.method public final e(Lcom/google/android/gms/common/api/Status;)V
+    .locals 4
 
-    invoke-virtual {p0, p1}, Lkyq;->getAndSet(Ljava/lang/Object;)Ljava/lang/Object;
+    iget-object v0, p0, Lkyq;->a:Ljava/lang/ref/WeakReference;
+
+    invoke-virtual {v0}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Lkyk;
+    check-cast v0, Ljava/util/Map;
 
-    if-eqz v0, :cond_0
+    iget-object v1, p0, Lkyq;->b:Ljava/lang/ref/WeakReference;
 
-    if-eq v0, p1, :cond_0
+    invoke-virtual {v1}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
 
-    invoke-interface {v0}, Lkyk;->close()V
+    move-result-object v1
+
+    iget v2, p1, Lcom/google/android/gms/common/api/Status;->g:I
+
+    const/16 v3, 0xfa2
+
+    if-ne v2, v3, :cond_1
+
+    if-eqz v0, :cond_1
+
+    if-eqz v1, :cond_1
+
+    monitor-enter v0
+
+    :try_start_0
+    invoke-interface {v0, v1}, Ljava/util/Map;->remove(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Lkzs;
+
+    if-eqz v1, :cond_0
+
+    invoke-virtual {v1}, Lkzs;->l()V
 
     :cond_0
+    monitor-exit v0
+
+    goto :goto_0
+
+    :catchall_0
+    move-exception p1
+
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw p1
+
+    :cond_1
+    :goto_0
+    invoke-virtual {p0, p1}, Lkzl;->f(Ljava/lang/Object;)V
+
     return-void
 .end method

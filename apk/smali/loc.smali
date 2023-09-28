@@ -1,32 +1,53 @@
-.class final Lloc;
-.super Landroid/database/ContentObserver;
+.class public final synthetic Lloc;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field final synthetic a:Llod;
+.field public final synthetic a:Lloi;
+
+.field public final synthetic b:J
+
+.field public final synthetic c:I
+
+.field public final synthetic d:J
 
 
 # direct methods
-.method public constructor <init>(Llod;)V
+.method public synthetic constructor <init>(Lloi;JIJ)V
     .locals 0
 
-    iput-object p1, p0, Lloc;->a:Llod;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const/4 p1, 0x0
+    iput-object p1, p0, Lloc;->a:Lloi;
 
-    invoke-direct {p0, p1}, Landroid/database/ContentObserver;-><init>(Landroid/os/Handler;)V
+    iput-wide p2, p0, Lloc;->b:J
+
+    iput p4, p0, Lloc;->c:I
+
+    iput-wide p5, p0, Lloc;->d:J
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onChange(Z)V
-    .locals 0
+.method public final run()V
+    .locals 7
 
-    iget-object p1, p0, Lloc;->a:Llod;
+    iget-object v0, p0, Lloc;->a:Lloi;
 
-    invoke-virtual {p1}, Llod;->b()V
+    iget-wide v2, p0, Lloc;->b:J
+
+    iget v4, p0, Lloc;->c:I
+
+    iget-wide v5, p0, Lloc;->d:J
+
+    iget-object v1, v0, Lloi;->a:Lmip;
+
+    invoke-virtual/range {v1 .. v6}, Lmip;->k(JIJ)V
 
     return-void
 .end method

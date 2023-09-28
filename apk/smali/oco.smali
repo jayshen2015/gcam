@@ -1,146 +1,146 @@
 .class public final Loco;
-.super Lnws;
-
-# interfaces
-.implements Lnxz;
-
-
-# static fields
-.field public static final a:Loco;
-
-.field private static volatile b:Lnyf;
+.super Lobr;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
+.method public constructor <init>()V
+    .locals 0
 
-    new-instance v0, Loco;
-
-    invoke-direct {v0}, Loco;-><init>()V
-
-    sput-object v0, Loco;->a:Loco;
-
-    const-class v1, Loco;
-
-    invoke-static {v1, v0}, Lnws;->aa(Ljava/lang/Class;Lnws;)V
+    invoke-direct {p0}, Lobr;-><init>()V
 
     return-void
 .end method
 
-.method private constructor <init>()V
-    .locals 0
+.method private static bd(F)F
+    .locals 4
 
-    invoke-direct {p0}, Lnws;-><init>()V
+    float-to-double v0, p0
 
-    return-void
+    const-wide v2, 0x400921fb54442d18L    # Math.PI
+
+    invoke-static {v0, v1}, Ljava/lang/Double;->isNaN(D)Z
+
+    mul-double v0, v0, v2
+
+    const-wide/high16 v2, 0x4000000000000000L    # 2.0
+
+    div-double/2addr v0, v2
+
+    invoke-static {v0, v1}, Ljava/lang/Math;->cos(D)D
+
+    move-result-wide v0
+
+    const-wide/high16 v2, 0x3ff0000000000000L    # 1.0
+
+    sub-double/2addr v2, v0
+
+    double-to-float p0, v2
+
+    return p0
+.end method
+
+.method private static be(F)F
+    .locals 4
+
+    float-to-double v0, p0
+
+    const-wide v2, 0x400921fb54442d18L    # Math.PI
+
+    invoke-static {v0, v1}, Ljava/lang/Double;->isNaN(D)Z
+
+    mul-double v0, v0, v2
+
+    const-wide/high16 v2, 0x4000000000000000L    # 2.0
+
+    div-double/2addr v0, v2
+
+    invoke-static {v0, v1}, Ljava/lang/Math;->sin(D)D
+
+    move-result-wide v0
+
+    double-to-float p0, v0
+
+    return p0
 .end method
 
 
 # virtual methods
-.method protected final a(ILjava/lang/Object;)Ljava/lang/Object;
-    .locals 1
+.method public final j(Lcom/google/android/material/tabs/TabLayout;Landroid/view/View;Landroid/view/View;FLandroid/graphics/drawable/Drawable;)V
+    .locals 2
 
-    add-int/lit8 p1, p1, -0x1
+    invoke-static {p1, p2}, Loco;->i(Lcom/google/android/material/tabs/TabLayout;Landroid/view/View;)Landroid/graphics/RectF;
 
-    const/4 p2, 0x0
+    move-result-object p2
 
-    packed-switch p1, :pswitch_data_0
+    invoke-static {p1, p3}, Loco;->i(Lcom/google/android/material/tabs/TabLayout;Landroid/view/View;)Landroid/graphics/RectF;
 
-    :pswitch_0
-    return-object p2
+    move-result-object p1
 
-    :pswitch_1
-    sget-object p1, Loco;->b:Lnyf;
+    iget p3, p2, Landroid/graphics/RectF;->left:F
 
-    if-nez p1, :cond_1
+    iget v0, p1, Landroid/graphics/RectF;->left:F
 
-    const-class p2, Loco;
+    cmpg-float p3, p3, v0
 
-    monitor-enter p2
+    if-gez p3, :cond_0
 
-    :try_start_0
-    sget-object p1, Loco;->b:Lnyf;
+    invoke-static {p4}, Loco;->bd(F)F
 
-    if-nez p1, :cond_0
+    move-result p3
 
-    new-instance p1, Lnwo;
+    invoke-static {p4}, Loco;->be(F)F
 
-    sget-object v0, Loco;->a:Loco;
-
-    invoke-direct {p1, v0}, Lnwo;-><init>(Lnws;)V
-
-    sput-object p1, Loco;->b:Lnyf;
-
-    :cond_0
-    monitor-exit p2
+    move-result p4
 
     goto :goto_0
 
-    :catchall_0
-    move-exception p1
+    :cond_0
+    invoke-static {p4}, Loco;->be(F)F
 
-    monitor-exit p2
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    move-result p3
 
-    throw p1
+    invoke-static {p4}, Loco;->bd(F)F
 
-    :cond_1
+    move-result p4
+
     :goto_0
-    return-object p1
+    iget v0, p2, Landroid/graphics/RectF;->left:F
 
-    :pswitch_2
-    sget-object p1, Loco;->a:Loco;
+    float-to-int v0, v0
 
-    return-object p1
+    iget v1, p1, Landroid/graphics/RectF;->left:F
 
-    :pswitch_3
-    new-instance p1, Lnwn;
+    float-to-int v1, v1
 
-    sget-object p2, Loco;->a:Loco;
+    invoke-static {v0, v1, p3}, Lnwj;->c(IIF)I
 
-    invoke-direct {p1, p2}, Lnwn;-><init>(Lnws;)V
+    move-result p3
 
-    return-object p1
+    invoke-virtual {p5}, Landroid/graphics/drawable/Drawable;->getBounds()Landroid/graphics/Rect;
 
-    :pswitch_4
-    new-instance p1, Loco;
+    move-result-object v0
 
-    invoke-direct {p1}, Loco;-><init>()V
+    iget v0, v0, Landroid/graphics/Rect;->top:I
 
-    return-object p1
+    iget p2, p2, Landroid/graphics/RectF;->right:F
 
-    :pswitch_5
-    sget-object p1, Loco;->a:Loco;
+    float-to-int p2, p2
 
-    const-string v0, "\u0001\u0000"
+    iget p1, p1, Landroid/graphics/RectF;->right:F
 
-    invoke-static {p1, v0, p2}, Loco;->X(Lnxy;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/Object;
+    float-to-int p1, p1
 
-    move-result-object p1
+    invoke-static {p2, p1, p4}, Lnwj;->c(IIF)I
 
-    return-object p1
+    move-result p1
 
-    :pswitch_6
-    const/4 p1, 0x1
+    invoke-virtual {p5}, Landroid/graphics/drawable/Drawable;->getBounds()Landroid/graphics/Rect;
 
-    invoke-static {p1}, Ljava/lang/Byte;->valueOf(B)Ljava/lang/Byte;
+    move-result-object p2
 
-    move-result-object p1
+    iget p2, p2, Landroid/graphics/Rect;->bottom:I
 
-    return-object p1
+    invoke-virtual {p5, p3, v0, p1, p2}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
 
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_6
-        :pswitch_0
-        :pswitch_5
-        :pswitch_4
-        :pswitch_3
-        :pswitch_2
-        :pswitch_1
-    .end packed-switch
+    return-void
 .end method

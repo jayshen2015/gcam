@@ -1,133 +1,57 @@
-.class public final Lbzc;
+.class public final synthetic Lbzc;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lbyo;
+.implements Llie;
 
 
 # instance fields
-.field public final a:Ljava/util/Set;
+.field public final synthetic a:Lbzd;
+
+.field public final synthetic b:Ljdy;
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 1
+.method public synthetic constructor <init>(Ljdy;Lbzd;[B[B)V
+    .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    new-instance v0, Ljava/util/WeakHashMap;
+    iput-object p1, p0, Lbzc;->b:Ljdy;
 
-    invoke-direct {v0}, Ljava/util/WeakHashMap;-><init>()V
-
-    invoke-static {v0}, Ljava/util/Collections;->newSetFromMap(Ljava/util/Map;)Ljava/util/Set;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lbzc;->a:Ljava/util/Set;
+    iput-object p2, p0, Lbzc;->a:Lbzd;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final g()V
-    .locals 2
+.method public final close()V
+    .locals 3
 
-    iget-object v0, p0, Lbzc;->a:Ljava/util/Set;
+    iget-object v0, p0, Lbzc;->b:Ljdy;
 
-    invoke-static {v0}, Lcaw;->f(Ljava/util/Collection;)Ljava/util/List;
+    iget-object v1, p0, Lbzc;->a:Lbzd;
 
-    move-result-object v0
+    iget-object v2, v0, Ljdy;->h:Ljava/util/List;
 
-    invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+    monitor-enter v2
 
-    move-result-object v0
+    :try_start_0
+    iget-object v0, v0, Ljdy;->h:Ljava/util/List;
 
-    :goto_0
-    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
+    invoke-interface {v0, v1}, Ljava/util/List;->remove(Ljava/lang/Object;)Z
 
-    move-result v1
+    monitor-exit v2
 
-    if-eqz v1, :cond_0
-
-    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Lbzz;
-
-    invoke-interface {v1}, Lbzz;->g()V
-
-    goto :goto_0
-
-    :cond_0
     return-void
-.end method
 
-.method public final h()V
-    .locals 2
+    :catchall_0
+    move-exception v0
 
-    iget-object v0, p0, Lbzc;->a:Ljava/util/Set;
+    monitor-exit v2
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    invoke-static {v0}, Lcaw;->f(Ljava/util/Collection;)Ljava/util/List;
-
-    move-result-object v0
-
-    invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
-
-    move-result-object v0
-
-    :goto_0
-    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_0
-
-    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Lbzz;
-
-    invoke-interface {v1}, Lbzz;->h()V
-
-    goto :goto_0
-
-    :cond_0
-    return-void
-.end method
-
-.method public final i()V
-    .locals 2
-
-    iget-object v0, p0, Lbzc;->a:Ljava/util/Set;
-
-    invoke-static {v0}, Lcaw;->f(Ljava/util/Collection;)Ljava/util/List;
-
-    move-result-object v0
-
-    invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
-
-    move-result-object v0
-
-    :goto_0
-    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_0
-
-    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Lbzz;
-
-    invoke-interface {v1}, Lbzz;->i()V
-
-    goto :goto_0
-
-    :cond_0
-    return-void
+    throw v0
 .end method

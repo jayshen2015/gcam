@@ -1,59 +1,77 @@
-.class final Lljd;
+.class public final Lljd;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lmrl;
-
-
-# instance fields
-.field private final a:Landroid/content/Context;
+.implements Lljf;
 
 
 # direct methods
-.method public constructor <init>(Landroid/content/Context;)V
+.method public constructor <init>()V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lljd;->a:Landroid/content/Context;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final bridge synthetic a()Ljava/lang/Object;
-    .locals 3
+.method public final a(Ljava/lang/String;)Llji;
+    .locals 0
 
-    iget-object v0, p0, Lljd;->a:Landroid/content/Context;
+    sget-object p1, Llji;->b:Llji;
 
-    invoke-static {v0}, Lktm;->c(Landroid/content/Context;)Z
+    return-object p1
+.end method
 
-    move-result v0
+.method public final b(Ljava/lang/String;)Lljk;
+    .locals 0
 
-    if-eqz v0, :cond_0
+    sget-object p1, Lljk;->a:Lljk;
 
-    sget-object v0, Lmpx;->a:Lmpx;
+    return-object p1
+.end method
 
-    goto :goto_0
+.method public final c(Ljava/lang/String;Ljava/lang/Runnable;)Ljava/lang/Runnable;
+    .locals 0
 
-    :cond_0
-    new-instance v0, Ljava/io/File;
+    return-object p2
+.end method
 
-    iget-object v1, p0, Lljd;->a:Landroid/content/Context;
+.method public final synthetic d(Ljava/lang/String;Ljava/lang/Runnable;)V
+    .locals 0
 
-    invoke-virtual {v1}, Landroid/content/Context;->getFilesDir()Ljava/io/File;
+    invoke-static {p0, p1, p2}, Lmip;->bn(Lljf;Ljava/lang/String;Ljava/lang/Runnable;)V
 
-    move-result-object v1
+    return-void
+.end method
 
-    const-string v2, "primes/crash"
+.method public final e(Ljava/lang/String;)V
+    .locals 0
 
-    invoke-direct {v0, v1, v2}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
+    return-void
+.end method
 
-    invoke-static {v0}, Lmqp;->i(Ljava/lang/Object;)Lmqp;
+.method public final f()V
+    .locals 0
 
-    move-result-object v0
+    return-void
+.end method
 
-    :goto_0
-    return-object v0
+.method public final g(Ljava/lang/String;)V
+    .locals 0
+
+    return-void
+.end method
+
+.method public final varargs h()V
+    .locals 0
+
+    return-void
+.end method
+
+.method public final i(Ljava/util/concurrent/Callable;)Ljava/util/concurrent/Callable;
+    .locals 0
+
+    return-object p1
 .end method

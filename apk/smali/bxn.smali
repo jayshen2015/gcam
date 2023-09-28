@@ -2,201 +2,304 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lbsn;
+.implements Ljava/util/concurrent/ScheduledExecutorService;
+
+
+# static fields
+.field public static final synthetic a:I
+
+.field private static final b:Louj;
 
 
 # instance fields
-.field private final synthetic a:I
+.field private final c:Ljava/util/concurrent/Executor;
 
-.field private final b:Ljava/lang/Object;
+.field private final d:Ljava/util/concurrent/ScheduledExecutorService;
 
 
 # direct methods
-.method public constructor <init>(Landroid/graphics/Bitmap;I)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 1
 
-    iput p2, p0, Lbxn;->a:I
+    const-string v0, "com/google/android/apps/camera/async/readiness/GatedScheduledExecutorService"
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-static {v0}, Louj;->h(Ljava/lang/String;)Louj;
 
-    iput-object p1, p0, Lbxn;->b:Ljava/lang/Object;
+    move-result-object v0
 
-    return-void
-.end method
-
-.method public constructor <init>(Landroid/graphics/drawable/AnimatedImageDrawable;I)V
-    .locals 0
-
-    iput p2, p0, Lbxn;->a:I
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lbxn;->b:Ljava/lang/Object;
+    sput-object v0, Lbxn;->b:Louj;
 
     return-void
 .end method
 
-.method public constructor <init>([BI)V
+.method public constructor <init>(Ljava/util/concurrent/Executor;Ljava/util/concurrent/ScheduledExecutorService;)V
     .locals 0
-
-    iput p2, p0, Lbxn;->a:I
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-static {p1}, Lbze;->v(Ljava/lang/Object;)V
+    iput-object p1, p0, Lbxn;->c:Ljava/util/concurrent/Executor;
 
-    iput-object p1, p0, Lbxn;->b:Ljava/lang/Object;
+    iput-object p2, p0, Lbxn;->d:Ljava/util/concurrent/ScheduledExecutorService;
+
+    return-void
+.end method
+
+.method private static a(Ljava/lang/String;)V
+    .locals 4
+
+    sget-object v0, Lbxn;->b:Louj;
+
+    invoke-virtual {v0}, Loue;->c()Lova;
+
+    move-result-object v0
+
+    new-instance v1, Ljava/lang/UnsupportedOperationException;
+
+    invoke-direct {v1, p0}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
+
+    const-string v2, "%s is not gated and it doesn\'t guarantee the execution order"
+
+    const/16 v3, 0x93
+
+    invoke-static {v0, v2, p0, v3, v1}, Ld;->x(Lova;Ljava/lang/String;Ljava/lang/Object;CLjava/lang/Throwable;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()I
-    .locals 2
-
-    iget v0, p0, Lbxn;->a:I
-
-    packed-switch v0, :pswitch_data_0
-
-    iget-object v0, p0, Lbxn;->b:Ljava/lang/Object;
-
-    check-cast v0, Landroid/graphics/drawable/AnimatedImageDrawable;
-
-    invoke-virtual {v0}, Landroid/graphics/drawable/AnimatedImageDrawable;->getIntrinsicWidth()I
-
-    move-result v0
-
-    iget-object v1, p0, Lbxn;->b:Ljava/lang/Object;
-
-    check-cast v1, Landroid/graphics/drawable/AnimatedImageDrawable;
-
-    invoke-virtual {v1}, Landroid/graphics/drawable/AnimatedImageDrawable;->getIntrinsicHeight()I
-
-    move-result v1
-
-    mul-int v0, v0, v1
-
-    sget-object v1, Landroid/graphics/Bitmap$Config;->ARGB_8888:Landroid/graphics/Bitmap$Config;
-
-    invoke-static {v1}, Lcaw;->b(Landroid/graphics/Bitmap$Config;)I
-
-    move-result v1
-
-    mul-int v0, v0, v1
-
-    add-int/2addr v0, v0
-
-    return v0
-
-    :pswitch_0
-    iget-object v0, p0, Lbxn;->b:Ljava/lang/Object;
-
-    check-cast v0, Landroid/graphics/Bitmap;
-
-    invoke-static {v0}, Lcaw;->a(Landroid/graphics/Bitmap;)I
-
-    move-result v0
-
-    return v0
-
-    :pswitch_1
-    iget-object v0, p0, Lbxn;->b:Ljava/lang/Object;
-
-    check-cast v0, [B
-
-    array-length v0, v0
-
-    return v0
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
-.end method
-
-.method public final b()Ljava/lang/Class;
+.method public final awaitTermination(JLjava/util/concurrent/TimeUnit;)Z
     .locals 1
 
-    iget v0, p0, Lbxn;->a:I
+    iget-object v0, p0, Lbxn;->d:Ljava/util/concurrent/ScheduledExecutorService;
 
-    packed-switch v0, :pswitch_data_0
+    invoke-interface {v0, p1, p2, p3}, Ljava/util/concurrent/ScheduledExecutorService;->awaitTermination(JLjava/util/concurrent/TimeUnit;)Z
 
-    const-class v0, Landroid/graphics/drawable/Drawable;
+    move-result p1
 
-    return-object v0
-
-    :pswitch_0
-    const-class v0, Landroid/graphics/Bitmap;
-
-    return-object v0
-
-    :pswitch_1
-    const-class v0, [B
-
-    return-object v0
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
+    return p1
 .end method
 
-.method public final synthetic c()Ljava/lang/Object;
+.method public final execute(Ljava/lang/Runnable;)V
     .locals 1
 
-    iget v0, p0, Lbxn;->a:I
+    iget-object v0, p0, Lbxn;->c:Ljava/util/concurrent/Executor;
 
-    packed-switch v0, :pswitch_data_0
+    invoke-interface {v0, p1}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
 
-    iget-object v0, p0, Lbxn;->b:Ljava/lang/Object;
-
-    return-object v0
-
-    :pswitch_0
-    iget-object v0, p0, Lbxn;->b:Ljava/lang/Object;
-
-    return-object v0
-
-    :pswitch_1
-    iget-object v0, p0, Lbxn;->b:Ljava/lang/Object;
-
-    return-object v0
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
-.end method
-
-.method public final e()V
-    .locals 1
-
-    iget v0, p0, Lbxn;->a:I
-
-    packed-switch v0, :pswitch_data_0
-
-    iget-object v0, p0, Lbxn;->b:Ljava/lang/Object;
-
-    check-cast v0, Landroid/graphics/drawable/AnimatedImageDrawable;
-
-    invoke-virtual {v0}, Landroid/graphics/drawable/AnimatedImageDrawable;->stop()V
-
-    iget-object v0, p0, Lbxn;->b:Ljava/lang/Object;
-
-    check-cast v0, Landroid/graphics/drawable/AnimatedImageDrawable;
-
-    invoke-virtual {v0}, Landroid/graphics/drawable/AnimatedImageDrawable;->clearAnimationCallbacks()V
-
-    :pswitch_0
     return-void
+.end method
 
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-        :pswitch_0
-    .end packed-switch
+.method public final invokeAll(Ljava/util/Collection;)Ljava/util/List;
+    .locals 1
+
+    const-string v0, "invokeAll(1)"
+
+    invoke-static {v0}, Lbxn;->a(Ljava/lang/String;)V
+
+    iget-object v0, p0, Lbxn;->d:Ljava/util/concurrent/ScheduledExecutorService;
+
+    invoke-interface {v0, p1}, Ljava/util/concurrent/ScheduledExecutorService;->invokeAll(Ljava/util/Collection;)Ljava/util/List;
+
+    move-result-object p1
+
+    return-object p1
+.end method
+
+.method public final invokeAll(Ljava/util/Collection;JLjava/util/concurrent/TimeUnit;)Ljava/util/List;
+    .locals 1
+
+    const-string v0, "invokeAll(2)"
+
+    invoke-static {v0}, Lbxn;->a(Ljava/lang/String;)V
+
+    iget-object v0, p0, Lbxn;->d:Ljava/util/concurrent/ScheduledExecutorService;
+
+    invoke-interface {v0, p1, p2, p3, p4}, Ljava/util/concurrent/ScheduledExecutorService;->invokeAll(Ljava/util/Collection;JLjava/util/concurrent/TimeUnit;)Ljava/util/List;
+
+    move-result-object p1
+
+    return-object p1
+.end method
+
+.method public final invokeAny(Ljava/util/Collection;)Ljava/lang/Object;
+    .locals 1
+
+    const-string v0, "invokeAny(1)"
+
+    invoke-static {v0}, Lbxn;->a(Ljava/lang/String;)V
+
+    iget-object v0, p0, Lbxn;->d:Ljava/util/concurrent/ScheduledExecutorService;
+
+    invoke-interface {v0, p1}, Ljava/util/concurrent/ScheduledExecutorService;->invokeAny(Ljava/util/Collection;)Ljava/lang/Object;
+
+    move-result-object p1
+
+    return-object p1
+.end method
+
+.method public final invokeAny(Ljava/util/Collection;JLjava/util/concurrent/TimeUnit;)Ljava/lang/Object;
+    .locals 1
+
+    const-string v0, "invokeAny(2)"
+
+    invoke-static {v0}, Lbxn;->a(Ljava/lang/String;)V
+
+    iget-object v0, p0, Lbxn;->d:Ljava/util/concurrent/ScheduledExecutorService;
+
+    invoke-interface {v0, p1, p2, p3, p4}, Ljava/util/concurrent/ScheduledExecutorService;->invokeAny(Ljava/util/Collection;JLjava/util/concurrent/TimeUnit;)Ljava/lang/Object;
+
+    move-result-object p1
+
+    return-object p1
+.end method
+
+.method public final isShutdown()Z
+    .locals 1
+
+    iget-object v0, p0, Lbxn;->d:Ljava/util/concurrent/ScheduledExecutorService;
+
+    invoke-interface {v0}, Ljava/util/concurrent/ScheduledExecutorService;->isShutdown()Z
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public final isTerminated()Z
+    .locals 1
+
+    iget-object v0, p0, Lbxn;->d:Ljava/util/concurrent/ScheduledExecutorService;
+
+    invoke-interface {v0}, Ljava/util/concurrent/ScheduledExecutorService;->isTerminated()Z
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public final schedule(Ljava/lang/Runnable;JLjava/util/concurrent/TimeUnit;)Ljava/util/concurrent/ScheduledFuture;
+    .locals 1
+
+    iget-object v0, p0, Lbxn;->d:Ljava/util/concurrent/ScheduledExecutorService;
+
+    invoke-interface {v0, p1, p2, p3, p4}, Ljava/util/concurrent/ScheduledExecutorService;->schedule(Ljava/lang/Runnable;JLjava/util/concurrent/TimeUnit;)Ljava/util/concurrent/ScheduledFuture;
+
+    move-result-object p1
+
+    return-object p1
+.end method
+
+.method public final schedule(Ljava/util/concurrent/Callable;JLjava/util/concurrent/TimeUnit;)Ljava/util/concurrent/ScheduledFuture;
+    .locals 1
+
+    iget-object v0, p0, Lbxn;->d:Ljava/util/concurrent/ScheduledExecutorService;
+
+    invoke-interface {v0, p1, p2, p3, p4}, Ljava/util/concurrent/ScheduledExecutorService;->schedule(Ljava/util/concurrent/Callable;JLjava/util/concurrent/TimeUnit;)Ljava/util/concurrent/ScheduledFuture;
+
+    move-result-object p1
+
+    return-object p1
+.end method
+
+.method public final scheduleAtFixedRate(Ljava/lang/Runnable;JJLjava/util/concurrent/TimeUnit;)Ljava/util/concurrent/ScheduledFuture;
+    .locals 7
+
+    iget-object v0, p0, Lbxn;->d:Ljava/util/concurrent/ScheduledExecutorService;
+
+    move-object v1, p1
+
+    move-wide v2, p2
+
+    move-wide v4, p4
+
+    move-object v6, p6
+
+    invoke-interface/range {v0 .. v6}, Ljava/util/concurrent/ScheduledExecutorService;->scheduleAtFixedRate(Ljava/lang/Runnable;JJLjava/util/concurrent/TimeUnit;)Ljava/util/concurrent/ScheduledFuture;
+
+    move-result-object p1
+
+    return-object p1
+.end method
+
+.method public final scheduleWithFixedDelay(Ljava/lang/Runnable;JJLjava/util/concurrent/TimeUnit;)Ljava/util/concurrent/ScheduledFuture;
+    .locals 7
+
+    iget-object v0, p0, Lbxn;->d:Ljava/util/concurrent/ScheduledExecutorService;
+
+    move-object v1, p1
+
+    move-wide v2, p2
+
+    move-wide v4, p4
+
+    move-object v6, p6
+
+    invoke-interface/range {v0 .. v6}, Ljava/util/concurrent/ScheduledExecutorService;->scheduleWithFixedDelay(Ljava/lang/Runnable;JJLjava/util/concurrent/TimeUnit;)Ljava/util/concurrent/ScheduledFuture;
+
+    move-result-object p1
+
+    return-object p1
+.end method
+
+.method public final shutdown()V
+    .locals 1
+
+    iget-object v0, p0, Lbxn;->d:Ljava/util/concurrent/ScheduledExecutorService;
+
+    invoke-interface {v0}, Ljava/util/concurrent/ScheduledExecutorService;->shutdown()V
+
+    return-void
+.end method
+
+.method public final shutdownNow()Ljava/util/List;
+    .locals 1
+
+    iget-object v0, p0, Lbxn;->d:Ljava/util/concurrent/ScheduledExecutorService;
+
+    invoke-interface {v0}, Ljava/util/concurrent/ScheduledExecutorService;->shutdownNow()Ljava/util/List;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public final submit(Ljava/lang/Runnable;)Ljava/util/concurrent/Future;
+    .locals 1
+
+    const-string v0, ""
+
+    invoke-virtual {p0, p1, v0}, Lbxn;->submit(Ljava/lang/Runnable;Ljava/lang/Object;)Ljava/util/concurrent/Future;
+
+    move-result-object p1
+
+    return-object p1
+.end method
+
+.method public final submit(Ljava/lang/Runnable;Ljava/lang/Object;)Ljava/util/concurrent/Future;
+    .locals 1
+
+    new-instance v0, Lbxm;
+
+    invoke-direct {v0, p1, p2}, Lbxm;-><init>(Ljava/lang/Runnable;Ljava/lang/Object;)V
+
+    iget-object p1, p0, Lbxn;->c:Ljava/util/concurrent/Executor;
+
+    invoke-static {v0, p1}, Lplk;->Z(Ljava/util/concurrent/Callable;Ljava/util/concurrent/Executor;)Lpht;
+
+    move-result-object p1
+
+    return-object p1
+.end method
+
+.method public final submit(Ljava/util/concurrent/Callable;)Ljava/util/concurrent/Future;
+    .locals 1
+
+    iget-object v0, p0, Lbxn;->c:Ljava/util/concurrent/Executor;
+
+    invoke-static {p1, v0}, Lplk;->Z(Ljava/util/concurrent/Callable;Ljava/util/concurrent/Executor;)Lpht;
+
+    move-result-object p1
+
+    return-object p1
 .end method

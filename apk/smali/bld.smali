@@ -1,60 +1,100 @@
-.class final Lbld;
+.class public abstract Lbld;
 .super Ljava/lang/Object;
 
+# interfaces
+.implements Lblh;
 
-# static fields
-.field public static final a:Ldne;
+
+# instance fields
+.field private a:Lbks;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 3
+.method public constructor <init>()V
+    .locals 2
 
-    const/4 v0, 0x6
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    new-array v0, v0, [Ljava/lang/String;
+    const/high16 v0, -0x80000000
 
-    const/4 v1, 0x0
+    invoke-static {v0, v0}, Lbmf;->o(II)Z
 
-    const-string v2, "s"
+    move-result v0
 
-    aput-object v2, v0, v1
+    if-eqz v0, :cond_0
 
-    const/4 v1, 0x1
+    return-void
 
-    const-string v2, "e"
+    :cond_0
+    new-instance v0, Ljava/lang/IllegalArgumentException;
 
-    aput-object v2, v0, v1
+    const-string v1, "Width and height must both be > 0 or Target#SIZE_ORIGINAL, but given width: -2147483648 and height: -2147483648"
 
-    const/4 v1, 0x2
+    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
-    const-string v2, "o"
+    throw v0
+.end method
 
-    aput-object v2, v0, v1
 
-    const/4 v1, 0x3
+# virtual methods
+.method public final c()Lbks;
+    .locals 1
 
-    const-string v2, "nm"
+    iget-object v0, p0, Lbld;->a:Lbks;
 
-    aput-object v2, v0, v1
+    return-object v0
+.end method
 
-    const/4 v1, 0x4
+.method public final d(Lblg;)V
+    .locals 1
 
-    const-string v2, "m"
+    const/high16 v0, -0x80000000
 
-    aput-object v2, v0, v1
+    invoke-interface {p1, v0, v0}, Lblg;->g(II)V
 
-    const/4 v1, 0x5
+    return-void
+.end method
 
-    const-string v2, "hd"
+.method public final e(Landroid/graphics/drawable/Drawable;)V
+    .locals 0
 
-    aput-object v2, v0, v1
+    return-void
+.end method
 
-    invoke-static {v0}, Ldne;->J([Ljava/lang/String;)Ldne;
+.method public final f(Landroid/graphics/drawable/Drawable;)V
+    .locals 0
 
-    move-result-object v0
+    return-void
+.end method
 
-    sput-object v0, Lbld;->a:Ldne;
+.method public final g()V
+    .locals 0
+
+    return-void
+.end method
+
+.method public final h()V
+    .locals 0
+
+    return-void
+.end method
+
+.method public final i()V
+    .locals 0
+
+    return-void
+.end method
+
+.method public final j(Lblg;)V
+    .locals 0
+
+    return-void
+.end method
+
+.method public final k(Lbks;)V
+    .locals 0
+
+    iput-object p1, p0, Lbld;->a:Lbks;
 
     return-void
 .end method

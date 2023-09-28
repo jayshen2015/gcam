@@ -20,7 +20,7 @@
 
 .field public g:I
 
-.field private h:Lnig;
+.field private h:Lpbo;
 
 .field private i:Ljava/lang/Runnable;
 
@@ -64,12 +64,12 @@
     return-void
 .end method
 
-.method public static final c(Lkou;DD)Lnig;
-    .locals 6
+.method public static final c(Llzv;DD)Lpbo;
+    .locals 7
 
-    sget-object v0, Lnig;->i:Lnig;
+    sget-object v0, Lpbo;->i:Lpbo;
 
-    invoke-virtual {v0}, Lnws;->O()Lnwn;
+    invoke-virtual {v0}, Lppd;->m()Lpoy;
 
     move-result-object v0
 
@@ -77,59 +77,57 @@
 
     move-result-wide v1
 
-    iget-object v3, v0, Lnwn;->b:Lnws;
+    iget-boolean v3, v0, Lpoy;->c:Z
 
-    invoke-virtual {v3}, Lnws;->ac()Z
+    const/4 v4, 0x0
 
-    move-result v3
+    if-eqz v3, :cond_0
 
-    if-nez v3, :cond_0
+    invoke-virtual {v0}, Lpoy;->m()V
 
-    invoke-virtual {v0}, Lnwn;->p()V
+    iput-boolean v4, v0, Lpoy;->c:Z
 
     :cond_0
-    iget-object v3, v0, Lnwn;->b:Lnws;
+    iget-object v3, v0, Lpoy;->b:Lppd;
 
-    check-cast v3, Lnig;
+    check-cast v3, Lpbo;
 
-    iget v4, v3, Lnig;->a:I
+    iget v5, v3, Lpbo;->a:I
 
-    or-int/lit8 v4, v4, 0x1
+    or-int/lit8 v5, v5, 0x1
 
-    iput v4, v3, Lnig;->a:I
+    iput v5, v3, Lpbo;->a:I
 
-    iput-wide v1, v3, Lnig;->b:J
+    iput-wide v1, v3, Lpbo;->b:J
 
-    invoke-interface {p0}, Lkou;->b()J
+    invoke-interface {p0}, Llzv;->b()J
 
     move-result-wide v1
 
-    iget-object v3, v0, Lnwn;->b:Lnws;
+    iget-boolean v3, v0, Lpoy;->c:Z
 
-    invoke-virtual {v3}, Lnws;->ac()Z
+    if-eqz v3, :cond_1
 
-    move-result v3
+    invoke-virtual {v0}, Lpoy;->m()V
 
-    if-nez v3, :cond_1
-
-    invoke-virtual {v0}, Lnwn;->p()V
+    iput-boolean v4, v0, Lpoy;->c:Z
 
     :cond_1
-    iget-object v3, v0, Lnwn;->b:Lnws;
+    iget-object v3, v0, Lpoy;->b:Lppd;
 
-    check-cast v3, Lnig;
+    check-cast v3, Lpbo;
 
-    iget v4, v3, Lnig;->a:I
+    iget v5, v3, Lpbo;->a:I
 
-    or-int/lit8 v4, v4, 0x4
+    or-int/lit8 v5, v5, 0x4
 
-    iput v4, v3, Lnig;->a:I
+    iput v5, v3, Lpbo;->a:I
 
-    iput-wide v1, v3, Lnig;->d:J
+    iput-wide v1, v3, Lpbo;->d:J
 
     sget-object v1, Landroid/hardware/camera2/CaptureResult;->SENSOR_TIMESTAMP:Landroid/hardware/camera2/CaptureResult$Key;
 
-    invoke-interface {p0, v1}, Lkou;->d(Landroid/hardware/camera2/CaptureResult$Key;)Ljava/lang/Object;
+    invoke-interface {p0, v1}, Llzv;->d(Landroid/hardware/camera2/CaptureResult$Key;)Ljava/lang/Object;
 
     move-result-object v1
 
@@ -137,7 +135,7 @@
 
     sget-object v2, Landroid/hardware/camera2/CaptureResult;->SENSOR_FRAME_DURATION:Landroid/hardware/camera2/CaptureResult$Key;
 
-    invoke-interface {p0, v2}, Lkou;->d(Landroid/hardware/camera2/CaptureResult$Key;)Ljava/lang/Object;
+    invoke-interface {p0, v2}, Llzv;->d(Landroid/hardware/camera2/CaptureResult$Key;)Ljava/lang/Object;
 
     move-result-object v2
 
@@ -145,7 +143,7 @@
 
     sget-object v3, Landroid/hardware/camera2/CaptureResult;->SENSOR_EXPOSURE_TIME:Landroid/hardware/camera2/CaptureResult$Key;
 
-    invoke-interface {p0, v3}, Lkou;->d(Landroid/hardware/camera2/CaptureResult$Key;)Ljava/lang/Object;
+    invoke-interface {p0, v3}, Llzv;->d(Landroid/hardware/camera2/CaptureResult$Key;)Ljava/lang/Object;
 
     move-result-object p0
 
@@ -155,30 +153,28 @@
 
     invoke-virtual {v1}, Ljava/lang/Long;->longValue()J
 
-    move-result-wide v3
+    move-result-wide v5
 
-    iget-object v1, v0, Lnwn;->b:Lnws;
+    iget-boolean v1, v0, Lpoy;->c:Z
 
-    invoke-virtual {v1}, Lnws;->ac()Z
+    if-eqz v1, :cond_2
 
-    move-result v1
+    invoke-virtual {v0}, Lpoy;->m()V
 
-    if-nez v1, :cond_2
-
-    invoke-virtual {v0}, Lnwn;->p()V
+    iput-boolean v4, v0, Lpoy;->c:Z
 
     :cond_2
-    iget-object v1, v0, Lnwn;->b:Lnws;
+    iget-object v1, v0, Lpoy;->b:Lppd;
 
-    check-cast v1, Lnig;
+    check-cast v1, Lpbo;
 
-    iget v5, v1, Lnig;->a:I
+    iget v3, v1, Lpbo;->a:I
 
-    or-int/lit8 v5, v5, 0x2
+    or-int/lit8 v3, v3, 0x2
 
-    iput v5, v1, Lnig;->a:I
+    iput v3, v1, Lpbo;->a:I
 
-    iput-wide v3, v1, Lnig;->c:J
+    iput-wide v5, v1, Lpbo;->c:J
 
     :cond_3
     if-eqz v2, :cond_5
@@ -187,32 +183,30 @@
 
     move-result-wide v1
 
-    invoke-static {v1, v2}, Linb;->q(J)I
+    invoke-static {v1, v2}, Lmip;->dY(J)I
 
     move-result v1
 
-    iget-object v2, v0, Lnwn;->b:Lnws;
+    iget-boolean v2, v0, Lpoy;->c:Z
 
-    invoke-virtual {v2}, Lnws;->ac()Z
+    if-eqz v2, :cond_4
 
-    move-result v2
+    invoke-virtual {v0}, Lpoy;->m()V
 
-    if-nez v2, :cond_4
-
-    invoke-virtual {v0}, Lnwn;->p()V
+    iput-boolean v4, v0, Lpoy;->c:Z
 
     :cond_4
-    iget-object v2, v0, Lnwn;->b:Lnws;
+    iget-object v2, v0, Lpoy;->b:Lppd;
 
-    check-cast v2, Lnig;
+    check-cast v2, Lpbo;
 
-    iget v3, v2, Lnig;->a:I
+    iget v3, v2, Lpbo;->a:I
 
     or-int/lit8 v3, v3, 0x8
 
-    iput v3, v2, Lnig;->a:I
+    iput v3, v2, Lpbo;->a:I
 
-    iput v1, v2, Lnig;->e:I
+    iput v1, v2, Lpbo;->e:I
 
     :cond_5
     if-eqz p0, :cond_7
@@ -221,32 +215,30 @@
 
     move-result-wide v1
 
-    invoke-static {v1, v2}, Linb;->q(J)I
+    invoke-static {v1, v2}, Lmip;->dY(J)I
 
     move-result p0
 
-    iget-object v1, v0, Lnwn;->b:Lnws;
+    iget-boolean v1, v0, Lpoy;->c:Z
 
-    invoke-virtual {v1}, Lnws;->ac()Z
+    if-eqz v1, :cond_6
 
-    move-result v1
+    invoke-virtual {v0}, Lpoy;->m()V
 
-    if-nez v1, :cond_6
-
-    invoke-virtual {v0}, Lnwn;->p()V
+    iput-boolean v4, v0, Lpoy;->c:Z
 
     :cond_6
-    iget-object v1, v0, Lnwn;->b:Lnws;
+    iget-object v1, v0, Lpoy;->b:Lppd;
 
-    check-cast v1, Lnig;
+    check-cast v1, Lpbo;
 
-    iget v2, v1, Lnig;->a:I
+    iget v2, v1, Lpbo;->a:I
 
     or-int/lit8 v2, v2, 0x10
 
-    iput v2, v1, Lnig;->a:I
+    iput v2, v1, Lpbo;->a:I
 
-    iput p0, v1, Lnig;->f:I
+    iput p0, v1, Lpbo;->f:I
 
     :cond_7
     const-wide/16 v1, 0x0
@@ -255,85 +247,81 @@
 
     if-lez p0, :cond_9
 
-    invoke-static {p1, p2}, Linb;->p(D)I
+    invoke-static {p1, p2}, Lmip;->dX(D)I
 
     move-result p0
 
-    iget-object p1, v0, Lnwn;->b:Lnws;
+    iget-boolean p1, v0, Lpoy;->c:Z
 
-    invoke-virtual {p1}, Lnws;->ac()Z
+    if-eqz p1, :cond_8
 
-    move-result p1
+    invoke-virtual {v0}, Lpoy;->m()V
 
-    if-nez p1, :cond_8
-
-    invoke-virtual {v0}, Lnwn;->p()V
+    iput-boolean v4, v0, Lpoy;->c:Z
 
     :cond_8
-    iget-object p1, v0, Lnwn;->b:Lnws;
+    iget-object p1, v0, Lpoy;->b:Lppd;
 
-    check-cast p1, Lnig;
+    check-cast p1, Lpbo;
 
-    iget p2, p1, Lnig;->a:I
+    iget p2, p1, Lpbo;->a:I
 
     or-int/lit8 p2, p2, 0x40
 
-    iput p2, p1, Lnig;->a:I
+    iput p2, p1, Lpbo;->a:I
 
-    iput p0, p1, Lnig;->h:I
+    iput p0, p1, Lpbo;->h:I
 
     :cond_9
     cmpl-double p0, p3, v1
 
     if-lez p0, :cond_b
 
-    invoke-static {p3, p4}, Linb;->p(D)I
+    invoke-static {p3, p4}, Lmip;->dX(D)I
 
     move-result p0
 
-    iget-object p1, v0, Lnwn;->b:Lnws;
+    iget-boolean p1, v0, Lpoy;->c:Z
 
-    invoke-virtual {p1}, Lnws;->ac()Z
+    if-eqz p1, :cond_a
 
-    move-result p1
+    invoke-virtual {v0}, Lpoy;->m()V
 
-    if-nez p1, :cond_a
-
-    invoke-virtual {v0}, Lnwn;->p()V
+    iput-boolean v4, v0, Lpoy;->c:Z
 
     :cond_a
-    iget-object p1, v0, Lnwn;->b:Lnws;
+    iget-object p1, v0, Lpoy;->b:Lppd;
 
-    check-cast p1, Lnig;
+    check-cast p1, Lpbo;
 
-    iget p2, p1, Lnig;->a:I
+    iget p2, p1, Lpbo;->a:I
 
     or-int/lit8 p2, p2, 0x20
 
-    iput p2, p1, Lnig;->a:I
+    iput p2, p1, Lpbo;->a:I
 
-    iput p0, p1, Lnig;->g:I
+    iput p0, p1, Lpbo;->g:I
 
     :cond_b
-    invoke-virtual {v0}, Lnwn;->i()Lnws;
+    invoke-virtual {v0}, Lpoy;->h()Lppd;
 
     move-result-object p0
 
-    check-cast p0, Lnig;
+    check-cast p0, Lpbo;
 
     return-object p0
 .end method
 
 
 # virtual methods
-.method public final a(Lnig;)V
+.method public final a(Lpbo;)V
     .locals 1
 
-    iget-object v0, p0, Lcom/google/android/apps/camera/stats/ViewfinderJankSession;->h:Lnig;
+    iget-object v0, p0, Lcom/google/android/apps/camera/stats/ViewfinderJankSession;->h:Lpbo;
 
     if-nez v0, :cond_0
 
-    iput-object p1, p0, Lcom/google/android/apps/camera/stats/ViewfinderJankSession;->h:Lnig;
+    iput-object p1, p0, Lcom/google/android/apps/camera/stats/ViewfinderJankSession;->h:Lpbo;
 
     :cond_0
     return-void

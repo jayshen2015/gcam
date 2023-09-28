@@ -1,157 +1,89 @@
-.class public final Ligm;
-.super Ligk;
+.class final Ligm;
+.super Ljava/lang/Object;
 
-
-# static fields
-.field private static final a:Lnak;
-
-.field private static final b:Lkaf;
-
-.field private static final c:Lkaf;
+# interfaces
+.implements Lphh;
 
 
 # instance fields
-.field private final d:Lklj;
+.field final synthetic a:Llji;
+
+.field final synthetic b:Ligq;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
-
-    const-string v0, "com/google/android/apps/camera/ui/viewfinder/LowResViewfinderSizeSelector"
-
-    invoke-static {v0}, Lnak;->h(Ljava/lang/String;)Lnak;
-
-    move-result-object v0
-
-    sput-object v0, Ligm;->a:Lnak;
-
-    const/16 v0, 0x400
-
-    const/16 v1, 0x300
-
-    invoke-static {v0, v1}, Lkaf;->h(II)Lkaf;
-
-    move-result-object v0
-
-    sput-object v0, Ligm;->b:Lkaf;
-
-    const/16 v0, 0x500
-
-    const/16 v1, 0x2d0
-
-    invoke-static {v0, v1}, Lkaf;->h(II)Lkaf;
-
-    move-result-object v0
-
-    sput-object v0, Ligm;->c:Lkaf;
-
-    return-void
-.end method
-
-.method public constructor <init>(Landroid/view/WindowManager;Ldhi;Lklj;Ljava/lang/String;)V
+.method public constructor <init>(Ligq;Llji;)V
     .locals 0
 
-    invoke-direct {p0, p1, p2, p4}, Ligk;-><init>(Landroid/view/WindowManager;Ldhi;Ljava/lang/String;)V
+    iput-object p1, p0, Ligm;->b:Ligq;
 
-    iput-object p3, p0, Ligm;->d:Lklj;
+    iput-object p2, p0, Ligm;->a:Llji;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final b(Ljava/util/List;Ljzr;Lklv;Lika;Lkll;)Lkaf;
-    .locals 4
+.method public final a(Ljava/lang/Throwable;)V
+    .locals 2
 
-    sget-object v0, Lika;->b:Lika;
+    iget-object v0, p0, Ligm;->a:Llji;
 
-    if-ne p4, v0, :cond_1
+    invoke-interface {v0}, Llji;->a()V
+
+    new-instance v0, Lokf;
+
+    const/4 v1, 0x0
+
+    invoke-direct {v0, p1, v1}, Lokf;-><init>(Ljava/lang/Throwable;[B)V
+
+    throw v0
+.end method
+
+.method public final bridge synthetic b(Ljava/lang/Object;)V
+    .locals 2
+
+    check-cast p1, Ljava/lang/Boolean;
+
+    iget-object p1, p0, Ligm;->a:Llji;
+
+    invoke-interface {p1}, Llji;->a()V
+
+    new-instance p1, Ligl;
+
+    invoke-direct {p1, p0}, Ligl;-><init>(Ligm;)V
+
+    iget-object v0, p0, Ligm;->b:Ligq;
+
+    iget-object v0, v0, Ligq;->e:Lphv;
+
+    invoke-static {p1, v0}, Ligq;->j(Ljava/lang/Runnable;Lphv;)V
+
+    iget-object p1, p0, Ligm;->b:Ligq;
+
+    iget-object p1, p1, Ligq;->f:Ljava/lang/Object;
+
+    monitor-enter p1
 
     :try_start_0
-    invoke-virtual {p2}, Ljzr;->a()D
+    iget-object v0, p0, Ligm;->b:Ligq;
 
-    move-result-wide v0
+    sget-object v1, Ligp;->b:Ligp;
 
-    invoke-virtual {p0, p1, v0, v1}, Ligk;->a(Ljava/util/List;D)Lkaf;
+    iput-object v1, v0, Ligq;->i:Ligp;
 
-    move-result-object v0
+    monitor-exit p1
 
-    iget-object v1, p0, Ligm;->d:Lklj;
+    return-void
 
-    invoke-interface {v1, p5}, Lklj;->a(Lkll;)Lkli;
-
-    move-result-object v1
-
-    const/16 v2, 0x22
-
-    invoke-static {v1, v0, v2}, Lgdd;->a(Lkli;Lkaf;I)Lgdd;
-
-    move-result-object v0
-
-    iget-object v0, v0, Lgdd;->b:Lkaf;
-
-    sget-object v1, Ljzr;->b:Ljzr;
-
-    invoke-static {v0}, Ljzr;->j(Lkaf;)Ljzr;
-
-    move-result-object v2
-
-    invoke-virtual {v1, v2}, Ljzr;->m(Ljzr;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_0
-
-    sget-object v0, Ligm;->c:Lkaf;
-
-    goto :goto_0
-
-    :cond_0
-    sget-object v1, Ljzr;->a:Ljzr;
-
-    invoke-static {v0}, Ljzr;->j(Lkaf;)Ljzr;
-
-    move-result-object v0
-
-    invoke-virtual {v1, v0}, Ljzr;->m(Ljzr;)Z
-
-    move-result v0
-
-    invoke-static {v0}, Lmoz;->e(Z)V
-
-    sget-object v0, Ligm;->b:Lkaf;
-
-    :goto_0
-    invoke-interface {p1, v0}, Ljava/util/List;->contains(Ljava/lang/Object;)Z
-
-    move-result v1
-    :try_end_0
-    .catch Lgdc; {:try_start_0 .. :try_end_0} :catch_0
-
-    if-eqz v1, :cond_1
-
-    return-object v0
-
-    :catch_0
+    :catchall_0
     move-exception v0
 
-    sget-object v1, Ligm;->a:Lnak;
+    monitor-exit p1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    invoke-virtual {v1}, Lnaf;->c()Lnaz;
-
-    move-result-object v1
-
-    const-string v2, "selectViewfinderSize: cameraId=%s"
-
-    const/16 v3, 0x1095
-
-    invoke-static {v1, v2, p5, v3, v0}, Ld;->i(Lnaz;Ljava/lang/String;Ljava/lang/Object;CLjava/lang/Throwable;)V
-
-    :cond_1
-    invoke-super/range {p0 .. p5}, Ligk;->b(Ljava/util/List;Ljzr;Lklv;Lika;Lkll;)Lkaf;
-
-    move-result-object p1
-
-    return-object p1
+    throw v0
 .end method

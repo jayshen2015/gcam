@@ -1,168 +1,80 @@
-.class public final Lmem;
-.super Lnws;
+.class public final synthetic Lmem;
+.super Ljava/lang/Object;
 
 # interfaces
-.implements Lnxz;
-
-
-# static fields
-.field public static final c:Lmem;
-
-.field private static volatile d:Lnyf;
+.implements Lkvc;
 
 
 # instance fields
-.field public a:I
+.field public final synthetic a:Ljava/lang/String;
 
-.field public b:Lmen;
+.field public final synthetic b:Lkij;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
+.method public synthetic constructor <init>(Lkij;Ljava/lang/String;)V
+    .locals 0
 
-    new-instance v0, Lmem;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {v0}, Lmem;-><init>()V
+    iput-object p1, p0, Lmem;->b:Lkij;
 
-    sput-object v0, Lmem;->c:Lmem;
-
-    const-class v1, Lmem;
-
-    invoke-static {v1, v0}, Lnws;->aa(Ljava/lang/Class;Lnws;)V
-
-    return-void
-.end method
-
-.method private constructor <init>()V
-    .locals 1
-
-    invoke-direct {p0}, Lnws;-><init>()V
-
-    sget-object v0, Lnvt;->b:Lnvt;
+    iput-object p2, p0, Lmem;->a:Ljava/lang/String;
 
     return-void
 .end method
 
 
 # virtual methods
-.method protected final a(ILjava/lang/Object;)Ljava/lang/Object;
+.method public final a(Lkvk;)V
     .locals 3
 
-    add-int/lit8 p1, p1, -0x1
+    iget-object v0, p0, Lmem;->b:Lkij;
 
-    const/4 p2, 0x1
+    iget-object v1, p0, Lmem;->a:Ljava/lang/String;
 
-    packed-switch p1, :pswitch_data_0
+    sget-object v2, Lmep;->a:[Ljava/lang/String;
 
-    :pswitch_0
-    const/4 p1, 0x0
+    invoke-virtual {p1}, Lkvk;->e()Z
 
-    return-object p1
+    move-result p1
 
-    :pswitch_1
-    sget-object p1, Lmem;->d:Lnyf;
+    const-string v2, "CBVerifier"
 
-    if-nez p1, :cond_1
+    if-eqz p1, :cond_0
 
-    const-class p2, Lmem;
+    new-instance p1, Lmen;
 
-    monitor-enter p2
+    invoke-direct {p1, v0, v1}, Lmen;-><init>(Lkij;Ljava/lang/String;)V
 
-    :try_start_0
-    sget-object p1, Lmem;->d:Lnyf;
+    new-instance v0, Ljava/lang/Thread;
 
-    if-nez p1, :cond_0
+    new-instance v1, Lmeo;
 
-    new-instance p1, Lnwo;
+    invoke-direct {v1, p1}, Lmeo;-><init>(Lkuc;)V
 
-    sget-object v0, Lmem;->c:Lmem;
+    invoke-direct {v0, v1, v2}, Ljava/lang/Thread;-><init>(Ljava/lang/Runnable;Ljava/lang/String;)V
 
-    invoke-direct {p1, v0}, Lnwo;-><init>(Lnws;)V
+    invoke-virtual {v0}, Ljava/lang/Thread;->start()V
 
-    sput-object p1, Lmem;->d:Lnyf;
+    return-void
 
     :cond_0
-    monitor-exit p2
+    const/4 p1, 0x1
 
-    goto :goto_0
+    new-array p1, p1, [Ljava/lang/Object;
 
-    :catchall_0
-    move-exception p1
+    const/4 v0, 0x0
 
-    monitor-exit p2
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    aput-object v1, p1, v0
 
-    throw p1
+    const-string v0, "Registering phenotype for %s failed"
 
-    :cond_1
-    :goto_0
-    return-object p1
-
-    :pswitch_2
-    sget-object p1, Lmem;->c:Lmem;
-
-    return-object p1
-
-    :pswitch_3
-    new-instance p1, Lnwn;
-
-    sget-object p2, Lmem;->c:Lmem;
-
-    invoke-direct {p1, p2}, Lnwn;-><init>(Lnws;)V
-
-    return-object p1
-
-    :pswitch_4
-    new-instance p1, Lmem;
-
-    invoke-direct {p1}, Lmem;-><init>()V
-
-    return-object p1
-
-    :pswitch_5
-    const-string p1, "a"
-
-    const-string v0, "\u0001\u0001\u0000\u0001\u0004\u0004\u0001\u0000\u0000\u0000\u0004\u1009\u0002"
-
-    const/4 v1, 0x2
-
-    new-array v1, v1, [Ljava/lang/Object;
-
-    const/4 v2, 0x0
-
-    aput-object p1, v1, v2
-
-    const-string p1, "b"
-
-    aput-object p1, v1, p2
-
-    sget-object p1, Lmem;->c:Lmem;
-
-    invoke-static {p1, v0, v1}, Lmem;->X(Lnxy;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {v0, p1}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p1
 
-    return-object p1
+    invoke-static {v2, p1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    :pswitch_6
-    invoke-static {p2}, Ljava/lang/Byte;->valueOf(B)Ljava/lang/Byte;
-
-    move-result-object p1
-
-    return-object p1
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_6
-        :pswitch_0
-        :pswitch_5
-        :pswitch_4
-        :pswitch_3
-        :pswitch_2
-        :pswitch_1
-    .end packed-switch
+    return-void
 .end method

@@ -3,5 +3,5 @@
 
 
 # virtual methods
-.method public abstract a(Ljava/io/FileOutputStream;ILnou;Ljava/util/concurrent/Executor;)Lkxv;
+.method public abstract a()Z
 .end method

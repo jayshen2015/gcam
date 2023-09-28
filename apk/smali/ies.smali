@@ -1,552 +1,437 @@
-.class public final synthetic Lies;
-.super Ljava/lang/Object;
-
-# interfaces
-.implements Landroid/animation/ValueAnimator$AnimatorUpdateListener;
+.class public final Lies;
+.super Landroid/widget/LinearLayout;
 
 
 # instance fields
-.field public final synthetic a:Ljava/lang/Object;
+.field public final a:Lj$/time/Duration;
 
-.field public final synthetic b:Ljava/lang/Object;
+.field public final b:Ljava/util/ArrayList;
 
-.field private final synthetic c:I
+.field public final c:Lieh;
+
+.field public d:Landroid/graphics/drawable/GradientDrawable;
+
+.field public e:Lief;
+
+.field public f:I
+
+.field private final g:Z
 
 
 # direct methods
-.method public synthetic constructor <init>(Lcom/google/android/material/appbar/AppBarLayout;Lmka;I)V
-    .locals 0
+.method public constructor <init>(Landroid/content/Context;Z)V
+    .locals 1
 
-    iput p3, p0, Lies;->c:I
+    invoke-direct {p0, p1}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;)V
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const/4 v0, 0x1
 
-    iput-object p1, p0, Lies;->a:Ljava/lang/Object;
+    iput v0, p0, Lies;->f:I
 
-    iput-object p2, p0, Lies;->b:Ljava/lang/Object;
+    iput-boolean p2, p0, Lies;->g:Z
 
-    return-void
-.end method
+    invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
-.method public synthetic constructor <init>(Lhsh;Lcom/google/android/apps/camera/ui/captureframe/CaptureFrameUi;I)V
-    .locals 0
+    move-result-object p1
 
-    iput p3, p0, Lies;->c:I
+    const p2, 0x7f0c005c
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-virtual {p1, p2}, Landroid/content/res/Resources;->getInteger(I)I
 
-    iput-object p1, p0, Lies;->b:Ljava/lang/Object;
+    move-result p1
 
-    iput-object p2, p0, Lies;->a:Ljava/lang/Object;
+    int-to-long p1, p1
 
-    return-void
-.end method
+    invoke-static {p1, p2}, Lj$/time/Duration;->ofMillis(J)Lj$/time/Duration;
 
-.method public synthetic constructor <init>(Life;Ljava/util/function/BiFunction;I)V
-    .locals 0
+    move-result-object p1
 
-    iput p3, p0, Lies;->c:I
+    iput-object p1, p0, Lies;->a:Lj$/time/Duration;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance p1, Ljava/util/ArrayList;
 
-    iput-object p1, p0, Lies;->a:Ljava/lang/Object;
+    invoke-direct {p1}, Ljava/util/ArrayList;-><init>()V
 
-    iput-object p2, p0, Lies;->b:Ljava/lang/Object;
+    iput-object p1, p0, Lies;->b:Ljava/util/ArrayList;
 
-    return-void
-.end method
+    new-instance p1, Lieh;
 
-.method public synthetic constructor <init>(Lita;Landroid/widget/FrameLayout$LayoutParams;I)V
-    .locals 0
+    invoke-direct {p1}, Lieh;-><init>()V
 
-    iput p3, p0, Lies;->c:I
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lies;->b:Ljava/lang/Object;
-
-    iput-object p2, p0, Lies;->a:Ljava/lang/Object;
+    iput-object p1, p0, Lies;->c:Lieh;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onAnimationUpdate(Landroid/animation/ValueAnimator;)V
-    .locals 9
+.method public final a(I)I
+    .locals 1
 
-    iget v0, p0, Lies;->c:I
-
-    packed-switch v0, :pswitch_data_0
-
-    iget-object v0, p0, Lies;->a:Ljava/lang/Object;
-
-    iget-object v1, p0, Lies;->b:Ljava/lang/Object;
-
-    invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
-
-    move-result-object p1
-
-    check-cast p1, Ljava/lang/Float;
-
-    invoke-virtual {p1}, Ljava/lang/Float;->floatValue()F
-
-    move-result p1
-
-    check-cast v1, Lmka;
-
-    invoke-virtual {v1, p1}, Lmka;->h(F)V
-
-    check-cast v0, Lcom/google/android/material/appbar/AppBarLayout;
-
-    iget-object v1, v0, Lcom/google/android/material/appbar/AppBarLayout;->g:Landroid/graphics/drawable/Drawable;
-
-    instance-of v2, v1, Lmka;
-
-    if-eqz v2, :cond_3
-
-    check-cast v1, Lmka;
-
-    invoke-virtual {v1, p1}, Lmka;->h(F)V
-
-    goto/16 :goto_2
-
-    :pswitch_0
-    iget-object v0, p0, Lies;->a:Ljava/lang/Object;
-
-    iget-object v1, p0, Lies;->b:Ljava/lang/Object;
-
-    invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
-
-    move-result-object p1
-
-    check-cast p1, Ljava/lang/Float;
-
-    invoke-virtual {p1}, Ljava/lang/Float;->floatValue()F
-
-    move-result p1
-
-    float-to-int p1, p1
-
-    check-cast v1, Lmka;
-
-    invoke-virtual {v1, p1}, Lmka;->setAlpha(I)V
-
-    check-cast v0, Lcom/google/android/material/appbar/AppBarLayout;
-
-    iget-object v0, v0, Lcom/google/android/material/appbar/AppBarLayout;->f:Ljava/util/List;
-
-    invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+    invoke-virtual {p0}, Lies;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
 
-    :cond_0
+    invoke-virtual {v0, p1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
+
+    move-result p1
+
+    return p1
+.end method
+
+.method public final b()I
+    .locals 1
+
+    const v0, 0x7f0704fa
+
+    invoke-virtual {p0, v0}, Lies;->a(I)I
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public final c()I
+    .locals 2
+
+    const v0, 0x7f070553
+
+    invoke-virtual {p0, v0}, Lies;->a(I)I
+
+    move-result v0
+
+    const v1, 0x7f070554
+
+    invoke-virtual {p0, v1}, Lies;->a(I)I
+
+    move-result v1
+
+    add-int/2addr v0, v1
+
+    const v1, 0x7f070548
+
+    invoke-virtual {p0, v1}, Lies;->a(I)I
+
+    move-result v1
+
+    add-int/2addr v0, v1
+
+    const v1, 0x7f070552
+
+    invoke-virtual {p0, v1}, Lies;->a(I)I
+
+    move-result v1
+
+    add-int/2addr v0, v1
+
+    return v0
+.end method
+
+.method public final d()Landroid/animation/Animator;
+    .locals 6
+
+    const/high16 v0, 0x3f800000    # 1.0f
+
+    invoke-virtual {p0, v0}, Lies;->setAlpha(F)V
+
+    const/4 v0, 0x1
+
+    invoke-virtual {p0, v0}, Lies;->h(I)V
+
+    iget-boolean v1, p0, Lies;->g:Z
+
+    const/4 v2, 0x0
+
+    if-eqz v1, :cond_1
+
+    iget-object v1, p0, Lies;->c:Lieh;
+
+    invoke-static {}, Llar;->a()V
+
+    iget-object v1, v1, Lieh;->a:Ljava/util/ArrayList;
+
+    invoke-interface {v1}, Ljava/util/List;->size()I
+
+    move-result v3
+
+    const/4 v4, 0x0
+
     :goto_0
-    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
+    if-ge v4, v3, :cond_3
 
-    move-result v2
+    invoke-interface {v1, v4}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
-    if-eqz v2, :cond_1
+    move-result-object v5
 
-    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    check-cast v5, Lieg;
 
-    move-result-object v2
+    if-eqz v5, :cond_0
 
-    check-cast v2, Lmfh;
+    invoke-interface {v5}, Lieg;->d()V
 
-    invoke-virtual {v1}, Lmka;->e()Landroid/content/res/ColorStateList;
-
-    move-result-object v3
-
-    if-eqz v3, :cond_0
-
-    invoke-virtual {v1}, Lmka;->e()Landroid/content/res/ColorStateList;
-
-    move-result-object v3
-
-    invoke-virtual {v3, p1}, Landroid/content/res/ColorStateList;->withAlpha(I)Landroid/content/res/ColorStateList;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Landroid/content/res/ColorStateList;->getDefaultColor()I
-
-    invoke-interface {v2}, Lmfh;->a()V
+    :cond_0
+    add-int/lit8 v4, v4, 0x1
 
     goto :goto_0
 
     :cond_1
-    return-void
+    iget-object v1, p0, Lies;->c:Lieh;
 
-    :pswitch_1
-    iget-object v0, p0, Lies;->b:Ljava/lang/Object;
+    invoke-static {}, Llar;->a()V
 
-    iget-object v1, p0, Lies;->a:Ljava/lang/Object;
+    iget-object v1, v1, Lieh;->a:Ljava/util/ArrayList;
 
-    invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
-
-    move-result-object p1
-
-    check-cast p1, Ljava/lang/Integer;
-
-    invoke-virtual {p1}, Ljava/lang/Integer;->intValue()I
-
-    move-result p1
-
-    move-object v2, v1
-
-    check-cast v2, Landroid/widget/FrameLayout$LayoutParams;
-
-    iput p1, v2, Landroid/widget/FrameLayout$LayoutParams;->leftMargin:I
-
-    check-cast v0, Lita;
-
-    iget-object p1, v0, Lita;->s:Lcom/google/android/apps/camera/zoomui/view/ZoomUi;
-
-    invoke-virtual {p1}, Lcom/google/android/apps/camera/zoomui/view/ZoomUi;->n()Landroid/widget/TextView;
-
-    move-result-object p1
-
-    check-cast v1, Landroid/view/ViewGroup$LayoutParams;
-
-    invoke-virtual {p1, v1}, Landroid/widget/TextView;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
-
-    return-void
-
-    :pswitch_2
-    iget-object v0, p0, Lies;->b:Ljava/lang/Object;
-
-    iget-object v1, p0, Lies;->a:Ljava/lang/Object;
-
-    move-object v2, v0
-
-    check-cast v2, Lhsh;
-
-    iget-object v2, v2, Lhsh;->a:Ljava/lang/Object;
-
-    monitor-enter v2
-
-    :try_start_0
-    invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
-
-    move-result-object p1
-
-    check-cast p1, Ljava/lang/Float;
-
-    invoke-virtual {p1}, Ljava/lang/Float;->floatValue()F
-
-    move-result p1
-
-    move-object v3, v0
-
-    check-cast v3, Lhsh;
-
-    iget-object v3, v3, Lhsh;->c:Ljava/lang/Object;
-
-    check-cast v3, Lhsj;
-
-    invoke-virtual {v3}, Lhsj;->a()I
+    invoke-interface {v1}, Ljava/util/List;->size()I
 
     move-result v3
 
-    move-object v4, v0
+    const/4 v4, 0x0
 
-    check-cast v4, Lhsh;
+    :goto_1
+    if-ge v4, v3, :cond_3
 
-    iget-object v4, v4, Lhsh;->c:Ljava/lang/Object;
+    invoke-interface {v1, v4}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
-    move-object v5, v4
+    move-result-object v5
 
-    check-cast v5, Lhsj;
+    check-cast v5, Lieg;
 
-    iget v5, v5, Lhsj;->e:I
+    if-eqz v5, :cond_2
 
-    move-object v6, v4
+    invoke-interface {v5}, Lieg;->b()V
 
-    check-cast v6, Lhsj;
-
-    iget v6, v6, Lhsj;->f:I
-
-    check-cast v4, Lhsj;
-
-    iget v4, v4, Lhsj;->g:I
-
-    invoke-static {v3, v5, v6, v4}, Landroid/graphics/Color;->argb(IIII)I
-
-    move-result v3
-
-    move-object v4, v0
-
-    check-cast v4, Lhsh;
-
-    iget-object v4, v4, Lhsh;->d:Ljava/lang/Object;
-
-    sget-object v5, Lhsj;->a:Lhsj;
-
-    check-cast v4, Lhsj;
-
-    invoke-virtual {v4, v5}, Lhsj;->equals(Ljava/lang/Object;)Z
-
-    move-result v4
-
-    if-eqz v4, :cond_2
-
-    move-object v4, v0
-
-    check-cast v4, Lhsh;
-
-    iget-object v4, v4, Lhsh;->d:Ljava/lang/Object;
-
-    check-cast v4, Lhsj;
-
-    invoke-virtual {v4}, Lhsj;->a()I
-
-    move-result v4
-
-    check-cast v0, Lhsh;
-
-    iget-object v0, v0, Lhsh;->c:Ljava/lang/Object;
-
-    move-object v5, v0
-
-    check-cast v5, Lhsj;
-
-    iget v5, v5, Lhsj;->e:I
-
-    move-object v6, v0
-
-    check-cast v6, Lhsj;
-
-    iget v6, v6, Lhsj;->f:I
-
-    check-cast v0, Lhsj;
-
-    iget v0, v0, Lhsj;->g:I
-
-    invoke-static {v4, v5, v6, v0}, Landroid/graphics/Color;->argb(IIII)I
-
-    move-result v0
+    :cond_2
+    add-int/lit8 v4, v4, 0x1
 
     goto :goto_1
 
-    :cond_2
-    move-object v4, v0
+    :cond_3
+    const/4 v1, 0x2
 
-    check-cast v4, Lhsh;
+    new-array v3, v1, [I
 
-    iget-object v4, v4, Lhsh;->d:Ljava/lang/Object;
+    aput v2, v3, v2
 
-    check-cast v4, Lhsj;
+    iget-boolean v2, p0, Lies;->g:Z
 
-    invoke-virtual {v4}, Lhsj;->a()I
+    if-eqz v2, :cond_4
+
+    const v2, 0x7f070553
+
+    invoke-virtual {p0, v2}, Lies;->a(I)I
+
+    move-result v2
+
+    const v4, 0x7f0704fa
+
+    invoke-virtual {p0, v4}, Lies;->a(I)I
 
     move-result v4
 
-    check-cast v0, Lhsh;
+    div-int/2addr v4, v1
 
-    iget-object v0, v0, Lhsh;->d:Ljava/lang/Object;
+    add-int/2addr v2, v4
 
-    move-object v5, v0
+    goto :goto_2
 
-    check-cast v5, Lhsj;
+    :cond_4
+    invoke-virtual {p0}, Lies;->c()I
 
-    iget v5, v5, Lhsj;->e:I
+    move-result v2
 
-    move-object v6, v0
-
-    check-cast v6, Lhsj;
-
-    iget v6, v6, Lhsj;->f:I
-
-    check-cast v0, Lhsj;
-
-    iget v0, v0, Lhsj;->g:I
-
-    invoke-static {v4, v5, v6, v0}, Landroid/graphics/Color;->argb(IIII)I
-
-    move-result v0
-
-    :goto_1
-    const/high16 v4, 0x3f800000    # 1.0f
-
-    sub-float/2addr v4, p1
-
-    invoke-static {v3}, Landroid/graphics/Color;->alpha(I)I
-
-    move-result v5
-
-    int-to-float v5, v5
-
-    mul-float v5, v5, v4
-
-    invoke-static {v0}, Landroid/graphics/Color;->alpha(I)I
-
-    move-result v6
-
-    int-to-float v6, v6
-
-    mul-float v6, v6, p1
-
-    add-float/2addr v5, v6
-
-    invoke-static {v3}, Landroid/graphics/Color;->red(I)I
-
-    move-result v6
-
-    int-to-float v6, v6
-
-    mul-float v6, v6, v4
-
-    invoke-static {v0}, Landroid/graphics/Color;->red(I)I
-
-    move-result v7
-
-    int-to-float v7, v7
-
-    mul-float v7, v7, p1
-
-    add-float/2addr v6, v7
-
-    invoke-static {v3}, Landroid/graphics/Color;->green(I)I
-
-    move-result v7
-
-    int-to-float v7, v7
-
-    mul-float v7, v7, v4
-
-    invoke-static {v0}, Landroid/graphics/Color;->green(I)I
-
-    move-result v8
-
-    int-to-float v8, v8
-
-    mul-float v8, v8, p1
-
-    add-float/2addr v7, v8
-
-    invoke-static {v3}, Landroid/graphics/Color;->blue(I)I
-
-    move-result v3
-
-    int-to-float v3, v3
-
-    mul-float v3, v3, v4
-
-    invoke-static {v0}, Landroid/graphics/Color;->blue(I)I
-
-    move-result v0
-
-    int-to-float v0, v0
-
-    mul-float v0, v0, p1
-
-    add-float/2addr v3, v0
-
-    float-to-int p1, v5
-
-    float-to-int v0, v6
-
-    float-to-int v4, v7
-
-    float-to-int v3, v3
-
-    invoke-static {p1, v0, v4, v3}, Landroid/graphics/Color;->argb(IIII)I
-
-    move-result p1
-
-    move-object v0, v1
-
-    check-cast v0, Lcom/google/android/apps/camera/ui/captureframe/CaptureFrameUi;
-
-    iget-object v0, v0, Lcom/google/android/apps/camera/ui/captureframe/CaptureFrameUi;->b:Landroid/graphics/Paint;
-
-    invoke-virtual {v0, p1}, Landroid/graphics/Paint;->setColor(I)V
-
-    check-cast v1, Lcom/google/android/apps/camera/ui/captureframe/CaptureFrameUi;
-
-    invoke-virtual {v1}, Lcom/google/android/apps/camera/ui/captureframe/CaptureFrameUi;->invalidate()V
-
-    monitor-exit v2
-
-    return-void
-
-    :catchall_0
-    move-exception p1
-
-    monitor-exit v2
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw p1
-
-    :pswitch_3
-    iget-object v0, p0, Lies;->a:Ljava/lang/Object;
-
-    iget-object v1, p0, Lies;->b:Ljava/lang/Object;
-
-    check-cast v0, Life;
-
-    iget-object v0, v0, Life;->b:Lcom/google/android/apps/camera/ui/shutterbutton/ShutterButton;
-
-    iget-object v0, v0, Lcom/google/android/apps/camera/ui/shutterbutton/ShutterButton;->inFlightSpecBuilder:Lifq;
-
-    invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
-
-    move-result-object p1
-
-    check-cast p1, Ljava/lang/Integer;
-
-    invoke-virtual {p1}, Ljava/lang/Integer;->intValue()I
-
-    move-result p1
-
-    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object p1
-
-    invoke-interface {v1, v0, p1}, Ljava/util/function/BiFunction;->apply(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object p1
-
-    check-cast p1, Lifq;
-
-    return-void
-
-    :cond_3
     :goto_2
-    iget-object p1, v0, Lcom/google/android/material/appbar/AppBarLayout;->f:Ljava/util/List;
+    aput v2, v3, v0
 
-    invoke-interface {p1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
-
-    move-result-object p1
-
-    :goto_3
-    invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_4
-
-    invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-static {v3}, Landroid/animation/ValueAnimator;->ofInt([I)Landroid/animation/ValueAnimator;
 
     move-result-object v0
 
-    check-cast v0, Lmfh;
+    iget-object v2, p0, Lies;->a:Lj$/time/Duration;
 
-    invoke-interface {v0}, Lmfh;->a()V
+    invoke-virtual {v2}, Lj$/time/Duration;->toMillis()J
 
-    goto :goto_3
+    move-result-wide v2
 
-    :cond_4
+    invoke-virtual {v0, v2, v3}, Landroid/animation/ValueAnimator;->setDuration(J)Landroid/animation/ValueAnimator;
+
+    new-instance v2, Lier;
+
+    const/4 v3, 0x4
+
+    invoke-direct {v2, p0, v3}, Lier;-><init>(Lies;I)V
+
+    invoke-static {v2}, Lmip;->ew(Lj$/util/function/Consumer;)Landroid/animation/Animator$AnimatorListener;
+
+    move-result-object v2
+
+    invoke-virtual {v0, v2}, Landroid/animation/ValueAnimator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
+
+    new-instance v2, Lier;
+
+    const/4 v3, 0x5
+
+    invoke-direct {v2, p0, v3}, Lier;-><init>(Lies;I)V
+
+    invoke-static {v2}, Lmip;->ev(Lj$/util/function/Consumer;)Landroid/animation/Animator$AnimatorListener;
+
+    move-result-object v2
+
+    invoke-virtual {v0, v2}, Landroid/animation/ValueAnimator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
+
+    new-instance v2, Liep;
+
+    invoke-direct {v2, p0, v1}, Liep;-><init>(Lies;I)V
+
+    invoke-virtual {v0, v2}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
+
+    return-object v0
+.end method
+
+.method public final e(I)V
+    .locals 1
+
+    iget-object v0, p0, Lies;->e:Lief;
+
+    if-eqz v0, :cond_0
+
+    invoke-virtual {p0, v0}, Lies;->removeView(Landroid/view/View;)V
+
+    iget-object v0, p0, Lies;->e:Lief;
+
+    invoke-virtual {p0, v0, p1}, Lies;->addView(Landroid/view/View;I)V
+
+    :cond_0
+    return-void
+.end method
+
+.method public final f(Z)V
+    .locals 3
+
+    iget-object v0, p0, Lies;->e:Lief;
+
+    if-eqz v0, :cond_0
+
+    invoke-virtual {v0, p1}, Lief;->setEnabled(Z)V
+
+    :cond_0
+    iget-object v0, p0, Lies;->b:Ljava/util/ArrayList;
+
+    invoke-static {v0}, Lj$/util/Collection$-EL;->stream(Ljava/util/Collection;)Lj$/util/stream/Stream;
+
+    move-result-object v0
+
+    new-instance v1, Lieo;
+
+    const/4 v2, 0x0
+
+    invoke-direct {v1, p1, v2}, Lieo;-><init>(ZI)V
+
+    invoke-interface {v0, v1}, Lj$/util/stream/Stream;->forEachOrdered(Lj$/util/function/Consumer;)V
+
+    return-void
+.end method
+
+.method public final g(Lojc;)V
+    .locals 2
+
+    iget-object v0, p0, Lies;->b:Ljava/util/ArrayList;
+
+    invoke-static {v0}, Lj$/util/Collection$-EL;->stream(Ljava/util/Collection;)Lj$/util/stream/Stream;
+
+    move-result-object v0
+
+    new-instance v1, Lien;
+
+    invoke-direct {v1, p1}, Lien;-><init>(Lojc;)V
+
+    invoke-interface {v0, v1}, Lj$/util/stream/Stream;->forEachOrdered(Lj$/util/function/Consumer;)V
+
+    return-void
+.end method
+
+.method public final h(I)V
+    .locals 10
+
+    const v0, 0x7f07054f
+
+    invoke-virtual {p0, v0}, Lies;->a(I)I
+
+    move-result v0
+
+    iput p1, p0, Lies;->f:I
+
+    const/4 v1, 0x7
+
+    const/4 v2, 0x6
+
+    const/4 v3, 0x5
+
+    const/4 v4, 0x4
+
+    const/4 v5, 0x3
+
+    const/4 v6, 0x2
+
+    const/4 v7, 0x0
+
+    const/16 v8, 0x8
+
+    const/4 v9, 0x1
+
+    if-ne p1, v9, :cond_0
+
+    iget-object p1, p0, Lies;->d:Landroid/graphics/drawable/GradientDrawable;
+
+    new-array v8, v8, [F
+
+    int-to-float v0, v0
+
+    aput v0, v8, v7
+
+    aput v0, v8, v9
+
+    aput v0, v8, v6
+
+    aput v0, v8, v5
+
+    const/4 v0, 0x0
+
+    aput v0, v8, v4
+
+    aput v0, v8, v3
+
+    aput v0, v8, v2
+
+    aput v0, v8, v1
+
+    invoke-virtual {p1, v8}, Landroid/graphics/drawable/GradientDrawable;->setCornerRadii([F)V
+
     return-void
 
-    nop
+    :cond_0
+    iget-object p1, p0, Lies;->d:Landroid/graphics/drawable/GradientDrawable;
 
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_3
-        :pswitch_2
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
+    new-array v8, v8, [F
+
+    int-to-float v0, v0
+
+    aput v0, v8, v7
+
+    aput v0, v8, v9
+
+    aput v0, v8, v6
+
+    aput v0, v8, v5
+
+    aput v0, v8, v4
+
+    aput v0, v8, v3
+
+    aput v0, v8, v2
+
+    aput v0, v8, v1
+
+    invoke-virtual {p1, v8}, Landroid/graphics/drawable/GradientDrawable;->setCornerRadii([F)V
+
+    return-void
 .end method

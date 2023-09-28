@@ -1,92 +1,59 @@
-.class final Lblv;
-.super Lbnq;
+.class public final Lblv;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Ljava/util/concurrent/Executor;
 
 
 # instance fields
-.field private final a:Landroid/hardware/camera2/CameraCharacteristics;
+.field private final synthetic a:I
 
 
 # direct methods
-.method public constructor <init>(Landroid/hardware/camera2/CameraCharacteristics;)V
+.method public constructor <init>(I)V
     .locals 0
 
-    invoke-direct {p0}, Lbnq;-><init>()V
+    iput p1, p0, Lblv;->a:I
 
-    iput-object p1, p0, Lblv;->a:Landroid/hardware/camera2/CameraCharacteristics;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()I
-    .locals 2
+.method public final execute(Ljava/lang/Runnable;)V
+    .locals 1
 
-    iget-object v0, p0, Lblv;->a:Landroid/hardware/camera2/CameraCharacteristics;
+    iget v0, p0, Lblv;->a:I
 
-    sget-object v1, Landroid/hardware/camera2/CameraCharacteristics;->SENSOR_ORIENTATION:Landroid/hardware/camera2/CameraCharacteristics$Key;
+    packed-switch v0, :pswitch_data_0
 
-    invoke-virtual {v0, v1}, Landroid/hardware/camera2/CameraCharacteristics;->get(Landroid/hardware/camera2/CameraCharacteristics$Key;)Ljava/lang/Object;
+    invoke-interface {p1}, Ljava/lang/Runnable;->run()V
 
-    move-result-object v0
+    return-void
 
-    check-cast v0, Ljava/lang/Integer;
+    :pswitch_0
+    invoke-interface {p1}, Ljava/lang/Runnable;->run()V
 
-    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
+    return-void
 
-    move-result v0
+    :pswitch_1
+    invoke-interface {p1}, Ljava/lang/Runnable;->run()V
 
-    return v0
-.end method
+    return-void
 
-.method public final b()Z
-    .locals 2
+    :pswitch_2
+    invoke-static {p1}, Lbmf;->j(Ljava/lang/Runnable;)V
 
-    iget-object v0, p0, Lblv;->a:Landroid/hardware/camera2/CameraCharacteristics;
+    return-void
 
-    sget-object v1, Landroid/hardware/camera2/CameraCharacteristics;->LENS_FACING:Landroid/hardware/camera2/CameraCharacteristics$Key;
+    nop
 
-    invoke-virtual {v0, v1}, Landroid/hardware/camera2/CameraCharacteristics;->get(Landroid/hardware/camera2/CameraCharacteristics$Key;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/lang/Integer;
-
-    const/4 v1, 0x1
-
-    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Ljava/lang/Integer;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public final c()Z
-    .locals 2
-
-    iget-object v0, p0, Lblv;->a:Landroid/hardware/camera2/CameraCharacteristics;
-
-    sget-object v1, Landroid/hardware/camera2/CameraCharacteristics;->LENS_FACING:Landroid/hardware/camera2/CameraCharacteristics$Key;
-
-    invoke-virtual {v0, v1}, Landroid/hardware/camera2/CameraCharacteristics;->get(Landroid/hardware/camera2/CameraCharacteristics$Key;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/lang/Integer;
-
-    const/4 v1, 0x0
-
-    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Ljava/lang/Integer;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    return v0
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method

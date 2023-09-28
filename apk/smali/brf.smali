@@ -1,75 +1,61 @@
-.class public final Lbrf;
+.class final Lbrf;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lbrh;
-
-
-# static fields
-.field private static final a:[Ljava/lang/String;
+.implements Loiu;
 
 
 # instance fields
-.field private final b:Landroid/content/ContentResolver;
+.field final synthetic a:Lbrg;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 3
-
-    const/4 v0, 0x1
-
-    new-array v0, v0, [Ljava/lang/String;
-
-    const/4 v1, 0x0
-
-    const-string v2, "_data"
-
-    aput-object v2, v0, v1
-
-    sput-object v0, Lbrf;->a:[Ljava/lang/String;
-
-    return-void
-.end method
-
-.method public constructor <init>(Landroid/content/ContentResolver;)V
+.method public constructor <init>(Lbrg;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lbrf;->a:Lbrg;
 
-    iput-object p1, p0, Lbrf;->b:Landroid/content/ContentResolver;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Landroid/net/Uri;)Landroid/database/Cursor;
-    .locals 6
+.method public final bridge synthetic a(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 3
 
-    invoke-virtual {p1}, Landroid/net/Uri;->getLastPathSegment()Ljava/lang/String;
+    check-cast p1, Llic;
+
+    iget-object v0, p0, Lbrf;->a:Lbrg;
+
+    if-nez p1, :cond_0
+
+    sget-object p1, Llic;->a:Llic;
+
+    goto :goto_0
+
+    :cond_0
+    :goto_0
+    iget v1, v0, Lbrg;->a:I
+
+    iget p1, p1, Llic;->e:I
+
+    iget-boolean v2, v0, Lbrg;->b:Z
+
+    iget-object v0, v0, Lbrg;->c:Lddf;
+
+    invoke-static {v1, p1, v2, v0}, Lbrg;->c(IIZLddf;)I
+
+    move-result p1
+
+    invoke-static {p1}, Llic;->b(I)Llic;
 
     move-result-object p1
 
-    iget-object v0, p0, Lbrf;->b:Landroid/content/ContentResolver;
+    iget p1, p1, Llic;->e:I
 
-    sget-object v1, Landroid/provider/MediaStore$Images$Thumbnails;->EXTERNAL_CONTENT_URI:Landroid/net/Uri;
-
-    sget-object v2, Lbrf;->a:[Ljava/lang/String;
-
-    const/4 v3, 0x1
-
-    new-array v4, v3, [Ljava/lang/String;
-
-    const/4 v3, 0x0
-
-    aput-object p1, v4, v3
-
-    const-string v3, "kind = 1 AND image_id = ?"
-
-    const/4 v5, 0x0
-
-    invoke-virtual/range {v0 .. v5}, Landroid/content/ContentResolver;->query(Landroid/net/Uri;[Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;)Landroid/database/Cursor;
+    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object p1
 

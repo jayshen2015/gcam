@@ -1,103 +1,59 @@
-.class public final synthetic Lmmm;
+.class final Lmmm;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Landroid/os/IBinder$DeathRecipient;
+.implements Lmmn;
 
 
 # instance fields
-.field public final synthetic a:Lmmt;
+.field private final a:Lmnf;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lmmt;)V
+.method public constructor <init>(Lmnf;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lmmm;->a:Lmmt;
+    iput-object p1, p0, Lmmm;->a:Lmnf;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final binderDied()V
-    .locals 4
+.method public final a(Ljava/lang/Object;Ljava/util/concurrent/Executor;Lmoa;)V
+    .locals 1
 
-    iget-object v0, p0, Lmmm;->a:Lmmt;
+    iget-object v0, p0, Lmmm;->a:Lmnf;
 
-    iget-object v1, v0, Lmmt;->g:Ljava/lang/ref/WeakReference;
+    invoke-interface {v0, p1, p2}, Lmnf;->a(Ljava/lang/Object;Ljava/util/concurrent/Executor;)Lmnb;
 
-    invoke-virtual {v1}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
+    move-result-object p1
 
-    move-result-object v1
+    invoke-interface {p1}, Lmnb;->d()Lpht;
 
-    check-cast v1, Lmmp;
+    move-result-object p1
 
-    if-eqz v1, :cond_0
+    new-instance p2, Lmml;
 
-    invoke-interface {v1}, Lmmp;->a()V
+    invoke-direct {p2, p3}, Lmml;-><init>(Lmoa;)V
 
-    goto :goto_1
+    sget-object p3, Lpgr;->a:Lpgr;
 
-    :cond_0
-    iget-object v1, v0, Lmmt;->b:Ljava/util/List;
-
-    invoke-interface {v1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
-
-    move-result-object v1
-
-    :goto_0
-    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v2
-
-    if-eqz v2, :cond_1
-
-    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Lmmk;
-
-    invoke-virtual {v0}, Lmmt;->a()Landroid/os/RemoteException;
-
-    move-result-object v3
-
-    invoke-virtual {v2, v3}, Lmmk;->b(Ljava/lang/Exception;)V
-
-    goto :goto_0
-
-    :cond_1
-    iget-object v1, v0, Lmmt;->b:Ljava/util/List;
-
-    invoke-interface {v1}, Ljava/util/List;->clear()V
-
-    :goto_1
-    iget-object v1, v0, Lmmt;->d:Ljava/lang/Object;
-
-    monitor-enter v1
-
-    :try_start_0
-    invoke-virtual {v0}, Lmmt;->b()V
-
-    monitor-exit v1
+    invoke-static {p1, p2, p3}, Lplk;->af(Lpht;Lphh;Ljava/util/concurrent/Executor;)V
 
     return-void
+.end method
 
-    :catchall_0
-    move-exception v0
+.method public final toString()Ljava/lang/String;
+    .locals 1
 
-    monitor-exit v1
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    iget-object v0, p0, Lmmm;->a:Lmnf;
 
-    goto :goto_3
+    invoke-virtual {v0}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
-    :goto_2
-    throw v0
+    move-result-object v0
 
-    :goto_3
-    goto :goto_2
+    return-object v0
 .end method

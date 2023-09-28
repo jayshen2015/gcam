@@ -1,103 +1,190 @@
 .class public final Lccw;
-.super Ljava/lang/Object;
+.super Lppd;
 
 # interfaces
-.implements Logk;
+.implements Lpqn;
+
+
+# static fields
+.field public static final c:Lccw;
+
+.field private static volatile e:Lpqs;
 
 
 # instance fields
-.field private final a:Loiw;
+.field public a:Ljava/lang/String;
 
-.field private final b:Loiw;
+.field public b:Lpqh;
 
-.field private final c:Loiw;
-
-.field private final d:Loiw;
+.field private d:I
 
 
 # direct methods
-.method public constructor <init>(Loiw;Loiw;Loiw;Loiw;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 2
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance v0, Lccw;
 
-    iput-object p1, p0, Lccw;->a:Loiw;
+    invoke-direct {v0}, Lccw;-><init>()V
 
-    iput-object p2, p0, Lccw;->b:Loiw;
+    sput-object v0, Lccw;->c:Lccw;
 
-    iput-object p3, p0, Lccw;->c:Loiw;
+    const-class v1, Lccw;
 
-    iput-object p4, p0, Lccw;->d:Loiw;
+    invoke-static {v1, v0}, Lppd;->F(Ljava/lang/Class;Lppd;)V
+
+    return-void
+.end method
+
+.method private constructor <init>()V
+    .locals 1
+
+    invoke-direct {p0}, Lppd;-><init>()V
+
+    sget-object v0, Lpqh;->a:Lpqh;
+
+    iput-object v0, p0, Lccw;->b:Lpqh;
+
+    const-string v0, ""
+
+    iput-object v0, p0, Lccw;->a:Ljava/lang/String;
+
+    sget-object v0, Lpqv;->b:Lpqv;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Lccv;
-    .locals 10
+.method protected final a(ILjava/lang/Object;)Ljava/lang/Object;
+    .locals 2
 
-    iget-object v0, p0, Lccw;->a:Loiw;
+    add-int/lit8 p1, p1, -0x1
 
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
+    const/4 p2, 0x1
 
-    move-result-object v0
+    packed-switch p1, :pswitch_data_0
 
-    move-object v2, v0
+    :pswitch_0
+    const/4 p1, 0x0
 
-    check-cast v2, Ldol;
+    return-object p1
 
-    iget-object v0, p0, Lccw;->b:Loiw;
+    :pswitch_1
+    sget-object p1, Lccw;->e:Lpqs;
 
-    check-cast v0, Ldwo;
+    if-nez p1, :cond_1
 
-    invoke-virtual {v0}, Ldwo;->a()Ldww;
+    const-class p2, Lccw;
 
-    move-result-object v3
+    monitor-enter p2
 
-    iget-object v0, p0, Lccw;->c:Loiw;
+    :try_start_0
+    sget-object p1, Lccw;->e:Lpqs;
 
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
+    if-nez p1, :cond_0
 
-    move-result-object v0
+    new-instance p1, Lpoz;
 
-    move-object v4, v0
+    sget-object v0, Lccw;->c:Lccw;
 
-    check-cast v4, Ldqx;
+    invoke-direct {p1, v0}, Lpoz;-><init>(Lppd;)V
 
-    iget-object v0, p0, Lccw;->d:Loiw;
+    sput-object p1, Lccw;->e:Lpqs;
 
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
+    :cond_0
+    monitor-exit p2
 
-    move-result-object v0
+    goto :goto_0
 
-    move-object v5, v0
+    :catchall_0
+    move-exception p1
 
-    check-cast v5, Ldja;
+    monitor-exit p2
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    new-instance v0, Lccv;
+    throw p1
 
-    const/4 v6, 0x0
+    :cond_1
+    :goto_0
+    return-object p1
 
-    const/4 v7, 0x0
+    :pswitch_2
+    sget-object p1, Lccw;->c:Lccw;
 
-    const/4 v8, 0x0
+    return-object p1
 
-    const/4 v9, 0x0
+    :pswitch_3
+    new-instance p1, Lpoy;
 
-    move-object v1, v0
+    sget-object p2, Lccw;->c:Lccw;
 
-    invoke-direct/range {v1 .. v9}, Lccv;-><init>(Ldol;Ldww;Ldqx;Ldja;[B[B[B[B)V
+    invoke-direct {p1, p2}, Lpoy;-><init>(Lppd;)V
 
-    return-object v0
-.end method
+    return-object p1
 
-.method public final bridge synthetic get()Ljava/lang/Object;
-    .locals 1
+    :pswitch_4
+    new-instance p1, Lccw;
 
-    invoke-virtual {p0}, Lccw;->a()Lccv;
+    invoke-direct {p1}, Lccw;-><init>()V
 
-    move-result-object v0
+    return-object p1
 
-    return-object v0
+    :pswitch_5
+    const/4 p1, 0x4
+
+    new-array p1, p1, [Ljava/lang/Object;
+
+    const/4 v0, 0x0
+
+    const-string v1, "d"
+
+    aput-object v1, p1, v0
+
+    const-string v0, "a"
+
+    aput-object v0, p1, p2
+
+    const/4 p2, 0x2
+
+    const-string v0, "b"
+
+    aput-object v0, p1, p2
+
+    const/4 p2, 0x3
+
+    sget-object v0, Lccv;->a:Lpqg;
+
+    aput-object v0, p1, p2
+
+    sget-object p2, Lccw;->c:Lccw;
+
+    const-string v0, "\u0000\u0002\u0000\u0001\u0001\u0002\u0002\u0001\u0000\u0000\u0001\u1208\u0000\u00022"
+
+    invoke-static {p2, v0, p1}, Lccw;->E(Lpqm;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p1
+
+    return-object p1
+
+    :pswitch_6
+    invoke-static {p2}, Ljava/lang/Byte;->valueOf(B)Ljava/lang/Byte;
+
+    move-result-object p1
+
+    return-object p1
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_6
+        :pswitch_0
+        :pswitch_5
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+    .end packed-switch
 .end method

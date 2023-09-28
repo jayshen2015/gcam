@@ -1,49 +1,34 @@
-.class public final synthetic Llng;
+.class public interface abstract Llng;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Llni;
-
-
-# static fields
-.field public static final synthetic a:Llng;
-
-
-# direct methods
-.method static synthetic constructor <clinit>()V
-    .locals 1
-
-    new-instance v0, Llng;
-
-    invoke-direct {v0}, Llng;-><init>()V
-
-    sput-object v0, Llng;->a:Llng;
-
-    return-void
-.end method
-
-.method private synthetic constructor <init>()V
-    .locals 0
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
-.end method
+.implements Llie;
 
 
 # virtual methods
-.method public final a()Lnou;
-    .locals 1
+.method public abstract a()Llmp;
+.end method
 
-    sget v0, Llnh;->a:I
+.method public abstract b(Llmq;)Lpht;
+.end method
 
-    sget v0, Lmvv;->d:I
+.method public abstract c(Ljava/util/List;)Ljava/util/List;
+.end method
 
-    sget-object v0, Lmyu;->a:Lmvv;
+.method public abstract d(Llpd;)Llqa;
+.end method
 
-    invoke-static {v0}, Lnsy;->B(Ljava/lang/Object;)Lnou;
+.method public abstract e(Llpd;)V
+.end method
 
-    move-result-object v0
+.method public abstract f(Llmq;)Lpht;
+.end method
 
-    return-object v0
+.method public abstract g(Llmq;)V
+.end method
+
+.method public abstract h()Llpc;
+.end method
+
+.method public abstract i()Llpc;
 .end method

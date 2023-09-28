@@ -1,59 +1,33 @@
-.class public final Lffw;
+.class public final synthetic Lffw;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Logk;
+.implements Lmgr;
 
 
 # instance fields
-.field private final a:Loiw;
+.field public final synthetic a:Lcom/google/android/libraries/lens/lenslite/api/LinkConfig$Builder;
 
 
 # direct methods
-.method public constructor <init>(Loiw;)V
+.method public synthetic constructor <init>(Lcom/google/android/libraries/lens/lenslite/api/LinkConfig$Builder;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lffw;->a:Loiw;
+    iput-object p1, p0, Lffw;->a:Lcom/google/android/libraries/lens/lenslite/api/LinkConfig$Builder;
 
     return-void
 .end method
 
-.method public static b(Loiw;)Lffw;
-    .locals 1
-
-    new-instance v0, Lffw;
-
-    invoke-direct {v0, p0}, Lffw;-><init>(Loiw;)V
-
-    return-object v0
-.end method
-
 
 # virtual methods
-.method public final a()Lffv;
-    .locals 2
-
-    iget-object v0, p0, Lffw;->a:Loiw;
-
-    check-cast v0, Lfjk;
-
-    invoke-virtual {v0}, Lfjk;->a()Lfgj;
-
-    move-result-object v0
-
-    new-instance v1, Lffv;
-
-    invoke-direct {v1, v0}, Lffv;-><init>(Lfgj;)V
-
-    return-object v1
-.end method
-
-.method public final bridge synthetic get()Ljava/lang/Object;
+.method public final a()Lcom/google/android/libraries/lens/lenslite/api/LinkConfig;
     .locals 1
 
-    invoke-virtual {p0}, Lffw;->a()Lffv;
+    iget-object v0, p0, Lffw;->a:Lcom/google/android/libraries/lens/lenslite/api/LinkConfig$Builder;
+
+    invoke-virtual {v0}, Lcom/google/android/libraries/lens/lenslite/api/LinkConfig$Builder;->build()Lcom/google/android/libraries/lens/lenslite/api/LinkConfig;
 
     move-result-object v0
 

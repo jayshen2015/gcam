@@ -1,76 +1,87 @@
 .class public final Ljoh;
-.super Ljhn;
-
-
-# static fields
-.field public static final CREATOR:Landroid/os/Parcelable$Creator;
+.super Landroid/animation/AnimatorListenerAdapter;
 
 
 # instance fields
-.field final a:I
+.field final synthetic a:Z
 
-.field public final b:Ljby;
-
-.field public final c:Ljhh;
+.field final synthetic b:Lcom/google/android/apps/camera/ui/views/CaptureAnimationOverlay;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
-
-    new-instance v0, Ljnd;
-
-    const/16 v1, 0xd
-
-    invoke-direct {v0, v1}, Ljnd;-><init>(I)V
-
-    sput-object v0, Ljoh;->CREATOR:Landroid/os/Parcelable$Creator;
-
-    return-void
-.end method
-
-.method public constructor <init>(ILjby;Ljhh;)V
+.method public constructor <init>(Lcom/google/android/apps/camera/ui/views/CaptureAnimationOverlay;Z)V
     .locals 0
 
-    invoke-direct {p0}, Ljhn;-><init>()V
+    iput-object p1, p0, Ljoh;->b:Lcom/google/android/apps/camera/ui/views/CaptureAnimationOverlay;
 
-    iput p1, p0, Ljoh;->a:I
+    iput-boolean p2, p0, Ljoh;->a:Z
 
-    iput-object p2, p0, Ljoh;->b:Ljby;
-
-    iput-object p3, p0, Ljoh;->c:Ljhh;
+    invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final writeToParcel(Landroid/os/Parcel;I)V
-    .locals 3
+.method public final onAnimationCancel(Landroid/animation/Animator;)V
+    .locals 1
 
-    invoke-static {p1}, Ljhp;->a(Landroid/os/Parcel;)I
+    iget-boolean p1, p0, Ljoh;->a:Z
 
-    move-result v0
+    if-nez p1, :cond_0
 
-    iget v1, p0, Ljoh;->a:I
+    iget-object p1, p0, Ljoh;->b:Lcom/google/android/apps/camera/ui/views/CaptureAnimationOverlay;
 
-    const/4 v2, 0x1
+    const/4 v0, 0x1
 
-    invoke-static {p1, v2, v1}, Ljhp;->g(Landroid/os/Parcel;II)V
+    iput v0, p1, Lcom/google/android/apps/camera/ui/views/CaptureAnimationOverlay;->c:I
 
-    iget-object v1, p0, Ljoh;->b:Ljby;
+    const/4 v0, 0x4
 
-    const/4 v2, 0x2
+    invoke-virtual {p1, v0}, Lcom/google/android/apps/camera/ui/views/CaptureAnimationOverlay;->setVisibility(I)V
 
-    invoke-static {p1, v2, v1, p2}, Ljhp;->o(Landroid/os/Parcel;ILandroid/os/Parcelable;I)V
+    :cond_0
+    return-void
+.end method
 
-    iget-object v1, p0, Ljoh;->c:Ljhh;
+.method public final onAnimationEnd(Landroid/animation/Animator;)V
+    .locals 1
 
-    const/4 v2, 0x3
+    iget-boolean p1, p0, Ljoh;->a:Z
 
-    invoke-static {p1, v2, v1, p2}, Ljhp;->o(Landroid/os/Parcel;ILandroid/os/Parcelable;I)V
+    if-nez p1, :cond_0
 
-    invoke-static {p1, v0}, Ljhp;->c(Landroid/os/Parcel;I)V
+    iget-object p1, p0, Ljoh;->b:Lcom/google/android/apps/camera/ui/views/CaptureAnimationOverlay;
 
+    const/4 v0, 0x1
+
+    iput v0, p1, Lcom/google/android/apps/camera/ui/views/CaptureAnimationOverlay;->c:I
+
+    const/4 v0, 0x4
+
+    invoke-virtual {p1, v0}, Lcom/google/android/apps/camera/ui/views/CaptureAnimationOverlay;->setVisibility(I)V
+
+    :cond_0
+    return-void
+.end method
+
+.method public final onAnimationStart(Landroid/animation/Animator;)V
+    .locals 1
+
+    iget-boolean p1, p0, Ljoh;->a:Z
+
+    if-eqz p1, :cond_0
+
+    iget-object p1, p0, Ljoh;->b:Lcom/google/android/apps/camera/ui/views/CaptureAnimationOverlay;
+
+    const/4 v0, 0x3
+
+    iput v0, p1, Lcom/google/android/apps/camera/ui/views/CaptureAnimationOverlay;->c:I
+
+    const/4 v0, 0x0
+
+    invoke-virtual {p1, v0}, Lcom/google/android/apps/camera/ui/views/CaptureAnimationOverlay;->setVisibility(I)V
+
+    :cond_0
     return-void
 .end method

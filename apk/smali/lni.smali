@@ -1,23 +1,48 @@
-.class public interface abstract Llni;
-.super Ljava/lang/Object;
+.class public final Llni;
+.super Lmip;
 
 
-# static fields
-.field public static final b:Llni;
+# instance fields
+.field final synthetic a:Llnn;
+
+.field final synthetic b:Llmr;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
+.method public constructor <init>(Llnn;Llmr;)V
+    .locals 0
 
-    sget-object v0, Llng;->a:Llng;
+    iput-object p1, p0, Llni;->a:Llnn;
 
-    sput-object v0, Llni;->b:Llni;
+    iput-object p2, p0, Llni;->b:Llmr;
+
+    invoke-direct {p0}, Lmip;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public abstract a()Lnou;
+.method public final fx()V
+    .locals 2
+
+    iget-object v0, p0, Llni;->a:Llnn;
+
+    iget-object v1, p0, Llni;->b:Llmr;
+
+    invoke-interface {v0, v1}, Llnn;->a(Llmr;)V
+
+    return-void
+.end method
+
+.method public final fy()V
+    .locals 2
+
+    iget-object v0, p0, Llni;->a:Llnn;
+
+    iget-object v1, p0, Llni;->b:Llmr;
+
+    invoke-interface {v0, v1}, Llnn;->a(Llmr;)V
+
+    return-void
 .end method

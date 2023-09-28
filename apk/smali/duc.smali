@@ -2,184 +2,72 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Logk;
+.implements Landroid/animation/ValueAnimator$AnimatorUpdateListener;
 
 
 # instance fields
-.field private final a:Loiw;
+.field final synthetic a:Lcom/google/android/apps/camera/filmstrip/transition/FilmstripTransitionLayout;
 
 .field private final synthetic b:I
 
 
 # direct methods
-.method public constructor <init>(Loiw;I)V
+.method public constructor <init>(Lcom/google/android/apps/camera/filmstrip/transition/FilmstripTransitionLayout;I)V
     .locals 0
 
     iput p2, p0, Lduc;->b:I
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lduc;->a:Lcom/google/android/apps/camera/filmstrip/transition/FilmstripTransitionLayout;
 
-    iput-object p1, p0, Lduc;->a:Loiw;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Ldsw;
+.method public final onAnimationUpdate(Landroid/animation/ValueAnimator;)V
     .locals 2
 
     iget v0, p0, Lduc;->b:I
 
     packed-switch v0, :pswitch_data_0
 
-    iget-object v0, p0, Lduc;->a:Loiw;
+    invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedFraction()F
 
-    check-cast v0, Ldtb;
+    move-result p1
 
-    invoke-virtual {v0}, Ldtb;->a()Lbkc;
+    iget-object v0, p0, Lduc;->a:Lcom/google/android/apps/camera/filmstrip/transition/FilmstripTransitionLayout;
 
-    move-result-object v0
+    const/high16 v1, 0x3f800000    # 1.0f
 
-    sget-object v1, Ldhv;->a:Ldhk;
+    sub-float/2addr v1, p1
 
-    iget-object v0, v0, Lbkc;->a:Ljava/lang/Object;
+    invoke-virtual {v0, v1}, Lcom/google/android/apps/camera/filmstrip/transition/FilmstripTransitionLayout;->c(F)V
 
-    invoke-interface {v0}, Ldhi;->g()V
+    iget-object p1, p0, Lduc;->a:Lcom/google/android/apps/camera/filmstrip/transition/FilmstripTransitionLayout;
 
-    new-instance v0, Ldta;
+    invoke-virtual {p1}, Lcom/google/android/apps/camera/filmstrip/transition/FilmstripTransitionLayout;->invalidate()V
 
-    const/4 v1, 0x1
-
-    invoke-direct {v0, v1}, Ldta;-><init>(I)V
-
-    return-object v0
+    return-void
 
     :pswitch_0
-    iget-object v0, p0, Lduc;->a:Loiw;
+    invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedFraction()F
 
-    check-cast v0, Ldtb;
+    move-result p1
 
-    invoke-virtual {v0}, Ldtb;->a()Lbkc;
+    iget-object v0, p0, Lduc;->a:Lcom/google/android/apps/camera/filmstrip/transition/FilmstripTransitionLayout;
 
-    move-result-object v0
+    invoke-virtual {v0, p1}, Lcom/google/android/apps/camera/filmstrip/transition/FilmstripTransitionLayout;->c(F)V
 
-    sget-object v1, Ldhe;->b:Ldhj;
+    iget-object p1, p0, Lduc;->a:Lcom/google/android/apps/camera/filmstrip/transition/FilmstripTransitionLayout;
 
-    invoke-virtual {v0, v1}, Lbkc;->s(Ldhj;)Ldsw;
+    invoke-virtual {p1}, Lcom/google/android/apps/camera/filmstrip/transition/FilmstripTransitionLayout;->invalidate()V
 
-    move-result-object v0
-
-    return-object v0
-
-    :pswitch_1
-    iget-object v0, p0, Lduc;->a:Loiw;
-
-    check-cast v0, Ldtb;
-
-    invoke-virtual {v0}, Ldtb;->a()Lbkc;
-
-    move-result-object v0
-
-    sget-object v1, Ldhe;->a:Ldhj;
-
-    invoke-virtual {v0}, Lbkc;->t()Ldsw;
-
-    move-result-object v0
-
-    return-object v0
-
-    :pswitch_2
-    iget-object v0, p0, Lduc;->a:Loiw;
-
-    check-cast v0, Ldtb;
-
-    invoke-virtual {v0}, Ldtb;->a()Lbkc;
-
-    move-result-object v0
-
-    sget-object v1, Ldho;->bA:Ldhj;
-
-    invoke-virtual {v0, v1}, Lbkc;->s(Ldhj;)Ldsw;
-
-    move-result-object v0
-
-    return-object v0
-
-    :pswitch_3
-    iget-object v0, p0, Lduc;->a:Loiw;
-
-    check-cast v0, Ldtb;
-
-    invoke-virtual {v0}, Ldtb;->a()Lbkc;
-
-    move-result-object v0
-
-    sget-object v1, Ldhe;->a:Ldhj;
-
-    invoke-virtual {v0}, Lbkc;->t()Ldsw;
-
-    move-result-object v0
-
-    return-object v0
-
-    nop
+    return-void
 
     :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_3
-        :pswitch_2
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
-.end method
-
-.method public final synthetic get()Ljava/lang/Object;
-    .locals 1
-
-    iget v0, p0, Lduc;->b:I
-
-    packed-switch v0, :pswitch_data_0
-
-    invoke-virtual {p0}, Lduc;->a()Ldsw;
-
-    move-result-object v0
-
-    return-object v0
-
-    :pswitch_0
-    invoke-virtual {p0}, Lduc;->a()Ldsw;
-
-    move-result-object v0
-
-    return-object v0
-
-    :pswitch_1
-    invoke-virtual {p0}, Lduc;->a()Ldsw;
-
-    move-result-object v0
-
-    return-object v0
-
-    :pswitch_2
-    invoke-virtual {p0}, Lduc;->a()Ldsw;
-
-    move-result-object v0
-
-    return-object v0
-
-    :pswitch_3
-    invoke-virtual {p0}, Lduc;->a()Ldsw;
-
-    move-result-object v0
-
-    return-object v0
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_3
-        :pswitch_2
-        :pswitch_1
         :pswitch_0
     .end packed-switch
 .end method

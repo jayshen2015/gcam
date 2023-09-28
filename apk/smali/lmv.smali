@@ -1,22 +1,61 @@
-.class public final Llmv;
+.class public interface abstract Llmv;
 .super Ljava/lang/Object;
 
+# interfaces
+.implements Llie;
 
-# static fields
-.field public static final a:Lkhz;
 
+# virtual methods
+.method public abstract a()I
+.end method
 
-# direct methods
-.method static constructor <clinit>()V
-    .locals 2
+.method public abstract b()I
+.end method
 
-    new-instance v0, Lkhz;
+.method public abstract c()Llmr;
+.end method
 
-    const/16 v1, 0xe
+.method public abstract close()V
+.end method
 
-    invoke-direct {v0, v1}, Lkhz;-><init>(I)V
+.method public abstract d(Lojf;)Llmr;
+.end method
 
-    sput-object v0, Llmv;->a:Lkhz;
+.method public abstract e()Llmr;
+.end method
 
-    return-void
+.method public abstract f(Lojf;)Llmr;
+.end method
+
+.method public abstract g()Llmr;
+.end method
+
+.method public abstract h()Llmr;
+.end method
+
+.method public abstract i()Ljava/util/List;
+.end method
+
+.method public abstract j()Ljava/util/List;
+.end method
+
+.method public abstract k(Llmu;)V
+.end method
+
+.method public abstract l(Llmu;)V
+.end method
+
+.method public abstract m(I)V
+.end method
+
+.method public abstract n(Llmt;)V
+.end method
+
+.method public abstract o(Llmw;)Z
+.end method
+
+.method public abstract p()Z
+.end method
+
+.method public abstract q()Llqd;
 .end method

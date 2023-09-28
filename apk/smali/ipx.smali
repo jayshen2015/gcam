@@ -1,103 +1,240 @@
-.class public final Lipx;
-.super Ljava/lang/Object;
-
-# interfaces
-.implements Logk;
+.class public Lipx;
+.super Liph;
 
 
 # instance fields
-.field private final a:Loiw;
+.field public final f:Lcom/google/android/apps/camera/bottombar/BottomBarController;
 
-.field private final b:Loiw;
+.field public final g:Ljak;
 
-.field private final c:Loiw;
+.field public final h:Lddf;
 
-.field private final d:Loiw;
+.field public final i:Ljfn;
 
-.field private final e:Loiw;
+.field public final j:Lgtg;
+
+.field public final k:Ljlb;
+
+.field public final l:Liqj;
+
+.field public final m:Lepj;
+
+.field public final n:Ljjp;
 
 
 # direct methods
-.method public constructor <init>(Loiw;Loiw;Loiw;Loiw;Loiw;)V
+.method public constructor <init>(Lcom/google/android/apps/camera/bottombar/BottomBarController;Ljak;Lddf;Ljfn;Ljjp;Lgtg;Ljlb;Liqj;Lepj;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Liph;-><init>()V
 
-    iput-object p1, p0, Lipx;->a:Loiw;
+    iput-object p1, p0, Lipx;->f:Lcom/google/android/apps/camera/bottombar/BottomBarController;
 
-    iput-object p2, p0, Lipx;->b:Loiw;
+    iput-object p2, p0, Lipx;->g:Ljak;
 
-    iput-object p3, p0, Lipx;->c:Loiw;
+    iput-object p3, p0, Lipx;->h:Lddf;
 
-    iput-object p4, p0, Lipx;->d:Loiw;
+    iput-object p4, p0, Lipx;->i:Ljfn;
 
-    iput-object p5, p0, Lipx;->e:Loiw;
+    iput-object p5, p0, Lipx;->n:Ljjp;
+
+    iput-object p6, p0, Lipx;->j:Lgtg;
+
+    iput-object p7, p0, Lipx;->k:Ljlb;
+
+    iput-object p8, p0, Lipx;->l:Liqj;
+
+    iput-object p9, p0, Lipx;->m:Lepj;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Lipw;
-    .locals 7
-
-    iget-object v0, p0, Lipx;->a:Loiw;
-
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    move-object v2, v0
-
-    check-cast v2, Ljava/util/concurrent/Executor;
-
-    iget-object v0, p0, Lipx;->b:Loiw;
-
-    check-cast v0, Lkao;
-
-    invoke-virtual {v0}, Lkao;->a()Lkaq;
-
-    move-result-object v3
-
-    iget-object v0, p0, Lipx;->c:Loiw;
-
-    check-cast v0, Lipz;
-
-    invoke-virtual {v0}, Lipz;->a()Ljde;
-
-    move-result-object v4
-
-    iget-object v0, p0, Lipx;->d:Loiw;
-
-    check-cast v0, Lipy;
-
-    invoke-virtual {v0}, Lipy;->a()Ljde;
-
-    move-result-object v5
-
-    iget-object v0, p0, Lipx;->e:Loiw;
-
-    check-cast v0, Liqa;
-
-    invoke-virtual {v0}, Liqa;->a()Ljde;
-
-    move-result-object v6
-
-    new-instance v0, Lipw;
-
-    move-object v1, v0
-
-    invoke-direct/range {v1 .. v6}, Lipw;-><init>(Ljava/util/concurrent/Executor;Lkaq;Ljde;Ljde;Ljde;)V
-
-    return-object v0
-.end method
-
-.method public final bridge synthetic get()Ljava/lang/Object;
+.method public f()V
     .locals 1
 
-    invoke-virtual {p0}, Lipx;->a()Lipw;
+    const/4 v0, 0x0
+
+    throw v0
+.end method
+
+.method public final i()V
+    .locals 5
+
+    iget-object v0, p0, Lipx;->j:Lgtg;
+
+    invoke-virtual {v0}, Lgtg;->j()V
+
+    iget-object v0, p0, Lipx;->f:Lcom/google/android/apps/camera/bottombar/BottomBarController;
+
+    invoke-virtual {v0}, Lcom/google/android/apps/camera/bottombar/BottomBarController;->stopTimelapseRecording()V
+
+    iget-object v0, p0, Lipx;->k:Ljlb;
+
+    invoke-interface {v0}, Ljlb;->ah()V
+
+    iget-object v0, p0, Lipx;->l:Liqj;
+
+    const/4 v1, 0x0
+
+    invoke-virtual {v0, v1}, Liqj;->c(Z)V
+
+    iget-object v2, v0, Liqj;->a:Ljava/util/concurrent/atomic/AtomicBoolean;
+
+    invoke-virtual {v2, v1}, Ljava/util/concurrent/atomic/AtomicBoolean;->set(Z)V
+
+    iget-object v2, v0, Liqj;->C:Liud;
+
+    invoke-virtual {v2, v1}, Liud;->d(Z)V
+
+    iget-object v2, v0, Liqj;->k:Lddf;
+
+    sget-object v3, Ldcu;->J:Lddg;
+
+    invoke-interface {v2, v3}, Lddf;->k(Lddg;)Z
+
+    move-result v2
+
+    const/4 v3, 0x1
+
+    if-eqz v2, :cond_0
+
+    iget-object v2, v0, Liqj;->q:Lojc;
+
+    invoke-virtual {v2}, Lojc;->g()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_1
+
+    iget-object v2, v0, Liqj;->q:Lojc;
+
+    invoke-virtual {v2}, Lojc;->c()Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Lctw;
+
+    invoke-interface {v2}, Lctw;->i()V
+
+    iget-object v2, v0, Liqj;->q:Lojc;
+
+    invoke-virtual {v2}, Lojc;->c()Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Lctw;
+
+    invoke-interface {v2, v3}, Lctw;->h(Z)V
+
+    iget-object v0, v0, Liqj;->q:Lojc;
+
+    invoke-virtual {v0}, Lojc;->c()Ljava/lang/Object;
 
     move-result-object v0
 
-    return-object v0
+    check-cast v0, Lctw;
+
+    invoke-interface {v0, v3}, Lctw;->f(Z)V
+
+    goto :goto_0
+
+    :cond_0
+    iget-object v2, v0, Liqj;->v:Lirz;
+
+    iget-object v2, v2, Lirz;->a:Ljava/util/concurrent/atomic/AtomicBoolean;
+
+    invoke-virtual {v2, v3}, Ljava/util/concurrent/atomic/AtomicBoolean;->set(Z)V
+
+    iget-object v0, v0, Liqj;->T:Ljjp;
+
+    invoke-virtual {v0}, Ljjp;->a()V
+
+    :cond_1
+    :goto_0
+    iget-object v0, p0, Lipx;->l:Liqj;
+
+    iget-object v2, v0, Liqj;->k:Lddf;
+
+    sget-object v4, Ldcu;->J:Lddg;
+
+    invoke-interface {v2, v4}, Lddf;->k(Lddg;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_2
+
+    iget-object v2, v0, Liqj;->j:Ljas;
+
+    invoke-interface {v2, v1}, Ljas;->a(Z)V
+
+    iget-object v0, v0, Liqj;->I:Lcmq;
+
+    invoke-virtual {v0}, Lcmq;->f()V
+
+    goto :goto_1
+
+    :cond_2
+    iget-object v0, v0, Liqj;->i:Liro;
+
+    iget-object v1, v0, Liro;->f:Lirj;
+
+    invoke-virtual {v1}, Lirj;->animate()Landroid/view/ViewPropertyAnimator;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Landroid/view/ViewPropertyAnimator;->cancel()V
+
+    iget-object v1, v0, Liro;->f:Lirj;
+
+    const/4 v2, 0x0
+
+    invoke-virtual {v1, v2}, Lirj;->setAlpha(F)V
+
+    iget-object v1, v0, Liro;->f:Lirj;
+
+    const/16 v2, 0x8
+
+    invoke-virtual {v1, v2}, Lirj;->setVisibility(I)V
+
+    iget-object v1, v0, Liro;->j:Ljava/util/Timer;
+
+    invoke-virtual {v1}, Ljava/util/Timer;->cancel()V
+
+    invoke-virtual {v0}, Liro;->a()V
+
+    :goto_1
+    iget-object v0, p0, Lipx;->g:Ljak;
+
+    invoke-virtual {v0, v3}, Ljak;->d(Z)V
+
+    invoke-static {}, Ljxn;->d()V
+
+    iget-object v0, p0, Lipx;->h:Lddf;
+
+    sget-object v1, Ldcu;->J:Lddg;
+
+    invoke-interface {v0, v1}, Lddf;->k(Lddg;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_3
+
+    iget-object v0, p0, Lipx;->i:Ljfn;
+
+    invoke-interface {v0, v3}, Ljfn;->v(Z)V
+
+    iget-object v0, p0, Lipx;->i:Ljfn;
+
+    invoke-interface {v0, v3}, Ljfn;->l(Z)V
+
+    return-void
+
+    :cond_3
+    iget-object v0, p0, Lipx;->n:Ljjp;
+
+    invoke-virtual {v0}, Ljjp;->a()V
+
+    return-void
 .end method

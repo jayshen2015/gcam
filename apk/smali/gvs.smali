@@ -1,424 +1,710 @@
 .class public final Lgvs;
-.super Lgvl;
-
-# interfaces
-.implements Lhiv;
+.super Lmip;
 
 
 # instance fields
-.field public final a:Lfbz;
+.field private final a:Llnc;
 
-.field public final b:Logd;
+.field private final b:Ldwh;
 
-.field public final c:Lhiu;
+.field private final c:Lghb;
 
-.field public final d:Lhiw;
+.field private final d:Llda;
 
-.field public final e:Lhiw;
-
-.field public final f:Lhiw;
-
-.field public final g:Lhiw;
-
-.field private final h:Lcom/google/android/apps/camera/bottombar/BottomBarController;
-
-.field private final i:Ljvs;
-
-.field private final j:Lgzn;
-
-.field private final k:Liks;
-
-.field private final l:Lhmd;
+.field private g:Z
 
 
 # direct methods
-.method public constructor <init>(Lfbz;Lcom/google/android/apps/camera/bottombar/BottomBarController;Logd;Liks;Lhmd;Ljwb;Lgzn;)V
+.method public constructor <init>(Lghb;Ldwm;Llnc;Ldwh;)V
     .locals 0
 
-    invoke-direct {p0}, Lgvl;-><init>()V
+    invoke-direct {p0}, Lmip;-><init>()V
 
-    iput-object p1, p0, Lgvs;->a:Lfbz;
+    iput-object p3, p0, Lgvs;->a:Llnc;
 
-    iput-object p3, p0, Lgvs;->b:Logd;
+    iput-object p4, p0, Lgvs;->b:Ldwh;
 
-    iput-object p2, p0, Lgvs;->h:Lcom/google/android/apps/camera/bottombar/BottomBarController;
+    iput-object p1, p0, Lgvs;->c:Lghb;
 
-    iput-object p4, p0, Lgvs;->k:Liks;
+    iget-object p1, p2, Ldwm;->a:Llce;
 
-    iput-object p5, p0, Lgvs;->l:Lhmd;
+    iput-object p1, p0, Lgvs;->d:Llda;
 
-    iput-object p6, p0, Lgvs;->i:Ljvs;
+    const/4 p1, 0x0
 
-    iput-object p7, p0, Lgvs;->j:Lgzn;
+    iput-boolean p1, p0, Lgvs;->g:Z
 
-    new-instance p1, Lgve;
+    sget-object p1, Lddl;->a:Lddi;
 
-    invoke-direct {p1, p0}, Lgve;-><init>(Lgvs;)V
+    return-void
+.end method
 
-    new-instance p2, Lhiw;
+.method private final w(Ljava/util/List;)V
+    .locals 10
 
-    const/4 p3, 0x0
+    invoke-interface {p1}, Ljava/util/List;->isEmpty()Z
 
-    new-array p4, p3, [Lhis;
+    move-result v0
 
-    invoke-direct {p2, p1, p4}, Lhiw;-><init>(Lhis;[Lhis;)V
+    if-eqz v0, :cond_1
 
-    iput-object p2, p0, Lgvs;->d:Lhiw;
+    iget-boolean v0, p0, Lgvs;->g:Z
 
-    new-instance p1, Lgvf;
+    if-eqz v0, :cond_0
 
-    invoke-direct {p1, p0}, Lgvf;-><init>(Lgvs;)V
+    goto :goto_0
 
-    new-instance p2, Lhiw;
+    :cond_0
+    return-void
 
-    new-array p4, p3, [Lhis;
+    :cond_1
+    :goto_0
+    sget-object v0, Lkdd;->d:Landroid/hardware/camera2/CaptureRequest$Key;
 
-    invoke-direct {p2, p1, p4}, Lhiw;-><init>(Lhis;[Lhis;)V
+    if-eqz v0, :cond_6
 
-    iput-object p2, p0, Lgvs;->e:Lhiw;
+    iget-object v0, p0, Lgvs;->a:Llnc;
 
-    new-instance p1, Lgvg;
+    sget-object v1, Lkdd;->d:Landroid/hardware/camera2/CaptureRequest$Key;
 
-    invoke-direct {p1, p0}, Lgvg;-><init>(Lgvs;)V
+    const/16 v2, 0x194
 
-    new-instance p2, Lhiw;
+    invoke-static {v2}, Ljava/nio/ByteBuffer;->allocate(I)Ljava/nio/ByteBuffer;
 
-    new-array p4, p3, [Lhis;
+    move-result-object v2
 
-    invoke-direct {p2, p1, p4}, Lhiw;-><init>(Lhis;[Lhis;)V
+    invoke-static {}, Ljava/nio/ByteOrder;->nativeOrder()Ljava/nio/ByteOrder;
 
-    iput-object p2, p0, Lgvs;->f:Lhiw;
+    move-result-object v3
 
-    new-instance p1, Lgvh;
+    invoke-virtual {v2, v3}, Ljava/nio/ByteBuffer;->order(Ljava/nio/ByteOrder;)Ljava/nio/ByteBuffer;
 
-    invoke-direct {p1, p0}, Lgvh;-><init>(Lgvs;)V
+    invoke-static {p1}, Lj$/util/Collection$-EL;->stream(Ljava/util/Collection;)Lj$/util/stream/Stream;
 
-    new-instance p4, Lhiw;
+    move-result-object v3
 
-    new-array p5, p3, [Lhis;
+    sget-object v4, Lbql;->g:Lbql;
 
-    invoke-direct {p4, p1, p5}, Lhiw;-><init>(Lhis;[Lhis;)V
+    invoke-interface {v3, v4}, Lj$/util/stream/Stream;->filter(Lj$/util/function/Predicate;)Lj$/util/stream/Stream;
 
-    iput-object p4, p0, Lgvs;->g:Lhiw;
+    move-result-object v3
 
-    new-instance p1, Lhiu;
+    invoke-static {}, Lj$/util/stream/Collectors;->toList()Lj$/util/stream/Collector;
 
-    invoke-direct {p1, p2, p3}, Lhiu;-><init>(Lhiw;Z)V
+    move-result-object v4
 
-    iput-object p1, p0, Lgvs;->c:Lhiu;
+    invoke-interface {v3, v4}, Lj$/util/stream/Stream;->collect(Lj$/util/stream/Collector;)Ljava/lang/Object;
 
-    invoke-virtual {p1}, Lhiu;->f()V
+    move-result-object v3
+
+    check-cast v3, Ljava/util/List;
+
+    invoke-interface {v3}, Ljava/util/List;->size()I
+
+    move-result v4
+
+    invoke-virtual {v2, v4}, Ljava/nio/ByteBuffer;->putInt(I)Ljava/nio/ByteBuffer;
+
+    invoke-interface {v3}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+
+    move-result-object v3
+
+    :cond_2
+    :goto_1
+    invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v4
+
+    if-eqz v4, :cond_5
+
+    invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v4
+
+    check-cast v4, Ldwr;
+
+    iget-object v5, v4, Ldwr;->c:Lojc;
+
+    invoke-virtual {v5}, Lojc;->g()Z
+
+    move-result v5
+
+    if-eqz v5, :cond_2
+
+    iget v5, v4, Ldwr;->a:I
+
+    invoke-virtual {v2, v5}, Ljava/nio/ByteBuffer;->putInt(I)Ljava/nio/ByteBuffer;
+
+    iget v5, v4, Ldwr;->b:F
+
+    invoke-virtual {v2, v5}, Ljava/nio/ByteBuffer;->putFloat(F)Ljava/nio/ByteBuffer;
+
+    iget-object v5, v4, Ldwr;->c:Lojc;
+
+    invoke-virtual {v5}, Lojc;->c()Ljava/lang/Object;
+
+    move-result-object v5
+
+    check-cast v5, Loom;
+
+    invoke-virtual {v5}, Loom;->size()I
+
+    move-result v5
+
+    invoke-virtual {v2, v5}, Ljava/nio/ByteBuffer;->putInt(I)Ljava/nio/ByteBuffer;
+
+    iget-object v5, v4, Ldwr;->c:Lojc;
+
+    invoke-virtual {v5}, Lojc;->c()Ljava/lang/Object;
+
+    move-result-object v5
+
+    check-cast v5, Loom;
+
+    invoke-interface {v5}, Ljava/util/List;->size()I
+
+    move-result v6
+
+    const/4 v7, 0x0
+
+    const/4 v8, 0x0
+
+    :goto_2
+    if-ge v8, v6, :cond_3
+
+    invoke-interface {v5, v8}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v9
+
+    check-cast v9, Ljava/lang/Float;
+
+    invoke-virtual {v9}, Ljava/lang/Float;->floatValue()F
+
+    move-result v9
+
+    invoke-virtual {v2, v9}, Ljava/nio/ByteBuffer;->putFloat(F)Ljava/nio/ByteBuffer;
+
+    add-int/lit8 v8, v8, 0x1
+
+    goto :goto_2
+
+    :cond_3
+    :goto_3
+    iget-object v5, v4, Ldwr;->c:Lojc;
+
+    invoke-virtual {v5}, Lojc;->c()Ljava/lang/Object;
+
+    move-result-object v5
+
+    check-cast v5, Loom;
+
+    invoke-virtual {v5}, Loom;->size()I
+
+    move-result v5
+
+    rsub-int/lit8 v5, v5, 0x6
+
+    if-ge v7, v5, :cond_4
+
+    const/4 v5, 0x0
+
+    invoke-virtual {v2, v5}, Ljava/nio/ByteBuffer;->putFloat(F)Ljava/nio/ByteBuffer;
+
+    add-int/lit8 v7, v7, 0x1
+
+    goto :goto_3
+
+    :cond_4
+    iget v4, v4, Ldwr;->d:F
+
+    invoke-virtual {v2, v4}, Ljava/nio/ByteBuffer;->putFloat(F)Ljava/nio/ByteBuffer;
+
+    goto :goto_1
+
+    :cond_5
+    invoke-virtual {v2}, Ljava/nio/ByteBuffer;->array()[B
+
+    move-result-object v2
+
+    invoke-interface {v0, v1, v2}, Llnc;->h(Landroid/hardware/camera2/CaptureRequest$Key;Ljava/lang/Object;)V
+
+    :cond_6
+    invoke-interface {p1}, Ljava/util/List;->isEmpty()Z
+
+    move-result v0
+
+    xor-int/lit8 v0, v0, 0x1
+
+    iput-boolean v0, p0, Lgvs;->g:Z
+
+    iget-object v0, p0, Lgvs;->c:Lghb;
+
+    invoke-interface {p1}, Ljava/util/List;->isEmpty()Z
+
+    move-result p1
+
+    xor-int/lit8 p1, p1, 0x1
+
+    invoke-virtual {v0, p1}, Lghb;->a(Z)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()V
-    .locals 1
+.method public final b(Llzv;)V
+    .locals 12
 
-    iget-object v0, p0, Lgvs;->c:Lhiu;
+    sget-object v0, Landroid/hardware/camera2/CaptureResult;->SENSOR_TIMESTAMP:Landroid/hardware/camera2/CaptureResult$Key;
 
-    invoke-virtual {v0}, Lhiu;->a()Lhiw;
-
-    move-result-object v0
-
-    if-nez v0, :cond_0
-
-    return-void
-
-    :cond_0
-    iget-object v0, p0, Lgvs;->c:Lhiu;
-
-    invoke-virtual {v0}, Lhiu;->a()Lhiw;
+    invoke-interface {p1, v0}, Llzv;->d(Landroid/hardware/camera2/CaptureResult$Key;)Ljava/lang/Object;
 
     move-result-object v0
 
-    iget-object v0, v0, Lhiw;->a:Lhis;
+    check-cast v0, Ljava/lang/Long;
 
-    check-cast v0, Lgvl;
+    sget-object v1, Landroid/hardware/camera2/CaptureResult;->SCALER_CROP_REGION:Landroid/hardware/camera2/CaptureResult$Key;
 
-    invoke-virtual {v0}, Lgvl;->a()V
-
-    return-void
-.end method
-
-.method public final b()V
-    .locals 1
-
-    iget-object v0, p0, Lgvs;->c:Lhiu;
-
-    invoke-virtual {v0}, Lhiu;->a()Lhiw;
-
-    move-result-object v0
-
-    if-nez v0, :cond_0
-
-    return-void
-
-    :cond_0
-    iget-object v0, p0, Lgvs;->c:Lhiu;
-
-    invoke-virtual {v0}, Lhiu;->a()Lhiw;
-
-    move-result-object v0
-
-    iget-object v0, v0, Lhiw;->a:Lhis;
-
-    check-cast v0, Lgvl;
-
-    invoke-virtual {v0}, Lgvl;->b()V
-
-    return-void
-.end method
-
-.method public final c()V
-    .locals 1
-
-    iget-object v0, p0, Lgvs;->c:Lhiu;
-
-    invoke-virtual {v0}, Lhiu;->a()Lhiw;
-
-    move-result-object v0
-
-    if-nez v0, :cond_0
-
-    return-void
-
-    :cond_0
-    iget-object v0, p0, Lgvs;->c:Lhiu;
-
-    invoke-virtual {v0}, Lhiu;->a()Lhiw;
-
-    move-result-object v0
-
-    iget-object v0, v0, Lhiw;->a:Lhis;
-
-    check-cast v0, Lgvl;
-
-    invoke-virtual {v0}, Lgvl;->c()V
-
-    return-void
-.end method
-
-.method public final d()V
-    .locals 1
-
-    iget-object v0, p0, Lgvs;->c:Lhiu;
-
-    invoke-virtual {v0}, Lhiu;->a()Lhiw;
-
-    move-result-object v0
-
-    if-nez v0, :cond_0
-
-    return-void
-
-    :cond_0
-    iget-object v0, p0, Lgvs;->c:Lhiu;
-
-    invoke-virtual {v0}, Lhiu;->a()Lhiw;
-
-    move-result-object v0
-
-    iget-object v0, v0, Lhiw;->a:Lhis;
-
-    check-cast v0, Lgvl;
-
-    invoke-virtual {v0}, Lgvl;->d()V
-
-    return-void
-.end method
-
-.method public final e()V
-    .locals 1
-
-    iget-object v0, p0, Lgvs;->c:Lhiu;
-
-    invoke-virtual {v0}, Lhiu;->b()V
-
-    iget-object v0, p0, Lgvs;->d:Lhiw;
-
-    invoke-virtual {v0}, Lhiw;->e()V
-
-    iget-object v0, p0, Lgvs;->e:Lhiw;
-
-    invoke-virtual {v0}, Lhiw;->e()V
-
-    iget-object v0, p0, Lgvs;->f:Lhiw;
-
-    invoke-virtual {v0}, Lhiw;->e()V
-
-    iget-object v0, p0, Lgvs;->g:Lhiw;
-
-    invoke-virtual {v0}, Lhiw;->e()V
-
-    return-void
-.end method
-
-.method public final f()V
-    .locals 1
-
-    iget-object v0, p0, Lgvs;->c:Lhiu;
-
-    invoke-virtual {v0}, Lhiu;->c()V
-
-    return-void
-.end method
-
-.method public final g()V
-    .locals 1
-
-    iget-object v0, p0, Lgvs;->c:Lhiu;
-
-    invoke-virtual {v0}, Lhiu;->d()V
-
-    return-void
-.end method
-
-.method public final h()V
-    .locals 0
-
-    invoke-static {p0}, Ljcb;->l(Lhiv;)V
-
-    return-void
-.end method
-
-.method public final i()V
-    .locals 3
-
-    iget-object v0, p0, Lgvs;->h:Lcom/google/android/apps/camera/bottombar/BottomBarController;
-
-    const/4 v1, 0x1
-
-    invoke-virtual {v0, v1}, Lcom/google/android/apps/camera/bottombar/BottomBarController;->setSelfieFlashState(Z)V
-
-    iget-object v0, p0, Lgvs;->j:Lgzn;
-
-    sget-object v2, Lgzd;->u:Lgzr;
-
-    invoke-static {v1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+    invoke-interface {p1, v1}, Llzv;->d(Landroid/hardware/camera2/CaptureResult$Key;)Ljava/lang/Object;
 
     move-result-object v1
 
-    invoke-interface {v0, v2, v1}, Lgzn;->e(Lgzb;Ljava/lang/Object;)V
+    check-cast v1, Landroid/graphics/Rect;
 
-    invoke-virtual {p0}, Lgvs;->k()Z
+    sget-object v2, Landroid/hardware/camera2/CaptureResult;->STATISTICS_FACES:Landroid/hardware/camera2/CaptureResult$Key;
 
-    move-result v0
+    invoke-interface {p1, v2}, Llzv;->d(Landroid/hardware/camera2/CaptureResult$Key;)Ljava/lang/Object;
 
-    if-eqz v0, :cond_0
+    move-result-object p1
 
-    iget-object v0, p0, Lgvs;->k:Liks;
+    check-cast p1, [Landroid/hardware/camera2/params/Face;
 
-    iget-object v1, p0, Lgvs;->b:Logd;
+    iget-object v2, p0, Lgvs;->c:Lghb;
 
-    invoke-interface {v1}, Logd;->get()Ljava/lang/Object;
+    invoke-virtual {v2}, Lghb;->d()Z
 
-    move-result-object v1
+    move-result v2
 
-    check-cast v1, Lgvv;
+    if-eqz v2, :cond_13
 
-    invoke-interface {v1}, Lgvv;->a()I
+    if-eqz v0, :cond_13
 
-    move-result v1
+    if-eqz v1, :cond_13
 
-    invoke-virtual {v0, v1}, Liks;->b(I)V
+    if-nez p1, :cond_0
 
-    goto :goto_0
+    goto/16 :goto_6
 
     :cond_0
-    iget-object v0, p0, Lgvs;->k:Liks;
+    iget-object v1, p0, Lgvs;->d:Llda;
 
-    invoke-virtual {v0}, Liks;->c()V
+    check-cast v1, Llce;
 
-    :goto_0
-    iget-object v0, p0, Lgvs;->l:Lhmd;
+    iget-object v1, v1, Llce;->d:Ljava/lang/Object;
 
-    const/16 v1, 0x714
+    check-cast v1, Ljava/lang/Boolean;
 
-    invoke-virtual {v0, v1}, Lhmd;->a(I)V
-
-    iget-object v0, p0, Lgvs;->b:Logd;
-
-    invoke-interface {v0}, Logd;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lgvv;
-
-    invoke-virtual {p0}, Lgvs;->k()Z
+    invoke-virtual {v1}, Ljava/lang/Boolean;->booleanValue()Z
 
     move-result v1
 
-    invoke-interface {v0, v1}, Lgvv;->e(Z)V
+    const/4 v2, 0x1
 
-    return-void
-.end method
+    if-nez v1, :cond_1
 
-.method public final j()V
-    .locals 3
+    array-length v1, p1
 
-    iget-object v0, p0, Lgvs;->h:Lcom/google/android/apps/camera/bottombar/BottomBarController;
+    if-lez v1, :cond_1
+
+    iget-object v1, p0, Lgvs;->d:Llda;
+
+    invoke-static {v2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    move-result-object v3
+
+    invoke-interface {v1, v3}, Llda;->fB(Ljava/lang/Object;)V
+
+    :cond_1
+    invoke-virtual {v0}, Ljava/lang/Long;->longValue()J
+
+    move-result-wide v0
+
+    new-instance v3, Ljava/util/HashMap;
+
+    invoke-direct {v3}, Ljava/util/HashMap;-><init>()V
+
+    iget-object v4, p0, Lgvs;->b:Ldwh;
+
+    invoke-interface {v4, v0, v1}, Ldwh;->a(J)Ldwg;
+
+    move-result-object v0
 
     const/4 v1, 0x0
 
-    invoke-virtual {v0, v1}, Lcom/google/android/apps/camera/bottombar/BottomBarController;->setSelfieFlashState(Z)V
+    const/4 v4, 0x0
 
-    iget-object v0, p0, Lgvs;->k:Liks;
+    if-eqz v0, :cond_e
 
-    invoke-virtual {v0}, Liks;->a()V
+    iget-object v5, v0, Ldwg;->b:Ljava/util/List;
 
-    iget-object v0, p0, Lgvs;->b:Logd;
+    invoke-interface {v5}, Ljava/util/List;->isEmpty()Z
 
-    invoke-interface {v0}, Logd;->get()Ljava/lang/Object;
+    move-result v5
+
+    if-eqz v5, :cond_2
+
+    goto/16 :goto_3
+
+    :cond_2
+    iget-object v0, v0, Ldwg;->b:Ljava/util/List;
+
+    invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object v0
 
-    check-cast v0, Lgvv;
+    :cond_3
+    :goto_0
+    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
-    invoke-interface {v0}, Lgvv;->d()V
+    move-result v5
 
-    iget-object v0, p0, Lgvs;->j:Lgzn;
+    if-eqz v5, :cond_e
 
-    sget-object v2, Lgzd;->u:Lgzr;
+    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    invoke-static {v1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+    move-result-object v5
+
+    check-cast v5, Ldwf;
+
+    iget-object v6, v5, Ldwf;->c:Lojc;
+
+    invoke-virtual {v6}, Lojc;->g()Z
+
+    move-result v7
+
+    const/4 v8, 0x4
+
+    if-eqz v7, :cond_4
+
+    invoke-virtual {v6}, Lojc;->c()Ljava/lang/Object;
+
+    move-result-object v7
+
+    check-cast v7, Loom;
+
+    invoke-virtual {v7}, Loom;->size()I
+
+    move-result v7
+
+    if-eq v7, v8, :cond_5
+
+    :cond_4
+    sget-object v6, Loih;->a:Loih;
+
+    :cond_5
+    iget v7, v5, Ldwf;->b:F
+
+    cmpl-float v7, v7, v1
+
+    if-lez v7, :cond_3
+
+    iget-wide v9, v5, Ldwf;->a:J
+
+    long-to-int v7, v9
+
+    invoke-static {v7}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v7
+
+    new-instance v9, Ldwq;
+
+    const/4 v10, 0x0
+
+    invoke-direct {v9, v10}, Ldwq;-><init>([B)V
+
+    iget-wide v10, v5, Ldwf;->a:J
+
+    long-to-int v11, v10
+
+    invoke-static {v11}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v10
+
+    iput-object v10, v9, Ldwq;->a:Ljava/lang/Integer;
+
+    iget v10, v5, Ldwf;->b:F
+
+    invoke-static {v10}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
+
+    move-result-object v10
+
+    iput-object v10, v9, Ldwq;->b:Ljava/lang/Float;
+
+    if-eqz v6, :cond_d
+
+    iput-object v6, v9, Ldwq;->c:Lojc;
+
+    iget v5, v5, Ldwf;->d:F
+
+    invoke-static {v5}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
+
+    move-result-object v5
+
+    iput-object v5, v9, Ldwq;->d:Ljava/lang/Float;
+
+    iget-object v5, v9, Ldwq;->a:Ljava/lang/Integer;
+
+    if-eqz v5, :cond_9
+
+    iget-object v6, v9, Ldwq;->b:Ljava/lang/Float;
+
+    if-eqz v6, :cond_9
+
+    iget-object v6, v9, Ldwq;->d:Ljava/lang/Float;
+
+    if-nez v6, :cond_6
+
+    goto :goto_2
+
+    :cond_6
+    new-instance v6, Ldwr;
+
+    invoke-virtual {v5}, Ljava/lang/Integer;->intValue()I
+
+    move-result v5
+
+    iget-object v10, v9, Ldwq;->b:Ljava/lang/Float;
+
+    invoke-virtual {v10}, Ljava/lang/Float;->floatValue()F
+
+    move-result v10
+
+    iget-object v11, v9, Ldwq;->c:Lojc;
+
+    iget-object v9, v9, Ldwq;->d:Ljava/lang/Float;
+
+    invoke-virtual {v9}, Ljava/lang/Float;->floatValue()F
+
+    move-result v9
+
+    invoke-direct {v6, v5, v10, v11, v9}, Ldwr;-><init>(IFLojc;F)V
+
+    iget-object v5, v6, Ldwr;->c:Lojc;
+
+    invoke-virtual {v5}, Lojc;->g()Z
+
+    move-result v5
+
+    if-eqz v5, :cond_8
+
+    iget-object v5, v6, Ldwr;->c:Lojc;
+
+    invoke-virtual {v5}, Lojc;->c()Ljava/lang/Object;
+
+    move-result-object v5
+
+    check-cast v5, Loom;
+
+    invoke-virtual {v5}, Loom;->size()I
+
+    move-result v5
+
+    if-ne v5, v8, :cond_7
+
+    const/4 v5, 0x1
+
+    goto :goto_1
+
+    :cond_7
+    const/4 v5, 0x0
+
+    :goto_1
+    invoke-static {v5}, Lobr;->aF(Z)V
+
+    :cond_8
+    invoke-interface {v3, v7, v6}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    goto/16 :goto_0
+
+    :cond_9
+    :goto_2
+    new-instance p1, Ljava/lang/StringBuilder;
+
+    invoke-direct {p1}, Ljava/lang/StringBuilder;-><init>()V
+
+    iget-object v0, v9, Ldwq;->a:Ljava/lang/Integer;
+
+    if-nez v0, :cond_a
+
+    const-string v0, " id"
+
+    invoke-virtual {p1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    :cond_a
+    iget-object v0, v9, Ldwq;->b:Ljava/lang/Float;
+
+    if-nez v0, :cond_b
+
+    const-string v0, " score"
+
+    invoke-virtual {p1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    :cond_b
+    iget-object v0, v9, Ldwq;->d:Ljava/lang/Float;
+
+    if-nez v0, :cond_c
+
+    const-string v0, " toneConfidence"
+
+    invoke-virtual {p1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    :cond_c
+    new-instance v0, Ljava/lang/IllegalStateException;
+
+    invoke-static {p1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-static {p1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v1
 
-    invoke-interface {v0, v2, v1}, Lgzn;->e(Lgzb;Ljava/lang/Object;)V
+    invoke-virtual {v1}, Ljava/lang/String;->length()I
 
-    iget-object v0, p0, Lgvs;->l:Lhmd;
+    move-result v1
 
-    const/16 v1, 0x705
+    new-instance v2, Ljava/lang/StringBuilder;
 
-    invoke-virtual {v0, v1}, Lhmd;->a(I)V
+    add-int/lit8 v1, v1, 0x1c
 
-    return-void
-.end method
+    invoke-direct {v2, v1}, Ljava/lang/StringBuilder;-><init>(I)V
 
-.method public final k()Z
-    .locals 2
+    const-string v1, "Missing required properties:"
 
-    iget-object v0, p0, Lgvs;->i:Ljvs;
+    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-interface {v0}, Ljvs;->bm()Ljava/lang/Object;
+    invoke-virtual {v2, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-direct {v0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+
+    :cond_d
+    new-instance p1, Ljava/lang/NullPointerException;
+
+    const-string v0, "Null toneProbabilities"
+
+    invoke-direct {p1, v0}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
+
+    throw p1
+
+    :cond_e
+    :goto_3
+    new-instance v0, Ljava/util/ArrayList;
+
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+
+    invoke-interface {v3}, Ljava/util/Map;->keySet()Ljava/util/Set;
+
+    move-result-object v2
+
+    invoke-interface {v2}, Ljava/util/Set;->isEmpty()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_f
+
+    goto :goto_5
+
+    :cond_f
+    array-length v2, p1
+
+    const/4 v5, 0x0
+
+    :goto_4
+    if-ge v5, v2, :cond_11
+
+    aget-object v6, p1, v5
+
+    invoke-virtual {v6}, Landroid/hardware/camera2/params/Face;->getId()I
+
+    move-result v7
+
+    invoke-static {v7}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v7
+
+    invoke-interface {v3, v7}, Ljava/util/Map;->containsKey(Ljava/lang/Object;)Z
+
+    move-result v7
+
+    if-eqz v7, :cond_10
+
+    invoke-virtual {v6}, Landroid/hardware/camera2/params/Face;->getId()I
+
+    move-result v6
+
+    invoke-static {v6}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v6
+
+    invoke-interface {v3, v6}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v6
+
+    check-cast v6, Ldwr;
+
+    if-eqz v6, :cond_10
+
+    iget v7, v6, Ldwr;->b:F
+
+    cmpl-float v7, v7, v1
+
+    if-lez v7, :cond_10
+
+    invoke-interface {v0, v6}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    :cond_10
+    add-int/lit8 v5, v5, 0x1
+
+    goto :goto_4
+
+    :cond_11
+    sget-object p1, Lcdg;->k:Lcdg;
+
+    invoke-static {v0, p1}, Ljava/util/Collections;->sort(Ljava/util/List;Ljava/util/Comparator;)V
+
+    invoke-interface {v0}, Ljava/util/List;->size()I
+
+    move-result p1
+
+    const/4 v1, 0x5
+
+    if-gt p1, v1, :cond_12
+
+    goto :goto_5
+
+    :cond_12
+    invoke-interface {v0, v4, v1}, Ljava/util/List;->subList(II)Ljava/util/List;
 
     move-result-object v0
 
-    check-cast v0, Lika;
+    :goto_5
+    invoke-direct {p0, v0}, Lgvs;->w(Ljava/util/List;)V
 
-    sget-object v1, Lika;->m:Lika;
+    return-void
 
-    if-ne v0, v1, :cond_0
+    :cond_13
+    :goto_6
+    invoke-static {}, Loom;->l()Loom;
 
-    const/4 v0, 0x1
+    move-result-object p1
 
-    return v0
+    invoke-direct {p0, p1}, Lgvs;->w(Ljava/util/List;)V
 
-    :cond_0
-    const/4 v0, 0x0
-
-    return v0
+    return-void
 .end method

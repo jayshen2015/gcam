@@ -1,133 +1,96 @@
-.class public final Lehg;
+.class public final synthetic Lehg;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Logk;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field private final a:Loiw;
+.field public final synthetic a:Lehh;
 
-.field private final b:Loiw;
+.field public final synthetic b:Landroid/graphics/SurfaceTexture;
 
-.field private final c:Loiw;
-
-.field private final d:Loiw;
-
-.field private final e:Loiw;
-
-.field private final f:Loiw;
-
-.field private final g:Loiw;
+.field public final synthetic c:Llnz;
 
 
 # direct methods
-.method public constructor <init>(Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;)V
+.method public synthetic constructor <init>(Lehh;Landroid/graphics/SurfaceTexture;Llnz;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lehg;->a:Loiw;
+    iput-object p1, p0, Lehg;->a:Lehh;
 
-    iput-object p2, p0, Lehg;->b:Loiw;
+    iput-object p2, p0, Lehg;->b:Landroid/graphics/SurfaceTexture;
 
-    iput-object p3, p0, Lehg;->c:Loiw;
-
-    iput-object p4, p0, Lehg;->d:Loiw;
-
-    iput-object p5, p0, Lehg;->e:Loiw;
-
-    iput-object p6, p0, Lehg;->f:Loiw;
-
-    iput-object p7, p0, Lehg;->g:Loiw;
+    iput-object p3, p0, Lehg;->c:Llnz;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Lehf;
-    .locals 9
+.method public final run()V
+    .locals 6
 
-    iget-object v0, p0, Lehg;->a:Loiw;
+    iget-object v0, p0, Lehg;->a:Lehh;
 
-    check-cast v0, Lcrj;
+    iget-object v1, p0, Lehg;->b:Landroid/graphics/SurfaceTexture;
 
-    invoke-virtual {v0}, Lcrj;->a()Lmqp;
+    iget-object v2, p0, Lehg;->c:Llnz;
 
-    move-result-object v2
+    iget-object v3, v0, Lehh;->b:Lehj;
 
-    iget-object v0, p0, Lehg;->b:Loiw;
+    iget-object v4, v3, Lehj;->h:Llnc;
 
-    check-cast v0, Lfwo;
+    if-eqz v4, :cond_0
 
-    invoke-virtual {v0}, Lfwo;->a()Lfuz;
+    if-eqz v1, :cond_0
 
-    move-result-object v3
+    new-instance v5, Landroid/view/Surface;
 
-    iget-object v0, p0, Lehg;->c:Loiw;
+    invoke-direct {v5, v1}, Landroid/view/Surface;-><init>(Landroid/graphics/SurfaceTexture;)V
 
-    check-cast v0, Leha;
+    iput-object v5, v3, Lehj;->i:Landroid/view/Surface;
 
-    invoke-virtual {v0}, Leha;->a()Legz;
+    invoke-interface {v4}, Llnc;->b()Llnd;
 
-    move-result-object v4
+    move-result-object v1
 
-    iget-object v0, p0, Lehg;->d:Loiw;
+    invoke-interface {v1, v2}, Llnd;->a(Llnz;)Llnx;
 
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
+    move-result-object v1
 
-    move-result-object v0
+    iget-object v2, v0, Lehh;->b:Lehj;
 
-    move-object v5, v0
+    iput-object v1, v2, Lehj;->j:Llnx;
 
-    check-cast v5, Ldhi;
+    iget-object v2, v2, Lehj;->i:Landroid/view/Surface;
 
-    iget-object v0, p0, Lehg;->e:Loiw;
+    invoke-interface {v1, v2}, Llnx;->d(Landroid/view/Surface;)V
 
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
+    invoke-interface {v4, v1}, Llnc;->s(Llnx;)Llqd;
 
-    move-result-object v0
+    move-result-object v1
 
-    check-cast v0, Ljava/lang/Boolean;
+    iget-object v2, v0, Lehh;->b:Lehj;
 
-    invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
+    const/4 v3, 0x1
 
-    move-result v6
+    invoke-interface {v4, v1, v3}, Llnc;->r(Llqd;I)Llmv;
 
-    iget-object v0, p0, Lehg;->f:Loiw;
+    move-result-object v1
 
-    check-cast v0, Leep;
+    iput-object v1, v2, Lehj;->k:Llmv;
 
-    invoke-virtual {v0}, Leep;->a()Leeo;
+    iget-object v0, v0, Lehh;->b:Lehj;
 
-    move-result-object v7
+    iget-object v1, v0, Lehj;->k:Llmv;
 
-    iget-object v0, p0, Lehg;->g:Loiw;
+    iget-object v0, v0, Lehj;->m:Llmu;
 
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
+    invoke-interface {v1, v0}, Llmv;->k(Llmu;)V
 
-    move-result-object v0
-
-    move-object v8, v0
-
-    check-cast v8, Ldzf;
-
-    new-instance v0, Lehf;
-
-    move-object v1, v0
-
-    invoke-direct/range {v1 .. v8}, Lehf;-><init>(Lmqp;Lfuz;Legz;Ldhi;ZLeeo;Ldzf;)V
-
-    return-object v0
-.end method
-
-.method public final bridge synthetic get()Ljava/lang/Object;
-    .locals 1
-
-    invoke-virtual {p0}, Lehg;->a()Lehf;
-
-    move-result-object v0
-
-    return-object v0
+    :cond_0
+    return-void
 .end method

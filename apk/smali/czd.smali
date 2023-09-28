@@ -1,337 +1,184 @@
-.class public final Lczd;
+.class public final synthetic Lczd;
 .super Ljava/lang/Object;
+
+# interfaces
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field public final a:Ljava/lang/Object;
+.field public final synthetic a:Lczl;
 
-.field public final b:Ljava/lang/Object;
+.field public final synthetic b:Landroid/graphics/Bitmap;
 
-.field public c:Ljava/lang/Object;
-
-.field private final d:Ljava/lang/Object;
+.field public final synthetic c:Lcyk;
 
 
 # direct methods
-.method public constructor <init>(Landroid/app/Activity;Ljava/util/concurrent/Executor;Laea;)V
+.method public synthetic constructor <init>(Lczl;Landroid/graphics/Bitmap;Lcyk;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lczd;->b:Ljava/lang/Object;
+    iput-object p1, p0, Lczd;->a:Lczl;
 
-    iput-object p2, p0, Lczd;->d:Ljava/lang/Object;
+    iput-object p2, p0, Lczd;->b:Landroid/graphics/Bitmap;
 
-    iput-object p3, p0, Lczd;->a:Ljava/lang/Object;
-
-    return-void
-.end method
-
-.method public constructor <init>(Lcgi;Lcfx;Ljvs;)V
-    .locals 0
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lczd;->a:Ljava/lang/Object;
-
-    iput-object p2, p0, Lczd;->b:Ljava/lang/Object;
-
-    iput-object p3, p0, Lczd;->d:Ljava/lang/Object;
-
-    return-void
-.end method
-
-.method public constructor <init>(Loiw;Ljava/util/concurrent/ScheduledExecutorService;Ldhi;)V
-    .locals 1
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    const/4 v0, 0x0
-
-    iput-object v0, p0, Lczd;->c:Ljava/lang/Object;
-
-    iput-object p1, p0, Lczd;->d:Ljava/lang/Object;
-
-    iput-object p2, p0, Lczd;->a:Ljava/lang/Object;
-
-    iput-object p3, p0, Lczd;->b:Ljava/lang/Object;
+    iput-object p3, p0, Lczd;->c:Lcyk;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final declared-synchronized a()V
-    .locals 2
+.method public final run()V
+    .locals 9
 
-    monitor-enter p0
+    iget-object v0, p0, Lczd;->a:Lczl;
 
-    :try_start_0
-    iget-object v0, p0, Lczd;->b:Ljava/lang/Object;
+    iget-object v1, p0, Lczd;->b:Landroid/graphics/Bitmap;
 
-    sget-object v1, Ldgu;->ad:Ldhj;
+    iget-object v2, p0, Lczd;->c:Lcyk;
 
-    invoke-interface {v0, v1}, Ldhi;->l(Ldhj;)Z
+    iget-object v3, v0, Lczl;->q:Ljcw;
 
-    move-result v0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    invoke-static {}, Lpms;->b()Lpmr;
 
-    if-nez v0, :cond_0
+    move-result-object v4
 
-    monitor-exit p0
+    iput-object v1, v4, Lpmr;->b:Landroid/graphics/Bitmap;
 
-    return-void
+    iget v1, v2, Lcyk;->j:I
+
+    const/4 v5, 0x0
+
+    const/4 v6, 0x3
+
+    if-ne v1, v6, :cond_0
+
+    const/4 v1, 0x7
+
+    goto :goto_0
 
     :cond_0
-    :try_start_1
-    iget-object v0, p0, Lczd;->c:Ljava/lang/Object;
-
-    if-eqz v0, :cond_1
-
     const/4 v1, 0x0
 
-    invoke-interface {v0, v1}, Ljava/util/concurrent/ScheduledFuture;->cancel(Z)Z
+    :goto_0
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    const/4 v0, 0x0
+    move-result-object v1
 
-    iput-object v0, p0, Lczd;->c:Ljava/lang/Object;
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+    iput-object v1, v4, Lpmr;->f:Ljava/lang/Integer;
 
-    :cond_1
-    monitor-exit p0
+    iget-object v1, v2, Lcyk;->f:Lojc;
 
-    return-void
+    invoke-virtual {v1}, Lojc;->g()Z
 
-    :catchall_0
-    move-exception v0
+    move-result v1
 
-    monitor-exit p0
+    if-eqz v1, :cond_3
 
-    throw v0
-.end method
+    sget-object v1, Lpmh;->c:Lpmh;
 
-.method public final declared-synchronized b()V
-    .locals 8
+    invoke-virtual {v1}, Lppd;->m()Lpoy;
 
-    monitor-enter p0
+    move-result-object v1
 
-    :try_start_0
-    iget-object v0, p0, Lczd;->b:Ljava/lang/Object;
+    sget-object v6, Lpmb;->c:Lpmb;
 
-    sget-object v1, Ldgu;->ad:Ldhj;
+    invoke-virtual {v6}, Lppd;->m()Lpoy;
 
-    invoke-interface {v0, v1}, Ldhi;->l(Ldhj;)Z
+    move-result-object v6
 
-    move-result v0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    iget-object v2, v2, Lcyk;->f:Lojc;
 
-    if-nez v0, :cond_0
+    invoke-virtual {v2}, Lojc;->c()Ljava/lang/Object;
 
-    monitor-exit p0
+    move-result-object v2
 
-    return-void
+    check-cast v2, Lplz;
 
-    :cond_0
-    :try_start_1
-    iget-object v0, p0, Lczd;->c:Ljava/lang/Object;
+    iget-boolean v7, v6, Lpoy;->c:Z
 
-    if-nez v0, :cond_1
+    if-eqz v7, :cond_1
 
-    iget-object v1, p0, Lczd;->a:Ljava/lang/Object;
+    invoke-virtual {v6}, Lpoy;->m()V
 
-    iget-object v0, p0, Lczd;->d:Ljava/lang/Object;
-
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lczg;
-
-    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    new-instance v2, Lctw;
-
-    const/16 v3, 0xc
-
-    invoke-direct {v2, v0, v3}, Lctw;-><init>(Lczg;I)V
-
-    const-wide/16 v3, 0x0
-
-    const-wide/16 v5, 0x7d0
-
-    sget-object v7, Ljava/util/concurrent/TimeUnit;->MILLISECONDS:Ljava/util/concurrent/TimeUnit;
-
-    invoke-interface/range {v1 .. v7}, Ljava/util/concurrent/ScheduledExecutorService;->scheduleAtFixedRate(Ljava/lang/Runnable;JJLjava/util/concurrent/TimeUnit;)Ljava/util/concurrent/ScheduledFuture;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lczd;->c:Ljava/lang/Object;
-
-    iget-object v0, p0, Lczd;->d:Ljava/lang/Object;
-
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lczg;
-
-    invoke-virtual {v0}, Lczg;->a()V
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    monitor-exit p0
-
-    return-void
+    iput-boolean v5, v6, Lpoy;->c:Z
 
     :cond_1
-    :try_start_2
-    new-instance v0, Ljava/lang/IllegalStateException;
+    iget-object v7, v6, Lpoy;->b:Lppd;
 
-    const-string v1, "Scheduler running already."
+    check-cast v7, Lpmb;
 
-    invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+    iput-object v2, v7, Lpmb;->b:Lplz;
 
-    throw v0
-    :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_0
+    iget v2, v7, Lpmb;->a:I
 
-    :catchall_0
-    move-exception v0
+    const/4 v8, 0x1
 
-    monitor-exit p0
+    or-int/2addr v2, v8
 
-    throw v0
-.end method
+    iput v2, v7, Lpmb;->a:I
 
-.method public final c(Lawl;)V
-    .locals 4
+    iget-boolean v2, v1, Lpoy;->c:Z
 
-    iput-object p1, p0, Lczd;->c:Ljava/lang/Object;
+    if-eqz v2, :cond_2
 
-    iget-object v0, p0, Lczd;->d:Ljava/lang/Object;
+    invoke-virtual {v1}, Lpoy;->m()V
 
-    new-instance v1, Lbd;
+    iput-boolean v5, v1, Lpoy;->c:Z
 
-    const/16 v2, 0xf
+    :cond_2
+    iget-object v2, v1, Lpoy;->b:Lppd;
 
-    const/4 v3, 0x0
+    check-cast v2, Lpmh;
 
-    invoke-direct {v1, p0, p1, v2, v3}, Lbd;-><init>(Lczd;Lawl;I[B)V
+    invoke-virtual {v6}, Lpoy;->h()Lppd;
 
-    invoke-interface {v0, v1}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
+    move-result-object v5
 
-    return-void
-.end method
+    check-cast v5, Lpmb;
 
-.method public final declared-synchronized d()Lkad;
-    .locals 4
+    invoke-virtual {v5}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    monitor-enter p0
+    iput-object v5, v2, Lpmh;->b:Ljava/lang/Object;
 
-    :try_start_0
-    sget-object v0, Lnbk;->a:Lnbc;
+    iput v8, v2, Lpmh;->a:I
 
-    iget-object v0, p0, Lczd;->d:Ljava/lang/Object;
+    invoke-virtual {v1}, Lpoy;->h()Lppd;
 
-    invoke-static {v0}, Ljvo;->c(Ljvs;)Ljvs;
+    move-result-object v1
 
-    move-result-object v0
+    check-cast v1, Lpmh;
 
-    new-instance v1, Lcbl;
+    goto :goto_1
 
-    const/16 v2, 0x9
+    :cond_3
+    sget-object v1, Lpmh;->c:Lpmh;
 
-    const/4 v3, 0x0
+    :goto_1
+    iput-object v1, v4, Lpmr;->d:Lpmh;
 
-    invoke-direct {v1, p0, v2, v3}, Lcbl;-><init>(Lczd;I[B)V
+    invoke-virtual {v4}, Lpmr;->a()Lpms;
 
-    sget-object v2, Lnnv;->a:Lnnv;
+    move-result-object v1
 
-    invoke-interface {v0, v1, v2}, Ljvs;->a(Lkai;Ljava/util/concurrent/Executor;)Lkad;
+    iput-object v1, v3, Ljcw;->g:Lpms;
 
-    move-result-object v0
+    iget-object v1, v0, Lczl;->p:Lfvv;
 
-    iput-object v0, p0, Lczd;->c:Ljava/lang/Object;
+    sget-object v2, Ljrl;->k:Ljrl;
 
-    new-instance v0, Lcfh;
+    invoke-interface {v1, v2}, Lfvv;->b(Ljrl;)Z
 
-    const/4 v1, 0x2
+    move-result v1
 
-    invoke-direct {v0, p0, v1, v3}, Lcfh;-><init>(Lczd;I[B)V
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    if-nez v1, :cond_4
 
-    monitor-exit p0
+    iget-object v0, v0, Lczl;->q:Ljcw;
 
-    return-object v0
+    invoke-virtual {v0}, Ljcw;->e()V
 
-    :catchall_0
-    move-exception v0
-
-    monitor-exit p0
-
-    throw v0
-.end method
-
-.method public final declared-synchronized e()V
-    .locals 1
-
-    monitor-enter p0
-
-    :try_start_0
-    sget-object v0, Lnbk;->a:Lnbc;
-
-    iget-object v0, p0, Lczd;->c:Ljava/lang/Object;
-
-    if-eqz v0, :cond_0
-
-    invoke-interface {v0}, Lkad;->close()V
-
-    :cond_0
-    const/4 v0, 0x0
-
-    invoke-virtual {p0, v0}, Lczd;->f(Z)V
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    monitor-exit p0
-
-    return-void
-
-    :catchall_0
-    move-exception v0
-
-    monitor-exit p0
-
-    throw v0
-.end method
-
-.method public final f(Z)V
-    .locals 1
-
-    sget-object v0, Lnbk;->a:Lnbc;
-
-    iget-object v0, p0, Lczd;->b:Ljava/lang/Object;
-
-    check-cast v0, Lcfx;
-
-    invoke-virtual {v0}, Lcfx;->b()V
-
-    if-eqz p1, :cond_0
-
-    iget-object p1, p0, Lczd;->a:Ljava/lang/Object;
-
-    invoke-interface {p1}, Lcgi;->g()V
-
-    return-void
-
-    :cond_0
-    iget-object p1, p0, Lczd;->a:Ljava/lang/Object;
-
-    invoke-interface {p1}, Lcgi;->f()V
-
+    :cond_4
     return-void
 .end method

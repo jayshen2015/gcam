@@ -1,121 +1,142 @@
-.class public final Lhqk;
+.class final Lhqk;
 .super Ljava/lang/Object;
+
+# interfaces
+.implements Lhsn;
 
 
 # instance fields
-.field public a:Lj$/time/Duration;
+.field final synthetic a:Ljava/io/File;
 
-.field public b:Landroid/view/ViewGroup;
+.field final synthetic b:Lhsa;
 
-.field public c:Landroid/view/View;
-
-.field public d:Z
-
-.field public e:Lgeh;
-
-.field public f:Lell;
-
-.field public g:Lfbz;
-
-.field public h:I
-
-.field private final i:Ljava/lang/Runnable;
+.field final synthetic c:Lhql;
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 1
+.method public constructor <init>(Lhql;Ljava/io/File;Lhsa;)V
+    .locals 0
+
+    iput-object p1, p0, Lhqk;->c:Lhql;
+
+    iput-object p2, p0, Lhqk;->a:Ljava/io/File;
+
+    iput-object p3, p0, Lhqk;->b:Lhsa;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    const/4 v0, 0x0
-
-    iput-object v0, p0, Lhqk;->c:Landroid/view/View;
-
-    sget-object v0, Lhck;->d:Lhck;
-
-    iput-object v0, p0, Lhqk;->i:Ljava/lang/Runnable;
-
-    const/4 v0, 0x0
-
-    iput-boolean v0, p0, Lhqk;->d:Z
-
-    const/4 v0, 0x1
-
-    iput v0, p0, Lhqk;->h:I
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Lhql;
-    .locals 10
+.method public final a()V
+    .locals 4
 
-    iget-object v0, p0, Lhqk;->f:Lell;
+    iget-object v0, p0, Lhqk;->c:Lhql;
 
-    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    iget-object v0, v0, Lhql;->c:Ljava/util/concurrent/Executor;
 
-    iget-boolean v7, p0, Lhqk;->d:Z
+    iget-object v1, p0, Lhqk;->a:Ljava/io/File;
 
-    if-eqz v7, :cond_0
+    new-instance v2, Lhqj;
 
-    iget-object v0, p0, Lhqk;->c:Landroid/view/View;
+    const/4 v3, 0x0
 
-    if-nez v0, :cond_0
+    invoke-direct {v2, v1, v3}, Lhqj;-><init>(Ljava/io/File;I)V
 
-    iget-object v0, p0, Lhqk;->e:Lgeh;
+    invoke-interface {v0, v2}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
 
-    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    return-void
+.end method
 
-    iget-object v0, p0, Lhqk;->g:Lfbz;
+.method public final synthetic b()V
+    .locals 0
 
-    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    return-void
+.end method
 
-    goto :goto_0
+.method public final synthetic c(Lfjz;)V
+    .locals 0
+
+    return-void
+.end method
+
+.method public final d(Landroid/graphics/Bitmap;)V
+    .locals 4
+
+    iget-object v0, p0, Lhqk;->c:Lhql;
+
+    iget-object v0, v0, Lhql;->b:Lddf;
+
+    sget-object v1, Lddl;->aY:Lddg;
+
+    invoke-interface {v0, v1}, Lddf;->k(Lddg;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    return-void
 
     :cond_0
-    iget-object v0, p0, Lhqk;->c:Landroid/view/View;
+    iget-object v0, p0, Lhqk;->c:Lhql;
 
-    if-eqz v0, :cond_1
+    iget-object v0, v0, Lhql;->c:Ljava/util/concurrent/Executor;
 
-    iget-object v0, p0, Lhqk;->b:Landroid/view/ViewGroup;
+    iget-object v1, p0, Lhqk;->a:Ljava/io/File;
 
-    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    iget-object v2, p0, Lhqk;->b:Lhsa;
 
-    :goto_0
-    new-instance v0, Lhql;
+    new-instance v3, Lhqi;
 
-    iget-object v2, p0, Lhqk;->a:Lj$/time/Duration;
+    invoke-direct {v3, p1, v1, v2}, Lhqi;-><init>(Landroid/graphics/Bitmap;Ljava/io/File;Lhsa;)V
 
-    iget-object v3, p0, Lhqk;->b:Landroid/view/ViewGroup;
+    invoke-interface {v0, v3}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
 
-    iget-object v4, p0, Lhqk;->c:Landroid/view/View;
+    return-void
+.end method
 
-    iget-object v5, p0, Lhqk;->i:Ljava/lang/Runnable;
+.method public final synthetic e(Lojc;)V
+    .locals 0
 
-    iget v6, p0, Lhqk;->h:I
+    return-void
+.end method
 
-    iget-object v8, p0, Lhqk;->e:Lgeh;
+.method public final f(IILjava/lang/Throwable;)V
+    .locals 1
 
-    iget-object v9, p0, Lhqk;->g:Lfbz;
+    iget-object p1, p0, Lhqk;->c:Lhql;
 
-    move-object v1, v0
+    iget-object p1, p1, Lhql;->c:Ljava/util/concurrent/Executor;
 
-    invoke-direct/range {v1 .. v9}, Lhql;-><init>(Lj$/time/Duration;Landroid/view/ViewGroup;Landroid/view/View;Ljava/lang/Runnable;IZLgeh;Lfbz;)V
+    iget-object p2, p0, Lhqk;->a:Ljava/io/File;
 
-    new-instance v1, Lhqn;
+    new-instance p3, Lhqj;
 
-    const/4 v2, 0x1
+    const/4 v0, 0x1
 
-    invoke-direct {v1, p0, v0, v2}, Lhqn;-><init>(Lhqk;Lhql;I)V
+    invoke-direct {p3, p2, v0}, Lhqj;-><init>(Ljava/io/File;I)V
 
-    iput-object v1, v0, Lhql;->c:Ljava/lang/Runnable;
+    invoke-interface {p1, p3}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
 
-    return-object v0
+    return-void
+.end method
 
-    :cond_1
-    const/4 v0, 0x0
+.method public final synthetic g(IILjava/lang/Throwable;)V
+    .locals 0
 
-    throw v0
+    return-void
+.end method
+
+.method public final synthetic h(II)V
+    .locals 0
+
+    return-void
+.end method
+
+.method public final synthetic i(II)V
+    .locals 0
+
+    return-void
 .end method

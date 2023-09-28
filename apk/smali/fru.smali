@@ -1,22 +1,15 @@
 .class public final Lfru;
 .super Ljava/lang/Object;
 
+# interfaces
+.implements Ljava/lang/AutoCloseable;
 
-# static fields
-.field public static final a:Lfnn;
 
+# virtual methods
+.method public final close()V
+    .locals 1
 
-# direct methods
-.method static constructor <clinit>()V
-    .locals 2
+    const/4 v0, 0x0
 
-    new-instance v0, Lfnn;
-
-    const/16 v1, 0xf
-
-    invoke-direct {v0, v1}, Lfnn;-><init>(I)V
-
-    sput-object v0, Lfru;->a:Lfnn;
-
-    return-void
+    throw v0
 .end method

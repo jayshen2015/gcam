@@ -1,306 +1,134 @@
 .class final Lbcq;
-.super Lapn;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Lbab;
+
+
+# instance fields
+.field final synthetic a:Lbff;
+
+.field final synthetic b:Lbcr;
 
 
 # direct methods
-.method public constructor <init>(Lapt;)V
+.method public constructor <init>(Lbcr;Lbff;)V
     .locals 0
 
-    invoke-direct {p0, p1}, Lapn;-><init>(Lapt;)V
+    iput-object p1, p0, Lbcq;->b:Lbcr;
+
+    iput-object p2, p0, Lbcq;->a:Lbff;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final bridge synthetic b(Larf;Ljava/lang/Object;)V
-    .locals 11
+.method public final b(Ljava/lang/Object;)V
+    .locals 7
 
-    check-cast p2, Lbcj;
+    iget-object v0, p0, Lbcq;->b:Lbcr;
 
-    iget-object v0, p2, Lbcj;->a:Ljava/lang/String;
+    iget-object v1, p0, Lbcq;->a:Lbff;
 
-    const/4 v1, 0x1
-
-    invoke-virtual {p1, v1, v0}, Lare;->g(ILjava/lang/String;)V
-
-    iget v0, p2, Lbcj;->r:I
-
-    invoke-static {v0}, Ler;->o(I)I
+    invoke-virtual {v0, v1}, Lbcr;->f(Lbff;)Z
 
     move-result v0
 
-    int-to-long v0, v0
+    if-eqz v0, :cond_1
 
-    const/4 v2, 0x2
+    iget-object v0, p0, Lbcq;->b:Lbcr;
 
-    invoke-virtual {p1, v2, v0, v1}, Lare;->e(IJ)V
+    iget-object v1, p0, Lbcq;->a:Lbff;
 
-    iget-object v0, p2, Lbcj;->b:Ljava/lang/String;
+    iget-object v2, v0, Lbcr;->a:Lbbi;
 
-    const/4 v1, 0x3
+    iget-object v2, v2, Lbbi;->o:Lbbr;
 
-    if-nez v0, :cond_0
+    if-eqz p1, :cond_0
 
-    invoke-virtual {p1, v1}, Lare;->f(I)V
+    iget-object v3, v1, Lbff;->c:Lbac;
 
-    goto :goto_0
+    invoke-interface {v3}, Lbac;->g()I
+
+    move-result v3
+
+    invoke-virtual {v2, v3}, Lbbr;->c(I)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_0
+
+    iput-object p1, v0, Lbcr;->c:Ljava/lang/Object;
+
+    iget-object p1, v0, Lbcr;->b:Lbbg;
+
+    invoke-interface {p1}, Lbbg;->b()V
+
+    return-void
 
     :cond_0
-    invoke-virtual {p1, v1, v0}, Lare;->g(ILjava/lang/String;)V
+    iget-object v2, v0, Lbcr;->b:Lbbg;
 
-    :goto_0
-    iget-object v0, p2, Lbcj;->c:Ljava/lang/String;
+    iget-object v3, v1, Lbff;->a:Lazp;
 
-    const/4 v1, 0x4
+    iget-object v4, v1, Lbff;->c:Lbac;
 
-    if-nez v0, :cond_1
+    invoke-interface {v4}, Lbac;->g()I
 
-    invoke-virtual {p1, v1}, Lare;->f(I)V
+    move-result v5
 
-    goto :goto_1
+    iget-object v6, v0, Lbcr;->d:Lbbe;
+
+    move-object v0, v2
+
+    move-object v1, v3
+
+    move-object v2, p1
+
+    move-object v3, v4
+
+    move v4, v5
+
+    move-object v5, v6
+
+    invoke-interface/range {v0 .. v5}, Lbbg;->e(Lazp;Ljava/lang/Object;Lbac;ILazp;)V
 
     :cond_1
-    invoke-virtual {p1, v1, v0}, Lare;->g(ILjava/lang/String;)V
-
-    :goto_1
-    iget-object v0, p2, Lbcj;->d:Laxh;
-
-    invoke-static {v0}, Laxh;->c(Laxh;)[B
-
-    move-result-object v0
-
-    const/4 v1, 0x5
-
-    if-nez v0, :cond_2
-
-    invoke-virtual {p1, v1}, Lare;->f(I)V
-
-    goto :goto_2
-
-    :cond_2
-    invoke-virtual {p1, v1, v0}, Lare;->c(I[B)V
-
-    :goto_2
-    iget-object v0, p2, Lbcj;->e:Laxh;
-
-    invoke-static {v0}, Laxh;->c(Laxh;)[B
-
-    move-result-object v0
-
-    const/4 v1, 0x6
-
-    if-nez v0, :cond_3
-
-    invoke-virtual {p1, v1}, Lare;->f(I)V
-
-    goto :goto_3
-
-    :cond_3
-    invoke-virtual {p1, v1, v0}, Lare;->c(I[B)V
-
-    :goto_3
-    iget-wide v0, p2, Lbcj;->f:J
-
-    const/4 v2, 0x7
-
-    invoke-virtual {p1, v2, v0, v1}, Lare;->e(IJ)V
-
-    iget-wide v0, p2, Lbcj;->g:J
-
-    const/16 v2, 0x8
-
-    invoke-virtual {p1, v2, v0, v1}, Lare;->e(IJ)V
-
-    iget-wide v0, p2, Lbcj;->h:J
-
-    const/16 v2, 0x9
-
-    invoke-virtual {p1, v2, v0, v1}, Lare;->e(IJ)V
-
-    iget v0, p2, Lbcj;->j:I
-
-    int-to-long v0, v0
-
-    const/16 v2, 0xa
-
-    invoke-virtual {p1, v2, v0, v1}, Lare;->e(IJ)V
-
-    iget v0, p2, Lbcj;->s:I
-
-    invoke-static {v0}, Ler;->l(I)I
-
-    move-result v0
-
-    int-to-long v0, v0
-
-    const/16 v2, 0xb
-
-    invoke-virtual {p1, v2, v0, v1}, Lare;->e(IJ)V
-
-    iget-wide v0, p2, Lbcj;->k:J
-
-    const/16 v2, 0xc
-
-    invoke-virtual {p1, v2, v0, v1}, Lare;->e(IJ)V
-
-    iget-wide v0, p2, Lbcj;->l:J
-
-    const/16 v2, 0xd
-
-    invoke-virtual {p1, v2, v0, v1}, Lare;->e(IJ)V
-
-    iget-wide v0, p2, Lbcj;->m:J
-
-    const/16 v2, 0xe
-
-    invoke-virtual {p1, v2, v0, v1}, Lare;->e(IJ)V
-
-    iget-wide v0, p2, Lbcj;->n:J
-
-    const/16 v2, 0xf
-
-    invoke-virtual {p1, v2, v0, v1}, Lare;->e(IJ)V
-
-    iget-boolean v0, p2, Lbcj;->o:Z
-
-    int-to-long v0, v0
-
-    const/16 v2, 0x10
-
-    invoke-virtual {p1, v2, v0, v1}, Lare;->e(IJ)V
-
-    iget v0, p2, Lbcj;->t:I
-
-    invoke-static {v0}, Ler;->n(I)I
-
-    move-result v0
-
-    int-to-long v0, v0
-
-    const/16 v2, 0x11
-
-    invoke-virtual {p1, v2, v0, v1}, Lare;->e(IJ)V
-
-    iget v0, p2, Lbcj;->p:I
-
-    int-to-long v0, v0
-
-    const/16 v2, 0x12
-
-    invoke-virtual {p1, v2, v0, v1}, Lare;->e(IJ)V
-
-    iget v0, p2, Lbcj;->q:I
-
-    int-to-long v0, v0
-
-    const/16 v2, 0x13
-
-    invoke-virtual {p1, v2, v0, v1}, Lare;->e(IJ)V
-
-    iget-object v0, p2, Lbcj;->i:Laxf;
-
-    const/16 v1, 0x1b
-
-    const/16 v2, 0x1a
-
-    const/16 v3, 0x19
-
-    const/16 v4, 0x18
-
-    const/16 v5, 0x17
-
-    const/16 v6, 0x16
-
-    const/16 v7, 0x15
-
-    const/16 v8, 0x14
-
-    if-eqz v0, :cond_4
-
-    iget v9, v0, Laxf;->i:I
-
-    invoke-static {v9}, Ler;->m(I)I
-
-    move-result v9
-
-    int-to-long v9, v9
-
-    invoke-virtual {p1, v8, v9, v10}, Lare;->e(IJ)V
-
-    iget-boolean v8, v0, Laxf;->b:Z
-
-    int-to-long v8, v8
-
-    invoke-virtual {p1, v7, v8, v9}, Lare;->e(IJ)V
-
-    iget-boolean v7, v0, Laxf;->c:Z
-
-    int-to-long v7, v7
-
-    invoke-virtual {p1, v6, v7, v8}, Lare;->e(IJ)V
-
-    iget-boolean v6, v0, Laxf;->d:Z
-
-    int-to-long v6, v6
-
-    invoke-virtual {p1, v5, v6, v7}, Lare;->e(IJ)V
-
-    iget-boolean v5, v0, Laxf;->e:Z
-
-    int-to-long v5, v5
-
-    invoke-virtual {p1, v4, v5, v6}, Lare;->e(IJ)V
-
-    iget-wide v4, v0, Laxf;->f:J
-
-    invoke-virtual {p1, v3, v4, v5}, Lare;->e(IJ)V
-
-    iget-wide v3, v0, Laxf;->g:J
-
-    invoke-virtual {p1, v2, v3, v4}, Lare;->e(IJ)V
-
-    iget-object v0, v0, Laxf;->h:Ljava/util/Set;
-
-    invoke-static {v0}, Ler;->k(Ljava/util/Set;)[B
-
-    move-result-object v0
-
-    invoke-virtual {p1, v1, v0}, Lare;->c(I[B)V
-
-    goto :goto_4
-
-    :cond_4
-    invoke-virtual {p1, v8}, Lare;->f(I)V
-
-    invoke-virtual {p1, v7}, Lare;->f(I)V
-
-    invoke-virtual {p1, v6}, Lare;->f(I)V
-
-    invoke-virtual {p1, v5}, Lare;->f(I)V
-
-    invoke-virtual {p1, v4}, Lare;->f(I)V
-
-    invoke-virtual {p1, v3}, Lare;->f(I)V
-
-    invoke-virtual {p1, v2}, Lare;->f(I)V
-
-    invoke-virtual {p1, v1}, Lare;->f(I)V
-
-    :goto_4
-    iget-object p2, p2, Lbcj;->a:Ljava/lang/String;
-
-    const/16 v0, 0x1c
-
-    invoke-virtual {p1, v0, p2}, Lare;->g(ILjava/lang/String;)V
-
     return-void
 .end method
 
-.method public final d()Ljava/lang/String;
-    .locals 1
+.method public final e(Ljava/lang/Exception;)V
+    .locals 4
 
-    const-string v0, "UPDATE OR ABORT `WorkSpec` SET `id` = ?,`state` = ?,`worker_class_name` = ?,`input_merger_class_name` = ?,`input` = ?,`output` = ?,`initial_delay` = ?,`interval_duration` = ?,`flex_duration` = ?,`run_attempt_count` = ?,`backoff_policy` = ?,`backoff_delay_duration` = ?,`last_enqueue_time` = ?,`minimum_retention_duration` = ?,`schedule_requested_at` = ?,`run_in_foreground` = ?,`out_of_quota_policy` = ?,`period_count` = ?,`generation` = ?,`required_network_type` = ?,`requires_charging` = ?,`requires_device_idle` = ?,`requires_battery_not_low` = ?,`requires_storage_not_low` = ?,`trigger_content_update_delay` = ?,`trigger_max_content_delay` = ?,`content_uri_triggers` = ? WHERE `id` = ?"
+    iget-object v0, p0, Lbcq;->b:Lbcr;
 
-    return-object v0
+    iget-object v1, p0, Lbcq;->a:Lbff;
+
+    invoke-virtual {v0, v1}, Lbcr;->f(Lbff;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lbcq;->b:Lbcr;
+
+    iget-object v1, p0, Lbcq;->a:Lbff;
+
+    iget-object v2, v0, Lbcr;->b:Lbbg;
+
+    iget-object v0, v0, Lbcr;->d:Lbbe;
+
+    iget-object v1, v1, Lbff;->c:Lbac;
+
+    invoke-interface {v1}, Lbac;->g()I
+
+    move-result v3
+
+    invoke-interface {v2, v0, p1, v1, v3}, Lbbg;->d(Lazp;Ljava/lang/Exception;Lbac;I)V
+
+    :cond_0
+    return-void
 .end method

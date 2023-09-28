@@ -1,104 +1,103 @@
 .class public final Ldwd;
 .super Ljava/lang/Object;
 
-# interfaces
-.implements Ldwc;
-
 
 # instance fields
-.field private final a:Landroid/graphics/drawable/ShapeDrawable;
+.field public final a:Landroid/content/Context;
 
-.field private b:F
+.field public final b:Llda;
+
+.field public final c:Lfjs;
 
 
 # direct methods
-.method public constructor <init>(Landroid/graphics/drawable/ShapeDrawable;)V
+.method public constructor <init>(Landroid/content/Context;Llda;Lfjs;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Ldwd;->a:Landroid/graphics/drawable/ShapeDrawable;
+    iput-object p1, p0, Ldwd;->a:Landroid/content/Context;
+
+    iput-object p2, p0, Ldwd;->b:Llda;
+
+    iput-object p3, p0, Ldwd;->c:Lfjs;
 
     return-void
 .end method
 
+.method public constructor <init>(Landroid/content/Context;Llda;Lfjs;Lddf;)V
+    .locals 0
 
-# virtual methods
-.method public final a(Landroid/graphics/Canvas;)V
-    .locals 6
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iget v3, p0, Ldwd;->b:F
+    iput-object p1, p0, Ldwd;->a:Landroid/content/Context;
 
-    const/4 v0, 0x0
+    iput-object p2, p0, Ldwd;->b:Llda;
 
-    cmpl-float v0, v3, v0
+    iput-object p3, p0, Ldwd;->c:Lfjs;
 
-    if-lez v0, :cond_0
+    invoke-interface {p2}, Llda;->fA()Ljava/lang/Object;
 
-    iget-object v1, p0, Ldwd;->a:Landroid/graphics/drawable/ShapeDrawable;
+    move-result-object p2
 
-    const/4 v2, 0x1
+    check-cast p2, Ljava/lang/Boolean;
 
-    const/4 v4, 0x0
+    invoke-virtual {p2}, Ljava/lang/Boolean;->booleanValue()Z
 
-    const/4 v5, -0x1
+    move-result p2
 
-    move-object v0, p1
+    if-nez p2, :cond_0
 
-    invoke-static/range {v0 .. v5}, Ldnf;->e(Landroid/graphics/Canvas;Landroid/graphics/drawable/Drawable;ZFFI)V
+    sget-object p2, Lddd;->a:Lddg;
+
+    invoke-interface {p4}, Lddf;->d()V
+
+    invoke-static {p1}, Ldwd;->a(Landroid/content/Context;)V
 
     :cond_0
     return-void
 .end method
 
-.method public final b(II)V
-    .locals 2
+.method public static a(Landroid/content/Context;)V
+    .locals 3
 
-    iget-object v0, p0, Ldwd;->a:Landroid/graphics/drawable/ShapeDrawable;
+    new-instance v0, Ljava/io/File;
 
-    const/4 v1, 0x0
+    invoke-virtual {p0}, Landroid/content/Context;->getNoBackupFilesDir()Ljava/io/File;
 
-    invoke-virtual {v0, v1, v1, p1, p2}, Landroid/graphics/drawable/ShapeDrawable;->setBounds(IIII)V
+    move-result-object v1
 
-    return-void
-.end method
+    const-string v2, "/ff.pb"
 
-.method public final c(F)V
-    .locals 1
+    invoke-direct {v0, v1, v2}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
 
-    const/4 v0, 0x0
+    invoke-virtual {v0}, Ljava/io/File;->exists()Z
 
-    cmpl-float v0, p1, v0
+    move-result v1
 
-    if-lez v0, :cond_0
+    if-eqz v1, :cond_0
 
-    const/4 v0, 0x1
-
-    goto :goto_0
+    invoke-virtual {v0}, Ljava/io/File;->delete()Z
 
     :cond_0
-    const/4 v0, 0x0
+    new-instance v0, Ljava/io/File;
 
-    :goto_0
-    invoke-static {v0}, Lmoz;->e(Z)V
+    invoke-virtual {p0}, Landroid/content/Context;->getNoBackupFilesDir()Ljava/io/File;
 
-    iput p1, p0, Ldwd;->b:F
+    move-result-object p0
 
-    return-void
-.end method
+    const-string v1, "/ff.pb_tmp"
 
-.method public final d(F)V
-    .locals 2
+    invoke-direct {v0, p0, v1}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
 
-    iget-object v0, p0, Ldwd;->a:Landroid/graphics/drawable/ShapeDrawable;
+    invoke-virtual {v0}, Ljava/io/File;->exists()Z
 
-    const/high16 v1, 0x437f0000    # 255.0f
+    move-result p0
 
-    mul-float p1, p1, v1
+    if-eqz p0, :cond_1
 
-    float-to-int p1, p1
+    invoke-virtual {v0}, Ljava/io/File;->delete()Z
 
-    invoke-virtual {v0, p1}, Landroid/graphics/drawable/ShapeDrawable;->setAlpha(I)V
-
+    :cond_1
     return-void
 .end method

@@ -1,75 +1,48 @@
-.class public final Lkce;
-.super Ljava/lang/Object;
+.class public abstract Lkce;
+.super Lbmo;
 
 # interfaces
-.implements Logk;
-
-
-# instance fields
-.field private final a:Loiw;
-
-.field private final b:Loiw;
+.implements Lkcf;
 
 
 # direct methods
-.method public constructor <init>(Loiw;Loiw;)V
-    .locals 0
+.method public constructor <init>()V
+    .locals 1
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const-string v0, "com.google.android.apps.gsa.publicsearch.IPublicSearchServiceSessionCallback"
 
-    iput-object p1, p0, Lkce;->a:Loiw;
-
-    iput-object p2, p0, Lkce;->b:Loiw;
+    invoke-direct {p0, v0}, Lbmo;-><init>(Ljava/lang/String;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Lkpo;
-    .locals 3
-
-    iget-object v0, p0, Lkce;->a:Loiw;
-
-    check-cast v0, Logl;
-
-    iget-object v0, v0, Logl;->a:Ljava/lang/Object;
-
-    check-cast v0, Lmqp;
-
-    invoke-virtual {v0}, Lmqp;->g()Z
-
-    move-result v1
-
-    iget-object v2, p0, Lkce;->b:Loiw;
-
-    if-eqz v1, :cond_0
-
-    invoke-virtual {v0}, Lmqp;->c()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lkpo;
-
-    goto :goto_0
-
-    :cond_0
-    check-cast v2, Lkcd;
-
-    invoke-virtual {v2}, Lkcd;->a()Lkpo;
-
-    move-result-object v0
-
-    :goto_0
-    return-object v0
-.end method
-
-.method public final bridge synthetic get()Ljava/lang/Object;
+.method protected final x(ILandroid/os/Parcel;Landroid/os/Parcel;)Z
     .locals 1
 
-    invoke-virtual {p0}, Lkce;->a()Lkpo;
+    const/4 p3, 0x1
 
-    move-result-object v0
+    if-ne p1, p3, :cond_0
 
-    return-object v0
+    invoke-virtual {p2}, Landroid/os/Parcel;->createByteArray()[B
+
+    move-result-object p1
+
+    sget-object v0, Lkch;->CREATOR:Landroid/os/Parcelable$Creator;
+
+    invoke-static {p2, v0}, Lbmp;->a(Landroid/os/Parcel;Landroid/os/Parcelable$Creator;)Landroid/os/Parcelable;
+
+    move-result-object p2
+
+    check-cast p2, Lkch;
+
+    invoke-virtual {p0, p1, p2}, Lkce;->b([BLkch;)V
+
+    return p3
+
+    :cond_0
+    const/4 p1, 0x0
+
+    return p1
 .end method

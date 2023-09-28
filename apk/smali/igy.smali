@@ -2,21 +2,59 @@
 .super Ljava/lang/Object;
 
 
-# static fields
-.field public static final a:Lhkr;
+# instance fields
+.field public a:Ljava/lang/Integer;
+
+.field public b:Ljava/lang/Integer;
+
+.field public c:Ljava/lang/Double;
+
+.field public d:I
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
+.method public constructor <init>()V
+    .locals 0
 
-    new-instance v0, Lhkr;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const/16 v1, 0x14
+    return-void
+.end method
 
-    invoke-direct {v0, v1}, Lhkr;-><init>(I)V
 
-    sput-object v0, Ligy;->a:Lhkr;
+# virtual methods
+.method public final a(D)V
+    .locals 0
+
+    invoke-static {p1, p2}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
+
+    move-result-object p1
+
+    iput-object p1, p0, Ligy;->c:Ljava/lang/Double;
+
+    return-void
+.end method
+
+.method public final b(I)V
+    .locals 0
+
+    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object p1
+
+    iput-object p1, p0, Ligy;->b:Ljava/lang/Integer;
+
+    return-void
+.end method
+
+.method public final c(I)V
+    .locals 0
+
+    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object p1
+
+    iput-object p1, p0, Ligy;->a:Ljava/lang/Integer;
 
     return-void
 .end method

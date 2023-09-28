@@ -1,28 +1,28 @@
-.class public final Llk;
+.class public interface abstract Llk;
 .super Ljava/lang/Object;
 
 
-# direct methods
-.method static a(Landroid/content/res/Configuration;)I
-    .locals 0
-
-    invoke-virtual {p0}, Landroid/content/res/Configuration;->getLayoutDirection()I
-
-    move-result p0
-
-    return p0
+# virtual methods
+.method public abstract b(Landroid/content/Context;Lkw;)V
 .end method
 
-.method public static synthetic b(J)I
-    .locals 2
+.method public abstract c(Lkw;Z)V
+.end method
 
-    const/16 v0, 0x20
+.method public abstract d(Llj;)V
+.end method
 
-    ushr-long v0, p0, v0
+.method public abstract e()Z
+.end method
 
-    xor-long/2addr p0, v0
+.method public abstract f(Lls;)Z
+.end method
 
-    long-to-int p1, p0
+.method public abstract g(Lkz;)Z
+.end method
 
-    return p1
+.method public abstract h(Lkz;)Z
+.end method
+
+.method public abstract i()V
 .end method

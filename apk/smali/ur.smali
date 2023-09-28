@@ -1,66 +1,32 @@
 .class public final Lur;
-.super Lolh;
-
-
-# annotations
-.annotation runtime Lolj;
-    b = "androidx.camera.camera2.pipe.compat.VirtualCameraManager"
-    c = "VirtualCameraManager.kt"
-    d = "readRequestQueue"
-    e = {
-        0xe0,
-        0xe6
-    }
-.end annotation
-
-
-# instance fields
-.field public synthetic a:Ljava/lang/Object;
-
-.field public b:I
-
-.field public c:Ljava/util/ArrayList;
-
-.field public d:Ljava/util/ArrayList;
-
-.field final synthetic e:Ldqx;
-
-.field public f:Ldqx;
+.super Lup;
 
 
 # direct methods
-.method public constructor <init>(Ldqx;Loku;[B[B[B)V
+.method public constructor <init>()V
     .locals 0
 
-    iput-object p1, p0, Lur;->e:Ldqx;
-
-    invoke-direct {p0, p2}, Lolh;-><init>(Loku;)V
+    invoke-direct {p0}, Lup;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final b(Ljava/lang/Object;)Ljava/lang/Object;
+.method public final bridge synthetic a(ILandroid/content/Intent;)Ljava/lang/Object;
     .locals 1
 
-    iput-object p1, p0, Lur;->a:Ljava/lang/Object;
+    new-instance v0, Lui;
 
-    iget p1, p0, Lur;->b:I
+    invoke-direct {v0, p1, p2}, Lui;-><init>(ILandroid/content/Intent;)V
 
-    const/high16 v0, -0x80000000
+    return-object v0
+.end method
 
-    or-int/2addr p1, v0
+.method public final synthetic b(Ljava/lang/Object;)Landroid/content/Intent;
+    .locals 0
 
-    iput p1, p0, Lur;->b:I
-
-    iget-object p1, p0, Lur;->e:Ldqx;
-
-    const/4 v0, 0x0
-
-    invoke-virtual {p1, v0, p0}, Ldqx;->e(Ljava/util/List;Loku;)Ljava/lang/Object;
-
-    move-result-object p1
+    check-cast p1, Landroid/content/Intent;
 
     return-object p1
 .end method

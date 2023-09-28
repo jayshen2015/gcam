@@ -1,112 +1,135 @@
-.class public final enum Ldnj;
-.super Ljava/lang/Enum;
-
-
-# static fields
-.field public static final enum a:Ldnj;
-
-.field public static final enum b:Ldnj;
-
-.field public static final enum c:Ldnj;
-
-.field public static final enum d:Ldnj;
-
-.field private static final synthetic f:[Ldnj;
+.class public final Ldnj;
+.super Ljava/lang/Object;
 
 
 # instance fields
-.field public final e:Ljava/lang/String;
+.field public final a:Landroid/content/Context;
+
+.field public final b:Landroid/view/View;
+
+.field public final c:[[I
+
+.field public d:J
+
+.field public e:I
+
+.field public f:Z
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 10
+.method public constructor <init>(Landroid/content/Context;Landroid/view/View;)V
+    .locals 4
 
-    new-instance v0, Ldnj;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const-string v1, "UNKNOWN"
+    const/4 v0, 0x3
 
-    const/4 v2, 0x0
+    new-array v1, v0, [[I
 
-    const-string v3, "unknown"
+    new-array v2, v0, [I
 
-    invoke-direct {v0, v1, v2, v3}, Ldnj;-><init>(Ljava/lang/String;ILjava/lang/String;)V
+    fill-array-data v2, :array_0
 
-    sput-object v0, Ldnj;->a:Ldnj;
+    const/4 v3, 0x0
 
-    new-instance v1, Ldnj;
+    aput-object v2, v1, v3
 
-    const-string v3, "DEVICE_FORWARDED"
+    new-array v2, v0, [I
 
-    const/4 v4, 0x1
+    fill-array-data v2, :array_1
 
-    const-string v5, "device_forwarded"
+    const/4 v3, 0x1
 
-    invoke-direct {v1, v3, v4, v5}, Ldnj;-><init>(Ljava/lang/String;ILjava/lang/String;)V
+    aput-object v2, v1, v3
 
-    sput-object v1, Ldnj;->b:Ldnj;
+    new-array v0, v0, [I
 
-    new-instance v3, Ldnj;
+    fill-array-data v0, :array_2
 
-    const-string v5, "DEVICE_HANDLED"
+    const/4 v2, 0x2
 
-    const/4 v6, 0x2
+    aput-object v0, v1, v2
 
-    const-string v7, "device_handled"
+    iput-object v1, p0, Ldnj;->c:[[I
 
-    invoke-direct {v3, v5, v6, v7}, Ldnj;-><init>(Ljava/lang/String;ILjava/lang/String;)V
+    const-wide/16 v0, -0x1
 
-    sput-object v3, Ldnj;->c:Ldnj;
+    iput-wide v0, p0, Ldnj;->d:J
 
-    new-instance v5, Ldnj;
+    const/4 v0, -0x1
 
-    const-string v7, "FALLBACK_HANDLED"
+    iput v0, p0, Ldnj;->e:I
 
-    const/4 v8, 0x3
+    iput-boolean v3, p0, Ldnj;->f:Z
 
-    const-string v9, "fallback_handled"
+    iput-object p1, p0, Ldnj;->a:Landroid/content/Context;
 
-    invoke-direct {v5, v7, v8, v9}, Ldnj;-><init>(Ljava/lang/String;ILjava/lang/String;)V
-
-    sput-object v5, Ldnj;->d:Ldnj;
-
-    const/4 v7, 0x4
-
-    new-array v7, v7, [Ldnj;
-
-    aput-object v0, v7, v2
-
-    aput-object v1, v7, v4
-
-    aput-object v3, v7, v6
-
-    aput-object v5, v7, v8
-
-    sput-object v7, Ldnj;->f:[Ldnj;
+    iput-object p2, p0, Ldnj;->b:Landroid/view/View;
 
     return-void
+
+    :array_0
+    .array-data 4
+        0x7f1404d4
+        0x7f1404d3
+        0x7f1404d5
+    .end array-data
+
+    :array_1
+    .array-data 4
+        0x7f14022d
+        0x7f1400e5
+        0x7f140413
+    .end array-data
+
+    :array_2
+    .array-data 4
+        0x7f140095
+        0x7f140094
+        0x7f140096
+    .end array-data
 .end method
 
-.method private constructor <init>(Ljava/lang/String;ILjava/lang/String;)V
+.method public static final c(III)I
     .locals 0
 
-    invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+    if-nez p1, :cond_0
 
-    iput-object p3, p0, Ldnj;->e:Ljava/lang/String;
+    const/4 p0, 0x0
+
+    return p0
+
+    :cond_0
+    mul-int p0, p0, p2
+
+    div-int/2addr p0, p1
+
+    if-ne p0, p2, :cond_1
+
+    add-int/lit8 p0, p0, -0x1
+
+    :cond_1
+    return p0
+.end method
+
+
+# virtual methods
+.method public final a()V
+    .locals 1
+
+    const/4 v0, 0x0
+
+    iput-boolean v0, p0, Ldnj;->f:Z
 
     return-void
 .end method
 
-.method public static values()[Ldnj;
+.method public final b()V
     .locals 1
 
-    sget-object v0, Ldnj;->f:[Ldnj;
+    const/4 v0, 0x1
 
-    invoke-virtual {v0}, [Ldnj;->clone()Ljava/lang/Object;
+    iput-boolean v0, p0, Ldnj;->f:Z
 
-    move-result-object v0
-
-    check-cast v0, [Ldnj;
-
-    return-object v0
+    return-void
 .end method

@@ -1,28 +1,21 @@
 .class public final Llvh;
-.super Lllj;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Lmae;
 
 
-# virtual methods
-.method public final equals(Ljava/lang/Object;)Z
+# instance fields
+.field public final a:Llzh;
+
+
+# direct methods
+.method public constructor <init>(Llzh;)V
     .locals 0
 
-    const/4 p1, 0x0
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    throw p1
-.end method
+    iput-object p1, p0, Llvh;->a:Llzh;
 
-.method public final hashCode()I
-    .locals 1
-
-    const/4 v0, 0x0
-
-    throw v0
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .locals 1
-
-    const/4 v0, 0x0
-
-    throw v0
+    return-void
 .end method

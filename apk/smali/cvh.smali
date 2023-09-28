@@ -1,311 +1,110 @@
 .class public final Lcvh;
 .super Ljava/lang/Object;
 
-# interfaces
-.implements Lcqv;
-
 
 # instance fields
-.field public a:Lika;
+.field public final a:Ljun;
 
-.field private final b:Lcvl;
+.field public final b:Lhsh;
 
-.field private final c:Lcvk;
+.field private final c:Ljava/util/concurrent/Executor;
 
-.field private final d:Lcvi;
-
-.field private final e:Lcvl;
-
-.field private final f:Lcvl;
+.field private final d:Lljf;
 
 
 # direct methods
-.method public constructor <init>(Lcvl;Lcvl;Lcvk;Lcvi;Lcvl;[B)V
-    .locals 0
+.method public constructor <init>(Ljun;Lhsh;Lljf;)V
+    .locals 1
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lcvh;->b:Lcvl;
+    const-string v0, "VidFile"
 
-    iput-object p2, p0, Lcvh;->e:Lcvl;
+    invoke-static {v0}, Lmip;->bM(Ljava/lang/String;)Ljava/util/concurrent/ExecutorService;
 
-    iput-object p3, p0, Lcvh;->c:Lcvk;
+    move-result-object v0
 
-    iput-object p4, p0, Lcvh;->d:Lcvi;
+    iput-object v0, p0, Lcvh;->c:Ljava/util/concurrent/Executor;
 
-    iput-object p5, p0, Lcvh;->f:Lcvl;
+    iput-object p1, p0, Lcvh;->a:Ljun;
+
+    iput-object p2, p0, Lcvh;->b:Lhsh;
+
+    iput-object p3, p0, Lcvh;->d:Lljf;
 
     return-void
 .end method
 
-.method private final q()Lcqv;
-    .locals 1
-
-    sget-object v0, Lika;->a:Lika;
-
-    iget-object v0, p0, Lcvh;->a:Lika;
-
-    invoke-virtual {v0}, Lika;->ordinal()I
-
-    move-result v0
-
-    sparse-switch v0, :sswitch_data_0
-
-    iget-object v0, p0, Lcvh;->b:Lcvl;
-
-    return-object v0
-
-    :sswitch_0
-    iget-object v0, p0, Lcvh;->f:Lcvl;
-
-    return-object v0
-
-    :sswitch_1
-    iget-object v0, p0, Lcvh;->d:Lcvi;
-
-    return-object v0
-
-    :sswitch_2
-    iget-object v0, p0, Lcvh;->c:Lcvk;
-
-    return-object v0
-
-    :sswitch_3
-    iget-object v0, p0, Lcvh;->e:Lcvl;
-
-    return-object v0
-
-    :sswitch_data_0
-    .sparse-switch
-        0x5 -> :sswitch_3
-        0x8 -> :sswitch_2
-        0xd -> :sswitch_1
-        0x13 -> :sswitch_0
-    .end sparse-switch
-.end method
-
 
 # virtual methods
-.method public final a()Lika;
+.method public final declared-synchronized a(Landroid/os/ParcelFileDescriptor;)Lcle;
     .locals 1
 
-    invoke-direct {p0}, Lcvh;->q()Lcqv;
+    monitor-enter p0
 
-    move-result-object v0
+    :try_start_0
+    new-instance v0, Lckx;
 
-    invoke-interface {v0}, Lcqv;->a()Lika;
+    invoke-direct {v0, p1}, Lckx;-><init>(Landroid/os/ParcelFileDescriptor;)V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    move-result-object v0
+    monitor-exit p0
 
     return-object v0
+
+    :catchall_0
+    move-exception p1
+
+    monitor-exit p0
+
+    throw p1
 .end method
 
-.method public final b()Lmqp;
-    .locals 1
+.method public final declared-synchronized b(Lmbs;)Lcle;
+    .locals 5
 
-    invoke-direct {p0}, Lcvh;->q()Lcqv;
+    monitor-enter p0
 
-    move-result-object v0
+    :try_start_0
+    iget-object v0, p0, Lcvh;->b:Lhsh;
 
-    invoke-interface {v0}, Lcqv;->b()Lmqp;
+    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
-    move-result-object v0
+    move-result-wide v1
 
-    return-object v0
-.end method
+    sget-object v3, Ldxh;->a:Ldxh;
 
-.method public final c()Z
-    .locals 1
+    const/4 v4, 0x0
 
-    invoke-direct {p0}, Lcvh;->q()Lcqv;
-
-    move-result-object v0
-
-    invoke-interface {v0}, Lcqv;->c()Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public final d()Z
-    .locals 1
-
-    invoke-direct {p0}, Lcvh;->q()Lcqv;
+    invoke-virtual {v0, v1, v2, v3, v4}, Lhsh;->a(JLdxh;Ljava/lang/String;)Lhsg;
 
     move-result-object v0
 
-    invoke-interface {v0}, Lcqv;->d()Z
+    iget-object p1, p1, Lmbs;->j:Ljava/lang/String;
 
-    move-result v0
+    invoke-virtual {v0, p1}, Lhsg;->a(Ljava/lang/String;)Lhsc;
 
-    return v0
-.end method
+    move-result-object p1
 
-.method public final e()Z
-    .locals 1
+    new-instance v1, Lcla;
 
-    invoke-direct {p0}, Lcvh;->q()Lcqv;
+    iget-object v2, p0, Lcvh;->c:Ljava/util/concurrent/Executor;
 
-    move-result-object v0
+    iget-object v3, p0, Lcvh;->d:Lljf;
 
-    invoke-interface {v0}, Lcqv;->e()Z
+    invoke-direct {v1, v0, p1, v2, v3}, Lcla;-><init>(Lhsg;Lhsc;Ljava/util/concurrent/Executor;Lljf;)V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    move-result v0
+    monitor-exit p0
 
-    return v0
-.end method
+    return-object v1
 
-.method public final f()Z
-    .locals 1
+    :catchall_0
+    move-exception p1
 
-    invoke-direct {p0}, Lcvh;->q()Lcqv;
+    monitor-exit p0
 
-    move-result-object v0
-
-    invoke-interface {v0}, Lcqv;->f()Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public final g()Z
-    .locals 1
-
-    invoke-direct {p0}, Lcvh;->q()Lcqv;
-
-    move-result-object v0
-
-    invoke-interface {v0}, Lcqv;->g()Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public final h()Z
-    .locals 1
-
-    invoke-direct {p0}, Lcvh;->q()Lcqv;
-
-    move-result-object v0
-
-    invoke-interface {v0}, Lcqv;->h()Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public final i()Z
-    .locals 1
-
-    invoke-direct {p0}, Lcvh;->q()Lcqv;
-
-    move-result-object v0
-
-    invoke-interface {v0}, Lcqv;->i()Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public final j()Z
-    .locals 1
-
-    invoke-direct {p0}, Lcvh;->q()Lcqv;
-
-    move-result-object v0
-
-    invoke-interface {v0}, Lcqv;->j()Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public final k()Z
-    .locals 1
-
-    invoke-direct {p0}, Lcvh;->q()Lcqv;
-
-    move-result-object v0
-
-    invoke-interface {v0}, Lcqv;->k()Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public final l()Z
-    .locals 1
-
-    invoke-direct {p0}, Lcvh;->q()Lcqv;
-
-    move-result-object v0
-
-    invoke-interface {v0}, Lcqv;->l()Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public final m()Z
-    .locals 1
-
-    invoke-direct {p0}, Lcvh;->q()Lcqv;
-
-    move-result-object v0
-
-    invoke-interface {v0}, Lcqv;->m()Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public final n()Z
-    .locals 1
-
-    invoke-direct {p0}, Lcvh;->q()Lcqv;
-
-    move-result-object v0
-
-    invoke-interface {v0}, Lcqv;->n()Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public final o()Z
-    .locals 1
-
-    invoke-direct {p0}, Lcvh;->q()Lcqv;
-
-    move-result-object v0
-
-    invoke-interface {v0}, Lcqv;->o()Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public final p()Z
-    .locals 1
-
-    invoke-direct {p0}, Lcvh;->q()Lcqv;
-
-    move-result-object v0
-
-    invoke-interface {v0}, Lcqv;->p()Z
-
-    move-result v0
-
-    return v0
+    throw p1
 .end method

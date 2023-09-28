@@ -1,593 +1,168 @@
 .class public final Lmhb;
-.super Landroid/graphics/drawable/Drawable;
+.super Lppd;
+
+# interfaces
+.implements Lpqn;
+
+
+# static fields
+.field public static final b:Lmhb;
+
+.field private static volatile c:Lpqs;
 
 
 # instance fields
-.field public final a:Landroid/graphics/Paint;
-
-.field public b:F
-
-.field public c:I
-
-.field public d:I
-
-.field public e:I
-
-.field public f:I
-
-.field public g:Z
-
-.field public h:Lmkf;
-
-.field private final i:Lmkh;
-
-.field private final j:Landroid/graphics/Path;
-
-.field private final k:Landroid/graphics/Rect;
-
-.field private final l:Landroid/graphics/RectF;
-
-.field private final m:Landroid/graphics/RectF;
-
-.field private final n:Lmha;
-
-.field private o:I
-
-.field private p:Landroid/content/res/ColorStateList;
+.field public a:Lppm;
 
 
 # direct methods
-.method public constructor <init>(Lmkf;)V
+.method static constructor <clinit>()V
+    .locals 2
+
+    new-instance v0, Lmhb;
+
+    invoke-direct {v0}, Lmhb;-><init>()V
+
+    sput-object v0, Lmhb;->b:Lmhb;
+
+    const-class v1, Lmhb;
+
+    invoke-static {v1, v0}, Lppd;->F(Ljava/lang/Class;Lppd;)V
+
+    return-void
+.end method
+
+.method private constructor <init>()V
     .locals 1
 
-    invoke-direct {p0}, Landroid/graphics/drawable/Drawable;-><init>()V
+    invoke-direct {p0}, Lppd;-><init>()V
 
-    sget-object v0, Lmkg;->a:Lmkh;
+    sget-object v0, Lpqv;->b:Lpqv;
 
-    iput-object v0, p0, Lmhb;->i:Lmkh;
-
-    new-instance v0, Landroid/graphics/Path;
-
-    invoke-direct {v0}, Landroid/graphics/Path;-><init>()V
-
-    iput-object v0, p0, Lmhb;->j:Landroid/graphics/Path;
-
-    new-instance v0, Landroid/graphics/Rect;
-
-    invoke-direct {v0}, Landroid/graphics/Rect;-><init>()V
-
-    iput-object v0, p0, Lmhb;->k:Landroid/graphics/Rect;
-
-    new-instance v0, Landroid/graphics/RectF;
-
-    invoke-direct {v0}, Landroid/graphics/RectF;-><init>()V
-
-    iput-object v0, p0, Lmhb;->l:Landroid/graphics/RectF;
-
-    new-instance v0, Landroid/graphics/RectF;
-
-    invoke-direct {v0}, Landroid/graphics/RectF;-><init>()V
-
-    iput-object v0, p0, Lmhb;->m:Landroid/graphics/RectF;
-
-    new-instance v0, Lmha;
-
-    invoke-direct {v0, p0}, Lmha;-><init>(Lmhb;)V
-
-    iput-object v0, p0, Lmhb;->n:Lmha;
-
-    const/4 v0, 0x1
-
-    iput-boolean v0, p0, Lmhb;->g:Z
-
-    iput-object p1, p0, Lmhb;->h:Lmkf;
-
-    new-instance p1, Landroid/graphics/Paint;
-
-    invoke-direct {p1, v0}, Landroid/graphics/Paint;-><init>(I)V
-
-    iput-object p1, p0, Lmhb;->a:Landroid/graphics/Paint;
-
-    sget-object v0, Landroid/graphics/Paint$Style;->STROKE:Landroid/graphics/Paint$Style;
-
-    invoke-virtual {p1, v0}, Landroid/graphics/Paint;->setStyle(Landroid/graphics/Paint$Style;)V
+    iput-object v0, p0, Lmhb;->a:Lppm;
 
     return-void
 .end method
 
 
 # virtual methods
-.method protected final a()Landroid/graphics/RectF;
+.method protected final a(ILjava/lang/Object;)Ljava/lang/Object;
     .locals 2
 
-    iget-object v0, p0, Lmhb;->m:Landroid/graphics/RectF;
+    add-int/lit8 p1, p1, -0x1
 
-    invoke-virtual {p0}, Lmhb;->getBounds()Landroid/graphics/Rect;
+    const/4 p2, 0x1
 
-    move-result-object v1
+    packed-switch p1, :pswitch_data_0
 
-    invoke-virtual {v0, v1}, Landroid/graphics/RectF;->set(Landroid/graphics/Rect;)V
+    :pswitch_0
+    const/4 p1, 0x0
 
-    iget-object v0, p0, Lmhb;->m:Landroid/graphics/RectF;
+    return-object p1
 
-    return-object v0
-.end method
+    :pswitch_1
+    sget-object p1, Lmhb;->c:Lpqs;
 
-.method public final b(Landroid/content/res/ColorStateList;)V
-    .locals 2
+    if-nez p1, :cond_1
 
-    if-eqz p1, :cond_0
+    const-class p2, Lmhb;
 
-    invoke-virtual {p0}, Lmhb;->getState()[I
+    monitor-enter p2
 
-    move-result-object v0
+    :try_start_0
+    sget-object p1, Lmhb;->c:Lpqs;
 
-    iget v1, p0, Lmhb;->o:I
+    if-nez p1, :cond_0
 
-    invoke-virtual {p1, v0, v1}, Landroid/content/res/ColorStateList;->getColorForState([II)I
+    new-instance p1, Lpoz;
 
-    move-result v0
+    sget-object v0, Lmhb;->b:Lmhb;
 
-    iput v0, p0, Lmhb;->o:I
+    invoke-direct {p1, v0}, Lpoz;-><init>(Lppd;)V
+
+    sput-object p1, Lmhb;->c:Lpqs;
 
     :cond_0
-    iput-object p1, p0, Lmhb;->p:Landroid/content/res/ColorStateList;
+    monitor-exit p2
 
-    const/4 p1, 0x1
+    goto :goto_0
 
-    iput-boolean p1, p0, Lmhb;->g:Z
+    :catchall_0
+    move-exception p1
 
-    invoke-virtual {p0}, Lmhb;->invalidateSelf()V
+    monitor-exit p2
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    return-void
-.end method
-
-.method public final draw(Landroid/graphics/Canvas;)V
-    .locals 13
-
-    iget-boolean v0, p0, Lmhb;->g:Z
-
-    if-eqz v0, :cond_0
-
-    iget-object v0, p0, Lmhb;->a:Landroid/graphics/Paint;
-
-    iget-object v1, p0, Lmhb;->k:Landroid/graphics/Rect;
-
-    invoke-virtual {p0, v1}, Lmhb;->copyBounds(Landroid/graphics/Rect;)V
-
-    iget v2, p0, Lmhb;->b:F
-
-    invoke-virtual {v1}, Landroid/graphics/Rect;->height()I
-
-    move-result v3
-
-    int-to-float v3, v3
-
-    div-float/2addr v2, v3
-
-    const/4 v3, 0x6
-
-    new-array v9, v3, [I
-
-    iget v4, p0, Lmhb;->c:I
-
-    iget v5, p0, Lmhb;->o:I
-
-    invoke-static {v4, v5}, Lacp;->c(II)I
-
-    move-result v4
-
-    const/4 v12, 0x0
-
-    aput v4, v9, v12
-
-    iget v4, p0, Lmhb;->d:I
-
-    iget v5, p0, Lmhb;->o:I
-
-    invoke-static {v4, v5}, Lacp;->c(II)I
-
-    move-result v4
-
-    const/4 v5, 0x1
-
-    aput v4, v9, v5
-
-    iget v4, p0, Lmhb;->d:I
-
-    invoke-static {v4, v12}, Lacp;->d(II)I
-
-    move-result v4
-
-    iget v6, p0, Lmhb;->o:I
-
-    invoke-static {v4, v6}, Lacp;->c(II)I
-
-    move-result v4
-
-    const/4 v6, 0x2
-
-    aput v4, v9, v6
-
-    iget v4, p0, Lmhb;->f:I
-
-    invoke-static {v4, v12}, Lacp;->d(II)I
-
-    move-result v4
-
-    iget v7, p0, Lmhb;->o:I
-
-    invoke-static {v4, v7}, Lacp;->c(II)I
-
-    move-result v4
-
-    const/4 v7, 0x3
-
-    aput v4, v9, v7
-
-    iget v4, p0, Lmhb;->f:I
-
-    iget v8, p0, Lmhb;->o:I
-
-    invoke-static {v4, v8}, Lacp;->c(II)I
-
-    move-result v4
-
-    const/4 v8, 0x4
-
-    aput v4, v9, v8
-
-    iget v4, p0, Lmhb;->e:I
-
-    iget v10, p0, Lmhb;->o:I
-
-    invoke-static {v4, v10}, Lacp;->c(II)I
-
-    move-result v4
-
-    const/4 v10, 0x5
-
-    aput v4, v9, v10
-
-    new-array v3, v3, [F
-
-    const/4 v4, 0x0
-
-    aput v4, v3, v12
-
-    aput v2, v3, v5
-
-    const/high16 v4, 0x3f000000    # 0.5f
-
-    aput v4, v3, v6
-
-    aput v4, v3, v7
-
-    const/high16 v4, 0x3f800000    # 1.0f
-
-    sub-float v2, v4, v2
-
-    aput v2, v3, v8
-
-    aput v4, v3, v10
-
-    new-instance v2, Landroid/graphics/LinearGradient;
-
-    const/4 v5, 0x0
-
-    iget v4, v1, Landroid/graphics/Rect;->top:I
-
-    int-to-float v6, v4
-
-    const/4 v7, 0x0
-
-    iget v1, v1, Landroid/graphics/Rect;->bottom:I
-
-    int-to-float v8, v1
-
-    sget-object v11, Landroid/graphics/Shader$TileMode;->CLAMP:Landroid/graphics/Shader$TileMode;
-
-    move-object v4, v2
-
-    move-object v10, v3
-
-    invoke-direct/range {v4 .. v11}, Landroid/graphics/LinearGradient;-><init>(FFFF[I[FLandroid/graphics/Shader$TileMode;)V
-
-    invoke-virtual {v0, v2}, Landroid/graphics/Paint;->setShader(Landroid/graphics/Shader;)Landroid/graphics/Shader;
-
-    iput-boolean v12, p0, Lmhb;->g:Z
-
-    :cond_0
-    iget-object v0, p0, Lmhb;->a:Landroid/graphics/Paint;
-
-    invoke-virtual {v0}, Landroid/graphics/Paint;->getStrokeWidth()F
-
-    move-result v0
-
-    const/high16 v1, 0x40000000    # 2.0f
-
-    div-float/2addr v0, v1
-
-    iget-object v2, p0, Lmhb;->k:Landroid/graphics/Rect;
-
-    invoke-virtual {p0, v2}, Lmhb;->copyBounds(Landroid/graphics/Rect;)V
-
-    iget-object v2, p0, Lmhb;->l:Landroid/graphics/RectF;
-
-    iget-object v3, p0, Lmhb;->k:Landroid/graphics/Rect;
-
-    invoke-virtual {v2, v3}, Landroid/graphics/RectF;->set(Landroid/graphics/Rect;)V
-
-    iget-object v2, p0, Lmhb;->h:Lmkf;
-
-    iget-object v2, v2, Lmkf;->b:Lmjw;
-
-    invoke-virtual {p0}, Lmhb;->a()Landroid/graphics/RectF;
-
-    move-result-object v3
-
-    invoke-interface {v2, v3}, Lmjw;->a(Landroid/graphics/RectF;)F
-
-    move-result v2
-
-    iget-object v3, p0, Lmhb;->l:Landroid/graphics/RectF;
-
-    invoke-virtual {v3}, Landroid/graphics/RectF;->width()F
-
-    move-result v3
-
-    div-float/2addr v3, v1
-
-    invoke-static {v2, v3}, Ljava/lang/Math;->min(FF)F
-
-    move-result v1
-
-    iget-object v2, p0, Lmhb;->h:Lmkf;
-
-    invoke-virtual {p0}, Lmhb;->a()Landroid/graphics/RectF;
-
-    move-result-object v3
-
-    invoke-virtual {v2, v3}, Lmkf;->e(Landroid/graphics/RectF;)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_1
-
-    iget-object v2, p0, Lmhb;->l:Landroid/graphics/RectF;
-
-    invoke-virtual {v2, v0, v0}, Landroid/graphics/RectF;->inset(FF)V
-
-    iget-object v0, p0, Lmhb;->l:Landroid/graphics/RectF;
-
-    iget-object v2, p0, Lmhb;->a:Landroid/graphics/Paint;
-
-    invoke-virtual {p1, v0, v1, v1, v2}, Landroid/graphics/Canvas;->drawRoundRect(Landroid/graphics/RectF;FFLandroid/graphics/Paint;)V
+    throw p1
 
     :cond_1
-    return-void
-.end method
+    :goto_0
+    return-object p1
 
-.method public final getConstantState()Landroid/graphics/drawable/Drawable$ConstantState;
-    .locals 1
+    :pswitch_2
+    sget-object p1, Lmhb;->b:Lmhb;
 
-    iget-object v0, p0, Lmhb;->n:Lmha;
+    return-object p1
 
-    return-object v0
-.end method
+    :pswitch_3
+    new-instance p1, Lpoy;
 
-.method public final getOpacity()I
-    .locals 2
+    sget-object p2, Lmhb;->b:Lmhb;
 
-    iget v0, p0, Lmhb;->b:F
+    invoke-direct {p1, p2}, Lpoy;-><init>(Lppd;)V
 
-    const/4 v1, 0x0
+    return-object p1
 
-    cmpl-float v0, v0, v1
+    :pswitch_4
+    new-instance p1, Lmhb;
 
-    if-lez v0, :cond_0
+    invoke-direct {p1}, Lmhb;-><init>()V
 
-    const/4 v0, -0x3
+    return-object p1
 
-    return v0
+    :pswitch_5
+    const/4 p1, 0x2
 
-    :cond_0
-    const/4 v0, -0x2
+    new-array p1, p1, [Ljava/lang/Object;
 
-    return v0
-.end method
-
-.method public final getOutline(Landroid/graphics/Outline;)V
-    .locals 5
-
-    iget-object v0, p0, Lmhb;->h:Lmkf;
-
-    invoke-virtual {p0}, Lmhb;->a()Landroid/graphics/RectF;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Lmkf;->e(Landroid/graphics/RectF;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    iget-object v0, p0, Lmhb;->h:Lmkf;
-
-    iget-object v0, v0, Lmkf;->b:Lmjw;
-
-    invoke-virtual {p0}, Lmhb;->a()Landroid/graphics/RectF;
-
-    move-result-object v1
-
-    invoke-interface {v0, v1}, Lmjw;->a(Landroid/graphics/RectF;)F
-
-    move-result v0
-
-    invoke-virtual {p0}, Lmhb;->getBounds()Landroid/graphics/Rect;
-
-    move-result-object v1
-
-    invoke-virtual {p1, v1, v0}, Landroid/graphics/Outline;->setRoundRect(Landroid/graphics/Rect;F)V
-
-    return-void
-
-    :cond_0
-    iget-object v0, p0, Lmhb;->k:Landroid/graphics/Rect;
-
-    invoke-virtual {p0, v0}, Lmhb;->copyBounds(Landroid/graphics/Rect;)V
-
-    iget-object v0, p0, Lmhb;->l:Landroid/graphics/RectF;
-
-    iget-object v1, p0, Lmhb;->k:Landroid/graphics/Rect;
-
-    invoke-virtual {v0, v1}, Landroid/graphics/RectF;->set(Landroid/graphics/Rect;)V
-
-    iget-object v0, p0, Lmhb;->i:Lmkh;
-
-    iget-object v1, p0, Lmhb;->h:Lmkf;
-
-    iget-object v2, p0, Lmhb;->l:Landroid/graphics/RectF;
-
-    iget-object v3, p0, Lmhb;->j:Landroid/graphics/Path;
-
-    const/high16 v4, 0x3f800000    # 1.0f
-
-    invoke-virtual {v0, v1, v4, v2, v3}, Lmkh;->a(Lmkf;FLandroid/graphics/RectF;Landroid/graphics/Path;)V
-
-    iget-object v0, p0, Lmhb;->j:Landroid/graphics/Path;
-
-    invoke-virtual {p1, v0}, Landroid/graphics/Outline;->setPath(Landroid/graphics/Path;)V
-
-    return-void
-.end method
-
-.method public final getPadding(Landroid/graphics/Rect;)Z
-    .locals 2
-
-    iget-object v0, p0, Lmhb;->h:Lmkf;
-
-    invoke-virtual {p0}, Lmhb;->a()Landroid/graphics/RectF;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Lmkf;->e(Landroid/graphics/RectF;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    iget v0, p0, Lmhb;->b:F
-
-    invoke-static {v0}, Ljava/lang/Math;->round(F)I
-
-    move-result v0
-
-    invoke-virtual {p1, v0, v0, v0, v0}, Landroid/graphics/Rect;->set(IIII)V
-
-    :cond_0
-    const/4 p1, 0x1
-
-    return p1
-.end method
-
-.method public final isStateful()Z
-    .locals 1
-
-    iget-object v0, p0, Lmhb;->p:Landroid/content/res/ColorStateList;
-
-    if-eqz v0, :cond_0
-
-    invoke-virtual {v0}, Landroid/content/res/ColorStateList;->isStateful()Z
-
-    move-result v0
-
-    if-nez v0, :cond_1
-
-    :cond_0
-    invoke-super {p0}, Landroid/graphics/drawable/Drawable;->isStateful()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_2
-
-    :cond_1
-    const/4 v0, 0x1
-
-    return v0
-
-    :cond_2
     const/4 v0, 0x0
 
-    return v0
-.end method
+    const-string v1, "a"
 
-.method protected final onBoundsChange(Landroid/graphics/Rect;)V
-    .locals 0
+    aput-object v1, p1, v0
 
-    const/4 p1, 0x1
+    const-class v0, Lmha;
 
-    iput-boolean p1, p0, Lmhb;->g:Z
+    aput-object v0, p1, p2
 
-    return-void
-.end method
+    sget-object p2, Lmhb;->b:Lmhb;
 
-.method protected final onStateChange([I)Z
-    .locals 2
+    const-string v0, "\u0001\u0001\u0000\u0000\u0001\u0001\u0001\u0000\u0001\u0000\u0001\u001b"
 
-    iget-object v0, p0, Lmhb;->p:Landroid/content/res/ColorStateList;
+    invoke-static {p2, v0, p1}, Lmhb;->E(Lpqm;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/Object;
 
-    if-eqz v0, :cond_0
+    move-result-object p1
 
-    iget v1, p0, Lmhb;->o:I
+    return-object p1
 
-    invoke-virtual {v0, p1, v1}, Landroid/content/res/ColorStateList;->getColorForState([II)I
+    :pswitch_6
+    invoke-static {p2}, Ljava/lang/Byte;->valueOf(B)Ljava/lang/Byte;
 
-    move-result p1
+    move-result-object p1
 
-    iget v0, p0, Lmhb;->o:I
+    return-object p1
 
-    if-eq p1, v0, :cond_0
+    nop
 
-    const/4 v0, 0x1
-
-    iput-boolean v0, p0, Lmhb;->g:Z
-
-    iput p1, p0, Lmhb;->o:I
-
-    :cond_0
-    iget-boolean p1, p0, Lmhb;->g:Z
-
-    if-eqz p1, :cond_1
-
-    invoke-virtual {p0}, Lmhb;->invalidateSelf()V
-
-    :cond_1
-    iget-boolean p1, p0, Lmhb;->g:Z
-
-    return p1
-.end method
-
-.method public final setAlpha(I)V
-    .locals 1
-
-    iget-object v0, p0, Lmhb;->a:Landroid/graphics/Paint;
-
-    invoke-virtual {v0, p1}, Landroid/graphics/Paint;->setAlpha(I)V
-
-    invoke-virtual {p0}, Lmhb;->invalidateSelf()V
-
-    return-void
-.end method
-
-.method public final setColorFilter(Landroid/graphics/ColorFilter;)V
-    .locals 1
-
-    iget-object v0, p0, Lmhb;->a:Landroid/graphics/Paint;
-
-    invoke-virtual {v0, p1}, Landroid/graphics/Paint;->setColorFilter(Landroid/graphics/ColorFilter;)Landroid/graphics/ColorFilter;
-
-    invoke-virtual {p0}, Lmhb;->invalidateSelf()V
-
-    return-void
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_6
+        :pswitch_0
+        :pswitch_5
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+    .end packed-switch
 .end method

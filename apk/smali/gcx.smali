@@ -1,211 +1,115 @@
-.class public final Lgcx;
+.class public final synthetic Lgcx;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lkad;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field public final a:Ljwe;
+.field public final synthetic a:Lgcz;
 
-.field public final b:Ljava/lang/Object;
+.field public final synthetic b:J
 
-.field public final c:Ljava/util/LinkedList;
-
-.field public final d:Ljwd;
-
-.field public e:I
-
-.field public f:Z
+.field public final synthetic c:Lgdf;
 
 
 # direct methods
-.method public constructor <init>(I)V
-    .locals 2
+.method public synthetic constructor <init>(Lgcz;JLgdf;)V
+    .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    new-instance v0, Ljava/util/concurrent/locks/ReentrantLock;
+    iput-object p1, p0, Lgcx;->a:Lgcz;
 
-    const/4 v1, 0x1
+    iput-wide p2, p0, Lgcx;->b:J
 
-    invoke-direct {v0, v1}, Ljava/util/concurrent/locks/ReentrantLock;-><init>(Z)V
-
-    iput-object v0, p0, Lgcx;->b:Ljava/lang/Object;
-
-    iput p1, p0, Lgcx;->e:I
-
-    new-instance v0, Ljava/util/LinkedList;
-
-    invoke-direct {v0}, Ljava/util/LinkedList;-><init>()V
-
-    iput-object v0, p0, Lgcx;->c:Ljava/util/LinkedList;
-
-    const/4 v0, 0x0
-
-    iput-boolean v0, p0, Lgcx;->f:Z
-
-    new-instance v0, Ljwd;
-
-    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object p1
-
-    invoke-direct {v0, p1}, Ljwd;-><init>(Ljava/lang/Object;)V
-
-    iput-object v0, p0, Lgcx;->d:Ljwd;
-
-    new-instance p1, Ljwe;
-
-    invoke-direct {p1, v0}, Ljwe;-><init>(Ljvs;)V
-
-    iput-object p1, p0, Lgcx;->a:Ljwe;
+    iput-object p4, p0, Lgcx;->c:Lgdf;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()I
-    .locals 1
+.method public final run()V
+    .locals 8
 
-    iget-boolean v0, p0, Lgcx;->f:Z
+    iget-object v0, p0, Lgcx;->a:Lgcz;
 
-    if-nez v0, :cond_1
+    iget-wide v1, p0, Lgcx;->b:J
 
-    iget-object v0, p0, Lgcx;->c:Ljava/util/LinkedList;
+    iget-object v3, p0, Lgcx;->c:Lgdf;
 
-    invoke-virtual {v0}, Ljava/util/LinkedList;->isEmpty()Z
+    iget-object v4, v0, Lgcz;->b:Lgdj;
 
-    move-result v0
+    iget-object v4, v4, Lgdj;->b:Llis;
 
-    if-nez v0, :cond_0
+    new-instance v5, Ljava/lang/StringBuilder;
 
-    goto :goto_0
+    const/16 v6, 0x2a
 
-    :cond_0
-    iget v0, p0, Lgcx;->e:I
+    invoke-direct {v5, v6}, Ljava/lang/StringBuilder;-><init>(I)V
 
-    return v0
+    const-string v6, "Microvideo ended at <"
 
-    :cond_1
-    :goto_0
-    const/4 v0, 0x0
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    return v0
-.end method
+    invoke-virtual {v5, v1, v2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
-.method public final close()V
-    .locals 6
+    const-string v6, ">"
 
-    new-instance v0, Ljava/util/ArrayList;
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    iget-object v1, p0, Lgcx;->b:Ljava/lang/Object;
+    move-result-object v5
 
-    monitor-enter v1
+    invoke-interface {v4, v5}, Llis;->b(Ljava/lang/String;)V
+
+    iget-object v4, v0, Lgcz;->b:Lgdj;
+
+    monitor-enter v4
 
     :try_start_0
-    iget-boolean v2, p0, Lgcx;->f:Z
+    iget-object v5, v3, Lgdf;->d:Lorj;
 
-    if-eqz v2, :cond_0
+    invoke-virtual {v5}, Lorj;->j()Ljava/lang/Comparable;
 
-    monitor-exit v1
+    move-result-object v5
 
-    return-void
+    check-cast v5, Ljava/lang/Long;
 
-    :cond_0
-    const/4 v2, 0x1
+    sget-object v6, Ljava/util/concurrent/TimeUnit;->NANOSECONDS:Ljava/util/concurrent/TimeUnit;
 
-    iput-boolean v2, p0, Lgcx;->f:Z
+    sget-object v7, Ljava/util/concurrent/TimeUnit;->MICROSECONDS:Ljava/util/concurrent/TimeUnit;
 
-    iget-object v2, p0, Lgcx;->c:Ljava/util/LinkedList;
+    invoke-virtual {v6, v1, v2, v7}, Ljava/util/concurrent/TimeUnit;->convert(JLjava/util/concurrent/TimeUnit;)J
 
-    invoke-virtual {v2}, Ljava/util/LinkedList;->iterator()Ljava/util/Iterator;
+    move-result-wide v1
 
-    move-result-object v2
+    invoke-static {v1, v2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
-    :goto_0
-    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
+    move-result-object v1
 
-    move-result v3
+    invoke-static {v5, v1}, Lorj;->f(Ljava/lang/Comparable;Ljava/lang/Comparable;)Lorj;
 
-    if-eqz v3, :cond_1
+    move-result-object v1
 
-    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    iput-object v1, v3, Lgdf;->d:Lorj;
 
-    move-result-object v3
+    iget-object v0, v0, Lgcz;->b:Lgdj;
 
-    check-cast v3, Lnaa;
+    invoke-virtual {v0}, Lgdj;->r()V
 
-    new-instance v4, Lgdb;
-
-    const-string v5, "FiniteTicketPool closing."
-
-    invoke-direct {v4, v5}, Lgdb;-><init>(Ljava/lang/String;)V
-
-    iput-object v4, v3, Lnaa;->a:Ljava/lang/Object;
-
-    invoke-interface {v0, v3}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-
-    goto :goto_0
-
-    :cond_1
-    iget-object v2, p0, Lgcx;->d:Ljwd;
-
-    invoke-virtual {p0}, Lgcx;->a()I
-
-    move-result v3
-
-    invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v3
-
-    iput-object v3, v2, Ljwd;->a:Ljava/lang/Object;
-
-    monitor-exit v1
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    invoke-interface {v0}, Ljava/util/List;->size()I
-
-    move-result v1
-
-    if-gtz v1, :cond_2
-
-    iget-object v0, p0, Lgcx;->d:Ljwd;
-
-    invoke-virtual {v0}, Ljwd;->c()V
+    monitor-exit v4
 
     return-void
-
-    :cond_2
-    const/4 v1, 0x0
-
-    invoke-interface {v0, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lnaa;
-
-    const/4 v0, 0x0
-
-    throw v0
 
     :catchall_0
     move-exception v0
 
-    :try_start_1
-    monitor-exit v1
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+    monitor-exit v4
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    goto :goto_2
-
-    :goto_1
     throw v0
-
-    :goto_2
-    goto :goto_1
 .end method

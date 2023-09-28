@@ -1,164 +1,144 @@
-.class final Llnt;
+.class public final Llnt;
 .super Ljava/lang/Object;
 
 
 # instance fields
-.field public final a:Ljava/lang/String;
+.field public final a:I
 
-.field public final b:Ljava/lang/String;
+.field public final b:Loom;
 
-.field public final c:Z
-
-.field public final d:Z
-
-.field private final e:Llnf;
-
-.field private final f:Llni;
-
-.field private final g:Llno;
+.field public final c:Loom;
 
 
 # direct methods
-.method public constructor <init>(Landroid/content/Context;Lmqp;Lmqp;Lmqp;Lmqp;Lmqp;)V
-    .locals 1
+.method public constructor <init>(I)V
+    .locals 2
 
-    invoke-virtual {p1}, Landroid/content/Context;->getPackageName()Ljava/lang/String;
-
-    move-result-object p1
-
-    sget-object v0, Llnf;->b:Llnf;
-
-    invoke-virtual {p2, v0}, Lmqp;->e(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object p2
-
-    check-cast p2, Llnf;
-
-    sget-object v0, Llni;->b:Llni;
-
-    invoke-virtual {p3, v0}, Lmqp;->e(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object p3
-
-    check-cast p3, Llni;
-
-    sget-object v0, Llno;->b:Llno;
-
-    invoke-virtual {p4, v0}, Lmqp;->e(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object p4
-
-    check-cast p4, Llno;
-
-    const/4 v0, 0x0
-
-    invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+    invoke-static {}, Loom;->l()Loom;
 
     move-result-object v0
 
-    invoke-virtual {p5, v0}, Lmqp;->e(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {}, Loom;->l()Loom;
 
-    move-result-object p5
+    move-result-object v1
 
-    check-cast p5, Ljava/lang/Boolean;
+    invoke-direct {p0, p1, v0, v1}, Llnt;-><init>(ILoom;Loom;)V
 
-    invoke-virtual {p5}, Ljava/lang/Boolean;->booleanValue()Z
+    return-void
+.end method
 
-    move-result p5
+.method public constructor <init>(ILjava/util/List;)V
+    .locals 1
 
-    invoke-virtual {p6, v0}, Lmqp;->e(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {p2}, Loom;->j(Ljava/util/Collection;)Loom;
 
-    move-result-object p6
+    move-result-object p2
 
-    check-cast p6, Ljava/lang/Boolean;
+    invoke-static {}, Loom;->l()Loom;
 
-    invoke-virtual {p6}, Ljava/lang/Boolean;->booleanValue()Z
+    move-result-object v0
 
-    move-result p6
+    invoke-direct {p0, p1, p2, v0}, Llnt;-><init>(ILoom;Loom;)V
+
+    return-void
+.end method
+
+.method public constructor <init>(ILoom;Loom;)V
+    .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const-string v0, "CAMERA_ANDROID_PRIMES"
+    iput p1, p0, Llnt;->a:I
 
-    iput-object v0, p0, Llnt;->b:Ljava/lang/String;
+    iput-object p2, p0, Llnt;->b:Loom;
 
-    iput-object p2, p0, Llnt;->e:Llnf;
-
-    iput-object p3, p0, Llnt;->f:Llni;
-
-    iput-object p4, p0, Llnt;->g:Llno;
-
-    iput-boolean p5, p0, Llnt;->c:Z
-
-    iput-boolean p6, p0, Llnt;->d:Z
-
-    invoke-static {p1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object p1
-
-    const-string p2, "com.google.android.libraries.performance.primes#"
-
-    invoke-virtual {p2, p1}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object p1
-
-    iput-object p1, p0, Llnt;->a:Ljava/lang/String;
+    iput-object p3, p0, Llnt;->c:Loom;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Lnou;
-    .locals 5
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 3
 
-    iget-object v0, p0, Llnt;->e:Llnf;
+    instance-of v0, p1, Llnt;
 
-    invoke-interface {v0}, Llnf;->a()Lnou;
+    const/4 v1, 0x0
 
-    move-result-object v0
+    if-nez v0, :cond_0
 
-    iget-object v1, p0, Llnt;->f:Llni;
+    return v1
 
-    invoke-interface {v1}, Llni;->a()Lnou;
+    :cond_0
+    check-cast p1, Llnt;
+
+    iget v0, p0, Llnt;->a:I
+
+    iget v2, p1, Llnt;->a:I
+
+    if-ne v0, v2, :cond_1
+
+    iget-object v0, p0, Llnt;->c:Loom;
+
+    iget-object v2, p1, Llnt;->c:Loom;
+
+    invoke-static {v0, v2}, Lj$/util/Objects;->equals(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    iget-object v0, p0, Llnt;->b:Loom;
+
+    iget-object p1, p1, Llnt;->b:Loom;
+
+    invoke-static {v0, p1}, Lj$/util/Objects;->equals(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result p1
+
+    if-eqz p1, :cond_1
+
+    const/4 p1, 0x1
+
+    return p1
+
+    :cond_1
+    return v1
+.end method
+
+.method public final hashCode()I
+    .locals 3
+
+    const/4 v0, 0x3
+
+    new-array v0, v0, [Ljava/lang/Object;
+
+    iget v1, p0, Llnt;->a:I
+
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v1
 
-    iget-object v2, p0, Llnt;->g:Llno;
+    const/4 v2, 0x0
 
-    invoke-interface {v2}, Llno;->a()Lnou;
+    aput-object v1, v0, v2
 
-    move-result-object v2
+    iget-object v1, p0, Llnt;->c:Loom;
 
-    const/4 v3, 0x3
+    const/4 v2, 0x1
 
-    new-array v3, v3, [Lnou;
+    aput-object v1, v0, v2
 
-    const/4 v4, 0x0
+    iget-object v1, p0, Llnt;->b:Loom;
 
-    aput-object v0, v3, v4
+    const/4 v2, 0x2
 
-    const/4 v4, 0x1
+    aput-object v1, v0, v2
 
-    aput-object v1, v3, v4
+    invoke-static {v0}, Lj$/util/Objects;->hash([Ljava/lang/Object;)I
 
-    const/4 v4, 0x2
+    move-result v0
 
-    aput-object v2, v3, v4
-
-    invoke-static {v3}, Lnsy;->v([Lnou;)Lnom;
-
-    move-result-object v3
-
-    new-instance v4, Llns;
-
-    invoke-direct {v4, p0, v0, v1, v2}, Llns;-><init>(Llnt;Lnou;Lnou;Lnou;)V
-
-    sget-object v0, Lnnv;->a:Lnnv;
-
-    invoke-virtual {v3, v4, v0}, Lnom;->a(Ljava/util/concurrent/Callable;Ljava/util/concurrent/Executor;)Lnou;
-
-    move-result-object v0
-
-    return-object v0
+    return v0
 .end method

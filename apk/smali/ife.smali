@@ -1,3428 +1,1509 @@
 .class public final Life;
 .super Ljava/lang/Object;
 
-
-# static fields
-.field public static final a:Landroid/view/animation/Interpolator;
-
-.field private static final u:Lnak;
+# interfaces
+.implements Liet;
 
 
 # instance fields
-.field public final b:Lcom/google/android/apps/camera/ui/shutterbutton/ShutterButton;
+.field public final a:Z
 
-.field public c:Landroid/animation/ValueAnimator;
+.field public final b:Z
 
-.field public d:Landroid/animation/ValueAnimator;
+.field public final c:Landroid/content/Context;
 
-.field public e:Landroid/animation/ValueAnimator;
+.field public final d:Lhuf;
 
-.field public f:Landroid/animation/ValueAnimator;
+.field public final e:Ljava/util/ArrayList;
 
-.field public g:Landroid/animation/ValueAnimator;
+.field public f:Landroid/view/GestureDetector;
 
-.field public h:Landroid/animation/ValueAnimator;
+.field public g:Ljhm;
 
-.field public i:Landroid/animation/ValueAnimator;
+.field public h:Ljrz;
 
-.field public j:Landroid/animation/ValueAnimator;
+.field public i:Ljava/lang/Runnable;
 
-.field public k:Landroid/animation/ValueAnimator;
+.field public j:Lies;
 
-.field public l:Landroid/animation/ValueAnimator;
+.field public k:Liby;
 
-.field public m:Landroid/animation/ValueAnimator;
+.field public l:I
 
-.field public n:Landroid/animation/ValueAnimator;
+.field private final m:Lcom/google/android/apps/camera/bottombar/BottomBarController;
 
-.field public o:Landroid/animation/ValueAnimator;
+.field private final n:Ljava/util/concurrent/Executor;
 
-.field p:Landroid/animation/ValueAnimator;
+.field private final o:Lddf;
 
-.field public q:Ljava/util/List;
+.field private final p:Lcom/google/android/apps/camera/bottombar/RoundedThumbnailView;
 
-.field public final r:Landroid/animation/ArgbEvaluator;
+.field private final q:Lhug;
 
-.field public final s:Landroid/view/animation/Interpolator;
+.field private final r:Lifj;
 
-.field public final t:Landroid/view/animation/Interpolator;
+.field private s:Landroid/animation/AnimatorSet;
 
-.field private v:Landroid/animation/ValueAnimator;
+.field private t:Landroid/widget/FrameLayout;
 
-.field private final w:Landroid/view/animation/Interpolator;
+.field private u:Lief;
 
-.field private final x:Ljava/util/Map;
+.field private v:Landroid/view/View;
 
 
 # direct methods
-.method static constructor <clinit>()V
+.method public constructor <init>(ZZLandroid/content/Context;Ljava/util/concurrent/Executor;Lcom/google/android/apps/camera/bottombar/BottomBarController;Lddf;Lcom/google/android/apps/camera/bottombar/RoundedThumbnailView;Lhuf;Lhug;Lifj;)V
     .locals 1
 
-    const-string v0, "com/google/android/apps/camera/ui/shutterbutton/ShutterButtonAnimator"
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-static {v0}, Lnak;->h(Ljava/lang/String;)Lnak;
+    sget-object v0, Ljrz;->a:Ljrz;
 
-    move-result-object v0
+    iput-object v0, p0, Life;->h:Ljrz;
 
-    sput-object v0, Life;->u:Lnak;
+    const/4 v0, 0x1
 
-    new-instance v0, Landroid/view/animation/LinearInterpolator;
+    iput v0, p0, Life;->l:I
 
-    invoke-direct {v0}, Landroid/view/animation/LinearInterpolator;-><init>()V
+    iput-boolean p1, p0, Life;->a:Z
 
-    sput-object v0, Life;->a:Landroid/view/animation/Interpolator;
+    iput-boolean p2, p0, Life;->b:Z
+
+    iput-object p3, p0, Life;->c:Landroid/content/Context;
+
+    iput-object p5, p0, Life;->m:Lcom/google/android/apps/camera/bottombar/BottomBarController;
+
+    iput-object p4, p0, Life;->n:Ljava/util/concurrent/Executor;
+
+    iput-object p6, p0, Life;->o:Lddf;
+
+    iput-object p7, p0, Life;->p:Lcom/google/android/apps/camera/bottombar/RoundedThumbnailView;
+
+    iput-object p8, p0, Life;->d:Lhuf;
+
+    iput-object p9, p0, Life;->q:Lhug;
+
+    iput-object p10, p0, Life;->r:Lifj;
+
+    new-instance p1, Ljava/util/ArrayList;
+
+    invoke-direct {p1}, Ljava/util/ArrayList;-><init>()V
+
+    iput-object p1, p0, Life;->e:Ljava/util/ArrayList;
 
     return-void
 .end method
 
-.method public constructor <init>(Lcom/google/android/apps/camera/ui/shutterbutton/ShutterButton;)V
-    .locals 16
+.method private final m(Loom;)V
+    .locals 1
 
-    move-object/from16 v0, p0
+    iget-object v0, p0, Life;->s:Landroid/animation/AnimatorSet;
 
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    if-eqz v0, :cond_0
 
-    new-instance v1, Landroid/animation/ArgbEvaluator;
+    invoke-virtual {v0}, Landroid/animation/AnimatorSet;->isRunning()Z
 
-    invoke-direct {v1}, Landroid/animation/ArgbEvaluator;-><init>()V
+    move-result v0
 
-    iput-object v1, v0, Life;->r:Landroid/animation/ArgbEvaluator;
+    if-eqz v0, :cond_0
 
-    move-object/from16 v1, p1
+    iget-object v0, p0, Life;->s:Landroid/animation/AnimatorSet;
 
-    iput-object v1, v0, Life;->b:Lcom/google/android/apps/camera/ui/shutterbutton/ShutterButton;
-
-    invoke-virtual/range {p1 .. p1}, Lcom/google/android/apps/camera/ui/shutterbutton/ShutterButton;->getContext()Landroid/content/Context;
-
-    move-result-object v2
-
-    const v3, 0x7f0d0008
-
-    invoke-static {v2, v3}, Landroid/view/animation/AnimationUtils;->loadInterpolator(Landroid/content/Context;I)Landroid/view/animation/Interpolator;
-
-    move-result-object v2
-
-    iput-object v2, v0, Life;->s:Landroid/view/animation/Interpolator;
-
-    invoke-virtual/range {p1 .. p1}, Lcom/google/android/apps/camera/ui/shutterbutton/ShutterButton;->getContext()Landroid/content/Context;
-
-    move-result-object v2
-
-    const v3, 0x7f0d000a
-
-    invoke-static {v2, v3}, Landroid/view/animation/AnimationUtils;->loadInterpolator(Landroid/content/Context;I)Landroid/view/animation/Interpolator;
-
-    move-result-object v2
-
-    iput-object v2, v0, Life;->t:Landroid/view/animation/Interpolator;
-
-    invoke-virtual/range {p1 .. p1}, Lcom/google/android/apps/camera/ui/shutterbutton/ShutterButton;->getContext()Landroid/content/Context;
-
-    move-result-object v1
-
-    const v2, 0x10c000d
-
-    invoke-static {v1, v2}, Landroid/view/animation/AnimationUtils;->loadInterpolator(Landroid/content/Context;I)Landroid/view/animation/Interpolator;
-
-    move-result-object v1
-
-    iput-object v1, v0, Life;->w:Landroid/view/animation/Interpolator;
-
-    new-instance v1, Ljava/util/ArrayList;
-
-    invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
-
-    sget-object v2, Liem;->J:Liem;
-
-    invoke-static {v2, v1}, Ljpw;->l(Liem;Ljava/util/List;)Ligo;
-
-    move-result-object v2
-
-    sget-object v3, Liem;->K:Liem;
-
-    new-instance v4, Lier;
-
-    const/4 v5, 0x4
-
-    invoke-direct {v4, v0, v5}, Lier;-><init>(Life;I)V
-
-    invoke-virtual {v2, v3, v4}, Ligo;->b(Liem;Liez;)V
-
-    sget-object v3, Liem;->g:Liem;
-
-    new-instance v4, Lier;
-
-    const/16 v6, 0x12
-
-    invoke-direct {v4, v0, v6}, Lier;-><init>(Life;I)V
-
-    invoke-virtual {v2, v3, v4}, Ligo;->b(Liem;Liez;)V
-
-    sget-object v3, Liem;->t:Liem;
-
-    new-instance v4, Liev;
-
-    const/16 v7, 0xf
-
-    invoke-direct {v4, v0, v7}, Liev;-><init>(Life;I)V
-
-    invoke-virtual {v2, v3, v4}, Ligo;->b(Liem;Liez;)V
-
-    sget-object v3, Liem;->l:Liem;
-
-    new-instance v4, Liex;
-
-    const/4 v8, 0x1
-
-    invoke-direct {v4, v0, v8}, Liex;-><init>(Life;I)V
-
-    invoke-virtual {v2, v3, v4}, Ligo;->b(Liem;Liez;)V
-
-    sget-object v3, Liem;->a:Liem;
-
-    new-instance v4, Liex;
-
-    invoke-direct {v4, v0, v8}, Liex;-><init>(Life;I)V
-
-    invoke-virtual {v2, v3, v4}, Ligo;->b(Liem;Liez;)V
-
-    sget-object v3, Liem;->L:Liem;
-
-    new-instance v4, Liex;
-
-    invoke-direct {v4, v0, v8}, Liex;-><init>(Life;I)V
-
-    invoke-virtual {v2, v3, v4}, Ligo;->b(Liem;Liez;)V
-
-    sget-object v3, Liem;->c:Liem;
-
-    new-instance v4, Liex;
-
-    const/16 v9, 0xb
-
-    invoke-direct {v4, v0, v9}, Liex;-><init>(Life;I)V
-
-    invoke-virtual {v2, v3, v4}, Ligo;->b(Liem;Liez;)V
-
-    sget-object v3, Liem;->A:Liem;
-
-    new-instance v4, Liex;
-
-    invoke-direct {v4, v0, v8}, Liex;-><init>(Life;I)V
-
-    invoke-virtual {v2, v3, v4}, Ligo;->b(Liem;Liez;)V
-
-    sget-object v3, Liem;->D:Liem;
-
-    invoke-virtual {v2, v3}, Ligo;->c(Liem;)V
-
-    sget-object v3, Liem;->M:Liem;
-
-    new-instance v4, Liex;
-
-    invoke-direct {v4, v0, v9}, Liex;-><init>(Life;I)V
-
-    invoke-virtual {v2, v3, v4}, Ligo;->b(Liem;Liez;)V
-
-    sget-object v3, Liem;->e:Liem;
-
-    new-instance v4, Lier;
-
-    const/4 v10, 0x3
-
-    invoke-direct {v4, v0, v10}, Lier;-><init>(Life;I)V
-
-    invoke-virtual {v2, v3, v4}, Ligo;->b(Liem;Liez;)V
-
-    sget-object v2, Liem;->K:Liem;
-
-    invoke-static {v2, v1}, Ljpw;->l(Liem;Ljava/util/List;)Ligo;
-
-    move-result-object v2
-
-    sget-object v3, Liem;->J:Liem;
-
-    new-instance v4, Lier;
-
-    const/16 v11, 0xd
-
-    invoke-direct {v4, v0, v11}, Lier;-><init>(Life;I)V
-
-    invoke-virtual {v2, v3, v4}, Ligo;->b(Liem;Liez;)V
-
-    sget-object v2, Liem;->m:Liem;
-
-    invoke-static {v2, v1}, Ljpw;->l(Liem;Ljava/util/List;)Ligo;
-
-    move-result-object v2
-
-    sget-object v3, Liem;->a:Liem;
-
-    new-instance v4, Lier;
-
-    const/16 v12, 0x14
-
-    invoke-direct {v4, v0, v12}, Lier;-><init>(Life;I)V
-
-    invoke-virtual {v2, v3, v4}, Ligo;->b(Liem;Liez;)V
-
-    sget-object v3, Liem;->l:Liem;
-
-    new-instance v4, Lier;
-
-    invoke-direct {v4, v0, v12}, Lier;-><init>(Life;I)V
-
-    invoke-virtual {v2, v3, v4}, Ligo;->b(Liem;Liez;)V
-
-    sget-object v2, Liem;->l:Liem;
-
-    invoke-static {v2, v1}, Ljpw;->l(Liem;Ljava/util/List;)Ligo;
-
-    move-result-object v2
-
-    sget-object v3, Liem;->J:Liem;
-
-    new-instance v4, Lier;
-
-    const/16 v13, 0x8
-
-    invoke-direct {v4, v0, v13}, Lier;-><init>(Life;I)V
-
-    invoke-virtual {v2, v3, v4}, Ligo;->b(Liem;Liez;)V
-
-    sget-object v3, Liem;->m:Liem;
-
-    new-instance v4, Lieu;
-
-    invoke-direct {v4, v0, v10}, Lieu;-><init>(Life;I)V
-
-    invoke-virtual {v2, v3, v4}, Ligo;->b(Liem;Liez;)V
-
-    sget-object v3, Liem;->a:Liem;
-
-    new-instance v4, Lieu;
-
-    const/4 v14, 0x5
-
-    invoke-direct {v4, v0, v14}, Lieu;-><init>(Life;I)V
-
-    invoke-virtual {v2, v3, v4}, Ligo;->b(Liem;Liez;)V
-
-    sget-object v3, Liem;->L:Liem;
-
-    new-instance v4, Lieu;
-
-    invoke-direct {v4, v0, v14}, Lieu;-><init>(Life;I)V
-
-    invoke-virtual {v2, v3, v4}, Ligo;->b(Liem;Liez;)V
-
-    sget-object v3, Liem;->D:Liem;
-
-    invoke-virtual {v2, v3}, Ligo;->c(Liem;)V
-
-    sget-object v3, Liem;->e:Liem;
-
-    new-instance v4, Lieu;
-
-    invoke-direct {v4, v0, v13}, Lieu;-><init>(Life;I)V
-
-    invoke-virtual {v2, v3, v4}, Ligo;->b(Liem;Liez;)V
-
-    sget-object v3, Liem;->M:Liem;
-
-    new-instance v4, Lieu;
-
-    invoke-direct {v4, v0, v9}, Lieu;-><init>(Life;I)V
-
-    invoke-virtual {v2, v3, v4}, Ligo;->b(Liem;Liez;)V
-
-    sget-object v3, Liem;->c:Liem;
-
-    new-instance v4, Lieu;
-
-    invoke-direct {v4, v0, v9}, Lieu;-><init>(Life;I)V
-
-    invoke-virtual {v2, v3, v4}, Ligo;->b(Liem;Liez;)V
-
-    sget-object v2, Liem;->D:Liem;
-
-    invoke-static {v2, v1}, Ljpw;->l(Liem;Ljava/util/List;)Ligo;
-
-    move-result-object v2
-
-    sget-object v3, Liem;->J:Liem;
-
-    new-instance v4, Lier;
-
-    invoke-direct {v4, v0, v13}, Lier;-><init>(Life;I)V
-
-    invoke-virtual {v2, v3, v4}, Ligo;->b(Liem;Liez;)V
-
-    sget-object v3, Liem;->E:Liem;
-
-    new-instance v4, Liev;
-
-    invoke-direct {v4, v0, v14}, Liev;-><init>(Life;I)V
-
-    invoke-virtual {v2, v3, v4}, Ligo;->b(Liem;Liez;)V
-
-    sget-object v3, Liem;->l:Liem;
-
-    new-instance v4, Liev;
-
-    const/16 v15, 0xa
-
-    invoke-direct {v4, v0, v15}, Liev;-><init>(Life;I)V
-
-    invoke-virtual {v2, v3, v4}, Ligo;->b(Liem;Liez;)V
-
-    sget-object v3, Liem;->a:Liem;
-
-    new-instance v4, Liev;
-
-    invoke-direct {v4, v0, v15}, Liev;-><init>(Life;I)V
-
-    invoke-virtual {v2, v3, v4}, Ligo;->b(Liem;Liez;)V
-
-    sget-object v3, Liem;->L:Liem;
-
-    new-instance v4, Liev;
-
-    invoke-direct {v4, v0, v15}, Liev;-><init>(Life;I)V
-
-    invoke-virtual {v2, v3, v4}, Ligo;->b(Liem;Liez;)V
-
-    sget-object v3, Liem;->c:Liem;
-
-    new-instance v4, Liev;
-
-    const/16 v8, 0xc
-
-    invoke-direct {v4, v0, v8}, Liev;-><init>(Life;I)V
-
-    invoke-virtual {v2, v3, v4}, Ligo;->b(Liem;Liez;)V
-
-    sget-object v3, Liem;->t:Liem;
-
-    new-instance v4, Liev;
-
-    invoke-direct {v4, v0, v11}, Liev;-><init>(Life;I)V
-
-    invoke-virtual {v2, v3, v4}, Ligo;->b(Liem;Liez;)V
-
-    sget-object v3, Liem;->e:Liem;
-
-    invoke-virtual {v2, v3}, Ligo;->c(Liem;)V
-
-    sget-object v3, Liem;->A:Liem;
-
-    new-instance v4, Lier;
-
-    invoke-direct {v4, v0, v9}, Lier;-><init>(Life;I)V
-
-    invoke-virtual {v2, v3, v4}, Ligo;->b(Liem;Liez;)V
-
-    sget-object v3, Liem;->M:Liem;
-
-    new-instance v4, Liev;
-
-    const/16 v7, 0xe
-
-    invoke-direct {v4, v0, v7}, Liev;-><init>(Life;I)V
-
-    invoke-virtual {v2, v3, v4}, Ligo;->b(Liem;Liez;)V
-
-    sget-object v3, Liem;->g:Liem;
-
-    new-instance v4, Lier;
-
-    invoke-direct {v4, v0, v6}, Lier;-><init>(Life;I)V
-
-    invoke-virtual {v2, v3, v4}, Ligo;->b(Liem;Liez;)V
-
-    sget-object v2, Liem;->e:Liem;
-
-    invoke-static {v2, v1}, Ljpw;->l(Liem;Ljava/util/List;)Ligo;
-
-    move-result-object v2
-
-    sget-object v3, Liem;->J:Liem;
-
-    new-instance v4, Lier;
-
-    invoke-direct {v4, v0, v13}, Lier;-><init>(Life;I)V
-
-    invoke-virtual {v2, v3, v4}, Ligo;->b(Liem;Liez;)V
-
-    sget-object v3, Liem;->D:Liem;
-
-    invoke-virtual {v2, v3}, Ligo;->c(Liem;)V
-
-    sget-object v3, Liem;->k:Liem;
-
-    new-instance v4, Liev;
-
-    const/16 v7, 0x9
-
-    invoke-direct {v4, v0, v7}, Liev;-><init>(Life;I)V
-
-    invoke-virtual {v2, v3, v4}, Ligo;->b(Liem;Liez;)V
-
-    sget-object v3, Liem;->f:Liem;
-
-    new-instance v4, Liev;
-
-    const/16 v11, 0x10
-
-    invoke-direct {v4, v0, v11}, Liev;-><init>(Life;I)V
-
-    invoke-virtual {v2, v3, v4}, Ligo;->b(Liem;Liez;)V
-
-    sget-object v3, Liem;->l:Liem;
-
-    new-instance v4, Liev;
-
-    const/16 v11, 0x11
-
-    invoke-direct {v4, v0, v11}, Liev;-><init>(Life;I)V
-
-    invoke-virtual {v2, v3, v4}, Ligo;->b(Liem;Liez;)V
-
-    sget-object v3, Liem;->a:Liem;
-
-    new-instance v4, Liev;
-
-    invoke-direct {v4, v0, v11}, Liev;-><init>(Life;I)V
-
-    invoke-virtual {v2, v3, v4}, Ligo;->b(Liem;Liez;)V
-
-    sget-object v3, Liem;->L:Liem;
-
-    new-instance v4, Liev;
-
-    invoke-direct {v4, v0, v11}, Liev;-><init>(Life;I)V
-
-    invoke-virtual {v2, v3, v4}, Ligo;->b(Liem;Liez;)V
-
-    sget-object v3, Liem;->c:Liem;
-
-    new-instance v4, Liev;
-
-    invoke-direct {v4, v0, v6}, Liev;-><init>(Life;I)V
-
-    invoke-virtual {v2, v3, v4}, Ligo;->b(Liem;Liez;)V
-
-    sget-object v3, Liem;->t:Liem;
-
-    new-instance v4, Liev;
-
-    const/16 v11, 0x13
-
-    invoke-direct {v4, v0, v11}, Liev;-><init>(Life;I)V
-
-    invoke-virtual {v2, v3, v4}, Ligo;->b(Liem;Liez;)V
-
-    sget-object v3, Liem;->A:Liem;
-
-    new-instance v4, Lier;
-
-    invoke-direct {v4, v0, v9}, Lier;-><init>(Life;I)V
-
-    invoke-virtual {v2, v3, v4}, Ligo;->b(Liem;Liez;)V
-
-    sget-object v3, Liem;->M:Liem;
-
-    new-instance v4, Liev;
-
-    invoke-direct {v4, v0, v12}, Liev;-><init>(Life;I)V
-
-    invoke-virtual {v2, v3, v4}, Ligo;->b(Liem;Liez;)V
-
-    sget-object v3, Liem;->g:Liem;
-
-    new-instance v4, Lier;
-
-    invoke-direct {v4, v0, v6}, Lier;-><init>(Life;I)V
-
-    invoke-virtual {v2, v3, v4}, Ligo;->b(Liem;Liez;)V
-
-    sget-object v2, Liem;->f:Liem;
-
-    invoke-static {v2, v1}, Ljpw;->l(Liem;Ljava/util/List;)Ligo;
-
-    move-result-object v2
-
-    sget-object v3, Liem;->D:Liem;
-
-    invoke-virtual {v2, v3}, Ligo;->c(Liem;)V
-
-    sget-object v3, Liem;->e:Liem;
-
-    invoke-virtual {v2, v3}, Ligo;->c(Liem;)V
-
-    sget-object v3, Liem;->M:Liem;
-
-    invoke-virtual {v2, v3}, Ligo;->c(Liem;)V
-
-    sget-object v3, Liem;->k:Liem;
-
-    new-instance v4, Liex;
-
-    const/4 v12, 0x0
-
-    invoke-direct {v4, v0, v12}, Liex;-><init>(Life;I)V
-
-    invoke-virtual {v2, v3, v4}, Ligo;->b(Liem;Liez;)V
-
-    sget-object v3, Liem;->g:Liem;
-
-    new-instance v4, Lier;
-
-    invoke-direct {v4, v0, v6}, Lier;-><init>(Life;I)V
-
-    invoke-virtual {v2, v3, v4}, Ligo;->b(Liem;Liez;)V
-
-    sget-object v2, Liem;->M:Liem;
-
-    invoke-static {v2, v1}, Ljpw;->l(Liem;Ljava/util/List;)Ligo;
-
-    move-result-object v2
-
-    sget-object v3, Liem;->J:Liem;
-
-    new-instance v4, Lier;
-
-    invoke-direct {v4, v0, v13}, Lier;-><init>(Life;I)V
-
-    invoke-virtual {v2, v3, v4}, Ligo;->b(Liem;Liez;)V
-
-    sget-object v3, Liem;->M:Liem;
-
-    invoke-virtual {v2, v3}, Ligo;->c(Liem;)V
-
-    sget-object v3, Liem;->e:Liem;
-
-    new-instance v4, Liex;
-
-    const/4 v12, 0x2
-
-    invoke-direct {v4, v0, v12}, Liex;-><init>(Life;I)V
-
-    invoke-virtual {v2, v3, v4}, Ligo;->b(Liem;Liez;)V
-
-    sget-object v3, Liem;->k:Liem;
-
-    new-instance v4, Liex;
-
-    invoke-direct {v4, v0, v10}, Liex;-><init>(Life;I)V
-
-    invoke-virtual {v2, v3, v4}, Ligo;->b(Liem;Liez;)V
-
-    sget-object v3, Liem;->f:Liem;
-
-    new-instance v4, Liex;
-
-    invoke-direct {v4, v0, v5}, Liex;-><init>(Life;I)V
-
-    invoke-virtual {v2, v3, v4}, Ligo;->b(Liem;Liez;)V
-
-    sget-object v3, Liem;->l:Liem;
-
-    new-instance v4, Liex;
-
-    invoke-direct {v4, v0, v14}, Liex;-><init>(Life;I)V
-
-    invoke-virtual {v2, v3, v4}, Ligo;->b(Liem;Liez;)V
-
-    sget-object v3, Liem;->a:Liem;
-
-    new-instance v4, Liex;
-
-    invoke-direct {v4, v0, v14}, Liex;-><init>(Life;I)V
-
-    invoke-virtual {v2, v3, v4}, Ligo;->b(Liem;Liez;)V
-
-    sget-object v3, Liem;->L:Liem;
-
-    new-instance v4, Liex;
-
-    invoke-direct {v4, v0, v14}, Liex;-><init>(Life;I)V
-
-    invoke-virtual {v2, v3, v4}, Ligo;->b(Liem;Liez;)V
-
-    sget-object v3, Liem;->c:Liem;
-
-    new-instance v4, Liex;
-
-    const/4 v10, 0x6
-
-    invoke-direct {v4, v0, v10}, Liex;-><init>(Life;I)V
-
-    invoke-virtual {v2, v3, v4}, Ligo;->b(Liem;Liez;)V
-
-    sget-object v3, Liem;->t:Liem;
-
-    new-instance v4, Lieu;
-
-    invoke-direct {v4, v0, v12}, Lieu;-><init>(Life;I)V
-
-    invoke-virtual {v2, v3, v4}, Ligo;->b(Liem;Liez;)V
-
-    sget-object v3, Liem;->t:Liem;
-
-    new-instance v4, Lieu;
-
-    invoke-direct {v4, v0, v12}, Lieu;-><init>(Life;I)V
-
-    invoke-virtual {v2, v3, v4}, Ligo;->b(Liem;Liez;)V
-
-    sget-object v3, Liem;->A:Liem;
-
-    new-instance v4, Lier;
-
-    invoke-direct {v4, v0, v14}, Lier;-><init>(Life;I)V
-
-    invoke-virtual {v2, v3, v4}, Ligo;->b(Liem;Liez;)V
-
-    sget-object v3, Liem;->g:Liem;
-
-    new-instance v4, Lier;
-
-    invoke-direct {v4, v0, v6}, Lier;-><init>(Life;I)V
-
-    invoke-virtual {v2, v3, v4}, Ligo;->b(Liem;Liez;)V
-
-    sget-object v2, Liem;->E:Liem;
-
-    invoke-static {v2, v1}, Ljpw;->l(Liem;Ljava/util/List;)Ligo;
-
-    move-result-object v2
-
-    sget-object v3, Liem;->D:Liem;
-
-    invoke-virtual {v2, v3}, Ligo;->c(Liem;)V
-
-    sget-object v3, Liem;->F:Liem;
-
-    new-instance v4, Liex;
-
-    const/4 v10, 0x7
-
-    invoke-direct {v4, v0, v10}, Liex;-><init>(Life;I)V
-
-    invoke-virtual {v2, v3, v4}, Ligo;->b(Liem;Liez;)V
-
-    sget-object v3, Liem;->g:Liem;
-
-    new-instance v4, Lier;
-
-    invoke-direct {v4, v0, v6}, Lier;-><init>(Life;I)V
-
-    invoke-virtual {v2, v3, v4}, Ligo;->b(Liem;Liez;)V
-
-    sget-object v2, Liem;->F:Liem;
-
-    invoke-static {v2, v1}, Ljpw;->l(Liem;Ljava/util/List;)Ligo;
-
-    move-result-object v2
-
-    sget-object v3, Liem;->G:Liem;
-
-    new-instance v4, Liex;
-
-    invoke-direct {v4, v0, v13}, Liex;-><init>(Life;I)V
-
-    invoke-virtual {v2, v3, v4}, Ligo;->b(Liem;Liez;)V
-
-    sget-object v3, Liem;->j:Liem;
-
-    new-instance v4, Liex;
-
-    invoke-direct {v4, v0, v7}, Liex;-><init>(Life;I)V
-
-    invoke-virtual {v2, v3, v4}, Ligo;->b(Liem;Liez;)V
-
-    sget-object v2, Liem;->G:Liem;
-
-    invoke-static {v2, v1}, Ljpw;->l(Liem;Ljava/util/List;)Ligo;
-
-    move-result-object v2
-
-    sget-object v3, Liem;->D:Liem;
-
-    new-instance v4, Liex;
-
-    invoke-direct {v4, v0, v13}, Liex;-><init>(Life;I)V
-
-    invoke-virtual {v2, v3, v4}, Ligo;->b(Liem;Liez;)V
-
-    sget-object v3, Liem;->J:Liem;
-
-    new-instance v4, Lier;
-
-    invoke-direct {v4, v0, v13}, Lier;-><init>(Life;I)V
-
-    invoke-virtual {v2, v3, v4}, Ligo;->b(Liem;Liez;)V
-
-    sget-object v3, Liem;->l:Liem;
-
-    new-instance v4, Liev;
-
-    invoke-direct {v4, v0, v15}, Liev;-><init>(Life;I)V
-
-    invoke-virtual {v2, v3, v4}, Ligo;->b(Liem;Liez;)V
-
-    sget-object v3, Liem;->a:Liem;
-
-    new-instance v4, Liev;
-
-    invoke-direct {v4, v0, v15}, Liev;-><init>(Life;I)V
-
-    invoke-virtual {v2, v3, v4}, Ligo;->b(Liem;Liez;)V
-
-    sget-object v3, Liem;->L:Liem;
-
-    new-instance v4, Liev;
-
-    invoke-direct {v4, v0, v15}, Liev;-><init>(Life;I)V
-
-    invoke-virtual {v2, v3, v4}, Ligo;->b(Liem;Liez;)V
-
-    sget-object v3, Liem;->c:Liem;
-
-    new-instance v4, Liev;
-
-    invoke-direct {v4, v0, v8}, Liev;-><init>(Life;I)V
-
-    invoke-virtual {v2, v3, v4}, Ligo;->b(Liem;Liez;)V
-
-    sget-object v3, Liem;->t:Liem;
-
-    new-instance v4, Liev;
-
-    const/16 v7, 0xd
-
-    invoke-direct {v4, v0, v7}, Liev;-><init>(Life;I)V
-
-    invoke-virtual {v2, v3, v4}, Ligo;->b(Liem;Liez;)V
-
-    sget-object v3, Liem;->e:Liem;
-
-    invoke-virtual {v2, v3}, Ligo;->c(Liem;)V
-
-    sget-object v3, Liem;->A:Liem;
-
-    new-instance v4, Lier;
-
-    invoke-direct {v4, v0, v9}, Lier;-><init>(Life;I)V
-
-    invoke-virtual {v2, v3, v4}, Ligo;->b(Liem;Liez;)V
-
-    sget-object v3, Liem;->M:Liem;
-
-    new-instance v4, Liev;
-
-    const/16 v7, 0xe
-
-    invoke-direct {v4, v0, v7}, Liev;-><init>(Life;I)V
-
-    invoke-virtual {v2, v3, v4}, Ligo;->b(Liem;Liez;)V
-
-    sget-object v2, Liem;->k:Liem;
-
-    invoke-static {v2, v1}, Ljpw;->l(Liem;Ljava/util/List;)Ligo;
-
-    move-result-object v2
-
-    sget-object v3, Liem;->J:Liem;
-
-    new-instance v4, Lier;
-
-    invoke-direct {v4, v0, v13}, Lier;-><init>(Life;I)V
-
-    invoke-virtual {v2, v3, v4}, Ligo;->b(Liem;Liez;)V
-
-    sget-object v3, Liem;->e:Liem;
-
-    new-instance v4, Liex;
-
-    invoke-direct {v4, v0, v15}, Liex;-><init>(Life;I)V
-
-    invoke-virtual {v2, v3, v4}, Ligo;->b(Liem;Liez;)V
-
-    sget-object v3, Liem;->M:Liem;
-
-    new-instance v4, Liex;
-
-    invoke-direct {v4, v0, v8}, Liex;-><init>(Life;I)V
-
-    invoke-virtual {v2, v3, v4}, Ligo;->b(Liem;Liez;)V
-
-    sget-object v3, Liem;->D:Liem;
-
-    new-instance v4, Liex;
-
-    invoke-direct {v4, v0, v13}, Liex;-><init>(Life;I)V
-
-    invoke-virtual {v2, v3, v4}, Ligo;->b(Liem;Liez;)V
-
-    sget-object v3, Liem;->j:Liem;
-
-    new-instance v4, Liev;
-
-    invoke-direct {v4, v0, v9}, Liev;-><init>(Life;I)V
-
-    invoke-virtual {v2, v3, v4}, Ligo;->b(Liem;Liez;)V
-
-    sget-object v2, Liem;->a:Liem;
-
-    invoke-static {v2, v1}, Ljpw;->l(Liem;Ljava/util/List;)Ligo;
-
-    move-result-object v2
-
-    sget-object v3, Liem;->L:Liem;
-
-    iget-object v4, v2, Ligo;->a:Ljava/lang/Object;
-
-    invoke-interface {v4, v3}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
-
-    sget-object v3, Liem;->l:Liem;
-
-    new-instance v4, Liex;
-
-    const/16 v7, 0xd
-
-    invoke-direct {v4, v0, v7}, Liex;-><init>(Life;I)V
-
-    invoke-virtual {v2, v3, v4}, Ligo;->b(Liem;Liez;)V
-
-    sget-object v3, Liem;->D:Liem;
-
-    invoke-virtual {v2, v3}, Ligo;->c(Liem;)V
-
-    sget-object v3, Liem;->e:Liem;
-
-    new-instance v4, Lieu;
-
-    const/16 v7, 0x10
-
-    invoke-direct {v4, v0, v7}, Lieu;-><init>(Life;I)V
-
-    invoke-virtual {v2, v3, v4}, Ligo;->b(Liem;Liez;)V
-
-    sget-object v3, Liem;->M:Liem;
-
-    new-instance v4, Lier;
-
-    invoke-direct {v4, v0, v8}, Lier;-><init>(Life;I)V
-
-    invoke-virtual {v2, v3, v4}, Ligo;->b(Liem;Liez;)V
-
-    sget-object v3, Liem;->g:Liem;
-
-    new-instance v4, Lier;
-
-    invoke-direct {v4, v0, v6}, Lier;-><init>(Life;I)V
-
-    invoke-virtual {v2, v3, v4}, Ligo;->b(Liem;Liez;)V
-
-    sget-object v3, Liem;->b:Liem;
-
-    new-instance v4, Lier;
-
-    invoke-direct {v4, v0, v5}, Lier;-><init>(Life;I)V
-
-    invoke-virtual {v2, v3, v4}, Ligo;->b(Liem;Liez;)V
-
-    sget-object v3, Liem;->i:Liem;
-
-    new-instance v4, Liex;
-
-    const/16 v7, 0xe
-
-    invoke-direct {v4, v0, v7}, Liex;-><init>(Life;I)V
-
-    invoke-virtual {v2, v3, v4}, Ligo;->b(Liem;Liez;)V
-
-    sget-object v3, Liem;->J:Liem;
-
-    new-instance v4, Lier;
-
-    invoke-direct {v4, v0, v13}, Lier;-><init>(Life;I)V
-
-    invoke-virtual {v2, v3, v4}, Ligo;->b(Liem;Liez;)V
-
-    sget-object v3, Liem;->a:Liem;
-
-    invoke-virtual {v2, v3}, Ligo;->c(Liem;)V
-
-    sget-object v3, Liem;->L:Liem;
-
-    invoke-virtual {v2, v3}, Ligo;->c(Liem;)V
-
-    sget-object v3, Liem;->j:Liem;
-
-    new-instance v4, Liex;
-
-    const/16 v7, 0xf
-
-    invoke-direct {v4, v0, v7}, Liex;-><init>(Life;I)V
-
-    invoke-virtual {v2, v3, v4}, Ligo;->b(Liem;Liez;)V
-
-    sget-object v3, Liem;->c:Liem;
-
-    new-instance v4, Lier;
-
-    invoke-direct {v4, v0, v8}, Lier;-><init>(Life;I)V
-
-    invoke-virtual {v2, v3, v4}, Ligo;->b(Liem;Liez;)V
-
-    sget-object v3, Liem;->n:Liem;
-
-    new-instance v4, Lier;
-
-    const/16 v7, 0x11
-
-    invoke-direct {v4, v0, v7}, Lier;-><init>(Life;I)V
-
-    invoke-virtual {v2, v3, v4}, Ligo;->b(Liem;Liez;)V
-
-    sget-object v3, Liem;->q:Liem;
-
-    new-instance v4, Lier;
-
-    invoke-direct {v4, v0, v7}, Lier;-><init>(Life;I)V
-
-    invoke-virtual {v2, v3, v4}, Ligo;->b(Liem;Liez;)V
-
-    sget-object v3, Liem;->t:Liem;
-
-    new-instance v4, Lier;
-
-    invoke-direct {v4, v0, v7}, Lier;-><init>(Life;I)V
-
-    invoke-virtual {v2, v3, v4}, Ligo;->b(Liem;Liez;)V
-
-    sget-object v3, Liem;->A:Liem;
-
-    new-instance v4, Liex;
-
-    const/16 v7, 0x10
-
-    invoke-direct {v4, v0, v7}, Liex;-><init>(Life;I)V
-
-    invoke-virtual {v2, v3, v4}, Ligo;->b(Liem;Liez;)V
-
-    sget-object v3, Liem;->H:Liem;
-
-    new-instance v4, Lier;
-
-    invoke-direct {v4, v0, v11}, Lier;-><init>(Life;I)V
-
-    invoke-virtual {v2, v3, v4}, Ligo;->b(Liem;Liez;)V
-
-    sget-object v2, Liem;->b:Liem;
-
-    invoke-static {v2, v1}, Ljpw;->l(Liem;Ljava/util/List;)Ligo;
-
-    move-result-object v2
-
-    sget-object v3, Liem;->a:Liem;
-
-    new-instance v4, Lier;
-
-    const/16 v7, 0xd
-
-    invoke-direct {v4, v0, v7}, Lier;-><init>(Life;I)V
-
-    invoke-virtual {v2, v3, v4}, Ligo;->b(Liem;Liez;)V
-
-    sget-object v3, Liem;->H:Liem;
-
-    new-instance v4, Lieu;
-
-    const/4 v7, 0x0
-
-    invoke-direct {v4, v0, v7}, Lieu;-><init>(Life;I)V
-
-    invoke-virtual {v2, v3, v4}, Ligo;->b(Liem;Liez;)V
-
-    new-instance v3, Lieu;
-
-    invoke-direct {v3, v0, v11}, Lieu;-><init>(Life;I)V
-
-    invoke-virtual {v2, v3}, Ligo;->a(Liez;)V
-
-    sget-object v2, Liem;->c:Liem;
-
-    invoke-static {v2, v1}, Ljpw;->l(Liem;Ljava/util/List;)Ligo;
-
-    move-result-object v2
-
-    sget-object v3, Liem;->J:Liem;
-
-    new-instance v4, Lier;
-
-    invoke-direct {v4, v0, v13}, Lier;-><init>(Life;I)V
-
-    invoke-virtual {v2, v3, v4}, Ligo;->b(Liem;Liez;)V
-
-    sget-object v3, Liem;->g:Liem;
-
-    new-instance v4, Lier;
-
-    invoke-direct {v4, v0, v6}, Lier;-><init>(Life;I)V
-
-    invoke-virtual {v2, v3, v4}, Ligo;->b(Liem;Liez;)V
-
-    sget-object v3, Liem;->c:Liem;
-
-    invoke-virtual {v2, v3}, Ligo;->c(Liem;)V
-
-    sget-object v3, Liem;->d:Liem;
-
-    new-instance v4, Lier;
-
-    const/4 v7, 0x1
-
-    invoke-direct {v4, v0, v7}, Lier;-><init>(Life;I)V
-
-    invoke-virtual {v2, v3, v4}, Ligo;->b(Liem;Liez;)V
-
-    sget-object v3, Liem;->l:Liem;
-
-    new-instance v4, Liex;
-
-    invoke-direct {v4, v0, v14}, Liex;-><init>(Life;I)V
-
-    invoke-virtual {v2, v3, v4}, Ligo;->b(Liem;Liez;)V
-
-    sget-object v3, Liem;->a:Liem;
-
-    new-instance v4, Liex;
-
-    invoke-direct {v4, v0, v14}, Liex;-><init>(Life;I)V
-
-    invoke-virtual {v2, v3, v4}, Ligo;->b(Liem;Liez;)V
-
-    sget-object v3, Liem;->L:Liem;
-
-    new-instance v4, Liex;
-
-    invoke-direct {v4, v0, v14}, Liex;-><init>(Life;I)V
-
-    invoke-virtual {v2, v3, v4}, Ligo;->b(Liem;Liez;)V
-
-    sget-object v3, Liem;->D:Liem;
-
-    invoke-virtual {v2, v3}, Ligo;->c(Liem;)V
-
-    sget-object v3, Liem;->q:Liem;
-
-    new-instance v4, Lieu;
-
-    invoke-direct {v4, v0, v12}, Lieu;-><init>(Life;I)V
-
-    invoke-virtual {v2, v3, v4}, Ligo;->b(Liem;Liez;)V
-
-    sget-object v3, Liem;->e:Liem;
-
-    new-instance v4, Lier;
-
-    const/4 v7, 0x0
-
-    invoke-direct {v4, v0, v7}, Lier;-><init>(Life;I)V
-
-    invoke-virtual {v2, v3, v4}, Ligo;->b(Liem;Liez;)V
-
-    sget-object v3, Liem;->M:Liem;
-
-    new-instance v4, Lier;
-
-    invoke-direct {v4, v0, v12}, Lier;-><init>(Life;I)V
-
-    invoke-virtual {v2, v3, v4}, Ligo;->b(Liem;Liez;)V
-
-    sget-object v3, Liem;->t:Liem;
-
-    new-instance v4, Lieu;
-
-    invoke-direct {v4, v0, v12}, Lieu;-><init>(Life;I)V
-
-    invoke-virtual {v2, v3, v4}, Ligo;->b(Liem;Liez;)V
-
-    sget-object v3, Liem;->A:Liem;
-
-    new-instance v4, Lier;
-
-    invoke-direct {v4, v0, v14}, Lier;-><init>(Life;I)V
-
-    invoke-virtual {v2, v3, v4}, Ligo;->b(Liem;Liez;)V
-
-    sget-object v2, Liem;->d:Liem;
-
-    invoke-static {v2, v1}, Ljpw;->l(Liem;Ljava/util/List;)Ligo;
-
-    move-result-object v2
-
-    sget-object v3, Liem;->c:Liem;
-
-    new-instance v4, Lier;
-
-    const/4 v7, 0x6
-
-    invoke-direct {v4, v0, v7}, Lier;-><init>(Life;I)V
-
-    invoke-virtual {v2, v3, v4}, Ligo;->b(Liem;Liez;)V
-
-    sget-object v3, Liem;->l:Liem;
-
-    invoke-virtual {v2, v3}, Ligo;->c(Liem;)V
-
-    sget-object v3, Liem;->a:Liem;
-
-    invoke-virtual {v2, v3}, Ligo;->c(Liem;)V
-
-    sget-object v3, Liem;->e:Liem;
-
-    invoke-virtual {v2, v3}, Ligo;->c(Liem;)V
-
-    new-instance v3, Lier;
-
-    invoke-direct {v3, v0, v10}, Lier;-><init>(Life;I)V
-
-    invoke-virtual {v2, v3}, Ligo;->a(Liez;)V
-
-    sget-object v2, Liem;->n:Liem;
-
-    invoke-static {v2, v1}, Ljpw;->l(Liem;Ljava/util/List;)Ligo;
-
-    move-result-object v2
-
-    sget-object v3, Liem;->J:Liem;
-
-    new-instance v4, Lier;
-
-    invoke-direct {v4, v0, v13}, Lier;-><init>(Life;I)V
-
-    invoke-virtual {v2, v3, v4}, Ligo;->b(Liem;Liez;)V
-
-    sget-object v3, Liem;->t:Liem;
-
-    invoke-virtual {v2, v3}, Ligo;->c(Liem;)V
-
-    sget-object v3, Liem;->o:Liem;
-
-    new-instance v4, Lier;
-
-    const/16 v7, 0x9
-
-    invoke-direct {v4, v0, v7}, Lier;-><init>(Life;I)V
-
-    invoke-virtual {v2, v3, v4}, Ligo;->b(Liem;Liez;)V
-
-    sget-object v3, Liem;->p:Liem;
-
-    new-instance v4, Lier;
-
-    invoke-direct {v4, v0, v15}, Lier;-><init>(Life;I)V
-
-    invoke-virtual {v2, v3, v4}, Ligo;->b(Liem;Liez;)V
-
-    sget-object v3, Liem;->l:Liem;
-
-    new-instance v4, Lier;
-
-    invoke-direct {v4, v0, v9}, Lier;-><init>(Life;I)V
-
-    invoke-virtual {v2, v3, v4}, Ligo;->b(Liem;Liez;)V
-
-    sget-object v3, Liem;->a:Liem;
-
-    new-instance v4, Lier;
-
-    invoke-direct {v4, v0, v9}, Lier;-><init>(Life;I)V
-
-    invoke-virtual {v2, v3, v4}, Ligo;->b(Liem;Liez;)V
-
-    sget-object v3, Liem;->L:Liem;
-
-    new-instance v4, Lier;
-
-    invoke-direct {v4, v0, v9}, Lier;-><init>(Life;I)V
-
-    invoke-virtual {v2, v3, v4}, Ligo;->b(Liem;Liez;)V
-
-    sget-object v3, Liem;->q:Liem;
-
-    new-instance v4, Lier;
-
-    invoke-direct {v4, v0, v8}, Lier;-><init>(Life;I)V
-
-    invoke-virtual {v2, v3, v4}, Ligo;->b(Liem;Liez;)V
-
-    sget-object v3, Liem;->c:Liem;
-
-    new-instance v4, Lier;
-
-    const/16 v7, 0xe
-
-    invoke-direct {v4, v0, v7}, Lier;-><init>(Life;I)V
-
-    invoke-virtual {v2, v3, v4}, Ligo;->b(Liem;Liez;)V
-
-    sget-object v3, Liem;->D:Liem;
-
-    invoke-virtual {v2, v3}, Ligo;->c(Liem;)V
-
-    sget-object v3, Liem;->n:Liem;
-
-    invoke-virtual {v2, v3}, Ligo;->c(Liem;)V
-
-    sget-object v3, Liem;->e:Liem;
-
-    new-instance v4, Lier;
-
-    const/16 v7, 0xf
-
-    invoke-direct {v4, v0, v7}, Lier;-><init>(Life;I)V
-
-    invoke-virtual {v2, v3, v4}, Ligo;->b(Liem;Liez;)V
-
-    sget-object v3, Liem;->M:Liem;
-
-    new-instance v4, Lier;
-
-    const/16 v7, 0xe
-
-    invoke-direct {v4, v0, v7}, Lier;-><init>(Life;I)V
-
-    invoke-virtual {v2, v3, v4}, Ligo;->b(Liem;Liez;)V
-
-    sget-object v3, Liem;->x:Liem;
-
-    new-instance v4, Lier;
-
-    const/16 v7, 0x10
-
-    invoke-direct {v4, v0, v7}, Lier;-><init>(Life;I)V
-
-    invoke-virtual {v2, v3, v4}, Ligo;->b(Liem;Liez;)V
-
-    sget-object v3, Liem;->w:Liem;
-
-    new-instance v4, Lier;
-
-    invoke-direct {v4, v0, v7}, Lier;-><init>(Life;I)V
-
-    invoke-virtual {v2, v3, v4}, Ligo;->b(Liem;Liez;)V
-
-    sget-object v3, Liem;->y:Liem;
-
-    new-instance v4, Lier;
-
-    const/16 v7, 0x11
-
-    invoke-direct {v4, v0, v7}, Lier;-><init>(Life;I)V
-
-    invoke-virtual {v2, v3, v4}, Ligo;->b(Liem;Liez;)V
-
-    sget-object v3, Liem;->A:Liem;
-
-    new-instance v4, Lier;
-
-    invoke-direct {v4, v0, v9}, Lier;-><init>(Life;I)V
-
-    invoke-virtual {v2, v3, v4}, Ligo;->b(Liem;Liez;)V
-
-    sget-object v3, Liem;->g:Liem;
-
-    new-instance v4, Lier;
-
-    invoke-direct {v4, v0, v6}, Lier;-><init>(Life;I)V
-
-    invoke-virtual {v2, v3, v4}, Ligo;->b(Liem;Liez;)V
-
-    sget-object v3, Liem;->H:Liem;
-
-    new-instance v4, Lier;
-
-    invoke-direct {v4, v0, v11}, Lier;-><init>(Life;I)V
-
-    invoke-virtual {v2, v3, v4}, Ligo;->b(Liem;Liez;)V
-
-    sget-object v2, Liem;->o:Liem;
-
-    invoke-static {v2, v1}, Ljpw;->l(Liem;Ljava/util/List;)Ligo;
-
-    move-result-object v2
-
-    sget-object v3, Liem;->p:Liem;
-
-    new-instance v4, Lier;
-
-    invoke-direct {v4, v0, v15}, Lier;-><init>(Life;I)V
-
-    invoke-virtual {v2, v3, v4}, Ligo;->b(Liem;Liez;)V
-
-    sget-object v3, Liem;->n:Liem;
-
-    new-instance v4, Lier;
-
-    invoke-direct {v4, v0, v15}, Lier;-><init>(Life;I)V
-
-    invoke-virtual {v2, v3, v4}, Ligo;->b(Liem;Liez;)V
-
-    sget-object v3, Liem;->w:Liem;
-
-    new-instance v4, Lier;
-
-    invoke-direct {v4, v0, v15}, Lier;-><init>(Life;I)V
-
-    invoke-virtual {v2, v3, v4}, Ligo;->b(Liem;Liez;)V
-
-    new-instance v3, Lieu;
-
-    const/4 v4, 0x1
-
-    invoke-direct {v3, v0, v4}, Lieu;-><init>(Life;I)V
-
-    invoke-virtual {v2, v3}, Ligo;->a(Liez;)V
-
-    sget-object v3, Liem;->H:Liem;
-
-    new-instance v4, Lieu;
-
-    const/4 v7, 0x0
-
-    invoke-direct {v4, v0, v7}, Lieu;-><init>(Life;I)V
-
-    invoke-virtual {v2, v3, v4}, Ligo;->b(Liem;Liez;)V
-
-    sget-object v2, Liem;->q:Liem;
-
-    invoke-static {v2, v1}, Ljpw;->l(Liem;Ljava/util/List;)Ligo;
-
-    move-result-object v2
-
-    sget-object v3, Liem;->J:Liem;
-
-    new-instance v4, Lier;
-
-    invoke-direct {v4, v0, v13}, Lier;-><init>(Life;I)V
-
-    invoke-virtual {v2, v3, v4}, Ligo;->b(Liem;Liez;)V
-
-    sget-object v3, Liem;->t:Liem;
-
-    new-instance v4, Lieu;
-
-    invoke-direct {v4, v0, v12}, Lieu;-><init>(Life;I)V
-
-    invoke-virtual {v2, v3, v4}, Ligo;->b(Liem;Liez;)V
-
-    sget-object v3, Liem;->n:Liem;
-
-    new-instance v4, Lier;
-
-    invoke-direct {v4, v0, v9}, Lier;-><init>(Life;I)V
-
-    invoke-virtual {v2, v3, v4}, Ligo;->b(Liem;Liez;)V
-
-    sget-object v3, Liem;->r:Liem;
-
-    new-instance v4, Lier;
-
-    const/16 v7, 0x9
-
-    invoke-direct {v4, v0, v7}, Lier;-><init>(Life;I)V
-
-    invoke-virtual {v2, v3, v4}, Ligo;->b(Liem;Liez;)V
-
-    sget-object v3, Liem;->s:Liem;
-
-    new-instance v4, Lier;
-
-    invoke-direct {v4, v0, v15}, Lier;-><init>(Life;I)V
-
-    invoke-virtual {v2, v3, v4}, Ligo;->b(Liem;Liez;)V
-
-    sget-object v3, Liem;->l:Liem;
-
-    new-instance v4, Lier;
-
-    invoke-direct {v4, v0, v9}, Lier;-><init>(Life;I)V
-
-    invoke-virtual {v2, v3, v4}, Ligo;->b(Liem;Liez;)V
-
-    sget-object v3, Liem;->a:Liem;
-
-    new-instance v4, Lier;
-
-    invoke-direct {v4, v0, v9}, Lier;-><init>(Life;I)V
-
-    invoke-virtual {v2, v3, v4}, Ligo;->b(Liem;Liez;)V
-
-    sget-object v3, Liem;->L:Liem;
-
-    new-instance v4, Lier;
-
-    invoke-direct {v4, v0, v9}, Lier;-><init>(Life;I)V
-
-    invoke-virtual {v2, v3, v4}, Ligo;->b(Liem;Liez;)V
-
-    sget-object v3, Liem;->c:Liem;
-
-    new-instance v4, Lier;
-
-    const/16 v7, 0xe
-
-    invoke-direct {v4, v0, v7}, Lier;-><init>(Life;I)V
-
-    invoke-virtual {v2, v3, v4}, Ligo;->b(Liem;Liez;)V
-
-    sget-object v3, Liem;->D:Liem;
-
-    invoke-virtual {v2, v3}, Ligo;->c(Liem;)V
-
-    sget-object v3, Liem;->q:Liem;
-
-    invoke-virtual {v2, v3}, Ligo;->c(Liem;)V
-
-    sget-object v3, Liem;->e:Liem;
-
-    new-instance v4, Lier;
-
-    const/16 v7, 0xf
-
-    invoke-direct {v4, v0, v7}, Lier;-><init>(Life;I)V
-
-    invoke-virtual {v2, v3, v4}, Ligo;->b(Liem;Liez;)V
-
-    sget-object v3, Liem;->M:Liem;
-
-    new-instance v4, Lier;
-
-    const/16 v7, 0xe
-
-    invoke-direct {v4, v0, v7}, Lier;-><init>(Life;I)V
-
-    invoke-virtual {v2, v3, v4}, Ligo;->b(Liem;Liez;)V
-
-    sget-object v3, Liem;->x:Liem;
-
-    new-instance v4, Lier;
-
-    const/16 v7, 0x10
-
-    invoke-direct {v4, v0, v7}, Lier;-><init>(Life;I)V
-
-    invoke-virtual {v2, v3, v4}, Ligo;->b(Liem;Liez;)V
-
-    sget-object v3, Liem;->w:Liem;
-
-    new-instance v4, Lier;
-
-    invoke-direct {v4, v0, v7}, Lier;-><init>(Life;I)V
-
-    invoke-virtual {v2, v3, v4}, Ligo;->b(Liem;Liez;)V
-
-    sget-object v3, Liem;->y:Liem;
-
-    new-instance v4, Lier;
-
-    const/16 v7, 0x11
-
-    invoke-direct {v4, v0, v7}, Lier;-><init>(Life;I)V
-
-    invoke-virtual {v2, v3, v4}, Ligo;->b(Liem;Liez;)V
-
-    sget-object v3, Liem;->A:Liem;
-
-    new-instance v4, Lier;
-
-    invoke-direct {v4, v0, v9}, Lier;-><init>(Life;I)V
-
-    invoke-virtual {v2, v3, v4}, Ligo;->b(Liem;Liez;)V
-
-    sget-object v3, Liem;->g:Liem;
-
-    new-instance v4, Lier;
-
-    invoke-direct {v4, v0, v6}, Lier;-><init>(Life;I)V
-
-    invoke-virtual {v2, v3, v4}, Ligo;->b(Liem;Liez;)V
-
-    sget-object v2, Liem;->r:Liem;
-
-    invoke-static {v2, v1}, Ljpw;->l(Liem;Ljava/util/List;)Ligo;
-
-    move-result-object v2
-
-    sget-object v3, Liem;->s:Liem;
-
-    new-instance v4, Lier;
-
-    invoke-direct {v4, v0, v15}, Lier;-><init>(Life;I)V
-
-    invoke-virtual {v2, v3, v4}, Ligo;->b(Liem;Liez;)V
-
-    sget-object v3, Liem;->q:Liem;
-
-    new-instance v4, Lier;
-
-    invoke-direct {v4, v0, v15}, Lier;-><init>(Life;I)V
-
-    invoke-virtual {v2, v3, v4}, Ligo;->b(Liem;Liez;)V
-
-    sget-object v3, Liem;->w:Liem;
-
-    new-instance v4, Lier;
-
-    invoke-direct {v4, v0, v15}, Lier;-><init>(Life;I)V
-
-    invoke-virtual {v2, v3, v4}, Ligo;->b(Liem;Liez;)V
-
-    new-instance v3, Lieu;
-
-    const/4 v4, 0x1
-
-    invoke-direct {v3, v0, v4}, Lieu;-><init>(Life;I)V
-
-    invoke-virtual {v2, v3}, Ligo;->a(Liez;)V
-
-    sget-object v2, Liem;->t:Liem;
-
-    invoke-static {v2, v1}, Ljpw;->l(Liem;Ljava/util/List;)Ligo;
-
-    move-result-object v2
-
-    sget-object v3, Liem;->J:Liem;
-
-    new-instance v4, Lier;
-
-    invoke-direct {v4, v0, v13}, Lier;-><init>(Life;I)V
-
-    invoke-virtual {v2, v3, v4}, Ligo;->b(Liem;Liez;)V
-
-    sget-object v3, Liem;->t:Liem;
-
-    invoke-virtual {v2, v3}, Ligo;->c(Liem;)V
-
-    sget-object v3, Liem;->q:Liem;
-
-    new-instance v4, Lier;
-
-    const/16 v7, 0xe
-
-    invoke-direct {v4, v0, v7}, Lier;-><init>(Life;I)V
-
-    invoke-virtual {v2, v3, v4}, Ligo;->b(Liem;Liez;)V
-
-    sget-object v3, Liem;->u:Liem;
-
-    new-instance v4, Lier;
-
-    const/16 v7, 0x9
-
-    invoke-direct {v4, v0, v7}, Lier;-><init>(Life;I)V
-
-    invoke-virtual {v2, v3, v4}, Ligo;->b(Liem;Liez;)V
-
-    sget-object v3, Liem;->l:Liem;
-
-    new-instance v4, Lier;
-
-    invoke-direct {v4, v0, v9}, Lier;-><init>(Life;I)V
-
-    invoke-virtual {v2, v3, v4}, Ligo;->b(Liem;Liez;)V
-
-    sget-object v3, Liem;->a:Liem;
-
-    new-instance v4, Lier;
-
-    invoke-direct {v4, v0, v9}, Lier;-><init>(Life;I)V
-
-    invoke-virtual {v2, v3, v4}, Ligo;->b(Liem;Liez;)V
-
-    sget-object v3, Liem;->L:Liem;
-
-    new-instance v4, Lier;
-
-    invoke-direct {v4, v0, v9}, Lier;-><init>(Life;I)V
-
-    invoke-virtual {v2, v3, v4}, Ligo;->b(Liem;Liez;)V
-
-    sget-object v3, Liem;->c:Liem;
-
-    new-instance v4, Lier;
-
-    const/16 v7, 0xe
-
-    invoke-direct {v4, v0, v7}, Lier;-><init>(Life;I)V
-
-    invoke-virtual {v2, v3, v4}, Ligo;->b(Liem;Liez;)V
-
-    sget-object v3, Liem;->D:Liem;
-
-    invoke-virtual {v2, v3}, Ligo;->c(Liem;)V
-
-    sget-object v3, Liem;->e:Liem;
-
-    new-instance v4, Lier;
-
-    const/16 v7, 0xf
-
-    invoke-direct {v4, v0, v7}, Lier;-><init>(Life;I)V
-
-    invoke-virtual {v2, v3, v4}, Ligo;->b(Liem;Liez;)V
-
-    sget-object v3, Liem;->M:Liem;
-
-    new-instance v4, Lier;
-
-    const/16 v7, 0xe
-
-    invoke-direct {v4, v0, v7}, Lier;-><init>(Life;I)V
-
-    invoke-virtual {v2, v3, v4}, Ligo;->b(Liem;Liez;)V
-
-    sget-object v3, Liem;->x:Liem;
-
-    new-instance v4, Lier;
-
-    const/16 v7, 0x10
-
-    invoke-direct {v4, v0, v7}, Lier;-><init>(Life;I)V
-
-    invoke-virtual {v2, v3, v4}, Ligo;->b(Liem;Liez;)V
-
-    sget-object v3, Liem;->w:Liem;
-
-    new-instance v4, Lier;
-
-    invoke-direct {v4, v0, v7}, Lier;-><init>(Life;I)V
-
-    invoke-virtual {v2, v3, v4}, Ligo;->b(Liem;Liez;)V
-
-    sget-object v3, Liem;->y:Liem;
-
-    new-instance v4, Lier;
-
-    const/16 v7, 0x11
-
-    invoke-direct {v4, v0, v7}, Lier;-><init>(Life;I)V
-
-    invoke-virtual {v2, v3, v4}, Ligo;->b(Liem;Liez;)V
-
-    sget-object v3, Liem;->A:Liem;
-
-    new-instance v4, Lieu;
-
-    invoke-direct {v4, v0, v5}, Lieu;-><init>(Life;I)V
-
-    invoke-virtual {v2, v3, v4}, Ligo;->b(Liem;Liez;)V
-
-    sget-object v3, Liem;->g:Liem;
-
-    new-instance v4, Lier;
-
-    invoke-direct {v4, v0, v6}, Lier;-><init>(Life;I)V
-
-    invoke-virtual {v2, v3, v4}, Ligo;->b(Liem;Liez;)V
-
-    sget-object v3, Liem;->v:Liem;
-
-    new-instance v4, Lier;
-
-    const/16 v7, 0x10
-
-    invoke-direct {v4, v0, v7}, Lier;-><init>(Life;I)V
-
-    invoke-virtual {v2, v3, v4}, Ligo;->b(Liem;Liez;)V
-
-    sget-object v2, Liem;->y:Liem;
-
-    invoke-static {v2, v1}, Ljpw;->l(Liem;Ljava/util/List;)Ligo;
-
-    move-result-object v2
-
-    sget-object v3, Liem;->J:Liem;
-
-    new-instance v4, Lier;
-
-    invoke-direct {v4, v0, v13}, Lier;-><init>(Life;I)V
-
-    invoke-virtual {v2, v3, v4}, Ligo;->b(Liem;Liez;)V
-
-    sget-object v3, Liem;->t:Liem;
-
-    invoke-virtual {v2, v3}, Ligo;->c(Liem;)V
-
-    sget-object v3, Liem;->y:Liem;
-
-    invoke-virtual {v2, v3}, Ligo;->c(Liem;)V
-
-    sget-object v3, Liem;->z:Liem;
-
-    new-instance v4, Lier;
-
-    const/16 v7, 0x9
-
-    invoke-direct {v4, v0, v7}, Lier;-><init>(Life;I)V
-
-    invoke-virtual {v2, v3, v4}, Ligo;->b(Liem;Liez;)V
-
-    sget-object v3, Liem;->l:Liem;
-
-    new-instance v4, Lier;
-
-    invoke-direct {v4, v0, v9}, Lier;-><init>(Life;I)V
-
-    invoke-virtual {v2, v3, v4}, Ligo;->b(Liem;Liez;)V
-
-    sget-object v3, Liem;->a:Liem;
-
-    new-instance v4, Lier;
-
-    invoke-direct {v4, v0, v9}, Lier;-><init>(Life;I)V
-
-    invoke-virtual {v2, v3, v4}, Ligo;->b(Liem;Liez;)V
-
-    sget-object v3, Liem;->L:Liem;
-
-    new-instance v4, Lier;
-
-    invoke-direct {v4, v0, v9}, Lier;-><init>(Life;I)V
-
-    invoke-virtual {v2, v3, v4}, Ligo;->b(Liem;Liez;)V
-
-    sget-object v3, Liem;->c:Liem;
-
-    new-instance v4, Lier;
-
-    const/16 v7, 0xe
-
-    invoke-direct {v4, v0, v7}, Lier;-><init>(Life;I)V
-
-    invoke-virtual {v2, v3, v4}, Ligo;->b(Liem;Liez;)V
-
-    sget-object v3, Liem;->D:Liem;
-
-    invoke-virtual {v2, v3}, Ligo;->c(Liem;)V
-
-    sget-object v3, Liem;->e:Liem;
-
-    new-instance v4, Lier;
-
-    const/16 v7, 0xf
-
-    invoke-direct {v4, v0, v7}, Lier;-><init>(Life;I)V
-
-    invoke-virtual {v2, v3, v4}, Ligo;->b(Liem;Liez;)V
-
-    sget-object v3, Liem;->M:Liem;
-
-    new-instance v4, Lier;
-
-    const/16 v7, 0xe
-
-    invoke-direct {v4, v0, v7}, Lier;-><init>(Life;I)V
-
-    invoke-virtual {v2, v3, v4}, Ligo;->b(Liem;Liez;)V
-
-    sget-object v3, Liem;->x:Liem;
-
-    new-instance v4, Lier;
-
-    const/16 v7, 0x10
-
-    invoke-direct {v4, v0, v7}, Lier;-><init>(Life;I)V
-
-    invoke-virtual {v2, v3, v4}, Ligo;->b(Liem;Liez;)V
-
-    sget-object v3, Liem;->w:Liem;
-
-    new-instance v4, Lier;
-
-    invoke-direct {v4, v0, v7}, Lier;-><init>(Life;I)V
-
-    invoke-virtual {v2, v3, v4}, Ligo;->b(Liem;Liez;)V
-
-    sget-object v3, Liem;->A:Liem;
-
-    new-instance v4, Lier;
-
-    invoke-direct {v4, v0, v9}, Lier;-><init>(Life;I)V
-
-    invoke-virtual {v2, v3, v4}, Ligo;->b(Liem;Liez;)V
-
-    sget-object v3, Liem;->g:Liem;
-
-    new-instance v4, Lier;
-
-    invoke-direct {v4, v0, v6}, Lier;-><init>(Life;I)V
-
-    invoke-virtual {v2, v3, v4}, Ligo;->b(Liem;Liez;)V
-
-    sget-object v2, Liem;->u:Liem;
-
-    invoke-static {v2, v1}, Ljpw;->l(Liem;Ljava/util/List;)Ligo;
-
-    move-result-object v2
-
-    sget-object v3, Liem;->v:Liem;
-
-    new-instance v4, Lier;
-
-    invoke-direct {v4, v0, v15}, Lier;-><init>(Life;I)V
-
-    invoke-virtual {v2, v3, v4}, Ligo;->b(Liem;Liez;)V
-
-    sget-object v3, Liem;->t:Liem;
-
-    new-instance v4, Lier;
-
-    invoke-direct {v4, v0, v15}, Lier;-><init>(Life;I)V
-
-    invoke-virtual {v2, v3, v4}, Ligo;->b(Liem;Liez;)V
-
-    sget-object v3, Liem;->w:Liem;
-
-    new-instance v4, Lier;
-
-    invoke-direct {v4, v0, v15}, Lier;-><init>(Life;I)V
-
-    invoke-virtual {v2, v3, v4}, Ligo;->b(Liem;Liez;)V
-
-    new-instance v3, Lieu;
-
-    const/4 v4, 0x1
-
-    invoke-direct {v3, v0, v4}, Lieu;-><init>(Life;I)V
-
-    invoke-virtual {v2, v3}, Ligo;->a(Liez;)V
-
-    sget-object v2, Liem;->z:Liem;
-
-    invoke-static {v2, v1}, Ljpw;->l(Liem;Ljava/util/List;)Ligo;
-
-    move-result-object v2
-
-    sget-object v3, Liem;->v:Liem;
-
-    new-instance v4, Lier;
-
-    invoke-direct {v4, v0, v15}, Lier;-><init>(Life;I)V
-
-    invoke-virtual {v2, v3, v4}, Ligo;->b(Liem;Liez;)V
-
-    sget-object v3, Liem;->t:Liem;
-
-    new-instance v4, Lier;
-
-    invoke-direct {v4, v0, v15}, Lier;-><init>(Life;I)V
-
-    invoke-virtual {v2, v3, v4}, Ligo;->b(Liem;Liez;)V
-
-    sget-object v3, Liem;->w:Liem;
-
-    new-instance v4, Lieu;
-
-    const/4 v7, 0x6
-
-    invoke-direct {v4, v0, v7}, Lieu;-><init>(Life;I)V
-
-    invoke-virtual {v2, v3, v4}, Ligo;->b(Liem;Liez;)V
-
-    new-instance v3, Lieu;
-
-    const/4 v4, 0x1
-
-    invoke-direct {v3, v0, v4}, Lieu;-><init>(Life;I)V
-
-    invoke-virtual {v2, v3}, Ligo;->a(Liez;)V
-
-    sget-object v2, Liem;->v:Liem;
-
-    invoke-static {v2, v1}, Ljpw;->l(Liem;Ljava/util/List;)Ligo;
-
-    move-result-object v2
-
-    sget-object v3, Liem;->t:Liem;
-
-    new-instance v4, Lieu;
-
-    invoke-direct {v4, v0, v10}, Lieu;-><init>(Life;I)V
-
-    invoke-virtual {v2, v3, v4}, Ligo;->b(Liem;Liez;)V
-
-    sget-object v3, Liem;->w:Liem;
-
-    new-instance v4, Lier;
-
-    invoke-direct {v4, v0, v15}, Lier;-><init>(Life;I)V
-
-    invoke-virtual {v2, v3, v4}, Ligo;->b(Liem;Liez;)V
-
-    new-instance v3, Lieu;
-
-    const/4 v4, 0x1
-
-    invoke-direct {v3, v0, v4}, Lieu;-><init>(Life;I)V
-
-    invoke-virtual {v2, v3}, Ligo;->a(Liez;)V
-
-    sget-object v2, Liem;->p:Liem;
-
-    invoke-static {v2, v1}, Ljpw;->l(Liem;Ljava/util/List;)Ligo;
-
-    move-result-object v2
-
-    sget-object v3, Liem;->n:Liem;
-
-    new-instance v4, Lieu;
-
-    invoke-direct {v4, v0, v10}, Lieu;-><init>(Life;I)V
-
-    invoke-virtual {v2, v3, v4}, Ligo;->b(Liem;Liez;)V
-
-    sget-object v3, Liem;->w:Liem;
-
-    new-instance v4, Lier;
-
-    invoke-direct {v4, v0, v15}, Lier;-><init>(Life;I)V
-
-    invoke-virtual {v2, v3, v4}, Ligo;->b(Liem;Liez;)V
-
-    new-instance v3, Lieu;
-
-    const/4 v4, 0x1
-
-    invoke-direct {v3, v0, v4}, Lieu;-><init>(Life;I)V
-
-    invoke-virtual {v2, v3}, Ligo;->a(Liez;)V
-
-    sget-object v2, Liem;->s:Liem;
-
-    invoke-static {v2, v1}, Ljpw;->l(Liem;Ljava/util/List;)Ligo;
-
-    move-result-object v2
-
-    sget-object v3, Liem;->q:Liem;
-
-    new-instance v4, Lieu;
-
-    invoke-direct {v4, v0, v10}, Lieu;-><init>(Life;I)V
-
-    invoke-virtual {v2, v3, v4}, Ligo;->b(Liem;Liez;)V
-
-    sget-object v3, Liem;->w:Liem;
-
-    new-instance v4, Lier;
-
-    invoke-direct {v4, v0, v15}, Lier;-><init>(Life;I)V
-
-    invoke-virtual {v2, v3, v4}, Ligo;->b(Liem;Liez;)V
-
-    new-instance v3, Lieu;
-
-    const/4 v4, 0x1
-
-    invoke-direct {v3, v0, v4}, Lieu;-><init>(Life;I)V
-
-    invoke-virtual {v2, v3}, Ligo;->a(Liez;)V
-
-    sget-object v2, Liem;->w:Liem;
-
-    invoke-static {v2, v1}, Ljpw;->l(Liem;Ljava/util/List;)Ligo;
-
-    move-result-object v2
-
-    sget-object v3, Liem;->x:Liem;
-
-    new-instance v4, Lieu;
-
-    const/16 v7, 0x9
-
-    invoke-direct {v4, v0, v7}, Lieu;-><init>(Life;I)V
-
-    invoke-virtual {v2, v3, v4}, Ligo;->b(Liem;Liez;)V
-
-    sget-object v3, Liem;->t:Liem;
-
-    new-instance v4, Lieu;
-
-    invoke-direct {v4, v0, v15}, Lieu;-><init>(Life;I)V
-
-    invoke-virtual {v2, v3, v4}, Ligo;->b(Liem;Liez;)V
-
-    sget-object v3, Liem;->n:Liem;
-
-    new-instance v4, Lieu;
-
-    invoke-direct {v4, v0, v15}, Lieu;-><init>(Life;I)V
-
-    invoke-virtual {v2, v3, v4}, Ligo;->b(Liem;Liez;)V
-
-    sget-object v3, Liem;->q:Liem;
-
-    new-instance v4, Lieu;
-
-    invoke-direct {v4, v0, v15}, Lieu;-><init>(Life;I)V
-
-    invoke-virtual {v2, v3, v4}, Ligo;->b(Liem;Liez;)V
-
-    new-instance v3, Lieu;
-
-    invoke-direct {v3, v0, v8}, Lieu;-><init>(Life;I)V
-
-    invoke-virtual {v2, v3}, Ligo;->a(Liez;)V
-
-    sget-object v2, Liem;->x:Liem;
-
-    invoke-static {v2, v1}, Ljpw;->l(Liem;Ljava/util/List;)Ligo;
-
-    move-result-object v2
-
-    sget-object v3, Liem;->t:Liem;
-
-    new-instance v4, Lieu;
-
-    const/16 v7, 0xd
-
-    invoke-direct {v4, v0, v7}, Lieu;-><init>(Life;I)V
-
-    invoke-virtual {v2, v3, v4}, Ligo;->b(Liem;Liez;)V
-
-    sget-object v3, Liem;->n:Liem;
-
-    new-instance v4, Lieu;
-
-    invoke-direct {v4, v0, v7}, Lieu;-><init>(Life;I)V
-
-    invoke-virtual {v2, v3, v4}, Ligo;->b(Liem;Liez;)V
-
-    sget-object v3, Liem;->q:Liem;
-
-    new-instance v4, Lieu;
-
-    invoke-direct {v4, v0, v7}, Lieu;-><init>(Life;I)V
-
-    invoke-virtual {v2, v3, v4}, Ligo;->b(Liem;Liez;)V
-
-    new-instance v3, Lieu;
-
-    const/16 v4, 0xe
-
-    invoke-direct {v3, v0, v4}, Lieu;-><init>(Life;I)V
-
-    invoke-virtual {v2, v3}, Ligo;->a(Liez;)V
-
-    sget-object v2, Liem;->A:Liem;
-
-    invoke-static {v2, v1}, Ljpw;->l(Liem;Ljava/util/List;)Ligo;
-
-    move-result-object v2
-
-    sget-object v3, Liem;->J:Liem;
-
-    new-instance v4, Lier;
-
-    invoke-direct {v4, v0, v13}, Lier;-><init>(Life;I)V
-
-    invoke-virtual {v2, v3, v4}, Ligo;->b(Liem;Liez;)V
-
-    sget-object v3, Liem;->a:Liem;
-
-    invoke-virtual {v2, v3}, Ligo;->c(Liem;)V
-
-    sget-object v3, Liem;->A:Liem;
-
-    invoke-virtual {v2, v3}, Ligo;->c(Liem;)V
-
-    sget-object v3, Liem;->B:Liem;
-
-    new-instance v4, Lier;
-
-    invoke-direct {v4, v0, v5}, Lier;-><init>(Life;I)V
-
-    invoke-virtual {v2, v3, v4}, Ligo;->b(Liem;Liez;)V
-
-    sget-object v3, Liem;->C:Liem;
-
-    new-instance v4, Lier;
-
-    invoke-direct {v4, v0, v5}, Lier;-><init>(Life;I)V
-
-    invoke-virtual {v2, v3, v4}, Ligo;->b(Liem;Liez;)V
-
-    sget-object v3, Liem;->a:Liem;
-
-    new-instance v4, Lieu;
-
-    const/16 v7, 0xf
-
-    invoke-direct {v4, v0, v7}, Lieu;-><init>(Life;I)V
-
-    invoke-virtual {v2, v3, v4}, Ligo;->b(Liem;Liez;)V
-
-    sget-object v3, Liem;->e:Liem;
-
-    new-instance v4, Lieu;
-
-    const/16 v7, 0x10
-
-    invoke-direct {v4, v0, v7}, Lieu;-><init>(Life;I)V
-
-    invoke-virtual {v2, v3, v4}, Ligo;->b(Liem;Liez;)V
-
-    sget-object v3, Liem;->M:Liem;
-
-    new-instance v4, Lieu;
-
-    const/16 v7, 0x11
-
-    invoke-direct {v4, v0, v7}, Lieu;-><init>(Life;I)V
-
-    invoke-virtual {v2, v3, v4}, Ligo;->b(Liem;Liez;)V
-
-    sget-object v3, Liem;->c:Liem;
-
-    new-instance v4, Lieu;
-
-    invoke-direct {v4, v0, v7}, Lieu;-><init>(Life;I)V
-
-    invoke-virtual {v2, v3, v4}, Ligo;->b(Liem;Liez;)V
-
-    sget-object v3, Liem;->t:Liem;
-
-    new-instance v4, Lieu;
-
-    invoke-direct {v4, v0, v6}, Lieu;-><init>(Life;I)V
-
-    invoke-virtual {v2, v3, v4}, Ligo;->b(Liem;Liez;)V
-
-    sget-object v2, Liem;->B:Liem;
-
-    invoke-static {v2, v1}, Ljpw;->l(Liem;Ljava/util/List;)Ligo;
-
-    move-result-object v2
-
-    sget-object v3, Liem;->A:Liem;
-
-    new-instance v4, Lier;
-
-    const/16 v6, 0xd
-
-    invoke-direct {v4, v0, v6}, Lier;-><init>(Life;I)V
-
-    invoke-virtual {v2, v3, v4}, Ligo;->b(Liem;Liez;)V
-
-    sget-object v3, Liem;->H:Liem;
-
-    new-instance v4, Lieu;
-
-    const/4 v7, 0x0
-
-    invoke-direct {v4, v0, v7}, Lieu;-><init>(Life;I)V
-
-    invoke-virtual {v2, v3, v4}, Ligo;->b(Liem;Liez;)V
-
-    sget-object v3, Liem;->C:Liem;
-
-    new-instance v4, Lier;
-
-    invoke-direct {v4, v0, v6}, Lier;-><init>(Life;I)V
-
-    invoke-virtual {v2, v3, v4}, Ligo;->b(Liem;Liez;)V
-
-    new-instance v3, Lieu;
-
-    invoke-direct {v3, v0, v11}, Lieu;-><init>(Life;I)V
-
-    invoke-virtual {v2, v3}, Ligo;->a(Liez;)V
-
-    sget-object v2, Liem;->C:Liem;
-
-    invoke-static {v2, v1}, Ljpw;->l(Liem;Ljava/util/List;)Ligo;
-
-    move-result-object v2
-
-    sget-object v3, Liem;->A:Liem;
-
-    new-instance v4, Lier;
-
-    const/16 v6, 0xd
-
-    invoke-direct {v4, v0, v6}, Lier;-><init>(Life;I)V
-
-    invoke-virtual {v2, v3, v4}, Ligo;->b(Liem;Liez;)V
-
-    new-instance v3, Lieu;
-
-    invoke-direct {v3, v0, v11}, Lieu;-><init>(Life;I)V
-
-    invoke-virtual {v2, v3}, Ligo;->a(Liez;)V
-
-    sget-object v2, Liem;->j:Liem;
-
-    invoke-static {v2, v1}, Ljpw;->l(Liem;Ljava/util/List;)Ligo;
-
-    move-result-object v2
-
-    sget-object v3, Liem;->e:Liem;
-
-    new-instance v4, Lieu;
-
-    const/16 v6, 0x14
-
-    invoke-direct {v4, v0, v6}, Lieu;-><init>(Life;I)V
-
-    invoke-virtual {v2, v3, v4}, Ligo;->b(Liem;Liez;)V
-
-    sget-object v3, Liem;->a:Liem;
-
-    new-instance v4, Liev;
-
-    const/4 v6, 0x1
-
-    invoke-direct {v4, v0, v6}, Liev;-><init>(Life;I)V
-
-    invoke-virtual {v2, v3, v4}, Ligo;->b(Liem;Liez;)V
-
-    sget-object v3, Liem;->L:Liem;
-
-    new-instance v4, Liev;
-
-    invoke-direct {v4, v0, v6}, Liev;-><init>(Life;I)V
-
-    invoke-virtual {v2, v3, v4}, Ligo;->b(Liem;Liez;)V
-
-    sget-object v3, Liem;->t:Liem;
-
-    new-instance v4, Liev;
-
-    invoke-direct {v4, v0, v6}, Liev;-><init>(Life;I)V
-
-    invoke-virtual {v2, v3, v4}, Ligo;->b(Liem;Liez;)V
-
-    sget-object v3, Liem;->h:Liem;
-
-    new-instance v4, Liev;
-
-    const/4 v6, 0x0
-
-    invoke-direct {v4, v0, v6}, Liev;-><init>(Life;I)V
-
-    invoke-virtual {v2, v3, v4}, Ligo;->b(Liem;Liez;)V
-
-    sget-object v2, Liem;->g:Liem;
-
-    invoke-static {v2, v1}, Ljpw;->l(Liem;Ljava/util/List;)Ligo;
-
-    move-result-object v2
-
-    sget-object v3, Liem;->c:Liem;
-
-    new-instance v4, Liev;
-
-    invoke-direct {v4, v0, v12}, Liev;-><init>(Life;I)V
-
-    invoke-virtual {v2, v3, v4}, Ligo;->b(Liem;Liez;)V
-
-    sget-object v3, Liem;->e:Liem;
-
-    new-instance v4, Liev;
-
-    const/4 v6, 0x3
-
-    invoke-direct {v4, v0, v6}, Liev;-><init>(Life;I)V
-
-    invoke-virtual {v2, v3, v4}, Ligo;->b(Liem;Liez;)V
-
-    sget-object v3, Liem;->M:Liem;
-
-    new-instance v4, Liev;
-
-    invoke-direct {v4, v0, v12}, Liev;-><init>(Life;I)V
-
-    invoke-virtual {v2, v3, v4}, Ligo;->b(Liem;Liez;)V
-
-    sget-object v3, Liem;->a:Liem;
-
-    new-instance v4, Liev;
-
-    invoke-direct {v4, v0, v5}, Liev;-><init>(Life;I)V
-
-    invoke-virtual {v2, v3, v4}, Ligo;->b(Liem;Liez;)V
-
-    sget-object v3, Liem;->t:Liem;
-
-    new-instance v4, Liev;
-
-    invoke-direct {v4, v0, v5}, Liev;-><init>(Life;I)V
-
-    invoke-virtual {v2, v3, v4}, Ligo;->b(Liem;Liez;)V
-
-    sget-object v3, Liem;->n:Liem;
-
-    new-instance v4, Lier;
-
-    const/16 v6, 0x11
-
-    invoke-direct {v4, v0, v6}, Lier;-><init>(Life;I)V
-
-    invoke-virtual {v2, v3, v4}, Ligo;->b(Liem;Liez;)V
-
-    sget-object v3, Liem;->q:Liem;
-
-    new-instance v4, Liev;
-
-    invoke-direct {v4, v0, v5}, Liev;-><init>(Life;I)V
-
-    invoke-virtual {v2, v3, v4}, Ligo;->b(Liem;Liez;)V
-
-    sget-object v3, Liem;->A:Liem;
-
-    new-instance v4, Liev;
-
-    invoke-direct {v4, v0, v5}, Liev;-><init>(Life;I)V
-
-    invoke-virtual {v2, v3, v4}, Ligo;->b(Liem;Liez;)V
-
-    sget-object v2, Liem;->i:Liem;
-
-    invoke-static {v2, v1}, Ljpw;->l(Liem;Ljava/util/List;)Ligo;
-
-    move-result-object v2
-
-    sget-object v3, Liem;->j:Liem;
-
-    new-instance v4, Liev;
-
-    const/4 v5, 0x6
-
-    invoke-direct {v4, v0, v5}, Liev;-><init>(Life;I)V
-
-    invoke-virtual {v2, v3, v4}, Ligo;->b(Liem;Liez;)V
-
-    sget-object v3, Liem;->a:Liem;
-
-    new-instance v4, Liev;
-
-    invoke-direct {v4, v0, v10}, Liev;-><init>(Life;I)V
-
-    invoke-virtual {v2, v3, v4}, Ligo;->b(Liem;Liez;)V
-
-    sget-object v3, Liem;->L:Liem;
-
-    new-instance v4, Liev;
-
-    invoke-direct {v4, v0, v10}, Liev;-><init>(Life;I)V
-
-    invoke-virtual {v2, v3, v4}, Ligo;->b(Liem;Liez;)V
-
-    sget-object v2, Liem;->H:Liem;
-
-    invoke-static {v2, v1}, Ljpw;->l(Liem;Ljava/util/List;)Ligo;
-
-    move-result-object v2
-
-    sget-object v3, Liem;->a:Liem;
-
-    new-instance v4, Liev;
-
-    invoke-direct {v4, v0, v13}, Liev;-><init>(Life;I)V
-
-    invoke-virtual {v2, v3, v4}, Ligo;->b(Liem;Liez;)V
-
-    sget-object v3, Liem;->I:Liem;
-
-    new-instance v4, Liev;
-
-    const/16 v5, 0x9
-
-    invoke-direct {v4, v0, v5}, Liev;-><init>(Life;I)V
-
-    invoke-virtual {v2, v3, v4}, Ligo;->b(Liem;Liez;)V
-
-    sget-object v3, Liem;->n:Liem;
-
-    new-instance v4, Liev;
-
-    invoke-direct {v4, v0, v13}, Liev;-><init>(Life;I)V
-
-    invoke-virtual {v2, v3, v4}, Ligo;->b(Liem;Liez;)V
-
-    sget-object v2, Liem;->I:Liem;
-
-    invoke-static {v2, v1}, Ljpw;->l(Liem;Ljava/util/List;)Ligo;
-
-    move-result-object v2
-
-    sget-object v3, Liem;->a:Liem;
-
-    new-instance v4, Liev;
-
-    invoke-direct {v4, v0, v9}, Liev;-><init>(Life;I)V
-
-    invoke-virtual {v2, v3, v4}, Ligo;->b(Liem;Liez;)V
-
-    sget-object v3, Liem;->n:Liem;
-
-    new-instance v4, Liev;
-
-    invoke-direct {v4, v0, v9}, Liev;-><init>(Life;I)V
-
-    invoke-virtual {v2, v3, v4}, Ligo;->b(Liem;Liez;)V
-
-    new-instance v2, Ljava/util/EnumMap;
-
-    const-class v3, Liem;
-
-    invoke-direct {v2, v3}, Ljava/util/EnumMap;-><init>(Ljava/lang/Class;)V
-
-    invoke-interface {v1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
-
-    move-result-object v1
+    invoke-virtual {v0}, Landroid/animation/AnimatorSet;->cancel()V
 
     :cond_0
-    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
+    new-instance v0, Landroid/animation/AnimatorSet;
 
-    move-result v3
+    invoke-direct {v0}, Landroid/animation/AnimatorSet;-><init>()V
 
-    if-eqz v3, :cond_2
+    iput-object v0, p0, Life;->s:Landroid/animation/AnimatorSet;
 
-    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-virtual {v0, p1}, Landroid/animation/AnimatorSet;->playTogether(Ljava/util/Collection;)V
 
-    move-result-object v3
+    iget-object p1, p0, Life;->s:Landroid/animation/AnimatorSet;
 
-    check-cast v3, Ligo;
-
-    iget-object v4, v3, Ligo;->a:Ljava/lang/Object;
-
-    invoke-interface {v4}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
-
-    move-result-object v4
-
-    :cond_1
-    invoke-interface {v4}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v5
-
-    if-eqz v5, :cond_0
-
-    invoke-interface {v4}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v5
-
-    check-cast v5, Liem;
-
-    sget-object v6, Lhfj;->t:Lhfj;
-
-    invoke-static {v2, v5, v6}, Lj$/util/Map$-EL;->computeIfAbsent(Ljava/util/Map;Ljava/lang/Object;Ljava/util/function/Function;)Ljava/lang/Object;
-
-    move-result-object v5
-
-    check-cast v5, Ljava/util/EnumMap;
-
-    iget-object v6, v3, Ligo;->b:Ljava/lang/Object;
-
-    invoke-interface {v6}, Ljava/util/Map;->entrySet()Ljava/util/Set;
-
-    move-result-object v6
-
-    invoke-interface {v6}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
-
-    move-result-object v6
-
-    :goto_0
-    invoke-interface {v6}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v7
-
-    if-eqz v7, :cond_1
-
-    invoke-interface {v6}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v7
-
-    check-cast v7, Ljava/util/Map$Entry;
-
-    invoke-interface {v7}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
-
-    move-result-object v8
-
-    check-cast v8, Liem;
-
-    invoke-interface {v7}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
-
-    move-result-object v7
-
-    check-cast v7, Liez;
-
-    invoke-virtual {v5, v8, v7}, Ljava/util/EnumMap;->put(Ljava/lang/Enum;Ljava/lang/Object;)Ljava/lang/Object;
-
-    goto :goto_0
-
-    :cond_2
-    invoke-static {v2}, Llyh;->s(Ljava/util/Map;)Lmwa;
-
-    move-result-object v1
-
-    iput-object v1, v0, Life;->x:Ljava/util/Map;
+    invoke-virtual {p1}, Landroid/animation/AnimatorSet;->start()V
 
     return-void
-.end method
-
-.method public static d(Lifr;Liem;)Lifr;
-    .locals 0
-
-    invoke-virtual {p0}, Lifr;->c()Lifq;
-
-    move-result-object p0
-
-    invoke-virtual {p0, p1}, Lifq;->k(Liem;)V
-
-    invoke-virtual {p0}, Lifq;->a()Lifr;
-
-    move-result-object p0
-
-    return-object p0
-.end method
-
-.method private final k(IILjava/util/function/BiFunction;)Landroid/animation/ValueAnimator;
-    .locals 1
-
-    new-instance v0, Liet;
-
-    invoke-direct {v0, p0, p3, p1, p2}, Liet;-><init>(Life;Ljava/util/function/BiFunction;II)V
-
-    const/4 p1, 0x0
-
-    const/4 p2, 0x1
-
-    invoke-direct {p0, p1, p2, v0}, Life;->l(IILandroid/animation/ValueAnimator$AnimatorUpdateListener;)Landroid/animation/ValueAnimator;
-
-    move-result-object p1
-
-    return-object p1
-.end method
-
-.method private final l(IILandroid/animation/ValueAnimator$AnimatorUpdateListener;)Landroid/animation/ValueAnimator;
-    .locals 2
-
-    filled-new-array {p1, p2}, [I
-
-    move-result-object p1
-
-    invoke-static {p1}, Landroid/animation/ValueAnimator;->ofInt([I)Landroid/animation/ValueAnimator;
-
-    move-result-object p1
-
-    const-wide/16 v0, 0x28
-
-    invoke-virtual {p1, v0, v1}, Landroid/animation/ValueAnimator;->setDuration(J)Landroid/animation/ValueAnimator;
-
-    move-result-object p1
-
-    invoke-virtual {p1, p3}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
-
-    iget-object p2, p0, Life;->w:Landroid/view/animation/Interpolator;
-
-    invoke-virtual {p1, p2}, Landroid/animation/ValueAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
-
-    return-object p1
-.end method
-
-.method private final m(IILjava/util/function/BiFunction;)Landroid/animation/ValueAnimator;
-    .locals 2
-
-    new-instance v0, Lies;
-
-    const/4 v1, 0x0
-
-    invoke-direct {v0, p0, p3, v1}, Lies;-><init>(Life;Ljava/util/function/BiFunction;I)V
-
-    invoke-direct {p0, p1, p2, v0}, Life;->l(IILandroid/animation/ValueAnimator$AnimatorUpdateListener;)Landroid/animation/ValueAnimator;
-
-    move-result-object p1
-
-    return-object p1
 .end method
 
 
 # virtual methods
-.method public final a(Lifr;Lifr;)Landroid/animation/AnimatorSet;
-    .locals 24
+.method public final a(Ljava/util/ArrayList;)Lpht;
+    .locals 4
 
-    move-object/from16 v0, p0
+    invoke-static {}, Lpih;->f()Lpih;
 
-    move-object/from16 v1, p1
+    move-result-object v0
 
-    move-object/from16 v2, p2
+    iget v1, p0, Life;->l:I
 
-    iget v3, v1, Lifr;->d:I
+    if-eqz v1, :cond_1
 
-    iget v4, v2, Lifr;->d:I
+    const/4 v2, 0x1
 
-    sget-object v5, Lezv;->p:Lezv;
+    if-eq v1, v2, :cond_0
 
-    invoke-direct {v0, v3, v4, v5}, Life;->m(IILjava/util/function/BiFunction;)Landroid/animation/ValueAnimator;
+    invoke-static {v2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
-    move-result-object v3
+    move-result-object p1
 
-    iput-object v3, v0, Life;->c:Landroid/animation/ValueAnimator;
+    invoke-virtual {v0, p1}, Lpih;->o(Ljava/lang/Object;)Z
 
-    iget v3, v1, Lifr;->g:I
+    return-object v0
 
-    iget v4, v2, Lifr;->g:I
+    :cond_0
+    invoke-static {}, Lpih;->f()Lpih;
 
-    sget-object v5, Lezv;->g:Lezv;
+    move-result-object v1
 
-    invoke-direct {v0, v3, v4, v5}, Life;->m(IILjava/util/function/BiFunction;)Landroid/animation/ValueAnimator;
+    new-instance v2, Liez;
 
-    move-result-object v3
+    invoke-direct {v2, p0, p1, v1}, Liez;-><init>(Life;Ljava/util/ArrayList;Lpih;)V
 
-    iput-object v3, v0, Life;->d:Landroid/animation/ValueAnimator;
+    iget-object p1, p0, Life;->n:Ljava/util/concurrent/Executor;
 
-    iget v3, v1, Lifr;->i:I
+    const-string v3, "ssui"
 
-    iget v4, v2, Lifr;->i:I
+    invoke-static {v2, p1, v3}, Laas;->e(Ljava/lang/Runnable;Ljava/util/concurrent/Executor;Ljava/lang/String;)Lbvv;
 
-    sget-object v5, Lezv;->h:Lezv;
+    move-result-object p1
 
-    invoke-direct {v0, v3, v4, v5}, Life;->m(IILjava/util/function/BiFunction;)Landroid/animation/ValueAnimator;
+    invoke-interface {p1}, Lbvv;->fz()Lpht;
 
-    move-result-object v3
+    new-instance p1, Liey;
 
-    iput-object v3, v0, Life;->e:Landroid/animation/ValueAnimator;
+    invoke-direct {p1, p0, v0}, Liey;-><init>(Life;Lpih;)V
 
-    iget v3, v1, Lifr;->o:I
+    invoke-static {}, Lmip;->bS()Ljava/util/concurrent/Executor;
 
-    iget v4, v2, Lifr;->o:I
+    move-result-object v2
 
-    sget-object v5, Lezv;->i:Lezv;
+    invoke-static {v1, p1, v2}, Lmip;->ca(Lpht;Llht;Ljava/util/concurrent/Executor;)V
 
-    invoke-direct {v0, v3, v4, v5}, Life;->m(IILjava/util/function/BiFunction;)Landroid/animation/ValueAnimator;
+    return-object v0
 
-    move-result-object v3
+    :cond_1
+    const/4 p1, 0x0
 
-    iput-object v3, v0, Life;->g:Landroid/animation/ValueAnimator;
+    throw p1
+.end method
 
-    iget v3, v1, Lifr;->f:I
+.method public final b()Lpht;
+    .locals 9
 
-    iget v4, v2, Lifr;->f:I
+    invoke-static {}, Lpih;->f()Lpih;
 
-    sget-object v5, Lezv;->j:Lezv;
+    move-result-object v0
 
-    invoke-direct {v0, v3, v4, v5}, Life;->k(IILjava/util/function/BiFunction;)Landroid/animation/ValueAnimator;
+    iget v1, p0, Life;->l:I
 
-    move-result-object v3
+    if-eqz v1, :cond_2
 
-    iput-object v3, v0, Life;->h:Landroid/animation/ValueAnimator;
+    const/4 v2, 0x2
 
-    iget v3, v1, Lifr;->e:I
+    if-ne v1, v2, :cond_0
 
-    iget v4, v2, Lifr;->e:I
+    sget-object v1, Ljava/lang/Boolean;->FALSE:Ljava/lang/Boolean;
 
-    sget-object v5, Lezv;->k:Lezv;
+    invoke-virtual {v0, v1}, Lpih;->o(Ljava/lang/Object;)Z
 
-    invoke-direct {v0, v3, v4, v5}, Life;->m(IILjava/util/function/BiFunction;)Landroid/animation/ValueAnimator;
+    return-object v0
 
-    move-result-object v3
+    :cond_0
+    iput v2, p0, Life;->l:I
 
-    iput-object v3, v0, Life;->f:Landroid/animation/ValueAnimator;
+    iget-object v1, p0, Life;->u:Lief;
 
-    iget v3, v1, Lifr;->q:I
+    iget-object v3, v1, Lief;->a:Landroid/graphics/drawable/TransitionDrawable;
 
-    iget v4, v2, Lifr;->q:I
+    invoke-virtual {v3}, Landroid/graphics/drawable/TransitionDrawable;->resetTransition()V
 
-    sget-object v5, Lezv;->l:Lezv;
+    iget-object v3, v1, Lief;->b:Landroid/view/View$OnClickListener;
 
-    invoke-direct {v0, v3, v4, v5}, Life;->m(IILjava/util/function/BiFunction;)Landroid/animation/ValueAnimator;
+    invoke-virtual {v1, v3}, Lief;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    move-result-object v3
-
-    iput-object v3, v0, Life;->i:Landroid/animation/ValueAnimator;
-
-    iget v3, v1, Lifr;->h:I
-
-    iget v4, v2, Lifr;->h:I
-
-    sget-object v5, Lezv;->m:Lezv;
-
-    invoke-direct {v0, v3, v4, v5}, Life;->k(IILjava/util/function/BiFunction;)Landroid/animation/ValueAnimator;
+    invoke-virtual {v1}, Lief;->getContext()Landroid/content/Context;
 
     move-result-object v3
 
-    iput-object v3, v0, Life;->j:Landroid/animation/ValueAnimator;
+    const v4, 0x7f14003b
 
-    iget v3, v1, Lifr;->r:I
-
-    iget v4, v2, Lifr;->r:I
-
-    sget-object v5, Lezv;->n:Lezv;
-
-    invoke-direct {v0, v3, v4, v5}, Life;->m(IILjava/util/function/BiFunction;)Landroid/animation/ValueAnimator;
+    invoke-virtual {v3, v4}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
     move-result-object v3
 
-    iput-object v3, v0, Life;->k:Landroid/animation/ValueAnimator;
+    invoke-virtual {v1, v3}, Lief;->setContentDescription(Ljava/lang/CharSequence;)V
 
-    iget v3, v1, Lifr;->s:I
+    iget-object v1, p0, Life;->o:Lddf;
 
-    iget v4, v2, Lifr;->s:I
+    sget-object v3, Lddl;->aI:Lddg;
 
-    sget-object v5, Lezv;->o:Lezv;
+    invoke-interface {v1, v3}, Lddf;->k(Lddg;)Z
 
-    invoke-direct {v0, v3, v4, v5}, Life;->k(IILjava/util/function/BiFunction;)Landroid/animation/ValueAnimator;
+    move-result v1
 
-    move-result-object v3
+    if-eqz v1, :cond_1
 
-    iput-object v3, v0, Life;->l:Landroid/animation/ValueAnimator;
+    iget-object v1, p0, Life;->d:Lhuf;
 
-    iget v3, v1, Lifr;->j:I
+    sget-object v3, Lhtu;->B:Lhuk;
 
-    iget v4, v2, Lifr;->j:I
+    invoke-interface {v1, v3}, Lhuf;->c(Lhts;)Ljava/lang/Object;
 
-    sget-object v5, Liew;->b:Liew;
+    move-result-object v1
 
-    invoke-direct {v0, v3, v4, v5}, Life;->m(IILjava/util/function/BiFunction;)Landroid/animation/ValueAnimator;
+    check-cast v1, Ljava/lang/Boolean;
 
-    move-result-object v3
+    invoke-virtual {v1}, Ljava/lang/Boolean;->booleanValue()Z
 
-    iput-object v3, v0, Life;->n:Landroid/animation/ValueAnimator;
+    move-result v1
 
-    iget v3, v1, Lifr;->k:I
+    if-nez v1, :cond_1
 
-    iget v4, v2, Lifr;->k:I
+    iget-boolean v1, p0, Life;->a:Z
 
-    sget-object v5, Liew;->a:Liew;
+    if-nez v1, :cond_1
 
-    invoke-direct {v0, v3, v4, v5}, Life;->m(IILjava/util/function/BiFunction;)Landroid/animation/ValueAnimator;
+    iget-object v1, p0, Life;->j:Lies;
 
-    move-result-object v3
+    new-instance v3, Liex;
 
-    iput-object v3, v0, Life;->m:Landroid/animation/ValueAnimator;
+    invoke-direct {v3, v0}, Liex;-><init>(Lpih;)V
 
-    iget v3, v1, Lifr;->t:I
-
-    iget v4, v2, Lifr;->t:I
-
-    sget-object v5, Liew;->c:Liew;
-
-    invoke-direct {v0, v3, v4, v5}, Life;->m(IILjava/util/function/BiFunction;)Landroid/animation/ValueAnimator;
-
-    move-result-object v3
-
-    iput-object v3, v0, Life;->o:Landroid/animation/ValueAnimator;
-
-    iget v3, v1, Lifr;->u:I
-
-    iget v4, v2, Lifr;->u:I
-
-    sget-object v5, Liew;->d:Liew;
-
-    invoke-direct {v0, v3, v4, v5}, Life;->m(IILjava/util/function/BiFunction;)Landroid/animation/ValueAnimator;
-
-    move-result-object v3
-
-    iput-object v3, v0, Life;->v:Landroid/animation/ValueAnimator;
-
-    iget v3, v1, Lifr;->x:I
-
-    iget v4, v2, Lifr;->x:I
-
-    sget-object v5, Lezv;->c:Lezv;
-
-    invoke-direct {v0, v3, v4, v5}, Life;->m(IILjava/util/function/BiFunction;)Landroid/animation/ValueAnimator;
-
-    move-result-object v3
-
-    iget v4, v1, Lifr;->y:I
-
-    iget v5, v2, Lifr;->y:I
-
-    sget-object v6, Lezv;->d:Lezv;
-
-    invoke-direct {v0, v4, v5, v6}, Life;->m(IILjava/util/function/BiFunction;)Landroid/animation/ValueAnimator;
+    invoke-virtual {v1}, Lies;->d()Landroid/animation/Animator;
 
     move-result-object v4
 
-    iget v5, v1, Lifr;->z:I
+    new-array v5, v2, [I
 
-    iget v6, v2, Lifr;->z:I
+    const/4 v6, 0x0
 
-    sget-object v7, Lezv;->e:Lezv;
+    aput v6, v5, v6
 
-    invoke-direct {v0, v5, v6, v7}, Life;->m(IILjava/util/function/BiFunction;)Landroid/animation/ValueAnimator;
+    const/4 v6, 0x1
 
-    move-result-object v5
+    invoke-virtual {v1}, Lies;->c()I
 
-    iget v6, v1, Lifr;->A:I
+    move-result v7
 
-    iget v7, v2, Lifr;->A:I
+    const v8, 0x7f070549
 
-    sget-object v8, Lezv;->f:Lezv;
+    invoke-virtual {v1, v8}, Lies;->a(I)I
 
-    invoke-direct {v0, v6, v7, v8}, Life;->m(IILjava/util/function/BiFunction;)Landroid/animation/ValueAnimator;
+    move-result v8
 
-    move-result-object v6
+    add-int/2addr v7, v8
 
-    new-instance v7, Liba;
+    aput v7, v5, v6
 
-    const/4 v8, 0x7
+    move-object v6, v4
 
-    invoke-direct {v7, v0, v8}, Liba;-><init>(Life;I)V
+    check-cast v6, Landroid/animation/ValueAnimator;
 
-    const/4 v9, 0x0
+    invoke-virtual {v6, v5}, Landroid/animation/ValueAnimator;->setIntValues([I)V
 
-    const/4 v10, 0x1
+    new-instance v5, Landroid/view/animation/DecelerateInterpolator;
 
-    invoke-direct {v0, v9, v10, v7}, Life;->l(IILandroid/animation/ValueAnimator$AnimatorUpdateListener;)Landroid/animation/ValueAnimator;
+    invoke-direct {v5}, Landroid/view/animation/DecelerateInterpolator;-><init>()V
 
-    move-result-object v11
+    invoke-virtual {v6, v5}, Landroid/animation/ValueAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    iput-object v11, v0, Life;->p:Landroid/animation/ValueAnimator;
+    new-instance v5, Liel;
 
-    invoke-virtual {v11}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    invoke-direct {v5, v1, v3}, Liel;-><init>(Lies;Lacr;)V
 
-    iget-object v12, v0, Life;->e:Landroid/animation/ValueAnimator;
-
-    invoke-virtual {v12}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    iget-object v13, v0, Life;->c:Landroid/animation/ValueAnimator;
-
-    invoke-virtual {v13}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    iget-object v14, v0, Life;->f:Landroid/animation/ValueAnimator;
-
-    invoke-virtual {v14}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    iget-object v15, v0, Life;->d:Landroid/animation/ValueAnimator;
-
-    invoke-virtual {v15}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    iget-object v7, v0, Life;->g:Landroid/animation/ValueAnimator;
-
-    invoke-virtual {v7}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    iget-object v10, v0, Life;->h:Landroid/animation/ValueAnimator;
-
-    invoke-virtual {v10}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    iget-object v9, v0, Life;->i:Landroid/animation/ValueAnimator;
-
-    invoke-virtual {v9}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    iget-object v8, v0, Life;->k:Landroid/animation/ValueAnimator;
-
-    invoke-virtual {v8}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    iget-object v2, v0, Life;->l:Landroid/animation/ValueAnimator;
-
-    invoke-virtual {v2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    iget-object v1, v0, Life;->j:Landroid/animation/ValueAnimator;
-
-    invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    move-object/from16 v21, v1
-
-    iget-object v1, v0, Life;->n:Landroid/animation/ValueAnimator;
-
-    invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    move-object/from16 v22, v1
-
-    move-object/from16 v20, v2
-
-    const/4 v1, 0x7
-
-    new-array v2, v1, [Landroid/animation/Animator;
-
-    iget-object v1, v0, Life;->m:Landroid/animation/ValueAnimator;
-
-    invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    const/16 v17, 0x0
-
-    aput-object v1, v2, v17
-
-    iget-object v1, v0, Life;->o:Landroid/animation/ValueAnimator;
-
-    invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    const/16 v16, 0x1
-
-    aput-object v1, v2, v16
-
-    iget-object v1, v0, Life;->v:Landroid/animation/ValueAnimator;
-
-    invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    const/16 v16, 0x2
-
-    aput-object v1, v2, v16
-
-    invoke-virtual {v3}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    const/4 v1, 0x3
-
-    aput-object v3, v2, v1
-
-    invoke-virtual {v4}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    const/4 v1, 0x4
-
-    aput-object v4, v2, v1
-
-    invoke-virtual {v5}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    const/4 v1, 0x5
-
-    aput-object v5, v2, v1
-
-    invoke-virtual {v6}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    const/4 v1, 0x6
-
-    aput-object v6, v2, v1
-
-    move-object/from16 v16, v7
-
-    move-object/from16 v17, v10
-
-    move-object/from16 v18, v9
-
-    move-object/from16 v19, v8
-
-    move-object/from16 v23, v2
-
-    invoke-static/range {v11 .. v23}, Lmvv;->q(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;[Ljava/lang/Object;)Lmvv;
+    invoke-static {v5}, Lmip;->ev(Lj$/util/function/Consumer;)Landroid/animation/Animator$AnimatorListener;
 
     move-result-object v1
 
-    iput-object v1, v0, Life;->q:Ljava/util/List;
-
-    iget-object v1, v0, Life;->x:Ljava/util/Map;
-
-    move-object/from16 v2, p1
-
-    iget-object v3, v2, Lifr;->v:Liem;
-
-    sget-object v4, Lmyz;->a:Lmwa;
-
-    invoke-static {v1, v3, v4}, Lj$/util/Map$-EL;->getOrDefault(Ljava/util/Map;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Ljava/util/Map;
-
-    move-object/from16 v3, p2
-
-    iget-object v4, v3, Lifr;->v:Liem;
-
-    const/4 v5, 0x0
-
-    invoke-static {v1, v4, v5}, Lj$/util/Map$-EL;->getOrDefault(Ljava/util/Map;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Liez;
-
-    if-eqz v1, :cond_0
-
-    iget-object v4, v2, Lifr;->v:Liem;
-
-    iget-object v4, v3, Lifr;->v:Liem;
-
-    invoke-interface {v1, v2, v3}, Liez;->accept(Ljava/lang/Object;Ljava/lang/Object;)V
+    invoke-virtual {v6, v1}, Landroid/animation/ValueAnimator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
     goto :goto_0
 
-    :cond_0
-    sget-object v1, Life;->u:Lnak;
+    :cond_1
+    iget-object v1, p0, Life;->j:Lies;
 
-    invoke-virtual {v1}, Lnaf;->c()Lnaz;
+    invoke-virtual {v1}, Lies;->d()Landroid/animation/Animator;
+
+    move-result-object v4
+
+    new-instance v1, Lieu;
+
+    invoke-direct {v1, v0}, Lieu;-><init>(Lpih;)V
+
+    invoke-static {v1}, Lmip;->ev(Lj$/util/function/Consumer;)Landroid/animation/Animator$AnimatorListener;
 
     move-result-object v1
 
-    check-cast v1, Lnah;
-
-    const/16 v4, 0x108b
-
-    invoke-interface {v1, v4}, Lnah;->G(I)Lnaz;
-
-    move-result-object v1
-
-    check-cast v1, Lnah;
-
-    iget-object v2, v2, Lifr;->v:Liem;
-
-    iget-object v4, v3, Lifr;->v:Liem;
-
-    const-string v5, "Unsupported transition from %s -> %s"
-
-    invoke-interface {v1, v5, v2, v4}, Lnah;->z(Ljava/lang/String;Ljava/lang/Object;Ljava/lang/Object;)V
+    invoke-virtual {v4, v1}, Landroid/animation/Animator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
     :goto_0
-    iget-object v1, v0, Life;->q:Ljava/util/List;
+    new-instance v1, Lifa;
+
+    invoke-direct {v1, p0, v2}, Lifa;-><init>(Life;I)V
+
+    invoke-static {v1}, Lmip;->ew(Lj$/util/function/Consumer;)Landroid/animation/Animator$AnimatorListener;
+
+    move-result-object v1
+
+    invoke-virtual {v4, v1}, Landroid/animation/Animator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
+
+    invoke-virtual {v4}, Landroid/animation/Animator;->start()V
+
+    return-object v0
+
+    :cond_2
+    const/4 v0, 0x0
+
+    throw v0
+.end method
+
+.method public final c(Z)V
+    .locals 9
+
+    iget v0, p0, Life;->l:I
+
+    const/4 v1, 0x0
+
+    if-eqz v0, :cond_9
+
+    const/4 v2, 0x1
+
+    if-ne v0, v2, :cond_0
+
+    return-void
+
+    :cond_0
+    iput v2, p0, Life;->l:I
+
+    iget-object v3, p0, Life;->m:Lcom/google/android/apps/camera/bottombar/BottomBarController;
+
+    const/4 v4, 0x0
+
+    invoke-virtual {v3, v4}, Lcom/google/android/apps/camera/bottombar/BottomBarController;->setSocialShareState(Z)V
+
+    const/high16 v3, 0x3f800000    # 1.0f
+
+    const/4 v5, 0x2
+
+    if-eqz p1, :cond_5
+
+    invoke-static {}, Loom;->e()Looh;
+
+    move-result-object p1
+
+    iget-object v6, p0, Life;->j:Lies;
+
+    new-array v7, v5, [I
+
+    invoke-virtual {v6}, Lies;->getHeight()I
+
+    move-result v8
+
+    aput v8, v7, v4
+
+    iget v8, v6, Lies;->f:I
+
+    if-eqz v8, :cond_4
+
+    if-ne v8, v5, :cond_1
+
+    invoke-virtual {v6}, Lies;->b()I
+
+    move-result v1
+
+    goto :goto_0
+
+    :cond_1
+    const/4 v1, 0x0
+
+    :goto_0
+    aput v1, v7, v2
+
+    invoke-static {v7}, Landroid/animation/ValueAnimator;->ofInt([I)Landroid/animation/ValueAnimator;
+
+    move-result-object v1
+
+    iget v7, v6, Lies;->f:I
+
+    if-ne v7, v2, :cond_2
+
+    sget-object v7, Ljur;->a:Lj$/time/Duration;
+
+    invoke-virtual {v7}, Lj$/time/Duration;->toMillis()J
+
+    move-result-wide v7
+
+    invoke-virtual {v1, v7, v8}, Landroid/animation/ValueAnimator;->setDuration(J)Landroid/animation/ValueAnimator;
+
+    goto :goto_1
+
+    :cond_2
+    iget-object v7, v6, Lies;->a:Lj$/time/Duration;
+
+    invoke-virtual {v7}, Lj$/time/Duration;->toMillis()J
+
+    move-result-wide v7
+
+    invoke-virtual {v1, v7, v8}, Landroid/animation/ValueAnimator;->setDuration(J)Landroid/animation/ValueAnimator;
+
+    :goto_1
+    new-instance v7, Lier;
+
+    invoke-direct {v7, v6, v2}, Lier;-><init>(Lies;I)V
+
+    invoke-static {v7}, Lmip;->ew(Lj$/util/function/Consumer;)Landroid/animation/Animator$AnimatorListener;
+
+    move-result-object v7
+
+    invoke-virtual {v1, v7}, Landroid/animation/ValueAnimator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
+
+    new-instance v7, Lier;
+
+    invoke-direct {v7, v6, v4}, Lier;-><init>(Lies;I)V
+
+    invoke-static {v7}, Lmip;->ev(Lj$/util/function/Consumer;)Landroid/animation/Animator$AnimatorListener;
+
+    move-result-object v7
+
+    invoke-virtual {v1, v7}, Landroid/animation/ValueAnimator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
+
+    new-instance v7, Liep;
+
+    invoke-direct {v7, v6, v2}, Liep;-><init>(Lies;I)V
+
+    invoke-virtual {v1, v7}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
+
+    invoke-virtual {p1, v1}, Looh;->g(Ljava/lang/Object;)V
+
+    iget-object v1, p0, Life;->j:Lies;
+
+    iget-object v1, v1, Lies;->b:Ljava/util/ArrayList;
 
     invoke-static {v1}, Lj$/util/Collection$-EL;->stream(Ljava/util/Collection;)Lj$/util/stream/Stream;
 
     move-result-object v1
 
-    sget-object v2, Lieq;->a:Lieq;
+    sget-object v6, Licd;->q:Licd;
 
-    invoke-interface {v1, v2}, Lj$/util/stream/Stream;->mapToLong(Ljava/util/function/ToLongFunction;)Lj$/util/stream/LongStream;
-
-    move-result-object v1
-
-    invoke-interface {v1}, Lj$/util/stream/LongStream;->max()Lj$/util/OptionalLong;
+    invoke-interface {v1, v6}, Lj$/util/stream/Stream;->map(Lj$/util/function/Function;)Lj$/util/stream/Stream;
 
     move-result-object v1
 
-    new-instance v2, Lfeo;
+    new-instance v6, Lifb;
 
-    const/4 v4, 0x7
+    invoke-direct {v6, p1}, Lifb;-><init>(Looh;)V
 
-    invoke-direct {v2, v0, v4}, Lfeo;-><init>(Life;I)V
+    invoke-interface {v1, v6}, Lj$/util/stream/Stream;->forEachOrdered(Lj$/util/function/Consumer;)V
 
-    invoke-virtual {v1, v2}, Lj$/util/OptionalLong;->orElseThrow(Ljava/util/function/Supplier;)J
+    const/4 v1, 0x3
 
-    move-result-wide v1
+    if-ne v0, v1, :cond_3
 
-    iget-object v4, v0, Life;->p:Landroid/animation/ValueAnimator;
+    iget-object v0, p0, Life;->r:Lifj;
 
-    invoke-virtual {v4, v1, v2}, Landroid/animation/ValueAnimator;->setDuration(J)Landroid/animation/ValueAnimator;
+    iget-object v1, v0, Lifj;->a:Lcom/google/android/apps/camera/bottombar/RoundedThumbnailView;
 
-    iget-object v1, v0, Life;->p:Landroid/animation/ValueAnimator;
+    invoke-virtual {v1, v4}, Lcom/google/android/apps/camera/bottombar/RoundedThumbnailView;->setVisibility(I)V
 
-    new-instance v2, Liey;
+    iget-object v1, v0, Lifj;->a:Lcom/google/android/apps/camera/bottombar/RoundedThumbnailView;
 
-    invoke-direct {v2, v0, v3}, Liey;-><init>(Life;Lifr;)V
+    new-array v6, v2, [Landroid/animation/PropertyValuesHolder;
 
-    invoke-virtual {v1, v2}, Landroid/animation/ValueAnimator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
+    sget-object v7, Landroid/view/View;->ALPHA:Landroid/util/Property;
 
-    new-instance v1, Landroid/animation/AnimatorSet;
+    new-array v5, v5, [F
 
-    invoke-direct {v1}, Landroid/animation/AnimatorSet;-><init>()V
+    iget-object v8, v0, Lifj;->a:Lcom/google/android/apps/camera/bottombar/RoundedThumbnailView;
 
-    iget-object v2, v0, Life;->q:Ljava/util/List;
+    invoke-virtual {v8}, Lcom/google/android/apps/camera/bottombar/RoundedThumbnailView;->getAlpha()F
 
-    invoke-virtual {v1, v2}, Landroid/animation/AnimatorSet;->playTogether(Ljava/util/Collection;)V
+    move-result v8
 
-    return-object v1
+    aput v8, v5, v4
+
+    aput v3, v5, v2
+
+    invoke-static {v7, v5}, Landroid/animation/PropertyValuesHolder;->ofFloat(Landroid/util/Property;[F)Landroid/animation/PropertyValuesHolder;
+
+    move-result-object v2
+
+    aput-object v2, v6, v4
+
+    invoke-static {v1, v6}, Landroid/animation/ObjectAnimator;->ofPropertyValuesHolder(Ljava/lang/Object;[Landroid/animation/PropertyValuesHolder;)Landroid/animation/ObjectAnimator;
+
+    move-result-object v1
+
+    iget-object v0, v0, Lifj;->b:Lj$/time/Duration;
+
+    invoke-virtual {v0}, Lj$/time/Duration;->toMillis()J
+
+    move-result-wide v2
+
+    invoke-virtual {v1, v2, v3}, Landroid/animation/ObjectAnimator;->setDuration(J)Landroid/animation/ObjectAnimator;
+
+    invoke-virtual {p1, v1}, Looh;->g(Ljava/lang/Object;)V
+
+    :cond_3
+    invoke-virtual {p1}, Looh;->f()Loom;
+
+    move-result-object p1
+
+    invoke-direct {p0, p1}, Life;->m(Loom;)V
+
+    return-void
+
+    :cond_4
+    throw v1
+
+    :cond_5
+    iget-object p1, p0, Life;->j:Lies;
+
+    const/16 v0, 0x8
+
+    invoke-virtual {p1, v0}, Lies;->setVisibility(I)V
+
+    invoke-virtual {p1, v4}, Lies;->f(Z)V
+
+    iget v0, p1, Lies;->f:I
+
+    if-eqz v0, :cond_8
+
+    if-ne v0, v5, :cond_6
+
+    invoke-virtual {p1}, Lies;->b()I
+
+    move-result v0
+
+    goto :goto_2
+
+    :cond_6
+    const/4 v0, 0x0
+
+    :goto_2
+    invoke-virtual {p1}, Lies;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
+
+    move-result-object v1
+
+    iput v0, v1, Landroid/view/ViewGroup$LayoutParams;->height:I
+
+    iget v0, p1, Lies;->f:I
+
+    if-ne v0, v2, :cond_7
+
+    const/4 v0, 0x0
+
+    invoke-virtual {p1, v0}, Lies;->setAlpha(F)V
+
+    :cond_7
+    invoke-virtual {p1, v1}, Lies;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
+
+    iget-object p1, p0, Life;->j:Lies;
+
+    iget-object p1, p1, Lies;->b:Ljava/util/ArrayList;
+
+    sget-object v0, Lgui;->b:Lgui;
+
+    invoke-static {p1, v0}, Lj$/util/Collection$-EL;->forEach(Ljava/util/Collection;Lj$/util/function/Consumer;)V
+
+    iget-object p1, p0, Life;->r:Lifj;
+
+    iget-object v0, p1, Lifj;->a:Lcom/google/android/apps/camera/bottombar/RoundedThumbnailView;
+
+    invoke-virtual {v0, v3}, Lcom/google/android/apps/camera/bottombar/RoundedThumbnailView;->setAlpha(F)V
+
+    iget-object p1, p1, Lifj;->a:Lcom/google/android/apps/camera/bottombar/RoundedThumbnailView;
+
+    invoke-virtual {p1, v4}, Lcom/google/android/apps/camera/bottombar/RoundedThumbnailView;->setVisibility(I)V
+
+    return-void
+
+    :cond_8
+    throw v1
+
+    :cond_9
+    throw v1
 .end method
 
-.method public final b(FI)Landroid/view/ViewPropertyAnimator;
-    .locals 3
+.method public final d(Landroid/view/View;)V
+    .locals 13
 
-    iget-object v0, p0, Life;->b:Lcom/google/android/apps/camera/ui/shutterbutton/ShutterButton;
-
-    invoke-virtual {v0}, Lcom/google/android/apps/camera/ui/shutterbutton/ShutterButton;->animate()Landroid/view/ViewPropertyAnimator;
-
-    move-result-object v0
-
-    int-to-long v1, p2
-
-    invoke-virtual {v0, v1, v2}, Landroid/view/ViewPropertyAnimator;->setDuration(J)Landroid/view/ViewPropertyAnimator;
-
-    iget-object p2, p0, Life;->w:Landroid/view/animation/Interpolator;
-
-    invoke-virtual {v0, p2}, Landroid/view/ViewPropertyAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)Landroid/view/ViewPropertyAnimator;
-
-    invoke-virtual {v0, p1}, Landroid/view/ViewPropertyAnimator;->scaleX(F)Landroid/view/ViewPropertyAnimator;
-
-    move-result-object p2
-
-    invoke-virtual {p2, p1}, Landroid/view/ViewPropertyAnimator;->scaleY(F)Landroid/view/ViewPropertyAnimator;
-
-    return-object v0
-.end method
-
-.method public final c(Landroid/animation/Animator;)Lifd;
-    .locals 1
+    iput-object p1, p0, Life;->v:Landroid/view/View;
 
     new-instance v0, Lifd;
 
-    invoke-direct {v0, p0, p1}, Lifd;-><init>(Life;Landroid/animation/Animator;)V
+    invoke-direct {v0, p0}, Lifd;-><init>(Life;)V
 
-    return-object v0
-.end method
+    new-instance v1, Landroid/view/GestureDetector;
 
-.method public final e(Lifr;)V
-    .locals 2
+    iget-object v2, p0, Life;->c:Landroid/content/Context;
 
-    iget-object v0, p0, Life;->g:Landroid/animation/ValueAnimator;
+    invoke-direct {v1, v2, v0}, Landroid/view/GestureDetector;-><init>(Landroid/content/Context;Landroid/view/GestureDetector$OnGestureListener;)V
 
-    invoke-virtual {p0, v0}, Life;->c(Landroid/animation/Animator;)Lifd;
+    iput-object v1, p0, Life;->f:Landroid/view/GestureDetector;
+
+    new-instance v0, Lifc;
+
+    iget-object v1, p0, Life;->c:Landroid/content/Context;
+
+    invoke-direct {v0, p0, v1}, Lifc;-><init>(Life;Landroid/content/Context;)V
+
+    iput-object v0, p0, Life;->u:Lief;
+
+    new-instance v1, Landroid/graphics/drawable/TransitionDrawable;
+
+    const/4 v2, 0x2
+
+    new-array v3, v2, [Landroid/graphics/drawable/Drawable;
+
+    const v4, 0x7f080677
+
+    invoke-virtual {v0, v4}, Lief;->a(I)Landroid/graphics/drawable/Drawable;
+
+    move-result-object v4
+
+    const/4 v5, 0x0
+
+    aput-object v4, v3, v5
+
+    const v4, 0x7f08066b
+
+    invoke-virtual {v0, v4}, Lief;->a(I)Landroid/graphics/drawable/Drawable;
+
+    move-result-object v4
+
+    const/4 v6, 0x1
+
+    aput-object v4, v3, v6
+
+    invoke-direct {v1, v3}, Landroid/graphics/drawable/TransitionDrawable;-><init>([Landroid/graphics/drawable/Drawable;)V
+
+    iput-object v1, v0, Lief;->a:Landroid/graphics/drawable/TransitionDrawable;
+
+    new-instance v1, Landroid/util/TypedValue;
+
+    invoke-direct {v1}, Landroid/util/TypedValue;-><init>()V
+
+    invoke-virtual {v0}, Lief;->getContext()Landroid/content/Context;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Landroid/content/Context;->getTheme()Landroid/content/res/Resources$Theme;
+
+    move-result-object v3
+
+    const v4, 0x101045c
+
+    invoke-virtual {v3, v4, v1, v6}, Landroid/content/res/Resources$Theme;->resolveAttribute(ILandroid/util/TypedValue;Z)Z
+
+    iget v1, v1, Landroid/util/TypedValue;->resourceId:I
+
+    invoke-virtual {v0, v1}, Lief;->setBackgroundResource(I)V
+
+    iget-object v1, v0, Lief;->a:Landroid/graphics/drawable/TransitionDrawable;
+
+    invoke-virtual {v0, v1}, Lief;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
+
+    iget-object v0, p0, Life;->u:Lief;
+
+    new-instance v1, Liew;
+
+    invoke-direct {v1, p0, v5}, Liew;-><init>(Life;I)V
+
+    invoke-virtual {v0, v1}, Lief;->setOnTouchListener(Landroid/view/View$OnTouchListener;)V
+
+    iget-object v0, p0, Life;->c:Landroid/content/Context;
+
+    invoke-virtual {v0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
 
-    const/16 v1, 0x1f4
+    const v1, 0x7f07054b
 
-    invoke-virtual {v0, v1}, Lifd;->d(I)V
+    invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
-    iget-object p1, p1, Lifr;->l:Lmqp;
+    move-result v0
 
-    invoke-virtual {v0, p1}, Lifd;->h(Lmqp;)V
+    invoke-virtual {p1}, Landroid/view/View;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Landroid/content/res/Resources;->getConfiguration()Landroid/content/res/Configuration;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Landroid/content/res/Configuration;->getLayoutDirection()I
+
+    move-result v3
+
+    if-ne v3, v6, :cond_0
+
+    const/4 v3, 0x0
+
+    goto :goto_0
+
+    :cond_0
+    iget-object v3, p0, Life;->c:Landroid/content/Context;
+
+    invoke-virtual {v3}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v3
+
+    const v4, 0x7f07054e
+
+    invoke-virtual {v3, v4}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
+
+    move-result v3
+
+    :goto_0
+    new-instance v4, Ljhm;
+
+    iget-object v7, p0, Life;->c:Landroid/content/Context;
+
+    iget-object v8, p0, Life;->u:Lief;
+
+    iget-object v9, p0, Life;->o:Lddf;
+
+    sget-object v10, Lddl;->ay:Lddg;
+
+    invoke-interface {v9, v10}, Lddf;->k(Lddg;)Z
+
+    move-result v9
+
+    invoke-direct {v4, v7, v8, v9}, Ljhm;-><init>(Landroid/content/Context;Landroid/view/View;Z)V
+
+    iput-object v4, p0, Life;->g:Ljhm;
+
+    add-int/2addr v0, v3
+
+    invoke-virtual {v4, v5, v5, v0}, Ljhm;->c(III)V
+
+    new-instance v0, Lies;
+
+    iget-object v3, p0, Life;->c:Landroid/content/Context;
+
+    iget-boolean v4, p0, Life;->a:Z
+
+    invoke-direct {v0, v3, v4}, Lies;-><init>(Landroid/content/Context;Z)V
+
+    iput-object v0, p0, Life;->j:Lies;
+
+    new-instance v3, Landroid/graphics/drawable/GradientDrawable;
+
+    invoke-direct {v3}, Landroid/graphics/drawable/GradientDrawable;-><init>()V
+
+    invoke-virtual {v3, v5}, Landroid/graphics/drawable/GradientDrawable;->setShape(I)V
+
+    invoke-virtual {v0}, Lies;->getContext()Landroid/content/Context;
+
+    move-result-object v4
+
+    invoke-virtual {v4}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v4
+
+    const v5, 0x7f06081d
+
+    const/4 v7, 0x0
+
+    invoke-virtual {v4, v5, v7}, Landroid/content/res/Resources;->getColor(ILandroid/content/res/Resources$Theme;)I
+
+    move-result v4
+
+    invoke-virtual {v3, v4}, Landroid/graphics/drawable/GradientDrawable;->setColor(I)V
+
+    iput-object v3, v0, Lies;->d:Landroid/graphics/drawable/GradientDrawable;
+
+    new-instance v3, Landroid/widget/LinearLayout$LayoutParams;
+
+    const v4, 0x7f070551
+
+    invoke-virtual {v0, v4}, Lies;->a(I)I
+
+    move-result v4
+
+    invoke-virtual {v0, v1}, Lies;->a(I)I
+
+    move-result v5
+
+    add-int/2addr v5, v5
+
+    add-int/2addr v4, v5
+
+    const/4 v5, -0x2
+
+    invoke-direct {v3, v4, v5}, Landroid/widget/LinearLayout$LayoutParams;-><init>(II)V
+
+    iput v6, v3, Landroid/widget/LinearLayout$LayoutParams;->gravity:I
+
+    invoke-virtual {v0, v6}, Lies;->setOrientation(I)V
+
+    invoke-virtual {v0, v3}, Lies;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
+
+    new-instance v3, Landroid/graphics/drawable/InsetDrawable;
+
+    iget-object v8, v0, Lies;->d:Landroid/graphics/drawable/GradientDrawable;
+
+    invoke-virtual {v0, v1}, Lies;->a(I)I
+
+    move-result v9
+
+    const/4 v10, 0x0
+
+    invoke-virtual {v0, v1}, Lies;->a(I)I
+
+    move-result v11
+
+    const/4 v12, 0x0
+
+    move-object v7, v3
+
+    invoke-direct/range {v7 .. v12}, Landroid/graphics/drawable/InsetDrawable;-><init>(Landroid/graphics/drawable/Drawable;IIII)V
+
+    invoke-virtual {v0, v3}, Lies;->setBackground(Landroid/graphics/drawable/Drawable;)V
+
+    const/16 v1, 0x30
+
+    invoke-virtual {v0, v1}, Lies;->setGravity(I)V
+
+    const/16 v1, 0x8
+
+    invoke-virtual {v0, v1}, Lies;->setVisibility(I)V
+
+    iget-object v0, p0, Life;->j:Lies;
+
+    iget-object v1, p0, Life;->u:Lief;
+
+    new-instance v3, Landroid/widget/LinearLayout$LayoutParams;
+
+    invoke-direct {v3, v5, v5}, Landroid/widget/LinearLayout$LayoutParams;-><init>(II)V
+
+    iput v6, v3, Landroid/widget/LinearLayout$LayoutParams;->gravity:I
+
+    iput-object v1, v0, Lies;->e:Lief;
+
+    iget-object v4, v0, Lies;->c:Lieh;
+
+    invoke-virtual {v4, v1}, Lieh;->a(Lieg;)V
+
+    invoke-virtual {v0, v1, v3}, Lies;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+
+    const v0, 0x7f0b02c7
+
+    invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+
+    move-result-object p1
+
+    check-cast p1, Landroid/widget/FrameLayout;
+
+    iput-object p1, p0, Life;->t:Landroid/widget/FrameLayout;
+
+    iget-object v0, p0, Life;->j:Lies;
+
+    invoke-virtual {p1, v0}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;)V
+
+    iget-object p1, p0, Life;->p:Lcom/google/android/apps/camera/bottombar/RoundedThumbnailView;
+
+    new-instance v0, Liew;
+
+    invoke-direct {v0, p0, v2}, Liew;-><init>(Life;I)V
+
+    invoke-virtual {p1, v0}, Lcom/google/android/apps/camera/bottombar/RoundedThumbnailView;->setOnTouchListener(Landroid/view/View$OnTouchListener;)V
 
     return-void
 .end method
 
-.method public final f(Lifr;)V
-    .locals 2
+.method public final e()V
+    .locals 3
 
-    iget-object v0, p0, Life;->h:Landroid/animation/ValueAnimator;
+    iget-object v0, p0, Life;->r:Lifj;
 
-    invoke-virtual {p0, v0}, Life;->c(Landroid/animation/Animator;)Lifd;
+    iget-object v1, p0, Life;->v:Landroid/view/View;
+
+    const v2, 0x7f0b02c8
+
+    invoke-virtual {v1, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+
+    move-result-object v1
+
+    check-cast v1, Landroid/support/constraint/ConstraintLayout;
+
+    invoke-virtual {v0, v1}, Lifj;->b(Landroid/support/constraint/ConstraintLayout;)V
+
+    return-void
+.end method
+
+.method public final f(Ljrz;)V
+    .locals 3
+
+    iput-object p1, p0, Life;->h:Ljrz;
+
+    iget-object v0, p0, Life;->r:Lifj;
+
+    iput-object p1, v0, Lifj;->c:Ljrz;
+
+    iget-object v1, v0, Lifj;->a:Lcom/google/android/apps/camera/bottombar/RoundedThumbnailView;
+
+    invoke-virtual {v1}, Lcom/google/android/apps/camera/bottombar/RoundedThumbnailView;->getParent()Landroid/view/ViewParent;
+
+    move-result-object v1
+
+    iget-object v2, v0, Lifj;->d:Landroid/support/constraint/ConstraintLayout;
+
+    if-ne v1, v2, :cond_0
+
+    iget-object v1, v0, Lifj;->a:Lcom/google/android/apps/camera/bottombar/RoundedThumbnailView;
+
+    invoke-virtual {v0, v1}, Lifj;->a(Landroid/view/View;)V
+
+    iget-object v0, v0, Lifj;->a:Lcom/google/android/apps/camera/bottombar/RoundedThumbnailView;
+
+    invoke-static {v0, p1}, Lmip;->et(Landroid/view/View;Ljrz;)V
+
+    :cond_0
+    iget-object v0, p0, Life;->j:Lies;
+
+    iget-object v0, v0, Lies;->b:Ljava/util/ArrayList;
+
+    invoke-static {v0}, Lj$/util/Collection$-EL;->stream(Ljava/util/Collection;)Lj$/util/stream/Stream;
 
     move-result-object v0
 
-    const/16 v1, 0x190
+    new-instance v1, Liem;
 
-    invoke-virtual {v0, v1}, Lifd;->d(I)V
+    const/4 v2, 0x0
 
-    iget-object v0, p0, Life;->c:Landroid/animation/ValueAnimator;
+    invoke-direct {v1, p1, v2}, Liem;-><init>(Ljrz;I)V
 
-    invoke-virtual {p0, v0}, Life;->c(Landroid/animation/Animator;)Lifd;
-
-    move-result-object v0
-
-    invoke-virtual {v0, v1}, Lifd;->d(I)V
-
-    iget-object v0, p0, Life;->g:Landroid/animation/ValueAnimator;
-
-    invoke-virtual {p0, v0}, Life;->c(Landroid/animation/Animator;)Lifd;
-
-    move-result-object v0
-
-    invoke-virtual {v0, v1}, Lifd;->d(I)V
-
-    iget-object p1, p1, Lifr;->l:Lmqp;
-
-    invoke-virtual {v0, p1}, Lifd;->h(Lmqp;)V
+    invoke-interface {v0, v1}, Lj$/util/stream/Stream;->forEachOrdered(Lj$/util/function/Consumer;)V
 
     return-void
 .end method
 
 .method public final g()V
+    .locals 2
+
+    iget-object v0, p0, Life;->j:Lies;
+
+    iget-object v0, v0, Lies;->b:Ljava/util/ArrayList;
+
+    sget-object v1, Lgui;->c:Lgui;
+
+    invoke-static {v0, v1}, Lj$/util/Collection$-EL;->forEach(Ljava/util/Collection;Lj$/util/function/Consumer;)V
+
+    return-void
+.end method
+
+.method public final h()V
+    .locals 6
+
+    new-instance v0, Ljava/util/ArrayList;
+
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+
+    iget-object v1, p0, Life;->e:Ljava/util/ArrayList;
+
+    invoke-interface {v1}, Ljava/util/List;->size()I
+
+    move-result v2
+
+    const/4 v3, 0x0
+
+    :goto_0
+    if-ge v3, v2, :cond_1
+
+    invoke-interface {v1, v3}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v4
+
+    check-cast v4, Lifm;
+
+    iget-boolean v5, v4, Lifm;->c:Z
+
+    if-nez v5, :cond_0
+
+    iget-object v4, v4, Lifm;->a:Landroid/content/pm/ResolveInfo;
+
+    iget-object v4, v4, Landroid/content/pm/ResolveInfo;->activityInfo:Landroid/content/pm/ActivityInfo;
+
+    iget-object v4, v4, Landroid/content/pm/ActivityInfo;->packageName:Ljava/lang/String;
+
+    invoke-interface {v0, v4}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    :cond_0
+    add-int/lit8 v3, v3, 0x1
+
+    goto :goto_0
+
+    :cond_1
+    iget-object v1, p0, Life;->j:Lies;
+
+    iget-object v1, v1, Lies;->b:Ljava/util/ArrayList;
+
+    new-instance v2, Liev;
+
+    invoke-direct {v2, v0}, Liev;-><init>(Ljava/util/List;)V
+
+    invoke-static {v1, v2}, Lj$/util/Collection$-EL;->forEach(Ljava/util/Collection;Lj$/util/function/Consumer;)V
+
+    return-void
+.end method
+
+.method public final i(Ljava/lang/Runnable;)V
+    .locals 10
+
+    iput-object p1, p0, Life;->i:Ljava/lang/Runnable;
+
+    iget v0, p0, Life;->l:I
+
+    if-eqz v0, :cond_3
+
+    const/4 v1, 0x3
+
+    if-ne v0, v1, :cond_0
+
+    invoke-interface {p1}, Ljava/lang/Runnable;->run()V
+
+    return-void
+
+    :cond_0
+    iput v1, p0, Life;->l:I
+
+    iget-object p1, p0, Life;->q:Lhug;
+
+    sget-object v0, Lhtu;->B:Lhuk;
+
+    const/4 v2, 0x1
+
+    invoke-static {v2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    move-result-object v3
+
+    invoke-interface {p1, v0, v3}, Lhug;->e(Lhts;Ljava/lang/Object;)V
+
+    iget-object p1, p0, Life;->m:Lcom/google/android/apps/camera/bottombar/BottomBarController;
+
+    invoke-virtual {p1, v2}, Lcom/google/android/apps/camera/bottombar/BottomBarController;->setSocialShareState(Z)V
+
+    iget-object p1, p0, Life;->u:Lief;
+
+    iget-object v0, p1, Lief;->a:Landroid/graphics/drawable/TransitionDrawable;
+
+    invoke-virtual {v0, v2}, Landroid/graphics/drawable/TransitionDrawable;->setCrossFadeEnabled(Z)V
+
+    iget-object v0, p1, Lief;->a:Landroid/graphics/drawable/TransitionDrawable;
+
+    const/4 v3, 0x0
+
+    invoke-virtual {v0, v3}, Landroid/graphics/drawable/TransitionDrawable;->startTransition(I)V
+
+    iget-object v0, p1, Lief;->c:Landroid/view/View$OnClickListener;
+
+    invoke-virtual {p1, v0}, Lief;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+
+    invoke-virtual {p1}, Lief;->getContext()Landroid/content/Context;
+
+    move-result-object v0
+
+    const v4, 0x7f14002e
+
+    invoke-virtual {v0, v4}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {p1, v0}, Lief;->setContentDescription(Ljava/lang/CharSequence;)V
+
+    iget-object p1, p0, Life;->j:Lies;
+
+    const/high16 v0, 0x3f800000    # 1.0f
+
+    invoke-virtual {p1, v0}, Lies;->setAlpha(F)V
+
+    const/4 v0, 0x2
+
+    invoke-virtual {p1, v0}, Lies;->h(I)V
+
+    iget-object v4, p1, Lies;->c:Lieh;
+
+    invoke-static {}, Llar;->a()V
+
+    iget-object v4, v4, Lieh;->a:Ljava/util/ArrayList;
+
+    invoke-interface {v4}, Ljava/util/List;->size()I
+
+    move-result v5
+
+    const/4 v6, 0x0
+
+    :goto_0
+    if-ge v6, v5, :cond_2
+
+    invoke-interface {v4, v6}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v7
+
+    check-cast v7, Lieg;
+
+    if-eqz v7, :cond_1
+
+    invoke-interface {v7}, Lieg;->c()V
+
+    :cond_1
+    add-int/lit8 v6, v6, 0x1
+
+    goto :goto_0
+
+    :cond_2
+    new-array v4, v0, [I
+
+    invoke-virtual {p1}, Lies;->getHeight()I
+
+    move-result v5
+
+    aput v5, v4, v3
+
+    const v5, 0x7f070550
+
+    invoke-virtual {p1, v5}, Lies;->a(I)I
+
+    move-result v5
+
+    const v6, 0x7f07054c
+
+    invoke-virtual {p1, v6}, Lies;->a(I)I
+
+    move-result v6
+
+    const v7, 0x7f070547
+
+    invoke-virtual {p1, v7}, Lies;->a(I)I
+
+    move-result v7
+
+    const v8, 0x7f070548
+
+    invoke-virtual {p1, v8}, Lies;->a(I)I
+
+    move-result v8
+
+    iget-object v9, p1, Lies;->b:Ljava/util/ArrayList;
+
+    invoke-virtual {v9}, Ljava/util/ArrayList;->size()I
+
+    move-result v9
+
+    mul-int v6, v6, v9
+
+    add-int/2addr v5, v6
+
+    add-int/2addr v5, v7
+
+    add-int/2addr v5, v8
+
+    aput v5, v4, v2
+
+    invoke-static {v4}, Landroid/animation/ValueAnimator;->ofInt([I)Landroid/animation/ValueAnimator;
+
+    move-result-object v4
+
+    iget-object v5, p1, Lies;->a:Lj$/time/Duration;
+
+    invoke-virtual {v5}, Lj$/time/Duration;->toMillis()J
+
+    move-result-wide v5
+
+    invoke-virtual {v4, v5, v6}, Landroid/animation/ValueAnimator;->setDuration(J)Landroid/animation/ValueAnimator;
+
+    new-instance v5, Lier;
+
+    invoke-direct {v5, p1, v0}, Lier;-><init>(Lies;I)V
+
+    invoke-static {v5}, Lmip;->ew(Lj$/util/function/Consumer;)Landroid/animation/Animator$AnimatorListener;
+
+    move-result-object v5
+
+    invoke-virtual {v4, v5}, Landroid/animation/ValueAnimator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
+
+    new-instance v5, Lier;
+
+    invoke-direct {v5, p1, v1}, Lier;-><init>(Lies;I)V
+
+    invoke-static {v5}, Lmip;->ev(Lj$/util/function/Consumer;)Landroid/animation/Animator$AnimatorListener;
+
+    move-result-object v1
+
+    invoke-virtual {v4, v1}, Landroid/animation/ValueAnimator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
+
+    new-instance v1, Liep;
+
+    invoke-direct {v1, p1, v3}, Liep;-><init>(Lies;I)V
+
+    invoke-virtual {v4, v1}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
+
+    new-instance p1, Lifa;
+
+    invoke-direct {p1, p0, v2}, Lifa;-><init>(Life;I)V
+
+    invoke-static {p1}, Lmip;->ew(Lj$/util/function/Consumer;)Landroid/animation/Animator$AnimatorListener;
+
+    move-result-object p1
+
+    invoke-virtual {v4, p1}, Landroid/animation/Animator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
+
+    new-instance p1, Lifa;
+
+    invoke-direct {p1, p0, v3}, Lifa;-><init>(Life;I)V
+
+    invoke-static {p1}, Lmip;->ev(Lj$/util/function/Consumer;)Landroid/animation/Animator$AnimatorListener;
+
+    move-result-object p1
+
+    invoke-virtual {v4, p1}, Landroid/animation/Animator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
+
+    invoke-static {}, Loom;->e()Looh;
+
+    move-result-object p1
+
+    invoke-virtual {p1, v4}, Looh;->g(Ljava/lang/Object;)V
+
+    iget-object v1, p0, Life;->j:Lies;
+
+    iget-object v1, v1, Lies;->b:Ljava/util/ArrayList;
+
+    invoke-static {v1}, Lj$/util/Collection$-EL;->stream(Ljava/util/Collection;)Lj$/util/stream/Stream;
+
+    move-result-object v1
+
+    sget-object v4, Licd;->p:Licd;
+
+    invoke-interface {v1, v4}, Lj$/util/stream/Stream;->map(Lj$/util/function/Function;)Lj$/util/stream/Stream;
+
+    move-result-object v1
+
+    new-instance v4, Lifb;
+
+    invoke-direct {v4, p1}, Lifb;-><init>(Looh;)V
+
+    invoke-interface {v1, v4}, Lj$/util/stream/Stream;->forEachOrdered(Lj$/util/function/Consumer;)V
+
+    iget-object v1, p0, Life;->r:Lifj;
+
+    iget-object v4, v1, Lifj;->a:Lcom/google/android/apps/camera/bottombar/RoundedThumbnailView;
+
+    new-array v5, v2, [Landroid/animation/PropertyValuesHolder;
+
+    sget-object v6, Landroid/view/View;->ALPHA:Landroid/util/Property;
+
+    new-array v0, v0, [F
+
+    iget-object v7, v1, Lifj;->a:Lcom/google/android/apps/camera/bottombar/RoundedThumbnailView;
+
+    invoke-virtual {v7}, Lcom/google/android/apps/camera/bottombar/RoundedThumbnailView;->getAlpha()F
+
+    move-result v7
+
+    aput v7, v0, v3
+
+    const/4 v7, 0x0
+
+    aput v7, v0, v2
+
+    invoke-static {v6, v0}, Landroid/animation/PropertyValuesHolder;->ofFloat(Landroid/util/Property;[F)Landroid/animation/PropertyValuesHolder;
+
+    move-result-object v0
+
+    aput-object v0, v5, v3
+
+    invoke-static {v4, v5}, Landroid/animation/ObjectAnimator;->ofPropertyValuesHolder(Ljava/lang/Object;[Landroid/animation/PropertyValuesHolder;)Landroid/animation/ObjectAnimator;
+
+    move-result-object v0
+
+    new-instance v2, Lifi;
+
+    invoke-direct {v2, v1}, Lifi;-><init>(Lifj;)V
+
+    invoke-static {v2}, Lmip;->ev(Lj$/util/function/Consumer;)Landroid/animation/Animator$AnimatorListener;
+
+    move-result-object v2
+
+    invoke-virtual {v0, v2}, Landroid/animation/ObjectAnimator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
+
+    iget-object v1, v1, Lifj;->b:Lj$/time/Duration;
+
+    invoke-virtual {v1}, Lj$/time/Duration;->toMillis()J
+
+    move-result-wide v1
+
+    invoke-virtual {v0, v1, v2}, Landroid/animation/ObjectAnimator;->setDuration(J)Landroid/animation/ObjectAnimator;
+
+    invoke-virtual {p1, v0}, Looh;->g(Ljava/lang/Object;)V
+
+    invoke-virtual {p1}, Looh;->f()Loom;
+
+    move-result-object p1
+
+    invoke-direct {p0, p1}, Life;->m(Loom;)V
+
+    return-void
+
+    :cond_3
+    const/4 p1, 0x0
+
+    goto :goto_2
+
+    :goto_1
+    throw p1
+
+    :goto_2
+    goto :goto_1
+.end method
+
+.method public final j(Liby;)V
     .locals 3
 
-    iget-object v0, p0, Life;->h:Landroid/animation/ValueAnimator;
+    iput-object p1, p0, Life;->k:Liby;
 
-    invoke-virtual {p0, v0}, Life;->c(Landroid/animation/Animator;)Lifd;
+    iget-object v0, p0, Life;->u:Lief;
 
-    move-result-object v0
+    if-eqz v0, :cond_0
 
-    const/16 v1, 0x12c
+    iput-object p1, v0, Lief;->d:Liby;
 
-    invoke-virtual {v0, v1}, Lifd;->d(I)V
+    new-instance v1, Lied;
 
-    iget-object v0, p0, Life;->k:Landroid/animation/ValueAnimator;
+    const/4 v2, 0x1
 
-    invoke-virtual {p0, v0}, Life;->c(Landroid/animation/Animator;)Lifd;
+    invoke-direct {v1, p1, v2}, Lied;-><init>(Liby;I)V
 
-    move-result-object v0
+    iput-object v1, v0, Lief;->b:Landroid/view/View$OnClickListener;
 
-    invoke-virtual {v0, v1}, Lifd;->d(I)V
+    new-instance v1, Lied;
 
-    iget-object v0, p0, Life;->i:Landroid/animation/ValueAnimator;
+    const/4 v2, 0x0
 
-    invoke-virtual {p0, v0}, Life;->c(Landroid/animation/Animator;)Lifd;
+    invoke-direct {v1, p1, v2}, Lied;-><init>(Liby;I)V
 
-    move-result-object v0
+    iput-object v1, v0, Lief;->c:Landroid/view/View$OnClickListener;
 
-    invoke-virtual {v0, v1}, Lifd;->d(I)V
+    iget-object p1, v0, Lief;->b:Landroid/view/View$OnClickListener;
 
-    iget-object v0, p0, Life;->c:Landroid/animation/ValueAnimator;
+    invoke-virtual {v0, p1}, Lief;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    invoke-virtual {p0, v0}, Life;->c(Landroid/animation/Animator;)Lifd;
-
-    move-result-object v0
-
-    invoke-virtual {v0, v1}, Lifd;->d(I)V
-
-    iget-object v0, p0, Life;->n:Landroid/animation/ValueAnimator;
-
-    invoke-virtual {p0, v0}, Life;->c(Landroid/animation/Animator;)Lifd;
-
-    move-result-object v0
-
-    const/16 v2, 0x190
-
-    invoke-virtual {v0, v2}, Lifd;->d(I)V
-
-    iget-object v0, p0, Life;->m:Landroid/animation/ValueAnimator;
-
-    invoke-virtual {p0, v0}, Life;->c(Landroid/animation/Animator;)Lifd;
-
-    move-result-object v0
-
-    const/16 v2, 0x258
-
-    invoke-virtual {v0, v2}, Lifd;->d(I)V
-
-    iget-object v0, p0, Life;->o:Landroid/animation/ValueAnimator;
-
-    invoke-virtual {p0, v0}, Life;->c(Landroid/animation/Animator;)Lifd;
-
-    move-result-object v0
-
-    const/16 v2, 0x320
-
-    invoke-virtual {v0, v2}, Lifd;->d(I)V
-
-    iget-object v0, p0, Life;->v:Landroid/animation/ValueAnimator;
-
-    invoke-virtual {p0, v0}, Life;->c(Landroid/animation/Animator;)Lifd;
-
-    move-result-object v0
-
-    invoke-virtual {v0, v1}, Lifd;->d(I)V
-
+    :cond_0
     return-void
 .end method
 
-.method public final h(Lifr;)V
-    .locals 2
+.method public final k()V
+    .locals 4
 
-    iget-object v0, p0, Life;->g:Landroid/animation/ValueAnimator;
+    iget-object v0, p0, Life;->t:Landroid/widget/FrameLayout;
 
-    invoke-virtual {p0, v0}, Life;->c(Landroid/animation/Animator;)Lifd;
+    invoke-virtual {v0}, Landroid/widget/FrameLayout;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v0
 
-    const/16 v1, 0xfa
+    check-cast v0, Laf;
 
-    invoke-virtual {v0, v1}, Lifd;->d(I)V
+    iget-object v1, p0, Life;->j:Lies;
 
-    iget-object p1, p1, Lifr;->l:Lmqp;
+    iget v1, v1, Lies;->f:I
 
-    invoke-virtual {v0, p1}, Lifd;->c(Lmqp;)V
+    if-eqz v1, :cond_1
+
+    const/4 v2, 0x1
+
+    if-ne v1, v2, :cond_0
+
+    iget-object v1, p0, Life;->p:Lcom/google/android/apps/camera/bottombar/RoundedThumbnailView;
+
+    invoke-virtual {v1}, Lcom/google/android/apps/camera/bottombar/RoundedThumbnailView;->getHeight()I
+
+    move-result v1
+
+    div-int/lit8 v1, v1, 0x2
+
+    iput v1, v0, Laf;->bottomMargin:I
+
+    goto :goto_0
+
+    :cond_0
+    iget-object v1, p0, Life;->p:Lcom/google/android/apps/camera/bottombar/RoundedThumbnailView;
+
+    invoke-virtual {v1}, Lcom/google/android/apps/camera/bottombar/RoundedThumbnailView;->getHeight()I
+
+    move-result v1
+
+    div-int/lit8 v1, v1, 0x2
+
+    iget-object v2, p0, Life;->c:Landroid/content/Context;
+
+    invoke-virtual {v2}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v2
+
+    const v3, 0x7f0704fa
+
+    invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
+
+    move-result v2
+
+    div-int/lit8 v2, v2, 0x2
+
+    sub-int/2addr v1, v2
+
+    iput v1, v0, Laf;->bottomMargin:I
+
+    :goto_0
+    iget-object v1, p0, Life;->t:Landroid/widget/FrameLayout;
+
+    invoke-virtual {v1, v0}, Landroid/widget/FrameLayout;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
+
+    iget-object v0, p0, Life;->t:Landroid/widget/FrameLayout;
+
+    invoke-virtual {v0}, Landroid/widget/FrameLayout;->requestLayout()V
 
     return-void
+
+    :cond_1
+    const/4 v0, 0x0
+
+    throw v0
 .end method
 
-.method public final i(Lifr;)V
-    .locals 2
+.method public final l()Z
+    .locals 1
 
-    iget-object v0, p0, Life;->h:Landroid/animation/ValueAnimator;
+    iget-object v0, p0, Life;->c:Landroid/content/Context;
 
-    invoke-virtual {p0, v0}, Life;->c(Landroid/animation/Animator;)Lifd;
+    check-cast v0, Landroid/app/Activity;
 
-    move-result-object v0
+    invoke-virtual {v0}, Landroid/app/Activity;->isDestroyed()Z
 
-    const/16 v1, 0x190
+    move-result v0
 
-    invoke-virtual {v0, v1}, Lifd;->d(I)V
+    if-nez v0, :cond_1
 
-    iget-object v0, p0, Life;->c:Landroid/animation/ValueAnimator;
+    iget-object v0, p0, Life;->c:Landroid/content/Context;
 
-    invoke-virtual {p0, v0}, Life;->c(Landroid/animation/Animator;)Lifd;
+    check-cast v0, Landroid/app/Activity;
 
-    move-result-object v0
+    invoke-virtual {v0}, Landroid/app/Activity;->isFinishing()Z
 
-    invoke-virtual {v0, v1}, Lifd;->d(I)V
+    move-result v0
 
-    iget-object v0, p0, Life;->g:Landroid/animation/ValueAnimator;
+    if-eqz v0, :cond_0
 
-    invoke-virtual {p0, v0}, Life;->c(Landroid/animation/Animator;)Lifd;
+    goto :goto_0
 
-    move-result-object v0
+    :cond_0
+    const/4 v0, 0x0
 
-    const/16 v1, 0xfa
+    return v0
 
-    invoke-virtual {v0, v1}, Lifd;->d(I)V
+    :cond_1
+    :goto_0
+    const/4 v0, 0x1
 
-    iget-object p1, p1, Lifr;->l:Lmqp;
-
-    invoke-virtual {v0, p1}, Lifd;->c(Lmqp;)V
-
-    return-void
-.end method
-
-.method public final j()V
-    .locals 2
-
-    iget-object v0, p0, Life;->h:Landroid/animation/ValueAnimator;
-
-    invoke-virtual {p0, v0}, Life;->c(Landroid/animation/Animator;)Lifd;
-
-    move-result-object v0
-
-    const/16 v1, 0x12c
-
-    invoke-virtual {v0, v1}, Lifd;->d(I)V
-
-    iget-object v0, p0, Life;->f:Landroid/animation/ValueAnimator;
-
-    invoke-virtual {p0, v0}, Life;->c(Landroid/animation/Animator;)Lifd;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lifd;->e()V
-
-    invoke-virtual {v0, v1}, Lifd;->d(I)V
-
-    iget-object v0, p0, Life;->k:Landroid/animation/ValueAnimator;
-
-    invoke-virtual {p0, v0}, Life;->c(Landroid/animation/Animator;)Lifd;
-
-    move-result-object v0
-
-    invoke-virtual {v0, v1}, Lifd;->d(I)V
-
-    iget-object v0, p0, Life;->i:Landroid/animation/ValueAnimator;
-
-    invoke-virtual {p0, v0}, Life;->c(Landroid/animation/Animator;)Lifd;
-
-    move-result-object v0
-
-    invoke-virtual {v0, v1}, Lifd;->d(I)V
-
-    iget-object v0, p0, Life;->c:Landroid/animation/ValueAnimator;
-
-    invoke-virtual {p0, v0}, Life;->c(Landroid/animation/Animator;)Lifd;
-
-    move-result-object v0
-
-    invoke-virtual {v0, v1}, Lifd;->d(I)V
-
-    iget-object v0, p0, Life;->n:Landroid/animation/ValueAnimator;
-
-    invoke-virtual {p0, v0}, Life;->c(Landroid/animation/Animator;)Lifd;
-
-    move-result-object v0
-
-    const/16 v1, 0x190
-
-    invoke-virtual {v0, v1}, Lifd;->d(I)V
-
-    iget-object v0, p0, Life;->m:Landroid/animation/ValueAnimator;
-
-    invoke-virtual {p0, v0}, Life;->c(Landroid/animation/Animator;)Lifd;
-
-    move-result-object v0
-
-    const/16 v1, 0x258
-
-    invoke-virtual {v0, v1}, Lifd;->d(I)V
-
-    iget-object v0, p0, Life;->o:Landroid/animation/ValueAnimator;
-
-    invoke-virtual {p0, v0}, Life;->c(Landroid/animation/Animator;)Lifd;
-
-    move-result-object v0
-
-    const/16 v1, 0x320
-
-    invoke-virtual {v0, v1}, Lifd;->d(I)V
-
-    return-void
+    return v0
 .end method

@@ -1,46 +1,46 @@
-.class final Lmiu;
-.super Laiu;
+.class public Lmiu;
+.super Ljava/lang/Object;
+
+
+# instance fields
+.field public final c:J
+
+.field public final d:J
+
+.field public final e:J
 
 
 # direct methods
-.method public constructor <init>()V
+.method static constructor <clinit>()V
     .locals 0
 
-    invoke-direct {p0}, Laiu;-><init>()V
+    invoke-static {}, Ljava/lang/Runtime;->getRuntime()Ljava/lang/Runtime;
+
+    return-void
+.end method
+
+.method public constructor <init>()V
+    .locals 2
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    const-wide/16 v0, 0x0
+
+    iput-wide v0, p0, Lmiu;->c:J
+
+    iput-wide v0, p0, Lmiu;->d:J
+
+    iput-wide v0, p0, Lmiu;->e:J
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final bridge synthetic a(Ljava/lang/Object;)F
+.method public toString()Ljava/lang/String;
     .locals 1
 
-    check-cast p1, Lmiv;
+    const-string v0, "dalvikHeapAllocatedB: 0, dalvikHeapSizeB: 0, dalvikMaxHeapSizeB: 0"
 
-    sget v0, Lmiv;->c:I
-
-    iget p1, p1, Lmiv;->b:F
-
-    const v0, 0x461c4000    # 10000.0f
-
-    mul-float p1, p1, v0
-
-    return p1
-.end method
-
-.method public final bridge synthetic b(Ljava/lang/Object;F)V
-    .locals 1
-
-    check-cast p1, Lmiv;
-
-    sget v0, Lmiv;->c:I
-
-    const v0, 0x461c4000    # 10000.0f
-
-    div-float/2addr p2, v0
-
-    invoke-virtual {p1, p2}, Lmiv;->a(F)V
-
-    return-void
+    return-object v0
 .end method

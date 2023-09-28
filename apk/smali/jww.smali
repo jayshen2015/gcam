@@ -1,22 +1,20 @@
-.class public final Ljww;
+.class public interface abstract Ljww;
 .super Ljava/lang/Object;
 
+# interfaces
+.implements Ljava/lang/AutoCloseable;
+.implements Ljwr;
 
-# static fields
-.field public static final a:Lims;
 
+# virtual methods
+.method public abstract b()Lmpi;
+.end method
 
-# direct methods
-.method static constructor <clinit>()V
-    .locals 2
+.method public abstract d(Llmv;Llnx;)V
+.end method
 
-    new-instance v0, Lims;
+.method public abstract f(Landroid/view/Surface;Landroid/util/Size;)V
+.end method
 
-    const/16 v1, 0xc
-
-    invoke-direct {v0, v1}, Lims;-><init>(I)V
-
-    sput-object v0, Ljww;->a:Lims;
-
-    return-void
+.method public abstract g(Ljava/util/List;)V
 .end method

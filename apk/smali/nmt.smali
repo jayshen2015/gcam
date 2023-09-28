@@ -1,67 +1,84 @@
-.class final Lnmt;
-.super Ljava/lang/Object;
-
-# interfaces
-.implements Ljava/lang/Runnable;
+.class public final enum Lnmt;
+.super Ljava/lang/Enum;
 
 
-# instance fields
-.field final a:Lnnb;
+# static fields
+.field public static final enum a:Lnmt;
 
-.field final b:Lnou;
+.field public static final enum b:Lnmt;
+
+.field public static final enum c:Lnmt;
+
+.field private static final synthetic d:[Lnmt;
 
 
 # direct methods
-.method public constructor <init>(Lnnb;Lnou;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 7
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance v0, Lnmt;
 
-    iput-object p1, p0, Lnmt;->a:Lnnb;
+    const-string v1, "ANNOTATION"
 
-    iput-object p2, p0, Lnmt;->b:Lnou;
+    const/4 v2, 0x0
+
+    invoke-direct {v0, v1, v2}, Lnmt;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, Lnmt;->a:Lnmt;
+
+    new-instance v1, Lnmt;
+
+    const-string v3, "ATTACHMENT"
+
+    const/4 v4, 0x1
+
+    invoke-direct {v1, v3, v4}, Lnmt;-><init>(Ljava/lang/String;I)V
+
+    sput-object v1, Lnmt;->b:Lnmt;
+
+    new-instance v3, Lnmt;
+
+    const-string v5, "NOT_FOR_UPLOAD"
+
+    const/4 v6, 0x2
+
+    invoke-direct {v3, v5, v6}, Lnmt;-><init>(Ljava/lang/String;I)V
+
+    sput-object v3, Lnmt;->c:Lnmt;
+
+    const/4 v5, 0x3
+
+    new-array v5, v5, [Lnmt;
+
+    aput-object v0, v5, v2
+
+    aput-object v1, v5, v4
+
+    aput-object v3, v5, v6
+
+    sput-object v5, Lnmt;->d:[Lnmt;
 
     return-void
 .end method
 
+.method private constructor <init>(Ljava/lang/String;I)V
+    .locals 0
 
-# virtual methods
-.method public final run()V
-    .locals 3
-
-    iget-object v0, p0, Lnmt;->a:Lnnb;
-
-    sget-object v1, Lnnb;->e:Lnmm;
-
-    iget-object v0, v0, Lnnb;->value:Ljava/lang/Object;
-
-    if-eq v0, p0, :cond_0
+    invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
+.end method
 
-    :cond_0
-    iget-object v0, p0, Lnmt;->b:Lnou;
+.method public static values()[Lnmt;
+    .locals 1
 
-    invoke-static {v0}, Lnnb;->k(Lnou;)Ljava/lang/Object;
+    sget-object v0, Lnmt;->d:[Lnmt;
+
+    invoke-virtual {v0}, [Ljava/lang/Object;->clone()Ljava/lang/Object;
 
     move-result-object v0
 
-    sget-object v1, Lnnb;->e:Lnmm;
+    check-cast v0, [Lnmt;
 
-    iget-object v2, p0, Lnmt;->a:Lnnb;
-
-    invoke-virtual {v1, v2, p0, v0}, Lnmm;->f(Lnnb;Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_1
-
-    iget-object v0, p0, Lnmt;->a:Lnnb;
-
-    const/4 v1, 0x0
-
-    invoke-static {v0, v1}, Lnnb;->m(Lnnb;Z)V
-
-    :cond_1
-    return-void
+    return-object v0
 .end method

@@ -1,216 +1,125 @@
-.class public final Los;
-.super Lop;
+.class final Los;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field private final b:Landroid/graphics/Rect;
+.field final synthetic a:Lot;
+
+.field private final synthetic b:I
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 1
+.method public constructor <init>(Lot;I)V
+    .locals 0
 
-    invoke-direct {p0}, Lop;-><init>()V
+    iput p2, p0, Los;->b:I
 
-    new-instance v0, Landroid/graphics/Rect;
+    iput-object p1, p0, Los;->a:Lot;
 
-    invoke-direct {v0}, Landroid/graphics/Rect;-><init>()V
-
-    iput-object v0, p0, Los;->b:Landroid/graphics/Rect;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Landroid/graphics/Rect;)V
-    .locals 1
+.method public final run()V
+    .locals 12
 
-    iget-object v0, p0, Lop;->a:Landroid/support/wearable/complications/ComplicationData;
+    iget v0, p0, Los;->b:I
 
-    invoke-virtual {v0}, Landroid/support/wearable/complications/ComplicationData;->c()Landroid/graphics/drawable/Icon;
+    const/4 v1, 0x1
 
-    move-result-object v0
+    packed-switch v0, :pswitch_data_0
 
-    if-nez v0, :cond_0
+    iget-object v0, p0, Los;->a:Lot;
 
-    invoke-virtual {p1}, Landroid/graphics/Rect;->setEmpty()V
+    iget-object v0, v0, Lot;->c:Landroid/view/View;
 
-    return-void
-
-    :cond_0
-    invoke-virtual {p0, p1}, Lop;->k(Landroid/graphics/Rect;)V
-
-    invoke-static {p1}, Leu;->k(Landroid/graphics/Rect;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_1
-
-    invoke-static {p1, p1}, Leu;->g(Landroid/graphics/Rect;Landroid/graphics/Rect;)V
-
-    return-void
-
-    :cond_1
-    invoke-static {p1, p1}, Leu;->f(Landroid/graphics/Rect;Landroid/graphics/Rect;)V
-
-    invoke-static {p1, p1}, Leu;->i(Landroid/graphics/Rect;Landroid/graphics/Rect;)V
-
-    invoke-static {p1, p1}, Leu;->f(Landroid/graphics/Rect;Landroid/graphics/Rect;)V
-
-    return-void
-.end method
-
-.method public final e()I
-    .locals 2
-
-    iget-object v0, p0, Lop;->a:Landroid/support/wearable/complications/ComplicationData;
-
-    invoke-virtual {v0}, Landroid/support/wearable/complications/ComplicationData;->i()Landroid/support/wearable/complications/ComplicationText;
-
-    move-result-object v1
-
-    if-eqz v1, :cond_0
-
-    invoke-virtual {v0}, Landroid/support/wearable/complications/ComplicationData;->c()Landroid/graphics/drawable/Icon;
-
-    move-result-object v0
-
-    if-nez v0, :cond_0
-
-    const/16 v0, 0x50
-
-    return v0
-
-    :cond_0
-    const/16 v0, 0x10
-
-    return v0
-.end method
-
-.method public final f()I
-    .locals 1
-
-    const/16 v0, 0x30
-
-    return v0
-.end method
-
-.method public final i()Landroid/text/Layout$Alignment;
-    .locals 2
-
-    iget-object v0, p0, Lop;->a:Landroid/support/wearable/complications/ComplicationData;
-
-    iget-object v1, p0, Los;->b:Landroid/graphics/Rect;
-
-    invoke-virtual {p0, v1}, Lop;->k(Landroid/graphics/Rect;)V
-
-    iget-object v1, p0, Los;->b:Landroid/graphics/Rect;
-
-    invoke-static {v1}, Leu;->k(Landroid/graphics/Rect;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_0
-
-    invoke-virtual {v0}, Landroid/support/wearable/complications/ComplicationData;->c()Landroid/graphics/drawable/Icon;
-
-    move-result-object v0
-
-    if-eqz v0, :cond_0
-
-    sget-object v0, Landroid/text/Layout$Alignment;->ALIGN_NORMAL:Landroid/text/Layout$Alignment;
-
-    return-object v0
-
-    :cond_0
-    sget-object v0, Landroid/text/Layout$Alignment;->ALIGN_CENTER:Landroid/text/Layout$Alignment;
-
-    return-object v0
-.end method
-
-.method public final j()Landroid/text/Layout$Alignment;
-    .locals 1
-
-    invoke-virtual {p0}, Lop;->i()Landroid/text/Layout$Alignment;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public final o(Landroid/graphics/Rect;)V
-    .locals 2
-
-    iget-object v0, p0, Lop;->a:Landroid/support/wearable/complications/ComplicationData;
-
-    invoke-virtual {p0, p1}, Lop;->k(Landroid/graphics/Rect;)V
-
-    invoke-virtual {v0}, Landroid/support/wearable/complications/ComplicationData;->c()Landroid/graphics/drawable/Icon;
-
-    move-result-object v1
-
-    if-eqz v1, :cond_1
-
-    invoke-static {p1}, Leu;->k(Landroid/graphics/Rect;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    invoke-static {p1, p1}, Leu;->h(Landroid/graphics/Rect;Landroid/graphics/Rect;)V
-
-    return-void
-
-    :cond_0
-    invoke-static {p1, p1}, Leu;->f(Landroid/graphics/Rect;Landroid/graphics/Rect;)V
-
-    invoke-static {p1, p1}, Leu;->e(Landroid/graphics/Rect;Landroid/graphics/Rect;)V
-
-    return-void
-
-    :cond_1
-    invoke-virtual {v0}, Landroid/support/wearable/complications/ComplicationData;->i()Landroid/support/wearable/complications/ComplicationText;
+    invoke-virtual {v0}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
 
     move-result-object v0
 
     if-eqz v0, :cond_2
 
-    invoke-static {p1, p1}, Leu;->i(Landroid/graphics/Rect;Landroid/graphics/Rect;)V
+    invoke-interface {v0, v1}, Landroid/view/ViewParent;->requestDisallowInterceptTouchEvent(Z)V
 
-    :cond_2
     return-void
-.end method
 
-.method public final p(Landroid/graphics/Rect;)V
-    .locals 2
+    :pswitch_0
+    iget-object v0, p0, Los;->a:Lot;
 
-    iget-object v0, p0, Lop;->a:Landroid/support/wearable/complications/ComplicationData;
+    invoke-virtual {v0}, Lot;->d()V
 
-    invoke-virtual {v0}, Landroid/support/wearable/complications/ComplicationData;->c()Landroid/graphics/drawable/Icon;
+    iget-object v2, v0, Lot;->c:Landroid/view/View;
 
-    move-result-object v1
+    invoke-virtual {v2}, Landroid/view/View;->isEnabled()Z
 
-    if-nez v1, :cond_1
+    move-result v3
 
-    invoke-virtual {v0}, Landroid/support/wearable/complications/ComplicationData;->i()Landroid/support/wearable/complications/ComplicationText;
+    if-eqz v3, :cond_1
 
-    move-result-object v0
+    invoke-virtual {v2}, Landroid/view/View;->isLongClickable()Z
 
-    if-nez v0, :cond_0
+    move-result v3
+
+    if-eqz v3, :cond_0
 
     goto :goto_0
 
     :cond_0
-    invoke-virtual {p0, p1}, Lop;->k(Landroid/graphics/Rect;)V
+    invoke-virtual {v0}, Lot;->b()Z
 
-    invoke-static {p1, p1}, Leu;->e(Landroid/graphics/Rect;Landroid/graphics/Rect;)V
+    move-result v3
+
+    if-eqz v3, :cond_1
+
+    invoke-virtual {v2}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
+
+    move-result-object v3
+
+    invoke-interface {v3, v1}, Landroid/view/ViewParent;->requestDisallowInterceptTouchEvent(Z)V
+
+    invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
+
+    move-result-wide v6
+
+    const/4 v8, 0x3
+
+    const/4 v9, 0x0
+
+    const/4 v10, 0x0
+
+    const/4 v11, 0x0
+
+    move-wide v4, v6
+
+    invoke-static/range {v4 .. v11}, Landroid/view/MotionEvent;->obtain(JJIFFI)Landroid/view/MotionEvent;
+
+    move-result-object v3
+
+    invoke-virtual {v2, v3}, Landroid/view/View;->onTouchEvent(Landroid/view/MotionEvent;)Z
+
+    invoke-virtual {v3}, Landroid/view/MotionEvent;->recycle()V
+
+    iput-boolean v1, v0, Lot;->d:Z
 
     return-void
 
     :cond_1
     :goto_0
-    invoke-virtual {p1}, Landroid/graphics/Rect;->setEmpty()V
-
     return-void
+
+    :cond_2
+    return-void
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

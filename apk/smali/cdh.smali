@@ -2,165 +2,217 @@
 .super Ljava/lang/Object;
 
 
-# static fields
-.field public static final a:Lmwa;
+# instance fields
+.field public final a:F
 
-.field public static final b:Lmwa;
+.field public final b:F
 
-.field public static final c:Lmwa;
+.field private final c:F
+
+.field private final d:F
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 12
+.method public constructor <init>()V
+    .locals 0
 
-    invoke-static {}, Lmwa;->i()Lmvw;
-
-    move-result-object v0
-
-    sget-object v1, Lika;->g:Lika;
-
-    const-string v2, "PORTRAIT"
-
-    invoke-virtual {v0, v2, v1}, Lmvw;->e(Ljava/lang/Object;Ljava/lang/Object;)V
-
-    sget-object v1, Lika;->b:Lika;
-
-    const-string v3, "WIDE_ANGLE"
-
-    invoke-virtual {v0, v3, v1}, Lmvw;->e(Ljava/lang/Object;Ljava/lang/Object;)V
-
-    sget-object v1, Lika;->d:Lika;
-
-    const-string v4, "PANORAMIC"
-
-    invoke-virtual {v0, v4, v1}, Lmvw;->e(Ljava/lang/Object;Ljava/lang/Object;)V
-
-    sget-object v1, Lika;->f:Lika;
-
-    const-string v5, "SLOW_MOTION"
-
-    invoke-virtual {v0, v5, v1}, Lmvw;->e(Ljava/lang/Object;Ljava/lang/Object;)V
-
-    sget-object v1, Lika;->j:Lika;
-
-    const-string v6, "ORNAMENT"
-
-    invoke-virtual {v0, v6, v1}, Lmvw;->e(Ljava/lang/Object;Ljava/lang/Object;)V
-
-    sget-object v1, Lika;->m:Lika;
-
-    const-string v7, "LONG_EXPOSURE"
-
-    invoke-virtual {v0, v7, v1}, Lmvw;->e(Ljava/lang/Object;Ljava/lang/Object;)V
-
-    sget-object v1, Lika;->m:Lika;
-
-    const-string v8, "LOW_LIGHT"
-
-    invoke-virtual {v0, v8, v1}, Lmvw;->e(Ljava/lang/Object;Ljava/lang/Object;)V
-
-    sget-object v1, Lika;->p:Lika;
-
-    const-string v9, "MORE_MODES"
-
-    invoke-virtual {v0, v9, v1}, Lmvw;->e(Ljava/lang/Object;Ljava/lang/Object;)V
-
-    sget-object v1, Lika;->n:Lika;
-
-    const-string v10, "TIME_LAPSE"
-
-    invoke-virtual {v0, v10, v1}, Lmvw;->e(Ljava/lang/Object;Ljava/lang/Object;)V
-
-    sget-object v1, Lika;->s:Lika;
-
-    const-string v11, "TIARA"
-
-    invoke-virtual {v0, v11, v1}, Lmvw;->e(Ljava/lang/Object;Ljava/lang/Object;)V
-
-    invoke-virtual {v0}, Lmvw;->b()Lmwa;
-
-    move-result-object v0
-
-    sput-object v0, Lcdh;->a:Lmwa;
-
-    invoke-static {}, Lmwa;->i()Lmvw;
-
-    move-result-object v0
-
-    sget-object v1, Lika;->g:Lika;
-
-    invoke-virtual {v0, v2, v1}, Lmvw;->e(Ljava/lang/Object;Ljava/lang/Object;)V
-
-    sget-object v1, Lika;->b:Lika;
-
-    invoke-virtual {v0, v3, v1}, Lmvw;->e(Ljava/lang/Object;Ljava/lang/Object;)V
-
-    sget-object v1, Lika;->d:Lika;
-
-    invoke-virtual {v0, v4, v1}, Lmvw;->e(Ljava/lang/Object;Ljava/lang/Object;)V
-
-    sget-object v1, Lika;->f:Lika;
-
-    invoke-virtual {v0, v5, v1}, Lmvw;->e(Ljava/lang/Object;Ljava/lang/Object;)V
-
-    sget-object v1, Lika;->j:Lika;
-
-    invoke-virtual {v0, v6, v1}, Lmvw;->e(Ljava/lang/Object;Ljava/lang/Object;)V
-
-    sget-object v1, Lika;->m:Lika;
-
-    invoke-virtual {v0, v7, v1}, Lmvw;->e(Ljava/lang/Object;Ljava/lang/Object;)V
-
-    sget-object v1, Lika;->m:Lika;
-
-    invoke-virtual {v0, v8, v1}, Lmvw;->e(Ljava/lang/Object;Ljava/lang/Object;)V
-
-    sget-object v1, Lika;->p:Lika;
-
-    invoke-virtual {v0, v9, v1}, Lmvw;->e(Ljava/lang/Object;Ljava/lang/Object;)V
-
-    sget-object v1, Lika;->n:Lika;
-
-    invoke-virtual {v0, v10, v1}, Lmvw;->e(Ljava/lang/Object;Ljava/lang/Object;)V
-
-    sget-object v1, Lika;->s:Lika;
-
-    invoke-virtual {v0, v11, v1}, Lmvw;->e(Ljava/lang/Object;Ljava/lang/Object;)V
-
-    sget-object v1, Lika;->l:Lika;
-
-    const-string v2, "MOTION"
-
-    invoke-virtual {v0, v2, v1}, Lmvw;->e(Ljava/lang/Object;Ljava/lang/Object;)V
-
-    invoke-virtual {v0}, Lmvw;->b()Lmwa;
-
-    move-result-object v0
-
-    sput-object v0, Lcdh;->b:Lmwa;
-
-    invoke-static {}, Lmwa;->i()Lmvw;
-
-    move-result-object v0
-
-    sget-object v1, Lgcc;->c:Lgcc;
-
-    const-string v2, "FLASH_ON"
-
-    invoke-virtual {v0, v2, v1}, Lmvw;->e(Ljava/lang/Object;Ljava/lang/Object;)V
-
-    sget-object v1, Lgcc;->b:Lgcc;
-
-    const-string v2, "FLASH_OFF"
-
-    invoke-virtual {v0, v2, v1}, Lmvw;->e(Ljava/lang/Object;Ljava/lang/Object;)V
-
-    invoke-virtual {v0}, Lmvw;->b()Lmwa;
-
-    move-result-object v0
-
-    sput-object v0, Lcdh;->c:Lmwa;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
+.end method
+
+.method public constructor <init>(FFFF)V
+    .locals 0
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput p1, p0, Lcdh;->a:F
+
+    iput p2, p0, Lcdh;->b:F
+
+    iput p3, p0, Lcdh;->c:F
+
+    iput p4, p0, Lcdh;->d:F
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 4
+
+    const/4 v0, 0x1
+
+    if-ne p1, p0, :cond_0
+
+    return v0
+
+    :cond_0
+    instance-of v1, p1, Lcdh;
+
+    const/4 v2, 0x0
+
+    if-eqz v1, :cond_1
+
+    check-cast p1, Lcdh;
+
+    iget v1, p0, Lcdh;->a:F
+
+    invoke-static {v1}, Ljava/lang/Float;->floatToIntBits(F)I
+
+    move-result v1
+
+    iget v3, p1, Lcdh;->a:F
+
+    invoke-static {v3}, Ljava/lang/Float;->floatToIntBits(F)I
+
+    move-result v3
+
+    if-ne v1, v3, :cond_1
+
+    iget v1, p0, Lcdh;->b:F
+
+    invoke-static {v1}, Ljava/lang/Float;->floatToIntBits(F)I
+
+    move-result v1
+
+    iget v3, p1, Lcdh;->b:F
+
+    invoke-static {v3}, Ljava/lang/Float;->floatToIntBits(F)I
+
+    move-result v3
+
+    if-ne v1, v3, :cond_1
+
+    iget v1, p0, Lcdh;->c:F
+
+    invoke-static {v1}, Ljava/lang/Float;->floatToIntBits(F)I
+
+    move-result v1
+
+    iget v3, p1, Lcdh;->c:F
+
+    invoke-static {v3}, Ljava/lang/Float;->floatToIntBits(F)I
+
+    move-result v3
+
+    if-ne v1, v3, :cond_1
+
+    iget v1, p0, Lcdh;->d:F
+
+    invoke-static {v1}, Ljava/lang/Float;->floatToIntBits(F)I
+
+    move-result v1
+
+    iget p1, p1, Lcdh;->d:F
+
+    invoke-static {p1}, Ljava/lang/Float;->floatToIntBits(F)I
+
+    move-result p1
+
+    if-ne v1, p1, :cond_1
+
+    return v0
+
+    :cond_1
+    return v2
+.end method
+
+.method public final hashCode()I
+    .locals 3
+
+    iget v0, p0, Lcdh;->a:F
+
+    invoke-static {v0}, Ljava/lang/Float;->floatToIntBits(F)I
+
+    move-result v0
+
+    const v1, 0xf4243
+
+    xor-int/2addr v0, v1
+
+    mul-int v0, v0, v1
+
+    iget v2, p0, Lcdh;->b:F
+
+    invoke-static {v2}, Ljava/lang/Float;->floatToIntBits(F)I
+
+    move-result v2
+
+    xor-int/2addr v0, v2
+
+    mul-int v0, v0, v1
+
+    iget v2, p0, Lcdh;->c:F
+
+    invoke-static {v2}, Ljava/lang/Float;->floatToIntBits(F)I
+
+    move-result v2
+
+    xor-int/2addr v0, v2
+
+    mul-int v0, v0, v1
+
+    iget v1, p0, Lcdh;->d:F
+
+    invoke-static {v1}, Ljava/lang/Float;->floatToIntBits(F)I
+
+    move-result v1
+
+    xor-int/2addr v0, v1
+
+    return v0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .locals 6
+
+    iget v0, p0, Lcdh;->a:F
+
+    iget v1, p0, Lcdh;->b:F
+
+    iget v2, p0, Lcdh;->c:F
+
+    iget v3, p0, Lcdh;->d:F
+
+    new-instance v4, Ljava/lang/StringBuilder;
+
+    const/16 v5, 0x6d
+
+    invoke-direct {v4, v5}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string v5, "FaceFeatures{width="
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
+
+    const-string v0, ", height="
+
+    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v4, v1}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
+
+    const-string v0, ", centerX="
+
+    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v4, v2}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
+
+    const-string v0, ", centerY="
+
+    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v4, v3}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
+
+    const-string v0, "}"
+
+    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
 .end method

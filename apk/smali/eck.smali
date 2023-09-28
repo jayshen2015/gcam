@@ -1,73 +1,84 @@
 .class public final Leck;
 .super Ljava/lang/Object;
 
-# interfaces
-.implements Logk;
-
 
 # instance fields
-.field private final a:Loiw;
+.field public final a:Lcom/google/googlex/gcam/Tuning;
+
+.field public final b:Lgnq;
 
 
 # direct methods
-.method public constructor <init>(Loiw;)V
-    .locals 0
+.method public constructor <init>(Lcom/google/googlex/gcam/Tuning;Llzv;)V
+    .locals 4
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Leck;->a:Loiw;
+    iput-object p1, p0, Leck;->a:Lcom/google/googlex/gcam/Tuning;
 
-    return-void
-.end method
+    sget-object p1, Landroid/hardware/camera2/CaptureResult;->STATISTICS_FACES:Landroid/hardware/camera2/CaptureResult$Key;
 
-.method public static a(Loiw;)Leck;
-    .locals 1
+    invoke-interface {p2, p1}, Llzv;->d(Landroid/hardware/camera2/CaptureResult$Key;)Ljava/lang/Object;
 
-    new-instance v0, Leck;
+    move-result-object p1
 
-    invoke-direct {v0, p0}, Leck;-><init>(Loiw;)V
+    check-cast p1, [Landroid/hardware/camera2/params/Face;
 
-    return-object v0
-.end method
+    sget-object v0, Landroid/hardware/camera2/CaptureResult;->SCALER_CROP_REGION:Landroid/hardware/camera2/CaptureResult$Key;
 
-
-# virtual methods
-.method public final b()Lnqx;
-    .locals 2
-
-    iget-object v0, p0, Leck;->a:Loiw;
-
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
+    invoke-interface {p2, v0}, Llzv;->d(Landroid/hardware/camera2/CaptureResult$Key;)Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Ldhi;
+    check-cast v0, Landroid/graphics/Rect;
 
-    sget-object v1, Ldhq;->y:Ldhj;
+    sget-object v1, Landroid/hardware/camera2/CaptureResult;->SENSOR_FRAME_DURATION:Landroid/hardware/camera2/CaptureResult$Key;
 
-    invoke-interface {v0, v1}, Ldhi;->l(Ldhj;)Z
+    invoke-interface {p2, v1}, Llzv;->d(Landroid/hardware/camera2/CaptureResult$Key;)Ljava/lang/Object;
 
-    move-result v0
+    move-result-object p2
 
-    if-eqz v0, :cond_0
+    check-cast p2, Ljava/lang/Long;
 
-    sget-object v0, Lnqx;->b:Lnqx;
+    if-eqz p1, :cond_2
+
+    if-eqz v0, :cond_1
+
+    new-instance v1, Lgnq;
+
+    if-eqz p2, :cond_0
+
+    invoke-virtual {p2}, Ljava/lang/Long;->longValue()J
+
+    move-result-wide v2
 
     goto :goto_0
 
     :cond_0
-    sget-object v0, Lnqx;->a:Lnqx;
+    const-wide/16 v2, 0x0
 
     :goto_0
-    return-object v0
-.end method
+    invoke-direct {v1, p1, v0, v2, v3}, Lgnq;-><init>([Landroid/hardware/camera2/params/Face;Landroid/graphics/Rect;J)V
 
-.method public final bridge synthetic get()Ljava/lang/Object;
-    .locals 1
+    iput-object v1, p0, Leck;->b:Lgnq;
 
-    invoke-virtual {p0}, Leck;->b()Lnqx;
+    return-void
 
-    move-result-object v0
+    :cond_1
+    new-instance p1, Ljava/lang/IllegalStateException;
 
-    return-object v0
+    const-string p2, "SCALER_CROP_REGION not present in metadata."
+
+    invoke-direct {p1, p2}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw p1
+
+    :cond_2
+    new-instance p1, Ljava/lang/IllegalStateException;
+
+    const-string p2, "STATISTICS_FACES not present in metadata."
+
+    invoke-direct {p1, p2}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw p1
 .end method

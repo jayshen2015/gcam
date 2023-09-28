@@ -2,24 +2,16 @@
 .super Ljava/lang/Object;
 
 
-# static fields
-.field private static final logger:Lnak;
-
-
 # instance fields
 .field private final bottomBar:Lcom/google/android/apps/camera/bottombar/BottomBar;
 
 .field private final cameraSwitchButton:Lcom/google/android/apps/camera/bottombar/CameraSwitchButton;
 
-.field private final gcaConfig:Ldhi;
-
-.field private isJupiterButtonShowed:Z
+.field private final gcaConfig:Lojc;
 
 .field private isSelfieFlashOn:Z
 
 .field private isSocialShareOpened:Z
-
-.field private jupiterButton:Lmqp;
 
 .field private final listenerDispatcher:Lcom/google/android/apps/camera/bottombar/BottomBarListener;
 
@@ -27,7 +19,7 @@
 
 .field private final lock:Ljava/lang/Object;
 
-.field private mode:Lika;
+.field private mode:Ljrl;
 
 .field private final thumbnailButton:Lcom/google/android/apps/camera/bottombar/RoundedThumbnailView;
 
@@ -49,28 +41,24 @@
     return-object p0
 .end method
 
-.method static constructor <clinit>()V
-    .locals 1
+.method public constructor <init>(Lcom/google/android/apps/camera/bottombar/BottomBar;)V
+    .locals 2
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
 
-    const-string v0, "com/google/android/apps/camera/bottombar/BottomBarController"
+    sget-object v0, Loih;->a:Loih;
 
-    invoke-static {v0}, Lnak;->h(Ljava/lang/String;)Lnak;
+    const/4 v1, 0x0
 
-    move-result-object v0
-
-    sput-object v0, Lcom/google/android/apps/camera/bottombar/BottomBarController;->logger:Lnak;
+    invoke-direct {p0, p1, v1, v0}, Lcom/google/android/apps/camera/bottombar/BottomBarController;-><init>(Lcom/google/android/apps/camera/bottombar/BottomBar;Limg;Lojc;)V
 
     return-void
 .end method
 
-.method public constructor <init>(Lcom/google/android/apps/camera/bottombar/BottomBar;Ldhi;)V
+.method public constructor <init>(Lcom/google/android/apps/camera/bottombar/BottomBar;Limg;Lojc;)V
     .locals 1
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    sget-object v0, Lmpx;->a:Lmpx;
-
-    iput-object v0, p0, Lcom/google/android/apps/camera/bottombar/BottomBarController;->jupiterButton:Lmqp;
 
     new-instance v0, Lcom/google/android/apps/camera/bottombar/BottomBarController$1;
 
@@ -80,7 +68,13 @@
 
     iput-object p1, p0, Lcom/google/android/apps/camera/bottombar/BottomBarController;->bottomBar:Lcom/google/android/apps/camera/bottombar/BottomBar;
 
-    iput-object p2, p0, Lcom/google/android/apps/camera/bottombar/BottomBarController;->gcaConfig:Ldhi;
+    iput-object p3, p0, Lcom/google/android/apps/camera/bottombar/BottomBarController;->gcaConfig:Lojc;
+
+    new-instance p3, Lcom/google/android/apps/camera/bottombar/BottomBarController$$ExternalSyntheticLambda11;
+
+    invoke-direct {p3, p1, p2}, Lcom/google/android/apps/camera/bottombar/BottomBarController$$ExternalSyntheticLambda11;-><init>(Lcom/google/android/apps/camera/bottombar/BottomBar;Limg;)V
+
+    invoke-virtual {p1, p3}, Lcom/google/android/apps/camera/bottombar/BottomBar;->post(Ljava/lang/Runnable;)Z
 
     invoke-virtual {p1}, Lcom/google/android/apps/camera/bottombar/BottomBar;->getCameraSwitchButton()Lcom/google/android/apps/camera/bottombar/CameraSwitchButton;
 
@@ -106,36 +100,19 @@
 
     iput-object p1, p0, Lcom/google/android/apps/camera/bottombar/BottomBarController;->listeners:Ljava/util/List;
 
-    sget-object p1, Lika;->a:Lika;
+    sget-object p1, Ljrl;->a:Ljrl;
 
-    iput-object p1, p0, Lcom/google/android/apps/camera/bottombar/BottomBarController;->mode:Lika;
+    iput-object p1, p0, Lcom/google/android/apps/camera/bottombar/BottomBarController;->mode:Ljrl;
 
     return-void
 .end method
 
-.method private getJupiterButton()Lmqp;
-    .locals 1
+.method static synthetic lambda$new$0(Lcom/google/android/apps/camera/bottombar/BottomBar;Limg;)V
+    .locals 0
 
-    iget-object v0, p0, Lcom/google/android/apps/camera/bottombar/BottomBarController;->jupiterButton:Lmqp;
+    invoke-virtual {p0, p1}, Lcom/google/android/apps/camera/bottombar/BottomBar;->setSysUiFlagApplier(Limg;)V
 
-    invoke-virtual {v0}, Lmqp;->g()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    iget-boolean v0, p0, Lcom/google/android/apps/camera/bottombar/BottomBarController;->isJupiterButtonShowed:Z
-
-    if-eqz v0, :cond_0
-
-    iget-object v0, p0, Lcom/google/android/apps/camera/bottombar/BottomBarController;->jupiterButton:Lmqp;
-
-    return-object v0
-
-    :cond_0
-    sget-object v0, Lmpx;->a:Lmpx;
-
-    return-object v0
+    return-void
 .end method
 
 
@@ -179,40 +156,26 @@
     return-void
 .end method
 
-.method public disableCameraSwitchAwhile()Lkad;
+.method public disableCameraSwitchAwhile()Llie;
     .locals 1
 
     const/4 v0, 0x0
 
     invoke-virtual {p0, v0}, Lcom/google/android/apps/camera/bottombar/BottomBarController;->setCameraSwitchEnabled(Z)V
 
-    new-instance v0, Lcom/google/android/apps/camera/bottombar/BottomBarController$$ExternalSyntheticLambda0;
+    new-instance v0, Lcom/google/android/apps/camera/bottombar/BottomBarController$$ExternalSyntheticLambda8;
 
-    invoke-direct {v0, p0}, Lcom/google/android/apps/camera/bottombar/BottomBarController$$ExternalSyntheticLambda0;-><init>(Lcom/google/android/apps/camera/bottombar/BottomBarController;)V
+    invoke-direct {v0, p0}, Lcom/google/android/apps/camera/bottombar/BottomBarController$$ExternalSyntheticLambda8;-><init>(Lcom/google/android/apps/camera/bottombar/BottomBarController;)V
 
     return-object v0
 .end method
 
-.method public exitJupiterSession()V
-    .locals 3
-
-    iget-object v0, p0, Lcom/google/android/apps/camera/bottombar/BottomBarController;->bottomBar:Lcom/google/android/apps/camera/bottombar/BottomBar;
-
-    sget-object v1, Lcom/google/android/apps/camera/bottombar/BottomBar$SideButtonPosition;->CENTER_LEFT:Lcom/google/android/apps/camera/bottombar/BottomBar$SideButtonPosition;
-
-    sget-object v2, Lmpx;->a:Lmpx;
-
-    invoke-virtual {v0, v1, v2}, Lcom/google/android/apps/camera/bottombar/BottomBar;->disableSideButtons(Lcom/google/android/apps/camera/bottombar/BottomBar$SideButtonPosition;Lmqp;)V
-
-    return-void
-.end method
-
-.method public getBackgroundColorProperty()Like;
+.method public getBackgroundColorProperty()Ljrp;
     .locals 1
 
     iget-object v0, p0, Lcom/google/android/apps/camera/bottombar/BottomBarController;->bottomBar:Lcom/google/android/apps/camera/bottombar/BottomBar;
 
-    invoke-virtual {v0}, Lcom/google/android/apps/camera/bottombar/BottomBar;->getBackgroundColorProperty()Like;
+    invoke-virtual {v0}, Lcom/google/android/apps/camera/bottombar/BottomBar;->getBackgroundColorProperty()Ljrp;
 
     move-result-object v0
 
@@ -237,26 +200,6 @@
     mul-int v0, v0, v1
 
     return v0
-.end method
-
-.method public hideJupiterButton()V
-    .locals 4
-
-    const/4 v0, 0x0
-
-    iput-boolean v0, p0, Lcom/google/android/apps/camera/bottombar/BottomBarController;->isJupiterButtonShowed:Z
-
-    iget-object v0, p0, Lcom/google/android/apps/camera/bottombar/BottomBarController;->bottomBar:Lcom/google/android/apps/camera/bottombar/BottomBar;
-
-    sget-object v1, Lcom/google/android/apps/camera/bottombar/BottomBar$SideButtonPosition;->LEFT:Lcom/google/android/apps/camera/bottombar/BottomBar$SideButtonPosition;
-
-    sget-object v2, Lmpx;->a:Lmpx;
-
-    const/4 v3, 0x1
-
-    invoke-virtual {v0, v1, v2, v3}, Lcom/google/android/apps/camera/bottombar/BottomBar;->replaceSideButton(Lcom/google/android/apps/camera/bottombar/BottomBar$SideButtonPosition;Lmqp;Z)V
-
-    return-void
 .end method
 
 .method public synthetic lambda$disableCameraSwitchAwhile$4$com-google-android-apps-camera-bottombar-BottomBarController()V
@@ -285,16 +228,6 @@
     const/4 v0, 0x0
 
     invoke-virtual {p0, v0}, Lcom/google/android/apps/camera/bottombar/BottomBarController;->setClickable(Z)V
-
-    return-void
-.end method
-
-.method public synthetic lambda$setJupiterButton$0$com-google-android-apps-camera-bottombar-BottomBarController(Landroid/view/View;)V
-    .locals 0
-
-    iget-object p1, p0, Lcom/google/android/apps/camera/bottombar/BottomBarController;->listenerDispatcher:Lcom/google/android/apps/camera/bottombar/BottomBarListener;
-
-    invoke-virtual {p1}, Lcom/google/android/apps/camera/bottombar/BottomBarListener;->onJupiterButtonClicked()V
 
     return-void
 .end method
@@ -389,36 +322,36 @@
     return-void
 .end method
 
-.method public lowerAccessibilityImportanceAwhile()Lkad;
+.method public lowerAccessibilityImportanceAwhile()Llie;
     .locals 1
 
     const/4 v0, 0x4
 
     invoke-virtual {p0, v0}, Lcom/google/android/apps/camera/bottombar/BottomBarController;->setImportantForAccessibility(I)V
 
-    new-instance v0, Lcom/google/android/apps/camera/bottombar/BottomBarController$$ExternalSyntheticLambda12;
+    new-instance v0, Lcom/google/android/apps/camera/bottombar/BottomBarController$$ExternalSyntheticLambda9;
 
-    invoke-direct {v0, p0}, Lcom/google/android/apps/camera/bottombar/BottomBarController$$ExternalSyntheticLambda12;-><init>(Lcom/google/android/apps/camera/bottombar/BottomBarController;)V
+    invoke-direct {v0, p0}, Lcom/google/android/apps/camera/bottombar/BottomBarController$$ExternalSyntheticLambda9;-><init>(Lcom/google/android/apps/camera/bottombar/BottomBarController;)V
 
     return-object v0
 .end method
 
-.method public makeClickableAwhile()Lkad;
+.method public makeClickableAwhile()Llie;
     .locals 1
 
     const/4 v0, 0x1
 
     invoke-virtual {p0, v0}, Lcom/google/android/apps/camera/bottombar/BottomBarController;->setClickable(Z)V
 
-    new-instance v0, Lcom/google/android/apps/camera/bottombar/BottomBarController$$ExternalSyntheticLambda1;
+    new-instance v0, Lcom/google/android/apps/camera/bottombar/BottomBarController$$ExternalSyntheticLambda10;
 
-    invoke-direct {v0, p0}, Lcom/google/android/apps/camera/bottombar/BottomBarController$$ExternalSyntheticLambda1;-><init>(Lcom/google/android/apps/camera/bottombar/BottomBarController;)V
+    invoke-direct {v0, p0}, Lcom/google/android/apps/camera/bottombar/BottomBarController$$ExternalSyntheticLambda10;-><init>(Lcom/google/android/apps/camera/bottombar/BottomBarController;)V
 
     return-object v0
 .end method
 
 .method public pauseRecording()V
-    .locals 1
+    .locals 3
 
     iget-object v0, p0, Lcom/google/android/apps/camera/bottombar/BottomBarController;->bottomBar:Lcom/google/android/apps/camera/bottombar/BottomBar;
 
@@ -426,7 +359,49 @@
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lcom/google/android/apps/camera/bottombar/PauseResumeButton;->transitionToResumeState()V
+    iget-object v1, p0, Lcom/google/android/apps/camera/bottombar/BottomBarController;->gcaConfig:Lojc;
+
+    invoke-virtual {v1}, Lojc;->c()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Lddf;
+
+    sget-object v2, Lddl;->aw:Lddg;
+
+    invoke-interface {v1, v2}, Lddf;->k(Lddg;)Z
+
+    move-result v1
+
+    invoke-virtual {v0, v1}, Lcom/google/android/apps/camera/bottombar/PauseResumeButton;->transitionToResumeState(Z)V
+
+    return-void
+.end method
+
+.method public pauseTimelapseRecording()V
+    .locals 3
+
+    iget-object v0, p0, Lcom/google/android/apps/camera/bottombar/BottomBarController;->bottomBar:Lcom/google/android/apps/camera/bottombar/BottomBar;
+
+    invoke-virtual {v0}, Lcom/google/android/apps/camera/bottombar/BottomBar;->getPauseResumeButton()Lcom/google/android/apps/camera/bottombar/PauseResumeButton;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lcom/google/android/apps/camera/bottombar/BottomBarController;->gcaConfig:Lojc;
+
+    invoke-virtual {v1}, Lojc;->c()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Lddf;
+
+    sget-object v2, Lddl;->aw:Lddg;
+
+    invoke-interface {v1, v2}, Lddf;->k(Lddg;)Z
+
+    move-result v1
+
+    invoke-virtual {v0, v1}, Lcom/google/android/apps/camera/bottombar/PauseResumeButton;->transitionToResumeState(Z)V
 
     return-void
 .end method
@@ -472,7 +447,7 @@
 .end method
 
 .method public resumeRecording()V
-    .locals 1
+    .locals 3
 
     iget-object v0, p0, Lcom/google/android/apps/camera/bottombar/BottomBarController;->bottomBar:Lcom/google/android/apps/camera/bottombar/BottomBar;
 
@@ -480,55 +455,81 @@
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lcom/google/android/apps/camera/bottombar/PauseResumeButton;->transitionToPauseState()V
+    iget-object v1, p0, Lcom/google/android/apps/camera/bottombar/BottomBarController;->gcaConfig:Lojc;
+
+    invoke-virtual {v1}, Lojc;->c()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Lddf;
+
+    sget-object v2, Lddl;->aw:Lddg;
+
+    invoke-interface {v1, v2}, Lddf;->k(Lddg;)Z
+
+    move-result v1
+
+    invoke-virtual {v0, v1}, Lcom/google/android/apps/camera/bottombar/PauseResumeButton;->transitionToPauseState(Z)V
+
+    return-void
+.end method
+
+.method public resumeTimelapseRecording()V
+    .locals 3
+
+    iget-object v0, p0, Lcom/google/android/apps/camera/bottombar/BottomBarController;->bottomBar:Lcom/google/android/apps/camera/bottombar/BottomBar;
+
+    invoke-virtual {v0}, Lcom/google/android/apps/camera/bottombar/BottomBar;->getPauseResumeButton()Lcom/google/android/apps/camera/bottombar/PauseResumeButton;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lcom/google/android/apps/camera/bottombar/BottomBarController;->gcaConfig:Lojc;
+
+    invoke-virtual {v1}, Lojc;->c()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Lddf;
+
+    sget-object v2, Lddl;->aw:Lddg;
+
+    invoke-interface {v1, v2}, Lddf;->k(Lddg;)Z
+
+    move-result v1
+
+    invoke-virtual {v0, v1}, Lcom/google/android/apps/camera/bottombar/PauseResumeButton;->transitionToPauseState(Z)V
 
     return-void
 .end method
 
 .method public returnToPhotoIntent()V
-    .locals 3
+    .locals 4
 
     iget-object v0, p0, Lcom/google/android/apps/camera/bottombar/BottomBarController;->bottomBar:Lcom/google/android/apps/camera/bottombar/BottomBar;
 
-    sget-object v1, Lcom/google/android/apps/camera/bottombar/BottomBar$SideButtonPosition;->CENTER_LEFT:Lcom/google/android/apps/camera/bottombar/BottomBar$SideButtonPosition;
+    iget-object v1, p0, Lcom/google/android/apps/camera/bottombar/BottomBarController;->cameraSwitchButton:Lcom/google/android/apps/camera/bottombar/CameraSwitchButton;
 
-    iget-object v2, p0, Lcom/google/android/apps/camera/bottombar/BottomBarController;->cameraSwitchButton:Lcom/google/android/apps/camera/bottombar/CameraSwitchButton;
+    const/4 v2, 0x0
 
-    invoke-static {v2}, Lmqp;->i(Ljava/lang/Object;)Lmqp;
+    const/4 v3, 0x1
 
-    move-result-object v2
-
-    invoke-static {v1, v2}, Lmwa;->n(Ljava/lang/Object;Ljava/lang/Object;)Lmwa;
-
-    move-result-object v1
-
-    const/4 v2, 0x1
-
-    invoke-virtual {v0, v1, v2}, Lcom/google/android/apps/camera/bottombar/BottomBar;->changeMultipleSideButtons(Lmwa;Z)V
+    invoke-virtual {v0, v1, v2, v3}, Lcom/google/android/apps/camera/bottombar/BottomBar;->changeSideButtons(Landroid/view/View;Landroid/view/View;Z)V
 
     return-void
 .end method
 
 .method public returnToVideoIntent()V
-    .locals 3
+    .locals 4
 
     iget-object v0, p0, Lcom/google/android/apps/camera/bottombar/BottomBarController;->bottomBar:Lcom/google/android/apps/camera/bottombar/BottomBar;
 
-    sget-object v1, Lcom/google/android/apps/camera/bottombar/BottomBar$SideButtonPosition;->CENTER_LEFT:Lcom/google/android/apps/camera/bottombar/BottomBar$SideButtonPosition;
+    iget-object v1, p0, Lcom/google/android/apps/camera/bottombar/BottomBarController;->cameraSwitchButton:Lcom/google/android/apps/camera/bottombar/CameraSwitchButton;
 
-    iget-object v2, p0, Lcom/google/android/apps/camera/bottombar/BottomBarController;->cameraSwitchButton:Lcom/google/android/apps/camera/bottombar/CameraSwitchButton;
+    const/4 v2, 0x0
 
-    invoke-static {v2}, Lmqp;->i(Ljava/lang/Object;)Lmqp;
+    const/4 v3, 0x1
 
-    move-result-object v2
-
-    invoke-static {v1, v2}, Lmwa;->n(Ljava/lang/Object;Ljava/lang/Object;)Lmwa;
-
-    move-result-object v1
-
-    const/4 v2, 0x1
-
-    invoke-virtual {v0, v1, v2}, Lcom/google/android/apps/camera/bottombar/BottomBar;->changeMultipleSideButtons(Lmwa;Z)V
+    invoke-virtual {v0, v1, v2, v3}, Lcom/google/android/apps/camera/bottombar/BottomBar;->changeSideButtons(Landroid/view/View;Landroid/view/View;Z)V
 
     return-void
 .end method
@@ -573,63 +574,6 @@
     return-void
 .end method
 
-.method public setJupiterButton(Landroid/view/View;)V
-    .locals 2
-
-    iget-object v0, p0, Lcom/google/android/apps/camera/bottombar/BottomBarController;->jupiterButton:Lmqp;
-
-    invoke-virtual {v0}, Lmqp;->g()Z
-
-    move-result v0
-
-    if-nez v0, :cond_0
-
-    invoke-static {p1}, Lmqp;->i(Ljava/lang/Object;)Lmqp;
-
-    move-result-object p1
-
-    iput-object p1, p0, Lcom/google/android/apps/camera/bottombar/BottomBarController;->jupiterButton:Lmqp;
-
-    invoke-virtual {p1}, Lmqp;->c()Ljava/lang/Object;
-
-    move-result-object p1
-
-    check-cast p1, Landroid/view/View;
-
-    new-instance v0, Lcom/google/android/apps/camera/bottombar/BottomBarController$$ExternalSyntheticLambda11;
-
-    invoke-direct {v0, p0}, Lcom/google/android/apps/camera/bottombar/BottomBarController$$ExternalSyntheticLambda11;-><init>(Lcom/google/android/apps/camera/bottombar/BottomBarController;)V
-
-    invoke-virtual {p1, v0}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
-
-    iget-object p1, p0, Lcom/google/android/apps/camera/bottombar/BottomBarController;->bottomBar:Lcom/google/android/apps/camera/bottombar/BottomBar;
-
-    sget-object v0, Lcom/google/android/apps/camera/bottombar/BottomBar$SideButtonPosition;->LEFT:Lcom/google/android/apps/camera/bottombar/BottomBar$SideButtonPosition;
-
-    iget-object v1, p0, Lcom/google/android/apps/camera/bottombar/BottomBarController;->jupiterButton:Lmqp;
-
-    invoke-virtual {v1}, Lmqp;->c()Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Landroid/view/View;
-
-    invoke-virtual {p1, v0, v1}, Lcom/google/android/apps/camera/bottombar/BottomBar;->addView(Lcom/google/android/apps/camera/bottombar/BottomBar$SideButtonPosition;Landroid/view/View;)V
-
-    :cond_0
-    return-void
-.end method
-
-.method public setLayoutListener(Lcom/google/android/apps/camera/bottombar/BottomBarLayoutListener;)V
-    .locals 1
-
-    iget-object v0, p0, Lcom/google/android/apps/camera/bottombar/BottomBarController;->bottomBar:Lcom/google/android/apps/camera/bottombar/BottomBar;
-
-    invoke-virtual {v0, p1}, Lcom/google/android/apps/camera/bottombar/BottomBar;->setLayoutListener(Lcom/google/android/apps/camera/bottombar/BottomBarLayoutListener;)V
-
-    return-void
-.end method
-
 .method public setSelfieFlashState(Z)V
     .locals 0
 
@@ -643,9 +587,9 @@
 
     iget-object v0, p0, Lcom/google/android/apps/camera/bottombar/BottomBarController;->bottomBar:Lcom/google/android/apps/camera/bottombar/BottomBar;
 
-    new-instance v1, Lcom/google/android/apps/camera/bottombar/BottomBarController$$ExternalSyntheticLambda10;
+    new-instance v1, Lcom/google/android/apps/camera/bottombar/BottomBarController$$ExternalSyntheticLambda12;
 
-    invoke-direct {v1, p0, p1}, Lcom/google/android/apps/camera/bottombar/BottomBarController$$ExternalSyntheticLambda10;-><init>(Lcom/google/android/apps/camera/bottombar/BottomBarController;Z)V
+    invoke-direct {v1, p0, p1}, Lcom/google/android/apps/camera/bottombar/BottomBarController$$ExternalSyntheticLambda12;-><init>(Lcom/google/android/apps/camera/bottombar/BottomBarController;Z)V
 
     invoke-virtual {v0, v1}, Lcom/google/android/apps/camera/bottombar/BottomBar;->post(Ljava/lang/Runnable;)Z
 
@@ -674,47 +618,8 @@
     return-void
 .end method
 
-.method public showJupiterButton()V
-    .locals 4
-
-    const/4 v0, 0x1
-
-    iput-boolean v0, p0, Lcom/google/android/apps/camera/bottombar/BottomBarController;->isJupiterButtonShowed:Z
-
-    sget-object v1, Lika;->p:Lika;
-
-    sget-object v2, Lika;->h:Lika;
-
-    sget-object v3, Lika;->i:Lika;
-
-    invoke-static {v1, v2, v3}, Lmwn;->J(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Lmwn;
-
-    move-result-object v1
-
-    iget-object v2, p0, Lcom/google/android/apps/camera/bottombar/BottomBarController;->mode:Lika;
-
-    invoke-virtual {v1, v2}, Lmwn;->contains(Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-nez v1, :cond_0
-
-    iget-object v1, p0, Lcom/google/android/apps/camera/bottombar/BottomBarController;->bottomBar:Lcom/google/android/apps/camera/bottombar/BottomBar;
-
-    sget-object v2, Lcom/google/android/apps/camera/bottombar/BottomBar$SideButtonPosition;->LEFT:Lcom/google/android/apps/camera/bottombar/BottomBar$SideButtonPosition;
-
-    invoke-direct {p0}, Lcom/google/android/apps/camera/bottombar/BottomBarController;->getJupiterButton()Lmqp;
-
-    move-result-object v3
-
-    invoke-virtual {v1, v2, v3, v0}, Lcom/google/android/apps/camera/bottombar/BottomBar;->replaceSideButton(Lcom/google/android/apps/camera/bottombar/BottomBar$SideButtonPosition;Lmqp;Z)V
-
-    :cond_0
-    return-void
-.end method
-
 .method public startAutoTimerCapturing()V
-    .locals 6
+    .locals 4
 
     iget-boolean v0, p0, Lcom/google/android/apps/camera/bottombar/BottomBarController;->isSelfieFlashOn:Z
 
@@ -731,23 +636,11 @@
     :cond_0
     iget-object v0, p0, Lcom/google/android/apps/camera/bottombar/BottomBarController;->bottomBar:Lcom/google/android/apps/camera/bottombar/BottomBar;
 
-    sget-object v2, Lcom/google/android/apps/camera/bottombar/BottomBar$SideButtonPosition;->LEFT:Lcom/google/android/apps/camera/bottombar/BottomBar$SideButtonPosition;
+    const/4 v2, 0x0
 
-    sget-object v3, Lmpx;->a:Lmpx;
+    iget-object v3, p0, Lcom/google/android/apps/camera/bottombar/BottomBarController;->thumbnailButton:Lcom/google/android/apps/camera/bottombar/RoundedThumbnailView;
 
-    sget-object v4, Lcom/google/android/apps/camera/bottombar/BottomBar$SideButtonPosition;->CENTER_RIGHT:Lcom/google/android/apps/camera/bottombar/BottomBar$SideButtonPosition;
-
-    iget-object v5, p0, Lcom/google/android/apps/camera/bottombar/BottomBarController;->thumbnailButton:Lcom/google/android/apps/camera/bottombar/RoundedThumbnailView;
-
-    invoke-static {v5}, Lmqp;->i(Ljava/lang/Object;)Lmqp;
-
-    move-result-object v5
-
-    invoke-static {v2, v3, v4, v5}, Lmwa;->o(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Lmwa;
-
-    move-result-object v2
-
-    invoke-virtual {v0, v2, v1}, Lcom/google/android/apps/camera/bottombar/BottomBar;->changeMultipleSideButtons(Lmwa;Z)V
+    invoke-virtual {v0, v2, v3, v1}, Lcom/google/android/apps/camera/bottombar/BottomBar;->changeSideButtons(Landroid/view/View;Landroid/view/View;Z)V
 
     return-void
 .end method
@@ -757,15 +650,132 @@
 
     iget-object v0, p0, Lcom/google/android/apps/camera/bottombar/BottomBarController;->bottomBar:Lcom/google/android/apps/camera/bottombar/BottomBar;
 
-    const/4 v1, 0x1
+    const/4 v1, 0x0
 
-    invoke-virtual {v0, v1}, Lcom/google/android/apps/camera/bottombar/BottomBar;->clearSideButtons(Z)V
+    const/4 v2, 0x1
+
+    invoke-virtual {v0, v1, v1, v2}, Lcom/google/android/apps/camera/bottombar/BottomBar;->changeSideButtons(Landroid/view/View;Landroid/view/View;Z)V
 
     iget-object v0, p0, Lcom/google/android/apps/camera/bottombar/BottomBarController;->bottomBar:Lcom/google/android/apps/camera/bottombar/BottomBar;
 
-    const/4 v2, 0x0
+    const/4 v1, 0x0
 
-    invoke-virtual {v0, v2, v1}, Lcom/google/android/apps/camera/bottombar/BottomBar;->fadeBackground(ZZ)V
+    invoke-virtual {v0, v1, v2}, Lcom/google/android/apps/camera/bottombar/BottomBar;->fadeBackground(ZZ)V
+
+    return-void
+.end method
+
+.method public startHfrRecording()V
+    .locals 6
+
+    iget-object v0, p0, Lcom/google/android/apps/camera/bottombar/BottomBarController;->bottomBar:Lcom/google/android/apps/camera/bottombar/BottomBar;
+
+    const/4 v1, 0x0
+
+    const/4 v2, 0x1
+
+    invoke-virtual {v0, v1, v2}, Lcom/google/android/apps/camera/bottombar/BottomBar;->fadeBackground(ZZ)V
+
+    iget-object v0, p0, Lcom/google/android/apps/camera/bottombar/BottomBarController;->gcaConfig:Lojc;
+
+    invoke-virtual {v0}, Lojc;->g()Z
+
+    move-result v0
+
+    const/4 v1, 0x0
+
+    if-eqz v0, :cond_2
+
+    iget-object v0, p0, Lcom/google/android/apps/camera/bottombar/BottomBarController;->gcaConfig:Lojc;
+
+    invoke-virtual {v0}, Lojc;->c()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lddf;
+
+    sget-object v3, Ldcu;->W:Lddg;
+
+    invoke-interface {v0, v3}, Lddf;->k(Lddg;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lcom/google/android/apps/camera/bottombar/BottomBarController;->gcaConfig:Lojc;
+
+    invoke-virtual {v0}, Lojc;->c()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lddf;
+
+    sget-object v3, Ldcu;->p:Lddg;
+
+    invoke-interface {v0, v3}, Lddf;->k(Lddg;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lcom/google/android/apps/camera/bottombar/BottomBarController;->bottomBar:Lcom/google/android/apps/camera/bottombar/BottomBar;
+
+    invoke-virtual {v0}, Lcom/google/android/apps/camera/bottombar/BottomBar;->getPauseResumeButton()Lcom/google/android/apps/camera/bottombar/PauseResumeButton;
+
+    move-result-object v0
+
+    goto :goto_0
+
+    :cond_0
+    move-object v0, v1
+
+    :goto_0
+    iget-object v3, p0, Lcom/google/android/apps/camera/bottombar/BottomBarController;->gcaConfig:Lojc;
+
+    invoke-virtual {v3}, Lojc;->c()Ljava/lang/Object;
+
+    move-result-object v3
+
+    check-cast v3, Lddf;
+
+    sget-object v4, Ldcu;->K:Lddg;
+
+    invoke-interface {v3, v4}, Lddf;->k(Lddg;)Z
+
+    move-result v3
+
+    if-eqz v3, :cond_1
+
+    iget-object v1, p0, Lcom/google/android/apps/camera/bottombar/BottomBarController;->bottomBar:Lcom/google/android/apps/camera/bottombar/BottomBar;
+
+    invoke-virtual {v1}, Lcom/google/android/apps/camera/bottombar/BottomBar;->getSnapshotButton()Lcom/google/android/apps/camera/bottombar/SnapshotButton;
+
+    move-result-object v1
+
+    move-object v5, v1
+
+    move-object v1, v0
+
+    move-object v0, v5
+
+    goto :goto_1
+
+    :cond_1
+    move-object v5, v1
+
+    move-object v1, v0
+
+    move-object v0, v5
+
+    goto :goto_1
+
+    :cond_2
+    move-object v0, v1
+
+    :goto_1
+    iget-object v3, p0, Lcom/google/android/apps/camera/bottombar/BottomBarController;->bottomBar:Lcom/google/android/apps/camera/bottombar/BottomBar;
+
+    invoke-virtual {v3, v1, v0, v2}, Lcom/google/android/apps/camera/bottombar/BottomBar;->changeSideButtons(Landroid/view/View;Landroid/view/View;Z)V
 
     return-void
 .end method
@@ -781,17 +791,17 @@
 
     iget-object v0, p0, Lcom/google/android/apps/camera/bottombar/BottomBarController;->bottomBar:Lcom/google/android/apps/camera/bottombar/BottomBar;
 
-    invoke-virtual {v0}, Lcom/google/android/apps/camera/bottombar/BottomBar;->getUiOrientation()Liko;
+    invoke-virtual {v0}, Lcom/google/android/apps/camera/bottombar/BottomBar;->getUiOrientation()Ljrz;
 
     move-result-object v0
 
-    sget-object v2, Liko;->c:Liko;
+    sget-object v2, Ljrz;->c:Ljrz;
 
     const/4 v3, 0x1
 
     if-eq v0, v2, :cond_1
 
-    sget-object v2, Liko;->b:Liko;
+    sget-object v2, Ljrz;->b:Ljrz;
 
     if-ne v0, v2, :cond_0
 
@@ -810,177 +820,86 @@
 
     xor-int/lit8 v1, v1, 0x1
 
+    goto :goto_1
+
     :cond_2
+    :goto_1
     iget-object p1, p0, Lcom/google/android/apps/camera/bottombar/BottomBarController;->bottomBar:Lcom/google/android/apps/camera/bottombar/BottomBar;
 
     invoke-virtual {p1, v1, v3}, Lcom/google/android/apps/camera/bottombar/BottomBar;->fadeBackground(ZZ)V
 
     iget-object p1, p0, Lcom/google/android/apps/camera/bottombar/BottomBarController;->bottomBar:Lcom/google/android/apps/camera/bottombar/BottomBar;
 
-    sget-object v0, Lcom/google/android/apps/camera/bottombar/BottomBar$SideButtonPosition;->CENTER_RIGHT:Lcom/google/android/apps/camera/bottombar/BottomBar$SideButtonPosition;
+    const/4 v0, 0x0
 
-    iget-object v1, p0, Lcom/google/android/apps/camera/bottombar/BottomBarController;->bottomBar:Lcom/google/android/apps/camera/bottombar/BottomBar;
-
-    invoke-virtual {v1}, Lcom/google/android/apps/camera/bottombar/BottomBar;->getCancelButton()Landroid/widget/ImageButton;
+    invoke-virtual {p1}, Lcom/google/android/apps/camera/bottombar/BottomBar;->getCancelButton()Landroid/widget/ImageButton;
 
     move-result-object v1
 
-    invoke-static {v1}, Lmqp;->i(Ljava/lang/Object;)Lmqp;
-
-    move-result-object v1
-
-    invoke-static {v0, v1}, Lmwa;->n(Ljava/lang/Object;Ljava/lang/Object;)Lmwa;
-
-    move-result-object v0
-
-    invoke-virtual {p1, v0, v3}, Lcom/google/android/apps/camera/bottombar/BottomBar;->changeMultipleSideButtons(Lmwa;Z)V
-
-    return-void
-.end method
-
-.method public startJupiterSession()V
-    .locals 3
-
-    invoke-virtual {p0}, Lcom/google/android/apps/camera/bottombar/BottomBarController;->showJupiterButton()V
-
-    iget-object v0, p0, Lcom/google/android/apps/camera/bottombar/BottomBarController;->bottomBar:Lcom/google/android/apps/camera/bottombar/BottomBar;
-
-    sget-object v1, Lcom/google/android/apps/camera/bottombar/BottomBar$SideButtonPosition;->CENTER_LEFT:Lcom/google/android/apps/camera/bottombar/BottomBar$SideButtonPosition;
-
-    iget-object v2, p0, Lcom/google/android/apps/camera/bottombar/BottomBarController;->cameraSwitchButton:Lcom/google/android/apps/camera/bottombar/CameraSwitchButton;
-
-    invoke-static {v2}, Lmqp;->i(Ljava/lang/Object;)Lmqp;
-
-    move-result-object v2
-
-    invoke-virtual {v0, v1, v2}, Lcom/google/android/apps/camera/bottombar/BottomBar;->disableSideButtons(Lcom/google/android/apps/camera/bottombar/BottomBar$SideButtonPosition;Lmqp;)V
+    invoke-virtual {p1, v0, v1, v3}, Lcom/google/android/apps/camera/bottombar/BottomBar;->changeSideButtons(Landroid/view/View;Landroid/view/View;Z)V
 
     return-void
 .end method
 
 .method public startLongShot()V
-    .locals 2
+    .locals 3
 
     iget-object v0, p0, Lcom/google/android/apps/camera/bottombar/BottomBarController;->bottomBar:Lcom/google/android/apps/camera/bottombar/BottomBar;
 
-    const/4 v1, 0x1
-
-    invoke-virtual {v0, v1}, Lcom/google/android/apps/camera/bottombar/BottomBar;->clearSideButtons(Z)V
-
-    return-void
-.end method
-
-.method public startNoPDPortraitCapture()V
-    .locals 5
-
-    iget-object v0, p0, Lcom/google/android/apps/camera/bottombar/BottomBarController;->bottomBar:Lcom/google/android/apps/camera/bottombar/BottomBar;
-
-    sget-object v1, Lcom/google/android/apps/camera/bottombar/BottomBar$SideButtonPosition;->CENTER_LEFT:Lcom/google/android/apps/camera/bottombar/BottomBar$SideButtonPosition;
-
-    invoke-direct {p0}, Lcom/google/android/apps/camera/bottombar/BottomBarController;->getJupiterButton()Lmqp;
-
-    move-result-object v2
-
-    sget-object v3, Lcom/google/android/apps/camera/bottombar/BottomBar$SideButtonPosition;->CENTER_RIGHT:Lcom/google/android/apps/camera/bottombar/BottomBar$SideButtonPosition;
-
-    iget-object v4, p0, Lcom/google/android/apps/camera/bottombar/BottomBarController;->thumbnailButton:Lcom/google/android/apps/camera/bottombar/RoundedThumbnailView;
-
-    invoke-static {v4}, Lmqp;->i(Ljava/lang/Object;)Lmqp;
-
-    move-result-object v4
-
-    invoke-static {v1, v2, v3, v4}, Lmwa;->o(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Lmwa;
-
-    move-result-object v1
+    const/4 v1, 0x0
 
     const/4 v2, 0x1
 
-    invoke-virtual {v0, v1, v2}, Lcom/google/android/apps/camera/bottombar/BottomBar;->changeMultipleSideButtons(Lmwa;Z)V
+    invoke-virtual {v0, v1, v1, v2}, Lcom/google/android/apps/camera/bottombar/BottomBar;->changeSideButtons(Landroid/view/View;Landroid/view/View;Z)V
 
     return-void
 .end method
 
 .method public startPanoramaCalibration()V
-    .locals 5
+    .locals 4
 
     iget-object v0, p0, Lcom/google/android/apps/camera/bottombar/BottomBarController;->bottomBar:Lcom/google/android/apps/camera/bottombar/BottomBar;
 
-    sget-object v1, Lcom/google/android/apps/camera/bottombar/BottomBar$SideButtonPosition;->CENTER_LEFT:Lcom/google/android/apps/camera/bottombar/BottomBar$SideButtonPosition;
-
-    iget-object v2, p0, Lcom/google/android/apps/camera/bottombar/BottomBarController;->bottomBar:Lcom/google/android/apps/camera/bottombar/BottomBar;
-
-    invoke-virtual {v2}, Lcom/google/android/apps/camera/bottombar/BottomBar;->getRetakeButton()Landroid/widget/ImageButton;
-
-    move-result-object v2
-
-    invoke-static {v2}, Lmqp;->i(Ljava/lang/Object;)Lmqp;
-
-    move-result-object v2
-
-    sget-object v3, Lcom/google/android/apps/camera/bottombar/BottomBar$SideButtonPosition;->CENTER_RIGHT:Lcom/google/android/apps/camera/bottombar/BottomBar$SideButtonPosition;
-
-    iget-object v4, p0, Lcom/google/android/apps/camera/bottombar/BottomBarController;->bottomBar:Lcom/google/android/apps/camera/bottombar/BottomBar;
-
-    invoke-virtual {v4}, Lcom/google/android/apps/camera/bottombar/BottomBar;->getCancelButton()Landroid/widget/ImageButton;
-
-    move-result-object v4
-
-    invoke-static {v4}, Lmqp;->i(Ljava/lang/Object;)Lmqp;
-
-    move-result-object v4
-
-    invoke-static {v1, v2, v3, v4}, Lmwa;->o(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Lmwa;
+    invoke-virtual {v0}, Lcom/google/android/apps/camera/bottombar/BottomBar;->getRetakeButton()Landroid/widget/ImageButton;
 
     move-result-object v1
 
-    const/4 v2, 0x1
+    iget-object v2, p0, Lcom/google/android/apps/camera/bottombar/BottomBarController;->bottomBar:Lcom/google/android/apps/camera/bottombar/BottomBar;
 
-    invoke-virtual {v0, v1, v2}, Lcom/google/android/apps/camera/bottombar/BottomBar;->changeMultipleSideButtons(Lmwa;Z)V
+    invoke-virtual {v2}, Lcom/google/android/apps/camera/bottombar/BottomBar;->getCancelButton()Landroid/widget/ImageButton;
+
+    move-result-object v2
+
+    const/4 v3, 0x1
+
+    invoke-virtual {v0, v1, v2, v3}, Lcom/google/android/apps/camera/bottombar/BottomBar;->changeSideButtons(Landroid/view/View;Landroid/view/View;Z)V
 
     return-void
 .end method
 
 .method public startPhotoSphereCapture()V
-    .locals 5
+    .locals 4
 
     iget-object v0, p0, Lcom/google/android/apps/camera/bottombar/BottomBarController;->bottomBar:Lcom/google/android/apps/camera/bottombar/BottomBar;
 
-    sget-object v1, Lcom/google/android/apps/camera/bottombar/BottomBar$SideButtonPosition;->CENTER_LEFT:Lcom/google/android/apps/camera/bottombar/BottomBar$SideButtonPosition;
-
-    iget-object v2, p0, Lcom/google/android/apps/camera/bottombar/BottomBarController;->bottomBar:Lcom/google/android/apps/camera/bottombar/BottomBar;
-
-    invoke-virtual {v2}, Lcom/google/android/apps/camera/bottombar/BottomBar;->getRetakeButton()Landroid/widget/ImageButton;
-
-    move-result-object v2
-
-    invoke-static {v2}, Lmqp;->i(Ljava/lang/Object;)Lmqp;
-
-    move-result-object v2
-
-    sget-object v3, Lcom/google/android/apps/camera/bottombar/BottomBar$SideButtonPosition;->CENTER_RIGHT:Lcom/google/android/apps/camera/bottombar/BottomBar$SideButtonPosition;
-
-    iget-object v4, p0, Lcom/google/android/apps/camera/bottombar/BottomBarController;->bottomBar:Lcom/google/android/apps/camera/bottombar/BottomBar;
-
-    invoke-virtual {v4}, Lcom/google/android/apps/camera/bottombar/BottomBar;->getCancelButton()Landroid/widget/ImageButton;
-
-    move-result-object v4
-
-    invoke-static {v4}, Lmqp;->i(Ljava/lang/Object;)Lmqp;
-
-    move-result-object v4
-
-    invoke-static {v1, v2, v3, v4}, Lmwa;->o(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Lmwa;
+    invoke-virtual {v0}, Lcom/google/android/apps/camera/bottombar/BottomBar;->getRetakeButton()Landroid/widget/ImageButton;
 
     move-result-object v1
 
-    const/4 v2, 0x1
+    iget-object v2, p0, Lcom/google/android/apps/camera/bottombar/BottomBarController;->bottomBar:Lcom/google/android/apps/camera/bottombar/BottomBar;
 
-    invoke-virtual {v0, v1, v2}, Lcom/google/android/apps/camera/bottombar/BottomBar;->changeMultipleSideButtons(Lmwa;Z)V
+    invoke-virtual {v2}, Lcom/google/android/apps/camera/bottombar/BottomBar;->getCancelButton()Landroid/widget/ImageButton;
+
+    move-result-object v2
+
+    const/4 v3, 0x1
+
+    invoke-virtual {v0, v1, v2, v3}, Lcom/google/android/apps/camera/bottombar/BottomBar;->changeSideButtons(Landroid/view/View;Landroid/view/View;Z)V
 
     return-void
 .end method
 
-.method public startRecording(ZZ)V
+.method public startRecording()V
     .locals 4
 
     iget-boolean v0, p0, Lcom/google/android/apps/camera/bottombar/BottomBarController;->isSelfieFlashOn:Z
@@ -996,57 +915,84 @@
     invoke-virtual {v0, v2, v1}, Lcom/google/android/apps/camera/bottombar/BottomBar;->fadeBackground(ZZ)V
 
     :cond_0
-    if-eqz p1, :cond_1
-
-    iget-object p1, p0, Lcom/google/android/apps/camera/bottombar/BottomBarController;->bottomBar:Lcom/google/android/apps/camera/bottombar/BottomBar;
-
-    invoke-virtual {p1}, Lcom/google/android/apps/camera/bottombar/BottomBar;->getPauseResumeButton()Lcom/google/android/apps/camera/bottombar/PauseResumeButton;
-
-    move-result-object p1
-
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    invoke-static {p1}, Lmqp;->i(Ljava/lang/Object;)Lmqp;
-
-    move-result-object p1
-
-    goto :goto_0
-
-    :cond_1
-    sget-object p1, Lmpx;->a:Lmpx;
-
-    :goto_0
-    if-eqz p2, :cond_2
-
-    iget-object p2, p0, Lcom/google/android/apps/camera/bottombar/BottomBarController;->bottomBar:Lcom/google/android/apps/camera/bottombar/BottomBar;
-
-    invoke-virtual {p2}, Lcom/google/android/apps/camera/bottombar/BottomBar;->getSnapshotButton()Lcom/google/android/apps/camera/bottombar/SnapshotButton;
-
-    move-result-object p2
-
-    invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    invoke-static {p2}, Lmqp;->i(Ljava/lang/Object;)Lmqp;
-
-    move-result-object p2
-
-    goto :goto_1
-
-    :cond_2
-    sget-object p2, Lmpx;->a:Lmpx;
-
-    :goto_1
     iget-object v0, p0, Lcom/google/android/apps/camera/bottombar/BottomBarController;->bottomBar:Lcom/google/android/apps/camera/bottombar/BottomBar;
 
-    sget-object v2, Lcom/google/android/apps/camera/bottombar/BottomBar$SideButtonPosition;->CENTER_LEFT:Lcom/google/android/apps/camera/bottombar/BottomBar$SideButtonPosition;
+    invoke-virtual {v0}, Lcom/google/android/apps/camera/bottombar/BottomBar;->getPauseResumeButton()Lcom/google/android/apps/camera/bottombar/PauseResumeButton;
 
-    sget-object v3, Lcom/google/android/apps/camera/bottombar/BottomBar$SideButtonPosition;->CENTER_RIGHT:Lcom/google/android/apps/camera/bottombar/BottomBar$SideButtonPosition;
+    move-result-object v2
 
-    invoke-static {v2, p1, v3, p2}, Lmwa;->o(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Lmwa;
+    iget-object v3, p0, Lcom/google/android/apps/camera/bottombar/BottomBarController;->bottomBar:Lcom/google/android/apps/camera/bottombar/BottomBar;
 
-    move-result-object p1
+    invoke-virtual {v3}, Lcom/google/android/apps/camera/bottombar/BottomBar;->getSnapshotButton()Lcom/google/android/apps/camera/bottombar/SnapshotButton;
 
-    invoke-virtual {v0, p1, v1}, Lcom/google/android/apps/camera/bottombar/BottomBar;->changeMultipleSideButtons(Lmwa;Z)V
+    move-result-object v3
+
+    invoke-virtual {v0, v2, v3, v1}, Lcom/google/android/apps/camera/bottombar/BottomBar;->changeSideButtons(Landroid/view/View;Landroid/view/View;Z)V
+
+    return-void
+.end method
+
+.method public startTimelapseRecording()V
+    .locals 4
+
+    iget-object v0, p0, Lcom/google/android/apps/camera/bottombar/BottomBarController;->bottomBar:Lcom/google/android/apps/camera/bottombar/BottomBar;
+
+    const/4 v1, 0x0
+
+    const/4 v2, 0x1
+
+    invoke-virtual {v0, v1, v2}, Lcom/google/android/apps/camera/bottombar/BottomBar;->fadeBackground(ZZ)V
+
+    iget-object v0, p0, Lcom/google/android/apps/camera/bottombar/BottomBarController;->gcaConfig:Lojc;
+
+    invoke-virtual {v0}, Lojc;->g()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lcom/google/android/apps/camera/bottombar/BottomBarController;->gcaConfig:Lojc;
+
+    invoke-virtual {v0}, Lojc;->c()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lddf;
+
+    sget-object v1, Ldeg;->e:Lddg;
+
+    invoke-interface {v0, v1}, Lddf;->k(Lddg;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lcom/google/android/apps/camera/bottombar/BottomBarController;->bottomBar:Lcom/google/android/apps/camera/bottombar/BottomBar;
+
+    invoke-virtual {v0}, Lcom/google/android/apps/camera/bottombar/BottomBar;->getPauseResumeButton()Lcom/google/android/apps/camera/bottombar/PauseResumeButton;
+
+    move-result-object v1
+
+    iget-object v3, p0, Lcom/google/android/apps/camera/bottombar/BottomBarController;->bottomBar:Lcom/google/android/apps/camera/bottombar/BottomBar;
+
+    invoke-virtual {v3}, Lcom/google/android/apps/camera/bottombar/BottomBar;->getSnapshotButton()Lcom/google/android/apps/camera/bottombar/SnapshotButton;
+
+    move-result-object v3
+
+    invoke-virtual {v0, v1, v3, v2}, Lcom/google/android/apps/camera/bottombar/BottomBar;->changeSideButtons(Landroid/view/View;Landroid/view/View;Z)V
+
+    return-void
+
+    :cond_0
+    iget-object v0, p0, Lcom/google/android/apps/camera/bottombar/BottomBarController;->bottomBar:Lcom/google/android/apps/camera/bottombar/BottomBar;
+
+    invoke-virtual {v0}, Lcom/google/android/apps/camera/bottombar/BottomBar;->getPauseResumeButton()Lcom/google/android/apps/camera/bottombar/PauseResumeButton;
+
+    move-result-object v1
+
+    const/4 v3, 0x0
+
+    invoke-virtual {v0, v1, v3, v2}, Lcom/google/android/apps/camera/bottombar/BottomBar;->changeSideButtons(Landroid/view/View;Landroid/view/View;Z)V
 
     return-void
 .end method
@@ -1069,13 +1015,15 @@
     :cond_0
     iget-object v0, p0, Lcom/google/android/apps/camera/bottombar/BottomBarController;->bottomBar:Lcom/google/android/apps/camera/bottombar/BottomBar;
 
-    invoke-virtual {v0, v1}, Lcom/google/android/apps/camera/bottombar/BottomBar;->clearSideButtons(Z)V
+    const/4 v2, 0x0
+
+    invoke-virtual {v0, v2, v2, v1}, Lcom/google/android/apps/camera/bottombar/BottomBar;->changeSideButtons(Landroid/view/View;Landroid/view/View;Z)V
 
     return-void
 .end method
 
 .method public stopAutoTimerCapturing()V
-    .locals 7
+    .locals 4
 
     iget-boolean v0, p0, Lcom/google/android/apps/camera/bottombar/BottomBarController;->isSocialShareOpened:Z
 
@@ -1086,70 +1034,71 @@
     :cond_0
     iget-object v0, p0, Lcom/google/android/apps/camera/bottombar/BottomBarController;->bottomBar:Lcom/google/android/apps/camera/bottombar/BottomBar;
 
-    sget-object v1, Lcom/google/android/apps/camera/bottombar/BottomBar$SideButtonPosition;->LEFT:Lcom/google/android/apps/camera/bottombar/BottomBar$SideButtonPosition;
+    iget-object v1, p0, Lcom/google/android/apps/camera/bottombar/BottomBarController;->cameraSwitchButton:Lcom/google/android/apps/camera/bottombar/CameraSwitchButton;
 
-    invoke-direct {p0}, Lcom/google/android/apps/camera/bottombar/BottomBarController;->getJupiterButton()Lmqp;
+    iget-object v2, p0, Lcom/google/android/apps/camera/bottombar/BottomBarController;->thumbnailButton:Lcom/google/android/apps/camera/bottombar/RoundedThumbnailView;
 
-    move-result-object v2
+    const/4 v3, 0x1
 
-    sget-object v3, Lcom/google/android/apps/camera/bottombar/BottomBar$SideButtonPosition;->CENTER_LEFT:Lcom/google/android/apps/camera/bottombar/BottomBar$SideButtonPosition;
-
-    iget-object v4, p0, Lcom/google/android/apps/camera/bottombar/BottomBarController;->cameraSwitchButton:Lcom/google/android/apps/camera/bottombar/CameraSwitchButton;
-
-    invoke-static {v4}, Lmqp;->i(Ljava/lang/Object;)Lmqp;
-
-    move-result-object v4
-
-    sget-object v5, Lcom/google/android/apps/camera/bottombar/BottomBar$SideButtonPosition;->CENTER_RIGHT:Lcom/google/android/apps/camera/bottombar/BottomBar$SideButtonPosition;
-
-    iget-object v6, p0, Lcom/google/android/apps/camera/bottombar/BottomBarController;->thumbnailButton:Lcom/google/android/apps/camera/bottombar/RoundedThumbnailView;
-
-    invoke-static {v6}, Lmqp;->i(Ljava/lang/Object;)Lmqp;
-
-    move-result-object v6
-
-    invoke-static/range {v1 .. v6}, Lmwa;->p(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Lmwa;
-
-    move-result-object v1
-
-    const/4 v2, 0x1
-
-    invoke-virtual {v0, v1, v2}, Lcom/google/android/apps/camera/bottombar/BottomBar;->changeMultipleSideButtons(Lmwa;Z)V
+    invoke-virtual {v0, v1, v2, v3}, Lcom/google/android/apps/camera/bottombar/BottomBar;->changeSideButtons(Landroid/view/View;Landroid/view/View;Z)V
 
     return-void
 .end method
 
 .method public stopCountdown()V
-    .locals 2
+    .locals 1
 
-    iget-object v0, p0, Lcom/google/android/apps/camera/bottombar/BottomBarController;->mode:Lika;
+    iget-object v0, p0, Lcom/google/android/apps/camera/bottombar/BottomBarController;->mode:Ljrl;
 
-    invoke-virtual {p0, v0}, Lcom/google/android/apps/camera/bottombar/BottomBarController;->switchToMode(Lika;)V
+    invoke-virtual {p0, v0}, Lcom/google/android/apps/camera/bottombar/BottomBarController;->switchToMode(Ljrl;)V
 
-    iget-object v0, p0, Lcom/google/android/apps/camera/bottombar/BottomBarController;->gcaConfig:Ldhi;
+    return-void
+.end method
 
-    sget-object v1, Ldib;->j:Ldhj;
+.method public stopHfrRecording()V
+    .locals 4
 
-    invoke-interface {v0, v1}, Ldhi;->l(Ldhj;)Z
+    iget-object v0, p0, Lcom/google/android/apps/camera/bottombar/BottomBarController;->bottomBar:Lcom/google/android/apps/camera/bottombar/BottomBar;
 
-    move-result v0
+    const/4 v1, 0x1
 
-    if-nez v0, :cond_0
+    invoke-virtual {v0, v1, v1}, Lcom/google/android/apps/camera/bottombar/BottomBar;->fadeBackground(ZZ)V
 
-    iget-object v0, p0, Lcom/google/android/apps/camera/bottombar/BottomBarController;->mode:Lika;
+    iget-object v0, p0, Lcom/google/android/apps/camera/bottombar/BottomBarController;->bottomBar:Lcom/google/android/apps/camera/bottombar/BottomBar;
 
-    sget-object v1, Lika;->g:Lika;
+    iget-object v2, p0, Lcom/google/android/apps/camera/bottombar/BottomBarController;->thumbnailButton:Lcom/google/android/apps/camera/bottombar/RoundedThumbnailView;
 
-    if-ne v0, v1, :cond_0
+    const/4 v3, 0x0
 
-    invoke-virtual {p0}, Lcom/google/android/apps/camera/bottombar/BottomBarController;->startNoPDPortraitCapture()V
+    invoke-virtual {v0, v3, v2, v1}, Lcom/google/android/apps/camera/bottombar/BottomBar;->changeSideButtons(Landroid/view/View;Landroid/view/View;Z)V
 
-    :cond_0
+    iget-object v0, p0, Lcom/google/android/apps/camera/bottombar/BottomBarController;->bottomBar:Lcom/google/android/apps/camera/bottombar/BottomBar;
+
+    invoke-virtual {v0}, Lcom/google/android/apps/camera/bottombar/BottomBar;->getPauseResumeButton()Lcom/google/android/apps/camera/bottombar/PauseResumeButton;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lcom/google/android/apps/camera/bottombar/BottomBarController;->gcaConfig:Lojc;
+
+    invoke-virtual {v1}, Lojc;->c()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Lddf;
+
+    sget-object v2, Lddl;->aw:Lddg;
+
+    invoke-interface {v1, v2}, Lddf;->k(Lddg;)Z
+
+    move-result v1
+
+    invoke-virtual {v0, v1}, Lcom/google/android/apps/camera/bottombar/PauseResumeButton;->resetButton(Z)V
+
     return-void
 .end method
 
 .method public stopImaxCapture()V
-    .locals 6
+    .locals 4
 
     iget-object v0, p0, Lcom/google/android/apps/camera/bottombar/BottomBarController;->thumbnailButton:Lcom/google/android/apps/camera/bottombar/RoundedThumbnailView;
 
@@ -1163,161 +1112,65 @@
 
     iget-object v0, p0, Lcom/google/android/apps/camera/bottombar/BottomBarController;->bottomBar:Lcom/google/android/apps/camera/bottombar/BottomBar;
 
-    sget-object v2, Lcom/google/android/apps/camera/bottombar/BottomBar$SideButtonPosition;->LEFT:Lcom/google/android/apps/camera/bottombar/BottomBar$SideButtonPosition;
+    iget-object v2, p0, Lcom/google/android/apps/camera/bottombar/BottomBarController;->thumbnailButton:Lcom/google/android/apps/camera/bottombar/RoundedThumbnailView;
 
-    invoke-direct {p0}, Lcom/google/android/apps/camera/bottombar/BottomBarController;->getJupiterButton()Lmqp;
+    const/4 v3, 0x0
 
-    move-result-object v3
-
-    sget-object v4, Lcom/google/android/apps/camera/bottombar/BottomBar$SideButtonPosition;->CENTER_RIGHT:Lcom/google/android/apps/camera/bottombar/BottomBar$SideButtonPosition;
-
-    iget-object v5, p0, Lcom/google/android/apps/camera/bottombar/BottomBarController;->thumbnailButton:Lcom/google/android/apps/camera/bottombar/RoundedThumbnailView;
-
-    invoke-static {v5}, Lmqp;->i(Ljava/lang/Object;)Lmqp;
-
-    move-result-object v5
-
-    invoke-static {v2, v3, v4, v5}, Lmwa;->o(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Lmwa;
-
-    move-result-object v2
-
-    invoke-virtual {v0, v2, v1}, Lcom/google/android/apps/camera/bottombar/BottomBar;->changeMultipleSideButtons(Lmwa;Z)V
+    invoke-virtual {v0, v3, v2, v1}, Lcom/google/android/apps/camera/bottombar/BottomBar;->changeSideButtons(Landroid/view/View;Landroid/view/View;Z)V
 
     return-void
 .end method
 
 .method public stopLongShot()V
-    .locals 7
+    .locals 4
 
     iget-object v0, p0, Lcom/google/android/apps/camera/bottombar/BottomBarController;->bottomBar:Lcom/google/android/apps/camera/bottombar/BottomBar;
 
-    sget-object v1, Lcom/google/android/apps/camera/bottombar/BottomBar$SideButtonPosition;->LEFT:Lcom/google/android/apps/camera/bottombar/BottomBar$SideButtonPosition;
+    iget-object v1, p0, Lcom/google/android/apps/camera/bottombar/BottomBarController;->cameraSwitchButton:Lcom/google/android/apps/camera/bottombar/CameraSwitchButton;
 
-    invoke-direct {p0}, Lcom/google/android/apps/camera/bottombar/BottomBarController;->getJupiterButton()Lmqp;
+    iget-object v2, p0, Lcom/google/android/apps/camera/bottombar/BottomBarController;->thumbnailButton:Lcom/google/android/apps/camera/bottombar/RoundedThumbnailView;
 
-    move-result-object v2
+    const/4 v3, 0x1
 
-    sget-object v3, Lcom/google/android/apps/camera/bottombar/BottomBar$SideButtonPosition;->CENTER_LEFT:Lcom/google/android/apps/camera/bottombar/BottomBar$SideButtonPosition;
-
-    iget-object v4, p0, Lcom/google/android/apps/camera/bottombar/BottomBarController;->cameraSwitchButton:Lcom/google/android/apps/camera/bottombar/CameraSwitchButton;
-
-    invoke-static {v4}, Lmqp;->i(Ljava/lang/Object;)Lmqp;
-
-    move-result-object v4
-
-    sget-object v5, Lcom/google/android/apps/camera/bottombar/BottomBar$SideButtonPosition;->CENTER_RIGHT:Lcom/google/android/apps/camera/bottombar/BottomBar$SideButtonPosition;
-
-    iget-object v6, p0, Lcom/google/android/apps/camera/bottombar/BottomBarController;->thumbnailButton:Lcom/google/android/apps/camera/bottombar/RoundedThumbnailView;
-
-    invoke-static {v6}, Lmqp;->i(Ljava/lang/Object;)Lmqp;
-
-    move-result-object v6
-
-    invoke-static/range {v1 .. v6}, Lmwa;->p(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Lmwa;
-
-    move-result-object v1
-
-    const/4 v2, 0x1
-
-    invoke-virtual {v0, v1, v2}, Lcom/google/android/apps/camera/bottombar/BottomBar;->changeMultipleSideButtons(Lmwa;Z)V
-
-    return-void
-.end method
-
-.method public stopNoPDPortraitCapture()V
-    .locals 5
-
-    iget-object v0, p0, Lcom/google/android/apps/camera/bottombar/BottomBarController;->bottomBar:Lcom/google/android/apps/camera/bottombar/BottomBar;
-
-    sget-object v1, Lcom/google/android/apps/camera/bottombar/BottomBar$SideButtonPosition;->CENTER_LEFT:Lcom/google/android/apps/camera/bottombar/BottomBar$SideButtonPosition;
-
-    iget-object v2, p0, Lcom/google/android/apps/camera/bottombar/BottomBarController;->cameraSwitchButton:Lcom/google/android/apps/camera/bottombar/CameraSwitchButton;
-
-    invoke-static {v2}, Lmqp;->i(Ljava/lang/Object;)Lmqp;
-
-    move-result-object v2
-
-    sget-object v3, Lcom/google/android/apps/camera/bottombar/BottomBar$SideButtonPosition;->CENTER_RIGHT:Lcom/google/android/apps/camera/bottombar/BottomBar$SideButtonPosition;
-
-    iget-object v4, p0, Lcom/google/android/apps/camera/bottombar/BottomBarController;->thumbnailButton:Lcom/google/android/apps/camera/bottombar/RoundedThumbnailView;
-
-    invoke-static {v4}, Lmqp;->i(Ljava/lang/Object;)Lmqp;
-
-    move-result-object v4
-
-    invoke-static {v1, v2, v3, v4}, Lmwa;->o(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Lmwa;
-
-    move-result-object v1
-
-    const/4 v2, 0x1
-
-    invoke-virtual {v0, v1, v2}, Lcom/google/android/apps/camera/bottombar/BottomBar;->changeMultipleSideButtons(Lmwa;Z)V
+    invoke-virtual {v0, v1, v2, v3}, Lcom/google/android/apps/camera/bottombar/BottomBar;->changeSideButtons(Landroid/view/View;Landroid/view/View;Z)V
 
     return-void
 .end method
 
 .method public stopPanoramaCapture()V
-    .locals 5
+    .locals 4
 
     iget-object v0, p0, Lcom/google/android/apps/camera/bottombar/BottomBarController;->bottomBar:Lcom/google/android/apps/camera/bottombar/BottomBar;
 
-    sget-object v1, Lcom/google/android/apps/camera/bottombar/BottomBar$SideButtonPosition;->LEFT:Lcom/google/android/apps/camera/bottombar/BottomBar$SideButtonPosition;
+    iget-object v1, p0, Lcom/google/android/apps/camera/bottombar/BottomBarController;->thumbnailButton:Lcom/google/android/apps/camera/bottombar/RoundedThumbnailView;
 
-    invoke-direct {p0}, Lcom/google/android/apps/camera/bottombar/BottomBarController;->getJupiterButton()Lmqp;
+    const/4 v2, 0x0
 
-    move-result-object v2
+    const/4 v3, 0x1
 
-    sget-object v3, Lcom/google/android/apps/camera/bottombar/BottomBar$SideButtonPosition;->CENTER_RIGHT:Lcom/google/android/apps/camera/bottombar/BottomBar$SideButtonPosition;
-
-    iget-object v4, p0, Lcom/google/android/apps/camera/bottombar/BottomBarController;->thumbnailButton:Lcom/google/android/apps/camera/bottombar/RoundedThumbnailView;
-
-    invoke-static {v4}, Lmqp;->i(Ljava/lang/Object;)Lmqp;
-
-    move-result-object v4
-
-    invoke-static {v1, v2, v3, v4}, Lmwa;->o(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Lmwa;
-
-    move-result-object v1
-
-    const/4 v2, 0x1
-
-    invoke-virtual {v0, v1, v2}, Lcom/google/android/apps/camera/bottombar/BottomBar;->changeMultipleSideButtons(Lmwa;Z)V
+    invoke-virtual {v0, v2, v1, v3}, Lcom/google/android/apps/camera/bottombar/BottomBar;->changeSideButtons(Landroid/view/View;Landroid/view/View;Z)V
 
     return-void
 .end method
 
 .method public stopPhotoSphereCapture()V
-    .locals 5
+    .locals 4
 
     iget-object v0, p0, Lcom/google/android/apps/camera/bottombar/BottomBarController;->bottomBar:Lcom/google/android/apps/camera/bottombar/BottomBar;
 
-    sget-object v1, Lcom/google/android/apps/camera/bottombar/BottomBar$SideButtonPosition;->LEFT:Lcom/google/android/apps/camera/bottombar/BottomBar$SideButtonPosition;
+    iget-object v1, p0, Lcom/google/android/apps/camera/bottombar/BottomBarController;->thumbnailButton:Lcom/google/android/apps/camera/bottombar/RoundedThumbnailView;
 
-    invoke-direct {p0}, Lcom/google/android/apps/camera/bottombar/BottomBarController;->getJupiterButton()Lmqp;
+    const/4 v2, 0x0
 
-    move-result-object v2
+    const/4 v3, 0x1
 
-    sget-object v3, Lcom/google/android/apps/camera/bottombar/BottomBar$SideButtonPosition;->CENTER_RIGHT:Lcom/google/android/apps/camera/bottombar/BottomBar$SideButtonPosition;
-
-    iget-object v4, p0, Lcom/google/android/apps/camera/bottombar/BottomBarController;->thumbnailButton:Lcom/google/android/apps/camera/bottombar/RoundedThumbnailView;
-
-    invoke-static {v4}, Lmqp;->i(Ljava/lang/Object;)Lmqp;
-
-    move-result-object v4
-
-    invoke-static {v1, v2, v3, v4}, Lmwa;->o(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Lmwa;
-
-    move-result-object v1
-
-    const/4 v2, 0x1
-
-    invoke-virtual {v0, v1, v2}, Lcom/google/android/apps/camera/bottombar/BottomBar;->changeMultipleSideButtons(Lmwa;Z)V
+    invoke-virtual {v0, v2, v1, v3}, Lcom/google/android/apps/camera/bottombar/BottomBar;->changeSideButtons(Landroid/view/View;Landroid/view/View;Z)V
 
     return-void
 .end method
 
-.method public stopRecording(ZZ)V
-    .locals 8
+.method public stopRecording()V
+    .locals 4
 
     iget-boolean v0, p0, Lcom/google/android/apps/camera/bottombar/BottomBarController;->isSelfieFlashOn:Z
 
@@ -1330,67 +1183,55 @@
     invoke-virtual {v0, v1, v1}, Lcom/google/android/apps/camera/bottombar/BottomBar;->fadeBackground(ZZ)V
 
     :cond_0
-    if-eqz p1, :cond_1
+    iget-object v0, p0, Lcom/google/android/apps/camera/bottombar/BottomBarController;->bottomBar:Lcom/google/android/apps/camera/bottombar/BottomBar;
 
-    iget-object p1, p0, Lcom/google/android/apps/camera/bottombar/BottomBarController;->cameraSwitchButton:Lcom/google/android/apps/camera/bottombar/CameraSwitchButton;
+    iget-object v2, p0, Lcom/google/android/apps/camera/bottombar/BottomBarController;->cameraSwitchButton:Lcom/google/android/apps/camera/bottombar/CameraSwitchButton;
 
-    invoke-static {p1}, Lmqp;->i(Ljava/lang/Object;)Lmqp;
+    iget-object v3, p0, Lcom/google/android/apps/camera/bottombar/BottomBarController;->thumbnailButton:Lcom/google/android/apps/camera/bottombar/RoundedThumbnailView;
 
-    move-result-object p1
+    invoke-virtual {v0, v2, v3, v1}, Lcom/google/android/apps/camera/bottombar/BottomBar;->changeSideButtons(Landroid/view/View;Landroid/view/View;Z)V
 
-    move-object v5, p1
+    iget-object v0, p0, Lcom/google/android/apps/camera/bottombar/BottomBarController;->bottomBar:Lcom/google/android/apps/camera/bottombar/BottomBar;
 
-    goto :goto_0
+    invoke-virtual {v0}, Lcom/google/android/apps/camera/bottombar/BottomBar;->getPauseResumeButton()Lcom/google/android/apps/camera/bottombar/PauseResumeButton;
 
-    :cond_1
-    sget-object p1, Lmpx;->a:Lmpx;
+    move-result-object v0
 
-    move-object v5, p1
+    iget-object v1, p0, Lcom/google/android/apps/camera/bottombar/BottomBarController;->gcaConfig:Lojc;
 
-    :goto_0
-    if-eqz p2, :cond_2
+    invoke-virtual {v1}, Lojc;->c()Ljava/lang/Object;
 
-    iget-object p1, p0, Lcom/google/android/apps/camera/bottombar/BottomBarController;->thumbnailButton:Lcom/google/android/apps/camera/bottombar/RoundedThumbnailView;
+    move-result-object v1
 
-    invoke-static {p1}, Lmqp;->i(Ljava/lang/Object;)Lmqp;
+    check-cast v1, Lddf;
 
-    move-result-object p1
+    sget-object v2, Lddl;->aw:Lddg;
 
-    move-object v7, p1
+    invoke-interface {v1, v2}, Lddf;->k(Lddg;)Z
 
-    goto :goto_1
+    move-result v1
 
-    :cond_2
-    sget-object p1, Lmpx;->a:Lmpx;
+    invoke-virtual {v0, v1}, Lcom/google/android/apps/camera/bottombar/PauseResumeButton;->resetButton(Z)V
 
-    move-object v7, p1
+    return-void
+.end method
 
-    :goto_1
-    iget-object p1, p0, Lcom/google/android/apps/camera/bottombar/BottomBarController;->bottomBar:Lcom/google/android/apps/camera/bottombar/BottomBar;
+.method public stopTimelapseRecording()V
+    .locals 4
 
-    sget-object v2, Lcom/google/android/apps/camera/bottombar/BottomBar$SideButtonPosition;->LEFT:Lcom/google/android/apps/camera/bottombar/BottomBar$SideButtonPosition;
+    iget-object v0, p0, Lcom/google/android/apps/camera/bottombar/BottomBarController;->bottomBar:Lcom/google/android/apps/camera/bottombar/BottomBar;
 
-    invoke-direct {p0}, Lcom/google/android/apps/camera/bottombar/BottomBarController;->getJupiterButton()Lmqp;
+    const/4 v1, 0x1
 
-    move-result-object v3
+    invoke-virtual {v0, v1, v1}, Lcom/google/android/apps/camera/bottombar/BottomBar;->fadeBackground(ZZ)V
 
-    sget-object v4, Lcom/google/android/apps/camera/bottombar/BottomBar$SideButtonPosition;->CENTER_LEFT:Lcom/google/android/apps/camera/bottombar/BottomBar$SideButtonPosition;
+    iget-object v0, p0, Lcom/google/android/apps/camera/bottombar/BottomBarController;->bottomBar:Lcom/google/android/apps/camera/bottombar/BottomBar;
 
-    sget-object v6, Lcom/google/android/apps/camera/bottombar/BottomBar$SideButtonPosition;->CENTER_RIGHT:Lcom/google/android/apps/camera/bottombar/BottomBar$SideButtonPosition;
+    iget-object v2, p0, Lcom/google/android/apps/camera/bottombar/BottomBarController;->cameraSwitchButton:Lcom/google/android/apps/camera/bottombar/CameraSwitchButton;
 
-    invoke-static/range {v2 .. v7}, Lmwa;->p(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Lmwa;
+    iget-object v3, p0, Lcom/google/android/apps/camera/bottombar/BottomBarController;->thumbnailButton:Lcom/google/android/apps/camera/bottombar/RoundedThumbnailView;
 
-    move-result-object p2
-
-    invoke-virtual {p1, p2, v1}, Lcom/google/android/apps/camera/bottombar/BottomBar;->changeMultipleSideButtons(Lmwa;Z)V
-
-    iget-object p1, p0, Lcom/google/android/apps/camera/bottombar/BottomBarController;->bottomBar:Lcom/google/android/apps/camera/bottombar/BottomBar;
-
-    invoke-virtual {p1}, Lcom/google/android/apps/camera/bottombar/BottomBar;->getPauseResumeButton()Lcom/google/android/apps/camera/bottombar/PauseResumeButton;
-
-    move-result-object p1
-
-    invoke-virtual {p1}, Lcom/google/android/apps/camera/bottombar/PauseResumeButton;->resetButton()V
+    invoke-virtual {v0, v2, v3, v1}, Lcom/google/android/apps/camera/bottombar/BottomBar;->changeSideButtons(Landroid/view/View;Landroid/view/View;Z)V
 
     return-void
 .end method
@@ -1405,10 +1246,10 @@
     return-void
 .end method
 
-.method public switchToMode(Lika;)V
-    .locals 8
+.method public switchToMode(Ljrl;)V
+    .locals 3
 
-    iput-object p1, p0, Lcom/google/android/apps/camera/bottombar/BottomBarController;->mode:Lika;
+    iput-object p1, p0, Lcom/google/android/apps/camera/bottombar/BottomBarController;->mode:Ljrl;
 
     iget-object v0, p0, Lcom/google/android/apps/camera/bottombar/BottomBarController;->bottomBar:Lcom/google/android/apps/camera/bottombar/BottomBar;
 
@@ -1416,11 +1257,13 @@
 
     invoke-virtual {v0, v1, v1}, Lcom/google/android/apps/camera/bottombar/BottomBar;->fadeBackground(ZZ)V
 
-    sget-object v0, Lika;->a:Lika;
+    sget-object v0, Ljrl;->a:Ljrl;
 
-    invoke-virtual {p1}, Lika;->ordinal()I
+    invoke-virtual {p1}, Ljrl;->ordinal()I
 
     move-result v0
+
+    const/4 v2, 0x0
 
     packed-switch v0, :pswitch_data_0
 
@@ -1429,144 +1272,53 @@
     :pswitch_0
     iget-object p1, p0, Lcom/google/android/apps/camera/bottombar/BottomBarController;->bottomBar:Lcom/google/android/apps/camera/bottombar/BottomBar;
 
-    sget-object v2, Lcom/google/android/apps/camera/bottombar/BottomBar$SideButtonPosition;->LEFT:Lcom/google/android/apps/camera/bottombar/BottomBar$SideButtonPosition;
-
-    invoke-direct {p0}, Lcom/google/android/apps/camera/bottombar/BottomBarController;->getJupiterButton()Lmqp;
-
-    move-result-object v3
-
-    sget-object v4, Lcom/google/android/apps/camera/bottombar/BottomBar$SideButtonPosition;->CENTER_LEFT:Lcom/google/android/apps/camera/bottombar/BottomBar$SideButtonPosition;
-
-    iget-object v0, p0, Lcom/google/android/apps/camera/bottombar/BottomBarController;->bottomBar:Lcom/google/android/apps/camera/bottombar/BottomBar;
-
-    invoke-virtual {v0}, Lcom/google/android/apps/camera/bottombar/BottomBar;->getLeftSideCancelButton()Landroid/widget/ImageButton;
+    invoke-virtual {p1}, Lcom/google/android/apps/camera/bottombar/BottomBar;->getLeftSideCancelButton()Landroid/widget/ImageButton;
 
     move-result-object v0
 
-    invoke-static {v0}, Lmqp;->i(Ljava/lang/Object;)Lmqp;
+    iget-object v2, p0, Lcom/google/android/apps/camera/bottombar/BottomBarController;->thumbnailButton:Lcom/google/android/apps/camera/bottombar/RoundedThumbnailView;
 
-    move-result-object v5
-
-    sget-object v6, Lcom/google/android/apps/camera/bottombar/BottomBar$SideButtonPosition;->CENTER_RIGHT:Lcom/google/android/apps/camera/bottombar/BottomBar$SideButtonPosition;
-
-    iget-object v0, p0, Lcom/google/android/apps/camera/bottombar/BottomBarController;->thumbnailButton:Lcom/google/android/apps/camera/bottombar/RoundedThumbnailView;
-
-    invoke-static {v0}, Lmqp;->i(Ljava/lang/Object;)Lmqp;
-
-    move-result-object v7
-
-    invoke-static/range {v2 .. v7}, Lmwa;->p(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Lmwa;
-
-    move-result-object v0
-
-    invoke-virtual {p1, v0, v1}, Lcom/google/android/apps/camera/bottombar/BottomBar;->changeMultipleSideButtons(Lmwa;Z)V
+    invoke-virtual {p1, v0, v2, v1}, Lcom/google/android/apps/camera/bottombar/BottomBar;->changeSideButtons(Landroid/view/View;Landroid/view/View;Z)V
 
     return-void
 
     :pswitch_1
     iget-object p1, p0, Lcom/google/android/apps/camera/bottombar/BottomBarController;->bottomBar:Lcom/google/android/apps/camera/bottombar/BottomBar;
 
-    invoke-virtual {p1, v1}, Lcom/google/android/apps/camera/bottombar/BottomBar;->clearSideButtons(Z)V
+    invoke-virtual {p1, v2, v2, v1}, Lcom/google/android/apps/camera/bottombar/BottomBar;->changeSideButtons(Landroid/view/View;Landroid/view/View;Z)V
 
     return-void
 
     :pswitch_2
     iget-object p1, p0, Lcom/google/android/apps/camera/bottombar/BottomBarController;->bottomBar:Lcom/google/android/apps/camera/bottombar/BottomBar;
 
-    sget-object v0, Lcom/google/android/apps/camera/bottombar/BottomBar$SideButtonPosition;->CENTER_LEFT:Lcom/google/android/apps/camera/bottombar/BottomBar$SideButtonPosition;
+    iget-object v0, p0, Lcom/google/android/apps/camera/bottombar/BottomBarController;->cameraSwitchButton:Lcom/google/android/apps/camera/bottombar/CameraSwitchButton;
 
-    iget-object v2, p0, Lcom/google/android/apps/camera/bottombar/BottomBarController;->cameraSwitchButton:Lcom/google/android/apps/camera/bottombar/CameraSwitchButton;
-
-    invoke-static {v2}, Lmqp;->i(Ljava/lang/Object;)Lmqp;
-
-    move-result-object v2
-
-    invoke-static {v0, v2}, Lmwa;->n(Ljava/lang/Object;Ljava/lang/Object;)Lmwa;
-
-    move-result-object v0
-
-    invoke-virtual {p1, v0, v1}, Lcom/google/android/apps/camera/bottombar/BottomBar;->changeMultipleSideButtons(Lmwa;Z)V
+    invoke-virtual {p1, v0, v2, v1}, Lcom/google/android/apps/camera/bottombar/BottomBar;->changeSideButtons(Landroid/view/View;Landroid/view/View;Z)V
 
     return-void
 
     :pswitch_3
     iget-object p1, p0, Lcom/google/android/apps/camera/bottombar/BottomBarController;->bottomBar:Lcom/google/android/apps/camera/bottombar/BottomBar;
 
-    sget-object v0, Lcom/google/android/apps/camera/bottombar/BottomBar$SideButtonPosition;->LEFT:Lcom/google/android/apps/camera/bottombar/BottomBar$SideButtonPosition;
+    iget-object v0, p0, Lcom/google/android/apps/camera/bottombar/BottomBarController;->thumbnailButton:Lcom/google/android/apps/camera/bottombar/RoundedThumbnailView;
 
-    invoke-direct {p0}, Lcom/google/android/apps/camera/bottombar/BottomBarController;->getJupiterButton()Lmqp;
-
-    move-result-object v2
-
-    sget-object v3, Lcom/google/android/apps/camera/bottombar/BottomBar$SideButtonPosition;->CENTER_RIGHT:Lcom/google/android/apps/camera/bottombar/BottomBar$SideButtonPosition;
-
-    iget-object v4, p0, Lcom/google/android/apps/camera/bottombar/BottomBarController;->thumbnailButton:Lcom/google/android/apps/camera/bottombar/RoundedThumbnailView;
-
-    invoke-static {v4}, Lmqp;->i(Ljava/lang/Object;)Lmqp;
-
-    move-result-object v4
-
-    invoke-static {v0, v2, v3, v4}, Lmwa;->o(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Lmwa;
-
-    move-result-object v0
-
-    invoke-virtual {p1, v0, v1}, Lcom/google/android/apps/camera/bottombar/BottomBar;->changeMultipleSideButtons(Lmwa;Z)V
+    invoke-virtual {p1, v2, v0, v1}, Lcom/google/android/apps/camera/bottombar/BottomBar;->changeSideButtons(Landroid/view/View;Landroid/view/View;Z)V
 
     return-void
 
     :pswitch_4
     iget-object p1, p0, Lcom/google/android/apps/camera/bottombar/BottomBarController;->bottomBar:Lcom/google/android/apps/camera/bottombar/BottomBar;
 
-    sget-object v0, Lcom/google/android/apps/camera/bottombar/BottomBar$SideButtonPosition;->CENTER_RIGHT:Lcom/google/android/apps/camera/bottombar/BottomBar$SideButtonPosition;
+    iget-object v0, p0, Lcom/google/android/apps/camera/bottombar/BottomBarController;->cameraSwitchButton:Lcom/google/android/apps/camera/bottombar/CameraSwitchButton;
 
     iget-object v2, p0, Lcom/google/android/apps/camera/bottombar/BottomBarController;->thumbnailButton:Lcom/google/android/apps/camera/bottombar/RoundedThumbnailView;
 
-    invoke-static {v2}, Lmqp;->i(Ljava/lang/Object;)Lmqp;
-
-    move-result-object v2
-
-    invoke-static {v0, v2}, Lmwa;->n(Ljava/lang/Object;Ljava/lang/Object;)Lmwa;
-
-    move-result-object v0
-
-    invoke-virtual {p1, v0, v1}, Lcom/google/android/apps/camera/bottombar/BottomBar;->changeMultipleSideButtons(Lmwa;Z)V
+    invoke-virtual {p1, v0, v2, v1}, Lcom/google/android/apps/camera/bottombar/BottomBar;->changeSideButtons(Landroid/view/View;Landroid/view/View;Z)V
 
     return-void
 
     :pswitch_5
-    iget-object p1, p0, Lcom/google/android/apps/camera/bottombar/BottomBarController;->bottomBar:Lcom/google/android/apps/camera/bottombar/BottomBar;
-
-    sget-object v2, Lcom/google/android/apps/camera/bottombar/BottomBar$SideButtonPosition;->LEFT:Lcom/google/android/apps/camera/bottombar/BottomBar$SideButtonPosition;
-
-    invoke-direct {p0}, Lcom/google/android/apps/camera/bottombar/BottomBarController;->getJupiterButton()Lmqp;
-
-    move-result-object v3
-
-    sget-object v4, Lcom/google/android/apps/camera/bottombar/BottomBar$SideButtonPosition;->CENTER_LEFT:Lcom/google/android/apps/camera/bottombar/BottomBar$SideButtonPosition;
-
-    iget-object v0, p0, Lcom/google/android/apps/camera/bottombar/BottomBarController;->cameraSwitchButton:Lcom/google/android/apps/camera/bottombar/CameraSwitchButton;
-
-    invoke-static {v0}, Lmqp;->i(Ljava/lang/Object;)Lmqp;
-
-    move-result-object v5
-
-    sget-object v6, Lcom/google/android/apps/camera/bottombar/BottomBar$SideButtonPosition;->CENTER_RIGHT:Lcom/google/android/apps/camera/bottombar/BottomBar$SideButtonPosition;
-
-    iget-object v0, p0, Lcom/google/android/apps/camera/bottombar/BottomBarController;->thumbnailButton:Lcom/google/android/apps/camera/bottombar/RoundedThumbnailView;
-
-    invoke-static {v0}, Lmqp;->i(Ljava/lang/Object;)Lmqp;
-
-    move-result-object v7
-
-    invoke-static/range {v2 .. v7}, Lmwa;->p(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Lmwa;
-
-    move-result-object v0
-
-    invoke-virtual {p1, v0, v1}, Lcom/google/android/apps/camera/bottombar/BottomBar;->changeMultipleSideButtons(Lmwa;Z)V
-
-    return-void
-
-    :pswitch_6
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     invoke-static {p1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
@@ -1575,11 +1327,25 @@
 
     invoke-static {p1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
-    move-result-object p1
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/String;->length()I
+
+    move-result v1
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    add-int/lit8 v1, v1, 0x1d
+
+    invoke-direct {v2, v1}, Ljava/lang/StringBuilder;-><init>(I)V
 
     const-string v1, "Unsupported application mode "
 
-    invoke-virtual {v1, p1}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
+    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p1
 
@@ -1589,59 +1355,48 @@
 
     :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_6
-        :pswitch_5
         :pswitch_5
         :pswitch_4
         :pswitch_4
         :pswitch_3
-        :pswitch_5
-        :pswitch_2
-        :pswitch_2
-        :pswitch_6
-        :pswitch_1
-        :pswitch_5
-        :pswitch_5
-        :pswitch_5
-        :pswitch_6
-        :pswitch_1
-        :pswitch_6
-        :pswitch_0
-        :pswitch_6
+        :pswitch_3
+        :pswitch_3
         :pswitch_4
+        :pswitch_2
+        :pswitch_2
+        :pswitch_5
+        :pswitch_1
+        :pswitch_4
+        :pswitch_4
+        :pswitch_4
+        :pswitch_5
+        :pswitch_1
+        :pswitch_5
+        :pswitch_0
+        :pswitch_5
     .end packed-switch
 .end method
 
 .method public switchToPhotoIntentReview()V
-    .locals 3
+    .locals 4
 
     iget-object v0, p0, Lcom/google/android/apps/camera/bottombar/BottomBarController;->bottomBar:Lcom/google/android/apps/camera/bottombar/BottomBar;
 
-    sget-object v1, Lcom/google/android/apps/camera/bottombar/BottomBar$SideButtonPosition;->CENTER_LEFT:Lcom/google/android/apps/camera/bottombar/BottomBar$SideButtonPosition;
-
-    iget-object v2, p0, Lcom/google/android/apps/camera/bottombar/BottomBarController;->bottomBar:Lcom/google/android/apps/camera/bottombar/BottomBar;
-
-    invoke-virtual {v2}, Lcom/google/android/apps/camera/bottombar/BottomBar;->getRetakeButton()Landroid/widget/ImageButton;
-
-    move-result-object v2
-
-    invoke-static {v2}, Lmqp;->i(Ljava/lang/Object;)Lmqp;
-
-    move-result-object v2
-
-    invoke-static {v1, v2}, Lmwa;->n(Ljava/lang/Object;Ljava/lang/Object;)Lmwa;
+    invoke-virtual {v0}, Lcom/google/android/apps/camera/bottombar/BottomBar;->getRetakeButton()Landroid/widget/ImageButton;
 
     move-result-object v1
 
-    const/4 v2, 0x1
+    const/4 v2, 0x0
 
-    invoke-virtual {v0, v1, v2}, Lcom/google/android/apps/camera/bottombar/BottomBar;->changeMultipleSideButtons(Lmwa;Z)V
+    const/4 v3, 0x1
+
+    invoke-virtual {v0, v1, v2, v3}, Lcom/google/android/apps/camera/bottombar/BottomBar;->changeSideButtons(Landroid/view/View;Landroid/view/View;Z)V
 
     return-void
 .end method
 
 .method public switchToVideoIntentReview()V
-    .locals 6
+    .locals 4
 
     iget-object v0, p0, Lcom/google/android/apps/camera/bottombar/BottomBarController;->bottomBar:Lcom/google/android/apps/camera/bottombar/BottomBar;
 
@@ -1651,43 +1406,25 @@
 
     iget-object v0, p0, Lcom/google/android/apps/camera/bottombar/BottomBarController;->bottomBar:Lcom/google/android/apps/camera/bottombar/BottomBar;
 
-    sget-object v2, Lcom/google/android/apps/camera/bottombar/BottomBar$SideButtonPosition;->CENTER_LEFT:Lcom/google/android/apps/camera/bottombar/BottomBar$SideButtonPosition;
-
-    iget-object v3, p0, Lcom/google/android/apps/camera/bottombar/BottomBarController;->bottomBar:Lcom/google/android/apps/camera/bottombar/BottomBar;
-
-    invoke-virtual {v3}, Lcom/google/android/apps/camera/bottombar/BottomBar;->getRetakeButton()Landroid/widget/ImageButton;
-
-    move-result-object v3
-
-    invoke-static {v3}, Lmqp;->i(Ljava/lang/Object;)Lmqp;
-
-    move-result-object v3
-
-    sget-object v4, Lcom/google/android/apps/camera/bottombar/BottomBar$SideButtonPosition;->CENTER_RIGHT:Lcom/google/android/apps/camera/bottombar/BottomBar$SideButtonPosition;
-
-    iget-object v5, p0, Lcom/google/android/apps/camera/bottombar/BottomBarController;->bottomBar:Lcom/google/android/apps/camera/bottombar/BottomBar;
-
-    invoke-virtual {v5}, Lcom/google/android/apps/camera/bottombar/BottomBar;->getReviewPlayButton()Landroid/widget/ImageButton;
-
-    move-result-object v5
-
-    invoke-static {v5}, Lmqp;->i(Ljava/lang/Object;)Lmqp;
-
-    move-result-object v5
-
-    invoke-static {v2, v3, v4, v5}, Lmwa;->o(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Lmwa;
+    invoke-virtual {v0}, Lcom/google/android/apps/camera/bottombar/BottomBar;->getRetakeButton()Landroid/widget/ImageButton;
 
     move-result-object v2
 
-    invoke-virtual {v0, v2, v1}, Lcom/google/android/apps/camera/bottombar/BottomBar;->changeMultipleSideButtons(Lmwa;Z)V
+    iget-object v3, p0, Lcom/google/android/apps/camera/bottombar/BottomBarController;->bottomBar:Lcom/google/android/apps/camera/bottombar/BottomBar;
+
+    invoke-virtual {v3}, Lcom/google/android/apps/camera/bottombar/BottomBar;->getReviewPlayButton()Landroid/widget/ImageButton;
+
+    move-result-object v3
+
+    invoke-virtual {v0, v2, v3, v1}, Lcom/google/android/apps/camera/bottombar/BottomBar;->changeSideButtons(Landroid/view/View;Landroid/view/View;Z)V
 
     return-void
 .end method
 
 .method public wireListeners()V
-    .locals 2
+    .locals 5
 
-    invoke-static {}, Ljuh;->a()V
+    invoke-static {}, Llar;->a()V
 
     iget-object v0, p0, Lcom/google/android/apps/camera/bottombar/BottomBarController;->bottomBar:Lcom/google/android/apps/camera/bottombar/BottomBar;
 
@@ -1695,9 +1432,9 @@
 
     move-result-object v0
 
-    new-instance v1, Lcom/google/android/apps/camera/bottombar/BottomBarController$$ExternalSyntheticLambda2;
+    new-instance v1, Lcom/google/android/apps/camera/bottombar/BottomBarController$$ExternalSyntheticLambda3;
 
-    invoke-direct {v1, p0}, Lcom/google/android/apps/camera/bottombar/BottomBarController$$ExternalSyntheticLambda2;-><init>(Lcom/google/android/apps/camera/bottombar/BottomBarController;)V
+    invoke-direct {v1, p0}, Lcom/google/android/apps/camera/bottombar/BottomBarController$$ExternalSyntheticLambda3;-><init>(Lcom/google/android/apps/camera/bottombar/BottomBarController;)V
 
     invoke-virtual {v0, v1}, Lcom/google/android/apps/camera/bottombar/CameraSwitchButton;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
@@ -1707,9 +1444,9 @@
 
     move-result-object v0
 
-    new-instance v1, Lcom/google/android/apps/camera/bottombar/BottomBarController$$ExternalSyntheticLambda3;
+    new-instance v1, Lcom/google/android/apps/camera/bottombar/BottomBarController$$ExternalSyntheticLambda4;
 
-    invoke-direct {v1, p0}, Lcom/google/android/apps/camera/bottombar/BottomBarController$$ExternalSyntheticLambda3;-><init>(Lcom/google/android/apps/camera/bottombar/BottomBarController;)V
+    invoke-direct {v1, p0}, Lcom/google/android/apps/camera/bottombar/BottomBarController$$ExternalSyntheticLambda4;-><init>(Lcom/google/android/apps/camera/bottombar/BottomBarController;)V
 
     invoke-virtual {v0, v1}, Lcom/google/android/apps/camera/bottombar/RoundedThumbnailView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
@@ -1721,7 +1458,46 @@
 
     iget-object v1, p0, Lcom/google/android/apps/camera/bottombar/BottomBarController;->listenerDispatcher:Lcom/google/android/apps/camera/bottombar/BottomBarListener;
 
-    invoke-virtual {v0, v1}, Lcom/google/android/apps/camera/bottombar/PauseResumeButton;->setListener(Lcom/google/android/apps/camera/bottombar/PauseResumeButton$PauseResumeButtonListener;)V
+    iget-object v2, p0, Lcom/google/android/apps/camera/bottombar/BottomBarController;->gcaConfig:Lojc;
+
+    invoke-virtual {v2}, Lojc;->g()Z
+
+    move-result v2
+
+    const/4 v3, 0x1
+
+    if-eqz v2, :cond_1
+
+    iget-object v2, p0, Lcom/google/android/apps/camera/bottombar/BottomBarController;->gcaConfig:Lojc;
+
+    invoke-virtual {v2}, Lojc;->c()Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Lddf;
+
+    sget-object v4, Lddl;->aw:Lddg;
+
+    invoke-interface {v2, v4}, Lddf;->k(Lddg;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_0
+
+    const/4 v2, 0x1
+
+    goto :goto_0
+
+    :cond_0
+    const/4 v2, 0x0
+
+    goto :goto_0
+
+    :cond_1
+    const/4 v2, 0x1
+
+    :goto_0
+    invoke-virtual {v0, v1, v2}, Lcom/google/android/apps/camera/bottombar/PauseResumeButton;->setListener(Lcom/google/android/apps/camera/bottombar/PauseResumeButton$PauseResumeButtonListener;Z)V
 
     iget-object v0, p0, Lcom/google/android/apps/camera/bottombar/BottomBarController;->bottomBar:Lcom/google/android/apps/camera/bottombar/BottomBar;
 
@@ -1729,9 +1505,9 @@
 
     move-result-object v0
 
-    new-instance v1, Lcom/google/android/apps/camera/bottombar/BottomBarController$$ExternalSyntheticLambda4;
+    new-instance v1, Lcom/google/android/apps/camera/bottombar/BottomBarController$$ExternalSyntheticLambda5;
 
-    invoke-direct {v1, p0}, Lcom/google/android/apps/camera/bottombar/BottomBarController$$ExternalSyntheticLambda4;-><init>(Lcom/google/android/apps/camera/bottombar/BottomBarController;)V
+    invoke-direct {v1, p0}, Lcom/google/android/apps/camera/bottombar/BottomBarController$$ExternalSyntheticLambda5;-><init>(Lcom/google/android/apps/camera/bottombar/BottomBarController;)V
 
     invoke-virtual {v0, v1}, Lcom/google/android/apps/camera/ui/shutterbutton/ShutterButton;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
@@ -1741,9 +1517,9 @@
 
     move-result-object v0
 
-    new-instance v1, Lcom/google/android/apps/camera/bottombar/BottomBarController$$ExternalSyntheticLambda5;
+    new-instance v1, Lcom/google/android/apps/camera/bottombar/BottomBarController$$ExternalSyntheticLambda6;
 
-    invoke-direct {v1, p0}, Lcom/google/android/apps/camera/bottombar/BottomBarController$$ExternalSyntheticLambda5;-><init>(Lcom/google/android/apps/camera/bottombar/BottomBarController;)V
+    invoke-direct {v1, p0}, Lcom/google/android/apps/camera/bottombar/BottomBarController$$ExternalSyntheticLambda6;-><init>(Lcom/google/android/apps/camera/bottombar/BottomBarController;)V
 
     invoke-virtual {v0, v1}, Lcom/google/android/apps/camera/bottombar/SnapshotButton;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
@@ -1761,9 +1537,9 @@
 
     move-result-object v0
 
-    new-instance v1, Lcom/google/android/apps/camera/bottombar/BottomBarController$$ExternalSyntheticLambda6;
+    new-instance v1, Lcom/google/android/apps/camera/bottombar/BottomBarController$$ExternalSyntheticLambda7;
 
-    invoke-direct {v1, p0}, Lcom/google/android/apps/camera/bottombar/BottomBarController$$ExternalSyntheticLambda6;-><init>(Lcom/google/android/apps/camera/bottombar/BottomBarController;)V
+    invoke-direct {v1, p0}, Lcom/google/android/apps/camera/bottombar/BottomBarController$$ExternalSyntheticLambda7;-><init>(Lcom/google/android/apps/camera/bottombar/BottomBarController;)V
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageButton;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
@@ -1773,9 +1549,9 @@
 
     move-result-object v0
 
-    new-instance v1, Lcom/google/android/apps/camera/bottombar/BottomBarController$$ExternalSyntheticLambda7;
+    new-instance v1, Lcom/google/android/apps/camera/bottombar/BottomBarController$$ExternalSyntheticLambda0;
 
-    invoke-direct {v1, p0}, Lcom/google/android/apps/camera/bottombar/BottomBarController$$ExternalSyntheticLambda7;-><init>(Lcom/google/android/apps/camera/bottombar/BottomBarController;)V
+    invoke-direct {v1, p0}, Lcom/google/android/apps/camera/bottombar/BottomBarController$$ExternalSyntheticLambda0;-><init>(Lcom/google/android/apps/camera/bottombar/BottomBarController;)V
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageButton;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
@@ -1785,9 +1561,9 @@
 
     move-result-object v0
 
-    new-instance v1, Lcom/google/android/apps/camera/bottombar/BottomBarController$$ExternalSyntheticLambda8;
+    new-instance v1, Lcom/google/android/apps/camera/bottombar/BottomBarController$$ExternalSyntheticLambda1;
 
-    invoke-direct {v1, p0}, Lcom/google/android/apps/camera/bottombar/BottomBarController$$ExternalSyntheticLambda8;-><init>(Lcom/google/android/apps/camera/bottombar/BottomBarController;)V
+    invoke-direct {v1, p0}, Lcom/google/android/apps/camera/bottombar/BottomBarController$$ExternalSyntheticLambda1;-><init>(Lcom/google/android/apps/camera/bottombar/BottomBarController;)V
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageButton;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
@@ -1797,15 +1573,13 @@
 
     move-result-object v0
 
-    new-instance v1, Lcom/google/android/apps/camera/bottombar/BottomBarController$$ExternalSyntheticLambda9;
+    new-instance v1, Lcom/google/android/apps/camera/bottombar/BottomBarController$$ExternalSyntheticLambda2;
 
-    invoke-direct {v1, p0}, Lcom/google/android/apps/camera/bottombar/BottomBarController$$ExternalSyntheticLambda9;-><init>(Lcom/google/android/apps/camera/bottombar/BottomBarController;)V
+    invoke-direct {v1, p0}, Lcom/google/android/apps/camera/bottombar/BottomBarController$$ExternalSyntheticLambda2;-><init>(Lcom/google/android/apps/camera/bottombar/BottomBarController;)V
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageButton;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    const/4 v0, 0x1
-
-    invoke-virtual {p0, v0}, Lcom/google/android/apps/camera/bottombar/BottomBarController;->setClickable(Z)V
+    invoke-virtual {p0, v3}, Lcom/google/android/apps/camera/bottombar/BottomBarController;->setClickable(Z)V
 
     return-void
 .end method

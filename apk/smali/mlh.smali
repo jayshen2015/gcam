@@ -1,50 +1,22 @@
 .class public final Lmlh;
-.super Lej;
+.super Ljava/lang/Object;
 
 
 # instance fields
-.field final synthetic a:Lmll;
+.field public final a:I
+
+.field public final b:I
 
 
 # direct methods
-.method public constructor <init>(Lmll;)V
+.method public constructor <init>(II)V
     .locals 0
 
-    iput-object p1, p0, Lmlh;->a:Lmll;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0}, Lej;-><init>()V
+    iput p1, p0, Lmlh;->a:I
 
-    return-void
-.end method
-
-
-# virtual methods
-.method public final b()V
-    .locals 1
-
-    iget-object v0, p0, Lmlh;->a:Lmll;
-
-    invoke-virtual {v0}, Lmll;->a()V
-
-    return-void
-.end method
-
-.method public final c()V
-    .locals 1
-
-    iget-object v0, p0, Lmlh;->a:Lmll;
-
-    invoke-virtual {v0}, Lmll;->a()V
-
-    return-void
-.end method
-
-.method public final d(ILjava/lang/Object;)V
-    .locals 0
-
-    iget-object p1, p0, Lmlh;->a:Lmll;
-
-    invoke-virtual {p1}, Lmll;->a()V
+    iput p2, p0, Lmlh;->b:I
 
     return-void
 .end method

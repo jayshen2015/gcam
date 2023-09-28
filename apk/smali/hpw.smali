@@ -1,527 +1,317 @@
 .class public final Lhpw;
 .super Ljava/lang/Object;
 
+# interfaces
+.implements Lhpu;
+
+
+# static fields
+.field public static final a:Louj;
+
 
 # instance fields
-.field private a:Ljws;
+.field private final b:Ljava/util/Map;
 
-.field private b:Ljwu;
+.field private final c:Llar;
 
-.field private c:Lmqp;
+.field private final d:Lfjs;
 
-.field private d:Lctd;
-
-.field private e:Lmqp;
-
-.field private f:Lhpu;
-
-.field private g:J
-
-.field private h:J
-
-.field private i:J
-
-.field private j:J
-
-.field private k:I
-
-.field private l:Ljava/lang/String;
-
-.field private m:Z
-
-.field private n:Lgxz;
-
-.field private o:B
+.field private final e:Lhrz;
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 1
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const-string v0, "com/google/android/apps/camera/session/CaptureSessionManagerImpl"
+
+    invoke-static {v0}, Louj;->h(Ljava/lang/String;)Louj;
+
+    move-result-object v0
+
+    sput-object v0, Lhpw;->a:Louj;
 
     return-void
 .end method
 
-.method public constructor <init>([B)V
+.method public constructor <init>(Lhrz;Llar;Lfjs;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    sget-object p1, Lmpx;->a:Lmpx;
+    iput-object p1, p0, Lhpw;->e:Lhrz;
 
-    iput-object p1, p0, Lhpw;->c:Lmqp;
+    iput-object p2, p0, Lhpw;->c:Llar;
 
-    iput-object p1, p0, Lhpw;->e:Lmqp;
+    iput-object p3, p0, Lhpw;->d:Lfjs;
+
+    new-instance p1, Ljava/util/LinkedHashMap;
+
+    invoke-direct {p1}, Ljava/util/LinkedHashMap;-><init>()V
+
+    iput-object p1, p0, Lhpw;->b:Ljava/util/Map;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Lhpx;
-    .locals 25
+.method public final a(Lhsp;)Lhsa;
+    .locals 2
 
-    move-object/from16 v0, p0
+    iget-object v0, p0, Lhpw;->b:Ljava/util/Map;
 
-    iget-byte v1, v0, Lhpw;->o:B
+    monitor-enter v0
 
-    const/16 v2, 0x3f
+    :try_start_0
+    iget-object v1, p0, Lhpw;->b:Ljava/util/Map;
 
-    if-ne v1, v2, :cond_1
+    invoke-interface {v1, p1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
-    iget-object v4, v0, Lhpw;->a:Ljws;
+    move-result-object p1
 
-    if-eqz v4, :cond_1
+    check-cast p1, Lhsa;
 
-    iget-object v5, v0, Lhpw;->b:Ljwu;
+    monitor-exit v0
 
-    if-eqz v5, :cond_1
+    return-object p1
 
-    iget-object v7, v0, Lhpw;->d:Lctd;
+    :catchall_0
+    move-exception p1
 
-    if-eqz v7, :cond_1
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    iget-object v9, v0, Lhpw;->f:Lhpu;
+    throw p1
+.end method
 
-    if-eqz v9, :cond_1
+.method public final b(Lhsb;)Lpht;
+    .locals 6
 
-    iget-object v1, v0, Lhpw;->l:Ljava/lang/String;
+    iget-object v0, p0, Lhpw;->b:Ljava/util/Map;
 
-    if-eqz v1, :cond_1
+    monitor-enter v0
 
-    iget-object v2, v0, Lhpw;->n:Lgxz;
+    :try_start_0
+    iget-object v1, p0, Lhpw;->b:Ljava/util/Map;
 
-    if-nez v2, :cond_0
+    invoke-interface {v1}, Ljava/util/Map;->values()Ljava/util/Collection;
+
+    move-result-object v1
+
+    invoke-interface {v1}, Ljava/util/Collection;->size()I
+
+    move-result v2
+
+    if-lez v2, :cond_0
+
+    new-instance v3, Lbwf;
+
+    invoke-direct {v3, v2}, Lbwf;-><init>(I)V
 
     goto :goto_0
 
     :cond_0
-    new-instance v22, Lhpx;
+    const/4 v3, 0x0
 
-    move-object/from16 v3, v22
+    :goto_0
+    invoke-interface {v1}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
 
-    iget-object v6, v0, Lhpw;->c:Lmqp;
+    move-result-object v1
 
-    iget-object v8, v0, Lhpw;->e:Lmqp;
+    :goto_1
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
-    iget-wide v10, v0, Lhpw;->g:J
+    move-result v2
 
-    iget-wide v12, v0, Lhpw;->h:J
+    if-eqz v2, :cond_1
 
-    iget-wide v14, v0, Lhpw;->i:J
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    move-wide/from16 v23, v10
+    move-result-object v2
 
-    iget-wide v10, v0, Lhpw;->j:J
+    check-cast v2, Lhsa;
 
-    move-wide/from16 v16, v10
+    invoke-interface {v2}, Lhsa;->q()Lpht;
 
-    iget v10, v0, Lhpw;->k:I
+    move-result-object v4
 
-    move/from16 v18, v10
+    new-instance v5, Lhpv;
 
-    iget-boolean v10, v0, Lhpw;->m:Z
+    invoke-direct {v5, v2, p1, v3}, Lhpv;-><init>(Lhsa;Lhsb;Lbwf;)V
 
-    move/from16 v20, v10
+    iget-object v2, p0, Lhpw;->c:Llar;
 
-    move-object/from16 v19, v1
+    invoke-static {v4, v5, v2}, Lplk;->af(Lpht;Lphh;Ljava/util/concurrent/Executor;)V
 
-    move-object/from16 v21, v2
-
-    move-wide/from16 v10, v23
-
-    invoke-direct/range {v3 .. v21}, Lhpx;-><init>(Ljws;Ljwu;Lmqp;Lctd;Lmqp;Lhpu;JJJJILjava/lang/String;ZLgxz;)V
-
-    return-object v22
+    goto :goto_1
 
     :cond_1
-    :goto_0
-    new-instance v1, Ljava/lang/StringBuilder;
+    if-nez v3, :cond_2
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+    sget-object p1, Lphq;->a:Lpht;
 
-    iget-object v2, v0, Lhpw;->a:Ljws;
-
-    if-nez v2, :cond_2
-
-    const-string v2, " camcorderCaptureRate"
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    goto :goto_2
 
     :cond_2
-    iget-object v2, v0, Lhpw;->b:Ljwu;
+    iget-object p1, v3, Lbwf;->a:Lpih;
 
-    if-nez v2, :cond_3
+    :goto_2
+    monitor-exit v0
 
-    const-string v2, " camcorderVideoResolution"
+    return-object p1
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    :catchall_0
+    move-exception p1
 
-    :cond_3
-    iget-object v2, v0, Lhpw;->d:Lctd;
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    if-nez v2, :cond_4
+    goto :goto_4
 
-    const-string v2, " outputVideo"
+    :goto_3
+    throw p1
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    :goto_4
+    goto :goto_3
+.end method
 
-    :cond_4
-    iget-object v2, v0, Lhpw;->f:Lhpu;
+.method public final c(Ljava/lang/String;)Ljava/io/File;
+    .locals 1
 
-    if-nez v2, :cond_5
+    iget-object v0, p0, Lhpw;->e:Lhrz;
 
-    const-string v2, " timelapseMode"
+    invoke-virtual {v0, p1}, Lhrz;->a(Ljava/lang/String;)Ljava/io/File;
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result-object p1
 
-    :cond_5
-    iget-byte v2, v0, Lhpw;->o:B
+    return-object p1
+.end method
 
-    and-int/lit8 v2, v2, 0x1
+.method public final d(Lhsp;)V
+    .locals 3
 
-    if-nez v2, :cond_6
+    iget-object v0, p0, Lhpw;->b:Ljava/util/Map;
 
-    const-string v2, " recordingDurationMs"
+    monitor-enter v0
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    :try_start_0
+    iget-object v1, p0, Lhpw;->b:Ljava/util/Map;
 
-    :cond_6
-    iget-byte v2, v0, Lhpw;->o:B
+    monitor-enter v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_1
 
-    and-int/lit8 v2, v2, 0x2
+    :try_start_1
+    iget-object v2, p0, Lhpw;->b:Ljava/util/Map;
 
-    if-nez v2, :cond_7
+    invoke-interface {v2, p1}, Ljava/util/Map;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
-    const-string v2, " outputDurationMs"
+    move-result-object p1
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    check-cast p1, Lhsa;
 
-    :cond_7
-    iget-byte v2, v0, Lhpw;->o:B
+    monitor-exit v1
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    and-int/lit8 v2, v2, 0x4
+    :try_start_2
+    monitor-exit v0
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_1
 
-    if-nez v2, :cond_8
+    if-eqz p1, :cond_0
 
-    const-string v2, " frameCount"
+    invoke-interface {p1}, Lhsa;->A()V
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    return-void
 
-    :cond_8
-    iget-byte v2, v0, Lhpw;->o:B
+    :cond_0
+    sget-object p1, Lhpw;->a:Louj;
 
-    and-int/lit8 v2, v2, 0x8
+    invoke-virtual {p1}, Loue;->c()Lova;
 
-    if-nez v2, :cond_9
+    move-result-object p1
 
-    const-string v2, " frameDropped"
+    const-string v0, "Session was already removed, cannot be finalized"
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    const/16 v1, 0xa20
 
-    :cond_9
-    iget-byte v2, v0, Lhpw;->o:B
+    invoke-static {p1, v0, v1}, Ld;->v(Lova;Ljava/lang/String;C)V
 
-    and-int/lit8 v2, v2, 0x10
+    return-void
 
-    if-nez v2, :cond_a
+    :catchall_0
+    move-exception p1
 
-    const-string v2, " orientation"
+    :try_start_3
+    monitor-exit v1
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_0
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    :try_start_4
+    throw p1
 
-    :cond_a
-    iget-object v2, v0, Lhpw;->l:Ljava/lang/String;
+    :catchall_1
+    move-exception p1
 
-    if-nez v2, :cond_b
+    monitor-exit v0
+    :try_end_4
+    .catchall {:try_start_4 .. :try_end_4} :catchall_1
 
-    const-string v2, " title"
+    throw p1
+.end method
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+.method public final e(Lhsa;)V
+    .locals 3
 
-    :cond_b
-    iget-byte v2, v0, Lhpw;->o:B
+    new-instance v0, Liim;
 
-    and-int/lit8 v2, v2, 0x20
+    iget-object v1, p0, Lhpw;->d:Lfjs;
 
-    if-nez v2, :cond_c
+    invoke-interface {p1}, Lhsa;->h()Lhsp;
 
-    const-string v2, " isSecureVideo"
+    move-result-object v2
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-direct {v0, v1, v2}, Liim;-><init>(Lfjs;Lhsp;)V
 
-    :cond_c
-    iget-object v2, v0, Lhpw;->n:Lgxz;
-
-    if-nez v2, :cond_d
-
-    const-string v2, " shotInfo"
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    :cond_d
-    new-instance v2, Ljava/lang/IllegalStateException;
-
-    invoke-virtual {v1}, Ljava/lang/Object;->toString()Ljava/lang/String;
+    invoke-interface {p1}, Lhsa;->k()Liij;
 
     move-result-object v1
 
-    const-string v3, "Missing required properties:"
+    invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    invoke-virtual {v3, v1}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
+    check-cast v1, Liik;
 
-    move-result-object v1
+    iput-object v0, v1, Liik;->j:Liim;
 
-    invoke-direct {v2, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+    invoke-interface {p1, v0}, Lhsa;->u(Lhsn;)V
 
-    throw v2
-.end method
+    iget-object v0, p0, Lhpw;->b:Ljava/util/Map;
 
-.method public final b(Ljwu;)V
-    .locals 1
+    monitor-enter v0
 
-    if-eqz p1, :cond_0
+    :try_start_0
+    iget-object v1, p0, Lhpw;->b:Ljava/util/Map;
 
-    iput-object p1, p0, Lhpw;->b:Ljwu;
+    invoke-interface {p1}, Lhsa;->h()Lhsp;
 
-    return-void
+    move-result-object v2
 
-    :cond_0
-    new-instance p1, Ljava/lang/NullPointerException;
+    invoke-interface {v1, v2, p1}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    const-string v0, "Null camcorderVideoResolution"
-
-    invoke-direct {p1, v0}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
-
-    throw p1
-.end method
-
-.method public final c(J)V
-    .locals 0
-
-    iput-wide p1, p0, Lhpw;->i:J
-
-    iget-byte p1, p0, Lhpw;->o:B
-
-    or-int/lit8 p1, p1, 0x4
-
-    int-to-byte p1, p1
-
-    iput-byte p1, p0, Lhpw;->o:B
-
-    return-void
-.end method
-
-.method public final d(J)V
-    .locals 0
-
-    iput-wide p1, p0, Lhpw;->j:J
-
-    iget-byte p1, p0, Lhpw;->o:B
-
-    or-int/lit8 p1, p1, 0x8
-
-    int-to-byte p1, p1
-
-    iput-byte p1, p0, Lhpw;->o:B
-
-    return-void
-.end method
-
-.method public final e(Z)V
-    .locals 0
-
-    iput-boolean p1, p0, Lhpw;->m:Z
-
-    iget-byte p1, p0, Lhpw;->o:B
-
-    or-int/lit8 p1, p1, 0x20
-
-    int-to-byte p1, p1
-
-    iput-byte p1, p0, Lhpw;->o:B
-
-    return-void
-.end method
-
-.method public final f(Lmqp;)V
-    .locals 1
-
-    if-eqz p1, :cond_0
-
-    iput-object p1, p0, Lhpw;->e:Lmqp;
+    monitor-exit v0
 
     return-void
 
-    :cond_0
-    new-instance p1, Ljava/lang/NullPointerException;
-
-    const-string v0, "Null location"
-
-    invoke-direct {p1, v0}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
-
-    throw p1
-.end method
-
-.method public final g(I)V
-    .locals 0
-
-    iput p1, p0, Lhpw;->k:I
-
-    iget-byte p1, p0, Lhpw;->o:B
-
-    or-int/lit8 p1, p1, 0x10
-
-    int-to-byte p1, p1
-
-    iput-byte p1, p0, Lhpw;->o:B
-
-    return-void
-.end method
-
-.method public final h(J)V
-    .locals 0
-
-    iput-wide p1, p0, Lhpw;->h:J
-
-    iget-byte p1, p0, Lhpw;->o:B
-
-    or-int/lit8 p1, p1, 0x2
-
-    int-to-byte p1, p1
-
-    iput-byte p1, p0, Lhpw;->o:B
-
-    return-void
-.end method
-
-.method public final i(Lctd;)V
-    .locals 1
-
-    if-eqz p1, :cond_0
-
-    iput-object p1, p0, Lhpw;->d:Lctd;
-
-    return-void
-
-    :cond_0
-    new-instance p1, Ljava/lang/NullPointerException;
-
-    const-string v0, "Null outputVideo"
-
-    invoke-direct {p1, v0}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
-
-    throw p1
-.end method
-
-.method public final j(J)V
-    .locals 0
-
-    iput-wide p1, p0, Lhpw;->g:J
-
-    iget-byte p1, p0, Lhpw;->o:B
-
-    or-int/lit8 p1, p1, 0x1
-
-    int-to-byte p1, p1
-
-    iput-byte p1, p0, Lhpw;->o:B
-
-    return-void
-.end method
-
-.method public final k(Lgxz;)V
-    .locals 1
-
-    if-eqz p1, :cond_0
-
-    iput-object p1, p0, Lhpw;->n:Lgxz;
-
-    return-void
-
-    :cond_0
-    new-instance p1, Ljava/lang/NullPointerException;
-
-    const-string v0, "Null shotInfo"
-
-    invoke-direct {p1, v0}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
-
-    throw p1
-.end method
-
-.method public final l(Lhpu;)V
-    .locals 1
-
-    if-eqz p1, :cond_0
-
-    iput-object p1, p0, Lhpw;->f:Lhpu;
-
-    return-void
-
-    :cond_0
-    new-instance p1, Ljava/lang/NullPointerException;
-
-    const-string v0, "Null timelapseMode"
-
-    invoke-direct {p1, v0}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
-
-    throw p1
-.end method
-
-.method public final m(Ljava/lang/String;)V
-    .locals 1
-
-    if-eqz p1, :cond_0
-
-    iput-object p1, p0, Lhpw;->l:Ljava/lang/String;
-
-    return-void
-
-    :cond_0
-    new-instance p1, Ljava/lang/NullPointerException;
-
-    const-string v0, "Null title"
-
-    invoke-direct {p1, v0}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
-
-    throw p1
-.end method
-
-.method public final n(Lmqp;)V
-    .locals 1
-
-    if-eqz p1, :cond_0
-
-    iput-object p1, p0, Lhpw;->c:Lmqp;
-
-    return-void
-
-    :cond_0
-    new-instance p1, Ljava/lang/NullPointerException;
-
-    const-string v0, "Null videoFile"
-
-    invoke-direct {p1, v0}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
-
-    throw p1
-.end method
-
-.method public final o(Ljws;)V
-    .locals 1
-
-    if-eqz p1, :cond_0
-
-    iput-object p1, p0, Lhpw;->a:Ljws;
-
-    return-void
-
-    :cond_0
-    new-instance p1, Ljava/lang/NullPointerException;
-
-    const-string v0, "Null camcorderCaptureRate"
-
-    invoke-direct {p1, v0}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
+    :catchall_0
+    move-exception p1
+
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw p1
 .end method

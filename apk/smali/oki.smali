@@ -1,107 +1,210 @@
-.class public final Loki;
-.super Lokh;
-
-# interfaces
-.implements Ljava/util/Iterator;
+.class final Loki;
+.super Lonl;
 
 
 # instance fields
-.field private final synthetic d:I
+.field final a:Ljava/util/Set;
+
+.field final synthetic b:Lokm;
 
 
 # direct methods
-.method public constructor <init>(Lokj;I)V
+.method public constructor <init>(Lokm;)V
     .locals 0
 
-    iput p2, p0, Loki;->d:I
+    iput-object p1, p0, Loki;->b:Lokm;
 
-    invoke-direct {p0, p1}, Lokh;-><init>(Lokj;)V
+    invoke-direct {p0}, Lonl;-><init>()V
 
-    return-void
-.end method
+    iget-object p1, p1, Lokm;->a:Ljava/util/Map;
 
-.method public constructor <init>(Lokj;I[B)V
-    .locals 0
+    invoke-interface {p1}, Ljava/util/Map;->entrySet()Ljava/util/Set;
 
-    iput p2, p0, Loki;->d:I
+    move-result-object p1
 
-    invoke-direct {p0, p1}, Lokh;-><init>(Lokj;)V
+    iput-object p1, p0, Loki;->a:Ljava/util/Set;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final next()Ljava/lang/Object;
-    .locals 3
+.method protected final synthetic a()Ljava/lang/Object;
+    .locals 1
 
-    iget v0, p0, Loki;->d:I
-
-    packed-switch v0, :pswitch_data_0
-
-    iget v0, p0, Lokh;->b:I
-
-    iget-object v1, p0, Lokh;->a:Lokj;
-
-    iget v2, v1, Lokj;->d:I
-
-    if-ge v0, v2, :cond_1
-
-    add-int/lit8 v2, v0, 0x1
-
-    iput v2, p0, Lokh;->b:I
-
-    iput v0, p0, Lokh;->c:I
-
-    iget-object v1, v1, Lokj;->a:[Ljava/lang/Object;
-
-    aget-object v0, v1, v0
-
-    invoke-virtual {p0}, Lokh;->a()V
+    iget-object v0, p0, Loki;->a:Ljava/util/Set;
 
     return-object v0
+.end method
 
-    :pswitch_0
-    iget v0, p0, Lokh;->b:I
+.method protected final synthetic b()Ljava/util/Collection;
+    .locals 1
 
-    iget-object v1, p0, Lokh;->a:Lokj;
-
-    iget v2, v1, Lokj;->d:I
-
-    if-ge v0, v2, :cond_0
-
-    add-int/lit8 v2, v0, 0x1
-
-    iput v2, p0, Lokh;->b:I
-
-    iput v0, p0, Lokh;->c:I
-
-    iget-object v1, v1, Lokj;->b:[Ljava/lang/Object;
-
-    invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    aget-object v0, v1, v0
-
-    invoke-virtual {p0}, Lokh;->a()V
+    iget-object v0, p0, Loki;->a:Ljava/util/Set;
 
     return-object v0
+.end method
+
+.method protected final c()Ljava/util/Set;
+    .locals 1
+
+    iget-object v0, p0, Loki;->a:Ljava/util/Set;
+
+    return-object v0
+.end method
+
+.method public final clear()V
+    .locals 1
+
+    iget-object v0, p0, Loki;->b:Lokm;
+
+    invoke-virtual {v0}, Long;->clear()V
+
+    return-void
+.end method
+
+.method public final contains(Ljava/lang/Object;)Z
+    .locals 2
+
+    iget-object v0, p0, Loki;->a:Ljava/util/Set;
+
+    instance-of v1, p1, Ljava/util/Map$Entry;
+
+    if-nez v1, :cond_0
+
+    const/4 p1, 0x0
+
+    return p1
 
     :cond_0
-    new-instance v0, Ljava/util/NoSuchElementException;
+    check-cast p1, Ljava/util/Map$Entry;
 
-    invoke-direct {v0}, Ljava/util/NoSuchElementException;-><init>()V
+    invoke-static {p1}, Lobr;->af(Ljava/util/Map$Entry;)Ljava/util/Map$Entry;
 
-    throw v0
+    move-result-object p1
+
+    invoke-interface {v0, p1}, Ljava/util/Collection;->contains(Ljava/lang/Object;)Z
+
+    move-result p1
+
+    return p1
+.end method
+
+.method public final containsAll(Ljava/util/Collection;)Z
+    .locals 0
+
+    invoke-static {p0, p1}, Lohh;->Q(Ljava/util/Collection;Ljava/util/Collection;)Z
+
+    move-result p1
+
+    return p1
+.end method
+
+.method public final iterator()Ljava/util/Iterator;
+    .locals 3
+
+    iget-object v0, p0, Loki;->b:Lokm;
+
+    iget-object v1, v0, Lokm;->a:Ljava/util/Map;
+
+    invoke-interface {v1}, Ljava/util/Map;->entrySet()Ljava/util/Set;
+
+    move-result-object v1
+
+    invoke-interface {v1}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
+
+    move-result-object v1
+
+    new-instance v2, Lokg;
+
+    invoke-direct {v2, v0, v1}, Lokg;-><init>(Lokm;Ljava/util/Iterator;)V
+
+    return-object v2
+.end method
+
+.method public final remove(Ljava/lang/Object;)Z
+    .locals 2
+
+    iget-object v0, p0, Loki;->a:Ljava/util/Set;
+
+    invoke-interface {v0, p1}, Ljava/util/Set;->contains(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    instance-of v0, p1, Ljava/util/Map$Entry;
+
+    if-nez v0, :cond_0
+
+    goto :goto_0
+
+    :cond_0
+    check-cast p1, Ljava/util/Map$Entry;
+
+    iget-object v0, p0, Loki;->b:Lokm;
+
+    iget-object v0, v0, Lokm;->b:Lokm;
+
+    iget-object v0, v0, Lokm;->a:Ljava/util/Map;
+
+    invoke-interface {p1}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
+
+    move-result-object v1
+
+    invoke-interface {v0, v1}, Ljava/util/Map;->remove(Ljava/lang/Object;)Ljava/lang/Object;
+
+    iget-object v0, p0, Loki;->a:Ljava/util/Set;
+
+    invoke-interface {v0, p1}, Ljava/util/Set;->remove(Ljava/lang/Object;)Z
+
+    const/4 p1, 0x1
+
+    return p1
 
     :cond_1
-    new-instance v0, Ljava/util/NoSuchElementException;
+    :goto_0
+    const/4 p1, 0x0
 
-    invoke-direct {v0}, Ljava/util/NoSuchElementException;-><init>()V
+    return p1
+.end method
 
-    throw v0
+.method public final removeAll(Ljava/util/Collection;)Z
+    .locals 0
 
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+    invoke-virtual {p0, p1}, Lonl;->d(Ljava/util/Collection;)Z
+
+    move-result p1
+
+    return p1
+.end method
+
+.method public final retainAll(Ljava/util/Collection;)Z
+    .locals 0
+
+    invoke-virtual {p0, p1}, Lone;->t(Ljava/util/Collection;)Z
+
+    move-result p1
+
+    return p1
+.end method
+
+.method public final toArray()[Ljava/lang/Object;
+    .locals 1
+
+    invoke-virtual {p0}, Lone;->u()[Ljava/lang/Object;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public final toArray([Ljava/lang/Object;)[Ljava/lang/Object;
+    .locals 0
+
+    invoke-static {p0, p1}, Lobr;->O(Ljava/util/Collection;[Ljava/lang/Object;)[Ljava/lang/Object;
+
+    move-result-object p1
+
+    return-object p1
 .end method

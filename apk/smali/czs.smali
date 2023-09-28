@@ -1,75 +1,68 @@
-.class final Lczs;
+.class public final synthetic Lczs;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Landroid/animation/LayoutTransition$TransitionListener;
+.implements Llie;
 
 
 # instance fields
-.field final synthetic a:Lczt;
+.field public final synthetic a:Lczv;
 
 
 # direct methods
-.method public constructor <init>(Lczt;)V
+.method public synthetic constructor <init>(Lczv;)V
     .locals 0
 
-    iput-object p1, p0, Lczs;->a:Lczt;
-
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lczs;->a:Lczv;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final endTransition(Landroid/animation/LayoutTransition;Landroid/view/ViewGroup;Landroid/view/View;I)V
-    .locals 0
+.method public final close()V
+    .locals 3
 
-    iget-object p2, p0, Lczs;->a:Lczt;
+    iget-object v0, p0, Lczs;->a:Lczv;
 
-    iget-object p2, p2, Lczt;->b:Lczu;
+    monitor-enter v0
 
-    iget-object p2, p2, Lczu;->e:Lczv;
+    :try_start_0
+    sget-object v1, Lczv;->a:Lczu;
 
-    iget-object p2, p2, Lczv;->p:Landroidx/wear/ambient/AmbientModeSupport$AmbientController;
+    iput-object v1, v0, Lczv;->c:Lczu;
 
-    if-eqz p2, :cond_0
+    iget-object v1, v0, Lczv;->d:Ljava/util/concurrent/ScheduledFuture;
 
-    iget-object p2, p2, Landroidx/wear/ambient/AmbientModeSupport$AmbientController;->a:Ljava/lang/Object;
+    const/4 v2, 0x0
 
-    sget-object p3, Lika;->c:Lika;
+    if-eqz v1, :cond_0
 
-    check-cast p2, Lczp;
+    iput-object v2, v0, Lczv;->d:Ljava/util/concurrent/ScheduledFuture;
 
-    invoke-virtual {p2, p3}, Lczp;->i(Lika;)V
-
-    :cond_0
-    invoke-virtual {p1, p0}, Landroid/animation/LayoutTransition;->removeTransitionListener(Landroid/animation/LayoutTransition$TransitionListener;)V
-
-    return-void
-.end method
-
-.method public final startTransition(Landroid/animation/LayoutTransition;Landroid/view/ViewGroup;Landroid/view/View;I)V
-    .locals 0
-
-    iget-object p1, p0, Lczs;->a:Lczt;
-
-    iget-object p1, p1, Lczt;->b:Lczu;
-
-    iget-object p1, p1, Lczu;->e:Lczv;
-
-    iget-object p1, p1, Lczv;->p:Landroidx/wear/ambient/AmbientModeSupport$AmbientController;
-
-    if-eqz p1, :cond_0
-
-    iget-object p1, p1, Landroidx/wear/ambient/AmbientModeSupport$AmbientController;->a:Ljava/lang/Object;
-
-    sget-object p2, Lika;->c:Lika;
-
-    check-cast p1, Lczp;
-
-    invoke-virtual {p1, p2}, Lczp;->l(Lika;)Z
+    goto :goto_0
 
     :cond_0
+    move-object v1, v2
+
+    :goto_0
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    invoke-static {v1}, Lczv;->b(Ljava/util/concurrent/ScheduledFuture;)V
+
     return-void
+
+    :catchall_0
+    move-exception v1
+
+    :try_start_1
+    monitor-exit v0
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    throw v1
 .end method

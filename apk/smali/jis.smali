@@ -1,41 +1,32 @@
 .class public final Ljis;
-.super Lcbe;
+.super Ljin;
 
-# interfaces
-.implements Landroid/os/IInterface;
+
+# instance fields
+.field private final a:Ljng;
 
 
 # direct methods
-.method public constructor <init>(Landroid/os/IBinder;)V
-    .locals 1
+.method public constructor <init>(Ljng;)V
+    .locals 0
 
-    const-string v0, "com.google.android.gms.dynamite.IDynamiteLoader"
+    invoke-direct {p0}, Ljin;-><init>()V
 
-    invoke-direct {p0, p1, v0}, Lcbe;-><init>(Landroid/os/IBinder;Ljava/lang/String;)V
+    iput-object p1, p0, Ljis;->a:Ljng;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final e()I
-    .locals 2
+.method public final c()Lojc;
+    .locals 1
 
-    invoke-virtual {p0}, Lcbe;->a()Landroid/os/Parcel;
+    iget-object v0, p0, Ljis;->a:Ljng;
 
-    move-result-object v0
-
-    const/4 v1, 0x6
-
-    invoke-virtual {p0, v1, v0}, Lcbe;->y(ILandroid/os/Parcel;)Landroid/os/Parcel;
+    invoke-virtual {v0}, Ljng;->c()Lojc;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Landroid/os/Parcel;->readInt()I
-
-    move-result v1
-
-    invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
-
-    return v1
+    return-object v0
 .end method

@@ -1,340 +1,236 @@
-.class public final Lngb;
-.super Lnws;
+.class public final synthetic Lngb;
+.super Ljava/lang/Object;
 
 # interfaces
-.implements Lnxz;
-
-
-# static fields
-.field public static final u:Lngb;
-
-.field private static volatile w:Lnyf;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field public a:I
+.field public final synthetic a:Lnei;
 
-.field public b:Z
+.field public final synthetic b:Ljava/lang/String;
 
-.field public c:Z
-
-.field public d:Z
-
-.field public e:Z
-
-.field public f:I
-
-.field public g:Lnfz;
-
-.field public h:Z
-
-.field public i:Z
-
-.field public j:Z
-
-.field public k:Z
-
-.field public l:Z
-
-.field public m:Z
-
-.field public n:Z
-
-.field public o:Z
-
-.field public p:Lnga;
-
-.field public q:Z
-
-.field public r:Z
-
-.field public s:Z
-
-.field public t:Z
-
-.field private v:Z
+.field private final synthetic c:I
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
-
-    new-instance v0, Lngb;
-
-    invoke-direct {v0}, Lngb;-><init>()V
-
-    sput-object v0, Lngb;->u:Lngb;
-
-    const-class v1, Lngb;
-
-    invoke-static {v1, v0}, Lnws;->aa(Ljava/lang/Class;Lnws;)V
-
-    return-void
-.end method
-
-.method private constructor <init>()V
+.method public synthetic constructor <init>(Lnei;Ljava/lang/String;I)V
     .locals 0
 
-    invoke-direct {p0}, Lnws;-><init>()V
+    iput p3, p0, Lngb;->c:I
 
-    return-void
-.end method
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-.method public static synthetic b(Lngb;)V
-    .locals 2
+    iput-object p1, p0, Lngb;->a:Lnei;
 
-    iget v0, p0, Lngb;->a:I
-
-    const/high16 v1, 0x200000
-
-    or-int/2addr v0, v1
-
-    iput v0, p0, Lngb;->a:I
-
-    const/4 v0, 0x1
-
-    iput-boolean v0, p0, Lngb;->v:Z
+    iput-object p2, p0, Lngb;->b:Ljava/lang/String;
 
     return-void
 .end method
 
 
 # virtual methods
-.method protected final a(ILjava/lang/Object;)Ljava/lang/Object;
-    .locals 3
+.method public final run()V
+    .locals 11
 
-    add-int/lit8 p1, p1, -0x1
+    iget v0, p0, Lngb;->c:I
 
-    const/4 p2, 0x1
+    packed-switch v0, :pswitch_data_0
 
-    packed-switch p1, :pswitch_data_0
+    iget-object v0, p0, Lngb;->a:Lnei;
+
+    iget-object v1, p0, Lngb;->b:Ljava/lang/String;
+
+    sget-object v2, Lnfg;->a:Lojc;
+
+    iget-object v0, v0, Lnei;->g:Landroid/content/Context;
+
+    invoke-static {v0}, Lngt;->f(Landroid/content/Context;)Ljava/util/Map;
+
+    move-result-object v0
+
+    invoke-interface {v0, v1}, Ljava/util/Map;->containsKey(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_3
+
+    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/String;->length()I
+
+    move-result v0
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    add-int/lit16 v0, v0, 0xb7
+
+    invoke-direct {v2, v0}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string v0, "Config package "
+
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v0, " cannot use ProtoDataStore backing without declarative registration. See go/phenotype-android-integration#phenotype for more information. This will lead to stale flags."
+
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    const-string v1, "PhenotypeCombinedFlags"
+
+    invoke-static {v1, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+
+    return-void
 
     :pswitch_0
-    const/4 p1, 0x0
+    iget-object v0, p0, Lngb;->a:Lnei;
 
-    return-object p1
+    iget-object v1, p0, Lngb;->b:Ljava/lang/String;
 
-    :pswitch_1
-    sget-object p1, Lngb;->w:Lnyf;
+    new-instance v2, Ljava/util/ArrayList;
 
-    if-nez p1, :cond_1
+    invoke-direct {v2}, Ljava/util/ArrayList;-><init>()V
 
-    const-class p2, Lngb;
+    iget-object v3, v0, Lnei;->g:Landroid/content/Context;
 
-    monitor-enter p2
+    invoke-interface {v2, v3}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    :try_start_0
-    sget-object p1, Lngb;->w:Lnyf;
+    sget v3, Lmez;->a:I
 
-    if-nez p1, :cond_0
+    iget-object v0, v0, Lnei;->g:Landroid/content/Context;
 
-    new-instance p1, Lnwo;
+    invoke-static {v0}, Lmez;->a(Landroid/content/Context;)Landroid/content/Context;
 
-    sget-object v0, Lngb;->u:Lngb;
+    move-result-object v0
 
-    invoke-direct {p1, v0}, Lnwo;-><init>(Lnws;)V
+    invoke-interface {v2, v0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    sput-object p1, Lngb;->w:Lnyf;
+    invoke-interface {v2}, Ljava/util/List;->size()I
+
+    move-result v0
+
+    const/4 v3, 0x0
+
+    const/4 v4, 0x0
+
+    :goto_0
+    if-ge v4, v0, :cond_2
+
+    invoke-interface {v2, v4}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v5
+
+    check-cast v5, Landroid/content/Context;
+
+    new-instance v6, Ljava/io/File;
+
+    invoke-virtual {v5}, Landroid/content/Context;->getFilesDir()Ljava/io/File;
+
+    move-result-object v5
+
+    invoke-virtual {v5}, Ljava/io/File;->toPath()Ljava/nio/file/Path;
+
+    move-result-object v5
+
+    invoke-static {v5}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-static {v5}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v7
+
+    invoke-virtual {v7}, Ljava/lang/String;->length()I
+
+    move-result v7
+
+    new-instance v8, Ljava/lang/StringBuilder;
+
+    add-int/lit8 v7, v7, 0x11
+
+    invoke-direct {v8, v7}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    invoke-virtual {v8, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v5, "/phenotype/shared"
+
+    invoke-virtual {v8, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v8}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-direct {v6, v5}, Ljava/io/File;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v6}, Ljava/io/File;->exists()Z
+
+    move-result v5
+
+    if-eqz v5, :cond_1
+
+    new-instance v5, Lnga;
+
+    invoke-direct {v5, v1}, Lnga;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v6, v5}, Ljava/io/File;->listFiles(Ljava/io/FilenameFilter;)[Ljava/io/File;
+
+    move-result-object v5
+
+    array-length v6, v5
+
+    const/4 v7, 0x0
+
+    :goto_1
+    if-ge v7, v6, :cond_1
+
+    aget-object v8, v5, v7
+
+    const-string v9, "Removing leftover snapshots for removed package: "
+
+    invoke-virtual {v1}, Ljava/lang/String;->length()I
+
+    move-result v10
+
+    if-eqz v10, :cond_0
+
+    invoke-virtual {v9, v1}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
+
+    goto :goto_2
 
     :cond_0
-    monitor-exit p2
+    new-instance v10, Ljava/lang/String;
+
+    invoke-direct {v10, v9}, Ljava/lang/String;-><init>(Ljava/lang/String;)V
+
+    :goto_2
+    invoke-virtual {v8}, Ljava/io/File;->delete()Z
+
+    add-int/lit8 v7, v7, 0x1
+
+    goto :goto_1
+
+    :cond_1
+    add-int/lit8 v4, v4, 0x1
 
     goto :goto_0
 
-    :catchall_0
-    move-exception p1
+    :cond_2
+    return-void
 
-    monitor-exit p2
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    :cond_3
+    return-void
 
-    throw p1
-
-    :cond_1
-    :goto_0
-    return-object p1
-
-    :pswitch_2
-    sget-object p1, Lngb;->u:Lngb;
-
-    return-object p1
-
-    :pswitch_3
-    new-instance p1, Lnwn;
-
-    sget-object p2, Lngb;->u:Lngb;
-
-    invoke-direct {p1, p2}, Lnwn;-><init>(Lnws;)V
-
-    return-object p1
-
-    :pswitch_4
-    new-instance p1, Lngb;
-
-    invoke-direct {p1}, Lngb;-><init>()V
-
-    return-object p1
-
-    :pswitch_5
-    const-string p1, "a"
-
-    const-string v0, "\u0001\u0014\u0000\u0001\u0002\u0016\u0014\u0000\u0000\u0000\u0002\u1007\u0001\u0003\u1007\u0002\u0004\u1007\u0003\u0005\u1007\u0004\u0006\u100c\u0005\u0007\u1009\u0006\u0008\u1007\u0007\t\u1007\u0008\n\u1007\t\u000b\u1007\n\u000c\u1007\u000b\r\u1007\u000c\u000e\u1007\r\u0010\u1007\u000f\u0011\u1009\u0010\u0012\u1007\u0011\u0013\u1007\u0012\u0014\u1007\u0013\u0015\u1007\u0014\u0016\u1007\u0015"
-
-    const/16 v1, 0x16
-
-    new-array v1, v1, [Ljava/lang/Object;
-
-    const/4 v2, 0x0
-
-    aput-object p1, v1, v2
-
-    const-string p1, "b"
-
-    aput-object p1, v1, p2
-
-    const/4 p1, 0x2
-
-    const-string p2, "c"
-
-    aput-object p2, v1, p1
-
-    const/4 p1, 0x3
-
-    const-string p2, "d"
-
-    aput-object p2, v1, p1
-
-    const/4 p1, 0x4
-
-    const-string p2, "e"
-
-    aput-object p2, v1, p1
-
-    const/4 p1, 0x5
-
-    const-string p2, "f"
-
-    aput-object p2, v1, p1
-
-    const/4 p1, 0x6
-
-    sget-object p2, Lkuf;->k:Lnww;
-
-    aput-object p2, v1, p1
-
-    const/4 p1, 0x7
-
-    const-string p2, "g"
-
-    aput-object p2, v1, p1
-
-    const/16 p1, 0x8
-
-    const-string p2, "h"
-
-    aput-object p2, v1, p1
-
-    const/16 p1, 0x9
-
-    const-string p2, "i"
-
-    aput-object p2, v1, p1
-
-    const/16 p1, 0xa
-
-    const-string p2, "j"
-
-    aput-object p2, v1, p1
-
-    const/16 p1, 0xb
-
-    const-string p2, "k"
-
-    aput-object p2, v1, p1
-
-    const/16 p1, 0xc
-
-    const-string p2, "l"
-
-    aput-object p2, v1, p1
-
-    const/16 p1, 0xd
-
-    const-string p2, "m"
-
-    aput-object p2, v1, p1
-
-    const/16 p1, 0xe
-
-    const-string p2, "n"
-
-    aput-object p2, v1, p1
-
-    const/16 p1, 0xf
-
-    const-string p2, "o"
-
-    aput-object p2, v1, p1
-
-    const/16 p1, 0x10
-
-    const-string p2, "p"
-
-    aput-object p2, v1, p1
-
-    const/16 p1, 0x11
-
-    const-string p2, "q"
-
-    aput-object p2, v1, p1
-
-    const/16 p1, 0x12
-
-    const-string p2, "r"
-
-    aput-object p2, v1, p1
-
-    const/16 p1, 0x13
-
-    const-string p2, "s"
-
-    aput-object p2, v1, p1
-
-    const/16 p1, 0x14
-
-    const-string p2, "t"
-
-    aput-object p2, v1, p1
-
-    const/16 p1, 0x15
-
-    const-string p2, "v"
-
-    aput-object p2, v1, p1
-
-    sget-object p1, Lngb;->u:Lngb;
-
-    invoke-static {p1, v0, v1}, Lngb;->X(Lnxy;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object p1
-
-    return-object p1
-
-    :pswitch_6
-    invoke-static {p2}, Ljava/lang/Byte;->valueOf(B)Ljava/lang/Byte;
-
-    move-result-object p1
-
-    return-object p1
+    nop
 
     :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_6
         :pswitch_0
-        :pswitch_5
-        :pswitch_4
-        :pswitch_3
-        :pswitch_2
-        :pswitch_1
     .end packed-switch
 .end method

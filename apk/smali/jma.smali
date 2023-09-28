@@ -1,24 +1,13 @@
-.class public final Ljma;
+.class public interface abstract Ljma;
 .super Ljava/lang/Object;
 
 
-# static fields
-.field public static volatile a:Ljmj;
+# virtual methods
+.method public abstract i()V
+.end method
 
-.field private static final b:Ljmj;
+.method public abstract j()V
+.end method
 
-
-# direct methods
-.method static constructor <clinit>()V
-    .locals 1
-
-    new-instance v0, Ljmj;
-
-    invoke-direct {v0}, Ljmj;-><init>()V
-
-    sput-object v0, Ljma;->b:Ljmj;
-
-    sput-object v0, Ljma;->a:Ljmj;
-
-    return-void
+.method public abstract k()V
 .end method

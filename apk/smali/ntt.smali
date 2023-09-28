@@ -1,146 +1,83 @@
-.class public final Lntt;
-.super Lnws;
+.class final Lntt;
+.super Ljava/lang/Object;
 
 # interfaces
-.implements Lnxz;
+.implements Lqco;
 
 
-# static fields
-.field public static final a:Lntt;
+# instance fields
+.field final synthetic a:Lnty;
 
-.field private static volatile b:Lnyf;
+.field final synthetic b:Lnrl;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
-
-    new-instance v0, Lntt;
-
-    invoke-direct {v0}, Lntt;-><init>()V
-
-    sput-object v0, Lntt;->a:Lntt;
-
-    const-class v1, Lntt;
-
-    invoke-static {v1, v0}, Lnws;->aa(Ljava/lang/Class;Lnws;)V
-
-    return-void
-.end method
-
-.method private constructor <init>()V
+.method public constructor <init>(Lnty;Lnrl;)V
     .locals 0
 
-    invoke-direct {p0}, Lnws;-><init>()V
+    iput-object p1, p0, Lntt;->a:Lnty;
+
+    iput-object p2, p0, Lntt;->b:Lnrl;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method protected final a(ILjava/lang/Object;)Ljava/lang/Object;
-    .locals 1
+.method public final bridge synthetic a(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 3
 
-    add-int/lit8 p1, p1, -0x1
+    check-cast p1, Lnqi;
 
-    const/4 p2, 0x0
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    packed-switch p1, :pswitch_data_0
+    iget-object v0, p0, Lntt;->a:Lnty;
 
-    :pswitch_0
-    return-object p2
+    iget-object v1, p0, Lntt;->b:Lnrl;
 
-    :pswitch_1
-    sget-object p1, Lntt;->b:Lnyf;
+    iget-object v2, p1, Lnqi;->a:Lnqh;
 
-    if-nez p1, :cond_1
+    iget-boolean v2, v2, Lnqh;->l:Z
 
-    const-class p2, Lntt;
+    if-nez v2, :cond_0
 
-    monitor-enter p2
+    invoke-static {p1}, Lqbu;->k(Ljava/lang/Object;)Lqbu;
 
-    :try_start_0
-    sget-object p1, Lntt;->b:Lnyf;
-
-    if-nez p1, :cond_0
-
-    new-instance p1, Lnwo;
-
-    sget-object v0, Lntt;->a:Lntt;
-
-    invoke-direct {p1, v0}, Lnwo;-><init>(Lnws;)V
-
-    sput-object p1, Lntt;->b:Lnyf;
-
-    :cond_0
-    monitor-exit p2
+    move-result-object p1
 
     goto :goto_0
 
-    :catchall_0
-    move-exception p1
+    :cond_0
+    iget-object v2, v0, Lnty;->g:Lnom;
 
-    monitor-exit p2
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    invoke-static {p1}, Lqmd;->q(Ljava/lang/Object;)Ljava/util/List;
 
-    throw p1
+    move-result-object p1
 
-    :cond_1
+    invoke-virtual {v2, v1, p1}, Lnom;->a(Lnrl;Ljava/util/List;)Lqbu;
+
+    move-result-object p1
+
+    sget-object v2, Lnoi;->a:Lnoi;
+
+    invoke-virtual {p1, v2}, Lqbu;->l(Lqco;)Lqbu;
+
+    move-result-object p1
+
+    new-instance v2, Lntm;
+
+    invoke-direct {v2, v0, v1}, Lntm;-><init>(Lnty;Lnrl;)V
+
+    new-instance v0, Lqhg;
+
+    invoke-direct {v0, p1, v2}, Lqhg;-><init>(Lqbw;Lqcn;)V
+
+    sget-object p1, Lqmd;->m:Lqco;
+
+    move-object p1, v0
+
     :goto_0
     return-object p1
-
-    :pswitch_2
-    sget-object p1, Lntt;->a:Lntt;
-
-    return-object p1
-
-    :pswitch_3
-    new-instance p1, Lnwn;
-
-    sget-object p2, Lntt;->a:Lntt;
-
-    invoke-direct {p1, p2}, Lnwn;-><init>(Lnws;)V
-
-    return-object p1
-
-    :pswitch_4
-    new-instance p1, Lntt;
-
-    invoke-direct {p1}, Lntt;-><init>()V
-
-    return-object p1
-
-    :pswitch_5
-    sget-object p1, Lntt;->a:Lntt;
-
-    const-string v0, "\u0000\u0000"
-
-    invoke-static {p1, v0, p2}, Lntt;->X(Lnxy;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object p1
-
-    return-object p1
-
-    :pswitch_6
-    const/4 p1, 0x1
-
-    invoke-static {p1}, Ljava/lang/Byte;->valueOf(B)Ljava/lang/Byte;
-
-    move-result-object p1
-
-    return-object p1
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_6
-        :pswitch_0
-        :pswitch_5
-        :pswitch_4
-        :pswitch_3
-        :pswitch_2
-        :pswitch_1
-    .end packed-switch
 .end method

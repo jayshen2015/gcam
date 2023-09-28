@@ -1,50 +1,50 @@
 .class public final Lnew;
-.super Ljava/io/OutputStream;
+.super Ljava/lang/RuntimeException;
+
+
+# instance fields
+.field public final a:I
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 0
+.method public constructor <init>(ILjava/lang/String;Ljava/lang/Throwable;)V
+    .locals 2
 
-    invoke-direct {p0}, Ljava/io/OutputStream;-><init>()V
+    if-eqz p2, :cond_0
 
-    return-void
-.end method
+    invoke-virtual {p2}, Ljava/lang/String;->length()I
 
+    move-result v0
 
-# virtual methods
-.method public final toString()Ljava/lang/String;
-    .locals 1
+    new-instance v1, Ljava/lang/StringBuilder;
 
-    const-string v0, "ByteStreams.nullOutputStream()"
+    add-int/lit8 v0, v0, 0xd
 
-    return-object v0
-.end method
+    invoke-direct {v1, v0}, Ljava/lang/StringBuilder;-><init>(I)V
 
-.method public final write(I)V
-    .locals 0
+    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    return-void
-.end method
+    const-string v0, ": "
 
-.method public final write([B)V
-    .locals 0
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    invoke-virtual {v1, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    return-void
-.end method
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-.method public final write([BII)V
-    .locals 0
+    move-result-object p2
 
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    goto :goto_0
 
-    add-int/2addr p3, p2
+    :cond_0
+    invoke-static {p1}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
 
-    array-length p1, p1
+    move-result-object p2
 
-    invoke-static {p2, p3, p1}, Lmoz;->o(III)V
+    :goto_0
+    invoke-direct {p0, p2, p3}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
+
+    iput p1, p0, Lnew;->a:I
 
     return-void
 .end method

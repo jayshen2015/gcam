@@ -2,18 +2,12 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lfgi;
-
-
-# instance fields
-.field final synthetic a:Lfrc;
+.implements Lfpp;
 
 
 # direct methods
-.method public constructor <init>(Lfrc;)V
+.method public constructor <init>()V
     .locals 0
-
-    iput-object p1, p0, Lfqv;->a:Lfrc;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -22,125 +16,112 @@
 
 
 # virtual methods
-.method public final a(Lmym;)Z
-    .locals 4
-
-    iget-object v0, p0, Lfqv;->a:Lfrc;
-
-    iget-object v0, v0, Lfrc;->d:Ljava/util/Deque;
-
-    invoke-interface {v0}, Ljava/util/Deque;->isEmpty()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    iget-object v0, p0, Lfqv;->a:Lfrc;
-
-    iget-object v0, v0, Lfrc;->a:Lfkg;
-
-    invoke-virtual {v0}, Lfkg;->a()J
-
-    move-result-wide v0
-
-    const-wide/32 v2, -0x59682f00
-
-    add-long/2addr v0, v2
-
-    invoke-static {v0, v1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    move-result-object v0
-
-    invoke-static {v0}, Lmym;->c(Ljava/lang/Comparable;)Lmym;
-
-    move-result-object v0
-
-    invoke-virtual {v0, p1}, Lmym;->n(Lmym;)Z
-
-    move-result p1
-
-    return p1
-
-    :cond_0
-    iget-object v0, p0, Lfqv;->a:Lfrc;
-
-    iget-object v0, v0, Lfrc;->d:Ljava/util/Deque;
-
-    invoke-interface {v0}, Ljava/util/Deque;->iterator()Ljava/util/Iterator;
-
-    move-result-object v0
-
-    :cond_1
-    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_2
-
-    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Lfqy;
-
-    iget-object v1, v1, Lfqy;->c:Lmym;
-
-    invoke-virtual {v1, p1}, Lmym;->n(Lmym;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_1
-
-    const/4 p1, 0x1
-
-    return p1
-
-    :cond_2
-    const/4 p1, 0x0
-
-    return p1
-.end method
-
-.method public final b(Lmym;)Z
+.method public final a(Ljava/io/FileOutputStream;ILpht;Ljava/util/concurrent/Executor;)Lmlk;
     .locals 2
 
-    iget-object v0, p0, Lfqv;->a:Lfrc;
+    sget-object v0, Leto;->e:Leto;
 
-    iget-object v0, v0, Lfrc;->e:Ljava/util/Deque;
+    sget-object v1, Lpgr;->a:Lpgr;
 
-    invoke-interface {v0}, Ljava/util/Deque;->iterator()Ljava/util/Iterator;
+    invoke-static {p3, v0, v1}, Lpgb;->h(Lpht;Loiu;Ljava/util/concurrent/Executor;)Lpht;
+
+    move-result-object p3
+
+    :try_start_0
+    invoke-static {p4}, Lmwp;->h(Ljava/util/concurrent/Executor;)Lmtd;
+
+    move-result-object p4
+
+    invoke-virtual {p1}, Ljava/io/FileOutputStream;->getFD()Ljava/io/FileDescriptor;
 
     move-result-object v0
 
-    :cond_0
-    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
+    invoke-interface {p4, v0}, Lmtd;->c(Ljava/io/FileDescriptor;)V
 
-    move-result v1
+    invoke-interface {p4, p2}, Lmtc;->b(I)V
 
-    if-eqz v1, :cond_1
+    sget-object p2, Limd;->m:Limd;
 
-    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    move-object v0, p4
 
-    move-result-object v1
+    check-cast v0, Lmtb;
 
-    check-cast v1, Lfqx;
+    iget-object v0, v0, Lmtb;->a:Ljava/util/concurrent/Executor;
 
-    invoke-virtual {v1}, Lfqx;->c()Lmym;
+    invoke-static {p3, p2, v0}, Lpgb;->h(Lpht;Loiu;Ljava/util/concurrent/Executor;)Lpht;
 
-    move-result-object v1
+    move-result-object p2
 
-    invoke-virtual {v1, p1}, Lmym;->n(Lmym;)Z
+    move-object v0, p4
 
-    move-result v1
+    check-cast v0, Lmtb;
 
-    if-eqz v1, :cond_0
+    iput-object p2, v0, Lmtb;->b:Lpht;
 
-    const/4 p1, 0x1
+    sget-object p2, Limd;->n:Limd;
 
-    return p1
+    move-object v0, p4
 
-    :cond_1
-    const/4 p1, 0x0
+    check-cast v0, Lmtb;
 
-    return p1
+    iget-object v0, v0, Lmtb;->a:Ljava/util/concurrent/Executor;
+
+    invoke-static {p3, p2, v0}, Lpgb;->h(Lpht;Loiu;Ljava/util/concurrent/Executor;)Lpht;
+
+    move-result-object p2
+
+    move-object p3, p4
+
+    check-cast p3, Lmtb;
+
+    iput-object p2, p3, Lmtb;->c:Lpht;
+
+    move-object p2, p4
+
+    check-cast p2, Lmtb;
+
+    const/4 p3, 0x0
+
+    iput-boolean p3, p2, Lmtb;->d:Z
+
+    invoke-interface {p4}, Lmtc;->a()Lmsr;
+
+    move-result-object p2
+
+    new-instance p3, Lmll;
+
+    invoke-direct {p3, p2}, Lmll;-><init>(Lmsr;)V
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
+
+    invoke-static {}, Lpih;->f()Lpih;
+
+    move-result-object p2
+
+    invoke-interface {p3}, Lmlk;->b()Lpht;
+
+    move-result-object p4
+
+    new-instance v0, Lfqt;
+
+    invoke-direct {v0, p1, p2, p4}, Lfqt;-><init>(Ljava/io/FileOutputStream;Lpih;Lpht;)V
+
+    sget-object p1, Lpgr;->a:Lpgr;
+
+    invoke-interface {p4, v0, p1}, Lpht;->d(Ljava/lang/Runnable;Ljava/util/concurrent/Executor;)V
+
+    new-instance p1, Lfqu;
+
+    invoke-direct {p1, p3, p2}, Lfqu;-><init>(Lmlk;Lpih;)V
+
+    return-object p1
+
+    :catch_0
+    move-exception p1
+
+    new-instance p2, Ljava/lang/RuntimeException;
+
+    invoke-direct {p2, p1}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/Throwable;)V
+
+    throw p2
 .end method

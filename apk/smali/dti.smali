@@ -3,11 +3,5 @@
 
 
 # virtual methods
-.method public abstract a()J
-.end method
-
-.method public abstract b()Z
-.end method
-
-.method public abstract c()Z
+.method public abstract a(J[F)I
 .end method

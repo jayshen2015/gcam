@@ -1,317 +1,107 @@
 .class public final Lcxl;
-.super Lcyd;
-
-# interfaces
-.implements Lhiv;
+.super Ljava/lang/Object;
 
 
 # instance fields
-.field public final a:Lhiu;
+.field public final a:Ljava/lang/String;
 
-.field public final b:Lhiw;
+.field public b:I
 
-.field public final c:Lhiw;
+.field public c:I
 
-.field public final d:Lhiw;
+.field public d:I
+
+.field public e:I
+
+.field public f:J
+
+.field public g:I
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/apps/camera/bottombar/BottomBarController;Liff;Libj;Ldfa;Lczx;Ldhi;[B[B)V
-    .locals 10
+.method public constructor <init>(Ljava/lang/String;)V
+    .locals 0
 
-    move-object v9, p0
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const/4 v7, 0x0
-
-    const/4 v8, 0x0
-
-    move-object v0, p0
-
-    move-object v1, p1
-
-    move-object v2, p2
-
-    move-object v3, p3
-
-    move-object v4, p4
-
-    move-object v5, p5
-
-    move-object/from16 v6, p6
-
-    invoke-direct/range {v0 .. v8}, Lcyd;-><init>(Lcom/google/android/apps/camera/bottombar/BottomBarController;Liff;Libj;Ldfa;Lczx;Ldhi;[B[B)V
-
-    new-instance v0, Lcxi;
-
-    invoke-direct {v0, p0}, Lcxi;-><init>(Lcxl;)V
-
-    new-instance v1, Lhiw;
-
-    const/4 v2, 0x0
-
-    new-array v3, v2, [Lhis;
-
-    invoke-direct {v1, v0, v3}, Lhiw;-><init>(Lhis;[Lhis;)V
-
-    iput-object v1, v9, Lcxl;->b:Lhiw;
-
-    new-instance v0, Lcxj;
-
-    invoke-direct {v0, p0}, Lcxj;-><init>(Lcxl;)V
-
-    new-instance v1, Lhiw;
-
-    new-array v3, v2, [Lhis;
-
-    invoke-direct {v1, v0, v3}, Lhiw;-><init>(Lhis;[Lhis;)V
-
-    iput-object v1, v9, Lcxl;->c:Lhiw;
-
-    new-instance v0, Lcxk;
-
-    invoke-direct {v0, p0}, Lcxk;-><init>(Lcxl;)V
-
-    new-instance v3, Lhiw;
-
-    new-array v4, v2, [Lhis;
-
-    invoke-direct {v3, v0, v4}, Lhiw;-><init>(Lhis;[Lhis;)V
-
-    iput-object v3, v9, Lcxl;->d:Lhiw;
-
-    new-instance v0, Lhiu;
-
-    invoke-direct {v0, v1, v2}, Lhiu;-><init>(Lhiw;Z)V
-
-    iput-object v0, v9, Lcxl;->a:Lhiu;
-
-    invoke-virtual {v0}, Lhiu;->f()V
+    iput-object p1, p0, Lcxl;->a:Ljava/lang/String;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()V
-    .locals 1
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 7
 
-    iget-object v0, p0, Lcxl;->a:Lhiu;
+    const/4 v0, 0x1
 
-    invoke-virtual {v0}, Lhiu;->a()Lhiw;
+    if-ne p1, p0, :cond_0
 
-    move-result-object v0
-
-    if-nez v0, :cond_0
-
-    return-void
+    return v0
 
     :cond_0
-    iget-object v0, p0, Lcxl;->a:Lhiu;
+    instance-of v1, p1, Lcxl;
 
-    invoke-virtual {v0}, Lhiu;->a()Lhiw;
+    const/4 v2, 0x0
 
-    move-result-object v0
+    if-nez v1, :cond_1
 
-    iget-object v0, v0, Lhiw;->a:Lhis;
+    return v2
 
-    check-cast v0, Lcys;
+    :cond_1
+    check-cast p1, Lcxl;
 
-    invoke-virtual {v0}, Lcys;->a()V
+    iget-object v1, p0, Lcxl;->a:Ljava/lang/String;
 
-    return-void
-.end method
+    iget-object v3, p1, Lcxl;->a:Ljava/lang/String;
 
-.method public final b()V
-    .locals 1
+    invoke-virtual {v1, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    iget-object v0, p0, Lcxl;->a:Lhiu;
+    move-result v1
 
-    invoke-virtual {v0}, Lhiu;->a()Lhiw;
+    if-eqz v1, :cond_2
 
-    move-result-object v0
+    iget v1, p0, Lcxl;->d:I
 
-    if-nez v0, :cond_0
+    iget v3, p1, Lcxl;->d:I
 
-    return-void
+    if-ne v1, v3, :cond_2
 
-    :cond_0
-    iget-object v0, p0, Lcxl;->a:Lhiu;
+    iget v1, p0, Lcxl;->e:I
 
-    invoke-virtual {v0}, Lhiu;->a()Lhiw;
+    iget v3, p1, Lcxl;->e:I
 
-    move-result-object v0
+    if-ne v1, v3, :cond_2
 
-    iget-object v0, v0, Lhiw;->a:Lhis;
+    iget v1, p0, Lcxl;->c:I
 
-    check-cast v0, Lcys;
+    iget v3, p1, Lcxl;->c:I
 
-    invoke-virtual {v0}, Lcys;->b()V
+    if-ne v1, v3, :cond_2
 
-    return-void
-.end method
+    iget v1, p0, Lcxl;->b:I
 
-.method public final c()V
-    .locals 1
+    iget v3, p1, Lcxl;->b:I
 
-    iget-object v0, p0, Lcxl;->a:Lhiu;
+    if-ne v1, v3, :cond_2
 
-    invoke-virtual {v0}, Lhiu;->a()Lhiw;
+    iget-wide v3, p0, Lcxl;->f:J
 
-    move-result-object v0
+    iget-wide v5, p1, Lcxl;->f:J
 
-    if-nez v0, :cond_0
+    cmp-long v1, v3, v5
 
-    return-void
+    if-nez v1, :cond_2
 
-    :cond_0
-    iget-object v0, p0, Lcxl;->a:Lhiu;
+    iget v1, p0, Lcxl;->g:I
 
-    invoke-virtual {v0}, Lhiu;->a()Lhiw;
+    iget p1, p1, Lcxl;->g:I
 
-    move-result-object v0
+    if-ne v1, p1, :cond_2
 
-    iget-object v0, v0, Lhiw;->a:Lhis;
+    return v0
 
-    check-cast v0, Lcys;
-
-    invoke-virtual {v0}, Lcys;->c()V
-
-    return-void
-.end method
-
-.method public final d()V
-    .locals 1
-
-    iget-object v0, p0, Lcxl;->a:Lhiu;
-
-    invoke-virtual {v0}, Lhiu;->a()Lhiw;
-
-    move-result-object v0
-
-    if-nez v0, :cond_0
-
-    return-void
-
-    :cond_0
-    iget-object v0, p0, Lcxl;->a:Lhiu;
-
-    invoke-virtual {v0}, Lhiu;->a()Lhiw;
-
-    move-result-object v0
-
-    iget-object v0, v0, Lhiw;->a:Lhis;
-
-    check-cast v0, Lcys;
-
-    invoke-virtual {v0}, Lcys;->d()V
-
-    return-void
-.end method
-
-.method public final e()V
-    .locals 1
-
-    iget-object v0, p0, Lcxl;->a:Lhiu;
-
-    invoke-virtual {v0}, Lhiu;->b()V
-
-    iget-object v0, p0, Lcxl;->b:Lhiw;
-
-    invoke-virtual {v0}, Lhiw;->e()V
-
-    iget-object v0, p0, Lcxl;->c:Lhiw;
-
-    invoke-virtual {v0}, Lhiw;->e()V
-
-    iget-object v0, p0, Lcxl;->d:Lhiw;
-
-    invoke-virtual {v0}, Lhiw;->e()V
-
-    return-void
-.end method
-
-.method public final f()V
-    .locals 1
-
-    iget-object v0, p0, Lcxl;->a:Lhiu;
-
-    invoke-virtual {v0}, Lhiu;->c()V
-
-    return-void
-.end method
-
-.method public final g()V
-    .locals 1
-
-    iget-object v0, p0, Lcxl;->a:Lhiu;
-
-    invoke-virtual {v0}, Lhiu;->d()V
-
-    return-void
-.end method
-
-.method public final h()V
-    .locals 0
-
-    invoke-static {p0}, Ljcb;->l(Lhiv;)V
-
-    return-void
-.end method
-
-.method public final i()V
-    .locals 1
-
-    iget-object v0, p0, Lcxl;->a:Lhiu;
-
-    invoke-virtual {v0}, Lhiu;->a()Lhiw;
-
-    move-result-object v0
-
-    if-nez v0, :cond_0
-
-    return-void
-
-    :cond_0
-    iget-object v0, p0, Lcxl;->a:Lhiu;
-
-    invoke-virtual {v0}, Lhiu;->a()Lhiw;
-
-    move-result-object v0
-
-    iget-object v0, v0, Lhiw;->a:Lhis;
-
-    check-cast v0, Lcys;
-
-    invoke-virtual {v0}, Lcys;->i()V
-
-    return-void
-.end method
-
-.method public final j(Lcsc;)V
-    .locals 1
-
-    iget-object v0, p0, Lcxl;->a:Lhiu;
-
-    invoke-virtual {v0}, Lhiu;->a()Lhiw;
-
-    move-result-object v0
-
-    if-nez v0, :cond_0
-
-    return-void
-
-    :cond_0
-    iget-object v0, p0, Lcxl;->a:Lhiu;
-
-    invoke-virtual {v0}, Lhiu;->a()Lhiw;
-
-    move-result-object v0
-
-    iget-object v0, v0, Lhiw;->a:Lhis;
-
-    check-cast v0, Lcys;
-
-    invoke-virtual {v0, p1}, Lcys;->j(Lcsc;)V
-
-    return-void
+    :cond_2
+    return v2
 .end method

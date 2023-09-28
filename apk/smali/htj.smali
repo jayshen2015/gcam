@@ -1,50 +1,90 @@
-.class Lhtj;
-.super Lhir;
+.class public final enum Lhtj;
+.super Ljava/lang/Enum;
+
+
+# static fields
+.field public static final enum a:Lhtj;
+
+.field public static final enum b:Lhtj;
+
+.field public static final enum c:Lhtj;
+
+.field private static final synthetic e:[Lhtj;
+
+
+# instance fields
+.field public final d:I
 
 
 # direct methods
-.method public constructor <init>(Lhtl;)V
-    .locals 3
+.method static constructor <clinit>()V
+    .locals 7
 
-    invoke-direct {p0}, Lhir;-><init>()V
+    new-instance v0, Lhtj;
 
-    const/4 v0, 0x2
-
-    new-array v0, v0, [Lhiz;
-
-    const-string v1, "CameraUi.Photos"
-
-    invoke-static {v1}, Ljcb;->j(Ljava/lang/String;)Lhiz;
-
-    move-result-object v1
+    const-string v1, "LASAGNA_TR_SMALL"
 
     const/4 v2, 0x0
 
-    aput-object v1, v0, v2
+    invoke-direct {v0, v1, v2, v2}, Lhtj;-><init>(Ljava/lang/String;II)V
 
-    iget-object p1, p1, Lhtl;->i:Lebj;
+    sput-object v0, Lhtj;->a:Lhtj;
 
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    new-instance v1, Lhtj;
 
-    new-instance v1, Lhth;
+    const-string v3, "LASAGNA_TR_MEDIUM"
 
-    const/4 v2, 0x4
+    const/4 v4, 0x1
 
-    invoke-direct {v1, p1, v2}, Lhth;-><init>(Lebj;I)V
+    invoke-direct {v1, v3, v4, v4}, Lhtj;-><init>(Ljava/lang/String;II)V
 
-    const/4 p1, 0x1
+    sput-object v1, Lhtj;->b:Lhtj;
 
-    aput-object v1, v0, p1
+    new-instance v3, Lhtj;
 
-    invoke-virtual {p0, v0}, Lhir;->a([Lhiz;)V
+    const-string v5, "LASAGNA_TR_LARGE"
+
+    const/4 v6, 0x2
+
+    invoke-direct {v3, v5, v6, v6}, Lhtj;-><init>(Ljava/lang/String;II)V
+
+    sput-object v3, Lhtj;->c:Lhtj;
+
+    const/4 v5, 0x3
+
+    new-array v5, v5, [Lhtj;
+
+    aput-object v0, v5, v2
+
+    aput-object v1, v5, v4
+
+    aput-object v3, v5, v6
+
+    sput-object v5, Lhtj;->e:[Lhtj;
 
     return-void
 .end method
 
-
-# virtual methods
-.method public b()V
+.method private constructor <init>(Ljava/lang/String;II)V
     .locals 0
 
+    invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    iput p3, p0, Lhtj;->d:I
+
     return-void
+.end method
+
+.method public static values()[Lhtj;
+    .locals 1
+
+    sget-object v0, Lhtj;->e:[Lhtj;
+
+    invoke-virtual {v0}, [Lhtj;->clone()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, [Lhtj;
+
+    return-object v0
 .end method

@@ -1,317 +1,126 @@
-.class public final Lepd;
-.super Lgmp;
+.class public final enum Lepd;
+.super Ljava/lang/Enum;
 
 
 # static fields
-.field private static final u:Lnak;
+.field public static final enum a:Lepd;
 
+.field public static final enum b:Lepd;
 
-# instance fields
-.field public a:Z
+.field public static final enum c:Lepd;
 
-.field public final b:Leea;
+.field public static final enum d:Lepd;
 
-.field public final c:Lkad;
+.field public static final enum e:Lepd;
 
-.field public final d:Leqg;
+.field public static final enum f:Lepd;
 
-.field public final e:I
-
-.field public final f:Ljava/util/UUID;
-
-.field public final g:Ljava/util/concurrent/Phaser;
-
-.field public final h:I
-
-.field public i:Landroid/graphics/Bitmap;
-
-.field public j:Lnsz;
-
-.field private final v:Ljava/util/ArrayList;
-
-.field private final w:Ldqx;
+.field private static final synthetic g:[Lepd;
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 1
+    .locals 13
 
-    const-string v0, "com/google/android/apps/camera/lasagna/MotionBlurInflightShot"
+    new-instance v0, Lepd;
 
-    invoke-static {v0}, Lnak;->h(Ljava/lang/String;)Lnak;
-
-    move-result-object v0
-
-    sput-object v0, Lepd;->u:Lnak;
-
-    return-void
-.end method
-
-.method public constructor <init>(Ldqx;Lgkr;Lebb;Lcom/google/googlex/gcam/BurstSpec;Lkou;Leea;Lkad;Leqg;I[B[B[B[B)V
-    .locals 8
-
-    move-object v7, p0
-
-    const/4 v5, 0x0
-
-    const/4 v6, 0x0
-
-    move-object v0, p0
-
-    move-object v1, p2
-
-    move-object v2, p3
-
-    move-object v3, p4
-
-    move-object v4, p5
-
-    invoke-direct/range {v0 .. v6}, Lgmp;-><init>(Lgkr;Lebb;Lcom/google/googlex/gcam/BurstSpec;Lkou;[B[B)V
-
-    move-object v0, p6
-
-    iput-object v0, v7, Lepd;->b:Leea;
-
-    invoke-virtual {p6}, Leea;->a()I
-
-    move-result v0
-
-    iput v0, v7, Lepd;->h:I
-
-    move-object v0, p7
-
-    iput-object v0, v7, Lepd;->c:Lkad;
-
-    move-object/from16 v0, p8
-
-    iput-object v0, v7, Lepd;->d:Leqg;
-
-    move/from16 v0, p9
-
-    iput v0, v7, Lepd;->e:I
-
-    invoke-static {}, Ljava/util/UUID;->randomUUID()Ljava/util/UUID;
-
-    move-result-object v0
-
-    iput-object v0, v7, Lepd;->f:Ljava/util/UUID;
-
-    const/4 v0, 0x0
-
-    iput-boolean v0, v7, Lepd;->a:Z
-
-    new-instance v0, Ljava/util/concurrent/Phaser;
-
-    const/4 v1, 0x2
-
-    invoke-direct {v0, v1}, Ljava/util/concurrent/Phaser;-><init>(I)V
-
-    iput-object v0, v7, Lepd;->g:Ljava/util/concurrent/Phaser;
-
-    new-instance v0, Ljava/util/ArrayList;
-
-    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
-
-    iput-object v0, v7, Lepd;->v:Ljava/util/ArrayList;
-
-    const/4 v0, 0x0
-
-    iput-object v0, v7, Lepd;->j:Lnsz;
-
-    move-object v0, p1
-
-    iput-object v0, v7, Lepd;->w:Ldqx;
-
-    return-void
-.end method
-
-
-# virtual methods
-.method public final a()Ljava/util/ArrayList;
-    .locals 2
-
-    new-instance v0, Ljava/util/ArrayList;
-
-    iget-object v1, p0, Lepd;->v:Ljava/util/ArrayList;
-
-    invoke-direct {v0, v1}, Ljava/util/ArrayList;-><init>(Ljava/util/Collection;)V
-
-    iget-object v1, p0, Lepd;->v:Ljava/util/ArrayList;
-
-    invoke-virtual {v1}, Ljava/util/ArrayList;->clear()V
-
-    return-object v0
-.end method
-
-.method public final b()V
-    .locals 5
-
-    iget-object v0, p0, Lepd;->c:Lkad;
-
-    invoke-interface {v0}, Lkad;->close()V
-
-    invoke-virtual {p0}, Lepd;->e()V
-
-    invoke-virtual {p0}, Lepd;->a()Ljava/util/ArrayList;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/util/ArrayList;->isEmpty()Z
-
-    move-result v1
-
-    if-nez v1, :cond_0
-
-    invoke-interface {v0}, Ljava/util/List;->size()I
-
-    move-result v1
+    const-string v1, "SHUTTER"
 
     const/4 v2, 0x0
 
-    :goto_0
-    if-ge v2, v1, :cond_1
+    invoke-direct {v0, v1, v2}, Lepd;-><init>(Ljava/lang/String;I)V
 
-    invoke-interface {v0, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
+    sput-object v0, Lepd;->a:Lepd;
 
-    move-result-object v3
+    new-instance v1, Lepd;
 
-    check-cast v3, Lnsx;
+    const-string v3, "ZOOM_IN"
 
-    iget-object v4, v3, Lnsx;->b:Lcom/google/googlex/gcam/FrameMetadata;
+    const/4 v4, 0x1
 
-    invoke-virtual {v4}, Lcom/google/googlex/gcam/FrameMetadata;->c()J
+    invoke-direct {v1, v3, v4}, Lepd;-><init>(Ljava/lang/String;I)V
 
-    iget-object v3, v3, Lnsx;->d:Ljava/lang/Runnable;
+    sput-object v1, Lepd;->b:Lepd;
 
-    invoke-interface {v3}, Ljava/lang/Runnable;->run()V
+    new-instance v3, Lepd;
 
-    add-int/lit8 v2, v2, 0x1
+    const-string v5, "ZOOM_OUT"
 
-    goto :goto_0
+    const/4 v6, 0x2
 
-    :cond_0
-    iget-object v0, p0, Lgmp;->t:Lgkr;
+    invoke-direct {v3, v5, v6}, Lepd;-><init>(Ljava/lang/String;I)V
 
-    iget-object v0, v0, Lgkr;->c:Ljava/lang/Object;
+    sput-object v3, Lepd;->c:Lepd;
 
-    invoke-interface {v0}, Lgxl;->h()Lgxy;
+    new-instance v5, Lepd;
 
-    :cond_1
-    invoke-super {p0}, Lgmp;->b()V
+    const-string v7, "SWITCH_CAMERA"
 
-    return-void
-.end method
+    const/4 v8, 0x3
 
-.method public final c(Lkeb;)V
-    .locals 4
+    invoke-direct {v5, v7, v8}, Lepd;-><init>(Ljava/lang/String;I)V
 
-    invoke-super {p0, p1}, Lgmp;->c(Lkeb;)V
+    sput-object v5, Lepd;->d:Lepd;
 
-    iget-object v0, p0, Lepd;->w:Ldqx;
+    new-instance v7, Lepd;
 
-    invoke-virtual {v0, p1}, Ldqx;->h(Lkeb;)Lnsx;
+    const-string v9, "NEXT_MODE"
 
-    move-result-object v0
+    const/4 v10, 0x4
 
-    if-eqz v0, :cond_0
+    invoke-direct {v7, v9, v10}, Lepd;-><init>(Ljava/lang/String;I)V
 
-    iget-object p1, p0, Lepd;->v:Ljava/util/ArrayList;
+    sput-object v7, Lepd;->e:Lepd;
 
-    invoke-virtual {p1, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    new-instance v9, Lepd;
 
-    return-void
+    const-string v11, "PREV_MODE"
 
-    :cond_0
-    invoke-interface {p1}, Lkeb;->b()Lkeg;
+    const/4 v12, 0x5
 
-    move-result-object p1
+    invoke-direct {v9, v11, v12}, Lepd;-><init>(Ljava/lang/String;I)V
 
-    sget-object v0, Lepd;->u:Lnak;
+    sput-object v9, Lepd;->f:Lepd;
 
-    invoke-virtual {v0}, Lnaf;->c()Lnaz;
+    const/4 v11, 0x6
 
-    move-result-object v0
+    new-array v11, v11, [Lepd;
 
-    check-cast v0, Lnah;
+    aput-object v0, v11, v2
 
-    const/16 v1, 0x6c8
+    aput-object v1, v11, v4
 
-    invoke-interface {v0, v1}, Lnah;->G(I)Lnaz;
+    aput-object v3, v11, v6
 
-    move-result-object v0
+    aput-object v5, v11, v8
 
-    check-cast v0, Lnah;
+    aput-object v7, v11, v10
 
-    if-eqz p1, :cond_1
+    aput-object v9, v11, v12
 
-    iget-wide v1, p1, Lkeg;->c:J
-
-    goto :goto_0
-
-    :cond_1
-    const-wide/16 v1, -0x1
-
-    :goto_0
-    const-string p1, "No valid RAW image found for frame %s, adding empty frame."
-
-    invoke-interface {v0, p1, v1, v2}, Lnah;->q(Ljava/lang/String;J)V
-
-    iget-object p1, p0, Lepd;->v:Ljava/util/ArrayList;
-
-    new-instance v0, Lcom/google/googlex/gcam/RawWriteView;
-
-    invoke-direct {v0}, Lcom/google/googlex/gcam/RawWriteView;-><init>()V
-
-    new-instance v1, Lcom/google/googlex/gcam/FrameMetadata;
-
-    invoke-direct {v1}, Lcom/google/googlex/gcam/FrameMetadata;-><init>()V
-
-    new-instance v2, Lcom/google/googlex/gcam/SpatialGainMap;
-
-    invoke-direct {v2}, Lcom/google/googlex/gcam/SpatialGainMap;-><init>()V
-
-    sget-object v3, Lchy;->o:Lchy;
-
-    invoke-static {v0, v1, v2, v3}, Lnsx;->a(Lcom/google/googlex/gcam/RawWriteView;Lcom/google/googlex/gcam/FrameMetadata;Lcom/google/googlex/gcam/SpatialGainMap;Ljava/lang/Runnable;)Lnsx;
-
-    move-result-object v0
-
-    invoke-virtual {p1, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    sput-object v11, Lepd;->g:[Lepd;
 
     return-void
 .end method
 
-.method public final d()V
+.method private constructor <init>(Ljava/lang/String;I)V
+    .locals 0
+
+    invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    return-void
+.end method
+
+.method public static values()[Lepd;
     .locals 1
 
-    iget-object v0, p0, Lepd;->j:Lnsz;
+    sget-object v0, Lepd;->g:[Lepd;
 
-    if-eqz v0, :cond_0
+    invoke-virtual {v0}, [Lepd;->clone()Ljava/lang/Object;
 
-    invoke-interface {v0}, Lnsz;->b()V
+    move-result-object v0
 
-    const/4 v0, 0x0
+    check-cast v0, [Lepd;
 
-    iput-object v0, p0, Lepd;->j:Lnsz;
-
-    return-void
-
-    :cond_0
-    iget-object v0, p0, Lgmp;->t:Lgkr;
-
-    iget-object v0, v0, Lgkr;->c:Ljava/lang/Object;
-
-    invoke-interface {v0}, Lgxl;->h()Lgxy;
-
-    return-void
-.end method
-
-.method public final e()V
-    .locals 1
-
-    iget-object v0, p0, Lepd;->g:Ljava/util/concurrent/Phaser;
-
-    invoke-virtual {v0}, Ljava/util/concurrent/Phaser;->arrive()I
-
-    return-void
+    return-object v0
 .end method

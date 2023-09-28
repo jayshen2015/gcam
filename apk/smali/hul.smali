@@ -1,40 +1,38 @@
-.class final Lhul;
-.super Lhtj;
-
-
-# instance fields
-.field final synthetic b:Lhun;
+.class public final Lhul;
+.super Lhts;
 
 
 # direct methods
-.method public constructor <init>(Lhun;)V
+.method public constructor <init>(Lhtr;)V
+    .locals 1
+
+    const-string v0, "key_aspect_ratio"
+
+    invoke-direct {p0, v0, p1}, Lhts;-><init>(Ljava/lang/String;Lhtr;)V
+
+    return-void
+.end method
+
+.method public constructor <init>(Ljava/lang/String;Ljava/lang/Integer;)V
     .locals 0
 
-    iput-object p1, p0, Lhul;->b:Lhun;
-
-    invoke-direct {p0, p1}, Lhtj;-><init>(Lhtl;)V
+    invoke-direct {p0, p1, p2}, Lhts;-><init>(Ljava/lang/String;Ljava/lang/Object;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final b()V
-    .locals 2
+.method public final bridge synthetic b(Ljava/lang/String;)Ljava/lang/Object;
+    .locals 0
 
-    iget-object v0, p0, Lhul;->b:Lhun;
+    invoke-static {p1}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
 
-    iget-object v0, v0, Lhun;->o:Lhiu;
+    move-result p1
 
-    invoke-virtual {v0}, Lhiu;->e()V
+    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    iget-object v0, p0, Lhul;->b:Lhun;
+    move-result-object p1
 
-    iget-object v1, v0, Lhun;->o:Lhiu;
-
-    iget-object v0, v0, Lhun;->p:Lhiw;
-
-    invoke-virtual {v1, v0}, Lhiu;->g(Lhiw;)V
-
-    return-void
+    return-object p1
 .end method

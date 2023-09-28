@@ -1,216 +1,228 @@
 .class public final Lnip;
-.super Lnws;
-
-# interfaces
-.implements Lnxz;
+.super Ljava/lang/Object;
 
 
 # static fields
-.field public static final h:Lnip;
-
-.field private static volatile i:Lnyf;
-
-
-# instance fields
-.field public a:I
-
-.field public b:I
-
-.field public c:F
-
-.field public d:Z
-
-.field public e:I
-
-.field public f:J
-
-.field public g:J
+.field public static final a:Landroid/accounts/Account;
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 2
-
-    new-instance v0, Lnip;
-
-    invoke-direct {v0}, Lnip;-><init>()V
-
-    sput-object v0, Lnip;->h:Lnip;
-
-    const-class v1, Lnip;
-
-    invoke-static {v1, v0}, Lnws;->aa(Ljava/lang/Class;Lnws;)V
-
-    return-void
-.end method
-
-.method private constructor <init>()V
-    .locals 0
-
-    invoke-direct {p0}, Lnws;-><init>()V
-
-    return-void
-.end method
-
-
-# virtual methods
-.method protected final a(ILjava/lang/Object;)Ljava/lang/Object;
     .locals 3
 
-    add-int/lit8 p1, p1, -0x1
+    new-instance v0, Landroid/accounts/Account;
 
-    const/4 p2, 0x1
+    const-string v1, "shared"
 
-    packed-switch p1, :pswitch_data_0
+    const-string v2, "mobstore"
 
-    :pswitch_0
-    const/4 p1, 0x0
+    invoke-direct {v0, v1, v2}, Landroid/accounts/Account;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
-    return-object p1
+    sput-object v0, Lnip;->a:Landroid/accounts/Account;
 
-    :pswitch_1
-    sget-object p1, Lnip;->i:Lnyf;
+    return-void
+.end method
 
-    if-nez p1, :cond_1
+.method public static a(Ljava/lang/String;)Landroid/accounts/Account;
+    .locals 6
 
-    const-class p2, Lnip;
+    const-string v0, "shared"
 
-    monitor-enter p2
+    invoke-virtual {v0, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    :try_start_0
-    sget-object p1, Lnip;->i:Lnyf;
+    move-result v0
 
-    if-nez p1, :cond_0
+    if-eqz v0, :cond_0
 
-    new-instance p1, Lnwo;
+    sget-object p0, Lnip;->a:Landroid/accounts/Account;
 
-    sget-object v0, Lnip;->h:Lnip;
-
-    invoke-direct {p1, v0}, Lnwo;-><init>(Lnws;)V
-
-    sput-object p1, Lnip;->i:Lnyf;
+    return-object p0
 
     :cond_0
-    monitor-exit p2
+    const/16 v0, 0x3a
 
-    goto :goto_0
+    invoke-virtual {p0, v0}, Ljava/lang/String;->indexOf(I)I
 
-    :catchall_0
-    move-exception p1
+    move-result v0
 
-    monitor-exit p2
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw p1
-
-    :cond_1
-    :goto_0
-    return-object p1
-
-    :pswitch_2
-    sget-object p1, Lnip;->h:Lnip;
-
-    return-object p1
-
-    :pswitch_3
-    new-instance p1, Lnwn;
-
-    sget-object p2, Lnip;->h:Lnip;
-
-    invoke-direct {p1, p2}, Lnwn;-><init>(Lnws;)V
-
-    return-object p1
-
-    :pswitch_4
-    new-instance p1, Lnip;
-
-    invoke-direct {p1}, Lnip;-><init>()V
-
-    return-object p1
-
-    :pswitch_5
-    const-string p1, "a"
-
-    const-string v0, "\u0001\u0006\u0000\u0001\u0001\n\u0006\u0000\u0000\u0000\u0001\u100c\u0000\u0006\u1001\u0005\u0007\u1007\u0006\u0008\u100c\u0007\t\u1002\u0008\n\u1002\t"
-
-    const/16 v1, 0x9
-
-    new-array v1, v1, [Ljava/lang/Object;
+    const/4 v1, 0x1
 
     const/4 v2, 0x0
 
-    aput-object p1, v1, v2
+    if-ltz v0, :cond_1
 
-    const-string p1, "b"
+    const/4 v3, 0x1
 
-    aput-object p1, v1, p2
+    goto :goto_0
 
-    const/4 p1, 0x2
+    :cond_1
+    const/4 v3, 0x0
 
-    sget-object p2, Lnia;->n:Lnww;
+    :goto_0
+    new-array v4, v2, [Ljava/lang/Object;
 
-    aput-object p2, v1, p1
+    const-string v5, "Malformed account"
 
-    const/4 p1, 0x3
+    invoke-static {v3, v5, v4}, Lmyw;->b(ZLjava/lang/String;[Ljava/lang/Object;)V
 
-    const-string p2, "c"
+    invoke-virtual {p0, v2, v0}, Ljava/lang/String;->substring(II)Ljava/lang/String;
 
-    aput-object p2, v1, p1
+    move-result-object v2
 
-    const/4 p1, 0x4
+    add-int/2addr v0, v1
 
-    const-string p2, "d"
+    invoke-virtual {p0, v0}, Ljava/lang/String;->substring(I)Ljava/lang/String;
 
-    aput-object p2, v1, p1
+    move-result-object p0
 
-    const/4 p1, 0x5
+    new-instance v0, Landroid/accounts/Account;
 
-    const-string p2, "e"
+    invoke-direct {v0, p0, v2}, Landroid/accounts/Account;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
-    aput-object p2, v1, p1
+    return-object v0
+.end method
 
-    const/4 p1, 0x6
+.method public static b(Landroid/accounts/Account;)Ljava/lang/String;
+    .locals 7
 
-    sget-object p2, Lnia;->o:Lnww;
+    iget-object v0, p0, Landroid/accounts/Account;->type:Ljava/lang/String;
 
-    aput-object p2, v1, p1
+    const/16 v1, 0x3a
 
-    const/4 p1, 0x7
+    invoke-virtual {v0, v1}, Ljava/lang/String;->indexOf(I)I
 
-    const-string p2, "f"
+    move-result v0
 
-    aput-object p2, v1, p1
+    const/4 v1, -0x1
 
-    const/16 p1, 0x8
+    const/4 v2, 0x1
 
-    const-string p2, "g"
+    const/4 v3, 0x0
 
-    aput-object p2, v1, p1
+    if-ne v0, v1, :cond_0
 
-    sget-object p1, Lnip;->h:Lnip;
+    const/4 v0, 0x1
 
-    invoke-static {p1, v0, v1}, Lnip;->X(Lnxy;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/Object;
+    goto :goto_0
 
-    move-result-object p1
+    :cond_0
+    const/4 v0, 0x0
 
-    return-object p1
+    :goto_0
+    new-array v4, v3, [Ljava/lang/Object;
 
-    :pswitch_6
-    invoke-static {p2}, Ljava/lang/Byte;->valueOf(B)Ljava/lang/Byte;
+    const-string v5, "Account type contains \':\'."
 
-    move-result-object p1
+    invoke-static {v0, v5, v4}, Lmyw;->b(ZLjava/lang/String;[Ljava/lang/Object;)V
 
-    return-object p1
+    iget-object v0, p0, Landroid/accounts/Account;->type:Ljava/lang/String;
 
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_6
-        :pswitch_0
-        :pswitch_5
-        :pswitch_4
-        :pswitch_3
-        :pswitch_2
-        :pswitch_1
-    .end packed-switch
+    const/16 v4, 0x2f
+
+    invoke-virtual {v0, v4}, Ljava/lang/String;->indexOf(I)I
+
+    move-result v0
+
+    if-ne v0, v1, :cond_1
+
+    const/4 v0, 0x1
+
+    goto :goto_1
+
+    :cond_1
+    const/4 v0, 0x0
+
+    :goto_1
+    new-array v5, v3, [Ljava/lang/Object;
+
+    const-string v6, "Account type contains \'/\'."
+
+    invoke-static {v0, v6, v5}, Lmyw;->b(ZLjava/lang/String;[Ljava/lang/Object;)V
+
+    iget-object v0, p0, Landroid/accounts/Account;->name:Ljava/lang/String;
+
+    invoke-virtual {v0, v4}, Ljava/lang/String;->indexOf(I)I
+
+    move-result v0
+
+    if-ne v0, v1, :cond_2
+
+    const/4 v0, 0x1
+
+    goto :goto_2
+
+    :cond_2
+    const/4 v0, 0x0
+
+    :goto_2
+    new-array v1, v3, [Ljava/lang/Object;
+
+    const-string v3, "Account name contains \'/\'."
+
+    invoke-static {v0, v3, v1}, Lmyw;->b(ZLjava/lang/String;[Ljava/lang/Object;)V
+
+    invoke-static {p0}, Lnip;->c(Landroid/accounts/Account;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_3
+
+    const-string p0, "shared"
+
+    return-object p0
+
+    :cond_3
+    iget-object v0, p0, Landroid/accounts/Account;->type:Ljava/lang/String;
+
+    iget-object p0, p0, Landroid/accounts/Account;->name:Ljava/lang/String;
+
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/String;->length()I
+
+    move-result v1
+
+    invoke-static {p0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/lang/String;->length()I
+
+    move-result v3
+
+    new-instance v4, Ljava/lang/StringBuilder;
+
+    add-int/2addr v1, v2
+
+    add-int/2addr v1, v3
+
+    invoke-direct {v4, v1}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v0, ":"
+
+    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v4, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method static c(Landroid/accounts/Account;)Z
+    .locals 1
+
+    sget-object v0, Lnip;->a:Landroid/accounts/Account;
+
+    invoke-virtual {v0, p0}, Landroid/accounts/Account;->equals(Ljava/lang/Object;)Z
+
+    move-result p0
+
+    return p0
 .end method

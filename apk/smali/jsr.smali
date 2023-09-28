@@ -1,66 +1,71 @@
-.class public final Ljsr;
-.super Ljhn;
+.class public final synthetic Ljsr;
+.super Ljava/lang/Object;
 
-
-# static fields
-.field public static final CREATOR:Landroid/os/Parcelable$Creator;
+# interfaces
+.implements Landroid/view/View$OnClickListener;
 
 
 # instance fields
-.field public final a:Ljava/lang/String;
-
-.field public final b:Lcom/google/android/gms/common/data/DataHolder;
+.field public final synthetic a:Ljsu;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
-
-    new-instance v0, Ljro;
-
-    const/16 v1, 0x10
-
-    invoke-direct {v0, v1}, Ljro;-><init>(I)V
-
-    sput-object v0, Ljsr;->CREATOR:Landroid/os/Parcelable$Creator;
-
-    return-void
-.end method
-
-.method public constructor <init>(Ljava/lang/String;Lcom/google/android/gms/common/data/DataHolder;)V
+.method public synthetic constructor <init>(Ljsu;)V
     .locals 0
 
-    invoke-direct {p0}, Ljhn;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Ljsr;->a:Ljava/lang/String;
-
-    iput-object p2, p0, Ljsr;->b:Lcom/google/android/gms/common/data/DataHolder;
+    iput-object p1, p0, Ljsr;->a:Ljsu;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final writeToParcel(Landroid/os/Parcel;I)V
-    .locals 3
+.method public final onClick(Landroid/view/View;)V
+    .locals 11
 
-    invoke-static {p1}, Ljhp;->a(Landroid/os/Parcel;)I
+    iget-object p1, p0, Ljsr;->a:Ljsu;
 
-    move-result v0
+    iget-object v0, p1, Ljsu;->h:Lhrx;
 
-    iget-object v1, p0, Ljsr;->a:Ljava/lang/String;
+    invoke-virtual {v0, p1}, Lhrx;->i(Lhsb;)V
 
-    const/4 v2, 0x1
+    iget-object v0, p1, Ljsu;->d:Lelw;
 
-    invoke-static {p1, v2, v1}, Ljhp;->p(Landroid/os/Parcel;ILjava/lang/String;)V
+    iget-object v1, p1, Ljsu;->i:Ljgu;
 
-    iget-object v1, p0, Ljsr;->b:Lcom/google/android/gms/common/data/DataHolder;
+    invoke-interface {v0, v1}, Lelw;->g(Lelv;)V
 
-    const/4 v2, 0x2
+    iget-object v0, p1, Ljsu;->f:Lhug;
 
-    invoke-static {p1, v2, v1, p2}, Ljhp;->o(Landroid/os/Parcel;ILandroid/os/Parcelable;I)V
+    sget-object v1, Lhtu;->O:Lhum;
 
-    invoke-static {p1, v0}, Ljhp;->c(Landroid/os/Parcel;I)V
+    iget-wide v2, p1, Ljsu;->j:J
+
+    invoke-static {v2, v3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object v2
+
+    invoke-interface {v0, v1, v2}, Lhug;->e(Lhts;Ljava/lang/Object;)V
+
+    iget-object v3, p1, Ljsu;->g:Lfjs;
+
+    iget-wide v5, p1, Ljsu;->k:J
+
+    iget-wide v7, p1, Ljsu;->j:J
+
+    const/16 v4, 0x9
+
+    const/4 v9, 0x0
+
+    const/4 v10, 0x0
+
+    invoke-interface/range {v3 .. v10}, Lfjs;->ai(IJJII)V
+
+    iget-object p1, p1, Ljsu;->b:Ljsw;
+
+    invoke-interface {p1}, Ljsw;->d()V
 
     return-void
 .end method

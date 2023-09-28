@@ -1,68 +1,59 @@
-.class public abstract Lmup;
-.super Lmuo;
+.class final Lmup;
+.super Ljava/lang/Object;
 
 # interfaces
-.implements Ljava/util/List;
+.implements Lmuo;
+
+
+# static fields
+.field private static final a:Louj;
+
+
+# instance fields
+.field private final b:Lmuz;
+
+.field private final c:Lqkg;
+
+.field private final d:Lqkg;
+
+.field private final e:Lqkg;
 
 
 # direct methods
-.method protected constructor <init>()V
+.method static constructor <clinit>()V
+    .locals 1
+
+    const-string v0, "com/google/android/libraries/performance/primes/PrimesApiImpl"
+
+    invoke-static {v0}, Louj;->h(Ljava/lang/String;)Louj;
+
+    move-result-object v0
+
+    sput-object v0, Lmup;->a:Louj;
+
+    return-void
+.end method
+
+.method public constructor <init>(Lmuz;Lqkg;Lqkg;Lqkg;Lojc;Loxk;[B[B)V
     .locals 0
 
-    invoke-direct {p0}, Lmuo;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    return-void
-.end method
+    iput-object p1, p0, Lmup;->b:Lmuz;
 
+    iput-object p2, p0, Lmup;->c:Lqkg;
 
-# virtual methods
-.method public add(ILjava/lang/Object;)V
-    .locals 1
+    iput-object p3, p0, Lmup;->d:Lqkg;
 
-    invoke-virtual {p0}, Lmup;->c()Ljava/util/List;
+    iput-object p4, p0, Lmup;->e:Lqkg;
 
-    move-result-object v0
-
-    invoke-interface {v0, p1, p2}, Ljava/util/List;->add(ILjava/lang/Object;)V
-
-    return-void
-.end method
-
-.method public addAll(ILjava/util/Collection;)Z
-    .locals 1
-
-    invoke-virtual {p0}, Lmup;->c()Ljava/util/List;
-
-    move-result-object v0
-
-    invoke-interface {v0, p1, p2}, Ljava/util/List;->addAll(ILjava/util/Collection;)Z
+    invoke-static {}, Lmyw;->i()Z
 
     move-result p1
 
-    return p1
-.end method
+    if-nez p1, :cond_1
 
-.method protected bridge synthetic b()Ljava/util/Collection;
-    .locals 1
-
-    const/4 v0, 0x0
-
-    throw v0
-.end method
-
-.method protected abstract c()Ljava/util/List;
-.end method
-
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 1
-
-    if-eq p1, p0, :cond_1
-
-    invoke-virtual {p0}, Lmup;->c()Ljava/util/List;
-
-    move-result-object v0
-
-    invoke-virtual {v0, p1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {p6}, Loxk;->i()Z
 
     move-result p1
 
@@ -71,139 +62,145 @@
     goto :goto_0
 
     :cond_0
-    const/4 p1, 0x0
+    new-instance p1, Ljava/lang/IllegalStateException;
 
-    return p1
+    iget-object p2, p6, Loxk;->a:Ljava/lang/String;
+
+    invoke-static {p2}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object p3
+
+    invoke-virtual {p3}, Ljava/lang/String;->length()I
+
+    move-result p3
+
+    new-instance p4, Ljava/lang/StringBuilder;
+
+    add-int/lit16 p3, p3, 0x96
+
+    invoke-direct {p4, p3}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string p3, "Primes init triggered from background in package: "
+
+    invoke-virtual {p4, p3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {p4, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string p2, ". If this is an existing error, please file a bug on the Primes team to whitelist your package name."
+
+    invoke-virtual {p4, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {p4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p2
+
+    invoke-direct {p1, p2}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw p1
 
     :cond_1
     :goto_0
-    const/4 p1, 0x1
+    sget-object p1, Ljava/lang/Boolean;->FALSE:Ljava/lang/Boolean;
 
-    return p1
-.end method
-
-.method public get(I)Ljava/lang/Object;
-    .locals 1
-
-    invoke-virtual {p0}, Lmup;->c()Ljava/util/List;
-
-    move-result-object v0
-
-    invoke-interface {v0, p1}, Ljava/util/List;->get(I)Ljava/lang/Object;
+    invoke-virtual {p5, p1}, Lojc;->e(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p1
 
-    return-object p1
-.end method
+    check-cast p1, Ljava/lang/Boolean;
 
-.method public final hashCode()I
-    .locals 1
-
-    invoke-virtual {p0}, Lmup;->c()Ljava/util/List;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/Object;->hashCode()I
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public indexOf(Ljava/lang/Object;)I
-    .locals 1
-
-    invoke-virtual {p0}, Lmup;->c()Ljava/util/List;
-
-    move-result-object v0
-
-    invoke-interface {v0, p1}, Ljava/util/List;->indexOf(Ljava/lang/Object;)I
+    invoke-virtual {p1}, Ljava/lang/Boolean;->booleanValue()Z
 
     move-result p1
 
-    return p1
-.end method
+    if-nez p1, :cond_2
 
-.method public lastIndexOf(Ljava/lang/Object;)I
-    .locals 1
+    :try_start_0
+    sget-object p1, Logq;->a:Ljava/util/WeakHashMap;
 
-    invoke-virtual {p0}, Lmup;->c()Ljava/util/List;
+    check-cast p2, Lpyw;
 
-    move-result-object v0
-
-    invoke-interface {v0, p1}, Ljava/util/List;->lastIndexOf(Ljava/lang/Object;)I
-
-    move-result p1
-
-    return p1
-.end method
-
-.method public listIterator()Ljava/util/ListIterator;
-    .locals 1
-
-    invoke-virtual {p0}, Lmup;->c()Ljava/util/List;
-
-    move-result-object v0
-
-    invoke-interface {v0}, Ljava/util/List;->listIterator()Ljava/util/ListIterator;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public listIterator(I)Ljava/util/ListIterator;
-    .locals 1
-
-    invoke-virtual {p0}, Lmup;->c()Ljava/util/List;
-
-    move-result-object v0
-
-    invoke-interface {v0, p1}, Ljava/util/List;->listIterator(I)Ljava/util/ListIterator;
+    invoke-virtual {p2}, Lpyw;->a()Ljava/util/Set;
 
     move-result-object p1
 
-    return-object p1
-.end method
-
-.method public remove(I)Ljava/lang/Object;
-    .locals 1
-
-    invoke-virtual {p0}, Lmup;->c()Ljava/util/List;
-
-    move-result-object v0
-
-    invoke-interface {v0, p1}, Ljava/util/List;->remove(I)Ljava/lang/Object;
+    invoke-interface {p1}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
 
     move-result-object p1
 
-    return-object p1
+    :goto_1
+    invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result p2
+
+    if-eqz p2, :cond_2
+
+    invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object p2
+
+    check-cast p2, Lmxo;
+
+    invoke-interface {p2}, Lmxo;->t()V
+    :try_end_0
+    .catch Ljava/lang/RuntimeException; {:try_start_0 .. :try_end_0} :catch_0
+
+    goto :goto_1
+
+    :catch_0
+    move-exception p1
+
+    sget-object p2, Lmup;->a:Louj;
+
+    invoke-virtual {p2}, Loue;->c()Lova;
+
+    move-result-object p2
+
+    const/16 p3, 0xe07
+
+    const-string p4, "Primes failed to initialize"
+
+    invoke-static {p2, p4, p3, p1}, Ld;->w(Lova;Ljava/lang/String;CLjava/lang/Throwable;)V
+
+    iget-object p1, p0, Lmup;->b:Lmuz;
+
+    invoke-virtual {p1}, Lmuz;->a()V
+
+    return-void
+
+    :cond_2
+    return-void
 .end method
 
-.method public set(ILjava/lang/Object;)Ljava/lang/Object;
+
+# virtual methods
+.method public final a()V
     .locals 1
 
-    invoke-virtual {p0}, Lmup;->c()Ljava/util/List;
+    iget-object v0, p0, Lmup;->d:Lqkg;
+
+    invoke-interface {v0}, Lqkg;->get()Ljava/lang/Object;
 
     move-result-object v0
 
-    invoke-interface {v0, p1, p2}, Ljava/util/List;->set(ILjava/lang/Object;)Ljava/lang/Object;
+    check-cast v0, Lmye;
 
-    move-result-object p1
+    invoke-virtual {v0}, Lmye;->d()V
 
-    return-object p1
+    return-void
 .end method
 
-.method public subList(II)Ljava/util/List;
+.method public final b()V
     .locals 1
 
-    invoke-virtual {p0}, Lmup;->c()Ljava/util/List;
+    iget-object v0, p0, Lmup;->e:Lqkg;
+
+    invoke-interface {v0}, Lqkg;->get()Ljava/lang/Object;
 
     move-result-object v0
 
-    invoke-interface {v0, p1, p2}, Ljava/util/List;->subList(II)Ljava/util/List;
+    check-cast v0, Lmzv;
 
-    move-result-object p1
+    invoke-virtual {v0}, Lmzv;->a()V
 
-    return-object p1
+    return-void
 .end method

@@ -1,22 +1,55 @@
-.class public final Ldrg;
+.class public final synthetic Ldrg;
 .super Ljava/lang/Object;
 
+# interfaces
+.implements Ldqs;
 
-# static fields
-.field public static final a:Ldpt;
+
+# instance fields
+.field public final synthetic a:Ldrp;
 
 
 # direct methods
-.method static constructor <clinit>()V
+.method public synthetic constructor <init>(Ldrp;)V
+    .locals 0
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Ldrg;->a:Ldrp;
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public final b(Llmr;Llnx;)V
     .locals 2
 
-    new-instance v0, Ldpt;
+    iget-object v0, p0, Ldrg;->a:Ldrp;
 
-    const/16 v1, 0x9
+    iget-object v0, v0, Ldrp;->b:Ljava/util/List;
 
-    invoke-direct {v0, v1}, Ldpt;-><init>(I)V
+    invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
-    sput-object v0, Ldrg;->a:Ldpt;
+    move-result-object v0
 
+    :goto_0
+    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Ldqs;
+
+    invoke-interface {v1, p1, p2}, Ldqs;->b(Llmr;Llnx;)V
+
+    goto :goto_0
+
+    :cond_0
     return-void
 .end method

@@ -1,55 +1,75 @@
-.class public interface abstract Lelk;
+.class public final synthetic Lelk;
 .super Ljava/lang/Object;
+
+# interfaces
+.implements Ljava/lang/Runnable;
+
+
+# instance fields
+.field public final synthetic a:Lels;
+
+.field public final synthetic b:Lelv;
+
+.field public final synthetic c:Ljava/lang/Runnable;
+
+
+# direct methods
+.method public synthetic constructor <init>(Lels;Lelv;Ljava/lang/Runnable;)V
+    .locals 0
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lelk;->a:Lels;
+
+    iput-object p2, p0, Lelk;->b:Lelv;
+
+    iput-object p3, p0, Lelk;->c:Ljava/lang/Runnable;
+
+    return-void
+.end method
 
 
 # virtual methods
-.method public abstract a()I
-.end method
+.method public final run()V
+    .locals 4
 
-.method public abstract b()Lelm;
-.end method
+    iget-object v0, p0, Lelk;->a:Lels;
 
-.method public abstract c()Ljava/lang/Object;
-.end method
+    iget-object v1, p0, Lelk;->b:Lelv;
 
-.method public abstract d()Ljava/lang/Runnable;
-.end method
+    iget-object v2, p0, Lelk;->c:Ljava/lang/Runnable;
 
-.method public abstract e()Ljava/util/Date;
-.end method
+    sget-object v3, Lels;->a:Ljava/lang/Object;
 
-.method public abstract f(Ljava/lang/Runnable;)V
-.end method
+    monitor-enter v3
 
-.method public abstract g()V
-.end method
+    :try_start_0
+    iget-object v0, v0, Lels;->d:Ljava/util/PriorityQueue;
 
-.method public abstract h()V
-.end method
+    invoke-virtual {v0, v1}, Ljava/util/PriorityQueue;->contains(Ljava/lang/Object;)Z
 
-.method public abstract i(Ljava/util/Date;)V
-.end method
+    move-result v0
 
-.method public abstract j()V
-.end method
+    if-eqz v0, :cond_0
 
-.method public abstract k()Z
-.end method
+    invoke-interface {v1, v2}, Lelv;->f(Ljava/lang/Runnable;)V
 
-.method public abstract l()Z
-.end method
+    goto :goto_0
 
-.method public abstract m()Z
-.end method
+    :cond_0
+    invoke-interface {v2}, Ljava/lang/Runnable;->run()V
 
-.method public abstract n()Z
-.end method
+    :goto_0
+    monitor-exit v3
 
-.method public abstract o()Z
-.end method
+    return-void
 
-.method public abstract p()I
-.end method
+    :catchall_0
+    move-exception v0
 
-.method public abstract q(IZZLiko;Lhyn;)V
+    monitor-exit v3
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw v0
 .end method

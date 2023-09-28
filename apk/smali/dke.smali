@@ -1,59 +1,45 @@
-.class public final synthetic Ldke;
+.class public final Ldke;
 .super Ljava/lang/Object;
-
-# interfaces
-.implements Ldkk;
 
 
 # instance fields
-.field private final synthetic a:I
+.field public final a:Llld;
+
+.field public final b:Landroid/os/Handler;
+
+.field public c:Llie;
+
+.field public d:Llie;
 
 
 # direct methods
-.method public synthetic constructor <init>(I)V
+.method public constructor <init>(Llld;Landroid/os/Handler;)V
     .locals 0
 
-    iput p1, p0, Ldke;->a:I
-
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Ldke;->a:Llld;
+
+    iput-object p2, p0, Ldke;->b:Landroid/os/Handler;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Ljava/lang/Object;
-    .locals 2
+.method public final a()V
+    .locals 1
 
-    iget v0, p0, Ldke;->a:I
+    iget-object v0, p0, Ldke;->d:Llie;
 
-    packed-switch v0, :pswitch_data_0
+    if-eqz v0, :cond_0
 
-    const-class v0, Lcom/google/android/apps/camera/stats/timing/CameraActivityTiming;
+    invoke-interface {v0}, Llie;->close()V
 
-    sget-object v1, Lcdm;->l:Lcdm;
+    const/4 v0, 0x0
 
-    invoke-static {v0, v1}, Lcom/google/android/apps/camera/debug/contentprovider/DebugContentProvider;->a(Ljava/lang/Class;Ljava/util/function/Predicate;)Ljava/util/List;
+    iput-object v0, p0, Ldke;->d:Llie;
 
-    move-result-object v0
-
-    return-object v0
-
-    :pswitch_0
-    const-class v0, Lhke;
-
-    sget-object v1, Lcdm;->k:Lcdm;
-
-    invoke-static {v0, v1}, Lcom/google/android/apps/camera/debug/contentprovider/DebugContentProvider;->a(Ljava/lang/Class;Ljava/util/function/Predicate;)Ljava/util/List;
-
-    move-result-object v0
-
-    return-object v0
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+    :cond_0
+    return-void
 .end method

@@ -1,232 +1,131 @@
-.class public final Lehf;
-.super Ljava/lang/Object;
-
-# interfaces
-.implements Ledl;
-
-
-# static fields
-.field public static final b:Lnak;
+.class final Lehf;
+.super Lmip;
 
 
 # instance fields
-.field public final c:Legz;
+.field final synthetic a:Llmr;
 
-.field public final d:Ljava/util/concurrent/atomic/AtomicLong;
+.field final synthetic b:Llij;
 
-.field public final e:Ldhi;
-
-.field public final f:Z
-
-.field public final g:Ljava/util/Map;
-
-.field public final h:Leeo;
-
-.field public final i:Ldzf;
-
-.field public final j:Lfuz;
-
-.field private final k:Lmqp;
+.field final synthetic c:Lehj;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
+.method public constructor <init>(Lehj;Llmr;Llij;)V
+    .locals 0
 
-    const-string v0, "com/google/android/apps/camera/hdrplus/portrait/PostProcessingPortraitImageSaverImpl"
+    iput-object p1, p0, Lehf;->c:Lehj;
 
-    invoke-static {v0}, Lnak;->h(Ljava/lang/String;)Lnak;
+    iput-object p2, p0, Lehf;->a:Llmr;
 
-    move-result-object v0
+    iput-object p3, p0, Lehf;->b:Llij;
 
-    sput-object v0, Lehf;->b:Lnak;
-
-    return-void
-.end method
-
-.method public constructor <init>(Lmqp;Lfuz;Legz;Ldhi;ZLeeo;Ldzf;)V
-    .locals 3
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    new-instance v0, Ljava/util/concurrent/atomic/AtomicLong;
-
-    const-wide/16 v1, 0x0
-
-    invoke-direct {v0, v1, v2}, Ljava/util/concurrent/atomic/AtomicLong;-><init>(J)V
-
-    iput-object v0, p0, Lehf;->d:Ljava/util/concurrent/atomic/AtomicLong;
-
-    iput-object p1, p0, Lehf;->k:Lmqp;
-
-    iput-object p2, p0, Lehf;->j:Lfuz;
-
-    iput-object p3, p0, Lehf;->c:Legz;
-
-    iput-object p4, p0, Lehf;->e:Ldhi;
-
-    iput-boolean p5, p0, Lehf;->f:Z
-
-    iput-object p6, p0, Lehf;->h:Leeo;
-
-    iput-object p7, p0, Lehf;->i:Ldzf;
-
-    new-instance p1, Ljava/util/HashMap;
-
-    invoke-direct {p1}, Ljava/util/HashMap;-><init>()V
-
-    iput-object p1, p0, Lehf;->g:Ljava/util/Map;
+    invoke-direct {p0}, Lmip;-><init>()V
 
     return-void
-.end method
-
-.method public static e(Lnou;)Lcom/google/googlex/gcam/InterleavedImageU16;
-    .locals 3
-
-    :try_start_0
-    sget-object v0, Ljava/util/concurrent/TimeUnit;->MILLISECONDS:Ljava/util/concurrent/TimeUnit;
-
-    const-wide/16 v1, 0x64
-
-    invoke-interface {p0, v1, v2, v0}, Lnou;->get(JLjava/util/concurrent/TimeUnit;)Ljava/lang/Object;
-
-    move-result-object p0
-
-    check-cast p0, Lcom/google/googlex/gcam/InterleavedImageU16;
-    :try_end_0
-    .catch Ljava/lang/InterruptedException; {:try_start_0 .. :try_end_0} :catch_3
-    .catch Ljava/util/concurrent/ExecutionException; {:try_start_0 .. :try_end_0} :catch_2
-    .catch Ljava/util/concurrent/TimeoutException; {:try_start_0 .. :try_end_0} :catch_1
-    .catch Ljava/util/concurrent/CancellationException; {:try_start_0 .. :try_end_0} :catch_0
-
-    goto :goto_1
-
-    :catch_0
-    move-exception p0
-
-    goto :goto_0
-
-    :catch_1
-    move-exception p0
-
-    goto :goto_0
-
-    :catch_2
-    move-exception p0
-
-    :goto_0
-    new-instance p0, Lcom/google/googlex/gcam/InterleavedImageU16;
-
-    invoke-direct {p0}, Lcom/google/googlex/gcam/InterleavedImageU16;-><init>()V
-
-    goto :goto_1
-
-    :catch_3
-    move-exception p0
-
-    invoke-static {}, Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
-
-    move-result-object p0
-
-    invoke-virtual {p0}, Ljava/lang/Thread;->interrupt()V
-
-    new-instance p0, Lcom/google/googlex/gcam/InterleavedImageU16;
-
-    invoke-direct {p0}, Lcom/google/googlex/gcam/InterleavedImageU16;-><init>()V
-
-    :goto_1
-    return-object p0
-.end method
-
-.method private final f(Lgkr;)Lehe;
-    .locals 9
-
-    iget-object v0, p1, Lgkr;->c:Ljava/lang/Object;
-
-    invoke-interface {v0}, Lgxl;->s()Ljava/lang/String;
-
-    move-result-object v0
-
-    iget-object v1, p0, Lehf;->g:Ljava/util/Map;
-
-    invoke-interface {v1, v0}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Lehe;
-
-    if-nez v1, :cond_0
-
-    iget-object v4, p1, Lgkr;->c:Ljava/lang/Object;
-
-    move-object v1, v4
-
-    check-cast v1, Lgwx;
-
-    iget-object v8, v1, Lgwx;->c:Lmqp;
-
-    new-instance v1, Lehe;
-
-    iget-object v5, p1, Lgkr;->a:Ljava/lang/Object;
-
-    iget-object v6, p0, Lehf;->k:Lmqp;
-
-    invoke-static {}, Ljava/util/UUID;->randomUUID()Ljava/util/UUID;
-
-    move-result-object v7
-
-    move-object v2, v1
-
-    move-object v3, p0
-
-    invoke-direct/range {v2 .. v8}, Lehe;-><init>(Lehf;Lgxl;Lgaa;Lmqp;Ljava/util/UUID;Lmqp;)V
-
-    iget-object p1, p0, Lehf;->g:Ljava/util/Map;
-
-    invoke-interface {p1, v0, v1}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    :cond_0
-    return-object v1
 .end method
 
 
 # virtual methods
-.method public final a(Lgkr;)Lfyy;
-    .locals 0
+.method public final fy()V
+    .locals 4
 
-    invoke-direct {p0, p1}, Lehf;->f(Lgkr;)Lehe;
+    iget-object v0, p0, Lehf;->a:Llmr;
 
-    move-result-object p1
+    invoke-interface {v0}, Llmr;->c()Llzv;
 
-    return-object p1
-.end method
+    move-result-object v0
 
-.method public final synthetic b(Lgkr;)Lfyy;
-    .locals 0
+    if-eqz v0, :cond_0
 
-    invoke-direct {p0, p1}, Lehf;->f(Lgkr;)Lehe;
+    iget-object v1, p0, Lehf;->c:Lehj;
 
-    move-result-object p1
+    iget-object v1, v1, Lehj;->g:Lbta;
 
-    return-object p1
-.end method
+    invoke-virtual {v1, v0}, Lbta;->a(Llzv;)V
 
-.method public final c(Lgkr;)Ledm;
-    .locals 0
+    iget-object v1, p0, Lehf;->c:Lehj;
 
-    invoke-direct {p0, p1}, Lehf;->f(Lgkr;)Lehe;
+    iget-object v1, v1, Lehj;->l:Lehi;
 
-    move-result-object p1
+    if-eqz v1, :cond_0
 
-    return-object p1
-.end method
+    sget-object v2, Landroid/hardware/camera2/CaptureResult;->SENSOR_EXPOSURE_TIME:Landroid/hardware/camera2/CaptureResult$Key;
 
-.method public final d(Lgkr;Lefz;)Ledm;
-    .locals 0
+    invoke-interface {v0, v2}, Llzv;->d(Landroid/hardware/camera2/CaptureResult$Key;)Ljava/lang/Object;
 
-    invoke-direct {p0, p1}, Lehf;->f(Lgkr;)Lehe;
+    move-result-object v0
 
-    move-result-object p1
+    check-cast v0, Ljava/lang/Long;
 
-    return-object p1
+    if-eqz v0, :cond_0
+
+    invoke-virtual {v0}, Ljava/lang/Long;->longValue()J
+
+    move-result-wide v2
+
+    long-to-float v0, v2
+
+    const v2, 0x49742400    # 1000000.0f
+
+    div-float/2addr v0, v2
+
+    check-cast v1, Leig;
+
+    iget-object v1, v1, Leig;->f:Lehw;
+
+    iget-object v2, v1, Lehw;->p:Ljava/lang/Object;
+
+    monitor-enter v2
+
+    :try_start_0
+    iput v0, v1, Lehw;->q:F
+
+    monitor-exit v2
+
+    goto :goto_0
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit v2
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw v0
+
+    :cond_0
+    :goto_0
+    iget-object v0, p0, Lehf;->a:Llmr;
+
+    invoke-interface {v0}, Llmr;->close()V
+
+    iget-object v0, p0, Lehf;->c:Lehj;
+
+    iget-object v0, v0, Lehj;->n:Ljava/util/concurrent/atomic/AtomicBoolean;
+
+    const/4 v1, 0x0
+
+    const/4 v2, 0x1
+
+    invoke-virtual {v0, v1, v2}, Ljava/util/concurrent/atomic/AtomicBoolean;->compareAndSet(ZZ)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    iget-object v0, p0, Lehf;->c:Lehj;
+
+    iget-object v0, v0, Lehj;->e:Llar;
+
+    iget-object v1, p0, Lehf;->b:Llij;
+
+    new-instance v2, Lehe;
+
+    invoke-direct {v2, p0, v1}, Lehe;-><init>(Lehf;Llij;)V
+
+    invoke-virtual {v0, v2}, Llar;->execute(Ljava/lang/Runnable;)V
+
+    :cond_1
+    return-void
 .end method

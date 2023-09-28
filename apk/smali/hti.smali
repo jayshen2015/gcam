@@ -1,78 +1,190 @@
-.class Lhti;
-.super Lhir;
+.class public final enum Lhti;
+.super Ljava/lang/Enum;
+
+
+# static fields
+.field public static final enum a:Lhti;
+
+.field public static final enum b:Lhti;
+
+.field public static final enum c:Lhti;
+
+.field public static final enum d:Lhti;
+
+.field public static final e:Lhti;
+
+.field public static final f:[I
+
+.field private static final synthetic h:[Lhti;
+
+
+# instance fields
+.field public final g:I
 
 
 # direct methods
-.method public constructor <init>(Lhtl;)V
-    .locals 4
+.method static constructor <clinit>()V
+    .locals 10
 
-    invoke-direct {p0}, Lhir;-><init>()V
+    new-instance v0, Lhti;
 
-    const/4 v0, 0x4
-
-    new-array v0, v0, [Lhiz;
-
-    const-string v1, "CameraUi.Capture"
-
-    invoke-static {v1}, Ljcb;->j(Ljava/lang/String;)Lhiz;
-
-    move-result-object v1
+    const-string v1, "OFF"
 
     const/4 v2, 0x0
 
-    aput-object v1, v0, v2
+    invoke-direct {v0, v1, v2, v2}, Lhti;-><init>(Ljava/lang/String;II)V
 
-    iget-object v1, p1, Lhtl;->h:Liff;
+    sput-object v0, Lhti;->a:Lhti;
 
-    invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    new-instance v1, Lhti;
 
-    new-instance v3, Lhth;
+    const-string v3, "THREE"
 
-    invoke-direct {v3, v1, v2}, Lhth;-><init>(Liff;I)V
+    const/4 v4, 0x1
 
-    const/4 v1, 0x1
+    const/4 v5, 0x3
 
-    aput-object v3, v0, v1
+    invoke-direct {v1, v3, v4, v5}, Lhti;-><init>(Ljava/lang/String;II)V
 
-    iget-object v1, p1, Lhtl;->b:Leoa;
+    sput-object v1, Lhti;->b:Lhti;
 
-    invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    new-instance v3, Lhti;
 
-    new-instance v2, Lhth;
+    const-string v6, "TEN"
 
-    const/4 v3, 0x2
+    const/4 v7, 0x2
 
-    invoke-direct {v2, v1, v3}, Lhth;-><init>(Leoa;I)V
+    const/16 v8, 0xa
 
-    aput-object v2, v0, v3
+    invoke-direct {v3, v6, v7, v8}, Lhti;-><init>(Ljava/lang/String;II)V
 
-    iget-object p1, p1, Lhtl;->c:Lcom/google/android/apps/camera/bottombar/BottomBarController;
+    sput-object v3, Lhti;->c:Lhti;
 
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    new-instance v6, Lhti;
 
-    new-instance v1, Lhth;
+    const-string v8, "AUTO"
 
-    const/4 v2, 0x3
+    const/4 v9, -0x1
 
-    invoke-direct {v1, p1, v2}, Lhth;-><init>(Lcom/google/android/apps/camera/bottombar/BottomBarController;I)V
+    invoke-direct {v6, v8, v5, v9}, Lhti;-><init>(Ljava/lang/String;II)V
 
-    aput-object v1, v0, v2
+    sput-object v6, Lhti;->d:Lhti;
 
-    invoke-virtual {p0, v0}, Lhir;->a([Lhiz;)V
+    const/4 v8, 0x4
+
+    new-array v8, v8, [Lhti;
+
+    aput-object v0, v8, v2
+
+    aput-object v1, v8, v4
+
+    aput-object v3, v8, v7
+
+    aput-object v6, v8, v5
+
+    sput-object v8, Lhti;->h:[Lhti;
+
+    sput-object v0, Lhti;->e:Lhti;
+
+    invoke-static {}, Lhti;->values()[Lhti;
+
+    move-result-object v0
+
+    array-length v0, v0
+
+    new-array v0, v0, [I
+
+    sput-object v0, Lhti;->f:[I
+
+    invoke-static {}, Lhti;->values()[Lhti;
+
+    move-result-object v0
+
+    array-length v1, v0
+
+    const/4 v3, 0x0
+
+    :goto_0
+    if-ge v2, v1, :cond_0
+
+    aget-object v4, v0, v2
+
+    add-int/lit8 v5, v3, 0x1
+
+    sget-object v6, Lhti;->f:[I
+
+    iget v4, v4, Lhti;->g:I
+
+    aput v4, v6, v3
+
+    add-int/lit8 v2, v2, 0x1
+
+    move v3, v5
+
+    goto :goto_0
+
+    :cond_0
+    return-void
+.end method
+
+.method private constructor <init>(Ljava/lang/String;II)V
+    .locals 0
+
+    invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    iput p3, p0, Lhti;->g:I
 
     return-void
 .end method
 
-
-# virtual methods
-.method public c()V
+.method public static a(I)Lhti;
     .locals 0
 
-    return-void
+    sparse-switch p0, :sswitch_data_0
+
+    sget-object p0, Lhti;->e:Lhti;
+
+    return-object p0
+
+    :sswitch_0
+    sget-object p0, Lhti;->c:Lhti;
+
+    return-object p0
+
+    :sswitch_1
+    sget-object p0, Lhti;->b:Lhti;
+
+    return-object p0
+
+    :sswitch_2
+    sget-object p0, Lhti;->a:Lhti;
+
+    return-object p0
+
+    :sswitch_3
+    sget-object p0, Lhti;->d:Lhti;
+
+    return-object p0
+
+    :sswitch_data_0
+    .sparse-switch
+        -0x1 -> :sswitch_3
+        0x0 -> :sswitch_2
+        0x3 -> :sswitch_1
+        0xa -> :sswitch_0
+    .end sparse-switch
 .end method
 
-.method public i()V
-    .locals 0
+.method public static values()[Lhti;
+    .locals 1
 
-    return-void
+    sget-object v0, Lhti;->h:[Lhti;
+
+    invoke-virtual {v0}, [Lhti;->clone()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, [Lhti;
+
+    return-object v0
 .end method

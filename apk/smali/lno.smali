@@ -1,23 +1,29 @@
-.class public interface abstract Llno;
+.class public final Llno;
 .super Ljava/lang/Object;
 
-
-# static fields
-.field public static final b:Llno;
+# interfaces
+.implements Llmo;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
+.method public constructor <init>()V
+    .locals 0
 
-    sget-object v0, Llnm;->a:Llnm;
-
-    sput-object v0, Llno;->b:Llno;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public abstract a()Lnou;
+.method public final a(Llju;J)V
+    .locals 0
+
+    return-void
+.end method
+
+.method public final b()V
+    .locals 0
+
+    return-void
 .end method

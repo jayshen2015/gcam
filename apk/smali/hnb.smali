@@ -1,102 +1,39 @@
-.class public interface abstract Lhnb;
+.class public final synthetic Lhnb;
 .super Ljava/lang/Object;
 
+# interfaces
+.implements Landroid/view/View$OnClickListener;
 
-# static fields
-.field public static final b:Ljava/util/Map;
+
+# instance fields
+.field public final synthetic a:Lcom/google/android/apps/camera/rewind/RewindThumbnailScrollView;
+
+.field public final synthetic b:I
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 3
+.method public synthetic constructor <init>(Lcom/google/android/apps/camera/rewind/RewindThumbnailScrollView;I)V
+    .locals 0
 
-    invoke-static {}, Lmwa;->i()Lmvw;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    move-result-object v0
+    iput-object p1, p0, Lhnb;->a:Lcom/google/android/apps/camera/rewind/RewindThumbnailScrollView;
 
-    const/4 v1, 0x0
-
-    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v1
-
-    sget-object v2, Lhna;->b:Lhna;
-
-    invoke-virtual {v0, v1, v2}, Lmvw;->e(Ljava/lang/Object;Ljava/lang/Object;)V
-
-    const/4 v1, 0x1
-
-    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v1
-
-    sget-object v2, Lhna;->c:Lhna;
-
-    invoke-virtual {v0, v1, v2}, Lmvw;->e(Ljava/lang/Object;Ljava/lang/Object;)V
-
-    const/4 v1, 0x2
-
-    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v1
-
-    sget-object v2, Lhna;->d:Lhna;
-
-    invoke-virtual {v0, v1, v2}, Lmvw;->e(Ljava/lang/Object;Ljava/lang/Object;)V
-
-    const/4 v1, 0x3
-
-    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v1
-
-    sget-object v2, Lhna;->e:Lhna;
-
-    invoke-virtual {v0, v1, v2}, Lmvw;->e(Ljava/lang/Object;Ljava/lang/Object;)V
-
-    const/4 v1, 0x4
-
-    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v1
-
-    sget-object v2, Lhna;->f:Lhna;
-
-    invoke-virtual {v0, v1, v2}, Lmvw;->e(Ljava/lang/Object;Ljava/lang/Object;)V
-
-    const/4 v1, 0x5
-
-    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v1
-
-    sget-object v2, Lhna;->g:Lhna;
-
-    invoke-virtual {v0, v1, v2}, Lmvw;->e(Ljava/lang/Object;Ljava/lang/Object;)V
-
-    const/4 v1, 0x6
-
-    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v1
-
-    sget-object v2, Lhna;->h:Lhna;
-
-    invoke-virtual {v0, v1, v2}, Lmvw;->e(Ljava/lang/Object;Ljava/lang/Object;)V
-
-    invoke-virtual {v0}, Lmvw;->b()Lmwa;
-
-    move-result-object v0
-
-    sput-object v0, Lhnb;->b:Ljava/util/Map;
+    iput p2, p0, Lhnb;->b:I
 
     return-void
 .end method
 
 
 # virtual methods
-.method public abstract e()Lhna;
-.end method
+.method public final onClick(Landroid/view/View;)V
+    .locals 1
 
-.method public abstract f(Lhmz;)Lkad;
+    iget-object p1, p0, Lhnb;->a:Lcom/google/android/apps/camera/rewind/RewindThumbnailScrollView;
+
+    iget v0, p0, Lhnb;->b:I
+
+    invoke-virtual {p1, v0}, Lcom/google/android/apps/camera/rewind/RewindThumbnailScrollView;->f(I)V
+
+    return-void
 .end method

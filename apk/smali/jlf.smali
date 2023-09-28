@@ -1,337 +1,510 @@
-.class public final Ljlf;
+.class final Ljlf;
 .super Ljava/lang/Object;
 
+# interfaces
+.implements Ljli;
 
-# static fields
-.field private static final a:Ljava/lang/Object;
 
-.field private static volatile b:Ljlc;
+# instance fields
+.field final synthetic a:Ljlh;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
-
-    new-instance v0, Ljava/lang/Object;
-
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
-
-    sput-object v0, Ljlf;->a:Ljava/lang/Object;
-
-    return-void
-.end method
-
-.method private constructor <init>()V
+.method public constructor <init>(Ljlh;)V
     .locals 0
+
+    iput-object p1, p0, Ljlf;->a:Ljlh;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
-.method public static a(Landroid/content/Context;Ljava/lang/String;Ljle;)Landroid/os/IInterface;
+
+# virtual methods
+.method public final onShutterButtonClick()V
     .locals 4
 
-    sget-object v0, Ljlf;->b:Ljlc;
+    iget-object v0, p0, Ljlf;->a:Ljlh;
 
-    if-nez v0, :cond_1
-
-    sget-object v0, Ljlf;->a:Ljava/lang/Object;
+    iget-object v0, v0, Ljlh;->b:Ljava/lang/Object;
 
     monitor-enter v0
 
     :try_start_0
-    sget-object v1, Ljlf;->b:Ljlc;
+    iget-object v1, p0, Ljlf;->a:Ljlh;
 
-    if-nez v1, :cond_0
+    iget-object v1, v1, Ljlh;->c:Ljava/util/List;
 
-    invoke-static {p0}, Ljlf;->b(Landroid/content/Context;)Ljlc;
+    invoke-interface {v1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object v1
 
-    sput-object v1, Ljlf;->b:Ljlc;
+    :goto_0
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
-    :cond_0
-    monitor-exit v0
+    move-result v2
+
+    if-eqz v2, :cond_1
+
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Ljli;
+
+    iget-object v3, p0, Ljlf;->a:Ljlh;
+
+    iget-object v3, v3, Ljlh;->f:Ljrh;
+
+    if-eqz v3, :cond_0
+
+    iget-boolean v3, v3, Ljrh;->h:Z
+
+    if-eqz v3, :cond_0
+
+    invoke-interface {v2}, Ljli;->onShutterButtonLongPressUnlock()V
 
     goto :goto_0
 
+    :cond_0
+    invoke-interface {v2}, Ljli;->onShutterButtonClick()V
+
+    goto :goto_0
+
+    :cond_1
+    monitor-exit v0
+
+    return-void
+
     :catchall_0
-    move-exception p0
+    move-exception v1
 
     monitor-exit v0
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    throw p0
-
-    :cond_1
-    :goto_0
-    :try_start_1
-    sget-object v0, Ljlc;->a:Ljava/lang/Object;
-
-    monitor-enter v0
-    :try_end_1
-    .catch Ljin; {:try_start_1 .. :try_end_1} :catch_1
-
-    :try_start_2
-    sget-object v1, Ljlc;->b:Ljir;
-    :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_1
-
-    if-nez v1, :cond_2
-
-    const/4 v1, 0x1
-
-    :try_start_3
-    sget-object v2, Ljir;->a:Ljiq;
-
-    const-string v3, "com.google.android.gms.brella_dynamite"
-
-    invoke-static {p0, v2, v3}, Ljir;->d(Landroid/content/Context;Ljiq;Ljava/lang/String;)Ljir;
-
-    move-result-object v2
-
-    sput-object v2, Ljlc;->b:Ljir;
-
-    invoke-static {p0, v1}, Ljlc;->a(Landroid/content/Context;Z)V
-    :try_end_3
-    .catch Ljin; {:try_start_3 .. :try_end_3} :catch_0
-    .catchall {:try_start_3 .. :try_end_3} :catchall_1
-
-    goto :goto_1
-
-    :catch_0
-    move-exception p2
-
-    const/4 v2, 0x0
-
-    :try_start_4
-    invoke-static {p0, v2}, Ljlc;->a(Landroid/content/Context;Z)V
-
-    sput-boolean v1, Ljlc;->c:Z
-
-    throw p2
-
-    :cond_2
-    :goto_1
-    sget-object p0, Ljlc;->b:Ljir;
-
-    monitor-exit v0
-    :try_end_4
-    .catchall {:try_start_4 .. :try_end_4} :catchall_1
-
-    :try_start_5
-    invoke-virtual {p0, p1}, Ljir;->c(Ljava/lang/String;)Landroid/os/IBinder;
-
-    move-result-object p0
-    :try_end_5
-    .catch Ljin; {:try_start_5 .. :try_end_5} :catch_1
-
-    if-nez p0, :cond_3
-
-    const/4 p0, 0x0
-
     goto :goto_2
 
-    :cond_3
-    invoke-interface {p2, p0}, Ljle;->a(Landroid/os/IBinder;)Landroid/os/IInterface;
-
-    move-result-object p0
+    :goto_1
+    throw v1
 
     :goto_2
-    if-eqz p0, :cond_4
-
-    return-object p0
-
-    :cond_4
-    const-string p0, "null impl for "
-
-    invoke-virtual {p0, p1}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object p0
-
-    new-instance p1, Ljld;
-
-    invoke-direct {p1, p0}, Ljld;-><init>(Ljava/lang/String;)V
-
-    throw p1
-
-    :catchall_1
-    move-exception p0
-
-    :try_start_6
-    monitor-exit v0
-    :try_end_6
-    .catchall {:try_start_6 .. :try_end_6} :catchall_1
-
-    :try_start_7
-    throw p0
-    :try_end_7
-    .catch Ljin; {:try_start_7 .. :try_end_7} :catch_1
-
-    :catch_1
-    move-exception p0
-
-    new-instance p2, Ljld;
-
-    invoke-virtual {p0}, Ljin;->getMessage()Ljava/lang/String;
-
-    move-result-object v0
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, "Couldn\'t load impl "
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string p1, ": "
-
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p1
-
-    invoke-direct {p2, p1, p0}, Ljld;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
-
-    throw p2
+    goto :goto_1
 .end method
 
-.method private static b(Landroid/content/Context;)Ljlc;
-    .locals 5
+.method public final onShutterButtonDown()V
+    .locals 3
 
-    const-class v0, Ljlf;
+    iget-object v0, p0, Ljlf;->a:Ljlh;
+
+    iget-object v0, v0, Ljlh;->b:Ljava/lang/Object;
+
+    monitor-enter v0
 
     :try_start_0
-    invoke-virtual {v0}, Ljava/lang/Class;->getClassLoader()Ljava/lang/ClassLoader;
+    iget-object v1, p0, Ljlf;->a:Ljlh;
+
+    iget-object v1, v1, Ljlh;->c:Ljava/util/List;
+
+    invoke-interface {v1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object v1
 
-    const-string v2, "com.google.android.gms.learning.internal.dynamite.FatDynamiteLoader"
+    :goto_0
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
-    invoke-virtual {v1, v2}, Ljava/lang/ClassLoader;->loadClass(Ljava/lang/String;)Ljava/lang/Class;
+    move-result v2
 
-    move-result-object v0
-    :try_end_0
-    .catch Ljava/lang/ClassNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
+    if-eqz v2, :cond_0
+
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Ljli;
+
+    invoke-interface {v2}, Ljli;->onShutterButtonDown()V
 
     goto :goto_0
 
-    :catch_0
+    :cond_0
+    monitor-exit v0
+
+    return-void
+
+    :catchall_0
     move-exception v1
 
-    :try_start_1
-    invoke-virtual {v0}, Ljava/lang/Class;->getClassLoader()Ljava/lang/ClassLoader;
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    move-result-object v0
-
-    const-string v1, "jlc"
-
-    invoke-virtual {v0, v1}, Ljava/lang/ClassLoader;->loadClass(Ljava/lang/String;)Ljava/lang/Class;
-
-    move-result-object v0
-    :try_end_1
-    .catch Ljava/lang/ClassNotFoundException; {:try_start_1 .. :try_end_1} :catch_5
-
-    :goto_0
-    const/4 v1, 0x1
-
-    :try_start_2
-    new-array v2, v1, [Ljava/lang/Class;
-
-    const-class v3, Landroid/content/Context;
-
-    const/4 v4, 0x0
-
-    aput-object v3, v2, v4
-
-    invoke-virtual {v0, v2}, Ljava/lang/Class;->getConstructor([Ljava/lang/Class;)Ljava/lang/reflect/Constructor;
-
-    move-result-object v0
-
-    new-array v1, v1, [Ljava/lang/Object;
-
-    aput-object p0, v1, v4
-
-    invoke-virtual {v0, v1}, Ljava/lang/reflect/Constructor;->newInstance([Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object p0
-
-    check-cast p0, Ljlc;
-    :try_end_2
-    .catch Ljava/lang/IllegalAccessException; {:try_start_2 .. :try_end_2} :catch_4
-    .catch Ljava/lang/InstantiationException; {:try_start_2 .. :try_end_2} :catch_3
-    .catch Ljava/lang/NoSuchMethodException; {:try_start_2 .. :try_end_2} :catch_2
-    .catch Ljava/lang/reflect/InvocationTargetException; {:try_start_2 .. :try_end_2} :catch_1
-
-    return-object p0
-
-    :catch_1
-    move-exception p0
-
-    goto :goto_1
-
-    :catch_2
-    move-exception p0
-
-    goto :goto_1
-
-    :catch_3
-    move-exception p0
-
-    goto :goto_1
-
-    :catch_4
-    move-exception p0
+    goto :goto_2
 
     :goto_1
-    invoke-virtual {p0}, Ljava/lang/ReflectiveOperationException;->getMessage()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v0
-
-    new-instance v1, Ljld;
-
-    const-string v2, "Failed to create dynamite loader instance: "
-
-    invoke-virtual {v2, v0}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-direct {v1, v0, p0}, Ljld;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
-
     throw v1
 
-    :catch_5
-    move-exception p0
+    :goto_2
+    goto :goto_1
+.end method
 
-    invoke-virtual {p0}, Ljava/lang/ClassNotFoundException;->getMessage()Ljava/lang/String;
+.method public final onShutterButtonLongPressRelease()V
+    .locals 3
 
-    move-result-object v0
+    iget-object v0, p0, Ljlf;->a:Ljlh;
 
-    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+    iget-object v0, v0, Ljlh;->b:Ljava/lang/Object;
 
-    move-result-object v0
+    monitor-enter v0
 
-    new-instance v1, Ljld;
+    :try_start_0
+    iget-object v1, p0, Ljlf;->a:Ljlh;
 
-    const-string v2, "No dynamite loader found: "
+    iget-object v1, v1, Ljlh;->a:Lcom/google/android/apps/camera/ui/shutterbutton/ShutterButton;
 
-    invoke-virtual {v2, v0}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
+    const/4 v2, 0x1
 
-    move-result-object v0
+    invoke-virtual {v1, v2}, Lcom/google/android/apps/camera/ui/shutterbutton/ShutterButton;->setVisualFeedbackForEnableState(Z)V
 
-    invoke-direct {v1, v0, p0}, Ljld;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
+    iget-object v1, p0, Ljlf;->a:Ljlh;
 
+    iget-object v1, v1, Ljlh;->c:Ljava/util/List;
+
+    invoke-interface {v1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+
+    move-result-object v1
+
+    :goto_0
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_0
+
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Ljli;
+
+    invoke-interface {v2}, Ljli;->onShutterButtonLongPressRelease()V
+
+    goto :goto_0
+
+    :cond_0
+    monitor-exit v0
+
+    return-void
+
+    :catchall_0
+    move-exception v1
+
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    goto :goto_2
+
+    :goto_1
     throw v1
+
+    :goto_2
+    goto :goto_1
+.end method
+
+.method public final onShutterButtonLongPressUnlock()V
+    .locals 3
+
+    iget-object v0, p0, Ljlf;->a:Ljlh;
+
+    iget-object v0, v0, Ljlh;->b:Ljava/lang/Object;
+
+    monitor-enter v0
+
+    :try_start_0
+    iget-object v1, p0, Ljlf;->a:Ljlh;
+
+    iget-object v1, v1, Ljlh;->a:Lcom/google/android/apps/camera/ui/shutterbutton/ShutterButton;
+
+    const/4 v2, 0x1
+
+    invoke-virtual {v1, v2}, Lcom/google/android/apps/camera/ui/shutterbutton/ShutterButton;->setVisualFeedbackForEnableState(Z)V
+
+    iget-object v1, p0, Ljlf;->a:Ljlh;
+
+    iget-object v1, v1, Ljlh;->c:Ljava/util/List;
+
+    invoke-interface {v1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+
+    move-result-object v1
+
+    :goto_0
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_0
+
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Ljli;
+
+    invoke-interface {v2}, Ljli;->onShutterButtonLongPressUnlock()V
+
+    goto :goto_0
+
+    :cond_0
+    monitor-exit v0
+
+    return-void
+
+    :catchall_0
+    move-exception v1
+
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    goto :goto_2
+
+    :goto_1
+    throw v1
+
+    :goto_2
+    goto :goto_1
+.end method
+
+.method public final onShutterButtonLongPressed()V
+    .locals 3
+
+    iget-object v0, p0, Ljlf;->a:Ljlh;
+
+    iget-object v0, v0, Ljlh;->b:Ljava/lang/Object;
+
+    monitor-enter v0
+
+    :try_start_0
+    iget-object v1, p0, Ljlf;->a:Ljlh;
+
+    iget-object v1, v1, Ljlh;->a:Lcom/google/android/apps/camera/ui/shutterbutton/ShutterButton;
+
+    const/4 v2, 0x0
+
+    invoke-virtual {v1, v2}, Lcom/google/android/apps/camera/ui/shutterbutton/ShutterButton;->setVisualFeedbackForEnableState(Z)V
+
+    iget-object v1, p0, Ljlf;->a:Ljlh;
+
+    iget-object v1, v1, Ljlh;->c:Ljava/util/List;
+
+    invoke-interface {v1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+
+    move-result-object v1
+
+    :goto_0
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_0
+
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Ljli;
+
+    invoke-interface {v2}, Ljli;->onShutterButtonLongPressed()V
+
+    goto :goto_0
+
+    :cond_0
+    monitor-exit v0
+
+    return-void
+
+    :catchall_0
+    move-exception v1
+
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    goto :goto_2
+
+    :goto_1
+    throw v1
+
+    :goto_2
+    goto :goto_1
+.end method
+
+.method public final onShutterButtonPressedStateChanged(Z)V
+    .locals 3
+
+    iget-object v0, p0, Ljlf;->a:Ljlh;
+
+    iget-object v0, v0, Ljlh;->b:Ljava/lang/Object;
+
+    monitor-enter v0
+
+    :try_start_0
+    iget-object v1, p0, Ljlf;->a:Ljlh;
+
+    iget-object v1, v1, Ljlh;->c:Ljava/util/List;
+
+    invoke-interface {v1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+
+    move-result-object v1
+
+    :goto_0
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_0
+
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Ljli;
+
+    invoke-interface {v2, p1}, Ljli;->onShutterButtonPressedStateChanged(Z)V
+
+    goto :goto_0
+
+    :cond_0
+    monitor-exit v0
+
+    return-void
+
+    :catchall_0
+    move-exception p1
+
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    goto :goto_2
+
+    :goto_1
+    throw p1
+
+    :goto_2
+    goto :goto_1
+.end method
+
+.method public final onShutterTouch(Ljrw;)V
+    .locals 3
+
+    iget-object v0, p0, Ljlf;->a:Ljlh;
+
+    iget-object v0, v0, Ljlh;->b:Ljava/lang/Object;
+
+    monitor-enter v0
+
+    :try_start_0
+    iget-object v1, p0, Ljlf;->a:Ljlh;
+
+    iget-object v1, v1, Ljlh;->c:Ljava/util/List;
+
+    invoke-interface {v1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+
+    move-result-object v1
+
+    :goto_0
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_0
+
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Ljli;
+
+    invoke-interface {v2, p1}, Ljli;->onShutterTouch(Ljrw;)V
+
+    goto :goto_0
+
+    :cond_0
+    monitor-exit v0
+
+    return-void
+
+    :catchall_0
+    move-exception p1
+
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    goto :goto_2
+
+    :goto_1
+    throw p1
+
+    :goto_2
+    goto :goto_1
+.end method
+
+.method public final onShutterTouchStart()V
+    .locals 3
+
+    iget-object v0, p0, Ljlf;->a:Ljlh;
+
+    iget-object v0, v0, Ljlh;->b:Ljava/lang/Object;
+
+    monitor-enter v0
+
+    :try_start_0
+    iget-object v1, p0, Ljlf;->a:Ljlh;
+
+    iget-object v1, v1, Ljlh;->c:Ljava/util/List;
+
+    invoke-interface {v1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+
+    move-result-object v1
+
+    :goto_0
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_0
+
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Ljli;
+
+    invoke-interface {v2}, Ljli;->onShutterTouchStart()V
+
+    goto :goto_0
+
+    :cond_0
+    monitor-exit v0
+
+    return-void
+
+    :catchall_0
+    move-exception v1
+
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    goto :goto_2
+
+    :goto_1
+    throw v1
+
+    :goto_2
+    goto :goto_1
 .end method

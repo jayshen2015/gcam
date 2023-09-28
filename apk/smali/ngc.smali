@@ -1,190 +1,117 @@
-.class public final Lngc;
-.super Lnws;
+.class public final synthetic Lngc;
+.super Ljava/lang/Object;
 
 # interfaces
-.implements Lnxz;
-
-
-# static fields
-.field public static final e:Lngc;
-
-.field private static volatile f:Lnyf;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field public a:I
+.field public final synthetic a:Lpht;
 
-.field public b:Ljava/lang/String;
+.field public final synthetic b:Ljava/lang/String;
 
-.field public c:Lnxa;
-
-.field public d:J
+.field public final synthetic c:Landroid/content/BroadcastReceiver$PendingResult;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
+.method public synthetic constructor <init>(Lpht;Ljava/lang/String;Landroid/content/BroadcastReceiver$PendingResult;)V
+    .locals 0
 
-    new-instance v0, Lngc;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {v0}, Lngc;-><init>()V
+    iput-object p1, p0, Lngc;->a:Lpht;
 
-    sput-object v0, Lngc;->e:Lngc;
+    iput-object p2, p0, Lngc;->b:Ljava/lang/String;
 
-    const-class v1, Lngc;
-
-    invoke-static {v1, v0}, Lnws;->aa(Ljava/lang/Class;Lnws;)V
-
-    return-void
-.end method
-
-.method private constructor <init>()V
-    .locals 1
-
-    invoke-direct {p0}, Lnws;-><init>()V
-
-    const-string v0, ""
-
-    iput-object v0, p0, Lngc;->b:Ljava/lang/String;
-
-    sget-object v0, Lnyi;->b:Lnyi;
-
-    iput-object v0, p0, Lngc;->c:Lnxa;
+    iput-object p3, p0, Lngc;->c:Landroid/content/BroadcastReceiver$PendingResult;
 
     return-void
 .end method
 
 
 # virtual methods
-.method protected final a(ILjava/lang/Object;)Ljava/lang/Object;
-    .locals 3
+.method public final run()V
+    .locals 6
 
-    add-int/lit8 p1, p1, -0x1
+    iget-object v0, p0, Lngc;->a:Lpht;
 
-    const/4 p2, 0x1
+    iget-object v1, p0, Lngc;->b:Ljava/lang/String;
 
-    packed-switch p1, :pswitch_data_0
-
-    :pswitch_0
-    const/4 p1, 0x0
-
-    return-object p1
-
-    :pswitch_1
-    sget-object p1, Lngc;->f:Lnyf;
-
-    if-nez p1, :cond_1
-
-    const-class p2, Lngc;
-
-    monitor-enter p2
+    iget-object v2, p0, Lngc;->c:Landroid/content/BroadcastReceiver$PendingResult;
 
     :try_start_0
-    sget-object p1, Lngc;->f:Lnyf;
+    invoke-static {v0}, Lplk;->ad(Ljava/util/concurrent/Future;)Ljava/lang/Object;
 
-    if-nez p1, :cond_0
+    const-string v0, "Successfully updated snapshot for "
 
-    new-instance p1, Lnwo;
+    invoke-virtual {v1}, Ljava/lang/String;->length()I
 
-    sget-object v0, Lngc;->e:Lngc;
+    move-result v3
 
-    invoke-direct {p1, v0}, Lnwo;-><init>(Lnws;)V
+    if-eqz v3, :cond_0
 
-    sput-object p1, Lngc;->f:Lnyf;
-
-    :cond_0
-    monitor-exit p2
+    invoke-virtual {v0, v1}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
 
     goto :goto_0
 
-    :catchall_0
-    move-exception p1
+    :cond_0
+    new-instance v3, Ljava/lang/String;
 
-    monitor-exit p2
+    invoke-direct {v3, v0}, Ljava/lang/String;-><init>(Ljava/lang/String;)V
     :try_end_0
+    .catch Ljava/util/concurrent/ExecutionException; {:try_start_0 .. :try_end_0} :catch_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    throw p1
+    :goto_0
+    invoke-virtual {v2}, Landroid/content/BroadcastReceiver$PendingResult;->finish()V
+
+    return-void
+
+    :catchall_0
+    move-exception v0
+
+    goto :goto_2
+
+    :catch_0
+    move-exception v0
+
+    :try_start_1
+    const-string v3, "PhenotypeBackgroundRecv"
+
+    const-string v4, "Failed to update local snapshot for "
+
+    invoke-virtual {v1}, Ljava/lang/String;->length()I
+
+    move-result v5
+
+    if-eqz v5, :cond_1
+
+    invoke-virtual {v4, v1}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v1
+
+    goto :goto_1
 
     :cond_1
-    :goto_0
-    return-object p1
+    new-instance v1, Ljava/lang/String;
 
-    :pswitch_2
-    sget-object p1, Lngc;->e:Lngc;
+    invoke-direct {v1, v4}, Ljava/lang/String;-><init>(Ljava/lang/String;)V
 
-    return-object p1
+    :goto_1
+    invoke-static {v3, v1, v0}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    :pswitch_3
-    new-instance p1, Lnwn;
+    goto :goto_0
 
-    sget-object p2, Lngc;->e:Lngc;
+    :goto_2
+    invoke-virtual {v2}, Landroid/content/BroadcastReceiver$PendingResult;->finish()V
 
-    invoke-direct {p1, p2}, Lnwn;-><init>(Lnws;)V
+    goto :goto_4
 
-    return-object p1
+    :goto_3
+    throw v0
 
-    :pswitch_4
-    new-instance p1, Lngc;
-
-    invoke-direct {p1}, Lngc;-><init>()V
-
-    return-object p1
-
-    :pswitch_5
-    const-string p1, "a"
-
-    const-string v0, "\u0001\u0003\u0000\u0001\u0001\u0003\u0003\u0000\u0001\u0000\u0001\u1008\u0000\u0002\u001a\u0003\u1002\u0001"
-
-    const/4 v1, 0x4
-
-    new-array v1, v1, [Ljava/lang/Object;
-
-    const/4 v2, 0x0
-
-    aput-object p1, v1, v2
-
-    const-string p1, "b"
-
-    aput-object p1, v1, p2
-
-    const/4 p1, 0x2
-
-    const-string p2, "c"
-
-    aput-object p2, v1, p1
-
-    const/4 p1, 0x3
-
-    const-string p2, "d"
-
-    aput-object p2, v1, p1
-
-    sget-object p1, Lngc;->e:Lngc;
-
-    invoke-static {p1, v0, v1}, Lngc;->X(Lnxy;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object p1
-
-    return-object p1
-
-    :pswitch_6
-    invoke-static {p2}, Ljava/lang/Byte;->valueOf(B)Ljava/lang/Byte;
-
-    move-result-object p1
-
-    return-object p1
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_6
-        :pswitch_0
-        :pswitch_5
-        :pswitch_4
-        :pswitch_3
-        :pswitch_2
-        :pswitch_1
-    .end packed-switch
+    :goto_4
+    goto :goto_3
 .end method

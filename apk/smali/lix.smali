@@ -1,58 +1,359 @@
 .class public final Llix;
 .super Ljava/lang/Object;
 
+# interfaces
+.implements Llis;
+
 
 # instance fields
-.field public final a:Lmrl;
+.field private final a:Llis;
 
-.field public final b:Lmrl;
-
-.field public final c:Ljava/util/concurrent/Executor;
-
-.field public final d:Loiw;
-
-.field public final e:Ljava/util/concurrent/atomic/AtomicBoolean;
-
-.field public final f:J
-
-.field public final g:Lmap;
+.field private final b:Ljava/lang/String;
 
 
 # direct methods
-.method public constructor <init>(Lmrl;Lmrl;Ljava/util/concurrent/Executor;Logd;Llij;Loiw;)V
-    .locals 2
+.method private constructor <init>(Llis;Ljava/lang/String;)V
+    .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    new-instance v0, Ljava/util/concurrent/atomic/AtomicBoolean;
+    iput-object p1, p0, Llix;->a:Llis;
 
-    const/4 v1, 0x1
+    iput-object p2, p0, Llix;->b:Ljava/lang/String;
 
-    invoke-direct {v0, v1}, Ljava/util/concurrent/atomic/AtomicBoolean;-><init>(Z)V
+    return-void
+.end method
 
-    iput-object v0, p0, Llix;->e:Ljava/util/concurrent/atomic/AtomicBoolean;
+.method public static j(Ljava/lang/String;Llis;)Llix;
+    .locals 1
 
-    invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
+    new-instance v0, Llix;
 
-    move-result-wide v0
+    invoke-direct {v0, p1, p0}, Llix;-><init>(Llis;Ljava/lang/String;)V
 
-    iput-wide v0, p0, Llix;->f:J
+    return-object v0
+.end method
 
-    iput-object p1, p0, Llix;->a:Lmrl;
 
-    iput-object p2, p0, Llix;->b:Lmrl;
+# virtual methods
+.method public final a(Ljava/lang/String;)Llis;
+    .locals 2
 
-    iput-object p3, p0, Llix;->c:Ljava/util/concurrent/Executor;
+    new-instance v0, Llix;
 
-    const/4 p1, 0x0
+    iget-object v1, p0, Llix;->a:Llis;
 
-    invoke-virtual {p5, p3, p4, p1}, Llij;->b(Ljava/util/concurrent/Executor;Logd;Loiw;)Lmap;
+    invoke-interface {v1, p1}, Llis;->a(Ljava/lang/String;)Llis;
 
     move-result-object p1
 
-    iput-object p1, p0, Llix;->g:Lmap;
+    iget-object v1, p0, Llix;->b:Ljava/lang/String;
 
-    iput-object p6, p0, Llix;->d:Loiw;
+    invoke-direct {v0, p1, v1}, Llix;-><init>(Llis;Ljava/lang/String;)V
+
+    return-object v0
+.end method
+
+.method public final b(Ljava/lang/String;)V
+    .locals 3
+
+    iget-object v0, p0, Llix;->a:Llis;
+
+    iget-object v1, p0, Llix;->b:Ljava/lang/String;
+
+    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {p1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-virtual {p1}, Ljava/lang/String;->length()I
+
+    move-result v2
+
+    if-eqz v2, :cond_0
+
+    invoke-virtual {v1, p1}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object p1
+
+    goto :goto_0
+
+    :cond_0
+    new-instance p1, Ljava/lang/String;
+
+    invoke-direct {p1, v1}, Ljava/lang/String;-><init>(Ljava/lang/String;)V
+
+    :goto_0
+    invoke-interface {v0, p1}, Llis;->b(Ljava/lang/String;)V
+
+    return-void
+.end method
+
+.method public final c(Ljava/lang/String;Ljava/lang/Throwable;)V
+    .locals 3
+
+    iget-object v0, p0, Llix;->a:Llis;
+
+    iget-object v1, p0, Llix;->b:Ljava/lang/String;
+
+    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {p1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-virtual {p1}, Ljava/lang/String;->length()I
+
+    move-result v2
+
+    if-eqz v2, :cond_0
+
+    invoke-virtual {v1, p1}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object p1
+
+    goto :goto_0
+
+    :cond_0
+    new-instance p1, Ljava/lang/String;
+
+    invoke-direct {p1, v1}, Ljava/lang/String;-><init>(Ljava/lang/String;)V
+
+    :goto_0
+    invoke-interface {v0, p1, p2}, Llis;->c(Ljava/lang/String;Ljava/lang/Throwable;)V
+
+    return-void
+.end method
+
+.method public final d(Ljava/lang/String;)V
+    .locals 3
+
+    iget-object v0, p0, Llix;->a:Llis;
+
+    iget-object v1, p0, Llix;->b:Ljava/lang/String;
+
+    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {p1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-virtual {p1}, Ljava/lang/String;->length()I
+
+    move-result v2
+
+    if-eqz v2, :cond_0
+
+    invoke-virtual {v1, p1}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object p1
+
+    goto :goto_0
+
+    :cond_0
+    new-instance p1, Ljava/lang/String;
+
+    invoke-direct {p1, v1}, Ljava/lang/String;-><init>(Ljava/lang/String;)V
+
+    :goto_0
+    invoke-interface {v0, p1}, Llis;->d(Ljava/lang/String;)V
+
+    return-void
+.end method
+
+.method public final e(Ljava/lang/String;Ljava/lang/Throwable;)V
+    .locals 3
+
+    iget-object v0, p0, Llix;->a:Llis;
+
+    iget-object v1, p0, Llix;->b:Ljava/lang/String;
+
+    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {p1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-virtual {p1}, Ljava/lang/String;->length()I
+
+    move-result v2
+
+    if-eqz v2, :cond_0
+
+    invoke-virtual {v1, p1}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object p1
+
+    goto :goto_0
+
+    :cond_0
+    new-instance p1, Ljava/lang/String;
+
+    invoke-direct {p1, v1}, Ljava/lang/String;-><init>(Ljava/lang/String;)V
+
+    :goto_0
+    invoke-interface {v0, p1, p2}, Llis;->e(Ljava/lang/String;Ljava/lang/Throwable;)V
+
+    return-void
+.end method
+
+.method public final f(Ljava/lang/String;)V
+    .locals 3
+
+    iget-object v0, p0, Llix;->a:Llis;
+
+    iget-object v1, p0, Llix;->b:Ljava/lang/String;
+
+    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {p1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-virtual {p1}, Ljava/lang/String;->length()I
+
+    move-result v2
+
+    if-eqz v2, :cond_0
+
+    invoke-virtual {v1, p1}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object p1
+
+    goto :goto_0
+
+    :cond_0
+    new-instance p1, Ljava/lang/String;
+
+    invoke-direct {p1, v1}, Ljava/lang/String;-><init>(Ljava/lang/String;)V
+
+    :goto_0
+    invoke-interface {v0, p1}, Llis;->f(Ljava/lang/String;)V
+
+    return-void
+.end method
+
+.method public final g(Ljava/lang/String;)V
+    .locals 3
+
+    iget-object v0, p0, Llix;->a:Llis;
+
+    iget-object v1, p0, Llix;->b:Ljava/lang/String;
+
+    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {p1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-virtual {p1}, Ljava/lang/String;->length()I
+
+    move-result v2
+
+    if-eqz v2, :cond_0
+
+    invoke-virtual {v1, p1}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object p1
+
+    goto :goto_0
+
+    :cond_0
+    new-instance p1, Ljava/lang/String;
+
+    invoke-direct {p1, v1}, Ljava/lang/String;-><init>(Ljava/lang/String;)V
+
+    :goto_0
+    invoke-interface {v0, p1}, Llis;->g(Ljava/lang/String;)V
+
+    return-void
+.end method
+
+.method public final h(Ljava/lang/String;)V
+    .locals 3
+
+    iget-object v0, p0, Llix;->a:Llis;
+
+    iget-object v1, p0, Llix;->b:Ljava/lang/String;
+
+    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {p1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-virtual {p1}, Ljava/lang/String;->length()I
+
+    move-result v2
+
+    if-eqz v2, :cond_0
+
+    invoke-virtual {v1, p1}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object p1
+
+    goto :goto_0
+
+    :cond_0
+    new-instance p1, Ljava/lang/String;
+
+    invoke-direct {p1, v1}, Ljava/lang/String;-><init>(Ljava/lang/String;)V
+
+    :goto_0
+    invoke-interface {v0, p1}, Llis;->h(Ljava/lang/String;)V
+
+    return-void
+.end method
+
+.method public final i(Ljava/lang/String;Ljava/lang/Throwable;)V
+    .locals 3
+
+    iget-object v0, p0, Llix;->a:Llis;
+
+    iget-object v1, p0, Llix;->b:Ljava/lang/String;
+
+    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {p1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-virtual {p1}, Ljava/lang/String;->length()I
+
+    move-result v2
+
+    if-eqz v2, :cond_0
+
+    invoke-virtual {v1, p1}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object p1
+
+    goto :goto_0
+
+    :cond_0
+    new-instance p1, Ljava/lang/String;
+
+    invoke-direct {p1, v1}, Ljava/lang/String;-><init>(Ljava/lang/String;)V
+
+    :goto_0
+    invoke-interface {v0, p1, p2}, Llis;->i(Ljava/lang/String;Ljava/lang/Throwable;)V
 
     return-void
 .end method

@@ -1,24 +1,26 @@
-.class public interface abstract Lcgy;
+.class public final Lcgy;
 .super Ljava/lang/Object;
 
-# interfaces
-.implements Lcgx;
-.implements Lbna;
-.implements Lgur;
+
+# instance fields
+.field public final a:Lfjs;
+
+.field public final b:Llco;
+
+.field public final c:Lcib;
 
 
-# virtual methods
-.method public abstract s()Landroid/content/Context;
-.end method
+# direct methods
+.method public constructor <init>(Lfjs;Llco;Lcib;)V
+    .locals 0
 
-.method public abstract t()Landroid/view/Window;
-.end method
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-.method public abstract u(Ljava/lang/String;)V
-.end method
+    iput-object p1, p0, Lcgy;->a:Lfjs;
 
-.method public abstract v()Z
-.end method
+    iput-object p2, p0, Lcgy;->b:Llco;
 
-.method public abstract w()Lcvr;
+    iput-object p3, p0, Lcgy;->c:Lcib;
+
+    return-void
 .end method

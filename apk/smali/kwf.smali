@@ -1,176 +1,173 @@
 .class public final Lkwf;
-.super Lnws;
-
-# interfaces
-.implements Lnxz;
-
-
-# static fields
-.field public static final d:Lkwf;
-
-.field private static volatile e:Lnyf;
+.super Lkmp;
 
 
 # instance fields
-.field public a:I
-
-.field public b:Ljava/lang/String;
-
-.field public c:F
+.field private final a:Ljava/util/concurrent/atomic/AtomicReference;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
+.method public constructor <init>(Landroid/content/Context;Landroid/os/Looper;Lkmf;Lkik;Lkil;)V
+    .locals 7
 
-    new-instance v0, Lkwf;
+    const/16 v3, 0x29
 
-    invoke-direct {v0}, Lkwf;-><init>()V
+    move-object v0, p0
 
-    sput-object v0, Lkwf;->d:Lkwf;
+    move-object v1, p1
 
-    const-class v1, Lkwf;
+    move-object v2, p2
 
-    invoke-static {v1, v0}, Lnws;->aa(Ljava/lang/Class;Lnws;)V
+    move-object v4, p3
 
-    return-void
-.end method
+    move-object v5, p4
 
-.method private constructor <init>()V
-    .locals 1
+    move-object v6, p5
 
-    invoke-direct {p0}, Lnws;-><init>()V
+    invoke-direct/range {v0 .. v6}, Lkmp;-><init>(Landroid/content/Context;Landroid/os/Looper;ILkmf;Lkjq;Lkkw;)V
 
-    const-string v0, ""
+    new-instance p1, Ljava/util/concurrent/atomic/AtomicReference;
 
-    iput-object v0, p0, Lkwf;->b:Ljava/lang/String;
+    invoke-direct {p1}, Ljava/util/concurrent/atomic/AtomicReference;-><init>()V
+
+    iput-object p1, p0, Lkwf;->a:Ljava/util/concurrent/atomic/AtomicReference;
 
     return-void
 .end method
 
 
 # virtual methods
-.method protected final a(ILjava/lang/Object;)Ljava/lang/Object;
-    .locals 3
+.method public final C()Z
+    .locals 1
 
-    add-int/lit8 p1, p1, -0x1
+    const/4 v0, 0x1
 
-    const/4 p2, 0x1
+    return v0
+.end method
 
-    packed-switch p1, :pswitch_data_0
+.method public final a()I
+    .locals 1
 
-    :pswitch_0
-    const/4 p1, 0x0
+    const v0, 0xc042c0
 
-    return-object p1
+    return v0
+.end method
 
-    :pswitch_1
-    sget-object p1, Lkwf;->e:Lnyf;
-
-    if-nez p1, :cond_1
-
-    const-class p2, Lkwf;
-
-    monitor-enter p2
-
-    :try_start_0
-    sget-object p1, Lkwf;->e:Lnyf;
+.method protected final synthetic b(Landroid/os/IBinder;)Landroid/os/IInterface;
+    .locals 2
 
     if-nez p1, :cond_0
 
-    new-instance p1, Lnwo;
-
-    sget-object v0, Lkwf;->d:Lkwf;
-
-    invoke-direct {p1, v0}, Lnwo;-><init>(Lnws;)V
-
-    sput-object p1, Lkwf;->e:Lnyf;
-
-    :cond_0
-    monitor-exit p2
+    const/4 p1, 0x0
 
     goto :goto_0
 
-    :catchall_0
-    move-exception p1
+    :cond_0
+    const-string v0, "com.google.android.gms.usagereporting.internal.IUsageReportingService"
 
-    monitor-exit p2
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    invoke-interface {p1, v0}, Landroid/os/IBinder;->queryLocalInterface(Ljava/lang/String;)Landroid/os/IInterface;
 
-    throw p1
+    move-result-object v0
+
+    instance-of v1, v0, Lkwc;
+
+    if-eqz v1, :cond_1
+
+    move-object p1, v0
+
+    check-cast p1, Lkwc;
+
+    goto :goto_0
 
     :cond_1
+    new-instance v0, Lkwc;
+
+    invoke-direct {v0, p1}, Lkwc;-><init>(Landroid/os/IBinder;)V
+
+    move-object p1, v0
+
     :goto_0
     return-object p1
+.end method
 
-    :pswitch_2
-    sget-object p1, Lkwf;->d:Lkwf;
+.method protected final c()Ljava/lang/String;
+    .locals 1
 
-    return-object p1
+    const-string v0, "com.google.android.gms.usagereporting.internal.IUsageReportingService"
 
-    :pswitch_3
-    new-instance p1, Lnwn;
+    return-object v0
+.end method
 
-    sget-object p2, Lkwf;->d:Lkwf;
+.method protected final d()Ljava/lang/String;
+    .locals 1
 
-    invoke-direct {p1, p2}, Lnwn;-><init>(Lnws;)V
+    const-string v0, "com.google.android.gms.usagereporting.service.START"
 
-    return-object p1
+    return-object v0
+.end method
 
-    :pswitch_4
-    new-instance p1, Lkwf;
+.method public final e()[Lkhk;
+    .locals 1
 
-    invoke-direct {p1}, Lkwf;-><init>()V
+    sget-object v0, Lkvt;->c:[Lkhk;
 
-    return-object p1
+    return-object v0
+.end method
 
-    :pswitch_5
-    const-string p1, "a"
+.method public final i()V
+    .locals 4
 
-    const-string v0, "\u0001\u0002\u0000\u0001\u0001\u0002\u0002\u0000\u0000\u0000\u0001\u1008\u0000\u0002\u1001\u0001"
+    :try_start_0
+    iget-object v0, p0, Lkwf;->a:Ljava/util/concurrent/atomic/AtomicReference;
 
-    const/4 v1, 0x3
+    const/4 v1, 0x0
 
-    new-array v1, v1, [Ljava/lang/Object;
+    invoke-virtual {v0, v1}, Ljava/util/concurrent/atomic/AtomicReference;->getAndSet(Ljava/lang/Object;)Ljava/lang/Object;
 
-    const/4 v2, 0x0
+    move-result-object v0
 
-    aput-object p1, v1, v2
+    check-cast v0, Lkwb;
 
-    const-string p1, "b"
+    if-eqz v0, :cond_0
 
-    aput-object p1, v1, p2
+    new-instance v1, Lkwe;
 
-    const/4 p1, 0x2
+    invoke-direct {v1}, Lkwe;-><init>()V
 
-    const-string p2, "c"
+    invoke-virtual {p0}, Lkmb;->u()Landroid/os/IInterface;
 
-    aput-object p2, v1, p1
+    move-result-object v2
 
-    sget-object p1, Lkwf;->d:Lkwf;
+    check-cast v2, Lkwc;
 
-    invoke-static {p1, v0, v1}, Lkwf;->X(Lnxy;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v2}, Lbmn;->a()Landroid/os/Parcel;
 
-    move-result-object p1
+    move-result-object v3
 
-    return-object p1
+    invoke-static {v3, v0}, Lbmp;->e(Landroid/os/Parcel;Landroid/os/IInterface;)V
 
-    :pswitch_6
-    invoke-static {p2}, Ljava/lang/Byte;->valueOf(B)Ljava/lang/Byte;
+    invoke-static {v3, v1}, Lbmp;->e(Landroid/os/Parcel;Landroid/os/IInterface;)V
 
-    move-result-object p1
+    const/4 v0, 0x5
 
-    return-object p1
+    invoke-virtual {v2, v0, v3}, Lbmn;->z(ILandroid/os/Parcel;)V
+    :try_end_0
+    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_6
-        :pswitch_0
-        :pswitch_5
-        :pswitch_4
-        :pswitch_3
-        :pswitch_2
-        :pswitch_1
-    .end packed-switch
+    goto :goto_0
+
+    :catch_0
+    move-exception v0
+
+    const-string v1, "UsageReportingClientImp"
+
+    const-string v2, "disconnect(): Could not unregister listener from remote:"
+
+    invoke-static {v1, v2, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+
+    :cond_0
+    :goto_0
+    invoke-super {p0}, Lkmp;->i()V
+
+    return-void
 .end method

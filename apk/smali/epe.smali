@@ -1,47 +1,35 @@
-.class public final Lepe;
+.class public final synthetic Lepe;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Logk;
+.implements Llie;
 
 
 # instance fields
-.field private final a:Loiw;
+.field public final synthetic a:Lepj;
 
 
 # direct methods
-.method public constructor <init>(Loiw;)V
+.method public synthetic constructor <init>(Lepj;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lepe;->a:Loiw;
+    iput-object p1, p0, Lepe;->a:Lepj;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Lcvr;
-    .locals 3
+.method public final close()V
+    .locals 2
 
-    iget-object v0, p0, Lepe;->a:Loiw;
+    iget-object v0, p0, Lepe;->a:Lepj;
 
-    new-instance v1, Lcvr;
+    const/4 v1, 0x3
 
-    const/4 v2, 0x0
+    invoke-virtual {v0, v1}, Lepj;->g(I)V
 
-    invoke-direct {v1, v0, v2}, Lcvr;-><init>(Loiw;[B)V
-
-    return-object v1
-.end method
-
-.method public final bridge synthetic get()Ljava/lang/Object;
-    .locals 1
-
-    invoke-virtual {p0}, Lepe;->a()Lcvr;
-
-    move-result-object v0
-
-    return-object v0
+    return-void
 .end method

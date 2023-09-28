@@ -1,5 +1,12 @@
-.class public interface abstract Ljse;
-.super Ljava/lang/Object;
+.class public final Ljse;
+.super Landroid/animation/AnimatorListenerAdapter;
 
-# interfaces
-.implements Landroid/os/IInterface;
+
+# direct methods
+.method public constructor <init>()V
+    .locals 0
+
+    invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
+
+    return-void
+.end method

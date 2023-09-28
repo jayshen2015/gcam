@@ -1,79 +1,66 @@
-.class final Llbg;
-.super Ljava/lang/Object;
-
-# interfaces
-.implements Lkzg;
-
-
-# static fields
-.field public static final a:Llbg;
-
-
-# instance fields
-.field private final synthetic b:I
+.class public final Llbg;
+.super Llbh;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
-
-    new-instance v0, Llbg;
-
-    const/4 v1, 0x0
-
-    invoke-direct {v0, v1}, Llbg;-><init>(I)V
-
-    sput-object v0, Llbg;->a:Llbg;
-
-    return-void
-.end method
-
-.method public constructor <init>(I)V
+.method public constructor <init>(Ljava/util/concurrent/RunnableScheduledFuture;)V
     .locals 0
 
-    iput p1, p0, Llbg;->b:I
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0, p1}, Llbh;-><init>(Ljava/util/concurrent/RunnableScheduledFuture;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a(Ljava/lang/Object;Ljava/util/concurrent/Executor;)Lkzc;
-    .locals 0
+.method public final run()V
+    .locals 3
 
-    iget p2, p0, Llbg;->b:I
+    :try_start_0
+    invoke-super {p0}, Llbh;->run()V
 
-    packed-switch p2, :pswitch_data_0
+    invoke-super {p0}, Llbh;->isDone()Z
 
-    check-cast p1, Lldc;
+    move-result v0
 
-    invoke-virtual {p1}, Llbk;->c()Llcv;
+    if-eqz v0, :cond_0
 
-    move-result-object p1
+    invoke-super {p0}, Llbh;->isCancelled()Z
 
-    check-cast p1, Llcn;
+    move-result v0
 
-    invoke-interface {p1}, Llcn;->a()Lkzf;
+    if-nez v0, :cond_0
 
-    move-result-object p1
+    invoke-super {p0}, Llbh;->get()Ljava/lang/Object;
+    :try_end_0
+    .catch Ljava/lang/InterruptedException; {:try_start_0 .. :try_end_0} :catch_2
+    .catch Ljava/util/concurrent/CancellationException; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Ljava/util/concurrent/ExecutionException; {:try_start_0 .. :try_end_0} :catch_0
 
-    return-object p1
+    :cond_0
+    return-void
 
-    :pswitch_0
-    check-cast p1, Lkyc;
+    :catch_0
+    move-exception v0
 
-    invoke-interface {p1}, Lkyc;->a()Lkzf;
+    new-instance v1, Ljava/lang/RuntimeException;
 
-    move-result-object p1
+    invoke-virtual {v0}, Ljava/util/concurrent/ExecutionException;->getMessage()Ljava/lang/String;
 
-    return-object p1
+    move-result-object v2
 
-    nop
+    invoke-direct {v1, v2, v0}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
 
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+    throw v1
+
+    :catch_1
+    move-exception v0
+
+    goto :goto_0
+
+    :catch_2
+    move-exception v0
+
+    :goto_0
+    return-void
 .end method

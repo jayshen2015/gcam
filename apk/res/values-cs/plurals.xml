@@ -1,16 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <plurals name="accessibility_timelapse_manual_record_speed_desc">
-        <item quantity="other">Časosběr, %d rychlost</item>
-        <item quantity="one">Časosběr, %d rychlost</item>
-        <item quantity="few">Časosběr, %d rychlost</item>
-        <item quantity="many">Časosběr, %d rychlost</item>
-    </plurals>
-    <plurals name="number_of_cropped_face">
-        <item quantity="other">%d oříznutých.</item>
-        <item quantity="one">1 oříznutý.</item>
-        <item quantity="few">%d oříznuté.</item>
-        <item quantity="many">%d oříznutého.</item>
+    <plurals name="number_of_faces_announcement">
+        <item quantity="other">%1$d obličejů.</item>
+        <item quantity="one">%1$d obličej.</item>
+        <item quantity="few">%1$d obličeje.</item>
+        <item quantity="many">%1$d obličeje.</item>
     </plurals>
     <plurals name="photos_remaining">
         <item quantity="other">Přibližně %s fotek</item>
@@ -25,10 +19,10 @@
         <item quantity="many">(vybráno %1$d aplikace)</item>
     </plurals>
     <plurals name="social_share_info">
-        <item quantity="other">Rychle sdílejte fotky a videa z Fotoaparátu v sociálních aplikacích. Vyberte si až %1$d aplikací. Fotky a videa uložené v uzamčené složce nelze sdílet.</item>
-        <item quantity="one">Rychle sdílejte fotky a videa z Fotoaparátu v sociálních aplikacích. Vyberte %1$d aplikaci. Fotky a videa uložené v uzamčené složce nelze sdílet.</item>
-        <item quantity="few">Rychle sdílejte fotky a videa z Fotoaparátu v sociálních aplikacích. Vyberte si až %1$d aplikace. Fotky a videa uložené v uzamčené složce nelze sdílet.</item>
-        <item quantity="many">Rychle sdílejte fotky a videa z Fotoaparátu v sociálních aplikacích. Vyberte si až %1$d aplikace. Fotky a videa uložené v uzamčené složce nelze sdílet.</item>
+        <item quantity="other">Rychle sdílejte fotky a videa přímo z Fotoaparátu v sociálních aplikacích. Vyberte si až %1$d aplikací. Fotky a videa uložené v uzamčené složce nelze sdílet.</item>
+        <item quantity="one">Rychle sdílejte fotky a videa přímo z Fotoaparátu v sociálních aplikacích. Vyberte %1$d aplikaci. Fotky a videa uložené v uzamčené složce nelze sdílet.</item>
+        <item quantity="few">Rychle sdílejte fotky a videa přímo z Fotoaparátu v sociálních aplikacích. Vyberte si až %1$d aplikace. Fotky a videa uložené v uzamčené složce nelze sdílet.</item>
+        <item quantity="many">Rychle sdílejte fotky a videa přímo z Fotoaparátu v sociálních aplikacích. Vyberte si až %1$d aplikace. Fotky a videa uložené v uzamčené složce nelze sdílet.</item>
     </plurals>
     <plurals name="social_share_select_error">
         <item quantity="other">Vyberte si až %1$d aplikací</item>

@@ -1,44 +1,57 @@
-.class public Lnoh;
-.super Lnoi;
+.class public final Lnoh;
+.super Lqlu;
+
+
+# annotations
+.annotation runtime Lqlw;
+    b = "com.google.android.libraries.vision.visionkit.f250.internal.airlock.QueryerKt"
+    c = "Queryer.kt"
+    d = "logOnError"
+    e = {
+        0x60
+    }
+.end annotation
 
 
 # instance fields
-.field private final a:Lnou;
+.field public a:Ljava/lang/Object;
+
+.field public b:Ljava/lang/Object;
+
+.field public synthetic c:Ljava/lang/Object;
+
+.field public d:I
 
 
 # direct methods
-.method protected constructor <init>(Lnou;)V
+.method public constructor <init>(Lqlh;)V
     .locals 0
 
-    invoke-direct {p0}, Lnoi;-><init>()V
-
-    iput-object p1, p0, Lnoh;->a:Lnou;
+    invoke-direct {p0, p1}, Lqlu;-><init>(Lqlh;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method protected final synthetic a()Ljava/lang/Object;
+.method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 1
 
-    iget-object v0, p0, Lnoh;->a:Lnou;
+    iput-object p1, p0, Lnoh;->c:Ljava/lang/Object;
 
-    return-object v0
-.end method
+    iget p1, p0, Lnoh;->d:I
 
-.method protected final synthetic b()Ljava/util/concurrent/Future;
-    .locals 1
+    const/high16 v0, -0x80000000
 
-    iget-object v0, p0, Lnoh;->a:Lnou;
+    or-int/2addr p1, v0
 
-    return-object v0
-.end method
+    iput p1, p0, Lnoh;->d:I
 
-.method protected final c()Lnou;
-    .locals 1
+    const/4 p1, 0x0
 
-    iget-object v0, p0, Lnoh;->a:Lnou;
+    invoke-static {p1, p1, p1, p0}, Lohh;->ae(Lnrm;Lnrl;Lqmu;Lqlh;)Ljava/lang/Object;
 
-    return-object v0
+    move-result-object p1
+
+    return-object p1
 .end method

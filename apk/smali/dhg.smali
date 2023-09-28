@@ -1,775 +1,380 @@
 .class public final Ldhg;
 .super Ljava/lang/Object;
 
+# interfaces
+.implements Ldha;
+
 
 # static fields
-.field public static final A:Ldhj;
+.field public static final a:Louj;
 
-.field public static final B:Ldhj;
 
-.field public static final C:Ldhj;
+# instance fields
+.field public final b:Ljava/util/List;
 
-.field public static final D:Ldhj;
+.field public final c:Ljava/util/List;
 
-.field public static final E:Ldhj;
+.field public d:Ljrl;
 
-.field public static final a:Ljava/lang/String;
+.field protected final e:Lmfe;
 
-.field public static final b:Ljava/lang/String;
+.field private f:Z
 
-.field public static final c:Ldhk;
-
-.field public static final d:Ldhj;
-
-.field public static final e:Ldhj;
-
-.field public static final f:Ldhj;
-
-.field public static final g:Ldhj;
-
-.field public static final h:Ldhj;
-
-.field public static final i:Ldhj;
-
-.field public static final j:Ldhj;
-
-.field public static final k:Ldhj;
-
-.field public static final l:Ldhj;
-
-.field public static final m:Ldhj;
-
-.field public static final n:Ldhj;
-
-.field public static final o:Ldhj;
-
-.field public static final p:Ldhj;
-
-.field public static final q:Ldhj;
-
-.field public static final r:Ldhj;
-
-.field public static final s:Ldhj;
-
-.field public static final t:Ldhj;
-
-.field public static final u:Ldhj;
-
-.field public static final v:Ldhj;
-
-.field public static final w:Ldhj;
-
-.field public static final x:Ldhj;
-
-.field public static final y:Ldhj;
-
-.field public static final z:Ldhj;
+.field private final g:Ljava/util/concurrent/ScheduledExecutorService;
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 2
+    .locals 1
 
-    const-string v0, "102"
+    const-string v0, "com/google/android/apps/camera/debug/jankmonitor/limited/JankMonitorFacadeLimited"
 
-    sput-object v0, Ldhg;->a:Ljava/lang/String;
-
-    const-string v0, "105"
-
-    sput-object v0, Ldhg;->b:Ljava/lang/String;
-
-    new-instance v0, Lnoc;
-
-    invoke-direct {v0}, Lnoc;-><init>()V
-
-    const-string v1, "camera.falcon_enabled"
-
-    iput-object v1, v0, Lnoc;->b:Ljava/lang/Object;
-
-    invoke-virtual {v0}, Lnoc;->t()Ldhj;
+    invoke-static {v0}, Louj;->h(Ljava/lang/String;)Louj;
 
     move-result-object v0
 
-    sput-object v0, Ldhg;->d:Ldhj;
-
-    new-instance v0, Lnoc;
-
-    invoke-direct {v0}, Lnoc;-><init>()V
-
-    const-string v1, "camera.falcon_md_enabled"
-
-    iput-object v1, v0, Lnoc;->b:Ljava/lang/Object;
-
-    invoke-virtual {v0}, Lnoc;->t()Ldhj;
-
-    move-result-object v0
-
-    sput-object v0, Ldhg;->e:Ldhj;
-
-    new-instance v0, Lnoc;
-
-    invoke-direct {v0}, Lnoc;-><init>()V
-
-    const-string v1, "camera.falcon_annotate"
-
-    iput-object v1, v0, Lnoc;->b:Ljava/lang/Object;
-
-    invoke-virtual {v0}, Lnoc;->t()Ldhj;
-
-    move-result-object v0
-
-    sput-object v0, Ldhg;->f:Ldhj;
-
-    new-instance v0, Lnoc;
-
-    invoke-direct {v0}, Lnoc;-><init>()V
-
-    const-string v1, "camera.falcon_save_original"
-
-    iput-object v1, v0, Lnoc;->b:Ljava/lang/Object;
-
-    invoke-virtual {v0}, Lnoc;->t()Ldhj;
-
-    move-result-object v0
-
-    sput-object v0, Ldhg;->g:Ldhj;
-
-    new-instance v0, Lnoc;
-
-    invoke-direct {v0}, Lnoc;-><init>()V
-
-    const-string v1, "camera.falcon_process_original"
-
-    iput-object v1, v0, Lnoc;->b:Ljava/lang/Object;
-
-    invoke-virtual {v0}, Lnoc;->t()Ldhj;
-
-    move-result-object v0
-
-    sput-object v0, Ldhg;->h:Ldhj;
-
-    new-instance v0, Lnoc;
-
-    invoke-direct {v0}, Lnoc;-><init>()V
-
-    const-string v1, "camera.falcon_save_secondary"
-
-    iput-object v1, v0, Lnoc;->b:Ljava/lang/Object;
-
-    invoke-virtual {v0}, Lnoc;->t()Ldhj;
-
-    move-result-object v0
-
-    sput-object v0, Ldhg;->i:Ldhj;
-
-    new-instance v0, Lnoc;
-
-    invoke-direct {v0}, Lnoc;-><init>()V
-
-    const-string v1, "camera.falcon_power_hint"
-
-    iput-object v1, v0, Lnoc;->b:Ljava/lang/Object;
-
-    invoke-virtual {v0}, Lnoc;->t()Ldhj;
-
-    move-result-object v0
-
-    sput-object v0, Ldhg;->j:Ldhj;
-
-    new-instance v0, Lnoc;
-
-    invoke-direct {v0}, Lnoc;-><init>()V
-
-    const-string v1, "camera.falcon_always_on"
-
-    iput-object v1, v0, Lnoc;->b:Ljava/lang/Object;
-
-    invoke-virtual {v0}, Lnoc;->t()Ldhj;
-
-    move-result-object v0
-
-    sput-object v0, Ldhg;->k:Ldhj;
-
-    new-instance v0, Lnoc;
-
-    invoke-direct {v0}, Lnoc;-><init>()V
-
-    const-string v1, "camera.falcon_force_fusion"
-
-    iput-object v1, v0, Lnoc;->b:Ljava/lang/Object;
-
-    invoke-virtual {v0}, Lnoc;->t()Ldhj;
-
-    move-result-object v0
-
-    sput-object v0, Ldhg;->l:Ldhj;
-
-    new-instance v0, Lnoc;
-
-    invoke-direct {v0}, Lnoc;-><init>()V
-
-    const-string v1, "camera.falcon_ahwb"
-
-    iput-object v1, v0, Lnoc;->b:Ljava/lang/Object;
-
-    new-instance v0, Lnoc;
-
-    invoke-direct {v0}, Lnoc;-><init>()V
-
-    const-string v1, "camera.falcon_standby"
-
-    iput-object v1, v0, Lnoc;->b:Ljava/lang/Object;
-
-    new-instance v0, Lnoc;
-
-    invoke-direct {v0}, Lnoc;-><init>()V
-
-    const-string v1, "camera.falcon_flush_sample_count"
-
-    iput-object v1, v0, Lnoc;->b:Ljava/lang/Object;
-
-    invoke-virtual {v0}, Lnoc;->l()Ldhk;
-
-    move-result-object v0
-
-    sput-object v0, Ldhg;->c:Ldhk;
-
-    new-instance v0, Lnoc;
-
-    invoke-direct {v0}, Lnoc;-><init>()V
-
-    const-string v1, "camera.falcon_cache_primary_results"
-
-    iput-object v1, v0, Lnoc;->b:Ljava/lang/Object;
-
-    new-instance v0, Lnoc;
-
-    invoke-direct {v0}, Lnoc;-><init>()V
-
-    const-string v1, "camera.falcon_mm_badge"
-
-    iput-object v1, v0, Lnoc;->b:Ljava/lang/Object;
-
-    invoke-virtual {v0}, Lnoc;->t()Ldhj;
-
-    move-result-object v0
-
-    sput-object v0, Ldhg;->m:Ldhj;
-
-    new-instance v0, Lnoc;
-
-    invoke-direct {v0}, Lnoc;-><init>()V
-
-    const-string v1, "camera.hawk_enabled"
-
-    iput-object v1, v0, Lnoc;->b:Ljava/lang/Object;
-
-    invoke-virtual {v0}, Lnoc;->t()Ldhj;
-
-    move-result-object v0
-
-    sput-object v0, Ldhg;->n:Ldhj;
-
-    new-instance v0, Lnoc;
-
-    invoke-direct {v0}, Lnoc;-><init>()V
-
-    const-string v1, "camera.hawk_tpu_enabled"
-
-    iput-object v1, v0, Lnoc;->b:Ljava/lang/Object;
-
-    invoke-virtual {v0}, Lnoc;->t()Ldhj;
-
-    move-result-object v0
-
-    sput-object v0, Ldhg;->o:Ldhj;
-
-    new-instance v0, Lnoc;
-
-    invoke-direct {v0}, Lnoc;-><init>()V
-
-    const-string v1, "camera.hawk_supported_modes"
-
-    iput-object v1, v0, Lnoc;->b:Ljava/lang/Object;
-
-    invoke-virtual {v0}, Lnoc;->u()Ldhj;
-
-    move-result-object v0
-
-    sput-object v0, Ldhg;->p:Ldhj;
-
-    new-instance v0, Lnoc;
-
-    invoke-direct {v0}, Lnoc;-><init>()V
-
-    const-string v1, "camera.hawk_power_hint"
-
-    iput-object v1, v0, Lnoc;->b:Ljava/lang/Object;
-
-    invoke-virtual {v0}, Lnoc;->t()Ldhj;
-
-    move-result-object v0
-
-    sput-object v0, Ldhg;->q:Ldhj;
-
-    new-instance v0, Lnoc;
-
-    invoke-direct {v0}, Lnoc;-><init>()V
-
-    const-string v1, "camera.hawk_boost_big_option"
-
-    iput-object v1, v0, Lnoc;->b:Ljava/lang/Object;
-
-    invoke-virtual {v0}, Lnoc;->s()Ldhj;
-
-    move-result-object v0
-
-    sput-object v0, Ldhg;->r:Ldhj;
-
-    new-instance v0, Lnoc;
-
-    invoke-direct {v0}, Lnoc;-><init>()V
-
-    const-string v1, "camera.hawk_boost_mid_option"
-
-    iput-object v1, v0, Lnoc;->b:Ljava/lang/Object;
-
-    invoke-virtual {v0}, Lnoc;->s()Ldhj;
-
-    move-result-object v0
-
-    sput-object v0, Ldhg;->s:Ldhj;
-
-    new-instance v0, Lnoc;
-
-    invoke-direct {v0}, Lnoc;-><init>()V
-
-    const-string v1, "camera.hawk_boost_little_option"
-
-    iput-object v1, v0, Lnoc;->b:Ljava/lang/Object;
-
-    invoke-virtual {v0}, Lnoc;->s()Ldhj;
-
-    move-result-object v0
-
-    sput-object v0, Ldhg;->t:Ldhj;
-
-    new-instance v0, Lnoc;
-
-    invoke-direct {v0}, Lnoc;-><init>()V
-
-    const-string v1, "camera.hawk_threshold"
-
-    iput-object v1, v0, Lnoc;->b:Ljava/lang/Object;
-
-    invoke-virtual {v0}, Lnoc;->s()Ldhj;
-
-    move-result-object v0
-
-    sput-object v0, Ldhg;->u:Ldhj;
-
-    new-instance v0, Lnoc;
-
-    invoke-direct {v0}, Lnoc;-><init>()V
-
-    const-string v1, "camera.hawk_out_threshold"
-
-    iput-object v1, v0, Lnoc;->b:Ljava/lang/Object;
-
-    invoke-virtual {v0}, Lnoc;->s()Ldhj;
-
-    move-result-object v0
-
-    sput-object v0, Ldhg;->v:Ldhj;
-
-    new-instance v0, Lnoc;
-
-    invoke-direct {v0}, Lnoc;-><init>()V
-
-    const-string v1, "camera.hawk_save_debug"
-
-    iput-object v1, v0, Lnoc;->b:Ljava/lang/Object;
-
-    invoke-virtual {v0}, Lnoc;->t()Ldhj;
-
-    move-result-object v0
-
-    sput-object v0, Ldhg;->w:Ldhj;
-
-    new-instance v0, Lnoc;
-
-    invoke-direct {v0}, Lnoc;-><init>()V
-
-    const-string v1, "camera.hawk_save_more_debug"
-
-    iput-object v1, v0, Lnoc;->b:Ljava/lang/Object;
-
-    invoke-virtual {v0}, Lnoc;->t()Ldhj;
-
-    move-result-object v0
-
-    sput-object v0, Ldhg;->x:Ldhj;
-
-    new-instance v0, Lnoc;
-
-    invoke-direct {v0}, Lnoc;-><init>()V
-
-    const-string v1, "camera.hawk_annotate"
-
-    iput-object v1, v0, Lnoc;->b:Ljava/lang/Object;
-
-    invoke-virtual {v0}, Lnoc;->t()Ldhj;
-
-    move-result-object v0
-
-    sput-object v0, Ldhg;->y:Ldhj;
-
-    new-instance v0, Lnoc;
-
-    invoke-direct {v0}, Lnoc;-><init>()V
-
-    const-string v1, "camera.hawk_force_fusion"
-
-    iput-object v1, v0, Lnoc;->b:Ljava/lang/Object;
-
-    invoke-virtual {v0}, Lnoc;->t()Ldhj;
-
-    move-result-object v0
-
-    sput-object v0, Ldhg;->z:Ldhj;
-
-    new-instance v0, Lnoc;
-
-    invoke-direct {v0}, Lnoc;-><init>()V
-
-    const-string v1, "camera.hawk_crash_on_not_engaged"
-
-    iput-object v1, v0, Lnoc;->b:Ljava/lang/Object;
-
-    invoke-virtual {v0}, Lnoc;->t()Ldhj;
-
-    move-result-object v0
-
-    sput-object v0, Ldhg;->A:Ldhj;
-
-    new-instance v0, Lnoc;
-
-    invoke-direct {v0}, Lnoc;-><init>()V
-
-    const-string v1, "camera.hawk_disable_thermal"
-
-    iput-object v1, v0, Lnoc;->b:Ljava/lang/Object;
-
-    new-instance v0, Lnoc;
-
-    invoke-direct {v0}, Lnoc;-><init>()V
-
-    const-string v1, "camera.hawk_trim"
-
-    iput-object v1, v0, Lnoc;->b:Ljava/lang/Object;
-
-    invoke-virtual {v0}, Lnoc;->r()Ldhj;
-
-    move-result-object v0
-
-    sput-object v0, Ldhg;->B:Ldhj;
-
-    new-instance v0, Lnoc;
-
-    invoke-direct {v0}, Lnoc;-><init>()V
-
-    const-string v1, "camera.hawk_downsample_tele_zoom_ratio"
-
-    iput-object v1, v0, Lnoc;->b:Ljava/lang/Object;
-
-    invoke-virtual {v0}, Lnoc;->s()Ldhj;
-
-    move-result-object v0
-
-    sput-object v0, Ldhg;->C:Ldhj;
-
-    new-instance v0, Lnoc;
-
-    invoke-direct {v0}, Lnoc;-><init>()V
-
-    const-string v1, "camera.hawk_throttled_tele_frames_enabled"
-
-    iput-object v1, v0, Lnoc;->b:Ljava/lang/Object;
-
-    new-instance v0, Lnoc;
-
-    invoke-direct {v0}, Lnoc;-><init>()V
-
-    const-string v1, "camera.hawk_luma_secondary_enabled"
-
-    iput-object v1, v0, Lnoc;->b:Ljava/lang/Object;
-
-    new-instance v0, Lnoc;
-
-    invoke-direct {v0}, Lnoc;-><init>()V
-
-    const-string v1, "camera.hawk_model_name"
-
-    iput-object v1, v0, Lnoc;->b:Ljava/lang/Object;
-
-    invoke-virtual {v0}, Lnoc;->u()Ldhj;
-
-    move-result-object v0
-
-    sput-object v0, Ldhg;->D:Ldhj;
-
-    new-instance v0, Lnoc;
-
-    invoke-direct {v0}, Lnoc;-><init>()V
-
-    const-string v1, "camera.hawk_tpu_model_name"
-
-    iput-object v1, v0, Lnoc;->b:Ljava/lang/Object;
-
-    invoke-virtual {v0}, Lnoc;->u()Ldhj;
-
-    move-result-object v0
-
-    sput-object v0, Ldhg;->E:Ldhj;
+    sput-object v0, Ldhg;->a:Louj;
 
     return-void
 .end method
 
-.method public static a(Ldhi;)Lmwn;
-    .locals 1
+.method public constructor <init>()V
+    .locals 2
 
-    sget-object v0, Ldhg;->p:Ldhj;
-
-    invoke-interface {p0, v0}, Ldhi;->j(Ldhj;)Ljava/lang/String;
-
-    move-result-object p0
-
-    if-nez p0, :cond_0
-
-    sget-object p0, Lmza;->a:Lmza;
-
-    return-object p0
-
-    :cond_0
-    const-string v0, ","
-
-    invoke-static {v0}, Lmrd;->c(Ljava/lang/String;)Lmrd;
-
-    move-result-object v0
-
-    invoke-virtual {v0, p0}, Lmrd;->d(Ljava/lang/CharSequence;)Ljava/lang/Iterable;
-
-    move-result-object p0
-
-    invoke-static {p0}, Lj$/lang/Iterable$-EL;->spliterator(Ljava/lang/Iterable;)Lj$/util/Spliterator;
-
-    move-result-object p0
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     const/4 v0, 0x0
 
-    invoke-static {p0, v0}, Lj$/util/stream/StreamSupport;->stream(Lj$/util/Spliterator;Z)Lj$/util/stream/Stream;
+    iput-boolean v0, p0, Ldhg;->f:Z
 
-    move-result-object p0
+    const-string v0, "JankReports"
 
-    sget-object v0, Lcpy;->j:Lcpy;
+    invoke-static {v0}, Lmip;->bQ(Ljava/lang/String;)Ljava/util/concurrent/ScheduledExecutorService;
 
-    invoke-interface {p0, v0}, Lj$/util/stream/Stream;->map(Ljava/util/function/Function;)Lj$/util/stream/Stream;
+    move-result-object v0
 
-    move-result-object p0
+    iput-object v0, p0, Ldhg;->g:Ljava/util/concurrent/ScheduledExecutorService;
 
-    sget-object v0, Lcdm;->j:Lcdm;
+    new-instance v0, Ljava/util/ArrayList;
 
-    invoke-interface {p0, v0}, Lj$/util/stream/Stream;->filter(Ljava/util/function/Predicate;)Lj$/util/stream/Stream;
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    move-result-object p0
+    iput-object v0, p0, Ldhg;->b:Ljava/util/List;
 
-    sget-object v0, Lcpy;->k:Lcpy;
+    new-instance v0, Ljava/util/ArrayList;
 
-    invoke-interface {p0, v0}, Lj$/util/stream/Stream;->map(Ljava/util/function/Function;)Lj$/util/stream/Stream;
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    move-result-object p0
+    iput-object v0, p0, Ldhg;->c:Ljava/util/List;
 
-    sget-object v0, Lmtf;->b:Lj$/util/stream/Collector;
+    sget-object v0, Ljrl;->a:Ljrl;
 
-    invoke-interface {p0, v0}, Lj$/util/stream/Stream;->collect(Lj$/util/stream/Collector;)Ljava/lang/Object;
+    iput-object v0, p0, Ldhg;->d:Ljrl;
 
-    move-result-object p0
+    new-instance v0, Lmfe;
 
-    check-cast p0, Lmwn;
+    new-instance v1, Ldhd;
 
-    return-object p0
+    invoke-direct {v1, p0}, Ldhd;-><init>(Ldhg;)V
+
+    invoke-direct {v0, v1}, Lmfe;-><init>(Ldhd;)V
+
+    iput-object v0, p0, Ldhg;->e:Lmfe;
+
+    return-void
 .end method
 
-.method public static b(Ldhm;Ldin;)V
+
+# virtual methods
+.method public final declared-synchronized a()Ljava/util/List;
     .locals 3
 
-    sget-object v0, Ldhg;->d:Ldhj;
+    monitor-enter p0
 
-    const/4 v1, 0x0
+    :try_start_0
+    new-instance v0, Ljava/util/ArrayList;
 
-    invoke-interface {p0, v0, v1}, Ldhm;->u(Ldhj;Z)V
+    iget-object v1, p0, Ldhg;->c:Ljava/util/List;
 
-    sget-object v0, Ldhg;->e:Ldhj;
+    invoke-direct {v0, v1}, Ljava/util/ArrayList;-><init>(Ljava/util/Collection;)V
 
-    invoke-interface {p0, v0, v1}, Ldhm;->u(Ldhj;Z)V
+    iget-object v1, p0, Ldhg;->c:Ljava/util/List;
 
-    sget-object v0, Ldhg;->g:Ldhj;
+    invoke-interface {v1}, Ljava/util/List;->clear()V
 
-    invoke-interface {p0, v0, v1}, Ldhm;->u(Ldhj;Z)V
+    iget-object v1, p0, Ldhg;->b:Ljava/util/List;
 
-    sget-object v0, Ldhg;->h:Ldhj;
+    invoke-interface {v1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
-    invoke-interface {p0, v0, v1}, Ldhm;->u(Ldhj;Z)V
+    move-result-object v1
 
-    sget-object v0, Ldhg;->i:Ldhj;
+    :goto_0
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
-    invoke-interface {p0, v0, v1}, Ldhm;->u(Ldhj;Z)V
+    move-result v2
 
-    sget-object v0, Ldhg;->j:Ldhj;
+    if-eqz v2, :cond_0
 
-    invoke-interface {p0, v0, v1}, Ldhm;->u(Ldhj;Z)V
-
-    sget-object v0, Ldhg;->f:Ldhj;
-
-    invoke-interface {p0, v0, v1}, Ldhm;->u(Ldhj;Z)V
-
-    sget-object v0, Ldhg;->l:Ldhj;
-
-    invoke-interface {p0, v0, v1}, Ldhm;->u(Ldhj;Z)V
-
-    sget-object v0, Ldhg;->k:Ldhj;
-
-    invoke-interface {p0, v0, v1}, Ldhm;->u(Ldhj;Z)V
-
-    sget-object v0, Ldhg;->c:Ldhk;
-
-    const/16 v2, 0x96
-
-    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v2
 
-    invoke-interface {p0, v0, v2}, Ldhm;->q(Ldhk;Ljava/lang/Integer;)V
+    check-cast v2, Ldhf;
 
-    sget-object v0, Ldhg;->m:Ldhj;
-
-    const/4 v2, 0x1
-
-    invoke-interface {p0, v0, v2}, Ldhm;->u(Ldhj;Z)V
-
-    sget-object v0, Ldhg;->n:Ldhj;
-
-    invoke-interface {p0, v0, v1}, Ldhm;->u(Ldhj;Z)V
-
-    sget-object v0, Ldhg;->o:Ldhj;
-
-    invoke-interface {p0, v0, v1}, Ldhm;->u(Ldhj;Z)V
-
-    sget-object v0, Ldhg;->p:Ldhj;
-
-    sget-object v2, Lika;->b:Lika;
-
-    iget v2, v2, Lika;->u:I
-
-    invoke-static {v2}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
+    invoke-virtual {v2}, Ldhf;->a()Lpcd;
 
     move-result-object v2
 
-    invoke-interface {p0, v0, v2}, Ldhm;->v(Ldhj;Ljava/lang/String;)V
+    invoke-interface {v0, v2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    sget-object v0, Ldhg;->q:Ldhj;
+    goto :goto_0
 
-    sget-object v2, Ldin;->b:Ldin;
+    :cond_0
+    iget-object v1, p0, Ldhg;->b:Ljava/util/List;
 
-    invoke-virtual {p1, v2}, Ldin;->a(Ldin;)Z
+    invoke-interface {v1}, Ljava/util/List;->clear()V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    move-result p1
+    monitor-exit p0
 
-    invoke-interface {p0, v0, p1}, Ldhm;->u(Ldhj;Z)V
+    return-object v0
 
-    sget-object p1, Ldhg;->r:Ldhj;
+    :catchall_0
+    move-exception v0
 
-    const/4 v0, 0x0
+    monitor-exit p0
 
-    invoke-static {v0}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
+    goto :goto_2
+
+    :goto_1
+    throw v0
+
+    :goto_2
+    goto :goto_1
+.end method
+
+.method public final b(JJ)V
+    .locals 1
+
+    iget-object v0, p0, Ldhg;->e:Lmfe;
+
+    invoke-virtual {v0, p1, p2, p3, p4}, Lmfe;->a(JJ)V
+
+    monitor-enter p0
+
+    :try_start_0
+    iget-object p1, p0, Ldhg;->b:Ljava/util/List;
+
+    invoke-interface {p1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+
+    move-result-object p1
+
+    :goto_0
+    invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result p2
+
+    if-eqz p2, :cond_0
+
+    invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object p2
+
+    check-cast p2, Ldhf;
+
+    iget p3, p2, Ldhf;->c:I
+
+    add-int/lit8 p3, p3, 0x1
+
+    iput p3, p2, Ldhf;->c:I
+
+    goto :goto_0
+
+    :cond_0
+    monitor-exit p0
+
+    return-void
+
+    :catchall_0
+    move-exception p1
+
+    monitor-exit p0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    goto :goto_2
+
+    :goto_1
+    throw p1
+
+    :goto_2
+    goto :goto_1
+.end method
+
+.method public final c()V
+    .locals 0
+
+    return-void
+.end method
+
+.method public final declared-synchronized d(Ljrl;)V
+    .locals 5
+
+    monitor-enter p0
+
+    :try_start_0
+    iput-object p1, p0, Ldhg;->d:Ljrl;
+
+    iget-object v0, p0, Ldhg;->b:Ljava/util/List;
+
+    invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object v0
 
-    invoke-interface {p0, p1, v0}, Ldhm;->t(Ldhj;Ljava/lang/Float;)V
+    :goto_0
+    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
-    sget-object p1, Ldhg;->s:Ldhj;
+    move-result v1
 
-    invoke-interface {p0, p1, v0}, Ldhm;->t(Ldhj;Ljava/lang/Float;)V
+    if-eqz v1, :cond_0
 
-    sget-object p1, Ldhg;->t:Ldhj;
+    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    const/high16 v0, -0x40800000    # -1.0f
+    move-result-object v1
 
-    invoke-static {v0}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
+    check-cast v1, Ldhf;
 
-    move-result-object v0
+    iget-object v2, p0, Ldhg;->c:Ljava/util/List;
 
-    invoke-interface {p0, p1, v0}, Ldhm;->t(Ldhj;Ljava/lang/Float;)V
+    invoke-virtual {v1}, Ldhf;->a()Lpcd;
 
-    sget-object p1, Ldhg;->u:Ldhj;
+    move-result-object v1
 
-    const v2, 0x401ccccd    # 2.45f
+    invoke-interface {v2, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    invoke-static {v2}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
+    goto :goto_0
 
-    move-result-object v2
+    :cond_0
+    iget-object v0, p0, Ldhg;->b:Ljava/util/List;
 
-    invoke-interface {p0, p1, v2}, Ldhm;->t(Ldhj;Ljava/lang/Float;)V
+    invoke-interface {v0}, Ljava/util/List;->clear()V
 
-    sget-object p1, Ldhg;->v:Ldhj;
+    iget-object v0, p0, Ldhg;->b:Ljava/util/List;
 
-    const v2, 0x409ccccd    # 4.9f
+    new-instance v1, Ldhf;
 
-    invoke-static {v2}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
+    const/4 v2, 0x2
 
-    move-result-object v2
+    invoke-direct {v1, p1, v2}, Ldhf;-><init>(Ljrl;I)V
 
-    invoke-interface {p0, p1, v2}, Ldhm;->t(Ldhj;Ljava/lang/Float;)V
+    invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    sget-object p1, Ldhg;->w:Ldhj;
+    iget-boolean p1, p0, Ldhg;->f:Z
 
-    invoke-interface {p0, p1, v1}, Ldhm;->u(Ldhj;Z)V
+    if-nez p1, :cond_1
 
-    sget-object p1, Ldhg;->x:Ldhj;
+    const/4 p1, 0x1
 
-    invoke-interface {p0, p1, v1}, Ldhm;->u(Ldhj;Z)V
+    iput-boolean p1, p0, Ldhg;->f:Z
 
-    sget-object p1, Ldhg;->y:Ldhj;
+    new-instance v0, Ldhf;
 
-    invoke-interface {p0, p1, v1}, Ldhm;->u(Ldhj;Z)V
+    iget-object v1, p0, Ldhg;->d:Ljrl;
 
-    sget-object p1, Ldhg;->z:Ldhj;
+    const/4 v2, 0x3
 
-    invoke-interface {p0, p1, v1}, Ldhm;->u(Ldhj;Z)V
+    invoke-direct {v0, v1, v2}, Ldhf;-><init>(Ljrl;I)V
 
-    sget-object p1, Ldhg;->A:Ldhj;
+    iget-object v1, p0, Ldhg;->b:Ljava/util/List;
 
-    invoke-interface {p0, p1, v1}, Ldhm;->u(Ldhj;Z)V
+    invoke-interface {v1, v0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    sget-object p1, Ldhg;->B:Ldhj;
+    iget-object v1, p0, Ldhg;->g:Ljava/util/concurrent/ScheduledExecutorService;
 
-    invoke-interface {p0, p1, v1}, Ldhm;->s(Ldhj;Z)V
+    new-instance v2, Ldhc;
 
-    sget-object p1, Ldhg;->C:Ldhj;
+    invoke-direct {v2, p0, v0, p1}, Ldhc;-><init>(Ldhg;Ldhf;I)V
 
-    invoke-interface {p0, p1, v0}, Ldhm;->t(Ldhj;Ljava/lang/Float;)V
+    const-wide/16 v3, 0x5
 
-    sget-object p1, Ldhg;->D:Ldhj;
+    sget-object p1, Ljava/util/concurrent/TimeUnit;->SECONDS:Ljava/util/concurrent/TimeUnit;
 
-    const-string v0, "hawk_06_15_2022_v1.tflite.uncompressed"
+    invoke-interface {v1, v2, v3, v4, p1}, Ljava/util/concurrent/ScheduledExecutorService;->schedule(Ljava/lang/Runnable;JLjava/util/concurrent/TimeUnit;)Ljava/util/concurrent/ScheduledFuture;
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    invoke-interface {p0, p1, v0}, Ldhm;->v(Ldhj;Ljava/lang/String;)V
+    :cond_1
+    monitor-exit p0
 
-    sget-object p1, Ldhg;->E:Ldhj;
+    return-void
 
-    const-string v0, "hawk_06_15_2022_v1_custom-op.tflite.uncompressed"
+    :catchall_0
+    move-exception p1
 
-    invoke-interface {p0, p1, v0}, Ldhm;->v(Ldhj;Ljava/lang/String;)V
+    monitor-exit p0
+
+    goto :goto_2
+
+    :goto_1
+    throw p1
+
+    :goto_2
+    goto :goto_1
+.end method
+
+.method public final declared-synchronized e()V
+    .locals 5
+
+    monitor-enter p0
+
+    :try_start_0
+    new-instance v0, Ldhf;
+
+    iget-object v1, p0, Ldhg;->d:Ljrl;
+
+    const/4 v2, 0x4
+
+    invoke-direct {v0, v1, v2}, Ldhf;-><init>(Ljrl;I)V
+
+    iget-object v1, p0, Ldhg;->b:Ljava/util/List;
+
+    invoke-interface {v1, v0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    iget-object v1, p0, Ldhg;->g:Ljava/util/concurrent/ScheduledExecutorService;
+
+    new-instance v2, Ldhc;
+
+    const/4 v3, 0x0
+
+    invoke-direct {v2, p0, v0, v3}, Ldhc;-><init>(Ldhg;Ldhf;I)V
+
+    const-wide/16 v3, 0x5
+
+    sget-object v0, Ljava/util/concurrent/TimeUnit;->SECONDS:Ljava/util/concurrent/TimeUnit;
+
+    invoke-interface {v1, v2, v3, v4, v0}, Ljava/util/concurrent/ScheduledExecutorService;->schedule(Ljava/lang/Runnable;JLjava/util/concurrent/TimeUnit;)Ljava/util/concurrent/ScheduledFuture;
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    monitor-exit p0
+
+    return-void
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit p0
+
+    throw v0
+.end method
+
+.method public final declared-synchronized f()V
+    .locals 0
+
+    monitor-enter p0
+
+    monitor-exit p0
 
     return-void
 .end method

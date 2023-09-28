@@ -1,22 +1,25 @@
-.class public final Lowd;
+.class final Lowd;
 .super Ljava/lang/Object;
 
-
-# static fields
-.field public static final a:Loxb;
+# interfaces
+.implements Lowb;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
+.method public constructor <init>()V
+    .locals 0
 
-    new-instance v0, Loxb;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const-string v1, "CLOSED"
+    return-void
+.end method
 
-    invoke-direct {v0, v1}, Loxb;-><init>(Ljava/lang/String;)V
 
-    sput-object v0, Lowd;->a:Loxb;
+# virtual methods
+.method public final synthetic a(Lovd;Ljava/lang/Object;Ljava/lang/Object;)V
+    .locals 0
+
+    invoke-virtual {p1, p2, p3}, Lovd;->b(Ljava/lang/Object;Lovc;)V
 
     return-void
 .end method

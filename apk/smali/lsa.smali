@@ -1,58 +1,48 @@
-.class public final Llsa;
+.class public final synthetic Llsa;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Llre;
+.implements Llij;
 
 
 # instance fields
-.field public a:[Llrk;
+.field public final synthetic a:Lpih;
 
 
 # direct methods
-.method public constructor <init>()V
+.method public synthetic constructor <init>(Lpih;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Llsa;->a:Lpih;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final bridge synthetic a(Lkte;)Ljava/lang/Object;
+.method public final fB(Ljava/lang/Object;)V
     .locals 2
 
-    iget-object v0, p1, Lkte;->d:Ljava/lang/Object;
+    iget-object v0, p0, Llsa;->a:Lpih;
 
-    iget-object v1, p1, Lkte;->a:Ljava/lang/Object;
+    check-cast p1, Lojc;
 
-    check-cast v1, Landroid/net/Uri;
+    invoke-virtual {p1}, Lojc;->g()Z
 
-    invoke-interface {v0, v1}, Llsb;->j(Landroid/net/Uri;)Ljava/io/OutputStream;
+    move-result v1
 
-    move-result-object v0
+    if-eqz v1, :cond_0
 
-    invoke-virtual {p1, v0}, Lkte;->f(Ljava/io/OutputStream;)Ljava/util/List;
+    invoke-virtual {p1}, Lojc;->c()Ljava/lang/Object;
 
     move-result-object p1
 
-    iget-object v0, p0, Llsa;->a:[Llrk;
+    check-cast p1, Landroid/view/Surface;
 
-    const/4 v1, 0x0
-
-    if-eqz v0, :cond_0
-
-    aget-object v0, v0, v1
-
-    invoke-virtual {v0, p1}, Llrk;->a(Ljava/util/List;)V
+    invoke-virtual {v0, p1}, Lpih;->o(Ljava/lang/Object;)Z
 
     :cond_0
-    invoke-interface {p1, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
-
-    move-result-object p1
-
-    check-cast p1, Ljava/io/OutputStream;
-
-    return-object p1
+    return-void
 .end method

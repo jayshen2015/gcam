@@ -1,234 +1,430 @@
-.class public final Lnqc;
-.super Ljava/lang/Object;
-
-
-# static fields
-.field public static final a:Lnqc;
-
-.field public static final b:Lnqc;
-
-.field public static final c:Lnqc;
-
-.field public static final d:Lnqc;
-
-.field public static final e:Lnqc;
-
-.field public static final f:Lnqc;
-
-.field public static final g:Lnqc;
-
-.field private static final i:[Lnqc;
-
-
-# instance fields
-.field public final h:I
-
-.field private final j:Ljava/lang/String;
+.class final Lnqc;
+.super Lahz;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 14
-
-    new-instance v0, Lnqc;
-
-    const-string v1, "kUnknown"
-
-    const/4 v2, -0x1
-
-    invoke-direct {v0, v1, v2}, Lnqc;-><init>(Ljava/lang/String;I)V
-
-    sput-object v0, Lnqc;->a:Lnqc;
-
-    new-instance v1, Lnqc;
-
-    const-string v2, "kOff"
-
-    const/4 v3, 0x0
-
-    invoke-direct {v1, v2, v3}, Lnqc;-><init>(Ljava/lang/String;I)V
-
-    sput-object v1, Lnqc;->b:Lnqc;
-
-    new-instance v2, Lnqc;
-
-    const-string v4, "kAuto"
-
-    const/4 v5, 0x1
-
-    invoke-direct {v2, v4, v5}, Lnqc;-><init>(Ljava/lang/String;I)V
-
-    sput-object v2, Lnqc;->c:Lnqc;
-
-    new-instance v4, Lnqc;
-
-    const-string v6, "kMacro"
-
-    const/4 v7, 0x2
-
-    invoke-direct {v4, v6, v7}, Lnqc;-><init>(Ljava/lang/String;I)V
-
-    sput-object v4, Lnqc;->d:Lnqc;
-
-    new-instance v6, Lnqc;
-
-    const-string v8, "kContinuousVideo"
-
-    const/4 v9, 0x3
-
-    invoke-direct {v6, v8, v9}, Lnqc;-><init>(Ljava/lang/String;I)V
-
-    sput-object v6, Lnqc;->e:Lnqc;
-
-    new-instance v8, Lnqc;
-
-    const-string v10, "kContinuousPicture"
-
-    const/4 v11, 0x4
-
-    invoke-direct {v8, v10, v11}, Lnqc;-><init>(Ljava/lang/String;I)V
-
-    sput-object v8, Lnqc;->f:Lnqc;
-
-    new-instance v10, Lnqc;
-
-    const-string v12, "kExtendedDepthOfField"
-
-    const/4 v13, 0x5
-
-    invoke-direct {v10, v12, v13}, Lnqc;-><init>(Ljava/lang/String;I)V
-
-    sput-object v10, Lnqc;->g:Lnqc;
-
-    const/4 v12, 0x7
-
-    new-array v12, v12, [Lnqc;
-
-    aput-object v0, v12, v3
-
-    aput-object v1, v12, v5
-
-    aput-object v2, v12, v7
-
-    aput-object v4, v12, v9
-
-    aput-object v6, v12, v11
-
-    aput-object v8, v12, v13
-
-    const/4 v0, 0x6
-
-    aput-object v10, v12, v0
-
-    sput-object v12, Lnqc;->i:[Lnqc;
-
-    return-void
-.end method
-
-.method private constructor <init>(Ljava/lang/String;I)V
+.method public constructor <init>(Laii;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lnqc;->j:Ljava/lang/String;
-
-    iput p2, p0, Lnqc;->h:I
+    invoke-direct {p0, p1}, Lahz;-><init>(Laii;)V
 
     return-void
-.end method
-
-.method public static a(I)Lnqc;
-    .locals 4
-
-    sget-object v0, Lnqc;->i:[Lnqc;
-
-    const/4 v1, 0x0
-
-    const/4 v2, 0x7
-
-    if-ge p0, v2, :cond_2
-
-    if-ltz p0, :cond_1
-
-    aget-object v0, v0, p0
-
-    iget v3, v0, Lnqc;->h:I
-
-    if-eq v3, p0, :cond_0
-
-    goto :goto_0
-
-    :cond_0
-    return-object v0
-
-    :cond_1
-    goto :goto_0
-
-    :cond_2
-    :goto_0
-    sget-object v0, Lnqc;->i:[Lnqc;
-
-    if-ge v1, v2, :cond_4
-
-    aget-object v0, v0, v1
-
-    iget v3, v0, Lnqc;->h:I
-
-    if-ne v3, p0, :cond_3
-
-    return-object v0
-
-    :cond_3
-    add-int/lit8 v1, v1, 0x1
-
-    goto :goto_0
-
-    :cond_4
-    new-instance v0, Ljava/lang/IllegalArgumentException;
-
-    const-class v1, Lnqc;
-
-    invoke-virtual {v1}, Ljava/lang/Object;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v3, "No enum "
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v1, " with value "
-
-    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v2, p0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p0
-
-    invoke-direct {v0, p0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    goto :goto_2
-
-    :goto_1
-    throw v0
-
-    :goto_2
-    goto :goto_1
 .end method
 
 
 # virtual methods
-.method public final toString()Ljava/lang/String;
+.method public final bridge synthetic c(Lake;Ljava/lang/Object;)V
+    .locals 5
+
+    check-cast p2, Lnqh;
+
+    iget-object v0, p2, Lnqh;->a:Ljava/lang/String;
+
+    const/4 v1, 0x1
+
+    if-nez v0, :cond_0
+
+    invoke-virtual {p1, v1}, Lake;->f(I)V
+
+    goto :goto_0
+
+    :cond_0
+    invoke-virtual {p1, v1, v0}, Lake;->g(ILjava/lang/String;)V
+
+    :goto_0
+    iget-object v0, p2, Lnqh;->b:Ljava/lang/String;
+
+    const/4 v1, 0x2
+
+    if-nez v0, :cond_1
+
+    invoke-virtual {p1, v1}, Lake;->f(I)V
+
+    goto :goto_1
+
+    :cond_1
+    invoke-virtual {p1, v1, v0}, Lake;->g(ILjava/lang/String;)V
+
+    :goto_1
+    iget-object v0, p2, Lnqh;->c:Ljava/util/List;
+
+    invoke-static {v0}, Lnpy;->o(Ljava/util/List;)Ljava/lang/String;
+
+    move-result-object v0
+
+    const/4 v1, 0x3
+
+    if-nez v0, :cond_2
+
+    invoke-virtual {p1, v1}, Lake;->f(I)V
+
+    goto :goto_2
+
+    :cond_2
+    invoke-virtual {p1, v1, v0}, Lake;->g(ILjava/lang/String;)V
+
+    :goto_2
+    iget-object v0, p2, Lnqh;->d:Lprl;
+
+    invoke-static {v0}, Lnpy;->p(Lprl;)Ljava/lang/Long;
+
+    move-result-object v0
+
+    const/4 v1, 0x4
+
+    if-nez v0, :cond_3
+
+    invoke-virtual {p1, v1}, Lake;->f(I)V
+
+    goto :goto_3
+
+    :cond_3
+    invoke-virtual {v0}, Ljava/lang/Long;->longValue()J
+
+    move-result-wide v2
+
+    invoke-virtual {p1, v1, v2, v3}, Lake;->e(IJ)V
+
+    :goto_3
+    iget-object v0, p2, Lnqh;->e:Lpop;
+
+    invoke-static {v0}, Lnpy;->d(Lpop;)Ljava/lang/Long;
+
+    move-result-object v0
+
+    const/4 v1, 0x5
+
+    if-nez v0, :cond_4
+
+    invoke-virtual {p1, v1}, Lake;->f(I)V
+
+    goto :goto_4
+
+    :cond_4
+    invoke-virtual {v0}, Ljava/lang/Long;->longValue()J
+
+    move-result-wide v2
+
+    invoke-virtual {p1, v1, v2, v3}, Lake;->e(IJ)V
+
+    :goto_4
+    const/4 v0, 0x6
+
+    iget-wide v1, p2, Lnqh;->f:J
+
+    invoke-virtual {p1, v0, v1, v2}, Lake;->e(IJ)V
+
+    iget-object v0, p2, Lnqh;->g:Ljava/lang/String;
+
+    const/4 v1, 0x7
+
+    if-nez v0, :cond_5
+
+    invoke-virtual {p1, v1}, Lake;->f(I)V
+
+    goto :goto_5
+
+    :cond_5
+    invoke-virtual {p1, v1, v0}, Lake;->g(ILjava/lang/String;)V
+
+    :goto_5
+    iget-object v0, p2, Lnqh;->h:Ljava/lang/String;
+
+    const/16 v1, 0x8
+
+    if-nez v0, :cond_6
+
+    invoke-virtual {p1, v1}, Lake;->f(I)V
+
+    goto :goto_6
+
+    :cond_6
+    invoke-virtual {p1, v1, v0}, Lake;->g(ILjava/lang/String;)V
+
+    :goto_6
+    iget-object v0, p2, Lnqh;->t:Lnmz;
+
+    invoke-static {v0}, Lnpy;->t(Lnmz;)Ljava/lang/String;
+
+    move-result-object v0
+
+    const/16 v1, 0x9
+
+    if-nez v0, :cond_7
+
+    invoke-virtual {p1, v1}, Lake;->f(I)V
+
+    goto :goto_7
+
+    :cond_7
+    invoke-virtual {p1, v1, v0}, Lake;->g(ILjava/lang/String;)V
+
+    :goto_7
+    iget-object v0, p2, Lnqh;->i:Lpop;
+
+    invoke-static {v0}, Lnpy;->d(Lpop;)Ljava/lang/Long;
+
+    move-result-object v0
+
+    const/16 v1, 0xa
+
+    if-nez v0, :cond_8
+
+    invoke-virtual {p1, v1}, Lake;->f(I)V
+
+    goto :goto_8
+
+    :cond_8
+    invoke-virtual {v0}, Ljava/lang/Long;->longValue()J
+
+    move-result-wide v2
+
+    invoke-virtual {p1, v1, v2, v3}, Lake;->e(IJ)V
+
+    :goto_8
+    iget-object v0, p2, Lnqh;->j:Lpop;
+
+    invoke-static {v0}, Lnpy;->d(Lpop;)Ljava/lang/Long;
+
+    move-result-object v0
+
+    const/16 v1, 0xb
+
+    if-nez v0, :cond_9
+
+    invoke-virtual {p1, v1}, Lake;->f(I)V
+
+    goto :goto_9
+
+    :cond_9
+    invoke-virtual {v0}, Ljava/lang/Long;->longValue()J
+
+    move-result-wide v2
+
+    invoke-virtual {p1, v1, v2, v3}, Lake;->e(IJ)V
+
+    :goto_9
+    iget-object v0, p2, Lnqh;->k:Lpop;
+
+    invoke-static {v0}, Lnpy;->d(Lpop;)Ljava/lang/Long;
+
+    move-result-object v0
+
+    const/16 v1, 0xc
+
+    if-nez v0, :cond_a
+
+    invoke-virtual {p1, v1}, Lake;->f(I)V
+
+    goto :goto_a
+
+    :cond_a
+    invoke-virtual {v0}, Ljava/lang/Long;->longValue()J
+
+    move-result-wide v2
+
+    invoke-virtual {p1, v1, v2, v3}, Lake;->e(IJ)V
+
+    :goto_a
+    const/16 v0, 0xd
+
+    iget-boolean v1, p2, Lnqh;->l:Z
+
+    int-to-long v1, v1
+
+    invoke-virtual {p1, v0, v1, v2}, Lake;->e(IJ)V
+
+    const/16 v0, 0xe
+
+    iget-object v1, p2, Lnqh;->m:Ljava/util/List;
+
+    invoke-static {v1}, Lnpy;->f(Ljava/util/List;)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {p1, v0, v1}, Lake;->g(ILjava/lang/String;)V
+
+    iget-object v0, p2, Lnqh;->n:Ljava/lang/String;
+
+    const/16 v1, 0xf
+
+    if-nez v0, :cond_b
+
+    invoke-virtual {p1, v1}, Lake;->f(I)V
+
+    goto :goto_b
+
+    :cond_b
+    invoke-virtual {p1, v1, v0}, Lake;->g(ILjava/lang/String;)V
+
+    :goto_b
+    iget-object v0, p2, Lnqh;->o:Ljava/lang/String;
+
+    const/16 v1, 0x10
+
+    if-nez v0, :cond_c
+
+    invoke-virtual {p1, v1}, Lake;->f(I)V
+
+    goto :goto_c
+
+    :cond_c
+    invoke-virtual {p1, v1, v0}, Lake;->g(ILjava/lang/String;)V
+
+    :goto_c
+    iget-object v0, p2, Lnqh;->p:Lpti;
+
+    invoke-static {v0}, Lnpy;->l(Lpti;)[B
+
+    move-result-object v0
+
+    const/16 v1, 0x11
+
+    if-nez v0, :cond_d
+
+    invoke-virtual {p1, v1}, Lake;->f(I)V
+
+    goto :goto_d
+
+    :cond_d
+    invoke-virtual {p1, v1, v0}, Lake;->c(I[B)V
+
+    :goto_d
+    iget-object v0, p2, Lnqh;->q:Lplu;
+
+    invoke-static {v0}, Lnpy;->g(Lplu;)[B
+
+    move-result-object v0
+
+    const/16 v1, 0x12
+
+    if-nez v0, :cond_e
+
+    invoke-virtual {p1, v1}, Lake;->f(I)V
+
+    goto :goto_e
+
+    :cond_e
+    invoke-virtual {p1, v1, v0}, Lake;->c(I[B)V
+
+    :goto_e
+    const/16 v0, 0x13
+
+    iget-wide v1, p2, Lnqh;->s:J
+
+    invoke-virtual {p1, v0, v1, v2}, Lake;->e(IJ)V
+
+    iget-object v0, p2, Lnqh;->r:Lnpk;
+
+    iget-object v1, v0, Lnpk;->a:Lprl;
+
+    invoke-static {v1}, Lnpy;->p(Lprl;)Ljava/lang/Long;
+
+    move-result-object v1
+
+    const/16 v2, 0x14
+
+    if-nez v1, :cond_f
+
+    invoke-virtual {p1, v2}, Lake;->f(I)V
+
+    goto :goto_f
+
+    :cond_f
+    invoke-virtual {v1}, Ljava/lang/Long;->longValue()J
+
+    move-result-wide v3
+
+    invoke-virtual {p1, v2, v3, v4}, Lake;->e(IJ)V
+
+    :goto_f
+    iget-object v1, v0, Lnpk;->b:Lprl;
+
+    invoke-static {v1}, Lnpy;->p(Lprl;)Ljava/lang/Long;
+
+    move-result-object v1
+
+    const/16 v2, 0x15
+
+    if-nez v1, :cond_10
+
+    invoke-virtual {p1, v2}, Lake;->f(I)V
+
+    goto :goto_10
+
+    :cond_10
+    invoke-virtual {v1}, Ljava/lang/Long;->longValue()J
+
+    move-result-wide v3
+
+    invoke-virtual {p1, v2, v3, v4}, Lake;->e(IJ)V
+
+    :goto_10
+    iget-object v1, v0, Lnpk;->c:Lprl;
+
+    invoke-static {v1}, Lnpy;->p(Lprl;)Ljava/lang/Long;
+
+    move-result-object v1
+
+    const/16 v2, 0x16
+
+    if-nez v1, :cond_11
+
+    invoke-virtual {p1, v2}, Lake;->f(I)V
+
+    goto :goto_11
+
+    :cond_11
+    invoke-virtual {v1}, Ljava/lang/Long;->longValue()J
+
+    move-result-wide v3
+
+    invoke-virtual {p1, v2, v3, v4}, Lake;->e(IJ)V
+
+    :goto_11
+    const/16 v1, 0x17
+
+    iget-object v2, v0, Lnpk;->d:Lnmr;
+
+    invoke-static {v2}, Lnpy;->a(Lnmr;)I
+
+    move-result v2
+
+    int-to-long v2, v2
+
+    invoke-virtual {p1, v1, v2, v3}, Lake;->e(IJ)V
+
+    const/16 v1, 0x18
+
+    iget-object v2, v0, Lnpk;->e:Lnnr;
+
+    invoke-static {v2}, Lnpy;->r(Lnnr;)I
+
+    move-result v2
+
+    int-to-long v2, v2
+
+    invoke-virtual {p1, v1, v2, v3}, Lake;->e(IJ)V
+
+    const/16 v1, 0x19
+
+    iget-wide v2, v0, Lnpk;->f:D
+
+    invoke-virtual {p1, v1, v2, v3}, Lake;->d(ID)V
+
+    const/16 v0, 0x1a
+
+    iget-wide v1, p2, Lnqh;->s:J
+
+    invoke-virtual {p1, v0, v1, v2}, Lake;->e(IJ)V
+
+    return-void
+.end method
+
+.method public final d()Ljava/lang/String;
     .locals 1
 
-    iget-object v0, p0, Lnqc;->j:Ljava/lang/String;
+    const-string v0, "UPDATE OR ABORT `ResourceEntity` SET `title` = ?,`experienceId` = ?,`queryableTags` = ?,`queryableEpochTimestamp` = ?,`queryableDuration` = ?,`approximateTotalSize` = ?,`namespaceId` = ?,`partitionId` = ?,`f250ResourceId` = ?,`f250AutoUploadDelay` = ?,`airlockExpiration` = ?,`f250Expiration` = ?,`deleteAirlockFilesOnceUploaded` = ?,`nonSignedInDataOwners` = ?,`overridenObfuscatedGaiaId` = ?,`uploadTransferHandle` = ?,`relations` = ?,`indexTokens` = ?,`onDeviceId` = ?,`status_addedToAirlockEpochTimestamp` = ?,`status_uploadToF250RequestedEpochTimestamp` = ?,`status_uploadToF250CompletedEpochTimestamp` = ?,`status_airlockFileState` = ?,`status_uploadState` = ?,`status_uploadProgressPercent` = ? WHERE `onDeviceId` = ?"
 
     return-object v0
 .end method

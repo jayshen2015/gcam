@@ -31,34 +31,7 @@
 
 
 # virtual methods
-.method public final a()Lcom/google/googlex/gcam/WeightedPixelRectVector;
-    .locals 5
-
-    iget-wide v0, p0, Lcom/google/googlex/gcam/AeMetadata;->a:J
-
-    invoke-static {v0, v1, p0}, Lcom/google/googlex/gcam/GcamModuleJNI;->AeMetadata_metering_rectangles_get(JLcom/google/googlex/gcam/AeMetadata;)J
-
-    move-result-wide v0
-
-    const-wide/16 v2, 0x0
-
-    cmp-long v4, v0, v2
-
-    if-nez v4, :cond_0
-
-    const/4 v0, 0x0
-
-    return-object v0
-
-    :cond_0
-    new-instance v2, Lcom/google/googlex/gcam/WeightedPixelRectVector;
-
-    invoke-direct {v2, v0, v1}, Lcom/google/googlex/gcam/WeightedPixelRectVector;-><init>(J)V
-
-    return-object v2
-.end method
-
-.method public final declared-synchronized b()V
+.method public final declared-synchronized a()V
     .locals 5
 
     monitor-enter p0
@@ -96,7 +69,7 @@
 .method protected final finalize()V
     .locals 0
 
-    invoke-virtual {p0}, Lcom/google/googlex/gcam/AeMetadata;->b()V
+    invoke-virtual {p0}, Lcom/google/googlex/gcam/AeMetadata;->a()V
 
     return-void
 .end method

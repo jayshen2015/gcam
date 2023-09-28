@@ -1,12 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <plurals name="accessibility_timelapse_manual_record_speed_desc">
-        <item quantity="other">Tua nhanh thời gian: tốc độ %d lần</item>
-        <item quantity="one">Tua nhanh thời gian: tốc độ %d lần</item>
-    </plurals>
-    <plurals name="number_of_cropped_face">
-        <item quantity="other">%d khuôn mặt đã bị cắt bớt.</item>
-        <item quantity="one">Một khuôn mặt đã bị cắt bớt.</item>
+    <plurals name="number_of_faces_announcement">
+        <item quantity="other">%1$d khuôn mặt.</item>
+        <item quantity="one">%1$d khuôn mặt.</item>
     </plurals>
     <plurals name="photos_remaining">
         <item quantity="other">Khoảng %s ảnh</item>
@@ -17,8 +13,8 @@
         <item quantity="one">(Đã chọn %1$d ứng dụng)</item>
     </plurals>
     <plurals name="social_share_info">
-        <item quantity="other">Chia sẻ nhanh ảnh và video trên các ứng dụng mạng xã hội ngay từ Máy ảnh. Chọn tối đa %1$d ứng dụng. Bạn không thể chia sẻ ảnh và video đã lưu vào Thư mục bị khoá.</item>
-        <item quantity="one">Chia sẻ nhanh ảnh và video trên các ứng dụng mạng xã hội ngay từ Máy ảnh. Chọn %1$d ứng dụng. Bạn không thể chia sẻ ảnh và video đã lưu vào Thư mục bị khoá.</item>
+        <item quantity="other">Chia sẻ nhanh ảnh và video trên các ứng dụng mạng xã hội ngay từ Máy ảnh. Chọn tối đa %1$d ứng dụng. Bạn không thể chia sẻ ảnh và video đã lưu vào Thư mục bị khóa.</item>
+        <item quantity="one">Chia sẻ nhanh ảnh và video trên các ứng dụng mạng xã hội ngay từ Máy ảnh. Chọn %1$d ứng dụng. Bạn không thể chia sẻ ảnh và video đã lưu vào Thư mục bị khóa.</item>
     </plurals>
     <plurals name="social_share_select_error">
         <item quantity="other">Bạn có thể chọn tối đa %1$d ứng dụng</item>

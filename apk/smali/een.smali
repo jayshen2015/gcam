@@ -1,98 +1,219 @@
-.class public final enum Leen;
-.super Ljava/lang/Enum;
+.class public final synthetic Leen;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Ljava/lang/Runnable;
 
 
-# static fields
-.field public static final enum a:Leen;
+# instance fields
+.field public final synthetic a:Leeo;
 
-.field public static final enum b:Leen;
+.field public final synthetic b:J
 
-.field public static final enum c:Leen;
+.field public final synthetic c:Lcom/google/googlex/gcam/ShotMetadata;
 
-.field public static final enum d:Leen;
+.field public final synthetic d:Ljtk;
 
-.field private static final synthetic e:[Leen;
+.field public final synthetic e:Lmsq;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 9
-
-    new-instance v0, Leen;
-
-    const-string v1, "ORIGINAL"
-
-    const/4 v2, 0x0
-
-    invoke-direct {v0, v1, v2}, Leen;-><init>(Ljava/lang/String;I)V
-
-    sput-object v0, Leen;->a:Leen;
-
-    new-instance v1, Leen;
-
-    const-string v3, "PRIMARY"
-
-    const/4 v4, 0x1
-
-    invoke-direct {v1, v3, v4}, Leen;-><init>(Ljava/lang/String;I)V
-
-    sput-object v1, Leen;->b:Leen;
-
-    new-instance v3, Leen;
-
-    const-string v5, "SECONDARY"
-
-    const/4 v6, 0x2
-
-    invoke-direct {v3, v5, v6}, Leen;-><init>(Ljava/lang/String;I)V
-
-    sput-object v3, Leen;->c:Leen;
-
-    new-instance v5, Leen;
-
-    const-string v7, "DEBUG"
-
-    const/4 v8, 0x3
-
-    invoke-direct {v5, v7, v8}, Leen;-><init>(Ljava/lang/String;I)V
-
-    sput-object v5, Leen;->d:Leen;
-
-    const/4 v7, 0x4
-
-    new-array v7, v7, [Leen;
-
-    aput-object v0, v7, v2
-
-    aput-object v1, v7, v4
-
-    aput-object v3, v7, v6
-
-    aput-object v5, v7, v8
-
-    sput-object v7, Leen;->e:[Leen;
-
-    return-void
-.end method
-
-.method private constructor <init>(Ljava/lang/String;I)V
+.method public synthetic constructor <init>(Leeo;JLmsq;Lcom/google/googlex/gcam/ShotMetadata;Ljtk;[B)V
     .locals 0
 
-    invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Leen;->a:Leeo;
+
+    iput-wide p2, p0, Leen;->b:J
+
+    iput-object p4, p0, Leen;->e:Lmsq;
+
+    iput-object p5, p0, Leen;->c:Lcom/google/googlex/gcam/ShotMetadata;
+
+    iput-object p6, p0, Leen;->d:Ljtk;
 
     return-void
 .end method
 
-.method public static values()[Leen;
-    .locals 1
 
-    sget-object v0, Leen;->e:[Leen;
+# virtual methods
+.method public final run()V
+    .locals 11
 
-    invoke-virtual {v0}, [Leen;->clone()Ljava/lang/Object;
+    iget-object v0, p0, Leen;->a:Leeo;
 
-    move-result-object v0
+    iget-wide v1, p0, Leen;->b:J
 
-    check-cast v0, [Leen;
+    iget-object v3, p0, Leen;->e:Lmsq;
 
-    return-object v0
+    iget-object v4, p0, Leen;->c:Lcom/google/googlex/gcam/ShotMetadata;
+
+    iget-object v5, p0, Leen;->d:Ljtk;
+
+    iget-object v0, v0, Leeo;->a:Leer;
+
+    :try_start_0
+    iget-object v6, v0, Leer;->h:Lees;
+
+    iget-object v6, v6, Lees;->f:Lljf;
+
+    const-string v7, "falcon#saveImage"
+
+    invoke-interface {v6, v7}, Lljf;->e(Ljava/lang/String;)V
+
+    iget-object v6, v0, Leer;->b:Lgog;
+
+    iget-object v6, v6, Lgog;->a:Lgfs;
+
+    iget v6, v6, Lgfs;->a:I
+
+    iget-object v7, v0, Leer;->h:Lees;
+
+    iget-object v8, v7, Lees;->k:Lghx;
+
+    iget-object v7, v7, Lees;->e:Lddf;
+
+    invoke-static {v6, v8, v7}, Lbrg;->d(ILlvp;Lddf;)I
+
+    move-result v6
+
+    invoke-static {}, Lecq;->a()Lecp;
+
+    move-result-object v7
+
+    new-instance v8, Lcom/google/googlex/gcam/InterleavedImageU16;
+
+    invoke-direct {v8}, Lcom/google/googlex/gcam/InterleavedImageU16;-><init>()V
+
+    invoke-static {v8}, Lplk;->V(Ljava/lang/Object;)Lpht;
+
+    move-result-object v8
+
+    invoke-virtual {v7, v8}, Lecp;->c(Lpht;)V
+
+    new-instance v8, Lhcn;
+
+    invoke-direct {v8}, Lhcn;-><init>()V
+
+    invoke-virtual {v7, v8}, Lecp;->d(Llzv;)V
+
+    sget-object v8, Ljava/util/concurrent/TimeUnit;->MICROSECONDS:Ljava/util/concurrent/TimeUnit;
+
+    invoke-virtual {v4}, Lcom/google/googlex/gcam/ShotMetadata;->d()J
+
+    move-result-wide v9
+
+    invoke-virtual {v8, v9, v10}, Ljava/util/concurrent/TimeUnit;->toNanos(J)J
+
+    move-result-wide v8
+
+    invoke-virtual {v7, v8, v9}, Lecp;->g(J)V
+
+    iget-object v8, v0, Leer;->c:Ldzu;
+
+    iput-object v8, v7, Lecp;->f:Ldzu;
+
+    invoke-static {v6}, Llic;->b(I)Llic;
+
+    move-result-object v6
+
+    invoke-virtual {v7, v6}, Lecp;->e(Llic;)V
+
+    invoke-virtual {v7}, Lecp;->b()V
+
+    iget-object v6, v3, Lmsq;->b:Lojc;
+
+    invoke-virtual {v6}, Lojc;->g()Z
+
+    move-result v6
+
+    if-eqz v6, :cond_0
+
+    iget-object v3, v3, Lmsq;->b:Lojc;
+
+    invoke-virtual {v3}, Lojc;->c()Ljava/lang/Object;
+
+    move-result-object v3
+
+    check-cast v3, Lcom/google/googlex/gcam/InterleavedImageU8;
+
+    iput-object v3, v7, Lecp;->a:Lcom/google/googlex/gcam/InterleavedImageU8;
+
+    goto :goto_0
+
+    :cond_0
+    iget-object v3, v3, Lmsq;->a:Lojc;
+
+    invoke-virtual {v3}, Lojc;->c()Ljava/lang/Object;
+
+    move-result-object v3
+
+    check-cast v3, Landroid/hardware/HardwareBuffer;
+
+    iput-object v3, v7, Lecp;->c:Landroid/hardware/HardwareBuffer;
+
+    :goto_0
+    iput-object v4, v7, Lecp;->d:Lcom/google/googlex/gcam/ShotMetadata;
+
+    iget-object v3, v0, Leer;->b:Lgog;
+
+    invoke-virtual {v7, v3}, Lecp;->f(Lgog;)V
+
+    iget-object v3, v0, Leer;->h:Lees;
+
+    iget-object v3, v3, Lees;->b:Lpyn;
+
+    invoke-interface {v3}, Lpyn;->get()Ljava/lang/Object;
+
+    move-result-object v3
+
+    check-cast v3, Leay;
+
+    iget-object v4, v0, Leer;->c:Ldzu;
+
+    invoke-virtual {v7}, Lecp;->a()Lecq;
+
+    move-result-object v6
+
+    invoke-static {v6}, Lojc;->i(Ljava/lang/Object;)Lojc;
+
+    move-result-object v6
+
+    const/4 v7, 0x0
+
+    invoke-virtual {v3, v4, v6, v7}, Leay;->a(Ldzu;Lojc;Z)Lojc;
+
+    const/4 v3, 0x1
+
+    iput-boolean v3, v0, Leer;->g:Z
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    iget-object v3, v0, Leer;->h:Lees;
+
+    iget-object v3, v3, Lees;->f:Lljf;
+
+    invoke-interface {v3}, Lljf;->f()V
+
+    invoke-virtual {v5}, Ljtk;->close()V
+
+    invoke-virtual {v0, v1, v2}, Leer;->e(J)V
+
+    return-void
+
+    :catchall_0
+    move-exception v3
+
+    iget-object v4, v0, Leer;->h:Lees;
+
+    iget-object v4, v4, Lees;->f:Lljf;
+
+    invoke-interface {v4}, Lljf;->f()V
+
+    invoke-virtual {v5}, Ljtk;->close()V
+
+    invoke-virtual {v0, v1, v2}, Leer;->e(J)V
+
+    throw v3
 .end method

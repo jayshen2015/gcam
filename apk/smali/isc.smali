@@ -1,81 +1,40 @@
-.class public final Lisc;
-.super Landroid/view/GestureDetector$SimpleOnGestureListener;
+.class public final synthetic Lisc;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Landroid/view/View$OnTouchListener;
 
 
 # instance fields
-.field final synthetic a:Lisi;
+.field public final synthetic a:Lcom/google/android/apps/camera/toast/EducationToastView;
 
 
 # direct methods
-.method public constructor <init>(Lisi;)V
+.method public synthetic constructor <init>(Lcom/google/android/apps/camera/toast/EducationToastView;)V
     .locals 0
 
-    iput-object p1, p0, Lisc;->a:Lisi;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0}, Landroid/view/GestureDetector$SimpleOnGestureListener;-><init>()V
+    iput-object p1, p0, Lisc;->a:Lcom/google/android/apps/camera/toast/EducationToastView;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onScroll(Landroid/view/MotionEvent;Landroid/view/MotionEvent;FF)Z
+.method public final onTouch(Landroid/view/View;Landroid/view/MotionEvent;)Z
     .locals 0
 
-    invoke-virtual {p2}, Landroid/view/MotionEvent;->getX()F
+    iget-object p1, p0, Lisc;->a:Lcom/google/android/apps/camera/toast/EducationToastView;
 
-    move-result p1
+    iget-object p2, p1, Lcom/google/android/apps/camera/toast/EducationToastView;->a:Ljava/lang/Runnable;
 
-    iget-object p3, p0, Lisc;->a:Lisi;
+    invoke-interface {p2}, Ljava/lang/Runnable;->run()V
 
-    iget-object p3, p3, Lisi;->L:Landroid/widget/SeekBar;
+    iget-object p1, p1, Lcom/google/android/apps/camera/toast/EducationToastView;->b:Ljava/lang/Runnable;
 
-    invoke-virtual {p3}, Landroid/widget/SeekBar;->getWidth()I
+    invoke-interface {p1}, Ljava/lang/Runnable;->run()V
 
-    move-result p3
-
-    int-to-float p3, p3
-
-    cmpl-float p1, p1, p3
-
-    if-gtz p1, :cond_0
-
-    invoke-virtual {p2}, Landroid/view/MotionEvent;->getX()F
-
-    move-result p1
-
-    const/4 p3, 0x0
-
-    cmpg-float p1, p1, p3
-
-    if-gez p1, :cond_1
-
-    :cond_0
-    iget-object p1, p0, Lisc;->a:Lisi;
-
-    iget-boolean p3, p1, Lisi;->T:Z
-
-    if-nez p3, :cond_1
-
-    invoke-virtual {p1}, Lisi;->o()V
-
-    iget-object p1, p0, Lisc;->a:Lisi;
-
-    new-instance p3, Landroid/graphics/PointF;
-
-    invoke-virtual {p2}, Landroid/view/MotionEvent;->getRawX()F
-
-    move-result p4
-
-    invoke-virtual {p2}, Landroid/view/MotionEvent;->getRawY()F
-
-    move-result p2
-
-    invoke-direct {p3, p4, p2}, Landroid/graphics/PointF;-><init>(FF)V
-
-    iput-object p3, p1, Lisi;->Q:Landroid/graphics/PointF;
-
-    :cond_1
     const/4 p1, 0x0
 
     return p1

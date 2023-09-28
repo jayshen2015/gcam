@@ -1,319 +1,113 @@
 .class public final Lkpu;
-.super Ljava/lang/Object;
+.super Lkji;
 
 
 # instance fields
-.field public final a:Lkph;
+.field final synthetic a:Landroid/content/Intent;
 
-.field public final b:Ljava/util/Set;
-
-.field public final c:Ljava/util/Set;
-
-.field public final d:Ljava/util/Set;
-
-.field public final e:Lkpq;
-
-.field public final f:Lmvv;
+.field final synthetic b:Ljava/lang/ref/WeakReference;
 
 
 # direct methods
-.method public constructor <init>()V
+.method public constructor <init>(Lkim;Landroid/content/Intent;Ljava/lang/ref/WeakReference;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p2, p0, Lkpu;->a:Landroid/content/Intent;
+
+    iput-object p3, p0, Lkpu;->b:Ljava/lang/ref/WeakReference;
+
+    invoke-direct {p0, p1}, Lkji;-><init>(Lkim;)V
 
     return-void
-.end method
-
-.method public constructor <init>(Lkph;Ljava/util/Set;Ljava/util/Set;Ljava/util/Set;Lkpq;Lmvv;)V
-    .locals 0
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lkpu;->a:Lkph;
-
-    iput-object p2, p0, Lkpu;->b:Ljava/util/Set;
-
-    iput-object p3, p0, Lkpu;->c:Ljava/util/Set;
-
-    iput-object p4, p0, Lkpu;->d:Ljava/util/Set;
-
-    iput-object p5, p0, Lkpu;->e:Lkpq;
-
-    iput-object p6, p0, Lkpu;->f:Lmvv;
-
-    return-void
-.end method
-
-.method public static a()Lkpt;
-    .locals 1
-
-    new-instance v0, Lkpt;
-
-    invoke-direct {v0}, Lkpt;-><init>()V
-
-    return-object v0
 .end method
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
+.method protected final bridge synthetic a(Lcom/google/android/gms/common/api/Status;)Lkiv;
+    .locals 0
+
+    if-nez p1, :cond_0
+
+    sget-object p1, Lcom/google/android/gms/common/api/Status;->c:Lcom/google/android/gms/common/api/Status;
+
+    :cond_0
+    return-object p1
+.end method
+
+.method protected final bridge synthetic b(Lkhz;)V
     .locals 4
 
-    const/4 v0, 0x1
+    check-cast p1, Lkpx;
 
-    if-ne p1, p0, :cond_0
+    iget-object v0, p1, Lkmb;->c:Landroid/content/Context;
 
-    return v0
+    invoke-virtual {p1}, Lkmb;->u()Landroid/os/IInterface;
 
-    :cond_0
-    instance-of v1, p1, Lkpu;
+    move-result-object p1
 
-    const/4 v2, 0x0
+    check-cast p1, Lkpz;
 
-    if-eqz v1, :cond_3
+    iget-object v0, p0, Lkpu;->a:Landroid/content/Intent;
 
-    check-cast p1, Lkpu;
+    const-string v1, "EXTRA_GOOGLE_HELP"
 
-    iget-object v1, p0, Lkpu;->a:Lkph;
-
-    if-nez v1, :cond_1
-
-    iget-object v1, p1, Lkpu;->a:Lkph;
-
-    if-nez v1, :cond_2
-
-    goto :goto_0
-
-    :cond_1
-    iget-object v3, p1, Lkpu;->a:Lkph;
-
-    invoke-virtual {v1, v3}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_2
-
-    :goto_0
-    iget-object v1, p0, Lkpu;->b:Ljava/util/Set;
-
-    iget-object v3, p1, Lkpu;->b:Ljava/util/Set;
-
-    invoke-virtual {v1, v3}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_2
-
-    iget-object v1, p0, Lkpu;->c:Ljava/util/Set;
-
-    iget-object v3, p1, Lkpu;->c:Ljava/util/Set;
-
-    invoke-virtual {v1, v3}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_2
-
-    iget-object v1, p0, Lkpu;->d:Ljava/util/Set;
-
-    iget-object v3, p1, Lkpu;->d:Ljava/util/Set;
-
-    invoke-virtual {v1, v3}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_2
-
-    iget-object v1, p0, Lkpu;->e:Lkpq;
-
-    iget-object v3, p1, Lkpu;->e:Lkpq;
-
-    invoke-virtual {v1, v3}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_2
-
-    iget-object v1, p0, Lkpu;->f:Lmvv;
-
-    iget-object p1, p1, Lkpu;->f:Lmvv;
-
-    invoke-static {v1, p1}, Llyh;->I(Ljava/util/List;Ljava/lang/Object;)Z
-
-    move-result p1
-
-    if-eqz p1, :cond_2
-
-    return v0
-
-    :cond_2
-    return v2
-
-    :cond_3
-    return v2
-.end method
-
-.method public final hashCode()I
-    .locals 3
-
-    iget-object v0, p0, Lkpu;->a:Lkph;
-
-    if-nez v0, :cond_0
-
-    const/4 v0, 0x0
-
-    goto :goto_0
-
-    :cond_0
-    invoke-virtual {v0}, Ljava/lang/Object;->hashCode()I
-
-    move-result v0
-
-    :goto_0
-    iget-object v1, p0, Lkpu;->b:Ljava/util/Set;
-
-    const v2, 0xf4243
-
-    xor-int/2addr v0, v2
-
-    mul-int v0, v0, v2
-
-    invoke-virtual {v1}, Ljava/lang/Object;->hashCode()I
-
-    move-result v1
-
-    xor-int/2addr v0, v1
-
-    iget-object v1, p0, Lkpu;->c:Ljava/util/Set;
-
-    mul-int v0, v0, v2
-
-    invoke-virtual {v1}, Ljava/lang/Object;->hashCode()I
-
-    move-result v1
-
-    xor-int/2addr v0, v1
-
-    iget-object v1, p0, Lkpu;->d:Ljava/util/Set;
-
-    mul-int v0, v0, v2
-
-    invoke-virtual {v1}, Ljava/lang/Object;->hashCode()I
-
-    move-result v1
-
-    xor-int/2addr v0, v1
-
-    iget-object v1, p0, Lkpu;->e:Lkpq;
-
-    mul-int v0, v0, v2
-
-    invoke-virtual {v1}, Ljava/lang/Object;->hashCode()I
-
-    move-result v1
-
-    xor-int/2addr v0, v1
-
-    iget-object v1, p0, Lkpu;->f:Lmvv;
-
-    mul-int v0, v0, v2
-
-    invoke-virtual {v1}, Lmvv;->hashCode()I
-
-    move-result v1
-
-    xor-int/2addr v0, v1
-
-    return v0
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .locals 8
-
-    iget-object v0, p0, Lkpu;->a:Lkph;
-
-    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+    invoke-virtual {v0, v1}, Landroid/content/Intent;->getParcelableExtra(Ljava/lang/String;)Landroid/os/Parcelable;
 
     move-result-object v0
 
-    iget-object v1, p0, Lkpu;->b:Ljava/util/Set;
+    check-cast v0, Lcom/google/android/gms/googlehelp/GoogleHelp;
 
-    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+    :try_start_0
+    iget-object v1, p0, Lkpu;->b:Ljava/lang/ref/WeakReference;
+
+    iget-object v2, p0, Lkpu;->a:Landroid/content/Intent;
+
+    new-instance v3, Lkpt;
+
+    invoke-direct {v3, v2, v1, p0}, Lkpt;-><init>(Landroid/content/Intent;Ljava/lang/ref/WeakReference;Lkpu;)V
+
+    invoke-virtual {p1}, Lbmn;->a()Landroid/os/Parcel;
 
     move-result-object v1
 
-    iget-object v2, p0, Lkpu;->c:Ljava/util/Set;
+    invoke-static {v1, v0}, Lbmp;->c(Landroid/os/Parcel;Landroid/os/Parcelable;)V
 
-    invoke-static {v2}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+    const/4 v0, 0x0
 
-    move-result-object v2
+    invoke-static {v1, v0}, Lbmp;->c(Landroid/os/Parcel;Landroid/os/Parcelable;)V
 
-    iget-object v3, p0, Lkpu;->d:Ljava/util/Set;
+    invoke-static {v1, v3}, Lbmp;->e(Landroid/os/Parcel;Landroid/os/IInterface;)V
 
-    invoke-static {v3}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+    const/4 v0, 0x2
 
-    move-result-object v3
+    invoke-virtual {p1, v0, v1}, Lbmn;->z(ILandroid/os/Parcel;)V
+    :try_end_0
+    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    iget-object v4, p0, Lkpu;->e:Lkpq;
+    return-void
 
-    invoke-static {v4}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+    :catch_0
+    move-exception p1
 
-    move-result-object v4
+    const-string v0, "gH_GoogleHelpApiImpl"
 
-    iget-object v5, p0, Lkpu;->f:Lmvv;
+    const-string v1, "Starting help failed!"
 
-    invoke-static {v5}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {v0, v1, p1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    move-result-object v5
+    sget-object p1, Lkpv;->a:Lcom/google/android/gms/common/api/Status;
 
-    new-instance v6, Ljava/lang/StringBuilder;
+    invoke-virtual {p0, p1}, Lcom/google/android/gms/common/api/internal/BasePendingResult;->h(Lcom/google/android/gms/common/api/Status;)V
 
-    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
+    return-void
+.end method
 
-    const-string v7, "PublishInfo{primaryMediaFile="
+.method public final bridge synthetic c(Ljava/lang/Object;)V
+    .locals 0
 
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    check-cast p1, Lkiv;
 
-    invoke-virtual {v6, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-super {p0, p1}, Lkji;->j(Lkiv;)V
 
-    const-string v0, ", publicMediaFiles="
-
-    invoke-virtual {v6, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v6, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v0, ", privateMediaFiles="
-
-    invoke-virtual {v6, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v6, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v0, ", cachedMediaFiles="
-
-    invoke-virtual {v6, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v6, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v0, ", mediaGroupInfoBuilder="
-
-    invoke-virtual {v6, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v6, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v0, ", listeners="
-
-    invoke-virtual {v6, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v6, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v0, "}"
-
-    invoke-virtual {v6, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    return-object v0
+    return-void
 .end method

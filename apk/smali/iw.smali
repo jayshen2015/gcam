@@ -1,85 +1,85 @@
 .class public final Liw;
-.super Landroid/widget/RatingBar;
+.super Ljava/lang/Object;
 
 
 # instance fields
-.field private final a:Liu;
+.field final a:I
+
+.field b:I
+
+.field c:I
+
+.field d:I
+
+.field e:Landroid/view/ViewGroup;
+
+.field f:Landroid/view/View;
+
+.field g:Landroid/view/View;
+
+.field public h:Lkw;
+
+.field i:Lks;
+
+.field j:Landroid/content/Context;
+
+.field k:Z
+
+.field l:Z
+
+.field m:Z
+
+.field n:Z
+
+.field o:Z
+
+.field p:Landroid/os/Bundle;
 
 
 # direct methods
-.method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
-    .locals 1
+.method public constructor <init>(I)V
+    .locals 0
 
-    const v0, 0x7f04054d
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0, p1, p2, v0}, Landroid/widget/RatingBar;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
+    iput p1, p0, Liw;->a:I
 
-    invoke-virtual {p0}, Liw;->getContext()Landroid/content/Context;
+    const/4 p1, 0x0
 
-    move-result-object p1
-
-    invoke-static {p0, p1}, Lnf;->d(Landroid/view/View;Landroid/content/Context;)V
-
-    new-instance p1, Liu;
-
-    invoke-direct {p1, p0}, Liu;-><init>(Landroid/widget/ProgressBar;)V
-
-    iput-object p1, p0, Liw;->a:Liu;
-
-    invoke-virtual {p1, p2, v0}, Liu;->b(Landroid/util/AttributeSet;I)V
+    iput-boolean p1, p0, Liw;->n:Z
 
     return-void
 .end method
 
 
 # virtual methods
-.method protected final declared-synchronized onMeasure(II)V
-    .locals 1
+.method final a(Lkw;)V
+    .locals 2
 
-    monitor-enter p0
+    iget-object v0, p0, Liw;->h:Lkw;
 
-    :try_start_0
-    invoke-super {p0, p1, p2}, Landroid/widget/RatingBar;->onMeasure(II)V
-
-    iget-object p2, p0, Liw;->a:Liu;
-
-    iget-object p2, p2, Liu;->a:Landroid/graphics/Bitmap;
-
-    if-eqz p2, :cond_0
-
-    invoke-virtual {p2}, Landroid/graphics/Bitmap;->getWidth()I
-
-    move-result p2
-
-    invoke-virtual {p0}, Liw;->getNumStars()I
-
-    move-result v0
-
-    mul-int p2, p2, v0
-
-    const/4 v0, 0x0
-
-    invoke-static {p2, p1, v0}, Landroid/view/View;->resolveSizeAndState(III)I
-
-    move-result p1
-
-    invoke-virtual {p0}, Liw;->getMeasuredHeight()I
-
-    move-result p2
-
-    invoke-virtual {p0, p1, p2}, Liw;->setMeasuredDimension(II)V
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    :cond_0
-    monitor-exit p0
+    if-ne p1, v0, :cond_0
 
     return-void
 
-    :catchall_0
-    move-exception p1
+    :cond_0
+    if-eqz v0, :cond_1
 
-    monitor-exit p0
+    iget-object v1, p0, Liw;->i:Lks;
 
-    throw p1
+    invoke-virtual {v0, v1}, Lkw;->m(Llk;)V
+
+    :cond_1
+    iput-object p1, p0, Liw;->h:Lkw;
+
+    if-eqz p1, :cond_2
+
+    iget-object v0, p0, Liw;->i:Lks;
+
+    if-eqz v0, :cond_2
+
+    invoke-virtual {p1, v0}, Lkw;->g(Llk;)V
+
+    :cond_2
+    return-void
 .end method

@@ -1,22 +1,26 @@
-.class public final Lovr;
+.class public abstract Lovr;
 .super Ljava/lang/Object;
 
 
-# static fields
-.field public static final a:Lomp;
-
-
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
+.method public constructor <init>()V
+    .locals 0
 
-    sget-object v0, Lovq;->e:Lovq;
-
-    const/4 v1, 0x3
-
-    invoke-static {v0, v1}, Lonm;->b(Ljava/lang/Object;I)V
-
-    sput-object v0, Lovr;->a:Lomp;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
+.end method
+
+
+# virtual methods
+.method public abstract a()Ljava/lang/String;
+.end method
+
+.method public abstract b(Ljava/lang/RuntimeException;Lovq;)V
+.end method
+
+.method public abstract c(Lovq;)V
+.end method
+
+.method public abstract d(Ljava/util/logging/Level;)Z
 .end method

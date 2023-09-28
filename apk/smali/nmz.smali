@@ -1,285 +1,249 @@
-.class final Lnmz;
-.super Lnmm;
+.class public final Lnmz;
+.super Ljava/lang/Object;
 
 
-# static fields
-.field static final a:Lsun/misc/Unsafe;
+# instance fields
+.field private final a:Lqkj;
 
-.field static final b:J
-
-.field static final c:J
-
-.field static final d:J
-
-.field static final e:J
-
-.field static final f:J
+.field private final b:Lqkj;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 4
+.method public constructor <init>([B)V
+    .locals 1
 
-    :try_start_0
-    invoke-static {}, Lsun/misc/Unsafe;->getUnsafe()Lsun/misc/Unsafe;
+    const/16 v0, 0x10
 
-    move-result-object v0
-    :try_end_0
-    .catch Ljava/lang/SecurityException; {:try_start_0 .. :try_end_0} :catch_0
+    invoke-direct {p0, p1, v0}, Lnmz;-><init>([BI)V
 
-    goto :goto_0
+    return-void
+.end method
 
-    :catch_0
-    move-exception v0
+.method public constructor <init>([BI)V
+    .locals 2
 
-    :try_start_1
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
     new-instance v0, Lnmy;
 
-    invoke-direct {v0}, Lnmy;-><init>()V
+    const/4 v1, 0x1
 
-    invoke-static {v0}, Ljava/security/AccessController;->doPrivileged(Ljava/security/PrivilegedExceptionAction;)Ljava/lang/Object;
+    invoke-direct {v0, p1, v1}, Lnmy;-><init>([BI)V
+
+    invoke-static {v0}, Lqmd;->N(Lqmj;)Lqkj;
 
     move-result-object v0
 
-    check-cast v0, Lsun/misc/Unsafe;
-    :try_end_1
-    .catch Ljava/security/PrivilegedActionException; {:try_start_1 .. :try_end_1} :catch_3
+    iput-object v0, p0, Lnmz;->a:Lqkj;
 
-    :goto_0
-    :try_start_2
-    const-class v1, Lnnb;
+    new-instance v0, Lnmy;
 
-    const-string v2, "waiters"
+    const/4 v1, 0x0
 
-    invoke-virtual {v1, v2}, Ljava/lang/Class;->getDeclaredField(Ljava/lang/String;)Ljava/lang/reflect/Field;
+    invoke-direct {v0, p1, v1}, Lnmy;-><init>([BI)V
 
-    move-result-object v2
+    invoke-static {v0}, Lqmd;->N(Lqmj;)Lqkj;
 
-    invoke-virtual {v0, v2}, Lsun/misc/Unsafe;->objectFieldOffset(Ljava/lang/reflect/Field;)J
+    move-result-object v0
 
-    move-result-wide v2
+    iput-object v0, p0, Lnmz;->b:Lqkj;
 
-    sput-wide v2, Lnmz;->c:J
+    array-length p1, p1
 
-    const-string v2, "listeners"
+    if-eqz p1, :cond_1
 
-    invoke-virtual {v1, v2}, Ljava/lang/Class;->getDeclaredField(Ljava/lang/String;)Ljava/lang/reflect/Field;
-
-    move-result-object v2
-
-    invoke-virtual {v0, v2}, Lsun/misc/Unsafe;->objectFieldOffset(Ljava/lang/reflect/Field;)J
-
-    move-result-wide v2
-
-    sput-wide v2, Lnmz;->b:J
-
-    const-string v2, "value"
-
-    invoke-virtual {v1, v2}, Ljava/lang/Class;->getDeclaredField(Ljava/lang/String;)Ljava/lang/reflect/Field;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Lsun/misc/Unsafe;->objectFieldOffset(Ljava/lang/reflect/Field;)J
-
-    move-result-wide v1
-
-    sput-wide v1, Lnmz;->d:J
-
-    const-class v1, Lnna;
-
-    const-string v2, "thread"
-
-    invoke-virtual {v1, v2}, Ljava/lang/Class;->getDeclaredField(Ljava/lang/String;)Ljava/lang/reflect/Field;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Lsun/misc/Unsafe;->objectFieldOffset(Ljava/lang/reflect/Field;)J
-
-    move-result-wide v1
-
-    sput-wide v1, Lnmz;->e:J
-
-    const-class v1, Lnna;
-
-    const-string v2, "next"
-
-    invoke-virtual {v1, v2}, Ljava/lang/Class;->getDeclaredField(Ljava/lang/String;)Ljava/lang/reflect/Field;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Lsun/misc/Unsafe;->objectFieldOffset(Ljava/lang/reflect/Field;)J
-
-    move-result-wide v1
-
-    sput-wide v1, Lnmz;->f:J
-
-    sput-object v0, Lnmz;->a:Lsun/misc/Unsafe;
-    :try_end_2
-    .catch Ljava/lang/NoSuchFieldException; {:try_start_2 .. :try_end_2} :catch_2
-    .catch Ljava/lang/RuntimeException; {:try_start_2 .. :try_end_2} :catch_1
+    if-gt p1, p2, :cond_0
 
     return-void
 
-    :catch_1
-    move-exception v0
+    :cond_0
+    new-instance p1, Ljava/lang/StringBuilder;
 
-    throw v0
+    invoke-direct {p1}, Ljava/lang/StringBuilder;-><init>()V
 
-    :catch_2
-    move-exception v0
+    const-string v0, "Decoded "
 
-    new-instance v1, Ljava/lang/RuntimeException;
+    invoke-virtual {p1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-direct {v1, v0}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/Throwable;)V
-
-    throw v1
-
-    :catch_3
-    move-exception v0
-
-    new-instance v1, Ljava/lang/RuntimeException;
-
-    invoke-virtual {v0}, Ljava/security/PrivilegedActionException;->getCause()Ljava/lang/Throwable;
+    invoke-virtual {p0}, Lnmz;->a()Ljava/lang/String;
 
     move-result-object v0
 
-    const-string v2, "Could not initialize intrinsics"
+    invoke-virtual {p1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-direct {v1, v2, v0}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
+    const-string v0, " (encoded "
 
-    throw v1
+    invoke-virtual {p1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {p0}, Lnmz;->b()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {p1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v0, ") is longer than "
+
+    invoke-virtual {p1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {p1, p2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    const-string p2, "-byte maximum"
+
+    invoke-virtual {p1, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {p1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p1
+
+    new-instance p2, Ljava/lang/IllegalStateException;
+
+    invoke-virtual {p1}, Ljava/lang/Object;->toString()Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-direct {p2, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw p2
+
+    :cond_1
+    new-instance p1, Ljava/lang/IllegalStateException;
+
+    const-string p2, "Decoded id is empty"
+
+    invoke-virtual {p2}, Ljava/lang/Object;->toString()Ljava/lang/String;
+
+    move-result-object p2
+
+    invoke-direct {p1, p2}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw p1
 .end method
 
-.method public constructor <init>()V
+.method public constructor <init>([B[B)V
     .locals 0
 
-    invoke-direct {p0}, Lnmm;-><init>()V
+    const/16 p2, 0x18
+
+    invoke-direct {p0, p1, p2}, Lnmz;-><init>([BI)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Lnnb;Lnmq;)Lnmq;
-    .locals 2
+.method public final a()Ljava/lang/String;
+    .locals 1
+
+    iget-object v0, p0, Lnmz;->a:Lqkj;
+
+    invoke-interface {v0}, Lqkj;->a()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/String;
+
+    return-object v0
+.end method
+
+.method public final b()Ljava/lang/String;
+    .locals 1
+
+    iget-object v0, p0, Lnmz;->b:Lqkj;
+
+    invoke-interface {v0}, Lqkj;->a()Ljava/lang/Object;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    check-cast v0, Ljava/lang/String;
+
+    return-object v0
+.end method
+
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 1
+
+    instance-of v0, p1, Lnmz;
+
+    if-eqz v0, :cond_0
+
+    check-cast p1, Lnmz;
+
+    invoke-virtual {p1}, Lnmz;->a()Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-virtual {p0}, Lnmz;->a()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {p1, v0}, Lqno;->c(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result p1
+
+    if-eqz p1, :cond_0
+
+    const/4 p1, 0x1
+
+    return p1
 
     :cond_0
-    iget-object v0, p1, Lnnb;->listeners:Lnmq;
+    const/4 p1, 0x0
 
-    if-ne p2, v0, :cond_1
-
-    return-object v0
-
-    :cond_1
-    invoke-virtual {p0, p1, v0, p2}, Lnmz;->e(Lnnb;Lnmq;Lnmq;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_0
-
-    return-object v0
+    return p1
 .end method
 
-.method public final b(Lnnb;Lnna;)Lnna;
+.method public final hashCode()I
+    .locals 1
+
+    invoke-virtual {p0}, Lnmz;->b()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/String;->hashCode()I
+
+    move-result v0
+
+    mul-int/lit8 v0, v0, 0x1f
+
+    return v0
+.end method
+
+.method public final toString()Ljava/lang/String;
     .locals 2
 
-    :cond_0
-    iget-object v0, p1, Lnnb;->waiters:Lnna;
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    if-ne p2, v0, :cond_1
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v1, "F250Id(decodedId="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {p0}, Lnmz;->a()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v1, ", encodedId="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {p0}, Lnmz;->b()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const/16 v1, 0x29
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
 
     return-object v0
-
-    :cond_1
-    invoke-virtual {p0, p1, v0, p2}, Lnmz;->g(Lnnb;Lnna;Lnna;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_0
-
-    return-object v0
-.end method
-
-.method public final c(Lnna;Lnna;)V
-    .locals 3
-
-    sget-object v0, Lnmz;->a:Lsun/misc/Unsafe;
-
-    sget-wide v1, Lnmz;->f:J
-
-    invoke-virtual {v0, p1, v1, v2, p2}, Lsun/misc/Unsafe;->putObject(Ljava/lang/Object;JLjava/lang/Object;)V
-
-    return-void
-.end method
-
-.method public final d(Lnna;Ljava/lang/Thread;)V
-    .locals 3
-
-    sget-object v0, Lnmz;->a:Lsun/misc/Unsafe;
-
-    sget-wide v1, Lnmz;->e:J
-
-    invoke-virtual {v0, p1, v1, v2, p2}, Lsun/misc/Unsafe;->putObject(Ljava/lang/Object;JLjava/lang/Object;)V
-
-    return-void
-.end method
-
-.method public final e(Lnnb;Lnmq;Lnmq;)Z
-    .locals 6
-
-    sget-object v0, Lnmz;->a:Lsun/misc/Unsafe;
-
-    sget-wide v2, Lnmz;->b:J
-
-    move-object v1, p1
-
-    move-object v4, p2
-
-    move-object v5, p3
-
-    invoke-static/range {v0 .. v5}, Lnmx;->a(Lsun/misc/Unsafe;Ljava/lang/Object;JLjava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result p1
-
-    return p1
-.end method
-
-.method public final f(Lnnb;Ljava/lang/Object;Ljava/lang/Object;)Z
-    .locals 6
-
-    sget-object v0, Lnmz;->a:Lsun/misc/Unsafe;
-
-    sget-wide v2, Lnmz;->d:J
-
-    move-object v1, p1
-
-    move-object v4, p2
-
-    move-object v5, p3
-
-    invoke-static/range {v0 .. v5}, Lnmx;->a(Lsun/misc/Unsafe;Ljava/lang/Object;JLjava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result p1
-
-    return p1
-.end method
-
-.method public final g(Lnnb;Lnna;Lnna;)Z
-    .locals 6
-
-    sget-object v0, Lnmz;->a:Lsun/misc/Unsafe;
-
-    sget-wide v2, Lnmz;->c:J
-
-    move-object v1, p1
-
-    move-object v4, p2
-
-    move-object v5, p3
-
-    invoke-static/range {v0 .. v5}, Lnmx;->a(Lsun/misc/Unsafe;Ljava/lang/Object;JLjava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result p1
-
-    return p1
 .end method

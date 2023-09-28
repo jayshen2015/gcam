@@ -1,16 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <plurals name="accessibility_timelapse_manual_record_speed_desc">
-        <item quantity="other">Pagreitinto vaizdo įrašo sparta: %d k.</item>
-        <item quantity="one">Pagreitinto vaizdo įrašo sparta: %d k.</item>
-        <item quantity="few">Pagreitinto vaizdo įrašo sparta: %d k.</item>
-        <item quantity="many">Pagreitinto vaizdo įrašo sparta: %d k.</item>
-    </plurals>
-    <plurals name="number_of_cropped_face">
-        <item quantity="other">%d apkarpytų.</item>
-        <item quantity="one">%d apkarpytas.</item>
-        <item quantity="few">%d apkarpyti.</item>
-        <item quantity="many">%d apkarpyta.</item>
+    <plurals name="number_of_faces_announcement">
+        <item quantity="other">%1$d veidų.</item>
+        <item quantity="one">%1$d veidas.</item>
+        <item quantity="few">%1$d veidai.</item>
+        <item quantity="many">%1$d veido.</item>
     </plurals>
     <plurals name="photos_remaining">
         <item quantity="other">Maždaug %s nuotraukų</item>
@@ -25,10 +19,10 @@
         <item quantity="many">(pasirinkta %1$d programos)</item>
     </plurals>
     <plurals name="social_share_info">
-        <item quantity="other">Sparčiai bendrinkite nuotraukas ir vaizdo įrašus socialinėse programose iš Fotoaparato programos. Pasirinkite iki %1$d programų. Užrakintame aplanke išsaugotų nuotraukų ir vaizdo įrašų bendrinti negalima.</item>
-        <item quantity="one">Sparčiai bendrinkite nuotraukas ir vaizdo įrašus socialinėse programose iš Fotoaparato programos. Pasirinkite iki %1$d programos. Užrakintame aplanke išsaugotų nuotraukų ir vaizdo įrašų bendrinti negalima.</item>
-        <item quantity="few">Sparčiai bendrinkite nuotraukas ir vaizdo įrašus socialinėse programose iš Fotoaparato programos. Pasirinkite iki %1$d programų. Užrakintame aplanke išsaugotų nuotraukų ir vaizdo įrašų bendrinti negalima.</item>
-        <item quantity="many">Sparčiai bendrinkite nuotraukas ir vaizdo įrašus socialinėse programose iš Fotoaparato programos. Pasirinkite iki %1$d programos. Užrakintame aplanke išsaugotų nuotraukų ir vaizdo įrašų bendrinti negalima.</item>
+        <item quantity="other">Sparčiai bendrinkite nuotraukas ir vaizdo įrašus socialinėse programose tiesiai iš Fotoaparato programos. Pasirinkite iki %1$d programų. Užrakintame aplanke išsaugotų nuotraukų ir vaizdo įrašų bendrinti negalima.</item>
+        <item quantity="one">Sparčiai bendrinkite nuotraukas ir vaizdo įrašus socialinėse programose tiesiai iš Fotoaparato programos. Pasirinkite iki %1$d programos. Užrakintame aplanke išsaugotų nuotraukų ir vaizdo įrašų bendrinti negalima.</item>
+        <item quantity="few">Sparčiai bendrinkite nuotraukas ir vaizdo įrašus socialinėse programose tiesiai iš Fotoaparato programos. Pasirinkite iki %1$d programų. Užrakintame aplanke išsaugotų nuotraukų ir vaizdo įrašų bendrinti negalima.</item>
+        <item quantity="many">Sparčiai bendrinkite nuotraukas ir vaizdo įrašus socialinėse programose tiesiai iš Fotoaparato programos. Pasirinkite iki %1$d programos. Užrakintame aplanke išsaugotų nuotraukų ir vaizdo įrašų bendrinti negalima.</item>
     </plurals>
     <plurals name="social_share_select_error">
         <item quantity="other">Pasirinkite iki %1$d programų</item>

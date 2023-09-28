@@ -1,288 +1,340 @@
-.class public abstract Lmvm;
-.super Ljava/util/AbstractCollection;
+.class public final synthetic Lmvm;
+.super Ljava/lang/Object;
 
 # interfaces
-.implements Ljava/io/Serializable;
+.implements Ljava/util/Comparator;
 
 
 # static fields
-.field private static final rn:[Ljava/lang/Object;
+.field public static final synthetic a:Lmvm;
+
+.field public static final synthetic b:Lmvm;
+
+.field public static final synthetic c:Lmvm;
+
+.field public static final synthetic d:Lmvm;
+
+
+# instance fields
+.field private final synthetic e:I
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
+.method static synthetic constructor <clinit>()V
+    .locals 2
 
-    const/4 v0, 0x0
+    new-instance v0, Lmvm;
 
-    new-array v0, v0, [Ljava/lang/Object;
+    const/4 v1, 0x5
 
-    sput-object v0, Lmvm;->rn:[Ljava/lang/Object;
+    invoke-direct {v0, v1}, Lmvm;-><init>(I)V
+
+    sput-object v0, Lmvm;->d:Lmvm;
+
+    new-instance v0, Lmvm;
+
+    const/4 v1, 0x2
+
+    invoke-direct {v0, v1}, Lmvm;-><init>(I)V
+
+    sput-object v0, Lmvm;->c:Lmvm;
+
+    new-instance v0, Lmvm;
+
+    const/4 v1, 0x1
+
+    invoke-direct {v0, v1}, Lmvm;-><init>(I)V
+
+    sput-object v0, Lmvm;->b:Lmvm;
+
+    new-instance v0, Lmvm;
+
+    const/4 v1, 0x0
+
+    invoke-direct {v0, v1}, Lmvm;-><init>(I)V
+
+    sput-object v0, Lmvm;->a:Lmvm;
 
     return-void
 .end method
 
-.method public constructor <init>()V
+.method public synthetic constructor <init>(I)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/util/AbstractCollection;-><init>()V
+    iput p1, p0, Lmvm;->e:I
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
-.end method
-
-.method private readObject(Ljava/io/ObjectInputStream;)V
-    .locals 1
-
-    new-instance p1, Ljava/io/InvalidObjectException;
-
-    const-string v0, "Use SerializedForm"
-
-    invoke-direct {p1, v0}, Ljava/io/InvalidObjectException;-><init>(Ljava/lang/String;)V
-
-    throw p1
 .end method
 
 
 # virtual methods
-.method public A()[Ljava/lang/Object;
-    .locals 1
+.method public final compare(Ljava/lang/Object;Ljava/lang/Object;)I
+    .locals 4
 
-    const/4 v0, 0x0
+    iget v0, p0, Lmvm;->e:I
 
-    return-object v0
-.end method
+    const/4 v1, 0x1
 
-.method public final add(Ljava/lang/Object;)Z
-    .locals 0
-    .annotation runtime Ljava/lang/Deprecated;
-    .end annotation
+    const/4 v2, -0x1
 
-    new-instance p1, Ljava/lang/UnsupportedOperationException;
+    const/4 v3, 0x0
 
-    invoke-direct {p1}, Ljava/lang/UnsupportedOperationException;-><init>()V
+    packed-switch v0, :pswitch_data_0
 
-    throw p1
-.end method
+    check-cast p2, Ljava/lang/reflect/Constructor;
 
-.method public final addAll(Ljava/util/Collection;)Z
-    .locals 0
-    .annotation runtime Ljava/lang/Deprecated;
-    .end annotation
+    invoke-virtual {p2}, Ljava/lang/reflect/Constructor;->getParameterTypes()[Ljava/lang/Class;
 
-    new-instance p1, Ljava/lang/UnsupportedOperationException;
+    move-result-object p2
 
-    invoke-direct {p1}, Ljava/lang/UnsupportedOperationException;-><init>()V
+    array-length p2, p2
 
-    throw p1
-.end method
+    invoke-static {p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-.method public abstract cA()Z
-.end method
+    move-result-object p2
 
-.method public final clear()V
-    .locals 1
-    .annotation runtime Ljava/lang/Deprecated;
-    .end annotation
+    check-cast p1, Ljava/lang/reflect/Constructor;
 
-    new-instance v0, Ljava/lang/UnsupportedOperationException;
+    invoke-virtual {p1}, Ljava/lang/reflect/Constructor;->getParameterTypes()[Ljava/lang/Class;
 
-    invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V
+    move-result-object p1
 
-    throw v0
-.end method
+    array-length p1, p1
 
-.method public abstract contains(Ljava/lang/Object;)Z
-.end method
+    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-.method public abstract cz()Lnac;
-.end method
+    move-result-object p1
 
-.method public bridge synthetic iterator()Ljava/util/Iterator;
-    .locals 1
+    if-ne p2, p1, :cond_5
 
-    invoke-virtual {p0}, Lmvm;->cz()Lnac;
+    return v3
 
-    move-result-object v0
+    :pswitch_0
+    check-cast p1, Ljava/util/Map$Entry;
 
-    return-object v0
-.end method
+    check-cast p2, Ljava/util/Map$Entry;
 
-.method public final remove(Ljava/lang/Object;)Z
-    .locals 0
-    .annotation runtime Ljava/lang/Deprecated;
-    .end annotation
+    invoke-interface {p1}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
-    new-instance p1, Ljava/lang/UnsupportedOperationException;
+    move-result-object p1
 
-    invoke-direct {p1}, Ljava/lang/UnsupportedOperationException;-><init>()V
+    check-cast p1, Ljava/lang/String;
 
-    throw p1
-.end method
+    invoke-interface {p2}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
-.method public final removeAll(Ljava/util/Collection;)Z
-    .locals 0
-    .annotation runtime Ljava/lang/Deprecated;
-    .end annotation
+    move-result-object p2
 
-    new-instance p1, Ljava/lang/UnsupportedOperationException;
+    check-cast p2, Ljava/lang/String;
 
-    invoke-direct {p1}, Ljava/lang/UnsupportedOperationException;-><init>()V
+    invoke-virtual {p1, p2}, Ljava/lang/String;->compareTo(Ljava/lang/String;)I
 
-    throw p1
-.end method
+    move-result p1
 
-.method public final retainAll(Ljava/util/Collection;)Z
-    .locals 0
-    .annotation runtime Ljava/lang/Deprecated;
-    .end annotation
+    return p1
 
-    new-instance p1, Ljava/lang/UnsupportedOperationException;
+    :pswitch_1
+    check-cast p1, Ljava/util/Map$Entry;
 
-    invoke-direct {p1}, Ljava/lang/UnsupportedOperationException;-><init>()V
+    invoke-interface {p1}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
-    throw p1
-.end method
+    move-result-object p1
 
-.method public final toArray()[Ljava/lang/Object;
-    .locals 1
+    check-cast p1, Ljava/lang/String;
 
-    sget-object v0, Lmvm;->rn:[Ljava/lang/Object;
+    check-cast p2, Ljava/util/Map$Entry;
 
-    invoke-virtual {p0, v0}, Lmvm;->toArray([Ljava/lang/Object;)[Ljava/lang/Object;
+    invoke-interface {p2}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
+
+    move-result-object p2
+
+    check-cast p2, Ljava/lang/String;
+
+    invoke-virtual {p1, p2}, Ljava/lang/String;->compareTo(Ljava/lang/String;)I
+
+    move-result p1
+
+    return p1
+
+    :pswitch_2
+    invoke-static {p1}, Loxo;->a(Ljava/lang/Object;)Loxo;
 
     move-result-object v0
 
-    return-object v0
-.end method
-
-.method public final toArray([Ljava/lang/Object;)[Ljava/lang/Object;
-    .locals 3
-
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    invoke-virtual {p0}, Lmvm;->size()I
-
-    move-result v0
-
-    array-length v1, p1
-
-    if-ge v1, v0, :cond_1
-
-    invoke-virtual {p0}, Lmvm;->A()[Ljava/lang/Object;
+    invoke-static {p2}, Loxo;->a(Ljava/lang/Object;)Loxo;
 
     move-result-object v1
 
-    if-nez v1, :cond_0
+    if-ne v0, v1, :cond_0
 
-    invoke-static {p1, v0}, Llyh;->j([Ljava/lang/Object;I)[Ljava/lang/Object;
+    invoke-virtual {v0}, Ljava/lang/Enum;->ordinal()I
 
-    move-result-object p1
+    move-result v0
+
+    packed-switch v0, :pswitch_data_1
+
+    const/4 p1, 0x0
+
+    throw p1
+
+    :pswitch_3
+    check-cast p1, Ljava/lang/Double;
+
+    check-cast p2, Ljava/lang/Double;
+
+    invoke-virtual {p1, p2}, Ljava/lang/Double;->compareTo(Ljava/lang/Double;)I
+
+    move-result p1
+
+    goto :goto_0
+
+    :pswitch_4
+    check-cast p1, Ljava/lang/Long;
+
+    check-cast p2, Ljava/lang/Long;
+
+    invoke-virtual {p1, p2}, Ljava/lang/Long;->compareTo(Ljava/lang/Long;)I
+
+    move-result p1
+
+    goto :goto_0
+
+    :pswitch_5
+    check-cast p1, Ljava/lang/String;
+
+    check-cast p2, Ljava/lang/String;
+
+    invoke-virtual {p1, p2}, Ljava/lang/String;->compareTo(Ljava/lang/String;)I
+
+    move-result p1
+
+    goto :goto_0
+
+    :pswitch_6
+    check-cast p1, Ljava/lang/Boolean;
+
+    check-cast p2, Ljava/lang/Boolean;
+
+    invoke-virtual {p1, p2}, Ljava/lang/Boolean;->compareTo(Ljava/lang/Boolean;)I
+
+    move-result p1
 
     goto :goto_0
 
     :cond_0
-    invoke-virtual {p0}, Lmvm;->z()I
+    invoke-virtual {v0, v1}, Loxo;->compareTo(Ljava/lang/Enum;)I
 
-    move-result v0
+    move-result p1
 
-    invoke-virtual {p0}, Lmvm;->y()I
+    :goto_0
+    return p1
 
-    move-result v2
+    :pswitch_7
+    check-cast p1, Lndi;
 
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    check-cast p2, Lndi;
+
+    invoke-interface {p1}, Lndi;->b()Lnle;
+
+    invoke-interface {p1}, Lndi;->b()Lnle;
 
     move-result-object p1
 
-    invoke-static {v1, v0, v2, p1}, Ljava/util/Arrays;->copyOfRange([Ljava/lang/Object;IILjava/lang/Class;)[Ljava/lang/Object;
+    iget p1, p1, Lnle;->a:I
 
-    move-result-object p1
+    invoke-interface {p2}, Lndi;->b()Lnle;
 
-    return-object p1
+    invoke-interface {p2}, Lndi;->b()Lnle;
 
-    :cond_1
-    if-le v1, v0, :cond_2
+    move-result-object p2
+
+    iget p2, p2, Lnle;->a:I
+
+    if-ne p1, p2, :cond_1
 
     const/4 v1, 0x0
 
-    aput-object v1, p1, v0
+    goto :goto_1
+
+    :cond_1
+    if-gt p1, p2, :cond_2
+
+    :goto_1
+    return v1
 
     :cond_2
-    :goto_0
-    const/4 v0, 0x0
+    return v2
 
-    invoke-virtual {p0, p1, v0}, Lmvm;->x([Ljava/lang/Object;I)I
+    :pswitch_8
+    check-cast p1, Lmku;
 
-    return-object p1
-.end method
+    check-cast p2, Lmku;
 
-.method public v()Lmvv;
-    .locals 1
+    iget p1, p1, Lmku;->b:I
 
-    const/4 v0, 0x0
+    iget p2, p2, Lmku;->b:I
 
-    throw v0
-.end method
+    if-ne p1, p2, :cond_3
 
-.method writeReplace()Ljava/lang/Object;
-    .locals 2
+    const/4 v1, 0x0
 
-    new-instance v0, Lmvt;
+    goto :goto_2
 
-    invoke-virtual {p0}, Lmvm;->toArray()[Ljava/lang/Object;
+    :cond_3
+    if-lt p1, p2, :cond_4
 
-    move-result-object v1
+    :goto_2
+    return v1
 
-    invoke-direct {v0, v1}, Lmvt;-><init>([Ljava/lang/Object;)V
+    :cond_4
+    return v2
 
-    return-object v0
-.end method
+    :pswitch_9
+    check-cast p1, Lmvo;
 
-.method public x([Ljava/lang/Object;I)I
-    .locals 3
+    check-cast p2, Lmvo;
 
-    invoke-virtual {p0}, Lmvm;->cz()Lnac;
+    iget-object p1, p1, Lmvo;->a:Lovq;
 
-    move-result-object v0
+    invoke-interface {p1}, Lovq;->e()J
 
-    :goto_0
-    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
+    move-result-wide v0
 
-    move-result v1
+    iget-object p1, p2, Lmvo;->a:Lovq;
 
-    if-eqz v1, :cond_0
+    invoke-interface {p1}, Lovq;->e()J
 
-    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    move-result-wide p1
 
-    move-result-object v1
+    cmp-long v2, v0, p1
 
-    add-int/lit8 v2, p2, 0x1
+    return v2
 
-    aput-object v1, p1, p2
+    :cond_5
+    invoke-interface {p2, p1}, Ljava/lang/Comparable;->compareTo(Ljava/lang/Object;)I
 
-    move p2, v2
+    move-result p1
 
-    goto :goto_0
+    return p1
 
-    :cond_0
-    return p2
-.end method
+    nop
 
-.method public y()I
-    .locals 1
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_9
+        :pswitch_8
+        :pswitch_7
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 
-    new-instance v0, Ljava/lang/UnsupportedOperationException;
-
-    invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V
-
-    throw v0
-.end method
-
-.method public z()I
-    .locals 1
-
-    new-instance v0, Ljava/lang/UnsupportedOperationException;
-
-    invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V
-
-    throw v0
+    :pswitch_data_1
+    .packed-switch 0x0
+        :pswitch_6
+        :pswitch_5
+        :pswitch_4
+        :pswitch_3
+    .end packed-switch
 .end method

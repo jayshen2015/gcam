@@ -1,185 +1,172 @@
-.class public final synthetic Lhpi;
+.class final Lhpi;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Landroid/hardware/SensorEventListener;
 
 
 # instance fields
-.field public final synthetic a:J
-
-.field public final synthetic b:F
-
-.field public final synthetic c:Ljava/lang/Object;
-
-.field private final synthetic d:I
+.field final synthetic a:Lhpj;
 
 
 # direct methods
-.method public synthetic constructor <init>(Leuh;FJI)V
+.method public constructor <init>(Lhpj;)V
     .locals 0
 
-    iput p5, p0, Lhpi;->d:I
+    iput-object p1, p0, Lhpi;->a:Lhpj;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lhpi;->c:Ljava/lang/Object;
-
-    iput p2, p0, Lhpi;->b:F
-
-    iput-wide p3, p0, Lhpi;->a:J
-
-    return-void
-.end method
-
-.method public synthetic constructor <init>(Lhpq;JFI)V
-    .locals 0
-
-    iput p5, p0, Lhpi;->d:I
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lhpi;->c:Ljava/lang/Object;
-
-    iput-wide p2, p0, Lhpi;->a:J
-
-    iput p4, p0, Lhpi;->b:F
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final run()V
-    .locals 7
+.method public final onAccuracyChanged(Landroid/hardware/Sensor;I)V
+    .locals 0
 
-    iget v0, p0, Lhpi;->d:I
+    return-void
+.end method
 
-    packed-switch v0, :pswitch_data_0
+.method public final onSensorChanged(Landroid/hardware/SensorEvent;)V
+    .locals 8
 
-    iget-object v0, p0, Lhpi;->c:Ljava/lang/Object;
+    iget-object v0, p1, Landroid/hardware/SensorEvent;->sensor:Landroid/hardware/Sensor;
 
-    iget v1, p0, Lhpi;->b:F
+    invoke-virtual {v0}, Landroid/hardware/Sensor;->getType()I
 
-    iget-wide v2, p0, Lhpi;->a:J
+    move-result v0
 
-    check-cast v0, Leuh;
+    iget-object v1, p0, Lhpi;->a:Lhpj;
 
-    iget-object v4, v0, Leuh;->a:Leuj;
+    iget-object v1, v1, Lhpj;->c:Landroid/hardware/Sensor;
 
-    iget-object v4, v4, Leuj;->i:Liff;
+    invoke-virtual {v1}, Landroid/hardware/Sensor;->getType()I
 
-    const/high16 v5, 0x42c80000    # 100.0f
+    move-result v1
 
-    mul-float v5, v5, v1
+    if-ne v0, v1, :cond_2
 
-    float-to-int v5, v5
+    iget-object v0, p0, Lhpi;->a:Lhpj;
+
+    iget-object v0, v0, Lhpj;->f:[F
+
+    iget-object p1, p1, Landroid/hardware/SensorEvent;->values:[F
+
+    invoke-static {v0, p1}, Landroid/hardware/SensorManager;->getRotationMatrixFromVector([F[F)V
+
+    iget-object p1, p0, Lhpi;->a:Lhpj;
+
+    iget-object v0, p1, Lhpj;->f:[F
+
+    const/4 v1, 0x3
+
+    iget-object p1, p1, Lhpj;->g:[F
+
+    const/4 v2, 0x1
+
+    invoke-static {v0, v2, v1, p1}, Landroid/hardware/SensorManager;->remapCoordinateSystem([FII[F)Z
+
+    iget-object p1, p0, Lhpi;->a:Lhpj;
+
+    iget-object v0, p1, Lhpj;->g:[F
+
+    iget-object p1, p1, Lhpj;->h:[F
+
+    invoke-static {v0, p1}, Landroid/hardware/SensorManager;->getOrientation([F[F)[F
+
+    iget-object p1, p0, Lhpi;->a:Lhpj;
+
+    iget-object v0, p1, Lhpj;->h:[F
+
+    const/4 v1, 0x0
+
+    aget v3, v0, v1
+
+    const v4, 0x42652ee1
+
+    mul-float v3, v3, v4
+
+    const/high16 v5, 0x43b40000    # 360.0f
+
+    rem-float/2addr v3, v5
 
     const/4 v6, 0x0
 
-    invoke-interface {v4, v5, v2, v3, v6}, Liff;->D(IJZ)V
+    cmpg-float v7, v3, v6
 
-    invoke-virtual {v0, v1}, Leuh;->g(F)V
+    if-gez v7, :cond_0
 
-    iget-object v2, v0, Leuh;->a:Leuj;
+    add-float/2addr v3, v5
 
-    iget-object v2, v2, Leuj;->k:Lfmd;
+    :cond_0
+    aget v2, v0, v2
 
-    invoke-interface {v2}, Lfmd;->a()V
+    mul-float v2, v2, v4
 
-    const/high16 v2, 0x3f800000    # 1.0f
+    const/4 v7, 0x2
 
-    cmpl-float v1, v1, v2
+    aget v0, v0, v7
 
-    if-nez v1, :cond_2
+    mul-float v0, v0, v4
 
-    iget-object v1, v0, Leuh;->a:Leuj;
+    rem-float/2addr v0, v5
 
-    iget-object v1, v1, Leuj;->i:Liff;
+    cmpg-float v4, v0, v6
 
-    invoke-interface {v1}, Liff;->m()V
+    if-gez v4, :cond_1
 
-    iget-object v0, v0, Leuh;->a:Leuj;
+    add-float/2addr v0, v5
 
-    iget-object v0, v0, Leuj;->j:Lhgy;
+    :cond_1
+    new-instance v4, Lhph;
 
-    const v1, 0x7f130008
+    invoke-direct {v4, v3, v2, v0}, Lhph;-><init>(FFF)V
 
-    invoke-interface {v0, v1}, Lhgy;->b(I)V
+    iget-object v0, p1, Lhpj;->e:Ljava/lang/Object;
 
-    return-void
+    monitor-enter v0
 
-    :pswitch_0
-    iget-object v0, p0, Lhpi;->c:Ljava/lang/Object;
+    :try_start_0
+    iget-object p1, p1, Lhpj;->i:Ljava/util/Set;
 
-    iget-wide v1, p0, Lhpi;->a:J
+    invoke-static {p1}, Loom;->j(Ljava/util/Collection;)Loom;
 
-    iget v3, p0, Lhpi;->b:F
+    move-result-object p1
 
-    check-cast v0, Lhpq;
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    invoke-virtual {v0}, Lhpq;->k()Z
+    invoke-interface {p1}, Ljava/util/List;->size()I
 
-    move-result v4
+    move-result v0
 
-    if-nez v4, :cond_0
+    :goto_0
+    if-ge v1, v0, :cond_2
+
+    invoke-interface {p1, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Lhpg;
+
+    invoke-interface {v2, v4}, Lhpg;->b(Lhph;)V
+
+    add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    :cond_0
-    sget-object v4, Ljava/util/concurrent/TimeUnit;->SECONDS:Ljava/util/concurrent/TimeUnit;
+    :catchall_0
+    move-exception p1
 
-    invoke-virtual {v4, v1, v2}, Ljava/util/concurrent/TimeUnit;->toMillis(J)J
+    :try_start_1
+    monitor-exit v0
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    move-result-wide v4
-
-    long-to-float v4, v4
-
-    div-float/2addr v4, v3
-
-    iget-object v3, v0, Lhpq;->h:Lhxb;
-
-    float-to-long v4, v4
-
-    invoke-interface {v3, v4, v5}, Lhxb;->g(J)V
-
-    iget-object v3, v0, Lhpq;->D:Lipk;
-
-    const-string v6, "/video_state_recording_output"
-
-    invoke-interface {v3, v6, v4, v5}, Lipk;->l(Ljava/lang/String;J)V
-
-    iget-object v3, v0, Lhpq;->b:Ljava/util/concurrent/atomic/AtomicLong;
-
-    invoke-virtual {v3}, Ljava/util/concurrent/atomic/AtomicLong;->get()J
-
-    move-result-wide v3
-
-    cmp-long v5, v3, v1
-
-    if-eqz v5, :cond_1
-
-    iget-object v3, v0, Lhpq;->p:Liff;
-
-    invoke-interface {v3}, Liff;->ak()V
-
-    iget-object v0, v0, Lhpq;->b:Ljava/util/concurrent/atomic/AtomicLong;
-
-    invoke-virtual {v0, v1, v2}, Ljava/util/concurrent/atomic/AtomicLong;->set(J)V
-
-    return-void
-
-    :cond_1
-    :goto_0
-    return-void
+    throw p1
 
     :cond_2
     return-void
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
 .end method

@@ -1,68 +1,68 @@
-.class public final Lkk;
+.class Lkk;
 .super Ljava/lang/Object;
 
 
+# instance fields
+.field final a:Landroid/content/Context;
+
+.field public b:Lxf;
+
+
 # direct methods
-.method static a(Landroid/widget/AbsListView;Z)V
+.method public constructor <init>(Landroid/content/Context;)V
     .locals 0
 
-    invoke-virtual {p0, p1}, Landroid/widget/AbsListView;->setSelectedChildViewEnabled(Z)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lkk;->a:Landroid/content/Context;
 
     return-void
 .end method
 
-.method static b(Landroid/widget/AbsListView;)Z
-    .locals 0
 
-    invoke-virtual {p0}, Landroid/widget/AbsListView;->isSelectedChildViewEnabled()Z
+# virtual methods
+.method final a(Landroid/view/MenuItem;)Landroid/view/MenuItem;
+    .locals 2
 
-    move-result p0
+    instance-of v0, p1, Les;
 
-    return p0
-.end method
+    if-eqz v0, :cond_1
 
-.method public static synthetic c(I)Ljava/lang/String;
-    .locals 0
+    move-object v0, p1
 
-    packed-switch p0, :pswitch_data_0
+    check-cast v0, Les;
 
-    const-string p0, "CAMERA2_EXCEPTION"
+    iget-object v1, p0, Lkk;->b:Lxf;
 
-    return-object p0
+    if-nez v1, :cond_0
 
-    :pswitch_0
-    const-string p0, "CAMERA2_ERROR"
+    new-instance v1, Lxf;
 
-    return-object p0
+    invoke-direct {v1}, Lxf;-><init>()V
 
-    :pswitch_1
-    const-string p0, "CAMERA2_DISCONNECTED"
+    iput-object v1, p0, Lkk;->b:Lxf;
 
-    return-object p0
+    :cond_0
+    iget-object v1, p0, Lkk;->b:Lxf;
 
-    :pswitch_2
-    const-string p0, "CAMERA2_CLOSED"
+    invoke-virtual {v1, p1}, Lxf;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
-    return-object p0
+    move-result-object p1
 
-    :pswitch_3
-    const-string p0, "APP_DISCONNECTED"
+    check-cast p1, Landroid/view/MenuItem;
 
-    return-object p0
+    if-nez p1, :cond_1
 
-    :pswitch_4
-    const-string p0, "APP_CLOSED"
+    new-instance p1, Llf;
 
-    return-object p0
+    iget-object v1, p0, Lkk;->a:Landroid/content/Context;
 
-    nop
+    invoke-direct {p1, v1, v0}, Llf;-><init>(Landroid/content/Context;Les;)V
 
-    :pswitch_data_0
-    .packed-switch 0x1
-        :pswitch_4
-        :pswitch_3
-        :pswitch_2
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
+    iget-object v1, p0, Lkk;->b:Lxf;
+
+    invoke-virtual {v1, v0, p1}, Lxf;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    :cond_1
+    return-object p1
 .end method

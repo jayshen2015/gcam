@@ -1,30 +1,22 @@
 .class public final Ldkn;
-.super Lifk;
+.super Ljava/lang/Object;
 
 
-# instance fields
-.field final synthetic a:Ldkp;
+# static fields
+.field public static final a:Lcsm;
 
 
 # direct methods
-.method public constructor <init>(Ldkp;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 2
 
-    iput-object p1, p0, Ldkn;->a:Ldkp;
+    new-instance v0, Lcsm;
 
-    invoke-direct {p0}, Lifk;-><init>()V
+    const/16 v1, 0x13
 
-    return-void
-.end method
+    invoke-direct {v0, v1}, Lcsm;-><init>(I)V
 
-
-# virtual methods
-.method public final onShutterButtonDown()V
-    .locals 1
-
-    iget-object v0, p0, Ldkn;->a:Ldkp;
-
-    invoke-interface {v0}, Ldkp;->e()V
+    sput-object v0, Ldkn;->a:Lcsm;
 
     return-void
 .end method

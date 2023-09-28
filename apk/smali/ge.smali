@@ -1,98 +1,102 @@
-.class final Lge;
-.super Lagb;
-
-
-# instance fields
-.field final synthetic a:Lgf;
-
-.field private b:Z
-
-.field private c:I
+.class public Lge;
+.super Ljava/lang/Object;
 
 
 # direct methods
-.method public constructor <init>(Lgf;)V
+.method public constructor <init>()V
     .locals 0
 
-    iput-object p1, p0, Lge;->a:Lgf;
-
-    invoke-direct {p0}, Lagb;-><init>()V
-
-    const/4 p1, 0x0
-
-    iput-boolean p1, p0, Lge;->b:Z
-
-    iput p1, p0, Lge;->c:I
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
+.end method
+
+.method static a(Landroid/view/View;II)V
+    .locals 0
+
+    const/4 p2, 0x3
+
+    invoke-virtual {p0, p1, p2}, Landroid/view/View;->setScrollIndicators(II)V
+
+    return-void
+.end method
+
+.method public static synthetic c(I)Ljava/lang/String;
+    .locals 0
+
+    packed-switch p0, :pswitch_data_0
+
+    const-string p0, "METERED"
+
+    return-object p0
+
+    :pswitch_0
+    const-string p0, "NOT_ROAMING"
+
+    return-object p0
+
+    :pswitch_1
+    const-string p0, "UNMETERED"
+
+    return-object p0
+
+    :pswitch_2
+    const-string p0, "CONNECTED"
+
+    return-object p0
+
+    :pswitch_3
+    const-string p0, "NOT_REQUIRED"
+
+    return-object p0
+
+    :pswitch_data_0
+    .packed-switch 0x1
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
+.end method
+
+.method public static d()Lge;
+    .locals 1
+
+    new-instance v0, Lamu;
+
+    invoke-direct {v0}, Lamu;-><init>()V
+
+    return-object v0
+.end method
+
+.method public static e()Lge;
+    .locals 1
+
+    new-instance v0, Lamv;
+
+    invoke-direct {v0}, Lamv;-><init>()V
+
+    return-object v0
+.end method
+
+.method public static f()Lge;
+    .locals 2
+
+    new-instance v0, Lamw;
+
+    sget-object v1, Lamq;->a:Lamq;
+
+    invoke-direct {v0, v1}, Lamw;-><init>(Lamq;)V
+
+    return-object v0
 .end method
 
 
 # virtual methods
-.method public final a()V
-    .locals 2
+.method public b(Landroid/support/v7/widget/RecyclerView;)Landroid/widget/EdgeEffect;
+    .locals 0
 
-    iget v0, p0, Lge;->c:I
+    const/4 p1, 0x0
 
-    add-int/lit8 v0, v0, 0x1
-
-    iput v0, p0, Lge;->c:I
-
-    iget-object v1, p0, Lge;->a:Lgf;
-
-    iget-object v1, v1, Lgf;->a:Ljava/util/ArrayList;
-
-    invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
-
-    move-result v1
-
-    if-ne v0, v1, :cond_1
-
-    iget-object v0, p0, Lge;->a:Lgf;
-
-    iget-object v0, v0, Lgf;->b:Laga;
-
-    if-eqz v0, :cond_0
-
-    invoke-interface {v0}, Laga;->a()V
-
-    :cond_0
-    const/4 v0, 0x0
-
-    iput v0, p0, Lge;->c:I
-
-    iput-boolean v0, p0, Lge;->b:Z
-
-    iget-object v1, p0, Lge;->a:Lgf;
-
-    iput-boolean v0, v1, Lgf;->c:Z
-
-    :cond_1
-    return-void
-.end method
-
-.method public final b()V
-    .locals 1
-
-    iget-boolean v0, p0, Lge;->b:Z
-
-    if-eqz v0, :cond_0
-
-    return-void
-
-    :cond_0
-    const/4 v0, 0x1
-
-    iput-boolean v0, p0, Lge;->b:Z
-
-    iget-object v0, p0, Lge;->a:Lgf;
-
-    iget-object v0, v0, Lgf;->b:Laga;
-
-    if-eqz v0, :cond_1
-
-    invoke-interface {v0}, Laga;->b()V
-
-    :cond_1
-    return-void
+    throw p1
 .end method

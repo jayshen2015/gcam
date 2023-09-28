@@ -1,191 +1,187 @@
-.class public final synthetic Lfel;
+.class public final Lfel;
 .super Ljava/lang/Object;
 
-# interfaces
-.implements Lkee;
+
+# static fields
+.field public static final a:Louj;
 
 
 # instance fields
-.field public final synthetic a:Ljava/lang/Object;
+.field public b:Ljava/io/File;
 
-.field public final synthetic b:Ljava/lang/Object;
+.field public final c:Ljava/io/File;
 
-.field public final synthetic c:Ljava/lang/Object;
+.field public final d:Ljava/io/File;
 
-.field private final synthetic d:I
+.field public final e:Lfix;
+
+.field public final f:Lhsh;
+
+.field public final g:Lhrz;
+
+.field public final h:Lkme;
+
+.field public final i:Lmhm;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lfen;Lfgf;Ljava/util/concurrent/Executor;I)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 1
 
-    iput p4, p0, Lfel;->d:I
+    const-string v0, "com/google/android/apps/camera/legacy/lightcycle/storage/LocalFileStorageManager"
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-static {v0}, Louj;->h(Ljava/lang/String;)Louj;
 
-    iput-object p1, p0, Lfel;->a:Ljava/lang/Object;
+    move-result-object v0
 
-    iput-object p2, p0, Lfel;->b:Ljava/lang/Object;
-
-    iput-object p3, p0, Lfel;->c:Ljava/lang/Object;
+    sput-object v0, Lfel;->a:Louj;
 
     return-void
 .end method
 
-.method public synthetic constructor <init>(Ljava/util/concurrent/atomic/AtomicInteger;Lkef;Ljvk;I)V
+.method public constructor <init>(Lhpu;Lkme;Lmhm;Lhrz;Lfix;Lhsh;[B[B)V
     .locals 0
-
-    iput p4, p0, Lfel;->d:I
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lfel;->c:Ljava/lang/Object;
+    const-string p7, ""
 
-    iput-object p2, p0, Lfel;->b:Ljava/lang/Object;
+    invoke-interface {p1, p7}, Lhpu;->c(Ljava/lang/String;)Ljava/io/File;
 
-    iput-object p3, p0, Lfel;->a:Ljava/lang/Object;
+    move-result-object p7
+
+    iput-object p7, p0, Lfel;->c:Ljava/io/File;
+
+    const-string p7, "panorama_sessions"
+
+    invoke-interface {p1, p7}, Lhpu;->c(Ljava/lang/String;)Ljava/io/File;
+
+    move-result-object p1
+
+    iput-object p1, p0, Lfel;->d:Ljava/io/File;
+
+    invoke-static {}, Landroid/os/Environment;->getExternalStorageDirectory()Ljava/io/File;
+
+    move-result-object p1
+
+    new-instance p7, Ljava/io/File;
+
+    const-string p8, "panoramas"
+
+    invoke-direct {p7, p1, p8}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
+
+    invoke-virtual {p7}, Ljava/io/File;->mkdirs()Z
+
+    move-result p1
+
+    if-nez p1, :cond_0
+
+    invoke-virtual {p7}, Ljava/io/File;->exists()Z
+
+    move-result p1
+
+    if-nez p1, :cond_0
+
+    sget-object p1, Lfel;->a:Louj;
+
+    invoke-virtual {p1}, Loue;->b()Lova;
+
+    move-result-object p1
+
+    const/16 p7, 0x682
+
+    const-string p8, "Panorama directory not created."
+
+    invoke-static {p1, p8, p7}, Ld;->v(Lova;Ljava/lang/String;C)V
+
+    const/4 p7, 0x0
+
+    goto :goto_0
+
+    :cond_0
+    :goto_0
+    iput-object p7, p0, Lfel;->b:Ljava/io/File;
+
+    iput-object p2, p0, Lfel;->h:Lkme;
+
+    iput-object p3, p0, Lfel;->i:Lmhm;
+
+    iput-object p4, p0, Lfel;->g:Lhrz;
+
+    iput-object p5, p0, Lfel;->e:Lfix;
+
+    iput-object p6, p0, Lfel;->f:Lhsh;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final c(Lkhr;)V
-    .locals 7
+.method public final a()Ljava/io/File;
+    .locals 4
 
-    iget v0, p0, Lfel;->d:I
+    new-instance v0, Ljava/io/File;
 
-    const/4 v1, 0x0
+    iget-object v1, p0, Lfel;->b:Ljava/io/File;
 
-    packed-switch v0, :pswitch_data_0
+    invoke-virtual {v1}, Ljava/io/File;->getAbsolutePath()Ljava/lang/String;
 
-    iget-object p1, p0, Lfel;->c:Ljava/lang/Object;
+    move-result-object v1
 
-    iget-object v0, p0, Lfel;->b:Ljava/lang/Object;
+    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
-    iget-object v2, p0, Lfel;->a:Ljava/lang/Object;
+    move-result-object v1
 
-    check-cast p1, Ljava/util/concurrent/atomic/AtomicInteger;
+    invoke-virtual {v1}, Ljava/lang/String;->length()I
 
-    invoke-virtual {p1}, Ljava/util/concurrent/atomic/AtomicInteger;->get()I
+    move-result v2
 
-    move-result v3
+    const-string v3, "Panorama directory is : "
 
-    invoke-interface {v0}, Lkef;->b()I
+    if-eqz v2, :cond_0
 
-    move-result v4
-
-    const/4 v5, 0x3
-
-    if-gt v4, v5, :cond_2
-
-    if-eq v4, v3, :cond_2
-
-    sget-object v3, Leou;->a:Lnak;
-
-    invoke-virtual {v3}, Lnaf;->c()Lnaz;
-
-    move-result-object v3
-
-    check-cast v3, Lnah;
-
-    const/16 v6, 0x6a6
-
-    invoke-interface {v3, v6}, Lnah;->G(I)Lnaz;
-
-    move-result-object v3
-
-    check-cast v3, Lnah;
-
-    invoke-interface {v0}, Lkef;->q()Lkgq;
-
-    move-result-object v0
-
-    iget-object v0, v0, Lkgq;->c:Lmwn;
-
-    const-string v6, "Not enough frames in ZSL ring: %s in %s"
-
-    invoke-interface {v3, v6, v4, v0}, Lnah;->u(Ljava/lang/String;ILjava/lang/Object;)V
-
-    goto :goto_1
-
-    :pswitch_0
-    iget-object v0, p0, Lfel;->a:Ljava/lang/Object;
-
-    iget-object v2, p0, Lfel;->b:Ljava/lang/Object;
-
-    iget-object v3, p0, Lfel;->c:Ljava/lang/Object;
-
-    new-instance v4, Lfek;
-
-    invoke-direct {v4, p1, v2, v1}, Lfek;-><init>(Lkhr;Lfgf;I)V
-
-    check-cast v0, Lfen;
-
-    iget-object v0, v0, Lfen;->b:Ljava/util/concurrent/atomic/AtomicBoolean;
-
-    invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicBoolean;->get()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
+    invoke-virtual {v3, v1}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
 
     goto :goto_0
 
     :cond_0
-    invoke-virtual {p1}, Lkhr;->a()Lkeb;
+    new-instance v1, Ljava/lang/String;
 
-    move-result-object p1
+    invoke-direct {v1, v3}, Ljava/lang/String;-><init>(Ljava/lang/String;)V
 
-    if-eqz p1, :cond_1
+    :goto_0
+    iget-object v1, p0, Lfel;->b:Ljava/io/File;
 
-    new-instance v0, Lfem;
+    const-string v2, "thumbnails"
 
-    invoke-direct {v0, v3, v4, p1}, Lfem;-><init>(Ljava/util/concurrent/Executor;Laea;Lkeb;)V
+    invoke-direct {v0, v1, v2}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
 
-    invoke-interface {p1, v0}, Lkeb;->k(Lkfg;)V
+    invoke-virtual {v0}, Ljava/io/File;->mkdirs()Z
 
-    return-void
+    move-result v1
+
+    if-nez v1, :cond_1
+
+    invoke-virtual {v0}, Ljava/io/File;->exists()Z
+
+    move-result v1
+
+    if-nez v1, :cond_1
+
+    sget-object v0, Lfel;->a:Louj;
+
+    invoke-virtual {v0}, Loue;->b()Lova;
+
+    move-result-object v0
+
+    const/16 v1, 0x683
+
+    const-string v2, "Thumbnails directory not created."
+
+    invoke-static {v0, v2, v1}, Ld;->v(Lova;Ljava/lang/String;C)V
+
+    const/4 v0, 0x0
 
     :cond_1
-    :goto_0
-    return-void
-
-    :cond_2
-    if-le v4, v5, :cond_3
-
-    if-gt v3, v5, :cond_3
-
-    invoke-interface {v0}, Lkef;->q()Lkgq;
-
-    move-result-object v0
-
-    iget-object v0, v0, Lkgq;->c:Lmwn;
-
-    :cond_3
-    :goto_1
-    if-le v4, v5, :cond_4
-
-    const/4 v1, 0x1
-
-    goto :goto_2
-
-    :cond_4
-    :goto_2
-    invoke-static {v1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
-
-    move-result-object v0
-
-    check-cast v2, Ljvk;
-
-    invoke-virtual {v2, v0}, Ljvk;->bn(Ljava/lang/Object;)V
-
-    invoke-virtual {p1, v4}, Ljava/util/concurrent/atomic/AtomicInteger;->set(I)V
-
-    return-void
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+    return-object v0
 .end method

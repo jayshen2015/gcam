@@ -1,275 +1,300 @@
-.class public final Lhzu;
-.super Liaj;
-
-# interfaces
-.implements Lhiv;
+.class final Lhzu;
+.super Ljava/lang/Object;
 
 
 # instance fields
-.field public final a:Lhiu;
+.field public final a:Liat;
 
-.field public final b:Lhiw;
+.field public final b:Liav;
 
-.field public final c:Lhiw;
+.field public c:Liay;
 
-.field public final d:Lhiw;
+.field public d:Z
 
-.field public final e:Lhiw;
+.field public e:Z
 
-.field private final j:Lhiw;
+.field public final f:Llap;
+
+.field private final g:Ljava/util/EnumSet;
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 5
+.method public constructor <init>(Liat;Liav;)V
+    .locals 1
 
-    invoke-direct {p0}, Liaj;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    new-instance v0, Lhzp;
+    iput-object p1, p0, Lhzu;->a:Liat;
 
-    invoke-direct {v0, p0}, Lhzp;-><init>(Lhzu;)V
+    iput-object p2, p0, Lhzu;->b:Liav;
 
-    new-instance v1, Lhiw;
+    const/4 p1, 0x0
 
-    const/4 v2, 0x0
+    iput-boolean p1, p0, Lhzu;->d:Z
 
-    new-array v3, v2, [Lhis;
+    iput-boolean p1, p0, Lhzu;->e:Z
 
-    invoke-direct {v1, v0, v3}, Lhiw;-><init>(Lhis;[Lhis;)V
+    const-class p1, Lhzt;
 
-    iput-object v1, p0, Lhzu;->j:Lhiw;
+    invoke-static {p1}, Ljava/util/EnumSet;->allOf(Ljava/lang/Class;)Ljava/util/EnumSet;
 
-    new-instance v0, Lhzq;
+    move-result-object p1
 
-    invoke-direct {v0, p0}, Lhzq;-><init>(Lhzu;)V
+    iput-object p1, p0, Lhzu;->g:Ljava/util/EnumSet;
 
-    new-instance v3, Lhiw;
+    iget-boolean v0, p2, Liav;->d:Z
 
-    new-array v4, v2, [Lhis;
+    if-nez v0, :cond_0
 
-    invoke-direct {v3, v0, v4}, Lhiw;-><init>(Lhis;[Lhis;)V
+    sget-object v0, Lhzt;->d:Lhzt;
 
-    iput-object v3, p0, Lhzu;->b:Lhiw;
+    invoke-virtual {p1, v0}, Ljava/util/EnumSet;->remove(Ljava/lang/Object;)Z
 
-    new-instance v0, Lhzr;
+    :cond_0
+    iget-boolean v0, p2, Liav;->e:Z
 
-    invoke-direct {v0, p0}, Lhzr;-><init>(Lhzu;)V
+    if-nez v0, :cond_1
 
-    new-instance v3, Lhiw;
+    sget-object v0, Lhzt;->f:Lhzt;
 
-    new-array v4, v2, [Lhis;
+    invoke-virtual {p1, v0}, Ljava/util/EnumSet;->remove(Ljava/lang/Object;)Z
 
-    invoke-direct {v3, v0, v4}, Lhiw;-><init>(Lhis;[Lhis;)V
+    :cond_1
+    iget-object p2, p2, Liav;->f:Llda;
 
-    iput-object v3, p0, Lhzu;->c:Lhiw;
+    invoke-interface {p2}, Llda;->fA()Ljava/lang/Object;
 
-    new-instance v0, Lhzs;
+    move-result-object p2
 
-    invoke-direct {v0, p0}, Lhzs;-><init>(Lhzu;)V
+    check-cast p2, Ljava/lang/Boolean;
 
-    new-instance v3, Lhiw;
+    invoke-virtual {p2}, Ljava/lang/Boolean;->booleanValue()Z
 
-    new-array v4, v2, [Lhis;
+    move-result p2
 
-    invoke-direct {v3, v0, v4}, Lhiw;-><init>(Lhis;[Lhis;)V
+    if-eqz p2, :cond_2
 
-    iput-object v3, p0, Lhzu;->d:Lhiw;
+    sget-object p2, Lhzt;->e:Lhzt;
 
-    new-instance v0, Lhzt;
+    invoke-virtual {p1, p2}, Ljava/util/EnumSet;->remove(Ljava/lang/Object;)Z
 
-    invoke-direct {v0, p0}, Lhzt;-><init>(Lhzu;)V
+    :cond_2
+    new-instance p1, Llap;
 
-    new-instance v3, Lhiw;
+    invoke-direct {p1}, Llap;-><init>()V
 
-    new-array v4, v2, [Lhis;
-
-    invoke-direct {v3, v0, v4}, Lhiw;-><init>(Lhis;[Lhis;)V
-
-    iput-object v3, p0, Lhzu;->e:Lhiw;
-
-    new-instance v0, Lhiu;
-
-    invoke-direct {v0, v1, v2}, Lhiu;-><init>(Lhiw;Z)V
-
-    iput-object v0, p0, Lhzu;->a:Lhiu;
-
-    invoke-virtual {v0}, Lhiu;->f()V
+    iput-object p1, p0, Lhzu;->f:Llap;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()V
-    .locals 1
+.method public final a(Llvp;)V
+    .locals 2
 
-    iget-object v0, p0, Lhzu;->a:Lhiu;
+    iget-boolean v0, p0, Lhzu;->d:Z
 
-    invoke-virtual {v0}, Lhiu;->a()Lhiw;
+    invoke-static {v0}, Lobr;->aQ(Z)V
 
-    move-result-object v0
+    iget-object v0, p0, Lhzu;->a:Liat;
 
-    if-nez v0, :cond_0
+    instance-of v1, v0, Lias;
 
-    return-void
+    if-eqz v1, :cond_0
 
-    :cond_0
-    iget-object v0, p0, Lhzu;->a:Lhiu;
+    check-cast v0, Lias;
 
-    invoke-virtual {v0}, Lhiu;->a()Lhiw;
-
-    move-result-object v0
-
-    iget-object v0, v0, Lhiw;->a:Lhis;
-
-    check-cast v0, Liad;
-
-    invoke-virtual {v0}, Liad;->a()V
-
-    return-void
-.end method
-
-.method public final b()V
-    .locals 1
-
-    iget-object v0, p0, Lhzu;->a:Lhiu;
-
-    invoke-virtual {v0}, Lhiu;->a()Lhiw;
-
-    move-result-object v0
-
-    if-nez v0, :cond_0
-
-    return-void
+    invoke-interface {v0, p1}, Lias;->c(Llvp;)V
 
     :cond_0
-    iget-object v0, p0, Lhzu;->a:Lhiu;
-
-    invoke-virtual {v0}, Lhiu;->a()Lhiw;
-
-    move-result-object v0
-
-    iget-object v0, v0, Lhiw;->a:Lhis;
-
-    check-cast v0, Liad;
-
-    invoke-virtual {v0}, Liad;->b()V
-
     return-void
 .end method
 
-.method public final c()V
+.method public final b(Lhzt;Z)V
     .locals 1
 
-    iget-object v0, p0, Lhzu;->a:Lhiu;
+    iget-object v0, p0, Lhzu;->g:Ljava/util/EnumSet;
 
-    invoke-virtual {v0}, Lhiu;->a()Lhiw;
+    invoke-virtual {v0, p1}, Ljava/util/EnumSet;->contains(Ljava/lang/Object;)Z
 
-    move-result-object v0
+    move-result v0
 
-    if-nez v0, :cond_0
+    if-eq p2, v0, :cond_2
 
-    return-void
+    if-eqz p2, :cond_0
+
+    iget-object p2, p0, Lhzu;->g:Ljava/util/EnumSet;
+
+    invoke-virtual {p2, p1}, Ljava/util/EnumSet;->add(Ljava/lang/Object;)Z
+
+    goto :goto_0
 
     :cond_0
-    iget-object v0, p0, Lhzu;->a:Lhiu;
+    iget-object p2, p0, Lhzu;->g:Ljava/util/EnumSet;
 
-    invoke-virtual {v0}, Lhiu;->a()Lhiw;
+    invoke-virtual {p2, p1}, Ljava/util/EnumSet;->remove(Ljava/lang/Object;)Z
 
-    move-result-object v0
+    :goto_0
+    iget-boolean p1, p0, Lhzu;->d:Z
 
-    iget-object v0, v0, Lhiw;->a:Lhis;
+    invoke-static {p1}, Lobr;->aQ(Z)V
 
-    check-cast v0, Liad;
+    iget-object p1, p0, Lhzu;->g:Ljava/util/EnumSet;
 
-    invoke-virtual {v0}, Liad;->c()V
+    invoke-virtual {p1}, Ljava/util/EnumSet;->isEmpty()Z
+
+    move-result p1
+
+    iget-boolean p2, p0, Lhzu;->e:Z
+
+    if-eq p2, p1, :cond_2
+
+    iput-boolean p1, p0, Lhzu;->e:Z
+
+    if-eqz p1, :cond_1
+
+    iget-object p1, p0, Lhzu;->a:Liat;
+
+    invoke-interface {p1}, Liat;->v()V
+
+    return-void
+
+    :cond_1
+    iget-object p1, p0, Lhzu;->a:Liat;
+
+    invoke-interface {p1}, Liat;->u()V
+
+    iget-object p1, p0, Lhzu;->c:Liay;
+
+    invoke-interface {p1}, Liay;->a()V
+
+    return-void
+
+    :cond_2
+    return-void
+.end method
+
+.method public final c(Z)V
+    .locals 1
+
+    iget-boolean v0, p0, Lhzu;->d:Z
+
+    invoke-static {v0}, Lobr;->aQ(Z)V
+
+    sget-object v0, Lhzt;->a:Lhzt;
+
+    xor-int/lit8 p1, p1, 0x1
+
+    invoke-virtual {p0, v0, p1}, Lhzu;->b(Lhzt;Z)V
 
     return-void
 .end method
 
-.method public final d()V
-    .locals 1
+.method public final d(Ljrl;)V
+    .locals 2
 
-    iget-object v0, p0, Lhzu;->a:Lhiu;
+    iget-boolean v0, p0, Lhzu;->d:Z
 
-    invoke-virtual {v0}, Lhiu;->a()Lhiw;
+    invoke-static {v0}, Lobr;->aQ(Z)V
 
-    move-result-object v0
+    sget-object v0, Lhzt;->b:Lhzt;
 
-    if-nez v0, :cond_0
+    iget-object v1, p0, Lhzu;->b:Liav;
+
+    iget-object v1, v1, Liav;->b:Lope;
+
+    invoke-virtual {v1, p1}, Lope;->contains(Ljava/lang/Object;)Z
+
+    move-result p1
+
+    xor-int/lit8 p1, p1, 0x1
+
+    invoke-virtual {p0, v0, p1}, Lhzu;->b(Lhzt;Z)V
 
     return-void
+.end method
+
+.method public final e(Llwd;)V
+    .locals 2
+
+    iget-boolean v0, p0, Lhzu;->d:Z
+
+    invoke-static {v0}, Lobr;->aQ(Z)V
+
+    sget-object v0, Lhzt;->c:Lhzt;
+
+    iget-object v1, p0, Lhzu;->b:Liav;
+
+    iget-object v1, v1, Liav;->c:Lope;
+
+    invoke-virtual {v1, p1}, Lope;->contains(Ljava/lang/Object;)Z
+
+    move-result p1
+
+    xor-int/lit8 p1, p1, 0x1
+
+    invoke-virtual {p0, v0, p1}, Lhzu;->b(Lhzt;Z)V
+
+    return-void
+.end method
+
+.method public final f(Z)V
+    .locals 2
+
+    iget-boolean v0, p0, Lhzu;->d:Z
+
+    invoke-static {v0}, Lobr;->aQ(Z)V
+
+    sget-object v0, Lhzt;->d:Lhzt;
+
+    const/4 v1, 0x0
+
+    if-eqz p1, :cond_0
+
+    iget-object p1, p0, Lhzu;->b:Liav;
+
+    iget-boolean p1, p1, Liav;->d:Z
+
+    if-eqz p1, :cond_0
+
+    const/4 v1, 0x1
 
     :cond_0
-    iget-object v0, p0, Lhzu;->a:Lhiu;
-
-    invoke-virtual {v0}, Lhiu;->a()Lhiw;
-
-    move-result-object v0
-
-    iget-object v0, v0, Lhiw;->a:Lhis;
-
-    check-cast v0, Liad;
-
-    invoke-virtual {v0}, Liad;->d()V
+    invoke-virtual {p0, v0, v1}, Lhzu;->b(Lhzt;Z)V
 
     return-void
 .end method
 
-.method public final e()V
+.method public final g(Z)V
+    .locals 2
+
+    sget-object v0, Lhzt;->f:Lhzt;
+
+    const/4 v1, 0x0
+
+    if-eqz p1, :cond_0
+
+    iget-object p1, p0, Lhzu;->b:Liav;
+
+    iget-boolean p1, p1, Liav;->e:Z
+
+    if-eqz p1, :cond_0
+
+    const/4 v1, 0x1
+
+    :cond_0
+    invoke-virtual {p0, v0, v1}, Lhzu;->b(Lhzt;Z)V
+
+    return-void
+.end method
+
+.method public final h(Z)V
     .locals 1
 
-    iget-object v0, p0, Lhzu;->a:Lhiu;
+    sget-object v0, Lhzt;->g:Lhzt;
 
-    invoke-virtual {v0}, Lhiu;->b()V
-
-    iget-object v0, p0, Lhzu;->j:Lhiw;
-
-    invoke-virtual {v0}, Lhiw;->e()V
-
-    iget-object v0, p0, Lhzu;->b:Lhiw;
-
-    invoke-virtual {v0}, Lhiw;->e()V
-
-    iget-object v0, p0, Lhzu;->c:Lhiw;
-
-    invoke-virtual {v0}, Lhiw;->e()V
-
-    iget-object v0, p0, Lhzu;->d:Lhiw;
-
-    invoke-virtual {v0}, Lhiw;->e()V
-
-    iget-object v0, p0, Lhzu;->e:Lhiw;
-
-    invoke-virtual {v0}, Lhiw;->e()V
-
-    return-void
-.end method
-
-.method public final f()V
-    .locals 1
-
-    iget-object v0, p0, Lhzu;->a:Lhiu;
-
-    invoke-virtual {v0}, Lhiu;->c()V
-
-    return-void
-.end method
-
-.method public final g()V
-    .locals 1
-
-    iget-object v0, p0, Lhzu;->a:Lhiu;
-
-    invoke-virtual {v0}, Lhiu;->d()V
-
-    return-void
-.end method
-
-.method public final h()V
-    .locals 0
-
-    invoke-static {p0}, Ljcb;->l(Lhiv;)V
+    invoke-virtual {p0, v0, p1}, Lhzu;->b(Lhzt;Z)V
 
     return-void
 .end method

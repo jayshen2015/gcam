@@ -1,199 +1,88 @@
 .class public final Lfkc;
 .super Ljava/lang/Object;
 
-# interfaces
-.implements Lecm;
-.implements Lecn;
-.implements Lecw;
+
+# static fields
+.field public static final a:Ljava/nio/charset/Charset;
+
+.field private static d:Lfkc;
 
 
 # instance fields
-.field public final a:Lnph;
+.field public final b:Ljava/security/MessageDigest;
 
-.field public final b:Lkad;
-
-.field public c:Z
-
-.field final d:Lnph;
-
-.field final e:Lnph;
-
-.field public final synthetic f:Ldqx;
-
-.field private final g:Lnph;
+.field public final c:Ljava/lang/Object;
 
 
 # direct methods
-.method public constructor <init>(Ldqx;Lkad;[B[B[B)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 1
 
-    iput-object p1, p0, Lfkc;->f:Ldqx;
+    const-string v0, "UTF-8"
+
+    invoke-static {v0}, Ljava/nio/charset/Charset;->forName(Ljava/lang/String;)Ljava/nio/charset/Charset;
+
+    move-result-object v0
+
+    sput-object v0, Lfkc;->a:Ljava/nio/charset/Charset;
+
+    return-void
+.end method
+
+.method public constructor <init>(Ljava/security/MessageDigest;)V
+    .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const/4 p1, 0x0
+    iput-object p1, p0, Lfkc;->b:Ljava/security/MessageDigest;
 
-    iput-boolean p1, p0, Lfkc;->c:Z
+    new-instance p1, Ljava/lang/Object;
 
-    invoke-static {}, Lnph;->g()Lnph;
+    invoke-direct {p1}, Ljava/lang/Object;-><init>()V
 
-    move-result-object p1
-
-    iput-object p1, p0, Lfkc;->g:Lnph;
-
-    invoke-static {}, Lnph;->g()Lnph;
-
-    move-result-object p1
-
-    iput-object p1, p0, Lfkc;->d:Lnph;
-
-    invoke-static {}, Lnph;->g()Lnph;
-
-    move-result-object p1
-
-    iput-object p1, p0, Lfkc;->e:Lnph;
-
-    invoke-static {}, Lnph;->g()Lnph;
-
-    move-result-object p1
-
-    iput-object p1, p0, Lfkc;->a:Lnph;
-
-    iput-object p2, p0, Lfkc;->b:Lkad;
+    iput-object p1, p0, Lfkc;->c:Ljava/lang/Object;
 
     return-void
 .end method
 
+.method public static a()Lfkc;
+    .locals 3
 
-# virtual methods
-.method public final a(Leea;IJLkou;)V
-    .locals 1
+    sget-object v0, Lfkc;->d:Lfkc;
 
-    iget-object p1, p0, Lfkc;->f:Ldqx;
-
-    monitor-enter p1
-
-    const/4 p2, 0x1
+    if-nez v0, :cond_0
 
     :try_start_0
-    iput-boolean p2, p0, Lfkc;->c:Z
+    const-string v0, "SHA-1"
 
-    monitor-exit p1
+    invoke-static {v0}, Ljava/security/MessageDigest;->getInstance(Ljava/lang/String;)Ljava/security/MessageDigest;
+
+    move-result-object v0
+
+    new-instance v1, Lfkc;
+
+    invoke-direct {v1, v0}, Lfkc;-><init>(Ljava/security/MessageDigest;)V
+
+    sput-object v1, Lfkc;->d:Lfkc;
     :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    .catch Ljava/security/NoSuchAlgorithmException; {:try_start_0 .. :try_end_0} :catch_0
 
-    iget-object p1, p0, Lfkc;->f:Ldqx;
+    goto :goto_0
 
-    iget-object p1, p1, Ldqx;->d:Ljava/lang/Object;
+    :catch_0
+    move-exception v0
 
-    invoke-interface {p1, p3, p4}, Lfgg;->c(J)Lkpb;
+    new-instance v1, Ljava/lang/RuntimeException;
 
-    move-result-object p1
+    const-string v2, "Cannot initialize file name hasher"
 
-    if-eqz p1, :cond_0
+    invoke-direct {v1, v2, v0}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
 
-    iget-object p2, p0, Lfkc;->f:Ldqx;
-
-    iget-object p2, p2, Ldqx;->b:Ljava/lang/Object;
-
-    iget-object p3, p0, Lfkc;->d:Lnph;
-
-    iget-object p4, p0, Lfkc;->e:Lnph;
-
-    iget-object p5, p0, Lfkc;->g:Lnph;
-
-    new-instance v0, Lfjz;
-
-    check-cast p2, Lbkb;
-
-    iget-object p2, p2, Lbkb;->a:Ljava/lang/Object;
-
-    invoke-direct {v0, p2, p3, p4, p5}, Lfjz;-><init>(Ljava/util/concurrent/Executor;Lnou;Lnou;Lnph;)V
-
-    iget-object p2, p0, Lfkc;->d:Lnph;
-
-    invoke-virtual {p2, p1}, Lnph;->e(Ljava/lang/Object;)Z
-
-    iget-object p1, p0, Lfkc;->a:Lnph;
-
-    iget-object p2, p0, Lfkc;->g:Lnph;
-
-    sget-object p3, Ldeo;->t:Ldeo;
-
-    sget-object p4, Lnnv;->a:Lnnv;
-
-    invoke-static {p2, p3, p4}, Lnnf;->i(Lnou;Lmqi;Ljava/util/concurrent/Executor;)Lnou;
-
-    move-result-object p2
-
-    invoke-virtual {p1, p2}, Lnph;->f(Lnou;)Z
-
-    return-void
+    throw v1
 
     :cond_0
-    iget-object p1, p0, Lfkc;->a:Lnph;
+    :goto_0
+    sget-object v0, Lfkc;->d:Lfkc;
 
-    sget-object p2, Lmpx;->a:Lmpx;
-
-    invoke-virtual {p1, p2}, Lnph;->e(Ljava/lang/Object;)Z
-
-    return-void
-
-    :catchall_0
-    move-exception p2
-
-    :try_start_1
-    monitor-exit p1
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    throw p2
-.end method
-
-.method public final b(Lhjg;Lebd;)V
-    .locals 0
-
-    return-void
-.end method
-
-.method public final c(Leea;Lecq;)V
-    .locals 0
-
-    iget-object p1, p0, Lfkc;->a:Lnph;
-
-    sget-object p2, Lmpx;->a:Lmpx;
-
-    invoke-virtual {p1, p2}, Lnph;->e(Ljava/lang/Object;)Z
-
-    return-void
-.end method
-
-.method public final o(Leea;Landroid/graphics/Bitmap;Lcom/google/googlex/gcam/ShotMetadata;)V
-    .locals 0
-
-    sget-object p1, Landroid/graphics/Bitmap$Config;->ARGB_8888:Landroid/graphics/Bitmap$Config;
-
-    const/4 p3, 0x0
-
-    invoke-virtual {p2, p1, p3}, Landroid/graphics/Bitmap;->copy(Landroid/graphics/Bitmap$Config;Z)Landroid/graphics/Bitmap;
-
-    move-result-object p1
-
-    iget-object p2, p0, Lfkc;->e:Lnph;
-
-    invoke-virtual {p2, p1}, Lnph;->e(Ljava/lang/Object;)Z
-
-    return-void
-.end method
-
-.method public final p(Leea;)V
-    .locals 1
-
-    iget-object p1, p0, Lfkc;->a:Lnph;
-
-    sget-object v0, Lmpx;->a:Lmpx;
-
-    invoke-virtual {p1, v0}, Lnph;->e(Ljava/lang/Object;)Z
-
-    return-void
+    return-object v0
 .end method

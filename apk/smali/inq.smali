@@ -1,64 +1,167 @@
-.class final Linq;
-.super Lioc;
+.class public final Linq;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Lpys;
 
 
 # instance fields
-.field final synthetic a:Linr;
+.field private final a:Lqkg;
+
+.field private final b:Lqkg;
+
+.field private final c:Lqkg;
+
+.field private final d:Lqkg;
+
+.field private final e:Lqkg;
+
+.field private final f:Lqkg;
+
+.field private final g:Lqkg;
+
+.field private final h:Lqkg;
+
+.field private final i:Lqkg;
 
 
 # direct methods
-.method public constructor <init>(Linr;)V
+.method public constructor <init>(Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;)V
     .locals 0
 
-    iput-object p1, p0, Linq;->a:Linr;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0, p1}, Lioc;-><init>(Liod;)V
+    iput-object p1, p0, Linq;->a:Lqkg;
+
+    iput-object p2, p0, Linq;->b:Lqkg;
+
+    iput-object p3, p0, Linq;->c:Lqkg;
+
+    iput-object p4, p0, Linq;->d:Lqkg;
+
+    iput-object p5, p0, Linq;->e:Lqkg;
+
+    iput-object p6, p0, Linq;->f:Lqkg;
+
+    iput-object p7, p0, Linq;->g:Lqkg;
+
+    iput-object p8, p0, Linq;->h:Lqkg;
+
+    iput-object p9, p0, Linq;->i:Lqkg;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final co()V
-    .locals 2
+.method public final a()Linp;
+    .locals 11
 
-    iget-object v0, p0, Linq;->a:Linr;
+    iget-object v0, p0, Linq;->a:Lqkg;
 
-    iget-object v0, v0, Linr;->a:Lhiu;
+    invoke-interface {v0}, Lqkg;->get()Ljava/lang/Object;
 
-    invoke-virtual {v0}, Lhiu;->e()V
+    move-result-object v0
 
-    invoke-super {p0}, Lioc;->co()V
+    move-object v2, v0
 
-    iget-object v0, p0, Linq;->a:Linr;
+    check-cast v2, Lcom/google/android/apps/camera/bottombar/BottomBarController;
 
-    iget-object v1, v0, Linr;->a:Lhiu;
+    iget-object v0, p0, Linq;->b:Lqkg;
 
-    iget-object v0, v0, Linr;->b:Lhiw;
+    invoke-interface {v0}, Lqkg;->get()Ljava/lang/Object;
 
-    invoke-virtual {v1, v0}, Lhiu;->g(Lhiw;)V
+    move-result-object v0
 
-    return-void
+    move-object v3, v0
+
+    check-cast v3, Ljak;
+
+    iget-object v0, p0, Linq;->c:Lqkg;
+
+    invoke-interface {v0}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    move-object v4, v0
+
+    check-cast v4, Lddf;
+
+    iget-object v0, p0, Linq;->d:Lqkg;
+
+    invoke-interface {v0}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    move-object v5, v0
+
+    check-cast v5, Ljfn;
+
+    iget-object v0, p0, Linq;->e:Lqkg;
+
+    invoke-interface {v0}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    move-object v6, v0
+
+    check-cast v6, Ljjp;
+
+    iget-object v0, p0, Linq;->f:Lqkg;
+
+    invoke-interface {v0}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    move-object v7, v0
+
+    check-cast v7, Lgtg;
+
+    iget-object v0, p0, Linq;->g:Lqkg;
+
+    invoke-interface {v0}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    move-object v8, v0
+
+    check-cast v8, Ljlb;
+
+    iget-object v0, p0, Linq;->h:Lqkg;
+
+    invoke-interface {v0}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    move-object v9, v0
+
+    check-cast v9, Liqj;
+
+    iget-object v0, p0, Linq;->i:Lqkg;
+
+    invoke-interface {v0}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    move-object v10, v0
+
+    check-cast v10, Lepj;
+
+    new-instance v0, Linp;
+
+    move-object v1, v0
+
+    invoke-direct/range {v1 .. v10}, Linp;-><init>(Lcom/google/android/apps/camera/bottombar/BottomBarController;Ljak;Lddf;Ljfn;Ljjp;Lgtg;Ljlb;Liqj;Lepj;)V
+
+    return-object v0
 .end method
 
-.method public final i()V
-    .locals 2
+.method public final bridge synthetic get()Ljava/lang/Object;
+    .locals 1
 
-    iget-object v0, p0, Linq;->a:Linr;
+    invoke-virtual {p0}, Linq;->a()Linp;
 
-    iget-object v0, v0, Linr;->a:Lhiu;
+    move-result-object v0
 
-    invoke-virtual {v0}, Lhiu;->e()V
-
-    invoke-super {p0}, Lioc;->i()V
-
-    iget-object v0, p0, Linq;->a:Linr;
-
-    iget-object v1, v0, Linr;->a:Lhiu;
-
-    iget-object v0, v0, Linr;->c:Lhiw;
-
-    invoke-virtual {v1, v0}, Lhiu;->g(Lhiw;)V
-
-    return-void
+    return-object v0
 .end method

@@ -1,1747 +1,546 @@
-.class public final Lhif;
+.class public Lhif;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Logk;
+.implements Lhid;
 
 
 # instance fields
-.field private final a:Loiw;
+.field public final a:Ljava/util/concurrent/atomic/AtomicInteger;
 
-.field private final b:Loiw;
+.field public final b:Lpih;
 
-.field private final c:Loiw;
+.field public final c:Ljava/lang/Object;
 
-.field private final d:Loiw;
+.field public d:I
 
-.field private final e:Loiw;
+.field private final e:Ljava/util/Set;
 
-.field private final f:Loiw;
+.field private final f:Lhic;
 
-.field private final synthetic g:I
+.field private final g:Lhis;
 
 
 # direct methods
-.method public constructor <init>(Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;I)V
-    .locals 0
-
-    iput p7, p0, Lhif;->g:I
+.method public constructor <init>(Lhic;Lhis;)V
+    .locals 2
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lhif;->a:Loiw;
+    new-instance v0, Ljava/util/HashSet;
 
-    iput-object p2, p0, Lhif;->b:Loiw;
+    invoke-direct {v0}, Ljava/util/HashSet;-><init>()V
 
-    iput-object p3, p0, Lhif;->c:Loiw;
+    iput-object v0, p0, Lhif;->e:Ljava/util/Set;
 
-    iput-object p4, p0, Lhif;->d:Loiw;
+    new-instance v0, Ljava/util/concurrent/atomic/AtomicInteger;
 
-    iput-object p5, p0, Lhif;->e:Loiw;
+    const/4 v1, 0x0
 
-    iput-object p6, p0, Lhif;->f:Loiw;
+    invoke-direct {v0, v1}, Ljava/util/concurrent/atomic/AtomicInteger;-><init>(I)V
 
-    return-void
-.end method
+    iput-object v0, p0, Lhif;->a:Ljava/util/concurrent/atomic/AtomicInteger;
 
-.method public constructor <init>(Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;I[B)V
-    .locals 0
+    invoke-static {}, Lpih;->f()Lpih;
 
-    iput p7, p0, Lhif;->g:I
+    move-result-object v0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object v0, p0, Lhif;->b:Lpih;
 
-    iput-object p1, p0, Lhif;->c:Loiw;
+    new-instance v0, Ljava/lang/Object;
 
-    iput-object p2, p0, Lhif;->a:Loiw;
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p3, p0, Lhif;->f:Loiw;
+    iput-object v0, p0, Lhif;->c:Ljava/lang/Object;
 
-    iput-object p4, p0, Lhif;->d:Loiw;
+    const/4 v0, 0x1
 
-    iput-object p5, p0, Lhif;->b:Loiw;
+    iput v0, p0, Lhif;->d:I
 
-    iput-object p6, p0, Lhif;->e:Loiw;
+    iput-object p1, p0, Lhif;->f:Lhic;
 
-    return-void
-.end method
-
-.method public constructor <init>(Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;I[C)V
-    .locals 0
-
-    iput p7, p0, Lhif;->g:I
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lhif;->b:Loiw;
-
-    iput-object p2, p0, Lhif;->a:Loiw;
-
-    iput-object p3, p0, Lhif;->c:Loiw;
-
-    iput-object p4, p0, Lhif;->e:Loiw;
-
-    iput-object p5, p0, Lhif;->f:Loiw;
-
-    iput-object p6, p0, Lhif;->d:Loiw;
+    iput-object p2, p0, Lhif;->g:Lhis;
 
     return-void
-.end method
-
-.method public constructor <init>(Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;I[F)V
-    .locals 0
-
-    iput p7, p0, Lhif;->g:I
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lhif;->c:Loiw;
-
-    iput-object p2, p0, Lhif;->b:Loiw;
-
-    iput-object p3, p0, Lhif;->e:Loiw;
-
-    iput-object p4, p0, Lhif;->a:Loiw;
-
-    iput-object p5, p0, Lhif;->d:Loiw;
-
-    iput-object p6, p0, Lhif;->f:Loiw;
-
-    return-void
-.end method
-
-.method public constructor <init>(Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;I[I)V
-    .locals 0
-
-    iput p7, p0, Lhif;->g:I
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lhif;->c:Loiw;
-
-    iput-object p2, p0, Lhif;->d:Loiw;
-
-    iput-object p3, p0, Lhif;->a:Loiw;
-
-    iput-object p4, p0, Lhif;->b:Loiw;
-
-    iput-object p5, p0, Lhif;->e:Loiw;
-
-    iput-object p6, p0, Lhif;->f:Loiw;
-
-    return-void
-.end method
-
-.method public constructor <init>(Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;I[S)V
-    .locals 0
-
-    iput p7, p0, Lhif;->g:I
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lhif;->b:Loiw;
-
-    iput-object p2, p0, Lhif;->c:Loiw;
-
-    iput-object p3, p0, Lhif;->e:Loiw;
-
-    iput-object p4, p0, Lhif;->f:Loiw;
-
-    iput-object p5, p0, Lhif;->d:Loiw;
-
-    iput-object p6, p0, Lhif;->a:Loiw;
-
-    return-void
-.end method
-
-.method public constructor <init>(Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;I[Z)V
-    .locals 0
-
-    iput p7, p0, Lhif;->g:I
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lhif;->e:Loiw;
-
-    iput-object p2, p0, Lhif;->b:Loiw;
-
-    iput-object p3, p0, Lhif;->a:Loiw;
-
-    iput-object p4, p0, Lhif;->f:Loiw;
-
-    iput-object p5, p0, Lhif;->d:Loiw;
-
-    iput-object p6, p0, Lhif;->c:Loiw;
-
-    return-void
-.end method
-
-.method public constructor <init>(Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;I[[B)V
-    .locals 0
-
-    iput p7, p0, Lhif;->g:I
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lhif;->c:Loiw;
-
-    iput-object p2, p0, Lhif;->b:Loiw;
-
-    iput-object p3, p0, Lhif;->f:Loiw;
-
-    iput-object p4, p0, Lhif;->d:Loiw;
-
-    iput-object p5, p0, Lhif;->e:Loiw;
-
-    iput-object p6, p0, Lhif;->a:Loiw;
-
-    return-void
-.end method
-
-.method public constructor <init>(Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;I[[C)V
-    .locals 0
-
-    iput p7, p0, Lhif;->g:I
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lhif;->c:Loiw;
-
-    iput-object p2, p0, Lhif;->e:Loiw;
-
-    iput-object p3, p0, Lhif;->a:Loiw;
-
-    iput-object p4, p0, Lhif;->b:Loiw;
-
-    iput-object p5, p0, Lhif;->f:Loiw;
-
-    iput-object p6, p0, Lhif;->d:Loiw;
-
-    return-void
-.end method
-
-.method public constructor <init>(Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;I[[F)V
-    .locals 0
-
-    iput p7, p0, Lhif;->g:I
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lhif;->a:Loiw;
-
-    iput-object p2, p0, Lhif;->b:Loiw;
-
-    iput-object p3, p0, Lhif;->d:Loiw;
-
-    iput-object p4, p0, Lhif;->e:Loiw;
-
-    iput-object p5, p0, Lhif;->c:Loiw;
-
-    iput-object p6, p0, Lhif;->f:Loiw;
-
-    return-void
-.end method
-
-.method public constructor <init>(Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;I[[I)V
-    .locals 0
-
-    iput p7, p0, Lhif;->g:I
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lhif;->b:Loiw;
-
-    iput-object p2, p0, Lhif;->c:Loiw;
-
-    iput-object p3, p0, Lhif;->a:Loiw;
-
-    iput-object p4, p0, Lhif;->d:Loiw;
-
-    iput-object p5, p0, Lhif;->e:Loiw;
-
-    iput-object p6, p0, Lhif;->f:Loiw;
-
-    return-void
-.end method
-
-.method public constructor <init>(Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;I[[S)V
-    .locals 0
-
-    iput p7, p0, Lhif;->g:I
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lhif;->d:Loiw;
-
-    iput-object p2, p0, Lhif;->f:Loiw;
-
-    iput-object p3, p0, Lhif;->c:Loiw;
-
-    iput-object p4, p0, Lhif;->a:Loiw;
-
-    iput-object p5, p0, Lhif;->b:Loiw;
-
-    iput-object p6, p0, Lhif;->e:Loiw;
-
-    return-void
-.end method
-
-.method public constructor <init>(Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;I[[Z)V
-    .locals 0
-
-    iput p7, p0, Lhif;->g:I
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lhif;->b:Loiw;
-
-    iput-object p2, p0, Lhif;->a:Loiw;
-
-    iput-object p3, p0, Lhif;->d:Loiw;
-
-    iput-object p4, p0, Lhif;->e:Loiw;
-
-    iput-object p5, p0, Lhif;->c:Loiw;
-
-    iput-object p6, p0, Lhif;->f:Loiw;
-
-    return-void
-.end method
-
-.method public constructor <init>(Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;I[[[B)V
-    .locals 0
-
-    iput p7, p0, Lhif;->g:I
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lhif;->a:Loiw;
-
-    iput-object p2, p0, Lhif;->b:Loiw;
-
-    iput-object p3, p0, Lhif;->d:Loiw;
-
-    iput-object p4, p0, Lhif;->e:Loiw;
-
-    iput-object p5, p0, Lhif;->c:Loiw;
-
-    iput-object p6, p0, Lhif;->f:Loiw;
-
-    return-void
-.end method
-
-.method public constructor <init>(Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;I[[[C)V
-    .locals 0
-
-    iput p7, p0, Lhif;->g:I
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lhif;->a:Loiw;
-
-    iput-object p2, p0, Lhif;->b:Loiw;
-
-    iput-object p3, p0, Lhif;->d:Loiw;
-
-    iput-object p4, p0, Lhif;->e:Loiw;
-
-    iput-object p5, p0, Lhif;->c:Loiw;
-
-    iput-object p6, p0, Lhif;->f:Loiw;
-
-    return-void
-.end method
-
-.method public constructor <init>(Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;I[[[I)V
-    .locals 0
-
-    iput p7, p0, Lhif;->g:I
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lhif;->b:Loiw;
-
-    iput-object p2, p0, Lhif;->a:Loiw;
-
-    iput-object p3, p0, Lhif;->e:Loiw;
-
-    iput-object p4, p0, Lhif;->f:Loiw;
-
-    iput-object p5, p0, Lhif;->d:Loiw;
-
-    iput-object p6, p0, Lhif;->c:Loiw;
-
-    return-void
-.end method
-
-.method public constructor <init>(Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;I[[[S)V
-    .locals 0
-
-    iput p7, p0, Lhif;->g:I
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lhif;->a:Loiw;
-
-    iput-object p2, p0, Lhif;->b:Loiw;
-
-    iput-object p3, p0, Lhif;->d:Loiw;
-
-    iput-object p4, p0, Lhif;->e:Loiw;
-
-    iput-object p5, p0, Lhif;->c:Loiw;
-
-    iput-object p6, p0, Lhif;->f:Loiw;
-
-    return-void
-.end method
-
-.method public constructor <init>(Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;I[[[Z)V
-    .locals 0
-
-    iput p7, p0, Lhif;->g:I
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lhif;->f:Loiw;
-
-    iput-object p2, p0, Lhif;->d:Loiw;
-
-    iput-object p3, p0, Lhif;->a:Loiw;
-
-    iput-object p4, p0, Lhif;->e:Loiw;
-
-    iput-object p5, p0, Lhif;->b:Loiw;
-
-    iput-object p6, p0, Lhif;->c:Loiw;
-
-    return-void
-.end method
-
-.method public static a(Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;)Lhif;
-    .locals 10
-
-    new-instance v9, Lhif;
-
-    const/4 v7, 0x5
-
-    const/4 v8, 0x0
-
-    move-object v0, v9
-
-    move-object v1, p0
-
-    move-object v2, p1
-
-    move-object v3, p2
-
-    move-object v4, p3
-
-    move-object v5, p4
-
-    move-object v6, p5
-
-    invoke-direct/range {v0 .. v8}, Lhif;-><init>(Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;I[Z)V
-
-    return-object v9
 .end method
 
 
 # virtual methods
-.method public final synthetic get()Ljava/lang/Object;
-    .locals 24
+.method public final a()V
+    .locals 8
 
-    move-object/from16 v0, p0
+    iget v0, p0, Lhif;->d:I
 
-    iget v1, v0, Lhif;->g:I
+    const/4 v1, 0x3
 
-    packed-switch v1, :pswitch_data_0
+    if-ne v0, v1, :cond_0
 
-    iget-object v1, v0, Lhif;->f:Loiw;
+    const/4 v0, 0x1
 
-    check-cast v1, Logl;
+    goto :goto_0
 
-    iget-object v1, v1, Logl;->a:Ljava/lang/Object;
+    :cond_0
+    const/4 v0, 0x0
 
-    move-object v3, v1
+    :goto_0
+    invoke-static {v0}, Lobr;->aQ(Z)V
 
-    check-cast v3, Lmqp;
+    iget-object v0, p0, Lhif;->e:Ljava/util/Set;
 
-    iget-object v1, v0, Lhif;->d:Loiw;
+    invoke-interface {v0}, Ljava/util/Set;->size()I
 
-    invoke-interface {v1}, Loiw;->get()Ljava/lang/Object;
+    move-result v0
 
-    move-result-object v1
+    if-lez v0, :cond_5
 
-    move-object v4, v1
+    iget-object v0, p0, Lhif;->f:Lhic;
 
-    check-cast v4, Llpm;
+    move-object v1, v0
 
-    iget-object v1, v0, Lhif;->a:Loiw;
+    check-cast v1, Lhia;
 
-    invoke-interface {v1}, Loiw;->get()Ljava/lang/Object;
+    iget-object v1, v1, Lhia;->e:Ljava/util/Map;
 
-    move-result-object v1
+    monitor-enter v1
 
-    move-object v5, v1
+    :try_start_0
+    move-object v2, v0
 
-    check-cast v5, Lluj;
+    check-cast v2, Lhia;
 
-    iget-object v1, v0, Lhif;->e:Loiw;
+    iget-object v2, v2, Lhia;->g:Ljava/util/Set;
 
-    invoke-interface {v1}, Loiw;->get()Ljava/lang/Object;
+    move-object v3, v0
 
-    move-result-object v1
+    check-cast v3, Lhia;
 
-    move-object v6, v1
+    iget-object v3, v3, Lhia;->e:Ljava/util/Map;
 
-    check-cast v6, Lkwp;
-
-    iget-object v1, v0, Lhif;->b:Loiw;
-
-    invoke-interface {v1}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v1
-
-    move-object v7, v1
-
-    check-cast v7, Lluk;
-
-    iget-object v1, v0, Lhif;->c:Loiw;
-
-    check-cast v1, Llvz;
-
-    invoke-virtual {v1}, Llvz;->a()Llpm;
-
-    new-instance v1, Lmaf;
-
-    const/4 v8, 0x0
-
-    const/4 v9, 0x0
-
-    const/4 v10, 0x0
-
-    const/4 v11, 0x0
-
-    move-object v2, v1
-
-    invoke-direct/range {v2 .. v11}, Lmaf;-><init>(Lmqp;Llpm;Lluj;Lkwp;Lluk;[B[B[B[B)V
-
-    return-object v1
-
-    :pswitch_0
-    iget-object v1, v0, Lhif;->b:Loiw;
-
-    check-cast v1, Llik;
-
-    invoke-virtual {v1}, Llik;->a()Llij;
+    invoke-interface {v3}, Ljava/util/Map;->keySet()Ljava/util/Set;
 
     move-result-object v3
 
-    iget-object v1, v0, Lhif;->a:Loiw;
+    invoke-interface {v2, v3}, Ljava/util/Set;->retainAll(Ljava/util/Collection;)Z
 
-    invoke-interface {v1}, Loiw;->get()Ljava/lang/Object;
+    new-instance v2, Ljava/util/HashSet;
 
-    move-result-object v1
+    check-cast v0, Lhia;
 
-    move-object v4, v1
+    iget-object v0, v0, Lhia;->g:Ljava/util/Set;
 
-    check-cast v4, Lnox;
+    invoke-direct {v2, v0}, Ljava/util/HashSet;-><init>(Ljava/util/Collection;)V
 
-    iget-object v1, v0, Lhif;->e:Loiw;
+    invoke-static {v2}, Ljava/util/Collections;->unmodifiableSet(Ljava/util/Set;)Ljava/util/Set;
 
-    invoke-static {v1}, Logj;->a(Loiw;)Logd;
+    move-result-object v0
 
-    iget-object v1, v0, Lhif;->f:Loiw;
+    monitor-exit v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_1
 
-    invoke-static {v1}, Logj;->a(Loiw;)Logd;
+    new-instance v1, Ljava/util/HashSet;
+
+    invoke-direct {v1}, Ljava/util/HashSet;-><init>()V
+
+    iget-object v2, p0, Lhif;->e:Ljava/util/Set;
+
+    invoke-interface {v2}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
+
+    move-result-object v2
+
+    :cond_1
+    :goto_1
+    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v3
+
+    if-eqz v3, :cond_4
+
+    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v3
+
+    check-cast v3, Lhin;
+
+    iget-object v4, v3, Lhin;->a:Lmad;
+
+    if-eqz v4, :cond_1
+
+    invoke-interface {v0, v4}, Ljava/util/Set;->contains(Ljava/lang/Object;)Z
+
+    move-result v4
+
+    if-eqz v4, :cond_1
+
+    iget-object v4, p0, Lhif;->f:Lhic;
+
+    iget-object v5, v3, Lhin;->a:Lmad;
+
+    move-object v6, v4
+
+    check-cast v6, Lhia;
+
+    iget-object v6, v6, Lhia;->e:Ljava/util/Map;
+
+    monitor-enter v6
+
+    :try_start_1
+    move-object v7, v4
+
+    check-cast v7, Lhia;
+
+    iget-object v7, v7, Lhia;->g:Ljava/util/Set;
+
+    invoke-interface {v7, v5}, Ljava/util/Set;->contains(Ljava/lang/Object;)Z
+
+    move-result v7
+
+    if-eqz v7, :cond_3
+
+    move-object v7, v4
+
+    check-cast v7, Lhia;
+
+    iget-object v7, v7, Lhia;->g:Ljava/util/Set;
+
+    invoke-interface {v7, v5}, Ljava/util/Set;->remove(Ljava/lang/Object;)Z
+
+    move-object v7, v4
+
+    check-cast v7, Lhia;
+
+    iget-object v7, v7, Lhia;->e:Ljava/util/Map;
+
+    invoke-interface {v7, v5}, Ljava/util/Map;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v5
 
-    iget-object v6, v0, Lhif;->d:Loiw;
+    if-eqz v5, :cond_2
 
-    iget-object v1, v0, Lhif;->c:Loiw;
+    move-object v5, v4
 
-    check-cast v1, Llmu;
+    check-cast v5, Lhia;
 
-    invoke-virtual {v1}, Llmu;->a()Llhz;
+    iget v5, v5, Lhia;->h:I
 
-    move-result-object v7
+    add-int/lit8 v5, v5, -0x1
 
-    new-instance v1, Llmo;
+    check-cast v4, Lhia;
 
-    const/4 v8, 0x0
+    iput v5, v4, Lhia;->h:I
 
-    move-object v2, v1
+    monitor-exit v6
 
-    invoke-direct/range {v2 .. v8}, Llmo;-><init>(Llij;Lnox;Logd;Loiw;Llhz;[B)V
+    goto :goto_2
 
-    return-object v1
+    :cond_2
+    monitor-exit v6
 
-    :pswitch_1
-    iget-object v1, v0, Lhif;->a:Loiw;
+    goto :goto_2
 
-    check-cast v1, Lfmj;
+    :cond_3
+    monitor-exit v6
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    invoke-virtual {v1}, Lfmj;->a()Lkli;
+    :goto_2
+    invoke-interface {v1, v3}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
 
-    move-result-object v3
+    goto :goto_1
 
-    iget-object v1, v0, Lhif;->b:Loiw;
+    :catchall_0
+    move-exception v0
 
-    check-cast v1, Lkge;
+    :try_start_2
+    monitor-exit v6
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
-    invoke-virtual {v1}, Lkge;->a()Lkeq;
+    throw v0
 
-    move-result-object v4
+    :cond_4
+    iget-object v0, p0, Lhif;->b:Lpih;
 
-    iget-object v1, v0, Lhif;->d:Loiw;
+    invoke-virtual {v0, v1}, Lpih;->o(Ljava/lang/Object;)Z
 
-    invoke-interface {v1}, Loiw;->get()Ljava/lang/Object;
+    return-void
 
-    move-result-object v1
+    :catchall_1
+    move-exception v0
 
-    move-object v5, v1
+    :try_start_3
+    monitor-exit v1
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_1
 
-    check-cast v5, Lkkc;
+    throw v0
 
-    iget-object v1, v0, Lhif;->e:Loiw;
+    :cond_5
+    iget-object v0, p0, Lhif;->b:Lpih;
 
-    invoke-interface {v1}, Loiw;->get()Ljava/lang/Object;
+    new-instance v1, Ljava/util/HashSet;
 
-    move-result-object v1
+    invoke-direct {v1}, Ljava/util/HashSet;-><init>()V
 
-    move-object v6, v1
+    invoke-virtual {v0, v1}, Lpih;->o(Ljava/lang/Object;)Z
 
-    check-cast v6, Lkjn;
+    return-void
+.end method
 
-    iget-object v1, v0, Lhif;->c:Loiw;
+.method public final declared-synchronized b(Lhin;Lhsa;)V
+    .locals 22
 
-    check-cast v1, Lkao;
+    move-object/from16 v1, p0
 
-    invoke-virtual {v1}, Lkao;->a()Lkaq;
+    monitor-enter p0
 
-    move-result-object v7
+    :try_start_0
+    iget-object v2, v1, Lhif;->c:Ljava/lang/Object;
 
-    iget-object v1, v0, Lhif;->f:Loiw;
+    monitor-enter v2
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_1
 
-    invoke-interface {v1}, Loiw;->get()Ljava/lang/Object;
+    :try_start_1
+    iget v0, v1, Lhif;->d:I
 
-    move-result-object v1
+    const/4 v3, 0x2
 
-    move-object v8, v1
+    const/4 v4, 0x0
 
-    check-cast v8, Lkbc;
+    const/4 v5, 0x1
 
-    new-instance v1, Lkik;
+    if-ne v0, v3, :cond_0
 
-    move-object v2, v1
+    const/4 v0, 0x1
 
-    invoke-direct/range {v2 .. v8}, Lkik;-><init>(Lkli;Lkeq;Lkkc;Lkjn;Lkaq;Lkbc;)V
+    goto :goto_0
 
-    return-object v1
+    :cond_0
+    const/4 v0, 0x0
 
-    :pswitch_2
-    iget-object v1, v0, Lhif;->a:Loiw;
+    :goto_0
+    invoke-static {v0}, Lobr;->aQ(Z)V
 
-    check-cast v1, Lfmj;
+    iget-object v0, v1, Lhif;->a:Ljava/util/concurrent/atomic/AtomicInteger;
 
-    invoke-virtual {v1}, Lfmj;->a()Lkli;
+    invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicInteger;->get()I
 
-    move-result-object v3
+    move-result v0
 
-    iget-object v1, v0, Lhif;->b:Loiw;
+    if-lez v0, :cond_1
 
-    check-cast v1, Lkge;
+    const/4 v4, 0x1
 
-    invoke-virtual {v1}, Lkge;->a()Lkeq;
+    goto :goto_1
 
-    move-result-object v4
+    :cond_1
+    :goto_1
+    invoke-static {v4}, Lobr;->aQ(Z)V
 
-    iget-object v1, v0, Lhif;->d:Loiw;
+    iget-object v0, v1, Lhif;->a:Ljava/util/concurrent/atomic/AtomicInteger;
 
-    invoke-interface {v1}, Loiw;->get()Ljava/lang/Object;
+    invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicInteger;->incrementAndGet()I
 
-    move-result-object v1
+    iget-object v0, v1, Lhif;->e:Ljava/util/Set;
 
-    move-object v5, v1
+    move-object/from16 v3, p1
 
-    check-cast v5, Lkkc;
+    invoke-interface {v0, v3}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
 
-    iget-object v1, v0, Lhif;->e:Loiw;
+    new-instance v0, Lhie;
 
-    invoke-interface {v1}, Loiw;->get()Ljava/lang/Object;
+    invoke-direct {v0, v1}, Lhie;-><init>(Lhif;)V
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    move-result-object v1
+    :try_start_2
+    iget-object v4, v1, Lhif;->f:Lhic;
 
-    move-object v6, v1
+    iget-object v6, v1, Lhif;->g:Lhis;
 
-    check-cast v6, Lkjn;
+    new-instance v15, Lhjb;
 
-    iget-object v1, v0, Lhif;->c:Loiw;
+    iget-object v8, v6, Lhis;->b:Ljava/util/concurrent/Executor;
 
-    check-cast v1, Lkao;
+    iget-object v9, v6, Lhis;->a:Lhil;
 
-    invoke-virtual {v1}, Lkao;->a()Lkaq;
+    iget-object v10, v6, Lhis;->c:Lhip;
 
-    move-result-object v7
+    iget-object v12, v6, Lhis;->f:Lhiq;
 
-    iget-object v1, v0, Lhif;->f:Loiw;
+    iget-object v13, v6, Lhis;->d:Lfjw;
 
-    invoke-interface {v1}, Loiw;->get()Ljava/lang/Object;
+    iget-object v14, v6, Lhis;->e:Lljf;
 
-    move-result-object v1
+    move-object v6, v15
 
-    move-object v8, v1
+    move-object/from16 v7, p1
 
-    check-cast v8, Lkbc;
+    move-object/from16 v11, p2
 
-    new-instance v1, Lkij;
+    invoke-direct/range {v6 .. v14}, Lhjb;-><init>(Lhin;Ljava/util/concurrent/Executor;Lhil;Lhip;Lhsa;Lhiq;Lfjw;Lljf;)V
 
-    move-object v2, v1
+    invoke-static {v0}, Lojc;->i(Ljava/lang/Object;)Lojc;
 
-    invoke-direct/range {v2 .. v8}, Lkij;-><init>(Lkli;Lkeq;Lkkc;Lkjn;Lkaq;Lkbc;)V
+    move-result-object v21
 
-    return-object v1
+    new-instance v0, Ljava/util/HashSet;
 
-    :pswitch_3
-    iget-object v1, v0, Lhif;->a:Loiw;
+    invoke-direct {v0, v5}, Ljava/util/HashSet;-><init>(I)V
 
-    check-cast v1, Lfmj;
+    invoke-interface {v0, v15}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
 
-    invoke-virtual {v1}, Lfmj;->a()Lkli;
+    iget-object v3, v15, Lhja;->g:Lhsa;
 
-    move-result-object v3
+    move-object/from16 v16, v4
 
-    iget-object v1, v0, Lhif;->b:Loiw;
+    check-cast v16, Lhia;
 
-    check-cast v1, Lkge;
+    const/16 v19, 0x0
 
-    invoke-virtual {v1}, Lkge;->a()Lkeq;
+    const/16 v20, 0x1
 
-    move-result-object v4
+    move-object/from16 v17, v3
 
-    iget-object v1, v0, Lhif;->d:Loiw;
+    move-object/from16 v18, v0
 
-    invoke-interface {v1}, Loiw;->get()Ljava/lang/Object;
+    invoke-virtual/range {v16 .. v21}, Lhia;->d(Lhsa;Ljava/util/Set;ZZLojc;)Z
+    :try_end_2
+    .catch Ljava/lang/InterruptedException; {:try_start_2 .. :try_end_2} :catch_0
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
-    move-result-object v1
+    :try_start_3
+    monitor-exit v2
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_0
 
-    move-object v5, v1
+    monitor-exit p0
 
-    check-cast v5, Lkkc;
+    return-void
 
-    iget-object v1, v0, Lhif;->e:Loiw;
+    :catch_0
+    move-exception v0
 
-    invoke-interface {v1}, Loiw;->get()Ljava/lang/Object;
+    :try_start_4
+    invoke-virtual {v0}, Ljava/lang/InterruptedException;->printStackTrace()V
 
-    move-result-object v1
+    new-instance v0, Ljava/lang/IllegalStateException;
 
-    move-object v6, v1
+    const-string v3, "Interrupt should NOT happen, because call is non-blocking"
 
-    check-cast v6, Lkjn;
+    invoke-direct {v0, v3}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 
-    iget-object v1, v0, Lhif;->c:Loiw;
+    throw v0
 
-    check-cast v1, Lkao;
+    :catchall_0
+    move-exception v0
 
-    invoke-virtual {v1}, Lkao;->a()Lkaq;
+    monitor-exit v2
+    :try_end_4
+    .catchall {:try_start_4 .. :try_end_4} :catchall_0
 
-    move-result-object v7
+    :try_start_5
+    throw v0
+    :try_end_5
+    .catchall {:try_start_5 .. :try_end_5} :catchall_1
 
-    iget-object v1, v0, Lhif;->f:Loiw;
+    :catchall_1
+    move-exception v0
 
-    invoke-interface {v1}, Loiw;->get()Ljava/lang/Object;
+    monitor-exit p0
 
-    move-result-object v1
+    throw v0
+.end method
 
-    move-object v8, v1
+.method public declared-synchronized close()V
+    .locals 5
 
-    check-cast v8, Lkbc;
+    monitor-enter p0
 
-    new-instance v1, Lkii;
+    :try_start_0
+    iget-object v0, p0, Lhif;->c:Ljava/lang/Object;
 
-    move-object v2, v1
+    monitor-enter v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_1
 
-    invoke-direct/range {v2 .. v8}, Lkii;-><init>(Lkli;Lkeq;Lkkc;Lkjn;Lkaq;Lkbc;)V
+    :try_start_1
+    iget v1, p0, Lhif;->d:I
 
-    return-object v1
+    const/4 v2, 0x2
 
-    :pswitch_4
-    iget-object v1, v0, Lhif;->a:Loiw;
+    const/4 v3, 0x1
 
-    check-cast v1, Lfmj;
+    const/4 v4, 0x3
 
-    invoke-virtual {v1}, Lfmj;->a()Lkli;
+    if-eq v1, v2, :cond_1
 
-    move-result-object v3
+    if-ne v1, v4, :cond_0
 
-    iget-object v1, v0, Lhif;->b:Loiw;
+    goto :goto_0
 
-    check-cast v1, Lkge;
+    :cond_0
+    const/4 v3, 0x0
 
-    invoke-virtual {v1}, Lkge;->a()Lkeq;
+    goto :goto_0
 
-    move-result-object v4
+    :cond_1
+    :goto_0
+    invoke-static {v3}, Lobr;->aQ(Z)V
 
-    iget-object v1, v0, Lhif;->d:Loiw;
+    iget v1, p0, Lhif;->d:I
 
-    invoke-interface {v1}, Loiw;->get()Ljava/lang/Object;
+    if-eq v1, v4, :cond_3
 
-    move-result-object v1
+    iput v4, p0, Lhif;->d:I
 
-    move-object v5, v1
+    iget-object v1, p0, Lhif;->a:Ljava/util/concurrent/atomic/AtomicInteger;
 
-    check-cast v5, Lkkc;
+    invoke-virtual {v1}, Ljava/util/concurrent/atomic/AtomicInteger;->decrementAndGet()I
 
-    iget-object v1, v0, Lhif;->e:Loiw;
+    move-result v1
 
-    invoke-interface {v1}, Loiw;->get()Ljava/lang/Object;
+    if-nez v1, :cond_2
 
-    move-result-object v1
+    invoke-virtual {p0}, Lhif;->a()V
 
-    move-object v6, v1
+    :cond_2
+    monitor-exit v0
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    check-cast v6, Lkjn;
+    monitor-exit p0
 
-    iget-object v1, v0, Lhif;->c:Loiw;
+    return-void
 
-    check-cast v1, Lkao;
+    :cond_3
+    :try_start_2
+    monitor-exit v0
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
-    invoke-virtual {v1}, Lkao;->a()Lkaq;
+    monitor-exit p0
 
-    move-result-object v7
+    return-void
 
-    iget-object v1, v0, Lhif;->f:Loiw;
+    :catchall_0
+    move-exception v1
 
-    invoke-interface {v1}, Loiw;->get()Ljava/lang/Object;
+    :try_start_3
+    monitor-exit v0
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_0
 
-    move-result-object v1
+    :try_start_4
+    throw v1
+    :try_end_4
+    .catchall {:try_start_4 .. :try_end_4} :catchall_1
 
-    move-object v8, v1
+    :catchall_1
+    move-exception v0
 
-    check-cast v8, Lkbc;
+    monitor-exit p0
 
-    new-instance v1, Lkie;
-
-    move-object v2, v1
-
-    invoke-direct/range {v2 .. v8}, Lkie;-><init>(Lkli;Lkeq;Lkkc;Lkjn;Lkaq;Lkbc;)V
-
-    return-object v1
-
-    :pswitch_5
-    iget-object v1, v0, Lhif;->b:Loiw;
-
-    invoke-interface {v1}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Lkgi;
-
-    iget-object v1, v0, Lhif;->a:Loiw;
-
-    invoke-interface {v1}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v1
-
-    move-object v3, v1
-
-    check-cast v3, Lkkc;
-
-    iget-object v1, v0, Lhif;->d:Loiw;
-
-    invoke-interface {v1}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v1
-
-    move-object v4, v1
-
-    check-cast v4, Landroidx/wear/ambient/AmbientDelegate;
-
-    iget-object v1, v0, Lhif;->e:Loiw;
-
-    invoke-interface {v1}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v1
-
-    move-object v5, v1
-
-    check-cast v5, Lkpo;
-
-    iget-object v1, v0, Lhif;->c:Loiw;
-
-    check-cast v1, Lkao;
-
-    invoke-virtual {v1}, Lkao;->a()Lkaq;
-
-    move-result-object v6
-
-    iget-object v1, v0, Lhif;->f:Loiw;
-
-    invoke-interface {v1}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v1
-
-    move-object v7, v1
-
-    check-cast v7, Lkbc;
-
-    new-instance v1, Lkpo;
-
-    const/4 v8, 0x0
-
-    const/4 v9, 0x0
-
-    const/4 v10, 0x0
-
-    move-object v2, v1
-
-    invoke-direct/range {v2 .. v10}, Lkpo;-><init>(Lkkc;Landroidx/wear/ambient/AmbientDelegate;Lkpo;Lkaq;Lkbc;[B[B[B)V
-
-    return-object v1
-
-    :pswitch_6
-    iget-object v1, v0, Lhif;->b:Loiw;
-
-    check-cast v1, Ljzn;
-
-    invoke-virtual {v1}, Ljzn;->a()Lbkb;
-
-    move-result-object v3
-
-    iget-object v1, v0, Lhif;->c:Loiw;
-
-    check-cast v1, Lklk;
-
-    invoke-virtual {v1}, Lklk;->a()Lklp;
-
-    move-result-object v4
-
-    iget-object v1, v0, Lhif;->a:Loiw;
-
-    invoke-interface {v1}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v1
-
-    move-object v5, v1
-
-    check-cast v5, Lkoe;
-
-    iget-object v1, v0, Lhif;->d:Loiw;
-
-    invoke-interface {v1}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v1
-
-    move-object v6, v1
-
-    check-cast v6, Lkog;
-
-    iget-object v1, v0, Lhif;->e:Loiw;
-
-    check-cast v1, Lkao;
-
-    invoke-virtual {v1}, Lkao;->a()Lkaq;
-
-    move-result-object v7
-
-    iget-object v1, v0, Lhif;->f:Loiw;
-
-    invoke-interface {v1}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v1
-
-    move-object v8, v1
-
-    check-cast v8, Lkbc;
-
-    new-instance v1, Ljzk;
-
-    const/4 v9, 0x0
-
-    const/4 v10, 0x0
-
-    const/4 v11, 0x0
-
-    const/4 v12, 0x0
-
-    move-object v2, v1
-
-    invoke-direct/range {v2 .. v12}, Ljzk;-><init>(Lbkb;Lklp;Lkoe;Lkog;Lkaq;Lkbc;[B[B[B[B)V
-
-    return-object v1
-
-    :pswitch_7
-    iget-object v14, v0, Lhif;->d:Loiw;
-
-    iget-object v15, v0, Lhif;->f:Loiw;
-
-    iget-object v1, v0, Lhif;->c:Loiw;
-
-    iget-object v2, v0, Lhif;->a:Loiw;
-
-    iget-object v3, v0, Lhif;->b:Loiw;
-
-    iget-object v4, v0, Lhif;->e:Loiw;
-
-    new-instance v5, Lkpo;
-
-    const/16 v20, 0x0
-
-    move-object v13, v5
-
-    move-object/from16 v16, v1
-
-    move-object/from16 v17, v2
-
-    move-object/from16 v18, v3
-
-    move-object/from16 v19, v4
-
-    invoke-direct/range {v13 .. v20}, Lkpo;-><init>(Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;[C)V
-
-    return-object v5
-
-    :pswitch_8
-    iget-object v1, v0, Lhif;->c:Loiw;
-
-    check-cast v1, Ldwh;
-
-    invoke-virtual {v1}, Ldwh;->a()Landroid/content/Context;
-
-    move-result-object v3
-
-    iget-object v1, v0, Lhif;->e:Loiw;
-
-    invoke-interface {v1}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v1
-
-    move-object v4, v1
-
-    check-cast v4, Ljuh;
-
-    iget-object v1, v0, Lhif;->a:Loiw;
-
-    check-cast v1, Leqy;
-
-    invoke-virtual {v1}, Leqy;->a()Lezx;
-
-    move-result-object v5
-
-    iget-object v1, v0, Lhif;->b:Loiw;
-
-    check-cast v1, Leqz;
-
-    invoke-virtual {v1}, Leqz;->a()Lcdi;
-
-    move-result-object v6
-
-    iget-object v1, v0, Lhif;->f:Loiw;
-
-    invoke-interface {v1}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v1
-
-    move-object v7, v1
-
-    check-cast v7, Lell;
-
-    iget-object v8, v0, Lhif;->d:Loiw;
-
-    new-instance v1, Lilg;
-
-    move-object v2, v1
-
-    invoke-direct/range {v2 .. v8}, Lilg;-><init>(Landroid/content/Context;Ljuh;Lezx;Lcdi;Lell;Loiw;)V
-
-    return-object v1
-
-    :pswitch_9
-    iget-object v1, v0, Lhif;->c:Loiw;
-
-    check-cast v1, Ldwh;
-
-    invoke-virtual {v1}, Ldwh;->a()Landroid/content/Context;
-
-    move-result-object v3
-
-    iget-object v1, v0, Lhif;->b:Loiw;
-
-    check-cast v1, Lefa;
-
-    invoke-virtual {v1}, Lefa;->b()Ljvs;
-
-    move-result-object v4
-
-    iget-object v1, v0, Lhif;->f:Loiw;
-
-    invoke-interface {v1}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v1
-
-    move-object v5, v1
-
-    check-cast v5, Lgzi;
-
-    iget-object v1, v0, Lhif;->d:Loiw;
-
-    invoke-interface {v1}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v1
-
-    move-object v6, v1
-
-    check-cast v6, Lell;
-
-    iget-object v1, v0, Lhif;->e:Loiw;
-
-    invoke-interface {v1}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v1
-
-    move-object v7, v1
-
-    check-cast v7, Ljava/util/concurrent/Executor;
-
-    iget-object v1, v0, Lhif;->a:Loiw;
-
-    check-cast v1, Leqz;
-
-    invoke-virtual {v1}, Leqz;->a()Lcdi;
-
-    move-result-object v8
-
-    new-instance v1, Licj;
-
-    move-object v2, v1
-
-    invoke-direct/range {v2 .. v8}, Licj;-><init>(Landroid/content/Context;Ljvs;Lgzi;Lell;Ljava/util/concurrent/Executor;Lcdi;)V
-
-    iget-object v2, v1, Licj;->d:Landroid/content/Context;
-
-    const/4 v9, 0x1
-
-    const/16 v10, 0xbb8
-
-    const/4 v11, 0x0
-
-    const/4 v12, 0x0
-
-    invoke-virtual {v2}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
-
-    move-result-object v3
-
-    const v4, 0x7f14006d
-
-    invoke-virtual {v3, v4}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
-
-    move-result-object v13
-
-    const/4 v15, 0x0
-
-    const/16 v16, -0x1
-
-    const/16 v17, 0x2
-
-    move-object v14, v2
-
-    invoke-static/range {v9 .. v17}, Ljpw;->k(ZILandroid/view/View$OnClickListener;Lice;Ljava/lang/String;Landroid/content/Context;ZII)Licf;
-
-    move-result-object v3
-
-    iput-object v3, v1, Licj;->h:Licf;
-
-    const/4 v9, 0x0
-
-    iget-object v3, v1, Licj;->d:Landroid/content/Context;
-
-    invoke-virtual {v3}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
-
-    move-result-object v3
-
-    const v4, 0x7f14056f
-
-    invoke-virtual {v3, v4}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
-
-    move-result-object v13
-
-    const/16 v17, 0x8
-
-    invoke-static/range {v9 .. v17}, Ljpw;->k(ZILandroid/view/View$OnClickListener;Lice;Ljava/lang/String;Landroid/content/Context;ZII)Licf;
-
-    iget-object v3, v1, Licj;->d:Landroid/content/Context;
-
-    invoke-virtual {v3}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
-
-    move-result-object v3
-
-    const v4, 0x7f14052f
-
-    invoke-virtual {v3, v4}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
-
-    move-result-object v13
-
-    const/16 v17, 0xc
-
-    invoke-static/range {v9 .. v17}, Ljpw;->k(ZILandroid/view/View$OnClickListener;Lice;Ljava/lang/String;Landroid/content/Context;ZII)Licf;
-
-    move-result-object v3
-
-    iput-object v3, v1, Licj;->i:Licf;
-
-    const/16 v10, 0xfa0
-
-    iget-object v3, v1, Licj;->d:Landroid/content/Context;
-
-    invoke-virtual {v3}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
-
-    move-result-object v3
-
-    const v4, 0x7f14052e
-
-    invoke-virtual {v3, v4}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
-
-    move-result-object v13
-
-    invoke-static/range {v9 .. v17}, Ljpw;->k(ZILandroid/view/View$OnClickListener;Lice;Ljava/lang/String;Landroid/content/Context;ZII)Licf;
-
-    move-result-object v2
-
-    iput-object v2, v1, Licj;->j:Licf;
-
-    return-object v1
-
-    :pswitch_a
-    iget-object v1, v0, Lhif;->c:Loiw;
-
-    check-cast v1, Ldwh;
-
-    invoke-virtual {v1}, Ldwh;->a()Landroid/content/Context;
-
-    move-result-object v3
-
-    iget-object v1, v0, Lhif;->b:Loiw;
-
-    invoke-interface {v1}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v1
-
-    move-object v4, v1
-
-    check-cast v4, Lcom/google/android/apps/camera/bottombar/BottomBarController;
-
-    iget-object v1, v0, Lhif;->e:Loiw;
-
-    invoke-interface {v1}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v1
-
-    move-object v5, v1
-
-    check-cast v5, Ldja;
-
-    iget-object v1, v0, Lhif;->a:Loiw;
-
-    check-cast v1, Leqy;
-
-    invoke-virtual {v1}, Leqy;->a()Lezx;
-
-    move-result-object v1
-
-    iget-object v2, v0, Lhif;->d:Loiw;
-
-    invoke-interface {v2}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v2
-
-    move-object v10, v2
-
-    check-cast v10, Ljuh;
-
-    iget-object v2, v0, Lhif;->f:Loiw;
-
-    invoke-interface {v2}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v2
-
-    move-object v6, v2
-
-    check-cast v6, Lfbz;
-
-    new-instance v11, Lhwu;
-
-    const/4 v7, 0x0
-
-    const/4 v8, 0x0
-
-    const/4 v9, 0x0
-
-    move-object v2, v11
-
-    invoke-direct/range {v2 .. v9}, Lhwu;-><init>(Landroid/content/Context;Lcom/google/android/apps/camera/bottombar/BottomBarController;Ldja;Lfbz;[B[B[B)V
-
-    invoke-static {v10, v1, v11}, Lfcr;->e(Ljuh;Lfak;Lfaz;)V
-
-    return-object v11
-
-    :pswitch_b
-    iget-object v1, v0, Lhif;->e:Loiw;
-
-    invoke-interface {v1}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v1
-
-    move-object v3, v1
-
-    check-cast v3, Ljuh;
-
-    iget-object v1, v0, Lhif;->b:Loiw;
-
-    invoke-interface {v1}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v1
-
-    move-object v4, v1
-
-    check-cast v4, Landroid/app/Activity;
-
-    iget-object v1, v0, Lhif;->a:Loiw;
-
-    invoke-interface {v1}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v1
-
-    move-object v5, v1
-
-    check-cast v5, Lfak;
-
-    iget-object v1, v0, Lhif;->f:Loiw;
-
-    invoke-interface {v1}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v1
-
-    move-object v6, v1
-
-    check-cast v6, Lfbz;
-
-    iget-object v1, v0, Lhif;->d:Loiw;
-
-    invoke-interface {v1}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v1
-
-    move-object v7, v1
-
-    check-cast v7, Ldhi;
-
-    iget-object v1, v0, Lhif;->c:Loiw;
-
-    invoke-interface {v1}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v1
-
-    move-object v8, v1
-
-    check-cast v8, Ljvs;
-
-    new-instance v1, Lhrz;
-
-    move-object v2, v1
-
-    invoke-direct/range {v2 .. v8}, Lhrz;-><init>(Ljuh;Landroid/app/Activity;Lfak;Lfbz;Ldhi;Ljvs;)V
-
-    return-object v1
-
-    :pswitch_c
-    iget-object v1, v0, Lhif;->c:Loiw;
-
-    invoke-interface {v1}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v1
-
-    move-object v3, v1
-
-    check-cast v3, Ljwb;
-
-    iget-object v1, v0, Lhif;->d:Loiw;
-
-    invoke-interface {v1}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v1
-
-    move-object v4, v1
-
-    check-cast v4, Ljwb;
-
-    iget-object v1, v0, Lhif;->a:Loiw;
-
-    invoke-interface {v1}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v1
-
-    move-object v5, v1
-
-    check-cast v5, Ljwb;
-
-    iget-object v1, v0, Lhif;->b:Loiw;
-
-    invoke-interface {v1}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v1
-
-    move-object v6, v1
-
-    check-cast v6, Lell;
-
-    iget-object v1, v0, Lhif;->e:Loiw;
-
-    invoke-interface {v1}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v1
-
-    move-object v7, v1
-
-    check-cast v7, Lgeh;
-
-    iget-object v1, v0, Lhif;->f:Loiw;
-
-    invoke-interface {v1}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v1
-
-    move-object v8, v1
-
-    check-cast v8, Lfbz;
-
-    new-instance v1, Lhqu;
-
-    move-object v2, v1
-
-    invoke-direct/range {v2 .. v8}, Lhqu;-><init>(Ljwb;Ljwb;Ljwb;Lell;Lgeh;Lfbz;)V
-
-    return-object v1
-
-    :pswitch_d
-    iget-object v1, v0, Lhif;->b:Loiw;
-
-    invoke-interface {v1}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v1
-
-    move-object v3, v1
-
-    check-cast v3, Ldbf;
-
-    iget-object v1, v0, Lhif;->c:Loiw;
-
-    invoke-interface {v1}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v1
-
-    move-object v4, v1
-
-    check-cast v4, Ljwb;
-
-    iget-object v1, v0, Lhif;->e:Loiw;
-
-    check-cast v1, Lesd;
-
-    invoke-virtual {v1}, Lesd;->a()Lesv;
-
-    move-result-object v5
-
-    iget-object v1, v0, Lhif;->f:Loiw;
-
-    invoke-interface {v1}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v1
-
-    move-object v6, v1
-
-    check-cast v6, Lkbc;
-
-    iget-object v1, v0, Lhif;->d:Loiw;
-
-    invoke-interface {v1}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v1
-
-    move-object v7, v1
-
-    check-cast v7, Lcvh;
-
-    iget-object v1, v0, Lhif;->a:Loiw;
-
-    invoke-interface {v1}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v1
-
-    move-object v8, v1
-
-    check-cast v8, Lfmf;
-
-    new-instance v1, Lhoc;
-
-    move-object v2, v1
-
-    invoke-direct/range {v2 .. v8}, Lhoc;-><init>(Ldbf;Ljwb;Lesv;Lkbc;Lcvh;Lfmf;)V
-
-    return-object v1
-
-    :pswitch_e
-    iget-object v1, v0, Lhif;->b:Loiw;
-
-    invoke-static {}, Lduq;->a()Ldin;
-
-    move-result-object v17
-
-    iget-object v2, v0, Lhif;->a:Loiw;
-
-    check-cast v2, Ldwh;
-
-    invoke-virtual {v2}, Ldwh;->a()Landroid/content/Context;
-
-    move-result-object v11
-
-    iget-object v2, v0, Lhif;->c:Loiw;
-
-    invoke-interface {v2}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v2
-
-    move-object/from16 v16, v2
-
-    check-cast v16, Ljava/util/concurrent/Executor;
-
-    iget-object v2, v0, Lhif;->e:Loiw;
-
-    check-cast v2, Limf;
-
-    invoke-virtual {v2}, Limf;->a()Landroid/content/pm/PackageInfo;
-
-    move-result-object v2
-
-    iget-object v3, v0, Lhif;->f:Loiw;
-
-    check-cast v3, Ldno;
-
-    invoke-virtual {v3}, Ldno;->a()Ldja;
-
-    move-result-object v20
-
-    iget-object v3, v0, Lhif;->d:Loiw;
-
-    check-cast v3, Limt;
-
-    invoke-virtual {v3}, Limt;->a()Ljava/lang/Boolean;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Ljava/lang/Boolean;->booleanValue()Z
-
-    move-result v22
-
-    new-instance v3, Lhjl;
-
-    invoke-static {}, Lfch;->a()Lfch;
-
-    move-result-object v10
-
-    new-instance v4, Ljava/security/SecureRandom;
-
-    invoke-direct {v4}, Ljava/security/SecureRandom;-><init>()V
-
-    invoke-virtual {v4}, Ljava/security/SecureRandom;->nextLong()J
-
-    move-result-wide v12
-
-    invoke-static {}, Ljava/util/TimeZone;->getDefault()Ljava/util/TimeZone;
-
-    move-result-object v4
-
-    invoke-virtual {v4}, Ljava/util/TimeZone;->getID()Ljava/lang/String;
-
-    move-result-object v14
-
-    sget-object v15, Landroid/os/Build;->DISPLAY:Ljava/lang/String;
-
-    invoke-static {}, Landroid/app/ActivityManager;->isRunningInTestHarness()Z
-
-    move-result v18
-
-    iget-object v2, v2, Landroid/content/pm/PackageInfo;->versionName:Ljava/lang/String;
-
-    const/16 v23, 0x0
-
-    move-object v9, v3
-
-    move-object/from16 v19, v1
-
-    move-object/from16 v21, v2
-
-    invoke-direct/range {v9 .. v23}, Lhjl;-><init>(Lfch;Landroid/content/Context;JLjava/lang/String;Ljava/lang/String;Ljava/util/concurrent/Executor;Ldin;ZLoiw;Ldja;Ljava/lang/String;Z[B)V
-
-    return-object v3
-
-    :pswitch_f
-    iget-object v1, v0, Lhif;->c:Loiw;
-
-    invoke-interface {v1}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v1
-
-    iget-object v2, v0, Lhif;->a:Loiw;
-
-    invoke-interface {v2}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v2
-
-    iget-object v3, v0, Lhif;->f:Loiw;
-
-    invoke-interface {v3}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v3
-
-    move-object v7, v3
-
-    check-cast v7, Lkbc;
-
-    iget-object v3, v0, Lhif;->d:Loiw;
-
-    invoke-interface {v3}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v3
-
-    move-object v8, v3
-
-    check-cast v8, Ljuh;
-
-    iget-object v3, v0, Lhif;->b:Loiw;
-
-    check-cast v3, Leqy;
-
-    invoke-virtual {v3}, Leqy;->a()Lezx;
-
-    move-result-object v9
-
-    iget-object v3, v0, Lhif;->e:Loiw;
-
-    invoke-interface {v3}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v3
-
-    move-object v10, v3
-
-    check-cast v10, Lgzn;
-
-    new-instance v3, Lhha;
-
-    move-object v5, v1
-
-    check-cast v5, Lhhc;
-
-    move-object v6, v2
-
-    check-cast v6, Lhhc;
-
-    move-object v4, v3
-
-    invoke-direct/range {v4 .. v10}, Lhha;-><init>(Lhhc;Lhhc;Lkbc;Ljuh;Lezx;Lgzn;)V
-
-    return-object v3
-
-    :pswitch_10
-    iget-object v1, v0, Lhif;->a:Loiw;
-
-    invoke-interface {v1}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v1
-
-    move-object v3, v1
-
-    check-cast v3, Lhrz;
-
-    iget-object v1, v0, Lhif;->b:Loiw;
-
-    check-cast v1, Ldwh;
-
-    invoke-virtual {v1}, Ldwh;->a()Landroid/content/Context;
-
-    move-result-object v4
-
-    iget-object v1, v0, Lhif;->c:Loiw;
-
-    invoke-interface {v1}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v1
-
-    move-object v5, v1
-
-    check-cast v5, Ligo;
-
-    iget-object v1, v0, Lhif;->d:Loiw;
-
-    check-cast v1, Lcja;
-
-    invoke-virtual {v1}, Lcja;->a()Ljava/util/concurrent/Executor;
-
-    move-result-object v6
-
-    iget-object v1, v0, Lhif;->e:Loiw;
-
-    invoke-interface {v1}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v1
-
-    move-object v7, v1
-
-    check-cast v7, Ljava/util/concurrent/ScheduledExecutorService;
-
-    iget-object v1, v0, Lhif;->f:Loiw;
-
-    invoke-interface {v1}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v1
-
-    move-object v8, v1
-
-    check-cast v8, Lgzn;
-
-    new-instance v1, Lhie;
-
-    const/4 v9, 0x0
-
-    const/4 v10, 0x0
-
-    move-object v2, v1
-
-    invoke-direct/range {v2 .. v10}, Lhie;-><init>(Lhrz;Landroid/content/Context;Ligo;Ljava/util/concurrent/Executor;Ljava/util/concurrent/ScheduledExecutorService;Lgzn;[B[B)V
-
-    return-object v1
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_10
-        :pswitch_f
-        :pswitch_e
-        :pswitch_d
-        :pswitch_c
-        :pswitch_b
-        :pswitch_a
-        :pswitch_9
-        :pswitch_8
-        :pswitch_7
-        :pswitch_6
-        :pswitch_5
-        :pswitch_4
-        :pswitch_3
-        :pswitch_2
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
+    throw v0
 .end method

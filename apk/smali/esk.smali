@@ -1,20 +1,16 @@
-.class public final Lesk;
+.class public interface abstract Lesk;
 .super Ljava/lang/Object;
 
-
-# instance fields
-.field public final a:Lesh;
-
-.field public b:Lkgd;
+# interfaces
+.implements Llie;
 
 
-# direct methods
-.method public constructor <init>(Lesh;)V
-    .locals 0
+# virtual methods
+.method public abstract b(I)Lpht;
+.end method
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+.method public abstract c(I)V
+.end method
 
-    iput-object p1, p0, Lesk;->a:Lesh;
-
-    return-void
+.method public abstract d(FFJ)V
 .end method

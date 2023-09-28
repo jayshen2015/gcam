@@ -2,86 +2,38 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lhia;
+.implements Lhht;
 
 
 # instance fields
-.field final synthetic a:Ljava/lang/Object;
+.field public final a:Lpko;
 
-.field private final synthetic b:I
+.field public final b:Lfcy;
 
 
 # direct methods
-.method public constructor <init>(Lcqz;I)V
+.method public constructor <init>(Lpko;)V
     .locals 0
-
-    iput p2, p0, Lhhu;->b:I
-
-    iput-object p1, p0, Lhhu;->a:Ljava/lang/Object;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    return-void
-.end method
+    iput-object p1, p0, Lhhu;->a:Lpko;
 
-.method public constructor <init>(Lhhv;I)V
-    .locals 0
+    new-instance p1, Lfcy;
 
-    iput p2, p0, Lhhu;->b:I
+    invoke-direct {p1}, Lfcy;-><init>()V
 
-    iput-object p1, p0, Lhhu;->a:Ljava/lang/Object;
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lhhu;->b:Lfcy;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a([B)V
+.method public final a(Lmad;Lmad;)V
     .locals 0
 
-    iget p1, p0, Lhhu;->b:I
+    const/4 p1, 0x0
 
-    return-void
-.end method
-
-.method public final synthetic b()V
-    .locals 1
-
-    iget v0, p0, Lhhu;->b:I
-
-    return-void
-.end method
-
-.method public final c(I)V
-    .locals 1
-
-    iget v0, p0, Lhhu;->b:I
-
-    packed-switch v0, :pswitch_data_0
-
-    iget-object v0, p0, Lhhu;->a:Ljava/lang/Object;
-
-    check-cast v0, Lcqz;
-
-    iput p1, v0, Lcqz;->c:I
-
-    return-void
-
-    :pswitch_0
-    iget-object p1, p0, Lhhu;->a:Ljava/lang/Object;
-
-    check-cast p1, Lhhv;
-
-    const/4 v0, 0x1
-
-    iput-boolean v0, p1, Lhhv;->a:Z
-
-    return-void
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+    throw p1
 .end method

@@ -1,232 +1,495 @@
 .class public final Lfzb;
 .super Ljava/lang/Object;
 
-
-# static fields
-.field public static final a:Lnak;
+# interfaces
+.implements Lpys;
 
 
 # instance fields
-.field public final b:Ljava/util/Set;
+.field private final A:Lqkg;
 
-.field public final c:Lkbc;
+.field private final B:Lqkg;
 
-.field public final d:Lnph;
+.field private final a:Lqkg;
 
-.field private final e:Ljava/util/concurrent/Executor;
+.field private final b:Lqkg;
+
+.field private final c:Lqkg;
+
+.field private final d:Lqkg;
+
+.field private final e:Lqkg;
+
+.field private final f:Lqkg;
+
+.field private final g:Lqkg;
+
+.field private final h:Lqkg;
+
+.field private final i:Lqkg;
+
+.field private final j:Lqkg;
+
+.field private final k:Lqkg;
+
+.field private final l:Lqkg;
+
+.field private final m:Lqkg;
+
+.field private final n:Lqkg;
+
+.field private final o:Lqkg;
+
+.field private final p:Lqkg;
+
+.field private final q:Lqkg;
+
+.field private final r:Lqkg;
+
+.field private final s:Lqkg;
+
+.field private final t:Lqkg;
+
+.field private final u:Lqkg;
+
+.field private final v:Lqkg;
+
+.field private final w:Lqkg;
+
+.field private final x:Lqkg;
+
+.field private final y:Lqkg;
+
+.field private final z:Lqkg;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
+.method public constructor <init>(Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;)V
+    .locals 2
 
-    const-string v0, "com/google/android/apps/camera/one/lifecycle/CameraAsyncTaskRunner"
-
-    invoke-static {v0}, Lnak;->h(Ljava/lang/String;)Lnak;
-
-    move-result-object v0
-
-    sput-object v0, Lfzb;->a:Lnak;
-
-    return-void
-.end method
-
-.method public constructor <init>(Ljava/util/Set;Lnph;Ljava/util/concurrent/Executor;Lkbc;)V
-    .locals 0
+    move-object v0, p0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lfzb;->b:Ljava/util/Set;
+    move-object v1, p1
 
-    iput-object p4, p0, Lfzb;->c:Lkbc;
+    iput-object v1, v0, Lfzb;->a:Lqkg;
 
-    iput-object p2, p0, Lfzb;->d:Lnph;
+    move-object v1, p2
 
-    new-instance p1, Lkbi;
+    iput-object v1, v0, Lfzb;->b:Lqkg;
 
-    const-string p2, "CameraStarter"
+    move-object v1, p3
 
-    invoke-direct {p1, p3, p4, p2}, Lkbi;-><init>(Ljava/util/concurrent/Executor;Lkbc;Ljava/lang/String;)V
+    iput-object v1, v0, Lfzb;->c:Lqkg;
 
-    iput-object p1, p0, Lfzb;->e:Ljava/util/concurrent/Executor;
+    move-object v1, p4
+
+    iput-object v1, v0, Lfzb;->d:Lqkg;
+
+    move-object v1, p5
+
+    iput-object v1, v0, Lfzb;->e:Lqkg;
+
+    move-object v1, p6
+
+    iput-object v1, v0, Lfzb;->f:Lqkg;
+
+    move-object v1, p7
+
+    iput-object v1, v0, Lfzb;->g:Lqkg;
+
+    move-object v1, p8
+
+    iput-object v1, v0, Lfzb;->h:Lqkg;
+
+    move-object v1, p9
+
+    iput-object v1, v0, Lfzb;->i:Lqkg;
+
+    move-object v1, p10
+
+    iput-object v1, v0, Lfzb;->j:Lqkg;
+
+    move-object v1, p11
+
+    iput-object v1, v0, Lfzb;->k:Lqkg;
+
+    move-object v1, p12
+
+    iput-object v1, v0, Lfzb;->l:Lqkg;
+
+    move-object v1, p13
+
+    iput-object v1, v0, Lfzb;->m:Lqkg;
+
+    move-object/from16 v1, p14
+
+    iput-object v1, v0, Lfzb;->n:Lqkg;
+
+    move-object/from16 v1, p15
+
+    iput-object v1, v0, Lfzb;->o:Lqkg;
+
+    move-object/from16 v1, p16
+
+    iput-object v1, v0, Lfzb;->p:Lqkg;
+
+    move-object/from16 v1, p17
+
+    iput-object v1, v0, Lfzb;->q:Lqkg;
+
+    move-object/from16 v1, p18
+
+    iput-object v1, v0, Lfzb;->r:Lqkg;
+
+    move-object/from16 v1, p19
+
+    iput-object v1, v0, Lfzb;->s:Lqkg;
+
+    move-object/from16 v1, p20
+
+    iput-object v1, v0, Lfzb;->t:Lqkg;
+
+    move-object/from16 v1, p21
+
+    iput-object v1, v0, Lfzb;->u:Lqkg;
+
+    move-object/from16 v1, p22
+
+    iput-object v1, v0, Lfzb;->v:Lqkg;
+
+    move-object/from16 v1, p23
+
+    iput-object v1, v0, Lfzb;->w:Lqkg;
+
+    move-object/from16 v1, p24
+
+    iput-object v1, v0, Lfzb;->x:Lqkg;
+
+    move-object/from16 v1, p25
+
+    iput-object v1, v0, Lfzb;->y:Lqkg;
+
+    move-object/from16 v1, p26
+
+    iput-object v1, v0, Lfzb;->z:Lqkg;
+
+    move-object/from16 v1, p27
+
+    iput-object v1, v0, Lfzb;->A:Lqkg;
+
+    move-object/from16 v1, p28
+
+    iput-object v1, v0, Lfzb;->B:Lqkg;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Lnou;
-    .locals 6
+.method public final bridge synthetic get()Ljava/lang/Object;
+    .locals 35
 
-    iget-object v0, p0, Lfzb;->b:Ljava/util/Set;
+    move-object/from16 v0, p0
 
-    invoke-interface {v0}, Ljava/util/Set;->size()I
+    iget-object v1, v0, Lfzb;->a:Lqkg;
 
-    iget-object v0, p0, Lfzb;->b:Ljava/util/Set;
-
-    invoke-static {v0}, Lj$/util/Collection$-EL;->stream(Ljava/util/Collection;)Lj$/util/stream/Stream;
-
-    move-result-object v0
-
-    sget-object v1, Lefv;->j:Lefv;
-
-    invoke-interface {v0, v1}, Lj$/util/stream/Stream;->map(Ljava/util/function/Function;)Lj$/util/stream/Stream;
-
-    move-result-object v0
-
-    const-string v1, ","
-
-    invoke-static {v1}, Lj$/util/stream/Collectors;->joining(Ljava/lang/CharSequence;)Lj$/util/stream/Collector;
+    invoke-interface {v1}, Lqkg;->get()Ljava/lang/Object;
 
     move-result-object v1
 
-    invoke-interface {v0, v1}, Lj$/util/stream/Stream;->collect(Lj$/util/stream/Collector;)Ljava/lang/Object;
+    move-object v5, v1
 
-    new-instance v0, Ljava/util/ArrayList;
+    check-cast v5, Lbtt;
 
-    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+    iget-object v1, v0, Lfzb;->b:Lqkg;
 
-    iget-object v1, p0, Lfzb;->c:Lkbc;
-
-    const-string v2, "CameraStarter.start"
-
-    invoke-interface {v1, v2}, Lkbc;->e(Ljava/lang/String;)V
-
-    iget-object v1, p0, Lfzb;->b:Ljava/util/Set;
-
-    invoke-interface {v1}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
+    invoke-interface {v1}, Lqkg;->get()Ljava/lang/Object;
 
     move-result-object v1
 
-    :goto_0
-    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
+    move-object v3, v1
 
-    move-result v2
+    check-cast v3, Lhpu;
 
-    if-eqz v2, :cond_0
+    iget-object v1, v0, Lfzb;->c:Lqkg;
 
-    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-interface {v1}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v1
+
+    move-object v4, v1
+
+    check-cast v4, Lbud;
+
+    iget-object v1, v0, Lfzb;->d:Lqkg;
+
+    invoke-interface {v1}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v1
+
+    move-object v6, v1
+
+    check-cast v6, Ljje;
+
+    iget-object v1, v0, Lfzb;->e:Lqkg;
+
+    check-cast v1, Likk;
+
+    invoke-virtual {v1}, Likk;->a()Lkme;
+
+    move-result-object v11
+
+    iget-object v1, v0, Lfzb;->f:Lqkg;
+
+    invoke-interface {v1}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v1
+
+    move-object v7, v1
+
+    check-cast v7, Lifn;
+
+    iget-object v1, v0, Lfzb;->g:Lqkg;
+
+    invoke-interface {v1}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v1
+
+    move-object v8, v1
+
+    check-cast v8, Lddf;
+
+    iget-object v1, v0, Lfzb;->h:Lqkg;
+
+    invoke-interface {v1}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v1
+
+    move-object v9, v1
+
+    check-cast v9, Lhhq;
+
+    iget-object v1, v0, Lfzb;->i:Lqkg;
+
+    invoke-interface {v1}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v1
+
+    move-object v10, v1
+
+    check-cast v10, Lhhl;
+
+    iget-object v1, v0, Lfzb;->j:Lqkg;
+
+    check-cast v1, Letg;
+
+    invoke-virtual {v1}, Letg;->b()Lbqg;
+
+    move-result-object v1
+
+    iget-object v2, v0, Lfzb;->k:Lqkg;
+
+    invoke-interface {v2}, Lqkg;->get()Ljava/lang/Object;
 
     move-result-object v2
 
-    check-cast v2, Lcik;
+    move-object/from16 v16, v2
 
-    :try_start_0
-    invoke-interface {v2}, Lcik;->bl()Lnou;
+    check-cast v16, Lepj;
 
-    move-result-object v3
+    iget-object v2, v0, Lfzb;->l:Lqkg;
 
-    new-instance v4, Leth;
-
-    const/4 v5, 0x7
-
-    invoke-direct {v4, v2, v5}, Leth;-><init>(Lcik;I)V
-
-    sget-object v2, Lnnv;->a:Lnnv;
-
-    invoke-static {v3, v4, v2}, Lnnf;->i(Lnou;Lmqi;Ljava/util/concurrent/Executor;)Lnou;
+    invoke-interface {v2}, Lqkg;->get()Ljava/lang/Object;
 
     move-result-object v2
 
-    invoke-interface {v0, v2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    move-object/from16 v17, v2
 
-    goto :goto_0
+    check-cast v17, Lizx;
 
-    :catchall_0
-    move-exception v2
+    iget-object v2, v0, Lfzb;->m:Lqkg;
 
-    sget-object v3, Lfzb;->a:Lnak;
-
-    invoke-virtual {v3}, Lnaf;->b()Lnaz;
-
-    move-result-object v3
-
-    const-string v4, "Failed to run task"
-
-    const/16 v5, 0x9dd
-
-    invoke-static {v3, v4, v5, v2}, Ld;->h(Lnaz;Ljava/lang/String;CLjava/lang/Throwable;)V
-
-    invoke-static {v2}, Lnsy;->A(Ljava/lang/Throwable;)Lnou;
+    invoke-interface {v2}, Lqkg;->get()Ljava/lang/Object;
 
     move-result-object v2
 
-    invoke-interface {v0, v2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+    move-object/from16 v18, v2
 
-    goto :goto_0
+    check-cast v18, Likm;
 
-    :cond_0
-    iget-object v1, p0, Lfzb;->c:Lkbc;
+    iget-object v2, v0, Lfzb;->n:Lqkg;
 
-    invoke-interface {v1}, Lkbc;->f()V
+    invoke-interface {v2}, Lqkg;->get()Ljava/lang/Object;
 
-    invoke-static {v0}, Lj$/util/Collection$-EL;->stream(Ljava/util/Collection;)Lj$/util/stream/Stream;
+    move-result-object v2
 
-    move-result-object v1
+    move-object v13, v2
 
-    sget-object v2, Lefv;->k:Lefv;
+    check-cast v13, Llar;
 
-    invoke-interface {v1, v2}, Lj$/util/stream/Stream;->map(Ljava/util/function/Function;)Lj$/util/stream/Stream;
+    iget-object v2, v0, Lfzb;->o:Lqkg;
 
-    move-result-object v1
+    invoke-interface {v2}, Lqkg;->get()Ljava/lang/Object;
 
-    sget-object v2, Lfjd;->d:Lfjd;
+    move-result-object v2
 
-    invoke-interface {v1, v2}, Lj$/util/stream/Stream;->filter(Ljava/util/function/Predicate;)Lj$/util/stream/Stream;
+    move-object/from16 v19, v2
 
-    move-result-object v1
+    check-cast v19, Lcom/google/android/apps/camera/bottombar/BottomBarController;
 
-    invoke-interface {v1}, Lj$/util/stream/Stream;->count()J
+    iget-object v2, v0, Lfzb;->p:Lqkg;
 
-    move-result-wide v1
+    invoke-interface {v2}, Lqkg;->get()Ljava/lang/Object;
 
-    iget-object v3, p0, Lfzb;->c:Lkbc;
+    move-result-object v2
 
-    new-instance v4, Ljava/lang/StringBuilder;
+    move-object/from16 v20, v2
 
-    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
+    check-cast v20, Ljlb;
 
-    const-string v5, "CameraStarter.startAsync:"
+    iget-object v2, v0, Lfzb;->q:Lqkg;
 
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-interface {v2}, Lqkg;->get()Ljava/lang/Object;
 
-    invoke-virtual {v4, v1, v2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+    move-result-object v2
 
-    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    move-object/from16 v21, v2
 
-    move-result-object v1
+    check-cast v21, Lfjs;
 
-    invoke-interface {v3, v1}, Lkbc;->a(Ljava/lang/String;)Lkbf;
+    iget-object v2, v0, Lfzb;->r:Lqkg;
 
-    move-result-object v1
+    invoke-interface {v2}, Lqkg;->get()Ljava/lang/Object;
 
-    invoke-static {v0}, Lnsy;->x(Ljava/lang/Iterable;)Lnou;
+    move-result-object v2
 
-    move-result-object v0
+    move-object/from16 v22, v2
 
-    new-instance v2, Leth;
+    check-cast v22, Ldxp;
 
-    const/16 v3, 0x8
+    iget-object v2, v0, Lfzb;->s:Lqkg;
 
-    invoke-direct {v2, v1, v3}, Leth;-><init>(Lkbf;I)V
+    invoke-interface {v2}, Lqkg;->get()Ljava/lang/Object;
 
-    sget-object v1, Lnnv;->a:Lnnv;
+    move-result-object v2
 
-    invoke-static {v0, v2, v1}, Lnnf;->i(Lnou;Lmqi;Ljava/util/concurrent/Executor;)Lnou;
+    move-object/from16 v23, v2
 
-    move-result-object v0
+    check-cast v23, Ldwu;
 
-    new-instance v1, Lgij;
+    iget-object v2, v0, Lfzb;->t:Lqkg;
 
-    const/4 v2, 0x1
+    check-cast v2, Lhra;
 
-    invoke-direct {v1, p0, v2}, Lgij;-><init>(Lfzb;I)V
+    invoke-virtual {v2}, Lhra;->a()Lmhm;
 
-    iget-object v2, p0, Lfzb;->e:Ljava/util/concurrent/Executor;
+    move-result-object v24
 
-    invoke-static {v0, v1, v2}, Ljvd;->t(Lnou;Ljzs;Ljava/util/concurrent/Executor;)V
+    iget-object v2, v0, Lfzb;->u:Lqkg;
 
-    return-object v0
+    check-cast v2, Lhqa;
+
+    invoke-virtual {v2}, Lhqa;->a()Lhrz;
+
+    move-result-object v25
+
+    iget-object v2, v0, Lfzb;->v:Lqkg;
+
+    invoke-interface {v2}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v2
+
+    move-object/from16 v26, v2
+
+    check-cast v26, Lgvb;
+
+    iget-object v2, v0, Lfzb;->w:Lqkg;
+
+    invoke-interface {v2}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v2
+
+    move-object/from16 v27, v2
+
+    check-cast v27, Llda;
+
+    iget-object v2, v0, Lfzb;->x:Lqkg;
+
+    invoke-interface {v2}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v2
+
+    move-object/from16 v29, v2
+
+    check-cast v29, Lilx;
+
+    iget-object v2, v0, Lfzb;->y:Lqkg;
+
+    invoke-interface {v2}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v2
+
+    move-object/from16 v28, v2
+
+    check-cast v28, Ljava/util/Set;
+
+    iget-object v2, v0, Lfzb;->z:Lqkg;
+
+    invoke-interface {v2}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v2
+
+    move-object/from16 v30, v2
+
+    check-cast v30, Lhsh;
+
+    iget-object v2, v0, Lfzb;->A:Lqkg;
+
+    invoke-interface {v2}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v2
+
+    move-object/from16 v31, v2
+
+    check-cast v31, Lljf;
+
+    iget-object v2, v0, Lfzb;->B:Lqkg;
+
+    invoke-interface {v2}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v2
+
+    move-object v15, v2
+
+    check-cast v15, Lhuf;
+
+    new-instance v34, Lfyr;
+
+    move-object/from16 v2, v34
+
+    invoke-virtual {v1}, Lbqg;->i()Llap;
+
+    move-result-object v12
+
+    sget-object v1, Lhtu;->aa:Lhun;
+
+    invoke-interface {v15, v1}, Lhuf;->a(Lhts;)Llco;
+
+    move-result-object v14
+
+    sget-object v1, Lhtu;->ab:Lhuk;
+
+    invoke-interface {v15, v1}, Lhuf;->a(Lhts;)Llco;
+
+    move-result-object v15
+
+    const/16 v32, 0x0
+
+    const/16 v33, 0x0
+
+    invoke-direct/range {v2 .. v33}, Lfyr;-><init>(Lhpu;Lbud;Lbtt;Ljje;Lifn;Lddf;Lhhq;Lhhl;Lkme;Llap;Llar;Llco;Llco;Lepj;Lizx;Likm;Lcom/google/android/apps/camera/bottombar/BottomBarController;Ljlb;Lfjs;Ldxp;Ldwu;Lmhm;Lhrz;Lgva;Llda;Ljava/util/Set;Lilx;Lhsh;Lljf;[B[B)V
+
+    return-object v34
 .end method

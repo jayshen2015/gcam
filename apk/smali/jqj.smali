@@ -1,148 +1,333 @@
 .class public final Ljqj;
-.super Ljhn;
+.super Ljava/lang/Object;
 
-
-# static fields
-.field public static final CREATOR:Landroid/os/Parcelable$Creator;
+# interfaces
+.implements Lpys;
 
 
 # instance fields
-.field public final a:Ljsh;
+.field private final a:Lqkg;
 
-.field public final b:[Landroid/content/IntentFilter;
+.field private final b:Lqkg;
 
-.field public final c:Ljava/lang/String;
+.field private final c:Lqkg;
 
-.field public final d:Ljava/lang/String;
+.field private final d:Lqkg;
+
+.field private final e:Lqkg;
+
+.field private final f:Lqkg;
+
+.field private final g:Lqkg;
+
+.field private final h:Lqkg;
+
+.field private final i:Lqkg;
+
+.field private final j:Lqkg;
+
+.field private final k:Lqkg;
+
+.field private final l:Lqkg;
+
+.field private final m:Lqkg;
+
+.field private final n:Lqkg;
+
+.field private final o:Lqkg;
+
+.field private final p:Lqkg;
+
+.field private final q:Lqkg;
+
+.field private final r:Lqkg;
+
+.field private final s:Lqkg;
+
+.field private final t:Lqkg;
 
 
 # direct methods
-.method static constructor <clinit>()V
+.method public constructor <init>(Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;)V
     .locals 2
 
-    new-instance v0, Ljnd;
+    move-object v0, p0
 
-    const/16 v1, 0x13
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {v0, v1}, Ljnd;-><init>(I)V
+    move-object v1, p1
 
-    sput-object v0, Ljqj;->CREATOR:Landroid/os/Parcelable$Creator;
+    iput-object v1, v0, Ljqj;->a:Lqkg;
 
-    return-void
-.end method
+    move-object v1, p2
 
-.method public constructor <init>(Landroid/os/IBinder;[Landroid/content/IntentFilter;Ljava/lang/String;Ljava/lang/String;)V
-    .locals 2
+    iput-object v1, v0, Ljqj;->b:Lqkg;
 
-    invoke-direct {p0}, Ljhn;-><init>()V
+    move-object v1, p3
 
-    if-eqz p1, :cond_1
+    iput-object v1, v0, Ljqj;->c:Lqkg;
 
-    const-string v0, "com.google.android.gms.wearable.internal.IWearableListener"
+    move-object v1, p4
 
-    invoke-interface {p1, v0}, Landroid/os/IBinder;->queryLocalInterface(Ljava/lang/String;)Landroid/os/IInterface;
+    iput-object v1, v0, Ljqj;->d:Lqkg;
 
-    move-result-object v0
+    move-object v1, p5
 
-    instance-of v1, v0, Ljsh;
+    iput-object v1, v0, Ljqj;->e:Lqkg;
 
-    if-eqz v1, :cond_0
+    move-object v1, p6
 
-    check-cast v0, Ljsh;
+    iput-object v1, v0, Ljqj;->f:Lqkg;
 
-    goto :goto_0
+    move-object v1, p7
 
-    :cond_0
-    new-instance v0, Ljsf;
+    iput-object v1, v0, Ljqj;->g:Lqkg;
 
-    invoke-direct {v0, p1}, Ljsf;-><init>(Landroid/os/IBinder;)V
+    move-object v1, p8
 
-    :goto_0
-    iput-object v0, p0, Ljqj;->a:Ljsh;
+    iput-object v1, v0, Ljqj;->h:Lqkg;
 
-    goto :goto_1
+    move-object v1, p9
 
-    :cond_1
-    const/4 p1, 0x0
+    iput-object v1, v0, Ljqj;->i:Lqkg;
 
-    iput-object p1, p0, Ljqj;->a:Ljsh;
+    move-object v1, p10
 
-    :goto_1
-    iput-object p2, p0, Ljqj;->b:[Landroid/content/IntentFilter;
+    iput-object v1, v0, Ljqj;->j:Lqkg;
 
-    iput-object p3, p0, Ljqj;->c:Ljava/lang/String;
+    move-object v1, p11
 
-    iput-object p4, p0, Ljqj;->d:Ljava/lang/String;
+    iput-object v1, v0, Ljqj;->k:Lqkg;
 
-    return-void
-.end method
+    move-object v1, p12
 
-.method public constructor <init>(Ljtl;)V
-    .locals 0
+    iput-object v1, v0, Ljqj;->l:Lqkg;
 
-    invoke-direct {p0}, Ljhn;-><init>()V
+    move-object v1, p13
 
-    iput-object p1, p0, Ljqj;->a:Ljsh;
+    iput-object v1, v0, Ljqj;->m:Lqkg;
 
-    iget-object p1, p1, Ljtl;->b:[Landroid/content/IntentFilter;
+    move-object/from16 v1, p14
 
-    iput-object p1, p0, Ljqj;->b:[Landroid/content/IntentFilter;
+    iput-object v1, v0, Ljqj;->n:Lqkg;
 
-    const/4 p1, 0x0
+    move-object/from16 v1, p15
 
-    iput-object p1, p0, Ljqj;->c:Ljava/lang/String;
+    iput-object v1, v0, Ljqj;->o:Lqkg;
 
-    iput-object p1, p0, Ljqj;->d:Ljava/lang/String;
+    move-object/from16 v1, p16
+
+    iput-object v1, v0, Ljqj;->p:Lqkg;
+
+    move-object/from16 v1, p17
+
+    iput-object v1, v0, Ljqj;->q:Lqkg;
+
+    move-object/from16 v1, p18
+
+    iput-object v1, v0, Ljqj;->r:Lqkg;
+
+    move-object/from16 v1, p19
+
+    iput-object v1, v0, Ljqj;->s:Lqkg;
+
+    move-object/from16 v1, p20
+
+    iput-object v1, v0, Ljqj;->t:Lqkg;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final writeToParcel(Landroid/os/Parcel;I)V
-    .locals 3
+.method public final bridge synthetic get()Ljava/lang/Object;
+    .locals 23
 
-    invoke-static {p1}, Ljhp;->a(Landroid/os/Parcel;)I
+    move-object/from16 v0, p0
 
-    move-result v0
+    iget-object v2, v0, Ljqj;->a:Lqkg;
 
-    iget-object v1, p0, Ljqj;->a:Ljsh;
+    iget-object v1, v0, Ljqj;->b:Lqkg;
 
-    if-nez v1, :cond_0
+    check-cast v1, Letg;
 
-    const/4 v1, 0x0
+    invoke-virtual {v1}, Letg;->b()Lbqg;
 
-    goto :goto_0
+    move-result-object v3
 
-    :cond_0
-    invoke-interface {v1}, Ljsh;->asBinder()Landroid/os/IBinder;
+    iget-object v1, v0, Ljqj;->c:Lqkg;
+
+    invoke-interface {v1}, Lqkg;->get()Ljava/lang/Object;
 
     move-result-object v1
 
-    :goto_0
-    const/4 v2, 0x2
+    move-object v4, v1
 
-    invoke-static {p1, v2, v1}, Ljhp;->l(Landroid/os/Parcel;ILandroid/os/IBinder;)V
+    check-cast v4, Llar;
 
-    iget-object v1, p0, Ljqj;->b:[Landroid/content/IntentFilter;
+    iget-object v1, v0, Ljqj;->d:Lqkg;
 
-    const/4 v2, 0x3
+    invoke-interface {v1}, Lqkg;->get()Ljava/lang/Object;
 
-    invoke-static {p1, v2, v1, p2}, Ljhp;->s(Landroid/os/Parcel;I[Landroid/os/Parcelable;I)V
+    move-result-object v1
 
-    iget-object p2, p0, Ljqj;->c:Ljava/lang/String;
+    move-object v5, v1
 
-    const/4 v1, 0x4
+    check-cast v5, Llda;
 
-    invoke-static {p1, v1, p2}, Ljhp;->p(Landroid/os/Parcel;ILjava/lang/String;)V
+    iget-object v1, v0, Ljqj;->e:Lqkg;
 
-    iget-object p2, p0, Ljqj;->d:Ljava/lang/String;
+    invoke-interface {v1}, Lqkg;->get()Ljava/lang/Object;
 
-    const/4 v1, 0x5
+    move-result-object v1
 
-    invoke-static {p1, v1, p2}, Ljhp;->p(Landroid/os/Parcel;ILjava/lang/String;)V
+    move-object v6, v1
 
-    invoke-static {p1, v0}, Ljhp;->c(Landroid/os/Parcel;I)V
+    check-cast v6, Llda;
 
-    return-void
+    iget-object v1, v0, Ljqj;->f:Lqkg;
+
+    invoke-interface {v1}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v1
+
+    move-object v7, v1
+
+    check-cast v7, Ldom;
+
+    iget-object v1, v0, Ljqj;->g:Lqkg;
+
+    check-cast v1, Leej;
+
+    invoke-virtual {v1}, Leej;->b()Llco;
+
+    move-result-object v8
+
+    iget-object v1, v0, Ljqj;->h:Lqkg;
+
+    invoke-interface {v1}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v1
+
+    move-object v9, v1
+
+    check-cast v9, Ljbe;
+
+    iget-object v1, v0, Ljqj;->i:Lqkg;
+
+    check-cast v1, Lcjc;
+
+    invoke-virtual {v1}, Lcjc;->a()Lojc;
+
+    move-result-object v10
+
+    iget-object v1, v0, Ljqj;->j:Lqkg;
+
+    invoke-interface {v1}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v1
+
+    move-object v11, v1
+
+    check-cast v11, Lfnu;
+
+    iget-object v1, v0, Ljqj;->k:Lqkg;
+
+    invoke-interface {v1}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v1
+
+    move-object v12, v1
+
+    check-cast v12, Lcom/google/android/apps/camera/bottombar/BottomBarController;
+
+    iget-object v1, v0, Ljqj;->l:Lqkg;
+
+    invoke-interface {v1}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v1
+
+    move-object v13, v1
+
+    check-cast v13, Lgtg;
+
+    iget-object v1, v0, Ljqj;->m:Lqkg;
+
+    invoke-interface {v1}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v1
+
+    move-object v14, v1
+
+    check-cast v14, Lcvo;
+
+    iget-object v1, v0, Ljqj;->n:Lqkg;
+
+    invoke-static {v1}, Lpyr;->a(Lqkg;)Lpyn;
+
+    move-result-object v15
+
+    iget-object v1, v0, Ljqj;->o:Lqkg;
+
+    invoke-static {v1}, Lpyr;->a(Lqkg;)Lpyn;
+
+    move-result-object v16
+
+    iget-object v1, v0, Ljqj;->p:Lqkg;
+
+    invoke-interface {v1}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v1
+
+    move-object/from16 v17, v1
+
+    check-cast v17, Leam;
+
+    iget-object v1, v0, Ljqj;->q:Lqkg;
+
+    invoke-interface {v1}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v1
+
+    move-object/from16 v18, v1
+
+    check-cast v18, Lddf;
+
+    iget-object v1, v0, Ljqj;->r:Lqkg;
+
+    invoke-interface {v1}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v1
+
+    move-object/from16 v19, v1
+
+    check-cast v19, Ldlt;
+
+    iget-object v1, v0, Ljqj;->s:Lqkg;
+
+    invoke-interface {v1}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v1
+
+    move-object/from16 v20, v1
+
+    check-cast v20, Lhuf;
+
+    iget-object v1, v0, Ljqj;->t:Lqkg;
+
+    invoke-interface {v1}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v1
+
+    move-object/from16 v21, v1
+
+    check-cast v21, Limf;
+
+    new-instance v22, Ljqi;
+
+    move-object/from16 v1, v22
+
+    invoke-direct/range {v1 .. v21}, Ljqi;-><init>(Lqkg;Lbqg;Llar;Llda;Llda;Ldom;Llco;Ljbe;Lojc;Lfnu;Lcom/google/android/apps/camera/bottombar/BottomBarController;Lgtg;Lcvo;Lpyn;Lpyn;Leam;Lddf;Ldlt;Lhuf;Limf;)V
+
+    return-object v22
 .end method

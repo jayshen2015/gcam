@@ -1,142 +1,64 @@
-.class public final enum Lhxs;
-.super Ljava/lang/Enum;
+.class public final synthetic Lhxs;
+.super Ljava/lang/Object;
 
-
-# static fields
-.field public static final enum a:Lhxs;
-
-.field public static final enum b:Lhxs;
-
-.field public static final enum c:Lhxs;
-
-.field public static final enum d:Lhxs;
-
-.field private static final synthetic f:[Lhxs;
+# interfaces
+.implements Landroid/view/View$OnClickListener;
 
 
 # instance fields
-.field public final e:I
+.field public final synthetic a:Lcom/google/android/apps/camera/smarts/SmartsChipView;
+
+.field public final synthetic b:Liap;
+
+.field public final synthetic c:Ljava/lang/Runnable;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 9
+.method public synthetic constructor <init>(Lcom/google/android/apps/camera/smarts/SmartsChipView;Liap;Ljava/lang/Runnable;)V
+    .locals 0
 
-    new-instance v0, Lhxs;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const-string v1, "OFF"
+    iput-object p1, p0, Lhxs;->a:Lcom/google/android/apps/camera/smarts/SmartsChipView;
 
-    const/4 v2, 0x0
+    iput-object p2, p0, Lhxs;->b:Liap;
 
-    invoke-direct {v0, v1, v2, v2}, Lhxs;-><init>(Ljava/lang/String;II)V
-
-    sput-object v0, Lhxs;->a:Lhxs;
-
-    new-instance v1, Lhxs;
-
-    const-string v3, "THREE_BY_THREE"
-
-    const/4 v4, 0x1
-
-    invoke-direct {v1, v3, v4, v4}, Lhxs;-><init>(Ljava/lang/String;II)V
-
-    sput-object v1, Lhxs;->b:Lhxs;
-
-    new-instance v3, Lhxs;
-
-    const-string v5, "FOUR_BY_FOUR"
-
-    const/4 v6, 0x2
-
-    invoke-direct {v3, v5, v6, v6}, Lhxs;-><init>(Ljava/lang/String;II)V
-
-    sput-object v3, Lhxs;->c:Lhxs;
-
-    new-instance v5, Lhxs;
-
-    const-string v7, "GOLDEN_RATIO"
-
-    const/4 v8, 0x3
-
-    invoke-direct {v5, v7, v8, v8}, Lhxs;-><init>(Ljava/lang/String;II)V
-
-    sput-object v5, Lhxs;->d:Lhxs;
-
-    const/4 v7, 0x4
-
-    new-array v7, v7, [Lhxs;
-
-    aput-object v0, v7, v2
-
-    aput-object v1, v7, v4
-
-    aput-object v3, v7, v6
-
-    aput-object v5, v7, v8
-
-    sput-object v7, Lhxs;->f:[Lhxs;
+    iput-object p3, p0, Lhxs;->c:Ljava/lang/Runnable;
 
     return-void
 .end method
 
-.method private constructor <init>(Ljava/lang/String;II)V
-    .locals 0
 
-    invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+# virtual methods
+.method public final onClick(Landroid/view/View;)V
+    .locals 4
 
-    iput p3, p0, Lhxs;->e:I
+    iget-object p1, p0, Lhxs;->a:Lcom/google/android/apps/camera/smarts/SmartsChipView;
 
+    iget-object v0, p0, Lhxs;->b:Liap;
+
+    iget-object v1, p0, Lhxs;->c:Ljava/lang/Runnable;
+
+    check-cast v0, Lhzb;
+
+    iget-object v2, v0, Lhzb;->d:Lfjs;
+
+    iget-object v0, v0, Lhzb;->a:Liav;
+
+    iget-object v0, v0, Liav;->a:Ljava/lang/String;
+
+    const/4 v3, 0x5
+
+    invoke-interface {v2, v3, v0}, Lfjs;->ab(ILjava/lang/String;)V
+
+    invoke-interface {v1}, Ljava/lang/Runnable;->run()V
+
+    iget-boolean v0, p1, Lcom/google/android/apps/camera/smarts/SmartsChipView;->e:Z
+
+    if-eqz v0, :cond_0
+
+    invoke-virtual {p1}, Lcom/google/android/apps/camera/smarts/SmartsChipView;->b()V
+
+    :cond_0
     return-void
-.end method
-
-.method public static a(I)Lhxs;
-    .locals 0
-
-    packed-switch p0, :pswitch_data_0
-
-    sget-object p0, Lhxs;->a:Lhxs;
-
-    return-object p0
-
-    :pswitch_0
-    sget-object p0, Lhxs;->d:Lhxs;
-
-    return-object p0
-
-    :pswitch_1
-    sget-object p0, Lhxs;->c:Lhxs;
-
-    return-object p0
-
-    :pswitch_2
-    sget-object p0, Lhxs;->b:Lhxs;
-
-    return-object p0
-
-    :pswitch_3
-    sget-object p0, Lhxs;->a:Lhxs;
-
-    return-object p0
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_3
-        :pswitch_2
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
-.end method
-
-.method public static values()[Lhxs;
-    .locals 1
-
-    sget-object v0, Lhxs;->f:[Lhxs;
-
-    invoke-virtual {v0}, [Lhxs;->clone()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, [Lhxs;
-
-    return-object v0
 .end method

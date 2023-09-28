@@ -1,76 +1,47 @@
-.class final Lgho;
+.class public final synthetic Lgho;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lghg;
+.implements Lpgk;
 
 
 # instance fields
-.field private a:Z
+.field public final synthetic a:Lfwm;
 
-.field private final b:Lker;
+.field public final synthetic b:Lojc;
 
 
 # direct methods
-.method public constructor <init>(Lker;)V
+.method public synthetic constructor <init>(Lfwm;Lojc;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lgho;->b:Lker;
+    iput-object p1, p0, Lgho;->a:Lfwm;
+
+    iput-object p2, p0, Lgho;->b:Lojc;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Lkfh;
-    .locals 3
-
-    invoke-static {}, Lkfh;->a()Lkff;
-
-    move-result-object v0
-
-    const/4 v1, 0x3
-
-    invoke-virtual {v0, v1}, Lkff;->c(I)V
-
-    const/4 v2, 0x4
-
-    invoke-virtual {v0, v2}, Lkff;->b(I)V
-
-    invoke-virtual {v0, v1}, Lkff;->e(I)V
-
-    const/4 v1, 0x0
-
-    invoke-virtual {v0, v1}, Lkff;->d(Z)V
-
-    invoke-virtual {v0}, Lkff;->a()Lkfh;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public final close()V
+.method public final a(Ljava/lang/Object;)Lpht;
     .locals 2
 
-    iget-boolean v0, p0, Lgho;->a:Z
+    iget-object v0, p0, Lgho;->a:Lfwm;
 
-    if-eqz v0, :cond_0
+    iget-object v1, p0, Lgho;->b:Lojc;
 
-    return-void
+    check-cast p1, Ljng;
 
-    :cond_0
-    const/4 v0, 0x1
+    iget-object v0, v0, Lfwm;->a:Lfvx;
 
-    iput-boolean v0, p0, Lgho;->a:Z
+    iget-object v0, v0, Lfvx;->d:Ljnl;
 
-    iget-object v0, p0, Lgho;->b:Lker;
+    invoke-virtual {p1, v0, v1}, Ljng;->f(Ljnl;Lojc;)Lpht;
 
-    const/4 v1, 0x0
+    move-result-object p1
 
-    invoke-static {v0, v1}, Lghp;->c(Lker;Z)V
-
-    return-void
+    return-object p1
 .end method

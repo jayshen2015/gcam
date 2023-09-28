@@ -3,64 +3,86 @@
 
 
 # static fields
-.field public static final a:Lnak;
+.field public static final a:Ljava/nio/FloatBuffer;
+
+.field public static final b:Ljava/nio/FloatBuffer;
 
 
 # instance fields
-.field public final b:Lejw;
+.field public c:Lcom/google/android/libraries/vision/opengl/Texture;
 
-.field public c:Z
+.field public final d:[F
 
-.field public final d:Z
+.field public final e:[F
 
-.field public final e:D
+.field public f:Lnlc;
 
-.field public final f:D
+.field public g:Lnle;
 
-.field public final g:Lehx;
+.field public h:Lnle;
+
+.field public i:Lnle;
+
+.field public j:Lnle;
+
+.field public k:Lnle;
 
 
 # direct methods
 .method static constructor <clinit>()V
     .locals 1
 
-    const-string v0, "com/google/android/apps/camera/imax/cyclops/processing/OfflineOmnistereoStitcher"
+    const/high16 v0, -0x40800000    # -1.0f
 
-    invoke-static {v0}, Lnak;->h(Ljava/lang/String;)Lnak;
+    invoke-static {v0, v0}, Lmzi;->h(FF)[F
 
     move-result-object v0
 
-    sput-object v0, Lekn;->a:Lnak;
+    invoke-static {v0}, Lmzi;->g([F)Ljava/nio/FloatBuffer;
+
+    move-result-object v0
+
+    sput-object v0, Lekn;->a:Ljava/nio/FloatBuffer;
+
+    const/4 v0, 0x0
+
+    invoke-static {v0, v0}, Lmzi;->h(FF)[F
+
+    move-result-object v0
+
+    invoke-static {v0}, Lmzi;->g([F)Ljava/nio/FloatBuffer;
+
+    move-result-object v0
+
+    sput-object v0, Lekn;->b:Ljava/nio/FloatBuffer;
 
     return-void
 .end method
 
-.method public constructor <init>(Lehx;ZDD)V
-    .locals 1
+.method public constructor <init>()V
+    .locals 3
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const-class v0, Lejw;
-
-    invoke-static {v0}, Lekj;->a(Ljava/lang/Class;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lejw;
-
-    iput-object v0, p0, Lekn;->b:Lejw;
-
     const/4 v0, 0x0
 
-    iput-boolean v0, p0, Lekn;->c:Z
+    iput-object v0, p0, Lekn;->c:Lcom/google/android/libraries/vision/opengl/Texture;
 
-    iput-object p1, p0, Lekn;->g:Lehx;
+    const/16 v0, 0x10
 
-    iput-boolean p2, p0, Lekn;->d:Z
+    new-array v1, v0, [F
 
-    iput-wide p3, p0, Lekn;->e:D
+    iput-object v1, p0, Lekn;->d:[F
 
-    iput-wide p5, p0, Lekn;->f:D
+    new-array v0, v0, [F
+
+    iput-object v0, p0, Lekn;->e:[F
+
+    const/4 v2, 0x0
+
+    invoke-static {v1, v2}, Landroid/opengl/Matrix;->setIdentityM([FI)V
+
+    invoke-static {v0, v2}, Landroid/opengl/Matrix;->setIdentityM([FI)V
 
     return-void
 .end method

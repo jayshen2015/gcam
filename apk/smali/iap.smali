@@ -1,13 +1,13 @@
 .class public interface abstract Liap;
 .super Ljava/lang/Object;
 
+# interfaces
+.implements Lelv;
+
 
 # virtual methods
-.method public abstract a(Landroid/view/View;IZ)V
+.method public abstract r(Liax;)V
 .end method
 
-.method public abstract b(Landroid/view/View;Z)V
-.end method
-
-.method public abstract c(Z)V
+.method public abstract s()Z
 .end method

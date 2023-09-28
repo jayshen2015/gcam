@@ -1,84 +1,56 @@
 .class final Ltx;
-.super Loln;
+.super Ljava/lang/Object;
 
 # interfaces
-.implements Lomo;
-
-
-# annotations
-.annotation runtime Lolj;
-    b = "androidx.camera.camera2.pipe.compat.CaptureSessionState$configureSurfaceMap$1$2"
-    c = "CaptureSessionState.kt"
-    d = "invokeSuspend"
-    e = {}
-.end annotation
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field final synthetic a:Lty;
+.field final synthetic a:Lub;
 
 
 # direct methods
-.method public constructor <init>(Lty;Loku;)V
+.method public constructor <init>(Lub;)V
     .locals 0
 
-    iput-object p1, p0, Ltx;->a:Lty;
+    iput-object p1, p0, Ltx;->a:Lub;
 
-    const/4 p1, 0x2
-
-    invoke-direct {p0, p1, p2}, Loln;-><init>(ILoku;)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final bridge synthetic a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 0
+.method public final run()V
+    .locals 3
 
-    check-cast p1, Lopu;
+    :try_start_0
+    iget-object v0, p0, Ltx;->a:Lub;
 
-    check-cast p2, Loku;
+    invoke-static {v0}, Lub;->h(Lub;)V
+    :try_end_0
+    .catch Ljava/lang/IllegalStateException; {:try_start_0 .. :try_end_0} :catch_0
 
-    invoke-virtual {p0, p1, p2}, Lolf;->c(Ljava/lang/Object;Loku;)Loku;
+    return-void
 
-    move-result-object p1
+    :catch_0
+    move-exception v0
 
-    sget-object p2, Lojk;->a:Lojk;
+    invoke-virtual {v0}, Ljava/lang/IllegalStateException;->getMessage()Ljava/lang/String;
 
-    check-cast p1, Ltx;
+    move-result-object v1
 
-    invoke-virtual {p1, p2}, Ltx;->b(Ljava/lang/Object;)Ljava/lang/Object;
+    const-string v2, "Can not perform this action after onSaveInstanceState"
 
-    move-result-object p1
+    invoke-static {v1, v2}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
-    return-object p1
-.end method
+    move-result v1
 
-.method public final b(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 1
+    if-eqz v1, :cond_0
 
-    sget-object v0, Lolc;->a:Lolc;
+    return-void
 
-    invoke-static {p1}, Lljr;->aO(Ljava/lang/Object;)V
-
-    iget-object p1, p0, Ltx;->a:Lty;
-
-    invoke-virtual {p1}, Lty;->f()V
-
-    sget-object p1, Lojk;->a:Lojk;
-
-    return-object p1
-.end method
-
-.method public final c(Ljava/lang/Object;Loku;)Loku;
-    .locals 1
-
-    new-instance p1, Ltx;
-
-    iget-object v0, p0, Ltx;->a:Lty;
-
-    invoke-direct {p1, v0, p2}, Ltx;-><init>(Lty;Loku;)V
-
-    return-object p1
+    :cond_0
+    throw v0
 .end method

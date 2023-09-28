@@ -1,661 +1,458 @@
-.class public final synthetic Lhop;
+.class public final Lhop;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lmqi;
-
-
-# static fields
-.field public static final synthetic a:Lhop;
-
-.field public static final synthetic b:Lhop;
-
-.field public static final synthetic c:Lhop;
-
-.field public static final synthetic d:Lhop;
-
-.field public static final synthetic e:Lhop;
-
-.field public static final synthetic f:Lhop;
-
-.field public static final synthetic g:Lhop;
-
-.field public static final synthetic h:Lhop;
-
-.field public static final synthetic i:Lhop;
-
-.field public static final synthetic j:Lhop;
-
-.field public static final synthetic k:Lhop;
-
-.field public static final synthetic l:Lhop;
-
-.field public static final synthetic m:Lhop;
-
-.field public static final synthetic n:Lhop;
-
-.field public static final synthetic o:Lhop;
-
-.field public static final synthetic p:Lhop;
-
-.field public static final synthetic q:Lhop;
-
-.field public static final synthetic r:Lhop;
-
-.field public static final synthetic s:Lhop;
-
-.field public static final synthetic t:Lhop;
+.implements Lhpb;
 
 
 # instance fields
-.field private final synthetic u:I
+.field public final a:I
+
+.field public b:Z
+
+.field private final c:Llar;
+
+.field private final d:Llco;
+
+.field private e:Lhor;
+
+.field private f:Llco;
+
+.field private g:Llco;
+
+.field private h:Llco;
+
+.field private i:I
+
+.field private j:Lhos;
+
+.field private k:Ljsc;
 
 
 # direct methods
-.method static synthetic constructor <clinit>()V
-    .locals 2
-
-    new-instance v0, Lhop;
-
-    const/16 v1, 0x14
-
-    invoke-direct {v0, v1}, Lhop;-><init>(I)V
-
-    sput-object v0, Lhop;->t:Lhop;
-
-    new-instance v0, Lhop;
-
-    const/16 v1, 0x13
-
-    invoke-direct {v0, v1}, Lhop;-><init>(I)V
-
-    sput-object v0, Lhop;->s:Lhop;
-
-    new-instance v0, Lhop;
-
-    const/16 v1, 0x12
-
-    invoke-direct {v0, v1}, Lhop;-><init>(I)V
-
-    sput-object v0, Lhop;->r:Lhop;
-
-    new-instance v0, Lhop;
-
-    const/16 v1, 0x11
-
-    invoke-direct {v0, v1}, Lhop;-><init>(I)V
-
-    sput-object v0, Lhop;->q:Lhop;
-
-    new-instance v0, Lhop;
-
-    const/16 v1, 0x10
-
-    invoke-direct {v0, v1}, Lhop;-><init>(I)V
-
-    sput-object v0, Lhop;->p:Lhop;
-
-    new-instance v0, Lhop;
-
-    const/16 v1, 0xf
-
-    invoke-direct {v0, v1}, Lhop;-><init>(I)V
-
-    sput-object v0, Lhop;->o:Lhop;
-
-    new-instance v0, Lhop;
-
-    const/16 v1, 0xe
-
-    invoke-direct {v0, v1}, Lhop;-><init>(I)V
-
-    sput-object v0, Lhop;->n:Lhop;
-
-    new-instance v0, Lhop;
-
-    const/16 v1, 0xd
-
-    invoke-direct {v0, v1}, Lhop;-><init>(I)V
-
-    sput-object v0, Lhop;->m:Lhop;
-
-    new-instance v0, Lhop;
-
-    const/16 v1, 0xc
-
-    invoke-direct {v0, v1}, Lhop;-><init>(I)V
-
-    sput-object v0, Lhop;->l:Lhop;
-
-    new-instance v0, Lhop;
-
-    const/16 v1, 0xb
-
-    invoke-direct {v0, v1}, Lhop;-><init>(I)V
-
-    sput-object v0, Lhop;->k:Lhop;
-
-    new-instance v0, Lhop;
-
-    const/16 v1, 0xa
-
-    invoke-direct {v0, v1}, Lhop;-><init>(I)V
-
-    sput-object v0, Lhop;->j:Lhop;
-
-    new-instance v0, Lhop;
-
-    const/16 v1, 0x8
-
-    invoke-direct {v0, v1}, Lhop;-><init>(I)V
-
-    sput-object v0, Lhop;->i:Lhop;
-
-    new-instance v0, Lhop;
-
-    const/4 v1, 0x7
-
-    invoke-direct {v0, v1}, Lhop;-><init>(I)V
-
-    sput-object v0, Lhop;->h:Lhop;
-
-    new-instance v0, Lhop;
-
-    const/4 v1, 0x6
-
-    invoke-direct {v0, v1}, Lhop;-><init>(I)V
-
-    sput-object v0, Lhop;->g:Lhop;
-
-    new-instance v0, Lhop;
-
-    const/4 v1, 0x5
-
-    invoke-direct {v0, v1}, Lhop;-><init>(I)V
-
-    sput-object v0, Lhop;->f:Lhop;
-
-    new-instance v0, Lhop;
-
-    const/4 v1, 0x4
-
-    invoke-direct {v0, v1}, Lhop;-><init>(I)V
-
-    sput-object v0, Lhop;->e:Lhop;
-
-    new-instance v0, Lhop;
-
-    const/4 v1, 0x3
-
-    invoke-direct {v0, v1}, Lhop;-><init>(I)V
-
-    sput-object v0, Lhop;->d:Lhop;
-
-    new-instance v0, Lhop;
-
-    const/4 v1, 0x2
-
-    invoke-direct {v0, v1}, Lhop;-><init>(I)V
-
-    sput-object v0, Lhop;->c:Lhop;
-
-    new-instance v0, Lhop;
-
-    const/4 v1, 0x1
-
-    invoke-direct {v0, v1}, Lhop;-><init>(I)V
-
-    sput-object v0, Lhop;->b:Lhop;
-
-    new-instance v0, Lhop;
-
-    const/4 v1, 0x0
-
-    invoke-direct {v0, v1}, Lhop;-><init>(I)V
-
-    sput-object v0, Lhop;->a:Lhop;
-
-    return-void
-.end method
-
-.method public synthetic constructor <init>(I)V
+.method public constructor <init>(Llar;Lddf;Llda;)V
     .locals 0
 
-    iput p1, p0, Lhop;->u:I
-
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lhop;->c:Llar;
+
+    iput-object p3, p0, Lhop;->d:Llco;
+
+    sget-object p1, Lddl;->ah:Lddg;
+
+    invoke-interface {p2, p1}, Lddf;->k(Lddg;)Z
+
+    move-result p1
+
+    if-eqz p1, :cond_0
+
+    sget-object p1, Lddl;->i:Lddi;
+
+    invoke-interface {p2, p1}, Lddf;->a(Lddi;)Lojc;
+
+    move-result-object p1
+
+    invoke-virtual {p1}, Lojc;->c()Ljava/lang/Object;
+
+    move-result-object p1
+
+    check-cast p1, Ljava/lang/Integer;
+
+    invoke-virtual {p1}, Ljava/lang/Integer;->intValue()I
+
+    move-result p1
+
+    iput p1, p0, Lhop;->a:I
+
+    return-void
+
+    :cond_0
+    sget-object p1, Lddl;->g:Lddi;
+
+    invoke-interface {p2, p1}, Lddf;->a(Lddi;)Lojc;
+
+    move-result-object p1
+
+    invoke-virtual {p1}, Lojc;->c()Ljava/lang/Object;
+
+    move-result-object p1
+
+    check-cast p1, Ljava/lang/Integer;
+
+    invoke-virtual {p1}, Ljava/lang/Integer;->intValue()I
+
+    move-result p1
+
+    const/high16 p2, -0x1000000
+
+    or-int/2addr p1, p2
+
+    iput p1, p0, Lhop;->a:I
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final apply(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 6
+.method public final a()Lpht;
+    .locals 3
 
-    iget v0, p0, Lhop;->u:I
+    iget-object v0, p0, Lhop;->k:Ljsc;
 
-    const/4 v1, 0x0
+    invoke-static {v0}, Lobr;->ao(Ljava/lang/Object;)Ljava/lang/Object;
 
-    const/4 v2, 0x0
+    invoke-virtual {v0}, Ljsc;->a()V
 
-    invoke-static {v2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+    iget-object v0, p0, Lhop;->e:Lhor;
 
-    move-result-object v3
+    invoke-static {v0}, Lobr;->ao(Ljava/lang/Object;)Ljava/lang/Object;
 
-    const/4 v4, 0x1
+    const/16 v1, 0x8
 
-    invoke-static {v4}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+    invoke-virtual {v0, v1}, Lhor;->setVisibility(I)V
 
-    move-result-object v5
+    invoke-static {}, Lhor;->d()Lpht;
 
-    packed-switch v0, :pswitch_data_0
+    move-result-object v0
 
-    check-cast p1, Ljava/util/List;
+    new-instance v1, Lbvf;
 
-    sget-object p1, Lltg;->a:Ljava/lang/String;
+    const/16 v2, 0x11
 
-    return-object v1
+    invoke-direct {v1, v2}, Lbvf;-><init>(I)V
 
-    :pswitch_0
-    check-cast p1, Ljava/io/IOException;
+    sget-object v2, Lpgr;->a:Lpgr;
 
-    const-string v0, "AccountRemovedRecv"
-
-    const-string v1, "Failed to remove account snapshot: "
-
-    invoke-static {v0, v1, p1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
-
-    move-result p1
-
-    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object p1
-
-    return-object p1
-
-    :pswitch_1
-    check-cast p1, Ljava/lang/String;
-
-    invoke-static {p1}, Lnpr;->a(Ljava/lang/String;)Ljava/lang/Long;
-
-    move-result-object p1
-
-    return-object p1
-
-    :pswitch_2
-    check-cast p1, Ljava/lang/Throwable;
-
-    const-string v0, "CheckboxChecker"
-
-    const-string v1, "fetching usage reporting opt-in failed"
-
-    invoke-static {v0, v1, p1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
-
-    return-object v5
-
-    :pswitch_3
-    check-cast p1, Ljava/lang/String;
-
-    invoke-static {p1}, Lnvt;->w(Ljava/lang/String;)Lnvt;
-
-    move-result-object p1
-
-    return-object p1
-
-    :pswitch_4
-    check-cast p1, Ljava/io/FileDescriptor;
-
-    new-instance v0, Lloi;
-
-    invoke-direct {v0, p1}, Lloi;-><init>(Ljava/io/FileDescriptor;)V
+    invoke-interface {v0, v1, v2}, Lpht;->d(Ljava/lang/Runnable;Ljava/util/concurrent/Executor;)V
 
     return-object v0
+.end method
 
-    :pswitch_5
-    check-cast p1, Landroid/location/Location;
+.method public final b()Lpht;
+    .locals 2
 
-    if-nez p1, :cond_0
+    iget-object v0, p0, Lhop;->d:Llco;
 
-    return-object v1
-
-    :cond_0
-    invoke-virtual {p1}, Landroid/location/Location;->getLongitude()D
-
-    move-result-wide v0
-
-    double-to-float p1, v0
-
-    invoke-static {p1}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
-
-    move-result-object p1
-
-    return-object p1
-
-    :pswitch_6
-    check-cast p1, Landroid/location/Location;
-
-    if-nez p1, :cond_1
-
-    return-object v1
-
-    :cond_1
-    invoke-virtual {p1}, Landroid/location/Location;->getLatitude()D
-
-    move-result-wide v0
-
-    double-to-float p1, v0
-
-    invoke-static {p1}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
-
-    move-result-object p1
-
-    return-object p1
-
-    :pswitch_7
-    check-cast p1, Landroid/media/MediaCodec;
-
-    invoke-virtual {p1}, Landroid/media/MediaCodec;->createInputSurface()Landroid/view/Surface;
-
-    move-result-object p1
-
-    return-object p1
-
-    :pswitch_8
-    check-cast p1, Landroid/content/ContentProviderOperation;
-
-    invoke-virtual {p1}, Landroid/content/ContentProviderOperation;->getUri()Landroid/net/Uri;
+    invoke-interface {v0}, Llco;->fA()Ljava/lang/Object;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Landroid/net/Uri;->getAuthority()Ljava/lang/String;
+    sget-object v1, Ljrl;->m:Ljrl;
 
-    move-result-object v0
+    if-ne v0, v1, :cond_0
 
-    invoke-virtual {p1}, Landroid/content/ContentProviderOperation;->getUri()Landroid/net/Uri;
+    iget-object v0, p0, Lhop;->k:Ljsc;
 
-    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    invoke-static {v0}, Lobr;->ao(Ljava/lang/Object;)Ljava/lang/Object;
 
-    return-object v0
+    iget v1, p0, Lhop;->i:I
 
-    :pswitch_9
-    check-cast p1, Lkow;
-
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    invoke-interface {p1}, Lkow;->j()Lkgd;
-
-    move-result-object p1
-
-    iget-object p1, p1, Lkgd;->a:Ljava/lang/Object;
-
-    check-cast p1, Landroid/hardware/camera2/params/OutputConfiguration;
-
-    return-object p1
-
-    :pswitch_a
-    check-cast p1, Lknb;
-
-    invoke-static {p1, v1, v4}, Lkkh;->f(Lknb;Lknb;Z)Lkkh;
-
-    move-result-object p1
-
-    return-object p1
-
-    :pswitch_b
-    check-cast p1, Ljava/util/List;
-
-    invoke-interface {p1, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/lang/Comparable;
-
-    invoke-interface {p1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
-
-    move-result-object p1
-
-    :cond_2
-    :goto_0
-    invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_3
-
-    invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Ljava/lang/Comparable;
-
-    invoke-interface {v0, v1}, Ljava/lang/Comparable;->compareTo(Ljava/lang/Object;)I
-
-    move-result v2
-
-    if-lez v2, :cond_2
-
-    move-object v0, v1
+    invoke-virtual {v0, v1}, Ljsc;->b(I)V
 
     goto :goto_0
 
-    :cond_3
-    return-object v0
+    :cond_0
+    iget-object v0, p0, Lhop;->k:Ljsc;
 
-    :pswitch_c
-    check-cast p1, Ljava/util/List;
+    invoke-static {v0}, Lobr;->ao(Ljava/lang/Object;)Ljava/lang/Object;
 
-    invoke-interface {p1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+    invoke-virtual {v0}, Ljsc;->c()V
 
-    move-result-object p1
+    :goto_0
+    iget-object v0, p0, Lhop;->e:Lhor;
 
-    :cond_4
-    invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
+    invoke-static {v0}, Lobr;->ao(Ljava/lang/Object;)Ljava/lang/Object;
 
-    move-result v0
+    const/4 v1, 0x0
 
-    if-eqz v0, :cond_5
+    invoke-virtual {v0, v1}, Lhor;->setVisibility(I)V
 
-    invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-static {}, Lhor;->d()Lpht;
 
     move-result-object v0
 
-    check-cast v0, Ljava/lang/Boolean;
+    return-object v0
+.end method
 
-    invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
+.method public final c()V
+    .locals 1
+
+    invoke-virtual {p0}, Lhop;->d()Z
 
     move-result v0
 
-    if-eqz v0, :cond_4
+    if-eqz v0, :cond_0
 
-    move-object v3, v5
+    iget-object v0, p0, Lhop;->j:Lhos;
+
+    invoke-virtual {v0}, Lhos;->b()V
+
+    return-void
+
+    :cond_0
+    iget-object v0, p0, Lhop;->j:Lhos;
+
+    invoke-virtual {v0}, Lhos;->d()V
+
+    return-void
+.end method
+
+.method public final d()Z
+    .locals 7
+
+    iget-boolean v0, p0, Lhop;->b:Z
+
+    const/4 v1, 0x0
+
+    if-nez v0, :cond_0
+
+    return v1
+
+    :cond_0
+    iget-object v0, p0, Lhop;->d:Llco;
+
+    invoke-interface {v0}, Llco;->fA()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljrl;
+
+    sget-object v2, Ljrl;->c:Ljrl;
+
+    const/4 v3, 0x1
+
+    if-eq v0, v2, :cond_2
+
+    sget-object v2, Ljrl;->i:Ljrl;
+
+    if-ne v0, v2, :cond_1
+
+    const/4 v2, 0x1
+
+    goto :goto_0
+
+    :cond_1
+    const/4 v2, 0x0
+
+    goto :goto_0
+
+    :cond_2
+    const/4 v2, 0x1
+
+    :goto_0
+    sget-object v4, Ljrl;->b:Ljrl;
+
+    if-eq v0, v4, :cond_4
+
+    sget-object v4, Ljrl;->h:Ljrl;
+
+    if-eq v0, v4, :cond_4
+
+    sget-object v4, Ljrl;->g:Ljrl;
+
+    if-ne v0, v4, :cond_3
+
+    const/4 v4, 0x1
 
     goto :goto_1
 
-    :cond_5
+    :cond_3
+    const/4 v4, 0x0
+
+    goto :goto_1
+
+    :cond_4
+    const/4 v4, 0x1
+
     :goto_1
-    return-object v3
+    sget-object v5, Ljrl;->m:Ljrl;
 
-    :pswitch_d
-    check-cast p1, Ljava/util/List;
+    const-string v6, "torch"
 
-    invoke-interface {p1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+    if-eqz v2, :cond_6
 
-    move-result-object p1
+    iget-object v2, p0, Lhop;->f:Llco;
+
+    check-cast v2, Llce;
+
+    iget-object v2, v2, Llce;->d:Ljava/lang/Object;
+
+    check-cast v2, Ljava/lang/String;
+
+    invoke-virtual {v2, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-nez v2, :cond_5
+
+    goto :goto_3
+
+    :cond_5
+    :goto_2
+    const/4 v1, 0x1
+
+    goto :goto_4
 
     :cond_6
-    invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
+    :goto_3
+    if-eqz v4, :cond_7
 
-    move-result v0
+    iget-object v2, p0, Lhop;->g:Llco;
 
-    if-eqz v0, :cond_7
+    check-cast v2, Llce;
 
-    invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    iget-object v2, v2, Llce;->d:Ljava/lang/Object;
 
-    move-result-object v0
+    check-cast v2, Ljava/lang/String;
 
-    check-cast v0, Ljava/lang/Boolean;
+    const-string v4, "on"
 
-    invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
+    invoke-virtual {v2, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v0
+    move-result v2
 
-    if-nez v0, :cond_6
-
-    goto :goto_2
+    if-nez v2, :cond_5
 
     :cond_7
-    move-object v3, v5
+    if-ne v0, v5, :cond_9
 
-    :goto_2
-    return-object v3
+    iget-object v0, p0, Lhop;->h:Llco;
 
-    :pswitch_e
-    check-cast p1, Lpar;
+    check-cast v0, Llce;
 
-    invoke-virtual {p1}, Lnve;->H()Lnvt;
+    iget-object v0, v0, Llce;->d:Ljava/lang/Object;
 
-    move-result-object p1
+    check-cast v0, Ljava/lang/String;
 
-    return-object p1
-
-    :pswitch_f
-    check-cast p1, Libd;
-
-    iget p1, p1, Libd;->b:I
-
-    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object p1
-
-    return-object p1
-
-    :pswitch_10
-    check-cast p1, Libd;
-
-    iget-object p1, p1, Libd;->a:Landroid/graphics/Rect;
-
-    return-object p1
-
-    :pswitch_11
-    check-cast p1, Ljava/lang/Throwable;
-
-    sget-object v0, Lhsn;->a:Lnak;
-
-    invoke-virtual {v0}, Lnaf;->c()Lnaz;
-
-    move-result-object v0
-
-    check-cast v0, Lnah;
-
-    invoke-interface {v0, p1}, Lnah;->h(Ljava/lang/Throwable;)Lnaz;
-
-    move-result-object p1
-
-    check-cast p1, Lnah;
-
-    const/16 v0, 0xf60
-
-    invoke-interface {p1, v0}, Lnah;->G(I)Lnaz;
-
-    move-result-object p1
-
-    check-cast p1, Lnah;
-
-    const-string v0, "Failed to update indicator bitmap cache"
-
-    invoke-interface {p1, v0}, Lnah;->o(Ljava/lang/String;)V
-
-    return-object v5
-
-    :pswitch_12
-    check-cast p1, Ljava/util/List;
-
-    invoke-interface {p1, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lhmu;
-
-    invoke-interface {p1, v4}, Ljava/util/List;->get(I)Ljava/lang/Object;
-
-    move-result-object p1
-
-    check-cast p1, Lhmt;
-
-    sget-object v1, Lhmu;->c:Lhmu;
-
-    invoke-virtual {v0, v1}, Lhmu;->equals(Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-nez v1, :cond_9
-
-    sget-object v1, Lhmu;->b:Lhmu;
-
-    invoke-virtual {v0, v1}, Lhmu;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v0, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
     if-eqz v0, :cond_8
 
-    sget-object v0, Lhmt;->b:Lhmt;
-
-    invoke-virtual {p1, v0}, Lhmt;->equals(Ljava/lang/Object;)Z
-
-    move-result p1
-
-    if-eqz p1, :cond_8
-
-    const/4 v2, 0x1
-
-    goto :goto_3
+    goto :goto_2
 
     :cond_8
-    goto :goto_3
+    return v1
 
     :cond_9
-    const/4 v2, 0x1
+    :goto_4
+    return v1
+.end method
 
-    :goto_3
-    invoke-static {v2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+.method public final e(Lhos;Llap;Lcom/google/android/apps/camera/uiutils/ReplaceableView;Lhpc;Ljsc;Llco;Llco;Llco;Llco;)V
+    .locals 0
+
+    iput-object p6, p0, Lhop;->f:Llco;
+
+    iput-object p7, p0, Lhop;->g:Llco;
+
+    iput-object p8, p0, Lhop;->h:Llco;
+
+    iput-object p5, p0, Lhop;->k:Ljsc;
+
+    invoke-interface {p4}, Lhpc;->a()I
+
+    move-result p4
+
+    iput p4, p0, Lhop;->i:I
+
+    new-instance p4, Lhor;
+
+    invoke-virtual {p3}, Lcom/google/android/apps/camera/uiutils/ReplaceableView;->getContext()Landroid/content/Context;
+
+    move-result-object p5
+
+    invoke-direct {p4, p5}, Lhor;-><init>(Landroid/content/Context;)V
+
+    iput-object p4, p0, Lhop;->e:Lhor;
+
+    iget p5, p0, Lhop;->a:I
+
+    invoke-virtual {p4, p5}, Lhor;->setBackgroundColor(I)V
+
+    iget-object p4, p0, Lhop;->e:Lhor;
+
+    invoke-virtual {p3, p4}, Lcom/google/android/apps/camera/uiutils/ReplaceableView;->a(Landroid/view/View;)V
+
+    iput-object p1, p0, Lhop;->j:Lhos;
+
+    invoke-virtual {p1}, Lhos;->f()V
+
+    iget-object p1, p0, Lhop;->f:Llco;
+
+    new-instance p3, Lhoo;
+
+    const/4 p4, 0x2
+
+    invoke-direct {p3, p0, p4}, Lhoo;-><init>(Lhop;I)V
+
+    iget-object p4, p0, Lhop;->c:Llar;
+
+    invoke-interface {p1, p3, p4}, Llco;->a(Llij;Ljava/util/concurrent/Executor;)Llie;
 
     move-result-object p1
 
-    return-object p1
+    invoke-virtual {p2, p1}, Llap;->c(Llie;)V
 
-    :pswitch_13
-    check-cast p1, Liou;
+    new-instance p1, Lhoo;
 
-    invoke-interface {p1}, Liou;->a()Liot;
+    const/4 p3, 0x3
+
+    invoke-direct {p1, p0, p3}, Lhoo;-><init>(Lhop;I)V
+
+    iget-object p3, p0, Lhop;->c:Llar;
+
+    invoke-interface {p7, p1, p3}, Llco;->a(Llij;Ljava/util/concurrent/Executor;)Llie;
 
     move-result-object p1
 
-    return-object p1
+    invoke-virtual {p2, p1}, Llap;->c(Llie;)V
 
-    nop
+    new-instance p1, Lhoo;
 
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_13
-        :pswitch_12
-        :pswitch_11
-        :pswitch_10
-        :pswitch_f
-        :pswitch_e
-        :pswitch_d
-        :pswitch_c
-        :pswitch_b
-        :pswitch_a
-        :pswitch_9
-        :pswitch_8
-        :pswitch_7
-        :pswitch_6
-        :pswitch_5
-        :pswitch_4
-        :pswitch_3
-        :pswitch_2
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
+    const/4 p3, 0x4
+
+    invoke-direct {p1, p0, p3}, Lhoo;-><init>(Lhop;I)V
+
+    iget-object p3, p0, Lhop;->c:Llar;
+
+    invoke-interface {p8, p1, p3}, Llco;->a(Llij;Ljava/util/concurrent/Executor;)Llie;
+
+    move-result-object p1
+
+    invoke-virtual {p2, p1}, Llap;->c(Llie;)V
+
+    iget-object p1, p0, Lhop;->d:Llco;
+
+    new-instance p3, Lhoo;
+
+    const/4 p4, 0x0
+
+    invoke-direct {p3, p0, p4}, Lhoo;-><init>(Lhop;I)V
+
+    iget-object p4, p0, Lhop;->c:Llar;
+
+    invoke-interface {p1, p3, p4}, Llco;->a(Llij;Ljava/util/concurrent/Executor;)Llie;
+
+    move-result-object p1
+
+    invoke-virtual {p2, p1}, Llap;->c(Llie;)V
+
+    new-instance p1, Lhoo;
+
+    const/4 p3, 0x1
+
+    invoke-direct {p1, p0, p3}, Lhoo;-><init>(Lhop;I)V
+
+    iget-object p3, p0, Lhop;->c:Llar;
+
+    invoke-interface {p9, p1, p3}, Llco;->a(Llij;Ljava/util/concurrent/Executor;)Llie;
+
+    move-result-object p1
+
+    invoke-virtual {p2, p1}, Llap;->c(Llie;)V
+
+    return-void
 .end method

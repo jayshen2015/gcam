@@ -1,139 +1,143 @@
-.class public abstract Lmus;
-.super Lmuo;
+.class final Lmus;
+.super Ljava/lang/Object;
 
 # interfaces
-.implements Lmyb;
+.implements Ljava/util/concurrent/Executor;
+.implements Lmvw;
+
+
+# instance fields
+.field private final a:Lmwe;
+
+.field private b:Ljava/lang/Runnable;
+
+.field private c:Z
+
+.field private d:Z
 
 
 # direct methods
-.method protected constructor <init>()V
+.method public constructor <init>(Lmwe;)V
     .locals 0
 
-    invoke-direct {p0}, Lmuo;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lmus;->a:Lmwe;
+
+    return-void
+.end method
+
+.method private final b(Ljava/lang/Runnable;)V
+    .locals 1
+
+    iget-boolean v0, p0, Lmus;->d:Z
+
+    if-eqz v0, :cond_0
+
+    return-void
+
+    :cond_0
+    const/4 v0, 0x1
+
+    iput-boolean v0, p0, Lmus;->d:Z
+
+    invoke-interface {p1}, Ljava/lang/Runnable;->run()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method protected bridge synthetic b()Ljava/util/Collection;
-    .locals 1
+.method public final a(Landroid/app/Activity;)V
+    .locals 0
 
-    const/4 v0, 0x0
+    iget-object p1, p0, Lmus;->a:Lmwe;
 
-    throw v0
-.end method
+    invoke-virtual {p1, p0}, Lmwe;->b(Lmwd;)V
 
-.method public final cw(Ljava/lang/Object;)I
-    .locals 1
+    monitor-enter p0
 
-    invoke-virtual {p0}, Lmus;->o()Lmyb;
-
-    move-result-object v0
-
-    invoke-interface {v0, p1}, Lmyb;->cw(Ljava/lang/Object;)I
-
-    move-result p1
-
-    return p1
-.end method
-
-.method public d(Ljava/lang/Object;I)I
-    .locals 1
-
-    invoke-virtual {p0}, Lmus;->o()Lmyb;
-
-    move-result-object p2
-
-    const v0, 0x7fffffff
-
-    invoke-interface {p2, p1, v0}, Lmyb;->d(Ljava/lang/Object;I)I
-
-    move-result p1
-
-    return p1
-.end method
-
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 1
-
-    if-eq p1, p0, :cond_1
-
-    invoke-virtual {p0}, Lmus;->o()Lmyb;
-
-    move-result-object v0
-
-    invoke-virtual {v0, p1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
-
-    move-result p1
+    :try_start_0
+    iget-object p1, p0, Lmus;->b:Ljava/lang/Runnable;
 
     if-eqz p1, :cond_0
+
+    invoke-direct {p0, p1}, Lmus;->b(Ljava/lang/Runnable;)V
+
+    const/4 p1, 0x0
+
+    iput-object p1, p0, Lmus;->b:Ljava/lang/Runnable;
 
     goto :goto_0
 
     :cond_0
-    const/4 p1, 0x0
-
-    return p1
-
-    :cond_1
-    :goto_0
     const/4 p1, 0x1
 
-    return p1
-.end method
+    iput-boolean p1, p0, Lmus;->c:Z
 
-.method public f()Ljava/util/Set;
-    .locals 1
+    :goto_0
+    monitor-exit p0
 
-    const/4 v0, 0x0
+    return-void
 
-    throw v0
-.end method
+    :catchall_0
+    move-exception p1
 
-.method public g()Ljava/util/Set;
-    .locals 1
-
-    const/4 v0, 0x0
-
-    throw v0
-.end method
-
-.method public h(Ljava/lang/Object;I)V
-    .locals 0
-
-    const/4 p1, 0x0
+    monitor-exit p0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw p1
 .end method
 
-.method public final hashCode()I
-    .locals 1
+.method public final execute(Ljava/lang/Runnable;)V
+    .locals 2
 
-    invoke-virtual {p0}, Lmus;->o()Lmyb;
+    monitor-enter p0
 
-    move-result-object v0
+    :try_start_0
+    iget-boolean v0, p0, Lmus;->c:Z
 
-    invoke-virtual {v0}, Ljava/lang/Object;->hashCode()I
+    if-nez v0, :cond_1
+
+    iget-object v0, p0, Lmus;->a:Lmwe;
+
+    iget-object v0, v0, Lmwe;->a:Lmwg;
+
+    iget-object v0, v0, Lmwg;->a:Lmwf;
+
+    sget v1, Lmwf;->c:I
+
+    iget-object v0, v0, Lmwf;->b:Ljava/util/concurrent/atomic/AtomicInteger;
+
+    invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicInteger;->get()I
 
     move-result v0
 
-    return v0
-.end method
+    if-lez v0, :cond_0
 
-.method public i(Ljava/lang/Object;I)Z
-    .locals 1
+    goto :goto_0
 
-    invoke-virtual {p0}, Lmus;->o()Lmyb;
+    :cond_0
+    iput-object p1, p0, Lmus;->b:Ljava/lang/Runnable;
 
-    move-result-object v0
+    goto :goto_1
 
-    invoke-interface {v0, p1, p2}, Lmyb;->i(Ljava/lang/Object;I)Z
+    :cond_1
+    :goto_0
+    invoke-direct {p0, p1}, Lmus;->b(Ljava/lang/Runnable;)V
 
-    move-result p1
+    :goto_1
+    monitor-exit p0
 
-    return p1
-.end method
+    return-void
 
-.method protected abstract o()Lmyb;
+    :catchall_0
+    move-exception p1
+
+    monitor-exit p0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw p1
 .end method

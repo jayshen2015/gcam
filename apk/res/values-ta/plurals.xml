@@ -1,12 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <plurals name="accessibility_timelapse_manual_record_speed_desc">
-        <item quantity="other">டைம் லாப்ஸ் %d மடங்கு வேகம்</item>
-        <item quantity="one">டைம் லாப்ஸ் %d மடங்கு வேகம்</item>
-    </plurals>
-    <plurals name="number_of_cropped_face">
-        <item quantity="other">%d முகங்கள் செதுக்கப்பட்டன.</item>
-        <item quantity="one">ஒரு முகம் செதுக்கப்பட்டது.</item>
+    <plurals name="number_of_faces_announcement">
+        <item quantity="other">%1$d முகங்கள்.</item>
+        <item quantity="one">%1$d முகம்.</item>
     </plurals>
     <plurals name="photos_remaining">
         <item quantity="other">சுமார் %s படங்கள் உள்ளன</item>
@@ -17,8 +13,8 @@
         <item quantity="one">(%1$d ஆப்ஸ் தேர்ந்தெடுக்கப்பட்டது)</item>
     </plurals>
     <plurals name="social_share_info">
-        <item quantity="other">கேமராவில் இருந்தே சமூக ஆப்ஸில் படங்களையும் வீடியோக்களையும் விரைவாகப் பகிரலாம். %1$d ஆப்ஸ் வரை தேர்வுசெய்யலாம். பூட்டிய ஃபோல்டரில் சேமித்த படங்களையும் வீடியோக்களையும் பகிர முடியாது.</item>
-        <item quantity="one">கேமராவில் இருந்தே சமூக ஆப்ஸில் படங்களையும் வீடியோக்களையும் விரைவாகப் பகிரலாம். %1$d ஆப்ஸைத் தேர்வுசெய்யலாம். பூட்டிய ஃபோல்டரில் சேமித்த படங்களையும் வீடியோக்களையும் பகிர முடியாது.</item>
+        <item quantity="other">கேமராவில் இருந்தே சமூக வலைதள ஆப்ஸில் படங்களையும் வீடியோக்களையும் விரைவாகப் பகிரலாம். %1$d ஆப்ஸ் வரை தேர்வுசெய்யலாம். பூட்டிய ஃபோல்டரில் சேமித்த படங்களையும் வீடியோக்களையும் பகிர முடியாது.</item>
+        <item quantity="one">கேமராவில் இருந்தே சமூக வலைதள ஆப்ஸில் படங்களையும் வீடியோக்களையும் விரைவாகப் பகிரலாம். %1$d ஆப்ஸைத் தேர்வுசெய்யலாம். பூட்டிய ஃபோல்டரில் சேமித்த படங்களையும் வீடியோக்களையும் பகிர முடியாது.</item>
     </plurals>
     <plurals name="social_share_select_error">
         <item quantity="other">%1$d ஆப்ஸ் வரை தேர்வுசெய்யவும்</item>

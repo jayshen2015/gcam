@@ -1,122 +1,75 @@
 .class public final Lmbw;
-.super Loln;
+.super Ljava/lang/Object;
 
 # interfaces
-.implements Lomk;
-
-
-# annotations
-.annotation runtime Lolj;
-    b = "com.google.android.libraries.vision.visionkit.f250.internal.uploader.work.upload.OneAttachmentUploader$transmitUploadError$4"
-    c = "OneAttachmentUploader.kt"
-    d = "invokeSuspend"
-    e = {
-        0xb9
-    }
-.end annotation
+.implements Lmch;
 
 
 # instance fields
-.field a:I
+.field public final a:Lljf;
 
-.field final synthetic b:Llyf;
+.field public final b:Llis;
 
-.field final synthetic c:Ldqx;
+.field private final c:Lmip;
 
 
 # direct methods
-.method public constructor <init>(Ldqx;Llyf;Loku;[B[B)V
+.method public constructor <init>(Lmip;Lljf;Llis;[B[B[B)V
     .locals 0
 
-    iput-object p1, p0, Lmbw;->c:Ldqx;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p2, p0, Lmbw;->b:Llyf;
+    iput-object p1, p0, Lmbw;->c:Lmip;
 
-    const/4 p1, 0x1
+    iput-object p2, p0, Lmbw;->a:Lljf;
 
-    invoke-direct {p0, p1, p3}, Loln;-><init>(ILoku;)V
+    const-string p1, "MediaFS-P"
+
+    invoke-interface {p3, p1}, Llis;->a(Ljava/lang/String;)Llis;
+
+    move-result-object p1
+
+    iput-object p1, p0, Lmbw;->b:Llis;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final bridge synthetic a(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 6
+.method public final a(Lmcn;Lmcc;)Lmce;
+    .locals 8
 
-    move-object v3, p1
+    new-instance v7, Lmcp;
 
-    check-cast v3, Loku;
+    iget-object v1, p0, Lmbw;->c:Lmip;
 
-    new-instance p1, Lmbw;
+    iget-object v0, p0, Lmbw;->b:Llis;
 
-    iget-object v1, p0, Lmbw;->c:Ldqx;
+    invoke-static {p1, p2, v0}, Lmcs;->l(Lmcn;Lmcc;Llis;)Lmcs;
 
-    iget-object v2, p0, Lmbw;->b:Llyf;
+    move-result-object v2
+
+    iget-object v3, p0, Lmbw;->b:Llis;
 
     const/4 v4, 0x0
 
     const/4 v5, 0x0
 
-    move-object v0, p1
+    const/4 v6, 0x0
 
-    invoke-direct/range {v0 .. v5}, Lmbw;-><init>(Ldqx;Llyf;Loku;[B[B)V
+    move-object v0, v7
 
-    sget-object v0, Lojk;->a:Lojk;
+    invoke-direct/range {v0 .. v6}, Lmcp;-><init>(Lmip;Lmce;Llis;[B[B[B)V
 
-    invoke-virtual {p1, v0}, Lmbw;->b(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object p1
-
-    return-object p1
+    return-object v7
 .end method
 
-.method public final b(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 3
+.method public final b(Lmcc;)Lmcg;
+    .locals 1
 
-    sget-object v0, Lolc;->a:Lolc;
+    new-instance v0, Lmbv;
 
-    iget v1, p0, Lmbw;->a:I
-
-    packed-switch v1, :pswitch_data_0
-
-    invoke-static {p1}, Lljr;->aO(Ljava/lang/Object;)V
-
-    goto :goto_0
-
-    :pswitch_0
-    invoke-static {p1}, Lljr;->aO(Ljava/lang/Object;)V
-
-    iget-object p1, p0, Lmbw;->c:Ldqx;
-
-    iget-object p1, p1, Ldqx;->a:Ljava/lang/Object;
-
-    iget-object v1, p0, Lmbw;->b:Llyf;
-
-    const/4 v2, 0x1
-
-    iput v2, p0, Lmbw;->a:I
-
-    check-cast p1, Llyz;
-
-    invoke-virtual {p1, v1, p0}, Llyz;->a(Llyf;Loku;)Ljava/lang/Object;
-
-    move-result-object p1
-
-    if-ne p1, v0, :cond_0
+    invoke-direct {v0, p0, p1}, Lmbv;-><init>(Lmbw;Lmcc;)V
 
     return-object v0
-
-    :cond_0
-    :goto_0
-    sget-object p1, Lojk;->a:Lojk;
-
-    return-object p1
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
 .end method

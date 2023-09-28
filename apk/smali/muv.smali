@@ -1,83 +1,94 @@
-.class public abstract Lmuv;
-.super Lmuo;
+.class public final Lmuv;
+.super Ljava/lang/Object;
 
 # interfaces
-.implements Ljava/util/Set;
+.implements Ljava/util/concurrent/ThreadFactory;
+
+
+# instance fields
+.field public final a:I
+
+.field private final b:Ljava/util/concurrent/atomic/AtomicInteger;
+
+.field private final c:Ljava/lang/String;
 
 
 # direct methods
-.method protected constructor <init>()V
-    .locals 0
+.method public constructor <init>(I)V
+    .locals 2
 
-    invoke-direct {p0}, Lmuo;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    new-instance v0, Ljava/util/concurrent/atomic/AtomicInteger;
+
+    const/4 v1, 0x1
+
+    invoke-direct {v0, v1}, Ljava/util/concurrent/atomic/AtomicInteger;-><init>(I)V
+
+    iput-object v0, p0, Lmuv;->b:Ljava/util/concurrent/atomic/AtomicInteger;
+
+    iput p1, p0, Lmuv;->a:I
+
+    const-string p1, "Primes"
+
+    iput-object p1, p0, Lmuv;->c:Ljava/lang/String;
 
     return-void
 .end method
 
 
 # virtual methods
-.method protected bridge synthetic b()Ljava/util/Collection;
-    .locals 1
+.method public final newThread(Ljava/lang/Runnable;)Ljava/lang/Thread;
+    .locals 5
 
-    const/4 v0, 0x0
+    new-instance v0, Ljava/lang/Thread;
 
-    throw v0
-.end method
+    new-instance v1, Lmuu;
 
-.method protected abstract c()Ljava/util/Set;
-.end method
+    invoke-direct {v1, p0, p1}, Lmuu;-><init>(Lmuv;Ljava/lang/Runnable;)V
 
-.method protected final d(Ljava/util/Collection;)Z
-    .locals 0
+    iget-object p1, p0, Lmuv;->c:Ljava/lang/String;
 
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    iget-object v2, p0, Lmuv;->b:Ljava/util/concurrent/atomic/AtomicInteger;
 
-    invoke-static {p0, p1}, Lmjy;->D(Ljava/util/Set;Ljava/util/Collection;)Z
+    invoke-virtual {v2}, Ljava/util/concurrent/atomic/AtomicInteger;->getAndIncrement()I
 
-    move-result p1
+    move-result v2
 
-    return p1
-.end method
+    invoke-virtual {p1}, Ljava/lang/String;->length()I
 
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 1
+    move-result v3
 
-    if-eq p1, p0, :cond_1
+    new-instance v4, Ljava/lang/StringBuilder;
 
-    invoke-virtual {p0}, Lmuv;->c()Ljava/util/Set;
+    add-int/lit8 v3, v3, 0xc
 
-    move-result-object v0
+    invoke-direct {v4, v3}, Ljava/lang/StringBuilder;-><init>(I)V
 
-    invoke-virtual {v0, p1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v4, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string p1, "-"
+
+    invoke-virtual {v4, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v4, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-direct {v0, v1, p1}, Ljava/lang/Thread;-><init>(Ljava/lang/Runnable;Ljava/lang/String;)V
+
+    invoke-virtual {v0}, Ljava/lang/Thread;->isDaemon()Z
 
     move-result p1
 
     if-eqz p1, :cond_0
 
-    goto :goto_0
-
-    :cond_0
     const/4 p1, 0x0
 
-    return p1
+    invoke-virtual {v0, p1}, Ljava/lang/Thread;->setDaemon(Z)V
 
-    :cond_1
-    :goto_0
-    const/4 p1, 0x1
-
-    return p1
-.end method
-
-.method public final hashCode()I
-    .locals 1
-
-    invoke-virtual {p0}, Lmuv;->c()Ljava/util/Set;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/Object;->hashCode()I
-
-    move-result v0
-
-    return v0
+    :cond_0
+    return-object v0
 .end method

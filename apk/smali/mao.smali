@@ -1,74 +1,85 @@
-.class public final Lmao;
-.super Lolh;
+.class public final synthetic Lmao;
+.super Ljava/lang/Object;
 
-
-# annotations
-.annotation runtime Lolj;
-    b = "com.google.android.libraries.vision.visionkit.f250.internal.uploader.work.F250AutoWorker"
-    c = "F250AutoWorker.kt"
-    d = "enqueueResourcesToAutoUpload"
-    e = {
-        0x49,
-        0x7c,
-        0x4c,
-        0x4d
-    }
-.end annotation
+# interfaces
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field public a:Ljava/lang/Object;
+.field public final synthetic a:Lmaq;
 
-.field public synthetic b:Ljava/lang/Object;
-
-.field final synthetic c:Lcom/google/android/libraries/vision/visionkit/f250/internal/uploader/work/F250AutoWorker;
-
-.field public d:I
-
-.field public e:Llzy;
-
-.field public f:Llzz;
-
-.field public g:Lodt;
-
-.field public h:Lojx;
-
-.field public i:Lojx;
+.field public final synthetic b:Lmax;
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/libraries/vision/visionkit/f250/internal/uploader/work/F250AutoWorker;Loku;)V
+.method public synthetic constructor <init>(Lmaq;Lmax;)V
     .locals 0
 
-    iput-object p1, p0, Lmao;->c:Lcom/google/android/libraries/vision/visionkit/f250/internal/uploader/work/F250AutoWorker;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0, p2}, Lolh;-><init>(Loku;)V
+    iput-object p1, p0, Lmao;->a:Lmaq;
+
+    iput-object p2, p0, Lmao;->b:Lmax;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final b(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 1
+.method public final run()V
+    .locals 4
 
-    iput-object p1, p0, Lmao;->b:Ljava/lang/Object;
+    iget-object v0, p0, Lmao;->a:Lmaq;
 
-    iget p1, p0, Lmao;->d:I
+    iget-object v1, p0, Lmao;->b:Lmax;
 
-    const/high16 v0, -0x80000000
+    iget-object v2, v0, Lmaq;->e:Ljava/lang/Object;
 
-    or-int/2addr p1, v0
+    monitor-enter v2
 
-    iput p1, p0, Lmao;->d:I
+    :try_start_0
+    iget-object v3, v0, Lmaq;->g:Ljava/util/Map;
 
-    iget-object p1, p0, Lmao;->c:Lcom/google/android/libraries/vision/visionkit/f250/internal/uploader/work/F250AutoWorker;
+    invoke-interface {v3, v1}, Ljava/util/Map;->containsKey(Ljava/lang/Object;)Z
 
-    const/4 v0, 0x0
+    move-result v3
 
-    invoke-virtual {p1, v0, p0}, Lcom/google/android/libraries/vision/visionkit/f250/internal/uploader/work/F250AutoWorker;->k(Llzy;Loku;)Ljava/lang/Object;
+    if-nez v3, :cond_0
 
-    move-result-object p1
+    monitor-exit v2
 
-    return-object p1
+    return-void
+
+    :cond_0
+    iget-object v3, v0, Lmaq;->g:Ljava/util/Map;
+
+    invoke-interface {v3, v1}, Ljava/util/Map;->remove(Ljava/lang/Object;)Ljava/lang/Object;
+
+    monitor-exit v2
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    invoke-static {v1}, Ljava/util/Collections;->singleton(Ljava/lang/Object;)Ljava/util/Set;
+
+    move-result-object v1
+
+    iget-object v2, v0, Lmaq;->c:Ljava/util/concurrent/ExecutorService;
+
+    new-instance v3, Lmap;
+
+    invoke-direct {v3, v0, v1}, Lmap;-><init>(Lmaq;Ljava/util/Set;)V
+
+    invoke-interface {v2, v3}, Ljava/util/concurrent/ExecutorService;->execute(Ljava/lang/Runnable;)V
+
+    return-void
+
+    :catchall_0
+    move-exception v0
+
+    :try_start_1
+    monitor-exit v2
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    throw v0
 .end method

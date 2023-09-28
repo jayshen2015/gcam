@@ -1,76 +1,65 @@
-.class public final Ljau;
-.super Ljhn;
+.class public final synthetic Ljau;
+.super Ljava/lang/Object;
 
-
-# static fields
-.field public static final CREATOR:Landroid/os/Parcelable$Creator;
+# interfaces
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field final a:I
+.field public final synthetic a:Ljay;
 
-.field public final b:I
-
-.field public final c:Landroid/os/Bundle;
+.field private final synthetic b:I
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
-
-    new-instance v0, Ljay;
-
-    const/4 v1, 0x1
-
-    invoke-direct {v0, v1}, Ljay;-><init>(I)V
-
-    sput-object v0, Ljau;->CREATOR:Landroid/os/Parcelable$Creator;
-
-    return-void
-.end method
-
-.method public constructor <init>(IILandroid/os/Bundle;)V
+.method public synthetic constructor <init>(Ljay;I)V
     .locals 0
-
-    invoke-direct {p0}, Ljhn;-><init>()V
-
-    iput p1, p0, Ljau;->a:I
 
     iput p2, p0, Ljau;->b:I
 
-    iput-object p3, p0, Ljau;->c:Landroid/os/Bundle;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Ljau;->a:Ljay;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final writeToParcel(Landroid/os/Parcel;I)V
-    .locals 2
-
-    invoke-static {p1}, Ljhp;->a(Landroid/os/Parcel;)I
-
-    move-result p2
-
-    iget v0, p0, Ljau;->a:I
-
-    const/4 v1, 0x1
-
-    invoke-static {p1, v1, v0}, Ljhp;->g(Landroid/os/Parcel;II)V
+.method public final run()V
+    .locals 3
 
     iget v0, p0, Ljau;->b:I
 
-    const/4 v1, 0x2
+    packed-switch v0, :pswitch_data_0
 
-    invoke-static {p1, v1, v0}, Ljhp;->g(Landroid/os/Parcel;II)V
+    iget-object v0, p0, Ljau;->a:Ljay;
 
-    iget-object v0, p0, Ljau;->c:Landroid/os/Bundle;
+    iget-object v1, v0, Ljay;->b:Lcom/google/android/apps/camera/ui/elapsedtimeui/ElapsedTimerView;
 
-    const/4 v1, 0x3
+    const/16 v2, 0x8
 
-    invoke-static {p1, v1, v0}, Ljhp;->i(Landroid/os/Parcel;ILandroid/os/Bundle;)V
+    invoke-virtual {v1, v2}, Lcom/google/android/apps/camera/ui/elapsedtimeui/ElapsedTimerView;->setVisibility(I)V
 
-    invoke-static {p1, p2}, Ljhp;->c(Landroid/os/Parcel;I)V
+    invoke-virtual {v0}, Ljay;->k()V
 
     return-void
+
+    :pswitch_0
+    iget-object v0, p0, Ljau;->a:Ljay;
+
+    iget-object v0, v0, Ljay;->b:Lcom/google/android/apps/camera/ui/elapsedtimeui/ElapsedTimerView;
+
+    const/4 v1, 0x0
+
+    invoke-virtual {v0, v1}, Lcom/google/android/apps/camera/ui/elapsedtimeui/ElapsedTimerView;->setVisibility(I)V
+
+    return-void
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

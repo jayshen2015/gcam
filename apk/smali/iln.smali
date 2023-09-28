@@ -1,133 +1,129 @@
 .class public final Liln;
 .super Ljava/lang/Object;
 
-# interfaces
-.implements Logk;
-
 
 # instance fields
-.field private final a:Loiw;
+.field public final a:Landroid/content/Context;
 
-.field private final b:Loiw;
+.field public final b:Lojc;
 
-.field private final c:Loiw;
+.field public final c:Lddf;
 
-.field private final d:Loiw;
-
-.field private final e:Loiw;
-
-.field private final f:Loiw;
-
-.field private final g:Loiw;
-
-.field private final h:Loiw;
+.field private final d:Lhuf;
 
 
 # direct methods
-.method public constructor <init>(Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;)V
+.method public constructor <init>(Landroid/content/Context;Lhuf;Lojc;Lddf;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Liln;->a:Loiw;
+    iput-object p1, p0, Liln;->a:Landroid/content/Context;
 
-    iput-object p2, p0, Liln;->b:Loiw;
+    iput-object p2, p0, Liln;->d:Lhuf;
 
-    iput-object p3, p0, Liln;->c:Loiw;
+    iput-object p3, p0, Liln;->b:Lojc;
 
-    iput-object p4, p0, Liln;->d:Loiw;
-
-    iput-object p5, p0, Liln;->e:Loiw;
-
-    iput-object p6, p0, Liln;->f:Loiw;
-
-    iput-object p7, p0, Liln;->g:Loiw;
-
-    iput-object p8, p0, Liln;->h:Loiw;
+    iput-object p4, p0, Liln;->c:Lddf;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Lilm;
-    .locals 10
+.method public final a()Z
+    .locals 4
 
-    iget-object v1, p0, Liln;->a:Loiw;
+    iget-object v0, p0, Liln;->d:Lhuf;
 
-    iget-object v2, p0, Liln;->b:Loiw;
+    sget-object v1, Lhtu;->F:Lhuk;
 
-    iget-object v0, p0, Liln;->c:Loiw;
-
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
+    invoke-interface {v0, v1}, Lhuf;->c(Lhts;)Ljava/lang/Object;
 
     move-result-object v0
 
-    move-object v3, v0
+    check-cast v0, Ljava/lang/Boolean;
 
-    check-cast v3, Lgzm;
+    invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
 
-    iget-object v0, p0, Liln;->d:Loiw;
+    move-result v0
 
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
+    if-eqz v0, :cond_1
 
-    move-result-object v0
+    const/4 v1, 0x1
 
-    move-object v4, v0
+    iget-object v2, p0, Liln;->c:Lddf;
 
-    check-cast v4, Lgzn;
+    sget-object v3, Lddl;->ay:Lddg;
 
-    iget-object v0, p0, Liln;->e:Loiw;
+    invoke-interface {v2, v3}, Lddf;->k(Lddg;)Z
 
-    check-cast v0, Limf;
+    move-result v2
 
-    invoke-virtual {v0}, Limf;->a()Landroid/content/pm/PackageInfo;
+    if-eq v1, v2, :cond_0
 
-    move-result-object v5
+    const/4 v1, 0x0
 
-    iget-object v0, p0, Liln;->f:Loiw;
+    goto :goto_0
 
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
+    :cond_0
+    const v1, 0x7f150366
 
-    move-result-object v0
+    :goto_0
+    new-instance v2, Lnyj;
 
-    move-object v6, v0
+    iget-object v3, p0, Liln;->a:Landroid/content/Context;
 
-    check-cast v6, Ljuh;
+    invoke-direct {v2, v3, v1}, Lnyj;-><init>(Landroid/content/Context;I)V
 
-    iget-object v0, p0, Liln;->g:Loiw;
+    iget-object v1, p0, Liln;->a:Landroid/content/Context;
 
-    check-cast v0, Leqy;
+    const v3, 0x7f1404e0
 
-    invoke-virtual {v0}, Leqy;->a()Lezx;
+    invoke-virtual {v1, v3}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
-    move-result-object v7
+    move-result-object v1
 
-    iget-object v0, p0, Liln;->h:Loiw;
+    invoke-virtual {v2, v1}, Lnyj;->t(Ljava/lang/CharSequence;)V
 
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
+    iget-object v1, p0, Liln;->a:Landroid/content/Context;
 
-    move-result-object v0
+    const v3, 0x7f1404df
 
-    move-object v8, v0
+    invoke-virtual {v1, v3}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
-    check-cast v8, Lfbz;
+    move-result-object v1
 
-    new-instance v9, Lilm;
+    invoke-virtual {v2, v1}, Lnyj;->m(Ljava/lang/CharSequence;)V
 
-    move-object v0, v9
+    iget-object v1, p0, Liln;->a:Landroid/content/Context;
 
-    invoke-direct/range {v0 .. v8}, Lilm;-><init>(Loiw;Loiw;Lgzm;Lgzn;Landroid/content/pm/PackageInfo;Ljuh;Lezx;Lfbz;)V
+    const v3, 0x7f14050b
 
-    return-object v9
-.end method
+    invoke-virtual {v1, v3}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
-.method public final bridge synthetic get()Ljava/lang/Object;
-    .locals 1
+    move-result-object v1
 
-    invoke-virtual {p0}, Liln;->a()Lilm;
+    new-instance v3, Lilm;
 
-    move-result-object v0
+    invoke-direct {v3, p0}, Lilm;-><init>(Liln;)V
 
-    return-object v0
+    invoke-virtual {v2, v1, v3}, Lnyj;->r(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)V
+
+    iget-object v1, p0, Liln;->a:Landroid/content/Context;
+
+    const/high16 v3, 0x1040000
+
+    invoke-virtual {v1, v3}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+
+    move-result-object v1
+
+    const/4 v3, 0x0
+
+    invoke-virtual {v2, v1, v3}, Lnyj;->o(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)V
+
+    invoke-virtual {v2}, Lid;->c()Lie;
+
+    :cond_1
+    return v0
 .end method

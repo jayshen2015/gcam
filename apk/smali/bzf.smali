@@ -1,84 +1,37 @@
-.class public final Lbzf;
+.class public final synthetic Lbzf;
 .super Ljava/lang/Object;
 
-
-# static fields
-.field public static final a:Lbsl;
+# interfaces
+.implements Landroid/view/View$OnTouchListener;
 
 
 # instance fields
-.field public final b:Lwy;
-
-.field public final c:Ljava/util/concurrent/atomic/AtomicReference;
+.field public final synthetic a:Lbzg;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 14
+.method public synthetic constructor <init>(Lbzg;)V
+    .locals 0
 
-    new-instance v6, Lbsl;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    new-instance v0, Lbru;
-
-    invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
-
-    move-result-object v11
-
-    new-instance v12, Lbyh;
-
-    const/4 v1, 0x0
-
-    invoke-direct {v12, v1}, Lbyh;-><init>(I)V
-
-    const-class v8, Ljava/lang/Object;
-
-    const-class v9, Ljava/lang/Object;
-
-    const-class v10, Ljava/lang/Object;
-
-    const/4 v13, 0x0
-
-    move-object v7, v0
-
-    invoke-direct/range {v7 .. v13}, Lbru;-><init>(Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/util/List;Lbyg;Laed;)V
-
-    invoke-static {v0}, Ljava/util/Collections;->singletonList(Ljava/lang/Object;)Ljava/util/List;
-
-    move-result-object v4
-
-    const-class v1, Ljava/lang/Object;
-
-    const-class v2, Ljava/lang/Object;
-
-    const-class v3, Ljava/lang/Object;
-
-    const/4 v5, 0x0
-
-    move-object v0, v6
-
-    invoke-direct/range {v0 .. v5}, Lbsl;-><init>(Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;Ljava/util/List;Laed;)V
-
-    sput-object v6, Lbzf;->a:Lbsl;
+    iput-object p1, p0, Lbzf;->a:Lbzg;
 
     return-void
 .end method
 
-.method public constructor <init>()V
-    .locals 1
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+# virtual methods
+.method public final onTouch(Landroid/view/View;Landroid/view/MotionEvent;)Z
+    .locals 0
 
-    new-instance v0, Lwy;
+    iget-object p1, p0, Lbzf;->a:Lbzg;
 
-    invoke-direct {v0}, Lwy;-><init>()V
+    invoke-virtual {p1}, Lbzg;->b()V
 
-    iput-object v0, p0, Lbzf;->b:Lwy;
+    invoke-virtual {p1}, Lbzg;->a()V
 
-    new-instance v0, Ljava/util/concurrent/atomic/AtomicReference;
+    const/4 p1, 0x0
 
-    invoke-direct {v0}, Ljava/util/concurrent/atomic/AtomicReference;-><init>()V
-
-    iput-object v0, p0, Lbzf;->c:Ljava/util/concurrent/atomic/AtomicReference;
-
-    return-void
+    return p1
 .end method

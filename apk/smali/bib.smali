@@ -1,101 +1,87 @@
-.class public final Lbib;
-.super Lbhx;
+.class final Lbib;
+.super Landroid/media/MediaDataSource;
 
 
 # instance fields
-.field private final e:Lblu;
+.field final synthetic a:Ljava/nio/ByteBuffer;
 
 
 # direct methods
-.method public constructor <init>(Ljava/util/List;)V
+.method public constructor <init>(Ljava/nio/ByteBuffer;)V
     .locals 0
 
-    invoke-direct {p0, p1}, Lbhx;-><init>(Ljava/util/List;)V
+    iput-object p1, p0, Lbib;->a:Ljava/nio/ByteBuffer;
 
-    new-instance p1, Lblu;
-
-    invoke-direct {p1}, Lblu;-><init>()V
-
-    iput-object p1, p0, Lbib;->e:Lblu;
+    invoke-direct {p0}, Landroid/media/MediaDataSource;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic f(Lblt;F)Ljava/lang/Object;
-    .locals 5
+.method public final close()V
+    .locals 0
 
-    iget-object v0, p1, Lblt;->b:Ljava/lang/Object;
+    return-void
+.end method
 
-    if-eqz v0, :cond_1
+.method public final getSize()J
+    .locals 2
 
-    iget-object v1, p1, Lblt;->c:Ljava/lang/Object;
+    iget-object v0, p0, Lbib;->a:Ljava/nio/ByteBuffer;
 
-    if-eqz v1, :cond_1
+    invoke-virtual {v0}, Ljava/nio/ByteBuffer;->limit()I
 
-    check-cast v0, Lblu;
+    move-result v0
 
-    check-cast v1, Lblu;
+    int-to-long v0, v0
 
-    iget-object v2, p0, Lbib;->d:Lbkc;
+    return-wide v0
+.end method
 
-    if-eqz v2, :cond_0
+.method public final readAt(J[BII)I
+    .locals 3
 
-    iget p2, p1, Lblt;->g:F
+    iget-object v0, p0, Lbib;->a:Ljava/nio/ByteBuffer;
 
-    iget-object p1, p1, Lblt;->h:Ljava/lang/Float;
+    invoke-virtual {v0}, Ljava/nio/ByteBuffer;->limit()I
 
-    invoke-virtual {p1}, Ljava/lang/Float;->floatValue()F
+    move-result v0
 
-    invoke-virtual {p0}, Lbhs;->c()F
+    int-to-long v0, v0
 
-    iget-object p1, v2, Lbkc;->a:Ljava/lang/Object;
+    cmp-long v2, p1, v0
 
-    check-cast p1, Lblu;
+    if-ltz v2, :cond_0
 
-    goto :goto_0
+    const/4 p1, -0x1
+
+    return p1
 
     :cond_0
-    iget-object p1, p0, Lbib;->e:Lblu;
+    iget-object v0, p0, Lbib;->a:Ljava/nio/ByteBuffer;
 
-    iget v2, v0, Lblu;->a:F
+    long-to-int p2, p1
 
-    iget v3, v1, Lblu;->a:F
+    invoke-virtual {v0, p2}, Ljava/nio/ByteBuffer;->position(I)Ljava/nio/Buffer;
 
-    sget-object v4, Lbln;->a:Landroid/graphics/PointF;
+    move-result-object p1
 
-    sub-float/2addr v3, v2
+    check-cast p1, Ljava/nio/ByteBuffer;
 
-    mul-float v3, v3, p2
+    iget-object p1, p0, Lbib;->a:Ljava/nio/ByteBuffer;
 
-    add-float/2addr v2, v3
+    invoke-virtual {p1}, Ljava/nio/ByteBuffer;->remaining()I
 
-    iget v0, v0, Lblu;->b:F
+    move-result p1
 
-    iget v1, v1, Lblu;->b:F
+    invoke-static {p5, p1}, Ljava/lang/Math;->min(II)I
 
-    sub-float/2addr v1, v0
+    move-result p1
 
-    mul-float p2, p2, v1
+    iget-object p2, p0, Lbib;->a:Ljava/nio/ByteBuffer;
 
-    add-float/2addr v0, p2
+    invoke-virtual {p2, p3, p4, p1}, Ljava/nio/ByteBuffer;->get([BII)Ljava/nio/ByteBuffer;
 
-    iput v2, p1, Lblu;->a:F
-
-    iput v0, p1, Lblu;->b:F
-
-    iget-object p1, p0, Lbib;->e:Lblu;
-
-    :goto_0
-    return-object p1
-
-    :cond_1
-    new-instance p1, Ljava/lang/IllegalStateException;
-
-    const-string p2, "Missing values for keyframe."
-
-    invoke-direct {p1, p2}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw p1
+    return p1
 .end method

@@ -1,83 +1,64 @@
-.class public final Lgnz;
+.class public final synthetic Lgnz;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lfvh;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field private final a:Landroid/hardware/camera2/CaptureResult$Key;
+.field public final synthetic a:Lgoa;
 
 
 # direct methods
-.method public constructor <init>(Landroid/hardware/camera2/CaptureResult$Key;)V
+.method public synthetic constructor <init>(Lgoa;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lgnz;->a:Landroid/hardware/camera2/CaptureResult$Key;
+    iput-object p1, p0, Lgnz;->a:Lgoa;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Lkou;)Z
-    .locals 3
+.method public final run()V
+    .locals 2
 
-    const/4 v0, 0x0
+    iget-object v0, p0, Lgnz;->a:Lgoa;
 
-    if-nez p1, :cond_0
+    iget-boolean v1, v0, Lgoa;->a:Z
 
-    sget-object p1, Lgoa;->a:Lnak;
+    if-nez v1, :cond_0
 
-    invoke-virtual {p1}, Lnaf;->c()Lnaz;
+    iget-object v1, v0, Lgoa;->b:Lgob;
 
-    move-result-object p1
+    iget-object v1, v1, Lgob;->c:Ljava/util/concurrent/atomic/AtomicBoolean;
 
-    const-string v1, "Missing metadata."
+    invoke-virtual {v1}, Ljava/util/concurrent/atomic/AtomicBoolean;->get()Z
 
-    const/16 v2, 0xc33
+    move-result v1
 
-    invoke-static {p1, v1, v2}, Ld;->g(Lnaz;Ljava/lang/String;C)V
+    if-eqz v1, :cond_0
 
-    return v0
+    const/4 v1, 0x1
+
+    iput-boolean v1, v0, Lgoa;->a:Z
+
+    iget-object v1, v0, Lgoa;->b:Lgob;
+
+    iget-object v1, v1, Lgob;->d:Lhsa;
+
+    invoke-interface {v1}, Lhsa;->y()V
+
+    iget-object v0, v0, Lgoa;->b:Lgob;
+
+    iget-object v0, v0, Lgob;->a:Lgfs;
+
+    iget-object v0, v0, Lgfs;->b:Lgft;
+
+    invoke-interface {v0}, Lgft;->B()V
 
     :cond_0
-    iget-object v1, p0, Lgnz;->a:Landroid/hardware/camera2/CaptureResult$Key;
-
-    invoke-interface {p1, v1}, Lkou;->d(Landroid/hardware/camera2/CaptureResult$Key;)Ljava/lang/Object;
-
-    move-result-object p1
-
-    if-nez p1, :cond_1
-
-    sget-object p1, Lgoa;->a:Lnak;
-
-    invoke-virtual {p1}, Lnaf;->c()Lnaz;
-
-    move-result-object p1
-
-    check-cast p1, Lnah;
-
-    const/16 v1, 0xc32
-
-    invoke-interface {p1, v1}, Lnah;->G(I)Lnaz;
-
-    move-result-object p1
-
-    check-cast p1, Lnah;
-
-    iget-object v1, p0, Lgnz;->a:Landroid/hardware/camera2/CaptureResult$Key;
-
-    const-string v2, "Missing expected metadata value for key %s."
-
-    invoke-interface {p1, v2, v1}, Lnah;->r(Ljava/lang/String;Ljava/lang/Object;)V
-
-    return v0
-
-    :cond_1
-    const/4 p1, 0x1
-
-    return p1
+    return-void
 .end method

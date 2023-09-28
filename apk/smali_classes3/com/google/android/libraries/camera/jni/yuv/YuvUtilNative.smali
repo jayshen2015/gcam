@@ -10,7 +10,7 @@
 
     const-string v1, "yuv-jni"
 
-    invoke-static {v0, v1}, Lkak;->b(Ljava/lang/Class;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Llil;->b(Ljava/lang/Class;Ljava/lang/String;)V
 
     return-void
 .end method
@@ -23,12 +23,12 @@
     return-void
 .end method
 
-.method public static a(Lkpb;)Landroid/graphics/Bitmap;
+.method public static a(Lmad;)Landroid/graphics/Bitmap;
     .locals 17
 
-    sget-object v0, Lkmv;->a:Lkmv;
+    sget-object v0, Llxk;->a:Llxk;
 
-    invoke-interface/range {p0 .. p0}, Lkpb;->g()Ljava/util/List;
+    invoke-interface/range {p0 .. p0}, Lmad;->g()Ljava/util/List;
 
     move-result-object v1
 
@@ -38,7 +38,7 @@
 
     move-result-object v2
 
-    check-cast v2, Lkpa;
+    check-cast v2, Lmac;
 
     const/4 v3, 0x1
 
@@ -46,7 +46,7 @@
 
     move-result-object v3
 
-    check-cast v3, Lkpa;
+    check-cast v3, Lmac;
 
     const/4 v4, 0x2
 
@@ -54,25 +54,25 @@
 
     move-result-object v1
 
-    check-cast v1, Lkpa;
+    check-cast v1, Lmac;
 
-    invoke-interface {v2}, Lkpa;->getBuffer()Ljava/nio/ByteBuffer;
+    invoke-interface {v2}, Lmac;->getBuffer()Ljava/nio/ByteBuffer;
 
     move-result-object v6
 
-    invoke-interface {v3}, Lkpa;->getBuffer()Ljava/nio/ByteBuffer;
+    invoke-interface {v3}, Lmac;->getBuffer()Ljava/nio/ByteBuffer;
 
     move-result-object v9
 
-    invoke-interface {v1}, Lkpa;->getBuffer()Ljava/nio/ByteBuffer;
+    invoke-interface {v1}, Lmac;->getBuffer()Ljava/nio/ByteBuffer;
 
     move-result-object v12
 
-    invoke-interface/range {p0 .. p0}, Lkpb;->c()I
+    invoke-interface/range {p0 .. p0}, Lmad;->c()I
 
     move-result v15
 
-    invoke-interface/range {p0 .. p0}, Lkpb;->b()I
+    invoke-interface/range {p0 .. p0}, Lmad;->b()I
 
     move-result v14
 
@@ -80,39 +80,39 @@
 
     new-array v13, v4, [I
 
-    invoke-interface/range {p0 .. p0}, Lkpb;->c()I
+    invoke-interface/range {p0 .. p0}, Lmad;->c()I
 
     move-result v4
 
-    invoke-interface/range {p0 .. p0}, Lkpb;->b()I
+    invoke-interface/range {p0 .. p0}, Lmad;->b()I
 
     move-result v5
 
-    invoke-interface {v2}, Lkpa;->getPixelStride()I
+    invoke-interface {v2}, Lmac;->getPixelStride()I
 
     move-result v7
 
-    invoke-interface {v2}, Lkpa;->getRowStride()I
+    invoke-interface {v2}, Lmac;->getRowStride()I
 
     move-result v8
 
-    invoke-interface {v3}, Lkpa;->getPixelStride()I
+    invoke-interface {v3}, Lmac;->getPixelStride()I
 
     move-result v10
 
-    invoke-interface {v3}, Lkpa;->getRowStride()I
+    invoke-interface {v3}, Lmac;->getRowStride()I
 
     move-result v11
 
-    invoke-interface {v1}, Lkpa;->getPixelStride()I
+    invoke-interface {v1}, Lmac;->getPixelStride()I
 
     move-result v2
 
-    invoke-interface {v1}, Lkpa;->getRowStride()I
+    invoke-interface {v1}, Lmac;->getRowStride()I
 
     move-result v1
 
-    iget v3, v0, Lkmv;->i:I
+    iget v3, v0, Llxk;->i:I
 
     move-object/from16 p0, v13
 
@@ -139,7 +139,7 @@
     goto :goto_0
 
     :cond_0
-    iget-boolean v0, v0, Lkmv;->j:Z
+    iget-boolean v0, v0, Llxk;->j:Z
 
     if-eqz v0, :cond_1
 

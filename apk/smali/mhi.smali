@@ -1,58 +1,47 @@
 .class public final Lmhi;
-.super Landroid/animation/AnimatorListenerAdapter;
+.super Ljava/lang/Object;
 
 
-# instance fields
-.field final synthetic a:Lmhq;
+# static fields
+.field public static final a:Lpos;
 
 
 # direct methods
-.method public constructor <init>(Lmhq;)V
-    .locals 0
-
-    iput-object p1, p0, Lmhi;->a:Lmhq;
-
-    invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
-
-    return-void
-.end method
-
-
-# virtual methods
-.method public final onAnimationEnd(Landroid/animation/Animator;)V
+.method static constructor <clinit>()V
     .locals 1
 
-    iget-object p1, p0, Lmhi;->a:Lmhq;
+    invoke-static {}, Lpos;->c()Lpos;
 
-    const/4 v0, 0x0
+    move-result-object v0
 
-    iput v0, p1, Lmhq;->A:I
-
-    const/4 v0, 0x0
-
-    iput-object v0, p1, Lmhq;->v:Landroid/animation/Animator;
+    sput-object v0, Lmhi;->a:Lpos;
 
     return-void
 .end method
 
-.method public final onAnimationStart(Landroid/animation/Animator;)V
-    .locals 2
+.method public static a(Ljava/nio/ByteBuffer;Lpos;)Lmhe;
+    .locals 1
 
-    iget-object v0, p0, Lmhi;->a:Lmhq;
+    if-eqz p0, :cond_0
 
-    iget-object v0, v0, Lmhq;->B:Lcom/google/android/material/floatingactionbutton/FloatingActionButton;
+    :try_start_0
+    sget-object v0, Lmhe;->e:Lmhe;
 
-    const/4 v1, 0x0
+    invoke-static {v0, p0, p1}, Lppd;->r(Lppd;Ljava/nio/ByteBuffer;Lpos;)Lppd;
 
-    invoke-virtual {v0, v1, v1}, Lmii;->g(IZ)V
+    move-result-object p0
 
-    iget-object v0, p0, Lmhi;->a:Lmhq;
+    check-cast p0, Lmhe;
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    const/4 v1, 0x2
+    return-object p0
 
-    iput v1, v0, Lmhq;->A:I
+    :catch_0
+    move-exception p0
 
-    iput-object p1, v0, Lmhq;->v:Landroid/animation/Animator;
+    :cond_0
+    sget-object p0, Lmhe;->e:Lmhe;
 
-    return-void
+    return-object p0
 .end method

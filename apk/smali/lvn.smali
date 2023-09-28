@@ -1,64 +1,54 @@
-.class final Llvn;
-.super Loln;
-
-# interfaces
-.implements Lomp;
-
-
-# annotations
-.annotation runtime Lolj;
-    b = "com.google.android.libraries.vision.visionkit.f250.helper.F250Compat$observeResources$job$1$1"
-    c = "F250Compat.kt"
-    d = "invokeSuspend"
-    e = {}
-.end annotation
-
-
-# instance fields
-.field final synthetic a:Llvm;
+.class public final Llvn;
+.super Lmab;
 
 
 # direct methods
-.method public constructor <init>(Llvm;Loku;)V
+.method public constructor <init>(Lmag;)V
     .locals 0
 
-    iput-object p1, p0, Llvn;->a:Llvm;
-
-    const/4 p1, 0x3
-
-    invoke-direct {p0, p1, p2}, Loln;-><init>(ILoku;)V
+    invoke-direct {p0, p1}, Lmab;-><init>(Lmag;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final bridge synthetic a(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 0
-
-    new-instance p1, Llvn;
-
-    iget-object p2, p0, Llvn;->a:Llvm;
-
-    invoke-direct {p1, p2, p3}, Llvn;-><init>(Llvm;Loku;)V
-
-    sget-object p2, Lojk;->a:Lojk;
-
-    invoke-virtual {p1, p2}, Llvn;->b(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object p1
-
-    return-object p1
-.end method
-
-.method public final b(Ljava/lang/Object;)Ljava/lang/Object;
+.method public final f()Lmad;
     .locals 1
 
-    sget-object v0, Lolc;->a:Lolc;
+    :try_start_0
+    invoke-super {p0}, Lmab;->f()Lmad;
 
-    invoke-static {p1}, Lljr;->aO(Ljava/lang/Object;)V
+    move-result-object v0
+    :try_end_0
+    .catch Ljava/lang/UnsupportedOperationException; {:try_start_0 .. :try_end_0} :catch_0
 
-    sget-object p1, Lojk;->a:Lojk;
+    return-object v0
 
-    return-object p1
+    :catch_0
+    move-exception v0
+
+    const/4 v0, 0x0
+
+    return-object v0
+.end method
+
+.method public final g()Lmad;
+    .locals 1
+
+    :try_start_0
+    invoke-super {p0}, Lmab;->g()Lmad;
+
+    move-result-object v0
+    :try_end_0
+    .catch Ljava/lang/UnsupportedOperationException; {:try_start_0 .. :try_end_0} :catch_0
+
+    return-object v0
+
+    :catch_0
+    move-exception v0
+
+    const/4 v0, 0x0
+
+    return-object v0
 .end method

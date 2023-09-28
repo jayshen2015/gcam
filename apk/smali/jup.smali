@@ -1,28 +1,35 @@
-.class public final synthetic Ljup;
+.class public final Ljup;
 .super Ljava/lang/Object;
 
+# interfaces
+.implements Ljut;
 
-# static fields
-.field public static final synthetic a:Ljup;
+
+# instance fields
+.field public final a:Landroid/app/Activity;
 
 
 # direct methods
-.method static synthetic constructor <clinit>()V
-    .locals 1
-
-    new-instance v0, Ljup;
-
-    invoke-direct {v0}, Ljup;-><init>()V
-
-    sput-object v0, Ljup;->a:Ljup;
-
-    return-void
-.end method
-
-.method private synthetic constructor <init>()V
+.method public constructor <init>(Landroid/app/Activity;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    iput-object p1, p0, Ljup;->a:Landroid/app/Activity;
+
     return-void
+.end method
+
+
+# virtual methods
+.method public final a(I)Landroid/view/View;
+    .locals 1
+
+    iget-object v0, p0, Ljup;->a:Landroid/app/Activity;
+
+    invoke-virtual {v0, p1}, Landroid/app/Activity;->findViewById(I)Landroid/view/View;
+
+    move-result-object p1
+
+    return-object p1
 .end method

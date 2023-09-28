@@ -1,82 +1,53 @@
-.class public final Lgyx;
+.class public final synthetic Lgyx;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lgyo;
-.implements Lkad;
+.implements Llij;
 
 
 # instance fields
-.field public final a:Lkai;
+.field public final synthetic a:Lgza;
 
-.field final synthetic b:Lgyy;
+.field public final synthetic b:Ljava/util/Map;
 
-.field private final c:Ljava/util/concurrent/Executor;
+.field public final synthetic c:Llnc;
+
+.field public final synthetic d:Ljava/util/concurrent/Executor;
 
 
 # direct methods
-.method public constructor <init>(Lgyy;Lkai;Ljava/util/concurrent/Executor;)V
+.method public synthetic constructor <init>(Lgza;Ljava/util/Map;Llnc;Ljava/util/concurrent/Executor;)V
     .locals 0
-
-    iput-object p1, p0, Lgyx;->b:Lgyy;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p2, p0, Lgyx;->a:Lkai;
+    iput-object p1, p0, Lgyx;->a:Lgza;
 
-    iput-object p3, p0, Lgyx;->c:Ljava/util/concurrent/Executor;
+    iput-object p2, p0, Lgyx;->b:Ljava/util/Map;
+
+    iput-object p3, p0, Lgyx;->c:Llnc;
+
+    iput-object p4, p0, Lgyx;->d:Ljava/util/concurrent/Executor;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Ljava/lang/String;)V
-    .locals 3
+.method public final fB(Ljava/lang/Object;)V
+    .locals 4
 
-    iget-object v0, p0, Lgyx;->b:Lgyy;
+    iget-object v0, p0, Lgyx;->a:Lgza;
 
-    iget-object v0, v0, Lgyy;->b:Ljava/lang/String;
+    iget-object v1, p0, Lgyx;->b:Ljava/util/Map;
 
-    invoke-virtual {v0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    iget-object v2, p0, Lgyx;->c:Llnc;
 
-    move-result p1
+    iget-object v3, p0, Lgyx;->d:Ljava/util/concurrent/Executor;
 
-    if-eqz p1, :cond_1
+    check-cast p1, Ljava/lang/String;
 
-    iget-object p1, p0, Lgyx;->b:Lgyy;
-
-    invoke-virtual {p1}, Lgyy;->c()Ljava/lang/Object;
-
-    move-result-object p1
-
-    if-nez p1, :cond_0
-
-    return-void
-
-    :cond_0
-    iget-object v0, p0, Lgyx;->c:Ljava/util/concurrent/Executor;
-
-    new-instance v1, Lgps;
-
-    const/16 v2, 0xf
-
-    invoke-direct {v1, p0, p1, v2}, Lgps;-><init>(Lgyx;Ljava/lang/Object;I)V
-
-    invoke-interface {v0, v1}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
-
-    :cond_1
-    return-void
-.end method
-
-.method public final close()V
-    .locals 1
-
-    iget-object v0, p0, Lgyx;->b:Lgyy;
-
-    iget-object v0, v0, Lgyy;->a:Lgzi;
-
-    invoke-virtual {v0, p0}, Lgzi;->h(Lgyo;)V
+    invoke-virtual {v0, v1, v2, v3, p1}, Lgza;->s(Ljava/util/Map;Llnc;Ljava/util/concurrent/Executor;Ljava/lang/String;)V
 
     return-void
 .end method

@@ -1,10 +1,10 @@
 .class public interface abstract Llzx;
 .super Ljava/lang/Object;
 
+# interfaces
+.implements Llzl;
+
 
 # virtual methods
-.method public abstract a(Llzy;Lnyy;Loku;)Ljava/lang/Object;
-.end method
-
-.method public abstract b(Llzy;Laxf;Loku;)Ljava/lang/Object;
+.method public abstract a()Ljava/util/List;
 .end method

@@ -1,23 +1,19 @@
-.class public final Lcti;
+.class final Lcti;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lkdy;
+.implements Ljem;
 
 
 # instance fields
-.field final synthetic a:Lnph;
-
-.field final synthetic b:Lctl;
+.field final synthetic a:Lctl;
 
 
 # direct methods
-.method public constructor <init>(Lctl;Lnph;)V
+.method public constructor <init>(Lctl;)V
     .locals 0
 
-    iput-object p1, p0, Lcti;->b:Lctl;
-
-    iput-object p2, p0, Lcti;->a:Lnph;
+    iput-object p1, p0, Lcti;->a:Lctl;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -26,91 +22,88 @@
 
 
 # virtual methods
-.method public final a(Lkbo;J)V
-    .locals 4
+.method public final a(Landroid/view/View;IZ)V
+    .locals 0
 
-    iget-object v0, p0, Lcti;->b:Lctl;
+    if-eqz p3, :cond_0
 
-    iget-object v0, v0, Lctl;->c:Ljava/lang/Object;
+    invoke-static {p1}, Ljty;->e(Landroid/view/View;)V
 
-    monitor-enter v0
-
-    :try_start_0
-    iget-object v1, p0, Lcti;->a:Lnph;
-
-    new-instance v2, Ldnt;
-
-    iget-object v3, p0, Lcti;->b:Lctl;
-
-    iget-object v3, v3, Lctl;->i:Lcsc;
-
-    invoke-virtual {v3}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    iget-object v3, v3, Lcsc;->a:Lkll;
-
-    invoke-direct {v2, v3, p1, p2, p3}, Ldnt;-><init>(Lkll;Lkbo;J)V
-
-    invoke-virtual {v1, v2}, Lnph;->a(Ljava/lang/Throwable;)Z
-
-    monitor-exit v0
-
+    :cond_0
     return-void
-
-    :catchall_0
-    move-exception p1
-
-    monitor-exit v0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw p1
 .end method
 
-.method public final b()V
-    .locals 4
+.method public final b(Landroid/view/View;Z)V
+    .locals 1
 
-    iget-object v0, p0, Lcti;->b:Lctl;
+    check-cast p1, Lcom/google/android/apps/camera/ui/modeslider/ModeSlider;
 
-    iget-object v1, v0, Lctl;->x:Ldde;
+    invoke-virtual {p1}, Lcom/google/android/apps/camera/ui/modeslider/ModeSlider;->a()I
 
-    iget-object v2, v0, Lctl;->c:Ljava/lang/Object;
+    move-result v0
 
-    monitor-enter v2
+    invoke-virtual {p1, v0}, Lcom/google/android/apps/camera/ui/modeslider/ModeSlider;->f(I)Ljdz;
 
-    :try_start_0
-    iget-object v3, v0, Lctl;->C:Lkha;
+    move-result-object p1
 
-    iget-object v3, v3, Lkha;->a:Lklj;
+    iget-object p1, p1, Ljdz;->a:Ljava/lang/Object;
 
-    iget-object v0, v0, Lctl;->i:Lcsc;
+    check-cast p1, Ljrl;
 
-    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    iget-object v0, p0, Lcti;->a:Lctl;
 
-    iget-object v0, v0, Lcsc;->a:Lkll;
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    invoke-interface {v3, v0}, Lklj;->a(Lkll;)Lkli;
+    invoke-virtual {v0, p1}, Lctl;->l(Ljrl;)Z
 
-    move-result-object v0
+    move-result v0
 
-    invoke-interface {v0}, Lkli;->k()Lklv;
+    if-nez v0, :cond_1
 
-    move-result-object v0
+    if-eqz p2, :cond_0
 
-    monitor-exit v2
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    iget-object p1, p0, Lcti;->a:Lctl;
 
-    invoke-interface {v1, v0}, Ldde;->g(Lklv;)V
+    invoke-virtual {p1}, Lctl;->a()V
 
+    :cond_0
     return-void
 
-    :catchall_0
-    move-exception v0
+    :cond_1
+    iget-object p2, p0, Lcti;->a:Lctl;
 
-    :try_start_1
-    monitor-exit v2
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+    invoke-virtual {p2, p1}, Lctl;->i(Ljrl;)V
 
-    throw v0
+    return-void
+.end method
+
+.method public final c(Z)V
+    .locals 2
+
+    if-eqz p1, :cond_0
+
+    iget-object p1, p0, Lcti;->a:Lctl;
+
+    iget-object v0, p1, Lctl;->b:Lcom/google/android/apps/camera/bottombar/BottomBarController;
+
+    const/4 v1, 0x0
+
+    invoke-virtual {v0, v1}, Lcom/google/android/apps/camera/bottombar/BottomBarController;->setClickable(Z)V
+
+    iget-object v0, p1, Lctl;->g:Ljfn;
+
+    invoke-interface {v0, v1}, Ljfn;->l(Z)V
+
+    iget-object v0, p1, Lctl;->h:Ljlb;
+
+    invoke-interface {v0, v1}, Ljlb;->F(Z)V
+
+    iget-object p1, p1, Lctl;->d:Lepj;
+
+    const/4 v0, 0x2
+
+    invoke-virtual {p1, v0}, Lepj;->g(I)V
+
+    :cond_0
+    return-void
 .end method

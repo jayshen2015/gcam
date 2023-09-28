@@ -1,146 +1,95 @@
-.class public abstract Lmqf;
+.class final Lmqf;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lmqs;
+.implements Ljava/util/concurrent/Callable;
+
+
+# instance fields
+.field final synthetic a:Lmpi;
+
+.field final synthetic b:Lmor;
+
+.field final synthetic c:Lmme;
 
 
 # direct methods
-.method protected constructor <init>()V
+.method public constructor <init>(Lmpi;Lmor;Lmme;)V
     .locals 0
+
+    iput-object p1, p0, Lmqf;->a:Lmpi;
+
+    iput-object p2, p0, Lmqf;->b:Lmor;
+
+    iput-object p3, p0, Lmqf;->c:Lmme;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
-.method public static c(C)Ljava/lang/String;
-    .locals 6
-
-    const/4 v0, 0x6
-
-    new-array v0, v0, [C
-
-    fill-array-data v0, :array_0
-
-    const/4 v1, 0x0
-
-    :goto_0
-    const/4 v2, 0x4
-
-    if-ge v1, v2, :cond_0
-
-    rsub-int/lit8 v3, v1, 0x5
-
-    and-int/lit8 v4, p0, 0xf
-
-    const-string v5, "0123456789ABCDEF"
-
-    invoke-virtual {v5, v4}, Ljava/lang/String;->charAt(I)C
-
-    move-result v4
-
-    aput-char v4, v0, v3
-
-    shr-int/2addr p0, v2
-
-    add-int/lit8 v1, v1, 0x1
-
-    goto :goto_0
-
-    :cond_0
-    invoke-static {v0}, Ljava/lang/String;->copyValueOf([C)Ljava/lang/String;
-
-    move-result-object p0
-
-    return-object p0
-
-    nop
-
-    :array_0
-    .array-data 2
-        0x5cs
-        0x75s
-        0x0s
-        0x0s
-        0x0s
-        0x0s
-    .end array-data
-.end method
-
-.method public static d(Ljava/lang/CharSequence;)V
-    .locals 2
-
-    invoke-interface {p0}, Ljava/lang/CharSequence;->length()I
-
-    move-result v0
-
-    const/4 v1, 0x0
-
-    packed-switch v0, :pswitch_data_0
-
-    new-instance v0, Lmpz;
-
-    invoke-direct {v0, p0}, Lmpz;-><init>(Ljava/lang/CharSequence;)V
-
-    return-void
-
-    :pswitch_0
-    invoke-interface {p0, v1}, Ljava/lang/CharSequence;->charAt(I)C
-
-    const/4 v0, 0x1
-
-    invoke-interface {p0, v0}, Ljava/lang/CharSequence;->charAt(I)C
-
-    return-void
-
-    :pswitch_1
-    invoke-interface {p0, v1}, Ljava/lang/CharSequence;->charAt(I)C
-
-    return-void
-
-    :pswitch_2
-    return-void
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_2
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
-.end method
-
-.method public static e(CC)V
-    .locals 1
-
-    new-instance v0, Lmqb;
-
-    invoke-direct {v0, p0, p1}, Lmqb;-><init>(CC)V
-
-    return-void
-.end method
-
 
 # virtual methods
-.method public final bridge synthetic a(Ljava/lang/Object;)Z
-    .locals 0
-    .annotation runtime Ljava/lang/Deprecated;
-    .end annotation
+.method public final bridge synthetic call()Ljava/lang/Object;
+    .locals 5
 
-    check-cast p1, Ljava/lang/Character;
+    iget-object v0, p0, Lmqf;->a:Lmpi;
 
-    invoke-virtual {p1}, Ljava/lang/Character;->charValue()C
+    invoke-interface {v0}, Lmpi;->d()Lmrh;
 
-    move-result p1
+    move-result-object v0
 
-    invoke-virtual {p0, p1}, Lmqf;->b(C)Z
+    iget-object v1, p0, Lmqf;->b:Lmor;
 
-    move-result p1
+    new-instance v2, Lmrb;
 
-    return p1
+    invoke-static {}, Lmrb;->b()I
+
+    move-result v3
+
+    const v4, 0x8d65
+
+    invoke-direct {v2, v0, v3, v4, v1}, Lmrb;-><init>(Lmrh;IILmoq;)V
+
+    return-object v2
 .end method
 
-.method public abstract b(C)Z
+.method public final toString()Ljava/lang/String;
+    .locals 3
+
+    iget-object v0, p0, Lmqf;->c:Lmme;
+
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/String;->length()I
+
+    move-result v1
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    add-int/lit8 v1, v1, 0x17
+
+    invoke-direct {v2, v1}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string v1, "createExternalTexture("
+
+    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v0, ")"
+
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
 .end method

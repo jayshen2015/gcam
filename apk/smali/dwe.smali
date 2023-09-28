@@ -1,74 +1,78 @@
-.class public final synthetic Ldwe;
+.class public final Ldwe;
 .super Ljava/lang/Object;
-
-# interfaces
-.implements Liky;
 
 
 # instance fields
-.field public final synthetic a:Lcom/google/android/apps/camera/focusindicator/FocusIndicatorView;
+.field public a:Ljava/lang/Long;
 
-.field public final synthetic b:Lmwn;
+.field public b:Lojc;
+
+.field public c:Ljava/lang/Float;
+
+.field public d:Lojc;
+
+.field public e:Ljava/lang/Float;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lcom/google/android/apps/camera/focusindicator/FocusIndicatorView;Lmwn;)V
+.method public constructor <init>()V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Ldwe;->a:Lcom/google/android/apps/camera/focusindicator/FocusIndicatorView;
+    return-void
+.end method
 
-    iput-object p2, p0, Ldwe;->b:Lmwn;
+.method public constructor <init>([B)V
+    .locals 0
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    sget-object p1, Loih;->a:Loih;
+
+    iput-object p1, p0, Ldwe;->b:Lojc;
+
+    sget-object p1, Loih;->a:Loih;
+
+    iput-object p1, p0, Ldwe;->d:Lojc;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Lmqp;)V
-    .locals 3
+.method public final a(F)V
+    .locals 0
 
-    invoke-virtual {p1}, Lmqp;->g()Z
-
-    move-result v0
-
-    iget-object v1, p0, Ldwe;->a:Lcom/google/android/apps/camera/focusindicator/FocusIndicatorView;
-
-    iget-object v2, p0, Ldwe;->b:Lmwn;
-
-    if-eqz v0, :cond_0
-
-    invoke-virtual {p1}, Lmqp;->c()Ljava/lang/Object;
+    invoke-static {p1}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
 
     move-result-object p1
 
-    check-cast p1, Ljava/lang/Boolean;
+    iput-object p1, p0, Ldwe;->e:Ljava/lang/Float;
 
-    invoke-virtual {p1}, Ljava/lang/Boolean;->booleanValue()Z
+    return-void
+.end method
 
-    move-result p1
+.method public final b(F)V
+    .locals 0
 
-    if-eqz p1, :cond_0
+    invoke-static {p1}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
 
-    iget-object p1, v1, Lcom/google/android/apps/camera/focusindicator/FocusIndicatorView;->g:Lcom/google/android/apps/camera/focusindicator/FocusIndicatorAccessoryView;
+    move-result-object p1
 
-    invoke-virtual {p1}, Lcom/google/android/apps/camera/focusindicator/FocusIndicatorAccessoryView;->e()V
+    iput-object p1, p0, Ldwe;->c:Ljava/lang/Float;
 
-    iget-object p1, v1, Lcom/google/android/apps/camera/focusindicator/FocusIndicatorView;->g:Lcom/google/android/apps/camera/focusindicator/FocusIndicatorAccessoryView;
+    return-void
+.end method
 
-    invoke-virtual {p1}, Lcom/google/android/apps/camera/focusindicator/FocusIndicatorAccessoryView;->b()V
+.method public final c(J)V
+    .locals 0
 
-    :cond_0
-    iget-object p1, v1, Lcom/google/android/apps/camera/focusindicator/FocusIndicatorView;->e:Lcom/google/android/apps/camera/focusindicator/FocusIndicatorRingView;
+    invoke-static {p1, p2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
-    const/4 v0, 0x0
+    move-result-object p1
 
-    iput-boolean v0, p1, Lcom/google/android/apps/camera/focusindicator/FocusIndicatorRingView;->g:Z
-
-    iget-object p1, v1, Lcom/google/android/apps/camera/focusindicator/FocusIndicatorView;->i:Ldwa;
-
-    invoke-interface {p1, v2}, Ldwa;->d(Lmwn;)V
+    iput-object p1, p0, Ldwe;->a:Ljava/lang/Long;
 
     return-void
 .end method

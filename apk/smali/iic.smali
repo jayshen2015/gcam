@@ -1,36 +1,37 @@
-.class public final Liic;
-.super Lido;
+.class public final synthetic Liic;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Llht;
 
 
 # instance fields
-.field public final b:Lcom/google/android/apps/camera/ui/views/MainActivityLayout;
+.field public final synthetic a:Lcom/google/android/apps/camera/stats/timing/CameraActivityTiming;
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/apps/camera/ui/views/MainActivityLayout;Landroid/widget/FrameLayout;)V
+.method public synthetic constructor <init>(Lcom/google/android/apps/camera/stats/timing/CameraActivityTiming;)V
     .locals 0
 
-    invoke-direct {p0, p2}, Lido;-><init>(Landroid/view/ViewGroup;)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Liic;->b:Lcom/google/android/apps/camera/ui/views/MainActivityLayout;
+    iput-object p1, p0, Liic;->a:Lcom/google/android/apps/camera/stats/timing/CameraActivityTiming;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Landroid/view/View;)V
-    .locals 1
+.method public final a(Ljava/lang/Object;)V
+    .locals 2
 
-    invoke-static {}, Ljuh;->a()V
+    iget-object p1, p0, Liic;->a:Lcom/google/android/apps/camera/stats/timing/CameraActivityTiming;
 
-    iget-object v0, p0, Lido;->a:Landroid/view/ViewGroup;
+    sget-object v0, Lijf;->q:Lijf;
 
-    invoke-virtual {v0, p1}, Landroid/view/ViewGroup;->removeView(Landroid/view/View;)V
+    sget-object v1, Lcom/google/android/apps/camera/stats/timing/CameraActivityTiming;->a:Lijr;
 
-    iget-object p1, p0, Liic;->b:Lcom/google/android/apps/camera/ui/views/MainActivityLayout;
-
-    invoke-virtual {p1}, Lcom/google/android/apps/camera/ui/views/MainActivityLayout;->e()V
+    invoke-virtual {p1, v0, v1}, Lijs;->j(Ljava/lang/Enum;Lijr;)V
 
     return-void
 .end method

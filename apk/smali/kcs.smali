@@ -1,280 +1,200 @@
 .class public final Lkcs;
-.super Ljava/lang/Object;
+.super Lppd;
+
+# interfaces
+.implements Lpqn;
 
 
 # static fields
-.field public static final a:Lkcr;
+.field public static final e:Lkcs;
+
+.field private static volatile g:Lpqs;
 
 
 # instance fields
-.field public final b:Ljava/lang/Object;
+.field public a:I
 
-.field public final c:Lkaq;
+.field public b:Lkcr;
 
-.field public d:Ljuf;
+.field public c:Lkcq;
 
-.field private final e:Ljava/util/concurrent/ScheduledExecutorService;
+.field public d:I
 
-.field private final f:Lkcr;
-
-.field private g:Ljty;
+.field private f:I
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 1
+    .locals 2
 
-    const/4 v0, 0x0
+    new-instance v0, Lkcs;
 
-    invoke-static {v0}, Lkcr;->a(Z)Lkcr;
+    invoke-direct {v0}, Lkcs;-><init>()V
 
-    move-result-object v0
+    sput-object v0, Lkcs;->e:Lkcs;
 
-    sput-object v0, Lkcs;->a:Lkcr;
+    const-class v1, Lkcs;
 
-    return-void
-.end method
-
-.method public constructor <init>(Ljava/util/concurrent/ScheduledExecutorService;Lkaq;Lmqp;)V
-    .locals 1
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    new-instance v0, Ljava/lang/Object;
-
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
-
-    iput-object v0, p0, Lkcs;->b:Ljava/lang/Object;
-
-    iput-object p1, p0, Lkcs;->e:Ljava/util/concurrent/ScheduledExecutorService;
-
-    const-string p1, "CamDeviceWakelock"
-
-    invoke-interface {p2, p1}, Lkaq;->a(Ljava/lang/String;)Lkaq;
-
-    move-result-object p1
-
-    iput-object p1, p0, Lkcs;->c:Lkaq;
-
-    sget-object p2, Lkcs;->a:Lkcr;
-
-    invoke-virtual {p3, p2}, Lmqp;->e(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object p2
-
-    check-cast p2, Lkcr;
-
-    iput-object p2, p0, Lkcs;->f:Lkcr;
-
-    new-instance p3, Ljuf;
-
-    invoke-direct {p3}, Ljuf;-><init>()V
-
-    iput-object p3, p0, Lkcs;->d:Ljuf;
-
-    invoke-direct {p0, p3}, Lkcs;->c(Ljuf;)Ljty;
-
-    move-result-object p3
-
-    iput-object p3, p0, Lkcs;->g:Ljty;
-
-    invoke-virtual {p2}, Ljava/lang/Object;->toString()Ljava/lang/String;
-
-    move-result-object p2
-
-    const-string p3, "Configured: "
-
-    invoke-virtual {p3, p2}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object p2
-
-    invoke-interface {p1, p2}, Lkaq;->b(Ljava/lang/String;)V
+    invoke-static {v1, v0}, Lppd;->F(Ljava/lang/Class;Lppd;)V
 
     return-void
 .end method
 
-.method private final c(Ljuf;)Ljty;
-    .locals 9
+.method private constructor <init>()V
+    .locals 1
 
-    iget-object v0, p0, Lkcs;->b:Ljava/lang/Object;
+    invoke-direct {p0}, Lppd;-><init>()V
 
-    monitor-enter v0
+    const/4 v0, -0x1
 
-    :try_start_0
-    iget-object v1, p0, Lkcs;->f:Lkcr;
+    iput v0, p0, Lkcs;->d:I
 
-    iget-boolean v1, v1, Lkcr;->a:Z
-
-    if-eqz v1, :cond_0
-
-    new-instance v1, Ljty;
-
-    sget-object v2, Lnnv;->a:Lnnv;
-
-    const/4 v3, 0x0
-
-    invoke-direct {v1, p1, v2, v3}, Ljty;-><init>(Lkad;Ljava/util/concurrent/Executor;Ljux;)V
-
-    monitor-exit v0
-
-    return-object v1
-
-    :cond_0
-    new-instance v1, Ljty;
-
-    sget-object v2, Lnnv;->a:Lnnv;
-
-    new-instance v3, Ljux;
-
-    new-instance v4, Ljuw;
-
-    iget-object v5, p0, Lkcs;->e:Ljava/util/concurrent/ScheduledExecutorService;
-
-    sget-object v6, Ljava/util/concurrent/TimeUnit;->MILLISECONDS:Ljava/util/concurrent/TimeUnit;
-
-    const-wide/16 v7, 0x3e8
-
-    invoke-direct {v4, v5, v7, v8, v6}, Ljuw;-><init>(Ljava/util/concurrent/ScheduledExecutorService;JLjava/util/concurrent/TimeUnit;)V
-
-    invoke-direct {v3, v4}, Ljux;-><init>(Ljuw;)V
-
-    invoke-direct {v1, p1, v2, v3}, Ljty;-><init>(Lkad;Ljava/util/concurrent/Executor;Ljux;)V
-
-    monitor-exit v0
-
-    return-object v1
-
-    :catchall_0
-    move-exception p1
-
-    monitor-exit v0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw p1
+    return-void
 .end method
 
 
 # virtual methods
-.method public final a()Ljuf;
+.method protected final a(ILjava/lang/Object;)Ljava/lang/Object;
     .locals 2
 
-    iget-object v0, p0, Lkcs;->b:Ljava/lang/Object;
+    add-int/lit8 p1, p1, -0x1
 
-    monitor-enter v0
+    const/4 p2, 0x1
 
-    :try_start_0
-    iget-object v1, p0, Lkcs;->d:Ljuf;
+    packed-switch p1, :pswitch_data_0
 
-    invoke-virtual {v1}, Ljuf;->c()Ljuf;
+    :pswitch_0
+    const/4 p1, 0x0
 
-    move-result-object v1
+    return-object p1
 
-    monitor-exit v0
+    :pswitch_1
+    sget-object p1, Lkcs;->g:Lpqs;
 
-    return-object v1
+    if-nez p1, :cond_1
 
-    :catchall_0
-    move-exception v1
+    const-class p2, Lkcs;
 
-    monitor-exit v0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw v1
-.end method
-
-.method public final b(Ljava/lang/String;)Lkad;
-    .locals 5
-
-    iget-object v0, p0, Lkcs;->b:Ljava/lang/Object;
-
-    monitor-enter v0
+    monitor-enter p2
 
     :try_start_0
-    iget-object v1, p0, Lkcs;->g:Ljty;
+    sget-object p1, Lkcs;->g:Lpqs;
 
-    invoke-virtual {v1}, Ljty;->a()Lkad;
+    if-nez p1, :cond_0
 
-    move-result-object v1
+    new-instance p1, Lpoz;
 
-    if-nez v1, :cond_0
+    sget-object v0, Lkcs;->e:Lkcs;
 
-    iget-object v1, p0, Lkcs;->c:Lkaq;
+    invoke-direct {p1, v0}, Lpoz;-><init>(Lppd;)V
 
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v3, "Failed to acquire token requested by:"
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v2, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v3, "; creating new wakelock"
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-interface {v1, v2}, Lkaq;->f(Ljava/lang/String;)V
-
-    new-instance v1, Ljuf;
-
-    invoke-direct {v1}, Ljuf;-><init>()V
-
-    iput-object v1, p0, Lkcs;->d:Ljuf;
-
-    invoke-direct {p0, v1}, Lkcs;->c(Ljuf;)Ljty;
-
-    move-result-object v1
-
-    iput-object v1, p0, Lkcs;->g:Ljty;
-
-    invoke-virtual {v1}, Ljty;->a()Lkad;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    sput-object p1, Lkcs;->g:Lpqs;
 
     :cond_0
-    iget-object v2, p0, Lkcs;->c:Lkaq;
+    monitor-exit p2
 
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v4, "Acquired by "
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v3, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-interface {v2, v3}, Lkaq;->b(Ljava/lang/String;)V
-
-    new-instance v2, Lfit;
-
-    const/4 v3, 0x3
-
-    invoke-direct {v2, p0, p1, v1, v3}, Lfit;-><init>(Lkcs;Ljava/lang/String;Lkad;I)V
-
-    monitor-exit v0
-
-    return-object v2
+    goto :goto_0
 
     :catchall_0
     move-exception p1
 
-    monitor-exit v0
+    monitor-exit p2
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw p1
+
+    :cond_1
+    :goto_0
+    return-object p1
+
+    :pswitch_2
+    sget-object p1, Lkcs;->e:Lkcs;
+
+    return-object p1
+
+    :pswitch_3
+    new-instance p1, Lpoy;
+
+    sget-object p2, Lkcs;->e:Lkcs;
+
+    invoke-direct {p1, p2}, Lpoy;-><init>(Lppd;)V
+
+    return-object p1
+
+    :pswitch_4
+    new-instance p1, Lkcs;
+
+    invoke-direct {p1}, Lkcs;-><init>()V
+
+    return-object p1
+
+    :pswitch_5
+    const/4 p1, 0x6
+
+    new-array p1, p1, [Ljava/lang/Object;
+
+    const/4 v0, 0x0
+
+    const-string v1, "f"
+
+    aput-object v1, p1, v0
+
+    const-string v0, "a"
+
+    aput-object v0, p1, p2
+
+    const/4 p2, 0x2
+
+    const-string v0, "b"
+
+    aput-object v0, p1, p2
+
+    const/4 p2, 0x3
+
+    const-string v0, "c"
+
+    aput-object v0, p1, p2
+
+    const/4 p2, 0x4
+
+    const-string v0, "d"
+
+    aput-object v0, p1, p2
+
+    const/4 p2, 0x5
+
+    sget-object v0, Lmfw;->a:Lppi;
+
+    aput-object v0, p1, p2
+
+    sget-object p2, Lkcs;->e:Lkcs;
+
+    const-string v0, "\u0001\u0004\u0000\u0001\u0001\u0007\u0004\u0000\u0000\u0000\u0001\u1004\u0000\u0002\u1009\u0001\u0003\u1009\u0002\u0007\u100c\u0005"
+
+    invoke-static {p2, v0, p1}, Lkcs;->E(Lpqm;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p1
+
+    return-object p1
+
+    :pswitch_6
+    invoke-static {p2}, Ljava/lang/Byte;->valueOf(B)Ljava/lang/Byte;
+
+    move-result-object p1
+
+    return-object p1
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_6
+        :pswitch_0
+        :pswitch_5
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+    .end packed-switch
 .end method

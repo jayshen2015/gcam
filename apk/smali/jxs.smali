@@ -1,279 +1,156 @@
 .class public final Ljxs;
-.super Ljava/lang/Object;
+.super Lppd;
 
 # interfaces
-.implements Ljxx;
+.implements Lpqn;
+
+
+# static fields
+.field public static final b:Ljxs;
+
+.field private static volatile c:Lpqs;
 
 
 # instance fields
-.field private final a:Lnou;
+.field public a:I
 
 
 # direct methods
-.method public constructor <init>(Lnou;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 2
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance v0, Ljxs;
 
-    iput-object p1, p0, Ljxs;->a:Lnou;
+    invoke-direct {v0}, Ljxs;-><init>()V
+
+    sput-object v0, Ljxs;->b:Ljxs;
+
+    const-class v1, Ljxs;
+
+    invoke-static {v1, v0}, Lppd;->F(Ljava/lang/Class;Lppd;)V
 
     return-void
 .end method
 
-.method private final q()Ljxx;
-    .locals 3
+.method private constructor <init>()V
+    .locals 0
 
-    :try_start_0
-    iget-object v0, p0, Ljxs;->a:Lnou;
+    invoke-direct {p0}, Lppd;-><init>()V
 
-    invoke-interface {v0}, Lnou;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljxx;
-    :try_end_0
-    .catch Ljava/util/concurrent/ExecutionException; {:try_start_0 .. :try_end_0} :catch_1
-    .catch Ljava/lang/InterruptedException; {:try_start_0 .. :try_end_0} :catch_0
-
-    return-object v0
-
-    :catch_0
-    move-exception v0
-
-    goto :goto_0
-
-    :catch_1
-    move-exception v0
-
-    :goto_0
-    new-instance v1, Ljava/lang/IllegalStateException;
-
-    const-string v2, "MuxerProcessor isn\'t available"
-
-    invoke-direct {v1, v2, v0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
-
-    throw v1
+    return-void
 .end method
 
 
 # virtual methods
-.method public final a(Landroid/media/MediaFormat;)Lmqp;
+.method protected final a(ILjava/lang/Object;)Ljava/lang/Object;
     .locals 1
 
-    invoke-direct {p0}, Ljxs;->q()Ljxx;
+    add-int/lit8 p1, p1, -0x1
 
-    move-result-object v0
+    const/4 p2, 0x1
 
-    invoke-interface {v0, p1}, Ljxx;->a(Landroid/media/MediaFormat;)Lmqp;
+    packed-switch p1, :pswitch_data_0
+
+    :pswitch_0
+    const/4 p1, 0x0
+
+    return-object p1
+
+    :pswitch_1
+    sget-object p1, Ljxs;->c:Lpqs;
+
+    if-nez p1, :cond_1
+
+    const-class p2, Ljxs;
+
+    monitor-enter p2
+
+    :try_start_0
+    sget-object p1, Ljxs;->c:Lpqs;
+
+    if-nez p1, :cond_0
+
+    new-instance p1, Lpoz;
+
+    sget-object v0, Ljxs;->b:Ljxs;
+
+    invoke-direct {p1, v0}, Lpoz;-><init>(Lppd;)V
+
+    sput-object p1, Ljxs;->c:Lpqs;
+
+    :cond_0
+    monitor-exit p2
+
+    goto :goto_0
+
+    :catchall_0
+    move-exception p1
+
+    monitor-exit p2
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw p1
+
+    :cond_1
+    :goto_0
+    return-object p1
+
+    :pswitch_2
+    sget-object p1, Ljxs;->b:Ljxs;
+
+    return-object p1
+
+    :pswitch_3
+    new-instance p1, Lpoy;
+
+    sget-object p2, Ljxs;->b:Ljxs;
+
+    invoke-direct {p1, p2}, Lpoy;-><init>(Lppd;)V
+
+    return-object p1
+
+    :pswitch_4
+    new-instance p1, Ljxs;
+
+    invoke-direct {p1}, Ljxs;-><init>()V
+
+    return-object p1
+
+    :pswitch_5
+    new-array p1, p2, [Ljava/lang/Object;
+
+    const/4 p2, 0x0
+
+    const-string v0, "a"
+
+    aput-object v0, p1, p2
+
+    sget-object p2, Ljxs;->b:Ljxs;
+
+    const-string v0, "\u0000\u0001\u0000\u0000\u0001\u0001\u0001\u0000\u0000\u0000\u0001\u0004"
+
+    invoke-static {p2, v0, p1}, Ljxs;->E(Lpqm;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p1
 
     return-object p1
-.end method
 
-.method public final b(Landroid/media/MediaFormat;)V
-    .locals 1
-
-    invoke-direct {p0}, Ljxs;->q()Ljxx;
-
-    move-result-object v0
-
-    invoke-interface {v0, p1}, Ljxx;->b(Landroid/media/MediaFormat;)V
-
-    return-void
-.end method
-
-.method public final c(Ljxy;)V
-    .locals 1
-
-    invoke-direct {p0}, Ljxs;->q()Ljxx;
-
-    move-result-object v0
-
-    invoke-interface {v0, p1}, Ljxx;->c(Ljxy;)V
-
-    return-void
-.end method
-
-.method public final close()V
-    .locals 1
-
-    invoke-direct {p0}, Ljxs;->q()Ljxx;
-
-    move-result-object v0
-
-    invoke-interface {v0}, Ljxx;->close()V
-
-    return-void
-.end method
-
-.method public final d(J)V
-    .locals 1
-
-    invoke-direct {p0}, Ljxs;->q()Ljxx;
-
-    move-result-object v0
-
-    invoke-interface {v0, p1, p2}, Ljxx;->d(J)V
-
-    return-void
-.end method
-
-.method public final e(Landroid/media/MediaFormat;)V
-    .locals 1
-
-    invoke-direct {p0}, Ljxs;->q()Ljxx;
-
-    move-result-object v0
-
-    invoke-interface {v0, p1}, Ljxx;->e(Landroid/media/MediaFormat;)V
-
-    return-void
-.end method
-
-.method public final f()V
-    .locals 1
-
-    invoke-direct {p0}, Ljxs;->q()Ljxx;
-
-    move-result-object v0
-
-    invoke-interface {v0}, Ljxx;->f()V
-
-    return-void
-.end method
-
-.method public final g(Ljxy;)V
-    .locals 1
-
-    invoke-direct {p0}, Ljxs;->q()Ljxx;
-
-    move-result-object v0
-
-    invoke-interface {v0, p1}, Ljxx;->g(Ljxy;)V
-
-    return-void
-.end method
-
-.method public final h(Ljava/io/FileDescriptor;)V
-    .locals 1
-
-    invoke-direct {p0}, Ljxs;->q()Ljxx;
-
-    move-result-object v0
-
-    invoke-interface {v0, p1}, Ljxx;->h(Ljava/io/FileDescriptor;)V
-
-    return-void
-.end method
-
-.method public final i()V
-    .locals 1
-
-    invoke-direct {p0}, Ljxs;->q()Ljxx;
-
-    move-result-object v0
-
-    invoke-interface {v0}, Ljxx;->i()V
-
-    return-void
-.end method
-
-.method public final j(J)V
-    .locals 1
-
-    invoke-direct {p0}, Ljxs;->q()Ljxx;
-
-    move-result-object v0
-
-    invoke-interface {v0, p1, p2}, Ljxx;->j(J)V
-
-    return-void
-.end method
-
-.method public final k()V
-    .locals 1
-
-    invoke-direct {p0}, Ljxs;->q()Ljxx;
-
-    move-result-object v0
-
-    invoke-interface {v0}, Ljxx;->k()V
-
-    return-void
-.end method
-
-.method public final l(Ljava/nio/ByteBuffer;Landroid/media/MediaCodec$BufferInfo;)V
-    .locals 1
-
-    invoke-direct {p0}, Ljxs;->q()Ljxx;
-
-    move-result-object v0
-
-    invoke-interface {v0, p1, p2}, Ljxx;->l(Ljava/nio/ByteBuffer;Landroid/media/MediaCodec$BufferInfo;)V
-
-    return-void
-.end method
-
-.method public final m(Ljava/nio/ByteBuffer;Landroid/media/MediaCodec$BufferInfo;I)V
-    .locals 1
-
-    invoke-direct {p0}, Ljxs;->q()Ljxx;
-
-    move-result-object v0
-
-    invoke-interface {v0, p1, p2, p3}, Ljxx;->m(Ljava/nio/ByteBuffer;Landroid/media/MediaCodec$BufferInfo;I)V
-
-    return-void
-.end method
-
-.method public final n(Ljava/nio/ByteBuffer;Landroid/media/MediaCodec$BufferInfo;)V
-    .locals 1
-
-    invoke-direct {p0}, Ljxs;->q()Ljxx;
-
-    move-result-object v0
-
-    invoke-interface {v0, p1, p2}, Ljxx;->n(Ljava/nio/ByteBuffer;Landroid/media/MediaCodec$BufferInfo;)V
-
-    return-void
-.end method
-
-.method public final o()Z
-    .locals 1
-
-    iget-object v0, p0, Ljxs;->a:Lnou;
-
-    invoke-interface {v0}, Lnou;->isDone()Z
-
-    move-result v0
-
-    if-nez v0, :cond_0
-
-    const/4 v0, 0x0
-
-    return v0
-
-    :cond_0
-    invoke-direct {p0}, Ljxs;->q()Ljxx;
-
-    move-result-object v0
-
-    invoke-interface {v0}, Ljxx;->o()Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public final p(Ljava/lang/Object;)V
-    .locals 1
-
-    invoke-direct {p0}, Ljxs;->q()Ljxx;
-
-    move-result-object v0
-
-    invoke-interface {v0, p1}, Ljxx;->p(Ljava/lang/Object;)V
-
-    return-void
+    :pswitch_6
+    invoke-static {p2}, Ljava/lang/Byte;->valueOf(B)Ljava/lang/Byte;
+
+    move-result-object p1
+
+    return-object p1
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_6
+        :pswitch_0
+        :pswitch_5
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+    .end packed-switch
 .end method

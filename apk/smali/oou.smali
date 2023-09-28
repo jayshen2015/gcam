@@ -1,59 +1,39 @@
-.class public final Loou;
-.super Loor;
+.class final Loou;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Ljava/io/Serializable;
+
+
+# static fields
+.field private static final serialVersionUID:J
 
 
 # instance fields
-.field public final b:Loql;
-
-.field private final e:Ljava/lang/Thread;
+.field final a:Loor;
 
 
 # direct methods
-.method public constructor <init>(Lola;Ljava/lang/Thread;Loql;)V
+.method public constructor <init>(Loor;)V
     .locals 0
 
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    invoke-direct {p0, p1}, Loor;-><init>(Lola;)V
-
-    iput-object p2, p0, Loou;->e:Ljava/lang/Thread;
-
-    iput-object p3, p0, Loou;->b:Loql;
+    iput-object p1, p0, Loou;->a:Loor;
 
     return-void
 .end method
 
 
 # virtual methods
-.method protected final cV()Z
+.method readResolve()Ljava/lang/Object;
     .locals 1
 
-    const/4 v0, 0x1
+    iget-object v0, p0, Loou;->a:Loor;
 
-    return v0
-.end method
+    invoke-virtual {v0}, Loor;->u()Lope;
 
-.method protected final f(Ljava/lang/Object;)V
-    .locals 1
+    move-result-object v0
 
-    invoke-static {}, Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
-
-    move-result-object p1
-
-    iget-object v0, p0, Loou;->e:Ljava/lang/Thread;
-
-    invoke-static {p1, v0}, Lone;->c(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result p1
-
-    if-nez p1, :cond_0
-
-    iget-object p1, p0, Loou;->e:Ljava/lang/Thread;
-
-    invoke-static {p1}, Ljava/util/concurrent/locks/LockSupport;->unpark(Ljava/lang/Thread;)V
-
-    :cond_0
-    return-void
+    return-object v0
 .end method

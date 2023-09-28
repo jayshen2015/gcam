@@ -1,240 +1,108 @@
 .class public final Lkox;
-.super Ljava/lang/Object;
+.super Lkoy;
 
 
 # instance fields
-.field public final a:I
-
-.field public final b:Ljava/util/List;
-
-.field public final c:Ljava/util/concurrent/Executor;
-
-.field public final d:Lkom;
-
-.field public final e:Lkop;
+.field final synthetic a:Lkpb;
 
 
 # direct methods
-.method public constructor <init>()V
+.method public constructor <init>(Lkim;Lkpb;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p2, p0, Lkox;->a:Lkpb;
 
-    return-void
-.end method
-
-.method public constructor <init>(ILjava/util/List;Ljava/util/concurrent/Executor;Lkom;Lkop;)V
-    .locals 0
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput p1, p0, Lkox;->a:I
-
-    iput-object p2, p0, Lkox;->b:Ljava/util/List;
-
-    iput-object p3, p0, Lkox;->c:Ljava/util/concurrent/Executor;
-
-    iput-object p4, p0, Lkox;->d:Lkom;
-
-    iput-object p5, p0, Lkox;->e:Lkop;
+    invoke-direct {p0, p1}, Lkoy;-><init>(Lkim;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 4
-
-    const/4 v0, 0x1
-
-    if-ne p1, p0, :cond_0
-
-    return v0
-
-    :cond_0
-    instance-of v1, p1, Lkox;
-
-    const/4 v2, 0x0
-
-    if-eqz v1, :cond_1
-
-    check-cast p1, Lkox;
-
-    iget v1, p0, Lkox;->a:I
-
-    iget v3, p1, Lkox;->a:I
-
-    if-ne v1, v3, :cond_1
-
-    iget-object v1, p0, Lkox;->b:Ljava/util/List;
-
-    iget-object v3, p1, Lkox;->b:Ljava/util/List;
-
-    invoke-virtual {v1, v3}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_1
-
-    iget-object v1, p0, Lkox;->c:Ljava/util/concurrent/Executor;
-
-    iget-object v3, p1, Lkox;->c:Ljava/util/concurrent/Executor;
-
-    invoke-virtual {v1, v3}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_1
-
-    iget-object v1, p0, Lkox;->d:Lkom;
-
-    iget-object v3, p1, Lkox;->d:Lkom;
-
-    invoke-virtual {v1, v3}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_1
-
-    iget-object v1, p0, Lkox;->e:Lkop;
-
-    iget-object p1, p1, Lkox;->e:Lkop;
-
-    invoke-virtual {v1, p1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
-
-    move-result p1
-
-    if-eqz p1, :cond_1
-
-    return v0
-
-    :cond_1
-    return v2
-.end method
-
-.method public final hashCode()I
+.method protected final synthetic b(Lkhz;)V
     .locals 3
 
-    iget v0, p0, Lkox;->a:I
+    check-cast p1, Lkph;
 
-    const v1, 0xf4243
+    iget-object v0, p0, Lkox;->a:Lkpb;
 
-    xor-int/2addr v0, v1
+    invoke-static {v0}, Lmip;->ch(Lkpb;)V
 
-    iget-object v2, p0, Lkox;->b:Ljava/util/List;
+    sget-object v1, Lkpj;->a:Lkzy;
 
-    invoke-virtual {v2}, Ljava/lang/Object;->hashCode()I
-
-    move-result v2
-
-    mul-int v0, v0, v1
-
-    xor-int/2addr v0, v2
-
-    iget-object v2, p0, Lkox;->c:Ljava/util/concurrent/Executor;
-
-    invoke-virtual {v2}, Ljava/lang/Object;->hashCode()I
-
-    move-result v2
-
-    mul-int v0, v0, v1
-
-    xor-int/2addr v0, v2
-
-    iget-object v2, p0, Lkox;->d:Lkom;
-
-    invoke-virtual {v2}, Ljava/lang/Object;->hashCode()I
-
-    move-result v2
-
-    mul-int v0, v0, v1
-
-    xor-int/2addr v0, v2
-
-    iget-object v2, p0, Lkox;->e:Lkop;
-
-    invoke-virtual {v2}, Ljava/lang/Object;->hashCode()I
-
-    move-result v2
-
-    mul-int v0, v0, v1
-
-    xor-int/2addr v0, v2
-
-    return v0
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .locals 7
-
-    iget v0, p0, Lkox;->a:I
-
-    iget-object v1, p0, Lkox;->b:Ljava/util/List;
-
-    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+    invoke-virtual {v1}, Lkzy;->a()Ljava/lang/Object;
 
     move-result-object v1
 
-    iget-object v2, p0, Lkox;->c:Ljava/util/concurrent/Executor;
+    check-cast v1, Ljava/lang/Boolean;
 
-    invoke-static {v2}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+    invoke-virtual {v1}, Ljava/lang/Boolean;->booleanValue()Z
 
-    move-result-object v2
+    move-result v1
 
-    iget-object v3, p0, Lkox;->d:Lkom;
+    if-eqz v1, :cond_0
 
-    invoke-static {v3}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+    invoke-virtual {p1}, Lkmb;->u()Landroid/os/IInterface;
 
-    move-result-object v3
+    move-result-object p1
 
-    iget-object v4, p0, Lkox;->e:Lkop;
+    check-cast p1, Lkpi;
 
-    invoke-static {v4}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+    invoke-virtual {p1}, Lbmn;->a()Landroid/os/Parcel;
 
-    move-result-object v4
+    move-result-object v1
 
-    new-instance v5, Ljava/lang/StringBuilder;
+    invoke-static {v1, v0}, Lbmp;->c(Landroid/os/Parcel;Landroid/os/Parcelable;)V
 
-    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
+    const/4 v0, 0x7
 
-    const-string v6, "SessionConfigurationProxy{sessionType="
+    invoke-virtual {p1, v0, v1}, Lbmn;->y(ILandroid/os/Parcel;)Landroid/os/Parcel;
 
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result-object p1
 
-    invoke-virtual {v5, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-static {p1}, Lbmp;->f(Landroid/os/Parcel;)Z
 
-    const-string v0, ", outputConfigurations="
+    invoke-virtual {p1}, Landroid/os/Parcel;->recycle()V
 
-    invoke-virtual {v5, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    goto :goto_0
 
-    invoke-virtual {v5, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    :cond_0
+    invoke-virtual {p1}, Lkmb;->u()Landroid/os/IInterface;
 
-    const-string v0, ", executor="
+    move-result-object v1
 
-    invoke-virtual {v5, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    check-cast v1, Lkpi;
 
-    invoke-virtual {v5, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    new-instance v2, Lcom/google/android/gms/feedback/ErrorReport;
 
-    const-string v0, ", stateCallback="
+    iget-object p1, p1, Lkph;->a:Landroid/content/Context;
 
-    invoke-virtual {v5, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {p1}, Landroid/content/Context;->getCacheDir()Ljava/io/File;
 
-    invoke-virtual {v5, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result-object p1
 
-    const-string v0, ", sessionParameters="
+    invoke-direct {v2, v0, p1}, Lcom/google/android/gms/feedback/ErrorReport;-><init>(Lkpb;Ljava/io/File;)V
 
-    invoke-virtual {v5, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1}, Lbmn;->a()Landroid/os/Parcel;
 
-    invoke-virtual {v5, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result-object p1
 
-    const-string v0, "}"
+    invoke-static {p1, v2}, Lbmp;->c(Landroid/os/Parcel;Landroid/os/Parcelable;)V
 
-    invoke-virtual {v5, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    const/4 v0, 0x3
 
-    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v1, v0, p1}, Lbmn;->y(ILandroid/os/Parcel;)Landroid/os/Parcel;
 
-    move-result-object v0
+    move-result-object p1
 
-    return-object v0
+    invoke-static {p1}, Lbmp;->f(Landroid/os/Parcel;)Z
+
+    invoke-virtual {p1}, Landroid/os/Parcel;->recycle()V
+
+    :goto_0
+    sget-object p1, Lcom/google/android/gms/common/api/Status;->a:Lcom/google/android/gms/common/api/Status;
+
+    invoke-virtual {p0, p1}, Lcom/google/android/gms/common/api/internal/BasePendingResult;->j(Lkiv;)V
+
+    return-void
 .end method

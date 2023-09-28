@@ -1,69 +1,121 @@
-.class public abstract Lokc;
-.super Lojt;
+.class public final Lokc;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Ljava/io/Serializable;
+.implements Lojz;
+
+
+# static fields
+.field private static final serialVersionUID:J
+
+
+# instance fields
+.field final a:Ljava/lang/Object;
 
 
 # direct methods
-.method public constructor <init>()V
+.method public constructor <init>(Ljava/lang/Object;)V
     .locals 0
 
-    invoke-direct {p0}, Lojt;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lokc;->a:Ljava/lang/Object;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public abstract b(Ljava/util/Map$Entry;)Z
-.end method
-
-.method public bridge c(Ljava/util/Map$Entry;)Z
-    .locals 0
-
-    const/4 p1, 0x0
-
-    throw p1
-.end method
-
-.method public final bridge contains(Ljava/lang/Object;)Z
+.method public final a()Ljava/lang/Object;
     .locals 1
 
-    instance-of v0, p1, Ljava/util/Map$Entry;
+    iget-object v0, p0, Lokc;->a:Ljava/lang/Object;
 
-    if-nez v0, :cond_0
+    return-object v0
+.end method
 
-    const/4 p1, 0x0
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 1
 
-    return p1
+    instance-of v0, p1, Lokc;
 
-    :cond_0
-    check-cast p1, Ljava/util/Map$Entry;
+    if-eqz v0, :cond_0
 
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    check-cast p1, Lokc;
 
-    invoke-virtual {p0, p1}, Lokc;->b(Ljava/util/Map$Entry;)Z
+    iget-object v0, p0, Lokc;->a:Ljava/lang/Object;
+
+    iget-object p1, p1, Lokc;->a:Ljava/lang/Object;
+
+    invoke-static {v0, p1}, Lobr;->bc(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result p1
 
     return p1
-.end method
 
-.method public final bridge remove(Ljava/lang/Object;)Z
-    .locals 1
-
-    instance-of v0, p1, Ljava/util/Map$Entry;
-
-    if-nez v0, :cond_0
-
+    :cond_0
     const/4 p1, 0x0
 
     return p1
+.end method
 
-    :cond_0
-    check-cast p1, Ljava/util/Map$Entry;
+.method public final hashCode()I
+    .locals 3
 
-    invoke-virtual {p0, p1}, Lokc;->c(Ljava/util/Map$Entry;)Z
+    const/4 v0, 0x1
 
-    move-result p1
+    new-array v0, v0, [Ljava/lang/Object;
 
-    return p1
+    iget-object v1, p0, Lokc;->a:Ljava/lang/Object;
+
+    const/4 v2, 0x0
+
+    aput-object v1, v0, v2
+
+    invoke-static {v0}, Ljava/util/Arrays;->hashCode([Ljava/lang/Object;)I
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .locals 3
+
+    iget-object v0, p0, Lokc;->a:Ljava/lang/Object;
+
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/String;->length()I
+
+    move-result v1
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    add-int/lit8 v1, v1, 0x16
+
+    invoke-direct {v2, v1}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string v1, "Suppliers.ofInstance("
+
+    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v0, ")"
+
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
 .end method

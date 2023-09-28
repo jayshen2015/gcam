@@ -1,90 +1,109 @@
-.class public final Ljc;
+.class final Ljc;
 .super Ljava/lang/Object;
+
+# interfaces
+.implements Ljava/lang/Runnable;
+
+
+# instance fields
+.field final synthetic a:Ljh;
 
 
 # direct methods
-.method static a(Landroid/widget/ThemedSpinnerAdapter;Landroid/content/res/Resources$Theme;)V
-    .locals 1
-
-    invoke-interface {p0}, Landroid/widget/ThemedSpinnerAdapter;->getDropDownViewTheme()Landroid/content/res/Resources$Theme;
-
-    move-result-object v0
-
-    invoke-static {v0, p1}, Laeb;->b(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-nez v0, :cond_0
-
-    invoke-interface {p0, p1}, Landroid/widget/ThemedSpinnerAdapter;->setDropDownViewTheme(Landroid/content/res/Resources$Theme;)V
-
-    :cond_0
-    return-void
-.end method
-
-.method public static final b(Ljava/util/Map;Ljava/util/Map;)V
+.method public constructor <init>(Ljh;)V
     .locals 0
 
-    invoke-interface {p0, p1}, Ljava/util/Map;->putAll(Ljava/util/Map;)V
+    iput-object p1, p0, Ljc;->a:Ljh;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
-.method public static final c(Landroid/hardware/camera2/CaptureRequest$Builder;Ljava/lang/Object;Ljava/lang/Object;)V
-    .locals 1
 
-    if-eqz p1, :cond_0
+# virtual methods
+.method public final run()V
+    .locals 6
 
-    instance-of v0, p1, Landroid/hardware/camera2/CaptureRequest$Key;
+    iget-object v0, p0, Ljc;->a:Ljh;
 
-    if-eqz v0, :cond_0
-
-    check-cast p1, Landroid/hardware/camera2/CaptureRequest$Key;
-
-    invoke-virtual {p0, p1, p2}, Landroid/hardware/camera2/CaptureRequest$Builder;->set(Landroid/hardware/camera2/CaptureRequest$Key;Ljava/lang/Object;)V
-
-    :cond_0
-    return-void
-.end method
-
-.method public static final d(Landroid/hardware/camera2/CaptureRequest$Builder;Ljava/util/Map;)V
-    .locals 2
-
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    invoke-interface {p1}, Ljava/util/Map;->entrySet()Ljava/util/Set;
-
-    move-result-object p1
-
-    invoke-interface {p1}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
-
-    move-result-object p1
-
-    :goto_0
-    invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/util/Map$Entry;
-
-    invoke-interface {v0}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
+    invoke-virtual {v0}, Ljh;->v()Landroid/view/Menu;
 
     move-result-object v1
 
-    invoke-interface {v0}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
+    instance-of v2, v1, Lkw;
 
-    move-result-object v0
+    const/4 v3, 0x0
 
-    invoke-static {p0, v1, v0}, Ljc;->c(Landroid/hardware/camera2/CaptureRequest$Builder;Ljava/lang/Object;Ljava/lang/Object;)V
+    const/4 v4, 0x1
+
+    if-eq v4, v2, :cond_0
+
+    move-object v2, v3
 
     goto :goto_0
 
     :cond_0
+    move-object v2, v1
+
+    :goto_0
+    if-eqz v2, :cond_1
+
+    move-object v4, v2
+
+    check-cast v4, Lkw;
+
+    invoke-virtual {v4}, Lkw;->s()V
+
+    :cond_1
+    :try_start_0
+    invoke-interface {v1}, Landroid/view/Menu;->clear()V
+
+    iget-object v4, v0, Ljh;->c:Landroid/view/Window$Callback;
+
+    const/4 v5, 0x0
+
+    invoke-interface {v4, v5, v1}, Landroid/view/Window$Callback;->onCreatePanelMenu(ILandroid/view/Menu;)Z
+
+    move-result v4
+
+    if-eqz v4, :cond_2
+
+    iget-object v0, v0, Ljh;->c:Landroid/view/Window$Callback;
+
+    invoke-interface {v0, v5, v3, v1}, Landroid/view/Window$Callback;->onPreparePanel(ILandroid/view/View;Landroid/view/Menu;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_3
+
+    :cond_2
+    invoke-interface {v1}, Landroid/view/Menu;->clear()V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    :cond_3
+    if-eqz v2, :cond_4
+
+    check-cast v2, Lkw;
+
+    invoke-virtual {v2}, Lkw;->r()V
+
+    :cond_4
     return-void
+
+    :catchall_0
+    move-exception v0
+
+    if-nez v2, :cond_5
+
+    goto :goto_1
+
+    :cond_5
+    check-cast v2, Lkw;
+
+    invoke-virtual {v2}, Lkw;->r()V
+
+    :goto_1
+    throw v0
 .end method

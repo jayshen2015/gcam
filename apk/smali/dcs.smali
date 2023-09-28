@@ -1,90 +1,116 @@
-.class final Ldcs;
-.super Lapo;
+.class public final Ldcs;
+.super Ljava/lang/Object;
+
+
+# static fields
+.field public static final a:Lddi;
+
+.field public static final b:Lddg;
+
+.field public static final c:Lddg;
+
+.field public static final d:Lddg;
+
+.field public static final e:Lddg;
+
+.field public static final f:Lddg;
 
 
 # direct methods
-.method public constructor <init>(Lapt;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 2
 
-    invoke-direct {p0, p1}, Lapo;-><init>(Lapt;)V
+    new-instance v0, Lddh;
+
+    invoke-direct {v0}, Lddh;-><init>()V
+
+    const-string v1, "camera.advice"
+
+    iput-object v1, v0, Lddh;->a:Ljava/lang/String;
+
+    invoke-virtual {v0}, Lddh;->c()Lddg;
+
+    move-result-object v0
+
+    sput-object v0, Ldcs;->b:Lddg;
+
+    new-instance v0, Lddh;
+
+    invoke-direct {v0}, Lddh;-><init>()V
+
+    const-string v1, "camera.advice.dirtylens"
+
+    iput-object v1, v0, Lddh;->a:Ljava/lang/String;
+
+    invoke-virtual {v0}, Lddh;->f()Lddg;
+
+    move-result-object v0
+
+    sput-object v0, Ldcs;->c:Lddg;
+
+    new-instance v0, Lddh;
+
+    invoke-direct {v0}, Lddh;-><init>()V
+
+    const-string v1, "camera.advice.distance"
+
+    iput-object v1, v0, Lddh;->a:Ljava/lang/String;
+
+    invoke-virtual {v0}, Lddh;->c()Lddg;
+
+    move-result-object v0
+
+    sput-object v0, Ldcs;->d:Lddg;
+
+    new-instance v0, Lddh;
+
+    invoke-direct {v0}, Lddh;-><init>()V
+
+    const-string v1, "advice_total_exposure_threshold_front"
+
+    iput-object v1, v0, Lddh;->a:Ljava/lang/String;
+
+    invoke-virtual {v0}, Lddh;->e()Lddg;
+
+    move-result-object v0
+
+    sput-object v0, Ldcs;->e:Lddg;
+
+    new-instance v0, Lddh;
+
+    invoke-direct {v0}, Lddh;-><init>()V
+
+    const-string v1, "advice_total_exposure_threshold_rear"
+
+    iput-object v1, v0, Lddh;->a:Ljava/lang/String;
+
+    invoke-virtual {v0}, Lddh;->e()Lddg;
+
+    move-result-object v0
+
+    sput-object v0, Ldcs;->f:Lddg;
+
+    new-instance v0, Lddh;
+
+    invoke-direct {v0}, Lddh;-><init>()V
+
+    const-string v1, "dirty_lens_detector_timeout"
+
+    iput-object v1, v0, Lddh;->a:Ljava/lang/String;
+
+    invoke-virtual {v0}, Lddh;->a()Lddi;
+
+    move-result-object v0
+
+    sput-object v0, Ldcs;->a:Lddi;
+
+    new-instance v0, Lddh;
+
+    invoke-direct {v0}, Lddh;-><init>()V
+
+    const-string v1, "camera.advice.dld_log"
+
+    iput-object v1, v0, Lddh;->a:Ljava/lang/String;
 
     return-void
-.end method
-
-
-# virtual methods
-.method public final bridge synthetic b(Larf;Ljava/lang/Object;)V
-    .locals 3
-
-    check-cast p2, Ldcq;
-
-    iget-object v0, p2, Ldcq;->a:Ljava/lang/String;
-
-    const/4 v1, 0x1
-
-    if-nez v0, :cond_0
-
-    invoke-virtual {p1, v1}, Lare;->f(I)V
-
-    goto :goto_0
-
-    :cond_0
-    invoke-virtual {p1, v1, v0}, Lare;->g(ILjava/lang/String;)V
-
-    :goto_0
-    iget v0, p2, Ldcq;->b:I
-
-    int-to-long v0, v0
-
-    const/4 v2, 0x2
-
-    invoke-virtual {p1, v2, v0, v1}, Lare;->e(IJ)V
-
-    iget v0, p2, Ldcq;->c:I
-
-    int-to-long v0, v0
-
-    const/4 v2, 0x3
-
-    invoke-virtual {p1, v2, v0, v1}, Lare;->e(IJ)V
-
-    iget v0, p2, Ldcq;->d:I
-
-    int-to-long v0, v0
-
-    const/4 v2, 0x4
-
-    invoke-virtual {p1, v2, v0, v1}, Lare;->e(IJ)V
-
-    iget v0, p2, Ldcq;->e:I
-
-    int-to-long v0, v0
-
-    const/4 v2, 0x5
-
-    invoke-virtual {p1, v2, v0, v1}, Lare;->e(IJ)V
-
-    iget-wide v0, p2, Ldcq;->f:J
-
-    const/4 v2, 0x6
-
-    invoke-virtual {p1, v2, v0, v1}, Lare;->e(IJ)V
-
-    iget p2, p2, Ldcq;->g:I
-
-    int-to-long v0, p2
-
-    const/4 p2, 0x7
-
-    invoke-virtual {p1, p2, v0, v1}, Lare;->e(IJ)V
-
-    return-void
-.end method
-
-.method public final d()Ljava/lang/String;
-    .locals 1
-
-    const-string v0, "INSERT OR IGNORE INTO `FatalErrorCounts` (`cameraId`,`failuresBeforeRebootDuringOpen`,`failuresAfterRebootDuringOpen`,`failuresBeforeRebootDuringSession`,`failuresAfterRebootDuringSession`,`lastFatalErrorTimestamp`,`rebootCount`) VALUES (?,?,?,?,?,?,?)"
-
-    return-object v0
 .end method

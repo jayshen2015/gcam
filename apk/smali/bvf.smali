@@ -1,198 +1,287 @@
-.class public final Lbvf;
+.class public final synthetic Lbvf;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lbva;
+.implements Ljava/lang/Runnable;
+
+
+# static fields
+.field public static final synthetic a:Lbvf;
+
+.field public static final synthetic b:Lbvf;
+
+.field public static final synthetic c:Lbvf;
+
+.field public static final synthetic d:Lbvf;
+
+.field public static final synthetic e:Lbvf;
+
+.field public static final synthetic f:Lbvf;
+
+.field public static final synthetic g:Lbvf;
+
+.field public static final synthetic h:Lbvf;
+
+.field public static final synthetic i:Lbvf;
+
+.field public static final synthetic j:Lbvf;
+
+.field public static final synthetic k:Lbvf;
+
+.field public static final synthetic l:Lbvf;
+
+.field public static final synthetic m:Lbvf;
+
+.field public static final synthetic n:Lbvf;
+
+.field public static final synthetic o:Lbvf;
 
 
 # instance fields
-.field private final synthetic a:I
-
-.field private final b:Ljava/lang/Object;
+.field private final synthetic p:I
 
 
 # direct methods
-.method public constructor <init>(I)V
-    .locals 1
+.method static synthetic constructor <clinit>()V
+    .locals 2
 
-    iput p1, p0, Lbvf;->a:I
+    new-instance v0, Lbvf;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const/16 v1, 0x14
 
-    new-instance p1, Lbkc;
+    invoke-direct {v0, v1}, Lbvf;-><init>(I)V
 
-    const/4 v0, 0x0
+    sput-object v0, Lbvf;->o:Lbvf;
 
-    invoke-direct {p1, v0, v0, v0}, Lbkc;-><init>([B[B[B)V
+    new-instance v0, Lbvf;
 
-    iput-object p1, p0, Lbvf;->b:Ljava/lang/Object;
+    const/16 v1, 0x10
+
+    invoke-direct {v0, v1}, Lbvf;-><init>(I)V
+
+    sput-object v0, Lbvf;->n:Lbvf;
+
+    new-instance v0, Lbvf;
+
+    const/16 v1, 0xf
+
+    invoke-direct {v0, v1}, Lbvf;-><init>(I)V
+
+    sput-object v0, Lbvf;->m:Lbvf;
+
+    new-instance v0, Lbvf;
+
+    const/16 v1, 0xe
+
+    invoke-direct {v0, v1}, Lbvf;-><init>(I)V
+
+    sput-object v0, Lbvf;->l:Lbvf;
+
+    new-instance v0, Lbvf;
+
+    const/16 v1, 0xd
+
+    invoke-direct {v0, v1}, Lbvf;-><init>(I)V
+
+    sput-object v0, Lbvf;->k:Lbvf;
+
+    new-instance v0, Lbvf;
+
+    const/16 v1, 0xc
+
+    invoke-direct {v0, v1}, Lbvf;-><init>(I)V
+
+    sput-object v0, Lbvf;->j:Lbvf;
+
+    new-instance v0, Lbvf;
+
+    const/16 v1, 0xa
+
+    invoke-direct {v0, v1}, Lbvf;-><init>(I)V
+
+    sput-object v0, Lbvf;->i:Lbvf;
+
+    new-instance v0, Lbvf;
+
+    const/16 v1, 0x9
+
+    invoke-direct {v0, v1}, Lbvf;-><init>(I)V
+
+    sput-object v0, Lbvf;->h:Lbvf;
+
+    new-instance v0, Lbvf;
+
+    const/16 v1, 0x8
+
+    invoke-direct {v0, v1}, Lbvf;-><init>(I)V
+
+    sput-object v0, Lbvf;->g:Lbvf;
+
+    new-instance v0, Lbvf;
+
+    const/4 v1, 0x7
+
+    invoke-direct {v0, v1}, Lbvf;-><init>(I)V
+
+    sput-object v0, Lbvf;->f:Lbvf;
+
+    new-instance v0, Lbvf;
+
+    const/4 v1, 0x5
+
+    invoke-direct {v0, v1}, Lbvf;-><init>(I)V
+
+    sput-object v0, Lbvf;->e:Lbvf;
+
+    new-instance v0, Lbvf;
+
+    const/4 v1, 0x4
+
+    invoke-direct {v0, v1}, Lbvf;-><init>(I)V
+
+    sput-object v0, Lbvf;->d:Lbvf;
+
+    new-instance v0, Lbvf;
+
+    const/4 v1, 0x3
+
+    invoke-direct {v0, v1}, Lbvf;-><init>(I)V
+
+    sput-object v0, Lbvf;->c:Lbvf;
+
+    new-instance v0, Lbvf;
+
+    const/4 v1, 0x2
+
+    invoke-direct {v0, v1}, Lbvf;-><init>(I)V
+
+    sput-object v0, Lbvf;->b:Lbvf;
+
+    new-instance v0, Lbvf;
+
+    const/4 v1, 0x0
+
+    invoke-direct {v0, v1}, Lbvf;-><init>(I)V
+
+    sput-object v0, Lbvf;->a:Lbvf;
 
     return-void
 .end method
 
-.method public constructor <init>(Landroid/content/Context;I)V
+.method public synthetic constructor <init>(I)V
     .locals 0
 
-    iput p2, p0, Lbvf;->a:I
+    iput p1, p0, Lbvf;->p:I
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lbvf;->b:Ljava/lang/Object;
-
-    return-void
-.end method
-
-.method public constructor <init>(Landroid/content/res/Resources;I)V
-    .locals 0
-
-    iput p2, p0, Lbvf;->a:I
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lbvf;->b:Ljava/lang/Object;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final b(Lbve;)Lbuz;
-    .locals 5
+.method public final run()V
+    .locals 2
 
-    iget v0, p0, Lbvf;->a:I
+    iget v0, p0, Lbvf;->p:I
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x2
-
     packed-switch v0, :pswitch_data_0
 
-    new-instance p1, Lbup;
-
-    iget-object v0, p0, Lbvf;->b:Ljava/lang/Object;
-
-    check-cast v0, Landroid/content/Context;
-
-    const/4 v2, 0x5
-
-    invoke-direct {p1, v0, v2, v1}, Lbup;-><init>(Landroid/content/Context;I[C)V
-
-    return-object p1
+    return-void
 
     :pswitch_0
-    new-instance p1, Lbup;
-
-    iget-object v0, p0, Lbvf;->b:Ljava/lang/Object;
-
-    check-cast v0, Landroid/content/Context;
-
-    const/4 v2, 0x4
-
-    invoke-direct {p1, v0, v2, v1}, Lbup;-><init>(Landroid/content/Context;I[B)V
-
-    return-object p1
+    invoke-static {}, Llar;->a()V
 
     :pswitch_1
-    new-instance p1, Lbvn;
-
-    iget-object v0, p0, Lbvf;->b:Ljava/lang/Object;
-
-    check-cast v0, Lbkc;
-
-    invoke-direct {p1, v0, v1, v1, v1}, Lbvn;-><init>(Lbkc;[B[B[B)V
-
-    return-object p1
+    return-void
 
     :pswitch_2
-    new-instance p1, Lbuk;
+    sget-boolean v0, Lfps;->a:Z
 
-    iget-object v0, p0, Lbvf;->b:Ljava/lang/Object;
+    sget-boolean v0, Lfps;->a:Z
 
-    sget-object v1, Lbvd;->a:Lbvd;
-
-    check-cast v0, Landroid/content/res/Resources;
-
-    invoke-direct {p1, v0, v1, v2}, Lbuk;-><init>(Landroid/content/res/Resources;Lbuz;I)V
-
-    return-object p1
+    return-void
 
     :pswitch_3
-    new-instance v0, Lbuk;
+    sget v0, Leuy;->a:I
 
-    iget-object v1, p0, Lbvf;->b:Ljava/lang/Object;
+    const-string v0, "loadJniLibraries"
 
-    const-class v3, Landroid/net/Uri;
+    invoke-static {v0}, Landroid/os/Trace;->beginSection(Ljava/lang/String;)V
 
-    const-class v4, Ljava/io/InputStream;
+    sget-object v0, Lent;->a:Loom;
 
-    invoke-virtual {p1, v3, v4}, Lbve;->a(Ljava/lang/Class;Ljava/lang/Class;)Lbuz;
+    invoke-virtual {v0, v1}, Loom;->get(I)Ljava/lang/Object;
 
-    move-result-object p1
+    move-result-object v0
 
-    check-cast v1, Landroid/content/res/Resources;
+    check-cast v0, Ljava/lang/Class;
 
-    invoke-direct {v0, v1, p1, v2}, Lbuk;-><init>(Landroid/content/res/Resources;Lbuz;I)V
+    invoke-static {v0}, Llil;->a(Ljava/lang/Class;)V
 
-    return-object v0
+    invoke-static {}, Lenl;->b()V
+
+    invoke-static {}, Landroid/os/Trace;->endSection()V
+
+    return-void
 
     :pswitch_4
-    new-instance v0, Lbuk;
+    sget v0, Leuy;->a:I
 
-    iget-object v1, p0, Lbvf;->b:Ljava/lang/Object;
+    const-string v0, "preloadMediaCodecList"
 
-    const-class v3, Landroid/net/Uri;
+    invoke-static {v0}, Landroid/os/Trace;->beginSection(Ljava/lang/String;)V
 
-    const-class v4, Landroid/os/ParcelFileDescriptor;
+    new-instance v0, Landroid/media/MediaCodecList;
 
-    invoke-virtual {p1, v3, v4}, Lbve;->a(Ljava/lang/Class;Ljava/lang/Class;)Lbuz;
+    invoke-direct {v0, v1}, Landroid/media/MediaCodecList;-><init>(I)V
 
-    move-result-object p1
-
-    check-cast v1, Landroid/content/res/Resources;
-
-    invoke-direct {v0, v1, p1, v2}, Lbuk;-><init>(Landroid/content/res/Resources;Lbuz;I)V
-
-    return-object v0
+    invoke-static {}, Landroid/os/Trace;->endSection()V
 
     :pswitch_5
-    new-instance p1, Lbup;
-
-    iget-object v0, p0, Lbvf;->b:Ljava/lang/Object;
-
-    check-cast v0, Landroid/content/Context;
-
-    invoke-direct {p1, v0, v2}, Lbup;-><init>(Landroid/content/Context;I)V
-
-    return-object p1
+    return-void
 
     :pswitch_6
-    new-instance v0, Lbuk;
+    sget-object v0, Lovl;->a:Lovd;
 
-    iget-object v1, p0, Lbvf;->b:Ljava/lang/Object;
+    :pswitch_7
+    return-void
 
-    const-class v3, Landroid/net/Uri;
+    :pswitch_8
+    invoke-static {}, Lcom/google/android/apps/camera/dynamicdepth/DynamicDepthUtils;->savePdCacheImpl()V
 
-    const-class v4, Landroid/content/res/AssetFileDescriptor;
+    :pswitch_9
+    return-void
 
-    invoke-virtual {p1, v3, v4}, Lbve;->a(Ljava/lang/Class;Ljava/lang/Class;)Lbuz;
+    :pswitch_a
+    sget-object v0, Lbvk;->a:Louj;
 
-    move-result-object p1
-
-    check-cast v1, Landroid/content/res/Resources;
-
-    invoke-direct {v0, v1, p1, v2}, Lbuk;-><init>(Landroid/content/res/Resources;Lbuz;I)V
-
-    return-object v0
+    return-void
 
     nop
 
     :pswitch_data_0
     .packed-switch 0x0
+        :pswitch_a
+        :pswitch_9
+        :pswitch_9
+        :pswitch_9
+        :pswitch_9
+        :pswitch_9
+        :pswitch_9
+        :pswitch_8
+        :pswitch_7
+        :pswitch_7
+        :pswitch_7
         :pswitch_6
+        :pswitch_5
         :pswitch_5
         :pswitch_4
         :pswitch_3
         :pswitch_2
+        :pswitch_1
         :pswitch_1
         :pswitch_0
     .end packed-switch

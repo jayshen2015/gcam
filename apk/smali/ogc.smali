@@ -1,168 +1,88 @@
-.class public final Logc;
-.super Lnws;
+.class final Logc;
+.super Lofv;
 
 # interfaces
-.implements Lnxz;
+.implements Lofx;
 
 
 # static fields
-.field public static final b:Logc;
-
-.field private static volatile c:Lnyf;
+.field static final a:Lofw;
 
 
 # instance fields
-.field public a:Lnxa;
+.field private final b:Lofw;
 
 
 # direct methods
 .method static constructor <clinit>()V
     .locals 2
 
-    new-instance v0, Logc;
+    new-instance v0, Lofw;
 
-    invoke-direct {v0}, Logc;-><init>()V
+    const/4 v1, 0x0
 
-    sput-object v0, Logc;->b:Logc;
+    invoke-direct {v0, v1}, Lofw;-><init>([B)V
 
-    const-class v1, Logc;
-
-    invoke-static {v1, v0}, Lnws;->aa(Ljava/lang/Class;Lnws;)V
+    sput-object v0, Logc;->a:Lofw;
 
     return-void
 .end method
 
-.method private constructor <init>()V
-    .locals 1
+.method public constructor <init>()V
+    .locals 2
 
-    invoke-direct {p0}, Lnws;-><init>()V
+    sget-object v0, Lofy;->a:Lofy;
 
-    sget-object v0, Lnyi;->b:Lnyi;
+    invoke-virtual {v0}, Lofy;->b()Ljava/util/UUID;
 
-    iput-object v0, p0, Logc;->a:Lnxa;
+    move-result-object v0
+
+    const-string v1, ""
+
+    invoke-direct {p0, v1, v0}, Lofv;-><init>(Ljava/lang/String;Ljava/util/UUID;)V
+
+    sget-object v0, Logc;->a:Lofw;
+
+    iput-object v0, p0, Logc;->b:Lofw;
 
     return-void
 .end method
 
 
 # virtual methods
-.method protected final a(ILjava/lang/Object;)Ljava/lang/Object;
-    .locals 3
+.method public final d(Ljava/lang/String;Logh;Z)Logi;
+    .locals 1
 
-    add-int/lit8 p1, p1, -0x1
+    if-eqz p3, :cond_0
 
-    const/4 p2, 0x1
-
-    packed-switch p1, :pswitch_data_0
-
-    :pswitch_0
-    const/4 p1, 0x0
-
-    return-object p1
-
-    :pswitch_1
-    sget-object p1, Logc;->c:Lnyf;
-
-    if-nez p1, :cond_1
-
-    const-class p2, Logc;
-
-    monitor-enter p2
-
-    :try_start_0
-    sget-object p1, Logc;->c:Lnyf;
-
-    if-nez p1, :cond_0
-
-    new-instance p1, Lnwo;
-
-    sget-object v0, Logc;->b:Logc;
-
-    invoke-direct {p1, v0}, Lnwo;-><init>(Lnws;)V
-
-    sput-object p1, Logc;->c:Lnyf;
+    sget-object v0, Logq;->a:Ljava/util/WeakHashMap;
 
     :cond_0
-    monitor-exit p2
+    new-instance v0, Logd;
 
-    goto :goto_0
+    invoke-direct {v0, p1, p0, p2, p3}, Logd;-><init>(Ljava/lang/String;Lofx;Logh;Z)V
 
-    :catchall_0
-    move-exception p1
+    return-object v0
+.end method
 
-    monitor-exit p2
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+.method public final synthetic e()Ljava/lang/Exception;
+    .locals 1
 
-    throw p1
+    iget-object v0, p0, Logc;->b:Lofw;
 
-    :cond_1
-    :goto_0
-    return-object p1
+    return-object v0
+.end method
 
-    :pswitch_2
-    sget-object p1, Logc;->b:Logc;
+.method public final f(Ljava/lang/String;Logh;)Logi;
+    .locals 1
 
-    return-object p1
+    sget-object v0, Logq;->a:Ljava/util/WeakHashMap;
 
-    :pswitch_3
-    new-instance p1, Lnwn;
+    const/4 v0, 0x1
 
-    sget-object p2, Logc;->b:Logc;
-
-    invoke-direct {p1, p2}, Lnwn;-><init>(Lnws;)V
-
-    return-object p1
-
-    :pswitch_4
-    new-instance p1, Logc;
-
-    invoke-direct {p1}, Logc;-><init>()V
-
-    return-object p1
-
-    :pswitch_5
-    const-string p1, "a"
-
-    const-string v0, "\u0001\u0001\u0000\u0000\u0001\u0001\u0001\u0000\u0001\u0000\u0001\u001b"
-
-    const/4 v1, 0x2
-
-    new-array v1, v1, [Ljava/lang/Object;
-
-    const/4 v2, 0x0
-
-    aput-object p1, v1, v2
-
-    const-class p1, Logb;
-
-    aput-object p1, v1, p2
-
-    sget-object p1, Logc;->b:Logc;
-
-    invoke-static {p1, v0, v1}, Logc;->X(Lnxy;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {p0, p1, p2, v0}, Logc;->d(Ljava/lang/String;Logh;Z)Logi;
 
     move-result-object p1
 
     return-object p1
-
-    :pswitch_6
-    invoke-static {p2}, Ljava/lang/Byte;->valueOf(B)Ljava/lang/Byte;
-
-    move-result-object p1
-
-    return-object p1
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_6
-        :pswitch_0
-        :pswitch_5
-        :pswitch_4
-        :pswitch_3
-        :pswitch_2
-        :pswitch_1
-    .end packed-switch
 .end method

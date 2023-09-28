@@ -1,45 +1,59 @@
-.class public final Ldmu;
+.class public Ldmu;
 .super Ljava/lang/Object;
 
-
-# instance fields
-.field public final a:Lkcs;
-
-.field public final b:Landroid/os/Handler;
-
-.field public c:Lkad;
-
-.field public d:Lkad;
+# interfaces
+.implements Lihs;
 
 
 # direct methods
-.method public constructor <init>(Lkcs;Landroid/os/Handler;)V
+.method public constructor <init>()V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Ldmu;->a:Lkcs;
-
-    iput-object p2, p0, Ldmu;->b:Landroid/os/Handler;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()V
-    .locals 1
+.method public a()V
+    .locals 0
 
-    iget-object v0, p0, Ldmu;->d:Lkad;
+    return-void
+.end method
 
-    if-eqz v0, :cond_0
+.method public b(Ldmg;)V
+    .locals 0
 
-    invoke-interface {v0}, Lkad;->close()V
+    return-void
+.end method
 
-    const/4 v0, 0x0
+.method public c()V
+    .locals 0
 
-    iput-object v0, p0, Ldmu;->d:Lkad;
+    return-void
+.end method
 
-    :cond_0
+.method public d(FLdmg;)V
+    .locals 0
+
+    return-void
+.end method
+
+.method public synthetic f()V
+    .locals 0
+
+    return-void
+.end method
+
+.method public synthetic g()V
+    .locals 0
+
+    return-void
+.end method
+
+.method public synthetic h()V
+    .locals 0
+
     return-void
 .end method

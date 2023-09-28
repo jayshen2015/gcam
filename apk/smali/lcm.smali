@@ -1,84 +1,58 @@
-.class public final Llcm;
-.super Llcw;
+.class final Llcm;
+.super Ljava/lang/Object;
 
 
 # instance fields
-.field public final a:I
+.field public final a:Ljava/util/List;
+
+.field public b:Z
+
+.field public final c:Llij;
+
+.field public final d:Ljava/util/concurrent/Executor;
 
 
 # direct methods
-.method public constructor <init>(II)V
-    .locals 0
-
-    invoke-direct {p0, p1}, Llcw;-><init>(I)V
-
-    iput p2, p0, Llcm;->a:I
-
-    return-void
-.end method
-
-
-# virtual methods
-.method public final b()V
+.method public constructor <init>(Llcn;Llij;Ljava/util/concurrent/Executor;)V
     .locals 2
 
-    iget v0, p0, Llcm;->a:I
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iget v1, p0, Llcm;->b:I
+    iput-object p2, p0, Llcm;->c:Llij;
 
-    invoke-static {v0, v1}, Landroid/opengl/GLES20;->glBindBuffer(II)V
+    iput-object p3, p0, Llcm;->d:Ljava/util/concurrent/Executor;
 
-    return-void
-.end method
+    new-instance p2, Ljava/util/ArrayList;
 
-.method protected final c()V
-    .locals 3
+    invoke-direct {p2}, Ljava/util/ArrayList;-><init>()V
 
-    iget v0, p0, Llcm;->b:I
+    iput-object p2, p0, Llcm;->a:Ljava/util/List;
 
-    filled-new-array {v0}, [I
+    const/4 p2, 0x0
 
-    move-result-object v0
+    const/4 p3, 0x0
+
+    :goto_0
+    iget-object v0, p1, Llcn;->a:Ljava/util/List;
+
+    invoke-interface {v0}, Ljava/util/List;->size()I
+
+    move-result v0
+
+    if-ge p3, v0, :cond_0
+
+    iget-object v0, p0, Llcm;->a:Ljava/util/List;
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x1
+    invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    invoke-static {v2, v0, v1}, Landroid/opengl/GLES20;->glDeleteBuffers(I[II)V
+    add-int/lit8 p3, p3, 0x1
+
+    goto :goto_0
+
+    :cond_0
+    iput-boolean p2, p0, Llcm;->b:Z
 
     return-void
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .locals 4
-
-    iget v0, p0, Llcw;->b:I
-
-    iget v1, p0, Llcm;->a:I
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v3, "GLRawBuffer{handle="
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    const-string v0, ", target="
-
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    const-string v0, "}"
-
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    return-object v0
 .end method

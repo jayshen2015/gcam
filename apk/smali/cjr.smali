@@ -1,82 +1,126 @@
-.class public final Lcjr;
-.super Ljava/lang/Object;
-
-# interfaces
-.implements Lkad;
+.class public final enum Lcjr;
+.super Ljava/lang/Enum;
 
 
-# instance fields
-.field final synthetic a:Lgre;
+# static fields
+.field public static final enum a:Lcjr;
 
-.field private final b:Ljava/util/concurrent/atomic/AtomicBoolean;
+.field public static final enum b:Lcjr;
 
-.field private final c:Ljava/util/concurrent/ScheduledFuture;
+.field public static final enum c:Lcjr;
+
+.field public static final enum d:Lcjr;
+
+.field public static final enum e:Lcjr;
+
+.field public static final enum f:Lcjr;
+
+.field private static final synthetic g:[Lcjr;
 
 
 # direct methods
-.method public constructor <init>(Lgre;[B)V
-    .locals 3
+.method static constructor <clinit>()V
+    .locals 13
 
-    iput-object p1, p0, Lcjr;->a:Lgre;
+    new-instance v0, Lcjr;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const-string v1, "UNINITIALIZED"
 
-    new-instance p2, Ljava/util/concurrent/atomic/AtomicBoolean;
+    const/4 v2, 0x0
 
-    const/4 v0, 0x1
+    invoke-direct {v0, v1, v2}, Lcjr;-><init>(Ljava/lang/String;I)V
 
-    invoke-direct {p2, v0}, Ljava/util/concurrent/atomic/AtomicBoolean;-><init>(Z)V
+    sput-object v0, Lcjr;->a:Lcjr;
 
-    iput-object p2, p0, Lcjr;->b:Ljava/util/concurrent/atomic/AtomicBoolean;
+    new-instance v1, Lcjr;
 
-    iget-object p1, p1, Lgre;->c:Ljava/lang/Object;
+    const-string v3, "INITIATING"
 
-    new-instance p2, Lcdw;
+    const/4 v4, 0x1
 
-    const/16 v0, 0xe
+    invoke-direct {v1, v3, v4}, Lcjr;-><init>(Ljava/lang/String;I)V
 
-    invoke-direct {p2, p0, v0}, Lcdw;-><init>(Lcjr;I)V
+    sput-object v1, Lcjr;->b:Lcjr;
 
-    sget-object v0, Ljava/util/concurrent/TimeUnit;->MILLISECONDS:Ljava/util/concurrent/TimeUnit;
+    new-instance v3, Lcjr;
 
-    const-wide/16 v1, 0xfa0
+    const-string v5, "CAPTURE_SESSION_ACTIVE"
 
-    invoke-interface {p1, p2, v1, v2, v0}, Ljava/util/concurrent/ScheduledExecutorService;->schedule(Ljava/lang/Runnable;JLjava/util/concurrent/TimeUnit;)Ljava/util/concurrent/ScheduledFuture;
+    const/4 v6, 0x2
 
-    move-result-object p1
+    invoke-direct {v3, v5, v6}, Lcjr;-><init>(Ljava/lang/String;I)V
 
-    iput-object p1, p0, Lcjr;->c:Ljava/util/concurrent/ScheduledFuture;
+    sput-object v3, Lcjr;->c:Lcjr;
+
+    new-instance v5, Lcjr;
+
+    const-string v7, "CAPTURE_SESSION_CLOSED"
+
+    const/4 v8, 0x3
+
+    invoke-direct {v5, v7, v8}, Lcjr;-><init>(Ljava/lang/String;I)V
+
+    sput-object v5, Lcjr;->d:Lcjr;
+
+    new-instance v7, Lcjr;
+
+    const-string v9, "RECORDING_SESSION_ACTIVE"
+
+    const/4 v10, 0x4
+
+    invoke-direct {v7, v9, v10}, Lcjr;-><init>(Ljava/lang/String;I)V
+
+    sput-object v7, Lcjr;->e:Lcjr;
+
+    new-instance v9, Lcjr;
+
+    const-string v11, "ERROR"
+
+    const/4 v12, 0x5
+
+    invoke-direct {v9, v11, v12}, Lcjr;-><init>(Ljava/lang/String;I)V
+
+    sput-object v9, Lcjr;->f:Lcjr;
+
+    const/4 v11, 0x6
+
+    new-array v11, v11, [Lcjr;
+
+    aput-object v0, v11, v2
+
+    aput-object v1, v11, v4
+
+    aput-object v3, v11, v6
+
+    aput-object v5, v11, v8
+
+    aput-object v7, v11, v10
+
+    aput-object v9, v11, v12
+
+    sput-object v11, Lcjr;->g:[Lcjr;
 
     return-void
 .end method
 
+.method private constructor <init>(Ljava/lang/String;I)V
+    .locals 0
 
-# virtual methods
-.method public final close()V
-    .locals 2
-
-    iget-object v0, p0, Lcjr;->b:Ljava/util/concurrent/atomic/AtomicBoolean;
-
-    const/4 v1, 0x0
-
-    invoke-virtual {v0, v1}, Ljava/util/concurrent/atomic/AtomicBoolean;->getAndSet(Z)Z
-
-    move-result v0
-
-    if-nez v0, :cond_0
+    invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
+.end method
 
-    :cond_0
-    iget-object v0, p0, Lcjr;->c:Ljava/util/concurrent/ScheduledFuture;
+.method public static values()[Lcjr;
+    .locals 1
 
-    const/4 v1, 0x1
+    sget-object v0, Lcjr;->g:[Lcjr;
 
-    invoke-interface {v0, v1}, Ljava/util/concurrent/ScheduledFuture;->cancel(Z)Z
+    invoke-virtual {v0}, [Lcjr;->clone()Ljava/lang/Object;
 
-    iget-object v0, p0, Lcjr;->a:Lgre;
+    move-result-object v0
 
-    invoke-virtual {v0}, Lgre;->d()V
+    check-cast v0, [Lcjr;
 
-    return-void
+    return-object v0
 .end method

@@ -2,78 +2,34 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lgal;
-
-
-# static fields
-.field public static final synthetic a:Lgjn;
-
-.field public static final synthetic b:Lgjn;
-
-.field public static final synthetic c:Lgjn;
-
-.field public static final synthetic d:Lgjn;
+.implements Loiu;
 
 
 # instance fields
-.field private final synthetic e:I
+.field public final synthetic a:Landroid/hardware/camera2/CaptureRequest$Key;
 
 
 # direct methods
-.method static synthetic constructor <clinit>()V
-    .locals 2
-
-    new-instance v0, Lgjn;
-
-    const/4 v1, 0x3
-
-    invoke-direct {v0, v1}, Lgjn;-><init>(I)V
-
-    sput-object v0, Lgjn;->d:Lgjn;
-
-    new-instance v0, Lgjn;
-
-    const/4 v1, 0x2
-
-    invoke-direct {v0, v1}, Lgjn;-><init>(I)V
-
-    sput-object v0, Lgjn;->c:Lgjn;
-
-    new-instance v0, Lgjn;
-
-    const/4 v1, 0x1
-
-    invoke-direct {v0, v1}, Lgjn;-><init>(I)V
-
-    sput-object v0, Lgjn;->b:Lgjn;
-
-    new-instance v0, Lgjn;
-
-    const/4 v1, 0x0
-
-    invoke-direct {v0, v1}, Lgjn;-><init>(I)V
-
-    sput-object v0, Lgjn;->a:Lgjn;
-
-    return-void
-.end method
-
-.method private synthetic constructor <init>(I)V
+.method public synthetic constructor <init>(Landroid/hardware/camera2/CaptureRequest$Key;)V
     .locals 0
 
-    iput p1, p0, Lgjn;->e:I
-
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lgjn;->a:Landroid/hardware/camera2/CaptureRequest$Key;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final close()V
+.method public final a(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 1
 
-    iget v0, p0, Lgjn;->e:I
+    iget-object v0, p0, Lgjn;->a:Landroid/hardware/camera2/CaptureRequest$Key;
 
-    return-void
+    invoke-static {v0, p1}, Lmip;->be(Landroid/hardware/camera2/CaptureRequest$Key;Ljava/lang/Object;)Llnq;
+
+    move-result-object p1
+
+    return-object p1
 .end method

@@ -1,207 +1,305 @@
-.class final Lgx;
+.class Lgx;
 .super Ljava/lang/Object;
 
-# interfaces
-.implements Landroid/content/DialogInterface$OnKeyListener;
-.implements Landroid/content/DialogInterface$OnClickListener;
-.implements Landroid/content/DialogInterface$OnDismissListener;
-.implements Lhi;
+
+# static fields
+.field static final d:Lgy;
 
 
 # instance fields
-.field public final a:Lgw;
-
-.field public b:Leg;
-
-.field c:Lgs;
+.field final e:Lgy;
 
 
 # direct methods
-.method public constructor <init>(Lgw;)V
+.method static constructor <clinit>()V
+    .locals 2
+
+    new-instance v0, Lgr;
+
+    const/4 v1, 0x0
+
+    invoke-direct {v0, v1}, Lgr;-><init>([B)V
+
+    invoke-static {v0}, Lfx;->l(Lgr;)Lgy;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lgy;->g()Lgy;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lgy;->h()Lgy;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lgy;->i()Lgy;
+
+    move-result-object v0
+
+    sput-object v0, Lgx;->d:Lgy;
+
+    return-void
+.end method
+
+.method public constructor <init>(Lgy;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lgx;->a:Lgw;
+    iput-object p1, p0, Lgx;->e:Lgy;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Lgw;Z)V
-    .locals 0
-
-    if-nez p2, :cond_0
-
-    iget-object p2, p0, Lgx;->a:Lgw;
-
-    if-ne p1, p2, :cond_1
-
-    :cond_0
-    iget-object p1, p0, Lgx;->b:Leg;
-
-    if-eqz p1, :cond_1
-
-    invoke-virtual {p1}, Lff;->dismiss()V
-
-    :cond_1
-    return-void
-.end method
-
-.method public final b(Lgw;)Z
-    .locals 0
-
-    const/4 p1, 0x0
-
-    return p1
-.end method
-
-.method public final onClick(Landroid/content/DialogInterface;I)V
+.method public a()Lel;
     .locals 1
 
-    iget-object p1, p0, Lgx;->a:Lgw;
+    sget-object v0, Lel;->a:Lel;
 
-    iget-object v0, p0, Lgx;->c:Lgs;
+    return-object v0
+.end method
 
-    invoke-virtual {v0}, Lgs;->a()Landroid/widget/ListAdapter;
+.method public b(IIII)Lgy;
+    .locals 0
 
-    move-result-object v0
+    sget-object p1, Lgx;->d:Lgy;
 
-    check-cast v0, Lgr;
+    return-object p1
+.end method
 
-    invoke-virtual {v0, p2}, Lgr;->a(I)Lgy;
-
-    move-result-object p2
+.method public c()Z
+    .locals 1
 
     const/4 v0, 0x0
 
-    invoke-virtual {p1, p2, v0}, Lgw;->z(Landroid/view/MenuItem;I)Z
+    return v0
+.end method
+
+.method public d()V
+    .locals 0
 
     return-void
 .end method
 
-.method public final onDismiss(Landroid/content/DialogInterface;)V
-    .locals 2
-
-    iget-object p1, p0, Lgx;->c:Lgs;
-
-    iget-object v0, p0, Lgx;->a:Lgw;
-
-    const/4 v1, 0x1
-
-    invoke-virtual {p1, v0, v1}, Lgs;->c(Lgw;Z)V
+.method public e()V
+    .locals 0
 
     return-void
 .end method
 
-.method public final onKey(Landroid/content/DialogInterface;ILandroid/view/KeyEvent;)Z
-    .locals 2
+.method public equals(Ljava/lang/Object;)Z
+    .locals 4
 
-    const/16 v0, 0x52
+    const/4 v0, 0x1
 
-    if-eq p2, v0, :cond_0
+    if-ne p0, p1, :cond_0
 
-    const/4 v0, 0x4
-
-    if-ne p2, v0, :cond_2
-
-    const/4 p2, 0x4
+    return v0
 
     :cond_0
-    invoke-virtual {p3}, Landroid/view/KeyEvent;->getAction()I
+    instance-of v1, p1, Lgx;
 
-    move-result v0
+    const/4 v2, 0x0
 
-    const/4 v1, 0x1
+    if-nez v1, :cond_1
 
-    if-nez v0, :cond_1
-
-    invoke-virtual {p3}, Landroid/view/KeyEvent;->getRepeatCount()I
-
-    move-result v0
-
-    if-nez v0, :cond_1
-
-    iget-object p1, p0, Lgx;->b:Leg;
-
-    invoke-virtual {p1}, Leg;->getWindow()Landroid/view/Window;
-
-    move-result-object p1
-
-    if-eqz p1, :cond_2
-
-    invoke-virtual {p1}, Landroid/view/Window;->getDecorView()Landroid/view/View;
-
-    move-result-object p1
-
-    if-eqz p1, :cond_2
-
-    invoke-virtual {p1}, Landroid/view/View;->getKeyDispatcherState()Landroid/view/KeyEvent$DispatcherState;
-
-    move-result-object p1
-
-    if-eqz p1, :cond_2
-
-    invoke-virtual {p1, p3, p0}, Landroid/view/KeyEvent$DispatcherState;->startTracking(Landroid/view/KeyEvent;Ljava/lang/Object;)V
-
-    return v1
+    return v2
 
     :cond_1
-    invoke-virtual {p3}, Landroid/view/KeyEvent;->getAction()I
+    check-cast p1, Lgx;
 
-    move-result v0
+    invoke-virtual {p0}, Lgx;->c()Z
 
-    if-ne v0, v1, :cond_2
+    move-result v1
 
-    invoke-virtual {p3}, Landroid/view/KeyEvent;->isCanceled()Z
+    invoke-virtual {p1}, Lgx;->c()Z
 
-    move-result v0
+    move-result v3
 
-    if-nez v0, :cond_2
+    if-ne v1, v3, :cond_2
 
-    iget-object v0, p0, Lgx;->b:Leg;
+    invoke-virtual {p0}, Lgx;->j()Z
 
-    invoke-virtual {v0}, Leg;->getWindow()Landroid/view/Window;
+    move-result v1
 
-    move-result-object v0
+    invoke-virtual {p1}, Lgx;->j()Z
 
-    if-eqz v0, :cond_2
+    move-result v3
 
-    invoke-virtual {v0}, Landroid/view/Window;->getDecorView()Landroid/view/View;
+    if-ne v1, v3, :cond_2
 
-    move-result-object v0
+    invoke-virtual {p0}, Lgx;->a()Lel;
 
-    if-eqz v0, :cond_2
+    move-result-object v1
 
-    invoke-virtual {v0}, Landroid/view/View;->getKeyDispatcherState()Landroid/view/KeyEvent$DispatcherState;
+    invoke-virtual {p1}, Lgx;->a()Lel;
 
-    move-result-object v0
+    move-result-object v3
 
-    if-eqz v0, :cond_2
+    invoke-static {v1, v3}, Lj$/util/Objects;->equals(Ljava/lang/Object;Ljava/lang/Object;)Z
 
-    invoke-virtual {v0, p3}, Landroid/view/KeyEvent$DispatcherState;->isTracking(Landroid/view/KeyEvent;)Z
+    move-result v1
 
-    move-result v0
+    if-eqz v1, :cond_2
 
-    if-eqz v0, :cond_2
+    invoke-virtual {p0}, Lgx;->g()Lel;
 
-    iget-object p2, p0, Lgx;->a:Lgw;
+    move-result-object v1
 
-    invoke-virtual {p2, v1}, Lgw;->i(Z)V
+    invoke-virtual {p1}, Lgx;->g()Lel;
 
-    invoke-interface {p1}, Landroid/content/DialogInterface;->dismiss()V
+    move-result-object v3
 
-    return v1
+    invoke-static {v1, v3}, Lj$/util/Objects;->equals(Ljava/lang/Object;Ljava/lang/Object;)Z
 
-    :cond_2
-    iget-object p1, p0, Lgx;->a:Lgw;
+    move-result v1
 
-    const/4 v0, 0x0
+    if-eqz v1, :cond_2
 
-    invoke-virtual {p1, p2, p3, v0}, Lgw;->performShortcut(ILandroid/view/KeyEvent;I)Z
+    invoke-virtual {p0}, Lgx;->k()Lfl;
+
+    move-result-object v1
+
+    invoke-virtual {p1}, Lgx;->k()Lfl;
+
+    move-result-object p1
+
+    invoke-static {v1, p1}, Lj$/util/Objects;->equals(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result p1
 
-    return p1
+    if-eqz p1, :cond_2
+
+    return v0
+
+    :cond_2
+    return v2
+.end method
+
+.method public f()V
+    .locals 0
+
+    return-void
+.end method
+
+.method public g()Lel;
+    .locals 1
+
+    sget-object v0, Lel;->a:Lel;
+
+    return-object v0
+.end method
+
+.method public h()Lgy;
+    .locals 1
+
+    iget-object v0, p0, Lgx;->e:Lgy;
+
+    return-object v0
+.end method
+
+.method public hashCode()I
+    .locals 3
+
+    const/4 v0, 0x5
+
+    new-array v0, v0, [Ljava/lang/Object;
+
+    invoke-virtual {p0}, Lgx;->c()Z
+
+    move-result v1
+
+    invoke-static {v1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    move-result-object v1
+
+    const/4 v2, 0x0
+
+    aput-object v1, v0, v2
+
+    invoke-virtual {p0}, Lgx;->j()Z
+
+    move-result v1
+
+    invoke-static {v1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    move-result-object v1
+
+    const/4 v2, 0x1
+
+    aput-object v1, v0, v2
+
+    invoke-virtual {p0}, Lgx;->a()Lel;
+
+    move-result-object v1
+
+    const/4 v2, 0x2
+
+    aput-object v1, v0, v2
+
+    invoke-virtual {p0}, Lgx;->g()Lel;
+
+    move-result-object v1
+
+    const/4 v2, 0x3
+
+    aput-object v1, v0, v2
+
+    invoke-virtual {p0}, Lgx;->k()Lfl;
+
+    move-result-object v1
+
+    const/4 v2, 0x4
+
+    aput-object v1, v0, v2
+
+    invoke-static {v0}, Lj$/util/Objects;->hash([Ljava/lang/Object;)I
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public i()Lgy;
+    .locals 1
+
+    iget-object v0, p0, Lgx;->e:Lgy;
+
+    return-object v0
+.end method
+
+.method public j()Z
+    .locals 1
+
+    const/4 v0, 0x0
+
+    return v0
+.end method
+
+.method public k()Lfl;
+    .locals 1
+
+    const/4 v0, 0x0
+
+    return-object v0
+.end method
+
+.method public l()Lgy;
+    .locals 1
+
+    iget-object v0, p0, Lgx;->e:Lgy;
+
+    return-object v0
+.end method
+
+.method public m()Lel;
+    .locals 1
+
+    invoke-virtual {p0}, Lgx;->a()Lel;
+
+    move-result-object v0
+
+    return-object v0
 .end method

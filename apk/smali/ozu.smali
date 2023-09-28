@@ -1,22 +1,24 @@
 .class public final Lozu;
-.super Lnws;
+.super Lppd;
 
 # interfaces
-.implements Lnxz;
+.implements Lpqn;
 
 
 # static fields
-.field public static final d:Lozu;
+.field public static final e:Lozu;
 
-.field private static volatile e:Lnyf;
+.field private static volatile f:Lpqs;
 
 
 # instance fields
 .field public a:I
 
-.field public b:J
+.field public b:Z
 
-.field public c:I
+.field public c:Z
+
+.field public d:F
 
 
 # direct methods
@@ -27,11 +29,11 @@
 
     invoke-direct {v0}, Lozu;-><init>()V
 
-    sput-object v0, Lozu;->d:Lozu;
+    sput-object v0, Lozu;->e:Lozu;
 
     const-class v1, Lozu;
 
-    invoke-static {v1, v0}, Lnws;->aa(Ljava/lang/Class;Lnws;)V
+    invoke-static {v1, v0}, Lppd;->F(Ljava/lang/Class;Lppd;)V
 
     return-void
 .end method
@@ -39,7 +41,7 @@
 .method private constructor <init>()V
     .locals 0
 
-    invoke-direct {p0}, Lnws;-><init>()V
+    invoke-direct {p0}, Lppd;-><init>()V
 
     return-void
 .end method
@@ -47,7 +49,7 @@
 
 # virtual methods
 .method protected final a(ILjava/lang/Object;)Ljava/lang/Object;
-    .locals 3
+    .locals 2
 
     add-int/lit8 p1, p1, -0x1
 
@@ -61,7 +63,7 @@
     return-object p1
 
     :pswitch_1
-    sget-object p1, Lozu;->e:Lnyf;
+    sget-object p1, Lozu;->f:Lpqs;
 
     if-nez p1, :cond_1
 
@@ -70,17 +72,17 @@
     monitor-enter p2
 
     :try_start_0
-    sget-object p1, Lozu;->e:Lnyf;
+    sget-object p1, Lozu;->f:Lpqs;
 
     if-nez p1, :cond_0
 
-    new-instance p1, Lnwo;
+    new-instance p1, Lpoz;
 
-    sget-object v0, Lozu;->d:Lozu;
+    sget-object v0, Lozu;->e:Lozu;
 
-    invoke-direct {p1, v0}, Lnwo;-><init>(Lnws;)V
+    invoke-direct {p1, v0}, Lpoz;-><init>(Lppd;)V
 
-    sput-object p1, Lozu;->e:Lnyf;
+    sput-object p1, Lozu;->f:Lpqs;
 
     :cond_0
     monitor-exit p2
@@ -101,16 +103,16 @@
     return-object p1
 
     :pswitch_2
-    sget-object p1, Lozu;->d:Lozu;
+    sget-object p1, Lozu;->e:Lozu;
 
     return-object p1
 
     :pswitch_3
-    new-instance p1, Lnwn;
+    new-instance p1, Lpoy;
 
-    sget-object p2, Lozu;->d:Lozu;
+    sget-object p2, Lozu;->e:Lozu;
 
-    invoke-direct {p1, p2}, Lnwn;-><init>(Lnws;)V
+    invoke-direct {p1, p2}, Lpoy;-><init>(Lppd;)V
 
     return-object p1
 
@@ -122,37 +124,37 @@
     return-object p1
 
     :pswitch_5
-    const-string p1, "a"
+    const/4 p1, 0x4
 
-    const-string v0, "\u0001\u0002\u0000\u0001\u0002\u0003\u0002\u0000\u0000\u0000\u0002\u1002\u0001\u0003\u100c\u0002"
+    new-array p1, p1, [Ljava/lang/Object;
 
-    const/4 v1, 0x4
+    const/4 v0, 0x0
 
-    new-array v1, v1, [Ljava/lang/Object;
+    const-string v1, "a"
 
-    const/4 v2, 0x0
+    aput-object v1, p1, v0
 
-    aput-object p1, v1, v2
+    const-string v0, "b"
 
-    const-string p1, "b"
+    aput-object v0, p1, p2
 
-    aput-object p1, v1, p2
+    const/4 p2, 0x2
 
-    const/4 p1, 0x2
+    const-string v0, "c"
 
-    const-string p2, "c"
+    aput-object v0, p1, p2
 
-    aput-object p2, v1, p1
+    const/4 p2, 0x3
 
-    const/4 p1, 0x3
+    const-string v0, "d"
 
-    sget-object p2, Lozf;->f:Lnww;
+    aput-object v0, p1, p2
 
-    aput-object p2, v1, p1
+    sget-object p2, Lozu;->e:Lozu;
 
-    sget-object p1, Lozu;->d:Lozu;
+    const-string v0, "\u0001\u0003\u0000\u0001\u0001\u0003\u0003\u0000\u0000\u0000\u0001\u1007\u0000\u0002\u1007\u0001\u0003\u1001\u0002"
 
-    invoke-static {p1, v0, v1}, Lozu;->X(Lnxy;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {p2, v0, p1}, Lozu;->E(Lpqm;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p1
 

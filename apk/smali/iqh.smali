@@ -1,71 +1,60 @@
-.class public final synthetic Liqh;
+.class final Liqh;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Litl;
+.implements Ljxg;
 
 
 # instance fields
-.field public final synthetic a:Ljava/lang/Object;
-
-.field private final synthetic b:I
+.field final synthetic a:Liqj;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lckh;I)V
+.method public constructor <init>(Liqj;)V
     .locals 0
 
-    iput p2, p0, Liqh;->b:I
+    iput-object p1, p0, Liqh;->a:Liqj;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Liqh;->a:Ljava/lang/Object;
-
-    return-void
-.end method
-
-.method public synthetic constructor <init>(Liqj;I)V
-    .locals 0
-
-    iput p2, p0, Liqh;->b:I
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Liqh;->a:Ljava/lang/Object;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()V
-    .locals 1
+.method public final a(Landroid/graphics/PointF;)V
+    .locals 0
 
-    iget v0, p0, Liqh;->b:I
+    iget-object p1, p0, Liqh;->a:Liqj;
 
-    packed-switch v0, :pswitch_data_0
+    invoke-virtual {p1}, Liqj;->h()Z
 
-    iget-object v0, p0, Liqh;->a:Ljava/lang/Object;
+    move-result p1
 
-    check-cast v0, Lckh;
+    if-eqz p1, :cond_0
 
-    invoke-virtual {v0}, Lckh;->e()V
+    iget-object p1, p0, Liqh;->a:Liqj;
+
+    invoke-virtual {p1}, Liqj;->e()V
+
+    :cond_0
+    return-void
+.end method
+
+.method public final b()V
+    .locals 0
 
     return-void
+.end method
 
-    :pswitch_0
-    iget-object v0, p0, Liqh;->a:Ljava/lang/Object;
-
-    check-cast v0, Liqj;
-
-    invoke-virtual {v0}, Liqj;->p()V
+.method public final c(Landroid/graphics/PointF;)V
+    .locals 0
 
     return-void
+.end method
 
-    nop
+.method public final g()V
+    .locals 0
 
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+    return-void
 .end method

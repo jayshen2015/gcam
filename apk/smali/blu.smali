@@ -1,60 +1,220 @@
 .class public final Lblu;
-.super Ljava/lang/Object;
+.super Ljava/io/InputStream;
+
+
+# static fields
+.field public static final a:Ljava/util/Queue;
 
 
 # instance fields
-.field public a:F
+.field public b:Ljava/io/InputStream;
 
-.field public b:F
+.field public c:Ljava/io/IOException;
 
 
 # direct methods
-.method public constructor <init>()V
+.method static constructor <clinit>()V
     .locals 1
 
-    const/high16 v0, 0x3f800000    # 1.0f
+    const/4 v0, 0x0
 
-    invoke-direct {p0, v0, v0}, Lblu;-><init>(FF)V
+    invoke-static {v0}, Lbmf;->h(I)Ljava/util/Queue;
+
+    move-result-object v0
+
+    sput-object v0, Lblu;->a:Ljava/util/Queue;
 
     return-void
 .end method
 
-.method public constructor <init>(FF)V
+.method public constructor <init>()V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput p1, p0, Lblu;->a:F
-
-    iput p2, p0, Lblu;->b:F
+    invoke-direct {p0}, Ljava/io/InputStream;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final toString()Ljava/lang/String;
-    .locals 3
+.method public final a()V
+    .locals 2
 
-    iget v0, p0, Lblu;->a:F
+    const/4 v0, 0x0
 
-    iget v1, p0, Lblu;->b:F
+    iput-object v0, p0, Lblu;->c:Ljava/io/IOException;
 
-    new-instance v2, Ljava/lang/StringBuilder;
+    iput-object v0, p0, Lblu;->b:Ljava/io/InputStream;
 
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+    sget-object v0, Lblu;->a:Ljava/util/Queue;
 
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
+    monitor-enter v0
 
-    const-string v0, "x"
+    :try_start_0
+    invoke-interface {v0, p0}, Ljava/util/Queue;->offer(Ljava/lang/Object;)Z
 
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    monitor-exit v0
 
-    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
+    return-void
 
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    :catchall_0
+    move-exception v1
 
-    move-result-object v0
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    return-object v0
+    throw v1
+.end method
+
+.method public final available()I
+    .locals 1
+
+    iget-object v0, p0, Lblu;->b:Ljava/io/InputStream;
+
+    invoke-virtual {v0}, Ljava/io/InputStream;->available()I
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public final close()V
+    .locals 1
+
+    iget-object v0, p0, Lblu;->b:Ljava/io/InputStream;
+
+    invoke-virtual {v0}, Ljava/io/InputStream;->close()V
+
+    return-void
+.end method
+
+.method public final mark(I)V
+    .locals 1
+
+    iget-object v0, p0, Lblu;->b:Ljava/io/InputStream;
+
+    invoke-virtual {v0, p1}, Ljava/io/InputStream;->mark(I)V
+
+    return-void
+.end method
+
+.method public final markSupported()Z
+    .locals 1
+
+    const/4 v0, 0x1
+
+    return v0
+.end method
+
+.method public final read()I
+    .locals 1
+
+    :try_start_0
+    iget-object v0, p0, Lblu;->b:Ljava/io/InputStream;
+
+    invoke-virtual {v0}, Ljava/io/InputStream;->read()I
+
+    move-result v0
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
+
+    return v0
+
+    :catch_0
+    move-exception v0
+
+    iput-object v0, p0, Lblu;->c:Ljava/io/IOException;
+
+    throw v0
+.end method
+
+.method public final read([B)I
+    .locals 1
+
+    :try_start_0
+    iget-object v0, p0, Lblu;->b:Ljava/io/InputStream;
+
+    invoke-virtual {v0, p1}, Ljava/io/InputStream;->read([B)I
+
+    move-result p1
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
+
+    return p1
+
+    :catch_0
+    move-exception p1
+
+    iput-object p1, p0, Lblu;->c:Ljava/io/IOException;
+
+    throw p1
+.end method
+
+.method public final read([BII)I
+    .locals 1
+
+    :try_start_0
+    iget-object v0, p0, Lblu;->b:Ljava/io/InputStream;
+
+    invoke-virtual {v0, p1, p2, p3}, Ljava/io/InputStream;->read([BII)I
+
+    move-result p1
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
+
+    return p1
+
+    :catch_0
+    move-exception p1
+
+    iput-object p1, p0, Lblu;->c:Ljava/io/IOException;
+
+    throw p1
+.end method
+
+.method public final declared-synchronized reset()V
+    .locals 1
+
+    monitor-enter p0
+
+    :try_start_0
+    iget-object v0, p0, Lblu;->b:Ljava/io/InputStream;
+
+    invoke-virtual {v0}, Ljava/io/InputStream;->reset()V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    monitor-exit p0
+
+    return-void
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit p0
+
+    throw v0
+.end method
+
+.method public final skip(J)J
+    .locals 1
+
+    :try_start_0
+    iget-object v0, p0, Lblu;->b:Ljava/io/InputStream;
+
+    invoke-virtual {v0, p1, p2}, Ljava/io/InputStream;->skip(J)J
+
+    move-result-wide p1
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
+
+    return-wide p1
+
+    :catch_0
+    move-exception p1
+
+    iput-object p1, p0, Lblu;->c:Ljava/io/IOException;
+
+    throw p1
 .end method

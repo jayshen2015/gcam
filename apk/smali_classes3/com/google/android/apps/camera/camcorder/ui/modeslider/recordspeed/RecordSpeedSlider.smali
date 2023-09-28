@@ -2,7 +2,7 @@
 .super Landroid/widget/LinearLayout;
 
 # interfaces
-.implements Liaq;
+.implements Ljen;
 
 
 # instance fields
@@ -10,15 +10,17 @@
 
 .field public final b:I
 
-.field public c:Lmtb;
+.field public c:Lols;
 
-.field public d:Liap;
+.field public d:Ljem;
 
-.field public e:I
+.field public e:Lddf;
 
 .field public f:I
 
 .field public g:I
+
+.field public h:I
 
 
 # direct methods
@@ -35,17 +37,17 @@
 
     iput-object p1, p0, Lcom/google/android/apps/camera/camcorder/ui/modeslider/recordspeed/RecordSpeedSlider;->a:Ljava/util/concurrent/atomic/AtomicInteger;
 
-    invoke-static {}, Lmtb;->v()Lmtb;
+    invoke-static {}, Lols;->r()Lols;
 
     move-result-object p1
 
-    iput-object p1, p0, Lcom/google/android/apps/camera/camcorder/ui/modeslider/recordspeed/RecordSpeedSlider;->c:Lmtb;
+    iput-object p1, p0, Lcom/google/android/apps/camera/camcorder/ui/modeslider/recordspeed/RecordSpeedSlider;->c:Lols;
 
     invoke-virtual {p0}, Lcom/google/android/apps/camera/camcorder/ui/modeslider/recordspeed/RecordSpeedSlider;->getResources()Landroid/content/res/Resources;
 
     move-result-object p1
 
-    const p2, 0x7f0705e6
+    const p2, 0x7f0704e0
 
     invoke-virtual {p1, p2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -71,13 +73,13 @@
 .end method
 
 .method public final b(I)I
-    .locals 2
+    .locals 3
 
-    iget v0, p0, Lcom/google/android/apps/camera/camcorder/ui/modeslider/recordspeed/RecordSpeedSlider;->e:I
+    iget v0, p0, Lcom/google/android/apps/camera/camcorder/ui/modeslider/recordspeed/RecordSpeedSlider;->f:I
 
     if-eq p1, v0, :cond_2
 
-    iget v0, p0, Lcom/google/android/apps/camera/camcorder/ui/modeslider/recordspeed/RecordSpeedSlider;->g:I
+    iget v0, p0, Lcom/google/android/apps/camera/camcorder/ui/modeslider/recordspeed/RecordSpeedSlider;->h:I
 
     if-eqz v0, :cond_1
 
@@ -102,7 +104,9 @@
 
     new-instance v1, Ljava/lang/StringBuilder;
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+    const/16 v2, 0x28
+
+    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(I)V
 
     invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
@@ -160,9 +164,9 @@
 .end method
 
 .method public final g(IZ)V
-    .locals 7
+    .locals 8
 
-    if-ltz p1, :cond_8
+    if-ltz p1, :cond_b
 
     iget-object v0, p0, Lcom/google/android/apps/camera/camcorder/ui/modeslider/recordspeed/RecordSpeedSlider;->a:Ljava/util/concurrent/atomic/AtomicInteger;
 
@@ -170,7 +174,7 @@
 
     move-result v0
 
-    if-eq p1, v0, :cond_7
+    if-eq p1, v0, :cond_a
 
     const/4 v0, 0x0
 
@@ -181,7 +185,7 @@
 
     move-result v2
 
-    if-ge v1, v2, :cond_5
+    if-ge v1, v2, :cond_8
 
     invoke-virtual {p0, v1}, Lcom/google/android/apps/camera/camcorder/ui/modeslider/recordspeed/RecordSpeedSlider;->getChildAt(I)Landroid/view/View;
 
@@ -191,13 +195,13 @@
 
     const/4 v3, 0x0
 
-    if-ne v1, p1, :cond_3
+    if-ne v1, p1, :cond_4
 
     invoke-virtual {p0}, Lcom/google/android/apps/camera/camcorder/ui/modeslider/recordspeed/RecordSpeedSlider;->getContext()Landroid/content/Context;
 
     move-result-object v4
 
-    const v5, 0x7f080141
+    const v5, 0x7f080454
 
     invoke-virtual {v4, v5}, Landroid/content/Context;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -205,27 +209,53 @@
 
     check-cast v4, Landroid/graphics/drawable/GradientDrawable;
 
-    const v5, 0x7f040178
+    const v5, 0x7f040128
 
-    if-eqz v4, :cond_0
+    if-eqz v4, :cond_1
 
-    invoke-static {v2, v5}, Lkwp;->l(Landroid/view/View;I)I
+    iget-object v6, p0, Lcom/google/android/apps/camera/camcorder/ui/modeslider/recordspeed/RecordSpeedSlider;->e:Lddf;
+
+    sget-object v7, Lddl;->ay:Lddg;
+
+    invoke-interface {v6, v7}, Lddf;->k(Lddg;)Z
+
+    move-result v6
+
+    if-eqz v6, :cond_0
+
+    invoke-static {v2, v5}, Lobr;->e(Landroid/view/View;I)I
 
     move-result v6
 
     invoke-virtual {p0, v2, v6}, Lcom/google/android/apps/camera/camcorder/ui/modeslider/recordspeed/RecordSpeedSlider;->k(Landroid/widget/TextView;I)V
 
-    const v6, 0x7f0401a5
+    const v6, 0x7f04014d
 
-    invoke-static {v2, v6}, Lkwp;->l(Landroid/view/View;I)I
+    invoke-static {v2, v6}, Lobr;->e(Landroid/view/View;I)I
 
     move-result v6
 
     invoke-virtual {v4, v6}, Landroid/graphics/drawable/GradientDrawable;->setTint(I)V
 
-    invoke-virtual {v2, v4}, Landroid/widget/TextView;->setBackground(Landroid/graphics/drawable/Drawable;)V
+    goto :goto_1
 
     :cond_0
+    invoke-virtual {p0}, Lcom/google/android/apps/camera/camcorder/ui/modeslider/recordspeed/RecordSpeedSlider;->getContext()Landroid/content/Context;
+
+    move-result-object v6
+
+    const v7, 0x7f0607dc
+
+    invoke-virtual {v6, v7}, Landroid/content/Context;->getColor(I)I
+
+    move-result v6
+
+    invoke-virtual {v4, v6}, Landroid/graphics/drawable/GradientDrawable;->setTint(I)V
+
+    :goto_1
+    invoke-virtual {v2, v4}, Landroid/widget/TextView;->setBackground(Landroid/graphics/drawable/Drawable;)V
+
+    :cond_1
     const/4 v4, 0x1
 
     invoke-virtual {v2, v4}, Landroid/widget/TextView;->setSelected(Z)V
@@ -234,11 +264,21 @@
 
     invoke-virtual {v2, v4}, Landroid/widget/TextView;->sendAccessibilityEvent(I)V
 
-    iget v4, p0, Lcom/google/android/apps/camera/camcorder/ui/modeslider/recordspeed/RecordSpeedSlider;->e:I
+    iget v4, p0, Lcom/google/android/apps/camera/camcorder/ui/modeslider/recordspeed/RecordSpeedSlider;->f:I
 
-    if-ne p1, v4, :cond_1
+    if-ne p1, v4, :cond_2
 
-    invoke-static {v2, v5}, Lkwp;->l(Landroid/view/View;I)I
+    iget-object v3, p0, Lcom/google/android/apps/camera/camcorder/ui/modeslider/recordspeed/RecordSpeedSlider;->e:Lddf;
+
+    sget-object v4, Lddl;->ay:Lddg;
+
+    invoke-interface {v3, v4}, Lddf;->k(Lddg;)Z
+
+    move-result v3
+
+    if-eqz v3, :cond_7
+
+    invoke-static {v2, v5}, Lobr;->e(Landroid/view/View;I)I
 
     move-result v3
 
@@ -250,33 +290,43 @@
 
     invoke-virtual {v2, v3}, Landroid/graphics/drawable/Drawable;->setTint(I)V
 
-    goto :goto_1
+    goto/16 :goto_2
 
-    :cond_1
+    :cond_2
     invoke-virtual {p0}, Lcom/google/android/apps/camera/camcorder/ui/modeslider/recordspeed/RecordSpeedSlider;->getContext()Landroid/content/Context;
 
     move-result-object v4
 
-    iget v6, p0, Lcom/google/android/apps/camera/camcorder/ui/modeslider/recordspeed/RecordSpeedSlider;->f:I
+    iget v6, p0, Lcom/google/android/apps/camera/camcorder/ui/modeslider/recordspeed/RecordSpeedSlider;->g:I
 
     invoke-virtual {v4, v6}, Landroid/content/Context;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
     move-result-object v4
 
-    invoke-static {v2, v5}, Lkwp;->l(Landroid/view/View;I)I
+    iget-object v6, p0, Lcom/google/android/apps/camera/camcorder/ui/modeslider/recordspeed/RecordSpeedSlider;->e:Lddf;
+
+    sget-object v7, Lddl;->ay:Lddg;
+
+    invoke-interface {v6, v7}, Lddf;->k(Lddg;)Z
+
+    move-result v6
+
+    if-eqz v6, :cond_3
+
+    invoke-static {v2, v5}, Lobr;->e(Landroid/view/View;I)I
 
     move-result v5
 
-    if-eqz v4, :cond_2
+    if-eqz v4, :cond_3
 
     invoke-virtual {v4, v5}, Landroid/graphics/drawable/Drawable;->setTint(I)V
 
-    :cond_2
+    :cond_3
     invoke-virtual {p0}, Lcom/google/android/apps/camera/camcorder/ui/modeslider/recordspeed/RecordSpeedSlider;->getResources()Landroid/content/res/Resources;
 
     move-result-object v5
 
-    const v6, 0x7f0705dd
+    const v6, 0x7f0704d7
 
     invoke-virtual {v5, v6}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -290,7 +340,7 @@
 
     move-result-object v3
 
-    const v4, 0x7f0705da
+    const v4, 0x7f0704d4
 
     invoke-virtual {v3, v4}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -300,26 +350,47 @@
 
     invoke-virtual {v2, v3, v0, v4, v0}, Landroid/widget/TextView;->setPadding(IIII)V
 
-    goto :goto_1
+    goto :goto_2
 
-    :cond_3
-    const v4, 0x7f040181
+    :cond_4
+    iget-object v4, p0, Lcom/google/android/apps/camera/camcorder/ui/modeslider/recordspeed/RecordSpeedSlider;->e:Lddf;
 
-    invoke-static {v2, v4}, Lkwp;->l(Landroid/view/View;I)I
+    sget-object v5, Lddl;->ay:Lddg;
 
-    move-result v5
+    invoke-interface {v4, v5}, Lddf;->k(Lddg;)Z
 
-    invoke-virtual {p0, v2, v5}, Lcom/google/android/apps/camera/camcorder/ui/modeslider/recordspeed/RecordSpeedSlider;->k(Landroid/widget/TextView;I)V
+    move-result v4
 
+    const v5, 0x7f04012e
+
+    if-eqz v4, :cond_5
+
+    invoke-static {v2, v5}, Lobr;->e(Landroid/view/View;I)I
+
+    move-result v4
+
+    invoke-virtual {p0, v2, v4}, Lcom/google/android/apps/camera/camcorder/ui/modeslider/recordspeed/RecordSpeedSlider;->k(Landroid/widget/TextView;I)V
+
+    :cond_5
     invoke-virtual {v2, v3}, Landroid/widget/TextView;->setBackground(Landroid/graphics/drawable/Drawable;)V
 
     invoke-virtual {v2, v0}, Landroid/widget/TextView;->setSelected(Z)V
 
-    iget v5, p0, Lcom/google/android/apps/camera/camcorder/ui/modeslider/recordspeed/RecordSpeedSlider;->e:I
+    iget v4, p0, Lcom/google/android/apps/camera/camcorder/ui/modeslider/recordspeed/RecordSpeedSlider;->f:I
 
-    if-ne v1, v5, :cond_4
+    if-ne v1, v4, :cond_6
 
-    invoke-static {v2, v4}, Lkwp;->l(Landroid/view/View;I)I
+    iget-object v3, p0, Lcom/google/android/apps/camera/camcorder/ui/modeslider/recordspeed/RecordSpeedSlider;->e:Lddf;
+
+    sget-object v4, Lddl;->ay:Lddg;
+
+    invoke-interface {v3, v4}, Lddf;->k(Lddg;)Z
+
+    move-result v3
+
+    if-eqz v3, :cond_7
+
+    invoke-static {v2, v5}, Lobr;->e(Landroid/view/View;I)I
 
     move-result v3
 
@@ -331,9 +402,9 @@
 
     invoke-virtual {v2, v3}, Landroid/graphics/drawable/Drawable;->setTint(I)V
 
-    goto :goto_1
+    goto :goto_2
 
-    :cond_4
+    :cond_6
     invoke-virtual {v2, v3, v3, v3, v3}, Landroid/widget/TextView;->setCompoundDrawablesRelativeWithIntrinsicBounds(Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;)V
 
     invoke-virtual {v2, v0}, Landroid/widget/TextView;->setCompoundDrawablePadding(I)V
@@ -342,44 +413,47 @@
 
     invoke-virtual {v2, v3, v0, v3, v0}, Landroid/widget/TextView;->setPadding(IIII)V
 
-    :goto_1
+    :cond_7
+    :goto_2
     add-int/lit8 v1, v1, 0x1
 
     goto/16 :goto_0
 
-    :cond_5
+    :cond_8
     iget-object v1, p0, Lcom/google/android/apps/camera/camcorder/ui/modeslider/recordspeed/RecordSpeedSlider;->a:Ljava/util/concurrent/atomic/AtomicInteger;
 
     invoke-virtual {v1, p1}, Ljava/util/concurrent/atomic/AtomicInteger;->set(I)V
 
-    iget-object v1, p0, Lcom/google/android/apps/camera/camcorder/ui/modeslider/recordspeed/RecordSpeedSlider;->d:Liap;
+    iget-object v1, p0, Lcom/google/android/apps/camera/camcorder/ui/modeslider/recordspeed/RecordSpeedSlider;->d:Ljem;
 
-    if-eqz v1, :cond_7
+    if-eqz v1, :cond_a
 
-    if-nez p2, :cond_6
+    if-nez p2, :cond_9
 
-    invoke-interface {v1, v0}, Liap;->c(Z)V
+    invoke-interface {v1, v0}, Ljem;->c(Z)V
 
-    :cond_6
-    iget-object v1, p0, Lcom/google/android/apps/camera/camcorder/ui/modeslider/recordspeed/RecordSpeedSlider;->d:Liap;
+    :cond_9
+    iget-object v1, p0, Lcom/google/android/apps/camera/camcorder/ui/modeslider/recordspeed/RecordSpeedSlider;->d:Ljem;
 
-    invoke-interface {v1, p0, p1, p2}, Liap;->a(Landroid/view/View;IZ)V
+    invoke-interface {v1, p0, p1, p2}, Ljem;->a(Landroid/view/View;IZ)V
 
-    if-nez p2, :cond_7
+    if-nez p2, :cond_a
 
-    iget-object p1, p0, Lcom/google/android/apps/camera/camcorder/ui/modeslider/recordspeed/RecordSpeedSlider;->d:Liap;
+    iget-object p1, p0, Lcom/google/android/apps/camera/camcorder/ui/modeslider/recordspeed/RecordSpeedSlider;->d:Ljem;
 
-    invoke-interface {p1, p0, v0}, Liap;->b(Landroid/view/View;Z)V
+    invoke-interface {p1, p0, v0}, Ljem;->b(Landroid/view/View;Z)V
 
-    :cond_7
+    :cond_a
     return-void
 
-    :cond_8
+    :cond_b
     new-instance p2, Ljava/lang/IllegalArgumentException;
 
     new-instance v0, Ljava/lang/StringBuilder;
 
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+    const/16 v1, 0x1a
+
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(I)V
 
     const-string v1, "Illegal index: "
 
@@ -393,13 +467,13 @@
 
     invoke-direct {p2, p1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
-    goto :goto_3
-
-    :goto_2
-    throw p2
+    goto :goto_4
 
     :goto_3
-    goto :goto_2
+    throw p2
+
+    :goto_4
+    goto :goto_3
 .end method
 
 .method public final h()V
@@ -415,7 +489,7 @@
 .method public final i()Z
     .locals 2
 
-    iget v0, p0, Lcom/google/android/apps/camera/camcorder/ui/modeslider/recordspeed/RecordSpeedSlider;->e:I
+    iget v0, p0, Lcom/google/android/apps/camera/camcorder/ui/modeslider/recordspeed/RecordSpeedSlider;->f:I
 
     invoke-virtual {p0, v0}, Lcom/google/android/apps/camera/camcorder/ui/modeslider/recordspeed/RecordSpeedSlider;->getChildAt(I)Landroid/view/View;
 
@@ -428,7 +502,7 @@
     return v1
 
     :cond_0
-    iget v0, p0, Lcom/google/android/apps/camera/camcorder/ui/modeslider/recordspeed/RecordSpeedSlider;->e:I
+    iget v0, p0, Lcom/google/android/apps/camera/camcorder/ui/modeslider/recordspeed/RecordSpeedSlider;->f:I
 
     invoke-virtual {p0, v0}, Lcom/google/android/apps/camera/camcorder/ui/modeslider/recordspeed/RecordSpeedSlider;->getChildAt(I)Landroid/view/View;
 
@@ -474,13 +548,13 @@
 
     move-result-object v0
 
-    new-instance v1, Lczw;
+    new-instance v1, Lctv;
 
-    invoke-direct {v1, p1}, Lczw;-><init>(Landroid/widget/TextView;)V
+    invoke-direct {v1, p1}, Lctv;-><init>(Landroid/widget/TextView;)V
 
-    const v2, 0x7f09000b
+    const v2, 0x7f090006
 
-    invoke-static {v0, v2, v1}, Lacn;->a(Landroid/content/Context;ILacl;)V
+    invoke-static {v0, v2, v1}, Lei;->e(Landroid/content/Context;ILeg;)V
 
     invoke-virtual {p1, p2}, Landroid/widget/TextView;->setTextColor(I)V
 

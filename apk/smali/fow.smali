@@ -3,103 +3,233 @@
 
 
 # instance fields
-.field public a:F
+.field private final a:Z
 
-.field public b:F
+.field private final b:Lgog;
 
-.field public final c:Ljava/lang/Object;
+.field private final c:Lely;
+
+.field private final d:Lely;
+
+.field private final e:Lely;
+
+.field private final f:Lpyn;
+
+.field private final g:Lddf;
+
+.field private final h:Lghx;
 
 
 # direct methods
-.method public constructor <init>()V
+.method public constructor <init>(Lojc;Lpyn;Lpyn;Lpyn;Lpyn;Lghx;Lddf;Lgog;)V
     .locals 1
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const v0, -0x3f79999a    # -4.2f
+    const/4 v0, 0x0
 
-    iput v0, p0, Lfow;->a:F
+    invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
-    new-instance v0, Laio;
+    move-result-object v0
 
-    invoke-direct {v0}, Laio;-><init>()V
+    invoke-virtual {p1, v0}, Lojc;->e(Ljava/lang/Object;)Ljava/lang/Object;
 
-    iput-object v0, p0, Lfow;->c:Ljava/lang/Object;
+    move-result-object p1
+
+    check-cast p1, Ljava/lang/Boolean;
+
+    invoke-virtual {p1}, Ljava/lang/Boolean;->booleanValue()Z
+
+    move-result p1
+
+    iput-boolean p1, p0, Lfow;->a:Z
+
+    invoke-static {p2}, Lely;->a(Lpyn;)Lely;
+
+    move-result-object p1
+
+    iput-object p1, p0, Lfow;->c:Lely;
+
+    invoke-static {p3}, Lely;->a(Lpyn;)Lely;
+
+    move-result-object p1
+
+    iput-object p1, p0, Lfow;->d:Lely;
+
+    invoke-static {p4}, Lely;->a(Lpyn;)Lely;
+
+    move-result-object p1
+
+    iput-object p1, p0, Lfow;->e:Lely;
+
+    iput-object p5, p0, Lfow;->f:Lpyn;
+
+    iput-object p8, p0, Lfow;->b:Lgog;
+
+    iput-object p6, p0, Lfow;->h:Lghx;
+
+    iput-object p7, p0, Lfow;->g:Lddf;
 
     return-void
 .end method
 
-.method public constructor <init>(Lgsl;)V
-    .locals 5
+.method private static d(Lhen;)Lgew;
+    .locals 2
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance v0, Lhad;
 
-    iput-object p1, p0, Lfow;->c:Ljava/lang/Object;
+    const/4 v1, 0x1
 
-    iget v0, p1, Lgsl;->b:F
+    invoke-direct {v0, p0, v1}, Lhad;-><init>(Lhen;I)V
 
-    iget v1, p1, Lgsl;->f:F
-
-    const/high16 v2, -0x3b860000    # -1000.0f
-
-    const/4 v3, 0x0
-
-    cmpl-float v4, v1, v3
-
-    if-lez v4, :cond_0
-
-    iget-boolean v4, p1, Lgsl;->n:Z
-
-    if-nez v4, :cond_2
-
-    :cond_0
-    const/high16 v4, 0x3f800000    # 1.0f
-
-    cmpg-float v1, v1, v4
-
-    if-gez v1, :cond_1
-
-    iget-boolean p1, p1, Lgsl;->o:Z
-
-    if-eqz p1, :cond_1
-
-    goto :goto_0
-
-    :cond_1
-    const/4 v2, 0x0
-
-    :cond_2
-    :goto_0
-    add-float/2addr v0, v2
-
-    iput v0, p0, Lfow;->a:F
-
-    iput v0, p0, Lfow;->b:F
-
-    return-void
+    return-object v0
 .end method
 
 
 # virtual methods
-.method public final a(F)Z
-    .locals 1
+.method public final a()Lojc;
+    .locals 5
 
-    invoke-static {p1}, Ljava/lang/Math;->abs(F)F
+    iget-object v0, p0, Lfow;->c:Lely;
 
-    move-result p1
+    invoke-virtual {v0}, Lely;->c()Z
 
-    iget v0, p0, Lfow;->b:F
+    move-result v0
 
-    cmpg-float p1, p1, v0
+    if-nez v0, :cond_0
 
-    if-gez p1, :cond_0
+    sget-object v0, Loih;->a:Loih;
 
-    const/4 p1, 0x1
-
-    return p1
+    return-object v0
 
     :cond_0
-    const/4 p1, 0x0
+    iget-object v0, p0, Lfow;->b:Lgog;
 
-    return p1
+    iget-object v1, v0, Lgog;->b:Lhsa;
+
+    iget-object v0, v0, Lgog;->a:Lgfs;
+
+    iget v0, v0, Lgfs;->a:I
+
+    iget-object v2, p0, Lfow;->h:Lghx;
+
+    iget-object v3, p0, Lfow;->g:Lddf;
+
+    invoke-static {v0, v2, v3}, Lbrg;->d(ILlvp;Lddf;)I
+
+    move-result v0
+
+    iget-object v2, p0, Lfow;->c:Lely;
+
+    invoke-virtual {v2}, Lely;->b()Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Lfpm;
+
+    const/4 v3, 0x0
+
+    sget-object v4, Loih;->a:Loih;
+
+    invoke-static {v4}, Lplk;->V(Ljava/lang/Object;)Lpht;
+
+    move-result-object v4
+
+    invoke-interface {v2, v1, v0, v3, v4}, Lfpm;->a(Lhsa;IZLpht;)Lfpl;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lojc;->i(Ljava/lang/Object;)Lojc;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public final b()V
+    .locals 3
+
+    iget-boolean v0, p0, Lfow;->a:Z
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lfow;->d:Lely;
+
+    invoke-virtual {v0}, Lely;->b()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lges;
+
+    iget-object v1, p0, Lfow;->f:Lpyn;
+
+    invoke-interface {v1}, Lpyn;->get()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Lhen;
+
+    invoke-static {v1}, Lfow;->d(Lhen;)Lgew;
+
+    move-result-object v1
+
+    iget-object v2, p0, Lfow;->b:Lgog;
+
+    invoke-interface {v0, v1, v2}, Lges;->k(Lgew;Lgog;)V
+
+    iget-object v0, p0, Lfow;->e:Lely;
+
+    invoke-virtual {v0}, Lely;->b()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lgez;
+
+    iget-object v1, p0, Lfow;->b:Lgog;
+
+    iget-object v1, v1, Lgog;->b:Lhsa;
+
+    invoke-interface {v1}, Lhsa;->h()Lhsp;
+
+    move-result-object v1
+
+    invoke-interface {v0, v1}, Lgez;->f(Lhsp;)V
+
+    :cond_0
+    return-void
+.end method
+
+.method public final c()V
+    .locals 3
+
+    iget-boolean v0, p0, Lfow;->a:Z
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lfow;->d:Lely;
+
+    invoke-virtual {v0}, Lely;->b()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lges;
+
+    iget-object v1, p0, Lfow;->f:Lpyn;
+
+    invoke-interface {v1}, Lpyn;->get()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Lhen;
+
+    invoke-static {v1}, Lfow;->d(Lhen;)Lgew;
+
+    move-result-object v1
+
+    iget-object v2, p0, Lfow;->b:Lgog;
+
+    invoke-interface {v0, v1, v2}, Lges;->i(Lgew;Lgog;)V
+
+    :cond_0
+    return-void
 .end method

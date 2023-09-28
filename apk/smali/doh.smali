@@ -1,84 +1,67 @@
-.class public final enum Ldoh;
-.super Ljava/lang/Enum;
+.class final Ldoh;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Lgjt;
 
 
-# static fields
-.field public static final enum a:Ldoh;
+# instance fields
+.field final synthetic a:Ldos;
 
-.field public static final enum b:Ldoh;
-
-.field public static final enum c:Ldoh;
-
-.field private static final synthetic d:[Ldoh;
+.field final synthetic b:Ldoi;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 7
-
-    new-instance v0, Ldoh;
-
-    const-string v1, "SINGLE"
-
-    const/4 v2, 0x0
-
-    invoke-direct {v0, v1, v2}, Ldoh;-><init>(Ljava/lang/String;I)V
-
-    sput-object v0, Ldoh;->a:Ldoh;
-
-    new-instance v1, Ldoh;
-
-    const-string v3, "DUAL"
-
-    const/4 v4, 0x1
-
-    invoke-direct {v1, v3, v4}, Ldoh;-><init>(Ljava/lang/String;I)V
-
-    sput-object v1, Ldoh;->b:Ldoh;
-
-    new-instance v3, Ldoh;
-
-    const-string v5, "DUAL_INDEPENDENT"
-
-    const/4 v6, 0x2
-
-    invoke-direct {v3, v5, v6}, Ldoh;-><init>(Ljava/lang/String;I)V
-
-    sput-object v3, Ldoh;->c:Ldoh;
-
-    const/4 v5, 0x3
-
-    new-array v5, v5, [Ldoh;
-
-    aput-object v0, v5, v2
-
-    aput-object v1, v5, v4
-
-    aput-object v3, v5, v6
-
-    sput-object v5, Ldoh;->d:[Ldoh;
-
-    return-void
-.end method
-
-.method private constructor <init>(Ljava/lang/String;I)V
+.method public constructor <init>(Ldoi;Ldos;)V
     .locals 0
 
-    invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+    iput-object p1, p0, Ldoh;->b:Ldoi;
+
+    iput-object p2, p0, Ldoh;->a:Ldos;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
-.method public static values()[Ldoh;
-    .locals 1
 
-    sget-object v0, Ldoh;->d:[Ldoh;
+# virtual methods
+.method public final a()Lpht;
+    .locals 2
 
-    invoke-virtual {v0}, [Ldoh;->clone()Ljava/lang/Object;
+    iget-object v0, p0, Ldoh;->a:Ldos;
+
+    new-instance v1, Ldog;
+
+    invoke-direct {v1, p0, v0}, Ldog;-><init>(Ldoh;Ldos;)V
+
+    invoke-static {v1}, Lphu;->a(Ljava/util/concurrent/Callable;)Lphu;
 
     move-result-object v0
 
-    check-cast v0, [Ldoh;
+    iget-object v1, p0, Ldoh;->b:Ldoi;
+
+    iget-object v1, v1, Ldoi;->a:Ljava/util/concurrent/Executor;
+
+    invoke-interface {v1, v0}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
+
+    return-object v0
+.end method
+
+.method public final b()Lpht;
+    .locals 2
+
+    new-instance v0, Ldod;
+
+    iget-object v1, p0, Ldoh;->a:Ldos;
+
+    iget-object v1, v1, Ldos;->a:Lmad;
+
+    invoke-direct {v0, v1}, Ldod;-><init>(Lmad;)V
+
+    invoke-static {v0}, Lplk;->V(Ljava/lang/Object;)Lpht;
+
+    move-result-object v0
 
     return-object v0
 .end method

@@ -1,188 +1,290 @@
 .class public final Lobc;
-.super Lnws;
-
-# interfaces
-.implements Lnxz;
+.super Loau;
 
 
 # static fields
-.field public static final f:Lobc;
+.field public static final a:[I
 
-.field private static volatile g:Lnyf;
+.field public static final b:[I
+
+.field private static final n:Landroid/util/Property;
 
 
 # instance fields
-.field public a:I
+.field public c:Landroid/animation/ObjectAnimator;
 
-.field public b:F
+.field public final d:[Landroid/view/animation/Interpolator;
 
-.field public c:F
+.field public final e:Loaf;
 
-.field public d:F
+.field public f:I
 
-.field public e:F
+.field public g:Z
+
+.field public h:F
+
+.field public i:Z
+
+.field m:Lga;
 
 
 # direct methods
 .method static constructor <clinit>()V
     .locals 2
 
-    new-instance v0, Lobc;
+    const/4 v0, 0x4
 
-    invoke-direct {v0}, Lobc;-><init>()V
+    new-array v1, v0, [I
 
-    sput-object v0, Lobc;->f:Lobc;
+    fill-array-data v1, :array_0
 
-    const-class v1, Lobc;
+    sput-object v1, Lobc;->a:[I
 
-    invoke-static {v1, v0}, Lnws;->aa(Ljava/lang/Class;Lnws;)V
+    new-array v0, v0, [I
+
+    fill-array-data v0, :array_1
+
+    sput-object v0, Lobc;->b:[I
+
+    new-instance v0, Lobb;
+
+    const-class v1, Ljava/lang/Float;
+
+    invoke-direct {v0, v1}, Lobb;-><init>(Ljava/lang/Class;)V
+
+    sput-object v0, Lobc;->n:Landroid/util/Property;
 
     return-void
+
+    nop
+
+    :array_0
+    .array-data 4
+        0x215
+        0x237
+        0x352
+        0x2ee
+    .end array-data
+
+    :array_1
+    .array-data 4
+        0x4f3
+        0x3e8
+        0x14d
+        0x0
+    .end array-data
 .end method
 
-.method private constructor <init>()V
-    .locals 0
+.method public constructor <init>(Landroid/content/Context;Lobd;)V
+    .locals 3
 
-    invoke-direct {p0}, Lnws;-><init>()V
+    const/4 v0, 0x2
+
+    invoke-direct {p0, v0}, Loau;-><init>(I)V
+
+    const/4 v1, 0x0
+
+    iput v1, p0, Lobc;->f:I
+
+    const/4 v2, 0x0
+
+    iput-object v2, p0, Lobc;->m:Lga;
+
+    iput-object p2, p0, Lobc;->e:Loaf;
+
+    const/4 p2, 0x4
+
+    new-array p2, p2, [Landroid/view/animation/Interpolator;
+
+    const v2, 0x7f020028
+
+    invoke-static {p1, v2}, Landroid/view/animation/AnimationUtils;->loadInterpolator(Landroid/content/Context;I)Landroid/view/animation/Interpolator;
+
+    move-result-object v2
+
+    aput-object v2, p2, v1
+
+    const v1, 0x7f020029
+
+    invoke-static {p1, v1}, Landroid/view/animation/AnimationUtils;->loadInterpolator(Landroid/content/Context;I)Landroid/view/animation/Interpolator;
+
+    move-result-object v1
+
+    const/4 v2, 0x1
+
+    aput-object v1, p2, v2
+
+    const v1, 0x7f02002a
+
+    invoke-static {p1, v1}, Landroid/view/animation/AnimationUtils;->loadInterpolator(Landroid/content/Context;I)Landroid/view/animation/Interpolator;
+
+    move-result-object v1
+
+    aput-object v1, p2, v0
+
+    const v0, 0x7f02002b
+
+    invoke-static {p1, v0}, Landroid/view/animation/AnimationUtils;->loadInterpolator(Landroid/content/Context;I)Landroid/view/animation/Interpolator;
+
+    move-result-object p1
+
+    const/4 v0, 0x3
+
+    aput-object p1, p2, v0
+
+    iput-object p2, p0, Lobc;->d:[Landroid/view/animation/Interpolator;
 
     return-void
 .end method
 
 
 # virtual methods
-.method protected final a(ILjava/lang/Object;)Ljava/lang/Object;
-    .locals 3
+.method public final a()V
+    .locals 1
 
-    add-int/lit8 p1, p1, -0x1
+    iget-object v0, p0, Lobc;->c:Landroid/animation/ObjectAnimator;
 
-    const/4 p2, 0x1
+    if-eqz v0, :cond_0
 
-    packed-switch p1, :pswitch_data_0
-
-    :pswitch_0
-    const/4 p1, 0x0
-
-    return-object p1
-
-    :pswitch_1
-    sget-object p1, Lobc;->g:Lnyf;
-
-    if-nez p1, :cond_1
-
-    const-class p2, Lobc;
-
-    monitor-enter p2
-
-    :try_start_0
-    sget-object p1, Lobc;->g:Lnyf;
-
-    if-nez p1, :cond_0
-
-    new-instance p1, Lnwo;
-
-    sget-object v0, Lobc;->f:Lobc;
-
-    invoke-direct {p1, v0}, Lnwo;-><init>(Lnws;)V
-
-    sput-object p1, Lobc;->g:Lnyf;
+    invoke-virtual {v0}, Landroid/animation/ObjectAnimator;->cancel()V
 
     :cond_0
-    monitor-exit p2
+    return-void
+.end method
 
-    goto :goto_0
+.method public final b()V
+    .locals 2
 
-    :catchall_0
-    move-exception p1
+    iget-object v0, p0, Lobc;->j:Loav;
 
-    monitor-exit p2
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    invoke-virtual {v0}, Loav;->isVisible()Z
 
-    throw p1
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    const/4 v0, 0x1
+
+    iput-boolean v0, p0, Lobc;->i:Z
+
+    iget-object v0, p0, Lobc;->c:Landroid/animation/ObjectAnimator;
+
+    if-eqz v0, :cond_0
+
+    const/4 v1, 0x0
+
+    invoke-virtual {v0, v1}, Landroid/animation/ObjectAnimator;->setRepeatCount(I)V
+
+    :cond_0
+    return-void
 
     :cond_1
-    :goto_0
-    return-object p1
+    invoke-virtual {p0}, Lobc;->a()V
 
-    :pswitch_2
-    sget-object p1, Lobc;->f:Lobc;
+    return-void
+.end method
 
-    return-object p1
+.method public final c()V
+    .locals 3
 
-    :pswitch_3
-    new-instance p1, Lnwn;
+    iget-object v0, p0, Lobc;->c:Landroid/animation/ObjectAnimator;
 
-    sget-object p2, Lobc;->f:Lobc;
+    if-nez v0, :cond_0
 
-    invoke-direct {p1, p2}, Lnwn;-><init>(Lnws;)V
+    sget-object v0, Lobc;->n:Landroid/util/Property;
 
-    return-object p1
+    const/4 v1, 0x2
 
-    :pswitch_4
-    new-instance p1, Lobc;
+    new-array v1, v1, [F
 
-    invoke-direct {p1}, Lobc;-><init>()V
+    fill-array-data v1, :array_0
 
-    return-object p1
+    invoke-static {p0, v0, v1}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
 
-    :pswitch_5
-    const-string p1, "a"
+    move-result-object v0
 
-    const-string v0, "\u0001\u0004\u0000\u0001\u0001\u0004\u0004\u0000\u0000\u0000\u0001\u1001\u0000\u0002\u1001\u0001\u0003\u1001\u0002\u0004\u1001\u0003"
+    iput-object v0, p0, Lobc;->c:Landroid/animation/ObjectAnimator;
 
-    const/4 v1, 0x5
+    const-wide/16 v1, 0x708
 
-    new-array v1, v1, [Ljava/lang/Object;
+    invoke-virtual {v0, v1, v2}, Landroid/animation/ObjectAnimator;->setDuration(J)Landroid/animation/ObjectAnimator;
 
-    const/4 v2, 0x0
+    iget-object v0, p0, Lobc;->c:Landroid/animation/ObjectAnimator;
 
-    aput-object p1, v1, v2
+    const/4 v1, 0x0
 
-    const-string p1, "b"
+    invoke-virtual {v0, v1}, Landroid/animation/ObjectAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    aput-object p1, v1, p2
+    iget-object v0, p0, Lobc;->c:Landroid/animation/ObjectAnimator;
 
-    const/4 p1, 0x2
+    const/4 v1, -0x1
 
-    const-string p2, "c"
+    invoke-virtual {v0, v1}, Landroid/animation/ObjectAnimator;->setRepeatCount(I)V
 
-    aput-object p2, v1, p1
+    iget-object v0, p0, Lobc;->c:Landroid/animation/ObjectAnimator;
 
-    const/4 p1, 0x3
+    new-instance v1, Loba;
 
-    const-string p2, "d"
+    invoke-direct {v1, p0}, Loba;-><init>(Lobc;)V
 
-    aput-object p2, v1, p1
+    invoke-virtual {v0, v1}, Landroid/animation/ObjectAnimator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    const/4 p1, 0x4
+    :cond_0
+    const/4 v0, 0x0
 
-    const-string p2, "e"
+    iput v0, p0, Lobc;->f:I
 
-    aput-object p2, v1, p1
+    iget-object v1, p0, Lobc;->e:Loaf;
 
-    sget-object p1, Lobc;->f:Lobc;
+    iget-object v1, v1, Loaf;->c:[I
 
-    invoke-static {p1, v0, v1}, Lobc;->X(Lnxy;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/Object;
+    aget v1, v1, v0
 
-    move-result-object p1
+    iget-object v2, p0, Lobc;->j:Loav;
 
-    return-object p1
+    iget v2, v2, Loas;->i:I
 
-    :pswitch_6
-    invoke-static {p2}, Ljava/lang/Byte;->valueOf(B)Ljava/lang/Byte;
+    invoke-static {v1, v2}, Lohh;->W(II)I
 
-    move-result-object p1
+    move-result v1
 
-    return-object p1
+    iget-object v2, p0, Lobc;->l:[I
 
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_6
-        :pswitch_0
-        :pswitch_5
-        :pswitch_4
-        :pswitch_3
-        :pswitch_2
-        :pswitch_1
-    .end packed-switch
+    aput v1, v2, v0
+
+    const/4 v0, 0x1
+
+    aput v1, v2, v0
+
+    iget-object v0, p0, Lobc;->c:Landroid/animation/ObjectAnimator;
+
+    invoke-virtual {v0}, Landroid/animation/ObjectAnimator;->start()V
+
+    return-void
+
+    nop
+
+    :array_0
+    .array-data 4
+        0x0
+        0x3f800000    # 1.0f
+    .end array-data
+.end method
+
+.method public final d()V
+    .locals 1
+
+    const/4 v0, 0x0
+
+    iput-object v0, p0, Lobc;->m:Lga;
+
+    return-void
+.end method
+
+.method public final e(Lga;)V
+    .locals 0
+
+    iput-object p1, p0, Lobc;->m:Lga;
+
+    return-void
 .end method

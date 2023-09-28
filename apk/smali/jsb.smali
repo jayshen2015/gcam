@@ -1,66 +1,82 @@
 .class public final Ljsb;
-.super Ljhn;
-
-
-# static fields
-.field public static final CREATOR:Landroid/os/Parcelable$Creator;
+.super Landroid/animation/AnimatorListenerAdapter;
 
 
 # instance fields
-.field public final a:I
+.field private final a:Landroid/view/View;
 
-.field public final b:Z
+.field private final b:I
+
+.field private c:I
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
+.method public constructor <init>(Landroid/view/View;I)V
+    .locals 1
 
-    new-instance v0, Ljro;
+    invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
 
-    const/16 v1, 0xd
+    const/4 v0, 0x0
 
-    invoke-direct {v0, v1}, Ljro;-><init>(I)V
+    iput v0, p0, Ljsb;->c:I
 
-    sput-object v0, Ljsb;->CREATOR:Landroid/os/Parcelable$Creator;
+    iput-object p1, p0, Ljsb;->a:Landroid/view/View;
 
-    return-void
-.end method
-
-.method public constructor <init>(IZ)V
-    .locals 0
-
-    invoke-direct {p0}, Ljhn;-><init>()V
-
-    iput p1, p0, Ljsb;->a:I
-
-    iput-boolean p2, p0, Ljsb;->b:Z
+    iput p2, p0, Ljsb;->b:I
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final writeToParcel(Landroid/os/Parcel;I)V
-    .locals 2
+.method public final onAnimationCancel(Landroid/animation/Animator;)V
+    .locals 1
 
-    invoke-static {p1}, Ljhp;->a(Landroid/os/Parcel;)I
+    iget-object p1, p0, Ljsb;->a:Landroid/view/View;
 
-    move-result p2
+    iget v0, p0, Ljsb;->c:I
 
-    iget v0, p0, Ljsb;->a:I
+    invoke-virtual {p1, v0}, Landroid/view/View;->setVisibility(I)V
 
-    const/4 v1, 0x1
+    return-void
+.end method
 
-    invoke-static {p1, v1, v0}, Ljhp;->g(Landroid/os/Parcel;II)V
+.method public final onAnimationEnd(Landroid/animation/Animator;)V
+    .locals 1
 
-    iget-boolean v0, p0, Ljsb;->b:Z
+    iget p1, p0, Ljsb;->b:I
 
-    const/4 v1, 0x2
+    if-eqz p1, :cond_0
 
-    invoke-static {p1, v1, v0}, Ljhp;->d(Landroid/os/Parcel;IZ)V
+    iget-object v0, p0, Ljsb;->a:Landroid/view/View;
 
-    invoke-static {p1, p2}, Ljhp;->c(Landroid/os/Parcel;I)V
+    invoke-virtual {v0, p1}, Landroid/view/View;->setVisibility(I)V
 
+    :cond_0
+    return-void
+.end method
+
+.method public final onAnimationStart(Landroid/animation/Animator;)V
+    .locals 1
+
+    iget-object p1, p0, Ljsb;->a:Landroid/view/View;
+
+    invoke-virtual {p1}, Landroid/view/View;->getVisibility()I
+
+    move-result p1
+
+    iput p1, p0, Ljsb;->c:I
+
+    iget p1, p0, Ljsb;->b:I
+
+    if-nez p1, :cond_0
+
+    iget-object p1, p0, Ljsb;->a:Landroid/view/View;
+
+    const/4 v0, 0x0
+
+    invoke-virtual {p1, v0}, Landroid/view/View;->setVisibility(I)V
+
+    :cond_0
     return-void
 .end method

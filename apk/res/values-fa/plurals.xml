@@ -1,12 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <plurals name="accessibility_timelapse_manual_record_speed_desc">
-        <item quantity="other">زمان‌گریز با سرعت %d برابر</item>
-        <item quantity="one">زمان‌گریز با سرعت %d برابر</item>
-    </plurals>
-    <plurals name="number_of_cropped_face">
-        <item quantity="other">%d مورد برش داده شد.</item>
-        <item quantity="one">%d مورد برش داده شد.</item>
+    <plurals name="number_of_faces_announcement">
+        <item quantity="other">%1$d چهره.</item>
+        <item quantity="one">%1$d چهره.</item>
     </plurals>
     <plurals name="photos_remaining">
         <item quantity="other">حدود %s عکس</item>
@@ -17,8 +13,8 @@
         <item quantity="one">(%1$d برنامه انتخاب شد)</item>
     </plurals>
     <plurals name="social_share_info">
-        <item quantity="other">عکس‌ها و ویدیوها را به‌سرعت ازطریق «دوربین» در برنامه‌های اجتماعی هم‌رسانی کنید. حداکثر %1$d برنامه انتخاب کنید. عکس‌ها و ویدیوهای ذخیره‌شده در «پوشه محافظت‌شده» را نمی‌توان هم‌رسانی کرد.</item>
-        <item quantity="one">عکس‌ها و ویدیوها را به‌سرعت ازطریق «دوربین» در برنامه‌های اجتماعی هم‌رسانی کنید. حداکثر %1$d برنامه انتخاب کنید. عکس‌ها و ویدیوهای ذخیره‌شده در «پوشه محافظت‌شده» را نمی‌توان هم‌رسانی کرد.</item>
+        <item quantity="other">عکس‌ها و ویدیوها را به‌سرعت از «دوربین» در برنامه‌های اجتماعی هم‌رسانی کنید. حداکثر %1$d برنامه انتخاب کنید. عکس‌ها و فیلم‌های ذخیره‌شده در «پوشه محافظت‌شده» را نمی‌توان هم‌رسانی کرد.</item>
+        <item quantity="one">عکس‌ها و ویدیوها را به‌سرعت از «دوربین» در برنامه‌های اجتماعی هم‌رسانی کنید. حداکثر %1$d برنامه انتخاب کنید. عکس‌ها و فیلم‌های ذخیره‌شده در «پوشه محافظت‌شده» را نمی‌توان هم‌رسانی کرد.</item>
     </plurals>
     <plurals name="social_share_select_error">
         <item quantity="other">حداکثر %1$d برنامه انتخاب کنید</item>

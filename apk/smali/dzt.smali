@@ -1,105 +1,113 @@
-.class public final synthetic Ldzt;
+.class public final Ldzt;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Ldzu;
 
 
 # instance fields
-.field public final synthetic a:Ldzu;
+.field final synthetic a:Lhtf;
 
-.field public final synthetic b:Lnph;
+.field final synthetic b:Z
 
-.field public final synthetic c:Lnph;
+.field final synthetic c:Z
+
+.field final synthetic d:Z
+
+.field final synthetic e:Z
+
+.field public final synthetic f:Z
+
+.field public final synthetic g:Lgqt;
+
+.field final synthetic h:Z
+
+.field final synthetic i:Z
 
 
 # direct methods
-.method public synthetic constructor <init>(Ldzu;Lnph;Lnph;)V
+.method public constructor <init>(Lhtf;ZZZZZLgqt;ZZ)V
     .locals 0
 
+    iput-object p1, p0, Ldzt;->a:Lhtf;
+
+    iput-boolean p2, p0, Ldzt;->b:Z
+
+    iput-boolean p3, p0, Ldzt;->c:Z
+
+    iput-boolean p4, p0, Ldzt;->d:Z
+
+    iput-boolean p5, p0, Ldzt;->e:Z
+
+    iput-boolean p6, p0, Ldzt;->f:Z
+
+    iput-object p7, p0, Ldzt;->g:Lgqt;
+
+    iput-boolean p8, p0, Ldzt;->h:Z
+
+    iput-boolean p9, p0, Ldzt;->i:Z
+
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Ldzt;->a:Ldzu;
-
-    iput-object p2, p0, Ldzt;->b:Lnph;
-
-    iput-object p3, p0, Ldzt;->c:Lnph;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final run()V
-    .locals 6
+.method public final a()Lhtf;
+    .locals 1
 
-    iget-object v0, p0, Ldzt;->a:Ldzu;
+    iget-object v0, p0, Ldzt;->a:Lhtf;
 
-    iget-object v1, p0, Ldzt;->b:Lnph;
+    return-object v0
+.end method
 
-    iget-object v2, p0, Ldzt;->c:Lnph;
+.method public final b()Lhtf;
+    .locals 1
 
-    invoke-static {v1}, Lnsy;->K(Ljava/util/concurrent/Future;)Ljava/lang/Object;
+    iget-boolean v0, p0, Ldzt;->b:Z
 
-    move-result-object v1
+    if-eqz v0, :cond_0
 
-    check-cast v1, Landroid/opengl/EGLSync;
+    iget-object v0, p0, Ldzt;->a:Lhtf;
 
-    invoke-static {v2}, Lnsy;->K(Ljava/util/concurrent/Future;)Ljava/lang/Object;
+    goto :goto_0
 
-    move-result-object v2
+    :cond_0
+    sget-object v0, Lhtf;->a:Lhtf;
 
-    check-cast v2, Landroid/opengl/EGLDisplay;
+    :goto_0
+    return-object v0
+.end method
 
-    const/4 v3, 0x1
+.method public final c()Z
+    .locals 1
 
-    const-wide/16 v4, -0x1
+    iget-boolean v0, p0, Ldzt;->h:Z
 
-    invoke-static {v2, v1, v3, v4, v5}, Landroid/opengl/EGL15;->eglClientWaitSync(Landroid/opengl/EGLDisplay;Landroid/opengl/EGLSync;IJ)I
+    return v0
+.end method
 
-    sget-boolean v3, Llat;->a:Z
+.method public final d()Z
+    .locals 1
 
-    invoke-static {v2, v1}, Landroid/opengl/EGL15;->eglDestroySync(Landroid/opengl/EGLDisplay;Landroid/opengl/EGLSync;)Z
+    iget-boolean v0, p0, Ldzt;->e:Z
 
-    :try_start_0
-    iget-object v1, v0, Ldzu;->a:Ljava/lang/AutoCloseable;
+    return v0
+.end method
 
-    invoke-interface {v1}, Ljava/lang/AutoCloseable;->close()V
-    :try_end_0
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+.method public final e()Z
+    .locals 1
 
-    return-void
+    iget-boolean v0, p0, Ldzt;->i:Z
 
-    :catch_0
-    move-exception v1
+    return v0
+.end method
 
-    sget-object v2, Ldzv;->a:Lnak;
+.method public final f()Z
+    .locals 1
 
-    invoke-virtual {v2}, Lnaf;->b()Lnaz;
+    iget-boolean v0, p0, Ldzt;->d:Z
 
-    move-result-object v2
-
-    check-cast v2, Lnah;
-
-    invoke-interface {v2, v1}, Lnah;->h(Ljava/lang/Throwable;)Lnaz;
-
-    move-result-object v2
-
-    check-cast v2, Lnah;
-
-    const/16 v3, 0x4cc
-
-    invoke-interface {v2, v3}, Lnah;->G(I)Lnaz;
-
-    move-result-object v2
-
-    check-cast v2, Lnah;
-
-    iget-object v0, v0, Ldzu;->a:Ljava/lang/AutoCloseable;
-
-    const-string v3, "Error while closing resource %s: %s"
-
-    invoke-interface {v2, v3, v0, v1}, Lnah;->z(Ljava/lang/String;Ljava/lang/Object;Ljava/lang/Object;)V
-
-    return-void
+    return v0
 .end method

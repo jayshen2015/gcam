@@ -1,89 +1,129 @@
-.class public final Lfyj;
+.class final Lfyj;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Logk;
+.implements Landroid/view/View$OnTouchListener;
 
 
 # instance fields
-.field private final a:Loiw;
-
-.field private final b:Loiw;
-
-.field private final c:Loiw;
+.field final synthetic a:Lfyr;
 
 
 # direct methods
-.method public constructor <init>(Loiw;Loiw;Loiw;)V
+.method public constructor <init>(Lfyr;)V
     .locals 0
 
+    iput-object p1, p0, Lfyj;->a:Lfyr;
+
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lfyj;->a:Loiw;
-
-    iput-object p2, p0, Lfyj;->b:Loiw;
-
-    iput-object p3, p0, Lfyj;->c:Loiw;
 
     return-void
 .end method
 
-.method public static a(Loiw;Loiw;Loiw;)Lfyj;
-    .locals 1
-
-    new-instance v0, Lfyj;
-
-    invoke-direct {v0, p0, p1, p2}, Lfyj;-><init>(Loiw;Loiw;Loiw;)V
-
-    return-object v0
-.end method
-
 
 # virtual methods
-.method public final b()Lgkr;
-    .locals 5
+.method public final onTouch(Landroid/view/View;Landroid/view/MotionEvent;)Z
+    .locals 3
 
-    iget-object v0, p0, Lfyj;->a:Loiw;
+    iget-object p1, p0, Lfyj;->a:Lfyr;
 
-    check-cast v0, Ldjw;
+    iget-object p1, p1, Lfyr;->r:Lfdj;
 
-    invoke-virtual {v0}, Ldjw;->a()Lkap;
+    const/4 v0, 0x0
 
-    move-result-object v0
+    if-eqz p1, :cond_1
 
-    iget-object v1, p0, Lfyj;->b:Loiw;
+    invoke-virtual {p2}, Landroid/view/MotionEvent;->getAction()I
 
-    check-cast v1, Logo;
+    move-result v1
 
-    invoke-virtual {v1}, Logo;->a()Ljava/util/Set;
+    and-int/lit16 v1, v1, 0xff
 
-    move-result-object v1
+    const/4 v2, 0x1
 
-    iget-object v2, p0, Lfyj;->c:Loiw;
+    packed-switch v1, :pswitch_data_0
 
-    invoke-interface {v2}, Loiw;->get()Ljava/lang/Object;
+    :pswitch_0
+    goto :goto_1
 
-    move-result-object v2
+    :pswitch_1
+    iput-boolean v0, p1, Lfdj;->d:Z
 
-    check-cast v2, Ljuh;
+    iget p2, p1, Lfdj;->f:F
 
-    invoke-static {}, Lduq;->a()Ldin;
+    iget v0, p1, Lfdj;->e:F
 
-    move-result-object v3
+    iget-object p1, p1, Lfdj;->b:Lfdm;
 
-    new-instance v4, Lgkr;
+    div-float/2addr p2, v0
 
-    invoke-direct {v4, v0, v1, v2, v3}, Lgkr;-><init>(Lkap;Ljava/util/Set;Ljuh;Ldin;)V
+    invoke-virtual {p1, p2}, Lfdm;->a(F)V
 
-    return-object v4
-.end method
+    return v2
 
-.method public final bridge synthetic get()Ljava/lang/Object;
-    .locals 1
+    :pswitch_2
+    invoke-static {p2}, Lfdj;->i(Landroid/view/MotionEvent;)F
 
-    invoke-virtual {p0}, Lfyj;->b()Lgkr;
+    move-result p2
 
-    move-result-object v0
+    iput p2, p1, Lfdj;->e:F
 
-    return-object v0
+    iput-boolean v2, p1, Lfdj;->d:Z
+
+    return v2
+
+    :pswitch_3
+    iget-boolean v0, p1, Lfdj;->d:Z
+
+    if-eqz v0, :cond_0
+
+    invoke-virtual {p2}, Landroid/view/MotionEvent;->getPointerCount()I
+
+    move-result v0
+
+    if-le v0, v2, :cond_0
+
+    invoke-static {p2}, Lfdj;->i(Landroid/view/MotionEvent;)F
+
+    move-result p2
+
+    iput p2, p1, Lfdj;->f:F
+
+    iget v0, p1, Lfdj;->e:F
+
+    iget-object p1, p1, Lfdj;->b:Lfdm;
+
+    div-float/2addr p2, v0
+
+    invoke-virtual {p1, p2}, Lfdm;->e(F)V
+
+    iput-boolean v2, p1, Lfdm;->l:Z
+
+    goto :goto_0
+
+    :cond_0
+    const/4 v0, 0x1
+
+    goto :goto_1
+
+    :goto_0
+    :pswitch_4
+    return v2
+
+    :goto_1
+    return v0
+
+    :cond_1
+    return v0
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_4
+        :pswitch_0
+        :pswitch_3
+        :pswitch_0
+        :pswitch_0
+        :pswitch_2
+        :pswitch_1
+    .end packed-switch
 .end method

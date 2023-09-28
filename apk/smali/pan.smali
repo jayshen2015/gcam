@@ -1,274 +1,188 @@
 .class public final Lpan;
-.super Ljava/lang/Object;
+.super Lppd;
+
+# interfaces
+.implements Lpqn;
+
+
+# static fields
+.field public static final f:Lpan;
+
+.field private static volatile g:Lpqs;
 
 
 # instance fields
-.field public final a:[J
+.field public a:I
 
-.field public final b:Ljava/nio/ByteBuffer;
+.field public b:Lpaa;
 
-.field public c:I
+.field public c:J
+
+.field public d:J
+
+.field public e:Lpat;
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 5
+.method static constructor <clinit>()V
+    .locals 2
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance v0, Lpan;
 
-    const/4 v0, 0x3
+    invoke-direct {v0}, Lpan;-><init>()V
 
-    new-array v1, v0, [J
+    sput-object v0, Lpan;->f:Lpan;
 
-    iput-object v1, p0, Lpan;->a:[J
+    const-class v1, Lpan;
 
-    iput v0, p0, Lpan;->c:I
-
-    const/4 v0, 0x1
-
-    const-wide/16 v2, 0x4000
-
-    aput-wide v2, v1, v0
-
-    invoke-static {v1}, Lorg/brotli/wrapper/dec/DecoderJNI;->nativeCreate([J)Ljava/nio/ByteBuffer;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lpan;->b:Ljava/nio/ByteBuffer;
-
-    const/4 v0, 0x0
-
-    aget-wide v0, v1, v0
-
-    const-wide/16 v2, 0x0
-
-    cmp-long v4, v0, v2
-
-    if-eqz v4, :cond_0
+    invoke-static {v1, v0}, Lppd;->F(Ljava/lang/Class;Lppd;)V
 
     return-void
+.end method
 
-    :cond_0
-    new-instance v0, Ljava/io/IOException;
+.method private constructor <init>()V
+    .locals 0
 
-    const-string v1, "failed to initialize native brotli decoder"
+    invoke-direct {p0}, Lppd;-><init>()V
 
-    invoke-direct {v0, v1}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
-
-    throw v0
+    return-void
 .end method
 
 
 # virtual methods
-.method public final a()V
-    .locals 7
+.method protected final a(ILjava/lang/Object;)Ljava/lang/Object;
+    .locals 2
 
-    iget-object v0, p0, Lpan;->a:[J
+    add-int/lit8 p1, p1, -0x1
 
-    const/4 v1, 0x0
+    const/4 p2, 0x1
 
-    aget-wide v2, v0, v1
+    packed-switch p1, :pswitch_data_0
 
-    const-wide/16 v4, 0x0
+    :pswitch_0
+    const/4 p1, 0x0
 
-    cmp-long v6, v2, v4
+    return-object p1
 
-    if-eqz v6, :cond_0
+    :pswitch_1
+    sget-object p1, Lpan;->g:Lpqs;
 
-    invoke-static {v0}, Lorg/brotli/wrapper/dec/DecoderJNI;->nativeDestroy([J)V
+    if-nez p1, :cond_1
 
-    iget-object v0, p0, Lpan;->a:[J
+    const-class p2, Lpan;
 
-    aput-wide v4, v0, v1
+    monitor-enter p2
 
-    return-void
-
-    :cond_0
-    new-instance v0, Ljava/lang/IllegalStateException;
-
-    const-string v1, "brotli decoder is already destroyed"
-
-    invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-.end method
-
-.method public final b()V
-    .locals 6
-
-    iget-object v0, p0, Lpan;->a:[J
-
-    const/4 v1, 0x1
-
-    aget-wide v2, v0, v1
-
-    const-wide/16 v4, 0x1
-
-    cmp-long v0, v2, v4
-
-    if-nez v0, :cond_0
-
-    const/4 v0, 0x2
-
-    :goto_0
-    iput v0, p0, Lpan;->c:I
-
-    return-void
-
-    :cond_0
-    const-wide/16 v4, 0x2
-
-    cmp-long v0, v2, v4
-
-    if-nez v0, :cond_1
-
-    const/4 v0, 0x3
-
-    goto :goto_0
-
-    :cond_1
-    const-wide/16 v4, 0x3
-
-    cmp-long v0, v2, v4
-
-    if-nez v0, :cond_2
-
-    const/4 v0, 0x4
-
-    goto :goto_0
-
-    :cond_2
-    const-wide/16 v4, 0x4
-
-    cmp-long v0, v2, v4
-
-    if-nez v0, :cond_3
-
-    const/4 v0, 0x5
-
-    goto :goto_0
-
-    :cond_3
-    iput v1, p0, Lpan;->c:I
-
-    return-void
-.end method
-
-.method public final c(I)V
-    .locals 6
-
-    if-ltz p1, :cond_4
-
-    iget-object v0, p0, Lpan;->a:[J
-
-    const/4 v1, 0x0
-
-    aget-wide v1, v0, v1
-
-    const-wide/16 v3, 0x0
-
-    cmp-long v5, v1, v3
-
-    if-eqz v5, :cond_3
-
-    iget v1, p0, Lpan;->c:I
-
-    const/4 v2, 0x3
-
-    if-eq v1, v2, :cond_2
-
-    const/4 v2, 0x5
-
-    if-ne v1, v2, :cond_1
+    :try_start_0
+    sget-object p1, Lpan;->g:Lpqs;
 
     if-nez p1, :cond_0
 
-    goto :goto_0
+    new-instance p1, Lpoz;
+
+    sget-object v0, Lpan;->f:Lpan;
+
+    invoke-direct {p1, v0}, Lpoz;-><init>(Lppd;)V
+
+    sput-object p1, Lpan;->g:Lpqs;
 
     :cond_0
-    new-instance p1, Ljava/lang/IllegalStateException;
+    monitor-exit p2
 
-    const-string v0, "pushing input to decoder in OK state"
+    goto :goto_0
 
-    invoke-direct {p1, v0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+    :catchall_0
+    move-exception p1
+
+    monitor-exit p2
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw p1
 
     :cond_1
-    new-instance p1, Ljava/lang/IllegalStateException;
-
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, "pushing input to decoder in "
-
-    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-static {v1}, Llkj;->L(I)Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v1, " state"
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-direct {p1, v0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw p1
-
-    :cond_2
     :goto_0
-    invoke-static {v0, p1}, Lorg/brotli/wrapper/dec/DecoderJNI;->nativePush([JI)V
+    return-object p1
 
-    invoke-virtual {p0}, Lpan;->b()V
+    :pswitch_2
+    sget-object p1, Lpan;->f:Lpan;
 
-    return-void
+    return-object p1
 
-    :cond_3
-    new-instance p1, Ljava/lang/IllegalStateException;
+    :pswitch_3
+    new-instance p1, Lpoy;
 
-    const-string v0, "brotli decoder is already destroyed"
+    sget-object p2, Lpan;->f:Lpan;
 
-    invoke-direct {p1, v0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+    invoke-direct {p1, p2}, Lpoy;-><init>(Lppd;)V
 
-    throw p1
+    return-object p1
 
-    :cond_4
-    new-instance p1, Ljava/lang/IllegalArgumentException;
+    :pswitch_4
+    new-instance p1, Lpan;
 
-    const-string v0, "negative block length"
+    invoke-direct {p1}, Lpan;-><init>()V
 
-    invoke-direct {p1, v0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+    return-object p1
 
-    throw p1
-.end method
+    :pswitch_5
+    const/4 p1, 0x5
 
-.method protected final finalize()V
-    .locals 5
+    new-array p1, p1, [Ljava/lang/Object;
 
-    iget-object v0, p0, Lpan;->a:[J
+    const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    const-string v1, "a"
 
-    aget-wide v1, v0, v1
+    aput-object v1, p1, v0
 
-    const-wide/16 v3, 0x0
+    const-string v0, "b"
 
-    cmp-long v0, v1, v3
+    aput-object v0, p1, p2
 
-    if-eqz v0, :cond_0
+    const/4 p2, 0x2
 
-    invoke-virtual {p0}, Lpan;->a()V
+    const-string v0, "c"
 
-    :cond_0
-    invoke-super {p0}, Ljava/lang/Object;->finalize()V
+    aput-object v0, p1, p2
 
-    return-void
+    const/4 p2, 0x3
+
+    const-string v0, "d"
+
+    aput-object v0, p1, p2
+
+    const/4 p2, 0x4
+
+    const-string v0, "e"
+
+    aput-object v0, p1, p2
+
+    sget-object p2, Lpan;->f:Lpan;
+
+    const-string v0, "\u0001\u0004\u0000\u0001\u0001\u0004\u0004\u0000\u0000\u0000\u0001\u1009\u0000\u0002\u1002\u0001\u0003\u1002\u0002\u0004\u1009\u0003"
+
+    invoke-static {p2, v0, p1}, Lpan;->E(Lpqm;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p1
+
+    return-object p1
+
+    :pswitch_6
+    invoke-static {p2}, Ljava/lang/Byte;->valueOf(B)Ljava/lang/Byte;
+
+    move-result-object p1
+
+    return-object p1
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_6
+        :pswitch_0
+        :pswitch_5
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+    .end packed-switch
 .end method

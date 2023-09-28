@@ -1,67 +1,92 @@
 .class public final Lmyl;
-.super Lmyk;
-
-# interfaces
-.implements Ljava/io/Serializable;
-
-
-# static fields
-.field public static final a:Lmyk;
-
-.field private static final serialVersionUID:J
+.super Lmvd;
 
 
 # direct methods
-.method static constructor <clinit>()V
+.method public constructor <init>(Lpyn;Landroid/content/Context;)V
     .locals 1
 
-    new-instance v0, Lmyl;
+    const-string v0, "CrashMetric"
 
-    invoke-direct {v0}, Lmyl;-><init>()V
-
-    sput-object v0, Lmyl;->a:Lmyk;
-
-    return-void
-.end method
-
-.method private constructor <init>()V
-    .locals 0
-
-    invoke-direct {p0}, Lmyk;-><init>()V
+    invoke-direct {p0, v0, p1, p2}, Lmvd;-><init>(Ljava/lang/String;Lpyn;Landroid/content/Context;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final bridge synthetic compare(Ljava/lang/Object;Ljava/lang/Object;)I
-    .locals 3
+.method public final a(Lqyk;)Lope;
+    .locals 2
 
-    check-cast p1, Lmym;
+    iget v0, p1, Lqyk;->a:I
 
-    check-cast p2, Lmym;
+    and-int/lit8 v0, v0, 0x40
 
-    sget-object v0, Lmtw;->b:Lmtw;
+    if-eqz v0, :cond_4
 
-    iget-object v1, p1, Lmym;->b:Lmuc;
+    iget-object p1, p1, Lqyk;->g:Lqxy;
 
-    iget-object v2, p2, Lmym;->b:Lmuc;
+    if-nez p1, :cond_0
 
-    invoke-virtual {v0, v1, v2}, Lmtw;->b(Ljava/lang/Comparable;Ljava/lang/Comparable;)Lmtw;
+    sget-object p1, Lqxy;->j:Lqxy;
+
+    :cond_0
+    iget-object p1, p1, Lqxy;->h:Lpey;
+
+    if-nez p1, :cond_1
+
+    sget-object p1, Lpey;->d:Lpey;
+
+    :cond_1
+    invoke-static {}, Lope;->D()Lopc;
 
     move-result-object v0
 
-    iget-object p1, p1, Lmym;->c:Lmuc;
+    iget-object v1, p1, Lpey;->b:Lpex;
 
-    iget-object p2, p2, Lmym;->c:Lmuc;
+    if-nez v1, :cond_2
 
-    invoke-virtual {v0, p1, p2}, Lmtw;->b(Ljava/lang/Comparable;Ljava/lang/Comparable;)Lmtw;
+    sget-object v1, Lpex;->f:Lpex;
+
+    :cond_2
+    iget-object v1, v1, Lpex;->c:Ljava/lang/String;
+
+    invoke-virtual {v0, v1}, Lopc;->g(Ljava/lang/Object;)V
+
+    iget-object p1, p1, Lpey;->c:Lppm;
+
+    invoke-interface {p1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object p1
 
-    invoke-virtual {p1}, Lmtw;->a()I
+    :goto_0
+    invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
 
-    move-result p1
+    move-result v1
 
-    return p1
+    if-eqz v1, :cond_3
+
+    invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Lpex;
+
+    iget-object v1, v1, Lpex;->c:Ljava/lang/String;
+
+    invoke-virtual {v0, v1}, Lopc;->g(Ljava/lang/Object;)V
+
+    goto :goto_0
+
+    :cond_3
+    invoke-virtual {v0}, Lopc;->f()Lope;
+
+    move-result-object p1
+
+    return-object p1
+
+    :cond_4
+    sget-object p1, Lorx;->a:Lorx;
+
+    return-object p1
 .end method

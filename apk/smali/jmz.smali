@@ -1,283 +1,517 @@
-.class public final Ljmz;
-.super Ljgm;
+.class final Ljmz;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Landroid/view/SurfaceHolder$Callback2;
 
 
 # instance fields
-.field public final a:Lxf;
-
-.field private final t:Lxf;
-
-.field private final u:Lxf;
+.field final synthetic a:Ljna;
 
 
 # direct methods
-.method public constructor <init>(Landroid/content/Context;Landroid/os/Looper;Ljge;Ljei;Ljff;)V
-    .locals 7
+.method public constructor <init>(Ljna;)V
+    .locals 0
 
-    const/16 v3, 0x17
+    iput-object p1, p0, Ljmz;->a:Ljna;
 
-    move-object v0, p0
-
-    move-object v1, p1
-
-    move-object v2, p2
-
-    move-object v4, p3
-
-    move-object v5, p4
-
-    move-object v6, p5
-
-    invoke-direct/range {v0 .. v6}, Ljgm;-><init>(Landroid/content/Context;Landroid/os/Looper;ILjge;Ljei;Ljff;)V
-
-    new-instance p1, Lxf;
-
-    invoke-direct {p1}, Lxf;-><init>()V
-
-    iput-object p1, p0, Ljmz;->a:Lxf;
-
-    new-instance p1, Lxf;
-
-    invoke-direct {p1}, Lxf;-><init>()V
-
-    iput-object p1, p0, Ljmz;->t:Lxf;
-
-    new-instance p1, Lxf;
-
-    invoke-direct {p1}, Lxf;-><init>()V
-
-    iput-object p1, p0, Ljmz;->u:Lxf;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
-.end method
-
-.method public static final J(Lkgd;Ljava/lang/Object;)Ljev;
-    .locals 2
-
-    new-instance v0, Ljmv;
-
-    const/4 v1, 0x0
-
-    invoke-direct {v0, p1, p0, v1, v1}, Ljmv;-><init>(Ljava/lang/Object;Lkgd;[B[B)V
-
-    return-object v0
 .end method
 
 
 # virtual methods
-.method public final C()Z
-    .locals 1
+.method public final surfaceChanged(Landroid/view/SurfaceHolder;III)V
+    .locals 9
+
+    iget-object v0, p0, Ljmz;->a:Ljna;
+
+    iget-boolean v0, v0, Ljna;->f:Z
+
+    xor-int/lit8 v0, v0, 0x1
+
+    invoke-static {v0}, Lobr;->aQ(Z)V
+
+    iget-object v0, p0, Ljmz;->a:Ljna;
+
+    iget-object v0, v0, Ljna;->d:Lljf;
+
+    const-string v1, "surfaceChanged"
+
+    invoke-interface {v0, v1}, Lljf;->e(Ljava/lang/String;)V
+
+    new-instance v0, Llig;
+
+    invoke-direct {v0, p3, p4}, Llig;-><init>(II)V
+
+    invoke-interface {p1}, Landroid/view/SurfaceHolder;->getSurface()Landroid/view/Surface;
+
+    move-result-object v1
+
+    invoke-interface {p1}, Landroid/view/SurfaceHolder;->getSurfaceFrame()Landroid/graphics/Rect;
+
+    move-result-object p1
+
+    invoke-static {v0}, Llhs;->e(Llig;)Llhs;
+
+    move-result-object v2
+
+    iget-object v3, p0, Ljmz;->a:Ljna;
+
+    iget-object v3, v3, Ljna;->a:Llis;
+
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-static {v2}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {p1}, Landroid/graphics/Rect;->width()I
+
+    move-result v5
+
+    invoke-virtual {p1}, Landroid/graphics/Rect;->height()I
+
+    move-result p1
+
+    invoke-static {v4}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v6
+
+    invoke-virtual {v6}, Ljava/lang/String;->length()I
+
+    move-result v6
+
+    invoke-static {v2}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v7
+
+    invoke-virtual {v7}, Ljava/lang/String;->length()I
+
+    move-result v7
+
+    new-instance v8, Ljava/lang/StringBuilder;
+
+    add-int/lit8 v6, v6, 0x5b
+
+    add-int/2addr v6, v7
+
+    invoke-direct {v8, v6}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string v6, "SurfaceEvent: surfaceChanged (newSize: "
+
+    invoke-virtual {v8, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v8, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v4, ", newRatio: "
+
+    invoke-virtual {v8, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v8, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v2, ", surfaceFrame: "
+
+    invoke-virtual {v8, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v8, v5}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    const-string v2, "x"
+
+    invoke-virtual {v8, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v8, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    const-string p1, ")"
+
+    invoke-virtual {v8, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v8}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-interface {v3, p1}, Llis;->b(Ljava/lang/String;)V
+
+    iget-object p1, p0, Ljmz;->a:Ljna;
+
+    iget-object p1, p1, Ljna;->g:Lpih;
+
+    invoke-virtual {p1}, Lpih;->isDone()Z
+
+    move-result p1
+
+    if-nez p1, :cond_2
+
+    iget-object p1, p0, Ljmz;->a:Ljna;
+
+    invoke-virtual {v1}, Landroid/view/Surface;->isValid()Z
+
+    move-result v2
+
+    if-nez v2, :cond_0
+
+    goto/16 :goto_0
+
+    :cond_0
+    invoke-static {v0}, Llhs;->e(Llig;)Llhs;
+
+    move-result-object v0
+
+    iget-object v2, p1, Ljna;->e:Ljnl;
+
+    iget-object v2, v2, Ljnl;->b:Llhs;
+
+    invoke-virtual {v2}, Llhs;->d()Llhs;
+
+    move-result-object v2
+
+    invoke-static {v0, v2}, Lobr;->bc(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v3
+
+    if-nez v3, :cond_1
+
+    iget-object p1, p1, Ljna;->a:Llis;
+
+    invoke-virtual {v0}, Llhs;->d()Llhs;
+
+    move-result-object p2
+
+    invoke-static {p2}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object p2
+
+    invoke-virtual {v2}, Llhs;->d()Llhs;
+
+    move-result-object p3
+
+    invoke-static {p3}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object p3
+
+    invoke-static {p2}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object p4
+
+    invoke-virtual {p4}, Ljava/lang/String;->length()I
+
+    move-result p4
+
+    invoke-static {p3}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/String;->length()I
+
+    move-result v0
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    add-int/lit8 p4, p4, 0x2f
+
+    add-int/2addr p4, v0
+
+    invoke-direct {v1, p4}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string p4, "Aspect ratios do not match! surface: "
+
+    invoke-virtual {v1, p4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string p2, " preview: "
+
+    invoke-virtual {v1, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1, p3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p2
+
+    invoke-interface {p1, p2}, Llis;->g(Ljava/lang/String;)V
+
+    goto :goto_0
+
+    :cond_1
+    iget-object p1, p0, Ljmz;->a:Ljna;
+
+    iget-object v0, p1, Ljna;->a:Llis;
+
+    iget-object p1, p1, Ljna;->e:Ljnl;
+
+    iget-object p1, p1, Ljnl;->a:Llig;
+
+    invoke-static {p1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-static {p1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/String;->length()I
+
+    move-result v2
+
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    add-int/lit8 v2, v2, 0x1d
+
+    invoke-direct {v3, v2}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string v2, "Surface request is set. size="
+
+    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v3, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-interface {v0, p1}, Llis;->f(Ljava/lang/String;)V
+
+    iget-object p1, p0, Ljmz;->a:Ljna;
+
+    iget-object p1, p1, Ljna;->h:Lijs;
+
+    sget-object v0, Lijz;->b:Lijz;
+
+    invoke-virtual {p1, v0}, Lijs;->i(Ljava/lang/Enum;)V
+
+    iget-object p1, p0, Ljmz;->a:Ljna;
+
+    iget-object p1, p1, Ljna;->d:Lljf;
+
+    const-string v0, "surfaceRequest.set"
+
+    invoke-interface {p1, v0}, Lljf;->e(Ljava/lang/String;)V
+
+    iget-object p1, p0, Ljmz;->a:Ljna;
+
+    iget-object p1, p1, Ljna;->g:Lpih;
+
+    new-instance v0, Llig;
+
+    invoke-direct {v0, p3, p4}, Llig;-><init>(II)V
+
+    invoke-virtual {v0}, Llig;->c()Landroid/util/Size;
+
+    move-result-object p3
+
+    new-instance p4, Ljnj;
+
+    invoke-direct {p4, v1, p2, p3}, Ljnj;-><init>(Landroid/view/Surface;ILandroid/util/Size;)V
+
+    invoke-virtual {p1, p4}, Lpih;->o(Ljava/lang/Object;)Z
+
+    iget-object p1, p0, Ljmz;->a:Ljna;
+
+    iget-object p1, p1, Ljna;->d:Lljf;
+
+    invoke-interface {p1}, Lljf;->f()V
+
+    :cond_2
+    :goto_0
+    iget-object p1, p0, Ljmz;->a:Ljna;
+
+    iget-object p1, p1, Ljna;->d:Lljf;
+
+    invoke-interface {p1}, Lljf;->f()V
+
+    return-void
+.end method
+
+.method public final surfaceCreated(Landroid/view/SurfaceHolder;)V
+    .locals 3
+
+    iget-object p1, p0, Ljmz;->a:Ljna;
+
+    iget-boolean p1, p1, Ljna;->f:Z
+
+    xor-int/lit8 p1, p1, 0x1
+
+    invoke-static {p1}, Lobr;->aQ(Z)V
+
+    iget-object p1, p0, Ljmz;->a:Ljna;
+
+    iget-object p1, p1, Ljna;->h:Lijs;
+
+    sget-object v0, Lijz;->a:Lijz;
+
+    invoke-virtual {p1, v0}, Lijs;->i(Ljava/lang/Enum;)V
+
+    iget-object p1, p0, Ljmz;->a:Ljna;
+
+    iget-object p1, p1, Ljna;->a:Llis;
+
+    const-string v0, "SurfaceEvent: surfaceCreated"
+
+    invoke-interface {p1, v0}, Llis;->b(Ljava/lang/String;)V
+
+    iget-object p1, p0, Ljmz;->a:Ljna;
+
+    iget-object p1, p1, Ljna;->g:Lpih;
+
+    invoke-virtual {p1}, Lpih;->isDone()Z
+
+    move-result p1
+
+    if-eqz p1, :cond_0
+
+    iget-object p1, p0, Ljmz;->a:Ljna;
+
+    iget-object v0, p1, Ljna;->a:Llis;
+
+    iget-object p1, p1, Ljna;->g:Lpih;
+
+    invoke-static {p1}, Lmip;->bY(Lpht;)Ljava/lang/Object;
+
+    move-result-object p1
+
+    invoke-static {p1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-static {p1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/String;->length()I
+
+    move-result v1
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    add-int/lit8 v1, v1, 0x37
+
+    invoke-direct {v2, v1}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string v1, "surfaceChanged was already called or cancelled? Value: "
+
+    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-interface {v0, p1}, Llis;->h(Ljava/lang/String;)V
+
+    :cond_0
+    return-void
+.end method
+
+.method public final surfaceDestroyed(Landroid/view/SurfaceHolder;)V
+    .locals 2
+
+    iget-object p1, p0, Ljmz;->a:Ljna;
+
+    iget-boolean p1, p1, Ljna;->f:Z
 
     const/4 v0, 0x1
 
-    return v0
+    xor-int/2addr p1, v0
+
+    invoke-static {p1}, Lobr;->aQ(Z)V
+
+    iget-object p1, p0, Ljmz;->a:Ljna;
+
+    iget-object p1, p1, Ljna;->a:Llis;
+
+    const-string v1, "SurfaceEvent: surfaceDestroyed"
+
+    invoke-interface {p1, v1}, Llis;->b(Ljava/lang/String;)V
+
+    iget-object p1, p0, Ljmz;->a:Ljna;
+
+    const-string v1, "Surface has been destroyed."
+
+    invoke-virtual {p1, v1}, Ljna;->a(Ljava/lang/String;)V
+
+    invoke-static {}, Lpih;->f()Lpih;
+
+    move-result-object v1
+
+    iput-object v1, p1, Ljna;->g:Lpih;
+
+    iget-object p1, p0, Ljmz;->a:Ljna;
+
+    iget-object p1, p1, Ljna;->h:Lijs;
+
+    invoke-virtual {p1}, Lijs;->close()V
+
+    iget-object p1, p0, Ljmz;->a:Ljna;
+
+    iget-object p1, p1, Ljna;->c:Lojc;
+
+    invoke-virtual {p1}, Lojc;->g()Z
+
+    move-result p1
+
+    if-eqz p1, :cond_0
+
+    iget-object p1, p0, Ljmz;->a:Ljna;
+
+    iget-object p1, p1, Ljna;->c:Lojc;
+
+    invoke-virtual {p1}, Lojc;->c()Ljava/lang/Object;
+
+    move-result-object p1
+
+    check-cast p1, Leua;
+
+    iget-object p1, p1, Leua;->a:Leur;
+
+    iget-object v1, p1, Leur;->T:Lbqg;
+
+    invoke-virtual {v1}, Lbqg;->f()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    iget-object v1, p1, Leur;->T:Lbqg;
+
+    invoke-virtual {v1}, Lbqg;->g()Z
+
+    move-result v1
+
+    if-nez v1, :cond_0
+
+    iput-boolean v0, p1, Leur;->E:Z
+
+    iget-object p1, p1, Leur;->o:Lbuf;
+
+    invoke-virtual {p1}, Lbuf;->p()V
+
+    :cond_0
+    return-void
 .end method
 
-.method public final G()V
-    .locals 2
+.method public final surfaceRedrawNeeded(Landroid/view/SurfaceHolder;)V
+    .locals 1
 
-    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
+    iget-object p1, p0, Ljmz;->a:Ljna;
 
-    iget-object v0, p0, Ljmz;->a:Lxf;
+    iget-boolean p1, p1, Ljna;->f:Z
 
-    monitor-enter v0
+    xor-int/lit8 p1, p1, 0x1
 
-    :try_start_0
-    iget-object v1, p0, Ljmz;->a:Lxf;
+    invoke-static {p1}, Lobr;->aQ(Z)V
 
-    invoke-virtual {v1}, Lxf;->clear()V
+    iget-object p1, p0, Ljmz;->a:Ljna;
 
-    monitor-exit v0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_2
+    iget-object p1, p1, Ljna;->a:Llis;
 
-    iget-object v1, p0, Ljmz;->t:Lxf;
+    const-string v0, "SurfaceEvent: surfaceRedrawNeeded"
 
-    monitor-enter v1
-
-    :try_start_1
-    iget-object v0, p0, Ljmz;->t:Lxf;
-
-    invoke-virtual {v0}, Lxf;->clear()V
-
-    monitor-exit v1
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_1
-
-    iget-object v0, p0, Ljmz;->u:Lxf;
-
-    monitor-enter v0
-
-    :try_start_2
-    iget-object v1, p0, Ljmz;->u:Lxf;
-
-    invoke-virtual {v1}, Lxf;->clear()V
-
-    monitor-exit v0
+    invoke-interface {p1, v0}, Llis;->b(Ljava/lang/String;)V
 
     return-void
-
-    :catchall_0
-    move-exception v1
-
-    monitor-exit v0
-    :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_0
-
-    throw v1
-
-    :catchall_1
-    move-exception v0
-
-    :try_start_3
-    monitor-exit v1
-    :try_end_3
-    .catchall {:try_start_3 .. :try_end_3} :catchall_1
-
-    throw v0
-
-    :catchall_2
-    move-exception v1
-
-    :try_start_4
-    monitor-exit v0
-    :try_end_4
-    .catchall {:try_start_4 .. :try_end_4} :catchall_2
-
-    throw v1
-.end method
-
-.method public final I(Ljca;)Z
-    .locals 6
-
-    invoke-virtual {p0}, Ljgb;->p()[Ljca;
-
-    move-result-object v0
-
-    const/4 v1, 0x0
-
-    if-eqz v0, :cond_3
-
-    const/4 v2, 0x0
-
-    :goto_0
-    array-length v3, v0
-
-    if-ge v2, v3, :cond_1
-
-    aget-object v3, v0, v2
-
-    iget-object v4, p1, Ljca;->a:Ljava/lang/String;
-
-    iget-object v5, v3, Ljca;->a:Ljava/lang/String;
-
-    invoke-virtual {v4, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v4
-
-    if-eqz v4, :cond_0
-
-    goto :goto_1
-
-    :cond_0
-    add-int/lit8 v2, v2, 0x1
-
-    goto :goto_0
-
-    :cond_1
-    const/4 v3, 0x0
-
-    :goto_1
-    if-nez v3, :cond_2
-
-    return v1
-
-    :cond_2
-    invoke-virtual {v3}, Ljca;->a()J
-
-    move-result-wide v2
-
-    invoke-virtual {p1}, Ljca;->a()J
-
-    move-result-wide v4
-
-    cmp-long p1, v2, v4
-
-    if-ltz p1, :cond_3
-
-    const/4 p1, 0x1
-
-    return p1
-
-    :cond_3
-    return v1
-.end method
-
-.method public final a()I
-    .locals 1
-
-    const v0, 0xb2c988
-
-    return v0
-.end method
-
-.method protected final synthetic b(Landroid/os/IBinder;)Landroid/os/IInterface;
-    .locals 2
-
-    if-nez p1, :cond_0
-
-    const/4 p1, 0x0
-
-    goto :goto_0
-
-    :cond_0
-    const-string v0, "com.google.android.gms.location.internal.IGoogleLocationManagerService"
-
-    invoke-interface {p1, v0}, Landroid/os/IBinder;->queryLocalInterface(Ljava/lang/String;)Landroid/os/IInterface;
-
-    move-result-object v0
-
-    instance-of v1, v0, Ljmp;
-
-    if-eqz v1, :cond_1
-
-    move-object p1, v0
-
-    check-cast p1, Ljmp;
-
-    goto :goto_0
-
-    :cond_1
-    new-instance v0, Ljmp;
-
-    invoke-direct {v0, p1}, Ljmp;-><init>(Landroid/os/IBinder;)V
-
-    move-object p1, v0
-
-    :goto_0
-    return-object p1
-.end method
-
-.method protected final c()Ljava/lang/String;
-    .locals 1
-
-    const-string v0, "com.google.android.gms.location.internal.IGoogleLocationManagerService"
-
-    return-object v0
-.end method
-
-.method protected final d()Ljava/lang/String;
-    .locals 1
-
-    const-string v0, "com.google.android.location.internal.GoogleLocationManagerService.START"
-
-    return-object v0
-.end method
-
-.method public final e()[Ljca;
-    .locals 1
-
-    sget-object v0, Ljmc;->l:[Ljca;
-
-    return-object v0
 .end method

@@ -10,19 +10,41 @@
 
 # direct methods
 .method public constructor <init>()V
-    .locals 3
+    .locals 2
 
     invoke-static {}, Lcom/google/googlex/gcam/GcamModuleJNI;->new_BuildPayloadBurstSpecOptions__SWIG_0()J
 
     move-result-wide v0
 
+    invoke-direct {p0, v0, v1}, Lcom/google/googlex/gcam/BuildPayloadBurstSpecOptions;-><init>(J)V
+
+    return-void
+.end method
+
+.method public constructor <init>(J)V
+    .locals 1
+
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const/4 v2, 0x1
+    const/4 v0, 0x1
 
-    iput-boolean v2, p0, Lcom/google/googlex/gcam/BuildPayloadBurstSpecOptions;->b:Z
+    iput-boolean v0, p0, Lcom/google/googlex/gcam/BuildPayloadBurstSpecOptions;->b:Z
 
-    iput-wide v0, p0, Lcom/google/googlex/gcam/BuildPayloadBurstSpecOptions;->a:J
+    iput-wide p1, p0, Lcom/google/googlex/gcam/BuildPayloadBurstSpecOptions;->a:J
+
+    return-void
+.end method
+
+.method public constructor <init>(Lcom/google/googlex/gcam/BuildPayloadBurstSpecOptions;)V
+    .locals 2
+
+    iget-wide v0, p1, Lcom/google/googlex/gcam/BuildPayloadBurstSpecOptions;->a:J
+
+    invoke-static {v0, v1, p1}, Lcom/google/googlex/gcam/GcamModuleJNI;->new_BuildPayloadBurstSpecOptions__SWIG_1(JLcom/google/googlex/gcam/BuildPayloadBurstSpecOptions;)J
+
+    move-result-wide v0
+
+    invoke-direct {p0, v0, v1}, Lcom/google/googlex/gcam/BuildPayloadBurstSpecOptions;-><init>(J)V
 
     return-void
 .end method
@@ -81,17 +103,7 @@
     return-void
 .end method
 
-.method public final c(F)V
-    .locals 2
-
-    iget-wide v0, p0, Lcom/google/googlex/gcam/BuildPayloadBurstSpecOptions;->a:J
-
-    invoke-static {v0, v1, p0, p1}, Lcom/google/googlex/gcam/GcamModuleJNI;->BuildPayloadBurstSpecOptions_max_total_capture_time_ms_set(JLcom/google/googlex/gcam/BuildPayloadBurstSpecOptions;F)V
-
-    return-void
-.end method
-
-.method public final d(Z)V
+.method public final c(Z)V
     .locals 2
 
     iget-wide v0, p0, Lcom/google/googlex/gcam/BuildPayloadBurstSpecOptions;->a:J

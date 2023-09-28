@@ -1,18 +1,7 @@
-.class public final Ljib;
+.class public interface abstract Ljib;
 .super Ljava/lang/Object;
 
 
-# static fields
-.field public static final synthetic a:I
-
-
-# direct methods
-.method static constructor <clinit>()V
-    .locals 1
-
-    const-string v0, "\\$\\{(.*?)\\}"
-
-    invoke-static {v0}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;
-
-    return-void
+# virtual methods
+.method public abstract ac(Lj$/util/function/Function;)V
 .end method

@@ -1,78 +1,57 @@
-.class public Ldox;
-.super Ldos;
+.class public final synthetic Ldox;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field public final a:Lcom/google/android/apps/camera/evcomp/EvCompView;
-
-.field public final b:Landroid/widget/CheckBox;
-
-.field public final c:Landroid/animation/ObjectAnimator;
-
-.field public final d:Ldpc;
-
-.field public final e:Ljwb;
+.field public final synthetic a:Ldoy;
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/apps/camera/evcomp/EvCompView;Landroid/widget/CheckBox;Landroid/animation/ObjectAnimator;Ldpc;Ldja;[B[B[B)V
+.method public synthetic constructor <init>(Ldoy;)V
     .locals 0
 
-    invoke-direct {p0}, Ldos;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Ldox;->a:Lcom/google/android/apps/camera/evcomp/EvCompView;
-
-    iput-object p2, p0, Ldox;->b:Landroid/widget/CheckBox;
-
-    iput-object p3, p0, Ldox;->c:Landroid/animation/ObjectAnimator;
-
-    iput-object p4, p0, Ldox;->d:Ldpc;
-
-    iget-object p2, p5, Ldja;->a:Ljava/lang/Object;
-
-    iput-object p2, p0, Ldox;->e:Ljwb;
-
-    new-instance p2, Ldot;
-
-    const/4 p4, 0x0
-
-    invoke-direct {p2, p1, p4}, Ldot;-><init>(Lcom/google/android/apps/camera/evcomp/EvCompView;I)V
-
-    invoke-virtual {p3, p2}, Landroid/animation/ObjectAnimator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
+    iput-object p1, p0, Ldox;->a:Ldoy;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final i(ZZ)V
-    .locals 0
+.method public final run()V
+    .locals 4
 
-    if-eqz p2, :cond_0
+    iget-object v0, p0, Ldox;->a:Ldoy;
 
-    iget-object p2, p0, Ldox;->d:Ldpc;
+    iget-object v1, v0, Ldoy;->a:Ljava/lang/Object;
 
-    invoke-virtual {p2}, Ldpc;->j()V
+    monitor-enter v1
 
-    :cond_0
-    if-eqz p1, :cond_1
+    const/4 v2, 0x0
 
-    iget-object p1, p0, Ldox;->c:Landroid/animation/ObjectAnimator;
+    const/4 v3, 0x1
 
-    invoke-virtual {p1}, Landroid/animation/ObjectAnimator;->start()V
+    :try_start_0
+    invoke-static {v2, v3}, Lcom/google/android/apps/camera/jni/facebeautification/GpuRetoucherNative;->createRetoucher(ZI)J
 
-    return-void
+    move-result-wide v2
 
-    :cond_1
-    iget-object p1, p0, Ldox;->c:Landroid/animation/ObjectAnimator;
+    iput-wide v2, v0, Ldoy;->b:J
 
-    invoke-virtual {p1}, Landroid/animation/ObjectAnimator;->cancel()V
-
-    iget-object p1, p0, Ldox;->a:Lcom/google/android/apps/camera/evcomp/EvCompView;
-
-    const/high16 p2, 0x3f800000    # 1.0f
-
-    invoke-virtual {p1, p2}, Lcom/google/android/apps/camera/evcomp/EvCompView;->setAlpha(F)V
+    monitor-exit v1
 
     return-void
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw v0
 .end method

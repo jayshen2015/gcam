@@ -1,165 +1,107 @@
-.class final Ljkv;
+.class public final synthetic Ljkv;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Ljkc;
+.implements Lj$/util/function/Consumer;
 
 
 # instance fields
-.field private final a:Lmrq;
+.field public final synthetic a:Ljky;
 
-.field private final b:J
+.field public final synthetic b:Lojc;
 
-.field private final c:Ljky;
-
-.field private final d:Ljkx;
+.field private final synthetic c:I
 
 
 # direct methods
-.method public constructor <init>(Ljky;Ljkx;Lmrq;)V
+.method public synthetic constructor <init>(Ljky;Lojc;I)V
     .locals 0
+
+    iput p3, p0, Ljkv;->c:I
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Ljkv;->c:Ljky;
+    iput-object p1, p0, Ljkv;->a:Ljky;
 
-    iput-object p2, p0, Ljkv;->d:Ljkx;
-
-    iput-object p3, p0, Ljkv;->a:Lmrq;
-
-    invoke-virtual {p3}, Lmrq;->a()J
-
-    move-result-wide p1
-
-    iput-wide p1, p0, Ljkv;->b:J
+    iput-object p2, p0, Ljkv;->b:Lojc;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(ILjava/lang/String;)V
-    .locals 3
+.method public final accept(Ljava/lang/Object;)V
+    .locals 2
 
-    new-instance v0, Lcom/google/android/gms/common/api/Status;
+    iget v0, p0, Ljkv;->c:I
 
-    invoke-direct {v0, p1, p2}, Lcom/google/android/gms/common/api/Status;-><init>(ILjava/lang/String;)V
+    packed-switch v0, :pswitch_data_0
 
-    iget-object p1, p0, Ljkv;->a:Lmrq;
+    iget-object v0, p0, Ljkv;->a:Ljky;
 
-    invoke-virtual {p1}, Lmrq;->a()J
+    iget-object v1, p0, Ljkv;->b:Lojc;
 
-    move-result-wide p1
+    check-cast p1, Landroid/animation/Animator;
 
-    iget-wide v1, p0, Ljkv;->b:J
+    iget-object p1, v0, Ljky;->a:Ljkz;
 
-    sub-long/2addr p1, v1
+    iget-object p1, p1, Ljkz;->b:Lcom/google/android/apps/camera/ui/shutterbutton/ShutterButton;
 
-    :try_start_0
-    iget-object v1, p0, Ljkv;->d:Ljkx;
+    iget-object p1, p1, Lcom/google/android/apps/camera/ui/shutterbutton/ShutterButton;->inFlightSpecBuilder:Ljlp;
 
-    invoke-virtual {v1}, Lcbe;->a()Landroid/os/Parcel;
-
-    move-result-object v2
-
-    invoke-static {v2, v0}, Lcbg;->c(Landroid/os/Parcel;Landroid/os/Parcelable;)V
-
-    invoke-virtual {v2, p1, p2}, Landroid/os/Parcel;->writeLong(J)V
-
-    const/4 p1, 0x3
-
-    invoke-virtual {v1, p1, v2}, Lcbe;->z(ILandroid/os/Parcel;)V
-    :try_end_0
-    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
+    invoke-virtual {p1, v1}, Ljlp;->h(Lojc;)V
 
     return-void
 
-    :catch_0
-    move-exception p1
+    :pswitch_0
+    iget-object v0, p0, Ljkv;->a:Ljky;
 
-    const-string p2, "brella.ExampleStoreSvc"
+    iget-object v1, p0, Ljkv;->b:Lojc;
 
-    const-string v0, "onIteratorNextFailure AIDL call failed, closing iterator"
+    check-cast p1, Landroid/animation/Animator;
 
-    invoke-static {p2, v0, p1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+    iget-object p1, v0, Ljky;->a:Ljkz;
 
-    iget-object p1, p0, Ljkv;->c:Ljky;
+    iget-object p1, p1, Ljkz;->b:Lcom/google/android/apps/camera/ui/shutterbutton/ShutterButton;
 
-    invoke-virtual {p1}, Ljky;->b()V
+    iget-object p1, p1, Lcom/google/android/apps/camera/ui/shutterbutton/ShutterButton;->inFlightSpecBuilder:Ljlp;
+
+    invoke-virtual {p1, v1}, Ljlp;->h(Lojc;)V
 
     return-void
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method
 
-.method public final b([B[B)V
-    .locals 4
+.method public final synthetic andThen(Lj$/util/function/Consumer;)Lj$/util/function/Consumer;
+    .locals 1
 
-    iget-object v0, p0, Ljkv;->a:Lmrq;
+    iget v0, p0, Ljkv;->c:I
 
-    invoke-virtual {v0}, Lmrq;->a()J
+    packed-switch v0, :pswitch_data_0
 
-    move-result-wide v0
-
-    iget-wide v2, p0, Ljkv;->b:J
-
-    sub-long/2addr v0, v2
-
-    :try_start_0
-    iget-object v2, p0, Ljkv;->d:Ljkx;
-
-    const/4 v3, 0x0
-
-    if-nez p1, :cond_0
-
-    move-object p1, v3
-
-    goto :goto_0
-
-    :cond_0
-    invoke-static {p1}, Ljif;->b(Ljava/lang/Object;)Ljig;
+    invoke-static {p0, p1}, Lj$/util/function/Consumer$-CC;->$default$andThen(Lj$/util/function/Consumer;Lj$/util/function/Consumer;)Lj$/util/function/Consumer;
 
     move-result-object p1
 
-    :goto_0
-    if-nez p2, :cond_1
+    return-object p1
 
-    goto :goto_1
+    :pswitch_0
+    invoke-static {p0, p1}, Lj$/util/function/Consumer$-CC;->$default$andThen(Lj$/util/function/Consumer;Lj$/util/function/Consumer;)Lj$/util/function/Consumer;
 
-    :cond_1
-    invoke-static {p2}, Ljif;->b(Ljava/lang/Object;)Ljig;
+    move-result-object p1
 
-    move-result-object v3
+    return-object p1
 
-    :goto_1
-    invoke-virtual {v2}, Lcbe;->a()Landroid/os/Parcel;
+    nop
 
-    move-result-object p2
-
-    invoke-static {p2, p1}, Lcbg;->d(Landroid/os/Parcel;Landroid/os/IInterface;)V
-
-    invoke-static {p2, v3}, Lcbg;->d(Landroid/os/Parcel;Landroid/os/IInterface;)V
-
-    invoke-virtual {p2, v0, v1}, Landroid/os/Parcel;->writeLong(J)V
-
-    const/4 p1, 0x2
-
-    invoke-virtual {v2, p1, p2}, Lcbe;->z(ILandroid/os/Parcel;)V
-    :try_end_0
-    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
-
-    return-void
-
-    :catch_0
-    move-exception p1
-
-    const-string p2, "brella.ExampleStoreSvc"
-
-    const-string v0, "onIteratorNextSuccess AIDL call failed, closing iterator"
-
-    invoke-static {p2, v0, p1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
-
-    iget-object p1, p0, Ljkv;->c:Ljky;
-
-    invoke-virtual {p1}, Ljky;->b()V
-
-    return-void
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

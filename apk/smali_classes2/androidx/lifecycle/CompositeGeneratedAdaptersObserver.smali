@@ -1,37 +1,35 @@
-.class public final Landroidx/lifecycle/CompositeGeneratedAdaptersObserver;
+.class public Landroidx/lifecycle/CompositeGeneratedAdaptersObserver;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lakt;
+.implements Laec;
 
 
 # instance fields
-.field private final a:[Lakm;
+.field private final a:[Lady;
 
 
 # direct methods
-.method public constructor <init>([Lakm;)V
+.method public constructor <init>([Lady;)V
     .locals 0
-
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Landroidx/lifecycle/CompositeGeneratedAdaptersObserver;->a:[Lakm;
+    iput-object p1, p0, Landroidx/lifecycle/CompositeGeneratedAdaptersObserver;->a:[Lady;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Lakv;Lakq;)V
+.method public final a(Laee;Ladz;)V
     .locals 3
 
     new-instance p1, Ljava/util/HashMap;
 
     invoke-direct {p1}, Ljava/util/HashMap;-><init>()V
 
-    iget-object p1, p0, Landroidx/lifecycle/CompositeGeneratedAdaptersObserver;->a:[Lakm;
+    iget-object p1, p0, Landroidx/lifecycle/CompositeGeneratedAdaptersObserver;->a:[Lady;
 
     array-length p2, p1
 
@@ -44,14 +42,14 @@
 
     aget-object v2, p1, v1
 
-    invoke-interface {v2}, Lakm;->a()V
+    invoke-interface {v2}, Lady;->a()V
 
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
     :cond_0
-    iget-object p1, p0, Landroidx/lifecycle/CompositeGeneratedAdaptersObserver;->a:[Lakm;
+    iget-object p1, p0, Landroidx/lifecycle/CompositeGeneratedAdaptersObserver;->a:[Lady;
 
     array-length p2, p1
 
@@ -60,7 +58,7 @@
 
     aget-object v1, p1, v0
 
-    invoke-interface {v1}, Lakm;->a()V
+    invoke-interface {v1}, Lady;->a()V
 
     add-int/lit8 v0, v0, 0x1
 

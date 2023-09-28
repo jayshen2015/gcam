@@ -1,186 +1,135 @@
-.class public final Lobb;
-.super Lnws;
-
-# interfaces
-.implements Lnxz;
-
-
-# static fields
-.field public static final e:Lobb;
-
-.field private static volatile f:Lnyf;
-
-
-# instance fields
-.field public a:I
-
-.field public b:Ljava/lang/String;
-
-.field public c:F
-
-.field public d:F
+.class final Lobb;
+.super Landroid/util/Property;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
-
-    new-instance v0, Lobb;
-
-    invoke-direct {v0}, Lobb;-><init>()V
-
-    sput-object v0, Lobb;->e:Lobb;
-
-    const-class v1, Lobb;
-
-    invoke-static {v1, v0}, Lnws;->aa(Ljava/lang/Class;Lnws;)V
-
-    return-void
-.end method
-
-.method private constructor <init>()V
+.method public constructor <init>(Ljava/lang/Class;)V
     .locals 1
 
-    invoke-direct {p0}, Lnws;-><init>()V
+    const-string v0, "animationFraction"
 
-    const-string v0, ""
-
-    iput-object v0, p0, Lobb;->b:Ljava/lang/String;
+    invoke-direct {p0, p1, v0}, Landroid/util/Property;-><init>(Ljava/lang/Class;Ljava/lang/String;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method protected final a(ILjava/lang/Object;)Ljava/lang/Object;
-    .locals 3
+.method public final bridge synthetic get(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 1
 
-    add-int/lit8 p1, p1, -0x1
+    check-cast p1, Lobc;
 
-    const/4 p2, 0x1
+    sget-object v0, Lobc;->a:[I
 
-    packed-switch p1, :pswitch_data_0
+    iget p1, p1, Lobc;->h:F
 
-    :pswitch_0
-    const/4 p1, 0x0
+    invoke-static {p1}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
+
+    move-result-object p1
 
     return-object p1
+.end method
 
-    :pswitch_1
-    sget-object p1, Lobb;->f:Lnyf;
+.method public final bridge synthetic set(Ljava/lang/Object;Ljava/lang/Object;)V
+    .locals 6
 
-    if-nez p1, :cond_1
+    check-cast p1, Lobc;
 
-    const-class p2, Lobb;
+    check-cast p2, Ljava/lang/Float;
 
-    monitor-enter p2
+    invoke-virtual {p2}, Ljava/lang/Float;->floatValue()F
 
-    :try_start_0
-    sget-object p1, Lobb;->f:Lnyf;
+    move-result p2
 
-    if-nez p1, :cond_0
+    iput p2, p1, Lobc;->h:F
 
-    new-instance p1, Lnwo;
+    const/high16 v0, 0x44e10000    # 1800.0f
 
-    sget-object v0, Lobb;->e:Lobb;
+    mul-float p2, p2, v0
 
-    invoke-direct {p1, v0}, Lnwo;-><init>(Lnws;)V
+    float-to-int p2, p2
 
-    sput-object p1, Lobb;->f:Lnyf;
+    const/4 v0, 0x0
 
-    :cond_0
-    monitor-exit p2
+    const/4 v1, 0x0
+
+    :goto_0
+    const/4 v2, 0x4
+
+    if-ge v1, v2, :cond_0
+
+    sget-object v2, Lobc;->b:[I
+
+    aget v2, v2, v1
+
+    sget-object v3, Lobc;->a:[I
+
+    aget v3, v3, v1
+
+    iget-object v4, p1, Lobc;->d:[Landroid/view/animation/Interpolator;
+
+    aget-object v4, v4, v1
+
+    invoke-static {p2, v2, v3}, Lobc;->f(III)F
+
+    move-result v2
+
+    invoke-interface {v4, v2}, Landroid/view/animation/Interpolator;->getInterpolation(F)F
+
+    move-result v2
+
+    iget-object v3, p1, Lobc;->k:[F
+
+    const/4 v4, 0x0
+
+    const/high16 v5, 0x3f800000    # 1.0f
+
+    invoke-static {v5, v2}, Ljava/lang/Math;->min(FF)F
+
+    move-result v2
+
+    invoke-static {v4, v2}, Ljava/lang/Math;->max(FF)F
+
+    move-result v2
+
+    aput v2, v3, v1
+
+    add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    :catchall_0
-    move-exception p1
+    :cond_0
+    iget-boolean p2, p1, Lobc;->g:Z
 
-    monitor-exit p2
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    if-eqz p2, :cond_1
 
-    throw p1
+    iget-object p2, p1, Lobc;->l:[I
+
+    iget-object v1, p1, Lobc;->e:Loaf;
+
+    iget-object v1, v1, Loaf;->c:[I
+
+    iget v2, p1, Lobc;->f:I
+
+    aget v1, v1, v2
+
+    iget-object v2, p1, Lobc;->j:Loav;
+
+    iget v2, v2, Loas;->i:I
+
+    invoke-static {v1, v2}, Lohh;->W(II)I
+
+    move-result v1
+
+    invoke-static {p2, v1}, Ljava/util/Arrays;->fill([II)V
+
+    iput-boolean v0, p1, Lobc;->g:Z
 
     :cond_1
-    :goto_0
-    return-object p1
+    iget-object p1, p1, Lobc;->j:Loav;
 
-    :pswitch_2
-    sget-object p1, Lobb;->e:Lobb;
+    invoke-virtual {p1}, Loav;->invalidateSelf()V
 
-    return-object p1
-
-    :pswitch_3
-    new-instance p1, Lnwn;
-
-    sget-object p2, Lobb;->e:Lobb;
-
-    invoke-direct {p1, p2}, Lnwn;-><init>(Lnws;)V
-
-    return-object p1
-
-    :pswitch_4
-    new-instance p1, Lobb;
-
-    invoke-direct {p1}, Lobb;-><init>()V
-
-    return-object p1
-
-    :pswitch_5
-    const-string p1, "a"
-
-    const-string v0, "\u0001\u0003\u0000\u0001\u0002\u0004\u0003\u0000\u0000\u0000\u0002\u1008\u0001\u0003\u1001\u0002\u0004\u1001\u0003"
-
-    const/4 v1, 0x4
-
-    new-array v1, v1, [Ljava/lang/Object;
-
-    const/4 v2, 0x0
-
-    aput-object p1, v1, v2
-
-    const-string p1, "b"
-
-    aput-object p1, v1, p2
-
-    const/4 p1, 0x2
-
-    const-string p2, "c"
-
-    aput-object p2, v1, p1
-
-    const/4 p1, 0x3
-
-    const-string p2, "d"
-
-    aput-object p2, v1, p1
-
-    sget-object p1, Lobb;->e:Lobb;
-
-    invoke-static {p1, v0, v1}, Lobb;->X(Lnxy;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object p1
-
-    return-object p1
-
-    :pswitch_6
-    invoke-static {p2}, Ljava/lang/Byte;->valueOf(B)Ljava/lang/Byte;
-
-    move-result-object p1
-
-    return-object p1
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_6
-        :pswitch_0
-        :pswitch_5
-        :pswitch_4
-        :pswitch_3
-        :pswitch_2
-        :pswitch_1
-    .end packed-switch
+    return-void
 .end method

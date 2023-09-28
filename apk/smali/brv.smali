@@ -1,46 +1,35 @@
-.class final Lbrv;
-.super Lbry;
+.class public final synthetic Lbrv;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Llij;
+
+
+# instance fields
+.field public final synthetic a:Lbro;
 
 
 # direct methods
-.method public constructor <init>()V
+.method public synthetic constructor <init>(Lbro;)V
     .locals 0
 
-    invoke-direct {p0}, Lbry;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lbrv;->a:Lbro;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Z
+.method public final fB(Ljava/lang/Object;)V
     .locals 1
 
-    const/4 v0, 0x0
+    iget-object v0, p0, Lbrv;->a:Lbro;
 
-    return v0
-.end method
+    check-cast p1, Lcwi;
 
-.method public final b()Z
-    .locals 1
+    invoke-interface {v0, p1}, Lbro;->e(Lcwi;)V
 
-    const/4 v0, 0x0
-
-    return v0
-.end method
-
-.method public final c(I)Z
-    .locals 0
-
-    const/4 p1, 0x0
-
-    return p1
-.end method
-
-.method public final d(ZII)Z
-    .locals 0
-
-    const/4 p1, 0x0
-
-    return p1
+    return-void
 .end method

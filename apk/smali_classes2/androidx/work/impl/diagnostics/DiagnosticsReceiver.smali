@@ -12,7 +12,7 @@
 
     const-string v0, "DiagnosticsRcvr"
 
-    invoke-static {v0}, Laxq;->b(Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v0}, Lkus;->g(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -32,27 +32,35 @@
 
 # virtual methods
 .method public final onReceive(Landroid/content/Context;Landroid/content/Intent;)V
-    .locals 3
+    .locals 4
 
     if-nez p2, :cond_0
 
     return-void
 
     :cond_0
-    invoke-static {}, Laxq;->a()Laxq;
+    invoke-static {}, Lkus;->l()Lkus;
+
+    move-result-object p2
+
+    const/4 v0, 0x0
+
+    new-array v1, v0, [Ljava/lang/Throwable;
+
+    invoke-virtual {p2, v1}, Lkus;->h([Ljava/lang/Throwable;)V
 
     :try_start_0
-    invoke-static {p1}, Lazd;->e(Landroid/content/Context;)Lazd;
+    invoke-static {p1}, Laof;->e(Landroid/content/Context;)Laof;
 
     move-result-object p1
 
     const-class p2, Landroidx/work/impl/workers/DiagnosticsWorker;
 
-    new-instance v0, Laxx;
+    new-instance v1, Lane;
 
-    invoke-direct {v0, p2}, Laxx;-><init>(Ljava/lang/Class;)V
+    invoke-direct {v1, p2}, Lane;-><init>(Ljava/lang/Class;)V
 
-    invoke-virtual {v0}, Laxx;->b()Lva;
+    invoke-virtual {v1}, Lane;->a()Lanf;
 
     move-result-object p2
 
@@ -62,43 +70,49 @@
 
     invoke-interface {p2}, Ljava/util/List;->isEmpty()Z
 
-    move-result v0
+    move-result v1
 
-    if-nez v0, :cond_1
+    if-nez v1, :cond_1
 
-    new-instance v0, Layu;
+    new-instance v1, Lanq;
 
-    const/4 v1, 0x0
+    const/4 v2, 0x0
 
-    const/4 v2, 0x2
+    const/4 v3, 0x2
 
-    invoke-direct {v0, p1, v1, v2, p2}, Layu;-><init>(Lazd;Ljava/lang/String;ILjava/util/List;)V
+    invoke-direct {v1, p1, v2, v3, p2}, Lanq;-><init>(Laof;Ljava/lang/String;ILjava/util/List;)V
 
-    invoke-virtual {v0}, Layu;->h()Laxu;
+    invoke-virtual {v1}, Lanq;->d()Lana;
 
     return-void
 
     :cond_1
-    const-string p1, "enqueue needs at least one WorkRequest."
+    new-instance p1, Ljava/lang/IllegalArgumentException;
 
-    new-instance p2, Ljava/lang/IllegalArgumentException;
+    const-string p2, "enqueue needs at least one WorkRequest."
 
-    invoke-direct {p2, p1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+    invoke-direct {p1, p2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
-    throw p2
+    throw p1
     :try_end_0
     .catch Ljava/lang/IllegalStateException; {:try_start_0 .. :try_end_0} :catch_0
 
     :catch_0
     move-exception p1
 
-    invoke-static {}, Laxq;->a()Laxq;
+    invoke-static {}, Lkus;->l()Lkus;
 
     sget-object p2, Landroidx/work/impl/diagnostics/DiagnosticsReceiver;->a:Ljava/lang/String;
 
-    const-string v0, "WorkManager is not initialized"
+    const/4 v1, 0x1
 
-    invoke-static {p2, v0, p1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+    new-array v1, v1, [Ljava/lang/Throwable;
+
+    aput-object p1, v1, v0
+
+    const-string p1, "WorkManager is not initialized"
+
+    invoke-static {p2, p1, v1}, Lkus;->i(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Throwable;)V
 
     return-void
 .end method

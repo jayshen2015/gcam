@@ -1,214 +1,301 @@
-.class Ldpb;
-.super Ldoy;
+.class public final Ldpb;
+.super Ljava/lang/Object;
 
 
 # instance fields
-.field final synthetic a:Ldpc;
+.field private final a:Landroid/graphics/RectF;
+
+.field private final b:Landroid/graphics/PointF;
+
+.field private final c:Landroid/graphics/PointF;
+
+.field private final d:F
 
 
 # direct methods
-.method public constructor <init>(Ldpc;)V
+.method public constructor <init>()V
     .locals 0
 
-    iput-object p1, p0, Ldpb;->a:Ldpc;
-
-    invoke-direct {p0}, Ldoy;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
+.end method
+
+.method public constructor <init>(Landroid/graphics/RectF;Landroid/graphics/PointF;Landroid/graphics/PointF;F)V
+    .locals 0
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Ldpb;->a:Landroid/graphics/RectF;
+
+    iput-object p2, p0, Ldpb;->b:Landroid/graphics/PointF;
+
+    iput-object p3, p0, Ldpb;->c:Landroid/graphics/PointF;
+
+    iput p4, p0, Ldpb;->d:F
+
+    return-void
+.end method
+
+.method public static a(Landroid/graphics/RectF;)Ldpa;
+    .locals 1
+
+    new-instance v0, Ldpa;
+
+    invoke-direct {v0}, Ldpa;-><init>()V
+
+    iput-object p0, v0, Ldpa;->a:Landroid/graphics/RectF;
+
+    return-object v0
 .end method
 
 
 # virtual methods
-.method public b(Ldok;)V
+.method public final equals(Ljava/lang/Object;)Z
     .locals 4
 
-    iget-object v0, p0, Ldpb;->a:Ldpc;
+    const/4 v0, 0x1
 
-    iget-object v0, v0, Ldpc;->a:Lcom/google/android/apps/camera/evcomp/EvCompView;
+    if-ne p1, p0, :cond_0
 
-    iget-object v1, v0, Lcom/google/android/apps/camera/evcomp/EvCompView;->b:Ljwb;
+    return v0
 
-    check-cast v1, Ljvk;
-
-    iget-object v1, v1, Ljvk;->d:Ljava/lang/Object;
-
-    check-cast v1, Ldoh;
-
-    sget-object v2, Ldoh;->a:Ldoh;
-
-    invoke-virtual {v1, v2}, Ldoh;->equals(Ljava/lang/Object;)Z
-
-    move-result v1
+    :cond_0
+    instance-of v1, p1, Ldpb;
 
     const/4 v2, 0x0
 
-    const/4 v3, 0x1
+    if-eqz v1, :cond_5
 
-    if-eqz v1, :cond_0
+    check-cast p1, Ldpb;
 
-    iget p1, v0, Lcom/google/android/apps/camera/evcomp/EvCompView;->k:F
+    iget-object v1, p0, Ldpb;->a:Landroid/graphics/RectF;
 
-    invoke-static {p1}, Lcom/google/android/apps/camera/evcomp/EvCompView;->d(F)Ljava/lang/String;
+    iget-object v3, p1, Ldpb;->a:Landroid/graphics/RectF;
 
-    move-result-object p1
-
-    invoke-virtual {v0}, Lcom/google/android/apps/camera/evcomp/EvCompView;->getContext()Landroid/content/Context;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
-
-    move-result-object v1
-
-    new-array v3, v3, [Ljava/lang/Object;
-
-    aput-object p1, v3, v2
-
-    const p1, 0x7f140178
-
-    invoke-virtual {v1, p1, v3}, Landroid/content/res/Resources;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object p1
-
-    :goto_0
-    invoke-virtual {v0, p1}, Lcom/google/android/apps/camera/evcomp/EvCompView;->announceForAccessibility(Ljava/lang/CharSequence;)V
-
-    return-void
-
-    :cond_0
-    sget-object v1, Ldok;->a:Ldok;
-
-    invoke-virtual {p1, v1}, Ldok;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v1, v3}, Landroid/graphics/RectF;->equals(Ljava/lang/Object;)Z
 
     move-result v1
 
-    if-eqz v1, :cond_1
+    if-eqz v1, :cond_4
 
-    iget p1, v0, Lcom/google/android/apps/camera/evcomp/EvCompView;->k:F
+    iget-object v1, p0, Ldpb;->b:Landroid/graphics/PointF;
 
-    invoke-static {p1}, Lcom/google/android/apps/camera/evcomp/EvCompView;->d(F)Ljava/lang/String;
+    if-nez v1, :cond_1
 
-    move-result-object p1
+    iget-object v1, p1, Ldpb;->b:Landroid/graphics/PointF;
 
-    invoke-virtual {v0}, Lcom/google/android/apps/camera/evcomp/EvCompView;->getContext()Landroid/content/Context;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
-
-    move-result-object v1
-
-    new-array v3, v3, [Ljava/lang/Object;
-
-    aput-object p1, v3, v2
-
-    const p1, 0x7f1400a6
-
-    invoke-virtual {v1, p1, v3}, Landroid/content/res/Resources;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object p1
+    if-nez v1, :cond_4
 
     goto :goto_0
 
     :cond_1
-    sget-object v1, Ldok;->b:Ldok;
+    iget-object v3, p1, Ldpb;->b:Landroid/graphics/PointF;
 
-    invoke-virtual {p1, v1}, Ldok;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v1, v3}, Landroid/graphics/PointF;->equals(Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_4
+
+    :goto_0
+    iget-object v1, p0, Ldpb;->c:Landroid/graphics/PointF;
+
+    if-nez v1, :cond_2
+
+    iget-object v1, p1, Ldpb;->c:Landroid/graphics/PointF;
+
+    if-nez v1, :cond_4
+
+    goto :goto_1
+
+    :cond_2
+    iget-object v3, p1, Ldpb;->c:Landroid/graphics/PointF;
+
+    invoke-virtual {v1, v3}, Landroid/graphics/PointF;->equals(Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-nez v1, :cond_3
+
+    goto :goto_2
+
+    :cond_3
+    :goto_1
+    iget v1, p0, Ldpb;->d:F
+
+    invoke-static {v1}, Ljava/lang/Float;->floatToIntBits(F)I
+
+    move-result v1
+
+    iget p1, p1, Ldpb;->d:F
+
+    invoke-static {p1}, Ljava/lang/Float;->floatToIntBits(F)I
 
     move-result p1
 
-    if-eqz p1, :cond_2
+    if-ne v1, p1, :cond_4
 
-    iget p1, v0, Lcom/google/android/apps/camera/evcomp/EvCompView;->l:F
+    return v0
 
-    invoke-static {p1}, Lcom/google/android/apps/camera/evcomp/EvCompView;->d(F)Ljava/lang/String;
+    :cond_4
+    :goto_2
+    return v2
 
-    move-result-object p1
+    :cond_5
+    return v2
+.end method
 
-    invoke-virtual {v0}, Lcom/google/android/apps/camera/evcomp/EvCompView;->getContext()Landroid/content/Context;
+.method public final hashCode()I
+    .locals 4
 
-    move-result-object v1
+    iget-object v0, p0, Ldpb;->a:Landroid/graphics/RectF;
 
-    invoke-virtual {v1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+    invoke-virtual {v0}, Landroid/graphics/RectF;->hashCode()I
 
-    move-result-object v1
+    move-result v0
 
-    new-array v3, v3, [Ljava/lang/Object;
+    const v1, 0xf4243
 
-    aput-object p1, v3, v2
+    xor-int/2addr v0, v1
 
-    const p1, 0x7f14049a
+    mul-int v0, v0, v1
 
-    invoke-virtual {v1, p1, v3}, Landroid/content/res/Resources;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
+    iget-object v2, p0, Ldpb;->b:Landroid/graphics/PointF;
 
-    move-result-object p1
+    const/4 v3, 0x0
+
+    if-nez v2, :cond_0
+
+    const/4 v2, 0x0
 
     goto :goto_0
 
-    :cond_2
-    return-void
+    :cond_0
+    invoke-virtual {v2}, Landroid/graphics/PointF;->hashCode()I
+
+    move-result v2
+
+    :goto_0
+    xor-int/2addr v0, v2
+
+    mul-int v0, v0, v1
+
+    iget-object v2, p0, Ldpb;->c:Landroid/graphics/PointF;
+
+    if-nez v2, :cond_1
+
+    goto :goto_1
+
+    :cond_1
+    invoke-virtual {v2}, Landroid/graphics/PointF;->hashCode()I
+
+    move-result v3
+
+    :goto_1
+    xor-int/2addr v0, v3
+
+    mul-int v0, v0, v1
+
+    iget v1, p0, Ldpb;->d:F
+
+    invoke-static {v1}, Ljava/lang/Float;->floatToIntBits(F)I
+
+    move-result v1
+
+    xor-int/2addr v0, v1
+
+    return v0
 .end method
 
-.method public final d(FLdok;)V
-    .locals 2
+.method public final toString()Ljava/lang/String;
+    .locals 8
 
-    iget-object v0, p0, Ldpb;->a:Ldpc;
+    iget-object v0, p0, Ldpb;->a:Landroid/graphics/RectF;
 
-    iget-object v0, v0, Ldpc;->j:Ljwb;
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
-    const/4 v1, 0x0
+    move-result-object v0
 
-    invoke-static {v1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+    iget-object v1, p0, Ldpb;->b:Landroid/graphics/PointF;
+
+    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v1
 
-    invoke-interface {v0, v1}, Ljwb;->bn(Ljava/lang/Object;)V
+    iget-object v2, p0, Ldpb;->c:Landroid/graphics/PointF;
 
-    iget-object v0, p0, Ldpb;->a:Ldpc;
+    invoke-static {v2}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
-    invoke-virtual {v0, p1, p2}, Ldpc;->m(FLdok;)V
+    move-result-object v2
 
-    return-void
-.end method
+    iget v3, p0, Ldpb;->d:F
 
-.method public final f()V
-    .locals 2
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
-    iget-object v0, p0, Ldpb;->a:Ldpc;
+    move-result-object v4
 
-    iget-object v0, v0, Ldpc;->d:Ljwb;
+    invoke-virtual {v4}, Ljava/lang/String;->length()I
 
-    const/4 v1, 0x1
+    move-result v4
 
-    invoke-static {v1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v5
 
-    invoke-interface {v0, v1}, Ljwb;->bn(Ljava/lang/Object;)V
+    invoke-virtual {v5}, Ljava/lang/String;->length()I
 
-    iget-object v0, p0, Ldpb;->a:Ldpc;
+    move-result v5
 
-    iget-object v0, v0, Ldpc;->c:Ljwb;
+    invoke-static {v2}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
-    invoke-interface {v0, v1}, Ljwb;->bn(Ljava/lang/Object;)V
+    move-result-object v6
 
-    return-void
-.end method
+    invoke-virtual {v6}, Ljava/lang/String;->length()I
 
-.method public final g()V
-    .locals 2
+    move-result v6
 
-    iget-object v0, p0, Ldpb;->a:Ldpc;
+    new-instance v7, Ljava/lang/StringBuilder;
 
-    iget-object v0, v0, Ldpc;->c:Ljwb;
+    add-int/lit8 v4, v4, 0x40
 
-    const/4 v1, 0x0
+    add-int/2addr v4, v5
 
-    invoke-static {v1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+    add-int/2addr v4, v6
 
-    move-result-object v1
+    invoke-direct {v7, v4}, Ljava/lang/StringBuilder;-><init>(I)V
 
-    invoke-interface {v0, v1}, Ljwb;->bn(Ljava/lang/Object;)V
+    const-string v4, "FaceInfo{bounds="
 
-    return-void
+    invoke-virtual {v7, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v7, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v0, ", leftEye="
+
+    invoke-virtual {v7, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v7, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v0, ", rightEye="
+
+    invoke-virtual {v7, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v7, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v0, ", faceRoll="
+
+    invoke-virtual {v7, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v7, v3}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
+
+    const-string v0, "}"
+
+    invoke-virtual {v7, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v7}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
 .end method

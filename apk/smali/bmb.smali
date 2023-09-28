@@ -1,246 +1,372 @@
-.class final Lbmb;
-.super Landroid/hardware/camera2/CameraDevice$StateCallback;
+.class public Lbmb;
+.super Ljava/lang/Object;
 
 
 # instance fields
-.field final synthetic a:Lbmf;
+.field private final a:Ljava/util/Map;
+
+.field private final b:J
+
+.field private c:J
 
 
 # direct methods
-.method public constructor <init>(Lbmf;)V
-    .locals 0
+.method public constructor <init>(J)V
+    .locals 4
 
-    iput-object p1, p0, Lbmb;->a:Lbmf;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0}, Landroid/hardware/camera2/CameraDevice$StateCallback;-><init>()V
+    new-instance v0, Ljava/util/LinkedHashMap;
+
+    const/16 v1, 0x64
+
+    const/high16 v2, 0x3f400000    # 0.75f
+
+    const/4 v3, 0x1
+
+    invoke-direct {v0, v1, v2, v3}, Ljava/util/LinkedHashMap;-><init>(IFZ)V
+
+    iput-object v0, p0, Lbmb;->a:Ljava/util/Map;
+
+    iput-wide p1, p0, Lbmb;->b:J
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onDisconnected(Landroid/hardware/camera2/CameraDevice;)V
-    .locals 2
-
-    sget-object p1, Lbmh;->a:Lboc;
-
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v1, "Camera device \'"
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-object v1, p0, Lbmb;->a:Lbmf;
-
-    iget v1, v1, Lbmf;->b:I
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    const-string v1, "\' was disconnected"
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-static {p1, v0}, Lbod;->c(Lboc;Ljava/lang/String;)V
-
-    return-void
-.end method
-
-.method public final onError(Landroid/hardware/camera2/CameraDevice;I)V
-    .locals 2
-
-    sget-object p1, Lbmh;->a:Lboc;
-
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v1, "Camera device \'"
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-object v1, p0, Lbmb;->a:Lbmf;
-
-    iget v1, v1, Lbmf;->b:I
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    const-string v1, "\' encountered error code \'"
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0, p2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    const/16 p2, 0x27
-
-    invoke-virtual {v0, p2}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p2
-
-    invoke-static {p1, p2}, Lbod;->a(Lboc;Ljava/lang/String;)V
-
-    iget-object p1, p0, Lbmb;->a:Lbmf;
-
-    iget-object p2, p1, Lbmf;->a:Lbna;
-
-    if-eqz p2, :cond_0
-
-    iget v0, p1, Lbmf;->b:I
-
-    invoke-virtual {p1, v0}, Lbnz;->c(I)Ljava/lang/String;
-
-    move-result-object p1
-
-    invoke-interface {p2, v0, p1}, Lbna;->c(ILjava/lang/String;)V
-
-    :cond_0
-    return-void
-.end method
-
-.method public final onOpened(Landroid/hardware/camera2/CameraDevice;)V
-    .locals 8
-
-    iget-object v0, p0, Lbmb;->a:Lbmf;
-
-    iput-object p1, v0, Lbmf;->d:Landroid/hardware/camera2/CameraDevice;
-
-    iget-object p1, v0, Lbmf;->a:Lbna;
-
-    if-eqz p1, :cond_1
-
-    :try_start_0
-    iget-object p1, v0, Lbmf;->q:Lbmh;
-
-    iget-object p1, p1, Lbmh;->e:Landroid/hardware/camera2/CameraManager;
-
-    iget-object v0, v0, Lbmf;->c:Ljava/lang/String;
-
-    invoke-virtual {p1, v0}, Landroid/hardware/camera2/CameraManager;->getCameraCharacteristics(Ljava/lang/String;)Landroid/hardware/camera2/CameraCharacteristics;
-
-    move-result-object p1
-
-    iget-object v0, p0, Lbmb;->a:Lbmf;
-
-    iget-object v0, v0, Lbmf;->q:Lbmh;
-
-    invoke-virtual {v0}, Lbmh;->b()Lbnr;
-
-    move-result-object v0
-
-    iget-object v1, p0, Lbmb;->a:Lbmf;
-
-    iget v1, v1, Lbmf;->b:I
-
-    invoke-interface {v0, v1}, Lbnr;->b(I)Lbnq;
-
-    move-result-object v5
-
-    iget-object v0, p0, Lbmb;->a:Lbmf;
-
-    new-instance v7, Lbly;
-
-    iget-object v3, v0, Lbmf;->q:Lbmh;
-
-    iget v4, v0, Lbmf;->b:I
-
-    move-object v1, v7
-
-    move-object v2, v3
-
-    move-object v6, p1
-
-    invoke-direct/range {v1 .. v6}, Lbly;-><init>(Lbmh;Lbmh;ILbnq;Landroid/hardware/camera2/CameraCharacteristics;)V
-
-    iput-object v7, v0, Lbmf;->e:Lbly;
-
-    iget-object v0, p0, Lbmb;->a:Lbmf;
-
-    new-instance v1, Lbof;
-
-    invoke-direct {v1}, Lbof;-><init>()V
-
-    iput-object v1, v0, Lbmf;->f:Lbof;
-
-    iget-object v0, p0, Lbmb;->a:Lbmf;
-
-    sget-object v1, Landroid/hardware/camera2/CameraCharacteristics;->SENSOR_INFO_ACTIVE_ARRAY_SIZE:Landroid/hardware/camera2/CameraCharacteristics$Key;
-
-    invoke-virtual {p1, v1}, Landroid/hardware/camera2/CameraCharacteristics;->get(Landroid/hardware/camera2/CameraCharacteristics$Key;)Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Landroid/graphics/Rect;
-
-    iput-object v1, v0, Lbmf;->g:Landroid/graphics/Rect;
-
-    iget-object v0, p0, Lbmb;->a:Lbmf;
-
-    sget-object v1, Landroid/hardware/camera2/CameraCharacteristics;->INFO_SUPPORTED_HARDWARE_LEVEL:Landroid/hardware/camera2/CameraCharacteristics$Key;
-
-    invoke-virtual {p1, v1}, Landroid/hardware/camera2/CameraCharacteristics;->get(Landroid/hardware/camera2/CameraCharacteristics$Key;)Ljava/lang/Object;
-
-    move-result-object p1
-
-    check-cast p1, Ljava/lang/Integer;
-
-    invoke-virtual {p1}, Ljava/lang/Integer;->intValue()I
-
-    move-result p1
-
-    const/4 v1, 0x2
-
-    if-ne p1, v1, :cond_0
+.method protected a(Ljava/lang/Object;)I
+    .locals 0
 
     const/4 p1, 0x1
 
-    goto :goto_0
+    return p1
+.end method
+
+.method protected c(Ljava/lang/Object;Ljava/lang/Object;)V
+    .locals 0
+
+    return-void
+.end method
+
+.method public final declared-synchronized e()J
+    .locals 2
+
+    monitor-enter p0
+
+    :try_start_0
+    iget-wide v0, p0, Lbmb;->b:J
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    monitor-exit p0
+
+    return-wide v0
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit p0
+
+    throw v0
+.end method
+
+.method public final declared-synchronized f(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 1
+
+    monitor-enter p0
+
+    :try_start_0
+    iget-object v0, p0, Lbmb;->a:Ljava/util/Map;
+
+    invoke-interface {v0, p1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p1
+
+    check-cast p1, Lbma;
+
+    if-eqz p1, :cond_0
+
+    iget-object p1, p1, Lbma;->a:Ljava/lang/Object;
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    :goto_0
+    monitor-exit p0
+
+    return-object p1
 
     :cond_0
     const/4 p1, 0x0
 
-    :goto_0
-    iput-boolean p1, v0, Lbmf;->h:Z
+    goto :goto_0
 
-    iget-object p1, p0, Lbmb;->a:Lbmf;
-
-    invoke-virtual {p1, v1}, Lbmf;->a(I)V
-
-    iget-object p1, p0, Lbmb;->a:Lbmf;
-
-    iget-object v0, p1, Lbmf;->a:Lbna;
-
-    iget-object p1, p1, Lbmf;->e:Lbly;
-
-    invoke-interface {v0, p1}, Lbna;->b(Lbne;)V
-    :try_end_0
-    .catch Landroid/hardware/camera2/CameraAccessException; {:try_start_0 .. :try_end_0} :catch_0
-
-    return-void
-
-    :catch_0
+    :catchall_0
     move-exception p1
 
-    iget-object p1, p0, Lbmb;->a:Lbmf;
+    monitor-exit p0
 
-    iget-object v0, p1, Lbmf;->a:Lbna;
+    goto :goto_2
 
-    iget v1, p1, Lbmf;->b:I
+    :goto_1
+    throw p1
 
-    invoke-virtual {p1, v1}, Lbnz;->c(I)Ljava/lang/String;
+    :goto_2
+    goto :goto_1
+.end method
+
+.method public final declared-synchronized g(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 7
+
+    monitor-enter p0
+
+    :try_start_0
+    invoke-virtual {p0, p2}, Lbmb;->a(Ljava/lang/Object;)I
+
+    move-result v0
+
+    int-to-long v1, v0
+
+    iget-wide v3, p0, Lbmb;->b:J
+
+    const/4 v5, 0x0
+
+    cmp-long v6, v1, v3
+
+    if-ltz v6, :cond_0
+
+    invoke-virtual {p0, p1, p2}, Lbmb;->c(Ljava/lang/Object;Ljava/lang/Object;)V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    monitor-exit p0
+
+    return-object v5
+
+    :cond_0
+    if-eqz p2, :cond_1
+
+    :try_start_1
+    iget-wide v3, p0, Lbmb;->c:J
+
+    add-long/2addr v3, v1
+
+    iput-wide v3, p0, Lbmb;->c:J
+
+    :cond_1
+    iget-object v1, p0, Lbmb;->a:Ljava/util/Map;
+
+    if-nez p2, :cond_2
+
+    move-object v2, v5
+
+    goto :goto_0
+
+    :cond_2
+    new-instance v2, Lbma;
+
+    invoke-direct {v2, p2, v0}, Lbma;-><init>(Ljava/lang/Object;I)V
+
+    :goto_0
+    invoke-interface {v1, p1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lbma;
+
+    if-eqz v0, :cond_3
+
+    iget-wide v1, p0, Lbmb;->c:J
+
+    iget v3, v0, Lbma;->b:I
+
+    int-to-long v3, v3
+
+    sub-long/2addr v1, v3
+
+    iput-wide v1, p0, Lbmb;->c:J
+
+    iget-object v1, v0, Lbma;->a:Ljava/lang/Object;
+
+    invoke-virtual {v1, p2}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+
+    move-result p2
+
+    if-nez p2, :cond_3
+
+    iget-object p2, v0, Lbma;->a:Ljava/lang/Object;
+
+    invoke-virtual {p0, p1, p2}, Lbmb;->c(Ljava/lang/Object;Ljava/lang/Object;)V
+
+    :cond_3
+    iget-wide p1, p0, Lbmb;->b:J
+
+    invoke-virtual {p0, p1, p2}, Lbmb;->j(J)V
+
+    if-eqz v0, :cond_4
+
+    iget-object p1, v0, Lbma;->a:Ljava/lang/Object;
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    monitor-exit p0
+
+    return-object p1
+
+    :cond_4
+    monitor-exit p0
+
+    return-object v5
+
+    :catchall_0
+    move-exception p1
+
+    monitor-exit p0
+
+    throw p1
+.end method
+
+.method public final declared-synchronized h(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 4
+
+    monitor-enter p0
+
+    :try_start_0
+    iget-object v0, p0, Lbmb;->a:Ljava/util/Map;
+
+    invoke-interface {v0, p1}, Ljava/util/Map;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p1
 
-    invoke-interface {v0, v1, p1}, Lbna;->c(ILjava/lang/String;)V
+    check-cast p1, Lbma;
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    if-nez p1, :cond_0
+
+    const/4 p1, 0x0
+
+    :goto_0
+    monitor-exit p0
+
+    return-object p1
+
+    :cond_0
+    :try_start_1
+    iget-wide v0, p0, Lbmb;->c:J
+
+    iget v2, p1, Lbma;->b:I
+
+    int-to-long v2, v2
+
+    sub-long/2addr v0, v2
+
+    iput-wide v0, p0, Lbmb;->c:J
+
+    iget-object p1, p1, Lbma;->a:Ljava/lang/Object;
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    goto :goto_0
+
+    :catchall_0
+    move-exception p1
+
+    monitor-exit p0
+
+    goto :goto_2
+
+    :goto_1
+    throw p1
+
+    :goto_2
+    goto :goto_1
+.end method
+
+.method public final i()V
+    .locals 2
+
+    const-wide/16 v0, 0x0
+
+    invoke-virtual {p0, v0, v1}, Lbmb;->j(J)V
+
+    return-void
+.end method
+
+.method public final declared-synchronized j(J)V
+    .locals 7
+
+    monitor-enter p0
+
+    :goto_0
+    :try_start_0
+    iget-wide v0, p0, Lbmb;->c:J
+
+    cmp-long v2, v0, p1
+
+    if-lez v2, :cond_0
+
+    iget-object v0, p0, Lbmb;->a:Ljava/util/Map;
+
+    invoke-interface {v0}, Ljava/util/Map;->entrySet()Ljava/util/Set;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Ljava/util/Map$Entry;
+
+    invoke-interface {v1}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Lbma;
+
+    iget-wide v3, p0, Lbmb;->c:J
+
+    iget v5, v2, Lbma;->b:I
+
+    int-to-long v5, v5
+
+    sub-long/2addr v3, v5
+
+    iput-wide v3, p0, Lbmb;->c:J
+
+    invoke-interface {v1}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
+
+    move-result-object v1
+
+    invoke-interface {v0}, Ljava/util/Iterator;->remove()V
+
+    iget-object v0, v2, Lbma;->a:Ljava/lang/Object;
+
+    invoke-virtual {p0, v1, v0}, Lbmb;->c(Ljava/lang/Object;Ljava/lang/Object;)V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    goto :goto_0
+
+    :cond_0
+    monitor-exit p0
 
     return-void
 
-    :cond_1
-    return-void
+    :catchall_0
+    move-exception p1
+
+    monitor-exit p0
+
+    goto :goto_2
+
+    :goto_1
+    throw p1
+
+    :goto_2
+    goto :goto_1
 .end method

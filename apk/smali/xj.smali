@@ -1,29 +1,26 @@
-.class abstract Lxj;
-.super Ljava/lang/Object;
+.class Lxj;
+.super Ljava/lang/Throwable;
 
 
 # direct methods
 .method public constructor <init>()V
-    .locals 0
+    .locals 1
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const-string v0, "Failure occurred while trying to finish a future."
+
+    invoke-direct {p0, v0}, Ljava/lang/Throwable;-><init>(Ljava/lang/String;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public abstract a(Lxs;Lxs;)V
-.end method
+.method public final declared-synchronized fillInStackTrace()Ljava/lang/Throwable;
+    .locals 0
 
-.method public abstract b(Lxs;Ljava/lang/Thread;)V
-.end method
+    monitor-enter p0
 
-.method public abstract c(Lxt;Lxn;Lxn;)Z
-.end method
+    monitor-exit p0
 
-.method public abstract d(Lxt;Ljava/lang/Object;Ljava/lang/Object;)Z
-.end method
-
-.method public abstract e(Lxt;Lxs;Lxs;)Z
+    return-object p0
 .end method

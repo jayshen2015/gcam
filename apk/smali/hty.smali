@@ -1,122 +1,57 @@
-.class Lhty;
-.super Lhtm;
+.class public final synthetic Lhty;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Llij;
 
 
 # instance fields
-.field final synthetic a:Lhtz;
+.field public final synthetic a:Lhua;
+
+.field public final synthetic b:Lhts;
 
 
 # direct methods
-.method public constructor <init>(Lhtz;)V
+.method public synthetic constructor <init>(Lhua;Lhts;)V
     .locals 0
 
-    iput-object p1, p0, Lhty;->a:Lhtz;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0}, Lhtm;-><init>()V
+    iput-object p1, p0, Lhty;->a:Lhua;
+
+    iput-object p2, p0, Lhty;->b:Lhts;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public c()V
-    .locals 0
-
-    return-void
-.end method
-
-.method public d()V
-    .locals 0
-
-    return-void
-.end method
-
-.method public final f()V
+.method public final fB(Ljava/lang/Object;)V
     .locals 3
 
-    iget-object v0, p0, Lhty;->a:Lhtz;
+    iget-object v0, p0, Lhty;->a:Lhua;
 
-    invoke-virtual {v0}, Lhtz;->y()V
+    iget-object v1, p0, Lhty;->b:Lhts;
 
-    iget-object v0, p0, Lhty;->a:Lhtz;
+    if-nez p1, :cond_0
 
-    iget-object v0, v0, Lhtz;->c:Libj;
-
-    sget-object v1, Lika;->c:Lika;
-
-    const/4 v2, 0x1
-
-    invoke-interface {v0, v1, v2}, Libj;->j(Lika;Z)V
-
-    iget-object v0, p0, Lhty;->a:Lhtz;
-
-    sget-object v1, Lika;->c:Lika;
-
-    invoke-virtual {v0, v1}, Lhtz;->B(Lika;)V
-
-    iget-object v0, p0, Lhty;->a:Lhtz;
-
-    iget-object v0, v0, Lhtz;->d:Lebj;
-
-    invoke-virtual {v0}, Lebj;->b()V
+    invoke-virtual {v0, v1}, Lhua;->d(Lhts;)V
 
     return-void
-.end method
 
-.method public final g()V
-    .locals 1
+    :cond_0
+    invoke-virtual {v0, v1}, Lhua;->c(Lhts;)Ljava/lang/Object;
 
-    iget-object v0, p0, Lhty;->a:Lhtz;
+    move-result-object v2
 
-    invoke-virtual {v0}, Lhtz;->z()V
+    invoke-virtual {p1, v2}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
 
-    iget-object v0, p0, Lhty;->a:Lhtz;
+    move-result v2
 
-    iget-object v0, v0, Lhtz;->g:Lcfp;
+    if-nez v2, :cond_1
 
-    invoke-virtual {v0}, Lcfp;->c()V
+    invoke-virtual {v0, v1, p1}, Lhua;->e(Lhts;Ljava/lang/Object;)V
 
-    iget-object v0, p0, Lhty;->a:Lhtz;
-
-    iget-object v0, v0, Lhtz;->d:Lebj;
-
-    invoke-virtual {v0}, Lebj;->a()V
-
-    return-void
-.end method
-
-.method public i()V
-    .locals 0
-
-    return-void
-.end method
-
-.method public k()V
-    .locals 0
-
-    return-void
-.end method
-
-.method public l()V
-    .locals 0
-
-    return-void
-.end method
-
-.method public n()V
-    .locals 0
-
-    return-void
-.end method
-
-.method public o()V
-    .locals 0
-
-    return-void
-.end method
-
-.method public q()V
-    .locals 0
-
+    :cond_1
     return-void
 .end method

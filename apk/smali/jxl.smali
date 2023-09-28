@@ -1,506 +1,433 @@
-.class public final Ljxl;
-.super Ljava/lang/Object;
+.class final Ljxl;
+.super Landroid/view/GestureDetector$SimpleOnGestureListener;
 
 
 # instance fields
-.field public final a:I
-
-.field public final b:I
-
-.field public final c:I
-
-.field public final d:I
-
-.field public final e:I
-
-.field public final f:I
-
-.field public final g:I
-
-.field public final h:I
-
-.field public final i:I
-
-.field public final j:I
-
-.field public final k:I
-
-.field public final l:I
-
-.field public final m:I
+.field final synthetic a:Ljxn;
 
 
 # direct methods
-.method public constructor <init>()V
+.method public constructor <init>(Ljxn;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Ljxl;->a:Ljxn;
+
+    invoke-direct {p0}, Landroid/view/GestureDetector$SimpleOnGestureListener;-><init>()V
 
     return-void
-.end method
-
-.method public constructor <init>(IIIIIIIIIIIII)V
-    .locals 0
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput p1, p0, Ljxl;->a:I
-
-    iput p2, p0, Ljxl;->b:I
-
-    iput p3, p0, Ljxl;->c:I
-
-    iput p4, p0, Ljxl;->d:I
-
-    iput p5, p0, Ljxl;->e:I
-
-    iput p6, p0, Ljxl;->f:I
-
-    iput p7, p0, Ljxl;->g:I
-
-    iput p8, p0, Ljxl;->h:I
-
-    iput p9, p0, Ljxl;->i:I
-
-    iput p10, p0, Ljxl;->j:I
-
-    iput p11, p0, Ljxl;->k:I
-
-    iput p12, p0, Ljxl;->l:I
-
-    iput p13, p0, Ljxl;->m:I
-
-    return-void
-.end method
-
-.method public static a(Landroid/media/CamcorderProfile;)Ljxk;
-    .locals 2
-
-    new-instance v0, Ljxk;
-
-    invoke-direct {v0}, Ljxk;-><init>()V
-
-    iget v1, p0, Landroid/media/CamcorderProfile;->audioBitRate:I
-
-    invoke-virtual {v0, v1}, Ljxk;->b(I)V
-
-    iget v1, p0, Landroid/media/CamcorderProfile;->audioChannels:I
-
-    invoke-virtual {v0, v1}, Ljxk;->c(I)V
-
-    iget v1, p0, Landroid/media/CamcorderProfile;->audioCodec:I
-
-    invoke-virtual {v0, v1}, Ljxk;->d(I)V
-
-    iget v1, p0, Landroid/media/CamcorderProfile;->audioSampleRate:I
-
-    invoke-virtual {v0, v1}, Ljxk;->e(I)V
-
-    iget v1, p0, Landroid/media/CamcorderProfile;->fileFormat:I
-
-    invoke-virtual {v0, v1}, Ljxk;->f(I)V
-
-    iget v1, p0, Landroid/media/CamcorderProfile;->quality:I
-
-    invoke-virtual {v0, v1}, Ljxk;->g(I)V
-
-    iget v1, p0, Landroid/media/CamcorderProfile;->videoBitRate:I
-
-    invoke-virtual {v0, v1}, Ljxk;->h(I)V
-
-    iget v1, p0, Landroid/media/CamcorderProfile;->videoCodec:I
-
-    invoke-virtual {v0, v1}, Ljxk;->i(I)V
-
-    const/4 v1, -0x1
-
-    invoke-virtual {v0, v1}, Ljxk;->k(I)V
-
-    invoke-virtual {v0, v1}, Ljxk;->j(I)V
-
-    iget v1, p0, Landroid/media/CamcorderProfile;->videoFrameHeight:I
-
-    invoke-virtual {v0, v1}, Ljxk;->l(I)V
-
-    iget v1, p0, Landroid/media/CamcorderProfile;->videoFrameRate:I
-
-    invoke-virtual {v0, v1}, Ljxk;->m(I)V
-
-    iget p0, p0, Landroid/media/CamcorderProfile;->videoFrameWidth:I
-
-    invoke-virtual {v0, p0}, Ljxk;->n(I)V
-
-    return-object v0
-.end method
-
-.method public static b(Ljxl;)Ljxk;
-    .locals 2
-
-    new-instance v0, Ljxk;
-
-    invoke-direct {v0}, Ljxk;-><init>()V
-
-    iget v1, p0, Ljxl;->a:I
-
-    invoke-virtual {v0, v1}, Ljxk;->b(I)V
-
-    iget v1, p0, Ljxl;->b:I
-
-    invoke-virtual {v0, v1}, Ljxk;->c(I)V
-
-    iget v1, p0, Ljxl;->c:I
-
-    invoke-virtual {v0, v1}, Ljxk;->d(I)V
-
-    iget v1, p0, Ljxl;->d:I
-
-    invoke-virtual {v0, v1}, Ljxk;->e(I)V
-
-    iget v1, p0, Ljxl;->e:I
-
-    invoke-virtual {v0, v1}, Ljxk;->f(I)V
-
-    iget v1, p0, Ljxl;->f:I
-
-    invoke-virtual {v0, v1}, Ljxk;->g(I)V
-
-    iget v1, p0, Ljxl;->g:I
-
-    invoke-virtual {v0, v1}, Ljxk;->h(I)V
-
-    iget v1, p0, Ljxl;->h:I
-
-    invoke-virtual {v0, v1}, Ljxk;->i(I)V
-
-    iget v1, p0, Ljxl;->i:I
-
-    invoke-virtual {v0, v1}, Ljxk;->k(I)V
-
-    iget v1, p0, Ljxl;->j:I
-
-    invoke-virtual {v0, v1}, Ljxk;->j(I)V
-
-    iget v1, p0, Ljxl;->k:I
-
-    invoke-virtual {v0, v1}, Ljxk;->l(I)V
-
-    iget v1, p0, Ljxl;->l:I
-
-    invoke-virtual {v0, v1}, Ljxk;->m(I)V
-
-    iget p0, p0, Ljxl;->m:I
-
-    invoke-virtual {v0, p0}, Ljxk;->n(I)V
-
-    return-object v0
 .end method
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 4
+.method public final onDoubleTap(Landroid/view/MotionEvent;)Z
+    .locals 3
 
-    const/4 v0, 0x1
+    iget-object p1, p0, Ljxl;->a:Ljxn;
 
-    if-ne p1, p0, :cond_0
+    iget-object p1, p1, Ljxn;->f:Ljxj;
 
-    return v0
+    invoke-interface {p1}, Ljxj;->b()V
+
+    iget-object p1, p0, Ljxl;->a:Ljxn;
+
+    iget-object v0, p1, Ljxn;->g:Lolt;
+
+    check-cast v0, Lorq;
+
+    iget-object v0, v0, Lorq;->c:Lorq;
+
+    iget-object p1, p1, Ljxn;->h:Llco;
+
+    check-cast p1, Llce;
+
+    iget-object p1, p1, Llce;->d:Ljava/lang/Object;
+
+    invoke-interface {v0, p1}, Lolt;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p1
+
+    check-cast p1, Ljxd;
+
+    const/4 v0, 0x0
+
+    if-eqz p1, :cond_5
+
+    iget-object v1, p0, Ljxl;->a:Ljxn;
+
+    iget-object v1, v1, Ljxn;->j:Lddf;
+
+    sget-object v2, Lddl;->bn:Lddg;
+
+    invoke-interface {v1, v2}, Lddf;->k(Lddg;)Z
+
+    move-result v1
+
+    if-nez v1, :cond_0
+
+    iget-object p1, p0, Ljxl;->a:Ljxn;
+
+    iget-object p1, p1, Ljxn;->j:Lddf;
+
+    sget-object v1, Ldds;->a:Lddg;
+
+    invoke-interface {p1}, Lddf;->f()V
+
+    goto :goto_2
 
     :cond_0
-    instance-of v1, p1, Ljxl;
+    sget-object v1, Ljxd;->b:Ljxd;
 
-    const/4 v2, 0x0
+    if-ne p1, v1, :cond_2
+
+    sget-boolean v1, Ljxn;->b:Z
 
     if-eqz v1, :cond_1
 
-    check-cast p1, Ljxl;
-
-    iget v1, p0, Ljxl;->a:I
-
-    iget v3, p1, Ljxl;->a:I
-
-    if-ne v1, v3, :cond_1
-
-    iget v1, p0, Ljxl;->b:I
-
-    iget v3, p1, Ljxl;->b:I
-
-    if-ne v1, v3, :cond_1
-
-    iget v1, p0, Ljxl;->c:I
-
-    iget v3, p1, Ljxl;->c:I
-
-    if-ne v1, v3, :cond_1
-
-    iget v1, p0, Ljxl;->d:I
-
-    iget v3, p1, Ljxl;->d:I
-
-    if-ne v1, v3, :cond_1
-
-    iget v1, p0, Ljxl;->e:I
-
-    iget v3, p1, Ljxl;->e:I
-
-    if-ne v1, v3, :cond_1
-
-    iget v1, p0, Ljxl;->f:I
-
-    iget v3, p1, Ljxl;->f:I
-
-    if-ne v1, v3, :cond_1
-
-    iget v1, p0, Ljxl;->g:I
-
-    iget v3, p1, Ljxl;->g:I
-
-    if-ne v1, v3, :cond_1
-
-    iget v1, p0, Ljxl;->h:I
-
-    iget v3, p1, Ljxl;->h:I
-
-    if-ne v1, v3, :cond_1
-
-    iget v1, p0, Ljxl;->i:I
-
-    iget v3, p1, Ljxl;->i:I
-
-    if-ne v1, v3, :cond_1
-
-    iget v1, p0, Ljxl;->j:I
-
-    iget v3, p1, Ljxl;->j:I
-
-    if-ne v1, v3, :cond_1
-
-    iget v1, p0, Ljxl;->k:I
-
-    iget v3, p1, Ljxl;->k:I
-
-    if-ne v1, v3, :cond_1
-
-    iget v1, p0, Ljxl;->l:I
-
-    iget v3, p1, Ljxl;->l:I
-
-    if-ne v1, v3, :cond_1
-
-    iget v1, p0, Ljxl;->m:I
-
-    iget p1, p1, Ljxl;->m:I
-
-    if-ne v1, p1, :cond_1
-
-    return v0
+    goto :goto_0
 
     :cond_1
-    return v2
-.end method
+    const/4 p1, 0x1
 
-.method public final hashCode()I
-    .locals 3
+    return p1
 
-    iget v0, p0, Ljxl;->a:I
+    :cond_2
+    :goto_0
+    iget-object v1, p0, Ljxl;->a:Ljxn;
 
-    const v1, 0xf4243
+    iget-object v1, v1, Ljxn;->u:Ljqv;
 
-    xor-int/2addr v0, v1
+    invoke-virtual {p1}, Ljxd;->ordinal()I
 
-    mul-int v0, v0, v1
+    move-result v2
 
-    iget v2, p0, Ljxl;->b:I
+    packed-switch v2, :pswitch_data_0
 
-    xor-int/2addr v0, v2
+    new-instance v0, Ljava/lang/IllegalStateException;
 
-    mul-int v0, v0, v1
+    invoke-static {p1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
-    iget v2, p0, Ljxl;->c:I
+    move-result-object p1
 
-    xor-int/2addr v0, v2
+    invoke-static {p1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
-    mul-int v0, v0, v1
+    move-result-object v1
 
-    iget v2, p0, Ljxl;->d:I
+    invoke-virtual {v1}, Ljava/lang/String;->length()I
 
-    xor-int/2addr v0, v2
+    move-result v1
 
-    mul-int v0, v0, v1
+    new-instance v2, Ljava/lang/StringBuilder;
 
-    iget v2, p0, Ljxl;->e:I
+    add-int/lit8 v1, v1, 0x21
 
-    xor-int/2addr v0, v2
+    invoke-direct {v2, v1}, Ljava/lang/StringBuilder;-><init>(I)V
 
-    mul-int v0, v0, v1
+    const-string v1, "Invalid double tap action option "
 
-    iget v2, p0, Ljxl;->f:I
+    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    xor-int/2addr v0, v2
+    invoke-virtual {v2, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    mul-int v0, v0, v1
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    iget v2, p0, Ljxl;->g:I
+    move-result-object p1
 
-    xor-int/2addr v0, v2
+    invoke-direct {v0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 
-    mul-int v0, v0, v1
+    throw v0
 
-    iget v2, p0, Ljxl;->h:I
+    :pswitch_0
+    iget-object p1, v1, Ljqv;->b:Lcom/google/android/apps/camera/bottombar/BottomBarController;
 
-    xor-int/2addr v0, v2
+    invoke-virtual {p1}, Lcom/google/android/apps/camera/bottombar/BottomBarController;->switchCamera()V
 
-    mul-int v0, v0, v1
+    goto :goto_1
 
-    iget v2, p0, Ljxl;->i:I
+    :pswitch_1
+    iget-object p1, v1, Ljqv;->a:Lkas;
 
-    xor-int/2addr v0, v2
+    check-cast p1, Lkbi;
 
-    mul-int v0, v0, v1
+    iget-object v1, p1, Lkbi;->T:Lojc;
 
-    iget v2, p0, Ljxl;->j:I
+    invoke-virtual {v1}, Lojc;->g()Z
 
-    xor-int/2addr v0, v2
+    move-result v1
 
-    mul-int v0, v0, v1
+    if-eqz v1, :cond_3
 
-    iget v2, p0, Ljxl;->k:I
+    iget-object p1, p1, Lkbi;->T:Lojc;
 
-    xor-int/2addr v0, v2
+    invoke-virtual {p1}, Lojc;->c()Ljava/lang/Object;
 
-    mul-int v0, v0, v1
+    move-result-object p1
 
-    iget v2, p0, Ljxl;->l:I
+    check-cast p1, Liaz;
 
-    xor-int/2addr v0, v2
+    invoke-interface {p1}, Liaz;->b()V
 
-    mul-int v0, v0, v1
+    goto :goto_1
 
-    iget v1, p0, Ljxl;->m:I
+    :cond_3
+    iget-object v1, p1, Lkbi;->c:Lddf;
 
-    xor-int/2addr v0, v1
+    sget-object v2, Lddl;->V:Lddg;
 
+    invoke-interface {v1, v2}, Lddf;->k(Lddg;)Z
+
+    move-result v1
+
+    if-nez v1, :cond_4
+
+    invoke-virtual {p1}, Lkbi;->h()V
+
+    :cond_4
+    iget-object p1, p1, Lkbi;->z:Lkbx;
+
+    invoke-virtual {p1}, Lkbk;->d()V
+
+    :goto_1
+    :pswitch_2
     return v0
+
+    :cond_5
+    :goto_2
+    return v0
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_1
+        :pswitch_0
+        :pswitch_2
+    .end packed-switch
 .end method
 
-.method public final toString()Ljava/lang/String;
-    .locals 15
+.method public final onFling(Landroid/view/MotionEvent;Landroid/view/MotionEvent;FF)Z
+    .locals 1
 
-    iget v0, p0, Ljxl;->a:I
+    iget-object p1, p0, Ljxl;->a:Ljxn;
 
-    iget v1, p0, Ljxl;->b:I
+    iget-object p1, p1, Ljxn;->t:Ljqs;
 
-    iget v2, p0, Ljxl;->c:I
+    invoke-static {p3}, Ljava/lang/Math;->abs(F)F
 
-    iget v3, p0, Ljxl;->d:I
+    move-result p2
 
-    iget v4, p0, Ljxl;->e:I
+    invoke-static {p4}, Ljava/lang/Math;->abs(F)F
 
-    iget v5, p0, Ljxl;->f:I
+    move-result v0
 
-    iget v6, p0, Ljxl;->g:I
+    cmpl-float p2, p2, v0
 
-    iget v7, p0, Ljxl;->h:I
+    if-lez p2, :cond_0
 
-    iget v8, p0, Ljxl;->i:I
+    iget-object p1, p1, Ljqs;->a:Ljev;
 
-    iget v9, p0, Ljxl;->j:I
+    invoke-virtual {p1, p3}, Ljev;->c(F)V
 
-    iget v10, p0, Ljxl;->k:I
+    goto :goto_0
 
-    iget v11, p0, Ljxl;->l:I
+    :cond_0
+    iget-object p1, p1, Ljqs;->a:Ljev;
 
-    iget v12, p0, Ljxl;->m:I
+    invoke-virtual {p1, p4}, Ljev;->c(F)V
 
-    new-instance v13, Ljava/lang/StringBuilder;
+    :goto_0
+    const/4 p1, 0x0
 
-    invoke-direct {v13}, Ljava/lang/StringBuilder;-><init>()V
+    return p1
+.end method
 
-    const-string v14, "SimpleCamcorderProfileProxy{audioBitRate="
+.method public final onLongPress(Landroid/view/MotionEvent;)V
+    .locals 2
 
-    invoke-virtual {v13, v14}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    iget-object v0, p0, Ljxl;->a:Ljxn;
 
-    invoke-virtual {v13, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    const/4 v1, 0x1
 
-    const-string v0, ", audioChannels="
+    iput-boolean v1, v0, Ljxn;->l:Z
 
-    invoke-virtual {v13, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    iget-object v0, v0, Ljxn;->f:Ljxj;
 
-    invoke-virtual {v13, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-interface {v0}, Ljxj;->b()V
 
-    const-string v0, ", audioCodec="
+    iget-object v0, p0, Ljxl;->a:Ljxn;
 
-    invoke-virtual {v13, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    iget-object v1, v0, Ljxn;->e:Ljxg;
 
-    invoke-virtual {v13, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, p1}, Ljxn;->a(Landroid/view/MotionEvent;)Landroid/graphics/PointF;
 
-    const-string v0, ", audioSampleRate="
+    move-result-object p1
 
-    invoke-virtual {v13, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-interface {v1, p1}, Ljxg;->c(Landroid/graphics/PointF;)V
 
-    invoke-virtual {v13, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    return-void
+.end method
 
-    const-string v0, ", fileFormat="
+.method public final onScroll(Landroid/view/MotionEvent;Landroid/view/MotionEvent;FF)Z
+    .locals 2
 
-    invoke-virtual {v13, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    iget-object p1, p0, Ljxl;->a:Ljxn;
 
-    invoke-virtual {v13, v4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    iget-object p1, p1, Ljxn;->e:Ljxg;
 
-    const-string v0, ", quality="
+    invoke-interface {p1}, Ljxg;->g()V
 
-    invoke-virtual {v13, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    iget-object p1, p0, Ljxl;->a:Ljxn;
 
-    invoke-virtual {v13, v5}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    iget p2, p1, Ljxn;->q:I
 
-    const-string v0, ", videoBitRate="
+    add-int/lit8 v0, p2, -0x1
 
-    invoke-virtual {v13, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    if-eqz p2, :cond_3
 
-    invoke-virtual {v13, v6}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    const/4 p2, 0x1
 
-    const-string v0, ", videoCodec="
+    packed-switch v0, :pswitch_data_0
 
-    invoke-virtual {v13, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    new-instance p1, Ljava/lang/IllegalStateException;
 
-    invoke-virtual {v13, v7}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    const-string p2, "Unknown scrolling state"
 
-    const-string v0, ", videoCodecProfile="
+    invoke-direct {p1, p2}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {v13, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    throw p1
 
-    invoke-virtual {v13, v8}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    :pswitch_0
+    iget-object p1, p1, Ljxn;->s:Ljqt;
 
-    const-string v0, ", videoCodecLevel="
+    invoke-virtual {p1, p4}, Ljqt;->a(F)V
 
-    invoke-virtual {v13, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    return p2
 
-    invoke-virtual {v13, v9}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    :pswitch_1
+    iget-object p1, p1, Ljxn;->r:Ljqr;
 
-    const-string v0, ", videoFrameHeight="
+    invoke-virtual {p1, p3}, Ljqr;->a(F)V
 
-    invoke-virtual {v13, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    return p2
 
-    invoke-virtual {v13, v10}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    :pswitch_2
+    iget v0, p1, Ljxn;->o:I
 
-    const-string v0, ", videoFrameRate="
+    const/4 v1, 0x0
 
-    invoke-virtual {v13, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    if-lez v0, :cond_0
 
-    invoke-virtual {v13, v11}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    return v1
 
-    const-string v0, ", videoFrameWidth="
+    :cond_0
+    iget v0, p1, Ljxn;->m:F
 
-    invoke-virtual {v13, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    add-float/2addr v0, p3
 
-    invoke-virtual {v13, v12}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    iput v0, p1, Ljxn;->m:F
 
-    const-string v0, "}"
+    iget p3, p1, Ljxn;->n:F
 
-    invoke-virtual {v13, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    add-float/2addr p3, p4
 
-    invoke-virtual {v13}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    iput p3, p1, Ljxn;->n:F
 
-    move-result-object v0
+    invoke-static {v0}, Ljxn;->e(F)Z
 
-    return-object v0
+    move-result p1
+
+    if-eqz p1, :cond_1
+
+    iget-object p1, p0, Ljxl;->a:Ljxn;
+
+    iget-object p3, p1, Ljxn;->r:Ljqr;
+
+    iget p1, p1, Ljxn;->m:F
+
+    invoke-virtual {p3, p1}, Ljqr;->a(F)V
+
+    iget-object p1, p0, Ljxl;->a:Ljxn;
+
+    const/4 p3, 0x2
+
+    iput p3, p1, Ljxn;->q:I
+
+    return p2
+
+    :cond_1
+    iget-object p1, p0, Ljxl;->a:Ljxn;
+
+    iget p1, p1, Ljxn;->n:F
+
+    invoke-static {p1}, Ljxn;->e(F)Z
+
+    move-result p1
+
+    if-eqz p1, :cond_2
+
+    iget-object p1, p0, Ljxl;->a:Ljxn;
+
+    iget-object p3, p1, Ljxn;->s:Ljqt;
+
+    iget p1, p1, Ljxn;->n:F
+
+    invoke-virtual {p3, p1}, Ljqt;->a(F)V
+
+    iget-object p1, p0, Ljxl;->a:Ljxn;
+
+    const/4 p3, 0x3
+
+    iput p3, p1, Ljxn;->q:I
+
+    return p2
+
+    :cond_2
+    return v1
+
+    :cond_3
+    const/4 p1, 0x0
+
+    throw p1
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
+.end method
+
+.method public final onSingleTapConfirmed(Landroid/view/MotionEvent;)Z
+    .locals 2
+
+    iget-object v0, p0, Ljxl;->a:Ljxn;
+
+    iget-object v1, v0, Ljxn;->f:Ljxj;
+
+    invoke-virtual {v0, p1}, Ljxn;->a(Landroid/view/MotionEvent;)Landroid/graphics/PointF;
+
+    move-result-object p1
+
+    invoke-interface {v1, p1}, Ljxj;->a(Landroid/graphics/PointF;)Z
+
+    const/4 p1, 0x0
+
+    return p1
+.end method
+
+.method public final onSingleTapUp(Landroid/view/MotionEvent;)Z
+    .locals 2
+
+    iget-object v0, p0, Ljxl;->a:Ljxn;
+
+    iget-object v1, v0, Ljxn;->f:Ljxj;
+
+    invoke-virtual {v0, p1}, Ljxn;->a(Landroid/view/MotionEvent;)Landroid/graphics/PointF;
+
+    move-result-object p1
+
+    invoke-interface {v1, p1}, Ljxj;->e(Landroid/graphics/PointF;)Z
+
+    const/4 p1, 0x0
+
+    return p1
 .end method

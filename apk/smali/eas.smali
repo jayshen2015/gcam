@@ -1,104 +1,185 @@
-.class public final synthetic Leas;
+.class public final Leas;
 .super Ljava/lang/Object;
 
-# interfaces
-.implements Lect;
 
+# static fields
+.field public static final a:Louj;
 
-# instance fields
-.field public final synthetic a:Ljava/util/concurrent/atomic/AtomicBoolean;
-
-.field public final synthetic b:Lewa;
-
-.field public final synthetic c:Lgkr;
+.field private static final b:[I
 
 
 # direct methods
-.method public synthetic constructor <init>(Lewa;Lgkr;Ljava/util/concurrent/atomic/AtomicBoolean;[B[B)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 1
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const-string v0, "com/google/android/apps/camera/hdrplus/HdrPlusModule"
 
-    iput-object p1, p0, Leas;->b:Lewa;
+    invoke-static {v0}, Louj;->h(Ljava/lang/String;)Louj;
 
-    iput-object p2, p0, Leas;->c:Lgkr;
+    move-result-object v0
 
-    iput-object p3, p0, Leas;->a:Ljava/util/concurrent/atomic/AtomicBoolean;
+    sput-object v0, Leas;->a:Louj;
+
+    const/4 v0, 0x0
+
+    new-array v0, v0, [I
+
+    sput-object v0, Leas;->b:[I
 
     return-void
 .end method
 
+.method public static a(Lcom/google/googlex/gcam/StaticMetadataVector;I)F
+    .locals 9
 
-# virtual methods
-.method public final a(F)V
-    .locals 5
+    const/4 v0, 0x0
 
-    invoke-static {p1}, Lcom/agc/widget/HDRProgress;->updateProgress(F)V
+    const/high16 v1, -0x40800000    # -1.0f
 
-    iget-object v0, p0, Leas;->b:Lewa;
+    const/high16 v2, 0x7f800000    # Float.POSITIVE_INFINITY
 
-    iget-object v1, p0, Leas;->c:Lgkr;
+    const/4 v3, 0x0
 
-    iget-object v2, p0, Leas;->a:Ljava/util/concurrent/atomic/AtomicBoolean;
+    :goto_0
+    int-to-long v4, v3
 
-    iget-object v3, v0, Lewa;->h:Ljava/lang/Object;
+    iget-wide v6, p0, Lcom/google/googlex/gcam/StaticMetadataVector;->a:J
 
-    const-string v4, "ProgressCallback"
+    invoke-static {v6, v7, p0}, Lcom/google/googlex/gcam/GcamModuleJNI;->StaticMetadataVector_size(JLcom/google/googlex/gcam/StaticMetadataVector;)J
 
-    invoke-interface {v3, v4}, Lkbc;->e(Ljava/lang/String;)V
+    move-result-wide v6
 
-    iget-object v3, v1, Lgkr;->a:Ljava/lang/Object;
+    cmp-long v8, v4, v6
 
-    sget-object v4, Lecd;->a:Lilz;
+    if-gez v8, :cond_4
 
-    invoke-interface {v3, v4, p1}, Lgaa;->a(Lilz;F)V
+    new-instance v4, Lcom/google/googlex/gcam/StaticMetadata;
 
-    const/4 p1, 0x0
+    iget-wide v5, p0, Lcom/google/googlex/gcam/StaticMetadataVector;->a:J
 
-    const/4 v3, 0x1
+    invoke-static {v5, v6, p0, v3}, Lcom/google/googlex/gcam/GcamModuleJNI;->StaticMetadataVector_get(JLcom/google/googlex/gcam/StaticMetadataVector;I)J
 
-    invoke-virtual {v2, p1, v3}, Ljava/util/concurrent/atomic/AtomicBoolean;->compareAndSet(ZZ)Z
+    move-result-wide v5
 
-    move-result v2
+    invoke-direct {v4, v5, v6, v0}, Lcom/google/googlex/gcam/StaticMetadata;-><init>(JZ)V
 
-    if-eqz v2, :cond_1
+    invoke-virtual {v4}, Lcom/google/googlex/gcam/StaticMetadata;->a()I
 
-    iget-object v1, v1, Lgkr;->c:Ljava/lang/Object;
+    move-result v5
 
-    invoke-interface {v1}, Lgxl;->i()Lgya;
+    if-eq v5, p1, :cond_0
 
-    move-result-object v2
+    goto :goto_1
 
-    sget-object v3, Lgya;->b:Lgya;
+    :cond_0
+    invoke-virtual {v4}, Lcom/google/googlex/gcam/StaticMetadata;->b()I
 
-    if-ne v2, v3, :cond_0
+    move-result v5
 
-    const v2, 0x7f1403a1
+    invoke-static {v5}, Lcom/google/googlex/gcam/GcamModuleJNI;->IsLogical(I)Z
 
-    new-array p1, p1, [Ljava/lang/Object;
+    move-result v6
 
-    invoke-static {v2, p1}, Ljpw;->h(I[Ljava/lang/Object;)Ligf;
+    if-nez v6, :cond_3
 
-    move-result-object p1
+    invoke-static {v5}, Lcom/google/googlex/gcam/GcamModuleJNI;->IsRgb(I)Z
+
+    move-result v5
+
+    if-nez v5, :cond_1
+
+    goto :goto_1
+
+    :cond_1
+    iget-wide v5, v4, Lcom/google/googlex/gcam/StaticMetadata;->a:J
+
+    invoke-static {v5, v6, v4}, Lcom/google/googlex/gcam/GcamModuleJNI;->StaticMetadata_FocalLength35mm(JLcom/google/googlex/gcam/StaticMetadata;)F
+
+    move-result v4
+
+    const/4 v5, 0x0
+
+    cmpg-float v5, v4, v5
+
+    if-gtz v5, :cond_2
+
+    goto :goto_1
+
+    :cond_2
+    const/high16 v5, -0x3e200000    # -28.0f
+
+    add-float/2addr v5, v4
+
+    invoke-static {v5}, Ljava/lang/Math;->abs(F)F
+
+    move-result v5
+
+    cmpg-float v6, v5, v2
+
+    if-gez v6, :cond_3
+
+    move v1, v4
+
+    move v2, v5
+
+    goto :goto_1
+
+    :cond_3
+    :goto_1
+    add-int/lit8 v3, v3, 0x1
 
     goto :goto_0
 
+    :cond_4
+    return v1
+.end method
+
+.method public static b(Llvp;)Z
+    .locals 5
+
+    invoke-static {}, Lagc/Agc;->isFilterRawCheck()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    return v1
+
     :cond_0
-    const v2, 0x7f140448
+    sget-object v0, Landroid/hardware/camera2/CameraCharacteristics;->REQUEST_AVAILABLE_CAPABILITIES:Landroid/hardware/camera2/CameraCharacteristics$Key;
 
-    new-array p1, p1, [Ljava/lang/Object;
+    sget-object v1, Leas;->b:[I
 
-    invoke-static {v2, p1}, Ljpw;->h(I[Ljava/lang/Object;)Ligf;
+    invoke-interface {p0, v0, v1}, Llvp;->m(Landroid/hardware/camera2/CameraCharacteristics$Key;Ljava/lang/Object;)Ljava/lang/Object;
 
-    move-result-object p1
+    move-result-object p0
+
+    check-cast p0, [I
+
+    array-length v0, p0
+
+    const/4 v1, 0x0
+
+    const/4 v2, 0x0
 
     :goto_0
-    invoke-interface {v1, p1}, Lgxl;->Q(Ligf;)V
+    if-ge v2, v0, :cond_2
+
+    aget v3, p0, v2
+
+    const/4 v4, 0x3
+
+    if-ne v3, v4, :cond_1
+
+    const/4 p0, 0x1
+
+    return p0
 
     :cond_1
-    iget-object p1, v0, Lewa;->h:Ljava/lang/Object;
+    add-int/lit8 v2, v2, 0x1
 
-    invoke-interface {p1}, Lkbc;->f()V
+    goto :goto_0
 
-    return-void
+    :cond_2
+    return v1
 .end method

@@ -1,453 +1,416 @@
-.class public final Louf;
-.super Ljava/lang/Object;
+.class public abstract Louf;
+.super Loup;
 
 # interfaces
-.implements Lott;
-
-
-# instance fields
-.field final synthetic a:Lott;
-
-.field final synthetic b:Ljava/lang/Object;
-
-.field private final synthetic c:I
+.implements Lova;
 
 
 # direct methods
-.method public constructor <init>(Lott;Llvy;I)V
+.method protected constructor <init>(Ljava/util/logging/Level;)V
     .locals 0
 
-    iput p3, p0, Louf;->c:I
-
-    iput-object p1, p0, Louf;->a:Lott;
-
-    iput-object p2, p0, Louf;->b:Ljava/lang/Object;
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
-.end method
-
-.method public constructor <init>(Lott;Lomo;I)V
-    .locals 0
-
-    iput p3, p0, Louf;->c:I
-
-    iput-object p1, p0, Louf;->a:Lott;
-
-    iput-object p2, p0, Louf;->b:Ljava/lang/Object;
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
-.end method
-
-.method public constructor <init>(Lott;Lomp;I)V
-    .locals 0
-
-    iput p3, p0, Louf;->c:I
-
-    iput-object p1, p0, Louf;->a:Lott;
-
-    iput-object p2, p0, Louf;->b:Ljava/lang/Object;
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0, p1}, Loup;-><init>(Ljava/util/logging/Level;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final di(Lotu;Loku;)Ljava/lang/Object;
-    .locals 9
+.method protected final a()Loxy;
+    .locals 1
 
-    iget v0, p0, Louf;->c:I
+    sget-object v0, Loxw;->a:Loya;
 
-    const/4 v1, 0x2
+    return-object v0
+.end method
 
-    const-string v2, "call to \'resume\' before \'invoke\' with coroutine"
+.method protected final b(Lout;)Z
+    .locals 14
 
-    const/4 v3, 0x1
+    invoke-virtual {p0}, Loup;->j()Lovv;
 
-    const/high16 v4, -0x80000000
+    move-result-object v0
 
-    const/4 v5, 0x0
+    invoke-virtual {v0}, Lovv;->b()I
 
-    packed-switch v0, :pswitch_data_0
+    move-result v1
 
-    iget-object v0, p0, Louf;->a:Lott;
+    const/4 v2, 0x0
 
-    new-instance v1, Lmcc;
-
-    iget-object v2, p0, Louf;->b:Ljava/lang/Object;
-
-    const/4 v3, 0x4
-
-    invoke-direct {v1, p1, v2, v3}, Lmcc;-><init>(Lotu;Lomo;I)V
-
-    check-cast v0, Lous;
-
-    invoke-static {v0, v1, p2}, Lous;->d(Lous;Lotu;Loku;)Ljava/lang/Object;
-
-    move-result-object p1
-
-    sget-object p2, Lolc;->a:Lolc;
-
-    if-ne p1, p2, :cond_8
-
-    return-object p1
-
-    :pswitch_0
-    instance-of v0, p2, Loug;
-
-    if-eqz v0, :cond_0
-
-    move-object v0, p2
-
-    check-cast v0, Loug;
-
-    iget v6, v0, Loug;->b:I
-
-    and-int v7, v6, v4
-
-    if-eqz v7, :cond_0
-
-    sub-int/2addr v6, v4
-
-    iput v6, v0, Loug;->b:I
-
-    goto :goto_0
-
-    :cond_0
-    new-instance v0, Loug;
-
-    invoke-direct {v0, p0, p2, v5}, Loug;-><init>(Louf;Loku;[B)V
+    const/4 v3, 0x0
 
     :goto_0
-    iget-object p2, v0, Loug;->a:Ljava/lang/Object;
+    if-ge v3, v1, :cond_1
 
-    sget-object v4, Lolc;->a:Lolc;
+    invoke-virtual {v0, v3}, Lovv;->c(I)Lovd;
 
-    iget v6, v0, Loug;->b:I
+    move-result-object v4
 
-    packed-switch v6, :pswitch_data_1
+    iget-object v4, v4, Lovd;->a:Ljava/lang/String;
 
-    new-instance p1, Ljava/lang/IllegalStateException;
+    const-string v5, "eye3tag"
 
-    invoke-direct {p1, v2}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+    if-ne v4, v5, :cond_0
 
-    throw p1
+    sget-object v1, Loun;->a:Lovd;
 
-    :pswitch_1
-    invoke-static {p2}, Lljr;->aO(Ljava/lang/Object;)V
-
-    goto :goto_2
-
-    :pswitch_2
-    iget-object p1, v0, Loug;->c:Lotu;
-
-    iget-object v2, v0, Loug;->e:Louf;
-
-    invoke-static {p2}, Lljr;->aO(Ljava/lang/Object;)V
-
-    goto :goto_1
-
-    :pswitch_3
-    invoke-static {p2}, Lljr;->aO(Ljava/lang/Object;)V
-
-    iget-object p2, p0, Louf;->a:Lott;
-
-    iput-object p0, v0, Loug;->e:Louf;
-
-    iput-object p1, v0, Loug;->c:Lotu;
-
-    iput v3, v0, Loug;->b:I
-
-    invoke-static {p2, p1, v0}, Lone;->n(Lott;Lotu;Loku;)Ljava/lang/Object;
-
-    move-result-object p2
-
-    if-eq p2, v4, :cond_2
-
-    move-object v2, p0
-
-    :goto_1
-    check-cast p2, Ljava/lang/Throwable;
-
-    if-eqz p2, :cond_1
-
-    iget-object v2, v2, Louf;->b:Ljava/lang/Object;
-
-    iput-object v5, v0, Loug;->e:Louf;
-
-    iput-object v5, v0, Loug;->c:Lotu;
-
-    iput v1, v0, Loug;->b:I
-
-    invoke-interface {v2, p1, p2, v0}, Lomp;->a(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object p1
-
-    if-ne p1, v4, :cond_1
-
-    goto :goto_3
-
-    :cond_1
-    :goto_2
-    sget-object p1, Lojk;->a:Lojk;
-
-    return-object p1
-
-    :cond_2
-    :goto_3
-    return-object v4
-
-    :pswitch_4
-    iget-object v0, p0, Louf;->a:Lott;
-
-    new-instance v1, Lmcc;
-
-    iget-object v2, p0, Louf;->b:Ljava/lang/Object;
-
-    check-cast v2, Llvy;
-
-    invoke-direct {v1, p1, v2, v3}, Lmcc;-><init>(Lotu;Llvy;I)V
-
-    invoke-interface {v0, v1, p2}, Lott;->di(Lotu;Loku;)Ljava/lang/Object;
-
-    move-result-object p1
-
-    sget-object p2, Lolc;->a:Lolc;
-
-    if-ne p1, p2, :cond_3
-
-    return-object p1
-
-    :cond_3
-    sget-object p1, Lojk;->a:Lojk;
-
-    return-object p1
-
-    :pswitch_5
-    instance-of v0, p2, Loue;
-
-    if-eqz v0, :cond_4
-
-    move-object v0, p2
-
-    check-cast v0, Loue;
-
-    iget v6, v0, Loue;->b:I
-
-    and-int v7, v6, v4
-
-    if-eqz v7, :cond_4
-
-    sub-int/2addr v6, v4
-
-    iput v6, v0, Loue;->b:I
-
-    goto :goto_4
-
-    :cond_4
-    new-instance v0, Loue;
-
-    invoke-direct {v0, p0, p2}, Loue;-><init>(Louf;Loku;)V
-
-    :goto_4
-    iget-object p2, v0, Loue;->a:Ljava/lang/Object;
-
-    sget-object v4, Lolc;->a:Lolc;
-
-    iget v6, v0, Loue;->b:I
-
-    packed-switch v6, :pswitch_data_2
-
-    new-instance p1, Ljava/lang/IllegalStateException;
-
-    invoke-direct {p1, v2}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw p1
-
-    :pswitch_6
-    iget-object p1, v0, Loue;->d:Ljava/lang/Object;
-
-    check-cast p1, Lovp;
-
-    :try_start_0
-    invoke-static {p2}, Lljr;->aO(Ljava/lang/Object;)V
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    goto :goto_6
-
-    :catchall_0
-    move-exception p2
-
-    goto :goto_7
-
-    :pswitch_7
-    iget-object p1, v0, Loue;->d:Ljava/lang/Object;
-
-    check-cast p1, Ljava/lang/Throwable;
-
-    invoke-static {p2}, Lljr;->aO(Ljava/lang/Object;)V
-
-    goto :goto_a
-
-    :pswitch_8
-    iget-object p1, v0, Loue;->e:Lotu;
-
-    iget-object v2, v0, Loue;->d:Ljava/lang/Object;
-
-    check-cast v2, Louf;
-
-    :try_start_1
-    invoke-static {p2}, Lljr;->aO(Ljava/lang/Object;)V
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_1
-
-    goto :goto_5
-
-    :catchall_1
-    move-exception p1
-
-    goto :goto_8
-
-    :pswitch_9
-    invoke-static {p2}, Lljr;->aO(Ljava/lang/Object;)V
-
-    :try_start_2
-    iget-object p2, p0, Louf;->a:Lott;
-
-    iput-object p0, v0, Loue;->d:Ljava/lang/Object;
-
-    iput-object p1, v0, Loue;->e:Lotu;
-
-    iput v3, v0, Loue;->b:I
-
-    invoke-interface {p2, p1, v0}, Lott;->di(Lotu;Loku;)Ljava/lang/Object;
-
-    move-result-object p2
-    :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_3
-
-    if-ne p2, v4, :cond_5
-
-    goto :goto_9
-
-    :cond_5
-    move-object v2, p0
-
-    :goto_5
-    new-instance p2, Lovp;
-
-    invoke-interface {v0}, Loku;->d()Lola;
+    invoke-virtual {v0, v1}, Lovv;->d(Lovd;)Ljava/lang/Object;
 
     move-result-object v1
 
-    invoke-direct {p2, p1, v1}, Lovp;-><init>(Lotu;Lola;)V
+    if-nez v1, :cond_1
 
-    :try_start_3
-    iget-object p1, v2, Louf;->b:Ljava/lang/Object;
+    sget-object v1, Loun;->g:Lovd;
 
-    iput-object p2, v0, Loue;->d:Ljava/lang/Object;
+    invoke-virtual {v0, v1}, Lovv;->d(Lovd;)Ljava/lang/Object;
 
-    iput-object v5, v0, Loue;->e:Lotu;
+    move-result-object v0
 
-    const/4 v1, 0x3
+    if-nez v0, :cond_1
 
-    iput v1, v0, Loue;->b:I
+    sget-object v0, Loun;->g:Lovd;
 
-    invoke-interface {p1, p2, v5, v0}, Lomp;->a(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    sget-object v1, Lovf;->a:Lovf;
 
-    move-result-object p1
-    :try_end_3
-    .catchall {:try_start_3 .. :try_end_3} :catchall_2
+    invoke-virtual {p0, v0, v1}, Loup;->n(Lovd;Ljava/lang/Object;)V
 
-    if-eq p1, v4, :cond_6
+    goto :goto_1
 
-    move-object p1, p2
+    :cond_0
+    add-int/lit8 v3, v3, 0x1
 
-    :goto_6
-    invoke-virtual {p1}, Lovp;->h()V
+    goto :goto_0
 
-    sget-object p1, Lojk;->a:Lojk;
+    :cond_1
+    :goto_1
+    iget-object v0, p0, Loup;->c:Louo;
 
-    return-object p1
+    const/4 v1, 0x1
 
-    :catchall_2
-    move-exception p1
+    if-eqz v0, :cond_11
 
-    move-object v8, p2
+    const/4 v3, 0x0
 
-    move-object p2, p1
+    if-eqz p1, :cond_c
 
-    move-object p1, v8
+    sget-object v4, Loun;->b:Lovd;
 
-    :goto_7
-    invoke-virtual {p1}, Lovp;->h()V
+    invoke-virtual {v0, v4}, Louo;->d(Lovd;)Ljava/lang/Object;
 
-    throw p2
+    move-result-object v0
 
-    :catchall_3
-    move-exception p1
+    check-cast v0, Ljava/lang/Integer;
 
-    move-object v2, p0
+    iget-object v4, p0, Loup;->c:Louo;
 
-    :goto_8
-    new-instance p2, Lovb;
+    sget-object v5, Loun;->c:Lovd;
 
-    invoke-direct {p2, p1}, Lovb;-><init>(Ljava/lang/Throwable;)V
+    invoke-virtual {v4, v5}, Louo;->d(Lovd;)Ljava/lang/Object;
 
-    iget-object v2, v2, Louf;->b:Ljava/lang/Object;
+    move-result-object v4
 
-    iput-object p1, v0, Loue;->d:Ljava/lang/Object;
+    check-cast v4, Loux;
 
-    iput-object v5, v0, Loue;->e:Lotu;
+    iget-object v5, p0, Loup;->c:Louo;
 
-    iput v1, v0, Loue;->b:I
+    sget-object v6, Louy;->a:Louv;
 
-    invoke-static {p2, v2, p1, v0}, Lone;->o(Lotu;Lomp;Ljava/lang/Throwable;Loku;)Ljava/lang/Object;
+    iget-object v7, v6, Louv;->a:Lj$/util/concurrent/ConcurrentHashMap;
 
-    move-result-object p2
+    invoke-virtual {v7, p1}, Lj$/util/concurrent/ConcurrentHashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
-    if-ne p2, v4, :cond_7
+    move-result-object v7
+
+    if-eqz v7, :cond_2
+
+    goto :goto_4
+
+    :cond_2
+    new-instance v7, Louy;
+
+    invoke-direct {v7}, Louy;-><init>()V
+
+    iget-object v8, v6, Louv;->a:Lj$/util/concurrent/ConcurrentHashMap;
+
+    invoke-virtual {v8, p1, v7}, Lj$/util/concurrent/ConcurrentHashMap;->putIfAbsent(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v8
+
+    if-eqz v8, :cond_3
+
+    move-object v7, v8
+
+    goto :goto_4
+
+    :cond_3
+    iget v8, v5, Louo;->b:I
+
+    move-object v10, v3
+
+    const/4 v9, 0x0
+
+    :goto_2
+    if-ge v9, v8, :cond_7
+
+    sget-object v11, Loun;->d:Lovd;
+
+    invoke-virtual {v5, v9}, Lovv;->c(I)Lovd;
+
+    move-result-object v12
+
+    invoke-virtual {v11, v12}, Lovd;->equals(Ljava/lang/Object;)Z
+
+    move-result v11
+
+    if-nez v11, :cond_4
+
+    goto :goto_3
+
+    :cond_4
+    invoke-virtual {v5, v9}, Lovv;->e(I)Ljava/lang/Object;
+
+    move-result-object v11
+
+    instance-of v12, v11, Lovb;
+
+    if-eqz v12, :cond_6
+
+    if-nez v10, :cond_5
+
+    new-instance v10, Louu;
+
+    invoke-direct {v10, v6, p1}, Louu;-><init>(Louv;Lout;)V
+
+    :cond_5
+    check-cast v11, Lovb;
+
+    invoke-virtual {v11}, Lovb;->a()V
 
     :cond_6
-    :goto_9
-    return-object v4
+    :goto_3
+    add-int/lit8 v9, v9, 0x1
+
+    goto :goto_2
 
     :cond_7
-    :goto_a
-    throw p1
+    :goto_4
+    check-cast v7, Louy;
+
+    const-wide/16 v5, 0x0
+
+    if-eqz v0, :cond_9
+
+    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
+
+    move-result p1
+
+    iget-object v0, v7, Louy;->b:Ljava/util/concurrent/atomic/AtomicLong;
+
+    invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicLong;->getAndIncrement()J
+
+    move-result-wide v8
+
+    int-to-long v10, p1
+
+    rem-long/2addr v8, v10
+
+    cmp-long p1, v8, v5
+
+    if-nez p1, :cond_8
+
+    goto :goto_5
 
     :cond_8
-    sget-object p1, Lojk;->a:Lojk;
+    goto/16 :goto_a
 
-    return-object p1
+    :cond_9
+    :goto_5
+    if-eqz v4, :cond_c
 
-    nop
+    iget-wide v8, p0, Loup;->b:J
 
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_5
-        :pswitch_4
-        :pswitch_0
-    .end packed-switch
+    iget-object p1, v7, Louy;->c:Ljava/util/concurrent/atomic/AtomicLong;
 
-    :pswitch_data_1
-    .packed-switch 0x0
-        :pswitch_3
-        :pswitch_2
-        :pswitch_1
-    .end packed-switch
+    invoke-virtual {p1}, Ljava/util/concurrent/atomic/AtomicLong;->get()J
 
-    :pswitch_data_2
-    .packed-switch 0x0
-        :pswitch_9
-        :pswitch_8
-        :pswitch_7
-        :pswitch_6
-    .end packed-switch
+    move-result-wide v10
+
+    iget-object p1, v4, Loux;->a:Ljava/util/concurrent/TimeUnit;
+
+    const-wide/16 v12, 0x2710
+
+    invoke-virtual {p1, v12, v13}, Ljava/util/concurrent/TimeUnit;->toNanos(J)J
+
+    move-result-wide v12
+
+    add-long/2addr v12, v10
+
+    cmp-long p1, v12, v5
+
+    if-ltz p1, :cond_b
+
+    cmp-long p1, v8, v12
+
+    if-gez p1, :cond_a
+
+    cmp-long p1, v10, v5
+
+    if-nez p1, :cond_b
+
+    :cond_a
+    iget-object p1, v7, Louy;->c:Ljava/util/concurrent/atomic/AtomicLong;
+
+    invoke-virtual {p1, v10, v11, v8, v9}, Ljava/util/concurrent/atomic/AtomicLong;->compareAndSet(JJ)Z
+
+    move-result p1
+
+    if-eqz p1, :cond_b
+
+    iget-object p1, v7, Louy;->d:Ljava/util/concurrent/atomic/AtomicInteger;
+
+    invoke-virtual {p1, v2}, Ljava/util/concurrent/atomic/AtomicInteger;->getAndSet(I)I
+
+    move-result p1
+
+    iput p1, v4, Loux;->b:I
+
+    goto :goto_6
+
+    :cond_b
+    iget-object p1, v7, Louy;->d:Ljava/util/concurrent/atomic/AtomicInteger;
+
+    invoke-virtual {p1}, Ljava/util/concurrent/atomic/AtomicInteger;->incrementAndGet()I
+
+    goto/16 :goto_a
+
+    :cond_c
+    :goto_6
+    iget-object p1, p0, Loup;->c:Louo;
+
+    sget-object v0, Loun;->g:Lovd;
+
+    invoke-virtual {p1, v0}, Louo;->d(Lovd;)Ljava/lang/Object;
+
+    move-result-object p1
+
+    check-cast p1, Lovf;
+
+    if-eqz p1, :cond_10
+
+    sget-object v0, Loun;->g:Lovd;
+
+    iget-object v2, p0, Loup;->c:Louo;
+
+    if-eqz v2, :cond_f
+
+    invoke-virtual {v2, v0}, Louo;->a(Lovd;)I
+
+    move-result v4
+
+    if-ltz v4, :cond_f
+
+    add-int/2addr v4, v4
+
+    add-int/lit8 v5, v4, 0x2
+
+    :goto_7
+    iget v6, v2, Louo;->b:I
+
+    add-int v7, v6, v6
+
+    if-ge v5, v7, :cond_e
+
+    iget-object v6, v2, Louo;->a:[Ljava/lang/Object;
+
+    aget-object v6, v6, v5
+
+    invoke-virtual {v6, v0}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+
+    move-result v7
+
+    if-nez v7, :cond_d
+
+    iget-object v7, v2, Louo;->a:[Ljava/lang/Object;
+
+    aput-object v6, v7, v4
+
+    add-int/lit8 v6, v4, 0x1
+
+    add-int/lit8 v8, v5, 0x1
+
+    aget-object v8, v7, v8
+
+    aput-object v8, v7, v6
+
+    add-int/lit8 v4, v4, 0x2
+
+    :cond_d
+    add-int/lit8 v5, v5, 0x2
+
+    goto :goto_7
+
+    :cond_e
+    sub-int v0, v5, v4
+
+    shr-int/2addr v0, v1
+
+    sub-int/2addr v6, v0
+
+    iput v6, v2, Louo;->b:I
+
+    :goto_8
+    if-ge v4, v5, :cond_f
+
+    add-int/lit8 v0, v4, 0x1
+
+    iget-object v6, v2, Louo;->a:[Ljava/lang/Object;
+
+    aput-object v3, v6, v4
+
+    move v4, v0
+
+    goto :goto_8
+
+    :cond_f
+    new-instance v0, Louw;
+
+    invoke-virtual {p0}, Loup;->j()Lovv;
+
+    move-result-object v2
+
+    sget-object v3, Loun;->a:Lovd;
+
+    invoke-virtual {v2, v3}, Lovv;->d(Lovd;)Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Ljava/lang/Throwable;
+
+    const-class v3, Loup;
+
+    iget v4, p1, Lovf;->f:I
+
+    invoke-static {v3, v4}, Loyb;->b(Ljava/lang/Class;I)[Ljava/lang/StackTraceElement;
+
+    move-result-object v3
+
+    invoke-direct {v0, v2, p1, v3}, Louw;-><init>(Ljava/lang/Throwable;Lovf;[Ljava/lang/StackTraceElement;)V
+
+    sget-object p1, Loun;->a:Lovd;
+
+    invoke-virtual {p0, p1, v0}, Loup;->n(Lovd;Ljava/lang/Object;)V
+
+    goto :goto_9
+
+    :cond_10
+    :goto_9
+    const/4 v2, 0x1
+
+    goto :goto_a
+
+    :cond_11
+    const/4 v2, 0x1
+
+    :goto_a
+    return v2
 .end method

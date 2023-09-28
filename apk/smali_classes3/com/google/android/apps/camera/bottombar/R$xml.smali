@@ -3,11 +3,9 @@
 
 
 # static fields
-.field public static final camera_material_preferences:I = 0x7f180000
+.field public static final camera_material_preferences:I = 0x7f170000
 
-.field public static final camera_preferences:I = 0x7f180001
-
-.field public static final camera_scene:I = 0x7f180002
+.field public static final camera_preferences:I = 0x7f170002
 
 
 # direct methods

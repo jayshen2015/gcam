@@ -1,314 +1,557 @@
-.class public final Lkdt;
+.class public Lkdt;
 .super Ljava/lang/Object;
 
 
-# static fields
-.field public static final a:[I
-
-
 # instance fields
-.field public final b:I
-
-.field public c:I
-
-.field private final d:Landroid/util/SparseArray;
+.field public final b:Lkdx;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 5
-
-    const/4 v0, 0x3
-
-    const/4 v1, 0x4
-
-    const/4 v2, 0x0
-
-    const/4 v3, 0x1
-
-    const/4 v4, 0x2
-
-    filled-new-array {v2, v3, v4, v0, v1}, [I
-
-    move-result-object v0
-
-    sput-object v0, Lkdt;->a:[I
-
-    return-void
-.end method
-
-.method public constructor <init>(I)V
-    .locals 1
+.method protected constructor <init>(Lkdx;)V
+    .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    new-instance v0, Landroid/util/SparseArray;
-
-    invoke-direct {v0}, Landroid/util/SparseArray;-><init>()V
-
-    iput-object v0, p0, Lkdt;->d:Landroid/util/SparseArray;
-
-    const/4 v0, 0x0
-
-    iput v0, p0, Lkdt;->c:I
-
-    iput p1, p0, Lkdt;->b:I
+    iput-object p1, p0, Lkdt;->b:Lkdx;
 
     return-void
 .end method
 
-.method private static f(S)I
-    .locals 0
+.method private static a(Ljava/lang/Object;)Ljava/lang/String;
+    .locals 1
 
-    int-to-char p0, p0
+    if-nez p0, :cond_0
 
-    return p0
+    const-string p0, ""
+
+    return-object p0
+
+    :cond_0
+    instance-of v0, p0, Ljava/lang/String;
+
+    if-eqz v0, :cond_1
+
+    check-cast p0, Ljava/lang/String;
+
+    return-object p0
+
+    :cond_1
+    instance-of v0, p0, Ljava/lang/Boolean;
+
+    if-eqz v0, :cond_3
+
+    sget-object v0, Ljava/lang/Boolean;->TRUE:Ljava/lang/Boolean;
+
+    if-ne p0, v0, :cond_2
+
+    const-string p0, "true"
+
+    return-object p0
+
+    :cond_2
+    const-string p0, "false"
+
+    return-object p0
+
+    :cond_3
+    instance-of v0, p0, Ljava/lang/Throwable;
+
+    if-eqz v0, :cond_4
+
+    check-cast p0, Ljava/lang/Throwable;
+
+    invoke-virtual {p0}, Ljava/lang/Throwable;->toString()Ljava/lang/String;
+
+    move-result-object p0
+
+    return-object p0
+
+    :cond_4
+    invoke-virtual {p0}, Ljava/lang/Object;->toString()Ljava/lang/String;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method protected static l(Ljava/lang/String;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/String;
+    .locals 3
+
+    const-string v0, ""
+
+    if-nez p0, :cond_0
+
+    move-object p0, v0
+
+    :cond_0
+    invoke-static {p1}, Lkdt;->a(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-static {p2}, Lkdt;->a(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object p2
+
+    invoke-static {p3}, Lkdt;->a(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object p3
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-static {p0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+
+    move-result v2
+
+    if-nez v2, :cond_1
+
+    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v0, ": "
+
+    goto :goto_0
+
+    :cond_1
+    :goto_0
+    invoke-static {p1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+
+    move-result p0
+
+    const-string v2, ", "
+
+    if-nez p0, :cond_2
+
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-object v0, v2
+
+    :cond_2
+    invoke-static {p2}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+
+    move-result p0
+
+    if-nez p0, :cond_3
+
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    goto :goto_1
+
+    :cond_3
+    move-object v2, v0
+
+    :goto_1
+    invoke-static {p3}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+
+    move-result p0
+
+    if-nez p0, :cond_4
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1, p3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    :cond_4
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public static final x()V
+    .locals 1
+
+    sget-object v0, Lkeu;->b:Lket;
+
+    invoke-virtual {v0}, Lket;->a()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/String;
+
+    return-void
 .end method
 
 
 # virtual methods
-.method protected final a()I
+.method protected final d()Landroid/content/Context;
     .locals 1
 
-    iget-object v0, p0, Lkdt;->d:Landroid/util/SparseArray;
+    iget-object v0, p0, Lkdt;->b:Lkdx;
 
-    invoke-virtual {v0}, Landroid/util/SparseArray;->size()I
+    iget-object v0, v0, Lkdx;->a:Landroid/content/Context;
 
-    move-result v0
-
-    return v0
+    return-object v0
 .end method
 
-.method public final b(S)Lkdq;
+.method protected final e()Lkdo;
     .locals 1
 
-    iget-object v0, p0, Lkdt;->d:Landroid/util/SparseArray;
+    iget-object v0, p0, Lkdt;->b:Lkdx;
 
-    invoke-static {p1}, Lkdt;->f(S)I
+    invoke-virtual {v0}, Lkdx;->a()Lkdo;
 
-    move-result p1
+    move-result-object v0
 
-    invoke-virtual {v0, p1}, Landroid/util/SparseArray;->get(I)Ljava/lang/Object;
-
-    move-result-object p1
-
-    check-cast p1, Lkdq;
-
-    return-object p1
+    return-object v0
 .end method
 
-.method protected final c(S)V
+.method protected final f()Lkds;
     .locals 1
 
-    iget-object v0, p0, Lkdt;->d:Landroid/util/SparseArray;
+    iget-object v0, p0, Lkdt;->b:Lkdx;
 
-    invoke-static {p1}, Lkdt;->f(S)I
+    invoke-virtual {v0}, Lkdx;->b()Lkds;
 
-    move-result p1
+    move-result-object v0
 
-    invoke-virtual {v0, p1}, Landroid/util/SparseArray;->remove(I)V
-
-    return-void
+    return-object v0
 .end method
 
-.method protected final d()[Lkdq;
-    .locals 4
+.method protected final g()Lken;
+    .locals 1
 
-    iget-object v0, p0, Lkdt;->d:Landroid/util/SparseArray;
+    iget-object v0, p0, Lkdt;->b:Lkdx;
 
-    invoke-virtual {v0}, Landroid/util/SparseArray;->size()I
+    iget-object v0, v0, Lkdx;->c:Lken;
 
-    move-result v0
-
-    new-array v1, v0, [Lkdq;
-
-    const/4 v2, 0x0
-
-    :goto_0
-    if-ge v2, v0, :cond_0
-
-    iget-object v3, p0, Lkdt;->d:Landroid/util/SparseArray;
-
-    invoke-virtual {v3, v2}, Landroid/util/SparseArray;->valueAt(I)Ljava/lang/Object;
-
-    move-result-object v3
-
-    check-cast v3, Lkdq;
-
-    aput-object v3, v1, v2
-
-    add-int/lit8 v2, v2, 0x1
-
-    goto :goto_0
-
-    :cond_0
-    return-object v1
+    return-object v0
 .end method
 
-.method public final e(Lkdq;)V
+.method protected final h()Lker;
     .locals 2
 
-    iget v0, p0, Lkdt;->b:I
+    iget-object v0, p0, Lkdt;->b:Lkdx;
 
-    iput v0, p1, Lkdq;->e:I
+    iget-object v1, v0, Lkdx;->e:Lker;
 
-    iget-short v0, p1, Lkdq;->a:S
+    invoke-static {v1}, Lkdx;->f(Lkdu;)V
 
-    invoke-static {v0}, Lkdt;->f(S)I
+    iget-object v0, v0, Lkdx;->e:Lker;
 
-    move-result v0
+    return-object v0
+.end method
 
-    iget-object v1, p0, Lkdt;->d:Landroid/util/SparseArray;
+.method protected final i()Lkfa;
+    .locals 1
 
-    invoke-virtual {v1, v0}, Landroid/util/SparseArray;->get(I)Ljava/lang/Object;
+    iget-object v0, p0, Lkdt;->b:Lkdx;
 
-    move-result-object v1
+    invoke-virtual {v0}, Lkdx;->d()Lkfa;
 
-    check-cast v1, Lkdq;
+    move-result-object v0
 
-    iget-object v1, p0, Lkdt;->d:Landroid/util/SparseArray;
+    return-object v0
+.end method
 
-    invoke-virtual {v1, v0, p1}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
+.method protected final j()Lkff;
+    .locals 2
+
+    iget-object v0, p0, Lkdt;->b:Lkdx;
+
+    iget-object v1, v0, Lkdx;->f:Lkff;
+
+    invoke-static {v1}, Lkdx;->f(Lkdu;)V
+
+    iget-object v0, v0, Lkdx;->f:Lkff;
+
+    return-object v0
+.end method
+
+.method protected final k()Lkfn;
+    .locals 1
+
+    iget-object v0, p0, Lkdt;->b:Lkdx;
+
+    invoke-virtual {v0}, Lkdx;->e()Lkfn;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public final m(Ljava/lang/String;Ljava/lang/Object;)V
+    .locals 6
+
+    const/4 v1, 0x3
+
+    const/4 v4, 0x0
+
+    const/4 v5, 0x0
+
+    move-object v0, p0
+
+    move-object v2, p1
+
+    move-object v3, p2
+
+    invoke-virtual/range {v0 .. v5}, Lkdt;->w(ILjava/lang/String;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V
 
     return-void
 .end method
 
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 7
+.method public final n(Ljava/lang/String;)V
+    .locals 6
 
-    const/4 v0, 0x1
-
-    if-ne p0, p1, :cond_0
-
-    return v0
-
-    :cond_0
-    const/4 v1, 0x0
-
-    if-nez p1, :cond_1
-
-    return v1
-
-    :cond_1
-    instance-of v2, p1, Lkdt;
-
-    if-eqz v2, :cond_5
-
-    check-cast p1, Lkdt;
-
-    iget v2, p1, Lkdt;->b:I
-
-    iget v3, p0, Lkdt;->b:I
-
-    if-ne v2, v3, :cond_5
-
-    invoke-virtual {p1}, Lkdt;->a()I
-
-    move-result v2
-
-    invoke-virtual {p0}, Lkdt;->a()I
-
-    move-result v3
-
-    if-ne v2, v3, :cond_5
-
-    invoke-virtual {p1}, Lkdt;->d()[Lkdq;
-
-    move-result-object p1
-
-    array-length v2, p1
+    const/4 v1, 0x6
 
     const/4 v3, 0x0
 
-    :goto_0
-    if-ge v3, v2, :cond_4
+    const/4 v4, 0x0
 
-    aget-object v4, p1, v3
+    const/4 v5, 0x0
 
-    if-nez v4, :cond_2
+    move-object v0, p0
 
-    goto :goto_1
+    move-object v2, p1
 
-    :cond_2
-    iget-short v5, v4, Lkdq;->a:S
+    invoke-virtual/range {v0 .. v5}, Lkdt;->w(ILjava/lang/String;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V
 
-    invoke-static {v5}, Lcom/google/android/libraries/camera/exif/ExifInterface;->t(S)Z
-
-    move-result v5
-
-    if-nez v5, :cond_3
-
-    iget-object v5, p0, Lkdt;->d:Landroid/util/SparseArray;
-
-    iget-short v6, v4, Lkdq;->a:S
-
-    invoke-static {v6}, Lkdt;->f(S)I
-
-    move-result v6
-
-    invoke-virtual {v5, v6}, Landroid/util/SparseArray;->get(I)Ljava/lang/Object;
-
-    move-result-object v5
-
-    check-cast v5, Lkdq;
-
-    invoke-virtual {v4, v5}, Lkdq;->equals(Ljava/lang/Object;)Z
-
-    move-result v4
-
-    if-nez v4, :cond_3
-
-    return v1
-
-    :cond_3
-    :goto_1
-    add-int/lit8 v3, v3, 0x1
-
-    goto :goto_0
-
-    :cond_4
-    return v0
-
-    :cond_5
-    return v1
+    return-void
 .end method
 
-.method public final hashCode()I
-    .locals 3
+.method public final o(Ljava/lang/String;Ljava/lang/Object;)V
+    .locals 6
 
-    const/4 v0, 0x3
+    const/4 v1, 0x6
 
-    new-array v0, v0, [Ljava/lang/Object;
+    const/4 v4, 0x0
 
-    iget v1, p0, Lkdt;->b:I
+    const/4 v5, 0x0
 
-    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    move-object v0, p0
 
-    move-result-object v1
+    move-object v2, p1
 
-    const/4 v2, 0x0
+    move-object v3, p2
 
-    aput-object v1, v0, v2
+    invoke-virtual/range {v0 .. v5}, Lkdt;->w(ILjava/lang/String;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V
 
-    iget v1, p0, Lkdt;->c:I
+    return-void
+.end method
 
-    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+.method public final p(Ljava/lang/String;Ljava/lang/Object;Ljava/lang/Object;)V
+    .locals 6
 
-    move-result-object v1
+    const/4 v1, 0x6
 
-    const/4 v2, 0x1
+    const/4 v5, 0x0
 
-    aput-object v1, v0, v2
+    move-object v0, p0
+
+    move-object v2, p1
+
+    move-object v3, p2
+
+    move-object v4, p3
+
+    invoke-virtual/range {v0 .. v5}, Lkdt;->w(ILjava/lang/String;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V
+
+    return-void
+.end method
+
+.method public final q(Ljava/lang/String;)V
+    .locals 6
 
     const/4 v1, 0x2
 
-    iget-object v2, p0, Lkdt;->d:Landroid/util/SparseArray;
+    const/4 v3, 0x0
 
-    aput-object v2, v0, v1
+    const/4 v4, 0x0
 
-    invoke-static {v0}, Ljava/util/Arrays;->hashCode([Ljava/lang/Object;)I
+    const/4 v5, 0x0
 
-    move-result v0
+    move-object v0, p0
 
-    return v0
+    move-object v2, p1
+
+    invoke-virtual/range {v0 .. v5}, Lkdt;->w(ILjava/lang/String;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V
+
+    return-void
+.end method
+
+.method public final r(Ljava/lang/String;Ljava/lang/Object;)V
+    .locals 6
+
+    const/4 v1, 0x2
+
+    const/4 v4, 0x0
+
+    const/4 v5, 0x0
+
+    move-object v0, p0
+
+    move-object v2, p1
+
+    move-object v3, p2
+
+    invoke-virtual/range {v0 .. v5}, Lkdt;->w(ILjava/lang/String;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V
+
+    return-void
+.end method
+
+.method public final s(Ljava/lang/String;Ljava/lang/Object;Ljava/lang/Object;)V
+    .locals 6
+
+    const/4 v1, 0x2
+
+    const/4 v5, 0x0
+
+    move-object v0, p0
+
+    move-object v2, p1
+
+    move-object v3, p2
+
+    move-object v4, p3
+
+    invoke-virtual/range {v0 .. v5}, Lkdt;->w(ILjava/lang/String;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V
+
+    return-void
+.end method
+
+.method public final t(Ljava/lang/String;)V
+    .locals 6
+
+    const/4 v1, 0x5
+
+    const/4 v3, 0x0
+
+    const/4 v4, 0x0
+
+    const/4 v5, 0x0
+
+    move-object v0, p0
+
+    move-object v2, p1
+
+    invoke-virtual/range {v0 .. v5}, Lkdt;->w(ILjava/lang/String;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V
+
+    return-void
+.end method
+
+.method public final u(Ljava/lang/String;Ljava/lang/Object;)V
+    .locals 6
+
+    const/4 v1, 0x5
+
+    const/4 v4, 0x0
+
+    const/4 v5, 0x0
+
+    move-object v0, p0
+
+    move-object v2, p1
+
+    move-object v3, p2
+
+    invoke-virtual/range {v0 .. v5}, Lkdt;->w(ILjava/lang/String;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V
+
+    return-void
+.end method
+
+.method public final v(Ljava/lang/String;Ljava/lang/Object;Ljava/lang/Object;)V
+    .locals 6
+
+    const/4 v1, 0x5
+
+    const/4 v5, 0x0
+
+    move-object v0, p0
+
+    move-object v2, p1
+
+    move-object v3, p2
+
+    move-object v4, p3
+
+    invoke-virtual/range {v0 .. v5}, Lkdt;->w(ILjava/lang/String;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V
+
+    return-void
+.end method
+
+.method public final w(ILjava/lang/String;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V
+    .locals 7
+
+    iget-object v0, p0, Lkdt;->b:Lkdx;
+
+    iget-object v1, v0, Lkdx;->d:Lkfa;
+
+    if-eqz v1, :cond_1
+
+    sget-object v0, Lkeu;->b:Lket;
+
+    invoke-virtual {v0}, Lket;->a()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/String;
+
+    invoke-static {v0, p1}, Landroid/util/Log;->isLoggable(Ljava/lang/String;I)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_0
+
+    invoke-static {p2, p3, p4, p5}, Lkfa;->l(Ljava/lang/String;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {p1, v0, v2}, Landroid/util/Log;->println(ILjava/lang/String;Ljava/lang/String;)I
+
+    :cond_0
+    const/4 v0, 0x5
+
+    if-lt p1, v0, :cond_2
+
+    move v2, p1
+
+    move-object v3, p2
+
+    move-object v4, p3
+
+    move-object v5, p4
+
+    move-object v6, p5
+
+    invoke-virtual/range {v1 .. v6}, Lkfa;->c(ILjava/lang/String;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V
+
+    return-void
+
+    :cond_1
+    sget-object v0, Lkeu;->b:Lket;
+
+    invoke-virtual {v0}, Lket;->a()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/String;
+
+    invoke-static {v0, p1}, Landroid/util/Log;->isLoggable(Ljava/lang/String;I)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_2
+
+    invoke-static {p2, p3, p4, p5}, Lkdt;->l(Ljava/lang/String;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object p2
+
+    invoke-static {p1, v0, p2}, Landroid/util/Log;->println(ILjava/lang/String;Ljava/lang/String;)I
+
+    return-void
+
+    :cond_2
+    return-void
+.end method
+
+.method protected final y()V
+    .locals 0
+
+    return-void
 .end method

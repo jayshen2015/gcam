@@ -27,11 +27,11 @@
 
 .field public static final fast_out_slow_in:I = 0x7f0d000b
 
-.field public static final ic_pause_resume_animation_interpolator_0:I = 0x7f0d001c
+.field public static final ic_pause_resume_animation_interpolator_0:I = 0x7f0d0015
 
-.field public static final ic_resume_pause_animation_interpolator_0:I = 0x7f0d001d
+.field public static final ic_resume_pause_animation_interpolator_0:I = 0x7f0d0016
 
-.field public static final ic_resume_pause_animation_interpolator_1:I = 0x7f0d001e
+.field public static final ic_resume_pause_animation_interpolator_1:I = 0x7f0d0017
 
 
 # direct methods

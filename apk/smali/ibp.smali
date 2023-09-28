@@ -2,137 +2,125 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Laip;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field public final synthetic a:Ljava/lang/Object;
+.field public final synthetic a:Lbty;
 
-.field private final synthetic b:I
+.field public final synthetic b:Libb;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lhgm;I)V
+.method public synthetic constructor <init>(Libb;Lbty;)V
     .locals 0
-
-    iput p2, p0, Libp;->b:I
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Libp;->a:Ljava/lang/Object;
+    iput-object p1, p0, Libp;->b:Libb;
 
-    return-void
-.end method
-
-.method public synthetic constructor <init>(Libq;I)V
-    .locals 0
-
-    iput p2, p0, Libp;->b:I
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Libp;->a:Ljava/lang/Object;
+    iput-object p2, p0, Libp;->a:Lbty;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()V
-    .locals 6
+.method public final run()V
+    .locals 8
 
-    iget v0, p0, Libp;->b:I
+    iget-object v0, p0, Libp;->b:Libb;
 
-    packed-switch v0, :pswitch_data_0
+    iget-object v1, p0, Libp;->a:Lbty;
 
-    iget-object v0, p0, Libp;->a:Ljava/lang/Object;
-
-    check-cast v0, Lhgm;
-
-    const/4 v1, 0x1
-
-    invoke-virtual {v0, v1}, Lhgm;->f(Z)V
-
-    const/4 v1, 0x0
-
-    invoke-virtual {v0, v1}, Lhgm;->setTranslationY(F)V
-
-    invoke-virtual {v0}, Lhgm;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
-
-    move-result-object v1
-
-    invoke-virtual {v0}, Lhgm;->c()I
-
-    move-result v2
-
-    iput v2, v1, Landroid/view/ViewGroup$LayoutParams;->height:I
-
-    invoke-virtual {v0}, Lhgm;->requestLayout()V
-
-    return-void
-
-    :pswitch_0
-    iget-object v0, p0, Libp;->a:Ljava/lang/Object;
-
-    check-cast v0, Libq;
-
-    iget-object v1, v0, Libq;->c:Lcom/google/android/apps/camera/ui/modeswitcher/ModeSwitcher;
-
-    invoke-virtual {v1}, Lcom/google/android/apps/camera/ui/modeswitcher/ModeSwitcher;->b()Lika;
-
-    move-result-object v1
-
-    iget-object v2, v0, Libq;->c:Lcom/google/android/apps/camera/ui/modeswitcher/ModeSwitcher;
-
-    iget-object v2, v2, Lcom/google/android/apps/camera/ui/modeswitcher/ModeSwitcher;->h:Lfbz;
+    instance-of v2, v1, Ldfy;
 
     if-eqz v2, :cond_0
 
-    iget-object v2, v0, Libq;->a:Lika;
+    new-instance v2, Libn;
 
-    sget-object v3, Lika;->a:Lika;
+    invoke-direct {v2, v0}, Libn;-><init>(Libb;)V
 
-    if-eq v2, v3, :cond_0
+    check-cast v1, Ldfy;
 
-    iget-object v2, v0, Libq;->c:Lcom/google/android/apps/camera/ui/modeswitcher/ModeSwitcher;
+    iget-object v3, v0, Libb;->i:Landroid/view/ViewGroup;
 
-    iget-object v2, v2, Lcom/google/android/apps/camera/ui/modeswitcher/ModeSwitcher;->h:Lfbz;
+    invoke-virtual {v3}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    iget v3, v0, Libq;->d:I
+    iget-object v4, v0, Libb;->g:Landroid/graphics/Rect;
 
-    iget-object v4, v0, Libq;->a:Lika;
+    iget-object v1, v1, Ldfk;->e:Lbtz;
 
-    invoke-virtual {v4}, Lika;->toString()Ljava/lang/String;
+    invoke-interface {v1}, Lbtz;->c()Landroid/net/Uri;
 
-    move-result-object v4
+    move-result-object v1
 
-    invoke-virtual {v1}, Lika;->toString()Ljava/lang/String;
+    new-instance v5, Landroid/os/Bundle;
 
-    move-result-object v5
+    invoke-direct {v5}, Landroid/os/Bundle;-><init>()V
 
-    invoke-interface {v2, v3, v4, v5}, Lfbz;->ac(ILjava/lang/String;Ljava/lang/String;)V
+    const/4 v6, 0x0
+
+    const-string v7, "no_seek_bar"
+
+    invoke-virtual {v5, v7, v6}, Landroid/os/Bundle;->putBoolean(Ljava/lang/String;Z)V
+
+    const/4 v6, 0x1
+
+    const-string v7, "auto_loop_enabled"
+
+    invoke-virtual {v5, v7, v6}, Landroid/os/Bundle;->putBoolean(Ljava/lang/String;Z)V
+
+    const-string v6, "video_view_padding"
+
+    invoke-virtual {v5, v6, v4}, Landroid/os/Bundle;->putParcelable(Ljava/lang/String;Landroid/os/Parcelable;)V
+
+    invoke-static {v5, v1}, Ljux;->k(Landroid/os/Bundle;Landroid/net/Uri;)Ljux;
+
+    move-result-object v1
+
+    invoke-static {v2}, Lojc;->i(Ljava/lang/Object;)Lojc;
+
+    move-result-object v2
+
+    iput-object v2, v1, Ljux;->b:Lojc;
+
+    iget-object v2, v0, Libb;->a:Lih;
+
+    invoke-virtual {v2}, Lby;->fm()Lcu;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Lcu;->h()Ldd;
+
+    move-result-object v2
+
+    invoke-virtual {v3}, Landroid/view/View;->getId()I
+
+    move-result v3
+
+    const-string v4, "VIDEO_PLAYER_TAG"
+
+    invoke-virtual {v2, v3, v1, v4}, Ldd;->m(ILbu;Ljava/lang/String;)V
+
+    invoke-virtual {v2}, Ldd;->b()V
 
     :cond_0
-    sget-object v2, Lika;->a:Lika;
+    iget-object v0, v0, Libb;->h:Landroid/widget/FrameLayout;
 
-    iput-object v2, v0, Libq;->a:Lika;
+    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    const-wide/16 v2, 0x0
+    invoke-virtual {v0}, Landroid/widget/FrameLayout;->getResources()Landroid/content/res/Resources;
 
-    iput-wide v2, v0, Libq;->b:J
+    move-result-object v1
 
-    iget-object v2, v0, Libq;->c:Lcom/google/android/apps/camera/ui/modeswitcher/ModeSwitcher;
+    const v2, 0x7f14003b
 
-    invoke-virtual {v2, v1}, Lcom/google/android/apps/camera/ui/modeswitcher/ModeSwitcher;->h(Lika;)V
+    invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getText(I)Ljava/lang/CharSequence;
 
-    const/4 v1, 0x0
+    move-result-object v1
 
-    invoke-virtual {v0, v1}, Libq;->a(Z)V
+    invoke-virtual {v0, v1}, Landroid/widget/FrameLayout;->announceForAccessibility(Ljava/lang/CharSequence;)V
 
     return-void
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
 .end method

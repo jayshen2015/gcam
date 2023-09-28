@@ -1,116 +1,181 @@
 .class public final Lbxo;
 .super Ljava/lang/Object;
 
+# interfaces
+.implements Ljava/util/concurrent/Executor;
 
-# static fields
-.field private static volatile a:Z
+
+# instance fields
+.field private a:Z
+
+.field private final b:Ljava/util/List;
+
+.field private final c:Ljava/util/concurrent/Executor;
 
 
 # direct methods
-.method static constructor <clinit>()V
+.method public constructor <init>(Ljava/util/concurrent/Executor;)V
     .locals 1
 
-    const/4 v0, 0x1
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    sput-boolean v0, Lbxo;->a:Z
+    new-instance v0, Ljava/util/ArrayList;
+
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+
+    iput-object v0, p0, Lbxo;->b:Ljava/util/List;
+
+    iput-object p1, p0, Lbxo;->c:Ljava/util/concurrent/Executor;
+
+    const/4 p1, 0x0
+
+    iput-boolean p1, p0, Lbxo;->a:Z
 
     return-void
 .end method
 
-.method public static a(Landroid/content/Context;Landroid/content/Context;ILandroid/content/res/Resources$Theme;)Landroid/graphics/drawable/Drawable;
+
+# virtual methods
+.method final declared-synchronized a()V
     .locals 2
 
+    monitor-enter p0
+
     :try_start_0
-    sget-boolean v0, Lbxo;->a:Z
+    iget-boolean v0, p0, Lbxo;->a:Z
 
-    if-eqz v0, :cond_2
+    const/4 v1, 0x1
 
-    if-eqz p3, :cond_0
+    xor-int/2addr v0, v1
 
-    new-instance v0, Lqi;
+    invoke-static {v0}, Lobr;->aQ(Z)V
 
-    invoke-direct {v0, p1, p3}, Lqi;-><init>(Landroid/content/Context;Landroid/content/res/Resources$Theme;)V
+    iput-boolean v1, p0, Lbxo;->a:Z
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    invoke-virtual {p3}, Landroid/content/res/Resources$Theme;->getResources()Landroid/content/res/Resources;
+    monitor-exit p0
+
+    return-void
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit p0
+
+    throw v0
+.end method
+
+.method final declared-synchronized b()V
+    .locals 3
+
+    monitor-enter p0
+
+    :try_start_0
+    iget-boolean v0, p0, Lbxo;->a:Z
+
+    invoke-static {v0}, Lobr;->aQ(Z)V
+
+    const/4 v0, 0x0
+
+    iput-boolean v0, p0, Lbxo;->a:Z
+
+    iget-object v0, p0, Lbxo;->b:Ljava/util/List;
+
+    invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+
+    move-result-object v0
+
+    :goto_0
+    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v1
 
-    invoke-virtual {v1}, Landroid/content/res/Resources;->getConfiguration()Landroid/content/res/Configuration;
+    check-cast v1, Ljava/lang/Runnable;
 
-    move-result-object v1
+    iget-object v2, p0, Lbxo;->c:Ljava/util/concurrent/Executor;
 
-    invoke-virtual {v0, v1}, Lqi;->a(Landroid/content/res/Configuration;)V
+    invoke-interface {v2, v1}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
 
     goto :goto_0
 
     :cond_0
-    move-object v0, p1
+    iget-object v0, p0, Lbxo;->b:Ljava/util/List;
 
-    :goto_0
-    invoke-static {v0, p2}, Lfs;->a(Landroid/content/Context;I)Landroid/graphics/drawable/Drawable;
-
-    move-result-object p0
+    invoke-interface {v0}, Ljava/util/List;->clear()V
     :try_end_0
-    .catch Ljava/lang/NoClassDefFoundError; {:try_start_0 .. :try_end_0} :catch_2
-    .catch Ljava/lang/IllegalStateException; {:try_start_0 .. :try_end_0} :catch_1
-    .catch Landroid/content/res/Resources$NotFoundException; {:try_start_0 .. :try_end_0} :catch_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    return-object p0
+    monitor-exit p0
 
-    :catch_0
-    move-exception p0
+    return-void
 
-    goto :goto_1
+    :catchall_0
+    move-exception v0
 
-    :catch_1
-    move-exception p3
+    monitor-exit p0
 
-    invoke-virtual {p0}, Landroid/content/Context;->getPackageName()Ljava/lang/String;
+    goto :goto_2
 
-    move-result-object p0
-
-    invoke-virtual {p1}, Landroid/content/Context;->getPackageName()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-virtual {p0, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result p0
-
-    if-nez p0, :cond_1
-
-    invoke-static {p1, p2}, Labt;->a(Landroid/content/Context;I)Landroid/graphics/drawable/Drawable;
-
-    move-result-object p0
-
-    return-object p0
-
-    :cond_1
-    throw p3
-
-    :catch_2
-    move-exception p0
-
-    const/4 p0, 0x0
-
-    sput-boolean p0, Lbxo;->a:Z
-
-    :cond_2
     :goto_1
-    if-nez p3, :cond_3
+    throw v0
 
-    invoke-virtual {p1}, Landroid/content/Context;->getTheme()Landroid/content/res/Resources$Theme;
+    :goto_2
+    goto :goto_1
+.end method
 
-    move-result-object p3
+.method public final declared-synchronized execute(Ljava/lang/Runnable;)V
+    .locals 2
 
-    :cond_3
-    invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+    monitor-enter p0
 
-    move-result-object p0
+    :try_start_0
+    iget-boolean v0, p0, Lbxo;->a:Z
 
-    invoke-static {p0, p2, p3}, Lach;->a(Landroid/content/res/Resources;ILandroid/content/res/Resources$Theme;)Landroid/graphics/drawable/Drawable;
+    if-eqz v0, :cond_0
 
-    move-result-object p0
+    iget-object v0, p0, Lbxo;->b:Ljava/util/List;
 
-    return-object p0
+    invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    monitor-exit p0
+
+    return-void
+
+    :cond_0
+    :try_start_1
+    iget-object v0, p0, Lbxo;->b:Ljava/util/List;
+
+    invoke-interface {v0}, Ljava/util/List;->isEmpty()Z
+
+    move-result v0
+
+    const-string v1, "LatchExecutor: Bad pending task."
+
+    invoke-static {v0, v1}, Lobr;->aR(ZLjava/lang/Object;)V
+
+    iget-object v0, p0, Lbxo;->c:Ljava/util/concurrent/Executor;
+
+    invoke-interface {v0, p1}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    monitor-exit p0
+
+    return-void
+
+    :catchall_0
+    move-exception p1
+
+    monitor-exit p0
+
+    throw p1
 .end method

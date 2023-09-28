@@ -1,34 +1,61 @@
-.class public final Llfk;
+.class public interface abstract Llfk;
 .super Ljava/lang/Object;
 
 
-# instance fields
-.field public final a:Ljava/util/concurrent/atomic/AtomicInteger;
+# virtual methods
+.method public abstract a()Llfj;
+.end method
 
-.field public final b:Llfg;
+.method public abstract b(Llfl;)Llfk;
+.end method
 
-.field public volatile c:Z
+.method public abstract c(Llee;)V
+.end method
 
+.method public abstract d(I)V
+.end method
 
-# direct methods
-.method public constructor <init>(Llfg;)V
-    .locals 1
+.method public abstract e(Lley;)V
+.end method
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+.method public abstract f(I)V
+.end method
 
-    iput-object p1, p0, Llfk;->b:Llfg;
+.method public abstract g(Landroid/view/Surface;)V
+.end method
 
-    new-instance p1, Ljava/util/concurrent/atomic/AtomicInteger;
+.method public abstract h(Landroid/location/Location;)V
+.end method
 
-    const/4 v0, 0x1
+.method public abstract i(Lpht;)V
+.end method
 
-    invoke-direct {p1, v0}, Ljava/util/concurrent/atomic/AtomicInteger;-><init>(I)V
+.method public abstract j(I)V
+.end method
 
-    iput-object p1, p0, Llfk;->a:Ljava/util/concurrent/atomic/AtomicInteger;
+.method public abstract k(J)V
+.end method
 
-    const/4 p1, 0x0
+.method public abstract l(J)V
+.end method
 
-    iput-boolean p1, p0, Llfk;->c:Z
+.method public abstract m(Landroid/media/MediaCodec$Callback;)V
+.end method
 
-    return-void
+.method public abstract n(Z)V
+.end method
+
+.method public abstract o(I)V
+.end method
+
+.method public abstract p(Lpht;)V
+.end method
+
+.method public abstract q(Ljava/io/FileDescriptor;)V
+.end method
+
+.method public abstract r(Lleh;)V
+.end method
+
+.method public abstract s(Z)V
 .end method

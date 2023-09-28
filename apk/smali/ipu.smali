@@ -1,74 +1,57 @@
-.class public final synthetic Lipu;
-.super Ljava/lang/Object;
-
-# interfaces
-.implements Ljon;
+.class Lipu;
+.super Liph;
 
 
 # instance fields
-.field public final synthetic a:Lipw;
-
-.field public final synthetic b:Lnph;
+.field final synthetic b:Lipx;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lipw;Lnph;)V
+.method public constructor <init>(Lipx;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lipu;->b:Lipx;
 
-    iput-object p1, p0, Lipu;->a:Lipw;
-
-    iput-object p2, p0, Lipu;->b:Lnph;
+    invoke-direct {p0}, Liph;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Ljot;)V
-    .locals 4
+.method public b()V
+    .locals 1
 
-    iget-object v0, p0, Lipu;->a:Lipw;
+    iget-object v0, p0, Lipu;->b:Lipx;
 
-    iget-object v1, p0, Lipu;->b:Lnph;
-
-    const/4 v2, 0x0
-
-    :try_start_0
-    invoke-virtual {p1}, Ljot;->c()Ljava/lang/Object;
-
-    move-result-object p1
-
-    check-cast p1, Ljpu;
-
-    if-eqz p1, :cond_0
-
-    invoke-interface {p1}, Ljpu;->a()Ljava/util/Set;
-
-    move-result-object p1
-
-    invoke-virtual {v1, p1}, Lnph;->e(Ljava/lang/Object;)Z
+    invoke-virtual {v0}, Lipx;->i()V
 
     return-void
+.end method
+
+.method public c()V
+    .locals 2
+
+    iget-object v0, p0, Lipu;->b:Lipx;
+
+    iget-object v0, v0, Lipx;->h:Lddf;
+
+    sget-object v1, Lddl;->aw:Lddg;
+
+    invoke-interface {v0, v1}, Lddf;->k(Lddg;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lipu;->b:Lipx;
+
+    iget-object v0, v0, Lipx;->k:Ljlb;
+
+    const/4 v1, 0x0
+
+    invoke-interface {v0, v1}, Ljlb;->A(Z)V
 
     :cond_0
-    invoke-virtual {v1, v2}, Lnph;->e(Ljava/lang/Object;)Z
-    :try_end_0
-    .catch Ljos; {:try_start_0 .. :try_end_0} :catch_0
-
-    return-void
-
-    :catch_0
-    move-exception p1
-
-    iget-object v0, v0, Lipw;->b:Lkaq;
-
-    const-string v3, "getCapability fail with exception "
-
-    invoke-interface {v0, v3, p1}, Lkaq;->j(Ljava/lang/String;Ljava/lang/Throwable;)V
-
-    invoke-virtual {v1, v2}, Lnph;->e(Ljava/lang/Object;)Z
-
     return-void
 .end method

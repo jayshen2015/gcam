@@ -1,12 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <plurals name="accessibility_timelapse_manual_record_speed_desc">
-        <item quantity="other">A time-lapse sebessége ennyiszer gyorsabb: %d</item>
-        <item quantity="one">A time-lapse sebessége ennyiszer gyorsabb: %d</item>
-    </plurals>
-    <plurals name="number_of_cropped_face">
-        <item quantity="other">%d körbevágva.</item>
-        <item quantity="one">1 körbevágva.</item>
+    <plurals name="number_of_faces_announcement">
+        <item quantity="other">%1$d arc.</item>
+        <item quantity="one">%1$d arc.</item>
     </plurals>
     <plurals name="photos_remaining">
         <item quantity="other">Körülbelül %s fotó</item>
@@ -17,8 +13,8 @@
         <item quantity="one">(%1$d alkalmazás kiválasztva)</item>
     </plurals>
     <plurals name="social_share_info">
-        <item quantity="other">Gyorsan megoszthat fotókat és videókat a közösségi alkalmazásokban a Fényképezőgépből. Legfeljebb %1$d alkalmazást választhat. A Zárolt mappába mentett fotók és videók nem oszthatók meg.</item>
-        <item quantity="one">Gyorsan megoszthat fotókat és videókat a közösségi alkalmazásokban a Fényképezőgépből. Legfeljebb %1$d alkalmazást választhat. A Zárolt mappába mentett fotók és videók nem oszthatók meg.</item>
+        <item quantity="other">Gyorsan megoszthat fotókat és videókat a közösségi alkalmazásokban közvetlenül a Fényképezőgépből. Legfeljebb %1$d alkalmazást választhat. A Zárolt mappába mentett fotók és videók nem oszthatók meg.</item>
+        <item quantity="one">Gyorsan megoszthat fotókat és videókat a közösségi alkalmazásokban közvetlenül a Fényképezőgépből. Legfeljebb %1$d alkalmazást választhat. A Zárolt mappába mentett fotók és videók nem oszthatók meg.</item>
     </plurals>
     <plurals name="social_share_select_error">
         <item quantity="other">Legfeljebb %1$d alkalmazást választhat ki</item>

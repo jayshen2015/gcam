@@ -22,32 +22,13 @@
 
     move-result-object p2
 
-    if-eqz p2, :cond_5
+    if-eqz p2, :cond_4
 
-    const-string v0, "../"
-
-    invoke-virtual {p2, v0}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
-
-    move-result v0
-
-    if-nez v0, :cond_4
-
-    const-string v0, "/.."
-
-    invoke-virtual {p2, v0}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    goto :goto_1
-
-    :cond_0
-    invoke-static {p1}, Llon;->a(Landroid/content/Context;)Llon;
+    invoke-static {p1}, Lnei;->a(Landroid/content/Context;)Lnei;
 
     move-result-object v0
 
-    invoke-static {p1}, Llpq;->a(Landroid/content/Context;)Ljava/util/Map;
+    invoke-static {p1}, Lngt;->f(Landroid/content/Context;)Ljava/util/Map;
 
     move-result-object p1
 
@@ -55,132 +36,146 @@
 
     move-result v1
 
-    if-eqz v1, :cond_1
+    if-eqz v1, :cond_0
 
     return-void
 
-    :cond_1
+    :cond_0
     invoke-interface {p1, p2}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p1
 
-    check-cast p1, Llpq;
+    check-cast p1, Lnfn;
 
-    if-eqz p1, :cond_3
+    if-eqz p1, :cond_2
 
-    iget v1, p1, Llpq;->e:I
+    iget v1, p1, Lnfn;->f:I
 
     const/4 v2, 0x7
 
-    if-eq v1, v2, :cond_2
+    if-ne v1, v2, :cond_1
 
     goto :goto_0
 
+    :cond_1
+    invoke-virtual {p2}, Ljava/lang/String;->length()I
+
+    return-void
+
     :cond_2
+    :goto_0
     invoke-virtual {p0}, Lcom/google/android/libraries/phenotype/client/stable/PhenotypeUpdateBackgroundBroadcastReceiver;->goAsync()Landroid/content/BroadcastReceiver$PendingResult;
 
     move-result-object v1
 
-    invoke-static {v0}, Llpt;->b(Llon;)Llst;
+    const/4 v2, 0x0
 
-    move-result-object v2
+    if-nez p1, :cond_3
 
-    invoke-virtual {v2}, Llst;->a()Lnou;
-
-    move-result-object v2
-
-    invoke-static {v2}, Lnoo;->q(Lnou;)Lnoo;
-
-    move-result-object v2
-
-    new-instance v3, Llps;
-
-    const/4 v4, 0x0
-
-    invoke-direct {v3, p2, v4}, Llps;-><init>(Ljava/lang/String;I)V
-
-    invoke-virtual {v0}, Llon;->b()Lnox;
-
-    move-result-object v5
-
-    invoke-static {v2, v3, v5}, Lnnf;->i(Lnou;Lmqi;Ljava/util/concurrent/Executor;)Lnou;
-
-    move-result-object v2
-
-    invoke-static {v2}, Lnoo;->q(Lnou;)Lnoo;
-
-    move-result-object v2
-
-    new-instance v3, Llpw;
-
-    invoke-direct {v3, p1, p2, v0, v4}, Llpw;-><init>(Llpq;Ljava/lang/String;Llon;I)V
-
-    invoke-virtual {v0}, Llon;->b()Lnox;
+    invoke-static {v0}, Lnfq;->a(Lnei;)Lnkq;
 
     move-result-object p1
 
-    invoke-static {v2, v3, p1}, Lnnf;->j(Lnou;Lnno;Ljava/util/concurrent/Executor;)Lnou;
+    new-instance v3, Lnfp;
+
+    const/4 v4, 0x4
+
+    invoke-direct {v3, p2, v4}, Lnfp;-><init>(Ljava/lang/String;I)V
+
+    invoke-virtual {v0}, Lnei;->c()Lphw;
+
+    move-result-object v4
+
+    invoke-virtual {p1, v3, v4}, Lnkq;->b(Loiu;Ljava/util/concurrent/Executor;)Lpht;
 
     move-result-object p1
 
-    sget-object v2, Ljava/util/concurrent/TimeUnit;->SECONDS:Ljava/util/concurrent/TimeUnit;
-
-    invoke-virtual {v0}, Llon;->b()Lnox;
+    invoke-virtual {v0}, Lnei;->c()Lphw;
 
     move-result-object v3
 
-    const-wide/16 v4, 0x19
+    new-instance v4, Lngb;
 
-    invoke-static {p1, v4, v5, v2, v3}, Lnsy;->I(Lnou;JLjava/util/concurrent/TimeUnit;Ljava/util/concurrent/ScheduledExecutorService;)Lnou;
+    invoke-direct {v4, v0, p2, v2}, Lngb;-><init>(Lnei;Ljava/lang/String;I)V
+
+    invoke-interface {v3, v4}, Lphw;->a(Ljava/lang/Runnable;)Lpht;
+
+    move-result-object v2
+
+    invoke-static {p1, v2}, Loom;->n(Ljava/lang/Object;Ljava/lang/Object;)Loom;
 
     move-result-object p1
 
-    check-cast p1, Lnoo;
+    invoke-static {p1}, Lplk;->O(Ljava/lang/Iterable;)Lphm;
 
-    new-instance v2, Lkgc;
+    move-result-object p1
 
-    const/16 v3, 0x9
+    sget-object v2, Lngd;->a:Lngd;
 
-    invoke-direct {v2, p1, p2, v1, v3}, Lkgc;-><init>(Lnoo;Ljava/lang/String;Landroid/content/BroadcastReceiver$PendingResult;I)V
+    invoke-virtual {v0}, Lnei;->c()Lphw;
 
-    invoke-virtual {v0}, Llon;->b()Lnox;
+    move-result-object v3
+
+    invoke-virtual {p1, v2, v3}, Lphm;->a(Ljava/util/concurrent/Callable;Ljava/util/concurrent/Executor;)Lpht;
+
+    move-result-object p1
+
+    goto :goto_1
+
+    :cond_3
+    invoke-static {v0}, Lnfq;->a(Lnei;)Lnkq;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Lnkq;->a()Lpht;
+
+    move-result-object v3
+
+    invoke-static {v3}, Lpho;->q(Lpht;)Lpho;
+
+    move-result-object v3
+
+    new-instance v4, Lnfp;
+
+    invoke-direct {v4, p2, v2}, Lnfp;-><init>(Ljava/lang/String;I)V
+
+    invoke-virtual {v0}, Lnei;->c()Lphw;
+
+    move-result-object v5
+
+    invoke-static {v3, v4, v5}, Lpgb;->h(Lpht;Loiu;Ljava/util/concurrent/Executor;)Lpht;
+
+    move-result-object v3
+
+    invoke-static {v3}, Lpho;->q(Lpht;)Lpho;
+
+    move-result-object v3
+
+    new-instance v4, Lnfy;
+
+    invoke-direct {v4, p1, p2, v0, v2}, Lnfy;-><init>(Lnfn;Ljava/lang/String;Lnei;I)V
+
+    invoke-virtual {v0}, Lnei;->c()Lphw;
+
+    move-result-object p1
+
+    invoke-static {v3, v4, p1}, Lpgb;->i(Lpht;Lpgk;Ljava/util/concurrent/Executor;)Lpht;
+
+    move-result-object p1
+
+    :goto_1
+    new-instance v2, Lngc;
+
+    invoke-direct {v2, p1, p2, v1}, Lngc;-><init>(Lpht;Ljava/lang/String;Landroid/content/BroadcastReceiver$PendingResult;)V
+
+    invoke-virtual {v0}, Lnei;->c()Lphw;
 
     move-result-object p2
 
-    invoke-virtual {p1, v2, p2}, Lnnb;->d(Ljava/lang/Runnable;Ljava/util/concurrent/Executor;)V
+    invoke-interface {p1, v2, p2}, Lpht;->d(Ljava/lang/Runnable;Ljava/util/concurrent/Executor;)V
 
-    return-void
-
-    :cond_3
-    :goto_0
     return-void
 
     :cond_4
-    :goto_1
-    new-instance p1, Ljava/lang/StringBuilder;
-
-    invoke-direct {p1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v0, "Got an invalid config package for P/H that includes \'..\': "
-
-    invoke-virtual {p1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {p1, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string p2, ". Exiting."
-
-    invoke-virtual {p1, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {p1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p1
-
-    const-string p2, "PhenotypeBackgroundRecv"
-
-    invoke-static {p2, p1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
-
-    return-void
-
-    :cond_5
     return-void
 .end method

@@ -1,22 +1,22 @@
-.class public final Lduj;
+.class public interface abstract Lduj;
 .super Ljava/lang/Object;
 
 
-# static fields
-.field public static final a:Ldpt;
+# virtual methods
+.method public abstract a(Landroid/graphics/Canvas;)V
+.end method
 
+.method public abstract b(II)V
+.end method
 
-# direct methods
-.method static constructor <clinit>()V
-    .locals 2
+.method public abstract c(F)V
+.end method
 
-    new-instance v0, Ldpt;
+.method public abstract d(F)V
+.end method
 
-    const/16 v1, 0x11
+.method public abstract e(F)V
+.end method
 
-    invoke-direct {v0, v1}, Ldpt;-><init>(I)V
-
-    sput-object v0, Lduj;->a:Ldpt;
-
-    return-void
+.method public abstract f(F)V
 .end method

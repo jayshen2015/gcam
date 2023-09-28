@@ -1,95 +1,61 @@
-.class public final Lccc;
+.class public final synthetic Lccc;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Logk;
+.implements Louk;
 
 
 # instance fields
-.field private final a:Loiw;
+.field public final synthetic a:Lccl;
 
-.field private final b:Loiw;
-
-.field private final c:Loiw;
-
-.field private final d:Loiw;
-
-.field private final e:Loiw;
-
-.field private final f:Loiw;
-
-.field private final g:Loiw;
-
-.field private final h:Loiw;
-
-.field private final i:Loiw;
+.field private final synthetic b:I
 
 
 # direct methods
-.method public constructor <init>(Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;)V
+.method public synthetic constructor <init>(Lccl;I)V
     .locals 0
+
+    iput p2, p0, Lccc;->b:I
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lccc;->a:Loiw;
-
-    iput-object p2, p0, Lccc;->b:Loiw;
-
-    iput-object p3, p0, Lccc;->c:Loiw;
-
-    iput-object p4, p0, Lccc;->d:Loiw;
-
-    iput-object p5, p0, Lccc;->e:Loiw;
-
-    iput-object p6, p0, Lccc;->f:Loiw;
-
-    iput-object p7, p0, Lccc;->g:Loiw;
-
-    iput-object p8, p0, Lccc;->h:Loiw;
-
-    iput-object p9, p0, Lccc;->i:Loiw;
+    iput-object p1, p0, Lccc;->a:Lccl;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Lccb;
-    .locals 11
-
-    iget-object v1, p0, Lccc;->a:Loiw;
-
-    iget-object v2, p0, Lccc;->b:Loiw;
-
-    iget-object v3, p0, Lccc;->c:Loiw;
-
-    iget-object v4, p0, Lccc;->d:Loiw;
-
-    iget-object v5, p0, Lccc;->e:Loiw;
-
-    iget-object v6, p0, Lccc;->f:Loiw;
-
-    iget-object v7, p0, Lccc;->g:Loiw;
-
-    iget-object v8, p0, Lccc;->h:Loiw;
-
-    iget-object v9, p0, Lccc;->i:Loiw;
-
-    new-instance v10, Lccb;
-
-    move-object v0, v10
-
-    invoke-direct/range {v0 .. v9}, Lccb;-><init>(Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;)V
-
-    return-object v10
-.end method
-
-.method public final bridge synthetic get()Ljava/lang/Object;
+.method public final a()Ljava/lang/Object;
     .locals 1
 
-    invoke-virtual {p0}, Lccc;->a()Lccb;
+    iget v0, p0, Lccc;->b:I
+
+    packed-switch v0, :pswitch_data_0
+
+    iget-object v0, p0, Lccc;->a:Lccl;
+
+    iget-object v0, v0, Lccl;->a:Ljava/lang/String;
+
+    return-object v0
+
+    :pswitch_0
+    iget-object v0, p0, Lccc;->a:Lccl;
+
+    invoke-virtual {v0}, Lccl;->a()[Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {v0}, Ljava/util/Arrays;->toString([Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v0
 
     return-object v0
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

@@ -1,51 +1,22 @@
-.class public Lhvq;
+.class public final Lhvq;
 .super Ljava/lang/Object;
 
-# interfaces
-.implements Lhis;
+
+# static fields
+.field public static final a:Lhrf;
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 2
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance v0, Lhrf;
 
-    return-void
-.end method
+    const/16 v1, 0xb
 
+    invoke-direct {v0, v1}, Lhrf;-><init>(I)V
 
-# virtual methods
-.method public a()V
-    .locals 0
-
-    return-void
-.end method
-
-.method public b()V
-    .locals 0
-
-    return-void
-.end method
-
-.method public synthetic f()V
-    .locals 1
-
-    const/4 v0, 0x0
-
-    throw v0
-.end method
-
-.method public synthetic g()V
-    .locals 1
-
-    const/4 v0, 0x0
-
-    throw v0
-.end method
-
-.method public synthetic h()V
-    .locals 0
+    sput-object v0, Lhvq;->a:Lhrf;
 
     return-void
 .end method

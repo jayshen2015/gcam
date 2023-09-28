@@ -1,144 +1,98 @@
-.class public final Lcnx;
-.super Ljava/lang/Object;
+.class final enum Lcnx;
+.super Ljava/lang/Enum;
 
 
-# instance fields
-.field public final a:Lkeb;
+# static fields
+.field public static final enum a:Lcnx;
 
-.field public final b:Lkfj;
+.field public static final enum b:Lcnx;
+
+.field public static final enum c:Lcnx;
+
+.field public static final enum d:Lcnx;
+
+.field private static final synthetic e:[Lcnx;
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 9
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance v0, Lcnx;
 
-    return-void
-.end method
-
-.method public constructor <init>(Lkeb;Lkfj;)V
-    .locals 0
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lcnx;->a:Lkeb;
-
-    iput-object p2, p0, Lcnx;->b:Lkfj;
-
-    return-void
-.end method
-
-
-# virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 4
-
-    const/4 v0, 0x1
-
-    if-ne p1, p0, :cond_0
-
-    return v0
-
-    :cond_0
-    instance-of v1, p1, Lcnx;
+    const-string v1, "READY"
 
     const/4 v2, 0x0
 
-    if-eqz v1, :cond_1
+    invoke-direct {v0, v1, v2}, Lcnx;-><init>(Ljava/lang/String;I)V
 
-    check-cast p1, Lcnx;
+    sput-object v0, Lcnx;->a:Lcnx;
 
-    iget-object v1, p0, Lcnx;->a:Lkeb;
+    new-instance v1, Lcnx;
 
-    iget-object v3, p1, Lcnx;->a:Lkeb;
+    const-string v3, "STARTED"
 
-    invoke-virtual {v1, v3}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+    const/4 v4, 0x1
 
-    move-result v1
+    invoke-direct {v1, v3, v4}, Lcnx;-><init>(Ljava/lang/String;I)V
 
-    if-eqz v1, :cond_1
+    sput-object v1, Lcnx;->b:Lcnx;
 
-    iget-object v1, p0, Lcnx;->b:Lkfj;
+    new-instance v3, Lcnx;
 
-    iget-object p1, p1, Lcnx;->b:Lkfj;
+    const-string v5, "STOPPED"
 
-    invoke-virtual {v1, p1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+    const/4 v6, 0x2
 
-    move-result p1
+    invoke-direct {v3, v5, v6}, Lcnx;-><init>(Ljava/lang/String;I)V
 
-    if-eqz p1, :cond_1
+    sput-object v3, Lcnx;->c:Lcnx;
 
-    return v0
+    new-instance v5, Lcnx;
 
-    :cond_1
-    return v2
+    const-string v7, "CLOSED"
+
+    const/4 v8, 0x3
+
+    invoke-direct {v5, v7, v8}, Lcnx;-><init>(Ljava/lang/String;I)V
+
+    sput-object v5, Lcnx;->d:Lcnx;
+
+    const/4 v7, 0x4
+
+    new-array v7, v7, [Lcnx;
+
+    aput-object v0, v7, v2
+
+    aput-object v1, v7, v4
+
+    aput-object v3, v7, v6
+
+    aput-object v5, v7, v8
+
+    sput-object v7, Lcnx;->e:[Lcnx;
+
+    return-void
 .end method
 
-.method public final hashCode()I
-    .locals 3
+.method private constructor <init>(Ljava/lang/String;I)V
+    .locals 0
 
-    iget-object v0, p0, Lcnx;->a:Lkeb;
+    invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
-    invoke-virtual {v0}, Ljava/lang/Object;->hashCode()I
-
-    move-result v0
-
-    const v1, 0xf4243
-
-    xor-int/2addr v0, v1
-
-    iget-object v2, p0, Lcnx;->b:Lkfj;
-
-    invoke-virtual {v2}, Ljava/lang/Object;->hashCode()I
-
-    move-result v2
-
-    mul-int v0, v0, v1
-
-    xor-int/2addr v0, v2
-
-    return v0
+    return-void
 .end method
 
-.method public final toString()Ljava/lang/String;
-    .locals 4
+.method public static values()[Lcnx;
+    .locals 1
 
-    iget-object v0, p0, Lcnx;->a:Lkeb;
+    sget-object v0, Lcnx;->e:[Lcnx;
 
-    invoke-virtual {v0}, Ljava/lang/Object;->toString()Ljava/lang/String;
+    invoke-virtual {v0}, [Lcnx;->clone()Ljava/lang/Object;
 
     move-result-object v0
 
-    iget-object v1, p0, Lcnx;->b:Lkfj;
-
-    invoke-virtual {v1}, Ljava/lang/Object;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v3, "FrameFeature{frame="
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v0, ", stream="
-
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v0, "}"
-
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
+    check-cast v0, [Lcnx;
 
     return-object v0
 .end method

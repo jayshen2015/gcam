@@ -1,99 +1,96 @@
-.class public final Lean;
+.class public final synthetic Lean;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Logk;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field private final a:Loiw;
+.field public final synthetic a:Llmr;
 
-.field private final b:Loiw;
-
-.field private final c:Loiw;
-
-.field private final d:Loiw;
+.field private final synthetic b:I
 
 
 # direct methods
-.method public constructor <init>(Loiw;Loiw;Loiw;Loiw;)V
+.method public synthetic constructor <init>(Llmr;I)V
     .locals 0
+
+    iput p2, p0, Lean;->b:I
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lean;->a:Loiw;
-
-    iput-object p2, p0, Lean;->b:Loiw;
-
-    iput-object p3, p0, Lean;->c:Loiw;
-
-    iput-object p4, p0, Lean;->d:Loiw;
+    iput-object p1, p0, Lean;->a:Llmr;
 
     return-void
 .end method
 
-.method public static a(Loiw;Loiw;Loiw;Loiw;)Lean;
-    .locals 1
-
-    new-instance v0, Lean;
-
-    invoke-direct {v0, p0, p1, p2, p3}, Lean;-><init>(Loiw;Loiw;Loiw;Loiw;)V
-
-    return-object v0
-.end method
-
 
 # virtual methods
-.method public final b()Lbkc;
-    .locals 3
+.method public final run()V
+    .locals 5
 
-    iget-object v0, p0, Lean;->a:Loiw;
+    iget v0, p0, Lean;->b:I
 
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
+    packed-switch v0, :pswitch_data_0
 
-    move-result-object v0
+    iget-object v0, p0, Lean;->a:Llmr;
 
-    check-cast v0, Lgsm;
-
-    iget-object v0, p0, Lean;->b:Loiw;
-
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ldhi;
-
-    iget-object v1, p0, Lean;->c:Loiw;
-
-    invoke-interface {v1}, Loiw;->get()Ljava/lang/Object;
+    invoke-interface {v0}, Llmr;->b()Llmw;
 
     move-result-object v1
 
-    check-cast v1, Lkbc;
+    sget-object v2, Ldqo;->a:Louj;
 
-    iget-object v1, p0, Lean;->d:Loiw;
+    invoke-virtual {v2}, Loue;->b()Lova;
 
-    invoke-interface {v1}, Loiw;->get()Ljava/lang/Object;
+    move-result-object v2
 
-    move-result-object v1
+    check-cast v2, Loug;
 
-    check-cast v1, Lecy;
+    const/16 v3, 0x38c
 
-    new-instance v1, Lbkc;
+    invoke-interface {v2, v3}, Loug;->G(I)Lova;
 
-    const/4 v2, 0x0
+    move-result-object v2
 
-    invoke-direct {v1, v0, v2}, Lbkc;-><init>(Ldhi;[B)V
+    check-cast v2, Loug;
 
-    return-object v1
-.end method
+    if-eqz v1, :cond_1
 
-.method public final bridge synthetic get()Ljava/lang/Object;
-    .locals 1
+    iget-wide v3, v1, Llmw;->b:J
 
-    invoke-virtual {p0}, Lean;->b()Lbkc;
+    goto :goto_0
 
-    move-result-object v0
+    :pswitch_0
+    iget-object v0, p0, Lean;->a:Llmr;
 
-    return-object v0
+    invoke-interface {v0}, Llmr;->e()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    return-void
+
+    :cond_0
+    invoke-interface {v0}, Llmr;->close()V
+
+    return-void
+
+    :cond_1
+    const-wide/16 v3, -0x1
+
+    :goto_0
+    const-string v1, "Dropped frame%d because the feature extraction took too long"
+
+    invoke-interface {v2, v1, v3, v4}, Loug;->q(Ljava/lang/String;J)V
+
+    invoke-interface {v0}, Llmr;->close()V
+
+    return-void
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

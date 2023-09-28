@@ -1,186 +1,245 @@
 .class public final Lobf;
-.super Lnws;
-
-# interfaces
-.implements Lnxz;
+.super Lnb;
 
 
 # static fields
-.field public static final b:Lobf;
-
-.field private static volatile d:Lnyf;
+.field private static final a:[[I
 
 
 # instance fields
-.field public a:Lnxa;
+.field private b:Landroid/content/res/ColorStateList;
 
-.field private c:B
+.field private c:Z
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 2
+    .locals 4
 
-    new-instance v0, Lobf;
+    const/4 v0, 0x4
 
-    invoke-direct {v0}, Lobf;-><init>()V
+    new-array v0, v0, [[I
 
-    sput-object v0, Lobf;->b:Lobf;
+    const/4 v1, 0x2
 
-    const-class v1, Lobf;
+    new-array v2, v1, [I
 
-    invoke-static {v1, v0}, Lnws;->aa(Ljava/lang/Class;Lnws;)V
+    fill-array-data v2, :array_0
+
+    const/4 v3, 0x0
+
+    aput-object v2, v0, v3
+
+    new-array v2, v1, [I
+
+    fill-array-data v2, :array_1
+
+    const/4 v3, 0x1
+
+    aput-object v2, v0, v3
+
+    new-array v2, v1, [I
+
+    fill-array-data v2, :array_2
+
+    aput-object v2, v0, v1
+
+    new-array v1, v1, [I
+
+    fill-array-data v1, :array_3
+
+    const/4 v2, 0x3
+
+    aput-object v1, v0, v2
+
+    sput-object v0, Lobf;->a:[[I
 
     return-void
+
+    :array_0
+    .array-data 4
+        0x101009e
+        0x10100a0
+    .end array-data
+
+    :array_1
+    .array-data 4
+        0x101009e
+        -0x10100a0
+    .end array-data
+
+    :array_2
+    .array-data 4
+        -0x101009e
+        0x10100a0
+    .end array-data
+
+    :array_3
+    .array-data 4
+        -0x101009e
+        -0x10100a0
+    .end array-data
 .end method
 
-.method private constructor <init>()V
-    .locals 1
+.method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
+    .locals 7
 
-    invoke-direct {p0}, Lnws;-><init>()V
+    const v0, 0x7f040411
 
-    const/4 v0, 0x2
+    const v1, 0x7f1506cd
 
-    iput-byte v0, p0, Lobf;->c:B
+    invoke-static {p1, p2, v0, v1}, Lodn;->a(Landroid/content/Context;Landroid/util/AttributeSet;II)Landroid/content/Context;
 
-    sget-object v0, Lnyi;->b:Lnyi;
+    move-result-object p1
 
-    iput-object v0, p0, Lobf;->a:Lnxa;
+    invoke-direct {p0, p1, p2}, Lnb;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
+
+    invoke-virtual {p0}, Lobf;->getContext()Landroid/content/Context;
+
+    move-result-object p1
+
+    sget-object v2, Lobg;->a:[I
+
+    const/4 v6, 0x0
+
+    new-array v5, v6, [I
+
+    const v3, 0x7f040411
+
+    const v4, 0x7f1506cd
+
+    move-object v0, p1
+
+    move-object v1, p2
+
+    invoke-static/range {v0 .. v5}, Lnzw;->a(Landroid/content/Context;Landroid/util/AttributeSet;[III[I)Landroid/content/res/TypedArray;
+
+    move-result-object p2
+
+    invoke-virtual {p2, v6}, Landroid/content/res/TypedArray;->hasValue(I)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    invoke-static {p1, p2, v6}, Lobr;->c(Landroid/content/Context;Landroid/content/res/TypedArray;I)Landroid/content/res/ColorStateList;
+
+    move-result-object p1
+
+    invoke-virtual {p0, p1}, Landroid/widget/CompoundButton;->setButtonTintList(Landroid/content/res/ColorStateList;)V
+
+    :cond_0
+    const/4 p1, 0x1
+
+    invoke-virtual {p2, p1, v6}, Landroid/content/res/TypedArray;->getBoolean(IZ)Z
+
+    move-result p1
+
+    iput-boolean p1, p0, Lobf;->c:Z
+
+    invoke-virtual {p2}, Landroid/content/res/TypedArray;->recycle()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method protected final a(ILjava/lang/Object;)Ljava/lang/Object;
-    .locals 3
+.method protected final onAttachedToWindow()V
+    .locals 8
 
-    add-int/lit8 p1, p1, -0x1
+    invoke-super {p0}, Lnb;->onAttachedToWindow()V
+
+    iget-boolean v0, p0, Lobf;->c:Z
+
+    if-eqz v0, :cond_1
+
+    invoke-virtual {p0}, Landroid/widget/CompoundButton;->getButtonTintList()Landroid/content/res/ColorStateList;
+
+    move-result-object v0
+
+    if-nez v0, :cond_1
 
     const/4 v0, 0x1
 
-    const/4 v1, 0x0
+    iput-boolean v0, p0, Lobf;->c:Z
 
-    packed-switch p1, :pswitch_data_0
+    iget-object v1, p0, Lobf;->b:Landroid/content/res/ColorStateList;
 
-    :pswitch_0
-    if-nez p2, :cond_2
+    if-nez v1, :cond_0
 
-    const/4 v0, 0x0
+    const v1, 0x7f040111
 
-    goto :goto_1
+    invoke-static {p0, v1}, Lobr;->e(Landroid/view/View;I)I
 
-    :pswitch_1
-    sget-object p1, Lobf;->d:Lnyf;
+    move-result v1
 
-    if-nez p1, :cond_1
+    const v2, 0x7f04012e
 
-    const-class p2, Lobf;
+    invoke-static {p0, v2}, Lobr;->e(Landroid/view/View;I)I
 
-    monitor-enter p2
+    move-result v2
 
-    :try_start_0
-    sget-object p1, Lobf;->d:Lnyf;
+    const v3, 0x7f040152
 
-    if-nez p1, :cond_0
+    invoke-static {p0, v3}, Lobr;->e(Landroid/view/View;I)I
 
-    new-instance p1, Lnwo;
+    move-result v3
 
-    sget-object v0, Lobf;->b:Lobf;
+    sget-object v4, Lobf;->a:[[I
 
-    invoke-direct {p1, v0}, Lnwo;-><init>(Lnws;)V
+    array-length v5, v4
 
-    sput-object p1, Lobf;->d:Lnyf;
+    const/4 v5, 0x4
+
+    new-array v5, v5, [I
+
+    const/4 v6, 0x0
+
+    const/high16 v7, 0x3f800000    # 1.0f
+
+    invoke-static {v3, v1, v7}, Lohh;->Y(IIF)I
+
+    move-result v1
+
+    aput v1, v5, v6
+
+    const v1, 0x3f0a3d71    # 0.54f
+
+    invoke-static {v3, v2, v1}, Lohh;->Y(IIF)I
+
+    move-result v1
+
+    aput v1, v5, v0
+
+    const/4 v0, 0x2
+
+    const v1, 0x3ec28f5c    # 0.38f
+
+    invoke-static {v3, v2, v1}, Lohh;->Y(IIF)I
+
+    move-result v6
+
+    aput v6, v5, v0
+
+    const/4 v0, 0x3
+
+    invoke-static {v3, v2, v1}, Lohh;->Y(IIF)I
+
+    move-result v1
+
+    aput v1, v5, v0
+
+    new-instance v0, Landroid/content/res/ColorStateList;
+
+    invoke-direct {v0, v4, v5}, Landroid/content/res/ColorStateList;-><init>([[I[I)V
+
+    iput-object v0, p0, Lobf;->b:Landroid/content/res/ColorStateList;
 
     :cond_0
-    monitor-exit p2
+    iget-object v0, p0, Lobf;->b:Landroid/content/res/ColorStateList;
 
-    goto :goto_0
-
-    :catchall_0
-    move-exception p1
-
-    monitor-exit p2
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw p1
+    invoke-virtual {p0, v0}, Landroid/widget/CompoundButton;->setButtonTintList(Landroid/content/res/ColorStateList;)V
 
     :cond_1
-    :goto_0
-    return-object p1
-
-    :pswitch_2
-    sget-object p1, Lobf;->b:Lobf;
-
-    return-object p1
-
-    :pswitch_3
-    new-instance p1, Lnwn;
-
-    sget-object p2, Lobf;->b:Lobf;
-
-    invoke-direct {p1, p2}, Lnwn;-><init>(Lnws;)V
-
-    return-object p1
-
-    :pswitch_4
-    new-instance p1, Lobf;
-
-    invoke-direct {p1}, Lobf;-><init>()V
-
-    return-object p1
-
-    :pswitch_5
-    const-string p1, "a"
-
-    const-string p2, "\u0001\u0001\u0000\u0000\u0001\u0001\u0001\u0000\u0001\u0001\u0001\u041b"
-
-    const/4 v2, 0x2
-
-    new-array v2, v2, [Ljava/lang/Object;
-
-    aput-object p1, v2, v1
-
-    const-class p1, Lobe;
-
-    aput-object p1, v2, v0
-
-    sget-object p1, Lobf;->b:Lobf;
-
-    invoke-static {p1, p2, v2}, Lobf;->X(Lnxy;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object p1
-
-    return-object p1
-
-    :pswitch_6
-    iget-byte p1, p0, Lobf;->c:B
-
-    invoke-static {p1}, Ljava/lang/Byte;->valueOf(B)Ljava/lang/Byte;
-
-    move-result-object p1
-
-    return-object p1
-
-    :cond_2
-    :goto_1
-    iput-byte v0, p0, Lobf;->c:B
-
-    const/4 p1, 0x0
-
-    return-object p1
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_6
-        :pswitch_0
-        :pswitch_5
-        :pswitch_4
-        :pswitch_3
-        :pswitch_2
-        :pswitch_1
-    .end packed-switch
+    return-void
 .end method

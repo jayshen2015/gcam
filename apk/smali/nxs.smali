@@ -1,110 +1,167 @@
-.class final Lnxs;
+.class public final Lnxs;
 .super Ljava/lang/Object;
 
-
-# static fields
-.field private static final b:Lnxw;
+# interfaces
+.implements Landroid/os/Parcelable$ClassLoaderCreator;
 
 
 # instance fields
-.field public final a:Lnxw;
+.field private final synthetic a:I
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
+.method public constructor <init>(I)V
+    .locals 0
 
-    new-instance v0, Lnxq;
-
-    const/4 v1, 0x0
-
-    invoke-direct {v0, v1}, Lnxq;-><init>(I)V
-
-    sput-object v0, Lnxs;->b:Lnxw;
-
-    return-void
-.end method
-
-.method public constructor <init>()V
-    .locals 6
-
-    new-instance v0, Lnxr;
-
-    const/4 v1, 0x2
-
-    new-array v1, v1, [Lnxw;
-
-    sget-object v2, Lnxq;->a:Lnxq;
-
-    const/4 v3, 0x0
-
-    aput-object v2, v1, v3
-
-    :try_start_0
-    const-string v2, "com.google.protobuf.DescriptorMessageInfoFactory"
-
-    invoke-static {v2}, Ljava/lang/Class;->forName(Ljava/lang/String;)Ljava/lang/Class;
-
-    move-result-object v2
-
-    const-string v4, "getInstance"
-
-    new-array v5, v3, [Ljava/lang/Class;
-
-    invoke-virtual {v2, v4, v5}, Ljava/lang/Class;->getDeclaredMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
-
-    move-result-object v2
-
-    new-array v3, v3, [Ljava/lang/Object;
-
-    const/4 v4, 0x0
-
-    invoke-virtual {v2, v4, v3}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Lnxw;
-    :try_end_0
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
-
-    goto :goto_0
-
-    :catch_0
-    move-exception v2
-
-    sget-object v2, Lnxs;->b:Lnxw;
-
-    :goto_0
-    const/4 v3, 0x1
-
-    aput-object v2, v1, v3
-
-    invoke-direct {v0, v1}, Lnxr;-><init>([Lnxw;)V
+    iput p1, p0, Lnxs;->a:I
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    sget-object v1, Lnxb;->a:Ljava/nio/charset/Charset;
-
-    iput-object v0, p0, Lnxs;->a:Lnxw;
-
     return-void
 .end method
 
-.method public static a(Lnxv;)Z
+
+# virtual methods
+.method public final synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
+    .locals 2
+
+    iget v0, p0, Lnxs;->a:I
+
+    const/4 v1, 0x0
+
+    packed-switch v0, :pswitch_data_0
+
+    new-instance v0, Locn;
+
+    invoke-direct {v0, p1, v1}, Locn;-><init>(Landroid/os/Parcel;Ljava/lang/ClassLoader;)V
+
+    return-object v0
+
+    :pswitch_0
+    new-instance v0, Lnzl;
+
+    invoke-direct {v0, p1, v1}, Lnzl;-><init>(Landroid/os/Parcel;Ljava/lang/ClassLoader;)V
+
+    return-object v0
+
+    :pswitch_1
+    new-instance v0, Lnyd;
+
+    invoke-direct {v0, p1, v1}, Lnyd;-><init>(Landroid/os/Parcel;Ljava/lang/ClassLoader;)V
+
+    return-object v0
+
+    :pswitch_2
+    new-instance v0, Lnwt;
+
+    invoke-direct {v0, p1, v1}, Lnwt;-><init>(Landroid/os/Parcel;Ljava/lang/ClassLoader;)V
+
+    return-object v0
+
+    :pswitch_3
+    new-instance v0, Lnxt;
+
+    invoke-direct {v0, p1, v1}, Lnxt;-><init>(Landroid/os/Parcel;Ljava/lang/ClassLoader;)V
+
+    return-object v0
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
+.end method
+
+.method public final synthetic createFromParcel(Landroid/os/Parcel;Ljava/lang/ClassLoader;)Ljava/lang/Object;
     .locals 1
 
-    invoke-interface {p0}, Lnxv;->c()I
+    iget v0, p0, Lnxs;->a:I
 
-    move-result p0
+    packed-switch v0, :pswitch_data_0
 
-    const/4 v0, 0x1
+    new-instance v0, Locn;
 
-    if-ne p0, v0, :cond_0
+    invoke-direct {v0, p1, p2}, Locn;-><init>(Landroid/os/Parcel;Ljava/lang/ClassLoader;)V
 
-    return v0
+    return-object v0
 
-    :cond_0
-    const/4 p0, 0x0
+    :pswitch_0
+    new-instance v0, Lnzl;
 
-    return p0
+    invoke-direct {v0, p1, p2}, Lnzl;-><init>(Landroid/os/Parcel;Ljava/lang/ClassLoader;)V
+
+    return-object v0
+
+    :pswitch_1
+    new-instance v0, Lnyd;
+
+    invoke-direct {v0, p1, p2}, Lnyd;-><init>(Landroid/os/Parcel;Ljava/lang/ClassLoader;)V
+
+    return-object v0
+
+    :pswitch_2
+    new-instance v0, Lnwt;
+
+    invoke-direct {v0, p1, p2}, Lnwt;-><init>(Landroid/os/Parcel;Ljava/lang/ClassLoader;)V
+
+    return-object v0
+
+    :pswitch_3
+    new-instance v0, Lnxt;
+
+    invoke-direct {v0, p1, p2}, Lnxt;-><init>(Landroid/os/Parcel;Ljava/lang/ClassLoader;)V
+
+    return-object v0
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
+.end method
+
+.method public final synthetic newArray(I)[Ljava/lang/Object;
+    .locals 1
+
+    iget v0, p0, Lnxs;->a:I
+
+    packed-switch v0, :pswitch_data_0
+
+    new-array p1, p1, [Locn;
+
+    return-object p1
+
+    :pswitch_0
+    new-array p1, p1, [Lnzl;
+
+    return-object p1
+
+    :pswitch_1
+    new-array p1, p1, [Lnyd;
+
+    return-object p1
+
+    :pswitch_2
+    new-array p1, p1, [Lnwt;
+
+    return-object p1
+
+    :pswitch_3
+    new-array p1, p1, [Lnxt;
+
+    return-object p1
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method

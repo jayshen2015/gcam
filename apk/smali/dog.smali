@@ -1,36 +1,43 @@
-.class public Ldog;
-.super Ldof;
+.class public final synthetic Ldog;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Ljava/util/concurrent/Callable;
+
+
+# instance fields
+.field public final synthetic a:Ldoh;
+
+.field public final synthetic b:Ldos;
 
 
 # direct methods
-.method public constructor <init>()V
+.method public synthetic constructor <init>(Ldoh;Ldos;)V
     .locals 0
 
-    invoke-direct {p0}, Ldof;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Ldog;->a:Ldoh;
+
+    iput-object p2, p0, Ldog;->b:Ldos;
 
     return-void
 .end method
 
-.method public constructor <init>(Ljava/lang/String;)V
-    .locals 0
 
-    invoke-direct {p0, p1}, Ldof;-><init>(Ljava/lang/String;)V
+# virtual methods
+.method public final call()Ljava/lang/Object;
+    .locals 2
 
-    return-void
-.end method
+    iget-object v0, p0, Ldog;->a:Ldoh;
 
-.method public constructor <init>(Ljava/lang/String;Ljava/lang/Throwable;)V
-    .locals 0
+    iget-object v1, p0, Ldog;->b:Ldos;
 
-    invoke-direct {p0, p1, p2}, Ldof;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
+    iget-object v0, v0, Ldoh;->b:Ldoi;
 
-    return-void
-.end method
+    invoke-virtual {v0, v1}, Ldoi;->b(Ldos;)Ldor;
 
-.method public constructor <init>(Ljava/lang/Throwable;)V
-    .locals 0
+    move-result-object v0
 
-    invoke-direct {p0, p1}, Ldof;-><init>(Ljava/lang/Throwable;)V
-
-    return-void
+    return-object v0
 .end method

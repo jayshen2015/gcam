@@ -1,144 +1,169 @@
-.class public final Lhyb;
+.class public final synthetic Lhyb;
 .super Ljava/lang/Object;
+
+# interfaces
+.implements Lhyx;
+
+
+# static fields
+.field public static final synthetic a:Lhyb;
+
+.field public static final synthetic b:Lhyb;
+
+.field public static final synthetic c:Lhyb;
+
+.field public static final synthetic d:Lhyb;
 
 
 # instance fields
-.field public final a:Lkoj;
-
-.field public final b:Z
+.field private final synthetic e:I
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 0
+.method static synthetic constructor <clinit>()V
+    .locals 2
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance v0, Lhyb;
+
+    const/4 v1, 0x3
+
+    invoke-direct {v0, v1}, Lhyb;-><init>(I)V
+
+    sput-object v0, Lhyb;->d:Lhyb;
+
+    new-instance v0, Lhyb;
+
+    const/4 v1, 0x2
+
+    invoke-direct {v0, v1}, Lhyb;-><init>(I)V
+
+    sput-object v0, Lhyb;->c:Lhyb;
+
+    new-instance v0, Lhyb;
+
+    const/4 v1, 0x1
+
+    invoke-direct {v0, v1}, Lhyb;-><init>(I)V
+
+    sput-object v0, Lhyb;->b:Lhyb;
+
+    new-instance v0, Lhyb;
+
+    const/4 v1, 0x0
+
+    invoke-direct {v0, v1}, Lhyb;-><init>(I)V
+
+    sput-object v0, Lhyb;->a:Lhyb;
 
     return-void
 .end method
 
-.method public constructor <init>(Lkoj;Z)V
+.method private synthetic constructor <init>(I)V
     .locals 0
 
+    iput p1, p0, Lhyb;->e:I
+
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lhyb;->a:Lkoj;
-
-    iput-boolean p2, p0, Lhyb;->b:Z
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 4
+.method public final a(Ljava/lang/Object;)V
+    .locals 1
 
-    const/4 v0, 0x1
+    iget v0, p0, Lhyb;->e:I
 
-    if-ne p1, p0, :cond_0
+    packed-switch v0, :pswitch_data_0
 
-    return v0
+    check-cast p1, Lhzu;
 
-    :cond_0
-    instance-of v1, p1, Lhyb;
+    iget-boolean v0, p1, Lhzu;->d:Z
 
-    const/4 v2, 0x0
+    invoke-static {v0}, Lobr;->aQ(Z)V
 
-    if-eqz v1, :cond_1
+    iget-object v0, p1, Lhzu;->b:Liav;
 
-    check-cast p1, Lhyb;
+    iget-object v0, v0, Liav;->g:Lojc;
 
-    iget-object v1, p0, Lhyb;->a:Lkoj;
-
-    iget-object v3, p1, Lhyb;->a:Lkoj;
-
-    invoke-virtual {v1, v3}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_1
-
-    iget-boolean v1, p0, Lhyb;->b:Z
-
-    iget-boolean p1, p1, Lhyb;->b:Z
-
-    if-ne v1, p1, :cond_1
-
-    return v0
-
-    :cond_1
-    return v2
-.end method
-
-.method public final hashCode()I
-    .locals 4
-
-    iget-object v0, p0, Lhyb;->a:Lkoj;
-
-    invoke-virtual {v0}, Ljava/lang/Object;->hashCode()I
+    invoke-virtual {v0}, Lojc;->g()Z
 
     move-result v0
 
-    const v1, 0xf4243
+    if-eqz v0, :cond_1
 
-    xor-int/2addr v0, v1
+    iget-object p1, p1, Lhzu;->b:Liav;
 
-    const/4 v2, 0x1
+    iget-object p1, p1, Liav;->g:Lojc;
 
-    iget-boolean v3, p0, Lhyb;->b:Z
+    invoke-virtual {p1}, Lojc;->c()Ljava/lang/Object;
 
-    if-eq v2, v3, :cond_0
+    move-result-object p1
 
-    const/16 v2, 0x4d5
+    check-cast p1, Lian;
 
-    goto :goto_0
+    invoke-interface {p1}, Lian;->d()V
+
+    return-void
+
+    :pswitch_0
+    check-cast p1, Lhzu;
+
+    const/4 v0, 0x1
+
+    invoke-virtual {p1, v0}, Lhzu;->c(Z)V
+
+    return-void
+
+    :pswitch_1
+    check-cast p1, Lhzu;
+
+    iget-boolean v0, p1, Lhzu;->d:Z
+
+    invoke-static {v0}, Lobr;->aQ(Z)V
+
+    iget-boolean v0, p1, Lhzu;->e:Z
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p1, Lhzu;->a:Liat;
+
+    invoke-interface {v0}, Liat;->u()V
 
     :cond_0
-    const/16 v2, 0x4cf
+    iget-object v0, p1, Lhzu;->a:Liat;
 
-    :goto_0
-    mul-int v0, v0, v1
+    invoke-interface {v0}, Liat;->a()V
 
-    xor-int/2addr v0, v2
+    iget-object v0, p1, Lhzu;->c:Liay;
 
-    return v0
-.end method
+    invoke-interface {v0}, Liay;->a()V
 
-.method public final toString()Ljava/lang/String;
-    .locals 4
+    iget-object p1, p1, Lhzu;->f:Llap;
 
-    iget-object v0, p0, Lhyb;->a:Lkoj;
+    invoke-virtual {p1}, Llap;->close()V
 
-    invoke-virtual {v0}, Ljava/lang/Object;->toString()Ljava/lang/String;
+    return-void
 
-    move-result-object v0
+    :pswitch_2
+    check-cast p1, Lhzu;
 
-    iget-boolean v1, p0, Lhyb;->b:Z
+    const/4 v0, 0x0
 
-    new-instance v2, Ljava/lang/StringBuilder;
+    invoke-virtual {p1, v0}, Lhzu;->c(Z)V
 
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+    return-void
 
-    const-string v3, "FaceInfoInHotshotView{face="
+    :cond_1
+    return-void
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    nop
 
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v0, ", cropped="
-
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    const-string v0, "}"
-
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    return-object v0
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method

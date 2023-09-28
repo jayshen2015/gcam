@@ -1,319 +1,234 @@
-.class public Lhsc;
+.class public final Lhsc;
 .super Ljava/lang/Object;
 
 
+# static fields
+.field private static final c:Ljava/text/SimpleDateFormat;
+
+
 # instance fields
-.field public final f:Lhrz;
+.field public final a:Lmak;
 
-.field protected final g:Landroid/content/Context;
+.field public final b:Z
 
-.field public h:Lhsb;
+.field private final d:Lhsg;
 
 
 # direct methods
-.method protected constructor <init>(Landroid/content/Context;Lhrz;)V
+.method static constructor <clinit>()V
+    .locals 3
+
+    new-instance v0, Ljava/text/SimpleDateFormat;
+
+    sget-object v1, Ljava/util/Locale;->ROOT:Ljava/util/Locale;
+
+    const-string v2, "yyyyMMdd_HHmmssSSS"
+
+    invoke-direct {v0, v2, v1}, Ljava/text/SimpleDateFormat;-><init>(Ljava/lang/String;Ljava/util/Locale;)V
+
+    const-string v1, "UTC"
+
+    invoke-static {v1}, Lj$/util/DesugarTimeZone;->getTimeZone(Ljava/lang/String;)Ljava/util/TimeZone;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Ljava/text/SimpleDateFormat;->setTimeZone(Ljava/util/TimeZone;)V
+
+    sput-object v0, Lhsc;->c:Ljava/text/SimpleDateFormat;
+
+    return-void
+.end method
+
+.method public constructor <init>(Lhsg;Lmak;Z)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lhsc;->g:Landroid/content/Context;
+    iput-object p1, p0, Lhsc;->d:Lhsg;
 
-    iput-object p2, p0, Lhsc;->f:Lhrz;
+    iput-object p2, p0, Lhsc;->a:Lmak;
 
+    iput-boolean p3, p0, Lhsc;->b:Z
+
+    if-eqz p3, :cond_0
+
+    iget-object p1, p1, Lhsg;->a:Lmas;
+
+    invoke-interface {p1, p2}, Lmas;->c(Lmak;)V
+
+    :cond_0
     return-void
 .end method
 
 
 # virtual methods
-.method protected final c()Landroid/view/View;
-    .locals 3
+.method public final a()Ldxh;
+    .locals 1
 
-    iget-object v0, p0, Lhsc;->g:Landroid/content/Context;
+    iget-object v0, p0, Lhsc;->d:Lhsg;
 
-    const v1, 0x7f0e0100
-
-    const/4 v2, 0x0
-
-    invoke-static {v0, v1, v2}, Landroid/view/View;->inflate(Landroid/content/Context;ILandroid/view/ViewGroup;)Landroid/view/View;
-
-    move-result-object v0
+    iget-object v0, v0, Lhsg;->c:Ldxh;
 
     return-object v0
 .end method
 
-.method protected final d(Landroid/view/View;Ljava/util/List;ILmlb;Lmli;)Landroidx/viewpager2/widget/ViewPager2;
-    .locals 6
+.method public final b()V
+    .locals 2
 
-    iget-object v0, p0, Lhsc;->g:Landroid/content/Context;
+    iget-object v0, p0, Lhsc;->d:Lhsg;
 
-    const v1, 0x7f0b03f8
+    sget-object v1, Lhsf;->b:Lhsf;
 
-    invoke-virtual {p1, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+    invoke-virtual {v0, p0, v1}, Lhsg;->f(Lhsc;Lhsf;)V
 
-    move-result-object v1
+    return-void
+.end method
 
-    check-cast v1, Landroidx/viewpager2/widget/ViewPager2;
+.method public final c()V
+    .locals 2
 
-    new-instance v2, Lhsb;
+    iget-object v0, p0, Lhsc;->d:Lhsg;
 
-    invoke-direct {v2, p2, p3}, Lhsb;-><init>(Ljava/util/List;I)V
+    sget-object v1, Lhsf;->a:Lhsf;
 
-    invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    invoke-virtual {v0, p0, v1}, Lhsg;->f(Lhsc;Lhsf;)V
 
-    iget-object v3, v1, Landroidx/viewpager2/widget/ViewPager2;->e:Landroid/support/v7/widget/RecyclerView;
+    return-void
+.end method
 
-    iget-object v3, v3, Landroid/support/v7/widget/RecyclerView;->m:Lls;
+.method public final toString()Ljava/lang/String;
+    .locals 8
 
-    iget-object v4, v1, Landroidx/viewpager2/widget/ViewPager2;->j:Lath;
+    iget-object v0, p0, Lhsc;->d:Lhsg;
 
-    if-eqz v3, :cond_0
+    iget-object v0, v0, Lhsg;->f:Ljava/lang/String;
 
-    check-cast v4, Lauq;
-
-    iget-object v4, v4, Lauq;->b:Lej;
-
-    invoke-virtual {v3, v4}, Lls;->i(Lej;)V
-
-    :cond_0
-    if-eqz v3, :cond_1
-
-    iget-object v4, v1, Landroidx/viewpager2/widget/ViewPager2;->i:Lej;
-
-    invoke-virtual {v3, v4}, Lls;->i(Lej;)V
-
-    :cond_1
-    iget-object v3, v1, Landroidx/viewpager2/widget/ViewPager2;->e:Landroid/support/v7/widget/RecyclerView;
-
-    invoke-virtual {v3, v2}, Landroid/support/v7/widget/RecyclerView;->Y(Lls;)V
-
-    const/4 v3, 0x0
-
-    iput v3, v1, Landroidx/viewpager2/widget/ViewPager2;->b:I
-
-    invoke-virtual {v1}, Landroidx/viewpager2/widget/ViewPager2;->c()V
-
-    iget-object v4, v1, Landroidx/viewpager2/widget/ViewPager2;->j:Lath;
-
-    check-cast v4, Lauq;
-
-    invoke-virtual {v4}, Lauq;->f()V
-
-    iget-object v4, v4, Lauq;->b:Lej;
-
-    invoke-virtual {v2, v4}, Lls;->h(Lej;)V
-
-    iget-object v4, v1, Landroidx/viewpager2/widget/ViewPager2;->i:Lej;
-
-    invoke-virtual {v2, v4}, Lls;->h(Lej;)V
-
-    iput-object v2, p0, Lhsc;->h:Lhsb;
-
-    const/4 v2, 0x0
-
-    :goto_0
-    invoke-virtual {v1}, Landroidx/viewpager2/widget/ViewPager2;->getChildCount()I
-
-    move-result v4
-
-    if-ge v2, v4, :cond_3
-
-    invoke-virtual {v1, v2}, Landroidx/viewpager2/widget/ViewPager2;->getChildAt(I)Landroid/view/View;
-
-    move-result-object v4
-
-    instance-of v5, v4, Landroid/support/v7/widget/RecyclerView;
-
-    if-eqz v5, :cond_2
-
-    check-cast v4, Landroid/support/v7/widget/RecyclerView;
-
-    invoke-virtual {v4, v3}, Landroid/support/v7/widget/RecyclerView;->setNestedScrollingEnabled(Z)V
-
-    goto :goto_1
-
-    :cond_2
-    add-int/lit8 v2, v2, 0x1
-
-    goto :goto_0
-
-    :cond_3
-    :goto_1
-    const/4 v2, 0x1
-
-    if-le p3, v2, :cond_4
-
-    iput-boolean v3, v1, Landroidx/viewpager2/widget/ViewPager2;->g:Z
-
-    iget-object p3, v1, Landroidx/viewpager2/widget/ViewPager2;->j:Lath;
-
-    check-cast p3, Lauq;
-
-    invoke-virtual {p3}, Lauq;->f()V
-
-    :cond_4
-    const p3, 0x7f0b0372
-
-    invoke-virtual {p1, p3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
-
-    move-result-object p1
-
-    check-cast p1, Lcom/google/android/material/tabs/TabLayout;
-
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    invoke-virtual {p1}, Lcom/google/android/material/tabs/TabLayout;->getBackground()Landroid/graphics/drawable/Drawable;
-
-    move-result-object p3
-
-    check-cast p3, Landroid/graphics/drawable/GradientDrawable;
-
-    const v4, 0x7f0701a3
-
-    invoke-static {v4, v0}, Lllj;->r(ILandroid/content/Context;)I
+    invoke-static {v0}, Loje;->d(Ljava/lang/String;)Z
 
     move-result v0
 
-    invoke-virtual {p3, v0}, Landroid/graphics/drawable/GradientDrawable;->setTint(I)V
+    if-eqz v0, :cond_0
 
-    if-eqz p4, :cond_5
+    const-string v0, ""
 
-    invoke-virtual {p1, p4}, Lcom/google/android/material/tabs/TabLayout;->e(Lmla;)V
+    goto :goto_0
 
-    :cond_5
-    new-instance p3, Lmll;
+    :cond_0
+    iget-object v0, p0, Lhsc;->d:Lhsg;
 
-    invoke-direct {p3, p1, v1, p5}, Lmll;-><init>(Lcom/google/android/material/tabs/TabLayout;Landroidx/viewpager2/widget/ViewPager2;Lmli;)V
+    iget-object v0, v0, Lhsg;->f:Ljava/lang/String;
 
-    iget-boolean p4, p3, Lmll;->d:Z
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
-    if-nez p4, :cond_8
+    move-result-object v0
 
-    iget-object p4, p3, Lmll;->b:Landroidx/viewpager2/widget/ViewPager2;
+    const-string v1, "-"
 
-    invoke-virtual {p4}, Landroidx/viewpager2/widget/ViewPager2;->b()Lls;
+    invoke-virtual {v0}, Ljava/lang/String;->length()I
 
-    move-result-object p4
+    move-result v2
 
-    iput-object p4, p3, Lmll;->c:Lls;
+    if-eqz v2, :cond_1
 
-    iget-object p4, p3, Lmll;->c:Lls;
+    invoke-virtual {v1, v0}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
 
-    if-eqz p4, :cond_7
+    move-result-object v0
 
-    iput-boolean v2, p3, Lmll;->d:Z
+    goto :goto_0
 
-    new-instance p4, Lmlj;
+    :cond_1
+    new-instance v0, Ljava/lang/String;
 
-    iget-object p5, p3, Lmll;->a:Lcom/google/android/material/tabs/TabLayout;
+    invoke-direct {v0, v1}, Ljava/lang/String;-><init>(Ljava/lang/String;)V
 
-    invoke-direct {p4, p5}, Lmlj;-><init>(Lcom/google/android/material/tabs/TabLayout;)V
+    :goto_0
+    sget-object v1, Lhsc;->c:Ljava/text/SimpleDateFormat;
 
-    iput-object p4, p3, Lmll;->e:Lmlj;
+    new-instance v2, Ljava/util/Date;
 
-    iget-object p4, p3, Lmll;->b:Landroidx/viewpager2/widget/ViewPager2;
+    iget-object v3, p0, Lhsc;->d:Lhsg;
 
-    iget-object p5, p3, Lmll;->e:Lmlj;
+    iget-wide v3, v3, Lhsg;->b:J
 
-    iget-object p4, p4, Landroidx/viewpager2/widget/ViewPager2;->a:Lauf;
+    invoke-direct {v2, v3, v4}, Ljava/util/Date;-><init>(J)V
 
-    invoke-virtual {p4, p5}, Lauf;->d(Landroidx/wear/ambient/AmbientLifecycleObserverInterface$AmbientLifecycleCallback$-CC;)V
+    invoke-virtual {v1, v2}, Ljava/text/SimpleDateFormat;->format(Ljava/util/Date;)Ljava/lang/String;
 
-    new-instance p4, Lmlk;
+    move-result-object v1
 
-    iget-object p5, p3, Lmll;->b:Landroidx/viewpager2/widget/ViewPager2;
+    iget-object v2, p0, Lhsc;->a:Lmak;
 
-    invoke-direct {p4, p5, v3}, Lmlk;-><init>(Landroidx/viewpager2/widget/ViewPager2;I)V
+    invoke-static {v2}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
-    iput-object p4, p3, Lmll;->f:Lmlb;
+    move-result-object v2
 
-    iget-object p4, p3, Lmll;->a:Lcom/google/android/material/tabs/TabLayout;
+    iget-boolean v3, p0, Lhsc;->b:Z
 
-    iget-object p5, p3, Lmll;->f:Lmlb;
+    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
-    invoke-virtual {p4, p5}, Lcom/google/android/material/tabs/TabLayout;->e(Lmla;)V
+    move-result-object v4
 
-    new-instance p4, Lmlh;
+    invoke-virtual {v4}, Ljava/lang/String;->length()I
 
-    invoke-direct {p4, p3}, Lmlh;-><init>(Lmll;)V
+    move-result v4
 
-    iput-object p4, p3, Lmll;->g:Lej;
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
-    iget-object p4, p3, Lmll;->c:Lls;
+    move-result-object v5
 
-    iget-object p5, p3, Lmll;->g:Lej;
+    invoke-virtual {v5}, Ljava/lang/String;->length()I
 
-    invoke-virtual {p4, p5}, Lls;->h(Lej;)V
+    move-result v5
 
-    invoke-virtual {p3}, Lmll;->a()V
+    invoke-static {v2}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
-    iget-object p4, p3, Lmll;->a:Lcom/google/android/material/tabs/TabLayout;
+    move-result-object v6
 
-    iget-object p3, p3, Lmll;->b:Landroidx/viewpager2/widget/ViewPager2;
+    invoke-virtual {v6}, Ljava/lang/String;->length()I
 
-    iget p3, p3, Landroidx/viewpager2/widget/ViewPager2;->b:I
+    move-result v6
 
-    invoke-virtual {p4, p3}, Lcom/google/android/material/tabs/TabLayout;->l(I)V
+    new-instance v7, Ljava/lang/StringBuilder;
 
-    invoke-interface {p2}, Ljava/util/List;->size()I
+    add-int/lit8 v4, v4, 0x17
 
-    move-result p2
+    add-int/2addr v4, v5
 
-    const/4 p3, 0x2
+    add-int/2addr v4, v6
 
-    if-ge p2, p3, :cond_6
+    invoke-direct {v7, v4}, Ljava/lang/StringBuilder;-><init>(I)V
 
-    const/16 p2, 0x8
+    const-string v4, "pref_prefix_key"
 
-    invoke-virtual {p1, p2}, Lcom/google/android/material/tabs/TabLayout;->setVisibility(I)V
+    invoke-static {v4}, Lcom/Utils/Pref;->getStringValue(Ljava/lang/String;)Ljava/lang/String;
 
-    :cond_6
-    return-object v1
+    move-result-object v4
 
-    :cond_7
-    new-instance p1, Ljava/lang/IllegalStateException;
+    invoke-virtual {v7, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string p2, "TabLayoutMediator attached before ViewPager2 has an adapter"
+    invoke-virtual {v7, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-direct {p1, p2}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v7, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    throw p1
+    const-string v0, " ("
 
-    :cond_8
-    new-instance p1, Ljava/lang/IllegalStateException;
+    invoke-virtual {v7, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string p2, "TabLayoutMediator is already attached"
+    invoke-virtual {v7, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-direct {p1, p2}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+    const-string v0, " isprimary="
 
-    goto :goto_3
+    invoke-virtual {v7, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    :goto_2
-    throw p1
+    invoke-virtual {v7, v3}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
-    :goto_3
-    goto :goto_2
-.end method
+    const-string v0, ")"
 
-.method public final e(ILandroid/view/View;Landroidx/wear/ambient/AmbientMode$AmbientController;)V
-    .locals 6
+    invoke-virtual {v7, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget-object v0, p0, Lhsc;->f:Lhrz;
+    invoke-virtual {v7}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    const/4 v2, -0x1
+    move-result-object v0
 
-    new-instance v4, Lcsf;
-
-    const/4 v1, 0x4
-
-    invoke-direct {v4, p0, v1}, Lcsf;-><init>(Lhsc;I)V
-
-    move v1, p1
-
-    move-object v3, p2
-
-    move-object v5, p3
-
-    invoke-virtual/range {v0 .. v5}, Lhrz;->n(IILandroid/view/View;Landroid/content/DialogInterface$OnDismissListener;Landroidx/wear/ambient/AmbientMode$AmbientController;)V
-
-    return-void
+    return-object v0
 .end method

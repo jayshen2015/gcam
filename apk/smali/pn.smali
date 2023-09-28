@@ -1,68 +1,35 @@
-.class public abstract Lpn;
-.super Ljava/lang/Object;
+.class public final Lpn;
+.super Lpk;
+
+# interfaces
+.implements Lpl;
 
 
 # instance fields
-.field public b:Z
-
-.field public final c:Ljava/util/concurrent/CopyOnWriteArrayList;
-
-.field public d:Lolz;
+.field public a:Lpl;
 
 
 # direct methods
-.method public constructor <init>(Z)V
-    .locals 0
+.method public constructor <init>(Landroid/content/Context;I)V
+    .locals 1
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const/4 v0, 0x0
 
-    iput-boolean p1, p0, Lpn;->b:Z
-
-    new-instance p1, Ljava/util/concurrent/CopyOnWriteArrayList;
-
-    invoke-direct {p1}, Ljava/util/concurrent/CopyOnWriteArrayList;-><init>()V
-
-    iput-object p1, p0, Lpn;->c:Ljava/util/concurrent/CopyOnWriteArrayList;
+    invoke-direct {p0, p1, v0, p2, v0}, Lpk;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I[B)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public abstract a()V
-.end method
-
-.method public final b(Lph;)V
+.method public final p(Landroid/content/Context;Z)Lom;
     .locals 1
 
-    iget-object v0, p0, Lpn;->c:Ljava/util/concurrent/CopyOnWriteArrayList;
+    new-instance v0, Lpm;
 
-    invoke-virtual {v0, p1}, Ljava/util/concurrent/CopyOnWriteArrayList;->add(Ljava/lang/Object;)Z
+    invoke-direct {v0, p1, p2}, Lpm;-><init>(Landroid/content/Context;Z)V
 
-    return-void
-.end method
+    iput-object p0, v0, Lpm;->e:Lpl;
 
-.method public final c(Lph;)V
-    .locals 1
-
-    iget-object v0, p0, Lpn;->c:Ljava/util/concurrent/CopyOnWriteArrayList;
-
-    invoke-virtual {v0, p1}, Ljava/util/concurrent/CopyOnWriteArrayList;->remove(Ljava/lang/Object;)Z
-
-    return-void
-.end method
-
-.method public final d(Z)V
-    .locals 0
-
-    iput-boolean p1, p0, Lpn;->b:Z
-
-    iget-object p1, p0, Lpn;->d:Lolz;
-
-    if-eqz p1, :cond_0
-
-    invoke-interface {p1}, Lolz;->a()Ljava/lang/Object;
-
-    :cond_0
-    return-void
+    return-object v0
 .end method

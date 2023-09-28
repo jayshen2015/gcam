@@ -1,80 +1,85 @@
-.class final Lcwt;
-.super Lcxe;
+.class public final Lcwt;
+.super Ljava/lang/Object;
 
 
 # instance fields
-.field final synthetic a:Lcww;
+.field public final a:Lcom/google/android/apps/camera/camerafatalerror/CameraFatalErrorTrackerDatabase;
+
+.field public final b:Ljtx;
+
+.field private final c:Landroid/content/SharedPreferences;
 
 
 # direct methods
-.method public constructor <init>(Lcww;)V
+.method public constructor <init>(Landroid/content/SharedPreferences;Lcom/google/android/apps/camera/camerafatalerror/CameraFatalErrorTrackerDatabase;Ljtx;[B[B[B)V
     .locals 0
 
-    iput-object p1, p0, Lcwt;->a:Lcww;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0, p1}, Lcxe;-><init>(Lcxh;)V
+    iput-object p1, p0, Lcwt;->c:Landroid/content/SharedPreferences;
+
+    iput-object p2, p0, Lcwt;->a:Lcom/google/android/apps/camera/camerafatalerror/CameraFatalErrorTrackerDatabase;
+
+    iput-object p3, p0, Lcwt;->b:Ljtx;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final b()V
-    .locals 2
+.method public final a()V
+    .locals 4
 
-    iget-object v0, p0, Lcwt;->a:Lcww;
+    iget-object v0, p0, Lcwt;->c:Landroid/content/SharedPreferences;
 
-    iget-object v0, v0, Lcww;->a:Lhiu;
+    const-string v1, "pref_key_reboot_completed"
 
-    invoke-virtual {v0}, Lhiu;->e()V
+    const/4 v2, 0x0
 
-    iget-object v0, p0, Lcwt;->a:Lcww;
+    invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
 
-    iget-object v1, v0, Lcww;->a:Lhiu;
+    move-result v0
 
-    iget-object v0, v0, Lcww;->d:Lhiw;
+    if-eqz v0, :cond_0
 
-    invoke-virtual {v1, v0}, Lhiu;->g(Lhiw;)V
+    iget-object v0, p0, Lcwt;->a:Lcom/google/android/apps/camera/camerafatalerror/CameraFatalErrorTrackerDatabase;
+
+    new-instance v3, Lcwr;
+
+    invoke-direct {v3, p0}, Lcwr;-><init>(Lcwt;)V
+
+    invoke-virtual {v0}, Laii;->h()V
+
+    :try_start_0
+    invoke-interface {v3}, Ljava/lang/Runnable;->run()V
+
+    invoke-virtual {v0}, Laii;->j()V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    invoke-virtual {v0}, Laii;->i()V
+
+    iget-object v0, p0, Lcwt;->c:Landroid/content/SharedPreferences;
+
+    invoke-interface {v0}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
+
+    move-result-object v0
+
+    invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences$Editor;->putBoolean(Ljava/lang/String;Z)Landroid/content/SharedPreferences$Editor;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->apply()V
 
     return-void
-.end method
 
-.method public final c()V
-    .locals 2
+    :catchall_0
+    move-exception v1
 
-    iget-object v0, p0, Lcwt;->a:Lcww;
+    invoke-virtual {v0}, Laii;->i()V
 
-    iget-object v0, v0, Lcww;->a:Lhiu;
+    throw v1
 
-    invoke-virtual {v0}, Lhiu;->e()V
-
-    iget-object v0, p0, Lcwt;->a:Lcww;
-
-    iget-object v1, v0, Lcww;->a:Lhiu;
-
-    iget-object v0, v0, Lcww;->e:Lhiw;
-
-    invoke-virtual {v1, v0}, Lhiu;->g(Lhiw;)V
-
-    return-void
-.end method
-
-.method public final d()V
-    .locals 2
-
-    iget-object v0, p0, Lcwt;->a:Lcww;
-
-    iget-object v0, v0, Lcww;->a:Lhiu;
-
-    invoke-virtual {v0}, Lhiu;->e()V
-
-    iget-object v0, p0, Lcwt;->a:Lcww;
-
-    iget-object v1, v0, Lcww;->a:Lhiu;
-
-    iget-object v0, v0, Lcww;->b:Lhiw;
-
-    invoke-virtual {v1, v0}, Lhiu;->g(Lhiw;)V
-
+    :cond_0
     return-void
 .end method

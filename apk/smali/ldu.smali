@@ -1,53 +1,98 @@
-.class final Lldu;
-.super Ljava/lang/Object;
-
-# interfaces
-.implements Lldz;
+.class public final enum Lldu;
+.super Ljava/lang/Enum;
 
 
-# instance fields
-.field final synthetic a:Landroid/media/MediaCodec$QueueRequest;
+# static fields
+.field public static final enum a:Lldu;
 
-.field final synthetic b:I
+.field public static final enum b:Lldu;
+
+.field public static final enum c:Lldu;
+
+.field public static final enum d:Lldu;
+
+.field private static final synthetic e:[Lldu;
 
 
 # direct methods
-.method public constructor <init>(Landroid/media/MediaCodec$QueueRequest;I)V
+.method static constructor <clinit>()V
+    .locals 9
+
+    new-instance v0, Lldu;
+
+    const-string v1, "READY"
+
+    const/4 v2, 0x0
+
+    invoke-direct {v0, v1, v2}, Lldu;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, Lldu;->a:Lldu;
+
+    new-instance v1, Lldu;
+
+    const-string v3, "STARTED"
+
+    const/4 v4, 0x1
+
+    invoke-direct {v1, v3, v4}, Lldu;-><init>(Ljava/lang/String;I)V
+
+    sput-object v1, Lldu;->b:Lldu;
+
+    new-instance v3, Lldu;
+
+    const-string v5, "PAUSED"
+
+    const/4 v6, 0x2
+
+    invoke-direct {v3, v5, v6}, Lldu;-><init>(Ljava/lang/String;I)V
+
+    sput-object v3, Lldu;->c:Lldu;
+
+    new-instance v5, Lldu;
+
+    const-string v7, "STOPPED"
+
+    const/4 v8, 0x3
+
+    invoke-direct {v5, v7, v8}, Lldu;-><init>(Ljava/lang/String;I)V
+
+    sput-object v5, Lldu;->d:Lldu;
+
+    const/4 v7, 0x4
+
+    new-array v7, v7, [Lldu;
+
+    aput-object v0, v7, v2
+
+    aput-object v1, v7, v4
+
+    aput-object v3, v7, v6
+
+    aput-object v5, v7, v8
+
+    sput-object v7, Lldu;->e:[Lldu;
+
+    return-void
+.end method
+
+.method private constructor <init>(Ljava/lang/String;I)V
     .locals 0
 
-    iput-object p1, p0, Lldu;->a:Landroid/media/MediaCodec$QueueRequest;
-
-    iput p2, p0, Lldu;->b:I
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
 .end method
 
-
-# virtual methods
-.method public final a()I
+.method public static values()[Lldu;
     .locals 1
 
-    iget v0, p0, Lldu;->b:I
+    sget-object v0, Lldu;->e:[Lldu;
 
-    return v0
-.end method
+    invoke-virtual {v0}, [Lldu;->clone()Ljava/lang/Object;
 
-.method public final synthetic b()Ljava/lang/Object;
-    .locals 1
+    move-result-object v0
 
-    iget-object v0, p0, Lldu;->a:Landroid/media/MediaCodec$QueueRequest;
+    check-cast v0, [Lldu;
 
     return-object v0
-.end method
-
-.method public final close()V
-    .locals 1
-
-    iget-object v0, p0, Lldu;->a:Landroid/media/MediaCodec$QueueRequest;
-
-    invoke-virtual {v0}, Landroid/media/MediaCodec$QueueRequest;->queue()V
-
-    return-void
 .end method

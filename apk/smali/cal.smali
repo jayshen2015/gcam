@@ -1,211 +1,87 @@
-.class public final Lcal;
-.super Ljava/io/FilterInputStream;
+.class public abstract Lcal;
+.super Ljava/lang/Object;
 
 # interfaces
-.implements Lj$/io/InputStreamRetargetInterface;
+.implements Lbvv;
 
 
 # instance fields
-.field private final a:J
+.field private final a:Ljava/util/concurrent/Executor;
 
-.field private b:I
+.field private final b:Ljava/util/concurrent/atomic/AtomicBoolean;
+
+.field public volatile h:Lpih;
 
 
 # direct methods
-.method public constructor <init>(Ljava/io/InputStream;J)V
-    .locals 0
+.method protected constructor <init>(Ljava/util/concurrent/Executor;)V
+    .locals 2
 
-    invoke-direct {p0, p1}, Ljava/io/FilterInputStream;-><init>(Ljava/io/InputStream;)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-wide p2, p0, Lcal;->a:J
+    new-instance v0, Ljava/util/concurrent/atomic/AtomicBoolean;
 
-    return-void
-.end method
+    const/4 v1, 0x0
 
-.method private final a(I)V
-    .locals 7
+    invoke-direct {v0, v1}, Ljava/util/concurrent/atomic/AtomicBoolean;-><init>(Z)V
 
-    if-ltz p1, :cond_0
+    iput-object v0, p0, Lcal;->b:Ljava/util/concurrent/atomic/AtomicBoolean;
 
-    iget v0, p0, Lcal;->b:I
+    iput-object p1, p0, Lcal;->a:Ljava/util/concurrent/Executor;
 
-    add-int/2addr v0, p1
-
-    iput v0, p0, Lcal;->b:I
-
-    return-void
-
-    :cond_0
-    iget-wide v0, p0, Lcal;->a:J
-
-    iget p1, p0, Lcal;->b:I
-
-    int-to-long v2, p1
-
-    sub-long v2, v0, v2
-
-    const-wide/16 v4, 0x0
-
-    cmp-long v6, v2, v4
-
-    if-gtz v6, :cond_1
-
-    return-void
-
-    :cond_1
-    new-instance v2, Ljava/io/IOException;
-
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v4, "Failed to read all expected data, expected: "
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v3, v0, v1}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    const-string v0, ", but read: "
-
-    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v3, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-static {}, Lpih;->f()Lpih;
 
     move-result-object p1
 
-    invoke-direct {v2, p1}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
+    iput-object p1, p0, Lcal;->h:Lpih;
 
-    throw v2
+    return-void
 .end method
 
 
 # virtual methods
-.method public final declared-synchronized available()I
-    .locals 4
-
-    monitor-enter p0
-
-    :try_start_0
-    iget-wide v0, p0, Lcal;->a:J
-
-    iget v2, p0, Lcal;->b:I
-
-    int-to-long v2, v2
-
-    sub-long/2addr v0, v2
-
-    iget-object v2, p0, Lcal;->in:Ljava/io/InputStream;
-
-    invoke-virtual {v2}, Ljava/io/InputStream;->available()I
-
-    move-result v2
-
-    int-to-long v2, v2
-
-    invoke-static {v0, v1, v2, v3}, Ljava/lang/Math;->max(JJ)J
-
-    move-result-wide v0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    long-to-int v1, v0
-
-    monitor-exit p0
-
-    return v1
-
-    :catchall_0
-    move-exception v0
-
-    monitor-exit p0
-
-    throw v0
+.method protected abstract a()V
 .end method
 
-.method public final declared-synchronized read()I
-    .locals 2
+.method public final synthetic c()Ljava/lang/String;
+    .locals 1
 
-    monitor-enter p0
+    invoke-static {p0}, Laas;->g(Lbvv;)Ljava/lang/String;
 
-    :try_start_0
-    invoke-super {p0}, Ljava/io/FilterInputStream;->read()I
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public final fz()Lpht;
+    .locals 3
+
+    iget-object v0, p0, Lcal;->b:Ljava/util/concurrent/atomic/AtomicBoolean;
+
+    const/4 v1, 0x0
+
+    const/4 v2, 0x1
+
+    invoke-virtual {v0, v1, v2}, Ljava/util/concurrent/atomic/AtomicBoolean;->compareAndSet(ZZ)Z
 
     move-result v0
 
-    if-ltz v0, :cond_0
+    if-nez v0, :cond_0
 
-    const/4 v1, 0x1
+    iget-object v0, p0, Lcal;->h:Lpih;
 
-    goto :goto_0
+    return-object v0
 
     :cond_0
-    const/4 v1, -0x1
+    iget-object v0, p0, Lcal;->a:Ljava/util/concurrent/Executor;
 
-    :goto_0
-    invoke-direct {p0, v1}, Lcal;->a(I)V
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    new-instance v1, Lcak;
 
-    monitor-exit p0
+    invoke-direct {v1, p0}, Lcak;-><init>(Lcal;)V
 
-    return v0
+    invoke-interface {v0, v1}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
 
-    :catchall_0
-    move-exception v0
+    iget-object v0, p0, Lcal;->h:Lpih;
 
-    monitor-exit p0
-
-    throw v0
-.end method
-
-.method public final read([B)I
-    .locals 2
-
-    const/4 v0, 0x0
-
-    array-length v1, p1
-
-    invoke-virtual {p0, p1, v0, v1}, Lcal;->read([BII)I
-
-    move-result p1
-
-    return p1
-.end method
-
-.method public final declared-synchronized read([BII)I
-    .locals 0
-
-    monitor-enter p0
-
-    :try_start_0
-    invoke-super {p0, p1, p2, p3}, Ljava/io/FilterInputStream;->read([BII)I
-
-    move-result p1
-
-    invoke-direct {p0, p1}, Lcal;->a(I)V
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    monitor-exit p0
-
-    return p1
-
-    :catchall_0
-    move-exception p1
-
-    monitor-exit p0
-
-    throw p1
-.end method
-
-.method public final synthetic transferTo(Ljava/io/OutputStream;)J
-    .locals 2
-
-    invoke-static {p0, p1}, Lj$/io/DesugarInputStream;->transferTo(Ljava/io/InputStream;Ljava/io/OutputStream;)J
-
-    move-result-wide v0
-
-    return-wide v0
+    return-object v0
 .end method

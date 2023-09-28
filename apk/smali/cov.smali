@@ -1,205 +1,65 @@
-.class final Lcov;
+.class public final Lcov;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lenz;
+.implements Lpys;
 
 
 # instance fields
-.field final synthetic a:Lcox;
+.field private final a:Lqkg;
 
-.field private b:Z
-
-.field private c:Z
+.field private final b:Lqkg;
 
 
 # direct methods
-.method public constructor <init>(Lcox;)V
+.method public constructor <init>(Lqkg;Lqkg;)V
     .locals 0
-
-    iput-object p1, p0, Lcov;->a:Lcox;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const/4 p1, 0x0
+    iput-object p1, p0, Lcov;->a:Lqkg;
 
-    iput-boolean p1, p0, Lcov;->b:Z
-
-    iput-boolean p1, p0, Lcov;->c:Z
+    iput-object p2, p0, Lcov;->b:Lqkg;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a(Z)V
-    .locals 0
-
-    return-void
-.end method
-
-.method public final synthetic b(Z)V
-    .locals 0
-
-    return-void
-.end method
-
-.method public final synthetic c()V
-    .locals 0
-
-    return-void
-.end method
-
-.method public final d(Z)V
+.method public final a()Lcou;
     .locals 4
 
-    iget-boolean v0, p0, Lcov;->b:Z
+    iget-object v0, p0, Lcov;->a:Lqkg;
 
-    if-ne v0, p1, :cond_0
+    invoke-interface {v0}, Lqkg;->get()Ljava/lang/Object;
 
-    return-void
+    move-result-object v0
 
-    :cond_0
-    iput-boolean p1, p0, Lcov;->b:Z
+    check-cast v0, Lnvb;
 
-    if-nez p1, :cond_2
+    iget-object v1, p0, Lcov;->b:Lqkg;
 
-    iget-boolean v0, p0, Lcov;->c:Z
-
-    if-nez v0, :cond_1
-
-    goto :goto_0
-
-    :cond_1
-    const/4 p1, 0x0
-
-    iput-boolean p1, p0, Lcov;->c:Z
-
-    return-void
-
-    :cond_2
-    :goto_0
-    iget-object v0, p0, Lcov;->a:Lcox;
-
-    iget-object v0, v0, Lcox;->t:Ljava/lang/Object;
-
-    monitor-enter v0
-
-    :try_start_0
-    iget-object v1, p0, Lcov;->a:Lcox;
-
-    iget-object v1, v1, Lcox;->o:Lcrz;
-
-    iget-object v1, v1, Lcrz;->g:Ljwb;
-
-    check-cast v1, Ljvk;
-
-    iget-object v1, v1, Ljvk;->d:Ljava/lang/Object;
-
-    check-cast v1, Lcrx;
-
-    if-nez p1, :cond_3
-
-    sget-object v2, Lcrx;->e:Lcrx;
-
-    if-ne v1, v2, :cond_4
-
-    :cond_3
-    if-eqz p1, :cond_6
-
-    sget-object v2, Lcrx;->e:Lcrx;
-
-    if-ne v1, v2, :cond_6
-
-    :cond_4
-    iget-object v1, p0, Lcov;->a:Lcox;
-
-    iget-object v1, v1, Lcox;->d:Ljava/util/List;
-
-    invoke-interface {v1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+    invoke-interface {v1}, Lqkg;->get()Ljava/lang/Object;
 
     move-result-object v1
 
-    :goto_1
-    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
+    check-cast v1, Ldkm;
 
-    move-result v2
+    new-instance v2, Lcou;
 
-    const/4 v3, 0x1
+    const/4 v3, 0x0
 
-    if-eqz v2, :cond_5
+    invoke-direct {v2, v0, v1, v3, v3}, Lcou;-><init>(Lnvb;Ldkm;[B[B)V
 
-    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Lcqs;
-
-    invoke-interface {v2, v3}, Lcqs;->i(Z)V
-
-    goto :goto_1
-
-    :cond_5
-    if-eqz p1, :cond_6
-
-    iput-boolean v3, p0, Lcov;->c:Z
-
-    :cond_6
-    monitor-exit v0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    iget-object v0, p0, Lcov;->a:Lcox;
-
-    iget-object v0, v0, Lcox;->f:Liff;
-
-    invoke-interface {v0, p1}, Liff;->z(Z)V
-
-    return-void
-
-    :catchall_0
-    move-exception p1
-
-    :try_start_1
-    monitor-exit v0
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    goto :goto_3
-
-    :goto_2
-    throw p1
-
-    :goto_3
-    goto :goto_2
+    return-object v2
 .end method
 
-.method public final e(Z)V
-    .locals 0
+.method public final bridge synthetic get()Ljava/lang/Object;
+    .locals 1
 
-    if-eqz p1, :cond_0
+    invoke-virtual {p0}, Lcov;->a()Lcou;
 
-    iget-object p1, p0, Lcov;->a:Lcox;
+    move-result-object v0
 
-    iget-object p1, p1, Lcox;->e:Litm;
-
-    invoke-interface {p1}, Litm;->S()V
-
-    :cond_0
-    return-void
-.end method
-
-.method public final f(Z)V
-    .locals 0
-
-    if-eqz p1, :cond_0
-
-    iget-object p1, p0, Lcov;->a:Lcox;
-
-    iget-object p1, p1, Lcox;->e:Litm;
-
-    invoke-interface {p1}, Litm;->T()V
-
-    :cond_0
-    return-void
+    return-object v0
 .end method

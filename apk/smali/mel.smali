@@ -1,196 +1,302 @@
 .class public final Lmel;
-.super Lnws;
+.super Ljava/lang/Object;
 
 # interfaces
-.implements Lnxz;
-
-
-# static fields
-.field public static final f:Lmel;
-
-.field private static volatile g:Lnyf;
+.implements Lmec;
 
 
 # instance fields
-.field public a:I
+.field private final a:Lmee;
 
-.field public b:I
+.field private final b:Lpsj;
 
-.field public c:Ljava/lang/Object;
-
-.field public d:F
-
-.field public e:Ljava/lang/String;
+.field private final c:Lmdo;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
+.method public constructor <init>(Lmee;Lpsj;Lmdo;)V
+    .locals 0
 
-    new-instance v0, Lmel;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {v0}, Lmel;-><init>()V
+    iput-object p1, p0, Lmel;->a:Lmee;
 
-    sput-object v0, Lmel;->f:Lmel;
+    iput-object p2, p0, Lmel;->b:Lpsj;
 
-    const-class v1, Lmel;
-
-    invoke-static {v1, v0}, Lnws;->aa(Ljava/lang/Class;Lnws;)V
+    iput-object p3, p0, Lmel;->c:Lmdo;
 
     return-void
 .end method
 
-.method private constructor <init>()V
-    .locals 1
-
-    invoke-direct {p0}, Lnws;-><init>()V
+.method private final b(Lpsh;)Z
+    .locals 5
 
     const/4 v0, 0x0
 
-    iput v0, p0, Lmel;->b:I
+    const/4 v1, 0x0
 
-    const-string v0, ""
+    :goto_0
+    iget-object v2, p1, Lpsh;->a:Lppk;
 
-    iput-object v0, p0, Lmel;->e:Ljava/lang/String;
+    invoke-interface {v2}, Lppk;->size()I
 
-    return-void
+    move-result v2
+
+    const/4 v3, 0x1
+
+    if-ge v1, v2, :cond_2
+
+    iget-object v2, p1, Lpsh;->a:Lppk;
+
+    invoke-interface {v2, v1}, Lppk;->d(I)I
+
+    move-result v2
+
+    invoke-static {v2}, Lpsg;->b(I)I
+
+    move-result v2
+
+    if-nez v2, :cond_0
+
+    goto :goto_1
+
+    :cond_0
+    move v3, v2
+
+    :goto_1
+    iget-object v2, p0, Lmel;->a:Lmee;
+
+    iget-object v4, p0, Lmel;->c:Lmdo;
+
+    invoke-virtual {v2, v3, v4}, Lmee;->a(ILmdo;)Lmec;
+
+    move-result-object v2
+
+    invoke-interface {v2}, Lmec;->a()Z
+
+    move-result v2
+
+    if-nez v2, :cond_1
+
+    return v0
+
+    :cond_1
+    add-int/lit8 v1, v1, 0x1
+
+    goto :goto_0
+
+    :cond_2
+    iget-object p1, p1, Lpsh;->b:Lppm;
+
+    invoke-interface {p1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+
+    move-result-object p1
+
+    :cond_3
+    invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_4
+
+    invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Lpsi;
+
+    invoke-direct {p0, v1}, Lmel;->c(Lpsi;)Z
+
+    move-result v1
+
+    if-nez v1, :cond_3
+
+    return v0
+
+    :cond_4
+    return v3
+.end method
+
+.method private final c(Lpsi;)Z
+    .locals 6
+
+    const/4 v0, 0x0
+
+    const/4 v1, 0x0
+
+    :goto_0
+    iget-object v2, p1, Lpsi;->a:Lppk;
+
+    invoke-interface {v2}, Lppk;->size()I
+
+    move-result v2
+
+    const/4 v3, 0x1
+
+    if-ge v1, v2, :cond_2
+
+    iget-object v2, p1, Lpsi;->a:Lppk;
+
+    invoke-interface {v2, v1}, Lppk;->d(I)I
+
+    move-result v2
+
+    invoke-static {v2}, Lpsg;->b(I)I
+
+    move-result v2
+
+    if-nez v2, :cond_0
+
+    const/4 v2, 0x1
+
+    :cond_0
+    iget-object v4, p0, Lmel;->a:Lmee;
+
+    iget-object v5, p0, Lmel;->c:Lmdo;
+
+    invoke-virtual {v4, v2, v5}, Lmee;->a(ILmdo;)Lmec;
+
+    move-result-object v2
+
+    invoke-interface {v2}, Lmec;->a()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_1
+
+    return v3
+
+    :cond_1
+    add-int/lit8 v1, v1, 0x1
+
+    goto :goto_0
+
+    :cond_2
+    iget-object p1, p1, Lpsi;->b:Lppm;
+
+    invoke-interface {p1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+
+    move-result-object p1
+
+    :cond_3
+    invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_4
+
+    invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Lpsh;
+
+    invoke-direct {p0, v1}, Lmel;->b(Lpsh;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_3
+
+    return v3
+
+    :cond_4
+    return v0
 .end method
 
 
 # virtual methods
-.method protected final a(ILjava/lang/Object;)Ljava/lang/Object;
-    .locals 3
+.method public final a()Z
+    .locals 4
 
-    add-int/lit8 p1, p1, -0x1
+    iget-object v0, p0, Lmel;->b:Lpsj;
 
-    const/4 p2, 0x1
+    iget v1, v0, Lpsj;->a:I
 
-    packed-switch p1, :pswitch_data_0
+    const/4 v2, 0x2
 
-    :pswitch_0
-    const/4 p1, 0x0
+    if-ne v1, v2, :cond_0
 
-    return-object p1
+    iget-object v0, v0, Lpsj;->b:Ljava/lang/Object;
 
-    :pswitch_1
-    sget-object p1, Lmel;->g:Lnyf;
+    check-cast v0, Lpsh;
 
-    if-nez p1, :cond_1
+    invoke-direct {p0, v0}, Lmel;->b(Lpsh;)Z
 
-    const-class p2, Lmel;
+    move-result v0
 
-    monitor-enter p2
+    invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
-    :try_start_0
-    sget-object p1, Lmel;->g:Lnyf;
+    move-result-object v0
 
-    if-nez p1, :cond_0
-
-    new-instance p1, Lnwo;
-
-    sget-object v0, Lmel;->f:Lmel;
-
-    invoke-direct {p1, v0}, Lnwo;-><init>(Lnws;)V
-
-    sput-object p1, Lmel;->g:Lnyf;
+    goto :goto_1
 
     :cond_0
-    monitor-exit p2
+    const/4 v2, 0x3
+
+    if-ne v1, v2, :cond_1
+
+    iget-object v0, v0, Lpsj;->b:Ljava/lang/Object;
+
+    check-cast v0, Lpsi;
+
+    invoke-direct {p0, v0}, Lmel;->c(Lpsi;)Z
+
+    move-result v0
+
+    invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    move-result-object v0
+
+    goto :goto_1
+
+    :cond_1
+    iget-object v2, p0, Lmel;->a:Lmee;
+
+    const/4 v3, 0x1
+
+    if-ne v1, v3, :cond_3
+
+    iget-object v0, v0, Lpsj;->b:Ljava/lang/Object;
+
+    check-cast v0, Ljava/lang/Integer;
+
+    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
+
+    move-result v0
+
+    invoke-static {v0}, Lpsg;->b(I)I
+
+    move-result v0
+
+    if-nez v0, :cond_2
 
     goto :goto_0
 
-    :catchall_0
-    move-exception p1
+    :cond_2
+    move v3, v0
 
-    monitor-exit p2
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    goto :goto_0
 
-    throw p1
-
-    :cond_1
+    :cond_3
     :goto_0
-    return-object p1
+    iget-object v0, p0, Lmel;->c:Lmdo;
 
-    :pswitch_2
-    sget-object p1, Lmel;->f:Lmel;
+    invoke-virtual {v2, v3, v0}, Lmee;->a(ILmdo;)Lmec;
 
-    return-object p1
+    move-result-object v0
 
-    :pswitch_3
-    new-instance p1, Lnwn;
+    invoke-interface {v0}, Lmec;->a()Z
 
-    sget-object p2, Lmel;->f:Lmel;
+    move-result v0
 
-    invoke-direct {p1, p2}, Lnwn;-><init>(Lnws;)V
+    invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
-    return-object p1
+    move-result-object v0
 
-    :pswitch_4
-    new-instance p1, Lmel;
+    :goto_1
+    invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
 
-    invoke-direct {p1}, Lmel;-><init>()V
+    move-result v0
 
-    return-object p1
-
-    :pswitch_5
-    const-string p1, "c"
-
-    const-string v0, "\u0001\u0004\u0001\u0001\u0001\u0004\u0004\u0000\u0000\u0000\u0001\u103b\u0000\u0002\u1001\u0002\u0003\u103b\u0000\u0004\u1008\u0003"
-
-    const/4 v1, 0x5
-
-    new-array v1, v1, [Ljava/lang/Object;
-
-    const/4 v2, 0x0
-
-    aput-object p1, v1, v2
-
-    const-string p1, "b"
-
-    aput-object p1, v1, p2
-
-    const/4 p1, 0x2
-
-    const-string p2, "a"
-
-    aput-object p2, v1, p1
-
-    const/4 p1, 0x3
-
-    const-string p2, "d"
-
-    aput-object p2, v1, p1
-
-    const/4 p1, 0x4
-
-    const-string p2, "e"
-
-    aput-object p2, v1, p1
-
-    sget-object p1, Lmel;->f:Lmel;
-
-    invoke-static {p1, v0, v1}, Lmel;->X(Lnxy;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object p1
-
-    return-object p1
-
-    :pswitch_6
-    invoke-static {p2}, Ljava/lang/Byte;->valueOf(B)Ljava/lang/Byte;
-
-    move-result-object p1
-
-    return-object p1
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_6
-        :pswitch_0
-        :pswitch_5
-        :pswitch_4
-        :pswitch_3
-        :pswitch_2
-        :pswitch_1
-    .end packed-switch
+    return v0
 .end method

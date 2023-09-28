@@ -1,22 +1,30 @@
 .class public final Lmoo;
-.super Ljava/lang/Object;
-
-
-# static fields
-.field public static final a:Lnak;
+.super Lmok;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
+.method public constructor <init>()V
+    .locals 0
 
-    const-string v0, "com/google/babelfish/device/avenh/l2l/speechenhancer2/SpeechEnhancerFactory"
-
-    invoke-static {v0}, Lnak;->h(Ljava/lang/String;)Lnak;
-
-    move-result-object v0
-
-    sput-object v0, Lmoo;->a:Lnak;
+    invoke-direct {p0}, Lmok;-><init>()V
 
     return-void
+.end method
+
+
+# virtual methods
+.method public final a()I
+    .locals 1
+
+    const/16 v0, 0x8
+
+    return v0
+.end method
+
+.method public final b()Ljava/lang/String;
+    .locals 1
+
+    const-string v0, "UInt8"
+
+    return-object v0
 .end method

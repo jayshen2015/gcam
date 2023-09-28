@@ -1,32 +1,40 @@
 .class public final Llxh;
-.super Laqc;
+.super Ljava/lang/Object;
+
+
+# instance fields
+.field public final a:Landroid/hardware/HardwareBuffer;
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 2
+.method public constructor <init>(Landroid/hardware/HardwareBuffer;)V
+    .locals 0
 
-    const/4 v0, 0x1
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const/4 v1, 0x4
-
-    invoke-direct {p0, v0, v1}, Laqc;-><init>(II)V
+    iput-object p1, p0, Llxh;->a:Landroid/hardware/HardwareBuffer;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Laqp;)V
+.method public final a()V
     .locals 1
 
-    sget-object v0, Llya;->c:Laqc;
+    iget-object v0, p0, Llxh;->a:Landroid/hardware/HardwareBuffer;
 
-    invoke-virtual {v0, p1}, Laqc;->a(Laqp;)V
+    invoke-virtual {v0}, Landroid/hardware/HardwareBuffer;->close()V
 
-    sget-object v0, Llya;->d:Laqc;
+    return-void
+.end method
 
-    invoke-virtual {v0, p1}, Laqc;->a(Laqp;)V
+.method public final b([BIII)V
+    .locals 1
+
+    iget-object v0, p0, Llxh;->a:Landroid/hardware/HardwareBuffer;
+
+    invoke-static {v0, p1, p2, p3, p4}, Lcom/google/android/libraries/camera/gyro/hardwarebuffer/ReadHardwareBufferJniFunctions;->readHardwareBuffer(Landroid/hardware/HardwareBuffer;[BIII)Z
 
     return-void
 .end method

@@ -1,315 +1,202 @@
 .class public final Lpal;
-.super Ljava/io/InputStream;
+.super Lppd;
 
 # interfaces
-.implements Lj$/io/InputStreamRetargetInterface;
+.implements Lpqn;
+
+
+# static fields
+.field public static final g:Lpal;
+
+.field private static volatile h:Lpqs;
 
 
 # instance fields
-.field private final a:Lpam;
+.field public a:I
+
+.field public b:I
+
+.field public c:Lpdi;
+
+.field public d:Lpdl;
+
+.field public e:J
+
+.field public f:Lpdy;
 
 
 # direct methods
-.method public constructor <init>(Ljava/io/InputStream;)V
-    .locals 1
+.method static constructor <clinit>()V
+    .locals 2
 
-    invoke-direct {p0}, Ljava/io/InputStream;-><init>()V
+    new-instance v0, Lpal;
 
-    new-instance v0, Lpam;
+    invoke-direct {v0}, Lpal;-><init>()V
 
-    invoke-static {p1}, Ljava/nio/channels/Channels;->newChannel(Ljava/io/InputStream;)Ljava/nio/channels/ReadableByteChannel;
+    sput-object v0, Lpal;->g:Lpal;
 
-    move-result-object p1
+    const-class v1, Lpal;
 
-    invoke-direct {v0, p1}, Lpam;-><init>(Ljava/nio/channels/ReadableByteChannel;)V
+    invoke-static {v1, v0}, Lppd;->F(Ljava/lang/Class;Lppd;)V
 
-    iput-object v0, p0, Lpal;->a:Lpam;
+    return-void
+.end method
+
+.method private constructor <init>()V
+    .locals 0
+
+    invoke-direct {p0}, Lppd;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final available()I
-    .locals 1
-
-    iget-object v0, p0, Lpal;->a:Lpam;
-
-    iget-object v0, v0, Lpam;->a:Ljava/nio/ByteBuffer;
-
-    if-eqz v0, :cond_0
-
-    invoke-virtual {v0}, Ljava/nio/ByteBuffer;->remaining()I
-
-    move-result v0
-
-    return v0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    return v0
-.end method
-
-.method public final close()V
-    .locals 1
-
-    iget-object v0, p0, Lpal;->a:Lpam;
-
-    invoke-virtual {v0}, Lpam;->b()V
-
-    return-void
-.end method
-
-.method public final read()I
+.method protected final a(ILjava/lang/Object;)Ljava/lang/Object;
     .locals 2
 
-    iget-object v0, p0, Lpal;->a:Lpam;
+    add-int/lit8 p1, p1, -0x1
 
-    iget-boolean v0, v0, Lpam;->b:Z
+    const/4 p2, 0x1
 
-    if-nez v0, :cond_2
+    packed-switch p1, :pswitch_data_0
+
+    :pswitch_0
+    const/4 p1, 0x0
+
+    return-object p1
+
+    :pswitch_1
+    sget-object p1, Lpal;->h:Lpqs;
+
+    if-nez p1, :cond_1
+
+    const-class p2, Lpal;
+
+    monitor-enter p2
+
+    :try_start_0
+    sget-object p1, Lpal;->h:Lpqs;
+
+    if-nez p1, :cond_0
+
+    new-instance p1, Lpoz;
+
+    sget-object v0, Lpal;->g:Lpal;
+
+    invoke-direct {p1, v0}, Lpoz;-><init>(Lppd;)V
+
+    sput-object p1, Lpal;->h:Lpqs;
 
     :cond_0
-    iget-object v0, p0, Lpal;->a:Lpam;
+    monitor-exit p2
 
-    invoke-virtual {v0}, Lpam;->a()I
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    const/4 v1, -0x1
-
-    if-ne v0, v1, :cond_1
-
-    return v1
-
-    :cond_1
-    iget-object v0, p0, Lpal;->a:Lpam;
-
-    iget-object v0, v0, Lpam;->a:Ljava/nio/ByteBuffer;
-
-    invoke-virtual {v0}, Ljava/nio/ByteBuffer;->get()B
-
-    move-result v0
-
-    and-int/lit16 v0, v0, 0xff
-
-    return v0
-
-    :cond_2
-    new-instance v0, Ljava/io/IOException;
-
-    const-string v1, "read after close"
-
-    invoke-direct {v0, v1}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
-
-    goto :goto_1
-
-    :goto_0
-    throw v0
-
-    :goto_1
     goto :goto_0
-.end method
 
-.method public final read([B)I
-    .locals 2
+    :catchall_0
+    move-exception p1
 
-    const/4 v0, 0x0
+    monitor-exit p2
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    array-length v1, p1
-
-    invoke-virtual {p0, p1, v0, v1}, Lpal;->read([BII)I
-
-    move-result p1
-
-    return p1
-.end method
-
-.method public final read([BII)I
-    .locals 4
-
-    iget-object v0, p0, Lpal;->a:Lpam;
-
-    iget-boolean v1, v0, Lpam;->b:Z
-
-    if-nez v1, :cond_3
-
-    invoke-virtual {v0}, Lpam;->a()I
-
-    move-result v0
-
-    const/4 v1, -0x1
-
-    if-eq v0, v1, :cond_2
-
-    const/4 v0, 0x0
-
-    :cond_0
-    if-lez p3, :cond_1
-
-    iget-object v2, p0, Lpal;->a:Lpam;
-
-    iget-object v2, v2, Lpam;->a:Ljava/nio/ByteBuffer;
-
-    invoke-virtual {v2}, Ljava/nio/ByteBuffer;->remaining()I
-
-    move-result v2
-
-    invoke-static {p3, v2}, Ljava/lang/Math;->min(II)I
-
-    move-result v2
-
-    iget-object v3, p0, Lpal;->a:Lpam;
-
-    iget-object v3, v3, Lpam;->a:Ljava/nio/ByteBuffer;
-
-    invoke-virtual {v3, p1, p2, v2}, Ljava/nio/ByteBuffer;->get([BII)Ljava/nio/ByteBuffer;
-
-    add-int/2addr p2, v2
-
-    sub-int/2addr p3, v2
-
-    add-int/2addr v0, v2
-
-    iget-object v2, p0, Lpal;->a:Lpam;
-
-    invoke-virtual {v2}, Lpam;->a()I
-
-    move-result v2
-
-    if-ne v2, v1, :cond_0
-
-    :cond_1
-    return v0
-
-    :cond_2
-    return v1
-
-    :cond_3
-    new-instance p1, Ljava/io/IOException;
-
-    const-string p2, "read after close"
-
-    invoke-direct {p1, p2}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
-
-    goto :goto_1
-
-    :goto_0
     throw p1
 
-    :goto_1
-    goto :goto_0
-.end method
-
-.method public final skip(J)J
-    .locals 8
-
-    iget-object v0, p0, Lpal;->a:Lpam;
-
-    iget-boolean v0, v0, Lpam;->b:Z
-
-    if-nez v0, :cond_3
-
-    const-wide/16 v0, 0x0
-
-    move-wide v2, v0
-
-    :goto_0
-    cmp-long v4, p1, v0
-
-    if-lez v4, :cond_2
-
-    iget-object v4, p0, Lpal;->a:Lpam;
-
-    invoke-virtual {v4}, Lpam;->a()I
-
-    move-result v4
-
-    const/4 v5, -0x1
-
-    if-ne v4, v5, :cond_0
-
-    goto :goto_1
-
-    :cond_0
-    iget-object v4, p0, Lpal;->a:Lpam;
-
-    iget-object v4, v4, Lpam;->a:Ljava/nio/ByteBuffer;
-
-    invoke-virtual {v4}, Ljava/nio/ByteBuffer;->remaining()I
-
-    move-result v4
-
-    int-to-long v4, v4
-
-    invoke-static {p1, p2, v4, v5}, Ljava/lang/Math;->min(JJ)J
-
-    move-result-wide v4
-
-    long-to-int v5, v4
-
-    iget-object v4, p0, Lpal;->a:Lpam;
-
-    iget-object v6, v4, Lpam;->a:Ljava/nio/ByteBuffer;
-
-    invoke-virtual {v6}, Ljava/nio/ByteBuffer;->position()I
-
-    move-result v7
-
-    add-int/2addr v7, v5
-
-    invoke-virtual {v6, v7}, Ljava/nio/Buffer;->position(I)Ljava/nio/Buffer;
-
-    iget-object v6, v4, Lpam;->a:Ljava/nio/ByteBuffer;
-
-    invoke-virtual {v6}, Ljava/nio/ByteBuffer;->hasRemaining()Z
-
-    move-result v6
-
-    if-nez v6, :cond_1
-
-    const/4 v6, 0x0
-
-    iput-object v6, v4, Lpam;->a:Ljava/nio/ByteBuffer;
-
     :cond_1
-    int-to-long v4, v5
+    :goto_0
+    return-object p1
 
-    add-long/2addr v2, v4
+    :pswitch_2
+    sget-object p1, Lpal;->g:Lpal;
 
-    sub-long/2addr p1, v4
+    return-object p1
 
-    goto :goto_0
+    :pswitch_3
+    new-instance p1, Lpoy;
 
-    :cond_2
-    :goto_1
-    return-wide v2
+    sget-object p2, Lpal;->g:Lpal;
 
-    :cond_3
-    new-instance p1, Ljava/io/IOException;
+    invoke-direct {p1, p2}, Lpoy;-><init>(Lppd;)V
 
-    const-string p2, "read after close"
+    return-object p1
 
-    invoke-direct {p1, p2}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
+    :pswitch_4
+    new-instance p1, Lpal;
 
-    goto :goto_3
+    invoke-direct {p1}, Lpal;-><init>()V
 
-    :goto_2
-    throw p1
+    return-object p1
 
-    :goto_3
-    goto :goto_2
-.end method
+    :pswitch_5
+    const/4 p1, 0x7
 
-.method public final synthetic transferTo(Ljava/io/OutputStream;)J
-    .locals 2
+    new-array p1, p1, [Ljava/lang/Object;
 
-    invoke-static {p0, p1}, Lj$/io/DesugarInputStream;->transferTo(Ljava/io/InputStream;Ljava/io/OutputStream;)J
+    const/4 v0, 0x0
 
-    move-result-wide v0
+    const-string v1, "a"
 
-    return-wide v0
+    aput-object v1, p1, v0
+
+    const-string v0, "b"
+
+    aput-object v0, p1, p2
+
+    const/4 p2, 0x2
+
+    sget-object v0, Lpcm;->n:Lppi;
+
+    aput-object v0, p1, p2
+
+    const/4 p2, 0x3
+
+    const-string v0, "c"
+
+    aput-object v0, p1, p2
+
+    const/4 p2, 0x4
+
+    const-string v0, "d"
+
+    aput-object v0, p1, p2
+
+    const/4 p2, 0x5
+
+    const-string v0, "e"
+
+    aput-object v0, p1, p2
+
+    const/4 p2, 0x6
+
+    const-string v0, "f"
+
+    aput-object v0, p1, p2
+
+    sget-object p2, Lpal;->g:Lpal;
+
+    const-string v0, "\u0001\u0005\u0000\u0001\u0001\u0007\u0005\u0000\u0000\u0000\u0001\u100c\u0000\u0003\u1009\u0002\u0005\u1009\u0004\u0006\u1002\u0005\u0007\u1009\u0006"
+
+    invoke-static {p2, v0, p1}, Lpal;->E(Lpqm;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p1
+
+    return-object p1
+
+    :pswitch_6
+    invoke-static {p2}, Ljava/lang/Byte;->valueOf(B)Ljava/lang/Byte;
+
+    move-result-object p1
+
+    return-object p1
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_6
+        :pswitch_0
+        :pswitch_5
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+    .end packed-switch
 .end method

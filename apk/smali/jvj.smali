@@ -1,124 +1,64 @@
-.class public final Ljvj;
-.super Ljava/lang/Object;
-
-# interfaces
-.implements Ljve;
+.class final Ljvj;
+.super Ljvw;
 
 
 # instance fields
-.field private final a:Lkbc;
+.field final synthetic a:Ljvk;
 
 
 # direct methods
-.method public constructor <init>(Lkbc;)V
+.method public constructor <init>(Ljvk;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Ljvj;->a:Ljvk;
 
-    iput-object p1, p0, Ljvj;->a:Lkbc;
+    invoke-direct {p0, p1}, Ljvw;-><init>(Ljvx;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Lkad;)V
+.method public final gs()V
     .locals 2
 
-    instance-of v0, p1, Ljvi;
+    iget-object v0, p0, Ljvj;->a:Ljvk;
 
-    if-nez v0, :cond_0
+    iget-object v0, v0, Ljvk;->a:Lihu;
 
-    invoke-interface {p1}, Lkad;->close()V
+    invoke-virtual {v0}, Lihu;->e()V
 
-    return-void
+    invoke-super {p0}, Ljvw;->gs()V
 
-    :cond_0
-    move-object v0, p1
+    iget-object v0, p0, Ljvj;->a:Ljvk;
 
-    check-cast v0, Ljvi;
+    iget-object v1, v0, Ljvk;->a:Lihu;
 
-    invoke-interface {v0}, Ljvi;->b()Ljava/lang/String;
+    iget-object v0, v0, Ljvk;->b:Lihw;
 
-    move-result-object v0
-
-    :try_start_0
-    iget-object v1, p0, Ljvj;->a:Lkbc;
-
-    invoke-interface {v1, v0}, Lkbc;->e(Ljava/lang/String;)V
-
-    invoke-interface {p1}, Lkad;->close()V
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    iget-object p1, p0, Ljvj;->a:Lkbc;
-
-    invoke-interface {p1}, Lkbc;->f()V
+    invoke-virtual {v1, v0}, Lihu;->g(Lihw;)V
 
     return-void
-
-    :catchall_0
-    move-exception p1
-
-    iget-object v0, p0, Ljvj;->a:Lkbc;
-
-    invoke-interface {v0}, Lkbc;->f()V
-
-    throw p1
 .end method
 
-.method public final b(Ljava/lang/Iterable;)V
+.method public final i()V
     .locals 2
 
-    const-string v0, "Lifetime#close"
+    iget-object v0, p0, Ljvj;->a:Ljvk;
 
-    :try_start_0
-    iget-object v1, p0, Ljvj;->a:Lkbc;
+    iget-object v0, v0, Ljvk;->a:Lihu;
 
-    invoke-interface {v1, v0}, Lkbc;->e(Ljava/lang/String;)V
+    invoke-virtual {v0}, Lihu;->e()V
 
-    invoke-interface {p1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
+    invoke-super {p0}, Ljvw;->i()V
 
-    move-result-object p1
+    iget-object v0, p0, Ljvj;->a:Ljvk;
 
-    :goto_0
-    invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
+    iget-object v1, v0, Ljvk;->a:Lihu;
 
-    move-result v0
+    iget-object v0, v0, Ljvk;->c:Lihw;
 
-    if-eqz v0, :cond_0
-
-    invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lkad;
-
-    invoke-virtual {p0, v0}, Ljvj;->a(Lkad;)V
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    goto :goto_0
-
-    :cond_0
-    iget-object p1, p0, Ljvj;->a:Lkbc;
-
-    invoke-interface {p1}, Lkbc;->f()V
+    invoke-virtual {v1, v0}, Lihu;->g(Lihw;)V
 
     return-void
-
-    :catchall_0
-    move-exception p1
-
-    iget-object v0, p0, Ljvj;->a:Lkbc;
-
-    invoke-interface {v0}, Lkbc;->f()V
-
-    goto :goto_2
-
-    :goto_1
-    throw p1
-
-    :goto_2
-    goto :goto_1
 .end method

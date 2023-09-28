@@ -1,34 +1,51 @@
-.class final Llbm;
-.super Lkyp;
+.class public final Llbm;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Lpys;
 
 
 # instance fields
-.field final synthetic a:Llbn;
+.field private final a:Lqkg;
 
 
 # direct methods
-.method public constructor <init>(Llbn;)V
+.method public constructor <init>(Lqkg;)V
     .locals 0
 
-    iput-object p1, p0, Llbm;->a:Llbn;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0}, Lkyp;-><init>()V
+    iput-object p1, p0, Llbm;->a:Lqkg;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final bridge synthetic b(Ljava/lang/Object;)V
-    .locals 0
+.method public final a()Llbl;
+    .locals 2
 
-    check-cast p1, Lkyd;
+    iget-object v0, p0, Llbm;->a:Lqkg;
 
-    iget-object p1, p0, Llbm;->a:Llbn;
+    invoke-interface {v0}, Lqkg;->get()Ljava/lang/Object;
 
-    iget-object p1, p1, Llbn;->d:Lkyv;
+    move-result-object v0
 
-    invoke-virtual {p1}, Lkyv;->close()V
+    check-cast v0, Llar;
 
-    return-void
+    new-instance v1, Llbl;
+
+    invoke-direct {v1, v0}, Llbl;-><init>(Llar;)V
+
+    return-object v1
+.end method
+
+.method public final bridge synthetic get()Ljava/lang/Object;
+    .locals 1
+
+    invoke-virtual {p0}, Llbm;->a()Llbl;
+
+    move-result-object v0
+
+    return-object v0
 .end method

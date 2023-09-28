@@ -1,230 +1,133 @@
-.class public Liv;
-.super Landroid/widget/RadioButton;
+.class final Liv;
+.super Landroid/support/v7/widget/ContentFrameLayout;
 
 
 # instance fields
-.field private final a:Lim;
-
-.field private final b:Lij;
-
-.field private final c:Ljp;
-
-.field private d:Laie;
+.field final synthetic a:Liy;
 
 
 # direct methods
-.method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
-    .locals 1
+.method public constructor <init>(Liy;Landroid/content/Context;)V
+    .locals 0
 
-    invoke-static {p1}, Lnh;->a(Landroid/content/Context;)V
+    iput-object p1, p0, Liv;->a:Liy;
 
-    const v0, 0x7f040546
-
-    invoke-direct {p0, p1, p2, v0}, Landroid/widget/RadioButton;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
-
-    invoke-virtual {p0}, Liv;->getContext()Landroid/content/Context;
-
-    move-result-object p1
-
-    invoke-static {p0, p1}, Lnf;->d(Landroid/view/View;Landroid/content/Context;)V
-
-    new-instance p1, Lim;
-
-    invoke-direct {p1, p0}, Lim;-><init>(Landroid/widget/CompoundButton;)V
-
-    iput-object p1, p0, Liv;->a:Lim;
-
-    invoke-virtual {p1, p2, v0}, Lim;->b(Landroid/util/AttributeSet;I)V
-
-    new-instance p1, Lij;
-
-    invoke-direct {p1, p0}, Lij;-><init>(Landroid/view/View;)V
-
-    iput-object p1, p0, Liv;->b:Lij;
-
-    invoke-virtual {p1, p2, v0}, Lij;->d(Landroid/util/AttributeSet;I)V
-
-    new-instance p1, Ljp;
-
-    invoke-direct {p1, p0}, Ljp;-><init>(Landroid/widget/TextView;)V
-
-    iput-object p1, p0, Liv;->c:Ljp;
-
-    invoke-virtual {p1, p2, v0}, Ljp;->b(Landroid/util/AttributeSet;I)V
-
-    invoke-direct {p0}, Liv;->a()Laie;
-
-    move-result-object p1
-
-    invoke-virtual {p1, p2, v0}, Laie;->n(Landroid/util/AttributeSet;I)V
+    invoke-direct {p0, p2}, Landroid/support/v7/widget/ContentFrameLayout;-><init>(Landroid/content/Context;)V
 
     return-void
-.end method
-
-.method private final a()Laie;
-    .locals 1
-
-    iget-object v0, p0, Liv;->d:Laie;
-
-    if-nez v0, :cond_0
-
-    new-instance v0, Laie;
-
-    invoke-direct {v0, p0}, Laie;-><init>(Landroid/widget/TextView;)V
-
-    iput-object v0, p0, Liv;->d:Laie;
-
-    :cond_0
-    iget-object v0, p0, Liv;->d:Laie;
-
-    return-object v0
 .end method
 
 
 # virtual methods
-.method protected final drawableStateChanged()V
+.method public final dispatchKeyEvent(Landroid/view/KeyEvent;)Z
     .locals 1
 
-    invoke-super {p0}, Landroid/widget/RadioButton;->drawableStateChanged()V
+    iget-object v0, p0, Liv;->a:Liy;
 
-    iget-object v0, p0, Liv;->b:Lij;
-
-    if-eqz v0, :cond_0
-
-    invoke-virtual {v0}, Lij;->c()V
-
-    :cond_0
-    iget-object v0, p0, Liv;->c:Ljp;
-
-    if-eqz v0, :cond_1
-
-    invoke-virtual {v0}, Ljp;->a()V
-
-    :cond_1
-    return-void
-.end method
-
-.method public final getCompoundPaddingLeft()I
-    .locals 1
-
-    invoke-super {p0}, Landroid/widget/RadioButton;->getCompoundPaddingLeft()I
+    invoke-virtual {v0, p1}, Liy;->D(Landroid/view/KeyEvent;)Z
 
     move-result v0
 
-    return v0
-.end method
+    if-nez v0, :cond_1
 
-.method public final setAllCaps(Z)V
-    .locals 0
+    invoke-super {p0, p1}, Landroid/support/v7/widget/ContentFrameLayout;->dispatchKeyEvent(Landroid/view/KeyEvent;)Z
 
-    invoke-super {p0, p1}, Landroid/widget/RadioButton;->setAllCaps(Z)V
-
-    invoke-direct {p0}, Liv;->a()Laie;
-
-    invoke-static {}, Lajf;->d()V
-
-    return-void
-.end method
-
-.method public final setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
-    .locals 0
-
-    invoke-super {p0, p1}, Landroid/widget/RadioButton;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
-
-    iget-object p1, p0, Liv;->b:Lij;
+    move-result p1
 
     if-eqz p1, :cond_0
 
-    invoke-virtual {p1}, Lij;->i()V
+    goto :goto_0
 
     :cond_0
-    return-void
+    const/4 p1, 0x0
+
+    return p1
+
+    :cond_1
+    :goto_0
+    const/4 p1, 0x1
+
+    return p1
+.end method
+
+.method public final onInterceptTouchEvent(Landroid/view/MotionEvent;)Z
+    .locals 3
+
+    invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
+
+    move-result v0
+
+    if-nez v0, :cond_1
+
+    invoke-virtual {p1}, Landroid/view/MotionEvent;->getX()F
+
+    move-result v0
+
+    float-to-int v0, v0
+
+    invoke-virtual {p1}, Landroid/view/MotionEvent;->getY()F
+
+    move-result v1
+
+    float-to-int v1, v1
+
+    const/4 v2, -0x5
+
+    if-lt v0, v2, :cond_0
+
+    if-lt v1, v2, :cond_0
+
+    invoke-virtual {p0}, Liv;->getWidth()I
+
+    move-result v2
+
+    add-int/lit8 v2, v2, 0x5
+
+    if-gt v0, v2, :cond_0
+
+    invoke-virtual {p0}, Liv;->getHeight()I
+
+    move-result v0
+
+    add-int/lit8 v0, v0, 0x5
+
+    if-le v1, v0, :cond_1
+
+    :cond_0
+    iget-object p1, p0, Liv;->a:Liy;
+
+    const/4 v0, 0x0
+
+    invoke-virtual {p1, v0}, Liy;->J(I)Liw;
+
+    move-result-object v0
+
+    const/4 v1, 0x1
+
+    invoke-virtual {p1, v0, v1}, Liy;->x(Liw;Z)V
+
+    return v1
+
+    :cond_1
+    invoke-super {p0, p1}, Landroid/support/v7/widget/ContentFrameLayout;->onInterceptTouchEvent(Landroid/view/MotionEvent;)Z
+
+    move-result p1
+
+    return p1
 .end method
 
 .method public final setBackgroundResource(I)V
-    .locals 1
-
-    invoke-super {p0, p1}, Landroid/widget/RadioButton;->setBackgroundResource(I)V
-
-    iget-object v0, p0, Liv;->b:Lij;
-
-    if-eqz v0, :cond_0
-
-    invoke-virtual {v0, p1}, Lij;->e(I)V
-
-    :cond_0
-    return-void
-.end method
-
-.method public final setButtonDrawable(I)V
     .locals 1
 
     invoke-virtual {p0}, Liv;->getContext()Landroid/content/Context;
 
     move-result-object v0
 
-    invoke-static {v0, p1}, Lfs;->a(Landroid/content/Context;I)Landroid/graphics/drawable/Drawable;
+    invoke-static {v0, p1}, Ljr;->b(Landroid/content/Context;I)Landroid/graphics/drawable/Drawable;
 
     move-result-object p1
 
-    invoke-virtual {p0, p1}, Liv;->setButtonDrawable(Landroid/graphics/drawable/Drawable;)V
-
-    return-void
-.end method
-
-.method public final setButtonDrawable(Landroid/graphics/drawable/Drawable;)V
-    .locals 0
-
-    invoke-super {p0, p1}, Landroid/widget/RadioButton;->setButtonDrawable(Landroid/graphics/drawable/Drawable;)V
-
-    iget-object p1, p0, Liv;->a:Lim;
-
-    if-eqz p1, :cond_0
-
-    invoke-virtual {p1}, Lim;->c()V
-
-    :cond_0
-    return-void
-.end method
-
-.method public final setCompoundDrawables(Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;)V
-    .locals 0
-
-    invoke-super {p0, p1, p2, p3, p4}, Landroid/widget/RadioButton;->setCompoundDrawables(Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;)V
-
-    iget-object p1, p0, Liv;->c:Ljp;
-
-    if-eqz p1, :cond_0
-
-    invoke-virtual {p1}, Ljp;->a()V
-
-    :cond_0
-    return-void
-.end method
-
-.method public final setCompoundDrawablesRelative(Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;)V
-    .locals 0
-
-    invoke-super {p0, p1, p2, p3, p4}, Landroid/widget/RadioButton;->setCompoundDrawablesRelative(Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;)V
-
-    iget-object p1, p0, Liv;->c:Ljp;
-
-    if-eqz p1, :cond_0
-
-    invoke-virtual {p1}, Ljp;->a()V
-
-    :cond_0
-    return-void
-.end method
-
-.method public final setFilters([Landroid/text/InputFilter;)V
-    .locals 0
-
-    invoke-direct {p0}, Liv;->a()Laie;
-
-    invoke-static {}, Lajf;->d()V
-
-    invoke-super {p0, p1}, Landroid/widget/RadioButton;->setFilters([Landroid/text/InputFilter;)V
+    invoke-virtual {p0, p1}, Liv;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
 
     return-void
 .end method

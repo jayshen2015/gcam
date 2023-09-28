@@ -1,66 +1,129 @@
 .class public final Ljrv;
-.super Ljhn;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Landroid/animation/TypeEvaluator;
 
 
 # static fields
-.field public static final CREATOR:Landroid/os/Parcelable$Creator;
-
-
-# instance fields
-.field public final a:I
-
-.field public final b:Ljava/util/List;
+.field private static final a:Landroid/animation/IntEvaluator;
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 2
+    .locals 1
 
-    new-instance v0, Ljro;
+    new-instance v0, Landroid/animation/IntEvaluator;
 
-    const/4 v1, 0x7
+    invoke-direct {v0}, Landroid/animation/IntEvaluator;-><init>()V
 
-    invoke-direct {v0, v1}, Ljro;-><init>(I)V
-
-    sput-object v0, Ljrv;->CREATOR:Landroid/os/Parcelable$Creator;
+    sput-object v0, Ljrv;->a:Landroid/animation/IntEvaluator;
 
     return-void
 .end method
 
-.method public constructor <init>(ILjava/util/List;)V
+.method public constructor <init>()V
     .locals 0
 
-    invoke-direct {p0}, Ljhn;-><init>()V
-
-    iput p1, p0, Ljrv;->a:I
-
-    iput-object p2, p0, Ljrv;->b:Ljava/util/List;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final writeToParcel(Landroid/os/Parcel;I)V
-    .locals 2
+.method public final bridge synthetic evaluate(FLjava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 6
 
-    invoke-static {p1}, Ljhp;->a(Landroid/os/Parcel;)I
+    check-cast p2, Landroid/graphics/Rect;
 
-    move-result p2
+    check-cast p3, Landroid/graphics/Rect;
 
-    iget v0, p0, Ljrv;->a:I
+    new-instance v0, Landroid/graphics/Rect;
 
-    const/4 v1, 0x2
+    sget-object v1, Ljrv;->a:Landroid/animation/IntEvaluator;
 
-    invoke-static {p1, v1, v0}, Ljhp;->g(Landroid/os/Parcel;II)V
+    iget v2, p2, Landroid/graphics/Rect;->left:I
 
-    iget-object v0, p0, Ljrv;->b:Ljava/util/List;
+    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    const/4 v1, 0x3
+    move-result-object v2
 
-    invoke-static {p1, v1, v0}, Ljhp;->t(Landroid/os/Parcel;ILjava/util/List;)V
+    iget v3, p3, Landroid/graphics/Rect;->left:I
 
-    invoke-static {p1, p2}, Ljhp;->c(Landroid/os/Parcel;I)V
+    invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    return-void
+    move-result-object v3
+
+    invoke-virtual {v1, p1, v2, v3}, Landroid/animation/IntEvaluator;->evaluate(FLjava/lang/Integer;Ljava/lang/Integer;)Ljava/lang/Integer;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/Integer;->intValue()I
+
+    move-result v2
+
+    iget v3, p2, Landroid/graphics/Rect;->top:I
+
+    invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v3
+
+    iget v4, p3, Landroid/graphics/Rect;->top:I
+
+    invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v4
+
+    invoke-virtual {v1, p1, v3, v4}, Landroid/animation/IntEvaluator;->evaluate(FLjava/lang/Integer;Ljava/lang/Integer;)Ljava/lang/Integer;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/lang/Integer;->intValue()I
+
+    move-result v3
+
+    iget v4, p2, Landroid/graphics/Rect;->right:I
+
+    invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v4
+
+    iget v5, p3, Landroid/graphics/Rect;->right:I
+
+    invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v5
+
+    invoke-virtual {v1, p1, v4, v5}, Landroid/animation/IntEvaluator;->evaluate(FLjava/lang/Integer;Ljava/lang/Integer;)Ljava/lang/Integer;
+
+    move-result-object v4
+
+    invoke-virtual {v4}, Ljava/lang/Integer;->intValue()I
+
+    move-result v4
+
+    iget p2, p2, Landroid/graphics/Rect;->bottom:I
+
+    invoke-static {p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object p2
+
+    iget p3, p3, Landroid/graphics/Rect;->bottom:I
+
+    invoke-static {p3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object p3
+
+    invoke-virtual {v1, p1, p2, p3}, Landroid/animation/IntEvaluator;->evaluate(FLjava/lang/Integer;Ljava/lang/Integer;)Ljava/lang/Integer;
+
+    move-result-object p1
+
+    invoke-virtual {p1}, Ljava/lang/Integer;->intValue()I
+
+    move-result p1
+
+    invoke-direct {v0, v2, v3, v4, p1}, Landroid/graphics/Rect;-><init>(IIII)V
+
+    return-object v0
 .end method

@@ -1,80 +1,47 @@
-.class Lhvw;
-.super Lhvu;
+.class public final synthetic Lhvw;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Ljava/util/concurrent/Callable;
 
 
 # instance fields
-.field final synthetic b:Lhvz;
+.field public final synthetic a:Lhvx;
 
 
 # direct methods
-.method public constructor <init>(Lhvz;)V
+.method public synthetic constructor <init>(Lhvx;)V
     .locals 0
 
-    iput-object p1, p0, Lhvw;->b:Lhvz;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0}, Lhvu;-><init>()V
+    iput-object p1, p0, Lhvw;->a:Lhvx;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public a()V
-    .locals 1
+.method public final call()Ljava/lang/Object;
+    .locals 2
 
-    iget-object v0, p0, Lhvw;->b:Lhvz;
+    iget-object v0, p0, Lhvw;->a:Lhvx;
 
-    iget-object v0, v0, Lhvz;->a:Lcom/google/android/apps/camera/bottombar/BottomBarController;
+    iget-object v0, v0, Lhvx;->a:Lxr;
 
-    invoke-virtual {v0}, Lcom/google/android/apps/camera/bottombar/BottomBarController;->stopPanoramaCapture()V
+    const/4 v1, 0x1
 
-    iget-object v0, p0, Lhvw;->b:Lhvz;
+    invoke-static {v1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
-    iget-object v0, v0, Lhvz;->b:Liff;
+    move-result-object v1
 
-    invoke-interface {v0}, Liff;->f()V
+    invoke-virtual {v0, v1}, Lxr;->a(Ljava/lang/Object;)Z
 
-    return-void
-.end method
+    move-result v0
 
-.method public c()V
-    .locals 1
+    invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
-    iget-object v0, p0, Lhvw;->b:Lhvz;
+    move-result-object v0
 
-    iget-object v0, v0, Lhvz;->a:Lcom/google/android/apps/camera/bottombar/BottomBarController;
-
-    invoke-virtual {v0}, Lcom/google/android/apps/camera/bottombar/BottomBarController;->stopPanoramaCapture()V
-
-    iget-object v0, p0, Lhvw;->b:Lhvz;
-
-    iget-object v0, v0, Lhvz;->b:Liff;
-
-    invoke-interface {v0}, Liff;->n()V
-
-    return-void
-.end method
-
-.method public final f()V
-    .locals 1
-
-    iget-object v0, p0, Lhvw;->b:Lhvz;
-
-    iget-object v0, v0, Lhvz;->c:Lgeh;
-
-    invoke-interface {v0}, Lgeh;->m()V
-
-    iget-object v0, p0, Lhvw;->b:Lhvz;
-
-    iget-object v0, v0, Lhvz;->k:Ljew;
-
-    invoke-virtual {v0}, Ljew;->C()V
-
-    return-void
-.end method
-
-.method public final g()V
-    .locals 0
-
-    return-void
+    return-object v0
 .end method

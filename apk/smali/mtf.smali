@@ -1,62 +1,88 @@
-.class public final Lmtf;
+.class final Lmtf;
 .super Ljava/lang/Object;
 
+# interfaces
+.implements Ljava/util/concurrent/Executor;
 
-# static fields
-.field public static final a:Lj$/util/stream/Collector;
 
-.field public static final b:Lj$/util/stream/Collector;
+# instance fields
+.field public final a:Ljava/lang/Object;
+
+.field public final b:Ljava/util/concurrent/Executor;
+
+.field public final c:Ljava/util/Deque;
+
+.field public d:Z
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 6
+.method public constructor <init>(Ljava/util/concurrent/Executor;)V
+    .locals 1
 
-    sget-object v0, Ldrk;->h:Ldrk;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    sget-object v1, Lgna;->e:Lgna;
+    new-instance v0, Ljava/lang/Object;
 
-    sget-object v2, Lmte;->a:Lmte;
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
-    sget-object v3, Lifp;->s:Lifp;
+    iput-object v0, p0, Lmtf;->a:Ljava/lang/Object;
 
-    const/4 v4, 0x0
+    new-instance v0, Ljava/util/ArrayDeque;
 
-    new-array v5, v4, [Lj$/util/stream/Collector$Characteristics;
+    invoke-direct {v0}, Ljava/util/ArrayDeque;-><init>()V
 
-    invoke-static {v0, v1, v2, v3, v5}, Lj$/util/stream/Collector$-CC;->of(Ljava/util/function/Supplier;Ljava/util/function/BiConsumer;Ljava/util/function/BinaryOperator;Ljava/util/function/Function;[Lj$/util/stream/Collector$Characteristics;)Lj$/util/stream/Collector;
+    iput-object v0, p0, Lmtf;->c:Ljava/util/Deque;
 
-    move-result-object v0
+    const/4 v0, 0x0
 
-    sput-object v0, Lmtf;->a:Lj$/util/stream/Collector;
+    iput-boolean v0, p0, Lmtf;->d:Z
 
-    sget-object v0, Ldrk;->i:Ldrk;
-
-    sget-object v1, Lgna;->f:Lgna;
-
-    sget-object v2, Lmte;->c:Lmte;
-
-    sget-object v3, Lifp;->t:Lifp;
-
-    new-array v5, v4, [Lj$/util/stream/Collector$Characteristics;
-
-    invoke-static {v0, v1, v2, v3, v5}, Lj$/util/stream/Collector$-CC;->of(Ljava/util/function/Supplier;Ljava/util/function/BiConsumer;Ljava/util/function/BinaryOperator;Ljava/util/function/Function;[Lj$/util/stream/Collector$Characteristics;)Lj$/util/stream/Collector;
-
-    move-result-object v0
-
-    sput-object v0, Lmtf;->b:Lj$/util/stream/Collector;
-
-    sget-object v0, Ldrk;->j:Ldrk;
-
-    sget-object v1, Lgna;->g:Lgna;
-
-    sget-object v2, Lmte;->b:Lmte;
-
-    sget-object v3, Lifp;->r:Lifp;
-
-    new-array v4, v4, [Lj$/util/stream/Collector$Characteristics;
-
-    invoke-static {v0, v1, v2, v3, v4}, Lj$/util/stream/Collector$-CC;->of(Ljava/util/function/Supplier;Ljava/util/function/BiConsumer;Ljava/util/function/BinaryOperator;Ljava/util/function/Function;[Lj$/util/stream/Collector$Characteristics;)Lj$/util/stream/Collector;
+    iput-object p1, p0, Lmtf;->b:Ljava/util/concurrent/Executor;
 
     return-void
+.end method
+
+
+# virtual methods
+.method public final execute(Ljava/lang/Runnable;)V
+    .locals 2
+
+    iget-object v0, p0, Lmtf;->a:Ljava/lang/Object;
+
+    monitor-enter v0
+
+    :try_start_0
+    iget-object v1, p0, Lmtf;->c:Ljava/util/Deque;
+
+    invoke-interface {v1, p1}, Ljava/util/Deque;->addLast(Ljava/lang/Object;)V
+
+    iget-boolean p1, p0, Lmtf;->d:Z
+
+    if-nez p1, :cond_0
+
+    const/4 p1, 0x1
+
+    iput-boolean p1, p0, Lmtf;->d:Z
+
+    iget-object p1, p0, Lmtf;->b:Ljava/util/concurrent/Executor;
+
+    new-instance v1, Lmte;
+
+    invoke-direct {v1, p0}, Lmte;-><init>(Lmtf;)V
+
+    invoke-interface {p1, v1}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
+
+    :cond_0
+    monitor-exit v0
+
+    return-void
+
+    :catchall_0
+    move-exception p1
+
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw p1
 .end method

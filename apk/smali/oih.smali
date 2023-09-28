@@ -1,103 +1,133 @@
 .class public final Loih;
-.super Ljava/lang/Object;
-
-# interfaces
-.implements Loig;
+.super Lojc;
 
 
 # static fields
-.field public static final a:Llqb;
+.field public static final a:Loih;
+
+.field private static final serialVersionUID:J
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 8
+    .locals 1
 
-    sget-object v0, Lmza;->a:Lmza;
+    new-instance v0, Loih;
 
-    const-string v4, "com.google.android.libraries.performance.primes"
+    invoke-direct {v0}, Loih;-><init>()V
 
-    const-string v0, "CLIENT_LOGGING_PROD"
-
-    invoke-static {v0}, Lmwn;->H(Ljava/lang/Object;)Lmwn;
-
-    move-result-object v5
-
-    :try_start_0
-    const-string v1, "12"
-
-    const-string v0, "EAAYAg"
-
-    const/4 v2, 0x3
-
-    invoke-static {v0, v2}, Landroid/util/Base64;->decode(Ljava/lang/String;I)[B
-
-    move-result-object v0
-
-    sget-object v2, Lozu;->d:Lozu;
-
-    array-length v3, v0
-
-    sget-object v6, Lnwh;->a:Lnwh;
-
-    const/4 v7, 0x0
-
-    invoke-static {v2, v0, v7, v3, v6}, Lnws;->Q(Lnws;[BIILnwh;)Lnws;
-
-    move-result-object v0
-
-    invoke-static {v0}, Lnws;->ae(Lnws;)V
-
-    move-object v2, v0
-
-    check-cast v2, Lozu;
-
-    sget-object v3, Llqd;->o:Llqd;
-
-    const/4 v6, 0x1
-
-    const/4 v7, 0x1
-
-    invoke-static/range {v1 .. v7}, Llqf;->d(Ljava/lang/String;Ljava/lang/Object;Llqe;Ljava/lang/String;Ljava/util/Set;ZZ)Llqb;
-
-    move-result-object v0
-
-    sput-object v0, Loih;->a:Llqb;
-    :try_end_0
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+    sput-object v0, Loih;->a:Loih;
 
     return-void
-
-    :catch_0
-    move-exception v0
-
-    new-instance v1, Ljava/lang/AssertionError;
-
-    invoke-direct {v1, v0}, Ljava/lang/AssertionError;-><init>(Ljava/lang/Object;)V
-
-    throw v1
 .end method
 
-.method public constructor <init>()V
+.method private constructor <init>()V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Lojc;-><init>()V
 
     return-void
+.end method
+
+.method private readResolve()Ljava/lang/Object;
+    .locals 1
+
+    sget-object v0, Loih;->a:Loih;
+
+    return-object v0
 .end method
 
 
 # virtual methods
-.method public final a(Landroid/content/Context;)Lozu;
-    .locals 1
+.method public final a(Lojc;)Lojc;
+    .locals 0
 
-    sget-object v0, Loih;->a:Llqb;
+    return-object p1
+.end method
 
-    invoke-virtual {v0, p1}, Llqb;->b(Landroid/content/Context;)Ljava/lang/Object;
+.method public final b(Loiu;)Lojc;
+    .locals 0
+
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    sget-object p1, Loih;->a:Loih;
+
+    return-object p1
+.end method
+
+.method public final c()Ljava/lang/Object;
+    .locals 2
+
+    new-instance v0, Ljava/lang/IllegalStateException;
+
+    const-string v1, "Optional.get() cannot be called on an absent value"
+
+    invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+.end method
+
+.method public final d(Lojz;)Ljava/lang/Object;
+    .locals 0
+
+    invoke-interface {p1}, Lojz;->a()Ljava/lang/Object;
 
     move-result-object p1
 
-    check-cast p1, Lozu;
+    return-object p1
+.end method
+
+.method public final e(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 0
+
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     return-object p1
+.end method
+
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 0
+
+    if-ne p1, p0, :cond_0
+
+    const/4 p1, 0x1
+
+    return p1
+
+    :cond_0
+    const/4 p1, 0x0
+
+    return p1
+.end method
+
+.method public final f()Ljava/lang/Object;
+    .locals 1
+
+    const/4 v0, 0x0
+
+    return-object v0
+.end method
+
+.method public final g()Z
+    .locals 1
+
+    const/4 v0, 0x0
+
+    return v0
+.end method
+
+.method public final hashCode()I
+    .locals 1
+
+    const v0, 0x79a31aac
+
+    return v0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .locals 1
+
+    const-string v0, "Optional.absent()"
+
+    return-object v0
 .end method

@@ -1,17 +1,16 @@
-.class public abstract Lndu;
+.class interface abstract Lndu;
 .super Ljava/lang/Object;
 
 
-# direct methods
-.method public constructor <init>()V
-    .locals 0
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
+# virtual methods
+.method public abstract a(Lpql;)Ljava/lang/String;
 .end method
 
+.method public abstract b(Lpql;)Ljava/lang/String;
+.end method
 
-# virtual methods
-.method public abstract a(Ljava/lang/StringBuilder;Ljava/lang/String;II)V
+.method public abstract c(Lpql;Ljava/lang/Long;)V
+.end method
+
+.method public abstract d(Lpql;)V
 .end method

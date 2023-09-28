@@ -2,12 +2,12 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lgtk;
-.implements Lkad;
+.implements Lhlr;
+.implements Llie;
 
 
 # static fields
-.field public static final a:Lnak;
+.field public static final a:Louj;
 
 
 # instance fields
@@ -20,13 +20,13 @@
 
     const-string v0, "com/google/android/apps/camera/rectiface/jni/RectifaceWarpfieldImpl"
 
-    invoke-static {v0}, Lnak;->h(Ljava/lang/String;)Lnak;
+    invoke-static {v0}, Louj;->h(Ljava/lang/String;)Louj;
 
     move-result-object v0
 
-    sput-object v0, Lcom/google/android/apps/camera/rectiface/jni/RectifaceWarpfieldImpl;->a:Lnak;
+    sput-object v0, Lcom/google/android/apps/camera/rectiface/jni/RectifaceWarpfieldImpl;->a:Louj;
 
-    invoke-static {}, Lgtl;->a()V
+    invoke-static {}, Lhls;->a()V
 
     return-void
 .end method

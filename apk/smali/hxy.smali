@@ -1,22 +1,110 @@
 .class public final Lhxy;
-.super Ljava/lang/Object;
+.super Landroid/view/View$AccessibilityDelegate;
 
 
-# static fields
-.field public static final a:Lhkr;
+# instance fields
+.field final synthetic a:Lcom/google/android/apps/camera/smarts/SmartsChipView;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
+.method public constructor <init>(Lcom/google/android/apps/camera/smarts/SmartsChipView;)V
+    .locals 0
 
-    new-instance v0, Lhkr;
+    iput-object p1, p0, Lhxy;->a:Lcom/google/android/apps/camera/smarts/SmartsChipView;
 
-    const/16 v1, 0x12
+    invoke-direct {p0}, Landroid/view/View$AccessibilityDelegate;-><init>()V
 
-    invoke-direct {v0, v1}, Lhkr;-><init>(I)V
+    return-void
+.end method
 
-    sput-object v0, Lhxy;->a:Lhkr;
+
+# virtual methods
+.method public final onInitializeAccessibilityEvent(Landroid/view/View;Landroid/view/accessibility/AccessibilityEvent;)V
+    .locals 3
+
+    invoke-virtual {p2}, Landroid/view/accessibility/AccessibilityEvent;->getEventType()I
+
+    move-result v0
+
+    const/4 v1, 0x1
+
+    const v2, 0x8000
+
+    if-ne v0, v2, :cond_0
+
+    iget-object v0, p0, Lhxy;->a:Lcom/google/android/apps/camera/smarts/SmartsChipView;
+
+    iget-boolean v2, v0, Lcom/google/android/apps/camera/smarts/SmartsChipView;->d:Z
+
+    if-nez v2, :cond_2
+
+    iput-boolean v1, v0, Lcom/google/android/apps/camera/smarts/SmartsChipView;->d:Z
+
+    goto :goto_0
+
+    :cond_0
+    invoke-virtual {p2}, Landroid/view/accessibility/AccessibilityEvent;->getEventType()I
+
+    move-result v0
+
+    const/high16 v2, 0x10000
+
+    if-ne v0, v2, :cond_1
+
+    iget-object v0, p0, Lhxy;->a:Lcom/google/android/apps/camera/smarts/SmartsChipView;
+
+    iget-object v0, v0, Lcom/google/android/apps/camera/smarts/SmartsChipView;->a:Landroid/widget/FrameLayout;
+
+    invoke-virtual {v0}, Landroid/widget/FrameLayout;->isAccessibilityFocused()Z
+
+    move-result v0
+
+    if-nez v0, :cond_2
+
+    iget-object v0, p0, Lhxy;->a:Lcom/google/android/apps/camera/smarts/SmartsChipView;
+
+    iget-object v0, v0, Lcom/google/android/apps/camera/smarts/SmartsChipView;->c:Landroid/widget/FrameLayout;
+
+    invoke-virtual {v0}, Landroid/widget/FrameLayout;->isAccessibilityFocused()Z
+
+    move-result v0
+
+    if-nez v0, :cond_2
+
+    iget-object v0, p0, Lhxy;->a:Lcom/google/android/apps/camera/smarts/SmartsChipView;
+
+    const/4 v1, 0x0
+
+    iput-boolean v1, v0, Lcom/google/android/apps/camera/smarts/SmartsChipView;->d:Z
+
+    iget-boolean v1, v0, Lcom/google/android/apps/camera/smarts/SmartsChipView;->e:Z
+
+    if-eqz v1, :cond_2
+
+    invoke-virtual {v0}, Lcom/google/android/apps/camera/smarts/SmartsChipView;->b()V
+
+    goto :goto_0
+
+    :cond_1
+    invoke-virtual {p2}, Landroid/view/accessibility/AccessibilityEvent;->getEventType()I
+
+    move-result v0
+
+    if-ne v0, v1, :cond_2
+
+    sget-object v0, Landroid/view/accessibility/AccessibilityNodeInfo$AccessibilityAction;->ACTION_CLEAR_ACCESSIBILITY_FOCUS:Landroid/view/accessibility/AccessibilityNodeInfo$AccessibilityAction;
+
+    invoke-virtual {v0}, Landroid/view/accessibility/AccessibilityNodeInfo$AccessibilityAction;->getId()I
+
+    move-result v0
+
+    const/4 v1, 0x0
+
+    invoke-virtual {p1, v0, v1}, Landroid/view/View;->performAccessibilityAction(ILandroid/os/Bundle;)Z
+
+    :cond_2
+    :goto_0
+    invoke-super {p0, p1, p2}, Landroid/view/View$AccessibilityDelegate;->onInitializeAccessibilityEvent(Landroid/view/View;Landroid/view/accessibility/AccessibilityEvent;)V
 
     return-void
 .end method

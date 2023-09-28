@@ -1,81 +1,99 @@
 .class public final Liyf;
-.super Ljava/lang/Object;
+.super Liwn;
 
 # interfaces
-.implements Liyi;
+.implements Lihv;
 
 
 # instance fields
-.field private final a:Landroidx/wear/widget/CurvedTextView;
+.field private final a:Lihu;
+
+.field private final b:Lihw;
 
 
 # direct methods
-.method public constructor <init>(Landroidx/wear/widget/CurvedTextView;)V
-    .locals 0
+.method public constructor <init>(Lixj;Liwt;Lcrs;)V
+    .locals 5
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Liwn;-><init>()V
 
-    iput-object p1, p0, Liyf;->a:Landroidx/wear/widget/CurvedTextView;
+    new-instance v0, Lizm;
+
+    const/4 v1, 0x1
+
+    invoke-direct {v0, v1}, Lizm;-><init>(I)V
+
+    new-instance v2, Lihw;
+
+    const/4 v3, 0x3
+
+    new-array v3, v3, [Lihs;
+
+    const/4 v4, 0x0
+
+    aput-object p1, v3, v4
+
+    aput-object p2, v3, v1
+
+    const/4 p1, 0x2
+
+    aput-object p3, v3, p1
+
+    invoke-direct {v2, v0, v3}, Lihw;-><init>(Lihs;[Lihs;)V
+
+    iput-object v2, p0, Liyf;->b:Lihw;
+
+    new-instance p1, Lihu;
+
+    invoke-direct {p1, v2, v4}, Lihu;-><init>(Lihw;Z)V
+
+    iput-object p1, p0, Liyf;->a:Lihu;
+
+    invoke-virtual {p1}, Lihu;->f()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Landroid/view/View;
+.method public final e()V
     .locals 1
 
-    iget-object v0, p0, Liyf;->a:Landroidx/wear/widget/CurvedTextView;
+    iget-object v0, p0, Liyf;->a:Lihu;
 
-    return-object v0
-.end method
+    invoke-virtual {v0}, Lihu;->b()V
 
-.method public final b(Ljava/lang/CharSequence;)V
-    .locals 2
+    iget-object v0, p0, Liyf;->b:Lihw;
 
-    iget-object v0, p0, Liyf;->a:Landroidx/wear/widget/CurvedTextView;
-
-    const-string v1, ""
-
-    if-eqz p1, :cond_0
-
-    invoke-virtual {p1}, Ljava/lang/Object;->toString()Ljava/lang/String;
-
-    move-result-object p1
-
-    goto :goto_0
-
-    :cond_0
-    move-object p1, v1
-
-    :goto_0
-    if-nez p1, :cond_1
-
-    goto :goto_1
-
-    :cond_1
-    move-object v1, p1
-
-    :goto_1
-    iput-object v1, v0, Landroidx/wear/widget/CurvedTextView;->b:Ljava/lang/String;
-
-    invoke-virtual {v0}, Landroidx/wear/widget/CurvedTextView;->f()V
+    invoke-virtual {v0}, Lihw;->e()V
 
     return-void
 .end method
 
-.method public final c(I)V
+.method public final f()V
     .locals 1
 
-    iget-object v0, p0, Liyf;->a:Landroidx/wear/widget/CurvedTextView;
+    iget-object v0, p0, Liyf;->a:Lihu;
 
-    iput p1, v0, Landroidx/wear/widget/CurvedTextView;->c:I
+    invoke-virtual {v0}, Lihu;->c()V
 
-    const/4 p1, 0x1
+    return-void
+.end method
 
-    iput-boolean p1, v0, Landroidx/wear/widget/CurvedTextView;->a:Z
+.method public final g()V
+    .locals 1
 
-    invoke-virtual {v0}, Landroidx/wear/widget/CurvedTextView;->postInvalidate()V
+    iget-object v0, p0, Liyf;->a:Lihu;
+
+    invoke-virtual {v0}, Lihu;->d()V
+
+    return-void
+.end method
+
+.method public final h()V
+    .locals 0
+
+    invoke-static {p0}, Lmip;->eQ(Lihv;)V
 
     return-void
 .end method

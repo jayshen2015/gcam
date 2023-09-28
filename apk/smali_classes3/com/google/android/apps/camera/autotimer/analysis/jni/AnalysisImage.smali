@@ -3,16 +3,16 @@
 
 
 # instance fields
-.field private final a:Lkpb;
+.field private final a:Lmad;
 
 
 # direct methods
-.method public constructor <init>(Lkpb;)V
+.method public constructor <init>(Lmad;)V
     .locals 2
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-interface {p1}, Lkpb;->a()I
+    invoke-interface {p1}, Lmad;->a()I
 
     move-result v0
 
@@ -28,9 +28,9 @@
     const/4 v0, 0x0
 
     :goto_0
-    invoke-static {v0}, Lmoz;->p(Z)V
+    invoke-static {v0}, Lobr;->aQ(Z)V
 
-    iput-object p1, p0, Lcom/google/android/apps/camera/autotimer/analysis/jni/AnalysisImage;->a:Lkpb;
+    iput-object p1, p0, Lcom/google/android/apps/camera/autotimer/analysis/jni/AnalysisImage;->a:Lmad;
 
     return-void
 .end method
@@ -40,9 +40,9 @@
 .method getHeight()I
     .locals 1
 
-    iget-object v0, p0, Lcom/google/android/apps/camera/autotimer/analysis/jni/AnalysisImage;->a:Lkpb;
+    iget-object v0, p0, Lcom/google/android/apps/camera/autotimer/analysis/jni/AnalysisImage;->a:Lmad;
 
-    invoke-interface {v0}, Lkpb;->b()I
+    invoke-interface {v0}, Lmad;->b()I
 
     move-result v0
 
@@ -52,9 +52,9 @@
 .method getPlanes()[Lcom/google/android/apps/camera/autotimer/analysis/jni/AnalysisImage$Plane;
     .locals 5
 
-    iget-object v0, p0, Lcom/google/android/apps/camera/autotimer/analysis/jni/AnalysisImage;->a:Lkpb;
+    iget-object v0, p0, Lcom/google/android/apps/camera/autotimer/analysis/jni/AnalysisImage;->a:Lmad;
 
-    invoke-interface {v0}, Lkpb;->g()Ljava/util/List;
+    invoke-interface {v0}, Lmad;->g()Ljava/util/List;
 
     move-result-object v0
 
@@ -79,9 +79,9 @@
 
     move-result-object v4
 
-    check-cast v4, Lkpa;
+    check-cast v4, Lmac;
 
-    invoke-direct {v3, v4}, Lcom/google/android/apps/camera/autotimer/analysis/jni/AnalysisImage$Plane;-><init>(Lkpa;)V
+    invoke-direct {v3, v4}, Lcom/google/android/apps/camera/autotimer/analysis/jni/AnalysisImage$Plane;-><init>(Lmac;)V
 
     aput-object v3, v1, v2
 
@@ -96,9 +96,9 @@
 .method getWidth()I
     .locals 1
 
-    iget-object v0, p0, Lcom/google/android/apps/camera/autotimer/analysis/jni/AnalysisImage;->a:Lkpb;
+    iget-object v0, p0, Lcom/google/android/apps/camera/autotimer/analysis/jni/AnalysisImage;->a:Lmad;
 
-    invoke-interface {v0}, Lkpb;->c()I
+    invoke-interface {v0}, Lmad;->c()I
 
     move-result v0
 

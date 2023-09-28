@@ -1,339 +1,234 @@
-.class final Lllx;
-.super Ljava/lang/Object;
+.class public final Lllx;
+.super Ljava/io/FilterInputStream;
 
 
-# static fields
-.field private static final a:Lnak;
+# instance fields
+.field public a:I
+
+.field public final b:Ljava/nio/ByteBuffer;
+
+.field private final c:[B
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
+.method protected constructor <init>(Ljava/io/InputStream;)V
+    .locals 0
 
-    const-string v0, "com/google/android/libraries/performance/primes/metrics/storage/PackageStatsCaptureO"
+    invoke-direct {p0, p1}, Ljava/io/FilterInputStream;-><init>(Ljava/io/InputStream;)V
 
-    invoke-static {v0}, Lnak;->h(Ljava/lang/String;)Lnak;
+    const/4 p1, 0x0
 
-    move-result-object v0
+    iput p1, p0, Lllx;->a:I
 
-    sput-object v0, Lllx;->a:Lnak;
+    const/16 p1, 0x8
+
+    new-array p1, p1, [B
+
+    iput-object p1, p0, Lllx;->c:[B
+
+    invoke-static {p1}, Ljava/nio/ByteBuffer;->wrap([B)Ljava/nio/ByteBuffer;
+
+    move-result-object p1
+
+    iput-object p1, p0, Lllx;->b:Ljava/nio/ByteBuffer;
 
     return-void
 .end method
 
-.method static a(Landroid/content/Context;)Landroid/content/pm/PackageStats;
-    .locals 12
 
-    invoke-static {}, Llho;->h()V
+# virtual methods
+.method public final a()I
+    .locals 2
 
-    const-class v0, Landroid/os/storage/StorageManager;
+    iget-object v0, p0, Lllx;->c:[B
 
-    invoke-virtual {p0, v0}, Landroid/content/Context;->getSystemService(Ljava/lang/Class;)Ljava/lang/Object;
+    const/4 v1, 0x4
 
-    move-result-object v0
+    invoke-virtual {p0, v0, v1}, Lllx;->f([BI)V
 
-    check-cast v0, Landroid/os/storage/StorageManager;
+    iget-object v0, p0, Lllx;->b:Ljava/nio/ByteBuffer;
 
-    const/4 v1, 0x0
-
-    if-nez v0, :cond_0
-
-    sget-object p0, Lllx;->a:Lnak;
-
-    invoke-virtual {p0}, Lnaf;->b()Lnaz;
-
-    move-result-object p0
-
-    const-string v0, "StorageManager is not available"
-
-    const/16 v2, 0x11c6
-
-    invoke-static {p0, v0, v2}, Ld;->g(Lnaz;Ljava/lang/String;C)V
-
-    return-object v1
-
-    :cond_0
-    :try_start_0
-    const-class v2, Landroid/app/usage/StorageStatsManager;
-
-    invoke-virtual {p0, v2}, Landroid/content/Context;->getSystemService(Ljava/lang/Class;)Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Landroid/app/usage/StorageStatsManager;
-
-    invoke-virtual {p0}, Landroid/content/Context;->getPackageName()Ljava/lang/String;
-
-    move-result-object p0
-
-    new-instance v3, Landroid/content/pm/PackageStats;
-
-    invoke-direct {v3, p0}, Landroid/content/pm/PackageStats;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v0}, Landroid/os/storage/StorageManager;->getStorageVolumes()Ljava/util/List;
+    invoke-virtual {v0}, Ljava/nio/ByteBuffer;->rewind()Ljava/nio/Buffer;
 
     move-result-object v0
 
-    invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+    check-cast v0, Ljava/nio/ByteBuffer;
+
+    iget-object v0, p0, Lllx;->b:Ljava/nio/ByteBuffer;
+
+    invoke-virtual {v0}, Ljava/nio/ByteBuffer;->getInt()I
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public final b()I
+    .locals 1
+
+    invoke-virtual {p0}, Lllx;->d()S
+
+    move-result v0
+
+    int-to-char v0, v0
+
+    return v0
+.end method
+
+.method public final c()J
+    .locals 4
+
+    invoke-virtual {p0}, Lllx;->a()I
+
+    move-result v0
+
+    int-to-long v0, v0
+
+    const-wide v2, 0xffffffffL
+
+    and-long/2addr v0, v2
+
+    return-wide v0
+.end method
+
+.method public final d()S
+    .locals 2
+
+    iget-object v0, p0, Lllx;->c:[B
+
+    const/4 v1, 0x2
+
+    invoke-virtual {p0, v0, v1}, Lllx;->f([BI)V
+
+    iget-object v0, p0, Lllx;->b:Ljava/nio/ByteBuffer;
+
+    invoke-virtual {v0}, Ljava/nio/ByteBuffer;->rewind()Ljava/nio/Buffer;
 
     move-result-object v0
 
-    :cond_1
-    :goto_0
-    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
+    check-cast v0, Ljava/nio/ByteBuffer;
 
-    move-result v4
+    iget-object v0, p0, Lllx;->b:Ljava/nio/ByteBuffer;
 
-    if-eqz v4, :cond_5
+    invoke-virtual {v0}, Ljava/nio/ByteBuffer;->getShort()S
 
-    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    move-result v0
 
-    move-result-object v4
+    return v0
+.end method
 
-    check-cast v4, Landroid/os/storage/StorageVolume;
+.method public final e(Ljava/nio/ByteOrder;)V
+    .locals 1
 
-    invoke-virtual {v4}, Landroid/os/storage/StorageVolume;->getState()Ljava/lang/String;
+    iget-object v0, p0, Lllx;->b:Ljava/nio/ByteBuffer;
 
-    move-result-object v5
+    invoke-virtual {v0, p1}, Ljava/nio/ByteBuffer;->order(Ljava/nio/ByteOrder;)Ljava/nio/ByteBuffer;
 
-    const-string v6, "mounted"
+    return-void
+.end method
 
-    invoke-virtual {v5, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+.method public final f([BI)V
+    .locals 1
 
-    move-result v5
+    const/4 v0, 0x0
 
-    if-eqz v5, :cond_1
+    invoke-static {p0, p1, v0, p2}, Lcom/google/common/io/ByteStreams;->readFully(Ljava/io/InputStream;[BII)V
 
-    invoke-virtual {v4}, Landroid/os/storage/StorageVolume;->getUuid()Ljava/lang/String;
+    return-void
+.end method
 
-    move-result-object v4
+.method public final read()I
+    .locals 3
 
-    const-string v5, "1AEF-1A1E"
+    iget-object v0, p0, Lllx;->in:Ljava/io/InputStream;
 
-    invoke-virtual {v5, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v0}, Ljava/io/InputStream;->read()I
 
-    move-result v5
-    :try_end_0
-    .catch Ljava/lang/RuntimeException; {:try_start_0 .. :try_end_0} :catch_5
-    .catch Ljava/lang/Error; {:try_start_0 .. :try_end_0} :catch_4
+    move-result v0
 
-    if-eqz v5, :cond_2
+    iget v1, p0, Lllx;->a:I
 
-    move-object v4, v1
+    if-ltz v0, :cond_0
 
-    goto :goto_1
-
-    :cond_2
-    if-nez v4, :cond_3
-
-    :try_start_1
-    sget-object v4, Landroid/os/storage/StorageManager;->UUID_DEFAULT:Ljava/util/UUID;
-
-    goto :goto_1
-
-    :cond_3
-    invoke-static {v4}, Ljava/util/UUID;->fromString(Ljava/lang/String;)Ljava/util/UUID;
-
-    move-result-object v4
-    :try_end_1
-    .catch Ljava/lang/IllegalArgumentException; {:try_start_1 .. :try_end_1} :catch_0
-    .catch Ljava/lang/RuntimeException; {:try_start_1 .. :try_end_1} :catch_5
-    .catch Ljava/lang/Error; {:try_start_1 .. :try_end_1} :catch_4
-
-    goto :goto_1
-
-    :catch_0
-    move-exception v5
-
-    :try_start_2
-    sget-object v6, Lllx;->a:Lnak;
-
-    invoke-virtual {v6}, Lnaf;->c()Lnaz;
-
-    move-result-object v6
-
-    const-string v7, "Invalid UUID format: \'%s\'"
-
-    const/16 v8, 0x11c8
-
-    invoke-static {v6, v7, v4, v8, v5}, Ld;->i(Lnaz;Ljava/lang/String;Ljava/lang/Object;CLjava/lang/Throwable;)V
-    :try_end_2
-    .catch Ljava/lang/RuntimeException; {:try_start_2 .. :try_end_2} :catch_5
-    .catch Ljava/lang/Error; {:try_start_2 .. :try_end_2} :catch_4
-
-    move-object v4, v1
-
-    :goto_1
-    if-eqz v4, :cond_1
-
-    :try_start_3
-    invoke-static {}, Landroid/os/Process;->myUserHandle()Landroid/os/UserHandle;
-
-    move-result-object v5
-
-    invoke-virtual {v2, v4, p0, v5}, Landroid/app/usage/StorageStatsManager;->queryStatsForPackage(Ljava/util/UUID;Ljava/lang/String;Landroid/os/UserHandle;)Landroid/app/usage/StorageStats;
-
-    move-result-object v5
-
-    sget-object v6, Landroid/os/storage/StorageManager;->UUID_DEFAULT:Ljava/util/UUID;
-
-    invoke-virtual {v6, v4}, Ljava/util/UUID;->equals(Ljava/lang/Object;)Z
-
-    move-result v4
-
-    if-eqz v4, :cond_4
-
-    iget-wide v6, v3, Landroid/content/pm/PackageStats;->codeSize:J
-
-    invoke-virtual {v5}, Landroid/app/usage/StorageStats;->getAppBytes()J
-
-    move-result-wide v8
-
-    add-long/2addr v6, v8
-
-    iput-wide v6, v3, Landroid/content/pm/PackageStats;->codeSize:J
-
-    iget-wide v6, v3, Landroid/content/pm/PackageStats;->dataSize:J
-
-    invoke-virtual {v5}, Landroid/app/usage/StorageStats;->getDataBytes()J
-
-    move-result-wide v8
-
-    invoke-virtual {v5}, Landroid/app/usage/StorageStats;->getCacheBytes()J
-
-    move-result-wide v10
-
-    sub-long/2addr v8, v10
-
-    add-long/2addr v6, v8
-
-    iput-wide v6, v3, Landroid/content/pm/PackageStats;->dataSize:J
-
-    iget-wide v6, v3, Landroid/content/pm/PackageStats;->cacheSize:J
-
-    invoke-virtual {v5}, Landroid/app/usage/StorageStats;->getCacheBytes()J
-
-    move-result-wide v4
-
-    add-long/2addr v6, v4
-
-    iput-wide v6, v3, Landroid/content/pm/PackageStats;->cacheSize:J
+    const/4 v2, 0x1
 
     goto :goto_0
 
-    :cond_4
-    iget-wide v6, v3, Landroid/content/pm/PackageStats;->externalCodeSize:J
+    :cond_0
+    const/4 v2, 0x0
 
-    invoke-virtual {v5}, Landroid/app/usage/StorageStats;->getAppBytes()J
+    :goto_0
+    add-int/2addr v1, v2
 
-    move-result-wide v8
+    iput v1, p0, Lllx;->a:I
 
-    add-long/2addr v6, v8
+    return v0
+.end method
 
-    iput-wide v6, v3, Landroid/content/pm/PackageStats;->externalCodeSize:J
+.method public final read([B)I
+    .locals 2
 
-    iget-wide v6, v3, Landroid/content/pm/PackageStats;->externalDataSize:J
+    iget-object v0, p0, Lllx;->in:Ljava/io/InputStream;
 
-    invoke-virtual {v5}, Landroid/app/usage/StorageStats;->getDataBytes()J
+    invoke-virtual {v0, p1}, Ljava/io/InputStream;->read([B)I
 
-    move-result-wide v8
+    move-result p1
 
-    invoke-virtual {v5}, Landroid/app/usage/StorageStats;->getCacheBytes()J
+    iget v0, p0, Lllx;->a:I
 
-    move-result-wide v10
+    const/4 v1, 0x0
 
-    sub-long/2addr v8, v10
+    invoke-static {p1, v1}, Ljava/lang/Math;->max(II)I
 
-    add-long/2addr v6, v8
+    move-result v1
 
-    iput-wide v6, v3, Landroid/content/pm/PackageStats;->externalDataSize:J
+    add-int/2addr v0, v1
 
-    iget-wide v6, v3, Landroid/content/pm/PackageStats;->externalCacheSize:J
+    iput v0, p0, Lllx;->a:I
 
-    invoke-virtual {v5}, Landroid/app/usage/StorageStats;->getCacheBytes()J
+    return p1
+.end method
 
-    move-result-wide v4
+.method public final read([BII)I
+    .locals 1
 
-    add-long/2addr v6, v4
+    iget-object v0, p0, Lllx;->in:Ljava/io/InputStream;
 
-    iput-wide v6, v3, Landroid/content/pm/PackageStats;->externalCacheSize:J
-    :try_end_3
-    .catch Landroid/content/pm/PackageManager$NameNotFoundException; {:try_start_3 .. :try_end_3} :catch_3
-    .catch Ljava/io/IOException; {:try_start_3 .. :try_end_3} :catch_2
-    .catch Ljava/lang/RuntimeException; {:try_start_3 .. :try_end_3} :catch_1
-    .catch Ljava/lang/Error; {:try_start_3 .. :try_end_3} :catch_4
+    invoke-virtual {v0, p1, p2, p3}, Ljava/io/InputStream;->read([BII)I
 
-    goto/16 :goto_0
+    move-result p1
 
-    :catch_1
-    move-exception v4
+    iget p2, p0, Lllx;->a:I
 
-    goto :goto_2
+    const/4 p3, 0x0
 
-    :catch_2
-    move-exception v4
+    invoke-static {p1, p3}, Ljava/lang/Math;->max(II)I
 
-    goto :goto_2
+    move-result p3
 
-    :catch_3
-    move-exception v4
+    add-int/2addr p2, p3
 
-    :goto_2
-    :try_start_4
-    sget-object v5, Lllx;->a:Lnak;
+    iput p2, p0, Lllx;->a:I
 
-    invoke-virtual {v5}, Lnaf;->c()Lnaz;
+    return p1
+.end method
 
-    move-result-object v5
+.method public final skip(J)J
+    .locals 2
 
-    check-cast v5, Lnah;
+    iget-object v0, p0, Lllx;->in:Ljava/io/InputStream;
 
-    invoke-interface {v5, v4}, Lnah;->h(Ljava/lang/Throwable;)Lnaz;
+    invoke-virtual {v0, p1, p2}, Ljava/io/InputStream;->skip(J)J
 
-    move-result-object v4
+    move-result-wide p1
 
-    check-cast v4, Lnah;
+    iget v0, p0, Lllx;->a:I
 
-    const/16 v5, 0x11c4
+    long-to-int v1, p1
 
-    invoke-interface {v4, v5}, Lnah;->G(I)Lnaz;
+    add-int/2addr v0, v1
 
-    move-result-object v4
+    iput v0, p0, Lllx;->a:I
 
-    check-cast v4, Lnah;
-
-    const-string v5, "queryStatsForPackage() call failed"
-
-    invoke-interface {v4, v5}, Lnah;->o(Ljava/lang/String;)V
-    :try_end_4
-    .catch Ljava/lang/RuntimeException; {:try_start_4 .. :try_end_4} :catch_5
-    .catch Ljava/lang/Error; {:try_start_4 .. :try_end_4} :catch_4
-
-    goto/16 :goto_0
-
-    :cond_5
-    return-object v3
-
-    :catch_4
-    move-exception p0
-
-    goto :goto_3
-
-    :catch_5
-    move-exception p0
-
-    :goto_3
-    sget-object v0, Lllx;->a:Lnak;
-
-    invoke-virtual {v0}, Lnaf;->c()Lnaz;
-
-    move-result-object v0
-
-    const-string v2, "StorageStatsManager is not available"
-
-    const/16 v3, 0x11c5
-
-    invoke-static {v0, v2, v3, p0}, Ld;->h(Lnaz;Ljava/lang/String;CLjava/lang/Throwable;)V
-
-    return-object v1
+    return-wide p1
 .end method

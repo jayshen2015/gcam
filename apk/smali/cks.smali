@@ -1,96 +1,134 @@
-.class public final enum Lcks;
-.super Ljava/lang/Enum;
+.class public final Lcks;
+.super Ljava/lang/Object;
 
 
-# static fields
-.field public static final enum a:Lcks;
+# instance fields
+.field private a:Lcle;
 
-.field public static final enum b:Lcks;
-
-.field private static final synthetic c:[Lcks;
+.field private b:Ljava/lang/Integer;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 5
+.method public constructor <init>()V
+    .locals 0
 
-    new-instance v0, Lcks;
-
-    const-string v1, "AUTO"
-
-    const/4 v2, 0x0
-
-    invoke-direct {v0, v1, v2}, Lcks;-><init>(Ljava/lang/String;I)V
-
-    sput-object v0, Lcks;->a:Lcks;
-
-    new-instance v1, Lcks;
-
-    const-string v3, "MAX"
-
-    const/4 v4, 0x1
-
-    invoke-direct {v1, v3, v4}, Lcks;-><init>(Ljava/lang/String;I)V
-
-    sput-object v1, Lcks;->b:Lcks;
-
-    const/4 v3, 0x2
-
-    new-array v3, v3, [Lcks;
-
-    aput-object v0, v3, v2
-
-    aput-object v1, v3, v4
-
-    sput-object v3, Lcks;->c:[Lcks;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
-.method private constructor <init>(Ljava/lang/String;I)V
-    .locals 0
 
-    invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+# virtual methods
+.method public final a()Lckt;
+    .locals 4
 
-    return-void
-.end method
+    iget-object v0, p0, Lcks;->a:Lcle;
 
-.method public static a(Lcks;)I
-    .locals 0
+    if-eqz v0, :cond_1
 
-    invoke-virtual {p0}, Lcks;->ordinal()I
+    iget-object v1, p0, Lcks;->b:Ljava/lang/Integer;
 
-    move-result p0
+    if-nez v1, :cond_0
 
-    packed-switch p0, :pswitch_data_0
+    goto :goto_0
 
-    const/4 p0, 0x0
+    :cond_0
+    new-instance v2, Lckt;
 
-    return p0
+    invoke-virtual {v1}, Ljava/lang/Integer;->intValue()I
 
-    :pswitch_0
-    const/4 p0, 0x1
+    move-result v1
 
-    return p0
+    invoke-direct {v2, v0, v1}, Lckt;-><init>(Lcle;I)V
 
-    nop
+    return-object v2
 
-    :pswitch_data_0
-    .packed-switch 0x1
-        :pswitch_0
-    .end packed-switch
-.end method
+    :cond_1
+    :goto_0
+    new-instance v0, Ljava/lang/StringBuilder;
 
-.method public static values()[Lcks;
-    .locals 1
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    sget-object v0, Lcks;->c:[Lcks;
+    iget-object v1, p0, Lcks;->a:Lcle;
 
-    invoke-virtual {v0}, [Lcks;->clone()Ljava/lang/Object;
+    if-nez v1, :cond_2
+
+    const-string v1, " outputVideo"
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    :cond_2
+    iget-object v1, p0, Lcks;->b:Ljava/lang/Integer;
+
+    if-nez v1, :cond_3
+
+    const-string v1, " pendingVideoId"
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    :cond_3
+    new-instance v1, Ljava/lang/IllegalStateException;
+
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v0
 
-    check-cast v0, [Lcks;
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
-    return-object v0
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/String;->length()I
+
+    move-result v2
+
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    add-int/lit8 v2, v2, 0x1c
+
+    invoke-direct {v3, v2}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string v2, "Missing required properties:"
+
+    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-direct {v1, v0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw v1
+.end method
+
+.method public final b(Lcle;)V
+    .locals 1
+
+    if-eqz p1, :cond_0
+
+    iput-object p1, p0, Lcks;->a:Lcle;
+
+    return-void
+
+    :cond_0
+    new-instance p1, Ljava/lang/NullPointerException;
+
+    const-string v0, "Null outputVideo"
+
+    invoke-direct {p1, v0}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
+
+    throw p1
+.end method
+
+.method public final c(I)V
+    .locals 0
+
+    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object p1
+
+    iput-object p1, p0, Lcks;->b:Ljava/lang/Integer;
+
+    return-void
 .end method

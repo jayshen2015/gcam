@@ -1,34 +1,23 @@
-.class public final Lovx;
+.class final Lovx;
 .super Ljava/lang/Object;
 
-
-# static fields
-.field public static final a:Lork;
+# interfaces
+.implements Lowa;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 3
+.method public constructor <init>()V
+    .locals 0
 
-    invoke-static {}, Landroid/os/Looper;->getMainLooper()Landroid/os/Looper;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    move-result-object v0
+    return-void
+.end method
 
-    invoke-static {v0}, Landroid/os/Handler;->createAsync(Landroid/os/Looper;)Landroid/os/Handler;
 
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    sget v1, Losf;->a:I
-
-    new-instance v1, Losd;
-
-    const-string v2, "main"
-
-    invoke-direct {v1, v0, v2}, Losd;-><init>(Landroid/os/Handler;Ljava/lang/String;)V
-
-    sput-object v1, Lovx;->a:Lork;
+# virtual methods
+.method public final a(Lovd;Ljava/util/Iterator;Ljava/lang/Object;)V
+    .locals 0
 
     return-void
 .end method

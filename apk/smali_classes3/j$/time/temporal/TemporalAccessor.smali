@@ -3,17 +3,17 @@
 
 
 # virtual methods
-.method public abstract f(Lj$/time/temporal/l;)I
+.method public abstract get(Lj$/time/temporal/TemporalField;)I
 .end method
 
-.method public abstract h(Lj$/time/temporal/l;)Z
+.method public abstract getLong(Lj$/time/temporal/TemporalField;)J
 .end method
 
-.method public abstract j(Lj$/time/temporal/l;)Lj$/time/temporal/q;
+.method public abstract isSupported(Lj$/time/temporal/TemporalField;)Z
 .end method
 
-.method public abstract k(Lj$/time/temporal/l;)J
+.method public abstract query(Lj$/time/temporal/TemporalQuery;)Ljava/lang/Object;
 .end method
 
-.method public abstract m(Lj$/time/temporal/o;)Ljava/lang/Object;
+.method public abstract range(Lj$/time/temporal/TemporalField;)Lj$/time/temporal/ValueRange;
 .end method

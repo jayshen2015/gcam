@@ -1,184 +1,191 @@
 .class public final Lngz;
-.super Lnws;
-
-# interfaces
-.implements Lnxz;
-
-
-# static fields
-.field public static final d:Lngz;
-
-.field private static volatile e:Lnyf;
+.super Ljava/lang/Object;
 
 
 # instance fields
-.field public a:I
+.field public final a:I
 
-.field public b:I
+.field public final b:Lnhi;
 
-.field public c:Ljava/lang/String;
+.field private final c:Ljava/lang/String;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
+.method public constructor <init>(ILjava/lang/String;Lnhi;)V
+    .locals 0
 
-    new-instance v0, Lngz;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {v0}, Lngz;-><init>()V
+    if-ltz p1, :cond_1
 
-    sput-object v0, Lngz;->d:Lngz;
+    if-eqz p2, :cond_0
 
-    const-class v1, Lngz;
+    iput p1, p0, Lngz;->a:I
 
-    invoke-static {v1, v0}, Lnws;->aa(Ljava/lang/Class;Lnws;)V
+    iput-object p2, p0, Lngz;->c:Ljava/lang/String;
 
-    return-void
-.end method
-
-.method private constructor <init>()V
-    .locals 1
-
-    invoke-direct {p0}, Lnws;-><init>()V
-
-    const-string v0, ""
-
-    iput-object v0, p0, Lngz;->c:Ljava/lang/String;
+    iput-object p3, p0, Lngz;->b:Lnhi;
 
     return-void
-.end method
-
-
-# virtual methods
-.method protected final a(ILjava/lang/Object;)Ljava/lang/Object;
-    .locals 3
-
-    add-int/lit8 p1, p1, -0x1
-
-    const/4 p2, 0x1
-
-    packed-switch p1, :pswitch_data_0
-
-    :pswitch_0
-    const/4 p1, 0x0
-
-    return-object p1
-
-    :pswitch_1
-    sget-object p1, Lngz;->e:Lnyf;
-
-    if-nez p1, :cond_1
-
-    const-class p2, Lngz;
-
-    monitor-enter p2
-
-    :try_start_0
-    sget-object p1, Lngz;->e:Lnyf;
-
-    if-nez p1, :cond_0
-
-    new-instance p1, Lnwo;
-
-    sget-object v0, Lngz;->d:Lngz;
-
-    invoke-direct {p1, v0}, Lnwo;-><init>(Lnws;)V
-
-    sput-object p1, Lngz;->e:Lnyf;
 
     :cond_0
-    monitor-exit p2
-
-    goto :goto_0
-
-    :catchall_0
-    move-exception p1
-
-    monitor-exit p2
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    const/4 p1, 0x0
 
     throw p1
 
     :cond_1
-    :goto_0
-    return-object p1
+    new-instance p1, Ljava/lang/IllegalArgumentException;
 
-    :pswitch_2
-    sget-object p1, Lngz;->d:Lngz;
+    const-string p2, "Start index must be >= 0."
 
-    return-object p1
+    invoke-direct {p1, p2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
-    :pswitch_3
-    new-instance p1, Lnwn;
+    throw p1
+.end method
 
-    sget-object p2, Lngz;->d:Lngz;
 
-    invoke-direct {p1, p2}, Lnwn;-><init>(Lnws;)V
+# virtual methods
+.method public final a()I
+    .locals 2
 
-    return-object p1
+    iget v0, p0, Lngz;->a:I
 
-    :pswitch_4
-    new-instance p1, Lngz;
+    iget-object v1, p0, Lngz;->c:Ljava/lang/String;
 
-    invoke-direct {p1}, Lngz;-><init>()V
+    invoke-virtual {v1}, Ljava/lang/String;->length()I
 
-    return-object p1
+    move-result v1
 
-    :pswitch_5
-    const-string p1, "a"
+    add-int/2addr v0, v1
 
-    const-string v0, "\u0001\u0002\u0000\u0001\u0001\u0002\u0002\u0000\u0000\u0000\u0001\u100c\u0000\u0002\u1008\u0001"
+    return v0
+.end method
 
-    const/4 v1, 0x4
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 4
 
-    new-array v1, v1, [Ljava/lang/Object;
+    const/4 v0, 0x1
+
+    if-ne p0, p1, :cond_0
+
+    return v0
+
+    :cond_0
+    instance-of v1, p1, Lngz;
 
     const/4 v2, 0x0
 
-    aput-object p1, v1, v2
+    if-nez v1, :cond_1
 
-    const-string p1, "b"
+    return v2
 
-    aput-object p1, v1, p2
+    :cond_1
+    check-cast p1, Lngz;
 
-    const/4 p1, 0x2
+    iget-object v1, p0, Lngz;->c:Ljava/lang/String;
 
-    sget-object p2, Lngu;->f:Lnww;
+    iget-object v3, p1, Lngz;->c:Ljava/lang/String;
 
-    aput-object p2, v1, p1
+    invoke-virtual {v1, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    const/4 p1, 0x3
+    move-result v1
 
-    const-string p2, "c"
+    if-eqz v1, :cond_2
 
-    aput-object p2, v1, p1
+    iget v1, p0, Lngz;->a:I
 
-    sget-object p1, Lngz;->d:Lngz;
+    iget v3, p1, Lngz;->a:I
 
-    invoke-static {p1, v0, v1}, Lngz;->X(Lnxy;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/Object;
+    if-ne v1, v3, :cond_2
 
-    move-result-object p1
+    iget-object v1, p0, Lngz;->b:Lnhi;
 
-    return-object p1
+    iget-object p1, p1, Lngz;->b:Lnhi;
 
-    :pswitch_6
-    invoke-static {p2}, Ljava/lang/Byte;->valueOf(B)Ljava/lang/Byte;
+    invoke-virtual {v1, p1}, Lnhi;->equals(Ljava/lang/Object;)Z
 
-    move-result-object p1
+    move-result p1
 
-    return-object p1
+    if-eqz p1, :cond_2
 
-    nop
+    return v0
 
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_6
-        :pswitch_0
-        :pswitch_5
-        :pswitch_4
-        :pswitch_3
-        :pswitch_2
-        :pswitch_1
-    .end packed-switch
+    :cond_2
+    return v2
+.end method
+
+.method public final hashCode()I
+    .locals 3
+
+    const/4 v0, 0x3
+
+    new-array v0, v0, [Ljava/lang/Object;
+
+    iget v1, p0, Lngz;->a:I
+
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v1
+
+    const/4 v2, 0x0
+
+    aput-object v1, v0, v2
+
+    iget-object v1, p0, Lngz;->c:Ljava/lang/String;
+
+    const/4 v2, 0x1
+
+    aput-object v1, v0, v2
+
+    iget-object v1, p0, Lngz;->b:Lnhi;
+
+    const/4 v2, 0x2
+
+    aput-object v1, v0, v2
+
+    invoke-static {v0}, Ljava/util/Arrays;->hashCode([Ljava/lang/Object;)I
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .locals 2
+
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v1, "PhoneNumberMatch ["
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget v1, p0, Lngz;->a:I
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    const-string v1, ","
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {p0}, Lngz;->a()I
+
+    move-result v1
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    const-string v1, ") "
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v1, p0, Lngz;->c:Ljava/lang/String;
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
 .end method

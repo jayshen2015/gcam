@@ -90,7 +90,7 @@
 
     move-result-object p1
 
-    const p2, 0x7f07006a
+    const p2, 0x7f070073
 
     invoke-virtual {p1, p2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -98,7 +98,7 @@
 
     iput p2, p0, Lcom/google/android/apps/camera/autotimer/ui/AutoTimerIndicatorView;->h:I
 
-    const p2, 0x7f07006d
+    const p2, 0x7f070076
 
     invoke-virtual {p1, p2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -106,7 +106,7 @@
 
     iput p2, p0, Lcom/google/android/apps/camera/autotimer/ui/AutoTimerIndicatorView;->k:I
 
-    const p2, 0x7f07006c
+    const p2, 0x7f070075
 
     invoke-virtual {p1, p2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -114,7 +114,7 @@
 
     iput p2, p0, Lcom/google/android/apps/camera/autotimer/ui/AutoTimerIndicatorView;->j:I
 
-    const p2, 0x7f07006b
+    const p2, 0x7f070074
 
     invoke-virtual {p1, p2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -122,7 +122,7 @@
 
     iput p2, p0, Lcom/google/android/apps/camera/autotimer/ui/AutoTimerIndicatorView;->i:I
 
-    const p2, 0x7f060026
+    const p2, 0x7f060027
 
     invoke-virtual {p1, p2}, Landroid/content/res/Resources;->getColor(I)I
 
@@ -130,7 +130,7 @@
 
     iput p2, p0, Lcom/google/android/apps/camera/autotimer/ui/AutoTimerIndicatorView;->g:I
 
-    const v0, 0x7f070069
+    const v0, 0x7f070072
 
     invoke-virtual {p1, v0}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -188,7 +188,7 @@
 
     iput-object v1, p0, Lcom/google/android/apps/camera/autotimer/ui/AutoTimerIndicatorView;->p:Landroid/graphics/Paint;
 
-    const v2, 0x7f060024
+    const v2, 0x7f060025
 
     invoke-virtual {p1, v2}, Landroid/content/res/Resources;->getColor(I)I
 
@@ -208,7 +208,7 @@
 
     invoke-virtual {v1, v2}, Landroid/graphics/Paint;->setStyle(Landroid/graphics/Paint$Style;)V
 
-    const v2, 0x7f060025
+    const v2, 0x7f060026
 
     invoke-virtual {p1, v2}, Landroid/content/res/Resources;->getColor(I)I
 
@@ -224,63 +224,61 @@
 
     invoke-virtual {v1, v0}, Landroid/graphics/Paint;->setStrokeWidth(F)V
 
-    new-array v0, p2, [F
+    new-array p2, p2, [F
+
+    const/4 v0, 0x0
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    aput v1, p2, v0
 
-    aput v2, v0, v1
+    invoke-static {p2}, Landroid/animation/ValueAnimator;->ofFloat([F)Landroid/animation/ValueAnimator;
 
-    invoke-static {v0}, Landroid/animation/ValueAnimator;->ofFloat([F)Landroid/animation/ValueAnimator;
+    move-result-object p2
 
-    move-result-object v0
+    iput-object p2, p0, Lcom/google/android/apps/camera/autotimer/ui/AutoTimerIndicatorView;->e:Landroid/animation/ValueAnimator;
 
-    iput-object v0, p0, Lcom/google/android/apps/camera/autotimer/ui/AutoTimerIndicatorView;->e:Landroid/animation/ValueAnimator;
+    new-instance v0, Lcaf;
 
-    new-instance v1, Lafx;
+    invoke-direct {v0, p0}, Lcaf;-><init>(Lcom/google/android/apps/camera/autotimer/ui/AutoTimerIndicatorView;)V
 
-    const/4 v2, 0x3
+    invoke-virtual {p2, v0}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
 
-    invoke-direct {v1, p0, v2}, Lafx;-><init>(Lcom/google/android/apps/camera/autotimer/ui/AutoTimerIndicatorView;I)V
+    new-instance v0, Landroid/view/animation/DecelerateInterpolator;
 
-    invoke-virtual {v0, v1}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
+    invoke-direct {v0}, Landroid/view/animation/DecelerateInterpolator;-><init>()V
 
-    new-instance v1, Landroid/view/animation/DecelerateInterpolator;
+    invoke-virtual {p2, v0}, Landroid/animation/ValueAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    invoke-direct {v1}, Landroid/view/animation/DecelerateInterpolator;-><init>()V
+    const p2, 0x7f0c000a
 
-    invoke-virtual {v0, v1}, Landroid/animation/ValueAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
+    invoke-virtual {p1, p2}, Landroid/content/res/Resources;->getInteger(I)I
 
-    const v0, 0x7f0c000c
+    move-result p2
+
+    int-to-float p2, p2
+
+    const v0, 0x7f0c0009
 
     invoke-virtual {p1, v0}, Landroid/content/res/Resources;->getInteger(I)I
-
-    move-result v0
-
-    int-to-float v0, v0
-
-    const v1, 0x7f0c000b
-
-    invoke-virtual {p1, v1}, Landroid/content/res/Resources;->getInteger(I)I
 
     move-result p1
 
     int-to-float p1, p1
 
-    div-float v1, v0, p1
+    div-float v0, p2, p1
 
-    iput v1, p0, Lcom/google/android/apps/camera/autotimer/ui/AutoTimerIndicatorView;->m:F
+    iput v0, p0, Lcom/google/android/apps/camera/autotimer/ui/AutoTimerIndicatorView;->m:F
 
-    sub-float v0, p1, v0
+    sub-float p2, p1, p2
 
-    div-float/2addr v0, p1
+    div-float/2addr p2, p1
 
-    iput v0, p0, Lcom/google/android/apps/camera/autotimer/ui/AutoTimerIndicatorView;->n:F
+    iput p2, p0, Lcom/google/android/apps/camera/autotimer/ui/AutoTimerIndicatorView;->n:F
 
-    new-instance p1, Lhcl;
+    new-instance p1, Lcag;
 
-    invoke-direct {p1, p0, p2}, Lhcl;-><init>(Lcom/google/android/apps/camera/autotimer/ui/AutoTimerIndicatorView;I)V
+    invoke-direct {p1, p0}, Lcag;-><init>(Lcom/google/android/apps/camera/autotimer/ui/AutoTimerIndicatorView;)V
 
     iput-object p1, p0, Lcom/google/android/apps/camera/autotimer/ui/AutoTimerIndicatorView;->c:Landroid/view/View$OnLayoutChangeListener;
 
@@ -301,6 +299,8 @@
     goto :goto_0
 
     :cond_0
+    new-instance p4, Landroid/graphics/RectF;
+
     int-to-float p0, p0
 
     int-to-float p1, p1
@@ -308,8 +308,6 @@
     int-to-float p2, p2
 
     int-to-float p3, p3
-
-    new-instance p4, Landroid/graphics/RectF;
 
     invoke-direct {p4, p0, p1, p2, p3}, Landroid/graphics/RectF;-><init>(FFFF)V
 
@@ -317,6 +315,8 @@
 
     :cond_1
     :goto_0
+    new-instance p4, Landroid/graphics/RectF;
+
     int-to-float p1, p1
 
     int-to-float p0, p0
@@ -324,8 +324,6 @@
     int-to-float p3, p3
 
     int-to-float p2, p2
-
-    new-instance p4, Landroid/graphics/RectF;
 
     invoke-direct {p4, p1, p0, p3, p2}, Landroid/graphics/RectF;-><init>(FFFF)V
 
@@ -405,7 +403,7 @@
 .end method
 
 .method public final b(IIII)V
-    .locals 5
+    .locals 4
 
     invoke-virtual {p0}, Lcom/google/android/apps/camera/autotimer/ui/AutoTimerIndicatorView;->getDisplay()Landroid/view/Display;
 
@@ -425,15 +423,11 @@
     :goto_0
     iput v0, p0, Lcom/google/android/apps/camera/autotimer/ui/AutoTimerIndicatorView;->v:I
 
-    sub-int v1, p3, p1
+    iget-object v1, p0, Lcom/google/android/apps/camera/autotimer/ui/AutoTimerIndicatorView;->o:Landroid/graphics/Matrix;
 
-    sub-int v2, p4, p2
+    invoke-virtual {v1}, Landroid/graphics/Matrix;->reset()V
 
-    iget-object v3, p0, Lcom/google/android/apps/camera/autotimer/ui/AutoTimerIndicatorView;->o:Landroid/graphics/Matrix;
-
-    invoke-virtual {v3}, Landroid/graphics/Matrix;->reset()V
-
-    iget-object v3, p0, Lcom/google/android/apps/camera/autotimer/ui/AutoTimerIndicatorView;->o:Landroid/graphics/Matrix;
+    iget-object v1, p0, Lcom/google/android/apps/camera/autotimer/ui/AutoTimerIndicatorView;->o:Landroid/graphics/Matrix;
 
     neg-int v0, v0
 
@@ -441,21 +435,25 @@
 
     int-to-float v0, v0
 
-    const/high16 v4, 0x3f000000    # 0.5f
+    const/high16 v2, 0x3f000000    # 0.5f
 
-    invoke-virtual {v3, v0, v4, v4}, Landroid/graphics/Matrix;->postRotate(FFF)Z
+    invoke-virtual {v1, v0, v2, v2}, Landroid/graphics/Matrix;->postRotate(FFF)Z
 
     iget-object v0, p0, Lcom/google/android/apps/camera/autotimer/ui/AutoTimerIndicatorView;->o:Landroid/graphics/Matrix;
 
-    int-to-float v2, v2
+    sub-int v1, p3, p1
 
     int-to-float v1, v1
 
-    mul-float v1, v1, v4
+    mul-float v1, v1, v2
 
-    mul-float v2, v2, v4
+    sub-int v3, p4, p2
 
-    invoke-virtual {v0, v1, v2}, Landroid/graphics/Matrix;->postTranslate(FF)Z
+    int-to-float v3, v3
+
+    mul-float v3, v3, v2
+
+    invoke-virtual {v0, v1, v3}, Landroid/graphics/Matrix;->postTranslate(FF)Z
 
     iget v0, p0, Lcom/google/android/apps/camera/autotimer/ui/AutoTimerIndicatorView;->v:I
 
@@ -471,11 +469,11 @@
 
     neg-float p3, p3
 
+    mul-float p3, p3, v2
+
     iget p4, p0, Lcom/google/android/apps/camera/autotimer/ui/AutoTimerIndicatorView;->i:I
 
     int-to-float p4, p4
-
-    mul-float p3, p3, v4
 
     add-float/2addr p3, p4
 
@@ -501,11 +499,11 @@
 
     neg-float p1, p1
 
+    mul-float p1, p1, v2
+
     iget p3, p0, Lcom/google/android/apps/camera/autotimer/ui/AutoTimerIndicatorView;->i:I
 
     int-to-float p3, p3
-
-    mul-float p1, p1, v4
 
     add-float/2addr p1, p3
 
@@ -539,7 +537,7 @@
 .end method
 
 .method protected final onDraw(Landroid/graphics/Canvas;)V
-    .locals 10
+    .locals 9
 
     invoke-virtual {p0}, Lcom/google/android/apps/camera/autotimer/ui/AutoTimerIndicatorView;->getLeft()I
 
@@ -597,11 +595,11 @@
 
     move-result v0
 
+    iget-object v1, p0, Lcom/google/android/apps/camera/autotimer/ui/AutoTimerIndicatorView;->s:Landroid/graphics/RectF;
+
     neg-int v0, v0
 
     int-to-float v0, v0
-
-    iget-object v1, p0, Lcom/google/android/apps/camera/autotimer/ui/AutoTimerIndicatorView;->s:Landroid/graphics/RectF;
 
     const/high16 v2, 0x3f000000    # 0.5f
 
@@ -645,19 +643,19 @@
 
     add-float/2addr v1, v2
 
+    const/high16 v2, 0x437f0000    # 255.0f
+
+    mul-float v1, v1, v2
+
+    float-to-int v1, v1
+
+    shl-int/lit8 v1, v1, 0x18
+
     iget v2, p0, Lcom/google/android/apps/camera/autotimer/ui/AutoTimerIndicatorView;->g:I
 
     const v3, 0xffffff
 
     and-int/2addr v2, v3
-
-    const/high16 v3, 0x437f0000    # 255.0f
-
-    mul-float v1, v1, v3
-
-    float-to-int v1, v1
-
-    shl-int/lit8 v1, v1, 0x18
 
     or-int/2addr v1, v2
 
@@ -679,43 +677,45 @@
 
     iget v1, p0, Lcom/google/android/apps/camera/autotimer/ui/AutoTimerIndicatorView;->l:F
 
-    sub-float v3, v0, v1
+    iget-object v2, p0, Lcom/google/android/apps/camera/autotimer/ui/AutoTimerIndicatorView;->r:Landroid/graphics/RectF;
 
-    iget-object v0, p0, Lcom/google/android/apps/camera/autotimer/ui/AutoTimerIndicatorView;->r:Landroid/graphics/RectF;
+    iget v2, v2, Landroid/graphics/RectF;->top:F
 
-    iget v0, v0, Landroid/graphics/RectF;->top:F
+    iget v3, p0, Lcom/google/android/apps/camera/autotimer/ui/AutoTimerIndicatorView;->l:F
 
-    iget v1, p0, Lcom/google/android/apps/camera/autotimer/ui/AutoTimerIndicatorView;->l:F
+    iget-object v4, p0, Lcom/google/android/apps/camera/autotimer/ui/AutoTimerIndicatorView;->r:Landroid/graphics/RectF;
 
-    sub-float v4, v0, v1
+    iget v4, v4, Landroid/graphics/RectF;->right:F
 
-    iget-object v0, p0, Lcom/google/android/apps/camera/autotimer/ui/AutoTimerIndicatorView;->r:Landroid/graphics/RectF;
+    iget v5, p0, Lcom/google/android/apps/camera/autotimer/ui/AutoTimerIndicatorView;->l:F
 
-    iget v0, v0, Landroid/graphics/RectF;->right:F
+    iget-object v6, p0, Lcom/google/android/apps/camera/autotimer/ui/AutoTimerIndicatorView;->r:Landroid/graphics/RectF;
 
-    iget v1, p0, Lcom/google/android/apps/camera/autotimer/ui/AutoTimerIndicatorView;->l:F
+    iget v6, v6, Landroid/graphics/RectF;->bottom:F
 
-    add-float v5, v0, v1
+    iget v7, p0, Lcom/google/android/apps/camera/autotimer/ui/AutoTimerIndicatorView;->l:F
 
-    iget-object v0, p0, Lcom/google/android/apps/camera/autotimer/ui/AutoTimerIndicatorView;->r:Landroid/graphics/RectF;
+    iget v8, p0, Lcom/google/android/apps/camera/autotimer/ui/AutoTimerIndicatorView;->k:I
 
-    iget v0, v0, Landroid/graphics/RectF;->bottom:F
+    int-to-float v8, v8
 
-    iget v1, p0, Lcom/google/android/apps/camera/autotimer/ui/AutoTimerIndicatorView;->l:F
+    sub-float v1, v0, v1
 
-    add-float v6, v0, v1
+    sub-float/2addr v2, v3
 
-    iget v0, p0, Lcom/google/android/apps/camera/autotimer/ui/AutoTimerIndicatorView;->k:I
+    add-float v3, v4, v5
 
-    int-to-float v8, v0
+    add-float v4, v6, v7
 
-    iget-object v9, p0, Lcom/google/android/apps/camera/autotimer/ui/AutoTimerIndicatorView;->q:Landroid/graphics/Paint;
+    iget-object v7, p0, Lcom/google/android/apps/camera/autotimer/ui/AutoTimerIndicatorView;->q:Landroid/graphics/Paint;
 
-    move-object v2, p1
+    move-object v0, p1
 
-    move v7, v8
+    move v5, v8
 
-    invoke-virtual/range {v2 .. v9}, Landroid/graphics/Canvas;->drawRoundRect(FFFFFFLandroid/graphics/Paint;)V
+    move v6, v8
+
+    invoke-virtual/range {v0 .. v7}, Landroid/graphics/Canvas;->drawRoundRect(FFFFFFLandroid/graphics/Paint;)V
 
     iget-object v0, p0, Lcom/google/android/apps/camera/autotimer/ui/AutoTimerIndicatorView;->u:Landroid/graphics/RectF;
 

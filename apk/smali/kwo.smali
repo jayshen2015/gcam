@@ -1,148 +1,45 @@
 .class public final Lkwo;
-.super Lnws;
-
-# interfaces
-.implements Lnxz;
+.super Ljava/lang/Object;
 
 
 # static fields
-.field public static final a:Lkwo;
+.field public static final a:Lkif;
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
+.end field
 
-.field private static volatile b:Lnyf;
+.field private static final b:Lmip;
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 2
+    .locals 9
 
-    new-instance v0, Lkwo;
+    new-instance v2, Lkwm;
 
-    invoke-direct {v0}, Lkwo;-><init>()V
+    invoke-direct {v2}, Lkwm;-><init>()V
 
-    sput-object v0, Lkwo;->a:Lkwo;
+    sput-object v2, Lkwo;->b:Lmip;
 
-    const-class v1, Lkwo;
+    new-instance v8, Lkif;
 
-    invoke-static {v1, v0}, Lnws;->aa(Ljava/lang/Class;Lnws;)V
+    const-string v1, "Wearable.API"
+
+    const/4 v3, 0x0
+
+    const/4 v4, 0x0
+
+    const/4 v5, 0x0
+
+    const/4 v6, 0x0
+
+    const/4 v7, 0x0
+
+    move-object v0, v8
+
+    invoke-direct/range {v0 .. v7}, Lkif;-><init>(Ljava/lang/String;Lmip;[B[B[B[B[B)V
+
+    sput-object v8, Lkwo;->a:Lkif;
 
     return-void
-.end method
-
-.method private constructor <init>()V
-    .locals 1
-
-    invoke-direct {p0}, Lnws;-><init>()V
-
-    sget-object v0, Lnyi;->b:Lnyi;
-
-    return-void
-.end method
-
-
-# virtual methods
-.method protected final a(ILjava/lang/Object;)Ljava/lang/Object;
-    .locals 1
-
-    add-int/lit8 p1, p1, -0x1
-
-    const/4 p2, 0x0
-
-    packed-switch p1, :pswitch_data_0
-
-    :pswitch_0
-    return-object p2
-
-    :pswitch_1
-    sget-object p1, Lkwo;->b:Lnyf;
-
-    if-nez p1, :cond_1
-
-    const-class p2, Lkwo;
-
-    monitor-enter p2
-
-    :try_start_0
-    sget-object p1, Lkwo;->b:Lnyf;
-
-    if-nez p1, :cond_0
-
-    new-instance p1, Lnwo;
-
-    sget-object v0, Lkwo;->a:Lkwo;
-
-    invoke-direct {p1, v0}, Lnwo;-><init>(Lnws;)V
-
-    sput-object p1, Lkwo;->b:Lnyf;
-
-    :cond_0
-    monitor-exit p2
-
-    goto :goto_0
-
-    :catchall_0
-    move-exception p1
-
-    monitor-exit p2
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw p1
-
-    :cond_1
-    :goto_0
-    return-object p1
-
-    :pswitch_2
-    sget-object p1, Lkwo;->a:Lkwo;
-
-    return-object p1
-
-    :pswitch_3
-    new-instance p1, Lnwn;
-
-    sget-object p2, Lkwo;->a:Lkwo;
-
-    invoke-direct {p1, p2}, Lnwn;-><init>(Lnws;)V
-
-    return-object p1
-
-    :pswitch_4
-    new-instance p1, Lkwo;
-
-    invoke-direct {p1}, Lkwo;-><init>()V
-
-    return-object p1
-
-    :pswitch_5
-    sget-object p1, Lkwo;->a:Lkwo;
-
-    const-string v0, "\u0001\u0000"
-
-    invoke-static {p1, v0, p2}, Lkwo;->X(Lnxy;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object p1
-
-    return-object p1
-
-    :pswitch_6
-    const/4 p1, 0x1
-
-    invoke-static {p1}, Ljava/lang/Byte;->valueOf(B)Ljava/lang/Byte;
-
-    move-result-object p1
-
-    return-object p1
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_6
-        :pswitch_0
-        :pswitch_5
-        :pswitch_4
-        :pswitch_3
-        :pswitch_2
-        :pswitch_1
-    .end packed-switch
 .end method

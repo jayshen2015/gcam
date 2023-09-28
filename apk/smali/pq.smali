@@ -1,55 +1,147 @@
-.class final Lpq;
+.class public abstract Lpq;
 .super Ljava/lang/Object;
-
-# interfaces
-.implements Lph;
 
 
 # instance fields
-.field final synthetic a:Lpr;
+.field protected final a:Lqc;
 
-.field private final b:Lpn;
+.field public b:I
+
+.field final c:Landroid/graphics/Rect;
 
 
 # direct methods
-.method public constructor <init>(Lpr;Lpn;)V
-    .locals 0
-
-    iput-object p1, p0, Lpq;->a:Lpr;
+.method public constructor <init>(Lqc;)V
+    .locals 1
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p2, p0, Lpq;->b:Lpn;
+    const/high16 v0, -0x80000000
+
+    iput v0, p0, Lpq;->b:I
+
+    new-instance v0, Landroid/graphics/Rect;
+
+    invoke-direct {v0}, Landroid/graphics/Rect;-><init>()V
+
+    iput-object v0, p0, Lpq;->c:Landroid/graphics/Rect;
+
+    iput-object p1, p0, Lpq;->a:Lqc;
 
     return-void
 .end method
 
+.method public static p(Lqc;)Lpq;
+    .locals 1
+
+    new-instance v0, Lpo;
+
+    invoke-direct {v0, p0}, Lpo;-><init>(Lqc;)V
+
+    return-object v0
+.end method
+
+.method public static q(Lqc;I)Lpq;
+    .locals 0
+
+    packed-switch p1, :pswitch_data_0
+
+    invoke-static {p0}, Lpq;->r(Lqc;)Lpq;
+
+    move-result-object p0
+
+    return-object p0
+
+    :pswitch_0
+    invoke-static {p0}, Lpq;->p(Lqc;)Lpq;
+
+    move-result-object p0
+
+    return-object p0
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
+.end method
+
+.method public static r(Lqc;)Lpq;
+    .locals 1
+
+    new-instance v0, Lpp;
+
+    invoke-direct {v0, p0}, Lpp;-><init>(Lqc;)V
+
+    return-object v0
+.end method
+
 
 # virtual methods
-.method public final b()V
+.method public abstract a(Landroid/view/View;)I
+.end method
+
+.method public abstract b(Landroid/view/View;)I
+.end method
+
+.method public abstract c(Landroid/view/View;)I
+.end method
+
+.method public abstract d(Landroid/view/View;)I
+.end method
+
+.method public abstract e()I
+.end method
+
+.method public abstract f()I
+.end method
+
+.method public abstract g()I
+.end method
+
+.method public abstract h()I
+.end method
+
+.method public abstract i()I
+.end method
+
+.method public abstract j()I
+.end method
+
+.method public abstract k()I
+.end method
+
+.method public abstract l(Landroid/view/View;)I
+.end method
+
+.method public abstract m(Landroid/view/View;)I
+.end method
+
+.method public abstract n(I)V
+.end method
+
+.method public final o()I
     .locals 2
 
-    iget-object v0, p0, Lpq;->a:Lpr;
+    iget v0, p0, Lpq;->b:I
 
-    iget-object v0, v0, Lpr;->a:Lojv;
+    const/high16 v1, -0x80000000
 
-    iget-object v1, p0, Lpq;->b:Lpn;
+    if-ne v0, v1, :cond_0
 
-    invoke-virtual {v0, v1}, Lojv;->remove(Ljava/lang/Object;)Z
+    const/4 v0, 0x0
 
-    iget-object v0, p0, Lpq;->b:Lpn;
+    return v0
 
-    invoke-virtual {v0, p0}, Lpn;->c(Lph;)V
+    :cond_0
+    invoke-virtual {p0}, Lpq;->k()I
 
-    iget-object v0, p0, Lpq;->b:Lpn;
+    move-result v0
 
-    const/4 v1, 0x0
+    iget v1, p0, Lpq;->b:I
 
-    iput-object v1, v0, Lpn;->d:Lolz;
+    sub-int/2addr v0, v1
 
-    iget-object v0, p0, Lpq;->a:Lpr;
-
-    invoke-virtual {v0}, Lpr;->d()V
-
-    return-void
+    return v0
 .end method

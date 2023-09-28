@@ -1,45 +1,45 @@
 .class public Lcom/google/android/apps/camera/videoplayer/VideoPlayerActivity;
-.super Lei;
+.super Lih;
 
 
 # instance fields
-.field private final q:Landroid/content/BroadcastReceiver;
+.field private final k:Landroid/content/BroadcastReceiver;
 
 
 # direct methods
 .method public constructor <init>()V
     .locals 1
 
-    invoke-direct {p0}, Lei;-><init>()V
+    invoke-direct {p0}, Lih;-><init>()V
 
-    new-instance v0, Lind;
+    new-instance v0, Ljuv;
 
-    invoke-direct {v0, p0}, Lind;-><init>(Lcom/google/android/apps/camera/videoplayer/VideoPlayerActivity;)V
+    invoke-direct {v0, p0}, Ljuv;-><init>(Lcom/google/android/apps/camera/videoplayer/VideoPlayerActivity;)V
 
-    iput-object v0, p0, Lcom/google/android/apps/camera/videoplayer/VideoPlayerActivity;->q:Landroid/content/BroadcastReceiver;
+    iput-object v0, p0, Lcom/google/android/apps/camera/videoplayer/VideoPlayerActivity;->k:Landroid/content/BroadcastReceiver;
 
     return-void
 .end method
 
-.method private final n()Line;
+.method private final k()Ljux;
     .locals 2
 
-    invoke-virtual {p0}, Lbz;->bI()Lcq;
+    invoke-virtual {p0}, Lby;->fm()Lcu;
 
     move-result-object v0
 
-    const v1, 0x7f0b03e2
+    const v1, 0x7f0b0358
 
-    invoke-virtual {v0, v1}, Lcq;->d(I)Lbw;
+    invoke-virtual {v0, v1}, Lcu;->c(I)Lbu;
 
     move-result-object v0
 
-    check-cast v0, Line;
+    check-cast v0, Ljux;
 
     return-object v0
 .end method
 
-.method private final o(Landroid/net/Uri;)V
+.method private final l(Landroid/net/Uri;)V
     .locals 3
 
     new-instance v0, Landroid/os/Bundle;
@@ -56,23 +56,23 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/os/Bundle;->putBoolean(Ljava/lang/String;Z)V
 
-    invoke-static {v0, p1}, Line;->c(Landroid/os/Bundle;Landroid/net/Uri;)Line;
+    invoke-static {v0, p1}, Ljux;->k(Landroid/os/Bundle;Landroid/net/Uri;)Ljux;
 
     move-result-object p1
 
-    invoke-virtual {p0}, Lbz;->bI()Lcq;
+    invoke-virtual {p0}, Lby;->fm()Lcu;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lcq;->i()Lcx;
+    invoke-virtual {v0}, Lcu;->h()Ldd;
 
     move-result-object v0
 
-    const v1, 0x7f0b03e2
+    const v1, 0x7f0b0358
 
-    invoke-virtual {v0, v1, p1}, Lcx;->m(ILbw;)V
+    invoke-virtual {v0, v1, p1}, Ldd;->l(ILbu;)V
 
-    invoke-virtual {v0}, Lcx;->h()V
+    invoke-virtual {v0}, Ldd;->g()V
 
     return-void
 .end method
@@ -82,13 +82,13 @@
 .method protected final onCreate(Landroid/os/Bundle;)V
     .locals 1
 
-    invoke-super {p0, p1}, Lei;->onCreate(Landroid/os/Bundle;)V
+    invoke-super {p0, p1}, Lih;->onCreate(Landroid/os/Bundle;)V
 
-    const p1, 0x7f0e010d
+    const p1, 0x7f0e0108
 
-    invoke-virtual {p0, p1}, Lpl;->setContentView(I)V
+    invoke-virtual {p0, p1}, Lub;->setContentView(I)V
 
-    invoke-direct {p0}, Lcom/google/android/apps/camera/videoplayer/VideoPlayerActivity;->n()Line;
+    invoke-direct {p0}, Lcom/google/android/apps/camera/videoplayer/VideoPlayerActivity;->k()Ljux;
 
     move-result-object p1
 
@@ -104,7 +104,7 @@
 
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    invoke-direct {p0, p1}, Lcom/google/android/apps/camera/videoplayer/VideoPlayerActivity;->o(Landroid/net/Uri;)V
+    invoke-direct {p0, p1}, Lcom/google/android/apps/camera/videoplayer/VideoPlayerActivity;->l(Landroid/net/Uri;)V
 
     :cond_0
     new-instance p1, Landroid/content/IntentFilter;
@@ -113,7 +113,7 @@
 
     invoke-direct {p1, v0}, Landroid/content/IntentFilter;-><init>(Ljava/lang/String;)V
 
-    iget-object v0, p0, Lcom/google/android/apps/camera/videoplayer/VideoPlayerActivity;->q:Landroid/content/BroadcastReceiver;
+    iget-object v0, p0, Lcom/google/android/apps/camera/videoplayer/VideoPlayerActivity;->k:Landroid/content/BroadcastReceiver;
 
     invoke-virtual {p0, v0, p1}, Lcom/google/android/apps/camera/videoplayer/VideoPlayerActivity;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;)Landroid/content/Intent;
 
@@ -123,11 +123,11 @@
 .method protected final onDestroy()V
     .locals 1
 
-    iget-object v0, p0, Lcom/google/android/apps/camera/videoplayer/VideoPlayerActivity;->q:Landroid/content/BroadcastReceiver;
+    iget-object v0, p0, Lcom/google/android/apps/camera/videoplayer/VideoPlayerActivity;->k:Landroid/content/BroadcastReceiver;
 
     invoke-virtual {p0, v0}, Lcom/google/android/apps/camera/videoplayer/VideoPlayerActivity;->unregisterReceiver(Landroid/content/BroadcastReceiver;)V
 
-    invoke-super {p0}, Lei;->onDestroy()V
+    invoke-super {p0}, Lih;->onDestroy()V
 
     return-void
 .end method
@@ -135,25 +135,25 @@
 .method protected final onNewIntent(Landroid/content/Intent;)V
     .locals 2
 
-    invoke-super {p0, p1}, Lei;->onNewIntent(Landroid/content/Intent;)V
+    invoke-super {p0, p1}, Lih;->onNewIntent(Landroid/content/Intent;)V
 
-    invoke-direct {p0}, Lcom/google/android/apps/camera/videoplayer/VideoPlayerActivity;->n()Line;
+    invoke-direct {p0}, Lcom/google/android/apps/camera/videoplayer/VideoPlayerActivity;->k()Ljux;
 
     move-result-object v0
 
     if-eqz v0, :cond_0
 
-    invoke-virtual {p0}, Lbz;->bI()Lcq;
+    invoke-virtual {p0}, Lby;->fm()Lcu;
 
     move-result-object v1
 
-    invoke-virtual {v1}, Lcq;->i()Lcx;
+    invoke-virtual {v1}, Lcu;->h()Ldd;
 
     move-result-object v1
 
-    invoke-virtual {v1, v0}, Lcx;->k(Lbw;)V
+    invoke-virtual {v1, v0}, Ldd;->j(Lbu;)V
 
-    invoke-virtual {v1}, Lcx;->h()V
+    invoke-virtual {v1}, Ldd;->g()V
 
     :cond_0
     invoke-virtual {p1}, Landroid/content/Intent;->getData()Landroid/net/Uri;
@@ -162,7 +162,7 @@
 
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    invoke-direct {p0, p1}, Lcom/google/android/apps/camera/videoplayer/VideoPlayerActivity;->o(Landroid/net/Uri;)V
+    invoke-direct {p0, p1}, Lcom/google/android/apps/camera/videoplayer/VideoPlayerActivity;->l(Landroid/net/Uri;)V
 
     return-void
 .end method

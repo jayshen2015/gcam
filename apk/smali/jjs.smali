@@ -1,52 +1,83 @@
-.class public final Ljjs;
-.super Ljde;
+.class public final synthetic Ljjs;
+.super Ljava/lang/Object;
 
-
-# static fields
-.field public static final b:Ljjr;
+# interfaces
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field public final a:Landroid/app/Activity;
+.field public final synthetic a:Ljjv;
+
+.field public final synthetic b:Z
+
+.field private final synthetic c:I
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
+.method public synthetic constructor <init>(Ljjv;ZI)V
+    .locals 0
 
-    new-instance v0, Ljjr;
+    iput p3, p0, Ljjs;->c:I
 
-    invoke-direct {v0}, Ljjr;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    sput-object v0, Ljjs;->b:Ljjr;
+    iput-object p1, p0, Ljjs;->a:Ljjv;
+
+    iput-boolean p2, p0, Ljjs;->b:Z
 
     return-void
 .end method
 
-.method public constructor <init>(Landroid/app/Activity;)V
-    .locals 9
 
-    sget-object v3, Ljjm;->b:Ligo;
+# virtual methods
+.method public final run()V
+    .locals 3
 
-    const/4 v4, 0x0
+    iget v0, p0, Ljjs;->c:I
 
-    sget-object v5, Ljdd;->a:Ljdd;
+    packed-switch v0, :pswitch_data_0
 
-    const/4 v6, 0x0
+    iget-object v0, p0, Ljjs;->a:Ljjv;
 
-    const/4 v7, 0x0
+    iget-boolean v1, p0, Ljjs;->b:Z
 
-    const/4 v8, 0x0
+    iget-object v2, v0, Ljjv;->a:Lcom/google/android/apps/camera/ui/shutterbutton/ShutterButton;
 
-    move-object v0, p0
+    invoke-virtual {v2}, Lcom/google/android/apps/camera/ui/shutterbutton/ShutterButton;->isClickEnabled()Z
 
-    move-object v1, p1
+    move-result v2
 
-    move-object v2, p1
+    if-eq v2, v1, :cond_1
 
-    invoke-direct/range {v0 .. v8}, Ljde;-><init>(Landroid/content/Context;Landroid/app/Activity;Ligo;Ljcy;Ljdd;[B[B[B)V
+    iget-object v0, v0, Ljjv;->a:Lcom/google/android/apps/camera/ui/shutterbutton/ShutterButton;
 
-    iput-object p1, p0, Ljjs;->a:Landroid/app/Activity;
+    invoke-virtual {v0, v1}, Lcom/google/android/apps/camera/ui/shutterbutton/ShutterButton;->setClickEnabled(Z)V
 
     return-void
+
+    :pswitch_0
+    iget-object v0, p0, Ljjs;->a:Ljjv;
+
+    iget-boolean v1, p0, Ljjs;->b:Z
+
+    iget-object v2, v0, Ljjv;->a:Lcom/google/android/apps/camera/ui/shutterbutton/ShutterButton;
+
+    invoke-virtual {v2}, Lcom/google/android/apps/camera/ui/shutterbutton/ShutterButton;->isEnabled()Z
+
+    move-result v2
+
+    if-eq v2, v1, :cond_0
+
+    invoke-virtual {v0, v1}, Ljjv;->g(Z)V
+
+    :cond_0
+    return-void
+
+    :cond_1
+    return-void
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

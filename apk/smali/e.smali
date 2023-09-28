@@ -454,53 +454,53 @@
 .method public static a(I)Z
     .locals 3
 
-    const/16 v0, 0xff
+    const/4 v0, 0x1
 
-    const/4 v1, 0x1
+    const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    const/16 v2, 0xff
 
-    if-gt p0, v0, :cond_1
+    if-gt p0, v2, :cond_1
 
-    sget-object v0, Le;->a:[B
+    sget-object v2, Le;->a:[B
 
-    aget-byte p0, v0, p0
+    aget-byte p0, v2, p0
 
-    const/4 v0, 0x5
+    const/4 v2, 0x5
 
-    if-ne p0, v0, :cond_0
+    if-ne p0, v2, :cond_0
 
-    return v1
+    return v0
 
     :cond_0
-    return v2
+    return v1
 
     :cond_1
-    const/16 v0, 0x200e
+    const/16 v2, 0x200e
 
-    if-lt p0, v0, :cond_4
+    if-lt p0, v2, :cond_4
 
-    const/16 v0, 0x2029
+    const/16 v2, 0x2029
 
-    if-gt p0, v0, :cond_4
+    if-gt p0, v2, :cond_4
 
-    const/16 v0, 0x200f
+    const/16 v2, 0x200f
 
-    if-le p0, v0, :cond_3
+    if-le p0, v2, :cond_3
 
-    const/16 v0, 0x2028
+    const/16 v2, 0x2028
 
-    if-lt p0, v0, :cond_2
+    if-lt p0, v2, :cond_2
 
     goto :goto_0
 
     :cond_2
-    return v2
+    return v1
 
     :cond_3
     :goto_0
-    return v1
+    return v0
 
     :cond_4
-    return v2
+    return v1
 .end method

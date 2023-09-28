@@ -1,88 +1,232 @@
-.class public final synthetic Lipt;
-.super Ljava/lang/Object;
-
-# interfaces
-.implements Ljon;
+.class Lipt;
+.super Liph;
 
 
 # instance fields
-.field public final synthetic a:Lipw;
-
-.field public final synthetic b:Lnph;
+.field final synthetic b:Lipx;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lipw;Lnph;)V
+.method public constructor <init>(Lipx;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lipt;->b:Lipx;
 
-    iput-object p1, p0, Lipt;->a:Lipw;
-
-    iput-object p2, p0, Lipt;->b:Lnph;
+    invoke-direct {p0}, Liph;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Ljot;)V
-    .locals 4
+.method public a()V
+    .locals 11
 
-    iget-object v0, p0, Lipt;->a:Lipw;
+    iget-object v0, p0, Lipt;->b:Lipx;
 
-    iget-object v1, p0, Lipt;->b:Lnph;
+    iget-object v0, v0, Lipx;->l:Liqj;
 
-    const/4 v2, 0x0
+    invoke-virtual {v0}, Liqj;->g()V
 
-    :try_start_0
-    invoke-virtual {p1}, Ljot;->c()Ljava/lang/Object;
+    iget-object v0, p0, Lipt;->b:Lipx;
 
-    move-result-object p1
+    iget-object v0, v0, Lipx;->l:Liqj;
 
-    check-cast p1, Ljava/util/List;
+    iget-object v1, v0, Liqj;->k:Lddf;
 
-    if-eqz p1, :cond_0
+    sget-object v2, Ldcu;->J:Lddg;
 
-    invoke-interface {p1}, Ljava/util/List;->isEmpty()Z
+    invoke-interface {v1, v2}, Lddf;->k(Lddg;)Z
 
-    move-result p1
+    move-result v1
 
-    xor-int/lit8 p1, p1, 0x1
+    if-eqz v1, :cond_0
 
-    invoke-static {p1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+    iget-object v1, v0, Liqj;->I:Lcmq;
 
-    move-result-object p1
+    invoke-virtual {v1}, Lcmq;->d()V
 
-    invoke-virtual {v1, p1}, Lnph;->e(Ljava/lang/Object;)Z
-
-    return-void
+    goto :goto_1
 
     :cond_0
-    invoke-static {v2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+    iget-object v1, v0, Liqj;->i:Liro;
 
-    move-result-object p1
+    iget-object v2, v1, Liro;->d:Ljava/util/concurrent/atomic/AtomicLong;
 
-    invoke-virtual {v1, p1}, Lnph;->e(Ljava/lang/Object;)Z
-    :try_end_0
-    .catch Ljos; {:try_start_0 .. :try_end_0} :catch_0
+    iget-object v3, v1, Liro;->h:Ljun;
+
+    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
+
+    move-result-wide v3
+
+    iget-object v5, v1, Liro;->c:Ljava/util/concurrent/atomic/AtomicLong;
+
+    invoke-virtual {v5}, Ljava/util/concurrent/atomic/AtomicLong;->get()J
+
+    move-result-wide v5
+
+    sub-long/2addr v3, v5
+
+    iget-object v5, v1, Liro;->d:Ljava/util/concurrent/atomic/AtomicLong;
+
+    invoke-virtual {v5}, Ljava/util/concurrent/atomic/AtomicLong;->get()J
+
+    move-result-wide v5
+
+    add-long/2addr v3, v5
+
+    invoke-virtual {v2, v3, v4}, Ljava/util/concurrent/atomic/AtomicLong;->set(J)V
+
+    iget-object v2, v1, Liro;->h:Ljun;
+
+    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
+
+    move-result-wide v2
+
+    iget-object v4, v1, Liro;->e:Ljava/util/concurrent/atomic/AtomicLong;
+
+    invoke-virtual {v4}, Ljava/util/concurrent/atomic/AtomicLong;->get()J
+
+    move-result-wide v4
+
+    sub-long/2addr v2, v4
+
+    iget-object v4, v1, Liro;->d:Ljava/util/concurrent/atomic/AtomicLong;
+
+    invoke-virtual {v4}, Ljava/util/concurrent/atomic/AtomicLong;->get()J
+
+    move-result-wide v4
+
+    sub-long/2addr v2, v4
+
+    iget-object v4, v1, Liro;->b:Ljava/util/concurrent/atomic/AtomicLong;
+
+    invoke-virtual {v4}, Ljava/util/concurrent/atomic/AtomicLong;->get()J
+
+    move-result-wide v4
+
+    sub-long/2addr v4, v2
+
+    const-wide/16 v6, 0x0
+
+    cmp-long v8, v4, v6
+
+    if-lez v8, :cond_1
+
+    iget-object v8, v1, Liro;->d:Ljava/util/concurrent/atomic/AtomicLong;
+
+    invoke-virtual {v8}, Ljava/util/concurrent/atomic/AtomicLong;->get()J
+
+    move-result-wide v9
+
+    sub-long/2addr v9, v4
+
+    invoke-virtual {v8, v9, v10}, Ljava/util/concurrent/atomic/AtomicLong;->set(J)V
+
+    add-long/2addr v2, v4
+
+    goto :goto_0
+
+    :cond_1
+    :goto_0
+    iget-object v4, v1, Liro;->c:Ljava/util/concurrent/atomic/AtomicLong;
+
+    invoke-virtual {v4, v6, v7}, Ljava/util/concurrent/atomic/AtomicLong;->set(J)V
+
+    invoke-virtual {v1, v2, v3}, Liro;->b(J)V
+
+    :goto_1
+    iget-object v0, v0, Liqj;->a:Ljava/util/concurrent/atomic/AtomicBoolean;
+
+    const/4 v1, 0x1
+
+    invoke-virtual {v0, v1}, Ljava/util/concurrent/atomic/AtomicBoolean;->set(Z)V
 
     return-void
+.end method
 
-    :catch_0
-    move-exception p1
+.method public b()V
+    .locals 1
 
-    iget-object v0, v0, Lipw;->b:Lkaq;
+    iget-object v0, p0, Lipt;->b:Lipx;
 
-    const-string v3, "getConnectedNodes fail with exception "
+    invoke-virtual {v0}, Lipx;->i()V
 
-    invoke-interface {v0, v3, p1}, Lkaq;->j(Ljava/lang/String;Ljava/lang/Throwable;)V
+    return-void
+.end method
 
-    invoke-static {v2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+.method public final f()V
+    .locals 5
 
-    move-result-object p1
+    iget-object v0, p0, Lipt;->b:Lipx;
 
-    invoke-virtual {v1, p1}, Lnph;->e(Ljava/lang/Object;)Z
+    iget-object v0, v0, Lipx;->f:Lcom/google/android/apps/camera/bottombar/BottomBarController;
+
+    invoke-virtual {v0}, Lcom/google/android/apps/camera/bottombar/BottomBarController;->pauseTimelapseRecording()V
+
+    iget-object v0, p0, Lipt;->b:Lipx;
+
+    iget-object v0, v0, Lipx;->k:Ljlb;
+
+    invoke-interface {v0}, Ljlb;->t()V
+
+    iget-object v0, p0, Lipt;->b:Lipx;
+
+    iget-object v0, v0, Lipx;->l:Liqj;
+
+    iget-object v1, v0, Liqj;->k:Lddf;
+
+    sget-object v2, Ldcu;->J:Lddg;
+
+    invoke-interface {v1, v2}, Lddf;->k(Lddg;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    iget-object v1, v0, Liqj;->I:Lcmq;
+
+    invoke-virtual {v1}, Lcmq;->c()V
+
+    goto :goto_0
+
+    :cond_0
+    iget-object v1, v0, Liqj;->i:Liro;
+
+    iget-object v2, v1, Liro;->c:Ljava/util/concurrent/atomic/AtomicLong;
+
+    iget-object v1, v1, Liro;->h:Ljun;
+
+    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
+
+    move-result-wide v3
+
+    invoke-virtual {v2, v3, v4}, Ljava/util/concurrent/atomic/AtomicLong;->set(J)V
+
+    :goto_0
+    iget-object v0, v0, Liqj;->a:Ljava/util/concurrent/atomic/AtomicBoolean;
+
+    const/4 v1, 0x0
+
+    invoke-virtual {v0, v1}, Ljava/util/concurrent/atomic/AtomicBoolean;->set(Z)V
+
+    return-void
+.end method
+
+.method public final g()V
+    .locals 1
+
+    iget-object v0, p0, Lipt;->b:Lipx;
+
+    iget-object v0, v0, Lipx;->f:Lcom/google/android/apps/camera/bottombar/BottomBarController;
+
+    invoke-virtual {v0}, Lcom/google/android/apps/camera/bottombar/BottomBarController;->resumeTimelapseRecording()V
+
+    iget-object v0, p0, Lipt;->b:Lipx;
+
+    iget-object v0, v0, Lipx;->k:Ljlb;
+
+    invoke-interface {v0}, Ljlb;->x()V
 
     return-void
 .end method

@@ -3,14 +3,30 @@
 
 
 # static fields
-.field static final a:Ljava/util/Set;
+.field static final CH_CONCURRENT_ID:Ljava/util/Set;
 
-.field static final b:Ljava/util/Set;
+.field static final CH_CONCURRENT_NOID:Ljava/util/Set;
 
-.field static final c:Ljava/util/Set;
+.field static final CH_ID:Ljava/util/Set;
+
+.field static final CH_NOID:Ljava/util/Set;
+
+.field static final CH_UNORDERED_ID:Ljava/util/Set;
+
+.field static final CH_UNORDERED_NOID:Ljava/util/Set;
 
 
 # direct methods
+.method static bridge synthetic -$$Nest$smcastingIdentity()Lj$/util/function/Function;
+    .locals 1
+
+    invoke-static {}, Lj$/util/stream/Collectors;->castingIdentity()Lj$/util/function/Function;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
 .method static constructor <clinit>()V
     .locals 4
 
@@ -26,11 +42,19 @@
 
     invoke-static {v3}, Ljava/util/Collections;->unmodifiableSet(Ljava/util/Set;)Ljava/util/Set;
 
+    move-result-object v3
+
+    sput-object v3, Lj$/util/stream/Collectors;->CH_CONCURRENT_ID:Ljava/util/Set;
+
     invoke-static {v0, v1}, Ljava/util/EnumSet;->of(Ljava/lang/Enum;Ljava/lang/Enum;)Ljava/util/EnumSet;
 
     move-result-object v0
 
     invoke-static {v0}, Ljava/util/Collections;->unmodifiableSet(Ljava/util/Set;)Ljava/util/Set;
+
+    move-result-object v0
+
+    sput-object v0, Lj$/util/stream/Collectors;->CH_CONCURRENT_NOID:Ljava/util/Set;
 
     invoke-static {v2}, Ljava/util/EnumSet;->of(Ljava/lang/Enum;)Ljava/util/EnumSet;
 
@@ -40,7 +64,7 @@
 
     move-result-object v0
 
-    sput-object v0, Lj$/util/stream/Collectors;->a:Ljava/util/Set;
+    sput-object v0, Lj$/util/stream/Collectors;->CH_ID:Ljava/util/Set;
 
     invoke-static {v1, v2}, Ljava/util/EnumSet;->of(Ljava/lang/Enum;Ljava/lang/Enum;)Ljava/util/EnumSet;
 
@@ -50,13 +74,13 @@
 
     move-result-object v0
 
-    sput-object v0, Lj$/util/stream/Collectors;->b:Ljava/util/Set;
+    sput-object v0, Lj$/util/stream/Collectors;->CH_UNORDERED_ID:Ljava/util/Set;
 
     invoke-static {}, Ljava/util/Collections;->emptySet()Ljava/util/Set;
 
     move-result-object v0
 
-    sput-object v0, Lj$/util/stream/Collectors;->c:Ljava/util/Set;
+    sput-object v0, Lj$/util/stream/Collectors;->CH_NOID:Ljava/util/Set;
 
     invoke-static {v1}, Ljava/util/EnumSet;->of(Ljava/lang/Enum;)Ljava/util/EnumSet;
 
@@ -64,210 +88,314 @@
 
     invoke-static {v0}, Ljava/util/Collections;->unmodifiableSet(Ljava/util/Set;)Ljava/util/Set;
 
+    move-result-object v0
+
+    sput-object v0, Lj$/util/stream/Collectors;->CH_UNORDERED_NOID:Ljava/util/Set;
+
     return-void
 .end method
 
-.method public static a()Lj$/util/stream/Collector;
-    .locals 7
+.method private static castingIdentity()Lj$/util/function/Function;
+    .locals 1
 
-    new-instance v6, Lj$/util/stream/h;
+    sget-object v0, Lj$/util/stream/Collectors$$ExternalSyntheticLambda58;->INSTANCE:Lj$/util/stream/Collectors$$ExternalSyntheticLambda58;
 
-    new-instance v1, Lj$/util/stream/b;
+    return-object v0
+.end method
 
-    const/16 v0, 0x17
+.method private static duplicateKeyException(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/IllegalStateException;
+    .locals 3
 
-    invoke-direct {v1, v0}, Lj$/util/stream/b;-><init>(I)V
+    new-instance v0, Ljava/lang/IllegalStateException;
 
-    new-instance v2, Lj$/util/stream/b;
+    const/4 v1, 0x3
 
-    const/16 v0, 0x18
+    new-array v1, v1, [Ljava/lang/Object;
 
-    invoke-direct {v2, v0}, Lj$/util/stream/b;-><init>(I)V
+    const/4 v2, 0x0
 
-    new-instance v3, Lj$/util/stream/b;
+    aput-object p0, v1, v2
 
-    const/4 v0, 0x4
+    const/4 p0, 0x1
 
-    invoke-direct {v3, v0}, Lj$/util/stream/b;-><init>(I)V
+    aput-object p1, v1, p0
 
-    new-instance v4, Lj$/util/stream/b;
+    const/4 p0, 0x2
 
-    const/4 v0, 0x5
+    aput-object p2, v1, p0
 
-    invoke-direct {v4, v0}, Lj$/util/stream/b;-><init>(I)V
+    const-string p0, "Duplicate key %s (attempted merging values %s and %s)"
 
-    sget-object v5, Lj$/util/stream/Collectors;->c:Ljava/util/Set;
+    invoke-static {p0, v1}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
-    move-object v0, v6
+    move-result-object p0
 
-    invoke-direct/range {v0 .. v5}, Lj$/util/stream/h;-><init>(Ljava/util/function/Supplier;Ljava/util/function/BiConsumer;Ljava/util/function/BinaryOperator;Ljava/util/function/Function;Ljava/util/Set;)V
+    invoke-direct {v0, p0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 
-    return-object v6
+    return-object v0
 .end method
 
 .method public static joining(Ljava/lang/CharSequence;)Lj$/util/stream/Collector;
+    .locals 1
+
+    const-string v0, ""
+
+    invoke-static {p0, v0, v0}, Lj$/util/stream/Collectors;->joining(Ljava/lang/CharSequence;Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Lj$/util/stream/Collector;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public static joining(Ljava/lang/CharSequence;Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Lj$/util/stream/Collector;
     .locals 7
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Ljava/lang/CharSequence;",
-            ")",
-            "Lj$/util/stream/Collector<",
-            "Ljava/lang/CharSequence;",
-            "*",
-            "Ljava/lang/String;",
-            ">;"
-        }
-    .end annotation
 
-    new-instance v6, Lj$/util/stream/h;
+    new-instance v6, Lj$/util/stream/Collectors$CollectorImpl;
 
-    new-instance v1, Lj$/util/stream/g;
+    new-instance v1, Lj$/util/stream/Collectors$$ExternalSyntheticLambda74;
 
-    invoke-direct {v1, p0}, Lj$/util/stream/g;-><init>(Ljava/lang/CharSequence;)V
+    invoke-direct {v1, p0, p1, p2}, Lj$/util/stream/Collectors$$ExternalSyntheticLambda74;-><init>(Ljava/lang/CharSequence;Ljava/lang/CharSequence;Ljava/lang/CharSequence;)V
 
-    new-instance v2, Lj$/util/stream/b;
+    sget-object v2, Lj$/util/stream/Collectors$$ExternalSyntheticLambda25;->INSTANCE:Lj$/util/stream/Collectors$$ExternalSyntheticLambda25;
 
-    const/16 p0, 0x14
+    sget-object v3, Lj$/util/stream/Collectors$$ExternalSyntheticLambda43;->INSTANCE:Lj$/util/stream/Collectors$$ExternalSyntheticLambda43;
 
-    invoke-direct {v2, p0}, Lj$/util/stream/b;-><init>(I)V
+    sget-object v4, Lj$/util/stream/Collectors$$ExternalSyntheticLambda64;->INSTANCE:Lj$/util/stream/Collectors$$ExternalSyntheticLambda64;
 
-    new-instance v3, Lj$/util/stream/b;
-
-    const/16 p0, 0x15
-
-    invoke-direct {v3, p0}, Lj$/util/stream/b;-><init>(I)V
-
-    new-instance v4, Lj$/util/stream/b;
-
-    const/16 p0, 0x16
-
-    invoke-direct {v4, p0}, Lj$/util/stream/b;-><init>(I)V
-
-    sget-object v5, Lj$/util/stream/Collectors;->c:Ljava/util/Set;
+    sget-object v5, Lj$/util/stream/Collectors;->CH_NOID:Ljava/util/Set;
 
     move-object v0, v6
 
-    invoke-direct/range {v0 .. v5}, Lj$/util/stream/h;-><init>(Ljava/util/function/Supplier;Ljava/util/function/BiConsumer;Ljava/util/function/BinaryOperator;Ljava/util/function/Function;Ljava/util/Set;)V
+    invoke-direct/range {v0 .. v5}, Lj$/util/stream/Collectors$CollectorImpl;-><init>(Lj$/util/function/Supplier;Lj$/util/function/BiConsumer;Lj$/util/function/BinaryOperator;Lj$/util/function/Function;Ljava/util/Set;)V
 
     return-object v6
 .end method
 
-.method public static toCollection(Ljava/util/function/Supplier;)Lj$/util/stream/Collector;
+.method static synthetic lambda$castingIdentity$2(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 0
+
+    return-object p0
+.end method
+
+.method static synthetic lambda$joining$11(Ljava/lang/CharSequence;Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Lj$/util/StringJoiner;
+    .locals 1
+
+    new-instance v0, Lj$/util/StringJoiner;
+
+    invoke-direct {v0, p0, p1, p2}, Lj$/util/StringJoiner;-><init>(Ljava/lang/CharSequence;Ljava/lang/CharSequence;Ljava/lang/CharSequence;)V
+
+    return-object v0
+.end method
+
+.method static synthetic lambda$toCollection$3(Ljava/util/Collection;Ljava/util/Collection;)Ljava/util/Collection;
+    .locals 0
+
+    invoke-interface {p0, p1}, Ljava/util/Collection;->addAll(Ljava/util/Collection;)Z
+
+    return-object p0
+.end method
+
+.method static synthetic lambda$toList$4(Ljava/util/List;Ljava/util/List;)Ljava/util/List;
+    .locals 0
+
+    invoke-interface {p0, p1}, Ljava/util/List;->addAll(Ljava/util/Collection;)Z
+
+    return-object p0
+.end method
+
+.method static synthetic lambda$toSet$7(Ljava/util/Set;Ljava/util/Set;)Ljava/util/Set;
+    .locals 2
+
+    invoke-interface {p0}, Ljava/util/Set;->size()I
+
+    move-result v0
+
+    invoke-interface {p1}, Ljava/util/Set;->size()I
+
+    move-result v1
+
+    if-ge v0, v1, :cond_0
+
+    invoke-interface {p1, p0}, Ljava/util/Set;->addAll(Ljava/util/Collection;)Z
+
+    return-object p1
+
+    :cond_0
+    invoke-interface {p0, p1}, Ljava/util/Set;->addAll(Ljava/util/Collection;)Z
+
+    return-object p0
+.end method
+
+.method static synthetic lambda$uniqKeysMapAccumulator$1(Lj$/util/function/Function;Lj$/util/function/Function;Ljava/util/Map;Ljava/lang/Object;)V
+    .locals 0
+
+    invoke-interface {p0, p3}, Lj$/util/function/Function;->apply(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p0
+
+    invoke-interface {p1, p3}, Lj$/util/function/Function;->apply(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p1
+
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    invoke-static {p2, p0, p1}, Lj$/util/Map$-EL;->putIfAbsent(Ljava/util/Map;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p2
+
+    if-nez p2, :cond_0
+
+    return-void
+
+    :cond_0
+    invoke-static {p0, p2, p1}, Lj$/util/stream/Collectors;->duplicateKeyException(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/IllegalStateException;
+
+    move-result-object p0
+
+    throw p0
+.end method
+
+.method static synthetic lambda$uniqKeysMapMerger$0(Ljava/util/Map;Ljava/util/Map;)Ljava/util/Map;
+    .locals 3
+
+    invoke-interface {p1}, Ljava/util/Map;->entrySet()Ljava/util/Set;
+
+    move-result-object p1
+
+    invoke-interface {p1}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
+
+    move-result-object p1
+
+    :goto_0
+    invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/util/Map$Entry;
+
+    invoke-interface {v0}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
+
+    move-result-object v1
+
+    invoke-interface {v0}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    invoke-static {p0, v1, v0}, Lj$/util/Map$-EL;->putIfAbsent(Ljava/util/Map;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v2
+
+    if-nez v2, :cond_0
+
+    goto :goto_0
+
+    :cond_0
+    invoke-static {v1, v2, v0}, Lj$/util/stream/Collectors;->duplicateKeyException(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/IllegalStateException;
+
+    move-result-object p0
+
+    throw p0
+
+    :cond_1
+    return-object p0
+.end method
+
+.method public static toCollection(Lj$/util/function/Supplier;)Lj$/util/stream/Collector;
     .locals 4
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "<T:",
-            "Ljava/lang/Object;",
-            "C::",
-            "Ljava/util/Collection<",
-            "TT;>;>(",
-            "Ljava/util/function/Supplier<",
-            "TC;>;)",
-            "Lj$/util/stream/Collector<",
-            "TT;*TC;>;"
-        }
-    .end annotation
 
-    new-instance v0, Lj$/util/stream/h;
+    new-instance v0, Lj$/util/stream/Collectors$CollectorImpl;
 
-    new-instance v1, Lj$/util/stream/b;
+    sget-object v1, Lj$/util/stream/Collectors$$ExternalSyntheticLambda22;->INSTANCE:Lj$/util/stream/Collectors$$ExternalSyntheticLambda22;
 
-    const/16 v2, 0x11
+    sget-object v2, Lj$/util/stream/Collectors$$ExternalSyntheticLambda34;->INSTANCE:Lj$/util/stream/Collectors$$ExternalSyntheticLambda34;
 
-    invoke-direct {v1, v2}, Lj$/util/stream/b;-><init>(I)V
+    sget-object v3, Lj$/util/stream/Collectors;->CH_ID:Ljava/util/Set;
 
-    new-instance v2, Lj$/util/stream/b;
-
-    const/4 v3, 0x2
-
-    invoke-direct {v2, v3}, Lj$/util/stream/b;-><init>(I)V
-
-    sget-object v3, Lj$/util/stream/Collectors;->a:Ljava/util/Set;
-
-    invoke-direct {v0, p0, v1, v2, v3}, Lj$/util/stream/h;-><init>(Ljava/util/function/Supplier;Lj$/util/stream/b;Lj$/util/stream/b;Ljava/util/Set;)V
+    invoke-direct {v0, p0, v1, v2, v3}, Lj$/util/stream/Collectors$CollectorImpl;-><init>(Lj$/util/function/Supplier;Lj$/util/function/BiConsumer;Lj$/util/function/BinaryOperator;Ljava/util/Set;)V
 
     return-object v0
 .end method
 
 .method public static toList()Lj$/util/stream/Collector;
     .locals 5
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "<T:",
-            "Ljava/lang/Object;",
-            ">()",
-            "Lj$/util/stream/Collector<",
-            "TT;*",
-            "Ljava/util/List<",
-            "TT;>;>;"
-        }
-    .end annotation
 
-    new-instance v0, Lj$/util/stream/h;
+    new-instance v0, Lj$/util/stream/Collectors$CollectorImpl;
 
-    new-instance v1, Lj$/util/stream/b;
+    sget-object v1, Lj$/util/stream/Collectors$$ExternalSyntheticLambda85;->INSTANCE:Lj$/util/stream/Collectors$$ExternalSyntheticLambda85;
 
-    const/16 v2, 0x17
+    sget-object v2, Lj$/util/stream/Collectors$$ExternalSyntheticLambda23;->INSTANCE:Lj$/util/stream/Collectors$$ExternalSyntheticLambda23;
 
-    invoke-direct {v1, v2}, Lj$/util/stream/b;-><init>(I)V
+    sget-object v3, Lj$/util/stream/Collectors$$ExternalSyntheticLambda37;->INSTANCE:Lj$/util/stream/Collectors$$ExternalSyntheticLambda37;
 
-    new-instance v2, Lj$/util/stream/b;
+    sget-object v4, Lj$/util/stream/Collectors;->CH_ID:Ljava/util/Set;
 
-    const/16 v3, 0x18
+    invoke-direct {v0, v1, v2, v3, v4}, Lj$/util/stream/Collectors$CollectorImpl;-><init>(Lj$/util/function/Supplier;Lj$/util/function/BiConsumer;Lj$/util/function/BinaryOperator;Ljava/util/Set;)V
 
-    invoke-direct {v2, v3}, Lj$/util/stream/b;-><init>(I)V
+    return-object v0
+.end method
 
-    new-instance v3, Lj$/util/stream/b;
+.method public static toMap(Lj$/util/function/Function;Lj$/util/function/Function;)Lj$/util/stream/Collector;
+    .locals 3
 
-    const/4 v4, 0x3
+    new-instance v0, Lj$/util/stream/Collectors$CollectorImpl;
 
-    invoke-direct {v3, v4}, Lj$/util/stream/b;-><init>(I)V
+    sget-object v1, Lj$/util/stream/Collectors$$ExternalSyntheticLambda88;->INSTANCE:Lj$/util/stream/Collectors$$ExternalSyntheticLambda88;
 
-    sget-object v4, Lj$/util/stream/Collectors;->a:Ljava/util/Set;
+    invoke-static {p0, p1}, Lj$/util/stream/Collectors;->uniqKeysMapAccumulator(Lj$/util/function/Function;Lj$/util/function/Function;)Lj$/util/function/BiConsumer;
 
-    invoke-direct {v0, v1, v2, v3, v4}, Lj$/util/stream/h;-><init>(Ljava/util/function/Supplier;Lj$/util/stream/b;Lj$/util/stream/b;Ljava/util/Set;)V
+    move-result-object p0
+
+    invoke-static {}, Lj$/util/stream/Collectors;->uniqKeysMapMerger()Lj$/util/function/BinaryOperator;
+
+    move-result-object p1
+
+    sget-object v2, Lj$/util/stream/Collectors;->CH_ID:Ljava/util/Set;
+
+    invoke-direct {v0, v1, p0, p1, v2}, Lj$/util/stream/Collectors$CollectorImpl;-><init>(Lj$/util/function/Supplier;Lj$/util/function/BiConsumer;Lj$/util/function/BinaryOperator;Ljava/util/Set;)V
 
     return-object v0
 .end method
 
 .method public static toSet()Lj$/util/stream/Collector;
     .locals 5
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "<T:",
-            "Ljava/lang/Object;",
-            ">()",
-            "Lj$/util/stream/Collector<",
-            "TT;*",
-            "Ljava/util/Set<",
-            "TT;>;>;"
-        }
-    .end annotation
 
-    new-instance v0, Lj$/util/stream/h;
+    new-instance v0, Lj$/util/stream/Collectors$CollectorImpl;
 
-    new-instance v1, Lj$/util/stream/b;
+    sget-object v1, Lj$/util/stream/Collectors$$ExternalSyntheticLambda89;->INSTANCE:Lj$/util/stream/Collectors$$ExternalSyntheticLambda89;
 
-    const/16 v2, 0x12
+    sget-object v2, Lj$/util/stream/Collectors$$ExternalSyntheticLambda24;->INSTANCE:Lj$/util/stream/Collectors$$ExternalSyntheticLambda24;
 
-    invoke-direct {v1, v2}, Lj$/util/stream/b;-><init>(I)V
+    sget-object v3, Lj$/util/stream/Collectors$$ExternalSyntheticLambda41;->INSTANCE:Lj$/util/stream/Collectors$$ExternalSyntheticLambda41;
 
-    new-instance v2, Lj$/util/stream/b;
+    sget-object v4, Lj$/util/stream/Collectors;->CH_UNORDERED_ID:Ljava/util/Set;
 
-    const/16 v3, 0x13
+    invoke-direct {v0, v1, v2, v3, v4}, Lj$/util/stream/Collectors$CollectorImpl;-><init>(Lj$/util/function/Supplier;Lj$/util/function/BiConsumer;Lj$/util/function/BinaryOperator;Ljava/util/Set;)V
 
-    invoke-direct {v2, v3}, Lj$/util/stream/b;-><init>(I)V
+    return-object v0
+.end method
 
-    new-instance v3, Lj$/util/stream/b;
+.method private static uniqKeysMapAccumulator(Lj$/util/function/Function;Lj$/util/function/Function;)Lj$/util/function/BiConsumer;
+    .locals 1
 
-    const/4 v4, 0x6
+    new-instance v0, Lj$/util/stream/Collectors$$ExternalSyntheticLambda5;
 
-    invoke-direct {v3, v4}, Lj$/util/stream/b;-><init>(I)V
+    invoke-direct {v0, p0, p1}, Lj$/util/stream/Collectors$$ExternalSyntheticLambda5;-><init>(Lj$/util/function/Function;Lj$/util/function/Function;)V
 
-    sget-object v4, Lj$/util/stream/Collectors;->b:Ljava/util/Set;
+    return-object v0
+.end method
 
-    invoke-direct {v0, v1, v2, v3, v4}, Lj$/util/stream/h;-><init>(Ljava/util/function/Supplier;Lj$/util/stream/b;Lj$/util/stream/b;Ljava/util/Set;)V
+.method private static uniqKeysMapMerger()Lj$/util/function/BinaryOperator;
+    .locals 1
+
+    sget-object v0, Lj$/util/stream/Collectors$$ExternalSyntheticLambda40;->INSTANCE:Lj$/util/stream/Collectors$$ExternalSyntheticLambda40;
 
     return-object v0
 .end method

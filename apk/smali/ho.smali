@@ -1,319 +1,260 @@
 .class public final Lho;
-.super Ljava/lang/Object;
-
-# interfaces
-.implements Landroid/view/ViewTreeObserver$OnGlobalLayoutListener;
-
-
-# instance fields
-.field final synthetic a:Ljava/lang/Object;
-
-.field private final synthetic b:I
+.super Lfg;
 
 
 # direct methods
-.method public constructor <init>(Lgq;I)V
+.method public constructor <init>()V
     .locals 0
 
-    iput p2, p0, Lho;->b:I
-
-    iput-object p1, p0, Lho;->a:Ljava/lang/Object;
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
-.end method
-
-.method public constructor <init>(Lhp;I)V
-    .locals 0
-
-    iput p2, p0, Lho;->b:I
-
-    iput-object p1, p0, Lho;->a:Ljava/lang/Object;
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
-.end method
-
-.method public constructor <init>(Ljg;I)V
-    .locals 0
-
-    iput p2, p0, Lho;->b:I
-
-    iput-object p1, p0, Lho;->a:Ljava/lang/Object;
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
-.end method
-
-.method public constructor <init>(Ljj;I)V
-    .locals 0
-
-    iput p2, p0, Lho;->b:I
-
-    iput-object p1, p0, Lho;->a:Ljava/lang/Object;
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Lfg;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onGlobalLayout()V
-    .locals 3
+.method public final b(Landroid/view/View;Landroid/view/accessibility/AccessibilityEvent;)V
+    .locals 1
 
-    iget v0, p0, Lho;->b:I
+    invoke-super {p0, p1, p2}, Lfg;->b(Landroid/view/View;Landroid/view/accessibility/AccessibilityEvent;)V
 
-    packed-switch v0, :pswitch_data_0
+    check-cast p1, Landroid/support/v4/widget/NestedScrollView;
 
-    iget-object v0, p0, Lho;->a:Ljava/lang/Object;
+    const-class v0, Landroid/widget/ScrollView;
 
-    check-cast v0, Ljg;
-
-    iget-object v1, v0, Ljg;->d:Ljj;
-
-    invoke-static {v1}, Lafe;->e(Landroid/view/View;)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_8
-
-    iget-object v0, v0, Ljg;->c:Landroid/graphics/Rect;
-
-    invoke-virtual {v1, v0}, Landroid/view/View;->getGlobalVisibleRect(Landroid/graphics/Rect;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_8
-
-    iget-object v0, p0, Lho;->a:Ljava/lang/Object;
-
-    check-cast v0, Ljg;
-
-    invoke-virtual {v0}, Ljg;->n()V
-
-    iget-object v0, p0, Lho;->a:Ljava/lang/Object;
-
-    check-cast v0, Ljg;
-
-    invoke-static {v0}, Ljg;->m(Ljg;)V
-
-    return-void
-
-    :pswitch_0
-    iget-object v0, p0, Lho;->a:Ljava/lang/Object;
-
-    check-cast v0, Ljj;
-
-    iget-object v0, v0, Ljj;->b:Lji;
-
-    invoke-interface {v0}, Lji;->u()Z
-
-    move-result v0
-
-    if-nez v0, :cond_0
-
-    iget-object v0, p0, Lho;->a:Ljava/lang/Object;
-
-    check-cast v0, Ljj;
-
-    invoke-virtual {v0}, Ljj;->b()V
-
-    :cond_0
-    iget-object v0, p0, Lho;->a:Ljava/lang/Object;
-
-    check-cast v0, Ljj;
-
-    invoke-virtual {v0}, Ljj;->getViewTreeObserver()Landroid/view/ViewTreeObserver;
+    invoke-virtual {v0}, Ljava/lang/Class;->getName()Ljava/lang/String;
 
     move-result-object v0
 
-    if-eqz v0, :cond_1
+    invoke-virtual {p2, v0}, Landroid/view/accessibility/AccessibilityEvent;->setClassName(Ljava/lang/CharSequence;)V
 
-    invoke-static {v0, p0}, Lja;->a(Landroid/view/ViewTreeObserver;Landroid/view/ViewTreeObserver$OnGlobalLayoutListener;)V
-
-    :cond_1
-    return-void
-
-    :pswitch_1
-    iget-object v0, p0, Lho;->a:Ljava/lang/Object;
-
-    check-cast v0, Lgq;
-
-    invoke-virtual {v0}, Lgq;->u()Z
+    invoke-virtual {p1}, Landroid/support/v4/widget/NestedScrollView;->h()I
 
     move-result v0
 
-    if-eqz v0, :cond_4
+    if-lez v0, :cond_0
 
-    iget-object v0, p0, Lho;->a:Ljava/lang/Object;
-
-    check-cast v0, Lgq;
-
-    iget-object v0, v0, Lgq;->b:Ljava/util/List;
-
-    invoke-interface {v0}, Ljava/util/List;->size()I
-
-    move-result v0
-
-    if-lez v0, :cond_4
-
-    iget-object v0, p0, Lho;->a:Ljava/lang/Object;
-
-    check-cast v0, Lgq;
-
-    iget-object v0, v0, Lgq;->b:Ljava/util/List;
-
-    const/4 v1, 0x0
-
-    invoke-interface {v0, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Llpu;
-
-    iget-object v0, v0, Llpu;->b:Ljava/lang/Object;
-
-    check-cast v0, Llg;
-
-    iget-boolean v0, v0, Llg;->p:Z
-
-    if-nez v0, :cond_4
-
-    iget-object v0, p0, Lho;->a:Ljava/lang/Object;
-
-    check-cast v0, Lgq;
-
-    iget-object v0, v0, Lgq;->d:Landroid/view/View;
-
-    if-eqz v0, :cond_3
-
-    invoke-virtual {v0}, Landroid/view/View;->isShown()Z
-
-    move-result v0
-
-    if-nez v0, :cond_2
-
-    goto :goto_1
-
-    :cond_2
-    iget-object v0, p0, Lho;->a:Ljava/lang/Object;
-
-    check-cast v0, Lgq;
-
-    iget-object v0, v0, Lgq;->b:Ljava/util/List;
-
-    invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
-
-    move-result-object v0
-
-    :goto_0
-    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_4
-
-    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Llpu;
-
-    iget-object v1, v1, Llpu;->b:Ljava/lang/Object;
-
-    check-cast v1, Llg;
-
-    invoke-virtual {v1}, Llg;->s()V
+    const/4 v0, 0x1
 
     goto :goto_0
 
+    :cond_0
+    const/4 v0, 0x0
+
+    :goto_0
+    invoke-virtual {p2, v0}, Landroid/view/accessibility/AccessibilityEvent;->setScrollable(Z)V
+
+    invoke-virtual {p1}, Landroid/support/v4/widget/NestedScrollView;->getScrollX()I
+
+    move-result v0
+
+    invoke-virtual {p2, v0}, Landroid/view/accessibility/AccessibilityEvent;->setScrollX(I)V
+
+    invoke-virtual {p1}, Landroid/support/v4/widget/NestedScrollView;->getScrollY()I
+
+    move-result v0
+
+    invoke-virtual {p2, v0}, Landroid/view/accessibility/AccessibilityEvent;->setScrollY(I)V
+
+    invoke-virtual {p1}, Landroid/support/v4/widget/NestedScrollView;->getScrollX()I
+
+    move-result v0
+
+    invoke-virtual {p2, v0}, Landroid/view/accessibility/AccessibilityRecord;->setMaxScrollX(I)V
+
+    invoke-virtual {p1}, Landroid/support/v4/widget/NestedScrollView;->h()I
+
+    move-result p1
+
+    invoke-virtual {p2, p1}, Landroid/view/accessibility/AccessibilityRecord;->setMaxScrollY(I)V
+
+    return-void
+.end method
+
+.method public final c(Landroid/view/View;Lhb;)V
+    .locals 2
+
+    invoke-super {p0, p1, p2}, Lfg;->c(Landroid/view/View;Lhb;)V
+
+    check-cast p1, Landroid/support/v4/widget/NestedScrollView;
+
+    const-class v0, Landroid/widget/ScrollView;
+
+    invoke-virtual {v0}, Ljava/lang/Class;->getName()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {p2, v0}, Lhb;->e(Ljava/lang/CharSequence;)V
+
+    invoke-virtual {p1}, Landroid/support/v4/widget/NestedScrollView;->isEnabled()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    invoke-virtual {p1}, Landroid/support/v4/widget/NestedScrollView;->h()I
+
+    move-result v0
+
+    if-lez v0, :cond_1
+
+    const/4 v1, 0x1
+
+    invoke-virtual {p2, v1}, Lhb;->i(Z)V
+
+    invoke-virtual {p1}, Landroid/support/v4/widget/NestedScrollView;->getScrollY()I
+
+    move-result v1
+
+    if-lez v1, :cond_0
+
+    sget-object v1, Lha;->c:Lha;
+
+    invoke-virtual {p2, v1}, Lhb;->c(Lha;)V
+
+    sget-object v1, Lha;->g:Lha;
+
+    invoke-virtual {p2, v1}, Lhb;->c(Lha;)V
+
+    :cond_0
+    invoke-virtual {p1}, Landroid/support/v4/widget/NestedScrollView;->getScrollY()I
+
+    move-result p1
+
+    if-ge p1, v0, :cond_1
+
+    sget-object p1, Lha;->b:Lha;
+
+    invoke-virtual {p2, p1}, Lhb;->c(Lha;)V
+
+    sget-object p1, Lha;->h:Lha;
+
+    invoke-virtual {p2, p1}, Lhb;->c(Lha;)V
+
+    :cond_1
+    return-void
+.end method
+
+.method public final i(Landroid/view/View;ILandroid/os/Bundle;)Z
+    .locals 4
+
+    invoke-super {p0, p1, p2, p3}, Lfg;->i(Landroid/view/View;ILandroid/os/Bundle;)Z
+
+    move-result p3
+
+    const/4 v0, 0x1
+
+    if-eqz p3, :cond_0
+
+    return v0
+
+    :cond_0
+    check-cast p1, Landroid/support/v4/widget/NestedScrollView;
+
+    invoke-virtual {p1}, Landroid/support/v4/widget/NestedScrollView;->isEnabled()Z
+
+    move-result p3
+
+    const/4 v1, 0x0
+
+    if-nez p3, :cond_1
+
+    return v1
+
+    :cond_1
+    sparse-switch p2, :sswitch_data_0
+
+    return v1
+
+    :sswitch_0
+    invoke-virtual {p1}, Landroid/support/v4/widget/NestedScrollView;->getHeight()I
+
+    move-result p2
+
+    invoke-virtual {p1}, Landroid/support/v4/widget/NestedScrollView;->getPaddingBottom()I
+
+    move-result p3
+
+    invoke-virtual {p1}, Landroid/support/v4/widget/NestedScrollView;->getPaddingTop()I
+
+    move-result v2
+
+    invoke-virtual {p1}, Landroid/support/v4/widget/NestedScrollView;->getScrollY()I
+
+    move-result v3
+
+    sub-int/2addr p2, p3
+
+    sub-int/2addr p2, v2
+
+    sub-int/2addr v3, p2
+
+    invoke-static {v3, v1}, Ljava/lang/Math;->max(II)I
+
+    move-result p2
+
+    invoke-virtual {p1}, Landroid/support/v4/widget/NestedScrollView;->getScrollY()I
+
+    move-result p3
+
+    if-eq p2, p3, :cond_2
+
+    invoke-virtual {p1, p2}, Landroid/support/v4/widget/NestedScrollView;->t(I)V
+
+    return v0
+
+    :cond_2
+    return v1
+
+    :sswitch_1
+    invoke-virtual {p1}, Landroid/support/v4/widget/NestedScrollView;->getHeight()I
+
+    move-result p2
+
+    invoke-virtual {p1}, Landroid/support/v4/widget/NestedScrollView;->getPaddingBottom()I
+
+    move-result p3
+
+    invoke-virtual {p1}, Landroid/support/v4/widget/NestedScrollView;->getPaddingTop()I
+
+    move-result v2
+
+    invoke-virtual {p1}, Landroid/support/v4/widget/NestedScrollView;->getScrollY()I
+
+    move-result v3
+
+    sub-int/2addr p2, p3
+
+    sub-int/2addr p2, v2
+
+    add-int/2addr v3, p2
+
+    invoke-virtual {p1}, Landroid/support/v4/widget/NestedScrollView;->h()I
+
+    move-result p2
+
+    invoke-static {v3, p2}, Ljava/lang/Math;->min(II)I
+
+    move-result p2
+
+    invoke-virtual {p1}, Landroid/support/v4/widget/NestedScrollView;->getScrollY()I
+
+    move-result p3
+
+    if-eq p2, p3, :cond_3
+
+    invoke-virtual {p1, p2}, Landroid/support/v4/widget/NestedScrollView;->t(I)V
+
+    return v0
+
     :cond_3
-    :goto_1
-    iget-object v0, p0, Lho;->a:Ljava/lang/Object;
+    return v1
 
-    check-cast v0, Lgq;
-
-    invoke-virtual {v0}, Lgq;->k()V
-
-    return-void
-
-    :cond_4
-    return-void
-
-    :pswitch_2
-    iget-object v0, p0, Lho;->a:Ljava/lang/Object;
-
-    check-cast v0, Lhp;
-
-    invoke-virtual {v0}, Lhp;->u()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_7
-
-    iget-object v0, p0, Lho;->a:Ljava/lang/Object;
-
-    check-cast v0, Lhp;
-
-    iget-object v1, v0, Lhp;->a:Llm;
-
-    iget-boolean v1, v1, Llg;->p:Z
-
-    if-nez v1, :cond_7
-
-    iget-object v0, v0, Lhp;->c:Landroid/view/View;
-
-    if-eqz v0, :cond_6
-
-    invoke-virtual {v0}, Landroid/view/View;->isShown()Z
-
-    move-result v0
-
-    if-nez v0, :cond_5
-
-    goto :goto_2
-
-    :cond_5
-    iget-object v0, p0, Lho;->a:Ljava/lang/Object;
-
-    check-cast v0, Lhp;
-
-    iget-object v0, v0, Lhp;->a:Llm;
-
-    invoke-virtual {v0}, Llg;->s()V
-
-    return-void
-
-    :cond_6
-    :goto_2
-    iget-object v0, p0, Lho;->a:Ljava/lang/Object;
-
-    check-cast v0, Lhp;
-
-    invoke-virtual {v0}, Lhp;->k()V
-
-    return-void
-
-    :cond_7
-    return-void
-
-    :cond_8
-    iget-object v0, p0, Lho;->a:Ljava/lang/Object;
-
-    check-cast v0, Llg;
-
-    invoke-virtual {v0}, Llg;->k()V
-
-    return-void
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_2
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
+    :sswitch_data_0
+    .sparse-switch
+        0x1000 -> :sswitch_1
+        0x2000 -> :sswitch_0
+        0x1020038 -> :sswitch_0
+        0x102003a -> :sswitch_1
+    .end sparse-switch
 .end method

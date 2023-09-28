@@ -1,64 +1,57 @@
-.class public final Lbxz;
-.super Lbzv;
+.class public final synthetic Lbxz;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Liho;
 
 
 # instance fields
-.field final a:I
+.field public final synthetic a:Lpht;
 
-.field public b:Landroid/graphics/Bitmap;
+.field public final synthetic b:Lbxy;
 
-.field private final c:Landroid/os/Handler;
+.field public final synthetic c:Ljava/util/concurrent/ScheduledExecutorService;
 
-.field private final d:J
+.field public final synthetic d:Ljava/util/concurrent/ScheduledExecutorService;
 
 
 # direct methods
-.method public constructor <init>(Landroid/os/Handler;IJ)V
+.method public synthetic constructor <init>(Lpht;Lbxy;Ljava/util/concurrent/ScheduledExecutorService;Ljava/util/concurrent/ScheduledExecutorService;)V
     .locals 0
 
-    invoke-direct {p0}, Lbzv;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lbxz;->c:Landroid/os/Handler;
+    iput-object p1, p0, Lbxz;->a:Lpht;
 
-    iput p2, p0, Lbxz;->a:I
+    iput-object p2, p0, Lbxz;->b:Lbxy;
 
-    iput-wide p3, p0, Lbxz;->d:J
+    iput-object p3, p0, Lbxz;->c:Ljava/util/concurrent/ScheduledExecutorService;
+
+    iput-object p4, p0, Lbxz;->d:Ljava/util/concurrent/ScheduledExecutorService;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Landroid/graphics/drawable/Drawable;)V
-    .locals 0
+.method public final run()V
+    .locals 5
 
-    const/4 p1, 0x0
+    iget-object v0, p0, Lbxz;->a:Lpht;
 
-    iput-object p1, p0, Lbxz;->b:Landroid/graphics/Bitmap;
+    iget-object v1, p0, Lbxz;->b:Lbxy;
 
-    return-void
-.end method
+    iget-object v2, p0, Lbxz;->c:Ljava/util/concurrent/ScheduledExecutorService;
 
-.method public final bridge synthetic b(Ljava/lang/Object;)V
-    .locals 3
+    iget-object v3, p0, Lbxz;->d:Ljava/util/concurrent/ScheduledExecutorService;
 
-    check-cast p1, Landroid/graphics/Bitmap;
+    new-instance v4, Lbya;
 
-    iput-object p1, p0, Lbxz;->b:Landroid/graphics/Bitmap;
+    invoke-direct {v4, v1, v2, v3}, Lbya;-><init>(Lbxy;Ljava/util/concurrent/ScheduledExecutorService;Ljava/util/concurrent/ScheduledExecutorService;)V
 
-    iget-object p1, p0, Lbxz;->c:Landroid/os/Handler;
+    sget-object v1, Lpgr;->a:Lpgr;
 
-    const/4 v0, 0x1
-
-    invoke-virtual {p1, v0, p0}, Landroid/os/Handler;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
-
-    move-result-object p1
-
-    iget-object v0, p0, Lbxz;->c:Landroid/os/Handler;
-
-    iget-wide v1, p0, Lbxz;->d:J
-
-    invoke-virtual {v0, p1, v1, v2}, Landroid/os/Handler;->sendMessageAtTime(Landroid/os/Message;J)Z
+    invoke-static {v0, v4, v1}, Lmip;->ca(Lpht;Llht;Ljava/util/concurrent/Executor;)V
 
     return-void
 .end method

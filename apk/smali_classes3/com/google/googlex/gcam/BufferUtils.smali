@@ -26,39 +26,39 @@
 .method public static b(JI)Ljava/nio/ByteBuffer;
     .locals 5
 
-    const-wide/16 v0, 0x0
+    const/4 v0, 0x1
 
-    const/4 v2, 0x1
+    const/4 v1, 0x0
 
-    const/4 v3, 0x0
+    const-wide/16 v2, 0x0
 
-    cmp-long v4, p0, v0
+    cmp-long v4, p0, v2
 
     if-eqz v4, :cond_0
 
-    const/4 v0, 0x1
+    const/4 v2, 0x1
 
     goto :goto_0
 
     :cond_0
-    const/4 v0, 0x0
+    const/4 v2, 0x0
 
     :goto_0
-    const-string v1, "ptr must not be 0."
+    const-string v3, "ptr must not be 0."
 
-    invoke-static {v0, v1}, Lmoz;->f(ZLjava/lang/Object;)V
+    invoke-static {v2, v3}, Lobr;->aG(ZLjava/lang/Object;)V
 
     if-lez p2, :cond_1
 
     goto :goto_1
 
     :cond_1
-    const/4 v2, 0x0
+    const/4 v0, 0x0
 
     :goto_1
-    const-string v0, "capacity must be positive, got: %s"
+    const-string v1, "capacity must be positive, got: %s"
 
-    invoke-static {v2, v0, p2}, Lmoz;->h(ZLjava/lang/String;I)V
+    invoke-static {v0, v1, p2}, Lobr;->aI(ZLjava/lang/String;I)V
 
     invoke-static {p0, p1, p2}, Lcom/google/googlex/gcam/BufferUtils;->byteBufferViewOfNativePointerImpl(JI)Ljava/nio/ByteBuffer;
 

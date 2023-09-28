@@ -1,276 +1,186 @@
 .class public final Lhim;
 .super Ljava/lang/Object;
 
-# interfaces
-.implements Landroid/content/DialogInterface$OnDismissListener;
-.implements Lhsw;
-
 
 # instance fields
-.field public final a:Landroid/content/Context;
+.field public a:Llwd;
 
-.field public final b:Lhsx;
+.field public b:Lhsr;
 
-.field public final c:Landroid/net/Uri;
+.field public c:Llic;
 
-.field public final d:Ljava/util/concurrent/ScheduledExecutorService;
+.field public d:Lpht;
 
-.field public e:Ljava/util/concurrent/ScheduledFuture;
+.field public e:Liij;
 
-.field public final f:Ligo;
+.field public f:Landroid/graphics/Rect;
 
-.field private final g:Lhie;
+.field public g:Ljava/lang/Long;
 
-.field private final h:Ljava/util/concurrent/Executor;
+.field public h:Lhtf;
+
+.field private final i:Lmad;
+
+.field private j:Ljava/lang/Long;
 
 
 # direct methods
-.method public constructor <init>(Lhsx;Landroid/net/Uri;Landroid/content/Context;Ligo;Lhie;Ljava/util/concurrent/Executor;Ljava/util/concurrent/ScheduledExecutorService;[B[B)V
-    .locals 0
+.method public constructor <init>(Lmad;)V
+    .locals 2
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p3, p0, Lhim;->a:Landroid/content/Context;
+    const/4 v0, 0x0
 
-    iput-object p4, p0, Lhim;->f:Ligo;
+    iput-object v0, p0, Lhim;->a:Llwd;
 
-    iput-object p1, p0, Lhim;->b:Lhsx;
+    sget-object v1, Lhsr;->a:Lhsr;
 
-    iput-object p2, p0, Lhim;->c:Landroid/net/Uri;
+    iput-object v1, p0, Lhim;->b:Lhsr;
 
-    iput-object p5, p0, Lhim;->g:Lhie;
+    sget-object v1, Llic;->a:Llic;
 
-    iput-object p6, p0, Lhim;->h:Ljava/util/concurrent/Executor;
+    iput-object v1, p0, Lhim;->c:Llic;
 
-    iput-object p7, p0, Lhim;->d:Ljava/util/concurrent/ScheduledExecutorService;
+    iput-object v0, p0, Lhim;->d:Lpht;
+
+    iput-object v0, p0, Lhim;->e:Liij;
+
+    iput-object v0, p0, Lhim;->f:Landroid/graphics/Rect;
+
+    iput-object v0, p0, Lhim;->g:Ljava/lang/Long;
+
+    iput-object v0, p0, Lhim;->j:Ljava/lang/Long;
+
+    sget-object v0, Lhtf;->a:Lhtf;
+
+    iput-object v0, p0, Lhim;->h:Lhtf;
+
+    iput-object p1, p0, Lhim;->i:Lmad;
+
+    invoke-interface {p1}, Lmad;->e()Landroid/graphics/Rect;
+
+    move-result-object p1
+
+    iput-object p1, p0, Lhim;->f:Landroid/graphics/Rect;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()V
-    .locals 2
+.method public final a()Lhin;
+    .locals 17
 
-    iget-object v0, p0, Lhim;->a:Landroid/content/Context;
+    move-object/from16 v0, p0
 
-    invoke-static {v0}, Linb;->w(Landroid/content/Context;)I
+    iget-object v1, v0, Lhim;->g:Ljava/lang/Long;
 
-    move-result v0
+    iget-object v2, v0, Lhim;->j:Ljava/lang/Long;
 
-    const/4 v1, 0x1
+    if-nez v1, :cond_0
 
-    if-eq v0, v1, :cond_0
+    iget-object v1, v0, Lhim;->i:Lmad;
 
-    iget-object v0, p0, Lhim;->f:Ligo;
+    invoke-interface {v1}, Lmad;->d()J
 
-    iget-object v1, p0, Lhim;->c:Landroid/net/Uri;
+    move-result-wide v3
 
-    invoke-virtual {v0, v1}, Ligo;->f(Landroid/net/Uri;)V
+    invoke-static {v3, v4}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
-    iget-object v0, p0, Lhim;->b:Lhsx;
-
-    invoke-interface {v0}, Lhsx;->l()V
-
-    invoke-virtual {p0}, Lhim;->e()V
-
-    return-void
+    move-result-object v1
 
     :cond_0
-    iget-object v0, p0, Lhim;->a:Landroid/content/Context;
+    if-nez v2, :cond_1
 
-    invoke-static {v0}, Lcom/google/android/apps/camera/ui/eduimageview/EduImageView;->d(Landroid/content/Context;)V
+    invoke-virtual {v1}, Ljava/lang/Long;->longValue()J
+
+    move-result-wide v2
+
+    invoke-static {v2, v3}, Ljum;->a(J)J
+
+    move-result-wide v2
+
+    invoke-static {v2, v3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object v2
+
+    :cond_1
+    new-instance v16, Lhin;
+
+    iget-object v4, v0, Lhim;->i:Lmad;
+
+    iget-object v5, v0, Lhim;->b:Lhsr;
+
+    iget-object v6, v0, Lhim;->a:Llwd;
+
+    iget-object v7, v0, Lhim;->c:Llic;
+
+    iget-object v8, v0, Lhim;->d:Lpht;
+
+    iget-object v3, v0, Lhim;->f:Landroid/graphics/Rect;
+
+    if-nez v3, :cond_2
+
+    invoke-interface {v4}, Lmad;->e()Landroid/graphics/Rect;
+
+    move-result-object v3
+
+    move-object v9, v3
+
+    goto :goto_0
+
+    :cond_2
+    move-object v9, v3
+
+    :goto_0
+    invoke-virtual {v1}, Ljava/lang/Long;->longValue()J
+
+    move-result-wide v10
+
+    invoke-virtual {v2}, Ljava/lang/Long;->longValue()J
+
+    move-result-wide v12
+
+    iget-object v14, v0, Lhim;->e:Liij;
+
+    iget-object v15, v0, Lhim;->h:Lhtf;
+
+    move-object/from16 v3, v16
+
+    invoke-direct/range {v3 .. v15}, Lhin;-><init>(Lmad;Lhsr;Llwd;Llic;Lpht;Landroid/graphics/Rect;JJLiij;Lhtf;)V
+
+    return-object v16
+.end method
+
+.method public final b(J)V
+    .locals 0
+
+    invoke-static {p1, p2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object p1
+
+    iput-object p1, p0, Lhim;->j:Ljava/lang/Long;
 
     return-void
 .end method
 
-.method public final b()V
-    .locals 1
+.method public final c(Llzv;)V
+    .locals 0
 
-    iget-object v0, p0, Lhim;->b:Lhsx;
+    if-eqz p1, :cond_0
 
-    invoke-interface {v0}, Lhsx;->o()Z
+    invoke-static {p1}, Lplk;->V(Ljava/lang/Object;)Lpht;
 
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    iget-object v0, p0, Lhim;->b:Lhsx;
-
-    invoke-interface {v0}, Lhsx;->c()V
-
-    iget-object v0, p0, Lhim;->b:Lhsx;
-
-    invoke-interface {v0}, Lhsx;->k()V
-
-    :cond_0
-    return-void
-.end method
-
-.method public final c()V
-    .locals 2
-
-    iget-object v0, p0, Lhim;->b:Lhsx;
-
-    invoke-interface {v0}, Lhsx;->a()V
-
-    iget-object v0, p0, Lhim;->g:Lhie;
-
-    iget-object v1, v0, Lhie;->d:Lhim;
-
-    invoke-virtual {p0, v1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_0
-
-    iget-object v0, v0, Lhie;->c:Lhim;
-
-    invoke-virtual {v0}, Lhim;->b()V
+    move-result-object p1
 
     goto :goto_0
 
     :cond_0
-    iget-object v1, v0, Lhie;->c:Lhim;
+    const/4 p1, 0x0
 
-    invoke-virtual {p0, v1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_1
-
-    iget-object v0, v0, Lhie;->d:Lhim;
-
-    invoke-virtual {v0}, Lhim;->b()V
-
-    :cond_1
     :goto_0
-    iget-object v0, p0, Lhim;->b:Lhsx;
-
-    invoke-interface {v0}, Lhsx;->m()V
-
-    return-void
-.end method
-
-.method public final d()V
-    .locals 2
-
-    iget-object v0, p0, Lhim;->e:Ljava/util/concurrent/ScheduledFuture;
-
-    if-eqz v0, :cond_0
-
-    invoke-interface {v0}, Ljava/util/concurrent/ScheduledFuture;->isDone()Z
-
-    move-result v0
-
-    if-nez v0, :cond_0
-
-    iget-object v0, p0, Lhim;->e:Ljava/util/concurrent/ScheduledFuture;
-
-    const/4 v1, 0x0
-
-    invoke-interface {v0, v1}, Ljava/util/concurrent/ScheduledFuture;->cancel(Z)Z
-
-    :cond_0
-    return-void
-.end method
-
-.method public final e()V
-    .locals 3
-
-    iget-object v0, p0, Lhim;->f:Ligo;
-
-    iget-object v1, p0, Lhim;->c:Landroid/net/Uri;
-
-    invoke-virtual {v0, v1}, Ligo;->e(Landroid/net/Uri;)Lnou;
-
-    move-result-object v0
-
-    new-instance v1, Lgij;
-
-    const/4 v2, 0x7
-
-    invoke-direct {v1, p0, v2}, Lgij;-><init>(Lhim;I)V
-
-    iget-object v2, p0, Lhim;->h:Ljava/util/concurrent/Executor;
-
-    invoke-static {v0, v1, v2}, Ljvd;->t(Lnou;Ljzs;Ljava/util/concurrent/Executor;)V
-
-    return-void
-.end method
-
-.method public final f(Ljava/lang/String;)V
-    .locals 1
-
-    iget-object v0, p0, Lhim;->b:Lhsx;
-
-    invoke-interface {v0, p1}, Lhsx;->i(Ljava/lang/String;)V
-
-    return-void
-.end method
-
-.method public final g()V
-    .locals 3
-
-    iget-object v0, p0, Lhim;->b:Lhsx;
-
-    invoke-interface {v0, p0}, Lhsx;->e(Lhsw;)V
-
-    iget-object v0, p0, Lhim;->f:Ligo;
-
-    iget-object v1, p0, Lhim;->c:Landroid/net/Uri;
-
-    invoke-virtual {v0, v1}, Ligo;->e(Landroid/net/Uri;)Lnou;
-
-    move-result-object v0
-
-    new-instance v1, Lgij;
-
-    const/16 v2, 0x8
-
-    invoke-direct {v1, p0, v2}, Lgij;-><init>(Lhim;I)V
-
-    iget-object v2, p0, Lhim;->h:Ljava/util/concurrent/Executor;
-
-    invoke-static {v0, v1, v2}, Ljvd;->t(Lnou;Ljzs;Ljava/util/concurrent/Executor;)V
-
-    return-void
-.end method
-
-.method public final onCompletion(Landroid/media/MediaPlayer;)V
-    .locals 0
-
-    iget-object p1, p0, Lhim;->b:Lhsx;
-
-    invoke-interface {p1}, Lhsx;->k()V
-
-    return-void
-.end method
-
-.method public final onDismiss(Landroid/content/DialogInterface;)V
-    .locals 0
-
-    iget-object p1, p0, Lhim;->b:Lhsx;
-
-    invoke-interface {p1}, Lhsx;->n()V
-
-    invoke-virtual {p0}, Lhim;->d()V
-
-    return-void
-.end method
-
-.method public final onPrepared(Landroid/media/MediaPlayer;)V
-    .locals 1
-
-    iget-object p1, p0, Lhim;->b:Lhsx;
-
-    const/16 v0, 0x29
-
-    invoke-interface {p1, v0}, Lhsx;->d(I)V
-
-    iget-object p1, p0, Lhim;->b:Lhsx;
-
-    invoke-interface {p1}, Lhsx;->k()V
+    iput-object p1, p0, Lhim;->d:Lpht;
 
     return-void
 .end method

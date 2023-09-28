@@ -1,243 +1,163 @@
-.class public final synthetic Lhck;
+.class public final Lhck;
 .super Ljava/lang/Object;
-
-# interfaces
-.implements Ljava/lang/Runnable;
-
-
-# static fields
-.field public static final synthetic a:Lhck;
-
-.field public static final synthetic b:Lhck;
-
-.field public static final synthetic c:Lhck;
-
-.field public static final synthetic d:Lhck;
-
-.field public static final synthetic e:Lhck;
-
-.field public static final synthetic f:Lhck;
-
-.field public static final synthetic g:Lhck;
-
-.field public static final synthetic h:Lhck;
-
-.field public static final synthetic i:Lhck;
-
-.field public static final synthetic j:Lhck;
-
-.field public static final synthetic k:Lhck;
-
-.field public static final synthetic l:Lhck;
-
-.field public static final synthetic m:Lhck;
 
 
 # instance fields
-.field private final synthetic n:I
+.field public final a:I
+
+.field public final b:Loom;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
-
-    new-instance v0, Lhck;
-
-    const/16 v1, 0xe
-
-    invoke-direct {v0, v1}, Lhck;-><init>(I)V
-
-    sput-object v0, Lhck;->m:Lhck;
-
-    new-instance v0, Lhck;
-
-    const/16 v1, 0xd
-
-    invoke-direct {v0, v1}, Lhck;-><init>(I)V
-
-    sput-object v0, Lhck;->l:Lhck;
-
-    new-instance v0, Lhck;
-
-    const/16 v1, 0xc
-
-    invoke-direct {v0, v1}, Lhck;-><init>(I)V
-
-    sput-object v0, Lhck;->k:Lhck;
-
-    new-instance v0, Lhck;
-
-    const/16 v1, 0xb
-
-    invoke-direct {v0, v1}, Lhck;-><init>(I)V
-
-    sput-object v0, Lhck;->j:Lhck;
-
-    new-instance v0, Lhck;
-
-    const/16 v1, 0xa
-
-    invoke-direct {v0, v1}, Lhck;-><init>(I)V
-
-    sput-object v0, Lhck;->i:Lhck;
-
-    new-instance v0, Lhck;
-
-    const/16 v1, 0x9
-
-    invoke-direct {v0, v1}, Lhck;-><init>(I)V
-
-    sput-object v0, Lhck;->h:Lhck;
-
-    new-instance v0, Lhck;
-
-    const/16 v1, 0x8
-
-    invoke-direct {v0, v1}, Lhck;-><init>(I)V
-
-    sput-object v0, Lhck;->g:Lhck;
-
-    new-instance v0, Lhck;
-
-    const/4 v1, 0x7
-
-    invoke-direct {v0, v1}, Lhck;-><init>(I)V
-
-    sput-object v0, Lhck;->f:Lhck;
-
-    new-instance v0, Lhck;
-
-    const/4 v1, 0x6
-
-    invoke-direct {v0, v1}, Lhck;-><init>(I)V
-
-    sput-object v0, Lhck;->e:Lhck;
-
-    new-instance v0, Lhck;
-
-    const/4 v1, 0x5
-
-    invoke-direct {v0, v1}, Lhck;-><init>(I)V
-
-    sput-object v0, Lhck;->d:Lhck;
-
-    new-instance v0, Lhck;
-
-    const/4 v1, 0x4
-
-    invoke-direct {v0, v1}, Lhck;-><init>(I)V
-
-    sput-object v0, Lhck;->c:Lhck;
-
-    new-instance v0, Lhck;
-
-    const/4 v1, 0x3
-
-    invoke-direct {v0, v1}, Lhck;-><init>(I)V
-
-    sput-object v0, Lhck;->b:Lhck;
-
-    new-instance v0, Lhck;
-
-    const/4 v1, 0x2
-
-    invoke-direct {v0, v1}, Lhck;-><init>(I)V
-
-    sput-object v0, Lhck;->a:Lhck;
-
-    return-void
-.end method
-
-.method public synthetic constructor <init>(I)V
+.method public constructor <init>()V
     .locals 0
-
-    iput p1, p0, Lhck;->n:I
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
+.method public constructor <init>(ILoom;)V
+    .locals 0
 
-# virtual methods
-.method public final run()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput p1, p0, Lhck;->a:I
+
+    if-eqz p2, :cond_0
+
+    iput-object p2, p0, Lhck;->b:Loom;
+
+    return-void
+
+    :cond_0
+    new-instance p1, Ljava/lang/NullPointerException;
+
+    const-string p2, "Null manualWhiteBalanceFactors"
+
+    invoke-direct {p1, p2}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
+
+    throw p1
+.end method
+
+.method public static a(ILoom;)Lhck;
     .locals 1
 
-    iget v0, p0, Lhck;->n:I
+    new-instance v0, Lhck;
 
-    packed-switch v0, :pswitch_data_0
+    invoke-direct {v0, p0, p1}, Lhck;-><init>(ILoom;)V
 
-    :pswitch_0
-    return-void
+    return-object v0
+.end method
 
-    :pswitch_1
-    const/4 v0, -0x4
 
-    invoke-static {v0}, Landroid/os/Process;->setThreadPriority(I)V
+# virtual methods
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 4
 
-    :pswitch_2
-    return-void
+    const/4 v0, 0x1
 
-    :pswitch_3
-    sget-object v0, Lcom/google/android/apps/camera/toast/ToastView;->d:Lj$/time/Duration;
+    if-ne p1, p0, :cond_0
 
-    return-void
+    return v0
 
-    :pswitch_4
-    sget-object v0, Lcom/google/android/apps/camera/toast/ToastView;->d:Lj$/time/Duration;
+    :cond_0
+    instance-of v1, p1, Lhck;
 
-    return-void
+    const/4 v2, 0x0
 
-    :pswitch_5
-    sget-object v0, Lcom/google/android/apps/camera/toast/ToastView;->d:Lj$/time/Duration;
+    if-eqz v1, :cond_1
 
-    return-void
+    check-cast p1, Lhck;
 
-    :pswitch_6
-    sget-object v0, Lcom/google/android/apps/camera/toast/ToastView;->d:Lj$/time/Duration;
+    iget v1, p0, Lhck;->a:I
 
-    :pswitch_7
-    return-void
+    iget v3, p1, Lhck;->a:I
 
-    :pswitch_8
-    sget v0, Lcom/google/android/apps/camera/toast/EducationToastView;->c:I
+    if-ne v1, v3, :cond_1
 
-    return-void
+    iget-object v1, p0, Lhck;->b:Loom;
 
-    :pswitch_9
-    sget v0, Lcom/google/android/apps/camera/toast/EducationToastView;->c:I
+    iget-object p1, p1, Lhck;->b:Loom;
 
-    :pswitch_a
-    return-void
+    invoke-static {v1, p1}, Lobr;->an(Ljava/util/List;Ljava/lang/Object;)Z
 
-    :pswitch_b
-    invoke-static {}, Ljuh;->a()V
+    move-result p1
 
-    return-void
+    if-eqz p1, :cond_1
 
-    nop
+    return v0
 
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_b
-        :pswitch_a
-        :pswitch_9
-        :pswitch_8
-        :pswitch_7
-        :pswitch_7
-        :pswitch_6
-        :pswitch_5
-        :pswitch_4
-        :pswitch_3
-        :pswitch_2
-        :pswitch_2
-        :pswitch_2
-        :pswitch_1
-        :pswitch_0
-        :pswitch_0
-        :pswitch_0
-        :pswitch_0
-        :pswitch_0
-        :pswitch_0
-    .end packed-switch
+    :cond_1
+    return v2
+.end method
+
+.method public final hashCode()I
+    .locals 2
+
+    iget v0, p0, Lhck;->a:I
+
+    const v1, 0xf4243
+
+    xor-int/2addr v0, v1
+
+    mul-int v0, v0, v1
+
+    iget-object v1, p0, Lhck;->b:Loom;
+
+    invoke-virtual {v1}, Loom;->hashCode()I
+
+    move-result v1
+
+    xor-int/2addr v0, v1
+
+    return v0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .locals 4
+
+    iget v0, p0, Lhck;->a:I
+
+    iget-object v1, p0, Lhck;->b:Loom;
+
+    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/String;->length()I
+
+    move-result v2
+
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    add-int/lit8 v2, v2, 0x5a
+
+    invoke-direct {v3, v2}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string v2, "ManualWhiteBalanceSettings{manualWhiteBalanceMode="
+
+    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    const-string v0, ", manualWhiteBalanceFactors="
+
+    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v0, "}"
+
+    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
 .end method

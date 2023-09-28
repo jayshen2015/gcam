@@ -186,13 +186,13 @@
 
     iget v0, p0, Lcom/google/android/libraries/vision/opengl/Texture;->type:I
 
-    const/4 v1, 0x0
-
-    const/16 v2, 0x1908
-
     iget v3, p0, Lcom/google/android/libraries/vision/opengl/Texture;->width:I
 
     iget v4, p0, Lcom/google/android/libraries/vision/opengl/Texture;->height:I
+
+    const/4 v1, 0x0
+
+    const/16 v2, 0x1908
 
     const/4 v5, 0x0
 
@@ -225,7 +225,7 @@
 .end method
 
 .method public delete()V
-    .locals 3
+    .locals 4
 
     iget v0, p0, Lcom/google/android/libraries/vision/opengl/Texture;->name:I
 
@@ -238,15 +238,15 @@
     goto :goto_0
 
     :cond_0
-    filled-new-array {v0}, [I
+    const/4 v1, 0x1
 
-    move-result-object v0
+    new-array v2, v1, [I
 
-    const/4 v1, 0x0
+    const/4 v3, 0x0
 
-    const/4 v2, 0x1
+    aput v0, v2, v3
 
-    invoke-static {v2, v0, v1}, Landroid/opengl/GLES20;->glDeleteTextures(I[II)V
+    invoke-static {v1, v2, v3}, Landroid/opengl/GLES20;->glDeleteTextures(I[II)V
 
     const/4 v0, -0x1
 

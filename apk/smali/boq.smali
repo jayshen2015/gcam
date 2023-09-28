@@ -1,125 +1,91 @@
-.class public final Lboq;
-.super Landroid/content/ContextWrapper;
+.class public final synthetic Lboq;
+.super Ljava/lang/Object;
 
-
-# static fields
-.field static final a:Lbpe;
+# interfaces
+.implements Llht;
 
 
 # instance fields
-.field public final b:Lbsu;
+.field public final synthetic a:Lbou;
 
-.field public final c:Ljava/util/List;
+.field public final synthetic b:Lbpn;
 
-.field public final d:Ljava/util/Map;
-
-.field public final e:I
-
-.field public final f:Lbkc;
-
-.field public final g:Lbze;
-
-.field public final h:Llij;
-
-.field private final i:Lcaq;
-
-.field private j:Lbzp;
+.field public final synthetic c:Lbpt;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
-
-    new-instance v0, Lbok;
-
-    invoke-direct {v0}, Lbok;-><init>()V
-
-    sput-object v0, Lboq;->a:Lbpe;
-
-    return-void
-.end method
-
-.method public constructor <init>(Landroid/content/Context;Lbsu;Lcaq;Lbze;Ljava/util/Map;Ljava/util/List;Llij;Lbkc;[B[B[B[B[B)V
+.method public synthetic constructor <init>(Lbou;Lbpn;Lbpt;)V
     .locals 0
 
-    invoke-virtual {p1}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    move-result-object p1
+    iput-object p1, p0, Lboq;->a:Lbou;
 
-    invoke-direct {p0, p1}, Landroid/content/ContextWrapper;-><init>(Landroid/content/Context;)V
+    iput-object p2, p0, Lboq;->b:Lbpn;
 
-    iput-object p2, p0, Lboq;->b:Lbsu;
-
-    iput-object p4, p0, Lboq;->g:Lbze;
-
-    iput-object p6, p0, Lboq;->c:Ljava/util/List;
-
-    iput-object p5, p0, Lboq;->d:Ljava/util/Map;
-
-    iput-object p7, p0, Lboq;->h:Llij;
-
-    iput-object p8, p0, Lboq;->f:Lbkc;
-
-    const/4 p1, 0x4
-
-    iput p1, p0, Lboq;->e:I
-
-    invoke-static {p3}, Lbze;->e(Lcaq;)Lcaq;
-
-    move-result-object p1
-
-    iput-object p1, p0, Lboq;->i:Lcaq;
+    iput-object p3, p0, Lboq;->c:Lbpt;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Lboy;
-    .locals 1
+.method public final a(Ljava/lang/Object;)V
+    .locals 3
 
-    iget-object v0, p0, Lboq;->i:Lcaq;
+    iget-object v0, p0, Lboq;->a:Lbou;
 
-    invoke-interface {v0}, Lcaq;->a()Ljava/lang/Object;
+    iget-object v1, p0, Lboq;->b:Lbpn;
 
-    move-result-object v0
+    iget-object v2, p0, Lboq;->c:Lbpt;
 
-    check-cast v0, Lboy;
+    check-cast p1, Ljava/lang/Void;
 
-    return-object v0
-.end method
+    check-cast v1, Lbpr;
 
-.method public final declared-synchronized b()Lbzp;
-    .locals 1
+    iget-object p1, v1, Lbpr;->a:Llda;
 
-    monitor-enter p0
+    check-cast p1, Llce;
 
-    :try_start_0
-    iget-object v0, p0, Lboq;->j:Lbzp;
+    iget-object p1, p1, Llce;->d:Ljava/lang/Object;
 
-    if-nez v0, :cond_0
+    check-cast p1, Lbpo;
 
-    new-instance v0, Lbzp;
+    sget-object v1, Lbpo;->c:Lbpo;
 
-    invoke-direct {v0}, Lbzp;-><init>()V
+    invoke-virtual {p1, v1}, Lbpo;->equals(Ljava/lang/Object;)Z
 
-    invoke-virtual {v0}, Lbzg;->N()V
+    move-result v1
 
-    iput-object v0, p0, Lboq;->j:Lbzp;
+    if-eqz v1, :cond_0
+
+    return-void
 
     :cond_0
-    iget-object v0, p0, Lboq;->j:Lbzp;
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    sget-object v1, Lbpo;->b:Lbpo;
 
-    monitor-exit p0
+    invoke-virtual {p1, v1}, Lbpo;->equals(Ljava/lang/Object;)Z
 
-    return-object v0
+    move-result p1
 
-    :catchall_0
-    move-exception v0
+    if-eqz p1, :cond_1
 
-    monitor-exit p0
+    iget-object p1, v0, Lbou;->b:Lddf;
 
-    throw v0
+    sget-object v0, Lddl;->br:Lddg;
+
+    invoke-interface {p1, v0}, Lddf;->k(Lddg;)Z
+
+    move-result p1
+
+    if-eqz p1, :cond_1
+
+    invoke-interface {v2}, Lbpt;->g()V
+
+    return-void
+
+    :cond_1
+    invoke-interface {v2}, Lbpt;->f()V
+
+    return-void
 .end method

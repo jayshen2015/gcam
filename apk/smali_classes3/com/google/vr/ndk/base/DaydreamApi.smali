@@ -12,15 +12,15 @@
 # instance fields
 .field public final a:Landroid/content/Context;
 
-.field public final b:Ljava/util/ArrayList;
+.field public b:Ljava/util/ArrayList;
 
 .field public c:I
 
 .field public final d:Landroid/content/ServiceConnection;
 
-.field public e:Lofe;
+.field public e:Lpxm;
 
-.field public f:Lofc;
+.field public f:Lpxk;
 
 .field private h:Z
 
@@ -39,7 +39,7 @@
 .end method
 
 .method protected constructor <init>(Landroid/content/Context;)V
-    .locals 2
+    .locals 1
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -55,11 +55,9 @@
 
     iput-object v0, p0, Lcom/google/vr/ndk/base/DaydreamApi;->i:Ljava/util/concurrent/atomic/AtomicInteger;
 
-    new-instance v0, Lmms;
+    new-instance v0, Lpwr;
 
-    const/4 v1, 0x2
-
-    invoke-direct {v0, p0, v1}, Lmms;-><init>(Lcom/google/vr/ndk/base/DaydreamApi;I)V
+    invoke-direct {v0, p0}, Lpwr;-><init>(Lcom/google/vr/ndk/base/DaydreamApi;)V
 
     iput-object v0, p0, Lcom/google/vr/ndk/base/DaydreamApi;->d:Landroid/content/ServiceConnection;
 
@@ -69,7 +67,7 @@
 .end method
 
 .method private final b(Landroid/content/Intent;)V
-    .locals 2
+    .locals 3
 
     iget-object v0, p0, Lcom/google/vr/ndk/base/DaydreamApi;->a:Landroid/content/Context;
 
@@ -96,13 +94,31 @@
     :cond_0
     new-instance v0, Landroid/content/ActivityNotFoundException;
 
-    invoke-virtual {p1}, Ljava/lang/Object;->toString()Ljava/lang/String;
+    invoke-static {p1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p1
 
+    invoke-static {p1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/String;->length()I
+
+    move-result v1
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    add-int/lit8 v1, v1, 0x2b
+
+    invoke-direct {v2, v1}, Ljava/lang/StringBuilder;-><init>(I)V
+
     const-string v1, "No activity is available to handle intent: "
 
-    invoke-virtual {v1, p1}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
+    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p1
 
@@ -181,17 +197,21 @@
 
     new-instance v1, Ljava/lang/StringBuilder;
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+    const/16 v4, 0x45
 
-    const-string v3, "VrCore out of date, current version: "
+    invoke-direct {v1, v4}, Ljava/lang/StringBuilder;-><init>(I)V
 
-    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    const-string v4, "VrCore out of date, current version: "
+
+    invoke-virtual {v1, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    const-string p0, ", required version: 8"
+    const-string p0, ", required version: "
 
     invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
@@ -249,20 +269,38 @@
 
     invoke-static {v0, p0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
     :try_end_0
-    .catch Lofb; {:try_start_0 .. :try_end_0} :catch_0
+    .catch Lpxj; {:try_start_0 .. :try_end_0} :catch_0
 
     goto :goto_1
 
     :catch_0
     move-exception p0
 
-    invoke-virtual {p0}, Ljava/lang/Object;->toString()Ljava/lang/String;
+    invoke-static {p0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p0
 
+    invoke-static {p0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/String;->length()I
+
+    move-result v1
+
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    add-int/lit8 v1, v1, 0x16
+
+    invoke-direct {v3, v1}, Ljava/lang/StringBuilder;-><init>(I)V
+
     const-string v1, "VrCore not available: "
 
-    invoke-virtual {v1, p0}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
+    invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v3, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p0
 
@@ -300,13 +338,11 @@
 .end method
 
 .method private final d(Landroid/app/PendingIntent;Landroid/content/ComponentName;)V
-    .locals 2
+    .locals 1
 
-    new-instance v0, Lkgc;
+    new-instance v0, Lpws;
 
-    const/16 v1, 0xd
-
-    invoke-direct {v0, p0, p1, p2, v1}, Lkgc;-><init>(Lcom/google/vr/ndk/base/DaydreamApi;Landroid/app/PendingIntent;Landroid/content/ComponentName;I)V
+    invoke-direct {v0, p0, p1, p2}, Lpws;-><init>(Lcom/google/vr/ndk/base/DaydreamApi;Landroid/app/PendingIntent;Landroid/content/ComponentName;)V
 
     invoke-virtual {p0, v0}, Lcom/google/vr/ndk/base/DaydreamApi;->a(Ljava/lang/Runnable;)V
 
@@ -332,7 +368,7 @@
 .method protected final a(Ljava/lang/Runnable;)V
     .locals 1
 
-    iget-object v0, p0, Lcom/google/vr/ndk/base/DaydreamApi;->e:Lofe;
+    iget-object v0, p0, Lcom/google/vr/ndk/base/DaydreamApi;->e:Lpxm;
 
     if-eqz v0, :cond_0
 
@@ -362,13 +398,11 @@
 
     iput-boolean v0, p0, Lcom/google/vr/ndk/base/DaydreamApi;->h:Z
 
-    new-instance v0, Llmm;
+    new-instance v1, Lpwu;
 
-    const/16 v1, 0x12
+    invoke-direct {v1, p0, v0}, Lpwu;-><init>(Lcom/google/vr/ndk/base/DaydreamApi;I)V
 
-    invoke-direct {v0, p0, v1}, Llmm;-><init>(Lcom/google/vr/ndk/base/DaydreamApi;I)V
-
-    invoke-virtual {p0, v0}, Lcom/google/vr/ndk/base/DaydreamApi;->a(Ljava/lang/Runnable;)V
+    invoke-virtual {p0, v1}, Lcom/google/vr/ndk/base/DaydreamApi;->a(Ljava/lang/Runnable;)V
 
     return-void
 .end method
@@ -391,17 +425,13 @@
 
     move-result-object p1
 
-    new-instance p2, Lofq;
+    new-instance p2, Lpww;
 
-    const/4 p3, 0x1
+    invoke-direct {p2, p1}, Lpww;-><init>(Landroid/app/PendingIntent;)V
 
-    invoke-direct {p2, p1, p3}, Lofq;-><init>(Landroid/app/PendingIntent;I)V
+    new-instance p3, Lpwx;
 
-    new-instance p3, Lkgc;
-
-    const/16 v0, 0xe
-
-    invoke-direct {p3, p0, p2, p1, v0}, Lkgc;-><init>(Lcom/google/vr/ndk/base/DaydreamApi;Ljava/lang/Runnable;Landroid/app/PendingIntent;I)V
+    invoke-direct {p3, p0, p2, p1}, Lpwx;-><init>(Lcom/google/vr/ndk/base/DaydreamApi;Ljava/lang/Runnable;Landroid/app/PendingIntent;)V
 
     invoke-virtual {p0, p3}, Lcom/google/vr/ndk/base/DaydreamApi;->a(Ljava/lang/Runnable;)V
 
@@ -507,15 +537,13 @@
 
     invoke-direct {p0}, Lcom/google/vr/ndk/base/DaydreamApi;->c()V
 
-    new-instance v0, Lofd;
+    new-instance v0, Lpxl;
 
-    invoke-direct {v0, p1, p2, p3}, Lofd;-><init>(Landroid/app/Activity;Landroid/app/PendingIntent;I)V
+    invoke-direct {v0, p1, p2, p3}, Lpxl;-><init>(Landroid/app/Activity;Landroid/app/PendingIntent;I)V
 
-    new-instance p1, Llkq;
+    new-instance p1, Lpwt;
 
-    const/16 p2, 0xa
-
-    invoke-direct {p1, p0, v0, p2}, Llkq;-><init>(Lcom/google/vr/ndk/base/DaydreamApi;Lofd;I)V
+    invoke-direct {p1, p0, v0}, Lpwt;-><init>(Lcom/google/vr/ndk/base/DaydreamApi;Lpxl;)V
 
     invoke-virtual {p0, p1}, Lcom/google/vr/ndk/base/DaydreamApi;->a(Ljava/lang/Runnable;)V
 
@@ -527,11 +555,11 @@
 
     invoke-direct {p0}, Lcom/google/vr/ndk/base/DaydreamApi;->c()V
 
-    new-instance v0, Llmm;
+    new-instance v0, Lpwu;
 
-    const/16 v1, 0x13
+    const/4 v1, 0x0
 
-    invoke-direct {v0, p0, v1}, Llmm;-><init>(Lcom/google/vr/ndk/base/DaydreamApi;I)V
+    invoke-direct {v0, p0, v1}, Lpwu;-><init>(Lcom/google/vr/ndk/base/DaydreamApi;I)V
 
     invoke-virtual {p0, v0}, Lcom/google/vr/ndk/base/DaydreamApi;->a(Ljava/lang/Runnable;)V
 

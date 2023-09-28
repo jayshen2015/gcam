@@ -1,52 +1,42 @@
-.class public interface abstract Lckq;
+.class public final Lckq;
 .super Ljava/lang/Object;
 
-# interfaces
-.implements Lhyi;
+
+# static fields
+.field public static final a:Louj;
 
 
-# virtual methods
-.method public abstract D(Lj$/time/Duration;)Z
+# instance fields
+.field public final b:Ljava/util/List;
+
+.field public c:Llvj;
+
+.field public final d:Ljwe;
+
+
+# direct methods
+.method static constructor <clinit>()V
+    .locals 1
+
+    const-string v0, "com/google/android/apps/camera/camcorder/effect/CamcorderFrameEffectController"
+
+    invoke-static {v0}, Louj;->h(Ljava/lang/String;)Louj;
+
+    move-result-object v0
+
+    sput-object v0, Lckq;->a:Louj;
+
+    return-void
 .end method
 
-.method public abstract F(Lfuz;)V
-.end method
+.method public constructor <init>(Ljwe;Ljava/util/List;)V
+    .locals 0
 
-.method public abstract a(Lika;Lgcb;Ljvs;)Lkad;
-.end method
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-.method public abstract b(Z)V
-.end method
+    iput-object p1, p0, Lckq;->d:Ljwe;
 
-.method public abstract d()V
-.end method
+    iput-object p2, p0, Lckq;->b:Ljava/util/List;
 
-.method public abstract f()V
-.end method
-
-.method public abstract g()V
-.end method
-
-.method public abstract j()V
-.end method
-
-.method public abstract l(Landroid/view/ViewStub;Landroid/content/Context;)V
-.end method
-
-.method public abstract m()V
-.end method
-
-.method public abstract n()V
-.end method
-
-.method public abstract t()V
-.end method
-
-.method public abstract u()V
-.end method
-
-.method public abstract v()V
-.end method
-
-.method public abstract x(Lj$/time/Duration;I)V
+    return-void
 .end method

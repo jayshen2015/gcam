@@ -3,80 +3,20 @@
 
 
 # static fields
-.field public static final a:Ldhj;
-
-.field public static final b:Ldhj;
-
-.field public static final c:Ldhj;
+.field public static final a:Lcsm;
 
 
 # direct methods
 .method static constructor <clinit>()V
     .locals 2
 
-    new-instance v0, Lnoc;
+    new-instance v0, Lcsm;
 
-    invoke-direct {v0}, Lnoc;-><init>()V
+    const/16 v1, 0xb
 
-    const-string v1, "camera.dualev.singleKnob"
+    invoke-direct {v0, v1}, Lcsm;-><init>(I)V
 
-    iput-object v1, v0, Lnoc;->b:Ljava/lang/Object;
-
-    invoke-virtual {v0}, Lnoc;->t()Ldhj;
-
-    move-result-object v0
-
-    sput-object v0, Ldhb;->a:Ldhj;
-
-    new-instance v0, Lnoc;
-
-    invoke-direct {v0}, Lnoc;-><init>()V
-
-    const-string v1, "camera.dualev.nightFactor"
-
-    iput-object v1, v0, Lnoc;->b:Ljava/lang/Object;
-
-    invoke-virtual {v0}, Lnoc;->r()Ldhj;
-
-    move-result-object v0
-
-    sput-object v0, Ldhb;->b:Ldhj;
-
-    new-instance v0, Lnoc;
-
-    invoke-direct {v0}, Lnoc;-><init>()V
-
-    const-string v1, "camera.dualev.limitUltrawide"
-
-    iput-object v1, v0, Lnoc;->b:Ljava/lang/Object;
-
-    invoke-virtual {v0}, Lnoc;->t()Ldhj;
-
-    move-result-object v0
-
-    sput-object v0, Ldhb;->c:Ldhj;
-
-    return-void
-.end method
-
-.method public static a(Ldhm;)V
-    .locals 3
-
-    sget-object v0, Ldhb;->a:Ldhj;
-
-    const/4 v1, 0x0
-
-    invoke-interface {p0, v0, v1}, Ldhm;->u(Ldhj;Z)V
-
-    sget-object v0, Ldhb;->b:Ldhj;
-
-    const/4 v2, 0x1
-
-    invoke-interface {p0, v0, v2}, Ldhm;->s(Ldhj;Z)V
-
-    sget-object v0, Ldhb;->c:Ldhj;
-
-    invoke-interface {p0, v0, v1}, Ldhm;->u(Ldhj;Z)V
+    sput-object v0, Ldhb;->a:Lcsm;
 
     return-void
 .end method

@@ -1,129 +1,159 @@
 .class public final Lbxy;
 .super Ljava/lang/Object;
 
-# interfaces
-.implements Lbqj;
+
+# static fields
+.field public static final a:Louj;
 
 
 # instance fields
-.field private final b:Lbqj;
+.field private final b:Lpyn;
+
+.field private c:Ljava/lang/Boolean;
 
 
 # direct methods
-.method public constructor <init>(Lbqj;)V
+.method static constructor <clinit>()V
+    .locals 1
+
+    const-string v0, "com/google/android/apps/camera/async/tt/ThreadThrottler"
+
+    invoke-static {v0}, Louj;->h(Ljava/lang/String;)Louj;
+
+    move-result-object v0
+
+    sput-object v0, Lbxy;->a:Louj;
+
+    return-void
+.end method
+
+.method public constructor <init>(Lpyn;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-static {p1}, Lbze;->v(Ljava/lang/Object;)V
-
-    iput-object p1, p0, Lbxy;->b:Lbqj;
+    iput-object p1, p0, Lbxy;->b:Lpyn;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Ljava/security/MessageDigest;)V
+.method public final a(Ljava/lang/Runnable;)Ljava/lang/Runnable;
     .locals 1
 
-    iget-object v0, p0, Lbxy;->b:Lbqj;
+    new-instance v0, Lbxx;
 
-    invoke-interface {v0, p1}, Lbqj;->a(Ljava/security/MessageDigest;)V
+    invoke-direct {v0, p0, p1}, Lbxx;-><init>(Lbxy;Ljava/lang/Runnable;)V
+
+    return-object v0
+.end method
+
+.method public final b()V
+    .locals 4
+
+    invoke-virtual {p0}, Lbxy;->c()Z
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    return-void
+
+    :cond_0
+    invoke-static {}, Landroid/os/Process;->myTid()I
+
+    move-result v0
+
+    invoke-static {v0}, Lcom/google/android/apps/camera/async/tt/CpuSets;->a(I)Lkfm;
+
+    move-result-object v0
+
+    if-nez v0, :cond_1
+
+    sget-object v0, Lbxy;->a:Louj;
+
+    invoke-virtual {v0}, Loue;->c()Lova;
+
+    move-result-object v0
+
+    invoke-static {}, Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/Thread;->getName()Ljava/lang/String;
+
+    move-result-object v1
+
+    const/16 v2, 0x98
+
+    const-string v3, "Failed to cpuset-limit thread %s."
+
+    invoke-static {v0, v3, v1, v2}, Ld;->u(Lova;Ljava/lang/String;Ljava/lang/Object;C)V
+
+    return-void
+
+    :cond_1
+    invoke-static {}, Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/Thread;->getName()Ljava/lang/String;
 
     return-void
 .end method
 
-.method public final b(Landroid/content/Context;Lbsn;II)Lbsn;
-    .locals 5
+.method public final c()Z
+    .locals 2
 
-    invoke-interface {p2}, Lbsn;->c()Ljava/lang/Object;
+    const-class v0, Lcom/google/android/apps/camera/async/tt/CpuSets;
+
+    invoke-static {v0}, Llil;->a(Ljava/lang/Class;)V
+
+    monitor-enter p0
+
+    :try_start_0
+    iget-object v0, p0, Lbxy;->c:Ljava/lang/Boolean;
+
+    if-nez v0, :cond_0
+
+    iget-object v0, p0, Lbxy;->b:Lpyn;
+
+    invoke-interface {v0}, Lpyn;->get()Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Lbxv;
+    check-cast v0, Lddf;
 
-    invoke-static {p1}, Lbol;->b(Landroid/content/Context;)Lbol;
+    sget-object v1, Lddl;->bg:Lddg;
 
-    move-result-object v1
-
-    iget-object v1, v1, Lbol;->a:Lbsw;
-
-    invoke-virtual {v0}, Lbxv;->a()Landroid/graphics/Bitmap;
-
-    move-result-object v2
-
-    new-instance v3, Lbwy;
-
-    const/4 v4, 0x1
-
-    invoke-direct {v3, v2, v1, v4}, Lbwy;-><init>(Landroid/graphics/Bitmap;Lbsw;I)V
-
-    iget-object v1, p0, Lbxy;->b:Lbqj;
-
-    invoke-interface {v1, p1, v3, p3, p4}, Lbqj;->b(Landroid/content/Context;Lbsn;II)Lbsn;
-
-    move-result-object p1
-
-    invoke-virtual {v3, p1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
-
-    move-result p3
-
-    if-nez p3, :cond_0
-
-    invoke-interface {v3}, Lbsn;->e()V
-
-    :cond_0
-    invoke-interface {p1}, Lbsn;->c()Ljava/lang/Object;
-
-    move-result-object p1
-
-    check-cast p1, Landroid/graphics/Bitmap;
-
-    iget-object p3, p0, Lbxy;->b:Lbqj;
-
-    iget-object p4, v0, Lbxv;->a:Lbxu;
-
-    iget-object p4, p4, Lbxu;->a:Lbyb;
-
-    invoke-virtual {p4, p3, p1}, Lbyb;->e(Lbqj;Landroid/graphics/Bitmap;)V
-
-    return-object p2
-.end method
-
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 1
-
-    instance-of v0, p1, Lbxy;
-
-    if-eqz v0, :cond_0
-
-    check-cast p1, Lbxy;
-
-    iget-object v0, p0, Lbxy;->b:Lbqj;
-
-    iget-object p1, p1, Lbxy;->b:Lbqj;
-
-    invoke-virtual {v0, p1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
-
-    move-result p1
-
-    return p1
-
-    :cond_0
-    const/4 p1, 0x0
-
-    return p1
-.end method
-
-.method public final hashCode()I
-    .locals 1
-
-    iget-object v0, p0, Lbxy;->b:Lbqj;
-
-    invoke-virtual {v0}, Ljava/lang/Object;->hashCode()I
+    invoke-interface {v0, v1}, Lddf;->k(Lddg;)Z
 
     move-result v0
 
+    invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lbxy;->c:Ljava/lang/Boolean;
+
+    :cond_0
+    iget-object v0, p0, Lbxy;->c:Ljava/lang/Boolean;
+
+    invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
+
+    move-result v0
+
+    monitor-exit p0
+
     return v0
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit p0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw v0
 .end method

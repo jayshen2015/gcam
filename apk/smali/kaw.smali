@@ -1,51 +1,61 @@
-.class final Lkaw;
+.class public final synthetic Lkaw;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lkbf;
+.implements Lj$/util/function/Supplier;
 
 
 # instance fields
-.field private final a:I
-
-.field private final c:Ljava/lang/String;
+.field public final synthetic a:Lkbi;
 
 
 # direct methods
-.method public constructor <init>(ILjava/lang/String;)V
-    .locals 2
+.method public synthetic constructor <init>(Lkbi;)V
+    .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-virtual {p2}, Ljava/lang/String;->isEmpty()Z
-
-    move-result v0
-
-    xor-int/lit8 v0, v0, 0x1
-
-    const-string v1, "Empty msg."
-
-    invoke-static {v0, v1}, Lmoz;->q(ZLjava/lang/Object;)V
-
-    iput p1, p0, Lkaw;->a:I
-
-    iput-object p2, p0, Lkaw;->c:Ljava/lang/String;
-
-    invoke-static {p2, p1}, Landroid/os/Trace;->beginAsyncSection(Ljava/lang/String;I)V
+    iput-object p1, p0, Lkaw;->a:Lkbi;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()V
-    .locals 2
+.method public final get()Ljava/lang/Object;
+    .locals 4
 
-    iget-object v0, p0, Lkaw;->c:Ljava/lang/String;
+    iget-object v0, p0, Lkaw;->a:Lkbi;
 
-    iget v1, p0, Lkaw;->a:I
+    iget-object v1, v0, Lkbi;->A:Llwd;
 
-    invoke-static {v0, v1}, Landroid/os/Trace;->endAsyncSection(Ljava/lang/String;I)V
+    sget-object v2, Llwd;->a:Llwd;
 
-    return-void
+    const/4 v3, 0x0
+
+    if-ne v1, v2, :cond_0
+
+    iget-object v0, v0, Lkbi;->j:Lhuj;
+
+    const-string v1, "wide_selfie_tooltip_display_count"
+
+    invoke-virtual {v0, v1}, Lhuj;->a(Ljava/lang/String;)I
+
+    move-result v0
+
+    const/4 v1, 0x2
+
+    if-ne v0, v1, :cond_0
+
+    const/4 v3, 0x1
+
+    goto :goto_0
+
+    :cond_0
+    :goto_0
+    invoke-static {v3}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    move-result-object v0
+
+    return-object v0
 .end method

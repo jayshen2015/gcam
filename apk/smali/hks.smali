@@ -1,22 +1,22 @@
 .class public final Lhks;
-.super Ljava/lang/Exception;
+.super Ljava/lang/Object;
+
+
+# static fields
+.field public static final a:Lhig;
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 2
 
-    invoke-direct {p0}, Ljava/lang/Exception;-><init>()V
+    new-instance v0, Lhig;
 
-    return-void
-.end method
+    const/16 v1, 0x9
 
-.method public constructor <init>([B)V
-    .locals 0
+    invoke-direct {v0, v1}, Lhig;-><init>(I)V
 
-    const-string p1, "Not enough free space."
-
-    invoke-direct {p0, p1}, Ljava/lang/Exception;-><init>(Ljava/lang/String;)V
+    sput-object v0, Lhks;->a:Lhig;
 
     return-void
 .end method

@@ -1,234 +1,303 @@
 .class final Lmtl;
-.super Ljava/util/AbstractSet;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Lmtn;
 
 
 # instance fields
-.field final synthetic a:Lmtq;
+.field private final a:[Lmtn;
 
 
 # direct methods
-.method public constructor <init>(Lmtq;)V
+.method public varargs constructor <init>([Lmtn;)V
     .locals 0
 
-    iput-object p1, p0, Lmtl;->a:Lmtq;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0}, Ljava/util/AbstractSet;-><init>()V
+    iput-object p1, p0, Lmtl;->a:[Lmtn;
 
     return-void
+.end method
+
+.method private static b()V
+    .locals 2
+
+    new-instance v0, Ljava/lang/IllegalArgumentException;
+
+    const-string v1, "No MemCopier found to copy between buffers."
+
+    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw v0
 .end method
 
 
 # virtual methods
-.method public final clear()V
-    .locals 1
+.method public final a(Ljava/nio/ByteBuffer;Ljava/nio/ByteBuffer;)Z
+    .locals 4
 
-    iget-object v0, p0, Lmtl;->a:Lmtq;
+    iget-object v0, p0, Lmtl;->a:[Lmtn;
 
-    invoke-virtual {v0}, Lmtq;->clear()V
+    const/4 v1, 0x0
+
+    const/4 v2, 0x0
+
+    :goto_0
+    const/4 v3, 0x3
+
+    if-ge v2, v3, :cond_1
+
+    aget-object v3, v0, v2
+
+    invoke-interface {v3, p1, p2}, Lmtn;->a(Ljava/nio/ByteBuffer;Ljava/nio/ByteBuffer;)Z
+
+    move-result v3
+
+    if-eqz v3, :cond_0
+
+    const/4 p1, 0x1
+
+    return p1
+
+    :cond_0
+    add-int/lit8 v2, v2, 0x1
+
+    goto :goto_0
+
+    :cond_1
+    return v1
+.end method
+
+.method public final copyBytes(Ljava/nio/ByteBuffer;Ljava/nio/ByteBuffer;III)V
+    .locals 7
+
+    iget-object p3, p0, Lmtl;->a:[Lmtn;
+
+    const/4 p4, 0x0
+
+    :goto_0
+    const/4 v0, 0x3
+
+    if-ge p4, v0, :cond_1
+
+    aget-object v1, p3, p4
+
+    invoke-interface {v1, p1, p2}, Lmtn;->a(Ljava/nio/ByteBuffer;Ljava/nio/ByteBuffer;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    const/4 v4, 0x0
+
+    const/4 v5, 0x0
+
+    move-object v2, p1
+
+    move-object v3, p2
+
+    move v6, p5
+
+    invoke-interface/range {v1 .. v6}, Lmtn;->copyBytes(Ljava/nio/ByteBuffer;Ljava/nio/ByteBuffer;III)V
+
+    return-void
+
+    :cond_0
+    add-int/lit8 p4, p4, 0x1
+
+    goto :goto_0
+
+    :cond_1
+    invoke-static {}, Lmtl;->b()V
 
     return-void
 .end method
 
-.method public final contains(Ljava/lang/Object;)Z
-    .locals 3
+.method public final copyBytes2D(Ljava/nio/ByteBuffer;Ljava/nio/ByteBuffer;IIIIII)V
+    .locals 13
 
-    iget-object v0, p0, Lmtl;->a:Lmtq;
+    move-object v0, p0
 
-    invoke-virtual {v0}, Lmtq;->k()Ljava/util/Map;
+    iget-object v1, v0, Lmtl;->a:[Lmtn;
 
-    move-result-object v0
+    const/4 v2, 0x0
 
-    if-eqz v0, :cond_0
+    :goto_0
+    const/4 v3, 0x3
 
-    invoke-interface {v0}, Ljava/util/Map;->entrySet()Ljava/util/Set;
+    if-ge v2, v3, :cond_1
 
-    move-result-object v0
+    aget-object v4, v1, v2
 
-    invoke-interface {v0, p1}, Ljava/util/Set;->contains(Ljava/lang/Object;)Z
+    move-object v3, p1
 
-    move-result p1
+    move-object v6, p2
 
-    return p1
+    invoke-interface {v4, p1, p2}, Lmtn;->a(Ljava/nio/ByteBuffer;Ljava/nio/ByteBuffer;)Z
+
+    move-result v5
+
+    if-eqz v5, :cond_0
+
+    const/4 v9, 0x0
+
+    const/4 v10, 0x0
+
+    move-object v5, p1
+
+    move-object v6, p2
+
+    move/from16 v7, p3
+
+    move/from16 v8, p4
+
+    move/from16 v11, p7
+
+    move/from16 v12, p8
+
+    invoke-interface/range {v4 .. v12}, Lmtn;->copyBytes2D(Ljava/nio/ByteBuffer;Ljava/nio/ByteBuffer;IIIIII)V
+
+    return-void
 
     :cond_0
-    instance-of v0, p1, Ljava/util/Map$Entry;
+    add-int/lit8 v2, v2, 0x1
 
-    const/4 v1, 0x0
+    goto :goto_0
 
-    if-eqz v0, :cond_1
+    :cond_1
+    invoke-static {}, Lmtl;->b()V
 
-    check-cast p1, Ljava/util/Map$Entry;
+    return-void
+.end method
 
-    iget-object v0, p0, Lmtl;->a:Lmtq;
+.method public final copyBytes2D(Ljava/nio/ByteBuffer;Ljava/nio/ByteBuffer;IIIIIIII)V
+    .locals 15
 
-    invoke-interface {p1}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
+    move-object v0, p0
+
+    iget-object v1, v0, Lmtl;->a:[Lmtn;
+
+    const/4 v2, 0x0
+
+    :goto_0
+    const/4 v3, 0x3
+
+    if-ge v2, v3, :cond_1
+
+    aget-object v4, v1, v2
+
+    move-object/from16 v3, p1
+
+    move-object/from16 v6, p2
+
+    invoke-interface {v4, v3, v6}, Lmtn;->a(Ljava/nio/ByteBuffer;Ljava/nio/ByteBuffer;)Z
+
+    move-result v5
+
+    if-eqz v5, :cond_0
+
+    const/4 v9, 0x0
+
+    const/4 v10, 0x0
+
+    const/4 v12, 0x1
+
+    move-object/from16 v5, p1
+
+    move-object/from16 v6, p2
+
+    move/from16 v7, p3
+
+    move/from16 v8, p4
+
+    move/from16 v11, p7
+
+    move/from16 v13, p9
+
+    move/from16 v14, p10
+
+    invoke-interface/range {v4 .. v14}, Lmtn;->copyBytes2D(Ljava/nio/ByteBuffer;Ljava/nio/ByteBuffer;IIIIIIII)V
+
+    return-void
+
+    :cond_0
+    add-int/lit8 v2, v2, 0x1
+
+    goto :goto_0
+
+    :cond_1
+    invoke-static {}, Lmtl;->b()V
+
+    return-void
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .locals 5
+
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/Class;->getSimpleName()Ljava/lang/String;
+
+    move-result-object v0
+
+    const-string v1, ","
+
+    invoke-static {v1}, Loxk;->e(Ljava/lang/String;)Loxk;
+
+    move-result-object v1
+
+    iget-object v2, p0, Lmtl;->a:[Lmtn;
+
+    invoke-static {v2}, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
 
     move-result-object v2
 
-    invoke-virtual {v0, v2}, Lmtq;->d(Ljava/lang/Object;)I
+    invoke-virtual {v1, v2}, Loxk;->a(Ljava/lang/Iterable;)Ljava/lang/String;
 
-    move-result v0
+    move-result-object v1
 
-    const/4 v2, -0x1
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
-    if-eq v0, v2, :cond_1
+    move-result-object v2
 
-    iget-object v2, p0, Lmtl;->a:Lmtq;
+    invoke-virtual {v2}, Ljava/lang/String;->length()I
 
-    invoke-virtual {v2, v0}, Lmtq;->i(I)Ljava/lang/Object;
+    move-result v2
 
-    move-result-object v0
+    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
-    invoke-interface {p1}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
+    move-result-object v3
 
-    move-result-object p1
+    invoke-virtual {v3}, Ljava/lang/String;->length()I
 
-    invoke-static {v0, p1}, Lmoz;->B(Ljava/lang/Object;Ljava/lang/Object;)Z
+    move-result v3
 
-    move-result p1
+    new-instance v4, Ljava/lang/StringBuilder;
 
-    if-eqz p1, :cond_1
+    add-int/lit8 v2, v2, 0x2
 
-    const/4 p1, 0x1
+    add-int/2addr v2, v3
 
-    return p1
+    invoke-direct {v4, v2}, Ljava/lang/StringBuilder;-><init>(I)V
 
-    :cond_1
-    return v1
-.end method
+    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-.method public final iterator()Ljava/util/Iterator;
-    .locals 1
+    const-string v0, "["
 
-    iget-object v0, p0, Lmtl;->a:Lmtq;
+    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v0}, Lmtq;->j()Ljava/util/Iterator;
+    invoke-virtual {v4, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v0, "]"
+
+    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v0
 
     return-object v0
-.end method
-
-.method public final remove(Ljava/lang/Object;)Z
-    .locals 10
-
-    iget-object v0, p0, Lmtl;->a:Lmtq;
-
-    invoke-virtual {v0}, Lmtq;->k()Ljava/util/Map;
-
-    move-result-object v0
-
-    if-eqz v0, :cond_0
-
-    invoke-interface {v0}, Ljava/util/Map;->entrySet()Ljava/util/Set;
-
-    move-result-object v0
-
-    invoke-interface {v0, p1}, Ljava/util/Set;->remove(Ljava/lang/Object;)Z
-
-    move-result p1
-
-    return p1
-
-    :cond_0
-    instance-of v0, p1, Ljava/util/Map$Entry;
-
-    const/4 v1, 0x0
-
-    if-eqz v0, :cond_3
-
-    check-cast p1, Ljava/util/Map$Entry;
-
-    iget-object v0, p0, Lmtl;->a:Lmtq;
-
-    invoke-virtual {v0}, Lmtq;->p()Z
-
-    move-result v2
-
-    if-eqz v2, :cond_1
-
-    return v1
-
-    :cond_1
-    invoke-virtual {v0}, Lmtq;->c()I
-
-    move-result v0
-
-    invoke-interface {p1}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
-
-    move-result-object v3
-
-    invoke-interface {p1}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
-
-    move-result-object v4
-
-    iget-object p1, p0, Lmtl;->a:Lmtq;
-
-    invoke-virtual {p1}, Lmtq;->h()Ljava/lang/Object;
-
-    move-result-object v6
-
-    iget-object p1, p0, Lmtl;->a:Lmtq;
-
-    invoke-virtual {p1}, Lmtq;->q()[I
-
-    move-result-object v7
-
-    iget-object p1, p0, Lmtl;->a:Lmtq;
-
-    invoke-virtual {p1}, Lmtq;->r()[Ljava/lang/Object;
-
-    move-result-object v8
-
-    iget-object p1, p0, Lmtl;->a:Lmtq;
-
-    invoke-virtual {p1}, Lmtq;->s()[Ljava/lang/Object;
-
-    move-result-object v9
-
-    move v5, v0
-
-    invoke-static/range {v3 .. v9}, Llkj;->j(Ljava/lang/Object;Ljava/lang/Object;ILjava/lang/Object;[I[Ljava/lang/Object;[Ljava/lang/Object;)I
-
-    move-result p1
-
-    const/4 v2, -0x1
-
-    if-ne p1, v2, :cond_2
-
-    return v1
-
-    :cond_2
-    iget-object v1, p0, Lmtl;->a:Lmtq;
-
-    invoke-virtual {v1, p1, v0}, Lmtq;->n(II)V
-
-    iget-object p1, p0, Lmtl;->a:Lmtq;
-
-    iget v0, p1, Lmtq;->f:I
-
-    add-int/2addr v0, v2
-
-    iput v0, p1, Lmtq;->f:I
-
-    invoke-virtual {p1}, Lmtq;->l()V
-
-    const/4 p1, 0x1
-
-    return p1
-
-    :cond_3
-    return v1
-.end method
-
-.method public final size()I
-    .locals 1
-
-    iget-object v0, p0, Lmtl;->a:Lmtq;
-
-    invoke-virtual {v0}, Lmtq;->size()I
-
-    move-result v0
-
-    return v0
 .end method

@@ -1,50 +1,480 @@
-.class public final Ldna;
-.super Ljava/lang/Object;
-
-
-# static fields
-.field private static final a:Lnak;
+.class public Ldna;
+.super Ldmu;
 
 
 # instance fields
-.field private final b:F
+.field public final a:Lcom/google/android/apps/camera/evcomp/EvCompView;
+
+.field public final b:Lqkg;
+
+.field public final c:Llda;
+
+.field public final d:Llda;
+
+.field public final e:Llda;
+
+.field public final f:Z
+
+.field public g:I
+
+.field public h:I
+
+.field public i:F
+
+.field public final j:Lojc;
+
+.field public final k:Llda;
+
+.field public final l:Ljava/lang/Runnable;
+
+.field public m:F
+
+.field public n:F
+
+.field private final o:Llda;
+
+.field private final p:Llda;
+
+.field private final q:Llda;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
+.method public constructor <init>(Lqkg;Lcom/google/android/apps/camera/evcomp/EvCompView;Llda;Llda;Llda;Llda;Lhuq;Lojc;Z[B)V
+    .locals 2
 
-    const-string v0, "com/google/android/apps/camera/device/DeviceUtils"
+    invoke-direct {p0}, Ldmu;-><init>()V
 
-    invoke-static {v0}, Lnak;->h(Ljava/lang/String;)Lnak;
+    new-instance p10, Llce;
+
+    const/4 v0, 0x1
+
+    invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     move-result-object v0
 
-    sput-object v0, Ldna;->a:Lnak;
+    invoke-direct {p10, v0}, Llce;-><init>(Ljava/lang/Object;)V
+
+    iput-object p10, p0, Ldna;->k:Llda;
+
+    new-instance v1, Ldmv;
+
+    invoke-direct {v1, p0}, Ldmv;-><init>(Ldna;)V
+
+    iput-object v1, p0, Ldna;->l:Ljava/lang/Runnable;
+
+    iput-object p1, p0, Ldna;->b:Lqkg;
+
+    iput-object p2, p0, Ldna;->a:Lcom/google/android/apps/camera/evcomp/EvCompView;
+
+    iput-object p6, p0, Ldna;->e:Llda;
+
+    iput-object p3, p0, Ldna;->o:Llda;
+
+    iput-object p4, p0, Ldna;->p:Llda;
+
+    iput-object p5, p0, Ldna;->q:Llda;
+
+    iget-object p1, p7, Lhuq;->c:Llda;
+
+    iput-object p1, p0, Ldna;->c:Llda;
+
+    iget-object p1, p7, Lhuq;->a:Llda;
+
+    iput-object p1, p0, Ldna;->d:Llda;
+
+    iput-object p8, p0, Ldna;->j:Lojc;
+
+    invoke-interface {p10, v0}, Llda;->fB(Ljava/lang/Object;)V
+
+    const/high16 p1, -0x40800000    # -1.0f
+
+    iput p1, p0, Ldna;->m:F
+
+    iput p1, p0, Ldna;->n:F
+
+    iput-boolean p9, p0, Ldna;->f:Z
 
     return-void
 .end method
 
-.method public constructor <init>(Ldhi;)V
-    .locals 1
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+# virtual methods
+.method final i()V
+    .locals 2
 
-    sget-object v0, Ldho;->bI:Ldhj;
+    iget-object v0, p0, Ldna;->a:Lcom/google/android/apps/camera/evcomp/EvCompView;
 
-    invoke-interface {p1, v0}, Ldhi;->h(Ldhj;)Lj$/util/Optional;
+    iget-object v1, p0, Ldna;->l:Ljava/lang/Runnable;
 
-    move-result-object p1
+    invoke-virtual {v0, v1}, Lcom/google/android/apps/camera/evcomp/EvCompView;->removeCallbacks(Ljava/lang/Runnable;)Z
 
-    const/4 v0, 0x0
+    return-void
+.end method
 
-    invoke-static {v0}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
+.method public final j()V
+    .locals 4
+
+    iget-object v0, p0, Ldna;->e:Llda;
+
+    invoke-interface {v0}, Llda;->fA()Ljava/lang/Object;
 
     move-result-object v0
 
-    invoke-virtual {p1, v0}, Lj$/util/Optional;->orElse(Ljava/lang/Object;)Ljava/lang/Object;
+    check-cast v0, Ldme;
+
+    sget-object v1, Ldme;->a:Ldme;
+
+    invoke-virtual {v0, v1}, Ldme;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    const/4 v1, 0x1
+
+    if-eqz v0, :cond_0
+
+    invoke-virtual {p0}, Ldna;->k()V
+
+    goto :goto_0
+
+    :cond_0
+    invoke-static {v1}, Lobr;->aQ(Z)V
+
+    iget-object v0, p0, Ldna;->p:Llda;
+
+    const/high16 v2, -0x40800000    # -1.0f
+
+    invoke-static {v2}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
+
+    move-result-object v3
+
+    invoke-interface {v0, v3}, Llda;->fB(Ljava/lang/Object;)V
+
+    iget-object v0, p0, Ldna;->q:Llda;
+
+    invoke-interface {v0, v3}, Llda;->fB(Ljava/lang/Object;)V
+
+    iput v2, p0, Ldna;->m:F
+
+    iput v2, p0, Ldna;->n:F
+
+    iget-object v0, p0, Ldna;->j:Lojc;
+
+    check-cast v0, Lojj;
+
+    iget-object v0, v0, Lojj;->a:Ljava/lang/Object;
+
+    check-cast v0, Lhbu;
+
+    invoke-interface {v0}, Lhbu;->e()Lpht;
+
+    move-result-object v0
+
+    new-instance v2, Ldmw;
+
+    invoke-direct {v2, p0}, Ldmw;-><init>(Ldna;)V
+
+    sget-object v3, Llar;->a:Llas;
+
+    invoke-static {v0, v2, v3}, Lplk;->af(Lpht;Lphh;Ljava/util/concurrent/Executor;)V
+
+    :goto_0
+    iget-object v0, p0, Ldna;->k:Llda;
+
+    invoke-static {v1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    move-result-object v1
+
+    invoke-interface {v0, v1}, Llda;->fB(Ljava/lang/Object;)V
+
+    return-void
+.end method
+
+.method public final k()V
+    .locals 2
+
+    iget-object v0, p0, Ldna;->a:Lcom/google/android/apps/camera/evcomp/EvCompView;
+
+    const/high16 v1, 0x3f000000    # 0.5f
+
+    invoke-virtual {v0, v1}, Lcom/google/android/apps/camera/evcomp/EvCompView;->g(F)V
+
+    sget-object v0, Ldmg;->a:Ldmg;
+
+    invoke-virtual {p0, v1, v0}, Ldna;->m(FLdmg;)V
+
+    return-void
+.end method
+
+.method public final l()V
+    .locals 2
+
+    iget-object v0, p0, Ldna;->e:Llda;
+
+    invoke-interface {v0}, Llda;->fA()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ldme;
+
+    sget-object v1, Ldme;->a:Ldme;
+
+    invoke-virtual {v0, v1}, Ldme;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    invoke-virtual {p0}, Ldna;->k()V
+
+    goto :goto_0
+
+    :cond_0
+    iget-object v0, p0, Ldna;->j:Lojc;
+
+    check-cast v0, Lojj;
+
+    iget-object v0, v0, Lojj;->a:Ljava/lang/Object;
+
+    check-cast v0, Lhbu;
+
+    invoke-interface {v0}, Lhbu;->f()V
+
+    :goto_0
+    iget-object v0, p0, Ldna;->k:Llda;
+
+    const/4 v1, 0x1
+
+    invoke-static {v1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    move-result-object v1
+
+    invoke-interface {v0, v1}, Llda;->fB(Ljava/lang/Object;)V
+
+    return-void
+.end method
+
+.method public final m(FLdmg;)V
+    .locals 5
+
+    const/high16 v0, 0x3f800000    # 1.0f
+
+    cmpl-float v0, p1, v0
+
+    if-gtz v0, :cond_7
+
+    const/4 v0, 0x0
+
+    cmpg-float v0, p1, v0
+
+    if-gez v0, :cond_0
+
+    goto/16 :goto_1
+
+    :cond_0
+    iget-object v0, p0, Ldna;->e:Llda;
+
+    invoke-interface {v0}, Llda;->fA()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ldme;
+
+    sget-object v1, Ldme;->a:Ldme;
+
+    if-ne v0, v1, :cond_3
+
+    sget-object v0, Ldmg;->a:Ldmg;
+
+    invoke-virtual {p2, v0}, Ldmg;->equals(Ljava/lang/Object;)Z
+
+    move-result p2
+
+    const-string v0, "Single knob ev slider should have only one control(for brightness)."
+
+    invoke-static {p2, v0}, Lobr;->aG(ZLjava/lang/Object;)V
+
+    iget-object p2, p0, Ldna;->j:Lojc;
+
+    check-cast p2, Lojj;
+
+    iget-object p2, p2, Lojj;->a:Ljava/lang/Object;
+
+    check-cast p2, Lhbu;
+
+    invoke-interface {p2}, Lhbu;->j()Z
+
+    move-result p2
+
+    if-eqz p2, :cond_1
+
+    iget-object p2, p0, Ldna;->a:Lcom/google/android/apps/camera/evcomp/EvCompView;
+
+    invoke-virtual {p2, p1}, Lcom/google/android/apps/camera/evcomp/EvCompView;->h(F)V
+
+    iget-object p2, p0, Ldna;->p:Llda;
+
+    check-cast p2, Llce;
+
+    iget-object p2, p2, Llce;->d:Ljava/lang/Object;
+
+    check-cast p2, Ljava/lang/Float;
+
+    invoke-virtual {p2}, Ljava/lang/Float;->floatValue()F
+
+    move-result p2
+
+    cmpl-float p2, p1, p2
+
+    if-eqz p2, :cond_2
+
+    iget-object p2, p0, Ldna;->p:Llda;
+
+    invoke-static {p1}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
 
     move-result-object p1
+
+    invoke-interface {p2, p1}, Llda;->fB(Ljava/lang/Object;)V
+
+    return-void
+
+    :cond_1
+    iget p2, p0, Ldna;->h:I
+
+    int-to-float p2, p2
+
+    mul-float p2, p2, p1
+
+    invoke-static {p2}, Ljava/lang/Math;->round(F)I
+
+    move-result p2
+
+    iget v0, p0, Ldna;->g:I
+
+    add-int/2addr p2, v0
+
+    iget v1, p0, Ldna;->h:I
+
+    iget v2, p0, Ldna;->i:F
+
+    iget-object v3, p0, Ldna;->a:Lcom/google/android/apps/camera/evcomp/EvCompView;
+
+    int-to-float v1, v1
+
+    mul-float v1, v1, p1
+
+    int-to-float p1, v0
+
+    add-float/2addr v1, p1
+
+    mul-float v1, v1, v2
+
+    invoke-virtual {v3, v1}, Lcom/google/android/apps/camera/evcomp/EvCompView;->h(F)V
+
+    iget-object p1, p0, Ldna;->o:Llda;
+
+    check-cast p1, Llce;
+
+    iget-object p1, p1, Llce;->d:Ljava/lang/Object;
+
+    check-cast p1, Ljava/lang/Integer;
+
+    invoke-virtual {p1}, Ljava/lang/Integer;->intValue()I
+
+    move-result p1
+
+    if-eq p2, p1, :cond_2
+
+    iget-object p1, p0, Ldna;->o:Llda;
+
+    invoke-static {p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object p2
+
+    invoke-interface {p1, p2}, Llda;->fB(Ljava/lang/Object;)V
+
+    return-void
+
+    :cond_2
+    return-void
+
+    :cond_3
+    sget-object v0, Ldmg;->a:Ldmg;
+
+    invoke-virtual {p2}, Ldmg;->ordinal()I
+
+    move-result p2
+
+    const/high16 v0, -0x40800000    # -1.0f
+
+    packed-switch p2, :pswitch_data_0
+
+    goto/16 :goto_0
+
+    :pswitch_0
+    iget-object p2, p0, Ldna;->a:Lcom/google/android/apps/camera/evcomp/EvCompView;
+
+    iput p1, p2, Lcom/google/android/apps/camera/evcomp/EvCompView;->l:F
+
+    invoke-virtual {p2}, Lcom/google/android/apps/camera/evcomp/EvCompView;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v1
+
+    const/4 v2, 0x1
+
+    new-array v2, v2, [Ljava/lang/Object;
+
+    const/4 v3, 0x0
+
+    iget v4, p2, Lcom/google/android/apps/camera/evcomp/EvCompView;->l:F
+
+    invoke-static {v4}, Ljava/lang/String;->valueOf(F)Ljava/lang/String;
+
+    move-result-object v4
+
+    aput-object v4, v2, v3
+
+    const v3, 0x7f14043e
+
+    invoke-virtual {v1, v3, v2}, Landroid/content/res/Resources;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v1
+
+    iget-object p2, p2, Lcom/google/android/apps/camera/evcomp/EvCompView;->g:Lcom/google/android/apps/camera/evcomp/EvCompSlider;
+
+    invoke-virtual {p2, v1}, Lcom/google/android/apps/camera/evcomp/EvCompSlider;->setContentDescription(Ljava/lang/CharSequence;)V
+
+    iget-object p2, p0, Ldna;->q:Llda;
+
+    check-cast p2, Llce;
+
+    iget-object p2, p2, Llce;->d:Ljava/lang/Object;
+
+    check-cast p2, Ljava/lang/Float;
+
+    invoke-virtual {p2}, Ljava/lang/Float;->floatValue()F
+
+    move-result p2
+
+    cmpl-float p2, p1, p2
+
+    if-nez p2, :cond_4
+
+    return-void
+
+    :cond_4
+    iget-object p2, p0, Ldna;->q:Llda;
+
+    invoke-static {p1}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
+
+    move-result-object p1
+
+    invoke-interface {p2, p1}, Llda;->fB(Ljava/lang/Object;)V
+
+    iget-object p1, p0, Ldna;->p:Llda;
+
+    check-cast p1, Llce;
+
+    iget-object p1, p1, Llce;->d:Ljava/lang/Object;
 
     check-cast p1, Ljava/lang/Float;
 
@@ -52,361 +482,92 @@
 
     move-result p1
 
-    iput p1, p0, Ldna;->b:F
+    cmpl-float p1, p1, v0
+
+    if-nez p1, :cond_6
+
+    iget-object p1, p0, Ldna;->p:Llda;
+
+    iget p2, p0, Ldna;->m:F
+
+    invoke-static {p2}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
+
+    move-result-object p2
+
+    invoke-interface {p1, p2}, Llda;->fB(Ljava/lang/Object;)V
 
     return-void
-.end method
-
-
-# virtual methods
-.method public final a(Lkli;)F
-    .locals 19
-
-    invoke-static/range {p1 .. p1}, Lklg;->c(Lkli;)D
-
-    move-result-wide v0
-
-    invoke-interface/range {p1 .. p1}, Lkli;->t()Ljava/util/List;
-
-    move-result-object v2
-
-    move-object/from16 v3, p0
-
-    iget v4, v3, Ldna;->b:F
-
-    invoke-static/range {p1 .. p1}, Lklg;->c(Lkli;)D
-
-    move-result-wide v5
-
-    invoke-interface/range {p1 .. p1}, Lkli;->t()Ljava/util/List;
-
-    move-result-object v7
-
-    invoke-interface {v7}, Ljava/util/List;->iterator()Ljava/util/Iterator;
-
-    move-result-object v7
-
-    const/high16 v8, -0x40800000    # -1.0f
-
-    const-wide/high16 v9, -0x3fa7000000000000L    # -100.0
-
-    :goto_0
-    invoke-interface {v7}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v11
-
-    if-eqz v11, :cond_1
-
-    invoke-interface {v7}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v11
-
-    check-cast v11, Ljava/lang/Float;
-
-    invoke-virtual {v11}, Ljava/lang/Float;->floatValue()F
-
-    move-result v12
-
-    invoke-static {v12, v5, v6}, Lklg;->a(FD)D
-
-    move-result-wide v12
-
-    float-to-double v14, v4
-
-    invoke-static {v14, v15}, Ljava/lang/Double;->isNaN(D)Z
-
-    sub-double v16, v12, v14
-
-    invoke-static {v14, v15}, Ljava/lang/Double;->isNaN(D)Z
-
-    sub-double v14, v9, v14
-
-    invoke-static/range {v16 .. v17}, Ljava/lang/Math;->abs(D)D
-
-    move-result-wide v16
-
-    invoke-static {v14, v15}, Ljava/lang/Math;->abs(D)D
-
-    move-result-wide v14
-
-    cmpg-double v18, v16, v14
-
-    if-gez v18, :cond_0
-
-    invoke-virtual {v11}, Ljava/lang/Float;->floatValue()F
-
-    move-result v8
-
-    move-wide v9, v12
-
-    goto :goto_0
-
-    :cond_0
-    goto :goto_0
-
-    :cond_1
-    invoke-static {v8, v0, v1}, Lklg;->a(FD)D
-
-    move-result-wide v4
-
-    invoke-static {v2}, Ljava/util/Collections;->min(Ljava/util/Collection;)Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Ljava/lang/Float;
-
-    invoke-virtual {v2}, Ljava/lang/Float;->floatValue()F
-
-    move-result v2
-
-    invoke-static {v4, v5, v2}, Lklg;->b(DF)D
-
-    move-result-wide v4
-
-    div-double/2addr v0, v4
-
-    double-to-float v0, v0
-
-    return v0
-.end method
-
-.method public final b(Lklj;Ldhi;Lklv;)Lkll;
-    .locals 5
-
-    const/4 v0, 0x0
-
-    if-nez p3, :cond_0
-
-    move-object v3, v0
-
-    goto/16 :goto_1
-
-    :cond_0
-    sget-object v1, Ldho;->D:Ldhk;
-
-    invoke-interface {p2, v1}, Ldhi;->a(Ldhk;)Lj$/util/Optional;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Lj$/util/Optional;->get()Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Ljava/lang/Integer;
-
-    sget-object v2, Ldho;->E:Ldhk;
-
-    invoke-interface {p2, v2}, Ldhi;->a(Ldhk;)Lj$/util/Optional;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Lj$/util/Optional;->get()Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Ljava/lang/Integer;
-
-    invoke-virtual {p3}, Lklv;->ordinal()I
-
-    move-result v3
-
-    const/4 v4, -0x1
-
-    packed-switch v3, :pswitch_data_0
-
-    move-object v1, v0
-
-    goto :goto_0
-
-    :pswitch_0
-    sget-object v1, Ldna;->a:Lnak;
-
-    invoke-virtual {v1}, Lnaf;->c()Lnaz;
-
-    move-result-object v1
-
-    const-string v2, "TestOnly camera facing %s is not supported"
-
-    const/16 v3, 0x406
-
-    invoke-static {v1, v2, p3, v3}, Ld;->j(Lnaz;Ljava/lang/String;Ljava/lang/Object;C)V
-
-    move-object v3, v0
-
-    goto :goto_1
 
     :pswitch_1
-    invoke-virtual {v1}, Ljava/lang/Integer;->intValue()I
+    iget-object p2, p0, Ldna;->a:Lcom/google/android/apps/camera/evcomp/EvCompView;
 
-    move-result v2
+    invoke-virtual {p2, p1}, Lcom/google/android/apps/camera/evcomp/EvCompView;->h(F)V
 
-    if-eq v2, v4, :cond_1
+    iget-object p2, p0, Ldna;->p:Llda;
 
-    invoke-virtual {v1}, Ljava/lang/Integer;->toString()Ljava/lang/String;
+    check-cast p2, Llce;
 
-    move-result-object v1
+    iget-object p2, p2, Llce;->d:Ljava/lang/Object;
 
-    goto :goto_0
+    check-cast p2, Ljava/lang/Float;
 
-    :cond_1
-    move-object v1, v0
+    invoke-virtual {p2}, Ljava/lang/Float;->floatValue()F
 
-    goto :goto_0
+    move-result p2
 
-    :pswitch_2
-    invoke-virtual {v2}, Ljava/lang/Integer;->intValue()I
+    cmpl-float p2, p1, p2
 
-    move-result v1
+    if-nez p2, :cond_5
 
-    if-eq v1, v4, :cond_2
-
-    invoke-virtual {v2}, Ljava/lang/Integer;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    goto :goto_0
-
-    :cond_2
-    move-object v1, v0
-
-    :goto_0
-    if-nez v1, :cond_3
-
-    move-object v3, v0
-
-    goto :goto_1
-
-    :cond_3
-    invoke-interface {p1, p3}, Lklj;->h(Lklv;)Ljava/util/List;
-
-    move-result-object v2
-
-    invoke-interface {v2}, Ljava/util/List;->iterator()Ljava/util/Iterator;
-
-    move-result-object v2
-
-    :cond_4
-    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v3
-
-    if-eqz v3, :cond_5
-
-    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v3
-
-    check-cast v3, Lkll;
-
-    iget-object v4, v3, Lkll;->a:Ljava/lang/String;
-
-    invoke-virtual {v4, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v4
-
-    if-eqz v4, :cond_4
-
-    goto :goto_1
+    return-void
 
     :cond_5
-    sget-object v2, Ldna;->a:Lnak;
+    iget-object p2, p0, Ldna;->p:Llda;
 
-    invoke-virtual {v2}, Lnaf;->c()Lnaz;
-
-    move-result-object v2
-
-    const-string v3, "TestOnly Camera id %s is not supported"
-
-    const/16 v4, 0x405
-
-    invoke-static {v2, v3, v1, v4}, Ld;->j(Lnaz;Ljava/lang/String;Ljava/lang/Object;C)V
-
-    move-object v3, v0
-
-    :goto_1
-    if-eqz v3, :cond_6
-
-    sget-object p1, Ldna;->a:Lnak;
-
-    invoke-virtual {p1}, Lnaf;->c()Lnaz;
+    invoke-static {p1}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
 
     move-result-object p1
 
-    const-string p2, "Set TestOnly camera id (%s)"
+    invoke-interface {p2, p1}, Llda;->fB(Ljava/lang/Object;)V
 
-    const/16 p3, 0x404
+    iget-object p1, p0, Ldna;->q:Llda;
 
-    invoke-static {p1, p2, v3, p3}, Ld;->j(Lnaz;Ljava/lang/String;Ljava/lang/Object;C)V
+    check-cast p1, Llce;
 
-    return-object v3
+    iget-object p1, p1, Llce;->d:Ljava/lang/Object;
+
+    check-cast p1, Ljava/lang/Float;
+
+    invoke-virtual {p1}, Ljava/lang/Float;->floatValue()F
+
+    move-result p1
+
+    cmpl-float p1, p1, v0
+
+    if-nez p1, :cond_6
+
+    iget-object p1, p0, Ldna;->q:Llda;
+
+    iget p2, p0, Ldna;->n:F
+
+    invoke-static {p2}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
+
+    move-result-object p2
+
+    invoke-interface {p1, p2}, Llda;->fB(Ljava/lang/Object;)V
 
     :cond_6
-    sget-object v1, Ldho;->a:Ldhk;
-
-    invoke-interface {p2}, Ldhi;->c()V
-
-    invoke-interface {p2}, Ldhi;->c()V
-
-    new-instance p2, Lkns;
-
-    new-instance v1, Lkch;
-
-    invoke-direct {v1, p1}, Lkch;-><init>(Lklj;)V
-
-    invoke-direct {p2, v1, p1}, Lkns;-><init>(Lkci;Lklj;)V
-
-    new-instance p1, Lkcj;
-
-    iget-object v1, p2, Lkns;->b:Ljava/lang/Object;
-
-    new-instance v2, Lkcg;
-
-    const/4 v3, 0x0
-
-    invoke-direct {v2, p3, v3}, Lkcg;-><init>(Lklv;I)V
-
-    invoke-direct {p1, v1, v2}, Lkcj;-><init>(Lkci;Ljzw;)V
-
-    iput-object p1, p2, Lkns;->b:Ljava/lang/Object;
-
-    new-instance p1, Lkcj;
-
-    iget-object p3, p2, Lkns;->b:Ljava/lang/Object;
-
-    new-instance v1, Lkcg;
-
-    const/4 v2, 0x1
-
-    invoke-direct {v1, p2, v2, v0}, Lkcg;-><init>(Lkns;I[B)V
-
-    invoke-direct {p1, p3, v1}, Lkcj;-><init>(Lkci;Ljzw;)V
-
-    iput-object p1, p2, Lkns;->b:Ljava/lang/Object;
-
-    iget-object p1, p2, Lkns;->b:Ljava/lang/Object;
-
-    invoke-interface {p1}, Lkci;->b()V
-
-    iget-object p1, p2, Lkns;->b:Ljava/lang/Object;
-
-    invoke-interface {p1}, Lkci;->a()Lkli;
-
-    move-result-object p1
-
-    if-nez p1, :cond_7
-
-    return-object v0
+    :goto_0
+    return-void
 
     :cond_7
-    check-cast p1, Lklh;
+    :goto_1
+    return-void
 
-    iget-object p1, p1, Lklh;->a:Lkll;
-
-    return-object p1
+    nop
 
     :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_2
         :pswitch_1
         :pswitch_0
     .end packed-switch

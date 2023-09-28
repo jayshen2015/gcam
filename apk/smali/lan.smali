@@ -1,30 +1,33 @@
-.class public final Llan;
-.super Llak;
+.class public final synthetic Llan;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Ljava/lang/Runnable;
+
+
+# instance fields
+.field public final synthetic a:Landroid/os/HandlerThread;
 
 
 # direct methods
-.method public constructor <init>()V
+.method public synthetic constructor <init>(Landroid/os/HandlerThread;)V
     .locals 0
 
-    invoke-direct {p0}, Llak;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Llan;->a:Landroid/os/HandlerThread;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()I
+.method public final run()V
     .locals 1
 
-    const/16 v0, 0x20
+    iget-object v0, p0, Llan;->a:Landroid/os/HandlerThread;
 
-    return v0
-.end method
+    invoke-virtual {v0}, Landroid/os/HandlerThread;->quitSafely()Z
 
-.method public final b()Ljava/lang/String;
-    .locals 1
-
-    const-string v0, "UInt32"
-
-    return-object v0
+    return-void
 .end method

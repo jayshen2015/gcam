@@ -1,112 +1,86 @@
 .class public final Lkun;
-.super Ljava/lang/Object;
+.super Lkno;
 
 # interfaces
-.implements Lkus;
+.implements Lkiv;
+
+
+# static fields
+.field public static final CREATOR:Landroid/os/Parcelable$Creator;
 
 
 # instance fields
-.field private final a:Landroid/content/Context;
+.field public final a:Ljava/util/List;
 
-.field private final b:Ljava/lang/String;
-
-.field private final c:Ldne;
+.field public final b:Ljava/lang/String;
 
 
 # direct methods
-.method public constructor <init>(Landroid/content/Context;Ldne;Ljava/lang/String;[B)V
+.method static constructor <clinit>()V
+    .locals 2
+
+    new-instance v0, Lktu;
+
+    const/4 v1, 0x5
+
+    invoke-direct {v0, v1}, Lktu;-><init>(I)V
+
+    sput-object v0, Lkun;->CREATOR:Landroid/os/Parcelable$Creator;
+
+    return-void
+.end method
+
+.method public constructor <init>(Ljava/util/List;Ljava/lang/String;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Lkno;-><init>()V
 
-    iput-object p2, p0, Lkun;->c:Ldne;
+    iput-object p1, p0, Lkun;->a:Ljava/util/List;
 
-    iput-object p1, p0, Lkun;->a:Landroid/content/Context;
-
-    iput-object p3, p0, Lkun;->b:Ljava/lang/String;
+    iput-object p2, p0, Lkun;->b:Ljava/lang/String;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final b()V
-    .locals 4
-
-    iget-object v0, p0, Lkun;->a:Landroid/content/Context;
-
-    const-string v1, "clipboard"
-
-    invoke-virtual {v0, v1}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/content/ClipboardManager;
-
-    iget-object v1, p0, Lkun;->b:Ljava/lang/String;
-
-    const-string v2, "simple text"
-
-    invoke-static {v2, v1}, Landroid/content/ClipData;->newPlainText(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Landroid/content/ClipData;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Landroid/content/ClipboardManager;->setPrimaryClip(Landroid/content/ClipData;)V
+.method public final a()Lcom/google/android/gms/common/api/Status;
+    .locals 1
 
     iget-object v0, p0, Lkun;->b:Ljava/lang/String;
 
-    invoke-virtual {v0}, Ljava/lang/String;->length()I
+    if-eqz v0, :cond_0
 
-    move-result v1
+    sget-object v0, Lcom/google/android/gms/common/api/Status;->a:Lcom/google/android/gms/common/api/Status;
 
-    const/16 v2, 0x32
-
-    if-le v1, v2, :cond_0
-
-    const/4 v1, 0x0
-
-    invoke-virtual {v0, v1, v2}, Ljava/lang/String;->substring(II)Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v0
-
-    const-string v1, "..."
-
-    invoke-virtual {v0, v1}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v0
+    return-object v0
 
     :cond_0
-    iget-object v1, p0, Lkun;->c:Ldne;
+    sget-object v0, Lcom/google/android/gms/common/api/Status;->e:Lcom/google/android/gms/common/api/Status;
 
-    iget-object v2, p0, Lkun;->a:Landroid/content/Context;
+    return-object v0
+.end method
 
-    const v3, 0x7f140527
+.method public final writeToParcel(Landroid/os/Parcel;I)V
+    .locals 2
 
-    invoke-virtual {v2, v3}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+    invoke-static {p1}, Lmip;->ct(Landroid/os/Parcel;)I
 
-    move-result-object v2
+    move-result p2
 
-    new-instance v3, Ljava/lang/StringBuilder;
+    iget-object v0, p0, Lkun;->a:Ljava/util/List;
 
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+    const/4 v1, 0x1
 
-    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {p1, v1, v0}, Lmip;->cK(Landroid/os/Parcel;ILjava/util/List;)V
 
-    const-string v2, ": "
+    iget-object v0, p0, Lkun;->b:Ljava/lang/String;
 
-    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    const/4 v1, 0x2
 
-    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {p1, v1, v0}, Lmip;->cI(Landroid/os/Parcel;ILjava/lang/String;)V
 
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-virtual {v1, v0}, Ldne;->n(Ljava/lang/String;)V
+    invoke-static {p1, p2}, Lmip;->cv(Landroid/os/Parcel;I)V
 
     return-void
 .end method

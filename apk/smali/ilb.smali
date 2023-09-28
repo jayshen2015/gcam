@@ -1,48 +1,53 @@
 .class final Lilb;
-.super Landroid/animation/AnimatorListenerAdapter;
+.super Lgf;
 
 
 # instance fields
-.field final synthetic a:Lnph;
+.field private final a:I
 
 
 # direct methods
-.method public constructor <init>(Lnph;)V
-    .locals 0
+.method public constructor <init>(Landroid/content/res/Resources;)V
+    .locals 1
 
-    iput-object p1, p0, Lilb;->a:Lnph;
+    invoke-direct {p0}, Lgf;-><init>()V
 
-    invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
+    const v0, 0x7f07050b
+
+    invoke-virtual {p1, v0}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
+
+    move-result p1
+
+    iput p1, p0, Lilb;->a:I
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onAnimationCancel(Landroid/animation/Animator;)V
-    .locals 1
+.method public final b(Landroid/graphics/Rect;Landroid/view/View;Landroid/support/v7/widget/RecyclerView;)V
+    .locals 0
 
-    invoke-virtual {p1, p0}, Landroid/animation/Animator;->removeListener(Landroid/animation/Animator$AnimatorListener;)V
+    invoke-virtual {p3, p2}, Landroid/support/v7/widget/RecyclerView;->c(Landroid/view/View;)I
 
-    iget-object p1, p0, Lilb;->a:Lnph;
+    move-result p2
 
-    sget-object v0, Ljava/lang/Boolean;->FALSE:Ljava/lang/Boolean;
+    iget-object p3, p3, Landroid/support/v7/widget/RecyclerView;->l:Lpu;
 
-    invoke-virtual {p1, v0}, Lnph;->e(Ljava/lang/Object;)Z
+    invoke-virtual {p3}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    return-void
-.end method
+    invoke-virtual {p3}, Lpu;->a()I
 
-.method public final onAnimationEnd(Landroid/animation/Animator;)V
-    .locals 1
+    move-result p3
 
-    invoke-virtual {p1, p0}, Landroid/animation/Animator;->removeListener(Landroid/animation/Animator$AnimatorListener;)V
+    add-int/lit8 p3, p3, -0x1
 
-    iget-object p1, p0, Lilb;->a:Lnph;
+    if-eq p2, p3, :cond_0
 
-    sget-object v0, Ljava/lang/Boolean;->TRUE:Ljava/lang/Boolean;
+    iget p2, p0, Lilb;->a:I
 
-    invoke-virtual {p1, v0}, Lnph;->e(Ljava/lang/Object;)Z
+    iput p2, p1, Landroid/graphics/Rect;->bottom:I
 
+    :cond_0
     return-void
 .end method

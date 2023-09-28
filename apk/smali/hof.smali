@@ -1,539 +1,223 @@
 .class public final Lhof;
 .super Ljava/lang/Object;
 
-
-# static fields
-.field public static final a:Lnak;
+# interfaces
+.implements Lhoj;
 
 
 # instance fields
-.field public A:Lhpt;
+.field public a:Ljrl;
 
-.field public B:Lklb;
+.field public b:Lcom/google/android/apps/camera/ui/views/CutoutBar;
 
-.field public C:Ljwo;
+.field public c:Z
 
-.field public D:Landroidx/wear/ambient/AmbientModeSupport$AmbientController;
+.field public d:Z
 
-.field public E:Landroidx/wear/ambient/AmbientModeSupport$AmbientController;
+.field public final e:Landroid/os/Handler;
 
-.field public final b:Ljava/util/concurrent/atomic/AtomicBoolean;
+.field public final f:Llar;
 
-.field public final c:Ljava/util/concurrent/atomic/AtomicBoolean;
+.field public final g:Ljava/lang/Object;
 
-.field public final d:Ljava/util/concurrent/atomic/AtomicBoolean;
+.field public final h:Llco;
 
-.field public final e:Lnnp;
+.field public final i:Llco;
 
-.field public final f:Ljava/util/concurrent/atomic/AtomicLong;
+.field public j:Lcom/google/android/apps/camera/ui/views/FrontLensIndicatorOverlay;
 
-.field public final g:Ljava/util/concurrent/atomic/AtomicLong;
+.field public k:Ljava/lang/Runnable;
 
-.field public final h:Ljava/util/concurrent/atomic/AtomicLong;
+.field public final l:Lbqg;
 
-.field public final i:Ljava/util/concurrent/atomic/AtomicLong;
-
-.field public final j:Ljava/util/concurrent/atomic/AtomicLong;
-
-.field public final k:Ljava/util/concurrent/atomic/AtomicLong;
-
-.field public final l:Ljava/util/concurrent/atomic/AtomicLong;
-
-.field public final m:Ljava/util/concurrent/atomic/AtomicLong;
-
-.field public final n:Ljava/util/concurrent/atomic/AtomicLong;
-
-.field public final o:Ljava/util/concurrent/atomic/AtomicLong;
-
-.field public final p:Ljava/util/concurrent/atomic/AtomicLong;
-
-.field public final q:Ljava/util/concurrent/atomic/AtomicLong;
-
-.field public final r:Ldhi;
-
-.field public final s:Landroid/media/MediaCodec$Callback;
-
-.field public final t:Ljava/lang/Object;
-
-.field public final u:Ljwb;
-
-.field public final v:Ljwb;
-
-.field public w:Lhps;
-
-.field public x:Lhpw;
-
-.field public y:Lnph;
-
-.field public z:Lhpu;
+.field private final m:Lhpb;
 
 
 # direct methods
-.method static constructor <clinit>()V
+.method public constructor <init>(Lbqg;Llda;Llco;Llar;Lhpb;)V
     .locals 1
-
-    const-string v0, "com/google/android/apps/camera/timelapse/TimelapseFrameSelector"
-
-    invoke-static {v0}, Lnak;->h(Ljava/lang/String;)Lnak;
-
-    move-result-object v0
-
-    sput-object v0, Lhof;->a:Lnak;
-
-    return-void
-.end method
-
-.method public constructor <init>(Ldhi;Ljwb;Ljwb;Lhpu;)V
-    .locals 3
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    new-instance v0, Ljava/util/concurrent/atomic/AtomicBoolean;
+    sget-object v0, Ljrl;->a:Ljrl;
 
-    const/4 v1, 0x0
-
-    invoke-direct {v0, v1}, Ljava/util/concurrent/atomic/AtomicBoolean;-><init>(Z)V
-
-    iput-object v0, p0, Lhof;->b:Ljava/util/concurrent/atomic/AtomicBoolean;
-
-    new-instance v0, Ljava/util/concurrent/atomic/AtomicBoolean;
-
-    invoke-direct {v0, v1}, Ljava/util/concurrent/atomic/AtomicBoolean;-><init>(Z)V
-
-    iput-object v0, p0, Lhof;->c:Ljava/util/concurrent/atomic/AtomicBoolean;
-
-    new-instance v0, Ljava/util/concurrent/atomic/AtomicBoolean;
-
-    invoke-direct {v0, v1}, Ljava/util/concurrent/atomic/AtomicBoolean;-><init>(Z)V
-
-    iput-object v0, p0, Lhof;->d:Ljava/util/concurrent/atomic/AtomicBoolean;
-
-    new-instance v0, Lnnp;
-
-    const/4 v1, 0x0
-
-    invoke-direct {v0, v1}, Lnnp;-><init>([B)V
-
-    iput-object v0, p0, Lhof;->e:Lnnp;
-
-    new-instance v0, Ljava/util/concurrent/atomic/AtomicLong;
-
-    const-wide/16 v1, 0x0
-
-    invoke-direct {v0, v1, v2}, Ljava/util/concurrent/atomic/AtomicLong;-><init>(J)V
-
-    iput-object v0, p0, Lhof;->f:Ljava/util/concurrent/atomic/AtomicLong;
-
-    new-instance v0, Ljava/util/concurrent/atomic/AtomicLong;
-
-    invoke-direct {v0, v1, v2}, Ljava/util/concurrent/atomic/AtomicLong;-><init>(J)V
-
-    iput-object v0, p0, Lhof;->g:Ljava/util/concurrent/atomic/AtomicLong;
-
-    new-instance v0, Ljava/util/concurrent/atomic/AtomicLong;
-
-    invoke-direct {v0, v1, v2}, Ljava/util/concurrent/atomic/AtomicLong;-><init>(J)V
-
-    iput-object v0, p0, Lhof;->h:Ljava/util/concurrent/atomic/AtomicLong;
-
-    new-instance v0, Ljava/util/concurrent/atomic/AtomicLong;
-
-    invoke-direct {v0, v1, v2}, Ljava/util/concurrent/atomic/AtomicLong;-><init>(J)V
-
-    iput-object v0, p0, Lhof;->i:Ljava/util/concurrent/atomic/AtomicLong;
-
-    new-instance v0, Ljava/util/concurrent/atomic/AtomicLong;
-
-    invoke-direct {v0, v1, v2}, Ljava/util/concurrent/atomic/AtomicLong;-><init>(J)V
-
-    iput-object v0, p0, Lhof;->j:Ljava/util/concurrent/atomic/AtomicLong;
-
-    new-instance v0, Ljava/util/concurrent/atomic/AtomicLong;
-
-    invoke-direct {v0, v1, v2}, Ljava/util/concurrent/atomic/AtomicLong;-><init>(J)V
-
-    iput-object v0, p0, Lhof;->k:Ljava/util/concurrent/atomic/AtomicLong;
-
-    new-instance v0, Ljava/util/concurrent/atomic/AtomicLong;
-
-    invoke-direct {v0, v1, v2}, Ljava/util/concurrent/atomic/AtomicLong;-><init>(J)V
-
-    iput-object v0, p0, Lhof;->l:Ljava/util/concurrent/atomic/AtomicLong;
-
-    new-instance v0, Ljava/util/concurrent/atomic/AtomicLong;
-
-    invoke-direct {v0, v1, v2}, Ljava/util/concurrent/atomic/AtomicLong;-><init>(J)V
-
-    iput-object v0, p0, Lhof;->m:Ljava/util/concurrent/atomic/AtomicLong;
-
-    new-instance v0, Ljava/util/concurrent/atomic/AtomicLong;
-
-    invoke-direct {v0, v1, v2}, Ljava/util/concurrent/atomic/AtomicLong;-><init>(J)V
-
-    iput-object v0, p0, Lhof;->n:Ljava/util/concurrent/atomic/AtomicLong;
-
-    new-instance v0, Ljava/util/concurrent/atomic/AtomicLong;
-
-    invoke-direct {v0, v1, v2}, Ljava/util/concurrent/atomic/AtomicLong;-><init>(J)V
-
-    iput-object v0, p0, Lhof;->o:Ljava/util/concurrent/atomic/AtomicLong;
-
-    new-instance v0, Ljava/util/concurrent/atomic/AtomicLong;
-
-    invoke-direct {v0, v1, v2}, Ljava/util/concurrent/atomic/AtomicLong;-><init>(J)V
-
-    iput-object v0, p0, Lhof;->p:Ljava/util/concurrent/atomic/AtomicLong;
-
-    new-instance v0, Ljava/util/concurrent/atomic/AtomicLong;
-
-    invoke-direct {v0, v1, v2}, Ljava/util/concurrent/atomic/AtomicLong;-><init>(J)V
-
-    iput-object v0, p0, Lhof;->q:Ljava/util/concurrent/atomic/AtomicLong;
+    iput-object v0, p0, Lhof;->a:Ljrl;
 
     new-instance v0, Ljava/lang/Object;
 
     invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
-    iput-object v0, p0, Lhof;->t:Ljava/lang/Object;
+    iput-object v0, p0, Lhof;->g:Ljava/lang/Object;
 
-    iput-object p1, p0, Lhof;->r:Ldhi;
+    iput-object p2, p0, Lhof;->h:Llco;
 
-    iput-object p2, p0, Lhof;->u:Ljwb;
+    iput-object p3, p0, Lhof;->i:Llco;
 
-    iput-object p3, p0, Lhof;->v:Ljwb;
+    iput-object p1, p0, Lhof;->l:Lbqg;
 
-    iput-object p4, p0, Lhof;->z:Lhpu;
+    iput-object p4, p0, Lhof;->f:Llar;
 
-    new-instance p2, Lhod;
+    iput-object p5, p0, Lhof;->m:Lhpb;
 
-    invoke-direct {p2, p0, p1, p4}, Lhod;-><init>(Lhof;Ldhi;Lhpu;)V
+    invoke-static {}, Lmip;->bU()Landroid/os/Handler;
 
-    iput-object p2, p0, Lhof;->s:Landroid/media/MediaCodec$Callback;
+    move-result-object p1
+
+    iput-object p1, p0, Lhof;->e:Landroid/os/Handler;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()J
-    .locals 2
-
-    iget-object v0, p0, Lhof;->g:Ljava/util/concurrent/atomic/AtomicLong;
-
-    invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicLong;->get()J
-
-    move-result-wide v0
-
-    return-wide v0
-.end method
-
-.method public final b()J
+.method public final a(Ljrl;)V
     .locals 4
 
-    iget-object v0, p0, Lhof;->h:Ljava/util/concurrent/atomic/AtomicLong;
-
-    invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicLong;->get()J
-
-    move-result-wide v0
-
-    iget-object v2, p0, Lhof;->g:Ljava/util/concurrent/atomic/AtomicLong;
-
-    invoke-virtual {v2}, Ljava/util/concurrent/atomic/AtomicLong;->get()J
-
-    move-result-wide v2
-
-    sub-long/2addr v0, v2
-
-    return-wide v0
-.end method
-
-.method public final c()J
-    .locals 4
-
-    sget-object v0, Ljava/util/concurrent/TimeUnit;->SECONDS:Ljava/util/concurrent/TimeUnit;
-
-    iget-object v1, p0, Lhof;->h:Ljava/util/concurrent/atomic/AtomicLong;
-
-    invoke-virtual {v1}, Ljava/util/concurrent/atomic/AtomicLong;->get()J
-
-    move-result-wide v1
-
-    invoke-virtual {v0, v1, v2}, Ljava/util/concurrent/TimeUnit;->toMillis(J)J
-
-    move-result-wide v0
-
-    invoke-virtual {p0}, Lhof;->j()Lhpu;
-
-    move-result-object v2
-
-    iget v2, v2, Lhpu;->h:I
-
-    int-to-long v2, v2
-
-    div-long/2addr v0, v2
-
-    return-wide v0
-.end method
-
-.method public final d()J
-    .locals 2
-
-    iget-object v0, p0, Lhof;->f:Ljava/util/concurrent/atomic/AtomicLong;
-
-    invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicLong;->get()J
-
-    move-result-wide v0
-
-    return-wide v0
-.end method
-
-.method public final e()J
-    .locals 4
-
-    iget-object v0, p0, Lhof;->l:Ljava/util/concurrent/atomic/AtomicLong;
-
-    invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicLong;->get()J
-
-    move-result-wide v0
-
-    iget-object v2, p0, Lhof;->n:Ljava/util/concurrent/atomic/AtomicLong;
-
-    invoke-virtual {v2}, Ljava/util/concurrent/atomic/AtomicLong;->get()J
-
-    move-result-wide v2
-
-    sub-long/2addr v0, v2
-
-    return-wide v0
-.end method
-
-.method public final f()J
-    .locals 2
-
-    iget-object v0, p0, Lhof;->n:Ljava/util/concurrent/atomic/AtomicLong;
-
-    invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicLong;->get()J
-
-    move-result-wide v0
-
-    return-wide v0
-.end method
-
-.method public final g()J
-    .locals 4
-
-    sget-object v0, Ljava/util/concurrent/TimeUnit;->SECONDS:Ljava/util/concurrent/TimeUnit;
-
-    iget-object v1, p0, Lhof;->l:Ljava/util/concurrent/atomic/AtomicLong;
-
-    invoke-virtual {v1}, Ljava/util/concurrent/atomic/AtomicLong;->get()J
-
-    move-result-wide v1
-
-    invoke-virtual {v0, v1, v2}, Ljava/util/concurrent/TimeUnit;->toMillis(J)J
-
-    move-result-wide v0
-
-    invoke-virtual {p0}, Lhof;->j()Lhpu;
-
-    move-result-object v2
-
-    iget v2, v2, Lhpu;->h:I
-
-    int-to-long v2, v2
-
-    div-long/2addr v0, v2
-
-    return-wide v0
-.end method
-
-.method final h()J
-    .locals 7
-
-    invoke-virtual {p0}, Lhof;->m()Z
-
-    move-result v0
-
-    const-wide/16 v1, 0x1
-
-    if-eqz v0, :cond_0
-
-    :goto_0
-    invoke-virtual {p0}, Lhof;->i()J
-
-    move-result-wide v3
-
-    div-long/2addr v3, v1
-
-    const-wide/16 v5, 0x7530
-
-    cmp-long v0, v3, v5
-
-    if-ltz v0, :cond_0
-
-    add-long/2addr v1, v1
-
-    goto :goto_0
-
-    :cond_0
-    return-wide v1
-.end method
-
-.method public final i()J
-    .locals 2
-
-    iget-object v0, p0, Lhof;->q:Ljava/util/concurrent/atomic/AtomicLong;
-
-    invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicLong;->get()J
-
-    move-result-wide v0
-
-    return-wide v0
-.end method
-
-.method final j()Lhpu;
-    .locals 2
-
-    iget-object v0, p0, Lhof;->t:Ljava/lang/Object;
+    iget-object v0, p0, Lhof;->g:Ljava/lang/Object;
 
     monitor-enter v0
 
     :try_start_0
-    iget-object v1, p0, Lhof;->z:Lhpu;
+    iget-object v1, p0, Lhof;->j:Lcom/google/android/apps/camera/ui/views/FrontLensIndicatorOverlay;
 
-    monitor-exit v0
-
-    return-object v1
-
-    :catchall_0
-    move-exception v1
-
-    monitor-exit v0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw v1
-.end method
-
-.method public final k()V
-    .locals 6
-
-    iget-object v0, p0, Lhof;->o:Ljava/util/concurrent/atomic/AtomicLong;
-
-    invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicLong;->get()J
-
-    move-result-wide v0
-
-    const-wide/16 v2, 0x0
-
-    cmp-long v4, v0, v2
-
-    if-lez v4, :cond_0
-
-    iget-object v0, p0, Lhof;->p:Ljava/util/concurrent/atomic/AtomicLong;
-
-    invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicLong;->get()J
-
-    move-result-wide v1
-
-    sget-object v3, Ljava/util/concurrent/TimeUnit;->MILLISECONDS:Ljava/util/concurrent/TimeUnit;
-
-    invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
-
-    move-result-wide v4
-
-    invoke-virtual {v3, v4, v5}, Ljava/util/concurrent/TimeUnit;->toNanos(J)J
-
-    move-result-wide v3
-
-    add-long/2addr v1, v3
-
-    iget-object v3, p0, Lhof;->o:Ljava/util/concurrent/atomic/AtomicLong;
-
-    invoke-virtual {v3}, Ljava/util/concurrent/atomic/AtomicLong;->get()J
-
-    move-result-wide v3
-
-    sub-long/2addr v1, v3
-
-    invoke-virtual {v0, v1, v2}, Ljava/util/concurrent/atomic/AtomicLong;->set(J)V
-
-    :cond_0
-    return-void
-.end method
-
-.method public final l()V
-    .locals 4
-
-    iget-object v0, p0, Lhof;->t:Ljava/lang/Object;
-
-    monitor-enter v0
-
-    :try_start_0
-    iget-object v1, p0, Lhof;->w:Lhps;
-
-    invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    invoke-virtual {p0}, Lhof;->g()J
-
-    move-result-wide v2
-
-    invoke-virtual {v1, v2, v3}, Lhps;->e(J)V
-
-    invoke-virtual {p0}, Lhof;->i()J
-
-    move-result-wide v2
-
-    invoke-virtual {v1, v2, v3}, Lhps;->g(J)V
-
-    invoke-virtual {p0}, Lhof;->f()J
-
-    invoke-virtual {v1}, Lhps;->h()V
-
-    invoke-virtual {p0}, Lhof;->e()J
-
-    invoke-virtual {v1}, Lhps;->i()V
+    if-nez v1, :cond_0
 
     monitor-exit v0
 
     return-void
 
-    :catchall_0
-    move-exception v1
+    :cond_0
+    iget-boolean v1, p0, Lhof;->c:Z
 
-    monitor-exit v0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    if-eqz v1, :cond_1
 
-    throw v1
-.end method
+    iget-boolean v1, p0, Lhof;->d:Z
 
-.method final m()Z
-    .locals 3
+    if-eqz v1, :cond_1
 
-    iget-object v0, p0, Lhof;->t:Ljava/lang/Object;
+    iget-object v1, p0, Lhof;->m:Lhpb;
 
-    monitor-enter v0
-
-    :try_start_0
-    iget-object v1, p0, Lhof;->A:Lhpt;
-
-    sget-object v2, Lhpt;->a:Lhpt;
-
-    invoke-virtual {v1, v2}, Lhpt;->equals(Ljava/lang/Object;)Z
+    invoke-interface {v1}, Lhpb;->d()Z
 
     move-result v1
 
+    if-nez v1, :cond_1
+
+    iget-object v1, p0, Lhof;->e:Landroid/os/Handler;
+
+    iget-object v2, p0, Lhof;->k:Ljava/lang/Runnable;
+
+    invoke-virtual {v1, v2}, Landroid/os/Handler;->removeCallbacks(Ljava/lang/Runnable;)V
+
+    new-instance v1, Lhoe;
+
+    invoke-direct {v1, p0, p1}, Lhoe;-><init>(Lhof;Ljrl;)V
+
+    iput-object v1, p0, Lhof;->k:Ljava/lang/Runnable;
+
+    iget-object p1, p0, Lhof;->e:Landroid/os/Handler;
+
+    const-wide/16 v2, 0x1f4
+
+    invoke-virtual {p1, v1, v2, v3}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
+
+    goto :goto_0
+
+    :cond_1
+    iget-object p1, p0, Lhof;->j:Lcom/google/android/apps/camera/ui/views/FrontLensIndicatorOverlay;
+
+    const/4 v1, 0x4
+
+    invoke-virtual {p1, v1}, Lcom/google/android/apps/camera/ui/views/FrontLensIndicatorOverlay;->setVisibility(I)V
+
+    :goto_0
+    const/4 p1, 0x0
+
+    iput-boolean p1, p0, Lhof;->c:Z
+
     monitor-exit v0
 
-    return v1
+    return-void
 
     :catchall_0
-    move-exception v1
+    move-exception p1
 
     monitor-exit v0
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    throw v1
+    throw p1
+.end method
+
+.method public final b(Ljrl;)V
+    .locals 2
+
+    iget-object v0, p0, Lhof;->b:Lcom/google/android/apps/camera/ui/views/CutoutBar;
+
+    if-nez v0, :cond_0
+
+    return-void
+
+    :cond_0
+    iget-boolean v0, p0, Lhof;->d:Z
+
+    if-eqz v0, :cond_2
+
+    sget-object v0, Ljrl;->m:Ljrl;
+
+    invoke-virtual {p1, v0}, Ljrl;->equals(Ljava/lang/Object;)Z
+
+    move-result p1
+
+    if-eqz p1, :cond_2
+
+    iget-object p1, p0, Lhof;->b:Lcom/google/android/apps/camera/ui/views/CutoutBar;
+
+    iget-object v0, p1, Lcom/google/android/apps/camera/ui/views/CutoutBar;->b:Ldcw;
+
+    if-nez v0, :cond_1
+
+    sget-object p1, Lcom/google/android/apps/camera/ui/views/CutoutBar;->a:Louj;
+
+    invoke-virtual {p1}, Loue;->b()Lova;
+
+    move-result-object p1
+
+    const/16 v0, 0xd81
+
+    const-string v1, "Not showing due to cutout info is null."
+
+    invoke-static {p1, v1, v0}, Ld;->v(Lova;Ljava/lang/String;C)V
+
+    return-void
+
+    :cond_1
+    iget v1, v0, Ldcw;->d:F
+
+    iput v1, p1, Lcom/google/android/apps/camera/ui/views/CutoutBar;->e:F
+
+    iget v1, v0, Ldcw;->a:F
+
+    iput v1, p1, Lcom/google/android/apps/camera/ui/views/CutoutBar;->c:F
+
+    iget v0, v0, Ldcw;->b:F
+
+    iput v0, p1, Lcom/google/android/apps/camera/ui/views/CutoutBar;->d:F
+
+    const/4 v0, 0x0
+
+    invoke-virtual {p1, v0}, Lcom/google/android/apps/camera/ui/views/CutoutBar;->setVisibility(I)V
+
+    invoke-virtual {p1}, Lcom/google/android/apps/camera/ui/views/CutoutBar;->invalidate()V
+
+    return-void
+
+    :cond_2
+    iget-object p1, p0, Lhof;->b:Lcom/google/android/apps/camera/ui/views/CutoutBar;
+
+    const/4 v0, 0x4
+
+    invoke-virtual {p1, v0}, Lcom/google/android/apps/camera/ui/views/CutoutBar;->setVisibility(I)V
+
+    return-void
 .end method

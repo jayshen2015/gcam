@@ -1,22 +1,52 @@
-.class public final Lgyf;
-.super Ljava/lang/Object;
+.class final Lgyf;
+.super Lmip;
 
 
-# static fields
-.field public static final a:Lgsi;
+# instance fields
+.field final synthetic a:Lhsa;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
+.method public constructor <init>(Lhsa;)V
+    .locals 0
 
-    new-instance v0, Lgsi;
+    iput-object p1, p0, Lgyf;->a:Lhsa;
 
-    const/16 v1, 0x14
+    invoke-direct {p0}, Lmip;-><init>()V
 
-    invoke-direct {v0, v1}, Lgsi;-><init>(I)V
+    return-void
+.end method
 
-    sput-object v0, Lgyf;->a:Lgsi;
+
+# virtual methods
+.method public final b(Llzv;)V
+    .locals 1
+
+    iget-object v0, p0, Lgyf;->a:Lhsa;
+
+    invoke-interface {v0, p1}, Lhsa;->L(Llzv;)V
+
+    iget-object v0, p0, Lgyf;->a:Lhsa;
+
+    invoke-interface {v0}, Lhsa;->h()Lhsp;
+
+    move-result-object v0
+
+    iget v0, v0, Lhsp;->a:I
+
+    invoke-interface {p1}, Llzv;->b()J
+
+    sget-object v0, Lkda;->h:Landroid/hardware/camera2/CaptureResult$Key;
+
+    invoke-interface {p1, v0}, Llzv;->d(Landroid/hardware/camera2/CaptureResult$Key;)Ljava/lang/Object;
+
+    sget-object v0, Lkda;->i:Landroid/hardware/camera2/CaptureResult$Key;
+
+    invoke-interface {p1, v0}, Llzv;->d(Landroid/hardware/camera2/CaptureResult$Key;)Ljava/lang/Object;
+
+    sget-object v0, Lkda;->j:Landroid/hardware/camera2/CaptureResult$Key;
+
+    invoke-interface {p1, v0}, Llzv;->d(Landroid/hardware/camera2/CaptureResult$Key;)Ljava/lang/Object;
 
     return-void
 .end method

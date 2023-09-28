@@ -1,22 +1,12 @@
-.class public final Llzv;
+.class public interface abstract Llzv;
 .super Ljava/lang/Object;
+.source "com/google/android/libraries/camera/proxy/hardware/camera2/TotalCaptureResultProxy.java"
+
+# interfaces
+.implements Llzr;
+.implements Llzl;
 
 
-# static fields
-.field public static final a:Lkhz;
-
-
-# direct methods
-.method static constructor <clinit>()V
-    .locals 2
-
-    new-instance v0, Lkhz;
-
-    const/16 v1, 0x10
-
-    invoke-direct {v0, v1}, Lkhz;-><init>(I)V
-
-    sput-object v0, Llzv;->a:Lkhz;
-
-    return-void
+# virtual methods
+.method public abstract g()Ljava/util/Map;
 .end method

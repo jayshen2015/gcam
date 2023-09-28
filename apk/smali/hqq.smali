@@ -1,515 +1,163 @@
 .class public final Lhqq;
-.super Ljava/lang/Object;
-
-# interfaces
-.implements Logk;
+.super Lhqd;
 
 
 # instance fields
-.field private final synthetic a:I
+.field public c:Lojc;
 
-.field private final b:Ljava/lang/Object;
+.field private final d:Lljf;
 
 
 # direct methods
-.method public constructor <init>(Ligo;I)V
-    .locals 0
+.method public constructor <init>(Lhpr;Lhhl;Lljf;Lhsr;Ljava/lang/String;Lbww;Lhsg;Lojc;)V
+    .locals 7
 
-    iput p2, p0, Lhqq;->a:I
+    move-object v0, p1
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    move-object v1, p4
 
-    iput-object p1, p0, Lhqq;->b:Ljava/lang/Object;
+    move-object v2, p5
 
-    return-void
-.end method
+    move-object v3, p6
 
-.method public constructor <init>(Lihi;I)V
-    .locals 0
+    move-object v4, p7
 
-    iput p2, p0, Lhqq;->a:I
+    move-object v5, p2
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    move-object v6, p8
 
-    iput-object p1, p0, Lhqq;->b:Ljava/lang/Object;
+    invoke-interface/range {v0 .. v6}, Lhpr;->a(Lhsr;Ljava/lang/String;Lbww;Lhsg;Lhhl;Lojc;)Lhps;
 
-    return-void
-.end method
+    move-result-object p1
 
-.method public constructor <init>(Loiw;I)V
-    .locals 0
+    invoke-direct {p0, p1}, Lhqd;-><init>(Lhps;)V
 
-    iput p2, p0, Lhqq;->a:I
+    sget-object p1, Loih;->a:Loih;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lhqq;->c:Lojc;
 
-    iput-object p1, p0, Lhqq;->b:Ljava/lang/Object;
+    iput-object p3, p0, Lhqq;->d:Lljf;
 
     return-void
-.end method
-
-.method public static a(Loiw;)Lhqq;
-    .locals 2
-
-    new-instance v0, Lhqq;
-
-    const/16 v1, 0x8
-
-    invoke-direct {v0, p0, v1}, Lhqq;-><init>(Loiw;I)V
-
-    return-object v0
-.end method
-
-.method public static b(Ldhi;)Ljew;
-    .locals 1
-
-    new-instance v0, Ljew;
-
-    invoke-direct {v0, p0}, Ljew;-><init>(Ldhi;)V
-
-    return-object v0
 .end method
 
 
 # virtual methods
-.method public final synthetic get()Ljava/lang/Object;
-    .locals 10
+.method public final B()V
+    .locals 3
 
-    iget v0, p0, Lhqq;->a:I
-
-    packed-switch v0, :pswitch_data_0
-
-    iget-object v0, p0, Lhqq;->b:Ljava/lang/Object;
-
-    check-cast v0, Lihi;
-
-    iget-object v0, v0, Lihi;->b:Lihg;
-
-    iget-object v0, v0, Lihg;->c:Ljava/lang/Object;
-
-    return-object v0
-
-    :pswitch_0
-    iget-object v0, p0, Lhqq;->b:Ljava/lang/Object;
-
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
+    invoke-virtual {p0}, Lhqd;->J()Ljtl;
 
     move-result-object v0
 
-    check-cast v0, Ljwb;
-
-    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    return-object v0
-
-    :pswitch_1
-    iget-object v0, p0, Lhqq;->b:Ljava/lang/Object;
-
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljwb;
-
-    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    return-object v0
-
-    :pswitch_2
-    iget-object v0, p0, Lhqq;->b:Ljava/lang/Object;
-
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljwb;
-
-    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    return-object v0
-
-    :pswitch_3
-    iget-object v0, p0, Lhqq;->b:Ljava/lang/Object;
-
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljwb;
-
-    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    return-object v0
-
-    :pswitch_4
-    iget-object v0, p0, Lhqq;->b:Ljava/lang/Object;
-
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lcom/google/android/apps/camera/ui/views/ViewfinderCover;
-
-    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    return-object v0
-
-    :pswitch_5
-    iget-object v0, p0, Lhqq;->b:Ljava/lang/Object;
-
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ldhi;
-
-    new-instance v9, Lihd;
-
-    sget-object v1, Ldhs;->a:Ldhk;
-
-    invoke-interface {v0, v1}, Ldhi;->a(Ldhk;)Lj$/util/Optional;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Lj$/util/Optional;->get()Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Ljava/lang/Integer;
-
-    invoke-virtual {v1}, Ljava/lang/Integer;->intValue()I
-
-    move-result v1
-
-    int-to-long v2, v1
-
-    sget-object v1, Ldhs;->b:Ldhk;
-
-    invoke-interface {v0, v1}, Ldhi;->a(Ldhk;)Lj$/util/Optional;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Lj$/util/Optional;->get()Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Ljava/lang/Integer;
-
-    invoke-virtual {v1}, Ljava/lang/Integer;->intValue()I
-
-    move-result v4
-
-    sget-object v1, Ldhs;->d:Ldhj;
-
-    invoke-interface {v0, v1}, Ldhi;->h(Ldhj;)Lj$/util/Optional;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Lj$/util/Optional;->get()Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Ljava/lang/Float;
-
-    invoke-virtual {v1}, Ljava/lang/Float;->floatValue()F
-
-    move-result v5
-
-    sget-object v1, Ldhs;->e:Ldhj;
-
-    invoke-interface {v0, v1}, Ldhi;->h(Ldhj;)Lj$/util/Optional;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Lj$/util/Optional;->get()Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Ljava/lang/Float;
-
-    invoke-virtual {v1}, Ljava/lang/Float;->floatValue()F
-
-    move-result v6
-
-    sget-object v1, Ldhs;->f:Ldhj;
-
-    invoke-interface {v0, v1}, Ldhi;->h(Ldhj;)Lj$/util/Optional;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lj$/util/Optional;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/lang/Float;
-
-    invoke-virtual {v0}, Ljava/lang/Float;->floatValue()F
-
-    move-result v7
-
-    new-instance v8, Landroid/view/animation/DecelerateInterpolator;
-
-    const/high16 v0, 0x3f800000    # 1.0f
-
-    invoke-direct {v8, v0}, Landroid/view/animation/DecelerateInterpolator;-><init>(F)V
-
-    move-object v1, v9
-
-    invoke-direct/range {v1 .. v8}, Lihd;-><init>(JIFFFLandroid/view/animation/Interpolator;)V
-
-    return-object v9
-
-    :pswitch_6
-    iget-object v0, p0, Lhqq;->b:Ljava/lang/Object;
-
-    check-cast v0, Ligo;
-
-    iget-object v0, v0, Ligo;->a:Ljava/lang/Object;
-
-    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    return-object v0
-
-    :pswitch_7
-    iget-object v0, p0, Lhqq;->b:Ljava/lang/Object;
-
-    check-cast v0, Ligo;
-
-    iget-object v0, v0, Ligo;->b:Ljava/lang/Object;
-
-    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    return-object v0
-
-    :pswitch_8
-    iget-object v0, p0, Lhqq;->b:Ljava/lang/Object;
-
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lkbm;
-
-    new-instance v1, Ljew;
-
-    invoke-direct {v1, v0}, Ljew;-><init>(Lkbm;)V
-
-    return-object v1
-
-    :pswitch_9
-    iget-object v0, p0, Lhqq;->b:Ljava/lang/Object;
-
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ldhi;
-
-    invoke-static {v0}, Lhqq;->b(Ldhi;)Ljew;
-
-    move-result-object v0
-
-    return-object v0
-
-    :pswitch_a
-    iget-object v0, p0, Lhqq;->b:Ljava/lang/Object;
-
-    check-cast v0, Lelo;
-
-    invoke-virtual {v0}, Lelo;->a()Landroid/app/Activity;
-
-    move-result-object v0
-
-    new-instance v1, Lhyy;
-
-    invoke-direct {v1, v0}, Lhyy;-><init>(Landroid/app/Activity;)V
-
-    return-object v1
-
-    :pswitch_b
-    iget-object v0, p0, Lhqq;->b:Ljava/lang/Object;
-
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lhxl;
-
-    iget-object v0, v0, Lhxl;->c:Ljwb;
-
-    return-object v0
-
-    :pswitch_c
-    iget-object v0, p0, Lhqq;->b:Ljava/lang/Object;
-
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/util/concurrent/ScheduledExecutorService;
-
-    new-instance v1, Lhxh;
-
-    invoke-direct {v1, v0}, Lhxh;-><init>(Ljava/util/concurrent/ScheduledExecutorService;)V
-
-    return-object v1
-
-    :pswitch_d
-    iget-object v0, p0, Lhqq;->b:Ljava/lang/Object;
-
-    check-cast v0, Lihj;
-
-    invoke-virtual {v0}, Lihj;->a()Lihg;
-
-    move-result-object v0
-
-    new-instance v1, Lijx;
-
-    iget-object v0, v0, Lihg;->p:Ljava/lang/Object;
-
-    invoke-static {v0}, Llkj;->C(Ljava/lang/Object;)V
-
-    check-cast v0, Lcom/google/android/apps/camera/ui/zoomlock/ZoomLockView;
-
-    invoke-direct {v1, v0}, Lijx;-><init>(Lcom/google/android/apps/camera/ui/zoomlock/ZoomLockView;)V
-
-    return-object v1
-
-    :pswitch_e
-    iget-object v0, p0, Lhqq;->b:Ljava/lang/Object;
-
-    check-cast v0, Lihj;
-
-    invoke-virtual {v0}, Lihj;->a()Lihg;
-
-    move-result-object v0
-
-    new-instance v1, Ljew;
-
-    iget-object v0, v0, Lihg;->k:Ljava/lang/Object;
-
-    invoke-static {v0}, Llkj;->C(Ljava/lang/Object;)V
-
-    check-cast v0, Liei;
-
-    invoke-direct {v1, v0}, Ljew;-><init>(Liei;)V
-
-    return-object v1
-
-    :pswitch_f
-    iget-object v0, p0, Lhqq;->b:Ljava/lang/Object;
-
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lhsl;
-
-    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    new-instance v1, Licl;
-
-    const/4 v2, 0x1
-
-    invoke-direct {v1, v0, v2}, Licl;-><init>(Lhsl;I)V
-
-    return-object v1
-
-    :pswitch_10
-    iget-object v0, p0, Lhqq;->b:Ljava/lang/Object;
-
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ldhi;
-
-    sget-object v1, Ldih;->b:Ldhj;
-
-    invoke-interface {v0, v1}, Ldhi;->k(Ldhj;)Z
+    invoke-virtual {v0}, Ljtl;->d()Z
 
     move-result v0
 
-    invoke-static {v0}, Lcom/agc/AdvancedSettings;->getTrackFocus(Z)Z
+    if-nez v0, :cond_1
+
+    invoke-virtual {p0}, Lhqd;->J()Ljtl;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljtl;->c()Z
 
     move-result v0
 
-    invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+    if-eqz v0, :cond_0
+
+    goto :goto_0
+
+    :cond_0
+    const-string v0, "finish"
+
+    invoke-virtual {p0, v0}, Lhqd;->G(Ljava/lang/String;)V
+
+    invoke-virtual {p0}, Lhqd;->J()Ljtl;
 
     move-result-object v0
 
-    return-object v0
+    const/4 v1, 0x2
 
-    :pswitch_11
-    iget-object v0, p0, Lhqq;->b:Ljava/lang/Object;
+    const/4 v2, 0x3
 
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
+    invoke-virtual {v0, v1, v2}, Ljtl;->h(II)V
 
-    move-result-object v0
-
-    check-cast v0, Lhrj;
-
-    new-instance v1, Lhre;
-
-    invoke-direct {v1, v0}, Lhre;-><init>(Lhrj;)V
-
-    return-object v1
-
-    :pswitch_12
-    iget-object v0, p0, Lhqq;->b:Ljava/lang/Object;
-
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
+    invoke-virtual {p0}, Lhqd;->v()Lhsg;
 
     move-result-object v0
 
-    check-cast v0, Ldhi;
+    invoke-virtual {v0}, Lhsg;->g()V
 
-    new-instance v1, Ljpw;
+    return-void
 
-    invoke-direct {v1, v0}, Ljpw;-><init>(Ldhi;)V
+    :cond_1
+    :goto_0
+    const-string v0, "finish. Ignoring as session was already finished."
 
-    return-object v1
+    invoke-virtual {p0, v0}, Lhqd;->H(Ljava/lang/String;)V
 
-    :pswitch_13
-    iget-object v0, p0, Lhqq;->b:Ljava/lang/Object;
+    return-void
+.end method
 
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
+.method public final P(Llig;)V
+    .locals 3
+
+    iget-object v0, p0, Lhqq;->d:Lljf;
+
+    const-string v1, "MultiImageCaptureSession#startEmpty"
+
+    invoke-interface {v0, v1}, Lljf;->e(Ljava/lang/String;)V
+
+    invoke-super {p0, p1}, Lhqd;->P(Llig;)V
+
+    invoke-virtual {p0}, Lhqd;->J()Ljtl;
 
     move-result-object v0
 
-    check-cast v0, Lhqm;
+    const/4 v1, 0x1
 
-    new-instance v1, Ldld;
+    const/4 v2, 0x2
 
-    const/4 v2, 0x6
+    invoke-virtual {v0, v1, v2}, Ljtl;->h(II)V
 
-    invoke-direct {v1, v0, v2}, Ldld;-><init>(Lhqm;I)V
+    invoke-virtual {p0}, Lhqd;->t()Lhrc;
 
-    return-object v1
+    move-result-object v0
 
-    nop
+    invoke-virtual {p0}, Lhqd;->h()Lhsp;
 
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_13
-        :pswitch_12
-        :pswitch_11
-        :pswitch_10
-        :pswitch_f
-        :pswitch_e
-        :pswitch_d
-        :pswitch_c
-        :pswitch_b
-        :pswitch_a
-        :pswitch_9
-        :pswitch_8
-        :pswitch_7
-        :pswitch_6
-        :pswitch_5
-        :pswitch_4
-        :pswitch_3
-        :pswitch_2
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
+    move-result-object v1
+
+    invoke-virtual {v0, p1, v1}, Lhrc;->b(Llig;Lhsp;)Lhrb;
+
+    move-result-object p1
+
+    invoke-virtual {p0, p1}, Lhqd;->I(Lhrb;)V
+
+    invoke-virtual {p0}, Lhqd;->o()Lhqb;
+
+    move-result-object p1
+
+    invoke-static {}, Lfjz;->a()Lfjy;
+
+    move-result-object v0
+
+    invoke-virtual {p0}, Lhqd;->i()Lhsr;
+
+    move-result-object v1
+
+    iput-object v1, v0, Lfjy;->a:Lhsr;
+
+    invoke-virtual {v0}, Lfjy;->a()Lfjz;
+
+    move-result-object v0
+
+    invoke-virtual {p1, v0}, Lhqb;->c(Lfjz;)V
+
+    iget-object p1, p0, Lhqq;->d:Lljf;
+
+    invoke-interface {p1}, Lljf;->f()V
+
+    return-void
 .end method

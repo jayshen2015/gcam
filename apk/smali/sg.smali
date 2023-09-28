@@ -1,148 +1,194 @@
 .class public final Lsg;
 .super Ljava/lang/Object;
 
-# interfaces
-.implements Ltm;
-
 
 # instance fields
-.field public final a:Lrd;
+.field public final a:I
 
-.field public final b:Landroid/hardware/camera2/CameraDevice;
-
-.field public final c:Ljava/lang/String;
-
-.field public final d:Loop;
+.field public final b:Landroid/os/Bundle;
 
 
 # direct methods
-.method public constructor <init>(Lrd;Landroid/hardware/camera2/CameraDevice;Ljava/lang/String;)V
-    .locals 0
+.method public constructor <init>(I)V
+    .locals 2
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lsg;->a:Lrd;
+    iput p1, p0, Lsg;->a:I
 
-    iput-object p2, p0, Lsg;->b:Landroid/hardware/camera2/CameraDevice;
+    new-instance v0, Landroid/os/Bundle;
 
-    iput-object p3, p0, Lsg;->c:Ljava/lang/String;
+    invoke-direct {v0}, Landroid/os/Bundle;-><init>()V
 
-    const/4 p1, 0x0
+    iput-object v0, p0, Lsg;->b:Landroid/os/Bundle;
 
-    invoke-static {p1}, Lolp;->k(Ljava/lang/Object;)Loop;
+    const/4 v1, 0x7
 
-    move-result-object p1
+    if-eq p1, v1, :cond_1
 
-    iput-object p1, p0, Lsg;->d:Loop;
+    const/4 v1, 0x4
+
+    if-ne p1, v1, :cond_0
+
+    goto :goto_0
+
+    :cond_0
+    return-void
+
+    :cond_1
+    :goto_0
+    const-string v1, "IMAGE_STYLE"
+
+    invoke-static {v1, p1}, Landroid/support/wearable/complications/ComplicationData;->j(Ljava/lang/String;I)V
+
+    const/4 p1, 0x1
+
+    invoke-virtual {v0, v1, p1}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Ljava/util/List;Ltk;Landroid/os/Handler;)V
-    .locals 3
+.method public final a()Landroid/support/wearable/complications/ComplicationData;
+    .locals 5
 
-    :try_start_0
-    iget-object v0, p0, Lsg;->d:Loop;
+    sget-object v0, Landroid/support/wearable/complications/ComplicationData;->a:[[Ljava/lang/String;
 
-    iget-object v0, v0, Loop;->a:Ljava/lang/Object;
+    iget v1, p0, Lsg;->a:I
 
-    check-cast v0, Ltk;
+    aget-object v0, v0, v1
 
-    iget-object v1, p0, Lsg;->d:Loop;
+    array-length v1, v0
 
-    invoke-virtual {v1, v0, p2}, Loop;->d(Ljava/lang/Object;Ljava/lang/Object;)Z
+    const/4 v2, 0x0
 
-    move-result v1
+    :goto_0
+    if-ge v2, v1, :cond_5
 
-    if-eqz v1, :cond_0
+    aget-object v3, v0, v2
 
-    iget-object v1, p0, Lsg;->b:Landroid/hardware/camera2/CameraDevice;
+    iget-object v4, p0, Lsg;->b:Landroid/os/Bundle;
 
-    new-instance v2, Lsl;
+    invoke-virtual {v4, v3}, Landroid/os/Bundle;->containsKey(Ljava/lang/String;)Z
 
-    invoke-direct {v2, p0, p2, v0}, Lsl;-><init>(Ltm;Ltk;Ltk;)V
+    move-result v4
 
-    invoke-virtual {v1, p1, v2, p3}, Landroid/hardware/camera2/CameraDevice;->createCaptureSession(Ljava/util/List;Landroid/hardware/camera2/CameraCaptureSession$StateCallback;Landroid/os/Handler;)V
+    if-eqz v4, :cond_4
 
-    return-void
+    iget-object v3, p0, Lsg;->b:Landroid/os/Bundle;
+
+    const-string v4, "ICON_BURN_IN_PROTECTION"
+
+    invoke-virtual {v3, v4}, Landroid/os/Bundle;->containsKey(Ljava/lang/String;)Z
+
+    move-result v3
+
+    if-eqz v3, :cond_1
+
+    iget-object v3, p0, Lsg;->b:Landroid/os/Bundle;
+
+    const-string v4, "ICON"
+
+    invoke-virtual {v3, v4}, Landroid/os/Bundle;->containsKey(Ljava/lang/String;)Z
+
+    move-result v3
+
+    if-eqz v3, :cond_0
+
+    goto :goto_1
 
     :cond_0
-    const-string p1, "Check failed."
+    new-instance v0, Ljava/lang/IllegalStateException;
 
-    new-instance p2, Ljava/lang/IllegalStateException;
+    const-string v1, "Field ICON must be provided when field ICON_BURN_IN_PROTECTION is provided."
 
-    invoke-direct {p2, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+    invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 
-    throw p2
-    :try_end_0
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+    throw v0
 
-    :catch_0
-    move-exception p1
+    :cond_1
+    :goto_1
+    iget-object v3, p0, Lsg;->b:Landroid/os/Bundle;
 
-    instance-of p2, p1, Ljava/lang/IllegalArgumentException;
+    const-string v4, "SMALL_IMAGE_BURN_IN_PROTECTION"
 
-    if-nez p2, :cond_2
+    invoke-virtual {v3, v4}, Landroid/os/Bundle;->containsKey(Ljava/lang/String;)Z
 
-    instance-of p2, p1, Ljava/lang/IllegalStateException;
+    move-result v3
 
-    if-nez p2, :cond_2
+    if-eqz v3, :cond_3
 
-    instance-of p2, p1, Landroid/hardware/camera2/CameraAccessException;
+    iget-object v3, p0, Lsg;->b:Landroid/os/Bundle;
 
-    if-nez p2, :cond_2
+    const-string v4, "SMALL_IMAGE"
 
-    instance-of p2, p1, Ljava/lang/SecurityException;
+    invoke-virtual {v3, v4}, Landroid/os/Bundle;->containsKey(Ljava/lang/String;)Z
 
-    if-nez p2, :cond_2
+    move-result v3
 
-    instance-of p2, p1, Ljava/lang/UnsupportedOperationException;
+    if-eqz v3, :cond_2
 
-    if-eqz p2, :cond_1
+    goto :goto_2
+
+    :cond_2
+    new-instance v0, Ljava/lang/IllegalStateException;
+
+    const-string v1, "Field SMALL_IMAGE must be provided when field SMALL_IMAGE_BURN_IN_PROTECTION is provided."
+
+    invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+
+    :cond_3
+    :goto_2
+    add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
-    :cond_1
-    throw p1
+    :cond_4
+    new-instance v0, Ljava/lang/IllegalStateException;
 
-    :cond_2
-    :goto_0
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    iget v1, p0, Lsg;->a:I
 
-    move-result-object p2
+    invoke-static {v3}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
-    invoke-virtual {p2}, Ljava/lang/Class;->getSimpleName()Ljava/lang/String;
+    move-result-object v2
 
-    new-instance p2, Lub;
+    invoke-virtual {v2}, Ljava/lang/String;->length()I
 
-    invoke-direct {p2, p1}, Lub;-><init>(Ljava/lang/Throwable;)V
+    move-result v2
 
-    throw p2
-.end method
+    new-instance v4, Ljava/lang/StringBuilder;
 
-.method public final e(Lonx;)Ljava/lang/Object;
-    .locals 1
+    add-int/lit8 v2, v2, 0x27
 
-    const-class v0, Landroid/hardware/camera2/CameraDevice;
+    invoke-direct {v4, v2}, Ljava/lang/StringBuilder;-><init>(I)V
 
-    invoke-static {v0}, Lonl;->a(Ljava/lang/Class;)Lonx;
+    const-string v2, "Field "
 
-    move-result-object v0
+    invoke-virtual {v4, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-static {p1, v0}, Lone;->c(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-virtual {v4, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result p1
+    const-string v2, " is required for type "
 
-    if-eqz p1, :cond_0
+    invoke-virtual {v4, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget-object p1, p0, Lsg;->b:Landroid/hardware/camera2/CameraDevice;
+    invoke-virtual {v4, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    return-object p1
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    :cond_0
-    const/4 p1, 0x0
+    move-result-object v1
 
-    return-object p1
+    invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+
+    :cond_5
+    new-instance v0, Landroid/support/wearable/complications/ComplicationData;
+
+    invoke-direct {v0, p0}, Landroid/support/wearable/complications/ComplicationData;-><init>(Lsg;)V
+
+    return-object v0
 .end method

@@ -1,111 +1,235 @@
-.class final Lfkt;
+.class public final Lfkt;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lfkx;
+.implements Lpys;
 
 
 # instance fields
-.field final synthetic a:F
+.field private final a:Lqkg;
+
+.field private final b:Lqkg;
+
+.field private final c:Lqkg;
+
+.field private final d:Lqkg;
+
+.field private final e:Lqkg;
 
 
 # direct methods
-.method public constructor <init>(F)V
+.method public constructor <init>(Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;)V
     .locals 0
 
-    iput p1, p0, Lfkt;->a:F
-
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lfkt;->a:Lqkg;
+
+    iput-object p2, p0, Lfkt;->b:Lqkg;
+
+    iput-object p3, p0, Lfkt;->c:Lqkg;
+
+    iput-object p4, p0, Lfkt;->d:Lqkg;
+
+    iput-object p5, p0, Lfkt;->e:Lqkg;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Lfkq;
-    .locals 1
+.method public final a()Lfks;
+    .locals 7
 
-    sget-object v0, Lfkq;->d:Lfkq;
+    iget-object v0, p0, Lfkt;->a:Lqkg;
+
+    check-cast v0, Lemd;
+
+    invoke-virtual {v0}, Lemd;->a()Landroid/content/Context;
+
+    move-result-object v2
+
+    iget-object v0, p0, Lfkt;->b:Lqkg;
+
+    invoke-interface {v0}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    move-object v3, v0
+
+    check-cast v3, Llar;
+
+    iget-object v0, p0, Lfkt;->c:Lqkg;
+
+    invoke-interface {v0}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    move-object v4, v0
+
+    check-cast v4, Lpht;
+
+    iget-object v0, p0, Lfkt;->d:Lqkg;
+
+    invoke-interface {v0}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    move-object v5, v0
+
+    check-cast v5, Lddf;
+
+    iget-object v0, p0, Lfkt;->e:Lqkg;
+
+    invoke-interface {v0}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    move-object v6, v0
+
+    check-cast v6, Liud;
+
+    new-instance v0, Lfks;
+
+    move-object v1, v0
+
+    invoke-direct/range {v1 .. v6}, Lfks;-><init>(Landroid/content/Context;Llar;Lpht;Lddf;Liud;)V
+
+    iget-object v1, v0, Lfks;->b:Ljava/util/List;
+
+    iget-object v2, v0, Lfks;->k:Landroid/content/Context;
+
+    const v3, 0x7f140112
+
+    invoke-virtual {v2, v3}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+
+    move-result-object v2
+
+    const/16 v3, 0xfa0
+
+    const/16 v4, 0x9
+
+    invoke-virtual {v0, v2, v3, v4}, Ljgs;->h(Ljava/lang/String;II)Ljgu;
+
+    move-result-object v2
+
+    invoke-interface {v1, v2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    iget-object v1, v0, Lfks;->b:Ljava/util/List;
+
+    iget-object v2, v0, Lfks;->k:Landroid/content/Context;
+
+    const v5, 0x7f140113
+
+    invoke-virtual {v2, v5}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v0, v2, v3, v4}, Ljgs;->h(Ljava/lang/String;II)Ljgu;
+
+    move-result-object v2
+
+    invoke-interface {v1, v2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    iget-object v1, v0, Lfks;->k:Landroid/content/Context;
+
+    const v2, 0x7f140114
+
+    invoke-virtual {v1, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1, v3, v4}, Ljgs;->h(Ljava/lang/String;II)Ljgu;
+
+    move-result-object v1
+
+    iput-object v1, v0, Lfks;->f:Ljgu;
+
+    iget-object v1, v0, Lfks;->k:Landroid/content/Context;
+
+    const v2, 0x7f140119
+
+    invoke-virtual {v1, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+
+    move-result-object v1
+
+    const/4 v2, -0x1
+
+    const/4 v3, 0x7
+
+    invoke-virtual {v0, v1, v2, v3}, Ljgs;->h(Ljava/lang/String;II)Ljgu;
+
+    move-result-object v1
+
+    iput-object v1, v0, Lfks;->d:Ljgu;
+
+    iget-object v1, v0, Lfks;->k:Landroid/content/Context;
+
+    const v5, 0x7f140117
+
+    invoke-virtual {v1, v5}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+
+    move-result-object v1
+
+    const/16 v5, 0xa
+
+    invoke-virtual {v0, v1, v2, v5}, Ljgs;->h(Ljava/lang/String;II)Ljgu;
+
+    move-result-object v1
+
+    iput-object v1, v0, Lfks;->e:Ljgu;
+
+    iget-object v1, v0, Lfks;->k:Landroid/content/Context;
+
+    const v5, 0x7f140115
+
+    invoke-virtual {v1, v5}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1, v2, v4}, Ljgs;->h(Ljava/lang/String;II)Ljgu;
+
+    move-result-object v1
+
+    iput-object v1, v0, Lfks;->g:Ljgu;
+
+    iget-object v1, v0, Lfks;->k:Landroid/content/Context;
+
+    const v4, 0x7f140111
+
+    invoke-virtual {v1, v4}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1, v2, v3}, Ljgs;->h(Ljava/lang/String;II)Ljgu;
+
+    move-result-object v1
+
+    iput-object v1, v0, Lfks;->c:Ljgu;
+
+    iget-object v1, v0, Lfks;->k:Landroid/content/Context;
+
+    const v4, 0x7f14011a
+
+    invoke-virtual {v1, v4}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1, v2, v3}, Ljgs;->h(Ljava/lang/String;II)Ljgu;
+
+    move-result-object v1
+
+    iput-object v1, v0, Lfks;->h:Ljgu;
 
     return-object v0
 .end method
 
-.method public final b(Lgrw;Lgrw;)Z
-    .locals 11
+.method public final bridge synthetic get()Ljava/lang/Object;
+    .locals 1
 
-    iget v0, p1, Lgrw;->u:I
+    invoke-virtual {p0}, Lfkt;->a()Lfks;
 
-    const/4 v1, 0x0
+    move-result-object v0
 
-    const/4 v2, 0x1
-
-    if-ne v0, v2, :cond_1
-
-    iget v0, p1, Lgrw;->v:I
-
-    if-eqz v0, :cond_0
-
-    goto :goto_0
-
-    :cond_0
-    return v1
-
-    :cond_1
-    :goto_0
-    iget v0, p2, Lgrw;->f:I
-
-    int-to-long v3, v0
-
-    iget-wide v5, p2, Lgrw;->d:J
-
-    mul-long v3, v3, v5
-
-    iget p2, p2, Lgrw;->g:I
-
-    int-to-long v5, p2
-
-    iget p2, p1, Lgrw;->f:I
-
-    int-to-long v7, p2
-
-    iget-wide v9, p1, Lgrw;->d:J
-
-    mul-long v7, v7, v9
-
-    iget p1, p1, Lgrw;->g:I
-
-    int-to-long p1, p1
-
-    mul-long v7, v7, p1
-
-    const-wide/16 p1, 0x64
-
-    div-long/2addr v7, p1
-
-    mul-long v3, v3, v5
-
-    div-long/2addr v3, p1
-
-    sub-long/2addr v7, v3
-
-    invoke-static {v7, v8}, Ljava/lang/Math;->abs(J)J
-
-    move-result-wide p1
-
-    long-to-float p1, p1
-
-    iget p2, p0, Lfkt;->a:F
-
-    long-to-float v0, v3
-
-    mul-float v0, v0, p2
-
-    cmpl-float p1, p1, v0
-
-    if-lez p1, :cond_2
-
-    return v2
-
-    :cond_2
-    return v1
+    return-object v0
 .end method

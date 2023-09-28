@@ -1,42 +1,22 @@
 .class final Lcxj;
-.super Lcyb;
-
-
-# instance fields
-.field final synthetic a:Lcxl;
+.super Laiy;
 
 
 # direct methods
-.method public constructor <init>(Lcxl;)V
+.method public constructor <init>(Laii;)V
     .locals 0
 
-    iput-object p1, p0, Lcxj;->a:Lcxl;
-
-    invoke-direct {p0, p1}, Lcyb;-><init>(Lcyd;)V
+    invoke-direct {p0, p1}, Laiy;-><init>(Laii;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final c()V
-    .locals 2
+.method public final d()Ljava/lang/String;
+    .locals 1
 
-    iget-object v0, p0, Lcxj;->a:Lcxl;
+    const-string v0, "DELETE FROM EnumerationErrorCounts"
 
-    iget-object v0, v0, Lcxl;->a:Lhiu;
-
-    invoke-virtual {v0}, Lhiu;->e()V
-
-    invoke-super {p0}, Lcyb;->c()V
-
-    iget-object v0, p0, Lcxj;->a:Lcxl;
-
-    iget-object v1, v0, Lcxl;->a:Lhiu;
-
-    iget-object v0, v0, Lcxl;->d:Lhiw;
-
-    invoke-virtual {v1, v0}, Lhiu;->g(Lhiw;)V
-
-    return-void
+    return-object v0
 .end method

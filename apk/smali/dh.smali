@@ -40,13 +40,13 @@
 
     iget-object v0, p0, Ldh;->a:Ljava/lang/StringBuilder;
 
+    const/4 v1, 0x0
+
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->length()I
 
-    move-result v1
+    move-result v2
 
-    const/4 v2, 0x0
-
-    invoke-virtual {v0, v2, v1}, Ljava/lang/StringBuilder;->delete(II)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->delete(II)Ljava/lang/StringBuilder;
 
     :cond_0
     return-void

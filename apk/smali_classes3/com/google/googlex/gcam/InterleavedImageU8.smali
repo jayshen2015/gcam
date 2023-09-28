@@ -3,9 +3,9 @@
 
 
 # instance fields
-.field protected transient a:Z
+.field public transient a:J
 
-.field private transient b:J
+.field protected transient b:Z
 
 
 # direct methods
@@ -40,26 +40,11 @@
 
     const/4 v0, 0x1
 
-    iput-boolean v0, p0, Lcom/google/googlex/gcam/InterleavedImageU8;->a:Z
+    iput-boolean v0, p0, Lcom/google/googlex/gcam/InterleavedImageU8;->b:Z
 
-    iput-wide p1, p0, Lcom/google/googlex/gcam/InterleavedImageU8;->b:J
+    iput-wide p1, p0, Lcom/google/googlex/gcam/InterleavedImageU8;->a:J
 
     return-void
-.end method
-
-.method public static d(Lcom/google/googlex/gcam/InterleavedImageU8;)J
-    .locals 2
-
-    if-nez p0, :cond_0
-
-    const-wide/16 v0, 0x0
-
-    return-wide v0
-
-    :cond_0
-    iget-wide v0, p0, Lcom/google/googlex/gcam/InterleavedImageU8;->b:J
-
-    return-wide v0
 .end method
 
 
@@ -67,9 +52,9 @@
 .method public final a()I
     .locals 2
 
-    iget-wide v0, p0, Lcom/google/googlex/gcam/InterleavedImageU8;->b:J
+    iget-wide v0, p0, Lcom/google/googlex/gcam/InterleavedImageU8;->a:J
 
-    invoke-static {v0, v1, p0}, Lcom/google/googlex/gcam/GcamModuleJNI;->InterleavedImageU8_channels(JLcom/google/googlex/gcam/InterleavedImageU8;)I
+    invoke-static {v0, v1, p0}, Lcom/google/googlex/gcam/GcamModuleJNI;->InterleavedImageU8_height(JLcom/google/googlex/gcam/InterleavedImageU8;)I
 
     move-result v0
 
@@ -79,19 +64,7 @@
 .method public final b()I
     .locals 2
 
-    iget-wide v0, p0, Lcom/google/googlex/gcam/InterleavedImageU8;->b:J
-
-    invoke-static {v0, v1, p0}, Lcom/google/googlex/gcam/GcamModuleJNI;->InterleavedImageU8_height(JLcom/google/googlex/gcam/InterleavedImageU8;)I
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public final c()I
-    .locals 2
-
-    iget-wide v0, p0, Lcom/google/googlex/gcam/InterleavedImageU8;->b:J
+    iget-wide v0, p0, Lcom/google/googlex/gcam/InterleavedImageU8;->a:J
 
     invoke-static {v0, v1, p0}, Lcom/google/googlex/gcam/GcamModuleJNI;->InterleavedImageU8_width(JLcom/google/googlex/gcam/InterleavedImageU8;)I
 
@@ -100,12 +73,12 @@
     return v0
 .end method
 
-.method public final e()Lcom/google/googlex/gcam/InterleavedReadViewU8;
+.method public final c()Lcom/google/googlex/gcam/InterleavedReadViewU8;
     .locals 3
 
     new-instance v0, Lcom/google/googlex/gcam/InterleavedReadViewU8;
 
-    iget-wide v1, p0, Lcom/google/googlex/gcam/InterleavedImageU8;->b:J
+    iget-wide v1, p0, Lcom/google/googlex/gcam/InterleavedImageU8;->a:J
 
     invoke-static {v1, v2, p0}, Lcom/google/googlex/gcam/GcamModuleJNI;->InterleavedImageU8_read_view(JLcom/google/googlex/gcam/InterleavedImageU8;)J
 
@@ -116,12 +89,12 @@
     return-object v0
 .end method
 
-.method public final f()Lcom/google/googlex/gcam/InterleavedWriteViewU8;
+.method public final d()Lcom/google/googlex/gcam/InterleavedWriteViewU8;
     .locals 3
 
     new-instance v0, Lcom/google/googlex/gcam/InterleavedWriteViewU8;
 
-    iget-wide v1, p0, Lcom/google/googlex/gcam/InterleavedImageU8;->b:J
+    iget-wide v1, p0, Lcom/google/googlex/gcam/InterleavedImageU8;->a:J
 
     invoke-static {v1, v2, p0}, Lcom/google/googlex/gcam/GcamModuleJNI;->InterleavedImageU8_write_view(JLcom/google/googlex/gcam/InterleavedImageU8;)J
 
@@ -132,21 +105,13 @@
     return-object v0
 .end method
 
-.method protected final finalize()V
-    .locals 0
-
-    invoke-virtual {p0}, Lcom/google/googlex/gcam/InterleavedImageU8;->g()V
-
-    return-void
-.end method
-
-.method public final declared-synchronized g()V
+.method public final declared-synchronized e()V
     .locals 5
 
     monitor-enter p0
 
     :try_start_0
-    iget-wide v0, p0, Lcom/google/googlex/gcam/InterleavedImageU8;->b:J
+    iget-wide v0, p0, Lcom/google/googlex/gcam/InterleavedImageU8;->a:J
 
     const-wide/16 v2, 0x0
 
@@ -154,18 +119,18 @@
 
     if-eqz v4, :cond_1
 
-    iget-boolean v4, p0, Lcom/google/googlex/gcam/InterleavedImageU8;->a:Z
+    iget-boolean v4, p0, Lcom/google/googlex/gcam/InterleavedImageU8;->b:Z
 
     if-eqz v4, :cond_0
 
     const/4 v4, 0x0
 
-    iput-boolean v4, p0, Lcom/google/googlex/gcam/InterleavedImageU8;->a:Z
+    iput-boolean v4, p0, Lcom/google/googlex/gcam/InterleavedImageU8;->b:Z
 
     invoke-static {v0, v1}, Lcom/google/googlex/gcam/GcamModuleJNI;->delete_InterleavedImageU8(J)V
 
     :cond_0
-    iput-wide v2, p0, Lcom/google/googlex/gcam/InterleavedImageU8;->b:J
+    iput-wide v2, p0, Lcom/google/googlex/gcam/InterleavedImageU8;->a:J
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
@@ -182,14 +147,22 @@
     throw v0
 .end method
 
-.method public final h()Z
+.method public final f()Z
     .locals 2
 
-    iget-wide v0, p0, Lcom/google/googlex/gcam/InterleavedImageU8;->b:J
+    iget-wide v0, p0, Lcom/google/googlex/gcam/InterleavedImageU8;->a:J
 
     invoke-static {v0, v1, p0}, Lcom/google/googlex/gcam/GcamModuleJNI;->InterleavedImageU8_empty(JLcom/google/googlex/gcam/InterleavedImageU8;)Z
 
     move-result v0
 
     return v0
+.end method
+
+.method protected final finalize()V
+    .locals 0
+
+    invoke-virtual {p0}, Lcom/google/googlex/gcam/InterleavedImageU8;->e()V
+
+    return-void
 .end method

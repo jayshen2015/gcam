@@ -3,7 +3,7 @@
 
 
 # instance fields
-.field public final a:Landroid/view/accessibility/AccessibilityManager;
+.field private final a:Landroid/view/accessibility/AccessibilityManager;
 
 .field private final b:Landroid/graphics/Paint;
 
@@ -30,7 +30,7 @@
 
     move-result-object p2
 
-    const v0, 0x7f070136
+    const v0, 0x7f07012a
 
     invoke-virtual {p2, v0}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -42,7 +42,7 @@
 
     move-result-object p2
 
-    const v0, 0x7f070135
+    const v0, 0x7f070129
 
     invoke-virtual {p2, v0}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -78,7 +78,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f070134
+    const v2, 0x7f070128
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -114,6 +114,8 @@
 
     new-instance v9, Landroid/graphics/LinearGradient;
 
+    int-to-float v5, p1
+
     sget-object v8, Landroid/graphics/Shader$TileMode;->MIRROR:Landroid/graphics/Shader$TileMode;
 
     const/4 v2, 0x0
@@ -121,8 +123,6 @@
     const/4 v3, 0x0
 
     const/4 v4, 0x0
-
-    int-to-float v5, p1
 
     move-object v1, v9
 
@@ -137,14 +137,6 @@
     iget-object p1, p0, Lcom/google/android/apps/camera/evcomp/EvCompSlider;->c:Landroid/graphics/Paint;
 
     invoke-virtual {p1, p4}, Landroid/graphics/Paint;->setColor(I)V
-
-    new-instance p1, Ldoi;
-
-    const/4 p2, 0x1
-
-    invoke-direct {p1, p0, p2}, Ldoi;-><init>(Lcom/google/android/apps/camera/evcomp/EvCompSlider;I)V
-
-    invoke-virtual {p0, p1}, Lcom/google/android/apps/camera/evcomp/EvCompSlider;->setOnHoverListener(Landroid/view/View$OnHoverListener;)V
 
     return-void
 .end method
@@ -173,7 +165,7 @@
 
     move-result-object v1
 
-    instance-of v2, v1, Ldoj;
+    instance-of v2, v1, Ldmf;
 
     if-eqz v2, :cond_0
 
@@ -204,7 +196,7 @@
 .end method
 
 .method protected final onDraw(Landroid/graphics/Canvas;)V
-    .locals 12
+    .locals 10
 
     invoke-super {p0, p1}, Landroid/widget/FrameLayout;->onDraw(Landroid/graphics/Canvas;)V
 
@@ -218,57 +210,7 @@
 
     sub-int/2addr v0, v1
 
-    invoke-virtual {p0}, Lcom/google/android/apps/camera/evcomp/EvCompSlider;->getMeasuredWidth()I
-
-    move-result v1
-
-    iget v2, p0, Lcom/google/android/apps/camera/evcomp/EvCompSlider;->e:I
-
-    div-int/lit8 v2, v2, 0x2
-
-    sub-int/2addr v1, v2
-
-    iget v2, p0, Lcom/google/android/apps/camera/evcomp/EvCompSlider;->d:I
-
-    add-int/2addr v1, v2
-
-    iget v2, p0, Lcom/google/android/apps/camera/evcomp/EvCompSlider;->f:I
-
-    int-to-float v7, v2
-
-    invoke-virtual {p0}, Lcom/google/android/apps/camera/evcomp/EvCompSlider;->getResources()Landroid/content/res/Resources;
-
-    move-result-object v2
-
-    const v11, 0x7f070133
-
-    invoke-virtual {v2, v11}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
-
-    move-result v2
-
-    int-to-float v8, v2
-
-    invoke-virtual {p0}, Lcom/google/android/apps/camera/evcomp/EvCompSlider;->getResources()Landroid/content/res/Resources;
-
-    move-result-object v2
-
-    invoke-virtual {v2, v11}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
-
-    move-result v2
-
-    int-to-float v9, v2
-
-    iget-object v10, p0, Lcom/google/android/apps/camera/evcomp/EvCompSlider;->b:Landroid/graphics/Paint;
-
-    int-to-float v6, v1
-
-    int-to-float v4, v0
-
-    const/4 v5, 0x0
-
-    move-object v3, p1
-
-    invoke-virtual/range {v3 .. v10}, Landroid/graphics/Canvas;->drawRoundRect(FFFFFFLandroid/graphics/Paint;)V
+    int-to-float v2, v0
 
     invoke-virtual {p0}, Lcom/google/android/apps/camera/evcomp/EvCompSlider;->getMeasuredWidth()I
 
@@ -280,51 +222,103 @@
 
     sub-int/2addr v0, v1
 
-    invoke-virtual {p0}, Lcom/google/android/apps/camera/evcomp/EvCompSlider;->getMeasuredWidth()I
+    iget v1, p0, Lcom/google/android/apps/camera/evcomp/EvCompSlider;->d:I
 
-    move-result v1
-
-    iget v2, p0, Lcom/google/android/apps/camera/evcomp/EvCompSlider;->e:I
-
-    div-int/lit8 v2, v2, 0x2
-
-    sub-int/2addr v1, v2
-
-    iget v2, p0, Lcom/google/android/apps/camera/evcomp/EvCompSlider;->d:I
-
-    add-int/2addr v1, v2
-
-    iget v2, p0, Lcom/google/android/apps/camera/evcomp/EvCompSlider;->f:I
-
-    int-to-float v7, v2
-
-    invoke-virtual {p0}, Lcom/google/android/apps/camera/evcomp/EvCompSlider;->getResources()Landroid/content/res/Resources;
-
-    move-result-object v2
-
-    invoke-virtual {v2, v11}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
-
-    move-result v2
-
-    int-to-float v8, v2
-
-    invoke-virtual {p0}, Lcom/google/android/apps/camera/evcomp/EvCompSlider;->getResources()Landroid/content/res/Resources;
-
-    move-result-object v2
-
-    invoke-virtual {v2, v11}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
-
-    move-result v2
-
-    int-to-float v9, v2
-
-    iget-object v10, p0, Lcom/google/android/apps/camera/evcomp/EvCompSlider;->c:Landroid/graphics/Paint;
-
-    int-to-float v6, v1
+    add-int/2addr v0, v1
 
     int-to-float v4, v0
 
-    invoke-virtual/range {v3 .. v10}, Landroid/graphics/Canvas;->drawRoundRect(FFFFFFLandroid/graphics/Paint;)V
+    iget v0, p0, Lcom/google/android/apps/camera/evcomp/EvCompSlider;->f:I
+
+    int-to-float v5, v0
+
+    invoke-virtual {p0}, Lcom/google/android/apps/camera/evcomp/EvCompSlider;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v0
+
+    const v9, 0x7f070127
+
+    invoke-virtual {v0, v9}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
+
+    move-result v0
+
+    int-to-float v6, v0
+
+    invoke-virtual {p0}, Lcom/google/android/apps/camera/evcomp/EvCompSlider;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v0
+
+    invoke-virtual {v0, v9}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
+
+    move-result v0
+
+    int-to-float v7, v0
+
+    iget-object v8, p0, Lcom/google/android/apps/camera/evcomp/EvCompSlider;->b:Landroid/graphics/Paint;
+
+    const/4 v3, 0x0
+
+    move-object v1, p1
+
+    invoke-virtual/range {v1 .. v8}, Landroid/graphics/Canvas;->drawRoundRect(FFFFFFLandroid/graphics/Paint;)V
+
+    invoke-virtual {p0}, Lcom/google/android/apps/camera/evcomp/EvCompSlider;->getMeasuredWidth()I
+
+    move-result v0
+
+    iget v1, p0, Lcom/google/android/apps/camera/evcomp/EvCompSlider;->e:I
+
+    div-int/lit8 v1, v1, 0x2
+
+    sub-int/2addr v0, v1
+
+    int-to-float v2, v0
+
+    invoke-virtual {p0}, Lcom/google/android/apps/camera/evcomp/EvCompSlider;->getMeasuredWidth()I
+
+    move-result v0
+
+    iget v1, p0, Lcom/google/android/apps/camera/evcomp/EvCompSlider;->e:I
+
+    div-int/lit8 v1, v1, 0x2
+
+    sub-int/2addr v0, v1
+
+    iget v1, p0, Lcom/google/android/apps/camera/evcomp/EvCompSlider;->d:I
+
+    add-int/2addr v0, v1
+
+    int-to-float v4, v0
+
+    iget v0, p0, Lcom/google/android/apps/camera/evcomp/EvCompSlider;->f:I
+
+    int-to-float v5, v0
+
+    invoke-virtual {p0}, Lcom/google/android/apps/camera/evcomp/EvCompSlider;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v0
+
+    invoke-virtual {v0, v9}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
+
+    move-result v0
+
+    int-to-float v6, v0
+
+    invoke-virtual {p0}, Lcom/google/android/apps/camera/evcomp/EvCompSlider;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v0
+
+    invoke-virtual {v0, v9}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
+
+    move-result v0
+
+    int-to-float v7, v0
+
+    iget-object v8, p0, Lcom/google/android/apps/camera/evcomp/EvCompSlider;->c:Landroid/graphics/Paint;
+
+    move-object v1, p1
+
+    invoke-virtual/range {v1 .. v8}, Landroid/graphics/Canvas;->drawRoundRect(FFFFFFLandroid/graphics/Paint;)V
 
     return-void
 .end method

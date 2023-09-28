@@ -1,33 +1,22 @@
-.class public final synthetic Lgif;
+.class public final Lgif;
 .super Ljava/lang/Object;
 
-# interfaces
-.implements Lgnj;
 
-
-# instance fields
-.field public final synthetic a:Lkad;
+# static fields
+.field public static final a:Lgfp;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lkad;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 2
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance v0, Lgfp;
 
-    iput-object p1, p0, Lgif;->a:Lkad;
+    const/16 v1, 0xb
 
-    return-void
-.end method
+    invoke-direct {v0, v1}, Lgfp;-><init>(I)V
 
-
-# virtual methods
-.method public final a()V
-    .locals 1
-
-    iget-object v0, p0, Lgif;->a:Lkad;
-
-    invoke-interface {v0}, Lkad;->close()V
+    sput-object v0, Lgif;->a:Lgfp;
 
     return-void
 .end method

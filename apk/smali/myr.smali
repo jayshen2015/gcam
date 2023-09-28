@@ -1,39 +1,43 @@
-.class final Lmyr;
+.class public final synthetic Lmyr;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Ljava/io/Serializable;
+.implements Loiu;
 
 
 # instance fields
-.field final a:Lmym;
+.field public final synthetic a:Lmyt;
 
-.field final b:Lmuh;
+.field public final synthetic b:Ljava/util/List;
 
 
 # direct methods
-.method public constructor <init>(Lmym;Lmuh;)V
+.method public synthetic constructor <init>(Lmyt;Ljava/util/List;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lmyr;->a:Lmym;
+    iput-object p1, p0, Lmyr;->a:Lmyt;
 
-    iput-object p2, p0, Lmyr;->b:Lmuh;
+    iput-object p2, p0, Lmyr;->b:Ljava/util/List;
 
     return-void
 .end method
 
-.method private readResolve()Ljava/lang/Object;
-    .locals 3
 
-    new-instance v0, Lmys;
+# virtual methods
+.method public final a(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 2
 
-    iget-object v1, p0, Lmyr;->a:Lmym;
+    iget-object v0, p0, Lmyr;->a:Lmyt;
 
-    iget-object v2, p0, Lmyr;->b:Lmuh;
+    iget-object v1, p0, Lmyr;->b:Ljava/util/List;
 
-    invoke-direct {v0, v1, v2}, Lmys;-><init>(Lmym;Lmuh;)V
+    check-cast p1, Ljava/lang/Void;
 
-    return-object v0
+    invoke-virtual {v0, v1, p1}, Lmyt;->u(Ljava/util/List;Ljava/lang/Void;)Ljava/lang/Void;
+
+    const/4 p1, 0x0
+
+    return-object p1
 .end method

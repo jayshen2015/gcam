@@ -2,18 +2,13 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lakt;
-
-
-# annotations
-.annotation runtime Ljava/lang/Deprecated;
-.end annotation
+.implements Laec;
 
 
 # instance fields
 .field private final a:Ljava/lang/Object;
 
-.field private final b:Laki;
+.field private final b:Lbci;
 
 
 # direct methods
@@ -24,31 +19,31 @@
 
     iput-object p1, p0, Landroidx/lifecycle/ReflectiveGenericLifecycleObserver;->a:Ljava/lang/Object;
 
-    sget-object v0, Lakk;->a:Lakk;
+    sget-object v0, Ladw;->a:Ladw;
 
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     move-result-object p1
 
-    invoke-virtual {v0, p1}, Lakk;->b(Ljava/lang/Class;)Laki;
+    invoke-virtual {v0, p1}, Ladw;->c(Ljava/lang/Class;)Lbci;
 
     move-result-object p1
 
-    iput-object p1, p0, Landroidx/lifecycle/ReflectiveGenericLifecycleObserver;->b:Laki;
+    iput-object p1, p0, Landroidx/lifecycle/ReflectiveGenericLifecycleObserver;->b:Lbci;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Lakv;Lakq;)V
+.method public final a(Laee;Ladz;)V
     .locals 3
 
-    iget-object v0, p0, Landroidx/lifecycle/ReflectiveGenericLifecycleObserver;->b:Laki;
+    iget-object v0, p0, Landroidx/lifecycle/ReflectiveGenericLifecycleObserver;->b:Lbci;
 
     iget-object v1, p0, Landroidx/lifecycle/ReflectiveGenericLifecycleObserver;->a:Ljava/lang/Object;
 
-    iget-object v2, v0, Laki;->a:Ljava/util/Map;
+    iget-object v2, v0, Lbci;->a:Ljava/util/Map;
 
     invoke-interface {v2, p2}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -56,11 +51,11 @@
 
     check-cast v2, Ljava/util/List;
 
-    invoke-static {v2, p1, p2, v1}, Laki;->a(Ljava/util/List;Lakv;Lakq;Ljava/lang/Object;)V
+    invoke-static {v2, p1, p2, v1}, Lbci;->c(Ljava/util/List;Laee;Ladz;Ljava/lang/Object;)V
 
-    iget-object v0, v0, Laki;->a:Ljava/util/Map;
+    iget-object v0, v0, Lbci;->a:Ljava/util/Map;
 
-    sget-object v2, Lakq;->ON_ANY:Lakq;
+    sget-object v2, Ladz;->ON_ANY:Ladz;
 
     invoke-interface {v0, v2}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -68,7 +63,7 @@
 
     check-cast v0, Ljava/util/List;
 
-    invoke-static {v0, p1, p2, v1}, Laki;->a(Ljava/util/List;Lakv;Lakq;Ljava/lang/Object;)V
+    invoke-static {v0, p1, p2, v1}, Lbci;->c(Ljava/util/List;Laee;Ladz;Ljava/lang/Object;)V
 
     return-void
 .end method

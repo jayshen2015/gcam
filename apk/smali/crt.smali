@@ -1,52 +1,74 @@
-.class public final Lcrt;
-.super Ljava/lang/Object;
-
-
-# static fields
-.field public static final a:Landroid/util/Range;
+.class Lcrt;
+.super Lcsa;
 
 
 # instance fields
-.field public final b:Z
+.field final synthetic b:Lcrw;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 3
+.method public constructor <init>(Lcrw;)V
+    .locals 0
 
-    new-instance v0, Landroid/util/Range;
+    iput-object p1, p0, Lcrt;->b:Lcrw;
 
-    const/4 v1, 0x7
-
-    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v1
-
-    const/16 v2, 0x1e
-
-    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v2
-
-    invoke-direct {v0, v1, v2}, Landroid/util/Range;-><init>(Ljava/lang/Comparable;Ljava/lang/Comparable;)V
-
-    sput-object v0, Lcrt;->a:Landroid/util/Range;
+    invoke-direct {p0}, Lcsa;-><init>()V
 
     return-void
 .end method
 
-.method public constructor <init>(Ldhi;)V
-    .locals 1
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+# virtual methods
+.method public c()V
+    .locals 2
 
-    sget-object v0, Ldgu;->ac:Ldhj;
+    iget-object v0, p0, Lcrt;->b:Lcrw;
 
-    invoke-interface {p1, v0}, Ldhi;->l(Ldhj;)Z
+    iget-object v1, v0, Lcrw;->h:Lcsb;
 
-    move-result p1
+    invoke-virtual {v1}, Lcsb;->b()V
 
-    iput-boolean p1, p0, Lcrt;->b:Z
+    iget-object v1, v0, Lcrw;->e:Lcom/google/android/apps/camera/bottombar/BottomBarController;
+
+    invoke-virtual {v1}, Lcom/google/android/apps/camera/bottombar/BottomBarController;->startVideoIntentRecording()V
+
+    iget-object v1, v0, Lcrw;->f:Ljlb;
+
+    invoke-interface {v1}, Ljlb;->aa()V
+
+    iget-object v0, v0, Lcrw;->g:Ljak;
+
+    const/4 v1, 0x0
+
+    invoke-virtual {v0, v1}, Ljak;->d(Z)V
+
+    invoke-static {}, Ljxn;->c()V
 
     return-void
+.end method
+
+.method public final f()V
+    .locals 1
+
+    iget-object v0, p0, Lcrt;->b:Lcrw;
+
+    iput-object p0, v0, Lcrw;->i:Lcsa;
+
+    return-void
+.end method
+
+.method public final fK()Z
+    .locals 1
+
+    const/4 v0, 0x0
+
+    return v0
+.end method
+
+.method public final j()I
+    .locals 1
+
+    const/4 v0, 0x1
+
+    return v0
 .end method

@@ -1,22 +1,67 @@
 .class public final Lmmv;
 .super Ljava/lang/Object;
 
+# interfaces
+.implements Ljava/util/concurrent/Executor;
 
-# static fields
-.field public static final a:Llzz;
+
+# instance fields
+.field public final a:Ljava/util/concurrent/ArrayBlockingQueue;
+
+.field public b:Z
 
 
 # direct methods
-.method static constructor <clinit>()V
+.method public constructor <init>()V
     .locals 2
 
-    new-instance v0, Llzz;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const-string v1, "PhoneskyVerificationUtils"
+    new-instance v0, Ljava/util/concurrent/ArrayBlockingQueue;
 
-    invoke-direct {v0, v1}, Llzz;-><init>(Ljava/lang/String;)V
+    const/16 v1, 0x10
 
-    sput-object v0, Lmmv;->a:Llzz;
+    invoke-direct {v0, v1}, Ljava/util/concurrent/ArrayBlockingQueue;-><init>(I)V
+
+    iput-object v0, p0, Lmmv;->a:Ljava/util/concurrent/ArrayBlockingQueue;
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public final a()V
+    .locals 1
+
+    new-instance v0, Lmmu;
+
+    invoke-direct {v0, p0}, Lmmu;-><init>(Lmmv;)V
+
+    invoke-virtual {p0, v0}, Lmmv;->execute(Ljava/lang/Runnable;)V
+
+    return-void
+.end method
+
+.method public final execute(Ljava/lang/Runnable;)V
+    .locals 1
+
+    :try_start_0
+    iget-object v0, p0, Lmmv;->a:Ljava/util/concurrent/ArrayBlockingQueue;
+
+    invoke-virtual {v0, p1}, Ljava/util/concurrent/ArrayBlockingQueue;->put(Ljava/lang/Object;)V
+    :try_end_0
+    .catch Ljava/lang/InterruptedException; {:try_start_0 .. :try_end_0} :catch_0
+
+    return-void
+
+    :catch_0
+    move-exception p1
+
+    const-string p1, "BlockingEventLoop"
+
+    const-string v0, "Interrupted while attempting to post event: Dropping event."
+
+    invoke-static {p1, v0}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
     return-void
 .end method

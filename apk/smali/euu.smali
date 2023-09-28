@@ -1,77 +1,33 @@
-.class final Leuu;
-.super Lifk;
+.class public final synthetic Leuu;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Lpyn;
 
 
 # instance fields
-.field final synthetic a:Leuy;
+.field public final synthetic a:Lcom/google/android/apps/camera/legacy/app/app/CameraApp;
 
 
 # direct methods
-.method public constructor <init>(Leuy;)V
+.method public synthetic constructor <init>(Lcom/google/android/apps/camera/legacy/app/app/CameraApp;)V
     .locals 0
 
-    iput-object p1, p0, Leuu;->a:Leuy;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0}, Lifk;-><init>()V
+    iput-object p1, p0, Leuu;->a:Lcom/google/android/apps/camera/legacy/app/app/CameraApp;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onShutterButtonClick()V
-    .locals 4
+.method public final get()Ljava/lang/Object;
+    .locals 1
 
-    iget-object v0, p0, Leuu;->a:Leuy;
+    iget-object v0, p0, Leuu;->a:Lcom/google/android/apps/camera/legacy/app/app/CameraApp;
 
-    iget-object v1, v0, Leuy;->p:Leuo;
+    iget-object v0, v0, Lcom/google/android/apps/camera/legacy/app/app/CameraApp;->g:Legh;
 
-    iget-boolean v1, v1, Leuo;->g:Z
-
-    if-nez v1, :cond_2
-
-    invoke-virtual {v0}, Leuy;->x()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_0
-
-    return-void
-
-    :cond_0
-    iget-object v1, v0, Leuy;->e:Ljwb;
-
-    invoke-interface {v1}, Ljwb;->bm()Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Lgyu;
-
-    iget v1, v1, Lgyu;->g:I
-
-    if-lez v1, :cond_1
-
-    iget-object v2, v0, Leuy;->p:Leuo;
-
-    iget-object v3, v2, Leuo;->c:Lhwc;
-
-    iput-object v0, v3, Lhwc;->n:Lhwf;
-
-    invoke-static {}, Ljuh;->a()V
-
-    iget-object v0, v2, Leuo;->c:Lhwc;
-
-    invoke-virtual {v0, v1}, Lhwc;->d(I)V
-
-    return-void
-
-    :cond_1
-    invoke-virtual {v0}, Lchk;->r()V
-
-    return-void
-
-    :cond_2
-    invoke-virtual {v0}, Leuy;->w()V
-
-    return-void
+    return-object v0
 .end method

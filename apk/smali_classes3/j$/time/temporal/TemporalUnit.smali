@@ -3,20 +3,20 @@
 
 
 # virtual methods
-.method public abstract a()Z
+.method public abstract addTo(Lj$/time/temporal/Temporal;J)Lj$/time/temporal/Temporal;
 .end method
 
-.method public abstract c()Z
+.method public abstract between(Lj$/time/temporal/Temporal;Lj$/time/temporal/Temporal;)J
 .end method
 
-.method public abstract e()Z
+.method public abstract getDuration()Lj$/time/Duration;
 .end method
 
-.method public abstract f()Lj$/time/Duration;
+.method public abstract isDateBased()Z
 .end method
 
-.method public abstract h(Lj$/time/temporal/Temporal;Lj$/time/temporal/Temporal;)J
+.method public abstract isDurationEstimated()Z
 .end method
 
-.method public abstract i(Lj$/time/temporal/Temporal;J)Lj$/time/temporal/Temporal;
+.method public abstract isTimeBased()Z
 .end method

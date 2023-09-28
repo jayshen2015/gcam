@@ -1,52 +1,45 @@
-.class final Lifb;
-.super Landroid/animation/AnimatorListenerAdapter;
+.class public final synthetic Lifb;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Lj$/util/function/Consumer;
 
 
 # instance fields
-.field final synthetic a:Lifd;
+.field public final synthetic a:Looh;
 
 
 # direct methods
-.method public constructor <init>(Lifd;)V
+.method public synthetic constructor <init>(Looh;)V
     .locals 0
 
-    iput-object p1, p0, Lifb;->a:Lifd;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
+    iput-object p1, p0, Lifb;->a:Looh;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onAnimationEnd(Landroid/animation/Animator;)V
+.method public final accept(Ljava/lang/Object;)V
     .locals 1
 
-    iget-object p1, p0, Lifb;->a:Lifd;
+    iget-object v0, p0, Lifb;->a:Looh;
 
-    iget-object p1, p1, Lifd;->a:Life;
+    check-cast p1, Landroid/animation/Animator;
 
-    iget-object p1, p1, Life;->b:Lcom/google/android/apps/camera/ui/shutterbutton/ShutterButton;
-
-    const/4 v0, 0x0
-
-    invoke-virtual {p1, v0}, Lcom/google/android/apps/camera/ui/shutterbutton/ShutterButton;->blockClickForAnimation(Z)V
+    invoke-virtual {v0, p1}, Looh;->g(Ljava/lang/Object;)V
 
     return-void
 .end method
 
-.method public final onAnimationStart(Landroid/animation/Animator;)V
-    .locals 1
+.method public final synthetic andThen(Lj$/util/function/Consumer;)Lj$/util/function/Consumer;
+    .locals 0
 
-    iget-object p1, p0, Lifb;->a:Lifd;
+    invoke-static {p0, p1}, Lj$/util/function/Consumer$-CC;->$default$andThen(Lj$/util/function/Consumer;Lj$/util/function/Consumer;)Lj$/util/function/Consumer;
 
-    iget-object p1, p1, Lifd;->a:Life;
+    move-result-object p1
 
-    iget-object p1, p1, Life;->b:Lcom/google/android/apps/camera/ui/shutterbutton/ShutterButton;
-
-    const/4 v0, 0x1
-
-    invoke-virtual {p1, v0}, Lcom/google/android/apps/camera/ui/shutterbutton/ShutterButton;->blockClickForAnimation(Z)V
-
-    return-void
+    return-object p1
 .end method

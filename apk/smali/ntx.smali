@@ -1,172 +1,85 @@
-.class public final Lntx;
-.super Lnws;
+.class final Lntx;
+.super Ljava/lang/Object;
 
 # interfaces
-.implements Lnxz;
-
-
-# static fields
-.field public static final d:Lntx;
-
-.field private static volatile e:Lnyf;
+.implements Lqco;
 
 
 # instance fields
-.field public a:I
+.field final synthetic a:Lnty;
 
-.field public b:Lnwf;
-
-.field public c:Lnyy;
+.field final synthetic b:Lnuj;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
-
-    new-instance v0, Lntx;
-
-    invoke-direct {v0}, Lntx;-><init>()V
-
-    sput-object v0, Lntx;->d:Lntx;
-
-    const-class v1, Lntx;
-
-    invoke-static {v1, v0}, Lnws;->aa(Ljava/lang/Class;Lnws;)V
-
-    return-void
-.end method
-
-.method private constructor <init>()V
+.method public constructor <init>(Lnty;Lnuj;)V
     .locals 0
 
-    invoke-direct {p0}, Lnws;-><init>()V
+    iput-object p1, p0, Lntx;->a:Lnty;
+
+    iput-object p2, p0, Lntx;->b:Lnuj;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method protected final a(ILjava/lang/Object;)Ljava/lang/Object;
-    .locals 3
+.method public final bridge synthetic a(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 8
 
-    add-int/lit8 p1, p1, -0x1
+    check-cast p1, Lptm;
 
-    const/4 p2, 0x1
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    packed-switch p1, :pswitch_data_0
+    iget-object v0, p0, Lntx;->a:Lnty;
 
-    :pswitch_0
-    const/4 p1, 0x0
+    iget-object v2, v0, Lnty;->i:Lohh;
 
-    return-object p1
+    invoke-virtual {p1}, Lpnm;->d()Lpoc;
 
-    :pswitch_1
-    sget-object p1, Lntx;->e:Lnyf;
+    move-result-object v3
 
-    if-nez p1, :cond_1
+    iget-object p1, p0, Lntx;->b:Lnuj;
 
-    const-class p2, Lntx;
+    iget-object p1, p1, Lnuj;->b:Lnqh;
 
-    monitor-enter p2
+    iget-object v4, p1, Lnqh;->o:Ljava/lang/String;
 
-    :try_start_0
-    sget-object p1, Lntx;->e:Lnyf;
+    sget-object p1, Ljava/util/concurrent/TimeUnit;->SECONDS:Ljava/util/concurrent/TimeUnit;
 
-    if-nez p1, :cond_0
+    sget-object v0, Lqka;->b:Lqbt;
 
-    new-instance p1, Lnwo;
+    sget-object v1, Lqmd;->g:Lqco;
 
-    sget-object v0, Lntx;->d:Lntx;
+    const-string v1, "unit is null"
 
-    invoke-direct {p1, v0}, Lnwo;-><init>(Lnws;)V
+    invoke-static {p1, v1}, Lqmd;->W(Ljava/lang/Object;Ljava/lang/String;)V
 
-    sput-object p1, Lntx;->e:Lnyf;
+    const-string v1, "scheduler is null"
 
-    :cond_0
-    monitor-exit p2
+    invoke-static {v0, v1}, Lqmd;->W(Ljava/lang/Object;Ljava/lang/String;)V
 
-    goto :goto_0
+    new-instance v7, Lqhu;
 
-    :catchall_0
-    move-exception p1
+    invoke-direct {v7, p1, v0}, Lqhu;-><init>(Ljava/util/concurrent/TimeUnit;Lqbt;)V
 
-    monitor-exit p2
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    sget-object p1, Lqmd;->m:Lqco;
 
-    throw p1
+    new-instance p1, Lnue;
 
-    :cond_1
-    :goto_0
-    return-object p1
+    const/4 v5, 0x0
 
-    :pswitch_2
-    sget-object p1, Lntx;->d:Lntx;
+    const/4 v6, 0x0
 
-    return-object p1
+    move-object v1, p1
 
-    :pswitch_3
-    new-instance p1, Lnwn;
+    invoke-direct/range {v1 .. v6}, Lnue;-><init>(Lohh;Lpoc;Ljava/lang/String;[B[B)V
 
-    sget-object p2, Lntx;->d:Lntx;
-
-    invoke-direct {p1, p2}, Lnwn;-><init>(Lnws;)V
-
-    return-object p1
-
-    :pswitch_4
-    new-instance p1, Lntx;
-
-    invoke-direct {p1}, Lntx;-><init>()V
-
-    return-object p1
-
-    :pswitch_5
-    const-string p1, "a"
-
-    const-string v0, "\u0001\u0002\u0000\u0001\u0001\u0002\u0002\u0000\u0000\u0000\u0001\u1009\u0000\u0002\u1009\u0001"
-
-    const/4 v1, 0x3
-
-    new-array v1, v1, [Ljava/lang/Object;
-
-    const/4 v2, 0x0
-
-    aput-object p1, v1, v2
-
-    const-string p1, "b"
-
-    aput-object p1, v1, p2
-
-    const/4 p1, 0x2
-
-    const-string p2, "c"
-
-    aput-object p2, v1, p1
-
-    sget-object p1, Lntx;->d:Lntx;
-
-    invoke-static {p1, v0, v1}, Lntx;->X(Lnxy;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v7, p1}, Lqbu;->g(Lqco;)Lqbm;
 
     move-result-object p1
 
     return-object p1
-
-    :pswitch_6
-    invoke-static {p2}, Ljava/lang/Byte;->valueOf(B)Ljava/lang/Byte;
-
-    move-result-object p1
-
-    return-object p1
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_6
-        :pswitch_0
-        :pswitch_5
-        :pswitch_4
-        :pswitch_3
-        :pswitch_2
-        :pswitch_1
-    .end packed-switch
 .end method

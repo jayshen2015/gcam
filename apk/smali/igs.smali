@@ -1,51 +1,55 @@
-.class public final Ligs;
+.class public final synthetic Ligs;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Logk;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field private final a:Loiw;
+.field public final synthetic a:Ligu;
+
+.field private final synthetic b:I
 
 
 # direct methods
-.method public constructor <init>(Loiw;)V
+.method public synthetic constructor <init>(Ligu;I)V
     .locals 0
+
+    iput p2, p0, Ligs;->b:I
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Ligs;->a:Loiw;
+    iput-object p1, p0, Ligs;->a:Ligu;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Ligr;
+.method public final run()V
     .locals 2
 
-    iget-object v0, p0, Ligs;->a:Loiw;
+    iget v0, p0, Ligs;->b:I
 
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
+    const/4 v1, 0x1
 
-    move-result-object v0
+    packed-switch v0, :pswitch_data_0
 
-    check-cast v0, Ldkp;
+    iget-object v0, p0, Ligs;->a:Ligu;
 
-    new-instance v1, Ligr;
+    iput-boolean v1, v0, Ligu;->g:Z
 
-    invoke-direct {v1, v0}, Ligr;-><init>(Ldkp;)V
+    return-void
 
-    return-object v1
-.end method
+    :pswitch_0
+    iget-object v0, p0, Ligs;->a:Ligu;
 
-.method public final bridge synthetic get()Ljava/lang/Object;
-    .locals 1
+    iput-boolean v1, v0, Ligu;->f:Z
 
-    invoke-virtual {p0}, Ligs;->a()Ligr;
+    return-void
 
-    move-result-object v0
-
-    return-object v0
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

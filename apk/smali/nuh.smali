@@ -1,148 +1,95 @@
 .class public final Lnuh;
-.super Lnws;
-
-# interfaces
-.implements Lnxz;
+.super Lobr;
 
 
-# static fields
-.field public static final a:Lnuh;
-
-.field private static volatile b:Lnyf;
+# instance fields
+.field public final a:Ljava/lang/String;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
+.method public constructor <init>(Ljava/lang/String;)V
+    .locals 0
 
-    new-instance v0, Lnuh;
+    invoke-direct {p0}, Lobr;-><init>()V
 
-    invoke-direct {v0}, Lnuh;-><init>()V
-
-    sput-object v0, Lnuh;->a:Lnuh;
-
-    const-class v1, Lnuh;
-
-    invoke-static {v1, v0}, Lnws;->aa(Ljava/lang/Class;Lnws;)V
-
-    return-void
-.end method
-
-.method private constructor <init>()V
-    .locals 1
-
-    invoke-direct {p0}, Lnws;-><init>()V
-
-    sget-object v0, Lnyi;->b:Lnyi;
+    iput-object p1, p0, Lnuh;->a:Ljava/lang/String;
 
     return-void
 .end method
 
 
 # virtual methods
-.method protected final a(ILjava/lang/Object;)Ljava/lang/Object;
-    .locals 1
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 3
 
-    add-int/lit8 p1, p1, -0x1
+    const/4 v0, 0x1
 
-    const/4 p2, 0x0
+    if-ne p0, p1, :cond_0
 
-    packed-switch p1, :pswitch_data_0
-
-    :pswitch_0
-    return-object p2
-
-    :pswitch_1
-    sget-object p1, Lnuh;->b:Lnyf;
-
-    if-nez p1, :cond_1
-
-    const-class p2, Lnuh;
-
-    monitor-enter p2
-
-    :try_start_0
-    sget-object p1, Lnuh;->b:Lnyf;
-
-    if-nez p1, :cond_0
-
-    new-instance p1, Lnwo;
-
-    sget-object v0, Lnuh;->a:Lnuh;
-
-    invoke-direct {p1, v0}, Lnwo;-><init>(Lnws;)V
-
-    sput-object p1, Lnuh;->b:Lnyf;
+    return v0
 
     :cond_0
-    monitor-exit p2
+    instance-of v1, p1, Lnuh;
 
-    goto :goto_0
+    const/4 v2, 0x0
 
-    :catchall_0
-    move-exception p1
+    if-nez v1, :cond_1
 
-    monitor-exit p2
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw p1
+    return v2
 
     :cond_1
-    :goto_0
-    return-object p1
+    check-cast p1, Lnuh;
 
-    :pswitch_2
-    sget-object p1, Lnuh;->a:Lnuh;
+    iget-object v1, p0, Lnuh;->a:Ljava/lang/String;
 
-    return-object p1
+    iget-object p1, p1, Lnuh;->a:Ljava/lang/String;
 
-    :pswitch_3
-    new-instance p1, Lnwn;
+    invoke-static {v1, p1}, Lqno;->c(Ljava/lang/Object;Ljava/lang/Object;)Z
 
-    sget-object p2, Lnuh;->a:Lnuh;
+    move-result p1
 
-    invoke-direct {p1, p2}, Lnwn;-><init>(Lnws;)V
+    if-nez p1, :cond_2
 
-    return-object p1
+    return v2
 
-    :pswitch_4
-    new-instance p1, Lnuh;
+    :cond_2
+    return v0
+.end method
 
-    invoke-direct {p1}, Lnuh;-><init>()V
+.method public final hashCode()I
+    .locals 1
 
-    return-object p1
+    iget-object v0, p0, Lnuh;->a:Ljava/lang/String;
 
-    :pswitch_5
-    sget-object p1, Lnuh;->a:Lnuh;
+    invoke-virtual {v0}, Ljava/lang/String;->hashCode()I
 
-    const-string v0, "\u0001\u0000"
+    move-result v0
 
-    invoke-static {p1, v0, p2}, Lnuh;->X(Lnxy;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/Object;
+    return v0
+.end method
 
-    move-result-object p1
+.method public final toString()Ljava/lang/String;
+    .locals 2
 
-    return-object p1
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    :pswitch_6
-    const/4 p1, 0x1
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-static {p1}, Ljava/lang/Byte;->valueOf(B)Ljava/lang/Byte;
+    const-string v1, "UploadAttachmentComplete(blobstoreId="
 
-    move-result-object p1
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    return-object p1
+    iget-object v1, p0, Lnuh;->a:Ljava/lang/String;
 
-    nop
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_6
-        :pswitch_0
-        :pswitch_5
-        :pswitch_4
-        :pswitch_3
-        :pswitch_2
-        :pswitch_1
-    .end packed-switch
+    const/16 v1, 0x29
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
 .end method

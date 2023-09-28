@@ -1,142 +1,68 @@
-.class public final Lcsu;
+.class public final synthetic Lcsu;
 .super Ljava/lang/Object;
+
+# interfaces
+.implements Llnn;
 
 
 # instance fields
-.field public final a:Lctd;
+.field public final synthetic a:Lcsw;
 
-.field public final b:I
+.field public final synthetic b:Llnx;
 
 
 # direct methods
-.method public constructor <init>()V
+.method public synthetic constructor <init>(Lcsw;Llnx;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    return-void
-.end method
+    iput-object p1, p0, Lcsu;->a:Lcsw;
 
-.method public constructor <init>(Lctd;I)V
-    .locals 0
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lcsu;->a:Lctd;
-
-    iput p2, p0, Lcsu;->b:I
+    iput-object p2, p0, Lcsu;->b:Llnx;
 
     return-void
-.end method
-
-.method public static a()Lllz;
-    .locals 1
-
-    new-instance v0, Lllz;
-
-    invoke-direct {v0}, Lllz;-><init>()V
-
-    return-object v0
 .end method
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 4
+.method public final a(Llmr;)V
+    .locals 5
 
-    const/4 v0, 0x1
+    iget-object v0, p0, Lcsu;->a:Lcsw;
 
-    if-ne p1, p0, :cond_0
+    iget-object v1, p0, Lcsu;->b:Llnx;
 
-    return v0
+    iget-object v2, v0, Lcsw;->b:Ljava/lang/Object;
+
+    monitor-enter v2
+
+    :try_start_0
+    iget-object v3, v0, Lcsw;->c:Ljava/util/concurrent/ExecutorService;
+
+    if-nez v3, :cond_0
+
+    monitor-exit v2
+
+    return-void
 
     :cond_0
-    instance-of v1, p1, Lcsu;
+    new-instance v4, Lcsv;
 
-    const/4 v2, 0x0
+    invoke-direct {v4, v0, p1, v1}, Lcsv;-><init>(Lcsw;Llmr;Llnx;)V
 
-    if-eqz v1, :cond_1
+    invoke-interface {v3, v4}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
 
-    check-cast p1, Lcsu;
+    monitor-exit v2
 
-    iget-object v1, p0, Lcsu;->a:Lctd;
+    return-void
 
-    iget-object v3, p1, Lcsu;->a:Lctd;
+    :catchall_0
+    move-exception p1
 
-    invoke-virtual {v1, v3}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+    monitor-exit v2
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    move-result v1
-
-    if-eqz v1, :cond_1
-
-    iget v1, p0, Lcsu;->b:I
-
-    iget p1, p1, Lcsu;->b:I
-
-    if-ne v1, p1, :cond_1
-
-    return v0
-
-    :cond_1
-    return v2
-.end method
-
-.method public final hashCode()I
-    .locals 2
-
-    iget-object v0, p0, Lcsu;->a:Lctd;
-
-    invoke-virtual {v0}, Ljava/lang/Object;->hashCode()I
-
-    move-result v0
-
-    const v1, 0xf4243
-
-    xor-int/2addr v0, v1
-
-    mul-int v0, v0, v1
-
-    iget v1, p0, Lcsu;->b:I
-
-    xor-int/2addr v0, v1
-
-    return v0
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .locals 4
-
-    iget-object v0, p0, Lcsu;->a:Lctd;
-
-    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v0
-
-    iget v1, p0, Lcsu;->b:I
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v3, "CamcorderPendingVideoFile{outputVideo="
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v0, ", pendingVideoId="
-
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    const-string v0, "}"
-
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    return-object v0
+    throw p1
 .end method

@@ -2,139 +2,156 @@
 .super Ljava/lang/Object;
 
 
+# instance fields
+.field public final a:Lgtv;
+
+.field public final b:I
+
+.field private final c:I
+
+.field private final d:I
+
+.field private final e:Ljava/lang/String;
+
+.field private final f:Ljava/lang/String;
+
+
 # direct methods
-.method public constructor <init>()V
+.method public constructor <init>(Lgtv;III)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    iput-object p1, p0, Lgtl;->a:Lgtv;
+
+    iput p2, p0, Lgtl;->b:I
+
+    iput p3, p0, Lgtl;->c:I
+
+    iput p4, p0, Lgtl;->d:I
+
+    const-string p1, ""
+
+    iput-object p1, p0, Lgtl;->e:Ljava/lang/String;
+
+    iput-object p1, p0, Lgtl;->f:Ljava/lang/String;
+
     return-void
 .end method
 
-.method public constructor <init>(Ldhi;)V
-    .locals 1
+.method public constructor <init>(Lgtv;Ljava/lang/String;Ljava/lang/String;)V
+    .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    sget-object v0, Ldho;->a:Ldhk;
+    iput-object p1, p0, Lgtl;->a:Lgtv;
 
-    invoke-interface {p1}, Ldhi;->c()V
+    const p1, 0x7f0804af
+
+    iput p1, p0, Lgtl;->b:I
+
+    const/4 p1, 0x0
+
+    iput p1, p0, Lgtl;->c:I
+
+    iput p1, p0, Lgtl;->d:I
+
+    iput-object p2, p0, Lgtl;->e:Ljava/lang/String;
+
+    iput-object p3, p0, Lgtl;->f:Ljava/lang/String;
 
     return-void
 .end method
 
-.method public static a()V
+
+# virtual methods
+.method public final a(Landroid/content/res/Resources;)Ljava/lang/String;
     .locals 1
 
-    const-class v0, Lgtl;
+    iget-object v0, p0, Lgtl;->f:Ljava/lang/String;
 
-    invoke-static {v0}, Lkak;->a(Ljava/lang/Class;)V
+    invoke-virtual {v0}, Ljava/lang/String;->isEmpty()Z
 
-    return-void
-.end method
+    move-result v0
 
-.method public static synthetic b(Ljava/lang/Throwable;Ljava/lang/Throwable;)V
-    .locals 6
+    if-nez v0, :cond_0
 
-    :try_start_0
-    const-class v0, Ljava/lang/Throwable;
+    iget-object p1, p0, Lgtl;->f:Ljava/lang/String;
 
-    const-string v1, "addSuppressed"
+    return-object p1
 
-    const/4 v2, 0x1
+    :cond_0
+    iget v0, p0, Lgtl;->d:I
 
-    new-array v3, v2, [Ljava/lang/Class;
-
-    const-class v4, Ljava/lang/Throwable;
-
-    const/4 v5, 0x0
-
-    aput-object v4, v3, v5
-
-    invoke-virtual {v0, v1, v3}, Ljava/lang/Class;->getDeclaredMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
-
-    move-result-object v0
-
-    new-array v1, v2, [Ljava/lang/Object;
-
-    aput-object p1, v1, v5
-
-    invoke-virtual {v0, p0, v1}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
-    :try_end_0
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
-
-    return-void
-
-    :catch_0
-    move-exception p0
-
-    return-void
-.end method
-
-.method public static final c(Lgsl;Ljava/util/Collection;)F
-    .locals 10
-
-    invoke-interface {p1}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
+    invoke-virtual {p1, v0}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
     move-result-object p1
 
-    const-wide v0, 0x7fffffffffffffffL
+    return-object p1
+.end method
 
-    move-wide v2, v0
+.method public final b(Landroid/content/res/Resources;)Ljava/lang/String;
+    .locals 1
+
+    iget-object v0, p0, Lgtl;->e:Ljava/lang/String;
+
+    invoke-virtual {v0}, Ljava/lang/String;->isEmpty()Z
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    iget-object p1, p0, Lgtl;->e:Ljava/lang/String;
+
+    return-object p1
 
     :cond_0
-    :goto_0
-    invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
+    iget v0, p0, Lgtl;->c:I
 
-    move-result v4
+    invoke-virtual {p1, v0}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
-    if-eqz v4, :cond_1
+    move-result-object p1
 
-    invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    return-object p1
+.end method
 
-    move-result-object v4
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 2
 
-    check-cast v4, Lgsl;
+    const/4 v0, 0x0
 
-    if-eq p0, v4, :cond_0
+    if-nez p1, :cond_0
 
-    sget-object v5, Ljava/util/concurrent/TimeUnit;->MILLISECONDS:Ljava/util/concurrent/TimeUnit;
+    return v0
 
-    iget-wide v6, p0, Lgsl;->a:J
+    :cond_0
+    instance-of v1, p1, Lgtl;
 
-    iget-wide v8, v4, Lgsl;->a:J
+    if-nez v1, :cond_1
 
-    sub-long/2addr v6, v8
-
-    sget-object v4, Ljava/util/concurrent/TimeUnit;->NANOSECONDS:Ljava/util/concurrent/TimeUnit;
-
-    invoke-virtual {v5, v6, v7, v4}, Ljava/util/concurrent/TimeUnit;->convert(JLjava/util/concurrent/TimeUnit;)J
-
-    move-result-wide v4
-
-    invoke-static {v4, v5}, Ljava/lang/Math;->abs(J)J
-
-    move-result-wide v4
-
-    cmp-long v6, v4, v2
-
-    if-gez v6, :cond_0
-
-    move-wide v2, v4
-
-    goto :goto_0
+    return v0
 
     :cond_1
-    cmp-long p0, v2, v0
+    iget-object v1, p0, Lgtl;->a:Lgtv;
 
-    if-nez p0, :cond_2
+    check-cast p1, Lgtl;
 
-    const/4 p0, 0x0
+    iget-object p1, p1, Lgtl;->a:Lgtv;
 
-    return p0
+    if-ne v1, p1, :cond_2
+
+    const/4 p1, 0x1
+
+    return p1
 
     :cond_2
-    long-to-float p0, v2
+    return v0
+.end method
 
-    return p0
+.method public final hashCode()I
+    .locals 1
+
+    iget v0, p0, Lgtl;->b:I
+
+    return v0
 .end method

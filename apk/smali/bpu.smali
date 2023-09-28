@@ -1,42 +1,165 @@
 .class public final Lbpu;
-.super Ljava/io/IOException;
+.super Ljava/lang/Object;
 
 
-# static fields
-.field private static final serialVersionUID:J = 0x1L
+# instance fields
+.field private volatile a:I
+
+.field private volatile b:I
+
+.field private volatile c:I
+
+.field private volatile d:I
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/String;I)V
-    .locals 1
+.method public constructor <init>()V
+    .locals 0
 
-    const/4 v0, 0x0
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0, p1, p2, v0}, Lbpu;-><init>(Ljava/lang/String;ILjava/lang/Throwable;)V
+    invoke-virtual {p0}, Lbpu;->a()V
 
     return-void
 .end method
 
-.method public constructor <init>(Ljava/lang/String;ILjava/lang/Throwable;)V
+
+# virtual methods
+.method public final declared-synchronized a()V
     .locals 1
 
-    new-instance v0, Ljava/lang/StringBuilder;
+    monitor-enter p0
 
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+    const/4 v0, 0x1
 
-    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    :try_start_0
+    iput v0, p0, Lbpu;->d:I
 
-    const-string p1, ", status code: "
+    const/4 v0, 0x0
 
-    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    iput v0, p0, Lbpu;->c:I
 
-    invoke-virtual {v0, p2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    iput v0, p0, Lbpu;->a:I
 
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    iput v0, p0, Lbpu;->b:I
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    move-result-object p1
-
-    invoke-direct {p0, p1, p3}, Ljava/io/IOException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
+    monitor-exit p0
 
     return-void
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit p0
+
+    throw v0
+.end method
+
+.method public final declared-synchronized b(Lhkd;)Z
+    .locals 3
+
+    monitor-enter p0
+
+    :try_start_0
+    iget v0, p0, Lbpu;->a:I
+
+    const/4 v1, 0x1
+
+    add-int/2addr v0, v1
+
+    iput v0, p0, Lbpu;->a:I
+
+    invoke-virtual {p1}, Lhkd;->b()Z
+
+    move-result p1
+
+    const/4 v0, 0x0
+
+    if-eqz p1, :cond_0
+
+    iget p1, p0, Lbpu;->c:I
+
+    add-int/2addr p1, v1
+
+    iput p1, p0, Lbpu;->c:I
+
+    goto :goto_0
+
+    :cond_0
+    iput v0, p0, Lbpu;->c:I
+
+    :goto_0
+    iget p1, p0, Lbpu;->a:I
+
+    iget v2, p0, Lbpu;->b:I
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    sub-int/2addr p1, v2
+
+    const/16 v2, 0x1e
+
+    if-ge p1, v2, :cond_2
+
+    :cond_1
+    :goto_1
+    monitor-exit p0
+
+    return v0
+
+    :cond_2
+    :try_start_1
+    iget p1, p0, Lbpu;->c:I
+
+    if-le p1, v2, :cond_3
+
+    iget p1, p0, Lbpu;->d:I
+
+    const/4 v2, 0x3
+
+    if-eq p1, v2, :cond_4
+
+    iput v2, p0, Lbpu;->d:I
+
+    const/4 v0, 0x1
+
+    goto :goto_2
+
+    :cond_3
+    iget p1, p0, Lbpu;->d:I
+
+    const/4 v2, 0x2
+
+    if-eq p1, v2, :cond_4
+
+    iput v2, p0, Lbpu;->d:I
+
+    :cond_4
+    :goto_2
+    if-eqz v0, :cond_1
+
+    iget p1, p0, Lbpu;->a:I
+
+    iput p1, p0, Lbpu;->b:I
+
+    iput v1, p0, Lbpu;->d:I
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    goto :goto_1
+
+    :catchall_0
+    move-exception p1
+
+    monitor-exit p0
+
+    goto :goto_4
+
+    :goto_3
+    throw p1
+
+    :goto_4
+    goto :goto_3
 .end method

@@ -1,152 +1,79 @@
 .class public final Lkvn;
 .super Ljava/lang/Object;
 
+# interfaces
+.implements Ljava/util/concurrent/Executor;
 
-# static fields
-.field public static final a:Lnwh;
+
+# instance fields
+.field private final a:Landroid/os/Handler;
+
+.field private final synthetic b:I
 
 
 # direct methods
-.method static constructor <clinit>()V
+.method public constructor <init>(I)V
     .locals 1
 
-    invoke-static {}, Lnwh;->b()Lnwh;
+    iput p1, p0, Lkvn;->b:I
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    new-instance p1, Lksg;
+
+    invoke-static {}, Landroid/os/Looper;->getMainLooper()Landroid/os/Looper;
 
     move-result-object v0
 
-    sput-object v0, Lkvn;->a:Lnwh;
+    invoke-direct {p1, v0}, Lksg;-><init>(Landroid/os/Looper;)V
+
+    iput-object p1, p0, Lkvn;->a:Landroid/os/Handler;
 
     return-void
 .end method
 
-.method public static a(Ljava/nio/ByteBuffer;Lnwh;)Lkvj;
-    .locals 2
+.method public constructor <init>(Landroid/os/Looper;I)V
+    .locals 0
 
-    if-eqz p0, :cond_3
+    iput p2, p0, Lkvn;->b:I
 
-    :try_start_0
-    sget-object v0, Lkvj;->e:Lkvj;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-static {p0}, Lnvy;->J(Ljava/nio/ByteBuffer;)Lnvy;
+    new-instance p2, Lksg;
 
-    move-result-object p0
+    invoke-direct {p2, p1}, Lksg;-><init>(Landroid/os/Looper;)V
 
-    invoke-virtual {v0}, Lnws;->P()Lnws;
+    iput-object p2, p0, Lkvn;->a:Landroid/os/Handler;
 
-    move-result-object v0
-    :try_end_0
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_4
+    return-void
+.end method
 
-    :try_start_1
-    sget-object v1, Lnyh;->a:Lnyh;
 
-    invoke-virtual {v1, v0}, Lnyh;->b(Ljava/lang/Object;)Lnyo;
+# virtual methods
+.method public final execute(Ljava/lang/Runnable;)V
+    .locals 1
 
-    move-result-object v1
+    iget v0, p0, Lkvn;->b:I
 
-    invoke-static {p0}, Lnvz;->p(Lnvy;)Lnvz;
+    packed-switch v0, :pswitch_data_0
 
-    move-result-object p0
+    iget-object v0, p0, Lkvn;->a:Landroid/os/Handler;
 
-    invoke-interface {v1, v0, p0, p1}, Lnyo;->h(Ljava/lang/Object;Lnyk;Lnwh;)V
+    invoke-virtual {v0, p1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    invoke-interface {v1, v0}, Lnyo;->f(Ljava/lang/Object;)V
-    :try_end_1
-    .catch Lnxd; {:try_start_1 .. :try_end_1} :catch_3
-    .catch Lnyz; {:try_start_1 .. :try_end_1} :catch_2
-    .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_1
-    .catch Ljava/lang/RuntimeException; {:try_start_1 .. :try_end_1} :catch_0
-    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_4
+    return-void
 
-    :try_start_2
-    invoke-static {v0}, Lnws;->ae(Lnws;)V
+    :pswitch_0
+    iget-object v0, p0, Lkvn;->a:Landroid/os/Handler;
 
-    invoke-static {v0}, Lnws;->ae(Lnws;)V
+    invoke-virtual {v0, p1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    check-cast v0, Lkvj;
+    return-void
 
-    return-object v0
+    nop
 
-    :catch_0
-    move-exception p0
-
-    invoke-virtual {p0}, Ljava/lang/RuntimeException;->getCause()Ljava/lang/Throwable;
-
-    move-result-object p1
-
-    instance-of p1, p1, Lnxd;
-
-    if-eqz p1, :cond_0
-
-    invoke-virtual {p0}, Ljava/lang/RuntimeException;->getCause()Ljava/lang/Throwable;
-
-    move-result-object p0
-
-    check-cast p0, Lnxd;
-
-    throw p0
-
-    :cond_0
-    throw p0
-
-    :catch_1
-    move-exception p0
-
-    invoke-virtual {p0}, Ljava/io/IOException;->getCause()Ljava/lang/Throwable;
-
-    move-result-object p1
-
-    instance-of p1, p1, Lnxd;
-
-    if-eqz p1, :cond_1
-
-    invoke-virtual {p0}, Ljava/io/IOException;->getCause()Ljava/lang/Throwable;
-
-    move-result-object p0
-
-    check-cast p0, Lnxd;
-
-    throw p0
-
-    :cond_1
-    new-instance p1, Lnxd;
-
-    invoke-direct {p1, p0}, Lnxd;-><init>(Ljava/io/IOException;)V
-
-    throw p1
-
-    :catch_2
-    move-exception p0
-
-    invoke-virtual {p0}, Lnyz;->a()Lnxd;
-
-    move-result-object p0
-
-    throw p0
-
-    :catch_3
-    move-exception p0
-
-    iget-boolean p1, p0, Lnxd;->a:Z
-
-    if-eqz p1, :cond_2
-
-    new-instance p1, Lnxd;
-
-    invoke-direct {p1, p0}, Lnxd;-><init>(Ljava/io/IOException;)V
-
-    move-object p0, p1
-
-    :cond_2
-    throw p0
-    :try_end_2
-    .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_4
-
-    :catch_4
-    move-exception p0
-
-    :cond_3
-    sget-object p0, Lkvj;->e:Lkvj;
-
-    return-object p0
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

@@ -1,202 +1,180 @@
 .class public final Lmeh;
-.super Lnws;
-
-# interfaces
-.implements Lnxz;
-
-
-# static fields
-.field public static final e:Lmeh;
-
-.field private static volatile f:Lnyf;
+.super Ljava/lang/Object;
 
 
 # instance fields
-.field public a:I
+.field public final a:Lqkg;
 
-.field public b:I
+.field public final b:Lqkg;
 
-.field public c:Ljava/lang/String;
-
-.field public d:Lnxa;
+.field public final c:Lqkg;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
+.method public constructor <init>(Landroid/content/Context;)V
+    .locals 4
 
-    new-instance v0, Lmeh;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {v0}, Lmeh;-><init>()V
+    invoke-static {p1}, Lpyt;->a(Ljava/lang/Object;)Lpys;
 
-    sput-object v0, Lmeh;->e:Lmeh;
+    move-result-object p1
 
-    const-class v1, Lmeh;
+    iput-object p1, p0, Lmeh;->a:Lqkg;
 
-    invoke-static {v1, v0}, Lnws;->aa(Ljava/lang/Class;Lnws;)V
+    new-instance v0, Lmef;
+
+    invoke-direct {v0, p1}, Lmef;-><init>(Lqkg;)V
+
+    iput-object v0, p0, Lmeh;->b:Lqkg;
+
+    new-instance v1, Llwy;
+
+    const/4 v2, 0x2
+
+    const/4 v3, 0x0
+
+    invoke-direct {v1, p1, v0, v2, v3}, Llwy;-><init>(Lqkg;Lqkg;I[C)V
+
+    invoke-static {v1}, Lpyr;->b(Lqkg;)Lqkg;
+
+    move-result-object p1
+
+    iput-object p1, p0, Lmeh;->c:Lqkg;
 
     return-void
 .end method
 
-.method private constructor <init>()V
-    .locals 1
+.method public constructor <init>(Lqkg;Lqkg;Lqkg;)V
+    .locals 0
 
-    invoke-direct {p0}, Lnws;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const-string v0, ""
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    iput-object v0, p0, Lmeh;->c:Ljava/lang/String;
+    iput-object p1, p0, Lmeh;->b:Lqkg;
 
-    sget-object v0, Lnyi;->b:Lnyi;
+    invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    iput-object v0, p0, Lmeh;->d:Lnxa;
+    iput-object p2, p0, Lmeh;->c:Lqkg;
+
+    invoke-virtual {p3}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    iput-object p3, p0, Lmeh;->a:Lqkg;
+
+    return-void
+.end method
+
+.method public constructor <init>(Lqkg;Lqkg;Lqkg;[B)V
+    .locals 0
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    iput-object p1, p0, Lmeh;->c:Lqkg;
+
+    invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    iput-object p2, p0, Lmeh;->b:Lqkg;
+
+    invoke-virtual {p3}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    iput-object p3, p0, Lmeh;->a:Lqkg;
+
+    return-void
+.end method
+
+.method public constructor <init>(Lqkg;Lqkg;Lqkg;[B[B)V
+    .locals 0
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    iput-object p1, p0, Lmeh;->c:Lqkg;
+
+    invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    iput-object p2, p0, Lmeh;->a:Lqkg;
+
+    invoke-virtual {p3}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    iput-object p3, p0, Lmeh;->b:Lqkg;
+
+    return-void
+.end method
+
+.method public constructor <init>(Lqkg;Lqkg;Lqkg;[C)V
+    .locals 0
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    iput-object p1, p0, Lmeh;->c:Lqkg;
+
+    invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    iput-object p2, p0, Lmeh;->a:Lqkg;
+
+    invoke-virtual {p3}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    iput-object p3, p0, Lmeh;->b:Lqkg;
 
     return-void
 .end method
 
 
 # virtual methods
-.method protected final a(ILjava/lang/Object;)Ljava/lang/Object;
-    .locals 3
+.method public final a(JILojz;)Lgyu;
+    .locals 11
 
-    add-int/lit8 p1, p1, -0x1
+    new-instance v10, Lgyu;
 
-    const/4 p2, 0x1
+    iget-object v0, p0, Lmeh;->c:Lqkg;
 
-    packed-switch p1, :pswitch_data_0
+    check-cast v0, Lgzb;
 
-    :pswitch_0
-    const/4 p1, 0x0
+    invoke-virtual {v0}, Lgzb;->b()Lmbg;
 
-    return-object p1
+    move-result-object v1
 
-    :pswitch_1
-    sget-object p1, Lmeh;->f:Lnyf;
+    iget-object v0, p0, Lmeh;->a:Lqkg;
 
-    if-nez p1, :cond_1
+    check-cast v0, Lgzg;
 
-    const-class p2, Lmeh;
+    invoke-virtual {v0}, Lgzg;->a()Lgzf;
 
-    monitor-enter p2
+    move-result-object v2
 
-    :try_start_0
-    sget-object p1, Lmeh;->f:Lnyf;
+    iget-object v0, p0, Lmeh;->b:Lqkg;
 
-    if-nez p1, :cond_0
+    invoke-interface {v0}, Lqkg;->get()Ljava/lang/Object;
 
-    new-instance p1, Lnwo;
+    move-result-object v0
 
-    sget-object v0, Lmeh;->e:Lmeh;
+    move-object v3, v0
 
-    invoke-direct {p1, v0}, Lnwo;-><init>(Lnws;)V
+    check-cast v3, Llap;
 
-    sput-object p1, Lmeh;->f:Lnyf;
+    invoke-virtual {v3}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    :cond_0
-    monitor-exit p2
+    invoke-virtual {p4}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    goto :goto_0
+    const/4 v8, 0x0
 
-    :catchall_0
-    move-exception p1
+    const/4 v9, 0x0
 
-    monitor-exit p2
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    move-object v0, v10
 
-    throw p1
+    move-wide v4, p1
 
-    :cond_1
-    :goto_0
-    return-object p1
+    move v6, p3
 
-    :pswitch_2
-    sget-object p1, Lmeh;->e:Lmeh;
+    move-object v7, p4
 
-    return-object p1
+    invoke-direct/range {v0 .. v9}, Lgyu;-><init>(Lmbg;Lgzf;Llap;JILojz;[B[B)V
 
-    :pswitch_3
-    new-instance p1, Lnwn;
-
-    sget-object p2, Lmeh;->e:Lmeh;
-
-    invoke-direct {p1, p2}, Lnwn;-><init>(Lnws;)V
-
-    return-object p1
-
-    :pswitch_4
-    new-instance p1, Lmeh;
-
-    invoke-direct {p1}, Lmeh;-><init>()V
-
-    return-object p1
-
-    :pswitch_5
-    const-string p1, "a"
-
-    const-string v0, "\u0001\u0003\u0000\u0001\u0001\u0003\u0003\u0000\u0001\u0000\u0001\u100c\u0000\u0002\u1008\u0001\u0003\u001b"
-
-    const/4 v1, 0x6
-
-    new-array v1, v1, [Ljava/lang/Object;
-
-    const/4 v2, 0x0
-
-    aput-object p1, v1, v2
-
-    const-string p1, "b"
-
-    aput-object p1, v1, p2
-
-    const/4 p1, 0x2
-
-    sget-object p2, Lkuf;->i:Lnww;
-
-    aput-object p2, v1, p1
-
-    const/4 p1, 0x3
-
-    const-string p2, "c"
-
-    aput-object p2, v1, p1
-
-    const/4 p1, 0x4
-
-    const-string p2, "d"
-
-    aput-object p2, v1, p1
-
-    const/4 p1, 0x5
-
-    const-class p2, Lmeg;
-
-    aput-object p2, v1, p1
-
-    sget-object p1, Lmeh;->e:Lmeh;
-
-    invoke-static {p1, v0, v1}, Lmeh;->X(Lnxy;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object p1
-
-    return-object p1
-
-    :pswitch_6
-    invoke-static {p2}, Ljava/lang/Byte;->valueOf(B)Ljava/lang/Byte;
-
-    move-result-object p1
-
-    return-object p1
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_6
-        :pswitch_0
-        :pswitch_5
-        :pswitch_4
-        :pswitch_3
-        :pswitch_2
-        :pswitch_1
-    .end packed-switch
+    return-object v10
 .end method

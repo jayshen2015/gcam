@@ -1,87 +1,132 @@
 .class public final Lent;
 .super Ljava/lang/Object;
 
-# interfaces
-.implements Logk;
 
-
-# instance fields
-.field private final a:Loiw;
-
-.field private final b:Loiw;
-
-.field private final c:Loiw;
+# static fields
+.field public static final a:Loom;
 
 
 # direct methods
-.method public constructor <init>(Loiw;Loiw;Loiw;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 14
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const/16 v0, 0xe
 
-    iput-object p1, p0, Lent;->a:Loiw;
+    new-array v13, v0, [Ljava/lang/Class;
 
-    iput-object p2, p0, Lent;->b:Loiw;
+    const/4 v0, 0x0
 
-    iput-object p3, p0, Lent;->c:Loiw;
+    const-class v1, Lcom/google/android/apps/camera/jni/faceobfuscation/GpuRedactorNative;
+
+    aput-object v1, v13, v0
+
+    const/4 v0, 0x1
+
+    const-class v1, Lcom/google/android/apps/camera/jni/gyro/GyroQueueNative;
+
+    aput-object v1, v13, v0
+
+    const/4 v0, 0x2
+
+    const-class v1, Lcom/google/android/libraries/camera/jni/graphics/HardwareBuffers;
+
+    aput-object v1, v13, v0
+
+    const/4 v0, 0x3
+
+    const-class v1, Lcom/google/android/apps/camera/processing/imagebackend/ImgUtilNative;
+
+    aput-object v1, v13, v0
+
+    const/4 v0, 0x4
+
+    const-class v1, Lcom/google/android/libraries/camera/jni/jpeg/JpegUtilNative;
+
+    aput-object v1, v13, v0
+
+    const/4 v0, 0x5
+
+    const-class v1, Lcom/google/android/apps/camera/jni/lensoffset/LensOffsetQueueNative;
+
+    aput-object v1, v13, v0
+
+    const/4 v0, 0x6
+
+    const-class v1, Lcom/google/android/apps/camera/jni/mallopt/Mallopt;
+
+    aput-object v1, v13, v0
+
+    const/4 v0, 0x7
+
+    const-class v1, Lcom/google/android/apps/camera/jni/microvideotonemap/MicrovideoToneMapNative;
+
+    aput-object v1, v13, v0
+
+    const/16 v0, 0x8
+
+    const-class v1, Lcom/google/android/apps/camera/jni/federatedphoto/ModeSuggestionClient;
+
+    aput-object v1, v13, v0
+
+    const/16 v0, 0x9
+
+    const-class v1, Lcom/google/android/libraries/camera/gyro/hardwarebuffer/ReadHardwareBufferJniFunctions;
+
+    aput-object v1, v13, v0
+
+    const/16 v0, 0xa
+
+    const-class v1, Lhls;
+
+    aput-object v1, v13, v0
+
+    const/16 v0, 0xb
+
+    const-class v1, Lcom/google/android/apps/camera/jni/tracking/RoiTrackerNative;
+
+    aput-object v1, v13, v0
+
+    const/16 v0, 0xc
+
+    const-class v1, Lcom/google/android/libraries/camera/jni/surface/SurfaceNative;
+
+    aput-object v1, v13, v0
+
+    const/16 v0, 0xd
+
+    const-class v1, Lcom/google/android/libraries/camera/jni/yuv/YuvUtilNative;
+
+    aput-object v1, v13, v0
+
+    const-class v1, Lcom/google/android/libraries/oliveoil/bufferflinger/BufferFlinger;
+
+    const-class v2, Ldae;
+
+    const-class v3, Lcom/google/android/apps/camera/async/tt/CpuSets;
+
+    const-class v4, Ldkr;
+
+    const-class v5, Lcom/google/android/apps/camera/jni/eis/EisNative;
+
+    const-class v6, Lcom/google/android/apps/camera/jni/facebeautification/FaceBeautificationNative;
+
+    const-class v7, Lcom/google/android/apps/camera/processing/imagebackend/FaceUtilNative;
+
+    const-class v8, Lcom/google/android/apps/camera/facemetadata/jni/FaceMetadataNative;
+
+    const-class v9, Lcom/google/android/apps/camera/moments/FastMomentsHdrImpl;
+
+    const-class v10, Lcom/google/android/apps/camera/jni/eisutil/FrameUtilNative;
+
+    const-class v11, Lenl;
+
+    const-class v12, Lcom/google/android/apps/camera/jni/facebeautification/GpuRetoucherNative;
+
+    invoke-static/range {v1 .. v13}, Loom;->r(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;[Ljava/lang/Object;)Loom;
+
+    move-result-object v0
+
+    sput-object v0, Lent;->a:Loom;
 
     return-void
-.end method
-
-
-# virtual methods
-.method public final a()Lva;
-    .locals 7
-
-    iget-object v0, p0, Lent;->a:Loiw;
-
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    move-object v2, v0
-
-    check-cast v2, Lkpo;
-
-    iget-object v0, p0, Lent;->b:Loiw;
-
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    move-object v3, v0
-
-    check-cast v3, Ldhi;
-
-    iget-object v0, p0, Lent;->c:Loiw;
-
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    move-object v4, v0
-
-    check-cast v4, Ldzf;
-
-    new-instance v0, Lva;
-
-    const/4 v5, 0x0
-
-    const/4 v6, 0x0
-
-    move-object v1, v0
-
-    invoke-direct/range {v1 .. v6}, Lva;-><init>(Lkpo;Ldhi;Ldzf;[B[B)V
-
-    return-object v0
-.end method
-
-.method public final bridge synthetic get()Ljava/lang/Object;
-    .locals 1
-
-    invoke-virtual {p0}, Lent;->a()Lva;
-
-    move-result-object v0
-
-    return-object v0
 .end method

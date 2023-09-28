@@ -1,184 +1,178 @@
 .class public final Lmlj;
-.super Landroidx/wear/ambient/AmbientLifecycleObserverInterface$AmbientLifecycleCallback$-CC;
+.super Ljava/lang/Object;
 
 
 # instance fields
-.field private final a:Ljava/lang/ref/WeakReference;
+.field public final a:Ljava/nio/ByteBuffer;
 
-.field private b:I
-
-.field private c:I
+.field private final b:Ljava/util/List;
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/material/tabs/TabLayout;)V
-    .locals 1
+.method public constructor <init>(Ljava/nio/ByteBuffer;Ljava/util/List;)V
+    .locals 0
 
-    invoke-direct {p0}, Landroidx/wear/ambient/AmbientLifecycleObserverInterface$AmbientLifecycleCallback$-CC;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    new-instance v0, Ljava/lang/ref/WeakReference;
+    iput-object p1, p0, Lmlj;->a:Ljava/nio/ByteBuffer;
 
-    invoke-direct {v0, p1}, Ljava/lang/ref/WeakReference;-><init>(Ljava/lang/Object;)V
-
-    iput-object v0, p0, Lmlj;->a:Ljava/lang/ref/WeakReference;
-
-    const/4 p1, 0x0
-
-    iput p1, p0, Lmlj;->c:I
-
-    iput p1, p0, Lmlj;->b:I
+    iput-object p2, p0, Lmlj;->b:Ljava/util/List;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(I)V
-    .locals 1
+.method public final a(Lmlh;)Ljava/util/List;
+    .locals 8
 
-    iget v0, p0, Lmlj;->c:I
+    new-instance v0, Ljava/util/ArrayList;
 
-    iput v0, p0, Lmlj;->b:I
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    iput p1, p0, Lmlj;->c:I
+    iget v1, p1, Lmlh;->a:I
 
-    iget-object p1, p0, Lmlj;->a:Ljava/lang/ref/WeakReference;
+    iget v2, p1, Lmlh;->b:I
 
-    invoke-virtual {p1}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
+    :goto_0
+    iget v3, p1, Lmlh;->a:I
 
-    move-result-object p1
+    iget v4, p1, Lmlh;->b:I
 
-    check-cast p1, Lcom/google/android/material/tabs/TabLayout;
-
-    if-eqz p1, :cond_0
-
-    iget v0, p0, Lmlj;->c:I
-
-    iput v0, p1, Lcom/google/android/material/tabs/TabLayout;->A:I
-
-    :cond_0
-    return-void
-.end method
-
-.method public final b(IFI)V
-    .locals 5
-
-    iget-object p3, p0, Lmlj;->a:Ljava/lang/ref/WeakReference;
-
-    invoke-virtual {p3}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
-
-    move-result-object p3
-
-    check-cast p3, Lcom/google/android/material/tabs/TabLayout;
-
-    if-eqz p3, :cond_4
-
-    iget v0, p0, Lmlj;->c:I
-
-    const/4 v1, 0x0
-
-    const/4 v2, 0x2
-
-    const/4 v3, 0x1
-
-    if-ne v0, v2, :cond_1
-
-    iget v4, p0, Lmlj;->b:I
-
-    if-ne v4, v3, :cond_0
+    add-int/2addr v3, v4
 
     const/4 v4, 0x1
 
-    goto :goto_0
+    const/4 v5, 0x0
+
+    if-ge v1, v3, :cond_1
+
+    new-instance v3, Lmlh;
+
+    invoke-direct {v3, v1, v2}, Lmlh;-><init>(II)V
+
+    new-instance v6, Lmld;
+
+    invoke-direct {v6, p0, v3}, Lmld;-><init>(Lmlj;Lmlh;)V
+
+    iget-object v3, v6, Lmld;->b:Lmlh;
+
+    iget v3, v3, Lmlh;->b:I
+
+    iget v7, v6, Lmld;->c:I
+
+    add-int/2addr v3, v7
+
+    add-int/2addr v1, v3
+
+    sub-int/2addr v2, v3
+
+    if-ltz v2, :cond_0
+
+    goto :goto_1
 
     :cond_0
     const/4 v4, 0x0
 
+    :goto_1
+    invoke-static {v4}, Lobr;->aQ(Z)V
+
+    invoke-interface {v0, v6}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
     goto :goto_0
 
     :cond_1
-    const/4 v4, 0x1
+    if-ne v1, v3, :cond_2
 
-    :goto_0
-    if-ne v0, v2, :cond_3
+    const/4 p1, 0x1
 
-    iget v0, p0, Lmlj;->b:I
-
-    if-eqz v0, :cond_2
-
-    const/4 v1, 0x1
-
-    goto :goto_1
+    goto :goto_2
 
     :cond_2
-    goto :goto_1
+    const/4 p1, 0x0
+
+    :goto_2
+    invoke-static {p1}, Lobr;->aQ(Z)V
+
+    if-nez v2, :cond_3
+
+    goto :goto_3
 
     :cond_3
-    const/4 v1, 0x1
+    const/4 v4, 0x0
 
-    :goto_1
-    invoke-virtual {p3, p1, p2, v4, v1}, Lcom/google/android/material/tabs/TabLayout;->j(IFZZ)V
+    :goto_3
+    invoke-static {v4}, Lobr;->aQ(Z)V
 
-    :cond_4
-    return-void
+    return-object v0
 .end method
 
-.method public final c(I)V
-    .locals 5
+.method public final b(Lmle;Ljava/util/List;)V
+    .locals 3
 
-    iget-object v0, p0, Lmlj;->a:Ljava/lang/ref/WeakReference;
+    invoke-interface {p2}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
-    invoke-virtual {v0}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
+    move-result-object p2
+
+    :goto_0
+    invoke-interface {p2}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    invoke-interface {p2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Lcom/google/android/material/tabs/TabLayout;
+    check-cast v0, Lmld;
 
-    if-eqz v0, :cond_2
+    iget-object v1, p0, Lmlj;->b:Ljava/util/List;
 
-    invoke-virtual {v0}, Lcom/google/android/material/tabs/TabLayout;->a()I
+    iget-object v2, v0, Lmld;->a:Ljava/lang/String;
 
-    move-result v1
-
-    if-eq v1, p1, :cond_2
-
-    invoke-virtual {v0}, Lcom/google/android/material/tabs/TabLayout;->b()I
+    invoke-interface {v1, v2}, Ljava/util/List;->contains(Ljava/lang/Object;)Z
 
     move-result v1
 
-    if-ge p1, v1, :cond_2
+    if-eqz v1, :cond_0
 
-    iget v1, p0, Lmlj;->c:I
+    new-instance v1, Lmle;
 
-    const/4 v2, 0x1
+    invoke-static {v0}, Lojc;->i(Ljava/lang/Object;)Lojc;
 
-    if-eqz v1, :cond_1
+    move-result-object v2
 
-    const/4 v3, 0x2
+    invoke-direct {v1, v2}, Lmle;-><init>(Lojc;)V
 
-    const/4 v4, 0x0
+    iget-object v0, v0, Lmld;->b:Lmlh;
 
-    if-ne v1, v3, :cond_0
+    invoke-virtual {p0, v0}, Lmlj;->a(Lmlh;)Ljava/util/List;
 
-    iget v1, p0, Lmlj;->b:I
+    move-result-object v0
 
-    if-nez v1, :cond_0
+    invoke-virtual {p0, v1, v0}, Lmlj;->b(Lmle;Ljava/util/List;)V
 
-    goto :goto_0
+    goto :goto_1
 
     :cond_0
-    const/4 v2, 0x0
+    new-instance v1, Lmle;
+
+    invoke-static {v0}, Lojc;->i(Ljava/lang/Object;)Lojc;
+
+    move-result-object v0
+
+    invoke-direct {v1, v0}, Lmle;-><init>(Lojc;)V
+
+    :goto_1
+    invoke-static {p1}, Lojc;->i(Ljava/lang/Object;)Lojc;
+
+    iget-object v0, p1, Lmle;->b:Ljava/util/List;
+
+    invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     goto :goto_0
 
     :cond_1
-    :goto_0
-    invoke-virtual {v0, p1}, Lcom/google/android/material/tabs/TabLayout;->c(I)Lmle;
-
-    move-result-object p1
-
-    invoke-virtual {v0, p1, v2}, Lcom/google/android/material/tabs/TabLayout;->i(Lmle;Z)V
-
-    :cond_2
     return-void
 .end method

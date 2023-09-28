@@ -1,360 +1,495 @@
 .class public final Lhqb;
 .super Ljava/lang/Object;
 
+# interfaces
+.implements Lhsn;
+
 
 # instance fields
-.field public final a:J
-
-.field public final b:J
-
-.field public final c:J
-
-.field public final d:J
-
-.field public final e:F
-
-.field public final f:F
-
-.field public final g:Landroid/graphics/Rect;
-
-.field public final h:Landroid/graphics/Rect;
-
-.field private final i:Landroid/util/SizeF;
+.field public final a:Ljava/util/LinkedList;
 
 
 # direct methods
 .method public constructor <init>()V
-    .locals 0
+    .locals 1
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    return-void
-.end method
+    new-instance v0, Ljava/util/LinkedList;
 
-.method public constructor <init>(JJJJFLandroid/graphics/Rect;Landroid/graphics/Rect;Landroid/util/SizeF;)V
-    .locals 0
+    invoke-direct {v0}, Ljava/util/LinkedList;-><init>()V
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-wide p1, p0, Lhqb;->a:J
-
-    iput-wide p3, p0, Lhqb;->b:J
-
-    iput-wide p5, p0, Lhqb;->c:J
-
-    iput-wide p7, p0, Lhqb;->d:J
-
-    const/high16 p1, 0x3f800000    # 1.0f
-
-    iput p1, p0, Lhqb;->e:F
-
-    iput p9, p0, Lhqb;->f:F
-
-    iput-object p10, p0, Lhqb;->g:Landroid/graphics/Rect;
-
-    iput-object p11, p0, Lhqb;->h:Landroid/graphics/Rect;
-
-    iput-object p12, p0, Lhqb;->i:Landroid/util/SizeF;
+    iput-object v0, p0, Lhqb;->a:Ljava/util/LinkedList;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 7
-
-    const/4 v0, 0x1
-
-    if-ne p1, p0, :cond_0
-
-    return v0
-
-    :cond_0
-    instance-of v1, p1, Lhqb;
-
-    const/4 v2, 0x0
-
-    if-eqz v1, :cond_1
-
-    check-cast p1, Lhqb;
-
-    iget-wide v3, p0, Lhqb;->a:J
-
-    iget-wide v5, p1, Lhqb;->a:J
-
-    cmp-long v1, v3, v5
-
-    if-nez v1, :cond_1
-
-    iget-wide v3, p0, Lhqb;->b:J
-
-    iget-wide v5, p1, Lhqb;->b:J
-
-    cmp-long v1, v3, v5
-
-    if-nez v1, :cond_1
-
-    iget-wide v3, p0, Lhqb;->c:J
-
-    iget-wide v5, p1, Lhqb;->c:J
-
-    cmp-long v1, v3, v5
-
-    if-nez v1, :cond_1
-
-    iget-wide v3, p0, Lhqb;->d:J
-
-    iget-wide v5, p1, Lhqb;->d:J
-
-    cmp-long v1, v3, v5
-
-    if-nez v1, :cond_1
-
-    iget v1, p0, Lhqb;->e:F
-
-    invoke-static {v1}, Ljava/lang/Float;->floatToIntBits(F)I
-
-    move-result v1
-
-    iget v3, p1, Lhqb;->e:F
-
-    invoke-static {v3}, Ljava/lang/Float;->floatToIntBits(F)I
-
-    move-result v3
-
-    if-ne v1, v3, :cond_1
-
-    iget v1, p0, Lhqb;->f:F
-
-    invoke-static {v1}, Ljava/lang/Float;->floatToIntBits(F)I
-
-    move-result v1
-
-    iget v3, p1, Lhqb;->f:F
-
-    invoke-static {v3}, Ljava/lang/Float;->floatToIntBits(F)I
-
-    move-result v3
-
-    if-ne v1, v3, :cond_1
-
-    iget-object v1, p0, Lhqb;->g:Landroid/graphics/Rect;
-
-    iget-object v3, p1, Lhqb;->g:Landroid/graphics/Rect;
-
-    invoke-virtual {v1, v3}, Landroid/graphics/Rect;->equals(Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_1
-
-    iget-object v1, p0, Lhqb;->h:Landroid/graphics/Rect;
-
-    iget-object v3, p1, Lhqb;->h:Landroid/graphics/Rect;
-
-    invoke-virtual {v1, v3}, Landroid/graphics/Rect;->equals(Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_1
-
-    iget-object v1, p0, Lhqb;->i:Landroid/util/SizeF;
-
-    iget-object p1, p1, Lhqb;->i:Landroid/util/SizeF;
-
-    invoke-virtual {v1, p1}, Landroid/util/SizeF;->equals(Ljava/lang/Object;)Z
-
-    move-result p1
-
-    if-eqz p1, :cond_1
-
-    return v0
-
-    :cond_1
-    return v2
-.end method
-
-.method public final hashCode()I
-    .locals 11
-
-    iget-wide v0, p0, Lhqb;->a:J
-
-    const/16 v2, 0x20
-
-    ushr-long v3, v0, v2
-
-    xor-long/2addr v0, v3
-
-    iget-wide v3, p0, Lhqb;->b:J
-
-    ushr-long v5, v3, v2
-
-    xor-long/2addr v3, v5
-
-    iget-wide v5, p0, Lhqb;->c:J
-
-    ushr-long v7, v5, v2
-
-    xor-long/2addr v5, v7
-
-    iget-wide v7, p0, Lhqb;->d:J
-
-    ushr-long v9, v7, v2
-
-    xor-long/2addr v7, v9
-
-    iget v2, p0, Lhqb;->e:F
-
-    invoke-static {v2}, Ljava/lang/Float;->floatToIntBits(F)I
-
-    move-result v2
-
-    long-to-int v1, v0
-
-    const v0, 0xf4243
-
-    xor-int/2addr v1, v0
-
-    mul-int v1, v1, v0
-
-    long-to-int v4, v3
-
-    xor-int/2addr v1, v4
-
-    mul-int v1, v1, v0
-
-    long-to-int v3, v5
-
-    xor-int/2addr v1, v3
-
-    mul-int v1, v1, v0
-
-    long-to-int v3, v7
-
-    xor-int/2addr v1, v3
-
-    mul-int v1, v1, v0
-
-    xor-int/2addr v1, v2
-
-    iget v2, p0, Lhqb;->f:F
-
-    invoke-static {v2}, Ljava/lang/Float;->floatToIntBits(F)I
-
-    move-result v2
-
-    mul-int v1, v1, v0
-
-    xor-int/2addr v1, v2
-
-    iget-object v2, p0, Lhqb;->g:Landroid/graphics/Rect;
-
-    invoke-virtual {v2}, Landroid/graphics/Rect;->hashCode()I
-
-    move-result v2
-
-    mul-int v1, v1, v0
-
-    xor-int/2addr v1, v2
-
-    iget-object v2, p0, Lhqb;->h:Landroid/graphics/Rect;
-
-    invoke-virtual {v2}, Landroid/graphics/Rect;->hashCode()I
-
-    move-result v2
-
-    mul-int v1, v1, v0
-
-    xor-int/2addr v1, v2
-
-    iget-object v2, p0, Lhqb;->i:Landroid/util/SizeF;
-
-    invoke-virtual {v2}, Landroid/util/SizeF;->hashCode()I
-
-    move-result v2
-
-    mul-int v1, v1, v0
-
-    xor-int v0, v1, v2
-
-    return v0
-.end method
-
-.method public final toString()Ljava/lang/String;
+.method public final a()V
     .locals 3
 
-    new-instance v0, Ljava/lang/StringBuilder;
+    iget-object v0, p0, Lhqb;->a:Ljava/util/LinkedList;
 
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+    monitor-enter v0
 
-    const-string v1, "frameTimestampNs="
+    :try_start_0
+    iget-object v1, p0, Lhqb;->a:Ljava/util/LinkedList;
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1}, Ljava/util/LinkedList;->iterator()Ljava/util/Iterator;
 
-    iget-wide v1, p0, Lhqb;->a:J
+    move-result-object v1
 
-    invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+    :goto_0
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
-    const-string v1, ", exposureTimeNs="
+    move-result v2
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    if-eqz v2, :cond_0
 
-    iget-wide v1, p0, Lhqb;->b:J
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+    move-result-object v2
 
-    const-string v1, ", oisTimestampNs="
+    check-cast v2, Lhsn;
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-interface {v2}, Lhsn;->a()V
 
-    iget-wide v1, p0, Lhqb;->c:J
+    goto :goto_0
 
-    invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+    :cond_0
+    monitor-exit v0
 
-    const-string v1, ", rollingShutterTimeNs="
+    return-void
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    :catchall_0
+    move-exception v1
 
-    iget-wide v1, p0, Lhqb;->d:J
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+    goto :goto_2
 
-    const-string v1, ", digitalZoomRatio="
+    :goto_1
+    throw v1
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    :goto_2
+    goto :goto_1
+.end method
 
-    iget v1, p0, Lhqb;->e:F
+.method public final b()V
+    .locals 3
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
+    iget-object v0, p0, Lhqb;->a:Ljava/util/LinkedList;
 
-    const-string v1, ", fieldOfView="
+    monitor-enter v0
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    :try_start_0
+    iget-object v1, p0, Lhqb;->a:Ljava/util/LinkedList;
 
-    iget v1, p0, Lhqb;->f:F
+    invoke-virtual {v1}, Ljava/util/LinkedList;->iterator()Ljava/util/Iterator;
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
+    move-result-object v1
 
-    const-string v1, ", fullImageSize="
+    :goto_0
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result v2
 
-    iget-object v1, p0, Lhqb;->g:Landroid/graphics/Rect;
+    if-eqz v2, :cond_0
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    const-string v1, ", sensorSize="
+    move-result-object v2
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    check-cast v2, Lhsn;
 
-    iget-object v1, p0, Lhqb;->i:Landroid/util/SizeF;
+    invoke-interface {v2}, Lhsn;->b()V
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    goto :goto_0
 
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    :cond_0
+    monitor-exit v0
 
-    move-result-object v0
+    return-void
 
-    return-object v0
+    :catchall_0
+    move-exception v1
+
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    goto :goto_2
+
+    :goto_1
+    throw v1
+
+    :goto_2
+    goto :goto_1
+.end method
+
+.method public final c(Lfjz;)V
+    .locals 3
+
+    iget-object v0, p0, Lhqb;->a:Ljava/util/LinkedList;
+
+    monitor-enter v0
+
+    :try_start_0
+    iget-object v1, p0, Lhqb;->a:Ljava/util/LinkedList;
+
+    invoke-virtual {v1}, Ljava/util/LinkedList;->iterator()Ljava/util/Iterator;
+
+    move-result-object v1
+
+    :goto_0
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_0
+
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Lhsn;
+
+    invoke-interface {v2, p1}, Lhsn;->c(Lfjz;)V
+
+    goto :goto_0
+
+    :cond_0
+    monitor-exit v0
+
+    return-void
+
+    :catchall_0
+    move-exception p1
+
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    goto :goto_2
+
+    :goto_1
+    throw p1
+
+    :goto_2
+    goto :goto_1
+.end method
+
+.method public final d(Landroid/graphics/Bitmap;)V
+    .locals 3
+
+    iget-object v0, p0, Lhqb;->a:Ljava/util/LinkedList;
+
+    monitor-enter v0
+
+    :try_start_0
+    iget-object v1, p0, Lhqb;->a:Ljava/util/LinkedList;
+
+    invoke-virtual {v1}, Ljava/util/LinkedList;->iterator()Ljava/util/Iterator;
+
+    move-result-object v1
+
+    :goto_0
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_0
+
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Lhsn;
+
+    invoke-interface {v2, p1}, Lhsn;->d(Landroid/graphics/Bitmap;)V
+
+    goto :goto_0
+
+    :cond_0
+    monitor-exit v0
+
+    return-void
+
+    :catchall_0
+    move-exception p1
+
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    goto :goto_2
+
+    :goto_1
+    throw p1
+
+    :goto_2
+    goto :goto_1
+.end method
+
+.method public final e(Lojc;)V
+    .locals 3
+
+    iget-object v0, p0, Lhqb;->a:Ljava/util/LinkedList;
+
+    monitor-enter v0
+
+    :try_start_0
+    iget-object v1, p0, Lhqb;->a:Ljava/util/LinkedList;
+
+    invoke-virtual {v1}, Ljava/util/LinkedList;->iterator()Ljava/util/Iterator;
+
+    move-result-object v1
+
+    :goto_0
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_0
+
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Lhsn;
+
+    invoke-interface {v2, p1}, Lhsn;->e(Lojc;)V
+
+    goto :goto_0
+
+    :cond_0
+    monitor-exit v0
+
+    return-void
+
+    :catchall_0
+    move-exception p1
+
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    goto :goto_2
+
+    :goto_1
+    throw p1
+
+    :goto_2
+    goto :goto_1
+.end method
+
+.method public final f(IILjava/lang/Throwable;)V
+    .locals 3
+
+    iget-object v0, p0, Lhqb;->a:Ljava/util/LinkedList;
+
+    monitor-enter v0
+
+    :try_start_0
+    iget-object v1, p0, Lhqb;->a:Ljava/util/LinkedList;
+
+    invoke-virtual {v1}, Ljava/util/LinkedList;->iterator()Ljava/util/Iterator;
+
+    move-result-object v1
+
+    :goto_0
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_0
+
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Lhsn;
+
+    invoke-interface {v2, p1, p2, p3}, Lhsn;->f(IILjava/lang/Throwable;)V
+
+    goto :goto_0
+
+    :cond_0
+    monitor-exit v0
+
+    return-void
+
+    :catchall_0
+    move-exception p1
+
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    goto :goto_2
+
+    :goto_1
+    throw p1
+
+    :goto_2
+    goto :goto_1
+.end method
+
+.method public final g(IILjava/lang/Throwable;)V
+    .locals 3
+
+    iget-object v0, p0, Lhqb;->a:Ljava/util/LinkedList;
+
+    monitor-enter v0
+
+    :try_start_0
+    iget-object v1, p0, Lhqb;->a:Ljava/util/LinkedList;
+
+    invoke-virtual {v1}, Ljava/util/LinkedList;->iterator()Ljava/util/Iterator;
+
+    move-result-object v1
+
+    :goto_0
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_0
+
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Lhsn;
+
+    invoke-interface {v2, p1, p2, p3}, Lhsn;->g(IILjava/lang/Throwable;)V
+
+    goto :goto_0
+
+    :cond_0
+    monitor-exit v0
+
+    return-void
+
+    :catchall_0
+    move-exception p1
+
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    goto :goto_2
+
+    :goto_1
+    throw p1
+
+    :goto_2
+    goto :goto_1
+.end method
+
+.method public final h(II)V
+    .locals 3
+
+    iget-object v0, p0, Lhqb;->a:Ljava/util/LinkedList;
+
+    monitor-enter v0
+
+    :try_start_0
+    iget-object v1, p0, Lhqb;->a:Ljava/util/LinkedList;
+
+    invoke-virtual {v1}, Ljava/util/LinkedList;->iterator()Ljava/util/Iterator;
+
+    move-result-object v1
+
+    :goto_0
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_0
+
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Lhsn;
+
+    invoke-interface {v2, p1, p2}, Lhsn;->h(II)V
+
+    goto :goto_0
+
+    :cond_0
+    monitor-exit v0
+
+    return-void
+
+    :catchall_0
+    move-exception p1
+
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    goto :goto_2
+
+    :goto_1
+    throw p1
+
+    :goto_2
+    goto :goto_1
+.end method
+
+.method public final i(II)V
+    .locals 3
+
+    iget-object v0, p0, Lhqb;->a:Ljava/util/LinkedList;
+
+    monitor-enter v0
+
+    :try_start_0
+    iget-object v1, p0, Lhqb;->a:Ljava/util/LinkedList;
+
+    invoke-virtual {v1}, Ljava/util/LinkedList;->iterator()Ljava/util/Iterator;
+
+    move-result-object v1
+
+    :goto_0
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_0
+
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Lhsn;
+
+    invoke-interface {v2, p1, p2}, Lhsn;->i(II)V
+
+    goto :goto_0
+
+    :cond_0
+    monitor-exit v0
+
+    return-void
+
+    :catchall_0
+    move-exception p1
+
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    goto :goto_2
+
+    :goto_1
+    throw p1
+
+    :goto_2
+    goto :goto_1
 .end method

@@ -1,75 +1,182 @@
-.class public Lols;
-.super Lolp;
+.class public final Lols;
+.super Loko;
+
+
+# static fields
+.field private static final serialVersionUID:J
+
+
+# instance fields
+.field transient e:I
 
 
 # direct methods
-.method public constructor <init>()V
+.method private constructor <init>()V
+    .locals 2
+
+    const/16 v0, 0xc
+
+    const/4 v1, 0x3
+
+    invoke-direct {p0, v0, v1}, Lols;-><init>(II)V
+
+    return-void
+.end method
+
+.method private constructor <init>(II)V
     .locals 0
 
-    invoke-direct {p0}, Lolp;-><init>()V
+    invoke-static {p1}, Lomf;->e(I)Lomf;
+
+    move-result-object p1
+
+    invoke-direct {p0, p1}, Loko;-><init>(Ljava/util/Map;)V
+
+    const-string p1, "expectedValuesPerKey"
+
+    invoke-static {p2, p1}, Lohh;->U(ILjava/lang/String;)V
+
+    iput p2, p0, Lols;->e:I
+
+    return-void
+.end method
+
+.method private constructor <init>(Loqt;)V
+    .locals 2
+
+    invoke-interface {p1}, Loqt;->n()Ljava/util/Set;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Ljava/util/Set;->size()I
+
+    move-result v0
+
+    move-object v1, p1
+
+    check-cast v1, Lols;
+
+    iget v1, v1, Lols;->e:I
+
+    invoke-direct {p0, v0, v1}, Lols;-><init>(II)V
+
+    check-cast p1, Lolk;
+
+    iget-object v0, p1, Lolk;->c:Ljava/util/Collection;
+
+    if-nez v0, :cond_0
+
+    new-instance v0, Loqu;
+
+    invoke-direct {v0, p1}, Loqu;-><init>(Lolk;)V
+
+    iput-object v0, p1, Lolk;->c:Ljava/util/Collection;
+
+    goto :goto_0
+
+    :cond_0
+    :goto_0
+    invoke-interface {v0}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
+
+    move-result-object p1
+
+    :goto_1
+    invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/util/Map$Entry;
+
+    invoke-interface {v0}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
+
+    move-result-object v1
+
+    invoke-interface {v0}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
+
+    move-result-object v0
+
+    invoke-virtual {p0, v1, v0}, Lolk;->l(Ljava/lang/Object;Ljava/lang/Object;)V
+
+    goto :goto_1
+
+    :cond_1
+    return-void
+.end method
+
+.method public static r()Lols;
+    .locals 3
+
+    new-instance v0, Lols;
+
+    const/16 v1, 0xc
+
+    const/4 v2, 0x3
+
+    invoke-direct {v0, v1, v2}, Lols;-><init>(II)V
+
+    return-object v0
+.end method
+
+.method private readObject(Ljava/io/ObjectInputStream;)V
+    .locals 2
+
+    invoke-virtual {p1}, Ljava/io/ObjectInputStream;->defaultReadObject()V
+
+    const/4 v0, 0x3
+
+    iput v0, p0, Lols;->e:I
+
+    invoke-virtual {p1}, Ljava/io/ObjectInputStream;->readInt()I
+
+    move-result v0
+
+    new-instance v1, Lomf;
+
+    invoke-direct {v1}, Lomf;-><init>()V
+
+    invoke-virtual {p0, v1}, Lold;->k(Ljava/util/Map;)V
+
+    invoke-static {p0, p1, v0}, Lobr;->I(Loqt;Ljava/io/ObjectInputStream;I)V
+
+    return-void
+.end method
+
+.method public static s(Loqt;)Lols;
+    .locals 1
+
+    new-instance v0, Lols;
+
+    invoke-direct {v0, p0}, Lols;-><init>(Loqt;)V
+
+    return-object v0
+.end method
+
+.method private writeObject(Ljava/io/ObjectOutputStream;)V
+    .locals 0
+
+    invoke-virtual {p1}, Ljava/io/ObjectOutputStream;->defaultWriteObject()V
+
+    invoke-static {p0, p1}, Lobr;->L(Loqt;Ljava/io/ObjectOutputStream;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final b(Ljava/lang/Throwable;Ljava/lang/Throwable;)V
-    .locals 6
+.method public final bridge synthetic a()Ljava/util/Collection;
+    .locals 2
 
-    sget-object v0, Lolr;->a:Ljava/lang/Integer;
+    new-instance v0, Ljava/util/ArrayList;
 
-    if-eqz v0, :cond_1
+    iget v1, p0, Lols;->e:I
 
-    sget-object v0, Lolr;->a:Ljava/lang/Integer;
+    invoke-direct {v0, v1}, Ljava/util/ArrayList;-><init>(I)V
 
-    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
-
-    move-result v0
-
-    const/16 v1, 0x13
-
-    if-lt v0, v1, :cond_0
-
-    goto :goto_0
-
-    :cond_0
-    invoke-super {p0, p1, p2}, Lolp;->b(Ljava/lang/Throwable;Ljava/lang/Throwable;)V
-
-    return-void
-
-    :cond_1
-    :goto_0
-    :try_start_0
-    const-class v0, Ljava/lang/Throwable;
-
-    const-string v1, "addSuppressed"
-
-    const/4 v2, 0x1
-
-    new-array v3, v2, [Ljava/lang/Class;
-
-    const-class v4, Ljava/lang/Throwable;
-
-    const/4 v5, 0x0
-
-    aput-object v4, v3, v5
-
-    invoke-virtual {v0, v1, v3}, Ljava/lang/Class;->getDeclaredMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
-
-    move-result-object v0
-
-    new-array v1, v2, [Ljava/lang/Object;
-
-    aput-object p2, v1, v5
-
-    invoke-virtual {v0, p1, v1}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
-    :try_end_0
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
-
-    return-void
-
-    :catch_0
-    move-exception p1
-
-    return-void
+    return-object v0
 .end method

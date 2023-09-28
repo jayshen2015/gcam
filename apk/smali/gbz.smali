@@ -1,18 +1,33 @@
-.class public final Lgbz;
+.class public final synthetic Lgbz;
 .super Ljava/lang/Object;
 
+# interfaces
+.implements Ljava/lang/Runnable;
 
-# static fields
-.field public static final a:Lgcf;
+
+# instance fields
+.field public final synthetic a:Lgdp;
 
 
 # direct methods
-.method static constructor <clinit>()V
+.method public synthetic constructor <init>(Lgdp;)V
+    .locals 0
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lgbz;->a:Lgdp;
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public final run()V
     .locals 1
 
-    sget-object v0, Lgcf;->b:Lgcf;
+    iget-object v0, p0, Lgbz;->a:Lgdp;
 
-    sput-object v0, Lgbz;->a:Lgcf;
+    invoke-interface {v0}, Lgdp;->b()V
 
     return-void
 .end method

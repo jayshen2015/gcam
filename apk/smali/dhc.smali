@@ -1,266 +1,122 @@
-.class public final Ldhc;
+.class public final synthetic Ldhc;
 .super Ljava/lang/Object;
 
+# interfaces
+.implements Ljava/lang/Runnable;
 
-# static fields
-.field public static final a:Ldhk;
 
-.field public static final b:Ldhk;
+# instance fields
+.field public final synthetic a:Ldhg;
 
-.field public static final c:Ldhj;
+.field public final synthetic b:Ldhf;
 
-.field public static final d:Ldhj;
-
-.field public static final e:Ldhj;
-
-.field public static final f:Ldhj;
-
-.field public static final g:Ldhj;
-
-.field public static final h:Ldhj;
-
-.field public static final i:Ldhj;
-
-.field public static final j:Ldhj;
+.field private final synthetic c:I
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
+.method public synthetic constructor <init>(Ldhg;Ldhf;I)V
+    .locals 0
 
-    new-instance v0, Lnoc;
+    iput p3, p0, Ldhc;->c:I
 
-    invoke-direct {v0}, Lnoc;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const-string v1, "camera.vesper_debug"
+    iput-object p1, p0, Ldhc;->a:Ldhg;
 
-    iput-object v1, v0, Lnoc;->b:Ljava/lang/Object;
-
-    new-instance v0, Lnoc;
-
-    invoke-direct {v0}, Lnoc;-><init>()V
-
-    const-string v1, "camera.vesper_force_strong"
-
-    iput-object v1, v0, Lnoc;->b:Ljava/lang/Object;
-
-    new-instance v0, Lnoc;
-
-    invoke-direct {v0}, Lnoc;-><init>()V
-
-    const-string v1, "camera.vesper_debl"
-
-    iput-object v1, v0, Lnoc;->b:Ljava/lang/Object;
-
-    invoke-virtual {v0}, Lnoc;->t()Ldhj;
-
-    move-result-object v0
-
-    sput-object v0, Ldhc;->c:Ldhj;
-
-    new-instance v0, Lnoc;
-
-    invoke-direct {v0}, Lnoc;-><init>()V
-
-    const-string v1, "camera.vesper_ew"
-
-    iput-object v1, v0, Lnoc;->b:Ljava/lang/Object;
-
-    invoke-virtual {v0}, Lnoc;->t()Ldhj;
-
-    move-result-object v0
-
-    sput-object v0, Ldhc;->d:Ldhj;
-
-    new-instance v0, Lnoc;
-
-    invoke-direct {v0}, Lnoc;-><init>()V
-
-    const-string v1, "camera.vesper_tooltip"
-
-    iput-object v1, v0, Lnoc;->b:Ljava/lang/Object;
-
-    invoke-virtual {v0}, Lnoc;->t()Ldhj;
-
-    move-result-object v0
-
-    sput-object v0, Ldhc;->e:Ldhj;
-
-    new-instance v0, Lnoc;
-
-    invoke-direct {v0}, Lnoc;-><init>()V
-
-    const-string v1, "camera.vesper_bottomsheet"
-
-    iput-object v1, v0, Lnoc;->b:Ljava/lang/Object;
-
-    invoke-virtual {v0}, Lnoc;->t()Ldhj;
-
-    move-result-object v0
-
-    sput-object v0, Ldhc;->f:Ldhj;
-
-    new-instance v0, Lnoc;
-
-    invoke-direct {v0}, Lnoc;-><init>()V
-
-    const-string v1, "camera.enable_vesper"
-
-    iput-object v1, v0, Lnoc;->b:Ljava/lang/Object;
-
-    invoke-virtual {v0}, Lnoc;->t()Ldhj;
-
-    move-result-object v0
-
-    sput-object v0, Ldhc;->g:Ldhj;
-
-    new-instance v0, Lnoc;
-
-    invoke-direct {v0}, Lnoc;-><init>()V
-
-    const-string v1, "camera.enable_vesper_advanced"
-
-    iput-object v1, v0, Lnoc;->b:Ljava/lang/Object;
-
-    new-instance v0, Lnoc;
-
-    invoke-direct {v0}, Lnoc;-><init>()V
-
-    const-string v1, "camera.vesper_main_gpu"
-
-    iput-object v1, v0, Lnoc;->b:Ljava/lang/Object;
-
-    new-instance v0, Lnoc;
-
-    invoke-direct {v0}, Lnoc;-><init>()V
-
-    const-string v1, "camera.gpu_postproc"
-
-    iput-object v1, v0, Lnoc;->b:Ljava/lang/Object;
-
-    new-instance v0, Lnoc;
-
-    invoke-direct {v0}, Lnoc;-><init>()V
-
-    const-string v1, "face_retouching_default_setting"
-
-    iput-object v1, v0, Lnoc;->b:Ljava/lang/Object;
-
-    invoke-virtual {v0}, Lnoc;->l()Ldhk;
-
-    move-result-object v0
-
-    sput-object v0, Ldhc;->a:Ldhk;
-
-    new-instance v0, Lnoc;
-
-    invoke-direct {v0}, Lnoc;-><init>()V
-
-    const-string v1, "makeup_default_setting"
-
-    iput-object v1, v0, Lnoc;->b:Ljava/lang/Object;
-
-    invoke-virtual {v0}, Lnoc;->l()Ldhk;
-
-    move-result-object v0
-
-    sput-object v0, Ldhc;->b:Ldhk;
-
-    new-instance v0, Lnoc;
-
-    invoke-direct {v0}, Lnoc;-><init>()V
-
-    const-string v1, "camera.enable_lvesper"
-
-    iput-object v1, v0, Lnoc;->b:Ljava/lang/Object;
-
-    invoke-virtual {v0}, Lnoc;->t()Ldhj;
-
-    move-result-object v0
-
-    sput-object v0, Ldhc;->h:Ldhj;
-
-    new-instance v0, Lnoc;
-
-    invoke-direct {v0}, Lnoc;-><init>()V
-
-    const-string v1, "camera.enable_mvesper"
-
-    iput-object v1, v0, Lnoc;->b:Ljava/lang/Object;
-
-    invoke-virtual {v0}, Lnoc;->t()Ldhj;
-
-    move-result-object v0
-
-    sput-object v0, Ldhc;->i:Ldhj;
-
-    new-instance v0, Lnoc;
-
-    invoke-direct {v0}, Lnoc;-><init>()V
-
-    const-string v1, "camera.adaptive_vesper"
-
-    iput-object v1, v0, Lnoc;->b:Ljava/lang/Object;
-
-    invoke-virtual {v0}, Lnoc;->t()Ldhj;
-
-    move-result-object v0
-
-    sput-object v0, Ldhc;->j:Ldhj;
+    iput-object p2, p0, Ldhc;->b:Ldhf;
 
     return-void
 .end method
 
-.method public static a(Ldhm;)V
-    .locals 4
 
-    sget-object v0, Ldhc;->c:Ldhj;
+# virtual methods
+.method public final run()V
+    .locals 3
 
-    const/4 v1, 0x1
+    iget v0, p0, Ldhc;->c:I
 
-    invoke-interface {p0, v0, v1}, Ldhm;->u(Ldhj;Z)V
+    packed-switch v0, :pswitch_data_0
 
-    sget-object v0, Ldhc;->d:Ldhj;
+    iget-object v0, p0, Ldhc;->a:Ldhg;
 
-    invoke-interface {p0, v0, v1}, Ldhm;->u(Ldhj;Z)V
+    iget-object v1, p0, Ldhc;->b:Ldhf;
 
-    sget-object v0, Ldhc;->e:Ldhj;
+    monitor-enter v0
 
-    invoke-interface {p0, v0, v1}, Ldhm;->u(Ldhj;Z)V
+    goto :goto_0
 
-    sget-object v0, Ldhc;->f:Ldhj;
+    :pswitch_0
+    iget-object v0, p0, Ldhc;->a:Ldhg;
 
-    invoke-interface {p0, v0, v1}, Ldhm;->u(Ldhj;Z)V
+    iget-object v1, p0, Ldhc;->b:Ldhf;
 
-    sget-object v0, Ldhc;->g:Ldhj;
+    monitor-enter v0
 
-    invoke-interface {p0, v0, v1}, Ldhm;->u(Ldhj;Z)V
+    :try_start_0
+    iget-object v2, v0, Ldhg;->b:Ljava/util/List;
 
-    sget-object v0, Ldhc;->a:Ldhk;
+    invoke-interface {v2, v1}, Ljava/util/List;->remove(Ljava/lang/Object;)Z
 
-    const/4 v2, 0x0
+    move-result v2
 
-    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    if-eqz v2, :cond_0
 
-    move-result-object v3
+    iget-object v2, v0, Ldhg;->c:Ljava/util/List;
 
-    invoke-interface {p0, v0, v3}, Ldhm;->q(Ldhk;Ljava/lang/Integer;)V
+    invoke-virtual {v1}, Ldhf;->a()Lpcd;
 
-    sget-object v0, Ldhc;->b:Ldhk;
+    move-result-object v1
 
-    invoke-interface {p0, v0, v3}, Ldhm;->q(Ldhk;Ljava/lang/Integer;)V
+    invoke-interface {v2, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    sget-object v0, Ldhc;->h:Ldhj;
-
-    invoke-interface {p0, v0, v1}, Ldhm;->u(Ldhj;Z)V
-
-    sget-object v0, Ldhc;->i:Ldhj;
-
-    invoke-interface {p0, v0, v1}, Ldhm;->u(Ldhj;Z)V
-
-    sget-object v0, Ldhc;->j:Ldhj;
-
-    invoke-interface {p0, v0, v2}, Ldhm;->u(Ldhj;Z)V
+    :cond_0
+    monitor-exit v0
 
     return-void
+
+    :catchall_0
+    move-exception v1
+
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw v1
+
+    :goto_0
+    :try_start_1
+    iget-object v2, v0, Ldhg;->b:Ljava/util/List;
+
+    invoke-interface {v2, v1}, Ljava/util/List;->remove(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_1
+
+    iget-object v2, v0, Ldhg;->c:Ljava/util/List;
+
+    invoke-virtual {v1}, Ldhf;->a()Lpcd;
+
+    move-result-object v1
+
+    invoke-interface {v2, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    :cond_1
+    monitor-exit v0
+
+    return-void
+
+    :catchall_1
+    move-exception v1
+
+    monitor-exit v0
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_1
+
+    throw v1
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

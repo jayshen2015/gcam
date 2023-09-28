@@ -1,37 +1,30 @@
 .class public final Lfxc;
 .super Ljava/lang/Object;
 
-# interfaces
-.implements Lfxw;
-
 
 # instance fields
-.field final synthetic a:Lfxq;
+.field public final a:Landroid/content/Intent;
+
+.field public final b:Ldkm;
+
+.field public final c:Lddf;
+
+.field public final d:Llwf;
 
 
 # direct methods
-.method public constructor <init>(Lfxq;)V
+.method public constructor <init>(Llwf;Landroid/content/Intent;Ldkm;Lddf;)V
     .locals 0
-
-    iput-object p1, p0, Lfxc;->a:Lfxq;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    iput-object p1, p0, Lfxc;->d:Llwf;
+
+    iput-object p2, p0, Lfxc;->a:Landroid/content/Intent;
+
+    iput-object p3, p0, Lfxc;->b:Ldkm;
+
+    iput-object p4, p0, Lfxc;->c:Lddf;
+
     return-void
-.end method
-
-
-# virtual methods
-.method public final bridge synthetic a(Ljava/lang/Object;)Lnou;
-    .locals 1
-
-    iget-object v0, p0, Lfxc;->a:Lfxq;
-
-    check-cast p1, Lgqr;
-
-    invoke-virtual {v0, p1}, Lfxq;->b(Lgqr;)Lnou;
-
-    move-result-object p1
-
-    return-object p1
 .end method

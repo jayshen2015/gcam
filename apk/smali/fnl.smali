@@ -1,75 +1,77 @@
-.class public final Lfnl;
+.class public final synthetic Lfnl;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Logk;
+.implements Lmcx;
+
+
+# static fields
+.field public static final synthetic a:Lfnl;
+
+.field public static final synthetic b:Lfnl;
 
 
 # instance fields
-.field private final a:Loiw;
-
-.field private final b:Loiw;
-
-.field private final c:Loiw;
+.field private final synthetic c:I
 
 
 # direct methods
-.method public constructor <init>(Loiw;Loiw;Loiw;)V
+.method static synthetic constructor <clinit>()V
+    .locals 2
+
+    new-instance v0, Lfnl;
+
+    const/4 v1, 0x1
+
+    invoke-direct {v0, v1}, Lfnl;-><init>(I)V
+
+    sput-object v0, Lfnl;->b:Lfnl;
+
+    new-instance v0, Lfnl;
+
+    const/4 v1, 0x0
+
+    invoke-direct {v0, v1}, Lfnl;-><init>(I)V
+
+    sput-object v0, Lfnl;->a:Lfnl;
+
+    return-void
+.end method
+
+.method private synthetic constructor <init>(I)V
     .locals 0
 
+    iput p1, p0, Lfnl;->c:I
+
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lfnl;->a:Loiw;
-
-    iput-object p2, p0, Lfnl;->b:Loiw;
-
-    iput-object p3, p0, Lfnl;->c:Loiw;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Lfnk;
-    .locals 4
+.method public final a()J
+    .locals 2
 
-    iget-object v0, p0, Lfnl;->a:Loiw;
+    iget v0, p0, Lfnl;->c:I
 
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
+    packed-switch v0, :pswitch_data_0
 
-    move-result-object v0
+    invoke-static {}, Landroid/os/SystemClock;->elapsedRealtimeNanos()J
 
-    check-cast v0, Lkha;
+    move-result-wide v0
 
-    iget-object v1, p0, Lfnl;->b:Loiw;
+    return-wide v0
 
-    invoke-interface {v1}, Loiw;->get()Ljava/lang/Object;
+    :pswitch_0
+    const-wide/16 v0, 0x0
 
-    move-result-object v1
+    return-wide v0
 
-    check-cast v1, Ljvs;
+    nop
 
-    iget-object v2, p0, Lfnl;->c:Loiw;
-
-    invoke-interface {v2}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Lfnr;
-
-    new-instance v3, Lfnk;
-
-    invoke-direct {v3, v0, v1, v2}, Lfnk;-><init>(Lkha;Ljvs;Lfnr;)V
-
-    return-object v3
-.end method
-
-.method public final bridge synthetic get()Ljava/lang/Object;
-    .locals 1
-
-    invoke-virtual {p0}, Lfnl;->a()Lfnk;
-
-    move-result-object v0
-
-    return-object v0
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

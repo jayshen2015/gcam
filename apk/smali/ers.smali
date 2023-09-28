@@ -1,90 +1,121 @@
-.class public final Lers;
+.class public final synthetic Lers;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lkai;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field final synthetic a:Ljava/util/concurrent/atomic/AtomicReference;
+.field public final synthetic a:Lerw;
 
-.field final synthetic b:Lert;
-
-.field final synthetic c:I
+.field public final synthetic b:Lgog;
 
 
 # direct methods
-.method public constructor <init>(Lert;ILjava/util/concurrent/atomic/AtomicReference;)V
+.method public synthetic constructor <init>(Lerw;Lgog;)V
     .locals 0
 
-    iput-object p1, p0, Lers;->b:Lert;
-
-    iput p2, p0, Lers;->c:I
-
-    iput-object p3, p0, Lers;->a:Ljava/util/concurrent/atomic/AtomicReference;
-
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lers;->a:Lerw;
+
+    iput-object p2, p0, Lers;->b:Lgog;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final bridge synthetic bn(Ljava/lang/Object;)V
-    .locals 7
+.method public final run()V
+    .locals 6
 
-    check-cast p1, Ljava/lang/Boolean;
+    iget-object v0, p0, Lers;->a:Lerw;
 
-    invoke-virtual {p1}, Ljava/lang/Boolean;->booleanValue()Z
+    iget-object v1, p0, Lers;->b:Lgog;
 
-    move-result p1
+    sget-object v2, Lovl;->a:Lovd;
 
-    if-eqz p1, :cond_0
+    iget-object v2, v1, Lgog;->c:Lgof;
 
-    iget-object p1, p0, Lers;->b:Lert;
+    invoke-interface {v2}, Lgof;->d()Lgoe;
 
-    iget-object p1, p1, Lert;->s:Lhjz;
+    move-result-object v2
 
-    invoke-virtual {p1}, Lhjz;->c()V
+    const/4 v3, 0x0
 
-    iget-object p1, p0, Lers;->b:Lert;
+    invoke-interface {v2, v3}, Lgoe;->fB(Ljava/lang/Object;)V
 
-    iget-object v0, p1, Lert;->t:Lfbz;
+    iget-object v1, v1, Lgog;->b:Lhsa;
 
-    iget v1, p0, Lers;->c:I
+    invoke-interface {v1}, Lhsa;->h()Lhsp;
 
-    iget-object p1, p1, Lert;->s:Lhjz;
+    move-result-object v1
 
-    const/4 v2, 0x1
+    iget-object v2, v0, Lerw;->d:Ljava/util/Map;
 
-    iget-wide v3, p1, Lhkh;->m:J
+    invoke-interface {v2}, Ljava/util/Map;->values()Ljava/util/Collection;
 
-    sget-object v5, Lhjy;->b:Lhjy;
+    move-result-object v2
 
-    invoke-virtual {p1, v5}, Lhkh;->g(Ljava/lang/Enum;)J
+    invoke-interface {v2}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
 
-    move-result-wide v5
-
-    invoke-interface/range {v0 .. v6}, Lfbz;->aa(IIJJ)V
-
-    iget-object p1, p0, Lers;->a:Ljava/util/concurrent/atomic/AtomicReference;
-
-    invoke-virtual {p1}, Ljava/util/concurrent/atomic/AtomicReference;->get()Ljava/lang/Object;
-
-    move-result-object p1
-
-    if-eqz p1, :cond_0
-
-    iget-object p1, p0, Lers;->a:Ljava/util/concurrent/atomic/AtomicReference;
-
-    invoke-virtual {p1}, Ljava/util/concurrent/atomic/AtomicReference;->get()Ljava/lang/Object;
-
-    move-result-object p1
-
-    check-cast p1, Lkad;
-
-    invoke-interface {p1}, Lkad;->close()V
+    move-result-object v2
 
     :cond_0
+    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v4
+
+    if-eqz v4, :cond_1
+
+    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v4
+
+    check-cast v4, Lerv;
+
+    iget-object v5, v4, Lerv;->c:Ledd;
+
+    iget-object v5, v5, Ledd;->c:Lgog;
+
+    iget-object v5, v5, Lgog;->b:Lhsa;
+
+    invoke-interface {v5}, Lhsa;->h()Lhsp;
+
+    move-result-object v5
+
+    invoke-virtual {v1, v5}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+
+    move-result v5
+
+    if-eqz v5, :cond_0
+
+    iget-object v5, v4, Lerv;->h:Ljava/util/concurrent/atomic/AtomicReference;
+
+    invoke-virtual {v5}, Ljava/util/concurrent/atomic/AtomicReference;->get()Ljava/lang/Object;
+
+    move-result-object v5
+
+    if-eqz v5, :cond_0
+
+    iget-object v1, v4, Lerv;->h:Ljava/util/concurrent/atomic/AtomicReference;
+
+    invoke-virtual {v1}, Ljava/util/concurrent/atomic/AtomicReference;->get()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Landroid/graphics/Bitmap;
+
+    invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    const/4 v2, 0x0
+
+    invoke-virtual {v0, v4, v1, v2}, Lerw;->o(Lerv;Landroid/graphics/Bitmap;Z)V
+
+    iget-object v0, v4, Lerv;->h:Ljava/util/concurrent/atomic/AtomicReference;
+
+    invoke-virtual {v0, v3}, Ljava/util/concurrent/atomic/AtomicReference;->set(Ljava/lang/Object;)V
+
+    :cond_1
     return-void
 .end method

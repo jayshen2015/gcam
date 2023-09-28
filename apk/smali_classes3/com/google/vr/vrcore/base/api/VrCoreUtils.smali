@@ -58,11 +58,11 @@
 
     new-array v4, v0, [Landroid/content/pm/Signature;
 
-    sget-object v5, Lofa;->a:Landroid/content/pm/Signature;
+    sget-object v5, Lpxi;->a:Landroid/content/pm/Signature;
 
     aput-object v5, v4, v2
 
-    invoke-static {v3, v4}, Lofa;->a(Landroid/content/pm/PackageInfo;[Landroid/content/pm/Signature;)Z
+    invoke-static {v3, v4}, Lpxi;->a(Landroid/content/pm/PackageInfo;[Landroid/content/pm/Signature;)Z
 
     move-result v4
 
@@ -71,11 +71,11 @@
     goto :goto_1
 
     :cond_1
-    sget-object v4, Llho;->c:Ljava/lang/Boolean;
+    sget-object v4, Lqmd;->v:Ljava/lang/Boolean;
 
     if-eqz v4, :cond_2
 
-    sget-object v4, Llho;->c:Ljava/lang/Boolean;
+    sget-object v4, Lqmd;->v:Ljava/lang/Boolean;
 
     invoke-virtual {v4}, Ljava/lang/Boolean;->booleanValue()Z
 
@@ -84,7 +84,7 @@
     goto :goto_0
 
     :cond_2
-    invoke-static {p0}, Llho;->R(Landroid/content/Context;)Z
+    invoke-static {p0}, Lqmd;->am(Landroid/content/Context;)Z
 
     move-result v4
 
@@ -93,11 +93,11 @@
 
     new-array v4, v0, [Landroid/content/pm/Signature;
 
-    sget-object v5, Lofa;->b:Landroid/content/pm/Signature;
+    sget-object v5, Lpxi;->b:Landroid/content/pm/Signature;
 
     aput-object v5, v4, v2
 
-    invoke-static {v3, v4}, Lofa;->a(Landroid/content/pm/PackageInfo;[Landroid/content/pm/Signature;)Z
+    invoke-static {v3, v4}, Lpxi;->a(Landroid/content/pm/PackageInfo;[Landroid/content/pm/Signature;)Z
 
     move-result p0
     :try_end_0
@@ -145,13 +145,31 @@
     :catch_1
     move-exception v2
 
-    invoke-virtual {v2}, Ljava/lang/Object;->toString()Ljava/lang/String;
+    invoke-static {v2}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v2
 
+    invoke-static {v2}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/lang/String;->length()I
+
+    move-result v3
+
+    new-instance v4, Ljava/lang/StringBuilder;
+
+    add-int/lit8 v3, v3, 0x2d
+
+    invoke-direct {v4, v3}, Ljava/lang/StringBuilder;-><init>(I)V
+
     const-string v3, "Failure querying package installer sessions: "
 
-    invoke-virtual {v3, v2}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
+    invoke-virtual {v4, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v4, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v2
 
@@ -263,11 +281,11 @@
     return v2
 
     :cond_1
-    new-instance v0, Lofb;
+    new-instance v0, Lpxj;
 
     const/4 v1, 0x2
 
-    invoke-direct {v0, v1}, Lofb;-><init>(I)V
+    invoke-direct {v0, v1}, Lpxj;-><init>(I)V
 
     throw v0
     :try_end_0
@@ -276,13 +294,13 @@
     :catch_0
     move-exception v0
 
-    new-instance v0, Lofb;
+    new-instance v0, Lpxj;
 
     invoke-static {p0}, Lcom/google/vr/vrcore/base/api/VrCoreUtils;->a(Landroid/content/Context;)I
 
     move-result p0
 
-    invoke-direct {v0, p0}, Lofb;-><init>(I)V
+    invoke-direct {v0, p0}, Lpxj;-><init>(I)V
 
     throw v0
 .end method

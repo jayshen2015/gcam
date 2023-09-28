@@ -1,100 +1,55 @@
-.class public final Lexb;
-.super Ljava/lang/Object;
+.class final Lexb;
+.super Lcom/google/android/apps/camera/bottombar/BottomBarListener;
 
 
 # instance fields
-.field public a:F
+.field final synthetic a:Lcvo;
 
-.field public b:D
+.field final synthetic b:Lexi;
 
-.field public c:Z
+.field final synthetic c:Ljrh;
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 2
+.method public constructor <init>(Lexi;Ljrh;Lcvo;)V
+    .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lexb;->b:Lexi;
 
-    const/4 v0, 0x0
+    iput-object p2, p0, Lexb;->c:Ljrh;
 
-    iput v0, p0, Lexb;->a:F
+    iput-object p3, p0, Lexb;->a:Lcvo;
 
-    const-wide/high16 v0, -0x4010000000000000L    # -1.0
-
-    iput-wide v0, p0, Lexb;->b:D
-
-    const/4 v0, 0x0
-
-    iput-boolean v0, p0, Lexb;->c:Z
+    invoke-direct {p0}, Lcom/google/android/apps/camera/bottombar/BottomBarListener;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()V
-    .locals 7
+.method public final onCameraSwitchButtonClicked()V
+    .locals 2
 
-    iget-wide v0, p0, Lexb;->b:D
+    iget-object v0, p0, Lexb;->c:Ljrh;
 
-    const-wide/16 v2, 0x0
+    iget-boolean v0, v0, Ljrh;->h:Z
 
-    const/4 v4, 0x1
+    if-nez v0, :cond_0
 
-    const v5, 0x3e23d70b    # 0.16000001f
+    iget-object v0, p0, Lexb;->a:Lcvo;
 
-    cmpl-double v6, v0, v2
+    new-instance v1, Lexa;
 
-    if-lez v6, :cond_2
+    invoke-direct {v1, p0}, Lexa;-><init>(Lexb;)V
 
-    const-wide v2, 0x3f9999999999999aL    # 0.025
-
-    cmpl-double v6, v0, v2
-
-    if-lez v6, :cond_0
-
-    const v5, 0x3b23d70b    # 0.0025000002f
-
-    goto :goto_0
+    invoke-virtual {v0, v1}, Lcvo;->h(Ljava/lang/Runnable;)V
 
     :cond_0
-    const-wide v2, 0x3f847ae147ae147bL    # 0.01
+    return-void
+.end method
 
-    cmpg-double v6, v0, v2
-
-    if-gez v6, :cond_2
-
-    iget-boolean v0, p0, Lexb;->c:Z
-
-    if-eq v4, v0, :cond_1
-
-    const/high16 v5, 0x3f800000    # 1.0f
-
-    goto :goto_0
-
-    :cond_1
-    const v5, 0x3c23d70b    # 0.010000001f
-
-    goto :goto_0
-
-    :cond_2
-    :goto_0
-    iget v0, p0, Lexb;->a:F
-
-    cmpl-float v0, v0, v5
-
-    if-lez v0, :cond_3
-
-    goto :goto_1
-
-    :cond_3
-    const/4 v4, 0x0
-
-    :goto_1
-    sget-object v0, Lewr;->a:Ljava/lang/Object;
-
-    invoke-static {v4}, Lcom/google/android/apps/lightcycle/panorama/LightCycleNative;->SetSensorMovementTooFast(Z)V
+.method public final onThumbnailButtonClicked()V
+    .locals 0
 
     return-void
 .end method

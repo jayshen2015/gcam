@@ -1,179 +1,301 @@
 .class public final Lcoh;
 .super Ljava/lang/Object;
 
-
-# static fields
-.field public static final a:[Ljava/lang/String;
+# interfaces
+.implements Lcib;
 
 
 # instance fields
-.field public final b:Landroid/content/Context;
+.field public a:Ljrl;
 
-.field public final c:Lcnt;
+.field private final b:Lcol;
 
-.field private final d:Ljava/util/concurrent/ExecutorService;
+.field private final c:Lcok;
+
+.field private final d:Lcoi;
+
+.field private final e:Lcol;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 3
-
-    const/4 v0, 0x1
-
-    new-array v0, v0, [Ljava/lang/String;
-
-    const/4 v1, 0x0
-
-    const-string v2, "_id"
-
-    aput-object v2, v0, v1
-
-    sput-object v0, Lcoh;->a:[Ljava/lang/String;
-
-    return-void
-.end method
-
-.method public constructor <init>(Landroid/content/Context;Ljava/util/concurrent/ExecutorService;Lcnt;)V
+.method public constructor <init>(Lcol;Lcol;Lcok;Lcoi;[B)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lcoh;->b:Landroid/content/Context;
+    iput-object p1, p0, Lcoh;->b:Lcol;
 
-    iput-object p2, p0, Lcoh;->d:Ljava/util/concurrent/ExecutorService;
+    iput-object p2, p0, Lcoh;->e:Lcol;
 
-    iput-object p3, p0, Lcoh;->c:Lcnt;
+    iput-object p3, p0, Lcoh;->c:Lcok;
+
+    iput-object p4, p0, Lcoh;->d:Lcoi;
 
     return-void
 .end method
 
+.method private final q()Lcib;
+    .locals 1
 
-# virtual methods
-.method public final a(Landroid/net/Uri;)Lmqp;
-    .locals 2
+    sget-object v0, Ljrl;->a:Ljrl;
 
-    invoke-virtual {p1}, Landroid/net/Uri;->getPathSegments()Ljava/util/List;
+    iget-object v0, p0, Lcoh;->a:Ljrl;
 
-    move-result-object p1
-
-    if-eqz p1, :cond_1
-
-    invoke-interface {p1}, Ljava/util/List;->size()I
+    invoke-virtual {v0}, Ljrl;->ordinal()I
 
     move-result v0
 
-    sget-object v1, Landroid/provider/MediaStore$Images$Media;->EXTERNAL_CONTENT_URI:Landroid/net/Uri;
+    sparse-switch v0, :sswitch_data_0
 
-    invoke-virtual {v1}, Landroid/net/Uri;->getPathSegments()Ljava/util/List;
+    iget-object v0, p0, Lcoh;->b:Lcol;
 
-    move-result-object v1
+    return-object v0
 
-    invoke-interface {v1}, Ljava/util/List;->size()I
+    :sswitch_0
+    iget-object v0, p0, Lcoh;->d:Lcoi;
 
-    move-result v1
+    return-object v0
 
-    add-int/lit8 v1, v1, 0x1
+    :sswitch_1
+    iget-object v0, p0, Lcoh;->c:Lcok;
 
-    if-eq v0, v1, :cond_0
+    return-object v0
 
-    goto :goto_0
+    :sswitch_2
+    iget-object v0, p0, Lcoh;->e:Lcol;
 
-    :cond_0
-    invoke-static {p1}, Llyh;->S(Ljava/lang/Iterable;)Ljava/lang/Object;
+    return-object v0
 
-    invoke-static {p1}, Llyh;->S(Ljava/lang/Iterable;)Ljava/lang/Object;
+    nop
 
-    move-result-object p1
-
-    check-cast p1, Ljava/lang/String;
-
-    invoke-static {p1}, Lmqp;->i(Ljava/lang/Object;)Lmqp;
-
-    move-result-object p1
-
-    return-object p1
-
-    :cond_1
-    :goto_0
-    sget-object p1, Lmpx;->a:Lmpx;
-
-    return-object p1
+    :sswitch_data_0
+    .sparse-switch
+        0x5 -> :sswitch_2
+        0x8 -> :sswitch_1
+        0xd -> :sswitch_0
+    .end sparse-switch
 .end method
 
-.method public final b(Ljava/util/List;)Lnou;
-    .locals 3
 
-    new-instance v0, Lcnb;
+# virtual methods
+.method public final a()Ljrl;
+    .locals 1
 
-    const/4 v1, 0x2
-
-    invoke-direct {v0, p0, p1, v1}, Lcnb;-><init>(Lcoh;Ljava/util/List;I)V
-
-    iget-object v1, p0, Lcoh;->d:Ljava/util/concurrent/ExecutorService;
-
-    invoke-static {v0, v1}, Lnsy;->G(Lnnn;Ljava/util/concurrent/Executor;)Lnou;
+    invoke-direct {p0}, Lcoh;->q()Lcib;
 
     move-result-object v0
 
-    invoke-static {v0}, Lnoo;->q(Lnou;)Lnoo;
+    invoke-interface {v0}, Lcib;->a()Ljrl;
 
     move-result-object v0
 
-    new-instance v1, Lcdu;
+    return-object v0
+.end method
 
-    const/4 v2, 0x6
+.method public final b()Lojc;
+    .locals 1
 
-    invoke-direct {v1, p1, v2}, Lcdu;-><init>(Ljava/util/List;I)V
+    invoke-direct {p0}, Lcoh;->q()Lcib;
 
-    iget-object p1, p0, Lcoh;->d:Ljava/util/concurrent/ExecutorService;
+    move-result-object v0
 
-    invoke-static {v0, v1, p1}, Lnnf;->i(Lnou;Lmqi;Ljava/util/concurrent/Executor;)Lnou;
+    invoke-interface {v0}, Lcib;->b()Lojc;
 
-    move-result-object p1
+    move-result-object v0
 
-    invoke-static {p1}, Lnoo;->q(Lnou;)Lnoo;
+    return-object v0
+.end method
 
-    move-result-object p1
+.method public final c()Z
+    .locals 1
 
-    sget-object v0, Lcfv;->n:Lcfv;
+    invoke-direct {p0}, Lcoh;->q()Lcib;
 
-    iget-object v1, p0, Lcoh;->d:Ljava/util/concurrent/ExecutorService;
+    move-result-object v0
 
-    invoke-static {p1, v0, v1}, Lnnf;->i(Lnou;Lmqi;Ljava/util/concurrent/Executor;)Lnou;
+    invoke-interface {v0}, Lcib;->c()Z
 
-    move-result-object p1
+    move-result v0
 
-    invoke-static {p1}, Lnoo;->q(Lnou;)Lnoo;
+    return v0
+.end method
 
-    move-result-object p1
+.method public final d()Z
+    .locals 1
 
-    new-instance v0, Lcmq;
+    invoke-direct {p0}, Lcoh;->q()Lcib;
 
-    const/4 v1, 0x3
+    move-result-object v0
 
-    invoke-direct {v0, p0, v1}, Lcmq;-><init>(Lcoh;I)V
+    invoke-interface {v0}, Lcib;->d()Z
 
-    iget-object v1, p0, Lcoh;->d:Ljava/util/concurrent/ExecutorService;
+    move-result v0
 
-    invoke-static {p1, v0, v1}, Lnnf;->j(Lnou;Lnno;Ljava/util/concurrent/Executor;)Lnou;
+    return v0
+.end method
 
-    move-result-object p1
+.method public final e()Z
+    .locals 1
 
-    iget-object v0, p0, Lcoh;->c:Lcnt;
+    invoke-direct {p0}, Lcoh;->q()Lcib;
 
-    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    move-result-object v0
 
-    new-instance v1, Lcmq;
+    invoke-interface {v0}, Lcib;->e()Z
 
-    const/4 v2, 0x4
+    move-result v0
 
-    invoke-direct {v1, v0, v2}, Lcmq;-><init>(Lcnt;I)V
+    return v0
+.end method
 
-    iget-object v0, p0, Lcoh;->d:Ljava/util/concurrent/ExecutorService;
+.method public final f()Z
+    .locals 1
 
-    invoke-static {p1, v1, v0}, Lnnf;->j(Lnou;Lnno;Ljava/util/concurrent/Executor;)Lnou;
+    invoke-direct {p0}, Lcoh;->q()Lcib;
 
-    move-result-object p1
+    move-result-object v0
 
-    return-object p1
+    invoke-interface {v0}, Lcib;->f()Z
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public final g()Z
+    .locals 1
+
+    invoke-direct {p0}, Lcoh;->q()Lcib;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Lcib;->g()Z
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public final h()Z
+    .locals 1
+
+    invoke-direct {p0}, Lcoh;->q()Lcib;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Lcib;->h()Z
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public final i()Z
+    .locals 1
+
+    invoke-direct {p0}, Lcoh;->q()Lcib;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Lcib;->i()Z
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public final j()Z
+    .locals 1
+
+    invoke-direct {p0}, Lcoh;->q()Lcib;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Lcib;->j()Z
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public final k()Z
+    .locals 1
+
+    invoke-direct {p0}, Lcoh;->q()Lcib;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Lcib;->k()Z
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public final l()Z
+    .locals 1
+
+    invoke-direct {p0}, Lcoh;->q()Lcib;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Lcib;->l()Z
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public final m()Z
+    .locals 1
+
+    invoke-direct {p0}, Lcoh;->q()Lcib;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Lcib;->m()Z
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public final n()Z
+    .locals 1
+
+    invoke-direct {p0}, Lcoh;->q()Lcib;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Lcib;->n()Z
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public final o()Z
+    .locals 1
+
+    invoke-direct {p0}, Lcoh;->q()Lcib;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Lcib;->o()Z
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public final p()V
+    .locals 1
+
+    invoke-direct {p0}, Lcoh;->q()Lcib;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Lcib;->p()V
+
+    return-void
 .end method

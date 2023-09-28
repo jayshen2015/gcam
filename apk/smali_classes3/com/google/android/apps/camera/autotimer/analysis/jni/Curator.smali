@@ -10,7 +10,7 @@
 
 
 # direct methods
-.method public constructor <init>(Locs;)V
+.method public constructor <init>(Lpum;)V
     .locals 2
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -19,11 +19,11 @@
 
     const-string v1, "smartcapture_native"
 
-    invoke-static {v0, v1}, Lkak;->b(Ljava/lang/Class;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Llil;->b(Ljava/lang/Class;Ljava/lang/String;)V
 
     invoke-direct {p0}, Lcom/google/android/apps/camera/autotimer/analysis/jni/Curator;->nativeAllocate()V
 
-    invoke-virtual {p1}, Lnve;->J()[B
+    invoke-virtual {p1}, Lpnm;->g()[B
 
     move-result-object p1
 
@@ -61,14 +61,14 @@
 
 
 # virtual methods
-.method public final a(Lkpb;Locj;)Lodh;
-    .locals 3
+.method public final a(Lmad;Lpud;)Lpvb;
+    .locals 1
 
     new-instance v0, Lcom/google/android/apps/camera/autotimer/analysis/jni/AnalysisImage;
 
-    invoke-direct {v0, p1}, Lcom/google/android/apps/camera/autotimer/analysis/jni/AnalysisImage;-><init>(Lkpb;)V
+    invoke-direct {v0, p1}, Lcom/google/android/apps/camera/autotimer/analysis/jni/AnalysisImage;-><init>(Lmad;)V
 
-    invoke-virtual {p2}, Lnve;->J()[B
+    invoke-virtual {p2}, Lpnm;->g()[B
 
     move-result-object p1
 
@@ -76,21 +76,13 @@
 
     move-result-object p1
 
-    sget-object p2, Lodh;->e:Lodh;
+    sget-object p2, Lpvb;->e:Lpvb;
 
-    array-length v0, p1
-
-    sget-object v1, Lnwh;->a:Lnwh;
-
-    const/4 v2, 0x0
-
-    invoke-static {p2, p1, v2, v0, v1}, Lnws;->Q(Lnws;[BIILnwh;)Lnws;
+    invoke-static {p2, p1}, Lppd;->p(Lppd;[B)Lppd;
 
     move-result-object p1
 
-    invoke-static {p1}, Lnws;->ae(Lnws;)V
-
-    check-cast p1, Lodh;
+    check-cast p1, Lpvb;
 
     return-object p1
 .end method

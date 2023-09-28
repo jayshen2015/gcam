@@ -1,120 +1,179 @@
-.class public final Ljco;
-.super Ljhn;
+.class public final synthetic Ljco;
+.super Ljava/lang/Object;
 
-
-# static fields
-.field public static final CREATOR:Landroid/os/Parcelable$Creator;
+# interfaces
+.implements Lcom/google/lens/sdk/LensApi$LensAvailabilityCallback;
 
 
 # instance fields
-.field public final a:Z
+.field public final synthetic a:Ljcw;
 
-.field public final b:Ljava/lang/String;
-
-.field public final c:I
-
-.field public final d:I
+.field private final synthetic b:I
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
-
-    new-instance v0, Ljay;
-
-    const/16 v1, 0xa
-
-    invoke-direct {v0, v1}, Ljay;-><init>(I)V
-
-    sput-object v0, Ljco;->CREATOR:Landroid/os/Parcelable$Creator;
-
-    return-void
-.end method
-
-.method public constructor <init>(ZLjava/lang/String;II)V
+.method public synthetic constructor <init>(Ljcw;I)V
     .locals 0
 
-    invoke-direct {p0}, Ljhn;-><init>()V
+    iput p2, p0, Ljco;->b:I
 
-    iput-boolean p1, p0, Ljco;->a:Z
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p2, p0, Ljco;->b:Ljava/lang/String;
-
-    invoke-static {p3}, Ljfc;->f(I)I
-
-    move-result p1
-
-    add-int/lit8 p1, p1, -0x1
-
-    iput p1, p0, Ljco;->c:I
-
-    invoke-static {p4}, Ljcb;->a(I)I
-
-    move-result p1
-
-    add-int/lit8 p1, p1, -0x1
-
-    iput p1, p0, Ljco;->d:I
+    iput-object p1, p0, Ljco;->a:Ljcw;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()I
-    .locals 1
+.method public final onAvailabilityStatusFetched(I)V
+    .locals 4
 
-    iget v0, p0, Ljco;->c:I
+    iget v0, p0, Ljco;->b:I
 
-    invoke-static {v0}, Ljfc;->f(I)I
+    const/4 v1, 0x0
 
-    move-result v0
+    const/4 v2, 0x1
 
-    return v0
-.end method
+    packed-switch v0, :pswitch_data_0
 
-.method public final b()V
-    .locals 1
+    iget-object v0, p0, Ljco;->a:Ljcw;
 
-    iget v0, p0, Ljco;->d:I
+    if-nez p1, :cond_4
 
-    invoke-static {v0}, Ljcb;->a(I)I
+    invoke-static {}, Ljch;->a()Ljcg;
 
-    return-void
-.end method
+    move-result-object p1
 
-.method public final writeToParcel(Landroid/os/Parcel;I)V
-    .locals 2
+    invoke-virtual {v0}, Ljcw;->d()Lcom/google/lens/sdk/LensApi;
 
-    invoke-static {p1}, Ljhp;->a(Landroid/os/Parcel;)I
+    move-result-object v3
 
-    move-result p2
+    invoke-virtual {v3}, Lcom/google/lens/sdk/LensApi;->a()Lkcq;
 
-    iget-boolean v0, p0, Ljco;->a:Z
+    move-result-object v3
+
+    iget v3, v3, Lkcq;->a:I
+
+    and-int/2addr v3, v2
+
+    if-eq v2, v3, :cond_1
+
+    const/4 v3, 0x0
+
+    goto :goto_1
+
+    :pswitch_0
+    iget-object v0, p0, Ljco;->a:Ljcw;
+
+    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
+
+    iget-object v0, v0, Ljcw;->d:Lpih;
+
+    if-nez p1, :cond_0
 
     const/4 v1, 0x1
 
-    invoke-static {p1, v1, v0}, Ljhp;->d(Landroid/os/Parcel;IZ)V
+    goto :goto_0
 
-    iget-object v0, p0, Ljco;->b:Ljava/lang/String;
+    :cond_0
+    :goto_0
+    invoke-static {v1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
-    const/4 v1, 0x2
+    move-result-object p1
 
-    invoke-static {p1, v1, v0}, Ljhp;->p(Landroid/os/Parcel;ILjava/lang/String;)V
-
-    iget v0, p0, Ljco;->c:I
-
-    const/4 v1, 0x3
-
-    invoke-static {p1, v1, v0}, Ljhp;->g(Landroid/os/Parcel;II)V
-
-    iget v0, p0, Ljco;->d:I
-
-    const/4 v1, 0x4
-
-    invoke-static {p1, v1, v0}, Ljhp;->g(Landroid/os/Parcel;II)V
-
-    invoke-static {p1, p2}, Ljhp;->c(Landroid/os/Parcel;I)V
+    invoke-virtual {v0, p1}, Lpih;->o(Ljava/lang/Object;)Z
 
     return-void
+
+    :cond_1
+    const/4 v3, 0x1
+
+    :goto_1
+    invoke-virtual {p1, v3}, Ljcg;->b(Z)V
+
+    invoke-virtual {v0}, Ljcw;->d()Lcom/google/lens/sdk/LensApi;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Lcom/google/lens/sdk/LensApi;->a()Lkcq;
+
+    move-result-object v3
+
+    iget v3, v3, Lkcq;->a:I
+
+    and-int/lit8 v3, v3, 0x4
+
+    if-eqz v3, :cond_2
+
+    const/4 v1, 0x1
+
+    goto :goto_2
+
+    :cond_2
+    :goto_2
+    invoke-virtual {p1, v1}, Ljcg;->c(Z)V
+
+    invoke-virtual {v0}, Ljcw;->d()Lcom/google/lens/sdk/LensApi;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Lcom/google/lens/sdk/LensApi;->f()Z
+
+    move-result v1
+
+    invoke-virtual {p1, v1}, Ljcg;->d(Z)V
+
+    invoke-virtual {v0}, Ljcw;->d()Lcom/google/lens/sdk/LensApi;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Lcom/google/lens/sdk/LensApi;->a()Lkcq;
+
+    move-result-object v1
+
+    iget-object v1, v1, Lkcq;->b:Lkcp;
+
+    if-nez v1, :cond_3
+
+    sget-object v1, Lkcp;->b:Lkcp;
+
+    :cond_3
+    iget-object v1, v1, Lkcp;->a:Lppm;
+
+    invoke-static {v1}, Loom;->j(Ljava/util/Collection;)Loom;
+
+    move-result-object v1
+
+    invoke-virtual {p1, v1}, Ljcg;->e(Loom;)V
+
+    invoke-virtual {p1}, Ljcg;->a()Ljch;
+
+    move-result-object p1
+
+    iget-object v0, v0, Ljcw;->e:Lpih;
+
+    invoke-virtual {v0, p1}, Lpih;->o(Ljava/lang/Object;)Z
+
+    return-void
+
+    :cond_4
+    iget-object p1, v0, Ljcw;->e:Lpih;
+
+    invoke-static {}, Ljch;->a()Ljcg;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljcg;->a()Ljch;
+
+    move-result-object v0
+
+    invoke-virtual {p1, v0}, Lpih;->o(Ljava/lang/Object;)Z
+
+    return-void
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

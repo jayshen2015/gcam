@@ -1,94 +1,147 @@
-.class public final Lexr;
-.super Landroid/os/HandlerThread;
+.class public final synthetic Lexr;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field a:Landroid/os/Handler;
+.field public final synthetic a:Leyg;
 
-.field final synthetic b:Lexs;
+.field private final synthetic b:I
 
 
 # direct methods
-.method public constructor <init>(Lexs;)V
+.method public synthetic constructor <init>(Leyg;I)V
     .locals 0
 
-    iput-object p1, p0, Lexr;->b:Lexs;
+    iput p2, p0, Lexr;->b:I
 
-    const-string p1, "sensor thread"
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0, p1}, Landroid/os/HandlerThread;-><init>(Ljava/lang/String;)V
-
-    const/4 p1, 0x0
-
-    iput-object p1, p0, Lexr;->a:Landroid/os/Handler;
+    iput-object p1, p0, Lexr;->a:Leyg;
 
     return-void
 .end method
 
 
 # virtual methods
-.method protected final onLooperPrepared()V
-    .locals 5
+.method public final run()V
+    .locals 3
 
-    invoke-virtual {p0}, Lexr;->getLooper()Landroid/os/Looper;
+    iget v0, p0, Lexr;->b:I
 
-    move-result-object v0
+    packed-switch v0, :pswitch_data_0
 
-    invoke-static {v0}, Ljvd;->o(Landroid/os/Looper;)Landroid/os/Handler;
+    iget-object v0, p0, Lexr;->a:Leyg;
 
-    move-result-object v0
+    iget-object v1, v0, Leyg;->z:Leam;
 
-    iput-object v0, p0, Lexr;->a:Landroid/os/Handler;
+    const/4 v2, 0x0
 
-    iget-object v0, p0, Lexr;->b:Lexs;
+    invoke-virtual {v1, v2}, Leam;->k(Z)V
 
-    iget-object v1, v0, Lexs;->b:Landroid/hardware/SensorManager;
+    iget-object v1, v0, Leyg;->o:Lfwl;
 
-    iget-object v0, v0, Lexs;->p:Landroid/hardware/SensorEventListener;
+    invoke-virtual {v1}, Lfwl;->c()V
 
-    const/4 v2, 0x1
+    iget-object v1, v0, Leyg;->E:Lgtg;
 
-    invoke-virtual {v1, v2}, Landroid/hardware/SensorManager;->getDefaultSensor(I)Landroid/hardware/Sensor;
+    invoke-virtual {v1, v2}, Lgtg;->q(Z)V
 
-    move-result-object v3
+    iget-object v1, v0, Leyg;->r:Lfly;
 
-    iget-object v4, p0, Lexr;->a:Landroid/os/Handler;
+    invoke-virtual {v1}, Lflr;->a()V
 
-    invoke-virtual {v1, v0, v3, v2, v4}, Landroid/hardware/SensorManager;->registerListener(Landroid/hardware/SensorEventListener;Landroid/hardware/Sensor;ILandroid/os/Handler;)Z
+    iget-object v1, v0, Leyg;->A:Lfle;
 
-    iget-object v0, p0, Lexr;->b:Lexs;
+    invoke-virtual {v1}, Lfle;->c()V
 
-    iget-object v1, v0, Lexs;->b:Landroid/hardware/SensorManager;
+    iget-object v1, v0, Leyg;->T:Lfwc;
 
-    iget-object v0, v0, Lexs;->p:Landroid/hardware/SensorEventListener;
+    if-eqz v1, :cond_1
 
-    const/4 v3, 0x4
+    invoke-virtual {v1}, Lfwc;->b()Llco;
 
-    invoke-virtual {v1, v3}, Landroid/hardware/SensorManager;->getDefaultSensor(I)Landroid/hardware/Sensor;
+    move-result-object v1
 
-    move-result-object v3
+    invoke-interface {v1}, Llco;->fA()Ljava/lang/Object;
 
-    iget-object v4, p0, Lexr;->a:Landroid/os/Handler;
+    move-result-object v1
 
-    invoke-virtual {v1, v0, v3, v2, v4}, Landroid/hardware/SensorManager;->registerListener(Landroid/hardware/SensorEventListener;Landroid/hardware/Sensor;ILandroid/os/Handler;)Z
+    check-cast v1, Ljava/lang/Boolean;
 
-    iget-object v0, p0, Lexr;->b:Lexs;
+    invoke-virtual {v1}, Ljava/lang/Boolean;->booleanValue()Z
 
-    iget-object v1, v0, Lexs;->b:Landroid/hardware/SensorManager;
+    move-result v1
 
-    iget-object v0, v0, Lexs;->p:Landroid/hardware/SensorEventListener;
+    invoke-virtual {v0, v1}, Leyg;->x(Z)V
 
-    const/4 v2, 0x2
+    goto :goto_0
 
-    invoke-virtual {v1, v2}, Landroid/hardware/SensorManager;->getDefaultSensor(I)Landroid/hardware/Sensor;
+    :pswitch_0
+    iget-object v0, p0, Lexr;->a:Leyg;
 
-    move-result-object v2
-
-    iget-object v3, p0, Lexr;->a:Landroid/os/Handler;
-
-    const/4 v4, 0x3
-
-    invoke-virtual {v1, v0, v2, v4, v3}, Landroid/hardware/SensorManager;->registerListener(Landroid/hardware/SensorEventListener;Landroid/hardware/Sensor;ILandroid/os/Handler;)Z
+    invoke-virtual {v0}, Leyg;->A()V
 
     return-void
+
+    :pswitch_1
+    iget-object v0, p0, Lexr;->a:Leyg;
+
+    iget-object v1, v0, Leyg;->T:Lfwc;
+
+    if-eqz v1, :cond_0
+
+    iget-object v0, v0, Leyg;->j:Liwt;
+
+    iget-object v2, v1, Lfwc;->c:Lghx;
+
+    iget-object v1, v1, Lfwc;->a:Llap;
+
+    invoke-virtual {v0, v2, v1}, Liwo;->b(Lghx;Llap;)V
+
+    :cond_0
+    return-void
+
+    :cond_1
+    :goto_0
+    iget-object v1, v0, Leyg;->m:Lfxf;
+
+    invoke-virtual {v1}, Lfxf;->a()V
+
+    iget-object v1, v0, Leyg;->B:Lojc;
+
+    invoke-virtual {v1}, Lojc;->g()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_2
+
+    iget-object v1, v0, Leyg;->B:Lojc;
+
+    invoke-virtual {v1}, Lojc;->c()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Lily;
+
+    iget-object v2, v0, Leyg;->e:Lbts;
+
+    invoke-interface {v2}, Lbts;->l()Ljrl;
+
+    iget-object v0, v0, Leyg;->C:Lhbq;
+
+    invoke-virtual {v0}, Lhbq;->l()V
+
+    invoke-interface {v1}, Lily;->a()V
+
+    :cond_2
+    return-void
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method

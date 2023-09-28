@@ -1,137 +1,80 @@
-.class Lhtn;
-.super Lhtm;
+.class final Lhtn;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Lhtd;
+.implements Llie;
 
 
 # instance fields
-.field final synthetic a:Lhtz;
+.field public final a:Llij;
+
+.field final synthetic b:Lhto;
+
+.field private final c:Ljava/util/concurrent/Executor;
 
 
 # direct methods
-.method public constructor <init>(Lhtz;)V
+.method public constructor <init>(Lhto;Llij;Ljava/util/concurrent/Executor;)V
     .locals 0
 
-    iput-object p1, p0, Lhtn;->a:Lhtz;
+    iput-object p1, p0, Lhtn;->b:Lhto;
 
-    invoke-direct {p0}, Lhtm;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p2, p0, Lhtn;->a:Llij;
+
+    iput-object p3, p0, Lhtn;->c:Ljava/util/concurrent/Executor;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public d()V
-    .locals 0
+.method public final a(Ljava/lang/String;)V
+    .locals 2
+
+    iget-object v0, p0, Lhtn;->b:Lhto;
+
+    iget-object v0, v0, Lhto;->b:Ljava/lang/String;
+
+    invoke-virtual {v0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result p1
+
+    if-eqz p1, :cond_1
+
+    iget-object p1, p0, Lhtn;->b:Lhto;
+
+    invoke-virtual {p1}, Lhto;->c()Ljava/lang/Object;
+
+    move-result-object p1
+
+    if-nez p1, :cond_0
 
     return-void
-.end method
-
-.method public final f()V
-    .locals 3
-
-    iget-object v0, p0, Lhtn;->a:Lhtz;
-
-    invoke-virtual {v0}, Lhtz;->t()Lcom/google/android/apps/camera/ui/wirers/PreviewOverlay;
-
-    move-result-object v0
-
-    const/4 v1, 0x1
-
-    iput-boolean v1, v0, Lcom/google/android/apps/camera/ui/wirers/PreviewOverlay;->d:Z
-
-    iget-object v0, p0, Lhtn;->a:Lhtz;
-
-    invoke-virtual {v0}, Lhtz;->x()V
-
-    iget-object v0, p0, Lhtn;->a:Lhtz;
-
-    iget-object v0, v0, Lhtz;->c:Libj;
-
-    invoke-interface {v0}, Libj;->m()V
-
-    iget-object v0, p0, Lhtn;->a:Lhtz;
-
-    iget-object v0, v0, Lhtz;->c:Libj;
-
-    sget-object v2, Lika;->m:Lika;
-
-    invoke-interface {v0, v2, v1}, Libj;->j(Lika;Z)V
-
-    iget-object v0, p0, Lhtn;->a:Lhtz;
-
-    sget-object v2, Lika;->m:Lika;
-
-    invoke-virtual {v0, v2}, Lhtz;->B(Lika;)V
-
-    iget-object v0, p0, Lhtn;->a:Lhtz;
-
-    iget-object v0, v0, Lhtz;->b:Litm;
-
-    invoke-interface {v0, v1}, Litm;->I(Z)V
-
-    iget-object v0, p0, Lhtn;->a:Lhtz;
-
-    iget-object v0, v0, Lhtz;->b:Litm;
-
-    move-object v1, v0
-
-    check-cast v1, Lisi;
-
-    iget-boolean v1, v1, Lisi;->S:Z
-
-    if-eqz v1, :cond_0
-
-    invoke-interface {v0}, Litm;->p()V
 
     :cond_0
-    iget-object v0, p0, Lhtn;->a:Lhtz;
+    iget-object v0, p0, Lhtn;->c:Ljava/util/concurrent/Executor;
 
-    invoke-virtual {v0}, Lhtz;->w()V
+    new-instance v1, Lhtm;
 
+    invoke-direct {v1, p0, p1}, Lhtm;-><init>(Lhtn;Ljava/lang/Object;)V
+
+    invoke-interface {v0, v1}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
+
+    :cond_1
     return-void
 .end method
 
-.method public final g()V
+.method public final close()V
     .locals 1
 
-    iget-object v0, p0, Lhtn;->a:Lhtz;
+    iget-object v0, p0, Lhtn;->b:Lhto;
 
-    invoke-virtual {v0}, Lhtz;->z()V
+    iget-object v0, v0, Lhto;->a:Lhub;
 
-    iget-object v0, p0, Lhtn;->a:Lhtz;
-
-    iget-object v0, v0, Lhtz;->g:Lcfp;
-
-    invoke-virtual {v0}, Lcfp;->c()V
-
-    return-void
-.end method
-
-.method public i()V
-    .locals 0
-
-    return-void
-.end method
-
-.method public k()V
-    .locals 0
-
-    return-void
-.end method
-
-.method public l()V
-    .locals 0
-
-    return-void
-.end method
-
-.method public p()V
-    .locals 0
-
-    return-void
-.end method
-
-.method public q()V
-    .locals 0
+    invoke-virtual {v0, p0}, Lhub;->h(Lhtd;)V
 
     return-void
 .end method

@@ -1,57 +1,69 @@
-.class final Lnxu;
+.class public final Lnxu;
 .super Ljava/lang/Object;
 
+# interfaces
+.implements Ljava/lang/Runnable;
 
-# static fields
-.field public static final a:Lkwp;
 
-.field public static final b:Lkwp;
+# instance fields
+.field public a:Z
+
+.field public b:I
+
+.field final synthetic c:Lcom/google/android/material/bottomsheet/BottomSheetBehavior;
+
+.field private final d:Landroid/view/View;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 3
+.method public constructor <init>(Lcom/google/android/material/bottomsheet/BottomSheetBehavior;Landroid/view/View;I)V
+    .locals 0
 
-    :try_start_0
-    const-string v0, "com.google.protobuf.MapFieldSchemaFull"
+    iput-object p1, p0, Lnxu;->c:Lcom/google/android/material/bottomsheet/BottomSheetBehavior;
 
-    invoke-static {v0}, Ljava/lang/Class;->forName(Ljava/lang/String;)Ljava/lang/Class;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    move-result-object v0
+    iput-object p2, p0, Lnxu;->d:Landroid/view/View;
 
-    const/4 v1, 0x0
+    iput p3, p0, Lnxu;->b:I
 
-    new-array v2, v1, [Ljava/lang/Class;
+    return-void
+.end method
 
-    invoke-virtual {v0, v2}, Ljava/lang/Class;->getDeclaredConstructor([Ljava/lang/Class;)Ljava/lang/reflect/Constructor;
 
-    move-result-object v0
+# virtual methods
+.method public final run()V
+    .locals 2
 
-    new-array v1, v1, [Ljava/lang/Object;
+    iget-object v0, p0, Lnxu;->c:Lcom/google/android/material/bottomsheet/BottomSheetBehavior;
 
-    invoke-virtual {v0, v1}, Ljava/lang/reflect/Constructor;->newInstance([Ljava/lang/Object;)Ljava/lang/Object;
+    iget-object v0, v0, Lcom/google/android/material/bottomsheet/BottomSheetBehavior;->t:Lacb;
 
-    move-result-object v0
+    if-eqz v0, :cond_0
 
-    check-cast v0, Lkwp;
-    :try_end_0
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+    invoke-virtual {v0}, Lacb;->l()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lnxu;->d:Landroid/view/View;
+
+    invoke-static {v0, p0}, Lgl;->A(Landroid/view/View;Ljava/lang/Runnable;)V
 
     goto :goto_0
 
-    :catch_0
-    move-exception v0
+    :cond_0
+    iget-object v0, p0, Lnxu;->c:Lcom/google/android/material/bottomsheet/BottomSheetBehavior;
 
-    const/4 v0, 0x0
+    iget v1, p0, Lnxu;->b:I
+
+    invoke-virtual {v0, v1}, Lcom/google/android/material/bottomsheet/BottomSheetBehavior;->G(I)V
 
     :goto_0
-    sput-object v0, Lnxu;->a:Lkwp;
+    const/4 v0, 0x0
 
-    new-instance v0, Lkwp;
-
-    invoke-direct {v0}, Lkwp;-><init>()V
-
-    sput-object v0, Lnxu;->b:Lkwp;
+    iput-boolean v0, p0, Lnxu;->a:Z
 
     return-void
 .end method

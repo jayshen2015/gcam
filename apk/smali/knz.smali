@@ -2,194 +2,176 @@
 .super Ljava/lang/Object;
 
 
-# instance fields
-.field public final a:Ljava/util/List;
-
-.field public final b:Ljava/util/List;
-
-.field public final c:Ljava/lang/Object;
-
-.field public final d:Landroid/view/OrientationEventListener;
-
-.field public final e:Ljava/util/concurrent/Executor;
-
-.field public final f:Lkaq;
-
-.field public g:Lkab;
-
-.field public h:I
-
-
 # direct methods
-.method public constructor <init>(Landroid/content/Context;Ljava/util/concurrent/Executor;Lkaq;)V
+.method static constructor <clinit>()V
     .locals 1
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const-string v0, "^(25[0-5]|2[0-4]\\d|[0-1]?\\d?\\d)(\\.(25[0-5]|2[0-4]\\d|[0-1]?\\d?\\d)){3}$"
 
-    new-instance v0, Ljava/util/ArrayList;
+    invoke-static {v0}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;
 
-    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+    const-string v0, "^(?:[0-9a-fA-F]{1,4}:){7}[0-9a-fA-F]{1,4}$"
 
-    iput-object v0, p0, Lknz;->a:Ljava/util/List;
+    invoke-static {v0}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;
 
-    new-instance v0, Ljava/util/ArrayList;
+    const-string v0, "^((?:[0-9A-Fa-f]{1,4}(?::[0-9A-Fa-f]{1,4})*)?)::((?:[0-9A-Fa-f]{1,4}(?::[0-9A-Fa-f]{1,4})*)?)$"
 
-    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
-
-    iput-object v0, p0, Lknz;->b:Ljava/util/List;
-
-    new-instance v0, Ljava/lang/Object;
-
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
-
-    iput-object v0, p0, Lknz;->c:Ljava/lang/Object;
-
-    sget-object v0, Lkab;->a:Lkab;
-
-    iput-object v0, p0, Lknz;->g:Lkab;
-
-    iput-object p2, p0, Lknz;->e:Ljava/util/concurrent/Executor;
-
-    new-instance p2, Lkny;
-
-    invoke-direct {p2, p0, p1}, Lkny;-><init>(Lknz;Landroid/content/Context;)V
-
-    iput-object p2, p0, Lknz;->d:Landroid/view/OrientationEventListener;
-
-    const-string p1, "DeviceOrientation"
-
-    invoke-interface {p3, p1}, Lkaq;->a(Ljava/lang/String;)Lkaq;
-
-    move-result-object p1
-
-    iput-object p1, p0, Lknz;->f:Lkaq;
+    invoke-static {v0}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;
 
     return-void
 .end method
 
+.method public static a(Ljava/net/URI;)Ljava/util/Map;
+    .locals 6
 
-# virtual methods
-.method public final a()Lkab;
-    .locals 2
+    invoke-static {}, Ljava/util/Collections;->emptyMap()Ljava/util/Map;
 
-    iget-object v0, p0, Lknz;->c:Ljava/lang/Object;
+    move-result-object v0
 
-    monitor-enter v0
+    invoke-virtual {p0}, Ljava/net/URI;->getRawQuery()Ljava/lang/String;
 
-    :try_start_0
-    iget-object v1, p0, Lknz;->g:Lkab;
+    move-result-object p0
 
-    monitor-exit v0
+    if-eqz p0, :cond_2
 
-    return-object v1
-
-    :catchall_0
-    move-exception v1
-
-    monitor-exit v0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw v1
-.end method
-
-.method public final declared-synchronized b(Lknx;)V
-    .locals 2
-
-    monitor-enter p0
-
-    :try_start_0
-    iget-object v0, p0, Lknz;->c:Ljava/lang/Object;
-
-    monitor-enter v0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_1
-
-    :try_start_1
-    iget-object v1, p0, Lknz;->a:Ljava/util/List;
-
-    invoke-interface {v1, p1}, Ljava/util/List;->contains(Ljava/lang/Object;)Z
+    invoke-virtual {p0}, Ljava/lang/String;->length()I
 
     move-result v1
 
-    if-eqz v1, :cond_0
+    if-lez v1, :cond_2
 
-    monitor-exit v0
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+    new-instance v0, Ljava/util/HashMap;
 
-    monitor-exit p0
+    invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
-    return-void
+    const/16 v1, 0x3d
+
+    invoke-static {v1}, Lojq;->b(C)Lojq;
+
+    move-result-object v1
+
+    const/16 v2, 0x26
+
+    invoke-static {v2}, Lojq;->b(C)Lojq;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Lojq;->a()Lojq;
+
+    move-result-object v2
+
+    invoke-virtual {v2, p0}, Lojq;->e(Ljava/lang/CharSequence;)Ljava/lang/Iterable;
+
+    move-result-object p0
+
+    invoke-interface {p0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
+
+    move-result-object p0
+
+    :goto_0
+    invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_2
+
+    invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Ljava/lang/String;
+
+    invoke-virtual {v1, v2}, Lojq;->g(Ljava/lang/CharSequence;)Ljava/util/List;
+
+    move-result-object v2
+
+    invoke-interface {v2}, Ljava/util/List;->isEmpty()Z
+
+    move-result v3
+
+    if-nez v3, :cond_1
+
+    invoke-interface {v2}, Ljava/util/List;->size()I
+
+    move-result v3
+
+    const/4 v4, 0x2
+
+    if-gt v3, v4, :cond_1
+
+    const/4 v3, 0x0
+
+    invoke-interface {v2, v3}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v3
+
+    check-cast v3, Ljava/lang/String;
+
+    invoke-static {v3}, Lknz;->b(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-interface {v2}, Ljava/util/List;->size()I
+
+    move-result v5
+
+    if-ne v5, v4, :cond_0
+
+    const/4 v4, 0x1
+
+    invoke-interface {v2, v4}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Ljava/lang/String;
+
+    invoke-static {v2}, Lknz;->b(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v2
+
+    goto :goto_1
 
     :cond_0
-    :try_start_2
-    iget-object v1, p0, Lknz;->a:Ljava/util/List;
+    const/4 v2, 0x0
 
-    invoke-interface {v1, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+    :goto_1
+    invoke-interface {v0, v3, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    monitor-exit v0
-    :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_0
+    goto :goto_0
 
-    monitor-exit p0
+    :cond_1
+    new-instance p0, Ljava/lang/IllegalArgumentException;
 
-    return-void
+    const-string v0, "bad parameter"
 
-    :catchall_0
-    move-exception p1
+    invoke-direct {p0, v0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
-    :try_start_3
-    monitor-exit v0
-    :try_end_3
-    .catchall {:try_start_3 .. :try_end_3} :catchall_0
+    throw p0
 
-    :try_start_4
-    throw p1
-    :try_end_4
-    .catchall {:try_start_4 .. :try_end_4} :catchall_1
-
-    :catchall_1
-    move-exception p1
-
-    monitor-exit p0
-
-    throw p1
+    :cond_2
+    return-object v0
 .end method
 
-.method public final c(Lknx;)V
-    .locals 2
+.method private static b(Ljava/lang/String;)Ljava/lang/String;
+    .locals 1
 
-    iget-object v0, p0, Lknz;->c:Ljava/lang/Object;
-
-    monitor-enter v0
+    const-string v0, "UTF-8"
 
     :try_start_0
-    iget-object v1, p0, Lknz;->a:Ljava/util/List;
+    invoke-static {p0, v0}, Lj$/net/URLDecoder;->decode(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
-    invoke-interface {v1, p1}, Ljava/util/List;->remove(Ljava/lang/Object;)Z
-
-    move-result p1
-
-    if-nez p1, :cond_0
-
-    iget-object p1, p0, Lknz;->f:Lkaq;
-
-    const-string v1, "Removing non-existing listener."
-
-    invoke-interface {p1, v1}, Lkaq;->h(Ljava/lang/String;)V
-
-    :cond_0
-    monitor-exit v0
-
-    return-void
-
-    :catchall_0
-    move-exception p1
-
-    monitor-exit v0
+    move-result-object p0
     :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    .catch Ljava/io/UnsupportedEncodingException; {:try_start_0 .. :try_end_0} :catch_0
 
-    throw p1
+    return-object p0
+
+    :catch_0
+    move-exception p0
+
+    new-instance v0, Ljava/lang/IllegalArgumentException;
+
+    invoke-direct {v0, p0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/Throwable;)V
+
+    throw v0
 .end method

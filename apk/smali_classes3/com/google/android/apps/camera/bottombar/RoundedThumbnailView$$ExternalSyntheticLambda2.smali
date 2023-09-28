@@ -6,7 +6,7 @@
 
 
 # instance fields
-.field public synthetic f$0:Lcom/google/android/apps/camera/bottombar/RoundedThumbnailView;
+.field public final synthetic f$0:Lcom/google/android/apps/camera/bottombar/RoundedThumbnailView;
 
 
 # direct methods
@@ -27,7 +27,7 @@
 
     iget-object v0, p0, Lcom/google/android/apps/camera/bottombar/RoundedThumbnailView$$ExternalSyntheticLambda2;->f$0:Lcom/google/android/apps/camera/bottombar/RoundedThumbnailView;
 
-    invoke-virtual {v0, p1}, Lcom/google/android/apps/camera/bottombar/RoundedThumbnailView;->lambda$runBurstFlashAnimation$5$com-google-android-apps-camera-bottombar-RoundedThumbnailView(Landroid/animation/ValueAnimator;)V
+    invoke-virtual {v0, p1}, Lcom/google/android/apps/camera/bottombar/RoundedThumbnailView;->lambda$runPendingRequestAnimation$1$com-google-android-apps-camera-bottombar-RoundedThumbnailView(Landroid/animation/ValueAnimator;)V
 
     return-void
 .end method

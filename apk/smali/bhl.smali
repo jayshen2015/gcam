@@ -1,175 +1,108 @@
 .class public final Lbhl;
-.super Lbgv;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Lbho;
 
 
 # instance fields
-.field private final c:Lbjq;
+.field private final a:Ljava/nio/ByteBuffer;
 
-.field private final d:Ljava/lang/String;
+.field private final b:Ljava/util/List;
 
-.field private final e:Z
-
-.field private final f:Lbhs;
-
-.field private g:Lbhs;
+.field private final c:Lbct;
 
 
 # direct methods
-.method public constructor <init>(Lbgj;Lbjq;Lbjn;)V
-    .locals 11
+.method public constructor <init>(Ljava/nio/ByteBuffer;Ljava/util/List;Lbct;)V
+    .locals 0
 
-    iget v0, p3, Lbjn;->i:I
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-static {v0}, Lbze;->Y(I)Landroid/graphics/Paint$Cap;
+    iput-object p1, p0, Lbhl;->a:Ljava/nio/ByteBuffer;
 
-    move-result-object v4
+    iput-object p2, p0, Lbhl;->b:Ljava/util/List;
 
-    iget v0, p3, Lbjn;->j:I
-
-    invoke-static {v0}, Lbze;->W(I)Landroid/graphics/Paint$Join;
-
-    move-result-object v5
-
-    iget v6, p3, Lbjn;->g:F
-
-    iget-object v7, p3, Lbjn;->e:Lbir;
-
-    iget-object v8, p3, Lbjn;->f:Lbip;
-
-    iget-object v9, p3, Lbjn;->c:Ljava/util/List;
-
-    iget-object v10, p3, Lbjn;->b:Lbip;
-
-    move-object v1, p0
-
-    move-object v2, p1
-
-    move-object v3, p2
-
-    invoke-direct/range {v1 .. v10}, Lbgv;-><init>(Lbgj;Lbjq;Landroid/graphics/Paint$Cap;Landroid/graphics/Paint$Join;FLbir;Lbip;Ljava/util/List;Lbip;)V
-
-    iput-object p2, p0, Lbhl;->c:Lbjq;
-
-    iget-object p1, p3, Lbjn;->a:Ljava/lang/String;
-
-    iput-object p1, p0, Lbhl;->d:Ljava/lang/String;
-
-    iget-boolean p1, p3, Lbjn;->h:Z
-
-    iput-boolean p1, p0, Lbhl;->e:Z
-
-    iget-object p1, p3, Lbjn;->d:Lbio;
-
-    invoke-virtual {p1}, Lbio;->a()Lbhs;
-
-    move-result-object p1
-
-    iput-object p1, p0, Lbhl;->f:Lbhs;
-
-    invoke-virtual {p1, p0}, Lbhs;->g(Lbhn;)V
-
-    invoke-virtual {p2, p1}, Lbjq;->h(Lbhs;)V
+    iput-object p3, p0, Lbhl;->c:Lbct;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Landroid/graphics/Canvas;Landroid/graphics/Matrix;I)V
-    .locals 2
+.method public final a()I
+    .locals 4
 
-    iget-boolean v0, p0, Lbhl;->e:Z
+    iget-object v0, p0, Lbhl;->b:Ljava/util/List;
 
-    if-eqz v0, :cond_0
+    iget-object v1, p0, Lbhl;->a:Ljava/nio/ByteBuffer;
 
-    return-void
+    invoke-static {v1}, Lblr;->d(Ljava/nio/ByteBuffer;)Ljava/nio/ByteBuffer;
+
+    move-result-object v1
+
+    iget-object v2, p0, Lbhl;->c:Lbct;
+
+    if-nez v1, :cond_0
+
+    const/4 v0, -0x1
+
+    return v0
 
     :cond_0
-    iget-object v0, p0, Lbhl;->b:Landroid/graphics/Paint;
+    new-instance v3, Lazk;
 
-    iget-object v1, p0, Lbhl;->f:Lbhs;
+    invoke-direct {v3, v1, v2}, Lazk;-><init>(Ljava/nio/ByteBuffer;Lbct;)V
 
-    check-cast v1, Lbht;
+    invoke-static {v0, v3}, Lvj;->g(Ljava/util/List;Lazn;)I
 
-    invoke-virtual {v1}, Lbht;->k()I
+    move-result v0
 
-    move-result v1
+    return v0
+.end method
 
-    invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setColor(I)V
+.method public final b(Landroid/graphics/BitmapFactory$Options;)Landroid/graphics/Bitmap;
+    .locals 2
 
-    iget-object v0, p0, Lbhl;->g:Lbhs;
+    iget-object v0, p0, Lbhl;->a:Ljava/nio/ByteBuffer;
 
-    if-eqz v0, :cond_1
-
-    iget-object v1, p0, Lbhl;->b:Landroid/graphics/Paint;
-
-    invoke-virtual {v0}, Lbhs;->e()Ljava/lang/Object;
+    invoke-static {v0}, Lblr;->d(Ljava/nio/ByteBuffer;)Ljava/nio/ByteBuffer;
 
     move-result-object v0
 
-    check-cast v0, Landroid/graphics/ColorFilter;
+    invoke-static {v0}, Lblr;->a(Ljava/nio/ByteBuffer;)Ljava/io/InputStream;
 
-    invoke-virtual {v1, v0}, Landroid/graphics/Paint;->setColorFilter(Landroid/graphics/ColorFilter;)Landroid/graphics/ColorFilter;
+    move-result-object v0
 
-    :cond_1
-    invoke-super {p0, p1, p2, p3}, Lbgv;->a(Landroid/graphics/Canvas;Landroid/graphics/Matrix;I)V
+    const/4 v1, 0x0
 
-    return-void
+    invoke-static {v0, v1, p1}, Landroid/graphics/BitmapFactory;->decodeStream(Ljava/io/InputStream;Landroid/graphics/Rect;Landroid/graphics/BitmapFactory$Options;)Landroid/graphics/Bitmap;
+
+    move-result-object p1
+
+    return-object p1
 .end method
 
-.method public final f(Ljava/lang/Object;Lbkc;)V
-    .locals 1
+.method public final c()Lcom/bumptech/glide/load/ImageHeaderParser$ImageType;
+    .locals 2
 
-    invoke-super {p0, p1, p2}, Lbgv;->f(Ljava/lang/Object;Lbkc;)V
+    iget-object v0, p0, Lbhl;->b:Ljava/util/List;
 
-    sget-object v0, Lbgo;->b:Ljava/lang/Integer;
+    iget-object v1, p0, Lbhl;->a:Ljava/nio/ByteBuffer;
 
-    if-ne p1, v0, :cond_0
+    invoke-static {v1}, Lblr;->d(Ljava/nio/ByteBuffer;)Ljava/nio/ByteBuffer;
 
-    iget-object p1, p0, Lbhl;->f:Lbhs;
+    move-result-object v1
 
-    iput-object p2, p1, Lbhs;->d:Lbkc;
+    invoke-static {v0, v1}, Lvj;->h(Ljava/util/List;Ljava/nio/ByteBuffer;)Lcom/bumptech/glide/load/ImageHeaderParser$ImageType;
 
-    return-void
-
-    :cond_0
-    sget-object v0, Lbgo;->E:Landroid/graphics/ColorFilter;
-
-    if-ne p1, v0, :cond_2
-
-    iget-object p1, p0, Lbhl;->g:Lbhs;
-
-    if-eqz p1, :cond_1
-
-    iget-object v0, p0, Lbhl;->c:Lbjq;
-
-    invoke-virtual {v0, p1}, Lbjq;->j(Lbhs;)V
-
-    :cond_1
-    new-instance p1, Lbig;
-
-    const/4 v0, 0x0
-
-    invoke-direct {p1, p2, v0}, Lbig;-><init>(Lbkc;[B)V
-
-    iput-object p1, p0, Lbhl;->g:Lbhs;
-
-    invoke-virtual {p1, p0}, Lbhs;->g(Lbhn;)V
-
-    iget-object p1, p0, Lbhl;->c:Lbjq;
-
-    iget-object p2, p0, Lbhl;->f:Lbhs;
-
-    invoke-virtual {p1, p2}, Lbjq;->h(Lbhs;)V
-
-    :cond_2
-    return-void
-.end method
-
-.method public final g()Ljava/lang/String;
-    .locals 1
-
-    iget-object v0, p0, Lbhl;->d:Ljava/lang/String;
+    move-result-object v0
 
     return-object v0
+.end method
+
+.method public final d()V
+    .locals 0
+
+    return-void
 .end method

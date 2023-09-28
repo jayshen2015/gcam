@@ -1,26 +1,60 @@
 .class final Ljvc;
-.super Ljava/lang/Object;
+.super Ljuz;
 
 
 # instance fields
-.field public final a:Ljava/lang/Runnable;
-
-.field public final b:Lnph;
+.field final synthetic b:Ljvb;
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/Runnable;)V
+.method public constructor <init>(Ljvb;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Ljvc;->b:Ljvb;
 
-    iput-object p1, p0, Ljvc;->a:Ljava/lang/Runnable;
+    invoke-direct {p0, p1}, Ljuz;-><init>(Ljvb;)V
 
-    invoke-static {}, Lnph;->g()Lnph;
+    return-void
+.end method
 
-    move-result-object p1
 
-    iput-object p1, p0, Ljvc;->b:Lnph;
+# virtual methods
+.method public final a()V
+    .locals 2
+
+    iget-object v0, p0, Ljvc;->b:Ljvb;
+
+    iget-object v0, v0, Ljvb;->b:Lihu;
+
+    invoke-virtual {v0}, Lihu;->e()V
+
+    iget-object v0, p0, Ljvc;->b:Ljvb;
+
+    iget-object v1, v0, Ljvb;->b:Lihu;
+
+    iget-object v0, v0, Ljvb;->d:Lihw;
+
+    invoke-virtual {v1, v0}, Lihu;->g(Lihw;)V
+
+    return-void
+.end method
+
+.method public final c()V
+    .locals 2
+
+    iget-object v0, p0, Ljvc;->b:Ljvb;
+
+    iget-object v0, v0, Ljvb;->b:Lihu;
+
+    invoke-virtual {v0}, Lihu;->e()V
+
+    iget-object v0, p0, Ljvc;->b:Ljvb;
+
+    iget-object v1, v0, Ljvb;->b:Lihu;
+
+    iget-object v0, v0, Ljvb;->d:Lihw;
+
+    invoke-virtual {v1, v0}, Lihu;->g(Lihw;)V
 
     return-void
 .end method

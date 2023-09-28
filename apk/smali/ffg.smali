@@ -1,212 +1,219 @@
-.class final Lffg;
+.class public final Lffg;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lfkm;
+.implements Lpys;
 
 
 # instance fields
-.field final synthetic a:Lfss;
+.field private final a:Lqkg;
 
-.field final synthetic b:Lfkm;
+.field private final b:Lqkg;
 
-.field final synthetic c:Lffo;
+.field private final c:Lqkg;
 
-.field final synthetic d:Lkxv;
-
-.field final synthetic e:Z
-
-.field final synthetic f:Lffp;
-
-.field final synthetic g:Llij;
+.field private final synthetic d:I
 
 
 # direct methods
-.method public constructor <init>(Lffp;Lfss;Lfkm;Llij;Lffo;Lkxv;Z[B[B[B)V
+.method public constructor <init>(Lqkg;Lqkg;Lqkg;I)V
     .locals 0
 
-    iput-object p1, p0, Lffg;->f:Lffp;
-
-    iput-object p2, p0, Lffg;->a:Lfss;
-
-    iput-object p3, p0, Lffg;->b:Lfkm;
-
-    iput-object p4, p0, Lffg;->g:Llij;
-
-    iput-object p5, p0, Lffg;->c:Lffo;
-
-    iput-object p6, p0, Lffg;->d:Lkxv;
-
-    iput-boolean p7, p0, Lffg;->e:Z
+    iput p4, p0, Lffg;->d:I
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    iput-object p1, p0, Lffg;->a:Lqkg;
+
+    iput-object p2, p0, Lffg;->b:Lqkg;
+
+    iput-object p3, p0, Lffg;->c:Lqkg;
+
     return-void
+.end method
+
+.method public constructor <init>(Lqkg;Lqkg;Lqkg;I[B)V
+    .locals 0
+
+    iput p4, p0, Lffg;->d:I
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lffg;->c:Lqkg;
+
+    iput-object p2, p0, Lffg;->b:Lqkg;
+
+    iput-object p3, p0, Lffg;->a:Lqkg;
+
+    return-void
+.end method
+
+.method public static b(Lqkg;Lqkg;Lqkg;)Lffg;
+    .locals 7
+
+    new-instance v6, Lffg;
+
+    const/4 v4, 0x1
+
+    const/4 v5, 0x0
+
+    move-object v0, v6
+
+    move-object v1, p0
+
+    move-object v2, p1
+
+    move-object v3, p2
+
+    invoke-direct/range {v0 .. v5}, Lffg;-><init>(Lqkg;Lqkg;Lqkg;I[B)V
+
+    return-object v6
 .end method
 
 
 # virtual methods
-.method public final a(Lfkd;)V
-    .locals 2
+.method public final a()Ljava/lang/Boolean;
+    .locals 5
 
-    iget-object v0, p0, Lffg;->a:Lfss;
+    iget v0, p0, Lffg;->d:I
 
-    invoke-interface {v0}, Lfss;->a()V
+    packed-switch v0, :pswitch_data_0
 
-    iget-object v0, p0, Lffg;->b:Lfkm;
+    iget-object v0, p0, Lffg;->c:Lqkg;
 
-    invoke-interface {v0, p1}, Lfkm;->a(Lfkd;)V
-
-    iget-object v0, p0, Lffg;->d:Lkxv;
-
-    invoke-interface {v0}, Lkxv;->c()V
-
-    iget-object v0, p0, Lffg;->g:Llij;
-
-    invoke-virtual {v0}, Llij;->g()V
-
-    iget-object v0, p0, Lffg;->c:Lffo;
-
-    invoke-static {p1}, Lmqp;->i(Ljava/lang/Object;)Lmqp;
-
-    move-result-object p1
-
-    iput-object p1, v0, Lffo;->s:Lmqp;
-
-    sget-object p1, Lffp;->a:Lnak;
-
-    iget-boolean p1, p0, Lffg;->e:Z
-
-    if-eqz p1, :cond_1
-
-    iget-object p1, p0, Lffg;->c:Lffo;
-
-    iget-object p1, p1, Lffo;->p:Lmqp;
-
-    invoke-virtual {p1}, Lmqp;->g()Z
-
-    move-result p1
-
-    if-eqz p1, :cond_0
-
-    iget-object p1, p0, Lffg;->f:Lffp;
-
-    iget-object p1, p1, Lffp;->x:Lgkr;
-
-    iget-object v0, p0, Lffg;->c:Lffo;
-
-    iget-object v0, v0, Lffo;->p:Lmqp;
-
-    invoke-virtual {v0}, Lmqp;->c()Ljava/lang/Object;
+    invoke-interface {v0}, Lqkg;->get()Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Lbkb;
+    check-cast v0, Lddf;
 
-    iget-object v0, v0, Lbkb;->a:Ljava/lang/Object;
+    iget-object v1, p0, Lffg;->b:Lqkg;
 
-    invoke-virtual {p1, v0}, Lgkr;->b(Lfmd;)V
+    check-cast v1, Lgjo;
+
+    invoke-virtual {v1}, Lgjo;->a()Lghx;
+
+    move-result-object v1
+
+    iget-object v2, p0, Lffg;->a:Lqkg;
+
+    check-cast v2, Lgiv;
+
+    invoke-virtual {v2}, Lgiv;->a()Ljrl;
+
+    move-result-object v2
+
+    sget-object v3, Ljrl;->b:Ljrl;
+
+    const/4 v4, 0x0
+
+    if-ne v2, v3, :cond_0
+
+    invoke-virtual {v1}, Llwe;->k()Llwd;
+
+    move-result-object v1
+
+    sget-object v2, Llwd;->b:Llwd;
+
+    if-ne v1, v2, :cond_0
+
+    sget-object v1, Lddm;->ap:Lddg;
+
+    invoke-interface {v0, v1}, Lddf;->k(Lddg;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    sget-object v1, Lddl;->aR:Lddg;
+
+    invoke-interface {v0, v1}, Lddf;->k(Lddg;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    const/4 v4, 0x1
 
     goto :goto_0
 
+    :pswitch_0
+    iget-object v0, p0, Lffg;->a:Lqkg;
+
+    invoke-interface {v0}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lddf;
+
+    iget-object v1, p0, Lffg;->b:Lqkg;
+
+    check-cast v1, Lbpk;
+
+    invoke-virtual {v1}, Lbpk;->a()Ljava/lang/Boolean;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/Boolean;->booleanValue()Z
+
+    move-result v1
+
+    iget-object v2, p0, Lffg;->c:Lqkg;
+
+    check-cast v2, Lbpk;
+
+    invoke-virtual {v2}, Lbpk;->a()Ljava/lang/Boolean;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/Boolean;->booleanValue()Z
+
+    move-result v2
+
+    invoke-static {v0, v1, v2}, Lfff;->a(Lddf;ZZ)Ljava/lang/Boolean;
+
+    move-result-object v0
+
+    return-object v0
+
     :cond_0
-    sget-object p1, Lffp;->a:Lnak;
-
-    invoke-virtual {p1}, Lnaf;->c()Lnaz;
-
-    move-result-object p1
-
-    const-string v0, "Didn\'t take second shot since UI resources are missing"
-
-    const/16 v1, 0x87b
-
-    invoke-static {p1, v0, v1}, Ld;->g(Lnaz;Ljava/lang/String;C)V
-
-    :cond_1
     :goto_0
-    iget-object p1, p0, Lffg;->c:Lffo;
+    invoke-static {v4}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
-    sget-object v0, Lmpx;->a:Lmpx;
+    move-result-object v0
 
-    iput-object v0, p1, Lffo;->p:Lmqp;
+    return-object v0
 
-    return-void
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method
 
-.method public final b(JLfkq;)V
-    .locals 4
+.method public final synthetic get()Ljava/lang/Object;
+    .locals 1
 
-    iget-object v0, p0, Lffg;->a:Lfss;
+    iget v0, p0, Lffg;->d:I
 
-    invoke-interface {v0, p1, p2}, Lfss;->b(J)V
+    packed-switch v0, :pswitch_data_0
 
-    iget-object v0, p0, Lffg;->b:Lfkm;
+    invoke-virtual {p0}, Lffg;->a()Ljava/lang/Boolean;
 
-    invoke-interface {v0, p1, p2, p3}, Lfkm;->b(JLfkq;)V
+    move-result-object v0
 
-    iget-object p1, p0, Lffg;->g:Llij;
+    return-object v0
 
-    invoke-virtual {p1}, Llij;->g()V
+    :pswitch_0
+    invoke-virtual {p0}, Lffg;->a()Ljava/lang/Boolean;
 
-    iget-object p1, p0, Lffg;->c:Lffo;
+    move-result-object v0
 
-    invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
+    return-object v0
 
-    move-result-wide p2
+    nop
 
-    invoke-static {p2, p3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    move-result-object p2
-
-    invoke-static {p2}, Lmqp;->i(Ljava/lang/Object;)Lmqp;
-
-    move-result-object p2
-
-    iput-object p2, p1, Lffo;->q:Lmqp;
-
-    iget-object p1, p0, Lffg;->c:Lffo;
-
-    iget-boolean p2, p1, Lffo;->o:Z
-
-    if-eqz p2, :cond_0
-
-    iget-object p2, p0, Lffg;->f:Lffp;
-
-    const/4 p3, 0x1
-
-    invoke-static {p3}, Lmoz;->p(Z)V
-
-    iget-object p3, p2, Lffp;->o:Landroid/os/Handler;
-
-    new-instance v0, Levy;
-
-    const/16 v1, 0x9
-
-    invoke-direct {v0, p2, p1, v1}, Levy;-><init>(Lffp;Lffo;I)V
-
-    iget-object v1, p1, Lffo;->a:Lgxy;
-
-    const-wide/16 v2, 0x3a98
-
-    invoke-virtual {p3, v0, v1, v2, v3}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;Ljava/lang/Object;J)Z
-
-    iget-object p3, p1, Lffo;->g:Lfst;
-
-    iget-object p1, p1, Lffo;->a:Lgxy;
-
-    iget-object p2, p2, Lffp;->o:Landroid/os/Handler;
-
-    invoke-static {p3, p1, p2}, Lffp;->d(Lfst;Lgxy;Landroid/os/Handler;)V
-
-    goto :goto_0
-
-    :cond_0
-    sget-object p2, Lmpx;->a:Lmpx;
-
-    iput-object p2, p1, Lffo;->p:Lmqp;
-
-    :goto_0
-    sget-object p1, Lffp;->a:Lnak;
-
-    return-void
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

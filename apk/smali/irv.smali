@@ -2,102 +2,52 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Landroid/view/View$OnClickListener;
+.implements Landroid/view/View$OnLayoutChangeListener;
 
 
 # instance fields
-.field public final synthetic a:Lisi;
+.field public final synthetic a:Lirz;
 
-.field public final synthetic b:Z
+.field public final synthetic b:Landroid/view/WindowManager;
+
+.field public final synthetic c:Landroid/content/Context;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lisi;Z)V
+.method public synthetic constructor <init>(Lirz;Landroid/view/WindowManager;Landroid/content/Context;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lirv;->a:Lisi;
+    iput-object p1, p0, Lirv;->a:Lirz;
 
-    iput-boolean p2, p0, Lirv;->b:Z
+    iput-object p2, p0, Lirv;->b:Landroid/view/WindowManager;
+
+    iput-object p3, p0, Lirv;->c:Landroid/content/Context;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onClick(Landroid/view/View;)V
-    .locals 4
+.method public final onLayoutChange(Landroid/view/View;IIIIIIII)V
+    .locals 0
 
-    iget-object p1, p0, Lirv;->a:Lisi;
+    iget-object p1, p0, Lirv;->a:Lirz;
 
-    iget-boolean v0, p0, Lirv;->b:Z
+    iget-object p2, p0, Lirv;->b:Landroid/view/WindowManager;
 
-    iget-object v1, p1, Lisi;->E:Lita;
+    iget-object p3, p0, Lirv;->c:Landroid/content/Context;
 
-    invoke-virtual {p1, v0}, Lisi;->ac(Z)F
+    invoke-interface {p2}, Landroid/view/WindowManager;->getDefaultDisplay()Landroid/view/Display;
 
-    move-result v2
+    move-result-object p2
 
-    const/4 v3, 0x6
+    invoke-static {p2, p3}, Ljrz;->a(Landroid/view/Display;Landroid/content/Context;)Ljrz;
 
-    invoke-virtual {v1, v2, v3}, Lisk;->d(FI)V
+    move-result-object p2
 
-    if-nez v0, :cond_2
+    invoke-virtual {p1, p2}, Lirz;->b(Ljrz;)V
 
-    invoke-virtual {p1}, Lisi;->Y()Z
-
-    move-result v0
-
-    if-nez v0, :cond_0
-
-    goto :goto_0
-
-    :cond_0
-    iget-object v0, p1, Lisi;->ak:Ljew;
-
-    const-string v1, "wide_selfie_tooltip_display_count"
-
-    invoke-virtual {v0, v1}, Ljew;->X(Ljava/lang/String;)I
-
-    move-result v0
-
-    const/4 v2, 0x2
-
-    if-gt v0, v2, :cond_1
-
-    iget-object v0, p1, Lisi;->ak:Ljew;
-
-    const/4 v2, 0x3
-
-    invoke-virtual {v0, v1, v2}, Ljew;->aa(Ljava/lang/String;I)V
-
-    :cond_1
-    iget-object v0, p1, Lisi;->I:Lmqp;
-
-    invoke-virtual {v0}, Lmqp;->g()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_2
-
-    iget-object v0, p1, Lisi;->I:Lmqp;
-
-    invoke-virtual {v0}, Lmqp;->c()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lkad;
-
-    invoke-interface {v0}, Lkad;->close()V
-
-    sget-object v0, Lmpx;->a:Lmpx;
-
-    iput-object v0, p1, Lisi;->I:Lmqp;
-
-    return-void
-
-    :cond_2
-    :goto_0
     return-void
 .end method

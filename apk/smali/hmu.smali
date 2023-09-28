@@ -1,127 +1,104 @@
-.class public final enum Lhmu;
-.super Ljava/lang/Enum;
-
-
-# static fields
-.field public static final enum a:Lhmu;
-
-.field public static final enum b:Lhmu;
-
-.field public static final enum c:Lhmu;
-
-.field private static final synthetic e:[Lhmu;
+.class final Lhmu;
+.super Landroid/animation/AnimatorListenerAdapter;
 
 
 # instance fields
-.field public final d:I
+.field final synthetic a:Lhmy;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 7
+.method public constructor <init>(Lhmy;)V
+    .locals 0
 
-    new-instance v0, Lhmu;
+    iput-object p1, p0, Lhmu;->a:Lhmy;
 
-    const-string v1, "OFF"
-
-    const/4 v2, 0x0
-
-    invoke-direct {v0, v1, v2, v2}, Lhmu;-><init>(Ljava/lang/String;II)V
-
-    sput-object v0, Lhmu;->a:Lhmu;
-
-    new-instance v1, Lhmu;
-
-    const-string v3, "ACTIVE"
-
-    const/4 v4, 0x1
-
-    invoke-direct {v1, v3, v4, v4}, Lhmu;-><init>(Ljava/lang/String;II)V
-
-    sput-object v1, Lhmu;->b:Lhmu;
-
-    new-instance v3, Lhmu;
-
-    const-string v5, "ON"
-
-    const/4 v6, 0x2
-
-    invoke-direct {v3, v5, v6, v6}, Lhmu;-><init>(Ljava/lang/String;II)V
-
-    sput-object v3, Lhmu;->c:Lhmu;
-
-    const/4 v5, 0x3
-
-    new-array v5, v5, [Lhmu;
-
-    aput-object v0, v5, v2
-
-    aput-object v1, v5, v4
-
-    aput-object v3, v5, v6
-
-    sput-object v5, Lhmu;->e:[Lhmu;
+    invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
 
     return-void
 .end method
 
-.method private constructor <init>(Ljava/lang/String;II)V
-    .locals 0
 
-    invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+# virtual methods
+.method public final onAnimationEnd(Landroid/animation/Animator;)V
+    .locals 3
 
-    iput p3, p0, Lhmu;->d:I
+    invoke-super {p0, p1}, Landroid/animation/AnimatorListenerAdapter;->onAnimationEnd(Landroid/animation/Animator;)V
+
+    iget-object p1, p0, Lhmu;->a:Lhmy;
+
+    iget-object p1, p1, Lhmy;->h:Lcom/google/android/apps/camera/rewind/ui/RewindPreview;
+
+    const/16 v0, 0x8
+
+    invoke-virtual {p1, v0}, Lcom/google/android/apps/camera/rewind/ui/RewindPreview;->setVisibility(I)V
+
+    iget-object p1, p0, Lhmu;->a:Lhmy;
+
+    iget-object p1, p1, Lhmy;->h:Lcom/google/android/apps/camera/rewind/ui/RewindPreview;
+
+    invoke-virtual {p1}, Lcom/google/android/apps/camera/rewind/ui/RewindPreview;->removeAllViews()V
+
+    iget-object p1, p0, Lhmu;->a:Lhmy;
+
+    iget-object p1, p1, Lhmy;->i:Lcom/google/android/apps/camera/rewind/ui/RewindControllerView;
+
+    invoke-virtual {p1, v0}, Lcom/google/android/apps/camera/rewind/ui/RewindControllerView;->setVisibility(I)V
+
+    iget-object p1, p0, Lhmu;->a:Lhmy;
+
+    iget-object p1, p1, Lhmy;->i:Lcom/google/android/apps/camera/rewind/ui/RewindControllerView;
+
+    invoke-virtual {p1}, Lcom/google/android/apps/camera/rewind/ui/RewindControllerView;->removeAllViews()V
+
+    iget-object p1, p0, Lhmu;->a:Lhmy;
+
+    iget-object p1, p1, Lhmy;->l:Ljns;
+
+    iget-object p1, p1, Ljns;->e:Lcom/google/android/apps/camera/ui/views/ViewfinderCover;
+
+    invoke-virtual {p1}, Lcom/google/android/apps/camera/ui/views/ViewfinderCover;->animate()Landroid/view/ViewPropertyAnimator;
+
+    move-result-object p1
+
+    const/high16 v0, 0x3f800000    # 1.0f
+
+    invoke-virtual {p1, v0}, Landroid/view/ViewPropertyAnimator;->alpha(F)Landroid/view/ViewPropertyAnimator;
+
+    move-result-object p1
+
+    iget-object v0, p0, Lhmu;->a:Lhmy;
+
+    iget-object v0, v0, Lhmy;->l:Ljns;
+
+    iget-object v0, v0, Ljns;->e:Lcom/google/android/apps/camera/ui/views/ViewfinderCover;
+
+    new-instance v1, Lhng;
+
+    const/4 v2, 0x1
+
+    invoke-direct {v1, v0, v2}, Lhng;-><init>(Lcom/google/android/apps/camera/ui/views/ViewfinderCover;I)V
+
+    invoke-virtual {p1, v1}, Landroid/view/ViewPropertyAnimator;->withStartAction(Ljava/lang/Runnable;)Landroid/view/ViewPropertyAnimator;
+
+    move-result-object p1
+
+    invoke-virtual {p1}, Landroid/view/ViewPropertyAnimator;->start()V
 
     return-void
 .end method
 
-.method public static a(Z)Lhmu;
+.method public final onAnimationStart(Landroid/animation/Animator;)V
     .locals 0
 
-    if-nez p0, :cond_0
+    invoke-super {p0, p1}, Landroid/animation/AnimatorListenerAdapter;->onAnimationStart(Landroid/animation/Animator;)V
 
-    sget-object p0, Lhmu;->a:Lhmu;
+    iget-object p1, p0, Lhmu;->a:Lhmy;
 
-    goto :goto_0
+    iget-object p1, p1, Lhmy;->l:Ljns;
 
-    :cond_0
-    sget-object p0, Lhmu;->b:Lhmu;
+    iget-object p1, p1, Ljns;->e:Lcom/google/android/apps/camera/ui/views/ViewfinderCover;
 
-    :goto_0
-    return-object p0
-.end method
+    invoke-virtual {p1}, Lcom/google/android/apps/camera/ui/views/ViewfinderCover;->k()V
 
-.method public static b(Lhmu;)Z
-    .locals 1
-
-    sget-object v0, Lhmu;->a:Lhmu;
-
-    invoke-virtual {p0, v0}, Lhmu;->equals(Ljava/lang/Object;)Z
-
-    move-result p0
-
-    if-nez p0, :cond_0
-
-    const/4 p0, 0x1
-
-    return p0
-
-    :cond_0
-    const/4 p0, 0x0
-
-    return p0
-.end method
-
-.method public static values()[Lhmu;
-    .locals 1
-
-    sget-object v0, Lhmu;->e:[Lhmu;
-
-    invoke-virtual {v0}, [Lhmu;->clone()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, [Lhmu;
-
-    return-object v0
+    return-void
 .end method

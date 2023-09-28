@@ -1,63 +1,61 @@
-.class public final synthetic Lgma;
+.class public final Lgma;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Lpys;
 
 
 # instance fields
-.field public final synthetic a:Lnph;
-
-.field public final synthetic b:Lgfz;
-
-.field public final synthetic c:I
-
-.field public final synthetic d:Ljuf;
+.field private final a:Lqkg;
 
 
 # direct methods
-.method public synthetic constructor <init>(Ljuf;Lnph;Lgfz;I)V
+.method public constructor <init>(Lqkg;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lgma;->d:Ljuf;
-
-    iput-object p2, p0, Lgma;->a:Lnph;
-
-    iput-object p3, p0, Lgma;->b:Lgfz;
-
-    iput p4, p0, Lgma;->c:I
+    iput-object p1, p0, Lgma;->a:Lqkg;
 
     return-void
 .end method
 
+.method public static a(Lqkg;)Lgma;
+    .locals 1
+
+    new-instance v0, Lgma;
+
+    invoke-direct {v0, p0}, Lgma;-><init>(Lqkg;)V
+
+    return-object v0
+.end method
+
 
 # virtual methods
-.method public final run()V
-    .locals 5
+.method public final b()Lkme;
+    .locals 2
 
-    iget-object v0, p0, Lgma;->d:Ljuf;
+    iget-object v0, p0, Lgma;->a:Lqkg;
 
-    iget-object v1, p0, Lgma;->a:Lnph;
+    check-cast v0, Lpyw;
 
-    iget-object v2, p0, Lgma;->b:Lgfz;
+    invoke-virtual {v0}, Lpyw;->a()Ljava/util/Set;
 
-    iget v3, p0, Lgma;->c:I
+    move-result-object v0
 
-    invoke-static {v0, v1}, Lbze;->ag(Ljuf;Ljava/util/concurrent/Future;)V
+    new-instance v1, Lkme;
 
-    new-instance v0, Ljava/util/concurrent/atomic/AtomicInteger;
+    invoke-direct {v1, v0}, Lkme;-><init>(Ljava/util/Set;)V
 
-    const/4 v4, 0x0
+    return-object v1
+.end method
 
-    invoke-direct {v0, v4}, Ljava/util/concurrent/atomic/AtomicInteger;-><init>(I)V
+.method public final bridge synthetic get()Ljava/lang/Object;
+    .locals 1
 
-    new-instance v4, Lgmb;
+    invoke-virtual {p0}, Lgma;->b()Lkme;
 
-    invoke-direct {v4, v0, v3, v1, v2}, Lgmb;-><init>(Ljava/util/concurrent/atomic/AtomicInteger;ILnph;Lgfz;)V
+    move-result-object v0
 
-    invoke-virtual {v2, v4}, Lgfz;->n(Lkfg;)V
-
-    return-void
+    return-object v0
 .end method

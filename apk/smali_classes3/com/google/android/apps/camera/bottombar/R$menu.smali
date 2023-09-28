@@ -5,7 +5,11 @@
 # static fields
 .field public static final burst_editor_toolbar_menu:I = 0x7f100000
 
-.field public static final filmstrip_menu:I = 0x7f100001
+.field public static final example_menu:I = 0x7f100001
+
+.field public static final example_menu2:I = 0x7f100002
+
+.field public static final filmstrip_menu:I = 0x7f100003
 
 
 # direct methods

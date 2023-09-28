@@ -1,37 +1,48 @@
-.class public final Lgnu;
+.class public final synthetic Lgnu;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lgnt;
+.implements Ljava/lang/Runnable;
+
+
+# instance fields
+.field public final synthetic a:Lgob;
 
 
 # direct methods
-.method public constructor <init>()V
+.method public synthetic constructor <init>(Lgob;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lgnu;->a:Lgob;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Lgli;)Lmwn;
-    .locals 0
+.method public final run()V
+    .locals 3
 
-    iget-object p1, p1, Lgli;->a:Lkeb;
+    iget-object v0, p0, Lgnu;->a:Lgob;
 
-    invoke-interface {p1}, Lkeb;->j()Lkgq;
+    iget-object v1, v0, Lgob;->c:Ljava/util/concurrent/atomic/AtomicBoolean;
 
-    move-result-object p1
+    const/4 v2, 0x0
 
-    iget-object p1, p1, Lkgq;->c:Lmwn;
+    invoke-virtual {v1, v2}, Ljava/util/concurrent/atomic/AtomicBoolean;->getAndSet(Z)Z
 
-    return-object p1
-.end method
+    move-result v1
 
-.method public final b(Lkgq;)Lkgq;
-    .locals 0
+    if-eqz v1, :cond_0
 
-    return-object p1
+    iget-object v0, v0, Lgob;->a:Lgfs;
+
+    iget-object v0, v0, Lgfs;->b:Lgft;
+
+    invoke-interface {v0}, Lgft;->A()V
+
+    :cond_0
+    return-void
 .end method

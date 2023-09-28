@@ -1,141 +1,159 @@
-.class public final Lguf;
+.class public final synthetic Lguf;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lkad;
+.implements Landroid/view/View$OnTouchListener;
+
+
+# static fields
+.field public static final synthetic a:Lguf;
+
+.field public static final synthetic b:Lguf;
+
+.field public static final synthetic c:Lguf;
+
+.field public static final synthetic d:Lguf;
 
 
 # instance fields
-.field public final a:Ljava/lang/Object;
-
-.field private final synthetic b:I
+.field private final synthetic e:I
 
 
 # direct methods
-.method public constructor <init>(Lken;Lgnk;I)V
-    .locals 0
+.method static synthetic constructor <clinit>()V
+    .locals 2
 
-    iput p3, p0, Lguf;->b:I
+    new-instance v0, Lguf;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const/4 v1, 0x3
 
-    iput-object p2, p0, Lguf;->a:Ljava/lang/Object;
+    invoke-direct {v0, v1}, Lguf;-><init>(I)V
 
-    invoke-interface {p1}, Lken;->c()Lkeo;
+    sput-object v0, Lguf;->d:Lguf;
 
-    move-result-object p2
+    new-instance v0, Lguf;
 
-    invoke-interface {p2}, Lkeo;->d()Lkli;
+    const/4 v1, 0x2
 
-    move-result-object p2
+    invoke-direct {v0, v1}, Lguf;-><init>(I)V
 
-    invoke-interface {p2}, Lkli;->f()I
+    sput-object v0, Lguf;->c:Lguf;
 
-    invoke-interface {p2}, Lkli;->k()Lklv;
+    new-instance v0, Lguf;
 
-    sget-object p2, Lklv;->a:Lklv;
+    const/4 v1, 0x1
 
-    invoke-interface {p1}, Lken;->c()Lkeo;
+    invoke-direct {v0, v1}, Lguf;-><init>(I)V
 
-    move-result-object p2
+    sput-object v0, Lguf;->b:Lguf;
 
-    invoke-interface {p2}, Lkeo;->d()Lkli;
+    new-instance v0, Lguf;
 
-    move-result-object p2
+    const/4 v1, 0x0
 
-    invoke-interface {p2}, Lkli;->k()Lklv;
+    invoke-direct {v0, v1}, Lguf;-><init>(I)V
 
-    invoke-interface {p1}, Lken;->c()Lkeo;
-
-    move-result-object p1
-
-    invoke-interface {p1}, Lkeo;->d()Lkli;
-
-    move-result-object p1
-
-    invoke-interface {p1}, Lkli;->h()Landroid/graphics/Rect;
+    sput-object v0, Lguf;->a:Lguf;
 
     return-void
 .end method
 
-.method public constructor <init>(Llbd;II)V
-    .locals 1
+.method public synthetic constructor <init>(I)V
+    .locals 0
 
-    iput p3, p0, Lguf;->b:I
+    iput p1, p0, Lguf;->e:I
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    new-instance p3, Lloi;
-
-    invoke-direct {p3, p1}, Lloi;-><init>(Llbd;)V
-
-    const-string v0, "#version 320 es\nin vec4 aPosition;\nin vec2 aTexCoord;\nuniform mat4 uTransform;\nout vec2 vTexCoord;\nvoid main() {\n  vTexCoord = aTexCoord;\n  gl_Position = uTransform * aPosition;\n}"
-
-    invoke-static {p1, v0}, Lldc;->h(Llbd;Ljava/lang/String;)Lldc;
-
-    move-result-object v0
-
-    invoke-static {v0}, Lktf;->l(Lkyc;)Llfg;
-
-    move-result-object v0
-
-    invoke-virtual {p3, v0}, Lloi;->b(Llfg;)V
-
-    const/16 v0, 0x23
-
-    if-ne p2, v0, :cond_0
-
-    const-string p2, "#version 320 es\n#extension GL_EXT_YUV_target : enable\nprecision highp float;\nuniform highp __samplerExternal2DY2YEXT uImgTex;\nin vec2 vTexCoord;\nlayout (yuv) out vec3 outColor;\nvoid main() {\n    outColor = texture(uImgTex, vTexCoord).rgb;\n}"
-
-    goto :goto_0
-
-    :cond_0
-    const-string p2, "#version 320 es\n#extension GL_EXT_YUV_target : enable\nprecision highp float;\nuniform highp __samplerExternal2DY2YEXT uImgTex;\nin vec2 vTexCoord;\nout vec4 outColor;\nvoid main() {\n    outColor = vec4(yuv_2_rgb(texture(uImgTex, vTexCoord).rgb,\n                              itu_601_full_range), 1.0);\n}"
-
-    :goto_0
-    invoke-static {p1, p2}, Lldc;->b(Llbd;Ljava/lang/String;)Lldc;
-
-    move-result-object p1
-
-    invoke-static {p1}, Lktf;->l(Lkyc;)Llfg;
-
-    move-result-object p1
-
-    invoke-virtual {p3, p1}, Lloi;->b(Llfg;)V
-
-    invoke-virtual {p3}, Lloi;->d()Lldc;
-
-    move-result-object p1
-
-    iput-object p1, p0, Lguf;->a:Ljava/lang/Object;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final close()V
-    .locals 1
+.method public final onTouch(Landroid/view/View;Landroid/view/MotionEvent;)Z
+    .locals 3
 
-    iget v0, p0, Lguf;->b:I
+    iget v0, p0, Lguf;->e:I
+
+    const/4 v1, 0x0
+
+    const/4 v2, 0x1
 
     packed-switch v0, :pswitch_data_0
 
-    iget-object v0, p0, Lguf;->a:Ljava/lang/Object;
-
-    check-cast v0, Llbk;
-
-    invoke-virtual {v0}, Llbk;->close()V
-
-    return-void
+    return v2
 
     :pswitch_0
-    sget-object v0, Lnbk;->a:Lnbc;
+    return v1
 
-    return-void
+    :pswitch_1
+    sget p1, Liva;->z:I
+
+    return v2
+
+    :pswitch_2
+    invoke-virtual {p1}, Landroid/view/View;->getVisibility()I
+
+    move-result p1
+
+    if-nez p1, :cond_0
+
+    return v2
+
+    :cond_0
+    return v1
+
+    :pswitch_3
+    invoke-virtual {p2}, Landroid/view/MotionEvent;->getAction()I
+
+    move-result v0
+
+    if-nez v0, :cond_1
+
+    invoke-virtual {p1}, Landroid/view/View;->animate()Landroid/view/ViewPropertyAnimator;
+
+    move-result-object p1
+
+    const p2, 0x3f8ccccd    # 1.1f
+
+    invoke-virtual {p1, p2}, Landroid/view/ViewPropertyAnimator;->scaleX(F)Landroid/view/ViewPropertyAnimator;
+
+    move-result-object p1
+
+    invoke-virtual {p1, p2}, Landroid/view/ViewPropertyAnimator;->scaleY(F)Landroid/view/ViewPropertyAnimator;
+
+    goto :goto_0
+
+    :cond_1
+    invoke-virtual {p2}, Landroid/view/MotionEvent;->getAction()I
+
+    move-result p2
+
+    if-ne p2, v2, :cond_2
+
+    invoke-virtual {p1}, Landroid/view/View;->animate()Landroid/view/ViewPropertyAnimator;
+
+    move-result-object p1
+
+    const/high16 p2, 0x3f800000    # 1.0f
+
+    invoke-virtual {p1, p2}, Landroid/view/ViewPropertyAnimator;->scaleX(F)Landroid/view/ViewPropertyAnimator;
+
+    move-result-object p1
+
+    invoke-virtual {p1, p2}, Landroid/view/ViewPropertyAnimator;->scaleY(F)Landroid/view/ViewPropertyAnimator;
+
+    :cond_2
+    :goto_0
+    return v1
+
+    nop
 
     :pswitch_data_0
     .packed-switch 0x0
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
         :pswitch_0
     .end packed-switch
 .end method

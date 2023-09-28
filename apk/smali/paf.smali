@@ -1,233 +1,646 @@
-.class public final Lpaf;
+.class final Lpaf;
 .super Ljava/lang/Object;
+
+# interfaces
+.implements Lppi;
+
+
+# static fields
+.field static final a:Lppi;
+
+.field static final b:Lppi;
+
+.field static final c:Lppi;
+
+.field static final d:Lppi;
+
+.field static final e:Lppi;
+
+.field static final f:Lppi;
+
+.field static final g:Lppi;
+
+.field static final h:Lppi;
+
+.field static final i:Lppi;
+
+.field static final j:Lppi;
+
+.field static final k:Lppi;
+
+.field static final l:Lppi;
+
+.field static final m:Lppi;
+
+.field static final n:Lppi;
+
+.field static final o:Lppi;
+
+.field static final p:Lppi;
+
+.field static final q:Lppi;
+
+.field static final r:Lppi;
+
+.field static final s:Lppi;
+
+.field static final t:Lppi;
+
+.field static final u:Lppi;
 
 
 # instance fields
-.field public final a:[B
-
-.field public b:I
-
-.field public c:I
-
-.field public d:Z
-
-.field public final e:Z
-
-.field public f:Lpaf;
-
-.field public g:Lpaf;
+.field private final synthetic v:I
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 1
+.method static constructor <clinit>()V
+    .locals 2
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance v0, Lpaf;
 
-    const/16 v0, 0x2000
+    const/16 v1, 0x14
 
-    new-array v0, v0, [B
+    invoke-direct {v0, v1}, Lpaf;-><init>(I)V
 
-    iput-object v0, p0, Lpaf;->a:[B
+    sput-object v0, Lpaf;->u:Lppi;
 
-    const/4 v0, 0x1
+    new-instance v0, Lpaf;
 
-    iput-boolean v0, p0, Lpaf;->e:Z
+    const/16 v1, 0x13
 
-    const/4 v0, 0x0
+    invoke-direct {v0, v1}, Lpaf;-><init>(I)V
 
-    iput-boolean v0, p0, Lpaf;->d:Z
+    sput-object v0, Lpaf;->t:Lppi;
+
+    new-instance v0, Lpaf;
+
+    const/16 v1, 0x12
+
+    invoke-direct {v0, v1}, Lpaf;-><init>(I)V
+
+    sput-object v0, Lpaf;->s:Lppi;
+
+    new-instance v0, Lpaf;
+
+    const/16 v1, 0x11
+
+    invoke-direct {v0, v1}, Lpaf;-><init>(I)V
+
+    sput-object v0, Lpaf;->r:Lppi;
+
+    new-instance v0, Lpaf;
+
+    const/16 v1, 0x10
+
+    invoke-direct {v0, v1}, Lpaf;-><init>(I)V
+
+    sput-object v0, Lpaf;->q:Lppi;
+
+    new-instance v0, Lpaf;
+
+    const/16 v1, 0xf
+
+    invoke-direct {v0, v1}, Lpaf;-><init>(I)V
+
+    sput-object v0, Lpaf;->p:Lppi;
+
+    new-instance v0, Lpaf;
+
+    const/16 v1, 0xe
+
+    invoke-direct {v0, v1}, Lpaf;-><init>(I)V
+
+    sput-object v0, Lpaf;->o:Lppi;
+
+    new-instance v0, Lpaf;
+
+    const/16 v1, 0xd
+
+    invoke-direct {v0, v1}, Lpaf;-><init>(I)V
+
+    sput-object v0, Lpaf;->n:Lppi;
+
+    new-instance v0, Lpaf;
+
+    const/16 v1, 0xc
+
+    invoke-direct {v0, v1}, Lpaf;-><init>(I)V
+
+    sput-object v0, Lpaf;->m:Lppi;
+
+    new-instance v0, Lpaf;
+
+    const/16 v1, 0xb
+
+    invoke-direct {v0, v1}, Lpaf;-><init>(I)V
+
+    sput-object v0, Lpaf;->l:Lppi;
+
+    new-instance v0, Lpaf;
+
+    const/16 v1, 0xa
+
+    invoke-direct {v0, v1}, Lpaf;-><init>(I)V
+
+    sput-object v0, Lpaf;->k:Lppi;
+
+    new-instance v0, Lpaf;
+
+    const/16 v1, 0x9
+
+    invoke-direct {v0, v1}, Lpaf;-><init>(I)V
+
+    sput-object v0, Lpaf;->j:Lppi;
+
+    new-instance v0, Lpaf;
+
+    const/16 v1, 0x8
+
+    invoke-direct {v0, v1}, Lpaf;-><init>(I)V
+
+    sput-object v0, Lpaf;->i:Lppi;
+
+    new-instance v0, Lpaf;
+
+    const/4 v1, 0x7
+
+    invoke-direct {v0, v1}, Lpaf;-><init>(I)V
+
+    sput-object v0, Lpaf;->h:Lppi;
+
+    new-instance v0, Lpaf;
+
+    const/4 v1, 0x6
+
+    invoke-direct {v0, v1}, Lpaf;-><init>(I)V
+
+    sput-object v0, Lpaf;->g:Lppi;
+
+    new-instance v0, Lpaf;
+
+    const/4 v1, 0x5
+
+    invoke-direct {v0, v1}, Lpaf;-><init>(I)V
+
+    sput-object v0, Lpaf;->f:Lppi;
+
+    new-instance v0, Lpaf;
+
+    const/4 v1, 0x4
+
+    invoke-direct {v0, v1}, Lpaf;-><init>(I)V
+
+    sput-object v0, Lpaf;->e:Lppi;
+
+    new-instance v0, Lpaf;
+
+    const/4 v1, 0x3
+
+    invoke-direct {v0, v1}, Lpaf;-><init>(I)V
+
+    sput-object v0, Lpaf;->d:Lppi;
+
+    new-instance v0, Lpaf;
+
+    const/4 v1, 0x2
+
+    invoke-direct {v0, v1}, Lpaf;-><init>(I)V
+
+    sput-object v0, Lpaf;->c:Lppi;
+
+    new-instance v0, Lpaf;
+
+    const/4 v1, 0x1
+
+    invoke-direct {v0, v1}, Lpaf;-><init>(I)V
+
+    sput-object v0, Lpaf;->b:Lppi;
+
+    new-instance v0, Lpaf;
+
+    const/4 v1, 0x0
+
+    invoke-direct {v0, v1}, Lpaf;-><init>(I)V
+
+    sput-object v0, Lpaf;->a:Lppi;
 
     return-void
 .end method
 
-.method public constructor <init>([BIIZ)V
+.method private constructor <init>(I)V
     .locals 0
 
+    iput p1, p0, Lpaf;->v:I
+
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lpaf;->a:[B
-
-    iput p2, p0, Lpaf;->b:I
-
-    iput p3, p0, Lpaf;->c:I
-
-    iput-boolean p4, p0, Lpaf;->d:Z
-
-    const/4 p1, 0x0
-
-    iput-boolean p1, p0, Lpaf;->e:Z
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Lpaf;
-    .locals 4
+.method public final a(I)Z
+    .locals 3
 
-    iget-object v0, p0, Lpaf;->f:Lpaf;
-
-    const/4 v1, 0x0
-
-    if-eq v0, p0, :cond_0
-
-    move-object v2, v0
-
-    goto :goto_0
-
-    :cond_0
-    move-object v2, v1
-
-    :goto_0
-    iget-object v3, p0, Lpaf;->g:Lpaf;
-
-    invoke-virtual {v3}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    iput-object v0, v3, Lpaf;->f:Lpaf;
-
-    iget-object v0, p0, Lpaf;->f:Lpaf;
-
-    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    iput-object v3, v0, Lpaf;->g:Lpaf;
-
-    iput-object v1, p0, Lpaf;->f:Lpaf;
-
-    iput-object v1, p0, Lpaf;->g:Lpaf;
-
-    return-object v2
-.end method
-
-.method public final b()Lpaf;
-    .locals 5
-
-    const/4 v0, 0x1
-
-    iput-boolean v0, p0, Lpaf;->d:Z
-
-    new-instance v1, Lpaf;
-
-    iget-object v2, p0, Lpaf;->a:[B
-
-    iget v3, p0, Lpaf;->b:I
-
-    iget v4, p0, Lpaf;->c:I
-
-    invoke-direct {v1, v2, v3, v4, v0}, Lpaf;-><init>([BIIZ)V
-
-    return-object v1
-.end method
-
-.method public final c(Lpaf;I)V
-    .locals 5
-
-    iget-boolean v0, p1, Lpaf;->e:Z
-
-    if-eqz v0, :cond_3
-
-    iget v0, p1, Lpaf;->c:I
-
-    add-int v1, v0, p2
-
-    const/16 v2, 0x2000
-
-    if-le v1, v2, :cond_2
-
-    iget-boolean v3, p1, Lpaf;->d:Z
-
-    if-nez v3, :cond_1
-
-    iget v3, p1, Lpaf;->b:I
-
-    sub-int/2addr v1, v3
-
-    if-gt v1, v2, :cond_0
-
-    iget-object v1, p1, Lpaf;->a:[B
-
-    invoke-static {v1, v1, v3, v0}, Lljr;->aE([B[BII)V
-
-    iget v0, p1, Lpaf;->c:I
-
-    iget v1, p1, Lpaf;->b:I
-
-    sub-int/2addr v0, v1
-
-    iput v0, p1, Lpaf;->c:I
+    iget v0, p0, Lpaf;->v:I
 
     const/4 v1, 0x0
 
-    iput v1, p1, Lpaf;->b:I
+    const/4 v2, 0x1
 
-    goto :goto_0
+    packed-switch v0, :pswitch_data_0
+
+    packed-switch p1, :pswitch_data_1
+
+    return v1
+
+    :pswitch_0
+    invoke-static {p1}, Loxh;->ad(I)I
+
+    move-result p1
+
+    if-eqz p1, :cond_0
+
+    return v2
 
     :cond_0
-    new-instance p1, Ljava/lang/IllegalArgumentException;
+    return v1
 
-    invoke-direct {p1}, Ljava/lang/IllegalArgumentException;-><init>()V
+    :pswitch_1
+    packed-switch p1, :pswitch_data_2
 
-    throw p1
+    return v1
 
-    :cond_1
-    new-instance p1, Ljava/lang/IllegalArgumentException;
+    :pswitch_2
+    return v2
 
-    invoke-direct {p1}, Ljava/lang/IllegalArgumentException;-><init>()V
+    :pswitch_3
+    packed-switch p1, :pswitch_data_3
 
-    throw p1
+    return v1
 
-    :cond_2
-    :goto_0
-    iget-object v1, p0, Lpaf;->a:[B
+    :pswitch_4
+    return v2
 
-    iget-object v2, p1, Lpaf;->a:[B
+    :pswitch_5
+    packed-switch p1, :pswitch_data_4
 
-    iget v3, p0, Lpaf;->b:I
+    return v1
 
-    add-int v4, v3, p2
+    :pswitch_6
+    return v2
 
-    invoke-static {v1, v2, v0, v3, v4}, Lljr;->aB([B[BIII)V
+    :pswitch_7
+    packed-switch p1, :pswitch_data_5
 
-    iget v0, p1, Lpaf;->c:I
+    return v1
 
-    add-int/2addr v0, p2
+    :pswitch_8
+    return v2
 
-    iput v0, p1, Lpaf;->c:I
+    :pswitch_9
+    packed-switch p1, :pswitch_data_6
 
-    iget p1, p0, Lpaf;->b:I
+    return v1
 
-    add-int/2addr p1, p2
+    :pswitch_a
+    return v2
 
-    iput p1, p0, Lpaf;->b:I
+    :pswitch_b
+    packed-switch p1, :pswitch_data_7
 
-    return-void
+    return v1
 
-    :cond_3
-    new-instance p1, Ljava/lang/IllegalStateException;
+    :pswitch_c
+    return v2
 
-    const-string p2, "only owner can write"
+    :pswitch_d
+    packed-switch p1, :pswitch_data_8
 
-    invoke-direct {p1, p2}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+    return v1
 
-    throw p1
-.end method
+    :pswitch_e
+    return v2
 
-.method public final d(Lpaf;)V
-    .locals 1
+    :pswitch_f
+    packed-switch p1, :pswitch_data_9
 
-    iput-object p0, p1, Lpaf;->g:Lpaf;
+    return v1
 
-    iget-object v0, p0, Lpaf;->f:Lpaf;
+    :pswitch_10
+    return v2
 
-    iput-object v0, p1, Lpaf;->f:Lpaf;
+    :pswitch_11
+    packed-switch p1, :pswitch_data_a
 
-    iget-object v0, p0, Lpaf;->f:Lpaf;
+    return v1
 
-    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    :pswitch_12
+    return v2
 
-    iput-object p1, v0, Lpaf;->g:Lpaf;
+    :pswitch_13
+    packed-switch p1, :pswitch_data_b
 
-    iput-object p1, p0, Lpaf;->f:Lpaf;
+    return v1
 
-    return-void
+    :pswitch_14
+    return v2
+
+    :pswitch_15
+    packed-switch p1, :pswitch_data_c
+
+    return v1
+
+    :pswitch_16
+    return v2
+
+    :pswitch_17
+    packed-switch p1, :pswitch_data_d
+
+    return v1
+
+    :pswitch_18
+    return v2
+
+    :pswitch_19
+    packed-switch p1, :pswitch_data_e
+
+    return v1
+
+    :pswitch_1a
+    return v2
+
+    :pswitch_1b
+    packed-switch p1, :pswitch_data_f
+
+    return v1
+
+    :pswitch_1c
+    return v2
+
+    :pswitch_1d
+    packed-switch p1, :pswitch_data_10
+
+    return v1
+
+    :pswitch_1e
+    return v2
+
+    :pswitch_1f
+    packed-switch p1, :pswitch_data_11
+
+    return v1
+
+    :pswitch_20
+    return v2
+
+    :pswitch_21
+    packed-switch p1, :pswitch_data_12
+
+    return v1
+
+    :pswitch_22
+    return v2
+
+    :pswitch_23
+    packed-switch p1, :pswitch_data_13
+
+    return v1
+
+    :pswitch_24
+    return v2
+
+    :pswitch_25
+    packed-switch p1, :pswitch_data_14
+
+    return v1
+
+    :pswitch_26
+    return v2
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_25
+        :pswitch_23
+        :pswitch_21
+        :pswitch_1f
+        :pswitch_1d
+        :pswitch_1b
+        :pswitch_19
+        :pswitch_17
+        :pswitch_15
+        :pswitch_13
+        :pswitch_11
+        :pswitch_f
+        :pswitch_d
+        :pswitch_b
+        :pswitch_9
+        :pswitch_7
+        :pswitch_5
+        :pswitch_3
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
+
+    :pswitch_data_1
+    .packed-switch 0x0
+        :pswitch_26
+        :pswitch_26
+        :pswitch_26
+        :pswitch_26
+        :pswitch_26
+        :pswitch_26
+        :pswitch_26
+        :pswitch_26
+        :pswitch_26
+        :pswitch_26
+    .end packed-switch
+
+    :pswitch_data_2
+    .packed-switch 0x0
+        :pswitch_2
+        :pswitch_2
+        :pswitch_2
+    .end packed-switch
+
+    :pswitch_data_3
+    .packed-switch 0x0
+        :pswitch_4
+        :pswitch_4
+        :pswitch_4
+        :pswitch_4
+        :pswitch_4
+        :pswitch_4
+        :pswitch_4
+        :pswitch_4
+        :pswitch_4
+        :pswitch_4
+        :pswitch_4
+        :pswitch_4
+        :pswitch_4
+        :pswitch_4
+    .end packed-switch
+
+    :pswitch_data_4
+    .packed-switch 0x0
+        :pswitch_6
+        :pswitch_6
+        :pswitch_6
+        :pswitch_6
+        :pswitch_6
+        :pswitch_6
+        :pswitch_6
+        :pswitch_6
+        :pswitch_6
+    .end packed-switch
+
+    :pswitch_data_5
+    .packed-switch 0x0
+        :pswitch_8
+        :pswitch_8
+        :pswitch_8
+    .end packed-switch
+
+    :pswitch_data_6
+    .packed-switch 0x0
+        :pswitch_a
+        :pswitch_a
+        :pswitch_a
+    .end packed-switch
+
+    :pswitch_data_7
+    .packed-switch 0x0
+        :pswitch_c
+        :pswitch_c
+        :pswitch_c
+        :pswitch_c
+        :pswitch_c
+        :pswitch_c
+        :pswitch_c
+        :pswitch_c
+        :pswitch_c
+        :pswitch_c
+        :pswitch_c
+        :pswitch_c
+        :pswitch_c
+        :pswitch_c
+        :pswitch_c
+        :pswitch_c
+        :pswitch_c
+        :pswitch_c
+        :pswitch_c
+        :pswitch_c
+    .end packed-switch
+
+    :pswitch_data_8
+    .packed-switch 0x0
+        :pswitch_e
+        :pswitch_e
+    .end packed-switch
+
+    :pswitch_data_9
+    .packed-switch 0x0
+        :pswitch_10
+        :pswitch_10
+        :pswitch_10
+    .end packed-switch
+
+    :pswitch_data_a
+    .packed-switch 0x0
+        :pswitch_12
+        :pswitch_12
+        :pswitch_12
+        :pswitch_12
+        :pswitch_12
+        :pswitch_12
+        :pswitch_12
+        :pswitch_12
+    .end packed-switch
+
+    :pswitch_data_b
+    .packed-switch 0x0
+        :pswitch_14
+        :pswitch_14
+        :pswitch_14
+        :pswitch_14
+    .end packed-switch
+
+    :pswitch_data_c
+    .packed-switch 0x0
+        :pswitch_16
+        :pswitch_16
+        :pswitch_16
+    .end packed-switch
+
+    :pswitch_data_d
+    .packed-switch 0x0
+        :pswitch_18
+        :pswitch_18
+    .end packed-switch
+
+    :pswitch_data_e
+    .packed-switch 0x0
+        :pswitch_1a
+        :pswitch_1a
+        :pswitch_1a
+        :pswitch_1a
+        :pswitch_1a
+    .end packed-switch
+
+    :pswitch_data_f
+    .packed-switch 0x0
+        :pswitch_1c
+        :pswitch_1c
+        :pswitch_1c
+        :pswitch_1c
+    .end packed-switch
+
+    :pswitch_data_10
+    .packed-switch 0x0
+        :pswitch_1e
+        :pswitch_1e
+        :pswitch_1e
+    .end packed-switch
+
+    :pswitch_data_11
+    .packed-switch 0x0
+        :pswitch_20
+        :pswitch_20
+        :pswitch_20
+    .end packed-switch
+
+    :pswitch_data_12
+    .packed-switch 0x0
+        :pswitch_22
+        :pswitch_22
+        :pswitch_22
+        :pswitch_22
+        :pswitch_22
+    .end packed-switch
+
+    :pswitch_data_13
+    .packed-switch 0x0
+        :pswitch_24
+        :pswitch_24
+        :pswitch_24
+        :pswitch_24
+        :pswitch_24
+        :pswitch_24
+        :pswitch_24
+        :pswitch_24
+        :pswitch_24
+        :pswitch_24
+        :pswitch_24
+        :pswitch_24
+    .end packed-switch
+
+    :pswitch_data_14
+    .packed-switch 0x0
+        :pswitch_26
+        :pswitch_26
+        :pswitch_26
+        :pswitch_26
+        :pswitch_26
+    .end packed-switch
 .end method

@@ -1,305 +1,248 @@
 .class public final Lmmt;
-.super Ljava/lang/Object;
+.super Ljava/util/concurrent/AbstractExecutorService;
 
-
-# static fields
-.field private static final m:Ljava/util/Map;
+# interfaces
+.implements Lmmc;
 
 
 # instance fields
-.field public final a:Landroid/content/Context;
+.field public final a:Lmoa;
 
-.field public final b:Ljava/util/List;
+.field private final b:Ljava/lang/Thread;
 
-.field public final c:Ljava/util/Set;
+.field private final c:Ljava/util/concurrent/atomic/AtomicBoolean;
 
-.field public final d:Ljava/lang/Object;
-
-.field public e:Z
-
-.field public final f:Landroid/content/Intent;
-
-.field public final g:Ljava/lang/ref/WeakReference;
-
-.field public final h:Landroid/os/IBinder$DeathRecipient;
-
-.field public final i:Ljava/util/concurrent/atomic/AtomicInteger;
-
-.field public j:Landroid/content/ServiceConnection;
-
-.field public k:Landroid/os/IInterface;
-
-.field public final l:Llzz;
-
-.field private final n:Ljava/lang/String;
+.field private final d:Lmmv;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
+.method private constructor <init>(Ljava/lang/String;Lmmv;)V
+    .locals 2
 
-    new-instance v0, Ljava/util/HashMap;
+    invoke-direct {p0}, Ljava/util/concurrent/AbstractExecutorService;-><init>()V
 
-    invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
+    new-instance v0, Ljava/util/concurrent/atomic/AtomicBoolean;
 
-    sput-object v0, Lmmt;->m:Ljava/util/Map;
+    const/4 v1, 0x0
 
-    return-void
-.end method
+    invoke-direct {v0, v1}, Ljava/util/concurrent/atomic/AtomicBoolean;-><init>(Z)V
 
-.method public constructor <init>(Landroid/content/Context;Llzz;Landroid/content/Intent;[B)V
-    .locals 1
+    iput-object v0, p0, Lmmt;->c:Ljava/util/concurrent/atomic/AtomicBoolean;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-static {}, Lmoa;->i()Lmoa;
 
-    new-instance p4, Ljava/util/ArrayList;
+    move-result-object v0
 
-    invoke-direct {p4}, Ljava/util/ArrayList;-><init>()V
+    iput-object v0, p0, Lmmt;->a:Lmoa;
 
-    iput-object p4, p0, Lmmt;->b:Ljava/util/List;
+    iput-object p2, p0, Lmmt;->d:Lmmv;
 
-    new-instance p4, Ljava/util/HashSet;
+    new-instance v0, Ljava/lang/Thread;
 
-    invoke-direct {p4}, Ljava/util/HashSet;-><init>()V
+    new-instance v1, Lmms;
 
-    iput-object p4, p0, Lmmt;->c:Ljava/util/Set;
+    invoke-direct {v1, p0, p2}, Lmms;-><init>(Lmmt;Lmmv;)V
 
-    new-instance p4, Ljava/lang/Object;
+    invoke-direct {v0, v1, p1}, Ljava/lang/Thread;-><init>(Ljava/lang/Runnable;Ljava/lang/String;)V
 
-    invoke-direct {p4}, Ljava/lang/Object;-><init>()V
-
-    iput-object p4, p0, Lmmt;->d:Ljava/lang/Object;
-
-    new-instance p4, Lmmm;
-
-    invoke-direct {p4, p0}, Lmmm;-><init>(Lmmt;)V
-
-    iput-object p4, p0, Lmmt;->h:Landroid/os/IBinder$DeathRecipient;
-
-    new-instance p4, Ljava/util/concurrent/atomic/AtomicInteger;
-
-    const/4 v0, 0x0
-
-    invoke-direct {p4, v0}, Ljava/util/concurrent/atomic/AtomicInteger;-><init>(I)V
-
-    iput-object p4, p0, Lmmt;->i:Ljava/util/concurrent/atomic/AtomicInteger;
-
-    iput-object p1, p0, Lmmt;->a:Landroid/content/Context;
-
-    iput-object p2, p0, Lmmt;->l:Llzz;
-
-    const-string p1, "AppUpdateService"
-
-    iput-object p1, p0, Lmmt;->n:Ljava/lang/String;
-
-    iput-object p3, p0, Lmmt;->f:Landroid/content/Intent;
-
-    new-instance p1, Ljava/lang/ref/WeakReference;
-
-    const/4 p2, 0x0
-
-    invoke-direct {p1, p2}, Ljava/lang/ref/WeakReference;-><init>(Ljava/lang/Object;)V
-
-    iput-object p1, p0, Lmmt;->g:Ljava/lang/ref/WeakReference;
+    iput-object v0, p0, Lmmt;->b:Ljava/lang/Thread;
 
     return-void
 .end method
 
-.method static bridge synthetic d(Lmmt;)V
+.method public static b(Ljava/lang/String;Lmmv;)Lmmt;
     .locals 1
 
-    const/4 v0, 0x0
+    new-instance v0, Lmmt;
 
-    iput-boolean v0, p0, Lmmt;->e:Z
-
-    return-void
-.end method
-
-
-# virtual methods
-.method public final a()Landroid/os/RemoteException;
-    .locals 3
-
-    new-instance v0, Landroid/os/RemoteException;
-
-    iget-object v1, p0, Lmmt;->n:Ljava/lang/String;
-
-    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v1
-
-    const-string v2, " : Binder has died."
-
-    invoke-virtual {v1, v2}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-direct {v0, v1}, Landroid/os/RemoteException;-><init>(Ljava/lang/String;)V
+    invoke-direct {v0, p0, p1}, Lmmt;-><init>(Ljava/lang/String;Lmmv;)V
 
     return-object v0
 .end method
 
-.method public final b()V
-    .locals 3
 
-    iget-object v0, p0, Lmmt;->c:Ljava/util/Set;
+# virtual methods
+.method public final a()V
+    .locals 1
 
-    invoke-interface {v0}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
+    iget-object v0, p0, Lmmt;->b:Ljava/lang/Thread;
+
+    invoke-virtual {v0}, Ljava/lang/Thread;->start()V
+
+    return-void
+.end method
+
+.method public final awaitTermination(JLjava/util/concurrent/TimeUnit;)Z
+    .locals 2
+
+    :try_start_0
+    iget-object v0, p0, Lmmt;->b:Ljava/lang/Thread;
+
+    sget-object v1, Ljava/util/concurrent/TimeUnit;->MILLISECONDS:Ljava/util/concurrent/TimeUnit;
+
+    invoke-virtual {v1, p1, p2, p3}, Ljava/util/concurrent/TimeUnit;->convert(JLjava/util/concurrent/TimeUnit;)J
+
+    move-result-wide p1
+
+    invoke-virtual {v0, p1, p2}, Ljava/lang/Thread;->join(J)V
+    :try_end_0
+    .catch Ljava/lang/InterruptedException; {:try_start_0 .. :try_end_0} :catch_0
+
+    invoke-virtual {p0}, Lmmt;->isTerminated()Z
+
+    move-result p1
+
+    return p1
+
+    :catch_0
+    move-exception p1
+
+    const-string p1, "EventLoopThread"
+
+    const-string p2, "Interrupted while waiting for thread to stop."
+
+    invoke-static {p1, p2}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
+
+    const/4 p1, 0x0
+
+    return p1
+.end method
+
+.method public final close()V
+    .locals 2
+
+    iget-object v0, p0, Lmmt;->a:Lmoa;
+
+    sget-object v1, Lmmg;->a:Lmmg;
+
+    invoke-virtual {v0, v1}, Lmoa;->h(Lmmg;)V
+
+    return-void
+.end method
+
+.method public final execute(Ljava/lang/Runnable;)V
+    .locals 1
+
+    iget-object v0, p0, Lmmt;->d:Lmmv;
+
+    invoke-virtual {v0, p1}, Lmmv;->execute(Ljava/lang/Runnable;)V
+
+    return-void
+.end method
+
+.method public final isShutdown()Z
+    .locals 1
+
+    iget-object v0, p0, Lmmt;->c:Ljava/util/concurrent/atomic/AtomicBoolean;
+
+    invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicBoolean;->get()Z
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public final isTerminated()Z
+    .locals 1
+
+    iget-object v0, p0, Lmmt;->b:Ljava/lang/Thread;
+
+    invoke-virtual {v0}, Ljava/lang/Thread;->isAlive()Z
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    const/4 v0, 0x1
+
+    return v0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    return v0
+.end method
+
+.method public final shutdown()V
+    .locals 2
+
+    iget-object v0, p0, Lmmt;->c:Ljava/util/concurrent/atomic/AtomicBoolean;
+
+    const/4 v1, 0x1
+
+    invoke-virtual {v0, v1}, Ljava/util/concurrent/atomic/AtomicBoolean;->set(Z)V
+
+    iget-object v0, p0, Lmmt;->d:Lmmv;
+
+    invoke-virtual {v0}, Lmmv;->a()V
+
+    return-void
+.end method
+
+.method public final shutdownNow()Ljava/util/List;
+    .locals 2
+
+    iget-object v0, p0, Lmmt;->c:Ljava/util/concurrent/atomic/AtomicBoolean;
+
+    const/4 v1, 0x1
+
+    invoke-virtual {v0, v1}, Ljava/util/concurrent/atomic/AtomicBoolean;->set(Z)V
+
+    iget-object v0, p0, Lmmt;->d:Lmmv;
+
+    iget-object v1, v0, Lmmv;->a:Ljava/util/concurrent/ArrayBlockingQueue;
+
+    invoke-virtual {v1}, Ljava/util/concurrent/ArrayBlockingQueue;->clear()V
+
+    invoke-virtual {v0}, Lmmv;->a()V
+
+    iget-object v0, p0, Lmmt;->a:Lmoa;
+
+    invoke-static {v0}, Lmip;->ac(Lmnb;)Ljava/lang/Object;
 
     move-result-object v0
 
-    :goto_0
-    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
+    check-cast v0, Ljava/util/List;
+
+    return-object v0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .locals 3
+
+    iget-object v0, p0, Lmmt;->b:Ljava/lang/Thread;
+
+    invoke-virtual {v0}, Ljava/lang/Thread;->getName()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/String;->length()I
 
     move-result v1
 
-    if-eqz v1, :cond_0
+    new-instance v2, Ljava/lang/StringBuilder;
 
-    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    add-int/lit8 v1, v1, 0x11
 
-    move-result-object v1
+    invoke-direct {v2, v1}, Ljava/lang/StringBuilder;-><init>(I)V
 
-    check-cast v1, Lkgd;
+    const-string v1, "EventLoopThread["
 
-    invoke-virtual {p0}, Lmmt;->a()Landroid/os/RemoteException;
+    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v2
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1, v2}, Lkgd;->j(Ljava/lang/Exception;)V
+    const-string v0, "]"
 
-    goto :goto_0
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    :cond_0
-    iget-object v0, p0, Lmmt;->c:Ljava/util/Set;
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    invoke-interface {v0}, Ljava/util/Set;->clear()V
+    move-result-object v0
 
-    return-void
-.end method
-
-.method public final c(Lmmk;)V
-    .locals 4
-
-    sget-object v0, Lmmt;->m:Ljava/util/Map;
-
-    monitor-enter v0
-
-    :try_start_0
-    iget-object v1, p0, Lmmt;->n:Ljava/lang/String;
-
-    invoke-interface {v0, v1}, Ljava/util/Map;->containsKey(Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-nez v1, :cond_0
-
-    new-instance v1, Landroid/os/HandlerThread;
-
-    iget-object v2, p0, Lmmt;->n:Ljava/lang/String;
-
-    const/16 v3, 0xa
-
-    invoke-direct {v1, v2, v3}, Landroid/os/HandlerThread;-><init>(Ljava/lang/String;I)V
-
-    invoke-virtual {v1}, Landroid/os/HandlerThread;->start()V
-
-    iget-object v2, p0, Lmmt;->n:Ljava/lang/String;
-
-    new-instance v3, Landroid/os/Handler;
-
-    invoke-virtual {v1}, Landroid/os/HandlerThread;->getLooper()Landroid/os/Looper;
-
-    move-result-object v1
-
-    invoke-direct {v3, v1}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
-
-    invoke-interface {v0, v2, v3}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    :cond_0
-    iget-object v1, p0, Lmmt;->n:Ljava/lang/String;
-
-    invoke-interface {v0, v1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Landroid/os/Handler;
-
-    monitor-exit v0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    invoke-virtual {v1, p1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
-
-    return-void
-
-    :catchall_0
-    move-exception p1
-
-    :try_start_1
-    monitor-exit v0
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    throw p1
-.end method
-
-.method public final e(Lmmk;Lkgd;)V
-    .locals 8
-
-    new-instance v7, Lmmn;
-
-    iget-object v2, p1, Lmmk;->d:Lkgd;
-
-    const/4 v5, 0x0
-
-    const/4 v6, 0x0
-
-    move-object v0, v7
-
-    move-object v1, p0
-
-    move-object v3, p2
-
-    move-object v4, p1
-
-    invoke-direct/range {v0 .. v6}, Lmmn;-><init>(Lmmt;Lkgd;Lkgd;Lmmk;[B[B)V
-
-    invoke-virtual {p0, v7}, Lmmt;->c(Lmmk;)V
-
-    return-void
-.end method
-
-.method public final f(Lkgd;)V
-    .locals 2
-
-    iget-object v0, p0, Lmmt;->d:Ljava/lang/Object;
-
-    monitor-enter v0
-
-    :try_start_0
-    iget-object v1, p0, Lmmt;->c:Ljava/util/Set;
-
-    invoke-interface {v1, p1}, Ljava/util/Set;->remove(Ljava/lang/Object;)Z
-
-    monitor-exit v0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    new-instance p1, Lmmo;
-
-    invoke-direct {p1, p0}, Lmmo;-><init>(Lmmt;)V
-
-    invoke-virtual {p0, p1}, Lmmt;->c(Lmmk;)V
-
-    return-void
-
-    :catchall_0
-    move-exception p1
-
-    :try_start_1
-    monitor-exit v0
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    throw p1
+    return-object v0
 .end method

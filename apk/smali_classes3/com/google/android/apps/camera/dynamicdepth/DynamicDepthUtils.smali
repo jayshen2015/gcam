@@ -3,19 +3,15 @@
 
 
 # static fields
-.field public static final a:Lnak;
+.field public static final a:Louj;
 
 
 # instance fields
-.field private final b:Z
+.field private final b:Ljava/lang/String;
 
-.field private final c:Ljava/lang/String;
+.field private c:Z
 
-.field private final d:Ljava/lang/String;
-
-.field private e:Z
-
-.field private final f:Lkog;
+.field private final d:Llzi;
 
 
 # direct methods
@@ -24,69 +20,31 @@
 
     const-string v0, "com/google/android/apps/camera/dynamicdepth/DynamicDepthUtils"
 
-    invoke-static {v0}, Lnak;->h(Ljava/lang/String;)Lnak;
+    invoke-static {v0}, Louj;->h(Ljava/lang/String;)Louj;
 
     move-result-object v0
 
-    sput-object v0, Lcom/google/android/apps/camera/dynamicdepth/DynamicDepthUtils;->a:Lnak;
+    sput-object v0, Lcom/google/android/apps/camera/dynamicdepth/DynamicDepthUtils;->a:Louj;
 
     return-void
 .end method
 
-.method public constructor <init>(ZLmqp;Lkog;)V
+.method public constructor <init>(Llzi;)V
     .locals 1
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     const/4 v0, 0x0
 
-    iput-boolean v0, p0, Lcom/google/android/apps/camera/dynamicdepth/DynamicDepthUtils;->e:Z
+    iput-boolean v0, p0, Lcom/google/android/apps/camera/dynamicdepth/DynamicDepthUtils;->c:Z
 
-    iput-boolean p1, p0, Lcom/google/android/apps/camera/dynamicdepth/DynamicDepthUtils;->b:Z
+    iput-object p1, p0, Lcom/google/android/apps/camera/dynamicdepth/DynamicDepthUtils;->d:Llzi;
 
-    iput-object p3, p0, Lcom/google/android/apps/camera/dynamicdepth/DynamicDepthUtils;->f:Lkog;
-
-    if-eqz p1, :cond_0
-
-    invoke-virtual {p2}, Lmqp;->g()Z
-
-    move-result p1
-
-    if-eqz p1, :cond_0
-
-    invoke-virtual {p2}, Lmqp;->c()Ljava/lang/Object;
-
-    move-result-object p1
-
-    check-cast p1, Ljava/io/File;
-
-    invoke-virtual {p1}, Ljava/io/File;->getAbsolutePath()Ljava/lang/String;
-
-    move-result-object p1
-
-    iput-object p1, p0, Lcom/google/android/apps/camera/dynamicdepth/DynamicDepthUtils;->d:Ljava/lang/String;
-
-    new-instance p2, Ljava/io/File;
-
-    const-string p3, "ddc_opencl_cache.bin"
-
-    invoke-direct {p2, p1, p3}, Ljava/io/File;-><init>(Ljava/lang/String;Ljava/lang/String;)V
-
-    invoke-virtual {p2}, Ljava/io/File;->getAbsolutePath()Ljava/lang/String;
-
-    move-result-object p1
-
-    :goto_0
-    iput-object p1, p0, Lcom/google/android/apps/camera/dynamicdepth/DynamicDepthUtils;->c:Ljava/lang/String;
-
-    return-void
-
-    :cond_0
     const-string p1, ""
 
-    iput-object p1, p0, Lcom/google/android/apps/camera/dynamicdepth/DynamicDepthUtils;->d:Ljava/lang/String;
+    iput-object p1, p0, Lcom/google/android/apps/camera/dynamicdepth/DynamicDepthUtils;->b:Ljava/lang/String;
 
-    goto :goto_0
+    return-void
 .end method
 
 .method private static native createDynamicDepthFromPdImpl(JJJJ)Z
@@ -95,7 +53,7 @@
 .method public static native createDynamicDepthFromUltradepthImpl(JJJJZJ)Z
 .end method
 
-.method public static d([BLcom/google/android/apps/camera/dynamicdepth/DynamicDepthResult;Lgtk;)[B
+.method public static d([BLcom/google/android/apps/camera/dynamicdepth/DynamicDepthResult;Lhlr;)[B
     .locals 2
 
     iget-wide v0, p1, Lcom/google/android/apps/camera/dynamicdepth/DynamicDepthResult;->a:J
@@ -107,7 +65,7 @@
     goto :goto_0
 
     :cond_0
-    invoke-interface {p2}, Lgtk;->a()J
+    invoke-interface {p2}, Lhlr;->a()J
 
     move-result-wide p1
 
@@ -118,7 +76,7 @@
 
     if-eqz p0, :cond_1
 
-    sget-object p1, Lnbk;->a:Lnbc;
+    sget-object p1, Lovl;->a:Lovd;
 
     return-object p0
 
@@ -145,39 +103,39 @@
     monitor-enter p0
 
     :try_start_0
-    iget-boolean v0, p0, Lcom/google/android/apps/camera/dynamicdepth/DynamicDepthUtils;->e:Z
+    iget-boolean v0, p0, Lcom/google/android/apps/camera/dynamicdepth/DynamicDepthUtils;->c:Z
 
     if-nez v0, :cond_1
 
-    iget-boolean v0, p0, Lcom/google/android/apps/camera/dynamicdepth/DynamicDepthUtils;->b:Z
+    iget-object v0, p0, Lcom/google/android/apps/camera/dynamicdepth/DynamicDepthUtils;->b:Ljava/lang/String;
 
-    iget-object v1, p0, Lcom/google/android/apps/camera/dynamicdepth/DynamicDepthUtils;->c:Ljava/lang/String;
+    iget-object v1, p0, Lcom/google/android/apps/camera/dynamicdepth/DynamicDepthUtils;->d:Llzi;
 
-    iget-object v2, p0, Lcom/google/android/apps/camera/dynamicdepth/DynamicDepthUtils;->f:Lkog;
+    invoke-virtual {v1}, Llzi;->h()Z
 
-    invoke-virtual {v2}, Lkog;->i()Z
+    move-result v1
 
-    move-result v2
+    const/4 v2, 0x1
 
-    const/4 v3, 0x1
+    if-eq v2, v1, :cond_0
 
-    if-eq v3, v2, :cond_0
-
-    const/4 v2, 0x2
+    const/4 v1, 0x2
 
     goto :goto_0
 
     :cond_0
-    const/4 v2, 0x3
+    const/4 v1, 0x3
 
     :goto_0
-    add-int/lit8 v2, v2, -0x1
+    const/4 v3, 0x0
 
-    invoke-static {v0, v1, v2}, Lcom/google/android/apps/camera/dynamicdepth/DynamicDepthUtils;->initializePdImpl(ZLjava/lang/String;I)V
+    add-int/lit8 v1, v1, -0x1
 
-    iput-boolean v3, p0, Lcom/google/android/apps/camera/dynamicdepth/DynamicDepthUtils;->e:Z
+    invoke-static {v3, v0, v1}, Lcom/google/android/apps/camera/dynamicdepth/DynamicDepthUtils;->initializePdImpl(ZLjava/lang/String;I)V
 
-    sget-object v0, Lchy;->g:Lchy;
+    iput-boolean v2, p0, Lcom/google/android/apps/camera/dynamicdepth/DynamicDepthUtils;->c:Z
+
+    sget-object v0, Lbvf;->f:Lbvf;
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
@@ -188,7 +146,7 @@
 
     :cond_1
     :try_start_1
-    sget-object v0, Lchy;->h:Lchy;
+    sget-object v0, Lbvf;->g:Lbvf;
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
@@ -208,63 +166,63 @@
     goto :goto_2
 .end method
 
-.method public final declared-synchronized b(Lkpb;Lkpb;Lcom/google/android/apps/camera/dynamicdepth/DynamicDepthResult;Lcom/google/googlex/gcam/ShotMetadata;)Z
+.method public final declared-synchronized b(Lmad;Lmad;Lcom/google/android/apps/camera/dynamicdepth/DynamicDepthResult;Lcom/google/googlex/gcam/ShotMetadata;)Z
     .locals 2
 
     monitor-enter p0
 
     :try_start_0
-    new-instance v0, Lnsb;
+    new-instance v0, Lpko;
 
-    invoke-direct {v0}, Lnsb;-><init>()V
+    invoke-direct {v0}, Lpko;-><init>()V
 
-    invoke-virtual {v0, p1}, Lnsb;->a(Lkpb;)Lmqp;
+    invoke-virtual {v0, p1}, Lpko;->a(Lmad;)Lojc;
 
     move-result-object p1
 
-    invoke-virtual {p1}, Lmqp;->g()Z
+    invoke-virtual {p1}, Lojc;->g()Z
 
     move-result v1
 
     if-nez v1, :cond_0
 
-    sget-object p1, Lcom/google/android/apps/camera/dynamicdepth/DynamicDepthUtils;->a:Lnak;
+    sget-object p1, Lcom/google/android/apps/camera/dynamicdepth/DynamicDepthUtils;->a:Louj;
 
-    invoke-virtual {p1}, Lnaf;->b()Lnaz;
+    invoke-virtual {p1}, Loue;->b()Lova;
 
     move-result-object p1
 
-    sget-object p2, Lnbk;->a:Lnbc;
+    sget-object p2, Lovl;->a:Lovd;
 
     const-string p3, "CAM_DynDepthUtils"
 
-    invoke-interface {p1, p2, p3}, Lnaz;->g(Lnbc;Ljava/lang/Object;)Lnaz;
+    invoke-interface {p1, p2, p3}, Lova;->g(Lovd;Ljava/lang/Object;)Lova;
 
     move-result-object p1
 
     const-string p2, "Error converting the PD image."
 
-    const/16 p3, 0x416
+    const/16 p3, 0x345
 
-    invoke-static {p1, p2, p3}, Ld;->g(Lnaz;Ljava/lang/String;C)V
+    invoke-static {p1, p2, p3}, Ld;->v(Lova;Ljava/lang/String;C)V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    monitor-exit p0
-
     const/4 p1, 0x0
+
+    monitor-exit p0
 
     return p1
 
     :cond_0
     :try_start_1
-    invoke-virtual {p1}, Lmqp;->c()Ljava/lang/Object;
+    invoke-virtual {p1}, Lojc;->c()Ljava/lang/Object;
 
     move-result-object p1
 
     check-cast p1, Lcom/google/googlex/gcam/RawWriteView;
 
-    invoke-virtual {v0, p2}, Lnsb;->c(Lkpb;)Lcom/google/googlex/gcam/YuvWriteView;
+    invoke-virtual {v0, p2}, Lpko;->c(Lmad;)Lcom/google/googlex/gcam/YuvWriteView;
 
     move-result-object p2
 
@@ -300,11 +258,11 @@
 
     move-result-wide v1
 
-    invoke-static {p2}, Lcom/google/googlex/gcam/YuvWriteView;->c(Lcom/google/googlex/gcam/YuvWriteView;)J
+    invoke-static {p2}, Lcom/google/googlex/gcam/YuvWriteView;->e(Lcom/google/googlex/gcam/YuvWriteView;)J
 
     move-result-wide v3
 
-    invoke-static {p4}, Lcom/google/googlex/gcam/ShotMetadata;->a(Lcom/google/googlex/gcam/ShotMetadata;)J
+    invoke-static {p4}, Lcom/google/googlex/gcam/ShotMetadata;->c(Lcom/google/googlex/gcam/ShotMetadata;)J
 
     move-result-wide v5
 

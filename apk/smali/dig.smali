@@ -1,53 +1,51 @@
-.class public final Ldig;
+.class public final synthetic Ldig;
 .super Ljava/lang/Object;
 
+# interfaces
+.implements Ljava/lang/Runnable;
 
-# static fields
-.field private static final a:Ljava/util/regex/Pattern;
+
+# instance fields
+.field public final synthetic a:Ldij;
+
+.field public final synthetic b:J
+
+.field public final synthetic c:Lj$/time/Instant;
+
+.field public final synthetic d:Ljava/lang/String;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
+.method public synthetic constructor <init>(Ldij;JLj$/time/Instant;Ljava/lang/String;)V
+    .locals 0
 
-    const-string v0, "^(1|true|t|on|yes|y)$"
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const/4 v1, 0x2
+    iput-object p1, p0, Ldig;->a:Ldij;
 
-    invoke-static {v0, v1}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;I)Ljava/util/regex/Pattern;
+    iput-wide p2, p0, Ldig;->b:J
 
-    move-result-object v0
+    iput-object p4, p0, Ldig;->c:Lj$/time/Instant;
 
-    sput-object v0, Ldig;->a:Ljava/util/regex/Pattern;
-
-    const-string v0, "^(0|false|f|off|no|n)$"
-
-    invoke-static {v0, v1}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;I)Ljava/util/regex/Pattern;
+    iput-object p5, p0, Ldig;->d:Ljava/lang/String;
 
     return-void
 .end method
 
-.method public static a(Ljava/lang/String;)Z
-    .locals 1
 
-    sget-object v0, Ldig;->a:Ljava/util/regex/Pattern;
+# virtual methods
+.method public final run()V
+    .locals 5
 
-    invoke-virtual {v0, p0}, Ljava/util/regex/Pattern;->matcher(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;
+    iget-object v0, p0, Ldig;->a:Ldij;
 
-    move-result-object p0
+    iget-wide v1, p0, Ldig;->b:J
 
-    invoke-virtual {p0}, Ljava/util/regex/Matcher;->matches()Z
+    iget-object v3, p0, Ldig;->c:Lj$/time/Instant;
 
-    move-result p0
+    iget-object v4, p0, Ldig;->d:Ljava/lang/String;
 
-    if-eqz p0, :cond_0
+    invoke-virtual {v0, v1, v2, v3, v4}, Ldij;->m(JLj$/time/Instant;Ljava/lang/String;)V
 
-    const/4 p0, 0x1
-
-    return p0
-
-    :cond_0
-    const/4 p0, 0x0
-
-    return p0
+    return-void
 .end method

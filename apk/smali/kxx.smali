@@ -1,57 +1,76 @@
-.class final Lkxx;
-.super Ljava/lang/Object;
+.class public final Lkxx;
+.super Lkno;
 
-# interfaces
-.implements Lkxy;
+
+# static fields
+.field public static final CREATOR:Landroid/os/Parcelable$Creator;
 
 
 # instance fields
-.field final synthetic a:Lnph;
+.field public final a:I
 
-.field final synthetic b:Llep;
+.field public final b:Z
+
+.field public final c:Z
 
 
 # direct methods
-.method public constructor <init>(Lnph;Llep;)V
+.method static constructor <clinit>()V
+    .locals 2
+
+    new-instance v0, Lkxn;
+
+    const/16 v1, 0xa
+
+    invoke-direct {v0, v1}, Lkxn;-><init>(I)V
+
+    sput-object v0, Lkxx;->CREATOR:Landroid/os/Parcelable$Creator;
+
+    return-void
+.end method
+
+.method public constructor <init>(IZZ)V
     .locals 0
 
-    iput-object p1, p0, Lkxx;->a:Lnph;
+    invoke-direct {p0}, Lkno;-><init>()V
 
-    iput-object p2, p0, Lkxx;->b:Llep;
+    iput p1, p0, Lkxx;->a:I
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-boolean p2, p0, Lkxx;->b:Z
+
+    iput-boolean p3, p0, Lkxx;->c:Z
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Lnou;)V
-    .locals 1
+.method public final writeToParcel(Landroid/os/Parcel;I)V
+    .locals 2
 
-    iget-object v0, p0, Lkxx;->a:Lnph;
+    invoke-static {p1}, Lmip;->ct(Landroid/os/Parcel;)I
 
-    invoke-virtual {v0, p1}, Lnph;->f(Lnou;)Z
+    move-result p2
 
-    return-void
-.end method
+    iget v0, p0, Lkxx;->a:I
 
-.method public final b(Ljava/nio/ByteBuffer;Landroid/media/MediaCodec$BufferInfo;)V
-    .locals 1
+    const/4 v1, 0x2
 
-    iget-object v0, p0, Lkxx;->b:Llep;
+    invoke-static {p1, v1, v0}, Lmip;->cA(Landroid/os/Parcel;II)V
 
-    invoke-interface {v0, p1, p2}, Llep;->b(Ljava/nio/ByteBuffer;Landroid/media/MediaCodec$BufferInfo;)V
+    iget-boolean v0, p0, Lkxx;->b:Z
 
-    return-void
-.end method
+    const/4 v1, 0x3
 
-.method public final close()V
-    .locals 1
+    invoke-static {p1, v1, v0}, Lmip;->cw(Landroid/os/Parcel;IZ)V
 
-    iget-object v0, p0, Lkxx;->b:Llep;
+    iget-boolean v0, p0, Lkxx;->c:Z
 
-    invoke-interface {v0}, Llep;->close()V
+    const/4 v1, 0x4
+
+    invoke-static {p1, v1, v0}, Lmip;->cw(Landroid/os/Parcel;IZ)V
+
+    invoke-static {p1, p2}, Lmip;->cv(Landroid/os/Parcel;I)V
 
     return-void
 .end method

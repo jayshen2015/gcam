@@ -1,168 +1,93 @@
 .class final Lnas;
-.super Lnat;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Landroid/view/ViewTreeObserver$OnPreDrawListener;
 
 
 # instance fields
-.field private final b:Ljava/lang/String;
+.field final synthetic a:Lnat;
 
-.field private final c:Ljava/lang/String;
-
-.field private final d:I
-
-.field private final e:Ljava/lang/String;
-
-.field private f:I
+.field private final b:Ljava/util/concurrent/atomic/AtomicReference;
 
 
 # direct methods
-.method public constructor <init>(I)V
-    .locals 1
+.method public constructor <init>(Lnat;Landroid/view/View;)V
+    .locals 0
 
-    invoke-direct {p0}, Lnat;-><init>()V
+    iput-object p1, p0, Lnas;->a:Lnat;
 
-    const/4 v0, 0x0
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput v0, p0, Lnas;->f:I
+    new-instance p1, Ljava/util/concurrent/atomic/AtomicReference;
 
-    const-string v0, "A"
+    invoke-direct {p1, p2}, Ljava/util/concurrent/atomic/AtomicReference;-><init>(Ljava/lang/Object;)V
 
-    iput-object v0, p0, Lnas;->b:Ljava/lang/String;
-
-    const-string v0, "a"
-
-    iput-object v0, p0, Lnas;->c:Ljava/lang/String;
-
-    iput p1, p0, Lnas;->d:I
-
-    const-string p1, "PG"
-
-    iput-object p1, p0, Lnas;->e:Ljava/lang/String;
+    iput-object p1, p0, Lnas;->b:Ljava/util/concurrent/atomic/AtomicReference;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()I
-    .locals 1
+.method public final onPreDraw()Z
+    .locals 5
 
-    iget v0, p0, Lnas;->d:I
-
-    int-to-char v0, v0
-
-    return v0
-.end method
-
-.method public final b()Ljava/lang/String;
-    .locals 3
-
-    iget-object v0, p0, Lnas;->b:Ljava/lang/String;
-
-    const/16 v1, 0x2f
-
-    const/16 v2, 0x2e
-
-    invoke-virtual {v0, v1, v2}, Ljava/lang/String;->replace(CC)Ljava/lang/String;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public final c()Ljava/lang/String;
-    .locals 1
-
-    iget-object v0, p0, Lnas;->e:Ljava/lang/String;
-
-    return-object v0
-.end method
-
-.method public final d()Ljava/lang/String;
-    .locals 1
-
-    iget-object v0, p0, Lnas;->c:Ljava/lang/String;
-
-    return-object v0
-.end method
-
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 3
-
-    instance-of v0, p1, Lnas;
+    iget-object v0, p0, Lnas;->b:Ljava/util/concurrent/atomic/AtomicReference;
 
     const/4 v1, 0x0
 
-    if-eqz v0, :cond_0
+    invoke-virtual {v0, v1}, Ljava/util/concurrent/atomic/AtomicReference;->getAndSet(Ljava/lang/Object;)Ljava/lang/Object;
 
-    check-cast p1, Lnas;
+    move-result-object v0
 
-    iget-object v0, p0, Lnas;->b:Ljava/lang/String;
+    check-cast v0, Landroid/view/View;
 
-    iget-object v2, p1, Lnas;->b:Ljava/lang/String;
-
-    invoke-virtual {v0, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    iget-object v0, p0, Lnas;->c:Ljava/lang/String;
-
-    iget-object v2, p1, Lnas;->c:Ljava/lang/String;
-
-    invoke-virtual {v0, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    iget v0, p0, Lnas;->d:I
-
-    iget p1, p1, Lnas;->d:I
-
-    if-ne v0, p1, :cond_0
-
-    const/4 p1, 0x1
-
-    return p1
-
-    :cond_0
-    return v1
-.end method
-
-.method public final hashCode()I
-    .locals 2
-
-    iget v0, p0, Lnas;->f:I
+    const/4 v1, 0x1
 
     if-nez v0, :cond_0
 
-    iget-object v0, p0, Lnas;->b:Ljava/lang/String;
-
-    invoke-virtual {v0}, Ljava/lang/String;->hashCode()I
-
-    move-result v0
-
-    add-int/lit16 v0, v0, 0x1303
-
-    iget-object v1, p0, Lnas;->c:Ljava/lang/String;
-
-    mul-int/lit8 v0, v0, 0x1f
-
-    invoke-virtual {v1}, Ljava/lang/String;->hashCode()I
-
-    move-result v1
-
-    add-int/2addr v0, v1
-
-    mul-int/lit8 v0, v0, 0x1f
-
-    iget v1, p0, Lnas;->d:I
-
-    add-int/2addr v0, v1
-
-    iput v0, p0, Lnas;->f:I
+    return v1
 
     :cond_0
-    return v0
+    :try_start_0
+    invoke-virtual {v0}, Landroid/view/View;->getViewTreeObserver()Landroid/view/ViewTreeObserver;
+
+    move-result-object v0
+
+    invoke-virtual {v0, p0}, Landroid/view/ViewTreeObserver;->removeOnPreDrawListener(Landroid/view/ViewTreeObserver$OnPreDrawListener;)V
+
+    invoke-static {}, Lmyw;->e()Landroid/os/Handler;
+
+    move-result-object v0
+
+    iget-object v2, p0, Lnas;->a:Lnat;
+
+    new-instance v3, Lnap;
+
+    const/4 v4, 0x2
+
+    invoke-direct {v3, v2, v4}, Lnap;-><init>(Lnat;I)V
+
+    invoke-virtual {v0, v3}, Landroid/os/Handler;->postAtFrontOfQueue(Ljava/lang/Runnable;)Z
+
+    iget-object v0, p0, Lnas;->a:Lnat;
+
+    new-instance v2, Lnap;
+
+    const/4 v3, 0x3
+
+    invoke-direct {v2, v0, v3}, Lnap;-><init>(Lnat;I)V
+
+    invoke-static {v2}, Lmyw;->h(Ljava/lang/Runnable;)V
+    :try_end_0
+    .catch Ljava/lang/RuntimeException; {:try_start_0 .. :try_end_0} :catch_0
+
+    goto :goto_0
+
+    :catch_0
+    move-exception v0
+
+    :goto_0
+    return v1
 .end method

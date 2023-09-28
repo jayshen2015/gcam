@@ -1,214 +1,81 @@
-.class public final Lnlt;
-.super Lnws;
+.class public final synthetic Lnlt;
+.super Ljava/lang/Object;
 
 # interfaces
-.implements Lnxz;
-
-
-# static fields
-.field public static final f:Lnlt;
-
-.field private static volatile h:Lnyf;
+.implements Loiu;
 
 
 # instance fields
-.field public a:I
+.field public final synthetic a:Ljava/lang/String;
 
-.field public b:Ljava/lang/String;
-
-.field public c:Ljava/lang/String;
-
-.field public d:Ljava/lang/String;
-
-.field public e:I
-
-.field private g:B
+.field public final synthetic b:Ljava/lang/String;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
+.method public synthetic constructor <init>(Ljava/lang/String;Ljava/lang/String;)V
+    .locals 0
 
-    new-instance v0, Lnlt;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {v0}, Lnlt;-><init>()V
+    iput-object p1, p0, Lnlt;->a:Ljava/lang/String;
 
-    sput-object v0, Lnlt;->f:Lnlt;
-
-    const-class v1, Lnlt;
-
-    invoke-static {v1, v0}, Lnws;->aa(Ljava/lang/Class;Lnws;)V
-
-    return-void
-.end method
-
-.method private constructor <init>()V
-    .locals 1
-
-    invoke-direct {p0}, Lnws;-><init>()V
-
-    const/4 v0, 0x2
-
-    iput-byte v0, p0, Lnlt;->g:B
-
-    const-string v0, ""
-
-    iput-object v0, p0, Lnlt;->b:Ljava/lang/String;
-
-    iput-object v0, p0, Lnlt;->c:Ljava/lang/String;
-
-    iput-object v0, p0, Lnlt;->d:Ljava/lang/String;
+    iput-object p2, p0, Lnlt;->b:Ljava/lang/String;
 
     return-void
 .end method
 
 
 # virtual methods
-.method protected final a(ILjava/lang/Object;)Ljava/lang/Object;
-    .locals 3
+.method public final a(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 6
 
-    add-int/lit8 p1, p1, -0x1
+    iget-object v0, p0, Lnlt;->a:Ljava/lang/String;
 
-    const/4 v0, 0x1
+    iget-object v1, p0, Lnlt;->b:Ljava/lang/String;
 
-    const/4 v1, 0x0
+    check-cast p1, Ljava/lang/String;
 
-    packed-switch p1, :pswitch_data_0
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
-    :pswitch_0
-    if-nez p2, :cond_2
+    move-result-object v2
 
-    const/4 v0, 0x0
+    invoke-virtual {v2}, Ljava/lang/String;->length()I
 
-    goto :goto_1
+    move-result v2
 
-    :pswitch_1
-    sget-object p1, Lnlt;->h:Lnyf;
+    invoke-static {p1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
-    if-nez p1, :cond_1
+    move-result-object v3
 
-    const-class p2, Lnlt;
+    invoke-virtual {v3}, Ljava/lang/String;->length()I
 
-    monitor-enter p2
+    move-result v3
 
-    :try_start_0
-    sget-object p1, Lnlt;->h:Lnyf;
+    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
-    if-nez p1, :cond_0
+    move-result-object v4
 
-    new-instance p1, Lnwo;
+    invoke-virtual {v4}, Ljava/lang/String;->length()I
 
-    sget-object v0, Lnlt;->f:Lnlt;
+    move-result v4
 
-    invoke-direct {p1, v0}, Lnwo;-><init>(Lnws;)V
+    new-instance v5, Ljava/lang/StringBuilder;
 
-    sput-object p1, Lnlt;->h:Lnyf;
+    add-int/2addr v2, v3
 
-    :cond_0
-    monitor-exit p2
+    add-int/2addr v2, v4
 
-    goto :goto_0
+    invoke-direct {v5, v2}, Ljava/lang/StringBuilder;-><init>(I)V
 
-    :catchall_0
-    move-exception p1
+    invoke-virtual {v5, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    monitor-exit p2
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    invoke-virtual {v5, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    throw p1
+    invoke-virtual {v5, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    :cond_1
-    :goto_0
-    return-object p1
-
-    :pswitch_2
-    sget-object p1, Lnlt;->f:Lnlt;
-
-    return-object p1
-
-    :pswitch_3
-    new-instance p1, Lnwn;
-
-    sget-object p2, Lnlt;->f:Lnlt;
-
-    invoke-direct {p1, p2}, Lnwn;-><init>(Lnws;)V
-
-    return-object p1
-
-    :pswitch_4
-    new-instance p1, Lnlt;
-
-    invoke-direct {p1}, Lnlt;-><init>()V
-
-    return-object p1
-
-    :pswitch_5
-    const-string p1, "a"
-
-    const-string p2, "\u0001\u0004\u0000\u0001\u0005\u0008\u0004\u0000\u0000\u0003\u0005\u1508\u0000\u0006\u1508\u0001\u0007\u1008\u0002\u0008\u1504\u0003"
-
-    const/4 v2, 0x5
-
-    new-array v2, v2, [Ljava/lang/Object;
-
-    aput-object p1, v2, v1
-
-    const-string p1, "b"
-
-    aput-object p1, v2, v0
-
-    const/4 p1, 0x2
-
-    const-string v0, "c"
-
-    aput-object v0, v2, p1
-
-    const/4 p1, 0x3
-
-    const-string v0, "d"
-
-    aput-object v0, v2, p1
-
-    const/4 p1, 0x4
-
-    const-string v0, "e"
-
-    aput-object v0, v2, p1
-
-    sget-object p1, Lnlt;->f:Lnlt;
-
-    invoke-static {p1, p2, v2}, Lnlt;->X(Lnxy;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p1
 
     return-object p1
-
-    :pswitch_6
-    iget-byte p1, p0, Lnlt;->g:B
-
-    invoke-static {p1}, Ljava/lang/Byte;->valueOf(B)Ljava/lang/Byte;
-
-    move-result-object p1
-
-    return-object p1
-
-    :cond_2
-    :goto_1
-    iput-byte v0, p0, Lnlt;->g:B
-
-    const/4 p1, 0x0
-
-    return-object p1
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_6
-        :pswitch_0
-        :pswitch_5
-        :pswitch_4
-        :pswitch_3
-        :pswitch_2
-        :pswitch_1
-    .end packed-switch
 .end method

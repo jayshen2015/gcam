@@ -1,444 +1,202 @@
 .class public final Lckh;
 .super Ljava/lang/Object;
 
-# interfaces
-.implements Lckf;
-
-
-# static fields
-.field private static final a:Lnak;
-
 
 # instance fields
-.field private final b:Ljvs;
+.field public final a:Lcpm;
 
-.field private final c:Litm;
+.field public final b:Landroid/content/Context;
 
-.field private final d:Ljwb;
+.field public final c:Lcoh;
 
-.field private final e:F
+.field public final d:Lcsh;
 
-.field private final f:F
+.field public final e:Lcpp;
 
-.field private g:Landroid/os/HandlerThread;
+.field public final f:Lcqq;
 
-.field private h:Landroid/os/Handler;
+.field public final g:Lcfg;
 
-.field private final i:Landroid/media/AudioManager;
+.field public final h:Lemb;
 
-.field private j:I
+.field private final i:Lcvo;
 
-.field private final k:Lcvr;
+.field private final j:Lddf;
+
+.field private final k:Ldkm;
+
+.field private final l:Llwf;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
-
-    const-string v0, "com/google/android/apps/camera/audiozoom/AudioZoomControllerImpl"
-
-    invoke-static {v0}, Lnak;->h(Ljava/lang/String;)Lnak;
-
-    move-result-object v0
-
-    sput-object v0, Lckh;->a:Lnak;
-
-    return-void
-.end method
-
-.method public constructor <init>(Litm;Ljvs;Lcvr;Landroid/media/AudioManager;Ljwb;[B[B)V
+.method public constructor <init>(Lcvo;Llwf;Lddf;Ldkm;Lcpm;Lcsh;Lemb;Landroid/content/Context;Lcoh;Lcpp;Lcfg;Lcqq;[B[B)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const/4 p6, 0x0
+    iput-object p1, p0, Lckh;->i:Lcvo;
 
-    iput-object p6, p0, Lckh;->g:Landroid/os/HandlerThread;
+    iput-object p2, p0, Lckh;->l:Llwf;
 
-    iput-object p2, p0, Lckh;->b:Ljvs;
+    iput-object p3, p0, Lckh;->j:Lddf;
 
-    iput-object p1, p0, Lckh;->c:Litm;
+    iput-object p4, p0, Lckh;->k:Ldkm;
 
-    iput-object p3, p0, Lckh;->k:Lcvr;
+    iput-object p5, p0, Lckh;->a:Lcpm;
 
-    iput-object p4, p0, Lckh;->i:Landroid/media/AudioManager;
+    iput-object p7, p0, Lckh;->h:Lemb;
 
-    iput-object p5, p0, Lckh;->d:Ljwb;
+    iput-object p8, p0, Lckh;->b:Landroid/content/Context;
 
-    invoke-interface {p1}, Litm;->d()F
+    iput-object p9, p0, Lckh;->c:Lcoh;
 
-    move-result p2
+    iput-object p6, p0, Lckh;->d:Lcsh;
 
-    iput p2, p0, Lckh;->e:F
+    iput-object p10, p0, Lckh;->e:Lcpp;
 
-    invoke-interface {p1}, Litm;->e()F
+    iput-object p11, p0, Lckh;->g:Lcfg;
 
-    move-result p1
-
-    iput p1, p0, Lckh;->f:F
+    iput-object p12, p0, Lckh;->f:Lcqq;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()V
-    .locals 5
-
-    iget-object v0, p0, Lckh;->g:Landroid/os/HandlerThread;
-
-    if-eqz v0, :cond_0
-
-    invoke-virtual {v0}, Landroid/os/HandlerThread;->quit()Z
-
-    const/4 v0, 0x0
-
-    iput-object v0, p0, Lckh;->g:Landroid/os/HandlerThread;
-
-    :cond_0
-    new-instance v0, Landroid/os/HandlerThread;
-
-    const-string v1, "audioZoomThread"
-
-    invoke-direct {v0, v1}, Landroid/os/HandlerThread;-><init>(Ljava/lang/String;)V
-
-    iput-object v0, p0, Lckh;->g:Landroid/os/HandlerThread;
-
-    invoke-virtual {v0}, Landroid/os/HandlerThread;->start()V
-
-    new-instance v0, Lckg;
-
-    iget-object v1, p0, Lckh;->g:Landroid/os/HandlerThread;
-
-    invoke-virtual {v1}, Landroid/os/HandlerThread;->getLooper()Landroid/os/Looper;
-
-    move-result-object v1
-
-    invoke-direct {v0, p0, v1}, Lckg;-><init>(Lckh;Landroid/os/Looper;)V
-
-    iput-object v0, p0, Lckh;->h:Landroid/os/Handler;
-
-    iget-object v0, p0, Lckh;->c:Litm;
-
-    new-instance v1, Liqh;
-
-    const/4 v2, 0x1
-
-    invoke-direct {v1, p0, v2}, Liqh;-><init>(Lckh;I)V
-
-    invoke-interface {v0, v1}, Litm;->k(Litl;)V
-
-    iget-object v0, p0, Lckh;->k:Lcvr;
-
-    sget-object v1, Lcua;->b:Lcua;
-
-    invoke-virtual {v0, v1}, Lcvr;->q(Lcua;)Ljuf;
-
-    move-result-object v0
-
-    iget-object v1, p0, Lckh;->b:Ljvs;
-
-    new-instance v3, Lcbl;
-
-    const/16 v4, 0xf
-
-    invoke-direct {v3, p0, v4}, Lcbl;-><init>(Lckh;I)V
-
-    sget-object v4, Lnnv;->a:Lnnv;
-
-    invoke-interface {v1, v3, v4}, Ljvs;->a(Lkai;Ljava/util/concurrent/Executor;)Lkad;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Ljuf;->d(Lkad;)V
-
-    iget-object v0, p0, Lckh;->k:Lcvr;
-
-    sget-object v1, Lcua;->b:Lcua;
-
-    invoke-virtual {v0, v1}, Lcvr;->q(Lcua;)Ljuf;
-
-    move-result-object v0
-
-    invoke-virtual {v0, p0}, Ljuf;->d(Lkad;)V
-
-    iput v2, p0, Lckh;->j:I
-
-    return-void
-.end method
-
-.method public final b()V
-    .locals 2
-
-    const/4 v0, 0x2
-
-    iput v0, p0, Lckh;->j:I
-
-    iget-object v0, p0, Lckh;->i:Landroid/media/AudioManager;
-
-    const-string v1, "cal_devid=-2147483520;cal_moduleid=268435527;cal_instanceid=32768;cal_apptype=69940;cal_paramid=268435543;cal_topoid=268438458;cal_data=AQAAAA=="
-
-    invoke-virtual {v0, v1}, Landroid/media/AudioManager;->setParameters(Ljava/lang/String;)V
-
-    invoke-virtual {p0}, Lckh;->d()F
-
-    move-result v0
-
-    invoke-virtual {p0, v0}, Lckh;->f(F)V
-
-    return-void
-.end method
-
-.method public final c()V
-    .locals 2
-
-    const/4 v0, 0x3
-
-    iput v0, p0, Lckh;->j:I
-
-    iget-object v0, p0, Lckh;->h:Landroid/os/Handler;
-
-    if-eqz v0, :cond_0
-
-    const/4 v1, 0x0
-
-    invoke-virtual {v0, v1}, Landroid/os/Handler;->removeMessages(I)V
-
-    :cond_0
-    return-void
-.end method
-
-.method public final close()V
+.method public final a()Ljrl;
     .locals 1
 
-    const/4 v0, 0x1
+    iget-object v0, p0, Lckh;->c:Lcoh;
 
-    iput v0, p0, Lckh;->j:I
-
-    iget-object v0, p0, Lckh;->g:Landroid/os/HandlerThread;
-
-    if-eqz v0, :cond_0
-
-    invoke-virtual {v0}, Landroid/os/HandlerThread;->quitSafely()Z
-
-    const/4 v0, 0x0
-
-    iput-object v0, p0, Lckh;->g:Landroid/os/HandlerThread;
-
-    :cond_0
-    return-void
-.end method
-
-.method public final d()F
-    .locals 3
-
-    iget-object v0, p0, Lckh;->b:Ljvs;
-
-    invoke-interface {v0}, Ljvs;->bm()Ljava/lang/Object;
+    invoke-virtual {v0}, Lcoh;->a()Ljrl;
 
     move-result-object v0
 
-    check-cast v0, Ljava/lang/Float;
-
-    invoke-virtual {v0}, Ljava/lang/Float;->floatValue()F
-
-    move-result v0
-
-    const/high16 v1, 0x3f800000    # 1.0f
-
-    cmpg-float v2, v0, v1
-
-    if-gez v2, :cond_0
-
-    const/4 v0, 0x0
-
-    return v0
-
-    :cond_0
-    iget v2, p0, Lckh;->f:F
-
-    invoke-static {v1, v2}, Ljava/lang/Math;->max(FF)F
-
-    move-result v1
-
-    sub-float/2addr v0, v1
-
-    iget v2, p0, Lckh;->e:F
-
-    sub-float/2addr v2, v1
-
-    div-float/2addr v0, v2
-
-    return v0
+    return-object v0
 .end method
 
-.method public final e()V
-    .locals 3
+.method public final b()Llvs;
+    .locals 4
 
-    iget-object v0, p0, Lckh;->h:Landroid/os/Handler;
+    iget-object v0, p0, Lckh;->i:Lcvo;
 
-    if-eqz v0, :cond_0
-
-    iget v1, p0, Lckh;->j:I
-
-    const/4 v2, 0x2
-
-    if-ne v1, v2, :cond_0
-
-    const/4 v1, 0x0
-
-    invoke-virtual {v0, v1}, Landroid/os/Handler;->sendEmptyMessage(I)Z
-
-    :cond_0
-    return-void
-.end method
-
-.method public final f(F)V
-    .locals 3
-
-    iget-object v0, p0, Lckh;->d:Ljwb;
-
-    invoke-interface {v0}, Ljwb;->bm()Ljava/lang/Object;
+    invoke-virtual {v0}, Lcvo;->d()Llwd;
 
     move-result-object v0
 
-    check-cast v0, Ljava/lang/Boolean;
+    iget-object v1, p0, Lckh;->k:Ldkm;
 
-    invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
+    iget-object v2, p0, Lckh;->l:Llwf;
 
-    move-result v0
+    iget-object v3, p0, Lckh;->j:Lddf;
 
-    if-eqz v0, :cond_4
+    invoke-virtual {v1, v2, v3, v0}, Ldkm;->b(Llvq;Lddf;Llwd;)Llvs;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public final c()Llvs;
+    .locals 7
+
+    invoke-virtual {p0}, Lckh;->b()Llvs;
+
+    move-result-object v0
+
+    if-nez v0, :cond_0
 
     const/4 v0, 0x0
 
-    :try_start_0
-    new-instance v1, Landroid/media/AudioRecord$Builder;
-
-    invoke-direct {v1}, Landroid/media/AudioRecord$Builder;-><init>()V
-
-    invoke-virtual {v1}, Landroid/media/AudioRecord$Builder;->build()Landroid/media/AudioRecord;
-
-    move-result-object v0
-    :try_end_0
-    .catch Ljava/lang/RuntimeException; {:try_start_0 .. :try_end_0} :catch_1
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    if-eqz v0, :cond_1
-
-    const/4 v1, 0x0
-
-    cmpl-float v1, p1, v1
-
-    if-nez v1, :cond_0
-
-    const p1, 0x3a83126f    # 0.001f
+    return-object v0
 
     :cond_0
-    :try_start_1
-    invoke-virtual {v0, p1}, Landroid/media/AudioRecord;->setPreferredMicrophoneFieldDimension(F)Z
+    iget-object v1, p0, Lckh;->l:Llwf;
 
-    move-result v1
-
-    if-nez v1, :cond_1
-
-    sget-object v1, Lckh;->a:Lnak;
-
-    invoke-virtual {v1}, Lnaf;->b()Lnaz;
+    invoke-virtual {v1, v0}, Llwf;->a(Llvs;)Llvp;
 
     move-result-object v1
 
-    check-cast v1, Lnah;
+    invoke-interface {v1}, Llvp;->k()Llwd;
 
-    const/16 v2, 0xd6
+    move-result-object v2
 
-    invoke-interface {v1, v2}, Lnah;->G(I)Lnaz;
+    sget-object v3, Llwd;->a:Llwd;
+
+    if-ne v2, v3, :cond_2
+
+    invoke-interface {v1}, Llvp;->L()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_2
+
+    iget-object v2, p0, Lckh;->j:Lddf;
+
+    sget-object v3, Lddl;->U:Lddg;
+
+    invoke-interface {v2, v3}, Lddf;->k(Lddg;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_2
+
+    new-instance v2, Landroid/graphics/Rect;
+
+    const/4 v3, 0x0
+
+    invoke-direct {v2, v3, v3, v3, v3}, Landroid/graphics/Rect;-><init>(IIII)V
+
+    check-cast v1, Llvo;
+
+    iget-object v1, v1, Llvo;->b:Lope;
+
+    invoke-interface {v1}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
 
     move-result-object v1
 
-    check-cast v1, Lnah;
+    :goto_0
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
-    const-string v2, "Failed to set audio zoom ratio, ratio = %g"
+    move-result v3
 
-    invoke-static {p1}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
+    if-eqz v3, :cond_2
 
-    move-result-object p1
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    invoke-interface {v1, v2, p1}, Lnah;->r(Ljava/lang/String;Ljava/lang/Object;)V
-    :try_end_1
-    .catch Ljava/lang/RuntimeException; {:try_start_1 .. :try_end_1} :catch_0
-    .catchall {:try_start_1 .. :try_end_1} :catchall_1
+    move-result-object v3
+
+    check-cast v3, Llvs;
+
+    iget-object v4, p0, Lckh;->l:Llwf;
+
+    invoke-virtual {v4, v3}, Llwf;->a(Llvs;)Llvp;
+
+    move-result-object v4
+
+    invoke-interface {v4}, Llvp;->h()Landroid/graphics/Rect;
+
+    move-result-object v5
+
+    iget v5, v5, Landroid/graphics/Rect;->right:I
+
+    iget v6, v2, Landroid/graphics/Rect;->right:I
+
+    if-le v5, v6, :cond_1
+
+    invoke-interface {v4}, Llvp;->h()Landroid/graphics/Rect;
+
+    move-result-object v0
+
+    move-object v2, v0
+
+    move-object v0, v3
 
     goto :goto_0
 
-    :catch_0
-    move-exception p1
-
-    goto :goto_2
-
     :cond_1
-    :goto_0
-    if-eqz v0, :cond_2
-
-    :goto_1
-    invoke-virtual {v0}, Landroid/media/AudioRecord;->release()V
-
-    return-void
-
-    :catchall_0
-    move-exception p1
-
-    goto :goto_3
-
-    :catch_1
-    move-exception p1
-
-    :goto_2
-    :try_start_2
-    sget-object v1, Lckh;->a:Lnak;
-
-    invoke-virtual {v1}, Lnaf;->b()Lnaz;
-
-    move-result-object v1
-
-    check-cast v1, Lnah;
-
-    const/16 v2, 0xd5
-
-    invoke-interface {v1, v2}, Lnah;->G(I)Lnaz;
-
-    move-result-object v1
-
-    check-cast v1, Lnah;
-
-    const-string v2, "Failed to call Audio Zoom API. error: %s"
-
-    invoke-virtual {p1}, Ljava/lang/RuntimeException;->getMessage()Ljava/lang/String;
-
-    move-result-object p1
-
-    invoke-interface {v1, v2, p1}, Lnah;->r(Ljava/lang/String;Ljava/lang/Object;)V
-    :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_1
-
-    if-eqz v0, :cond_2
-
-    goto :goto_1
+    goto :goto_0
 
     :cond_2
-    return-void
-
-    :catchall_1
-    move-exception p1
-
-    :goto_3
-    if-eqz v0, :cond_3
-
-    invoke-virtual {v0}, Landroid/media/AudioRecord;->release()V
-
-    :cond_3
-    throw p1
-
-    :cond_4
-    return-void
+    return-object v0
 .end method

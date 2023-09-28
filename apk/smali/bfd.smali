@@ -1,100 +1,155 @@
 .class public final Lbfd;
 .super Ljava/lang/Object;
 
-# interfaces
-.implements Ljava/util/Iterator;
+
+# static fields
+.field private static final a:Ljava/util/Queue;
 
 
 # instance fields
-.field public final a:Lbfp;
+.field private b:I
 
-.field public b:Ljava/lang/String;
+.field private c:I
 
-.field private c:Ljava/util/Iterator;
+.field private d:Ljava/lang/Object;
 
 
 # direct methods
-.method public constructor <init>(Lbff;)V
-    .locals 3
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+.method static constructor <clinit>()V
+    .locals 1
 
     const/4 v0, 0x0
 
-    iput-object v0, p0, Lbfd;->b:Ljava/lang/String;
+    invoke-static {v0}, Lbmf;->h(I)Ljava/util/Queue;
 
-    iput-object v0, p0, Lbfd;->c:Ljava/util/Iterator;
+    move-result-object v0
 
-    new-instance v1, Lbfp;
+    sput-object v0, Lbfd;->a:Ljava/util/Queue;
 
-    invoke-direct {v1}, Lbfp;-><init>()V
+    return-void
+.end method
 
-    iput-object v1, p0, Lbfd;->a:Lbfp;
+.method private constructor <init>()V
+    .locals 0
 
-    iget-object p1, p1, Lbff;->a:Lbfi;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const/16 v2, 0x100
+    return-void
+.end method
 
-    invoke-virtual {v1, v2}, Lbfq;->h(I)Z
+.method public static b(Ljava/lang/Object;)Lbfd;
+    .locals 2
 
-    move-result v1
+    sget-object v0, Lbfd;->a:Ljava/util/Queue;
+
+    monitor-enter v0
+
+    :try_start_0
+    invoke-interface {v0}, Ljava/util/Queue;->poll()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Lbfd;
+
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     if-nez v1, :cond_0
 
-    new-instance v1, Lbfb;
+    new-instance v1, Lbfd;
 
-    const/4 v2, 0x1
-
-    invoke-direct {v1, p0, p1, v0, v2}, Lbfb;-><init>(Lbfd;Lbfi;Ljava/lang/String;I)V
-
-    iput-object v1, p0, Lbfd;->c:Ljava/util/Iterator;
-
-    return-void
+    invoke-direct {v1}, Lbfd;-><init>()V
 
     :cond_0
-    new-instance v0, Lbfc;
+    iput-object p0, v1, Lbfd;->d:Ljava/lang/Object;
 
-    invoke-direct {v0, p0, p1}, Lbfc;-><init>(Lbfd;Lbfi;)V
+    const/4 p0, 0x0
 
-    iput-object v0, p0, Lbfd;->c:Ljava/util/Iterator;
+    iput p0, v1, Lbfd;->c:I
 
-    return-void
+    iput p0, v1, Lbfd;->b:I
+
+    return-object v1
+
+    :catchall_0
+    move-exception p0
+
+    :try_start_1
+    monitor-exit v0
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    throw p0
 .end method
 
 
 # virtual methods
-.method public final hasNext()Z
+.method public final a()V
+    .locals 2
+
+    sget-object v0, Lbfd;->a:Ljava/util/Queue;
+
+    monitor-enter v0
+
+    :try_start_0
+    invoke-interface {v0, p0}, Ljava/util/Queue;->offer(Ljava/lang/Object;)Z
+
+    monitor-exit v0
+
+    return-void
+
+    :catchall_0
+    move-exception v1
+
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw v1
+.end method
+
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 2
+
+    instance-of v0, p1, Lbfd;
+
+    const/4 v1, 0x0
+
+    if-eqz v0, :cond_0
+
+    check-cast p1, Lbfd;
+
+    iget v0, p1, Lbfd;->c:I
+
+    iget v0, p1, Lbfd;->b:I
+
+    iget-object v0, p0, Lbfd;->d:Ljava/lang/Object;
+
+    iget-object p1, p1, Lbfd;->d:Ljava/lang/Object;
+
+    invoke-virtual {v0, p1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+
+    move-result p1
+
+    if-eqz p1, :cond_0
+
+    const/4 p1, 0x1
+
+    return p1
+
+    :cond_0
+    return v1
+.end method
+
+.method public final hashCode()I
     .locals 1
 
-    iget-object v0, p0, Lbfd;->c:Ljava/util/Iterator;
+    iget-object v0, p0, Lbfd;->d:Ljava/lang/Object;
 
-    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
+    invoke-virtual {v0}, Ljava/lang/Object;->hashCode()I
 
     move-result v0
 
     return v0
-.end method
-
-.method public final next()Ljava/lang/Object;
-    .locals 1
-
-    iget-object v0, p0, Lbfd;->c:Ljava/util/Iterator;
-
-    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public final remove()V
-    .locals 2
-
-    new-instance v0, Ljava/lang/UnsupportedOperationException;
-
-    const-string v1, "The XMPIterator does not support remove()."
-
-    invoke-direct {v0, v1}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
-
-    throw v0
 .end method

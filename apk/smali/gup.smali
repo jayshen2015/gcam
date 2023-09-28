@@ -1,44 +1,45 @@
-.class final Lgup;
-.super Landroid/content/BroadcastReceiver;
+.class public final synthetic Lgup;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Landroid/view/View$OnClickListener;
 
 
 # instance fields
-.field final synthetic a:Lguq;
+.field public final synthetic a:Lguq;
+
+.field public final synthetic b:Lgtp;
 
 
 # direct methods
-.method public constructor <init>(Lguq;)V
+.method public synthetic constructor <init>(Lguq;Lgtp;)V
     .locals 0
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     iput-object p1, p0, Lgup;->a:Lguq;
 
-    invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
+    iput-object p2, p0, Lgup;->b:Lgtp;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onReceive(Landroid/content/Context;Landroid/content/Intent;)V
-    .locals 1
+.method public final onClick(Landroid/view/View;)V
+    .locals 2
 
     iget-object p1, p0, Lgup;->a:Lguq;
 
-    invoke-static {p2}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+    iget-object v0, p0, Lgup;->b:Lgtp;
 
-    move-result-object p2
+    iget-object v1, p1, Lguq;->n:Lgtv;
 
-    invoke-static {p2}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+    invoke-virtual {p1}, Lguq;->isEnabled()Z
 
-    move-result-object p2
+    move-result p1
 
-    const-string v0, "Received UserPresent broadcast: "
-
-    invoke-virtual {v0, p2}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object p2
-
-    invoke-virtual {p1, p2}, Lguq;->c(Ljava/lang/String;)V
+    invoke-interface {v0, v1, p1}, Lgtp;->a(Lgtv;Z)V
 
     return-void
 .end method

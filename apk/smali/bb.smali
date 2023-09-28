@@ -2,79 +2,76 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Ladj;
+.implements Landroid/os/Parcelable;
+
+
+# static fields
+.field public static final CREATOR:Landroid/os/Parcelable$Creator;
 
 
 # instance fields
-.field final synthetic a:Landroid/view/View;
+.field final a:Ljava/util/List;
 
-.field final synthetic b:Landroid/view/ViewGroup;
-
-.field final synthetic c:Lbf;
-
-.field final synthetic d:Ldl;
+.field final b:Ljava/util/List;
 
 
 # direct methods
-.method public constructor <init>(Landroid/view/View;Landroid/view/ViewGroup;Lbf;Ldl;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 2
 
-    iput-object p1, p0, Lbb;->a:Landroid/view/View;
+    new-instance v0, Lba;
 
-    iput-object p2, p0, Lbb;->b:Landroid/view/ViewGroup;
+    const/4 v1, 0x0
 
-    iput-object p3, p0, Lbb;->c:Lbf;
+    invoke-direct {v0, v1}, Lba;-><init>(I)V
 
-    iput-object p4, p0, Lbb;->d:Ldl;
+    sput-object v0, Lbb;->CREATOR:Landroid/os/Parcelable$Creator;
+
+    return-void
+.end method
+
+.method public constructor <init>(Landroid/os/Parcel;)V
+    .locals 1
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    invoke-virtual {p1}, Landroid/os/Parcel;->createStringArrayList()Ljava/util/ArrayList;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lbb;->a:Ljava/util/List;
+
+    sget-object v0, Laz;->CREATOR:Landroid/os/Parcelable$Creator;
+
+    invoke-virtual {p1, v0}, Landroid/os/Parcel;->createTypedArrayList(Landroid/os/Parcelable$Creator;)Ljava/util/ArrayList;
+
+    move-result-object p1
+
+    iput-object p1, p0, Lbb;->b:Ljava/util/List;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()V
-    .locals 2
+.method public final describeContents()I
+    .locals 1
 
-    iget-object v0, p0, Lbb;->a:Landroid/view/View;
+    const/4 v0, 0x0
 
-    invoke-virtual {v0}, Landroid/view/View;->clearAnimation()V
+    return v0
+.end method
 
-    iget-object v0, p0, Lbb;->b:Landroid/view/ViewGroup;
+.method public final writeToParcel(Landroid/os/Parcel;I)V
+    .locals 0
 
-    iget-object v1, p0, Lbb;->a:Landroid/view/View;
+    iget-object p2, p0, Lbb;->a:Ljava/util/List;
 
-    invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->endViewTransition(Landroid/view/View;)V
+    invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeStringList(Ljava/util/List;)V
 
-    iget-object v0, p0, Lbb;->c:Lbf;
+    iget-object p2, p0, Lbb;->b:Ljava/util/List;
 
-    invoke-virtual {v0}, Lbg;->b()V
+    invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeTypedList(Ljava/util/List;)V
 
-    const/4 v0, 0x2
-
-    invoke-static {v0}, Lcq;->S(I)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v1, "Animation from operation "
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-object v1, p0, Lbb;->d:Ldl;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const-string v1, " has been cancelled."
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    :cond_0
     return-void
 .end method

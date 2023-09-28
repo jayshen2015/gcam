@@ -55,7 +55,7 @@
 .end method
 
 .method public static b(FFZ)F
-    .locals 4
+    .locals 6
 
     const/high16 v0, 0x3fc00000    # 1.5f
 
@@ -63,25 +63,25 @@
 
     if-eqz p2, :cond_0
 
-    const-wide/high16 v0, 0x3ff0000000000000L    # 1.0
+    float-to-double v0, p0
 
-    sget-wide v2, Lwr;->a:D
+    const-wide/high16 v2, 0x3ff0000000000000L    # 1.0
 
-    sub-double/2addr v0, v2
+    sget-wide v4, Lwr;->a:D
 
-    float-to-double p1, p1
+    sub-double/2addr v2, v4
 
-    float-to-double v2, p0
+    float-to-double p0, p1
 
-    invoke-static {p1, p2}, Ljava/lang/Double;->isNaN(D)Z
+    invoke-static {p0, p1}, Ljava/lang/Double;->isNaN(D)Z
 
-    mul-double v0, v0, p1
+    mul-double v2, v2, p0
 
-    invoke-static {v2, v3}, Ljava/lang/Double;->isNaN(D)Z
+    invoke-static {v0, v1}, Ljava/lang/Double;->isNaN(D)Z
 
-    add-double/2addr v2, v0
+    add-double/2addr v0, v2
 
-    double-to-float p0, v2
+    double-to-float p0, v0
 
     :cond_0
     return p0

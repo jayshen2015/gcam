@@ -3,11 +3,11 @@
 
 
 # instance fields
-.field private final F:Z
+.field private F:Z
 
-.field private final G:Landroid/widget/SeekBar$OnSeekBarChangeListener;
+.field private G:Landroid/widget/SeekBar$OnSeekBarChangeListener;
 
-.field private final H:Landroid/view/View$OnKeyListener;
+.field private H:Landroid/view/View$OnKeyListener;
 
 .field public a:I
 
@@ -17,9 +17,9 @@
 
 .field public d:Landroid/widget/SeekBar;
 
-.field public final e:Z
+.field public e:Z
 
-.field public final f:Z
+.field public f:Z
 
 .field private g:I
 
@@ -32,27 +32,25 @@
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
     .locals 4
 
-    const v0, 0x7f04057d
+    const v0, 0x7f04043a
 
     const/4 v1, 0x0
 
     invoke-direct {p0, p1, p2, v0, v1}, Landroidx/preference/Preference;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;II)V
 
-    new-instance v2, Lhwl;
+    new-instance v2, Laho;
 
-    const/4 v3, 0x1
-
-    invoke-direct {v2, p0, v3}, Lhwl;-><init>(Landroidx/preference/SeekBarPreference;I)V
+    invoke-direct {v2, p0}, Laho;-><init>(Landroidx/preference/SeekBarPreference;)V
 
     iput-object v2, p0, Landroidx/preference/SeekBarPreference;->G:Landroid/widget/SeekBar$OnSeekBarChangeListener;
 
-    new-instance v2, Laot;
+    new-instance v2, Lahp;
 
-    invoke-direct {v2, p0}, Laot;-><init>(Landroidx/preference/SeekBarPreference;)V
+    invoke-direct {v2, p0}, Lahp;-><init>(Landroidx/preference/SeekBarPreference;)V
 
     iput-object v2, p0, Landroidx/preference/SeekBarPreference;->H:Landroid/view/View$OnKeyListener;
 
-    sget-object v2, Laos;->k:[I
+    sget-object v2, Lahn;->k:[I
 
     invoke-virtual {p1, p2, v2, v0, v1}, Landroid/content/Context;->obtainStyledAttributes(Landroid/util/AttributeSet;[III)Landroid/content/res/TypedArray;
 
@@ -66,60 +64,62 @@
 
     iput p2, p0, Landroidx/preference/SeekBarPreference;->b:I
 
-    const/16 p2, 0x64
+    const/4 p2, 0x1
 
-    invoke-virtual {p1, v3, p2}, Landroid/content/res/TypedArray;->getInt(II)I
+    const/16 v0, 0x64
 
-    move-result p2
+    invoke-virtual {p1, p2, v0}, Landroid/content/res/TypedArray;->getInt(II)I
 
-    iget v0, p0, Landroidx/preference/SeekBarPreference;->b:I
+    move-result v0
 
-    if-ge p2, v0, :cond_0
+    iget v2, p0, Landroidx/preference/SeekBarPreference;->b:I
 
-    move p2, v0
+    if-ge v0, v2, :cond_0
+
+    move v0, v2
 
     :cond_0
-    iget v0, p0, Landroidx/preference/SeekBarPreference;->g:I
+    iget v2, p0, Landroidx/preference/SeekBarPreference;->g:I
 
-    if-eq p2, v0, :cond_1
+    if-eq v0, v2, :cond_1
 
-    iput p2, p0, Landroidx/preference/SeekBarPreference;->g:I
+    iput v0, p0, Landroidx/preference/SeekBarPreference;->g:I
 
     invoke-virtual {p0}, Landroidx/preference/Preference;->d()V
 
     :cond_1
-    const/4 p2, 0x4
+    const/4 v0, 0x4
 
-    invoke-virtual {p1, p2, v1}, Landroid/content/res/TypedArray;->getInt(II)I
+    invoke-virtual {p1, v0, v1}, Landroid/content/res/TypedArray;->getInt(II)I
 
-    move-result p2
+    move-result v0
 
-    iget v0, p0, Landroidx/preference/SeekBarPreference;->h:I
+    iget v2, p0, Landroidx/preference/SeekBarPreference;->h:I
 
-    if-eq p2, v0, :cond_2
+    if-eq v0, v2, :cond_2
 
-    iget v0, p0, Landroidx/preference/SeekBarPreference;->g:I
+    iget v2, p0, Landroidx/preference/SeekBarPreference;->g:I
 
-    iget v2, p0, Landroidx/preference/SeekBarPreference;->b:I
+    iget v3, p0, Landroidx/preference/SeekBarPreference;->b:I
 
-    sub-int/2addr v0, v2
+    sub-int/2addr v2, v3
 
-    invoke-static {p2}, Ljava/lang/Math;->abs(I)I
+    invoke-static {v0}, Ljava/lang/Math;->abs(I)I
 
-    move-result p2
+    move-result v0
 
-    invoke-static {v0, p2}, Ljava/lang/Math;->min(II)I
+    invoke-static {v2, v0}, Ljava/lang/Math;->min(II)I
 
-    move-result p2
+    move-result v0
 
-    iput p2, p0, Landroidx/preference/SeekBarPreference;->h:I
+    iput v0, p0, Landroidx/preference/SeekBarPreference;->h:I
 
     invoke-virtual {p0}, Landroidx/preference/Preference;->d()V
 
     :cond_2
-    const/4 p2, 0x2
+    const/4 v0, 0x2
 
-    invoke-virtual {p1, p2, v3}, Landroid/content/res/TypedArray;->getBoolean(IZ)Z
+    invoke-virtual {p1, v0, p2}, Landroid/content/res/TypedArray;->getBoolean(IZ)Z
 
     move-result p2
 
@@ -171,7 +171,7 @@
 
     invoke-virtual {p0, p1}, Landroidx/preference/SeekBarPreference;->l(I)V
 
-    invoke-virtual {p0}, Landroidx/preference/Preference;->aa()Z
+    invoke-virtual {p0}, Landroidx/preference/Preference;->Y()Z
 
     move-result v0
 
@@ -182,23 +182,23 @@
     :cond_2
     xor-int/lit8 v0, p1, -0x1
 
-    invoke-virtual {p0, v0}, Landroidx/preference/Preference;->q(I)I
+    invoke-virtual {p0, v0}, Landroidx/preference/Preference;->p(I)I
 
     move-result v0
 
     if-eq p1, v0, :cond_3
 
-    iget-object v0, p0, Landroidx/preference/Preference;->k:Laoo;
+    iget-object v0, p0, Landroidx/preference/Preference;->k:Lahj;
 
-    invoke-virtual {v0}, Laoo;->b()Landroid/content/SharedPreferences$Editor;
+    invoke-virtual {v0}, Lahj;->b()Landroid/content/SharedPreferences$Editor;
 
     move-result-object v0
 
-    iget-object v1, p0, Landroidx/preference/Preference;->r:Ljava/lang/String;
+    iget-object v1, p0, Landroidx/preference/Preference;->t:Ljava/lang/String;
 
     invoke-interface {v0, v1, p1}, Landroid/content/SharedPreferences$Editor;->putInt(Ljava/lang/String;I)Landroid/content/SharedPreferences$Editor;
 
-    invoke-super {p0, v0}, Landroidx/preference/Preference;->U(Landroid/content/SharedPreferences$Editor;)V
+    invoke-super {p0, v0}, Landroidx/preference/Preference;->S(Landroid/content/SharedPreferences$Editor;)V
 
     :cond_3
     :goto_0
@@ -214,20 +214,20 @@
 
 
 # virtual methods
-.method public final a(Laor;)V
+.method public final a(Lahm;)V
     .locals 2
 
-    invoke-super {p0, p1}, Landroidx/preference/Preference;->a(Laor;)V
+    invoke-super {p0, p1}, Landroidx/preference/Preference;->a(Lahm;)V
 
-    iget-object v0, p1, Laor;->a:Landroid/view/View;
+    iget-object v0, p1, Lahm;->a:Landroid/view/View;
 
     iget-object v1, p0, Landroidx/preference/SeekBarPreference;->H:Landroid/view/View$OnKeyListener;
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setOnKeyListener(Landroid/view/View$OnKeyListener;)V
 
-    const v0, 0x7f0b02ff
+    const v0, 0x7f0b028d
 
-    invoke-virtual {p1, v0}, Laor;->B(I)Landroid/view/View;
+    invoke-virtual {p1, v0}, Lahm;->B(I)Landroid/view/View;
 
     move-result-object v0
 
@@ -235,9 +235,9 @@
 
     iput-object v0, p0, Landroidx/preference/SeekBarPreference;->d:Landroid/widget/SeekBar;
 
-    const v0, 0x7f0b0300
+    const v0, 0x7f0b028e
 
-    invoke-virtual {p1, v0}, Laor;->B(I)Landroid/view/View;
+    invoke-virtual {p1, v0}, Lahm;->B(I)Landroid/view/View;
 
     move-result-object p1
 
@@ -328,7 +328,7 @@
 
     iget-object p1, p0, Landroidx/preference/SeekBarPreference;->d:Landroid/widget/SeekBar;
 
-    invoke-virtual {p0}, Landroidx/preference/Preference;->Z()Z
+    invoke-virtual {p0}, Landroidx/preference/Preference;->X()Z
 
     move-result v0
 
@@ -344,28 +344,28 @@
 
     move-result-object v0
 
-    iget-boolean v1, p0, Landroidx/preference/Preference;->u:Z
+    iget-boolean v1, p0, Landroidx/preference/Preference;->w:Z
 
     if-eqz v1, :cond_0
 
     return-object v0
 
     :cond_0
-    new-instance v1, Laou;
+    new-instance v1, Lahq;
 
-    invoke-direct {v1, v0}, Laou;-><init>(Landroid/os/Parcelable;)V
+    invoke-direct {v1, v0}, Lahq;-><init>(Landroid/os/Parcelable;)V
 
     iget v0, p0, Landroidx/preference/SeekBarPreference;->a:I
 
-    iput v0, v1, Laou;->a:I
+    iput v0, v1, Lahq;->a:I
 
     iget v0, p0, Landroidx/preference/SeekBarPreference;->b:I
 
-    iput v0, v1, Laou;->b:I
+    iput v0, v1, Lahq;->b:I
 
     iget v0, p0, Landroidx/preference/SeekBarPreference;->g:I
 
-    iput v0, v1, Laou;->c:I
+    iput v0, v1, Lahq;->c:I
 
     return-object v1
 .end method
@@ -393,7 +393,7 @@
 
     move-result-object v0
 
-    const-class v1, Laou;
+    const-class v1, Lahq;
 
     invoke-virtual {v0, v1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
 
@@ -406,23 +406,23 @@
     return-void
 
     :cond_0
-    check-cast p1, Laou;
+    check-cast p1, Lahq;
 
-    invoke-virtual {p1}, Laou;->getSuperState()Landroid/os/Parcelable;
+    invoke-virtual {p1}, Lahq;->getSuperState()Landroid/os/Parcelable;
 
     move-result-object v0
 
     invoke-super {p0, v0}, Landroidx/preference/Preference;->g(Landroid/os/Parcelable;)V
 
-    iget v0, p1, Laou;->a:I
+    iget v0, p1, Lahq;->a:I
 
     iput v0, p0, Landroidx/preference/SeekBarPreference;->a:I
 
-    iget v0, p1, Laou;->b:I
+    iget v0, p1, Lahq;->b:I
 
     iput v0, p0, Landroidx/preference/SeekBarPreference;->b:I
 
-    iget p1, p1, Laou;->c:I
+    iget p1, p1, Lahq;->c:I
 
     iput p1, p0, Landroidx/preference/SeekBarPreference;->g:I
 
@@ -449,7 +449,7 @@
 
     move-result p1
 
-    invoke-virtual {p0, p1}, Landroidx/preference/Preference;->q(I)I
+    invoke-virtual {p0, p1}, Landroidx/preference/Preference;->p(I)I
 
     move-result p1
 
@@ -479,7 +479,7 @@
 
     move-result-object v1
 
-    invoke-virtual {p0, v1}, Landroidx/preference/Preference;->W(Ljava/lang/Object;)Z
+    invoke-virtual {p0, v1}, Landroidx/preference/Preference;->U(Ljava/lang/Object;)Z
 
     move-result v1
 

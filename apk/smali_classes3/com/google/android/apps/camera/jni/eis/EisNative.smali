@@ -8,7 +8,7 @@
 
     const-class v0, Lcom/google/android/apps/camera/jni/eis/EisNative;
 
-    invoke-static {v0}, Lkak;->a(Ljava/lang/Class;)V
+    invoke-static {v0}, Llil;->a(Ljava/lang/Class;)V
 
     return-void
 .end method
@@ -33,13 +33,13 @@
 .method public static native isTripodMode(J)Z
 .end method
 
-.method public static native processFrame(J[BIIJJJJFFFZJ[F[F[FIZ)J
+.method public static native processFrame(J[BIIJJJJFFFZJ[F[F[F)J
 .end method
 
 .method public static native processGyro(JFFFJ)Z
 .end method
 
-.method public static native processLensOffset(JFFJI)Z
+.method public static native processLensOffset(JFFJ)Z
 .end method
 
 .method public static native releaseHandle(J)V

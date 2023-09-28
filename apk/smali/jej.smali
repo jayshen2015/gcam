@@ -1,41 +1,54 @@
-.class final Ljej;
-.super Ljava/lang/Object;
-
-# interfaces
-.implements Ljdk;
+.class Ljej;
+.super Ljea;
 
 
 # instance fields
-.field final synthetic a:Lcom/google/android/gms/common/api/internal/BasePendingResult;
-
-.field final synthetic b:Ligo;
+.field final synthetic b:Ljek;
 
 
 # direct methods
-.method public constructor <init>(Ligo;Lcom/google/android/gms/common/api/internal/BasePendingResult;[B[B[B)V
+.method public constructor <init>(Ljek;)V
     .locals 0
 
-    iput-object p1, p0, Ljej;->b:Ligo;
+    iput-object p1, p0, Ljej;->b:Ljek;
 
-    iput-object p2, p0, Ljej;->a:Lcom/google/android/gms/common/api/internal/BasePendingResult;
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljea;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Lcom/google/android/gms/common/api/Status;)V
-    .locals 1
+.method public a()V
+    .locals 0
 
-    iget-object p1, p0, Ljej;->b:Ligo;
+    return-void
+.end method
 
-    iget-object p1, p1, Ligo;->b:Ljava/lang/Object;
+.method public final f()V
+    .locals 2
 
-    iget-object v0, p0, Ljej;->a:Lcom/google/android/gms/common/api/internal/BasePendingResult;
+    sget-object v0, Lovl;->a:Lovd;
 
-    invoke-interface {p1, v0}, Ljava/util/Map;->remove(Ljava/lang/Object;)Ljava/lang/Object;
+    iget-object v0, p0, Ljej;->b:Ljek;
+
+    iget-object v0, v0, Ljek;->e:Ljen;
+
+    invoke-interface {v0}, Ljen;->h()V
+
+    iget-object v0, p0, Ljej;->b:Ljek;
+
+    iget-object v0, v0, Ljek;->d:Landroid/view/View;
+
+    const/4 v1, 0x0
+
+    invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
+
+    iget-object v0, p0, Ljej;->b:Ljek;
+
+    const/4 v1, 0x1
+
+    invoke-virtual {v0, v1}, Ljek;->i(Z)V
 
     return-void
 .end method

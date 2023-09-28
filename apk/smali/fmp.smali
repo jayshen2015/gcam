@@ -2,21 +2,17 @@
 .super Ljava/lang/Object;
 
 
-# static fields
-.field public static final a:Lfiw;
+# instance fields
+.field public final a:Lfxh;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
+.method public constructor <init>(Lfxh;)V
+    .locals 0
 
-    new-instance v0, Lfiw;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const/16 v1, 0x14
-
-    invoke-direct {v0, v1}, Lfiw;-><init>(I)V
-
-    sput-object v0, Lfmp;->a:Lfiw;
+    iput-object p1, p0, Lfmp;->a:Lfxh;
 
     return-void
 .end method

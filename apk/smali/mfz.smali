@@ -1,167 +1,97 @@
 .class public final Lmfz;
 .super Ljava/lang/Object;
 
-# interfaces
-.implements Landroid/os/Parcelable$ClassLoaderCreator;
-
 
 # instance fields
-.field private final synthetic a:I
+.field public a:Lmgm;
+
+.field public b:Lmga;
+
+.field public c:Ljava/lang/String;
+
+.field public d:Lojc;
+
+.field public e:Lojc;
+
+.field public f:Lojc;
+
+.field public g:Lojc;
+
+.field public h:Lojc;
+
+.field public i:Lojc;
+
+.field public j:Lojc;
+
+.field public k:Lojc;
 
 
 # direct methods
-.method public constructor <init>(I)V
+.method public constructor <init>()V
     .locals 0
-
-    iput p1, p0, Lmfz;->a:I
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
+.method public constructor <init>([B)V
+    .locals 0
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    sget-object p1, Loih;->a:Loih;
+
+    iput-object p1, p0, Lmfz;->d:Lojc;
+
+    sget-object p1, Loih;->a:Loih;
+
+    iput-object p1, p0, Lmfz;->e:Lojc;
+
+    sget-object p1, Loih;->a:Loih;
+
+    iput-object p1, p0, Lmfz;->f:Lojc;
+
+    sget-object p1, Loih;->a:Loih;
+
+    iput-object p1, p0, Lmfz;->g:Lojc;
+
+    sget-object p1, Loih;->a:Loih;
+
+    iput-object p1, p0, Lmfz;->h:Lojc;
+
+    sget-object p1, Loih;->a:Loih;
+
+    iput-object p1, p0, Lmfz;->i:Lojc;
+
+    sget-object p1, Loih;->a:Loih;
+
+    iput-object p1, p0, Lmfz;->j:Lojc;
+
+    sget-object p1, Loih;->a:Loih;
+
+    iput-object p1, p0, Lmfz;->k:Lojc;
+
+    return-void
+.end method
+
 
 # virtual methods
-.method public final synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
-    .locals 2
-
-    iget v0, p0, Lmfz;->a:I
-
-    const/4 v1, 0x0
-
-    packed-switch v0, :pswitch_data_0
-
-    new-instance v0, Lmkv;
-
-    invoke-direct {v0, p1, v1}, Lmkv;-><init>(Landroid/os/Parcel;Ljava/lang/ClassLoader;)V
-
-    return-object v0
-
-    :pswitch_0
-    new-instance v0, Lmhv;
-
-    invoke-direct {v0, p1, v1}, Lmhv;-><init>(Landroid/os/Parcel;Ljava/lang/ClassLoader;)V
-
-    return-object v0
-
-    :pswitch_1
-    new-instance v0, Lmgi;
-
-    invoke-direct {v0, p1, v1}, Lmgi;-><init>(Landroid/os/Parcel;Ljava/lang/ClassLoader;)V
-
-    return-object v0
-
-    :pswitch_2
-    new-instance v0, Lmff;
-
-    invoke-direct {v0, p1, v1}, Lmff;-><init>(Landroid/os/Parcel;Ljava/lang/ClassLoader;)V
-
-    return-object v0
-
-    :pswitch_3
-    new-instance v0, Lmga;
-
-    invoke-direct {v0, p1, v1}, Lmga;-><init>(Landroid/os/Parcel;Ljava/lang/ClassLoader;)V
-
-    return-object v0
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_3
-        :pswitch_2
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
-.end method
-
-.method public final synthetic createFromParcel(Landroid/os/Parcel;Ljava/lang/ClassLoader;)Ljava/lang/Object;
+.method public final a(Lmga;)V
     .locals 1
 
-    iget v0, p0, Lmfz;->a:I
+    if-eqz p1, :cond_0
 
-    packed-switch v0, :pswitch_data_0
+    iput-object p1, p0, Lmfz;->b:Lmga;
 
-    new-instance v0, Lmkv;
+    return-void
 
-    invoke-direct {v0, p1, p2}, Lmkv;-><init>(Landroid/os/Parcel;Ljava/lang/ClassLoader;)V
+    :cond_0
+    new-instance p1, Ljava/lang/NullPointerException;
 
-    return-object v0
+    const-string v0, "Null engineType"
 
-    :pswitch_0
-    new-instance v0, Lmhv;
+    invoke-direct {p1, v0}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
 
-    invoke-direct {v0, p1, p2}, Lmhv;-><init>(Landroid/os/Parcel;Ljava/lang/ClassLoader;)V
-
-    return-object v0
-
-    :pswitch_1
-    new-instance v0, Lmgi;
-
-    invoke-direct {v0, p1, p2}, Lmgi;-><init>(Landroid/os/Parcel;Ljava/lang/ClassLoader;)V
-
-    return-object v0
-
-    :pswitch_2
-    new-instance v0, Lmff;
-
-    invoke-direct {v0, p1, p2}, Lmff;-><init>(Landroid/os/Parcel;Ljava/lang/ClassLoader;)V
-
-    return-object v0
-
-    :pswitch_3
-    new-instance v0, Lmga;
-
-    invoke-direct {v0, p1, p2}, Lmga;-><init>(Landroid/os/Parcel;Ljava/lang/ClassLoader;)V
-
-    return-object v0
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_3
-        :pswitch_2
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
-.end method
-
-.method public final synthetic newArray(I)[Ljava/lang/Object;
-    .locals 1
-
-    iget v0, p0, Lmfz;->a:I
-
-    packed-switch v0, :pswitch_data_0
-
-    new-array p1, p1, [Lmkv;
-
-    return-object p1
-
-    :pswitch_0
-    new-array p1, p1, [Lmhv;
-
-    return-object p1
-
-    :pswitch_1
-    new-array p1, p1, [Lmgi;
-
-    return-object p1
-
-    :pswitch_2
-    new-array p1, p1, [Lmff;
-
-    return-object p1
-
-    :pswitch_3
-    new-array p1, p1, [Lmga;
-
-    return-object p1
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_3
-        :pswitch_2
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
+    throw p1
 .end method

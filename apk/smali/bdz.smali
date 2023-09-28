@@ -1,103 +1,59 @@
 .class public final Lbdz;
 .super Ljava/lang/Object;
 
+# interfaces
+.implements Ljava/util/concurrent/ThreadFactory;
+
 
 # instance fields
-.field public final a:Ljava/util/Map;
-
-.field public final b:Ljava/util/Map;
-
-.field public final c:Ljava/lang/Object;
-
-.field public final d:Lbkb;
+.field private final synthetic a:I
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
-
-    const-string v0, "WorkTimer"
-
-    invoke-static {v0}, Laxq;->b(Ljava/lang/String;)Ljava/lang/String;
-
-    return-void
-.end method
-
-.method public constructor <init>(Lbkb;[B[B)V
+.method public constructor <init>(I)V
     .locals 0
 
+    iput p1, p0, Lbdz;->a:I
+
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    new-instance p2, Ljava/util/HashMap;
-
-    invoke-direct {p2}, Ljava/util/HashMap;-><init>()V
-
-    iput-object p2, p0, Lbdz;->a:Ljava/util/Map;
-
-    new-instance p2, Ljava/util/HashMap;
-
-    invoke-direct {p2}, Ljava/util/HashMap;-><init>()V
-
-    iput-object p2, p0, Lbdz;->b:Ljava/util/Map;
-
-    new-instance p2, Ljava/lang/Object;
-
-    invoke-direct {p2}, Ljava/lang/Object;-><init>()V
-
-    iput-object p2, p0, Lbdz;->c:Ljava/lang/Object;
-
-    iput-object p1, p0, Lbdz;->d:Lbkb;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Lbbx;)V
-    .locals 3
+.method public final newThread(Ljava/lang/Runnable;)Ljava/lang/Thread;
+    .locals 4
 
-    iget-object v0, p0, Lbdz;->c:Ljava/lang/Object;
+    iget v0, p0, Lbdz;->a:I
 
-    monitor-enter v0
+    packed-switch v0, :pswitch_data_0
 
-    :try_start_0
-    iget-object v1, p0, Lbdz;->a:Ljava/util/Map;
+    new-instance v0, Ljava/lang/Thread;
 
-    invoke-interface {v1, p1}, Ljava/util/Map;->remove(Ljava/lang/Object;)Ljava/lang/Object;
+    new-instance v1, Lerf;
 
-    move-result-object v1
+    const/4 v2, 0x1
 
-    check-cast v1, Lbdy;
+    const/4 v3, 0x0
 
-    if-eqz v1, :cond_0
+    invoke-direct {v1, p1, v2, v3}, Lerf;-><init>(Ljava/lang/Runnable;I[B)V
 
-    invoke-static {}, Laxq;->a()Laxq;
+    const-string p1, "glide-active-resources"
 
-    new-instance v1, Ljava/lang/StringBuilder;
+    invoke-direct {v0, v1, p1}, Ljava/lang/Thread;-><init>(Ljava/lang/Runnable;Ljava/lang/String;)V
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+    return-object v0
 
-    const-string v2, "Stopping timer for "
+    :pswitch_0
+    new-instance v0, Lbdy;
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-direct {v0, p1}, Lbdy;-><init>(Ljava/lang/Runnable;)V
 
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    return-object v0
 
-    iget-object v1, p0, Lbdz;->b:Ljava/util/Map;
-
-    invoke-interface {v1, p1}, Ljava/util/Map;->remove(Ljava/lang/Object;)Ljava/lang/Object;
-
-    :cond_0
-    monitor-exit v0
-
-    return-void
-
-    :catchall_0
-    move-exception p1
-
-    monitor-exit v0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw p1
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

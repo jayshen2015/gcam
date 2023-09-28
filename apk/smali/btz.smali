@@ -1,88 +1,57 @@
-.class public final Lbtz;
+.class public interface abstract Lbtz;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lbva;
-.implements Lbty;
+.implements Landroid/os/Parcelable;
 
 
-# instance fields
-.field private final a:Landroid/content/res/AssetManager;
-
-.field private final synthetic b:I
+# static fields
+.field public static final a:Llig;
 
 
 # direct methods
-.method public constructor <init>(Landroid/content/res/AssetManager;I)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 2
 
-    iput p2, p0, Lbtz;->b:I
+    new-instance v0, Llig;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const/4 v1, 0x0
 
-    iput-object p1, p0, Lbtz;->a:Landroid/content/res/AssetManager;
+    invoke-direct {v0, v1, v1}, Llig;-><init>(II)V
+
+    sput-object v0, Lbtz;->a:Llig;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Landroid/content/res/AssetManager;Ljava/lang/String;)Lbqo;
-    .locals 1
-
-    iget v0, p0, Lbtz;->b:I
-
-    packed-switch v0, :pswitch_data_0
-
-    new-instance v0, Lbqv;
-
-    invoke-direct {v0, p1, p2}, Lbqv;-><init>(Landroid/content/res/AssetManager;Ljava/lang/String;)V
-
-    return-object v0
-
-    :pswitch_0
-    new-instance v0, Lbrd;
-
-    invoke-direct {v0, p1, p2}, Lbrd;-><init>(Landroid/content/res/AssetManager;Ljava/lang/String;)V
-
-    return-object v0
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+.method public abstract a()I
 .end method
 
-.method public final b(Lbve;)Lbuz;
-    .locals 2
+.method public abstract b()J
+.end method
 
-    iget p1, p0, Lbtz;->b:I
+.method public abstract c()Landroid/net/Uri;
+.end method
 
-    const/4 v0, 0x1
+.method public abstract d()Lhsp;
+.end method
 
-    packed-switch p1, :pswitch_data_0
+.method public abstract e()Llig;
+.end method
 
-    new-instance p1, Lbuk;
+.method public abstract f()Loom;
+.end method
 
-    iget-object v1, p0, Lbtz;->a:Landroid/content/res/AssetManager;
+.method public abstract g()Lj$/time/Instant;
+.end method
 
-    invoke-direct {p1, v1, p0, v0}, Lbuk;-><init>(Landroid/content/res/AssetManager;Lbty;I)V
+.method public abstract h()Lj$/time/Instant;
+.end method
 
-    return-object p1
+.method public abstract i()Ljava/lang/String;
+.end method
 
-    :pswitch_0
-    new-instance p1, Lbuk;
-
-    iget-object v1, p0, Lbtz;->a:Landroid/content/res/AssetManager;
-
-    invoke-direct {p1, v1, p0, v0}, Lbuk;-><init>(Landroid/content/res/AssetManager;Lbty;I)V
-
-    return-object p1
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+.method public abstract j()Z
 .end method

@@ -29,11 +29,11 @@
 
     move-result-object v0
 
-    sget v1, Landroid/system/OsConstants;->SEEK_SET:I
+    const-wide/16 v1, 0x0
 
-    const-wide/16 v2, 0x0
+    sget v3, Landroid/system/OsConstants;->SEEK_SET:I
 
-    invoke-static {v0, v2, v3, v1}, Landroid/system/Os;->lseek(Ljava/io/FileDescriptor;JI)J
+    invoke-static {v0, v1, v2, v3}, Landroid/system/Os;->lseek(Ljava/io/FileDescriptor;JI)J
     :try_end_0
     .catch Landroid/system/ErrnoException; {:try_start_0 .. :try_end_0} :catch_0
 

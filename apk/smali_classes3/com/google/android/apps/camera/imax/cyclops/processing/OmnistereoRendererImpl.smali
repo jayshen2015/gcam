@@ -2,7 +2,7 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lejv;
+.implements Lejq;
 
 
 # instance fields

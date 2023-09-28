@@ -1,12 +1,12 @@
 .class public Landroidx/work/impl/background/systemalarm/ConstraintProxy$StorageNotLowProxy;
-.super Lazm;
+.super Laop;
 
 
 # direct methods
 .method public constructor <init>()V
     .locals 0
 
-    invoke-direct {p0}, Lazm;-><init>()V
+    invoke-direct {p0}, Laop;-><init>()V
 
     return-void
 .end method

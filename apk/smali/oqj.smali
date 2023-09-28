@@ -1,18 +1,12 @@
 .class public final Loqj;
-.super Lore;
-
-
-# instance fields
-.field private final a:Loqh;
+.super Lost;
 
 
 # direct methods
-.method public constructor <init>(Loqh;)V
+.method public constructor <init>(Ljava/util/Iterator;)V
     .locals 0
 
-    invoke-direct {p0}, Lore;-><init>()V
-
-    iput-object p1, p0, Loqj;->a:Loqh;
+    invoke-direct {p0, p1}, Lost;-><init>(Ljava/util/Iterator;)V
 
     return-void
 .end method
@@ -22,21 +16,11 @@
 .method public final bridge synthetic a(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    check-cast p1, Ljava/lang/Throwable;
+    check-cast p1, Ljava/util/Map$Entry;
 
-    invoke-virtual {p0, p1}, Loqj;->b(Ljava/lang/Throwable;)V
+    invoke-interface {p1}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
-    sget-object p1, Lojk;->a:Lojk;
+    move-result-object p1
 
     return-object p1
-.end method
-
-.method public final b(Ljava/lang/Throwable;)V
-    .locals 0
-
-    iget-object p1, p0, Loqj;->a:Loqh;
-
-    invoke-interface {p1}, Loqh;->cN()V
-
-    return-void
 .end method

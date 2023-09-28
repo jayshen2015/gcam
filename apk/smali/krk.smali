@@ -1,89 +1,40 @@
 .class public final Lkrk;
-.super Ljava/lang/Object;
-
-# interfaces
-.implements Lkrl;
+.super Landroid/os/Binder;
 
 
 # instance fields
-.field private final a:Ljava/io/InputStream;
+.field private final a:Ljava/lang/String;
 
 
 # direct methods
-.method public constructor <init>(Ljava/io/InputStream;)V
+.method public constructor <init>(Ljava/lang/String;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Landroid/os/Binder;-><init>()V
 
-    iput-object p1, p0, Lkrk;->a:Ljava/io/InputStream;
+    iput-object p1, p0, Lkrk;->a:Ljava/lang/String;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()I
-    .locals 1
+.method protected final onTransact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
+    .locals 0
 
-    iget-object v0, p0, Lkrk;->a:Ljava/io/InputStream;
+    new-instance p1, Ljava/lang/IllegalStateException;
 
-    invoke-virtual {v0}, Ljava/io/InputStream;->read()I
+    iget-object p2, p0, Lkrk;->a:Ljava/lang/String;
 
-    move-result v0
+    invoke-direct {p1, p2}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 
-    return v0
+    throw p1
 .end method
 
-.method public final b(I)V
-    .locals 3
+.method public final queryLocalInterface(Ljava/lang/String;)Landroid/os/IInterface;
+    .locals 0
 
-    iget-object v0, p0, Lkrk;->a:Ljava/io/InputStream;
+    const/4 p1, 0x0
 
-    int-to-long v1, p1
-
-    invoke-static {v0, v1, v2}, Lcom/google/common/io/ByteStreams;->skipFully(Ljava/io/InputStream;J)V
-
-    return-void
-.end method
-
-.method public final c(II)Lmnp;
-    .locals 3
-
-    new-array v0, p1, [B
-
-    iget-object v1, p0, Lkrk;->a:Ljava/io/InputStream;
-
-    const/4 v2, 0x0
-
-    invoke-static {v1, v0, v2, p1}, Lcom/google/common/io/ByteStreams;->read(Ljava/io/InputStream;[BII)I
-
-    move-result p1
-
-    new-instance v1, Lmnp;
-
-    invoke-direct {v1, v0, p2, v2, p1}, Lmnp;-><init>([BIII)V
-
-    return-object v1
-.end method
-
-.method public final d()Lmnp;
-    .locals 5
-
-    iget-object v0, p0, Lkrk;->a:Ljava/io/InputStream;
-
-    invoke-static {v0}, Lcom/google/common/io/ByteStreams;->toByteArray(Ljava/io/InputStream;)[B
-
-    move-result-object v0
-
-    new-instance v1, Lmnp;
-
-    array-length v2, v0
-
-    const/16 v3, 0xda
-
-    const/4 v4, 0x0
-
-    invoke-direct {v1, v0, v3, v4, v2}, Lmnp;-><init>([BIII)V
-
-    return-object v1
+    return-object p1
 .end method

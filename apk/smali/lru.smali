@@ -3,53 +3,38 @@
 
 
 # static fields
-.field public static final a:Ljava/util/regex/Pattern;
+.field public static final a:[Landroid/hardware/camera2/params/MeteringRectangle;
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 1
+    .locals 8
 
-    const-string v0, "(\\w+).*"
+    const/4 v0, 0x1
 
-    invoke-static {v0}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;
+    new-array v0, v0, [Landroid/hardware/camera2/params/MeteringRectangle;
 
-    move-result-object v0
+    new-instance v7, Landroid/hardware/camera2/params/MeteringRectangle;
 
-    sput-object v0, Llru;->a:Ljava/util/regex/Pattern;
+    const/4 v2, 0x0
+
+    const/4 v3, 0x0
+
+    const/4 v4, 0x0
+
+    const/4 v5, 0x0
+
+    const/4 v6, 0x0
+
+    move-object v1, v7
+
+    invoke-direct/range {v1 .. v6}, Landroid/hardware/camera2/params/MeteringRectangle;-><init>(IIIII)V
+
+    const/4 v1, 0x0
+
+    aput-object v7, v0, v1
+
+    sput-object v0, Llru;->a:[Landroid/hardware/camera2/params/MeteringRectangle;
 
     return-void
-.end method
-
-.method public static a(Ljava/util/List;)Ljava/lang/String;
-    .locals 1
-
-    invoke-interface {p0}, Ljava/util/List;->isEmpty()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    const/4 p0, 0x0
-
-    return-object p0
-
-    :cond_0
-    const-string v0, "+"
-
-    invoke-static {v0}, Llhz;->j(Ljava/lang/String;)Llhz;
-
-    move-result-object v0
-
-    invoke-virtual {v0, p0}, Llhz;->f(Ljava/lang/Iterable;)Ljava/lang/String;
-
-    move-result-object p0
-
-    const-string v0, "transform="
-
-    invoke-virtual {v0, p0}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object p0
-
-    return-object p0
 .end method

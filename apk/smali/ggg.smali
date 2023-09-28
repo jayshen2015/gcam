@@ -1,170 +1,145 @@
-.class public final synthetic Lggg;
-.super Ljava/lang/Object;
-
-# interfaces
-.implements Lmrl;
+.class public final Lggg;
+.super Lmip;
 
 
 # instance fields
-.field public final synthetic a:Ljava/lang/Object;
-
-.field public final synthetic b:Ljava/lang/Object;
-
-.field public final synthetic c:Ljava/lang/Object;
-
-.field private final synthetic d:I
+.field private final a:Lgge;
 
 
 # direct methods
-.method public synthetic constructor <init>(Ldkl;Ldkk;Ljava/lang/String;I)V
+.method public constructor <init>(Lgge;)V
     .locals 0
 
-    iput p4, p0, Lggg;->d:I
+    invoke-direct {p0}, Lmip;-><init>()V
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lggg;->a:Ljava/lang/Object;
-
-    iput-object p2, p0, Lggg;->b:Ljava/lang/Object;
-
-    iput-object p3, p0, Lggg;->c:Ljava/lang/Object;
-
-    return-void
-.end method
-
-.method public synthetic constructor <init>(Lmqp;Lglt;Lmqp;I)V
-    .locals 0
-
-    iput p4, p0, Lggg;->d:I
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lggg;->a:Ljava/lang/Object;
-
-    iput-object p2, p0, Lggg;->b:Ljava/lang/Object;
-
-    iput-object p3, p0, Lggg;->c:Ljava/lang/Object;
+    iput-object p1, p0, Lggg;->a:Lgge;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Ljava/lang/Object;
-    .locals 6
+.method public final b(Llzv;)V
+    .locals 5
 
-    iget v0, p0, Lggg;->d:I
+    :try_start_0
+    sget-object v0, Landroid/hardware/camera2/CaptureResult;->CONTROL_AE_MODE:Landroid/hardware/camera2/CaptureResult$Key;
 
-    const/4 v1, 0x0
-
-    packed-switch v0, :pswitch_data_0
-
-    iget-object v0, p0, Lggg;->a:Ljava/lang/Object;
-
-    iget-object v2, p0, Lggg;->b:Ljava/lang/Object;
-
-    iget-object v3, p0, Lggg;->c:Ljava/lang/Object;
-
-    new-instance v4, Ldki;
-
-    check-cast v3, Ljava/lang/String;
-
-    invoke-direct {v4, v3}, Ldki;-><init>(Ljava/lang/String;)V
-
-    check-cast v0, Ldkl;
-
-    invoke-virtual {v0, v2, v1, v4}, Ldkl;->a(Ldkk;ZLdkj;)Landroid/database/Cursor;
+    invoke-interface {p1, v0}, Llzv;->d(Landroid/hardware/camera2/CaptureResult$Key;)Ljava/lang/Object;
 
     move-result-object v0
 
-    return-object v0
+    check-cast v0, Ljava/lang/Integer;
 
-    :pswitch_0
-    iget-object v0, p0, Lggg;->a:Ljava/lang/Object;
+    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    iget-object v2, p0, Lggg;->b:Ljava/lang/Object;
-
-    iget-object v3, p0, Lggg;->c:Ljava/lang/Object;
-
-    check-cast v0, Lmqp;
-
-    invoke-virtual {v0}, Lmqp;->g()Z
-
-    move-result v4
-
-    const/4 v5, 0x1
-
-    if-eqz v4, :cond_1
-
-    invoke-interface {v2}, Lglt;->a()Ljava/lang/Object;
-
-    move-result-object v4
-
-    check-cast v4, Lkgq;
-
-    iget-object v4, v4, Lkgq;->c:Lmwn;
-
-    invoke-virtual {v0}, Lmqp;->c()Ljava/lang/Object;
-
-    move-result-object v0
-
-    invoke-interface {v4, v0}, Ljava/util/Set;->contains(Ljava/lang/Object;)Z
+    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
 
     move-result v0
 
-    if-nez v0, :cond_0
+    sget-object v1, Lhka;->g:Ljava/util/Map;
 
-    goto :goto_0
-
-    :cond_0
-    const/4 v1, 0x1
-
-    goto :goto_1
-
-    :cond_1
-    :goto_0
-    check-cast v3, Lmqp;
-
-    invoke-virtual {v3}, Lmqp;->g()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_2
-
-    invoke-interface {v2}, Lglt;->a()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lkgq;
-
-    iget-object v0, v0, Lkgq;->c:Lmwn;
-
-    invoke-virtual {v3}, Lmqp;->c()Ljava/lang/Object;
+    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v2
 
-    invoke-interface {v0, v2}, Ljava/util/Set;->contains(Ljava/lang/Object;)Z
+    invoke-interface {v1, v2}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
-    move-result v0
+    move-result-object v1
 
-    if-eqz v0, :cond_2
+    check-cast v1, Lhka;
 
-    const/4 v1, 0x1
+    const-string v2, "unknown metadata value: "
 
-    goto :goto_1
+    const/16 v3, 0x23
 
-    :cond_2
-    :goto_1
-    invoke-static {v1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+    if-eqz v1, :cond_1
+
+    sget-object v0, Landroid/hardware/camera2/CaptureResult;->CONTROL_AE_STATE:Landroid/hardware/camera2/CaptureResult$Key;
+
+    invoke-interface {p1, v0}, Llzv;->d(Landroid/hardware/camera2/CaptureResult$Key;)Ljava/lang/Object;
+
+    move-result-object p1
+
+    check-cast p1, Ljava/lang/Integer;
+
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    invoke-virtual {p1}, Ljava/lang/Integer;->intValue()I
+
+    move-result p1
+
+    sget-object v0, Lhkb;->g:Ljava/util/Map;
+
+    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v4
+
+    invoke-interface {v0, v4}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
-    return-object v0
+    check-cast v0, Lhkb;
 
-    nop
+    if-eqz v0, :cond_0
 
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+    invoke-static {}, Lggd;->a()Lggc;
+
+    move-result-object p1
+
+    invoke-virtual {p1, v1}, Lggc;->b(Lhka;)V
+
+    invoke-virtual {p1, v0}, Lggc;->c(Lhkb;)V
+
+    invoke-virtual {p1}, Lggc;->a()Lggd;
+
+    move-result-object p1
+
+    iget-object v0, p0, Lggg;->a:Lgge;
+
+    invoke-virtual {v0, p1}, Lgge;->b(Lggd;)V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    :catchall_0
+    :goto_0
+    return-void
+
+    :cond_0
+    new-instance v0, Ljava/lang/IllegalArgumentException;
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1, v3}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-direct {v0, p1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    goto :goto_0
+
+    :cond_1
+    new-instance p1, Ljava/lang/IllegalArgumentException;
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1, v3}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-direct {p1, v0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    goto :goto_0
 .end method

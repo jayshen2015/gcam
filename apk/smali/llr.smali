@@ -1,56 +1,127 @@
 .class public final Lllr;
 .super Ljava/lang/Object;
 
+# interfaces
+.implements Lllt;
 
-# static fields
-.field public static volatile a:Lmqp;
+
+# instance fields
+.field public final a:Ljava/util/List;
 
 
 # direct methods
-.method static constructor <clinit>()V
+.method public constructor <init>()V
     .locals 1
 
-    const/4 v0, 0x0
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    sput-object v0, Lllr;->a:Lmqp;
+    new-instance v0, Ljava/util/concurrent/CopyOnWriteArrayList;
+
+    invoke-direct {v0}, Ljava/util/concurrent/CopyOnWriteArrayList;-><init>()V
+
+    iput-object v0, p0, Lllr;->a:Ljava/util/List;
 
     return-void
 .end method
 
-.method public static a(Ljava/nio/ByteBuffer;I)Z
+
+# virtual methods
+.method public final declared-synchronized a(Lllt;)Llie;
+    .locals 1
+
+    monitor-enter p0
+
+    :try_start_0
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    iget-object v0, p0, Lllr;->a:Ljava/util/List;
+
+    invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    new-instance v0, Lllq;
+
+    invoke-direct {v0, p0, p1}, Lllq;-><init>(Lllr;Lllt;)V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    monitor-exit p0
+
+    return-object v0
+
+    :catchall_0
+    move-exception p1
+
+    monitor-exit p0
+
+    throw p1
+.end method
+
+.method public final declared-synchronized e(Ljava/lang/Throwable;)V
+    .locals 0
+
+    monitor-enter p0
+
+    const/4 p1, 0x0
+
+    :try_start_0
+    throw p1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    :catchall_0
+    move-exception p1
+
+    monitor-exit p0
+
+    throw p1
+.end method
+
+.method public final declared-synchronized f(Ljava/lang/Throwable;)V
     .locals 2
 
-    :cond_0
+    monitor-enter p0
+
+    :try_start_0
+    iget-object v0, p0, Lllr;->a:Ljava/util/List;
+
+    invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+
+    move-result-object v0
+
     :goto_0
-    invoke-virtual {p0}, Ljava/nio/ByteBuffer;->hasRemaining()Z
+    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
-    move-result v0
+    move-result v1
 
-    if-eqz v0, :cond_1
+    if-eqz v1, :cond_0
 
-    if-lez p1, :cond_2
+    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    invoke-virtual {p0}, Ljava/nio/ByteBuffer;->get()B
+    move-result-object v1
 
-    move-result v0
+    check-cast v1, Lllt;
 
-    const/16 v1, 0x20
-
-    if-ne v0, v1, :cond_0
-
-    add-int/lit8 p1, p1, -0x1
+    invoke-interface {v1, p1}, Lllt;->f(Ljava/lang/Throwable;)V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     goto :goto_0
 
-    :cond_1
-    if-eqz p1, :cond_2
+    :cond_0
+    monitor-exit p0
 
-    const/4 p0, 0x0
+    return-void
 
-    return p0
+    :catchall_0
+    move-exception p1
 
-    :cond_2
-    const/4 p0, 0x1
+    monitor-exit p0
 
-    return p0
+    goto :goto_2
+
+    :goto_1
+    throw p1
+
+    :goto_2
+    goto :goto_1
 .end method

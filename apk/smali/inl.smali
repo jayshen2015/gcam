@@ -1,18 +1,18 @@
 .class final Linl;
-.super Linu;
+.super Lipt;
 
 
 # instance fields
-.field final synthetic a:Linn;
+.field final synthetic a:Linp;
 
 
 # direct methods
-.method public constructor <init>(Linn;)V
+.method public constructor <init>(Linp;)V
     .locals 0
 
-    iput-object p1, p0, Linl;->a:Linn;
+    iput-object p1, p0, Linl;->a:Linp;
 
-    invoke-direct {p0, p1}, Linu;-><init>(Linw;)V
+    invoke-direct {p0, p1}, Lipt;-><init>(Lipx;)V
 
     return-void
 .end method
@@ -22,19 +22,43 @@
 .method public final a()V
     .locals 2
 
-    iget-object v0, p0, Linl;->a:Linn;
+    iget-object v0, p0, Linl;->a:Linp;
 
-    iget-object v0, v0, Linn;->a:Lhiu;
+    iget-object v0, v0, Linp;->a:Lihu;
 
-    invoke-virtual {v0}, Lhiu;->e()V
+    invoke-virtual {v0}, Lihu;->e()V
 
-    iget-object v0, p0, Linl;->a:Linn;
+    invoke-super {p0}, Lipt;->a()V
 
-    iget-object v1, v0, Linn;->a:Lhiu;
+    iget-object v0, p0, Linl;->a:Linp;
 
-    iget-object v0, v0, Linn;->c:Lhiw;
+    iget-object v1, v0, Linp;->a:Lihu;
 
-    invoke-virtual {v1, v0}, Lhiu;->g(Lhiw;)V
+    iget-object v0, v0, Linp;->e:Lihw;
+
+    invoke-virtual {v1, v0}, Lihu;->g(Lihw;)V
+
+    return-void
+.end method
+
+.method public final b()V
+    .locals 2
+
+    iget-object v0, p0, Linl;->a:Linp;
+
+    iget-object v0, v0, Linp;->a:Lihu;
+
+    invoke-virtual {v0}, Lihu;->e()V
+
+    invoke-super {p0}, Lipt;->b()V
+
+    iget-object v0, p0, Linl;->a:Linp;
+
+    iget-object v1, v0, Linp;->a:Lihu;
+
+    iget-object v0, v0, Linp;->d:Lihw;
+
+    invoke-virtual {v1, v0}, Lihu;->g(Lihw;)V
 
     return-void
 .end method

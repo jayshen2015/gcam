@@ -1,26 +1,23 @@
 .class public final Lhkp;
 .super Ljava/lang/Object;
 
+# interfaces
+.implements Lhko;
 
-# static fields
-.field public static final a:Ljava/lang/Object;
+
+# instance fields
+.field final synthetic a:Lhko;
+
+.field final synthetic b:J
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
-
-    new-instance v0, Ljava/lang/Object;
-
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
-
-    sput-object v0, Lhkp;->a:Ljava/lang/Object;
-
-    return-void
-.end method
-
-.method public constructor <init>()V
+.method public constructor <init>(Lhko;J)V
     .locals 0
+
+    iput-object p1, p0, Lhkp;->a:Lhko;
+
+    iput-wide p2, p0, Lhkp;->b:J
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -29,86 +26,125 @@
 
 
 # virtual methods
-.method public final a(Ljava/io/File;)V
+.method public final a()I
+    .locals 1
+
+    iget-object v0, p0, Lhkp;->a:Lhko;
+
+    invoke-interface {v0}, Lhko;->a()I
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public final b()Ldrc;
+    .locals 1
+
+    iget-object v0, p0, Lhkp;->a:Lhko;
+
+    invoke-interface {v0}, Lhko;->b()Ldrc;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public final c(J)Lhkn;
     .locals 4
 
-    invoke-virtual {p1}, Ljava/io/File;->exists()Z
+    iget-object v0, p0, Lhkp;->a:Lhko;
 
-    move-result v0
+    invoke-interface {v0, p1, p2}, Lhko;->d(J)Lhkn;
 
-    if-eqz v0, :cond_5
+    move-result-object v0
 
-    invoke-virtual {p1}, Ljava/io/File;->isDirectory()Z
+    if-eqz v0, :cond_0
 
-    move-result v0
+    iget-wide v1, v0, Lhkn;->a:J
 
-    if-nez v0, :cond_0
+    sub-long/2addr v1, p1
 
-    goto :goto_1
+    invoke-static {v1, v2}, Ljava/lang/Math;->abs(J)J
+
+    move-result-wide p1
+
+    iget-wide v1, p0, Lhkp;->b:J
+
+    cmp-long v3, p1, v1
+
+    if-gtz v3, :cond_0
+
+    return-object v0
 
     :cond_0
-    invoke-virtual {p1}, Ljava/io/File;->listFiles()[Ljava/io/File;
+    const/4 p1, 0x0
 
-    move-result-object v0
+    return-object p1
+.end method
 
-    if-eqz v0, :cond_4
+.method public final d(J)Lhkn;
+    .locals 1
 
-    const/4 v1, 0x0
+    iget-object v0, p0, Lhkp;->a:Lhko;
 
-    :goto_0
-    array-length v2, v0
+    invoke-interface {v0, p1, p2}, Lhko;->d(J)Lhkn;
 
-    if-ge v1, v2, :cond_3
+    move-result-object p1
 
-    aget-object v2, v0, v1
+    return-object p1
+.end method
 
-    invoke-virtual {v2}, Ljava/io/File;->isDirectory()Z
+.method public final e()V
+    .locals 1
 
-    move-result v3
+    iget-object v0, p0, Lhkp;->a:Lhko;
 
-    if-eqz v3, :cond_1
+    invoke-interface {v0}, Lhko;->e()V
 
-    invoke-virtual {p0, v2}, Lhkp;->a(Ljava/io/File;)V
+    return-void
+.end method
 
-    :cond_1
-    invoke-virtual {v2}, Ljava/io/File;->delete()Z
+.method public final toString()Ljava/lang/String;
+    .locals 5
 
-    move-result v3
-
-    if-eqz v3, :cond_2
-
-    add-int/lit8 v1, v1, 0x1
-
-    goto :goto_0
-
-    :cond_2
-    new-instance p1, Ljava/io/IOException;
-
-    invoke-virtual {v2}, Ljava/io/File;->getAbsolutePath()Ljava/lang/String;
-
-    move-result-object v0
+    iget-object v0, p0, Lhkp;->a:Lhko;
 
     invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v0
 
-    const-string v1, "Failed to delete file: "
+    iget-wide v1, p0, Lhkp;->b:J
 
-    invoke-virtual {v1, v0}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/lang/String;->length()I
+
+    move-result v3
+
+    new-instance v4, Ljava/lang/StringBuilder;
+
+    add-int/lit8 v3, v3, 0x24
+
+    invoke-direct {v4, v3}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v0, "[maxTimeDiffNs="
+
+    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v4, v1, v2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+
+    const-string v0, "]"
+
+    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v0
 
-    invoke-direct {p1, v0}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
-
-    throw p1
-
-    :cond_3
-    invoke-virtual {p1}, Ljava/io/File;->delete()Z
-
-    :cond_4
-    return-void
-
-    :cond_5
-    :goto_1
-    return-void
+    return-object v0
 .end method

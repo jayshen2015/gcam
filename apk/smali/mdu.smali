@@ -1,43 +1,34 @@
-.class public interface abstract Lmdu;
+.class public final Lmdu;
 .super Ljava/lang/Object;
 
 
-# virtual methods
-.method public abstract a()V
-.end method
+# instance fields
+.field public final a:I
 
-.method public abstract close(JJJJ)V
-.end method
+.field public final b:Ljava/lang/Integer;
 
-.method public abstract disableSubpipeline(JLjava/lang/String;)Z
-.end method
+.field public final c:I
 
-.method public abstract enableSubpipeline(JLjava/lang/String;)Z
-.end method
+.field public final d:Z
 
-.method public abstract initialize([BJJJJ)J
-.end method
+.field public final e:I
 
-.method public abstract initializeFrameBufferReleaseCallback(J)J
-.end method
 
-.method public abstract initializeFrameManager()J
-.end method
+# direct methods
+.method public constructor <init>(ILjava/lang/Integer;IZI)V
+    .locals 0
 
-.method public abstract initializeResultsCallback()J
-.end method
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-.method public abstract receiveYuvFrame(JJLjava/nio/ByteBuffer;Ljava/nio/ByteBuffer;Ljava/nio/ByteBuffer;IIIIII)Z
-.end method
+    iput p1, p0, Lmdu;->a:I
 
-.method public abstract resetSchedulingOptimizerOptions(J[B)V
-.end method
+    iput-object p2, p0, Lmdu;->b:Ljava/lang/Integer;
 
-.method public abstract start(J)V
-.end method
+    iput p3, p0, Lmdu;->c:I
 
-.method public abstract stop(J)Z
-.end method
+    iput-boolean p4, p0, Lmdu;->d:Z
 
-.method public abstract waitUntilIdle(J)V
+    iput p5, p0, Lmdu;->e:I
+
+    return-void
 .end method

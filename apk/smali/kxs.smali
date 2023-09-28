@@ -1,42 +1,66 @@
 .class public final Lkxs;
-.super Ljava/lang/Object;
+.super Lkno;
+
+
+# static fields
+.field public static final CREATOR:Landroid/os/Parcelable$Creator;
 
 
 # instance fields
 .field public final a:I
 
-.field final synthetic b:Lloi;
+.field public final b:Ljava/util/List;
 
 
 # direct methods
-.method public constructor <init>(Lloi;I[B[B[B)V
+.method static constructor <clinit>()V
+    .locals 2
+
+    new-instance v0, Lkxn;
+
+    const/4 v1, 0x5
+
+    invoke-direct {v0, v1}, Lkxn;-><init>(I)V
+
+    sput-object v0, Lkxs;->CREATOR:Landroid/os/Parcelable$Creator;
+
+    return-void
+.end method
+
+.method public constructor <init>(ILjava/util/List;)V
     .locals 0
 
-    iput-object p1, p0, Lkxs;->b:Lloi;
+    invoke-direct {p0}, Lkno;-><init>()V
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput p1, p0, Lkxs;->a:I
 
-    iput p2, p0, Lkxs;->a:I
+    iput-object p2, p0, Lkxs;->b:Ljava/util/List;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()I
+.method public final writeToParcel(Landroid/os/Parcel;I)V
     .locals 2
 
-    iget-object v0, p0, Lkxs;->b:Lloi;
+    invoke-static {p1}, Lmip;->ct(Landroid/os/Parcel;)I
 
-    iget-object v0, v0, Lloi;->b:Ljava/lang/Object;
+    move-result p2
 
-    iget v1, p0, Lkxs;->a:I
+    iget v0, p0, Lkxs;->a:I
 
-    check-cast v0, Ljava/nio/ByteBuffer;
+    const/4 v1, 0x2
 
-    invoke-virtual {v0, v1}, Ljava/nio/ByteBuffer;->getInt(I)I
+    invoke-static {p1, v1, v0}, Lmip;->cA(Landroid/os/Parcel;II)V
 
-    move-result v0
+    iget-object v0, p0, Lkxs;->b:Ljava/util/List;
 
-    return v0
+    const/4 v1, 0x3
+
+    invoke-static {p1, v1, v0}, Lmip;->cM(Landroid/os/Parcel;ILjava/util/List;)V
+
+    invoke-static {p1, p2}, Lmip;->cv(Landroid/os/Parcel;I)V
+
+    return-void
 .end method

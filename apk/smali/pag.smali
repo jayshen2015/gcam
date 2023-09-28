@@ -1,222 +1,228 @@
 .class public final Lpag;
-.super Ljava/lang/Object;
+.super Lppd;
+
+# interfaces
+.implements Lpqn;
 
 
 # static fields
-.field private static final a:Lpaf;
+.field public static final g:Lpag;
 
-.field private static final b:I
+.field private static volatile h:Lpqs;
 
-.field private static final c:[Ljava/util/concurrent/atomic/AtomicReference;
+
+# instance fields
+.field public a:I
+
+.field public b:I
+
+.field public c:I
+
+.field public d:I
+
+.field public e:I
+
+.field public f:I
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 4
+    .locals 2
 
-    new-instance v0, Lpaf;
+    new-instance v0, Lpag;
 
-    const/4 v1, 0x0
+    invoke-direct {v0}, Lpag;-><init>()V
 
-    new-array v2, v1, [B
+    sput-object v0, Lpag;->g:Lpag;
 
-    invoke-direct {v0, v2, v1, v1, v1}, Lpaf;-><init>([BIIZ)V
+    const-class v1, Lpag;
 
-    sput-object v0, Lpag;->a:Lpaf;
-
-    invoke-static {}, Ljava/lang/Runtime;->getRuntime()Ljava/lang/Runtime;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/Runtime;->availableProcessors()I
-
-    move-result v0
-
-    add-int/2addr v0, v0
-
-    add-int/lit8 v0, v0, -0x1
-
-    invoke-static {v0}, Ljava/lang/Integer;->highestOneBit(I)I
-
-    move-result v0
-
-    sput v0, Lpag;->b:I
-
-    new-array v2, v0, [Ljava/util/concurrent/atomic/AtomicReference;
-
-    :goto_0
-    if-ge v1, v0, :cond_0
-
-    new-instance v3, Ljava/util/concurrent/atomic/AtomicReference;
-
-    invoke-direct {v3}, Ljava/util/concurrent/atomic/AtomicReference;-><init>()V
-
-    aput-object v3, v2, v1
-
-    add-int/lit8 v1, v1, 0x1
-
-    goto :goto_0
-
-    :cond_0
-    sput-object v2, Lpag;->c:[Ljava/util/concurrent/atomic/AtomicReference;
+    invoke-static {v1, v0}, Lppd;->F(Ljava/lang/Class;Lppd;)V
 
     return-void
 .end method
 
-.method public static final a()Lpaf;
-    .locals 4
+.method private constructor <init>()V
+    .locals 0
 
-    invoke-static {}, Lpag;->c()Ljava/util/concurrent/atomic/AtomicReference;
+    invoke-direct {p0}, Lppd;-><init>()V
 
-    move-result-object v0
+    return-void
+.end method
 
-    sget-object v1, Lpag;->a:Lpaf;
 
-    invoke-virtual {v0, v1}, Ljava/util/concurrent/atomic/AtomicReference;->getAndSet(Ljava/lang/Object;)Ljava/lang/Object;
+# virtual methods
+.method protected final a(ILjava/lang/Object;)Ljava/lang/Object;
+    .locals 2
 
-    move-result-object v2
+    add-int/lit8 p1, p1, -0x1
 
-    check-cast v2, Lpaf;
+    const/4 p2, 0x1
 
-    if-ne v2, v1, :cond_0
+    packed-switch p1, :pswitch_data_0
 
-    new-instance v0, Lpaf;
+    :pswitch_0
+    const/4 p1, 0x0
 
-    invoke-direct {v0}, Lpaf;-><init>()V
+    return-object p1
 
-    return-object v0
+    :pswitch_1
+    sget-object p1, Lpag;->h:Lpqs;
+
+    if-nez p1, :cond_1
+
+    const-class p2, Lpag;
+
+    monitor-enter p2
+
+    :try_start_0
+    sget-object p1, Lpag;->h:Lpqs;
+
+    if-nez p1, :cond_0
+
+    new-instance p1, Lpoz;
+
+    sget-object v0, Lpag;->g:Lpag;
+
+    invoke-direct {p1, v0}, Lpoz;-><init>(Lppd;)V
+
+    sput-object p1, Lpag;->h:Lpqs;
 
     :cond_0
-    const/4 v1, 0x0
+    monitor-exit p2
 
-    if-nez v2, :cond_1
+    goto :goto_0
 
-    invoke-virtual {v0, v1}, Ljava/util/concurrent/atomic/AtomicReference;->set(Ljava/lang/Object;)V
+    :catchall_0
+    move-exception p1
 
-    new-instance v0, Lpaf;
+    monitor-exit p2
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    invoke-direct {v0}, Lpaf;-><init>()V
-
-    return-object v0
+    throw p1
 
     :cond_1
-    iget-object v3, v2, Lpaf;->f:Lpaf;
+    :goto_0
+    return-object p1
 
-    invoke-virtual {v0, v3}, Ljava/util/concurrent/atomic/AtomicReference;->set(Ljava/lang/Object;)V
+    :pswitch_2
+    sget-object p1, Lpag;->g:Lpag;
 
-    iput-object v1, v2, Lpaf;->f:Lpaf;
+    return-object p1
+
+    :pswitch_3
+    new-instance p1, Lpoy;
+
+    sget-object p2, Lpag;->g:Lpag;
+
+    invoke-direct {p1, p2}, Lpoy;-><init>(Lppd;)V
+
+    return-object p1
+
+    :pswitch_4
+    new-instance p1, Lpag;
+
+    invoke-direct {p1}, Lpag;-><init>()V
+
+    return-object p1
+
+    :pswitch_5
+    const/16 p1, 0xb
+
+    new-array p1, p1, [Ljava/lang/Object;
 
     const/4 v0, 0x0
 
-    iput v0, v2, Lpaf;->c:I
+    const-string v1, "a"
 
-    return-object v2
-.end method
+    aput-object v1, p1, v0
 
-.method public static final b(Lpaf;)V
-    .locals 5
+    const-string v0, "b"
 
-    iget-object v0, p0, Lpaf;->f:Lpaf;
+    aput-object v0, p1, p2
 
-    if-nez v0, :cond_4
+    const/4 p2, 0x2
 
-    iget-object v0, p0, Lpaf;->g:Lpaf;
+    sget-object v0, Lpaf;->c:Lppi;
 
-    if-nez v0, :cond_4
+    aput-object v0, p1, p2
 
-    iget-boolean v0, p0, Lpaf;->d:Z
+    const/4 p2, 0x3
 
-    if-eqz v0, :cond_0
+    const-string v0, "c"
 
-    return-void
+    aput-object v0, p1, p2
 
-    :cond_0
-    invoke-static {}, Lpag;->c()Ljava/util/concurrent/atomic/AtomicReference;
+    const/4 p2, 0x4
 
-    move-result-object v0
+    sget-object v0, Lpaf;->a:Lppi;
 
-    sget-object v1, Lpag;->a:Lpaf;
+    aput-object v0, p1, p2
 
-    invoke-virtual {v0, v1}, Ljava/util/concurrent/atomic/AtomicReference;->getAndSet(Ljava/lang/Object;)Ljava/lang/Object;
+    const/4 p2, 0x5
 
-    move-result-object v2
+    const-string v0, "d"
 
-    check-cast v2, Lpaf;
+    aput-object v0, p1, p2
 
-    if-ne v2, v1, :cond_1
+    const/4 p2, 0x6
 
-    return-void
+    sget-object v0, Lpaf;->d:Lppi;
 
-    :cond_1
-    const/4 v1, 0x0
+    aput-object v0, p1, p2
 
-    if-eqz v2, :cond_2
+    const/4 p2, 0x7
 
-    iget v3, v2, Lpaf;->c:I
+    const-string v0, "e"
 
-    goto :goto_0
+    aput-object v0, p1, p2
 
-    :cond_2
-    const/4 v3, 0x0
+    const/16 p2, 0x8
 
-    :goto_0
-    const/high16 v4, 0x10000
-
-    if-lt v3, v4, :cond_3
-
-    invoke-virtual {v0, v2}, Ljava/util/concurrent/atomic/AtomicReference;->set(Ljava/lang/Object;)V
-
-    return-void
-
-    :cond_3
-    iput-object v2, p0, Lpaf;->f:Lpaf;
-
-    iput v1, p0, Lpaf;->b:I
-
-    add-int/lit16 v3, v3, 0x2000
-
-    iput v3, p0, Lpaf;->c:I
-
-    invoke-virtual {v0, p0}, Ljava/util/concurrent/atomic/AtomicReference;->set(Ljava/lang/Object;)V
-
-    return-void
-
-    :cond_4
-    new-instance p0, Ljava/lang/IllegalArgumentException;
-
-    const-string v0, "Failed requirement."
-
-    invoke-direct {p0, v0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw p0
-.end method
-
-.method private static final c()Ljava/util/concurrent/atomic/AtomicReference;
-    .locals 6
-
-    invoke-static {}, Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
+    invoke-static {}, Lozz;->c()Lppi;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Ljava/lang/Thread;->getId()J
+    aput-object v0, p1, p2
 
-    move-result-wide v0
+    const/16 p2, 0x9
 
-    sget v2, Lpag;->b:I
+    const-string v0, "f"
 
-    int-to-long v2, v2
+    aput-object v0, p1, p2
 
-    const-wide/16 v4, -0x1
+    const/16 p2, 0xa
 
-    add-long/2addr v2, v4
+    sget-object v0, Lpaf;->e:Lppi;
 
-    and-long/2addr v0, v2
+    aput-object v0, p1, p2
 
-    sget-object v2, Lpag;->c:[Ljava/util/concurrent/atomic/AtomicReference;
+    sget-object p2, Lpag;->g:Lpag;
 
-    long-to-int v1, v0
+    const-string v0, "\u0001\u0005\u0000\u0001\u0001\u0005\u0005\u0000\u0000\u0000\u0001\u100c\u0000\u0002\u100c\u0001\u0003\u100c\u0002\u0004\u100c\u0003\u0005\u100c\u0004"
 
-    aget-object v0, v2, v1
+    invoke-static {p2, v0, p1}, Lpag;->E(Lpqm;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/Object;
 
-    return-object v0
+    move-result-object p1
+
+    return-object p1
+
+    :pswitch_6
+    invoke-static {p2}, Ljava/lang/Byte;->valueOf(B)Ljava/lang/Byte;
+
+    move-result-object p1
+
+    return-object p1
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_6
+        :pswitch_0
+        :pswitch_5
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+    .end packed-switch
 .end method

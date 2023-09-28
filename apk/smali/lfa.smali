@@ -2,67 +2,21 @@
 .super Ljava/lang/Object;
 
 
-# static fields
-.field public static final a:Llez;
+# instance fields
+.field public final a:J
 
-.field private static final b:Llez;
-
-.field private static final c:Llez;
-
-.field private static final d:Llez;
+.field public final b:J
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 6
+.method public constructor <init>(JJ)V
+    .locals 0
 
-    new-instance v0, Lcom/google/android/libraries/oliveoil/natives/NativeMemCopier;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {v0}, Lcom/google/android/libraries/oliveoil/natives/NativeMemCopier;-><init>()V
+    iput-wide p1, p0, Llfa;->b:J
 
-    sput-object v0, Llfa;->b:Llez;
-
-    new-instance v1, Llex;
-
-    const/4 v2, 0x1
-
-    invoke-direct {v1, v2}, Llex;-><init>(I)V
-
-    sput-object v1, Llfa;->c:Llez;
-
-    new-instance v3, Llex;
-
-    const/4 v4, 0x0
-
-    invoke-direct {v3, v4}, Llex;-><init>(I)V
-
-    sput-object v3, Llfa;->d:Llez;
-
-    const/4 v5, 0x3
-
-    new-array v5, v5, [Llez;
-
-    aput-object v0, v5, v4
-
-    aput-object v1, v5, v2
-
-    const/4 v0, 0x2
-
-    aput-object v3, v5, v0
-
-    new-instance v1, Lley;
-
-    invoke-direct {v1, v5, v2}, Lley;-><init>([Llez;I)V
-
-    new-instance v2, Lley;
-
-    invoke-direct {v2, v1, v0}, Lley;-><init>(Llez;I)V
-
-    new-instance v0, Lley;
-
-    invoke-direct {v0, v2, v4}, Lley;-><init>(Llez;I)V
-
-    sput-object v0, Llfa;->a:Llez;
+    iput-wide p3, p0, Llfa;->a:J
 
     return-void
 .end method

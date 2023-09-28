@@ -1,20 +1,20 @@
 .class public abstract Lcom/google/android/apps/camera/debug/shottracker/db/ShotDatabase;
-.super Lapt;
+.super Laii;
 
 
 # direct methods
 .method public constructor <init>()V
     .locals 0
 
-    invoke-direct {p0}, Lapt;-><init>()V
+    invoke-direct {p0}, Laii;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public abstract w()Ldlm;
+.method public abstract r()Ldil;
 .end method
 
-.method public abstract x()Ldlv;
+.method public abstract s()Ldiu;
 .end method

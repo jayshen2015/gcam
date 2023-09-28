@@ -1,48 +1,109 @@
-.class final Lmhj;
-.super Lmex;
+.class public final Lmhj;
+.super Landroid/content/ContextWrapper;
+
+# interfaces
+.implements Lcom/google/android/libraries/lens/lenslite/dynamicloading/ClientContextProvider;
 
 
 # instance fields
-.field final synthetic a:Lmhq;
+.field private final a:Landroid/content/Context;
 
 
 # direct methods
-.method public constructor <init>(Lmhq;)V
+.method public constructor <init>(Landroid/content/Context;Landroid/content/Context;)V
     .locals 0
 
-    iput-object p1, p0, Lmhj;->a:Lmhq;
+    invoke-direct {p0, p1}, Landroid/content/ContextWrapper;-><init>(Landroid/content/Context;)V
 
-    invoke-direct {p0}, Lmex;-><init>()V
+    iput-object p2, p0, Lmhj;->a:Landroid/content/Context;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(FLandroid/graphics/Matrix;Landroid/graphics/Matrix;)Landroid/graphics/Matrix;
+.method public final deleteSharedPreferences(Ljava/lang/String;)Z
     .locals 1
 
-    iget-object v0, p0, Lmhj;->a:Lmhq;
+    iget-object v0, p0, Lmhj;->a:Landroid/content/Context;
 
-    iput p1, v0, Lmhq;->y:F
+    invoke-virtual {v0, p1}, Landroid/content/Context;->deleteSharedPreferences(Ljava/lang/String;)Z
 
-    invoke-super {p0, p1, p2, p3}, Lmex;->a(FLandroid/graphics/Matrix;Landroid/graphics/Matrix;)Landroid/graphics/Matrix;
+    move-result p1
+
+    return p1
+.end method
+
+.method public final getApplicationContext()Landroid/content/Context;
+    .locals 0
+
+    return-object p0
+.end method
+
+.method public final getCacheDir()Ljava/io/File;
+    .locals 1
+
+    iget-object v0, p0, Lmhj;->a:Landroid/content/Context;
+
+    invoke-virtual {v0}, Landroid/content/Context;->getCacheDir()Ljava/io/File;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public final getClientContext()Landroid/content/Context;
+    .locals 1
+
+    iget-object v0, p0, Lmhj;->a:Landroid/content/Context;
+
+    return-object v0
+.end method
+
+.method public final getDir(Ljava/lang/String;I)Ljava/io/File;
+    .locals 1
+
+    iget-object v0, p0, Lmhj;->a:Landroid/content/Context;
+
+    invoke-virtual {v0, p1, p2}, Landroid/content/Context;->getDir(Ljava/lang/String;I)Ljava/io/File;
 
     move-result-object p1
 
     return-object p1
 .end method
 
-.method public final bridge synthetic evaluate(FLjava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 0
+.method public final getFilesDir()Ljava/io/File;
+    .locals 1
 
-    check-cast p2, Landroid/graphics/Matrix;
+    iget-object v0, p0, Lmhj;->a:Landroid/content/Context;
 
-    check-cast p3, Landroid/graphics/Matrix;
+    invoke-virtual {v0}, Landroid/content/Context;->getFilesDir()Ljava/io/File;
 
-    invoke-virtual {p0, p1, p2, p3}, Lmex;->a(FLandroid/graphics/Matrix;Landroid/graphics/Matrix;)Landroid/graphics/Matrix;
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public final getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
+    .locals 1
+
+    iget-object v0, p0, Lmhj;->a:Landroid/content/Context;
+
+    invoke-virtual {v0, p1, p2}, Landroid/content/Context;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
 
     move-result-object p1
 
     return-object p1
+.end method
+
+.method public final moveSharedPreferencesFrom(Landroid/content/Context;Ljava/lang/String;)Z
+    .locals 1
+
+    iget-object v0, p0, Lmhj;->a:Landroid/content/Context;
+
+    invoke-virtual {v0, p1, p2}, Landroid/content/Context;->moveSharedPreferencesFrom(Landroid/content/Context;Ljava/lang/String;)Z
+
+    move-result p1
+
+    return p1
 .end method

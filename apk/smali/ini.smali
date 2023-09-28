@@ -1,196 +1,123 @@
-.class public final Lini;
-.super Linf;
+.class final Lini;
+.super Ljava/lang/Object;
 
 # interfaces
-.implements Lhiv;
+.implements Landroid/hardware/SensorEventListener;
 
 
 # instance fields
-.field public final a:Loiw;
+.field final synthetic a:Lcvo;
 
-.field public final b:Lhiu;
-
-.field public final c:Lhiw;
-
-.field public final d:Lhiw;
+.field final synthetic b:Link;
 
 
 # direct methods
-.method public constructor <init>(Loiw;)V
-    .locals 4
+.method public constructor <init>(Link;Lcvo;)V
+    .locals 0
 
-    invoke-direct {p0}, Linf;-><init>()V
+    iput-object p1, p0, Lini;->b:Link;
 
-    iput-object p1, p0, Lini;->a:Loiw;
+    iput-object p2, p0, Lini;->a:Lcvo;
 
-    new-instance p1, Linj;
-
-    invoke-direct {p1, p0}, Linj;-><init>(Lini;)V
-
-    new-instance v0, Lhiw;
-
-    const/4 v1, 0x0
-
-    new-array v2, v1, [Lhis;
-
-    invoke-direct {v0, p1, v2}, Lhiw;-><init>(Lhis;[Lhis;)V
-
-    iput-object v0, p0, Lini;->c:Lhiw;
-
-    new-instance p1, Link;
-
-    invoke-direct {p1, p0}, Link;-><init>(Lini;)V
-
-    new-instance v2, Lhiw;
-
-    new-array v3, v1, [Lhis;
-
-    invoke-direct {v2, p1, v3}, Lhiw;-><init>(Lhis;[Lhis;)V
-
-    iput-object v2, p0, Lini;->d:Lhiw;
-
-    new-instance p1, Lhiu;
-
-    invoke-direct {p1, v0, v1}, Lhiu;-><init>(Lhiw;Z)V
-
-    iput-object p1, p0, Lini;->b:Lhiu;
-
-    invoke-virtual {p1}, Lhiu;->f()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()V
-    .locals 1
-
-    iget-object v0, p0, Lini;->b:Lhiu;
-
-    invoke-virtual {v0}, Lhiu;->a()Lhiw;
-
-    move-result-object v0
-
-    if-nez v0, :cond_0
-
-    return-void
-
-    :cond_0
-    iget-object v0, p0, Lini;->b:Lhiu;
-
-    invoke-virtual {v0}, Lhiu;->a()Lhiw;
-
-    move-result-object v0
-
-    iget-object v0, v0, Lhiw;->a:Lhis;
-
-    check-cast v0, Linf;
-
-    invoke-virtual {v0}, Linf;->a()V
-
-    return-void
-.end method
-
-.method public final b()V
-    .locals 1
-
-    iget-object v0, p0, Lini;->b:Lhiu;
-
-    invoke-virtual {v0}, Lhiu;->a()Lhiw;
-
-    move-result-object v0
-
-    if-nez v0, :cond_0
-
-    return-void
-
-    :cond_0
-    iget-object v0, p0, Lini;->b:Lhiu;
-
-    invoke-virtual {v0}, Lhiu;->a()Lhiw;
-
-    move-result-object v0
-
-    iget-object v0, v0, Lhiw;->a:Lhis;
-
-    check-cast v0, Linf;
-
-    invoke-virtual {v0}, Linf;->b()V
-
-    return-void
-.end method
-
-.method public final c()V
-    .locals 1
-
-    iget-object v0, p0, Lini;->b:Lhiu;
-
-    invoke-virtual {v0}, Lhiu;->a()Lhiw;
-
-    move-result-object v0
-
-    if-nez v0, :cond_0
-
-    return-void
-
-    :cond_0
-    iget-object v0, p0, Lini;->b:Lhiu;
-
-    invoke-virtual {v0}, Lhiu;->a()Lhiw;
-
-    move-result-object v0
-
-    iget-object v0, v0, Lhiw;->a:Lhis;
-
-    check-cast v0, Linf;
-
-    invoke-virtual {v0}, Linf;->c()V
-
-    return-void
-.end method
-
-.method public final e()V
-    .locals 1
-
-    iget-object v0, p0, Lini;->b:Lhiu;
-
-    invoke-virtual {v0}, Lhiu;->b()V
-
-    iget-object v0, p0, Lini;->c:Lhiw;
-
-    invoke-virtual {v0}, Lhiw;->e()V
-
-    iget-object v0, p0, Lini;->d:Lhiw;
-
-    invoke-virtual {v0}, Lhiw;->e()V
-
-    return-void
-.end method
-
-.method public final f()V
-    .locals 1
-
-    iget-object v0, p0, Lini;->b:Lhiu;
-
-    invoke-virtual {v0}, Lhiu;->c()V
-
-    return-void
-.end method
-
-.method public final g()V
-    .locals 1
-
-    iget-object v0, p0, Lini;->b:Lhiu;
-
-    invoke-virtual {v0}, Lhiu;->d()V
-
-    return-void
-.end method
-
-.method public final h()V
+.method public final onAccuracyChanged(Landroid/hardware/Sensor;I)V
     .locals 0
 
-    invoke-static {p0}, Ljcb;->l(Lhiv;)V
-
     return-void
+.end method
+
+.method public final onSensorChanged(Landroid/hardware/SensorEvent;)V
+    .locals 8
+
+    iget-object v0, p1, Landroid/hardware/SensorEvent;->sensor:Landroid/hardware/Sensor;
+
+    invoke-virtual {v0}, Landroid/hardware/Sensor;->getType()I
+
+    move-result v0
+
+    const/4 v1, 0x4
+
+    if-ne v0, v1, :cond_0
+
+    iget-object v0, p0, Lini;->b:Link;
+
+    iget-object v1, v0, Link;->F:Liqq;
+
+    invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    iget-object v0, p0, Lini;->a:Lcvo;
+
+    invoke-virtual {v0}, Lcvo;->d()Llwd;
+
+    move-result-object v0
+
+    iget-object v2, p1, Landroid/hardware/SensorEvent;->values:[F
+
+    const/4 v3, 0x0
+
+    aget v2, v2, v3
+
+    iget-object v3, p1, Landroid/hardware/SensorEvent;->values:[F
+
+    const/4 v4, 0x1
+
+    aget v3, v3, v4
+
+    iget-object v4, p1, Landroid/hardware/SensorEvent;->values:[F
+
+    const/4 v5, 0x2
+
+    aget v4, v4, v5
+
+    iget-wide v5, p1, Landroid/hardware/SensorEvent;->timestamp:J
+
+    sget-object v5, Llwd;->a:Llwd;
+
+    invoke-virtual {v0}, Llwd;->ordinal()I
+
+    move-result v0
+
+    packed-switch v0, :pswitch_data_0
+
+    goto :goto_0
+
+    :pswitch_0
+    move v7, v3
+
+    move v3, v2
+
+    move v2, v7
+
+    goto :goto_0
+
+    :pswitch_1
+    neg-float v0, v3
+
+    neg-float v3, v4
+
+    move v4, v3
+
+    move v3, v2
+
+    move v2, v0
+
+    :goto_0
+    iget-wide v5, p1, Landroid/hardware/SensorEvent;->timestamp:J
+
+    invoke-interface/range {v1 .. v6}, Liqq;->b(FFFJ)V
+
+    :cond_0
+    return-void
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method

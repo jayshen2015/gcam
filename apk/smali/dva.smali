@@ -1,159 +1,66 @@
 .class public final Ldva;
-.super Ljava/lang/Object;
+.super Landroid/animation/AnimatorListenerAdapter;
 
 
 # instance fields
-.field public a:I
+.field final synthetic a:Landroid/content/res/Resources;
 
-.field public b:I
+.field final synthetic b:Lduj;
 
-.field public c:I
-
-.field private final d:Ldsx;
-
-.field private e:I
-
-.field private f:Lduu;
-
-.field private g:J
-
-.field private h:Ljava/util/concurrent/TimeUnit;
+.field final synthetic c:Lcom/google/android/apps/camera/focusindicator/FocusIndicatorView;
 
 
 # direct methods
-.method public constructor <init>(Ldsx;)V
-    .locals 2
+.method public constructor <init>(Landroid/content/res/Resources;Lduj;Lcom/google/android/apps/camera/focusindicator/FocusIndicatorView;)V
+    .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Ldva;->a:Landroid/content/res/Resources;
 
-    const/16 v0, 0x2328
+    iput-object p2, p0, Ldva;->b:Lduj;
 
-    iput v0, p0, Ldva;->e:I
+    iput-object p3, p0, Ldva;->c:Lcom/google/android/apps/camera/focusindicator/FocusIndicatorView;
 
-    const/4 v0, 0x1
-
-    iput v0, p0, Ldva;->a:I
-
-    sget-object v0, Lduz;->a:Lduz;
-
-    iput-object v0, p0, Ldva;->f:Lduu;
-
-    const/4 v0, 0x4
-
-    iput v0, p0, Ldva;->c:I
-
-    const/16 v0, 0x1e
-
-    iput v0, p0, Ldva;->b:I
-
-    const-wide/16 v0, 0x0
-
-    iput-wide v0, p0, Ldva;->g:J
-
-    const/4 v0, 0x0
-
-    iput-object v0, p0, Ldva;->h:Ljava/util/concurrent/TimeUnit;
-
-    iput-object p1, p0, Ldva;->d:Ldsx;
+    invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Lduv;
-    .locals 10
+.method public final onAnimationStart(Landroid/animation/Animator;)V
+    .locals 2
 
-    iget-object v0, p0, Ldva;->h:Ljava/util/concurrent/TimeUnit;
+    iget-object p1, p0, Ldva;->a:Landroid/content/res/Resources;
 
-    if-eqz v0, :cond_0
+    const v0, 0x7f070595
 
-    iget v0, p0, Ldva;->b:I
+    invoke-virtual {p1, v0}, Landroid/content/res/Resources;->getDimension(I)F
 
-    int-to-long v0, v0
+    move-result p1
 
-    sget-object v2, Ljava/util/concurrent/TimeUnit;->SECONDS:Ljava/util/concurrent/TimeUnit;
+    iget-object v0, p0, Ldva;->b:Lduj;
 
-    iget-wide v3, p0, Ldva;->g:J
+    invoke-interface {v0, p1}, Lduj;->f(F)V
 
-    iget-object v5, p0, Ldva;->h:Ljava/util/concurrent/TimeUnit;
+    iget-object p1, p0, Ldva;->a:Landroid/content/res/Resources;
 
-    invoke-virtual {v2, v3, v4, v5}, Ljava/util/concurrent/TimeUnit;->convert(JLjava/util/concurrent/TimeUnit;)J
+    const v0, 0x7f07013b
 
-    move-result-wide v2
+    invoke-virtual {p1, v0}, Landroid/content/res/Resources;->getDimension(I)F
 
-    mul-long v0, v0, v2
+    move-result p1
 
-    long-to-int v1, v0
+    iget-object v0, p0, Ldva;->b:Lduj;
 
-    iput v1, p0, Ldva;->e:I
+    const/high16 v1, 0x40000000    # 2.0f
 
-    :cond_0
-    iget v0, p0, Ldva;->a:I
+    div-float/2addr p1, v1
 
-    new-instance v8, Lduw;
+    invoke-interface {v0, p1}, Lduj;->c(F)V
 
-    invoke-direct {v8, v0}, Lduw;-><init>(I)V
+    iget-object p1, p0, Ldva;->c:Lcom/google/android/apps/camera/focusindicator/FocusIndicatorView;
 
-    const/4 v1, 0x1
-
-    if-ne v0, v1, :cond_1
-
-    new-instance v0, Ldux;
-
-    invoke-direct {v0}, Ldux;-><init>()V
-
-    move-object v9, v0
-
-    const/4 v5, 0x1
-
-    goto :goto_0
-
-    :cond_1
-    new-instance v1, Lduy;
-
-    invoke-direct {v1, v0}, Lduy;-><init>(I)V
-
-    move v5, v0
-
-    move-object v9, v1
-
-    :goto_0
-    new-instance v0, Lduv;
-
-    iget-object v2, p0, Ldva;->d:Ldsx;
-
-    iget v3, p0, Ldva;->e:I
-
-    iget v6, p0, Ldva;->c:I
-
-    iget-object v7, p0, Ldva;->f:Lduu;
-
-    move-object v1, v0
-
-    move v4, v5
-
-    invoke-direct/range {v1 .. v9}, Lduv;-><init>(Ldsx;IIIILduu;Lduw;Ldut;)V
-
-    return-object v0
-.end method
-
-.method public final b()V
-    .locals 1
-
-    sget-object v0, Lduz;->b:Lduz;
-
-    iput-object v0, p0, Ldva;->f:Lduu;
-
-    return-void
-.end method
-
-.method public final c(JLjava/util/concurrent/TimeUnit;)V
-    .locals 0
-
-    iput-wide p1, p0, Ldva;->g:J
-
-    iput-object p3, p0, Ldva;->h:Ljava/util/concurrent/TimeUnit;
+    invoke-virtual {p1}, Lcom/google/android/apps/camera/focusindicator/FocusIndicatorView;->invalidate()V
 
     return-void
 .end method

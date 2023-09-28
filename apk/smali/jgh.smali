@@ -1,106 +1,75 @@
-.class public final Ljgh;
-.super Ljhn;
+.class public final synthetic Ljgh;
+.super Ljava/lang/Object;
 
-
-# static fields
-.field public static final CREATOR:Landroid/os/Parcelable$Creator;
+# interfaces
+.implements Lj$/util/function/Supplier;
 
 
 # instance fields
-.field public final a:Ljhk;
-
-.field public final b:Z
-
-.field public final c:Z
-
-.field public final d:[I
-
-.field public final e:I
-
-.field public final f:[I
+.field public final synthetic a:Ljgk;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
-
-    new-instance v0, Ljay;
-
-    const/16 v1, 0x12
-
-    invoke-direct {v0, v1}, Ljay;-><init>(I)V
-
-    sput-object v0, Ljgh;->CREATOR:Landroid/os/Parcelable$Creator;
-
-    return-void
-.end method
-
-.method public constructor <init>(Ljhk;ZZ[II[I)V
+.method public synthetic constructor <init>(Ljgk;)V
     .locals 0
 
-    invoke-direct {p0}, Ljhn;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Ljgh;->a:Ljhk;
-
-    iput-boolean p2, p0, Ljgh;->b:Z
-
-    iput-boolean p3, p0, Ljgh;->c:Z
-
-    iput-object p4, p0, Ljgh;->d:[I
-
-    iput p5, p0, Ljgh;->e:I
-
-    iput-object p6, p0, Ljgh;->f:[I
+    iput-object p1, p0, Ljgh;->a:Ljgk;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final writeToParcel(Landroid/os/Parcel;I)V
-    .locals 3
+.method public final get()Ljava/lang/Object;
+    .locals 6
 
-    invoke-static {p1}, Ljhp;->a(Landroid/os/Parcel;)I
+    iget-object v0, p0, Ljgh;->a:Ljgk;
 
-    move-result v0
+    iget-object v1, v0, Ljgk;->m:Lhuj;
 
-    iget-object v1, p0, Ljgh;->a:Ljhk;
+    const-string v2, "TRANSLATE_TOOLTIP"
 
-    const/4 v2, 0x1
+    invoke-virtual {v1, v2}, Lhuj;->a(Ljava/lang/String;)I
 
-    invoke-static {p1, v2, v1, p2}, Ljhp;->o(Landroid/os/Parcel;ILandroid/os/Parcelable;I)V
+    move-result v1
 
-    iget-boolean p2, p0, Ljgh;->b:Z
+    const/4 v3, 0x6
 
-    const/4 v1, 0x2
+    const/4 v4, 0x0
 
-    invoke-static {p1, v1, p2}, Ljhp;->d(Landroid/os/Parcel;IZ)V
+    if-gt v1, v3, :cond_0
 
-    iget-boolean p2, p0, Ljgh;->c:Z
+    rem-int/lit8 v5, v1, 0x3
 
-    const/4 v1, 0x3
+    if-nez v5, :cond_0
 
-    invoke-static {p1, v1, p2}, Ljhp;->d(Landroid/os/Parcel;IZ)V
+    const/4 v5, 0x1
 
-    iget-object p2, p0, Ljgh;->d:[I
+    goto :goto_0
 
-    const/4 v1, 0x4
+    :cond_0
+    const/4 v5, 0x0
 
-    invoke-static {p1, v1, p2}, Ljhp;->m(Landroid/os/Parcel;I[I)V
+    :goto_0
+    if-nez v5, :cond_1
 
-    iget p2, p0, Ljgh;->e:I
+    if-ge v1, v3, :cond_1
 
-    const/4 v1, 0x5
+    iget-object v0, v0, Ljgk;->m:Lhuj;
 
-    invoke-static {p1, v1, p2}, Ljhp;->g(Landroid/os/Parcel;II)V
+    invoke-virtual {v0, v2}, Lhuj;->b(Ljava/lang/String;)I
 
-    iget-object p2, p0, Ljgh;->f:[I
+    goto :goto_1
 
-    const/4 v1, 0x6
+    :cond_1
+    move v4, v5
 
-    invoke-static {p1, v1, p2}, Ljhp;->m(Landroid/os/Parcel;I[I)V
+    :goto_1
+    invoke-static {v4}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
-    invoke-static {p1, v0}, Ljhp;->c(Landroid/os/Parcel;I)V
+    move-result-object v0
 
-    return-void
+    return-object v0
 .end method

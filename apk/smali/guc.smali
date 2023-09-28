@@ -1,30 +1,33 @@
-.class final Lguc;
-.super Lcom/google/android/apps/camera/bottombar/BottomBarListener;
+.class public final synthetic Lguc;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Landroid/view/View$OnClickListener;
 
 
 # instance fields
-.field final synthetic a:Libj;
+.field public final synthetic a:Lgul;
 
 
 # direct methods
-.method public constructor <init>(Libj;)V
+.method public synthetic constructor <init>(Lgul;)V
     .locals 0
 
-    iput-object p1, p0, Lguc;->a:Libj;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0}, Lcom/google/android/apps/camera/bottombar/BottomBarListener;-><init>()V
+    iput-object p1, p0, Lguc;->a:Lgul;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onCancelButtonPressed()V
-    .locals 1
+.method public final onClick(Landroid/view/View;)V
+    .locals 0
 
-    iget-object v0, p0, Lguc;->a:Libj;
+    iget-object p1, p0, Lguc;->a:Lgul;
 
-    invoke-interface {v0}, Libj;->b()V
+    invoke-interface {p1}, Lgul;->a()V
 
     return-void
 .end method

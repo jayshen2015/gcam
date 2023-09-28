@@ -1,7 +1,7 @@
-.class public interface abstract Lbbj;
+.class interface abstract Lbbj;
 .super Ljava/lang/Object;
 
 
 # virtual methods
-.method public abstract a(Ljava/lang/String;)Ljava/util/List;
+.method public abstract a(Lbbm;)V
 .end method

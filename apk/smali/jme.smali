@@ -1,27 +1,46 @@
-.class public final Ljme;
-.super Lcbe;
+.class public final synthetic Ljme;
+.super Ljava/lang/Object;
 
 # interfaces
-.implements Ljmg;
+.implements Llie;
+
+
+# instance fields
+.field public final synthetic a:Ljmg;
+
+.field public final synthetic b:Landroid/view/ViewTreeObserver;
 
 
 # direct methods
-.method public constructor <init>(Landroid/os/IBinder;)V
-    .locals 1
+.method public synthetic constructor <init>(Ljmg;Landroid/view/ViewTreeObserver;)V
+    .locals 0
 
-    const-string v0, "com.google.android.gms.location.ILocationListener"
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0, p1, v0}, Lcbe;-><init>(Landroid/os/IBinder;Ljava/lang/String;)V
+    iput-object p1, p0, Ljme;->a:Ljmg;
+
+    iput-object p2, p0, Ljme;->b:Landroid/view/ViewTreeObserver;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final e()V
-    .locals 1
+.method public final close()V
+    .locals 3
 
-    const/4 v0, 0x0
+    iget-object v0, p0, Ljme;->a:Ljmg;
 
-    throw v0
+    iget-object v1, p0, Ljme;->b:Landroid/view/ViewTreeObserver;
+
+    invoke-virtual {v1}, Landroid/view/ViewTreeObserver;->isAlive()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_0
+
+    invoke-virtual {v1, v0}, Landroid/view/ViewTreeObserver;->removeOnGlobalLayoutListener(Landroid/view/ViewTreeObserver$OnGlobalLayoutListener;)V
+
+    :cond_0
+    return-void
 .end method

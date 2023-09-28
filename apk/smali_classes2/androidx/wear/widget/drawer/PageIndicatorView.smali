@@ -2,7 +2,7 @@
 .super Landroid/view/View;
 
 # interfaces
-.implements Laua;
+.implements Lala;
 
 
 # instance fields
@@ -79,9 +79,9 @@
 
     move-result-object p1
 
-    sget-object v0, Lauv;->f:[I
+    sget-object v0, Lalx;->b:[I
 
-    const v1, 0x7f150855
+    const v1, 0x7f15073c
 
     invoke-virtual {p1, p2, v0, p3, v1}, Landroid/content/Context;->obtainStyledAttributes(Landroid/util/AttributeSet;[III)Landroid/content/res/TypedArray;
 
@@ -372,49 +372,53 @@
 .end method
 
 .method private static final d(Landroid/graphics/Paint;Landroid/graphics/Paint;FFII)V
-    .locals 8
-
-    new-instance v7, Landroid/graphics/RadialGradient;
-
-    const/4 v0, 0x0
-
-    filled-new-array {p5, p5, v0}, [I
-
-    move-result-object v4
-
-    const/4 p5, 0x3
-
-    new-array v5, p5, [F
-
-    const/4 p5, 0x0
-
-    aput p5, v5, v0
+    .locals 7
 
     add-float v3, p2, p3
 
-    const/4 p3, 0x1
+    new-instance p3, Landroid/graphics/RadialGradient;
+
+    const/4 v0, 0x3
+
+    new-array v4, v0, [I
+
+    const/4 v1, 0x0
+
+    aput p5, v4, v1
+
+    const/4 v2, 0x1
+
+    aput p5, v4, v2
+
+    const/4 p5, 0x2
+
+    aput v1, v4, p5
+
+    new-array v5, v0, [F
+
+    const/4 v0, 0x0
+
+    aput v0, v5, v1
 
     div-float/2addr p2, v3
 
-    aput p2, v5, p3
+    aput p2, v5, v2
 
-    const/4 p2, 0x2
+    const/high16 p2, 0x3f800000    # 1.0f
 
-    const/high16 p3, 0x3f800000    # 1.0f
+    aput p2, v5, p5
 
-    aput p3, v5, p2
+    sget-object v6, Landroid/graphics/Shader$TileMode;->CLAMP:Landroid/graphics/Shader$TileMode;
 
     const/4 v1, 0x0
 
     const/4 v2, 0x0
 
-    sget-object v6, Landroid/graphics/Shader$TileMode;->CLAMP:Landroid/graphics/Shader$TileMode;
-
-    move-object v0, v7
+    move-object v0, p3
 
     invoke-direct/range {v0 .. v6}, Landroid/graphics/RadialGradient;-><init>(FFF[I[FLandroid/graphics/Shader$TileMode;)V
 
-    invoke-virtual {p1, v7}, Landroid/graphics/Paint;->setShader(Landroid/graphics/Shader;)Landroid/graphics/Shader;
+    invoke-virtual {p1, p3}, Landroid/graphics/Paint;->setShader(Landroid/graphics/Shader;)Landroid/graphics/Shader;
 
     invoke-virtual {p0, p4}, Landroid/graphics/Paint;->setColor(I)V
 
@@ -489,9 +493,9 @@
 
     move-result-object p1
 
-    new-instance v0, Lavn;
+    new-instance v0, Lamf;
 
-    invoke-direct {v0, p0}, Lavn;-><init>(Landroidx/wear/widget/drawer/PageIndicatorView;)V
+    invoke-direct {v0, p0}, Lamf;-><init>(Landroidx/wear/widget/drawer/PageIndicatorView;)V
 
     invoke-virtual {p1, v0}, Landroid/view/ViewPropertyAnimator;->setListener(Landroid/animation/Animator$AnimatorListener;)Landroid/view/ViewPropertyAnimator;
 
@@ -588,19 +592,17 @@
 
     move-result v0
 
-    int-to-float v0, v0
-
     iget v1, p0, Landroidx/wear/widget/drawer/PageIndicatorView;->h:I
-
-    int-to-float v1, v1
 
     invoke-virtual {p0}, Landroidx/wear/widget/drawer/PageIndicatorView;->getHeight()I
 
     move-result v2
 
-    int-to-float v2, v2
-
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
+
+    int-to-float v0, v0
+
+    int-to-float v1, v1
 
     const/high16 v3, 0x40000000    # 2.0f
 
@@ -608,9 +610,11 @@
 
     add-float/2addr v0, v1
 
-    div-float/2addr v2, v3
+    int-to-float v1, v2
 
-    invoke-virtual {p1, v0, v2}, Landroid/graphics/Canvas;->translate(FF)V
+    div-float/2addr v1, v3
+
+    invoke-virtual {p1, v0, v1}, Landroid/graphics/Canvas;->translate(FF)V
 
     const/4 v0, 0x0
 
@@ -629,15 +633,15 @@
 
     iget v3, p0, Landroidx/wear/widget/drawer/PageIndicatorView;->q:F
 
+    iget v4, p0, Landroidx/wear/widget/drawer/PageIndicatorView;->o:F
+
+    iget v5, p0, Landroidx/wear/widget/drawer/PageIndicatorView;->p:F
+
     add-float/2addr v1, v3
 
-    iget v3, p0, Landroidx/wear/widget/drawer/PageIndicatorView;->o:F
+    iget-object v3, p0, Landroidx/wear/widget/drawer/PageIndicatorView;->g:Landroid/graphics/Paint;
 
-    iget v4, p0, Landroidx/wear/widget/drawer/PageIndicatorView;->p:F
-
-    iget-object v5, p0, Landroidx/wear/widget/drawer/PageIndicatorView;->g:Landroid/graphics/Paint;
-
-    invoke-virtual {p1, v3, v4, v1, v5}, Landroid/graphics/Canvas;->drawCircle(FFFLandroid/graphics/Paint;)V
+    invoke-virtual {p1, v4, v5, v1, v3}, Landroid/graphics/Canvas;->drawCircle(FFFLandroid/graphics/Paint;)V
 
     iget v1, p0, Landroidx/wear/widget/drawer/PageIndicatorView;->j:F
 
@@ -652,15 +656,15 @@
 
     iget v3, p0, Landroidx/wear/widget/drawer/PageIndicatorView;->q:F
 
+    iget v4, p0, Landroidx/wear/widget/drawer/PageIndicatorView;->o:F
+
+    iget v5, p0, Landroidx/wear/widget/drawer/PageIndicatorView;->p:F
+
     add-float/2addr v1, v3
 
-    iget v3, p0, Landroidx/wear/widget/drawer/PageIndicatorView;->o:F
+    iget-object v3, p0, Landroidx/wear/widget/drawer/PageIndicatorView;->e:Landroid/graphics/Paint;
 
-    iget v4, p0, Landroidx/wear/widget/drawer/PageIndicatorView;->p:F
-
-    iget-object v5, p0, Landroidx/wear/widget/drawer/PageIndicatorView;->e:Landroid/graphics/Paint;
-
-    invoke-virtual {p1, v3, v4, v1, v5}, Landroid/graphics/Canvas;->drawCircle(FFFLandroid/graphics/Paint;)V
+    invoke-virtual {p1, v4, v5, v1, v3}, Landroid/graphics/Canvas;->drawCircle(FFFLandroid/graphics/Paint;)V
 
     iget v1, p0, Landroidx/wear/widget/drawer/PageIndicatorView;->i:F
 
@@ -760,17 +764,17 @@
 
     double-to-int v1, v1
 
-    iget v2, p0, Landroidx/wear/widget/drawer/PageIndicatorView;->p:F
-
     int-to-float v1, v1
 
+    iget v2, p0, Landroidx/wear/widget/drawer/PageIndicatorView;->p:F
+
     add-float/2addr v1, v2
+
+    float-to-int v1, v1
 
     invoke-virtual {p0}, Landroidx/wear/widget/drawer/PageIndicatorView;->getPaddingTop()I
 
     move-result v2
-
-    float-to-int v1, v1
 
     add-int/2addr v1, v2
 

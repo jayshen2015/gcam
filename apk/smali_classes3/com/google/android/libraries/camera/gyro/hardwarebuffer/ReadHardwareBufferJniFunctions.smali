@@ -10,7 +10,7 @@
 
     const-string v1, "hardwarebuffer-jni"
 
-    invoke-static {v0, v1}, Lkak;->b(Ljava/lang/Class;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Llil;->b(Ljava/lang/Class;Ljava/lang/String;)V
 
     return-void
 .end method

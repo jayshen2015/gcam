@@ -1,140 +1,175 @@
-.class final enum Lmot;
-.super Ljava/lang/Enum;
+.class public final Lmot;
+.super Ljava/lang/Object;
 
 
 # static fields
-.field public static final enum a:Lmot;
+.field public static volatile a:Z
 
-.field public static final enum b:Lmot;
+.field public static final b:Ljava/util/Map;
 
-.field public static final enum c:Lmot;
-
-.field public static final enum d:Lmot;
-
-.field public static final enum e:Lmot;
-
-.field public static final enum f:Lmot;
-
-.field public static final enum g:Lmot;
-
-.field private static final synthetic h:[Lmot;
+.field private static volatile c:Z
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 15
-
-    new-instance v0, Lmot;
-
-    const-string v1, "UNINITIALIZED"
-
-    const/4 v2, 0x0
-
-    invoke-direct {v0, v1, v2}, Lmot;-><init>(Ljava/lang/String;I)V
-
-    sput-object v0, Lmot;->a:Lmot;
-
-    new-instance v1, Lmot;
-
-    const-string v3, "INITIALIZING"
-
-    const/4 v4, 0x1
-
-    invoke-direct {v1, v3, v4}, Lmot;-><init>(Ljava/lang/String;I)V
-
-    sput-object v1, Lmot;->b:Lmot;
-
-    new-instance v3, Lmot;
-
-    const-string v5, "READY"
-
-    const/4 v6, 0x2
-
-    invoke-direct {v3, v5, v6}, Lmot;-><init>(Ljava/lang/String;I)V
-
-    sput-object v3, Lmot;->c:Lmot;
-
-    new-instance v5, Lmot;
-
-    const-string v7, "PROCESSING"
-
-    const/4 v8, 0x3
-
-    invoke-direct {v5, v7, v8}, Lmot;-><init>(Ljava/lang/String;I)V
-
-    sput-object v5, Lmot;->d:Lmot;
-
-    new-instance v7, Lmot;
-
-    const-string v9, "PAUSED"
-
-    const/4 v10, 0x4
-
-    invoke-direct {v7, v9, v10}, Lmot;-><init>(Ljava/lang/String;I)V
-
-    sput-object v7, Lmot;->e:Lmot;
-
-    new-instance v9, Lmot;
-
-    const-string v11, "SHUTTING_DOWN"
-
-    const/4 v12, 0x5
-
-    invoke-direct {v9, v11, v12}, Lmot;-><init>(Ljava/lang/String;I)V
-
-    sput-object v9, Lmot;->f:Lmot;
-
-    new-instance v11, Lmot;
-
-    const-string v13, "SHUT_DOWN"
-
-    const/4 v14, 0x6
-
-    invoke-direct {v11, v13, v14}, Lmot;-><init>(Ljava/lang/String;I)V
-
-    sput-object v11, Lmot;->g:Lmot;
-
-    const/4 v13, 0x7
-
-    new-array v13, v13, [Lmot;
-
-    aput-object v0, v13, v2
-
-    aput-object v1, v13, v4
-
-    aput-object v3, v13, v6
-
-    aput-object v5, v13, v8
-
-    aput-object v7, v13, v10
-
-    aput-object v9, v13, v12
-
-    aput-object v11, v13, v14
-
-    sput-object v13, Lmot;->h:[Lmot;
-
-    return-void
-.end method
-
-.method private constructor <init>(Ljava/lang/String;I)V
-    .locals 0
-
-    invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
-    return-void
-.end method
-
-.method public static values()[Lmot;
     .locals 1
 
-    sget-object v0, Lmot;->h:[Lmot;
+    const/4 v0, 0x0
 
-    invoke-virtual {v0}, [Lmot;->clone()Ljava/lang/Object;
+    sput-boolean v0, Lmot;->a:Z
+
+    sput-boolean v0, Lmot;->c:Z
+
+    new-instance v0, Ljava/util/WeakHashMap;
+
+    invoke-direct {v0}, Ljava/util/WeakHashMap;-><init>()V
+
+    invoke-static {v0}, Lj$/util/DesugarCollections;->synchronizedMap(Ljava/util/Map;)Ljava/util/Map;
 
     move-result-object v0
 
-    check-cast v0, [Lmot;
+    sput-object v0, Lmot;->b:Ljava/util/Map;
 
-    return-object v0
+    return-void
+.end method
+
+.method public static a()V
+    .locals 5
+
+    new-instance v0, Ljava/util/ArrayList;
+
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+
+    sget-object v1, Lmot;->b:Ljava/util/Map;
+
+    monitor-enter v1
+
+    :try_start_0
+    invoke-interface {v1}, Ljava/util/Map;->entrySet()Ljava/util/Set;
+
+    move-result-object v2
+
+    invoke-interface {v2}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
+
+    move-result-object v2
+
+    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v3
+
+    if-nez v3, :cond_1
+
+    monitor-exit v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    invoke-interface {v0}, Ljava/util/List;->size()I
+
+    move-result v1
+
+    const/4 v2, 0x0
+
+    :goto_0
+    if-ge v2, v1, :cond_0
+
+    invoke-interface {v0, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v3
+
+    sget-object v4, Lmot;->b:Ljava/util/Map;
+
+    invoke-interface {v4, v3}, Ljava/util/Map;->remove(Ljava/lang/Object;)Ljava/lang/Object;
+
+    add-int/lit8 v2, v2, 0x1
+
+    goto :goto_0
+
+    :cond_0
+    return-void
+
+    :cond_1
+    :try_start_1
+    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/util/Map$Entry;
+
+    invoke-interface {v0}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lmos;
+
+    iget-wide v2, v0, Lmos;->a:J
+
+    const/4 v0, 0x0
+
+    throw v0
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit v1
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    goto :goto_2
+
+    :goto_1
+    throw v0
+
+    :goto_2
+    goto :goto_1
+.end method
+
+.method public static b()I
+    .locals 3
+
+    sget-object v0, Lmot;->b:Ljava/util/Map;
+
+    monitor-enter v0
+
+    :try_start_0
+    invoke-interface {v0}, Ljava/util/Map;->values()Ljava/util/Collection;
+
+    move-result-object v1
+
+    invoke-interface {v1}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
+
+    move-result-object v1
+
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v2
+
+    if-nez v2, :cond_0
+
+    monitor-exit v0
+
+    const/4 v0, 0x0
+
+    return v0
+
+    :cond_0
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Lmos;
+
+    iget-wide v1, v1, Lmos;->a:J
+
+    const/4 v1, 0x0
+
+    throw v1
+
+    :catchall_0
+    move-exception v1
+
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw v1
 .end method

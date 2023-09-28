@@ -1,96 +1,170 @@
-.class public final enum Ljxr;
-.super Ljava/lang/Enum;
+.class public final Ljxr;
+.super Lppd;
+
+# interfaces
+.implements Lpqn;
 
 
 # static fields
-.field public static final enum a:Ljxr;
+.field public static final c:Ljxr;
 
-.field public static final enum b:Ljxr;
-
-.field public static final enum c:Ljxr;
-
-.field private static final synthetic e:[Ljxr;
+.field private static volatile d:Lpqs;
 
 
 # instance fields
-.field public final d:I
+.field public a:Lpoc;
+
+.field public b:J
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 8
+    .locals 2
 
     new-instance v0, Ljxr;
 
-    const v1, 0x7f000789
+    invoke-direct {v0}, Ljxr;-><init>()V
 
-    const-string v2, "SURFACE"
+    sput-object v0, Ljxr;->c:Ljxr;
 
-    const/4 v3, 0x0
+    const-class v1, Ljxr;
 
-    invoke-direct {v0, v2, v3, v1}, Ljxr;-><init>(Ljava/lang/String;II)V
-
-    sput-object v0, Ljxr;->a:Ljxr;
-
-    new-instance v1, Ljxr;
-
-    const-string v2, "YUV_FLEXIBLE"
-
-    const/4 v4, 0x1
-
-    const v5, 0x7f420888
-
-    invoke-direct {v1, v2, v4, v5}, Ljxr;-><init>(Ljava/lang/String;II)V
-
-    sput-object v1, Ljxr;->b:Ljxr;
-
-    new-instance v2, Ljxr;
-
-    const-string v5, "YUV_SEMI_PLANAR"
-
-    const/4 v6, 0x2
-
-    const/16 v7, 0x15
-
-    invoke-direct {v2, v5, v6, v7}, Ljxr;-><init>(Ljava/lang/String;II)V
-
-    sput-object v2, Ljxr;->c:Ljxr;
-
-    const/4 v5, 0x3
-
-    new-array v5, v5, [Ljxr;
-
-    aput-object v0, v5, v3
-
-    aput-object v1, v5, v4
-
-    aput-object v2, v5, v6
-
-    sput-object v5, Ljxr;->e:[Ljxr;
+    invoke-static {v1, v0}, Lppd;->F(Ljava/lang/Class;Lppd;)V
 
     return-void
 .end method
 
-.method private constructor <init>(Ljava/lang/String;II)V
-    .locals 0
-
-    invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
-    iput p3, p0, Ljxr;->d:I
-
-    return-void
-.end method
-
-.method public static values()[Ljxr;
+.method private constructor <init>()V
     .locals 1
 
-    sget-object v0, Ljxr;->e:[Ljxr;
+    invoke-direct {p0}, Lppd;-><init>()V
 
-    invoke-virtual {v0}, [Ljxr;->clone()Ljava/lang/Object;
+    sget-object v0, Lpoc;->b:Lpoc;
 
-    move-result-object v0
+    iput-object v0, p0, Ljxr;->a:Lpoc;
 
-    check-cast v0, [Ljxr;
+    return-void
+.end method
 
-    return-object v0
+
+# virtual methods
+.method protected final a(ILjava/lang/Object;)Ljava/lang/Object;
+    .locals 2
+
+    add-int/lit8 p1, p1, -0x1
+
+    const/4 p2, 0x1
+
+    packed-switch p1, :pswitch_data_0
+
+    :pswitch_0
+    const/4 p1, 0x0
+
+    return-object p1
+
+    :pswitch_1
+    sget-object p1, Ljxr;->d:Lpqs;
+
+    if-nez p1, :cond_1
+
+    const-class p2, Ljxr;
+
+    monitor-enter p2
+
+    :try_start_0
+    sget-object p1, Ljxr;->d:Lpqs;
+
+    if-nez p1, :cond_0
+
+    new-instance p1, Lpoz;
+
+    sget-object v0, Ljxr;->c:Ljxr;
+
+    invoke-direct {p1, v0}, Lpoz;-><init>(Lppd;)V
+
+    sput-object p1, Ljxr;->d:Lpqs;
+
+    :cond_0
+    monitor-exit p2
+
+    goto :goto_0
+
+    :catchall_0
+    move-exception p1
+
+    monitor-exit p2
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw p1
+
+    :cond_1
+    :goto_0
+    return-object p1
+
+    :pswitch_2
+    sget-object p1, Ljxr;->c:Ljxr;
+
+    return-object p1
+
+    :pswitch_3
+    new-instance p1, Lpoy;
+
+    sget-object p2, Ljxr;->c:Ljxr;
+
+    invoke-direct {p1, p2}, Lpoy;-><init>(Lppd;)V
+
+    return-object p1
+
+    :pswitch_4
+    new-instance p1, Ljxr;
+
+    invoke-direct {p1}, Ljxr;-><init>()V
+
+    return-object p1
+
+    :pswitch_5
+    const/4 p1, 0x2
+
+    new-array p1, p1, [Ljava/lang/Object;
+
+    const/4 v0, 0x0
+
+    const-string v1, "a"
+
+    aput-object v1, p1, v0
+
+    const-string v0, "b"
+
+    aput-object v0, p1, p2
+
+    sget-object p2, Ljxr;->c:Ljxr;
+
+    const-string v0, "\u0000\u0002\u0000\u0000\u0001\u0002\u0002\u0000\u0000\u0000\u0001\n\u0002\u0002"
+
+    invoke-static {p2, v0, p1}, Ljxr;->E(Lpqm;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p1
+
+    return-object p1
+
+    :pswitch_6
+    invoke-static {p2}, Ljava/lang/Byte;->valueOf(B)Ljava/lang/Byte;
+
+    move-result-object p1
+
+    return-object p1
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_6
+        :pswitch_0
+        :pswitch_5
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+    .end packed-switch
 .end method

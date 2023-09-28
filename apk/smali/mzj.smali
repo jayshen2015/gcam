@@ -1,151 +1,184 @@
-.class Lmzj;
-.super Lmye;
+.class public final Lmzj;
+.super Lppd;
 
 # interfaces
-.implements Ljava/util/SortedSet;
+.implements Lpqn;
+
+
+# static fields
+.field public static final c:Lmzj;
+
+.field private static volatile e:Lpqs;
 
 
 # instance fields
-.field public final a:Lmzi;
+.field public a:I
+
+.field public b:Ljava/lang/String;
+
+.field private d:I
 
 
 # direct methods
-.method public constructor <init>(Lmzi;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 2
 
-    invoke-direct {p0}, Lmye;-><init>()V
+    new-instance v0, Lmzj;
 
-    iput-object p1, p0, Lmzj;->a:Lmzi;
+    invoke-direct {v0}, Lmzj;-><init>()V
+
+    sput-object v0, Lmzj;->c:Lmzj;
+
+    const-class v1, Lmzj;
+
+    invoke-static {v1, v0}, Lppd;->F(Ljava/lang/Class;Lppd;)V
+
+    return-void
+.end method
+
+.method private constructor <init>()V
+    .locals 1
+
+    invoke-direct {p0}, Lppd;-><init>()V
+
+    const-string v0, ""
+
+    iput-object v0, p0, Lmzj;->b:Ljava/lang/String;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a()Lmyb;
-    .locals 1
-
-    iget-object v0, p0, Lmzj;->a:Lmzi;
-
-    return-object v0
-.end method
-
-.method public final comparator()Ljava/util/Comparator;
-    .locals 1
-
-    iget-object v0, p0, Lmzj;->a:Lmzi;
-
-    invoke-interface {v0}, Lmzi;->comparator()Ljava/util/Comparator;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public final first()Ljava/lang/Object;
-    .locals 1
-
-    iget-object v0, p0, Lmzj;->a:Lmzi;
-
-    invoke-interface {v0}, Lmzi;->j()Lmya;
-
-    move-result-object v0
-
-    invoke-static {v0}, Lmjy;->w(Lmya;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public final headSet(Ljava/lang/Object;)Ljava/util/SortedSet;
+.method protected final a(ILjava/lang/Object;)Ljava/lang/Object;
     .locals 2
 
-    iget-object v0, p0, Lmzj;->a:Lmzi;
+    add-int/lit8 p1, p1, -0x1
 
-    const/4 v1, 0x1
+    const/4 p2, 0x1
 
-    invoke-interface {v0, p1, v1}, Lmzi;->r(Ljava/lang/Object;I)Lmzi;
+    packed-switch p1, :pswitch_data_0
 
-    move-result-object p1
+    :pswitch_0
+    const/4 p1, 0x0
 
-    invoke-interface {p1}, Lmzi;->p()Ljava/util/NavigableSet;
+    return-object p1
+
+    :pswitch_1
+    sget-object p1, Lmzj;->e:Lpqs;
+
+    if-nez p1, :cond_1
+
+    const-class p2, Lmzj;
+
+    monitor-enter p2
+
+    :try_start_0
+    sget-object p1, Lmzj;->e:Lpqs;
+
+    if-nez p1, :cond_0
+
+    new-instance p1, Lpoz;
+
+    sget-object v0, Lmzj;->c:Lmzj;
+
+    invoke-direct {p1, v0}, Lpoz;-><init>(Lppd;)V
+
+    sput-object p1, Lmzj;->e:Lpqs;
+
+    :cond_0
+    monitor-exit p2
+
+    goto :goto_0
+
+    :catchall_0
+    move-exception p1
+
+    monitor-exit p2
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw p1
+
+    :cond_1
+    :goto_0
+    return-object p1
+
+    :pswitch_2
+    sget-object p1, Lmzj;->c:Lmzj;
+
+    return-object p1
+
+    :pswitch_3
+    new-instance p1, Lpoy;
+
+    sget-object p2, Lmzj;->c:Lmzj;
+
+    invoke-direct {p1, p2}, Lpoy;-><init>(Lppd;)V
+
+    return-object p1
+
+    :pswitch_4
+    new-instance p1, Lmzj;
+
+    invoke-direct {p1}, Lmzj;-><init>()V
+
+    return-object p1
+
+    :pswitch_5
+    const/4 p1, 0x4
+
+    new-array p1, p1, [Ljava/lang/Object;
+
+    const/4 v0, 0x0
+
+    const-string v1, "d"
+
+    aput-object v1, p1, v0
+
+    const-string v0, "a"
+
+    aput-object v0, p1, p2
+
+    const/4 p2, 0x2
+
+    sget-object v0, Lmfw;->g:Lppi;
+
+    aput-object v0, p1, p2
+
+    const/4 p2, 0x3
+
+    const-string v0, "b"
+
+    aput-object v0, p1, p2
+
+    sget-object p2, Lmzj;->c:Lmzj;
+
+    const-string v0, "\u0001\u0002\u0000\u0001\u0001\u0002\u0002\u0000\u0000\u0000\u0001\u100c\u0000\u0002\u1008\u0001"
+
+    invoke-static {p2, v0, p1}, Lmzj;->E(Lpqm;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p1
 
     return-object p1
-.end method
 
-.method public final iterator()Ljava/util/Iterator;
-    .locals 2
-
-    iget-object v0, p0, Lmzj;->a:Lmzi;
-
-    invoke-interface {v0}, Lmzi;->g()Ljava/util/Set;
-
-    move-result-object v0
-
-    invoke-interface {v0}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
-
-    move-result-object v0
-
-    new-instance v1, Lmyc;
-
-    invoke-direct {v1, v0}, Lmyc;-><init>(Ljava/util/Iterator;)V
-
-    return-object v1
-.end method
-
-.method public final last()Ljava/lang/Object;
-    .locals 1
-
-    iget-object v0, p0, Lmzj;->a:Lmzi;
-
-    invoke-interface {v0}, Lmzi;->k()Lmya;
-
-    move-result-object v0
-
-    invoke-static {v0}, Lmjy;->w(Lmya;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public final subSet(Ljava/lang/Object;Ljava/lang/Object;)Ljava/util/SortedSet;
-    .locals 3
-
-    iget-object v0, p0, Lmzj;->a:Lmzi;
-
-    const/4 v1, 0x2
-
-    const/4 v2, 0x1
-
-    invoke-interface {v0, p1, v1, p2, v2}, Lmzi;->q(Ljava/lang/Object;ILjava/lang/Object;I)Lmzi;
-
-    move-result-object p1
-
-    invoke-interface {p1}, Lmzi;->p()Ljava/util/NavigableSet;
+    :pswitch_6
+    invoke-static {p2}, Ljava/lang/Byte;->valueOf(B)Ljava/lang/Byte;
 
     move-result-object p1
 
     return-object p1
-.end method
 
-.method public final tailSet(Ljava/lang/Object;)Ljava/util/SortedSet;
-    .locals 2
+    nop
 
-    iget-object v0, p0, Lmzj;->a:Lmzi;
-
-    const/4 v1, 0x2
-
-    invoke-interface {v0, p1, v1}, Lmzi;->s(Ljava/lang/Object;I)Lmzi;
-
-    move-result-object p1
-
-    invoke-interface {p1}, Lmzi;->p()Ljava/util/NavigableSet;
-
-    move-result-object p1
-
-    return-object p1
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_6
+        :pswitch_0
+        :pswitch_5
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+    .end packed-switch
 .end method

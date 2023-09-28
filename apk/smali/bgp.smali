@@ -1,134 +1,70 @@
 .class public final Lbgp;
-.super Ljava/lang/Object;
+.super Lbgo;
 
 
-# instance fields
-.field public final a:Ljava/lang/Object;
-
-.field public final b:Ljava/lang/Throwable;
+# static fields
+.field private static final b:[B
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/Object;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 2
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    sget-object v0, Lbgp;->a:Ljava/nio/charset/Charset;
 
-    iput-object p1, p0, Lbgp;->a:Ljava/lang/Object;
+    const-string v1, "com.bumptech.glide.load.resource.bitmap.CenterCrop"
 
-    const/4 p1, 0x0
+    invoke-virtual {v1, v0}, Ljava/lang/String;->getBytes(Ljava/nio/charset/Charset;)[B
 
-    iput-object p1, p0, Lbgp;->b:Ljava/lang/Throwable;
+    move-result-object v0
+
+    sput-object v0, Lbgp;->b:[B
 
     return-void
 .end method
 
-.method public constructor <init>(Ljava/lang/Throwable;)V
+.method public constructor <init>()V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lbgp;->b:Ljava/lang/Throwable;
-
-    const/4 p1, 0x0
-
-    iput-object p1, p0, Lbgp;->a:Ljava/lang/Object;
+    invoke-direct {p0}, Lbgo;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 4
+.method public final a(Ljava/security/MessageDigest;)V
+    .locals 1
 
-    const/4 v0, 0x1
+    sget-object v0, Lbgp;->b:[B
 
-    if-ne p0, p1, :cond_0
+    invoke-virtual {p1, v0}, Ljava/security/MessageDigest;->update([B)V
 
-    return v0
+    return-void
+.end method
 
-    :cond_0
-    instance-of v1, p1, Lbgp;
+.method protected final c(Lbcv;Landroid/graphics/Bitmap;II)Landroid/graphics/Bitmap;
+    .locals 0
 
-    const/4 v2, 0x0
-
-    if-nez v1, :cond_1
-
-    return v2
-
-    :cond_1
-    check-cast p1, Lbgp;
-
-    iget-object v1, p0, Lbgp;->a:Ljava/lang/Object;
-
-    if-eqz v1, :cond_3
-
-    iget-object v3, p1, Lbgp;->a:Ljava/lang/Object;
-
-    invoke-virtual {v1, v3}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-nez v1, :cond_2
-
-    goto :goto_0
-
-    :cond_2
-    return v0
-
-    :cond_3
-    :goto_0
-    iget-object v0, p0, Lbgp;->b:Ljava/lang/Throwable;
-
-    if-eqz v0, :cond_4
-
-    iget-object p1, p1, Lbgp;->b:Ljava/lang/Throwable;
-
-    if-eqz p1, :cond_4
-
-    invoke-virtual {v0}, Ljava/lang/Throwable;->toString()Ljava/lang/String;
+    invoke-static {p1, p2, p3, p4}, Lbhy;->c(Lbcv;Landroid/graphics/Bitmap;II)Landroid/graphics/Bitmap;
 
     move-result-object p1
 
-    iget-object v0, p0, Lbgp;->b:Ljava/lang/Throwable;
+    return-object p1
+.end method
 
-    invoke-virtual {v0}, Ljava/lang/Throwable;->toString()Ljava/lang/String;
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 0
 
-    move-result-object v0
-
-    invoke-virtual {p1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result p1
+    instance-of p1, p1, Lbgp;
 
     return p1
-
-    :cond_4
-    return v2
 .end method
 
 .method public final hashCode()I
-    .locals 3
+    .locals 1
 
-    const/4 v0, 0x2
-
-    new-array v0, v0, [Ljava/lang/Object;
-
-    const/4 v1, 0x0
-
-    iget-object v2, p0, Lbgp;->a:Ljava/lang/Object;
-
-    aput-object v2, v0, v1
-
-    const/4 v1, 0x1
-
-    iget-object v2, p0, Lbgp;->b:Ljava/lang/Throwable;
-
-    aput-object v2, v0, v1
-
-    invoke-static {v0}, Ljava/util/Arrays;->hashCode([Ljava/lang/Object;)I
-
-    move-result v0
+    const v0, -0x23bf86f2
 
     return v0
 .end method

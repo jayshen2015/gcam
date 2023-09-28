@@ -1,40 +1,29 @@
-.class final Lhvd;
-.super Lhuc;
-
-
-# instance fields
-.field final synthetic a:Lhve;
+.class public abstract Lhvd;
+.super Ljava/lang/Object;
 
 
 # direct methods
-.method public constructor <init>(Lhve;)V
+.method public constructor <init>()V
     .locals 0
 
-    iput-object p1, p0, Lhvd;->a:Lhve;
-
-    invoke-direct {p0}, Lhuc;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()V
-    .locals 2
+.method public abstract a()I
+.end method
 
-    iget-object v0, p0, Lhvd;->a:Lhve;
+.method public abstract b()I
+.end method
 
-    iget-object v0, v0, Lhve;->l:Lhiu;
+.method public abstract c()Landroid/content/Intent;
+.end method
 
-    invoke-virtual {v0}, Lhiu;->e()V
+.method public abstract d()Ljava/lang/String;
+.end method
 
-    iget-object v0, p0, Lhvd;->a:Lhve;
-
-    iget-object v1, v0, Lhve;->l:Lhiu;
-
-    iget-object v0, v0, Lhve;->m:Lhiw;
-
-    invoke-virtual {v1, v0}, Lhiu;->g(Lhiw;)V
-
-    return-void
+.method public abstract e()Ljava/lang/String;
 .end method

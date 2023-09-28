@@ -1,150 +1,66 @@
 .class public final Lozk;
-.super Lnws;
-
-# interfaces
-.implements Lnxz;
-
-
-# static fields
-.field public static final a:Lozk;
-
-.field private static volatile b:Lnyf;
+.super Ljava/lang/Object;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
+.method public static final a(Ljava/io/File;)[B
+    .locals 4
 
-    new-instance v0, Lozk;
+    new-instance v0, Lozi;
 
-    invoke-direct {v0}, Lozk;-><init>()V
+    sget-object v1, Lozi;->a:Lozh;
 
-    sput-object v0, Lozk;->a:Lozk;
-
-    const-class v1, Lozk;
-
-    invoke-static {v1, v0}, Lnws;->aa(Ljava/lang/Class;Lnws;)V
-
-    return-void
-.end method
-
-.method private constructor <init>()V
-    .locals 1
-
-    invoke-direct {p0}, Lnws;-><init>()V
-
-    sget-object v0, Lnxp;->b:Lnxp;
-
-    sget-object v0, Lnwt;->b:Lnwt;
-
-    return-void
-.end method
-
-
-# virtual methods
-.method protected final a(ILjava/lang/Object;)Ljava/lang/Object;
-    .locals 1
-
-    add-int/lit8 p1, p1, -0x1
-
-    const/4 p2, 0x0
-
-    packed-switch p1, :pswitch_data_0
-
-    :pswitch_0
-    return-object p2
-
-    :pswitch_1
-    sget-object p1, Lozk;->b:Lnyf;
-
-    if-nez p1, :cond_1
-
-    const-class p2, Lozk;
-
-    monitor-enter p2
+    invoke-direct {v0, v1}, Lozi;-><init>(Lozh;)V
 
     :try_start_0
-    sget-object p1, Lozk;->b:Lnyf;
+    new-instance v1, Ljava/io/FileInputStream;
 
-    if-nez p1, :cond_0
+    invoke-direct {v1, p0}, Ljava/io/FileInputStream;-><init>(Ljava/io/File;)V
 
-    new-instance p1, Lnwo;
+    iget-object p0, v0, Lozi;->c:Ljava/util/Deque;
 
-    sget-object v0, Lozk;->a:Lozk;
+    invoke-interface {p0, v1}, Ljava/util/Deque;->addFirst(Ljava/lang/Object;)V
 
-    invoke-direct {p1, v0}, Lnwo;-><init>(Lnws;)V
+    invoke-virtual {v1}, Ljava/io/FileInputStream;->getChannel()Ljava/nio/channels/FileChannel;
 
-    sput-object p1, Lozk;->b:Lnyf;
+    move-result-object p0
 
-    :cond_0
-    monitor-exit p2
+    invoke-virtual {p0}, Ljava/nio/channels/FileChannel;->size()J
 
-    goto :goto_0
+    move-result-wide v2
 
-    :catchall_0
-    move-exception p1
+    invoke-static {v1, v2, v3}, Lcom/google/common/io/ByteStreams;->toByteArray(Ljava/io/InputStream;J)[B
 
-    monitor-exit p2
+    move-result-object p0
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    throw p1
+    invoke-virtual {v0}, Lozi;->close()V
 
-    :cond_1
-    :goto_0
-    return-object p1
+    return-object p0
 
-    :pswitch_2
-    sget-object p1, Lozk;->a:Lozk;
+    :catchall_0
+    move-exception p0
 
-    return-object p1
+    :try_start_1
+    iput-object p0, v0, Lozi;->d:Ljava/lang/Throwable;
 
-    :pswitch_3
-    new-instance p1, Lnwn;
+    const-class v1, Ljava/io/IOException;
 
-    sget-object p2, Lozk;->a:Lozk;
+    invoke-static {p0, v1}, Lokd;->c(Ljava/lang/Throwable;Ljava/lang/Class;)V
 
-    invoke-direct {p1, p2}, Lnwn;-><init>(Lnws;)V
+    new-instance v1, Ljava/lang/RuntimeException;
 
-    return-object p1
+    invoke-direct {v1, p0}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/Throwable;)V
 
-    :pswitch_4
-    new-instance p1, Lozk;
+    throw v1
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
-    invoke-direct {p1}, Lozk;-><init>()V
+    :catchall_1
+    move-exception p0
 
-    return-object p1
+    invoke-virtual {v0}, Lozi;->close()V
 
-    :pswitch_5
-    sget-object p1, Lozk;->a:Lozk;
-
-    const-string v0, "\u0001\u0000"
-
-    invoke-static {p1, v0, p2}, Lozk;->X(Lnxy;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object p1
-
-    return-object p1
-
-    :pswitch_6
-    const/4 p1, 0x1
-
-    invoke-static {p1}, Ljava/lang/Byte;->valueOf(B)Ljava/lang/Byte;
-
-    move-result-object p1
-
-    return-object p1
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_6
-        :pswitch_0
-        :pswitch_5
-        :pswitch_4
-        :pswitch_3
-        :pswitch_2
-        :pswitch_1
-    .end packed-switch
+    throw p0
 .end method

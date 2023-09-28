@@ -1,170 +1,335 @@
 .class public final Lozc;
-.super Lnws;
+.super Ljava/lang/Object;
 
 # interfaces
-.implements Lnxz;
-
-
-# static fields
-.field public static final c:Lozc;
-
-.field private static volatile d:Lnyf;
+.implements Loyy;
 
 
 # instance fields
-.field public a:I
-
-.field public b:Ljava/lang/String;
+.field final a:Ljava/io/DataOutput;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
-
-    new-instance v0, Lozc;
-
-    invoke-direct {v0}, Lozc;-><init>()V
-
-    sput-object v0, Lozc;->c:Lozc;
-
-    const-class v1, Lozc;
-
-    invoke-static {v1, v0}, Lnws;->aa(Ljava/lang/Class;Lnws;)V
-
-    return-void
-.end method
-
-.method private constructor <init>()V
+.method public constructor <init>(Ljava/io/ByteArrayOutputStream;)V
     .locals 1
 
-    invoke-direct {p0}, Lnws;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const-string v0, ""
+    new-instance v0, Ljava/io/DataOutputStream;
 
-    iput-object v0, p0, Lozc;->b:Ljava/lang/String;
+    invoke-direct {v0, p1}, Ljava/io/DataOutputStream;-><init>(Ljava/io/OutputStream;)V
+
+    iput-object v0, p0, Lozc;->a:Ljava/io/DataOutput;
 
     return-void
 .end method
 
 
 # virtual methods
-.method protected final a(ILjava/lang/Object;)Ljava/lang/Object;
-    .locals 3
-
-    add-int/lit8 p1, p1, -0x1
-
-    const/4 p2, 0x1
-
-    packed-switch p1, :pswitch_data_0
-
-    :pswitch_0
-    const/4 p1, 0x0
-
-    return-object p1
-
-    :pswitch_1
-    sget-object p1, Lozc;->d:Lnyf;
-
-    if-nez p1, :cond_1
-
-    const-class p2, Lozc;
-
-    monitor-enter p2
+.method public final write(I)V
+    .locals 1
 
     :try_start_0
-    sget-object p1, Lozc;->d:Lnyf;
+    iget-object v0, p0, Lozc;->a:Ljava/io/DataOutput;
 
-    if-nez p1, :cond_0
+    invoke-interface {v0, p1}, Ljava/io/DataOutput;->write(I)V
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
-    new-instance p1, Lnwo;
+    return-void
 
-    sget-object v0, Lozc;->c:Lozc;
-
-    invoke-direct {p1, v0}, Lnwo;-><init>(Lnws;)V
-
-    sput-object p1, Lozc;->d:Lnyf;
-
-    :cond_0
-    monitor-exit p2
-
-    goto :goto_0
-
-    :catchall_0
+    :catch_0
     move-exception p1
 
-    monitor-exit p2
+    new-instance v0, Ljava/lang/AssertionError;
+
+    invoke-direct {v0, p1}, Ljava/lang/AssertionError;-><init>(Ljava/lang/Object;)V
+
+    throw v0
+.end method
+
+.method public final write([B)V
+    .locals 1
+
+    :try_start_0
+    iget-object v0, p0, Lozc;->a:Ljava/io/DataOutput;
+
+    invoke-interface {v0, p1}, Ljava/io/DataOutput;->write([B)V
     :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
-    throw p1
+    return-void
 
-    :cond_1
-    :goto_0
-    return-object p1
+    :catch_0
+    move-exception p1
 
-    :pswitch_2
-    sget-object p1, Lozc;->c:Lozc;
+    new-instance v0, Ljava/lang/AssertionError;
 
-    return-object p1
+    invoke-direct {v0, p1}, Ljava/lang/AssertionError;-><init>(Ljava/lang/Object;)V
 
-    :pswitch_3
-    new-instance p1, Lnwn;
+    throw v0
+.end method
 
-    sget-object p2, Lozc;->c:Lozc;
+.method public final write([BII)V
+    .locals 1
 
-    invoke-direct {p1, p2}, Lnwn;-><init>(Lnws;)V
+    :try_start_0
+    iget-object v0, p0, Lozc;->a:Ljava/io/DataOutput;
 
-    return-object p1
+    invoke-interface {v0, p1, p2, p3}, Ljava/io/DataOutput;->write([BII)V
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
-    :pswitch_4
-    new-instance p1, Lozc;
+    return-void
 
-    invoke-direct {p1}, Lozc;-><init>()V
+    :catch_0
+    move-exception p1
 
-    return-object p1
+    new-instance p2, Ljava/lang/AssertionError;
 
-    :pswitch_5
-    const-string p1, "a"
+    invoke-direct {p2, p1}, Ljava/lang/AssertionError;-><init>(Ljava/lang/Object;)V
 
-    const-string v0, "\u0001\u0001\u0000\u0001\u0001\u0001\u0001\u0000\u0000\u0000\u0001\u1008\u0000"
+    throw p2
+.end method
 
-    const/4 v1, 0x2
+.method public final writeBoolean(Z)V
+    .locals 1
 
-    new-array v1, v1, [Ljava/lang/Object;
+    :try_start_0
+    iget-object v0, p0, Lozc;->a:Ljava/io/DataOutput;
 
-    const/4 v2, 0x0
+    invoke-interface {v0, p1}, Ljava/io/DataOutput;->writeBoolean(Z)V
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
-    aput-object p1, v1, v2
+    return-void
 
-    const-string p1, "b"
+    :catch_0
+    move-exception p1
 
-    aput-object p1, v1, p2
+    new-instance v0, Ljava/lang/AssertionError;
 
-    sget-object p1, Lozc;->c:Lozc;
+    invoke-direct {v0, p1}, Ljava/lang/AssertionError;-><init>(Ljava/lang/Object;)V
 
-    invoke-static {p1, v0, v1}, Lozc;->X(Lnxy;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/Object;
+    throw v0
+.end method
 
-    move-result-object p1
+.method public final writeByte(I)V
+    .locals 1
 
-    return-object p1
+    :try_start_0
+    iget-object v0, p0, Lozc;->a:Ljava/io/DataOutput;
 
-    :pswitch_6
-    invoke-static {p2}, Ljava/lang/Byte;->valueOf(B)Ljava/lang/Byte;
+    invoke-interface {v0, p1}, Ljava/io/DataOutput;->writeByte(I)V
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
-    move-result-object p1
+    return-void
 
-    return-object p1
+    :catch_0
+    move-exception p1
 
-    nop
+    new-instance v0, Ljava/lang/AssertionError;
 
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_6
-        :pswitch_0
-        :pswitch_5
-        :pswitch_4
-        :pswitch_3
-        :pswitch_2
-        :pswitch_1
-    .end packed-switch
+    invoke-direct {v0, p1}, Ljava/lang/AssertionError;-><init>(Ljava/lang/Object;)V
+
+    throw v0
+.end method
+
+.method public final writeBytes(Ljava/lang/String;)V
+    .locals 1
+
+    :try_start_0
+    iget-object v0, p0, Lozc;->a:Ljava/io/DataOutput;
+
+    invoke-interface {v0, p1}, Ljava/io/DataOutput;->writeBytes(Ljava/lang/String;)V
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
+
+    return-void
+
+    :catch_0
+    move-exception p1
+
+    new-instance v0, Ljava/lang/AssertionError;
+
+    invoke-direct {v0, p1}, Ljava/lang/AssertionError;-><init>(Ljava/lang/Object;)V
+
+    throw v0
+.end method
+
+.method public final writeChar(I)V
+    .locals 1
+
+    :try_start_0
+    iget-object v0, p0, Lozc;->a:Ljava/io/DataOutput;
+
+    invoke-interface {v0, p1}, Ljava/io/DataOutput;->writeChar(I)V
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
+
+    return-void
+
+    :catch_0
+    move-exception p1
+
+    new-instance v0, Ljava/lang/AssertionError;
+
+    invoke-direct {v0, p1}, Ljava/lang/AssertionError;-><init>(Ljava/lang/Object;)V
+
+    throw v0
+.end method
+
+.method public final writeChars(Ljava/lang/String;)V
+    .locals 1
+
+    :try_start_0
+    iget-object v0, p0, Lozc;->a:Ljava/io/DataOutput;
+
+    invoke-interface {v0, p1}, Ljava/io/DataOutput;->writeChars(Ljava/lang/String;)V
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
+
+    return-void
+
+    :catch_0
+    move-exception p1
+
+    new-instance v0, Ljava/lang/AssertionError;
+
+    invoke-direct {v0, p1}, Ljava/lang/AssertionError;-><init>(Ljava/lang/Object;)V
+
+    throw v0
+.end method
+
+.method public final writeDouble(D)V
+    .locals 1
+
+    :try_start_0
+    iget-object v0, p0, Lozc;->a:Ljava/io/DataOutput;
+
+    invoke-interface {v0, p1, p2}, Ljava/io/DataOutput;->writeDouble(D)V
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
+
+    return-void
+
+    :catch_0
+    move-exception p1
+
+    new-instance p2, Ljava/lang/AssertionError;
+
+    invoke-direct {p2, p1}, Ljava/lang/AssertionError;-><init>(Ljava/lang/Object;)V
+
+    throw p2
+.end method
+
+.method public final writeFloat(F)V
+    .locals 1
+
+    :try_start_0
+    iget-object v0, p0, Lozc;->a:Ljava/io/DataOutput;
+
+    invoke-interface {v0, p1}, Ljava/io/DataOutput;->writeFloat(F)V
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
+
+    return-void
+
+    :catch_0
+    move-exception p1
+
+    new-instance v0, Ljava/lang/AssertionError;
+
+    invoke-direct {v0, p1}, Ljava/lang/AssertionError;-><init>(Ljava/lang/Object;)V
+
+    throw v0
+.end method
+
+.method public final writeInt(I)V
+    .locals 1
+
+    :try_start_0
+    iget-object v0, p0, Lozc;->a:Ljava/io/DataOutput;
+
+    invoke-interface {v0, p1}, Ljava/io/DataOutput;->writeInt(I)V
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
+
+    return-void
+
+    :catch_0
+    move-exception p1
+
+    new-instance v0, Ljava/lang/AssertionError;
+
+    invoke-direct {v0, p1}, Ljava/lang/AssertionError;-><init>(Ljava/lang/Object;)V
+
+    throw v0
+.end method
+
+.method public final writeLong(J)V
+    .locals 1
+
+    :try_start_0
+    iget-object v0, p0, Lozc;->a:Ljava/io/DataOutput;
+
+    invoke-interface {v0, p1, p2}, Ljava/io/DataOutput;->writeLong(J)V
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
+
+    return-void
+
+    :catch_0
+    move-exception p1
+
+    new-instance p2, Ljava/lang/AssertionError;
+
+    invoke-direct {p2, p1}, Ljava/lang/AssertionError;-><init>(Ljava/lang/Object;)V
+
+    throw p2
+.end method
+
+.method public final writeShort(I)V
+    .locals 1
+
+    :try_start_0
+    iget-object v0, p0, Lozc;->a:Ljava/io/DataOutput;
+
+    invoke-interface {v0, p1}, Ljava/io/DataOutput;->writeShort(I)V
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
+
+    return-void
+
+    :catch_0
+    move-exception p1
+
+    new-instance v0, Ljava/lang/AssertionError;
+
+    invoke-direct {v0, p1}, Ljava/lang/AssertionError;-><init>(Ljava/lang/Object;)V
+
+    throw v0
+.end method
+
+.method public final writeUTF(Ljava/lang/String;)V
+    .locals 1
+
+    :try_start_0
+    iget-object v0, p0, Lozc;->a:Ljava/io/DataOutput;
+
+    invoke-interface {v0, p1}, Ljava/io/DataOutput;->writeUTF(Ljava/lang/String;)V
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
+
+    return-void
+
+    :catch_0
+    move-exception p1
+
+    new-instance v0, Ljava/lang/AssertionError;
+
+    invoke-direct {v0, p1}, Ljava/lang/AssertionError;-><init>(Ljava/lang/Object;)V
+
+    throw v0
 .end method

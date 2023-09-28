@@ -1,216 +1,81 @@
-.class public final Loba;
-.super Lnws;
-
-# interfaces
-.implements Lnxz;
-
-
-# static fields
-.field public static final i:Loba;
-
-.field private static volatile j:Lnyf;
+.class final Loba;
+.super Landroid/animation/AnimatorListenerAdapter;
 
 
 # instance fields
-.field public a:Z
-
-.field public b:I
-
-.field public c:I
-
-.field public d:F
-
-.field public e:F
-
-.field public f:F
-
-.field public g:F
-
-.field public h:Lnvt;
+.field final synthetic a:Lobc;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
+.method public constructor <init>(Lobc;)V
+    .locals 0
 
-    new-instance v0, Loba;
+    iput-object p1, p0, Loba;->a:Lobc;
 
-    invoke-direct {v0}, Loba;-><init>()V
-
-    sput-object v0, Loba;->i:Loba;
-
-    const-class v1, Loba;
-
-    invoke-static {v1, v0}, Lnws;->aa(Ljava/lang/Class;Lnws;)V
-
-    return-void
-.end method
-
-.method private constructor <init>()V
-    .locals 1
-
-    invoke-direct {p0}, Lnws;-><init>()V
-
-    sget-object v0, Lnvt;->b:Lnvt;
-
-    iput-object v0, p0, Loba;->h:Lnvt;
+    invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method protected final a(ILjava/lang/Object;)Ljava/lang/Object;
-    .locals 3
+.method public final onAnimationEnd(Landroid/animation/Animator;)V
+    .locals 1
 
-    add-int/lit8 p1, p1, -0x1
+    invoke-super {p0, p1}, Landroid/animation/AnimatorListenerAdapter;->onAnimationEnd(Landroid/animation/Animator;)V
 
-    const/4 p2, 0x1
+    iget-object p1, p0, Loba;->a:Lobc;
 
-    packed-switch p1, :pswitch_data_0
+    iget-boolean v0, p1, Lobc;->i:Z
 
-    :pswitch_0
-    const/4 p1, 0x0
+    if-eqz v0, :cond_0
 
-    return-object p1
+    iget-object p1, p1, Lobc;->c:Landroid/animation/ObjectAnimator;
 
-    :pswitch_1
-    sget-object p1, Loba;->j:Lnyf;
+    const/4 v0, -0x1
 
-    if-nez p1, :cond_1
+    invoke-virtual {p1, v0}, Landroid/animation/ObjectAnimator;->setRepeatCount(I)V
 
-    const-class p2, Loba;
+    iget-object p1, p0, Loba;->a:Lobc;
 
-    monitor-enter p2
+    iget-object p1, p1, Lobc;->m:Lga;
 
-    :try_start_0
-    sget-object p1, Loba;->j:Lnyf;
+    invoke-virtual {p1}, Lga;->j()V
 
-    if-nez p1, :cond_0
+    iget-object p1, p0, Loba;->a:Lobc;
 
-    new-instance p1, Lnwo;
+    const/4 v0, 0x0
 
-    sget-object v0, Loba;->i:Loba;
-
-    invoke-direct {p1, v0}, Lnwo;-><init>(Lnws;)V
-
-    sput-object p1, Loba;->j:Lnyf;
+    iput-boolean v0, p1, Lobc;->i:Z
 
     :cond_0
-    monitor-exit p2
+    return-void
+.end method
 
-    goto :goto_0
+.method public final onAnimationRepeat(Landroid/animation/Animator;)V
+    .locals 3
 
-    :catchall_0
-    move-exception p1
+    invoke-super {p0, p1}, Landroid/animation/AnimatorListenerAdapter;->onAnimationRepeat(Landroid/animation/Animator;)V
 
-    monitor-exit p2
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    iget-object p1, p0, Loba;->a:Lobc;
 
-    throw p1
+    iget v0, p1, Lobc;->f:I
 
-    :cond_1
-    :goto_0
-    return-object p1
+    const/4 v1, 0x1
 
-    :pswitch_2
-    sget-object p1, Loba;->i:Loba;
+    add-int/2addr v0, v1
 
-    return-object p1
+    iget-object v2, p1, Lobc;->e:Loaf;
 
-    :pswitch_3
-    new-instance p1, Lnwn;
+    iget-object v2, v2, Loaf;->c:[I
 
-    sget-object p2, Loba;->i:Loba;
+    array-length v2, v2
 
-    invoke-direct {p1, p2}, Lnwn;-><init>(Lnws;)V
+    rem-int/2addr v0, v2
 
-    return-object p1
+    iput v0, p1, Lobc;->f:I
 
-    :pswitch_4
-    new-instance p1, Loba;
+    iput-boolean v1, p1, Lobc;->g:Z
 
-    invoke-direct {p1}, Loba;-><init>()V
-
-    return-object p1
-
-    :pswitch_5
-    const-string p1, "a"
-
-    const-string v0, "\u0000\u0008\u0000\u0000\u0002\t\u0008\u0000\u0000\u0000\u0002\u0007\u0003\u0004\u0004\u0004\u0005\u0001\u0006\u0001\u0007\u0001\u0008\u0001\t\n"
-
-    const/16 v1, 0x8
-
-    new-array v1, v1, [Ljava/lang/Object;
-
-    const/4 v2, 0x0
-
-    aput-object p1, v1, v2
-
-    const-string p1, "b"
-
-    aput-object p1, v1, p2
-
-    const/4 p1, 0x2
-
-    const-string p2, "c"
-
-    aput-object p2, v1, p1
-
-    const/4 p1, 0x3
-
-    const-string p2, "d"
-
-    aput-object p2, v1, p1
-
-    const/4 p1, 0x4
-
-    const-string p2, "e"
-
-    aput-object p2, v1, p1
-
-    const/4 p1, 0x5
-
-    const-string p2, "f"
-
-    aput-object p2, v1, p1
-
-    const/4 p1, 0x6
-
-    const-string p2, "g"
-
-    aput-object p2, v1, p1
-
-    const/4 p1, 0x7
-
-    const-string p2, "h"
-
-    aput-object p2, v1, p1
-
-    sget-object p1, Loba;->i:Loba;
-
-    invoke-static {p1, v0, v1}, Loba;->X(Lnxy;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object p1
-
-    return-object p1
-
-    :pswitch_6
-    invoke-static {p2}, Ljava/lang/Byte;->valueOf(B)Ljava/lang/Byte;
-
-    move-result-object p1
-
-    return-object p1
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_6
-        :pswitch_0
-        :pswitch_5
-        :pswitch_4
-        :pswitch_3
-        :pswitch_2
-        :pswitch_1
-    .end packed-switch
+    return-void
 .end method

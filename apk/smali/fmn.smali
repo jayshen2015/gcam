@@ -1,22 +1,55 @@
-.class public final Lfmn;
+.class public final synthetic Lfmn;
 .super Ljava/lang/Object;
 
+# interfaces
+.implements Llie;
 
-# static fields
-.field public static final a:Lfiw;
+
+# instance fields
+.field public final synthetic a:Lfmp;
+
+.field public final synthetic b:Ljdy;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
+.method public synthetic constructor <init>(Ljdy;Lfmp;[B[B[B)V
+    .locals 0
 
-    new-instance v0, Lfiw;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const/16 v1, 0x13
+    iput-object p1, p0, Lfmn;->b:Ljdy;
 
-    invoke-direct {v0, v1}, Lfiw;-><init>(I)V
-
-    sput-object v0, Lfmn;->a:Lfiw;
+    iput-object p2, p0, Lfmn;->a:Lfmp;
 
     return-void
+.end method
+
+
+# virtual methods
+.method public final close()V
+    .locals 3
+
+    iget-object v0, p0, Lfmn;->b:Ljdy;
+
+    iget-object v1, p0, Lfmn;->a:Lfmp;
+
+    monitor-enter v0
+
+    :try_start_0
+    iget-object v2, v0, Ljdy;->h:Ljava/util/List;
+
+    invoke-interface {v2, v1}, Ljava/util/List;->remove(Ljava/lang/Object;)Z
+
+    monitor-exit v0
+
+    return-void
+
+    :catchall_0
+    move-exception v1
+
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw v1
 .end method

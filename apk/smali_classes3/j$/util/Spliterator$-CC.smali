@@ -1,32 +1,8 @@
-.class public final synthetic Lj$/util/Spliterator$-CC;
+.class public abstract synthetic Lj$/util/Spliterator$-CC;
 .super Ljava/lang/Object;
 
 
-# annotations
-.annotation system Ldalvik/annotation/Signature;
-    value = {
-        "<T:",
-        "Ljava/lang/Object;",
-        ">",
-        "Ljava/lang/Object;"
-    }
-.end annotation
-
-
 # direct methods
-.method public static $default$forEachRemaining(Lj$/util/Spliterator;Ljava/util/function/Consumer;)V
-    .locals 1
-
-    :cond_0
-    invoke-interface {p0, p1}, Lj$/util/Spliterator;->tryAdvance(Ljava/util/function/Consumer;)Z
-
-    move-result v0
-
-    if-nez v0, :cond_0
-
-    return-void
-.end method
-
 .method public static $default$getComparator(Lj$/util/Spliterator;)Ljava/util/Comparator;
     .locals 0
 

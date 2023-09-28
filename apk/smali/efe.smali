@@ -1,241 +1,455 @@
-.class public final synthetic Lefe;
+.class public final Lefe;
 .super Ljava/lang/Object;
-
-# interfaces
-.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field public final synthetic a:Leff;
+.field public final a:[B
 
-.field public final synthetic b:J
+.field public final b:[B
 
-.field public final synthetic c:Lcom/google/googlex/gcam/ShotMetadata;
+.field public final c:[B
 
-.field public final synthetic d:Z
+.field private final d:J
 
-.field public final synthetic e:Lhbq;
-
-.field public final synthetic f:Ligo;
+.field private final e:J
 
 
 # direct methods
-.method public synthetic constructor <init>(Leff;JLigo;Lcom/google/googlex/gcam/ShotMetadata;Lhbq;Z[B[B[B)V
+.method public constructor <init>()V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lefe;->a:Leff;
+    return-void
+.end method
 
-    iput-wide p2, p0, Lefe;->b:J
+.method public constructor <init>(JJ[B[B[B)V
+    .locals 0
 
-    iput-object p4, p0, Lefe;->f:Ligo;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p5, p0, Lefe;->c:Lcom/google/googlex/gcam/ShotMetadata;
+    iput-wide p1, p0, Lefe;->d:J
 
-    iput-object p6, p0, Lefe;->e:Lhbq;
+    iput-wide p3, p0, Lefe;->e:J
 
-    iput-boolean p7, p0, Lefe;->d:Z
+    iput-object p5, p0, Lefe;->a:[B
+
+    iput-object p6, p0, Lefe;->b:[B
+
+    iput-object p7, p0, Lefe;->c:[B
 
     return-void
 .end method
 
+.method public static a(Llzr;)Lojc;
+    .locals 10
 
-# virtual methods
-.method public final run()V
-    .locals 11
+    if-nez p0, :cond_0
 
-    iget-object v0, p0, Lefe;->a:Leff;
+    sget-object p0, Loih;->a:Loih;
 
-    iget-wide v1, p0, Lefe;->b:J
+    return-object p0
 
-    iget-object v3, p0, Lefe;->f:Ligo;
+    :cond_0
+    new-instance v0, Lefd;
 
-    iget-object v4, p0, Lefe;->c:Lcom/google/googlex/gcam/ShotMetadata;
+    invoke-direct {v0}, Lefd;-><init>()V
 
-    iget-object v5, p0, Lefe;->e:Lhbq;
+    const-wide/16 v1, 0x0
 
-    iget-boolean v6, p0, Lefe;->d:Z
+    invoke-virtual {v0, v1, v2}, Lefd;->a(J)V
 
-    iget-object v0, v0, Leff;->b:Lefh;
+    invoke-interface {p0}, Llzr;->b()J
 
-    :try_start_0
-    iget-object v7, v0, Lefh;->g:Lefi;
+    move-result-wide v3
 
-    iget-object v7, v7, Lefi;->f:Lkbc;
-
-    const-string v8, "fusion#saveImage"
-
-    invoke-interface {v7, v8}, Lkbc;->e(Ljava/lang/String;)V
-
-    invoke-static {}, Ledo;->a()Ledn;
-
-    move-result-object v7
-
-    new-instance v8, Lcom/google/googlex/gcam/InterleavedImageU16;
-
-    invoke-direct {v8}, Lcom/google/googlex/gcam/InterleavedImageU16;-><init>()V
-
-    invoke-static {v8}, Lnsy;->B(Ljava/lang/Object;)Lnou;
-
-    move-result-object v8
-
-    invoke-virtual {v7, v8}, Ledn;->c(Lnou;)V
-
-    new-instance v8, Lglo;
-
-    invoke-direct {v8}, Lglo;-><init>()V
-
-    invoke-virtual {v7, v8}, Ledn;->d(Lkou;)V
-
-    sget-object v8, Ljava/util/concurrent/TimeUnit;->MICROSECONDS:Ljava/util/concurrent/TimeUnit;
-
-    invoke-virtual {v4}, Lcom/google/googlex/gcam/ShotMetadata;->b()J
-
-    move-result-wide v9
-
-    invoke-virtual {v8, v9, v10}, Ljava/util/concurrent/TimeUnit;->toNanos(J)J
-
-    move-result-wide v8
-
-    invoke-virtual {v7, v8, v9}, Ledn;->g(J)V
-
-    iget-object v8, v0, Lefh;->h:Lebb;
-
-    iput-object v8, v7, Ledn;->j:Lebb;
-
-    iget v8, v0, Lefh;->d:I
-
-    invoke-static {v8}, Lkab;->b(I)Lkab;
-
-    move-result-object v8
-
-    invoke-virtual {v7, v8}, Ledn;->e(Lkab;)V
-
-    invoke-virtual {v7}, Ledn;->b()V
-
-    iget-object v8, v3, Ligo;->b:Ljava/lang/Object;
-
-    move-object v9, v8
-
-    check-cast v9, Lmqp;
-
-    invoke-virtual {v9}, Lmqp;->g()Z
-
-    move-result v9
-
-    if-eqz v9, :cond_0
-
-    check-cast v8, Lmqp;
-
-    invoke-virtual {v8}, Lmqp;->c()Ljava/lang/Object;
+    invoke-static {v3, v4}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     move-result-object v3
 
-    check-cast v3, Lcom/google/googlex/gcam/InterleavedImageU8;
+    iput-object v3, v0, Lefd;->a:Ljava/lang/Long;
 
-    iput-object v3, v7, Ledn;->a:Lcom/google/googlex/gcam/InterleavedImageU8;
+    sget-object v3, Landroid/hardware/camera2/CaptureResult;->SENSOR_TIMESTAMP:Landroid/hardware/camera2/CaptureResult$Key;
+
+    invoke-interface {p0, v3}, Llzr;->d(Landroid/hardware/camera2/CaptureResult$Key;)Ljava/lang/Object;
+
+    move-result-object v3
+
+    check-cast v3, Ljava/lang/Long;
+
+    if-nez v3, :cond_1
 
     goto :goto_0
 
-    :cond_0
-    iget-object v3, v3, Ligo;->a:Ljava/lang/Object;
+    :cond_1
+    invoke-virtual {v3}, Ljava/lang/Long;->longValue()J
 
-    check-cast v3, Lmqp;
-
-    invoke-virtual {v3}, Lmqp;->c()Ljava/lang/Object;
-
-    move-result-object v3
-
-    check-cast v3, Landroid/hardware/HardwareBuffer;
-
-    iput-object v3, v7, Ledn;->c:Landroid/hardware/HardwareBuffer;
+    move-result-wide v1
 
     :goto_0
-    invoke-virtual {v7, v4}, Ledn;->f(Lcom/google/googlex/gcam/ShotMetadata;)V
+    invoke-virtual {v0, v1, v2}, Lefd;->a(J)V
 
-    iget-object v3, v0, Lefh;->k:Lgkr;
+    sget-object v1, Lkda;->h:Landroid/hardware/camera2/CaptureResult$Key;
 
-    iput-object v3, v7, Ledn;->k:Lgkr;
+    if-eqz v1, :cond_2
 
-    if-eqz v6, :cond_1
+    sget-object v1, Lkda;->h:Landroid/hardware/camera2/CaptureResult$Key;
 
-    iget-object v3, v0, Lefh;->g:Lefi;
+    invoke-interface {p0, v1}, Llzr;->d(Landroid/hardware/camera2/CaptureResult$Key;)Ljava/lang/Object;
 
-    iget-object v3, v3, Lefi;->b:Logd;
+    move-result-object v1
 
-    invoke-interface {v3}, Logd;->get()Ljava/lang/Object;
+    check-cast v1, [B
 
-    move-result-object v3
+    iput-object v1, v0, Lefd;->c:[B
 
-    check-cast v3, Lebx;
+    :cond_2
+    sget-object v1, Lkda;->i:Landroid/hardware/camera2/CaptureResult$Key;
 
-    iget-object v4, v0, Lefh;->h:Lebb;
+    if-eqz v1, :cond_3
 
-    invoke-virtual {v7}, Ledn;->a()Ledo;
+    sget-object v1, Lkda;->i:Landroid/hardware/camera2/CaptureResult$Key;
 
-    move-result-object v6
+    invoke-interface {p0, v1}, Llzr;->d(Landroid/hardware/camera2/CaptureResult$Key;)Ljava/lang/Object;
 
-    invoke-static {v6}, Lmqp;->i(Ljava/lang/Object;)Lmqp;
+    move-result-object v1
 
-    move-result-object v6
+    check-cast v1, [B
 
-    sget-object v7, Lefz;->a:Lefz;
+    iput-object v1, v0, Lefd;->d:[B
 
-    invoke-interface {v3, v4, v6, v7}, Lebx;->a(Lebb;Lmqp;Lefz;)Lmqp;
+    :cond_3
+    sget-object v1, Lkda;->j:Landroid/hardware/camera2/CaptureResult$Key;
 
-    const/4 v3, 0x1
+    if-eqz v1, :cond_4
 
-    iput-boolean v3, v0, Lefh;->f:Z
+    sget-object v1, Lkda;->j:Landroid/hardware/camera2/CaptureResult$Key;
+
+    invoke-interface {p0, v1}, Llzr;->d(Landroid/hardware/camera2/CaptureResult$Key;)Ljava/lang/Object;
+
+    move-result-object p0
+
+    check-cast p0, [B
+
+    iput-object p0, v0, Lefd;->e:[B
+
+    :cond_4
+    iget-object p0, v0, Lefd;->a:Ljava/lang/Long;
+
+    if-eqz p0, :cond_6
+
+    iget-object v1, v0, Lefd;->b:Ljava/lang/Long;
+
+    if-nez v1, :cond_5
 
     goto :goto_1
 
+    :cond_5
+    new-instance v1, Lefe;
+
+    invoke-virtual {p0}, Ljava/lang/Long;->longValue()J
+
+    move-result-wide v3
+
+    iget-object p0, v0, Lefd;->b:Ljava/lang/Long;
+
+    invoke-virtual {p0}, Ljava/lang/Long;->longValue()J
+
+    move-result-wide v5
+
+    iget-object v7, v0, Lefd;->c:[B
+
+    iget-object v8, v0, Lefd;->d:[B
+
+    iget-object v9, v0, Lefd;->e:[B
+
+    move-object v2, v1
+
+    invoke-direct/range {v2 .. v9}, Lefe;-><init>(JJ[B[B[B)V
+
+    invoke-static {v1}, Lojc;->i(Ljava/lang/Object;)Lojc;
+
+    move-result-object p0
+
+    return-object p0
+
+    :cond_6
+    :goto_1
+    new-instance p0, Ljava/lang/StringBuilder;
+
+    invoke-direct {p0}, Ljava/lang/StringBuilder;-><init>()V
+
+    iget-object v1, v0, Lefd;->a:Ljava/lang/Long;
+
+    if-nez v1, :cond_7
+
+    const-string v1, " frameNumber"
+
+    invoke-virtual {p0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    :cond_7
+    iget-object v0, v0, Lefd;->b:Ljava/lang/Long;
+
+    if-nez v0, :cond_8
+
+    const-string v0, " timestampNanos"
+
+    invoke-virtual {p0, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    :cond_8
+    new-instance v0, Ljava/lang/IllegalStateException;
+
+    invoke-static {p0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object p0
+
+    invoke-static {p0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/String;->length()I
+
+    move-result v1
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    add-int/lit8 v1, v1, 0x1c
+
+    invoke-direct {v2, v1}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string v1, "Missing required properties:"
+
+    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p0
+
+    invoke-direct {v0, p0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+.end method
+
+
+# virtual methods
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 7
+
+    const/4 v0, 0x1
+
+    if-ne p1, p0, :cond_0
+
+    return v0
+
+    :cond_0
+    instance-of v1, p1, Lefe;
+
+    const/4 v2, 0x0
+
+    if-eqz v1, :cond_3
+
+    check-cast p1, Lefe;
+
+    iget-wide v3, p0, Lefe;->d:J
+
+    iget-wide v5, p1, Lefe;->d:J
+
+    cmp-long v1, v3, v5
+
+    if-nez v1, :cond_3
+
+    iget-wide v3, p0, Lefe;->e:J
+
+    iget-wide v5, p1, Lefe;->e:J
+
+    cmp-long v1, v3, v5
+
+    if-nez v1, :cond_3
+
+    iget-object v1, p0, Lefe;->a:[B
+
+    instance-of v3, p1, Lefe;
+
+    if-eqz v3, :cond_1
+
+    iget-object v4, p1, Lefe;->a:[B
+
+    goto :goto_0
+
     :cond_1
-    iget-object v3, v0, Lefh;->g:Lefi;
+    iget-object v4, p1, Lefe;->a:[B
 
-    iget-object v3, v3, Lefi;->b:Logd;
+    :goto_0
+    invoke-static {v1, v4}, Ljava/util/Arrays;->equals([B[B)Z
 
-    invoke-interface {v3}, Logd;->get()Ljava/lang/Object;
+    move-result v1
 
-    move-result-object v3
+    if-eqz v1, :cond_3
 
-    check-cast v3, Lebx;
+    iget-object v1, p0, Lefe;->b:[B
 
-    iget-object v4, v0, Lefh;->h:Lebb;
+    if-eqz v3, :cond_2
 
-    invoke-virtual {v7}, Ledn;->a()Ledo;
+    iget-object v4, p1, Lefe;->b:[B
 
-    move-result-object v6
+    goto :goto_1
 
-    invoke-interface {v3, v4, v6}, Lebx;->b(Lebb;Ledo;)V
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    :cond_2
+    iget-object v4, p1, Lefe;->b:[B
 
     :goto_1
-    iget-object v3, v0, Lefh;->g:Lefi;
+    invoke-static {v1, v4}, Ljava/util/Arrays;->equals([B[B)Z
 
-    iget-object v3, v3, Lefi;->f:Lkbc;
+    move-result v1
 
-    invoke-interface {v3}, Lkbc;->f()V
+    if-eqz v1, :cond_3
 
-    invoke-virtual {v5}, Lhbq;->close()V
+    iget-object v1, p0, Lefe;->c:[B
 
-    invoke-virtual {v0, v1, v2}, Lefh;->f(J)V
+    iget-object p1, p1, Lefe;->c:[B
 
-    return-void
+    invoke-static {v1, p1}, Ljava/util/Arrays;->equals([B[B)Z
 
-    :catchall_0
-    move-exception v3
+    move-result p1
 
-    iget-object v4, v0, Lefh;->g:Lefi;
+    if-eqz p1, :cond_3
 
-    iget-object v4, v4, Lefi;->f:Lkbc;
+    return v0
 
-    invoke-interface {v4}, Lkbc;->f()V
+    :cond_3
+    return v2
+.end method
 
-    invoke-virtual {v5}, Lhbq;->close()V
+.method public final hashCode()I
+    .locals 7
 
-    invoke-virtual {v0, v1, v2}, Lefh;->f(J)V
+    iget-wide v0, p0, Lefe;->d:J
 
-    throw v3
+    iget-wide v2, p0, Lefe;->e:J
+
+    const/16 v4, 0x20
+
+    ushr-long v5, v0, v4
+
+    xor-long/2addr v0, v5
+
+    long-to-int v1, v0
+
+    const v0, 0xf4243
+
+    xor-int/2addr v1, v0
+
+    mul-int v1, v1, v0
+
+    ushr-long v4, v2, v4
+
+    xor-long/2addr v2, v4
+
+    long-to-int v3, v2
+
+    xor-int/2addr v1, v3
+
+    mul-int v1, v1, v0
+
+    iget-object v2, p0, Lefe;->a:[B
+
+    invoke-static {v2}, Ljava/util/Arrays;->hashCode([B)I
+
+    move-result v2
+
+    xor-int/2addr v1, v2
+
+    mul-int v1, v1, v0
+
+    iget-object v2, p0, Lefe;->b:[B
+
+    invoke-static {v2}, Ljava/util/Arrays;->hashCode([B)I
+
+    move-result v2
+
+    xor-int/2addr v1, v2
+
+    mul-int v1, v1, v0
+
+    iget-object v0, p0, Lefe;->c:[B
+
+    invoke-static {v0}, Ljava/util/Arrays;->hashCode([B)I
+
+    move-result v0
+
+    xor-int/2addr v0, v1
+
+    return v0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .locals 6
+
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v1, "AfDebugMetadata{"
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-wide v1, p0, Lefe;->d:J
+
+    invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+
+    iget-wide v1, p0, Lefe;->e:J
+
+    const-wide/16 v3, 0x0
+
+    cmp-long v5, v1, v3
+
+    if-lez v5, :cond_0
+
+    const-string v1, " "
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-wide v1, p0, Lefe;->e:J
+
+    invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+
+    :cond_0
+    iget-object v1, p0, Lefe;->a:[B
+
+    if-eqz v1, :cond_1
+
+    const-string v1, " AEC"
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    :cond_1
+    iget-object v1, p0, Lefe;->b:[B
+
+    if-eqz v1, :cond_2
+
+    const-string v1, " AF"
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    :cond_2
+    iget-object v1, p0, Lefe;->c:[B
+
+    if-eqz v1, :cond_3
+
+    const-string v1, " AWB"
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    :cond_3
+    const-string v1, "}"
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
 .end method

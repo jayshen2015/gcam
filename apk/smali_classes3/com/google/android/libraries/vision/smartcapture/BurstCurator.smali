@@ -6,7 +6,7 @@
 
 
 # instance fields
-.field public final a:Lnwh;
+.field public final a:Lpos;
 
 .field public final b:J
 
@@ -29,9 +29,9 @@
     :catch_0
     move-exception v0
 
-    sget-object v1, Lmre;->j:Lmre;
+    sget-object v1, Lojr;->j:Lojr;
 
-    invoke-virtual {v1}, Lmre;->a()Ljava/lang/String;
+    invoke-virtual {v1}, Lojr;->a()Ljava/lang/String;
 
     move-result-object v1
 
@@ -66,15 +66,27 @@
 
     iput-boolean p1, p0, Lcom/google/android/libraries/vision/smartcapture/BurstCurator;->c:Z
 
-    invoke-static {}, Lnwh;->b()Lnwh;
+    invoke-static {}, Lpos;->c()Lpos;
 
     move-result-object p1
 
-    iput-object p1, p0, Lcom/google/android/libraries/vision/smartcapture/BurstCurator;->a:Lnwh;
+    iput-object p1, p0, Lcom/google/android/libraries/vision/smartcapture/BurstCurator;->a:Lpos;
 
-    sget-object p2, Locp;->j:Llhj;
+    sget-object p2, Lpuj;->j:Lpoq;
 
-    invoke-virtual {p1, p2}, Lnwh;->d(Llhj;)V
+    iget-object p1, p1, Lpos;->b:Ljava/util/Map;
+
+    new-instance v0, Lpor;
+
+    iget-object v1, p2, Lpoq;->a:Lpqm;
+
+    invoke-virtual {p2}, Lpoq;->a()I
+
+    move-result v2
+
+    invoke-direct {v0, v1, v2}, Lpor;-><init>(Ljava/lang/Object;I)V
+
+    invoke-interface {p1, v0, p2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     return-void
 
@@ -138,5 +150,5 @@
 .method public native nativeProcessMetadata(J[B)[B
 .end method
 
-.method public native nativeProcessYUV(JLjava/nio/ByteBuffer;IILjava/nio/ByteBuffer;IILjava/nio/ByteBuffer;IIII[BI)[B
+.method public native nativeProcessYUV(JLjava/nio/ByteBuffer;IILjava/nio/ByteBuffer;IILjava/nio/ByteBuffer;IIII[B)[B
 .end method

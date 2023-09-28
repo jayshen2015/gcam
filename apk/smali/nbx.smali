@@ -1,64 +1,51 @@
-.class public final Lnbx;
+.class public final synthetic Lnbx;
 .super Ljava/lang/Object;
+
+# interfaces
+.implements Lpyn;
 
 
 # static fields
-.field public static final a:Lnca;
-
-.field public static final b:Lnbz;
-
-
-# instance fields
-.field public final c:Ljava/util/Map;
-
-.field public final d:Ljava/util/Map;
-
-.field public final e:Lnca;
-
-.field public f:Lnbz;
+.field public static final synthetic a:Lnbx;
 
 
 # direct methods
-.method static constructor <clinit>()V
+.method static synthetic constructor <clinit>()V
     .locals 1
 
-    new-instance v0, Lnbv;
+    new-instance v0, Lnbx;
 
-    invoke-direct {v0}, Lnbv;-><init>()V
+    invoke-direct {v0}, Lnbx;-><init>()V
 
-    sput-object v0, Lnbx;->a:Lnca;
-
-    new-instance v0, Lnbw;
-
-    invoke-direct {v0}, Lnbw;-><init>()V
-
-    sput-object v0, Lnbx;->b:Lnbz;
+    sput-object v0, Lnbx;->a:Lnbx;
 
     return-void
 .end method
 
-.method public constructor <init>(Lnca;)V
-    .locals 1
+.method private synthetic constructor <init>()V
+    .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    new-instance v0, Ljava/util/HashMap;
-
-    invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
-
-    iput-object v0, p0, Lnbx;->c:Ljava/util/Map;
-
-    new-instance v0, Ljava/util/HashMap;
-
-    invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
-
-    iput-object v0, p0, Lnbx;->d:Ljava/util/Map;
-
-    const/4 v0, 0x0
-
-    iput-object v0, p0, Lnbx;->f:Lnbz;
-
-    iput-object p1, p0, Lnbx;->e:Lnca;
-
     return-void
+.end method
+
+
+# virtual methods
+.method public final get()Ljava/lang/Object;
+    .locals 2
+
+    invoke-static {}, Lnbw;->c()Lnbv;
+
+    move-result-object v0
+
+    const/4 v1, 0x1
+
+    invoke-virtual {v0, v1}, Lnbv;->b(Z)V
+
+    invoke-virtual {v0}, Lnbv;->a()Lnbw;
+
+    move-result-object v0
+
+    return-object v0
 .end method

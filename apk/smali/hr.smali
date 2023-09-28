@@ -1,90 +1,74 @@
 .class public final Lhr;
 .super Ljava/lang/Object;
 
-# interfaces
-.implements Laga;
-
-
-# instance fields
-.field a:I
-
-.field final synthetic b:Lhs;
-
-.field private c:Z
-
 
 # direct methods
-.method protected constructor <init>(Lhs;)V
+.method public constructor <init>()V
     .locals 0
-
-    iput-object p1, p0, Lhr;->b:Lhs;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const/4 p1, 0x0
+    return-void
+.end method
 
-    iput-boolean p1, p0, Lhr;->c:Z
+.method public static a(Landroid/widget/PopupWindow;Z)V
+    .locals 0
+
+    invoke-virtual {p0, p1}, Landroid/widget/PopupWindow;->setOverlapAnchor(Z)V
 
     return-void
 .end method
 
+.method public static b(Landroid/widget/PopupWindow;I)V
+    .locals 0
 
-# virtual methods
-.method public final a()V
-    .locals 2
-
-    iget-boolean v0, p0, Lhr;->c:Z
-
-    if-eqz v0, :cond_0
-
-    return-void
-
-    :cond_0
-    iget-object v0, p0, Lhr;->b:Lhs;
-
-    const/4 v1, 0x0
-
-    iput-object v1, v0, Lhs;->f:Lbkb;
-
-    iget v1, p0, Lhr;->a:I
-
-    invoke-static {v0, v1}, Lhs;->b(Lhs;I)V
+    invoke-virtual {p0, p1}, Landroid/widget/PopupWindow;->setWindowLayoutType(I)V
 
     return-void
 .end method
 
-.method public final b()V
-    .locals 1
+.method public static synthetic c(I)Ljava/lang/String;
+    .locals 0
 
-    iget-object v0, p0, Lhr;->b:Lhs;
+    packed-switch p0, :pswitch_data_0
 
-    invoke-static {v0}, Lhs;->d(Lhs;)V
+    const-string p0, "null"
 
-    const/4 v0, 0x0
+    return-object p0
 
-    iput-boolean v0, p0, Lhr;->c:Z
+    :pswitch_0
+    const-string p0, "MEMORY_CACHE"
 
-    return-void
-.end method
+    return-object p0
 
-.method public final c()V
-    .locals 1
+    :pswitch_1
+    const-string p0, "RESOURCE_DISK_CACHE"
 
-    const/4 v0, 0x1
+    return-object p0
 
-    iput-boolean v0, p0, Lhr;->c:Z
+    :pswitch_2
+    const-string p0, "DATA_DISK_CACHE"
 
-    return-void
-.end method
+    return-object p0
 
-.method public final d(Lbkb;I)V
-    .locals 1
+    :pswitch_3
+    const-string p0, "REMOTE"
 
-    iget-object v0, p0, Lhr;->b:Lhs;
+    return-object p0
 
-    iput-object p1, v0, Lhs;->f:Lbkb;
+    :pswitch_4
+    const-string p0, "LOCAL"
 
-    iput p2, p0, Lhr;->a:I
+    return-object p0
 
-    return-void
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x1
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method

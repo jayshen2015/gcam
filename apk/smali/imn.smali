@@ -1,214 +1,178 @@
-.class public final Limn;
+.class public final synthetic Limn;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Ljava/lang/Comparable;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field private final a:[I
+.field public final synthetic a:Limo;
+
+.field public final synthetic b:Landroid/os/PowerManager$OnThermalStatusChangedListener;
+
+.field private final synthetic c:I
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/String;)V
-    .locals 5
+.method public synthetic constructor <init>(Limo;Landroid/os/PowerManager$OnThermalStatusChangedListener;I)V
+    .locals 0
+
+    iput p3, p0, Limn;->c:I
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const-string v0, "\\."
+    iput-object p1, p0, Limn;->a:Limo;
 
-    invoke-virtual {p1, v0}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
+    iput-object p2, p0, Limn;->b:Landroid/os/PowerManager$OnThermalStatusChangedListener;
 
-    move-result-object v0
-
-    array-length v1, v0
-
-    const/4 v2, 0x2
-
-    const-string v3, "Unrecognized version name is found: "
-
-    if-lt v1, v2, :cond_1
-
-    new-array v1, v1, [I
-
-    iput-object v1, p0, Limn;->a:[I
-
-    const/4 v1, 0x0
-
-    :goto_0
-    array-length v2, v0
-
-    if-ge v1, v2, :cond_0
-
-    :try_start_0
-    iget-object v2, p0, Limn;->a:[I
-
-    aget-object v4, v0, v1
-
-    invoke-static {v4}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
-
-    move-result v4
-
-    aput v4, v2, v1
-    :try_end_0
-    .catch Ljava/lang/NumberFormatException; {:try_start_0 .. :try_end_0} :catch_0
-
-    add-int/lit8 v1, v1, 0x1
-
-    goto :goto_0
-
-    :catch_0
-    move-exception v0
-
-    invoke-static {p1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object p1
-
-    new-instance v0, Ljava/lang/IllegalArgumentException;
-
-    invoke-virtual {v3, p1}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object p1
-
-    invoke-direct {v0, p1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-
-    :cond_0
     return-void
-
-    :cond_1
-    invoke-static {p1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object p1
-
-    new-instance v0, Ljava/lang/IllegalArgumentException;
-
-    invoke-virtual {v3, p1}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object p1
-
-    invoke-direct {v0, p1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    goto :goto_2
-
-    :goto_1
-    throw v0
-
-    :goto_2
-    goto :goto_1
 .end method
 
 
 # virtual methods
-.method public final a(Limn;)I
-    .locals 8
+.method public final run()V
+    .locals 4
 
-    const/4 v0, 0x0
+    iget v0, p0, Limn;->c:I
 
-    const/4 v1, 0x0
+    packed-switch v0, :pswitch_data_0
 
-    :goto_0
-    iget-object v2, p0, Limn;->a:[I
+    iget-object v0, p0, Limn;->a:Limo;
 
-    array-length v3, v2
+    iget-object v1, p0, Limn;->b:Landroid/os/PowerManager$OnThermalStatusChangedListener;
 
-    const/4 v4, -0x1
-
-    const/4 v5, 0x1
-
-    if-ge v1, v3, :cond_2
-
-    iget-object v6, p1, Limn;->a:[I
-
-    array-length v7, v6
-
-    if-ge v1, v7, :cond_2
-
-    aget v2, v2, v1
-
-    aget v3, v6, v1
-
-    if-le v2, v3, :cond_0
-
-    return v5
-
-    :cond_0
-    if-ge v2, v3, :cond_1
-
-    return v4
-
-    :cond_1
-    add-int/lit8 v1, v1, 0x1
+    monitor-enter v0
 
     goto :goto_0
 
-    :cond_2
-    iget-object v1, p1, Limn;->a:[I
+    :pswitch_0
+    iget-object v0, p0, Limn;->a:Limo;
 
-    array-length v1, v1
+    iget-object v1, p0, Limn;->b:Landroid/os/PowerManager$OnThermalStatusChangedListener;
 
-    if-ge v3, v1, :cond_5
+    monitor-enter v0
 
-    :goto_1
-    iget-object v1, p1, Limn;->a:[I
+    :try_start_0
+    iget-boolean v2, v0, Limo;->d:Z
 
-    array-length v2, v1
+    if-nez v2, :cond_0
 
-    if-ge v3, v2, :cond_8
+    sget-object v1, Limo;->a:Louj;
 
-    aget v1, v1, v3
+    invoke-virtual {v1}, Loue;->c()Lova;
 
-    if-lez v1, :cond_3
+    move-result-object v1
 
-    return v5
+    check-cast v1, Loug;
 
-    :cond_3
-    if-gez v1, :cond_4
+    const/16 v2, 0xbb9
 
-    return v4
+    invoke-interface {v1, v2}, Loug;->G(I)Lova;
 
-    :cond_4
-    add-int/lit8 v3, v3, 0x1
+    move-result-object v1
 
-    goto :goto_1
+    check-cast v1, Loug;
 
-    :cond_5
-    :goto_2
-    iget-object p1, p0, Limn;->a:[I
+    const-string v2, "removeThermalStatusListener called, but listener not yet registered."
 
-    array-length v2, p1
+    invoke-interface {v1, v2}, Loug;->o(Ljava/lang/String;)V
 
-    if-ge v1, v2, :cond_8
+    iget-boolean v1, v0, Limo;->c:Z
 
-    aget p1, p1, v1
+    const-string v2, "Listener is neither registered, nor waiting to be registered."
 
-    if-lez p1, :cond_6
+    invoke-static {v1, v2}, Lobr;->aR(ZLjava/lang/Object;)V
 
-    return v5
+    const/4 v1, 0x0
 
-    :cond_6
-    if-gez p1, :cond_7
+    iput-boolean v1, v0, Limo;->c:Z
 
-    return v4
+    monitor-exit v0
 
-    :cond_7
-    add-int/lit8 v1, v1, 0x1
+    return-void
 
-    goto :goto_2
+    :cond_0
+    iget-object v2, v0, Limo;->b:Landroid/os/PowerManager;
 
-    :cond_8
-    return v0
-.end method
+    invoke-virtual {v2, v1}, Landroid/os/PowerManager;->removeThermalStatusListener(Landroid/os/PowerManager$OnThermalStatusChangedListener;)V
 
-.method public final bridge synthetic compareTo(Ljava/lang/Object;)I
-    .locals 0
+    monitor-exit v0
 
-    check-cast p1, Limn;
+    return-void
 
-    invoke-virtual {p0, p1}, Limn;->a(Limn;)I
+    :catchall_0
+    move-exception v1
 
-    move-result p1
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    return p1
+    throw v1
+
+    :goto_0
+    :try_start_1
+    iget-boolean v2, v0, Limo;->c:Z
+
+    if-nez v2, :cond_1
+
+    sget-object v1, Limo;->a:Louj;
+
+    invoke-virtual {v1}, Loue;->c()Lova;
+
+    move-result-object v1
+
+    check-cast v1, Loug;
+
+    const/16 v2, 0xbb8
+
+    invoke-interface {v1, v2}, Loug;->G(I)Lova;
+
+    move-result-object v1
+
+    check-cast v1, Loug;
+
+    const-string v2, "removeThermalStatusListener already called. Not registering listener."
+
+    invoke-interface {v1, v2}, Loug;->o(Ljava/lang/String;)V
+
+    monitor-exit v0
+
+    return-void
+
+    :cond_1
+    const-string v2, "AddThermalStatusListener"
+
+    invoke-static {v2}, Landroid/os/Trace;->beginSection(Ljava/lang/String;)V
+
+    iget-object v2, v0, Limo;->b:Landroid/os/PowerManager;
+
+    iget-object v3, v0, Limo;->e:Ljava/util/concurrent/Executor;
+
+    invoke-virtual {v2, v3, v1}, Landroid/os/PowerManager;->addThermalStatusListener(Ljava/util/concurrent/Executor;Landroid/os/PowerManager$OnThermalStatusChangedListener;)V
+
+    invoke-static {}, Landroid/os/Trace;->endSection()V
+
+    const/4 v1, 0x1
+
+    iput-boolean v1, v0, Limo;->d:Z
+
+    monitor-exit v0
+
+    return-void
+
+    :catchall_1
+    move-exception v1
+
+    monitor-exit v0
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_1
+
+    throw v1
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

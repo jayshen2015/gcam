@@ -1,205 +1,297 @@
 .class public final Lgfp;
 .super Ljava/lang/Object;
 
+# interfaces
+.implements Lpys;
+
+
+# instance fields
+.field private final synthetic a:I
+
 
 # direct methods
-.method public constructor <init>()V
+.method public constructor <init>(I)V
     .locals 0
+
+    iput p1, p0, Lgfp;->a:I
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
-.method public static a(Lkab;Z)I
-    .locals 4
-
-    const/4 v0, 0x4
-
-    const/4 v1, 0x2
-
-    const/4 v2, 0x1
-
-    const/4 v3, 0x3
-
-    if-eqz p1, :cond_3
-
-    sget-object p1, Lkab;->a:Lkab;
-
-    if-ne p0, p1, :cond_0
-
-    return v2
-
-    :cond_0
-    sget-object p1, Lkab;->b:Lkab;
-
-    if-ne p0, p1, :cond_1
-
-    return v3
-
-    :cond_1
-    sget-object p1, Lkab;->c:Lkab;
-
-    if-ne p0, p1, :cond_2
-
-    return v1
-
-    :cond_2
-    return v0
-
-    :cond_3
-    sget-object p1, Lkab;->a:Lkab;
-
-    if-ne p0, p1, :cond_4
-
-    return v3
-
-    :cond_4
-    sget-object p1, Lkab;->b:Lkab;
-
-    if-ne p0, p1, :cond_5
-
-    return v2
-
-    :cond_5
-    sget-object p1, Lkab;->c:Lkab;
-
-    if-ne p0, p1, :cond_6
-
-    return v0
-
-    :cond_6
-    return v1
-.end method
-
-.method public static b(I)Z
+.method public static a()Lgfl;
     .locals 1
 
-    const/4 v0, 0x3
+    new-instance v0, Lgfl;
 
-    if-eq p0, v0, :cond_1
+    invoke-direct {v0}, Lgfl;-><init>()V
 
-    const/4 v0, 0x4
-
-    if-ne p0, v0, :cond_0
-
-    goto :goto_0
-
-    :cond_0
-    const/4 p0, 0x0
-
-    return p0
-
-    :cond_1
-    :goto_0
-    const/4 p0, 0x1
-
-    return p0
+    return-object v0
 .end method
 
-.method public static c(Landroid/view/WindowManager;)I
-    .locals 0
+.method public static b()Ljava/util/concurrent/ExecutorService;
+    .locals 1
 
-    invoke-interface {p0}, Landroid/view/WindowManager;->getDefaultDisplay()Landroid/view/Display;
+    const-string v0, "CameraEx"
 
-    move-result-object p0
+    invoke-static {v0}, Lmip;->bJ(Ljava/lang/String;)Ljava/util/concurrent/ExecutorService;
 
-    invoke-virtual {p0}, Landroid/view/Display;->getRotation()I
+    move-result-object v0
 
-    move-result p0
+    invoke-static {v0}, Lqmd;->ae(Ljava/lang/Object;)V
 
-    packed-switch p0, :pswitch_data_0
+    return-object v0
+.end method
 
-    sget-object p0, Lkab;->a:Lkab;
+.method public static final c()Lglf;
+    .locals 1
 
-    goto :goto_0
+    new-instance v0, Lglf;
+
+    invoke-direct {v0}, Lglf;-><init>()V
+
+    return-object v0
+.end method
+
+.method public static d(Lqkg;)Lgfp;
+    .locals 1
+
+    new-instance p0, Lgfp;
+
+    const/16 v0, 0x12
+
+    invoke-direct {p0, v0}, Lgfp;-><init>(I)V
+
+    return-object p0
+.end method
+
+.method public static e()Lenl;
+    .locals 1
+
+    new-instance v0, Lenl;
+
+    invoke-direct {v0}, Lenl;-><init>()V
+
+    return-object v0
+.end method
+
+.method public static f()Lfcy;
+    .locals 1
+
+    new-instance v0, Lfcy;
+
+    invoke-direct {v0}, Lfcy;-><init>()V
+
+    return-object v0
+.end method
+
+
+# virtual methods
+.method public final synthetic get()Ljava/lang/Object;
+    .locals 3
+
+    iget v0, p0, Lgfp;->a:I
+
+    const/4 v1, 0x1
+
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v1
+
+    const/4 v2, 0x0
+
+    packed-switch v0, :pswitch_data_0
+
+    new-instance v0, Llap;
+
+    invoke-direct {v0}, Llap;-><init>()V
+
+    return-object v0
 
     :pswitch_0
-    const/16 p0, 0x10e
+    new-instance v0, Lfcy;
 
-    invoke-static {p0}, Lkab;->d(I)Lkab;
+    invoke-direct {v0}, Lfcy;-><init>()V
 
-    move-result-object p0
-
-    goto :goto_0
+    return-object v0
 
     :pswitch_1
-    const/16 p0, 0xb4
+    invoke-static {}, Lgfp;->c()Lglf;
 
-    invoke-static {p0}, Lkab;->d(I)Lkab;
+    move-result-object v0
 
-    move-result-object p0
-
-    goto :goto_0
+    return-object v0
 
     :pswitch_2
-    const/16 p0, 0x5a
-
-    invoke-static {p0}, Lkab;->d(I)Lkab;
-
-    move-result-object p0
-
-    goto :goto_0
+    throw v2
 
     :pswitch_3
-    const/4 p0, 0x0
+    new-instance v0, Lgji;
 
-    invoke-static {p0}, Lkab;->d(I)Lkab;
+    invoke-direct {v0}, Lgji;-><init>()V
 
-    move-result-object p0
+    return-object v0
 
-    :goto_0
-    invoke-virtual {p0}, Lkab;->a()I
+    :pswitch_4
+    new-instance v0, Lgiq;
 
-    move-result p0
+    invoke-direct {v0}, Lgiq;-><init>()V
 
-    return p0
+    return-object v0
+
+    :pswitch_5
+    sget-object v0, Landroid/hardware/camera2/CaptureRequest;->CONTROL_VIDEO_STABILIZATION_MODE:Landroid/hardware/camera2/CaptureRequest$Key;
+
+    const/4 v1, 0x0
+
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v1
+
+    invoke-static {v0, v1}, Lfcy;->i(Landroid/hardware/camera2/CaptureRequest$Key;Ljava/lang/Object;)Lgjm;
+
+    move-result-object v0
+
+    return-object v0
+
+    :pswitch_6
+    sget-object v0, Landroid/hardware/camera2/CaptureRequest;->NOISE_REDUCTION_MODE:Landroid/hardware/camera2/CaptureRequest$Key;
+
+    invoke-static {v0, v1}, Lfcy;->i(Landroid/hardware/camera2/CaptureRequest$Key;Ljava/lang/Object;)Lgjm;
+
+    move-result-object v0
+
+    return-object v0
+
+    :pswitch_7
+    sget-object v0, Landroid/hardware/camera2/CaptureRequest;->JPEG_QUALITY:Landroid/hardware/camera2/CaptureRequest$Key;
+
+    const/16 v1, 0x5f
+
+    invoke-static {v1}, Ljava/lang/Byte;->valueOf(B)Ljava/lang/Byte;
+
+    move-result-object v1
+
+    invoke-static {v0, v1}, Lfcy;->i(Landroid/hardware/camera2/CaptureRequest$Key;Ljava/lang/Object;)Lgjm;
+
+    move-result-object v0
+
+    return-object v0
+
+    :pswitch_8
+    invoke-static {v1}, Llcv;->g(Ljava/lang/Object;)Llco;
+
+    move-result-object v0
+
+    return-object v0
+
+    :pswitch_9
+    invoke-static {}, Lgfp;->b()Ljava/util/concurrent/ExecutorService;
+
+    move-result-object v0
+
+    return-object v0
+
+    :pswitch_a
+    invoke-static {}, Lgfp;->f()Lfcy;
+
+    move-result-object v0
+
+    return-object v0
+
+    :pswitch_b
+    new-instance v0, Lghb;
+
+    invoke-direct {v0}, Lghb;-><init>()V
+
+    return-object v0
+
+    :pswitch_c
+    new-instance v0, Lggt;
+
+    invoke-direct {v0}, Lggt;-><init>()V
+
+    return-object v0
+
+    :pswitch_d
+    new-instance v0, Llce;
+
+    invoke-static {}, Lggw;->c()Lggy;
+
+    move-result-object v1
+
+    invoke-direct {v0, v1}, Llce;-><init>(Ljava/lang/Object;)V
+
+    return-object v0
+
+    :pswitch_e
+    new-instance v0, Limy;
+
+    invoke-direct {v0, v2}, Limy;-><init>([B)V
+
+    return-object v0
+
+    :pswitch_f
+    new-instance v0, Lgge;
+
+    invoke-direct {v0}, Lgge;-><init>()V
+
+    return-object v0
+
+    :pswitch_10
+    new-instance v0, Lgfy;
+
+    invoke-direct {v0}, Lgfy;-><init>()V
+
+    return-object v0
+
+    :pswitch_11
+    new-instance v0, Llce;
+
+    sget-object v1, Lgfq;->a:Lgfq;
+
+    invoke-direct {v0, v1}, Llce;-><init>(Ljava/lang/Object;)V
+
+    return-object v0
+
+    :pswitch_12
+    invoke-static {}, Lgfp;->a()Lgfl;
+
+    move-result-object v0
+
+    return-object v0
+
+    :pswitch_13
+    new-instance v0, Lgfn;
+
+    invoke-direct {v0}, Lgfn;-><init>()V
+
+    return-object v0
 
     nop
 
     :pswitch_data_0
     .packed-switch 0x0
+        :pswitch_13
+        :pswitch_12
+        :pswitch_11
+        :pswitch_10
+        :pswitch_f
+        :pswitch_e
+        :pswitch_d
+        :pswitch_c
+        :pswitch_b
+        :pswitch_a
+        :pswitch_9
+        :pswitch_8
+        :pswitch_7
+        :pswitch_6
+        :pswitch_5
+        :pswitch_4
         :pswitch_3
         :pswitch_2
         :pswitch_1
         :pswitch_0
     .end packed-switch
-.end method
-
-.method public static synthetic d(Ljava/lang/Throwable;Ljava/lang/Throwable;)V
-    .locals 6
-
-    :try_start_0
-    const-class v0, Ljava/lang/Throwable;
-
-    const-string v1, "addSuppressed"
-
-    const/4 v2, 0x1
-
-    new-array v3, v2, [Ljava/lang/Class;
-
-    const-class v4, Ljava/lang/Throwable;
-
-    const/4 v5, 0x0
-
-    aput-object v4, v3, v5
-
-    invoke-virtual {v0, v1, v3}, Ljava/lang/Class;->getDeclaredMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
-
-    move-result-object v0
-
-    new-array v1, v2, [Ljava/lang/Object;
-
-    aput-object p1, v1, v5
-
-    invoke-virtual {v0, p0, v1}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
-    :try_end_0
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
-
-    return-void
-
-    :catch_0
-    move-exception p0
-
-    return-void
 .end method

@@ -1,247 +1,97 @@
 .class public final Lpr;
-.super Ljava/lang/Object;
+.super Lqo;
 
 
 # instance fields
-.field public final a:Lojv;
-
-.field public b:Lolz;
-
-.field private final c:Ljava/lang/Runnable;
-
-.field private d:Landroid/window/OnBackInvokedCallback;
-
-.field private e:Landroid/window/OnBackInvokedDispatcher;
-
-.field private f:Z
+.field final synthetic a:Lps;
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 1
+.method public constructor <init>(Lps;Landroid/content/Context;)V
+    .locals 0
 
-    const/4 v0, 0x0
+    iput-object p1, p0, Lpr;->a:Lps;
 
-    invoke-direct {p0, v0}, Lpr;-><init>(Ljava/lang/Runnable;)V
+    invoke-direct {p0, p2}, Lqo;-><init>(Landroid/content/Context;)V
 
-    return-void
-.end method
-
-.method public constructor <init>(Ljava/lang/Runnable;)V
-    .locals 2
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lpr;->c:Ljava/lang/Runnable;
-
-    new-instance p1, Lojv;
-
-    invoke-direct {p1}, Lojv;-><init>()V
-
-    iput-object p1, p0, Lpr;->a:Lojv;
-
-    :try_start_0
-    new-instance p1, Lpo;
-
-    const/4 v0, 0x1
-
-    invoke-direct {p1, p0, v0}, Lpo;-><init>(Lpr;I)V
-
-    iput-object p1, p0, Lpr;->b:Lolz;
-
-    sget-object p1, Lpp;->a:Lpp;
-
-    new-instance v0, Lpo;
-
-    const/4 v1, 0x0
-
-    invoke-direct {v0, p0, v1}, Lpo;-><init>(Lpr;I)V
-
-    invoke-virtual {p1, v0}, Lpp;->a(Lolz;)Landroid/window/OnBackInvokedCallback;
-
-    move-result-object p1
-
-    iput-object p1, p0, Lpr;->d:Landroid/window/OnBackInvokedCallback;
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    :catchall_0
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Lpn;)Lph;
-    .locals 2
+.method protected final a(Landroid/util/DisplayMetrics;)F
+    .locals 1
 
-    iget-object v0, p0, Lpr;->a:Lojv;
+    iget p1, p1, Landroid/util/DisplayMetrics;->densityDpi:I
 
-    invoke-virtual {v0, p1}, Lojv;->add(Ljava/lang/Object;)Z
+    int-to-float p1, p1
 
-    new-instance v0, Lpq;
+    const/high16 v0, 0x42c80000    # 100.0f
 
-    invoke-direct {v0, p0, p1}, Lpq;-><init>(Lpr;Lpn;)V
+    div-float/2addr v0, p1
 
-    invoke-virtual {p1, v0}, Lpn;->b(Lph;)V
-
-    invoke-virtual {p0}, Lpr;->d()V
-
-    iget-object v1, p0, Lpr;->b:Lolz;
-
-    iput-object v1, p1, Lpn;->d:Lolz;
-
-    return-object v0
+    return v0
 .end method
 
-.method public final b()V
+.method protected final b(I)I
+    .locals 1
+
+    invoke-super {p0, p1}, Lqo;->b(I)I
+
+    move-result p1
+
+    const/16 v0, 0x64
+
+    invoke-static {v0, p1}, Ljava/lang/Math;->min(II)I
+
+    move-result p1
+
+    return p1
+.end method
+
+.method protected final c(Landroid/view/View;Lqm;)V
     .locals 3
 
-    iget-object v0, p0, Lpr;->a:Lojv;
+    iget-object v0, p0, Lpr;->a:Lps;
 
-    iget v1, v0, Lojv;->a:I
+    iget-object v1, v0, Lps;->a:Landroid/support/v7/widget/RecyclerView;
 
-    invoke-interface {v0, v1}, Ljava/util/List;->listIterator(I)Ljava/util/ListIterator;
+    iget-object v1, v1, Landroid/support/v7/widget/RecyclerView;->m:Lqc;
 
-    move-result-object v0
+    invoke-virtual {v0, v1, p1}, Lps;->d(Lqc;Landroid/view/View;)[I
 
-    :cond_0
-    invoke-interface {v0}, Ljava/util/ListIterator;->hasPrevious()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_1
-
-    invoke-interface {v0}, Ljava/util/ListIterator;->previous()Ljava/lang/Object;
-
-    move-result-object v1
-
-    move-object v2, v1
-
-    check-cast v2, Lpn;
-
-    iget-boolean v2, v2, Lpn;->b:Z
-
-    if-eqz v2, :cond_0
-
-    goto :goto_0
-
-    :cond_1
-    const/4 v1, 0x0
-
-    :goto_0
-    check-cast v1, Lpn;
-
-    if-eqz v1, :cond_2
-
-    invoke-virtual {v1}, Lpn;->a()V
-
-    return-void
-
-    :cond_2
-    iget-object v0, p0, Lpr;->c:Ljava/lang/Runnable;
-
-    if-eqz v0, :cond_3
-
-    invoke-interface {v0}, Ljava/lang/Runnable;->run()V
-
-    :cond_3
-    return-void
-.end method
-
-.method public final c(Landroid/window/OnBackInvokedDispatcher;)V
-    .locals 0
-
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    iput-object p1, p0, Lpr;->e:Landroid/window/OnBackInvokedDispatcher;
-
-    invoke-virtual {p0}, Lpr;->d()V
-
-    return-void
-.end method
-
-.method public final d()V
-    .locals 5
-
-    iget-object v0, p0, Lpr;->a:Lojv;
-
-    invoke-interface {v0}, Ljava/util/Collection;->isEmpty()Z
-
-    move-result v1
-
-    const/4 v2, 0x1
-
-    const/4 v3, 0x0
-
-    if-eqz v1, :cond_0
+    move-result-object p1
 
     const/4 v0, 0x0
 
-    goto :goto_0
+    aget v0, p1, v0
 
-    :cond_0
-    invoke-interface {v0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
+    const/4 v1, 0x1
 
-    move-result-object v0
+    aget p1, p1, v1
 
-    :cond_1
-    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
+    invoke-static {v0}, Ljava/lang/Math;->abs(I)I
 
     move-result v1
 
-    if-eqz v1, :cond_2
+    invoke-static {p1}, Ljava/lang/Math;->abs(I)I
 
-    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    move-result v2
 
-    move-result-object v1
+    invoke-static {v1, v2}, Ljava/lang/Math;->max(II)I
 
-    check-cast v1, Lpn;
+    move-result v1
 
-    iget-boolean v1, v1, Lpn;->b:Z
+    invoke-virtual {p0, v1}, Lqo;->g(I)I
 
-    if-eqz v1, :cond_1
+    move-result v1
 
-    const/4 v0, 0x1
+    if-lez v1, :cond_0
 
-    goto :goto_0
+    iget-object v2, p0, Lpr;->j:Landroid/view/animation/DecelerateInterpolator;
 
-    :cond_2
-    const/4 v0, 0x0
+    invoke-virtual {p2, v0, p1, v1, v2}, Lqm;->b(IIILandroid/view/animation/Interpolator;)V
 
-    :goto_0
-    iget-object v1, p0, Lpr;->e:Landroid/window/OnBackInvokedDispatcher;
-
-    iget-object v4, p0, Lpr;->d:Landroid/window/OnBackInvokedCallback;
-
-    if-eqz v1, :cond_4
-
-    if-eqz v4, :cond_4
-
-    if-eqz v0, :cond_3
-
-    iget-boolean v0, p0, Lpr;->f:Z
-
-    if-nez v0, :cond_4
-
-    sget-object v0, Lpp;->a:Lpp;
-
-    invoke-virtual {v0, v1, v3, v4}, Lpp;->b(Ljava/lang/Object;ILjava/lang/Object;)V
-
-    iput-boolean v2, p0, Lpr;->f:Z
-
-    return-void
-
-    :cond_3
-    iget-boolean v0, p0, Lpr;->f:Z
-
-    if-eqz v0, :cond_4
-
-    sget-object v0, Lpp;->a:Lpp;
-
-    invoke-virtual {v0, v1, v4}, Lpp;->c(Ljava/lang/Object;Ljava/lang/Object;)V
-
-    iput-boolean v3, p0, Lpr;->f:Z
-
-    :cond_4
+    :cond_0
     return-void
 .end method

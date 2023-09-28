@@ -1,63 +1,110 @@
-.class public final synthetic Ldrp;
+.class public final Ldrp;
 .super Ljava/lang/Object;
-
-# interfaces
-.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field public final synthetic a:Ldru;
+.field public final a:Ljava/util/List;
 
-.field public final synthetic b:Lnph;
+.field public final b:Ljava/util/List;
+
+.field public c:Ldqv;
+
+.field public final d:Ljava/util/List;
+
+.field private final e:Ldsz;
 
 
 # direct methods
-.method public synthetic constructor <init>(Ldru;Lnph;)V
-    .locals 0
+.method public constructor <init>(Ldsz;)V
+    .locals 1
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Ldrp;->a:Ldru;
+    new-instance v0, Ljava/util/ArrayList;
 
-    iput-object p2, p0, Ldrp;->b:Lnph;
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+
+    iput-object v0, p0, Ldrp;->a:Ljava/util/List;
+
+    new-instance v0, Ljava/util/ArrayList;
+
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+
+    iput-object v0, p0, Ldrp;->b:Ljava/util/List;
+
+    sget-object v0, Ldqy;->a:Ldqy;
+
+    iput-object v0, p0, Ldrp;->c:Ldqv;
+
+    new-instance v0, Ljava/util/ArrayList;
+
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+
+    iput-object v0, p0, Ldrp;->d:Ljava/util/List;
+
+    iput-object p1, p0, Ldrp;->e:Ldsz;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final run()V
-    .locals 4
+.method public final a()Ldrt;
+    .locals 7
 
-    iget-object v0, p0, Ldrp;->a:Ldru;
+    new-instance v4, Ldrn;
 
-    iget-object v1, p0, Ldrp;->b:Lnph;
+    invoke-direct {v4, p0}, Ldrn;-><init>(Ldrp;)V
 
-    iget-object v0, v0, Ldru;->a:Llbd;
+    new-instance v3, Ldrg;
 
-    invoke-interface {v0}, Llbd;->i()Lldc;
+    invoke-direct {v3, p0}, Ldrg;-><init>(Ldrp;)V
 
-    move-result-object v0
+    new-instance v5, Ldro;
 
-    invoke-virtual {v0}, Llbk;->c()Llcv;
+    invoke-direct {v5, p0}, Ldro;-><init>(Ldrp;)V
 
-    move-result-object v0
+    new-instance v6, Ldrt;
 
-    check-cast v0, Llcn;
+    iget-object v1, p0, Ldrp;->e:Ldsz;
 
-    invoke-interface {v0}, Llcn;->e()Landroid/opengl/EGLContext;
+    iget-object v2, p0, Ldrp;->c:Ldqv;
 
-    move-result-object v0
+    move-object v0, v6
 
-    invoke-virtual {v0}, Landroid/opengl/EGLContext;->getNativeHandle()J
+    invoke-direct/range {v0 .. v5}, Ldrt;-><init>(Ldsz;Ldqv;Ldqs;Ldqt;Ldrb;)V
 
-    move-result-wide v2
+    return-object v6
+.end method
 
-    invoke-static {v2, v3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+.method public final b(Ldqs;)V
+    .locals 1
 
-    move-result-object v0
+    iget-object v0, p0, Ldrp;->b:Ljava/util/List;
 
-    invoke-virtual {v1, v0}, Lnph;->e(Ljava/lang/Object;)Z
+    invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    return-void
+.end method
+
+.method public final c(Ldqt;)V
+    .locals 1
+
+    iget-object v0, p0, Ldrp;->a:Ljava/util/List;
+
+    invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    return-void
+.end method
+
+.method public final d(Ldrs;)V
+    .locals 1
+
+    new-instance v0, Ldrh;
+
+    invoke-direct {v0, p1}, Ldrh;-><init>(Ldrs;)V
+
+    invoke-virtual {p0, v0}, Ldrp;->b(Ldqs;)V
 
     return-void
 .end method

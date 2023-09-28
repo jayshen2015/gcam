@@ -1,333 +1,150 @@
-.class public final Leyt;
+.class public final synthetic Leyt;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Logk;
+.implements Llij;
 
 
 # instance fields
-.field private final a:Loiw;
-
-.field private final b:Loiw;
-
-.field private final c:Loiw;
-
-.field private final d:Loiw;
-
-.field private final e:Loiw;
-
-.field private final f:Loiw;
-
-.field private final g:Loiw;
-
-.field private final h:Loiw;
-
-.field private final i:Loiw;
-
-.field private final j:Loiw;
-
-.field private final k:Loiw;
-
-.field private final l:Loiw;
-
-.field private final m:Loiw;
-
-.field private final n:Loiw;
-
-.field private final o:Loiw;
-
-.field private final p:Loiw;
-
-.field private final q:Loiw;
-
-.field private final r:Loiw;
-
-.field private final s:Loiw;
+.field public final synthetic a:Lezg;
 
 
 # direct methods
-.method public constructor <init>(Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;)V
-    .locals 2
-
-    move-object v0, p0
+.method public synthetic constructor <init>(Lezg;)V
+    .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    move-object v1, p1
-
-    iput-object v1, v0, Leyt;->a:Loiw;
-
-    move-object v1, p2
-
-    iput-object v1, v0, Leyt;->b:Loiw;
-
-    move-object v1, p3
-
-    iput-object v1, v0, Leyt;->c:Loiw;
-
-    move-object v1, p4
-
-    iput-object v1, v0, Leyt;->d:Loiw;
-
-    move-object v1, p5
-
-    iput-object v1, v0, Leyt;->e:Loiw;
-
-    move-object v1, p6
-
-    iput-object v1, v0, Leyt;->f:Loiw;
-
-    move-object v1, p7
-
-    iput-object v1, v0, Leyt;->g:Loiw;
-
-    move-object v1, p8
-
-    iput-object v1, v0, Leyt;->h:Loiw;
-
-    move-object v1, p9
-
-    iput-object v1, v0, Leyt;->i:Loiw;
-
-    move-object v1, p10
-
-    iput-object v1, v0, Leyt;->j:Loiw;
-
-    move-object v1, p11
-
-    iput-object v1, v0, Leyt;->k:Loiw;
-
-    move-object v1, p12
-
-    iput-object v1, v0, Leyt;->l:Loiw;
-
-    move-object v1, p13
-
-    iput-object v1, v0, Leyt;->m:Loiw;
-
-    move-object/from16 v1, p14
-
-    iput-object v1, v0, Leyt;->n:Loiw;
-
-    move-object/from16 v1, p15
-
-    iput-object v1, v0, Leyt;->o:Loiw;
-
-    move-object/from16 v1, p16
-
-    iput-object v1, v0, Leyt;->p:Loiw;
-
-    move-object/from16 v1, p17
-
-    iput-object v1, v0, Leyt;->q:Loiw;
-
-    move-object/from16 v1, p18
-
-    iput-object v1, v0, Leyt;->r:Loiw;
-
-    move-object/from16 v1, p19
-
-    iput-object v1, v0, Leyt;->s:Loiw;
+    iput-object p1, p0, Leyt;->a:Lezg;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final bridge synthetic get()Ljava/lang/Object;
-    .locals 28
+.method public final fB(Ljava/lang/Object;)V
+    .locals 4
 
-    move-object/from16 v0, p0
+    iget-object v0, p0, Leyt;->a:Lezg;
 
-    iget-object v1, v0, Leyt;->a:Loiw;
+    check-cast p1, Ljava/lang/Integer;
 
-    check-cast v1, Ldwh;
+    invoke-virtual {p1}, Ljava/lang/Integer;->intValue()I
 
-    invoke-virtual {v1}, Ldwh;->a()Landroid/content/Context;
+    move-result p1
 
-    move-result-object v3
+    iget-object v1, v0, Lezg;->l:Lojc;
 
-    iget-object v1, v0, Leyt;->b:Loiw;
+    invoke-virtual {v1}, Lojc;->g()Z
 
-    check-cast v1, Leqz;
+    move-result v1
 
-    invoke-virtual {v1}, Leqz;->a()Lcdi;
+    if-eqz v1, :cond_1
 
-    move-result-object v4
+    iget-object v1, v0, Lezg;->x:Lhlv;
 
-    iget-object v1, v0, Leyt;->c:Loiw;
+    iget-boolean v1, v1, Lhlv;->a:Z
 
-    invoke-interface {v1}, Loiw;->get()Ljava/lang/Object;
+    if-eqz v1, :cond_0
 
-    move-result-object v1
+    goto :goto_0
 
-    move-object v5, v1
+    :cond_0
+    invoke-static {p1}, Lesn;->a(I)Lesn;
 
-    check-cast v5, Ljwb;
+    move-result-object p1
 
-    iget-object v1, v0, Leyt;->d:Loiw;
+    invoke-virtual {p1}, Lesn;->ordinal()I
 
-    invoke-interface {v1}, Loiw;->get()Ljava/lang/Object;
+    move-result v1
 
-    move-result-object v1
+    const/4 v2, 0x2
 
-    move-object v6, v1
+    packed-switch v1, :pswitch_data_0
 
-    check-cast v6, Ldhi;
+    sget-object v0, Lezg;->b:Louj;
 
-    iget-object v1, v0, Leyt;->e:Loiw;
+    invoke-virtual {v0}, Loue;->c()Lova;
 
-    check-cast v1, Ldwh;
+    move-result-object v0
 
-    invoke-virtual {v1}, Ldwh;->a()Landroid/content/Context;
+    sget-object v1, Lovl;->a:Lovd;
 
-    move-result-object v7
+    const-string v2, "LasagnaMode"
 
-    iget-object v1, v0, Leyt;->f:Loiw;
+    invoke-interface {v0, v1, v2}, Lova;->g(Lovd;Ljava/lang/Object;)Lova;
 
-    check-cast v1, Lccs;
+    move-result-object v0
 
-    invoke-virtual {v1}, Lccs;->a()Ljava/lang/Boolean;
+    const/16 v1, 0x636
 
-    move-result-object v1
+    const-string v2, "No education for option %s"
 
-    invoke-virtual {v1}, Ljava/lang/Boolean;->booleanValue()Z
+    invoke-static {v0, v2, p1, v1}, Ld;->u(Lova;Ljava/lang/String;Ljava/lang/Object;C)V
 
-    move-result v8
+    return-void
 
-    iget-object v1, v0, Leyt;->g:Loiw;
+    :pswitch_0
+    iget-object v1, v0, Lezg;->u:Lhuj;
 
-    check-cast v1, Lccs;
+    const-string v3, "lasagna_edu_action"
 
-    invoke-virtual {v1}, Lccs;->a()Ljava/lang/Boolean;
+    invoke-virtual {v1, v3}, Lhuj;->a(Ljava/lang/String;)I
 
-    move-result-object v1
+    move-result v1
 
-    invoke-virtual {v1}, Ljava/lang/Boolean;->booleanValue()Z
+    if-nez v1, :cond_1
 
-    move-result v9
+    iget-object v1, v0, Lezg;->l:Lojc;
 
-    iget-object v1, v0, Leyt;->h:Loiw;
-
-    check-cast v1, Ldfj;
-
-    invoke-virtual {v1}, Ldfj;->a()Ldft;
-
-    move-result-object v10
-
-    iget-object v1, v0, Leyt;->i:Loiw;
-
-    check-cast v1, Ldfk;
-
-    invoke-virtual {v1}, Ldfk;->a()Ldga;
-
-    move-result-object v11
-
-    iget-object v1, v0, Leyt;->j:Loiw;
-
-    invoke-interface {v1}, Loiw;->get()Ljava/lang/Object;
+    invoke-virtual {v1}, Lojc;->c()Ljava/lang/Object;
 
     move-result-object v1
 
-    move-object v12, v1
+    check-cast v1, Lesi;
 
-    check-cast v12, Lhzh;
+    invoke-interface {v1, p1, v2}, Lesi;->d(Lesn;I)V
 
-    iget-object v1, v0, Leyt;->k:Loiw;
+    iget-object p1, v0, Lezg;->u:Lhuj;
 
-    check-cast v1, Leyv;
+    invoke-virtual {p1, v3}, Lhuj;->b(Ljava/lang/String;)I
 
-    invoke-virtual {v1}, Leyv;->a()Leyu;
+    return-void
 
-    move-result-object v13
+    :pswitch_1
+    iget-object v1, v0, Lezg;->u:Lhuj;
 
-    iget-object v1, v0, Leyt;->l:Loiw;
+    const-string v3, "lasagna_edu_landscape"
 
-    invoke-interface {v1}, Loiw;->get()Ljava/lang/Object;
+    invoke-virtual {v1, v3}, Lhuj;->a(Ljava/lang/String;)I
 
-    move-result-object v1
+    move-result v1
 
-    move-object v14, v1
+    if-nez v1, :cond_1
 
-    check-cast v14, Lgus;
+    iget-object v1, v0, Lezg;->l:Lojc;
 
-    iget-object v1, v0, Leyt;->m:Loiw;
-
-    invoke-interface {v1}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v1
-
-    move-object v15, v1
-
-    check-cast v15, Lfbz;
-
-    iget-object v1, v0, Leyt;->n:Loiw;
-
-    invoke-interface {v1}, Loiw;->get()Ljava/lang/Object;
+    invoke-virtual {v1}, Lojc;->c()Ljava/lang/Object;
 
     move-result-object v1
 
-    move-object/from16 v16, v1
+    check-cast v1, Lesi;
 
-    check-cast v16, Lflf;
+    invoke-interface {v1, p1, v2}, Lesi;->d(Lesn;I)V
 
-    iget-object v1, v0, Leyt;->o:Loiw;
+    iget-object p1, v0, Lezg;->u:Lhuj;
 
-    invoke-interface {v1}, Loiw;->get()Ljava/lang/Object;
+    invoke-virtual {p1, v3}, Lhuj;->b(Ljava/lang/String;)I
 
-    move-result-object v1
+    return-void
 
-    move-object/from16 v17, v1
+    :cond_1
+    :goto_0
+    return-void
 
-    check-cast v17, Ljava/util/concurrent/Executor;
-
-    iget-object v1, v0, Leyt;->p:Loiw;
-
-    move-object/from16 v18, v1
-
-    iget-object v1, v0, Leyt;->q:Loiw;
-
-    invoke-interface {v1}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v1
-
-    move-object/from16 v19, v1
-
-    check-cast v19, Ljuh;
-
-    iget-object v1, v0, Leyt;->r:Loiw;
-
-    check-cast v1, Leyw;
-
-    invoke-virtual {v1}, Leyw;->a()Lbkb;
-
-    move-result-object v20
-
-    iget-object v1, v0, Leyt;->s:Loiw;
-
-    check-cast v1, Leyi;
-
-    invoke-virtual {v1}, Leyi;->a()Lgxb;
-
-    move-result-object v21
-
-    new-instance v1, Leys;
-
-    move-object v2, v1
-
-    const/16 v22, 0x0
-
-    const/16 v23, 0x0
-
-    const/16 v24, 0x0
-
-    const/16 v25, 0x0
-
-    const/16 v26, 0x0
-
-    const/16 v27, 0x0
-
-    invoke-direct/range {v2 .. v27}, Leys;-><init>(Landroid/content/Context;Lcdi;Ljwb;Ldhi;Landroid/content/Context;ZZLdft;Ldga;Lhzh;Leyu;Lgus;Lfbz;Lflf;Ljava/util/concurrent/Executor;Loiw;Ljuh;Lbkb;Lgxb;[B[B[B[B[B[B)V
-
-    return-object v1
+    :pswitch_data_0
+    .packed-switch 0x1
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method

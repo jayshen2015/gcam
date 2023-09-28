@@ -1,368 +1,222 @@
-.class public final Lkmt;
+.class final Lkmt;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lkpb;
-
-
-# static fields
-.field private static final b:Lmwa;
+.implements Landroid/os/Handler$Callback;
 
 
 # instance fields
-.field public final a:J
-
-.field private final c:Landroid/hardware/HardwareBuffer;
-
-.field private final d:Lcom/google/android/libraries/camera/jni/graphics/HardwarePixels;
-
-.field private volatile e:Landroid/graphics/Rect;
+.field final synthetic a:Lkmr;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 9
+.method public constructor <init>(Lkmr;)V
+    .locals 0
 
-    const/4 v0, 0x1
-
-    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v4
-
-    const/4 v0, 0x2
-
-    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v3
-
-    const/16 v0, 0x23
-
-    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v6
-
-    const/16 v0, 0x25
-
-    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v8
-
-    move-object v1, v4
-
-    move-object v2, v4
-
-    move-object v5, v6
-
-    move-object v7, v8
-
-    invoke-static/range {v1 .. v8}, Lmwa;->q(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Lmwa;
-
-    move-result-object v0
-
-    sput-object v0, Lkmt;->b:Lmwa;
-
-    return-void
-.end method
-
-.method public constructor <init>(Landroid/hardware/HardwareBuffer;J)V
-    .locals 2
+    iput-object p1, p0, Lkmt;->a:Lkmr;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    iput-object p1, p0, Lkmt;->c:Landroid/hardware/HardwareBuffer;
-
-    invoke-static {}, Lcom/google/android/libraries/camera/jni/graphics/HardwareBuffers;->lockingIsSupported()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    invoke-static {}, Lcom/google/android/libraries/camera/jni/graphics/HardwareBuffers;->lockingIsSupported()Z
-
-    move-result v0
-
-    const-string v1, "Locking is not supported on this build!"
-
-    invoke-static {v0, v1}, Lmoz;->q(ZLjava/lang/Object;)V
-
-    new-instance v0, Lcom/google/android/libraries/camera/jni/graphics/HardwarePixels;
-
-    invoke-direct {v0, p1}, Lcom/google/android/libraries/camera/jni/graphics/HardwarePixels;-><init>(Landroid/hardware/HardwareBuffer;)V
-
-    goto :goto_0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    :goto_0
-    iput-object v0, p0, Lkmt;->d:Lcom/google/android/libraries/camera/jni/graphics/HardwarePixels;
-
-    iput-wide p2, p0, Lkmt;->a:J
-
-    new-instance p2, Landroid/graphics/Rect;
-
-    invoke-virtual {p1}, Landroid/hardware/HardwareBuffer;->getWidth()I
-
-    move-result p3
-
-    invoke-virtual {p1}, Landroid/hardware/HardwareBuffer;->getHeight()I
-
-    move-result p1
-
-    const/4 v0, 0x0
-
-    invoke-direct {p2, v0, v0, p3, p1}, Landroid/graphics/Rect;-><init>(IIII)V
-
-    iput-object p2, p0, Lkmt;->e:Landroid/graphics/Rect;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()I
-    .locals 3
+.method public final handleMessage(Landroid/os/Message;)Z
+    .locals 7
 
-    sget-object v0, Lkmt;->b:Lmwa;
+    iget v0, p1, Landroid/os/Message;->what:I
 
-    iget-object v1, p0, Lkmt;->c:Landroid/hardware/HardwareBuffer;
+    const/4 v1, 0x0
 
-    invoke-virtual {v1}, Landroid/hardware/HardwareBuffer;->getFormat()I
+    const/4 v2, 0x1
 
-    move-result v1
+    packed-switch v0, :pswitch_data_0
 
-    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    return v1
 
-    move-result-object v1
+    :pswitch_0
+    iget-object v0, p0, Lkmt;->a:Lkmr;
 
-    const/16 v2, 0x22
-
-    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v2
-
-    invoke-virtual {v0, v1, v2}, Lmwa;->getOrDefault(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/lang/Integer;
-
-    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public final b()I
-    .locals 1
-
-    iget-object v0, p0, Lkmt;->c:Landroid/hardware/HardwareBuffer;
-
-    invoke-virtual {v0}, Landroid/hardware/HardwareBuffer;->getHeight()I
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public final c()I
-    .locals 1
-
-    iget-object v0, p0, Lkmt;->c:Landroid/hardware/HardwareBuffer;
-
-    invoke-virtual {v0}, Landroid/hardware/HardwareBuffer;->getWidth()I
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public final close()V
-    .locals 2
-
-    iget-object v0, p0, Lkmt;->d:Lcom/google/android/libraries/camera/jni/graphics/HardwarePixels;
-
-    if-eqz v0, :cond_0
-
-    invoke-virtual {v0}, Lcom/google/android/libraries/camera/jni/graphics/HardwarePixels;->close()V
-
-    :cond_0
-    iget-object v0, p0, Lkmt;->c:Landroid/hardware/HardwareBuffer;
+    iget-object v0, v0, Lkmr;->c:Ljava/util/HashMap;
 
     monitor-enter v0
 
     :try_start_0
-    iget-object v1, p0, Lkmt;->c:Landroid/hardware/HardwareBuffer;
+    iget-object p1, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
-    invoke-virtual {v1}, Landroid/hardware/HardwareBuffer;->close()V
+    check-cast p1, Lkmq;
 
-    monitor-exit v0
+    iget-object v1, p0, Lkmt;->a:Lkmr;
 
-    return-void
+    iget-object v1, v1, Lkmr;->c:Ljava/util/HashMap;
 
-    :catchall_0
-    move-exception v1
-
-    monitor-exit v0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw v1
-.end method
-
-.method public final d()J
-    .locals 2
-
-    iget-wide v0, p0, Lkmt;->a:J
-
-    return-wide v0
-.end method
-
-.method public final e()Landroid/graphics/Rect;
-    .locals 2
-
-    new-instance v0, Landroid/graphics/Rect;
-
-    iget-object v1, p0, Lkmt;->e:Landroid/graphics/Rect;
-
-    invoke-direct {v0, v1}, Landroid/graphics/Rect;-><init>(Landroid/graphics/Rect;)V
-
-    return-object v0
-.end method
-
-.method public final f()Landroid/hardware/HardwareBuffer;
-    .locals 2
-
-    iget-object v0, p0, Lkmt;->c:Landroid/hardware/HardwareBuffer;
-
-    monitor-enter v0
-
-    :try_start_0
-    iget-object v1, p0, Lkmt;->c:Landroid/hardware/HardwareBuffer;
-
-    invoke-virtual {v1}, Landroid/hardware/HardwareBuffer;->isClosed()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_0
-
-    monitor-exit v0
-
-    const/4 v0, 0x0
-
-    return-object v0
-
-    :cond_0
-    iget-object v1, p0, Lkmt;->c:Landroid/hardware/HardwareBuffer;
-
-    invoke-static {v1}, Lcom/google/android/libraries/camera/jni/graphics/HardwareBuffers;->fork(Landroid/hardware/HardwareBuffer;)Landroid/hardware/HardwareBuffer;
+    invoke-virtual {v1, p1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v1
 
-    monitor-exit v0
+    check-cast v1, Lkms;
 
-    return-object v1
+    if-eqz v1, :cond_2
 
-    :catchall_0
-    move-exception v1
+    iget v3, v1, Lkms;->b:I
 
-    monitor-exit v0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    const/4 v4, 0x3
 
-    throw v1
-.end method
+    if-ne v3, v4, :cond_2
 
-.method public final g()Ljava/util/List;
-    .locals 6
+    const-string v3, "GmsClientSupervisor"
 
-    iget-object v0, p0, Lkmt;->d:Lcom/google/android/libraries/camera/jni/graphics/HardwarePixels;
+    invoke-static {p1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
-    if-eqz v0, :cond_2
+    move-result-object v4
 
-    iget-wide v1, v0, Lcom/google/android/libraries/camera/jni/graphics/HardwarePixels;->b:J
+    invoke-static {v4}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
-    invoke-static {v1, v2}, Lcom/google/android/libraries/camera/jni/graphics/HardwarePixels;->nativePlaneCount(J)I
+    move-result-object v5
 
-    move-result v1
+    invoke-virtual {v5}, Ljava/lang/String;->length()I
 
-    if-ltz v1, :cond_1
+    move-result v5
 
-    new-instance v2, Ljava/util/ArrayList;
+    add-int/lit8 v5, v5, 0x2f
 
-    invoke-direct {v2, v1}, Ljava/util/ArrayList;-><init>(I)V
+    new-instance v6, Ljava/lang/StringBuilder;
+
+    invoke-direct {v6, v5}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string v5, "Timeout waiting for ServiceConnection callback "
+
+    invoke-virtual {v6, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v6, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v4
+
+    new-instance v5, Ljava/lang/Exception;
+
+    invoke-direct {v5}, Ljava/lang/Exception;-><init>()V
+
+    invoke-static {v3, v4, v5}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+
+    iget-object v3, v1, Lkms;->f:Landroid/content/ComponentName;
+
+    if-nez v3, :cond_0
 
     const/4 v3, 0x0
 
-    :goto_0
-    if-ge v3, v1, :cond_0
+    :cond_0
+    if-nez v3, :cond_1
 
-    iget-object v4, v0, Lcom/google/android/libraries/camera/jni/graphics/HardwarePixels;->a:Landroid/hardware/HardwareBuffer;
+    new-instance v3, Landroid/content/ComponentName;
 
-    invoke-virtual {v4}, Landroid/hardware/HardwareBuffer;->getHeight()I
+    iget-object p1, p1, Lkmq;->c:Ljava/lang/String;
+
+    const-string v4, "unknown"
+
+    invoke-direct {v3, p1, v4}, Landroid/content/ComponentName;-><init>(Ljava/lang/String;Ljava/lang/String;)V
+
+    :cond_1
+    invoke-virtual {v1, v3}, Lkms;->onServiceDisconnected(Landroid/content/ComponentName;)V
+
+    :cond_2
+    monitor-exit v0
+
+    return v2
+
+    :catchall_0
+    move-exception p1
+
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw p1
+
+    :pswitch_1
+    iget-object v0, p0, Lkmt;->a:Lkmr;
+
+    iget-object v0, v0, Lkmr;->c:Ljava/util/HashMap;
+
+    monitor-enter v0
+
+    :try_start_1
+    iget-object p1, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
+
+    check-cast p1, Lkmq;
+
+    iget-object v3, p0, Lkmt;->a:Lkmr;
+
+    iget-object v3, v3, Lkmr;->c:Ljava/util/HashMap;
+
+    invoke-virtual {v3, p1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v3
+
+    check-cast v3, Lkms;
+
+    if-eqz v3, :cond_4
+
+    invoke-virtual {v3}, Lkms;->b()Z
 
     move-result v4
 
-    new-instance v5, Lkmu;
+    if-eqz v4, :cond_4
 
-    invoke-direct {v5, v0, v3, v4}, Lkmu;-><init>(Lcom/google/android/libraries/camera/jni/graphics/HardwarePixels;II)V
+    iget-boolean v4, v3, Lkms;->c:Z
 
-    invoke-interface {v2, v5}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+    if-eqz v4, :cond_3
 
-    add-int/lit8 v3, v3, 0x1
+    iget-object v4, v3, Lkms;->g:Lkmr;
 
-    goto :goto_0
+    iget-object v4, v4, Lkmr;->e:Landroid/os/Handler;
 
-    :cond_0
-    goto :goto_1
+    iget-object v5, v3, Lkms;->e:Lkmq;
 
-    :cond_1
-    new-instance v0, Ljava/lang/UnsupportedOperationException;
+    invoke-virtual {v4, v2, v5}, Landroid/os/Handler;->removeMessages(ILjava/lang/Object;)V
 
-    const-string v1, "This Android version does not support image plane access!"
+    iget-object v4, v3, Lkms;->g:Lkmr;
 
-    invoke-direct {v0, v1}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
+    iget-object v5, v4, Lkmr;->f:Lknx;
 
-    throw v0
+    iget-object v4, v4, Lkmr;->d:Landroid/content/Context;
 
-    :cond_2
-    sget v0, Lmvv;->d:I
+    invoke-virtual {v5, v4, v3}, Lknx;->b(Landroid/content/Context;Landroid/content/ServiceConnection;)V
 
-    sget-object v2, Lmyu;->a:Lmvv;
+    iput-boolean v1, v3, Lkms;->c:Z
 
-    :goto_1
-    return-object v2
-.end method
+    const/4 v1, 0x2
 
-.method public final h(Landroid/graphics/Rect;)V
-    .locals 1
+    iput v1, v3, Lkms;->b:I
 
-    new-instance v0, Landroid/graphics/Rect;
+    :cond_3
+    iget-object v1, p0, Lkmt;->a:Lkmr;
 
-    invoke-direct {v0, p1}, Landroid/graphics/Rect;-><init>(Landroid/graphics/Rect;)V
+    iget-object v1, v1, Lkmr;->c:Ljava/util/HashMap;
 
-    iput-object v0, p0, Lkmt;->e:Landroid/graphics/Rect;
+    invoke-virtual {v1, p1}, Ljava/util/HashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
-    return-void
-.end method
+    :cond_4
+    monitor-exit v0
 
-.method public final synthetic i()Z
-    .locals 1
+    return v2
 
-    const/4 v0, 0x0
+    :catchall_1
+    move-exception p1
 
-    return v0
-.end method
+    monitor-exit v0
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
-.method public final j()Lkgd;
-    .locals 1
+    throw p1
 
-    invoke-static {}, Lkgd;->x()Lkgd;
+    nop
 
-    move-result-object v0
-
-    return-object v0
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method

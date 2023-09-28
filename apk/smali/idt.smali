@@ -1,83 +1,34 @@
-.class public Lidt;
+.class public interface abstract Lidt;
 .super Ljava/lang/Object;
-
-# interfaces
-.implements Lidr;
-
-
-# direct methods
-.method public constructor <init>()V
-    .locals 0
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
-.end method
 
 
 # virtual methods
-.method public final a()I
-    .locals 1
-
-    const/4 v0, 0x0
-
-    return v0
+.method public abstract a()Loor;
 .end method
 
-.method public final b()I
-    .locals 1
-
-    const/4 v0, 0x0
-
-    return v0
+.method public abstract b()Ljava/util/Comparator;
 .end method
 
-.method public c(Limc;)Lmqp;
-    .locals 0
-
-    sget-object p1, Lmpx;->a:Lmpx;
-
-    return-object p1
+.method public abstract c(Ljava/lang/String;)Ljava/util/List;
 .end method
 
-.method public final d()Lnou;
-    .locals 1
-
-    const/4 v0, 0x0
-
-    invoke-static {v0}, Lnsy;->B(Ljava/lang/Object;)Lnou;
-
-    move-result-object v0
-
-    return-object v0
+.method public abstract d(Ljava/lang/String;)Ljava/util/List;
 .end method
 
-.method public final e()Lnou;
-    .locals 1
-
-    const/4 v0, 0x0
-
-    invoke-static {v0}, Lnsy;->B(Ljava/lang/Object;)Lnou;
-
-    move-result-object v0
-
-    return-object v0
+.method public abstract e(Ljava/util/List;)V
 .end method
 
-.method public final f()V
-    .locals 0
-
-    return-void
+.method public abstract f()V
 .end method
 
-.method public final g()V
-    .locals 0
-
-    return-void
+.method public abstract g(Ljava/util/List;)V
 .end method
 
-.method public final h(Landroid/view/View$OnLayoutChangeListener;)V
-    .locals 0
+.method public abstract h(Ljava/util/List;)V
+.end method
 
-    return-void
+.method public abstract i(Ljava/lang/String;)Z
+.end method
+
+.method public abstract j(Ljava/lang/String;)Z
 .end method

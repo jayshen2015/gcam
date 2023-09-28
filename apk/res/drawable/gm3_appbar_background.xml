@@ -8,7 +8,12 @@
     </item>
     <item>
         <shape>
-            <solid android:color="@color/gm3_appbar_overlay_color" />
+            <solid android:color="@color/google_appbar_overlay_color" />
+        </shape>
+    </item>
+    <item>
+        <shape>
+            <solid android:color="@color/gm3_elevation_overlay_accent_color" />
         </shape>
     </item>
 </layer-list>

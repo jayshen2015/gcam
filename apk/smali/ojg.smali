@@ -3,148 +3,169 @@
 
 # interfaces
 .implements Ljava/io/Serializable;
-.implements Loja;
+.implements Lojf;
 
 
 # static fields
-.field private static final a:Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
+.field private static final serialVersionUID:J
 
 
 # instance fields
-.field private volatile b:Lolz;
+.field final a:Lojf;
 
-.field private volatile c:Ljava/lang/Object;
+.field final b:Loiu;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 3
-
-    const-class v0, Ljava/lang/Object;
-
-    const-string v1, "c"
-
-    const-class v2, Lojg;
-
-    invoke-static {v2, v0, v1}, Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;->newUpdater(Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/String;)Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
-
-    move-result-object v0
-
-    sput-object v0, Lojg;->a:Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
-
-    return-void
-.end method
-
-.method public constructor <init>(Lolz;)V
+.method public constructor <init>(Lojf;Loiu;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lojg;->b:Lolz;
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    sget-object p1, Loji;->a:Loji;
+    iput-object p1, p0, Lojg;->a:Lojf;
 
-    iput-object p1, p0, Lojg;->c:Ljava/lang/Object;
+    invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    iput-object p2, p0, Lojg;->b:Loiu;
 
     return-void
 .end method
 
-.method private final writeReplace()Ljava/lang/Object;
-    .locals 2
-
-    new-instance v0, Loiy;
-
-    invoke-virtual {p0}, Lojg;->a()Ljava/lang/Object;
-
-    move-result-object v1
-
-    invoke-direct {v0, v1}, Loiy;-><init>(Ljava/lang/Object;)V
-
-    return-object v0
-.end method
-
 
 # virtual methods
-.method public final a()Ljava/lang/Object;
-    .locals 4
+.method public final a(Ljava/lang/Object;)Z
+    .locals 2
 
-    iget-object v0, p0, Lojg;->c:Ljava/lang/Object;
+    iget-object v0, p0, Lojg;->a:Lojf;
 
-    sget-object v1, Loji;->a:Loji;
+    iget-object v1, p0, Lojg;->b:Loiu;
 
-    if-eq v0, v1, :cond_0
+    invoke-interface {v1, p1}, Loiu;->a(Ljava/lang/Object;)Ljava/lang/Object;
 
-    return-object v0
+    move-result-object p1
 
-    :cond_0
-    iget-object v0, p0, Lojg;->b:Lolz;
+    invoke-interface {v0, p1}, Lojf;->a(Ljava/lang/Object;)Z
 
-    if-eqz v0, :cond_3
+    move-result p1
 
-    invoke-interface {v0}, Lolz;->a()Ljava/lang/Object;
+    return p1
+.end method
 
-    move-result-object v0
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 3
 
-    sget-object v1, Lojg;->a:Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
-
-    sget-object v2, Loji;->a:Loji;
-
-    :cond_1
-    invoke-virtual {v1, p0, v2, v0}, Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;->compareAndSet(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result v3
-
-    if-eqz v3, :cond_2
+    instance-of v0, p1, Lojg;
 
     const/4 v1, 0x0
 
-    iput-object v1, p0, Lojg;->b:Lolz;
+    if-eqz v0, :cond_0
 
-    return-object v0
+    check-cast p1, Lojg;
 
-    :cond_2
-    invoke-virtual {v1, p0}, Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    iget-object v0, p0, Lojg;->b:Loiu;
 
-    move-result-object v3
+    iget-object v2, p1, Lojg;->b:Loiu;
 
-    if-eq v3, v2, :cond_1
+    invoke-interface {v0, v2}, Loiu;->equals(Ljava/lang/Object;)Z
 
-    :cond_3
-    iget-object v0, p0, Lojg;->c:Ljava/lang/Object;
+    move-result v0
 
-    return-object v0
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lojg;->a:Lojf;
+
+    iget-object p1, p1, Lojg;->a:Lojf;
+
+    invoke-interface {v0, p1}, Lojf;->equals(Ljava/lang/Object;)Z
+
+    move-result p1
+
+    if-eqz p1, :cond_0
+
+    const/4 p1, 0x1
+
+    return p1
+
+    :cond_0
+    return v1
 .end method
 
-.method public final b()Z
-    .locals 1
+.method public final hashCode()I
+    .locals 2
 
-    const/4 v0, 0x0
+    iget-object v0, p0, Lojg;->b:Loiu;
 
-    throw v0
+    invoke-virtual {v0}, Ljava/lang/Object;->hashCode()I
+
+    move-result v0
+
+    iget-object v1, p0, Lojg;->a:Lojf;
+
+    invoke-virtual {v1}, Ljava/lang/Object;->hashCode()I
+
+    move-result v1
+
+    xor-int/2addr v0, v1
+
+    return v0
 .end method
 
 .method public final toString()Ljava/lang/String;
-    .locals 2
+    .locals 5
 
-    iget-object v0, p0, Lojg;->c:Ljava/lang/Object;
-
-    sget-object v1, Loji;->a:Loji;
-
-    if-eq v0, v1, :cond_0
-
-    invoke-virtual {p0}, Lojg;->a()Ljava/lang/Object;
-
-    move-result-object v0
+    iget-object v0, p0, Lojg;->a:Lojf;
 
     invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v0
 
-    goto :goto_0
+    iget-object v1, p0, Lojg;->b:Loiu;
 
-    :cond_0
-    const-string v0, "Lazy value not initialized yet."
+    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
-    :goto_0
+    move-result-object v1
+
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/String;->length()I
+
+    move-result v2
+
+    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/lang/String;->length()I
+
+    move-result v3
+
+    new-instance v4, Ljava/lang/StringBuilder;
+
+    add-int/lit8 v2, v2, 0x2
+
+    add-int/2addr v2, v3
+
+    invoke-direct {v4, v2}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v0, "("
+
+    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v4, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v0, ")"
+
+    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
     return-object v0
 .end method

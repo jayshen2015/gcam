@@ -1,694 +1,468 @@
 .class public final Lhmy;
-.super Ljava/lang/Object;
-
-# interfaces
-.implements Landroid/os/PowerManager$OnThermalStatusChangedListener;
-.implements Lhnb;
-.implements Lfaz;
-.implements Lfad;
-.implements Lfac;
-.implements Lfaa;
-.implements Lfab;
+.super Lhnj;
 
 
 # static fields
-.field private static final c:Lnak;
+.field public static final b:Louj;
+
+.field private static final p:Lj$/time/Duration;
 
 
 # instance fields
-.field public final a:Ljava/util/List;
+.field public final c:Landroid/content/Context;
 
-.field private final d:Lfbz;
+.field public final d:Lojz;
 
-.field private final e:Lhmx;
+.field public final e:Landroid/view/WindowManager;
 
-.field private f:Z
+.field public final f:Lifn;
 
-.field private g:Lhna;
+.field public final g:Ljty;
 
-.field private h:Lhna;
+.field public h:Lcom/google/android/apps/camera/rewind/ui/RewindPreview;
+
+.field public i:Lcom/google/android/apps/camera/rewind/ui/RewindControllerView;
+
+.field public final j:Lhme;
+
+.field public final k:Lhmz;
+
+.field public final l:Ljns;
+
+.field public final m:Landroid/os/Handler;
+
+.field public n:Lhni;
+
+.field public o:Lmip;
+
+.field private final q:Lcom/google/android/apps/camera/bottombar/BottomBarController;
+
+.field private final r:Lcom/google/android/apps/camera/bottombar/BottomBarListener;
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 1
+    .locals 2
 
-    const-string v0, "com/google/android/apps/camera/temperature/SelfUpdatingTemperatureBroadcaster"
+    const-string v0, "com/google/android/apps/camera/rewind/RewindControllerImpl"
 
-    invoke-static {v0}, Lnak;->h(Ljava/lang/String;)Lnak;
+    invoke-static {v0}, Louj;->h(Ljava/lang/String;)Louj;
 
     move-result-object v0
 
-    sput-object v0, Lhmy;->c:Lnak;
+    sput-object v0, Lhmy;->b:Louj;
+
+    const-wide/16 v0, 0xfa
+
+    invoke-static {v0, v1}, Lj$/time/Duration;->ofMillis(J)Lj$/time/Duration;
+
+    move-result-object v0
+
+    sput-object v0, Lhmy;->p:Lj$/time/Duration;
 
     return-void
 .end method
 
-.method public constructor <init>(Lfbz;Lhmx;Lezy;Ljuh;Ldhi;)V
+.method public constructor <init>(Landroid/content/Context;Lojz;Lhme;Lcom/google/android/apps/camera/bottombar/BottomBarController;Ljfn;Lhmz;Ljns;Landroid/view/WindowManager;Lifn;Ljty;)V
     .locals 1
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Lhnj;-><init>()V
 
-    new-instance v0, Ljava/util/ArrayList;
+    invoke-static {}, Landroid/os/Looper;->getMainLooper()Landroid/os/Looper;
 
-    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+    move-result-object v0
 
-    iput-object v0, p0, Lhmy;->a:Ljava/util/List;
+    invoke-static {v0}, Lmip;->bV(Landroid/os/Looper;)Landroid/os/Handler;
 
-    sget-object v0, Lhna;->i:Lhna;
+    move-result-object v0
 
-    iput-object v0, p0, Lhmy;->g:Lhna;
+    iput-object v0, p0, Lhmy;->m:Landroid/os/Handler;
 
-    sget-object v0, Lhna;->i:Lhna;
+    iput-object p1, p0, Lhmy;->c:Landroid/content/Context;
 
-    iput-object v0, p0, Lhmy;->h:Lhna;
+    iput-object p2, p0, Lhmy;->d:Lojz;
 
-    iput-object p1, p0, Lhmy;->d:Lfbz;
+    iput-object p3, p0, Lhmy;->j:Lhme;
 
-    iput-object p2, p0, Lhmy;->e:Lhmx;
+    iput-object p4, p0, Lhmy;->q:Lcom/google/android/apps/camera/bottombar/BottomBarController;
 
-    sget-object p1, Ldho;->a:Ldhk;
+    iput-object p6, p0, Lhmy;->k:Lhmz;
 
-    invoke-interface {p5}, Ldhi;->g()V
+    iput-object p7, p0, Lhmy;->l:Ljns;
 
-    monitor-enter p0
+    iput-object p8, p0, Lhmy;->e:Landroid/view/WindowManager;
 
-    :try_start_0
-    iget-boolean p1, p0, Lhmy;->f:Z
+    iput-object p9, p0, Lhmy;->f:Lifn;
 
-    if-nez p1, :cond_0
+    iput-object p10, p0, Lhmy;->g:Ljty;
 
-    invoke-virtual {p2, p0}, Lhmx;->b(Landroid/os/PowerManager$OnThermalStatusChangedListener;)V
+    new-instance p1, Lhmt;
 
-    const/4 p1, 0x1
+    invoke-direct {p1, p5}, Lhmt;-><init>(Ljfn;)V
 
-    iput-boolean p1, p0, Lhmy;->f:Z
-
-    :cond_0
-    monitor-exit p0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    invoke-static {p4, p3, p0}, Lfcr;->d(Ljuh;Lezy;Lfaz;)V
+    iput-object p1, p0, Lhmy;->r:Lcom/google/android/apps/camera/bottombar/BottomBarListener;
 
     return-void
+.end method
 
-    :catchall_0
-    move-exception p1
+.method public static w(Landroid/support/constraint/Guideline;I)V
+    .locals 1
 
-    :try_start_1
-    monitor-exit p0
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+    invoke-virtual {p0}, Landroid/support/constraint/Guideline;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
-    throw p1
+    move-result-object v0
+
+    check-cast v0, Laf;
+
+    iput p1, v0, Laf;->a:I
+
+    invoke-virtual {p0, v0}, Landroid/support/constraint/Guideline;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
+
+    return-void
 .end method
 
 
 # virtual methods
-.method public final declared-synchronized a()V
-    .locals 3
-
-    monitor-enter p0
-
-    :try_start_0
-    iget-boolean v0, p0, Lhmy;->f:Z
-
-    if-nez v0, :cond_0
-
-    iget-object v0, p0, Lhmy;->e:Lhmx;
-
-    invoke-virtual {v0, p0}, Lhmx;->b(Landroid/os/PowerManager$OnThermalStatusChangedListener;)V
-
-    goto :goto_0
-
-    :cond_0
-    sget-object v0, Lhmy;->c:Lnak;
-
-    invoke-virtual {v0}, Lnaf;->c()Lnaz;
-
-    move-result-object v0
-
-    const-string v1, "Was already registered as ThermalStatusListener on AppStart"
-
-    const/16 v2, 0xea8
-
-    invoke-static {v0, v1, v2}, Ld;->g(Lnaz;Ljava/lang/String;C)V
-
-    :goto_0
-    const/4 v0, 0x1
-
-    iput-boolean v0, p0, Lhmy;->f:Z
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    monitor-exit p0
+.method public final close()V
+    .locals 0
 
     return-void
-
-    :catchall_0
-    move-exception v0
-
-    monitor-exit p0
-
-    throw v0
 .end method
 
-.method public final b()V
+.method public final ge()V
+    .locals 0
+
+    return-void
+.end method
+
+.method public final gf()V
     .locals 2
 
-    sget-object v0, Lhmy;->b:Ljava/util/Map;
+    iget-object v0, p0, Lhmy;->q:Lcom/google/android/apps/camera/bottombar/BottomBarController;
 
-    iget-object v1, p0, Lhmy;->e:Lhmx;
+    iget-object v1, p0, Lhmy;->r:Lcom/google/android/apps/camera/bottombar/BottomBarListener;
 
-    invoke-virtual {v1}, Lhmx;->a()I
+    invoke-virtual {v0, v1}, Lcom/google/android/apps/camera/bottombar/BottomBarController;->removeListener(Lcom/google/android/apps/camera/bottombar/BottomBarListener;)V
 
-    move-result v1
+    iget-object v0, p0, Lhmy;->n:Lhni;
 
-    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v1
-
-    invoke-interface {v0, v1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lhna;
-
-    iput-object v0, p0, Lhmy;->h:Lhna;
+    invoke-virtual {v0}, Lhnd;->b()V
 
     return-void
 .end method
 
-.method public final c()V
-    .locals 8
+.method public final k()V
+    .locals 2
 
-    sget-object v0, Lhmy;->b:Ljava/util/Map;
+    iget-object v0, p0, Lhmy;->q:Lcom/google/android/apps/camera/bottombar/BottomBarController;
 
-    iget-object v1, p0, Lhmy;->e:Lhmx;
+    iget-object v1, p0, Lhmy;->r:Lcom/google/android/apps/camera/bottombar/BottomBarListener;
 
-    invoke-virtual {v1}, Lhmx;->a()I
+    invoke-virtual {v0, v1}, Lcom/google/android/apps/camera/bottombar/BottomBarController;->addListener(Lcom/google/android/apps/camera/bottombar/BottomBarListener;)V
 
-    move-result v1
+    iget-object v0, p0, Lhmy;->n:Lhni;
 
-    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-virtual {v0}, Lhnd;->a()V
 
-    move-result-object v1
+    return-void
+.end method
 
-    invoke-interface {v0, v1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+.method public final m()V
+    .locals 0
+
+    return-void
+.end method
+
+.method public final o()V
+    .locals 0
+
+    return-void
+.end method
+
+.method public final q()Z
+    .locals 1
+
+    const/4 v0, 0x0
+
+    return v0
+.end method
+
+.method public final varargs u([Landroid/animation/Animator$AnimatorListener;)Landroid/animation/AnimatorSet;
+    .locals 12
+
+    iget-object v0, p0, Lhmy;->d:Lojz;
+
+    invoke-interface {v0}, Lojz;->a()Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Lhna;
+    check-cast v0, Ljbw;
 
-    iget-object v1, p0, Lhmy;->h:Lhna;
+    iget-object v1, v0, Ljbw;->b:Ljbt;
 
-    if-eqz v0, :cond_6
+    iget-object v1, v1, Ljbt;->b:Landroid/util/Size;
 
-    if-nez v1, :cond_0
+    invoke-virtual {v1}, Landroid/util/Size;->getWidth()I
 
-    goto :goto_0
+    move-result v1
 
-    :cond_0
-    iget-object v2, p0, Lhmy;->d:Lfbz;
+    iget-object v0, v0, Ljbw;->b:Ljbt;
 
-    sget-object v3, Lnlb;->e:Lnlb;
+    iget-object v0, v0, Ljbt;->b:Landroid/util/Size;
 
-    invoke-virtual {v3}, Lnws;->O()Lnwn;
+    invoke-virtual {v0}, Landroid/util/Size;->getHeight()I
 
-    move-result-object v3
+    move-result v0
 
-    iget-object v4, v3, Lnwn;->b:Lnws;
+    int-to-float v0, v0
 
-    invoke-virtual {v4}, Lnws;->ac()Z
+    new-instance v2, Landroid/animation/AnimatorSet;
 
-    move-result v4
+    invoke-direct {v2}, Landroid/animation/AnimatorSet;-><init>()V
 
-    if-nez v4, :cond_1
+    sget-object v3, Lhmy;->p:Lj$/time/Duration;
 
-    invoke-virtual {v3}, Lnwn;->p()V
+    invoke-virtual {v3}, Lj$/time/Duration;->toMillis()J
 
-    :cond_1
-    iget-object v4, v3, Lnwn;->b:Lnws;
+    move-result-wide v3
 
-    move-object v5, v4
+    invoke-virtual {v2, v3, v4}, Landroid/animation/AnimatorSet;->setDuration(J)Landroid/animation/AnimatorSet;
 
-    check-cast v5, Lnlb;
+    new-instance v3, Landroid/view/animation/DecelerateInterpolator;
 
-    const/4 v6, 0x2
+    invoke-direct {v3}, Landroid/view/animation/DecelerateInterpolator;-><init>()V
 
-    iput v6, v5, Lnlb;->d:I
+    invoke-virtual {v2, v3}, Landroid/animation/AnimatorSet;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    iget v6, v5, Lnlb;->a:I
+    iget-object v3, p0, Lhmy;->h:Lcom/google/android/apps/camera/rewind/ui/RewindPreview;
 
-    or-int/lit8 v6, v6, 0x10
+    const/4 v4, 0x2
 
-    iput v6, v5, Lnlb;->a:I
+    new-array v5, v4, [F
 
-    iget v1, v1, Lhna;->j:I
+    int-to-float v1, v1
 
-    invoke-virtual {v4}, Lnws;->ac()Z
+    neg-float v1, v1
 
-    move-result v4
+    const/4 v6, 0x0
 
-    if-nez v4, :cond_2
+    aput v1, v5, v6
 
-    invoke-virtual {v3}, Lnwn;->p()V
-
-    :cond_2
-    iget-object v4, v3, Lnwn;->b:Lnws;
-
-    move-object v5, v4
-
-    check-cast v5, Lnlb;
-
-    add-int/lit8 v6, v1, -0x1
+    const/4 v1, 0x1
 
     const/4 v7, 0x0
 
-    if-eqz v1, :cond_5
+    aput v7, v5, v1
 
-    iput v6, v5, Lnlb;->c:I
+    const-string v8, "translationX"
 
-    iget v1, v5, Lnlb;->a:I
-
-    or-int/lit8 v1, v1, 0x8
-
-    iput v1, v5, Lnlb;->a:I
-
-    iget v0, v0, Lhna;->j:I
-
-    invoke-virtual {v4}, Lnws;->ac()Z
-
-    move-result v1
-
-    if-nez v1, :cond_3
-
-    invoke-virtual {v3}, Lnwn;->p()V
-
-    :cond_3
-    iget-object v1, v3, Lnwn;->b:Lnws;
-
-    check-cast v1, Lnlb;
-
-    add-int/lit8 v4, v0, -0x1
-
-    if-eqz v0, :cond_4
-
-    iput v4, v1, Lnlb;->b:I
-
-    iget v0, v1, Lnlb;->a:I
-
-    or-int/lit8 v0, v0, 0x4
-
-    iput v0, v1, Lnlb;->a:I
-
-    invoke-virtual {v3}, Lnwn;->i()Lnws;
-
-    move-result-object v0
-
-    check-cast v0, Lnlb;
-
-    invoke-interface {v2, v0}, Lfbz;->C(Lnlb;)V
-
-    return-void
-
-    :cond_4
-    throw v7
-
-    :cond_5
-    throw v7
-
-    :cond_6
-    :goto_0
-    sget-object v0, Lhmy;->c:Lnak;
-
-    invoke-virtual {v0}, Lnaf;->c()Lnaz;
-
-    move-result-object v0
-
-    const-string v1, "Skip logging due to unknown thermal status"
-
-    const/16 v2, 0xea6
-
-    invoke-static {v0, v1, v2}, Ld;->g(Lnaz;Ljava/lang/String;C)V
-
-    return-void
-.end method
-
-.method public final declared-synchronized d()V
-    .locals 4
-
-    monitor-enter p0
-
-    :try_start_0
-    iget-boolean v0, p0, Lhmy;->f:Z
-
-    if-eqz v0, :cond_0
-
-    iget-object v0, p0, Lhmy;->e:Lhmx;
-
-    iget-object v1, v0, Lhmx;->e:Ljava/util/concurrent/Executor;
-
-    new-instance v2, Lhdg;
-
-    const/16 v3, 0x12
-
-    invoke-direct {v2, v0, p0, v3}, Lhdg;-><init>(Lhmx;Landroid/os/PowerManager$OnThermalStatusChangedListener;I)V
-
-    invoke-interface {v1, v2}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
-
-    goto :goto_0
-
-    :cond_0
-    sget-object v0, Lhmy;->c:Lnak;
-
-    invoke-virtual {v0}, Lnaf;->c()Lnaz;
-
-    move-result-object v0
-
-    const-string v1, "Was not registered as ThermalStatusListener on AppStop"
-
-    const/16 v2, 0xeaa
-
-    invoke-static {v0, v1, v2}, Ld;->g(Lnaz;Ljava/lang/String;C)V
-
-    :goto_0
-    const/4 v0, 0x0
-
-    iput-boolean v0, p0, Lhmy;->f:Z
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    monitor-exit p0
-
-    return-void
-
-    :catchall_0
-    move-exception v0
-
-    monitor-exit p0
-
-    throw v0
-.end method
-
-.method public final declared-synchronized e()Lhna;
-    .locals 1
-
-    monitor-enter p0
-
-    :try_start_0
-    iget-object v0, p0, Lhmy;->g:Lhna;
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    monitor-exit p0
-
-    return-object v0
-
-    :catchall_0
-    move-exception v0
-
-    monitor-exit p0
-
-    throw v0
-.end method
-
-.method public final f(Lhmz;)Lkad;
-    .locals 2
-
-    monitor-enter p0
-
-    :try_start_0
-    iget-object v0, p0, Lhmy;->a:Ljava/util/List;
-
-    invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-
-    iget-object v0, p0, Lhmy;->g:Lhna;
-
-    monitor-exit p0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    sget-object v1, Lhna;->i:Lhna;
-
-    if-eq v0, v1, :cond_0
-
-    invoke-interface {p1, v0}, Lhmz;->bG(Lhna;)V
-
-    :cond_0
-    new-instance v0, Lgss;
-
-    const/16 v1, 0xd
-
-    invoke-direct {v0, p0, p1, v1}, Lgss;-><init>(Lhmy;Lhmz;I)V
-
-    return-object v0
-
-    :catchall_0
-    move-exception p1
-
-    :try_start_1
-    monitor-exit p0
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    throw p1
-.end method
-
-.method public final onThermalStatusChanged(I)V
-    .locals 6
-
-    sget-object v0, Lhmy;->b:Ljava/util/Map;
-
-    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v1
-
-    invoke-interface {v0, v1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    sget-object v0, Lhmy;->b:Ljava/util/Map;
-
-    invoke-interface {v0, v1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lhna;
-
-    if-nez v0, :cond_0
-
-    sget-object v0, Lhmy;->c:Lnak;
-
-    invoke-virtual {v0}, Lnaf;->c()Lnaz;
-
-    move-result-object v0
-
-    check-cast v0, Lnah;
-
-    const/16 v1, 0xeae
-
-    invoke-interface {v0, v1}, Lnah;->G(I)Lnaz;
-
-    move-result-object v0
-
-    check-cast v0, Lnah;
-
-    const-string v1, "Ignoring call to onThermalStatusChanged with unknown status value: %d"
-
-    invoke-interface {v0, v1, p1}, Lnah;->p(Ljava/lang/String;I)V
-
-    return-void
-
-    :cond_0
-    monitor-enter p0
-
-    :try_start_0
-    iget-object p1, p0, Lhmy;->g:Lhna;
-
-    if-eq v0, p1, :cond_7
-
-    sget-object p1, Lnlb;->e:Lnlb;
-
-    invoke-virtual {p1}, Lnws;->O()Lnwn;
-
-    move-result-object p1
-
-    iget-object v1, p1, Lnwn;->b:Lnws;
-
-    invoke-virtual {v1}, Lnws;->ac()Z
-
-    move-result v1
-
-    if-nez v1, :cond_1
-
-    invoke-virtual {p1}, Lnwn;->p()V
-
-    :cond_1
-    iget-object v1, p1, Lnwn;->b:Lnws;
-
-    move-object v2, v1
-
-    check-cast v2, Lnlb;
-
-    const/4 v3, 0x1
-
-    iput v3, v2, Lnlb;->d:I
-
-    iget v3, v2, Lnlb;->a:I
-
-    or-int/lit8 v3, v3, 0x10
-
-    iput v3, v2, Lnlb;->a:I
-
-    iget-object v2, p0, Lhmy;->g:Lhna;
-
-    iget v2, v2, Lhna;->j:I
-
-    invoke-virtual {v1}, Lnws;->ac()Z
-
-    move-result v1
-
-    if-nez v1, :cond_2
-
-    invoke-virtual {p1}, Lnwn;->p()V
-
-    :cond_2
-    iget-object v1, p1, Lnwn;->b:Lnws;
-
-    move-object v3, v1
-
-    check-cast v3, Lnlb;
-
-    add-int/lit8 v4, v2, -0x1
-
-    const/4 v5, 0x0
-
-    if-eqz v2, :cond_6
-
-    iput v4, v3, Lnlb;->c:I
-
-    iget v2, v3, Lnlb;->a:I
-
-    or-int/lit8 v2, v2, 0x8
-
-    iput v2, v3, Lnlb;->a:I
-
-    iget v2, v0, Lhna;->j:I
-
-    invoke-virtual {v1}, Lnws;->ac()Z
-
-    move-result v1
-
-    if-nez v1, :cond_3
-
-    invoke-virtual {p1}, Lnwn;->p()V
-
-    :cond_3
-    iget-object v1, p1, Lnwn;->b:Lnws;
-
-    check-cast v1, Lnlb;
-
-    add-int/lit8 v3, v2, -0x1
-
-    if-eqz v2, :cond_5
-
-    iput v3, v1, Lnlb;->b:I
-
-    iget v2, v1, Lnlb;->a:I
-
-    or-int/lit8 v2, v2, 0x4
-
-    iput v2, v1, Lnlb;->a:I
-
-    iput-object v0, p0, Lhmy;->g:Lhna;
-
-    monitor-exit p0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_1
-
-    iget-object v0, p0, Lhmy;->d:Lfbz;
-
-    invoke-virtual {p1}, Lnwn;->i()Lnws;
-
-    move-result-object p1
-
-    check-cast p1, Lnlb;
-
-    invoke-interface {v0, p1}, Lfbz;->C(Lnlb;)V
-
-    monitor-enter p0
-
-    :try_start_1
-    iget-object p1, p0, Lhmy;->a:Ljava/util/List;
-
-    invoke-static {p1}, Lmvv;->j(Ljava/util/Collection;)Lmvv;
-
-    move-result-object p1
-
-    iget-object v0, p0, Lhmy;->g:Lhna;
-
-    monitor-exit p0
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    invoke-interface {p1}, Ljava/util/List;->size()I
-
-    move-result v1
-
-    const/4 v2, 0x0
-
-    :goto_0
-    if-ge v2, v1, :cond_4
-
-    invoke-interface {p1, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
+    invoke-static {v3, v8, v5}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Ljava/lang/String;[F)Landroid/animation/ObjectAnimator;
 
     move-result-object v3
 
-    check-cast v3, Lhmz;
+    iget-object v5, p0, Lhmy;->i:Lcom/google/android/apps/camera/rewind/ui/RewindControllerView;
 
-    invoke-interface {v3, v0}, Lhmz;->bG(Lhna;)V
+    const v8, 0x7f0b01b7
 
-    add-int/lit8 v2, v2, 0x1
+    invoke-virtual {v5, v8}, Lcom/google/android/apps/camera/rewind/ui/RewindControllerView;->findViewById(I)Landroid/view/View;
+
+    move-result-object v5
+
+    new-array v8, v4, [F
+
+    fill-array-data v8, :array_0
+
+    const-string v9, "alpha"
+
+    invoke-static {v5, v9, v8}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Ljava/lang/String;[F)Landroid/animation/ObjectAnimator;
+
+    move-result-object v5
+
+    iget-object v8, p0, Lhmy;->i:Lcom/google/android/apps/camera/rewind/ui/RewindControllerView;
+
+    const v9, 0x7f0b01bd
+
+    invoke-virtual {v8, v9}, Lcom/google/android/apps/camera/rewind/ui/RewindControllerView;->findViewById(I)Landroid/view/View;
+
+    move-result-object v8
+
+    new-array v9, v4, [F
+
+    aput v0, v9, v6
+
+    aput v7, v9, v1
+
+    const-string v10, "translationY"
+
+    invoke-static {v8, v10, v9}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Ljava/lang/String;[F)Landroid/animation/ObjectAnimator;
+
+    move-result-object v8
+
+    iget-object v9, p0, Lhmy;->i:Lcom/google/android/apps/camera/rewind/ui/RewindControllerView;
+
+    const v11, 0x7f0b01bb
+
+    invoke-virtual {v9, v11}, Lcom/google/android/apps/camera/rewind/ui/RewindControllerView;->findViewById(I)Landroid/view/View;
+
+    move-result-object v9
+
+    new-array v4, v4, [F
+
+    aput v0, v4, v6
+
+    aput v7, v4, v1
+
+    invoke-static {v9, v10, v4}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Ljava/lang/String;[F)Landroid/animation/ObjectAnimator;
+
+    move-result-object v0
+
+    invoke-static {v3, v5, v8, v0}, Loom;->p(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Loom;
+
+    move-result-object v0
+
+    :goto_0
+    if-gtz v6, :cond_0
+
+    aget-object v1, p1, v6
+
+    invoke-virtual {v2, v1}, Landroid/animation/AnimatorSet;->addListener(Landroid/animation/Animator$AnimatorListener;)V
+
+    add-int/lit8 v6, v6, 0x1
 
     goto :goto_0
 
-    :cond_4
-    return-void
+    :cond_0
+    invoke-virtual {v2, v0}, Landroid/animation/AnimatorSet;->playTogether(Ljava/util/Collection;)V
 
-    :catchall_0
-    move-exception p1
+    return-object v2
 
-    :try_start_2
-    monitor-exit p0
-    :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_0
+    nop
 
-    throw p1
+    :array_0
+    .array-data 4
+        0x0
+        0x3f800000    # 1.0f
+    .end array-data
+.end method
 
-    :cond_5
-    :try_start_3
-    throw v5
+.method public final v(Lhnk;)Lep;
+    .locals 3
 
-    :cond_6
-    throw v5
+    iget-object v0, p0, Lhmy;->c:Landroid/content/Context;
 
-    :cond_7
-    monitor-exit p0
+    invoke-virtual {v0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
-    return-void
+    move-result-object v0
 
-    :catchall_1
-    move-exception p1
+    invoke-interface {p1}, Lhnk;->d()Landroid/graphics/Bitmap;
 
-    monitor-exit p0
-    :try_end_3
-    .catchall {:try_start_3 .. :try_end_3} :catchall_1
+    move-result-object p1
 
-    goto :goto_2
+    new-instance v1, Leo;
+
+    invoke-direct {v1, v0, p1}, Leo;-><init>(Landroid/content/res/Resources;Landroid/graphics/Bitmap;)V
+
+    iget-object p1, p0, Lhmy;->c:Landroid/content/Context;
+
+    invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+
+    move-result-object p1
+
+    const v0, 0x7f070331
+
+    invoke-virtual {p1, v0}, Landroid/content/res/Resources;->getDimension(I)F
+
+    move-result p1
+
+    iget v0, v1, Lep;->d:F
+
+    cmpl-float v0, v0, p1
+
+    if-nez v0, :cond_0
+
+    goto :goto_1
+
+    :cond_0
+    invoke-static {p1}, Lep;->c(F)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    iget-object v0, v1, Lep;->b:Landroid/graphics/Paint;
+
+    iget-object v2, v1, Lep;->c:Landroid/graphics/BitmapShader;
+
+    invoke-virtual {v0, v2}, Landroid/graphics/Paint;->setShader(Landroid/graphics/Shader;)Landroid/graphics/Shader;
+
+    goto :goto_0
+
+    :cond_1
+    iget-object v0, v1, Lep;->b:Landroid/graphics/Paint;
+
+    const/4 v2, 0x0
+
+    invoke-virtual {v0, v2}, Landroid/graphics/Paint;->setShader(Landroid/graphics/Shader;)Landroid/graphics/Shader;
+
+    :goto_0
+    iput p1, v1, Lep;->d:F
+
+    invoke-virtual {v1}, Lep;->invalidateSelf()V
 
     :goto_1
-    throw p1
+    return-object v1
+.end method
 
-    :goto_2
-    goto :goto_1
+.method public final x(Landroid/view/ViewGroup;Landroid/view/ViewGroup;)V
+    .locals 2
+
+    check-cast p1, Lcom/google/android/apps/camera/rewind/ui/RewindPreview;
+
+    iput-object p1, p0, Lhmy;->h:Lcom/google/android/apps/camera/rewind/ui/RewindPreview;
+
+    check-cast p2, Lcom/google/android/apps/camera/rewind/ui/RewindControllerView;
+
+    iput-object p2, p0, Lhmy;->i:Lcom/google/android/apps/camera/rewind/ui/RewindControllerView;
+
+    new-instance p1, Lhmd;
+
+    iget-object p2, p0, Lhmy;->l:Ljns;
+
+    iget-object p2, p2, Ljns;->e:Lcom/google/android/apps/camera/ui/views/ViewfinderCover;
+
+    iget-object v0, p0, Lhmy;->h:Lcom/google/android/apps/camera/rewind/ui/RewindPreview;
+
+    iget-object v1, p0, Lhmy;->i:Lcom/google/android/apps/camera/rewind/ui/RewindControllerView;
+
+    invoke-direct {p1, p0, p2, v0, v1}, Lhmd;-><init>(Lhmy;Lcom/google/android/apps/camera/ui/views/ViewfinderCover;Lcom/google/android/apps/camera/rewind/ui/RewindPreview;Lcom/google/android/apps/camera/rewind/ui/RewindControllerView;)V
+
+    iput-object p1, p0, Lhmy;->n:Lhni;
+
+    invoke-virtual {p1}, Lhnd;->f()V
+
+    return-void
+.end method
+
+.method public final y(Ljrz;)V
+    .locals 1
+
+    iget-object v0, p0, Lhmy;->h:Lcom/google/android/apps/camera/rewind/ui/RewindPreview;
+
+    if-eqz v0, :cond_0
+
+    iput-object p1, v0, Lcom/google/android/apps/camera/rewind/ui/RewindPreview;->a:Ljrz;
+
+    invoke-virtual {v0}, Lcom/google/android/apps/camera/rewind/ui/RewindPreview;->a()V
+
+    :cond_0
+    iget-object v0, p0, Lhmy;->i:Lcom/google/android/apps/camera/rewind/ui/RewindControllerView;
+
+    if-eqz v0, :cond_1
+
+    iput-object p1, v0, Lcom/google/android/apps/camera/rewind/ui/RewindControllerView;->a:Ljrz;
+
+    invoke-virtual {v0}, Lcom/google/android/apps/camera/rewind/ui/RewindControllerView;->a()V
+
+    :cond_1
+    return-void
 .end method

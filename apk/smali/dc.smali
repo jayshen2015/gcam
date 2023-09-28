@@ -1,57 +1,80 @@
 .class final Ldc;
 .super Ljava/lang/Object;
 
-# interfaces
-.implements Landroid/transition/Transition$TransitionListener;
-
 
 # instance fields
-.field final synthetic a:Ljava/lang/Runnable;
+.field a:I
+
+.field b:Lbu;
+
+.field c:Z
+
+.field d:I
+
+.field e:I
+
+.field f:I
+
+.field g:I
+
+.field h:Laea;
+
+.field i:Laea;
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/Runnable;)V
+.method public constructor <init>()V
     .locals 0
-
-    iput-object p1, p0, Ldc;->a:Ljava/lang/Runnable;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
-
-# virtual methods
-.method public final onTransitionCancel(Landroid/transition/Transition;)V
+.method public constructor <init>(ILbu;)V
     .locals 0
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput p1, p0, Ldc;->a:I
+
+    iput-object p2, p0, Ldc;->b:Lbu;
+
+    const/4 p1, 0x0
+
+    iput-boolean p1, p0, Ldc;->c:Z
+
+    sget-object p1, Laea;->e:Laea;
+
+    iput-object p1, p0, Ldc;->h:Laea;
+
+    sget-object p1, Laea;->e:Laea;
+
+    iput-object p1, p0, Ldc;->i:Laea;
 
     return-void
 .end method
 
-.method public final onTransitionEnd(Landroid/transition/Transition;)V
+.method public constructor <init>(ILbu;[B)V
     .locals 0
 
-    iget-object p1, p0, Ldc;->a:Ljava/lang/Runnable;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-interface {p1}, Ljava/lang/Runnable;->run()V
+    iput p1, p0, Ldc;->a:I
 
-    return-void
-.end method
+    iput-object p2, p0, Ldc;->b:Lbu;
 
-.method public final onTransitionPause(Landroid/transition/Transition;)V
-    .locals 0
+    const/4 p1, 0x1
 
-    return-void
-.end method
+    iput-boolean p1, p0, Ldc;->c:Z
 
-.method public final onTransitionResume(Landroid/transition/Transition;)V
-    .locals 0
+    sget-object p1, Laea;->e:Laea;
 
-    return-void
-.end method
+    iput-object p1, p0, Ldc;->h:Laea;
 
-.method public final onTransitionStart(Landroid/transition/Transition;)V
-    .locals 0
+    sget-object p1, Laea;->e:Laea;
+
+    iput-object p1, p0, Ldc;->i:Laea;
 
     return-void
 .end method

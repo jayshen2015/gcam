@@ -1,75 +1,147 @@
-.class final Lmrb;
-.super Ljava/lang/Object;
+.class public Lmrb;
+.super Lmqx;
 
 # interfaces
-.implements Ljava/lang/Iterable;
+.implements Lmqw;
 
 
 # instance fields
-.field final synthetic a:Ljava/lang/CharSequence;
+.field public final a:Lmrh;
 
-.field final synthetic b:Lmrd;
+.field public final c:I
+
+.field public final d:I
+
+.field public e:Z
+
+.field public final f:Lmoq;
 
 
 # direct methods
-.method public constructor <init>(Lmrd;Ljava/lang/CharSequence;)V
-    .locals 0
+.method public constructor <init>(Lmrh;IILmoq;)V
+    .locals 2
 
-    iput-object p1, p0, Lmrb;->b:Lmrd;
+    invoke-direct {p0, p2}, Lmqx;-><init>(I)V
 
-    iput-object p2, p0, Lmrb;->a:Ljava/lang/CharSequence;
+    const/4 p2, 0x0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-boolean p2, p0, Lmrb;->e:Z
+
+    const/4 v0, 0x1
+
+    invoke-static {v0}, Lobr;->aF(Z)V
+
+    iput-object p1, p0, Lmrb;->a:Lmrh;
+
+    iput-object p4, p0, Lmrb;->f:Lmoq;
+
+    iput p3, p0, Lmrb;->c:I
+
+    invoke-static {}, Lmqi;->b()V
+
+    invoke-static {}, Lmqi;->a()Z
+
+    move-result p1
+
+    if-eqz p1, :cond_2
+
+    iget-object p1, p4, Lmoq;->a:Lmme;
+
+    iget-object p3, p1, Lmmf;->a:Lpfc;
+
+    invoke-virtual {p3, p2}, Lpfc;->a(I)I
+
+    move-result p2
+
+    const/4 p3, 0x1
+
+    :goto_0
+    iget-object p4, p1, Lmmf;->a:Lpfc;
+
+    iget v1, p4, Lpfc;->c:I
+
+    if-ge p3, v1, :cond_1
+
+    invoke-virtual {p4, p3}, Lpfc;->a(I)I
+
+    move-result p4
+
+    if-le p4, p2, :cond_0
+
+    iget-object p2, p1, Lmmf;->a:Lpfc;
+
+    invoke-virtual {p2, p3}, Lpfc;->a(I)I
+
+    move-result p2
+
+    :cond_0
+    add-int/lit8 p3, p3, 0x1
+
+    goto :goto_0
+
+    :cond_1
+    sget-object p1, Ljava/math/RoundingMode;->DOWN:Ljava/math/RoundingMode;
+
+    invoke-static {p2, p1}, Loxh;->S(ILjava/math/RoundingMode;)I
+
+    move-result p1
+
+    add-int/2addr p1, v0
+
+    iput p1, p0, Lmrb;->d:I
+
+    return-void
+
+    :cond_2
+    iput v0, p0, Lmrb;->d:I
 
     return-void
 .end method
 
-
-# virtual methods
-.method public final iterator()Ljava/util/Iterator;
-    .locals 2
-
-    iget-object v0, p0, Lmrb;->b:Lmrd;
-
-    iget-object v1, p0, Lmrb;->a:Ljava/lang/CharSequence;
-
-    invoke-virtual {v0, v1}, Lmrd;->e(Ljava/lang/CharSequence;)Ljava/util/Iterator;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public final toString()Ljava/lang/String;
+.method public static b()I
     .locals 3
 
-    const-string v0, ", "
+    const/4 v0, 0x1
 
-    invoke-static {v0}, Llhz;->j(Ljava/lang/String;)Llhz;
+    new-array v1, v0, [I
 
-    move-result-object v0
+    const/4 v2, 0x0
 
-    new-instance v1, Ljava/lang/StringBuilder;
+    invoke-static {v0, v1, v2}, Landroid/opengl/GLES30;->glGenTextures(I[II)V
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+    aget v0, v1, v2
 
-    const/16 v2, 0x5b
+    return v0
+.end method
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    invoke-interface {p0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
+# virtual methods
+.method protected c()V
+    .locals 4
 
-    move-result-object v2
+    const/4 v0, 0x1
 
-    invoke-virtual {v0, v1, v2}, Llhz;->h(Ljava/lang/StringBuilder;Ljava/util/Iterator;)V
+    new-array v1, v0, [I
 
-    const/16 v0, 0x5d
+    iget v2, p0, Lmrb;->b:I
 
-    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+    const/4 v3, 0x0
 
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    aput v2, v1, v3
 
-    move-result-object v0
+    invoke-static {v0, v1, v3}, Landroid/opengl/GLES30;->glDeleteTextures(I[II)V
 
-    return-object v0
+    return-void
+.end method
+
+.method public final d()V
+    .locals 2
+
+    iget v0, p0, Lmrb;->c:I
+
+    iget v1, p0, Lmqx;->b:I
+
+    invoke-static {v0, v1}, Landroid/opengl/GLES30;->glBindTexture(II)V
+
+    return-void
 .end method

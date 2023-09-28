@@ -1,92 +1,114 @@
-.class final Lbef;
-.super Lbea;
+.class public final Lbef;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Lbfg;
 
 
 # instance fields
-.field final a:Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
+.field private final a:Landroid/content/res/AssetManager;
 
-.field final b:Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
-
-.field final c:Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
-
-.field final d:Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
-
-.field final e:Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
+.field private final b:Lbed;
 
 
 # direct methods
-.method public constructor <init>(Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;)V
+.method public constructor <init>(Landroid/content/res/AssetManager;Lbed;)V
     .locals 0
 
-    invoke-direct {p0}, Lbea;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lbef;->a:Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
+    iput-object p1, p0, Lbef;->a:Landroid/content/res/AssetManager;
 
-    iput-object p2, p0, Lbef;->b:Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
-
-    iput-object p3, p0, Lbef;->c:Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
-
-    iput-object p4, p0, Lbef;->d:Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
-
-    iput-object p5, p0, Lbef;->e:Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
+    iput-object p2, p0, Lbef;->b:Lbed;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Lbei;Lbei;)V
+.method public final bridge synthetic a(Ljava/lang/Object;IILazt;)Lbff;
     .locals 1
 
-    iget-object v0, p0, Lbef;->b:Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
+    check-cast p1, Landroid/net/Uri;
 
-    invoke-virtual {v0, p1, p2}, Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;->lazySet(Ljava/lang/Object;Ljava/lang/Object;)V
+    invoke-virtual {p1}, Landroid/net/Uri;->toString()Ljava/lang/String;
 
-    return-void
+    move-result-object p2
+
+    const/16 p3, 0x16
+
+    invoke-virtual {p2, p3}, Ljava/lang/String;->substring(I)Ljava/lang/String;
+
+    move-result-object p2
+
+    new-instance p3, Lbff;
+
+    new-instance p4, Lblo;
+
+    invoke-direct {p4, p1}, Lblo;-><init>(Ljava/lang/Object;)V
+
+    iget-object p1, p0, Lbef;->b:Lbed;
+
+    iget-object v0, p0, Lbef;->a:Landroid/content/res/AssetManager;
+
+    invoke-interface {p1, v0, p2}, Lbed;->a(Landroid/content/res/AssetManager;Ljava/lang/String;)Lbac;
+
+    move-result-object p1
+
+    invoke-direct {p3, p4, p1}, Lbff;-><init>(Lazp;Lbac;)V
+
+    return-object p3
 .end method
 
-.method public final b(Lbei;Ljava/lang/Thread;)V
-    .locals 1
+.method public final bridge synthetic b(Ljava/lang/Object;)Z
+    .locals 2
 
-    iget-object v0, p0, Lbef;->a:Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
+    check-cast p1, Landroid/net/Uri;
 
-    invoke-virtual {v0, p1, p2}, Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;->lazySet(Ljava/lang/Object;Ljava/lang/Object;)V
+    invoke-virtual {p1}, Landroid/net/Uri;->getScheme()Ljava/lang/String;
 
-    return-void
-.end method
+    move-result-object v0
 
-.method public final c(Lbej;Lbee;Lbee;)Z
-    .locals 1
+    const-string v1, "file"
 
-    iget-object v0, p0, Lbef;->d:Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
+    invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    invoke-static {v0, p1, p2, p3}, Lbdk;->d(Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Z
+    move-result v0
+
+    const/4 v1, 0x0
+
+    if-eqz v0, :cond_0
+
+    invoke-virtual {p1}, Landroid/net/Uri;->getPathSegments()Ljava/util/List;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Ljava/util/List;->isEmpty()Z
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    invoke-virtual {p1}, Landroid/net/Uri;->getPathSegments()Ljava/util/List;
+
+    move-result-object p1
+
+    invoke-interface {p1, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object p1
+
+    const-string v0, "android_asset"
+
+    invoke-virtual {v0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p1
 
-    return p1
-.end method
+    if-eqz p1, :cond_0
 
-.method public final d(Lbej;Ljava/lang/Object;Ljava/lang/Object;)Z
-    .locals 1
-
-    iget-object v0, p0, Lbef;->e:Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
-
-    invoke-static {v0, p1, p2, p3}, Lbdk;->d(Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result p1
+    const/4 p1, 0x1
 
     return p1
-.end method
 
-.method public final e(Lbej;Lbei;Lbei;)Z
-    .locals 1
-
-    iget-object v0, p0, Lbef;->c:Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
-
-    invoke-static {v0, p1, p2, p3}, Lbdk;->d(Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result p1
-
-    return p1
+    :cond_0
+    return v1
 .end method

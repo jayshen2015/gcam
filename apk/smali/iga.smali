@@ -1,34 +1,66 @@
-.class public interface abstract Liga;
+.class public final synthetic Liga;
 .super Ljava/lang/Object;
+
+# interfaces
+.implements Llij;
+
+
+# instance fields
+.field public final synthetic a:Ligb;
+
+.field public final synthetic b:Lgtv;
+
+
+# direct methods
+.method public synthetic constructor <init>(Ligb;Lgtv;)V
+    .locals 0
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Liga;->a:Ligb;
+
+    iput-object p2, p0, Liga;->b:Lgtv;
+
+    return-void
+.end method
 
 
 # virtual methods
-.method public abstract a()Lkad;
-.end method
+.method public final fB(Ljava/lang/Object;)V
+    .locals 2
 
-.method public abstract d(Ljava/util/function/Supplier;)V
-.end method
+    iget-object v0, p0, Liga;->a:Ligb;
 
-.method public abstract e(Ljava/lang/Runnable;)V
-.end method
+    iget-object v1, p0, Liga;->b:Lgtv;
 
-.method public abstract f(Ljava/lang/Runnable;Ljava/util/concurrent/Executor;)V
-.end method
+    check-cast p1, Lgtv;
 
-.method public abstract g(Ljava/lang/Runnable;Ljava/util/concurrent/Executor;)V
-.end method
+    invoke-virtual {p1, v1}, Lgtv;->equals(Ljava/lang/Object;)Z
 
-.method public abstract l()V
-.end method
+    move-result p1
 
-.method public abstract m()V
-.end method
+    if-nez p1, :cond_0
 
-.method public abstract n()V
-.end method
+    iget-object p1, v0, Ligb;->b:Lhuf;
 
-.method public abstract o()V
-.end method
+    sget-object v1, Lhtu;->u:Lhuk;
 
-.method public abstract p()V
+    invoke-interface {p1, v1}, Lhuf;->c(Lhts;)Ljava/lang/Object;
+
+    move-result-object p1
+
+    check-cast p1, Ljava/lang/Boolean;
+
+    invoke-virtual {p1}, Ljava/lang/Boolean;->booleanValue()Z
+
+    move-result p1
+
+    if-nez p1, :cond_0
+
+    iget-object p1, v0, Ligb;->a:Lihg;
+
+    invoke-virtual {p1}, Lihg;->a()V
+
+    :cond_0
+    return-void
 .end method

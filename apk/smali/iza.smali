@@ -1,18 +1,18 @@
 .class final Liza;
-.super Lizm;
+.super Liya;
 
 
 # instance fields
-.field final synthetic a:Lizc;
+.field final synthetic a:Lizb;
 
 
 # direct methods
-.method public constructor <init>(Lizc;Liyz;)V
+.method public constructor <init>(Lizb;)V
     .locals 0
 
-    iput-object p1, p0, Liza;->a:Lizc;
+    iput-object p1, p0, Liza;->a:Lizb;
 
-    invoke-direct {p0, p2}, Lizm;-><init>(Liyz;)V
+    invoke-direct {p0}, Liya;-><init>()V
 
     return-void
 .end method
@@ -22,24 +22,19 @@
 .method public final a()V
     .locals 2
 
-    iget-object v0, p0, Liza;->a:Lizc;
+    iget-object v0, p0, Liza;->a:Lizb;
 
-    invoke-static {}, Liys;->a()V
+    iget-object v0, v0, Lizb;->m:Lihu;
 
-    invoke-virtual {v0}, Lizc;->D()Z
+    invoke-virtual {v0}, Lihu;->e()V
 
-    move-result v1
+    iget-object v0, p0, Liza;->a:Lizb;
 
-    if-nez v1, :cond_0
+    iget-object v1, v0, Lizb;->m:Lihu;
 
-    return-void
+    iget-object v0, v0, Lizb;->n:Lihw;
 
-    :cond_0
-    const-string v1, "Inactivity, disconnecting from device AnalyticsService"
-
-    invoke-virtual {v0, v1}, Liyv;->q(Ljava/lang/String;)V
-
-    invoke-virtual {v0}, Lizc;->b()V
+    invoke-virtual {v1, v0}, Lihu;->g(Lihw;)V
 
     return-void
 .end method

@@ -1,10 +1,22 @@
-.class public interface abstract Lfyz;
+.class public final Lfyz;
 .super Ljava/lang/Object;
 
 
-# virtual methods
-.method public abstract a(Lgkr;)Lfyy;
-.end method
+# static fields
+.field public static final a:Lfuu;
 
-.method public abstract b(Lgkr;)Lfyy;
+
+# direct methods
+.method static constructor <clinit>()V
+    .locals 2
+
+    new-instance v0, Lfuu;
+
+    const/16 v1, 0x8
+
+    invoke-direct {v0, v1}, Lfuu;-><init>(I)V
+
+    sput-object v0, Lfyz;->a:Lfuu;
+
+    return-void
 .end method

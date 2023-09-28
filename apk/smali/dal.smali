@@ -1,37 +1,51 @@
-.class public interface abstract Ldal;
+.class public final synthetic Ldal;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lkad;
+.implements Ldbg;
+
+
+# instance fields
+.field public final synthetic a:Ljava/util/concurrent/Executor;
+
+.field public final synthetic b:Ljava/util/Set;
+
+
+# direct methods
+.method public synthetic constructor <init>(Ljava/util/concurrent/Executor;Ljava/util/Set;)V
+    .locals 0
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Ldal;->a:Ljava/util/concurrent/Executor;
+
+    iput-object p2, p0, Ldal;->b:Ljava/util/Set;
+
+    return-void
+.end method
 
 
 # virtual methods
-.method public abstract a()Ldau;
-.end method
+.method public final g(JLjava/util/Map;)V
+    .locals 8
 
-.method public abstract b()V
-.end method
+    iget-object v0, p0, Ldal;->a:Ljava/util/concurrent/Executor;
 
-.method public abstract f(Landroid/view/ViewStub;)V
-.end method
+    iget-object v2, p0, Ldal;->b:Ljava/util/Set;
 
-.method public abstract i(Ldak;)V
-.end method
+    new-instance v7, Ldao;
 
-.method public abstract k(Lhyn;Liko;)V
-.end method
+    const/4 v6, 0x1
 
-.method public abstract l(Liko;)V
-.end method
+    move-object v1, v7
 
-.method public abstract n()V
-.end method
+    move-wide v3, p1
 
-.method public abstract p()V
-.end method
+    move-object v5, p3
 
-.method public abstract q()V
-.end method
+    invoke-direct/range {v1 .. v6}, Ldao;-><init>(Ljava/util/Set;JLjava/util/Map;I)V
 
-.method public abstract s(Landroidx/wear/ambient/AmbientModeSupport$AmbientController;)V
+    invoke-interface {v0, v7}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
+
+    return-void
 .end method

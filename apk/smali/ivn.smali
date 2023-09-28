@@ -1,185 +1,50 @@
-.class public final Livn;
+.class public final synthetic Livn;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Landroid/view/ViewTreeObserver$OnPreDrawListener;
+.implements Loiu;
 
 
 # instance fields
-.field final synthetic a:Landroid/view/ViewGroup;
-
-.field private final synthetic b:I
+.field public final synthetic a:Livp;
 
 
 # direct methods
-.method public constructor <init>(Landroidx/coordinatorlayout/widget/CoordinatorLayout;I)V
+.method public synthetic constructor <init>(Livp;)V
     .locals 0
-
-    iput p2, p0, Livn;->b:I
-
-    iput-object p1, p0, Livn;->a:Landroid/view/ViewGroup;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    return-void
-.end method
-
-.method public constructor <init>(Lcom/google/android/clockwork/common/wearable/wearmaterial/button/WearChipButton;I)V
-    .locals 0
-
-    iput p2, p0, Livn;->b:I
-
-    iput-object p1, p0, Livn;->a:Landroid/view/ViewGroup;
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
-.end method
-
-.method public constructor <init>(Lcom/google/android/clockwork/common/wearable/wearmaterial/list/FadingWearableRecyclerView;I)V
-    .locals 0
-
-    iput p2, p0, Livn;->b:I
-
-    iput-object p1, p0, Livn;->a:Landroid/view/ViewGroup;
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
-.end method
-
-.method public synthetic constructor <init>(Lcom/google/android/clockwork/common/wearable/wearmaterial/picker/CenteredRecyclerView;I)V
-    .locals 0
-
-    iput p2, p0, Livn;->b:I
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Livn;->a:Landroid/view/ViewGroup;
+    iput-object p1, p0, Livn;->a:Livp;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onPreDraw()Z
-    .locals 4
+.method public final a(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 2
 
-    iget v0, p0, Livn;->b:I
+    iget-object v0, p0, Livn;->a:Livp;
 
-    const/4 v1, 0x0
+    check-cast p1, Likd;
 
-    const/4 v2, 0x1
+    if-eqz p1, :cond_0
 
-    packed-switch v0, :pswitch_data_0
+    iget-object v1, p1, Likd;->a:Landroid/graphics/Bitmap;
 
-    iget-object v0, p0, Livn;->a:Landroid/view/ViewGroup;
+    iget-object p1, p1, Likd;->b:Llic;
 
-    move-object v2, v0
+    iget p1, p1, Llic;->e:I
 
-    check-cast v2, Lcom/google/android/clockwork/common/wearable/wearmaterial/picker/CenteredRecyclerView;
-
-    iget-boolean v3, v2, Lcom/google/android/clockwork/common/wearable/wearmaterial/picker/CenteredRecyclerView;->ad:Z
-
-    if-eqz v3, :cond_1
-
-    iget-object v3, v2, Lcom/google/android/clockwork/common/wearable/wearmaterial/picker/CenteredRecyclerView;->ab:Lixf;
-
-    invoke-interface {v3, v0}, Lixf;->c(Landroid/view/View;)I
-
-    move-result v0
-
-    iget v3, v2, Lcom/google/android/clockwork/common/wearable/wearmaterial/picker/CenteredRecyclerView;->ae:I
-
-    if-ne v0, v3, :cond_2
-
-    goto :goto_0
-
-    :pswitch_0
-    iget-object v0, p0, Livn;->a:Landroid/view/ViewGroup;
-
-    check-cast v0, Lcom/google/android/clockwork/common/wearable/wearmaterial/list/FadingWearableRecyclerView;
-
-    iget-boolean v3, v0, Lcom/google/android/clockwork/common/wearable/wearmaterial/list/FadingWearableRecyclerView;->ac:Z
-
-    if-eqz v3, :cond_0
-
-    invoke-virtual {v0}, Lcom/google/android/clockwork/common/wearable/wearmaterial/list/FadingWearableRecyclerView;->getChildCount()I
-
-    move-result v0
-
-    if-lez v0, :cond_0
-
-    iget-object v0, p0, Livn;->a:Landroid/view/ViewGroup;
-
-    check-cast v0, Lcom/google/android/clockwork/common/wearable/wearmaterial/list/FadingWearableRecyclerView;
-
-    invoke-virtual {v0}, Lcom/google/android/clockwork/common/wearable/wearmaterial/list/FadingWearableRecyclerView;->aB()V
-
-    iget-object v0, p0, Livn;->a:Landroid/view/ViewGroup;
-
-    check-cast v0, Lcom/google/android/clockwork/common/wearable/wearmaterial/list/FadingWearableRecyclerView;
-
-    iput-boolean v1, v0, Lcom/google/android/clockwork/common/wearable/wearmaterial/list/FadingWearableRecyclerView;->ac:Z
-
-    return v1
+    invoke-virtual {v0, v1, p1}, Livp;->j(Landroid/graphics/Bitmap;I)V
 
     :cond_0
-    return v2
+    const/4 p1, 0x1
 
-    :pswitch_1
-    iget-object v0, p0, Livn;->a:Landroid/view/ViewGroup;
+    invoke-static {p1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
-    check-cast v0, Landroidx/coordinatorlayout/widget/CoordinatorLayout;
+    move-result-object p1
 
-    invoke-virtual {v0, v1}, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->i(I)V
-
-    return v2
-
-    :pswitch_2
-    iget-object v0, p0, Livn;->a:Landroid/view/ViewGroup;
-
-    check-cast v0, Lcom/google/android/clockwork/common/wearable/wearmaterial/button/WearChipButton;
-
-    invoke-virtual {v0}, Lcom/google/android/clockwork/common/wearable/wearmaterial/button/WearChipButton;->getRootView()Landroid/view/View;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Landroid/view/View;->getViewTreeObserver()Landroid/view/ViewTreeObserver;
-
-    move-result-object v0
-
-    invoke-virtual {v0, p0}, Landroid/view/ViewTreeObserver;->removeOnPreDrawListener(Landroid/view/ViewTreeObserver$OnPreDrawListener;)V
-
-    iget-object v0, p0, Livn;->a:Landroid/view/ViewGroup;
-
-    check-cast v0, Lcom/google/android/clockwork/common/wearable/wearmaterial/button/WearChipButton;
-
-    iput-boolean v2, v0, Lcom/google/android/clockwork/common/wearable/wearmaterial/button/WearChipButton;->l:Z
-
-    return v2
-
-    :cond_1
-    :goto_0
-    invoke-virtual {v2}, Lcom/google/android/clockwork/common/wearable/wearmaterial/picker/CenteredRecyclerView;->getRootView()Landroid/view/View;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Landroid/view/View;->getViewTreeObserver()Landroid/view/ViewTreeObserver;
-
-    move-result-object v0
-
-    iget-object v2, v2, Lcom/google/android/clockwork/common/wearable/wearmaterial/picker/CenteredRecyclerView;->ac:Landroid/view/ViewTreeObserver$OnPreDrawListener;
-
-    invoke-virtual {v0, v2}, Landroid/view/ViewTreeObserver;->removeOnPreDrawListener(Landroid/view/ViewTreeObserver$OnPreDrawListener;)V
-
-    :cond_2
-    return v1
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_2
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
+    return-object p1
 .end method

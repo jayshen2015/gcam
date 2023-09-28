@@ -1,164 +1,98 @@
-.class public Lirc;
-.super Liqw;
+.class public final Lirc;
+.super Ljava/lang/Object;
 
 
 # static fields
-.field public static final f:Lnak;
+.field public static a:[B
+
+.field public static b:[F
+
+.field public static c:[F
 
 
 # instance fields
-.field public final g:Lcom/google/android/apps/camera/whitebalance/ManualWhiteBalanceUi;
+.field public final d:Ljava/nio/ByteBuffer;
 
-.field public final h:Ljuh;
+.field public final e:Lire;
 
-.field public final i:Lhws;
+.field public final f:Lenl;
 
-.field public final j:Landroid/animation/ObjectAnimator;
+.field public final g:Lkfm;
 
-.field public final k:Ljwb;
-
-.field public l:Z
-
-.field public final m:Ljava/lang/Runnable;
-
-.field public final n:Ligo;
+.field public final h:Lmip;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
+.method public constructor <init>(Lmip;IILenl;Lkfm;[B[B[B[B[B[B[B)V
+    .locals 12
 
-    const-string v0, "com/google/android/apps/camera/whitebalance/ManualWhiteBalanceStatechart"
+    move-object v0, p0
 
-    invoke-static {v0}, Lnak;->h(Ljava/lang/String;)Lnak;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    move-result-object v0
+    new-instance v11, Lire;
 
-    sput-object v0, Lirc;->f:Lnak;
+    const/4 v5, 0x0
 
-    return-void
-.end method
+    const/4 v6, 0x0
 
-.method public constructor <init>(Lcom/google/android/apps/camera/whitebalance/ManualWhiteBalanceUi;Ljuh;Lhws;Ligo;[B[B[B[B[B)V
-    .locals 0
+    const/4 v7, 0x0
 
-    invoke-direct {p0}, Liqw;-><init>()V
+    const/4 v8, 0x0
 
-    new-instance p5, Ljvk;
+    const/4 v9, 0x0
 
-    const/4 p6, 0x1
+    const/4 v10, 0x0
 
-    invoke-static {p6}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+    move-object v1, v11
 
-    move-result-object p6
+    move-object v2, p1
 
-    invoke-direct {p5, p6}, Ljvk;-><init>(Ljava/lang/Object;)V
+    move v3, p2
 
-    iput-object p5, p0, Lirc;->k:Ljwb;
+    move v4, p3
 
-    const/4 p5, 0x0
+    invoke-direct/range {v1 .. v10}, Lire;-><init>(Lmip;II[B[B[B[B[B[B)V
 
-    iput-boolean p5, p0, Lirc;->l:Z
+    iput-object v11, v0, Lirc;->e:Lire;
 
-    new-instance p6, Liqg;
+    mul-int v1, p2, p3
 
-    const/16 p7, 0xe
+    new-array v2, v1, [B
 
-    invoke-direct {p6, p0, p7}, Liqg;-><init>(Lirc;I)V
+    sput-object v2, Lirc;->a:[B
 
-    iput-object p6, p0, Lirc;->m:Ljava/lang/Runnable;
+    const/16 v2, 0x9
 
-    iput-object p1, p0, Lirc;->g:Lcom/google/android/apps/camera/whitebalance/ManualWhiteBalanceUi;
+    new-array v2, v2, [F
 
-    iput-object p2, p0, Lirc;->h:Ljuh;
+    sput-object v2, Lirc;->b:[F
 
-    iput-object p3, p0, Lirc;->i:Lhws;
+    const/16 v2, 0x240
 
-    invoke-virtual {p1}, Lcom/google/android/apps/camera/whitebalance/ManualWhiteBalanceUi;->getContext()Landroid/content/Context;
+    new-array v2, v2, [F
 
-    move-result-object p2
+    sput-object v2, Lirc;->c:[F
 
-    const/high16 p3, 0x10b0000
+    move-object/from16 v2, p4
 
-    invoke-static {p2, p3}, Landroid/animation/AnimatorInflater;->loadAnimator(Landroid/content/Context;I)Landroid/animation/Animator;
+    iput-object v2, v0, Lirc;->f:Lenl;
 
-    move-result-object p2
+    move-object/from16 v2, p5
 
-    check-cast p2, Landroid/animation/ObjectAnimator;
+    iput-object v2, v0, Lirc;->g:Lkfm;
 
-    invoke-virtual {p2, p1}, Landroid/animation/ObjectAnimator;->setTarget(Ljava/lang/Object;)V
+    mul-int/lit8 v1, v1, 0x3
 
-    new-instance p3, Liqx;
-
-    invoke-direct {p3, p0, p1, p5}, Liqx;-><init>(Lirc;Landroid/view/View;I)V
-
-    invoke-virtual {p2, p3}, Landroid/animation/ObjectAnimator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
-
-    iput-object p2, p0, Lirc;->j:Landroid/animation/ObjectAnimator;
-
-    iput-object p4, p0, Lirc;->n:Ligo;
-
-    return-void
-.end method
-
-
-# virtual methods
-.method final k()V
-    .locals 2
-
-    iget-object v0, p0, Lirc;->g:Lcom/google/android/apps/camera/whitebalance/ManualWhiteBalanceUi;
-
-    iget-object v1, p0, Lirc;->m:Ljava/lang/Runnable;
-
-    invoke-virtual {v0, v1}, Lcom/google/android/apps/camera/whitebalance/ManualWhiteBalanceUi;->removeCallbacks(Ljava/lang/Runnable;)Z
-
-    return-void
-.end method
-
-.method public final l(ZZ)V
-    .locals 3
-
-    iget-object v0, p0, Lirc;->h:Ljuh;
-
-    new-instance v1, Liqr;
-
-    const/4 v2, 0x3
-
-    invoke-direct {v1, p0, p2, p1, v2}, Liqr;-><init>(Lirc;ZZI)V
-
-    invoke-virtual {v0, v1}, Ljuh;->c(Ljava/lang/Runnable;)V
-
-    return-void
-.end method
-
-.method public final m()V
-    .locals 2
-
-    iget-object v0, p0, Lirc;->k:Ljwb;
-
-    const/4 v1, 0x1
-
-    invoke-static {v1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+    invoke-static {v1}, Ljava/nio/ByteBuffer;->allocateDirect(I)Ljava/nio/ByteBuffer;
 
     move-result-object v1
 
-    invoke-interface {v0, v1}, Ljwb;->bn(Ljava/lang/Object;)V
+    iput-object v1, v0, Lirc;->d:Ljava/nio/ByteBuffer;
 
-    return-void
-.end method
+    move-object v1, p1
 
-.method public final n(ZZ)V
-    .locals 3
-
-    iget-object v0, p0, Lirc;->h:Ljuh;
-
-    new-instance v1, Liqr;
-
-    const/4 v2, 0x4
-
-    invoke-direct {v1, p0, p2, p1, v2}, Liqr;-><init>(Lirc;ZZI)V
-
-    invoke-virtual {v0, v1}, Ljuh;->c(Ljava/lang/Runnable;)V
+    iput-object v1, v0, Lirc;->h:Lmip;
 
     return-void
 .end method

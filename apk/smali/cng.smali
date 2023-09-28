@@ -1,320 +1,368 @@
 .class public final Lcng;
-.super Landroid/database/sqlite/SQLiteOpenHelper;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Llie;
 
 
 # static fields
-.field private static final a:Lnak;
+.field public static final a:Louj;
 
 
 # instance fields
-.field private final b:Landroid/content/Context;
+.field public final b:Landroid/app/Activity;
 
-.field private final c:Ljava/lang/String;
+.field public final c:Landroid/media/AudioManager;
 
-.field private final d:Lmvv;
+.field public final d:Llap;
 
-.field private final e:I
+.field public final e:Ljava/lang/Object;
 
-.field private f:Z
+.field public final f:Llda;
+
+.field public final g:Llda;
+
+.field public final h:Llda;
+
+.field public i:Z
+
+.field public j:Z
+
+.field public final k:Landroid/content/BroadcastReceiver;
+
+.field public l:I
+
+.field public m:I
 
 
 # direct methods
 .method static constructor <clinit>()V
     .locals 1
 
-    const-string v0, "com/google/android/apps/camera/brella/examplestore/lib/VersionedSqliteOpenHelper"
+    const-string v0, "com/google/android/apps/camera/camcorder/media/audio/AudioDeviceBluetoothManagerImpl"
 
-    invoke-static {v0}, Lnak;->h(Ljava/lang/String;)Lnak;
+    invoke-static {v0}, Louj;->h(Ljava/lang/String;)Louj;
 
     move-result-object v0
 
-    sput-object v0, Lcng;->a:Lnak;
+    sput-object v0, Lcng;->a:Louj;
 
     return-void
 .end method
 
-.method public constructor <init>(Landroid/content/Context;Lmvv;)V
-    .locals 3
+.method public constructor <init>(Landroid/app/Activity;Landroid/media/AudioManager;Llda;Llda;Llda;)V
+    .locals 2
 
-    invoke-virtual {p2}, Lmvv;->size()I
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    move-result v0
+    new-instance v0, Llap;
 
-    const/4 v1, 0x0
+    invoke-direct {v0}, Llap;-><init>()V
 
-    const-string v2, "example_store_ng"
+    iput-object v0, p0, Lcng;->d:Llap;
 
-    invoke-direct {p0, p1, v2, v1, v0}, Landroid/database/sqlite/SQLiteOpenHelper;-><init>(Landroid/content/Context;Ljava/lang/String;Landroid/database/sqlite/SQLiteDatabase$CursorFactory;I)V
+    new-instance v0, Ljava/lang/Object;
 
-    iput-object p1, p0, Lcng;->b:Landroid/content/Context;
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
-    iput-object v2, p0, Lcng;->c:Ljava/lang/String;
+    iput-object v0, p0, Lcng;->e:Ljava/lang/Object;
 
-    iput-object p2, p0, Lcng;->d:Lmvv;
+    const/4 v0, 0x0
 
-    invoke-virtual {p2}, Lmvv;->size()I
+    iput-boolean v0, p0, Lcng;->i:Z
 
-    move-result p1
+    const/4 v1, 0x3
 
-    iput p1, p0, Lcng;->e:I
+    iput v1, p0, Lcng;->l:I
+
+    const/4 v1, 0x1
+
+    iput v1, p0, Lcng;->m:I
+
+    iput-boolean v0, p0, Lcng;->j:Z
+
+    new-instance v0, Lcnf;
+
+    invoke-direct {v0, p0}, Lcnf;-><init>(Lcng;)V
+
+    iput-object v0, p0, Lcng;->k:Landroid/content/BroadcastReceiver;
+
+    iput-object p1, p0, Lcng;->b:Landroid/app/Activity;
+
+    iput-object p2, p0, Lcng;->c:Landroid/media/AudioManager;
+
+    iput-object p3, p0, Lcng;->f:Llda;
+
+    iput-object p4, p0, Lcng;->g:Llda;
+
+    iput-object p5, p0, Lcng;->h:Llda;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final getWritableDatabase()Landroid/database/sqlite/SQLiteDatabase;
-    .locals 4
+.method public final a(Ljava/lang/String;)V
+    .locals 2
+
+    iget-object v0, p0, Lcng;->e:Ljava/lang/Object;
+
+    monitor-enter v0
 
     :try_start_0
-    invoke-super {p0}, Landroid/database/sqlite/SQLiteOpenHelper;->getWritableDatabase()Landroid/database/sqlite/SQLiteDatabase;
-
-    move-result-object v0
-    :try_end_0
-    .catch Landroid/database/sqlite/SQLiteException; {:try_start_0 .. :try_end_0} :catch_0
-
-    goto :goto_0
-
-    :catch_0
-    move-exception v0
-
-    sget-object v1, Lcng;->a:Lnak;
-
-    invoke-virtual {v1}, Lnaf;->b()Lnaz;
-
-    move-result-object v1
-
-    const-string v2, "Error opening database, deleting the database and trying again"
-
-    const/16 v3, 0x158
-
-    invoke-static {v1, v2, v3, v0}, Ld;->h(Lnaz;Ljava/lang/String;CLjava/lang/Throwable;)V
-
-    iget-object v1, p0, Lcng;->b:Landroid/content/Context;
-
-    iget-object v2, p0, Lcng;->c:Ljava/lang/String;
-
-    invoke-virtual {v1, v2}, Landroid/content/Context;->getDatabasePath(Ljava/lang/String;)Ljava/io/File;
-
-    move-result-object v1
-
-    invoke-static {v1}, Landroid/database/sqlite/SQLiteDatabase;->deleteDatabase(Ljava/io/File;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_1
-
-    :try_start_1
-    invoke-super {p0}, Landroid/database/sqlite/SQLiteOpenHelper;->getWritableDatabase()Landroid/database/sqlite/SQLiteDatabase;
-
-    move-result-object v0
-    :try_end_1
-    .catch Landroid/database/sqlite/SQLiteException; {:try_start_1 .. :try_end_1} :catch_2
-
-    :goto_0
-    iget-boolean v1, p0, Lcng;->f:Z
+    iget-boolean v1, p0, Lcng;->j:Z
 
     if-eqz v1, :cond_0
 
-    invoke-virtual {v0}, Landroid/database/sqlite/SQLiteDatabase;->getPath()Ljava/lang/String;
+    sget-object p1, Lcng;->a:Louj;
 
-    move-result-object v1
+    invoke-virtual {p1}, Loue;->c()Lova;
 
-    invoke-virtual {v0}, Landroid/database/sqlite/SQLiteDatabase;->close()V
+    move-result-object p1
 
-    new-instance v0, Ljava/io/File;
+    check-cast p1, Loug;
 
-    invoke-direct {v0, v1}, Ljava/io/File;-><init>(Ljava/lang/String;)V
+    const/16 v1, 0x229
 
-    invoke-static {v0}, Landroid/database/sqlite/SQLiteDatabase;->deleteDatabase(Ljava/io/File;)Z
+    invoke-interface {p1, v1}, Loug;->G(I)Lova;
 
-    const/4 v0, 0x0
+    move-result-object p1
 
-    iput-boolean v0, p0, Lcng;->f:Z
+    check-cast p1, Loug;
 
-    :try_start_2
-    invoke-super {p0}, Landroid/database/sqlite/SQLiteOpenHelper;->getWritableDatabase()Landroid/database/sqlite/SQLiteDatabase;
+    const-string v1, "Already closed. Ignore start()"
 
-    move-result-object v0
-    :try_end_2
-    .catch Landroid/database/sqlite/SQLiteException; {:try_start_2 .. :try_end_2} :catch_1
+    invoke-interface {p1, v1}, Loug;->o(Ljava/lang/String;)V
 
-    goto :goto_1
-
-    :catch_1
-    move-exception v0
-
-    sget-object v1, Lcng;->a:Lnak;
-
-    invoke-virtual {v1}, Lnaf;->b()Lnaz;
-
-    move-result-object v1
-
-    const-string v2, "Error getting database after downgrading"
-
-    const/16 v3, 0x157
-
-    invoke-static {v1, v2, v3, v0}, Ld;->h(Lnaz;Ljava/lang/String;CLjava/lang/Throwable;)V
-
-    throw v0
-
-    :cond_0
-    :goto_1
-    return-object v0
-
-    :catch_2
-    move-exception v0
-
-    sget-object v1, Lcng;->a:Lnak;
-
-    invoke-virtual {v1}, Lnaf;->b()Lnaz;
-
-    move-result-object v1
-
-    const-string v2, "failed to get the database after recreating"
-
-    const/16 v3, 0x159
-
-    invoke-static {v1, v2, v3, v0}, Ld;->h(Lnaz;Ljava/lang/String;CLjava/lang/Throwable;)V
-
-    throw v0
-
-    :cond_1
-    sget-object v1, Lcng;->a:Lnak;
-
-    invoke-virtual {v1}, Lnaf;->b()Lnaz;
-
-    move-result-object v1
-
-    check-cast v1, Lnah;
-
-    invoke-interface {v1, v0}, Lnah;->h(Ljava/lang/Throwable;)Lnaz;
-
-    move-result-object v1
-
-    check-cast v1, Lnah;
-
-    const/16 v2, 0x15a
-
-    invoke-interface {v1, v2}, Lnah;->G(I)Lnaz;
-
-    move-result-object v1
-
-    check-cast v1, Lnah;
-
-    iget-object v2, p0, Lcng;->c:Ljava/lang/String;
-
-    const-string v3, "Deletion of %s failed"
-
-    invoke-interface {v1, v3, v2}, Lnah;->r(Ljava/lang/String;Ljava/lang/Object;)V
-
-    throw v0
-.end method
-
-.method public final onCreate(Landroid/database/sqlite/SQLiteDatabase;)V
-    .locals 2
-
-    const/4 v0, 0x0
-
-    iget v1, p0, Lcng;->e:I
-
-    invoke-virtual {p0, p1, v0, v1}, Lcng;->onUpgrade(Landroid/database/sqlite/SQLiteDatabase;II)V
+    monitor-exit v0
 
     return-void
-.end method
-
-.method public final onDowngrade(Landroid/database/sqlite/SQLiteDatabase;II)V
-    .locals 0
-
-    const/4 p1, 0x1
-
-    iput-boolean p1, p0, Lcng;->f:Z
-
-    return-void
-.end method
-
-.method public final onUpgrade(Landroid/database/sqlite/SQLiteDatabase;II)V
-    .locals 3
-
-    const/4 v0, 0x0
-
-    const/4 v1, 0x1
-
-    if-ltz p2, :cond_0
-
-    const/4 v2, 0x1
-
-    goto :goto_0
 
     :cond_0
-    const/4 v2, 0x0
+    invoke-virtual {p1}, Ljava/lang/String;->isEmpty()Z
 
-    :goto_0
-    invoke-static {v2}, Lmoz;->e(Z)V
+    move-result p1
 
-    if-ge p2, p3, :cond_1
+    if-eqz p1, :cond_1
 
-    const/4 v2, 0x1
+    monitor-exit v0
 
-    goto :goto_1
+    return-void
 
     :cond_1
-    const/4 v2, 0x0
+    iget p1, p0, Lcng;->l:I
 
-    :goto_1
-    invoke-static {v2}, Lmoz;->e(Z)V
+    if-eqz p1, :cond_4
 
-    iget v2, p0, Lcng;->e:I
+    const/4 v1, 0x5
 
-    if-ne p3, v2, :cond_2
+    if-ne p1, v1, :cond_2
 
-    const/4 v0, 0x1
+    monitor-exit v0
 
-    goto :goto_2
+    return-void
 
     :cond_2
-    :goto_2
-    invoke-static {v0}, Lmoz;->e(Z)V
+    iput v1, p0, Lcng;->m:I
 
-    invoke-virtual {p1}, Landroid/database/sqlite/SQLiteDatabase;->beginTransaction()V
+    const/4 v1, 0x2
 
-    :goto_3
-    if-ge p2, p3, :cond_3
+    if-ne p1, v1, :cond_3
 
-    :try_start_0
-    iget-object v0, p0, Lcng;->d:Lmvv;
+    sget-object p1, Lcng;->a:Louj;
 
-    invoke-virtual {v0, p2}, Lmvv;->get(I)Ljava/lang/Object;
+    invoke-virtual {p1}, Loue;->c()Lova;
 
-    move-result-object v0
+    move-result-object p1
 
-    check-cast v0, Ljava/lang/String;
+    check-cast p1, Loug;
 
-    invoke-virtual {p1, v0}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
+    const/16 v1, 0x226
 
-    add-int/lit8 p2, p2, 0x1
+    invoke-interface {p1, v1}, Loug;->G(I)Lova;
 
-    goto :goto_3
+    move-result-object p1
+
+    check-cast p1, Loug;
+
+    const-string v1, "Bluetooth audio is disconnecting, retry later"
+
+    invoke-interface {p1, v1}, Loug;->o(Ljava/lang/String;)V
+
+    monitor-exit v0
+
+    return-void
 
     :cond_3
-    invoke-virtual {p1}, Landroid/database/sqlite/SQLiteDatabase;->setTransactionSuccessful()V
+    invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
+
+    iget-object p1, p0, Lcng;->c:Landroid/media/AudioManager;
+
+    invoke-virtual {p1}, Landroid/media/AudioManager;->startBluetoothSco()V
+
+    monitor-exit v0
+
+    return-void
+
+    :cond_4
+    const/4 p1, 0x0
+
+    throw p1
+
+    :catchall_0
+    move-exception p1
+
+    monitor-exit v0
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    invoke-virtual {p1}, Landroid/database/sqlite/SQLiteDatabase;->endTransaction()V
+    throw p1
+.end method
+
+.method public final b()V
+    .locals 3
+
+    iget-object v0, p0, Lcng;->e:Ljava/lang/Object;
+
+    monitor-enter v0
+
+    :try_start_0
+    iget v1, p0, Lcng;->l:I
+
+    if-eqz v1, :cond_2
+
+    const/4 v2, 0x3
+
+    if-ne v1, v2, :cond_0
+
+    monitor-exit v0
+
+    return-void
+
+    :cond_0
+    iput v2, p0, Lcng;->m:I
+
+    const/4 v2, 0x4
+
+    if-ne v1, v2, :cond_1
+
+    sget-object v1, Lcng;->a:Louj;
+
+    invoke-virtual {v1}, Loue;->c()Lova;
+
+    move-result-object v1
+
+    check-cast v1, Loug;
+
+    const/16 v2, 0x22b
+
+    invoke-interface {v1, v2}, Loug;->G(I)Lova;
+
+    move-result-object v1
+
+    check-cast v1, Loug;
+
+    const-string v2, "Bluetooth audio is connecting, retry later"
+
+    invoke-interface {v1, v2}, Loug;->o(Ljava/lang/String;)V
+
+    monitor-exit v0
+
+    return-void
+
+    :cond_1
+    const/4 v1, 0x2
+
+    iput v1, p0, Lcng;->l:I
+
+    iget-object v1, p0, Lcng;->c:Landroid/media/AudioManager;
+
+    invoke-virtual {v1}, Landroid/media/AudioManager;->stopBluetoothSco()V
+
+    monitor-exit v0
+
+    return-void
+
+    :cond_2
+    const/4 v1, 0x0
+
+    throw v1
+
+    :catchall_0
+    move-exception v1
+
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw v1
+.end method
+
+.method public final close()V
+    .locals 3
+
+    iget-object v0, p0, Lcng;->e:Ljava/lang/Object;
+
+    monitor-enter v0
+
+    :try_start_0
+    iget-boolean v1, p0, Lcng;->j:Z
+
+    if-eqz v1, :cond_0
+
+    sget-object v1, Lcng;->a:Louj;
+
+    invoke-virtual {v1}, Loue;->c()Lova;
+
+    move-result-object v1
+
+    check-cast v1, Loug;
+
+    const/16 v2, 0x221
+
+    invoke-interface {v1, v2}, Loug;->G(I)Lova;
+
+    move-result-object v1
+
+    check-cast v1, Loug;
+
+    const-string v2, "Already closed"
+
+    invoke-interface {v1, v2}, Loug;->o(Ljava/lang/String;)V
+
+    monitor-exit v0
+
+    return-void
+
+    :cond_0
+    iget-object v1, p0, Lcng;->c:Landroid/media/AudioManager;
+
+    invoke-virtual {v1}, Landroid/media/AudioManager;->stopBluetoothSco()V
+
+    iget-object v1, p0, Lcng;->d:Llap;
+
+    invoke-virtual {v1}, Llap;->close()V
+
+    iget-object v1, p0, Lcng;->b:Landroid/app/Activity;
+
+    iget-object v2, p0, Lcng;->k:Landroid/content/BroadcastReceiver;
+
+    invoke-virtual {v1, v2}, Landroid/app/Activity;->unregisterReceiver(Landroid/content/BroadcastReceiver;)V
+
+    const/4 v1, 0x1
+
+    iput-boolean v1, p0, Lcng;->j:Z
+
+    monitor-exit v0
 
     return-void
 
     :catchall_0
-    move-exception p2
+    move-exception v1
 
-    invoke-virtual {p1}, Landroid/database/sqlite/SQLiteDatabase;->endTransaction()V
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    goto :goto_5
-
-    :goto_4
-    throw p2
-
-    :goto_5
-    goto :goto_4
+    throw v1
 .end method

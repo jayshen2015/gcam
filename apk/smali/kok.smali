@@ -1,20 +1,26 @@
-.class public final Lkok;
-.super Lkdf;
+.class final Lkok;
+.super Ljava/lang/ThreadLocal;
 
 
 # direct methods
 .method public constructor <init>()V
     .locals 0
 
-    invoke-direct {p0}, Lkdf;-><init>()V
+    invoke-direct {p0}, Ljava/lang/ThreadLocal;-><init>()V
 
     return-void
 .end method
 
-.method public constructor <init>(Ljava/lang/Throwable;)V
-    .locals 0
 
-    invoke-direct {p0, p1}, Lkdf;-><init>(Ljava/lang/Throwable;)V
+# virtual methods
+.method protected final bridge synthetic initialValue()Ljava/lang/Object;
+    .locals 2
 
-    return-void
+    const-wide/16 v0, 0x0
+
+    invoke-static {v0, v1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object v0
+
+    return-object v0
 .end method

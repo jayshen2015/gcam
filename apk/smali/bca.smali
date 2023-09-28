@@ -1,46 +1,61 @@
 .class final Lbca;
-.super Lapo;
+.super Ljava/lang/Object;
+
+
+# instance fields
+.field final a:Lbky;
+
+.field final b:Ljava/util/concurrent/Executor;
 
 
 # direct methods
-.method public constructor <init>(Lapt;)V
+.method public constructor <init>(Lbky;Ljava/util/concurrent/Executor;)V
     .locals 0
 
-    invoke-direct {p0, p1}, Lapo;-><init>(Lapt;)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lbca;->a:Lbky;
+
+    iput-object p2, p0, Lbca;->b:Ljava/util/concurrent/Executor;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final bridge synthetic b(Larf;Ljava/lang/Object;)V
-    .locals 2
-
-    check-cast p2, Lbby;
-
-    iget-object v0, p2, Lbby;->a:Ljava/lang/Object;
-
-    check-cast v0, Ljava/lang/String;
-
-    const/4 v1, 0x1
-
-    invoke-virtual {p1, v1, v0}, Lare;->g(ILjava/lang/String;)V
-
-    iget-object p2, p2, Lbby;->b:Ljava/lang/Object;
-
-    check-cast p2, Ljava/lang/String;
-
-    const/4 v0, 0x2
-
-    invoke-virtual {p1, v0, p2}, Lare;->g(ILjava/lang/String;)V
-
-    return-void
-.end method
-
-.method public final d()Ljava/lang/String;
+.method public final equals(Ljava/lang/Object;)Z
     .locals 1
 
-    const-string v0, "INSERT OR IGNORE INTO `WorkName` (`name`,`work_spec_id`) VALUES (?,?)"
+    instance-of v0, p1, Lbca;
 
-    return-object v0
+    if-eqz v0, :cond_0
+
+    check-cast p1, Lbca;
+
+    iget-object v0, p0, Lbca;->a:Lbky;
+
+    iget-object p1, p1, Lbca;->a:Lbky;
+
+    invoke-virtual {v0, p1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+
+    move-result p1
+
+    return p1
+
+    :cond_0
+    const/4 p1, 0x0
+
+    return p1
+.end method
+
+.method public final hashCode()I
+    .locals 1
+
+    iget-object v0, p0, Lbca;->a:Lbky;
+
+    invoke-virtual {v0}, Ljava/lang/Object;->hashCode()I
+
+    move-result v0
+
+    return v0
 .end method

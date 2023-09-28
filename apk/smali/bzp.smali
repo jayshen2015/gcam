@@ -1,106 +1,84 @@
-.class public final Lbzp;
-.super Lbzg;
+.class public final enum Lbzp;
+.super Ljava/lang/Enum;
 
 
 # static fields
-.field private static u:Lbzp;
+.field public static final enum a:Lbzp;
+
+.field public static final enum b:Lbzp;
+
+.field public static final enum c:Lbzp;
+
+.field private static final synthetic d:[Lbzp;
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 7
 
-    invoke-direct {p0}, Lbzg;-><init>()V
+    new-instance v0, Lbzp;
+
+    const-string v1, "DISABLED"
+
+    const/4 v2, 0x0
+
+    invoke-direct {v0, v1, v2}, Lbzp;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, Lbzp;->a:Lbzp;
+
+    new-instance v1, Lbzp;
+
+    const-string v3, "IDLE"
+
+    const/4 v4, 0x1
+
+    invoke-direct {v1, v3, v4}, Lbzp;-><init>(Ljava/lang/String;I)V
+
+    sput-object v1, Lbzp;->b:Lbzp;
+
+    new-instance v3, Lbzp;
+
+    const-string v5, "CAPTURING"
+
+    const/4 v6, 0x2
+
+    invoke-direct {v3, v5, v6}, Lbzp;-><init>(Ljava/lang/String;I)V
+
+    sput-object v3, Lbzp;->c:Lbzp;
+
+    const/4 v5, 0x3
+
+    new-array v5, v5, [Lbzp;
+
+    aput-object v0, v5, v2
+
+    aput-object v1, v5, v4
+
+    aput-object v3, v5, v6
+
+    sput-object v5, Lbzp;->d:[Lbzp;
 
     return-void
 .end method
 
-.method public static a()Lbzp;
-    .locals 3
+.method private constructor <init>(Ljava/lang/String;I)V
+    .locals 0
 
-    sget-object v0, Lbzp;->u:Lbzp;
+    invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
-    if-nez v0, :cond_0
+    return-void
+.end method
 
-    new-instance v0, Lbzp;
+.method public static values()[Lbzp;
+    .locals 1
 
-    invoke-direct {v0}, Lbzp;-><init>()V
+    sget-object v0, Lbzp;->d:[Lbzp;
 
-    sget-object v1, Lbwm;->b:Lbwm;
-
-    new-instance v2, Lbwd;
-
-    invoke-direct {v2}, Lbwd;-><init>()V
-
-    invoke-virtual {v0, v1, v2}, Lbzg;->D(Lbwm;Lbqj;)Lbzg;
+    invoke-virtual {v0}, [Lbzp;->clone()Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Lbzp;
-
-    invoke-virtual {v0}, Lbzg;->P()V
-
-    sput-object v0, Lbzp;->u:Lbzp;
-
-    :cond_0
-    sget-object v0, Lbzp;->u:Lbzp;
+    check-cast v0, [Lbzp;
 
     return-object v0
-.end method
-
-.method public static b(Ljava/lang/Class;)Lbzp;
-    .locals 1
-
-    new-instance v0, Lbzp;
-
-    invoke-direct {v0}, Lbzp;-><init>()V
-
-    invoke-virtual {v0, p0}, Lbzg;->n(Ljava/lang/Class;)Lbzg;
-
-    move-result-object p0
-
-    check-cast p0, Lbzp;
-
-    return-object p0
-.end method
-
-.method public static c(Lbry;)Lbzp;
-    .locals 1
-
-    new-instance v0, Lbzp;
-
-    invoke-direct {v0}, Lbzp;-><init>()V
-
-    invoke-virtual {v0, p0}, Lbzg;->o(Lbry;)Lbzg;
-
-    move-result-object p0
-
-    check-cast p0, Lbzp;
-
-    return-object p0
-.end method
-
-
-# virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 1
-
-    instance-of v0, p1, Lbzp;
-
-    if-eqz v0, :cond_0
-
-    invoke-super {p0, p1}, Lbzg;->equals(Ljava/lang/Object;)Z
-
-    move-result p1
-
-    if-eqz p1, :cond_0
-
-    const/4 p1, 0x1
-
-    return p1
-
-    :cond_0
-    const/4 p1, 0x0
-
-    return p1
 .end method

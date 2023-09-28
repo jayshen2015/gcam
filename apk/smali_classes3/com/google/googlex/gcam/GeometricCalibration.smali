@@ -91,16 +91,21 @@
     return-void
 .end method
 
-.method public final d(Lnqo;)V
+.method public final d(I)V
     .locals 2
 
+    const-string v0, "pref_camera_lightroom_key"
+
+    invoke-static {v0}, Lcom/Utils/Pref;->MenuValue(Ljava/lang/String;)I
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    const/4 p1, 0x1
+
+    :cond_0
     iget-wide v0, p0, Lcom/google/googlex/gcam/GeometricCalibration;->a:J
-
-    iget p1, p1, Lnqo;->c:I
-
-    invoke-static {p1}, Lcom/agc/AdvancedSettings;->getGeometricCalibrationQualityFix(I)I
-
-    move-result p1
 
     invoke-static {v0, v1, p0, p1}, Lcom/google/googlex/gcam/GcamModuleJNI;->GeometricCalibration_quality_set(JLcom/google/googlex/gcam/GeometricCalibration;I)V
 

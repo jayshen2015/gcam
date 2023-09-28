@@ -1,40 +1,31 @@
-.class final Lljf;
+.class public interface abstract Lljf;
 .super Ljava/lang/Object;
-
-# interfaces
-.implements Lmrl;
-
-
-# direct methods
-.method public constructor <init>()V
-    .locals 0
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
-.end method
 
 
 # virtual methods
-.method public final bridge synthetic a()Ljava/lang/Object;
-    .locals 1
+.method public abstract a(Ljava/lang/String;)Llji;
+.end method
 
-    sget-object v0, Llpm;->c:Ljava/lang/String;
+.method public abstract b(Ljava/lang/String;)Lljk;
+.end method
 
-    if-nez v0, :cond_0
+.method public abstract c(Ljava/lang/String;Ljava/lang/Runnable;)Ljava/lang/Runnable;
+.end method
 
-    invoke-static {}, Landroid/app/Application;->getProcessName()Ljava/lang/String;
+.method public abstract d(Ljava/lang/String;Ljava/lang/Runnable;)V
+.end method
 
-    move-result-object v0
+.method public abstract e(Ljava/lang/String;)V
+.end method
 
-    sput-object v0, Llpm;->c:Ljava/lang/String;
+.method public abstract f()V
+.end method
 
-    sget-object v0, Llpm;->c:Ljava/lang/String;
+.method public abstract g(Ljava/lang/String;)V
+.end method
 
-    :cond_0
-    invoke-static {v0}, Lmqp;->h(Ljava/lang/Object;)Lmqp;
+.method public varargs abstract h()V
+.end method
 
-    move-result-object v0
-
-    return-object v0
+.method public abstract i(Ljava/util/concurrent/Callable;)Ljava/util/concurrent/Callable;
 .end method

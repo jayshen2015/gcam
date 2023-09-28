@@ -1,189 +1,90 @@
-.class final Lbyi;
+.class public final synthetic Lbyi;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lbyn;
+.implements Loiu;
 
 
 # instance fields
-.field private final a:Ljava/util/Set;
-
-.field private b:Z
-
-.field private c:Z
+.field public final synthetic a:Lbyp;
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 1
+.method public synthetic constructor <init>(Lbyp;)V
+    .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    new-instance v0, Ljava/util/WeakHashMap;
-
-    invoke-direct {v0}, Ljava/util/WeakHashMap;-><init>()V
-
-    invoke-static {v0}, Ljava/util/Collections;->newSetFromMap(Ljava/util/Map;)Ljava/util/Set;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lbyi;->a:Ljava/util/Set;
+    iput-object p1, p0, Lbyi;->a:Lbyp;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Lbyo;)V
-    .locals 1
+.method public final a(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 5
 
-    iget-object v0, p0, Lbyi;->a:Ljava/util/Set;
+    iget-object v0, p0, Lbyi;->a:Lbyp;
 
-    invoke-interface {v0, p1}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
+    check-cast p1, Ljava/util/List;
 
-    iget-boolean v0, p0, Lbyi;->c:Z
+    const/4 v1, 0x0
+
+    invoke-interface {p1, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Ljava/lang/Boolean;
+
+    invoke-virtual {v2}, Ljava/lang/Boolean;->booleanValue()Z
+
+    move-result v2
+
+    const/4 v3, 0x1
+
+    invoke-interface {p1, v3}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v4
+
+    check-cast v4, Ljava/lang/Boolean;
+
+    invoke-virtual {v4}, Ljava/lang/Boolean;->booleanValue()Z
+
+    move-result v4
+
+    invoke-virtual {v0, v2, v4}, Lbyp;->o(ZZ)V
+
+    invoke-interface {p1, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/Boolean;
+
+    invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
+
+    move-result v0
 
     if-eqz v0, :cond_0
 
-    invoke-interface {p1}, Lbyo;->g()V
+    invoke-interface {p1, v3}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
-    return-void
+    move-result-object p1
 
-    :cond_0
-    iget-boolean v0, p0, Lbyi;->b:Z
+    check-cast p1, Ljava/lang/Boolean;
 
-    if-eqz v0, :cond_1
+    invoke-virtual {p1}, Ljava/lang/Boolean;->booleanValue()Z
 
-    invoke-interface {p1}, Lbyo;->h()V
+    move-result p1
 
-    return-void
+    if-eqz p1, :cond_0
 
-    :cond_1
-    invoke-interface {p1}, Lbyo;->i()V
-
-    return-void
-.end method
-
-.method final b()V
-    .locals 2
-
-    const/4 v0, 0x1
-
-    iput-boolean v0, p0, Lbyi;->c:Z
-
-    iget-object v0, p0, Lbyi;->a:Ljava/util/Set;
-
-    invoke-static {v0}, Lcaw;->f(Ljava/util/Collection;)Ljava/util/List;
-
-    move-result-object v0
-
-    invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
-
-    move-result-object v0
-
-    :goto_0
-    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_0
-
-    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Lbyo;
-
-    invoke-interface {v1}, Lbyo;->g()V
-
-    goto :goto_0
+    const/4 v1, 0x1
 
     :cond_0
-    return-void
-.end method
+    invoke-static {v1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
-.method final c()V
-    .locals 2
+    move-result-object p1
 
-    const/4 v0, 0x1
-
-    iput-boolean v0, p0, Lbyi;->b:Z
-
-    iget-object v0, p0, Lbyi;->a:Ljava/util/Set;
-
-    invoke-static {v0}, Lcaw;->f(Ljava/util/Collection;)Ljava/util/List;
-
-    move-result-object v0
-
-    invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
-
-    move-result-object v0
-
-    :goto_0
-    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_0
-
-    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Lbyo;
-
-    invoke-interface {v1}, Lbyo;->h()V
-
-    goto :goto_0
-
-    :cond_0
-    return-void
-.end method
-
-.method final d()V
-    .locals 2
-
-    const/4 v0, 0x0
-
-    iput-boolean v0, p0, Lbyi;->b:Z
-
-    iget-object v0, p0, Lbyi;->a:Ljava/util/Set;
-
-    invoke-static {v0}, Lcaw;->f(Ljava/util/Collection;)Ljava/util/List;
-
-    move-result-object v0
-
-    invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
-
-    move-result-object v0
-
-    :goto_0
-    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_0
-
-    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Lbyo;
-
-    invoke-interface {v1}, Lbyo;->i()V
-
-    goto :goto_0
-
-    :cond_0
-    return-void
-.end method
-
-.method public final e(Lbyo;)V
-    .locals 1
-
-    iget-object v0, p0, Lbyi;->a:Ljava/util/Set;
-
-    invoke-interface {v0, p1}, Ljava/util/Set;->remove(Ljava/lang/Object;)Z
-
-    return-void
+    return-object p1
 .end method

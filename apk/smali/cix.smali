@@ -1,121 +1,45 @@
-.class public final Lcix;
+.class public final synthetic Lcix;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Logk;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field private final a:Loiw;
+.field public final synthetic a:Lciy;
 
-.field private final synthetic b:I
+.field public final synthetic b:Llgp;
 
 
 # direct methods
-.method public constructor <init>(Loiw;I)V
+.method public synthetic constructor <init>(Lciy;Llgp;)V
     .locals 0
-
-    iput p2, p0, Lcix;->b:I
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lcix;->a:Loiw;
+    iput-object p1, p0, Lcix;->a:Lciy;
+
+    iput-object p2, p0, Lcix;->b:Llgp;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Ljava/util/concurrent/ExecutorService;
+.method public final run()V
     .locals 2
 
-    iget v0, p0, Lcix;->b:I
+    iget-object v0, p0, Lcix;->a:Lciy;
 
-    packed-switch v0, :pswitch_data_0
+    iget-object v1, p0, Lcix;->b:Llgp;
 
-    iget-object v0, p0, Lcix;->a:Loiw;
+    iget-object v0, v0, Lciy;->a:Lcja;
 
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
+    invoke-virtual {v1}, Llgp;->a()I
 
-    move-result-object v0
+    move-result v1
 
-    check-cast v0, Lnow;
+    invoke-virtual {v0, v1}, Lcja;->b(I)V
 
-    sget-object v1, Lcis;->a:Ljava/util/concurrent/ScheduledExecutorService;
-
-    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    return-object v0
-
-    :pswitch_0
-    iget-object v0, p0, Lcix;->a:Loiw;
-
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/util/concurrent/ScheduledExecutorService;
-
-    sget-object v1, Lcis;->a:Ljava/util/concurrent/ScheduledExecutorService;
-
-    new-instance v1, Ljuo;
-
-    invoke-direct {v1, v0}, Ljuo;-><init>(Ljava/util/concurrent/ScheduledExecutorService;)V
-
-    return-object v1
-
-    :pswitch_1
-    iget-object v0, p0, Lcix;->a:Loiw;
-
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/util/concurrent/ScheduledExecutorService;
-
-    invoke-static {v0}, Lcis;->a(Ljava/util/concurrent/ScheduledExecutorService;)Ljava/util/concurrent/ExecutorService;
-
-    move-result-object v0
-
-    return-object v0
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
-.end method
-
-.method public final synthetic get()Ljava/lang/Object;
-    .locals 1
-
-    iget v0, p0, Lcix;->b:I
-
-    packed-switch v0, :pswitch_data_0
-
-    invoke-virtual {p0}, Lcix;->a()Ljava/util/concurrent/ExecutorService;
-
-    move-result-object v0
-
-    return-object v0
-
-    :pswitch_0
-    invoke-virtual {p0}, Lcix;->a()Ljava/util/concurrent/ExecutorService;
-
-    move-result-object v0
-
-    return-object v0
-
-    :pswitch_1
-    invoke-virtual {p0}, Lcix;->a()Ljava/util/concurrent/ExecutorService;
-
-    move-result-object v0
-
-    return-object v0
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
+    return-void
 .end method

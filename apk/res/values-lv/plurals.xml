@@ -1,14 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <plurals name="accessibility_timelapse_manual_record_speed_desc">
-        <item quantity="other">Intervāla fotografēšana paātrinājumā %d</item>
-        <item quantity="zero">Intervāla fotografēšana paātrinājumā %d</item>
-        <item quantity="one">Intervāla fotografēšana paātrinājumā %d</item>
-    </plurals>
-    <plurals name="number_of_cropped_face">
-        <item quantity="other">Apgrieztas %d sejas.</item>
-        <item quantity="zero">Apgrieztas %d sejas.</item>
-        <item quantity="one">Apgriezta %d seja.</item>
+    <plurals name="number_of_faces_announcement">
+        <item quantity="other">%1$d sejas.</item>
+        <item quantity="zero">%1$d seju.</item>
+        <item quantity="one">%1$d seja.</item>
     </plurals>
     <plurals name="photos_remaining">
         <item quantity="other">Aptuveni %s fotoattēli</item>
@@ -21,9 +16,9 @@
         <item quantity="one">(atlasīta %1$d lietotne)</item>
     </plurals>
     <plurals name="social_share_info">
-        <item quantity="other">Ātri kopīgojiet fotoattēlus un videoklipus sociālajās lietotnēs no lietotnes Kamera. Izvēlieties ne vairāk kā %1$d lietotnes. Bloķētajā mapē saglabātos fotoattēlus un videoklipus nevar kopīgot.</item>
-        <item quantity="zero">Ātri kopīgojiet fotoattēlus un videoklipus sociālajās lietotnēs no lietotnes Kamera. Izvēlieties ne vairāk kā %1$d lietotnes. Bloķētajā mapē saglabātos fotoattēlus un videoklipus nevar kopīgot.</item>
-        <item quantity="one">Ātri kopīgojiet fotoattēlus un videoklipus sociālajās lietotnēs no lietotnes Kamera. Izvēlieties ne vairāk kā %1$d lietotni. Bloķētajā mapē saglabātos fotoattēlus un videoklipus nevar kopīgot.</item>
+        <item quantity="other">Ātri kopīgojiet fotoattēlus un videoklipus sociālajās lietotnēs tieši no lietotnes Kamera. Izvēlieties līdz %1$d lietotnēm. Bloķētajā mapē saglabātos fotoattēlus un videoklipus nevar kopīgot.</item>
+        <item quantity="zero">Ātri kopīgojiet fotoattēlus un videoklipus sociālajās lietotnēs tieši no lietotnes Kamera. Izvēlieties līdz %1$d lietotnēm. Bloķētajā mapē saglabātos fotoattēlus un videoklipus nevar kopīgot.</item>
+        <item quantity="one">Ātri kopīgojiet fotoattēlus un videoklipus sociālajās lietotnēs tieši no lietotnes Kamera. Izvēlieties līdz %1$d lietotnei. Bloķētajā mapē saglabātos fotoattēlus un videoklipus nevar kopīgot.</item>
     </plurals>
     <plurals name="social_share_select_error">
         <item quantity="other">Izvēlieties ne vairāk kā %1$d lietotnes</item>

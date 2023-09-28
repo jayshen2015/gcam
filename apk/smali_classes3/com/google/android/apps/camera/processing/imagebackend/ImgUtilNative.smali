@@ -1,4 +1,4 @@
-.class public final Lcom/google/android/apps/camera/processing/imagebackend/ImgUtilNative;
+.class public Lcom/google/android/apps/camera/processing/imagebackend/ImgUtilNative;
 .super Ljava/lang/Object;
 
 
@@ -8,12 +8,12 @@
 
     const-class v0, Lcom/google/android/apps/camera/processing/imagebackend/ImgUtilNative;
 
-    invoke-static {v0}, Lkak;->a(Ljava/lang/Class;)V
+    invoke-static {v0}, Llil;->a(Ljava/lang/Class;)V
 
     return-void
 .end method
 
-.method private constructor <init>()V
+.method public constructor <init>()V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V

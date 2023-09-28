@@ -1,58 +1,77 @@
-.class final Lilf;
-.super Landroid/net/ConnectivityManager$NetworkCallback;
+.class public final Lilf;
+.super Ljava/lang/Object;
 
 
 # instance fields
-.field final synthetic a:Lilg;
+.field public final a:I
+
+.field public final b:I
+
+.field public final c:Z
+
+.field public final d:Z
+
+.field public final e:Z
+
+.field public final f:Z
 
 
 # direct methods
-.method public constructor <init>(Lilg;)V
+.method public constructor <init>(IIZZZZ)V
     .locals 0
 
-    iput-object p1, p0, Lilf;->a:Lilg;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0}, Landroid/net/ConnectivityManager$NetworkCallback;-><init>()V
+    iput p1, p0, Lilf;->a:I
+
+    iput p2, p0, Lilf;->b:I
+
+    iput-boolean p3, p0, Lilf;->c:Z
+
+    iput-boolean p4, p0, Lilf;->d:Z
+
+    iput-boolean p5, p0, Lilf;->e:Z
+
+    iput-boolean p6, p0, Lilf;->f:Z
 
     return-void
 .end method
 
-
-# virtual methods
-.method public final onAvailable(Landroid/net/Network;)V
+.method public constructor <init>(ZZIIZZ)V
     .locals 2
 
-    iget-object p1, p0, Lilf;->a:Lilg;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iget-object v0, p1, Lilg;->c:Lell;
+    const/4 v0, 0x0
 
-    iget-object v1, p1, Lilg;->e:Licf;
+    if-nez p1, :cond_0
 
-    invoke-interface {v0, v1}, Lell;->g(Lelk;)V
+    if-nez p2, :cond_0
 
-    iget-object p1, p1, Lilg;->d:Loiw;
+    const/4 p5, 0x0
 
-    invoke-interface {p1}, Loiw;->get()Ljava/lang/Object;
+    :cond_0
+    const/4 v1, 0x1
 
-    move-result-object p1
+    if-nez p1, :cond_1
 
-    check-cast p1, Lill;
+    if-eqz p2, :cond_2
 
-    invoke-interface {p1}, Lill;->c()V
+    :cond_1
+    const/4 v0, 0x1
 
-    return-void
-.end method
+    :cond_2
+    iput-boolean v0, p0, Lilf;->c:Z
 
-.method public final onLost(Landroid/net/Network;)V
-    .locals 1
+    iput-boolean p2, p0, Lilf;->f:Z
 
-    iget-object p1, p0, Lilf;->a:Lilg;
+    iput p3, p0, Lilf;->a:I
 
-    iget-object v0, p1, Lilg;->c:Lell;
+    iput p4, p0, Lilf;->b:I
 
-    iget-object p1, p1, Lilg;->e:Licf;
+    iput-boolean p5, p0, Lilf;->d:Z
 
-    invoke-interface {v0, p1}, Lell;->d(Lelk;)Lkad;
+    iput-boolean p6, p0, Lilf;->e:Z
 
     return-void
 .end method

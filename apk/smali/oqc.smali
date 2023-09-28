@@ -1,95 +1,200 @@
-.class public final Loqc;
-.super Lowy;
+.class final Loqc;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Ljava/util/ListIterator;
+.implements Lj$/util/Iterator;
 
 
 # instance fields
-.field public final b:Loon;
+.field a:Z
+
+.field final synthetic b:Ljava/util/ListIterator;
+
+.field final synthetic c:Loqd;
 
 
 # direct methods
-.method public constructor <init>(Lola;Loku;)V
+.method public constructor <init>(Loqd;Ljava/util/ListIterator;)V
     .locals 0
 
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    iput-object p1, p0, Loqc;->c:Loqd;
 
-    invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    iput-object p2, p0, Loqc;->b:Ljava/util/ListIterator;
 
-    invoke-direct {p0, p1, p2}, Lowy;-><init>(Lola;Loku;)V
-
-    const/4 p1, 0x0
-
-    invoke-static {p1}, Lolp;->i(I)Loon;
-
-    move-result-object p1
-
-    iput-object p1, p0, Loqc;->b:Loon;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method protected final f(Ljava/lang/Object;)V
-    .locals 0
+.method public final add(Ljava/lang/Object;)V
+    .locals 1
 
-    invoke-virtual {p0, p1}, Loor;->h(Ljava/lang/Object;)V
+    iget-object v0, p0, Loqc;->b:Ljava/util/ListIterator;
+
+    invoke-interface {v0, p1}, Ljava/util/ListIterator;->add(Ljava/lang/Object;)V
+
+    iget-object p1, p0, Loqc;->b:Ljava/util/ListIterator;
+
+    invoke-interface {p1}, Ljava/util/ListIterator;->previous()Ljava/lang/Object;
+
+    const/4 p1, 0x0
+
+    iput-boolean p1, p0, Loqc;->a:Z
 
     return-void
 .end method
 
-.method protected final h(Ljava/lang/Object;)V
-    .locals 4
+.method public final synthetic forEachRemaining(Lj$/util/function/Consumer;)V
+    .locals 0
 
-    iget-object v0, p0, Loqc;->b:Loon;
+    invoke-static {p0, p1}, Lj$/util/Iterator$-CC;->$default$forEachRemaining(Ljava/util/Iterator;Lj$/util/function/Consumer;)V
 
-    :cond_0
-    iget v1, v0, Loon;->b:I
+    return-void
+.end method
 
-    packed-switch v1, :pswitch_data_0
+.method public final hasNext()Z
+    .locals 1
 
-    new-instance p1, Ljava/lang/IllegalStateException;
+    iget-object v0, p0, Loqc;->b:Ljava/util/ListIterator;
 
-    const-string v0, "Already resumed"
+    invoke-interface {v0}, Ljava/util/ListIterator;->hasPrevious()Z
 
-    invoke-direct {p1, v0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+    move-result v0
 
-    throw p1
+    return v0
+.end method
 
-    :pswitch_0
-    iget-object v0, p0, Loqc;->e:Loku;
+.method public final hasPrevious()Z
+    .locals 1
 
-    invoke-static {v0}, Lolp;->g(Loku;)Loku;
+    iget-object v0, p0, Loqc;->b:Ljava/util/ListIterator;
+
+    invoke-interface {v0}, Ljava/util/ListIterator;->hasNext()Z
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public final next()Ljava/lang/Object;
+    .locals 1
+
+    invoke-virtual {p0}, Loqc;->hasNext()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    const/4 v0, 0x1
+
+    iput-boolean v0, p0, Loqc;->a:Z
+
+    iget-object v0, p0, Loqc;->b:Ljava/util/ListIterator;
+
+    invoke-interface {v0}, Ljava/util/ListIterator;->previous()Ljava/lang/Object;
 
     move-result-object v0
 
-    iget-object v1, p0, Loqc;->e:Loku;
+    return-object v0
 
-    invoke-static {p1, v1}, Lonm;->l(Ljava/lang/Object;Loku;)Ljava/lang/Object;
+    :cond_0
+    new-instance v0, Ljava/util/NoSuchElementException;
 
-    move-result-object p1
+    invoke-direct {v0}, Ljava/util/NoSuchElementException;-><init>()V
 
-    invoke-static {v0, p1}, Lowi;->a(Loku;Ljava/lang/Object;)V
+    throw v0
+.end method
 
-    return-void
+.method public final nextIndex()I
+    .locals 2
 
-    :pswitch_1
-    iget-object v1, p0, Loqc;->b:Loon;
+    iget-object v0, p0, Loqc;->c:Loqd;
 
-    const/4 v2, 0x0
+    iget-object v1, p0, Loqc;->b:Ljava/util/ListIterator;
 
-    const/4 v3, 0x2
-
-    invoke-virtual {v1, v2, v3}, Loon;->c(II)Z
+    invoke-interface {v1}, Ljava/util/ListIterator;->nextIndex()I
 
     move-result v1
 
-    if-eqz v1, :cond_0
+    invoke-virtual {v0, v1}, Loqd;->a(I)I
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public final previous()Ljava/lang/Object;
+    .locals 1
+
+    invoke-virtual {p0}, Loqc;->hasPrevious()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    const/4 v0, 0x1
+
+    iput-boolean v0, p0, Loqc;->a:Z
+
+    iget-object v0, p0, Loqc;->b:Ljava/util/ListIterator;
+
+    invoke-interface {v0}, Ljava/util/ListIterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    return-object v0
+
+    :cond_0
+    new-instance v0, Ljava/util/NoSuchElementException;
+
+    invoke-direct {v0}, Ljava/util/NoSuchElementException;-><init>()V
+
+    throw v0
+.end method
+
+.method public final previousIndex()I
+    .locals 1
+
+    invoke-virtual {p0}, Loqc;->nextIndex()I
+
+    move-result v0
+
+    add-int/lit8 v0, v0, -0x1
+
+    return v0
+.end method
+
+.method public final remove()V
+    .locals 1
+
+    iget-boolean v0, p0, Loqc;->a:Z
+
+    invoke-static {v0}, Lohh;->T(Z)V
+
+    iget-object v0, p0, Loqc;->b:Ljava/util/ListIterator;
+
+    invoke-interface {v0}, Ljava/util/ListIterator;->remove()V
+
+    const/4 v0, 0x0
+
+    iput-boolean v0, p0, Loqc;->a:Z
 
     return-void
+.end method
 
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
+.method public final set(Ljava/lang/Object;)V
+    .locals 1
+
+    iget-boolean v0, p0, Loqc;->a:Z
+
+    invoke-static {v0}, Lobr;->aQ(Z)V
+
+    iget-object v0, p0, Loqc;->b:Ljava/util/ListIterator;
+
+    invoke-interface {v0, p1}, Ljava/util/ListIterator;->set(Ljava/lang/Object;)V
+
+    return-void
 .end method

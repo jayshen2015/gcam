@@ -1,169 +1,355 @@
-.class public final synthetic Ljyr;
+.class public final Ljyr;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lmqi;
+.implements Lpys;
 
 
 # instance fields
-.field public final synthetic a:J
+.field private final a:Lqkg;
 
-.field private final synthetic b:I
+.field private final b:Lqkg;
+
+.field private final c:Lqkg;
+
+.field private final d:Lqkg;
+
+.field private final e:Lqkg;
+
+.field private final f:Lqkg;
+
+.field private final g:Lqkg;
+
+.field private final h:Lqkg;
+
+.field private final i:Lqkg;
+
+.field private final j:Lqkg;
+
+.field private final k:Lqkg;
+
+.field private final l:Lqkg;
+
+.field private final m:Lqkg;
+
+.field private final n:Lqkg;
+
+.field private final o:Lqkg;
+
+.field private final p:Lqkg;
+
+.field private final q:Lqkg;
+
+.field private final r:Lqkg;
+
+.field private final s:Lqkg;
+
+.field private final t:Lqkg;
+
+.field private final u:Lqkg;
 
 
 # direct methods
-.method public synthetic constructor <init>(JI)V
-    .locals 0
+.method public constructor <init>(Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;)V
+    .locals 2
 
-    iput p3, p0, Ljyr;->b:I
+    move-object v0, p0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-wide p1, p0, Ljyr;->a:J
+    move-object v1, p1
+
+    iput-object v1, v0, Ljyr;->a:Lqkg;
+
+    move-object v1, p2
+
+    iput-object v1, v0, Ljyr;->b:Lqkg;
+
+    move-object v1, p3
+
+    iput-object v1, v0, Ljyr;->c:Lqkg;
+
+    move-object v1, p4
+
+    iput-object v1, v0, Ljyr;->d:Lqkg;
+
+    move-object v1, p5
+
+    iput-object v1, v0, Ljyr;->e:Lqkg;
+
+    move-object v1, p6
+
+    iput-object v1, v0, Ljyr;->f:Lqkg;
+
+    move-object v1, p7
+
+    iput-object v1, v0, Ljyr;->g:Lqkg;
+
+    move-object v1, p8
+
+    iput-object v1, v0, Ljyr;->h:Lqkg;
+
+    move-object v1, p9
+
+    iput-object v1, v0, Ljyr;->i:Lqkg;
+
+    move-object v1, p10
+
+    iput-object v1, v0, Ljyr;->j:Lqkg;
+
+    move-object v1, p11
+
+    iput-object v1, v0, Ljyr;->k:Lqkg;
+
+    move-object v1, p12
+
+    iput-object v1, v0, Ljyr;->l:Lqkg;
+
+    move-object v1, p13
+
+    iput-object v1, v0, Ljyr;->m:Lqkg;
+
+    move-object/from16 v1, p14
+
+    iput-object v1, v0, Ljyr;->n:Lqkg;
+
+    move-object/from16 v1, p15
+
+    iput-object v1, v0, Ljyr;->o:Lqkg;
+
+    move-object/from16 v1, p16
+
+    iput-object v1, v0, Ljyr;->p:Lqkg;
+
+    move-object/from16 v1, p17
+
+    iput-object v1, v0, Ljyr;->q:Lqkg;
+
+    move-object/from16 v1, p18
+
+    iput-object v1, v0, Ljyr;->r:Lqkg;
+
+    move-object/from16 v1, p19
+
+    iput-object v1, v0, Ljyr;->s:Lqkg;
+
+    move-object/from16 v1, p20
+
+    iput-object v1, v0, Ljyr;->t:Lqkg;
+
+    move-object/from16 v1, p21
+
+    iput-object v1, v0, Ljyr;->u:Lqkg;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final apply(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 8
+.method public final bridge synthetic get()Ljava/lang/Object;
+    .locals 23
 
-    iget v0, p0, Ljyr;->b:I
+    move-object/from16 v0, p0
 
-    packed-switch v0, :pswitch_data_0
+    iget-object v1, v0, Ljyr;->a:Lqkg;
 
-    iget-wide v0, p0, Ljyr;->a:J
+    check-cast v1, Leme;
 
-    check-cast p1, Ljava/lang/Long;
+    invoke-virtual {v1}, Leme;->a()Landroid/app/Activity;
 
-    invoke-virtual {p1}, Ljava/lang/Long;->longValue()J
+    move-result-object v3
 
-    move-result-wide v2
+    iget-object v1, v0, Ljyr;->b:Lqkg;
 
-    div-long/2addr v2, v0
+    check-cast v1, Lemd;
 
-    invoke-static {v2, v3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+    invoke-virtual {v1}, Lemd;->a()Landroid/content/Context;
 
-    move-result-object p1
+    move-result-object v4
 
-    return-object p1
+    iget-object v1, v0, Ljyr;->c:Lqkg;
 
-    :pswitch_0
-    iget-wide v0, p0, Ljyr;->a:J
+    invoke-interface {v1}, Lqkg;->get()Ljava/lang/Object;
 
-    check-cast p1, Ldja;
+    move-result-object v1
 
-    iget-object v2, p1, Ldja;->a:Ljava/lang/Object;
+    move-object v5, v1
 
-    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
+    check-cast v5, Llzb;
 
-    move-result-wide v2
+    iget-object v1, v0, Ljyr;->d:Lqkg;
 
-    sub-long/2addr v2, v0
+    check-cast v1, Ljya;
 
-    iget-object p1, p1, Ldja;->c:Ljava/lang/Object;
+    invoke-virtual {v1}, Ljya;->a()Ljxz;
 
-    new-instance v0, Ljava/lang/StringBuilder;
+    move-result-object v6
 
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+    iget-object v1, v0, Ljyr;->e:Lqkg;
 
-    const-string v1, "time< "
+    invoke-interface {v1}, Lqkg;->get()Ljava/lang/Object;
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result-object v1
 
-    invoke-virtual {v0, v2, v3}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+    move-object v7, v1
 
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    check-cast v7, Llda;
 
-    move-result-object v0
+    iget-object v1, v0, Ljyr;->f:Lqkg;
 
-    const/4 v1, 0x0
+    check-cast v1, Ljyi;
 
-    new-array v4, v1, [Ljava/lang/String;
+    invoke-virtual {v1}, Ljyi;->a()Ljyh;
 
-    check-cast p1, Landroid/database/sqlite/SQLiteDatabase;
+    move-result-object v8
 
-    const-string v5, "collections"
+    iget-object v1, v0, Ljyr;->g:Lqkg;
 
-    invoke-virtual {p1, v5, v0, v4}, Landroid/database/sqlite/SQLiteDatabase;->delete(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;)I
+    check-cast v1, Liwi;
 
-    move-result p1
+    invoke-virtual {v1}, Liwi;->a()Lkas;
 
-    invoke-static {}, Ljava/text/SimpleDateFormat;->getDateTimeInstance()Ljava/text/DateFormat;
+    move-result-object v9
 
-    move-result-object v0
+    iget-object v1, v0, Ljyr;->h:Lqkg;
 
-    new-instance v4, Ljava/util/Date;
+    invoke-interface {v1}, Lqkg;->get()Ljava/lang/Object;
 
-    invoke-direct {v4, v2, v3}, Ljava/util/Date;-><init>(J)V
+    move-result-object v1
 
-    invoke-virtual {v0, v4}, Ljava/text/DateFormat;->format(Ljava/util/Date;)Ljava/lang/String;
+    move-object v10, v1
 
-    move-result-object v0
+    check-cast v10, Llda;
 
-    const/4 v2, 0x2
+    iget-object v1, v0, Ljyr;->i:Lqkg;
 
-    new-array v2, v2, [Ljava/lang/Object;
+    invoke-interface {v1}, Lqkg;->get()Ljava/lang/Object;
 
-    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    move-result-object v1
 
-    move-result-object p1
+    move-object v11, v1
 
-    aput-object p1, v2, v1
+    check-cast v11, Lifn;
 
-    const/4 p1, 0x1
+    iget-object v1, v0, Ljyr;->j:Lqkg;
 
-    aput-object v0, v2, p1
+    invoke-interface {v1}, Lqkg;->get()Ljava/lang/Object;
 
-    const-string p1, "Cleared %s records older than %s"
+    move-result-object v1
 
-    invoke-static {p1, v2}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+    move-object v12, v1
 
-    sget p1, Ljks;->e:I
+    check-cast v12, Lfjs;
 
-    const/4 p1, 0x0
+    iget-object v1, v0, Ljyr;->k:Lqkg;
 
-    return-object p1
+    invoke-interface {v1}, Lqkg;->get()Ljava/lang/Object;
 
-    :pswitch_1
-    iget-wide v0, p0, Ljyr;->a:J
+    move-result-object v1
 
-    check-cast p1, Ljava/lang/Long;
+    move-object v13, v1
 
-    invoke-virtual {p1}, Ljava/lang/Long;->longValue()J
+    check-cast v13, Ljyt;
 
-    move-result-wide v2
+    iget-object v1, v0, Ljyr;->l:Lqkg;
 
-    const-wide v4, 0x7fffffffffffffffL
+    invoke-interface {v1}, Lqkg;->get()Ljava/lang/Object;
 
-    const-wide/16 v6, 0x0
+    move-result-object v1
 
-    cmp-long p1, v0, v6
+    check-cast v1, Lcvo;
 
-    if-gtz p1, :cond_0
+    iget-object v1, v0, Ljyr;->m:Lqkg;
 
-    move-wide v0, v4
+    invoke-interface {v1}, Lqkg;->get()Ljava/lang/Object;
 
-    :cond_0
-    cmp-long p1, v2, v6
+    move-result-object v1
 
-    if-gtz p1, :cond_1
+    move-object v14, v1
 
-    move-wide v2, v4
+    check-cast v14, Ljng;
 
-    :cond_1
-    new-instance p1, Ljxt;
+    iget-object v1, v0, Ljyr;->n:Lqkg;
 
-    invoke-direct {p1, v0, v1, v2, v3}, Ljxt;-><init>(JJ)V
+    invoke-interface {v1}, Lqkg;->get()Ljava/lang/Object;
 
-    return-object p1
+    move-result-object v1
 
-    nop
+    move-object v15, v1
 
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
+    check-cast v15, Ljlb;
+
+    iget-object v1, v0, Ljyr;->o:Lqkg;
+
+    invoke-interface {v1}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v1
+
+    move-object/from16 v16, v1
+
+    check-cast v16, Lcom/google/android/apps/camera/bottombar/BottomBarController;
+
+    iget-object v1, v0, Ljyr;->p:Lqkg;
+
+    invoke-interface {v1}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v1
+
+    move-object/from16 v17, v1
+
+    check-cast v17, Ljac;
+
+    iget-object v1, v0, Ljyr;->q:Lqkg;
+
+    invoke-interface {v1}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v1
+
+    move-object/from16 v18, v1
+
+    check-cast v18, Llda;
+
+    iget-object v1, v0, Ljyr;->r:Lqkg;
+
+    check-cast v1, Lhlj;
+
+    invoke-virtual {v1}, Lhlj;->a()Lojc;
+
+    move-result-object v19
+
+    iget-object v1, v0, Ljyr;->s:Lqkg;
+
+    invoke-interface {v1}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v1
+
+    move-object/from16 v20, v1
+
+    check-cast v20, Ljye;
+
+    iget-object v1, v0, Ljyr;->t:Lqkg;
+
+    check-cast v1, Lliq;
+
+    invoke-virtual {v1}, Lliq;->a()Llis;
+
+    move-result-object v21
+
+    iget-object v1, v0, Ljyr;->u:Lqkg;
+
+    invoke-interface {v1}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v1
+
+    move-object/from16 v22, v1
+
+    check-cast v22, Lljf;
+
+    new-instance v1, Ljyq;
+
+    move-object v2, v1
+
+    invoke-direct/range {v2 .. v22}, Ljyq;-><init>(Landroid/app/Activity;Landroid/content/Context;Llzb;Ljxz;Llda;Ljyh;Lkas;Llda;Lifn;Lfjs;Ljyt;Ljng;Ljlb;Lcom/google/android/apps/camera/bottombar/BottomBarController;Ljac;Llda;Lojc;Ljye;Llis;Lljf;)V
+
+    return-object v1
 .end method

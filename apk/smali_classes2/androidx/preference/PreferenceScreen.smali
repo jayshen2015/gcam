@@ -3,18 +3,18 @@
 
 
 # instance fields
-.field public final e:Z
+.field public e:Z
 
 
 # direct methods
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
     .locals 2
 
-    const v0, 0x7f040523
+    const v0, 0x7f0403fe
 
     const v1, 0x101008b
 
-    invoke-static {p1, v0, v1}, Laar;->c(Landroid/content/Context;II)I
+    invoke-static {p1, v0, v1}, Let;->u(Landroid/content/Context;II)I
 
     move-result v0
 
@@ -29,7 +29,7 @@
 
 
 # virtual methods
-.method public final ai()Z
+.method public final ae()Z
     .locals 1
 
     const/4 v0, 0x0
@@ -40,11 +40,11 @@
 .method protected final c()V
     .locals 1
 
-    iget-object v0, p0, Landroidx/preference/Preference;->s:Landroid/content/Intent;
+    iget-object v0, p0, Landroidx/preference/Preference;->u:Landroid/content/Intent;
 
     if-nez v0, :cond_2
 
-    iget-object v0, p0, Landroidx/preference/Preference;->t:Ljava/lang/String;
+    iget-object v0, p0, Landroidx/preference/Preference;->v:Ljava/lang/String;
 
     if-nez v0, :cond_2
 
@@ -57,13 +57,13 @@
     goto :goto_0
 
     :cond_0
-    iget-object v0, p0, Landroidx/preference/Preference;->k:Laoo;
+    iget-object v0, p0, Landroidx/preference/Preference;->k:Lahj;
 
-    iget-object v0, v0, Laoo;->e:Laom;
+    iget-object v0, v0, Lahj;->e:Lahh;
 
     if-eqz v0, :cond_1
 
-    invoke-interface {v0}, Laom;->B()V
+    invoke-interface {v0}, Lahh;->aj()V
 
     :cond_1
     return-void

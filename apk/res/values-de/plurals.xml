@@ -1,12 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <plurals name="accessibility_timelapse_manual_record_speed_desc">
-        <item quantity="other">Zeitraffer: %d-fache Geschwindigkeit</item>
-        <item quantity="one">Zeitraffer: %d-fache Geschwindigkeit</item>
-    </plurals>
-    <plurals name="number_of_cropped_face">
-        <item quantity="other">%d zugeschnitten.</item>
-        <item quantity="one">Eins zugeschnitten.</item>
+    <plurals name="number_of_faces_announcement">
+        <item quantity="other">%1$d Gesichter.</item>
+        <item quantity="one">%1$d Gesicht.</item>
     </plurals>
     <plurals name="photos_remaining">
         <item quantity="other">Etwa %s Fotos</item>

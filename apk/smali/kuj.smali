@@ -1,98 +1,208 @@
-.class public final enum Lkuj;
-.super Ljava/lang/Enum;
+.class public final Lkuj;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Lkid;
 
 
 # static fields
-.field public static final enum a:Lkuj;
+.field public static final a:Lkuj;
 
-.field public static final enum b:Lkuj;
 
-.field public static final enum c:Lkuj;
+# instance fields
+.field private final b:Z
 
-.field public static final enum d:Lkuj;
+.field private final c:Z
 
-.field private static final synthetic e:[Lkuj;
+.field private final d:Ljava/lang/String;
+
+.field private final e:Z
+
+.field private final f:Ljava/lang/String;
+
+.field private final g:Ljava/lang/String;
+
+.field private final h:Z
+
+.field private final i:Ljava/lang/Long;
+
+.field private final j:Ljava/lang/Long;
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 9
+    .locals 1
 
     new-instance v0, Lkuj;
 
-    const-string v1, "PHOTO_OCR"
-
-    const/4 v2, 0x0
-
-    invoke-direct {v0, v1, v2}, Lkuj;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v0}, Lkuj;-><init>()V
 
     sput-object v0, Lkuj;->a:Lkuj;
 
-    new-instance v1, Lkuj;
+    return-void
+.end method
 
-    const-string v3, "BARHOPPER"
+.method public constructor <init>()V
+    .locals 2
 
-    const/4 v4, 0x1
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {v1, v3, v4}, Lkuj;-><init>(Ljava/lang/String;I)V
+    const/4 v0, 0x0
 
-    sput-object v1, Lkuj;->b:Lkuj;
+    iput-boolean v0, p0, Lkuj;->b:Z
 
-    new-instance v3, Lkuj;
+    iput-boolean v0, p0, Lkuj;->c:Z
 
-    const-string v5, "PHILEASSTORM"
+    const/4 v1, 0x0
 
-    const/4 v6, 0x2
+    iput-object v1, p0, Lkuj;->d:Ljava/lang/String;
 
-    invoke-direct {v3, v5, v6}, Lkuj;-><init>(Ljava/lang/String;I)V
+    iput-boolean v0, p0, Lkuj;->e:Z
 
-    sput-object v3, Lkuj;->c:Lkuj;
+    iput-boolean v0, p0, Lkuj;->h:Z
 
-    new-instance v5, Lkuj;
+    iput-object v1, p0, Lkuj;->f:Ljava/lang/String;
 
-    const-string v7, "NONE"
+    iput-object v1, p0, Lkuj;->g:Ljava/lang/String;
 
-    const/4 v8, 0x3
+    iput-object v1, p0, Lkuj;->i:Ljava/lang/Long;
 
-    invoke-direct {v5, v7, v8}, Lkuj;-><init>(Ljava/lang/String;I)V
-
-    sput-object v5, Lkuj;->d:Lkuj;
-
-    const/4 v7, 0x4
-
-    new-array v7, v7, [Lkuj;
-
-    aput-object v0, v7, v2
-
-    aput-object v1, v7, v4
-
-    aput-object v3, v7, v6
-
-    aput-object v5, v7, v8
-
-    sput-object v7, Lkuj;->e:[Lkuj;
+    iput-object v1, p0, Lkuj;->j:Ljava/lang/Long;
 
     return-void
 .end method
 
-.method private constructor <init>(Ljava/lang/String;I)V
-    .locals 0
 
-    invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+# virtual methods
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 4
 
-    return-void
+    const/4 v0, 0x1
+
+    if-ne p1, p0, :cond_0
+
+    return v0
+
+    :cond_0
+    instance-of v1, p1, Lkuj;
+
+    const/4 v2, 0x0
+
+    if-nez v1, :cond_1
+
+    return v2
+
+    :cond_1
+    check-cast p1, Lkuj;
+
+    iget-boolean v1, p1, Lkuj;->b:Z
+
+    iget-boolean v1, p1, Lkuj;->c:Z
+
+    iget-object v1, p1, Lkuj;->d:Ljava/lang/String;
+
+    const/4 v1, 0x0
+
+    invoke-static {v1, v1}, Lmip;->dx(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v3
+
+    if-eqz v3, :cond_2
+
+    iget-boolean v3, p1, Lkuj;->e:Z
+
+    iget-boolean v3, p1, Lkuj;->h:Z
+
+    iget-object v3, p1, Lkuj;->f:Ljava/lang/String;
+
+    invoke-static {v1, v1}, Lmip;->dx(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v3
+
+    if-eqz v3, :cond_2
+
+    iget-object v3, p1, Lkuj;->g:Ljava/lang/String;
+
+    invoke-static {v1, v1}, Lmip;->dx(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v3
+
+    if-eqz v3, :cond_2
+
+    iget-object v3, p1, Lkuj;->i:Ljava/lang/Long;
+
+    invoke-static {v1, v1}, Lmip;->dx(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v3
+
+    if-eqz v3, :cond_2
+
+    iget-object p1, p1, Lkuj;->j:Ljava/lang/Long;
+
+    invoke-static {v1, v1}, Lmip;->dx(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result p1
+
+    if-eqz p1, :cond_2
+
+    return v0
+
+    :cond_2
+    return v2
 .end method
 
-.method public static values()[Lkuj;
-    .locals 1
+.method public final hashCode()I
+    .locals 4
 
-    sget-object v0, Lkuj;->e:[Lkuj;
+    const/16 v0, 0x9
 
-    invoke-virtual {v0}, [Lkuj;->clone()Ljava/lang/Object;
+    new-array v0, v0, [Ljava/lang/Object;
 
-    move-result-object v0
+    const/4 v1, 0x0
 
-    check-cast v0, [Lkuj;
+    invoke-static {v1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
-    return-object v0
+    move-result-object v2
+
+    aput-object v2, v0, v1
+
+    const/4 v1, 0x1
+
+    aput-object v2, v0, v1
+
+    const/4 v1, 0x2
+
+    const/4 v3, 0x0
+
+    aput-object v3, v0, v1
+
+    const/4 v1, 0x3
+
+    aput-object v2, v0, v1
+
+    const/4 v1, 0x4
+
+    aput-object v2, v0, v1
+
+    const/4 v1, 0x5
+
+    aput-object v3, v0, v1
+
+    const/4 v1, 0x6
+
+    aput-object v3, v0, v1
+
+    const/4 v1, 0x7
+
+    aput-object v3, v0, v1
+
+    const/16 v1, 0x8
+
+    aput-object v3, v0, v1
+
+    invoke-static {v0}, Ljava/util/Arrays;->hashCode([Ljava/lang/Object;)I
+
+    move-result v0
+
+    return v0
 .end method

@@ -2,11 +2,11 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lkad;
+.implements Llie;
 
 
 # virtual methods
-.method public abstract a(Lkpb;Locj;)Lodh;
+.method public abstract a(Lmad;Lpud;)Lpvb;
 .end method
 
 .method public abstract b(Z)V

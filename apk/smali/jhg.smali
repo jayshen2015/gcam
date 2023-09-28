@@ -1,86 +1,48 @@
-.class public final Ljhg;
-.super Ljhn;
+.class public final synthetic Ljhg;
+.super Ljava/lang/Object;
 
-
-# static fields
-.field public static final CREATOR:Landroid/os/Parcelable$Creator;
+# interfaces
+.implements Llij;
 
 
 # instance fields
-.field final a:I
+.field public final synthetic a:Ljhh;
 
-.field public final b:Landroid/accounts/Account;
-
-.field public final c:I
-
-.field public final d:Lcom/google/android/gms/auth/api/signin/GoogleSignInAccount;
+.field public final synthetic b:Lhtf;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
-
-    new-instance v0, Ljhi;
-
-    const/4 v1, 0x1
-
-    invoke-direct {v0, v1}, Ljhi;-><init>(I)V
-
-    sput-object v0, Ljhg;->CREATOR:Landroid/os/Parcelable$Creator;
-
-    return-void
-.end method
-
-.method public constructor <init>(ILandroid/accounts/Account;ILcom/google/android/gms/auth/api/signin/GoogleSignInAccount;)V
+.method public synthetic constructor <init>(Ljhh;Lhtf;)V
     .locals 0
 
-    invoke-direct {p0}, Ljhn;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput p1, p0, Ljhg;->a:I
+    iput-object p1, p0, Ljhg;->a:Ljhh;
 
-    iput-object p2, p0, Ljhg;->b:Landroid/accounts/Account;
-
-    iput p3, p0, Ljhg;->c:I
-
-    iput-object p4, p0, Ljhg;->d:Lcom/google/android/gms/auth/api/signin/GoogleSignInAccount;
+    iput-object p2, p0, Ljhg;->b:Lhtf;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final writeToParcel(Landroid/os/Parcel;I)V
-    .locals 3
+.method public final fB(Ljava/lang/Object;)V
+    .locals 2
 
-    invoke-static {p1}, Ljhp;->a(Landroid/os/Parcel;)I
+    iget-object v0, p0, Ljhg;->a:Ljhh;
 
-    move-result v0
+    iget-object v1, p0, Ljhg;->b:Lhtf;
 
-    iget v1, p0, Ljhg;->a:I
+    check-cast p1, Lhtf;
 
-    const/4 v2, 0x1
+    iget p1, p1, Lhtf;->f:I
 
-    invoke-static {p1, v2, v1}, Ljhp;->g(Landroid/os/Parcel;II)V
+    iget v1, v1, Lhtf;->f:I
 
-    iget-object v1, p0, Ljhg;->b:Landroid/accounts/Account;
+    if-eq p1, v1, :cond_0
 
-    const/4 v2, 0x2
+    invoke-virtual {v0}, Ljhh;->a()V
 
-    invoke-static {p1, v2, v1, p2}, Ljhp;->o(Landroid/os/Parcel;ILandroid/os/Parcelable;I)V
-
-    iget v1, p0, Ljhg;->c:I
-
-    const/4 v2, 0x3
-
-    invoke-static {p1, v2, v1}, Ljhp;->g(Landroid/os/Parcel;II)V
-
-    iget-object v1, p0, Ljhg;->d:Lcom/google/android/gms/auth/api/signin/GoogleSignInAccount;
-
-    const/4 v2, 0x4
-
-    invoke-static {p1, v2, v1, p2}, Ljhp;->o(Landroid/os/Parcel;ILandroid/os/Parcelable;I)V
-
-    invoke-static {p1, v0}, Ljhp;->c(Landroid/os/Parcel;I)V
-
+    :cond_0
     return-void
 .end method

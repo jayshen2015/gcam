@@ -1,84 +1,160 @@
-.class final Ltv;
-.super Loln;
+.class public final synthetic Ltv;
+.super Ljava/lang/Object;
 
 # interfaces
-.implements Lomo;
-
-
-# annotations
-.annotation runtime Lolj;
-    b = "androidx.camera.camera2.pipe.compat.CaptureSessionState$cameraDevice$2$1"
-    c = "CaptureSessionState.kt"
-    d = "invokeSuspend"
-    e = {}
-.end annotation
+.implements Luh;
 
 
 # instance fields
-.field final synthetic a:Lty;
+.field public final synthetic a:Lub;
 
 
 # direct methods
-.method public constructor <init>(Lty;Loku;)V
+.method public synthetic constructor <init>(Lub;)V
     .locals 0
 
-    iput-object p1, p0, Ltv;->a:Lty;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const/4 p1, 0x2
-
-    invoke-direct {p0, p1, p2}, Loln;-><init>(ILoku;)V
+    iput-object p1, p0, Ltv;->a:Lub;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final bridge synthetic a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 0
+.method public final a()V
+    .locals 7
 
-    check-cast p1, Lopu;
+    iget-object v0, p0, Ltv;->a:Lub;
 
-    check-cast p2, Loku;
+    invoke-virtual {v0}, Lub;->D()Lajm;
 
-    invoke-virtual {p0, p1, p2}, Lolf;->c(Ljava/lang/Object;Loku;)Loku;
+    move-result-object v1
 
-    move-result-object p1
+    const-string v2, "android:support:activity-result"
 
-    sget-object p2, Lojk;->a:Lojk;
+    invoke-virtual {v1, v2}, Lajm;->a(Ljava/lang/String;)Landroid/os/Bundle;
 
-    check-cast p1, Ltv;
+    move-result-object v1
 
-    invoke-virtual {p1, p2}, Ltv;->b(Ljava/lang/Object;)Ljava/lang/Object;
+    if-eqz v1, :cond_2
 
-    move-result-object p1
+    iget-object v0, v0, Lub;->i:Lum;
 
-    return-object p1
-.end method
+    const-string v2, "KEY_COMPONENT_ACTIVITY_REGISTERED_RCS"
 
-.method public final b(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 1
+    invoke-virtual {v1, v2}, Landroid/os/Bundle;->getIntegerArrayList(Ljava/lang/String;)Ljava/util/ArrayList;
 
-    sget-object v0, Lolc;->a:Lolc;
+    move-result-object v2
 
-    invoke-static {p1}, Lljr;->aO(Ljava/lang/Object;)V
+    const-string v3, "KEY_COMPONENT_ACTIVITY_REGISTERED_KEYS"
 
-    iget-object p1, p0, Ltv;->a:Lty;
+    invoke-virtual {v1, v3}, Landroid/os/Bundle;->getStringArrayList(Ljava/lang/String;)Ljava/util/ArrayList;
 
-    invoke-virtual {p1}, Lty;->f()V
+    move-result-object v3
 
-    sget-object p1, Lojk;->a:Lojk;
+    if-eqz v3, :cond_2
 
-    return-object p1
-.end method
+    if-nez v2, :cond_0
 
-.method public final c(Ljava/lang/Object;Loku;)Loku;
-    .locals 1
+    goto :goto_1
 
-    new-instance p1, Ltv;
+    :cond_0
+    const-string v4, "KEY_COMPONENT_ACTIVITY_LAUNCHED_KEYS"
 
-    iget-object v0, p0, Ltv;->a:Lty;
+    invoke-virtual {v1, v4}, Landroid/os/Bundle;->getStringArrayList(Ljava/lang/String;)Ljava/util/ArrayList;
 
-    invoke-direct {p1, v0, p2}, Ltv;-><init>(Lty;Loku;)V
+    move-result-object v4
 
-    return-object p1
+    iput-object v4, v0, Lum;->e:Ljava/util/ArrayList;
+
+    const-string v4, "KEY_COMPONENT_ACTIVITY_RANDOM_OBJECT"
+
+    invoke-virtual {v1, v4}, Landroid/os/Bundle;->getSerializable(Ljava/lang/String;)Ljava/io/Serializable;
+
+    move-result-object v4
+
+    check-cast v4, Ljava/util/Random;
+
+    iput-object v4, v0, Lum;->a:Ljava/util/Random;
+
+    iget-object v4, v0, Lum;->h:Landroid/os/Bundle;
+
+    const-string v5, "KEY_COMPONENT_ACTIVITY_PENDING_RESULT"
+
+    invoke-virtual {v1, v5}, Landroid/os/Bundle;->getBundle(Ljava/lang/String;)Landroid/os/Bundle;
+
+    move-result-object v1
+
+    invoke-virtual {v4, v1}, Landroid/os/Bundle;->putAll(Landroid/os/Bundle;)V
+
+    const/4 v1, 0x0
+
+    :goto_0
+    invoke-virtual {v3}, Ljava/util/ArrayList;->size()I
+
+    move-result v4
+
+    if-ge v1, v4, :cond_2
+
+    invoke-virtual {v3, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+
+    move-result-object v4
+
+    check-cast v4, Ljava/lang/String;
+
+    iget-object v5, v0, Lum;->c:Ljava/util/Map;
+
+    invoke-interface {v5, v4}, Ljava/util/Map;->containsKey(Ljava/lang/Object;)Z
+
+    move-result v5
+
+    if-eqz v5, :cond_1
+
+    iget-object v5, v0, Lum;->c:Ljava/util/Map;
+
+    invoke-interface {v5, v4}, Ljava/util/Map;->remove(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v5
+
+    check-cast v5, Ljava/lang/Integer;
+
+    iget-object v6, v0, Lum;->h:Landroid/os/Bundle;
+
+    invoke-virtual {v6, v4}, Landroid/os/Bundle;->containsKey(Ljava/lang/String;)Z
+
+    move-result v4
+
+    if-nez v4, :cond_1
+
+    iget-object v4, v0, Lum;->b:Ljava/util/Map;
+
+    invoke-interface {v4, v5}, Ljava/util/Map;->remove(Ljava/lang/Object;)Ljava/lang/Object;
+
+    :cond_1
+    invoke-virtual {v2, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+
+    move-result-object v4
+
+    check-cast v4, Ljava/lang/Integer;
+
+    invoke-virtual {v4}, Ljava/lang/Integer;->intValue()I
+
+    move-result v4
+
+    invoke-virtual {v3, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+
+    move-result-object v5
+
+    check-cast v5, Ljava/lang/String;
+
+    invoke-virtual {v0, v4, v5}, Lum;->b(ILjava/lang/String;)V
+
+    add-int/lit8 v1, v1, 0x1
+
+    goto :goto_0
+
+    :cond_2
+    :goto_1
+    return-void
 .end method

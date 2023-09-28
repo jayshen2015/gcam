@@ -1,13 +1,23 @@
-.class public final Lcbx;
+.class final Lcbx;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lccx;
+.implements Lphh;
+
+
+# instance fields
+.field final synthetic a:Landroid/app/job/JobParameters;
+
+.field final synthetic b:Lcby;
 
 
 # direct methods
-.method public constructor <init>()V
+.method public constructor <init>(Lcby;Landroid/app/job/JobParameters;)V
     .locals 0
+
+    iput-object p1, p0, Lcbx;->b:Lcby;
+
+    iput-object p2, p0, Lcbx;->a:Landroid/app/job/JobParameters;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -16,86 +26,33 @@
 
 
 # virtual methods
-.method public final a()Lnou;
-    .locals 3
-
-    new-instance v0, Ljvk;
-
-    new-instance v1, Landroid/graphics/PointF;
-
-    const/high16 v2, -0x40800000    # -1.0f
-
-    invoke-direct {v1, v2, v2}, Landroid/graphics/PointF;-><init>(FF)V
-
-    invoke-direct {v0, v1}, Ljvk;-><init>(Ljava/lang/Object;)V
-
-    invoke-static {v0}, Lnsy;->B(Ljava/lang/Object;)Lnou;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public final b()Lnou;
-    .locals 1
-
-    invoke-static {}, Lbze;->w()Lbze;
-
-    move-result-object v0
-
-    invoke-static {v0}, Lnsy;->B(Ljava/lang/Object;)Lnou;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public final c()Lnou;
-    .locals 1
-
-    new-instance v0, Ljava/lang/UnsupportedOperationException;
-
-    invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V
-
-    invoke-static {v0}, Lnsy;->A(Ljava/lang/Throwable;)Lnou;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public final d()V
+.method public final a(Ljava/lang/Throwable;)V
     .locals 0
 
     return-void
 .end method
 
-.method public final e()V
-    .locals 0
+.method public final bridge synthetic b(Ljava/lang/Object;)V
+    .locals 2
 
-    return-void
-.end method
+    check-cast p1, Ljava/lang/Boolean;
 
-.method public final f()V
-    .locals 0
+    invoke-virtual {p1}, Ljava/lang/Boolean;->booleanValue()Z
 
-    return-void
-.end method
+    move-result p1
 
-.method public final g()V
-    .locals 0
+    if-eqz p1, :cond_0
 
-    return-void
-.end method
+    sget p1, Lcby;->e:I
 
-.method public final h()V
-    .locals 0
+    :cond_0
+    iget-object p1, p0, Lcbx;->b:Lcby;
 
-    return-void
-.end method
+    iget-object v0, p0, Lcbx;->a:Landroid/app/job/JobParameters;
 
-.method public final i()V
-    .locals 0
+    const/4 v1, 0x0
+
+    invoke-virtual {p1, v0, v1}, Lcby;->jobFinished(Landroid/app/job/JobParameters;Z)V
 
     return-void
 .end method

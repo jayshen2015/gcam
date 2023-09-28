@@ -1,112 +1,121 @@
-.class public Lokh;
-.super Ljava/lang/Object;
+.class final Lokh;
+.super Lonh;
 
 
 # instance fields
-.field public final a:Lokj;
+.field final synthetic a:Lokm;
 
-.field public b:I
-
-.field public c:I
+.field private final b:Ljava/util/Map$Entry;
 
 
 # direct methods
-.method public constructor <init>(Lokj;)V
+.method public constructor <init>(Lokm;Ljava/util/Map$Entry;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lokh;->a:Lokm;
 
-    iput-object p1, p0, Lokh;->a:Lokj;
+    invoke-direct {p0}, Lonh;-><init>()V
 
-    const/4 p1, -0x1
-
-    iput p1, p0, Lokh;->c:I
-
-    invoke-virtual {p0}, Lokh;->a()V
+    iput-object p2, p0, Lokh;->b:Ljava/util/Map$Entry;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()V
-    .locals 3
+.method protected final synthetic a()Ljava/lang/Object;
+    .locals 1
 
-    :goto_0
-    iget v0, p0, Lokh;->b:I
+    iget-object v0, p0, Lokh;->b:Ljava/util/Map$Entry;
 
-    iget-object v1, p0, Lokh;->a:Lokj;
-
-    iget v2, v1, Lokj;->d:I
-
-    if-ge v0, v2, :cond_0
-
-    iget-object v1, v1, Lokj;->c:[I
-
-    aget v1, v1, v0
-
-    if-gez v1, :cond_0
-
-    add-int/lit8 v0, v0, 0x1
-
-    iput v0, p0, Lokh;->b:I
-
-    goto :goto_0
-
-    :cond_0
-    return-void
+    return-object v0
 .end method
 
-.method public final hasNext()Z
-    .locals 2
+.method protected final b()Ljava/util/Map$Entry;
+    .locals 1
 
-    iget v0, p0, Lokh;->b:I
+    iget-object v0, p0, Lokh;->b:Ljava/util/Map$Entry;
 
-    iget-object v1, p0, Lokh;->a:Lokj;
-
-    iget v1, v1, Lokj;->d:I
-
-    if-ge v0, v1, :cond_0
-
-    const/4 v0, 0x1
-
-    return v0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    return v0
+    return-object v0
 .end method
 
-.method public final remove()V
-    .locals 3
+.method public final setValue(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 5
 
-    iget v0, p0, Lokh;->c:I
+    iget-object v0, p0, Lokh;->a:Lokm;
 
-    const/4 v1, -0x1
+    invoke-virtual {v0, p1}, Lokm;->d(Ljava/lang/Object;)Ljava/lang/Object;
 
-    if-eq v0, v1, :cond_0
+    iget-object v0, p0, Lokh;->a:Lokm;
 
-    iget-object v0, p0, Lokh;->a:Lokj;
+    invoke-virtual {v0}, Long;->entrySet()Ljava/util/Set;
 
-    invoke-virtual {v0}, Lokj;->f()V
+    move-result-object v0
 
-    iget-object v0, p0, Lokh;->a:Lokj;
+    invoke-interface {v0, p0}, Ljava/util/Set;->contains(Ljava/lang/Object;)Z
 
-    iget v2, p0, Lokh;->c:I
+    move-result v0
 
-    invoke-virtual {v0, v2}, Lokj;->g(I)V
+    const-string v1, "entry no longer in map"
 
-    iput v1, p0, Lokh;->c:I
+    invoke-static {v0, v1}, Lobr;->aR(ZLjava/lang/Object;)V
 
-    return-void
+    invoke-virtual {p0}, Lonh;->getValue()Ljava/lang/Object;
+
+    move-result-object v0
+
+    invoke-static {p1, v0}, Lobr;->bc(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    return-object p1
 
     :cond_0
-    new-instance v0, Ljava/lang/IllegalStateException;
+    iget-object v0, p0, Lokh;->a:Lokm;
 
-    const-string v1, "Call next() before removing element from the iterator."
+    invoke-virtual {v0, p1}, Long;->containsValue(Ljava/lang/Object;)Z
 
-    invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+    move-result v0
 
-    throw v0
+    const/4 v2, 0x1
+
+    xor-int/2addr v0, v2
+
+    const-string v3, "value already present: %s"
+
+    invoke-static {v0, v3, p1}, Lobr;->aK(ZLjava/lang/String;Ljava/lang/Object;)V
+
+    iget-object v0, p0, Lokh;->b:Ljava/util/Map$Entry;
+
+    invoke-interface {v0, p1}, Ljava/util/Map$Entry;->setValue(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    iget-object v3, p0, Lokh;->a:Lokm;
+
+    invoke-virtual {p0}, Lonh;->getKey()Ljava/lang/Object;
+
+    move-result-object v4
+
+    invoke-virtual {v3, v4}, Long;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v3
+
+    invoke-static {p1, v3}, Lobr;->bc(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v3
+
+    invoke-static {v3, v1}, Lobr;->aR(ZLjava/lang/Object;)V
+
+    iget-object v1, p0, Lokh;->a:Lokm;
+
+    invoke-virtual {p0}, Lonh;->getKey()Ljava/lang/Object;
+
+    move-result-object v3
+
+    invoke-virtual {v1, v3, v2, v0, p1}, Lokm;->j(Ljava/lang/Object;ZLjava/lang/Object;Ljava/lang/Object;)V
+
+    return-object v0
 .end method

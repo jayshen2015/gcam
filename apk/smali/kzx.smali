@@ -1,36 +1,42 @@
-.class final Lkzx;
-.super Lkyp;
-
-
-# instance fields
-.field private final a:Llaa;
+.class public final Lkzx;
+.super Lkzy;
 
 
 # direct methods
-.method public constructor <init>(Llaa;)V
-    .locals 0
+.method public constructor <init>(Ljava/lang/Integer;)V
+    .locals 1
 
-    invoke-direct {p0}, Lkyp;-><init>()V
+    const-string v0, "gms:feedback_client:feedback_options_max_data_size"
 
-    iput-object p1, p0, Lkzx;->a:Llaa;
+    invoke-direct {p0, v0, p1}, Lkzy;-><init>(Ljava/lang/String;Ljava/lang/Object;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final bridge synthetic b(Ljava/lang/Object;)V
-    .locals 1
+.method public final bridge synthetic a()Ljava/lang/Object;
+    .locals 3
 
-    check-cast p1, Lkzd;
+    sget-object v0, Lkzy;->a:Landroid/content/ContentResolver;
 
-    iget-object v0, p0, Lkzx;->a:Llaa;
+    iget-object v1, p0, Lkzx;->b:Ljava/lang/String;
 
-    invoke-static {p1}, Lkzd;->a(Ljava/lang/Throwable;)Lkzd;
+    iget-object v2, p0, Lkzx;->c:Ljava/lang/Object;
 
-    move-result-object p1
+    check-cast v2, Ljava/lang/Integer;
 
-    invoke-virtual {v0, p1}, Llaa;->m(Lkzd;)V
+    invoke-virtual {v2}, Ljava/lang/Integer;->intValue()I
 
-    return-void
+    move-result v2
+
+    invoke-static {v0, v1, v2}, Lkzv;->a(Landroid/content/ContentResolver;Ljava/lang/String;I)I
+
+    move-result v0
+
+    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v0
+
+    return-object v0
 .end method

@@ -1,28 +1,31 @@
 .class public final Lbdl;
 .super Ljava/lang/Object;
 
+# interfaces
+.implements Lbdk;
+
 
 # direct methods
-.method public static final a(Landroid/net/ConnectivityManager;)Landroid/net/Network;
+.method public constructor <init>()V
     .locals 0
 
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-virtual {p0}, Landroid/net/ConnectivityManager;->getActiveNetwork()Landroid/net/Network;
-
-    move-result-object p0
-
-    return-object p0
+    return-void
 .end method
 
-.method public static b(Lva;Ljava/lang/Runnable;)V
+
+# virtual methods
+.method public final a(Lazp;)Ljava/io/File;
     .locals 0
 
-    iget-object p0, p0, Lva;->a:Ljava/lang/Object;
+    const/4 p1, 0x0
 
-    check-cast p0, Lbdp;
+    return-object p1
+.end method
 
-    invoke-virtual {p0, p1}, Lbdp;->execute(Ljava/lang/Runnable;)V
+.method public final b(Lazp;Lbbf;)V
+    .locals 0
 
     return-void
 .end method

@@ -1,31 +1,105 @@
-.class public interface abstract Lkbc;
+.class public final synthetic Lkbc;
 .super Ljava/lang/Object;
+
+# interfaces
+.implements Lojf;
+
+
+# instance fields
+.field public final synthetic a:Lkbi;
+
+.field private final synthetic b:I
+
+
+# direct methods
+.method public synthetic constructor <init>(Lkbi;I)V
+    .locals 0
+
+    iput p2, p0, Lkbc;->b:I
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lkbc;->a:Lkbi;
+
+    return-void
+.end method
 
 
 # virtual methods
-.method public abstract a(Ljava/lang/String;)Lkbf;
-.end method
+.method public final a(Ljava/lang/Object;)Z
+    .locals 3
 
-.method public abstract b(Ljava/lang/String;)Lkbh;
-.end method
+    iget v0, p0, Lkbc;->b:I
 
-.method public abstract c(Ljava/lang/String;Ljava/lang/Runnable;)Ljava/lang/Runnable;
-.end method
+    const/4 v1, 0x1
 
-.method public abstract d(Ljava/lang/String;Ljava/lang/Runnable;)V
-.end method
+    const/4 v2, 0x0
 
-.method public abstract e(Ljava/lang/String;)V
-.end method
+    packed-switch v0, :pswitch_data_0
 
-.method public abstract f()V
-.end method
+    iget-object v0, p0, Lkbc;->a:Lkbi;
 
-.method public abstract g(Ljava/lang/String;)V
-.end method
+    check-cast p1, Ljava/lang/Float;
 
-.method public varargs abstract h()V
-.end method
+    invoke-virtual {p1}, Ljava/lang/Float;->floatValue()F
 
-.method public abstract i(Ljava/util/concurrent/Callable;)Ljava/util/concurrent/Callable;
+    move-result p1
+
+    iget-object v0, v0, Lkbi;->g:Llda;
+
+    invoke-interface {v0}, Llda;->fA()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/Float;
+
+    invoke-virtual {v0}, Ljava/lang/Float;->floatValue()F
+
+    move-result v0
+
+    cmpl-float p1, p1, v0
+
+    if-lez p1, :cond_1
+
+    return v1
+
+    :pswitch_0
+    iget-object v0, p0, Lkbc;->a:Lkbi;
+
+    check-cast p1, Ljava/lang/Float;
+
+    invoke-virtual {p1}, Ljava/lang/Float;->floatValue()F
+
+    move-result p1
+
+    iget-object v0, v0, Lkbi;->g:Llda;
+
+    invoke-interface {v0}, Llda;->fA()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/Float;
+
+    invoke-virtual {v0}, Ljava/lang/Float;->floatValue()F
+
+    move-result v0
+
+    cmpg-float p1, p1, v0
+
+    if-gez p1, :cond_0
+
+    return v1
+
+    :cond_0
+    return v2
+
+    :cond_1
+    return v2
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

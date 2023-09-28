@@ -1,32 +1,38 @@
 .class final Lkta;
-.super Ljava/lang/Object;
-
-
-# static fields
-.field static final a:Llzz;
+.super Lmip;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 4
+.method public constructor <init>()V
+    .locals 0
 
-    sget-object v0, Lnzl;->c:Lnzl;
-
-    const-wide/16 v1, 0x0
-
-    invoke-static {v1, v2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    move-result-object v1
-
-    sget-object v2, Lnzl;->k:Lnzl;
-
-    sget-object v3, Lnyy;->c:Lnyy;
-
-    invoke-static {v0, v1, v2, v3}, Llzz;->B(Lnzl;Ljava/lang/Object;Lnzl;Ljava/lang/Object;)Llzz;
-
-    move-result-object v0
-
-    sput-object v0, Lkta;->a:Llzz;
+    invoke-direct {p0}, Lmip;-><init>()V
 
     return-void
+.end method
+
+
+# virtual methods
+.method public final bridge synthetic v(Landroid/content/Context;Landroid/os/Looper;Lkmf;Ljava/lang/Object;Lkjq;Lkkw;)Lkie;
+    .locals 6
+
+    check-cast p4, Lkic;
+
+    new-instance p4, Lktk;
+
+    move-object v0, p4
+
+    move-object v1, p1
+
+    move-object v2, p2
+
+    move-object v3, p3
+
+    move-object v4, p5
+
+    move-object v5, p6
+
+    invoke-direct/range {v0 .. v5}, Lktk;-><init>(Landroid/content/Context;Landroid/os/Looper;Lkmf;Lkjq;Lkkw;)V
+
+    return-object p4
 .end method

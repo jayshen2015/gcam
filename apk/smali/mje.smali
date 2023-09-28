@@ -1,48 +1,87 @@
-.class final Lmje;
-.super Landroid/animation/AnimatorListenerAdapter;
+.class public final synthetic Lmje;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Lmjf;
+
+
+# static fields
+.field public static final synthetic a:Lmje;
+
+.field public static final synthetic b:Lmje;
 
 
 # instance fields
-.field final synthetic a:Lmjg;
+.field private final synthetic c:I
 
 
 # direct methods
-.method public constructor <init>(Lmjg;)V
+.method static synthetic constructor <clinit>()V
+    .locals 2
+
+    new-instance v0, Lmje;
+
+    const/4 v1, 0x1
+
+    invoke-direct {v0, v1}, Lmje;-><init>(I)V
+
+    sput-object v0, Lmje;->b:Lmje;
+
+    new-instance v0, Lmje;
+
+    const/4 v1, 0x0
+
+    invoke-direct {v0, v1}, Lmje;-><init>(I)V
+
+    sput-object v0, Lmje;->a:Lmje;
+
+    return-void
+.end method
+
+.method private synthetic constructor <init>(I)V
     .locals 0
 
-    iput-object p1, p0, Lmje;->a:Lmjg;
+    iput p1, p0, Lmje;->c:I
 
-    invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onAnimationRepeat(Landroid/animation/Animator;)V
-    .locals 3
+.method public final a()Ljava/lang/Object;
+    .locals 1
 
-    invoke-super {p0, p1}, Landroid/animation/AnimatorListenerAdapter;->onAnimationRepeat(Landroid/animation/Animator;)V
+    iget v0, p0, Lmje;->c:I
 
-    iget-object p1, p0, Lmje;->a:Lmjg;
+    packed-switch v0, :pswitch_data_0
 
-    iget v0, p1, Lmjg;->c:I
+    const-string v0, "payload length"
 
-    const/4 v1, 0x1
+    invoke-static {v0}, Lmip;->aD(Ljava/lang/String;)Ljava/lang/Object;
 
-    add-int/2addr v0, v1
+    move-result-object v0
 
-    iget-object v2, p1, Lmjg;->b:Lmim;
+    check-cast v0, Ljava/lang/Integer;
 
-    iget-object v2, v2, Lmim;->c:[I
+    return-object v0
 
-    array-length v2, v2
+    :pswitch_0
+    const-string v0, "determining file format version"
 
-    rem-int/2addr v0, v2
+    invoke-static {v0}, Lmip;->aD(Ljava/lang/String;)Ljava/lang/Object;
 
-    iput v0, p1, Lmjg;->c:I
+    move-result-object v0
 
-    iput-boolean v1, p1, Lmjg;->d:Z
+    check-cast v0, Ljava/lang/Integer;
 
-    return-void
+    return-object v0
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

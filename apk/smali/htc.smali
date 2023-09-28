@@ -1,35 +1,44 @@
-.class public Lhtc;
-.super Ljava/lang/Object;
-
-# interfaces
-.implements Lhis;
+.class public final Lhtc;
+.super Lldn;
 
 
 # direct methods
-.method public constructor <init>()V
+.method public constructor <init>(Llda;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0, p1}, Lldn;-><init>(Llda;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public synthetic f()V
+.method protected final bridge synthetic b(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    return-void
+    check-cast p1, Ljava/lang/Integer;
+
+    invoke-virtual {p1}, Ljava/lang/Integer;->intValue()I
+
+    move-result p1
+
+    invoke-static {p1}, Lhth;->a(I)Lhth;
+
+    move-result-object p1
+
+    return-object p1
 .end method
 
-.method public synthetic g()V
+.method protected final bridge synthetic c(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    return-void
-.end method
+    check-cast p1, Lhth;
 
-.method public synthetic h()V
-    .locals 0
+    iget p1, p1, Lhth;->d:I
 
-    return-void
+    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object p1
+
+    return-object p1
 .end method

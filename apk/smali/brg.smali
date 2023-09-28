@@ -1,77 +1,156 @@
 .class public final Lbrg;
 .super Ljava/lang/Object;
 
-# interfaces
-.implements Lbrh;
-
-
-# static fields
-.field private static final a:[Ljava/lang/String;
-
 
 # instance fields
-.field private final b:Landroid/content/ContentResolver;
+.field public final a:I
+
+.field public final b:Z
+
+.field public final c:Lddf;
+
+.field private final d:Llzb;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 3
-
-    const/4 v0, 0x1
-
-    new-array v0, v0, [Ljava/lang/String;
-
-    const/4 v1, 0x0
-
-    const-string v2, "_data"
-
-    aput-object v2, v0, v1
-
-    sput-object v0, Lbrg;->a:[Ljava/lang/String;
-
-    return-void
-.end method
-
-.method public constructor <init>(Landroid/content/ContentResolver;)V
+.method public constructor <init>(Llzb;Lddf;IZ)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lbrg;->b:Landroid/content/ContentResolver;
+    iput p3, p0, Lbrg;->a:I
+
+    iput-boolean p4, p0, Lbrg;->b:Z
+
+    iput-object p1, p0, Lbrg;->d:Llzb;
+
+    iput-object p2, p0, Lbrg;->c:Lddf;
 
     return-void
 .end method
 
+.method public static c(IIZLddf;)I
+    .locals 1
+
+    sget-object v0, Lddl;->a:Lddi;
+
+    invoke-interface {p3}, Lddf;->e()V
+
+    if-eqz p2, :cond_0
+
+    rsub-int p1, p1, 0x168
+
+    rem-int/lit16 p1, p1, 0x168
+
+    :cond_0
+    add-int/2addr p0, p1
+
+    rem-int/lit16 p0, p0, 0x168
+
+    return p0
+.end method
+
+.method public static d(ILlvp;Lddf;)I
+    .locals 2
+
+    sget-object v0, Landroid/hardware/camera2/CameraCharacteristics;->LENS_FACING:Landroid/hardware/camera2/CameraCharacteristics$Key;
+
+    invoke-interface {p1, v0}, Llvp;->l(Landroid/hardware/camera2/CameraCharacteristics$Key;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/Integer;
+
+    sget-object v1, Landroid/hardware/camera2/CameraCharacteristics;->SENSOR_ORIENTATION:Landroid/hardware/camera2/CameraCharacteristics$Key;
+
+    invoke-interface {p1, v1}, Llvp;->l(Landroid/hardware/camera2/CameraCharacteristics$Key;)Ljava/lang/Object;
+
+    move-result-object p1
+
+    check-cast p1, Ljava/lang/Integer;
+
+    const/4 v1, 0x0
+
+    if-eqz v0, :cond_2
+
+    if-nez p1, :cond_0
+
+    goto :goto_1
+
+    :cond_0
+    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
+
+    move-result v0
+
+    if-nez v0, :cond_1
+
+    const/4 v1, 0x1
+
+    goto :goto_0
+
+    :cond_1
+    :goto_0
+    invoke-virtual {p1}, Ljava/lang/Integer;->intValue()I
+
+    move-result p1
+
+    invoke-static {p1, p0, v1, p2}, Lbrg;->c(IIZLddf;)I
+
+    move-result p0
+
+    return p0
+
+    :cond_2
+    :goto_1
+    return v1
+.end method
+
 
 # virtual methods
-.method public final a(Landroid/net/Uri;)Landroid/database/Cursor;
-    .locals 6
+.method public final a()Llco;
+    .locals 2
 
-    invoke-virtual {p1}, Landroid/net/Uri;->getLastPathSegment()Ljava/lang/String;
+    new-instance v0, Lguz;
 
-    move-result-object p1
+    iget-object v1, p0, Lbrg;->d:Llzb;
 
-    iget-object v0, p0, Lbrg;->b:Landroid/content/ContentResolver;
+    invoke-direct {v0, v1}, Lguz;-><init>(Llzb;)V
 
-    sget-object v1, Landroid/provider/MediaStore$Video$Thumbnails;->EXTERNAL_CONTENT_URI:Landroid/net/Uri;
+    new-instance v1, Lbrf;
 
-    sget-object v2, Lbrg;->a:[Ljava/lang/String;
+    invoke-direct {v1, p0}, Lbrf;-><init>(Lbrg;)V
 
-    const/4 v3, 0x1
+    invoke-static {v0, v1}, Llcv;->j(Llco;Loiu;)Llco;
 
-    new-array v4, v3, [Ljava/lang/String;
+    move-result-object v0
 
-    const/4 v3, 0x0
+    return-object v0
+.end method
 
-    aput-object p1, v4, v3
+.method public final b()Llic;
+    .locals 4
 
-    const-string v3, "kind = 1 AND video_id = ?"
+    iget v0, p0, Lbrg;->a:I
 
-    const/4 v5, 0x0
+    iget-object v1, p0, Lbrg;->d:Llzb;
 
-    invoke-virtual/range {v0 .. v5}, Landroid/content/ContentResolver;->query(Landroid/net/Uri;[Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;)Landroid/database/Cursor;
+    invoke-virtual {v1}, Llzb;->a()Llic;
 
-    move-result-object p1
+    move-result-object v1
 
-    return-object p1
+    iget v1, v1, Llic;->e:I
+
+    iget-boolean v2, p0, Lbrg;->b:Z
+
+    iget-object v3, p0, Lbrg;->c:Lddf;
+
+    invoke-static {v0, v1, v2, v3}, Lbrg;->c(IIZLddf;)I
+
+    move-result v0
+
+    invoke-static {v0}, Llic;->b(I)Llic;
+
+    move-result-object v0
+
+    return-object v0
 .end method

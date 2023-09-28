@@ -1,18 +1,18 @@
 .class final Lizh;
-.super Lizm;
+.super Lizt;
 
 
 # instance fields
-.field final synthetic a:Lizj;
+.field final synthetic a:Lizx;
 
 
 # direct methods
-.method public constructor <init>(Lizj;Liyz;)V
+.method public constructor <init>(Lizx;)V
     .locals 0
 
-    iput-object p1, p0, Lizh;->a:Lizj;
+    iput-object p1, p0, Lizh;->a:Lizx;
 
-    invoke-direct {p0, p2}, Lizm;-><init>(Liyz;)V
+    invoke-direct {p0, p1}, Lizt;-><init>(Lizx;)V
 
     return-void
 .end method
@@ -20,93 +20,45 @@
 
 # virtual methods
 .method public final a()V
-    .locals 10
+    .locals 2
 
-    iget-object v0, p0, Lizh;->a:Lizj;
+    iget-object v0, p0, Lizh;->a:Lizx;
 
-    const-wide/32 v1, 0x5265c00
+    iget-object v0, v0, Lizx;->g:Lihu;
 
-    :try_start_0
-    iget-object v3, v0, Lizj;->c:Lize;
+    invoke-virtual {v0}, Lihu;->e()V
 
-    invoke-static {}, Liys;->a()V
+    invoke-super {p0}, Lizt;->a()V
 
-    invoke-virtual {v3}, Liyw;->z()V
+    iget-object v0, p0, Lizh;->a:Lizx;
 
-    iget-object v4, v3, Lize;->d:Ljad;
+    iget-object v1, v0, Lizx;->g:Lihu;
 
-    invoke-virtual {v4, v1, v2}, Ljad;->c(J)Z
+    iget-object v0, v0, Lizx;->k:Lihw;
 
-    move-result v4
+    invoke-virtual {v1, v0}, Lihu;->g(Lihw;)V
 
-    if-eqz v4, :cond_0
+    return-void
+.end method
 
-    iget-object v4, v3, Lize;->d:Ljad;
+.method public final b()V
+    .locals 2
 
-    invoke-virtual {v4}, Ljad;->b()V
+    iget-object v0, p0, Lizh;->a:Lizx;
 
-    const-string v4, "Deleting stale hits (if any)"
+    iget-object v0, v0, Lizx;->g:Lihu;
 
-    invoke-virtual {v3, v4}, Liyv;->q(Ljava/lang/String;)V
+    invoke-virtual {v0}, Lihu;->e()V
 
-    invoke-virtual {v3}, Lize;->b()Landroid/database/sqlite/SQLiteDatabase;
+    invoke-super {p0}, Lizt;->b()V
 
-    move-result-object v4
+    iget-object v0, p0, Lizh;->a:Lizx;
 
-    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
+    iget-object v1, v0, Lizx;->g:Lihu;
 
-    move-result-wide v5
+    iget-object v0, v0, Lizx;->i:Lihw;
 
-    const-wide v7, -0x9a7ec800L
-
-    add-long/2addr v5, v7
-
-    const-string v7, "hits2"
-
-    const-string v8, "hit_time < ?"
-
-    const/4 v9, 0x1
-
-    new-array v9, v9, [Ljava/lang/String;
-
-    invoke-static {v5, v6}, Ljava/lang/Long;->toString(J)Ljava/lang/String;
-
-    move-result-object v5
-
-    const/4 v6, 0x0
-
-    aput-object v5, v9, v6
-
-    invoke-virtual {v4, v7, v8, v9}, Landroid/database/sqlite/SQLiteDatabase;->delete(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;)I
-
-    move-result v4
-
-    const-string v5, "Deleted stale hits, count"
-
-    invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v4
-
-    invoke-virtual {v3, v5, v4}, Liyv;->r(Ljava/lang/String;Ljava/lang/Object;)V
-
-    :cond_0
-    invoke-virtual {v0}, Lizj;->F()V
-    :try_end_0
-    .catch Landroid/database/sqlite/SQLiteException; {:try_start_0 .. :try_end_0} :catch_0
-
-    goto :goto_0
-
-    :catch_0
-    move-exception v3
-
-    const-string v4, "Failed to delete stale hits"
-
-    invoke-virtual {v0, v4, v3}, Liyv;->u(Ljava/lang/String;Ljava/lang/Object;)V
-
-    :goto_0
-    iget-object v0, v0, Lizj;->d:Lizm;
-
-    invoke-virtual {v0, v1, v2}, Lizm;->d(J)V
+    invoke-virtual {v1, v0}, Lihu;->g(Lihw;)V
 
     return-void
 .end method

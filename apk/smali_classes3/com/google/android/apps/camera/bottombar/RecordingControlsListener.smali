@@ -2,7 +2,7 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lifj;
+.implements Ljli;
 
 
 # virtual methods

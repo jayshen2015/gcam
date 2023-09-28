@@ -2,51 +2,44 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Landroid/content/DialogInterface$OnDismissListener;
+.implements Lj$/util/function/Consumer;
 
 
 # instance fields
-.field public final synthetic a:Lhrz;
-
-.field public final synthetic b:Landroid/content/DialogInterface$OnDismissListener;
-
-.field public final synthetic c:I
+.field public final synthetic a:J
 
 
 # direct methods
-.method public synthetic constructor <init>(Lhrz;Landroid/content/DialogInterface$OnDismissListener;I)V
+.method public synthetic constructor <init>(J)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lhrv;->a:Lhrz;
-
-    iput-object p2, p0, Lhrv;->b:Landroid/content/DialogInterface$OnDismissListener;
-
-    iput p3, p0, Lhrv;->c:I
+    iput-wide p1, p0, Lhrv;->a:J
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onDismiss(Landroid/content/DialogInterface;)V
-    .locals 3
+.method public final accept(Ljava/lang/Object;)V
+    .locals 2
 
-    iget-object v0, p0, Lhrv;->a:Lhrz;
+    iget-wide v0, p0, Lhrv;->a:J
 
-    iget-object v1, p0, Lhrv;->b:Landroid/content/DialogInterface$OnDismissListener;
+    check-cast p1, Lhsb;
 
-    iget v2, p0, Lhrv;->c:I
-
-    invoke-virtual {v0}, Lhrz;->h()V
-
-    if-eqz v1, :cond_0
-
-    invoke-interface {v1, p1}, Landroid/content/DialogInterface$OnDismissListener;->onDismiss(Landroid/content/DialogInterface;)V
-
-    :cond_0
-    invoke-virtual {v0, v2}, Lhrz;->j(I)V
+    invoke-interface {p1, v0, v1}, Lhsb;->m(J)V
 
     return-void
+.end method
+
+.method public final synthetic andThen(Lj$/util/function/Consumer;)Lj$/util/function/Consumer;
+    .locals 0
+
+    invoke-static {p0, p1}, Lj$/util/function/Consumer$-CC;->$default$andThen(Lj$/util/function/Consumer;Lj$/util/function/Consumer;)Lj$/util/function/Consumer;
+
+    move-result-object p1
+
+    return-object p1
 .end method

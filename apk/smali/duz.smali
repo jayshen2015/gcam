@@ -1,96 +1,66 @@
-.class public final synthetic Lduz;
-.super Ljava/lang/Object;
-
-# interfaces
-.implements Lduu;
-
-
-# static fields
-.field public static final synthetic a:Lduz;
-
-.field public static final synthetic b:Lduz;
+.class public final Lduz;
+.super Landroid/animation/AnimatorListenerAdapter;
 
 
 # instance fields
-.field private final synthetic c:I
+.field final synthetic a:Landroid/content/res/Resources;
+
+.field final synthetic b:Lduj;
+
+.field final synthetic c:Lcom/google/android/apps/camera/focusindicator/FocusIndicatorView;
 
 
 # direct methods
-.method static synthetic constructor <clinit>()V
-    .locals 2
-
-    new-instance v0, Lduz;
-
-    const/4 v1, 0x1
-
-    invoke-direct {v0, v1}, Lduz;-><init>(I)V
-
-    sput-object v0, Lduz;->b:Lduz;
-
-    new-instance v0, Lduz;
-
-    const/4 v1, 0x0
-
-    invoke-direct {v0, v1}, Lduz;-><init>(I)V
-
-    sput-object v0, Lduz;->a:Lduz;
-
-    return-void
-.end method
-
-.method private synthetic constructor <init>(I)V
+.method public constructor <init>(Landroid/content/res/Resources;Lduj;Lcom/google/android/apps/camera/focusindicator/FocusIndicatorView;)V
     .locals 0
 
-    iput p1, p0, Lduz;->c:I
+    iput-object p1, p0, Lduz;->a:Landroid/content/res/Resources;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p2, p0, Lduz;->b:Lduj;
+
+    iput-object p3, p0, Lduz;->c:Lcom/google/android/apps/camera/focusindicator/FocusIndicatorView;
+
+    invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Lduv;)Z
+.method public final onAnimationStart(Landroid/animation/Animator;)V
     .locals 2
 
-    iget v0, p0, Lduz;->c:I
+    iget-object p1, p0, Lduz;->a:Landroid/content/res/Resources;
 
-    const/4 v1, 0x0
+    const v0, 0x7f07006c
 
-    packed-switch v0, :pswitch_data_0
+    invoke-virtual {p1, v0}, Landroid/content/res/Resources;->getDimension(I)F
 
-    iget-object v0, p1, Lduv;->a:Ljava/lang/Object;
+    move-result p1
 
-    monitor-enter v0
+    iget-object v0, p0, Lduz;->b:Lduj;
 
-    goto :goto_0
+    invoke-interface {v0, p1}, Lduj;->f(F)V
 
-    :pswitch_0
-    return v1
+    iget-object p1, p0, Lduz;->a:Landroid/content/res/Resources;
 
-    :goto_0
-    :try_start_0
-    iput v1, p1, Lduv;->c:I
+    const v0, 0x7f07013b
 
-    monitor-exit v0
+    invoke-virtual {p1, v0}, Landroid/content/res/Resources;->getDimension(I)F
 
-    const/4 p1, 0x1
+    move-result p1
 
-    return p1
+    iget-object v0, p0, Lduz;->b:Lduj;
 
-    :catchall_0
-    move-exception p1
+    const/high16 v1, 0x40000000    # 2.0f
 
-    monitor-exit v0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    div-float/2addr p1, v1
 
-    throw p1
+    invoke-interface {v0, p1}, Lduj;->c(F)V
 
-    nop
+    iget-object p1, p0, Lduz;->c:Lcom/google/android/apps/camera/focusindicator/FocusIndicatorView;
 
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+    invoke-virtual {p1}, Lcom/google/android/apps/camera/focusindicator/FocusIndicatorView;->invalidate()V
+
+    return-void
 .end method

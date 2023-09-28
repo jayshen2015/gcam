@@ -3,140 +3,112 @@
 
 
 # instance fields
-.field public final a:Lkll;
+.field public final a:Ljava/util/Queue;
 
-.field public final b:Lkaf;
+.field public final b:Ljava/util/concurrent/atomic/AtomicBoolean;
+
+.field public final c:Ljgu;
+
+.field public final d:Ljgu;
+
+.field public final e:Lelw;
+
+.field public final f:Lfnu;
+
+.field public final g:Lfnq;
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 0
+.method public constructor <init>(Landroid/content/Context;Lelw;Lfnu;Ljava/util/concurrent/atomic/AtomicBoolean;Lfnq;Lddf;)V
+    .locals 1
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    return-void
-.end method
+    new-instance v0, Ljava/util/ArrayDeque;
 
-.method public constructor <init>(Lkll;Lkaf;)V
-    .locals 0
+    invoke-direct {v0}, Ljava/util/ArrayDeque;-><init>()V
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object v0, p0, Lfno;->a:Ljava/util/Queue;
 
-    iput-object p1, p0, Lfno;->a:Lkll;
+    iput-object p2, p0, Lfno;->e:Lelw;
 
-    iput-object p2, p0, Lfno;->b:Lkaf;
+    iput-object p4, p0, Lfno;->b:Ljava/util/concurrent/atomic/AtomicBoolean;
 
-    return-void
-.end method
+    iput-object p3, p0, Lfno;->f:Lfnu;
 
+    iput-object p5, p0, Lfno;->g:Lfnq;
 
-# virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 4
+    new-instance p2, Ljgv;
 
-    const/4 v0, 0x1
+    invoke-direct {p2}, Ljgv;-><init>()V
 
-    if-ne p1, p0, :cond_0
+    iput-object p1, p2, Ljgv;->f:Landroid/content/Context;
 
-    return v0
+    invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
-    :cond_0
-    instance-of v1, p1, Lfno;
+    move-result-object p3
 
-    const/4 v2, 0x0
+    const p4, 0x7f1404a6
 
-    if-eqz v1, :cond_1
+    invoke-virtual {p3, p4}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
-    check-cast p1, Lfno;
+    move-result-object p3
 
-    iget-object v1, p0, Lfno;->a:Lkll;
+    iput-object p3, p2, Ljgv;->e:Ljava/lang/String;
 
-    iget-object v3, p1, Lfno;->a:Lkll;
+    const/4 p3, 0x1
 
-    invoke-virtual {v1, v3}, Lkll;->equals(Ljava/lang/Object;)Z
+    iput-boolean p3, p2, Ljgv;->a:Z
 
-    move-result v1
+    const/16 p3, 0xb
 
-    if-eqz v1, :cond_1
+    iput p3, p2, Ljgv;->i:I
 
-    iget-object v1, p0, Lfno;->b:Lkaf;
+    sget-object p4, Lddl;->ay:Lddg;
 
-    iget-object p1, p1, Lfno;->b:Lkaf;
+    invoke-interface {p6, p4}, Lddf;->k(Lddg;)Z
 
-    invoke-virtual {v1, p1}, Lkaf;->equals(Ljava/lang/Object;)Z
+    move-result p4
+
+    iput-boolean p4, p2, Ljgv;->h:Z
+
+    invoke-virtual {p2}, Ljgv;->a()Ljgu;
+
+    move-result-object p4
+
+    iput-object p4, p0, Lfno;->c:Ljgu;
+
+    invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+
+    move-result-object p1
+
+    const p4, 0x7f140238
+
+    invoke-virtual {p1, p4}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
+
+    move-result-object p1
+
+    iput-object p1, p2, Ljgv;->e:Ljava/lang/String;
+
+    const/4 p1, 0x0
+
+    iput-boolean p1, p2, Ljgv;->a:Z
+
+    iput p3, p2, Ljgv;->i:I
+
+    sget-object p1, Lddl;->ay:Lddg;
+
+    invoke-interface {p6, p1}, Lddf;->k(Lddg;)Z
 
     move-result p1
 
-    if-eqz p1, :cond_1
+    iput-boolean p1, p2, Ljgv;->h:Z
 
-    return v0
+    invoke-virtual {p2}, Ljgv;->a()Ljgu;
 
-    :cond_1
-    return v2
-.end method
+    move-result-object p1
 
-.method public final hashCode()I
-    .locals 3
+    iput-object p1, p0, Lfno;->d:Ljgu;
 
-    iget-object v0, p0, Lfno;->a:Lkll;
-
-    iget v0, v0, Lkll;->b:I
-
-    const v1, 0xf4243
-
-    xor-int/2addr v0, v1
-
-    iget-object v2, p0, Lfno;->b:Lkaf;
-
-    invoke-virtual {v2}, Lkaf;->hashCode()I
-
-    move-result v2
-
-    mul-int v0, v0, v1
-
-    xor-int/2addr v0, v2
-
-    return v0
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .locals 4
-
-    iget-object v0, p0, Lfno;->a:Lkll;
-
-    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v0
-
-    iget-object v1, p0, Lfno;->b:Lkaf;
-
-    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v1
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v3, "MoreModesSessionConfig{cameraId="
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v0, ", previewSize="
-
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v0, "}"
-
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    return-object v0
+    return-void
 .end method

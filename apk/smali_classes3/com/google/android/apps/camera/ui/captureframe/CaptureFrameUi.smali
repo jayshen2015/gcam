@@ -28,7 +28,7 @@
 
     move-result-object p1
 
-    const p2, 0x7f07015e
+    const p2, 0x7f070152
 
     invoke-virtual {p1, p2}, Landroid/content/res/Resources;->getDimension(I)F
 
@@ -38,7 +38,7 @@
 
     move-result-object p2
 
-    const v0, 0x7f070082
+    const v0, 0x7f070083
 
     invoke-virtual {p2, v0}, Landroid/content/res/Resources;->getDimension(I)F
 
@@ -56,7 +56,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f07015f
+    const v1, 0x7f070153
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -78,29 +78,29 @@
 
     invoke-virtual {p2, v1}, Landroid/graphics/Paint;->setBlendMode(Landroid/graphics/BlendMode;)V
 
-    new-instance v1, Lhsf;
+    new-instance v1, Livc;
 
-    invoke-direct {v1, p0, p2, v0, p1}, Lhsf;-><init>(Lcom/google/android/apps/camera/ui/captureframe/CaptureFrameUi;Landroid/graphics/Paint;IF)V
+    invoke-direct {v1, p0, p2, v0, p1}, Livc;-><init>(Lcom/google/android/apps/camera/ui/captureframe/CaptureFrameUi;Landroid/graphics/Paint;IF)V
 
-    new-instance v0, Lhsf;
+    new-instance v0, Livc;
 
     const/4 v2, 0x2
 
-    invoke-direct {v0, p0, p2, v2, p1}, Lhsf;-><init>(Lcom/google/android/apps/camera/ui/captureframe/CaptureFrameUi;Landroid/graphics/Paint;IF)V
+    invoke-direct {v0, p0, p2, v2, p1}, Livc;-><init>(Lcom/google/android/apps/camera/ui/captureframe/CaptureFrameUi;Landroid/graphics/Paint;IF)V
 
-    new-instance v2, Lhsf;
+    new-instance v2, Livc;
 
     const/4 v3, 0x3
 
-    invoke-direct {v2, p0, p2, v3, p1}, Lhsf;-><init>(Lcom/google/android/apps/camera/ui/captureframe/CaptureFrameUi;Landroid/graphics/Paint;IF)V
+    invoke-direct {v2, p0, p2, v3, p1}, Livc;-><init>(Lcom/google/android/apps/camera/ui/captureframe/CaptureFrameUi;Landroid/graphics/Paint;IF)V
 
-    new-instance v3, Lhsf;
+    new-instance v3, Livc;
 
     const/4 v4, 0x4
 
-    invoke-direct {v3, p0, p2, v4, p1}, Lhsf;-><init>(Lcom/google/android/apps/camera/ui/captureframe/CaptureFrameUi;Landroid/graphics/Paint;IF)V
+    invoke-direct {v3, p0, p2, v4, p1}, Livc;-><init>(Lcom/google/android/apps/camera/ui/captureframe/CaptureFrameUi;Landroid/graphics/Paint;IF)V
 
-    invoke-static {v1, v0, v2, v3}, Lmvv;->o(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Lmvv;
+    invoke-static {v1, v0, v2, v3}, Loom;->p(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Loom;
 
     move-result-object p1
 
@@ -112,7 +112,7 @@
 
 # virtual methods
 .method public final onDraw(Landroid/graphics/Canvas;)V
-    .locals 3
+    .locals 2
 
     iget-object v0, p0, Lcom/google/android/apps/camera/ui/captureframe/CaptureFrameUi;->c:Ljava/util/List;
 
@@ -120,13 +120,11 @@
 
     move-result-object v0
 
-    new-instance v1, Lgdt;
+    new-instance v1, Livb;
 
-    const/4 v2, 0x5
+    invoke-direct {v1, p0, p1}, Livb;-><init>(Lcom/google/android/apps/camera/ui/captureframe/CaptureFrameUi;Landroid/graphics/Canvas;)V
 
-    invoke-direct {v1, p0, p1, v2}, Lgdt;-><init>(Lcom/google/android/apps/camera/ui/captureframe/CaptureFrameUi;Landroid/graphics/Canvas;I)V
-
-    invoke-interface {v0, v1}, Lj$/util/stream/Stream;->forEach(Ljava/util/function/Consumer;)V
+    invoke-interface {v0, v1}, Lj$/util/stream/Stream;->forEach(Lj$/util/function/Consumer;)V
 
     return-void
 .end method
@@ -136,9 +134,9 @@
 
     iget-object p1, p0, Lcom/google/android/apps/camera/ui/captureframe/CaptureFrameUi;->a:Landroid/graphics/RectF;
 
-    int-to-float p2, p2
-
     iget v0, p0, Lcom/google/android/apps/camera/ui/captureframe/CaptureFrameUi;->d:F
+
+    int-to-float p2, p2
 
     add-float/2addr p2, v0
 

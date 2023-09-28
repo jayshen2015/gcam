@@ -1,278 +1,377 @@
 .class public final Lden;
 .super Ljava/lang/Object;
 
-# interfaces
-.implements Lhrb;
-.implements Ldey;
+
+# static fields
+.field public static final a:Louj;
 
 
 # instance fields
-.field public a:Ldem;
+.field public final b:Landroid/content/SharedPreferences;
 
-.field private final b:Ljava/util/concurrent/atomic/AtomicBoolean;
+.field public final c:Lnvb;
 
-.field private final c:Ljava/util/concurrent/atomic/AtomicBoolean;
+.field private final d:Llzk;
 
-.field private final d:Ljava/util/List;
+.field private final e:Lojc;
 
 
 # direct methods
-.method public constructor <init>(Ldhi;)V
-    .locals 2
+.method static constructor <clinit>()V
+    .locals 1
+
+    const-string v0, "com/google/android/apps/camera/configuration/impl/GcaConfigHelper"
+
+    invoke-static {v0}, Louj;->h(Ljava/lang/String;)Louj;
+
+    move-result-object v0
+
+    sput-object v0, Lden;->a:Louj;
+
+    return-void
+.end method
+
+.method public constructor <init>(Llzk;Landroid/content/SharedPreferences;Lnvb;Ldei;[B[B)V
+    .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    new-instance v0, Ljvk;
+    iput-object p3, p0, Lden;->c:Lnvb;
 
-    new-instance v1, Landroid/graphics/RectF;
+    iput-object p1, p0, Lden;->d:Llzk;
 
-    invoke-direct {v1}, Landroid/graphics/RectF;-><init>()V
+    iput-object p2, p0, Lden;->b:Landroid/content/SharedPreferences;
 
-    invoke-direct {v0, v1}, Ljvk;-><init>(Ljava/lang/Object;)V
+    sget-object p1, Ldei;->b:Ldei;
 
-    new-instance v0, Ljava/util/concurrent/atomic/AtomicBoolean;
+    invoke-virtual {p4, p1}, Ldei;->b(Ldei;)Z
 
-    const/4 v1, 0x1
+    move-result p1
 
-    invoke-direct {v0, v1}, Ljava/util/concurrent/atomic/AtomicBoolean;-><init>(Z)V
+    if-eqz p1, :cond_0
 
-    iput-object v0, p0, Lden;->b:Ljava/util/concurrent/atomic/AtomicBoolean;
+    invoke-static {}, Ldeq;->b()Lghb;
 
-    new-instance v0, Ljava/util/concurrent/atomic/AtomicBoolean;
+    move-result-object p1
 
-    const/4 v1, 0x0
+    invoke-static {p1}, Lojc;->i(Ljava/lang/Object;)Lojc;
 
-    invoke-direct {v0, v1}, Ljava/util/concurrent/atomic/AtomicBoolean;-><init>(Z)V
+    move-result-object p1
 
-    iput-object v0, p0, Lden;->c:Ljava/util/concurrent/atomic/AtomicBoolean;
+    goto :goto_0
 
-    new-instance v0, Ljava/util/ArrayList;
+    :cond_0
+    sget-object p1, Loih;->a:Loih;
 
-    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
-
-    iput-object v0, p0, Lden;->d:Ljava/util/List;
-
-    sget-object v0, Ldht;->a:[Ljava/lang/String;
-
-    invoke-interface {p1}, Ldhi;->e()V
+    :goto_0
+    iput-object p1, p0, Lden;->e:Lojc;
 
     return-void
 .end method
 
-.method public static synthetic collect$002(Lj$/util/stream/Stream;Lj$/util/stream/Collector;)Ljava/lang/Object;
-    .locals 1
+.method static a(Lddg;Ljava/lang/Float;)Lner;
+    .locals 5
 
-    invoke-interface/range {p0 .. p1}, Lj$/util/stream/Stream;->collect(Lj$/util/stream/Collector;)Ljava/lang/Object;
+    iget-object v0, p0, Lddg;->b:Ljava/lang/String;
 
-    move-result-object v0
+    if-eqz v0, :cond_0
 
-    return-object v0
-.end method
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-.method private final e()Ldem;
-    .locals 1
+    invoke-virtual {p1}, Ljava/lang/Float;->floatValue()F
 
-    iget-object v0, p0, Lden;->a:Ldem;
+    move-result p1
+
+    float-to-double v0, p1
+
+    invoke-static {v0, v1}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
+
+    move-result-object p1
+
+    iget-object v0, p0, Lddg;->b:Ljava/lang/String;
 
     invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    return-object v0
-.end method
+    iget-object p0, p0, Lddg;->a:Ljava/lang/String;
 
-.method public static synthetic e$005(Lden;)Ldem;
-    .locals 1
+    sget-object v1, Ldel;->a:Lnep;
 
-    invoke-direct/range {p0 .. p0}, Lden;->e()Ldem;
+    invoke-virtual {v0}, Ljava/lang/String;->length()I
 
-    move-result-object v0
+    move-result v2
 
-    return-object v0
-.end method
+    invoke-static {p0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
-.method public static synthetic e$010(Lden;)Ldem;
-    .locals 1
+    move-result-object v3
 
-    invoke-direct/range {p0 .. p0}, Lden;->e()Ldem;
+    invoke-virtual {v3}, Ljava/lang/String;->length()I
 
-    move-result-object v0
+    move-result v3
 
-    return-object v0
-.end method
+    new-instance v4, Ljava/lang/StringBuilder;
 
-.method private final declared-synchronized f(Ljava/util/List;)V
-    .locals 2
+    add-int/lit8 v2, v2, 0x2
 
-    monitor-enter p0
+    add-int/2addr v2, v3
 
-    :try_start_0
-    iget-object v0, p0, Lden;->d:Ljava/util/List;
+    invoke-direct {v4, v2}, Ljava/lang/StringBuilder;-><init>(I)V
 
-    invoke-interface {v0}, Ljava/util/List;->clear()V
+    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget-object v0, p0, Lden;->d:Ljava/util/List;
+    const-string v0, "__"
 
-    invoke-static {p1}, Lj$/util/Collection$-EL;->stream(Ljava/util/Collection;)Lj$/util/stream/Stream;
+    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object p1
+    invoke-virtual {v4, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    sget-object v1, Lcdm;->h:Lcdm;
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    invoke-interface {p1, v1}, Lj$/util/stream/Stream;->filter(Ljava/util/function/Predicate;)Lj$/util/stream/Stream;
+    move-result-object p0
 
-    move-result-object p1
+    invoke-virtual {p1}, Ljava/lang/Double;->doubleValue()D
 
-    sget-object v1, Lmtf;->a:Lj$/util/stream/Collector;
+    move-result-wide v2
 
-    invoke-interface {p1, v1}, Lj$/util/stream/Stream;->collect(Lj$/util/stream/Collector;)Ljava/lang/Object;
+    invoke-static {v2, v3}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
 
     move-result-object p1
 
-    check-cast p1, Ljava/util/Collection;
+    new-instance v0, Lnem;
 
-    invoke-interface {v0, p1}, Ljava/util/List;->addAll(Ljava/util/Collection;)Z
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    monitor-exit p0
-
-    return-void
-
-    :catchall_0
-    move-exception p1
-
-    monitor-exit p0
-
-    throw p1
-.end method
-
-.method public static synthetic f$007(Ldem;Lddo;)V
-    .locals 1
-
-    invoke-interface/range {p0 .. p1}, Ldem;->f(Lddo;)V
-
-    return-void
-.end method
-
-.method public static synthetic f$008(Lden;Ljava/util/List;)V
-    .locals 1
-
-    invoke-direct/range {p0 .. p1}, Lden;->f(Ljava/util/List;)V
-
-    return-void
-.end method
-
-.method public static synthetic f$011(Ldem;Lddo;)V
-    .locals 1
-
-    invoke-interface/range {p0 .. p1}, Ldem;->f(Lddo;)V
-
-    return-void
-.end method
-
-.method public static synthetic filter$001(Lj$/util/stream/Stream;Ljava/util/function/Predicate;)Lj$/util/stream/Stream;
-    .locals 1
-
-    invoke-interface/range {p0 .. p1}, Lj$/util/stream/Stream;->filter(Ljava/util/function/Predicate;)Lj$/util/stream/Stream;
-
-    move-result-object v0
+    invoke-direct {v0, v1, p0, p1}, Lnem;-><init>(Lnep;Ljava/lang/String;Ljava/lang/Double;)V
 
     return-object v0
+
+    :cond_0
+    const/4 p0, 0x0
+
+    return-object p0
 .end method
 
-.method public static synthetic get$006(Ljava/util/List;I)Ljava/lang/Object;
-    .locals 1
+.method static b(Lddg;Ljava/lang/Integer;)Lner;
+    .locals 5
 
-    invoke-interface/range {p0 .. p1}, Ljava/util/List;->get(I)Ljava/lang/Object;
+    iget-object v0, p0, Lddg;->b:Ljava/lang/String;
 
-    move-result-object v0
+    if-eqz v0, :cond_0
+
+    iget-object p0, p0, Lddg;->a:Ljava/lang/String;
+
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    sget-object v1, Ldel;->a:Lnep;
+
+    invoke-virtual {v0}, Ljava/lang/String;->length()I
+
+    move-result v2
+
+    invoke-static {p0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/lang/String;->length()I
+
+    move-result v3
+
+    new-instance v4, Ljava/lang/StringBuilder;
+
+    add-int/lit8 v2, v2, 0x2
+
+    add-int/2addr v2, v3
+
+    invoke-direct {v4, v2}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v0, "__"
+
+    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v4, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p0
+
+    invoke-virtual {p1}, Ljava/lang/Integer;->intValue()I
+
+    move-result p1
+
+    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object p1
+
+    new-instance v0, Lnek;
+
+    invoke-direct {v0, v1, p0, p1}, Lnek;-><init>(Lnep;Ljava/lang/String;Ljava/lang/Integer;)V
 
     return-object v0
+
+    :cond_0
+    const/4 p0, 0x0
+
+    return-object p0
 .end method
 
-.method public static synthetic get$009(Lmvv;I)Ljava/lang/Object;
-    .locals 1
+.method static c(Lddg;Z)Lner;
+    .locals 5
 
-    invoke-virtual/range {p0 .. p1}, Lmvv;->get(I)Ljava/lang/Object;
+    iget-object v0, p0, Lddg;->b:Ljava/lang/String;
 
-    move-result-object v0
+    if-eqz v0, :cond_0
 
-    return-object v0
+    iget-object p0, p0, Lddg;->a:Ljava/lang/String;
+
+    sget-object v1, Ldel;->a:Lnep;
+
+    invoke-virtual {v0}, Ljava/lang/String;->length()I
+
+    move-result v2
+
+    invoke-static {p0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/lang/String;->length()I
+
+    move-result v3
+
+    new-instance v4, Ljava/lang/StringBuilder;
+
+    add-int/lit8 v2, v2, 0x2
+
+    add-int/2addr v2, v3
+
+    invoke-direct {v4, v2}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v0, "__"
+
+    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v4, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p0
+
+    invoke-virtual {v1, p0, p1}, Lnep;->c(Ljava/lang/String;Z)Lner;
+
+    move-result-object p0
+
+    return-object p0
+
+    :cond_0
+    const/4 p0, 0x0
+
+    return-object p0
 .end method
 
-.method public static synthetic isEmpty$003(Lmvv;)Z
-    .locals 1
+.method static e(Ljava/lang/Boolean;)Z
+    .locals 0
 
-    invoke-virtual/range {p0 .. p0}, Lmvv;->isEmpty()Z
+    if-eqz p0, :cond_0
 
-    move-result v0
+    invoke-virtual {p0}, Ljava/lang/Boolean;->booleanValue()Z
 
-    return v0
-.end method
+    move-result p0
 
-.method public static synthetic isEmpty$004(Ljava/util/List;)Z
-    .locals 1
+    return p0
 
-    invoke-interface/range {p0 .. p0}, Ljava/util/List;->isEmpty()Z
+    :cond_0
+    const/4 p0, 0x0
 
-    move-result v0
-
-    return v0
+    return p0
 .end method
 
 
 # virtual methods
-.method public a(Ljava/util/List;)V
-    .locals 5
-
-    return-void
-.end method
-
-.method public final b()V
-    .locals 2
-
-    iget-object v0, p0, Lden;->b:Ljava/util/concurrent/atomic/AtomicBoolean;
-
-    const/4 v1, 0x1
-
-    invoke-virtual {v0, v1}, Ljava/util/concurrent/atomic/AtomicBoolean;->set(Z)V
-
-    return-void
-.end method
-
-.method public final c(Lhrc;)V
-    .locals 1
-
-    iget-object p1, p0, Lden;->b:Ljava/util/concurrent/atomic/AtomicBoolean;
+.method final d(Ljava/lang/String;)Ljava/lang/String;
+    .locals 3
 
     const/4 v0, 0x0
 
-    invoke-virtual {p1, v0}, Ljava/util/concurrent/atomic/AtomicBoolean;->set(Z)V
+    if-nez p1, :cond_0
 
-    iget-object p1, p0, Lden;->c:Ljava/util/concurrent/atomic/AtomicBoolean;
+    return-object v0
 
-    invoke-virtual {p1, v0}, Ljava/util/concurrent/atomic/AtomicBoolean;->set(Z)V
+    :cond_0
+    iget-object v1, p0, Lden;->d:Llzk;
 
-    monitor-enter p0
+    invoke-virtual {v1, p1}, Llzk;->a(Ljava/lang/String;)Ljava/lang/String;
 
-    :try_start_0
-    monitor-exit p0
+    move-result-object v1
 
-    return-void
+    if-eqz v1, :cond_1
 
-    :catchall_0
-    move-exception p1
+    return-object v1
 
-    monitor-exit p0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    :cond_1
+    iget-object v1, p0, Lden;->e:Lojc;
 
-    throw p1
-.end method
+    invoke-virtual {v1}, Lojc;->g()Z
 
-.method public final d()V
-    .locals 0
+    move-result v1
 
-    invoke-static {}, Ljuh;->a()V
+    if-eqz v1, :cond_3
 
-    return-void
+    iget-object v1, p0, Lden;->e:Lojc;
+
+    invoke-virtual {v1}, Lojc;->c()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Lghb;
+
+    iget-boolean v1, v1, Lghb;->a:Z
+
+    if-eqz v1, :cond_3
+
+    iget-object v1, p0, Lden;->e:Lojc;
+
+    invoke-virtual {v1}, Lojc;->c()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Lghb;
+
+    iget-boolean v1, v1, Lghb;->b:Z
+
+    if-nez v1, :cond_2
+
+    goto :goto_0
+
+    :cond_2
+    return-object v0
+
+    :cond_3
+    :goto_0
+    iget-object v0, p0, Lden;->d:Llzk;
+
+    const-string v1, "persist."
+
+    invoke-virtual {p1}, Ljava/lang/String;->length()I
+
+    move-result v2
+
+    if-eqz v2, :cond_4
+
+    invoke-virtual {v1, p1}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object p1
+
+    goto :goto_1
+
+    :cond_4
+    new-instance p1, Ljava/lang/String;
+
+    invoke-direct {p1, v1}, Ljava/lang/String;-><init>(Ljava/lang/String;)V
+
+    :goto_1
+    invoke-virtual {v0, p1}, Llzk;->a(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object p1
+
+    return-object p1
 .end method

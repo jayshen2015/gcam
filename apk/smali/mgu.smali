@@ -1,141 +1,256 @@
 .class public final Lmgu;
 .super Ljava/lang/Object;
 
-# interfaces
-.implements Landroid/view/View$OnTouchListener;
-
 
 # instance fields
-.field private final a:Landroid/app/Dialog;
+.field public final a:Lmhe;
 
-.field private final b:I
+.field public final b:Ljava/util/List;
 
-.field private final c:I
+.field public final c:Lmgw;
 
 
 # direct methods
-.method public constructor <init>(Landroid/app/Dialog;Landroid/graphics/Rect;)V
-    .locals 1
+.method public constructor <init>()V
+    .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lmgu;->a:Landroid/app/Dialog;
-
-    iget v0, p2, Landroid/graphics/Rect;->left:I
-
-    iput v0, p0, Lmgu;->b:I
-
-    iget p2, p2, Landroid/graphics/Rect;->top:I
-
-    iput p2, p0, Lmgu;->c:I
-
-    invoke-virtual {p1}, Landroid/app/Dialog;->getContext()Landroid/content/Context;
-
-    move-result-object p1
-
-    invoke-static {p1}, Landroid/view/ViewConfiguration;->get(Landroid/content/Context;)Landroid/view/ViewConfiguration;
-
-    move-result-object p1
-
-    invoke-virtual {p1}, Landroid/view/ViewConfiguration;->getScaledWindowTouchSlop()I
 
     return-void
 .end method
 
+.method public constructor <init>(Lmhe;Ljava/util/List;Lmgw;)V
+    .locals 0
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lmgu;->a:Lmhe;
+
+    iput-object p2, p0, Lmgu;->b:Ljava/util/List;
+
+    iput-object p3, p0, Lmgu;->c:Lmgw;
+
+    return-void
+.end method
+
+.method public static a()Lmgt;
+    .locals 2
+
+    new-instance v0, Lmgt;
+
+    invoke-direct {v0}, Lmgt;-><init>()V
+
+    sget-object v1, Lmgw;->b:Lmgw;
+
+    invoke-virtual {v0, v1}, Lmgt;->c(Lmgw;)V
+
+    return-object v0
+.end method
+
 
 # virtual methods
-.method public final onTouch(Landroid/view/View;Landroid/view/MotionEvent;)Z
-    .locals 5
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 4
 
-    const v0, 0x1020002
+    const/4 v0, 0x1
 
-    invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+    if-ne p1, p0, :cond_0
 
-    move-result-object v0
+    return v0
 
-    iget v1, p0, Lmgu;->b:I
+    :cond_0
+    instance-of v1, p1, Lmgu;
 
-    invoke-virtual {v0}, Landroid/view/View;->getLeft()I
+    const/4 v2, 0x0
 
-    move-result v2
+    if-eqz v1, :cond_1
 
-    add-int/2addr v1, v2
+    check-cast p1, Lmgu;
 
-    invoke-virtual {v0}, Landroid/view/View;->getWidth()I
+    iget-object v1, p0, Lmgu;->a:Lmhe;
 
-    move-result v2
+    iget-object v3, p1, Lmgu;->a:Lmhe;
 
-    add-int/2addr v2, v1
-
-    iget v3, p0, Lmgu;->c:I
-
-    invoke-virtual {v0}, Landroid/view/View;->getTop()I
-
-    move-result v4
-
-    add-int/2addr v3, v4
-
-    invoke-virtual {v0}, Landroid/view/View;->getHeight()I
-
-    move-result v0
-
-    add-int/2addr v0, v3
-
-    new-instance v4, Landroid/graphics/RectF;
-
-    int-to-float v1, v1
-
-    int-to-float v3, v3
-
-    int-to-float v2, v2
-
-    int-to-float v0, v0
-
-    invoke-direct {v4, v1, v3, v2, v0}, Landroid/graphics/RectF;-><init>(FFFF)V
-
-    invoke-virtual {p2}, Landroid/view/MotionEvent;->getX()F
-
-    move-result v0
-
-    invoke-virtual {p2}, Landroid/view/MotionEvent;->getY()F
+    invoke-virtual {v1, v3}, Lppd;->equals(Ljava/lang/Object;)Z
 
     move-result v1
 
-    invoke-virtual {v4, v0, v1}, Landroid/graphics/RectF;->contains(FF)Z
+    if-eqz v1, :cond_1
 
-    move-result v0
+    iget-object v1, p0, Lmgu;->b:Ljava/util/List;
 
-    if-eqz v0, :cond_0
+    iget-object v3, p1, Lmgu;->b:Ljava/util/List;
 
-    const/4 p1, 0x0
+    invoke-interface {v1, v3}, Ljava/util/List;->equals(Ljava/lang/Object;)Z
 
-    return p1
+    move-result v1
 
-    :cond_0
-    invoke-static {p2}, Landroid/view/MotionEvent;->obtain(Landroid/view/MotionEvent;)Landroid/view/MotionEvent;
+    if-eqz v1, :cond_1
 
-    move-result-object v0
+    iget-object v1, p0, Lmgu;->c:Lmgw;
 
-    invoke-virtual {p2}, Landroid/view/MotionEvent;->getAction()I
+    iget-object p1, p1, Lmgu;->c:Lmgw;
 
-    move-result p2
-
-    const/4 v1, 0x1
-
-    if-ne p2, v1, :cond_1
-
-    const/4 p2, 0x4
-
-    invoke-virtual {v0, p2}, Landroid/view/MotionEvent;->setAction(I)V
-
-    :cond_1
-    invoke-virtual {p1}, Landroid/view/View;->performClick()Z
-
-    iget-object p1, p0, Lmgu;->a:Landroid/app/Dialog;
-
-    invoke-virtual {p1, v0}, Landroid/app/Dialog;->onTouchEvent(Landroid/view/MotionEvent;)Z
+    invoke-virtual {v1, p1}, Lppd;->equals(Ljava/lang/Object;)Z
 
     move-result p1
 
-    return p1
+    if-eqz p1, :cond_1
+
+    return v0
+
+    :cond_1
+    return v2
+.end method
+
+.method public final hashCode()I
+    .locals 3
+
+    iget-object v0, p0, Lmgu;->a:Lmhe;
+
+    iget v1, v0, Lppd;->aD:I
+
+    if-eqz v1, :cond_0
+
+    goto :goto_0
+
+    :cond_0
+    sget-object v1, Lpqu;->a:Lpqu;
+
+    invoke-virtual {v1, v0}, Lpqu;->b(Ljava/lang/Object;)Lprb;
+
+    move-result-object v1
+
+    invoke-interface {v1, v0}, Lprb;->b(Ljava/lang/Object;)I
+
+    move-result v1
+
+    iput v1, v0, Lppd;->aD:I
+
+    :goto_0
+    const v0, 0xf4243
+
+    xor-int/2addr v1, v0
+
+    mul-int v1, v1, v0
+
+    iget-object v2, p0, Lmgu;->b:Ljava/util/List;
+
+    invoke-interface {v2}, Ljava/util/List;->hashCode()I
+
+    move-result v2
+
+    xor-int/2addr v1, v2
+
+    mul-int v1, v1, v0
+
+    iget-object v0, p0, Lmgu;->c:Lmgw;
+
+    iget v2, v0, Lppd;->aD:I
+
+    if-eqz v2, :cond_1
+
+    goto :goto_1
+
+    :cond_1
+    sget-object v2, Lpqu;->a:Lpqu;
+
+    invoke-virtual {v2, v0}, Lpqu;->b(Ljava/lang/Object;)Lprb;
+
+    move-result-object v2
+
+    invoke-interface {v2, v0}, Lprb;->b(Ljava/lang/Object;)I
+
+    move-result v2
+
+    iput v2, v0, Lppd;->aD:I
+
+    :goto_1
+    xor-int v0, v1, v2
+
+    return v0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .locals 7
+
+    iget-object v0, p0, Lmgu;->a:Lmhe;
+
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lmgu;->b:Ljava/util/List;
+
+    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v1
+
+    iget-object v2, p0, Lmgu;->c:Lmgw;
+
+    invoke-static {v2}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/lang/String;->length()I
+
+    move-result v3
+
+    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-virtual {v4}, Ljava/lang/String;->length()I
+
+    move-result v4
+
+    invoke-static {v2}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-virtual {v5}, Ljava/lang/String;->length()I
+
+    move-result v5
+
+    new-instance v6, Ljava/lang/StringBuilder;
+
+    add-int/lit8 v3, v3, 0x51
+
+    add-int/2addr v3, v4
+
+    add-int/2addr v3, v5
+
+    invoke-direct {v6, v3}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string v3, "LinkPresentationResult{linkDataResult="
+
+    invoke-virtual {v6, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v6, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v0, ", linkChipResult="
+
+    invoke-virtual {v6, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v6, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v0, ", linkChipResultMetadata="
+
+    invoke-virtual {v6, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v6, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v0, "}"
+
+    invoke-virtual {v6, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
 .end method

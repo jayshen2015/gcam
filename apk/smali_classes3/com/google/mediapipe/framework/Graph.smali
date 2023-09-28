@@ -3,23 +3,23 @@
 
 
 # static fields
-.field private static final a:Lnak;
+.field private static final a:Louj;
 
 
 # instance fields
-.field private final b:J
+.field private b:J
 
 .field private final c:Ljava/util/List;
 
-.field private final d:Ljava/util/Map;
+.field private d:Ljava/util/Map;
 
-.field private final e:Ljava/util/Map;
+.field private e:Ljava/util/Map;
 
 .field private f:Z
 
 .field private g:Z
 
-.field private final h:Ljava/util/Map;
+.field private h:Ljava/util/Map;
 
 
 # direct methods
@@ -28,11 +28,11 @@
 
     const-string v0, "com/google/mediapipe/framework/Graph"
 
-    invoke-static {v0}, Lnak;->h(Ljava/lang/String;)Lnak;
+    invoke-static {v0}, Louj;->h(Ljava/lang/String;)Louj;
 
     move-result-object v0
 
-    sput-object v0, Lcom/google/mediapipe/framework/Graph;->a:Lnak;
+    sput-object v0, Lcom/google/mediapipe/framework/Graph;->a:Louj;
 
     return-void
 .end method
@@ -238,7 +238,7 @@
     :goto_0
     const-string v1, "Invalid context, tearDown() might have been called."
 
-    invoke-static {v0, v1}, Lmoz;->q(ZLjava/lang/Object;)V
+    invoke-static {v0, v1}, Lobr;->aR(ZLjava/lang/Object;)V
 
     iget-boolean v0, p0, Lcom/google/mediapipe/framework/Graph;->g:Z
 
@@ -317,21 +317,21 @@
 
     if-nez p3, :cond_2
 
-    sget-object p3, Lcom/google/mediapipe/framework/Graph;->a:Lnak;
+    sget-object p3, Lcom/google/mediapipe/framework/Graph;->a:Louj;
 
-    invoke-virtual {p3}, Lnaf;->b()Lnaz;
+    invoke-virtual {p3}, Loue;->b()Lova;
 
     move-result-object p3
+
+    const-string p4, "Stream: %s might be missing."
 
     invoke-interface {p2}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
     move-result-object p2
 
-    const-string p4, "Stream: %s might be missing."
+    const/16 v0, 0xe79
 
-    const/16 v0, 0x11ef
-
-    invoke-static {p3, p4, p2, v0}, Ld;->j(Lnaz;Ljava/lang/String;Ljava/lang/Object;C)V
+    invoke-static {p3, p4, p2, v0}, Ld;->u(Lova;Ljava/lang/String;Ljava/lang/Object;C)V
 
     goto :goto_1
 
@@ -345,13 +345,13 @@
     throw p1
 
     :cond_4
-    new-instance v1, Lmaf;
+    new-instance v1, Lpmx;
 
     invoke-static {p3, p4}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     move-result-object p3
 
-    invoke-direct {v1, v0, p3}, Lmaf;-><init>(Lcom/google/mediapipe/framework/Packet;Ljava/lang/Long;)V
+    invoke-direct {v1, v0, p3}, Lpmx;-><init>(Lcom/google/mediapipe/framework/Packet;Ljava/lang/Long;)V
 
     invoke-interface {p1, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
@@ -429,7 +429,7 @@
     :goto_0
     const-string v1, "Invalid context, tearDown() might have been called already."
 
-    invoke-static {v0, v1}, Lmoz;->q(ZLjava/lang/Object;)V
+    invoke-static {v0, v1}, Lobr;->aR(ZLjava/lang/Object;)V
 
     iget-boolean v0, p0, Lcom/google/mediapipe/framework/Graph;->g:Z
 
@@ -445,7 +445,7 @@
     const/4 v4, 0x0
 
     :goto_1
-    invoke-static {v4}, Lmoz;->p(Z)V
+    invoke-static {v4}, Lobr;->aQ(Z)V
 
     iget-object v0, p0, Lcom/google/mediapipe/framework/Graph;->c:Ljava/util/List;
 
@@ -469,7 +469,7 @@
     throw p1
 .end method
 
-.method public final declared-synchronized d(Ljava/lang/String;)V
+.method public final declared-synchronized d([B)V
     .locals 5
 
     monitor-enter p0
@@ -493,51 +493,7 @@
     :goto_0
     const-string v1, "Invalid context, tearDown() might have been called already."
 
-    invoke-static {v0, v1}, Lmoz;->q(ZLjava/lang/Object;)V
-
-    iget-wide v0, p0, Lcom/google/mediapipe/framework/Graph;->b:J
-
-    invoke-direct {p0, v0, v1, p1}, Lcom/google/mediapipe/framework/Graph;->nativeLoadBinaryGraph(JLjava/lang/String;)V
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    monitor-exit p0
-
-    return-void
-
-    :catchall_0
-    move-exception p1
-
-    monitor-exit p0
-
-    throw p1
-.end method
-
-.method public final declared-synchronized e([B)V
-    .locals 5
-
-    monitor-enter p0
-
-    :try_start_0
-    iget-wide v0, p0, Lcom/google/mediapipe/framework/Graph;->b:J
-
-    const-wide/16 v2, 0x0
-
-    cmp-long v4, v0, v2
-
-    if-eqz v4, :cond_0
-
-    const/4 v0, 0x1
-
-    goto :goto_0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    :goto_0
-    const-string v1, "Invalid context, tearDown() might have been called already."
-
-    invoke-static {v0, v1}, Lmoz;->q(ZLjava/lang/Object;)V
+    invoke-static {v0, v1}, Lobr;->aR(ZLjava/lang/Object;)V
 
     iget-wide v0, p0, Lcom/google/mediapipe/framework/Graph;->b:J
 
@@ -557,7 +513,7 @@
     throw p1
 .end method
 
-.method public final declared-synchronized f(J)V
+.method public final declared-synchronized e(J)V
     .locals 6
 
     monitor-enter p0
@@ -583,13 +539,13 @@
     :goto_0
     const-string v1, "Invalid context, tearDown() might have been called already."
 
-    invoke-static {v0, v1}, Lmoz;->q(ZLjava/lang/Object;)V
+    invoke-static {v0, v1}, Lobr;->aR(ZLjava/lang/Object;)V
 
     iget-boolean v0, p0, Lcom/google/mediapipe/framework/Graph;->g:Z
 
     xor-int/2addr v0, v4
 
-    invoke-static {v0}, Lmoz;->p(Z)V
+    invoke-static {v0}, Lobr;->aQ(Z)V
 
     iget-wide v0, p0, Lcom/google/mediapipe/framework/Graph;->b:J
 
@@ -609,7 +565,7 @@
     throw p1
 .end method
 
-.method public final declared-synchronized g()V
+.method public final declared-synchronized f()V
     .locals 15
 
     monitor-enter p0
@@ -637,7 +593,7 @@
     :goto_0
     const-string v1, "Invalid context, tearDown() might have been called."
 
-    invoke-static {v0, v1}, Lmoz;->q(ZLjava/lang/Object;)V
+    invoke-static {v0, v1}, Lobr;->aR(ZLjava/lang/Object;)V
 
     iput-boolean v5, p0, Lcom/google/mediapipe/framework/Graph;->f:Z
 
@@ -776,7 +732,7 @@
 
     move-result-object v6
 
-    check-cast v6, Lmaf;
+    check-cast v6, Lpmx;
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
@@ -791,17 +747,13 @@
 
     check-cast v10, Ljava/lang/String;
 
-    iget-object v7, v6, Lmaf;->b:Ljava/lang/Object;
-
-    check-cast v7, Lcom/google/mediapipe/framework/Packet;
+    iget-object v7, v6, Lpmx;->a:Lcom/google/mediapipe/framework/Packet;
 
     invoke-virtual {v7}, Lcom/google/mediapipe/framework/Packet;->getNativeHandle()J
 
     move-result-wide v11
 
-    iget-object v7, v6, Lmaf;->a:Ljava/lang/Object;
-
-    check-cast v7, Ljava/lang/Long;
+    iget-object v7, v6, Lpmx;->b:Ljava/lang/Long;
 
     invoke-virtual {v7}, Ljava/lang/Long;->longValue()J
 
@@ -815,9 +767,7 @@
     .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
     :try_start_3
-    iget-object v6, v6, Lmaf;->b:Ljava/lang/Object;
-
-    check-cast v6, Lcom/google/mediapipe/framework/Packet;
+    iget-object v6, v6, Lpmx;->a:Lcom/google/mediapipe/framework/Packet;
 
     invoke-virtual {v6}, Lcom/google/mediapipe/framework/Packet;->release()V
 
@@ -828,21 +778,23 @@
     :catch_0
     move-exception v0
 
-    sget-object v2, Lcom/google/mediapipe/framework/Graph;->a:Lnak;
+    sget-object v2, Lcom/google/mediapipe/framework/Graph;->a:Louj;
 
-    invoke-virtual {v2}, Lnaf;->b()Lnaz;
-
-    move-result-object v2
-
-    check-cast v2, Lnah;
-
-    const/16 v3, 0x11ed
-
-    invoke-interface {v2, v3}, Lnah;->G(I)Lnaz;
+    invoke-virtual {v2}, Loue;->b()Lova;
 
     move-result-object v2
 
-    check-cast v2, Lnah;
+    check-cast v2, Loug;
+
+    const/16 v3, 0xe77
+
+    invoke-interface {v2, v3}, Loug;->G(I)Lova;
+
+    move-result-object v2
+
+    check-cast v2, Loug;
+
+    const-string v3, "AddPacket for stream: %s failed: %s."
 
     invoke-interface {v1}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
@@ -850,11 +802,9 @@
 
     invoke-virtual {v0}, Lcom/google/mediapipe/framework/MediaPipeException;->getMessage()Ljava/lang/String;
 
-    move-result-object v3
+    move-result-object v4
 
-    const-string v4, "AddPacket for stream: %s failed: %s."
-
-    invoke-interface {v2, v4, v1, v3}, Lnah;->z(Ljava/lang/String;Ljava/lang/Object;Ljava/lang/Object;)V
+    invoke-interface {v2, v3, v1, v4}, Loug;->y(Ljava/lang/String;Ljava/lang/Object;Ljava/lang/Object;)V
 
     throw v0
 
@@ -884,7 +834,7 @@
     goto :goto_2
 .end method
 
-.method public final declared-synchronized h(Ljava/lang/String;)V
+.method public final declared-synchronized g(Ljava/lang/String;)V
     .locals 7
 
     monitor-enter p0
@@ -912,7 +862,7 @@
     :goto_0
     const-string v1, "Invalid context, tearDown() might have been called."
 
-    invoke-static {v0, v1}, Lmoz;->q(ZLjava/lang/Object;)V
+    invoke-static {v0, v1}, Lobr;->aR(ZLjava/lang/Object;)V
 
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
@@ -930,7 +880,7 @@
     const/4 v4, 0x0
 
     :goto_1
-    invoke-static {v4}, Lmoz;->p(Z)V
+    invoke-static {v4}, Lobr;->aQ(Z)V
 
     iget-wide v0, p0, Lcom/google/mediapipe/framework/Graph;->b:J
 
@@ -948,4 +898,50 @@
     monitor-exit p0
 
     throw p1
+.end method
+
+.method public final declared-synchronized h()V
+    .locals 5
+
+    monitor-enter p0
+
+    :try_start_0
+    iget-wide v0, p0, Lcom/google/mediapipe/framework/Graph;->b:J
+
+    const-wide/16 v2, 0x0
+
+    cmp-long v4, v0, v2
+
+    if-eqz v4, :cond_0
+
+    const/4 v0, 0x1
+
+    goto :goto_0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    :goto_0
+    const-string v1, "Invalid context, tearDown() might have been called already."
+
+    invoke-static {v0, v1}, Lobr;->aR(ZLjava/lang/Object;)V
+
+    iget-wide v0, p0, Lcom/google/mediapipe/framework/Graph;->b:J
+
+    const-string v2, "gca_postprocessing.binarypb"
+
+    invoke-direct {p0, v0, v1, v2}, Lcom/google/mediapipe/framework/Graph;->nativeLoadBinaryGraph(JLjava/lang/String;)V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    monitor-exit p0
+
+    return-void
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit p0
+
+    throw v0
 .end method

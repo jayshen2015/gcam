@@ -1,116 +1,100 @@
 .class public final Lofn;
-.super Lofi;
+.super Lbmo;
 
-
-# static fields
-.field public static final CREATOR:Landroid/os/Parcelable$Creator;
+# interfaces
+.implements Landroid/os/IInterface;
 
 
 # instance fields
-.field public a:F
-
-.field public b:F
-
-.field public c:F
-
-.field public f:F
+.field final synthetic a:Ldku;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
-
-    new-instance v0, Llqu;
-
-    const/16 v1, 0xa
-
-    invoke-direct {v0, v1}, Llqu;-><init>(I)V
-
-    sput-object v0, Lofn;->CREATOR:Landroid/os/Parcelable$Creator;
-
-    return-void
-.end method
-
 .method public constructor <init>()V
-    .locals 0
+    .locals 1
 
-    invoke-direct {p0}, Lofi;-><init>()V
+    const-string v0, "com.google.android.systemui.elmyra.IElmyraServiceGestureListener"
+
+    invoke-direct {p0, v0}, Lbmo;-><init>(Ljava/lang/String;)V
 
     return-void
 .end method
 
-.method public constructor <init>(Landroid/os/Parcel;)V
+.method public constructor <init>(Ldku;)V
     .locals 0
 
-    invoke-direct {p0}, Lofi;-><init>()V
+    iput-object p1, p0, Lofn;->a:Ldku;
 
-    invoke-virtual {p0, p1}, Lofi;->a(Landroid/os/Parcel;)V
+    const-string p1, "com.google.android.systemui.elmyra.IElmyraServiceGestureListener"
+
+    invoke-direct {p0, p1}, Lbmo;-><init>(Ljava/lang/String;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Landroid/os/Parcel;)V
-    .locals 1
-
-    invoke-super {p0, p1}, Lofi;->a(Landroid/os/Parcel;)V
-
-    invoke-virtual {p1}, Landroid/os/Parcel;->readFloat()F
-
-    move-result v0
-
-    iput v0, p0, Lofn;->a:F
-
-    invoke-virtual {p1}, Landroid/os/Parcel;->readFloat()F
-
-    move-result v0
-
-    iput v0, p0, Lofn;->b:F
-
-    invoke-virtual {p1}, Landroid/os/Parcel;->readFloat()F
-
-    move-result v0
-
-    iput v0, p0, Lofn;->c:F
-
-    invoke-virtual {p1}, Landroid/os/Parcel;->readFloat()F
-
-    move-result p1
-
-    iput p1, p0, Lofn;->f:F
-
-    return-void
-.end method
-
-.method public final describeContents()I
-    .locals 1
-
-    const/4 v0, 0x0
-
-    return v0
-.end method
-
-.method public final writeToParcel(Landroid/os/Parcel;I)V
+.method protected final x(ILandroid/os/Parcel;Landroid/os/Parcel;)Z
     .locals 0
 
-    invoke-super {p0, p1, p2}, Lofi;->writeToParcel(Landroid/os/Parcel;I)V
+    packed-switch p1, :pswitch_data_0
 
-    iget p2, p0, Lofn;->a:F
+    const/4 p1, 0x0
 
-    invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeFloat(F)V
+    return p1
 
-    iget p2, p0, Lofn;->b:F
+    :pswitch_0
+    iget-object p1, p0, Lofn;->a:Ldku;
 
-    invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeFloat(F)V
+    iget-object p1, p1, Ldku;->b:Ljava/lang/Object;
 
-    iget p2, p0, Lofn;->c:F
+    monitor-enter p1
 
-    invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeFloat(F)V
+    :try_start_0
+    monitor-exit p1
 
-    iget p2, p0, Lofn;->f:F
+    goto :goto_0
 
-    invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeFloat(F)V
+    :catchall_0
+    move-exception p2
 
-    return-void
+    monitor-exit p1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw p2
+
+    :pswitch_1
+    invoke-virtual {p2}, Landroid/os/Parcel;->readFloat()F
+
+    invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
+
+    iget-object p1, p0, Lofn;->a:Ldku;
+
+    iget-object p1, p1, Ldku;->b:Ljava/lang/Object;
+
+    monitor-enter p1
+
+    :try_start_1
+    monitor-exit p1
+
+    :goto_0
+    const/4 p1, 0x1
+
+    return p1
+
+    :catchall_1
+    move-exception p2
+
+    monitor-exit p1
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_1
+
+    throw p2
+
+    :pswitch_data_0
+    .packed-switch 0x1
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method

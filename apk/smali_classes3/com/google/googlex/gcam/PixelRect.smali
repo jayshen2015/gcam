@@ -61,31 +61,7 @@
     return v0
 .end method
 
-.method public final c()I
-    .locals 2
-
-    iget-wide v0, p0, Lcom/google/googlex/gcam/PixelRect;->a:J
-
-    invoke-static {v0, v1, p0}, Lcom/google/googlex/gcam/GcamModuleJNI;->PixelRect_height(JLcom/google/googlex/gcam/PixelRect;)I
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public final d()I
-    .locals 2
-
-    iget-wide v0, p0, Lcom/google/googlex/gcam/PixelRect;->a:J
-
-    invoke-static {v0, v1, p0}, Lcom/google/googlex/gcam/GcamModuleJNI;->PixelRect_width(JLcom/google/googlex/gcam/PixelRect;)I
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public final declared-synchronized e()V
+.method public final declared-synchronized c()V
     .locals 5
 
     monitor-enter p0
@@ -127,7 +103,7 @@
     throw v0
 .end method
 
-.method public final f(I)V
+.method public final d(I)V
     .locals 2
 
     iget-wide v0, p0, Lcom/google/googlex/gcam/PixelRect;->a:J
@@ -137,15 +113,7 @@
     return-void
 .end method
 
-.method protected final finalize()V
-    .locals 0
-
-    invoke-virtual {p0}, Lcom/google/googlex/gcam/PixelRect;->e()V
-
-    return-void
-.end method
-
-.method public final g(I)V
+.method public final e(I)V
     .locals 2
 
     iget-wide v0, p0, Lcom/google/googlex/gcam/PixelRect;->a:J
@@ -155,7 +123,7 @@
     return-void
 .end method
 
-.method public final h(I)V
+.method public final f(I)V
     .locals 2
 
     iget-wide v0, p0, Lcom/google/googlex/gcam/PixelRect;->a:J
@@ -165,7 +133,15 @@
     return-void
 .end method
 
-.method public final i(I)V
+.method protected final finalize()V
+    .locals 0
+
+    invoke-virtual {p0}, Lcom/google/googlex/gcam/PixelRect;->c()V
+
+    return-void
+.end method
+
+.method public final g(I)V
     .locals 2
 
     iget-wide v0, p0, Lcom/google/googlex/gcam/PixelRect;->a:J

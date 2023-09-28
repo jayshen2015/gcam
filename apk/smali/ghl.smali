@@ -1,35 +1,49 @@
-.class public final Lghl;
+.class public final synthetic Lghl;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lghh;
+.implements Llht;
+
+
+# instance fields
+.field public final synthetic a:Lghu;
 
 
 # direct methods
-.method public constructor <init>()V
+.method public synthetic constructor <init>(Lghu;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lghl;->a:Lghu;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Lker;)Lghg;
-    .locals 1
+.method public final a(Ljava/lang/Object;)V
+    .locals 2
 
-    new-instance p1, Lght;
+    iget-object v0, p0, Lghl;->a:Lghu;
 
-    const/4 v0, 0x1
+    check-cast p1, Lbxg;
 
-    invoke-direct {p1, v0}, Lght;-><init>(I)V
+    iget-object p1, v0, Lghu;->h:Lcom/google/android/apps/camera/stats/timing/CameraActivityTiming;
 
-    return-object p1
-.end method
+    sget-object v0, Lijf;->l:Lijf;
 
-.method public final b()V
-    .locals 0
+    sget-object v1, Lcom/google/android/apps/camera/stats/timing/CameraActivityTiming;->a:Lijr;
+
+    invoke-virtual {p1, v0, v1}, Lijs;->j(Ljava/lang/Enum;Lijr;)V
+
+    iget-object v0, p1, Lcom/google/android/apps/camera/stats/timing/CameraActivityTiming;->g:Llji;
+
+    invoke-interface {v0}, Llji;->a()V
+
+    sget-object v0, Llji;->b:Llji;
+
+    iput-object v0, p1, Lcom/google/android/apps/camera/stats/timing/CameraActivityTiming;->g:Llji;
 
     return-void
 .end method

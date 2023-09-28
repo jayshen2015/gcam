@@ -20,15 +20,15 @@
 
 .field public final d:Landroid/util/SparseArray;
 
-.field public e:Z
+.field public e:Lpya;
 
-.field public f:Lofu;
+.field public f:Z
 
-.field public g:Llpu;
+.field public g:Lpyd;
 
 .field private final j:I
 
-.field private final k:Ljnt;
+.field private final k:Lpye;
 
 
 # direct methods
@@ -49,9 +49,9 @@
 .method public constructor <init>(Landroid/content/Context;Lcom/google/vr/vrcore/controller/api/ControllerServiceBridge$Callbacks;I)V
     .locals 3
 
-    new-instance v0, Lofm;
+    new-instance v0, Lpxu;
 
-    invoke-direct {v0, p3}, Lofm;-><init>(I)V
+    invoke-direct {v0, p3}, Lpxu;-><init>(I)V
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -67,15 +67,15 @@
 
     iput-object v1, p0, Lcom/google/vr/vrcore/controller/api/ControllerServiceBridge;->a:Landroid/content/Context;
 
-    new-instance v1, Llpu;
+    new-instance v1, Lpya;
 
     const/4 v2, 0x0
 
-    invoke-direct {v1, p2, v0, v2}, Llpu;-><init>(Lcom/google/vr/vrcore/controller/api/ControllerServiceBridge$Callbacks;Lofm;I)V
+    invoke-direct {v1, p2, v0, v2}, Lpya;-><init>(Lcom/google/vr/vrcore/controller/api/ControllerServiceBridge$Callbacks;Lpxu;I)V
 
-    iput-object v1, p0, Lcom/google/vr/vrcore/controller/api/ControllerServiceBridge;->g:Llpu;
+    iput-object v1, p0, Lcom/google/vr/vrcore/controller/api/ControllerServiceBridge;->e:Lpya;
 
-    iget p2, v1, Llpu;->a:I
+    iget p2, v1, Lpya;->c:I
 
     invoke-virtual {p3, p2, v1}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
@@ -89,20 +89,18 @@
 
     iput-object p2, p0, Lcom/google/vr/vrcore/controller/api/ControllerServiceBridge;->b:Landroid/os/Handler;
 
-    new-instance p2, Ljnt;
+    new-instance p2, Lpye;
 
-    const/4 p3, 0x4
+    invoke-direct {p2, p0, v2}, Lpye;-><init>(Lcom/google/vr/vrcore/controller/api/ControllerServiceBridge;I)V
 
-    invoke-direct {p2, p0, p3}, Ljnt;-><init>(Lcom/google/vr/vrcore/controller/api/ControllerServiceBridge;I)V
-
-    iput-object p2, p0, Lcom/google/vr/vrcore/controller/api/ControllerServiceBridge;->k:Ljnt;
+    iput-object p2, p0, Lcom/google/vr/vrcore/controller/api/ControllerServiceBridge;->k:Lpye;
 
     :try_start_0
     invoke-static {p1}, Lcom/google/vr/vrcore/base/api/VrCoreUtils;->getVrCoreClientApiVersion(Landroid/content/Context;)I
 
     move-result v2
     :try_end_0
-    .catch Lofb; {:try_start_0 .. :try_end_0} :catch_0
+    .catch Lpxj; {:try_start_0 .. :try_end_0} :catch_0
 
     goto :goto_0
 
@@ -120,7 +118,9 @@
 
     new-instance p2, Ljava/lang/StringBuilder;
 
-    invoke-direct {p2}, Ljava/lang/StringBuilder;-><init>()V
+    const/16 p3, 0x1e
+
+    invoke-direct {p2, p3}, Ljava/lang/StringBuilder;-><init>(I)V
 
     const-string p3, "VrCtl.ServiceBridge"
 
@@ -162,23 +162,21 @@
     throw v0
 .end method
 
-.method private final e(ILlpu;)Z
-    .locals 5
+.method private final e(ILpya;)Z
+    .locals 4
 
     :try_start_0
-    iget-object v0, p0, Lcom/google/vr/vrcore/controller/api/ControllerServiceBridge;->f:Lofu;
+    iget-object v0, p0, Lcom/google/vr/vrcore/controller/api/ControllerServiceBridge;->g:Lpyd;
 
     iget-object v1, p0, Lcom/google/vr/vrcore/controller/api/ControllerServiceBridge;->c:Ljava/lang/String;
 
-    new-instance v2, Ljnt;
+    new-instance v2, Lpye;
 
-    const/4 v3, 0x3
+    const/4 v3, 0x1
 
-    const/4 v4, 0x0
+    invoke-direct {v2, p2, v3}, Lpye;-><init>(Lpya;I)V
 
-    invoke-direct {v2, p2, v3, v4}, Ljnt;-><init>(Llpu;I[B)V
-
-    invoke-virtual {v0}, Lcbe;->a()Landroid/os/Parcel;
+    invoke-virtual {v0}, Lbmn;->a()Landroid/os/Parcel;
 
     move-result-object p2
 
@@ -186,15 +184,15 @@
 
     invoke-virtual {p2, v1}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    invoke-static {p2, v2}, Lcbg;->d(Landroid/os/Parcel;Landroid/os/IInterface;)V
+    invoke-static {p2, v2}, Lbmp;->e(Landroid/os/Parcel;Landroid/os/IInterface;)V
 
     const/4 p1, 0x5
 
-    invoke-virtual {v0, p1, p2}, Lcbe;->y(ILandroid/os/Parcel;)Landroid/os/Parcel;
+    invoke-virtual {v0, p1, p2}, Lbmn;->y(ILandroid/os/Parcel;)Landroid/os/Parcel;
 
     move-result-object p1
 
-    invoke-static {p1}, Lcbg;->e(Landroid/os/Parcel;)Z
+    invoke-static {p1}, Lbmp;->f(Landroid/os/Parcel;)Z
 
     move-result p2
 
@@ -204,9 +202,7 @@
 
     if-eqz p2, :cond_0
 
-    const/4 p1, 0x1
-
-    return p1
+    return v3
 
     :catch_0
     move-exception p1
@@ -230,7 +226,7 @@
 
     invoke-static {}, Lcom/google/vr/vrcore/controller/api/ControllerServiceBridge;->d()V
 
-    iget-boolean v0, p0, Lcom/google/vr/vrcore/controller/api/ControllerServiceBridge;->e:Z
+    iget-boolean v0, p0, Lcom/google/vr/vrcore/controller/api/ControllerServiceBridge;->f:Z
 
     const-string v1, "VrCtl.ServiceBridge"
 
@@ -238,14 +234,14 @@
 
     invoke-static {}, Lcom/google/vr/vrcore/controller/api/ControllerServiceBridge;->d()V
 
-    iget-object v0, p0, Lcom/google/vr/vrcore/controller/api/ControllerServiceBridge;->f:Lofu;
+    iget-object v0, p0, Lcom/google/vr/vrcore/controller/api/ControllerServiceBridge;->g:Lpyd;
 
     if-eqz v0, :cond_0
 
     :try_start_0
     iget-object v2, p0, Lcom/google/vr/vrcore/controller/api/ControllerServiceBridge;->c:Ljava/lang/String;
 
-    invoke-virtual {v0}, Lcbe;->a()Landroid/os/Parcel;
+    invoke-virtual {v0}, Lbmn;->a()Landroid/os/Parcel;
 
     move-result-object v3
 
@@ -253,11 +249,11 @@
 
     const/4 v2, 0x6
 
-    invoke-virtual {v0, v2, v3}, Lcbe;->y(ILandroid/os/Parcel;)Landroid/os/Parcel;
+    invoke-virtual {v0, v2, v3}, Lbmn;->y(ILandroid/os/Parcel;)Landroid/os/Parcel;
 
     move-result-object v0
 
-    invoke-static {v0}, Lcbg;->e(Landroid/os/Parcel;)Z
+    invoke-static {v0}, Lbmp;->f(Landroid/os/Parcel;)Z
 
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
     :try_end_0
@@ -281,25 +277,25 @@
     if-lt v0, v2, :cond_1
 
     :try_start_1
-    iget-object v0, p0, Lcom/google/vr/vrcore/controller/api/ControllerServiceBridge;->f:Lofu;
+    iget-object v0, p0, Lcom/google/vr/vrcore/controller/api/ControllerServiceBridge;->g:Lpyd;
 
     if-eqz v0, :cond_1
 
-    iget-object v2, p0, Lcom/google/vr/vrcore/controller/api/ControllerServiceBridge;->k:Ljnt;
+    iget-object v2, p0, Lcom/google/vr/vrcore/controller/api/ControllerServiceBridge;->k:Lpye;
 
-    invoke-virtual {v0}, Lcbe;->a()Landroid/os/Parcel;
+    invoke-virtual {v0}, Lbmn;->a()Landroid/os/Parcel;
 
     move-result-object v3
 
-    invoke-static {v3, v2}, Lcbg;->d(Landroid/os/Parcel;Landroid/os/IInterface;)V
+    invoke-static {v3, v2}, Lbmp;->e(Landroid/os/Parcel;Landroid/os/IInterface;)V
 
     const/16 v2, 0x9
 
-    invoke-virtual {v0, v2, v3}, Lcbe;->y(ILandroid/os/Parcel;)Landroid/os/Parcel;
+    invoke-virtual {v0, v2, v3}, Lbmn;->y(ILandroid/os/Parcel;)Landroid/os/Parcel;
 
     move-result-object v0
 
-    invoke-static {v0}, Lcbg;->e(Landroid/os/Parcel;)Z
+    invoke-static {v0}, Lbmp;->f(Landroid/os/Parcel;)Z
 
     move-result v2
 
@@ -318,13 +314,31 @@
     :catch_1
     move-exception v0
 
-    invoke-virtual {v0}, Ljava/lang/Object;->toString()Ljava/lang/String;
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v0
 
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/String;->length()I
+
+    move-result v2
+
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    add-int/lit8 v2, v2, 0x37
+
+    invoke-direct {v3, v2}, Ljava/lang/StringBuilder;-><init>(I)V
+
     const-string v2, "Exception while unregistering remote service listener: "
 
-    invoke-virtual {v2, v0}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
+    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v0
 
@@ -338,11 +352,11 @@
 
     const/4 v0, 0x0
 
-    iput-object v0, p0, Lcom/google/vr/vrcore/controller/api/ControllerServiceBridge;->f:Lofu;
+    iput-object v0, p0, Lcom/google/vr/vrcore/controller/api/ControllerServiceBridge;->g:Lpyd;
 
     const/4 v0, 0x0
 
-    iput-boolean v0, p0, Lcom/google/vr/vrcore/controller/api/ControllerServiceBridge;->e:Z
+    iput-boolean v0, p0, Lcom/google/vr/vrcore/controller/api/ControllerServiceBridge;->f:Z
 
     return-void
 
@@ -357,17 +371,17 @@
 .method public final b()V
     .locals 3
 
-    iget-object v0, p0, Lcom/google/vr/vrcore/controller/api/ControllerServiceBridge;->g:Llpu;
+    iget-object v0, p0, Lcom/google/vr/vrcore/controller/api/ControllerServiceBridge;->e:Lpya;
 
-    iget-object v0, v0, Llpu;->b:Ljava/lang/Object;
+    iget-object v0, v0, Lpya;->a:Lcom/google/vr/vrcore/controller/api/ControllerServiceBridge$Callbacks;
 
     invoke-interface {v0}, Lcom/google/vr/vrcore/controller/api/ControllerServiceBridge$Callbacks;->i()V
 
-    iget-object v0, p0, Lcom/google/vr/vrcore/controller/api/ControllerServiceBridge;->g:Llpu;
+    iget-object v0, p0, Lcom/google/vr/vrcore/controller/api/ControllerServiceBridge;->e:Lpya;
 
-    iget v1, v0, Llpu;->a:I
+    iget v1, v0, Lpya;->c:I
 
-    invoke-direct {p0, v1, v0}, Lcom/google/vr/vrcore/controller/api/ControllerServiceBridge;->e(ILlpu;)Z
+    invoke-direct {p0, v1, v0}, Lcom/google/vr/vrcore/controller/api/ControllerServiceBridge;->e(ILpya;)Z
 
     move-result v0
 
@@ -379,9 +393,9 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    iget-object v0, p0, Lcom/google/vr/vrcore/controller/api/ControllerServiceBridge;->g:Llpu;
+    iget-object v0, p0, Lcom/google/vr/vrcore/controller/api/ControllerServiceBridge;->e:Lpya;
 
-    iget-object v0, v0, Llpu;->b:Ljava/lang/Object;
+    iget-object v0, v0, Lpya;->a:Lcom/google/vr/vrcore/controller/api/ControllerServiceBridge$Callbacks;
 
     invoke-interface {v0}, Lcom/google/vr/vrcore/controller/api/ControllerServiceBridge$Callbacks;->f()V
 
@@ -392,38 +406,38 @@
     :cond_0
     iget-object v0, p0, Lcom/google/vr/vrcore/controller/api/ControllerServiceBridge;->d:Landroid/util/SparseArray;
 
-    iget-object v1, p0, Lcom/google/vr/vrcore/controller/api/ControllerServiceBridge;->g:Llpu;
+    iget-object v1, p0, Lcom/google/vr/vrcore/controller/api/ControllerServiceBridge;->e:Lpya;
 
-    iget v2, v1, Llpu;->a:I
+    iget v2, v1, Lpya;->c:I
 
     invoke-virtual {v0, v2, v1}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
     return-void
 .end method
 
-.method public final c(ILofp;)V
+.method public final c(ILpxx;)V
     .locals 3
 
     invoke-static {}, Lcom/google/vr/vrcore/controller/api/ControllerServiceBridge;->d()V
 
-    iget-object v0, p0, Lcom/google/vr/vrcore/controller/api/ControllerServiceBridge;->f:Lofu;
+    iget-object v0, p0, Lcom/google/vr/vrcore/controller/api/ControllerServiceBridge;->g:Lpyd;
 
     const-string v1, "VrCtl.ServiceBridge"
 
     if-eqz v0, :cond_0
 
     :try_start_0
-    invoke-virtual {v0}, Lcbe;->a()Landroid/os/Parcel;
+    invoke-virtual {v0}, Lbmn;->a()Landroid/os/Parcel;
 
     move-result-object v2
 
     invoke-virtual {v2, p1}, Landroid/os/Parcel;->writeInt(I)V
 
-    invoke-static {v2, p2}, Lcbg;->c(Landroid/os/Parcel;Landroid/os/Parcelable;)V
+    invoke-static {v2, p2}, Lbmp;->c(Landroid/os/Parcel;Landroid/os/Parcelable;)V
 
     const/16 p1, 0xb
 
-    invoke-virtual {v0, p1, v2}, Lcbe;->z(ILandroid/os/Parcel;)V
+    invoke-virtual {v0, p1, v2}, Lbmn;->z(ILandroid/os/Parcel;)V
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
@@ -447,116 +461,97 @@
 .end method
 
 .method public controllerHapticsEffect(III)V
-    .locals 5
+    .locals 6
 
-    sget-object v0, Lofx;->d:Lofx;
+    sget-object v0, Lpyh;->d:Lpyh;
 
-    invoke-virtual {v0}, Lnws;->O()Lnwn;
+    invoke-virtual {v0}, Lppd;->m()Lpoy;
 
     move-result-object v0
 
-    sget-object v1, Lofv;->d:Lofv;
+    sget-object v1, Lpyf;->d:Lpyf;
 
-    invoke-virtual {v1}, Lnws;->O()Lnwn;
+    invoke-virtual {v1}, Lppd;->m()Lpoy;
 
     move-result-object v1
 
-    iget-object v2, v1, Lnwn;->b:Lnws;
+    iget-boolean v2, v1, Lpoy;->c:Z
 
-    invoke-virtual {v2}, Lnws;->ac()Z
+    const/4 v3, 0x0
 
-    move-result v2
+    if-eqz v2, :cond_0
 
-    if-nez v2, :cond_0
+    invoke-virtual {v1}, Lpoy;->m()V
 
-    invoke-virtual {v1}, Lnwn;->p()V
+    iput-boolean v3, v1, Lpoy;->c:Z
 
     :cond_0
-    iget-object v2, v1, Lnwn;->b:Lnws;
+    iget-object v2, v1, Lpoy;->b:Lppd;
 
-    move-object v3, v2
+    check-cast v2, Lpyf;
 
-    check-cast v3, Lofv;
+    iget v4, v2, Lpyf;->a:I
 
-    iget v4, v3, Lofv;->a:I
+    const/4 v5, 0x1
 
-    or-int/lit8 v4, v4, 0x1
+    or-int/2addr v4, v5
 
-    iput v4, v3, Lofv;->a:I
+    iput v4, v2, Lpyf;->a:I
 
-    iput p2, v3, Lofv;->b:I
+    iput p2, v2, Lpyf;->b:I
 
-    invoke-virtual {v2}, Lnws;->ac()Z
+    or-int/lit8 p2, v4, 0x2
 
-    move-result p2
+    iput p2, v2, Lpyf;->a:I
 
-    if-nez p2, :cond_1
+    iput p3, v2, Lpyf;->c:I
 
-    invoke-virtual {v1}, Lnwn;->p()V
-
-    :cond_1
-    iget-object p2, v1, Lnwn;->b:Lnws;
-
-    check-cast p2, Lofv;
-
-    iget v2, p2, Lofv;->a:I
-
-    const/4 v3, 0x2
-
-    or-int/2addr v2, v3
-
-    iput v2, p2, Lofv;->a:I
-
-    iput p3, p2, Lofv;->c:I
-
-    invoke-virtual {v1}, Lnwn;->i()Lnws;
+    invoke-virtual {v1}, Lpoy;->h()Lppd;
 
     move-result-object p2
 
-    check-cast p2, Lofv;
+    check-cast p2, Lpyf;
 
-    iget-object p3, v0, Lnwn;->b:Lnws;
+    iget-boolean p3, v0, Lpoy;->c:Z
 
-    invoke-virtual {p3}, Lnws;->ac()Z
+    if-eqz p3, :cond_1
 
-    move-result p3
+    invoke-virtual {v0}, Lpoy;->m()V
 
-    if-nez p3, :cond_2
+    iput-boolean v3, v0, Lpoy;->c:Z
 
-    invoke-virtual {v0}, Lnwn;->p()V
+    :cond_1
+    iget-object p3, v0, Lpoy;->b:Lppd;
 
-    :cond_2
-    iget-object p3, v0, Lnwn;->b:Lnws;
-
-    check-cast p3, Lofx;
+    check-cast p3, Lpyh;
 
     invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    iput-object p2, p3, Lofx;->c:Lofv;
+    iput-object p2, p3, Lpyh;->c:Lpyf;
 
-    iget p2, p3, Lofx;->a:I
+    iget p2, p3, Lpyh;->a:I
 
-    or-int/2addr p2, v3
+    or-int/lit8 p2, p2, 0x2
 
-    iput p2, p3, Lofx;->a:I
+    iput p2, p3, Lpyh;->a:I
 
-    invoke-virtual {v0}, Lnwn;->i()Lnws;
+    invoke-virtual {v0}, Lpoy;->h()Lppd;
 
     move-result-object p2
 
-    check-cast p2, Lofx;
+    check-cast p2, Lpyh;
 
-    new-instance p3, Lofp;
+    new-instance p3, Lpxx;
 
-    invoke-direct {p3}, Lofp;-><init>()V
+    invoke-direct {p3}, Lpxx;-><init>()V
 
-    invoke-virtual {p3, p2}, Loez;->a(Lnxy;)V
+    invoke-virtual {p3, p2}, Lpxh;->a(Lpqm;)V
 
     iget-object p2, p0, Lcom/google/vr/vrcore/controller/api/ControllerServiceBridge;->b:Landroid/os/Handler;
 
-    new-instance v0, Lofr;
+    new-instance v0, Lpxz;
 
-    invoke-direct {v0, p0, p1, p3, v3}, Lofr;-><init>(Lcom/google/vr/vrcore/controller/api/ControllerServiceBridge;ILofp;I)V
+    invoke-direct {v0, p0, p1, p3, v5}, Lpxz;-><init>(Lcom/google/vr/vrcore/controller/api/ControllerServiceBridge;ILpxx;I)V
 
     invoke-virtual {p2, v0}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
@@ -566,13 +561,13 @@
 .method public createAndConnectController(ILcom/google/vr/vrcore/controller/api/ControllerServiceBridge$Callbacks;I)Z
     .locals 2
 
-    new-instance v0, Lofm;
+    new-instance v0, Lpxu;
 
-    invoke-direct {v0, p3}, Lofm;-><init>(I)V
+    invoke-direct {v0, p3}, Lpxu;-><init>(I)V
 
     invoke-static {}, Lcom/google/vr/vrcore/controller/api/ControllerServiceBridge;->d()V
 
-    iget-object p3, p0, Lcom/google/vr/vrcore/controller/api/ControllerServiceBridge;->f:Lofu;
+    iget-object p3, p0, Lcom/google/vr/vrcore/controller/api/ControllerServiceBridge;->g:Lpyd;
 
     const/4 v1, 0x0
 
@@ -581,23 +576,23 @@
     goto :goto_0
 
     :cond_0
-    new-instance p3, Llpu;
+    new-instance p3, Lpya;
 
-    invoke-direct {p3, p2, v0, p1}, Llpu;-><init>(Lcom/google/vr/vrcore/controller/api/ControllerServiceBridge$Callbacks;Lofm;I)V
+    invoke-direct {p3, p2, v0, p1}, Lpya;-><init>(Lcom/google/vr/vrcore/controller/api/ControllerServiceBridge$Callbacks;Lpxu;I)V
 
-    iget p2, p3, Llpu;->a:I
+    iget p2, p3, Lpya;->c:I
 
-    invoke-direct {p0, p2, p3}, Lcom/google/vr/vrcore/controller/api/ControllerServiceBridge;->e(ILlpu;)Z
+    invoke-direct {p0, p2, p3}, Lcom/google/vr/vrcore/controller/api/ControllerServiceBridge;->e(ILpya;)Z
 
     move-result p2
 
     if-eqz p2, :cond_2
 
-    iget p2, p3, Llpu;->a:I
+    iget p2, p3, Lpya;->c:I
 
     if-nez p2, :cond_1
 
-    iput-object p3, p0, Lcom/google/vr/vrcore/controller/api/ControllerServiceBridge;->g:Llpu;
+    iput-object p3, p0, Lcom/google/vr/vrcore/controller/api/ControllerServiceBridge;->e:Lpya;
 
     :cond_1
     iget-object p2, p0, Lcom/google/vr/vrcore/controller/api/ControllerServiceBridge;->d:Landroid/util/SparseArray;
@@ -629,15 +624,15 @@
 .end method
 
 .method public final onServiceConnected(Landroid/content/ComponentName;Landroid/os/IBinder;)V
-    .locals 2
+    .locals 3
 
     const-string p1, "VrCtl.ServiceBridge"
 
     invoke-static {}, Lcom/google/vr/vrcore/controller/api/ControllerServiceBridge;->d()V
 
-    iget-boolean v0, p0, Lcom/google/vr/vrcore/controller/api/ControllerServiceBridge;->e:Z
+    iget-boolean v0, p0, Lcom/google/vr/vrcore/controller/api/ControllerServiceBridge;->f:Z
 
-    if-eqz v0, :cond_4
+    if-eqz v0, :cond_5
 
     if-nez p2, :cond_0
 
@@ -652,28 +647,28 @@
 
     move-result-object v0
 
-    instance-of v1, v0, Lofu;
+    instance-of v1, v0, Lpyd;
 
     if-eqz v1, :cond_1
 
     move-object p2, v0
 
-    check-cast p2, Lofu;
+    check-cast p2, Lpyd;
 
     goto :goto_0
 
     :cond_1
-    new-instance v0, Lofu;
+    new-instance v0, Lpyd;
 
-    invoke-direct {v0, p2}, Lofu;-><init>(Landroid/os/IBinder;)V
+    invoke-direct {v0, p2}, Lpyd;-><init>(Landroid/os/IBinder;)V
 
     move-object p2, v0
 
     :goto_0
-    iput-object p2, p0, Lcom/google/vr/vrcore/controller/api/ControllerServiceBridge;->f:Lofu;
+    iput-object p2, p0, Lcom/google/vr/vrcore/controller/api/ControllerServiceBridge;->g:Lpyd;
 
     :try_start_0
-    invoke-virtual {p2}, Lcbe;->a()Landroid/os/Parcel;
+    invoke-virtual {p2}, Lbmn;->a()Landroid/os/Parcel;
 
     move-result-object v0
 
@@ -683,7 +678,7 @@
 
     const/4 v1, 0x1
 
-    invoke-virtual {p2, v1, v0}, Lcbe;->y(ILandroid/os/Parcel;)Landroid/os/Parcel;
+    invoke-virtual {p2, v1, v0}, Lbmn;->y(ILandroid/os/Parcel;)Landroid/os/Parcel;
 
     move-result-object p2
 
@@ -695,13 +690,15 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_1
 
-    if-eqz v0, :cond_2
+    if-eqz v0, :cond_3
 
     packed-switch v0, :pswitch_data_0
 
     new-instance p2, Ljava/lang/StringBuilder;
 
-    invoke-direct {p2}, Ljava/lang/StringBuilder;-><init>()V
+    const/16 v1, 0x2d
+
+    invoke-direct {p2, v1}, Ljava/lang/StringBuilder;-><init>(I)V
 
     const-string v1, "[UNKNOWN CONTROLLER INIT RESULT: "
 
@@ -738,17 +735,35 @@
     const-string p2, "SUCCESS"
 
     :goto_1
+    invoke-static {p2}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object p2
+
     const-string v1, "initialize() returned error: "
+
+    invoke-virtual {p2}, Ljava/lang/String;->length()I
+
+    move-result v2
+
+    if-eqz v2, :cond_2
 
     invoke-virtual {v1, p2}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p2
 
+    goto :goto_2
+
+    :cond_2
+    new-instance p2, Ljava/lang/String;
+
+    invoke-direct {p2, v1}, Ljava/lang/String;-><init>(Ljava/lang/String;)V
+
+    :goto_2
     invoke-static {p1, p2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    iget-object p1, p0, Lcom/google/vr/vrcore/controller/api/ControllerServiceBridge;->g:Llpu;
+    iget-object p1, p0, Lcom/google/vr/vrcore/controller/api/ControllerServiceBridge;->e:Lpya;
 
-    iget-object p1, p1, Llpu;->b:Ljava/lang/Object;
+    iget-object p1, p1, Lpya;->a:Lcom/google/vr/vrcore/controller/api/ControllerServiceBridge$Callbacks;
 
     invoke-interface {p1, v0}, Lcom/google/vr/vrcore/controller/api/ControllerServiceBridge$Callbacks;->g(I)V
 
@@ -756,45 +771,45 @@
 
     return-void
 
-    :cond_2
+    :cond_3
     iget p2, p0, Lcom/google/vr/vrcore/controller/api/ControllerServiceBridge;->j:I
 
     const/16 v0, 0x15
 
-    if-lt p2, v0, :cond_3
+    if-lt p2, v0, :cond_4
 
     :try_start_1
-    iget-object p2, p0, Lcom/google/vr/vrcore/controller/api/ControllerServiceBridge;->f:Lofu;
+    iget-object p2, p0, Lcom/google/vr/vrcore/controller/api/ControllerServiceBridge;->g:Lpyd;
 
-    iget-object v0, p0, Lcom/google/vr/vrcore/controller/api/ControllerServiceBridge;->k:Ljnt;
+    iget-object v0, p0, Lcom/google/vr/vrcore/controller/api/ControllerServiceBridge;->k:Lpye;
 
-    invoke-virtual {p2}, Lcbe;->a()Landroid/os/Parcel;
+    invoke-virtual {p2}, Lbmn;->a()Landroid/os/Parcel;
 
     move-result-object v1
 
-    invoke-static {v1, v0}, Lcbg;->d(Landroid/os/Parcel;Landroid/os/IInterface;)V
+    invoke-static {v1, v0}, Lbmp;->e(Landroid/os/Parcel;Landroid/os/IInterface;)V
 
     const/16 v0, 0x8
 
-    invoke-virtual {p2, v0, v1}, Lcbe;->y(ILandroid/os/Parcel;)Landroid/os/Parcel;
+    invoke-virtual {p2, v0, v1}, Lbmn;->y(ILandroid/os/Parcel;)Landroid/os/Parcel;
 
     move-result-object p2
 
-    invoke-static {p2}, Lcbg;->e(Landroid/os/Parcel;)Z
+    invoke-static {p2}, Lbmp;->f(Landroid/os/Parcel;)Z
 
     move-result v0
 
     invoke-virtual {p2}, Landroid/os/Parcel;->recycle()V
 
-    if-nez v0, :cond_3
+    if-nez v0, :cond_4
 
     const-string p2, "Failed to register remote service listener."
 
     invoke-static {p1, p2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    iget-object p2, p0, Lcom/google/vr/vrcore/controller/api/ControllerServiceBridge;->g:Llpu;
+    iget-object p2, p0, Lcom/google/vr/vrcore/controller/api/ControllerServiceBridge;->e:Lpya;
 
-    iget-object p2, p2, Llpu;->b:Ljava/lang/Object;
+    iget-object p2, p2, Lpya;->a:Lcom/google/vr/vrcore/controller/api/ControllerServiceBridge$Callbacks;
 
     const/4 v0, 0x0
 
@@ -809,19 +824,37 @@
     :catch_0
     move-exception p2
 
-    invoke-virtual {p2}, Ljava/lang/Object;->toString()Ljava/lang/String;
+    invoke-static {p2}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p2
 
+    invoke-static {p2}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/String;->length()I
+
+    move-result v0
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    add-int/lit8 v0, v0, 0x35
+
+    invoke-direct {v1, v0}, Ljava/lang/StringBuilder;-><init>(I)V
+
     const-string v0, "Exception while registering remote service listener: "
 
-    invoke-virtual {v0, p2}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p2
 
     invoke-static {p1, p2}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    :cond_3
+    :cond_4
     invoke-virtual {p0}, Lcom/google/vr/vrcore/controller/api/ControllerServiceBridge;->b()V
 
     return-void
@@ -833,9 +866,9 @@
 
     invoke-static {p1, v0, p2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    iget-object p1, p0, Lcom/google/vr/vrcore/controller/api/ControllerServiceBridge;->g:Llpu;
+    iget-object p1, p0, Lcom/google/vr/vrcore/controller/api/ControllerServiceBridge;->e:Lpya;
 
-    iget-object p1, p1, Llpu;->b:Ljava/lang/Object;
+    iget-object p1, p1, Lpya;->a:Lcom/google/vr/vrcore/controller/api/ControllerServiceBridge$Callbacks;
 
     invoke-interface {p1}, Lcom/google/vr/vrcore/controller/api/ControllerServiceBridge$Callbacks;->f()V
 
@@ -843,8 +876,10 @@
 
     return-void
 
-    :cond_4
+    :cond_5
     return-void
+
+    nop
 
     :pswitch_data_0
     .packed-switch 0x0
@@ -862,11 +897,11 @@
 
     const/4 p1, 0x0
 
-    iput-object p1, p0, Lcom/google/vr/vrcore/controller/api/ControllerServiceBridge;->f:Lofu;
+    iput-object p1, p0, Lcom/google/vr/vrcore/controller/api/ControllerServiceBridge;->g:Lpyd;
 
-    iget-object p1, p0, Lcom/google/vr/vrcore/controller/api/ControllerServiceBridge;->g:Llpu;
+    iget-object p1, p0, Lcom/google/vr/vrcore/controller/api/ControllerServiceBridge;->e:Lpya;
 
-    iget-object p1, p1, Llpu;->b:Ljava/lang/Object;
+    iget-object p1, p1, Lpya;->a:Lcom/google/vr/vrcore/controller/api/ControllerServiceBridge$Callbacks;
 
     invoke-interface {p1}, Lcom/google/vr/vrcore/controller/api/ControllerServiceBridge$Callbacks;->e()V
 
@@ -878,11 +913,11 @@
 
     iget-object v0, p0, Lcom/google/vr/vrcore/controller/api/ControllerServiceBridge;->b:Landroid/os/Handler;
 
-    new-instance v1, Lofq;
+    new-instance v1, Lpxy;
 
-    const/4 v2, 0x2
+    const/4 v2, 0x1
 
-    invoke-direct {v1, p0, v2}, Lofq;-><init>(Lcom/google/vr/vrcore/controller/api/ControllerServiceBridge;I)V
+    invoke-direct {v1, p0, v2}, Lpxy;-><init>(Lcom/google/vr/vrcore/controller/api/ControllerServiceBridge;I)V
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
@@ -894,11 +929,11 @@
 
     iget-object v0, p0, Lcom/google/vr/vrcore/controller/api/ControllerServiceBridge;->b:Landroid/os/Handler;
 
-    new-instance v1, Lofq;
+    new-instance v1, Lpxy;
 
     const/4 v2, 0x0
 
-    invoke-direct {v1, p0, v2}, Lofq;-><init>(Lcom/google/vr/vrcore/controller/api/ControllerServiceBridge;I)V
+    invoke-direct {v1, p0, v2}, Lpxy;-><init>(Lcom/google/vr/vrcore/controller/api/ControllerServiceBridge;I)V
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
@@ -908,137 +943,99 @@
 .method public vibrateController(IIII)V
     .locals 5
 
-    sget-object v0, Lofx;->d:Lofx;
+    sget-object v0, Lpyh;->d:Lpyh;
 
-    invoke-virtual {v0}, Lnws;->O()Lnwn;
+    invoke-virtual {v0}, Lppd;->m()Lpoy;
 
     move-result-object v0
 
-    sget-object v1, Lofw;->e:Lofw;
+    sget-object v1, Lpyg;->e:Lpyg;
 
-    invoke-virtual {v1}, Lnws;->O()Lnwn;
+    invoke-virtual {v1}, Lppd;->m()Lpoy;
 
     move-result-object v1
 
-    iget-object v2, v1, Lnwn;->b:Lnws;
+    iget-boolean v2, v1, Lpoy;->c:Z
 
-    invoke-virtual {v2}, Lnws;->ac()Z
+    const/4 v3, 0x0
 
-    move-result v2
+    if-eqz v2, :cond_0
 
-    if-nez v2, :cond_0
+    invoke-virtual {v1}, Lpoy;->m()V
 
-    invoke-virtual {v1}, Lnwn;->p()V
+    iput-boolean v3, v1, Lpoy;->c:Z
 
     :cond_0
-    iget-object v2, v1, Lnwn;->b:Lnws;
+    iget-object v2, v1, Lpoy;->b:Lppd;
 
-    move-object v3, v2
+    check-cast v2, Lpyg;
 
-    check-cast v3, Lofw;
-
-    iget v4, v3, Lofw;->a:I
+    iget v4, v2, Lpyg;->a:I
 
     or-int/lit8 v4, v4, 0x1
 
-    iput v4, v3, Lofw;->a:I
+    iput v4, v2, Lpyg;->a:I
 
-    iput p2, v3, Lofw;->b:I
+    iput p2, v2, Lpyg;->b:I
 
-    invoke-virtual {v2}, Lnws;->ac()Z
+    or-int/lit8 p2, v4, 0x2
 
-    move-result p2
+    iput p2, v2, Lpyg;->a:I
 
-    if-nez p2, :cond_1
+    iput p3, v2, Lpyg;->c:I
 
-    invoke-virtual {v1}, Lnwn;->p()V
+    or-int/lit8 p2, p2, 0x4
 
-    :cond_1
-    iget-object p2, v1, Lnwn;->b:Lnws;
+    iput p2, v2, Lpyg;->a:I
 
-    move-object v2, p2
+    iput p4, v2, Lpyg;->d:I
 
-    check-cast v2, Lofw;
-
-    iget v3, v2, Lofw;->a:I
-
-    or-int/lit8 v3, v3, 0x2
-
-    iput v3, v2, Lofw;->a:I
-
-    iput p3, v2, Lofw;->c:I
-
-    invoke-virtual {p2}, Lnws;->ac()Z
-
-    move-result p2
-
-    if-nez p2, :cond_2
-
-    invoke-virtual {v1}, Lnwn;->p()V
-
-    :cond_2
-    iget-object p2, v1, Lnwn;->b:Lnws;
-
-    check-cast p2, Lofw;
-
-    iget p3, p2, Lofw;->a:I
-
-    or-int/lit8 p3, p3, 0x4
-
-    iput p3, p2, Lofw;->a:I
-
-    iput p4, p2, Lofw;->d:I
-
-    invoke-virtual {v1}, Lnwn;->i()Lnws;
+    invoke-virtual {v1}, Lpoy;->h()Lppd;
 
     move-result-object p2
 
-    check-cast p2, Lofw;
+    check-cast p2, Lpyg;
 
-    iget-object p3, v0, Lnwn;->b:Lnws;
+    iget-boolean p3, v0, Lpoy;->c:Z
 
-    invoke-virtual {p3}, Lnws;->ac()Z
+    if-eqz p3, :cond_1
 
-    move-result p3
+    invoke-virtual {v0}, Lpoy;->m()V
 
-    if-nez p3, :cond_3
+    iput-boolean v3, v0, Lpoy;->c:Z
 
-    invoke-virtual {v0}, Lnwn;->p()V
+    :cond_1
+    iget-object p3, v0, Lpoy;->b:Lppd;
 
-    :cond_3
-    iget-object p3, v0, Lnwn;->b:Lnws;
-
-    check-cast p3, Lofx;
+    check-cast p3, Lpyh;
 
     invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    iput-object p2, p3, Lofx;->b:Lofw;
+    iput-object p2, p3, Lpyh;->b:Lpyg;
 
-    iget p2, p3, Lofx;->a:I
+    iget p2, p3, Lpyh;->a:I
 
     or-int/lit8 p2, p2, 0x1
 
-    iput p2, p3, Lofx;->a:I
+    iput p2, p3, Lpyh;->a:I
 
-    invoke-virtual {v0}, Lnwn;->i()Lnws;
+    invoke-virtual {v0}, Lpoy;->h()Lppd;
 
     move-result-object p2
 
-    check-cast p2, Lofx;
+    check-cast p2, Lpyh;
 
-    new-instance p3, Lofp;
+    new-instance p3, Lpxx;
 
-    invoke-direct {p3}, Lofp;-><init>()V
+    invoke-direct {p3}, Lpxx;-><init>()V
 
-    invoke-virtual {p3, p2}, Loez;->a(Lnxy;)V
+    invoke-virtual {p3, p2}, Lpxh;->a(Lpqm;)V
 
     iget-object p2, p0, Lcom/google/vr/vrcore/controller/api/ControllerServiceBridge;->b:Landroid/os/Handler;
 
-    new-instance p4, Lofr;
+    new-instance p4, Lpxz;
 
-    const/4 v0, 0x0
-
-    invoke-direct {p4, p0, p1, p3, v0}, Lofr;-><init>(Lcom/google/vr/vrcore/controller/api/ControllerServiceBridge;ILofp;I)V
+    invoke-direct {p4, p0, p1, p3, v3}, Lpxz;-><init>(Lcom/google/vr/vrcore/controller/api/ControllerServiceBridge;ILpxx;I)V
 
     invoke-virtual {p2, p4}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 

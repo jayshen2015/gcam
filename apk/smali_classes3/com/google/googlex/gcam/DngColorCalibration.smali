@@ -71,12 +71,10 @@
     throw v0
 .end method
 
-.method public final b(Lnqj;)V
+.method public final b(I)V
     .locals 2
 
     iget-wide v0, p0, Lcom/google/googlex/gcam/DngColorCalibration;->a:J
-
-    iget p1, p1, Lnqj;->w:I
 
     invoke-static {v0, v1, p0, p1}, Lcom/google/googlex/gcam/GcamModuleJNI;->DngColorCalibration_illuminant_set(JLcom/google/googlex/gcam/DngColorCalibration;I)V
 

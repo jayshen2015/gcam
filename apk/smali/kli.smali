@@ -1,166 +1,74 @@
-.class public interface abstract Lkli;
+.class public final Lkli;
 .super Ljava/lang/Object;
 
 
-# static fields
-.field public static final c:[I
+# instance fields
+.field public a:Lklb;
 
-.field public static final d:[F
+.field public b:[Lkhk;
 
-.field public static final e:[Landroid/util/Size;
+.field public c:I
 
-.field public static final f:[B
+.field private d:Z
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
+.method public constructor <init>()V
+    .locals 1
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    const/4 v0, 0x1
+
+    iput-boolean v0, p0, Lkli;->d:Z
 
     const/4 v0, 0x0
 
-    new-array v1, v0, [I
-
-    sput-object v1, Lkli;->c:[I
-
-    new-array v1, v0, [F
-
-    sput-object v1, Lkli;->d:[F
-
-    new-array v1, v0, [Landroid/util/Size;
-
-    sput-object v1, Lkli;->e:[Landroid/util/Size;
-
-    new-array v0, v0, [B
-
-    sput-object v0, Lkli;->f:[B
+    iput v0, p0, Lkli;->c:I
 
     return-void
 .end method
 
 
 # virtual methods
-.method public abstract A()Ljava/util/Set;
+.method public final a()Lklj;
+    .locals 4
+
+    iget-object v0, p0, Lkli;->a:Lklb;
+
+    if-eqz v0, :cond_0
+
+    const/4 v0, 0x1
+
+    goto :goto_0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    :goto_0
+    const-string v1, "execute parameter required"
+
+    invoke-static {v0, v1}, Lmip;->dm(ZLjava/lang/Object;)V
+
+    new-instance v0, Lklj;
+
+    iget-object v1, p0, Lkli;->b:[Lkhk;
+
+    iget-boolean v2, p0, Lkli;->d:Z
+
+    iget v3, p0, Lkli;->c:I
+
+    invoke-direct {v0, p0, v1, v2, v3}, Lklj;-><init>(Lkli;[Lkhk;ZI)V
+
+    return-object v0
 .end method
 
-.method public abstract B()Ljava/util/Set;
-.end method
+.method public final b()V
+    .locals 1
 
-.method public abstract C()Z
-.end method
+    const/4 v0, 0x0
 
-.method public abstract D()Z
-.end method
+    iput-boolean v0, p0, Lkli;->d:Z
 
-.method public abstract E()Z
-.end method
-
-.method public abstract F()Z
-.end method
-
-.method public abstract G()Z
-.end method
-
-.method public abstract H()Z
-.end method
-
-.method public abstract I()Z
-.end method
-
-.method public abstract J()Z
-.end method
-
-.method public abstract K()Z
-.end method
-
-.method public abstract L()Z
-.end method
-
-.method public abstract M()Z
-.end method
-
-.method public abstract N()Z
-.end method
-
-.method public abstract O()[B
-.end method
-
-.method public abstract P()I
-.end method
-
-.method public abstract a()F
-.end method
-
-.method public abstract b()F
-.end method
-
-.method public abstract c()F
-.end method
-
-.method public abstract d()I
-.end method
-
-.method public abstract e()I
-.end method
-
-.method public abstract f()I
-.end method
-
-.method public abstract g(ILkaf;)J
-.end method
-
-.method public abstract h()Landroid/graphics/Rect;
-.end method
-
-.method public abstract i()Lkll;
-.end method
-
-.method public abstract j()Lklu;
-.end method
-
-.method public abstract k()Lklv;
-.end method
-
-.method public abstract l(Landroid/hardware/camera2/CameraCharacteristics$Key;)Ljava/lang/Object;
-.end method
-
-.method public abstract m(Landroid/hardware/camera2/CameraCharacteristics$Key;Ljava/lang/Object;)Ljava/lang/Object;
-.end method
-
-.method public abstract n(Landroid/hardware/camera2/CameraCharacteristics$Key;)Ljava/lang/Object;
-.end method
-
-.method public abstract o()Ljava/util/List;
-.end method
-
-.method public abstract p()Ljava/util/List;
-.end method
-
-.method public abstract q()Ljava/util/List;
-.end method
-
-.method public abstract r()Ljava/util/List;
-.end method
-
-.method public abstract s()Ljava/util/List;
-.end method
-
-.method public abstract t()Ljava/util/List;
-.end method
-
-.method public abstract u()Ljava/util/List;
-.end method
-
-.method public abstract v(Lkaf;)Ljava/util/List;
-.end method
-
-.method public abstract w()Ljava/util/List;
-.end method
-
-.method public abstract x(I)Ljava/util/List;
-.end method
-
-.method public abstract y()Ljava/util/List;
-.end method
-
-.method public abstract z()Ljava/util/Set;
+    return-void
 .end method

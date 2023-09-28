@@ -1,12 +1,12 @@
 .class public final Lcom/google/android/libraries/social/licenses/LicenseActivity;
-.super Lei;
+.super Lih;
 
 
 # direct methods
 .method public constructor <init>()V
     .locals 0
 
-    invoke-direct {p0}, Lei;-><init>()V
+    invoke-direct {p0}, Lih;-><init>()V
 
     return-void
 .end method
@@ -16,11 +16,11 @@
 .method public final onCreate(Landroid/os/Bundle;)V
     .locals 6
 
-    invoke-super {p0, p1}, Lei;->onCreate(Landroid/os/Bundle;)V
+    invoke-super {p0, p1}, Lih;->onCreate(Landroid/os/Bundle;)V
 
-    const p1, 0x7f0e0073
+    const p1, 0x7f0e006e
 
-    invoke-virtual {p0, p1}, Lpl;->setContentView(I)V
+    invoke-virtual {p0, p1}, Lub;->setContentView(I)V
 
     invoke-virtual {p0}, Lcom/google/android/libraries/social/licenses/LicenseActivity;->getIntent()Landroid/content/Intent;
 
@@ -32,56 +32,56 @@
 
     move-result-object p1
 
-    check-cast p1, Llqv;
+    check-cast p1, Lnic;
 
-    invoke-virtual {p0}, Lei;->i()Ldy;
+    invoke-virtual {p0}, Lih;->f()Lhu;
 
     move-result-object v0
 
     if-eqz v0, :cond_0
 
-    invoke-virtual {p0}, Lei;->i()Ldy;
+    invoke-virtual {p0}, Lih;->f()Lhu;
 
     move-result-object v0
 
-    iget-object v1, p1, Llqv;->a:Ljava/lang/String;
+    iget-object v1, p1, Lnic;->a:Ljava/lang/String;
 
-    invoke-virtual {v0, v1}, Ldy;->i(Ljava/lang/CharSequence;)V
+    invoke-virtual {v0, v1}, Lhu;->i(Ljava/lang/CharSequence;)V
 
-    invoke-virtual {p0}, Lei;->i()Ldy;
+    invoke-virtual {p0}, Lih;->f()Lhu;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Ldy;->r()V
+    invoke-virtual {v0}, Lhu;->r()V
 
-    invoke-virtual {p0}, Lei;->i()Ldy;
+    invoke-virtual {p0}, Lih;->f()Lhu;
 
     move-result-object v0
 
     const/4 v1, 0x1
 
-    invoke-virtual {v0, v1}, Ldy;->g(Z)V
+    invoke-virtual {v0, v1}, Lhu;->g(Z)V
 
-    invoke-virtual {p0}, Lei;->i()Ldy;
+    invoke-virtual {p0}, Lih;->f()Lhu;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Ldy;->t()V
+    invoke-virtual {v0}, Lhu;->t()V
 
     :cond_0
-    const v0, 0x7f0b01d6
+    const v0, 0x7f0b0190
 
-    invoke-virtual {p0, v0}, Lei;->findViewById(I)Landroid/view/View;
+    invoke-virtual {p0, v0}, Lih;->findViewById(I)Landroid/view/View;
 
     move-result-object v0
 
     check-cast v0, Landroid/widget/TextView;
 
-    iget-wide v1, p1, Llqv;->b:J
+    iget-wide v1, p1, Lnic;->b:J
 
-    iget v3, p1, Llqv;->c:I
+    iget v3, p1, Lnic;->c:I
 
-    iget-object p1, p1, Llqv;->d:Ljava/lang/String;
+    iget-object p1, p1, Lnic;->d:Ljava/lang/String;
 
     invoke-virtual {p1}, Ljava/lang/String;->isEmpty()Z
 
@@ -91,7 +91,7 @@
 
     const-string p1, "third_party_licenses"
 
-    invoke-static {p0, p1, v1, v2, v3}, Llho;->n(Landroid/content/Context;Ljava/lang/String;JI)Ljava/lang/String;
+    invoke-static {p0, p1, v1, v2, v3}, Lmyq;->o(Landroid/content/Context;Ljava/lang/String;JI)Ljava/lang/String;
 
     move-result-object p1
 
@@ -107,7 +107,7 @@
 
     invoke-direct {v4, v5}, Ljava/io/BufferedInputStream;-><init>(Ljava/io/InputStream;)V
 
-    invoke-static {v4, v1, v2, v3}, Llho;->m(Ljava/io/InputStream;JI)Ljava/lang/String;
+    invoke-static {v4, v1, v2, v3}, Lmyq;->n(Ljava/io/InputStream;JI)Ljava/lang/String;
 
     move-result-object v1
 
@@ -139,15 +139,29 @@
     move-exception v0
 
     :cond_3
-    invoke-static {p1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object p1
-
     new-instance v0, Ljava/lang/RuntimeException;
 
-    const-string v1, " does not contain res/raw/third_party_licenses"
+    invoke-static {p1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
-    invoke-virtual {p1, v1}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/String;->length()I
+
+    move-result v1
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    add-int/lit8 v1, v1, 0x2e
+
+    invoke-direct {v2, v1}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    invoke-virtual {v2, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string p1, " does not contain res/raw/third_party_licenses"
+
+    invoke-virtual {v2, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p1
 
@@ -174,7 +188,7 @@
     return p1
 
     :cond_0
-    invoke-super {p0, p1}, Lei;->onOptionsItemSelected(Landroid/view/MenuItem;)Z
+    invoke-super {p0, p1}, Lih;->onOptionsItemSelected(Landroid/view/MenuItem;)Z
 
     move-result p1
 
@@ -182,13 +196,13 @@
 .end method
 
 .method public final onRestoreInstanceState(Landroid/os/Bundle;)V
-    .locals 3
+    .locals 2
 
-    invoke-super {p0, p1}, Lei;->onRestoreInstanceState(Landroid/os/Bundle;)V
+    invoke-super {p0, p1}, Lih;->onRestoreInstanceState(Landroid/os/Bundle;)V
 
-    const v0, 0x7f0b01d5
+    const v0, 0x7f0b018f
 
-    invoke-virtual {p0, v0}, Lei;->findViewById(I)Landroid/view/View;
+    invoke-virtual {p0, v0}, Lih;->findViewById(I)Landroid/view/View;
 
     move-result-object v0
 
@@ -202,11 +216,9 @@
 
     if-eqz p1, :cond_0
 
-    new-instance v1, Lpi;
+    new-instance v1, Lnid;
 
-    const/16 v2, 0x14
-
-    invoke-direct {v1, p0, p1, v0, v2}, Lpi;-><init>(Lcom/google/android/libraries/social/licenses/LicenseActivity;ILandroid/widget/ScrollView;I)V
+    invoke-direct {v1, p0, p1, v0}, Lnid;-><init>(Lcom/google/android/libraries/social/licenses/LicenseActivity;ILandroid/widget/ScrollView;)V
 
     invoke-virtual {v0, v1}, Landroid/widget/ScrollView;->post(Ljava/lang/Runnable;)Z
 
@@ -217,19 +229,19 @@
 .method public final onSaveInstanceState(Landroid/os/Bundle;)V
     .locals 2
 
-    invoke-super {p0, p1}, Lei;->onSaveInstanceState(Landroid/os/Bundle;)V
+    invoke-super {p0, p1}, Lih;->onSaveInstanceState(Landroid/os/Bundle;)V
 
-    const v0, 0x7f0b01d5
+    const v0, 0x7f0b018f
 
-    invoke-virtual {p0, v0}, Lei;->findViewById(I)Landroid/view/View;
+    invoke-virtual {p0, v0}, Lih;->findViewById(I)Landroid/view/View;
 
     move-result-object v0
 
     check-cast v0, Landroid/widget/ScrollView;
 
-    const v1, 0x7f0b01d6
+    const v1, 0x7f0b0190
 
-    invoke-virtual {p0, v1}, Lei;->findViewById(I)Landroid/view/View;
+    invoke-virtual {p0, v1}, Lih;->findViewById(I)Landroid/view/View;
 
     move-result-object v1
 

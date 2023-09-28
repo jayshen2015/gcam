@@ -1,49 +1,34 @@
-.class public final Loqe;
-.super Ljava/lang/Object;
-
-# interfaces
-.implements Ljava/util/concurrent/Executor;
+.class final Loqe;
+.super Losu;
 
 
 # instance fields
-.field public final a:Lopq;
+.field final synthetic a:Loqf;
 
 
 # direct methods
-.method public constructor <init>(Lopq;)V
+.method public constructor <init>(Loqf;Ljava/util/ListIterator;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Loqe;->a:Loqf;
 
-    iput-object p1, p0, Loqe;->a:Lopq;
+    invoke-direct {p0, p2}, Losu;-><init>(Ljava/util/ListIterator;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final execute(Ljava/lang/Runnable;)V
-    .locals 2
-
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    iget-object v0, p0, Loqe;->a:Lopq;
-
-    sget-object v1, Lolb;->a:Lolb;
-
-    invoke-virtual {v0, v1, p1}, Lopq;->d(Lola;Ljava/lang/Runnable;)V
-
-    return-void
-.end method
-
-.method public final toString()Ljava/lang/String;
+.method public final a(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 1
 
-    iget-object v0, p0, Loqe;->a:Lopq;
+    iget-object v0, p0, Loqe;->a:Loqf;
 
-    invoke-virtual {v0}, Lopq;->toString()Ljava/lang/String;
+    iget-object v0, v0, Loqf;->b:Loiu;
 
-    move-result-object v0
+    invoke-interface {v0, p1}, Loiu;->a(Ljava/lang/Object;)Ljava/lang/Object;
 
-    return-object v0
+    move-result-object p1
+
+    return-object p1
 .end method

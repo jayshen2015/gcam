@@ -1,189 +1,68 @@
-.class final Lmto;
-.super Lmsr;
+.class public final Lmto;
+.super Ljava/lang/Object;
 
 
-# instance fields
-.field final synthetic a:Lmtq;
+# static fields
+.field public static final a:Lmtn;
 
-.field private final b:Ljava/lang/Object;
+.field private static final b:Lmtn;
 
-.field private c:I
+.field private static final c:Lmtn;
+
+.field private static final d:Lmtn;
 
 
 # direct methods
-.method public constructor <init>(Lmtq;I)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 6
 
-    iput-object p1, p0, Lmto;->a:Lmtq;
+    new-instance v0, Lcom/google/android/libraries/oliveoil/natives/NativeMemCopier;
 
-    invoke-direct {p0}, Lmsr;-><init>()V
+    invoke-direct {v0}, Lcom/google/android/libraries/oliveoil/natives/NativeMemCopier;-><init>()V
 
-    invoke-virtual {p1, p2}, Lmtq;->f(I)Ljava/lang/Object;
+    sput-object v0, Lmto;->b:Lmtn;
 
-    move-result-object p1
+    new-instance v1, Lmtk;
 
-    iput-object p1, p0, Lmto;->b:Ljava/lang/Object;
+    const/4 v2, 0x1
 
-    iput p2, p0, Lmto;->c:I
+    invoke-direct {v1, v2}, Lmtk;-><init>(I)V
 
-    return-void
-.end method
+    sput-object v1, Lmto;->c:Lmtn;
 
-.method private final a()V
-    .locals 3
+    new-instance v3, Lmtk;
 
-    iget v0, p0, Lmto;->c:I
+    const/4 v4, 0x0
 
-    const/4 v1, -0x1
+    invoke-direct {v3, v4}, Lmtk;-><init>(I)V
 
-    if-eq v0, v1, :cond_1
+    sput-object v3, Lmto;->d:Lmtn;
 
-    iget-object v1, p0, Lmto;->a:Lmtq;
+    const/4 v5, 0x3
 
-    invoke-virtual {v1}, Lmtq;->size()I
+    new-array v5, v5, [Lmtn;
 
-    move-result v1
+    aput-object v0, v5, v4
 
-    if-ge v0, v1, :cond_1
+    aput-object v1, v5, v2
 
-    iget-object v0, p0, Lmto;->b:Ljava/lang/Object;
+    const/4 v0, 0x2
 
-    iget-object v1, p0, Lmto;->a:Lmtq;
+    aput-object v3, v5, v0
 
-    iget v2, p0, Lmto;->c:I
+    new-instance v0, Lmtl;
 
-    invoke-virtual {v1, v2}, Lmtq;->f(I)Ljava/lang/Object;
+    invoke-direct {v0, v5}, Lmtl;-><init>([Lmtn;)V
 
-    move-result-object v1
+    new-instance v1, Lmtm;
 
-    invoke-static {v0, v1}, Lmoz;->B(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-direct {v1, v0, v4}, Lmtm;-><init>(Lmtn;I)V
 
-    move-result v0
+    new-instance v0, Lmtm;
 
-    if-nez v0, :cond_0
+    invoke-direct {v0, v1, v2}, Lmtm;-><init>(Lmtn;I)V
 
-    goto :goto_0
-
-    :cond_0
-    return-void
-
-    :cond_1
-    :goto_0
-    iget-object v0, p0, Lmto;->a:Lmtq;
-
-    iget-object v1, p0, Lmto;->b:Ljava/lang/Object;
-
-    invoke-virtual {v0, v1}, Lmtq;->d(Ljava/lang/Object;)I
-
-    move-result v0
-
-    iput v0, p0, Lmto;->c:I
+    sput-object v0, Lmto;->a:Lmtn;
 
     return-void
-.end method
-
-
-# virtual methods
-.method public final getKey()Ljava/lang/Object;
-    .locals 1
-
-    iget-object v0, p0, Lmto;->b:Ljava/lang/Object;
-
-    return-object v0
-.end method
-
-.method public final getValue()Ljava/lang/Object;
-    .locals 2
-
-    iget-object v0, p0, Lmto;->a:Lmtq;
-
-    invoke-virtual {v0}, Lmtq;->k()Ljava/util/Map;
-
-    move-result-object v0
-
-    if-eqz v0, :cond_0
-
-    iget-object v1, p0, Lmto;->b:Ljava/lang/Object;
-
-    invoke-interface {v0, v1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    return-object v0
-
-    :cond_0
-    invoke-direct {p0}, Lmto;->a()V
-
-    iget v0, p0, Lmto;->c:I
-
-    const/4 v1, -0x1
-
-    if-ne v0, v1, :cond_1
-
-    const/4 v0, 0x0
-
-    return-object v0
-
-    :cond_1
-    iget-object v1, p0, Lmto;->a:Lmtq;
-
-    invoke-virtual {v1, v0}, Lmtq;->i(I)Ljava/lang/Object;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public final setValue(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 3
-
-    iget-object v0, p0, Lmto;->a:Lmtq;
-
-    invoke-virtual {v0}, Lmtq;->k()Ljava/util/Map;
-
-    move-result-object v0
-
-    if-eqz v0, :cond_0
-
-    iget-object v1, p0, Lmto;->b:Ljava/lang/Object;
-
-    invoke-interface {v0, v1, p1}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object p1
-
-    return-object p1
-
-    :cond_0
-    invoke-direct {p0}, Lmto;->a()V
-
-    iget v0, p0, Lmto;->c:I
-
-    const/4 v1, -0x1
-
-    if-ne v0, v1, :cond_1
-
-    iget-object v0, p0, Lmto;->a:Lmtq;
-
-    iget-object v1, p0, Lmto;->b:Ljava/lang/Object;
-
-    invoke-virtual {v0, v1, p1}, Lmtq;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    const/4 p1, 0x0
-
-    return-object p1
-
-    :cond_1
-    iget-object v1, p0, Lmto;->a:Lmtq;
-
-    invoke-virtual {v1, v0}, Lmtq;->i(I)Ljava/lang/Object;
-
-    move-result-object v0
-
-    iget-object v1, p0, Lmto;->a:Lmtq;
-
-    iget v2, p0, Lmto;->c:I
-
-    invoke-virtual {v1, v2, p1}, Lmtq;->o(ILjava/lang/Object;)V
-
-    return-object v0
 .end method

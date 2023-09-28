@@ -2,29 +2,21 @@
 .super Ljava/lang/Object;
 
 
-# static fields
-.field public static final a:Loon;
+# instance fields
+.field public final a:Luj;
 
-.field public static final b:Loon;
+.field final b:Lup;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
+.method public constructor <init>(Luj;Lup;)V
+    .locals 0
 
-    const/4 v0, 0x0
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-static {v0}, Lolp;->i(I)Loon;
+    iput-object p1, p0, Lul;->a:Luj;
 
-    move-result-object v1
-
-    sput-object v1, Lul;->a:Loon;
-
-    invoke-static {v0}, Lolp;->i(I)Loon;
-
-    move-result-object v0
-
-    sput-object v0, Lul;->b:Loon;
+    iput-object p2, p0, Lul;->b:Lup;
 
     return-void
 .end method

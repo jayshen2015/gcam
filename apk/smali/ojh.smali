@@ -3,146 +3,134 @@
 
 # interfaces
 .implements Ljava/io/Serializable;
-.implements Loja;
+.implements Lojf;
+
+
+# static fields
+.field private static final serialVersionUID:J
 
 
 # instance fields
-.field private a:Lolz;
-
-.field private volatile b:Ljava/lang/Object;
-
-.field private final c:Ljava/lang/Object;
+.field private final a:Ljava/util/Collection;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lolz;)V
+.method public constructor <init>(Ljava/util/Collection;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lojh;->a:Lolz;
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    sget-object p1, Loji;->a:Loji;
-
-    iput-object p1, p0, Lojh;->b:Ljava/lang/Object;
-
-    iput-object p0, p0, Lojh;->c:Ljava/lang/Object;
+    iput-object p1, p0, Lojh;->a:Ljava/util/Collection;
 
     return-void
 .end method
 
-.method private final writeReplace()Ljava/lang/Object;
-    .locals 2
-
-    new-instance v0, Loiy;
-
-    invoke-virtual {p0}, Lojh;->a()Ljava/lang/Object;
-
-    move-result-object v1
-
-    invoke-direct {v0, v1}, Loiy;-><init>(Ljava/lang/Object;)V
-
-    return-object v0
-.end method
-
 
 # virtual methods
-.method public final a()Ljava/lang/Object;
-    .locals 3
-
-    iget-object v0, p0, Lojh;->b:Ljava/lang/Object;
-
-    sget-object v1, Loji;->a:Loji;
-
-    if-eq v0, v1, :cond_0
-
-    return-object v0
-
-    :cond_0
-    iget-object v0, p0, Lojh;->c:Ljava/lang/Object;
-
-    monitor-enter v0
+.method public final a(Ljava/lang/Object;)Z
+    .locals 1
 
     :try_start_0
-    iget-object v1, p0, Lojh;->b:Ljava/lang/Object;
+    iget-object v0, p0, Lojh;->a:Ljava/util/Collection;
 
-    sget-object v2, Loji;->a:Loji;
+    invoke-interface {v0, p1}, Ljava/util/Collection;->contains(Ljava/lang/Object;)Z
 
-    if-eq v1, v2, :cond_1
+    move-result p1
+    :try_end_0
+    .catch Ljava/lang/NullPointerException; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Ljava/lang/ClassCastException; {:try_start_0 .. :try_end_0} :catch_0
+
+    return p1
+
+    :catch_0
+    move-exception p1
 
     goto :goto_0
 
-    :cond_1
-    iget-object v1, p0, Lojh;->a:Lolz;
-
-    invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    invoke-interface {v1}, Lolz;->a()Ljava/lang/Object;
-
-    move-result-object v1
-
-    iput-object v1, p0, Lojh;->b:Ljava/lang/Object;
-
-    const/4 v2, 0x0
-
-    iput-object v2, p0, Lojh;->a:Lolz;
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    :catch_1
+    move-exception p1
 
     :goto_0
-    monitor-exit v0
+    const/4 p1, 0x0
 
-    return-object v1
-
-    :catchall_0
-    move-exception v1
-
-    monitor-exit v0
-
-    throw v1
+    return p1
 .end method
 
-.method public final b()Z
-    .locals 2
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 1
 
-    iget-object v0, p0, Lojh;->b:Ljava/lang/Object;
+    instance-of v0, p1, Lojh;
 
-    sget-object v1, Loji;->a:Loji;
+    if-eqz v0, :cond_0
 
-    if-eq v0, v1, :cond_0
+    check-cast p1, Lojh;
 
-    const/4 v0, 0x1
+    iget-object v0, p0, Lojh;->a:Ljava/util/Collection;
 
-    return v0
+    iget-object p1, p1, Lojh;->a:Ljava/util/Collection;
+
+    invoke-interface {v0, p1}, Ljava/util/Collection;->equals(Ljava/lang/Object;)Z
+
+    move-result p1
+
+    return p1
 
     :cond_0
-    const/4 v0, 0x0
+    const/4 p1, 0x0
+
+    return p1
+.end method
+
+.method public final hashCode()I
+    .locals 1
+
+    iget-object v0, p0, Lojh;->a:Ljava/util/Collection;
+
+    invoke-interface {v0}, Ljava/util/Collection;->hashCode()I
+
+    move-result v0
 
     return v0
 .end method
 
 .method public final toString()Ljava/lang/String;
-    .locals 1
+    .locals 3
 
-    invoke-virtual {p0}, Lojh;->b()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    invoke-virtual {p0}, Lojh;->a()Ljava/lang/Object;
-
-    move-result-object v0
+    iget-object v0, p0, Lojh;->a:Ljava/util/Collection;
 
     invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v0
 
-    goto :goto_0
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
-    :cond_0
-    const-string v0, "Lazy value not initialized yet."
+    move-result-object v1
 
-    :goto_0
+    invoke-virtual {v1}, Ljava/lang/String;->length()I
+
+    move-result v1
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    add-int/lit8 v1, v1, 0xf
+
+    invoke-direct {v2, v1}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string v1, "Predicates.in("
+
+    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v0, ")"
+
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
     return-object v0
 .end method

@@ -1,156 +1,210 @@
 .class public final Lhmd;
-.super Ljava/lang/Object;
+.super Lhni;
 
 # interfaces
-.implements Lfaz;
-.implements Lfav;
-.implements Lfat;
-.implements Lezo;
+.implements Lihv;
 
 
 # instance fields
-.field public final a:Landroid/view/Window;
+.field public final a:Lihu;
 
-.field public b:Z
+.field public final b:Lihw;
 
-.field public c:I
+.field public final c:Lihw;
 
-.field public final d:Landroid/view/View$OnSystemUiVisibilityChangeListener;
-
-.field private e:I
+.field public final d:Lihw;
 
 
 # direct methods
-.method public constructor <init>(Ljuh;Landroid/view/Window;)V
-    .locals 2
+.method public constructor <init>(Lhmy;Lcom/google/android/apps/camera/ui/views/ViewfinderCover;Lcom/google/android/apps/camera/rewind/ui/RewindPreview;Lcom/google/android/apps/camera/rewind/ui/RewindControllerView;)V
+    .locals 1
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0, p1, p2, p3, p4}, Lhni;-><init>(Lhmy;Lcom/google/android/apps/camera/ui/views/ViewfinderCover;Lcom/google/android/apps/camera/rewind/ui/RewindPreview;Lcom/google/android/apps/camera/rewind/ui/RewindControllerView;)V
 
-    const/4 v0, 0x0
+    new-instance p1, Lhma;
 
-    iput-boolean v0, p0, Lhmd;->b:Z
+    invoke-direct {p1, p0}, Lhma;-><init>(Lhmd;)V
 
-    const/16 v1, 0x705
+    new-instance p2, Lihw;
 
-    iput v1, p0, Lhmd;->c:I
+    const/4 p3, 0x0
 
-    iput v0, p0, Lhmd;->e:I
+    new-array p4, p3, [Lihs;
 
-    new-instance v0, Lhmc;
+    invoke-direct {p2, p1, p4}, Lihw;-><init>(Lihs;[Lihs;)V
 
-    invoke-direct {v0, p0}, Lhmc;-><init>(Lhmd;)V
+    iput-object p2, p0, Lhmd;->b:Lihw;
 
-    iput-object v0, p0, Lhmd;->d:Landroid/view/View$OnSystemUiVisibilityChangeListener;
+    new-instance p1, Lhmb;
 
-    iput-object p2, p0, Lhmd;->a:Landroid/view/Window;
+    invoke-direct {p1, p0}, Lhmb;-><init>(Lhmd;)V
 
-    new-instance v0, Lhdg;
+    new-instance p4, Lihw;
 
-    const/16 v1, 0x11
+    new-array v0, p3, [Lihs;
 
-    invoke-direct {v0, p0, p2, v1}, Lhdg;-><init>(Lhmd;Landroid/view/Window;I)V
+    invoke-direct {p4, p1, v0}, Lihw;-><init>(Lihs;[Lihs;)V
 
-    invoke-virtual {p1, v0}, Ljuh;->execute(Ljava/lang/Runnable;)V
+    iput-object p4, p0, Lhmd;->c:Lihw;
+
+    new-instance p1, Lhmc;
+
+    invoke-direct {p1, p0}, Lhmc;-><init>(Lhmd;)V
+
+    new-instance p4, Lihw;
+
+    new-array v0, p3, [Lihs;
+
+    invoke-direct {p4, p1, v0}, Lihw;-><init>(Lihs;[Lihs;)V
+
+    iput-object p4, p0, Lhmd;->d:Lihw;
+
+    new-instance p1, Lihu;
+
+    invoke-direct {p1, p2, p3}, Lihu;-><init>(Lihw;Z)V
+
+    iput-object p1, p0, Lhmd;->a:Lihu;
+
+    invoke-virtual {p1}, Lihu;->f()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final B(Z)V
+.method public final a()V
     .locals 1
 
-    iget-boolean v0, p0, Lhmd;->b:Z
+    iget-object v0, p0, Lhmd;->a:Lihu;
+
+    invoke-virtual {v0}, Lihu;->a()Lihw;
+
+    move-result-object v0
 
     if-nez v0, :cond_0
 
-    if-eqz p1, :cond_0
-
-    invoke-virtual {p0}, Lhmd;->e()V
+    return-void
 
     :cond_0
+    iget-object v0, p0, Lhmd;->a:Lihu;
+
+    invoke-virtual {v0}, Lihu;->a()Lihw;
+
+    move-result-object v0
+
+    iget-object v0, v0, Lihw;->a:Lihs;
+
+    check-cast v0, Lhnd;
+
+    invoke-virtual {v0}, Lhnd;->a()V
+
     return-void
 .end method
 
-.method public final a(I)V
-    .locals 0
-
-    iput p1, p0, Lhmd;->c:I
-
-    invoke-virtual {p0}, Lhmd;->e()V
-
-    return-void
-.end method
-
-.method public final bM()V
+.method public final b()V
     .locals 1
 
-    const/4 v0, 0x1
+    iget-object v0, p0, Lhmd;->a:Lihu;
 
-    iput-boolean v0, p0, Lhmd;->b:Z
+    invoke-virtual {v0}, Lihu;->a()Lihw;
+
+    move-result-object v0
+
+    if-nez v0, :cond_0
+
+    return-void
+
+    :cond_0
+    iget-object v0, p0, Lhmd;->a:Lihu;
+
+    invoke-virtual {v0}, Lihu;->a()Lihw;
+
+    move-result-object v0
+
+    iget-object v0, v0, Lihw;->a:Lihs;
+
+    check-cast v0, Lhnd;
+
+    invoke-virtual {v0}, Lhnd;->b()V
 
     return-void
 .end method
 
-.method public final bN()V
+.method public final c()V
     .locals 1
 
-    const/4 v0, 0x0
+    iget-object v0, p0, Lhmd;->a:Lihu;
 
-    iput-boolean v0, p0, Lhmd;->b:Z
+    invoke-virtual {v0}, Lihu;->a()Lihw;
 
-    invoke-virtual {p0}, Lhmd;->e()V
+    move-result-object v0
+
+    if-nez v0, :cond_0
 
     return-void
-.end method
 
-.method public final d(I)V
-    .locals 0
+    :cond_0
+    iget-object v0, p0, Lhmd;->a:Lihu;
 
-    iput p1, p0, Lhmd;->e:I
+    invoke-virtual {v0}, Lihu;->a()Lihw;
 
-    invoke-virtual {p0}, Lhmd;->e()V
+    move-result-object v0
+
+    iget-object v0, v0, Lihw;->a:Lihs;
+
+    check-cast v0, Lhnd;
+
+    invoke-virtual {v0}, Lhnd;->c()V
 
     return-void
 .end method
 
 .method public final e()V
-    .locals 3
+    .locals 1
 
-    iget-boolean v0, p0, Lhmd;->b:Z
+    iget-object v0, p0, Lhmd;->a:Lihu;
 
-    if-nez v0, :cond_1
+    invoke-virtual {v0}, Lihu;->b()V
 
-    iget v0, p0, Lhmd;->c:I
+    iget-object v0, p0, Lhmd;->b:Lihw;
 
-    const/16 v1, 0x705
+    invoke-virtual {v0}, Lihw;->e()V
 
-    if-eq v0, v1, :cond_0
+    iget-object v0, p0, Lhmd;->c:Lihw;
 
-    const/16 v1, 0x714
+    invoke-virtual {v0}, Lihw;->e()V
 
-    if-eq v0, v1, :cond_0
+    iget-object v0, p0, Lhmd;->d:Lihw;
 
-    const/4 v0, 0x0
+    invoke-virtual {v0}, Lihw;->e()V
 
-    goto :goto_0
+    return-void
+.end method
 
-    :cond_0
-    iget v0, p0, Lhmd;->e:I
+.method public final f()V
+    .locals 1
 
-    :goto_0
-    iget-object v1, p0, Lhmd;->a:Landroid/view/Window;
+    iget-object v0, p0, Lhmd;->a:Lihu;
 
-    invoke-virtual {v1}, Landroid/view/Window;->getDecorView()Landroid/view/View;
+    invoke-virtual {v0}, Lihu;->c()V
 
-    move-result-object v1
+    return-void
+.end method
 
-    iget v2, p0, Lhmd;->c:I
+.method public final g()V
+    .locals 1
 
-    or-int/2addr v0, v2
+    iget-object v0, p0, Lhmd;->a:Lihu;
 
-    invoke-virtual {v1, v0}, Landroid/view/View;->setSystemUiVisibility(I)V
+    invoke-virtual {v0}, Lihu;->d()V
 
-    :cond_1
+    return-void
+.end method
+
+.method public final h()V
+    .locals 0
+
+    invoke-static {p0}, Lmip;->eQ(Lihv;)V
+
     return-void
 .end method

@@ -1,302 +1,235 @@
 .class public final Lhqo;
-.super Ljava/lang/Object;
-
-# interfaces
-.implements Lgen;
+.super Lhqd;
 
 
 # instance fields
-.field final synthetic a:Ljava/lang/Object;
+.field public final c:Lefh;
 
-.field private final synthetic b:I
+.field public d:Lojc;
+
+.field private final e:Lljf;
+
+.field private final f:Llco;
 
 
 # direct methods
-.method public constructor <init>(Landroid/view/View;I)V
-    .locals 0
+.method public constructor <init>(Lhpr;Lljf;Lefh;Llco;Lhhl;Ljava/lang/String;Lbww;Lhsg;Lojc;)V
+    .locals 8
 
-    iput p2, p0, Lhqo;->b:I
+    move-object v0, p0
 
-    iput-object p1, p0, Lhqo;->a:Ljava/lang/Object;
+    sget-object v2, Lhsr;->m:Lhsr;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    move-object v1, p1
 
-    return-void
-.end method
+    move-object v3, p6
 
-.method public constructor <init>(Lgdv;I)V
-    .locals 0
+    move-object v4, p7
 
-    iput p2, p0, Lhqo;->b:I
+    move-object/from16 v5, p8
 
-    iput-object p1, p0, Lhqo;->a:Ljava/lang/Object;
+    move-object v6, p5
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    move-object/from16 v7, p9
 
-    return-void
-.end method
+    invoke-interface/range {v1 .. v7}, Lhpr;->a(Lhsr;Ljava/lang/String;Lbww;Lhsg;Lhhl;Lojc;)Lhps;
 
-.method public constructor <init>(Lhqp;I)V
-    .locals 0
+    move-result-object v1
 
-    iput p2, p0, Lhqo;->b:I
+    invoke-direct {p0, v1}, Lhqd;-><init>(Lhps;)V
 
-    iput-object p1, p0, Lhqo;->a:Ljava/lang/Object;
+    sget-object v1, Loih;->a:Loih;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object v1, v0, Lhqo;->d:Lojc;
 
-    return-void
-.end method
+    move-object v1, p3
 
-.method public constructor <init>(Lije;I)V
-    .locals 0
+    iput-object v1, v0, Lhqo;->c:Lefh;
 
-    iput p2, p0, Lhqo;->b:I
+    move-object v1, p4
 
-    iput-object p1, p0, Lhqo;->a:Ljava/lang/Object;
+    iput-object v1, v0, Lhqo;->f:Llco;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    move-object v1, p2
+
+    iput-object v1, v0, Lhqo;->e:Lljf;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()V
-    .locals 2
+.method public final P(Llig;)V
+    .locals 3
 
-    iget v0, p0, Lhqo;->b:I
+    iget-object v0, p0, Lhqo;->e:Lljf;
 
-    packed-switch v0, :pswitch_data_0
+    const-string v1, "LongExposureCaptureSession#startEmpty"
 
-    iget-object v0, p0, Lhqo;->a:Ljava/lang/Object;
+    invoke-interface {v0, v1}, Lljf;->e(Ljava/lang/String;)V
 
-    check-cast v0, Landroid/view/View;
+    invoke-super {p0, p1}, Lhqd;->P(Llig;)V
 
-    const/4 v1, 0x1
-
-    invoke-virtual {v0, v1}, Landroid/view/View;->setFocusable(Z)V
-
-    return-void
-
-    :pswitch_0
-    iget-object v0, p0, Lhqo;->a:Ljava/lang/Object;
-
-    check-cast v0, Lije;
-
-    iget-object v0, v0, Lije;->u:Litm;
-
-    invoke-interface {v0}, Litm;->aa()Z
-
-    move-result v0
-
-    if-nez v0, :cond_1
-
-    iget-object v0, p0, Lhqo;->a:Ljava/lang/Object;
-
-    check-cast v0, Lije;
-
-    iget-object v1, v0, Lije;->u:Litm;
-
-    iget-object v0, v0, Lije;->r:Ljwb;
-
-    invoke-interface {v0}, Ljwb;->bm()Ljava/lang/Object;
+    invoke-virtual {p0}, Lhqd;->J()Ljtl;
 
     move-result-object v0
 
-    check-cast v0, Lika;
-
-    invoke-interface {v1, v0}, Litm;->Z(Lika;)Z
-
-    move-result v0
-
-    if-nez v0, :cond_0
-
-    goto :goto_0
-
-    :cond_0
-    return-void
-
-    :cond_1
-    :goto_0
-    iget-object v0, p0, Lhqo;->a:Ljava/lang/Object;
-
-    check-cast v0, Lije;
-
-    iget-object v0, v0, Lije;->u:Litm;
-
-    invoke-interface {v0}, Litm;->p()V
-
-    return-void
-
-    :pswitch_1
-    iget-object v0, p0, Lhqo;->a:Ljava/lang/Object;
-
-    check-cast v0, Lgdv;
-
-    iget-object v0, v0, Lgdv;->m:Ljwb;
-
-    const/4 v1, 0x0
-
-    invoke-static {v1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
-
-    move-result-object v1
-
-    invoke-interface {v0, v1}, Ljwb;->bn(Ljava/lang/Object;)V
-
-    return-void
-
-    :pswitch_2
-    iget-object v0, p0, Lhqo;->a:Ljava/lang/Object;
-
-    check-cast v0, Lhqp;
-
-    iget-object v1, v0, Lhqp;->h:Leg;
-
-    if-eqz v1, :cond_2
-
-    invoke-virtual {v0}, Lhqp;->c()V
-
-    :cond_2
-    return-void
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_2
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
-.end method
-
-.method public final synthetic b()V
-    .locals 1
-
-    iget v0, p0, Lhqo;->b:I
-
-    return-void
-.end method
-
-.method public final synthetic c()V
-    .locals 1
-
-    iget v0, p0, Lhqo;->b:I
-
-    return-void
-.end method
-
-.method public final d()V
-    .locals 3
-
-    iget v0, p0, Lhqo;->b:I
-
     const/4 v1, 0x1
 
-    packed-switch v0, :pswitch_data_0
+    const/4 v2, 0x2
 
-    iget-object v0, p0, Lhqo;->a:Ljava/lang/Object;
+    invoke-virtual {v0, v1, v2}, Ljtl;->h(II)V
 
-    check-cast v0, Landroid/view/View;
+    iget-object v0, p0, Lhqo;->e:Lljf;
 
-    const/4 v1, 0x0
+    const-string v1, "LongExposureCaptureSession#insertEmptyPlaceholder"
 
-    invoke-virtual {v0, v1}, Landroid/view/View;->setFocusable(Z)V
+    invoke-interface {v0, v1}, Lljf;->g(Ljava/lang/String;)V
 
-    return-void
+    invoke-virtual {p0}, Lhqd;->t()Lhrc;
 
-    :pswitch_0
-    iget-object v0, p0, Lhqo;->a:Ljava/lang/Object;
+    move-result-object v0
 
-    check-cast v0, Lije;
-
-    iget-object v0, v0, Lije;->s:Lhrq;
-
-    invoke-virtual {v0, v1}, Lhrq;->b(Z)V
-
-    iget-object v0, p0, Lhqo;->a:Ljava/lang/Object;
-
-    check-cast v0, Lije;
-
-    iget-object v0, v0, Lije;->k:Ldhi;
-
-    sget-object v2, Ldho;->aj:Ldhj;
-
-    invoke-interface {v0, v2}, Ldhi;->l(Ldhj;)Z
-
-    move-result v0
-
-    if-nez v0, :cond_0
-
-    iget-object v0, p0, Lhqo;->a:Ljava/lang/Object;
-
-    check-cast v0, Lije;
-
-    iget-object v0, v0, Lije;->u:Litm;
-
-    invoke-interface {v0}, Litm;->n()V
-
-    :cond_0
-    iget-object v0, p0, Lhqo;->a:Ljava/lang/Object;
-
-    check-cast v0, Lije;
-
-    iget-object v0, v0, Lije;->t:Lgzi;
-
-    const-string v2, "perf_has_shown_options_bar"
-
-    invoke-virtual {v0, v2}, Lgzi;->m(Ljava/lang/String;)Z
-
-    move-result v0
-
-    if-nez v0, :cond_1
-
-    iget-object v0, p0, Lhqo;->a:Ljava/lang/Object;
-
-    check-cast v0, Lije;
-
-    iget-object v0, v0, Lije;->t:Lgzi;
-
-    invoke-virtual {v0, v2, v1}, Lgzi;->l(Ljava/lang/String;Z)V
-
-    :cond_1
-    return-void
-
-    :pswitch_1
-    iget-object v0, p0, Lhqo;->a:Ljava/lang/Object;
-
-    check-cast v0, Lgdv;
-
-    iget-object v0, v0, Lgdv;->m:Ljwb;
-
-    invoke-static {v1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+    invoke-virtual {p0}, Lhqd;->h()Lhsp;
 
     move-result-object v1
 
-    invoke-interface {v0, v1}, Ljwb;->bn(Ljava/lang/Object;)V
+    invoke-virtual {v0, p1, v1}, Lhrc;->b(Llig;Lhsp;)Lhrb;
+
+    move-result-object p1
+
+    invoke-virtual {p0, p1}, Lhqd;->I(Lhrb;)V
+
+    iget-object p1, p0, Lhqo;->e:Lljf;
+
+    invoke-interface {p1}, Lljf;->f()V
+
+    invoke-virtual {p0}, Lhqd;->o()Lhqb;
+
+    move-result-object p1
+
+    invoke-static {}, Lfjz;->a()Lfjy;
+
+    move-result-object v0
+
+    invoke-virtual {p0}, Lhqd;->i()Lhsr;
+
+    move-result-object v1
+
+    iput-object v1, v0, Lfjy;->a:Lhsr;
+
+    iget-object v1, p0, Lhqo;->f:Llco;
+
+    invoke-interface {v1}, Llco;->fA()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Ljava/lang/Float;
+
+    iput-object v1, v0, Lfjy;->c:Ljava/lang/Float;
+
+    invoke-virtual {v0}, Lfjy;->a()Lfjz;
+
+    move-result-object v0
+
+    invoke-virtual {p1, v0}, Lhqb;->c(Lfjz;)V
 
     return-void
+.end method
 
-    :pswitch_2
-    iget-object v0, p0, Lhqo;->a:Ljava/lang/Object;
+.method public final r([BLikc;)Lpht;
+    .locals 3
 
-    check-cast v0, Lhqp;
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    iget-object v0, v0, Lhqp;->h:Leg;
+    const-string v0, "saveAndFinish"
 
-    if-eqz v0, :cond_2
+    invoke-virtual {p0, v0}, Lhqd;->G(Ljava/lang/String;)V
 
-    invoke-virtual {v0}, Leg;->hide()V
+    invoke-virtual {p0}, Lhqd;->J()Ljtl;
 
-    :cond_2
-    return-void
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljtl;->c()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    const-string p1, "Ignoring saveAndFinish. CaptureSession has been deleted or canceled."
+
+    invoke-virtual {p0, p1}, Lhqd;->H(Ljava/lang/String;)V
+
+    invoke-virtual {p0}, Lhqd;->p()Lpht;
+
+    move-result-object p1
+
+    return-object p1
+
+    :cond_0
+    invoke-virtual {p0}, Lhqd;->J()Ljtl;
+
+    move-result-object v0
+
+    const/4 v1, 0x2
+
+    new-array v1, v1, [I
+
+    fill-array-data v1, :array_0
+
+    invoke-virtual {v0, v1}, Ljtl;->f([I)V
+
+    invoke-virtual {p0}, Lhqd;->e()Lbww;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lbww;->b()Lojc;
+
+    move-result-object v0
+
+    iput-object v0, p2, Likc;->d:Lojc;
+
+    const/4 v0, 0x0
+
+    iput-boolean v0, p2, Likc;->e:Z
+
+    sget-object v0, Lgqx;->a:Lgqx;
+
+    iput-object v0, p2, Likc;->f:Lgqx;
+
+    invoke-virtual {p0}, Lhqd;->J()Ljtl;
+
+    move-result-object v0
+
+    const/4 v1, 0x3
+
+    invoke-virtual {v0, v1}, Ljtl;->g(I)V
+
+    invoke-virtual {p0, p2}, Lhqd;->x(Likc;)Lojc;
+
+    move-result-object v0
+
+    invoke-virtual {p0}, Lhqd;->E()Ljava/util/concurrent/Executor;
+
+    move-result-object v1
+
+    new-instance v2, Lhqm;
+
+    invoke-direct {v2, p0, p1, v0, p2}, Lhqm;-><init>(Lhqo;[BLojc;Likc;)V
+
+    invoke-interface {v1, v2}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
+
+    invoke-virtual {p0}, Lhqd;->p()Lpht;
+
+    move-result-object p1
+
+    return-object p1
 
     nop
 
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_2
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
+    :array_0
+    .array-data 4
+        0x2
+        0x3
+    .end array-data
 .end method

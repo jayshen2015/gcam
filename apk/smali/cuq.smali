@@ -1,40 +1,41 @@
-.class final Lcuq;
-.super Landroid/media/AudioDeviceCallback;
+.class public final synthetic Lcuq;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Llie;
 
 
 # instance fields
-.field final synthetic a:Lcur;
+.field public final synthetic a:Lcus;
+
+.field public final synthetic b:Lcuw;
 
 
 # direct methods
-.method public constructor <init>(Lcur;)V
+.method public synthetic constructor <init>(Lcus;Lcuw;)V
     .locals 0
 
-    iput-object p1, p0, Lcuq;->a:Lcur;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0}, Landroid/media/AudioDeviceCallback;-><init>()V
+    iput-object p1, p0, Lcuq;->a:Lcus;
+
+    iput-object p2, p0, Lcuq;->b:Lcuw;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onAudioDevicesAdded([Landroid/media/AudioDeviceInfo;)V
-    .locals 0
+.method public final close()V
+    .locals 2
 
-    iget-object p1, p0, Lcuq;->a:Lcur;
+    iget-object v0, p0, Lcuq;->a:Lcus;
 
-    invoke-virtual {p1}, Lcur;->b()V
+    iget-object v1, p0, Lcuq;->b:Lcuw;
 
-    return-void
-.end method
+    iget-object v0, v0, Lcus;->d:Ljava/util/List;
 
-.method public final onAudioDevicesRemoved([Landroid/media/AudioDeviceInfo;)V
-    .locals 0
-
-    iget-object p1, p0, Lcuq;->a:Lcur;
-
-    invoke-virtual {p1}, Lcur;->b()V
+    invoke-interface {v0, v1}, Ljava/util/List;->remove(Ljava/lang/Object;)Z
 
     return-void
 .end method

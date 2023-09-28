@@ -2,114 +2,49 @@
 .super Ljava/lang/Object;
 
 
-# static fields
-.field private static final a:Lkrn;
-
-.field private static final b:Ljava/util/Random;
-
-.field private static final c:Lnow;
-
-.field private static final d:Ljava/lang/Object;
-
-.field private static e:Lkte;
+# instance fields
+.field private final a:Lmro;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
+.method public constructor <init>(Lmro;)V
+    .locals 0
 
-    new-instance v0, Lkrq;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {v0}, Lkrq;-><init>()V
-
-    sput-object v0, Llgp;->a:Lkrn;
-
-    new-instance v0, Ljava/util/Random;
-
-    invoke-direct {v0}, Ljava/util/Random;-><init>()V
-
-    sput-object v0, Llgp;->b:Ljava/util/Random;
-
-    new-instance v0, Lnaa;
-
-    const/4 v1, 0x0
-
-    invoke-direct {v0, v1}, Lnaa;-><init>([B)V
-
-    const-string v1, "PrimesBrellaExampleStore-%d"
-
-    invoke-virtual {v0, v1}, Lnaa;->c(Ljava/lang/String;)V
-
-    invoke-static {v0}, Lnaa;->d(Lnaa;)Ljava/util/concurrent/ThreadFactory;
-
-    move-result-object v0
-
-    invoke-static {v0}, Ljava/util/concurrent/Executors;->newSingleThreadExecutor(Ljava/util/concurrent/ThreadFactory;)Ljava/util/concurrent/ExecutorService;
-
-    move-result-object v0
-
-    invoke-static {v0}, Lnsy;->p(Ljava/util/concurrent/ExecutorService;)Lnow;
-
-    move-result-object v0
-
-    sput-object v0, Llgp;->c:Lnow;
-
-    new-instance v0, Ljava/lang/Object;
-
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
-
-    sput-object v0, Llgp;->d:Ljava/lang/Object;
+    iput-object p1, p0, Llgp;->a:Lmro;
 
     return-void
 .end method
 
-.method public static a(Landroid/content/Context;)Lkte;
-    .locals 6
 
-    invoke-virtual {p0}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
+# virtual methods
+.method public final a()I
+    .locals 1
 
-    move-result-object p0
+    iget-object v0, p0, Llgp;->a:Lmro;
 
-    sget-object v0, Llgp;->d:Ljava/lang/Object;
+    iget v0, v0, Lmro;->b:I
 
-    monitor-enter v0
+    return v0
+.end method
 
-    :try_start_0
-    sget-object v1, Llgp;->e:Lkte;
+.method public final b()J
+    .locals 2
 
-    if-nez v1, :cond_0
+    iget-object v0, p0, Llgp;->a:Lmro;
 
-    new-instance v1, Lkte;
+    iget-wide v0, v0, Lmro;->c:J
 
-    new-instance v2, Ljks;
+    return-wide v0
+.end method
 
-    sget-object v3, Llgp;->a:Lkrn;
+.method public final c()Ljava/nio/ByteBuffer;
+    .locals 1
 
-    sget-object v4, Llgp;->b:Ljava/util/Random;
+    iget-object v0, p0, Llgp;->a:Lmro;
 
-    sget-object v5, Llgp;->c:Lnow;
+    iget-object v0, v0, Lmro;->a:Ljava/nio/ByteBuffer;
 
-    invoke-direct {v2, p0, v3, v4, v5}, Ljks;-><init>(Landroid/content/Context;Lkrn;Ljava/util/Random;Ljava/util/concurrent/ExecutorService;)V
-
-    const-class v3, Lcom/google/android/libraries/performance/primes/federatedlearning/PrimesExampleStoreDataTtlService;
-
-    invoke-direct {v1, p0, v2, v5, v3}, Lkte;-><init>(Landroid/content/Context;Ljks;Ljava/util/concurrent/ExecutorService;Ljava/lang/Class;)V
-
-    sput-object v1, Llgp;->e:Lkte;
-
-    :cond_0
-    sget-object p0, Llgp;->e:Lkte;
-
-    monitor-exit v0
-
-    return-object p0
-
-    :catchall_0
-    move-exception p0
-
-    monitor-exit v0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw p0
+    return-object v0
 .end method

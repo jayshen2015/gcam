@@ -1,30 +1,22 @@
 .class public final Likb;
-.super Landroid/animation/AnimatorListenerAdapter;
+.super Ljava/lang/Object;
 
 
-# instance fields
-.field final synthetic a:Ljava/util/function/Consumer;
+# static fields
+.field public static final a:Liiy;
 
 
 # direct methods
-.method public constructor <init>(Ljava/util/function/Consumer;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 2
 
-    iput-object p1, p0, Likb;->a:Ljava/util/function/Consumer;
+    new-instance v0, Liiy;
 
-    invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
+    const/4 v1, 0x3
 
-    return-void
-.end method
+    invoke-direct {v0, v1}, Liiy;-><init>(I)V
 
-
-# virtual methods
-.method public final onAnimationEnd(Landroid/animation/Animator;)V
-    .locals 1
-
-    iget-object v0, p0, Likb;->a:Ljava/util/function/Consumer;
-
-    invoke-interface {v0, p1}, Ljava/util/function/Consumer;->accept(Ljava/lang/Object;)V
+    sput-object v0, Likb;->a:Liiy;
 
     return-void
 .end method

@@ -1,25 +1,80 @@
-.class public final Lizu;
-.super Ljava/lang/Object;
+.class Lizu;
+.super Lizs;
 
 
-# annotations
-.annotation runtime Ljava/lang/Deprecated;
-.end annotation
-
-
-# static fields
-.field public static volatile a:Loxq;
+# instance fields
+.field final synthetic b:Lizx;
 
 
 # direct methods
-.method static constructor <clinit>()V
+.method public constructor <init>(Lizx;)V
+    .locals 0
+
+    iput-object p1, p0, Lizu;->b:Lizx;
+
+    invoke-direct {p0}, Lizs;-><init>()V
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public a()V
     .locals 1
 
-    new-instance v0, Loxq;
+    iget-object v0, p0, Lizu;->b:Lizx;
 
-    invoke-direct {v0}, Loxq;-><init>()V
+    iget-object v0, v0, Lizx;->a:Lcom/google/android/apps/camera/bottombar/BottomBarController;
 
-    sput-object v0, Lizu;->a:Loxq;
+    invoke-virtual {v0}, Lcom/google/android/apps/camera/bottombar/BottomBarController;->stopPanoramaCapture()V
+
+    iget-object v0, p0, Lizu;->b:Lizx;
+
+    iget-object v0, v0, Lizx;->b:Ljlb;
+
+    invoke-interface {v0}, Ljlb;->f()V
+
+    return-void
+.end method
+
+.method public c()V
+    .locals 1
+
+    iget-object v0, p0, Lizu;->b:Lizx;
+
+    iget-object v0, v0, Lizx;->a:Lcom/google/android/apps/camera/bottombar/BottomBarController;
+
+    invoke-virtual {v0}, Lcom/google/android/apps/camera/bottombar/BottomBarController;->stopPanoramaCapture()V
+
+    iget-object v0, p0, Lizu;->b:Lizx;
+
+    iget-object v0, v0, Lizx;->b:Ljlb;
+
+    invoke-interface {v0}, Ljlb;->o()V
+
+    return-void
+.end method
+
+.method public final f()V
+    .locals 1
+
+    iget-object v0, p0, Lizu;->b:Lizx;
+
+    iget-object v0, v0, Lizx;->c:Lgtg;
+
+    invoke-virtual {v0}, Lgtg;->l()V
+
+    iget-object v0, p0, Lizu;->b:Lizx;
+
+    iget-object v0, v0, Lizx;->f:Ljjp;
+
+    invoke-virtual {v0}, Ljjp;->b()V
+
+    return-void
+.end method
+
+.method public final g()V
+    .locals 0
 
     return-void
 .end method

@@ -1,104 +1,83 @@
 .class final Lnoe;
-.super Lnoo;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Lqco;
 
 
 # instance fields
-.field private final a:Lnou;
+.field final synthetic a:Lnog;
 
 
 # direct methods
-.method public constructor <init>(Lnou;)V
+.method public constructor <init>(Lnog;)V
     .locals 0
 
-    invoke-direct {p0}, Lnoo;-><init>()V
+    iput-object p1, p0, Lnoe;->a:Lnog;
 
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    iput-object p1, p0, Lnoe;->a:Lnou;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final cancel(Z)Z
-    .locals 1
+.method public final bridge synthetic a(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 5
 
-    iget-object v0, p0, Lnoe;->a:Lnou;
+    check-cast p1, Ljava/util/List;
 
-    invoke-interface {v0, p1}, Lnou;->cancel(Z)Z
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    move-result p1
+    iget-object v0, p0, Lnoe;->a:Lnog;
 
-    return p1
-.end method
+    new-instance v1, Ljava/util/ArrayList;
 
-.method public final d(Ljava/lang/Runnable;Ljava/util/concurrent/Executor;)V
-    .locals 1
+    invoke-static {p1}, Lqmd;->B(Ljava/lang/Iterable;)I
 
-    iget-object v0, p0, Lnoe;->a:Lnou;
+    move-result v2
 
-    invoke-interface {v0, p1, p2}, Lnou;->d(Ljava/lang/Runnable;Ljava/util/concurrent/Executor;)V
+    invoke-direct {v1, v2}, Ljava/util/ArrayList;-><init>(I)V
 
-    return-void
-.end method
-
-.method public final get()Ljava/lang/Object;
-    .locals 1
-
-    iget-object v0, p0, Lnoe;->a:Lnou;
-
-    invoke-interface {v0}, Lnou;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public final get(JLjava/util/concurrent/TimeUnit;)Ljava/lang/Object;
-    .locals 1
-
-    iget-object v0, p0, Lnoe;->a:Lnou;
-
-    invoke-interface {v0, p1, p2, p3}, Lnou;->get(JLjava/util/concurrent/TimeUnit;)Ljava/lang/Object;
+    invoke-interface {p1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object p1
 
-    return-object p1
-.end method
+    :goto_0
+    invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
 
-.method public final isCancelled()Z
-    .locals 1
+    move-result v2
 
-    iget-object v0, p0, Lnoe;->a:Lnou;
+    if-eqz v2, :cond_0
 
-    invoke-interface {v0}, Lnou;->isCancelled()Z
+    invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    move-result v0
+    move-result-object v2
 
-    return v0
-.end method
+    check-cast v2, Lnqh;
 
-.method public final isDone()Z
-    .locals 1
+    iget-object v3, v0, Lnog;->b:Lnox;
 
-    iget-object v0, p0, Lnoe;->a:Lnou;
+    new-instance v4, Lnow;
 
-    invoke-interface {v0}, Lnou;->isDone()Z
+    iget-object v3, v3, Lnox;->a:Lqkg;
 
-    move-result v0
+    invoke-interface {v3}, Lqkg;->get()Ljava/lang/Object;
 
-    return v0
-.end method
+    move-result-object v3
 
-.method public final toString()Ljava/lang/String;
-    .locals 1
+    check-cast v3, Lohh;
 
-    iget-object v0, p0, Lnoe;->a:Lnou;
+    invoke-virtual {v3}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    invoke-virtual {v0}, Ljava/lang/Object;->toString()Ljava/lang/String;
+    invoke-virtual {v2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    move-result-object v0
+    invoke-direct {v4, v2}, Lnow;-><init>(Lnqh;)V
 
-    return-object v0
+    invoke-interface {v1, v4}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
+
+    goto :goto_0
+
+    :cond_0
+    return-object v1
 .end method

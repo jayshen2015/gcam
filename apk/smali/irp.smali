@@ -1,40 +1,38 @@
 .class final Lirp;
-.super Lite;
+.super Leg;
 
 
 # instance fields
-.field final synthetic a:Lirq;
+.field final synthetic a:Lirr;
 
 
 # direct methods
-.method public constructor <init>(Lirq;)V
+.method public constructor <init>(Lirr;)V
     .locals 0
 
-    iput-object p1, p0, Lirp;->a:Lirq;
+    iput-object p1, p0, Lirp;->a:Lirr;
 
-    invoke-direct {p0, p1}, Lite;-><init>(Litf;)V
+    invoke-direct {p0}, Leg;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final b()V
-    .locals 2
+.method public final a(Landroid/graphics/Typeface;)V
+    .locals 1
 
-    iget-object v0, p0, Lirp;->a:Lirq;
+    iget-object v0, p0, Lirp;->a:Lirr;
 
-    iget-object v0, v0, Lirq;->a:Lhiu;
+    iget-object v0, v0, Lirr;->b:Landroid/graphics/Paint;
 
-    invoke-virtual {v0}, Lhiu;->e()V
+    invoke-virtual {v0, p1}, Landroid/graphics/Paint;->setTypeface(Landroid/graphics/Typeface;)Landroid/graphics/Typeface;
 
-    iget-object v0, p0, Lirp;->a:Lirq;
+    return-void
+.end method
 
-    iget-object v1, v0, Lirq;->a:Lhiu;
-
-    iget-object v0, v0, Lirq;->b:Lhiw;
-
-    invoke-virtual {v1, v0}, Lhiu;->g(Lhiw;)V
+.method public final e()V
+    .locals 0
 
     return-void
 .end method

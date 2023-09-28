@@ -1,54 +1,85 @@
-.class public final synthetic Lfag;
+.class final Lfag;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lfaj;
+.implements Lhsb;
 
 
 # instance fields
-.field public final synthetic a:Landroid/os/Bundle;
+.field final synthetic a:Lfah;
 
 
 # direct methods
-.method public synthetic constructor <init>(Landroid/os/Bundle;)V
+.method public constructor <init>(Lfah;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lfag;->a:Lfah;
 
-    iput-object p1, p0, Lfag;->a:Landroid/os/Bundle;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Lfaz;)V
-    .locals 3
+.method public final synthetic j(Lhsp;)V
+    .locals 0
 
-    iget-object v0, p0, Lfag;->a:Landroid/os/Bundle;
+    return-void
+.end method
 
-    instance-of v1, p1, Lfaw;
+.method public final synthetic k(Lhsp;Landroid/graphics/Bitmap;I)V
+    .locals 0
 
-    if-eqz v1, :cond_0
+    return-void
+.end method
 
-    new-instance v1, Landroid/os/Bundle;
+.method public final synthetic l(Lhsp;)V
+    .locals 0
 
-    invoke-direct {v1}, Landroid/os/Bundle;-><init>()V
+    return-void
+.end method
 
-    move-object v2, p1
+.method public final synthetic m(J)V
+    .locals 0
 
-    check-cast v2, Lfaw;
+    return-void
+.end method
 
-    invoke-interface {v2, v1}, Lfaw;->h(Landroid/os/Bundle;)V
+.method public final n(Landroid/graphics/Bitmap;)V
+    .locals 2
 
-    invoke-static {p1}, Lfak;->f(Lfaz;)Ljava/lang/String;
+    iget-object v0, p0, Lfag;->a:Lfah;
 
-    move-result-object p1
+    iget-object v0, v0, Lfah;->r:Lezn;
 
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    const/4 v1, 0x0
 
-    invoke-virtual {v0, p1, v1}, Landroid/os/Bundle;->putBundle(Ljava/lang/String;Landroid/os/Bundle;)V
+    invoke-virtual {v0, p1, v1}, Lezn;->b(Landroid/graphics/Bitmap;Z)V
 
-    :cond_0
+    return-void
+.end method
+
+.method public final synthetic o(Lhsp;Llif;)V
+    .locals 0
+
+    return-void
+.end method
+
+.method public final synthetic p(Lhsp;Lhsj;Lhss;)V
+    .locals 0
+
+    return-void
+.end method
+
+.method public final synthetic q(Lhsp;)V
+    .locals 0
+
+    return-void
+.end method
+
+.method public final synthetic w(Lhsp;)V
+    .locals 0
+
     return-void
 .end method

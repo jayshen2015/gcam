@@ -1,48 +1,81 @@
-.class final Lfem;
-.super Lkfg;
+.class public final Lfem;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Landroid/animation/Animator$AnimatorListener;
 
 
 # instance fields
-.field final synthetic a:Ljava/util/concurrent/Executor;
+.field final synthetic a:Landroid/view/View;
 
-.field final synthetic b:Laea;
-
-.field final synthetic c:Lkeb;
+.field final synthetic b:Lfen;
 
 
 # direct methods
-.method public constructor <init>(Ljava/util/concurrent/Executor;Laea;Lkeb;)V
+.method public constructor <init>(Lfen;Landroid/view/View;)V
     .locals 0
 
-    iput-object p1, p0, Lfem;->a:Ljava/util/concurrent/Executor;
+    iput-object p1, p0, Lfem;->b:Lfen;
 
-    iput-object p2, p0, Lfem;->b:Laea;
+    iput-object p2, p0, Lfem;->a:Landroid/view/View;
 
-    iput-object p3, p0, Lfem;->c:Lkeb;
-
-    invoke-direct {p0}, Lkfg;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final bk()V
-    .locals 5
+.method public final onAnimationCancel(Landroid/animation/Animator;)V
+    .locals 0
 
-    iget-object v0, p0, Lfem;->a:Ljava/util/concurrent/Executor;
+    return-void
+.end method
 
-    iget-object v1, p0, Lfem;->b:Laea;
+.method public final onAnimationEnd(Landroid/animation/Animator;)V
+    .locals 1
 
-    iget-object v2, p0, Lfem;->c:Lkeb;
+    iget-object p1, p0, Lfem;->a:Landroid/view/View;
 
-    new-instance v3, Levy;
+    const/4 v0, 0x0
 
-    const/4 v4, 0x6
+    invoke-virtual {p1, v0}, Landroid/view/View;->setAlpha(F)V
 
-    invoke-direct {v3, v1, v2, v4}, Levy;-><init>(Laea;Lkeb;I)V
+    iget-object p1, p0, Lfem;->a:Landroid/view/View;
 
-    invoke-interface {v0, v3}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
+    const/16 v0, 0x8
+
+    invoke-virtual {p1, v0}, Landroid/view/View;->setVisibility(I)V
+
+    iget-object p1, p0, Lfem;->b:Lfen;
+
+    iget-object p1, p1, Lfen;->a:Landroid/animation/ObjectAnimator;
+
+    invoke-virtual {p1}, Landroid/animation/ObjectAnimator;->removeAllListeners()V
+
+    iget-object p1, p0, Lfem;->b:Lfen;
+
+    const/4 v0, 0x0
+
+    iput-object v0, p1, Lfen;->a:Landroid/animation/ObjectAnimator;
+
+    return-void
+.end method
+
+.method public final onAnimationRepeat(Landroid/animation/Animator;)V
+    .locals 0
+
+    return-void
+.end method
+
+.method public final onAnimationStart(Landroid/animation/Animator;)V
+    .locals 1
+
+    iget-object p1, p0, Lfem;->a:Landroid/view/View;
+
+    const/4 v0, 0x0
+
+    invoke-virtual {p1, v0}, Landroid/view/View;->setVisibility(I)V
 
     return-void
 .end method

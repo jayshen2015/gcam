@@ -1,170 +1,93 @@
 .class public final Lngy;
-.super Lnws;
-
-# interfaces
-.implements Lnxz;
-
-
-# static fields
-.field public static final c:Lngy;
-
-.field private static volatile d:Lnyf;
+.super Ljava/lang/Exception;
 
 
 # instance fields
-.field public a:I
+.field public final a:I
 
-.field public b:I
+.field private final b:Ljava/lang/String;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
-
-    new-instance v0, Lngy;
-
-    invoke-direct {v0}, Lngy;-><init>()V
-
-    sput-object v0, Lngy;->c:Lngy;
-
-    const-class v1, Lngy;
-
-    invoke-static {v1, v0}, Lnws;->aa(Ljava/lang/Class;Lnws;)V
-
-    return-void
-.end method
-
-.method private constructor <init>()V
+.method public constructor <init>(ILjava/lang/String;)V
     .locals 0
 
-    invoke-direct {p0}, Lnws;-><init>()V
+    invoke-direct {p0, p2}, Ljava/lang/Exception;-><init>(Ljava/lang/String;)V
+
+    iput-object p2, p0, Lngy;->b:Ljava/lang/String;
+
+    iput p1, p0, Lngy;->a:I
 
     return-void
 .end method
 
 
 # virtual methods
-.method protected final a(ILjava/lang/Object;)Ljava/lang/Object;
-    .locals 3
+.method public final toString()Ljava/lang/String;
+    .locals 2
 
-    add-int/lit8 p1, p1, -0x1
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    const/4 p2, 0x1
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    packed-switch p1, :pswitch_data_0
+    const-string v1, "Error type: "
 
-    :pswitch_0
-    const/4 p1, 0x0
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    return-object p1
+    iget v1, p0, Lngy;->a:I
 
-    :pswitch_1
-    sget-object p1, Lngy;->d:Lnyf;
+    packed-switch v1, :pswitch_data_0
 
-    if-nez p1, :cond_1
-
-    const-class p2, Lngy;
-
-    monitor-enter p2
-
-    :try_start_0
-    sget-object p1, Lngy;->d:Lnyf;
-
-    if-nez p1, :cond_0
-
-    new-instance p1, Lnwo;
-
-    sget-object v0, Lngy;->c:Lngy;
-
-    invoke-direct {p1, v0}, Lnwo;-><init>(Lnws;)V
-
-    sput-object p1, Lngy;->d:Lnyf;
-
-    :cond_0
-    monitor-exit p2
+    const-string v1, "null"
 
     goto :goto_0
 
-    :catchall_0
-    move-exception p1
+    :pswitch_0
+    const-string v1, "TOO_LONG"
 
-    monitor-exit p2
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    goto :goto_0
 
-    throw p1
+    :pswitch_1
+    const-string v1, "TOO_SHORT_NSN"
 
-    :cond_1
-    :goto_0
-    return-object p1
+    goto :goto_0
 
     :pswitch_2
-    sget-object p1, Lngy;->c:Lngy;
+    const-string v1, "TOO_SHORT_AFTER_IDD"
 
-    return-object p1
+    goto :goto_0
 
     :pswitch_3
-    new-instance p1, Lnwn;
+    const-string v1, "NOT_A_NUMBER"
 
-    sget-object p2, Lngy;->c:Lngy;
-
-    invoke-direct {p1, p2}, Lnwn;-><init>(Lnws;)V
-
-    return-object p1
+    goto :goto_0
 
     :pswitch_4
-    new-instance p1, Lngy;
+    const-string v1, "INVALID_COUNTRY_CODE"
 
-    invoke-direct {p1}, Lngy;-><init>()V
+    :goto_0
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    return-object p1
+    const-string v1, ". "
 
-    :pswitch_5
-    const-string p1, "a"
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string v0, "\u0001\u0001\u0000\u0001\u0001\u0001\u0001\u0000\u0000\u0000\u0001\u100c\u0000"
+    iget-object v1, p0, Lngy;->b:Ljava/lang/String;
 
-    const/4 v1, 0x3
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    new-array v1, v1, [Ljava/lang/Object;
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    const/4 v2, 0x0
+    move-result-object v0
 
-    aput-object p1, v1, v2
-
-    const-string p1, "b"
-
-    aput-object p1, v1, p2
-
-    const/4 p1, 0x2
-
-    sget-object p2, Lngu;->e:Lnww;
-
-    aput-object p2, v1, p1
-
-    sget-object p1, Lngy;->c:Lngy;
-
-    invoke-static {p1, v0, v1}, Lngy;->X(Lnxy;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object p1
-
-    return-object p1
-
-    :pswitch_6
-    invoke-static {p2}, Ljava/lang/Byte;->valueOf(B)Ljava/lang/Byte;
-
-    move-result-object p1
-
-    return-object p1
+    return-object v0
 
     :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_6
-        :pswitch_0
-        :pswitch_5
+    .packed-switch 0x1
         :pswitch_4
         :pswitch_3
         :pswitch_2
         :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method

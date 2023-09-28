@@ -1,65 +1,44 @@
 .class public Lj$/util/concurrent/ConcurrentHashMap$KeySetView;
-.super Lj$/util/concurrent/b;
+.super Lj$/util/concurrent/ConcurrentHashMap$CollectionView;
 
 # interfaces
 .implements Ljava/util/Set;
-.implements Lj$/util/c;
+.implements Lj$/util/Collection;
 
 
-# annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lj$/util/concurrent/ConcurrentHashMap;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x9
-    name = "KeySetView"
-.end annotation
-
-.annotation system Ldalvik/annotation/Signature;
-    value = {
-        "<K:",
-        "Ljava/lang/Object;",
-        "V:",
-        "Ljava/lang/Object;",
-        ">",
-        "Lj$/util/concurrent/b;",
-        "Ljava/util/Set<",
-        "TK;>;",
-        "Lj$/util/c;"
-    }
-.end annotation
+# static fields
+.field private static final serialVersionUID:J = 0x6499de129d87293dL
 
 
 # instance fields
-.field private final b:Ljava/lang/Object;
+.field private final value:Ljava/lang/Object;
 
 
 # direct methods
-.method constructor <init>(Lj$/util/concurrent/ConcurrentHashMap;Ljava/lang/Boolean;)V
+.method constructor <init>(Lj$/util/concurrent/ConcurrentHashMap;Ljava/lang/Object;)V
     .locals 0
 
-    invoke-direct {p0, p1}, Lj$/util/concurrent/b;-><init>(Lj$/util/concurrent/ConcurrentHashMap;)V
+    invoke-direct {p0, p1}, Lj$/util/concurrent/ConcurrentHashMap$CollectionView;-><init>(Lj$/util/concurrent/ConcurrentHashMap;)V
 
-    iput-object p2, p0, Lj$/util/concurrent/ConcurrentHashMap$KeySetView;->b:Ljava/lang/Object;
+    iput-object p2, p0, Lj$/util/concurrent/ConcurrentHashMap$KeySetView;->value:Ljava/lang/Object;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final add(Ljava/lang/Object;)Z
+.method public add(Ljava/lang/Object;)Z
     .locals 3
 
-    iget-object v0, p0, Lj$/util/concurrent/ConcurrentHashMap$KeySetView;->b:Ljava/lang/Object;
+    iget-object v0, p0, Lj$/util/concurrent/ConcurrentHashMap$KeySetView;->value:Ljava/lang/Object;
 
     if-eqz v0, :cond_1
 
-    iget-object v1, p0, Lj$/util/concurrent/b;->a:Lj$/util/concurrent/ConcurrentHashMap;
+    iget-object v1, p0, Lj$/util/concurrent/ConcurrentHashMap$CollectionView;->map:Lj$/util/concurrent/ConcurrentHashMap;
 
     const/4 v2, 0x1
 
-    invoke-virtual {v1, p1, v0, v2}, Lj$/util/concurrent/ConcurrentHashMap;->g(Ljava/lang/Object;Ljava/lang/Object;Z)Ljava/lang/Object;
+    invoke-virtual {v1, p1, v0, v2}, Lj$/util/concurrent/ConcurrentHashMap;->putVal(Ljava/lang/Object;Ljava/lang/Object;Z)Ljava/lang/Object;
 
     move-result-object p1
 
@@ -81,10 +60,10 @@
     throw p1
 .end method
 
-.method public final addAll(Ljava/util/Collection;)Z
+.method public addAll(Ljava/util/Collection;)Z
     .locals 5
 
-    iget-object v0, p0, Lj$/util/concurrent/ConcurrentHashMap$KeySetView;->b:Ljava/lang/Object;
+    iget-object v0, p0, Lj$/util/concurrent/ConcurrentHashMap$KeySetView;->value:Ljava/lang/Object;
 
     if-eqz v0, :cond_2
 
@@ -106,11 +85,11 @@
 
     move-result-object v2
 
-    iget-object v3, p0, Lj$/util/concurrent/b;->a:Lj$/util/concurrent/ConcurrentHashMap;
+    iget-object v3, p0, Lj$/util/concurrent/ConcurrentHashMap$CollectionView;->map:Lj$/util/concurrent/ConcurrentHashMap;
 
     const/4 v4, 0x1
 
-    invoke-virtual {v3, v2, v0, v4}, Lj$/util/concurrent/ConcurrentHashMap;->g(Ljava/lang/Object;Ljava/lang/Object;Z)Ljava/lang/Object;
+    invoke-virtual {v3, v2, v0, v4}, Lj$/util/concurrent/ConcurrentHashMap;->putVal(Ljava/lang/Object;Ljava/lang/Object;Z)Ljava/lang/Object;
 
     move-result-object v2
 
@@ -137,10 +116,10 @@
     goto :goto_1
 .end method
 
-.method public final contains(Ljava/lang/Object;)Z
+.method public contains(Ljava/lang/Object;)Z
     .locals 1
 
-    iget-object v0, p0, Lj$/util/concurrent/b;->a:Lj$/util/concurrent/ConcurrentHashMap;
+    iget-object v0, p0, Lj$/util/concurrent/ConcurrentHashMap$CollectionView;->map:Lj$/util/concurrent/ConcurrentHashMap;
 
     invoke-virtual {v0, p1}, Lj$/util/concurrent/ConcurrentHashMap;->containsKey(Ljava/lang/Object;)Z
 
@@ -149,7 +128,7 @@
     return p1
 .end method
 
-.method public final equals(Ljava/lang/Object;)Z
+.method public equals(Ljava/lang/Object;)Z
     .locals 1
 
     instance-of v0, p1, Ljava/util/Set;
@@ -160,7 +139,7 @@
 
     if-eq p1, p0, :cond_0
 
-    invoke-virtual {p0, p1}, Lj$/util/concurrent/b;->containsAll(Ljava/util/Collection;)Z
+    invoke-virtual {p0, p1}, Lj$/util/concurrent/ConcurrentHashMap$CollectionView;->containsAll(Ljava/util/Collection;)Z
 
     move-result v0
 
@@ -184,18 +163,18 @@
     return p1
 .end method
 
-.method public final forEach(Ljava/util/function/Consumer;)V
+.method public forEach(Lj$/util/function/Consumer;)V
     .locals 5
 
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    if-eqz p1, :cond_1
 
-    iget-object v0, p0, Lj$/util/concurrent/b;->a:Lj$/util/concurrent/ConcurrentHashMap;
+    iget-object v0, p0, Lj$/util/concurrent/ConcurrentHashMap$CollectionView;->map:Lj$/util/concurrent/ConcurrentHashMap;
 
-    iget-object v0, v0, Lj$/util/concurrent/ConcurrentHashMap;->a:[Lj$/util/concurrent/k;
+    iget-object v0, v0, Lj$/util/concurrent/ConcurrentHashMap;->table:[Lj$/util/concurrent/ConcurrentHashMap$Node;
 
     if-eqz v0, :cond_0
 
-    new-instance v1, Lj$/util/concurrent/p;
+    new-instance v1, Lj$/util/concurrent/ConcurrentHashMap$Traverser;
 
     array-length v2, v0
 
@@ -203,26 +182,37 @@
 
     array-length v4, v0
 
-    invoke-direct {v1, v0, v2, v3, v4}, Lj$/util/concurrent/p;-><init>([Lj$/util/concurrent/k;III)V
+    invoke-direct {v1, v0, v2, v3, v4}, Lj$/util/concurrent/ConcurrentHashMap$Traverser;-><init>([Lj$/util/concurrent/ConcurrentHashMap$Node;III)V
 
     :goto_0
-    invoke-virtual {v1}, Lj$/util/concurrent/p;->a()Lj$/util/concurrent/k;
+    invoke-virtual {v1}, Lj$/util/concurrent/ConcurrentHashMap$Traverser;->advance()Lj$/util/concurrent/ConcurrentHashMap$Node;
 
     move-result-object v0
 
     if-eqz v0, :cond_0
 
-    iget-object v0, v0, Lj$/util/concurrent/k;->b:Ljava/lang/Object;
+    iget-object v0, v0, Lj$/util/concurrent/ConcurrentHashMap$Node;->key:Ljava/lang/Object;
 
-    invoke-interface {p1, v0}, Ljava/util/function/Consumer;->accept(Ljava/lang/Object;)V
+    invoke-interface {p1, v0}, Lj$/util/function/Consumer;->accept(Ljava/lang/Object;)V
 
     goto :goto_0
 
     :cond_0
     return-void
+
+    :cond_1
+    const/4 p1, 0x0
+
+    goto :goto_2
+
+    :goto_1
+    throw p1
+
+    :goto_2
+    goto :goto_1
 .end method
 
-.method public final hashCode()I
+.method public hashCode()I
     .locals 3
 
     invoke-virtual {p0}, Lj$/util/concurrent/ConcurrentHashMap$KeySetView;->iterator()Ljava/util/Iterator;
@@ -254,44 +244,44 @@
     return v1
 .end method
 
-.method public final iterator()Ljava/util/Iterator;
+.method public iterator()Ljava/util/Iterator;
     .locals 7
 
-    iget-object v4, p0, Lj$/util/concurrent/b;->a:Lj$/util/concurrent/ConcurrentHashMap;
+    iget-object v5, p0, Lj$/util/concurrent/ConcurrentHashMap$CollectionView;->map:Lj$/util/concurrent/ConcurrentHashMap;
 
-    iget-object v1, v4, Lj$/util/concurrent/ConcurrentHashMap;->a:[Lj$/util/concurrent/k;
+    iget-object v1, v5, Lj$/util/concurrent/ConcurrentHashMap;->table:[Lj$/util/concurrent/ConcurrentHashMap$Node;
 
     if-nez v1, :cond_0
 
     const/4 v0, 0x0
 
-    const/4 v3, 0x0
+    const/4 v4, 0x0
 
     goto :goto_0
 
     :cond_0
     array-length v0, v1
 
-    move v3, v0
+    move v4, v0
 
     :goto_0
-    new-instance v6, Lj$/util/concurrent/h;
+    new-instance v6, Lj$/util/concurrent/ConcurrentHashMap$KeyIterator;
 
-    const/4 v5, 0x0
+    const/4 v3, 0x0
 
     move-object v0, v6
 
-    move v2, v3
+    move v2, v4
 
-    invoke-direct/range {v0 .. v5}, Lj$/util/concurrent/h;-><init>([Lj$/util/concurrent/k;IILj$/util/concurrent/ConcurrentHashMap;I)V
+    invoke-direct/range {v0 .. v5}, Lj$/util/concurrent/ConcurrentHashMap$KeyIterator;-><init>([Lj$/util/concurrent/ConcurrentHashMap$Node;IIILj$/util/concurrent/ConcurrentHashMap;)V
 
     return-object v6
 .end method
 
-.method public final remove(Ljava/lang/Object;)Z
+.method public remove(Ljava/lang/Object;)Z
     .locals 1
 
-    iget-object v0, p0, Lj$/util/concurrent/b;->a:Lj$/util/concurrent/ConcurrentHashMap;
+    iget-object v0, p0, Lj$/util/concurrent/ConcurrentHashMap$CollectionView;->map:Lj$/util/concurrent/ConcurrentHashMap;
 
     invoke-virtual {v0, p1}, Lj$/util/concurrent/ConcurrentHashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -310,26 +300,36 @@
     return p1
 .end method
 
-.method public final synthetic removeIf(Ljava/util/function/Predicate;)Z
+.method public bridge synthetic removeAll(Ljava/util/Collection;)Z
     .locals 0
 
-    invoke-static {p0, p1}, Lj$/util/b;->d(Ljava/util/Collection;Ljava/util/function/Predicate;)Z
+    invoke-super {p0, p1}, Lj$/util/concurrent/ConcurrentHashMap$CollectionView;->removeAll(Ljava/util/Collection;)Z
 
     move-result p1
 
     return p1
 .end method
 
-.method public final spliterator()Lj$/util/Spliterator;
-    .locals 11
+.method public synthetic removeIf(Lj$/util/function/Predicate;)Z
+    .locals 0
 
-    iget-object v0, p0, Lj$/util/concurrent/b;->a:Lj$/util/concurrent/ConcurrentHashMap;
+    invoke-static {p0, p1}, Lj$/util/Collection$-CC;->$default$removeIf(Ljava/util/Collection;Lj$/util/function/Predicate;)Z
 
-    invoke-virtual {v0}, Lj$/util/concurrent/ConcurrentHashMap;->k()J
+    move-result p1
+
+    return p1
+.end method
+
+.method public spliterator()Lj$/util/Spliterator;
+    .locals 10
+
+    iget-object v0, p0, Lj$/util/concurrent/ConcurrentHashMap$CollectionView;->map:Lj$/util/concurrent/ConcurrentHashMap;
+
+    invoke-virtual {v0}, Lj$/util/concurrent/ConcurrentHashMap;->sumCount()J
 
     move-result-wide v1
 
-    iget-object v4, v0, Lj$/util/concurrent/ConcurrentHashMap;->a:[Lj$/util/concurrent/k;
+    iget-object v4, v0, Lj$/util/concurrent/ConcurrentHashMap;->table:[Lj$/util/concurrent/ConcurrentHashMap$Node;
 
     if-nez v4, :cond_0
 
@@ -345,7 +345,7 @@
     move v7, v0
 
     :goto_0
-    new-instance v0, Lj$/util/concurrent/i;
+    new-instance v0, Lj$/util/concurrent/ConcurrentHashMap$KeySpliterator;
 
     const/4 v6, 0x0
 
@@ -361,41 +361,21 @@
     move-wide v8, v1
 
     :goto_1
-    const/4 v10, 0x0
-
     move-object v3, v0
 
     move v5, v7
 
-    invoke-direct/range {v3 .. v10}, Lj$/util/concurrent/i;-><init>([Lj$/util/concurrent/k;IIIJI)V
+    invoke-direct/range {v3 .. v9}, Lj$/util/concurrent/ConcurrentHashMap$KeySpliterator;-><init>([Lj$/util/concurrent/ConcurrentHashMap$Node;IIIJ)V
 
     return-object v0
 .end method
 
-.method public final synthetic stream()Lj$/util/stream/Stream;
+.method public synthetic stream()Lj$/util/stream/Stream;
     .locals 1
 
-    invoke-static {p0}, Lj$/util/b;->i(Ljava/util/Collection;)Lj$/util/stream/Stream;
+    invoke-static {p0}, Lj$/util/Collection$-CC;->$default$stream(Ljava/util/Collection;)Lj$/util/stream/Stream;
 
     move-result-object v0
 
     return-object v0
-.end method
-
-.method public final toArray(Ljava/util/function/IntFunction;)[Ljava/lang/Object;
-    .locals 1
-
-    const/4 v0, 0x0
-
-    invoke-interface {p1, v0}, Ljava/util/function/IntFunction;->apply(I)Ljava/lang/Object;
-
-    move-result-object p1
-
-    check-cast p1, [Ljava/lang/Object;
-
-    invoke-interface {p0, p1}, Ljava/util/Collection;->toArray([Ljava/lang/Object;)[Ljava/lang/Object;
-
-    move-result-object p1
-
-    return-object p1
 .end method

@@ -1,22 +1,65 @@
-.class public final Ldax;
+.class public final synthetic Ldax;
 .super Ljava/lang/Object;
 
+# interfaces
+.implements Ljava/lang/Runnable;
 
-# static fields
-.field public static final a:Lday;
+
+# instance fields
+.field public final synthetic a:Ldba;
+
+.field private final synthetic b:I
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
+.method public synthetic constructor <init>(Ldba;I)V
+    .locals 0
 
-    new-instance v0, Lday;
+    iput p2, p0, Ldax;->b:I
 
-    const/4 v1, 0x0
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {v0, v1}, Lday;-><init>(I)V
-
-    sput-object v0, Ldax;->a:Lday;
+    iput-object p1, p0, Ldax;->a:Ldba;
 
     return-void
+.end method
+
+
+# virtual methods
+.method public final run()V
+    .locals 2
+
+    iget v0, p0, Ldax;->b:I
+
+    packed-switch v0, :pswitch_data_0
+
+    iget-object v0, p0, Ldax;->a:Ldba;
+
+    invoke-virtual {v0}, Ldba;->i()V
+
+    return-void
+
+    :pswitch_0
+    iget-object v0, p0, Ldax;->a:Ldba;
+
+    iget-object v1, v0, Ldba;->t:Leiy;
+
+    invoke-virtual {v1}, Leiy;->a()V
+
+    invoke-virtual {v0}, Ldba;->c()V
+
+    return-void
+
+    :pswitch_1
+    iget-object v0, p0, Ldax;->a:Ldba;
+
+    invoke-virtual {v0}, Ldba;->g()V
+
+    return-void
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method

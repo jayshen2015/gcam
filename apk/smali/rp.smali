@@ -1,28 +1,33 @@
 .class public final Lrp;
-.super Lja;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Ljava/lang/Runnable;
 
 
-# static fields
-.field public static final a:Lrp;
+# instance fields
+.field final synthetic a:Landroid/support/v7/widget/Toolbar;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
+.method public constructor <init>(Landroid/support/v7/widget/Toolbar;)V
+    .locals 0
 
-    new-instance v0, Lrp;
+    iput-object p1, p0, Lrp;->a:Landroid/support/v7/widget/Toolbar;
 
-    invoke-direct {v0}, Lrp;-><init>()V
-
-    sput-object v0, Lrp;->a:Lrp;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
-.method private constructor <init>()V
-    .locals 0
 
-    invoke-direct {p0}, Lja;-><init>()V
+# virtual methods
+.method public final run()V
+    .locals 1
+
+    iget-object v0, p0, Lrp;->a:Landroid/support/v7/widget/Toolbar;
+
+    invoke-virtual {v0}, Landroid/support/v7/widget/Toolbar;->t()Z
 
     return-void
 .end method

@@ -2,48 +2,84 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Lbmi;
 
 
 # instance fields
-.field public final a:Lbej;
+.field private final synthetic a:I
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
+.method public constructor <init>(I)V
+    .locals 0
 
-    const-string v0, "WorkForegroundRunnable"
+    iput p1, p0, Lbdu;->a:I
 
-    invoke-static {v0}, Laxq;->b(Ljava/lang/String;)Ljava/lang/String;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
-.method public constructor <init>()V
-    .locals 1
+.method public static final b()Lbdv;
+    .locals 2
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    :try_start_0
+    new-instance v0, Lbdv;
 
-    invoke-static {}, Lbej;->g()Lbej;
+    const-string v1, "SHA-256"
 
-    move-result-object v0
+    invoke-static {v1}, Ljava/security/MessageDigest;->getInstance(Ljava/lang/String;)Ljava/security/MessageDigest;
 
-    iput-object v0, p0, Lbdu;->a:Lbej;
+    move-result-object v1
 
-    return-void
+    invoke-direct {v0, v1}, Lbdv;-><init>(Ljava/security/MessageDigest;)V
+    :try_end_0
+    .catch Ljava/security/NoSuchAlgorithmException; {:try_start_0 .. :try_end_0} :catch_0
+
+    return-object v0
+
+    :catch_0
+    move-exception v0
+
+    new-instance v1, Ljava/lang/RuntimeException;
+
+    invoke-direct {v1, v0}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/Throwable;)V
+
+    throw v1
 .end method
 
 
 # virtual methods
-.method public final run()V
-    .locals 2
+.method public final synthetic a()Ljava/lang/Object;
+    .locals 1
 
-    iget-object v0, p0, Lbdu;->a:Lbej;
+    iget v0, p0, Lbdu;->a:I
 
-    const/4 v1, 0x0
+    packed-switch v0, :pswitch_data_0
 
-    invoke-virtual {v0, v1}, Lbej;->h(Ljava/lang/Object;)V
+    new-instance v0, Ljava/util/ArrayList;
 
-    return-void
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+
+    return-object v0
+
+    :pswitch_0
+    new-instance v0, Lbck;
+
+    invoke-direct {v0}, Lbck;-><init>()V
+
+    return-object v0
+
+    :pswitch_1
+    invoke-static {}, Lbdu;->b()Lbdv;
+
+    move-result-object v0
+
+    return-object v0
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method

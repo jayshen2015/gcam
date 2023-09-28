@@ -1,46 +1,22 @@
 .class public final Ljmx;
-.super Ljmn;
+.super Ljava/lang/Object;
 
 
 # instance fields
-.field final synthetic a:Ljmg;
+.field public final a:Ljnl;
 
-.field final synthetic b:Lkgd;
+.field public final b:Lojc;
 
 
 # direct methods
-.method public constructor <init>(Lkgd;Ljmg;[B[B)V
+.method public constructor <init>(Ljnl;Lojc;)V
     .locals 0
 
-    iput-object p1, p0, Ljmx;->b:Lkgd;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p2, p0, Ljmx;->a:Ljmg;
+    iput-object p1, p0, Ljmx;->a:Ljnl;
 
-    invoke-direct {p0}, Ljmn;-><init>()V
-
-    return-void
-.end method
-
-
-# virtual methods
-.method public final e(Ljml;)V
-    .locals 1
-
-    iget-object p1, p1, Ljml;->a:Lcom/google/android/gms/common/api/Status;
-
-    iget-object v0, p0, Ljmx;->b:Lkgd;
-
-    invoke-static {p1, v0}, Ljhp;->aj(Lcom/google/android/gms/common/api/Status;Lkgd;)V
-
-    return-void
-.end method
-
-.method public final f()V
-    .locals 1
-
-    iget-object v0, p0, Ljmx;->a:Ljmg;
-
-    invoke-interface {v0}, Ljmg;->e()V
+    iput-object p2, p0, Ljmx;->b:Lojc;
 
     return-void
 .end method

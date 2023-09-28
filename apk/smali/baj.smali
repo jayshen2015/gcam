@@ -1,64 +1,46 @@
 .class public final Lbaj;
-.super Lbai;
+.super Lazz;
 
 
 # direct methods
-.method public constructor <init>(Lbav;)V
+.method public constructor <init>(Landroid/content/res/AssetManager;Ljava/lang/String;)V
     .locals 0
 
-    invoke-direct {p0, p1}, Lbai;-><init>(Lbav;)V
+    invoke-direct {p0, p1, p2}, Lazz;-><init>(Landroid/content/res/AssetManager;Ljava/lang/String;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final b(Lbcj;)Z
+.method public final a()Ljava/lang/Class;
     .locals 1
 
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    const-class v0, Landroid/os/ParcelFileDescriptor;
 
-    iget-object p1, p1, Lbcj;->i:Laxf;
-
-    iget p1, p1, Laxf;->i:I
-
-    const/4 v0, 0x2
-
-    if-ne p1, v0, :cond_0
-
-    const/4 p1, 0x1
-
-    return p1
-
-    :cond_0
-    const/4 p1, 0x0
-
-    return p1
+    return-object v0
 .end method
 
-.method public final bridge synthetic c(Ljava/lang/Object;)Z
-    .locals 1
+.method protected final bridge synthetic b(Landroid/content/res/AssetManager;Ljava/lang/String;)Ljava/lang/Object;
+    .locals 0
 
-    check-cast p1, Lbaa;
+    invoke-virtual {p1, p2}, Landroid/content/res/AssetManager;->openFd(Ljava/lang/String;)Landroid/content/res/AssetFileDescriptor;
 
-    iget-boolean v0, p1, Lbaa;->a:Z
+    move-result-object p1
 
-    if-eqz v0, :cond_1
+    invoke-virtual {p1}, Landroid/content/res/AssetFileDescriptor;->getParcelFileDescriptor()Landroid/os/ParcelFileDescriptor;
 
-    iget-boolean p1, p1, Lbaa;->b:Z
+    move-result-object p1
 
-    if-nez p1, :cond_0
+    return-object p1
+.end method
 
-    goto :goto_0
+.method protected final synthetic e(Ljava/lang/Object;)V
+    .locals 0
 
-    :cond_0
-    const/4 p1, 0x0
+    check-cast p1, Landroid/os/ParcelFileDescriptor;
 
-    return p1
+    invoke-virtual {p1}, Landroid/os/ParcelFileDescriptor;->close()V
 
-    :cond_1
-    :goto_0
-    const/4 p1, 0x1
-
-    return p1
+    return-void
 .end method

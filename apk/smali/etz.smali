@@ -2,76 +2,79 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Ldfn;
+.implements Ljava/util/concurrent/Callable;
 
 
 # instance fields
-.field public final synthetic a:Ljava/lang/Object;
-
-.field private final synthetic b:I
+.field public final synthetic a:Leur;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lckl;I)V
+.method public synthetic constructor <init>(Leur;)V
     .locals 0
-
-    iput p2, p0, Letz;->b:I
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Letz;->a:Ljava/lang/Object;
-
-    return-void
-.end method
-
-.method public synthetic constructor <init>(Leub;I)V
-    .locals 0
-
-    iput p2, p0, Letz;->b:I
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Letz;->a:Ljava/lang/Object;
+    iput-object p1, p0, Letz;->a:Leur;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()V
-    .locals 2
+.method public final call()Ljava/lang/Object;
+    .locals 3
 
-    iget v0, p0, Letz;->b:I
+    iget-object v0, p0, Letz;->a:Leur;
 
-    const/4 v1, 0x0
+    iget-object v1, v0, Leur;->o:Lbuf;
 
-    packed-switch v0, :pswitch_data_0
+    if-nez v1, :cond_0
 
-    iget-object v0, p0, Letz;->a:Ljava/lang/Object;
+    iget-object v0, v0, Leur;->n:Lbtv;
 
-    check-cast v0, Lckl;
+    invoke-interface {v0}, Lbtv;->a()Lojc;
 
-    iget-object v0, v0, Lckl;->b:Lfcv;
+    move-result-object v0
 
-    invoke-virtual {v0, v1}, Lfcv;->b(F)V
+    goto :goto_0
 
-    return-void
+    :cond_0
+    invoke-virtual {v1}, Lbuf;->b()Lojc;
 
-    :pswitch_0
-    iget-object v0, p0, Letz;->a:Ljava/lang/Object;
+    move-result-object v1
 
-    check-cast v0, Leub;
+    invoke-virtual {v1}, Lojc;->g()Z
 
-    iget-object v0, v0, Leub;->a:Leuc;
+    move-result v2
 
-    iget-object v0, v0, Leuc;->N:Lfcv;
+    if-eqz v2, :cond_1
 
-    invoke-virtual {v0, v1}, Lfcv;->b(F)V
+    invoke-virtual {v1}, Lojc;->c()Ljava/lang/Object;
 
-    return-void
+    move-result-object v2
 
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+    check-cast v2, Ljnm;
+
+    iget-boolean v2, v2, Ljnm;->d:Z
+
+    if-nez v2, :cond_1
+
+    sget-object v0, Loih;->a:Loih;
+
+    goto :goto_0
+
+    :cond_1
+    iget-object v0, v0, Leur;->n:Lbtv;
+
+    invoke-interface {v0}, Lbtv;->a()Lojc;
+
+    move-result-object v0
+
+    invoke-virtual {v1, v0}, Lojc;->a(Lojc;)Lojc;
+
+    move-result-object v0
+
+    :goto_0
+    return-object v0
 .end method

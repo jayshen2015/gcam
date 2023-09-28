@@ -1,69 +1,49 @@
-.class public abstract Lmmk;
+.class final Lmmk;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Lmmn;
 
 
 # instance fields
-.field public final d:Lkgd;
+.field private final a:Lmlu;
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 1
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    const/4 v0, 0x0
-
-    iput-object v0, p0, Lmmk;->d:Lkgd;
-
-    return-void
-.end method
-
-.method public constructor <init>(Lkgd;[B[B)V
+.method public constructor <init>(Lmlu;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lmmk;->d:Lkgd;
+    iput-object p1, p0, Lmmk;->a:Lmlu;
 
     return-void
 .end method
 
 
 # virtual methods
-.method protected abstract a()V
+.method public final a(Ljava/lang/Object;Ljava/util/concurrent/Executor;Lmoa;)V
+    .locals 0
+
+    iget-object p2, p0, Lmmk;->a:Lmlu;
+
+    invoke-interface {p2, p1}, Lmlu;->a(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p1
+
+    invoke-virtual {p3, p1}, Lmoa;->k(Ljava/lang/Object;)V
+
+    return-void
 .end method
 
-.method public final b(Ljava/lang/Exception;)V
+.method public final toString()Ljava/lang/String;
     .locals 1
 
-    iget-object v0, p0, Lmmk;->d:Lkgd;
+    iget-object v0, p0, Lmmk;->a:Lmlu;
 
-    if-eqz v0, :cond_0
+    invoke-virtual {v0}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
-    invoke-virtual {v0, p1}, Lkgd;->j(Ljava/lang/Exception;)V
+    move-result-object v0
 
-    :cond_0
-    return-void
-.end method
-
-.method public final run()V
-    .locals 1
-
-    :try_start_0
-    invoke-virtual {p0}, Lmmk;->a()V
-    :try_end_0
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
-
-    return-void
-
-    :catch_0
-    move-exception v0
-
-    invoke-virtual {p0, v0}, Lmmk;->b(Ljava/lang/Exception;)V
-
-    return-void
+    return-object v0
 .end method

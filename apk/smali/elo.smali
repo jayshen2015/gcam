@@ -1,57 +1,63 @@
-.class public final Lelo;
+.class public final synthetic Lelo;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Logk;
+.implements Llie;
 
 
 # instance fields
-.field private final a:Lgxb;
+.field public final synthetic a:Lels;
+
+.field public final synthetic b:Lelv;
+
+.field private final synthetic c:I
 
 
 # direct methods
-.method public constructor <init>(Lgxb;[B[B[B)V
+.method public synthetic constructor <init>(Lels;Lelv;I)V
     .locals 0
+
+    iput p3, p0, Lelo;->c:I
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lelo;->a:Lgxb;
+    iput-object p1, p0, Lelo;->a:Lels;
+
+    iput-object p2, p0, Lelo;->b:Lelv;
 
     return-void
 .end method
 
-.method public static b(Lgxb;)Lelo;
-    .locals 2
-
-    new-instance v0, Lelo;
-
-    const/4 v1, 0x0
-
-    invoke-direct {v0, p0, v1, v1, v1}, Lelo;-><init>(Lgxb;[B[B[B)V
-
-    return-object v0
-.end method
-
 
 # virtual methods
-.method public final a()Landroid/app/Activity;
-    .locals 1
+.method public final close()V
+    .locals 2
 
-    iget-object v0, p0, Lelo;->a:Lgxb;
+    iget v0, p0, Lelo;->c:I
 
-    iget-object v0, v0, Lgxb;->a:Ljava/lang/Object;
+    packed-switch v0, :pswitch_data_0
 
-    check-cast v0, Landroid/app/Activity;
+    iget-object v0, p0, Lelo;->a:Lels;
 
-    return-object v0
-.end method
+    iget-object v1, p0, Lelo;->b:Lelv;
 
-.method public final bridge synthetic get()Ljava/lang/Object;
-    .locals 1
+    invoke-virtual {v0, v1}, Lels;->g(Lelv;)V
 
-    invoke-virtual {p0}, Lelo;->a()Landroid/app/Activity;
+    return-void
 
-    move-result-object v0
+    :pswitch_0
+    iget-object v0, p0, Lelo;->a:Lels;
 
-    return-object v0
+    iget-object v1, p0, Lelo;->b:Lelv;
+
+    invoke-virtual {v0, v1}, Lels;->g(Lelv;)V
+
+    return-void
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

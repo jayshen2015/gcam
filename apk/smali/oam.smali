@@ -1,186 +1,102 @@
 .class public final Loam;
-.super Lnws;
-
-# interfaces
-.implements Lnxz;
-
-
-# static fields
-.field public static final e:Loam;
-
-.field private static volatile f:Lnyf;
+.super Loaf;
 
 
 # instance fields
-.field public a:I
+.field public final g:I
 
-.field public b:I
+.field public final h:I
 
-.field public c:I
-
-.field public d:Lnvt;
+.field public final i:I
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
+.method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
+    .locals 9
 
-    new-instance v0, Loam;
+    const v0, 0x7f0400e6
 
-    invoke-direct {v0}, Loam;-><init>()V
+    const v1, 0x7f1506c7
 
-    sput-object v0, Loam;->e:Loam;
+    invoke-direct {p0, p1, p2, v0, v1}, Loaf;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;II)V
 
-    const-class v1, Loam;
+    invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
-    invoke-static {v1, v0}, Lnws;->aa(Ljava/lang/Class;Lnws;)V
+    move-result-object v0
 
-    return-void
-.end method
+    const v1, 0x7f07042b
 
-.method private constructor <init>()V
-    .locals 1
+    invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
-    invoke-direct {p0}, Lnws;-><init>()V
+    move-result v0
 
-    sget-object v0, Lnvt;->b:Lnvt;
+    invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
-    iput-object v0, p0, Loam;->d:Lnvt;
+    move-result-object v1
+
+    const v2, 0x7f070426
+
+    invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
+
+    move-result v1
+
+    sget-object v4, Lobe;->b:[I
+
+    const/4 v8, 0x0
+
+    new-array v7, v8, [I
+
+    const v5, 0x7f0400e6
+
+    const v6, 0x7f1506c7
+
+    move-object v2, p1
+
+    move-object v3, p2
+
+    invoke-static/range {v2 .. v7}, Lnzw;->a(Landroid/content/Context;Landroid/util/AttributeSet;[III[I)Landroid/content/res/TypedArray;
+
+    move-result-object p2
+
+    const/4 v2, 0x2
+
+    invoke-static {p1, p2, v2, v0}, Lobr;->b(Landroid/content/Context;Landroid/content/res/TypedArray;II)I
+
+    move-result v0
+
+    iget v2, p0, Loam;->a:I
+
+    add-int/2addr v2, v2
+
+    invoke-static {v0, v2}, Ljava/lang/Math;->max(II)I
+
+    move-result v0
+
+    iput v0, p0, Loam;->g:I
+
+    const/4 v0, 0x1
+
+    invoke-static {p1, p2, v0, v1}, Lobr;->b(Landroid/content/Context;Landroid/content/res/TypedArray;II)I
+
+    move-result p1
+
+    iput p1, p0, Loam;->h:I
+
+    invoke-virtual {p2, v8, v8}, Landroid/content/res/TypedArray;->getInt(II)I
+
+    move-result p1
+
+    iput p1, p0, Loam;->i:I
+
+    invoke-virtual {p2}, Landroid/content/res/TypedArray;->recycle()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method protected final a(ILjava/lang/Object;)Ljava/lang/Object;
-    .locals 3
+.method public final a()V
+    .locals 0
 
-    add-int/lit8 p1, p1, -0x1
-
-    const/4 p2, 0x1
-
-    packed-switch p1, :pswitch_data_0
-
-    :pswitch_0
-    const/4 p1, 0x0
-
-    return-object p1
-
-    :pswitch_1
-    sget-object p1, Loam;->f:Lnyf;
-
-    if-nez p1, :cond_1
-
-    const-class p2, Loam;
-
-    monitor-enter p2
-
-    :try_start_0
-    sget-object p1, Loam;->f:Lnyf;
-
-    if-nez p1, :cond_0
-
-    new-instance p1, Lnwo;
-
-    sget-object v0, Loam;->e:Loam;
-
-    invoke-direct {p1, v0}, Lnwo;-><init>(Lnws;)V
-
-    sput-object p1, Loam;->f:Lnyf;
-
-    :cond_0
-    monitor-exit p2
-
-    goto :goto_0
-
-    :catchall_0
-    move-exception p1
-
-    monitor-exit p2
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw p1
-
-    :cond_1
-    :goto_0
-    return-object p1
-
-    :pswitch_2
-    sget-object p1, Loam;->e:Loam;
-
-    return-object p1
-
-    :pswitch_3
-    new-instance p1, Lnwn;
-
-    sget-object p2, Loam;->e:Loam;
-
-    invoke-direct {p1, p2}, Lnwn;-><init>(Lnws;)V
-
-    return-object p1
-
-    :pswitch_4
-    new-instance p1, Loam;
-
-    invoke-direct {p1}, Loam;-><init>()V
-
-    return-object p1
-
-    :pswitch_5
-    const-string p1, "a"
-
-    const-string v0, "\u0001\u0003\u0000\u0001\u0001\u0003\u0003\u0000\u0000\u0000\u0001\u1004\u0000\u0002\u1004\u0001\u0003\u100a\u0002"
-
-    const/4 v1, 0x4
-
-    new-array v1, v1, [Ljava/lang/Object;
-
-    const/4 v2, 0x0
-
-    aput-object p1, v1, v2
-
-    const-string p1, "b"
-
-    aput-object p1, v1, p2
-
-    const/4 p1, 0x2
-
-    const-string p2, "c"
-
-    aput-object p2, v1, p1
-
-    const/4 p1, 0x3
-
-    const-string p2, "d"
-
-    aput-object p2, v1, p1
-
-    sget-object p1, Loam;->e:Loam;
-
-    invoke-static {p1, v0, v1}, Loam;->X(Lnxy;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object p1
-
-    return-object p1
-
-    :pswitch_6
-    invoke-static {p2}, Ljava/lang/Byte;->valueOf(B)Ljava/lang/Byte;
-
-    move-result-object p1
-
-    return-object p1
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_6
-        :pswitch_0
-        :pswitch_5
-        :pswitch_4
-        :pswitch_3
-        :pswitch_2
-        :pswitch_1
-    .end packed-switch
+    return-void
 .end method

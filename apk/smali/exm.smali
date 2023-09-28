@@ -1,296 +1,405 @@
-.class public final Lexm;
+.class final Lexm;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lexn;
+.implements Lfwk;
 
 
 # instance fields
-.field final a:Ljava/util/ArrayList;
+.field public final a:Lpyn;
 
-.field final b:[F
+.field public final b:Llcw;
 
-.field final c:[F
+.field public c:Z
 
-.field final d:[F
+.field private final d:Lfnv;
+
+.field private final e:Lpyn;
+
+.field private final f:Livj;
+
+.field private final g:Ljava/lang/String;
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 2
+.method public constructor <init>(Lfnv;Lpyn;Lpyn;Livj;Landroid/content/res/Resources;)V
+    .locals 1
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    new-instance v0, Ljava/util/ArrayList;
+    const/4 v0, 0x1
 
-    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+    iput-boolean v0, p0, Lexm;->c:Z
 
-    iput-object v0, p0, Lexm;->a:Ljava/util/ArrayList;
+    iput-object p1, p0, Lexm;->d:Lfnv;
 
-    const/16 v0, 0x26
+    iput-object p2, p0, Lexm;->a:Lpyn;
 
-    new-array v1, v0, [F
+    iput-object p3, p0, Lexm;->e:Lpyn;
 
-    fill-array-data v1, :array_0
+    iput-object p4, p0, Lexm;->f:Livj;
 
-    iput-object v1, p0, Lexm;->b:[F
+    new-instance p1, Llcw;
 
-    new-array v1, v0, [F
+    new-instance p2, Lexk;
 
-    fill-array-data v1, :array_1
+    invoke-direct {p2, p0}, Lexk;-><init>(Lexm;)V
 
-    iput-object v1, p0, Lexm;->c:[F
+    invoke-direct {p1, p2}, Llcw;-><init>(Lojz;)V
 
-    new-array v0, v0, [F
+    iput-object p1, p0, Lexm;->b:Llcw;
 
-    fill-array-data v0, :array_2
+    const p1, 0x7f14023a
 
-    iput-object v0, p0, Lexm;->d:[F
+    invoke-virtual {p5, p1}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
+
+    move-result-object p1
+
+    iput-object p1, p0, Lexm;->g:Ljava/lang/String;
 
     return-void
-
-    :array_0
-    .array-data 4
-        -0x409b4e87
-        -0x40a3d70a    # -0.86f
-        -0x40a3d70a    # -0.86f
-        -0x40c5f927
-        -0x40cb17df
-        -0x40cb17df
-        -0x40d70a3d    # -0.66f
-        -0x40d70a3d    # -0.66f
-        -0x41317e56
-        -0x4134e810
-        -0x4134e810
-        -0x413bbbc7
-        -0x413bbbc7
-        -0x41428f5c    # -0.37f
-        -0x41428f5c    # -0.37f
-        0x0
-        0x0
-        0x0
-        0x0
-        0x0
-        0x0
-        0x0
-        0x3ebd70a4    # 0.37f
-        0x3ebd70a4    # 0.37f
-        0x3ec44439
-        0x3ec44439
-        0x3ecb17f0
-        0x3ecb17f0
-        0x3ece81aa
-        0x3f28f5c3    # 0.66f
-        0x3f28f5c3    # 0.66f
-        0x3f34e821
-        0x3f34e821
-        0x3f3a06d9
-        0x3f5c28f6    # 0.86f
-        0x3f5c28f6    # 0.86f
-        0x3f64b179
-        -0x409b4e87
-    .end array-data
-
-    :array_1
-    .array-data 4
-        0x0
-        -0x41444439
-        0x3ebbbbc7
-        0x0
-        -0x413d70a4    # -0.38f
-        0x3ec28f5c    # 0.38f
-        -0x40d62fcf
-        0x3f29d031
-        0x0
-        -0x41369d0f
-        0x3ec962f1
-        -0x40ca3d71    # -0.71f
-        0x3f35c28f    # 0.71f
-        -0x40a2fc9c
-        0x3f5d0364
-        -0x408e81ba
-        -0x40c5f927
-        -0x41317e56
-        0x0
-        0x3ece81aa
-        0x3f3a06d9
-        0x3f717e46
-        -0x40a2fc9c
-        0x3f5d0364
-        -0x40ca3d71    # -0.71f
-        0x3f35c28f    # 0.71f
-        -0x41369d0f
-        0x3ec962f1
-        0x0
-        -0x40d62fcf
-        0x3f29d031
-        -0x413d70a4    # -0.38f
-        0x3ec28f5c    # 0.38f
-        0x0
-        -0x41444439
-        0x3ebbbbc7
-        0x0
-        0x0
-    .end array-data
-
-    :array_2
-    .array-data 4
-        0x3f000000    # 0.5f
-        0x3f000000    # 0.5f
-        0x3f000000    # 0.5f
-        0x3f333333    # 0.7f
-        0x3f333333    # 0.7f
-        0x3f333333    # 0.7f
-        0x3f000000    # 0.5f
-        0x3f000000    # 0.5f
-        0x3f800000    # 1.0f
-        0x3f800000    # 1.0f
-        0x3f800000    # 1.0f
-        0x3f333333    # 0.7f
-        0x3f333333    # 0.7f
-        0x3f000000    # 0.5f
-        0x3f000000    # 0.5f
-        0x3f000000    # 0.5f
-        0x3f333333    # 0.7f
-        0x3f800000    # 1.0f
-        0x3f800000    # 1.0f
-        0x3f800000    # 1.0f
-        0x3f333333    # 0.7f
-        0x3f000000    # 0.5f
-        0x3f000000    # 0.5f
-        0x3f000000    # 0.5f
-        0x3f333333    # 0.7f
-        0x3f333333    # 0.7f
-        0x3f800000    # 1.0f
-        0x3f800000    # 1.0f
-        0x3f800000    # 1.0f
-        0x3f000000    # 0.5f
-        0x3f000000    # 0.5f
-        0x3f333333    # 0.7f
-        0x3f333333    # 0.7f
-        0x3f333333    # 0.7f
-        0x3f000000    # 0.5f
-        0x3f000000    # 0.5f
-        0x3f000000    # 0.5f
-        0x3f000000    # 0.5f
-    .end array-data
 .end method
 
 
 # virtual methods
-.method public final a(FLexi;[FII)V
-    .locals 7
+.method public final declared-synchronized a(I)Lpht;
+    .locals 5
 
-    int-to-float p5, p5
+    monitor-enter p0
 
-    int-to-float p4, p4
+    const/4 p1, 0x0
 
-    const/high16 v0, 0x40000000    # 2.0f
+    :try_start_0
+    iput-boolean p1, p0, Lexm;->c:Z
 
-    div-float/2addr p4, v0
+    iget-object v0, p0, Lexm;->b:Llcw;
 
-    div-float/2addr p5, v0
+    invoke-virtual {v0}, Llcw;->c()V
 
-    invoke-static {p4, p5}, Ljava/lang/Math;->min(FF)F
+    iget-object v0, p0, Lexm;->e:Lpyn;
 
-    move-result v0
+    invoke-interface {v0}, Lpyn;->get()Ljava/lang/Object;
 
-    const v1, 0x3f733333    # 0.95f
+    move-result-object v0
 
-    mul-float v0, v0, v1
+    check-cast v0, Lfnj;
 
-    iget-object v1, p0, Lexm;->a:Ljava/util/ArrayList;
+    iget-object v1, v0, Lfnj;->m:Llap;
 
-    invoke-virtual {v1}, Ljava/util/ArrayList;->clear()V
+    iget-object v2, v0, Lfnj;->l:Lfno;
 
-    new-instance v1, Landroid/graphics/PointF;
+    iget-object v3, v2, Lfno;->g:Lfnq;
 
-    invoke-direct {v1}, Landroid/graphics/PointF;-><init>()V
+    invoke-virtual {v3}, Lfnq;->b()Z
 
-    iget-object v2, p2, Lexi;->h:Lext;
+    move-result v3
 
-    const/4 v3, 0x0
+    if-nez v3, :cond_0
 
-    if-nez v2, :cond_0
+    iget-object v3, v2, Lfno;->e:Lelw;
+
+    iget-object v2, v2, Lfno;->d:Ljgu;
+
+    invoke-interface {v3, v2}, Lelw;->d(Lelv;)Llie;
+
+    move-result-object v2
 
     goto :goto_0
 
     :cond_0
-    invoke-virtual {v2}, Lewj;->c()V
-
-    iget-object v2, p2, Lexi;->h:Lext;
-
-    const/high16 v4, 0x3f800000    # 1.0f
-
-    invoke-virtual {v2, v4}, Lext;->j(F)V
+    sget-object v2, Lbug;->k:Lbug;
 
     :goto_0
-    const/16 v2, 0x26
+    invoke-virtual {v1, v2}, Llap;->c(Llie;)V
 
-    if-ge v3, v2, :cond_2
+    const/4 v1, 0x1
 
-    iget-object v2, p0, Lexm;->b:[F
+    iput-boolean v1, v0, Lfnj;->p:Z
 
-    aget v2, v2, v3
+    iput-boolean p1, v0, Lfnj;->q:Z
 
-    mul-float v2, v2, p1
+    iget-boolean v2, v0, Lfnj;->r:Z
 
-    mul-float v2, v2, v0
+    if-eqz v2, :cond_2
 
-    add-float/2addr v2, p4
+    iget-object v0, v0, Lfnj;->v:Ljrh;
 
-    iput v2, v1, Landroid/graphics/PointF;->x:F
+    iget-object v2, v0, Ljrh;->a:Lcom/google/android/apps/camera/ui/zoomlock/ZoomLockView;
 
-    iget-object v2, p0, Lexm;->c:[F
+    new-instance v3, Ljrg;
 
-    aget v2, v2, v3
+    invoke-direct {v3, v0}, Ljrg;-><init>(Ljrh;)V
 
-    mul-float v2, v2, p1
+    iget-object v4, v2, Lcom/google/android/apps/camera/ui/zoomlock/ZoomLockView;->h:Ljrg;
 
-    mul-float v2, v2, v0
+    if-nez v4, :cond_1
 
-    add-float/2addr v2, p5
-
-    iput v2, v1, Landroid/graphics/PointF;->y:F
-
-    iget-object v2, p0, Lexm;->d:[F
-
-    aget v2, v2, v3
-
-    const v4, 0x3ecccccd    # 0.4f
-
-    mul-float v2, v2, v4
-
-    iget-object v4, p2, Lexi;->e:Lewl;
-
-    if-eqz v4, :cond_1
-
-    iget-object v5, p2, Lexi;->h:Lext;
-
-    if-eqz v5, :cond_1
-
-    :try_start_0
-    iget v5, v1, Landroid/graphics/PointF;->x:F
-
-    iget v6, v1, Landroid/graphics/PointF;->y:F
-
-    invoke-virtual {v4, p3, v5, v6, v2}, Lewl;->f([FFFF)V
-    :try_end_0
-    .catch Lewi; {:try_start_0 .. :try_end_0} :catch_0
-
-    goto :goto_1
-
-    :catch_0
-    move-exception v2
-
-    invoke-virtual {v2}, Lewi;->printStackTrace()V
+    iput-object v3, v2, Lcom/google/android/apps/camera/ui/zoomlock/ZoomLockView;->h:Ljrg;
 
     :cond_1
-    :goto_1
-    add-int/lit8 v3, v3, 0x1
+    iget-object v0, v0, Ljrh;->a:Lcom/google/android/apps/camera/ui/zoomlock/ZoomLockView;
 
-    goto :goto_0
+    invoke-virtual {v0}, Lcom/google/android/apps/camera/ui/zoomlock/ZoomLockView;->getVisibility()I
+
+    move-result v2
+
+    const/16 v3, 0x8
+
+    if-ne v2, v3, :cond_2
+
+    iget-object v0, v0, Lcom/google/android/apps/camera/ui/zoomlock/ZoomLockView;->c:Landroid/animation/AnimatorSet;
+
+    invoke-virtual {v0}, Landroid/animation/AnimatorSet;->start()V
 
     :cond_2
+    iget-object v0, p0, Lexm;->d:Lfnv;
+
+    invoke-interface {v0}, Lfnv;->d()V
+
+    iget-object v0, p0, Lexm;->a:Lpyn;
+
+    invoke-interface {v0}, Lpyn;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lexi;
+
+    iget-object v2, v0, Lexi;->U:Llce;
+
+    invoke-static {v1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    move-result-object v3
+
+    invoke-virtual {v2, v3}, Llce;->fB(Ljava/lang/Object;)V
+
+    iget-object v2, v0, Lexi;->j:Lkas;
+
+    if-eqz v2, :cond_3
+
+    invoke-interface {v2, v1}, Lkas;->i(Z)V
+
+    iget-object v2, v0, Lexi;->j:Lkas;
+
+    invoke-interface {v2}, Lkas;->g()V
+
+    :cond_3
+    iget-object v2, v0, Lexi;->k:Ldmh;
+
+    if-eqz v2, :cond_4
+
+    invoke-interface {v2}, Ldmh;->e()V
+
+    :cond_4
+    iget-object v2, v0, Lexi;->x:Lojc;
+
+    invoke-virtual {v2}, Lojc;->g()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_5
+
+    iget-object v2, v0, Lexi;->x:Lojc;
+
+    invoke-virtual {v2}, Lojc;->c()Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Lbys;
+
+    invoke-interface {v2}, Lbys;->m()V
+
+    :cond_5
+    iget-object v2, v0, Lexi;->y:Lbtt;
+
+    invoke-interface {v2}, Lbtt;->g()Lbtv;
+
+    move-result-object v2
+
+    invoke-interface {v2}, Lbtv;->e()V
+
+    iget-object v2, v0, Lexi;->V:Lgtg;
+
+    invoke-virtual {v2}, Lgtg;->G()Z
+
+    move-result v3
+
+    if-eqz v3, :cond_6
+
+    invoke-virtual {v2}, Lgtg;->h()V
+
+    :cond_6
+    iget-object v2, v0, Lexi;->s:Ljfn;
+
+    invoke-interface {v2, p1}, Ljfn;->l(Z)V
+
+    iget-object v2, v0, Lexi;->l:Ljak;
+
+    invoke-virtual {v2, p1}, Ljak;->d(Z)V
+
+    iget-object p1, v0, Lexi;->A:Lfwl;
+
+    invoke-virtual {p1}, Lfwl;->b()V
+
+    iget-object p1, v0, Lexi;->ac:Lelw;
+
+    sget-object v0, Lelx;->d:Lelx;
+
+    invoke-interface {p1, v0}, Lelw;->j(Lelx;)V
+
+    iget-object p1, p0, Lexm;->a:Lpyn;
+
+    invoke-interface {p1}, Lpyn;->get()Ljava/lang/Object;
+
+    move-result-object p1
+
+    check-cast p1, Lexi;
+
+    iget-object v0, p1, Lexi;->F:Lgfu;
+
+    if-eqz v0, :cond_7
+
+    iget-object v0, p1, Lexi;->H:Lijp;
+
+    invoke-virtual {v0}, Lijp;->f()V
+
+    invoke-virtual {p1, v1}, Lexi;->K(Z)V
+
+    :cond_7
+    iget-object p1, p0, Lexm;->a:Lpyn;
+
+    invoke-interface {p1}, Lpyn;->get()Ljava/lang/Object;
+
+    move-result-object p1
+
+    check-cast p1, Lexi;
+
+    iget-object p1, p1, Lexi;->B:Ldnj;
+
+    invoke-virtual {p1}, Ldnj;->a()V
+
+    invoke-static {v1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    move-result-object p1
+
+    invoke-static {p1}, Lplk;->V(Ljava/lang/Object;)Lpht;
+
+    move-result-object p1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    monitor-exit p0
+
+    return-object p1
+
+    :catchall_0
+    move-exception p1
+
+    monitor-exit p0
+
+    throw p1
+.end method
+
+.method public final declared-synchronized b(I)Lpht;
+    .locals 1
+
+    monitor-enter p0
+
+    :try_start_0
+    iget-object p1, p0, Lexm;->d:Lfnv;
+
+    invoke-interface {p1}, Lfnv;->c()V
+
+    iget-object p1, p0, Lexm;->e:Lpyn;
+
+    invoke-interface {p1}, Lpyn;->get()Ljava/lang/Object;
+
+    move-result-object p1
+
+    check-cast p1, Lfnj;
+
+    invoke-virtual {p1}, Lfnj;->a()V
+
+    iget-object p1, p0, Lexm;->f:Livj;
+
+    iget-object v0, p0, Lexm;->g:Ljava/lang/String;
+
+    invoke-interface {p1, v0}, Livj;->h(Ljava/lang/String;)V
+
+    invoke-static {}, Landroid/os/Looper;->getMainLooper()Landroid/os/Looper;
+
+    move-result-object p1
+
+    invoke-static {p1}, Lmip;->bV(Landroid/os/Looper;)Landroid/os/Handler;
+
+    move-result-object p1
+
+    new-instance v0, Lexl;
+
+    invoke-direct {v0, p0}, Lexl;-><init>(Lexm;)V
+
+    invoke-virtual {p1, v0}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
+
+    iget-object p1, p0, Lexm;->a:Lpyn;
+
+    invoke-interface {p1}, Lpyn;->get()Ljava/lang/Object;
+
+    move-result-object p1
+
+    check-cast p1, Lexi;
+
+    iget-object p1, p1, Lexi;->B:Ldnj;
+
+    invoke-virtual {p1}, Ldnj;->b()V
+
+    const/4 p1, 0x1
+
+    invoke-static {p1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    move-result-object p1
+
+    invoke-static {p1}, Lplk;->V(Ljava/lang/Object;)Lpht;
+
+    move-result-object p1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    monitor-exit p0
+
+    return-object p1
+
+    :catchall_0
+    move-exception p1
+
+    monitor-exit p0
+
+    throw p1
+.end method
+
+.method public final declared-synchronized c()V
+    .locals 1
+
+    monitor-enter p0
+
+    :try_start_0
+    iget-boolean v0, p0, Lexm;->c:Z
+
+    if-nez v0, :cond_0
+
+    const/4 v0, 0x4
+
+    invoke-virtual {p0, v0}, Lexm;->b(I)Lpht;
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    :cond_0
+    monitor-exit p0
+
     return-void
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit p0
+
+    throw v0
 .end method

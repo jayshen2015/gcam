@@ -1,97 +1,23 @@
-.class public final synthetic Lezq;
+.class final Lezq;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lfaj;
-
-
-# static fields
-.field public static final synthetic a:Lezq;
-
-.field public static final synthetic b:Lezq;
-
-.field public static final synthetic c:Lezq;
-
-.field public static final synthetic d:Lezq;
-
-.field public static final synthetic e:Lezq;
-
-.field public static final synthetic f:Lezq;
-
-.field public static final synthetic g:Lezq;
+.implements Lphh;
 
 
 # instance fields
-.field private final synthetic h:I
+.field final synthetic a:Landroid/net/Uri;
+
+.field final synthetic b:Lezr;
 
 
 # direct methods
-.method static synthetic constructor <clinit>()V
-    .locals 2
-
-    new-instance v0, Lezq;
-
-    const/4 v1, 0x6
-
-    invoke-direct {v0, v1}, Lezq;-><init>(I)V
-
-    sput-object v0, Lezq;->g:Lezq;
-
-    new-instance v0, Lezq;
-
-    const/4 v1, 0x5
-
-    invoke-direct {v0, v1}, Lezq;-><init>(I)V
-
-    sput-object v0, Lezq;->f:Lezq;
-
-    new-instance v0, Lezq;
-
-    const/4 v1, 0x4
-
-    invoke-direct {v0, v1}, Lezq;-><init>(I)V
-
-    sput-object v0, Lezq;->e:Lezq;
-
-    new-instance v0, Lezq;
-
-    const/4 v1, 0x3
-
-    invoke-direct {v0, v1}, Lezq;-><init>(I)V
-
-    sput-object v0, Lezq;->d:Lezq;
-
-    new-instance v0, Lezq;
-
-    const/4 v1, 0x2
-
-    invoke-direct {v0, v1}, Lezq;-><init>(I)V
-
-    sput-object v0, Lezq;->c:Lezq;
-
-    new-instance v0, Lezq;
-
-    const/4 v1, 0x1
-
-    invoke-direct {v0, v1}, Lezq;-><init>(I)V
-
-    sput-object v0, Lezq;->b:Lezq;
-
-    new-instance v0, Lezq;
-
-    const/4 v1, 0x0
-
-    invoke-direct {v0, v1}, Lezq;-><init>(I)V
-
-    sput-object v0, Lezq;->a:Lezq;
-
-    return-void
-.end method
-
-.method private synthetic constructor <init>(I)V
+.method public constructor <init>(Lezr;Landroid/net/Uri;)V
     .locals 0
 
-    iput p1, p0, Lezq;->h:I
+    iput-object p1, p0, Lezq;->b:Lezr;
+
+    iput-object p2, p0, Lezq;->a:Landroid/net/Uri;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -100,113 +26,60 @@
 
 
 # virtual methods
-.method public final a(Lfaz;)V
+.method public final a(Ljava/lang/Throwable;)V
+    .locals 2
+
+    sget-object v0, Lezr;->a:Louj;
+
+    invoke-virtual {v0}, Loue;->b()Lova;
+
+    move-result-object v0
+
+    check-cast v0, Loug;
+
+    invoke-interface {v0, p1}, Loug;->h(Ljava/lang/Throwable;)Lova;
+
+    move-result-object p1
+
+    check-cast p1, Loug;
+
+    const/16 v0, 0x63d
+
+    invoke-interface {p1, v0}, Loug;->G(I)Lova;
+
+    move-result-object p1
+
+    check-cast p1, Loug;
+
+    iget-object v0, p0, Lezq;->a:Landroid/net/Uri;
+
+    const-string v1, "Failure while saving JPEG image to %s"
+
+    invoke-interface {p1, v1, v0}, Loug;->r(Ljava/lang/String;Ljava/lang/Object;)V
+
+    iget-object p1, p0, Lezq;->b:Lezr;
+
+    iget-object p1, p1, Lezr;->e:Lbts;
+
+    invoke-interface {p1}, Lbts;->m()V
+
+    return-void
+.end method
+
+.method public final bridge synthetic b(Ljava/lang/Object;)V
     .locals 1
 
-    iget v0, p0, Lezq;->h:I
+    check-cast p1, Ljava/lang/Void;
 
-    packed-switch v0, :pswitch_data_0
+    iget-object p1, p0, Lezq;->b:Lezr;
 
-    sget v0, Lfak;->l:I
+    iget-object p1, p1, Lezr;->e:Lbts;
 
-    instance-of v0, p1, Lfax;
+    new-instance v0, Landroid/content/Intent;
 
-    if-eqz v0, :cond_6
+    invoke-direct {v0}, Landroid/content/Intent;-><init>()V
 
-    check-cast p1, Lfax;
-
-    invoke-interface {p1}, Lfax;->bO()V
+    invoke-interface {p1, v0}, Lbts;->n(Landroid/content/Intent;)V
 
     return-void
-
-    :pswitch_0
-    sget v0, Lfak;->l:I
-
-    instance-of v0, p1, Lfav;
-
-    if-eqz v0, :cond_0
-
-    check-cast p1, Lfav;
-
-    invoke-interface {p1}, Lfav;->bN()V
-
-    :cond_0
-    return-void
-
-    :pswitch_1
-    instance-of v0, p1, Lfac;
-
-    if-eqz v0, :cond_1
-
-    check-cast p1, Lfac;
-
-    invoke-interface {p1}, Lfac;->a()V
-
-    :cond_1
-    return-void
-
-    :pswitch_2
-    instance-of v0, p1, Lezz;
-
-    if-eqz v0, :cond_2
-
-    check-cast p1, Lezz;
-
-    invoke-interface {p1}, Lezz;->a()V
-
-    :cond_2
-    return-void
-
-    :pswitch_3
-    instance-of v0, p1, Lfab;
-
-    if-eqz v0, :cond_3
-
-    check-cast p1, Lfab;
-
-    invoke-interface {p1}, Lfab;->c()V
-
-    :cond_3
-    return-void
-
-    :pswitch_4
-    sget v0, Lezx;->e:I
-
-    instance-of v0, p1, Lezj;
-
-    if-eqz v0, :cond_4
-
-    check-cast p1, Lezj;
-
-    invoke-interface {p1}, Lezj;->a()V
-
-    :cond_4
-    return-void
-
-    :pswitch_5
-    sget v0, Lezx;->e:I
-
-    instance-of v0, p1, Lezb;
-
-    if-eqz v0, :cond_5
-
-    check-cast p1, Lezb;
-
-    invoke-interface {p1}, Lezb;->a()V
-
-    :cond_5
-    return-void
-
-    :cond_6
-    return-void
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_5
-        :pswitch_4
-        :pswitch_3
-        :pswitch_2
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
 .end method

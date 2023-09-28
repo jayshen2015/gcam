@@ -1,228 +1,100 @@
-.class public final Lepg;
+.class public final synthetic Lepg;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Leqi;
-.implements Lkad;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field public final a:Ljwb;
+.field public final synthetic a:Lepj;
 
-.field public b:Lcom/google/android/apps/camera/ui/modeslider/ModeSliderUi;
+.field public final synthetic b:Lepi;
 
-.field public final c:Liab;
-
-.field private final d:Lian;
-
-.field private final e:Ljava/util/Set;
-
-.field private final f:Ljuf;
-
-.field private final g:Lcdi;
+.field private final synthetic c:I
 
 
 # direct methods
-.method public constructor <init>(Ljwb;Lian;Ljava/util/Set;Liab;Lcdi;)V
-    .locals 1
+.method public synthetic constructor <init>(Lepj;Lepi;I)V
+    .locals 0
+
+    iput p3, p0, Lepg;->c:I
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    new-instance v0, Ljuf;
+    iput-object p1, p0, Lepg;->a:Lepj;
 
-    invoke-direct {v0}, Ljuf;-><init>()V
-
-    iput-object v0, p0, Lepg;->f:Ljuf;
-
-    iput-object p1, p0, Lepg;->a:Ljwb;
-
-    iput-object p2, p0, Lepg;->d:Lian;
-
-    new-instance p1, Ljava/util/HashSet;
-
-    invoke-direct {p1, p3}, Ljava/util/HashSet;-><init>(Ljava/util/Collection;)V
-
-    iput-object p1, p0, Lepg;->e:Ljava/util/Set;
-
-    iput-object p4, p0, Lepg;->c:Liab;
-
-    iput-object p5, p0, Lepg;->g:Lcdi;
+    iput-object p2, p0, Lepg;->b:Lepi;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Z)V
-    .locals 0
-
-    if-eqz p1, :cond_0
-
-    iget-object p1, p0, Lepg;->b:Lcom/google/android/apps/camera/ui/modeslider/ModeSliderUi;
-
-    invoke-virtual {p1}, Lcom/google/android/apps/camera/ui/modeslider/ModeSliderUi;->b()Lcom/google/android/apps/camera/ui/modeslider/ModeSlider;
-
-    move-result-object p1
-
-    invoke-virtual {p1}, Lcom/google/android/apps/camera/ui/modeslider/ModeSlider;->d()V
-
-    return-void
-
-    :cond_0
-    iget-object p1, p0, Lepg;->b:Lcom/google/android/apps/camera/ui/modeslider/ModeSliderUi;
-
-    invoke-virtual {p1}, Lcom/google/android/apps/camera/ui/modeslider/ModeSliderUi;->b()Lcom/google/android/apps/camera/ui/modeslider/ModeSlider;
-
-    move-result-object p1
-
-    invoke-virtual {p1}, Lcom/google/android/apps/camera/ui/modeslider/ModeSlider;->c()V
-
-    return-void
-.end method
-
-.method public final b(Liko;)V
-    .locals 1
-
-    iget-object v0, p0, Lepg;->b:Lcom/google/android/apps/camera/ui/modeslider/ModeSliderUi;
-
-    invoke-virtual {v0, p1}, Lcom/google/android/apps/camera/ui/modeslider/ModeSliderUi;->c(Liko;)V
-
-    return-void
-.end method
-
-.method public final c(Landroid/view/ViewStub;)V
+.method public final run()V
     .locals 3
 
-    iget-object v0, p0, Lepg;->b:Lcom/google/android/apps/camera/ui/modeslider/ModeSliderUi;
+    iget v0, p0, Lepg;->c:I
 
-    if-nez v0, :cond_0
+    packed-switch v0, :pswitch_data_0
 
-    invoke-virtual {p1}, Landroid/view/ViewStub;->inflate()Landroid/view/View;
+    iget-object v0, p0, Lepg;->a:Lepj;
 
-    move-result-object p1
+    iget-object v1, p0, Lepg;->b:Lepi;
 
-    const v0, 0x7f0b01c4
+    iget-object v2, v0, Lepj;->e:Ljava/lang/Object;
 
-    invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+    monitor-enter v2
 
-    move-result-object p1
+    goto :goto_0
 
-    check-cast p1, Lcom/google/android/apps/camera/ui/modeslider/ModeSliderUi;
+    :pswitch_0
+    iget-object v0, p0, Lepg;->a:Lepj;
 
-    iput-object p1, p0, Lepg;->b:Lcom/google/android/apps/camera/ui/modeslider/ModeSliderUi;
+    iget-object v1, p0, Lepg;->b:Lepi;
 
-    :cond_0
-    iget-object p1, p0, Lepg;->d:Lian;
+    iget-object v2, v0, Lepj;->e:Ljava/lang/Object;
 
-    iget-object v0, p0, Lepg;->b:Lcom/google/android/apps/camera/ui/modeslider/ModeSliderUi;
+    monitor-enter v2
 
-    invoke-virtual {v0}, Lcom/google/android/apps/camera/ui/modeslider/ModeSliderUi;->b()Lcom/google/android/apps/camera/ui/modeslider/ModeSlider;
+    :try_start_0
+    iget-object v0, v0, Lepj;->b:Ljava/util/Set;
 
-    move-result-object v1
+    invoke-interface {v0, v1}, Ljava/util/Set;->remove(Ljava/lang/Object;)Z
 
-    iget-object v2, p0, Lepg;->e:Ljava/util/Set;
-
-    iput-object v0, p1, Lian;->d:Landroid/view/View;
-
-    iput-object v1, p1, Lian;->e:Liaq;
-
-    iput-object v2, p1, Lian;->f:Ljava/util/Set;
-
-    iget-object p1, p0, Lepg;->b:Lcom/google/android/apps/camera/ui/modeslider/ModeSliderUi;
-
-    invoke-virtual {p1}, Lcom/google/android/apps/camera/ui/modeslider/ModeSliderUi;->b()Lcom/google/android/apps/camera/ui/modeslider/ModeSlider;
-
-    move-result-object p1
-
-    iget-object v0, p0, Lepg;->c:Liab;
-
-    invoke-virtual {p1, v0}, Lcom/google/android/apps/camera/ui/modeslider/ModeSlider;->i(Liab;)V
-
-    new-instance v0, Lepf;
-
-    const/4 v1, 0x0
-
-    invoke-direct {v0, p0, v1}, Lepf;-><init>(Lepg;I)V
-
-    iput-object v0, p1, Lcom/google/android/apps/camera/ui/modeslider/ModeSlider;->a:Liap;
-
-    iget-object p1, p0, Lepg;->d:Lian;
-
-    invoke-virtual {p1}, Liad;->f()V
-
-    iget-object p1, p0, Lepg;->f:Ljuf;
-
-    iget-object v0, p0, Lepg;->a:Ljwb;
-
-    new-instance v1, Ldsk;
-
-    const/16 v2, 0x8
-
-    invoke-direct {v1, p0, v2}, Ldsk;-><init>(Lepg;I)V
-
-    sget-object v2, Lnnv;->a:Lnnv;
-
-    invoke-interface {v0, v1, v2}, Ljwb;->a(Lkai;Ljava/util/concurrent/Executor;)Lkad;
-
-    move-result-object v0
-
-    invoke-virtual {p1, v0}, Ljuf;->d(Lkad;)V
-
-    iget-object p1, p0, Lepg;->g:Lcdi;
-
-    invoke-virtual {p1}, Lcdi;->i()Ljuf;
-
-    move-result-object p1
-
-    invoke-virtual {p1, p0}, Ljuf;->d(Lkad;)V
+    monitor-exit v2
 
     return-void
-.end method
 
-.method public final close()V
-    .locals 1
+    :catchall_0
+    move-exception v0
 
-    invoke-virtual {p0}, Lepg;->d()V
+    monitor-exit v2
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    iget-object v0, p0, Lepg;->e:Ljava/util/Set;
+    throw v0
 
-    invoke-interface {v0}, Ljava/util/Set;->clear()V
+    :goto_0
+    :try_start_1
+    iget-object v0, v0, Lepj;->b:Ljava/util/Set;
 
-    iget-object v0, p0, Lepg;->f:Ljuf;
+    invoke-interface {v0, v1}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
 
-    invoke-virtual {v0}, Ljuf;->close()V
-
-    return-void
-.end method
-
-.method public final d()V
-    .locals 2
-
-    iget-object v0, p0, Lepg;->b:Lcom/google/android/apps/camera/ui/modeslider/ModeSliderUi;
-
-    const/4 v1, 0x0
-
-    invoke-virtual {v0, v1}, Lcom/google/android/apps/camera/ui/modeslider/ModeSliderUi;->setAlpha(F)V
-
-    iget-object v0, p0, Lepg;->d:Lian;
-
-    invoke-virtual {v0}, Liad;->a()V
+    monitor-exit v2
 
     return-void
-.end method
 
-.method public final e()V
-    .locals 2
+    :catchall_1
+    move-exception v0
 
-    iget-object v0, p0, Lepg;->b:Lcom/google/android/apps/camera/ui/modeslider/ModeSliderUi;
+    monitor-exit v2
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
-    const/high16 v1, 0x3f800000    # 1.0f
+    throw v0
 
-    invoke-virtual {v0, v1}, Lcom/google/android/apps/camera/ui/modeslider/ModeSliderUi;->setAlpha(F)V
-
-    iget-object v0, p0, Lepg;->d:Lian;
-
-    invoke-virtual {v0}, Liad;->b()V
-
-    return-void
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

@@ -1,59 +1,58 @@
-.class final Lotq;
-.super Lolh;
-
-
-# annotations
-.annotation runtime Lolj;
-    b = "kotlinx.coroutines.flow.DistinctFlowImpl$collect$2"
-    c = "Distinct.kt"
-    d = "emit"
-    e = {
-        0x51
-    }
-.end annotation
+.class public final Lotq;
+.super Ljava/lang/Object;
 
 
 # instance fields
-.field synthetic a:Ljava/lang/Object;
-
-.field final synthetic b:Lotr;
-
-.field c:I
+.field final synthetic a:Loiu;
 
 
 # direct methods
-.method public constructor <init>(Lotr;Loku;)V
+.method public constructor <init>(Loiu;)V
     .locals 0
 
-    iput-object p1, p0, Lotq;->b:Lotr;
+    iput-object p1, p0, Lotq;->a:Loiu;
 
-    invoke-direct {p0, p2}, Lolh;-><init>(Loku;)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final b(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 1
+.method public final a(Ljava/lang/Object;Loud;)V
+    .locals 3
 
-    iput-object p1, p0, Lotq;->a:Ljava/lang/Object;
+    iget-object v0, p0, Lotq;->a:Loiu;
 
-    iget p1, p0, Lotq;->c:I
-
-    const/high16 v0, -0x80000000
-
-    or-int/2addr p1, v0
-
-    iput p1, p0, Lotq;->c:I
-
-    iget-object p1, p0, Lotq;->b:Lotr;
-
-    const/4 v0, 0x0
-
-    invoke-virtual {p1, v0, p0}, Lotr;->a(Ljava/lang/Object;Loku;)Ljava/lang/Object;
+    invoke-interface {v0, p1}, Loiu;->a(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p1
 
-    return-object p1
+    check-cast p1, Lpfc;
+
+    invoke-virtual {p1}, Lpfc;->e()[I
+
+    move-result-object p1
+
+    array-length v0, p1
+
+    const/4 v1, 0x0
+
+    :goto_0
+    if-ge v1, v0, :cond_0
+
+    aget v2, p1, v1
+
+    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v2
+
+    invoke-interface {p2, v2}, Loud;->a(Ljava/lang/Object;)V
+
+    add-int/lit8 v1, v1, 0x1
+
+    goto :goto_0
+
+    :cond_0
+    return-void
 .end method

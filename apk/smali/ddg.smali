@@ -1,55 +1,65 @@
-.class public final Lddg;
+.class public Lddg;
 .super Ljava/lang/Object;
-
-# interfaces
-.implements Ljava/util/concurrent/Executor;
 
 
 # instance fields
-.field private final a:Ljava/util/concurrent/Executor;
+.field public final a:Ljava/lang/String;
 
-.field private final b:Lkaq;
+.field public final b:Ljava/lang/String;
 
 
 # direct methods
-.method public constructor <init>(Lkaq;Ldhi;Ljava/util/concurrent/Executor;)V
+.method public constructor <init>(Ljava/lang/String;Ljava/lang/String;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p3, p0, Lddg;->a:Ljava/util/concurrent/Executor;
+    iput-object p1, p0, Lddg;->a:Ljava/lang/String;
 
-    const-string p3, "SQLiteExpnCatchr"
+    iput-object p2, p0, Lddg;->b:Ljava/lang/String;
 
-    invoke-interface {p1, p3}, Lkaq;->a(Ljava/lang/String;)Lkaq;
+    return-void
+.end method
 
-    move-result-object p1
+.method public constructor <init>(Ljava/lang/String;Ljava/lang/String;[B)V
+    .locals 0
 
-    iput-object p1, p0, Lddg;->b:Lkaq;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    sget-object p1, Ldho;->a:Ldhk;
+    iput-object p1, p0, Lddg;->b:Ljava/lang/String;
 
-    invoke-interface {p2}, Ldhi;->f()V
+    iput-object p2, p0, Lddg;->a:Ljava/lang/String;
+
+    return-void
+.end method
+
+.method public constructor <init>(Ljava/lang/String;Ljava/lang/String;[B[B)V
+    .locals 0
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lddg;->a:Ljava/lang/String;
+
+    iput-object p2, p0, Lddg;->b:Ljava/lang/String;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final execute(Ljava/lang/Runnable;)V
-    .locals 4
+.method public final a()Z
+    .locals 1
 
-    iget-object v0, p0, Lddg;->a:Ljava/util/concurrent/Executor;
+    iget-object v0, p0, Lddg;->b:Ljava/lang/String;
 
-    new-instance v1, Layo;
+    if-eqz v0, :cond_0
 
-    iget-object v2, p0, Lddg;->b:Lkaq;
+    const/4 v0, 0x1
 
-    const/4 v3, 0x3
+    return v0
 
-    invoke-direct {v1, v2, p1, v3}, Layo;-><init>(Lkaq;Ljava/lang/Runnable;I)V
+    :cond_0
+    const/4 v0, 0x0
 
-    invoke-interface {v0, v1}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
-
-    return-void
+    return v0
 .end method

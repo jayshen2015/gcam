@@ -1,172 +1,298 @@
-.class public final synthetic Ligw;
+.class public final Ligw;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lmrl;
+.implements Lihd;
 
 
 # instance fields
-.field public final synthetic a:Ligx;
+.field public a:Z
 
-.field public final synthetic b:Landroid/view/SurfaceView;
+.field private final b:Lihn;
 
-.field public final synthetic c:Lkab;
+.field private final c:Lddf;
 
-.field public final synthetic d:Z
+.field private final d:Lojc;
 
-.field public final synthetic e:I
+.field private final e:Lckg;
+
+.field private final f:Lbqg;
 
 
 # direct methods
-.method public synthetic constructor <init>(Ligx;Landroid/view/SurfaceView;Lkab;ZI)V
+.method public constructor <init>(Lojc;Lckg;Lihn;Lbqg;Lddf;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Ligw;->a:Ligx;
+    iput-object p1, p0, Ligw;->d:Lojc;
 
-    iput-object p2, p0, Ligw;->b:Landroid/view/SurfaceView;
+    iput-object p2, p0, Ligw;->e:Lckg;
 
-    iput-object p3, p0, Ligw;->c:Lkab;
+    iput-object p3, p0, Ligw;->b:Lihn;
 
-    iput-boolean p4, p0, Ligw;->d:Z
+    iput-object p4, p0, Ligw;->f:Lbqg;
 
-    iput p5, p0, Ligw;->e:I
+    iput-object p5, p0, Ligw;->c:Lddf;
 
+    invoke-virtual {p1}, Lojc;->g()Z
+
+    move-result p2
+
+    if-eqz p2, :cond_0
+
+    invoke-virtual {p4}, Lbqg;->i()Llap;
+
+    move-result-object p2
+
+    invoke-virtual {p1}, Lojc;->c()Ljava/lang/Object;
+
+    move-result-object p1
+
+    check-cast p1, Lihb;
+
+    new-instance p3, Ligv;
+
+    invoke-direct {p3, p0}, Ligv;-><init>(Ligw;)V
+
+    invoke-interface {p1, p3}, Lihb;->a(Liha;)Llie;
+
+    move-result-object p1
+
+    invoke-virtual {p2, p1}, Llap;->c(Llie;)V
+
+    :cond_0
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Ljava/lang/Object;
-    .locals 8
+.method public final a()V
+    .locals 1
 
-    iget-object v0, p0, Ligw;->a:Ligx;
+    const/4 v0, 0x0
 
-    iget-object v1, p0, Ligw;->b:Landroid/view/SurfaceView;
+    iput-boolean v0, p0, Ligw;->a:Z
 
-    iget-object v2, p0, Ligw;->c:Lkab;
+    return-void
+.end method
 
-    iget-boolean v3, p0, Ligw;->d:Z
+.method public final b()V
+    .locals 1
 
-    iget v4, p0, Ligw;->e:I
+    iget-object v0, p0, Ligw;->b:Lihn;
 
-    iget-object v5, v0, Ligx;->c:Lgft;
+    iget-object v0, v0, Lihn;->a:Ljava/util/concurrent/ConcurrentLinkedQueue;
 
-    invoke-interface {v5}, Lgft;->f()Lkab;
+    invoke-virtual {v0}, Ljava/util/concurrent/ConcurrentLinkedQueue;->clear()V
 
-    move-result-object v5
+    return-void
+.end method
 
-    iget-object v0, v0, Ligx;->g:Limc;
+.method public final c(Lmad;)V
+    .locals 16
 
-    invoke-virtual {v1}, Landroid/view/SurfaceView;->getHolder()Landroid/view/SurfaceHolder;
+    move-object/from16 v0, p0
 
-    move-result-object v6
+    iget-object v1, v0, Ligw;->d:Lojc;
 
-    invoke-interface {v6}, Landroid/view/SurfaceHolder;->getSurface()Landroid/view/Surface;
+    invoke-virtual {v1}, Lojc;->g()Z
 
-    move-result-object v6
+    move-result v1
 
-    invoke-virtual {v6}, Landroid/view/Surface;->isValid()Z
+    if-nez v1, :cond_0
 
-    move-result v6
-
-    if-nez v6, :cond_0
-
-    sget-object v0, Ligx;->a:Lnak;
-
-    invoke-virtual {v0}, Lnaf;->c()Lnaz;
-
-    move-result-object v0
-
-    const-string v1, "getScreenshotFrom(): the surface is not valid"
-
-    const/16 v2, 0x109a
-
-    invoke-static {v0, v1, v2}, Ld;->g(Lnaz;Ljava/lang/String;C)V
-
-    sget-object v0, Lmpx;->a:Lmpx;
-
-    goto :goto_1
+    return-void
 
     :cond_0
-    invoke-virtual {v1}, Landroid/view/SurfaceView;->getWidth()I
+    iget-object v1, v0, Ligw;->b:Lihn;
 
-    move-result v6
+    invoke-interface/range {p1 .. p1}, Lmad;->d()J
 
-    invoke-virtual {v1}, Landroid/view/SurfaceView;->getHeight()I
+    move-result-wide v2
 
-    move-result v7
+    iget-object v4, v1, Lihn;->a:Ljava/util/concurrent/ConcurrentLinkedQueue;
 
-    invoke-static {v6, v7, v5, v4}, Ligx;->c(IILkab;I)Landroid/util/Size;
+    invoke-virtual {v4}, Ljava/util/concurrent/ConcurrentLinkedQueue;->isEmpty()Z
 
-    move-result-object v5
+    move-result v4
 
-    invoke-virtual {v5}, Landroid/util/Size;->getWidth()I
+    if-nez v4, :cond_2
 
-    move-result v6
+    iget-object v4, v1, Lihn;->a:Ljava/util/concurrent/ConcurrentLinkedQueue;
 
-    if-lez v6, :cond_2
+    invoke-virtual {v4}, Ljava/util/concurrent/ConcurrentLinkedQueue;->isEmpty()Z
 
-    invoke-virtual {v5}, Landroid/util/Size;->getHeight()I
+    move-result v4
 
-    move-result v6
-
-    if-gtz v6, :cond_1
+    if-eqz v4, :cond_1
 
     goto :goto_0
 
     :cond_1
-    invoke-virtual {v5}, Landroid/util/Size;->getWidth()I
+    iget-object v4, v1, Lihn;->a:Ljava/util/concurrent/ConcurrentLinkedQueue;
 
-    move-result v6
+    invoke-virtual {v4}, Ljava/util/concurrent/ConcurrentLinkedQueue;->size()I
 
-    invoke-virtual {v5}, Landroid/util/Size;->getHeight()I
+    move-result v4
 
-    move-result v5
+    iget-object v5, v1, Lihn;->a:Ljava/util/concurrent/ConcurrentLinkedQueue;
 
-    sget-object v7, Landroid/graphics/Bitmap$Config;->ARGB_8888:Landroid/graphics/Bitmap$Config;
-
-    invoke-static {v6, v5, v7}, Landroid/graphics/Bitmap;->createBitmap(IILandroid/graphics/Bitmap$Config;)Landroid/graphics/Bitmap;
+    invoke-virtual {v5}, Ljava/util/concurrent/ConcurrentLinkedQueue;->peek()Ljava/lang/Object;
 
     move-result-object v5
 
-    invoke-virtual {v0, v1, v5}, Limc;->a(Landroid/view/SurfaceView;Landroid/graphics/Bitmap;)V
+    check-cast v5, Ljava/lang/Long;
 
-    invoke-virtual {v2}, Lkab;->a()I
+    invoke-virtual {v5}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    move-result v0
+    int-to-double v6, v4
 
-    invoke-static {v5, v0, v3}, Ligx;->a(Landroid/graphics/Bitmap;IZ)Landroid/graphics/Bitmap;
+    invoke-virtual {v5}, Ljava/lang/Long;->longValue()J
 
-    move-result-object v0
+    move-result-wide v4
 
-    invoke-static {v0, v4}, Lihc;->b(Landroid/graphics/Bitmap;I)Lihc;
+    sub-long v4, v2, v4
 
-    move-result-object v0
+    invoke-static {v4, v5}, Lj$/time/Duration;->ofNanos(J)Lj$/time/Duration;
 
-    invoke-static {v0}, Lmqp;->i(Ljava/lang/Object;)Lmqp;
+    move-result-object v4
 
-    move-result-object v0
+    invoke-static {v4}, Lpfe;->a(Lj$/time/Duration;)D
 
-    goto :goto_1
+    move-result-wide v4
+
+    invoke-static {v6, v7}, Ljava/lang/Double;->isNaN(D)Z
+
+    div-double/2addr v6, v4
+
+    const-wide/high16 v4, 0x4034000000000000L    # 20.0
+
+    cmpl-double v8, v6, v4
+
+    if-lez v8, :cond_2
+
+    return-void
 
     :cond_2
     :goto_0
-    sget-object v0, Ligx;->a:Lnak;
+    iget-object v4, v1, Lihn;->a:Ljava/util/concurrent/ConcurrentLinkedQueue;
 
-    invoke-virtual {v0}, Lnaf;->c()Lnaz;
+    invoke-static {v2, v3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
-    move-result-object v0
+    move-result-object v2
 
-    const-string v1, "getScreenshotFrom(): the surface size is invalid"
+    invoke-virtual {v4, v2}, Ljava/util/concurrent/ConcurrentLinkedQueue;->offer(Ljava/lang/Object;)Z
 
-    const/16 v2, 0x1099
+    iget-object v2, v1, Lihn;->a:Ljava/util/concurrent/ConcurrentLinkedQueue;
 
-    invoke-static {v0, v1, v2}, Ld;->g(Lnaz;Ljava/lang/String;C)V
+    invoke-virtual {v2}, Ljava/util/concurrent/ConcurrentLinkedQueue;->size()I
 
-    sget-object v0, Lmpx;->a:Lmpx;
+    move-result v2
 
-    :goto_1
-    return-object v0
+    const/16 v3, 0x14
+
+    if-le v2, v3, :cond_3
+
+    iget-object v1, v1, Lihn;->a:Ljava/util/concurrent/ConcurrentLinkedQueue;
+
+    invoke-virtual {v1}, Ljava/util/concurrent/ConcurrentLinkedQueue;->poll()Ljava/lang/Object;
+
+    :cond_3
+    iget-boolean v1, v0, Ligw;->a:Z
+
+    if-eqz v1, :cond_4
+
+    return-void
+
+    :cond_4
+    invoke-interface/range {p1 .. p1}, Lmad;->c()I
+
+    move-result v1
+
+    invoke-interface/range {p1 .. p1}, Lmad;->b()I
+
+    move-result v2
+
+    invoke-static {v1, v2}, Llig;->h(II)Llig;
+
+    move-result-object v1
+
+    iget-object v2, v0, Ligw;->e:Lckg;
+
+    invoke-virtual {v2}, Lckg;->a()Llco;
+
+    move-result-object v2
+
+    check-cast v2, Llce;
+
+    iget-object v2, v2, Llce;->d:Ljava/lang/Object;
+
+    check-cast v2, Llic;
+
+    invoke-interface/range {p1 .. p1}, Lmad;->g()Ljava/util/List;
+
+    move-result-object v3
+
+    const/4 v4, 0x0
+
+    invoke-interface {v3, v4}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v3
+
+    check-cast v3, Lmac;
+
+    invoke-interface {v3}, Lmac;->getBuffer()Ljava/nio/ByteBuffer;
+
+    move-result-object v3
+
+    iget v4, v1, Llig;->a:I
+
+    iget v5, v1, Llig;->b:I
+
+    iget v6, v2, Llic;->e:I
+
+    mul-int v7, v4, v5
+
+    invoke-static {v7}, Ljava/nio/ByteBuffer;->allocateDirect(I)Ljava/nio/ByteBuffer;
+
+    move-result-object v9
+
+    rsub-int v6, v6, 0x168
+
+    rem-int/lit16 v6, v6, 0x168
+
+    invoke-static {v3, v4, v5, v6, v9}, Lcom/google/babelfish/device/avenh/l2l/apps/common/VideoProcessorUtils;->nativeRotateFrame(Ljava/nio/ByteBuffer;IIILjava/nio/ByteBuffer;)V
+
+    iget-object v3, v0, Ligw;->d:Lojc;
+
+    invoke-virtual {v3}, Lojc;->c()Ljava/lang/Object;
+
+    move-result-object v3
+
+    move-object v8, v3
+
+    check-cast v8, Lihb;
+
+    iget v10, v1, Llig;->a:I
+
+    iget v11, v1, Llig;->b:I
+
+    iget v12, v2, Llic;->e:I
+
+    invoke-interface/range {p1 .. p1}, Lmad;->d()J
+
+    move-result-wide v13
+
+    iget-object v1, v0, Ligw;->c:Lddf;
+
+    sget-object v2, Ldcu;->a:Lddi;
+
+    invoke-interface {v1}, Lddf;->d()V
+
+    sget-object v15, Loih;->a:Loih;
+
+    invoke-interface/range {v8 .. v15}, Lihb;->f(Ljava/nio/ByteBuffer;IIIJLojc;)V
+
+    return-void
 .end method

@@ -1,321 +1,155 @@
 .class public final Ljhw;
 .super Ljava/lang/Object;
 
-
-# static fields
-.field private static final b:Ljava/lang/Object;
-
-.field private static volatile c:Ljhw;
+# interfaces
+.implements Landroid/content/DialogInterface$OnKeyListener;
 
 
 # instance fields
-.field public final a:Lj$/util/concurrent/ConcurrentHashMap;
+.field final synthetic a:Landroid/widget/TextView;
+
+.field final synthetic b:Landroid/widget/Button;
+
+.field final synthetic c:Landroid/widget/Button;
+
+.field final synthetic d:Lcom/google/android/apps/camera/ui/preference/KeyListenerPreference;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
+.method public constructor <init>(Lcom/google/android/apps/camera/ui/preference/KeyListenerPreference;Landroid/widget/TextView;Landroid/widget/Button;Landroid/widget/Button;)V
+    .locals 0
 
-    new-instance v0, Ljava/lang/Object;
+    iput-object p1, p0, Ljhw;->d:Lcom/google/android/apps/camera/ui/preference/KeyListenerPreference;
 
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+    iput-object p2, p0, Ljhw;->a:Landroid/widget/TextView;
 
-    sput-object v0, Ljhw;->b:Ljava/lang/Object;
+    iput-object p3, p0, Ljhw;->b:Landroid/widget/Button;
 
-    return-void
-.end method
-
-.method private constructor <init>()V
-    .locals 1
+    iput-object p4, p0, Ljhw;->c:Landroid/widget/Button;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    new-instance v0, Lj$/util/concurrent/ConcurrentHashMap;
-
-    invoke-direct {v0}, Lj$/util/concurrent/ConcurrentHashMap;-><init>()V
-
-    iput-object v0, p0, Ljhw;->a:Lj$/util/concurrent/ConcurrentHashMap;
-
     return-void
-.end method
-
-.method public static a()Ljhw;
-    .locals 2
-
-    sget-object v0, Ljhw;->c:Ljhw;
-
-    if-nez v0, :cond_1
-
-    sget-object v0, Ljhw;->b:Ljava/lang/Object;
-
-    monitor-enter v0
-
-    :try_start_0
-    sget-object v1, Ljhw;->c:Ljhw;
-
-    if-nez v1, :cond_0
-
-    new-instance v1, Ljhw;
-
-    invoke-direct {v1}, Ljhw;-><init>()V
-
-    sput-object v1, Ljhw;->c:Ljhw;
-
-    :cond_0
-    monitor-exit v0
-
-    goto :goto_0
-
-    :catchall_0
-    move-exception v1
-
-    monitor-exit v0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw v1
-
-    :cond_1
-    :goto_0
-    sget-object v0, Ljhw;->c:Ljhw;
-
-    invoke-static {v0}, Ljhp;->ab(Ljava/lang/Object;)V
-
-    return-object v0
-.end method
-
-.method private static d(Landroid/content/Context;Landroid/content/ServiceConnection;)V
-    .locals 0
-
-    :try_start_0
-    invoke-virtual {p0, p1}, Landroid/content/Context;->unbindService(Landroid/content/ServiceConnection;)V
-    :try_end_0
-    .catch Ljava/lang/IllegalArgumentException; {:try_start_0 .. :try_end_0} :catch_2
-    .catch Ljava/lang/IllegalStateException; {:try_start_0 .. :try_end_0} :catch_1
-    .catch Ljava/util/NoSuchElementException; {:try_start_0 .. :try_end_0} :catch_0
-
-    return-void
-
-    :catch_0
-    move-exception p0
-
-    goto :goto_0
-
-    :catch_1
-    move-exception p0
-
-    goto :goto_0
-
-    :catch_2
-    move-exception p0
-
-    :goto_0
-    return-void
-.end method
-
-.method private static e(Landroid/content/ServiceConnection;)Z
-    .locals 0
-
-    instance-of p0, p0, Ljgr;
-
-    if-nez p0, :cond_0
-
-    const/4 p0, 0x1
-
-    return p0
-
-    :cond_0
-    const/4 p0, 0x0
-
-    return p0
 .end method
 
 
 # virtual methods
-.method public final b(Landroid/content/Context;Landroid/content/ServiceConnection;)V
-    .locals 1
-
-    invoke-static {p2}, Ljhw;->e(Landroid/content/ServiceConnection;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    iget-object v0, p0, Ljhw;->a:Lj$/util/concurrent/ConcurrentHashMap;
-
-    invoke-virtual {v0, p2}, Lj$/util/concurrent/ConcurrentHashMap;->containsKey(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    :try_start_0
-    iget-object v0, p0, Ljhw;->a:Lj$/util/concurrent/ConcurrentHashMap;
-
-    invoke-virtual {v0, p2}, Lj$/util/concurrent/ConcurrentHashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/content/ServiceConnection;
-
-    invoke-static {p1, v0}, Ljhw;->d(Landroid/content/Context;Landroid/content/ServiceConnection;)V
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    iget-object p1, p0, Ljhw;->a:Lj$/util/concurrent/ConcurrentHashMap;
-
-    invoke-virtual {p1, p2}, Lj$/util/concurrent/ConcurrentHashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
-
-    return-void
-
-    :catchall_0
-    move-exception p1
-
-    iget-object v0, p0, Ljhw;->a:Lj$/util/concurrent/ConcurrentHashMap;
-
-    invoke-virtual {v0, p2}, Lj$/util/concurrent/ConcurrentHashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
-
-    throw p1
-
-    :cond_0
-    invoke-static {p1, p2}, Ljhw;->d(Landroid/content/Context;Landroid/content/ServiceConnection;)V
-
-    return-void
-.end method
-
-.method public final c(Landroid/content/Context;Ljava/lang/String;Landroid/content/Intent;Landroid/content/ServiceConnection;I)Z
+.method public final onKey(Landroid/content/DialogInterface;ILandroid/view/KeyEvent;)Z
     .locals 4
 
-    invoke-virtual {p3}, Landroid/content/Intent;->getComponent()Landroid/content/ComponentName;
+    invoke-static {p3}, Lcom/google/android/apps/camera/ui/preference/KeyListenerPreference;->a(Landroid/view/KeyEvent;)Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object p1
 
-    const-string v1, "ConnectionTracker"
+    invoke-virtual {p1}, Ljava/lang/String;->isEmpty()Z
 
-    const/4 v2, 0x0
+    move-result p3
 
-    if-nez v0, :cond_0
+    const/4 v0, 0x1
 
-    goto :goto_0
+    const/4 v1, 0x0
 
-    :cond_0
-    invoke-virtual {v0}, Landroid/content/ComponentName;->getPackageName()Ljava/lang/String;
+    if-nez p3, :cond_1
 
-    move-result-object v0
+    sparse-switch p2, :sswitch_data_0
 
-    const-string v3, "com.google.android.gms"
+    iget-object p3, p0, Ljhw;->a:Landroid/widget/TextView;
 
-    invoke-virtual {v3, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-static {p1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
-    :try_start_0
-    invoke-static {p1}, Ljid;->b(Landroid/content/Context;)Lkgd;
+    move-result-object v2
 
-    move-result-object v3
-
-    invoke-virtual {v3, v0, v2}, Lkgd;->m(Ljava/lang/String;I)Landroid/content/pm/ApplicationInfo;
-
-    move-result-object v0
-
-    iget v0, v0, Landroid/content/pm/ApplicationInfo;->flags:I
-    :try_end_0
-    .catch Landroid/content/pm/PackageManager$NameNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
-
-    const/high16 v3, 0x200000
-
-    and-int/2addr v0, v3
-
-    if-eqz v0, :cond_1
-
-    const-string p1, "Attempted to bind to a service in a STOPPED package."
-
-    invoke-static {v1, p1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
-
-    goto :goto_1
-
-    :catch_0
-    move-exception v0
-
-    :cond_1
-    :goto_0
-    invoke-static {p4}, Ljhw;->e(Landroid/content/ServiceConnection;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_4
-
-    iget-object v0, p0, Ljhw;->a:Lj$/util/concurrent/ConcurrentHashMap;
-
-    invoke-virtual {v0, p4, p4}, Lj$/util/concurrent/ConcurrentHashMap;->putIfAbsent(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/content/ServiceConnection;
-
-    if-eqz v0, :cond_2
-
-    if-eq p4, v0, :cond_2
-
-    const/4 v0, 0x3
-
-    new-array v0, v0, [Ljava/lang/Object;
-
-    aput-object p4, v0, v2
-
-    const/4 v3, 0x1
-
-    aput-object p2, v0, v3
-
-    invoke-virtual {p3}, Landroid/content/Intent;->getAction()Ljava/lang/String;
-
-    move-result-object p2
-
-    const/4 v3, 0x2
-
-    aput-object p2, v0, v3
-
-    const-string p2, "Duplicate binding with the same ServiceConnection: %s, %s, %s."
-
-    invoke-static {p2, v0}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object p2
-
-    invoke-static {v1, p2}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
-
-    :cond_2
-    :try_start_1
-    invoke-virtual {p1, p3, p4, p5}, Landroid/content/Context;->bindService(Landroid/content/Intent;Landroid/content/ServiceConnection;I)Z
-
-    move-result p1
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    if-nez p1, :cond_3
-
-    iget-object p1, p0, Ljhw;->a:Lj$/util/concurrent/ConcurrentHashMap;
-
-    invoke-virtual {p1, p4, p4}, Lj$/util/concurrent/ConcurrentHashMap;->remove(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    goto :goto_1
-
-    :cond_3
-    move v2, p1
-
-    goto :goto_1
-
-    :catchall_0
-    move-exception p1
-
-    iget-object p2, p0, Ljhw;->a:Lj$/util/concurrent/ConcurrentHashMap;
-
-    invoke-virtual {p2, p4, p4}, Lj$/util/concurrent/ConcurrentHashMap;->remove(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    throw p1
-
-    :cond_4
-    invoke-virtual {p1, p3, p4, p5}, Landroid/content/Context;->bindService(Landroid/content/Intent;Landroid/content/ServiceConnection;I)Z
+    invoke-virtual {v2}, Ljava/lang/String;->length()I
 
     move-result v2
 
-    :goto_1
-    return v2
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    add-int/lit8 v2, v2, 0x26
+
+    invoke-direct {v3, v2}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string v2, "New Key Bind: "
+
+    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v3, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v2, " (Key Code: "
+
+    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v3, p2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    const-string v2, ")"
+
+    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {p3, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+
+    iget-object p3, p0, Ljhw;->d:Lcom/google/android/apps/camera/ui/preference/KeyListenerPreference;
+
+    iget-object p3, p3, Lcom/google/android/apps/camera/ui/preference/KeyListenerPreference;->a:Ljava/lang/String;
+
+    invoke-static {p3}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
+
+    move-result p3
+
+    if-eq p3, p2, :cond_0
+
+    iget-object p3, p0, Ljhw;->d:Lcom/google/android/apps/camera/ui/preference/KeyListenerPreference;
+
+    invoke-static {p2}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
+
+    move-result-object p2
+
+    iput-object p2, p3, Lcom/google/android/apps/camera/ui/preference/KeyListenerPreference;->a:Ljava/lang/String;
+
+    iget-object p2, p0, Ljhw;->d:Lcom/google/android/apps/camera/ui/preference/KeyListenerPreference;
+
+    iput-object p1, p2, Lcom/google/android/apps/camera/ui/preference/KeyListenerPreference;->b:Ljava/lang/String;
+
+    :cond_0
+    iget-object p1, p0, Ljhw;->b:Landroid/widget/Button;
+
+    invoke-virtual {p1, v0}, Landroid/widget/Button;->setEnabled(Z)V
+
+    goto :goto_0
+
+    :cond_1
+    :sswitch_0
+    iget-object p1, p0, Ljhw;->a:Landroid/widget/TextView;
+
+    const-string p2, "Error: Key is not supported by Pixel Camera"
+
+    invoke-virtual {p1, p2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+
+    iget-object p1, p0, Ljhw;->b:Landroid/widget/Button;
+
+    invoke-virtual {p1, v1}, Landroid/widget/Button;->setEnabled(Z)V
+
+    :goto_0
+    iget-object p1, p0, Ljhw;->c:Landroid/widget/Button;
+
+    invoke-virtual {p1, v1}, Landroid/widget/Button;->setVisibility(I)V
+
+    iget-object p1, p0, Ljhw;->a:Landroid/widget/TextView;
+
+    const p2, 0x8000
+
+    invoke-virtual {p1, p2}, Landroid/widget/TextView;->sendAccessibilityEvent(I)V
+
+    return v0
+
+    :sswitch_data_0
+    .sparse-switch
+        0x4 -> :sswitch_0
+        0x16 -> :sswitch_0
+        0x18 -> :sswitch_0
+        0x19 -> :sswitch_0
+    .end sparse-switch
 .end method

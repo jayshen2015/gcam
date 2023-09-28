@@ -1,246 +1,355 @@
-.class public final enum Liop;
-.super Ljava/lang/Enum;
+.class final Liop;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Llff;
 
 
-# static fields
-.field public static final enum a:Liop;
-
-.field public static final enum b:Liop;
-
-.field public static final enum c:Liop;
-
-.field public static final enum d:Liop;
-
-.field public static final enum e:Liop;
-
-.field public static final enum f:Liop;
-
-.field public static final enum g:Liop;
-
-.field public static final enum h:Liop;
-
-.field public static final enum i:Liop;
-
-.field public static final enum j:Liop;
-
-.field public static final enum k:Liop;
-
-.field public static final enum l:Liop;
-
-.field public static final enum m:Liop;
-
-.field private static final synthetic n:[Liop;
+# instance fields
+.field final synthetic a:Lioq;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 16
-
-    new-instance v0, Liop;
-
-    const-string v1, "FRAMERATE_LIMITER"
-
-    const/4 v2, 0x0
-
-    invoke-direct {v0, v1, v2}, Liop;-><init>(Ljava/lang/String;I)V
-
-    sput-object v0, Liop;->a:Liop;
-
-    new-instance v1, Liop;
-
-    const-string v3, "FACE_BEAUTIFICATION"
-
-    const/4 v4, 0x1
-
-    invoke-direct {v1, v3, v4}, Liop;-><init>(Ljava/lang/String;I)V
-
-    sput-object v1, Liop;->b:Liop;
-
-    new-instance v3, Liop;
-
-    const-string v5, "MAKEUP"
-
-    const/4 v6, 0x2
-
-    invoke-direct {v3, v5, v6}, Liop;-><init>(Ljava/lang/String;I)V
-
-    sput-object v3, Liop;->c:Liop;
-
-    new-instance v5, Liop;
-
-    const-string v7, "FACE_OBFUSCATION"
-
-    const/4 v8, 0x3
-
-    invoke-direct {v5, v7, v8}, Liop;-><init>(Ljava/lang/String;I)V
-
-    sput-object v5, Liop;->d:Liop;
-
-    new-instance v7, Liop;
-
-    const-string v9, "ZEBRAS"
-
-    const/4 v10, 0x4
-
-    invoke-direct {v7, v9, v10}, Liop;-><init>(Ljava/lang/String;I)V
-
-    sput-object v7, Liop;->e:Liop;
-
-    new-instance v9, Liop;
-
-    const-string v11, "POC_GRAYSCALE"
-
-    const/4 v12, 0x5
-
-    invoke-direct {v9, v11, v12}, Liop;-><init>(Ljava/lang/String;I)V
-
-    sput-object v9, Liop;->f:Liop;
-
-    new-instance v11, Liop;
-
-    const-string v13, "ROCKY"
-
-    const/4 v14, 0x6
-
-    invoke-direct {v11, v13, v14}, Liop;-><init>(Ljava/lang/String;I)V
-
-    sput-object v11, Liop;->g:Liop;
-
-    new-instance v13, Liop;
-
-    const-string v15, "BLUR"
-
-    const/4 v14, 0x7
-
-    invoke-direct {v13, v15, v14}, Liop;-><init>(Ljava/lang/String;I)V
-
-    sput-object v13, Liop;->h:Liop;
-
-    new-instance v15, Liop;
-
-    const-string v14, "SWISS"
-
-    const/16 v12, 0x8
-
-    invoke-direct {v15, v14, v12}, Liop;-><init>(Ljava/lang/String;I)V
-
-    sput-object v15, Liop;->i:Liop;
-
-    new-instance v14, Liop;
-
-    const-string v12, "BOBA"
-
-    const/16 v10, 0x9
-
-    invoke-direct {v14, v12, v10}, Liop;-><init>(Ljava/lang/String;I)V
-
-    sput-object v14, Liop;->j:Liop;
-
-    new-instance v12, Liop;
-
-    const-string v10, "TEST_1"
-
-    const/16 v8, 0xa
-
-    invoke-direct {v12, v10, v8}, Liop;-><init>(Ljava/lang/String;I)V
-
-    sput-object v12, Liop;->k:Liop;
-
-    new-instance v10, Liop;
-
-    const-string v8, "TEST_2"
-
-    const/16 v6, 0xb
-
-    invoke-direct {v10, v8, v6}, Liop;-><init>(Ljava/lang/String;I)V
-
-    sput-object v10, Liop;->l:Liop;
-
-    new-instance v8, Liop;
-
-    const-string v6, "ALWAYS_SKIP"
-
-    const/16 v4, 0xc
-
-    invoke-direct {v8, v6, v4}, Liop;-><init>(Ljava/lang/String;I)V
-
-    sput-object v8, Liop;->m:Liop;
-
-    const/16 v6, 0xd
-
-    new-array v6, v6, [Liop;
-
-    aput-object v0, v6, v2
-
-    const/4 v0, 0x1
-
-    aput-object v1, v6, v0
-
-    const/4 v0, 0x2
-
-    aput-object v3, v6, v0
-
-    const/4 v0, 0x3
-
-    aput-object v5, v6, v0
-
-    const/4 v0, 0x4
-
-    aput-object v7, v6, v0
-
-    const/4 v0, 0x5
-
-    aput-object v9, v6, v0
-
-    const/4 v0, 0x6
-
-    aput-object v11, v6, v0
-
-    const/4 v0, 0x7
-
-    aput-object v13, v6, v0
-
-    const/16 v0, 0x8
-
-    aput-object v15, v6, v0
-
-    const/16 v0, 0x9
-
-    aput-object v14, v6, v0
-
-    const/16 v0, 0xa
-
-    aput-object v12, v6, v0
-
-    const/16 v0, 0xb
-
-    aput-object v10, v6, v0
-
-    aput-object v8, v6, v4
-
-    sput-object v6, Liop;->n:[Liop;
-
-    return-void
-.end method
-
-.method private constructor <init>(Ljava/lang/String;I)V
+.method public constructor <init>(Lioq;)V
     .locals 0
 
-    invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+    iput-object p1, p0, Liop;->a:Lioq;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
-.method public static values()[Liop;
+
+# virtual methods
+.method public final f()V
     .locals 1
 
-    sget-object v0, Liop;->n:[Liop;
+    iget-object v0, p0, Liop;->a:Lioq;
 
-    invoke-virtual {v0}, [Liop;->clone()Ljava/lang/Object;
+    iget-object v0, v0, Lioq;->ag:Lipa;
+
+    invoke-virtual {v0}, Lipa;->a()V
+
+    return-void
+.end method
+
+.method public final fE(Llga;)V
+    .locals 3
+
+    sget-object v0, Lioq;->a:Louj;
+
+    invoke-virtual {v0}, Loue;->b()Lova;
 
     move-result-object v0
 
-    check-cast v0, [Liop;
+    const-string v1, "onEncoderError(): %s"
 
-    return-object v0
+    const/16 v2, 0xbf8
+
+    invoke-static {v0, v1, p1, v2}, Ld;->u(Lova;Ljava/lang/String;Ljava/lang/Object;C)V
+
+    iget-object p1, p0, Liop;->a:Lioq;
+
+    iget-object p1, p1, Lioq;->ag:Lipa;
+
+    invoke-virtual {p1}, Lipa;->a()V
+
+    return-void
+.end method
+
+.method public final g()V
+    .locals 3
+
+    iget-object v0, p0, Liop;->a:Lioq;
+
+    iget-object v0, v0, Lioq;->z:Lcvh;
+
+    sget-object v1, Lmbs;->e:Lmbs;
+
+    invoke-virtual {v0, v1}, Lcvh;->b(Lmbs;)Lcle;
+
+    move-result-object v0
+
+    iget-object v1, p0, Liop;->a:Lioq;
+
+    iget-object v1, v1, Lioq;->ad:Lldv;
+
+    invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    iget-object v1, v1, Lldv;->a:Llfj;
+
+    invoke-interface {v0}, Lcle;->f()Ljava/io/FileDescriptor;
+
+    move-result-object v2
+
+    invoke-interface {v1, v2}, Llfj;->m(Ljava/io/FileDescriptor;)V
+
+    iget-object v1, p0, Liop;->a:Lioq;
+
+    invoke-static {}, Liqp;->a()Liqo;
+
+    move-result-object v2
+
+    iput-object v0, v2, Liqo;->b:Lcle;
+
+    sget-object v0, Loih;->a:Loih;
+
+    iput-object v0, v2, Liqo;->a:Lojc;
+
+    iget-object v0, p0, Liop;->a:Lioq;
+
+    iget-boolean v0, v0, Lioq;->B:Z
+
+    invoke-virtual {v2, v0}, Liqo;->e(Z)V
+
+    invoke-virtual {v2}, Liqo;->m()V
+
+    iput-object v2, v1, Lioq;->Y:Liqo;
+
+    return-void
+.end method
+
+.method public final h()V
+    .locals 1
+
+    iget-object v0, p0, Liop;->a:Lioq;
+
+    iget-object v0, v0, Lioq;->ag:Lipa;
+
+    invoke-virtual {v0}, Lipa;->a()V
+
+    return-void
+.end method
+
+.method public final i()V
+    .locals 9
+
+    iget-object v0, p0, Liop;->a:Lioq;
+
+    iget-object v0, v0, Lioq;->o:Ljava/lang/Object;
+
+    monitor-enter v0
+
+    :try_start_0
+    iget-object v1, p0, Liop;->a:Lioq;
+
+    invoke-virtual {v1}, Lioq;->b()V
+
+    iget-object v1, p0, Liop;->a:Lioq;
+
+    iget-object v2, v1, Lioq;->Y:Liqo;
+
+    iget-object v1, v1, Lioq;->H:Lhsq;
+
+    invoke-virtual {v2, v1}, Liqo;->j(Lhsq;)V
+
+    iget-object v1, p0, Liop;->a:Lioq;
+
+    iget-object v2, v1, Lioq;->E:Ljava/util/ArrayList;
+
+    iget-object v1, v1, Lioq;->Y:Liqo;
+
+    invoke-virtual {v2, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    iget-object v1, p0, Liop;->a:Lioq;
+
+    iget-object v1, v1, Lioq;->d:Lddf;
+
+    sget-object v2, Ldeg;->d:Lddg;
+
+    invoke-interface {v1, v2}, Lddf;->k(Lddg;)Z
+
+    move-result v1
+
+    const-wide/16 v2, 0x0
+
+    if-eqz v1, :cond_0
+
+    iget-object v1, p0, Liop;->a:Lioq;
+
+    iget-object v4, v1, Lioq;->v:Liod;
+
+    iget-object v1, v1, Lioq;->E:Ljava/util/ArrayList;
+
+    invoke-static {v1}, Lohh;->t(Ljava/lang/Iterable;)Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Liqo;
+
+    iget-object v5, v4, Liod;->s:Ljava/lang/Object;
+
+    monitor-enter v5
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_2
+
+    :try_start_1
+    iget-object v6, v4, Liod;->v:Liqo;
+
+    invoke-virtual {v6}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    invoke-virtual {v4}, Liod;->d()J
+
+    move-result-wide v7
+
+    invoke-virtual {v6, v7, v8}, Liqo;->h(J)V
+
+    iget-object v6, v4, Liod;->v:Liqo;
+
+    invoke-virtual {v4}, Liod;->c()J
+
+    move-result-wide v7
+
+    invoke-virtual {v6, v7, v8}, Liqo;->i(J)V
+
+    iget-object v6, v4, Liod;->v:Liqo;
+
+    invoke-virtual {v4}, Liod;->a()J
+
+    move-result-wide v7
+
+    invoke-virtual {v6, v7, v8}, Liqo;->c(J)V
+
+    iget-object v6, v4, Liod;->v:Liqo;
+
+    invoke-virtual {v4}, Liod;->b()J
+
+    move-result-wide v7
+
+    invoke-virtual {v6, v7, v8}, Liqo;->d(J)V
+
+    iget-object v6, v4, Liod;->f:Ljava/util/concurrent/atomic/AtomicLong;
+
+    invoke-virtual {v6, v2, v3}, Ljava/util/concurrent/atomic/AtomicLong;->set(J)V
+
+    iget-object v6, v4, Liod;->g:Ljava/util/concurrent/atomic/AtomicLong;
+
+    invoke-virtual {v6, v2, v3}, Ljava/util/concurrent/atomic/AtomicLong;->set(J)V
+
+    iget-object v6, v4, Liod;->e:Ljava/util/concurrent/atomic/AtomicLong;
+
+    invoke-virtual {v6, v2, v3}, Ljava/util/concurrent/atomic/AtomicLong;->set(J)V
+
+    iput-object v1, v4, Liod;->v:Liqo;
+
+    monitor-exit v5
+
+    goto :goto_0
+
+    :catchall_0
+    move-exception v1
+
+    monitor-exit v5
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    :try_start_2
+    throw v1
+
+    :cond_0
+    iget-object v1, p0, Liop;->a:Lioq;
+
+    iget-object v4, v1, Lioq;->l:Link;
+
+    iget-object v1, v1, Lioq;->E:Ljava/util/ArrayList;
+
+    invoke-static {v1}, Lohh;->t(Ljava/lang/Iterable;)Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Liqo;
+
+    iget-object v5, v4, Link;->x:Ljava/lang/Object;
+
+    monitor-enter v5
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_2
+
+    :try_start_3
+    iget-object v6, v4, Link;->H:Liqo;
+
+    invoke-virtual {v6}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    invoke-virtual {v4}, Link;->d()J
+
+    move-result-wide v7
+
+    invoke-virtual {v6, v7, v8}, Liqo;->h(J)V
+
+    iget-object v6, v4, Link;->H:Liqo;
+
+    invoke-virtual {v4}, Link;->c()J
+
+    move-result-wide v7
+
+    invoke-virtual {v6, v7, v8}, Liqo;->i(J)V
+
+    iget-object v6, v4, Link;->H:Liqo;
+
+    invoke-virtual {v4}, Link;->a()J
+
+    move-result-wide v7
+
+    invoke-virtual {v6, v7, v8}, Liqo;->c(J)V
+
+    iget-object v6, v4, Link;->H:Liqo;
+
+    invoke-virtual {v4}, Link;->b()J
+
+    move-result-wide v7
+
+    invoke-virtual {v6, v7, v8}, Liqo;->d(J)V
+
+    iget-object v6, v4, Link;->i:Ljava/util/concurrent/atomic/AtomicLong;
+
+    invoke-virtual {v6, v2, v3}, Ljava/util/concurrent/atomic/AtomicLong;->set(J)V
+
+    iget-object v6, v4, Link;->j:Ljava/util/concurrent/atomic/AtomicLong;
+
+    invoke-virtual {v6, v2, v3}, Ljava/util/concurrent/atomic/AtomicLong;->set(J)V
+
+    iget-object v6, v4, Link;->k:Ljava/util/concurrent/atomic/AtomicLong;
+
+    invoke-virtual {v6, v2, v3}, Ljava/util/concurrent/atomic/AtomicLong;->set(J)V
+
+    iput-object v1, v4, Link;->H:Liqo;
+
+    monitor-exit v5
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_1
+
+    :goto_0
+    :try_start_4
+    monitor-exit v0
+    :try_end_4
+    .catchall {:try_start_4 .. :try_end_4} :catchall_2
+
+    return-void
+
+    :catchall_1
+    move-exception v1
+
+    :try_start_5
+    monitor-exit v5
+    :try_end_5
+    .catchall {:try_start_5 .. :try_end_5} :catchall_1
+
+    :try_start_6
+    throw v1
+
+    :catchall_2
+    move-exception v1
+
+    monitor-exit v0
+    :try_end_6
+    .catchall {:try_start_6 .. :try_end_6} :catchall_2
+
+    throw v1
+.end method
+
+.method public final j(JJ)V
+    .locals 0
+
+    return-void
 .end method

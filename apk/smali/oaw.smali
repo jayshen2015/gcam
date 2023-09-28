@@ -1,216 +1,373 @@
 .class public final Loaw;
-.super Lnws;
-
-# interfaces
-.implements Lnxz;
-
-
-# static fields
-.field public static final e:Loaw;
-
-.field private static volatile g:Lnyf;
+.super Loat;
 
 
 # instance fields
-.field public a:I
+.field private c:F
 
-.field public b:I
+.field private d:F
 
-.field public c:Loau;
-
-.field public d:Lnxa;
-
-.field private f:B
+.field private e:F
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
+.method public constructor <init>(Lobd;)V
+    .locals 0
 
-    new-instance v0, Loaw;
+    invoke-direct {p0, p1}, Loat;-><init>(Loaf;)V
 
-    invoke-direct {v0}, Loaw;-><init>()V
+    const/high16 p1, 0x43960000    # 300.0f
 
-    sput-object v0, Loaw;->e:Loaw;
-
-    const-class v1, Loaw;
-
-    invoke-static {v1, v0}, Lnws;->aa(Ljava/lang/Class;Lnws;)V
-
-    return-void
-.end method
-
-.method private constructor <init>()V
-    .locals 1
-
-    invoke-direct {p0}, Lnws;-><init>()V
-
-    const/4 v0, 0x2
-
-    iput-byte v0, p0, Loaw;->f:B
-
-    sget-object v0, Lnyi;->b:Lnyi;
-
-    iput-object v0, p0, Loaw;->d:Lnxa;
+    iput p1, p0, Loaw;->c:F
 
     return-void
 .end method
 
 
 # virtual methods
-.method protected final a(ILjava/lang/Object;)Ljava/lang/Object;
-    .locals 3
+.method public final a()I
+    .locals 1
 
-    add-int/lit8 p1, p1, -0x1
+    iget-object v0, p0, Loaw;->a:Loaf;
 
-    const/4 v0, 0x1
+    check-cast v0, Lobd;
 
-    const/4 v1, 0x0
+    iget v0, v0, Lobd;->a:I
 
-    packed-switch p1, :pswitch_data_0
+    return v0
+.end method
 
-    :pswitch_0
-    if-nez p2, :cond_2
+.method public final b()I
+    .locals 1
 
-    const/4 v0, 0x0
+    const/4 v0, -0x1
 
-    goto :goto_1
+    return v0
+.end method
 
-    :pswitch_1
-    sget-object p1, Loaw;->g:Lnyf;
+.method public final c(Landroid/graphics/Canvas;F)V
+    .locals 7
 
-    if-nez p1, :cond_1
+    invoke-virtual {p1}, Landroid/graphics/Canvas;->getClipBounds()Landroid/graphics/Rect;
 
-    const-class p2, Loaw;
+    move-result-object v0
 
-    monitor-enter p2
+    invoke-virtual {v0}, Landroid/graphics/Rect;->width()I
 
-    :try_start_0
-    sget-object p1, Loaw;->g:Lnyf;
+    move-result v1
 
-    if-nez p1, :cond_0
+    int-to-float v1, v1
 
-    new-instance p1, Lnwo;
+    iput v1, p0, Loaw;->c:F
 
-    sget-object v0, Loaw;->e:Loaw;
+    iget-object v1, p0, Loaw;->a:Loaf;
 
-    invoke-direct {p1, v0}, Lnwo;-><init>(Lnws;)V
+    check-cast v1, Lobd;
 
-    sput-object p1, Loaw;->g:Lnyf;
+    iget v1, v1, Lobd;->a:I
+
+    int-to-float v1, v1
+
+    iget v2, v0, Landroid/graphics/Rect;->left:I
+
+    int-to-float v2, v2
+
+    invoke-virtual {v0}, Landroid/graphics/Rect;->width()I
+
+    move-result v3
+
+    int-to-float v3, v3
+
+    const/high16 v4, 0x40000000    # 2.0f
+
+    div-float/2addr v3, v4
+
+    add-float/2addr v2, v3
+
+    iget v3, v0, Landroid/graphics/Rect;->top:I
+
+    int-to-float v3, v3
+
+    invoke-virtual {v0}, Landroid/graphics/Rect;->height()I
+
+    move-result v5
+
+    int-to-float v5, v5
+
+    div-float/2addr v5, v4
+
+    add-float/2addr v3, v5
+
+    invoke-virtual {v0}, Landroid/graphics/Rect;->height()I
+
+    move-result v0
+
+    iget-object v5, p0, Loaw;->a:Loaf;
+
+    check-cast v5, Lobd;
+
+    iget v5, v5, Lobd;->a:I
+
+    sub-int/2addr v0, v5
+
+    int-to-float v0, v0
+
+    div-float/2addr v0, v4
+
+    const/4 v5, 0x0
+
+    invoke-static {v5, v0}, Ljava/lang/Math;->max(FF)F
+
+    move-result v0
+
+    add-float/2addr v3, v0
+
+    invoke-virtual {p1, v2, v3}, Landroid/graphics/Canvas;->translate(FF)V
+
+    iget-object v0, p0, Loaw;->a:Loaf;
+
+    check-cast v0, Lobd;
+
+    iget-boolean v0, v0, Lobd;->i:Z
+
+    const/high16 v2, 0x3f800000    # 1.0f
+
+    const/high16 v3, -0x40800000    # -1.0f
+
+    if-eqz v0, :cond_0
+
+    invoke-virtual {p1, v3, v2}, Landroid/graphics/Canvas;->scale(FF)V
 
     :cond_0
-    monitor-exit p2
+    iget-object v0, p0, Loaw;->b:Loas;
 
-    goto :goto_0
+    invoke-virtual {v0}, Loas;->f()Z
 
-    :catchall_0
-    move-exception p1
+    move-result v0
 
-    monitor-exit p2
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    if-eqz v0, :cond_1
 
-    throw p1
+    iget-object v0, p0, Loaw;->a:Loaf;
+
+    check-cast v0, Lobd;
+
+    iget v0, v0, Lobd;->e:I
+
+    const/4 v6, 0x1
+
+    if-eq v0, v6, :cond_2
 
     :cond_1
-    :goto_0
-    return-object p1
+    iget-object v0, p0, Loaw;->b:Loas;
 
-    :pswitch_2
-    sget-object p1, Loaw;->e:Loaw;
+    invoke-virtual {v0}, Loas;->e()Z
 
-    return-object p1
+    move-result v0
 
-    :pswitch_3
-    new-instance p1, Lnwn;
+    if-eqz v0, :cond_3
 
-    sget-object p2, Loaw;->e:Loaw;
+    iget-object v0, p0, Loaw;->a:Loaf;
 
-    invoke-direct {p1, p2}, Lnwn;-><init>(Lnws;)V
+    check-cast v0, Lobd;
 
-    return-object p1
+    iget v0, v0, Lobd;->f:I
 
-    :pswitch_4
-    new-instance p1, Loaw;
+    const/4 v6, 0x2
 
-    invoke-direct {p1}, Loaw;-><init>()V
-
-    return-object p1
-
-    :pswitch_5
-    const-string p1, "a"
-
-    const-string p2, "\u0001\u0003\u0000\u0001\u0001\u0005\u0003\u0000\u0001\u0000\u0001\u100c\u0000\u0003\u1009\u0002\u0005\u001b"
-
-    const/4 v2, 0x6
-
-    new-array v2, v2, [Ljava/lang/Object;
-
-    aput-object p1, v2, v1
-
-    const-string p1, "b"
-
-    aput-object p1, v2, v0
-
-    const/4 p1, 0x2
-
-    sget-object v0, Lnzw;->i:Lnww;
-
-    aput-object v0, v2, p1
-
-    const/4 p1, 0x3
-
-    const-string v0, "c"
-
-    aput-object v0, v2, p1
-
-    const/4 p1, 0x4
-
-    const-string v0, "d"
-
-    aput-object v0, v2, p1
-
-    const/4 p1, 0x5
-
-    const-class v0, Loav;
-
-    aput-object v0, v2, p1
-
-    sget-object p1, Loaw;->e:Loaw;
-
-    invoke-static {p1, p2, v2}, Loaw;->X(Lnxy;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object p1
-
-    return-object p1
-
-    :pswitch_6
-    iget-byte p1, p0, Loaw;->f:B
-
-    invoke-static {p1}, Ljava/lang/Byte;->valueOf(B)Ljava/lang/Byte;
-
-    move-result-object p1
-
-    return-object p1
+    if-ne v0, v6, :cond_3
 
     :cond_2
-    :goto_1
-    iput-byte v0, p0, Loaw;->f:B
+    invoke-virtual {p1, v2, v3}, Landroid/graphics/Canvas;->scale(FF)V
 
-    const/4 p1, 0x0
+    :cond_3
+    iget-object v0, p0, Loaw;->b:Loas;
 
-    return-object p1
+    invoke-virtual {v0}, Loas;->f()Z
 
-    nop
+    move-result v0
 
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_6
-        :pswitch_0
-        :pswitch_5
-        :pswitch_4
-        :pswitch_3
-        :pswitch_2
-        :pswitch_1
-    .end packed-switch
+    if-nez v0, :cond_4
+
+    iget-object v0, p0, Loaw;->b:Loas;
+
+    invoke-virtual {v0}, Loas;->e()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_5
+
+    :cond_4
+    iget-object v0, p0, Loaw;->a:Loaf;
+
+    check-cast v0, Lobd;
+
+    iget v0, v0, Lobd;->a:I
+
+    int-to-float v0, v0
+
+    add-float/2addr v3, p2
+
+    mul-float v0, v0, v3
+
+    div-float/2addr v0, v4
+
+    invoke-virtual {p1, v5, v0}, Landroid/graphics/Canvas;->translate(FF)V
+
+    :cond_5
+    iget v0, p0, Loaw;->c:F
+
+    neg-float v2, v0
+
+    div-float/2addr v2, v4
+
+    neg-float v3, v1
+
+    div-float/2addr v3, v4
+
+    div-float/2addr v0, v4
+
+    div-float/2addr v1, v4
+
+    invoke-virtual {p1, v2, v3, v0, v1}, Landroid/graphics/Canvas;->clipRect(FFFF)Z
+
+    iget-object p1, p0, Loaw;->a:Loaf;
+
+    check-cast p1, Lobd;
+
+    iget v0, p1, Lobd;->a:I
+
+    int-to-float v0, v0
+
+    mul-float v0, v0, p2
+
+    iput v0, p0, Loaw;->d:F
+
+    iget p1, p1, Lobd;->b:I
+
+    int-to-float p1, p1
+
+    mul-float p1, p1, p2
+
+    iput p1, p0, Loaw;->e:F
+
+    return-void
+.end method
+
+.method public final d(Landroid/graphics/Canvas;Landroid/graphics/Paint;FFI)V
+    .locals 6
+
+    cmpl-float v0, p3, p4
+
+    if-nez v0, :cond_0
+
+    return-void
+
+    :cond_0
+    iget v0, p0, Loaw;->c:F
+
+    neg-float v1, v0
+
+    const/high16 v2, 0x40000000    # 2.0f
+
+    div-float/2addr v1, v2
+
+    iget v3, p0, Loaw;->e:F
+
+    add-float/2addr v3, v3
+
+    sub-float/2addr v0, v3
+
+    sget-object v4, Landroid/graphics/Paint$Style;->FILL:Landroid/graphics/Paint$Style;
+
+    invoke-virtual {p2, v4}, Landroid/graphics/Paint;->setStyle(Landroid/graphics/Paint$Style;)V
+
+    const/4 v4, 0x1
+
+    invoke-virtual {p2, v4}, Landroid/graphics/Paint;->setAntiAlias(Z)V
+
+    invoke-virtual {p2, p5}, Landroid/graphics/Paint;->setColor(I)V
+
+    new-instance p5, Landroid/graphics/RectF;
+
+    iget v4, p0, Loaw;->d:F
+
+    mul-float p3, p3, v0
+
+    add-float/2addr p3, v1
+
+    neg-float v5, v4
+
+    div-float/2addr v5, v2
+
+    mul-float p4, p4, v0
+
+    add-float/2addr v1, p4
+
+    add-float/2addr v1, v3
+
+    div-float/2addr v4, v2
+
+    invoke-direct {p5, p3, v5, v1, v4}, Landroid/graphics/RectF;-><init>(FFFF)V
+
+    iget p3, p0, Loaw;->e:F
+
+    invoke-virtual {p1, p5, p3, p3, p2}, Landroid/graphics/Canvas;->drawRoundRect(Landroid/graphics/RectF;FFLandroid/graphics/Paint;)V
+
+    return-void
+.end method
+
+.method public final e(Landroid/graphics/Canvas;Landroid/graphics/Paint;)V
+    .locals 6
+
+    iget-object v0, p0, Loaw;->a:Loaf;
+
+    check-cast v0, Lobd;
+
+    iget v0, v0, Lobd;->d:I
+
+    iget-object v1, p0, Loaw;->b:Loas;
+
+    iget v1, v1, Loas;->i:I
+
+    invoke-static {v0, v1}, Lohh;->W(II)I
+
+    move-result v0
+
+    sget-object v1, Landroid/graphics/Paint$Style;->FILL:Landroid/graphics/Paint$Style;
+
+    invoke-virtual {p2, v1}, Landroid/graphics/Paint;->setStyle(Landroid/graphics/Paint$Style;)V
+
+    const/4 v1, 0x1
+
+    invoke-virtual {p2, v1}, Landroid/graphics/Paint;->setAntiAlias(Z)V
+
+    invoke-virtual {p2, v0}, Landroid/graphics/Paint;->setColor(I)V
+
+    new-instance v0, Landroid/graphics/RectF;
+
+    iget v1, p0, Loaw;->c:F
+
+    iget v2, p0, Loaw;->d:F
+
+    neg-float v3, v1
+
+    const/high16 v4, 0x40000000    # 2.0f
+
+    div-float/2addr v3, v4
+
+    neg-float v5, v2
+
+    div-float/2addr v5, v4
+
+    div-float/2addr v1, v4
+
+    div-float/2addr v2, v4
+
+    invoke-direct {v0, v3, v5, v1, v2}, Landroid/graphics/RectF;-><init>(FFFF)V
+
+    iget v1, p0, Loaw;->e:F
+
+    invoke-virtual {p1, v0, v1, v1, p2}, Landroid/graphics/Canvas;->drawRoundRect(Landroid/graphics/RectF;FFLandroid/graphics/Paint;)V
+
+    return-void
 .end method

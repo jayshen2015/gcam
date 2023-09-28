@@ -1,32 +1,40 @@
-.class public final Liyk;
-.super Liyn;
+.class final Liyk;
+.super Lixi;
 
 
-# static fields
-.field public static a:Ljava/util/List;
+# instance fields
+.field final synthetic c:Liyl;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
+.method public constructor <init>(Liyl;)V
+    .locals 0
 
-    new-instance v0, Ljava/util/ArrayList;
+    iput-object p1, p0, Liyk;->c:Liyl;
 
-    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
-
-    sput-object v0, Liyk;->a:Ljava/util/List;
+    invoke-direct {p0, p1}, Lixi;-><init>(Lixj;)V
 
     return-void
 .end method
 
-.method public constructor <init>(Liyz;)V
-    .locals 0
 
-    invoke-direct {p0, p1}, Liyn;-><init>(Liyz;)V
+# virtual methods
+.method public final d()V
+    .locals 2
 
-    new-instance p1, Ljava/util/HashSet;
+    iget-object v0, p0, Liyk;->c:Liyl;
 
-    invoke-direct {p1}, Ljava/util/HashSet;-><init>()V
+    iget-object v0, v0, Liyl;->o:Lihu;
+
+    invoke-virtual {v0}, Lihu;->e()V
+
+    iget-object v0, p0, Liyk;->c:Liyl;
+
+    iget-object v1, v0, Liyl;->o:Lihu;
+
+    iget-object v0, v0, Liyl;->p:Lihw;
+
+    invoke-virtual {v1, v0}, Lihu;->g(Lihw;)V
 
     return-void
 .end method

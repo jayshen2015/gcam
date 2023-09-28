@@ -1,119 +1,69 @@
-.class public final Lnok;
+.class final Lnok;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Lqco;
 
 
 # instance fields
-.field final a:Ljava/util/concurrent/Future;
+.field final synthetic a:Lnom;
 
-.field final b:Lnoj;
+.field final synthetic b:Lnrl;
 
 
 # direct methods
-.method public constructor <init>(Ljava/util/concurrent/Future;Lnoj;)V
+.method public constructor <init>(Lnom;Lnrl;)V
     .locals 0
 
+    iput-object p1, p0, Lnok;->a:Lnom;
+
+    iput-object p2, p0, Lnok;->b:Lnrl;
+
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lnok;->a:Ljava/util/concurrent/Future;
-
-    iput-object p2, p0, Lnok;->b:Lnoj;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final run()V
-    .locals 2
+.method public final bridge synthetic a(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 5
 
-    iget-object v0, p0, Lnok;->a:Ljava/util/concurrent/Future;
+    check-cast p1, Lqkl;
 
-    instance-of v1, v0, Lnpq;
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    if-eqz v1, :cond_1
+    iget-object v0, p1, Lqkl;->a:Ljava/lang/Object;
 
-    check-cast v0, Lnpq;
+    check-cast v0, Ljava/util/List;
 
-    invoke-virtual {v0}, Lnpq;->l()Ljava/lang/Throwable;
+    iget-object p1, p1, Lqkl;->b:Ljava/lang/Object;
 
-    move-result-object v0
+    check-cast p1, Ljava/util/List;
 
-    if-nez v0, :cond_0
+    new-instance v1, Ljava/io/IOException;
 
-    goto :goto_0
+    const-string v2, "File deletion failed"
 
-    :cond_0
-    iget-object v1, p0, Lnok;->b:Lnoj;
+    invoke-direct {v1, v2}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
 
-    invoke-interface {v1, v0}, Lnoj;->a(Ljava/lang/Throwable;)V
+    iget-object v2, p0, Lnok;->a:Lnom;
 
-    return-void
+    iget-object v2, v2, Lnom;->c:Lnrm;
 
-    :cond_1
-    :goto_0
-    :try_start_0
-    iget-object v0, p0, Lnok;->a:Ljava/util/concurrent/Future;
+    iget-object v3, p0, Lnok;->b:Lnrl;
 
-    invoke-static {v0}, Lnsy;->J(Ljava/util/concurrent/Future;)Ljava/lang/Object;
+    const/16 v4, 0x17
 
-    move-result-object v0
-    :try_end_0
-    .catch Ljava/util/concurrent/ExecutionException; {:try_start_0 .. :try_end_0} :catch_2
-    .catch Ljava/lang/RuntimeException; {:try_start_0 .. :try_end_0} :catch_1
-    .catch Ljava/lang/Error; {:try_start_0 .. :try_end_0} :catch_0
+    invoke-virtual {v3, v0, p1, v4, v1}, Lnrl;->b(Ljava/util/Collection;Ljava/util/Collection;ILjava/lang/Throwable;)Lnna;
 
-    iget-object v1, p0, Lnok;->b:Lnoj;
+    move-result-object p1
 
-    invoke-interface {v1, v0}, Lnoj;->b(Ljava/lang/Object;)V
+    invoke-virtual {v2, p1}, Lnrm;->a(Lnna;)V
 
-    return-void
+    invoke-static {v1}, Lqbu;->h(Ljava/lang/Throwable;)Lqbu;
 
-    :catch_0
-    move-exception v0
+    move-result-object p1
 
-    goto :goto_1
-
-    :catch_1
-    move-exception v0
-
-    :goto_1
-    iget-object v1, p0, Lnok;->b:Lnoj;
-
-    invoke-interface {v1, v0}, Lnoj;->a(Ljava/lang/Throwable;)V
-
-    return-void
-
-    :catch_2
-    move-exception v0
-
-    iget-object v1, p0, Lnok;->b:Lnoj;
-
-    invoke-virtual {v0}, Ljava/util/concurrent/ExecutionException;->getCause()Ljava/lang/Throwable;
-
-    move-result-object v0
-
-    invoke-interface {v1, v0}, Lnoj;->a(Ljava/lang/Throwable;)V
-
-    return-void
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .locals 2
-
-    invoke-static {p0}, Lmoz;->y(Ljava/lang/Object;)Lmqo;
-
-    move-result-object v0
-
-    iget-object v1, p0, Lnok;->b:Lnoj;
-
-    invoke-virtual {v0, v1}, Lmqo;->a(Ljava/lang/Object;)V
-
-    invoke-virtual {v0}, Lmqo;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    return-object v0
+    return-object p1
 .end method

@@ -1,159 +1,297 @@
 .class public final Llpy;
-.super Landroid/content/BroadcastReceiver;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Lpys;
 
 
-# static fields
-.field public static final a:Ljava/lang/Object;
+# instance fields
+.field private final a:Lqkg;
 
-.field public static volatile b:Z
+.field private final b:Lqkg;
 
-.field static final c:Llpa;
+.field private final c:Lqkg;
+
+.field private final d:Lqkg;
+
+.field private final e:Lqkg;
+
+.field private final f:Lqkg;
+
+.field private final g:Lqkg;
+
+.field private final h:Lqkg;
+
+.field private final i:Lqkg;
+
+.field private final j:Lqkg;
+
+.field private final k:Lqkg;
+
+.field private final l:Lqkg;
+
+.field private final m:Lqkg;
+
+.field private final n:Lqkg;
+
+.field private final o:Lqkg;
+
+.field private final p:Lqkg;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
+.method public constructor <init>(Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;)V
+    .locals 2
 
-    new-instance v0, Ljava/lang/Object;
+    move-object v0, p0
 
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    sput-object v0, Llpy;->a:Ljava/lang/Object;
+    move-object v1, p1
 
-    invoke-static {}, Llpa;->b()Llpa;
+    iput-object v1, v0, Llpy;->a:Lqkg;
 
-    move-result-object v0
+    move-object v1, p2
 
-    sput-object v0, Llpy;->c:Llpa;
+    iput-object v1, v0, Llpy;->b:Lqkg;
 
-    return-void
-.end method
+    move-object v1, p3
 
-.method public constructor <init>()V
-    .locals 0
+    iput-object v1, v0, Llpy;->c:Lqkg;
 
-    invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
+    move-object v1, p4
+
+    iput-object v1, v0, Llpy;->d:Lqkg;
+
+    move-object v1, p5
+
+    iput-object v1, v0, Llpy;->e:Lqkg;
+
+    move-object v1, p6
+
+    iput-object v1, v0, Llpy;->f:Lqkg;
+
+    move-object v1, p7
+
+    iput-object v1, v0, Llpy;->g:Lqkg;
+
+    move-object v1, p8
+
+    iput-object v1, v0, Llpy;->h:Lqkg;
+
+    move-object v1, p9
+
+    iput-object v1, v0, Llpy;->i:Lqkg;
+
+    move-object v1, p10
+
+    iput-object v1, v0, Llpy;->j:Lqkg;
+
+    move-object v1, p11
+
+    iput-object v1, v0, Llpy;->k:Lqkg;
+
+    move-object v1, p12
+
+    iput-object v1, v0, Llpy;->l:Lqkg;
+
+    move-object v1, p13
+
+    iput-object v1, v0, Llpy;->m:Lqkg;
+
+    move-object/from16 v1, p14
+
+    iput-object v1, v0, Llpy;->n:Lqkg;
+
+    move-object/from16 v1, p15
+
+    iput-object v1, v0, Llpy;->o:Lqkg;
+
+    move-object/from16 v1, p16
+
+    iput-object v1, v0, Llpy;->p:Lqkg;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onReceive(Landroid/content/Context;Landroid/content/Intent;)V
-    .locals 4
+.method public final a()Llpx;
+    .locals 22
 
-    const-string p1, "com.google.android.gms.phenotype.PACKAGE_NAME"
+    move-object/from16 v0, p0
 
-    invoke-virtual {p2, p1}, Landroid/content/Intent;->getStringExtra(Ljava/lang/String;)Ljava/lang/String;
+    iget-object v1, v0, Llpy;->a:Lqkg;
 
-    move-result-object p1
+    invoke-interface {v1}, Lqkg;->get()Ljava/lang/Object;
 
-    if-nez p1, :cond_0
+    move-result-object v1
 
-    return-void
+    move-object v3, v1
 
-    :cond_0
-    const-string p2, "../"
+    check-cast v3, Llpr;
 
-    invoke-virtual {p1, p2}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+    iget-object v1, v0, Llpy;->b:Lqkg;
 
-    move-result p2
+    invoke-interface {v1}, Lqkg;->get()Ljava/lang/Object;
 
-    if-nez p2, :cond_4
+    move-result-object v1
 
-    const-string p2, "/.."
+    move-object v4, v1
 
-    invoke-virtual {p1, p2}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+    check-cast v4, Llpz;
 
-    move-result p2
+    iget-object v1, v0, Llpy;->c:Lqkg;
 
-    if-eqz p2, :cond_1
+    invoke-interface {v1}, Lqkg;->get()Ljava/lang/Object;
 
-    goto :goto_1
+    move-result-object v1
 
-    :cond_1
-    new-instance p2, Ljava/util/ArrayList;
+    move-object v5, v1
 
-    sget-object v0, Llpy;->c:Llpa;
+    check-cast v5, Llpf;
 
-    invoke-virtual {v0}, Lmuq;->keySet()Ljava/util/Set;
+    iget-object v1, v0, Llpy;->d:Lqkg;
+
+    invoke-interface {v1}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v1
+
+    iget-object v2, v0, Llpy;->e:Lqkg;
+
+    invoke-interface {v2}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v7
+
+    iget-object v2, v0, Llpy;->f:Lqkg;
+
+    invoke-interface {v2}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v2
+
+    move-object v8, v2
+
+    check-cast v8, Llom;
+
+    iget-object v2, v0, Llpy;->g:Lqkg;
+
+    invoke-interface {v2}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v2
+
+    move-object v9, v2
+
+    check-cast v9, Llqt;
+
+    iget-object v2, v0, Llpy;->h:Lqkg;
+
+    invoke-interface {v2}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v2
+
+    move-object v10, v2
+
+    check-cast v10, Llrc;
+
+    iget-object v2, v0, Llpy;->i:Lqkg;
+
+    invoke-interface {v2}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v2
+
+    move-object v11, v2
+
+    check-cast v11, Llap;
+
+    iget-object v2, v0, Llpy;->j:Lqkg;
+
+    invoke-interface {v2}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v2
+
+    move-object v12, v2
+
+    check-cast v12, Llld;
+
+    iget-object v2, v0, Llpy;->k:Lqkg;
+
+    invoke-interface {v2}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v2
+
+    move-object v13, v2
+
+    check-cast v13, Llqz;
+
+    iget-object v2, v0, Llpy;->l:Lqkg;
+
+    check-cast v2, Llqc;
+
+    invoke-virtual {v2}, Llqc;->a()Lmhm;
+
+    move-result-object v14
+
+    iget-object v2, v0, Llpy;->m:Lqkg;
+
+    check-cast v2, Llry;
+
+    invoke-virtual {v2}, Llry;->a()Llrx;
+
+    move-result-object v15
+
+    iget-object v2, v0, Llpy;->n:Lqkg;
+
+    invoke-interface {v2}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v2
+
+    move-object/from16 v16, v2
+
+    check-cast v16, Llqk;
+
+    iget-object v2, v0, Llpy;->o:Lqkg;
+
+    check-cast v2, Lliq;
+
+    invoke-virtual {v2}, Lliq;->a()Llis;
+
+    move-result-object v17
+
+    iget-object v2, v0, Llpy;->p:Lqkg;
+
+    invoke-interface {v2}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v2
+
+    move-object/from16 v18, v2
+
+    check-cast v18, Llpq;
+
+    new-instance v21, Llpx;
+
+    move-object/from16 v2, v21
+
+    move-object v6, v1
+
+    check-cast v6, Llqg;
+
+    check-cast v7, Lloy;
+
+    const/16 v19, 0x0
+
+    const/16 v20, 0x0
+
+    invoke-direct/range {v2 .. v20}, Llpx;-><init>(Llpr;Llpz;Llpf;Llqg;Lloy;Llom;Llqt;Llrc;Llap;Llld;Llqz;Lmhm;Llrx;Llqk;Llis;Llpq;[B[B)V
+
+    return-object v21
+.end method
+
+.method public final bridge synthetic get()Ljava/lang/Object;
+    .locals 1
+
+    invoke-virtual {p0}, Llpy;->a()Llpx;
 
     move-result-object v0
 
-    invoke-direct {p2, v0}, Ljava/util/ArrayList;-><init>(Ljava/util/Collection;)V
-
-    invoke-interface {p2}, Ljava/util/List;->size()I
-
-    move-result v0
-
-    const/4 v1, 0x0
-
-    :goto_0
-    if-ge v1, v0, :cond_3
-
-    invoke-interface {p2, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Lmqq;
-
-    iget-object v3, v2, Lmqq;->a:Ljava/lang/Object;
-
-    check-cast v3, Ljava/lang/String;
-
-    invoke-virtual {v3, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v3
-
-    if-eqz v3, :cond_2
-
-    sget-object v3, Llpy;->c:Llpa;
-
-    invoke-virtual {v3, v2}, Lmuq;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Landroidx/wear/ambient/AmbientMode$AmbientController;
-
-    if-eqz v2, :cond_2
-
-    iget-object v2, v2, Landroidx/wear/ambient/AmbientMode$AmbientController;->a:Ljava/lang/Object;
-
-    check-cast v2, Llpp;
-
-    invoke-virtual {v2}, Llpp;->b()V
-
-    :cond_2
-    add-int/lit8 v1, v1, 0x1
-
-    goto :goto_0
-
-    :cond_3
-    return-void
-
-    :cond_4
-    :goto_1
-    new-instance p2, Ljava/lang/StringBuilder;
-
-    invoke-direct {p2}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v0, "Got an invalid config package for P/H that includes \'..\': "
-
-    invoke-virtual {p2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {p2, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string p1, ". Exiting."
-
-    invoke-virtual {p2, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {p2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p1
-
-    const-string p2, "PhUpdateBroadcastRecv"
-
-    invoke-static {p2, p1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
-
-    return-void
+    return-object v0
 .end method

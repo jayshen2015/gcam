@@ -1,216 +1,102 @@
 .class public final Lfjo;
 .super Ljava/lang/Object;
 
+# interfaces
+.implements Lemr;
+
 
 # instance fields
-.field public final a:I
+.field final synthetic a:Lemr;
 
-.field public final b:F
-
-.field public final c:F
+.field final synthetic b:Lfjs;
 
 
 # direct methods
-.method public constructor <init>()V
+.method public constructor <init>(Lemr;Lfjs;)V
     .locals 0
+
+    iput-object p1, p0, Lfjo;->a:Lemr;
+
+    iput-object p2, p0, Lfjo;->b:Lfjs;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
-.end method
-
-.method public constructor <init>(IFF)V
-    .locals 0
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput p1, p0, Lfjo;->a:I
-
-    iput p2, p0, Lfjo;->b:F
-
-    iput p3, p0, Lfjo;->c:F
-
-    return-void
-.end method
-
-.method public static a(Ldsv;)Lfjo;
-    .locals 4
-
-    iget-object v0, p0, Ldsv;->a:[F
-
-    array-length v0, v0
-
-    const/4 v1, 0x3
-
-    const/4 v2, 0x1
-
-    const/4 v3, 0x0
-
-    if-ne v0, v1, :cond_0
-
-    const/4 v0, 0x1
-
-    goto :goto_0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    :goto_0
-    invoke-static {v0}, Lmoz;->e(Z)V
-
-    new-instance v0, Lfjo;
-
-    invoke-virtual {p0, v3}, Ldsv;->b(I)F
-
-    move-result v1
-
-    float-to-int v1, v1
-
-    invoke-virtual {p0, v2}, Ldsv;->b(I)F
-
-    move-result v2
-
-    const/4 v3, 0x2
-
-    invoke-virtual {p0, v3}, Ldsv;->b(I)F
-
-    move-result p0
-
-    invoke-direct {v0, v1, v2, p0}, Lfjo;-><init>(IFF)V
-
-    return-object v0
 .end method
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 4
+.method public final a(Lemq;)Ljava/lang/Object;
+    .locals 6
 
-    const/4 v0, 0x1
+    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
-    if-ne p1, p0, :cond_0
+    move-result-wide v0
 
-    return v0
+    iget-object v2, p0, Lfjo;->a:Lemr;
+
+    invoke-interface {v2, p1}, Lemr;->a(Lemq;)Ljava/lang/Object;
+
+    move-result-object v2
+
+    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
+
+    move-result-wide v3
+
+    sub-long/2addr v3, v0
+
+    iget p1, p1, Lemq;->c:I
+
+    const/16 v0, 0xf
+
+    new-array v1, v0, [I
+
+    fill-array-data v1, :array_0
+
+    const/4 v5, 0x1
+
+    if-ge p1, v0, :cond_0
+
+    aget p1, v1, p1
+
+    goto :goto_0
 
     :cond_0
-    instance-of v1, p1, Lfjo;
+    const/4 p1, 0x1
 
-    const/4 v2, 0x0
+    :goto_0
+    if-eqz v2, :cond_1
 
-    if-eqz v1, :cond_1
-
-    check-cast p1, Lfjo;
-
-    iget v1, p0, Lfjo;->a:I
-
-    iget v3, p1, Lfjo;->a:I
-
-    if-ne v1, v3, :cond_1
-
-    iget v1, p0, Lfjo;->b:F
-
-    invoke-static {v1}, Ljava/lang/Float;->floatToIntBits(F)I
-
-    move-result v1
-
-    iget v3, p1, Lfjo;->b:F
-
-    invoke-static {v3}, Ljava/lang/Float;->floatToIntBits(F)I
-
-    move-result v3
-
-    if-ne v1, v3, :cond_1
-
-    iget v1, p0, Lfjo;->c:F
-
-    invoke-static {v1}, Ljava/lang/Float;->floatToIntBits(F)I
-
-    move-result v1
-
-    iget p1, p1, Lfjo;->c:F
-
-    invoke-static {p1}, Ljava/lang/Float;->floatToIntBits(F)I
-
-    move-result p1
-
-    if-ne v1, p1, :cond_1
-
-    return v0
+    goto :goto_1
 
     :cond_1
-    return v2
-.end method
+    const/4 v5, 0x0
 
-.method public final hashCode()I
-    .locals 3
+    :goto_1
+    iget-object v0, p0, Lfjo;->b:Lfjs;
 
-    iget v0, p0, Lfjo;->a:I
+    long-to-int v1, v3
 
-    const v1, 0xf4243
+    invoke-interface {v0, p1, v5, v1}, Lfjs;->al(IZI)V
 
-    xor-int/2addr v0, v1
+    return-object v2
 
-    iget v2, p0, Lfjo;->b:F
-
-    invoke-static {v2}, Ljava/lang/Float;->floatToIntBits(F)I
-
-    move-result v2
-
-    mul-int v0, v0, v1
-
-    xor-int/2addr v0, v2
-
-    iget v2, p0, Lfjo;->c:F
-
-    invoke-static {v2}, Ljava/lang/Float;->floatToIntBits(F)I
-
-    move-result v2
-
-    mul-int v0, v0, v1
-
-    xor-int/2addr v0, v2
-
-    return v0
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .locals 5
-
-    iget v0, p0, Lfjo;->a:I
-
-    iget v1, p0, Lfjo;->b:F
-
-    iget v2, p0, Lfjo;->c:F
-
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v4, "CameraOrientation{deviceRotationDegrees="
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    const-string v0, ", pitchDegrees="
-
-    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
-
-    const-string v0, ", rollDegrees="
-
-    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
-
-    const-string v0, "}"
-
-    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    return-object v0
+    :array_0
+    .array-data 4
+        0x1
+        0x2
+        0x3
+        0x4
+        0x5
+        0x6
+        0x7
+        0x8
+        0x9
+        0xa
+        0xb
+        0xc
+        0xd
+        0xe
+        0xf
+    .end array-data
 .end method

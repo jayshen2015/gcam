@@ -1,140 +1,122 @@
 .class public final Lcwc;
-.super Ljwi;
-
-# interfaces
-.implements Lcwg;
+.super Ljava/lang/Object;
 
 
 # instance fields
-.field private final a:Ldhi;
+.field public final a:Llar;
+
+.field public final b:Lcwm;
+
+.field public final c:Llis;
+
+.field public final d:Lcwf;
+
+.field public final e:Ljtx;
+
+.field private final f:Lcxz;
 
 
 # direct methods
-.method public constructor <init>(Ldhi;Lgzv;)V
+.method public constructor <init>(Llar;Lcxz;Lcwm;Ljtx;Llis;Lcwf;[B[B[B)V
     .locals 0
 
-    invoke-direct {p0, p2}, Ljwi;-><init>(Ljwb;)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lcwc;->a:Ldhi;
+    iput-object p1, p0, Lcwc;->a:Llar;
+
+    iput-object p2, p0, Lcwc;->f:Lcxz;
+
+    iput-object p3, p0, Lcwc;->b:Lcwm;
+
+    iput-object p4, p0, Lcwc;->e:Ljtx;
+
+    iput-object p6, p0, Lcwc;->d:Lcwf;
+
+    const-string p1, "FallbackHandler"
+
+    invoke-interface {p5, p1}, Llis;->a(Ljava/lang/String;)Llis;
+
+    move-result-object p1
+
+    iput-object p1, p0, Lcwc;->c:Llis;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final bridge synthetic b(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 0
+.method public final a(Llwd;II)V
+    .locals 9
 
-    check-cast p1, Lgyr;
+    const/4 v0, 0x3
 
-    invoke-virtual {p1}, Lgyr;->name()Ljava/lang/String;
+    if-ne p3, v0, :cond_0
 
-    move-result-object p1
+    iget-object v0, p0, Lcwc;->f:Lcxz;
 
-    invoke-static {p1}, Ljws;->b(Ljava/lang/String;)Ljws;
-
-    move-result-object p1
-
-    return-object p1
-.end method
-
-.method public final bridge synthetic bm()Ljava/lang/Object;
-    .locals 3
-
-    iget-object v0, p0, Lcwc;->a:Ldhi;
-
-    sget-object v1, Ldgu;->b:Ldhk;
-
-    invoke-interface {v0, v1}, Ldhi;->a(Ldhk;)Lj$/util/Optional;
+    invoke-interface {v0, p1}, Lcxz;->b(Llwd;)Lpht;
 
     move-result-object v0
 
-    new-instance v1, Lcwd;
+    iget-object v1, p0, Lcwc;->e:Ljtx;
 
-    const/4 v2, 0x1
+    invoke-virtual {v1}, Ljtx;->o()I
 
-    invoke-direct {v1, p0, v2}, Lcwd;-><init>(Lcwc;I)V
+    move-result v1
 
-    invoke-virtual {v0, v1}, Lj$/util/Optional;->map(Ljava/util/function/Function;)Lj$/util/Optional;
+    iget-object v2, p0, Lcwc;->e:Ljtx;
 
-    move-result-object v0
+    invoke-virtual {v2}, Ljtx;->n()I
 
-    invoke-super {p0}, Ljwi;->bm()Ljava/lang/Object;
+    move-result v2
 
-    move-result-object v1
+    move v6, v1
 
-    check-cast v1, Ljws;
+    move v7, v2
 
-    invoke-virtual {v0, v1}, Lj$/util/Optional;->orElse(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljws;
-
-    return-object v0
-.end method
-
-.method protected final bridge synthetic c(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 0
-
-    check-cast p1, Ljws;
-
-    invoke-virtual {p1}, Ljws;->name()Ljava/lang/String;
-
-    move-result-object p1
-
-    invoke-static {p1}, Lgyr;->a(Ljava/lang/String;)Lgyr;
-
-    move-result-object p1
-
-    return-object p1
-.end method
-
-.method final synthetic d(Ljava/lang/Integer;)Ljws;
-    .locals 2
-
-    invoke-virtual {p1}, Ljava/lang/Integer;->intValue()I
-
-    move-result v0
-
-    const/16 v1, 0x1e
-
-    if-ne v0, v1, :cond_0
-
-    sget-object p1, Ljws;->c:Ljws;
-
-    return-object p1
+    goto :goto_0
 
     :cond_0
-    invoke-virtual {p1}, Ljava/lang/Integer;->intValue()I
+    iget-object v0, p0, Lcwc;->f:Lcxz;
 
-    move-result v0
+    invoke-interface {v0, p1}, Lcxz;->a(Llwd;)Lpht;
 
-    const/16 v1, 0x3c
+    move-result-object v0
 
-    if-ne v0, v1, :cond_1
+    iget-object v1, p0, Lcwc;->e:Ljtx;
 
-    sget-object p1, Ljws;->d:Ljws;
+    invoke-virtual {v1}, Ljtx;->m()I
 
-    return-object p1
+    move-result v1
 
-    :cond_1
-    invoke-virtual {p1}, Ljava/lang/Integer;->intValue()I
+    iget-object v2, p0, Lcwc;->e:Ljtx;
 
-    move-result p1
+    invoke-virtual {v2}, Ljtx;->l()I
 
-    if-nez p1, :cond_2
+    move-result v2
 
-    sget-object p1, Ljws;->a:Ljws;
+    move v6, v1
 
-    return-object p1
+    move v7, v2
 
-    :cond_2
-    invoke-super {p0}, Ljwi;->bm()Ljava/lang/Object;
+    :goto_0
+    new-instance v8, Lcwb;
 
-    move-result-object p1
+    move-object v1, v8
 
-    check-cast p1, Ljws;
+    move-object v2, p0
 
-    return-object p1
+    move-object v3, p1
+
+    move v4, p2
+
+    move v5, p3
+
+    invoke-direct/range {v1 .. v7}, Lcwb;-><init>(Lcwc;Llwd;IIII)V
+
+    iget-object p1, p0, Lcwc;->a:Llar;
+
+    invoke-static {v0, v8, p1}, Lplk;->af(Lpht;Lphh;Ljava/util/concurrent/Executor;)V
+
+    return-void
 .end method

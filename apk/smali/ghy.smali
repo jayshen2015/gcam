@@ -1,65 +1,36 @@
 .class public final Lghy;
 .super Ljava/lang/Object;
 
-# interfaces
-.implements Lgam;
 
+# static fields
+.field public static final a:Landroid/hardware/camera2/CaptureRequest$Key;
 
-# instance fields
-.field final synthetic a:Lgam;
-
-.field final synthetic b:Lkef;
+.field public static final b:Landroid/hardware/camera2/CaptureRequest$Key;
 
 
 # direct methods
-.method public constructor <init>(Lgam;Lkef;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 3
 
-    iput-object p1, p0, Lghy;->a:Lgam;
+    new-instance v0, Landroid/hardware/camera2/CaptureRequest$Key;
 
-    iput-object p2, p0, Lghy;->b:Lkef;
+    const-class v1, Ljava/lang/Integer;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const-string v2, "com.google.internal.IsCameraApp1P"
 
-    return-void
-.end method
+    invoke-direct {v0, v2, v1}, Landroid/hardware/camera2/CaptureRequest$Key;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
 
+    sput-object v0, Lghy;->a:Landroid/hardware/camera2/CaptureRequest$Key;
 
-# virtual methods
-.method public final a()Ljvs;
-    .locals 1
+    new-instance v0, Landroid/hardware/camera2/CaptureRequest$Key;
 
-    iget-object v0, p0, Lghy;->a:Lgam;
+    const-class v1, Ljava/lang/Integer;
 
-    invoke-interface {v0}, Lgam;->a()Ljvs;
+    const-string v2, "com.google.internal.SensorBinningMode"
 
-    move-result-object v0
+    invoke-direct {v0, v2, v1}, Landroid/hardware/camera2/CaptureRequest$Key;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
 
-    return-object v0
-.end method
-
-.method public final b()Ljvs;
-    .locals 1
-
-    iget-object v0, p0, Lghy;->a:Lgam;
-
-    invoke-interface {v0}, Lgam;->b()Ljvs;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public final c(Lgal;Lgkr;)V
-    .locals 1
-
-    iget-object v0, p0, Lghy;->a:Lgam;
-
-    invoke-interface {v0, p1, p2}, Lgam;->c(Lgal;Lgkr;)V
-
-    iget-object p1, p0, Lghy;->b:Lkef;
-
-    invoke-interface {p1}, Lkef;->p()Z
+    sput-object v0, Lghy;->b:Landroid/hardware/camera2/CaptureRequest$Key;
 
     return-void
 .end method

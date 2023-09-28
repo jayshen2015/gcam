@@ -1,173 +1,93 @@
-.class public final Ljss;
-.super Ljhn;
+.class public final synthetic Ljss;
+.super Ljava/lang/Object;
 
-
-# static fields
-.field public static final CREATOR:Landroid/os/Parcelable$Creator;
+# interfaces
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field public final a:Ljava/lang/String;
+.field public final synthetic a:Ljsu;
 
-.field public final b:Ljava/lang/String;
-
-.field public final c:I
-
-.field public final d:Z
+.field private final synthetic b:I
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
-
-    new-instance v0, Ljro;
-
-    const/16 v1, 0x11
-
-    invoke-direct {v0, v1}, Ljro;-><init>(I)V
-
-    sput-object v0, Ljss;->CREATOR:Landroid/os/Parcelable$Creator;
-
-    return-void
-.end method
-
-.method public constructor <init>(Ljava/lang/String;Ljava/lang/String;IZ)V
+.method public synthetic constructor <init>(Ljsu;I)V
     .locals 0
 
-    invoke-direct {p0}, Ljhn;-><init>()V
+    iput p2, p0, Ljss;->b:I
 
-    iput-object p1, p0, Ljss;->a:Ljava/lang/String;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p2, p0, Ljss;->b:Ljava/lang/String;
-
-    iput p3, p0, Ljss;->c:I
-
-    iput-boolean p4, p0, Ljss;->d:Z
+    iput-object p1, p0, Ljss;->a:Ljsu;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 1
+.method public final run()V
+    .locals 12
 
-    instance-of v0, p1, Ljss;
+    iget v0, p0, Ljss;->b:I
 
-    if-nez v0, :cond_0
+    packed-switch v0, :pswitch_data_0
 
-    const/4 p1, 0x0
+    iget-object v0, p0, Ljss;->a:Ljsu;
 
-    return p1
+    iget-object v1, v0, Ljsu;->e:Lhuf;
 
-    :cond_0
-    check-cast p1, Ljss;
+    sget-object v2, Lhtu;->Q:Lhul;
 
-    iget-object p1, p1, Ljss;->a:Ljava/lang/String;
+    invoke-interface {v1, v2}, Lhuf;->c(Lhts;)Ljava/lang/Object;
 
-    iget-object v0, p0, Ljss;->a:Ljava/lang/String;
+    move-result-object v1
 
-    invoke-virtual {p1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    check-cast v1, Ljava/lang/Integer;
 
-    move-result p1
+    invoke-virtual {v1}, Ljava/lang/Integer;->intValue()I
 
-    return p1
-.end method
+    move-result v1
 
-.method public final hashCode()I
-    .locals 1
+    iget-object v2, v0, Ljsu;->f:Lhug;
 
-    iget-object v0, p0, Ljss;->a:Ljava/lang/String;
+    sget-object v3, Lhtu;->Q:Lhul;
 
-    invoke-virtual {v0}, Ljava/lang/String;->hashCode()I
+    add-int/lit8 v1, v1, 0x1
 
-    move-result v0
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    return v0
-.end method
+    move-result-object v1
 
-.method public final toString()Ljava/lang/String;
-    .locals 6
+    invoke-interface {v2, v3, v1}, Lhug;->e(Lhts;Ljava/lang/Object;)V
 
-    iget-object v0, p0, Ljss;->b:Ljava/lang/String;
+    iget-object v4, v0, Ljsu;->g:Lfjs;
 
-    iget-object v1, p0, Ljss;->a:Ljava/lang/String;
+    const/16 v5, 0x8
 
-    iget v2, p0, Ljss;->c:I
+    iget-wide v6, v0, Ljsu;->k:J
 
-    iget-boolean v3, p0, Ljss;->d:Z
+    iget-wide v8, v0, Ljsu;->j:J
 
-    new-instance v4, Ljava/lang/StringBuilder;
+    const/4 v10, 0x0
 
-    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
+    const/4 v11, 0x0
 
-    const-string v5, "Node{"
-
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v0, ", id="
-
-    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v4, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v0, ", hops="
-
-    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v4, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    const-string v0, ", isNearby="
-
-    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v4, v3}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    const-string v0, "}"
-
-    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public final writeToParcel(Landroid/os/Parcel;I)V
-    .locals 2
-
-    invoke-static {p1}, Ljhp;->a(Landroid/os/Parcel;)I
-
-    move-result p2
-
-    iget-object v0, p0, Ljss;->a:Ljava/lang/String;
-
-    const/4 v1, 0x2
-
-    invoke-static {p1, v1, v0}, Ljhp;->p(Landroid/os/Parcel;ILjava/lang/String;)V
-
-    iget-object v0, p0, Ljss;->b:Ljava/lang/String;
-
-    const/4 v1, 0x3
-
-    invoke-static {p1, v1, v0}, Ljhp;->p(Landroid/os/Parcel;ILjava/lang/String;)V
-
-    iget v0, p0, Ljss;->c:I
-
-    const/4 v1, 0x4
-
-    invoke-static {p1, v1, v0}, Ljhp;->g(Landroid/os/Parcel;II)V
-
-    iget-boolean v0, p0, Ljss;->d:Z
-
-    const/4 v1, 0x5
-
-    invoke-static {p1, v1, v0}, Ljhp;->d(Landroid/os/Parcel;IZ)V
-
-    invoke-static {p1, p2}, Ljhp;->c(Landroid/os/Parcel;I)V
+    invoke-interface/range {v4 .. v11}, Lfjs;->ai(IJJII)V
 
     return-void
+
+    :pswitch_0
+    iget-object v0, p0, Ljss;->a:Ljsu;
+
+    iget-object v0, v0, Ljsu;->b:Ljsw;
+
+    invoke-interface {v0}, Ljsw;->f()V
+
+    return-void
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

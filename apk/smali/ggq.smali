@@ -1,35 +1,22 @@
 .class public final Lggq;
 .super Ljava/lang/Object;
 
-# interfaces
-.implements Lggd;
+
+# static fields
+.field public static final a:Lgfp;
 
 
 # direct methods
-.method public constructor <init>(Lkap;)V
-    .locals 1
+.method static constructor <clinit>()V
+    .locals 2
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance v0, Lgfp;
 
-    const-string v0, "PckNoOpConv3A"
+    const/4 v1, 0x6
 
-    invoke-interface {p1, v0}, Lkap;->a(Ljava/lang/String;)Lkaq;
+    invoke-direct {v0, v1}, Lgfp;-><init>(I)V
+
+    sput-object v0, Lggq;->a:Lgfp;
 
     return-void
-.end method
-
-
-# virtual methods
-.method public final a(Lker;Lkfh;)Lnou;
-    .locals 0
-
-    new-instance p1, Lggp;
-
-    invoke-direct {p1}, Lggp;-><init>()V
-
-    invoke-static {p1}, Lnsy;->B(Ljava/lang/Object;)Lnou;
-
-    move-result-object p1
-
-    return-object p1
 .end method

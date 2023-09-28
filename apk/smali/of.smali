@@ -1,124 +1,92 @@
 .class final Lof;
-.super Ljava/lang/Object;
-
-# interfaces
-.implements Landroid/graphics/drawable/Icon$OnDrawableLoadedListener;
+.super Landroid/animation/AnimatorListenerAdapter;
 
 
 # instance fields
-.field final synthetic a:Loi;
+.field final synthetic a:Loh;
 
-.field private final synthetic b:I
+.field final synthetic b:Landroid/view/ViewPropertyAnimator;
+
+.field final synthetic c:Landroid/view/View;
+
+.field final synthetic d:Lpy;
 
 
 # direct methods
-.method public constructor <init>(Loi;I)V
+.method public constructor <init>(Lpy;Loh;Landroid/view/ViewPropertyAnimator;Landroid/view/View;)V
     .locals 0
 
-    iput p2, p0, Lof;->b:I
+    iput-object p1, p0, Lof;->d:Lpy;
 
-    iput-object p1, p0, Lof;->a:Loi;
+    iput-object p2, p0, Lof;->a:Loh;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p3, p0, Lof;->b:Landroid/view/ViewPropertyAnimator;
+
+    iput-object p4, p0, Lof;->c:Landroid/view/View;
+
+    invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onDrawableLoaded(Landroid/graphics/drawable/Drawable;)V
+.method public final onAnimationEnd(Landroid/animation/Animator;)V
     .locals 1
 
-    iget v0, p0, Lof;->b:I
+    iget-object p1, p0, Lof;->b:Landroid/view/ViewPropertyAnimator;
 
-    packed-switch v0, :pswitch_data_0
+    const/4 v0, 0x0
 
-    if-nez p1, :cond_4
+    invoke-virtual {p1, v0}, Landroid/view/ViewPropertyAnimator;->setListener(Landroid/animation/Animator$AnimatorListener;)Landroid/view/ViewPropertyAnimator;
 
-    return-void
+    iget-object p1, p0, Lof;->c:Landroid/view/View;
 
-    :pswitch_0
-    if-nez p1, :cond_0
+    const/high16 v0, 0x3f800000    # 1.0f
 
-    return-void
+    invoke-virtual {p1, v0}, Landroid/view/View;->setAlpha(F)V
 
-    :cond_0
-    iget-object v0, p0, Lof;->a:Loi;
+    iget-object p1, p0, Lof;->c:Landroid/view/View;
 
-    iput-object p1, v0, Loi;->g:Landroid/graphics/drawable/Drawable;
+    const/4 v0, 0x0
 
-    invoke-virtual {v0}, Loi;->c()V
+    invoke-virtual {p1, v0}, Landroid/view/View;->setTranslationX(F)V
 
-    return-void
+    iget-object p1, p0, Lof;->c:Landroid/view/View;
 
-    :pswitch_1
-    if-nez p1, :cond_1
+    invoke-virtual {p1, v0}, Landroid/view/View;->setTranslationY(F)V
 
-    return-void
+    iget-object p1, p0, Lof;->d:Lpy;
 
-    :cond_1
-    iget-object v0, p0, Lof;->a:Loi;
+    iget-object v0, p0, Lof;->a:Loh;
 
-    iput-object p1, v0, Loi;->f:Landroid/graphics/drawable/Drawable;
+    iget-object v0, v0, Loh;->a:Lqs;
 
-    invoke-virtual {v0}, Loi;->c()V
+    invoke-virtual {p1, v0}, Lpy;->a(Lqs;)V
 
-    return-void
+    iget-object p1, p0, Lof;->d:Lpy;
 
-    :pswitch_2
-    if-nez p1, :cond_2
+    iget-object p1, p1, Lpy;->l:Ljava/util/ArrayList;
 
-    return-void
+    iget-object v0, p0, Lof;->a:Loh;
 
-    :cond_2
-    iget-object v0, p0, Lof;->a:Loi;
+    iget-object v0, v0, Loh;->a:Lqs;
 
-    iput-object p1, v0, Loi;->d:Landroid/graphics/drawable/Drawable;
+    invoke-virtual {p1, v0}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
 
-    iget-object p1, v0, Loi;->d:Landroid/graphics/drawable/Drawable;
+    iget-object p1, p0, Lof;->d:Lpy;
 
-    invoke-virtual {p1}, Landroid/graphics/drawable/Drawable;->mutate()Landroid/graphics/drawable/Drawable;
-
-    iget-object p1, p0, Lof;->a:Loi;
-
-    invoke-virtual {p1}, Loi;->c()V
+    invoke-virtual {p1}, Lpy;->g()V
 
     return-void
+.end method
 
-    :pswitch_3
-    if-nez p1, :cond_3
+.method public final onAnimationStart(Landroid/animation/Animator;)V
+    .locals 0
 
-    return-void
+    iget-object p1, p0, Lof;->a:Loh;
 
-    :cond_3
-    iget-object v0, p0, Lof;->a:Loi;
-
-    iput-object p1, v0, Loi;->e:Landroid/graphics/drawable/Drawable;
-
-    iget-object p1, v0, Loi;->e:Landroid/graphics/drawable/Drawable;
-
-    invoke-virtual {p1}, Landroid/graphics/drawable/Drawable;->mutate()Landroid/graphics/drawable/Drawable;
-
-    iget-object p1, p0, Lof;->a:Loi;
-
-    invoke-virtual {p1}, Loi;->c()V
+    iget-object p1, p1, Loh;->a:Lqs;
 
     return-void
-
-    :cond_4
-    iget-object v0, p0, Lof;->a:Loi;
-
-    iput-object p1, v0, Loi;->h:Landroid/graphics/drawable/Drawable;
-
-    invoke-virtual {v0}, Loi;->c()V
-
-    return-void
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_3
-        :pswitch_2
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
 .end method

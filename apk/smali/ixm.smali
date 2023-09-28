@@ -1,165 +1,131 @@
-.class public final Lixm;
-.super Ljava/lang/Object;
-
-# interfaces
-.implements Landroid/view/View$OnGenericMotionListener;
-
-
-# static fields
-.field private static final b:Lqv;
+.class Lixm;
+.super Lixk;
 
 
 # instance fields
-.field public a:Landroid/support/v7/widget/RecyclerView;
-
-.field private final c:Lqv;
-
-.field private final d:Ljava/lang/Runnable;
-
-.field private final e:Laea;
-
-.field private f:Lixt;
+.field final synthetic a:Lixx;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
+.method public constructor <init>(Lixx;)V
+    .locals 0
 
-    sget-object v0, Lixl;->a:Lixl;
+    iput-object p1, p0, Lixm;->a:Lixx;
 
-    sput-object v0, Lixm;->b:Lqv;
-
-    return-void
-.end method
-
-.method public constructor <init>(Laea;)V
-    .locals 2
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    sget-object v0, Lixm;->b:Lqv;
-
-    iput-object v0, p0, Lixm;->c:Lqv;
-
-    new-instance v0, Liwu;
-
-    const/4 v1, 0x5
-
-    invoke-direct {v0, p0, v1}, Liwu;-><init>(Lixm;I)V
-
-    iput-object v0, p0, Lixm;->d:Ljava/lang/Runnable;
-
-    iput-object p1, p0, Lixm;->e:Laea;
+    invoke-direct {p0}, Lixk;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onGenericMotion(Landroid/view/View;Landroid/view/MotionEvent;)Z
-    .locals 5
+.method public d()V
+    .locals 0
 
-    invoke-virtual {p2}, Landroid/view/MotionEvent;->getAction()I
+    return-void
+.end method
 
-    move-result v0
+.method public final f()V
+    .locals 3
 
-    const/16 v1, 0x8
+    iget-object v0, p0, Lixm;->a:Lixx;
 
-    const/4 v2, 0x0
+    invoke-virtual {v0}, Lixx;->s()Lcom/google/android/apps/camera/ui/wirers/PreviewOverlay;
 
-    if-ne v0, v1, :cond_4
+    move-result-object v0
 
-    const/high16 v0, 0x400000
+    const/4 v1, 0x1
 
-    invoke-virtual {p2, v0}, Landroid/view/MotionEvent;->isFromSource(I)Z
+    iput-boolean v1, v0, Lcom/google/android/apps/camera/ui/wirers/PreviewOverlay;->d:Z
 
-    move-result v0
+    iget-object v0, p0, Lixm;->a:Lixx;
 
-    if-nez v0, :cond_0
+    invoke-virtual {v0}, Lixx;->w()V
 
-    goto :goto_0
+    iget-object v0, p0, Lixm;->a:Lixx;
+
+    iget-object v0, v0, Lixx;->b:Ljfn;
+
+    invoke-interface {v0}, Ljfn;->m()V
+
+    iget-object v0, p0, Lixm;->a:Lixx;
+
+    iget-object v0, v0, Lixx;->b:Ljfn;
+
+    sget-object v2, Ljrl;->m:Ljrl;
+
+    invoke-interface {v0, v2, v1}, Ljfn;->j(Ljrl;Z)V
+
+    iget-object v0, p0, Lixm;->a:Lixx;
+
+    sget-object v2, Ljrl;->m:Ljrl;
+
+    invoke-virtual {v0, v2}, Lixx;->A(Ljrl;)V
+
+    iget-object v0, p0, Lixm;->a:Lixx;
+
+    iget-object v0, v0, Lixx;->a:Lkas;
+
+    invoke-interface {v0, v1}, Lkas;->v(Z)V
+
+    iget-object v0, p0, Lixm;->a:Lixx;
+
+    iget-object v0, v0, Lixx;->a:Lkas;
+
+    move-object v1, v0
+
+    check-cast v1, Lkbi;
+
+    iget-boolean v1, v1, Lkbi;->L:Z
+
+    if-eqz v1, :cond_0
+
+    invoke-interface {v0}, Lkas;->h()V
 
     :cond_0
-    invoke-virtual {p1}, Landroid/view/View;->isActivated()Z
+    iget-object v0, p0, Lixm;->a:Lixx;
 
-    move-result v0
+    invoke-virtual {v0}, Lixx;->v()V
 
-    if-nez v0, :cond_1
+    return-void
+.end method
 
-    return v2
+.method public final g()V
+    .locals 1
 
-    :cond_1
-    move-object v0, p1
+    iget-object v0, p0, Lixm;->a:Lixx;
 
-    check-cast v0, Landroid/support/v7/widget/RecyclerView;
+    invoke-virtual {v0}, Lixx;->y()V
 
-    iput-object v0, p0, Lixm;->a:Landroid/support/v7/widget/RecyclerView;
+    iget-object v0, p0, Lixm;->a:Lixx;
 
-    iget-object v1, p0, Lixm;->f:Lixt;
+    iget-object v0, v0, Lixx;->g:Lbta;
 
-    if-nez v1, :cond_2
+    invoke-virtual {v0}, Lbta;->c()V
 
-    iget-object v1, p0, Lixm;->c:Lqv;
+    return-void
+.end method
 
-    invoke-interface {v1, v0}, Lqv;->a(Ljava/lang/Object;)Ljava/lang/Object;
+.method public i()V
+    .locals 0
 
-    move-result-object v0
+    return-void
+.end method
 
-    check-cast v0, Lixt;
+.method public k()V
+    .locals 0
 
-    iput-object v0, p0, Lixm;->f:Lixt;
+    return-void
+.end method
 
-    iget-object v1, p0, Lixm;->e:Laea;
+.method public l()V
+    .locals 0
 
-    invoke-interface {v1, v0}, Laea;->a(Ljava/lang/Object;)V
+    return-void
+.end method
 
-    :cond_2
-    iget-object v0, p0, Lixm;->d:Ljava/lang/Runnable;
+.method public p()V
+    .locals 0
 
-    invoke-virtual {p1, v0}, Landroid/view/View;->removeCallbacks(Ljava/lang/Runnable;)Z
-
-    iget-object v0, p0, Lixm;->d:Ljava/lang/Runnable;
-
-    const-wide/16 v3, 0x50
-
-    invoke-virtual {p1, v0, v3, v4}, Landroid/view/View;->postDelayed(Ljava/lang/Runnable;J)Z
-
-    invoke-virtual {p1}, Landroid/view/View;->getContext()Landroid/content/Context;
-
-    move-result-object v0
-
-    const/16 v1, 0x1a
-
-    invoke-virtual {p2, v1}, Landroid/view/MotionEvent;->getAxisValue(I)F
-
-    move-result p2
-
-    invoke-static {v0}, Landroid/view/ViewConfiguration;->get(Landroid/content/Context;)Landroid/view/ViewConfiguration;
-
-    move-result-object v0
-
-    invoke-static {v0}, Lafr;->b(Landroid/view/ViewConfiguration;)F
-
-    move-result v0
-
-    neg-float p2, p2
-
-    mul-float p2, p2, v0
-
-    invoke-static {p2}, Ljava/lang/Math;->round(F)I
-
-    move-result p2
-
-    if-eqz p2, :cond_3
-
-    invoke-virtual {p1, v2, p2}, Landroid/view/View;->scrollBy(II)V
-
-    :cond_3
-    const/4 p1, 0x1
-
-    return p1
-
-    :cond_4
-    :goto_0
-    return v2
+    return-void
 .end method

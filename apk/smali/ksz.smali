@@ -1,12 +1,7 @@
-.class final Lksz;
-.super Ljava/lang/Exception;
+.class public interface abstract Lksz;
+.super Ljava/lang/Object;
 
 
-# direct methods
-.method public constructor <init>()V
-    .locals 0
-
-    invoke-direct {p0}, Ljava/lang/Exception;-><init>()V
-
-    return-void
+# virtual methods
+.method public abstract b(Landroid/location/Location;)V
 .end method

@@ -1,65 +1,61 @@
-.class public final Ljaa;
+.class public final synthetic Ljaa;
 .super Ljava/lang/Object;
 
+# interfaces
+.implements Ljava/lang/Runnable;
 
-# static fields
-.field public static final a:Ljava/lang/Object;
 
-.field public static b:Ljoi;
+# instance fields
+.field public final synthetic a:Ljac;
 
-.field static c:Ljava/lang/Boolean;
+.field public final synthetic b:Landroid/view/View;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
-
-    new-instance v0, Ljava/lang/Object;
-
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
-
-    sput-object v0, Ljaa;->a:Ljava/lang/Object;
-
-    return-void
-.end method
-
-.method public constructor <init>()V
+.method public synthetic constructor <init>(Ljac;Landroid/view/View;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    iput-object p1, p0, Ljaa;->a:Ljac;
+
+    iput-object p2, p0, Ljaa;->b:Landroid/view/View;
+
     return-void
 .end method
 
-.method public static a(Landroid/content/Context;)Z
-    .locals 2
 
-    invoke-static {p0}, Ljhp;->ab(Ljava/lang/Object;)V
+# virtual methods
+.method public final run()V
+    .locals 3
 
-    sget-object v0, Ljaa;->c:Ljava/lang/Boolean;
+    iget-object v0, p0, Ljaa;->a:Ljac;
 
-    if-eqz v0, :cond_0
+    iget-object v1, p0, Ljaa;->b:Landroid/view/View;
 
-    invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
+    invoke-static {v1}, Ljus;->a(Landroid/view/View;)Ljus;
 
-    move-result p0
+    move-result-object v1
 
-    return p0
+    const v2, 0x7f0b01e7
 
-    :cond_0
-    const-string v0, "com.google.android.gms.analytics.AnalyticsReceiver"
+    invoke-virtual {v1, v2}, Ljus;->c(I)Ljava/lang/Object;
 
-    const/4 v1, 0x0
+    move-result-object v1
 
-    invoke-static {p0, v0, v1}, Ljcb;->f(Landroid/content/Context;Ljava/lang/String;Z)Z
+    check-cast v1, Landroid/widget/FrameLayout;
 
-    move-result p0
+    new-instance v2, Ljah;
 
-    invoke-static {p0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+    invoke-direct {v2, v1}, Ljah;-><init>(Landroid/widget/FrameLayout;)V
 
-    move-result-object v0
+    invoke-static {v2}, Lmip;->ep(Landroid/view/View;)V
 
-    sput-object v0, Ljaa;->c:Ljava/lang/Boolean;
+    iput-object v2, v0, Ljac;->f:Ljah;
 
-    return p0
+    iget-object v1, v0, Ljac;->f:Ljah;
+
+    iput-object v0, v1, Ljah;->b:Ljag;
+
+    return-void
 .end method

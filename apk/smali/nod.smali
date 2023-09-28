@@ -1,15 +1,22 @@
-.class Lnod;
-.super Lnoo;
+.class public final Lnod;
+.super Ljava/lang/Object;
 
-# interfaces
-.implements Lnmv;
+
+# static fields
+.field public static final a:Llzg;
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 2
 
-    invoke-direct {p0}, Lnoo;-><init>()V
+    new-instance v0, Llzg;
+
+    const/16 v1, 0xb
+
+    invoke-direct {v0, v1}, Llzg;-><init>(I)V
+
+    sput-object v0, Lnod;->a:Llzg;
 
     return-void
 .end method

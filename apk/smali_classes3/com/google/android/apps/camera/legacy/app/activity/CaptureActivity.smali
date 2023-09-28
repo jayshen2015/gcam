@@ -3,7 +3,7 @@
 
 
 # static fields
-.field private static final z:Lnak;
+.field private static final s:Louj;
 
 
 # direct methods
@@ -12,11 +12,11 @@
 
     const-string v0, "com/google/android/apps/camera/legacy/app/activity/CaptureActivity"
 
-    invoke-static {v0}, Lnak;->h(Ljava/lang/String;)Lnak;
+    invoke-static {v0}, Louj;->h(Ljava/lang/String;)Louj;
 
     move-result-object v0
 
-    sput-object v0, Lcom/google/android/apps/camera/legacy/app/activity/CaptureActivity;->z:Lnak;
+    sput-object v0, Lcom/google/android/apps/camera/legacy/app/activity/CaptureActivity;->s:Louj;
 
     return-void
 .end method
@@ -40,7 +40,7 @@
 
     move-result-object p1
 
-    invoke-static {p1}, Lcdg;->f(Landroid/content/Intent;)V
+    invoke-static {p1}, Lbqe;->f(Landroid/content/Intent;)V
 
     invoke-virtual {p0}, Lcom/google/android/apps/camera/legacy/app/activity/CaptureActivity;->getCallingPackage()Ljava/lang/String;
 
@@ -74,25 +74,25 @@
     goto :goto_0
 
     :cond_0
-    sget-object v3, Lcom/google/android/apps/camera/legacy/app/activity/CaptureActivity;->z:Lnak;
+    sget-object v3, Lcom/google/android/apps/camera/legacy/app/activity/CaptureActivity;->s:Louj;
 
-    invoke-virtual {v3}, Lnaf;->c()Lnaz;
-
-    move-result-object v3
-
-    check-cast v3, Lnah;
-
-    const/16 v4, 0x73c
-
-    invoke-interface {v3, v4}, Lnah;->G(I)Lnaz;
+    invoke-virtual {v3}, Loue;->c()Lova;
 
     move-result-object v3
 
-    check-cast v3, Lnah;
+    check-cast v3, Loug;
+
+    const/16 v4, 0x5db
+
+    invoke-interface {v3, v4}, Loug;->G(I)Lova;
+
+    move-result-object v3
+
+    check-cast v3, Loug;
 
     const-string v4, "getCallingPackage() returned null."
 
-    invoke-interface {v3, v4}, Lnah;->o(Ljava/lang/String;)V
+    invoke-interface {v3, v4}, Loug;->o(Ljava/lang/String;)V
     :try_end_0
     .catch Landroid/content/pm/PackageManager$NameNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
 
@@ -101,17 +101,17 @@
     :catch_0
     move-exception v3
 
-    sget-object v3, Lcom/google/android/apps/camera/legacy/app/activity/CaptureActivity;->z:Lnak;
+    sget-object v3, Lcom/google/android/apps/camera/legacy/app/activity/CaptureActivity;->s:Louj;
 
-    invoke-virtual {v3}, Lnaf;->c()Lnaz;
+    invoke-virtual {v3}, Loue;->c()Lova;
 
     move-result-object v3
 
-    const-string v4, "Unable to get PackageInfo for %s"
+    const/16 v4, 0x5e0
 
-    const/16 v5, 0x741
+    const-string v5, "Unable to get PackageInfo for %s"
 
-    invoke-static {v3, v4, p1, v5}, Ld;->j(Lnaz;Ljava/lang/String;Ljava/lang/Object;C)V
+    invoke-static {v3, v5, p1, v4}, Ld;->u(Lova;Ljava/lang/String;Ljava/lang/Object;C)V
 
     :goto_0
     const/4 v3, 0x1
@@ -153,17 +153,17 @@
 
     if-eqz v6, :cond_1
 
-    sget-object v4, Lcom/google/android/apps/camera/legacy/app/activity/CaptureActivity;->z:Lnak;
+    sget-object v4, Lcom/google/android/apps/camera/legacy/app/activity/CaptureActivity;->s:Louj;
 
-    invoke-virtual {v4}, Lnaf;->c()Lnaz;
+    invoke-virtual {v4}, Loue;->c()Lova;
 
     move-result-object v4
 
-    const-string v6, "Coarse location is granted to %s"
+    const/16 v6, 0x5df
 
-    const/16 v7, 0x740
+    const-string v7, "Coarse location is granted to %s"
 
-    invoke-static {v4, v6, p1, v7}, Ld;->j(Lnaz;Ljava/lang/String;Ljava/lang/Object;C)V
+    invoke-static {v4, v7, p1, v6}, Ld;->u(Lova;Ljava/lang/String;Ljava/lang/Object;C)V
 
     const/4 v4, 0x1
 
@@ -188,17 +188,17 @@
 
     if-eqz v6, :cond_2
 
-    sget-object v5, Lcom/google/android/apps/camera/legacy/app/activity/CaptureActivity;->z:Lnak;
+    sget-object v5, Lcom/google/android/apps/camera/legacy/app/activity/CaptureActivity;->s:Louj;
 
-    invoke-virtual {v5}, Lnaf;->c()Lnaz;
+    invoke-virtual {v5}, Loue;->c()Lova;
 
     move-result-object v5
 
-    const-string v6, "Fine location is granted to %s"
+    const/16 v6, 0x5de
 
-    const/16 v7, 0x73f
+    const-string v7, "Fine location is granted to %s"
 
-    invoke-static {v5, v6, p1, v7}, Ld;->j(Lnaz;Ljava/lang/String;Ljava/lang/Object;C)V
+    invoke-static {v5, v7, p1, v6}, Ld;->u(Lova;Ljava/lang/String;Ljava/lang/Object;C)V
 
     const/4 v5, 0x1
 
@@ -223,33 +223,33 @@
     goto :goto_3
 
     :cond_5
-    sget-object v0, Lcom/google/android/apps/camera/legacy/app/activity/CaptureActivity;->z:Lnak;
+    sget-object v0, Lcom/google/android/apps/camera/legacy/app/activity/CaptureActivity;->s:Louj;
 
-    invoke-virtual {v0}, Lnaf;->c()Lnaz;
+    invoke-virtual {v0}, Loue;->c()Lova;
 
     move-result-object v0
 
-    const-string v1, "Package %s doesn\'t have location permissions, location info won\'t be included in EXIF"
+    const/16 v1, 0x5dd
 
-    const/16 v2, 0x73e
+    const-string v2, "Package %s doesn\'t have location permissions, location info won\'t be included in EXIF"
 
-    invoke-static {v0, v1, p1, v2}, Ld;->j(Lnaz;Ljava/lang/String;Ljava/lang/Object;C)V
+    invoke-static {v0, v2, p1, v1}, Ld;->u(Lova;Ljava/lang/String;Ljava/lang/Object;C)V
 
     return-void
 
     :cond_6
     :goto_3
-    sget-object p1, Lcom/google/android/apps/camera/legacy/app/activity/CaptureActivity;->z:Lnak;
+    sget-object p1, Lcom/google/android/apps/camera/legacy/app/activity/CaptureActivity;->s:Louj;
 
-    invoke-virtual {p1}, Lnaf;->c()Lnaz;
+    invoke-virtual {p1}, Loue;->c()Lova;
 
     move-result-object p1
 
-    const-string v0, "Allowing location in intent"
+    const/16 v0, 0x5dc
 
-    const/16 v2, 0x73d
+    const-string v2, "Allowing location in intent"
 
-    invoke-static {p1, v0, v2}, Ld;->g(Lnaz;Ljava/lang/String;C)V
+    invoke-static {p1, v2, v0}, Ld;->v(Lova;Ljava/lang/String;C)V
 
     invoke-virtual {p0}, Lcom/google/android/apps/camera/legacy/app/activity/CaptureActivity;->getIntent()Landroid/content/Intent;
 

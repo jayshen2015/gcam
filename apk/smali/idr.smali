@@ -1,30 +1,38 @@
-.class public interface abstract Lidr;
-.super Ljava/lang/Object;
+.class public final Lidr;
+.super Lbld;
+
+
+# instance fields
+.field final synthetic a:Lcom/google/android/apps/camera/ui/preference/ManagedSwitchPreference;
+
+
+# direct methods
+.method public constructor <init>(Lcom/google/android/apps/camera/ui/preference/ManagedSwitchPreference;)V
+    .locals 0
+
+    iput-object p1, p0, Lidr;->a:Lcom/google/android/apps/camera/ui/preference/ManagedSwitchPreference;
+
+    invoke-direct {p0}, Lbld;-><init>()V
+
+    return-void
+.end method
 
 
 # virtual methods
-.method public abstract a()I
+.method public final a(Landroid/graphics/drawable/Drawable;)V
+    .locals 0
+
+    return-void
 .end method
 
-.method public abstract b()I
-.end method
+.method public final bridge synthetic b(Ljava/lang/Object;)V
+    .locals 1
 
-.method public abstract c(Limc;)Lmqp;
-.end method
+    check-cast p1, Landroid/graphics/drawable/Drawable;
 
-.method public abstract d()Lnou;
-.end method
+    iget-object v0, p0, Lidr;->a:Lcom/google/android/apps/camera/ui/preference/ManagedSwitchPreference;
 
-.method public abstract e()Lnou;
-.end method
+    invoke-virtual {v0, p1}, Lcom/google/android/apps/camera/ui/preference/ManagedSwitchPreference;->setIcon(Landroid/graphics/drawable/Drawable;)V
 
-.method public abstract f()V
-    .annotation runtime Ljava/lang/Deprecated;
-    .end annotation
-.end method
-
-.method public abstract g()V
-.end method
-
-.method public abstract h(Landroid/view/View$OnLayoutChangeListener;)V
+    return-void
 .end method

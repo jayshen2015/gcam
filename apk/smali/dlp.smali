@@ -1,136 +1,85 @@
-.class final Ldlp;
-.super Lapn;
+.class public final Ldlp;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Lpys;
+
+
+# instance fields
+.field private final a:Lqkg;
+
+.field private final b:Lqkg;
+
+.field private final c:Lqkg;
+
+.field private final d:Lqkg;
 
 
 # direct methods
-.method public constructor <init>(Lapt;)V
+.method public constructor <init>(Lqkg;Lqkg;Lqkg;Lqkg;)V
     .locals 0
 
-    invoke-direct {p0, p1}, Lapn;-><init>(Lapt;)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Ldlp;->a:Lqkg;
+
+    iput-object p2, p0, Ldlp;->b:Lqkg;
+
+    iput-object p3, p0, Ldlp;->c:Lqkg;
+
+    iput-object p4, p0, Ldlp;->d:Lqkg;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final bridge synthetic b(Larf;Ljava/lang/Object;)V
-    .locals 3
+.method public final a()Ldlo;
+    .locals 4
 
-    check-cast p2, Ldlu;
+    iget-object v0, p0, Ldlp;->a:Lqkg;
 
-    iget-wide v0, p2, Ldlu;->a:J
+    check-cast v0, Lemp;
 
-    const/4 v2, 0x1
+    invoke-virtual {v0}, Lemp;->a()Landroid/content/Context;
 
-    invoke-virtual {p1, v2, v0, v1}, Lare;->e(IJ)V
+    move-result-object v0
 
-    iget-object v0, p2, Ldlu;->b:Ljava/lang/String;
+    iget-object v1, p0, Ldlp;->b:Lqkg;
 
-    const/4 v1, 0x2
+    invoke-interface {v1}, Lqkg;->get()Ljava/lang/Object;
 
-    if-nez v0, :cond_0
+    move-result-object v1
 
-    invoke-virtual {p1, v1}, Lare;->f(I)V
+    check-cast v1, Lddf;
 
-    goto :goto_0
+    iget-object v2, p0, Ldlp;->c:Lqkg;
 
-    :cond_0
-    invoke-virtual {p1, v1, v0}, Lare;->g(ILjava/lang/String;)V
+    check-cast v2, Ldjt;
 
-    :goto_0
-    iget-wide v0, p2, Ldlu;->c:J
+    invoke-virtual {v2}, Ldjt;->a()Ldjs;
 
-    const/4 v2, 0x3
+    iget-object v2, p0, Ldlp;->d:Lqkg;
 
-    invoke-virtual {p1, v2, v0, v1}, Lare;->e(IJ)V
+    check-cast v2, Ldgb;
 
-    iget-wide v0, p2, Ldlu;->d:J
+    invoke-virtual {v2}, Ldgb;->a()Llir;
 
-    const/4 v2, 0x4
+    move-result-object v2
 
-    invoke-virtual {p1, v2, v0, v1}, Lare;->e(IJ)V
+    new-instance v3, Ldlo;
 
-    iget-wide v0, p2, Ldlu;->e:J
+    invoke-direct {v3, v0, v1, v2}, Ldlo;-><init>(Landroid/content/Context;Lddf;Llir;)V
 
-    const/4 v2, 0x5
-
-    invoke-virtual {p1, v2, v0, v1}, Lare;->e(IJ)V
-
-    iget-wide v0, p2, Ldlu;->f:J
-
-    const/4 v2, 0x6
-
-    invoke-virtual {p1, v2, v0, v1}, Lare;->e(IJ)V
-
-    iget-wide v0, p2, Ldlu;->g:J
-
-    const/4 v2, 0x7
-
-    invoke-virtual {p1, v2, v0, v1}, Lare;->e(IJ)V
-
-    iget-object v0, p2, Ldlu;->h:Ljava/lang/String;
-
-    const/16 v1, 0x8
-
-    if-nez v0, :cond_1
-
-    invoke-virtual {p1, v1}, Lare;->f(I)V
-
-    goto :goto_1
-
-    :cond_1
-    invoke-virtual {p1, v1, v0}, Lare;->g(ILjava/lang/String;)V
-
-    :goto_1
-    iget-object v0, p2, Ldlu;->i:Ljava/lang/String;
-
-    const/16 v1, 0x9
-
-    if-nez v0, :cond_2
-
-    invoke-virtual {p1, v1}, Lare;->f(I)V
-
-    goto :goto_2
-
-    :cond_2
-    invoke-virtual {p1, v1, v0}, Lare;->g(ILjava/lang/String;)V
-
-    :goto_2
-    iget-wide v0, p2, Ldlu;->j:J
-
-    const/16 v2, 0xa
-
-    invoke-virtual {p1, v2, v0, v1}, Lare;->e(IJ)V
-
-    iget-boolean v0, p2, Ldlu;->k:Z
-
-    int-to-long v0, v0
-
-    const/16 v2, 0xb
-
-    invoke-virtual {p1, v2, v0, v1}, Lare;->e(IJ)V
-
-    iget-boolean v0, p2, Ldlu;->l:Z
-
-    int-to-long v0, v0
-
-    const/16 v2, 0xc
-
-    invoke-virtual {p1, v2, v0, v1}, Lare;->e(IJ)V
-
-    iget-wide v0, p2, Ldlu;->a:J
-
-    const/16 p2, 0xd
-
-    invoke-virtual {p1, p2, v0, v1}, Lare;->e(IJ)V
-
-    return-void
+    return-object v3
 .end method
 
-.method public final d()Ljava/lang/String;
+.method public final bridge synthetic get()Ljava/lang/Object;
     .locals 1
 
-    const-string v0, "UPDATE OR ABORT `shots` SET `shot_id` = ?,`title` = ?,`start_millis` = ?,`persisted_millis` = ?,`canceled_millis` = ?,`deleted_millis` = ?,`most_recent_event_millis` = ?,`capture_session_type` = ?,`capture_session_shot_id` = ?,`pid` = ?,`stuck` = ?,`failed` = ? WHERE `shot_id` = ?"
+    invoke-virtual {p0}, Ldlp;->a()Ldlo;
+
+    move-result-object v0
 
     return-object v0
 .end method

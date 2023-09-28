@@ -1,162 +1,283 @@
-.class final Lbug;
+.class public final synthetic Lbug;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lbqo;
+.implements Llie;
+
+
+# static fields
+.field public static final synthetic a:Lbug;
+
+.field public static final synthetic b:Lbug;
+
+.field public static final synthetic c:Lbug;
+
+.field public static final synthetic d:Lbug;
+
+.field public static final synthetic e:Lbug;
+
+.field public static final synthetic f:Lbug;
+
+.field public static final synthetic g:Lbug;
+
+.field public static final synthetic h:Lbug;
+
+.field public static final synthetic i:Lbug;
+
+.field public static final synthetic j:Lbug;
+
+.field public static final synthetic k:Lbug;
+
+.field public static final synthetic l:Lbug;
+
+.field public static final synthetic m:Lbug;
+
+.field public static final synthetic n:Lbug;
+
+.field public static final synthetic o:Lbug;
+
+.field public static final synthetic p:Lbug;
+
+.field public static final synthetic q:Lbug;
+
+.field public static final synthetic r:Lbug;
+
+.field public static final synthetic s:Lbug;
 
 
 # instance fields
-.field private final a:Ljava/lang/String;
-
-.field private b:Ljava/lang/Object;
+.field private final synthetic t:I
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/String;)V
+.method static synthetic constructor <clinit>()V
+    .locals 2
+
+    new-instance v0, Lbug;
+
+    const/16 v1, 0x14
+
+    invoke-direct {v0, v1}, Lbug;-><init>(I)V
+
+    sput-object v0, Lbug;->s:Lbug;
+
+    new-instance v0, Lbug;
+
+    const/16 v1, 0x13
+
+    invoke-direct {v0, v1}, Lbug;-><init>(I)V
+
+    sput-object v0, Lbug;->r:Lbug;
+
+    new-instance v0, Lbug;
+
+    const/16 v1, 0x12
+
+    invoke-direct {v0, v1}, Lbug;-><init>(I)V
+
+    sput-object v0, Lbug;->q:Lbug;
+
+    new-instance v0, Lbug;
+
+    const/16 v1, 0x11
+
+    invoke-direct {v0, v1}, Lbug;-><init>(I)V
+
+    sput-object v0, Lbug;->p:Lbug;
+
+    new-instance v0, Lbug;
+
+    const/16 v1, 0x10
+
+    invoke-direct {v0, v1}, Lbug;-><init>(I)V
+
+    sput-object v0, Lbug;->o:Lbug;
+
+    new-instance v0, Lbug;
+
+    const/16 v1, 0xf
+
+    invoke-direct {v0, v1}, Lbug;-><init>(I)V
+
+    sput-object v0, Lbug;->n:Lbug;
+
+    new-instance v0, Lbug;
+
+    const/16 v1, 0xe
+
+    invoke-direct {v0, v1}, Lbug;-><init>(I)V
+
+    sput-object v0, Lbug;->m:Lbug;
+
+    new-instance v0, Lbug;
+
+    const/16 v1, 0xd
+
+    invoke-direct {v0, v1}, Lbug;-><init>(I)V
+
+    sput-object v0, Lbug;->l:Lbug;
+
+    new-instance v0, Lbug;
+
+    const/16 v1, 0xc
+
+    invoke-direct {v0, v1}, Lbug;-><init>(I)V
+
+    sput-object v0, Lbug;->k:Lbug;
+
+    new-instance v0, Lbug;
+
+    const/16 v1, 0xb
+
+    invoke-direct {v0, v1}, Lbug;-><init>(I)V
+
+    sput-object v0, Lbug;->j:Lbug;
+
+    new-instance v0, Lbug;
+
+    const/16 v1, 0x9
+
+    invoke-direct {v0, v1}, Lbug;-><init>(I)V
+
+    sput-object v0, Lbug;->i:Lbug;
+
+    new-instance v0, Lbug;
+
+    const/16 v1, 0x8
+
+    invoke-direct {v0, v1}, Lbug;-><init>(I)V
+
+    sput-object v0, Lbug;->h:Lbug;
+
+    new-instance v0, Lbug;
+
+    const/4 v1, 0x7
+
+    invoke-direct {v0, v1}, Lbug;-><init>(I)V
+
+    sput-object v0, Lbug;->g:Lbug;
+
+    new-instance v0, Lbug;
+
+    const/4 v1, 0x5
+
+    invoke-direct {v0, v1}, Lbug;-><init>(I)V
+
+    sput-object v0, Lbug;->f:Lbug;
+
+    new-instance v0, Lbug;
+
+    const/4 v1, 0x4
+
+    invoke-direct {v0, v1}, Lbug;-><init>(I)V
+
+    sput-object v0, Lbug;->e:Lbug;
+
+    new-instance v0, Lbug;
+
+    const/4 v1, 0x3
+
+    invoke-direct {v0, v1}, Lbug;-><init>(I)V
+
+    sput-object v0, Lbug;->d:Lbug;
+
+    new-instance v0, Lbug;
+
+    const/4 v1, 0x2
+
+    invoke-direct {v0, v1}, Lbug;-><init>(I)V
+
+    sput-object v0, Lbug;->c:Lbug;
+
+    new-instance v0, Lbug;
+
+    const/4 v1, 0x1
+
+    invoke-direct {v0, v1}, Lbug;-><init>(I)V
+
+    sput-object v0, Lbug;->b:Lbug;
+
+    new-instance v0, Lbug;
+
+    const/4 v1, 0x0
+
+    invoke-direct {v0, v1}, Lbug;-><init>(I)V
+
+    sput-object v0, Lbug;->a:Lbug;
+
+    return-void
+.end method
+
+.method public synthetic constructor <init>(I)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput p1, p0, Lbug;->t:I
 
-    iput-object p1, p0, Lbug;->a:Ljava/lang/String;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Ljava/lang/Class;
-    .locals 1
+.method public final close()V
+    .locals 3
 
-    const-class v0, Ljava/io/InputStream;
+    iget v0, p0, Lbug;->t:I
 
-    return-object v0
-.end method
+    packed-switch v0, :pswitch_data_0
 
-.method public final bg()V
-    .locals 0
-
-    return-void
-.end method
-
-.method public final d()V
-    .locals 1
-
-    :try_start_0
-    iget-object v0, p0, Lbug;->b:Ljava/lang/Object;
-
-    check-cast v0, Ljava/io/InputStream;
-
-    invoke-virtual {v0}, Ljava/io/InputStream;->close()V
-    :try_end_0
-    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
-
+    :pswitch_0
     return-void
 
-    :catch_0
-    move-exception v0
-
-    return-void
-.end method
-
-.method public final f(Lbos;Lbqn;)V
-    .locals 4
-
-    :try_start_0
-    iget-object p1, p0, Lbug;->a:Ljava/lang/String;
-
-    const-string v0, "data:image"
-
-    invoke-virtual {p1, v0}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_2
-
-    const/16 v0, 0x2c
-
-    invoke-virtual {p1, v0}, Ljava/lang/String;->indexOf(I)I
-
-    move-result v0
-
-    const/4 v1, -0x1
-
-    if-eq v0, v1, :cond_1
-
-    const/4 v1, 0x0
-
-    invoke-virtual {p1, v1, v0}, Ljava/lang/String;->substring(II)Ljava/lang/String;
-
-    move-result-object v2
-
-    const-string v3, ";base64"
-
-    invoke-virtual {v2, v3}, Ljava/lang/String;->endsWith(Ljava/lang/String;)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_0
-
-    add-int/lit8 v0, v0, 0x1
-
-    invoke-virtual {p1, v0}, Ljava/lang/String;->substring(I)Ljava/lang/String;
-
-    move-result-object p1
-
-    invoke-static {p1, v1}, Landroid/util/Base64;->decode(Ljava/lang/String;I)[B
-
-    move-result-object p1
-
-    new-instance v0, Ljava/io/ByteArrayInputStream;
-
-    invoke-direct {v0, p1}, Ljava/io/ByteArrayInputStream;-><init>([B)V
-
-    iput-object v0, p0, Lbug;->b:Ljava/lang/Object;
-
-    invoke-interface {p2, v0}, Lbqn;->b(Ljava/lang/Object;)V
-
-    return-void
-
-    :cond_0
-    const-string p1, "Not a base64 image data URL."
-
-    new-instance v0, Ljava/lang/IllegalArgumentException;
-
-    invoke-direct {v0, p1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+    :pswitch_1
+    const/4 v0, 0x0
 
     throw v0
 
-    :cond_1
-    const-string p1, "Missing comma in data URL."
-
-    new-instance v0, Ljava/lang/IllegalArgumentException;
-
-    invoke-direct {v0, p1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-
-    :cond_2
-    const-string p1, "Not a valid image data URL."
-
-    new-instance v0, Ljava/lang/IllegalArgumentException;
-
-    invoke-direct {v0, p1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-    :try_end_0
-    .catch Ljava/lang/IllegalArgumentException; {:try_start_0 .. :try_end_0} :catch_0
-
-    :catch_0
-    move-exception p1
-
-    invoke-interface {p2, p1}, Lbqn;->e(Ljava/lang/Exception;)V
-
+    :pswitch_2
     return-void
-.end method
 
-.method public final g()I
-    .locals 1
+    :pswitch_3
+    sget-object v0, Lcos;->a:Louj;
 
-    const/4 v0, 0x1
+    invoke-virtual {v0}, Loue;->c()Lova;
 
-    return v0
+    move-result-object v0
+
+    const/16 v1, 0x250
+
+    const-string v2, "Shutting down OneCamcorder."
+
+    invoke-static {v0, v2, v1}, Ld;->v(Lova;Ljava/lang/String;C)V
+
+    :pswitch_4
+    return-void
+
+    :pswitch_5
+    return-void
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_5
+        :pswitch_4
+        :pswitch_4
+        :pswitch_4
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_2
+        :pswitch_2
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
+    .end packed-switch
 .end method

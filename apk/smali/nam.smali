@@ -1,87 +1,47 @@
-.class final Lnam;
-.super Lnbc;
+.class public final synthetic Lnam;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Ljava/lang/Runnable;
+
+
+# instance fields
+.field public final synthetic a:Lnav;
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/Class;)V
-    .locals 2
+.method public synthetic constructor <init>(Lnav;)V
+    .locals 0
 
-    const-string v0, "group_by"
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const/4 v1, 0x1
-
-    invoke-direct {p0, v0, p1, v1}, Lnbc;-><init>(Ljava/lang/String;Ljava/lang/Class;Z)V
+    iput-object p1, p0, Lnam;->a:Lnav;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Ljava/util/Iterator;Lnbb;)V
-    .locals 3
+.method public final run()V
+    .locals 2
 
-    invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
+    iget-object v0, p0, Lnam;->a:Lnav;
 
-    move-result v0
+    iget-object v1, v0, Lnav;->m:Lnan;
 
-    if-eqz v0, :cond_2
+    iget-object v1, v1, Lnan;->b:Ljava/lang/Long;
 
-    invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    if-eqz v1, :cond_0
 
-    move-result-object v0
+    const/4 v1, 0x1
 
-    invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v1
-
-    if-nez v1, :cond_0
-
-    iget-object p1, p0, Lnbc;->a:Ljava/lang/String;
-
-    invoke-interface {p2, p1, v0}, Lnbb;->a(Ljava/lang/String;Ljava/lang/Object;)V
-
-    return-void
+    goto :goto_0
 
     :cond_0
-    new-instance v1, Ljava/lang/StringBuilder;
+    const/4 v1, 0x0
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+    :goto_0
+    iput-boolean v1, v0, Lnav;->b:Z
 
-    const/16 v2, 0x5b
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    :cond_1
-    const/16 v0, 0x2c
-
-    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
-
-    invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v0
-
-    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v0
-
-    if-nez v0, :cond_1
-
-    iget-object p1, p0, Lnbc;->a:Ljava/lang/String;
-
-    const/16 v0, 0x5d
-
-    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-interface {p2, p1, v0}, Lnbb;->a(Ljava/lang/String;Ljava/lang/Object;)V
-
-    :cond_2
     return-void
 .end method

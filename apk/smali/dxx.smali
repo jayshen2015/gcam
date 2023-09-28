@@ -1,172 +1,141 @@
 .class public final Ldxx;
 .super Ljava/lang/Object;
 
+# interfaces
+.implements Ldxt;
+
 
 # instance fields
-.field public a:Lmqp;
-
-.field public b:Lmqp;
-
-.field private c:J
-
-.field private d:F
-
-.field private e:F
-
-.field private f:B
+.field private final synthetic a:I
 
 
 # direct methods
-.method public constructor <init>()V
+.method public constructor <init>(I)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
-.end method
-
-.method public constructor <init>([B)V
-    .locals 0
+    iput p1, p0, Ldxx;->a:I
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    sget-object p1, Lmpx;->a:Lmpx;
-
-    iput-object p1, p0, Ldxx;->a:Lmqp;
-
-    iput-object p1, p0, Ldxx;->b:Lmqp;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Ldxy;
-    .locals 9
+.method public final a(Landroid/graphics/Bitmap;)Ljava/io/ByteArrayOutputStream;
+    .locals 4
 
-    iget-byte v0, p0, Ldxx;->f:B
+    iget v0, p0, Ldxx;->a:I
 
-    const/4 v1, 0x7
+    packed-switch v0, :pswitch_data_0
 
-    if-eq v0, v1, :cond_3
-
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
-    iget-byte v1, p0, Ldxx;->f:B
-
-    and-int/lit8 v1, v1, 0x1
-
-    if-nez v1, :cond_0
-
-    const-string v1, " trackId"
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    :cond_0
-    iget-byte v1, p0, Ldxx;->f:B
-
-    and-int/lit8 v1, v1, 0x2
-
-    if-nez v1, :cond_1
-
-    const-string v1, " score"
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    :cond_1
-    iget-byte v1, p0, Ldxx;->f:B
-
-    and-int/lit8 v1, v1, 0x4
-
-    if-nez v1, :cond_2
-
-    const-string v1, " aggregatedToneConfidence"
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    :cond_2
-    new-instance v1, Ljava/lang/IllegalStateException;
-
-    invoke-virtual {v0}, Ljava/lang/Object;->toString()Ljava/lang/String;
+    invoke-static {}, Ldug;->c()Ljava/io/ByteArrayOutputStream;
 
     move-result-object v0
 
-    const-string v2, "Missing required properties:"
+    sget-object v1, Landroid/graphics/Bitmap$CompressFormat;->JPEG:Landroid/graphics/Bitmap$CompressFormat;
 
-    invoke-virtual {v2, v0}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
+    const-string v2, "dxx->a()"
 
-    move-result-object v0
+    invoke-static {v2}, Lcom/agc/AdvancedSettings;->getJPGQuality(Ljava/lang/String;)I
 
-    invoke-direct {v1, v0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+    move-result v2
 
-    throw v1
-
-    :cond_3
-    new-instance v0, Ldxy;
-
-    iget-wide v3, p0, Ldxx;->c:J
-
-    iget-object v5, p0, Ldxx;->a:Lmqp;
-
-    iget v6, p0, Ldxx;->d:F
-
-    iget-object v7, p0, Ldxx;->b:Lmqp;
-
-    iget v8, p0, Ldxx;->e:F
-
-    move-object v2, v0
-
-    invoke-direct/range {v2 .. v8}, Ldxy;-><init>(JLmqp;FLmqp;F)V
+    invoke-virtual {p1, v1, v2, v0}, Landroid/graphics/Bitmap;->compress(Landroid/graphics/Bitmap$CompressFormat;ILjava/io/OutputStream;)Z
 
     return-object v0
-.end method
 
-.method public final b(F)V
-    .locals 0
+    :pswitch_0
+    invoke-static {}, Ldug;->c()Ljava/io/ByteArrayOutputStream;
 
-    iput p1, p0, Ldxx;->e:F
+    move-result-object v0
 
-    iget-byte p1, p0, Ldxx;->f:B
+    invoke-virtual {p1}, Landroid/graphics/Bitmap;->getRowBytes()I
 
-    or-int/lit8 p1, p1, 0x4
+    move-result v1
 
-    int-to-byte p1, p1
+    invoke-virtual {p1}, Landroid/graphics/Bitmap;->getHeight()I
 
-    iput-byte p1, p0, Ldxx;->f:B
+    move-result v2
 
-    return-void
-.end method
+    mul-int v1, v1, v2
 
-.method public final c(F)V
-    .locals 0
+    invoke-static {v1}, Ljava/nio/ByteBuffer;->allocate(I)Ljava/nio/ByteBuffer;
 
-    iput p1, p0, Ldxx;->d:F
+    move-result-object v1
 
-    iget-byte p1, p0, Ldxx;->f:B
+    invoke-virtual {p1, v1}, Landroid/graphics/Bitmap;->copyPixelsToBuffer(Ljava/nio/Buffer;)V
 
-    or-int/lit8 p1, p1, 0x2
+    invoke-virtual {v1}, Ljava/nio/ByteBuffer;->array()[B
 
-    int-to-byte p1, p1
+    move-result-object v1
 
-    iput-byte p1, p0, Ldxx;->f:B
+    new-instance v2, Ljava/io/DataOutputStream;
 
-    return-void
-.end method
+    invoke-direct {v2, v0}, Ljava/io/DataOutputStream;-><init>(Ljava/io/OutputStream;)V
 
-.method public final d(J)V
-    .locals 0
+    :try_start_0
+    array-length v3, v1
 
-    iput-wide p1, p0, Ldxx;->c:J
+    invoke-virtual {v2, v3}, Ljava/io/DataOutputStream;->writeInt(I)V
 
-    iget-byte p1, p0, Ldxx;->f:B
+    invoke-virtual {p1}, Landroid/graphics/Bitmap;->getWidth()I
 
-    or-int/lit8 p1, p1, 0x1
+    move-result v3
 
-    int-to-byte p1, p1
+    invoke-virtual {v2, v3}, Ljava/io/DataOutputStream;->writeInt(I)V
 
-    iput-byte p1, p0, Ldxx;->f:B
+    invoke-virtual {p1}, Landroid/graphics/Bitmap;->getHeight()I
 
-    return-void
+    move-result v3
+
+    invoke-virtual {v2, v3}, Ljava/io/DataOutputStream;->writeInt(I)V
+
+    invoke-virtual {p1}, Landroid/graphics/Bitmap;->getConfig()Landroid/graphics/Bitmap$Config;
+
+    move-result-object p1
+
+    invoke-virtual {p1}, Landroid/graphics/Bitmap$Config;->toString()Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-virtual {v2, p1}, Ljava/io/DataOutputStream;->writeUTF(Ljava/lang/String;)V
+
+    invoke-virtual {v2, v1}, Ljava/io/DataOutputStream;->write([B)V
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    invoke-virtual {v2}, Ljava/io/DataOutputStream;->close()V
+
+    return-object v0
+
+    :catchall_0
+    move-exception p1
+
+    goto :goto_0
+
+    :catch_0
+    move-exception p1
+
+    :try_start_1
+    new-instance v0, Ljava/io/IOException;
+
+    const-string v1, "Could not write into ByteArrayOutputStream"
+
+    invoke-direct {v0, v1, p1}, Ljava/io/IOException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
+
+    throw v0
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    :goto_0
+    invoke-virtual {v2}, Ljava/io/DataOutputStream;->close()V
+
+    throw p1
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

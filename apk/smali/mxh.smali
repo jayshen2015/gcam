@@ -1,91 +1,43 @@
-.class final enum Lmxh;
-.super Ljava/lang/Enum;
+.class public final synthetic Lmxh;
+.super Ljava/lang/Object;
 
 # interfaces
-.implements Ljava/util/Iterator;
+.implements Lojz;
 
 
-# static fields
-.field public static final enum a:Lmxh;
-
-.field private static final synthetic b:[Lmxh;
+# instance fields
+.field public final synthetic a:Lpyn;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 3
+.method public synthetic constructor <init>(Lpyn;)V
+    .locals 0
 
-    new-instance v0, Lmxh;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {v0}, Lmxh;-><init>()V
-
-    sput-object v0, Lmxh;->a:Lmxh;
-
-    const/4 v1, 0x1
-
-    new-array v1, v1, [Lmxh;
-
-    const/4 v2, 0x0
-
-    aput-object v0, v1, v2
-
-    sput-object v1, Lmxh;->b:[Lmxh;
+    iput-object p1, p0, Lmxh;->a:Lpyn;
 
     return-void
-.end method
-
-.method private constructor <init>()V
-    .locals 2
-
-    const-string v0, "INSTANCE"
-
-    const/4 v1, 0x0
-
-    invoke-direct {p0, v0, v1}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
-    return-void
-.end method
-
-.method public static values()[Lmxh;
-    .locals 1
-
-    sget-object v0, Lmxh;->b:[Lmxh;
-
-    invoke-virtual {v0}, [Lmxh;->clone()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, [Lmxh;
-
-    return-object v0
 .end method
 
 
 # virtual methods
-.method public final hasNext()Z
-    .locals 1
+.method public final a()Ljava/lang/Object;
+    .locals 2
 
-    const/4 v0, 0x0
+    iget-object v0, p0, Lmxh;->a:Lpyn;
 
-    return v0
-.end method
+    sget-object v1, Lmvm;->c:Lmvm;
 
-.method public final next()Ljava/lang/Object;
-    .locals 1
+    invoke-interface {v0}, Lpyn;->get()Ljava/lang/Object;
 
-    new-instance v0, Ljava/util/NoSuchElementException;
+    move-result-object v0
 
-    invoke-direct {v0}, Ljava/util/NoSuchElementException;-><init>()V
+    check-cast v0, Ljava/lang/Iterable;
 
-    throw v0
-.end method
+    invoke-static {v1, v0}, Loom;->s(Ljava/util/Comparator;Ljava/lang/Iterable;)Loom;
 
-.method public final remove()V
-    .locals 1
+    move-result-object v0
 
-    const/4 v0, 0x0
-
-    invoke-static {v0}, Llkj;->u(Z)V
-
-    return-void
+    return-object v0
 .end method

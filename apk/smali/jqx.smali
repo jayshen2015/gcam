@@ -1,276 +1,96 @@
-.class public final Ljqx;
-.super Ljhn;
+.class final Ljqx;
+.super Ljava/lang/Object;
 
-
-# static fields
-.field public static final CREATOR:Landroid/os/Parcelable$Creator;
+# interfaces
+.implements Landroid/view/ScaleGestureDetector$OnScaleGestureListener;
 
 
 # instance fields
-.field final a:Ljqy;
-
-.field final b:I
-
-.field final c:I
-
-.field final d:I
+.field final synthetic a:Lkas;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
-
-    new-instance v0, Ljqn;
-
-    const/4 v1, 0x6
-
-    invoke-direct {v0, v1}, Ljqn;-><init>(I)V
-
-    sput-object v0, Ljqx;->CREATOR:Landroid/os/Parcelable$Creator;
-
-    return-void
-.end method
-
-.method public constructor <init>(Ljqy;III)V
+.method public constructor <init>(Lkas;)V
     .locals 0
 
-    invoke-direct {p0}, Ljhn;-><init>()V
+    iput-object p1, p0, Ljqx;->a:Lkas;
 
-    iput-object p1, p0, Ljqx;->a:Ljqy;
-
-    iput p2, p0, Ljqx;->b:I
-
-    iput p3, p0, Ljqx;->c:I
-
-    iput p4, p0, Ljqx;->d:I
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Ljpv;)V
-    .locals 2
+.method public final onScale(Landroid/view/ScaleGestureDetector;)Z
+    .locals 1
 
-    iget v0, p0, Ljqx;->b:I
+    iget-object v0, p0, Ljqx;->a:Lkas;
 
-    packed-switch v0, :pswitch_data_0
+    invoke-virtual {p1}, Landroid/view/ScaleGestureDetector;->getScaleFactor()F
 
-    new-instance p1, Ljava/lang/StringBuilder;
+    move-result p1
 
-    invoke-direct {p1}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-interface {v0, p1}, Lkas;->k(F)V
 
-    const-string v1, "Unknown type: "
+    const/4 p1, 0x1
 
-    invoke-virtual {p1, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {p1, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    invoke-virtual {p1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p1
-
-    const-string v0, "ChannelEventParcelable"
-
-    invoke-static {v0, p1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
-
-    return-void
-
-    :pswitch_0
-    iget-object v0, p0, Ljqx;->a:Ljqy;
-
-    invoke-interface {p1, v0}, Ljpv;->e(Ljqy;)V
-
-    return-void
-
-    :pswitch_1
-    iget-object v0, p0, Ljqx;->a:Ljqy;
-
-    invoke-interface {p1, v0}, Ljpv;->d(Ljqy;)V
-
-    return-void
-
-    :pswitch_2
-    iget-object v0, p0, Ljqx;->a:Ljqy;
-
-    invoke-interface {p1, v0}, Ljpv;->c(Ljqy;)V
-
-    return-void
-
-    :pswitch_3
-    iget-object v0, p0, Ljqx;->a:Ljqy;
-
-    invoke-interface {p1, v0}, Ljpv;->b(Ljqy;)V
-
-    return-void
-
-    :pswitch_data_0
-    .packed-switch 0x1
-        :pswitch_3
-        :pswitch_2
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
+    return p1
 .end method
 
-.method public final toString()Ljava/lang/String;
-    .locals 6
+.method public final onScaleBegin(Landroid/view/ScaleGestureDetector;)Z
+    .locals 0
 
-    iget-object v0, p0, Ljqx;->a:Ljqy;
+    iget-object p1, p0, Ljqx;->a:Lkas;
 
-    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+    invoke-interface {p1}, Lkas;->l()V
 
-    move-result-object v0
+    const/4 p1, 0x1
 
-    iget v1, p0, Ljqx;->b:I
-
-    packed-switch v1, :pswitch_data_0
-
-    invoke-static {v1}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
-
-    move-result-object v1
-
-    goto :goto_0
-
-    :pswitch_0
-    const-string v1, "OUTPUT_CLOSED"
-
-    goto :goto_0
-
-    :pswitch_1
-    const-string v1, "INPUT_CLOSED"
-
-    goto :goto_0
-
-    :pswitch_2
-    const-string v1, "CHANNEL_CLOSED"
-
-    goto :goto_0
-
-    :pswitch_3
-    const-string v1, "CHANNEL_OPENED"
-
-    :goto_0
-    iget v2, p0, Ljqx;->c:I
-
-    packed-switch v2, :pswitch_data_1
-
-    invoke-static {v2}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
-
-    move-result-object v2
-
-    goto :goto_1
-
-    :pswitch_4
-    const-string v2, "CLOSE_REASON_LOCAL_CLOSE"
-
-    goto :goto_1
-
-    :pswitch_5
-    const-string v2, "CLOSE_REASON_REMOTE_CLOSE"
-
-    goto :goto_1
-
-    :pswitch_6
-    const-string v2, "CLOSE_REASON_DISCONNECTED"
-
-    goto :goto_1
-
-    :pswitch_7
-    const-string v2, "CLOSE_REASON_NORMAL"
-
-    :goto_1
-    iget v3, p0, Ljqx;->d:I
-
-    new-instance v4, Ljava/lang/StringBuilder;
-
-    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v5, "ChannelEventParcelable[, channel="
-
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v0, ", type="
-
-    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v4, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v0, ", closeReason="
-
-    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v4, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v0, ", appErrorCode="
-
-    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v4, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    const-string v0, "]"
-
-    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    return-object v0
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x1
-        :pswitch_3
-        :pswitch_2
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
-
-    :pswitch_data_1
-    .packed-switch 0x0
-        :pswitch_7
-        :pswitch_6
-        :pswitch_5
-        :pswitch_4
-    .end packed-switch
+    return p1
 .end method
 
-.method public final writeToParcel(Landroid/os/Parcel;I)V
+.method public final onScaleEnd(Landroid/view/ScaleGestureDetector;)V
     .locals 3
 
-    invoke-static {p1}, Ljhp;->a(Landroid/os/Parcel;)I
+    invoke-virtual {p1}, Landroid/view/ScaleGestureDetector;->getScaleFactor()F
 
-    move-result v0
+    iget-object p1, p0, Ljqx;->a:Lkas;
 
-    iget-object v1, p0, Ljqx;->a:Ljqy;
+    check-cast p1, Lkbi;
 
-    const/4 v2, 0x2
+    iget-object v0, p1, Lkbi;->z:Lkbx;
 
-    invoke-static {p1, v2, v1, p2}, Ljhp;->o(Landroid/os/Parcel;ILandroid/os/Parcelable;I)V
+    invoke-virtual {v0}, Lkbk;->n()V
 
-    iget p2, p0, Ljqx;->b:I
+    iget-boolean v0, p1, Lkbi;->l:Z
 
-    const/4 v1, 0x3
+    if-nez v0, :cond_0
 
-    invoke-static {p1, v1, p2}, Ljhp;->g(Landroid/os/Parcel;II)V
+    iget-object v0, p1, Lkbi;->z:Lkbx;
 
-    iget p2, p0, Ljqx;->c:I
+    invoke-virtual {v0}, Lkbx;->w()V
+
+    :cond_0
+    iget-object v0, p1, Lkbi;->z:Lkbx;
 
     const/4 v1, 0x4
 
-    invoke-static {p1, v1, p2}, Ljhp;->g(Landroid/os/Parcel;II)V
+    iget v2, p1, Lkbi;->O:F
 
-    iget p2, p0, Ljqx;->d:I
+    iget-object p1, p1, Lkbi;->g:Llda;
 
-    const/4 v1, 0x5
+    invoke-interface {p1}, Llda;->fA()Ljava/lang/Object;
 
-    invoke-static {p1, v1, p2}, Ljhp;->g(Landroid/os/Parcel;II)V
+    move-result-object p1
 
-    invoke-static {p1, v0}, Ljhp;->c(Landroid/os/Parcel;I)V
+    check-cast p1, Ljava/lang/Float;
+
+    invoke-virtual {p1}, Ljava/lang/Float;->floatValue()F
+
+    move-result p1
+
+    invoke-virtual {v0, v1, v2, p1}, Lkbx;->z(IFF)V
 
     return-void
 .end method

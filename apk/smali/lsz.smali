@@ -1,28 +1,40 @@
-.class public final Llsz;
-.super Ljava/lang/Object;
+.class final Llsz;
+.super Llta;
 
 
-# static fields
-.field public static final a:Llsz;
+# instance fields
+.field private final a:Ljava/util/List;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
+.method public constructor <init>(Ljava/util/List;)V
+    .locals 0
 
-    new-instance v0, Llsz;
+    invoke-direct {p0}, Llta;-><init>()V
 
-    invoke-direct {v0}, Llsz;-><init>()V
-
-    sput-object v0, Llsz;->a:Llsz;
+    iput-object p1, p0, Llsz;->a:Ljava/util/List;
 
     return-void
 .end method
 
-.method private constructor <init>()V
-    .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+# virtual methods
+.method public final a(Landroid/os/Handler;)V
+    .locals 1
+
+    iget-object v0, p0, Llsz;->a:Ljava/util/List;
+
+    invoke-static {v0, p1}, Lmip;->aY(Ljava/util/Collection;Landroid/os/Handler;)V
+
+    return-void
+.end method
+
+.method public final b(Lltd;)V
+    .locals 1
+
+    iget-object v0, p0, Llsz;->a:Ljava/util/List;
+
+    invoke-interface {p1, v0}, Lltd;->f(Ljava/util/List;)V
 
     return-void
 .end method

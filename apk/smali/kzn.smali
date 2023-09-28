@@ -1,48 +1,43 @@
 .class final Lkzn;
-.super Lkyp;
-
-
-# instance fields
-.field final synthetic a:I
-
-.field final synthetic b:Lkzo;
+.super Lkzl;
 
 
 # direct methods
-.method public constructor <init>(Lkzo;I)V
+.method public constructor <init>(Lkjj;)V
     .locals 0
 
-    iput-object p1, p0, Lkzn;->b:Lkzo;
-
-    iput p2, p0, Lkzn;->a:I
-
-    invoke-direct {p0}, Lkyp;-><init>()V
+    invoke-direct {p0, p1}, Lkzl;-><init>(Lkjj;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final bridge synthetic b(Ljava/lang/Object;)V
-    .locals 3
+.method public final c(Lkyc;)V
+    .locals 2
 
-    check-cast p1, Lkzd;
+    new-instance v0, Ljava/util/ArrayList;
 
-    iget-object v0, p0, Lkzn;->b:Lkzo;
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    iget-object v1, v0, Lkzo;->c:[Lkzd;
+    iget-object v1, p1, Lkyc;->b:Ljava/util/List;
 
-    iget v2, p0, Lkzn;->a:I
+    if-eqz v1, :cond_0
 
-    aput-object p1, v1, v2
+    invoke-interface {v0, v1}, Ljava/util/List;->addAll(Ljava/util/Collection;)Z
 
-    const/4 p1, 0x1
+    :cond_0
+    new-instance v1, Lkyy;
 
-    iput-boolean p1, v0, Lkzo;->d:Z
+    iget p1, p1, Lkyc;->a:I
 
-    iget-object p1, p0, Lkzn;->b:Lkzo;
+    invoke-static {p1}, Lmip;->cc(I)Lcom/google/android/gms/common/api/Status;
 
-    invoke-virtual {p1}, Lkzo;->a()V
+    move-result-object p1
+
+    invoke-direct {v1, p1, v0}, Lkyy;-><init>(Lcom/google/android/gms/common/api/Status;Ljava/util/List;)V
+
+    invoke-virtual {p0, v1}, Lkzl;->f(Ljava/lang/Object;)V
 
     return-void
 .end method

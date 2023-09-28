@@ -1,36 +1,60 @@
-.class public final Ljeh;
-.super Ljava/lang/Object;
+.class Ljeh;
+.super Ljea;
 
 
 # instance fields
-.field final synthetic a:Lcom/google/android/gms/common/api/internal/BasePendingResult;
+.field final synthetic b:Ljek;
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/gms/common/api/internal/BasePendingResult;)V
+.method public constructor <init>(Ljek;)V
     .locals 0
 
-    iput-object p1, p0, Ljeh;->a:Lcom/google/android/gms/common/api/internal/BasePendingResult;
+    iput-object p1, p0, Ljeh;->b:Ljek;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljea;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method protected final finalize()V
-    .locals 2
+.method public a()V
+    .locals 0
 
-    iget-object v0, p0, Ljeh;->a:Lcom/google/android/gms/common/api/internal/BasePendingResult;
+    return-void
+.end method
 
-    sget-object v1, Lcom/google/android/gms/common/api/internal/BasePendingResult;->c:Ljava/lang/ThreadLocal;
+.method public b()V
+    .locals 0
 
-    iget-object v0, v0, Lcom/google/android/gms/common/api/internal/BasePendingResult;->d:Ljdq;
+    return-void
+.end method
 
-    invoke-static {v0}, Lcom/google/android/gms/common/api/internal/BasePendingResult;->h(Ljdq;)V
+.method public final f()V
+    .locals 1
 
-    invoke-super {p0}, Ljava/lang/Object;->finalize()V
+    sget-object v0, Lovl;->a:Lovd;
+
+    iget-object v0, p0, Ljeh;->b:Ljek;
+
+    iget-object v0, v0, Ljek;->e:Ljen;
+
+    invoke-interface {v0}, Ljen;->c()V
+
+    return-void
+.end method
+
+.method public final g()V
+    .locals 1
+
+    sget-object v0, Lovl;->a:Lovd;
+
+    iget-object v0, p0, Ljeh;->b:Ljek;
+
+    iget-object v0, v0, Ljek;->e:Ljen;
+
+    invoke-interface {v0}, Ljen;->d()V
 
     return-void
 .end method

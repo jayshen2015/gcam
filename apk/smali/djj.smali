@@ -1,57 +1,49 @@
-.class public final Ldjj;
+.class public final synthetic Ldjj;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lchb;
+.implements Lagm;
 
 
 # instance fields
-.field public final a:Ljava/util/concurrent/ConcurrentLinkedQueue;
+.field public final synthetic a:Ldjn;
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 1
+.method public synthetic constructor <init>(Ldjn;)V
+    .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    new-instance v0, Ljava/util/concurrent/ConcurrentLinkedQueue;
-
-    invoke-direct {v0}, Ljava/util/concurrent/ConcurrentLinkedQueue;-><init>()V
-
-    iput-object v0, p0, Ldjj;->a:Ljava/util/concurrent/ConcurrentLinkedQueue;
+    iput-object p1, p0, Ldjj;->a:Ldjn;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()V
-    .locals 2
+.method public final b(Landroidx/preference/Preference;Ljava/lang/Object;)Z
+    .locals 1
 
-    iget-object v0, p0, Ldjj;->a:Ljava/util/concurrent/ConcurrentLinkedQueue;
+    iget-object v0, p0, Ldjj;->a:Ldjn;
 
-    invoke-virtual {v0}, Ljava/util/concurrent/ConcurrentLinkedQueue;->iterator()Ljava/util/Iterator;
+    check-cast p2, Ljava/lang/String;
 
-    move-result-object v0
+    invoke-virtual {p1, p2}, Landroidx/preference/Preference;->n(Ljava/lang/CharSequence;)V
 
-    :goto_0
-    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
+    iget-object p1, v0, Ldjn;->b:Landroid/content/SharedPreferences;
 
-    move-result v1
+    invoke-interface {p1}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
 
-    if-eqz v1, :cond_0
+    move-result-object p1
 
-    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    const-string v0, "camera.onscreen_logcat_filter"
 
-    move-result-object v1
+    invoke-interface {p1, v0, p2}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
 
-    check-cast v1, Lchb;
+    invoke-interface {p1}, Landroid/content/SharedPreferences$Editor;->apply()V
 
-    invoke-interface {v1}, Lchb;->a()V
+    const/4 p1, 0x1
 
-    goto :goto_0
-
-    :cond_0
-    return-void
+    return p1
 .end method

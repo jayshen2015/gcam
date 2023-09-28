@@ -1,51 +1,81 @@
-.class public final Lgde;
+.class abstract Lgde;
 .super Ljava/lang/Object;
-
-# interfaces
-.implements Logk;
 
 
 # instance fields
-.field private final a:Lbkb;
+.field a:Z
+
+.field b:Lojc;
 
 
 # direct methods
-.method public constructor <init>(Lbkb;[B[B[B)V
-    .locals 0
+.method public constructor <init>()V
+    .locals 1
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lgde;->a:Lbkb;
+    const/4 v0, 0x1
+
+    iput-boolean v0, p0, Lgde;->a:Z
+
+    sget-object v0, Loih;->a:Loih;
+
+    iput-object v0, p0, Lgde;->b:Lojc;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Ljzr;
+.method final a()Lgdg;
     .locals 1
 
-    iget-object v0, p0, Lgde;->a:Lbkb;
+    instance-of v0, p0, Lgdg;
 
-    iget-object v0, v0, Lbkb;->a:Ljava/lang/Object;
+    invoke-static {v0}, Lobr;->aF(Z)V
 
-    check-cast v0, Lgdd;
+    move-object v0, p0
 
-    iget-object v0, v0, Lgdd;->b:Lkaf;
-
-    invoke-static {v0}, Ljzr;->j(Lkaf;)Ljzr;
-
-    move-result-object v0
+    check-cast v0, Lgdg;
 
     return-object v0
 .end method
 
-.method public final bridge synthetic get()Ljava/lang/Object;
+.method final b()Lgdh;
     .locals 1
 
-    invoke-virtual {p0}, Lgde;->a()Ljzr;
+    instance-of v0, p0, Lgdh;
 
-    move-result-object v0
+    invoke-static {v0}, Lobr;->aF(Z)V
+
+    move-object v0, p0
+
+    check-cast v0, Lgdh;
 
     return-object v0
+.end method
+
+.method public abstract c()Lorj;
+.end method
+
+.method final d()Z
+    .locals 1
+
+    invoke-virtual {p0}, Lgde;->e()Z
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    const/4 v0, 0x1
+
+    return v0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    return v0
+.end method
+
+.method public abstract e()Z
 .end method

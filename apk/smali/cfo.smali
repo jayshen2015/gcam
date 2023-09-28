@@ -1,80 +1,118 @@
-.class public final Lcfo;
+.class public final synthetic Lcfo;
 .super Ljava/lang/Object;
+
+# interfaces
+.implements Lilt;
 
 
 # instance fields
-.field public final a:Lcom/google/googlex/gcam/FloatDeque;
+.field public final synthetic a:Lcfy;
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 4
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    new-instance v0, Lcom/google/googlex/gcam/FloatDeque;
-
-    invoke-static {}, Lcom/google/googlex/gcam/GcamModuleJNI;->new_FloatDeque__SWIG_0()J
-
-    move-result-wide v1
-
-    const/4 v3, 0x1
-
-    invoke-direct {v0, v1, v2, v3}, Lcom/google/googlex/gcam/FloatDeque;-><init>(JZ)V
-
-    iput-object v0, p0, Lcfo;->a:Lcom/google/googlex/gcam/FloatDeque;
-
-    return-void
-.end method
-
-.method public constructor <init>(Lcom/google/googlex/gcam/FloatDeque;)V
+.method public synthetic constructor <init>(Lcfy;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lcfo;->a:Lcom/google/googlex/gcam/FloatDeque;
+    iput-object p1, p0, Lcfo;->a:Lcfy;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(I)F
-    .locals 3
+.method public final a(Lilv;)V
+    .locals 7
 
-    iget-object v0, p0, Lcfo;->a:Lcom/google/googlex/gcam/FloatDeque;
+    iget-object v0, p0, Lcfo;->a:Lcfy;
 
-    iget-wide v1, v0, Lcom/google/googlex/gcam/FloatDeque;->a:J
+    invoke-virtual {p1}, Lilv;->c()Z
 
-    invoke-static {v1, v2, v0, p1}, Lcom/google/googlex/gcam/GcamModuleJNI;->FloatDeque_getitem(JLcom/google/googlex/gcam/FloatDeque;I)F
+    move-result v1
 
-    move-result p1
+    iget-object v2, v0, Lcfy;->f:Ljava/lang/Object;
 
-    return p1
-.end method
+    monitor-enter v2
 
-.method public final b()J
-    .locals 3
+    if-nez v1, :cond_1
 
-    iget-object v0, p0, Lcfo;->a:Lcom/google/googlex/gcam/FloatDeque;
+    :try_start_0
+    sget-object v3, Lcfy;->a:Louj;
 
-    iget-wide v1, v0, Lcom/google/googlex/gcam/FloatDeque;->a:J
+    invoke-virtual {v3}, Loue;->c()Lova;
 
-    invoke-static {v1, v2, v0}, Lcom/google/googlex/gcam/GcamModuleJNI;->FloatDeque_size(JLcom/google/googlex/gcam/FloatDeque;)J
+    move-result-object v3
 
-    move-result-wide v0
+    check-cast v3, Loug;
 
-    return-wide v0
-.end method
+    const/16 v4, 0x161
 
-.method public final c(F)V
-    .locals 3
+    invoke-interface {v3, v4}, Loug;->G(I)Lova;
 
-    iget-object v0, p0, Lcfo;->a:Lcom/google/googlex/gcam/FloatDeque;
+    move-result-object v3
 
-    iget-wide v1, v0, Lcom/google/googlex/gcam/FloatDeque;->a:J
+    check-cast v3, Loug;
 
-    invoke-static {v1, v2, v0, p1}, Lcom/google/googlex/gcam/GcamModuleJNI;->FloatDeque_push_back(JLcom/google/googlex/gcam/FloatDeque;F)V
+    const-string v4, "Stopping recording due to low storage. Remaining bytes=%d"
 
+    iget-wide v5, p1, Lilv;->b:J
+
+    invoke-interface {v3, v4, v5, v6}, Loug;->q(Ljava/lang/String;J)V
+
+    iget-object v3, v0, Lcfy;->A:Lcfx;
+
+    sget-object v4, Lcfx;->e:Lcfx;
+
+    if-eq v3, v4, :cond_0
+
+    const/4 v3, 0x1
+
+    goto :goto_0
+
+    :cond_0
+    const/4 v3, 0x0
+
+    :goto_0
+    invoke-virtual {v0, v3}, Lcfy;->k(Z)V
+
+    :cond_1
+    monitor-exit v2
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    if-eqz v1, :cond_2
+
+    iget-object v1, v0, Lcfy;->s:Lqkg;
+
+    invoke-interface {v1}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Lilq;
+
+    invoke-virtual {v1, p1}, Lilq;->e(Lilv;)V
+
+    iget-object v0, v0, Lcfy;->t:Lpyn;
+
+    invoke-interface {v0}, Lpyn;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lilo;
+
+    invoke-virtual {v0, p1}, Lilo;->c(Lilv;)V
+
+    :cond_2
     return-void
+
+    :catchall_0
+    move-exception p1
+
+    :try_start_1
+    monitor-exit v2
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    throw p1
 .end method

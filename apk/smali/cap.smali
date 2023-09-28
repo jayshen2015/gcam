@@ -1,70 +1,71 @@
-.class public final Lcap;
+.class public final synthetic Lcap;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lcaq;
+.implements Lpgk;
 
 
 # instance fields
-.field final synthetic a:Lcaq;
+.field public final synthetic a:Lcas;
 
-.field private volatile b:Ljava/lang/Object;
+.field public final synthetic b:J
+
+.field public final synthetic c:I
 
 
 # direct methods
-.method public constructor <init>(Lcaq;)V
+.method public synthetic constructor <init>(Lcas;JI)V
     .locals 0
 
-    iput-object p1, p0, Lcap;->a:Lcaq;
-
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lcap;->a:Lcas;
+
+    iput-wide p2, p0, Lcap;->b:J
+
+    iput p4, p0, Lcap;->c:I
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Ljava/lang/Object;
-    .locals 1
+.method public final a(Ljava/lang/Object;)Lpht;
+    .locals 5
 
-    iget-object v0, p0, Lcap;->b:Ljava/lang/Object;
+    iget-object v0, p0, Lcap;->a:Lcas;
 
-    if-nez v0, :cond_1
+    iget-wide v1, p0, Lcap;->b:J
 
-    monitor-enter p0
+    iget v3, p0, Lcap;->c:I
 
-    :try_start_0
-    iget-object v0, p0, Lcap;->b:Ljava/lang/Object;
+    check-cast p1, Ljava/lang/Void;
 
-    if-nez v0, :cond_0
+    iget-object p1, v0, Lcas;->f:Lcdp;
 
-    iget-object v0, p0, Lcap;->a:Lcaq;
+    new-instance v4, Lcdl;
 
-    invoke-interface {v0}, Lcaq;->a()Ljava/lang/Object;
+    invoke-direct {v4, p1, v3}, Lcdl;-><init>(Lcdp;I)V
 
-    move-result-object v0
+    iget-object p1, p1, Lcdp;->i:Ljava/util/concurrent/Executor;
 
-    invoke-static {v0}, Lbze;->v(Ljava/lang/Object;)V
+    invoke-static {v4, p1}, Lplk;->aa(Lpgj;Ljava/util/concurrent/Executor;)Lpht;
 
-    iput-object v0, p0, Lcap;->b:Ljava/lang/Object;
+    move-result-object p1
 
-    :cond_0
-    monitor-exit p0
+    invoke-static {p1}, Lpho;->q(Lpht;)Lpho;
 
-    goto :goto_0
+    move-result-object p1
 
-    :catchall_0
-    move-exception v0
+    new-instance v3, Lcao;
 
-    monitor-exit p0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    invoke-direct {v3, v0, v1, v2}, Lcao;-><init>(Lcas;J)V
 
-    throw v0
+    iget-object v0, v0, Lcas;->g:Ljava/util/concurrent/ExecutorService;
 
-    :cond_1
-    :goto_0
-    iget-object v0, p0, Lcap;->b:Ljava/lang/Object;
+    invoke-static {p1, v3, v0}, Lpgb;->i(Lpht;Lpgk;Ljava/util/concurrent/Executor;)Lpht;
 
-    return-object v0
+    move-result-object p1
+
+    return-object p1
 .end method

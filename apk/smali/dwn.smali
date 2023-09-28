@@ -1,59 +1,22 @@
 .class public final Ldwn;
 .super Ljava/lang/Object;
 
-# interfaces
-.implements Logk;
 
-
-# instance fields
-.field private final a:Llij;
+# static fields
+.field public static final a:Ldug;
 
 
 # direct methods
-.method public constructor <init>(Llij;[B[B[B)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 2
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance v0, Ldug;
 
-    iput-object p1, p0, Ldwn;->a:Llij;
+    const/4 v1, 0x6
+
+    invoke-direct {v0, v1}, Ldug;-><init>(I)V
+
+    sput-object v0, Ldwn;->a:Ldug;
 
     return-void
-.end method
-
-.method public static b(Llij;)Ldwc;
-    .locals 0
-
-    iget-object p0, p0, Llij;->d:Ljava/lang/Object;
-
-    check-cast p0, Lcom/google/android/apps/camera/focusindicator/FocusIndicatorRingView;
-
-    iget-object p0, p0, Lcom/google/android/apps/camera/focusindicator/FocusIndicatorRingView;->b:Ldwc;
-
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    return-object p0
-.end method
-
-
-# virtual methods
-.method public final a()Ldwc;
-    .locals 1
-
-    iget-object v0, p0, Ldwn;->a:Llij;
-
-    invoke-static {v0}, Ldwn;->b(Llij;)Ldwc;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public final bridge synthetic get()Ljava/lang/Object;
-    .locals 1
-
-    invoke-virtual {p0}, Ldwn;->a()Ldwc;
-
-    move-result-object v0
-
-    return-object v0
 .end method

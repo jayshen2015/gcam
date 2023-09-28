@@ -1,191 +1,63 @@
-.class public final synthetic Lcg;
+.class final Lcg;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Laql;
+.implements Landroid/view/View$OnAttachStateChangeListener;
 
 
 # instance fields
-.field public final synthetic a:Ljava/lang/Object;
+.field final synthetic a:Lda;
 
-.field private final synthetic b:I
+.field final synthetic b:Lch;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lbz;I)V
+.method public constructor <init>(Lch;Lda;)V
     .locals 0
 
-    iput p2, p0, Lcg;->b:I
+    iput-object p1, p0, Lcg;->b:Lch;
+
+    iput-object p2, p0, Lcg;->a:Lda;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lcg;->a:Ljava/lang/Object;
-
-    return-void
-.end method
-
-.method public synthetic constructor <init>(Lcq;I)V
-    .locals 0
-
-    iput p2, p0, Lcg;->b:I
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lcg;->a:Ljava/lang/Object;
-
-    return-void
-.end method
-
-.method public constructor <init>(Lei;I)V
-    .locals 0
-
-    iput p2, p0, Lcg;->b:I
-
-    iput-object p1, p0, Lcg;->a:Ljava/lang/Object;
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
-.end method
-
-.method public synthetic constructor <init>(Lpl;I)V
-    .locals 0
-
-    iput p2, p0, Lcg;->b:I
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lcg;->a:Ljava/lang/Object;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Landroid/os/Bundle;
-    .locals 4
+.method public final onViewAttachedToWindow(Landroid/view/View;)V
+    .locals 1
 
-    iget v0, p0, Lcg;->b:I
+    iget-object p1, p0, Lcg;->a:Lda;
 
-    packed-switch v0, :pswitch_data_0
+    iget-object v0, p1, Lda;->c:Lbu;
 
-    iget-object v0, p0, Lcg;->a:Ljava/lang/Object;
+    invoke-virtual {p1}, Lda;->d()V
 
-    new-instance v1, Landroid/os/Bundle;
+    iget-object p1, v0, Lbu;->M:Landroid/view/View;
 
-    invoke-direct {v1}, Landroid/os/Bundle;-><init>()V
+    invoke-virtual {p1}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
 
-    check-cast v0, Lpl;
+    move-result-object p1
 
-    iget-object v0, v0, Lpl;->h:Lqa;
+    check-cast p1, Landroid/view/ViewGroup;
 
-    new-instance v2, Ljava/util/ArrayList;
+    iget-object v0, p0, Lcg;->b:Lch;
 
-    iget-object v3, v0, Lqa;->c:Ljava/util/Map;
+    iget-object v0, v0, Lch;->a:Lcu;
 
-    invoke-interface {v3}, Ljava/util/Map;->values()Ljava/util/Collection;
+    invoke-static {p1, v0}, Ldq;->b(Landroid/view/ViewGroup;Lcu;)Ldq;
 
-    move-result-object v3
+    move-result-object p1
 
-    invoke-direct {v2, v3}, Ljava/util/ArrayList;-><init>(Ljava/util/Collection;)V
+    invoke-virtual {p1}, Ldq;->c()V
 
-    const-string v3, "KEY_COMPONENT_ACTIVITY_REGISTERED_RCS"
+    return-void
+.end method
 
-    invoke-virtual {v1, v3, v2}, Landroid/os/Bundle;->putIntegerArrayList(Ljava/lang/String;Ljava/util/ArrayList;)V
+.method public final onViewDetachedFromWindow(Landroid/view/View;)V
+    .locals 0
 
-    new-instance v2, Ljava/util/ArrayList;
-
-    iget-object v3, v0, Lqa;->c:Ljava/util/Map;
-
-    invoke-interface {v3}, Ljava/util/Map;->keySet()Ljava/util/Set;
-
-    move-result-object v3
-
-    invoke-direct {v2, v3}, Ljava/util/ArrayList;-><init>(Ljava/util/Collection;)V
-
-    const-string v3, "KEY_COMPONENT_ACTIVITY_REGISTERED_KEYS"
-
-    invoke-virtual {v1, v3, v2}, Landroid/os/Bundle;->putStringArrayList(Ljava/lang/String;Ljava/util/ArrayList;)V
-
-    new-instance v2, Ljava/util/ArrayList;
-
-    iget-object v3, v0, Lqa;->e:Ljava/util/ArrayList;
-
-    invoke-direct {v2, v3}, Ljava/util/ArrayList;-><init>(Ljava/util/Collection;)V
-
-    const-string v3, "KEY_COMPONENT_ACTIVITY_LAUNCHED_KEYS"
-
-    invoke-virtual {v1, v3, v2}, Landroid/os/Bundle;->putStringArrayList(Ljava/lang/String;Ljava/util/ArrayList;)V
-
-    iget-object v2, v0, Lqa;->h:Landroid/os/Bundle;
-
-    invoke-virtual {v2}, Landroid/os/Bundle;->clone()Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Landroid/os/Bundle;
-
-    const-string v3, "KEY_COMPONENT_ACTIVITY_PENDING_RESULT"
-
-    invoke-virtual {v1, v3, v2}, Landroid/os/Bundle;->putBundle(Ljava/lang/String;Landroid/os/Bundle;)V
-
-    iget-object v0, v0, Lqa;->a:Ljava/util/Random;
-
-    const-string v2, "KEY_COMPONENT_ACTIVITY_RANDOM_OBJECT"
-
-    invoke-virtual {v1, v2, v0}, Landroid/os/Bundle;->putSerializable(Ljava/lang/String;Ljava/io/Serializable;)V
-
-    return-object v1
-
-    :pswitch_0
-    new-instance v0, Landroid/os/Bundle;
-
-    invoke-direct {v0}, Landroid/os/Bundle;-><init>()V
-
-    iget-object v1, p0, Lcg;->a:Ljava/lang/Object;
-
-    check-cast v1, Lei;
-
-    invoke-virtual {v1}, Lei;->j()Lel;
-
-    return-object v0
-
-    :pswitch_1
-    iget-object v0, p0, Lcg;->a:Ljava/lang/Object;
-
-    check-cast v0, Lbz;
-
-    invoke-virtual {v0}, Lbz;->e()V
-
-    iget-object v0, v0, Lbz;->d:Laks;
-
-    sget-object v1, Lakq;->ON_STOP:Lakq;
-
-    invoke-virtual {v0, v1}, Laks;->b(Lakq;)V
-
-    new-instance v0, Landroid/os/Bundle;
-
-    invoke-direct {v0}, Landroid/os/Bundle;-><init>()V
-
-    return-object v0
-
-    :pswitch_2
-    iget-object v0, p0, Lcg;->a:Ljava/lang/Object;
-
-    check-cast v0, Lcq;
-
-    invoke-virtual {v0}, Lcq;->b()Landroid/os/Bundle;
-
-    move-result-object v0
-
-    return-object v0
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_2
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
+    return-void
 .end method

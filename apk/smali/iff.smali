@@ -1,193 +1,54 @@
-.class public interface abstract Liff;
+.class public final synthetic Liff;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Ldbv;
+.implements Landroid/view/View$OnLayoutChangeListener;
+
+
+# instance fields
+.field public final synthetic a:Lifj;
+
+.field public final synthetic b:Lcom/google/android/apps/camera/bottombar/RoundedThumbnailView;
+
+
+# direct methods
+.method public synthetic constructor <init>(Lifj;Lcom/google/android/apps/camera/bottombar/RoundedThumbnailView;)V
+    .locals 0
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Liff;->a:Lifj;
+
+    iput-object p2, p0, Liff;->b:Lcom/google/android/apps/camera/bottombar/RoundedThumbnailView;
+
+    return-void
+.end method
 
 
 # virtual methods
-.method public abstract A(Z)V
-.end method
+.method public final onLayoutChange(Landroid/view/View;IIIIIIII)V
+    .locals 0
 
-.method public abstract B(Liek;)V
-.end method
+    iget-object p1, p0, Liff;->a:Lifj;
 
-.method public abstract C(I)V
-.end method
+    iget-object p2, p0, Liff;->b:Lcom/google/android/apps/camera/bottombar/RoundedThumbnailView;
 
-.method public abstract D(IJZ)V
-.end method
+    invoke-virtual {p2}, Lcom/google/android/apps/camera/bottombar/RoundedThumbnailView;->getParent()Landroid/view/ViewParent;
 
-.method public abstract E(Z)V
-.end method
+    move-result-object p3
 
-.method public abstract F()V
-.end method
+    iget-object p4, p1, Lifj;->d:Landroid/support/constraint/ConstraintLayout;
 
-.method public abstract G(Z)V
-.end method
+    if-ne p3, p4, :cond_0
 
-.method public abstract H()V
-.end method
+    invoke-virtual {p1, p2}, Lifj;->a(Landroid/view/View;)V
 
-.method public abstract I()V
-.end method
+    new-instance p1, Lifg;
 
-.method public abstract J()V
-.end method
+    invoke-direct {p1, p2}, Lifg;-><init>(Lcom/google/android/apps/camera/bottombar/RoundedThumbnailView;)V
 
-.method public abstract K()V
-.end method
+    invoke-virtual {p2, p1}, Lcom/google/android/apps/camera/bottombar/RoundedThumbnailView;->post(Ljava/lang/Runnable;)Z
 
-.method public abstract L()V
-.end method
-
-.method public abstract M()V
-.end method
-
-.method public abstract N()V
-.end method
-
-.method public abstract O()V
-.end method
-
-.method public abstract P()V
-.end method
-
-.method public abstract Q()V
-.end method
-
-.method public abstract R()V
-.end method
-
-.method public abstract S()V
-.end method
-
-.method public abstract T()V
-.end method
-
-.method public abstract U()V
-.end method
-
-.method public abstract V()V
-.end method
-
-.method public abstract W()V
-.end method
-
-.method public abstract X()V
-.end method
-
-.method public abstract Y()V
-.end method
-
-.method public abstract Z()V
-.end method
-
-.method public abstract aa()V
-.end method
-
-.method public abstract ab()V
-.end method
-
-.method public abstract ac()V
-.end method
-
-.method public abstract ad()V
-.end method
-
-.method public abstract ae()V
-.end method
-
-.method public abstract af(Lika;)V
-.end method
-
-.method public abstract ag()V
-.end method
-
-.method public abstract ah()V
-.end method
-
-.method public abstract ai(Lgyu;)V
-.end method
-
-.method public abstract aj()V
-.end method
-
-.method public abstract ak()V
-.end method
-
-.method public abstract b()Lcom/google/android/apps/camera/ui/shutterbutton/ShutterButton;
-.end method
-
-.method public abstract c()Lkad;
-.end method
-
-.method public abstract d()Lkad;
-.end method
-
-.method public abstract e(Lifj;)Lkad;
-.end method
-
-.method public abstract f()V
-.end method
-
-.method public abstract g()V
-.end method
-
-.method public abstract h()V
-.end method
-
-.method public abstract i()V
-.end method
-
-.method public abstract j()V
-.end method
-
-.method public abstract k()V
-.end method
-
-.method public abstract l()V
-.end method
-
-.method public abstract m()V
-.end method
-
-.method public abstract n()V
-.end method
-
-.method public abstract o()V
-.end method
-
-.method public abstract p()V
-.end method
-
-.method public abstract q()V
-.end method
-
-.method public abstract r()V
-.end method
-
-.method public abstract s()V
-.end method
-
-.method public abstract t()V
-.end method
-
-.method public abstract u()V
-.end method
-
-.method public abstract v()V
-.end method
-
-.method public abstract w()V
-.end method
-
-.method public abstract x()V
-.end method
-
-.method public abstract y()V
-.end method
-
-.method public abstract z(Z)V
+    :cond_0
+    return-void
 .end method

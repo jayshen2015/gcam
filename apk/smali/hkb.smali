@@ -1,183 +1,166 @@
-.class public final Lhkb;
-.super Ljava/lang/Object;
+.class public final enum Lhkb;
+.super Ljava/lang/Enum;
+
+
+# static fields
+.field public static final enum a:Lhkb;
+
+.field public static final enum b:Lhkb;
+
+.field public static final enum c:Lhkb;
+
+.field public static final enum d:Lhkb;
+
+.field public static final enum e:Lhkb;
+
+.field public static final enum f:Lhkb;
+
+.field public static final g:Ljava/util/Map;
+
+.field private static final synthetic h:[Lhkb;
 
 
 # instance fields
-.field public final a:Ljava/lang/String;
-
-.field public final b:I
-
-.field public final c:J
+.field private final i:I
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 0
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
-.end method
-
-.method public constructor <init>(Ljava/lang/String;IJ)V
-    .locals 0
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    if-eqz p1, :cond_0
-
-    iput-object p1, p0, Lhkb;->a:Ljava/lang/String;
-
-    iput p2, p0, Lhkb;->b:I
-
-    iput-wide p3, p0, Lhkb;->c:J
-
-    return-void
-
-    :cond_0
-    new-instance p1, Ljava/lang/NullPointerException;
-
-    const-string p2, "Null name"
-
-    invoke-direct {p1, p2}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
-
-    throw p1
-.end method
-
-.method public static a(Ljava/lang/String;IJ)Lhkb;
-    .locals 1
+.method static constructor <clinit>()V
+    .locals 13
 
     new-instance v0, Lhkb;
 
-    invoke-direct {v0, p0, p1, p2, p3}, Lhkb;-><init>(Ljava/lang/String;IJ)V
-
-    return-object v0
-.end method
-
-
-# virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 7
-
-    const/4 v0, 0x1
-
-    if-ne p1, p0, :cond_0
-
-    return v0
-
-    :cond_0
-    instance-of v1, p1, Lhkb;
+    const-string v1, "INACTIVE"
 
     const/4 v2, 0x0
 
-    if-eqz v1, :cond_1
+    invoke-direct {v0, v1, v2, v2}, Lhkb;-><init>(Ljava/lang/String;II)V
 
-    check-cast p1, Lhkb;
+    sput-object v0, Lhkb;->a:Lhkb;
 
-    iget-object v1, p0, Lhkb;->a:Ljava/lang/String;
+    new-instance v1, Lhkb;
 
-    iget-object v3, p1, Lhkb;->a:Ljava/lang/String;
+    const-string v3, "SEARCHING"
 
-    invoke-virtual {v1, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    const/4 v4, 0x1
 
-    move-result v1
+    invoke-direct {v1, v3, v4, v4}, Lhkb;-><init>(Ljava/lang/String;II)V
 
-    if-eqz v1, :cond_1
+    sput-object v1, Lhkb;->b:Lhkb;
 
-    iget v1, p0, Lhkb;->b:I
+    new-instance v3, Lhkb;
 
-    iget v3, p1, Lhkb;->b:I
+    const-string v5, "CONVERGED"
 
-    if-ne v1, v3, :cond_1
+    const/4 v6, 0x2
 
-    iget-wide v3, p0, Lhkb;->c:J
+    invoke-direct {v3, v5, v6, v6}, Lhkb;-><init>(Ljava/lang/String;II)V
 
-    iget-wide v5, p1, Lhkb;->c:J
+    sput-object v3, Lhkb;->c:Lhkb;
 
-    cmp-long p1, v3, v5
+    new-instance v5, Lhkb;
 
-    if-nez p1, :cond_1
+    const-string v7, "LOCKED"
 
-    return v0
+    const/4 v8, 0x3
 
-    :cond_1
-    return v2
-.end method
+    invoke-direct {v5, v7, v8, v8}, Lhkb;-><init>(Ljava/lang/String;II)V
 
-.method public final hashCode()I
-    .locals 6
+    sput-object v5, Lhkb;->d:Lhkb;
 
-    iget-object v0, p0, Lhkb;->a:Ljava/lang/String;
+    new-instance v7, Lhkb;
 
-    invoke-virtual {v0}, Ljava/lang/String;->hashCode()I
+    const-string v9, "FLASH_REQUIRED"
 
-    move-result v0
+    const/4 v10, 0x4
 
-    const v1, 0xf4243
+    invoke-direct {v7, v9, v10, v10}, Lhkb;-><init>(Ljava/lang/String;II)V
 
-    xor-int/2addr v0, v1
+    sput-object v7, Lhkb;->e:Lhkb;
 
-    mul-int v0, v0, v1
+    new-instance v9, Lhkb;
 
-    iget v2, p0, Lhkb;->b:I
+    const-string v11, "PRECAPTURE"
 
-    xor-int/2addr v0, v2
+    const/4 v12, 0x5
 
-    iget-wide v2, p0, Lhkb;->c:J
+    invoke-direct {v9, v11, v12, v12}, Lhkb;-><init>(Ljava/lang/String;II)V
 
-    const/16 v4, 0x20
+    sput-object v9, Lhkb;->f:Lhkb;
 
-    ushr-long v4, v2, v4
+    const/4 v11, 0x6
 
-    xor-long/2addr v2, v4
+    new-array v11, v11, [Lhkb;
 
-    mul-int v0, v0, v1
+    aput-object v0, v11, v2
 
-    long-to-int v1, v2
+    aput-object v1, v11, v4
 
-    xor-int/2addr v0, v1
+    aput-object v3, v11, v6
 
-    return v0
-.end method
+    aput-object v5, v11, v8
 
-.method public final toString()Ljava/lang/String;
-    .locals 6
+    aput-object v7, v11, v10
 
-    iget-object v0, p0, Lhkb;->a:Ljava/lang/String;
+    aput-object v9, v11, v12
 
-    iget v1, p0, Lhkb;->b:I
+    sput-object v11, Lhkb;->h:[Lhkb;
 
-    iget-wide v2, p0, Lhkb;->c:J
+    new-instance v0, Ljava/util/HashMap;
 
-    new-instance v4, Ljava/lang/StringBuilder;
+    invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
-    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
+    sput-object v0, Lhkb;->g:Ljava/util/Map;
 
-    const-string v5, "RecordedCheckpoint{name="
-
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v0, ", ordinal="
-
-    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v4, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    const-string v0, ", timingNanos="
-
-    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v4, v2, v3}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    const-string v0, "}"
-
-    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-static {}, Lhkb;->values()[Lhkb;
 
     move-result-object v0
+
+    array-length v1, v0
+
+    :goto_0
+    if-ge v2, v1, :cond_0
+
+    aget-object v3, v0, v2
+
+    sget-object v4, Lhkb;->g:Ljava/util/Map;
+
+    iget v5, v3, Lhkb;->i:I
+
+    invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v5
+
+    invoke-interface {v4, v5, v3}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    add-int/lit8 v2, v2, 0x1
+
+    goto :goto_0
+
+    :cond_0
+    return-void
+.end method
+
+.method private constructor <init>(Ljava/lang/String;II)V
+    .locals 0
+
+    invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    iput p3, p0, Lhkb;->i:I
+
+    return-void
+.end method
+
+.method public static values()[Lhkb;
+    .locals 1
+
+    sget-object v0, Lhkb;->h:[Lhkb;
+
+    invoke-virtual {v0}, [Lhkb;->clone()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, [Lhkb;
 
     return-object v0
 .end method

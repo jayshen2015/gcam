@@ -1,372 +1,129 @@
 .class public final Lgqs;
-.super Lgql;
-
-
-# static fields
-.field public static final e:Lnak;
-
-
-# instance fields
-.field public final f:Lfcd;
-
-.field private final g:Lmqp;
-
-.field private h:Lgqr;
-
-.field private i:D
+.super Lldl;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
+.method public constructor <init>(Llco;Llco;Llco;Llco;Llco;)V
+    .locals 2
 
-    const-string v0, "com/google/android/apps/camera/processing/imagebackend/LuckyShotImageFilter"
+    const/4 v0, 0x5
 
-    invoke-static {v0}, Lnak;->h(Ljava/lang/String;)Lnak;
+    new-array v0, v0, [Llco;
 
-    move-result-object v0
+    const/4 v1, 0x0
 
-    sput-object v0, Lgqs;->e:Lnak;
+    aput-object p1, v0, v1
 
-    return-void
-.end method
+    const/4 p1, 0x1
 
-.method public constructor <init>(Lgqj;Lhqr;Lmqp;Lfcd;[B)V
-    .locals 0
+    aput-object p3, v0, p1
 
-    const/4 p5, 0x0
+    const/4 p1, 0x2
 
-    invoke-direct {p0, p1, p2, p5}, Lgql;-><init>(Lgqj;Lhqr;[B)V
+    aput-object p4, v0, p1
 
-    iput-object p5, p0, Lgqs;->h:Lgqr;
+    const/4 p1, 0x3
 
-    const-wide/16 p1, 0x0
+    aput-object p5, v0, p1
 
-    iput-wide p1, p0, Lgqs;->i:D
+    const/4 p1, 0x4
 
-    iput-object p3, p0, Lgqs;->g:Lmqp;
+    aput-object p2, v0, p1
 
-    iput-object p4, p0, Lgqs;->f:Lfcd;
+    invoke-static {v0}, Llcv;->b([Llco;)Llco;
+
+    move-result-object p1
+
+    invoke-direct {p0, p1}, Lldl;-><init>(Llco;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final declared-synchronized c(Ljava/util/Set;Lgxl;)V
-    .locals 4
+.method protected final bridge synthetic c(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 5
 
-    monitor-enter p0
+    check-cast p1, Ljava/util/List;
 
-    :try_start_0
-    invoke-interface {p1}, Ljava/util/Set;->isEmpty()Z
+    const/4 v0, 0x0
 
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    sget-object p2, Lgqs;->e:Lnak;
-
-    invoke-virtual {p2}, Lnaf;->c()Lnaz;
-
-    move-result-object p2
-
-    check-cast p2, Lnah;
-
-    const/16 v0, 0xc80
-
-    invoke-interface {p2, v0}, Lnah;->G(I)Lnaz;
-
-    move-result-object p2
-
-    check-cast p2, Lnah;
-
-    invoke-interface {p1}, Ljava/util/Set;->size()I
-
-    move-result p1
-
-    const-string v0, "Filtered Image future failed to return a single image. There are %d images.  No Image produced."
-
-    invoke-interface {p2, v0, p1}, Lnah;->p(Ljava/lang/String;I)V
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_2
-
-    monitor-exit p0
-
-    return-void
-
-    :cond_0
-    :try_start_1
-    invoke-interface {p1}, Ljava/util/Set;->size()I
-
-    move-result v0
-
-    const/4 v1, 0x1
-
-    if-gt v0, v1, :cond_3
-
-    iget-object v0, p0, Lgqs;->f:Lfcd;
-
-    invoke-static {}, Landroid/os/SystemClock;->elapsedRealtimeNanos()J
-
-    move-result-wide v1
-
-    iput-wide v1, v0, Lfcd;->e:J
-
-    invoke-interface {p2}, Lgxl;->k()Lhjc;
+    invoke-interface {p1, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v0
 
-    if-eqz v0, :cond_2
+    check-cast v0, Lgqt;
 
-    check-cast v0, Lhjd;
+    const/4 v1, 0x1
 
-    iget-object v0, v0, Lhjd;->j:Lhjf;
+    invoke-interface {p1, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
-    if-eqz v0, :cond_2
+    move-result-object v1
 
-    iget-object v1, p0, Lgqs;->f:Lfcd;
+    check-cast v1, Ljava/lang/Integer;
 
-    iget-wide v2, v1, Lfcd;->d:J
+    invoke-virtual {v1}, Ljava/lang/Integer;->intValue()I
 
-    iput-wide v2, v0, Lhjf;->d:J
+    move-result v1
 
-    iget-wide v2, v1, Lfcd;->e:J
+    const/4 v2, 0x2
 
-    iput-wide v2, v0, Lhjf;->e:J
+    invoke-interface {p1, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
-    iget-object v2, v1, Lfcd;->a:Ljava/lang/Object;
+    move-result-object v2
 
-    monitor-enter v2
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_2
+    check-cast v2, Ljava/lang/Float;
 
-    :try_start_2
-    iget-object v1, v1, Lfcd;->f:Ljava/util/List;
+    invoke-virtual {v2}, Ljava/lang/Float;->floatValue()F
 
-    if-eqz v1, :cond_1
+    move-result v2
 
-    new-instance v3, Ljava/util/ArrayList;
+    const/4 v3, 0x3
 
-    invoke-direct {v3, v1}, Ljava/util/ArrayList;-><init>(Ljava/util/Collection;)V
+    invoke-interface {p1, v3}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
-    monitor-exit v2
+    move-result-object v3
 
-    goto :goto_0
+    check-cast v3, Ljava/lang/Float;
 
-    :cond_1
-    monitor-exit v2
-    :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_0
+    invoke-virtual {v3}, Ljava/lang/Float;->floatValue()F
 
-    const/4 v3, 0x0
+    move-result v3
 
-    :goto_0
-    :try_start_3
-    iput-object v3, v0, Lhjf;->f:Ljava/util/List;
-    :try_end_3
-    .catchall {:try_start_3 .. :try_end_3} :catchall_2
+    const/4 v4, 0x4
 
-    goto :goto_1
-
-    :catchall_0
-    move-exception p1
-
-    :try_start_4
-    monitor-exit v2
-    :try_end_4
-    .catchall {:try_start_4 .. :try_end_4} :catchall_0
-
-    :try_start_5
-    throw p1
-
-    :cond_2
-    :goto_1
-    iget-object v0, p0, Lgqs;->g:Lmqp;
-
-    check-cast v0, Lmqt;
-
-    iget-object v0, v0, Lmqt;->a:Ljava/lang/Object;
-
-    check-cast v0, Lfxf;
-
-    invoke-interface {p1}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
+    invoke-interface {p1, v4}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object p1
 
-    invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    check-cast p1, Ljava/lang/Boolean;
 
-    move-result-object p1
-
-    check-cast p1, Lgqr;
-
-    iget-object v1, p0, Lgqs;->f:Lfcd;
-
-    invoke-interface {p2}, Lgxl;->k()Lhjc;
-
-    move-result-object p2
-
-    check-cast p2, Lhjd;
-
-    iput-object v1, p2, Lhjd;->i:Lfcd;
-
-    iget-object p2, v0, Lfxf;->b:Ljava/lang/Object;
-
-    check-cast p2, Lfxg;
-
-    iget-object p2, p2, Lfxg;->a:Lfxh;
-
-    iget-object p2, p2, Lfxh;->a:Lkaq;
-
-    const-string v1, "finish lucky shot selection, pass to the piped image saver"
-
-    invoke-interface {p2, v1}, Lkaq;->h(Ljava/lang/String;)V
-    :try_end_5
-    .catchall {:try_start_5 .. :try_end_5} :catchall_2
-
-    :try_start_6
-    iget-object p2, v0, Lfxf;->a:Ljava/lang/Object;
-
-    iget-object v1, p1, Lgqr;->a:Lkpb;
-
-    iget-object p1, p1, Lgqr;->c:Lnou;
-
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    invoke-interface {p2, v1, p1}, Lfyy;->a(Lkpb;Lnou;)V
-    :try_end_6
-    .catchall {:try_start_6 .. :try_end_6} :catchall_1
-
-    :try_start_7
-    iget-object p1, v0, Lfxf;->a:Ljava/lang/Object;
-
-    invoke-interface {p1}, Lfyy;->close()V
-    :try_end_7
-    .catchall {:try_start_7 .. :try_end_7} :catchall_2
-
-    monitor-exit p0
-
-    return-void
-
-    :catchall_1
-    move-exception p1
-
-    :try_start_8
-    iget-object p2, v0, Lfxf;->a:Ljava/lang/Object;
-
-    invoke-interface {p2}, Lfyy;->close()V
-
-    throw p1
-
-    :cond_3
-    sget-object p2, Lgqs;->e:Lnak;
-
-    invoke-virtual {p2}, Lnaf;->b()Lnaz;
-
-    move-result-object p2
-
-    check-cast p2, Lnah;
-
-    const/16 v0, 0xc7f
-
-    invoke-interface {p2, v0}, Lnah;->G(I)Lnaz;
-
-    move-result-object p2
-
-    check-cast p2, Lnah;
-
-    invoke-interface {p1}, Ljava/util/Set;->size()I
+    invoke-virtual {p1}, Ljava/lang/Boolean;->booleanValue()Z
 
     move-result p1
 
-    const-string v0, "Filtered Image return multiple images. There are %d images.  No Image produced."
+    if-nez v1, :cond_1
 
-    invoke-interface {p2, v0, p1}, Lnah;->p(Ljava/lang/String;I)V
+    const/high16 v1, -0x40800000    # -1.0f
 
-    new-instance p1, Ljava/lang/IllegalStateException;
+    cmpl-float v2, v2, v1
 
-    const-string p2, "Lucky Shot Filter returned multiple images."
+    if-nez v2, :cond_1
 
-    invoke-direct {p1, p2}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+    cmpl-float v1, v3, v1
 
-    throw p1
-    :try_end_8
-    .catchall {:try_start_8 .. :try_end_8} :catchall_2
-
-    :catchall_2
-    move-exception p1
-
-    monitor-exit p0
-
-    throw p1
-.end method
-
-.method public final declared-synchronized close()V
-    .locals 1
-
-    monitor-enter p0
-
-    :try_start_0
-    invoke-static {}, Landroid/os/SystemClock;->elapsedRealtimeNanos()J
-
-    invoke-super {p0}, Lgql;->close()V
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    monitor-exit p0
-
-    return-void
-
-    :catchall_0
-    move-exception v0
-
-    monitor-exit p0
-
-    throw v0
-.end method
-
-.method public final declared-synchronized d(Lgqr;D)Lgqr;
-    .locals 4
-
-    monitor-enter p0
-
-    :try_start_0
-    iget-object v0, p0, Lgqs;->h:Lgqr;
-
-    if-eqz v0, :cond_1
-
-    iget-wide v1, p0, Lgqs;->i:D
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    cmpl-double v3, p2, v1
-
-    if-lez v3, :cond_0
+    if-eqz v1, :cond_0
 
     goto :goto_0
 
     :cond_0
-    monitor-exit p0
-
-    return-object p1
-
-    :cond_1
-    :goto_0
-    :try_start_1
-    iput-object p1, p0, Lgqs;->h:Lgqr;
-
-    iput-wide p2, p0, Lgqs;->i:D
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    monitor-exit p0
+    if-nez p1, :cond_1
 
     return-object v0
 
-    :catchall_0
-    move-exception p1
+    :cond_1
+    :goto_0
+    sget-object p1, Lgqt;->b:Lgqt;
 
-    monitor-exit p0
-
-    throw p1
+    return-object p1
 .end method

@@ -1,87 +1,41 @@
-.class public final Lehn;
+.class public final synthetic Lehn;
 .super Ljava/lang/Object;
+
+# interfaces
+.implements Llie;
 
 
 # instance fields
-.field a:D
+.field public final synthetic a:Lehr;
 
-.field b:D
-
-.field c:Z
+.field public final synthetic b:Ljii;
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 2
+.method public synthetic constructor <init>(Lehr;Ljii;)V
+    .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const-wide/high16 v0, 0x7ff8000000000000L    # Double.NaN
+    iput-object p1, p0, Lehn;->a:Lehr;
 
-    iput-wide v0, p0, Lehn;->a:D
-
-    iput-wide v0, p0, Lehn;->b:D
-
-    const/4 v0, 0x0
-
-    iput-boolean v0, p0, Lehn;->c:Z
+    iput-object p2, p0, Lehn;->b:Ljii;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(D)D
-    .locals 3
+.method public final close()V
+    .locals 2
 
-    iget-boolean v0, p0, Lehn;->c:Z
+    iget-object v0, p0, Lehn;->a:Lehr;
 
-    if-nez v0, :cond_0
+    iget-object v1, p0, Lehn;->b:Ljii;
 
-    iput-wide p1, p0, Lehn;->b:D
+    iget-object v0, v0, Lehr;->a:Lehl;
 
-    iput-wide p1, p0, Lehn;->a:D
+    invoke-virtual {v1, v0}, Ljii;->b(Landroid/view/View;)V
 
-    const/4 v0, 0x1
-
-    iput-boolean v0, p0, Lehn;->c:Z
-
-    return-wide p1
-
-    :cond_0
-    iget-wide v0, p0, Lehn;->b:D
-
-    sub-double v0, p1, v0
-
-    iput-wide p1, p0, Lehn;->b:D
-
-    const-wide p1, 0x4066800000000000L    # 180.0
-
-    cmpl-double v2, v0, p1
-
-    if-lez v2, :cond_1
-
-    const-wide p1, -0x3f89800000000000L    # -360.0
-
-    add-double/2addr v0, p1
-
-    :cond_1
-    const-wide p1, -0x3f99800000000000L    # -180.0
-
-    cmpg-double v2, v0, p1
-
-    if-gez v2, :cond_2
-
-    const-wide p1, 0x4076800000000000L    # 360.0
-
-    add-double/2addr v0, p1
-
-    :cond_2
-    iget-wide p1, p0, Lehn;->a:D
-
-    add-double/2addr p1, v0
-
-    iput-wide p1, p0, Lehn;->a:D
-
-    return-wide p1
+    return-void
 .end method

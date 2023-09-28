@@ -1,62 +1,70 @@
-.class public final synthetic Lflz;
-.super Ljava/lang/Object;
-
-# interfaces
-.implements Ljava/util/function/LongUnaryOperator;
+.class public final enum Lflz;
+.super Ljava/lang/Enum;
 
 
-# instance fields
-.field public final synthetic a:J
+# static fields
+.field public static final enum a:Lflz;
+
+.field public static final enum b:Lflz;
+
+.field private static final synthetic c:[Lflz;
 
 
 # direct methods
-.method public synthetic constructor <init>(J)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 5
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance v0, Lflz;
 
-    iput-wide p1, p0, Lflz;->a:J
+    const-string v1, "NPF"
+
+    const/4 v2, 0x0
+
+    invoke-direct {v0, v1, v2}, Lflz;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, Lflz;->a:Lflz;
+
+    new-instance v1, Lflz;
+
+    const-string v3, "LIGHTCYCLE"
+
+    const/4 v4, 0x1
+
+    invoke-direct {v1, v3, v4}, Lflz;-><init>(Ljava/lang/String;I)V
+
+    sput-object v1, Lflz;->b:Lflz;
+
+    const/4 v3, 0x2
+
+    new-array v3, v3, [Lflz;
+
+    aput-object v0, v3, v2
+
+    aput-object v1, v3, v4
+
+    sput-object v3, Lflz;->c:[Lflz;
 
     return-void
 .end method
 
-
-# virtual methods
-.method public final synthetic andThen(Ljava/util/function/LongUnaryOperator;)Ljava/util/function/LongUnaryOperator;
+.method private constructor <init>(Ljava/lang/String;I)V
     .locals 0
 
-    invoke-static {p0, p1}, Lj$/util/function/LongUnaryOperator$-CC;->$default$andThen(Ljava/util/function/LongUnaryOperator;Ljava/util/function/LongUnaryOperator;)Ljava/util/function/LongUnaryOperator;
+    invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
-    move-result-object p1
-
-    return-object p1
+    return-void
 .end method
 
-.method public final applyAsLong(J)J
-    .locals 3
+.method public static values()[Lflz;
+    .locals 1
 
-    iget-wide v0, p0, Lflz;->a:J
+    sget-object v0, Lflz;->c:[Lflz;
 
-    cmp-long v2, v0, p1
+    invoke-virtual {v0}, [Lflz;->clone()Ljava/lang/Object;
 
-    if-gtz v2, :cond_0
+    move-result-object v0
 
-    const-wide/16 v0, 0x1
+    check-cast v0, [Lflz;
 
-    add-long/2addr p1, v0
-
-    return-wide p1
-
-    :cond_0
-    return-wide v0
-.end method
-
-.method public final synthetic compose(Ljava/util/function/LongUnaryOperator;)Ljava/util/function/LongUnaryOperator;
-    .locals 0
-
-    invoke-static {p0, p1}, Lj$/util/function/LongUnaryOperator$-CC;->$default$compose(Ljava/util/function/LongUnaryOperator;Ljava/util/function/LongUnaryOperator;)Ljava/util/function/LongUnaryOperator;
-
-    move-result-object p1
-
-    return-object p1
+    return-object v0
 .end method

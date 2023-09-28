@@ -1,96 +1,50 @@
 .class public final Lfco;
-.super Lhdn;
+.super Lfct;
 
 
 # instance fields
-.field public final a:Lflf;
-
-.field private final d:Landroid/content/res/Resources;
+.field private m:Landroid/graphics/PointF;
 
 
 # direct methods
-.method public constructor <init>(Landroid/content/res/Resources;Lflf;Ljew;Ljava/util/concurrent/ScheduledExecutorService;[B[B[B[B)V
+.method public constructor <init>()V
     .locals 0
 
-    invoke-direct {p0}, Lhdn;-><init>()V
-
-    iput-object p1, p0, Lfco;->d:Landroid/content/res/Resources;
-
-    iput-object p2, p0, Lfco;->a:Lflf;
+    invoke-direct {p0}, Lfct;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method protected final c()Lhdm;
-    .locals 4
+.method public final a([F)V
+    .locals 3
 
-    invoke-static {}, Lheb;->a()Lhea;
+    iget-object v0, p0, Lfco;->m:Landroid/graphics/PointF;
 
-    move-result-object v0
+    iget v0, v0, Landroid/graphics/PointF;->x:F
 
-    iget-object v1, p0, Lfco;->d:Landroid/content/res/Resources;
+    iget-object v1, p0, Lfco;->m:Landroid/graphics/PointF;
 
-    const v2, 0x7f14026b
+    iget v1, v1, Landroid/graphics/PointF;->y:F
 
-    invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
+    const/high16 v2, 0x3f800000    # 1.0f
 
-    move-result-object v1
+    invoke-virtual {p0, p1, v0, v1, v2}, Lfct;->f([FFFF)V
 
-    iput-object v1, v0, Lhea;->a:Ljava/lang/String;
+    return-void
+.end method
 
-    iget-object v1, p0, Lfco;->d:Landroid/content/res/Resources;
+.method public final b(Landroid/graphics/PointF;)V
+    .locals 1
 
-    const v2, 0x7f080240
+    new-instance v0, Landroid/graphics/PointF;
 
-    const/4 v3, 0x0
+    invoke-direct {v0}, Landroid/graphics/PointF;-><init>()V
 
-    invoke-virtual {v1, v2, v3}, Landroid/content/res/Resources;->getDrawable(ILandroid/content/res/Resources$Theme;)Landroid/graphics/drawable/Drawable;
+    iput-object v0, p0, Lfco;->m:Landroid/graphics/PointF;
 
-    move-result-object v1
+    invoke-virtual {v0, p1}, Landroid/graphics/PointF;->set(Landroid/graphics/PointF;)V
 
-    iput-object v1, v0, Lhea;->b:Landroid/graphics/drawable/Drawable;
-
-    new-instance v1, Levi;
-
-    const/16 v2, 0x12
-
-    invoke-direct {v1, p0, v2}, Levi;-><init>(Lfco;I)V
-
-    iput-object v1, v0, Lhea;->c:Ljava/lang/Runnable;
-
-    const-wide/16 v1, 0x7d0
-
-    invoke-virtual {v0, v1, v2}, Lhea;->e(J)V
-
-    invoke-virtual {v0}, Lhea;->a()Lheb;
-
-    move-result-object v0
-
-    invoke-static {}, Lhdm;->a()Lkxz;
-
-    move-result-object v1
-
-    iput-object v0, v1, Lkxz;->a:Ljava/lang/Object;
-
-    const/4 v0, 0x1
-
-    invoke-virtual {v1, v0}, Lkxz;->f(I)V
-
-    const/4 v0, 0x5
-
-    invoke-virtual {v1, v0}, Lkxz;->g(I)V
-
-    sget-object v0, Lika;->m:Lika;
-
-    invoke-virtual {v1, v0}, Lkxz;->e(Lika;)V
-
-    invoke-virtual {v1}, Lkxz;->h()V
-
-    invoke-virtual {v1}, Lkxz;->d()Lhdm;
-
-    move-result-object v0
-
-    return-object v0
+    return-void
 .end method

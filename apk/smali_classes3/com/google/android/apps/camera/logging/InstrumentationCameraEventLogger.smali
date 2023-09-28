@@ -2,7 +2,7 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lfca;
+.implements Lfjt;
 
 
 # static fields
@@ -70,7 +70,7 @@
 
 
 # virtual methods
-.method public final a(Lngr;)V
+.method public final a(Lpac;)V
     .locals 3
 
     sget-object v0, Lcom/google/android/apps/camera/logging/InstrumentationCameraEventLogger;->b:Ljava/util/List;
@@ -86,7 +86,7 @@
 
     invoke-virtual {v2}, Ljava/lang/Integer;->intValue()I
 
-    const/16 v2, 0x64
+    move-result v2
 
     if-ne v1, v2, :cond_0
 

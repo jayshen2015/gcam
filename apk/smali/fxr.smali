@@ -1,34 +1,50 @@
-.class final Lfxr;
+.class public final synthetic Lfxr;
 .super Ljava/lang/Object;
+
+# interfaces
+.implements Llht;
 
 
 # instance fields
-.field public final a:Lgxl;
-
-.field public final b:Lkab;
-
-.field public final c:Lgqm;
-
-.field final synthetic d:Lfxs;
-
-.field public final e:Lfym;
+.field public final synthetic a:Lfyr;
 
 
 # direct methods
-.method public constructor <init>(Lfxs;Lgxl;Lkab;Lgqm;Lfym;)V
+.method public synthetic constructor <init>(Lfyr;)V
     .locals 0
-
-    iput-object p1, p0, Lfxr;->d:Lfxs;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p2, p0, Lfxr;->a:Lgxl;
+    iput-object p1, p0, Lfxr;->a:Lfyr;
 
-    iput-object p3, p0, Lfxr;->b:Lkab;
+    return-void
+.end method
 
-    iput-object p4, p0, Lfxr;->c:Lgqm;
 
-    iput-object p5, p0, Lfxr;->e:Lfym;
+# virtual methods
+.method public final a(Ljava/lang/Object;)V
+    .locals 1
 
+    iget-object v0, p0, Lfxr;->a:Lfyr;
+
+    check-cast p1, Lilv;
+
+    invoke-virtual {p1}, Lilv;->b()Z
+
+    move-result p1
+
+    if-nez p1, :cond_0
+
+    iget-object p1, v0, Lfyr;->R:Likm;
+
+    iget-object v0, v0, Lfyr;->L:Landroid/content/DialogInterface$OnClickListener;
+
+    invoke-virtual {p1, v0}, Likm;->b(Landroid/content/DialogInterface$OnClickListener;)Lie;
+
+    move-result-object p1
+
+    invoke-virtual {p1}, Lie;->show()V
+
+    :cond_0
     return-void
 .end method

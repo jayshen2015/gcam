@@ -1,39 +1,47 @@
-.class public interface abstract Lgxw;
+.class public final synthetic Lgxw;
 .super Ljava/lang/Object;
 
+# interfaces
+.implements Ljava/lang/Runnable;
 
-# annotations
-.annotation runtime Ljava/lang/Deprecated;
-.end annotation
+
+# instance fields
+.field public final synthetic a:Lgyb;
+
+
+# direct methods
+.method public synthetic constructor <init>(Lgyb;)V
+    .locals 0
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lgxw;->a:Lgyb;
+
+    return-void
+.end method
 
 
 # virtual methods
-.method public abstract a()V
-.end method
+.method public final run()V
+    .locals 3
 
-.method public abstract b()V
-.end method
+    iget-object v0, p0, Lgxw;->a:Lgyb;
 
-.method public abstract c(Lfce;)V
-.end method
+    iget-object v0, v0, Lgyb;->a:Lhpb;
 
-.method public abstract d(Landroid/graphics/Bitmap;)V
-.end method
+    invoke-interface {v0}, Lhpb;->a()Lpht;
 
-.method public abstract e()V
-.end method
+    move-result-object v0
 
-.method public abstract f(Lmqp;)V
-.end method
+    new-instance v1, Lgxy;
 
-.method public abstract g(IILjava/lang/Throwable;)V
-.end method
+    const/4 v2, 0x0
 
-.method public abstract h(IILjava/lang/Throwable;)V
-.end method
+    invoke-direct {v1, v2}, Lgxy;-><init>(I)V
 
-.method public abstract i(II)V
-.end method
+    sget-object v2, Lpgr;->a:Lpgr;
 
-.method public abstract j(II)V
+    invoke-static {v0, v1, v2}, Lplk;->af(Lpht;Lphh;Ljava/util/concurrent/Executor;)V
+
+    return-void
 .end method

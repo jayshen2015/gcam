@@ -1,35 +1,76 @@
-.class public final synthetic Lfe;
-.super Ljava/lang/Object;
-
-# interfaces
-.implements Laen;
+.class public final Lfe;
+.super Lfd;
 
 
 # instance fields
-.field public final synthetic a:Lff;
+.field private final a:Ljava/lang/Object;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lff;)V
+.method public constructor <init>(I)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0, p1}, Lfd;-><init>(I)V
 
-    iput-object p1, p0, Lfe;->a:Lff;
+    new-instance p1, Ljava/lang/Object;
+
+    invoke-direct {p1}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lfe;->a:Ljava/lang/Object;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final g(Landroid/view/KeyEvent;)Z
+.method public final a()Ljava/lang/Object;
+    .locals 2
+
+    iget-object v0, p0, Lfe;->a:Ljava/lang/Object;
+
+    monitor-enter v0
+
+    :try_start_0
+    invoke-super {p0}, Lfd;->a()Ljava/lang/Object;
+
+    move-result-object v1
+
+    monitor-exit v0
+
+    return-object v1
+
+    :catchall_0
+    move-exception v1
+
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw v1
+.end method
+
+.method public final b(Ljava/lang/Object;)Z
     .locals 1
 
-    iget-object v0, p0, Lfe;->a:Lff;
+    iget-object v0, p0, Lfe;->a:Ljava/lang/Object;
 
-    invoke-virtual {v0, p1}, Lff;->c(Landroid/view/KeyEvent;)Z
+    monitor-enter v0
+
+    :try_start_0
+    invoke-super {p0, p1}, Lfd;->b(Ljava/lang/Object;)Z
 
     move-result p1
 
+    monitor-exit v0
+
     return p1
+
+    :catchall_0
+    move-exception p1
+
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw p1
 .end method

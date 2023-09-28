@@ -1,73 +1,49 @@
-.class public final Lmxp;
-.super Ljava/util/AbstractSequentialList;
+.class public final synthetic Lmxp;
+.super Ljava/lang/Object;
 
 # interfaces
-.implements Ljava/io/Serializable;
-
-
-# static fields
-.field private static final serialVersionUID:J
+.implements Lojz;
 
 
 # instance fields
-.field final a:Ljava/util/List;
-
-.field final b:Lmqi;
+.field public final synthetic a:Lmxq;
 
 
 # direct methods
-.method public constructor <init>(Ljava/util/List;Lmqi;)V
+.method public synthetic constructor <init>(Lmxq;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/util/AbstractSequentialList;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    iput-object p1, p0, Lmxp;->a:Ljava/util/List;
-
-    invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    iput-object p2, p0, Lmxp;->b:Lmqi;
+    iput-object p1, p0, Lmxp;->a:Lmxq;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final clear()V
-    .locals 1
+.method public final a()Ljava/lang/Object;
+    .locals 4
 
-    iget-object v0, p0, Lmxp;->a:Ljava/util/List;
+    iget-object v0, p0, Lmxp;->a:Lmxq;
 
-    invoke-interface {v0}, Ljava/util/List;->clear()V
+    iget-object v0, v0, Lmxq;->e:Lmfa;
 
-    return-void
-.end method
+    invoke-virtual {v0}, Lmfa;->a()Ljava/io/File;
 
-.method public final listIterator(I)Ljava/util/ListIterator;
-    .locals 2
+    move-result-object v0
 
-    new-instance v0, Lmxo;
+    invoke-virtual {v0}, Ljava/io/File;->getTotalSpace()J
 
-    iget-object v1, p0, Lmxp;->a:Ljava/util/List;
+    move-result-wide v0
 
-    invoke-interface {v1, p1}, Ljava/util/List;->listIterator(I)Ljava/util/ListIterator;
+    const-wide/16 v2, 0x400
 
-    move-result-object p1
+    div-long/2addr v0, v2
 
-    invoke-direct {v0, p0, p1}, Lmxo;-><init>(Lmxp;Ljava/util/ListIterator;)V
+    invoke-static {v0, v1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object v0
 
     return-object v0
-.end method
-
-.method public final size()I
-    .locals 1
-
-    iget-object v0, p0, Lmxp;->a:Ljava/util/List;
-
-    invoke-interface {v0}, Ljava/util/List;->size()I
-
-    move-result v0
-
-    return v0
 .end method

@@ -1,211 +1,268 @@
 .class public final Lkeg;
-.super Ljava/lang/Object;
-
-# interfaces
-.implements Ljava/lang/Comparable;
-
-
-# static fields
-.field public static final a:Lkeg;
+.super Lkdu;
 
 
 # instance fields
-.field public final b:J
-
-.field public final c:J
-
-.field public final d:J
+.field private final a:Lkdi;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 8
-
-    new-instance v7, Lkeg;
-
-    const-wide/16 v5, -0x1
-
-    move-object v0, v7
-
-    move-wide v1, v5
-
-    move-wide v3, v5
-
-    invoke-direct/range {v0 .. v6}, Lkeg;-><init>(JJJ)V
-
-    sput-object v7, Lkeg;->a:Lkeg;
-
-    return-void
-.end method
-
-.method public constructor <init>(JJJ)V
+.method public constructor <init>(Lkdx;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0, p1}, Lkdu;-><init>(Lkdx;)V
 
-    iput-wide p1, p0, Lkeg;->b:J
+    new-instance p1, Lkdi;
 
-    iput-wide p3, p0, Lkeg;->c:J
+    invoke-direct {p1}, Lkdi;-><init>()V
 
-    iput-wide p5, p0, Lkeg;->d:J
+    iput-object p1, p0, Lkeg;->a:Lkdi;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Lkeg;)I
-    .locals 4
+.method protected final a()V
+    .locals 8
 
-    iget-wide v0, p0, Lkeg;->d:J
+    invoke-virtual {p0}, Lkdt;->e()Lkdo;
 
-    iget-wide v2, p1, Lkeg;->d:J
+    move-result-object v0
 
-    cmp-long p1, v0, v2
+    iget-object v1, v0, Lkdo;->d:Lkdi;
 
-    return p1
-.end method
+    if-nez v1, :cond_4
 
-.method public final bridge synthetic compareTo(Ljava/lang/Object;)I
-    .locals 0
+    monitor-enter v0
 
-    check-cast p1, Lkeg;
+    :try_start_0
+    iget-object v1, v0, Lkdo;->d:Lkdi;
 
-    invoke-virtual {p0, p1}, Lkeg;->a(Lkeg;)I
+    if-nez v1, :cond_3
 
-    move-result p1
+    new-instance v1, Lkdi;
 
-    return p1
-.end method
+    invoke-direct {v1}, Lkdi;-><init>()V
 
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 7
+    iget-object v2, v0, Lkdo;->b:Landroid/content/Context;
 
-    const/4 v0, 0x1
+    invoke-virtual {v2}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
 
-    if-ne p0, p1, :cond_0
+    move-result-object v2
 
-    return v0
+    iget-object v3, v0, Lkdo;->b:Landroid/content/Context;
+
+    invoke-virtual {v3}, Landroid/content/Context;->getPackageName()Ljava/lang/String;
+
+    move-result-object v3
+
+    iput-object v3, v1, Lkdi;->c:Ljava/lang/String;
+
+    invoke-virtual {v2, v3}, Landroid/content/pm/PackageManager;->getInstallerPackageName(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v4
+
+    iput-object v4, v1, Lkdi;->d:Ljava/lang/String;
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    const/4 v4, 0x0
+
+    :try_start_1
+    iget-object v5, v0, Lkdo;->b:Landroid/content/Context;
+
+    invoke-virtual {v5}, Landroid/content/Context;->getPackageName()Ljava/lang/String;
+
+    move-result-object v5
+
+    const/4 v6, 0x0
+
+    invoke-virtual {v2, v5, v6}, Landroid/content/pm/PackageManager;->getPackageInfo(Ljava/lang/String;I)Landroid/content/pm/PackageInfo;
+
+    move-result-object v5
+
+    if-eqz v5, :cond_1
+
+    iget-object v6, v5, Landroid/content/pm/PackageInfo;->applicationInfo:Landroid/content/pm/ApplicationInfo;
+
+    invoke-virtual {v2, v6}, Landroid/content/pm/PackageManager;->getApplicationLabel(Landroid/content/pm/ApplicationInfo;)Ljava/lang/CharSequence;
+
+    move-result-object v2
+
+    invoke-static {v2}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+
+    move-result v6
+
+    if-nez v6, :cond_0
+
+    invoke-interface {v2}, Ljava/lang/CharSequence;->toString()Ljava/lang/String;
+
+    move-result-object v3
+    :try_end_1
+    .catch Landroid/content/pm/PackageManager$NameNotFoundException; {:try_start_1 .. :try_end_1} :catch_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    goto :goto_0
 
     :cond_0
-    const/4 v1, 0x0
+    :goto_0
+    :try_start_2
+    iget-object v4, v5, Landroid/content/pm/PackageInfo;->versionName:Ljava/lang/String;
+    :try_end_2
+    .catch Landroid/content/pm/PackageManager$NameNotFoundException; {:try_start_2 .. :try_end_2} :catch_0
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
-    if-nez p1, :cond_1
+    goto :goto_1
 
-    return v1
+    :catch_0
+    move-exception v2
+
+    goto :goto_2
 
     :cond_1
-    instance-of v2, p1, Lkeg;
+    :goto_1
+    goto :goto_4
 
-    if-nez v2, :cond_2
+    :catch_1
+    move-exception v2
 
-    return v1
+    :goto_2
+    :try_start_3
+    const-string v2, "GAv4"
+
+    const-string v5, "Error retrieving package info: appName set to "
+
+    invoke-static {v3}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v6
+
+    invoke-virtual {v6}, Ljava/lang/String;->length()I
+
+    move-result v7
+
+    if-eqz v7, :cond_2
+
+    invoke-virtual {v5, v6}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v5
+
+    goto :goto_3
 
     :cond_2
-    check-cast p1, Lkeg;
+    new-instance v6, Ljava/lang/String;
 
-    iget-wide v2, p0, Lkeg;->d:J
+    invoke-direct {v6, v5}, Ljava/lang/String;-><init>(Ljava/lang/String;)V
 
-    iget-wide v4, p1, Lkeg;->d:J
+    move-object v5, v6
 
-    cmp-long v6, v2, v4
+    :goto_3
+    invoke-static {v2, v5}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    if-nez v6, :cond_3
+    :goto_4
+    iput-object v3, v1, Lkdi;->a:Ljava/lang/String;
 
-    iget-wide v2, p0, Lkeg;->b:J
+    iput-object v4, v1, Lkdi;->b:Ljava/lang/String;
 
-    iget-wide v4, p1, Lkeg;->b:J
-
-    cmp-long v6, v2, v4
-
-    if-nez v6, :cond_3
-
-    iget-wide v2, p0, Lkeg;->c:J
-
-    iget-wide v4, p1, Lkeg;->c:J
-
-    cmp-long p1, v2, v4
-
-    if-nez p1, :cond_3
-
-    return v0
+    iput-object v1, v0, Lkdo;->d:Lkdi;
 
     :cond_3
-    return v1
-.end method
+    monitor-exit v0
 
-.method public final hashCode()I
-    .locals 3
+    goto :goto_5
 
-    const/4 v0, 0x3
+    :catchall_0
+    move-exception v1
 
-    new-array v0, v0, [Ljava/lang/Object;
+    monitor-exit v0
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_0
 
-    iget-wide v1, p0, Lkeg;->b:J
+    throw v1
 
-    invoke-static {v1, v2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+    :cond_4
+    :goto_5
+    iget-object v0, v0, Lkdo;->d:Lkdi;
 
-    move-result-object v1
+    iget-object v1, p0, Lkeg;->a:Lkdi;
 
-    const/4 v2, 0x0
+    iget-object v2, v0, Lkdi;->a:Ljava/lang/String;
 
-    aput-object v1, v0, v2
+    invoke-static {v2}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
-    iget-wide v1, p0, Lkeg;->d:J
+    move-result v2
 
-    invoke-static {v1, v2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+    if-nez v2, :cond_5
 
-    move-result-object v1
+    iget-object v2, v0, Lkdi;->a:Ljava/lang/String;
 
-    const/4 v2, 0x1
+    iput-object v2, v1, Lkdi;->a:Ljava/lang/String;
 
-    aput-object v1, v0, v2
+    :cond_5
+    iget-object v2, v0, Lkdi;->b:Ljava/lang/String;
 
-    iget-wide v1, p0, Lkeg;->c:J
+    invoke-static {v2}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
-    invoke-static {v1, v2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+    move-result v2
 
-    move-result-object v1
+    if-nez v2, :cond_6
 
-    const/4 v2, 0x2
+    iget-object v2, v0, Lkdi;->b:Ljava/lang/String;
 
-    aput-object v1, v0, v2
+    iput-object v2, v1, Lkdi;->b:Ljava/lang/String;
 
-    invoke-static {v0}, Ljava/util/Arrays;->hashCode([Ljava/lang/Object;)I
+    :cond_6
+    iget-object v2, v0, Lkdi;->c:Ljava/lang/String;
 
-    move-result v0
+    invoke-static {v2}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
-    return v0
-.end method
+    move-result v2
 
-.method public final toString()Ljava/lang/String;
-    .locals 4
+    if-nez v2, :cond_7
 
-    invoke-static {p0}, Lmoz;->y(Ljava/lang/Object;)Lmqo;
+    iget-object v2, v0, Lkdi;->c:Ljava/lang/String;
+
+    iput-object v2, v1, Lkdi;->c:Ljava/lang/String;
+
+    :cond_7
+    iget-object v2, v0, Lkdi;->d:Ljava/lang/String;
+
+    invoke-static {v2}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+
+    move-result v2
+
+    if-nez v2, :cond_8
+
+    iget-object v0, v0, Lkdi;->d:Ljava/lang/String;
+
+    iput-object v0, v1, Lkdi;->d:Ljava/lang/String;
+
+    :cond_8
+    invoke-virtual {p0}, Lkdt;->k()Lkfn;
 
     move-result-object v0
 
-    iget-wide v1, p0, Lkeg;->b:J
+    invoke-virtual {v0}, Lkdu;->z()V
 
-    const-string v3, "timestamp"
+    iget-object v1, v0, Lkfn;->c:Ljava/lang/String;
 
-    invoke-virtual {v0, v3, v1, v2}, Lmqo;->f(Ljava/lang/String;J)V
+    if-eqz v1, :cond_9
 
-    iget-wide v1, p0, Lkeg;->d:J
+    iget-object v2, p0, Lkeg;->a:Lkdi;
 
-    const-string v3, "onStartedId"
+    iput-object v1, v2, Lkdi;->a:Ljava/lang/String;
 
-    invoke-virtual {v0, v3, v1, v2}, Lmqo;->f(Ljava/lang/String;J)V
+    :cond_9
+    invoke-virtual {v0}, Lkdu;->z()V
 
-    iget-wide v1, p0, Lkeg;->c:J
+    iget-object v0, v0, Lkfn;->a:Ljava/lang/String;
 
-    const-string v3, "frameNumber"
+    if-eqz v0, :cond_a
 
-    invoke-virtual {v0, v3, v1, v2}, Lmqo;->f(Ljava/lang/String;J)V
+    iget-object v1, p0, Lkeg;->a:Lkdi;
 
-    invoke-virtual {v0}, Lmqo;->toString()Ljava/lang/String;
+    iput-object v0, v1, Lkdi;->b:Ljava/lang/String;
 
-    move-result-object v0
-
-    return-object v0
+    :cond_a
+    return-void
 .end method

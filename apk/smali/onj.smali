@@ -1,16 +1,9 @@
-.class public final Lonj;
+.class public abstract Lonj;
 .super Ljava/lang/Object;
-
-# interfaces
-.implements Ljava/io/Serializable;
-
-
-# instance fields
-.field public a:I
 
 
 # direct methods
-.method public constructor <init>()V
+.method protected constructor <init>()V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -20,12 +13,17 @@
 
 
 # virtual methods
-.method public final toString()Ljava/lang/String;
+.method protected abstract a()Ljava/lang/Object;
+.end method
+
+.method public toString()Ljava/lang/String;
     .locals 1
 
-    iget v0, p0, Lonj;->a:I
+    invoke-virtual {p0}, Lonj;->a()Ljava/lang/Object;
 
-    invoke-static {v0}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
     move-result-object v0
 

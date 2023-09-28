@@ -1,104 +1,68 @@
-.class final Lirg;
-.super List;
+.class public final Lirg;
+.super Ljava/lang/Object;
+
+
+# static fields
+.field public static final a:Louj;
 
 
 # instance fields
-.field final synthetic a:Lirn;
+.field public final b:I
+
+.field public final c:I
+
+.field public final d:Ljava/lang/String;
+
+.field public e:Ljavax/microedition/khronos/egl/EGLDisplay;
+
+.field public f:Ljavax/microedition/khronos/egl/EGLConfig;
+
+.field public g:[Ljavax/microedition/khronos/egl/EGLConfig;
+
+.field public h:Ljavax/microedition/khronos/egl/EGLContext;
+
+.field public i:Ljavax/microedition/khronos/egl/EGLSurface;
+
+.field public j:Ljavax/microedition/khronos/egl/EGL10;
+
+.field public k:Ljavax/microedition/khronos/opengles/GL10;
+
+.field public l:Lirf;
 
 
 # direct methods
-.method public constructor <init>(Lirn;)V
-    .locals 0
-
-    iput-object p1, p0, Lirg;->a:Lirn;
-
-    invoke-direct {p0, p1}, List;-><init>(Lita;)V
-
-    return-void
-.end method
-
-
-# virtual methods
-.method public final a()V
-    .locals 2
-
-    iget-object v0, p0, Lirg;->a:Lirn;
-
-    iget-object v0, v0, Lirn;->a:Lhiu;
-
-    invoke-virtual {v0}, Lhiu;->e()V
-
-    invoke-virtual {p0}, Lisk;->r()V
-
-    iget-object v0, p0, Lirg;->a:Lirn;
-
-    iget-object v1, v0, Lirn;->a:Lhiu;
-
-    iget-object v0, v0, Lirn;->e:Lhiw;
-
-    invoke-virtual {v1, v0}, Lhiu;->g(Lhiw;)V
-
-    return-void
-.end method
-
-.method public final b()V
-    .locals 2
-
-    iget-object v0, p0, Lirg;->a:Lirn;
-
-    iget-object v0, v0, Lirn;->a:Lhiu;
-
-    invoke-virtual {v0}, Lhiu;->e()V
-
-    iget-object v0, p0, Lirg;->a:Lirn;
-
-    iget-object v1, v0, Lirn;->a:Lhiu;
-
-    iget-object v0, v0, Lirn;->f:Lhiw;
-
-    invoke-virtual {v1, v0}, Lhiu;->g(Lhiw;)V
-
-    return-void
-.end method
-
-.method public final c()V
-    .locals 2
-
-    iget-object v0, p0, Lirg;->a:Lirn;
-
-    iget-object v0, v0, Lirn;->a:Lhiu;
-
-    invoke-virtual {v0}, Lhiu;->e()V
-
-    iget-object v0, p0, Lirg;->a:Lirn;
-
-    iget-object v1, v0, Lirn;->a:Lhiu;
-
-    iget-object v0, v0, Lirn;->h:Lhiw;
-
-    invoke-virtual {v1, v0}, Lhiu;->g(Lhiw;)V
-
-    return-void
-.end method
-
-.method public final d(FI)V
+.method static constructor <clinit>()V
     .locals 1
 
-    iget-object v0, p0, Lirg;->a:Lirn;
+    const-string v0, "com/google/android/apps/camera/timelapse/stabilization/warp/PixelBuffer"
 
-    iget-object v0, v0, Lirn;->a:Lhiu;
+    invoke-static {v0}, Louj;->h(Ljava/lang/String;)Louj;
 
-    invoke-virtual {v0}, Lhiu;->e()V
+    move-result-object v0
 
-    invoke-super {p0, p1, p2}, List;->d(FI)V
+    sput-object v0, Lirg;->a:Louj;
 
-    iget-object p1, p0, Lirg;->a:Lirn;
+    return-void
+.end method
 
-    iget-object p2, p1, Lirn;->a:Lhiu;
+.method public constructor <init>(II)V
+    .locals 0
 
-    iget-object p1, p1, Lirn;->h:Lhiw;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-virtual {p2, p1}, Lhiu;->g(Lhiw;)V
+    iput p1, p0, Lirg;->c:I
+
+    iput p2, p0, Lirg;->b:I
+
+    invoke-static {}, Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
+
+    move-result-object p1
+
+    invoke-virtual {p1}, Ljava/lang/Thread;->getName()Ljava/lang/String;
+
+    move-result-object p1
+
+    iput-object p1, p0, Lirg;->d:Ljava/lang/String;
 
     return-void
 .end method

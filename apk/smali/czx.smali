@@ -1,46 +1,39 @@
-.class public interface abstract Lczx;
+.class public final synthetic Lczx;
 .super Ljava/lang/Object;
+
+# interfaces
+.implements Ldab;
+
+
+# static fields
+.field public static final synthetic a:Lczx;
+
+
+# direct methods
+.method static synthetic constructor <clinit>()V
+    .locals 1
+
+    new-instance v0, Lczx;
+
+    invoke-direct {v0}, Lczx;-><init>()V
+
+    sput-object v0, Lczx;->a:Lczx;
+
+    return-void
+.end method
+
+.method private synthetic constructor <init>()V
+    .locals 0
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method
 
 
 # virtual methods
-.method public abstract a(Lczy;)V
-.end method
+.method public final i(Lczo;)V
+    .locals 0
 
-.method public abstract c()V
-.end method
-
-.method public abstract d()V
-.end method
-
-.method public abstract e()V
-.end method
-
-.method public abstract f()V
-.end method
-
-.method public abstract g(Lczy;)V
-.end method
-
-.method public abstract h(Z)V
-.end method
-
-.method public abstract i(Z)V
-.end method
-
-.method public abstract j()V
-.end method
-
-.method public abstract k()V
-.end method
-
-.method public abstract l()V
-.end method
-
-.method public abstract m()V
-.end method
-
-.method public abstract o(Lmtb;Liaq;IIIZILj$/util/Optional;)V
-.end method
-
-.method public abstract p(Landroidx/wear/ambient/AmbientModeSupport$AmbientController;)V
+    return-void
 .end method

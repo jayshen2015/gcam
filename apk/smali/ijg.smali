@@ -1,103 +1,70 @@
-.class final Lijg;
-.super Ljvd;
+.class public final enum Lijg;
+.super Ljava/lang/Enum;
 
 
-# instance fields
-.field final synthetic a:Lmqp;
+# static fields
+.field public static final enum a:Lijg;
+
+.field public static final enum b:Lijg;
+
+.field private static final synthetic c:[Lijg;
 
 
 # direct methods
-.method public constructor <init>(Lmqp;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 5
 
-    iput-object p1, p0, Lijg;->a:Lmqp;
+    new-instance v0, Lijg;
 
-    invoke-direct {p0}, Ljvd;-><init>()V
+    const-string v1, "APP_ONCREATE_START"
+
+    const/4 v2, 0x0
+
+    invoke-direct {v0, v1, v2}, Lijg;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, Lijg;->a:Lijg;
+
+    new-instance v1, Lijg;
+
+    const-string v3, "APP_ONCREATE_END"
+
+    const/4 v4, 0x1
+
+    invoke-direct {v1, v3, v4}, Lijg;-><init>(Ljava/lang/String;I)V
+
+    sput-object v1, Lijg;->b:Lijg;
+
+    const/4 v3, 0x2
+
+    new-array v3, v3, [Lijg;
+
+    aput-object v0, v3, v2
+
+    aput-object v1, v3, v4
+
+    sput-object v3, Lijg;->c:[Lijg;
 
     return-void
 .end method
 
+.method private constructor <init>(Ljava/lang/String;I)V
+    .locals 0
 
-# virtual methods
-.method public final a(Ligo;)Z
-    .locals 5
+    invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
-    iget-object v0, p0, Lijg;->a:Lmqp;
+    return-void
+.end method
 
-    invoke-virtual {v0}, Lmqp;->g()Z
+.method public static values()[Lijg;
+    .locals 1
 
-    move-result v1
+    sget-object v0, Lijg;->c:[Lijg;
 
-    const/4 v2, 0x0
-
-    if-nez v1, :cond_0
-
-    return v2
-
-    :cond_0
-    invoke-virtual {v0}, Lmqp;->c()Ljava/lang/Object;
+    invoke-virtual {v0}, [Lijg;->clone()Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Ldal;
+    check-cast v0, [Lijg;
 
-    invoke-interface {v0}, Ldal;->a()Ldau;
-
-    move-result-object v0
-
-    invoke-interface {v0}, Ldau;->c()Z
-
-    move-result v1
-
-    if-nez v1, :cond_1
-
-    return v2
-
-    :cond_1
-    invoke-virtual {p1}, Ligo;->d()Landroid/graphics/PointF;
-
-    move-result-object p1
-
-    move-object v1, v0
-
-    check-cast v1, Ldas;
-
-    iget-object v3, v1, Ldas;->b:Ldhi;
-
-    sget-object v4, Ldho;->cm:Ldhj;
-
-    invoke-interface {v3, v4}, Ldhi;->l(Ldhj;)Z
-
-    move-result v3
-
-    if-eqz v3, :cond_2
-
-    iget-object v1, v1, Ldas;->f:Licy;
-
-    invoke-virtual {v1}, Licy;->getContentView()Landroid/view/View;
-
-    move-result-object v1
-
-    goto :goto_0
-
-    :cond_2
-    iget-object v1, v1, Ldas;->c:Lcom/google/android/apps/camera/ui/popupmenu/PopupMenuView;
-
-    iget-object v1, v1, Lcom/google/android/apps/camera/ui/popupmenu/PopupMenuView;->a:Landroid/widget/LinearLayout;
-
-    :goto_0
-    invoke-static {p1, v1}, Ljvd;->B(Landroid/graphics/PointF;Landroid/view/View;)Z
-
-    move-result p1
-
-    if-nez p1, :cond_3
-
-    invoke-interface {v0}, Ldau;->b()V
-
-    const/4 p1, 0x1
-
-    return p1
-
-    :cond_3
-    return v2
+    return-object v0
 .end method

@@ -1,159 +1,80 @@
-.class public final Lcqe;
-.super Ljava/lang/Object;
-
-# interfaces
-.implements Logk;
+.class final Lcqe;
+.super Lcqs;
 
 
 # instance fields
-.field private final a:Loiw;
-
-.field private final b:Loiw;
-
-.field private final c:Loiw;
-
-.field private final d:Loiw;
-
-.field private final e:Loiw;
-
-.field private final f:Loiw;
-
-.field private final g:Loiw;
-
-.field private final h:Loiw;
+.field final synthetic a:Lcqi;
 
 
 # direct methods
-.method public constructor <init>(Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;)V
+.method public constructor <init>(Lcqi;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lcqe;->a:Lcqi;
 
-    iput-object p1, p0, Lcqe;->a:Loiw;
-
-    iput-object p2, p0, Lcqe;->b:Loiw;
-
-    iput-object p3, p0, Lcqe;->c:Loiw;
-
-    iput-object p4, p0, Lcqe;->d:Loiw;
-
-    iput-object p5, p0, Lcqe;->e:Loiw;
-
-    iput-object p6, p0, Lcqe;->f:Loiw;
-
-    iput-object p7, p0, Lcqe;->g:Loiw;
-
-    iput-object p8, p0, Lcqe;->h:Loiw;
+    invoke-direct {p0, p1}, Lcqs;-><init>(Lcqw;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Lcqd;
-    .locals 15
+.method public final a()V
+    .locals 2
 
-    iget-object v0, p0, Lcqe;->a:Loiw;
+    iget-object v0, p0, Lcqe;->a:Lcqi;
 
-    check-cast v0, Ldaz;
+    iget-object v0, v0, Lcqi;->a:Lihu;
 
-    invoke-virtual {v0}, Ldaz;->a()Ldja;
+    invoke-virtual {v0}, Lihu;->e()V
 
-    move-result-object v2
+    iget-object v0, p0, Lcqe;->a:Lcqi;
 
-    iget-object v0, p0, Lcqe;->b:Loiw;
+    iget-object v1, v0, Lcqi;->a:Lihu;
 
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
+    iget-object v0, v0, Lcqi;->c:Lihw;
 
-    move-result-object v0
+    invoke-virtual {v1, v0}, Lihu;->g(Lihw;)V
 
-    move-object v3, v0
-
-    check-cast v3, Lcqn;
-
-    iget-object v0, p0, Lcqe;->c:Loiw;
-
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    move-object v4, v0
-
-    check-cast v4, Llij;
-
-    iget-object v0, p0, Lcqe;->d:Loiw;
-
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    move-object v5, v0
-
-    check-cast v5, Llij;
-
-    iget-object v0, p0, Lcqe;->e:Loiw;
-
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    move-object v6, v0
-
-    check-cast v6, Lcvr;
-
-    iget-object v0, p0, Lcqe;->f:Loiw;
-
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    move-object v7, v0
-
-    check-cast v7, Lcsa;
-
-    iget-object v0, p0, Lcqe;->g:Loiw;
-
-    check-cast v0, Ljzo;
-
-    invoke-virtual {v0}, Ljzo;->a()Lklj;
-
-    move-result-object v8
-
-    iget-object v0, p0, Lcqe;->h:Loiw;
-
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    move-object v9, v0
-
-    check-cast v9, Ldhi;
-
-    new-instance v0, Lcqd;
-
-    const/4 v10, 0x0
-
-    const/4 v11, 0x0
-
-    const/4 v12, 0x0
-
-    const/4 v13, 0x0
-
-    const/4 v14, 0x0
-
-    move-object v1, v0
-
-    invoke-direct/range {v1 .. v14}, Lcqd;-><init>(Ldja;Lcqn;Llij;Llij;Lcvr;Lcsa;Lklj;Ldhi;[B[B[B[B[B)V
-
-    return-object v0
+    return-void
 .end method
 
-.method public final bridge synthetic get()Ljava/lang/Object;
-    .locals 1
+.method public final b()V
+    .locals 2
 
-    invoke-virtual {p0}, Lcqe;->a()Lcqd;
+    iget-object v0, p0, Lcqe;->a:Lcqi;
 
-    move-result-object v0
+    iget-object v0, v0, Lcqi;->a:Lihu;
 
-    return-object v0
+    invoke-virtual {v0}, Lihu;->e()V
+
+    iget-object v0, p0, Lcqe;->a:Lcqi;
+
+    iget-object v1, v0, Lcqi;->a:Lihu;
+
+    iget-object v0, v0, Lcqi;->d:Lihw;
+
+    invoke-virtual {v1, v0}, Lihu;->g(Lihw;)V
+
+    return-void
+.end method
+
+.method public final c()V
+    .locals 2
+
+    iget-object v0, p0, Lcqe;->a:Lcqi;
+
+    iget-object v0, v0, Lcqi;->a:Lihu;
+
+    invoke-virtual {v0}, Lihu;->e()V
+
+    iget-object v0, p0, Lcqe;->a:Lcqi;
+
+    iget-object v1, v0, Lcqi;->a:Lihu;
+
+    iget-object v0, v0, Lcqi;->e:Lihw;
+
+    invoke-virtual {v1, v0}, Lihu;->g(Lihw;)V
+
+    return-void
 .end method

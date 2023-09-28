@@ -2,19 +2,29 @@
 .super Ljava/lang/Object;
 
 
-# static fields
-.field public static final a:Ljava/util/concurrent/ConcurrentMap;
+# instance fields
+.field public final a:Llco;
+
+.field public final b:Llar;
+
+.field public c:Lcom/google/android/apps/camera/autotimer/ui/AutoTimerIndicatorView;
+
+.field public d:Z
+
+.field public final e:Lbqg;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
+.method public constructor <init>(Lbqg;Llco;Llar;)V
+    .locals 0
 
-    new-instance v0, Lj$/util/concurrent/ConcurrentHashMap;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {v0}, Lj$/util/concurrent/ConcurrentHashMap;-><init>()V
+    iput-object p1, p0, Lcae;->e:Lbqg;
 
-    sput-object v0, Lcae;->a:Ljava/util/concurrent/ConcurrentMap;
+    iput-object p2, p0, Lcae;->a:Llco;
+
+    iput-object p3, p0, Lcae;->b:Llar;
 
     return-void
 .end method

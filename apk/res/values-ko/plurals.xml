@@ -1,12 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <plurals name="accessibility_timelapse_manual_record_speed_desc">
-        <item quantity="other">타임랩스 속도 비율 %d</item>
-        <item quantity="one">타임랩스 속도 비율 %d</item>
-    </plurals>
-    <plurals name="number_of_cropped_face">
-        <item quantity="other">%d개 잘림.</item>
-        <item quantity="one">1개 잘림.</item>
+    <plurals name="number_of_faces_announcement">
+        <item quantity="other">얼굴 %1$d개</item>
+        <item quantity="one">얼굴 %1$d개</item>
     </plurals>
     <plurals name="photos_remaining">
         <item quantity="other">사진 약 %s장</item>

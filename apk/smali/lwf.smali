@@ -2,278 +2,156 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Logk;
+.implements Llvq;
 
 
 # instance fields
-.field private final a:Loiw;
-
-.field private final b:Loiw;
-
-.field private final c:Loiw;
-
-.field private final synthetic d:I
+.field private final a:Llvq;
 
 
 # direct methods
-.method public constructor <init>(Loiw;Loiw;Loiw;I)V
+.method public constructor <init>(Llvq;)V
     .locals 0
-
-    iput p4, p0, Llwf;->d:I
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Llwf;->a:Loiw;
-
-    iput-object p2, p0, Llwf;->b:Loiw;
-
-    iput-object p3, p0, Llwf;->c:Loiw;
-
-    return-void
-.end method
-
-.method public constructor <init>(Loiw;Loiw;Loiw;I[B)V
-    .locals 0
-
-    iput p4, p0, Llwf;->d:I
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Llwf;->c:Loiw;
-
-    iput-object p2, p0, Llwf;->a:Loiw;
-
-    iput-object p3, p0, Llwf;->b:Loiw;
-
-    return-void
-.end method
-
-.method public constructor <init>(Loiw;Loiw;Loiw;I[C)V
-    .locals 0
-
-    iput p4, p0, Llwf;->d:I
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Llwf;->b:Loiw;
-
-    iput-object p2, p0, Llwf;->a:Loiw;
-
-    iput-object p3, p0, Llwf;->c:Loiw;
-
-    return-void
-.end method
-
-.method public constructor <init>(Loiw;Loiw;Loiw;I[S)V
-    .locals 0
-
-    iput p4, p0, Llwf;->d:I
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Llwf;->b:Loiw;
-
-    iput-object p2, p0, Llwf;->a:Loiw;
-
-    iput-object p3, p0, Llwf;->c:Loiw;
+    iput-object p1, p0, Llwf;->a:Llvq;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic get()Ljava/lang/Object;
-    .locals 5
+.method public final a(Llvs;)Llvp;
+    .locals 1
 
-    iget v0, p0, Llwf;->d:I
+    iget-object v0, p0, Llwf;->a:Llvq;
 
-    packed-switch v0, :pswitch_data_0
+    invoke-interface {v0, p1}, Llvq;->a(Llvs;)Llvp;
 
-    iget-object v0, p0, Llwf;->b:Loiw;
+    move-result-object p1
 
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
+    return-object p1
+.end method
 
-    move-result-object v0
+.method public final b()Llvs;
+    .locals 1
 
-    iget-object v1, p0, Llwf;->a:Loiw;
+    iget-object v0, p0, Llwf;->a:Llvq;
 
-    invoke-interface {v1}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Lmmj;
-
-    iget-object v2, p0, Llwf;->c:Loiw;
-
-    check-cast v2, Ldwh;
-
-    invoke-virtual {v2}, Ldwh;->a()Landroid/content/Context;
-
-    move-result-object v2
-
-    new-instance v3, Lmlv;
-
-    check-cast v0, Lmma;
-
-    invoke-direct {v3, v0, v1, v2}, Lmlv;-><init>(Lmma;Lmmj;Landroid/content/Context;)V
-
-    return-object v3
-
-    :pswitch_0
-    iget-object v0, p0, Llwf;->b:Loiw;
-
-    invoke-static {v0}, Logj;->a(Loiw;)Logd;
+    invoke-interface {v0}, Llvq;->b()Llvs;
 
     move-result-object v0
-
-    iget-object v1, p0, Llwf;->a:Loiw;
-
-    invoke-interface {v1}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Llzz;
-
-    iget-object v2, p0, Llwf;->c:Loiw;
-
-    invoke-interface {v2}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Lkrn;
-
-    new-instance v3, Lmav;
-
-    invoke-direct {v3, v0, v1, v2}, Lmav;-><init>(Logd;Llzz;Lkrn;)V
-
-    return-object v3
-
-    :pswitch_1
-    iget-object v0, p0, Llwf;->a:Loiw;
-
-    check-cast v0, Logl;
-
-    iget-object v0, v0, Logl;->a:Ljava/lang/Object;
-
-    check-cast v0, Lmqp;
-
-    iget-object v1, p0, Llwf;->b:Loiw;
-
-    check-cast v1, Logl;
-
-    iget-object v1, v1, Logl;->a:Ljava/lang/Object;
-
-    check-cast v1, Lmqp;
-
-    iget-object v2, p0, Llwf;->c:Loiw;
-
-    check-cast v2, Lest;
-
-    invoke-virtual {v2}, Lest;->a()Lmqp;
-
-    move-result-object v2
-
-    invoke-virtual {v0, v1}, Lmqp;->a(Lmqp;)Lmqp;
-
-    move-result-object v0
-
-    invoke-virtual {v0, v2}, Lmqp;->a(Lmqp;)Lmqp;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lmqp;->c()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/content/Context;
-
-    invoke-virtual {v0}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     return-object v0
+.end method
 
-    :pswitch_2
-    iget-object v0, p0, Llwf;->c:Loiw;
+.method public final c(I)Llvs;
+    .locals 1
 
-    check-cast v0, Ldwh;
+    iget-object v0, p0, Llwf;->a:Llvq;
 
-    invoke-virtual {v0}, Ldwh;->a()Landroid/content/Context;
+    invoke-interface {v0, p1}, Llvq;->c(I)Llvs;
 
-    move-result-object v0
+    move-result-object p1
 
-    iget-object v1, p0, Llwf;->a:Loiw;
+    return-object p1
+.end method
 
-    check-cast v1, Logl;
+.method public final d(Ljava/lang/String;)Llvs;
+    .locals 1
 
-    iget-object v1, v1, Logl;->a:Ljava/lang/Object;
+    iget-object v0, p0, Llwf;->a:Llvq;
 
-    check-cast v1, Lmqp;
+    invoke-interface {v0, p1}, Llvq;->d(Ljava/lang/String;)Llvs;
 
-    iget-object v2, p0, Llwf;->b:Loiw;
+    move-result-object p1
 
-    check-cast v2, Llnu;
+    return-object p1
+.end method
 
-    invoke-virtual {v2}, Llnu;->a()Llnt;
+.method public final e(Llwd;)Llvs;
+    .locals 1
 
-    move-result-object v2
+    iget-object v0, p0, Llwf;->a:Llvq;
 
-    new-instance v3, Lcom/google/android/libraries/performance/primes/transmitter/clearcut/ClearcutMetricSnapshotTransmitter;
+    invoke-interface {v0, p1}, Llvq;->e(Llwd;)Llvs;
 
-    invoke-direct {v3}, Lcom/google/android/libraries/performance/primes/transmitter/clearcut/ClearcutMetricSnapshotTransmitter;-><init>()V
+    move-result-object p1
 
-    new-instance v4, Llnw;
+    return-object p1
+.end method
 
-    invoke-direct {v4, v0, v1, v2, v3}, Llnw;-><init>(Landroid/content/Context;Lmqp;Llnt;Lcom/google/android/libraries/performance/primes/transmitter/clearcut/ClearcutMetricSnapshotTransmitter;)V
+.method public final f(Llvs;)Lghx;
+    .locals 1
 
-    return-object v4
+    new-instance v0, Lghx;
 
-    :pswitch_3
-    iget-object v0, p0, Llwf;->a:Loiw;
+    invoke-virtual {p0, p1}, Llwf;->a(Llvs;)Llvp;
 
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
+    move-result-object p1
 
-    move-result-object v0
-
-    check-cast v0, Lopq;
-
-    iget-object v1, p0, Llwf;->b:Loiw;
-
-    invoke-interface {v1}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Llyd;
-
-    iget-object v2, p0, Llwf;->c:Loiw;
-
-    invoke-interface {v2}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Llpm;
-
-    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    invoke-virtual {v2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    new-instance v0, Llpm;
-
-    invoke-direct {v0}, Llpm;-><init>()V
+    invoke-direct {v0, p1}, Lghx;-><init>(Llvp;)V
 
     return-object v0
+.end method
 
-    nop
+.method public final g()Ljava/util/List;
+    .locals 1
 
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_3
-        :pswitch_2
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
+    iget-object v0, p0, Llwf;->a:Llvq;
+
+    invoke-interface {v0}, Llvq;->g()Ljava/util/List;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public final h(Llwd;)Ljava/util/List;
+    .locals 1
+
+    iget-object v0, p0, Llwf;->a:Llvq;
+
+    invoke-interface {v0, p1}, Llvq;->h(Llwd;)Ljava/util/List;
+
+    move-result-object p1
+
+    return-object p1
+.end method
+
+.method public final i()Z
+    .locals 1
+
+    iget-object v0, p0, Llwf;->a:Llvq;
+
+    invoke-interface {v0}, Llvq;->i()Z
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public final j(Llwd;)Z
+    .locals 1
+
+    iget-object v0, p0, Llwf;->a:Llvq;
+
+    invoke-interface {v0, p1}, Llvq;->j(Llwd;)Z
+
+    move-result p1
+
+    return p1
+.end method
+
+.method public final k()Z
+    .locals 1
+
+    iget-object v0, p0, Llwf;->a:Llvq;
+
+    invoke-interface {v0}, Llvq;->k()Z
+
+    move-result v0
+
+    return v0
 .end method

@@ -1,204 +1,90 @@
-.class public Lop;
-.super Ljava/lang/Object;
+.class final Lop;
+.super Landroid/animation/AnimatorListenerAdapter;
 
 
 # instance fields
-.field public a:Landroid/support/wearable/complications/ComplicationData;
+.field final synthetic a:Lor;
 
-.field private final b:Landroid/graphics/Rect;
+.field private b:Z
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 1
+.method public constructor <init>(Lor;)V
+    .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lop;->a:Lor;
 
-    new-instance v0, Landroid/graphics/Rect;
+    invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
 
-    invoke-direct {v0}, Landroid/graphics/Rect;-><init>()V
+    const/4 p1, 0x0
 
-    iput-object v0, p0, Lop;->b:Landroid/graphics/Rect;
+    iput-boolean p1, p0, Lop;->b:Z
 
     return-void
 .end method
 
 
 # virtual methods
-.method public a(Landroid/graphics/Rect;)V
+.method public final onAnimationCancel(Landroid/animation/Animator;)V
     .locals 0
 
-    invoke-virtual {p1}, Landroid/graphics/Rect;->setEmpty()V
+    const/4 p1, 0x1
+
+    iput-boolean p1, p0, Lop;->b:Z
 
     return-void
 .end method
 
-.method public b(Landroid/graphics/Rect;)V
-    .locals 0
+.method public final onAnimationEnd(Landroid/animation/Animator;)V
+    .locals 2
 
-    invoke-virtual {p1}, Landroid/graphics/Rect;->setEmpty()V
+    iget-boolean p1, p0, Lop;->b:Z
 
-    return-void
-.end method
+    const/4 v0, 0x0
 
-.method public c()I
-    .locals 1
+    if-eqz p1, :cond_0
 
-    const/16 v0, 0x11
-
-    return v0
-.end method
-
-.method public d()I
-    .locals 1
-
-    const/16 v0, 0x11
-
-    return v0
-.end method
-
-.method public e()I
-    .locals 1
-
-    const/16 v0, 0x11
-
-    return v0
-.end method
-
-.method public f()I
-    .locals 1
-
-    const/16 v0, 0x11
-
-    return v0
-.end method
-
-.method public g()Landroid/text/Layout$Alignment;
-    .locals 1
-
-    sget-object v0, Landroid/text/Layout$Alignment;->ALIGN_CENTER:Landroid/text/Layout$Alignment;
-
-    return-object v0
-.end method
-
-.method public h()Landroid/text/Layout$Alignment;
-    .locals 1
-
-    sget-object v0, Landroid/text/Layout$Alignment;->ALIGN_CENTER:Landroid/text/Layout$Alignment;
-
-    return-object v0
-.end method
-
-.method public i()Landroid/text/Layout$Alignment;
-    .locals 1
-
-    sget-object v0, Landroid/text/Layout$Alignment;->ALIGN_CENTER:Landroid/text/Layout$Alignment;
-
-    return-object v0
-.end method
-
-.method public j()Landroid/text/Layout$Alignment;
-    .locals 1
-
-    sget-object v0, Landroid/text/Layout$Alignment;->ALIGN_CENTER:Landroid/text/Layout$Alignment;
-
-    return-object v0
-.end method
-
-.method public final k(Landroid/graphics/Rect;)V
-    .locals 1
-
-    iget-object v0, p0, Lop;->b:Landroid/graphics/Rect;
-
-    invoke-virtual {p1, v0}, Landroid/graphics/Rect;->set(Landroid/graphics/Rect;)V
+    iput-boolean v0, p0, Lop;->b:Z
 
     return-void
-.end method
 
-.method public l(Landroid/graphics/Rect;)V
-    .locals 0
+    :cond_0
+    iget-object p1, p0, Lop;->a:Lor;
 
-    invoke-virtual {p1}, Landroid/graphics/Rect;->setEmpty()V
+    iget-object p1, p1, Lor;->p:Landroid/animation/ValueAnimator;
 
-    return-void
-.end method
+    invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
 
-.method public m(Landroid/graphics/Rect;)V
-    .locals 0
+    move-result-object p1
 
-    invoke-virtual {p1}, Landroid/graphics/Rect;->setEmpty()V
+    check-cast p1, Ljava/lang/Float;
 
-    return-void
-.end method
+    invoke-virtual {p1}, Ljava/lang/Float;->floatValue()F
 
-.method public n(Landroid/graphics/Rect;)V
-    .locals 0
+    move-result p1
 
-    invoke-virtual {p1}, Landroid/graphics/Rect;->setEmpty()V
+    const/4 v1, 0x0
 
-    return-void
-.end method
+    cmpl-float p1, p1, v1
 
-.method public o(Landroid/graphics/Rect;)V
-    .locals 0
+    if-nez p1, :cond_1
 
-    invoke-virtual {p1}, Landroid/graphics/Rect;->setEmpty()V
+    iget-object p1, p0, Lop;->a:Lor;
+
+    iput v0, p1, Lor;->q:I
+
+    invoke-virtual {p1, v0}, Lor;->e(I)V
 
     return-void
-.end method
 
-.method public p(Landroid/graphics/Rect;)V
-    .locals 0
+    :cond_1
+    iget-object p1, p0, Lop;->a:Lor;
 
-    invoke-virtual {p1}, Landroid/graphics/Rect;->setEmpty()V
+    const/4 v0, 0x2
 
-    return-void
-.end method
+    iput v0, p1, Lor;->q:I
 
-.method public q(Landroid/graphics/Rect;)V
-    .locals 0
-
-    invoke-virtual {p1}, Landroid/graphics/Rect;->setEmpty()V
-
-    return-void
-.end method
-
-.method public r(Landroid/support/wearable/complications/ComplicationData;)V
-    .locals 0
-
-    iput-object p1, p0, Lop;->a:Landroid/support/wearable/complications/ComplicationData;
-
-    return-void
-.end method
-
-.method public s(I)V
-    .locals 1
-
-    iget-object v0, p0, Lop;->b:Landroid/graphics/Rect;
-
-    iput p1, v0, Landroid/graphics/Rect;->bottom:I
-
-    return-void
-.end method
-
-.method public t(I)V
-    .locals 1
-
-    iget-object v0, p0, Lop;->b:Landroid/graphics/Rect;
-
-    iput p1, v0, Landroid/graphics/Rect;->right:I
-
-    return-void
-.end method
-
-.method public final u(IILandroid/support/wearable/complications/ComplicationData;)V
-    .locals 0
-
-    invoke-virtual {p0, p1}, Lop;->t(I)V
-
-    invoke-virtual {p0, p2}, Lop;->s(I)V
-
-    invoke-virtual {p0, p3}, Lop;->r(Landroid/support/wearable/complications/ComplicationData;)V
+    invoke-virtual {p1}, Lor;->d()V
 
     return-void
 .end method

@@ -1,19 +1,33 @@
-.class public interface abstract Ljwj;
+.class public final synthetic Ljwj;
 .super Ljava/lang/Object;
+
+# interfaces
+.implements Lcom/google/android/libraries/oliveoil/bufferflinger/BufferFlinger$OnBufferReleasedListener;
+
+
+# instance fields
+.field public final synthetic a:Llap;
+
+
+# direct methods
+.method public synthetic constructor <init>(Llap;)V
+    .locals 0
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Ljwj;->a:Llap;
+
+    return-void
+.end method
 
 
 # virtual methods
-.method public abstract a(Ljava/lang/Exception;)V
-.end method
+.method public final onBufferReleased()V
+    .locals 1
 
-.method public abstract b()V
-.end method
+    iget-object v0, p0, Ljwj;->a:Llap;
 
-.method public abstract c()V
-.end method
+    invoke-virtual {v0}, Llap;->close()V
 
-.method public abstract d()V
-.end method
-
-.method public abstract e()V
+    return-void
 .end method

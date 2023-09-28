@@ -29,7 +29,7 @@
 
     new-instance v10, Lcom/google/googlex/gcam/SpatialGainMap;
 
-    invoke-static {p0, v2}, Lcom/google/googlex/gcam/GcamModuleJNI;->new_SpatialGainMap__SWIG_2(II)J
+    invoke-static {p0, v2, v1}, Lcom/google/googlex/gcam/GcamModuleJNI;->new_SpatialGainMap__SWIG_2(IIZ)J
 
     move-result-wide v3
 

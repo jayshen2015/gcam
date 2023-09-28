@@ -1,459 +1,338 @@
-.class public final Lijf;
-.super Ljava/lang/Object;
+.class public final enum Lijf;
+.super Ljava/lang/Enum;
 
-# interfaces
-.implements Logk;
+
+# static fields
+.field public static final enum a:Lijf;
+
+.field public static final enum b:Lijf;
+
+.field public static final enum c:Lijf;
+
+.field public static final enum d:Lijf;
+
+.field public static final enum e:Lijf;
+
+.field public static final enum f:Lijf;
+
+.field public static final enum g:Lijf;
+
+.field public static final enum h:Lijf;
+
+.field public static final enum i:Lijf;
+
+.field public static final enum j:Lijf;
+
+.field public static final enum k:Lijf;
+
+.field public static final enum l:Lijf;
+
+.field public static final enum m:Lijf;
+
+.field public static final enum n:Lijf;
+
+.field public static final enum o:Lijf;
+
+.field public static final enum p:Lijf;
+
+.field public static final enum q:Lijf;
+
+.field private static final synthetic t:[Lijf;
 
 
 # instance fields
-.field private final A:Loiw;
+.field public final r:Z
 
-.field private final B:Loiw;
-
-.field private final a:Loiw;
-
-.field private final b:Loiw;
-
-.field private final c:Loiw;
-
-.field private final d:Loiw;
-
-.field private final e:Loiw;
-
-.field private final f:Loiw;
-
-.field private final g:Loiw;
-
-.field private final h:Loiw;
-
-.field private final i:Loiw;
-
-.field private final j:Loiw;
-
-.field private final k:Loiw;
-
-.field private final l:Loiw;
-
-.field private final m:Loiw;
-
-.field private final n:Loiw;
-
-.field private final o:Loiw;
-
-.field private final p:Loiw;
-
-.field private final q:Loiw;
-
-.field private final r:Loiw;
-
-.field private final s:Loiw;
-
-.field private final t:Loiw;
-
-.field private final u:Loiw;
-
-.field private final v:Loiw;
-
-.field private final w:Loiw;
-
-.field private final x:Loiw;
-
-.field private final y:Loiw;
-
-.field private final z:Loiw;
+.field public final s:Z
 
 
 # direct methods
-.method public constructor <init>(Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;)V
-    .locals 2
+.method static constructor <clinit>()V
+    .locals 20
 
-    move-object v0, p0
+    new-instance v0, Lijf;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const-string v1, "ACTIVITY_ONCREATE_START"
 
-    move-object v1, p1
+    const/4 v2, 0x0
 
-    iput-object v1, v0, Lijf;->a:Loiw;
+    const/4 v3, 0x1
 
-    move-object v1, p2
+    invoke-direct {v0, v1, v2, v3}, Lijf;-><init>(Ljava/lang/String;IZ)V
 
-    iput-object v1, v0, Lijf;->b:Loiw;
+    sput-object v0, Lijf;->a:Lijf;
 
-    move-object v1, p3
+    new-instance v1, Lijf;
 
-    iput-object v1, v0, Lijf;->c:Loiw;
+    const-string v4, "ACTIVITY_ONCREATE_END"
 
-    move-object v1, p4
+    invoke-direct {v1, v4, v3, v3}, Lijf;-><init>(Ljava/lang/String;IZ)V
 
-    iput-object v1, v0, Lijf;->d:Loiw;
+    sput-object v1, Lijf;->b:Lijf;
 
-    move-object v1, p5
+    new-instance v4, Lijf;
 
-    iput-object v1, v0, Lijf;->e:Loiw;
+    const-string v5, "PERMISSIONS_STARTUP_TASK_START"
 
-    move-object v1, p6
+    const/4 v6, 0x2
 
-    iput-object v1, v0, Lijf;->f:Loiw;
+    invoke-direct {v4, v5, v6, v3}, Lijf;-><init>(Ljava/lang/String;IZ)V
 
-    move-object v1, p7
+    sput-object v4, Lijf;->c:Lijf;
 
-    iput-object v1, v0, Lijf;->g:Loiw;
+    new-instance v5, Lijf;
 
-    move-object v1, p8
+    const-string v7, "PERMISSIONS_STARTUP_TASK_END"
 
-    iput-object v1, v0, Lijf;->h:Loiw;
+    const/4 v8, 0x3
 
-    move-object v1, p9
+    invoke-direct {v5, v7, v8, v3}, Lijf;-><init>(Ljava/lang/String;IZ)V
 
-    iput-object v1, v0, Lijf;->i:Loiw;
+    sput-object v5, Lijf;->d:Lijf;
 
-    move-object v1, p10
+    new-instance v7, Lijf;
 
-    iput-object v1, v0, Lijf;->j:Loiw;
+    const-string v9, "WAIT_FOR_CAMERA_DEVICES_TASK_START"
 
-    move-object v1, p11
+    const/4 v10, 0x4
 
-    iput-object v1, v0, Lijf;->k:Loiw;
+    invoke-direct {v7, v9, v10, v3}, Lijf;-><init>(Ljava/lang/String;IZ)V
 
-    move-object v1, p12
+    sput-object v7, Lijf;->e:Lijf;
 
-    iput-object v1, v0, Lijf;->l:Loiw;
+    new-instance v9, Lijf;
 
-    move-object v1, p13
+    const-string v11, "WAIT_FOR_CAMERA_DEVICES_TASK_END"
 
-    iput-object v1, v0, Lijf;->m:Loiw;
+    const/4 v12, 0x5
 
-    move-object/from16 v1, p14
+    invoke-direct {v9, v11, v12, v3}, Lijf;-><init>(Ljava/lang/String;IZ)V
 
-    iput-object v1, v0, Lijf;->n:Loiw;
+    sput-object v9, Lijf;->f:Lijf;
 
-    move-object/from16 v1, p15
+    new-instance v11, Lijf;
 
-    iput-object v1, v0, Lijf;->o:Loiw;
+    const-string v13, "ACTIVITY_ONSTART_START"
 
-    move-object/from16 v1, p16
+    const/4 v14, 0x6
 
-    iput-object v1, v0, Lijf;->p:Loiw;
+    invoke-direct {v11, v13, v14, v2}, Lijf;-><init>(Ljava/lang/String;IZ)V
 
-    move-object/from16 v1, p17
+    sput-object v11, Lijf;->g:Lijf;
 
-    iput-object v1, v0, Lijf;->q:Loiw;
+    new-instance v13, Lijf;
 
-    move-object/from16 v1, p18
+    const-string v15, "ACTIVITY_ONRESUME_START"
 
-    iput-object v1, v0, Lijf;->r:Loiw;
+    const/4 v14, 0x7
 
-    move-object/from16 v1, p19
+    invoke-direct {v13, v15, v14, v2}, Lijf;-><init>(Ljava/lang/String;IZ)V
 
-    iput-object v1, v0, Lijf;->s:Loiw;
+    sput-object v13, Lijf;->h:Lijf;
 
-    move-object/from16 v1, p20
+    new-instance v15, Lijf;
 
-    iput-object v1, v0, Lijf;->t:Loiw;
+    const-string v14, "ACTIVITY_ONRESUME_END"
 
-    move-object/from16 v1, p21
+    const/16 v12, 0x8
 
-    iput-object v1, v0, Lijf;->u:Loiw;
+    invoke-direct {v15, v14, v12, v2}, Lijf;-><init>(Ljava/lang/String;IZ)V
 
-    move-object/from16 v1, p22
+    sput-object v15, Lijf;->i:Lijf;
 
-    iput-object v1, v0, Lijf;->v:Loiw;
+    new-instance v14, Lijf;
 
-    move-object/from16 v1, p23
+    const-string v12, "ACTIVITY_SURFACE_VIEW_CREATED"
 
-    iput-object v1, v0, Lijf;->w:Loiw;
+    const/16 v10, 0x9
 
-    move-object/from16 v1, p24
+    invoke-direct {v14, v12, v10, v2}, Lijf;-><init>(Ljava/lang/String;IZ)V
 
-    iput-object v1, v0, Lijf;->x:Loiw;
+    sput-object v14, Lijf;->j:Lijf;
 
-    move-object/from16 v1, p25
+    new-instance v12, Lijf;
 
-    iput-object v1, v0, Lijf;->y:Loiw;
+    const-string v10, "ACTIVITY_INITIALIZED"
 
-    move-object/from16 v1, p26
+    const/16 v8, 0xa
 
-    iput-object v1, v0, Lijf;->z:Loiw;
+    invoke-direct {v12, v10, v8, v3}, Lijf;-><init>(Ljava/lang/String;IZ)V
 
-    move-object/from16 v1, p27
+    sput-object v12, Lijf;->k:Lijf;
 
-    iput-object v1, v0, Lijf;->A:Loiw;
+    new-instance v10, Lijf;
 
-    move-object/from16 v1, p28
+    const-string v8, "ACTIVITY_FIRST_PREVIEW_FRAME_RECEIVED"
 
-    iput-object v1, v0, Lijf;->B:Loiw;
+    const/16 v6, 0xb
+
+    invoke-direct {v10, v8, v6, v2}, Lijf;-><init>(Ljava/lang/String;IZ)V
+
+    sput-object v10, Lijf;->l:Lijf;
+
+    new-instance v8, Lijf;
+
+    const-string v6, "ACTIVITY_FIRST_PREVIEW_FRAME_RENDERED"
+
+    const/16 v3, 0xc
+
+    invoke-direct {v8, v6, v3, v2}, Lijf;-><init>(Ljava/lang/String;IZ)V
+
+    sput-object v8, Lijf;->m:Lijf;
+
+    new-instance v6, Lijf;
+
+    const-string v3, "ACTIVITY_FIRST_PREVIEW_FRAME_VFE_RENDERED"
+
+    move-object/from16 v16, v8
+
+    const/16 v8, 0xd
+
+    invoke-direct {v6, v3, v8, v2, v2}, Lijf;-><init>(Ljava/lang/String;IZZ)V
+
+    sput-object v6, Lijf;->n:Lijf;
+
+    new-instance v3, Lijf;
+
+    const-string v8, "ACTIVITY_SHUTTER_BUTTON_DRAWN"
+
+    move-object/from16 v17, v6
+
+    const/16 v6, 0xe
+
+    invoke-direct {v3, v8, v6, v2}, Lijf;-><init>(Ljava/lang/String;IZ)V
+
+    sput-object v3, Lijf;->o:Lijf;
+
+    new-instance v8, Lijf;
+
+    const-string v6, "ACTIVITY_SHUTTER_BUTTON_ENABLED"
+
+    move-object/from16 v18, v3
+
+    const/16 v3, 0xf
+
+    invoke-direct {v8, v6, v3, v2}, Lijf;-><init>(Ljava/lang/String;IZ)V
+
+    sput-object v8, Lijf;->p:Lijf;
+
+    new-instance v6, Lijf;
+
+    const-string v3, "ACTIVITY_STEADY"
+
+    move-object/from16 v19, v8
+
+    const/16 v8, 0x10
+
+    invoke-direct {v6, v3, v8, v2, v2}, Lijf;-><init>(Ljava/lang/String;IZZ)V
+
+    sput-object v6, Lijf;->q:Lijf;
+
+    const/16 v3, 0x11
+
+    new-array v3, v3, [Lijf;
+
+    aput-object v0, v3, v2
+
+    const/4 v0, 0x1
+
+    aput-object v1, v3, v0
+
+    const/4 v0, 0x2
+
+    aput-object v4, v3, v0
+
+    const/4 v0, 0x3
+
+    aput-object v5, v3, v0
+
+    const/4 v0, 0x4
+
+    aput-object v7, v3, v0
+
+    const/4 v0, 0x5
+
+    aput-object v9, v3, v0
+
+    const/4 v0, 0x6
+
+    aput-object v11, v3, v0
+
+    const/4 v0, 0x7
+
+    aput-object v13, v3, v0
+
+    const/16 v0, 0x8
+
+    aput-object v15, v3, v0
+
+    const/16 v0, 0x9
+
+    aput-object v14, v3, v0
+
+    const/16 v0, 0xa
+
+    aput-object v12, v3, v0
+
+    const/16 v0, 0xb
+
+    aput-object v10, v3, v0
+
+    const/16 v0, 0xc
+
+    aput-object v16, v3, v0
+
+    const/16 v0, 0xd
+
+    aput-object v17, v3, v0
+
+    const/16 v0, 0xe
+
+    aput-object v18, v3, v0
+
+    const/16 v0, 0xf
+
+    aput-object v19, v3, v0
+
+    aput-object v6, v3, v8
+
+    sput-object v3, Lijf;->t:[Lijf;
 
     return-void
 .end method
 
+.method private constructor <init>(Ljava/lang/String;IZ)V
+    .locals 1
 
-# virtual methods
-.method public final bridge synthetic get()Ljava/lang/Object;
-    .locals 31
+    const/4 v0, 0x1
 
-    move-object/from16 v0, p0
+    invoke-direct {p0, p1, p2, p3, v0}, Lijf;-><init>(Ljava/lang/String;IZZ)V
 
-    iget-object v2, v0, Lijf;->a:Loiw;
+    return-void
+.end method
 
-    iget-object v1, v0, Lijf;->b:Loiw;
+.method private constructor <init>(Ljava/lang/String;IZZ)V
+    .locals 0
 
-    check-cast v1, Leqz;
+    invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
-    invoke-virtual {v1}, Leqz;->a()Lcdi;
+    iput-boolean p3, p0, Lijf;->r:Z
 
-    move-result-object v3
+    iput-boolean p4, p0, Lijf;->s:Z
 
-    iget-object v1, v0, Lijf;->c:Loiw;
+    return-void
+.end method
 
-    invoke-interface {v1}, Loiw;->get()Ljava/lang/Object;
+.method public static values()[Lijf;
+    .locals 1
 
-    move-result-object v1
+    sget-object v0, Lijf;->t:[Lijf;
 
-    move-object v4, v1
+    invoke-virtual {v0}, [Lijf;->clone()Ljava/lang/Object;
 
-    check-cast v4, Ljuh;
+    move-result-object v0
 
-    iget-object v1, v0, Lijf;->d:Loiw;
+    check-cast v0, [Lijf;
 
-    invoke-interface {v1}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v1
-
-    move-object v5, v1
-
-    check-cast v5, Ljwb;
-
-    iget-object v1, v0, Lijf;->e:Loiw;
-
-    invoke-interface {v1}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v1
-
-    move-object v6, v1
-
-    check-cast v6, Ldqj;
-
-    iget-object v1, v0, Lijf;->f:Loiw;
-
-    check-cast v1, Lefa;
-
-    invoke-virtual {v1}, Lefa;->b()Ljvs;
-
-    move-result-object v7
-
-    iget-object v1, v0, Lijf;->g:Loiw;
-
-    invoke-interface {v1}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v1
-
-    move-object v8, v1
-
-    check-cast v8, Lhxh;
-
-    iget-object v1, v0, Lijf;->h:Loiw;
-
-    check-cast v1, Lcrj;
-
-    invoke-virtual {v1}, Lcrj;->a()Lmqp;
-
-    move-result-object v9
-
-    iget-object v1, v0, Lijf;->i:Loiw;
-
-    invoke-interface {v1}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v1
-
-    move-object v10, v1
-
-    check-cast v10, Lfey;
-
-    iget-object v1, v0, Lijf;->j:Loiw;
-
-    invoke-interface {v1}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v1
-
-    move-object v11, v1
-
-    check-cast v11, Lcom/google/android/apps/camera/bottombar/BottomBarController;
-
-    iget-object v1, v0, Lijf;->k:Loiw;
-
-    invoke-interface {v1}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v1
-
-    move-object v12, v1
-
-    check-cast v12, Lgeh;
-
-    iget-object v1, v0, Lijf;->l:Loiw;
-
-    invoke-interface {v1}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v1
-
-    move-object v13, v1
-
-    check-cast v13, Ldbf;
-
-    iget-object v1, v0, Lijf;->m:Loiw;
-
-    invoke-static {v1}, Logj;->a(Loiw;)Logd;
-
-    move-result-object v14
-
-    iget-object v1, v0, Lijf;->n:Loiw;
-
-    invoke-static {v1}, Logj;->a(Loiw;)Logd;
-
-    move-result-object v15
-
-    iget-object v1, v0, Lijf;->o:Loiw;
-
-    invoke-interface {v1}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v1
-
-    move-object/from16 v16, v1
-
-    check-cast v16, Lebl;
-
-    iget-object v1, v0, Lijf;->p:Loiw;
-
-    invoke-interface {v1}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v1
-
-    move-object/from16 v17, v1
-
-    check-cast v17, Ldhi;
-
-    iget-object v1, v0, Lijf;->q:Loiw;
-
-    invoke-interface {v1}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v1
-
-    move-object/from16 v18, v1
-
-    check-cast v18, Ldns;
-
-    iget-object v1, v0, Lijf;->r:Loiw;
-
-    invoke-interface {v1}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v1
-
-    move-object/from16 v19, v1
-
-    check-cast v19, Lgzn;
-
-    iget-object v1, v0, Lijf;->s:Loiw;
-
-    invoke-interface {v1}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v1
-
-    move-object/from16 v20, v1
-
-    check-cast v20, Lgzm;
-
-    iget-object v1, v0, Lijf;->t:Loiw;
-
-    invoke-interface {v1}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v1
-
-    move-object/from16 v21, v1
-
-    check-cast v21, Lhmb;
-
-    iget-object v1, v0, Lijf;->u:Loiw;
-
-    invoke-interface {v1}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v1
-
-    move-object/from16 v22, v1
-
-    check-cast v22, Ljwb;
-
-    iget-object v1, v0, Lijf;->v:Loiw;
-
-    invoke-interface {v1}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v1
-
-    move-object/from16 v23, v1
-
-    check-cast v23, Lhrq;
-
-    iget-object v1, v0, Lijf;->w:Loiw;
-
-    invoke-interface {v1}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v1
-
-    move-object/from16 v24, v1
-
-    check-cast v24, Lgzi;
-
-    iget-object v1, v0, Lijf;->x:Loiw;
-
-    check-cast v1, Litb;
-
-    invoke-virtual {v1}, Litb;->a()Litm;
-
-    move-result-object v25
-
-    iget-object v1, v0, Lijf;->y:Loiw;
-
-    invoke-interface {v1}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v1
-
-    move-object/from16 v26, v1
-
-    check-cast v26, Lnou;
-
-    iget-object v1, v0, Lijf;->z:Loiw;
-
-    invoke-interface {v1}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v1
-
-    move-object/from16 v27, v1
-
-    check-cast v27, Ljwb;
-
-    iget-object v1, v0, Lijf;->A:Loiw;
-
-    invoke-interface {v1}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v1
-
-    move-object/from16 v28, v1
-
-    check-cast v28, Ljvs;
-
-    iget-object v1, v0, Lijf;->B:Loiw;
-
-    invoke-interface {v1}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v1
-
-    move-object/from16 v29, v1
-
-    check-cast v29, Lfbz;
-
-    new-instance v30, Lije;
-
-    move-object/from16 v1, v30
-
-    invoke-direct/range {v1 .. v29}, Lije;-><init>(Loiw;Lcdi;Ljuh;Ljwb;Ldqj;Ljvs;Lhxh;Lmqp;Lfey;Lcom/google/android/apps/camera/bottombar/BottomBarController;Lgeh;Ldbf;Logd;Logd;Lebl;Ldhi;Ldns;Lgzn;Lgzm;Lhmb;Ljwb;Lhrq;Lgzi;Litm;Lnou;Ljwb;Ljvs;Lfbz;)V
-
-    return-object v30
+    return-object v0
 .end method

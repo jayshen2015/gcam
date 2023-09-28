@@ -2,60 +2,118 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lfyz;
+.implements Lpys;
 
 
 # instance fields
-.field public final a:Ljava/util/concurrent/Executor;
+.field private final a:Lqkg;
 
-.field public final b:Ldhi;
+.field private final b:Lqkg;
+
+.field private final synthetic c:I
 
 
 # direct methods
-.method public constructor <init>(Ljava/util/concurrent/Executor;Ldhi;)V
+.method public constructor <init>(Lqkg;Lqkg;I)V
     .locals 0
+
+    iput p3, p0, Lfxn;->c:I
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lfxn;->a:Ljava/util/concurrent/Executor;
+    iput-object p1, p0, Lfxn;->a:Lqkg;
 
-    iput-object p2, p0, Lfxn;->b:Ldhi;
+    iput-object p2, p0, Lfxn;->b:Lqkg;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Lgkr;)Lfyy;
-    .locals 1
+.method public final a()Lbne;
+    .locals 3
 
-    new-instance v0, Lfxm;
+    iget v0, p0, Lfxn;->c:I
 
-    iget-object p1, p1, Lgkr;->c:Ljava/lang/Object;
+    packed-switch v0, :pswitch_data_0
 
-    invoke-direct {v0, p0, p1}, Lfxm;-><init>(Lfxn;Lgxl;)V
+    iget-object v0, p0, Lfxn;->a:Lqkg;
 
-    return-object v0
-.end method
+    invoke-interface {v0}, Lqkg;->get()Ljava/lang/Object;
 
-.method public final bridge synthetic b(Lgkr;)Lfyy;
-    .locals 0
+    move-result-object v0
 
-    invoke-virtual {p0, p1}, Lfxn;->c(Lgkr;)Lfxm;
+    check-cast v0, Lddf;
 
-    move-result-object p1
+    iget-object v1, p0, Lfxn;->b:Lqkg;
 
-    return-object p1
-.end method
+    sget-object v2, Ldde;->a:Lddg;
 
-.method public final c(Lgkr;)Lfxm;
-    .locals 1
+    invoke-interface {v0}, Lddf;->b()V
 
-    new-instance v0, Lfxm;
+    check-cast v1, Lboo;
 
-    iget-object p1, p1, Lgkr;->c:Ljava/lang/Object;
+    invoke-virtual {v1}, Lboo;->a()Lbon;
 
-    invoke-direct {v0, p0, p1}, Lfxm;-><init>(Lfxn;Lgxl;)V
+    move-result-object v0
 
     return-object v0
+
+    :pswitch_0
+    iget-object v0, p0, Lfxn;->a:Lqkg;
+
+    invoke-interface {v0}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lddf;
+
+    iget-object v1, p0, Lfxn;->b:Lqkg;
+
+    sget-object v2, Ldde;->a:Lddg;
+
+    invoke-interface {v0}, Lddf;->b()V
+
+    check-cast v1, Lbpj;
+
+    invoke-virtual {v1}, Lbpj;->a()Lbpi;
+
+    move-result-object v0
+
+    return-object v0
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
+.end method
+
+.method public final synthetic get()Ljava/lang/Object;
+    .locals 1
+
+    iget v0, p0, Lfxn;->c:I
+
+    packed-switch v0, :pswitch_data_0
+
+    invoke-virtual {p0}, Lfxn;->a()Lbne;
+
+    move-result-object v0
+
+    return-object v0
+
+    :pswitch_0
+    invoke-virtual {p0}, Lfxn;->a()Lbne;
+
+    move-result-object v0
+
+    return-object v0
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

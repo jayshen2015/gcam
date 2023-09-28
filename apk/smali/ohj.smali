@@ -1,323 +1,191 @@
 .class public final Lohj;
 .super Ljava/lang/Object;
 
-# interfaces
-.implements Lohi;
 
+# instance fields
+.field public final a:Ljava/lang/Object;
 
-# static fields
-.field public static final a:Llqb;
+.field public final b:Ljava/lang/String;
 
-.field public static final b:Llqb;
+.field public final c:Ljava/io/InputStream;
 
-.field public static final c:Llqb;
+.field public final d:Ljava/util/concurrent/ExecutorService;
 
-.field public static final d:Llqb;
+.field public e:I
 
-.field public static final e:Llqb;
+.field public final f:Logu;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 11
-
-    sget-object v0, Lmza;->a:Lmza;
-
-    const-string v0, "com.google.android.libraries.performance.primes"
-
-    const-string v1, "CLIENT_LOGGING_PROD"
-
-    invoke-static {v1}, Lmwn;->H(Ljava/lang/Object;)Lmwn;
-
-    move-result-object v8
-
-    :try_start_0
-    const-string v1, "45352879"
-
-    const-string v2, "CAASNXByaW1lcy9mZWRlcmF0ZWRfcXVlcnkvJVBBQ0tBR0VfTkFNRSUvZGlyZWN0b3J5X3BhdGhzGiEvcHJpbWVzL2FuYWx5dGljc19kaXJlY3RvcnlfcGF0aHM"
-
-    const/4 v9, 0x3
-
-    invoke-static {v2, v9}, Landroid/util/Base64;->decode(Ljava/lang/String;I)[B
-
-    move-result-object v2
-
-    sget-object v3, Logq;->e:Logq;
-
-    array-length v4, v2
-
-    sget-object v5, Lnwh;->a:Lnwh;
-
-    const/4 v10, 0x0
-
-    invoke-static {v3, v2, v10, v4, v5}, Lnws;->Q(Lnws;[BIILnwh;)Lnws;
-
-    move-result-object v2
-
-    invoke-static {v2}, Lnws;->ae(Lnws;)V
-
-    check-cast v2, Logq;
-
-    sget-object v3, Llqd;->d:Llqd;
-
-    const/4 v6, 0x1
-
-    const/4 v7, 0x1
-
-    move-object v4, v0
-
-    move-object v5, v8
-
-    invoke-static/range {v1 .. v7}, Llqf;->d(Ljava/lang/String;Ljava/lang/Object;Llqe;Ljava/lang/String;Ljava/util/Set;ZZ)Llqb;
-
-    move-result-object v1
-
-    sput-object v1, Lohj;->a:Llqb;
-    :try_end_0
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_3
-
-    :try_start_1
-    const-string v1, "45352881"
-
-    const-string v2, "CAASOHByaW1lcy9mZWRlcmF0ZWRfcXVlcnkvJVBBQ0tBR0VfTkFNRSUvZXhjZXB0aW9uX21lc3NhZ2VzGiQvcHJpbWVzL2FuYWx5dGljc19leGNlcHRpb25fbWVzc2FnZXM"
-
-    invoke-static {v2, v9}, Landroid/util/Base64;->decode(Ljava/lang/String;I)[B
-
-    move-result-object v2
-
-    sget-object v3, Logq;->e:Logq;
-
-    array-length v4, v2
-
-    sget-object v5, Lnwh;->a:Lnwh;
-
-    invoke-static {v3, v2, v10, v4, v5}, Lnws;->Q(Lnws;[BIILnwh;)Lnws;
-
-    move-result-object v2
-
-    invoke-static {v2}, Lnws;->ae(Lnws;)V
-
-    check-cast v2, Logq;
-
-    sget-object v3, Llqd;->d:Llqd;
-
-    const/4 v6, 0x1
-
-    const/4 v7, 0x1
-
-    move-object v4, v0
-
-    move-object v5, v8
-
-    invoke-static/range {v1 .. v7}, Llqf;->d(Ljava/lang/String;Ljava/lang/Object;Llqe;Ljava/lang/String;Ljava/util/Set;ZZ)Llqb;
-
-    move-result-object v1
-
-    sput-object v1, Lohj;->b:Llqb;
-    :try_end_1
-    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_2
-
-    :try_start_2
-    const/4 v1, 0x0
-
-    const-string v2, "CAASL3ByaW1lcy9mZWRlcmF0ZWRfcXVlcnkvJVBBQ0tBR0VfTkFNRSUvcnBjX3BhdGhzGhsvcHJpbWVzL2FuYWx5dGljc19ycGNfcGF0aHM"
-
-    invoke-static {v2, v9}, Landroid/util/Base64;->decode(Ljava/lang/String;I)[B
-
-    move-result-object v2
-
-    sget-object v3, Logq;->e:Logq;
-
-    array-length v4, v2
-
-    sget-object v5, Lnwh;->a:Lnwh;
-
-    invoke-static {v3, v2, v10, v4, v5}, Lnws;->Q(Lnws;[BIILnwh;)Lnws;
-
-    move-result-object v2
-
-    invoke-static {v2}, Lnws;->ae(Lnws;)V
-
-    check-cast v2, Logq;
-
-    sget-object v3, Llqd;->d:Llqd;
-
-    const/4 v6, 0x1
-
-    const/4 v7, 0x1
-
-    move-object v4, v0
-
-    move-object v5, v8
-
-    invoke-static/range {v1 .. v7}, Llqf;->d(Ljava/lang/String;Ljava/lang/Object;Llqe;Ljava/lang/String;Ljava/util/Set;ZZ)Llqb;
-
-    move-result-object v1
-
-    sput-object v1, Lohj;->c:Llqb;
-    :try_end_2
-    .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_1
-
-    const-string v1, "45385264"
-
-    const/4 v2, 0x0
-
-    const/4 v5, 0x1
-
-    const/4 v6, 0x1
-
-    move-object v3, v0
-
-    move-object v4, v8
-
-    invoke-static/range {v1 .. v6}, Llqf;->c(Ljava/lang/String;ZLjava/lang/String;Ljava/util/Set;ZZ)Llqb;
-
-    move-result-object v1
-
-    sput-object v1, Lohj;->d:Llqb;
-
-    :try_start_3
-    const-string v1, "45385265"
-
-    sget-object v2, Loax;->b:Loax;
-
-    sget-object v3, Llqd;->e:Llqd;
-
-    const/4 v6, 0x1
-
-    const/4 v7, 0x1
-
-    move-object v4, v0
-
-    move-object v5, v8
-
-    invoke-static/range {v1 .. v7}, Llqf;->d(Ljava/lang/String;Ljava/lang/Object;Llqe;Ljava/lang/String;Ljava/util/Set;ZZ)Llqb;
-
-    move-result-object v0
-
-    sput-object v0, Lohj;->e:Llqb;
-    :try_end_3
-    .catch Ljava/lang/Exception; {:try_start_3 .. :try_end_3} :catch_0
-
-    return-void
-
-    :catch_0
-    move-exception v0
-
-    new-instance v1, Ljava/lang/AssertionError;
-
-    invoke-direct {v1, v0}, Ljava/lang/AssertionError;-><init>(Ljava/lang/Object;)V
-
-    throw v1
-
-    :catch_1
-    move-exception v0
-
-    new-instance v1, Ljava/lang/AssertionError;
-
-    invoke-direct {v1, v0}, Ljava/lang/AssertionError;-><init>(Ljava/lang/Object;)V
-
-    throw v1
-
-    :catch_2
-    move-exception v0
-
-    new-instance v1, Ljava/lang/AssertionError;
-
-    invoke-direct {v1, v0}, Ljava/lang/AssertionError;-><init>(Ljava/lang/Object;)V
-
-    throw v1
-
-    :catch_3
-    move-exception v0
-
-    new-instance v1, Ljava/lang/AssertionError;
-
-    invoke-direct {v1, v0}, Ljava/lang/AssertionError;-><init>(Ljava/lang/Object;)V
-
-    throw v1
-.end method
-
-.method public constructor <init>()V
-    .locals 0
+.method public constructor <init>(Ljava/io/InputStream;Logu;Ljava/util/concurrent/ExecutorService;)V
+    .locals 1
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    new-instance v0, Ljava/lang/Object;
+
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+
+    iput-object v0, p0, Lohj;->a:Ljava/lang/Object;
+
+    const-string v0, "SPEECH_ENHANCER_RAW_AUDIO_STREAM_PARSER"
+
+    iput-object v0, p0, Lohj;->b:Ljava/lang/String;
+
+    iput-object p1, p0, Lohj;->c:Ljava/io/InputStream;
+
+    iput-object p2, p0, Lohj;->f:Logu;
+
+    iput-object p3, p0, Lohj;->d:Ljava/util/concurrent/ExecutorService;
+
+    const/4 p1, 0x1
+
+    iput p1, p0, Lohj;->e:I
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Landroid/content/Context;)Loax;
-    .locals 1
+.method public final a(Ljava/io/IOException;)V
+    .locals 3
 
-    sget-object v0, Lohj;->e:Llqb;
+    iget-object v0, p0, Lohj;->a:Ljava/lang/Object;
 
-    invoke-virtual {v0, p1}, Llqb;->b(Landroid/content/Context;)Ljava/lang/Object;
+    monitor-enter v0
+
+    const/4 v1, 0x5
+
+    :try_start_0
+    iput v1, p0, Lohj;->e:I
+
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    if-nez p1, :cond_1
+
+    iget-object p1, p0, Lohj;->f:Logu;
+
+    :try_start_1
+    iget-object p1, p1, Logu;->a:Lohb;
+
+    iget-object v0, p1, Lohb;->b:Ljava/io/PipedOutputStream;
+
+    if-eqz v0, :cond_0
+
+    invoke-virtual {v0}, Ljava/io/PipedOutputStream;->close()V
+
+    return-void
+
+    :cond_0
+    iget-object p1, p1, Lohb;->c:Lohd;
+
+    iget-object p1, p1, Lohd;->a:Lj$/util/Optional;
+
+    sget-object v0, Lgui;->i:Lgui;
+
+    invoke-virtual {p1, v0}, Lj$/util/Optional;->ifPresent(Lj$/util/function/Consumer;)V
+    :try_end_1
+    .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_0
+
+    return-void
+
+    :catch_0
+    move-exception p1
+
+    sget-object v0, Lohb;->a:Louj;
+
+    invoke-virtual {v0}, Loue;->b()Lova;
+
+    move-result-object v0
+
+    const-string v1, "Got an exception when trying to close the piped output stream."
+
+    const/16 v2, 0xe63
+
+    invoke-static {v0, v1, v2, p1}, Ld;->w(Lova;Ljava/lang/String;CLjava/lang/Throwable;)V
+
+    return-void
+
+    :cond_1
+    new-instance v0, Lohk;
+
+    invoke-direct {v0, p1}, Lohk;-><init>(Ljava/lang/Throwable;)V
+
+    sget-object p1, Lohb;->a:Louj;
+
+    invoke-virtual {p1}, Loue;->b()Lova;
 
     move-result-object p1
 
-    check-cast p1, Loax;
+    check-cast p1, Loug;
 
-    return-object p1
+    invoke-interface {p1, v0}, Loug;->h(Ljava/lang/Throwable;)Lova;
+
+    move-result-object p1
+
+    check-cast p1, Loug;
+
+    const/16 v1, 0xe64
+
+    invoke-interface {p1, v1}, Loug;->G(I)Lova;
+
+    move-result-object p1
+
+    check-cast p1, Loug;
+
+    const-string v1, "Got an error from audio stream parser \'%s\'. Error: %s"
+
+    const-string v2, "SPEECH_ENHANCER_RAW_AUDIO_STREAM_PARSER"
+
+    invoke-interface {p1, v1, v2, v0}, Loug;->y(Ljava/lang/String;Ljava/lang/Object;Ljava/lang/Object;)V
+
+    return-void
+
+    :catchall_0
+    move-exception p1
+
+    :try_start_2
+    monitor-exit v0
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
+
+    throw p1
 .end method
 
-.method public final b(Landroid/content/Context;)Logq;
-    .locals 1
+.method public final b()Z
+    .locals 3
 
-    sget-object v0, Lohj;->a:Llqb;
+    iget-object v0, p0, Lohj;->a:Ljava/lang/Object;
 
-    invoke-virtual {v0, p1}, Llqb;->b(Landroid/content/Context;)Ljava/lang/Object;
+    monitor-enter v0
 
-    move-result-object p1
+    :try_start_0
+    iget v1, p0, Lohj;->e:I
 
-    check-cast p1, Logq;
+    const/4 v2, 0x2
 
-    return-object p1
-.end method
+    if-ne v1, v2, :cond_0
 
-.method public final c(Landroid/content/Context;)Logq;
-    .locals 1
+    const/4 v1, 0x1
 
-    sget-object v0, Lohj;->b:Llqb;
+    goto :goto_0
 
-    invoke-virtual {v0, p1}, Llqb;->b(Landroid/content/Context;)Ljava/lang/Object;
+    :cond_0
+    const/4 v1, 0x0
 
-    move-result-object p1
+    :goto_0
+    monitor-exit v0
 
-    check-cast p1, Logq;
+    return v1
 
-    return-object p1
-.end method
+    :catchall_0
+    move-exception v1
 
-.method public final d(Landroid/content/Context;)Logq;
-    .locals 1
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    sget-object v0, Lohj;->c:Llqb;
-
-    invoke-virtual {v0, p1}, Llqb;->b(Landroid/content/Context;)Ljava/lang/Object;
-
-    move-result-object p1
-
-    check-cast p1, Logq;
-
-    return-object p1
-.end method
-
-.method public final e(Landroid/content/Context;)Z
-    .locals 1
-
-    sget-object v0, Lohj;->d:Llqb;
-
-    invoke-virtual {v0, p1}, Llqb;->b(Landroid/content/Context;)Ljava/lang/Object;
-
-    move-result-object p1
-
-    check-cast p1, Ljava/lang/Boolean;
-
-    invoke-virtual {p1}, Ljava/lang/Boolean;->booleanValue()Z
-
-    move-result p1
-
-    return p1
+    throw v1
 .end method

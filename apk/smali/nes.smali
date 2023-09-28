@@ -1,240 +1,163 @@
-.class public abstract Lnes;
-.super Ljava/lang/Object;
+.class public final Lnes;
+.super Long;
+
+# interfaces
+.implements Lj$/util/Map;
 
 
-# static fields
-.field public static final e:Lnes;
+# instance fields
+.field private final a:Ljava/util/Map;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 7
+.method private constructor <init>(Ljava/util/Map;)V
+    .locals 0
 
-    const/16 v0, 0x3d
+    invoke-direct {p0}, Long;-><init>()V
 
-    invoke-static {v0}, Ljava/lang/Character;->valueOf(C)Ljava/lang/Character;
-
-    move-result-object v0
-
-    new-instance v1, Lnen;
-
-    const-string v2, "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/"
-
-    invoke-virtual {v2}, Ljava/lang/String;->toCharArray()[C
-
-    move-result-object v2
-
-    const-string v3, "base64()"
-
-    invoke-direct {v1, v3, v2}, Lnen;-><init>(Ljava/lang/String;[C)V
-
-    new-instance v2, Lner;
-
-    invoke-direct {v2, v1, v0}, Lner;-><init>(Lnen;Ljava/lang/Character;)V
-
-    iget-object v1, v1, Lnen;->b:[C
-
-    array-length v1, v1
-
-    const/4 v2, 0x1
-
-    const/4 v3, 0x0
-
-    const/16 v4, 0x40
-
-    if-ne v1, v4, :cond_0
-
-    const/4 v1, 0x1
-
-    goto :goto_0
-
-    :cond_0
-    const/4 v1, 0x0
-
-    :goto_0
-    invoke-static {v1}, Lmoz;->e(Z)V
-
-    new-instance v1, Lnen;
-
-    const-string v5, "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-_"
-
-    invoke-virtual {v5}, Ljava/lang/String;->toCharArray()[C
-
-    move-result-object v5
-
-    const-string v6, "base64Url()"
-
-    invoke-direct {v1, v6, v5}, Lnen;-><init>(Ljava/lang/String;[C)V
-
-    new-instance v5, Lner;
-
-    invoke-direct {v5, v1, v0}, Lner;-><init>(Lnen;Ljava/lang/Character;)V
-
-    iget-object v1, v1, Lnen;->b:[C
-
-    array-length v1, v1
-
-    if-ne v1, v4, :cond_1
-
-    goto :goto_1
-
-    :cond_1
-    const/4 v2, 0x0
-
-    :goto_1
-    invoke-static {v2}, Lmoz;->e(Z)V
-
-    new-instance v1, Lner;
-
-    const-string v2, "base32()"
-
-    const-string v3, "ABCDEFGHIJKLMNOPQRSTUVWXYZ234567"
-
-    invoke-direct {v1, v2, v3, v0}, Lner;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Character;)V
-
-    new-instance v1, Lner;
-
-    const-string v2, "base32Hex()"
-
-    const-string v3, "0123456789ABCDEFGHIJKLMNOPQRSTUV"
-
-    invoke-direct {v1, v2, v3, v0}, Lner;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Character;)V
-
-    new-instance v0, Lneo;
-
-    new-instance v1, Lnen;
-
-    const-string v2, "0123456789ABCDEF"
-
-    invoke-virtual {v2}, Ljava/lang/String;->toCharArray()[C
-
-    move-result-object v2
-
-    const-string v3, "base16()"
-
-    invoke-direct {v1, v3, v2}, Lnen;-><init>(Ljava/lang/String;[C)V
-
-    invoke-direct {v0, v1}, Lneo;-><init>(Lnen;)V
-
-    sput-object v0, Lnes;->e:Lnes;
+    iput-object p1, p0, Lnes;->a:Ljava/util/Map;
 
     return-void
 .end method
 
-.method public constructor <init>()V
-    .locals 0
+.method public static b()Lnes;
+    .locals 2
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance v0, Lnes;
 
-    return-void
+    new-instance v1, Lj$/util/concurrent/ConcurrentHashMap;
+
+    invoke-direct {v1}, Lj$/util/concurrent/ConcurrentHashMap;-><init>()V
+
+    invoke-direct {v0, v1}, Lnes;-><init>(Ljava/util/Map;)V
+
+    return-object v0
 .end method
 
 
 # virtual methods
-.method public abstract a([BLjava/lang/CharSequence;)I
+.method protected final synthetic a()Ljava/lang/Object;
+    .locals 1
+
+    iget-object v0, p0, Lnes;->a:Ljava/util/Map;
+
+    return-object v0
 .end method
 
-.method public abstract b(Ljava/lang/Appendable;[BI)V
+.method protected final c()Ljava/util/Map;
+    .locals 1
+
+    iget-object v0, p0, Lnes;->a:Ljava/util/Map;
+
+    return-object v0
 .end method
 
-.method public abstract c(I)I
-.end method
-
-.method public abstract d(I)I
-.end method
-
-.method public e(Ljava/lang/CharSequence;)Ljava/lang/CharSequence;
+.method public final synthetic compute(Ljava/lang/Object;Lj$/util/function/BiFunction;)Ljava/lang/Object;
     .locals 0
 
-    const/4 p1, 0x0
-
-    throw p1
-.end method
-
-.method public final f([B)Ljava/lang/String;
-    .locals 3
-
-    array-length v0, p1
-
-    const/4 v1, 0x0
-
-    invoke-static {v1, v0, v0}, Lmoz;->o(III)V
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-virtual {p0, v0}, Lnes;->d(I)I
-
-    move-result v2
-
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(I)V
-
-    :try_start_0
-    invoke-virtual {p0, v1, p1, v0}, Lnes;->b(Ljava/lang/Appendable;[BI)V
-    :try_end_0
-    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-static {p0, p1, p2}, Lj$/util/Map$-CC;->$default$compute(Ljava/util/Map;Ljava/lang/Object;Lj$/util/function/BiFunction;)Ljava/lang/Object;
 
     move-result-object p1
 
     return-object p1
-
-    :catch_0
-    move-exception p1
-
-    new-instance v0, Ljava/lang/AssertionError;
-
-    invoke-direct {v0, p1}, Ljava/lang/AssertionError;-><init>(Ljava/lang/Object;)V
-
-    throw v0
 .end method
 
-.method public final g(Ljava/lang/CharSequence;)[B
-    .locals 3
+.method public final synthetic computeIfAbsent(Ljava/lang/Object;Lj$/util/function/Function;)Ljava/lang/Object;
+    .locals 0
 
-    :try_start_0
-    invoke-virtual {p0, p1}, Lnes;->e(Ljava/lang/CharSequence;)Ljava/lang/CharSequence;
+    invoke-static {p0, p1, p2}, Lj$/util/Map$-CC;->$default$computeIfAbsent(Ljava/util/Map;Ljava/lang/Object;Lj$/util/function/Function;)Ljava/lang/Object;
 
     move-result-object p1
 
-    invoke-interface {p1}, Ljava/lang/CharSequence;->length()I
+    return-object p1
+.end method
 
-    move-result v0
+.method public final synthetic computeIfPresent(Ljava/lang/Object;Lj$/util/function/BiFunction;)Ljava/lang/Object;
+    .locals 0
 
-    invoke-virtual {p0, v0}, Lnes;->c(I)I
+    invoke-static {p0, p1, p2}, Lj$/util/Map$-CC;->$default$computeIfPresent(Ljava/util/Map;Ljava/lang/Object;Lj$/util/function/BiFunction;)Ljava/lang/Object;
 
-    move-result v0
+    move-result-object p1
 
-    new-array v1, v0, [B
+    return-object p1
+.end method
 
-    invoke-virtual {p0, v1, p1}, Lnes;->a([BLjava/lang/CharSequence;)I
+.method public final synthetic forEach(Lj$/util/function/BiConsumer;)V
+    .locals 0
+
+    invoke-static {p0, p1}, Lj$/util/Map$-CC;->$default$forEach(Ljava/util/Map;Lj$/util/function/BiConsumer;)V
+
+    return-void
+.end method
+
+.method public final synthetic getOrDefault(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 0
+
+    invoke-static {p0, p1, p2}, Lj$/util/Map$-CC;->$default$getOrDefault(Ljava/util/Map;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p1
+
+    return-object p1
+.end method
+
+.method public final synthetic merge(Ljava/lang/Object;Ljava/lang/Object;Lj$/util/function/BiFunction;)Ljava/lang/Object;
+    .locals 0
+
+    invoke-static {p0, p1, p2, p3}, Lj$/util/Map$-CC;->$default$merge(Ljava/util/Map;Ljava/lang/Object;Ljava/lang/Object;Lj$/util/function/BiFunction;)Ljava/lang/Object;
+
+    move-result-object p1
+
+    return-object p1
+.end method
+
+.method public final putIfAbsent(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 1
+
+    iget-object v0, p0, Lnes;->a:Ljava/util/Map;
+
+    check-cast v0, Lj$/util/concurrent/ConcurrentHashMap;
+
+    invoke-virtual {v0, p1, p2}, Lj$/util/concurrent/ConcurrentHashMap;->putIfAbsent(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p1
+
+    return-object p1
+.end method
+
+.method public final synthetic remove(Ljava/lang/Object;Ljava/lang/Object;)Z
+    .locals 0
+
+    invoke-static {p0, p1, p2}, Lj$/util/Map$-CC;->$default$remove(Ljava/util/Map;Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result p1
 
-    if-ne p1, v0, :cond_0
+    return p1
+.end method
 
-    goto :goto_0
+.method public final synthetic replace(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 0
 
-    :cond_0
-    new-array v0, p1, [B
+    invoke-static {p0, p1, p2}, Lj$/util/Map$-CC;->$default$replace(Ljava/util/Map;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    const/4 v2, 0x0
+    move-result-object p1
 
-    invoke-static {v1, v2, v0, v2, p1}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
-    :try_end_0
-    .catch Lnep; {:try_start_0 .. :try_end_0} :catch_0
+    return-object p1
+.end method
 
-    move-object v1, v0
+.method public final synthetic replace(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Z
+    .locals 0
 
-    :goto_0
-    return-object v1
+    invoke-static {p0, p1, p2, p3}, Lj$/util/Map$-CC;->$default$replace(Ljava/util/Map;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Z
 
-    :catch_0
-    move-exception p1
+    move-result p1
 
-    new-instance v0, Ljava/lang/IllegalArgumentException;
+    return p1
+.end method
 
-    invoke-direct {v0, p1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/Throwable;)V
+.method public final synthetic replaceAll(Lj$/util/function/BiFunction;)V
+    .locals 0
 
-    throw v0
+    invoke-static {p0, p1}, Lj$/util/Map$-CC;->$default$replaceAll(Ljava/util/Map;Lj$/util/function/BiFunction;)V
+
+    return-void
 .end method

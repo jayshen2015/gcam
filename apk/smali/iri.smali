@@ -1,64 +1,82 @@
-.class final Liri;
-.super Lisv;
+.class public final Liri;
+.super Landroid/view/View$AccessibilityDelegate;
 
 
 # instance fields
-.field final synthetic a:Lirn;
+.field final synthetic a:Lirj;
 
 
 # direct methods
-.method public constructor <init>(Lirn;)V
+.method public constructor <init>(Lirj;)V
     .locals 0
 
-    iput-object p1, p0, Liri;->a:Lirn;
+    iput-object p1, p0, Liri;->a:Lirj;
 
-    invoke-direct {p0, p1}, Lisv;-><init>(Lita;)V
+    invoke-direct {p0}, Landroid/view/View$AccessibilityDelegate;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()V
-    .locals 2
+.method public final onInitializeAccessibilityNodeInfo(Landroid/view/View;Landroid/view/accessibility/AccessibilityNodeInfo;)V
+    .locals 4
 
-    iget-object v0, p0, Liri;->a:Lirn;
+    invoke-super {p0, p1, p2}, Landroid/view/View$AccessibilityDelegate;->onInitializeAccessibilityNodeInfo(Landroid/view/View;Landroid/view/accessibility/AccessibilityNodeInfo;)V
 
-    iget-object v0, v0, Lirn;->a:Lhiu;
+    iget-object p1, p0, Liri;->a:Lirj;
 
-    invoke-virtual {v0}, Lhiu;->e()V
+    iget-object p1, p1, Lirj;->b:Landroid/content/res/Resources;
 
-    invoke-super {p0}, Lisv;->a()V
+    const v0, 0x7f14003c
 
-    iget-object v0, p0, Liri;->a:Lirn;
+    invoke-virtual {p1, v0}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
-    iget-object v1, v0, Lirn;->a:Lhiu;
+    move-result-object p1
 
-    iget-object v0, v0, Lirn;->e:Lhiw;
+    iget-object v0, p0, Liri;->a:Lirj;
 
-    invoke-virtual {v1, v0}, Lhiu;->g(Lhiw;)V
+    iget-object v0, v0, Lirj;->d:Landroid/widget/TextView;
 
-    return-void
-.end method
+    invoke-virtual {v0}, Landroid/widget/TextView;->getText()Ljava/lang/CharSequence;
 
-.method public final i()V
-    .locals 2
+    move-result-object v0
 
-    iget-object v0, p0, Liri;->a:Lirn;
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
-    iget-object v0, v0, Lirn;->a:Lhiu;
+    move-result-object v0
 
-    invoke-virtual {v0}, Lhiu;->e()V
+    invoke-static {p1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
-    invoke-super {p0}, Lisv;->i()V
+    move-result-object v1
 
-    iget-object v0, p0, Liri;->a:Lirn;
+    invoke-virtual {v1}, Ljava/lang/String;->length()I
 
-    iget-object v1, v0, Lirn;->a:Lhiu;
+    move-result v1
 
-    iget-object v0, v0, Lirn;->f:Lhiw;
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
-    invoke-virtual {v1, v0}, Lhiu;->g(Lhiw;)V
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/String;->length()I
+
+    move-result v2
+
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    add-int/2addr v1, v2
+
+    invoke-direct {v3, v1}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    invoke-virtual {v3, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-virtual {p2, p1}, Landroid/view/accessibility/AccessibilityNodeInfo;->setContentDescription(Ljava/lang/CharSequence;)V
 
     return-void
 .end method

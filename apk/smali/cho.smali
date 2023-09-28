@@ -1,84 +1,49 @@
-.class public final Lcho;
-.super Lchp;
+.class public final synthetic Lcho;
+.super Ljava/lang/Object;
 
-
-# static fields
-.field public static final a:Lnak;
+# interfaces
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field public final b:Lchs;
+.field public final synthetic a:Lchv;
 
-.field private final c:Ljuh;
+.field public final synthetic b:Lbnh;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
-
-    const-string v0, "com/google/android/apps/camera/app/silentfeedback/UncaughtExceptionForwarder"
-
-    invoke-static {v0}, Lnak;->h(Ljava/lang/String;)Lnak;
-
-    move-result-object v0
-
-    sput-object v0, Lcho;->a:Lnak;
-
-    return-void
-.end method
-
-.method public constructor <init>(Lchs;Ljava/lang/Thread$UncaughtExceptionHandler;)V
+.method public synthetic constructor <init>(Lchv;Lbnh;)V
     .locals 0
 
-    invoke-direct {p0, p2}, Lchp;-><init>(Ljava/lang/Thread$UncaughtExceptionHandler;)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    sget-object p2, Ljuh;->b:Ljuh;
+    iput-object p1, p0, Lcho;->a:Lchv;
 
-    iput-object p2, p0, Lcho;->c:Ljuh;
-
-    iput-object p1, p0, Lcho;->b:Lchs;
+    iput-object p2, p0, Lcho;->b:Lbnh;
 
     return-void
 .end method
 
 
 # virtual methods
-.method protected final a(Ljava/lang/Throwable;)V
-    .locals 3
+.method public final run()V
+    .locals 4
 
-    iget-object v0, p0, Lcho;->b:Lchs;
+    iget-object v0, p0, Lcho;->a:Lchv;
 
-    if-eqz v0, :cond_1
+    iget-object v1, p0, Lcho;->b:Lbnh;
 
-    invoke-static {}, Ljuh;->d()Z
+    iget-object v2, v1, Lbnh;->a:Landroid/graphics/PointF;
 
-    move-result v0
+    const/4 v3, 0x0
 
-    if-nez v0, :cond_0
+    invoke-virtual {v0, v2, v3}, Lchv;->g(Landroid/graphics/PointF;Z)V
 
-    sget-object v0, Lcho;->a:Lnak;
+    iget-object v1, v1, Lbnh;->a:Landroid/graphics/PointF;
 
-    invoke-virtual {v0}, Lnaf;->b()Lnaz;
+    const/4 v2, 0x1
 
-    move-result-object v0
+    invoke-virtual {v0, v1, v2}, Lchv;->g(Landroid/graphics/PointF;Z)V
 
-    const-string v1, "Uncaught exception in background thread"
-
-    const/16 v2, 0xb7
-
-    invoke-static {v0, v1, v2, p1}, Ld;->h(Lnaz;Ljava/lang/String;CLjava/lang/Throwable;)V
-
-    :cond_0
-    iget-object v0, p0, Lcho;->c:Ljuh;
-
-    new-instance v1, Lcfz;
-
-    const/4 v2, 0x7
-
-    invoke-direct {v1, p0, p1, v2}, Lcfz;-><init>(Lcho;Ljava/lang/Throwable;I)V
-
-    invoke-virtual {v0, v1}, Ljuh;->c(Ljava/lang/Runnable;)V
-
-    :cond_1
     return-void
 .end method

@@ -1,53 +1,31 @@
-.class abstract Lmvd;
-.super Ljava/util/AbstractSet;
+.class public abstract Lmvd;
+.super Ljava/lang/Object;
 
 
 # instance fields
-.field final b:Lmve;
+.field public final a:Ljava/lang/String;
+
+.field public final b:Lpyn;
+
+.field public final c:Landroid/content/Context;
 
 
 # direct methods
-.method public constructor <init>(Lmve;)V
+.method public constructor <init>(Ljava/lang/String;Lpyn;Landroid/content/Context;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/util/AbstractSet;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lmvd;->b:Lmve;
+    iput-object p2, p0, Lmvd;->b:Lpyn;
+
+    iput-object p1, p0, Lmvd;->a:Ljava/lang/String;
+
+    iput-object p3, p0, Lmvd;->c:Landroid/content/Context;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public abstract a(I)Ljava/lang/Object;
-.end method
-
-.method public final clear()V
-    .locals 1
-
-    iget-object v0, p0, Lmvd;->b:Lmve;
-
-    invoke-virtual {v0}, Lmve;->clear()V
-
-    return-void
-.end method
-
-.method public final iterator()Ljava/util/Iterator;
-    .locals 1
-
-    new-instance v0, Lmvc;
-
-    invoke-direct {v0, p0}, Lmvc;-><init>(Lmvd;)V
-
-    return-object v0
-.end method
-
-.method public final size()I
-    .locals 1
-
-    iget-object v0, p0, Lmvd;->b:Lmve;
-
-    iget v0, v0, Lmve;->c:I
-
-    return v0
+.method public abstract a(Lqyk;)Lope;
 .end method

@@ -1,81 +1,153 @@
-.class public final Lltu;
+.class final Lltu;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Landroid/graphics/SurfaceTexture$OnFrameAvailableListener;
-
-
-# static fields
-.field public static final a:Ljava/lang/String;
+.implements Llij;
 
 
 # instance fields
-.field public final b:Lcom/google/android/libraries/vision/opengl/Texture;
+.field final synthetic a:Llty;
 
-.field public final c:Landroid/graphics/SurfaceTexture;
+.field final synthetic b:Lltv;
 
-.field public final d:Ljava/util/concurrent/Semaphore;
+.field private c:Z
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
+.method public constructor <init>(Lltv;Llty;)V
+    .locals 0
 
-    const-class v0, Lltu;
+    iput-object p1, p0, Lltu;->b:Lltv;
 
-    invoke-virtual {v0}, Ljava/lang/Class;->getSimpleName()Ljava/lang/String;
-
-    move-result-object v0
-
-    sput-object v0, Lltu;->a:Ljava/lang/String;
-
-    return-void
-.end method
-
-.method public constructor <init>(II)V
-    .locals 2
+    iput-object p2, p0, Lltu;->a:Llty;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    new-instance v0, Ljava/util/concurrent/Semaphore;
+    const/4 p1, 0x1
 
-    const/4 v1, 0x0
-
-    invoke-direct {v0, v1}, Ljava/util/concurrent/Semaphore;-><init>(I)V
-
-    iput-object v0, p0, Lltu;->d:Ljava/util/concurrent/Semaphore;
-
-    new-instance v0, Lcom/google/android/libraries/vision/opengl/Texture;
-
-    const v1, 0x8d65
-
-    invoke-direct {v0, p1, p2, v1}, Lcom/google/android/libraries/vision/opengl/Texture;-><init>(III)V
-
-    iput-object v0, p0, Lltu;->b:Lcom/google/android/libraries/vision/opengl/Texture;
-
-    new-instance p1, Landroid/graphics/SurfaceTexture;
-
-    invoke-virtual {v0}, Lcom/google/android/libraries/vision/opengl/Texture;->getName()I
-
-    move-result p2
-
-    invoke-direct {p1, p2}, Landroid/graphics/SurfaceTexture;-><init>(I)V
-
-    iput-object p1, p0, Lltu;->c:Landroid/graphics/SurfaceTexture;
-
-    invoke-virtual {p1, p0}, Landroid/graphics/SurfaceTexture;->setOnFrameAvailableListener(Landroid/graphics/SurfaceTexture$OnFrameAvailableListener;)V
+    iput-boolean p1, p0, Lltu;->c:Z
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onFrameAvailable(Landroid/graphics/SurfaceTexture;)V
-    .locals 0
+.method public final bridge synthetic fB(Ljava/lang/Object;)V
+    .locals 5
 
-    iget-object p1, p0, Lltu;->d:Ljava/util/concurrent/Semaphore;
+    check-cast p1, Lojc;
 
-    invoke-virtual {p1}, Ljava/util/concurrent/Semaphore;->release()V
+    iget-boolean v0, p0, Lltu;->c:Z
+
+    if-nez v0, :cond_1
+
+    iget-object v0, p0, Lltu;->b:Lltv;
+
+    iget-object v0, v0, Lltv;->c:Llis;
+
+    iget-object v1, p0, Lltu;->a:Llty;
+
+    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {p1}, Lojc;->g()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_0
+
+    invoke-virtual {p1}, Lojc;->c()Ljava/lang/Object;
+
+    move-result-object p1
+
+    invoke-static {p1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-static {p1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/String;->length()I
+
+    move-result v2
+
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    add-int/lit8 v2, v2, 0x7
+
+    invoke-direct {v3, v2}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string v2, "set to "
+
+    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v3, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p1
+
+    goto :goto_0
+
+    :cond_0
+    const-string p1, "destroyed."
+
+    :goto_0
+    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/String;->length()I
+
+    move-result v2
+
+    invoke-static {p1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/lang/String;->length()I
+
+    move-result v3
+
+    new-instance v4, Ljava/lang/StringBuilder;
+
+    add-int/lit8 v2, v2, 0x11
+
+    add-int/2addr v2, v3
+
+    invoke-direct {v4, v2}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string v2, "Surface for "
+
+    invoke-virtual {v4, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v4, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v1, " was "
+
+    invoke-virtual {v4, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v4, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-interface {v0, p1}, Llis;->f(Ljava/lang/String;)V
+
+    goto :goto_1
+
+    :cond_1
+    const/4 p1, 0x0
+
+    iput-boolean p1, p0, Lltu;->c:Z
+
+    :goto_1
+    iget-object p1, p0, Lltu;->b:Lltv;
+
+    invoke-virtual {p1}, Lltv;->e()V
 
     return-void
 .end method

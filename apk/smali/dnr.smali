@@ -1,20 +1,22 @@
 .class public final Ldnr;
-.super Ldog;
+.super Ljava/lang/Object;
+
+
+# static fields
+.field public static final a:Ldln;
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 2
 
-    invoke-direct {p0}, Ldog;-><init>()V
+    new-instance v0, Ldln;
 
-    return-void
-.end method
+    const/4 v1, 0x5
 
-.method public constructor <init>(Ljava/lang/String;)V
-    .locals 0
+    invoke-direct {v0, v1}, Ldln;-><init>(I)V
 
-    invoke-direct {p0, p1}, Ldog;-><init>(Ljava/lang/String;)V
+    sput-object v0, Ldnr;->a:Ldln;
 
     return-void
 .end method

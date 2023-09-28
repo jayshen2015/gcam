@@ -1,86 +1,28 @@
-.class final Lnpm;
-.super Lnot;
-
-
-# instance fields
-.field final synthetic a:Lnpo;
-
-.field private final b:Lnnn;
+.class public final Lnpm;
+.super Lajd;
 
 
 # direct methods
-.method public constructor <init>(Lnpo;Lnnn;)V
-    .locals 0
+.method public constructor <init>()V
+    .locals 2
 
-    iput-object p1, p0, Lnpm;->a:Lnpo;
+    const/4 v0, 0x1
 
-    invoke-direct {p0}, Lnot;-><init>()V
+    const/4 v1, 0x2
 
-    invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    iput-object p2, p0, Lnpm;->b:Lnnn;
+    invoke-direct {p0, v0, v1}, Lajd;-><init>(II)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final bridge synthetic a()Ljava/lang/Object;
+.method public final a(Lajy;)V
     .locals 1
 
-    iget-object v0, p0, Lnpm;->b:Lnnn;
+    const-string v0, "ALTER TABLE ResourceEntity ADD COLUMN f250AutoUploadDelay INTEGER"
 
-    invoke-interface {v0}, Lnnn;->a()Lnou;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    return-object v0
-.end method
-
-.method public final b()Ljava/lang/String;
-    .locals 1
-
-    iget-object v0, p0, Lnpm;->b:Lnnn;
-
-    invoke-virtual {v0}, Ljava/lang/Object;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public final d(Ljava/lang/Throwable;)V
-    .locals 1
-
-    iget-object v0, p0, Lnpm;->a:Lnpo;
-
-    invoke-virtual {v0, p1}, Lnnb;->a(Ljava/lang/Throwable;)Z
+    invoke-virtual {p1, v0}, Lajy;->g(Ljava/lang/String;)V
 
     return-void
-.end method
-
-.method public final bridge synthetic e(Ljava/lang/Object;)V
-    .locals 1
-
-    check-cast p1, Lnou;
-
-    iget-object v0, p0, Lnpm;->a:Lnpo;
-
-    invoke-virtual {v0, p1}, Lnnb;->f(Lnou;)Z
-
-    return-void
-.end method
-
-.method public final g()Z
-    .locals 1
-
-    iget-object v0, p0, Lnpm;->a:Lnpo;
-
-    invoke-virtual {v0}, Lnnb;->isDone()Z
-
-    move-result v0
-
-    return v0
 .end method

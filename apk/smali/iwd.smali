@@ -2,132 +2,155 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Landroid/view/View$OnGenericMotionListener;
+.implements Landroid/view/View$OnClickListener;
 
 
 # instance fields
-.field public final synthetic a:Liwf;
+.field public final synthetic a:Lcom/google/android/apps/camera/ui/compositevideoview/CompositeVideoView;
+
+.field private final synthetic b:I
 
 
 # direct methods
-.method public synthetic constructor <init>(Liwf;)V
+.method public synthetic constructor <init>(Lcom/google/android/apps/camera/ui/compositevideoview/CompositeVideoView;I)V
     .locals 0
+
+    iput p2, p0, Liwd;->b:I
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Liwd;->a:Liwf;
+    iput-object p1, p0, Liwd;->a:Lcom/google/android/apps/camera/ui/compositevideoview/CompositeVideoView;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onGenericMotion(Landroid/view/View;Landroid/view/MotionEvent;)Z
-    .locals 5
+.method public final onClick(Landroid/view/View;)V
+    .locals 3
 
-    iget-object v0, p0, Liwd;->a:Liwf;
+    iget p1, p0, Liwd;->b:I
 
-    iget-boolean v1, v0, Liwf;->c:Z
+    packed-switch p1, :pswitch_data_0
 
-    const/4 v2, 0x0
+    iget-object p1, p0, Liwd;->a:Lcom/google/android/apps/camera/ui/compositevideoview/CompositeVideoView;
 
-    if-nez v1, :cond_0
+    iget-object p1, p1, Lcom/google/android/apps/camera/ui/compositevideoview/CompositeVideoView;->b:Liwg;
+
+    if-eqz p1, :cond_5
+
+    move-object v0, p1
+
+    check-cast v0, Lihj;
+
+    iget-object v1, v0, Lihj;->b:Liwh;
+
+    invoke-interface {v1}, Liwh;->a()V
+
+    iget-object v1, v0, Lihj;->d:Lihg;
+
+    iget-object v2, v1, Lihg;->d:Lihj;
+
+    invoke-virtual {p1, v2}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_3
+
+    iget-object p1, v1, Lihg;->c:Lihj;
+
+    invoke-virtual {p1}, Lihj;->c()V
 
     goto :goto_0
+
+    :pswitch_0
+    iget-object p1, p0, Liwd;->a:Lcom/google/android/apps/camera/ui/compositevideoview/CompositeVideoView;
+
+    iget-object v0, p1, Lcom/google/android/apps/camera/ui/compositevideoview/CompositeVideoView;->a:Landroid/widget/VideoView;
+
+    invoke-virtual {v0}, Landroid/widget/VideoView;->isPlaying()Z
+
+    move-result v0
+
+    iget-object p1, p1, Lcom/google/android/apps/camera/ui/compositevideoview/CompositeVideoView;->b:Liwg;
+
+    if-eqz p1, :cond_0
+
+    if-eqz v0, :cond_0
+
+    invoke-interface {p1}, Liwg;->c()V
 
     :cond_0
-    check-cast p1, Landroid/support/v7/widget/RecyclerView;
+    return-void
 
-    invoke-virtual {p2}, Landroid/view/MotionEvent;->getAction()I
+    :pswitch_1
+    iget-object p1, p0, Liwd;->a:Lcom/google/android/apps/camera/ui/compositevideoview/CompositeVideoView;
 
-    move-result v1
+    iget-object p1, p1, Lcom/google/android/apps/camera/ui/compositevideoview/CompositeVideoView;->b:Liwg;
 
-    const/16 v3, 0x8
+    if-eqz p1, :cond_2
 
-    if-ne v1, v3, :cond_4
+    check-cast p1, Lihj;
 
-    invoke-virtual {p2}, Landroid/view/MotionEvent;->getSource()I
+    iget-object v0, p1, Lihj;->a:Landroid/content/Context;
 
-    move-result v1
+    invoke-static {v0}, Lmip;->ef(Landroid/content/Context;)I
 
-    const/high16 v3, 0x400000
+    move-result v0
 
-    if-ne v1, v3, :cond_4
+    const/4 v1, 0x1
 
-    const/16 v1, 0x1a
+    if-eq v0, v1, :cond_1
 
-    invoke-virtual {p2, v1}, Landroid/view/MotionEvent;->getAxisValue(I)F
+    iget-object v0, p1, Lihj;->g:Ljts;
 
-    move-result p2
+    iget-object v1, p1, Lihj;->c:Landroid/net/Uri;
 
-    iget-object v1, p1, Landroid/support/v7/widget/RecyclerView;->n:Lly;
+    invoke-virtual {v0, v1}, Ljts;->b(Landroid/net/Uri;)V
 
-    if-nez v1, :cond_1
+    iget-object v0, p1, Lihj;->b:Liwh;
 
-    goto :goto_0
+    invoke-interface {v0}, Liwh;->h()V
+
+    invoke-virtual {p1}, Lihj;->b()V
+
+    return-void
 
     :cond_1
-    invoke-virtual {v1}, Lly;->W()Z
+    iget-object p1, p1, Lihj;->a:Landroid/content/Context;
 
-    move-result v3
-
-    const/4 v4, 0x1
-
-    if-eqz v3, :cond_2
-
-    neg-float p2, p2
-
-    iget v1, v0, Liwf;->b:F
-
-    mul-float p2, p2, v1
-
-    iget v1, v0, Liwf;->d:I
-
-    int-to-float v1, v1
-
-    add-float/2addr p2, v1
-
-    float-to-int p2, p2
-
-    iput p2, v0, Liwf;->d:I
-
-    invoke-virtual {p1, v2, p2}, Landroid/support/v7/widget/RecyclerView;->ac(II)V
-
-    const/4 v2, 0x1
-
-    goto :goto_0
+    invoke-static {p1}, Lcom/google/android/apps/camera/ui/eduimageview/EduImageView;->c(Landroid/content/Context;)V
 
     :cond_2
-    invoke-virtual {v1}, Lly;->V()Z
-
-    move-result v1
-
-    if-nez v1, :cond_3
-
-    goto :goto_0
+    return-void
 
     :cond_3
-    neg-float p2, p2
+    iget-object v2, v1, Lihg;->c:Lihj;
 
-    iget v1, v0, Liwf;->a:F
+    invoke-virtual {p1, v2}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
 
-    mul-float p2, p2, v1
+    move-result p1
 
-    iget v1, v0, Liwf;->d:I
+    if-eqz p1, :cond_4
 
-    int-to-float v1, v1
+    iget-object p1, v1, Lihg;->d:Lihj;
 
-    add-float/2addr p2, v1
-
-    float-to-int p2, p2
-
-    iput p2, v0, Liwf;->d:I
-
-    invoke-virtual {p1, p2, v2}, Landroid/support/v7/widget/RecyclerView;->ac(II)V
-
-    return v4
+    invoke-virtual {p1}, Lihj;->c()V
 
     :cond_4
     :goto_0
-    return v2
+    iget-object p1, v0, Lihj;->b:Liwh;
+
+    invoke-interface {p1}, Liwh;->i()V
+
+    return-void
+
+    :cond_5
+    return-void
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method

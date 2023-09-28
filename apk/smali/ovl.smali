@@ -1,83 +1,39 @@
-.class public final Lovl;
+.class public interface abstract annotation Lovl;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lola;
+.implements Ljava/lang/annotation/Annotation;
 
 
-# instance fields
-.field public final a:Ljava/lang/Throwable;
+# annotations
+.annotation runtime Ljava/lang/annotation/Retention;
+    value = .enum Ljava/lang/annotation/RetentionPolicy;->SOURCE:Ljava/lang/annotation/RetentionPolicy;
+.end annotation
 
-.field private final synthetic b:Lola;
+.annotation runtime Ljava/lang/annotation/Target;
+    value = {
+        .enum Ljava/lang/annotation/ElementType;->FIELD:Ljava/lang/annotation/ElementType;
+    }
+.end annotation
+
+
+# static fields
+.field public static final a:Lovd;
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/Throwable;Lola;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 2
 
-    invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    const-class v0, Ljava/lang/String;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const-string v1, "android_log_tag"
 
-    iput-object p1, p0, Lovl;->a:Ljava/lang/Throwable;
+    invoke-static {v1, v0}, Lovd;->c(Ljava/lang/String;Ljava/lang/Class;)Lovd;
 
-    iput-object p2, p0, Lovl;->b:Lola;
+    move-result-object v0
+
+    sput-object v0, Lovl;->a:Lovd;
 
     return-void
-.end method
-
-
-# virtual methods
-.method public final fold(Ljava/lang/Object;Lomo;)Ljava/lang/Object;
-    .locals 1
-
-    iget-object v0, p0, Lovl;->b:Lola;
-
-    invoke-interface {v0, p1, p2}, Lola;->fold(Ljava/lang/Object;Lomo;)Ljava/lang/Object;
-
-    move-result-object p1
-
-    return-object p1
-.end method
-
-.method public final get(Loky;)Lokx;
-    .locals 1
-
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    iget-object v0, p0, Lovl;->b:Lola;
-
-    invoke-interface {v0, p1}, Lola;->get(Loky;)Lokx;
-
-    move-result-object p1
-
-    return-object p1
-.end method
-
-.method public final minusKey(Loky;)Lola;
-    .locals 1
-
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    iget-object v0, p0, Lovl;->b:Lola;
-
-    invoke-interface {v0, p1}, Lola;->minusKey(Loky;)Lola;
-
-    move-result-object p1
-
-    return-object p1
-.end method
-
-.method public final plus(Lola;)Lola;
-    .locals 1
-
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    iget-object v0, p0, Lovl;->b:Lola;
-
-    invoke-interface {v0, p1}, Lola;->plus(Lola;)Lola;
-
-    move-result-object p1
-
-    return-object p1
 .end method

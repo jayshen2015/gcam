@@ -1,24 +1,18 @@
-.class public final Lflp;
-.super Ljava/lang/Object;
+.class final Lflp;
+.super Lflx;
 
 
 # instance fields
-.field public a:Lcom/google/android/apps/camera/ui/wirers/PreviewOverlay;
-
-.field public b:Lihx;
-
-.field private final c:Landroid/view/View;
+.field final synthetic a:Lflq;
 
 
 # direct methods
-.method public constructor <init>(Landroid/view/View;)V
+.method public constructor <init>(Lflq;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lflp;->a:Lflq;
 
-    iput-object p1, p0, Lflp;->c:Landroid/view/View;
-
-    invoke-virtual {p0}, Lflp;->d()V
+    invoke-direct {p0}, Lflx;-><init>()V
 
     return-void
 .end method
@@ -28,42 +22,19 @@
 .method public final a()V
     .locals 2
 
-    iget-object v0, p0, Lflp;->b:Lihx;
+    iget-object v0, p0, Lflp;->a:Lflq;
 
-    iget-object v1, v0, Lihx;->m:Landroid/animation/AnimatorSet;
+    iget-object v0, v0, Lflq;->a:Lihu;
 
-    if-eqz v1, :cond_0
+    invoke-virtual {v0}, Lihu;->e()V
 
-    invoke-virtual {v1}, Landroid/animation/AnimatorSet;->isRunning()Z
+    iget-object v0, p0, Lflp;->a:Lflq;
 
-    move-result v1
+    iget-object v1, v0, Lflq;->a:Lihu;
 
-    if-eqz v1, :cond_0
+    iget-object v0, v0, Lflq;->f:Lihw;
 
-    iget-object v1, v0, Lihx;->m:Landroid/animation/AnimatorSet;
-
-    invoke-virtual {v1}, Landroid/animation/AnimatorSet;->cancel()V
-
-    :cond_0
-    invoke-virtual {v0}, Lihx;->a()V
-
-    iget-object v0, p0, Lflp;->a:Lcom/google/android/apps/camera/ui/wirers/PreviewOverlay;
-
-    const/4 v1, 0x1
-
-    iput-boolean v1, v0, Lcom/google/android/apps/camera/ui/wirers/PreviewOverlay;->c:Z
-
-    return-void
-.end method
-
-.method public final b()V
-    .locals 2
-
-    iget-object v0, p0, Lflp;->a:Lcom/google/android/apps/camera/ui/wirers/PreviewOverlay;
-
-    const/4 v1, 0x0
-
-    iput-boolean v1, v0, Lcom/google/android/apps/camera/ui/wirers/PreviewOverlay;->c:Z
+    invoke-virtual {v1, v0}, Lihu;->g(Lihw;)V
 
     return-void
 .end method
@@ -71,100 +42,79 @@
 .method public final c()V
     .locals 2
 
-    iget-object v0, p0, Lflp;->a:Lcom/google/android/apps/camera/ui/wirers/PreviewOverlay;
+    iget-object v0, p0, Lflp;->a:Lflq;
 
-    const/4 v1, 0x1
+    iget-object v0, v0, Lflq;->a:Lihu;
 
-    iput-boolean v1, v0, Lcom/google/android/apps/camera/ui/wirers/PreviewOverlay;->c:Z
+    invoke-virtual {v0}, Lihu;->e()V
+
+    iget-object v0, p0, Lflp;->a:Lflq;
+
+    iget-object v1, v0, Lflq;->a:Lihu;
+
+    iget-object v0, v0, Lflq;->b:Lihw;
+
+    invoke-virtual {v1, v0}, Lihu;->g(Lihw;)V
 
     return-void
 .end method
 
 .method public final d()V
-    .locals 3
+    .locals 2
 
-    iget-object v0, p0, Lflp;->c:Landroid/view/View;
+    iget-object v0, p0, Lflp;->a:Lflq;
 
-    invoke-static {v0}, Ljew;->o(Landroid/view/View;)Ljew;
+    iget-object v0, v0, Lflq;->a:Lihu;
 
-    move-result-object v0
+    invoke-virtual {v0}, Lihu;->e()V
 
-    const v1, 0x7f0b03d8
+    iget-object v0, p0, Lflp;->a:Lflq;
 
-    invoke-virtual {v0, v1}, Ljew;->f(I)Ljava/lang/Object;
+    iget-object v1, v0, Lflq;->a:Lihu;
 
-    move-result-object v1
+    iget-object v0, v0, Lflq;->f:Lihw;
 
-    check-cast v1, Landroid/widget/FrameLayout;
-
-    iget-object v2, p0, Lflp;->b:Lihx;
-
-    if-eqz v2, :cond_0
-
-    invoke-virtual {v1, v2}, Landroid/widget/FrameLayout;->removeView(Landroid/view/View;)V
-
-    :cond_0
-    const v2, 0x7f0b02a6
-
-    invoke-virtual {v0, v2}, Ljew;->f(I)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lcom/google/android/apps/camera/ui/wirers/PreviewOverlay;
-
-    iput-object v0, p0, Lflp;->a:Lcom/google/android/apps/camera/ui/wirers/PreviewOverlay;
-
-    new-instance v0, Lihx;
-
-    invoke-virtual {v1}, Landroid/widget/FrameLayout;->getContext()Landroid/content/Context;
-
-    move-result-object v2
-
-    invoke-direct {v0, v2}, Lihx;-><init>(Landroid/content/Context;)V
-
-    invoke-static {v0}, Ljvd;->C(Landroid/view/View;)V
-
-    invoke-virtual {v1, v0}, Landroid/view/ViewGroup;->addView(Landroid/view/View;)V
-
-    iput-object v0, p0, Lflp;->b:Lihx;
+    invoke-virtual {v1, v0}, Lihu;->g(Lihw;)V
 
     return-void
 .end method
 
-.method public final e(Z)V
-    .locals 1
+.method public final fZ()V
+    .locals 2
 
-    iget-object v0, p0, Lflp;->b:Lihx;
+    iget-object v0, p0, Lflp;->a:Lflq;
 
-    iput-boolean p1, v0, Lihx;->j:Z
+    iget-object v0, v0, Lflq;->a:Lihu;
+
+    invoke-virtual {v0}, Lihu;->e()V
+
+    iget-object v0, p0, Lflp;->a:Lflq;
+
+    iget-object v1, v0, Lflq;->a:Lihu;
+
+    iget-object v0, v0, Lflq;->c:Lihw;
+
+    invoke-virtual {v1, v0}, Lihu;->g(Lihw;)V
 
     return-void
 .end method
 
-.method public final f(I)V
-    .locals 1
+.method public final j()V
+    .locals 2
 
-    iget-object v0, p0, Lflp;->b:Lihx;
+    iget-object v0, p0, Lflp;->a:Lflq;
 
-    invoke-virtual {v0, p1}, Lihx;->b(I)V
+    iget-object v0, v0, Lflq;->a:Lihu;
 
-    const/16 v0, 0x64
+    invoke-virtual {v0}, Lihu;->e()V
 
-    if-lt p1, v0, :cond_0
+    iget-object v0, p0, Lflp;->a:Lflq;
 
-    iget-object p1, p0, Lflp;->a:Lcom/google/android/apps/camera/ui/wirers/PreviewOverlay;
+    iget-object v1, v0, Lflq;->a:Lihu;
 
-    const/4 v0, 0x1
+    iget-object v0, v0, Lflq;->e:Lihw;
 
-    :goto_0
-    iput-boolean v0, p1, Lcom/google/android/apps/camera/ui/wirers/PreviewOverlay;->c:Z
+    invoke-virtual {v1, v0}, Lihu;->g(Lihw;)V
 
     return-void
-
-    :cond_0
-    iget-object p1, p0, Lflp;->a:Lcom/google/android/apps/camera/ui/wirers/PreviewOverlay;
-
-    const/4 v0, 0x0
-
-    goto :goto_0
 .end method

@@ -1,53 +1,183 @@
-.class public final synthetic Legs;
+.class public final Legs;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lmqi;
+.implements Lejy;
 
 
 # instance fields
-.field public final synthetic a:F
+.field private final a:Loom;
 
 
 # direct methods
-.method public synthetic constructor <init>(F)V
+.method public constructor <init>(Loom;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput p1, p0, Legs;->a:F
+    iput-object p1, p0, Legs;->a:Loom;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final apply(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 1
+.method public final a([FJ)V
+    .locals 4
 
-    iget v0, p0, Legs;->a:F
+    iget-object v0, p0, Legs;->a:Loom;
 
-    check-cast p1, Ljava/lang/Float;
+    move-object v1, v0
 
-    invoke-virtual {p1}, Ljava/lang/Float;->floatValue()F
+    check-cast v1, Lorr;
 
-    move-result p1
+    iget v1, v1, Lorr;->c:I
 
-    cmpl-float p1, p1, v0
+    const/4 v2, 0x0
 
-    if-ltz p1, :cond_0
+    :goto_0
+    if-ge v2, v1, :cond_0
 
-    const/4 p1, 0x1
+    invoke-interface {v0, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v3
+
+    check-cast v3, Lejy;
+
+    invoke-interface {v3, p1, p2, p3}, Lejy;->a([FJ)V
+
+    add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
     :cond_0
-    const/4 p1, 0x0
+    return-void
+.end method
+
+.method public final b(II)V
+    .locals 4
+
+    iget-object v0, p0, Legs;->a:Loom;
+
+    move-object v1, v0
+
+    check-cast v1, Lorr;
+
+    iget v1, v1, Lorr;->c:I
+
+    const/4 v2, 0x0
 
     :goto_0
-    invoke-static {p1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+    if-ge v2, v1, :cond_0
 
-    move-result-object p1
+    invoke-interface {v0, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
-    return-object p1
+    move-result-object v3
+
+    check-cast v3, Lejy;
+
+    invoke-interface {v3, p1, p2}, Lejy;->b(II)V
+
+    add-int/lit8 v2, v2, 0x1
+
+    goto :goto_0
+
+    :cond_0
+    return-void
+.end method
+
+.method public final c(Lcom/google/android/libraries/vision/opengl/Texture;Lejx;)V
+    .locals 4
+
+    iget-object v0, p0, Legs;->a:Loom;
+
+    move-object v1, v0
+
+    check-cast v1, Lorr;
+
+    iget v1, v1, Lorr;->c:I
+
+    const/4 v2, 0x0
+
+    :goto_0
+    if-ge v2, v1, :cond_0
+
+    invoke-interface {v0, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v3
+
+    check-cast v3, Lejy;
+
+    invoke-interface {v3, p1, p2}, Lejy;->c(Lcom/google/android/libraries/vision/opengl/Texture;Lejx;)V
+
+    add-int/lit8 v2, v2, 0x1
+
+    goto :goto_0
+
+    :cond_0
+    return-void
+.end method
+
+.method public final d()V
+    .locals 4
+
+    iget-object v0, p0, Legs;->a:Loom;
+
+    move-object v1, v0
+
+    check-cast v1, Lorr;
+
+    iget v1, v1, Lorr;->c:I
+
+    const/4 v2, 0x0
+
+    :goto_0
+    if-ge v2, v1, :cond_0
+
+    invoke-interface {v0, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v3
+
+    check-cast v3, Lejy;
+
+    invoke-interface {v3}, Lejy;->d()V
+
+    add-int/lit8 v2, v2, 0x1
+
+    goto :goto_0
+
+    :cond_0
+    return-void
+.end method
+
+.method public final e(Legy;)V
+    .locals 4
+
+    iget-object v0, p0, Legs;->a:Loom;
+
+    move-object v1, v0
+
+    check-cast v1, Lorr;
+
+    iget v1, v1, Lorr;->c:I
+
+    const/4 v2, 0x0
+
+    :goto_0
+    if-ge v2, v1, :cond_0
+
+    invoke-interface {v0, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v3
+
+    check-cast v3, Lejy;
+
+    invoke-interface {v3, p1}, Lejy;->e(Legy;)V
+
+    add-int/lit8 v2, v2, 0x1
+
+    goto :goto_0
+
+    :cond_0
+    return-void
 .end method

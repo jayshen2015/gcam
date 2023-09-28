@@ -1,62 +1,97 @@
-.class public abstract Lgzi;
+.class public final Lgzi;
 .super Ljava/lang/Object;
+
+# interfaces
+.implements Lpys;
+
+
+# instance fields
+.field private final a:Lqkg;
+
+.field private final b:Lqkg;
+
+.field private final c:Lqkg;
+
+.field private final d:Lqkg;
 
 
 # direct methods
-.method public constructor <init>()V
+.method public constructor <init>(Lqkg;Lqkg;Lqkg;Lqkg;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    iput-object p1, p0, Lgzi;->a:Lqkg;
+
+    iput-object p2, p0, Lgzi;->b:Lqkg;
+
+    iput-object p3, p0, Lgzi;->c:Lqkg;
+
+    iput-object p4, p0, Lgzi;->d:Lqkg;
+
     return-void
+.end method
+
+.method public static b(Lqkg;Lqkg;Lqkg;Lqkg;)Lgzi;
+    .locals 1
+
+    new-instance v0, Lgzi;
+
+    invoke-direct {v0, p0, p1, p2, p3}, Lgzi;-><init>(Lqkg;Lqkg;Lqkg;Lqkg;)V
+
+    return-object v0
 .end method
 
 
 # virtual methods
-.method public abstract a(Ljava/lang/String;)I
+.method public final a()Lgzh;
+    .locals 5
+
+    iget-object v0, p0, Lgzi;->a:Lqkg;
+
+    invoke-interface {v0}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Llnc;
+
+    iget-object v1, p0, Lgzi;->b:Lqkg;
+
+    invoke-interface {v1}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Llnx;
+
+    iget-object v2, p0, Lgzi;->c:Lqkg;
+
+    invoke-interface {v2}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Llqd;
+
+    iget-object v3, p0, Lgzi;->d:Lqkg;
+
+    invoke-interface {v3}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v3
+
+    check-cast v3, Lgmu;
+
+    new-instance v4, Lgzh;
+
+    invoke-direct {v4, v0, v1, v2, v3}, Lgzh;-><init>(Llnc;Llnx;Llqd;Lgmu;)V
+
+    return-object v4
 .end method
 
-.method public abstract b(Ljava/lang/String;Ljava/lang/Integer;)I
-.end method
+.method public final bridge synthetic get()Ljava/lang/Object;
+    .locals 1
 
-.method public abstract c(Ljava/lang/String;)J
-.end method
+    invoke-virtual {p0}, Lgzi;->a()Lgzh;
 
-.method public abstract d()Landroid/content/SharedPreferences;
-.end method
+    move-result-object v0
 
-.method public abstract e(Ljava/lang/String;)Ljava/lang/String;
-.end method
-
-.method public abstract f(Lgyo;)V
-.end method
-
-.method public abstract g(Ljava/lang/String;)V
-.end method
-
-.method public abstract h(Lgyo;)V
-.end method
-
-.method public abstract i(Ljava/lang/String;I)V
-.end method
-
-.method public abstract j(Ljava/lang/String;J)V
-.end method
-
-.method public abstract k(Ljava/lang/String;Ljava/lang/String;)V
-.end method
-
-.method public abstract l(Ljava/lang/String;Z)V
-.end method
-
-.method public abstract m(Ljava/lang/String;)Z
-.end method
-
-.method public abstract n(Ljava/lang/String;)Z
-.end method
-
-.method public abstract o(Ljava/lang/String;)Z
-.end method
-
-.method public abstract p()Landroid/content/SharedPreferences;
+    return-object v0
 .end method

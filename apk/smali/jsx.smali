@@ -1,119 +1,107 @@
 .class public final Ljsx;
-.super Ljhn;
+.super Ljava/lang/Object;
 
-
-# static fields
-.field public static final CREATOR:Landroid/os/Parcelable$Creator;
+# interfaces
+.implements Lfik;
+.implements Lfig;
 
 
 # instance fields
-.field final a:I
+.field public final a:Lqkg;
 
-.field public final b:Ljsh;
+.field public final b:Lqkg;
+
+.field public final c:Lhuf;
+
+.field public final d:Lhug;
+
+.field public final e:Landroid/content/pm/PackageInfo;
+
+.field public final f:Llar;
+
+.field public final g:Lfjs;
+
+.field public final h:Lfhv;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
+.method public constructor <init>(Lqkg;Lqkg;Lhuf;Lhug;Landroid/content/pm/PackageInfo;Llar;Lfhv;Lfjs;)V
+    .locals 0
 
-    new-instance v0, Ljsy;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const/4 v1, 0x0
+    iput-object p1, p0, Ljsx;->a:Lqkg;
 
-    invoke-direct {v0, v1}, Ljsy;-><init>(I)V
+    iput-object p2, p0, Ljsx;->b:Lqkg;
 
-    sput-object v0, Ljsx;->CREATOR:Landroid/os/Parcelable$Creator;
+    iput-object p3, p0, Ljsx;->c:Lhuf;
 
-    return-void
-.end method
+    iput-object p4, p0, Ljsx;->d:Lhug;
 
-.method public constructor <init>(ILandroid/os/IBinder;)V
-    .locals 1
+    iput-object p5, p0, Ljsx;->e:Landroid/content/pm/PackageInfo;
 
-    invoke-direct {p0}, Ljhn;-><init>()V
+    iput-object p6, p0, Ljsx;->f:Llar;
 
-    iput p1, p0, Ljsx;->a:I
+    iput-object p7, p0, Ljsx;->h:Lfhv;
 
-    if-eqz p2, :cond_1
-
-    const-string p1, "com.google.android.gms.wearable.internal.IWearableListener"
-
-    invoke-interface {p2, p1}, Landroid/os/IBinder;->queryLocalInterface(Ljava/lang/String;)Landroid/os/IInterface;
-
-    move-result-object p1
-
-    instance-of v0, p1, Ljsh;
-
-    if-eqz v0, :cond_0
-
-    check-cast p1, Ljsh;
-
-    goto :goto_0
-
-    :cond_0
-    new-instance p1, Ljsf;
-
-    invoke-direct {p1, p2}, Ljsf;-><init>(Landroid/os/IBinder;)V
-
-    :goto_0
-    iput-object p1, p0, Ljsx;->b:Ljsh;
-
-    return-void
-
-    :cond_1
-    const/4 p1, 0x0
-
-    goto :goto_0
-.end method
-
-.method public constructor <init>(Ljsh;)V
-    .locals 1
-
-    invoke-direct {p0}, Ljhn;-><init>()V
-
-    const/4 v0, 0x1
-
-    iput v0, p0, Ljsx;->a:I
-
-    iput-object p1, p0, Ljsx;->b:Ljsh;
+    iput-object p8, p0, Ljsx;->g:Lfjs;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final writeToParcel(Landroid/os/Parcel;I)V
-    .locals 2
+.method public final fV()V
+    .locals 3
 
-    invoke-static {p1}, Ljhp;->a(Landroid/os/Parcel;)I
+    sget-object v0, Lpzc;->a:Lpzc;
 
-    move-result p2
+    invoke-virtual {v0}, Lpzc;->b()Lpzd;
 
-    iget v0, p0, Ljsx;->a:I
+    move-result-object v0
 
-    const/4 v1, 0x1
+    invoke-interface {v0}, Lpzd;->b()J
 
-    invoke-static {p1, v1, v0}, Ljhp;->g(Landroid/os/Parcel;II)V
+    move-result-wide v0
 
-    iget-object v0, p0, Ljsx;->b:Ljsh;
+    long-to-int v1, v0
 
-    if-nez v0, :cond_0
+    const/4 v0, -0x1
 
-    const/4 v0, 0x0
+    if-eq v1, v0, :cond_1
+
+    iget-object v0, p0, Ljsx;->c:Lhuf;
+
+    sget-object v2, Lhtu;->Q:Lhul;
+
+    invoke-interface {v0, v2}, Lhuf;->c(Lhts;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/Integer;
+
+    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
+
+    move-result v0
+
+    if-ge v0, v1, :cond_0
 
     goto :goto_0
 
     :cond_0
-    invoke-interface {v0}, Ljsh;->asBinder()Landroid/os/IBinder;
+    return-void
+
+    :cond_1
+    :goto_0
+    iget-object v0, p0, Ljsx;->a:Lqkg;
+
+    invoke-interface {v0}, Lqkg;->get()Ljava/lang/Object;
 
     move-result-object v0
 
-    :goto_0
-    const/4 v1, 0x2
+    check-cast v0, Ljsw;
 
-    invoke-static {p1, v1, v0}, Ljhp;->l(Landroid/os/Parcel;ILandroid/os/IBinder;)V
-
-    invoke-static {p1, p2}, Ljhp;->c(Landroid/os/Parcel;I)V
+    invoke-interface {v0}, Ljsw;->c()V
 
     return-void
 .end method

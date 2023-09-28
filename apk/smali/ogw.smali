@@ -1,195 +1,45 @@
-.class public final Logw;
+.class public final synthetic Logw;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Logv;
+.implements Lj$/util/function/Consumer;
 
 
-# static fields
-.field public static final a:Lloz;
-
-.field public static final b:Lloz;
-
-.field public static final c:Lloz;
-
-.field public static final d:Lloz;
-
-.field public static final e:Lloz;
+# instance fields
+.field public final synthetic a:I
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 6
-
-    new-instance v0, Llox;
-
-    const-string v1, "com.google.android.apps.camera"
-
-    invoke-static {v1}, Llol;->a(Ljava/lang/String;)Landroid/net/Uri;
-
-    move-result-object v1
-
-    invoke-direct {v0, v1}, Llox;-><init>(Landroid/net/Uri;)V
-
-    invoke-virtual {v0}, Llox;->c()Llox;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Llox;->a()Llox;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Llox;->b()Llox;
-
-    move-result-object v0
-
-    const-string v1, "InAppUpdate__chip_delay_hours"
-
-    const-wide/16 v2, 0x0
-
-    invoke-virtual {v0, v1, v2, v3}, Llox;->e(Ljava/lang/String;J)Lloz;
-
-    move-result-object v1
-
-    sput-object v1, Logw;->a:Lloz;
-
-    const-string v1, "InAppUpdate__chip_dismissable"
-
-    const/4 v4, 0x1
-
-    invoke-virtual {v0, v1, v4}, Llox;->g(Ljava/lang/String;Z)Lloz;
-
-    move-result-object v1
-
-    sput-object v1, Logw;->b:Lloz;
-
-    const-string v1, "InAppUpdate__chip_dismissal_limit"
-
-    const-wide/16 v4, 0x2
-
-    invoke-virtual {v0, v1, v4, v5}, Llox;->e(Ljava/lang/String;J)Lloz;
-
-    move-result-object v1
-
-    sput-object v1, Logw;->c:Lloz;
-
-    const-string v1, "InAppUpdate__chip_min_staleness_days"
-
-    invoke-virtual {v0, v1, v2, v3}, Llox;->e(Ljava/lang/String;J)Lloz;
-
-    move-result-object v1
-
-    sput-object v1, Logw;->d:Lloz;
-
-    const-string v1, "InAppUpdate__chip_timeout_seconds"
-
-    const-wide/16 v2, 0xa
-
-    invoke-virtual {v0, v1, v2, v3}, Llox;->e(Ljava/lang/String;J)Lloz;
-
-    move-result-object v0
-
-    sput-object v0, Logw;->e:Lloz;
-
-    return-void
-.end method
-
-.method public constructor <init>()V
+.method public synthetic constructor <init>(I)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput p1, p0, Logw;->a:I
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()J
-    .locals 2
-
-    sget-object v0, Logw;->a:Lloz;
-
-    invoke-virtual {v0}, Lloz;->e()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/lang/Long;
-
-    invoke-virtual {v0}, Ljava/lang/Long;->longValue()J
-
-    move-result-wide v0
-
-    return-wide v0
-.end method
-
-.method public final b()J
-    .locals 2
-
-    sget-object v0, Logw;->c:Lloz;
-
-    invoke-virtual {v0}, Lloz;->e()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/lang/Long;
-
-    invoke-virtual {v0}, Ljava/lang/Long;->longValue()J
-
-    move-result-wide v0
-
-    return-wide v0
-.end method
-
-.method public final c()J
-    .locals 2
-
-    sget-object v0, Logw;->d:Lloz;
-
-    invoke-virtual {v0}, Lloz;->e()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/lang/Long;
-
-    invoke-virtual {v0}, Ljava/lang/Long;->longValue()J
-
-    move-result-wide v0
-
-    return-wide v0
-.end method
-
-.method public final d()J
-    .locals 2
-
-    sget-object v0, Logw;->e:Lloz;
-
-    invoke-virtual {v0}, Lloz;->e()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/lang/Long;
-
-    invoke-virtual {v0}, Ljava/lang/Long;->longValue()J
-
-    move-result-wide v0
-
-    return-wide v0
-.end method
-
-.method public final e()Z
+.method public final accept(Ljava/lang/Object;)V
     .locals 1
 
-    sget-object v0, Logw;->b:Lloz;
+    iget v0, p0, Logw;->a:I
 
-    invoke-virtual {v0}, Lloz;->e()Ljava/lang/Object;
+    check-cast p1, Lmip;
 
-    move-result-object v0
+    invoke-virtual {p1, v0}, Lmip;->s(I)V
 
-    check-cast v0, Ljava/lang/Boolean;
+    return-void
+.end method
 
-    invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
+.method public final synthetic andThen(Lj$/util/function/Consumer;)Lj$/util/function/Consumer;
+    .locals 0
 
-    move-result v0
+    invoke-static {p0, p1}, Lj$/util/function/Consumer$-CC;->$default$andThen(Lj$/util/function/Consumer;Lj$/util/function/Consumer;)Lj$/util/function/Consumer;
 
-    return v0
+    move-result-object p1
+
+    return-object p1
 .end method

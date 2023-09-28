@@ -1,55 +1,114 @@
-.class public final Lotd;
-.super Lost;
+.class final Lotd;
+.super Lokn;
 
-# interfaces
-.implements Lopu;
-.implements Lotj;
+
+# instance fields
+.field final synthetic a:Ljava/util/Iterator;
+
+.field final synthetic b:Lotf;
 
 
 # direct methods
-.method public constructor <init>(Lola;Loss;)V
+.method public constructor <init>(Lotf;Ljava/util/Iterator;)V
     .locals 0
 
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    iput-object p1, p0, Lotd;->b:Lotf;
 
-    invoke-direct {p0, p1, p2}, Lost;-><init>(Lola;Loss;)V
+    iput-object p2, p0, Lotd;->a:Ljava/util/Iterator;
+
+    invoke-direct {p0}, Lokn;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final bridge synthetic db(Ljava/lang/Object;)V
-    .locals 0
+.method protected final bridge synthetic a()Ljava/lang/Object;
+    .locals 4
 
-    check-cast p1, Lojk;
+    :cond_0
+    iget-object v0, p0, Lotd;->a:Ljava/util/Iterator;
 
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    iget-object p1, p0, Lost;->b:Loss;
-
-    invoke-static {p1}, Lolp;->K(Lotj;)V
-
-    return-void
-.end method
-
-.method protected final j(Ljava/lang/Throwable;Z)V
-    .locals 1
-
-    iget-object v0, p0, Lost;->b:Loss;
-
-    invoke-interface {v0, p1}, Loss;->x(Ljava/lang/Throwable;)Z
+    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v0
 
-    if-nez v0, :cond_0
+    const/4 v1, 0x0
 
-    if-nez p2, :cond_0
+    if-eqz v0, :cond_2
 
-    iget-object p2, p0, Loor;->a:Lola;
+    iget-object v0, p0, Lotd;->a:Ljava/util/Iterator;
 
-    invoke-static {p2, p1}, Lonm;->k(Lola;Ljava/lang/Throwable;)V
+    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    :cond_0
-    return-void
+    move-result-object v0
+
+    check-cast v0, Lota;
+
+    invoke-virtual {v0}, Lota;->a()Lomr;
+
+    move-result-object v2
+
+    iget-object v3, p0, Lotd;->b:Lotf;
+
+    iget-object v3, v3, Lotf;->a:Lotg;
+
+    iget-object v3, v3, Lotg;->a:Lorj;
+
+    iget-object v3, v3, Lorj;->c:Lomr;
+
+    invoke-virtual {v2, v3}, Lomr;->a(Lomr;)I
+
+    move-result v2
+
+    if-ltz v2, :cond_1
+
+    invoke-virtual {p0}, Lokn;->b()V
+
+    goto :goto_0
+
+    :cond_1
+    invoke-virtual {v0}, Lota;->b()Lomr;
+
+    move-result-object v1
+
+    iget-object v2, p0, Lotd;->b:Lotf;
+
+    iget-object v2, v2, Lotf;->a:Lotg;
+
+    iget-object v2, v2, Lotg;->a:Lorj;
+
+    iget-object v2, v2, Lorj;->b:Lomr;
+
+    invoke-virtual {v1, v2}, Lomr;->a(Lomr;)I
+
+    move-result v1
+
+    if-lez v1, :cond_0
+
+    iget-object v1, v0, Lota;->a:Lorj;
+
+    iget-object v2, p0, Lotd;->b:Lotf;
+
+    iget-object v2, v2, Lotf;->a:Lotg;
+
+    iget-object v2, v2, Lotg;->a:Lorj;
+
+    invoke-virtual {v1, v2}, Lorj;->i(Lorj;)Lorj;
+
+    move-result-object v1
+
+    iget-object v0, v0, Lota;->b:Ljava/lang/Object;
+
+    invoke-static {v1, v0}, Lobr;->ae(Ljava/lang/Object;Ljava/lang/Object;)Ljava/util/Map$Entry;
+
+    move-result-object v1
+
+    goto :goto_0
+
+    :cond_2
+    invoke-virtual {p0}, Lokn;->b()V
+
+    :goto_0
+    return-object v1
 .end method

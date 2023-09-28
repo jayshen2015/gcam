@@ -1,34 +1,35 @@
-.class public final Liwn;
+.class public Liwn;
 .super Ljava/lang/Object;
 
-
-# instance fields
-.field public final a:Lmo;
-
-.field public final b:I
-
-.field public final c:I
-
-.field public final d:I
-
-.field public final e:I
+# interfaces
+.implements Lihs;
 
 
 # direct methods
-.method public constructor <init>(Lmo;IIII)V
+.method public constructor <init>()V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Liwn;->a:Lmo;
+    return-void
+.end method
 
-    iput p2, p0, Liwn;->b:I
 
-    iput p3, p0, Liwn;->c:I
+# virtual methods
+.method public synthetic f()V
+    .locals 0
 
-    iput p4, p0, Liwn;->d:I
+    return-void
+.end method
 
-    iput p5, p0, Liwn;->e:I
+.method public synthetic g()V
+    .locals 0
+
+    return-void
+.end method
+
+.method public synthetic h()V
+    .locals 0
 
     return-void
 .end method

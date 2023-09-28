@@ -1,182 +1,353 @@
-.class public final Loyj;
-.super Lnws;
-
-# interfaces
-.implements Lnxz;
+.class public abstract Loyj;
+.super Ljava/lang/Object;
 
 
 # static fields
-.field public static final e:Loyj;
-
-.field private static volatile f:Lnyf;
-
-
-# instance fields
-.field public a:I
-
-.field public b:I
-
-.field public c:I
-
-.field public d:Loyf;
+.field private static final a:[C
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 2
+    .locals 1
 
-    new-instance v0, Loyj;
+    const-string v0, "0123456789abcdef"
 
-    invoke-direct {v0}, Loyj;-><init>()V
+    invoke-virtual {v0}, Ljava/lang/String;->toCharArray()[C
 
-    sput-object v0, Loyj;->e:Loyj;
+    move-result-object v0
 
-    const-class v1, Loyj;
-
-    invoke-static {v1, v0}, Lnws;->aa(Ljava/lang/Class;Lnws;)V
+    sput-object v0, Loyj;->a:[C
 
     return-void
 .end method
 
-.method private constructor <init>()V
+.method public constructor <init>()V
     .locals 0
 
-    invoke-direct {p0}, Lnws;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
+.end method
+
+.method public static e([B)Loyj;
+    .locals 1
+
+    new-instance v0, Loyi;
+
+    invoke-direct {v0, p0}, Loyi;-><init>([B)V
+
+    return-object v0
+.end method
+
+.method public static f(Ljava/lang/String;)Loyj;
+    .locals 5
+
+    invoke-virtual {p0}, Ljava/lang/String;->length()I
+
+    move-result v0
+
+    const/4 v1, 0x1
+
+    const/4 v2, 0x0
+
+    const/4 v3, 0x2
+
+    if-lt v0, v3, :cond_0
+
+    const/4 v0, 0x1
+
+    goto :goto_0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    :goto_0
+    const-string v4, "input string (%s) must have at least 2 characters"
+
+    invoke-static {v0, v4, p0}, Lobr;->aK(ZLjava/lang/String;Ljava/lang/Object;)V
+
+    invoke-virtual {p0}, Ljava/lang/String;->length()I
+
+    move-result v0
+
+    rem-int/2addr v0, v3
+
+    if-nez v0, :cond_1
+
+    goto :goto_1
+
+    :cond_1
+    const/4 v1, 0x0
+
+    :goto_1
+    const-string v0, "input string (%s) must have an even number of characters"
+
+    invoke-static {v1, v0, p0}, Lobr;->aK(ZLjava/lang/String;Ljava/lang/Object;)V
+
+    invoke-virtual {p0}, Ljava/lang/String;->length()I
+
+    move-result v0
+
+    div-int/2addr v0, v3
+
+    new-array v0, v0, [B
+
+    :goto_2
+    invoke-virtual {p0}, Ljava/lang/String;->length()I
+
+    move-result v1
+
+    if-ge v2, v1, :cond_2
+
+    div-int/lit8 v1, v2, 0x2
+
+    invoke-virtual {p0, v2}, Ljava/lang/String;->charAt(I)C
+
+    move-result v3
+
+    invoke-static {v3}, Loyj;->g(C)I
+
+    move-result v3
+
+    shl-int/lit8 v3, v3, 0x4
+
+    add-int/lit8 v4, v2, 0x1
+
+    invoke-virtual {p0, v4}, Ljava/lang/String;->charAt(I)C
+
+    move-result v4
+
+    invoke-static {v4}, Loyj;->g(C)I
+
+    move-result v4
+
+    add-int/2addr v3, v4
+
+    int-to-byte v3, v3
+
+    aput-byte v3, v0, v1
+
+    add-int/lit8 v2, v2, 0x2
+
+    goto :goto_2
+
+    :cond_2
+    invoke-static {v0}, Loyj;->e([B)Loyj;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method private static g(C)I
+    .locals 3
+
+    const/16 v0, 0x30
+
+    if-lt p0, v0, :cond_1
+
+    const/16 v0, 0x39
+
+    if-le p0, v0, :cond_0
+
+    goto :goto_0
+
+    :cond_0
+    add-int/lit8 p0, p0, -0x30
+
+    return p0
+
+    :cond_1
+    :goto_0
+    const/16 v0, 0x61
+
+    if-lt p0, v0, :cond_2
+
+    const/16 v0, 0x66
+
+    if-gt p0, v0, :cond_2
+
+    add-int/lit8 p0, p0, -0x57
+
+    return p0
+
+    :cond_2
+    new-instance v0, Ljava/lang/IllegalArgumentException;
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    const/16 v2, 0x20
+
+    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string v2, "Illegal hexadecimal character: "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p0
+
+    invoke-direct {v0, p0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw v0
 .end method
 
 
 # virtual methods
-.method protected final a(ILjava/lang/Object;)Ljava/lang/Object;
+.method public abstract a()I
+.end method
+
+.method public abstract b()I
+.end method
+
+.method public abstract c(Loyj;)Z
+.end method
+
+.method public d()[B
+    .locals 1
+
+    const/4 v0, 0x0
+
+    throw v0
+.end method
+
+.method public final equals(Ljava/lang/Object;)Z
     .locals 3
 
-    add-int/lit8 p1, p1, -0x1
+    instance-of v0, p1, Loyj;
 
-    const/4 p2, 0x1
+    const/4 v1, 0x0
 
-    packed-switch p1, :pswitch_data_0
+    if-eqz v0, :cond_0
 
-    :pswitch_0
-    const/4 p1, 0x0
+    check-cast p1, Loyj;
 
-    return-object p1
+    invoke-virtual {p0}, Loyj;->b()I
 
-    :pswitch_1
-    sget-object p1, Loyj;->f:Lnyf;
+    move-result v0
 
-    if-nez p1, :cond_1
+    invoke-virtual {p1}, Loyj;->b()I
 
-    const-class p2, Loyj;
+    move-result v2
 
-    monitor-enter p2
+    if-ne v0, v2, :cond_0
 
-    :try_start_0
-    sget-object p1, Loyj;->f:Lnyf;
+    invoke-virtual {p0, p1}, Loyj;->c(Loyj;)Z
 
-    if-nez p1, :cond_0
+    move-result p1
 
-    new-instance p1, Lnwo;
+    if-eqz p1, :cond_0
 
-    sget-object v0, Loyj;->e:Loyj;
+    const/4 p1, 0x1
 
-    invoke-direct {p1, v0}, Lnwo;-><init>(Lnws;)V
-
-    sput-object p1, Loyj;->f:Lnyf;
+    return p1
 
     :cond_0
-    monitor-exit p2
+    return v1
+.end method
+
+.method public final hashCode()I
+    .locals 5
+
+    invoke-virtual {p0}, Loyj;->b()I
+
+    move-result v0
+
+    const/16 v1, 0x20
+
+    if-lt v0, v1, :cond_0
+
+    invoke-virtual {p0}, Loyj;->a()I
+
+    move-result v0
+
+    return v0
+
+    :cond_0
+    invoke-virtual {p0}, Loyj;->d()[B
+
+    move-result-object v0
+
+    const/4 v1, 0x0
+
+    aget-byte v1, v0, v1
+
+    and-int/lit16 v1, v1, 0xff
+
+    const/4 v2, 0x1
+
+    :goto_0
+    array-length v3, v0
+
+    if-ge v2, v3, :cond_1
+
+    aget-byte v3, v0, v2
+
+    and-int/lit16 v3, v3, 0xff
+
+    mul-int/lit8 v4, v2, 0x8
+
+    shl-int/2addr v3, v4
+
+    or-int/2addr v1, v3
+
+    add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
-    :catchall_0
-    move-exception p1
-
-    monitor-exit p2
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw p1
-
     :cond_1
+    return v1
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .locals 7
+
+    invoke-virtual {p0}, Loyj;->d()[B
+
+    move-result-object v0
+
+    array-length v1, v0
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    add-int v3, v1, v1
+
+    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const/4 v3, 0x0
+
     :goto_0
-    return-object p1
+    if-ge v3, v1, :cond_0
 
-    :pswitch_2
-    sget-object p1, Loyj;->e:Loyj;
+    aget-byte v4, v0, v3
 
-    return-object p1
+    sget-object v5, Loyj;->a:[C
 
-    :pswitch_3
-    new-instance p1, Lnwn;
+    shr-int/lit8 v6, v4, 0x4
 
-    sget-object p2, Loyj;->e:Loyj;
+    and-int/lit8 v6, v6, 0xf
 
-    invoke-direct {p1, p2}, Lnwn;-><init>(Lnws;)V
+    aget-char v6, v5, v6
 
-    return-object p1
+    invoke-virtual {v2, v6}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    :pswitch_4
-    new-instance p1, Loyj;
+    and-int/lit8 v4, v4, 0xf
 
-    invoke-direct {p1}, Loyj;-><init>()V
+    aget-char v4, v5, v4
 
-    return-object p1
+    invoke-virtual {v2, v4}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    :pswitch_5
-    const-string p1, "a"
+    add-int/lit8 v3, v3, 0x1
 
-    const-string v0, "\u0001\u0003\u0000\u0001\u0001\u0003\u0003\u0000\u0000\u0000\u0001\u1004\u0000\u0002\u1004\u0001\u0003\u1009\u0002"
+    goto :goto_0
 
-    const/4 v1, 0x4
+    :cond_0
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    new-array v1, v1, [Ljava/lang/Object;
+    move-result-object v0
 
-    const/4 v2, 0x0
-
-    aput-object p1, v1, v2
-
-    const-string p1, "b"
-
-    aput-object p1, v1, p2
-
-    const/4 p1, 0x2
-
-    const-string p2, "c"
-
-    aput-object p2, v1, p1
-
-    const/4 p1, 0x3
-
-    const-string p2, "d"
-
-    aput-object p2, v1, p1
-
-    sget-object p1, Loyj;->e:Loyj;
-
-    invoke-static {p1, v0, v1}, Loyj;->X(Lnxy;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object p1
-
-    return-object p1
-
-    :pswitch_6
-    invoke-static {p2}, Ljava/lang/Byte;->valueOf(B)Ljava/lang/Byte;
-
-    move-result-object p1
-
-    return-object p1
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_6
-        :pswitch_0
-        :pswitch_5
-        :pswitch_4
-        :pswitch_3
-        :pswitch_2
-        :pswitch_1
-    .end packed-switch
+    return-object v0
 .end method

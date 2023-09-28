@@ -1,51 +1,49 @@
-.class public final Lmyg;
-.super Lmyd;
+.class public final synthetic Lmyg;
+.super Ljava/lang/Object;
 
 # interfaces
-.implements Ljava/io/Serializable;
-
-
-# static fields
-.field private static final serialVersionUID:J
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field private final a:Ljava/lang/Object;
+.field public final synthetic a:Lmyi;
 
-.field private final b:I
+.field public final synthetic b:Lqkg;
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/Object;I)V
+.method public synthetic constructor <init>(Lmyi;Lqkg;)V
     .locals 0
 
-    invoke-direct {p0}, Lmyd;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lmyg;->a:Ljava/lang/Object;
+    iput-object p1, p0, Lmyg;->a:Lmyi;
 
-    iput p2, p0, Lmyg;->b:I
-
-    const-string p1, "count"
-
-    invoke-static {p2, p1}, Llkj;->v(ILjava/lang/String;)V
+    iput-object p2, p0, Lmyg;->b:Lqkg;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()I
-    .locals 1
+.method public final run()V
+    .locals 2
 
-    iget v0, p0, Lmyg;->b:I
+    iget-object v0, p0, Lmyg;->a:Lmyi;
 
-    return v0
-.end method
+    iget-object v1, p0, Lmyg;->b:Lqkg;
 
-.method public final b()Ljava/lang/Object;
-    .locals 1
+    invoke-interface {v1}, Lqkg;->get()Ljava/lang/Object;
 
-    iget-object v0, p0, Lmyg;->a:Ljava/lang/Object;
+    move-result-object v1
 
-    return-object v0
+    check-cast v1, Ljava/lang/Boolean;
+
+    invoke-virtual {v1}, Ljava/lang/Boolean;->booleanValue()Z
+
+    move-result v1
+
+    iput-boolean v1, v0, Lmyi;->d:Z
+
+    return-void
 .end method

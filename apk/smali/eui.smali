@@ -1,62 +1,43 @@
-.class final Leui;
-.super Lifk;
+.class public final synthetic Leui;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field final synthetic a:Lhwd;
-
-.field final synthetic b:Leuj;
+.field public final synthetic a:Leuj;
 
 
 # direct methods
-.method public constructor <init>(Leuj;Lhwd;)V
+.method public synthetic constructor <init>(Leuj;)V
     .locals 0
 
-    iput-object p1, p0, Leui;->b:Leuj;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p2, p0, Leui;->a:Lhwd;
-
-    invoke-direct {p0}, Lifk;-><init>()V
+    iput-object p1, p0, Leui;->a:Leuj;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onShutterButtonClick()V
-    .locals 1
+.method public final run()V
+    .locals 2
 
-    iget-object v0, p0, Leui;->b:Leuj;
+    iget-object v0, p0, Leui;->a:Leuj;
 
-    iget-object v0, v0, Leuj;->I:Lhke;
+    iget-object v1, v0, Leuj;->a:Leur;
 
-    invoke-virtual {v0}, Lhke;->f()V
+    iget-object v1, v1, Leur;->p:Lojc;
 
-    iget-object v0, p0, Leui;->a:Lhwd;
+    invoke-virtual {v1}, Lojc;->c()Ljava/lang/Object;
 
-    invoke-virtual {v0}, Lhwd;->f()V
+    move-result-object v1
 
-    return-void
-.end method
+    check-cast v1, Lidc;
 
-.method public final onShutterButtonPressedStateChanged(Z)V
-    .locals 1
-
-    iget-object v0, p0, Leui;->b:Leuj;
-
-    iput-boolean p1, v0, Leuj;->J:Z
-
-    return-void
-.end method
-
-.method public final onShutterTouchStart()V
-    .locals 1
-
-    iget-object v0, p0, Leui;->b:Leuj;
-
-    iget-object v0, v0, Leuj;->I:Lhke;
-
-    invoke-virtual {v0}, Lhke;->e()V
+    invoke-interface {v1, v0}, Lidc;->j(Lidd;)V
 
     return-void
 .end method

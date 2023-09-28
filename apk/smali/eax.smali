@@ -2,177 +2,156 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lecw;
+.implements Lojz;
 
 
 # instance fields
-.field final synthetic a:Lewa;
+.field private final a:Lojc;
 
-.field final synthetic b:Lgkr;
+.field private final b:Ljrl;
+
+.field private final c:I
+
+.field private final d:I
+
+.field private final e:I
 
 
 # direct methods
-.method public constructor <init>(Lewa;Lgkr;[B[B)V
+.method public constructor <init>(Lead;Lojc;Ljrl;)V
     .locals 0
-
-    iput-object p1, p0, Leax;->a:Lewa;
-
-    iput-object p2, p0, Leax;->b:Lgkr;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    return-void
-.end method
+    iput-object p2, p0, Leax;->a:Lojc;
 
-.method private final d()V
-    .locals 2
+    iput-object p3, p0, Leax;->b:Ljrl;
 
-    iget-object v0, p0, Leax;->b:Lgkr;
+    iget p2, p1, Lead;->c:I
 
-    iget-object v0, v0, Lgkr;->d:Ljava/lang/Object;
+    iput p2, p0, Leax;->e:I
 
-    check-cast v0, Lfte;
+    iget p3, p1, Lead;->e:I
 
-    iget-object v0, v0, Lfte;->f:Ljuf;
+    sub-int p3, p2, p3
 
-    invoke-virtual {v0}, Ljuf;->close()V
+    iput p3, p0, Leax;->c:I
 
-    iget-object v0, p0, Leax;->a:Lewa;
+    iget p1, p1, Lead;->f:I
 
-    iget-object v0, v0, Lewa;->l:Ljava/lang/Object;
+    sub-int/2addr p2, p1
 
-    check-cast v0, Lcvr;
+    iput p2, p0, Leax;->d:I
 
-    invoke-virtual {v0}, Lcvr;->H()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    iget-object v0, p0, Leax;->a:Lewa;
-
-    iget-object v0, v0, Lewa;->l:Ljava/lang/Object;
-
-    check-cast v0, Lcvr;
-
-    invoke-virtual {v0}, Lcvr;->G()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lfsu;
-
-    iget-object v1, p0, Leax;->b:Lgkr;
-
-    iget-object v1, v1, Lgkr;->c:Ljava/lang/Object;
-
-    invoke-interface {v1}, Lgxl;->h()Lgxy;
-
-    move-result-object v1
-
-    invoke-interface {v0, v1}, Lfsu;->e(Lgxy;)V
-
-    :cond_0
     return-void
 .end method
 
 
 # virtual methods
-.method public final b(Lhjg;Lebd;)V
-    .locals 4
+.method public final bridge synthetic a()Ljava/lang/Object;
+    .locals 1
 
-    iget-object v0, p0, Leax;->a:Lewa;
-
-    iget-object v0, v0, Lewa;->h:Ljava/lang/Object;
-
-    const-string v1, "ShotStatus-ShotCompleted"
-
-    invoke-interface {v0, v1}, Lkbc;->e(Ljava/lang/String;)V
-
-    if-eqz p1, :cond_0
-
-    iget-object v0, p0, Leax;->b:Lgkr;
-
-    iget-object v0, v0, Lgkr;->c:Ljava/lang/Object;
-
-    invoke-interface {v0}, Lgxl;->k()Lhjc;
+    invoke-virtual {p0}, Leax;->b()Ljava/lang/Integer;
 
     move-result-object v0
 
-    new-instance v1, Lva;
+    return-object v0
+.end method
 
-    iget-wide v2, p1, Lhjg;->a:J
+.method public final b()Ljava/lang/Integer;
+    .locals 2
 
-    invoke-static {v2, v3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+    iget-object v0, p0, Leax;->b:Ljrl;
 
-    move-result-object v2
+    sget-object v1, Ljrl;->l:Ljrl;
 
-    iget p1, p1, Lhjg;->b:I
+    invoke-virtual {v0, v1}, Ljrl;->equals(Ljava/lang/Object;)Z
 
-    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    move-result v0
 
-    move-result-object p1
+    if-eqz v0, :cond_0
 
-    invoke-direct {v1, p2, v2, p1}, Lva;-><init>(Lfci;Ljava/lang/Long;Ljava/lang/Integer;)V
+    iget v0, p0, Leax;->c:I
 
-    invoke-interface {v0, v1}, Lhjc;->g(Lva;)V
+    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    goto :goto_0
+    move-result-object v0
+
+    return-object v0
 
     :cond_0
-    iget-object p1, p0, Leax;->b:Lgkr;
+    iget-object v0, p0, Leax;->a:Lojc;
 
-    iget-object p1, p1, Lgkr;->c:Ljava/lang/Object;
+    invoke-virtual {v0}, Lojc;->g()Z
 
-    invoke-interface {p1}, Lgxl;->k()Lhjc;
+    move-result v0
 
-    move-result-object p1
+    if-eqz v0, :cond_3
 
-    new-instance v0, Lva;
+    iget-object v0, p0, Leax;->a:Lojc;
 
-    const/4 v1, 0x0
+    invoke-virtual {v0}, Lojc;->c()Ljava/lang/Object;
 
-    invoke-direct {v0, p2, v1, v1}, Lva;-><init>(Lfci;Ljava/lang/Long;Ljava/lang/Integer;)V
+    move-result-object v0
 
-    invoke-interface {p1, v0}, Lhjc;->g(Lva;)V
+    check-cast v0, Lgff;
 
-    :goto_0
-    iget-object p1, p0, Leax;->a:Lewa;
+    invoke-interface {v0}, Lgff;->a()I
 
-    iget-object p1, p1, Lewa;->h:Ljava/lang/Object;
+    move-result v0
 
-    invoke-interface {p1}, Lkbc;->f()V
+    const/4 v1, 0x1
 
-    return-void
-.end method
+    if-ne v0, v1, :cond_1
 
-.method public final c(Leea;Lecq;)V
-    .locals 1
+    iget v0, p0, Leax;->e:I
 
-    iget-object p1, p0, Leax;->a:Lewa;
+    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    iget-object p1, p1, Lewa;->g:Ljava/lang/Object;
+    move-result-object v0
 
-    const-string v0, "Shot threw an error:"
+    return-object v0
 
-    invoke-interface {p1, v0, p2}, Lkaq;->c(Ljava/lang/String;Ljava/lang/Throwable;)V
+    :cond_1
+    iget-object v0, p0, Leax;->a:Lojc;
 
-    invoke-direct {p0}, Leax;->d()V
+    invoke-virtual {v0}, Lojc;->c()Ljava/lang/Object;
 
-    return-void
-.end method
+    move-result-object v0
 
-.method public final p(Leea;)V
-    .locals 1
+    check-cast v0, Lgff;
 
-    iget-object p1, p0, Leax;->a:Lewa;
+    invoke-interface {v0}, Lgff;->a()I
 
-    iget-object p1, p1, Lewa;->g:Ljava/lang/Object;
+    move-result v0
 
-    const-string v0, "Shot aborted."
+    const/4 v1, 0x2
 
-    invoke-interface {p1, v0}, Lkaq;->b(Ljava/lang/String;)V
+    if-ne v0, v1, :cond_2
 
-    invoke-direct {p0}, Leax;->d()V
+    iget v0, p0, Leax;->d:I
 
-    return-void
+    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v0
+
+    return-object v0
+
+    :cond_2
+    iget v0, p0, Leax;->c:I
+
+    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v0
+
+    return-object v0
+
+    :cond_3
+    iget v0, p0, Leax;->e:I
+
+    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v0
+
+    return-object v0
 .end method

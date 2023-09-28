@@ -1,60 +1,44 @@
-.class Lcym;
-.super Lcys;
+.class final Lcym;
+.super Ljava/lang/Object;
 
 
 # instance fields
-.field final synthetic b:Lcyp;
+.field public a:Loor;
+
+.field public b:Lojc;
 
 
 # direct methods
-.method public constructor <init>(Lcyp;)V
+.method public constructor <init>()V
     .locals 0
 
-    iput-object p1, p0, Lcym;->b:Lcyp;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0}, Lcys;-><init>()V
+    return-void
+.end method
+
+.method public constructor <init>([B)V
+    .locals 0
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    sget-object p1, Loih;->a:Loih;
+
+    iput-object p1, p0, Lcym;->b:Lojc;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public a()V
-    .locals 1
+.method public final a(Ljava/util/Map;)V
+    .locals 0
 
-    iget-object v0, p0, Lcym;->b:Lcyp;
+    invoke-static {p1}, Loor;->o(Ljava/util/Map;)Loor;
 
-    iget-object v0, v0, Lcyp;->j:Ldfa;
+    move-result-object p1
 
-    invoke-virtual {v0}, Ldfa;->e()V
-
-    return-void
-.end method
-
-.method public b()V
-    .locals 1
-
-    iget-object v0, p0, Lcym;->b:Lcyp;
-
-    invoke-virtual {v0}, Lcyp;->k()V
-
-    return-void
-.end method
-
-.method public final bx()I
-    .locals 1
-
-    const/4 v0, 0x3
-
-    return v0
-.end method
-
-.method public final f()V
-    .locals 1
-
-    iget-object v0, p0, Lcym;->b:Lcyp;
-
-    iput-object p0, v0, Lcyp;->i:Lcys;
+    iput-object p1, p0, Lcym;->a:Loor;
 
     return-void
 .end method

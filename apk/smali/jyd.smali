@@ -1,61 +1,57 @@
-.class public interface abstract Ljyd;
+.class public final Ljyd;
 .super Ljava/lang/Object;
+
+# interfaces
+.implements Lpys;
+
+
+# instance fields
+.field private final a:Lqkg;
+
+
+# direct methods
+.method public constructor <init>(Lqkg;)V
+    .locals 0
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Ljyd;->a:Lqkg;
+
+    return-void
+.end method
 
 
 # virtual methods
-.method public abstract a()Ljyc;
+.method public final a()Lkij;
+    .locals 5
+
+    iget-object v0, p0, Ljyd;->a:Lqkg;
+
+    check-cast v0, Lemd;
+
+    invoke-virtual {v0}, Lemd;->a()Landroid/content/Context;
+
+    move-result-object v0
+
+    new-instance v1, Lkij;
+
+    sget-object v2, Lkii;->a:Lkii;
+
+    sget-object v3, Lkwo;->a:Lkif;
+
+    sget-object v4, Lkwn;->a:Lkwn;
+
+    invoke-direct {v1, v0, v3, v4, v2}, Lkij;-><init>(Landroid/content/Context;Lkif;Lkid;Lkii;)V
+
+    return-object v1
 .end method
 
-.method public abstract b(Ljye;)Ljyd;
-.end method
+.method public final bridge synthetic get()Ljava/lang/Object;
+    .locals 1
 
-.method public abstract c(Ljwx;)V
-.end method
+    invoke-virtual {p0}, Ljyd;->a()Lkij;
 
-.method public abstract d(I)V
-.end method
+    move-result-object v0
 
-.method public abstract e(Ljxr;)V
-.end method
-
-.method public abstract f(I)V
-.end method
-
-.method public abstract g(Landroid/view/Surface;)V
-.end method
-
-.method public abstract h(Landroid/location/Location;)V
-.end method
-
-.method public abstract i(Lnou;)V
-.end method
-
-.method public abstract j(I)V
-.end method
-
-.method public abstract k(J)V
-.end method
-
-.method public abstract l(J)V
-.end method
-
-.method public abstract m(Landroid/media/MediaCodec$Callback;)V
-.end method
-
-.method public abstract n(Z)V
-.end method
-
-.method public abstract o(I)V
-.end method
-
-.method public abstract p(Lnou;)V
-.end method
-
-.method public abstract q(Ljava/io/FileDescriptor;)V
-.end method
-
-.method public abstract r(Ljxa;)V
-.end method
-
-.method public abstract s(Z)V
+    return-object v0
 .end method

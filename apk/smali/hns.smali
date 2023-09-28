@@ -1,42 +1,32 @@
 .class final Lhns;
-.super Lhpe;
+.super Landroid/content/BroadcastReceiver;
 
 
 # instance fields
-.field final synthetic a:Lhnu;
+.field final synthetic a:Lhnv;
 
 
 # direct methods
-.method public constructor <init>(Lhnu;)V
+.method public constructor <init>(Lhnv;)V
     .locals 0
 
-    iput-object p1, p0, Lhns;->a:Lhnu;
+    iput-object p1, p0, Lhns;->a:Lhnv;
 
-    invoke-direct {p0, p1}, Lhpe;-><init>(Lhpg;)V
+    invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final ck()V
-    .locals 2
+.method public final onReceive(Landroid/content/Context;Landroid/content/Intent;)V
+    .locals 0
 
-    iget-object v0, p0, Lhns;->a:Lhnu;
+    iget-object p1, p0, Lhns;->a:Lhnv;
 
-    iget-object v0, v0, Lhnu;->a:Lhiu;
+    const/4 p2, 0x0
 
-    invoke-virtual {v0}, Lhiu;->e()V
-
-    invoke-super {p0}, Lhpe;->ck()V
-
-    iget-object v0, p0, Lhns;->a:Lhnu;
-
-    iget-object v1, v0, Lhnu;->a:Lhiu;
-
-    iget-object v0, v0, Lhnu;->c:Lhiw;
-
-    invoke-virtual {v1, v0}, Lhiu;->g(Lhiw;)V
+    iput-boolean p2, p1, Lhnv;->c:Z
 
     return-void
 .end method

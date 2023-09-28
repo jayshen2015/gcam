@@ -1,57 +1,58 @@
-.class public final Lmvn;
-.super Lmsr;
-
-# interfaces
-.implements Ljava/io/Serializable;
-
-
-# static fields
-.field private static final serialVersionUID:J
+.class final Lmvn;
+.super Ljava/lang/ThreadLocal;
 
 
 # instance fields
-.field final a:Ljava/lang/Object;
-
-.field final b:Ljava/lang/Object;
+.field final synthetic a:Lmvq;
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/Object;Ljava/lang/Object;)V
+.method public constructor <init>(Lmvq;)V
     .locals 0
 
-    invoke-direct {p0}, Lmsr;-><init>()V
+    iput-object p1, p0, Lmvn;->a:Lmvq;
 
-    iput-object p1, p0, Lmvn;->a:Ljava/lang/Object;
-
-    iput-object p2, p0, Lmvn;->b:Ljava/lang/Object;
+    invoke-direct {p0}, Ljava/lang/ThreadLocal;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final getKey()Ljava/lang/Object;
-    .locals 1
+.method protected final bridge synthetic initialValue()Ljava/lang/Object;
+    .locals 4
 
-    iget-object v0, p0, Lmvn;->a:Ljava/lang/Object;
+    new-instance v0, Lmvs;
+
+    invoke-direct {v0}, Lmvs;-><init>()V
+
+    invoke-static {}, Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
+
+    move-result-object v1
+
+    iget-object v2, p0, Lmvn;->a:Lmvq;
+
+    iget-object v2, v2, Lmvq;->a:Ljava/util/WeakHashMap;
+
+    monitor-enter v2
+
+    :try_start_0
+    iget-object v3, p0, Lmvn;->a:Lmvq;
+
+    iget-object v3, v3, Lmvq;->a:Ljava/util/WeakHashMap;
+
+    invoke-virtual {v3, v1, v0}, Ljava/util/WeakHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    monitor-exit v2
 
     return-object v0
-.end method
 
-.method public final getValue()Ljava/lang/Object;
-    .locals 1
+    :catchall_0
+    move-exception v0
 
-    iget-object v0, p0, Lmvn;->b:Ljava/lang/Object;
+    monitor-exit v2
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    return-object v0
-.end method
-
-.method public final setValue(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 0
-
-    new-instance p1, Ljava/lang/UnsupportedOperationException;
-
-    invoke-direct {p1}, Ljava/lang/UnsupportedOperationException;-><init>()V
-
-    throw p1
+    throw v0
 .end method

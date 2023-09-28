@@ -71,24 +71,6 @@
     throw v0
 .end method
 
-.method public final b(Lcom/google/googlex/gcam/ShotMetadata;)V
-    .locals 6
-
-    iget-wide v0, p0, Lcom/google/googlex/gcam/JpgEncodeOptions;->a:J
-
-    invoke-static {p1}, Lcom/google/googlex/gcam/ShotMetadata;->a(Lcom/google/googlex/gcam/ShotMetadata;)J
-
-    move-result-wide v3
-
-    move-object v2, p0
-
-    move-object v5, p1
-
-    invoke-static/range {v0 .. v5}, Lcom/google/googlex/gcam/GcamModuleJNI;->JpgEncodeOptions_shot_metadata_set(JLcom/google/googlex/gcam/JpgEncodeOptions;JLcom/google/googlex/gcam/ShotMetadata;)V
-
-    return-void
-.end method
-
 .method protected final finalize()V
     .locals 0
 

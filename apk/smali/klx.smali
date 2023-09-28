@@ -2,156 +2,196 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lklj;
+.implements Landroid/content/ServiceConnection;
 
 
 # instance fields
-.field private final a:Lklj;
+.field final synthetic a:Lkmb;
+
+.field private final b:I
 
 
 # direct methods
-.method public constructor <init>(Lklj;)V
+.method public constructor <init>(Lkmb;I)V
     .locals 0
+
+    iput-object p1, p0, Lklx;->a:Lkmb;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lklx;->a:Lklj;
+    iput p2, p0, Lklx;->b:I
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Lkll;)Lkli;
-    .locals 1
+.method public final onServiceConnected(Landroid/content/ComponentName;Landroid/os/IBinder;)V
+    .locals 3
 
-    iget-object v0, p0, Lklx;->a:Lklj;
+    if-nez p2, :cond_1
 
-    invoke-interface {v0, p1}, Lklj;->a(Lkll;)Lkli;
+    iget-object p1, p0, Lklx;->a:Lkmb;
 
-    move-result-object p1
+    iget-object v0, p1, Lkmb;->e:Ljava/lang/Object;
 
-    return-object p1
-.end method
+    monitor-enter v0
 
-.method public final b()Lkll;
-    .locals 1
+    :try_start_0
+    iget p2, p1, Lkmb;->i:I
 
-    iget-object v0, p0, Lklx;->a:Lklj;
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    invoke-interface {v0}, Lklj;->b()Lkll;
+    const/4 v0, 0x3
 
-    move-result-object v0
+    if-ne p2, v0, :cond_0
 
-    return-object v0
-.end method
+    const/4 p2, 0x1
 
-.method public final c(I)Lkll;
-    .locals 1
+    iput-boolean p2, p1, Lkmb;->m:Z
 
-    iget-object v0, p0, Lklx;->a:Lklj;
+    const/4 p2, 0x5
 
-    invoke-interface {v0, p1}, Lklj;->c(I)Lkll;
+    goto :goto_0
 
-    move-result-object p1
+    :cond_0
+    const/4 p2, 0x4
 
-    return-object p1
-.end method
+    :goto_0
+    iget-object v0, p1, Lkmb;->d:Landroid/os/Handler;
 
-.method public final d(Ljava/lang/String;)Lkll;
-    .locals 1
+    iget-object p1, p1, Lkmb;->o:Ljava/util/concurrent/atomic/AtomicInteger;
 
-    iget-object v0, p0, Lklx;->a:Lklj;
-
-    invoke-interface {v0, p1}, Lklj;->d(Ljava/lang/String;)Lkll;
-
-    move-result-object p1
-
-    return-object p1
-.end method
-
-.method public final e(Lklv;)Lkll;
-    .locals 1
-
-    iget-object v0, p0, Lklx;->a:Lklj;
-
-    invoke-interface {v0, p1}, Lklj;->e(Lklv;)Lkll;
-
-    move-result-object p1
-
-    return-object p1
-.end method
-
-.method public final f(Lkll;)Lfuz;
-    .locals 1
-
-    new-instance v0, Lfuz;
-
-    invoke-virtual {p0, p1}, Lklx;->a(Lkll;)Lkli;
-
-    move-result-object p1
-
-    invoke-direct {v0, p1}, Lfuz;-><init>(Lkli;)V
-
-    return-object v0
-.end method
-
-.method public final g()Ljava/util/List;
-    .locals 1
-
-    iget-object v0, p0, Lklx;->a:Lklj;
-
-    invoke-interface {v0}, Lklj;->g()Ljava/util/List;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public final h(Lklv;)Ljava/util/List;
-    .locals 1
-
-    iget-object v0, p0, Lklx;->a:Lklj;
-
-    invoke-interface {v0, p1}, Lklj;->h(Lklv;)Ljava/util/List;
-
-    move-result-object p1
-
-    return-object p1
-.end method
-
-.method public final i()Z
-    .locals 1
-
-    iget-object v0, p0, Lklx;->a:Lklj;
-
-    invoke-interface {v0}, Lklj;->i()Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public final j(Lklv;)Z
-    .locals 1
-
-    iget-object v0, p0, Lklx;->a:Lklj;
-
-    invoke-interface {v0, p1}, Lklj;->j(Lklv;)Z
+    invoke-virtual {p1}, Ljava/util/concurrent/atomic/AtomicInteger;->get()I
 
     move-result p1
 
-    return p1
+    const/16 v1, 0x10
+
+    invoke-virtual {v0, p2, p1, v1}, Landroid/os/Handler;->obtainMessage(III)Landroid/os/Message;
+
+    move-result-object p1
+
+    invoke-virtual {v0, p1}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
+
+    return-void
+
+    :catchall_0
+    move-exception p1
+
+    :try_start_1
+    monitor-exit v0
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    throw p1
+
+    :cond_1
+    iget-object p1, p0, Lklx;->a:Lkmb;
+
+    iget-object p1, p1, Lkmb;->f:Ljava/lang/Object;
+
+    monitor-enter p1
+
+    :try_start_2
+    iget-object v0, p0, Lklx;->a:Lkmb;
+
+    const-string v1, "com.google.android.gms.common.internal.IGmsServiceBroker"
+
+    invoke-interface {p2, v1}, Landroid/os/IBinder;->queryLocalInterface(Ljava/lang/String;)Landroid/os/IInterface;
+
+    move-result-object v1
+
+    if-eqz v1, :cond_2
+
+    instance-of v2, v1, Lknc;
+
+    if-eqz v2, :cond_2
+
+    check-cast v1, Lknc;
+
+    goto :goto_1
+
+    :cond_2
+    new-instance v1, Lknc;
+
+    invoke-direct {v1, p2}, Lknc;-><init>(Landroid/os/IBinder;)V
+
+    :goto_1
+    iput-object v1, v0, Lkmb;->r:Lknc;
+
+    monitor-exit p1
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_1
+
+    iget-object p1, p0, Lklx;->a:Lkmb;
+
+    const/4 p2, 0x0
+
+    iget v0, p0, Lklx;->b:I
+
+    invoke-virtual {p1, p2, v0}, Lkmb;->G(II)V
+
+    return-void
+
+    :catchall_1
+    move-exception p2
+
+    :try_start_3
+    monitor-exit p1
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_1
+
+    throw p2
 .end method
 
-.method public final k()Z
-    .locals 1
+.method public final onServiceDisconnected(Landroid/content/ComponentName;)V
+    .locals 3
 
-    iget-object v0, p0, Lklx;->a:Lklj;
+    iget-object p1, p0, Lklx;->a:Lkmb;
 
-    invoke-interface {v0}, Lklj;->k()Z
+    iget-object p1, p1, Lkmb;->f:Ljava/lang/Object;
 
-    move-result v0
+    monitor-enter p1
 
-    return v0
+    :try_start_0
+    iget-object v0, p0, Lklx;->a:Lkmb;
+
+    const/4 v1, 0x0
+
+    iput-object v1, v0, Lkmb;->r:Lknc;
+
+    monitor-exit p1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    iget-object p1, p0, Lklx;->a:Lkmb;
+
+    iget-object p1, p1, Lkmb;->d:Landroid/os/Handler;
+
+    const/4 v0, 0x6
+
+    iget v1, p0, Lklx;->b:I
+
+    const/4 v2, 0x1
+
+    invoke-virtual {p1, v0, v1, v2}, Landroid/os/Handler;->obtainMessage(III)Landroid/os/Message;
+
+    move-result-object v0
+
+    invoke-virtual {p1, v0}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
+
+    return-void
+
+    :catchall_0
+    move-exception v0
+
+    :try_start_1
+    monitor-exit p1
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    throw v0
 .end method

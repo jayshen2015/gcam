@@ -2,18 +2,18 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lakt;
+.implements Laec;
 
 
 # instance fields
-.field final synthetic a:Lpl;
+.field final synthetic a:Lub;
 
 
 # direct methods
-.method public constructor <init>(Lpl;)V
+.method public constructor <init>(Lub;)V
     .locals 0
 
-    iput-object p1, p0, Landroidx/activity/ComponentActivity$3;->a:Lpl;
+    iput-object p1, p0, Landroidx/activity/ComponentActivity$3;->a:Lub;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -22,16 +22,16 @@
 
 
 # virtual methods
-.method public final a(Lakv;Lakq;)V
+.method public final a(Laee;Ladz;)V
     .locals 0
 
-    sget-object p1, Lakq;->ON_STOP:Lakq;
+    sget-object p1, Ladz;->ON_STOP:Ladz;
 
     if-ne p2, p1, :cond_1
 
-    iget-object p1, p0, Landroidx/activity/ComponentActivity$3;->a:Lpl;
+    iget-object p1, p0, Landroidx/activity/ComponentActivity$3;->a:Lub;
 
-    invoke-virtual {p1}, Lpl;->getWindow()Landroid/view/Window;
+    invoke-virtual {p1}, Lub;->getWindow()Landroid/view/Window;
 
     move-result-object p1
 

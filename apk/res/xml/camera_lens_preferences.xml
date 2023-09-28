@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen android:orderingFromXml="true" android:key="agc_lens_root_key"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceScreen android:icon="@drawable/agc_lens" android:layout="@layout/preference_with_margin" android:title="Len" android:key="agc_lens_key_">
+        <PreferenceCategory android:title="@string/all_agc_title" android:key="pref_len_cate_1">
+            <Preference android:icon="@drawable/config_save" android:layout="@layout/preference_with_margin" android:title="@string/agc_config_save_title" android:key="pref_save_key_1" android:summary="@string/agc_config_save_summary" />
+        </PreferenceCategory>
+    </PreferenceScreen>
+    <PreferenceCategory android:layout="@layout/preference_category_first_layout" android:title="@string/lens_bw_category_title" android:key="agc_lens_bw_category_key">
+        <EditTextPreference android:icon="@drawable/agc_lens" android:layout="@layout/preference_with_margin" android:digits="0123456789," android:title="@string/whitelist_title" android:key="lens_wl_key" android:summary="@string/whitelist_summary" android:defaultValue="" android:inputType="number" />
+        <EditTextPreference android:icon="@drawable/agc_lens" android:layout="@layout/preference_with_margin" android:digits="0123456789," android:title="@string/blacklist_title" android:key="lens_bl_key" android:summary="@string/blacklist_summary" android:defaultValue="" android:inputType="number" />
+    </PreferenceCategory>
+</PreferenceScreen>

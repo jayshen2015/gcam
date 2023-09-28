@@ -1,157 +1,195 @@
 .class final Lhzm;
-.super Ljava/lang/Object;
-
-# interfaces
-.implements Lhsk;
+.super Landroid/os/CountDownTimer;
 
 
 # instance fields
-.field final synthetic a:Lhzo;
+.field final synthetic a:Landroid/graphics/PointF;
+
+.field final synthetic b:Lhzo;
 
 
 # direct methods
-.method public constructor <init>(Lhzo;)V
+.method public constructor <init>(Lhzo;JJLandroid/graphics/PointF;)V
     .locals 0
 
-    iput-object p1, p0, Lhzm;->a:Lhzo;
+    iput-object p1, p0, Lhzm;->b:Lhzo;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p6, p0, Lhzm;->a:Landroid/graphics/PointF;
+
+    invoke-direct {p0, p2, p3, p4, p5}, Landroid/os/CountDownTimer;-><init>(JJ)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a()V
-    .locals 0
-
-    return-void
-.end method
-
-.method public final b()V
-    .locals 0
-
-    return-void
-.end method
-
-.method public final c()Z
+.method public final onFinish()V
     .locals 5
 
-    iget-object v0, p0, Lhzm;->a:Lhzo;
+    iget-object v0, p0, Lhzm;->b:Lhzo;
 
-    iget-object v0, v0, Lhzo;->c:Ldhi;
+    iget-boolean v1, v0, Lhzo;->j:Z
 
-    sget-object v1, Ldho;->cm:Ldhj;
+    if-eqz v1, :cond_0
 
-    invoke-interface {v0, v1}, Ldhi;->l(Ldhj;)Z
-
-    move-result v0
-
-    const/4 v1, 0x0
-
-    const/4 v2, 0x1
-
-    invoke-static {v2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
-
-    move-result-object v3
-
-    if-eqz v0, :cond_2
-
-    iget-object v0, p0, Lhzm;->a:Lhzo;
-
-    iget-object v4, v0, Lhzo;->m:Licy;
-
-    if-nez v4, :cond_0
-
-    return v1
+    return-void
 
     :cond_0
-    iget-object v0, v0, Lhzo;->f:Lgzn;
+    const/4 v1, 0x0
 
-    sget-object v1, Lgzd;->au:Lgzr;
+    iput-object v1, v0, Lhzo;->k:Landroid/os/CountDownTimer;
 
-    invoke-interface {v0, v1, v3}, Lgzn;->e(Lgzb;Ljava/lang/Object;)V
+    iget-object v0, v0, Lhzo;->c:Lhzz;
 
-    iget-object v0, p0, Lhzm;->a:Lhzo;
+    invoke-virtual {v0}, Lhzz;->a()V
 
-    iget-object v0, v0, Lhzo;->m:Licy;
+    iget-object v0, p0, Lhzm;->b:Lhzo;
 
-    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    sget-object v1, Loih;->a:Loih;
 
-    invoke-virtual {v0}, Licy;->isShowing()Z
+    monitor-enter v0
 
-    move-result v0
+    :try_start_0
+    iget-object v2, v0, Lhzo;->i:Ljava/util/concurrent/Callable;
 
-    if-eqz v0, :cond_1
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    iget-object v0, p0, Lhzm;->a:Lhzo;
+    if-eqz v2, :cond_1
 
-    iget-object v0, v0, Lhzo;->m:Licy;
+    :try_start_1
+    invoke-interface {v2}, Ljava/util/concurrent/Callable;->call()Ljava/lang/Object;
 
-    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    move-result-object v0
 
-    invoke-virtual {v0}, Licy;->dismiss()V
+    check-cast v0, Lojc;
+
+    invoke-virtual {v0}, Lojc;->g()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_1
+
+    invoke-virtual {v0}, Lojc;->c()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljnm;
+
+    iget-object v0, v0, Ljnm;->a:Landroid/graphics/Bitmap;
+
+    invoke-static {v0}, Lojc;->i(Ljava/lang/Object;)Lojc;
+
+    move-result-object v1
+    :try_end_1
+    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_0
+
+    goto :goto_0
+
+    :catch_0
+    move-exception v0
+
+    sget-object v2, Lhzo;->a:Louj;
+
+    invoke-virtual {v2}, Loue;->b()Lova;
+
+    move-result-object v2
+
+    const-string v3, "Grabbing viewfinder screenshot failed."
+
+    const/16 v4, 0xaae
+
+    invoke-static {v2, v3, v4, v0}, Ld;->w(Lova;Ljava/lang/String;CLjava/lang/Throwable;)V
 
     goto :goto_0
 
     :cond_1
-    iget-object v0, p0, Lhzm;->a:Lhzo;
-
-    iget-object v0, v0, Lhzo;->m:Licy;
-
-    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    invoke-virtual {v0}, Licy;->f()V
-
-    goto :goto_0
-
-    :cond_2
-    iget-object v0, p0, Lhzm;->a:Lhzo;
-
-    iget-object v4, v0, Lhzo;->l:Lcom/google/android/apps/camera/ui/popupmenu/PopupMenuView;
-
-    if-nez v4, :cond_3
-
-    return v1
-
-    :cond_3
-    iget-object v0, v0, Lhzo;->f:Lgzn;
-
-    sget-object v1, Lgzd;->au:Lgzr;
-
-    invoke-interface {v0, v1, v3}, Lgzn;->e(Lgzb;Ljava/lang/Object;)V
-
-    iget-object v0, p0, Lhzm;->a:Lhzo;
-
-    iget-object v0, v0, Lhzo;->l:Lcom/google/android/apps/camera/ui/popupmenu/PopupMenuView;
-
-    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    invoke-virtual {v0}, Lcom/google/android/apps/camera/ui/popupmenu/PopupMenuView;->getVisibility()I
+    :goto_0
+    invoke-virtual {v1}, Lojc;->g()Z
 
     move-result v0
 
-    if-nez v0, :cond_4
+    if-eqz v0, :cond_2
 
-    iget-object v0, p0, Lhzm;->a:Lhzo;
+    iget-object v0, p0, Lhzm;->b:Lhzo;
 
-    iget-object v0, v0, Lhzo;->l:Lcom/google/android/apps/camera/ui/popupmenu/PopupMenuView;
+    iget-object v0, v0, Lhzo;->b:Lfjs;
 
-    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    const/16 v2, 0x1a
 
-    invoke-virtual {v0}, Lcom/google/android/apps/camera/ui/popupmenu/PopupMenuView;->b()V
+    const/16 v3, 0x8
 
-    goto :goto_0
+    invoke-interface {v0, v2, v3}, Lfjs;->W(II)V
 
-    :cond_4
-    iget-object v0, p0, Lhzm;->a:Lhzo;
+    iget-object v0, p0, Lhzm;->b:Lhzo;
 
-    iget-object v0, v0, Lhzo;->l:Lcom/google/android/apps/camera/ui/popupmenu/PopupMenuView;
+    iget-object v0, v0, Lhzo;->f:Ljty;
 
-    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    const/4 v2, 0x0
 
-    invoke-virtual {v0}, Lcom/google/android/apps/camera/ui/popupmenu/PopupMenuView;->c()V
+    invoke-virtual {v0, v2}, Ljty;->c(I)V
 
-    :goto_0
-    return v2
+    iget-object v0, p0, Lhzm;->b:Lhzo;
+
+    iget-object v0, v0, Lhzo;->d:Ljcw;
+
+    invoke-static {}, Lpms;->b()Lpmr;
+
+    move-result-object v2
+
+    invoke-virtual {v1}, Lojc;->c()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Landroid/graphics/Bitmap;
+
+    iput-object v1, v2, Lpmr;->b:Landroid/graphics/Bitmap;
+
+    iget-object v1, p0, Lhzm;->a:Landroid/graphics/PointF;
+
+    iput-object v1, v2, Lpmr;->g:Landroid/graphics/PointF;
+
+    invoke-virtual {v2}, Lpmr;->a()Lpms;
+
+    move-result-object v1
+
+    iput-object v1, v0, Ljcw;->g:Lpms;
+
+    iget-object v0, p0, Lhzm;->b:Lhzo;
+
+    iget-object v0, v0, Lhzo;->e:Lfvv;
+
+    sget-object v1, Ljrl;->k:Ljrl;
+
+    invoke-interface {v0, v1}, Lfvv;->b(Ljrl;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_2
+
+    iget-object v0, p0, Lhzm;->b:Lhzo;
+
+    iget-object v0, v0, Lhzo;->d:Ljcw;
+
+    invoke-virtual {v0}, Ljcw;->e()V
+
+    :cond_2
+    return-void
+
+    :catchall_0
+    move-exception v1
+
+    :try_start_2
+    monitor-exit v0
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
+
+    throw v1
+.end method
+
+.method public final onTick(J)V
+    .locals 0
+
+    return-void
 .end method

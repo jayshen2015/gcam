@@ -1,87 +1,69 @@
-.class public final synthetic Lcud;
-.super Ljava/lang/Object;
-
-# interfaces
-.implements Lcug;
+.class final Lcud;
+.super Landroid/view/View$AccessibilityDelegate;
 
 
 # instance fields
-.field public final synthetic a:Lcuf;
-
-.field public final synthetic b:Lhnc;
-
-.field private final synthetic c:I
+.field final synthetic a:Lcug;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lcuf;Lhnc;I)V
+.method public constructor <init>(Lcug;)V
     .locals 0
 
-    iput p3, p0, Lcud;->c:I
+    iput-object p1, p0, Lcud;->a:Lcug;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lcud;->a:Lcuf;
-
-    iput-object p2, p0, Lcud;->b:Lhnc;
+    invoke-direct {p0}, Landroid/view/View$AccessibilityDelegate;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Lcsc;)Lhna;
-    .locals 2
+.method public final onInitializeAccessibilityNodeInfo(Landroid/view/View;Landroid/view/accessibility/AccessibilityNodeInfo;)V
+    .locals 1
 
-    iget v0, p0, Lcud;->c:I
+    invoke-super {p0, p1, p2}, Landroid/view/View$AccessibilityDelegate;->onInitializeAccessibilityNodeInfo(Landroid/view/View;Landroid/view/accessibility/AccessibilityNodeInfo;)V
 
-    packed-switch v0, :pswitch_data_0
+    const/4 p1, 0x0
 
-    iget-object v0, p0, Lcud;->a:Lcuf;
+    invoke-virtual {p2, p1}, Landroid/view/accessibility/AccessibilityNodeInfo;->setClassName(Ljava/lang/CharSequence;)V
 
-    iget-object v1, p0, Lcud;->b:Lhnc;
+    iget-object p1, p0, Lcud;->a:Lcug;
 
-    invoke-virtual {v0, p1}, Lcuf;->f(Lcsc;)Z
+    iget-object p1, p1, Lcug;->a:Lcuu;
 
-    move-result p1
-
-    if-eqz p1, :cond_1
-
-    iget-object p1, v1, Lhnc;->a:Lhna;
-
-    goto :goto_1
-
-    :pswitch_0
-    iget-object v0, p0, Lcud;->a:Lcuf;
-
-    iget-object v1, p0, Lcud;->b:Lhnc;
-
-    invoke-virtual {v0, p1}, Lcuf;->f(Lcsc;)Z
+    invoke-interface {p1}, Lcuu;->c()Z
 
     move-result p1
 
-    if-eqz p1, :cond_0
+    if-nez p1, :cond_0
 
-    iget-object p1, v1, Lhnc;->a:Lhna;
+    iget-object p1, p0, Lcud;->a:Lcug;
 
-    goto :goto_0
+    iget-object p1, p1, Lcug;->f:Landroid/content/Context;
+
+    const v0, 0x7f140468
+
+    invoke-virtual {p1, v0}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-virtual {p2, p1}, Landroid/view/accessibility/AccessibilityNodeInfo;->setContentDescription(Ljava/lang/CharSequence;)V
+
+    return-void
 
     :cond_0
-    iget-object p1, v1, Lhnc;->b:Lhna;
+    iget-object p1, p0, Lcud;->a:Lcug;
 
-    :goto_0
-    return-object p1
+    iget-object p1, p1, Lcug;->f:Landroid/content/Context;
 
-    :cond_1
-    iget-object p1, v1, Lhnc;->b:Lhna;
+    const v0, 0x7f140467
 
-    :goto_1
-    return-object p1
+    invoke-virtual {p1, v0}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
-    nop
+    move-result-object p1
 
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+    invoke-virtual {p2, p1}, Landroid/view/accessibility/AccessibilityNodeInfo;->setContentDescription(Ljava/lang/CharSequence;)V
+
+    return-void
 .end method

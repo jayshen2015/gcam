@@ -1,60 +1,28 @@
-.class Lcyw;
-.super Lcys;
-
-
-# instance fields
-.field final synthetic b:Lcyx;
-
-
-# direct methods
-.method public constructor <init>(Lcyx;)V
-    .locals 0
-
-    iput-object p1, p0, Lcyw;->b:Lcyx;
-
-    invoke-direct {p0}, Lcys;-><init>()V
-
-    return-void
-.end method
+.class public interface abstract Lcyw;
+.super Ljava/lang/Object;
 
 
 # virtual methods
-.method public b()V
-    .locals 1
-
-    iget-object v0, p0, Lcyw;->b:Lcyx;
-
-    invoke-virtual {v0}, Lcyx;->k()V
-
-    return-void
+.method public abstract a(Lcyv;)Llie;
 .end method
 
-.method public final bx()I
-    .locals 1
-
-    const/4 v0, 0x2
-
-    return v0
+.method public abstract b()V
 .end method
 
-.method public d()V
-    .locals 1
-
-    iget-object v0, p0, Lcyw;->b:Lcyx;
-
-    iget-object v0, v0, Lcyx;->l:Ldfa;
-
-    invoke-virtual {v0}, Ldfa;->g()V
-
-    return-void
+.method public abstract c()V
 .end method
 
-.method public final f()V
-    .locals 1
+.method public abstract d()V
+.end method
 
-    iget-object v0, p0, Lcyw;->b:Lcyx;
+.method public abstract e()V
+.end method
 
-    iput-object p0, v0, Lcyx;->j:Lcys;
+.method public abstract f()V
+.end method
 
-    return-void
+.method public abstract g()V
+.end method
+
+.method public abstract h(JLjava/nio/ByteBuffer;Ljava/nio/ByteBuffer;Ljava/nio/ByteBuffer;IIIIII)Z
 .end method

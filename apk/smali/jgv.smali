@@ -1,94 +1,84 @@
 .class public final Ljgv;
-.super Lcbe;
+.super Ljava/lang/Object;
 
-# interfaces
-.implements Ljgx;
+
+# instance fields
+.field public a:Z
+
+.field public b:I
+
+.field public c:Landroid/view/View$OnClickListener;
+
+.field public d:Ljgt;
+
+.field public e:Ljava/lang/String;
+
+.field public f:Landroid/content/Context;
+
+.field public g:Z
+
+.field public h:Z
+
+.field public i:I
 
 
 # direct methods
-.method public constructor <init>(Landroid/os/IBinder;)V
-    .locals 1
+.method public constructor <init>()V
+    .locals 2
 
-    const-string v0, "com.google.android.gms.common.internal.ICertData"
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0, p1, v0}, Lcbe;-><init>(Landroid/os/IBinder;Ljava/lang/String;)V
+    const/4 v0, 0x0
+
+    iput-boolean v0, p0, Ljgv;->a:Z
+
+    const/4 v1, 0x1
+
+    iput v1, p0, Ljgv;->i:I
+
+    const/16 v1, 0xbb8
+
+    iput v1, p0, Ljgv;->b:I
+
+    iput-boolean v0, p0, Ljgv;->g:Z
+
+    iput-boolean v0, p0, Ljgv;->h:Z
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final e()I
-    .locals 2
+.method public final a()Ljgu;
+    .locals 11
 
-    invoke-virtual {p0}, Lcbe;->a()Landroid/os/Parcel;
+    iget-object v2, p0, Ljgv;->e:Ljava/lang/String;
 
-    move-result-object v0
+    invoke-virtual {v2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    const/4 v1, 0x2
+    iget-object v1, p0, Ljgv;->f:Landroid/content/Context;
 
-    invoke-virtual {p0, v1, v0}, Lcbe;->y(ILandroid/os/Parcel;)Landroid/os/Parcel;
+    invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    move-result-object v0
+    new-instance v10, Ljgw;
 
-    invoke-virtual {v0}, Landroid/os/Parcel;->readInt()I
+    iget v3, p0, Ljgv;->b:I
 
-    move-result v1
+    iget v4, p0, Ljgv;->i:I
 
-    invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
+    iget-boolean v5, p0, Ljgv;->a:Z
 
-    return v1
-.end method
+    iget-object v6, p0, Ljgv;->c:Landroid/view/View$OnClickListener;
 
-.method public final f()Ljig;
-    .locals 4
+    iget-object v7, p0, Ljgv;->d:Ljgt;
 
-    invoke-virtual {p0}, Lcbe;->a()Landroid/os/Parcel;
+    iget-boolean v8, p0, Ljgv;->g:Z
 
-    move-result-object v0
+    iget-boolean v9, p0, Ljgv;->h:Z
 
-    const/4 v1, 0x1
+    move-object v0, v10
 
-    invoke-virtual {p0, v1, v0}, Lcbe;->y(ILandroid/os/Parcel;)Landroid/os/Parcel;
+    invoke-direct/range {v0 .. v9}, Ljgw;-><init>(Landroid/content/Context;Ljava/lang/String;IIZLandroid/view/View$OnClickListener;Ljgt;ZZ)V
 
-    move-result-object v0
-
-    invoke-virtual {v0}, Landroid/os/Parcel;->readStrongBinder()Landroid/os/IBinder;
-
-    move-result-object v1
-
-    if-nez v1, :cond_0
-
-    const/4 v1, 0x0
-
-    goto :goto_0
-
-    :cond_0
-    const-string v2, "com.google.android.gms.dynamic.IObjectWrapper"
-
-    invoke-interface {v1, v2}, Landroid/os/IBinder;->queryLocalInterface(Ljava/lang/String;)Landroid/os/IInterface;
-
-    move-result-object v2
-
-    instance-of v3, v2, Ljig;
-
-    if-eqz v3, :cond_1
-
-    move-object v1, v2
-
-    check-cast v1, Ljig;
-
-    goto :goto_0
-
-    :cond_1
-    new-instance v2, Ljie;
-
-    invoke-direct {v2, v1}, Ljie;-><init>(Landroid/os/IBinder;)V
-
-    move-object v1, v2
-
-    :goto_0
-    invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
-
-    return-object v1
+    return-object v10
 .end method

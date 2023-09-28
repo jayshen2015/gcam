@@ -2,324 +2,370 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Logk;
+.implements Lcle;
+
+
+# static fields
+.field public static final a:Louj;
 
 
 # instance fields
-.field private final synthetic a:I
+.field public final b:Lhsg;
+
+.field public c:Ljava/io/FileOutputStream;
+
+.field public final d:Lpih;
+
+.field private final e:Lhsc;
+
+.field private final f:Ljava/util/concurrent/Executor;
+
+.field private final g:Lljf;
+
+.field private h:I
 
 
 # direct methods
-.method public constructor <init>(I)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 1
 
-    iput p1, p0, Lcla;->a:I
+    const-string v0, "com/google/android/apps/camera/camcorder/file/MediaFileOutputVideo"
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-static {v0}, Louj;->h(Ljava/lang/String;)Louj;
+
+    move-result-object v0
+
+    sput-object v0, Lcla;->a:Louj;
 
     return-void
 .end method
 
-.method public static a()Lmrq;
+.method public constructor <init>(Lhsg;Lhsc;Ljava/util/concurrent/Executor;Lljf;)V
     .locals 1
 
-    sget-object v0, Lmpw;->a:Lmrq;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    return-object v0
-.end method
-
-.method public static final b()Lmvv;
-    .locals 5
-
-    const-string v0, "on_shutter"
-
-    const-string v1, "BOOL"
-
-    invoke-static {v0, v1}, Lcnd;->a(Ljava/lang/String;Ljava/lang/String;)Lcnd;
+    invoke-static {}, Lpih;->f()Lpih;
 
     move-result-object v0
 
-    invoke-static {v0}, Lmvv;->l(Ljava/lang/Object;)Lmvv;
+    iput-object v0, p0, Lcla;->d:Lpih;
 
-    move-result-object v0
+    iput-object p1, p0, Lcla;->b:Lhsg;
 
-    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    iput-object p2, p0, Lcla;->e:Lhsc;
 
-    const-string v1, "photo_mode"
+    iput-object p3, p0, Lcla;->f:Ljava/util/concurrent/Executor;
 
-    const-string v2, "INTEGER"
+    iput-object p4, p0, Lcla;->g:Lljf;
 
-    invoke-static {v1, v2}, Lcnd;->a(Ljava/lang/String;Ljava/lang/String;)Lcnd;
+    new-instance p1, Lckz;
 
-    move-result-object v1
+    invoke-direct {p1, p0, p2}, Lckz;-><init>(Lcla;Lhsc;)V
 
-    invoke-static {v1}, Lmvv;->l(Ljava/lang/Object;)Lmvv;
+    const-string p2, "MFOV#Init"
 
-    move-result-object v1
+    invoke-interface {p4, p2, p1}, Lljf;->c(Ljava/lang/String;Ljava/lang/Runnable;)Ljava/lang/Runnable;
 
-    invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    move-result-object p1
 
-    new-instance v2, Lcmu;
+    invoke-interface {p3, p1}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
 
-    const/4 v3, 0x0
+    const/4 p1, 0x1
 
-    invoke-direct {v2, v3}, Lcmu;-><init>(I)V
+    iput p1, p0, Lcla;->h:I
 
-    new-instance v3, Lcmu;
+    invoke-static {}, Ljava/util/UUID;->randomUUID()Ljava/util/UUID;
 
-    const/4 v4, 0x1
+    move-result-object p1
 
-    invoke-direct {v3, v4}, Lcmu;-><init>(I)V
+    invoke-virtual {p1}, Ljava/util/UUID;->toString()Ljava/lang/String;
 
-    const-string v4, "pixel_data"
-
-    invoke-static {v4, v0, v3}, Lcne;->a(Ljava/lang/String;Lmvv;Lcmt;)Lcne;
-
-    move-result-object v0
-
-    const-string v3, "metadata"
-
-    invoke-static {v3, v1, v2}, Lcne;->a(Ljava/lang/String;Lmvv;Lcmt;)Lcne;
-
-    move-result-object v1
-
-    invoke-static {v0, v1}, Lmvv;->m(Ljava/lang/Object;Ljava/lang/Object;)Lmvv;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    return-object v0
-.end method
-
-.method public static c()Lcvr;
-    .locals 2
-
-    new-instance v0, Lcvr;
-
-    const/4 v1, 0x0
-
-    invoke-direct {v0, v1, v1, v1}, Lcvr;-><init>([B[B[B)V
-
-    return-object v0
+    return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic get()Ljava/lang/Object;
+.method public final a()J
+    .locals 2
+
+    iget-object v0, p0, Lcla;->e:Lhsc;
+
+    iget-object v0, v0, Lhsc;->a:Lmak;
+
+    invoke-interface {v0}, Lmak;->a()J
+
+    move-result-wide v0
+
+    return-wide v0
+.end method
+
+.method public final synthetic b()Lhss;
+    .locals 1
+
+    invoke-static {p0}, Ladg;->d(Lcle;)Lhss;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public final c()Lojc;
+    .locals 1
+
+    iget-object v0, p0, Lcla;->e:Lhsc;
+
+    invoke-static {v0}, Lojc;->i(Ljava/lang/Object;)Lojc;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public final declared-synchronized close()V
     .locals 3
 
-    iget v0, p0, Lcla;->a:I
+    monitor-enter p0
 
-    const/4 v1, 0x0
+    :try_start_0
+    iget v0, p0, Lcla;->h:I
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    invoke-static {v1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+    if-eqz v0, :cond_1
 
-    move-result-object v1
+    const/4 v1, 0x1
+
+    if-eq v0, v1, :cond_0
+
+    monitor-exit p0
+
+    return-void
+
+    :cond_0
+    const/4 v0, 0x3
+
+    :try_start_1
+    iput v0, p0, Lcla;->h:I
+
+    iget-object v0, p0, Lcla;->f:Ljava/util/concurrent/Executor;
+
+    new-instance v1, Lcky;
 
     const/4 v2, 0x0
 
-    packed-switch v0, :pswitch_data_0
+    invoke-direct {v1, p0, v2}, Lcky;-><init>(Lcla;I)V
 
-    new-instance v0, Lcwa;
+    invoke-interface {v0, v1}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    invoke-direct {v0}, Lcwa;-><init>()V
+    monitor-exit p0
 
-    return-object v0
+    return-void
 
-    :pswitch_0
-    new-instance v0, Lcgk;
+    :cond_1
+    const/4 v0, 0x0
 
-    const/16 v1, 0x8
+    :try_start_2
+    throw v0
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
-    invoke-direct {v0, v1}, Lcgk;-><init>(I)V
+    :catchall_0
+    move-exception v0
 
-    return-object v0
+    monitor-exit p0
 
-    :pswitch_1
-    sget-object v0, Lcka;->a:Lcka;
+    throw v0
+.end method
 
-    invoke-static {v0}, Lnsy;->B(Ljava/lang/Object;)Lnou;
+.method public final d()Lojc;
+    .locals 1
 
-    move-result-object v0
+    iget-object v0, p0, Lcla;->b:Lhsg;
 
-    return-object v0
-
-    :pswitch_2
-    new-instance v0, Lcvi;
-
-    invoke-direct {v0}, Lcvi;-><init>()V
-
-    return-object v0
-
-    :pswitch_3
-    new-instance v0, Lcvr;
-
-    invoke-direct {v0, v2}, Lcvr;-><init>([B)V
-
-    return-object v0
-
-    :pswitch_4
-    invoke-static {}, Lcla;->c()Lcvr;
+    invoke-static {v0}, Lojc;->i(Ljava/lang/Object;)Lojc;
 
     move-result-object v0
 
     return-object v0
+.end method
 
-    :pswitch_5
-    new-instance v0, Ldgw;
+.method public final e()Lpht;
+    .locals 1
 
-    invoke-direct {v0}, Ldgw;-><init>()V
-
-    return-object v0
-
-    :pswitch_6
-    new-instance v0, Lcrb;
-
-    invoke-direct {v0}, Lcrb;-><init>()V
+    iget-object v0, p0, Lcla;->d:Lpih;
 
     return-object v0
+.end method
 
-    :pswitch_7
-    new-instance v0, Lcpg;
+.method public final f()Ljava/io/FileDescriptor;
+    .locals 3
 
-    invoke-direct {v0}, Lcpg;-><init>()V
+    :try_start_0
+    iget-object v0, p0, Lcla;->g:Lljf;
 
-    return-object v0
+    const-string v1, "MFOV#getFileDescriptor"
 
-    :pswitch_8
-    new-instance v0, Ljvk;
+    invoke-interface {v0, v1}, Lljf;->e(Ljava/lang/String;)V
 
-    invoke-direct {v0, v1}, Ljvk;-><init>(Ljava/lang/Object;)V
+    iget-object v0, p0, Lcla;->d:Lpih;
 
-    return-object v0
-
-    :pswitch_9
-    const-string v0, "VidMedCod"
-
-    const/4 v1, 0x2
-
-    invoke-static {v0, v1}, Ljvd;->i(Ljava/lang/String;I)Ljava/util/concurrent/ScheduledExecutorService;
+    invoke-virtual {v0}, Lpih;->get()Ljava/lang/Object;
 
     move-result-object v0
 
-    return-object v0
+    check-cast v0, Ljava/io/FileDescriptor;
+    :try_end_0
+    .catch Ljava/lang/InterruptedException; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Ljava/util/concurrent/ExecutionException; {:try_start_0 .. :try_end_0} :catch_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    :pswitch_a
-    new-instance v0, Landroid/os/HandlerThread;
+    iget-object v1, p0, Lcla;->g:Lljf;
 
-    const-string v1, "f250"
-
-    invoke-direct {v0, v1}, Landroid/os/HandlerThread;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v0}, Landroid/os/HandlerThread;->start()V
-
-    invoke-virtual {v0}, Landroid/os/HandlerThread;->getLooper()Landroid/os/Looper;
-
-    move-result-object v0
-
-    invoke-static {v0}, Ljvd;->o(Landroid/os/Looper;)Landroid/os/Handler;
-
-    move-result-object v0
+    invoke-interface {v1}, Lljf;->f()V
 
     return-object v0
 
-    :pswitch_b
-    const-string v0, "feature.brella.frame.low-res"
+    :catchall_0
+    move-exception v0
 
-    invoke-static {v0}, Ldsx;->b(Ljava/lang/String;)Ldsx;
+    goto :goto_1
 
-    move-result-object v0
+    :catch_0
+    move-exception v0
 
-    return-object v0
+    goto :goto_0
 
-    :pswitch_c
-    throw v2
+    :catch_1
+    move-exception v0
 
-    :pswitch_d
-    new-instance v0, Lcvr;
+    :goto_0
+    :try_start_1
+    sget-object v1, Lcla;->a:Louj;
 
-    invoke-direct {v0, v2}, Lcvr;-><init>([C)V
-
-    return-object v0
-
-    :pswitch_e
-    invoke-static {}, Lcla;->a()Lmrq;
-
-    move-result-object v0
-
-    new-instance v1, Lmpa;
-
-    invoke-direct {v1, v0}, Lmpa;-><init>(Lmrq;)V
-
-    return-object v1
-
-    :pswitch_f
-    invoke-static {}, Lcla;->a()Lmrq;
-
-    move-result-object v0
-
-    return-object v0
-
-    :pswitch_10
-    new-instance v0, Ljvk;
-
-    const/4 v1, 0x0
-
-    invoke-static {v1}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
+    invoke-virtual {v1}, Loue;->b()Lova;
 
     move-result-object v1
 
-    invoke-direct {v0, v1}, Ljvk;-><init>(Ljava/lang/Object;)V
+    check-cast v1, Loug;
 
-    return-object v0
+    invoke-interface {v1, v0}, Loug;->h(Ljava/lang/Throwable;)Lova;
 
-    :pswitch_11
-    new-instance v0, Ljvk;
+    move-result-object v1
 
-    sget-object v1, Lclj;->a:Lclj;
+    check-cast v1, Loug;
 
-    invoke-direct {v0, v1}, Ljvk;-><init>(Ljava/lang/Object;)V
+    const/16 v2, 0x1cb
 
-    return-object v0
+    invoke-interface {v1, v2}, Loug;->G(I)Lova;
 
-    :pswitch_12
-    new-instance v0, Ljvk;
+    move-result-object v1
 
-    invoke-direct {v0, v1}, Ljvk;-><init>(Ljava/lang/Object;)V
+    check-cast v1, Loug;
 
-    return-object v0
+    const-string v2, "Can\'t get file descriptor."
 
-    :pswitch_13
-    new-instance v0, Lcvr;
+    invoke-interface {v1, v2}, Loug;->o(Ljava/lang/String;)V
 
-    invoke-direct {v0, v2, v2}, Lcvr;-><init>([B[C)V
+    new-instance v1, Ljava/lang/RuntimeException;
 
-    return-object v0
+    invoke-direct {v1, v0}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/Throwable;)V
 
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_13
-        :pswitch_12
-        :pswitch_11
-        :pswitch_10
-        :pswitch_f
-        :pswitch_e
-        :pswitch_d
-        :pswitch_c
-        :pswitch_b
-        :pswitch_a
-        :pswitch_9
-        :pswitch_8
-        :pswitch_7
-        :pswitch_6
-        :pswitch_5
-        :pswitch_4
-        :pswitch_3
-        :pswitch_2
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
+    throw v1
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    :goto_1
+    iget-object v1, p0, Lcla;->g:Lljf;
+
+    invoke-interface {v1}, Lljf;->f()V
+
+    throw v0
+.end method
+
+.method public final declared-synchronized g()V
+    .locals 3
+
+    monitor-enter p0
+
+    :try_start_0
+    iget v0, p0, Lcla;->h:I
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    if-eqz v0, :cond_1
+
+    const/4 v1, 0x1
+
+    if-eq v0, v1, :cond_0
+
+    monitor-exit p0
+
+    return-void
+
+    :cond_0
+    const/4 v0, 0x2
+
+    :try_start_1
+    iput v0, p0, Lcla;->h:I
+
+    iget-object v0, p0, Lcla;->f:Ljava/util/concurrent/Executor;
+
+    new-instance v2, Lcky;
+
+    invoke-direct {v2, p0, v1}, Lcky;-><init>(Lcla;I)V
+
+    invoke-interface {v0, v2}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    monitor-exit p0
+
+    return-void
+
+    :cond_1
+    const/4 v0, 0x0
+
+    :try_start_2
+    throw v0
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit p0
+
+    throw v0
+.end method
+
+.method public final synthetic h()Z
+    .locals 5
+
+    invoke-interface {p0}, Lcle;->a()J
+
+    move-result-wide v0
+
+    const-wide/16 v2, 0x2710
+
+    cmp-long v4, v0, v2
+
+    if-lez v4, :cond_0
+
+    const/4 v0, 0x1
+
+    return v0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    return v0
+.end method
+
+.method public final i()V
+    .locals 0
+
+    return-void
 .end method

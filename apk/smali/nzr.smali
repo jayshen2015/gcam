@@ -1,48 +1,44 @@
-.class final Lnzr;
-.super Ljava/lang/ThreadLocal;
+.class public final Lnzr;
+.super Ljava/lang/Object;
+
+
+# static fields
+.field public static final a:[I
+
+.field public static final b:[I
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 2
 
-    invoke-direct {p0}, Ljava/lang/ThreadLocal;-><init>()V
+    const/4 v0, 0x3
+
+    new-array v1, v0, [I
+
+    fill-array-data v1, :array_0
+
+    sput-object v1, Lnzr;->a:[I
+
+    new-array v0, v0, [I
+
+    fill-array-data v0, :array_1
+
+    sput-object v0, Lnzr;->b:[I
 
     return-void
-.end method
 
+    :array_0
+    .array-data 4
+        0x1010109
+        0x1010200
+        0x7f04024d
+    .end array-data
 
-# virtual methods
-.method protected final synthetic initialValue()Ljava/lang/Object;
-    .locals 5
-
-    new-instance v0, Ljava/text/SimpleDateFormat;
-
-    sget-object v1, Ljava/util/Locale;->ENGLISH:Ljava/util/Locale;
-
-    const-string v2, "yyyy-MM-dd\'T\'HH:mm:ss"
-
-    invoke-direct {v0, v2, v1}, Ljava/text/SimpleDateFormat;-><init>(Ljava/lang/String;Ljava/util/Locale;)V
-
-    new-instance v1, Ljava/util/GregorianCalendar;
-
-    const-string v2, "UTC"
-
-    invoke-static {v2}, Lj$/util/DesugarTimeZone;->getTimeZone(Ljava/lang/String;)Ljava/util/TimeZone;
-
-    move-result-object v2
-
-    invoke-direct {v1, v2}, Ljava/util/GregorianCalendar;-><init>(Ljava/util/TimeZone;)V
-
-    new-instance v2, Ljava/util/Date;
-
-    const-wide/high16 v3, -0x8000000000000000L
-
-    invoke-direct {v2, v3, v4}, Ljava/util/Date;-><init>(J)V
-
-    invoke-virtual {v1, v2}, Ljava/util/GregorianCalendar;->setGregorianChange(Ljava/util/Date;)V
-
-    invoke-virtual {v0, v1}, Ljava/text/SimpleDateFormat;->setCalendar(Ljava/util/Calendar;)V
-
-    return-object v0
+    :array_1
+    .array-data 4
+        0x1010034
+        0x7f0401f0
+        0x7f0401f1
+    .end array-data
 .end method

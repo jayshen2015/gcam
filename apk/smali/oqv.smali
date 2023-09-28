@@ -1,35 +1,13 @@
-.class public final Loqv;
+.class public interface abstract Loqv;
 .super Ljava/lang/Object;
-
-# interfaces
-.implements Loqw;
-
-
-# instance fields
-.field public final a:Lorl;
 
 
 # virtual methods
-.method public final cM()Lorl;
-    .locals 1
-
-    const/4 v0, 0x0
-
-    throw v0
+.method public abstract a()I
 .end method
 
-.method public final cO()Z
-    .locals 1
-
-    const/4 v0, 0x0
-
-    throw v0
+.method public abstract b()Ljava/lang/Object;
 .end method
 
-.method public final toString()Ljava/lang/String;
-    .locals 1
-
-    const/4 v0, 0x0
-
-    throw v0
+.method public abstract toString()Ljava/lang/String;
 .end method

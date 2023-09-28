@@ -2,234 +2,350 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Logk;
+.implements Lpys;
 
 
 # instance fields
-.field private final a:Loiw;
+.field private final a:Lqkg;
 
-.field private final b:Loiw;
+.field private final b:Lqkg;
 
-.field private final c:Loiw;
+.field private final c:Lqkg;
 
-.field private final d:Loiw;
+.field private final d:Lqkg;
 
-.field private final e:Loiw;
+.field private final e:Lqkg;
 
-.field private final f:Loiw;
+.field private final f:Lqkg;
 
-.field private final g:Loiw;
+.field private final g:Lqkg;
 
-.field private final h:Loiw;
+.field private final h:Lqkg;
 
-.field private final i:Loiw;
+.field private final i:Lqkg;
 
-.field private final j:Loiw;
+.field private final j:Lqkg;
 
-.field private final k:Loiw;
+.field private final k:Lqkg;
 
-.field private final l:Loiw;
+.field private final l:Lqkg;
 
-.field private final m:Loiw;
+.field private final m:Lqkg;
 
-.field private final n:Loiw;
+.field private final n:Lqkg;
 
-.field private final o:Loiw;
+.field private final o:Lqkg;
+
+.field private final p:Lqkg;
+
+.field private final q:Lqkg;
 
 
 # direct methods
-.method public constructor <init>(Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;)V
-    .locals 0
+.method public constructor <init>(Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;)V
+    .locals 2
+
+    move-object v0, p0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lhbc;->a:Loiw;
+    move-object v1, p1
 
-    iput-object p2, p0, Lhbc;->b:Loiw;
+    iput-object v1, v0, Lhbc;->a:Lqkg;
 
-    iput-object p3, p0, Lhbc;->c:Loiw;
+    move-object v1, p2
 
-    iput-object p4, p0, Lhbc;->d:Loiw;
+    iput-object v1, v0, Lhbc;->b:Lqkg;
 
-    iput-object p5, p0, Lhbc;->e:Loiw;
+    move-object v1, p3
 
-    iput-object p6, p0, Lhbc;->f:Loiw;
+    iput-object v1, v0, Lhbc;->c:Lqkg;
 
-    iput-object p7, p0, Lhbc;->g:Loiw;
+    move-object v1, p4
 
-    iput-object p8, p0, Lhbc;->h:Loiw;
+    iput-object v1, v0, Lhbc;->d:Lqkg;
 
-    iput-object p9, p0, Lhbc;->i:Loiw;
+    move-object v1, p5
 
-    iput-object p10, p0, Lhbc;->j:Loiw;
+    iput-object v1, v0, Lhbc;->e:Lqkg;
 
-    iput-object p11, p0, Lhbc;->k:Loiw;
+    move-object v1, p6
 
-    iput-object p12, p0, Lhbc;->l:Loiw;
+    iput-object v1, v0, Lhbc;->f:Lqkg;
 
-    iput-object p13, p0, Lhbc;->m:Loiw;
+    move-object v1, p7
 
-    iput-object p14, p0, Lhbc;->n:Loiw;
+    iput-object v1, v0, Lhbc;->g:Lqkg;
 
-    iput-object p15, p0, Lhbc;->o:Loiw;
+    move-object v1, p8
+
+    iput-object v1, v0, Lhbc;->h:Lqkg;
+
+    move-object v1, p9
+
+    iput-object v1, v0, Lhbc;->i:Lqkg;
+
+    move-object v1, p10
+
+    iput-object v1, v0, Lhbc;->j:Lqkg;
+
+    move-object v1, p11
+
+    iput-object v1, v0, Lhbc;->k:Lqkg;
+
+    move-object v1, p12
+
+    iput-object v1, v0, Lhbc;->l:Lqkg;
+
+    move-object v1, p13
+
+    iput-object v1, v0, Lhbc;->m:Lqkg;
+
+    move-object/from16 v1, p14
+
+    iput-object v1, v0, Lhbc;->n:Lqkg;
+
+    move-object/from16 v1, p15
+
+    iput-object v1, v0, Lhbc;->o:Lqkg;
+
+    move-object/from16 v1, p16
+
+    iput-object v1, v0, Lhbc;->p:Lqkg;
+
+    move-object/from16 v1, p17
+
+    iput-object v1, v0, Lhbc;->q:Lqkg;
 
     return-void
 .end method
 
+.method public static b(Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;)Lhbc;
+    .locals 19
+
+    move-object/from16 v1, p0
+
+    move-object/from16 v2, p1
+
+    move-object/from16 v3, p2
+
+    move-object/from16 v4, p3
+
+    move-object/from16 v5, p4
+
+    move-object/from16 v6, p5
+
+    move-object/from16 v7, p6
+
+    move-object/from16 v8, p7
+
+    move-object/from16 v9, p8
+
+    move-object/from16 v10, p9
+
+    move-object/from16 v11, p10
+
+    move-object/from16 v12, p11
+
+    move-object/from16 v13, p12
+
+    move-object/from16 v14, p13
+
+    move-object/from16 v15, p14
+
+    move-object/from16 v16, p15
+
+    move-object/from16 v17, p16
+
+    new-instance v18, Lhbc;
+
+    move-object/from16 v0, v18
+
+    invoke-direct/range {v0 .. v17}, Lhbc;-><init>(Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;)V
+
+    return-object v18
+.end method
+
 
 # virtual methods
-.method public final bridge synthetic get()Ljava/lang/Object;
-    .locals 22
+.method public final a()Lhbb;
+    .locals 19
 
     move-object/from16 v0, p0
 
-    iget-object v1, v0, Lhbc;->a:Loiw;
+    iget-object v1, v0, Lhbc;->a:Lqkg;
 
-    check-cast v1, Ldwh;
-
-    invoke-virtual {v1}, Ldwh;->a()Landroid/content/Context;
-
-    move-result-object v3
-
-    invoke-static {}, Lduq;->a()Ldin;
-
-    move-result-object v4
-
-    iget-object v1, v0, Lhbc;->b:Loiw;
-
-    invoke-interface {v1}, Loiw;->get()Ljava/lang/Object;
+    invoke-interface {v1}, Lqkg;->get()Ljava/lang/Object;
 
     move-result-object v1
 
-    move-object v5, v1
+    move-object v3, v1
 
-    check-cast v5, Ljava/util/concurrent/Executor;
+    check-cast v3, Lebe;
 
-    iget-object v1, v0, Lhbc;->c:Loiw;
+    iget-object v1, v0, Lhbc;->b:Lqkg;
 
-    invoke-interface {v1}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v1
-
-    move-object v6, v1
-
-    check-cast v6, Ljava/util/concurrent/Executor;
-
-    iget-object v1, v0, Lhbc;->d:Loiw;
-
-    invoke-interface {v1}, Loiw;->get()Ljava/lang/Object;
+    invoke-interface {v1}, Lqkg;->get()Ljava/lang/Object;
 
     move-result-object v1
 
-    move-object v7, v1
+    move-object v4, v1
 
-    check-cast v7, Ljava/util/concurrent/ScheduledExecutorService;
+    check-cast v4, Llvp;
 
-    iget-object v1, v0, Lhbc;->e:Loiw;
+    iget-object v1, v0, Lhbc;->c:Lqkg;
 
-    invoke-interface {v1}, Loiw;->get()Ljava/lang/Object;
+    check-cast v1, Lgsi;
+
+    invoke-virtual {v1}, Lgsi;->a()Lgsf;
+
+    move-result-object v5
+
+    iget-object v1, v0, Lhbc;->d:Lqkg;
+
+    check-cast v1, Ldzs;
+
+    invoke-virtual {v1}, Ldzs;->a()Ldzr;
+
+    move-result-object v6
+
+    iget-object v1, v0, Lhbc;->e:Lqkg;
+
+    check-cast v1, Ldzw;
+
+    invoke-virtual {v1}, Ldzw;->a()Ldzv;
+
+    move-result-object v7
+
+    iget-object v1, v0, Lhbc;->f:Lqkg;
+
+    invoke-interface {v1}, Lqkg;->get()Ljava/lang/Object;
 
     move-result-object v1
 
     move-object v8, v1
 
-    check-cast v8, Ljuh;
+    check-cast v8, Leaw;
 
-    iget-object v1, v0, Lhbc;->f:Loiw;
+    iget-object v1, v0, Lhbc;->g:Lqkg;
 
-    invoke-interface {v1}, Loiw;->get()Ljava/lang/Object;
+    check-cast v1, Lecl;
 
-    move-result-object v1
+    invoke-virtual {v1}, Lecl;->a()Lecj;
 
-    move-object v9, v1
+    move-result-object v9
 
-    check-cast v9, Ldja;
+    iget-object v1, v0, Lhbc;->h:Lqkg;
 
-    iget-object v1, v0, Lhbc;->g:Loiw;
-
-    invoke-interface {v1}, Loiw;->get()Ljava/lang/Object;
+    invoke-interface {v1}, Lqkg;->get()Ljava/lang/Object;
 
     move-result-object v1
 
     move-object v10, v1
 
-    check-cast v10, Llhm;
+    check-cast v10, Lljf;
 
-    iget-object v1, v0, Lhbc;->h:Loiw;
+    iget-object v1, v0, Lhbc;->i:Lqkg;
 
-    invoke-interface {v1}, Loiw;->get()Ljava/lang/Object;
+    invoke-interface {v1}, Lqkg;->get()Ljava/lang/Object;
 
     move-result-object v1
 
     move-object v11, v1
 
-    check-cast v11, Ldmz;
+    check-cast v11, Lhcg;
 
-    iget-object v1, v0, Lhbc;->i:Loiw;
+    iget-object v1, v0, Lhbc;->j:Lqkg;
 
-    invoke-interface {v1}, Loiw;->get()Ljava/lang/Object;
+    invoke-interface {v1}, Lqkg;->get()Ljava/lang/Object;
 
     move-result-object v1
 
     move-object v12, v1
 
-    check-cast v12, Lhbf;
+    check-cast v12, Liio;
 
-    iget-object v1, v0, Lhbc;->j:Loiw;
+    iget-object v1, v0, Lhbc;->k:Lqkg;
 
-    invoke-interface {v1}, Loiw;->get()Ljava/lang/Object;
+    invoke-interface {v1}, Lqkg;->get()Ljava/lang/Object;
 
     move-result-object v1
 
     move-object v13, v1
 
-    check-cast v13, Lgzm;
+    check-cast v13, Leax;
 
-    iget-object v1, v0, Lhbc;->k:Loiw;
+    iget-object v1, v0, Lhbc;->l:Lqkg;
 
-    invoke-interface {v1}, Loiw;->get()Ljava/lang/Object;
+    invoke-interface {v1}, Lqkg;->get()Ljava/lang/Object;
 
     move-result-object v1
 
     move-object v14, v1
 
-    check-cast v14, Lgzn;
+    check-cast v14, Leam;
 
-    iget-object v15, v0, Lhbc;->l:Loiw;
+    iget-object v1, v0, Lhbc;->m:Lqkg;
 
-    iget-object v1, v0, Lhbc;->m:Loiw;
+    invoke-interface {v1}, Lqkg;->get()Ljava/lang/Object;
 
-    move-object/from16 v16, v1
+    move-result-object v1
 
-    iget-object v1, v0, Lhbc;->n:Loiw;
+    move-object v15, v1
 
-    check-cast v1, Limf;
+    check-cast v15, Leex;
 
-    invoke-virtual {v1}, Limf;->a()Landroid/content/pm/PackageInfo;
+    iget-object v1, v0, Lhbc;->n:Lqkg;
 
-    move-result-object v17
+    check-cast v1, Lhet;
 
-    iget-object v1, v0, Lhbc;->o:Loiw;
+    invoke-virtual {v1}, Lhet;->a()Lhes;
 
-    invoke-interface {v1}, Loiw;->get()Ljava/lang/Object;
+    move-result-object v16
+
+    iget-object v1, v0, Lhbc;->o:Lqkg;
+
+    invoke-interface {v1}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v1
+
+    move-object/from16 v17, v1
+
+    check-cast v17, Lojc;
+
+    iget-object v1, v0, Lhbc;->p:Lqkg;
+
+    invoke-interface {v1}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Ljug;
+
+    iget-object v1, v0, Lhbc;->q:Lqkg;
+
+    invoke-interface {v1}, Lqkg;->get()Ljava/lang/Object;
 
     move-result-object v1
 
     move-object/from16 v18, v1
 
-    check-cast v18, Lkbc;
+    check-cast v18, Lddf;
 
-    new-instance v1, Lhba;
+    new-instance v1, Lhbb;
 
     move-object v2, v1
 
-    const/16 v19, 0x0
-
-    const/16 v20, 0x0
-
-    const/16 v21, 0x0
-
-    invoke-direct/range {v2 .. v21}, Lhba;-><init>(Landroid/content/Context;Ldin;Ljava/util/concurrent/Executor;Ljava/util/concurrent/Executor;Ljava/util/concurrent/ScheduledExecutorService;Ljuh;Ldja;Llhm;Ldmz;Lhbf;Lgzm;Lgzn;Loiw;Loiw;Landroid/content/pm/PackageInfo;Lkbc;[B[B[B)V
+    invoke-direct/range {v2 .. v18}, Lhbb;-><init>(Lebe;Llvp;Lgsf;Ldzr;Ldzv;Leaw;Lecj;Lljf;Lhcg;Liio;Leax;Leam;Leex;Lhes;Lojc;Lddf;)V
 
     return-object v1
+.end method
+
+.method public final bridge synthetic get()Ljava/lang/Object;
+    .locals 1
+
+    invoke-virtual {p0}, Lhbc;->a()Lhbb;
+
+    move-result-object v0
+
+    return-object v0
 .end method

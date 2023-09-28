@@ -1,101 +1,22 @@
-.class public abstract Lcys;
+.class public final Lcys;
 .super Ljava/lang/Object;
 
-# interfaces
-.implements Lcyq;
-.implements Lhis;
+
+# static fields
+.field public static final a:Lcsm;
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 2
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance v0, Lcsm;
 
-    return-void
-.end method
+    const/4 v1, 0x4
 
+    invoke-direct {v0, v1}, Lcsm;-><init>(I)V
 
-# virtual methods
-.method public a()V
-    .locals 0
+    sput-object v0, Lcys;->a:Lcsm;
 
     return-void
-.end method
-
-.method public b()V
-    .locals 0
-
-    return-void
-.end method
-
-.method public c()V
-    .locals 0
-
-    return-void
-.end method
-
-.method public d()V
-    .locals 0
-
-    return-void
-.end method
-
-.method public synthetic f()V
-    .locals 0
-
-    return-void
-.end method
-
-.method public synthetic g()V
-    .locals 0
-
-    return-void
-.end method
-
-.method public synthetic h()V
-    .locals 0
-
-    return-void
-.end method
-
-.method public i()V
-    .locals 0
-
-    return-void
-.end method
-
-.method public j(Lcsc;)V
-    .locals 0
-
-    return-void
-.end method
-
-.method public final synthetic l()Z
-    .locals 1
-
-    invoke-interface {p0}, Lcyq;->bx()I
-
-    move-result v0
-
-    add-int/lit8 v0, v0, -0x1
-
-    packed-switch v0, :pswitch_data_0
-
-    const/4 v0, 0x0
-
-    return v0
-
-    :pswitch_0
-    const/4 v0, 0x1
-
-    return v0
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x1
-        :pswitch_0
-        :pswitch_0
-    .end packed-switch
 .end method

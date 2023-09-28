@@ -1,227 +1,140 @@
-.class public final enum Loyb;
-.super Ljava/lang/Enum;
-
-# interfaces
-.implements Lnwv;
+.class public final Loyb;
+.super Ljava/lang/Object;
 
 
 # static fields
-.field public static final enum a:Loyb;
+.field private static final a:[Ljava/lang/String;
 
-.field public static final enum b:Loyb;
-
-.field public static final enum c:Loyb;
-
-.field public static final enum d:Loyb;
-
-.field public static final enum e:Loyb;
-
-.field public static final enum f:Loyb;
-
-.field public static final enum g:Loyb;
-
-.field private static final synthetic i:[Loyb;
-
-
-# instance fields
-.field public final h:I
+.field private static final b:Loye;
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 15
+    .locals 6
 
-    new-instance v0, Loyb;
+    const/4 v0, 0x2
 
-    const-string v1, "UNKNOWN"
+    new-array v1, v0, [Ljava/lang/String;
 
-    const/4 v2, 0x0
+    const-string v2, "com.google.common.flogger.util.StackWalkerStackGetter"
 
-    invoke-direct {v0, v1, v2, v2}, Loyb;-><init>(Ljava/lang/String;II)V
+    const/4 v3, 0x0
 
-    sput-object v0, Loyb;->a:Loyb;
+    aput-object v2, v1, v3
 
-    new-instance v1, Loyb;
-
-    const-string v3, "FOREGROUND_TO_BACKGROUND"
+    const-string v2, "com.google.common.flogger.util.JavaLangAccessStackGetter"
 
     const/4 v4, 0x1
 
-    invoke-direct {v1, v3, v4, v4}, Loyb;-><init>(Ljava/lang/String;II)V
+    aput-object v2, v1, v4
 
-    sput-object v1, Loyb;->b:Loyb;
+    sput-object v1, Loyb;->a:[Ljava/lang/String;
 
-    new-instance v3, Loyb;
+    const/4 v2, 0x0
 
-    const-string v5, "BACKGROUND_TO_FOREGROUND"
+    :goto_0
+    if-ge v2, v0, :cond_1
 
-    const/4 v6, 0x2
+    aget-object v4, v1, v2
 
-    invoke-direct {v3, v5, v6, v6}, Loyb;-><init>(Ljava/lang/String;II)V
+    :try_start_0
+    invoke-static {v4}, Ljava/lang/Class;->forName(Ljava/lang/String;)Ljava/lang/Class;
 
-    sput-object v3, Loyb;->c:Loyb;
+    move-result-object v4
 
-    new-instance v5, Loyb;
+    const-class v5, Loye;
 
-    const-string v7, "FOREGROUND_SERVICE_START"
+    invoke-virtual {v4, v5}, Ljava/lang/Class;->asSubclass(Ljava/lang/Class;)Ljava/lang/Class;
 
-    const/4 v8, 0x3
+    move-result-object v4
 
-    invoke-direct {v5, v7, v8, v8}, Loyb;-><init>(Ljava/lang/String;II)V
+    new-array v5, v3, [Ljava/lang/Class;
 
-    sput-object v5, Loyb;->d:Loyb;
+    invoke-virtual {v4, v5}, Ljava/lang/Class;->getDeclaredConstructor([Ljava/lang/Class;)Ljava/lang/reflect/Constructor;
 
-    new-instance v7, Loyb;
+    move-result-object v4
 
-    const-string v9, "FOREGROUND_SERVICE_STOP"
+    new-array v5, v3, [Ljava/lang/Object;
 
-    const/4 v10, 0x4
+    invoke-virtual {v4, v5}, Ljava/lang/reflect/Constructor;->newInstance([Ljava/lang/Object;)Ljava/lang/Object;
 
-    invoke-direct {v7, v9, v10, v10}, Loyb;-><init>(Ljava/lang/String;II)V
+    move-result-object v4
 
-    sput-object v7, Loyb;->e:Loyb;
+    check-cast v4, Loye;
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    new-instance v9, Loyb;
+    goto :goto_1
 
-    const-string v11, "CUSTOM_MEASURE_START"
+    :catchall_0
+    move-exception v4
 
-    const/4 v12, 0x5
+    const/4 v4, 0x0
 
-    invoke-direct {v9, v11, v12, v12}, Loyb;-><init>(Ljava/lang/String;II)V
+    :goto_1
+    if-eqz v4, :cond_0
 
-    sput-object v9, Loyb;->f:Loyb;
+    goto :goto_2
 
-    new-instance v11, Loyb;
+    :cond_0
+    add-int/lit8 v2, v2, 0x1
 
-    const-string v13, "CUSTOM_MEASURE_STOP"
+    goto :goto_0
 
-    const/4 v14, 0x6
+    :cond_1
+    new-instance v4, Loyf;
 
-    invoke-direct {v11, v13, v14, v14}, Loyb;-><init>(Ljava/lang/String;II)V
+    invoke-direct {v4}, Loyf;-><init>()V
 
-    sput-object v11, Loyb;->g:Loyb;
-
-    const/4 v13, 0x7
-
-    new-array v13, v13, [Loyb;
-
-    aput-object v0, v13, v2
-
-    aput-object v1, v13, v4
-
-    aput-object v3, v13, v6
-
-    aput-object v5, v13, v8
-
-    aput-object v7, v13, v10
-
-    aput-object v9, v13, v12
-
-    aput-object v11, v13, v14
-
-    sput-object v13, Loyb;->i:[Loyb;
+    :goto_2
+    sput-object v4, Loyb;->b:Loye;
 
     return-void
 .end method
 
-.method private constructor <init>(Ljava/lang/String;II)V
-    .locals 0
-
-    invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
-    iput p3, p0, Loyb;->h:I
-
-    return-void
-.end method
-
-.method public static b(I)Loyb;
-    .locals 0
-
-    packed-switch p0, :pswitch_data_0
-
-    const/4 p0, 0x0
-
-    return-object p0
-
-    :pswitch_0
-    sget-object p0, Loyb;->g:Loyb;
-
-    return-object p0
-
-    :pswitch_1
-    sget-object p0, Loyb;->f:Loyb;
-
-    return-object p0
-
-    :pswitch_2
-    sget-object p0, Loyb;->e:Loyb;
-
-    return-object p0
-
-    :pswitch_3
-    sget-object p0, Loyb;->d:Loyb;
-
-    return-object p0
-
-    :pswitch_4
-    sget-object p0, Loyb;->c:Loyb;
-
-    return-object p0
-
-    :pswitch_5
-    sget-object p0, Loyb;->b:Loyb;
-
-    return-object p0
-
-    :pswitch_6
-    sget-object p0, Loyb;->a:Loyb;
-
-    return-object p0
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_6
-        :pswitch_5
-        :pswitch_4
-        :pswitch_3
-        :pswitch_2
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
-.end method
-
-.method public static values()[Loyb;
+.method public static a(Ljava/lang/Class;)Ljava/lang/StackTraceElement;
     .locals 1
 
-    sget-object v0, Loyb;->i:[Loyb;
+    const-string v0, "target"
 
-    invoke-virtual {v0}, [Loyb;->clone()Ljava/lang/Object;
+    invoke-static {p0, v0}, Loxh;->x(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
-    move-result-object v0
+    sget-object v0, Loyb;->b:Loye;
 
-    check-cast v0, [Loyb;
+    invoke-interface {v0, p0}, Loye;->a(Ljava/lang/Class;)Ljava/lang/StackTraceElement;
 
-    return-object v0
+    move-result-object p0
+
+    return-object p0
 .end method
 
-
-# virtual methods
-.method public final a()I
+.method public static b(Ljava/lang/Class;I)[Ljava/lang/StackTraceElement;
     .locals 1
 
-    iget v0, p0, Loyb;->h:I
+    if-gtz p1, :cond_1
 
-    return v0
-.end method
+    const/4 v0, -0x1
 
-.method public final toString()Ljava/lang/String;
-    .locals 1
+    if-ne p1, v0, :cond_0
 
-    iget v0, p0, Loyb;->h:I
+    goto :goto_0
 
-    invoke-static {v0}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
+    :cond_0
+    new-instance p0, Ljava/lang/IllegalArgumentException;
 
-    move-result-object v0
+    const-string p1, "invalid maximum depth: 0"
 
-    return-object v0
+    invoke-direct {p0, p1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw p0
+
+    :cond_1
+    :goto_0
+    sget-object v0, Loyb;->b:Loye;
+
+    invoke-interface {v0, p0, p1}, Loye;->b(Ljava/lang/Class;I)[Ljava/lang/StackTraceElement;
+
+    move-result-object p0
+
+    return-object p0
 .end method

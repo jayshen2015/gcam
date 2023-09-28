@@ -1,229 +1,162 @@
-.class public final Lbeo;
+.class final Lbeo;
 .super Ljava/lang/Object;
 
+# interfaces
+.implements Lbac;
 
-# static fields
-.field public static final synthetic a:I
+
+# instance fields
+.field private final a:Ljava/lang/String;
+
+.field private b:Ljava/lang/Object;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
+.method public constructor <init>(Ljava/lang/String;)V
+    .locals 0
 
-    const-string v0, "DiagnosticsWrkr"
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-static {v0}, Laxq;->b(Ljava/lang/String;)Ljava/lang/String;
+    iput-object p1, p0, Lbeo;->a:Ljava/lang/String;
 
     return-void
 .end method
 
-.method public static final a(Lbbz;Lbcz;Lbbs;Ljava/util/List;)V
-    .locals 12
 
-    invoke-interface {p3}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
+# virtual methods
+.method public final a()Ljava/lang/Class;
+    .locals 1
 
-    move-result-object p3
+    const-class v0, Ljava/io/InputStream;
 
-    :goto_0
-    invoke-interface {p3}, Ljava/util/Iterator;->hasNext()Z
+    return-object v0
+.end method
+
+.method public final d()V
+    .locals 1
+
+    :try_start_0
+    iget-object v0, p0, Lbeo;->b:Ljava/lang/Object;
+
+    check-cast v0, Ljava/io/InputStream;
+
+    invoke-virtual {v0}, Ljava/io/InputStream;->close()V
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
+
+    return-void
+
+    :catch_0
+    move-exception v0
+
+    return-void
+.end method
+
+.method public final f(Layc;Lbab;)V
+    .locals 4
+
+    :try_start_0
+    iget-object p1, p0, Lbeo;->a:Ljava/lang/String;
+
+    const-string v0, "data:image"
+
+    invoke-virtual {p1, v0}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_4
+    if-eqz v0, :cond_2
 
-    invoke-interface {p3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    const/16 v0, 0x2c
 
-    move-result-object v0
+    invoke-virtual {p1, v0}, Ljava/lang/String;->indexOf(I)I
 
-    check-cast v0, Lbcj;
+    move-result v0
 
-    invoke-static {v0}, Lbbi;->b(Lbcj;)Lbbx;
+    const/4 v1, -0x1
 
-    move-result-object v1
+    if-eq v0, v1, :cond_1
 
-    invoke-static {p2, v1}, Lazc;->b(Lbbs;Lbbx;)Lbbr;
+    const/4 v1, 0x0
 
-    move-result-object v1
+    invoke-virtual {p1, v1, v0}, Ljava/lang/String;->substring(II)Ljava/lang/String;
 
-    const/4 v2, 0x0
+    move-result-object v2
 
-    if-eqz v1, :cond_0
+    const-string v3, ";base64"
 
-    iget v1, v1, Lbbr;->c:I
+    invoke-virtual {v2, v3}, Ljava/lang/String;->endsWith(Ljava/lang/String;)Z
 
-    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    move-result v2
 
-    move-result-object v1
+    if-eqz v2, :cond_0
 
-    goto :goto_1
+    add-int/lit8 v0, v0, 0x1
+
+    invoke-virtual {p1, v0}, Ljava/lang/String;->substring(I)Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-static {p1, v1}, Landroid/util/Base64;->decode(Ljava/lang/String;I)[B
+
+    move-result-object p1
+
+    new-instance v0, Ljava/io/ByteArrayInputStream;
+
+    invoke-direct {v0, p1}, Ljava/io/ByteArrayInputStream;-><init>([B)V
+
+    iput-object v0, p0, Lbeo;->b:Ljava/lang/Object;
+
+    invoke-interface {p2, v0}, Lbab;->b(Ljava/lang/Object;)V
+
+    return-void
 
     :cond_0
-    move-object v1, v2
+    new-instance p1, Ljava/lang/IllegalArgumentException;
 
-    :goto_1
-    iget-object v3, v0, Lbcj;->a:Ljava/lang/String;
+    const-string v0, "Not a base64 image data URL."
 
-    const-string v4, "SELECT name FROM workname WHERE work_spec_id=?"
+    invoke-direct {p1, v0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
-    const/4 v5, 0x1
-
-    invoke-static {v4, v5}, Lapy;->a(Ljava/lang/String;I)Lapy;
-
-    move-result-object v4
-
-    invoke-virtual {v4, v5, v3}, Lapy;->g(ILjava/lang/String;)V
-
-    move-object v3, p0
-
-    check-cast v3, Lbcb;
-
-    iget-object v5, v3, Lbcb;->a:Lapt;
-
-    invoke-virtual {v5}, Lapt;->l()V
-
-    iget-object v3, v3, Lbcb;->a:Lapt;
-
-    const/4 v5, 0x0
-
-    invoke-static {v3, v4, v5}, Laey;->e(Lapt;Laqv;Z)Landroid/database/Cursor;
-
-    move-result-object v3
-
-    :try_start_0
-    new-instance v6, Ljava/util/ArrayList;
-
-    invoke-interface {v3}, Landroid/database/Cursor;->getCount()I
-
-    move-result v7
-
-    invoke-direct {v6, v7}, Ljava/util/ArrayList;-><init>(I)V
-
-    :goto_2
-    invoke-interface {v3}, Landroid/database/Cursor;->moveToNext()Z
-
-    move-result v7
-
-    if-eqz v7, :cond_2
-
-    invoke-interface {v3, v5}, Landroid/database/Cursor;->isNull(I)Z
-
-    move-result v7
-
-    if-eqz v7, :cond_1
-
-    move-object v7, v2
-
-    goto :goto_3
+    throw p1
 
     :cond_1
-    invoke-interface {v3, v5}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
+    new-instance p1, Ljava/lang/IllegalArgumentException;
 
-    move-result-object v7
+    const-string v0, "Missing comma in data URL."
 
-    :goto_3
-    invoke-interface {v6, v7}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    invoke-direct {p1, v0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
-    goto :goto_2
+    throw p1
 
     :cond_2
-    invoke-interface {v3}, Landroid/database/Cursor;->close()V
+    new-instance p1, Ljava/lang/IllegalArgumentException;
 
-    invoke-virtual {v4}, Lapy;->j()V
+    const-string v0, "Not a valid image data URL."
 
-    const-string v7, ","
+    invoke-direct {p1, v0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
-    const/4 v8, 0x0
+    throw p1
+    :try_end_0
+    .catch Ljava/lang/IllegalArgumentException; {:try_start_0 .. :try_end_0} :catch_0
 
-    const/4 v9, 0x0
+    :catch_0
+    move-exception p1
 
-    const/4 v10, 0x0
+    invoke-interface {p2, p1}, Lbab;->e(Ljava/lang/Exception;)V
 
-    const/16 v11, 0x3e
-
-    invoke-static/range {v6 .. v11}, Lljr;->aq(Ljava/lang/Iterable;Ljava/lang/CharSequence;Ljava/lang/CharSequence;Ljava/lang/CharSequence;Lomk;I)Ljava/lang/String;
-
-    move-result-object v3
-
-    iget-object v4, v0, Lbcj;->a:Ljava/lang/String;
-
-    invoke-interface {p1, v4}, Lbcz;->a(Ljava/lang/String;)Ljava/util/List;
-
-    move-result-object v5
-
-    const-string v6, ","
-
-    const/4 v7, 0x0
-
-    const/16 v10, 0x3e
-
-    invoke-static/range {v5 .. v10}, Lljr;->aq(Ljava/lang/Iterable;Ljava/lang/CharSequence;Ljava/lang/CharSequence;Ljava/lang/CharSequence;Lomk;I)Ljava/lang/String;
-
-    move-result-object v4
-
-    new-instance v5, Ljava/lang/StringBuilder;
-
-    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
-
-    const/16 v6, 0xa
-
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
-
-    iget-object v6, v0, Lbcj;->a:Ljava/lang/String;
-
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v6, "\t "
-
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-object v7, v0, Lbcj;->b:Ljava/lang/String;
-
-    invoke-virtual {v5, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v5, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget v0, v0, Lbcj;->r:I
-
-    invoke-static {v0}, Lej;->e(I)Ljava/lang/String;
-
-    move-result-object v1
-
-    if-eqz v0, :cond_3
-
-    invoke-virtual {v5, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v5, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v5, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const/16 v0, 0x9
-
-    invoke-virtual {v5, v0}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
-
-    goto/16 :goto_0
-
-    :cond_3
-    throw v2
-
-    :catchall_0
-    move-exception p0
-
-    invoke-interface {v3}, Landroid/database/Cursor;->close()V
-
-    invoke-virtual {v4}, Lapy;->j()V
-
-    throw p0
-
-    :cond_4
     return-void
+.end method
+
+.method public final fu()V
+    .locals 0
+
+    return-void
+.end method
+
+.method public final g()I
+    .locals 1
+
+    const/4 v0, 0x1
+
+    return v0
 .end method

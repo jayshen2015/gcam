@@ -1,42 +1,40 @@
-.class public final Lbqv;
-.super Lbql;
+.class public final synthetic Lbqv;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Landroid/content/DialogInterface$OnDismissListener;
+
+
+# instance fields
+.field public final synthetic a:Lbqz;
 
 
 # direct methods
-.method public constructor <init>(Landroid/content/res/AssetManager;Ljava/lang/String;)V
+.method public synthetic constructor <init>(Lbqz;)V
     .locals 0
 
-    invoke-direct {p0, p1, p2}, Lbql;-><init>(Landroid/content/res/AssetManager;Ljava/lang/String;)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lbqv;->a:Lbqz;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Ljava/lang/Class;
-    .locals 1
+.method public final onDismiss(Landroid/content/DialogInterface;)V
+    .locals 2
 
-    const-class v0, Landroid/content/res/AssetFileDescriptor;
+    iget-object v0, p0, Lbqv;->a:Lbqz;
 
-    return-object v0
-.end method
+    iget-object v1, v0, Lbqz;->h:Lie;
 
-.method protected final synthetic b(Landroid/content/res/AssetManager;Ljava/lang/String;)Ljava/lang/Object;
-    .locals 0
+    if-ne p1, v1, :cond_0
 
-    invoke-virtual {p1, p2}, Landroid/content/res/AssetManager;->openFd(Ljava/lang/String;)Landroid/content/res/AssetFileDescriptor;
+    const/4 p1, 0x0
 
-    move-result-object p1
+    iput-object p1, v0, Lbqz;->h:Lie;
 
-    return-object p1
-.end method
-
-.method protected final synthetic e(Ljava/lang/Object;)V
-    .locals 0
-
-    check-cast p1, Landroid/content/res/AssetFileDescriptor;
-
-    invoke-virtual {p1}, Landroid/content/res/AssetFileDescriptor;->close()V
-
+    :cond_0
     return-void
 .end method

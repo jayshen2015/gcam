@@ -1,38 +1,34 @@
 .class final Ljjl;
-.super Ljfc;
+.super Landroid/animation/AnimatorListenerAdapter;
+
+
+# instance fields
+.field final synthetic a:Ljjn;
 
 
 # direct methods
-.method public constructor <init>()V
+.method public constructor <init>(Ljjn;)V
     .locals 0
 
-    invoke-direct {p0}, Ljfc;-><init>()V
+    iput-object p1, p0, Ljjl;->a:Ljjn;
+
+    invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final bridge synthetic a(Landroid/content/Context;Landroid/os/Looper;Ljge;Ljava/lang/Object;Ljdf;Ljdg;)Ljcz;
-    .locals 6
+.method public final onAnimationStart(Landroid/animation/Animator;)V
+    .locals 1
 
-    check-cast p4, Ljcx;
+    invoke-super {p0, p1}, Landroid/animation/AnimatorListenerAdapter;->onAnimationStart(Landroid/animation/Animator;)V
 
-    new-instance p4, Ljjt;
+    iget-object p1, p0, Ljjl;->a:Ljjn;
 
-    move-object v0, p4
+    const/4 v0, 0x0
 
-    move-object v1, p1
+    invoke-virtual {p1, v0}, Ljjn;->setVisibility(I)V
 
-    move-object v2, p2
-
-    move-object v3, p3
-
-    move-object v4, p5
-
-    move-object v5, p6
-
-    invoke-direct/range {v0 .. v5}, Ljjt;-><init>(Landroid/content/Context;Landroid/os/Looper;Ljge;Ljdf;Ljdg;)V
-
-    return-object p4
+    return-void
 .end method

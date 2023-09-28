@@ -35,7 +35,7 @@
     return-void
 .end method
 
-.method public static a(Lcom/google/googlex/gcam/StaticMetadata;)J
+.method public static c(Lcom/google/googlex/gcam/StaticMetadata;)J
     .locals 2
 
     if-nez p0, :cond_0
@@ -52,8 +52,8 @@
 
 
 # virtual methods
-.method public final b()Lnqr;
-    .locals 5
+.method public final a()I
+    .locals 2
 
     iget-wide v0, p0, Lcom/google/googlex/gcam/StaticMetadata;->a:J
 
@@ -61,117 +61,10 @@
 
     move-result v0
 
-    sget-object v1, Lnqr;->e:[Lnqr;
-
-    const/4 v2, 0x0
-
-    const/4 v3, 0x4
-
-    if-ge v0, v3, :cond_1
-
-    if-ltz v0, :cond_0
-
-    aget-object v1, v1, v0
-
-    iget v4, v1, Lnqr;->f:I
-
-    if-eq v4, v0, :cond_2
-
-    goto :goto_0
-
-    :cond_0
-    goto :goto_0
-
-    :cond_1
-    :goto_0
-    sget-object v1, Lnqr;->e:[Lnqr;
-
-    if-ge v2, v3, :cond_4
-
-    aget-object v1, v1, v2
-
-    iget v4, v1, Lnqr;->f:I
-
-    if-ne v4, v0, :cond_3
-
-    :cond_2
-    return-object v1
-
-    :cond_3
-    add-int/lit8 v2, v2, 0x1
-
-    goto :goto_0
-
-    :cond_4
-    const-class v1, Lnqr;
-
-    new-instance v2, Ljava/lang/IllegalArgumentException;
-
-    invoke-virtual {v1}, Ljava/lang/Object;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v4, "No enum "
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v1, " with value "
-
-    invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-direct {v2, v0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    goto :goto_2
-
-    :goto_1
-    throw v2
-
-    :goto_2
-    goto :goto_1
+    return v0
 .end method
 
-.method public final c()Lcom/google/googlex/gcam/PixelRect;
-    .locals 5
-
-    iget-wide v0, p0, Lcom/google/googlex/gcam/StaticMetadata;->a:J
-
-    invoke-static {v0, v1, p0}, Lcom/google/googlex/gcam/GcamModuleJNI;->StaticMetadata_active_area_get(JLcom/google/googlex/gcam/StaticMetadata;)J
-
-    move-result-wide v0
-
-    const-wide/16 v2, 0x0
-
-    cmp-long v4, v0, v2
-
-    if-nez v4, :cond_0
-
-    const/4 v0, 0x0
-
-    return-object v0
-
-    :cond_0
-    new-instance v2, Lcom/google/googlex/gcam/PixelRect;
-
-    const/4 v3, 0x0
-
-    invoke-direct {v2, v0, v1, v3}, Lcom/google/googlex/gcam/PixelRect;-><init>(JZ)V
-
-    return-object v2
-.end method
-
-.method public final d()Lnrg;
+.method public final b()I
     .locals 2
 
     iget-wide v0, p0, Lcom/google/googlex/gcam/StaticMetadata;->a:J
@@ -180,14 +73,10 @@
 
     move-result v0
 
-    invoke-static {v0}, Lnrg;->a(I)Lnrg;
-
-    move-result-object v0
-
-    return-object v0
+    return v0
 .end method
 
-.method public final declared-synchronized e()V
+.method public final declared-synchronized d()V
     .locals 5
 
     monitor-enter p0
@@ -229,7 +118,7 @@
     throw v0
 .end method
 
-.method public final f(I)V
+.method public final e(I)V
     .locals 2
 
     iget-wide v0, p0, Lcom/google/googlex/gcam/StaticMetadata;->a:J
@@ -239,22 +128,20 @@
     return-void
 .end method
 
-.method protected final finalize()V
-    .locals 0
-
-    invoke-virtual {p0}, Lcom/google/googlex/gcam/StaticMetadata;->e()V
-
-    return-void
-.end method
-
-.method public final g(Lnrg;)V
+.method public final f(I)V
     .locals 2
 
     iget-wide v0, p0, Lcom/google/googlex/gcam/StaticMetadata;->a:J
 
-    iget p1, p1, Lnrg;->q:I
-
     invoke-static {v0, v1, p0, p1}, Lcom/google/googlex/gcam/GcamModuleJNI;->StaticMetadata_sensor_id_set(JLcom/google/googlex/gcam/StaticMetadata;I)V
+
+    return-void
+.end method
+
+.method protected final finalize()V
+    .locals 0
+
+    invoke-virtual {p0}, Lcom/google/googlex/gcam/StaticMetadata;->d()V
 
     return-void
 .end method

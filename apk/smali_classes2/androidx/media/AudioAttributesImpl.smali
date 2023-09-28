@@ -2,4 +2,4 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Latu;
+.implements Lakt;

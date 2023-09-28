@@ -1,40 +1,43 @@
 .class final Ljaf;
-.super Ljfc;
+.super Landroid/os/Handler;
+
+
+# instance fields
+.field final synthetic a:Ljah;
 
 
 # direct methods
-.method public constructor <init>()V
+.method public constructor <init>(Ljah;)V
     .locals 0
 
-    invoke-direct {p0}, Ljfc;-><init>()V
+    iput-object p1, p0, Ljaf;->a:Ljah;
+
+    invoke-direct {p0}, Landroid/os/Handler;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final bridge synthetic a(Landroid/content/Context;Landroid/os/Looper;Ljge;Ljava/lang/Object;Ljdf;Ljdg;)Ljcz;
-    .locals 7
+.method public final handleMessage(Landroid/os/Message;)V
+    .locals 2
 
-    move-object v4, p4
+    iget p1, p1, Landroid/os/Message;->what:I
 
-    check-cast v4, Lcom/google/android/gms/auth/api/signin/GoogleSignInOptions;
+    const/4 v0, 0x1
 
-    new-instance p4, Ljal;
+    if-ne p1, v0, :cond_0
 
-    move-object v0, p4
+    iget-object p1, p0, Ljaf;->a:Ljah;
 
-    move-object v1, p1
+    const/4 v0, 0x0
 
-    move-object v2, p2
+    iget v1, p1, Ljah;->a:I
 
-    move-object v3, p3
+    add-int/lit8 v1, v1, -0x1
 
-    move-object v5, p5
+    invoke-virtual {p1, v0, v1}, Ljah;->b(ZI)V
 
-    move-object v6, p6
-
-    invoke-direct/range {v0 .. v6}, Ljal;-><init>(Landroid/content/Context;Landroid/os/Looper;Ljge;Lcom/google/android/gms/auth/api/signin/GoogleSignInOptions;Ljdf;Ljdg;)V
-
-    return-object p4
+    :cond_0
+    return-void
 .end method

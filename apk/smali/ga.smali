@@ -1,212 +1,162 @@
-.class public final Lga;
-.super Landroid/view/ActionMode;
-
-
-# instance fields
-.field final a:Landroid/content/Context;
-
-.field final b:Lfx;
+.class public Lga;
+.super Ljava/lang/Object;
 
 
 # direct methods
-.method public constructor <init>(Landroid/content/Context;Lfx;)V
+.method public constructor <init>()V
     .locals 0
 
-    invoke-direct {p0}, Landroid/view/ActionMode;-><init>()V
-
-    iput-object p1, p0, Lga;->a:Landroid/content/Context;
-
-    iput-object p2, p0, Lga;->b:Lfx;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
+.end method
+
+.method static a(Landroid/view/View;)I
+    .locals 0
+
+    invoke-virtual {p0}, Landroid/view/View;->getAccessibilityLiveRegion()I
+
+    move-result p0
+
+    return p0
+.end method
+
+.method static b(Landroid/view/ViewParent;Landroid/view/View;Landroid/view/View;I)V
+    .locals 0
+
+    const/4 p3, 0x0
+
+    invoke-interface {p0, p1, p2, p3}, Landroid/view/ViewParent;->notifySubtreeAccessibilityStateChanged(Landroid/view/View;Landroid/view/View;I)V
+
+    return-void
+.end method
+
+.method static c(Landroid/view/accessibility/AccessibilityEvent;I)V
+    .locals 0
+
+    const/4 p1, 0x0
+
+    invoke-virtual {p0, p1}, Landroid/view/accessibility/AccessibilityEvent;->setContentChangeTypes(I)V
+
+    return-void
+.end method
+
+.method static d(Landroid/view/View;)Z
+    .locals 0
+
+    invoke-virtual {p0}, Landroid/view/View;->isAttachedToWindow()Z
+
+    move-result p0
+
+    return p0
+.end method
+
+.method static e(Landroid/view/View;)Z
+    .locals 0
+
+    invoke-virtual {p0}, Landroid/view/View;->isLaidOut()Z
+
+    move-result p0
+
+    return p0
+.end method
+
+.method public static f(Landroid/content/Context;)I
+    .locals 3
+
+    invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+
+    move-result-object p0
+
+    invoke-virtual {p0}, Landroid/content/res/Resources;->getConfiguration()Landroid/content/res/Configuration;
+
+    move-result-object p0
+
+    iget v0, p0, Landroid/content/res/Configuration;->screenWidthDp:I
+
+    iget v1, p0, Landroid/content/res/Configuration;->screenHeightDp:I
+
+    iget p0, p0, Landroid/content/res/Configuration;->smallestScreenWidthDp:I
+
+    const/16 v2, 0x258
+
+    if-gt p0, v2, :cond_3
+
+    if-gt v0, v2, :cond_3
+
+    const/16 p0, 0x1f4
+
+    if-ge v0, p0, :cond_2
+
+    const/16 p0, 0x1e0
+
+    if-le v0, p0, :cond_0
+
+    const/16 p0, 0x280
+
+    if-gt v1, p0, :cond_2
+
+    :cond_0
+    const/16 p0, 0x168
+
+    if-lt v0, p0, :cond_1
+
+    const/4 p0, 0x3
+
+    return p0
+
+    :cond_1
+    const/4 p0, 0x2
+
+    return p0
+
+    :cond_2
+    const/4 p0, 0x4
+
+    return p0
+
+    :cond_3
+    const/4 p0, 0x5
+
+    return p0
+.end method
+
+.method public static g(Landroid/content/Context;)Z
+    .locals 1
+
+    invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+
+    move-result-object p0
+
+    const/high16 v0, 0x7f050000
+
+    invoke-virtual {p0, v0}, Landroid/content/res/Resources;->getBoolean(I)Z
+
+    move-result p0
+
+    return p0
 .end method
 
 
 # virtual methods
-.method public final finish()V
+.method public h()Z
     .locals 1
 
-    iget-object v0, p0, Lga;->b:Lfx;
-
-    invoke-virtual {v0}, Lfx;->f()V
-
-    return-void
-.end method
-
-.method public final getCustomView()Landroid/view/View;
-    .locals 1
-
-    iget-object v0, p0, Lga;->b:Lfx;
-
-    invoke-virtual {v0}, Lfx;->c()Landroid/view/View;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public final getMenu()Landroid/view/Menu;
-    .locals 3
-
-    new-instance v0, Lhm;
-
-    iget-object v1, p0, Lga;->a:Landroid/content/Context;
-
-    iget-object v2, p0, Lga;->b:Lfx;
-
-    invoke-virtual {v2}, Lfx;->a()Landroid/view/Menu;
-
-    move-result-object v2
-
-    invoke-direct {v0, v1, v2}, Lhm;-><init>(Landroid/content/Context;Ladc;)V
-
-    return-object v0
-.end method
-
-.method public final getMenuInflater()Landroid/view/MenuInflater;
-    .locals 1
-
-    iget-object v0, p0, Lga;->b:Lfx;
-
-    invoke-virtual {v0}, Lfx;->b()Landroid/view/MenuInflater;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public final getSubtitle()Ljava/lang/CharSequence;
-    .locals 1
-
-    iget-object v0, p0, Lga;->b:Lfx;
-
-    invoke-virtual {v0}, Lfx;->d()Ljava/lang/CharSequence;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public final getTag()Ljava/lang/Object;
-    .locals 1
-
-    iget-object v0, p0, Lga;->b:Lfx;
-
-    iget-object v0, v0, Lfx;->d:Ljava/lang/Object;
-
-    return-object v0
-.end method
-
-.method public final getTitle()Ljava/lang/CharSequence;
-    .locals 1
-
-    iget-object v0, p0, Lga;->b:Lfx;
-
-    invoke-virtual {v0}, Lfx;->e()Ljava/lang/CharSequence;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public final getTitleOptionalHint()Z
-    .locals 1
-
-    iget-object v0, p0, Lga;->b:Lfx;
-
-    iget-boolean v0, v0, Lfx;->e:Z
+    const/4 v0, 0x0
 
     return v0
 .end method
 
-.method public final invalidate()V
-    .locals 1
+.method public i([I)Z
+    .locals 0
 
-    iget-object v0, p0, Lga;->b:Lfx;
+    const/4 p1, 0x0
 
-    invoke-virtual {v0}, Lfx;->g()V
-
-    return-void
+    return p1
 .end method
 
-.method public final isTitleOptional()Z
-    .locals 1
-
-    iget-object v0, p0, Lga;->b:Lfx;
-
-    invoke-virtual {v0}, Lfx;->n()Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public final setCustomView(Landroid/view/View;)V
-    .locals 1
-
-    iget-object v0, p0, Lga;->b:Lfx;
-
-    invoke-virtual {v0, p1}, Lfx;->h(Landroid/view/View;)V
-
-    return-void
-.end method
-
-.method public final setSubtitle(I)V
-    .locals 1
-
-    iget-object v0, p0, Lga;->b:Lfx;
-
-    invoke-virtual {v0, p1}, Lfx;->i(I)V
-
-    return-void
-.end method
-
-.method public final setSubtitle(Ljava/lang/CharSequence;)V
-    .locals 1
-
-    iget-object v0, p0, Lga;->b:Lfx;
-
-    invoke-virtual {v0, p1}, Lfx;->j(Ljava/lang/CharSequence;)V
-
-    return-void
-.end method
-
-.method public final setTag(Ljava/lang/Object;)V
-    .locals 1
-
-    iget-object v0, p0, Lga;->b:Lfx;
-
-    iput-object p1, v0, Lfx;->d:Ljava/lang/Object;
-
-    return-void
-.end method
-
-.method public final setTitle(I)V
-    .locals 1
-
-    iget-object v0, p0, Lga;->b:Lfx;
-
-    invoke-virtual {v0, p1}, Lfx;->k(I)V
-
-    return-void
-.end method
-
-.method public final setTitle(Ljava/lang/CharSequence;)V
-    .locals 1
-
-    iget-object v0, p0, Lga;->b:Lfx;
-
-    invoke-virtual {v0, p1}, Lfx;->l(Ljava/lang/CharSequence;)V
-
-    return-void
-.end method
-
-.method public final setTitleOptionalHint(Z)V
-    .locals 1
-
-    iget-object v0, p0, Lga;->b:Lfx;
-
-    invoke-virtual {v0, p1}, Lfx;->m(Z)V
+.method public j()V
+    .locals 0
 
     return-void
 .end method

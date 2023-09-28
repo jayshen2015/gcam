@@ -1,40 +1,32 @@
-.class public final Lkhu;
+.class final Lkhu;
 .super Ljava/lang/Object;
 
 
 # static fields
-.field public static final a:[Landroid/hardware/camera2/params/MeteringRectangle;
+.field static final a:[Lkmz;
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 8
+    .locals 3
 
-    const/4 v0, 0x1
+    const/4 v0, 0x2
 
-    new-array v0, v0, [Landroid/hardware/camera2/params/MeteringRectangle;
+    new-array v0, v0, [Lkmz;
 
-    new-instance v7, Landroid/hardware/camera2/params/MeteringRectangle;
+    sget-object v1, Lkhv;->a:Lkht;
 
     const/4 v2, 0x0
 
-    const/4 v3, 0x0
+    aput-object v1, v0, v2
 
-    const/4 v4, 0x0
+    sget-object v1, Lkhv;->b:Lkht;
 
-    const/4 v5, 0x0
+    const/4 v2, 0x1
 
-    const/4 v6, 0x0
+    aput-object v1, v0, v2
 
-    move-object v1, v7
-
-    invoke-direct/range {v1 .. v6}, Landroid/hardware/camera2/params/MeteringRectangle;-><init>(IIIII)V
-
-    const/4 v1, 0x0
-
-    aput-object v7, v0, v1
-
-    sput-object v0, Lkhu;->a:[Landroid/hardware/camera2/params/MeteringRectangle;
+    sput-object v0, Lkhu;->a:[Lkmz;
 
     return-void
 .end method

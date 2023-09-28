@@ -1,113 +1,54 @@
-.class public final Lfwo;
+.class public final synthetic Lfwo;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Logk;
+.implements Llie;
 
 
 # instance fields
-.field private final synthetic a:I
+.field public final synthetic a:Ljava/util/concurrent/atomic/AtomicReference;
 
-.field private final b:Ljava/lang/Object;
+.field public final synthetic b:Llie;
 
 
 # direct methods
-.method public constructor <init>(Lbkb;I[B[B[B[B)V
+.method public synthetic constructor <init>(Ljava/util/concurrent/atomic/AtomicReference;Llie;)V
     .locals 0
-
-    iput p2, p0, Lfwo;->a:I
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lfwo;->b:Ljava/lang/Object;
+    iput-object p1, p0, Lfwo;->a:Ljava/util/concurrent/atomic/AtomicReference;
 
-    return-void
-.end method
-
-.method public constructor <init>(Loiw;I)V
-    .locals 0
-
-    iput p2, p0, Lfwo;->a:I
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lfwo;->b:Ljava/lang/Object;
+    iput-object p2, p0, Lfwo;->b:Llie;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Lfuz;
-    .locals 2
+.method public final close()V
+    .locals 3
 
-    iget v0, p0, Lfwo;->a:I
+    iget-object v0, p0, Lfwo;->a:Ljava/util/concurrent/atomic/AtomicReference;
 
-    packed-switch v0, :pswitch_data_0
+    iget-object v1, p0, Lfwo;->b:Llie;
 
-    iget-object v0, p0, Lfwo;->b:Ljava/lang/Object;
+    invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicReference;->get()Ljava/lang/Object;
 
-    check-cast v0, Lcvp;
+    move-result-object v2
 
-    invoke-virtual {v0}, Lcvp;->a()Lken;
+    if-eqz v2, :cond_0
 
-    move-result-object v0
-
-    new-instance v1, Lfuz;
-
-    invoke-interface {v0}, Lken;->c()Lkeo;
+    invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicReference;->get()Ljava/lang/Object;
 
     move-result-object v0
 
-    invoke-interface {v0}, Lkeo;->d()Lkli;
+    check-cast v0, Llie;
 
-    move-result-object v0
+    invoke-interface {v0}, Llie;->close()V
 
-    invoke-direct {v1, v0}, Lfuz;-><init>(Lkli;)V
+    :cond_0
+    invoke-interface {v1}, Llie;->close()V
 
-    return-object v1
-
-    :pswitch_0
-    iget-object v0, p0, Lfwo;->b:Ljava/lang/Object;
-
-    check-cast v0, Lbkb;
-
-    iget-object v0, v0, Lbkb;->a:Ljava/lang/Object;
-
-    check-cast v0, Lfuz;
-
-    return-object v0
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
-.end method
-
-.method public final synthetic get()Ljava/lang/Object;
-    .locals 1
-
-    iget v0, p0, Lfwo;->a:I
-
-    packed-switch v0, :pswitch_data_0
-
-    invoke-virtual {p0}, Lfwo;->a()Lfuz;
-
-    move-result-object v0
-
-    return-object v0
-
-    :pswitch_0
-    invoke-virtual {p0}, Lfwo;->a()Lfuz;
-
-    move-result-object v0
-
-    return-object v0
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+    return-void
 .end method

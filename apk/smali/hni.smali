@@ -1,27 +1,32 @@
-.class public interface abstract Lhni;
-.super Ljava/lang/Object;
+.class public Lhni;
+.super Lhnd;
 
 
-# static fields
-.field public static final a:Lnak;
+# instance fields
+.field public final e:Lhmy;
+
+.field public final f:Lcom/google/android/apps/camera/ui/views/ViewfinderCover;
+
+.field public final g:Lcom/google/android/apps/camera/rewind/ui/RewindPreview;
+
+.field public final h:Lcom/google/android/apps/camera/rewind/ui/RewindControllerView;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
+.method public constructor <init>(Lhmy;Lcom/google/android/apps/camera/ui/views/ViewfinderCover;Lcom/google/android/apps/camera/rewind/ui/RewindPreview;Lcom/google/android/apps/camera/rewind/ui/RewindControllerView;)V
+    .locals 0
 
-    const-string v0, "com/google/android/apps/camera/testing/prod/scoreprint/ScorePrinter"
+    invoke-direct {p0}, Lhnd;-><init>()V
 
-    invoke-static {v0}, Lnak;->h(Ljava/lang/String;)Lnak;
+    invoke-static {}, Llar;->a()V
 
-    move-result-object v0
+    iput-object p1, p0, Lhni;->e:Lhmy;
 
-    sput-object v0, Lhni;->a:Lnak;
+    iput-object p2, p0, Lhni;->f:Lcom/google/android/apps/camera/ui/views/ViewfinderCover;
+
+    iput-object p3, p0, Lhni;->g:Lcom/google/android/apps/camera/rewind/ui/RewindPreview;
+
+    iput-object p4, p0, Lhni;->h:Lcom/google/android/apps/camera/rewind/ui/RewindControllerView;
 
     return-void
-.end method
-
-
-# virtual methods
-.method public abstract a(Landroid/content/Intent;)V
 .end method

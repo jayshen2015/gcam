@@ -1,172 +1,115 @@
-.class public final Lipr;
-.super Lnws;
-
-# interfaces
-.implements Lnxz;
+.class final Lipr;
+.super Ljava/lang/Object;
 
 
 # static fields
-.field public static final d:Lipr;
-
-.field private static volatile e:Lnyf;
+.field public static final a:Louj;
 
 
 # instance fields
-.field public a:F
+.field public final b:Landroid/content/BroadcastReceiver;
 
-.field public b:F
+.field public final c:Lbtt;
 
-.field public c:F
+.field public final d:Ljava/util/concurrent/Executor;
+
+.field public final e:Llap;
+
+.field public final f:Llar;
+
+.field public final g:Ljhh;
+
+.field public final h:Lilu;
+
+.field public final i:Limt;
+
+.field public final j:Liqj;
+
+.field public k:Lie;
+
+.field public final l:Likm;
+
+.field public m:Lipc;
+
+.field public final n:Lilx;
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 2
+    .locals 1
 
-    new-instance v0, Lipr;
+    const-string v0, "com/google/android/apps/camera/timelapse/TimelapseStateMonitor"
 
-    invoke-direct {v0}, Lipr;-><init>()V
+    invoke-static {v0}, Louj;->h(Ljava/lang/String;)Louj;
 
-    sput-object v0, Lipr;->d:Lipr;
+    move-result-object v0
 
-    const-class v1, Lipr;
-
-    invoke-static {v1, v0}, Lnws;->aa(Ljava/lang/Class;Lnws;)V
+    sput-object v0, Lipr;->a:Louj;
 
     return-void
 .end method
 
-.method private constructor <init>()V
+.method public constructor <init>(Lbtt;Ljava/util/concurrent/Executor;Llap;Llar;Ljhh;Lilu;Likm;Lilx;Limt;Liqj;)V
     .locals 0
 
-    invoke-direct {p0}, Lnws;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lipr;->c:Lbtt;
+
+    iput-object p2, p0, Lipr;->d:Ljava/util/concurrent/Executor;
+
+    iput-object p4, p0, Lipr;->f:Llar;
+
+    iput-object p5, p0, Lipr;->g:Ljhh;
+
+    iput-object p6, p0, Lipr;->h:Lilu;
+
+    iput-object p7, p0, Lipr;->l:Likm;
+
+    iput-object p8, p0, Lipr;->n:Lilx;
+
+    iput-object p9, p0, Lipr;->i:Limt;
+
+    iput-object p3, p0, Lipr;->e:Llap;
+
+    iput-object p10, p0, Lipr;->j:Liqj;
+
+    new-instance p1, Lipq;
+
+    invoke-direct {p1, p0}, Lipq;-><init>(Lipr;)V
+
+    iput-object p1, p0, Lipr;->b:Landroid/content/BroadcastReceiver;
 
     return-void
 .end method
 
 
 # virtual methods
-.method protected final a(ILjava/lang/Object;)Ljava/lang/Object;
-    .locals 3
+.method final a(Lilv;Z)V
+    .locals 1
 
-    add-int/lit8 p1, p1, -0x1
+    invoke-virtual {p1}, Lilv;->c()Z
 
-    const/4 p2, 0x1
+    move-result p1
 
-    packed-switch p1, :pswitch_data_0
+    if-eqz p1, :cond_0
 
-    :pswitch_0
-    const/4 p1, 0x0
-
-    return-object p1
-
-    :pswitch_1
-    sget-object p1, Lipr;->e:Lnyf;
-
-    if-nez p1, :cond_1
-
-    const-class p2, Lipr;
-
-    monitor-enter p2
-
-    :try_start_0
-    sget-object p1, Lipr;->e:Lnyf;
-
-    if-nez p1, :cond_0
-
-    new-instance p1, Lnwo;
-
-    sget-object v0, Lipr;->d:Lipr;
-
-    invoke-direct {p1, v0}, Lnwo;-><init>(Lnws;)V
-
-    sput-object p1, Lipr;->e:Lnyf;
+    return-void
 
     :cond_0
-    monitor-exit p2
+    iget-object p1, p0, Lipr;->f:Llar;
 
-    goto :goto_0
+    new-instance v0, Lipp;
 
-    :catchall_0
-    move-exception p1
+    invoke-direct {v0, p0, p2}, Lipp;-><init>(Lipr;Z)V
 
-    monitor-exit p2
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    invoke-virtual {p1, v0}, Llar;->c(Ljava/lang/Runnable;)V
 
-    throw p1
+    iget-object p1, p0, Lipr;->m:Lipc;
 
-    :cond_1
-    :goto_0
-    return-object p1
+    iget-object p1, p1, Lipc;->a:Lipf;
 
-    :pswitch_2
-    sget-object p1, Lipr;->d:Lipr;
+    invoke-virtual {p1}, Lipf;->c()V
 
-    return-object p1
-
-    :pswitch_3
-    new-instance p1, Lnwn;
-
-    sget-object p2, Lipr;->d:Lipr;
-
-    invoke-direct {p1, p2}, Lnwn;-><init>(Lnws;)V
-
-    return-object p1
-
-    :pswitch_4
-    new-instance p1, Lipr;
-
-    invoke-direct {p1}, Lipr;-><init>()V
-
-    return-object p1
-
-    :pswitch_5
-    const-string p1, "a"
-
-    const-string v0, "\u0000\u0003\u0000\u0000\u0001\u0003\u0003\u0000\u0000\u0000\u0001\u0001\u0002\u0001\u0003\u0001"
-
-    const/4 v1, 0x3
-
-    new-array v1, v1, [Ljava/lang/Object;
-
-    const/4 v2, 0x0
-
-    aput-object p1, v1, v2
-
-    const-string p1, "b"
-
-    aput-object p1, v1, p2
-
-    const/4 p1, 0x2
-
-    const-string p2, "c"
-
-    aput-object p2, v1, p1
-
-    sget-object p1, Lipr;->d:Lipr;
-
-    invoke-static {p1, v0, v1}, Lipr;->X(Lnxy;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object p1
-
-    return-object p1
-
-    :pswitch_6
-    invoke-static {p2}, Ljava/lang/Byte;->valueOf(B)Ljava/lang/Byte;
-
-    move-result-object p1
-
-    return-object p1
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_6
-        :pswitch_0
-        :pswitch_5
-        :pswitch_4
-        :pswitch_3
-        :pswitch_2
-        :pswitch_1
-    .end packed-switch
+    return-void
 .end method

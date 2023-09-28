@@ -2,68 +2,56 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lemx;
+.implements Lpys;
+
+
+# instance fields
+.field private final a:Lqkg;
 
 
 # direct methods
-.method public constructor <init>()V
+.method public constructor <init>(Lqkg;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lemv;->a:Lqkg;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(J)[F
-    .locals 0
+.method public final a()Landroid/app/job/JobScheduler;
+    .locals 2
 
-    const/4 p1, 0x2
+    iget-object v0, p0, Lemv;->a:Lqkg;
 
-    new-array p1, p1, [F
+    invoke-interface {v0}, Lqkg;->get()Ljava/lang/Object;
 
-    fill-array-data p1, :array_0
+    move-result-object v0
 
-    return-object p1
+    check-cast v0, Lemr;
 
-    nop
+    sget-object v1, Lemr;->l:Lemq;
 
-    :array_0
-    .array-data 4
-        0x0
-        0x0
-    .end array-data
+    invoke-interface {v0, v1}, Lemr;->a(Lemq;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/app/job/JobScheduler;
+
+    invoke-static {v0}, Lqmd;->ae(Ljava/lang/Object;)V
+
+    return-object v0
 .end method
 
-.method public final b(JJ)[F
-    .locals 0
+.method public final bridge synthetic get()Ljava/lang/Object;
+    .locals 1
 
-    const/4 p1, 0x2
+    invoke-virtual {p0}, Lemv;->a()Landroid/app/job/JobScheduler;
 
-    new-array p1, p1, [F
+    move-result-object v0
 
-    fill-array-data p1, :array_0
-
-    return-object p1
-
-    nop
-
-    :array_0
-    .array-data 4
-        0x0
-        0x0
-    .end array-data
-.end method
-
-.method public final c(JFF)V
-    .locals 0
-
-    return-void
-.end method
-
-.method public final close()V
-    .locals 0
-
-    return-void
+    return-object v0
 .end method

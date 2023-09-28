@@ -1,54 +1,22 @@
-.class Lhvr;
-.super Lhvq;
+.class public final Lhvr;
+.super Ljava/lang/Object;
 
 
-# instance fields
-.field final synthetic b:Lhvt;
+# static fields
+.field public static final a:Lhrf;
 
 
 # direct methods
-.method public constructor <init>(Lhvt;)V
-    .locals 0
-
-    iput-object p1, p0, Lhvr;->b:Lhvt;
-
-    invoke-direct {p0}, Lhvq;-><init>()V
-
-    return-void
-.end method
-
-
-# virtual methods
-.method public a()V
-    .locals 0
-
-    return-void
-.end method
-
-.method public final f()V
+.method static constructor <clinit>()V
     .locals 2
 
-    iget-object v0, p0, Lhvr;->b:Lhvt;
+    new-instance v0, Lhrf;
 
-    iget-object v0, v0, Lhvt;->g:Lhwu;
+    const/16 v1, 0xc
 
-    const/4 v1, 0x1
+    invoke-direct {v0, v1}, Lhrf;-><init>(I)V
 
-    invoke-virtual {v0, v1}, Lhwu;->d(Z)V
-
-    return-void
-.end method
-
-.method public final g()V
-    .locals 2
-
-    iget-object v0, p0, Lhvr;->b:Lhvt;
-
-    iget-object v0, v0, Lhvt;->g:Lhwu;
-
-    const/4 v1, 0x0
-
-    invoke-virtual {v0, v1}, Lhwu;->d(Z)V
+    sput-object v0, Lhvr;->a:Lhrf;
 
     return-void
 .end method

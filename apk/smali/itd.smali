@@ -1,54 +1,47 @@
-.class Litd;
-.super Litc;
+.class public final synthetic Litd;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field final synthetic b:Litf;
+.field public final synthetic a:Lite;
+
+.field public final synthetic b:Lmad;
 
 
 # direct methods
-.method public constructor <init>(Litf;)V
+.method public synthetic constructor <init>(Lite;Lmad;)V
     .locals 0
 
-    iput-object p1, p0, Litd;->b:Litf;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0}, Litc;-><init>()V
+    iput-object p1, p0, Litd;->a:Lite;
+
+    iput-object p2, p0, Litd;->b:Lmad;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public a()V
-    .locals 0
+.method public final run()V
+    .locals 3
 
-    return-void
-.end method
+    iget-object v0, p0, Litd;->a:Lite;
 
-.method public final f()V
-    .locals 2
+    iget-object v1, p0, Litd;->b:Lmad;
 
-    iget-object v0, p0, Litd;->b:Litf;
+    iget-object v2, v0, Lite;->d:Litw;
 
-    iget-object v0, v0, Litf;->d:Lcom/google/android/apps/camera/zoomui/view/ZoomUi;
+    invoke-interface {v2, v1}, Litw;->f(Lmad;)V
 
-    const/16 v1, 0x8
-
-    invoke-virtual {v0, v1}, Lcom/google/android/apps/camera/zoomui/view/ZoomUi;->setVisibility(I)V
-
-    iget-object v0, p0, Litd;->b:Litf;
-
-    iget-object v0, v0, Litf;->e:Landroid/widget/SeekBar;
+    invoke-interface {v1}, Lmad;->close()V
 
     const/4 v1, 0x0
 
-    invoke-virtual {v0, v1}, Landroid/widget/SeekBar;->setEnabled(Z)V
-
-    iget-object v0, p0, Litd;->b:Litf;
-
-    iget-object v0, v0, Litf;->f:Lcom/google/android/apps/camera/zoomui/view/ZoomKnob;
-
-    invoke-virtual {v0, v1}, Lcom/google/android/apps/camera/zoomui/view/ZoomKnob;->setEnabled(Z)V
+    iput-boolean v1, v0, Lite;->c:Z
 
     return-void
 .end method

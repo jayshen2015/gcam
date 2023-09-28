@@ -2,35 +2,65 @@
 .super Ljava/lang/Object;
 
 
+# instance fields
+.field private final a:Lpyn;
+
+
 # direct methods
-.method public static a(Lelx;)Landroid/os/PowerManager;
-    .locals 1
+.method public constructor <init>(Lpyn;)V
+    .locals 0
 
-    sget-object v0, Lelx;->j:Llpu;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-interface {p0, v0}, Lelx;->a(Llpu;)Ljava/lang/Object;
+    iput-object p1, p0, Lely;->a:Lpyn;
 
-    move-result-object p0
-
-    check-cast p0, Landroid/os/PowerManager;
-
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    return-object p0
+    return-void
 .end method
 
-.method public static b(Lelx;)Landroid/view/accessibility/AccessibilityManager;
+.method public static a(Lpyn;)Lely;
     .locals 1
 
-    sget-object v0, Lelx;->c:Llpu;
+    new-instance v0, Lely;
 
-    invoke-interface {p0, v0}, Lelx;->a(Llpu;)Ljava/lang/Object;
+    invoke-direct {v0, p0}, Lely;-><init>(Lpyn;)V
 
-    move-result-object p0
+    return-object v0
+.end method
 
-    check-cast p0, Landroid/view/accessibility/AccessibilityManager;
 
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+# virtual methods
+.method public final b()Ljava/lang/Object;
+    .locals 1
 
-    return-object p0
+    iget-object v0, p0, Lely;->a:Lpyn;
+
+    invoke-interface {v0}, Lpyn;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lojc;
+
+    invoke-virtual {v0}, Lojc;->c()Ljava/lang/Object;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public final c()Z
+    .locals 1
+
+    iget-object v0, p0, Lely;->a:Lpyn;
+
+    invoke-interface {v0}, Lpyn;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lojc;
+
+    invoke-virtual {v0}, Lojc;->g()Z
+
+    move-result v0
+
+    return v0
 .end method

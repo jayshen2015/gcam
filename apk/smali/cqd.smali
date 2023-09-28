@@ -1,48 +1,87 @@
 .class public final Lcqd;
 .super Ljava/lang/Object;
 
+# interfaces
+.implements Lpys;
+
 
 # instance fields
-.field public final a:Lcqn;
+.field private final a:Lqkg;
 
-.field public final b:Lcsa;
+.field private final b:Lqkg;
 
-.field public final c:Lklj;
+.field private final c:Lqkg;
 
-.field public final d:Ldhi;
-
-.field public e:Lcqr;
-
-.field public final f:Ldja;
-
-.field public final g:Lcvr;
-
-.field public final h:Llij;
-
-.field public final i:Llij;
+.field private final d:Lqkg;
 
 
 # direct methods
-.method public constructor <init>(Ldja;Lcqn;Llij;Llij;Lcvr;Lcsa;Lklj;Ldhi;[B[B[B[B[B)V
+.method public constructor <init>(Lqkg;Lqkg;Lqkg;Lqkg;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lcqd;->f:Ldja;
+    iput-object p1, p0, Lcqd;->a:Lqkg;
 
-    iput-object p2, p0, Lcqd;->a:Lcqn;
+    iput-object p2, p0, Lcqd;->b:Lqkg;
 
-    iput-object p3, p0, Lcqd;->i:Llij;
+    iput-object p3, p0, Lcqd;->c:Lqkg;
 
-    iput-object p4, p0, Lcqd;->h:Llij;
-
-    iput-object p5, p0, Lcqd;->g:Lcvr;
-
-    iput-object p6, p0, Lcqd;->b:Lcsa;
-
-    iput-object p7, p0, Lcqd;->c:Lklj;
-
-    iput-object p8, p0, Lcqd;->d:Ldhi;
+    iput-object p4, p0, Lcqd;->d:Lqkg;
 
     return-void
+.end method
+
+
+# virtual methods
+.method public final a()Lcqc;
+    .locals 5
+
+    iget-object v0, p0, Lcqd;->a:Lqkg;
+
+    check-cast v0, Lcpk;
+
+    invoke-virtual {v0}, Lcpk;->a()Lcpj;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lcqd;->b:Lqkg;
+
+    invoke-interface {v1}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Lfix;
+
+    iget-object v2, p0, Lcqd;->c:Lqkg;
+
+    invoke-interface {v2}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Ljtx;
+
+    iget-object v3, p0, Lcqd;->d:Lqkg;
+
+    invoke-interface {v3}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v3
+
+    check-cast v3, Lcvh;
+
+    new-instance v4, Lcqc;
+
+    invoke-direct {v4, v0, v1, v2, v3}, Lcqc;-><init>(Lcpj;Lfix;Ljtx;Lcvh;)V
+
+    return-object v4
+.end method
+
+.method public final bridge synthetic get()Ljava/lang/Object;
+    .locals 1
+
+    invoke-virtual {p0}, Lcqd;->a()Lcqc;
+
+    move-result-object v0
+
+    return-object v0
 .end method

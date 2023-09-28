@@ -1,48 +1,22 @@
 .class public final Likw;
-.super Landroid/animation/AnimatorListenerAdapter;
+.super Ljava/lang/Object;
 
 
-# instance fields
-.field final synthetic a:Likx;
+# static fields
+.field public static final a:Liiy;
 
 
 # direct methods
-.method public constructor <init>(Likx;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 2
 
-    iput-object p1, p0, Likw;->a:Likx;
+    new-instance v0, Liiy;
 
-    invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
+    const/4 v1, 0x6
 
-    return-void
-.end method
+    invoke-direct {v0, v1}, Liiy;-><init>(I)V
 
-
-# virtual methods
-.method public final onAnimationCancel(Landroid/animation/Animator;)V
-    .locals 0
-
-    iget-object p1, p0, Likw;->a:Likx;
-
-    invoke-virtual {p1}, Likx;->b()V
-
-    return-void
-.end method
-
-.method public final onAnimationEnd(Landroid/animation/Animator;)V
-    .locals 1
-
-    iget-object p1, p0, Likw;->a:Likx;
-
-    iget-object p1, p1, Likx;->a:Landroid/view/View;
-
-    const/4 v0, 0x4
-
-    invoke-virtual {p1, v0}, Landroid/view/View;->setVisibility(I)V
-
-    iget-object p1, p0, Likw;->a:Likx;
-
-    invoke-virtual {p1}, Likx;->b()V
+    sput-object v0, Likw;->a:Liiy;
 
     return-void
 .end method

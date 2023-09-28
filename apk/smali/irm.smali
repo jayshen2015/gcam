@@ -1,86 +1,140 @@
-.class final Lirm;
-.super Lisz;
+.class public final synthetic Lirm;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field final synthetic a:Lirn;
+.field public final synthetic a:Liro;
+
+.field public final synthetic b:J
 
 
 # direct methods
-.method public constructor <init>(Lirn;)V
+.method public synthetic constructor <init>(Liro;J)V
     .locals 0
 
-    iput-object p1, p0, Lirm;->a:Lirn;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0, p1}, Lisz;-><init>(Lita;)V
+    iput-object p1, p0, Lirm;->a:Liro;
+
+    iput-wide p2, p0, Lirm;->b:J
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final m()V
-    .locals 2
+.method public final run()V
+    .locals 7
 
-    iget-object v0, p0, Lirm;->a:Lirn;
+    iget-object v0, p0, Lirm;->a:Liro;
 
-    iget-object v0, v0, Lirn;->a:Lhiu;
+    iget-wide v1, p0, Lirm;->b:J
 
-    invoke-virtual {v0}, Lhiu;->e()V
+    iget-object v3, v0, Liro;->a:Ljava/util/concurrent/atomic/AtomicLong;
 
-    invoke-super {p0}, Lisz;->m()V
+    invoke-virtual {v3, v1, v2}, Ljava/util/concurrent/atomic/AtomicLong;->set(J)V
 
-    iget-object v0, p0, Lirm;->a:Lirn;
+    sget-object v1, Ljava/util/concurrent/TimeUnit;->MILLISECONDS:Ljava/util/concurrent/TimeUnit;
 
-    iget-object v1, v0, Lirn;->a:Lhiu;
+    iget-object v2, v0, Liro;->a:Ljava/util/concurrent/atomic/AtomicLong;
 
-    iget-object v0, v0, Lirn;->b:Lhiw;
+    invoke-virtual {v2}, Ljava/util/concurrent/atomic/AtomicLong;->get()J
 
-    invoke-virtual {v1, v0}, Lhiu;->g(Lhiw;)V
+    move-result-wide v2
 
-    return-void
-.end method
+    invoke-virtual {v1, v2, v3}, Ljava/util/concurrent/TimeUnit;->toHours(J)J
 
-.method public final p()V
-    .locals 2
+    move-result-wide v1
 
-    iget-object v0, p0, Lirm;->a:Lirn;
+    const-wide/16 v3, 0x0
 
-    iget-object v0, v0, Lirn;->a:Lhiu;
+    cmp-long v5, v1, v3
 
-    invoke-virtual {v0}, Lhiu;->e()V
+    if-lez v5, :cond_1
 
-    invoke-super {p0}, Lisz;->p()V
+    iget-object v1, v0, Liro;->g:Landroid/content/res/Resources;
 
-    iget-object v0, p0, Lirm;->a:Lirn;
+    const v2, 0x7f07014b
 
-    iget-object v1, v0, Lirn;->a:Lhiu;
+    invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
-    iget-object v0, v0, Lirn;->f:Lhiw;
+    move-result v1
 
-    invoke-virtual {v1, v0}, Lhiu;->g(Lhiw;)V
+    iget-object v2, v0, Liro;->f:Lirj;
 
-    return-void
-.end method
+    invoke-virtual {v2}, Lirj;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
-.method public final q()V
-    .locals 2
+    move-result-object v2
 
-    iget-object v0, p0, Lirm;->a:Lirn;
+    check-cast v2, Landroid/widget/FrameLayout$LayoutParams;
 
-    iget-object v0, v0, Lirn;->a:Lhiu;
+    iget-object v3, v0, Liro;->f:Lirj;
 
-    invoke-virtual {v0}, Lhiu;->e()V
+    invoke-virtual {v3}, Lirj;->getWidth()I
 
-    invoke-super {p0}, Lisz;->q()V
+    move-result v3
 
-    iget-object v0, p0, Lirm;->a:Lirn;
+    iget-boolean v4, v0, Liro;->l:Z
 
-    iget-object v1, v0, Lirn;->a:Lhiu;
+    const/4 v5, 0x0
 
-    iget-object v0, v0, Lirn;->f:Lhiw;
+    const/4 v6, 0x1
 
-    invoke-virtual {v1, v0}, Lhiu;->g(Lhiw;)V
+    if-nez v4, :cond_0
+
+    add-int/2addr v3, v1
+
+    iput-boolean v6, v0, Liro;->l:Z
+
+    const/4 v1, 0x1
+
+    goto :goto_0
+
+    :cond_0
+    const/4 v1, 0x0
+
+    :goto_0
+    if-eqz v1, :cond_1
+
+    iput v3, v2, Landroid/widget/FrameLayout$LayoutParams;->width:I
+
+    iget-object v1, v0, Liro;->f:Lirj;
+
+    invoke-virtual {v1, v2}, Lirj;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
+
+    iget-object v1, v0, Liro;->f:Lirj;
+
+    invoke-virtual {v1, v6, v5}, Lirj;->b(ZZ)V
+
+    iget-object v1, v0, Liro;->f:Lirj;
+
+    invoke-virtual {v1}, Lirj;->requestLayout()V
+
+    :cond_1
+    iget-object v1, v0, Liro;->f:Lirj;
+
+    iget-object v0, v0, Liro;->a:Ljava/util/concurrent/atomic/AtomicLong;
+
+    invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicLong;->get()J
+
+    move-result-wide v2
+
+    invoke-static {v2, v3}, Lj$/time/Duration;->ofMillis(J)Lj$/time/Duration;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lj$/time/Duration;->getSeconds()J
+
+    move-result-wide v2
+
+    invoke-static {v2, v3}, Landroid/text/format/DateUtils;->formatElapsedTime(J)Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {v1, v0}, Lirj;->c(Ljava/lang/String;)V
 
     return-void
 .end method

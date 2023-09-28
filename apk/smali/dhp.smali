@@ -1,98 +1,175 @@
-.class public final enum Ldhp;
-.super Ljava/lang/Enum;
+.class public final synthetic Ldhp;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Lj$/util/function/Predicate;
 
 
-# static fields
-.field public static final enum a:Ldhp;
+# instance fields
+.field public final synthetic a:J
 
-.field public static final enum b:Ldhp;
-
-.field public static final enum c:Ldhp;
-
-.field public static final enum d:Ldhp;
-
-.field private static final synthetic e:[Ldhp;
+.field private final synthetic b:I
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 9
-
-    new-instance v0, Ldhp;
-
-    const-string v1, "OFF"
-
-    const/4 v2, 0x0
-
-    invoke-direct {v0, v1, v2}, Ldhp;-><init>(Ljava/lang/String;I)V
-
-    sput-object v0, Ldhp;->a:Ldhp;
-
-    new-instance v1, Ldhp;
-
-    const-string v3, "PERIODIC"
-
-    const/4 v4, 0x1
-
-    invoke-direct {v1, v3, v4}, Ldhp;-><init>(Ljava/lang/String;I)V
-
-    sput-object v1, Ldhp;->b:Ldhp;
-
-    new-instance v3, Ldhp;
-
-    const-string v5, "ALL"
-
-    const/4 v6, 0x2
-
-    invoke-direct {v3, v5, v6}, Ldhp;-><init>(Ljava/lang/String;I)V
-
-    sput-object v3, Ldhp;->c:Ldhp;
-
-    new-instance v5, Ldhp;
-
-    const-string v7, "SHUTTER_ASAP"
-
-    const/4 v8, 0x3
-
-    invoke-direct {v5, v7, v8}, Ldhp;-><init>(Ljava/lang/String;I)V
-
-    sput-object v5, Ldhp;->d:Ldhp;
-
-    const/4 v7, 0x4
-
-    new-array v7, v7, [Ldhp;
-
-    aput-object v0, v7, v2
-
-    aput-object v1, v7, v4
-
-    aput-object v3, v7, v6
-
-    aput-object v5, v7, v8
-
-    sput-object v7, Ldhp;->e:[Ldhp;
-
-    return-void
-.end method
-
-.method private constructor <init>(Ljava/lang/String;I)V
+.method public synthetic constructor <init>(JI)V
     .locals 0
 
-    invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+    iput p3, p0, Ldhp;->b:I
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-wide p1, p0, Ldhp;->a:J
 
     return-void
 .end method
 
-.method public static values()[Ldhp;
+
+# virtual methods
+.method public final synthetic and(Lj$/util/function/Predicate;)Lj$/util/function/Predicate;
     .locals 1
 
-    sget-object v0, Ldhp;->e:[Ldhp;
+    iget v0, p0, Ldhp;->b:I
 
-    invoke-virtual {v0}, [Ldhp;->clone()Ljava/lang/Object;
+    packed-switch v0, :pswitch_data_0
+
+    invoke-static {p0, p1}, Lj$/util/function/Predicate$-CC;->$default$and(Lj$/util/function/Predicate;Lj$/util/function/Predicate;)Lj$/util/function/Predicate;
+
+    move-result-object p1
+
+    return-object p1
+
+    :pswitch_0
+    invoke-static {p0, p1}, Lj$/util/function/Predicate$-CC;->$default$and(Lj$/util/function/Predicate;Lj$/util/function/Predicate;)Lj$/util/function/Predicate;
+
+    move-result-object p1
+
+    return-object p1
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
+.end method
+
+.method public final synthetic negate()Lj$/util/function/Predicate;
+    .locals 1
+
+    iget v0, p0, Ldhp;->b:I
+
+    packed-switch v0, :pswitch_data_0
+
+    invoke-static {p0}, Lj$/util/function/Predicate$-CC;->$default$negate(Lj$/util/function/Predicate;)Lj$/util/function/Predicate;
 
     move-result-object v0
 
-    check-cast v0, [Ldhp;
+    return-object v0
+
+    :pswitch_0
+    invoke-static {p0}, Lj$/util/function/Predicate$-CC;->$default$negate(Lj$/util/function/Predicate;)Lj$/util/function/Predicate;
+
+    move-result-object v0
 
     return-object v0
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
+.end method
+
+.method public final synthetic or(Lj$/util/function/Predicate;)Lj$/util/function/Predicate;
+    .locals 1
+
+    iget v0, p0, Ldhp;->b:I
+
+    packed-switch v0, :pswitch_data_0
+
+    invoke-static {p0, p1}, Lj$/util/function/Predicate$-CC;->$default$or(Lj$/util/function/Predicate;Lj$/util/function/Predicate;)Lj$/util/function/Predicate;
+
+    move-result-object p1
+
+    return-object p1
+
+    :pswitch_0
+    invoke-static {p0, p1}, Lj$/util/function/Predicate$-CC;->$default$or(Lj$/util/function/Predicate;Lj$/util/function/Predicate;)Lj$/util/function/Predicate;
+
+    move-result-object p1
+
+    return-object p1
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
+.end method
+
+.method public final test(Ljava/lang/Object;)Z
+    .locals 7
+
+    iget v0, p0, Ldhp;->b:I
+
+    const/4 v1, 0x1
+
+    const/4 v2, 0x0
+
+    packed-switch v0, :pswitch_data_0
+
+    iget-wide v3, p0, Ldhp;->a:J
+
+    check-cast p1, Ljava/util/Map$Entry;
+
+    invoke-interface {p1}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
+
+    move-result-object p1
+
+    check-cast p1, Ljava/lang/Long;
+
+    invoke-virtual {p1}, Ljava/lang/Long;->longValue()J
+
+    move-result-wide v5
+
+    sub-long/2addr v3, v5
+
+    const-wide/16 v5, 0xbb8
+
+    cmp-long p1, v3, v5
+
+    if-lez p1, :cond_1
+
+    return v1
+
+    :pswitch_0
+    iget-wide v3, p0, Ldhp;->a:J
+
+    check-cast p1, Ljava/lang/Long;
+
+    sget v0, Ldhs;->k:I
+
+    invoke-virtual {p1}, Ljava/lang/Long;->longValue()J
+
+    move-result-wide v5
+
+    cmp-long p1, v5, v3
+
+    if-gez p1, :cond_0
+
+    return v1
+
+    :cond_0
+    return v2
+
+    :cond_1
+    return v2
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

@@ -1,83 +1,156 @@
 .class public final Lhhk;
-.super Ljava/lang/Object;
-
-# interfaces
-.implements Lkad;
-
-
-# static fields
-.field public static final a:Lnak;
+.super Landroid/content/BroadcastReceiver;
 
 
 # instance fields
-.field public final b:Lcrl;
-
-.field public final c:Lhib;
-
-.field public final d:I
-
-.field public final e:I
-
-.field public f:Landroidx/wear/ambient/AmbientMode$AmbientController;
-
-.field private final g:Ljuf;
+.field final synthetic a:Lcom/google/android/apps/camera/processing/ProcessingService;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
-
-    const-string v0, "com/google/android/apps/camera/speechenhancer/SpeechEnhancerAudioProcessor"
-
-    invoke-static {v0}, Lnak;->h(Ljava/lang/String;)Lnak;
-
-    move-result-object v0
-
-    sput-object v0, Lhhk;->a:Lnak;
-
-    return-void
-.end method
-
-.method public constructor <init>(Lhib;IILcrl;)V
+.method public constructor <init>(Lcom/google/android/apps/camera/processing/ProcessingService;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lhhk;->a:Lcom/google/android/apps/camera/processing/ProcessingService;
 
-    iput-object p1, p0, Lhhk;->c:Lhib;
-
-    iput p2, p0, Lhhk;->e:I
-
-    iput p3, p0, Lhhk;->d:I
-
-    iput-object p4, p0, Lhhk;->b:Lcrl;
-
-    new-instance p2, Ljuf;
-
-    invoke-direct {p2}, Ljuf;-><init>()V
-
-    iput-object p2, p0, Lhhk;->g:Ljuf;
-
-    new-instance p3, Lhhj;
-
-    invoke-direct {p3, p0}, Lhhj;-><init>(Lhhk;)V
-
-    invoke-interface {p1, p3}, Lhib;->a(Lhia;)Lkad;
-
-    move-result-object p1
-
-    invoke-virtual {p2, p1}, Ljuf;->d(Lkad;)V
+    invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final close()V
-    .locals 1
+.method public final onReceive(Landroid/content/Context;Landroid/content/Intent;)V
+    .locals 3
 
-    iget-object v0, p0, Lhhk;->g:Ljuf;
+    const-string p1, "com.google.android.apps.camera.legacy.app.processing.PAUSE"
 
-    invoke-virtual {v0}, Ljuf;->close()V
+    invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
+    move-result-object v0
+
+    invoke-virtual {p1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result p1
+
+    const/4 v0, 0x1
+
+    const/4 v1, 0x0
+
+    if-eqz p1, :cond_1
+
+    iget-object p1, p0, Lhhk;->a:Lcom/google/android/apps/camera/processing/ProcessingService;
+
+    iget-object v2, p1, Lcom/google/android/apps/camera/processing/ProcessingService;->f:Ljava/lang/Object;
+
+    monitor-enter v2
+
+    :try_start_0
+    iput-boolean v1, p1, Lcom/google/android/apps/camera/processing/ProcessingService;->g:Z
+
+    monitor-exit v2
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_1
+
+    iget-object p2, p1, Lcom/google/android/apps/camera/processing/ProcessingService;->b:Ljava/lang/Object;
+
+    monitor-enter p2
+
+    :try_start_1
+    iput-boolean v0, p1, Lcom/google/android/apps/camera/processing/ProcessingService;->e:Z
+
+    iget-object p1, p1, Lcom/google/android/apps/camera/processing/ProcessingService;->d:Lhhn;
+
+    if-eqz p1, :cond_0
+
+    invoke-interface {p1}, Lhhn;->g()V
+
+    :cond_0
+    monitor-exit p2
+
+    return-void
+
+    :catchall_0
+    move-exception p1
+
+    monitor-exit p2
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    throw p1
+
+    :catchall_1
+    move-exception p1
+
+    :try_start_2
+    monitor-exit v2
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_1
+
+    throw p1
+
+    :cond_1
+    const-string p1, "com.google.android.apps.camera.legacy.app.processing.RESUME"
+
+    invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
+
+    move-result-object p2
+
+    invoke-virtual {p1, p2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result p1
+
+    if-eqz p1, :cond_3
+
+    iget-object p1, p0, Lhhk;->a:Lcom/google/android/apps/camera/processing/ProcessingService;
+
+    iget-object p2, p1, Lcom/google/android/apps/camera/processing/ProcessingService;->f:Ljava/lang/Object;
+
+    monitor-enter p2
+
+    :try_start_3
+    iput-boolean v0, p1, Lcom/google/android/apps/camera/processing/ProcessingService;->g:Z
+
+    monitor-exit p2
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_3
+
+    iget-object v0, p1, Lcom/google/android/apps/camera/processing/ProcessingService;->b:Ljava/lang/Object;
+
+    monitor-enter v0
+
+    :try_start_4
+    iput-boolean v1, p1, Lcom/google/android/apps/camera/processing/ProcessingService;->e:Z
+
+    iget-object p1, p1, Lcom/google/android/apps/camera/processing/ProcessingService;->d:Lhhn;
+
+    if-eqz p1, :cond_2
+
+    invoke-interface {p1}, Lhhn;->f()V
+
+    :cond_2
+    monitor-exit v0
+
+    return-void
+
+    :catchall_2
+    move-exception p1
+
+    monitor-exit v0
+    :try_end_4
+    .catchall {:try_start_4 .. :try_end_4} :catchall_2
+
+    throw p1
+
+    :catchall_3
+    move-exception p1
+
+    :try_start_5
+    monitor-exit p2
+    :try_end_5
+    .catchall {:try_start_5 .. :try_end_5} :catchall_3
+
+    throw p1
+
+    :cond_3
     return-void
 .end method

@@ -2,52 +2,50 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Ljava/util/function/ToLongFunction;
+.implements Lacr;
 
 
-# static fields
-.field public static final synthetic a:Lieq;
+# instance fields
+.field public final synthetic a:Lies;
 
 
 # direct methods
-.method static synthetic constructor <clinit>()V
-    .locals 1
-
-    new-instance v0, Lieq;
-
-    invoke-direct {v0}, Lieq;-><init>()V
-
-    sput-object v0, Lieq;->a:Lieq;
-
-    return-void
-.end method
-
-.method private synthetic constructor <init>()V
+.method public synthetic constructor <init>(Lies;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lieq;->a:Lies;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final applyAsLong(Ljava/lang/Object;)J
-    .locals 4
+.method public final a()V
+    .locals 3
 
-    check-cast p1, Landroid/animation/Animator;
+    iget-object v0, p0, Lieq;->a:Lies;
 
-    sget-object v0, Life;->a:Landroid/view/animation/Interpolator;
+    const/4 v1, 0x1
 
-    invoke-virtual {p1}, Landroid/animation/Animator;->getDuration()J
+    invoke-virtual {v0, v1}, Lies;->f(Z)V
 
-    move-result-wide v0
+    const/4 v1, 0x0
 
-    invoke-virtual {p1}, Landroid/animation/Animator;->getStartDelay()J
+    invoke-virtual {v0, v1}, Lies;->setTranslationY(F)V
 
-    move-result-wide v2
+    invoke-virtual {v0}, Lies;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
-    add-long/2addr v0, v2
+    move-result-object v1
 
-    return-wide v0
+    invoke-virtual {v0}, Lies;->c()I
+
+    move-result v2
+
+    iput v2, v1, Landroid/view/ViewGroup$LayoutParams;->height:I
+
+    invoke-virtual {v0}, Lies;->requestLayout()V
+
+    return-void
 .end method

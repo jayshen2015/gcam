@@ -1,93 +1,94 @@
 .class public final Ljre;
-.super Ljfr;
+.super Landroid/animation/AnimatorListenerAdapter;
 
 
 # instance fields
-.field private final d:I
+.field final synthetic a:Lcom/google/android/apps/camera/ui/zoomlock/ZoomLockView;
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/gms/common/data/DataHolder;II)V
+.method public constructor <init>(Lcom/google/android/apps/camera/ui/zoomlock/ZoomLockView;)V
     .locals 0
 
-    invoke-direct {p0, p1, p2}, Ljfr;-><init>(Lcom/google/android/gms/common/data/DataHolder;I)V
+    iput-object p1, p0, Ljre;->a:Lcom/google/android/apps/camera/ui/zoomlock/ZoomLockView;
 
-    iput p3, p0, Ljre;->d:I
+    invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final toString()Ljava/lang/String;
-    .locals 5
+.method public final onAnimationEnd(Landroid/animation/Animator;)V
+    .locals 2
 
-    invoke-virtual {p0}, Ljfr;->b()I
+    iget-object v0, p0, Ljre;->a:Lcom/google/android/apps/camera/ui/zoomlock/ZoomLockView;
 
-    move-result v0
+    const/16 v1, 0x8
 
-    const/4 v1, 0x1
+    invoke-virtual {v0, v1}, Lcom/google/android/apps/camera/ui/zoomlock/ZoomLockView;->setVisibility(I)V
 
-    if-ne v0, v1, :cond_0
+    iget-object v0, p0, Ljre;->a:Lcom/google/android/apps/camera/ui/zoomlock/ZoomLockView;
 
-    const-string v0, "changed"
+    iget-object v0, v0, Lcom/google/android/apps/camera/ui/zoomlock/ZoomLockView;->e:Landroid/widget/ImageView;
 
-    goto :goto_0
+    const/4 v1, 0x0
 
-    :cond_0
-    invoke-virtual {p0}, Ljfr;->b()I
+    invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setTranslationX(F)V
 
-    move-result v0
+    iget-object v0, p0, Ljre;->a:Lcom/google/android/apps/camera/ui/zoomlock/ZoomLockView;
 
-    const/4 v1, 0x2
+    iget-object v0, v0, Lcom/google/android/apps/camera/ui/zoomlock/ZoomLockView;->e:Landroid/widget/ImageView;
 
-    if-ne v0, v1, :cond_1
+    invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setTranslationY(F)V
 
-    const-string v0, "deleted"
+    iget-object v0, p0, Ljre;->a:Lcom/google/android/apps/camera/ui/zoomlock/ZoomLockView;
 
-    goto :goto_0
+    iget-object v0, v0, Lcom/google/android/apps/camera/ui/zoomlock/ZoomLockView;->a:Landroid/widget/ImageView;
 
-    :cond_1
-    const-string v0, "unknown"
+    invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setTranslationY(F)V
 
-    :goto_0
-    new-instance v1, Ljrg;
+    iget-object v0, p0, Ljre;->a:Lcom/google/android/apps/camera/ui/zoomlock/ZoomLockView;
 
-    iget-object v2, p0, Ljre;->a:Lcom/google/android/gms/common/data/DataHolder;
+    iget-object v0, v0, Lcom/google/android/apps/camera/ui/zoomlock/ZoomLockView;->a:Landroid/widget/ImageView;
 
-    iget v3, p0, Ljre;->b:I
+    invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setTranslationX(F)V
 
-    iget v4, p0, Ljre;->d:I
+    iget-object v0, p0, Ljre;->a:Lcom/google/android/apps/camera/ui/zoomlock/ZoomLockView;
 
-    invoke-direct {v1, v2, v3, v4}, Ljrg;-><init>(Lcom/google/android/gms/common/data/DataHolder;II)V
+    iget-object v0, v0, Lcom/google/android/apps/camera/ui/zoomlock/ZoomLockView;->b:Landroid/widget/ImageView;
 
-    invoke-virtual {v1}, Ljava/lang/Object;->toString()Ljava/lang/String;
+    invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setScaleX(F)V
 
-    move-result-object v1
+    iget-object v0, p0, Ljre;->a:Lcom/google/android/apps/camera/ui/zoomlock/ZoomLockView;
 
-    new-instance v2, Ljava/lang/StringBuilder;
+    iget-object v0, v0, Lcom/google/android/apps/camera/ui/zoomlock/ZoomLockView;->b:Landroid/widget/ImageView;
 
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setScaleY(F)V
 
-    const-string v3, "DataEventRef{ type="
+    iget-object v0, p0, Ljre;->a:Lcom/google/android/apps/camera/ui/zoomlock/ZoomLockView;
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    iget-object v0, v0, Lcom/google/android/apps/camera/ui/zoomlock/ZoomLockView;->b:Landroid/widget/ImageView;
 
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setTranslationX(F)V
 
-    const-string v0, ", dataitem="
+    iget-object v0, p0, Ljre;->a:Lcom/google/android/apps/camera/ui/zoomlock/ZoomLockView;
 
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    iget-object v0, v0, Lcom/google/android/apps/camera/ui/zoomlock/ZoomLockView;->b:Landroid/widget/ImageView;
 
-    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setTranslationY(F)V
 
-    const-string v0, " }"
+    iget-object v0, p0, Ljre;->a:Lcom/google/android/apps/camera/ui/zoomlock/ZoomLockView;
 
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    const/4 v1, 0x0
 
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    iput-boolean v1, v0, Lcom/google/android/apps/camera/ui/zoomlock/ZoomLockView;->f:Z
 
-    move-result-object v0
+    const/high16 v1, 0x3f800000    # 1.0f
 
-    return-object v0
+    invoke-virtual {v0, v1}, Lcom/google/android/apps/camera/ui/zoomlock/ZoomLockView;->setAlpha(F)V
+
+    invoke-super {p0, p1}, Landroid/animation/AnimatorListenerAdapter;->onAnimationEnd(Landroid/animation/Animator;)V
+
+    return-void
 .end method

@@ -1,568 +1,386 @@
-.class public final Legl;
+.class public final synthetic Legl;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Logk;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field private final a:Loiw;
+.field public final synthetic a:Legm;
 
-.field private final b:Loiw;
-
-.field private final c:Loiw;
-
-.field private final synthetic d:I
+.field public final synthetic b:Lmad;
 
 
 # direct methods
-.method public constructor <init>(Loiw;Loiw;Loiw;I)V
+.method public synthetic constructor <init>(Legm;Lmad;)V
     .locals 0
-
-    iput p4, p0, Legl;->d:I
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Legl;->a:Loiw;
+    iput-object p1, p0, Legl;->a:Legm;
 
-    iput-object p2, p0, Legl;->b:Loiw;
-
-    iput-object p3, p0, Legl;->c:Loiw;
+    iput-object p2, p0, Legl;->b:Lmad;
 
     return-void
-.end method
-
-.method public constructor <init>(Loiw;Loiw;Loiw;I[B)V
-    .locals 0
-
-    iput p4, p0, Legl;->d:I
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Legl;->c:Loiw;
-
-    iput-object p2, p0, Legl;->b:Loiw;
-
-    iput-object p3, p0, Legl;->a:Loiw;
-
-    return-void
-.end method
-
-.method public constructor <init>(Loiw;Loiw;Loiw;I[C)V
-    .locals 0
-
-    iput p4, p0, Legl;->d:I
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Legl;->a:Loiw;
-
-    iput-object p2, p0, Legl;->c:Loiw;
-
-    iput-object p3, p0, Legl;->b:Loiw;
-
-    return-void
-.end method
-
-.method public constructor <init>(Loiw;Loiw;Loiw;I[S)V
-    .locals 0
-
-    iput p4, p0, Legl;->d:I
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Legl;->c:Loiw;
-
-    iput-object p2, p0, Legl;->b:Loiw;
-
-    iput-object p3, p0, Legl;->a:Loiw;
-
-    return-void
-.end method
-
-.method public static a(Loiw;Loiw;Loiw;)Legl;
-    .locals 2
-
-    new-instance v0, Legl;
-
-    const/4 v1, 0x0
-
-    invoke-direct {v0, p0, p1, p2, v1}, Legl;-><init>(Loiw;Loiw;Loiw;I)V
-
-    return-object v0
-.end method
-
-.method public static c(Loiw;Loiw;Loiw;)Legl;
-    .locals 2
-
-    new-instance v0, Legl;
-
-    const/4 v1, 0x1
-
-    invoke-direct {v0, p0, p1, p2, v1}, Legl;-><init>(Loiw;Loiw;Loiw;I)V
-
-    return-object v0
-.end method
-
-.method public static d(Loiw;Loiw;Loiw;)Legl;
-    .locals 7
-
-    new-instance v6, Legl;
-
-    const/4 v4, 0x3
-
-    const/4 v5, 0x0
-
-    move-object v0, v6
-
-    move-object v1, p0
-
-    move-object v2, p1
-
-    move-object v3, p2
-
-    invoke-direct/range {v0 .. v5}, Legl;-><init>(Loiw;Loiw;Loiw;I[C)V
-
-    return-object v6
 .end method
 
 
 # virtual methods
-.method public final b()Ljava/lang/Boolean;
-    .locals 6
+.method public final run()V
+    .locals 20
 
-    iget v0, p0, Legl;->d:I
+    move-object/from16 v1, p0
 
-    const/4 v1, 0x1
+    const-string v0, "dst is null"
 
-    const/4 v2, 0x0
+    const-string v2, "src is null"
 
-    packed-switch v0, :pswitch_data_0
+    iget-object v3, v1, Legl;->a:Legm;
 
-    iget-object v0, p0, Legl;->c:Loiw;
+    iget-object v4, v1, Legl;->b:Lmad;
 
-    check-cast v0, Logl;
+    const/4 v5, 0x0
 
-    iget-object v0, v0, Logl;->a:Ljava/lang/Object;
+    :try_start_0
+    iget-object v6, v3, Legm;->b:Legk;
 
-    check-cast v0, Lmqp;
+    invoke-interface {v4}, Lmad;->a()I
 
-    iget-object v3, p0, Legl;->b:Loiw;
+    move-result v7
 
-    iget-object v4, p0, Legl;->a:Loiw;
+    const/16 v8, 0x23
 
-    check-cast v4, Logl;
+    if-ne v7, v8, :cond_0
 
-    iget-object v4, v4, Logl;->a:Ljava/lang/Object;
-
-    check-cast v4, Lmqp;
-
-    invoke-static {v2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
-
-    move-result-object v5
-
-    invoke-virtual {v4, v5}, Lmqp;->e(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v4
-
-    check-cast v4, Ljava/lang/Boolean;
-
-    invoke-virtual {v4}, Ljava/lang/Boolean;->booleanValue()Z
-
-    move-result v4
-
-    if-nez v4, :cond_8
-
-    invoke-virtual {v0, v5}, Lmqp;->e(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/lang/Boolean;
-
-    invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_7
-
-    invoke-interface {v3}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/lang/Boolean;
-
-    invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_7
-
-    goto/16 :goto_5
-
-    :pswitch_0
-    iget-object v0, p0, Legl;->a:Loiw;
-
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ldhi;
-
-    iget-object v3, p0, Legl;->c:Loiw;
-
-    check-cast v3, Lijz;
-
-    invoke-virtual {v3}, Lijz;->a()Lika;
-
-    move-result-object v3
-
-    iget-object v4, p0, Legl;->b:Loiw;
-
-    check-cast v4, Lfwo;
-
-    invoke-virtual {v4}, Lfwo;->a()Lfuz;
-
-    move-result-object v4
-
-    sget-object v5, Ldhg;->n:Ldhj;
-
-    invoke-interface {v0, v5}, Ldhi;->l(Ldhj;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    sget-object v0, Lika;->b:Lika;
-
-    invoke-virtual {v3, v0}, Lika;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    invoke-virtual {v4}, Lklw;->k()Lklv;
-
-    move-result-object v0
-
-    sget-object v3, Lklv;->b:Lklv;
-
-    if-ne v0, v3, :cond_0
+    const/4 v7, 0x1
 
     goto :goto_0
 
     :cond_0
-    const/4 v1, 0x0
+    const/4 v7, 0x0
 
     :goto_0
-    invoke-static {v1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+    invoke-interface {v4}, Lmad;->a()I
 
-    move-result-object v0
+    move-result v8
 
-    return-object v0
+    new-instance v11, Ljava/lang/StringBuilder;
 
-    :pswitch_1
-    iget-object v0, p0, Legl;->c:Loiw;
+    const/16 v12, 0x30
 
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
+    invoke-direct {v11, v12}, Ljava/lang/StringBuilder;-><init>(I)V
 
-    move-result-object v0
+    const-string v12, "Expected image format YUV but found: "
 
-    check-cast v0, Ldhi;
+    invoke-virtual {v11, v12}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget-object v3, p0, Legl;->b:Loiw;
+    invoke-virtual {v11, v8}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    check-cast v3, Lccs;
+    invoke-virtual {v11}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    invoke-virtual {v3}, Lccs;->a()Ljava/lang/Boolean;
+    move-result-object v8
 
-    move-result-object v3
+    invoke-static {v7, v8}, Lobr;->aG(ZLjava/lang/Object;)V
 
-    invoke-virtual {v3}, Ljava/lang/Boolean;->booleanValue()Z
+    iget-object v7, v6, Legk;->c:Lljf;
 
-    move-result v3
+    const-string v8, "Downsample YUV"
 
-    iget-object v4, p0, Legl;->a:Loiw;
+    invoke-interface {v7, v8}, Lljf;->e(Ljava/lang/String;)V
 
-    check-cast v4, Lccs;
+    iget-object v7, v6, Legk;->a:Lpko;
 
-    invoke-virtual {v4}, Lccs;->a()Ljava/lang/Boolean;
+    invoke-virtual {v7, v4}, Lpko;->c(Lmad;)Lcom/google/googlex/gcam/YuvWriteView;
 
     move-result-object v4
 
-    invoke-virtual {v4}, Ljava/lang/Boolean;->booleanValue()Z
+    invoke-virtual {v4}, Lcom/google/googlex/gcam/YuvReadView;->c()I
 
-    move-result v4
+    move-result v7
 
-    sget-object v5, Leyk;->a:Ljwb;
+    and-int/lit8 v7, v7, -0x8
 
-    if-nez v3, :cond_1
+    invoke-virtual {v4}, Lcom/google/googlex/gcam/YuvReadView;->b()I
 
-    if-nez v4, :cond_1
+    move-result v8
 
-    sget-object v3, Ldht;->i:Ldhj;
+    and-int/lit8 v8, v8, -0x8
 
-    invoke-interface {v0, v3}, Ldhi;->l(Ldhj;)Z
+    invoke-virtual {v4}, Lcom/google/googlex/gcam/YuvReadView;->c()I
 
-    move-result v3
+    move-result v11
 
-    if-eqz v3, :cond_2
+    if-ne v7, v11, :cond_1
+
+    invoke-virtual {v4}, Lcom/google/googlex/gcam/YuvReadView;->b()I
+
+    move-result v11
+
+    if-eq v8, v11, :cond_2
 
     :cond_1
-    sget-object v3, Ldht;->f:Ldhj;
+    iget-wide v11, v4, Lcom/google/googlex/gcam/YuvWriteView;->c:J
 
-    invoke-interface {v0, v3}, Ldhi;->l(Ldhj;)Z
+    const/4 v14, 0x0
 
-    move-result v3
+    const/4 v15, 0x0
 
-    if-nez v3, :cond_3
+    move-object v13, v4
 
-    sget-object v3, Ldht;->e:Ldhj;
+    move/from16 v16, v7
 
-    invoke-interface {v0, v3}, Ldhi;->l(Ldhj;)Z
+    move/from16 v17, v8
 
-    move-result v3
+    invoke-static/range {v11 .. v17}, Lcom/google/googlex/gcam/GcamModuleJNI;->YuvWriteView_FastCrop(JLcom/google/googlex/gcam/YuvWriteView;IIII)V
 
-    if-eqz v3, :cond_2
+    :cond_2
+    div-int/lit8 v7, v7, 0x4
+
+    div-int/lit8 v8, v8, 0x4
+
+    new-instance v11, Lcom/google/googlex/gcam/YuvImage;
+
+    const/4 v12, 0x2
+
+    invoke-direct {v11, v7, v8, v12}, Lcom/google/googlex/gcam/YuvImage;-><init>(III)V
+
+    iget-wide v13, v4, Lcom/google/googlex/gcam/YuvReadView;->a:J
+
+    invoke-static {v11}, Lcom/google/googlex/gcam/YuvWriteView;->e(Lcom/google/googlex/gcam/YuvWriteView;)J
+
+    move-result-wide v9
+
+    const-wide/16 v16, 0x0
+
+    cmp-long v18, v13, v16
+
+    if-eqz v18, :cond_3
+
+    const/4 v4, 0x1
 
     goto :goto_1
 
-    :cond_2
-    const/4 v1, 0x0
-
-    goto :goto_2
-
     :cond_3
+    const/4 v4, 0x0
+
     :goto_1
-    sget-object v3, Ldht;->s:Ldhj;
+    invoke-static {v4, v2}, Lobr;->aG(ZLjava/lang/Object;)V
 
-    invoke-interface {v0, v3}, Ldhi;->l(Ldhj;)Z
+    cmp-long v4, v9, v16
 
-    move-result v3
+    if-eqz v4, :cond_4
 
-    if-eqz v3, :cond_4
-
-    sget-object v3, Ldht;->r:Ldhj;
-
-    invoke-interface {v0, v3}, Ldhi;->l(Ldhj;)Z
-
-    move-result v0
-
-    if-nez v0, :cond_2
+    const/4 v4, 0x1
 
     goto :goto_2
 
     :cond_4
+    const/4 v4, 0x0
+
     :goto_2
-    invoke-static {v1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+    invoke-static {v4, v0}, Lobr;->aG(ZLjava/lang/Object;)V
 
-    move-result-object v0
+    invoke-static {v13, v14, v12, v9, v10}, Lcom/google/googlex/gcam/imageproc/Resample;->downsampleImpl(JIJ)Z
 
-    return-object v0
+    iget-object v4, v6, Legk;->c:Lljf;
 
-    :pswitch_2
-    iget-object v0, p0, Legl;->a:Loiw;
+    const-string v9, "Rotate YUV"
 
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
+    invoke-interface {v4, v9}, Lljf;->g(Ljava/lang/String;)V
 
-    move-result-object v0
+    iget-object v4, v6, Legk;->b:Lbrg;
 
-    check-cast v0, Ldhi;
-
-    iget-object v3, p0, Legl;->b:Loiw;
-
-    check-cast v3, Lfwo;
-
-    invoke-virtual {v3}, Lfwo;->a()Lfuz;
-
-    move-result-object v3
-
-    iget-object v4, p0, Legl;->c:Loiw;
-
-    check-cast v4, Lijz;
-
-    invoke-virtual {v4}, Lijz;->a()Lika;
+    invoke-virtual {v4}, Lbrg;->a()Llco;
 
     move-result-object v4
 
-    sget-object v5, Lika;->b:Lika;
-
-    if-ne v4, v5, :cond_5
-
-    invoke-virtual {v3}, Lklw;->k()Lklv;
-
-    move-result-object v3
-
-    sget-object v4, Lklv;->b:Lklv;
-
-    if-ne v3, v4, :cond_5
-
-    sget-object v3, Ldhg;->d:Ldhj;
-
-    invoke-interface {v0, v3}, Ldhi;->l(Ldhj;)Z
-
-    move-result v3
-
-    if-eqz v3, :cond_5
-
-    sget-object v3, Ldho;->bn:Ldhj;
-
-    invoke-interface {v0, v3}, Ldhi;->l(Ldhj;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_5
-
-    goto :goto_3
-
-    :cond_5
-    const/4 v1, 0x0
-
-    :goto_3
-    invoke-static {v1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
-
-    move-result-object v0
-
-    return-object v0
-
-    :pswitch_3
-    iget-object v0, p0, Legl;->a:Loiw;
-
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ldhi;
-
-    iget-object v3, p0, Legl;->b:Loiw;
-
-    check-cast v3, Lfwo;
-
-    invoke-virtual {v3}, Lfwo;->a()Lfuz;
-
-    move-result-object v3
-
-    iget-object v4, p0, Legl;->c:Loiw;
-
-    check-cast v4, Lijz;
-
-    invoke-virtual {v4}, Lijz;->a()Lika;
+    invoke-interface {v4}, Llco;->fA()Ljava/lang/Object;
 
     move-result-object v4
 
-    invoke-static {v0}, Ldhg;->a(Ldhi;)Lmwn;
+    check-cast v4, Ljava/lang/Integer;
 
-    move-result-object v5
-
-    invoke-virtual {v5, v4}, Lmwn;->contains(Ljava/lang/Object;)Z
+    invoke-virtual {v4}, Ljava/lang/Integer;->intValue()I
 
     move-result v4
 
-    if-eqz v4, :cond_6
+    invoke-static {v4}, Lcom/google/googlex/gcam/GcamModuleJNI;->DegreesToImageRotation(I)I
 
-    invoke-virtual {v3}, Lklw;->k()Lklv;
+    move-result v9
 
-    move-result-object v3
+    sparse-switch v9, :sswitch_data_0
 
-    sget-object v4, Lklv;->b:Lklv;
+    new-instance v0, Ljava/lang/IllegalStateException;
 
-    if-ne v3, v4, :cond_6
+    goto :goto_6
 
-    sget-object v3, Ldhg;->n:Ldhj;
+    :sswitch_0
+    move/from16 v19, v8
 
-    invoke-interface {v0, v3}, Ldhi;->l(Ldhj;)Z
+    move v8, v7
 
-    move-result v3
+    move/from16 v7, v19
 
-    if-eqz v3, :cond_6
+    goto :goto_3
 
-    sget-object v3, Ldho;->bn:Ldhj;
+    :goto_3
+    :sswitch_1
+    new-instance v4, Lcom/google/googlex/gcam/YuvImage;
 
-    invoke-interface {v0, v3}, Ldhi;->l(Ldhj;)Z
+    invoke-direct {v4, v7, v8, v12}, Lcom/google/googlex/gcam/YuvImage;-><init>(III)V
 
-    move-result v0
+    iget-wide v10, v11, Lcom/google/googlex/gcam/YuvReadView;->a:J
 
-    if-eqz v0, :cond_6
+    invoke-static {v4}, Lcom/google/googlex/gcam/YuvWriteView;->e(Lcom/google/googlex/gcam/YuvWriteView;)J
+
+    move-result-wide v12
+
+    cmp-long v14, v10, v16
+
+    if-eqz v14, :cond_5
+
+    const/4 v14, 0x1
 
     goto :goto_4
 
-    :cond_6
-    const/4 v1, 0x0
+    :cond_5
+    const/4 v14, 0x0
 
     :goto_4
-    invoke-static {v1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+    invoke-static {v14, v2}, Lobr;->aG(ZLjava/lang/Object;)V
 
-    move-result-object v0
+    cmp-long v2, v12, v16
 
-    return-object v0
+    if-eqz v2, :cond_6
 
-    :cond_7
-    const/4 v1, 0x0
+    const/4 v15, 0x1
 
     goto :goto_5
 
-    :cond_8
+    :cond_6
+    const/4 v15, 0x0
+
     :goto_5
-    invoke-static {v1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+    invoke-static {v15, v0}, Lobr;->aG(ZLjava/lang/Object;)V
+
+    invoke-static {v10, v11, v9, v12, v13}, Lcom/google/googlex/gcam/imageproc/Resample;->rotateImpl(JIJ)Z
+
+    iget-object v0, v6, Legk;->c:Lljf;
+
+    const-string v2, "YUV to bitmap"
+
+    invoke-interface {v0, v2}, Lljf;->g(Ljava/lang/String;)V
+
+    sget-object v0, Landroid/graphics/Bitmap$Config;->ARGB_8888:Landroid/graphics/Bitmap$Config;
+
+    invoke-static {v7, v8, v0}, Landroid/graphics/Bitmap;->createBitmap(IILandroid/graphics/Bitmap$Config;)Landroid/graphics/Bitmap;
 
     move-result-object v0
 
-    return-object v0
+    invoke-static {v0}, Lpjh;->a(Landroid/graphics/Bitmap;)Lpjh;
 
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_3
-        :pswitch_2
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
-.end method
+    move-result-object v2
 
-.method public final synthetic get()Ljava/lang/Object;
-    .locals 1
+    iget-object v7, v2, Lpjh;->a:Lcom/google/googlex/gcam/InterleavedWriteViewU8;
 
-    iget v0, p0, Legl;->d:I
+    invoke-static {v4, v7}, Lcom/google/googlex/gcam/image/YuvUtils;->a(Lcom/google/googlex/gcam/YuvReadView;Lcom/google/googlex/gcam/InterleavedWriteViewU8;)Z
 
-    packed-switch v0, :pswitch_data_0
+    move-result v4
 
-    invoke-virtual {p0}, Legl;->b()Ljava/lang/Boolean;
+    invoke-virtual {v2}, Lpjh;->close()V
+
+    if-nez v4, :cond_7
+
+    iget-object v0, v6, Legk;->c:Lljf;
+
+    invoke-interface {v0}, Lljf;->f()V
+
+    goto :goto_7
+
+    :cond_7
+    iget-object v2, v6, Legk;->c:Lljf;
+
+    invoke-interface {v2}, Lljf;->f()V
+
+    move-object v5, v0
+
+    goto :goto_7
+
+    :goto_6
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    const/16 v6, 0x41
+
+    invoke-direct {v2, v6}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string v6, "Invalid imageRotation="
+
+    invoke-virtual {v2, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2, v9}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    const-string v6, "; rotationObservable="
+
+    invoke-virtual {v2, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2, v4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-direct {v0, v2}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+
+    :catch_0
+    move-exception v0
+
+    sget-object v2, Legm;->a:Louj;
+
+    invoke-virtual {v2}, Loue;->b()Lova;
+
+    move-result-object v2
+
+    const/16 v4, 0x480
+
+    const-string v6, "Could not map YUV to Bitmap"
+
+    invoke-static {v2, v6, v4, v0}, Ld;->w(Lova;Ljava/lang/String;CLjava/lang/Throwable;)V
+
+    :goto_7
+    if-eqz v5, :cond_8
+
+    iget-object v0, v3, Legm;->c:Lhrx;
+
+    invoke-virtual {v0, v5}, Lhrx;->f(Landroid/graphics/Bitmap;)V
+
+    return-void
+
+    :cond_8
+    sget-object v0, Legm;->a:Louj;
+
+    invoke-virtual {v0}, Loue;->b()Lova;
 
     move-result-object v0
 
-    return-object v0
+    const/16 v2, 0x47f
 
-    :pswitch_0
-    invoke-virtual {p0}, Legl;->b()Ljava/lang/Boolean;
+    const-string v3, "Could not map YUV to Bitmap."
 
-    move-result-object v0
+    invoke-static {v0, v3, v2}, Ld;->v(Lova;Ljava/lang/String;C)V
 
-    return-object v0
+    return-void
 
-    :pswitch_1
-    invoke-virtual {p0}, Legl;->b()Ljava/lang/Boolean;
+    nop
 
-    move-result-object v0
-
-    return-object v0
-
-    :pswitch_2
-    invoke-virtual {p0}, Legl;->b()Ljava/lang/Boolean;
-
-    move-result-object v0
-
-    return-object v0
-
-    :pswitch_3
-    invoke-virtual {p0}, Legl;->b()Ljava/lang/Boolean;
-
-    move-result-object v0
-
-    return-object v0
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_3
-        :pswitch_2
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
+    :sswitch_data_0
+    .sparse-switch
+        0x1 -> :sswitch_1
+        0x3 -> :sswitch_1
+        0x6 -> :sswitch_0
+        0x8 -> :sswitch_0
+    .end sparse-switch
 .end method

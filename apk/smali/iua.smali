@@ -1,50 +1,114 @@
-.class public abstract Liua;
-.super Lcbf;
+.class public final Liua;
+.super Ljava/lang/Object;
 
-# interfaces
-.implements Liub;
+
+# instance fields
+.field private a:Landroid/graphics/PointF;
 
 
 # direct methods
 .method public constructor <init>()V
-    .locals 1
+    .locals 2
 
-    const-string v0, "com.google.android.apps.gsa.publicsearch.IPublicSearchServiceSessionCallback"
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0, v0}, Lcbf;-><init>(Ljava/lang/String;)V
+    new-instance v0, Landroid/graphics/PointF;
+
+    const/high16 v1, -0x40800000    # -1.0f
+
+    invoke-direct {v0, v1, v1}, Landroid/graphics/PointF;-><init>(FF)V
+
+    iput-object v0, p0, Liua;->a:Landroid/graphics/PointF;
 
     return-void
 .end method
 
 
 # virtual methods
-.method protected final x(ILandroid/os/Parcel;Landroid/os/Parcel;)Z
-    .locals 1
+.method public final a()V
+    .locals 2
 
-    const/4 p3, 0x1
+    new-instance v0, Landroid/graphics/PointF;
 
-    if-ne p1, p3, :cond_0
+    const/high16 v1, -0x40800000    # -1.0f
 
-    invoke-virtual {p2}, Landroid/os/Parcel;->createByteArray()[B
+    invoke-direct {v0, v1, v1}, Landroid/graphics/PointF;-><init>(FF)V
 
-    move-result-object p1
+    iput-object v0, p0, Liua;->a:Landroid/graphics/PointF;
 
-    sget-object v0, Liud;->CREATOR:Landroid/os/Parcelable$Creator;
+    return-void
+.end method
 
-    invoke-static {p2, v0}, Lcbg;->a(Landroid/os/Parcel;Landroid/os/Parcelable$Creator;)Landroid/os/Parcelable;
+.method public final b(Landroid/graphics/PointF;)Z
+    .locals 4
 
-    move-result-object v0
+    iget v0, p1, Landroid/graphics/PointF;->x:F
 
-    check-cast v0, Liud;
+    const/4 v1, 0x0
 
-    invoke-static {p2}, Lcbg;->b(Landroid/os/Parcel;)V
+    const/4 v2, 0x0
 
-    invoke-virtual {p0, p1, v0}, Liua;->b([BLiud;)V
+    cmpg-float v0, v0, v2
 
-    return p3
+    if-ltz v0, :cond_3
+
+    iget v0, p1, Landroid/graphics/PointF;->y:F
+
+    cmpg-float v0, v0, v2
+
+    if-gez v0, :cond_0
+
+    goto :goto_1
 
     :cond_0
-    const/4 p1, 0x0
+    iget v0, p1, Landroid/graphics/PointF;->x:F
+
+    iget-object v2, p0, Liua;->a:Landroid/graphics/PointF;
+
+    iget v2, v2, Landroid/graphics/PointF;->x:F
+
+    sub-float/2addr v0, v2
+
+    invoke-static {v0}, Ljava/lang/Math;->abs(F)F
+
+    move-result v0
+
+    const v2, 0x3ba3d70a    # 0.005f
+
+    cmpl-float v0, v0, v2
+
+    if-gtz v0, :cond_2
+
+    iget v0, p1, Landroid/graphics/PointF;->y:F
+
+    iget-object v3, p0, Liua;->a:Landroid/graphics/PointF;
+
+    iget v3, v3, Landroid/graphics/PointF;->y:F
+
+    sub-float/2addr v0, v3
+
+    invoke-static {v0}, Ljava/lang/Math;->abs(F)F
+
+    move-result v0
+
+    cmpl-float v0, v0, v2
+
+    if-lez v0, :cond_1
+
+    goto :goto_0
+
+    :cond_1
+    return v1
+
+    :cond_2
+    :goto_0
+    iput-object p1, p0, Liua;->a:Landroid/graphics/PointF;
+
+    const/4 p1, 0x1
 
     return p1
+
+    :cond_3
+    :goto_1
+    return v1
 .end method

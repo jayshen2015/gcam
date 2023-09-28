@@ -1,1905 +1,491 @@
 .class public final Loag;
-.super Ljava/lang/Object;
+.super Loat;
+
+
+# instance fields
+.field private c:I
+
+.field private d:F
+
+.field private e:F
+
+.field private f:F
 
 
 # direct methods
-.method public static a(I)I
+.method public constructor <init>(Loam;)V
     .locals 0
 
-    packed-switch p0, :pswitch_data_0
+    invoke-direct {p0, p1}, Loat;-><init>(Loaf;)V
 
-    :pswitch_0
-    const/4 p0, 0x0
+    const/4 p1, 0x1
 
-    return p0
+    iput p1, p0, Loag;->c:I
 
-    :pswitch_1
-    const/16 p0, 0x194
+    return-void
+.end method
 
-    return p0
+.method private final g()I
+    .locals 2
 
-    :pswitch_2
-    const/16 p0, 0x193
+    iget-object v0, p0, Loag;->a:Loaf;
 
-    return p0
+    check-cast v0, Loam;
 
-    :pswitch_3
-    const/16 p0, 0x192
+    iget v1, v0, Loam;->g:I
 
-    return p0
+    iget v0, v0, Loam;->h:I
 
-    :pswitch_4
-    const/16 p0, 0x191
+    add-int/2addr v0, v0
 
-    return p0
+    add-int/2addr v1, v0
 
-    :pswitch_5
-    const/16 p0, 0x190
+    return v1
+.end method
 
-    return p0
+.method private final h(Landroid/graphics/Canvas;Landroid/graphics/Paint;FFF)V
+    .locals 2
 
-    :pswitch_6
-    const/16 p0, 0x18f
+    invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
-    return p0
+    invoke-virtual {p1, p5}, Landroid/graphics/Canvas;->rotate(F)V
 
-    :pswitch_7
-    const/16 p0, 0x18e
+    new-instance p5, Landroid/graphics/RectF;
 
-    return p0
+    iget v0, p0, Loag;->f:F
 
-    :pswitch_8
-    const/16 p0, 0x18d
+    const/high16 v1, 0x40000000    # 2.0f
 
-    return p0
+    div-float/2addr p3, v1
 
-    :pswitch_9
-    const/16 p0, 0x18c
+    sub-float v1, v0, p3
 
-    return p0
+    add-float/2addr v0, p3
 
-    :pswitch_a
-    const/16 p0, 0x18b
+    neg-float p3, p4
 
-    return p0
+    invoke-direct {p5, v1, p4, v0, p3}, Landroid/graphics/RectF;-><init>(FFFF)V
 
-    :pswitch_b
-    const/16 p0, 0x18a
+    invoke-virtual {p1, p5, p4, p4, p2}, Landroid/graphics/Canvas;->drawRoundRect(Landroid/graphics/RectF;FFLandroid/graphics/Paint;)V
 
-    return p0
+    invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
 
-    :pswitch_c
-    const/16 p0, 0x189
+    return-void
+.end method
 
-    return p0
 
-    :pswitch_d
-    const/16 p0, 0x188
+# virtual methods
+.method public final a()I
+    .locals 1
 
-    return p0
+    invoke-direct {p0}, Loag;->g()I
 
-    :pswitch_e
-    const/16 p0, 0x187
+    move-result v0
 
-    return p0
+    return v0
+.end method
 
-    :pswitch_f
-    const/16 p0, 0x186
+.method public final b()I
+    .locals 1
 
-    return p0
+    invoke-direct {p0}, Loag;->g()I
 
-    :pswitch_10
-    const/16 p0, 0x185
+    move-result v0
 
-    return p0
+    return v0
+.end method
 
-    :pswitch_11
-    const/16 p0, 0x184
+.method public final c(Landroid/graphics/Canvas;F)V
+    .locals 4
 
-    return p0
+    iget-object v0, p0, Loag;->a:Loaf;
 
-    :pswitch_12
-    const/16 p0, 0x183
+    check-cast v0, Loam;
 
-    return p0
+    iget v1, v0, Loam;->g:I
 
-    :pswitch_13
-    const/16 p0, 0x182
+    int-to-float v1, v1
 
-    return p0
+    const/high16 v2, 0x40000000    # 2.0f
 
-    :pswitch_14
-    const/16 p0, 0x181
+    div-float/2addr v1, v2
 
-    return p0
+    iget v0, v0, Loam;->h:I
 
-    :pswitch_15
-    const/16 p0, 0x180
+    int-to-float v0, v0
 
-    return p0
+    add-float/2addr v1, v0
 
-    :pswitch_16
-    const/16 p0, 0x17f
+    invoke-virtual {p1, v1, v1}, Landroid/graphics/Canvas;->translate(FF)V
 
-    return p0
+    const/high16 v0, -0x3d4c0000    # -90.0f
 
-    :pswitch_17
-    const/16 p0, 0x17e
+    invoke-virtual {p1, v0}, Landroid/graphics/Canvas;->rotate(F)V
 
-    return p0
+    neg-float v0, v1
 
-    :pswitch_18
-    const/16 p0, 0x17d
+    invoke-virtual {p1, v0, v0, v1, v1}, Landroid/graphics/Canvas;->clipRect(FFFF)Z
 
-    return p0
+    iget-object p1, p0, Loag;->a:Loaf;
 
-    :pswitch_19
-    const/16 p0, 0x17c
+    check-cast p1, Loam;
 
-    return p0
+    iget v0, p1, Loam;->i:I
 
-    :pswitch_1a
-    const/16 p0, 0x17b
+    const/4 v1, 0x1
 
-    return p0
+    if-nez v0, :cond_0
 
-    :pswitch_1b
-    const/16 p0, 0x17a
+    const/4 v0, 0x1
 
-    return p0
+    goto :goto_0
 
-    :pswitch_1c
-    const/16 p0, 0x179
+    :cond_0
+    const/4 v0, -0x1
 
-    return p0
+    :goto_0
+    iput v0, p0, Loag;->c:I
 
-    :pswitch_1d
-    const/16 p0, 0x178
+    iget v0, p1, Loam;->a:I
 
-    return p0
+    int-to-float v3, v0
 
-    :pswitch_1e
-    const/16 p0, 0x177
+    mul-float v3, v3, p2
 
-    return p0
+    iput v3, p0, Loag;->d:F
 
-    :pswitch_1f
-    const/16 p0, 0x176
+    iget v3, p1, Loam;->b:I
 
-    return p0
+    int-to-float v3, v3
 
-    :pswitch_20
-    const/16 p0, 0x175
+    mul-float v3, v3, p2
 
-    return p0
+    iput v3, p0, Loag;->e:F
 
-    :pswitch_21
-    const/16 p0, 0x174
+    iget p1, p1, Loam;->g:I
 
-    return p0
+    sub-int/2addr p1, v0
 
-    :pswitch_22
-    const/16 p0, 0x173
+    int-to-float p1, p1
 
-    return p0
+    div-float/2addr p1, v2
 
-    :pswitch_23
-    const/16 p0, 0x172
+    iput p1, p0, Loag;->f:F
 
-    return p0
+    iget-object p1, p0, Loag;->b:Loas;
 
-    :pswitch_24
-    const/16 p0, 0x170
+    invoke-virtual {p1}, Loas;->f()Z
 
-    return p0
+    move-result p1
 
-    :pswitch_25
-    const/16 p0, 0x16f
+    const/high16 v0, 0x3f800000    # 1.0f
 
-    return p0
+    const/4 v3, 0x2
 
-    :pswitch_26
-    const/16 p0, 0x16e
+    if-eqz p1, :cond_1
 
-    return p0
+    iget-object p1, p0, Loag;->a:Loaf;
 
-    :pswitch_27
-    const/16 p0, 0x16d
+    check-cast p1, Loam;
 
-    return p0
+    iget p1, p1, Loam;->e:I
 
-    :pswitch_28
-    const/16 p0, 0x16c
+    if-eq p1, v3, :cond_2
 
-    return p0
+    :cond_1
+    iget-object p1, p0, Loag;->b:Loas;
 
-    :pswitch_29
-    const/16 p0, 0x16b
+    invoke-virtual {p1}, Loas;->e()Z
 
-    return p0
+    move-result p1
 
-    :pswitch_2a
-    const/16 p0, 0x16a
+    if-eqz p1, :cond_3
 
-    return p0
+    iget-object p1, p0, Loag;->a:Loaf;
 
-    :pswitch_2b
-    const/16 p0, 0x169
+    check-cast p1, Loam;
 
-    return p0
+    iget p1, p1, Loam;->f:I
 
-    :pswitch_2c
-    const/16 p0, 0x168
+    if-eq p1, v1, :cond_2
 
-    return p0
+    goto :goto_1
 
-    :pswitch_2d
-    const/16 p0, 0x167
+    :cond_2
+    iget p1, p0, Loag;->f:F
 
-    return p0
+    sub-float/2addr v0, p2
 
-    :pswitch_2e
-    const/16 p0, 0x166
+    iget-object p2, p0, Loag;->a:Loaf;
 
-    return p0
+    check-cast p2, Loam;
 
-    :pswitch_2f
-    const/16 p0, 0x165
+    iget p2, p2, Loam;->a:I
 
-    return p0
+    int-to-float p2, p2
 
-    :pswitch_30
-    const/16 p0, 0x164
+    mul-float v0, v0, p2
 
-    return p0
+    div-float/2addr v0, v2
 
-    :pswitch_31
-    const/16 p0, 0x163
+    add-float/2addr p1, v0
 
-    return p0
+    iput p1, p0, Loag;->f:F
 
-    :pswitch_32
-    const/16 p0, 0x162
+    return-void
 
-    return p0
+    :cond_3
+    :goto_1
+    iget-object p1, p0, Loag;->b:Loas;
 
-    :pswitch_33
-    const/16 p0, 0x15a
+    invoke-virtual {p1}, Loas;->f()Z
 
-    return p0
+    move-result p1
 
-    :pswitch_34
-    const/16 p0, 0x159
+    if-eqz p1, :cond_4
 
-    return p0
+    iget-object p1, p0, Loag;->a:Loaf;
 
-    :pswitch_35
-    const/16 p0, 0x158
+    check-cast p1, Loam;
 
-    return p0
+    iget p1, p1, Loam;->e:I
 
-    :pswitch_36
-    const/16 p0, 0x157
+    if-eq p1, v1, :cond_5
 
-    return p0
+    :cond_4
+    iget-object p1, p0, Loag;->b:Loas;
 
-    :pswitch_37
-    const/16 p0, 0x156
+    invoke-virtual {p1}, Loas;->e()Z
 
-    return p0
+    move-result p1
 
-    :pswitch_38
-    const/16 p0, 0x155
+    if-eqz p1, :cond_6
 
-    return p0
+    iget-object p1, p0, Loag;->a:Loaf;
 
-    :pswitch_39
-    const/16 p0, 0x154
+    check-cast p1, Loam;
 
-    return p0
+    iget p1, p1, Loam;->f:I
 
-    :pswitch_3a
-    const/16 p0, 0x153
+    if-ne p1, v3, :cond_6
 
-    return p0
+    :cond_5
+    iget p1, p0, Loag;->f:F
 
-    :pswitch_3b
-    const/16 p0, 0x152
+    sub-float/2addr v0, p2
 
-    return p0
+    iget-object p2, p0, Loag;->a:Loaf;
 
-    :pswitch_3c
-    const/16 p0, 0x151
+    check-cast p2, Loam;
 
-    return p0
+    iget p2, p2, Loam;->a:I
 
-    :pswitch_3d
-    const/16 p0, 0x150
+    int-to-float p2, p2
 
-    return p0
+    mul-float v0, v0, p2
 
-    :pswitch_3e
-    const/16 p0, 0x14f
+    div-float/2addr v0, v2
 
-    return p0
+    sub-float/2addr p1, v0
 
-    :pswitch_3f
-    const/16 p0, 0x14e
+    iput p1, p0, Loag;->f:F
 
-    return p0
+    :cond_6
+    return-void
+.end method
 
-    :pswitch_40
-    const/16 p0, 0x14d
+.method public final d(Landroid/graphics/Canvas;Landroid/graphics/Paint;FFI)V
+    .locals 11
 
-    return p0
+    move-object v6, p0
 
-    :pswitch_41
-    const/16 p0, 0x14c
+    move-object v7, p2
 
-    return p0
+    cmpl-float v0, p3, p4
 
-    :pswitch_42
-    const/16 p0, 0x14b
+    if-nez v0, :cond_0
 
-    return p0
+    return-void
 
-    :pswitch_43
-    const/16 p0, 0x14a
+    :cond_0
+    sget-object v0, Landroid/graphics/Paint$Style;->STROKE:Landroid/graphics/Paint$Style;
 
-    return p0
+    invoke-virtual {p2, v0}, Landroid/graphics/Paint;->setStyle(Landroid/graphics/Paint$Style;)V
 
-    :pswitch_44
-    const/16 p0, 0x149
+    sget-object v0, Landroid/graphics/Paint$Cap;->BUTT:Landroid/graphics/Paint$Cap;
 
-    return p0
+    invoke-virtual {p2, v0}, Landroid/graphics/Paint;->setStrokeCap(Landroid/graphics/Paint$Cap;)V
 
-    :pswitch_45
-    const/16 p0, 0x148
+    const/4 v0, 0x1
 
-    return p0
+    invoke-virtual {p2, v0}, Landroid/graphics/Paint;->setAntiAlias(Z)V
 
-    :pswitch_46
-    const/16 p0, 0x147
+    move/from16 v0, p5
 
-    return p0
+    invoke-virtual {p2, v0}, Landroid/graphics/Paint;->setColor(I)V
 
-    :pswitch_47
-    const/16 p0, 0x146
+    iget v0, v6, Loag;->d:F
 
-    return p0
+    invoke-virtual {p2, v0}, Landroid/graphics/Paint;->setStrokeWidth(F)V
 
-    :pswitch_48
-    const/16 p0, 0x145
+    iget v0, v6, Loag;->c:I
 
-    return p0
+    int-to-float v0, v0
 
-    :pswitch_49
-    const/16 p0, 0x144
+    const/high16 v8, 0x43b40000    # 360.0f
 
-    return p0
+    mul-float v1, p3, v8
 
-    :pswitch_4a
-    const/16 p0, 0x143
+    mul-float v9, v1, v0
 
-    return p0
+    cmpl-float v1, p4, p3
 
-    :pswitch_4b
-    const/16 p0, 0x142
+    if-ltz v1, :cond_1
 
-    return p0
+    sub-float v1, p4, p3
 
-    :pswitch_4c
-    const/16 p0, 0x141
+    mul-float v1, v1, v8
 
-    return p0
+    mul-float v1, v1, v0
 
-    :pswitch_4d
-    const/16 p0, 0x140
+    move v10, v1
 
-    return p0
+    goto :goto_0
 
-    :pswitch_4e
-    const/16 p0, 0x13f
+    :cond_1
+    const/high16 v1, 0x3f800000    # 1.0f
 
-    return p0
+    add-float/2addr v1, p4
 
-    :pswitch_4f
-    const/16 p0, 0x13e
+    sub-float/2addr v1, p3
 
-    return p0
+    mul-float v1, v1, v8
 
-    :pswitch_50
-    const/16 p0, 0x13d
+    mul-float v1, v1, v0
 
-    return p0
+    move v10, v1
 
-    :pswitch_51
-    const/16 p0, 0x13c
+    :goto_0
+    new-instance v1, Landroid/graphics/RectF;
 
-    return p0
+    iget v0, v6, Loag;->f:F
 
-    :pswitch_52
-    const/16 p0, 0x13b
+    neg-float v2, v0
 
-    return p0
+    invoke-direct {v1, v2, v2, v0, v0}, Landroid/graphics/RectF;-><init>(FFFF)V
 
-    :pswitch_53
-    const/16 p0, 0x13a
+    const/4 v4, 0x0
 
-    return p0
+    move-object v0, p1
 
-    :pswitch_54
-    const/16 p0, 0x139
+    move v2, v9
 
-    return p0
+    move v3, v10
 
-    :pswitch_55
-    const/16 p0, 0x138
+    move-object v5, p2
 
-    return p0
+    invoke-virtual/range {v0 .. v5}, Landroid/graphics/Canvas;->drawArc(Landroid/graphics/RectF;FFZLandroid/graphics/Paint;)V
 
-    :pswitch_56
-    const/16 p0, 0x137
+    iget v0, v6, Loag;->e:F
 
-    return p0
+    const/4 v1, 0x0
 
-    :pswitch_57
-    const/16 p0, 0x136
+    cmpl-float v0, v0, v1
 
-    return p0
+    if-lez v0, :cond_2
 
-    :pswitch_58
-    const/16 p0, 0x135
+    invoke-static {v10}, Ljava/lang/Math;->abs(F)F
 
-    return p0
+    move-result v0
 
-    :pswitch_59
-    const/16 p0, 0x134
+    cmpg-float v0, v0, v8
 
-    return p0
+    if-gez v0, :cond_2
 
-    :pswitch_5a
-    const/16 p0, 0x133
+    sget-object v0, Landroid/graphics/Paint$Style;->FILL:Landroid/graphics/Paint$Style;
 
-    return p0
+    invoke-virtual {p2, v0}, Landroid/graphics/Paint;->setStyle(Landroid/graphics/Paint$Style;)V
 
-    :pswitch_5b
-    const/16 p0, 0x132
+    iget v3, v6, Loag;->d:F
 
-    return p0
+    iget v4, v6, Loag;->e:F
 
-    :pswitch_5c
-    const/16 p0, 0x131
+    move-object v0, p0
 
-    return p0
+    move-object v1, p1
 
-    :pswitch_5d
-    const/16 p0, 0x130
+    move-object v2, p2
 
-    return p0
+    move v5, v9
 
-    :pswitch_5e
-    const/16 p0, 0x12f
+    invoke-direct/range {v0 .. v5}, Loag;->h(Landroid/graphics/Canvas;Landroid/graphics/Paint;FFF)V
 
-    return p0
+    iget v3, v6, Loag;->d:F
 
-    :pswitch_5f
-    const/16 p0, 0x12e
+    iget v4, v6, Loag;->e:F
 
-    return p0
+    add-float v5, v9, v10
 
-    :pswitch_60
-    const/16 p0, 0x12d
+    invoke-direct/range {v0 .. v5}, Loag;->h(Landroid/graphics/Canvas;Landroid/graphics/Paint;FFF)V
 
-    return p0
+    :cond_2
+    return-void
+.end method
 
-    :pswitch_61
-    const/16 p0, 0x12c
+.method public final e(Landroid/graphics/Canvas;Landroid/graphics/Paint;)V
+    .locals 7
 
-    return p0
+    iget-object v0, p0, Loag;->a:Loaf;
 
-    :pswitch_62
-    const/16 p0, 0x12b
+    check-cast v0, Loam;
 
-    return p0
+    iget v0, v0, Loam;->d:I
 
-    :pswitch_63
-    const/16 p0, 0x12a
+    iget-object v1, p0, Loag;->b:Loas;
 
-    return p0
+    iget v1, v1, Loas;->i:I
 
-    :pswitch_64
-    const/16 p0, 0x129
+    invoke-static {v0, v1}, Lohh;->W(II)I
 
-    return p0
+    move-result v0
 
-    :pswitch_65
-    const/16 p0, 0x128
+    sget-object v1, Landroid/graphics/Paint$Style;->STROKE:Landroid/graphics/Paint$Style;
 
-    return p0
+    invoke-virtual {p2, v1}, Landroid/graphics/Paint;->setStyle(Landroid/graphics/Paint$Style;)V
 
-    :pswitch_66
-    const/16 p0, 0x127
+    sget-object v1, Landroid/graphics/Paint$Cap;->BUTT:Landroid/graphics/Paint$Cap;
 
-    return p0
+    invoke-virtual {p2, v1}, Landroid/graphics/Paint;->setStrokeCap(Landroid/graphics/Paint$Cap;)V
 
-    :pswitch_67
-    const/16 p0, 0x126
+    const/4 v1, 0x1
 
-    return p0
+    invoke-virtual {p2, v1}, Landroid/graphics/Paint;->setAntiAlias(Z)V
 
-    :pswitch_68
-    const/16 p0, 0x125
+    invoke-virtual {p2, v0}, Landroid/graphics/Paint;->setColor(I)V
 
-    return p0
+    iget v0, p0, Loag;->d:F
 
-    :pswitch_69
-    const/16 p0, 0x124
+    invoke-virtual {p2, v0}, Landroid/graphics/Paint;->setStrokeWidth(F)V
 
-    return p0
+    new-instance v2, Landroid/graphics/RectF;
 
-    :pswitch_6a
-    const/16 p0, 0x123
+    iget v0, p0, Loag;->f:F
 
-    return p0
+    neg-float v1, v0
 
-    :pswitch_6b
-    const/16 p0, 0x122
+    invoke-direct {v2, v1, v1, v0, v0}, Landroid/graphics/RectF;-><init>(FFFF)V
 
-    return p0
+    const/4 v3, 0x0
 
-    :pswitch_6c
-    const/16 p0, 0x121
+    const/high16 v4, 0x43b40000    # 360.0f
 
-    return p0
+    const/4 v5, 0x0
 
-    :pswitch_6d
-    const/16 p0, 0x120
+    move-object v1, p1
 
-    return p0
+    move-object v6, p2
 
-    :pswitch_6e
-    const/16 p0, 0x11f
+    invoke-virtual/range {v1 .. v6}, Landroid/graphics/Canvas;->drawArc(Landroid/graphics/RectF;FFZLandroid/graphics/Paint;)V
 
-    return p0
-
-    :pswitch_6f
-    const/16 p0, 0x11e
-
-    return p0
-
-    :pswitch_70
-    const/16 p0, 0x11d
-
-    return p0
-
-    :pswitch_71
-    const/16 p0, 0x11c
-
-    return p0
-
-    :pswitch_72
-    const/16 p0, 0x11b
-
-    return p0
-
-    :pswitch_73
-    const/16 p0, 0x11a
-
-    return p0
-
-    :pswitch_74
-    const/16 p0, 0x119
-
-    return p0
-
-    :pswitch_75
-    const/16 p0, 0x118
-
-    return p0
-
-    :pswitch_76
-    const/16 p0, 0x117
-
-    return p0
-
-    :pswitch_77
-    const/16 p0, 0x116
-
-    return p0
-
-    :pswitch_78
-    const/16 p0, 0x115
-
-    return p0
-
-    :pswitch_79
-    const/16 p0, 0x114
-
-    return p0
-
-    :pswitch_7a
-    const/16 p0, 0x113
-
-    return p0
-
-    :pswitch_7b
-    const/16 p0, 0x112
-
-    return p0
-
-    :pswitch_7c
-    const/16 p0, 0x111
-
-    return p0
-
-    :pswitch_7d
-    const/16 p0, 0x110
-
-    return p0
-
-    :pswitch_7e
-    const/16 p0, 0x10f
-
-    return p0
-
-    :pswitch_7f
-    const/16 p0, 0x10e
-
-    return p0
-
-    :pswitch_80
-    const/16 p0, 0x10d
-
-    return p0
-
-    :pswitch_81
-    const/16 p0, 0x10c
-
-    return p0
-
-    :pswitch_82
-    const/16 p0, 0x10b
-
-    return p0
-
-    :pswitch_83
-    const/16 p0, 0x10a
-
-    return p0
-
-    :pswitch_84
-    const/16 p0, 0x109
-
-    return p0
-
-    :pswitch_85
-    const/16 p0, 0x108
-
-    return p0
-
-    :pswitch_86
-    const/16 p0, 0x107
-
-    return p0
-
-    :pswitch_87
-    const/16 p0, 0x106
-
-    return p0
-
-    :pswitch_88
-    const/16 p0, 0x105
-
-    return p0
-
-    :pswitch_89
-    const/16 p0, 0x104
-
-    return p0
-
-    :pswitch_8a
-    const/16 p0, 0x103
-
-    return p0
-
-    :pswitch_8b
-    const/16 p0, 0x102
-
-    return p0
-
-    :pswitch_8c
-    const/16 p0, 0x101
-
-    return p0
-
-    :pswitch_8d
-    const/16 p0, 0x100
-
-    return p0
-
-    :pswitch_8e
-    const/16 p0, 0xff
-
-    return p0
-
-    :pswitch_8f
-    const/16 p0, 0xfe
-
-    return p0
-
-    :pswitch_90
-    const/16 p0, 0xfd
-
-    return p0
-
-    :pswitch_91
-    const/16 p0, 0xfc
-
-    return p0
-
-    :pswitch_92
-    const/16 p0, 0xfb
-
-    return p0
-
-    :pswitch_93
-    const/16 p0, 0xf8
-
-    return p0
-
-    :pswitch_94
-    const/16 p0, 0xf7
-
-    return p0
-
-    :pswitch_95
-    const/16 p0, 0xf6
-
-    return p0
-
-    :pswitch_96
-    const/16 p0, 0xf5
-
-    return p0
-
-    :pswitch_97
-    const/16 p0, 0xf4
-
-    return p0
-
-    :pswitch_98
-    const/16 p0, 0xf3
-
-    return p0
-
-    :pswitch_99
-    const/16 p0, 0xf2
-
-    return p0
-
-    :pswitch_9a
-    const/16 p0, 0xf1
-
-    return p0
-
-    :pswitch_9b
-    const/16 p0, 0xf0
-
-    return p0
-
-    :pswitch_9c
-    const/16 p0, 0xef
-
-    return p0
-
-    :pswitch_9d
-    const/16 p0, 0xee
-
-    return p0
-
-    :pswitch_9e
-    const/16 p0, 0xed
-
-    return p0
-
-    :pswitch_9f
-    const/16 p0, 0xec
-
-    return p0
-
-    :pswitch_a0
-    const/16 p0, 0xeb
-
-    return p0
-
-    :pswitch_a1
-    const/16 p0, 0xea
-
-    return p0
-
-    :pswitch_a2
-    const/16 p0, 0xe9
-
-    return p0
-
-    :pswitch_a3
-    const/16 p0, 0xe8
-
-    return p0
-
-    :pswitch_a4
-    const/16 p0, 0xe7
-
-    return p0
-
-    :pswitch_a5
-    const/16 p0, 0xe6
-
-    return p0
-
-    :pswitch_a6
-    const/16 p0, 0xe5
-
-    return p0
-
-    :pswitch_a7
-    const/16 p0, 0xe4
-
-    return p0
-
-    :pswitch_a8
-    const/16 p0, 0xe3
-
-    return p0
-
-    :pswitch_a9
-    const/16 p0, 0xe2
-
-    return p0
-
-    :pswitch_aa
-    const/16 p0, 0xe1
-
-    return p0
-
-    :pswitch_ab
-    const/16 p0, 0xe0
-
-    return p0
-
-    :pswitch_ac
-    const/16 p0, 0xdf
-
-    return p0
-
-    :pswitch_ad
-    const/16 p0, 0xdd
-
-    return p0
-
-    :pswitch_ae
-    const/16 p0, 0xdc
-
-    return p0
-
-    :pswitch_af
-    const/16 p0, 0xdb
-
-    return p0
-
-    :pswitch_b0
-    const/16 p0, 0xda
-
-    return p0
-
-    :pswitch_b1
-    const/16 p0, 0xd9
-
-    return p0
-
-    :pswitch_b2
-    const/16 p0, 0xd8
-
-    return p0
-
-    :pswitch_b3
-    const/16 p0, 0xd7
-
-    return p0
-
-    :pswitch_b4
-    const/16 p0, 0xd6
-
-    return p0
-
-    :pswitch_b5
-    const/16 p0, 0xd5
-
-    return p0
-
-    :pswitch_b6
-    const/16 p0, 0xd4
-
-    return p0
-
-    :pswitch_b7
-    const/16 p0, 0xd3
-
-    return p0
-
-    :pswitch_b8
-    const/16 p0, 0xd2
-
-    return p0
-
-    :pswitch_b9
-    const/16 p0, 0xd1
-
-    return p0
-
-    :pswitch_ba
-    const/16 p0, 0xd0
-
-    return p0
-
-    :pswitch_bb
-    const/16 p0, 0xcf
-
-    return p0
-
-    :pswitch_bc
-    const/16 p0, 0xce
-
-    return p0
-
-    :pswitch_bd
-    const/16 p0, 0xcd
-
-    return p0
-
-    :pswitch_be
-    const/16 p0, 0xcc
-
-    return p0
-
-    :pswitch_bf
-    const/16 p0, 0xcb
-
-    return p0
-
-    :pswitch_c0
-    const/16 p0, 0xca
-
-    return p0
-
-    :pswitch_c1
-    const/16 p0, 0xc9
-
-    return p0
-
-    :pswitch_c2
-    const/16 p0, 0xc8
-
-    return p0
-
-    :pswitch_c3
-    const/16 p0, 0xc6
-
-    return p0
-
-    :pswitch_c4
-    const/16 p0, 0xc5
-
-    return p0
-
-    :pswitch_c5
-    const/16 p0, 0xc4
-
-    return p0
-
-    :pswitch_c6
-    const/16 p0, 0xc3
-
-    return p0
-
-    :pswitch_c7
-    const/16 p0, 0xc2
-
-    return p0
-
-    :pswitch_c8
-    const/16 p0, 0xc1
-
-    return p0
-
-    :pswitch_c9
-    const/16 p0, 0xc0
-
-    return p0
-
-    :pswitch_ca
-    const/16 p0, 0xbf
-
-    return p0
-
-    :pswitch_cb
-    const/16 p0, 0xbe
-
-    return p0
-
-    :pswitch_cc
-    const/16 p0, 0xbd
-
-    return p0
-
-    :pswitch_cd
-    const/16 p0, 0xbc
-
-    return p0
-
-    :pswitch_ce
-    const/16 p0, 0xbb
-
-    return p0
-
-    :pswitch_cf
-    const/16 p0, 0xba
-
-    return p0
-
-    :pswitch_d0
-    const/16 p0, 0xb9
-
-    return p0
-
-    :pswitch_d1
-    const/16 p0, 0xb8
-
-    return p0
-
-    :pswitch_d2
-    const/16 p0, 0xb7
-
-    return p0
-
-    :pswitch_d3
-    const/16 p0, 0xb6
-
-    return p0
-
-    :pswitch_d4
-    const/16 p0, 0xb5
-
-    return p0
-
-    :pswitch_d5
-    const/16 p0, 0xb4
-
-    return p0
-
-    :pswitch_d6
-    const/16 p0, 0xb3
-
-    return p0
-
-    :pswitch_d7
-    const/16 p0, 0xb2
-
-    return p0
-
-    :pswitch_d8
-    const/16 p0, 0xb1
-
-    return p0
-
-    :pswitch_d9
-    const/16 p0, 0xb0
-
-    return p0
-
-    :pswitch_da
-    const/16 p0, 0xaf
-
-    return p0
-
-    :pswitch_db
-    const/16 p0, 0xae
-
-    return p0
-
-    :pswitch_dc
-    const/16 p0, 0xad
-
-    return p0
-
-    :pswitch_dd
-    const/16 p0, 0xac
-
-    return p0
-
-    :pswitch_de
-    const/16 p0, 0xab
-
-    return p0
-
-    :pswitch_df
-    const/16 p0, 0xaa
-
-    return p0
-
-    :pswitch_e0
-    const/16 p0, 0xa9
-
-    return p0
-
-    :pswitch_e1
-    const/16 p0, 0xa8
-
-    return p0
-
-    :pswitch_e2
-    const/16 p0, 0xa7
-
-    return p0
-
-    :pswitch_e3
-    const/16 p0, 0xa6
-
-    return p0
-
-    :pswitch_e4
-    const/16 p0, 0xa5
-
-    return p0
-
-    :pswitch_e5
-    const/16 p0, 0xa4
-
-    return p0
-
-    :pswitch_e6
-    const/16 p0, 0xa3
-
-    return p0
-
-    :pswitch_e7
-    const/16 p0, 0xa2
-
-    return p0
-
-    :pswitch_e8
-    const/16 p0, 0xa1
-
-    return p0
-
-    :pswitch_e9
-    const/16 p0, 0xa0
-
-    return p0
-
-    :pswitch_ea
-    const/16 p0, 0x9f
-
-    return p0
-
-    :pswitch_eb
-    const/16 p0, 0x9e
-
-    return p0
-
-    :pswitch_ec
-    const/16 p0, 0x9d
-
-    return p0
-
-    :pswitch_ed
-    const/16 p0, 0x9c
-
-    return p0
-
-    :pswitch_ee
-    const/16 p0, 0x9b
-
-    return p0
-
-    :pswitch_ef
-    const/16 p0, 0x9a
-
-    return p0
-
-    :pswitch_f0
-    const/16 p0, 0x99
-
-    return p0
-
-    :pswitch_f1
-    const/16 p0, 0x98
-
-    return p0
-
-    :pswitch_f2
-    const/16 p0, 0x97
-
-    return p0
-
-    :pswitch_f3
-    const/16 p0, 0x96
-
-    return p0
-
-    :pswitch_f4
-    const/16 p0, 0x95
-
-    return p0
-
-    :pswitch_f5
-    const/16 p0, 0x94
-
-    return p0
-
-    :pswitch_f6
-    const/16 p0, 0x93
-
-    return p0
-
-    :pswitch_f7
-    const/16 p0, 0x92
-
-    return p0
-
-    :pswitch_f8
-    const/16 p0, 0x91
-
-    return p0
-
-    :pswitch_f9
-    const/16 p0, 0x90
-
-    return p0
-
-    :pswitch_fa
-    const/16 p0, 0x8f
-
-    return p0
-
-    :pswitch_fb
-    const/16 p0, 0x8e
-
-    return p0
-
-    :pswitch_fc
-    const/16 p0, 0x8d
-
-    return p0
-
-    :pswitch_fd
-    const/16 p0, 0x8c
-
-    return p0
-
-    :pswitch_fe
-    const/16 p0, 0x8b
-
-    return p0
-
-    :pswitch_ff
-    const/16 p0, 0x8a
-
-    return p0
-
-    :pswitch_100
-    const/16 p0, 0x89
-
-    return p0
-
-    :pswitch_101
-    const/16 p0, 0x88
-
-    return p0
-
-    :pswitch_102
-    const/16 p0, 0x87
-
-    return p0
-
-    :pswitch_103
-    const/16 p0, 0x86
-
-    return p0
-
-    :pswitch_104
-    const/16 p0, 0x85
-
-    return p0
-
-    :pswitch_105
-    const/16 p0, 0x84
-
-    return p0
-
-    :pswitch_106
-    const/16 p0, 0x83
-
-    return p0
-
-    :pswitch_107
-    const/16 p0, 0x82
-
-    return p0
-
-    :pswitch_108
-    const/16 p0, 0x81
-
-    return p0
-
-    :pswitch_109
-    const/16 p0, 0x80
-
-    return p0
-
-    :pswitch_10a
-    const/16 p0, 0x7f
-
-    return p0
-
-    :pswitch_10b
-    const/16 p0, 0x7e
-
-    return p0
-
-    :pswitch_10c
-    const/16 p0, 0x7d
-
-    return p0
-
-    :pswitch_10d
-    const/16 p0, 0x7c
-
-    return p0
-
-    :pswitch_10e
-    const/16 p0, 0x7b
-
-    return p0
-
-    :pswitch_10f
-    const/16 p0, 0x7a
-
-    return p0
-
-    :pswitch_110
-    const/16 p0, 0x79
-
-    return p0
-
-    :pswitch_111
-    const/16 p0, 0x78
-
-    return p0
-
-    :pswitch_112
-    const/16 p0, 0x77
-
-    return p0
-
-    :pswitch_113
-    const/16 p0, 0x76
-
-    return p0
-
-    :pswitch_114
-    const/16 p0, 0x75
-
-    return p0
-
-    :pswitch_115
-    const/16 p0, 0x74
-
-    return p0
-
-    :pswitch_116
-    const/16 p0, 0x73
-
-    return p0
-
-    :pswitch_117
-    const/16 p0, 0x72
-
-    return p0
-
-    :pswitch_118
-    const/16 p0, 0x71
-
-    return p0
-
-    :pswitch_119
-    const/16 p0, 0x70
-
-    return p0
-
-    :pswitch_11a
-    const/16 p0, 0x6f
-
-    return p0
-
-    :pswitch_11b
-    const/16 p0, 0x6e
-
-    return p0
-
-    :pswitch_11c
-    const/16 p0, 0x6d
-
-    return p0
-
-    :pswitch_11d
-    const/16 p0, 0x6c
-
-    return p0
-
-    :pswitch_11e
-    const/16 p0, 0x6b
-
-    return p0
-
-    :pswitch_11f
-    const/16 p0, 0x6a
-
-    return p0
-
-    :pswitch_120
-    const/16 p0, 0x69
-
-    return p0
-
-    :pswitch_121
-    const/16 p0, 0x68
-
-    return p0
-
-    :pswitch_122
-    const/16 p0, 0x67
-
-    return p0
-
-    :pswitch_123
-    const/16 p0, 0x66
-
-    return p0
-
-    :pswitch_124
-    const/16 p0, 0x65
-
-    return p0
-
-    :pswitch_125
-    const/4 p0, 0x4
-
-    return p0
-
-    :pswitch_126
-    const/4 p0, 0x3
-
-    return p0
-
-    :pswitch_127
-    const/4 p0, 0x2
-
-    return p0
-
-    :pswitch_128
-    const/4 p0, 0x1
-
-    return p0
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_128
-        :pswitch_127
-        :pswitch_126
-        :pswitch_125
-        :pswitch_0
-        :pswitch_0
-        :pswitch_0
-        :pswitch_0
-        :pswitch_0
-        :pswitch_0
-        :pswitch_0
-        :pswitch_0
-        :pswitch_0
-        :pswitch_0
-        :pswitch_0
-        :pswitch_0
-        :pswitch_0
-        :pswitch_0
-        :pswitch_0
-        :pswitch_0
-        :pswitch_0
-        :pswitch_0
-        :pswitch_0
-        :pswitch_0
-        :pswitch_0
-        :pswitch_0
-        :pswitch_0
-        :pswitch_0
-        :pswitch_0
-        :pswitch_0
-        :pswitch_0
-        :pswitch_0
-        :pswitch_0
-        :pswitch_0
-        :pswitch_0
-        :pswitch_0
-        :pswitch_0
-        :pswitch_0
-        :pswitch_0
-        :pswitch_0
-        :pswitch_0
-        :pswitch_0
-        :pswitch_0
-        :pswitch_0
-        :pswitch_0
-        :pswitch_0
-        :pswitch_0
-        :pswitch_0
-        :pswitch_0
-        :pswitch_0
-        :pswitch_0
-        :pswitch_0
-        :pswitch_0
-        :pswitch_0
-        :pswitch_0
-        :pswitch_0
-        :pswitch_0
-        :pswitch_0
-        :pswitch_0
-        :pswitch_0
-        :pswitch_0
-        :pswitch_0
-        :pswitch_0
-        :pswitch_0
-        :pswitch_0
-        :pswitch_0
-        :pswitch_0
-        :pswitch_0
-        :pswitch_0
-        :pswitch_0
-        :pswitch_0
-        :pswitch_0
-        :pswitch_0
-        :pswitch_0
-        :pswitch_0
-        :pswitch_0
-        :pswitch_0
-        :pswitch_0
-        :pswitch_0
-        :pswitch_0
-        :pswitch_0
-        :pswitch_0
-        :pswitch_0
-        :pswitch_0
-        :pswitch_0
-        :pswitch_0
-        :pswitch_0
-        :pswitch_0
-        :pswitch_0
-        :pswitch_0
-        :pswitch_0
-        :pswitch_0
-        :pswitch_0
-        :pswitch_0
-        :pswitch_0
-        :pswitch_0
-        :pswitch_0
-        :pswitch_0
-        :pswitch_0
-        :pswitch_0
-        :pswitch_124
-        :pswitch_123
-        :pswitch_122
-        :pswitch_121
-        :pswitch_120
-        :pswitch_11f
-        :pswitch_11e
-        :pswitch_11d
-        :pswitch_11c
-        :pswitch_11b
-        :pswitch_11a
-        :pswitch_119
-        :pswitch_118
-        :pswitch_117
-        :pswitch_116
-        :pswitch_115
-        :pswitch_114
-        :pswitch_113
-        :pswitch_112
-        :pswitch_111
-        :pswitch_110
-        :pswitch_10f
-        :pswitch_10e
-        :pswitch_10d
-        :pswitch_10c
-        :pswitch_10b
-        :pswitch_10a
-        :pswitch_109
-        :pswitch_108
-        :pswitch_107
-        :pswitch_106
-        :pswitch_105
-        :pswitch_104
-        :pswitch_103
-        :pswitch_102
-        :pswitch_101
-        :pswitch_100
-        :pswitch_ff
-        :pswitch_fe
-        :pswitch_fd
-        :pswitch_fc
-        :pswitch_fb
-        :pswitch_fa
-        :pswitch_f9
-        :pswitch_f8
-        :pswitch_f7
-        :pswitch_f6
-        :pswitch_f5
-        :pswitch_f4
-        :pswitch_f3
-        :pswitch_f2
-        :pswitch_f1
-        :pswitch_f0
-        :pswitch_ef
-        :pswitch_ee
-        :pswitch_ed
-        :pswitch_ec
-        :pswitch_eb
-        :pswitch_ea
-        :pswitch_e9
-        :pswitch_e8
-        :pswitch_e7
-        :pswitch_e6
-        :pswitch_e5
-        :pswitch_e4
-        :pswitch_e3
-        :pswitch_e2
-        :pswitch_e1
-        :pswitch_e0
-        :pswitch_df
-        :pswitch_de
-        :pswitch_dd
-        :pswitch_dc
-        :pswitch_db
-        :pswitch_da
-        :pswitch_d9
-        :pswitch_d8
-        :pswitch_d7
-        :pswitch_d6
-        :pswitch_d5
-        :pswitch_d4
-        :pswitch_d3
-        :pswitch_d2
-        :pswitch_d1
-        :pswitch_d0
-        :pswitch_cf
-        :pswitch_ce
-        :pswitch_cd
-        :pswitch_cc
-        :pswitch_cb
-        :pswitch_ca
-        :pswitch_c9
-        :pswitch_c8
-        :pswitch_c7
-        :pswitch_c6
-        :pswitch_c5
-        :pswitch_c4
-        :pswitch_c3
-        :pswitch_0
-        :pswitch_c2
-        :pswitch_c1
-        :pswitch_c0
-        :pswitch_bf
-        :pswitch_be
-        :pswitch_bd
-        :pswitch_bc
-        :pswitch_bb
-        :pswitch_ba
-        :pswitch_b9
-        :pswitch_b8
-        :pswitch_b7
-        :pswitch_b6
-        :pswitch_b5
-        :pswitch_b4
-        :pswitch_b3
-        :pswitch_b2
-        :pswitch_b1
-        :pswitch_b0
-        :pswitch_af
-        :pswitch_ae
-        :pswitch_ad
-        :pswitch_0
-        :pswitch_ac
-        :pswitch_ab
-        :pswitch_aa
-        :pswitch_a9
-        :pswitch_a8
-        :pswitch_a7
-        :pswitch_a6
-        :pswitch_a5
-        :pswitch_a4
-        :pswitch_a3
-        :pswitch_a2
-        :pswitch_a1
-        :pswitch_a0
-        :pswitch_9f
-        :pswitch_9e
-        :pswitch_9d
-        :pswitch_9c
-        :pswitch_9b
-        :pswitch_9a
-        :pswitch_99
-        :pswitch_98
-        :pswitch_97
-        :pswitch_96
-        :pswitch_95
-        :pswitch_94
-        :pswitch_93
-        :pswitch_0
-        :pswitch_0
-        :pswitch_92
-        :pswitch_91
-        :pswitch_90
-        :pswitch_8f
-        :pswitch_8e
-        :pswitch_8d
-        :pswitch_8c
-        :pswitch_8b
-        :pswitch_8a
-        :pswitch_89
-        :pswitch_88
-        :pswitch_87
-        :pswitch_86
-        :pswitch_85
-        :pswitch_84
-        :pswitch_83
-        :pswitch_82
-        :pswitch_81
-        :pswitch_80
-        :pswitch_7f
-        :pswitch_7e
-        :pswitch_7d
-        :pswitch_7c
-        :pswitch_7b
-        :pswitch_7a
-        :pswitch_79
-        :pswitch_78
-        :pswitch_77
-        :pswitch_76
-        :pswitch_75
-        :pswitch_74
-        :pswitch_73
-        :pswitch_72
-        :pswitch_71
-        :pswitch_70
-        :pswitch_6f
-        :pswitch_6e
-        :pswitch_6d
-        :pswitch_6c
-        :pswitch_6b
-        :pswitch_6a
-        :pswitch_69
-        :pswitch_68
-        :pswitch_67
-        :pswitch_66
-        :pswitch_65
-        :pswitch_64
-        :pswitch_63
-        :pswitch_62
-        :pswitch_61
-        :pswitch_60
-        :pswitch_5f
-        :pswitch_5e
-        :pswitch_5d
-        :pswitch_5c
-        :pswitch_5b
-        :pswitch_5a
-        :pswitch_59
-        :pswitch_58
-        :pswitch_57
-        :pswitch_56
-        :pswitch_55
-        :pswitch_54
-        :pswitch_53
-        :pswitch_52
-        :pswitch_51
-        :pswitch_50
-        :pswitch_4f
-        :pswitch_4e
-        :pswitch_4d
-        :pswitch_4c
-        :pswitch_4b
-        :pswitch_4a
-        :pswitch_49
-        :pswitch_48
-        :pswitch_47
-        :pswitch_46
-        :pswitch_45
-        :pswitch_44
-        :pswitch_43
-        :pswitch_42
-        :pswitch_41
-        :pswitch_40
-        :pswitch_3f
-        :pswitch_3e
-        :pswitch_3d
-        :pswitch_3c
-        :pswitch_3b
-        :pswitch_3a
-        :pswitch_39
-        :pswitch_38
-        :pswitch_37
-        :pswitch_36
-        :pswitch_35
-        :pswitch_34
-        :pswitch_33
-        :pswitch_0
-        :pswitch_0
-        :pswitch_0
-        :pswitch_0
-        :pswitch_0
-        :pswitch_0
-        :pswitch_0
-        :pswitch_32
-        :pswitch_31
-        :pswitch_30
-        :pswitch_2f
-        :pswitch_2e
-        :pswitch_2d
-        :pswitch_2c
-        :pswitch_2b
-        :pswitch_2a
-        :pswitch_29
-        :pswitch_28
-        :pswitch_27
-        :pswitch_26
-        :pswitch_25
-        :pswitch_24
-        :pswitch_0
-        :pswitch_23
-        :pswitch_22
-        :pswitch_21
-        :pswitch_20
-        :pswitch_1f
-        :pswitch_1e
-        :pswitch_1d
-        :pswitch_1c
-        :pswitch_1b
-        :pswitch_1a
-        :pswitch_19
-        :pswitch_18
-        :pswitch_17
-        :pswitch_16
-        :pswitch_15
-        :pswitch_14
-        :pswitch_13
-        :pswitch_12
-        :pswitch_11
-        :pswitch_10
-        :pswitch_f
-        :pswitch_e
-        :pswitch_d
-        :pswitch_c
-        :pswitch_b
-        :pswitch_a
-        :pswitch_9
-        :pswitch_8
-        :pswitch_7
-        :pswitch_6
-        :pswitch_5
-        :pswitch_4
-        :pswitch_3
-        :pswitch_2
-        :pswitch_1
-    .end packed-switch
+    return-void
 .end method

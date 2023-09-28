@@ -1,67 +1,45 @@
-.class public final Lerc;
+.class public final synthetic Lerc;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Logk;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field private final a:Lva;
+.field public final synthetic a:Lerk;
+
+.field public final synthetic b:I
 
 
 # direct methods
-.method public constructor <init>(Lva;[B[B[B[B)V
+.method public synthetic constructor <init>(Lerk;I)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lerc;->a:Lva;
+    iput-object p1, p0, Lerc;->a:Lerk;
+
+    iput p2, p0, Lerc;->b:I
 
     return-void
 .end method
 
-.method public static b(Lva;)Lerc;
-    .locals 7
-
-    new-instance v6, Lerc;
-
-    const/4 v2, 0x0
-
-    const/4 v3, 0x0
-
-    const/4 v4, 0x0
-
-    const/4 v5, 0x0
-
-    move-object v0, v6
-
-    move-object v1, p0
-
-    invoke-direct/range {v0 .. v5}, Lerc;-><init>(Lva;[B[B[B[B)V
-
-    return-object v6
-.end method
-
 
 # virtual methods
-.method public final a()Lfak;
-    .locals 1
+.method public final run()V
+    .locals 2
 
-    iget-object v0, p0, Lerc;->a:Lva;
+    iget-object v0, p0, Lerc;->a:Lerk;
 
-    iget-object v0, v0, Lva;->c:Ljava/lang/Object;
+    iget v1, p0, Lerc;->b:I
 
-    check-cast v0, Lfak;
+    iget-object v0, v0, Lerk;->c:Ljava/util/Map;
 
-    return-object v0
-.end method
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-.method public final bridge synthetic get()Ljava/lang/Object;
-    .locals 1
+    move-result-object v1
 
-    invoke-virtual {p0}, Lerc;->a()Lfak;
+    invoke-interface {v0, v1}, Ljava/util/Map;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
-    move-result-object v0
-
-    return-object v0
+    return-void
 .end method

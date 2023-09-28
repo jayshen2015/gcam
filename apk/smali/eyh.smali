@@ -1,51 +1,22 @@
 .class public final Leyh;
 .super Ljava/lang/Object;
 
-# interfaces
-.implements Logk;
 
-
-# instance fields
-.field private final a:Loiw;
+# static fields
+.field public static final a:Leyi;
 
 
 # direct methods
-.method public constructor <init>(Loiw;)V
-    .locals 0
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Leyh;->a:Loiw;
-
-    return-void
-.end method
-
-
-# virtual methods
-.method public final a()Lcvr;
+.method static constructor <clinit>()V
     .locals 2
 
-    iget-object v0, p0, Leyh;->a:Loiw;
+    new-instance v0, Leyi;
 
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
+    const/4 v1, 0x0
 
-    move-result-object v0
+    invoke-direct {v0, v1}, Leyi;-><init>(I)V
 
-    check-cast v0, Ljwb;
+    sput-object v0, Leyh;->a:Leyi;
 
-    new-instance v1, Lcvr;
-
-    invoke-direct {v1, v0}, Lcvr;-><init>(Ljwb;)V
-
-    return-object v1
-.end method
-
-.method public final bridge synthetic get()Ljava/lang/Object;
-    .locals 1
-
-    invoke-virtual {p0}, Leyh;->a()Lcvr;
-
-    move-result-object v0
-
-    return-object v0
+    return-void
 .end method

@@ -1,62 +1,69 @@
-.class public final Lbms;
+.class public final synthetic Lbms;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Landroid/hardware/Camera$PictureCallback;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field private final a:Landroid/os/Handler;
+.field public final synthetic a:Lbmt;
+
+.field private final synthetic b:I
 
 
 # direct methods
-.method private constructor <init>(Landroid/os/Handler;)V
+.method public synthetic constructor <init>(Lbmt;I)V
     .locals 0
+
+    iput p2, p0, Lbms;->b:I
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lbms;->a:Landroid/os/Handler;
+    iput-object p1, p0, Lbms;->a:Lbmt;
 
     return-void
-.end method
-
-.method public static a(Landroid/os/Handler;Lbnc;)Lbms;
-    .locals 0
-
-    if-eqz p0, :cond_1
-
-    if-nez p1, :cond_0
-
-    goto :goto_0
-
-    :cond_0
-    new-instance p1, Lbms;
-
-    invoke-direct {p1, p0}, Lbms;-><init>(Landroid/os/Handler;)V
-
-    return-object p1
-
-    :cond_1
-    :goto_0
-    const/4 p0, 0x0
-
-    return-object p0
 .end method
 
 
 # virtual methods
-.method public final onPictureTaken([BLandroid/hardware/Camera;)V
-    .locals 1
+.method public final run()V
+    .locals 3
 
-    iget-object p1, p0, Lbms;->a:Landroid/os/Handler;
+    iget v0, p0, Lbms;->b:I
 
-    new-instance p2, Lchy;
+    packed-switch v0, :pswitch_data_0
 
-    const/4 v0, 0x1
+    iget-object v0, p0, Lbms;->a:Lbmt;
 
-    invoke-direct {p2, v0}, Lchy;-><init>(I)V
+    iget-object v1, v0, Lbmt;->a:Lbnl;
 
-    invoke-virtual {p1, p2}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
+    iget-object v0, v0, Lbmt;->b:Lddf;
+
+    sget-object v2, Ldde;->a:Lddg;
+
+    invoke-interface {v0}, Lddf;->b()V
+
+    invoke-interface {v1}, Lbnl;->o()V
 
     return-void
+
+    :pswitch_0
+    iget-object v0, p0, Lbms;->a:Lbmt;
+
+    iget-object v1, v0, Lbmt;->a:Lbnl;
+
+    invoke-interface {v1}, Lbnl;->h()V
+
+    iget-object v0, v0, Lbmt;->c:Liud;
+
+    invoke-virtual {v0}, Liud;->c()V
+
+    return-void
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

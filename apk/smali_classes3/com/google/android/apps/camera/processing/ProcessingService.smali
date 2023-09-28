@@ -2,11 +2,11 @@
 .super Landroid/app/Service;
 
 # interfaces
-.implements Lgpy;
+.implements Lhho;
 
 
 # static fields
-.field private static final u:J
+.field private static final t:J
 
 
 # instance fields
@@ -14,9 +14,9 @@
 
 .field public final b:Ljava/lang/Object;
 
-.field public c:Lgpz;
+.field public c:Lhhp;
 
-.field public d:Lgpx;
+.field public d:Lhhn;
 
 .field public volatile e:Z
 
@@ -30,31 +30,29 @@
 
 .field public j:Landroid/app/NotificationManager;
 
-.field public k:Lgpv;
+.field public k:Lhhl;
 
 .field public l:Landroid/os/PowerManager;
 
-.field public m:Lamp;
+.field public m:Lafp;
 
-.field public n:Lkbc;
+.field public n:Lljf;
 
-.field public o:Ljuh;
+.field public o:Llar;
 
 .field public p:Landroid/os/Handler;
 
-.field public q:Lkoe;
+.field public q:Llzh;
 
-.field public r:Lfby;
+.field public r:Lfjr;
 
-.field public s:Landroid/view/accessibility/AccessibilityManager;
+.field public s:Lenw;
 
-.field public t:Lend;
+.field private final u:Lhhk;
 
-.field private final v:Lgpu;
+.field private v:Ljava/lang/Thread;
 
-.field private w:Ljava/lang/Thread;
-
-.field private x:Z
+.field private w:Z
 
 
 # direct methods
@@ -69,7 +67,7 @@
 
     move-result-wide v0
 
-    sput-wide v0, Lcom/google/android/apps/camera/processing/ProcessingService;->u:J
+    sput-wide v0, Lcom/google/android/apps/camera/processing/ProcessingService;->t:J
 
     return-void
 .end method
@@ -79,11 +77,11 @@
 
     invoke-direct {p0}, Landroid/app/Service;-><init>()V
 
-    new-instance v0, Lgpu;
+    new-instance v0, Lhhk;
 
-    invoke-direct {v0, p0}, Lgpu;-><init>(Lcom/google/android/apps/camera/processing/ProcessingService;)V
+    invoke-direct {v0, p0}, Lhhk;-><init>(Lcom/google/android/apps/camera/processing/ProcessingService;)V
 
-    iput-object v0, p0, Lcom/google/android/apps/camera/processing/ProcessingService;->v:Lgpu;
+    iput-object v0, p0, Lcom/google/android/apps/camera/processing/ProcessingService;->u:Lhhk;
 
     new-instance v0, Ljava/lang/Object;
 
@@ -107,7 +105,7 @@
 .method private final d()V
     .locals 4
 
-    iget-boolean v0, p0, Lcom/google/android/apps/camera/processing/ProcessingService;->x:Z
+    iget-boolean v0, p0, Lcom/google/android/apps/camera/processing/ProcessingService;->w:Z
 
     if-eqz v0, :cond_0
 
@@ -116,27 +114,29 @@
     :cond_0
     const/4 v0, 0x1
 
-    iput-boolean v0, p0, Lcom/google/android/apps/camera/processing/ProcessingService;->x:Z
+    iput-boolean v0, p0, Lcom/google/android/apps/camera/processing/ProcessingService;->w:Z
 
     invoke-virtual {p0}, Lcom/google/android/apps/camera/processing/ProcessingService;->getApplication()Landroid/app/Application;
 
     move-result-object v0
 
-    check-cast v0, Lemj;
+    check-cast v0, Lenc;
 
-    const-class v1, Lgpt;
+    const-class v1, Lhhj;
 
-    invoke-interface {v0, v1}, Lemj;->e(Ljava/lang/Class;)Leml;
+    invoke-interface {v0, v1}, Lenc;->c(Ljava/lang/Class;)Lene;
 
     move-result-object v0
 
-    check-cast v0, Lgpt;
+    check-cast v0, Lhhj;
 
-    invoke-interface {v0, p0}, Lgpt;->q(Lcom/google/android/apps/camera/processing/ProcessingService;)V
+    invoke-interface {v0, p0}, Lhhj;->q(Lcom/google/android/apps/camera/processing/ProcessingService;)V
 
-    iget-object v0, p0, Lcom/google/android/apps/camera/processing/ProcessingService;->q:Lkoe;
+    iget-object v0, p0, Lcom/google/android/apps/camera/processing/ProcessingService;->q:Llzh;
 
-    iget-boolean v0, v0, Lkoe;->a:Z
+    iget-boolean v0, v0, Llzh;->d:Z
+
+    if-eqz v0, :cond_3
 
     iget-object v0, p0, Lcom/google/android/apps/camera/processing/ProcessingService;->j:Landroid/app/NotificationManager;
 
@@ -179,12 +179,12 @@
 
     if-eqz v1, :cond_1
 
-    return-void
+    goto :goto_0
 
     :cond_2
     new-instance v0, Landroid/app/NotificationChannel;
 
-    const v1, 0x7f140449
+    const v1, 0x7f1403ee
 
     invoke-virtual {p0, v1}, Lcom/google/android/apps/camera/processing/ProcessingService;->getText(I)Ljava/lang/CharSequence;
 
@@ -203,29 +203,33 @@
     invoke-virtual {v1, v0}, Landroid/app/NotificationManager;->createNotificationChannel(Landroid/app/NotificationChannel;)V
 
     return-void
+
+    :cond_3
+    :goto_0
+    return-void
 .end method
 
 
 # virtual methods
-.method public final a(Lkae;)V
+.method public final a(Llif;)V
     .locals 3
 
     iget-object v0, p0, Lcom/google/android/apps/camera/processing/ProcessingService;->a:Landroid/app/Notification$Builder;
 
-    iget p1, p1, Lkae;->e:I
+    iget p1, p1, Llif;->e:I
 
-    const/4 v1, 0x0
+    const/16 v1, 0x64
 
-    const/16 v2, 0x64
+    const/4 v2, 0x0
 
-    invoke-virtual {v0, v2, p1, v1}, Landroid/app/Notification$Builder;->setProgress(IIZ)Landroid/app/Notification$Builder;
+    invoke-virtual {v0, v1, p1, v2}, Landroid/app/Notification$Builder;->setProgress(IIZ)Landroid/app/Notification$Builder;
 
     invoke-virtual {p0}, Lcom/google/android/apps/camera/processing/ProcessingService;->c()V
 
     return-void
 .end method
 
-.method public final b(Ligf;)V
+.method public final b(Ljmo;)V
     .locals 2
 
     iget-object v0, p0, Lcom/google/android/apps/camera/processing/ProcessingService;->a:Landroid/app/Notification$Builder;
@@ -234,7 +238,7 @@
 
     move-result-object v1
 
-    invoke-interface {p1, v1}, Ligf;->a(Landroid/content/res/Resources;)Ljava/lang/String;
+    invoke-interface {p1, v1}, Ljmo;->a(Landroid/content/res/Resources;)Ljava/lang/String;
 
     move-result-object p1
 
@@ -263,15 +267,15 @@
 
     iget-object v1, p0, Lcom/google/android/apps/camera/processing/ProcessingService;->j:Landroid/app/NotificationManager;
 
-    iget-object v2, p0, Lcom/google/android/apps/camera/processing/ProcessingService;->a:Landroid/app/Notification$Builder;
+    const/4 v2, 0x2
 
-    invoke-virtual {v2}, Landroid/app/Notification$Builder;->build()Landroid/app/Notification;
+    iget-object v3, p0, Lcom/google/android/apps/camera/processing/ProcessingService;->a:Landroid/app/Notification$Builder;
 
-    move-result-object v2
+    invoke-virtual {v3}, Landroid/app/Notification$Builder;->build()Landroid/app/Notification;
 
-    const/4 v3, 0x2
+    move-result-object v3
 
-    invoke-virtual {v1, v3, v2}, Landroid/app/NotificationManager;->notify(ILandroid/app/Notification;)V
+    invoke-virtual {v1, v2, v3}, Landroid/app/NotificationManager;->notify(ILandroid/app/Notification;)V
 
     const/4 v1, 0x0
 
@@ -281,11 +285,9 @@
 
     iget-object v1, p0, Lcom/google/android/apps/camera/processing/ProcessingService;->p:Landroid/os/Handler;
 
-    new-instance v2, Lgot;
+    new-instance v2, Lhhh;
 
-    const/4 v3, 0x7
-
-    invoke-direct {v2, p0, v3}, Lgot;-><init>(Lcom/google/android/apps/camera/processing/ProcessingService;I)V
+    invoke-direct {v2, p0}, Lhhh;-><init>(Lcom/google/android/apps/camera/processing/ProcessingService;)V
 
     const-wide/16 v3, 0x3e8
 
@@ -293,9 +295,9 @@
 
     const/4 v1, 0x1
 
-    sput v1, Lcom/Globals;->sHdr_process:I
+    sput v1, LAGC;->sHdr_process:I
 
-    invoke-static {v1}, Lcom/Globals;->sHdrProcessTime(I)V
+    invoke-static {v1}, LAGC;->sHdrProcessTime(I)V
 
     goto :goto_0
 
@@ -330,10 +332,6 @@
 .method public final onCreate()V
     .locals 5
 
-    const v1, 0x1
-
-    invoke-static {v1}, LAGC;->ProcIndicatorSwitch(I)V
-
     invoke-direct {p0}, Lcom/google/android/apps/camera/processing/ProcessingService;->d()V
 
     invoke-super {p0}, Landroid/app/Service;->onCreate()V
@@ -357,39 +355,39 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    iget-object v0, p0, Lcom/google/android/apps/camera/processing/ProcessingService;->n:Lkbc;
+    iget-object v0, p0, Lcom/google/android/apps/camera/processing/ProcessingService;->n:Lljf;
 
     const-string v2, "ProcessingService#onCreate"
 
-    invoke-interface {v0, v2}, Lkbc;->e(Ljava/lang/String;)V
+    invoke-interface {v0, v2}, Lljf;->e(Ljava/lang/String;)V
 
-    iget-object v0, p0, Lcom/google/android/apps/camera/processing/ProcessingService;->n:Lkbc;
+    iget-object v0, p0, Lcom/google/android/apps/camera/processing/ProcessingService;->n:Lljf;
 
     const-string v2, "WakeLock#new"
 
-    invoke-interface {v0, v2}, Lkbc;->e(Ljava/lang/String;)V
+    invoke-interface {v0, v2}, Lljf;->e(Ljava/lang/String;)V
 
-    new-instance v0, Lgpz;
+    new-instance v0, Lhhp;
 
     iget-object v2, p0, Lcom/google/android/apps/camera/processing/ProcessingService;->l:Landroid/os/PowerManager;
 
-    sget-wide v3, Lcom/google/android/apps/camera/processing/ProcessingService;->u:J
+    sget-wide v3, Lcom/google/android/apps/camera/processing/ProcessingService;->t:J
 
-    invoke-direct {v0, v2, v3, v4}, Lgpz;-><init>(Landroid/os/PowerManager;J)V
+    invoke-direct {v0, v2, v3, v4}, Lhhp;-><init>(Landroid/os/PowerManager;J)V
 
-    iput-object v0, p0, Lcom/google/android/apps/camera/processing/ProcessingService;->c:Lgpz;
+    iput-object v0, p0, Lcom/google/android/apps/camera/processing/ProcessingService;->c:Lhhp;
 
     const-string v2, "onCreate"
 
-    invoke-virtual {v0, v2}, Lgpz;->a(Ljava/lang/String;)V
+    invoke-virtual {v0, v2}, Lhhp;->a(Ljava/lang/String;)V
 
-    iget-object v0, p0, Lcom/google/android/apps/camera/processing/ProcessingService;->t:Lend;
+    iget-object v0, p0, Lcom/google/android/apps/camera/processing/ProcessingService;->s:Lenw;
 
-    invoke-virtual {v0}, Lend;->a()V
+    invoke-virtual {v0}, Lenw;->a()V
 
-    iget-object v0, p0, Lcom/google/android/apps/camera/processing/ProcessingService;->n:Lkbc;
+    iget-object v0, p0, Lcom/google/android/apps/camera/processing/ProcessingService;->n:Lljf;
 
-    invoke-interface {v0}, Lkbc;->f()V
+    invoke-interface {v0}, Lljf;->f()V
 
     new-instance v0, Landroid/content/IntentFilter;
 
@@ -403,25 +401,35 @@
 
     invoke-virtual {v0, v2}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
-    iget-object v2, p0, Lcom/google/android/apps/camera/processing/ProcessingService;->m:Lamp;
+    iget-object v2, p0, Lcom/google/android/apps/camera/processing/ProcessingService;->m:Lafp;
 
-    iget-object v3, p0, Lcom/google/android/apps/camera/processing/ProcessingService;->v:Lgpu;
+    iget-object v3, p0, Lcom/google/android/apps/camera/processing/ProcessingService;->u:Lhhk;
 
-    invoke-virtual {v2, v3, v0}, Lamp;->b(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;)V
+    invoke-virtual {v2, v3, v0}, Lafp;->b(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;)V
 
-    iget-object v0, p0, Lcom/google/android/apps/camera/processing/ProcessingService;->q:Lkoe;
+    iget-object v0, p0, Lcom/google/android/apps/camera/processing/ProcessingService;->q:Llzh;
 
-    iget-boolean v0, v0, Lkoe;->a:Z
+    iget-boolean v0, v0, Llzh;->d:Z
 
-    const-string v0, "processing"
+    if-eqz v0, :cond_0
 
-    new-instance v2, Landroid/app/Notification$Builder;
+    new-instance v0, Landroid/app/Notification$Builder;
 
-    invoke-direct {v2, p0, v0}, Landroid/app/Notification$Builder;-><init>(Landroid/content/Context;Ljava/lang/String;)V
+    const-string v2, "processing"
 
-    const v0, 0x7f080241
+    invoke-direct {v0, p0, v2}, Landroid/app/Notification$Builder;-><init>(Landroid/content/Context;Ljava/lang/String;)V
 
-    invoke-virtual {v2, v0}, Landroid/app/Notification$Builder;->setSmallIcon(I)Landroid/app/Notification$Builder;
+    goto :goto_0
+
+    :cond_0
+    new-instance v0, Landroid/app/Notification$Builder;
+
+    invoke-direct {v0, p0}, Landroid/app/Notification$Builder;-><init>(Landroid/content/Context;)V
+
+    :goto_0
+    const v2, 0x7f080534
+
+    invoke-virtual {v0, v2}, Landroid/app/Notification$Builder;->setSmallIcon(I)Landroid/app/Notification$Builder;
 
     move-result-object v0
 
@@ -429,7 +437,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f0607b2
+    const v3, 0x7f060680
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getColor(I)I
 
@@ -451,35 +459,21 @@
 
     move-result-object v0
 
-    iget-object v1, p0, Lcom/google/android/apps/camera/processing/ProcessingService;->s:Landroid/view/accessibility/AccessibilityManager;
-
-    invoke-virtual {v1}, Landroid/view/accessibility/AccessibilityManager;->isTouchExplorationEnabled()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_0
-
-    const-string v1, ""
-
-    goto :goto_0
-
-    :cond_0
-    const v1, 0x7f140084
+    const v1, 0x7f14007d
 
     invoke-virtual {p0, v1}, Lcom/google/android/apps/camera/processing/ProcessingService;->getText(I)Ljava/lang/CharSequence;
 
     move-result-object v1
 
-    :goto_0
     invoke-virtual {v0, v1}, Landroid/app/Notification$Builder;->setContentTitle(Ljava/lang/CharSequence;)Landroid/app/Notification$Builder;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/android/apps/camera/processing/ProcessingService;->a:Landroid/app/Notification$Builder;
 
-    iget-object v0, p0, Lcom/google/android/apps/camera/processing/ProcessingService;->n:Lkbc;
+    iget-object v0, p0, Lcom/google/android/apps/camera/processing/ProcessingService;->n:Lljf;
 
-    invoke-interface {v0}, Lkbc;->f()V
+    invoke-interface {v0}, Lljf;->f()V
 
     return-void
 
@@ -497,136 +491,141 @@
 .method public final onDestroy()V
     .locals 6
 
-    iget-object v0, p0, Lcom/google/android/apps/camera/processing/ProcessingService;->c:Lgpz;
+    iget-object v0, p0, Lcom/google/android/apps/camera/processing/ProcessingService;->c:Lhhp;
 
-    invoke-virtual {v0}, Lgpz;->b()V
+    invoke-virtual {v0}, Lhhp;->b()V
 
-    iget-object v0, p0, Lcom/google/android/apps/camera/processing/ProcessingService;->t:Lend;
+    iget-object v0, p0, Lcom/google/android/apps/camera/processing/ProcessingService;->s:Lenw;
 
-    invoke-virtual {v0}, Lend;->b()V
+    invoke-virtual {v0}, Lenw;->b()V
 
-    iget-object v0, p0, Lcom/google/android/apps/camera/processing/ProcessingService;->m:Lamp;
+    iget-object v0, p0, Lcom/google/android/apps/camera/processing/ProcessingService;->m:Lafp;
 
-    iget-object v1, p0, Lcom/google/android/apps/camera/processing/ProcessingService;->v:Lgpu;
+    iget-object v1, p0, Lcom/google/android/apps/camera/processing/ProcessingService;->u:Lhhk;
 
-    invoke-virtual {v0, v1}, Lamp;->c(Landroid/content/BroadcastReceiver;)V
+    invoke-virtual {v0, v1}, Lafp;->c(Landroid/content/BroadcastReceiver;)V
 
     const/4 v0, 0x1
 
     invoke-virtual {p0, v0}, Lcom/google/android/apps/camera/processing/ProcessingService;->stopForeground(Z)V
 
-    iget-object v0, p0, Lcom/google/android/apps/camera/processing/ProcessingService;->k:Lgpv;
+    iget-object v1, p0, Lcom/google/android/apps/camera/processing/ProcessingService;->k:Lhhl;
 
-    iget-object v1, v0, Lgpv;->b:Ljava/lang/Object;
+    iget-object v2, v1, Lhhl;->b:Ljava/lang/Object;
 
-    monitor-enter v1
+    monitor-enter v2
 
-    const/4 v2, 0x3
+    const/4 v3, 0x3
 
     :try_start_0
-    iput v2, v0, Lgpv;->g:I
+    iput v3, v1, Lhhl;->g:I
 
-    iget-object v2, v0, Lgpv;->a:Lkaq;
+    iget-object v3, v1, Lhhl;->a:Llis;
 
-    iget-boolean v3, v0, Lgpv;->d:Z
+    const-string v4, "Service destroyed, restarting? "
 
-    if-eqz v3, :cond_0
+    iget-boolean v5, v1, Lhhl;->d:Z
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    const-string v3, "Yes"
+    if-eq v0, v5, :cond_0
+
+    const-string v0, "No"
 
     goto :goto_0
 
     :cond_0
-    const-string v3, "No"
+    const-string v0, "Yes"
 
     :goto_0
-    new-instance v4, Ljava/lang/StringBuilder;
+    :try_start_1
+    invoke-virtual {v0}, Ljava/lang/String;->length()I
 
-    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
+    move-result v5
 
-    const-string v5, "Service destroyed, restarting? "
+    if-eqz v5, :cond_1
 
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v4, v0}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
 
-    invoke-virtual {v4, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-interface {v2, v3}, Lkaq;->f(Ljava/lang/String;)V
-
-    iget-boolean v2, v0, Lgpv;->d:Z
-
-    if-eqz v2, :cond_1
-
-    const/4 v2, 0x0
-
-    iput-boolean v2, v0, Lgpv;->d:Z
-
-    invoke-virtual {v0}, Lgpv;->b()V
-
-    const/4 v0, 0x0
+    move-result-object v0
 
     goto :goto_1
 
     :cond_1
-    iget-object v2, v0, Lgpv;->c:Ljava/util/LinkedList;
+    new-instance v0, Ljava/lang/String;
 
-    invoke-virtual {v2}, Ljava/util/LinkedList;->isEmpty()Z
-
-    move-result v2
-
-    if-eqz v2, :cond_3
-
-    iget-object v2, v0, Lgpv;->f:Lnph;
-
-    invoke-static {}, Lnph;->g()Lnph;
-
-    move-result-object v3
-
-    iput-object v3, v0, Lgpv;->f:Lnph;
-
-    move-object v0, v2
+    invoke-direct {v0, v4}, Ljava/lang/String;-><init>(Ljava/lang/String;)V
 
     :goto_1
-    monitor-exit v1
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    invoke-interface {v3, v0}, Llis;->f(Ljava/lang/String;)V
+
+    iget-boolean v0, v1, Lhhl;->d:Z
 
     if-eqz v0, :cond_2
 
-    const-class v1, Ljava/lang/Object;
-
-    invoke-virtual {v0, v1}, Lnph;->e(Ljava/lang/Object;)Z
-
-    :cond_2
     const/4 v0, 0x0
 
-    sput v0, Lcom/Globals;->sHdr_process:I
+    iput-boolean v0, v1, Lhhl;->d:Z
 
-    invoke-static {v0}, Lcom/Globals;->sHdrProcessTime(I)V
+    invoke-virtual {v1}, Lhhl;->b()V
 
-    invoke-static {v0}, LAGC;->ProcIndicatorSwitch(I)V
+    const/4 v0, 0x0
+
+    goto :goto_2
+
+    :cond_2
+    iget-object v0, v1, Lhhl;->c:Ljava/util/LinkedList;
+
+    invoke-virtual {v0}, Ljava/util/LinkedList;->isEmpty()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_4
+
+    iget-object v0, v1, Lhhl;->f:Lpih;
+
+    invoke-static {}, Lpih;->f()Lpih;
+
+    move-result-object v3
+
+    iput-object v3, v1, Lhhl;->f:Lpih;
+
+    :goto_2
+    monitor-exit v2
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    if-eqz v0, :cond_3
+
+    const-class v1, Ljava/lang/Object;
+
+    invoke-virtual {v0, v1}, Lpih;->o(Ljava/lang/Object;)Z
+
+    :cond_3
+    const/4 v0, 0x0
+
+    sput v0, LAGC;->sHdr_process:I
+
+    invoke-static {v0}, LAGC;->sHdrProcessTime(I)V
 
     return-void
 
-    :cond_3
-    :try_start_1
+    :cond_4
+    :try_start_2
     new-instance v0, Ljava/lang/IllegalStateException;
 
-    const-string v2, "Service destroyed, not restarting but queue has items."
+    const-string v1, "Service destroyed, not restarting but queue has items."
 
-    invoke-direct {v0, v2}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+    invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 
     throw v0
 
     :catchall_0
     move-exception v0
 
-    monitor-exit v1
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+    monitor-exit v2
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
     throw v0
 .end method
@@ -646,31 +645,29 @@
 
     invoke-virtual {p0, p2, p1}, Lcom/google/android/apps/camera/processing/ProcessingService;->startForeground(ILandroid/app/Notification;)V
 
-    iget-object p1, p0, Lcom/google/android/apps/camera/processing/ProcessingService;->w:Ljava/lang/Thread;
+    iget-object p1, p0, Lcom/google/android/apps/camera/processing/ProcessingService;->v:Ljava/lang/Thread;
 
     if-nez p1, :cond_0
 
-    iget-object p1, p0, Lcom/google/android/apps/camera/processing/ProcessingService;->r:Lfby;
+    iget-object p1, p0, Lcom/google/android/apps/camera/processing/ProcessingService;->r:Lfjr;
 
-    new-instance p2, Lfbx;
+    new-instance p2, Lfjq;
 
-    invoke-direct {p2, p1}, Lfbx;-><init>(Lfby;)V
+    invoke-direct {p2, p1}, Lfjq;-><init>(Lfjr;)V
 
-    new-instance p1, Ljtw;
+    new-instance p1, Llab;
 
-    new-instance p3, Lgps;
+    new-instance p3, Lhhi;
 
-    const/4 v0, 0x0
+    invoke-direct {p3, p0, p2}, Lhhi;-><init>(Lcom/google/android/apps/camera/processing/ProcessingService;Lfjq;)V
 
-    invoke-direct {p3, p0, p2, v0}, Lgps;-><init>(Lcom/google/android/apps/camera/processing/ProcessingService;Lfbx;I)V
+    const/16 p2, 0x9
 
-    const-string p2, "CameraProcessingThread"
+    const-string v0, "CameraProcessingThread"
 
-    const/16 v0, 0x9
+    invoke-direct {p1, p2, p3, v0}, Llab;-><init>(ILjava/lang/Runnable;Ljava/lang/String;)V
 
-    invoke-direct {p1, v0, p3, p2}, Ljtw;-><init>(ILjava/lang/Runnable;Ljava/lang/String;)V
-
-    iput-object p1, p0, Lcom/google/android/apps/camera/processing/ProcessingService;->w:Ljava/lang/Thread;
+    iput-object p1, p0, Lcom/google/android/apps/camera/processing/ProcessingService;->v:Ljava/lang/Thread;
 
     invoke-virtual {p1}, Ljava/lang/Thread;->start()V
 

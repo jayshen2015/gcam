@@ -1,16 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <plurals name="accessibility_timelapse_manual_record_speed_desc">
-        <item quantity="other">Хуткасць пакадравай здымкі %dх</item>
-        <item quantity="one">Хуткасць пакадравай здымкі %dх</item>
-        <item quantity="few">Хуткасць пакадравай здымкі %dх</item>
-        <item quantity="many">Хуткасць пакадравай здымкі %dх</item>
-    </plurals>
-    <plurals name="number_of_cropped_face">
-        <item quantity="other">%d абрэзана.</item>
-        <item quantity="one">%d абрэзаны.</item>
-        <item quantity="few">%d абрэзана.</item>
-        <item quantity="many">%d абрэзана.</item>
+    <plurals name="number_of_faces_announcement">
+        <item quantity="other">%1$d твару.</item>
+        <item quantity="one">%1$d твар.</item>
+        <item quantity="few">%1$d твары.</item>
+        <item quantity="many">%1$d твараў.</item>
     </plurals>
     <plurals name="photos_remaining">
         <item quantity="other">Інфармацыя пра %s фота</item>
@@ -25,10 +19,10 @@
         <item quantity="many">(Выбраны %1$d праграм)</item>
     </plurals>
     <plurals name="social_share_info">
-        <item quantity="other">Абагульвайце ў сацыяльных сетках фота і відэа прама з Камеры. Выберыце не больш як %1$d праграмы. Фота і відэа, захаваныя ў закрытай папцы, не будуць абагульвацца.</item>
-        <item quantity="one">Абагульвайце ў сацыяльных сетках фота і відэа прама з Камеры. Выберыце не больш як %1$d праграму. Фота і відэа, захаваныя ў закрытай папцы, не будуць абагульвацца.</item>
-        <item quantity="few">Абагульвайце ў сацыяльных сетках фота і відэа прама з Камеры. Выберыце не больш як %1$d праграмы. Фота і відэа, захаваныя ў закрытай папцы, не будуць абагульвацца.</item>
-        <item quantity="many">Абагульвайце ў сацыяльных сетках фота і відэа прама з Камеры. Выберыце не больш як %1$d праграм. Фота і відэа, захаваныя ў закрытай папцы, не будуць абагульвацца.</item>
+        <item quantity="other">Хутка абагульвайце ў сацыяльных сетках фота і відэа непасрэдна з камеры. Выберыце не больш як %1$d праграмы. Фота і відэа, захаваныя ў закрытай папцы, не могуць абагульвацца.</item>
+        <item quantity="one">Хутка абагульвайце ў сацыяльных сетках фота і відэа непасрэдна з камеры. Выберыце не больш як %1$d праграму. Фота і відэа, захаваныя ў закрытай папцы, не могуць абагульвацца.</item>
+        <item quantity="few">Хутка абагульвайце ў сацыяльных сетках фота і відэа непасрэдна з камеры. Выберыце не больш як %1$d праграмы. Фота і відэа, захаваныя ў закрытай папцы, не могуць абагульвацца.</item>
+        <item quantity="many">Хутка абагульвайце ў сацыяльных сетках фота і відэа непасрэдна з камеры. Выберыце не больш як %1$d праграм. Фота і відэа, захаваныя ў закрытай папцы, не могуць абагульвацца.</item>
     </plurals>
     <plurals name="social_share_select_error">
         <item quantity="other">Выберыце не больш як %1$d сацыяльнай сеткі</item>

@@ -1,209 +1,552 @@
 .class public final Lmyt;
-.super Lmvk;
+.super Lmyq;
+
+# interfaces
+.implements Lmxo;
+.implements Lmwa;
 
 
 # static fields
-.field static final a:Lmyt;
+.field private static final a:Louj;
 
 
 # instance fields
-.field final transient b:[Ljava/lang/Object;
+.field private final b:Lmxl;
 
-.field public final transient c:Lmyt;
+.field private final c:Landroid/content/Context;
 
-.field private final transient d:Ljava/lang/Object;
+.field private final d:Lmwe;
 
-.field private final transient e:I
+.field private final e:Ljava/util/concurrent/Executor;
 
-.field private final transient f:I
+.field private final f:Lmyn;
+
+.field private final g:Lqkg;
+
+.field private final h:Lpyn;
+
+.field private final i:Lqkg;
+
+.field private final j:Lqkg;
 
 
 # direct methods
 .method static constructor <clinit>()V
     .locals 1
 
-    new-instance v0, Lmyt;
+    const-string v0, "com/google/android/libraries/performance/primes/metrics/crash/applicationexit/ApplicationExitMetricServiceImpl"
 
-    invoke-direct {v0}, Lmyt;-><init>()V
+    invoke-static {v0}, Louj;->h(Ljava/lang/String;)Louj;
 
-    sput-object v0, Lmyt;->a:Lmyt;
+    move-result-object v0
 
-    return-void
-.end method
-
-.method private constructor <init>()V
-    .locals 2
-
-    invoke-direct {p0}, Lmvk;-><init>()V
-
-    const/4 v0, 0x0
-
-    iput-object v0, p0, Lmyt;->d:Ljava/lang/Object;
-
-    const/4 v0, 0x0
-
-    new-array v1, v0, [Ljava/lang/Object;
-
-    iput-object v1, p0, Lmyt;->b:[Ljava/lang/Object;
-
-    iput v0, p0, Lmyt;->e:I
-
-    iput v0, p0, Lmyt;->f:I
-
-    iput-object p0, p0, Lmyt;->c:Lmyt;
+    sput-object v0, Lmyt;->a:Louj;
 
     return-void
 .end method
 
-.method private constructor <init>(Ljava/lang/Object;[Ljava/lang/Object;ILmyt;)V
-    .locals 0
+.method public constructor <init>(Lmxm;Landroid/content/Context;Lmwe;Ljava/util/concurrent/Executor;Lmyn;Lqkg;Lpyn;Lqkg;Lqkg;)V
+    .locals 1
 
-    invoke-direct {p0}, Lmvk;-><init>()V
+    invoke-direct {p0}, Lmyq;-><init>()V
 
-    iput-object p1, p0, Lmyt;->d:Ljava/lang/Object;
+    const/4 v0, 0x0
 
-    iput-object p2, p0, Lmyt;->b:[Ljava/lang/Object;
+    invoke-virtual {p1, p4, p7, v0}, Lmxm;->a(Ljava/util/concurrent/Executor;Lpyn;Lqkg;)Lmxl;
 
-    const/4 p1, 0x1
+    move-result-object p1
 
-    iput p1, p0, Lmyt;->e:I
+    iput-object p1, p0, Lmyt;->b:Lmxl;
 
-    iput p3, p0, Lmyt;->f:I
+    iput-object p2, p0, Lmyt;->c:Landroid/content/Context;
 
-    iput-object p4, p0, Lmyt;->c:Lmyt;
+    iput-object p3, p0, Lmyt;->d:Lmwe;
+
+    iput-object p4, p0, Lmyt;->e:Ljava/util/concurrent/Executor;
+
+    iput-object p5, p0, Lmyt;->f:Lmyn;
+
+    iput-object p6, p0, Lmyt;->g:Lqkg;
+
+    iput-object p7, p0, Lmyt;->h:Lpyn;
+
+    iput-object p8, p0, Lmyt;->i:Lqkg;
+
+    iput-object p9, p0, Lmyt;->j:Lqkg;
 
     return-void
 .end method
 
-.method public constructor <init>([Ljava/lang/Object;I)V
-    .locals 2
+.method public static synthetic s(Lmyt;)Lpht;
+    .locals 10
 
-    invoke-direct {p0}, Lmvk;-><init>()V
+    iget-object v0, p0, Lmyt;->h:Lpyn;
 
-    iput-object p1, p0, Lmyt;->b:[Ljava/lang/Object;
+    invoke-interface {v0}, Lpyn;->get()Ljava/lang/Object;
 
-    iput p2, p0, Lmyt;->f:I
+    move-result-object v0
 
-    const/4 v0, 0x0
+    check-cast v0, Lmym;
 
-    iput v0, p0, Lmyt;->e:I
+    invoke-virtual {v0}, Lmym;->b()Z
 
-    const/4 v1, 0x2
+    move-result v0
 
-    if-lt p2, v1, :cond_0
+    if-nez v0, :cond_0
 
-    invoke-static {p2}, Lmwn;->B(I)I
+    sget-object p0, Lphq;->a:Lpht;
+
+    goto/16 :goto_2
+
+    :cond_0
+    iget-object v0, p0, Lmyt;->c:Landroid/content/Context;
+
+    invoke-static {}, Landroid/app/Application;->getProcessName()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v0}, Landroid/content/Context;->getPackageName()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_1
+
+    sget-object p0, Lphq;->a:Lpht;
+
+    goto/16 :goto_2
+
+    :cond_1
+    iget-object v0, p0, Lmyt;->i:Lqkg;
+
+    invoke-interface {v0}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/Boolean;
+
+    invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
+
+    move-result v0
+
+    if-nez v0, :cond_2
+
+    sget-object p0, Lphq;->a:Lpht;
+
+    goto/16 :goto_2
+
+    :cond_2
+    iget-object v0, p0, Lmyt;->f:Lmyn;
+
+    const/4 v1, 0x0
+
+    const/4 v2, 0x0
+
+    iget-object v3, p0, Lmyt;->g:Lqkg;
+
+    invoke-interface {v3}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v3
+
+    check-cast v3, Landroid/content/SharedPreferences;
+
+    const/4 v4, 0x0
+
+    const-string v5, "lastExitProcessName"
+
+    invoke-interface {v3, v5, v4}, Landroid/content/SharedPreferences;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v3
+
+    iget-object v4, p0, Lmyt;->g:Lqkg;
+
+    invoke-interface {v4}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v4
+
+    check-cast v4, Landroid/content/SharedPreferences;
+
+    const-wide/16 v5, -0x1
+
+    const-string v7, "lastExitTimestamp"
+
+    invoke-interface {v4, v7, v5, v6}, Landroid/content/SharedPreferences;->getLong(Ljava/lang/String;J)J
+
+    move-result-wide v4
+
+    invoke-interface/range {v0 .. v5}, Lmyn;->a(IILjava/lang/String;J)Ljava/util/List;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Ljava/util/List;->isEmpty()Z
 
     move-result v1
 
-    goto :goto_0
+    if-eqz v1, :cond_3
 
-    :cond_0
-    const/4 v1, 0x0
+    sget-object p0, Lphq;->a:Lpht;
+
+    goto/16 :goto_2
+
+    :cond_3
+    iget-object v1, p0, Lmyt;->j:Lqkg;
+
+    invoke-interface {v1}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Lqws;
+
+    sget-object v2, Lqwr;->e:Lqwr;
+
+    invoke-virtual {v2}, Lppd;->m()Lpoy;
+
+    move-result-object v2
+
+    move-object v3, v0
+
+    check-cast v3, Lorr;
+
+    iget v3, v3, Lorr;->c:I
+
+    iget-boolean v4, v2, Lpoy;->c:Z
+
+    const/4 v5, 0x0
+
+    if-eqz v4, :cond_4
+
+    invoke-virtual {v2}, Lpoy;->m()V
+
+    iput-boolean v5, v2, Lpoy;->c:Z
+
+    :cond_4
+    iget-object v4, v2, Lpoy;->b:Lppd;
+
+    check-cast v4, Lqwr;
+
+    iget v6, v4, Lqwr;->a:I
+
+    or-int/lit8 v6, v6, 0x2
+
+    iput v6, v4, Lqwr;->a:I
+
+    iput v3, v4, Lqwr;->d:I
+
+    invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    iput-object v1, v4, Lqwr;->c:Lqws;
+
+    const/4 v3, 0x1
+
+    or-int/2addr v6, v3
+
+    iput v6, v4, Lqwr;->a:I
+
+    invoke-static {}, Lobr;->B()Ljava/util/HashSet;
+
+    move-result-object v4
+
+    const/4 v6, 0x0
 
     :goto_0
-    invoke-static {p1, p2, v1, v0}, Lmyz;->k([Ljava/lang/Object;III)Ljava/lang/Object;
+    iget-object v7, v1, Lqws;->a:Lppk;
 
-    move-result-object v0
+    invoke-interface {v7}, Lppk;->size()I
 
-    iput-object v0, p0, Lmyt;->d:Ljava/lang/Object;
+    move-result v7
 
-    const/4 v0, 0x1
+    if-ge v6, v7, :cond_6
 
-    invoke-static {p1, p2, v1, v0}, Lmyz;->k([Ljava/lang/Object;III)Ljava/lang/Object;
+    iget-object v7, v1, Lqws;->a:Lppk;
 
-    move-result-object v0
+    invoke-interface {v7, v6}, Lppk;->d(I)I
 
-    new-instance v1, Lmyt;
+    move-result v7
 
-    invoke-direct {v1, v0, p1, p2, p0}, Lmyt;-><init>(Ljava/lang/Object;[Ljava/lang/Object;ILmyt;)V
+    invoke-static {v7}, Lqno;->G(I)I
 
-    iput-object v1, p0, Lmyt;->c:Lmyt;
+    move-result v7
 
-    return-void
+    if-nez v7, :cond_5
+
+    const/4 v7, 0x1
+
+    :cond_5
+    add-int/lit8 v7, v7, -0x1
+
+    invoke-static {v7}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v7
+
+    invoke-interface {v4, v7}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
+
+    add-int/lit8 v6, v6, 0x1
+
+    goto :goto_0
+
+    :cond_6
+    move-object v1, v0
+
+    check-cast v1, Loom;
+
+    invoke-virtual {v1}, Loom;->t()Lotj;
+
+    move-result-object v1
+
+    :cond_7
+    :goto_1
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v6
+
+    if-eqz v6, :cond_b
+
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v6
+
+    check-cast v6, Lqwq;
+
+    iget v7, v6, Lqwq;->c:I
+
+    invoke-static {v7}, Lqno;->G(I)I
+
+    move-result v7
+
+    if-nez v7, :cond_8
+
+    const/4 v7, 0x1
+
+    :cond_8
+    add-int/lit8 v7, v7, -0x1
+
+    invoke-static {v7}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v7
+
+    invoke-interface {v4, v7}, Ljava/util/Set;->contains(Ljava/lang/Object;)Z
+
+    move-result v7
+
+    if-eqz v7, :cond_7
+
+    iget-boolean v7, v2, Lpoy;->c:Z
+
+    if-eqz v7, :cond_9
+
+    invoke-virtual {v2}, Lpoy;->m()V
+
+    iput-boolean v5, v2, Lpoy;->c:Z
+
+    :cond_9
+    iget-object v7, v2, Lpoy;->b:Lppd;
+
+    check-cast v7, Lqwr;
+
+    invoke-virtual {v6}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    iget-object v8, v7, Lqwr;->b:Lppm;
+
+    invoke-interface {v8}, Lppm;->c()Z
+
+    move-result v9
+
+    if-nez v9, :cond_a
+
+    invoke-static {v8}, Lppd;->B(Lppm;)Lppm;
+
+    move-result-object v8
+
+    iput-object v8, v7, Lqwr;->b:Lppm;
+
+    :cond_a
+    iget-object v7, v7, Lqwr;->b:Lppm;
+
+    invoke-interface {v7, v6}, Lppm;->add(Ljava/lang/Object;)Z
+
+    goto :goto_1
+
+    :cond_b
+    invoke-virtual {v2}, Lpoy;->h()Lppd;
+
+    move-result-object v1
+
+    check-cast v1, Lqwr;
+
+    iget-object v2, p0, Lmyt;->b:Lmxl;
+
+    invoke-static {}, Lmxg;->a()Lmxf;
+
+    move-result-object v3
+
+    sget-object v4, Lqyk;->t:Lqyk;
+
+    invoke-virtual {v4}, Lppd;->m()Lpoy;
+
+    move-result-object v4
+
+    iget-boolean v6, v4, Lpoy;->c:Z
+
+    if-eqz v6, :cond_c
+
+    invoke-virtual {v4}, Lpoy;->m()V
+
+    iput-boolean v5, v4, Lpoy;->c:Z
+
+    :cond_c
+    iget-object v5, v4, Lpoy;->b:Lppd;
+
+    check-cast v5, Lqyk;
+
+    invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    iput-object v1, v5, Lqyk;->s:Lqwr;
+
+    iget v1, v5, Lqyk;->a:I
+
+    const/high16 v6, 0x8000000
+
+    or-int/2addr v1, v6
+
+    iput v1, v5, Lqyk;->a:I
+
+    invoke-virtual {v4}, Lpoy;->h()Lppd;
+
+    move-result-object v1
+
+    check-cast v1, Lqyk;
+
+    invoke-virtual {v3, v1}, Lmxf;->d(Lqyk;)V
+
+    invoke-virtual {v3}, Lmxf;->a()Lmxg;
+
+    move-result-object v1
+
+    invoke-virtual {v2, v1}, Lmxl;->b(Lmxg;)Lpht;
+
+    move-result-object v1
+
+    new-instance v2, Lmyr;
+
+    invoke-direct {v2, p0, v0}, Lmyr;-><init>(Lmyt;Ljava/util/List;)V
+
+    iget-object p0, p0, Lmyt;->e:Ljava/util/concurrent/Executor;
+
+    invoke-static {v1, v2, p0}, Lpgb;->h(Lpht;Loiu;Ljava/util/concurrent/Executor;)Lpht;
+
+    move-result-object p0
+
+    :goto_2
+    return-object p0
 .end method
 
 
 # virtual methods
-.method public final a()Lmvk;
+.method public c(Landroid/app/Activity;)V
+    .locals 0
+
+    iget-object p1, p0, Lmyt;->d:Lmwe;
+
+    invoke-virtual {p1, p0}, Lmwe;->b(Lmwd;)V
+
+    invoke-virtual {p0}, Lmyt;->v()V
+
+    return-void
+.end method
+
+.method public t()V
     .locals 1
 
-    iget-object v0, p0, Lmyt;->c:Lmyt;
+    iget-object v0, p0, Lmyt;->d:Lmwe;
 
-    return-object v0
+    invoke-virtual {v0, p0}, Lmwe;->a(Lmwd;)V
+
+    return-void
 .end method
 
-.method public final cB()Lmwn;
-    .locals 4
+.method public synthetic u(Ljava/util/List;Ljava/lang/Void;)Ljava/lang/Void;
+    .locals 5
 
-    new-instance v0, Lmyw;
+    const/4 p2, 0x0
 
-    iget-object v1, p0, Lmyt;->b:[Ljava/lang/Object;
-
-    iget v2, p0, Lmyt;->e:I
-
-    iget v3, p0, Lmyt;->f:I
-
-    invoke-direct {v0, p0, v1, v2, v3}, Lmyw;-><init>(Lmwa;[Ljava/lang/Object;II)V
-
-    return-object v0
-.end method
-
-.method public final cC()Lmwn;
-    .locals 4
-
-    new-instance v0, Lmyy;
-
-    iget-object v1, p0, Lmyt;->b:[Ljava/lang/Object;
-
-    iget v2, p0, Lmyt;->e:I
-
-    iget v3, p0, Lmyt;->f:I
-
-    invoke-direct {v0, v1, v2, v3}, Lmyy;-><init>([Ljava/lang/Object;II)V
-
-    new-instance v1, Lmyx;
-
-    invoke-direct {v1, p0, v0}, Lmyx;-><init>(Lmwa;Lmvv;)V
-
-    return-object v1
-.end method
-
-.method public final cE()Z
-    .locals 1
-
-    const/4 v0, 0x0
-
-    return v0
-.end method
-
-.method public final get(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 4
-
-    iget-object v0, p0, Lmyt;->d:Ljava/lang/Object;
-
-    iget-object v1, p0, Lmyt;->b:[Ljava/lang/Object;
-
-    iget v2, p0, Lmyt;->f:I
-
-    iget v3, p0, Lmyt;->e:I
-
-    invoke-static {v0, v1, v2, v3, p1}, Lmyz;->t(Ljava/lang/Object;[Ljava/lang/Object;IILjava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {p1, p2}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object p1
 
-    if-nez p1, :cond_0
-
-    const/4 p1, 0x0
+    check-cast p1, Lqwq;
 
     :cond_0
+    iget-object v0, p1, Lqwq;->b:Ljava/lang/String;
+
+    iget-wide v1, p1, Lqwq;->f:J
+
+    add-int/lit8 p2, p2, 0x1
+
+    iget-object v3, p0, Lmyt;->g:Lqkg;
+
+    invoke-interface {v3}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v3
+
+    check-cast v3, Landroid/content/SharedPreferences;
+
+    invoke-interface {v3}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
+
+    move-result-object v3
+
+    const-string v4, "lastExitProcessName"
+
+    invoke-interface {v3, v4, v0}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
+
+    move-result-object v0
+
+    const-string v3, "lastExitTimestamp"
+
+    invoke-interface {v0, v3, v1, v2}, Landroid/content/SharedPreferences$Editor;->putLong(Ljava/lang/String;J)Landroid/content/SharedPreferences$Editor;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->commit()Z
+
+    move-result v0
+
+    if-nez v0, :cond_1
+
+    const/4 v0, 0x3
+
+    if-lt p2, v0, :cond_0
+
+    sget-object p1, Lmyt;->a:Louj;
+
+    invoke-virtual {p1}, Loue;->c()Lova;
+
+    move-result-object p1
+
+    const/16 p2, 0xe2b
+
+    const-string v0, "Failed to persist most recent App Exit"
+
+    invoke-static {p1, v0, p2}, Ld;->v(Lova;Ljava/lang/String;C)V
+
+    :cond_1
+    const/4 p1, 0x0
+
     return-object p1
 .end method
 
-.method public final size()I
-    .locals 1
+.method public v()V
+    .locals 2
 
-    iget v0, p0, Lmyt;->f:I
+    new-instance v0, Lmys;
 
-    return v0
+    invoke-direct {v0, p0}, Lmys;-><init>(Lmyt;)V
+
+    iget-object v1, p0, Lmyt;->e:Ljava/util/concurrent/Executor;
+
+    invoke-static {v0, v1}, Lplk;->aa(Lpgj;Ljava/util/concurrent/Executor;)Lpht;
+
+    return-void
 .end method

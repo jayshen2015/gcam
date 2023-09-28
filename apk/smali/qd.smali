@@ -1,131 +1,162 @@
-.class public final Lqd;
-.super Ljava/lang/Object;
-
-# interfaces
-.implements Landroid/os/Parcelable;
-
-
-# static fields
-.field public static final CREATOR:Landroid/os/Parcelable$Creator;
+.class public Lqd;
+.super Landroid/view/ViewGroup$MarginLayoutParams;
 
 
 # instance fields
-.field public final a:Landroid/content/IntentSender;
+.field public c:Lqs;
 
-.field public final b:Landroid/content/Intent;
+.field public final d:Landroid/graphics/Rect;
 
-.field public final c:I
+.field public e:Z
 
-.field public final d:I
+.field f:Z
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
-
-    new-instance v0, Lob;
-
-    const/4 v1, 0x5
-
-    invoke-direct {v0, v1}, Lob;-><init>(I)V
-
-    sput-object v0, Lqd;->CREATOR:Landroid/os/Parcelable$Creator;
-
-    return-void
-.end method
-
-.method public constructor <init>(Landroid/content/IntentSender;Landroid/content/Intent;II)V
+.method public constructor <init>(II)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0, p1, p2}, Landroid/view/ViewGroup$MarginLayoutParams;-><init>(II)V
 
-    iput-object p1, p0, Lqd;->a:Landroid/content/IntentSender;
+    new-instance p1, Landroid/graphics/Rect;
 
-    iput-object p2, p0, Lqd;->b:Landroid/content/Intent;
+    invoke-direct {p1}, Landroid/graphics/Rect;-><init>()V
 
-    iput p3, p0, Lqd;->c:I
+    iput-object p1, p0, Lqd;->d:Landroid/graphics/Rect;
 
-    iput p4, p0, Lqd;->d:I
+    const/4 p1, 0x1
+
+    iput-boolean p1, p0, Lqd;->e:Z
+
+    const/4 p1, 0x0
+
+    iput-boolean p1, p0, Lqd;->f:Z
 
     return-void
 .end method
 
-.method public constructor <init>(Landroid/os/Parcel;)V
-    .locals 1
+.method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
+    .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0, p1, p2}, Landroid/view/ViewGroup$MarginLayoutParams;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
-    const-class v0, Landroid/content/IntentSender;
+    new-instance p1, Landroid/graphics/Rect;
 
-    invoke-virtual {v0}, Ljava/lang/Class;->getClassLoader()Ljava/lang/ClassLoader;
+    invoke-direct {p1}, Landroid/graphics/Rect;-><init>()V
 
-    move-result-object v0
+    iput-object p1, p0, Lqd;->d:Landroid/graphics/Rect;
 
-    invoke-virtual {p1, v0}, Landroid/os/Parcel;->readParcelable(Ljava/lang/ClassLoader;)Landroid/os/Parcelable;
+    const/4 p1, 0x1
 
-    move-result-object v0
+    iput-boolean p1, p0, Lqd;->e:Z
 
-    check-cast v0, Landroid/content/IntentSender;
+    const/4 p1, 0x0
 
-    iput-object v0, p0, Lqd;->a:Landroid/content/IntentSender;
+    iput-boolean p1, p0, Lqd;->f:Z
 
-    const-class v0, Landroid/content/Intent;
+    return-void
+.end method
 
-    invoke-virtual {v0}, Ljava/lang/Class;->getClassLoader()Ljava/lang/ClassLoader;
+.method public constructor <init>(Landroid/view/ViewGroup$LayoutParams;)V
+    .locals 0
 
-    move-result-object v0
+    invoke-direct {p0, p1}, Landroid/view/ViewGroup$MarginLayoutParams;-><init>(Landroid/view/ViewGroup$LayoutParams;)V
 
-    invoke-virtual {p1, v0}, Landroid/os/Parcel;->readParcelable(Ljava/lang/ClassLoader;)Landroid/os/Parcelable;
+    new-instance p1, Landroid/graphics/Rect;
 
-    move-result-object v0
+    invoke-direct {p1}, Landroid/graphics/Rect;-><init>()V
 
-    check-cast v0, Landroid/content/Intent;
+    iput-object p1, p0, Lqd;->d:Landroid/graphics/Rect;
 
-    iput-object v0, p0, Lqd;->b:Landroid/content/Intent;
+    const/4 p1, 0x1
 
-    invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
+    iput-boolean p1, p0, Lqd;->e:Z
 
-    move-result v0
+    const/4 p1, 0x0
 
-    iput v0, p0, Lqd;->c:I
+    iput-boolean p1, p0, Lqd;->f:Z
 
-    invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
+    return-void
+.end method
 
-    move-result p1
+.method public constructor <init>(Landroid/view/ViewGroup$MarginLayoutParams;)V
+    .locals 0
 
-    iput p1, p0, Lqd;->d:I
+    invoke-direct {p0, p1}, Landroid/view/ViewGroup$MarginLayoutParams;-><init>(Landroid/view/ViewGroup$MarginLayoutParams;)V
+
+    new-instance p1, Landroid/graphics/Rect;
+
+    invoke-direct {p1}, Landroid/graphics/Rect;-><init>()V
+
+    iput-object p1, p0, Lqd;->d:Landroid/graphics/Rect;
+
+    const/4 p1, 0x1
+
+    iput-boolean p1, p0, Lqd;->e:Z
+
+    const/4 p1, 0x0
+
+    iput-boolean p1, p0, Lqd;->f:Z
+
+    return-void
+.end method
+
+.method public constructor <init>(Lqd;)V
+    .locals 0
+
+    invoke-direct {p0, p1}, Landroid/view/ViewGroup$MarginLayoutParams;-><init>(Landroid/view/ViewGroup$LayoutParams;)V
+
+    new-instance p1, Landroid/graphics/Rect;
+
+    invoke-direct {p1}, Landroid/graphics/Rect;-><init>()V
+
+    iput-object p1, p0, Lqd;->d:Landroid/graphics/Rect;
+
+    const/4 p1, 0x1
+
+    iput-boolean p1, p0, Lqd;->e:Z
+
+    const/4 p1, 0x0
+
+    iput-boolean p1, p0, Lqd;->f:Z
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final describeContents()I
+.method public final a()I
     .locals 1
 
-    const/4 v0, 0x0
+    iget-object v0, p0, Lqd;->c:Lqs;
+
+    invoke-virtual {v0}, Lqs;->b()I
+
+    move-result v0
 
     return v0
 .end method
 
-.method public final writeToParcel(Landroid/os/Parcel;I)V
+.method public final b()Z
     .locals 1
 
-    iget-object v0, p0, Lqd;->a:Landroid/content/IntentSender;
+    iget-object v0, p0, Lqd;->c:Lqs;
 
-    invoke-virtual {p1, v0, p2}, Landroid/os/Parcel;->writeParcelable(Landroid/os/Parcelable;I)V
+    invoke-virtual {v0}, Lqs;->x()Z
 
-    iget-object v0, p0, Lqd;->b:Landroid/content/Intent;
+    move-result v0
 
-    invoke-virtual {p1, v0, p2}, Landroid/os/Parcel;->writeParcelable(Landroid/os/Parcelable;I)V
+    return v0
+.end method
 
-    iget p2, p0, Lqd;->c:I
+.method public final c()Z
+    .locals 1
 
-    invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeInt(I)V
+    iget-object v0, p0, Lqd;->c:Lqs;
 
-    iget p2, p0, Lqd;->d:I
+    invoke-virtual {v0}, Lqs;->u()Z
 
-    invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeInt(I)V
+    move-result v0
 
-    return-void
+    return v0
 .end method

@@ -1,409 +1,257 @@
-.class public final Linr;
-.super Liod;
+.class final enum Linr;
+.super Ljava/lang/Enum;
 
-# interfaces
-.implements Lhiv;
+
+# static fields
+.field public static final enum a:Linr;
+
+.field public static final enum b:Linr;
+
+.field public static final enum c:Linr;
+
+.field public static final enum d:Linr;
+
+.field public static final enum e:Linr;
+
+.field public static final enum f:Linr;
+
+.field public static final enum g:Linr;
+
+.field public static final enum h:Linr;
+
+.field public static final enum i:Linr;
+
+.field public static final enum j:Linr;
+
+.field private static final synthetic l:[Linr;
 
 
 # instance fields
-.field public final a:Lhiu;
-
-.field public final b:Lhiw;
-
-.field public final c:Lhiw;
-
-.field private final l:Lhiw;
+.field public final k:I
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 4
+.method static constructor <clinit>()V
+    .locals 16
 
-    invoke-direct {p0}, Liod;-><init>()V
+    new-instance v0, Linr;
 
-    new-instance v0, Lino;
-
-    invoke-direct {v0, p0}, Lino;-><init>(Linr;)V
-
-    new-instance v1, Lhiw;
+    const-string v1, "STATE_UNINITIALIZED"
 
     const/4 v2, 0x0
 
-    new-array v3, v2, [Lhis;
+    invoke-direct {v0, v1, v2, v2}, Linr;-><init>(Ljava/lang/String;II)V
 
-    invoke-direct {v1, v0, v3}, Lhiw;-><init>(Lhis;[Lhis;)V
+    sput-object v0, Linr;->a:Linr;
 
-    iput-object v1, p0, Linr;->b:Lhiw;
+    new-instance v1, Linr;
 
-    new-instance v0, Linp;
+    const-string v3, "STATE_PREPARING_ON_START"
 
-    invoke-direct {v0, p0}, Linp;-><init>(Linr;)V
+    const/4 v4, 0x1
 
-    new-instance v1, Lhiw;
+    invoke-direct {v1, v3, v4, v4}, Linr;-><init>(Ljava/lang/String;II)V
 
-    new-array v3, v2, [Lhis;
+    sput-object v1, Linr;->b:Linr;
 
-    invoke-direct {v1, v0, v3}, Lhiw;-><init>(Lhis;[Lhis;)V
+    new-instance v3, Linr;
 
-    iput-object v1, p0, Linr;->c:Lhiw;
+    const-string v5, "STATE_PREPARING_ON_RESUME"
 
-    new-instance v0, Linq;
+    const/4 v6, 0x2
 
-    invoke-direct {v0, p0}, Linq;-><init>(Linr;)V
+    const/16 v7, 0x11
 
-    new-instance v1, Lhiw;
+    invoke-direct {v3, v5, v6, v7}, Linr;-><init>(Ljava/lang/String;II)V
 
-    new-array v3, v2, [Lhis;
+    sput-object v3, Linr;->c:Linr;
 
-    invoke-direct {v1, v0, v3}, Lhiw;-><init>(Lhis;[Lhis;)V
+    new-instance v5, Linr;
 
-    iput-object v1, p0, Linr;->l:Lhiw;
+    const-string v7, "STATE_PREPARING_ON_PREVIEW_STARTED"
 
-    new-instance v0, Lhiu;
+    const/4 v8, 0x3
 
-    invoke-direct {v0, v1, v2}, Lhiu;-><init>(Lhiw;Z)V
+    const/16 v9, 0x101
 
-    iput-object v0, p0, Linr;->a:Lhiu;
+    invoke-direct {v5, v7, v8, v9}, Linr;-><init>(Ljava/lang/String;II)V
 
-    invoke-virtual {v0}, Lhiu;->f()V
+    sput-object v5, Linr;->d:Linr;
+
+    new-instance v7, Linr;
+
+    const-string v9, "STATE_IDLE"
+
+    const/4 v10, 0x4
+
+    const/16 v11, 0x111
+
+    invoke-direct {v7, v9, v10, v11}, Linr;-><init>(Ljava/lang/String;II)V
+
+    sput-object v7, Linr;->e:Linr;
+
+    new-instance v9, Linr;
+
+    const-string v11, "STATE_PRE_RECORDING"
+
+    const/4 v12, 0x5
+
+    const/16 v13, 0x1000
+
+    invoke-direct {v9, v11, v12, v13}, Linr;-><init>(Ljava/lang/String;II)V
+
+    sput-object v9, Linr;->f:Linr;
+
+    new-instance v11, Linr;
+
+    const-string v13, "STATE_RECORDING_PAUSE"
+
+    const/4 v14, 0x6
+
+    const/high16 v15, 0x10000
+
+    invoke-direct {v11, v13, v14, v15}, Linr;-><init>(Ljava/lang/String;II)V
+
+    sput-object v11, Linr;->g:Linr;
+
+    new-instance v13, Linr;
+
+    const-string v15, "STATE_RECORDING"
+
+    const/4 v14, 0x7
+
+    const/high16 v12, 0x100000
+
+    invoke-direct {v13, v15, v14, v12}, Linr;-><init>(Ljava/lang/String;II)V
+
+    sput-object v13, Linr;->h:Linr;
+
+    new-instance v12, Linr;
+
+    const-string v15, "STATE_PROCESSING"
+
+    const/16 v14, 0x8
+
+    const/high16 v10, 0x1000000
+
+    invoke-direct {v12, v15, v14, v10}, Linr;-><init>(Ljava/lang/String;II)V
+
+    sput-object v12, Linr;->i:Linr;
+
+    new-instance v10, Linr;
+
+    const-string v15, "STATE_RECORDING_ERROR"
+
+    const/16 v14, 0x9
+
+    const/high16 v8, 0x10000000
+
+    invoke-direct {v10, v15, v14, v8}, Linr;-><init>(Ljava/lang/String;II)V
+
+    sput-object v10, Linr;->j:Linr;
+
+    const/16 v8, 0xa
+
+    new-array v8, v8, [Linr;
+
+    aput-object v0, v8, v2
+
+    aput-object v1, v8, v4
+
+    aput-object v3, v8, v6
+
+    const/4 v0, 0x3
+
+    aput-object v5, v8, v0
+
+    const/4 v0, 0x4
+
+    aput-object v7, v8, v0
+
+    const/4 v0, 0x5
+
+    aput-object v9, v8, v0
+
+    const/4 v0, 0x6
+
+    aput-object v11, v8, v0
+
+    const/4 v0, 0x7
+
+    aput-object v13, v8, v0
+
+    const/16 v0, 0x8
+
+    aput-object v12, v8, v0
+
+    aput-object v10, v8, v14
+
+    sput-object v8, Linr;->l:[Linr;
 
     return-void
 .end method
 
-
-# virtual methods
-.method public final a()V
-    .locals 1
-
-    iget-object v0, p0, Linr;->a:Lhiu;
-
-    invoke-virtual {v0}, Lhiu;->a()Lhiw;
-
-    move-result-object v0
-
-    if-nez v0, :cond_0
-
-    return-void
-
-    :cond_0
-    iget-object v0, p0, Linr;->a:Lhiu;
-
-    invoke-virtual {v0}, Lhiu;->a()Lhiw;
-
-    move-result-object v0
-
-    iget-object v0, v0, Lhiw;->a:Lhis;
-
-    check-cast v0, Linx;
-
-    invoke-virtual {v0}, Linx;->a()V
-
-    return-void
-.end method
-
-.method public final b()V
-    .locals 1
-
-    iget-object v0, p0, Linr;->a:Lhiu;
-
-    invoke-virtual {v0}, Lhiu;->a()Lhiw;
-
-    move-result-object v0
-
-    if-nez v0, :cond_0
-
-    return-void
-
-    :cond_0
-    iget-object v0, p0, Linr;->a:Lhiu;
-
-    invoke-virtual {v0}, Lhiu;->a()Lhiw;
-
-    move-result-object v0
-
-    iget-object v0, v0, Lhiw;->a:Lhis;
-
-    check-cast v0, Linx;
-
-    invoke-virtual {v0}, Linx;->b()V
-
-    return-void
-.end method
-
-.method public final c()V
-    .locals 1
-
-    iget-object v0, p0, Linr;->a:Lhiu;
-
-    invoke-virtual {v0}, Lhiu;->a()Lhiw;
-
-    move-result-object v0
-
-    if-nez v0, :cond_0
-
-    return-void
-
-    :cond_0
-    iget-object v0, p0, Linr;->a:Lhiu;
-
-    invoke-virtual {v0}, Lhiu;->a()Lhiw;
-
-    move-result-object v0
-
-    iget-object v0, v0, Lhiw;->a:Lhis;
-
-    check-cast v0, Linx;
-
-    invoke-virtual {v0}, Linx;->c()V
-
-    return-void
-.end method
-
-.method public final co()V
-    .locals 1
-
-    iget-object v0, p0, Linr;->a:Lhiu;
-
-    invoke-virtual {v0}, Lhiu;->a()Lhiw;
-
-    move-result-object v0
-
-    if-nez v0, :cond_0
-
-    return-void
-
-    :cond_0
-    iget-object v0, p0, Linr;->a:Lhiu;
-
-    invoke-virtual {v0}, Lhiu;->a()Lhiw;
-
-    move-result-object v0
-
-    iget-object v0, v0, Lhiw;->a:Lhis;
-
-    check-cast v0, Linx;
-
-    invoke-virtual {v0}, Linx;->co()V
-
-    return-void
-.end method
-
-.method public final d()V
-    .locals 1
-
-    iget-object v0, p0, Linr;->a:Lhiu;
-
-    invoke-virtual {v0}, Lhiu;->a()Lhiw;
-
-    move-result-object v0
-
-    if-nez v0, :cond_0
-
-    return-void
-
-    :cond_0
-    iget-object v0, p0, Linr;->a:Lhiu;
-
-    invoke-virtual {v0}, Lhiu;->a()Lhiw;
-
-    move-result-object v0
-
-    iget-object v0, v0, Lhiw;->a:Lhis;
-
-    check-cast v0, Linx;
-
-    invoke-virtual {v0}, Linx;->d()V
-
-    return-void
-.end method
-
-.method public final e()V
-    .locals 1
-
-    iget-object v0, p0, Linr;->a:Lhiu;
-
-    invoke-virtual {v0}, Lhiu;->b()V
-
-    iget-object v0, p0, Linr;->b:Lhiw;
-
-    invoke-virtual {v0}, Lhiw;->e()V
-
-    iget-object v0, p0, Linr;->c:Lhiw;
-
-    invoke-virtual {v0}, Lhiw;->e()V
-
-    iget-object v0, p0, Linr;->l:Lhiw;
-
-    invoke-virtual {v0}, Lhiw;->e()V
-
-    return-void
-.end method
-
-.method public final f()V
-    .locals 1
-
-    iget-object v0, p0, Linr;->a:Lhiu;
-
-    invoke-virtual {v0}, Lhiu;->c()V
-
-    return-void
-.end method
-
-.method public final g()V
-    .locals 1
-
-    iget-object v0, p0, Linr;->a:Lhiu;
-
-    invoke-virtual {v0}, Lhiu;->d()V
-
-    return-void
-.end method
-
-.method public final h()V
+.method private constructor <init>(Ljava/lang/String;II)V
     .locals 0
 
-    invoke-static {p0}, Ljcb;->l(Lhiv;)V
+    invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    iput p3, p0, Linr;->k:I
 
     return-void
 .end method
 
-.method public final i()V
+.method static a(Linr;)Z
     .locals 1
 
-    iget-object v0, p0, Linr;->a:Lhiu;
+    sget-object v0, Linr;->g:Linr;
 
-    invoke-virtual {v0}, Lhiu;->a()Lhiw;
+    invoke-virtual {p0, v0}, Linr;->equals(Ljava/lang/Object;)Z
 
-    move-result-object v0
+    move-result v0
 
-    if-nez v0, :cond_0
+    if-nez v0, :cond_1
 
-    return-void
+    sget-object v0, Linr;->h:Linr;
 
-    :cond_0
-    iget-object v0, p0, Linr;->a:Lhiu;
+    invoke-virtual {p0, v0}, Linr;->equals(Ljava/lang/Object;)Z
 
-    invoke-virtual {v0}, Lhiu;->a()Lhiw;
+    move-result v0
 
-    move-result-object v0
+    if-nez v0, :cond_1
 
-    iget-object v0, v0, Lhiw;->a:Lhis;
+    sget-object v0, Linr;->j:Linr;
 
-    check-cast v0, Linx;
+    invoke-virtual {p0, v0}, Linr;->equals(Ljava/lang/Object;)Z
 
-    invoke-virtual {v0}, Linx;->i()V
+    move-result p0
 
-    return-void
-.end method
+    if-eqz p0, :cond_0
 
-.method public final j(Lioe;Landroid/net/Uri;Lini;Linw;IZZ)V
-    .locals 9
-
-    move-object v0, p0
-
-    move-object v2, p1
-
-    iget-object v1, v0, Linr;->a:Lhiu;
-
-    invoke-virtual {v1}, Lhiu;->a()Lhiw;
-
-    move-result-object v1
-
-    if-nez v1, :cond_0
-
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    iput-object v2, v0, Liod;->d:Lioe;
-
-    move-object v1, v2
-
-    check-cast v1, Liof;
-
-    iget-object v1, v1, Liof;->f:Landroid/widget/VideoView;
-
-    iput-object v1, v0, Liod;->e:Landroid/widget/VideoView;
-
-    move-object v4, p3
-
-    iput-object v4, v0, Liod;->f:Lini;
-
-    move-object v5, p4
-
-    iput-object v5, v0, Liod;->g:Linw;
-
-    move-object v3, p2
-
-    iput-object v3, v0, Liod;->h:Landroid/net/Uri;
-
-    move v6, p5
-
-    iput v6, v0, Liod;->i:I
-
-    move v7, p6
-
-    iput-boolean v7, v0, Liod;->j:Z
-
-    move/from16 v8, p7
-
-    iput-boolean v8, v0, Liod;->k:Z
-
-    return-void
+    goto :goto_0
 
     :cond_0
-    move-object v3, p2
+    const/4 p0, 0x0
 
-    move-object v4, p3
+    return p0
 
-    move-object v5, p4
+    :cond_1
+    :goto_0
+    const/4 p0, 0x1
 
-    move v6, p5
-
-    move v7, p6
-
-    move/from16 v8, p7
-
-    iget-object v1, v0, Linr;->a:Lhiu;
-
-    invoke-virtual {v1}, Lhiu;->a()Lhiw;
-
-    move-result-object v1
-
-    iget-object v1, v1, Lhiw;->a:Lhis;
-
-    check-cast v1, Linx;
-
-    move-object v2, p1
-
-    invoke-virtual/range {v1 .. v8}, Linx;->j(Lioe;Landroid/net/Uri;Lini;Linw;IZZ)V
-
-    return-void
+    return p0
 .end method
 
-.method public final k()V
+.method public static values()[Linr;
     .locals 1
 
-    iget-object v0, p0, Linr;->a:Lhiu;
+    sget-object v0, Linr;->l:[Linr;
 
-    invoke-virtual {v0}, Lhiu;->a()Lhiw;
-
-    move-result-object v0
-
-    if-nez v0, :cond_0
-
-    return-void
-
-    :cond_0
-    iget-object v0, p0, Linr;->a:Lhiu;
-
-    invoke-virtual {v0}, Lhiu;->a()Lhiw;
+    invoke-virtual {v0}, [Linr;->clone()Ljava/lang/Object;
 
     move-result-object v0
 
-    iget-object v0, v0, Lhiw;->a:Lhis;
+    check-cast v0, [Linr;
 
-    check-cast v0, Linx;
-
-    invoke-virtual {v0}, Linx;->k()V
-
-    return-void
+    return-object v0
 .end method

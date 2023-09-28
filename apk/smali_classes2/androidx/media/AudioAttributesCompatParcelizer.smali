@@ -11,7 +11,7 @@
     return-void
 .end method
 
-.method public static read(Latt;)Landroidx/media/AudioAttributesCompat;
+.method public static read(Laks;)Landroidx/media/AudioAttributesCompat;
     .locals 2
 
     new-instance v0, Landroidx/media/AudioAttributesCompat;
@@ -20,7 +20,7 @@
 
     iget-object v1, v0, Landroidx/media/AudioAttributesCompat;->a:Landroidx/media/AudioAttributesImpl;
 
-    invoke-virtual {p0, v1}, Latt;->t(Latu;)Latu;
+    invoke-virtual {p0, v1}, Laks;->t(Lakt;)Lakt;
 
     move-result-object p0
 
@@ -31,12 +31,12 @@
     return-object v0
 .end method
 
-.method public static write(Landroidx/media/AudioAttributesCompat;Latt;)V
+.method public static write(Landroidx/media/AudioAttributesCompat;Laks;)V
     .locals 0
 
     iget-object p0, p0, Landroidx/media/AudioAttributesCompat;->a:Landroidx/media/AudioAttributesImpl;
 
-    invoke-virtual {p1, p0}, Latt;->u(Latu;)V
+    invoke-virtual {p1, p0}, Laks;->u(Lakt;)V
 
     return-void
 .end method

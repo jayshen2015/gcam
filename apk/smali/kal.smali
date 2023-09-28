@@ -1,43 +1,74 @@
-.class public abstract Lkal;
-.super Ljava/lang/Object;
+.class final Lkal;
+.super Landroid/animation/AnimatorListenerAdapter;
 
 
 # instance fields
-.field public final a:Ljava/lang/String;
-
-.field public final b:I
+.field final synthetic a:Lcom/google/android/apps/camera/zoomui/ZoomUi;
 
 
 # direct methods
-.method protected constructor <init>()V
-    .locals 1
+.method public constructor <init>(Lcom/google/android/apps/camera/zoomui/ZoomUi;)V
+    .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lkal;->a:Lcom/google/android/apps/camera/zoomui/ZoomUi;
 
-    const-string v0, "CAM_"
-
-    iput-object v0, p0, Lkal;->a:Ljava/lang/String;
-
-    invoke-virtual {v0}, Ljava/lang/String;->length()I
-
-    move-result v0
-
-    rsub-int/lit8 v0, v0, 0x17
-
-    iput v0, p0, Lkal;->b:I
+    invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method protected abstract a(Ljava/lang/String;)Lkam;
+.method public final onAnimationCancel(Landroid/animation/Animator;)V
+    .locals 1
+
+    invoke-super {p0, p1}, Landroid/animation/AnimatorListenerAdapter;->onAnimationCancel(Landroid/animation/Animator;)V
+
+    iget-object p1, p0, Lkal;->a:Lcom/google/android/apps/camera/zoomui/ZoomUi;
+
+    invoke-virtual {p1}, Lcom/google/android/apps/camera/zoomui/ZoomUi;->n()Lcom/google/android/apps/camera/zoomui/ZoomKnob;
+
+    move-result-object p1
+
+    const/4 v0, 0x0
+
+    invoke-virtual {p1, v0}, Lcom/google/android/apps/camera/zoomui/ZoomKnob;->b(Z)V
+
+    iget-object p1, p0, Lkal;->a:Lcom/google/android/apps/camera/zoomui/ZoomUi;
+
+    invoke-virtual {p1}, Lcom/google/android/apps/camera/zoomui/ZoomUi;->n()Lcom/google/android/apps/camera/zoomui/ZoomKnob;
+
+    move-result-object p1
+
+    invoke-virtual {p1, v0}, Lcom/google/android/apps/camera/zoomui/ZoomKnob;->setVisibility(I)V
+
+    return-void
 .end method
 
-.method public b(Ljava/lang/String;I)Z
-    .locals 0
+.method public final onAnimationStart(Landroid/animation/Animator;)V
+    .locals 1
 
-    const/4 p1, 0x0
+    invoke-super {p0, p1}, Landroid/animation/AnimatorListenerAdapter;->onAnimationStart(Landroid/animation/Animator;)V
 
-    throw p1
+    iget-object p1, p0, Lkal;->a:Lcom/google/android/apps/camera/zoomui/ZoomUi;
+
+    invoke-virtual {p1}, Lcom/google/android/apps/camera/zoomui/ZoomUi;->n()Lcom/google/android/apps/camera/zoomui/ZoomKnob;
+
+    move-result-object p1
+
+    const/4 v0, 0x0
+
+    invoke-virtual {p1, v0}, Lcom/google/android/apps/camera/zoomui/ZoomKnob;->b(Z)V
+
+    iget-object p1, p0, Lkal;->a:Lcom/google/android/apps/camera/zoomui/ZoomUi;
+
+    invoke-virtual {p1}, Lcom/google/android/apps/camera/zoomui/ZoomUi;->n()Lcom/google/android/apps/camera/zoomui/ZoomKnob;
+
+    move-result-object p1
+
+    const/4 v0, 0x4
+
+    invoke-virtual {p1, v0}, Lcom/google/android/apps/camera/zoomui/ZoomKnob;->setVisibility(I)V
+
+    return-void
 .end method

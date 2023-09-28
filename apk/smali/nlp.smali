@@ -1,180 +1,174 @@
-.class public final Lnlp;
-.super Lnws;
-
-# interfaces
-.implements Lnxz;
-
-
-# static fields
-.field public static final d:Lnlp;
-
-.field private static volatile e:Lnyf;
+.class final Lnlp;
+.super Ljava/lang/Object;
 
 
 # instance fields
-.field public a:I
+.field public final a:Lnmf;
 
-.field public b:I
-
-.field public c:J
+.field public final b:Ljava/util/List;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
+.method public constructor <init>()V
+    .locals 0
 
-    new-instance v0, Lnlp;
-
-    invoke-direct {v0}, Lnlp;-><init>()V
-
-    sput-object v0, Lnlp;->d:Lnlp;
-
-    const-class v1, Lnlp;
-
-    invoke-static {v1, v0}, Lnws;->aa(Ljava/lang/Class;Lnws;)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
-.method private constructor <init>()V
+.method public constructor <init>(Lnmf;Ljava/util/List;)V
     .locals 0
 
-    invoke-direct {p0}, Lnws;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lnlp;->a:Lnmf;
+
+    iput-object p2, p0, Lnlp;->b:Ljava/util/List;
 
     return-void
+.end method
+
+.method static a()Lnli;
+    .locals 1
+
+    new-instance v0, Lnli;
+
+    invoke-direct {v0}, Lnli;-><init>()V
+
+    return-object v0
 .end method
 
 
 # virtual methods
-.method protected final a(ILjava/lang/Object;)Ljava/lang/Object;
-    .locals 3
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 4
 
-    add-int/lit8 p1, p1, -0x1
+    const/4 v0, 0x1
 
-    const/4 p2, 0x1
+    if-ne p1, p0, :cond_0
 
-    packed-switch p1, :pswitch_data_0
-
-    :pswitch_0
-    const/4 p1, 0x0
-
-    return-object p1
-
-    :pswitch_1
-    sget-object p1, Lnlp;->e:Lnyf;
-
-    if-nez p1, :cond_1
-
-    const-class p2, Lnlp;
-
-    monitor-enter p2
-
-    :try_start_0
-    sget-object p1, Lnlp;->e:Lnyf;
-
-    if-nez p1, :cond_0
-
-    new-instance p1, Lnwo;
-
-    sget-object v0, Lnlp;->d:Lnlp;
-
-    invoke-direct {p1, v0}, Lnwo;-><init>(Lnws;)V
-
-    sput-object p1, Lnlp;->e:Lnyf;
+    return v0
 
     :cond_0
-    monitor-exit p2
-
-    goto :goto_0
-
-    :catchall_0
-    move-exception p1
-
-    monitor-exit p2
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw p1
-
-    :cond_1
-    :goto_0
-    return-object p1
-
-    :pswitch_2
-    sget-object p1, Lnlp;->d:Lnlp;
-
-    return-object p1
-
-    :pswitch_3
-    new-instance p1, Lnwn;
-
-    sget-object p2, Lnlp;->d:Lnlp;
-
-    invoke-direct {p1, p2}, Lnwn;-><init>(Lnws;)V
-
-    return-object p1
-
-    :pswitch_4
-    new-instance p1, Lnlp;
-
-    invoke-direct {p1}, Lnlp;-><init>()V
-
-    return-object p1
-
-    :pswitch_5
-    const-string p1, "a"
-
-    const-string v0, "\u0001\u0002\u0000\u0001\u0001\u0002\u0002\u0000\u0000\u0000\u0001\u100c\u0000\u0002\u1002\u0001"
-
-    const/4 v1, 0x4
-
-    new-array v1, v1, [Ljava/lang/Object;
+    instance-of v1, p1, Lnlp;
 
     const/4 v2, 0x0
 
-    aput-object p1, v1, v2
+    if-eqz v1, :cond_1
 
-    const-string p1, "b"
+    check-cast p1, Lnlp;
 
-    aput-object p1, v1, p2
+    iget-object v1, p0, Lnlp;->a:Lnmf;
 
-    const/4 p1, 0x2
+    iget-object v3, p1, Lnlp;->a:Lnmf;
 
-    sget-object p2, Lnkx;->p:Lnww;
+    invoke-virtual {v1, v3}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
 
-    aput-object p2, v1, p1
+    move-result v1
 
-    const/4 p1, 0x3
+    if-eqz v1, :cond_1
 
-    const-string p2, "c"
+    iget-object v1, p0, Lnlp;->b:Ljava/util/List;
 
-    aput-object p2, v1, p1
+    iget-object p1, p1, Lnlp;->b:Ljava/util/List;
 
-    sget-object p1, Lnlp;->d:Lnlp;
+    invoke-interface {v1, p1}, Ljava/util/List;->equals(Ljava/lang/Object;)Z
 
-    invoke-static {p1, v0, v1}, Lnlp;->X(Lnxy;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/Object;
+    move-result p1
 
-    move-result-object p1
+    if-eqz p1, :cond_1
 
-    return-object p1
+    return v0
 
-    :pswitch_6
-    invoke-static {p2}, Ljava/lang/Byte;->valueOf(B)Ljava/lang/Byte;
+    :cond_1
+    return v2
+.end method
 
-    move-result-object p1
+.method public final hashCode()I
+    .locals 2
 
-    return-object p1
+    iget-object v0, p0, Lnlp;->a:Lnmf;
 
-    nop
+    invoke-virtual {v0}, Ljava/lang/Object;->hashCode()I
 
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_6
-        :pswitch_0
-        :pswitch_5
-        :pswitch_4
-        :pswitch_3
-        :pswitch_2
-        :pswitch_1
-    .end packed-switch
+    move-result v0
+
+    const v1, 0xf4243
+
+    xor-int/2addr v0, v1
+
+    mul-int v0, v0, v1
+
+    iget-object v1, p0, Lnlp;->b:Ljava/util/List;
+
+    invoke-interface {v1}, Ljava/util/List;->hashCode()I
+
+    move-result v1
+
+    xor-int/2addr v0, v1
+
+    return v0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .locals 5
+
+    iget-object v0, p0, Lnlp;->a:Lnmf;
+
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lnlp;->b:Ljava/util/List;
+
+    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/String;->length()I
+
+    move-result v2
+
+    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/lang/String;->length()I
+
+    move-result v3
+
+    new-instance v4, Ljava/lang/StringBuilder;
+
+    add-int/lit8 v2, v2, 0x2b
+
+    add-int/2addr v2, v3
+
+    invoke-direct {v4, v2}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string v2, "TextAnnotationResult{text="
+
+    invoke-virtual {v4, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v0, ", textWordBoxes="
+
+    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v4, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v0, "}"
+
+    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
 .end method

@@ -1,34 +1,57 @@
-.class public Lnoo;
-.super Lnnb;
+.class final Lnoo;
+.super Lqnp;
+
+# interfaces
+.implements Lqmj;
+
+
+# instance fields
+.field final synthetic a:Lnoq;
+
+.field final synthetic b:Lnrl;
+
+.field final synthetic c:Ljava/util/List;
+
+.field final synthetic d:Ljava/util/List;
 
 
 # direct methods
-.method public constructor <init>()V
+.method public constructor <init>(Lnoq;Lnrl;Ljava/util/List;Ljava/util/List;)V
     .locals 0
 
-    invoke-direct {p0}, Lnnb;-><init>()V
+    iput-object p1, p0, Lnoo;->a:Lnoq;
+
+    iput-object p2, p0, Lnoo;->b:Lnrl;
+
+    iput-object p3, p0, Lnoo;->c:Ljava/util/List;
+
+    iput-object p4, p0, Lnoo;->d:Ljava/util/List;
+
+    const/4 p1, 0x0
+
+    invoke-direct {p0, p1}, Lqnp;-><init>(I)V
 
     return-void
 .end method
 
-.method public static q(Lnou;)Lnoo;
-    .locals 1
 
-    instance-of v0, p0, Lnoo;
+# virtual methods
+.method public final bridge synthetic invoke()Ljava/lang/Object;
+    .locals 4
 
-    if-eqz v0, :cond_0
+    iget-object v0, p0, Lnoo;->a:Lnoq;
 
-    check-cast p0, Lnoo;
+    iget-object v0, v0, Lnoq;->a:Lnoc;
 
-    goto :goto_0
+    iget-object v1, p0, Lnoo;->b:Lnrl;
 
-    :cond_0
-    new-instance v0, Lnoe;
+    iget-object v2, p0, Lnoo;->c:Ljava/util/List;
 
-    invoke-direct {v0, p0}, Lnoe;-><init>(Lnou;)V
+    iget-object v3, p0, Lnoo;->d:Ljava/util/List;
 
-    move-object p0, v0
+    invoke-virtual {v0, v1, v2, v3}, Lnoc;->c(Lnrl;Ljava/util/Collection;Ljava/util/List;)Lqbd;
 
-    :goto_0
-    return-object p0
+    move-result-object v0
+
+    return-object v0
 .end method

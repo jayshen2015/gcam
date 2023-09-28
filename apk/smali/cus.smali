@@ -2,88 +2,105 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Logk;
+.implements Lcuu;
 
 
 # instance fields
-.field private final a:Loiw;
+.field public final a:Lddf;
 
-.field private final b:Loiw;
+.field public b:Lcom/google/android/apps/camera/ui/popupmenu/PopupMenuView;
 
-.field private final c:Loiw;
+.field public c:Lcom/google/android/apps/camera/ui/popupmenu/PopupMenuViewContainer;
 
-.field private final d:Loiw;
+.field public final d:Ljava/util/List;
+
+.field public final e:Liud;
+
+.field public final f:Llap;
+
+.field public final g:Ljhs;
 
 
 # direct methods
-.method public constructor <init>(Loiw;Loiw;Loiw;Loiw;)V
-    .locals 0
+.method public constructor <init>(Lbqg;Lddf;Ljhs;Liud;)V
+    .locals 1
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lcus;->a:Loiw;
+    new-instance v0, Ljava/util/ArrayList;
 
-    iput-object p2, p0, Lcus;->b:Loiw;
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    iput-object p3, p0, Lcus;->c:Loiw;
+    iput-object v0, p0, Lcus;->d:Ljava/util/List;
 
-    iput-object p4, p0, Lcus;->d:Loiw;
+    invoke-virtual {p1}, Lbqg;->i()Llap;
+
+    move-result-object p1
+
+    iput-object p1, p0, Lcus;->f:Llap;
+
+    iput-object p2, p0, Lcus;->a:Lddf;
+
+    iput-object p3, p0, Lcus;->g:Ljhs;
+
+    iput-object p4, p0, Lcus;->e:Liud;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Lcur;
-    .locals 5
-
-    iget-object v0, p0, Lcus;->a:Loiw;
-
-    check-cast v0, Lcut;
-
-    invoke-virtual {v0}, Lcut;->a()Lcvr;
-
-    move-result-object v0
-
-    iget-object v1, p0, Lcus;->b:Loiw;
-
-    check-cast v1, Lema;
-
-    invoke-virtual {v1}, Lema;->a()Landroid/media/AudioManager;
-
-    move-result-object v1
-
-    iget-object v2, p0, Lcus;->c:Loiw;
-
-    invoke-interface {v2}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Lgyd;
-
-    iget-object v3, p0, Lcus;->d:Loiw;
-
-    invoke-interface {v3}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v3
-
-    check-cast v3, Ldhi;
-
-    new-instance v3, Lcur;
-
-    const/4 v4, 0x0
-
-    invoke-direct {v3, v0, v1, v2, v4}, Lcur;-><init>(Lcvr;Landroid/media/AudioManager;Lgyd;[B)V
-
-    return-object v3
-.end method
-
-.method public final bridge synthetic get()Ljava/lang/Object;
+.method public final a(Lcuw;)Llie;
     .locals 1
 
-    invoke-virtual {p0}, Lcus;->a()Lcur;
+    iget-object v0, p0, Lcus;->d:Ljava/util/List;
+
+    invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    new-instance v0, Lcuq;
+
+    invoke-direct {v0, p0, p1}, Lcuq;-><init>(Lcus;Lcuw;)V
+
+    return-object v0
+.end method
+
+.method public final b()V
+    .locals 2
+
+    iget-object v0, p0, Lcus;->b:Lcom/google/android/apps/camera/ui/popupmenu/PopupMenuView;
+
+    invoke-virtual {v0}, Lcom/google/android/apps/camera/ui/popupmenu/PopupMenuView;->b()V
+
+    iget-object v0, p0, Lcus;->d:Ljava/util/List;
+
+    invoke-static {v0}, Lj$/util/Collection$-EL;->stream(Ljava/util/Collection;)Lj$/util/stream/Stream;
 
     move-result-object v0
 
-    return-object v0
+    sget-object v1, Lcez;->e:Lcez;
+
+    invoke-interface {v0, v1}, Lj$/util/stream/Stream;->forEach(Lj$/util/function/Consumer;)V
+
+    return-void
+.end method
+
+.method public final c()Z
+    .locals 1
+
+    iget-object v0, p0, Lcus;->b:Lcom/google/android/apps/camera/ui/popupmenu/PopupMenuView;
+
+    invoke-virtual {v0}, Lcom/google/android/apps/camera/ui/popupmenu/PopupMenuView;->getVisibility()I
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    const/4 v0, 0x1
+
+    return v0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    return v0
 .end method

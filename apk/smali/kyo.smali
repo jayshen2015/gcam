@@ -1,28 +1,37 @@
 .class public final Lkyo;
-.super Ljava/lang/Object;
+.super Lbmn;
 
-
-# static fields
-.field public static final a:Lkyo;
+# interfaces
+.implements Landroid/os/IInterface;
 
 
 # direct methods
-.method static constructor <clinit>()V
+.method public constructor <init>(Landroid/os/IBinder;)V
     .locals 1
 
-    new-instance v0, Lkyo;
+    const-string v0, "com.google.android.gms.wearable.internal.IWearableService"
 
-    invoke-direct {v0}, Lkyo;-><init>()V
-
-    sput-object v0, Lkyo;->a:Lkyo;
+    invoke-direct {p0, p1, v0}, Lbmn;-><init>(Landroid/os/IBinder;Ljava/lang/String;)V
 
     return-void
 .end method
 
-.method public constructor <init>()V
-    .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+# virtual methods
+.method public final e(Lkyk;Lkwx;)V
+    .locals 1
+
+    invoke-virtual {p0}, Lbmn;->a()Landroid/os/Parcel;
+
+    move-result-object v0
+
+    invoke-static {v0, p1}, Lbmp;->e(Landroid/os/Parcel;Landroid/os/IInterface;)V
+
+    invoke-static {v0, p2}, Lbmp;->c(Landroid/os/Parcel;Landroid/os/Parcelable;)V
+
+    const/16 p1, 0x10
+
+    invoke-virtual {p0, p1, v0}, Lbmn;->z(ILandroid/os/Parcel;)V
 
     return-void
 .end method

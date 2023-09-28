@@ -1,113 +1,63 @@
-.class public abstract Lewh;
+.class public final synthetic Lewh;
 .super Ljava/lang/Object;
+
+# interfaces
+.implements Ljava/util/concurrent/Callable;
 
 
 # instance fields
-.field public a:Ljava/nio/FloatBuffer;
+.field public final synthetic a:Lljf;
 
-.field public b:Ljava/nio/FloatBuffer;
-
-.field public c:Ljava/nio/ShortBuffer;
-
-.field public final d:Ljava/util/Vector;
-
-.field public e:Lewj;
-
-.field private final f:[F
-
-.field private final g:[F
+.field public final synthetic b:Lpyn;
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 3
+.method public synthetic constructor <init>(Lljf;Lpyn;)V
+    .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const/4 v0, 0x0
+    iput-object p1, p0, Lewh;->a:Lljf;
 
-    iput-object v0, p0, Lewh;->a:Ljava/nio/FloatBuffer;
-
-    iput-object v0, p0, Lewh;->b:Ljava/nio/FloatBuffer;
-
-    iput-object v0, p0, Lewh;->c:Ljava/nio/ShortBuffer;
-
-    new-instance v1, Ljava/util/Vector;
-
-    invoke-direct {v1}, Ljava/util/Vector;-><init>()V
-
-    iput-object v1, p0, Lewh;->d:Ljava/util/Vector;
-
-    const/16 v1, 0x10
-
-    new-array v2, v1, [F
-
-    iput-object v2, p0, Lewh;->f:[F
-
-    new-array v1, v1, [F
-
-    iput-object v1, p0, Lewh;->g:[F
-
-    iput-object v0, p0, Lewh;->e:Lewj;
-
-    const/4 v0, 0x0
-
-    invoke-static {v2, v0}, Landroid/opengl/Matrix;->setIdentityM([FI)V
+    iput-object p2, p0, Lewh;->b:Lpyn;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public a([F)V
-    .locals 6
+.method public final call()Ljava/lang/Object;
+    .locals 3
 
-    iget-object v0, p0, Lewh;->g:[F
+    iget-object v0, p0, Lewh;->a:Lljf;
 
-    const/4 v1, 0x0
+    iget-object v1, p0, Lewh;->b:Lpyn;
 
-    const/4 v3, 0x0
+    const-string v2, "PhotoModeStartup"
 
-    iget-object v4, p0, Lewh;->f:[F
+    invoke-interface {v0, v2}, Lljf;->e(Ljava/lang/String;)V
 
-    const/4 v5, 0x0
+    const-string v2, "get"
 
-    move-object v2, p1
+    invoke-interface {v0, v2}, Lljf;->e(Ljava/lang/String;)V
 
-    invoke-static/range {v0 .. v5}, Landroid/opengl/Matrix;->multiplyMM([FI[FI[FI)V
+    invoke-interface {v1}, Lpyn;->get()Ljava/lang/Object;
 
-    iget-object p1, p0, Lewh;->g:[F
+    move-result-object v1
 
-    invoke-virtual {p0, p1}, Lewh;->c([F)V
+    check-cast v1, Liho;
 
-    return-void
-.end method
+    const-string v2, "run"
 
-.method public abstract c([F)V
-.end method
+    invoke-interface {v0, v2}, Lljf;->g(Ljava/lang/String;)V
 
-.method protected final d(IFF)V
-    .locals 1
+    invoke-interface {v1}, Liho;->run()V
 
-    iget-object v0, p0, Lewh;->a:Ljava/nio/FloatBuffer;
+    invoke-interface {v0}, Lljf;->f()V
 
-    mul-int/lit8 p1, p1, 0x3
+    invoke-interface {v0}, Lljf;->f()V
 
-    invoke-virtual {v0, p1, p2}, Ljava/nio/FloatBuffer;->put(IF)Ljava/nio/FloatBuffer;
+    sget-object v0, Ljava/lang/Boolean;->TRUE:Ljava/lang/Boolean;
 
-    iget-object p2, p0, Lewh;->a:Ljava/nio/FloatBuffer;
-
-    add-int/lit8 p1, p1, 0x1
-
-    const v0, -0x40266666    # -1.7f
-
-    invoke-virtual {p2, p1, v0}, Ljava/nio/FloatBuffer;->put(IF)Ljava/nio/FloatBuffer;
-
-    iget-object p2, p0, Lewh;->a:Ljava/nio/FloatBuffer;
-
-    add-int/lit8 p1, p1, 0x1
-
-    invoke-virtual {p2, p1, p3}, Ljava/nio/FloatBuffer;->put(IF)Ljava/nio/FloatBuffer;
-
-    return-void
+    return-object v0
 .end method

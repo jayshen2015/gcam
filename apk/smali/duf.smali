@@ -1,238 +1,381 @@
-.class public final synthetic Lduf;
+.class public final Lduf;
 .super Ljava/lang/Object;
 
-# interfaces
-.implements Lkml;
+
+# static fields
+.field private static final a:Louj;
 
 
 # instance fields
-.field public final synthetic a:Ldug;
+.field private final b:F
 
-.field public final synthetic b:J
+.field private final c:F
+
+.field private final d:Landroid/graphics/PointF;
+
+.field private final e:Landroid/graphics/PointF;
+
+.field private final f:F
+
+.field private final g:F
 
 
 # direct methods
-.method public synthetic constructor <init>(Ldug;J)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 1
+
+    const-string v0, "com/google/android/apps/camera/filmstrip/transition/FilmstripTransitionTransformBuilder"
+
+    invoke-static {v0}, Louj;->h(Ljava/lang/String;)Louj;
+
+    move-result-object v0
+
+    sput-object v0, Lduf;->a:Louj;
+
+    return-void
+.end method
+
+.method public constructor <init>(Landroid/util/SizeF;Landroid/graphics/RectF;Landroid/graphics/RectF;Landroid/graphics/RectF;F)V
+    .locals 15
+
+    move-object v0, p0
+
+    move-object/from16 v1, p2
+
+    move-object/from16 v2, p4
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lduf;->a:Ldug;
+    invoke-virtual/range {p2 .. p3}, Landroid/graphics/RectF;->contains(Landroid/graphics/RectF;)Z
 
-    iput-wide p2, p0, Lduf;->b:J
+    move-result v3
+
+    if-nez v3, :cond_0
+
+    sget-object v3, Lduf;->a:Louj;
+
+    invoke-virtual {v3}, Loue;->b()Lova;
+
+    move-result-object v3
+
+    const/16 v4, 0x3a9
+
+    const-string v5, "Expected that the photos target area is contained in the camera window area."
+
+    invoke-static {v3, v5, v4}, Ld;->v(Lova;Ljava/lang/String;C)V
+
+    :cond_0
+    new-instance v3, Landroid/graphics/RectF;
+
+    move-object/from16 v4, p3
+
+    invoke-direct {v3, v4}, Landroid/graphics/RectF;-><init>(Landroid/graphics/RectF;)V
+
+    invoke-virtual {v3, v1}, Landroid/graphics/RectF;->intersect(Landroid/graphics/RectF;)Z
+
+    new-instance v4, Landroid/util/SizeF;
+
+    invoke-virtual {v3}, Landroid/graphics/RectF;->width()F
+
+    move-result v5
+
+    invoke-virtual {v3}, Landroid/graphics/RectF;->height()F
+
+    move-result v6
+
+    invoke-direct {v4, v5, v6}, Landroid/util/SizeF;-><init>(FF)V
+
+    new-instance v5, Landroid/graphics/PointF;
+
+    iget v6, v3, Landroid/graphics/RectF;->left:F
+
+    iget v7, v1, Landroid/graphics/RectF;->left:F
+
+    sub-float/2addr v6, v7
+
+    iget v3, v3, Landroid/graphics/RectF;->top:F
+
+    iget v1, v1, Landroid/graphics/RectF;->top:F
+
+    sub-float/2addr v3, v1
+
+    invoke-direct {v5, v6, v3}, Landroid/graphics/PointF;-><init>(FF)V
+
+    invoke-virtual/range {p1 .. p1}, Landroid/util/SizeF;->getWidth()F
+
+    move-result v1
+
+    invoke-virtual/range {p1 .. p1}, Landroid/util/SizeF;->getHeight()F
+
+    move-result v3
+
+    invoke-virtual {v4}, Landroid/util/SizeF;->getWidth()F
+
+    move-result v6
+
+    invoke-virtual {v4}, Landroid/util/SizeF;->getHeight()F
+
+    move-result v7
+
+    div-float v8, v1, v3
+
+    div-float v9, v6, v7
+
+    cmpl-float v8, v8, v9
+
+    if-lez v8, :cond_1
+
+    div-float/2addr v6, v1
+
+    goto :goto_0
+
+    :cond_1
+    div-float v6, v7, v3
+
+    :goto_0
+    iput v6, v0, Lduf;->b:F
+
+    invoke-virtual/range {p1 .. p1}, Landroid/util/SizeF;->getWidth()F
+
+    move-result v1
+
+    invoke-virtual/range {p1 .. p1}, Landroid/util/SizeF;->getHeight()F
+
+    move-result v3
+
+    cmpg-float v7, v1, v3
+
+    if-gez v7, :cond_2
+
+    div-float v1, p5, v1
+
+    goto :goto_1
+
+    :cond_2
+    div-float v1, p5, v3
+
+    :goto_1
+    iput v1, v0, Lduf;->c:F
+
+    invoke-virtual/range {p1 .. p1}, Landroid/util/SizeF;->getWidth()F
+
+    move-result v3
+
+    invoke-virtual/range {p1 .. p1}, Landroid/util/SizeF;->getHeight()F
+
+    move-result v7
+
+    invoke-virtual {v4}, Landroid/util/SizeF;->getWidth()F
+
+    move-result v8
+
+    invoke-virtual {v4}, Landroid/util/SizeF;->getHeight()F
+
+    move-result v4
+
+    div-float v9, v8, v4
+
+    div-float v10, v3, v7
+
+    cmpl-float v11, v10, v9
+
+    if-lez v11, :cond_3
+
+    div-float v11, v8, v10
+
+    move v12, v11
+
+    move v11, v8
+
+    goto :goto_2
+
+    :cond_3
+    mul-float v11, v4, v10
+
+    move v12, v4
+
+    :goto_2
+    const/4 v13, 0x0
+
+    const/high16 v14, 0x40000000    # 2.0f
+
+    cmpl-float v9, v10, v9
+
+    if-lez v9, :cond_4
+
+    sub-float/2addr v4, v12
+
+    div-float/2addr v4, v14
+
+    goto :goto_3
+
+    :cond_4
+    sub-float/2addr v8, v11
+
+    div-float/2addr v8, v14
+
+    move v13, v8
+
+    const/4 v4, 0x0
+
+    :goto_3
+    iget v8, v5, Landroid/graphics/PointF;->x:F
+
+    add-float/2addr v13, v8
+
+    iget v5, v5, Landroid/graphics/PointF;->y:F
+
+    add-float/2addr v4, v5
+
+    const/high16 v5, 0x3f800000    # 1.0f
+
+    cmpl-float v6, v6, v5
+
+    if-eqz v6, :cond_5
+
+    sub-float/2addr v11, v3
+
+    div-float/2addr v11, v14
+
+    add-float/2addr v13, v11
+
+    sub-float/2addr v12, v7
+
+    div-float/2addr v12, v14
+
+    add-float/2addr v4, v12
+
+    goto :goto_4
+
+    :cond_5
+    :goto_4
+    new-instance v3, Landroid/graphics/PointF;
+
+    invoke-direct {v3, v13, v4}, Landroid/graphics/PointF;-><init>(FF)V
+
+    iput-object v3, v0, Lduf;->d:Landroid/graphics/PointF;
+
+    invoke-virtual/range {p1 .. p1}, Landroid/util/SizeF;->getWidth()F
+
+    move-result v3
+
+    invoke-virtual/range {p1 .. p1}, Landroid/util/SizeF;->getHeight()F
+
+    move-result v4
+
+    iget v6, v2, Landroid/graphics/RectF;->left:F
+
+    iget v7, v2, Landroid/graphics/RectF;->top:F
+
+    invoke-virtual/range {p4 .. p4}, Landroid/graphics/RectF;->width()F
+
+    move-result v2
+
+    sub-float v2, v2, p5
+
+    div-float/2addr v2, v14
+
+    add-float/2addr v6, v2
+
+    add-float/2addr v7, v2
+
+    cmpl-float v1, v1, v5
+
+    if-eqz v1, :cond_6
+
+    sub-float v1, p5, v3
+
+    div-float/2addr v1, v14
+
+    add-float/2addr v6, v1
+
+    sub-float v1, p5, v4
+
+    div-float/2addr v1, v14
+
+    add-float/2addr v7, v1
+
+    goto :goto_5
+
+    :cond_6
+    :goto_5
+    new-instance v1, Landroid/graphics/PointF;
+
+    invoke-direct {v1, v6, v7}, Landroid/graphics/PointF;-><init>(FF)V
+
+    iput-object v1, v0, Lduf;->e:Landroid/graphics/PointF;
+
+    invoke-virtual/range {p1 .. p1}, Landroid/util/SizeF;->getWidth()F
+
+    move-result v1
+
+    div-float/2addr v1, v14
+
+    invoke-virtual/range {p1 .. p1}, Landroid/util/SizeF;->getHeight()F
+
+    move-result v2
+
+    div-float/2addr v2, v14
+
+    mul-float v1, v1, v1
+
+    mul-float v2, v2, v2
+
+    add-float/2addr v1, v2
+
+    float-to-double v1, v1
+
+    invoke-static {v1, v2}, Ljava/lang/Math;->sqrt(D)D
+
+    move-result-wide v1
+
+    double-to-float v1, v1
+
+    iput v1, v0, Lduf;->f:F
+
+    invoke-virtual/range {p1 .. p1}, Landroid/util/SizeF;->getWidth()F
+
+    move-result v1
+
+    div-float/2addr v1, v14
+
+    invoke-virtual/range {p1 .. p1}, Landroid/util/SizeF;->getHeight()F
+
+    move-result v2
+
+    div-float/2addr v2, v14
+
+    invoke-static {v1, v2}, Ljava/lang/Math;->min(FF)F
+
+    move-result v1
+
+    iput v1, v0, Lduf;->g:F
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Ljava/util/List;)V
-    .locals 15
+.method public final a()Ldue;
+    .locals 8
 
-    move-object v0, p0
+    new-instance v7, Ldue;
 
-    iget-object v1, v0, Lduf;->a:Ldug;
+    iget v1, p0, Lduf;->b:F
 
-    iget-wide v2, v0, Lduf;->b:J
+    iget v2, p0, Lduf;->c:F
 
-    invoke-interface/range {p1 .. p1}, Ljava/util/List;->size()I
+    iget-object v3, p0, Lduf;->d:Landroid/graphics/PointF;
 
-    move-result v4
+    iget-object v4, p0, Lduf;->e:Landroid/graphics/PointF;
 
-    const/16 v5, 0xa
+    iget v5, p0, Lduf;->f:F
 
-    if-le v4, v5, :cond_0
+    iget v6, p0, Lduf;->g:F
 
-    sget-object v4, Leac;->a:Lnak;
+    move-object v0, v7
 
-    invoke-virtual {v4}, Lnaf;->c()Lnaz;
+    invoke-direct/range {v0 .. v6}, Ldue;-><init>(FFLandroid/graphics/PointF;Landroid/graphics/PointF;FF)V
 
-    move-result-object v4
-
-    const-string v5, "Warning: Samples used for vector determination is larger than 10 elements. This code is O(n) and expects small list sizes!"
-
-    const/16 v6, 0x4d0
-
-    invoke-static {v4, v5, v6}, Ld;->g(Lnaz;Ljava/lang/String;C)V
-
-    :cond_0
-    invoke-interface/range {p1 .. p1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
-
-    move-result-object v4
-
-    const/4 v5, 0x0
-
-    move-object v6, v5
-
-    :goto_0
-    invoke-interface {v4}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v7
-
-    const/4 v8, 0x0
-
-    const/4 v9, 0x1
-
-    if-eqz v7, :cond_4
-
-    invoke-interface {v4}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v7
-
-    check-cast v7, Lkmo;
-
-    if-eqz v6, :cond_2
-
-    iget-wide v10, v7, Lkmo;->e:J
-
-    iget-wide v12, v6, Lkmo;->e:J
-
-    cmp-long v14, v10, v12
-
-    if-lez v14, :cond_1
-
-    const/4 v10, 0x1
-
-    goto :goto_1
-
-    :cond_1
-    const/4 v10, 0x0
-
-    goto :goto_1
-
-    :cond_2
-    const/4 v10, 0x1
-
-    :goto_1
-    const-string v11, "samples must be sorted ascending in time"
-
-    invoke-static {v10, v11}, Lmoz;->f(ZLjava/lang/Object;)V
-
-    iget-wide v10, v7, Lkmo;->e:J
-
-    cmp-long v12, v10, v2
-
-    if-lez v12, :cond_3
-
-    goto :goto_2
-
-    :cond_3
-    move-object v6, v7
-
-    goto :goto_0
-
-    :cond_4
-    move-object v7, v5
-
-    :goto_2
-    const/4 v4, 0x2
-
-    const/4 v10, 0x3
-
-    if-nez v6, :cond_6
-
-    if-nez v7, :cond_5
-
-    goto :goto_3
-
-    :cond_5
-    new-array v5, v10, [F
-
-    iget v6, v7, Lkmo;->f:F
-
-    aput v6, v5, v8
-
-    iget v6, v7, Lkmo;->g:F
-
-    aput v6, v5, v9
-
-    iget v6, v7, Lkmo;->h:F
-
-    aput v6, v5, v4
-
-    goto :goto_3
-
-    :cond_6
-    if-nez v7, :cond_7
-
-    new-array v5, v10, [F
-
-    iget v7, v6, Lkmo;->f:F
-
-    aput v7, v5, v8
-
-    iget v7, v6, Lkmo;->g:F
-
-    aput v7, v5, v9
-
-    iget v6, v6, Lkmo;->h:F
-
-    aput v6, v5, v4
-
-    goto :goto_3
-
-    :cond_7
-    iget-wide v11, v6, Lkmo;->e:J
-
-    sub-long v13, v2, v11
-
-    iget-wide v4, v7, Lkmo;->e:J
-
-    sub-long/2addr v4, v11
-
-    new-array v10, v10, [F
-
-    iget v11, v6, Lkmo;->f:F
-
-    iget v12, v7, Lkmo;->f:F
-
-    long-to-double v13, v13
-
-    long-to-double v4, v4
-
-    invoke-static {v13, v14}, Ljava/lang/Double;->isNaN(D)Z
-
-    invoke-static {v4, v5}, Ljava/lang/Double;->isNaN(D)Z
-
-    div-double/2addr v13, v4
-
-    invoke-static {v11, v12, v13, v14}, Leac;->a(FFD)F
-
-    move-result v4
-
-    aput v4, v10, v8
-
-    iget v4, v6, Lkmo;->g:F
-
-    iget v5, v7, Lkmo;->g:F
-
-    invoke-static {v4, v5, v13, v14}, Leac;->a(FFD)F
-
-    move-result v4
-
-    aput v4, v10, v9
-
-    iget v4, v6, Lkmo;->h:F
-
-    iget v5, v7, Lkmo;->h:F
-
-    invoke-static {v4, v5, v13, v14}, Leac;->a(FFD)F
-
-    move-result v4
-
-    const/4 v5, 0x2
-
-    aput v4, v10, v5
-
-    move-object v5, v10
-
-    :goto_3
-    if-eqz v5, :cond_8
-
-    iget-object v1, v1, Ldug;->d:Lduv;
-
-    invoke-virtual {v1, v2, v3, v5}, Lduv;->h(J[F)V
-
-    :cond_8
-    return-void
+    return-object v7
 .end method

@@ -1,121 +1,202 @@
 .class public final Llnu;
 .super Ljava/lang/Object;
 
-# interfaces
-.implements Logk;
-
 
 # instance fields
-.field private final a:Loiw;
+.field private a:Ljava/lang/Boolean;
 
-.field private final b:Loiw;
+.field private b:I
 
-.field private final c:Loiw;
+.field private c:I
 
-.field private final d:Loiw;
-
-.field private final e:Loiw;
-
-.field private final f:Loiw;
+.field private d:I
 
 
 # direct methods
-.method public constructor <init>(Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;)V
+.method public constructor <init>()V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Llnu;->a:Loiw;
-
-    iput-object p2, p0, Llnu;->b:Loiw;
-
-    iput-object p3, p0, Llnu;->c:Loiw;
-
-    iput-object p4, p0, Llnu;->d:Loiw;
-
-    iput-object p5, p0, Llnu;->e:Loiw;
-
-    iput-object p6, p0, Llnu;->f:Loiw;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Llnt;
-    .locals 8
+.method public final a()Llnv;
+    .locals 5
 
-    iget-object v0, p0, Llnu;->a:Loiw;
+    iget v0, p0, Llnu;->b:I
 
-    check-cast v0, Ldwh;
+    if-eqz v0, :cond_1
 
-    invoke-virtual {v0}, Ldwh;->a()Landroid/content/Context;
+    iget v1, p0, Llnu;->c:I
 
-    move-result-object v2
+    if-eqz v1, :cond_1
 
-    iget-object v0, p0, Llnu;->b:Loiw;
+    iget v2, p0, Llnu;->d:I
 
-    check-cast v0, Logl;
+    if-eqz v2, :cond_1
 
-    iget-object v0, v0, Logl;->a:Ljava/lang/Object;
+    iget-object v3, p0, Llnu;->a:Ljava/lang/Boolean;
 
-    move-object v3, v0
+    if-nez v3, :cond_0
 
-    check-cast v3, Lmqp;
+    goto :goto_0
 
-    iget-object v0, p0, Llnu;->c:Loiw;
+    :cond_0
+    new-instance v4, Llnv;
 
-    check-cast v0, Logl;
+    invoke-virtual {v3}, Ljava/lang/Boolean;->booleanValue()Z
 
-    iget-object v0, v0, Logl;->a:Ljava/lang/Object;
+    move-result v3
 
-    move-object v4, v0
+    invoke-direct {v4, v0, v1, v2, v3}, Llnv;-><init>(IIIZ)V
 
-    check-cast v4, Lmqp;
+    return-object v4
 
-    iget-object v0, p0, Llnu;->d:Loiw;
+    :cond_1
+    :goto_0
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    check-cast v0, Logl;
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    iget-object v0, v0, Logl;->a:Ljava/lang/Object;
+    iget v1, p0, Llnu;->b:I
 
-    move-object v5, v0
+    if-nez v1, :cond_2
 
-    check-cast v5, Lmqp;
+    const-string v1, " exposure"
 
-    iget-object v0, p0, Llnu;->e:Loiw;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    check-cast v0, Logl;
+    :cond_2
+    iget v1, p0, Llnu;->c:I
 
-    iget-object v0, v0, Logl;->a:Ljava/lang/Object;
+    if-nez v1, :cond_3
 
-    move-object v6, v0
+    const-string v1, " focus"
 
-    check-cast v6, Lmqp;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget-object v0, p0, Llnu;->f:Loiw;
+    :cond_3
+    iget v1, p0, Llnu;->d:I
 
-    check-cast v0, Lest;
+    if-nez v1, :cond_4
 
-    invoke-virtual {v0}, Lest;->a()Lmqp;
+    const-string v1, " whiteBalance"
 
-    move-result-object v7
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    new-instance v0, Llnt;
+    :cond_4
+    iget-object v1, p0, Llnu;->a:Ljava/lang/Boolean;
 
-    move-object v1, v0
+    if-nez v1, :cond_5
 
-    invoke-direct/range {v1 .. v7}, Llnt;-><init>(Landroid/content/Context;Lmqp;Lmqp;Lmqp;Lmqp;Lmqp;)V
+    const-string v1, " forCapture"
 
-    return-object v0
-.end method
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-.method public final bridge synthetic get()Ljava/lang/Object;
-    .locals 1
+    :cond_5
+    new-instance v1, Ljava/lang/IllegalStateException;
 
-    invoke-virtual {p0}, Llnu;->a()Llnt;
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v0
 
-    return-object v0
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/String;->length()I
+
+    move-result v2
+
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    add-int/lit8 v2, v2, 0x1c
+
+    invoke-direct {v3, v2}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string v2, "Missing required properties:"
+
+    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-direct {v1, v0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw v1
+.end method
+
+.method public final b(I)V
+    .locals 1
+
+    if-eqz p1, :cond_0
+
+    iput p1, p0, Llnu;->b:I
+
+    return-void
+
+    :cond_0
+    new-instance p1, Ljava/lang/NullPointerException;
+
+    const-string v0, "Null exposure"
+
+    invoke-direct {p1, v0}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
+
+    throw p1
+.end method
+
+.method public final c(I)V
+    .locals 1
+
+    if-eqz p1, :cond_0
+
+    iput p1, p0, Llnu;->c:I
+
+    return-void
+
+    :cond_0
+    new-instance p1, Ljava/lang/NullPointerException;
+
+    const-string v0, "Null focus"
+
+    invoke-direct {p1, v0}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
+
+    throw p1
+.end method
+
+.method public final d(Z)V
+    .locals 0
+
+    invoke-static {p1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    move-result-object p1
+
+    iput-object p1, p0, Llnu;->a:Ljava/lang/Boolean;
+
+    return-void
+.end method
+
+.method public final e(I)V
+    .locals 1
+
+    if-eqz p1, :cond_0
+
+    iput p1, p0, Llnu;->d:I
+
+    return-void
+
+    :cond_0
+    new-instance p1, Ljava/lang/NullPointerException;
+
+    const-string v0, "Null whiteBalance"
+
+    invoke-direct {p1, v0}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
+
+    throw p1
 .end method

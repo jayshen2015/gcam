@@ -1,81 +1,109 @@
-.class public final Lfiu;
+.class final Lfiu;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lfgf;
+.implements Landroid/location/LocationListener;
 
 
 # instance fields
-.field volatile a:J
+.field final a:Landroid/location/Location;
 
-.field final synthetic b:Lfgg;
+.field b:Z
 
-.field final synthetic c:Lmqp;
+.field final c:Ljava/lang/String;
 
 
 # direct methods
-.method public constructor <init>(Lfgg;Lmqp;)V
-    .locals 0
-
-    iput-object p1, p0, Lfiu;->b:Lfgg;
-
-    iput-object p2, p0, Lfiu;->c:Lmqp;
+.method public constructor <init>(Ljava/lang/String;)V
+    .locals 1
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const-wide/16 p1, 0x0
+    const/4 v0, 0x0
 
-    iput-wide p1, p0, Lfiu;->a:J
+    iput-boolean v0, p0, Lfiu;->b:Z
+
+    iput-object p1, p0, Lfiu;->c:Ljava/lang/String;
+
+    new-instance v0, Landroid/location/Location;
+
+    invoke-direct {v0, p1}, Landroid/location/Location;-><init>(Ljava/lang/String;)V
+
+    iput-object v0, p0, Lfiu;->a:Landroid/location/Location;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final f(J)V
-    .locals 2
+.method public final onLocationChanged(Landroid/location/Location;)V
+    .locals 5
 
-    :goto_0
-    iget-object p1, p0, Lfiu;->b:Lfgg;
+    invoke-virtual {p1}, Landroid/location/Location;->getLatitude()D
 
-    iget-wide v0, p0, Lfiu;->a:J
+    move-result-wide v0
 
-    invoke-interface {p1, v0, v1}, Lfgg;->e(J)Lmqp;
+    const-wide/16 v2, 0x0
 
-    move-result-object p1
+    cmpl-double v4, v0, v2
 
-    invoke-virtual {p1}, Lmqp;->g()Z
+    if-nez v4, :cond_0
 
-    move-result p2
+    invoke-virtual {p1}, Landroid/location/Location;->getLongitude()D
 
-    if-nez p2, :cond_0
+    move-result-wide v0
+
+    cmpl-double v4, v0, v2
+
+    if-nez v4, :cond_0
 
     return-void
 
     :cond_0
-    invoke-virtual {p1}, Lmqp;->c()Ljava/lang/Object;
+    iget-object v0, p0, Lfiu;->a:Landroid/location/Location;
 
-    move-result-object p1
+    invoke-virtual {v0, p1}, Landroid/location/Location;->set(Landroid/location/Location;)V
 
-    check-cast p1, Ljava/lang/Long;
+    const/4 p1, 0x1
 
-    invoke-virtual {p1}, Ljava/lang/Long;->longValue()J
+    iput-boolean p1, p0, Lfiu;->b:Z
 
-    move-result-wide p1
+    return-void
+.end method
 
-    iput-wide p1, p0, Lfiu;->a:J
+.method public final onProviderDisabled(Ljava/lang/String;)V
+    .locals 0
 
-    iget-object p1, p0, Lfiu;->c:Lmqp;
+    const/4 p1, 0x0
 
-    invoke-virtual {p1}, Lmqp;->c()Ljava/lang/Object;
+    iput-boolean p1, p0, Lfiu;->b:Z
 
-    move-result-object p1
+    return-void
+.end method
 
-    check-cast p1, Lfgy;
+.method public final onProviderEnabled(Ljava/lang/String;)V
+    .locals 0
 
-    iget-wide v0, p0, Lfiu;->a:J
+    return-void
+.end method
 
-    invoke-interface {p1, v0, v1}, Lfgy;->b(J)V
+.method public final onStatusChanged(Ljava/lang/String;ILandroid/os/Bundle;)V
+    .locals 0
 
-    goto :goto_0
+    packed-switch p2, :pswitch_data_0
+
+    return-void
+
+    :pswitch_0
+    const/4 p1, 0x0
+
+    iput-boolean p1, p0, Lfiu;->b:Z
+
+    return-void
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+        :pswitch_0
+    .end packed-switch
 .end method

@@ -1,226 +1,61 @@
-.class public final Lnob;
-.super Ljava/util/concurrent/atomic/AtomicReference;
+.class final Lnob;
+.super Ljava/lang/Object;
 
 # interfaces
-.implements Ljava/util/concurrent/Executor;
-.implements Ljava/lang/Runnable;
+.implements Lqco;
 
 
 # instance fields
-.field a:Ljava/util/concurrent/Executor;
+.field final synthetic a:Lnoc;
 
-.field b:Ljava/lang/Runnable;
+.field final synthetic b:Lnrl;
 
-.field c:Ljava/lang/Thread;
+.field final synthetic c:Ljava/util/List;
 
-.field d:Losg;
+.field final synthetic d:I
 
 
 # direct methods
-.method public constructor <init>(Ljava/util/concurrent/Executor;Losg;[B)V
+.method public constructor <init>(Lnoc;Lnrl;Ljava/util/List;I)V
     .locals 0
 
-    sget-object p3, Lnoa;->a:Lnoa;
+    iput-object p1, p0, Lnob;->a:Lnoc;
 
-    invoke-direct {p0, p3}, Ljava/util/concurrent/atomic/AtomicReference;-><init>(Ljava/lang/Object;)V
+    iput-object p2, p0, Lnob;->b:Lnrl;
 
-    iput-object p1, p0, Lnob;->a:Ljava/util/concurrent/Executor;
+    iput-object p3, p0, Lnob;->c:Ljava/util/List;
 
-    iput-object p2, p0, Lnob;->d:Losg;
+    iput p4, p0, Lnob;->d:I
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final execute(Ljava/lang/Runnable;)V
-    .locals 4
+.method public final bridge synthetic a(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 6
 
-    invoke-virtual {p0}, Lnob;->get()Ljava/lang/Object;
+    check-cast p1, Ljava/lang/Number;
 
-    move-result-object v0
+    invoke-virtual {p1}, Ljava/lang/Number;->intValue()I
 
-    sget-object v1, Lnoa;->b:Lnoa;
+    move-result v5
 
-    const/4 v2, 0x0
+    iget-object v0, p0, Lnob;->a:Lnoc;
 
-    if-ne v0, v1, :cond_0
+    iget-object v1, p0, Lnob;->b:Lnrl;
 
-    iput-object v2, p0, Lnob;->a:Ljava/util/concurrent/Executor;
+    iget-object v2, p0, Lnob;->c:Ljava/util/List;
 
-    iput-object v2, p0, Lnob;->d:Losg;
+    sget-object v3, Lqkx;->a:Lqkx;
 
-    return-void
+    iget v4, p0, Lnob;->d:I
 
-    :cond_0
-    invoke-static {}, Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
+    invoke-virtual/range {v0 .. v5}, Lnoc;->a(Lnrl;Ljava/util/Collection;Ljava/util/List;II)Lqbd;
 
-    move-result-object v0
+    move-result-object p1
 
-    iput-object v0, p0, Lnob;->c:Ljava/lang/Thread;
-
-    :try_start_0
-    iget-object v0, p0, Lnob;->d:Losg;
-
-    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    iget-object v0, v0, Losg;->a:Ljava/lang/Object;
-
-    move-object v1, v0
-
-    check-cast v1, Lnoc;
-
-    iget-object v1, v1, Lnoc;->a:Ljava/lang/Object;
-
-    iget-object v3, p0, Lnob;->c:Ljava/lang/Thread;
-
-    if-ne v1, v3, :cond_2
-
-    iput-object v2, p0, Lnob;->d:Losg;
-
-    move-object v1, v0
-
-    check-cast v1, Lnoc;
-
-    iget-object v1, v1, Lnoc;->b:Ljava/lang/Object;
-
-    if-nez v1, :cond_1
-
-    const/4 v1, 0x1
-
-    goto :goto_0
-
-    :cond_1
-    const/4 v1, 0x0
-
-    :goto_0
-    invoke-static {v1}, Lmoz;->p(Z)V
-
-    move-object v1, v0
-
-    check-cast v1, Lnoc;
-
-    iput-object p1, v1, Lnoc;->b:Ljava/lang/Object;
-
-    iget-object p1, p0, Lnob;->a:Ljava/util/concurrent/Executor;
-
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    check-cast v0, Lnoc;
-
-    iput-object p1, v0, Lnoc;->c:Ljava/lang/Object;
-
-    iput-object v2, p0, Lnob;->a:Ljava/util/concurrent/Executor;
-
-    goto :goto_1
-
-    :cond_2
-    iget-object v0, p0, Lnob;->a:Ljava/util/concurrent/Executor;
-
-    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    iput-object v2, p0, Lnob;->a:Ljava/util/concurrent/Executor;
-
-    iput-object p1, p0, Lnob;->b:Ljava/lang/Runnable;
-
-    invoke-interface {v0, p0}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    :goto_1
-    iput-object v2, p0, Lnob;->c:Ljava/lang/Thread;
-
-    return-void
-
-    :catchall_0
-    move-exception p1
-
-    iput-object v2, p0, Lnob;->c:Ljava/lang/Thread;
-
-    throw p1
-.end method
-
-.method public final run()V
-    .locals 4
-
-    invoke-static {}, Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
-
-    move-result-object v0
-
-    iget-object v1, p0, Lnob;->c:Ljava/lang/Thread;
-
-    const/4 v2, 0x0
-
-    if-eq v0, v1, :cond_0
-
-    iget-object v0, p0, Lnob;->b:Ljava/lang/Runnable;
-
-    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    iput-object v2, p0, Lnob;->b:Ljava/lang/Runnable;
-
-    invoke-interface {v0}, Ljava/lang/Runnable;->run()V
-
-    return-void
-
-    :cond_0
-    new-instance v1, Lnoc;
-
-    invoke-direct {v1}, Lnoc;-><init>()V
-
-    iput-object v0, v1, Lnoc;->a:Ljava/lang/Object;
-
-    iget-object v0, p0, Lnob;->d:Losg;
-
-    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    iput-object v1, v0, Losg;->a:Ljava/lang/Object;
-
-    iput-object v2, p0, Lnob;->d:Losg;
-
-    :try_start_0
-    iget-object v0, p0, Lnob;->b:Ljava/lang/Runnable;
-
-    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    iput-object v2, p0, Lnob;->b:Ljava/lang/Runnable;
-
-    invoke-interface {v0}, Ljava/lang/Runnable;->run()V
-
-    :goto_0
-    iget-object v0, v1, Lnoc;->b:Ljava/lang/Object;
-
-    if-eqz v0, :cond_1
-
-    iget-object v3, v1, Lnoc;->c:Ljava/lang/Object;
-
-    if-eqz v3, :cond_1
-
-    iput-object v2, v1, Lnoc;->b:Ljava/lang/Object;
-
-    iput-object v2, v1, Lnoc;->c:Ljava/lang/Object;
-
-    invoke-interface {v3, v0}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    goto :goto_0
-
-    :cond_1
-    iput-object v2, v1, Lnoc;->a:Ljava/lang/Object;
-
-    return-void
-
-    :catchall_0
-    move-exception v0
-
-    iput-object v2, v1, Lnoc;->a:Ljava/lang/Object;
-
-    goto :goto_2
-
-    :goto_1
-    throw v0
-
-    :goto_2
-    goto :goto_1
+    return-object p1
 .end method

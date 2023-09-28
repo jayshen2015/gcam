@@ -1,144 +1,713 @@
-.class Ling;
-.super Linf;
+.class public final Ling;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Lpys;
 
 
 # instance fields
-.field final synthetic a:Lini;
+.field private final a:Lqkg;
+
+.field private final synthetic b:I
 
 
 # direct methods
-.method public constructor <init>(Lini;)V
+.method public constructor <init>(Lqkg;I)V
     .locals 0
 
-    iput-object p1, p0, Ling;->a:Lini;
+    iput p2, p0, Ling;->b:I
 
-    invoke-direct {p0}, Linf;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Ling;->a:Lqkg;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public a()V
-    .locals 0
+.method public final a()Lims;
+    .locals 4
 
-    return-void
-.end method
+    iget v0, p0, Ling;->b:I
 
-.method public c()V
-    .locals 0
+    packed-switch v0, :pswitch_data_0
 
-    return-void
-.end method
+    sget-object v0, Linf;->a:Lims;
 
-.method public final f()V
-    .locals 5
+    invoke-static {v0}, Lqmd;->ae(Ljava/lang/Object;)V
 
-    iget-object v0, p0, Ling;->a:Lini;
+    iget-object v1, p0, Ling;->a:Lqkg;
 
-    iget-object v0, v0, Lini;->a:Loiw;
+    invoke-interface {v1}, Lqkg;->get()Ljava/lang/Object;
 
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
+    move-result-object v1
+
+    check-cast v1, Lddf;
+
+    sget-object v2, Limt;->b:Ljava/util/Map;
+
+    invoke-static {v1}, Lmip;->eM(Lddf;)Ljava/lang/Integer;
+
+    move-result-object v1
+
+    invoke-static {v2, v1, v0}, Lj$/util/Map$-EL;->getOrDefault(Ljava/util/Map;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Liof;
+    check-cast v0, Lims;
 
-    const/4 v1, 0x0
+    invoke-static {v0}, Lqmd;->ae(Ljava/lang/Object;)V
 
-    iput-boolean v1, v0, Liof;->n:Z
+    return-object v0
 
-    iget-object v1, v0, Liof;->l:Landroid/view/View;
-
-    invoke-virtual {v1}, Landroid/view/View;->animate()Landroid/view/ViewPropertyAnimator;
-
-    move-result-object v1
-
-    const/4 v2, 0x0
-
-    invoke-virtual {v1, v2}, Landroid/view/ViewPropertyAnimator;->alpha(F)Landroid/view/ViewPropertyAnimator;
-
-    move-result-object v1
-
-    iget v3, v0, Liof;->e:I
-
-    int-to-long v3, v3
-
-    invoke-virtual {v1, v3, v4}, Landroid/view/ViewPropertyAnimator;->setDuration(J)Landroid/view/ViewPropertyAnimator;
-
-    move-result-object v1
-
-    new-instance v3, Licv;
-
-    const/16 v4, 0xf
-
-    invoke-direct {v3, v0, v4}, Licv;-><init>(Liof;I)V
-
-    invoke-virtual {v1, v3}, Landroid/view/ViewPropertyAnimator;->withEndAction(Ljava/lang/Runnable;)Landroid/view/ViewPropertyAnimator;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Landroid/view/ViewPropertyAnimator;->start()V
-
-    iget-object v1, v0, Liof;->g:Landroid/widget/ImageButton;
-
-    invoke-virtual {v1}, Landroid/widget/ImageButton;->animate()Landroid/view/ViewPropertyAnimator;
-
-    move-result-object v1
-
-    invoke-virtual {v1, v2}, Landroid/view/ViewPropertyAnimator;->alpha(F)Landroid/view/ViewPropertyAnimator;
-
-    move-result-object v1
-
-    iget v3, v0, Liof;->e:I
-
-    int-to-long v3, v3
-
-    invoke-virtual {v1, v3, v4}, Landroid/view/ViewPropertyAnimator;->setDuration(J)Landroid/view/ViewPropertyAnimator;
-
-    move-result-object v1
-
-    new-instance v3, Licv;
-
-    const/16 v4, 0x10
-
-    invoke-direct {v3, v0, v4}, Licv;-><init>(Liof;I)V
-
-    invoke-virtual {v1, v3}, Landroid/view/ViewPropertyAnimator;->withEndAction(Ljava/lang/Runnable;)Landroid/view/ViewPropertyAnimator;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Landroid/view/ViewPropertyAnimator;->start()V
-
-    iget-object v1, v0, Liof;->h:Landroid/widget/ImageButton;
-
-    invoke-virtual {v1}, Landroid/widget/ImageButton;->animate()Landroid/view/ViewPropertyAnimator;
-
-    move-result-object v1
-
-    invoke-virtual {v1, v2}, Landroid/view/ViewPropertyAnimator;->alpha(F)Landroid/view/ViewPropertyAnimator;
-
-    move-result-object v1
-
-    iget v2, v0, Liof;->e:I
-
-    int-to-long v2, v2
-
-    invoke-virtual {v1, v2, v3}, Landroid/view/ViewPropertyAnimator;->setDuration(J)Landroid/view/ViewPropertyAnimator;
-
-    move-result-object v1
-
-    new-instance v2, Licv;
-
-    const/16 v3, 0x11
-
-    invoke-direct {v2, v0, v3}, Licv;-><init>(Liof;I)V
-
-    invoke-virtual {v1, v2}, Landroid/view/ViewPropertyAnimator;->withEndAction(Ljava/lang/Runnable;)Landroid/view/ViewPropertyAnimator;
+    :pswitch_0
+    invoke-static {}, Linf;->l()Lims;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Landroid/view/ViewPropertyAnimator;->start()V
+    invoke-static {v0}, Lqmd;->ae(Ljava/lang/Object;)V
 
-    return-void
+    iget-object v1, p0, Ling;->a:Lqkg;
+
+    invoke-interface {v1}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Lddf;
+
+    sget-object v2, Limt;->b:Ljava/util/Map;
+
+    sget-object v3, Ldef;->k:Lddi;
+
+    invoke-interface {v1, v3}, Lddf;->a(Lddi;)Lojc;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Lojc;->c()Ljava/lang/Object;
+
+    move-result-object v1
+
+    invoke-static {v2, v1, v0}, Lj$/util/Map$-EL;->getOrDefault(Ljava/util/Map;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lims;
+
+    invoke-static {v0}, Lqmd;->ae(Ljava/lang/Object;)V
+
+    return-object v0
+
+    :pswitch_1
+    invoke-static {}, Linf;->k()Lims;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lqmd;->ae(Ljava/lang/Object;)V
+
+    iget-object v1, p0, Ling;->a:Lqkg;
+
+    invoke-interface {v1}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Lddf;
+
+    sget-object v2, Limt;->b:Ljava/util/Map;
+
+    sget-object v3, Ldef;->i:Lddi;
+
+    invoke-interface {v1, v3}, Lddf;->a(Lddi;)Lojc;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Lojc;->c()Ljava/lang/Object;
+
+    move-result-object v1
+
+    invoke-static {v2, v1, v0}, Lj$/util/Map$-EL;->getOrDefault(Ljava/util/Map;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lims;
+
+    invoke-static {v0}, Lqmd;->ae(Ljava/lang/Object;)V
+
+    return-object v0
+
+    :pswitch_2
+    invoke-static {}, Linf;->j()Lims;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lqmd;->ae(Ljava/lang/Object;)V
+
+    iget-object v1, p0, Ling;->a:Lqkg;
+
+    invoke-interface {v1}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Lddf;
+
+    sget-object v2, Limt;->b:Ljava/util/Map;
+
+    sget-object v3, Ldef;->l:Lddi;
+
+    invoke-interface {v1, v3}, Lddf;->a(Lddi;)Lojc;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Lojc;->c()Ljava/lang/Object;
+
+    move-result-object v1
+
+    invoke-static {v2, v1, v0}, Lj$/util/Map$-EL;->getOrDefault(Ljava/util/Map;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lims;
+
+    invoke-static {v0}, Lqmd;->ae(Ljava/lang/Object;)V
+
+    return-object v0
+
+    :pswitch_3
+    invoke-static {}, Linf;->i()Lims;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lqmd;->ae(Ljava/lang/Object;)V
+
+    iget-object v1, p0, Ling;->a:Lqkg;
+
+    invoke-interface {v1}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Lddf;
+
+    sget-object v2, Limt;->b:Ljava/util/Map;
+
+    sget-object v3, Ldef;->h:Lddi;
+
+    invoke-interface {v1, v3}, Lddf;->a(Lddi;)Lojc;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Lojc;->c()Ljava/lang/Object;
+
+    move-result-object v1
+
+    invoke-static {v2, v1, v0}, Lj$/util/Map$-EL;->getOrDefault(Ljava/util/Map;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lims;
+
+    invoke-static {v0}, Lqmd;->ae(Ljava/lang/Object;)V
+
+    return-object v0
+
+    :pswitch_4
+    invoke-static {}, Linf;->h()Lims;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lqmd;->ae(Ljava/lang/Object;)V
+
+    iget-object v1, p0, Ling;->a:Lqkg;
+
+    invoke-interface {v1}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Lddf;
+
+    sget-object v2, Limt;->b:Ljava/util/Map;
+
+    sget-object v3, Ldef;->g:Lddi;
+
+    invoke-interface {v1, v3}, Lddf;->a(Lddi;)Lojc;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Lojc;->c()Ljava/lang/Object;
+
+    move-result-object v1
+
+    invoke-static {v2, v1, v0}, Lj$/util/Map$-EL;->getOrDefault(Ljava/util/Map;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lims;
+
+    invoke-static {v0}, Lqmd;->ae(Ljava/lang/Object;)V
+
+    return-object v0
+
+    :pswitch_5
+    invoke-static {}, Linf;->g()Lims;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lqmd;->ae(Ljava/lang/Object;)V
+
+    iget-object v1, p0, Ling;->a:Lqkg;
+
+    invoke-interface {v1}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Lddf;
+
+    sget-object v2, Limt;->b:Ljava/util/Map;
+
+    sget-object v3, Ldef;->f:Lddi;
+
+    invoke-interface {v1, v3}, Lddf;->a(Lddi;)Lojc;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Lojc;->c()Ljava/lang/Object;
+
+    move-result-object v1
+
+    invoke-static {v2, v1, v0}, Lj$/util/Map$-EL;->getOrDefault(Ljava/util/Map;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lims;
+
+    invoke-static {v0}, Lqmd;->ae(Ljava/lang/Object;)V
+
+    return-object v0
+
+    :pswitch_6
+    sget-object v0, Linf;->a:Lims;
+
+    invoke-static {v0}, Lqmd;->ae(Ljava/lang/Object;)V
+
+    iget-object v1, p0, Ling;->a:Lqkg;
+
+    invoke-interface {v1}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Lddf;
+
+    sget-object v2, Limt;->b:Ljava/util/Map;
+
+    invoke-static {v1}, Lmip;->eM(Lddf;)Ljava/lang/Integer;
+
+    move-result-object v1
+
+    invoke-static {v2, v1, v0}, Lj$/util/Map$-EL;->getOrDefault(Ljava/util/Map;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lims;
+
+    invoke-static {v0}, Lqmd;->ae(Ljava/lang/Object;)V
+
+    return-object v0
+
+    :pswitch_7
+    invoke-static {}, Linf;->f()Lims;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lqmd;->ae(Ljava/lang/Object;)V
+
+    iget-object v1, p0, Ling;->a:Lqkg;
+
+    invoke-interface {v1}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Lddf;
+
+    sget-object v2, Limt;->b:Ljava/util/Map;
+
+    sget-object v3, Ldef;->e:Lddi;
+
+    invoke-interface {v1, v3}, Lddf;->a(Lddi;)Lojc;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Lojc;->c()Ljava/lang/Object;
+
+    move-result-object v1
+
+    invoke-static {v2, v1, v0}, Lj$/util/Map$-EL;->getOrDefault(Ljava/util/Map;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lims;
+
+    invoke-static {v0}, Lqmd;->ae(Ljava/lang/Object;)V
+
+    return-object v0
+
+    :pswitch_8
+    invoke-static {}, Linf;->e()Lims;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lqmd;->ae(Ljava/lang/Object;)V
+
+    iget-object v1, p0, Ling;->a:Lqkg;
+
+    invoke-interface {v1}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Lddf;
+
+    sget-object v2, Limt;->b:Ljava/util/Map;
+
+    sget-object v3, Ldef;->d:Lddi;
+
+    invoke-interface {v1, v3}, Lddf;->a(Lddi;)Lojc;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Lojc;->c()Ljava/lang/Object;
+
+    move-result-object v1
+
+    invoke-static {v2, v1, v0}, Lj$/util/Map$-EL;->getOrDefault(Ljava/util/Map;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lims;
+
+    invoke-static {v0}, Lqmd;->ae(Ljava/lang/Object;)V
+
+    return-object v0
+
+    :pswitch_9
+    sget-object v0, Linf;->a:Lims;
+
+    invoke-static {v0}, Lqmd;->ae(Ljava/lang/Object;)V
+
+    iget-object v1, p0, Ling;->a:Lqkg;
+
+    invoke-interface {v1}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Lddf;
+
+    sget-object v2, Limt;->b:Ljava/util/Map;
+
+    invoke-static {v1}, Lmip;->eM(Lddf;)Ljava/lang/Integer;
+
+    move-result-object v1
+
+    invoke-static {v2, v1, v0}, Lj$/util/Map$-EL;->getOrDefault(Ljava/util/Map;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lims;
+
+    invoke-static {v0}, Lqmd;->ae(Ljava/lang/Object;)V
+
+    return-object v0
+
+    :pswitch_a
+    invoke-static {}, Linf;->d()Lims;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lqmd;->ae(Ljava/lang/Object;)V
+
+    iget-object v1, p0, Ling;->a:Lqkg;
+
+    invoke-interface {v1}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Lddf;
+
+    sget-object v2, Limt;->b:Ljava/util/Map;
+
+    sget-object v3, Ldef;->c:Lddi;
+
+    invoke-interface {v1, v3}, Lddf;->a(Lddi;)Lojc;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Lojc;->c()Ljava/lang/Object;
+
+    move-result-object v1
+
+    invoke-static {v2, v1, v0}, Lj$/util/Map$-EL;->getOrDefault(Ljava/util/Map;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lims;
+
+    invoke-static {v0}, Lqmd;->ae(Ljava/lang/Object;)V
+
+    return-object v0
+
+    :pswitch_b
+    invoke-static {}, Linf;->c()Lims;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lqmd;->ae(Ljava/lang/Object;)V
+
+    iget-object v1, p0, Ling;->a:Lqkg;
+
+    invoke-interface {v1}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Lddf;
+
+    sget-object v2, Limt;->b:Ljava/util/Map;
+
+    sget-object v3, Ldef;->a:Lddi;
+
+    invoke-interface {v1, v3}, Lddf;->a(Lddi;)Lojc;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Lojc;->c()Ljava/lang/Object;
+
+    move-result-object v1
+
+    invoke-static {v2, v1, v0}, Lj$/util/Map$-EL;->getOrDefault(Ljava/util/Map;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lims;
+
+    invoke-static {v0}, Lqmd;->ae(Ljava/lang/Object;)V
+
+    return-object v0
+
+    :pswitch_c
+    invoke-static {}, Linf;->a()Lims;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lqmd;->ae(Ljava/lang/Object;)V
+
+    iget-object v1, p0, Ling;->a:Lqkg;
+
+    invoke-interface {v1}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Lddf;
+
+    sget-object v2, Limt;->b:Ljava/util/Map;
+
+    sget-object v3, Ldef;->b:Lddi;
+
+    invoke-interface {v1, v3}, Lddf;->a(Lddi;)Lojc;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Lojc;->c()Ljava/lang/Object;
+
+    move-result-object v1
+
+    invoke-static {v2, v1, v0}, Lj$/util/Map$-EL;->getOrDefault(Ljava/util/Map;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lims;
+
+    invoke-static {v0}, Lqmd;->ae(Ljava/lang/Object;)V
+
+    return-object v0
+
+    :pswitch_d
+    invoke-static {}, Linf;->b()Lims;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lqmd;->ae(Ljava/lang/Object;)V
+
+    iget-object v1, p0, Ling;->a:Lqkg;
+
+    invoke-interface {v1}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Lddf;
+
+    sget-object v2, Limt;->b:Ljava/util/Map;
+
+    sget-object v3, Ldef;->m:Lddi;
+
+    invoke-interface {v1, v3}, Lddf;->a(Lddi;)Lojc;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Lojc;->c()Ljava/lang/Object;
+
+    move-result-object v1
+
+    invoke-static {v2, v1, v0}, Lj$/util/Map$-EL;->getOrDefault(Ljava/util/Map;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lims;
+
+    invoke-static {v0}, Lqmd;->ae(Ljava/lang/Object;)V
+
+    return-object v0
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_d
+        :pswitch_c
+        :pswitch_b
+        :pswitch_a
+        :pswitch_9
+        :pswitch_8
+        :pswitch_7
+        :pswitch_6
+        :pswitch_5
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
+.end method
+
+.method public final synthetic get()Ljava/lang/Object;
+    .locals 1
+
+    iget v0, p0, Ling;->b:I
+
+    packed-switch v0, :pswitch_data_0
+
+    invoke-virtual {p0}, Ling;->a()Lims;
+
+    move-result-object v0
+
+    return-object v0
+
+    :pswitch_0
+    invoke-virtual {p0}, Ling;->a()Lims;
+
+    move-result-object v0
+
+    return-object v0
+
+    :pswitch_1
+    invoke-virtual {p0}, Ling;->a()Lims;
+
+    move-result-object v0
+
+    return-object v0
+
+    :pswitch_2
+    invoke-virtual {p0}, Ling;->a()Lims;
+
+    move-result-object v0
+
+    return-object v0
+
+    :pswitch_3
+    invoke-virtual {p0}, Ling;->a()Lims;
+
+    move-result-object v0
+
+    return-object v0
+
+    :pswitch_4
+    invoke-virtual {p0}, Ling;->a()Lims;
+
+    move-result-object v0
+
+    return-object v0
+
+    :pswitch_5
+    invoke-virtual {p0}, Ling;->a()Lims;
+
+    move-result-object v0
+
+    return-object v0
+
+    :pswitch_6
+    invoke-virtual {p0}, Ling;->a()Lims;
+
+    move-result-object v0
+
+    return-object v0
+
+    :pswitch_7
+    invoke-virtual {p0}, Ling;->a()Lims;
+
+    move-result-object v0
+
+    return-object v0
+
+    :pswitch_8
+    invoke-virtual {p0}, Ling;->a()Lims;
+
+    move-result-object v0
+
+    return-object v0
+
+    :pswitch_9
+    invoke-virtual {p0}, Ling;->a()Lims;
+
+    move-result-object v0
+
+    return-object v0
+
+    :pswitch_a
+    invoke-virtual {p0}, Ling;->a()Lims;
+
+    move-result-object v0
+
+    return-object v0
+
+    :pswitch_b
+    invoke-virtual {p0}, Ling;->a()Lims;
+
+    move-result-object v0
+
+    return-object v0
+
+    :pswitch_c
+    invoke-virtual {p0}, Ling;->a()Lims;
+
+    move-result-object v0
+
+    return-object v0
+
+    :pswitch_d
+    invoke-virtual {p0}, Ling;->a()Lims;
+
+    move-result-object v0
+
+    return-object v0
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_d
+        :pswitch_c
+        :pswitch_b
+        :pswitch_a
+        :pswitch_9
+        :pswitch_8
+        :pswitch_7
+        :pswitch_6
+        :pswitch_5
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method

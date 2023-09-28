@@ -1,100 +1,94 @@
-.class public final Lcui;
-.super Ljava/lang/Object;
+.class public final enum Lcui;
+.super Ljava/lang/Enum;
 
-# interfaces
-.implements Lkad;
+
+# static fields
+.field public static final enum a:Lcui;
+
+.field public static final enum b:Lcui;
+
+.field public static final enum c:Lcui;
+
+.field private static final synthetic f:[Lcui;
 
 
 # instance fields
-.field public final a:Ljyc;
+.field public final d:Z
 
-.field public final b:Ljava/util/List;
-
-.field public final c:Ljava/util/concurrent/atomic/AtomicBoolean;
-
-.field public final d:Lgys;
-
-.field public final e:Lgyb;
-
-.field public final f:Lgyt;
+.field public final e:Z
 
 
 # direct methods
-.method public constructor <init>(Ljyc;Lcsu;Lgys;Lgyt;)V
-    .locals 3
+.method static constructor <clinit>()V
+    .locals 7
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance v0, Lcui;
 
-    new-instance v0, Ljava/util/ArrayList;
-
-    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
-
-    iput-object v0, p0, Lcui;->b:Ljava/util/List;
-
-    new-instance v1, Ljava/util/concurrent/atomic/AtomicBoolean;
+    const-string v1, "ENABLED_VISIBLE"
 
     const/4 v2, 0x0
 
-    invoke-direct {v1, v2}, Ljava/util/concurrent/atomic/AtomicBoolean;-><init>(Z)V
+    const/4 v3, 0x1
 
-    iput-object v1, p0, Lcui;->c:Ljava/util/concurrent/atomic/AtomicBoolean;
+    invoke-direct {v0, v1, v2, v3, v3}, Lcui;-><init>(Ljava/lang/String;IZZ)V
 
-    iput-object p1, p0, Lcui;->a:Ljyc;
+    sput-object v0, Lcui;->a:Lcui;
 
-    iput-object p3, p0, Lcui;->d:Lgys;
+    new-instance v1, Lcui;
 
-    iget-object p1, p2, Lcsu;->a:Lctd;
+    const-string v4, "DISABLED_VISIBLE"
 
-    invoke-interface {p1}, Lctd;->b()Lgyb;
+    invoke-direct {v1, v4, v3, v2, v3}, Lcui;-><init>(Ljava/lang/String;IZZ)V
 
-    move-result-object p1
+    sput-object v1, Lcui;->b:Lcui;
 
-    iput-object p1, p0, Lcui;->e:Lgyb;
+    new-instance v4, Lcui;
 
-    iput-object p4, p0, Lcui;->f:Lgyt;
+    const-string v5, "DISABLED_HIDDEN"
 
-    invoke-interface {v0, p2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+    const/4 v6, 0x2
+
+    invoke-direct {v4, v5, v6, v2, v2}, Lcui;-><init>(Ljava/lang/String;IZZ)V
+
+    sput-object v4, Lcui;->c:Lcui;
+
+    const/4 v5, 0x3
+
+    new-array v5, v5, [Lcui;
+
+    aput-object v0, v5, v2
+
+    aput-object v1, v5, v3
+
+    aput-object v4, v5, v6
+
+    sput-object v5, Lcui;->f:[Lcui;
 
     return-void
 .end method
 
+.method private constructor <init>(Ljava/lang/String;IZZ)V
+    .locals 0
 
-# virtual methods
-.method public final close()V
-    .locals 3
+    invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
-    iget-object v0, p0, Lcui;->c:Ljava/util/concurrent/atomic/AtomicBoolean;
+    iput-boolean p3, p0, Lcui;->d:Z
 
-    const/4 v1, 0x0
+    iput-boolean p4, p0, Lcui;->e:Z
 
-    const/4 v2, 0x1
-
-    invoke-virtual {v0, v1, v2}, Ljava/util/concurrent/atomic/AtomicBoolean;->compareAndSet(ZZ)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    iget-object v0, p0, Lcui;->a:Ljyc;
-
-    invoke-interface {v0}, Ljyc;->close()V
-
-    iget-object v0, p0, Lcui;->b:Ljava/util/List;
-
-    invoke-static {v0}, Lj$/util/Collection$-EL;->stream(Ljava/util/Collection;)Lj$/util/stream/Stream;
-
-    move-result-object v0
-
-    sget-object v1, Lcpy;->e:Lcpy;
-
-    invoke-interface {v0, v1}, Lj$/util/stream/Stream;->map(Ljava/util/function/Function;)Lj$/util/stream/Stream;
-
-    move-result-object v0
-
-    sget-object v1, Lcot;->d:Lcot;
-
-    invoke-interface {v0, v1}, Lj$/util/stream/Stream;->forEach(Ljava/util/function/Consumer;)V
-
-    :cond_0
     return-void
+.end method
+
+.method public static values()[Lcui;
+    .locals 1
+
+    sget-object v0, Lcui;->f:[Lcui;
+
+    invoke-virtual {v0}, [Lcui;->clone()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, [Lcui;
+
+    return-object v0
 .end method

@@ -1,48 +1,68 @@
-.class public Lcxh;
-.super Lcxc;
-
-
-# instance fields
-.field public final f:Litm;
-
-.field public final g:Ljwb;
-
-.field public final h:Ldhi;
-
-.field public final i:Lmqp;
-
-.field public final j:Ldbf;
-
-.field public k:Z
-
-.field public final l:Lhsh;
-
-.field public final m:Lcvr;
+.class final Lcxh;
+.super Laia;
 
 
 # direct methods
-.method public constructor <init>(Litm;Lcvr;Ljwb;Ldhi;Lhsh;Lmqp;Ldbf;[B)V
+.method public constructor <init>(Laii;)V
     .locals 0
 
-    invoke-direct {p0}, Lcxc;-><init>()V
-
-    const/4 p8, 0x1
-
-    iput-boolean p8, p0, Lcxh;->k:Z
-
-    iput-object p1, p0, Lcxh;->f:Litm;
-
-    iput-object p2, p0, Lcxh;->m:Lcvr;
-
-    iput-object p3, p0, Lcxh;->g:Ljwb;
-
-    iput-object p4, p0, Lcxh;->h:Ldhi;
-
-    iput-object p5, p0, Lcxh;->l:Lhsh;
-
-    iput-object p6, p0, Lcxh;->i:Lmqp;
-
-    iput-object p7, p0, Lcxh;->j:Ldbf;
+    invoke-direct {p0, p1}, Laia;-><init>(Laii;)V
 
     return-void
+.end method
+
+
+# virtual methods
+.method public final bridge synthetic b(Lake;Ljava/lang/Object;)V
+    .locals 3
+
+    check-cast p2, Lcxe;
+
+    iget v0, p2, Lcxe;->a:I
+
+    int-to-long v0, v0
+
+    const/4 v2, 0x1
+
+    invoke-virtual {p1, v2, v0, v1}, Lake;->e(IJ)V
+
+    iget v0, p2, Lcxe;->b:I
+
+    int-to-long v0, v0
+
+    const/4 v2, 0x2
+
+    invoke-virtual {p1, v2, v0, v1}, Lake;->e(IJ)V
+
+    iget v0, p2, Lcxe;->c:I
+
+    int-to-long v0, v0
+
+    const/4 v2, 0x3
+
+    invoke-virtual {p1, v2, v0, v1}, Lake;->e(IJ)V
+
+    iget v0, p2, Lcxe;->d:I
+
+    int-to-long v0, v0
+
+    const/4 v2, 0x4
+
+    invoke-virtual {p1, v2, v0, v1}, Lake;->e(IJ)V
+
+    iget-wide v0, p2, Lcxe;->e:J
+
+    const/4 p2, 0x5
+
+    invoke-virtual {p1, p2, v0, v1}, Lake;->e(IJ)V
+
+    return-void
+.end method
+
+.method public final d()Ljava/lang/String;
+    .locals 1
+
+    const-string v0, "INSERT OR REPLACE INTO `EnumerationErrorCounts` (`errorCode`,`failuresBeforeReboot`,`failuresAfterReboot`,`rebootCount`,`lastFailureTimestamp`) VALUES (?,?,?,?,?)"
+
+    return-object v0
 .end method

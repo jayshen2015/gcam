@@ -2,21 +2,21 @@
 .super Ljava/lang/Object;
 
 
-# static fields
-.field public static final a:Lftp;
+# instance fields
+.field public final a:Landroid/content/Context;
+
+.field public final b:Llda;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
+.method public constructor <init>(Llda;Landroid/content/Context;)V
+    .locals 0
 
-    new-instance v0, Lftp;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const/16 v1, 0x8
+    iput-object p1, p0, Lfvk;->b:Llda;
 
-    invoke-direct {v0, v1}, Lftp;-><init>(I)V
-
-    sput-object v0, Lfvk;->a:Lftp;
+    iput-object p2, p0, Lfvk;->a:Landroid/content/Context;
 
     return-void
 .end method

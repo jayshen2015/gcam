@@ -2,1048 +2,380 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lkzc;
+.implements Landroid/os/Parcelable$Creator;
 
 
 # instance fields
-.field public volatile a:Ljava/lang/Object;
-
-.field public volatile b:Lkzd;
-
-.field private c:Lkzw;
-
-.field private d:Lkzw;
+.field private final synthetic a:I
 
 
 # direct methods
-.method private constructor <init>()V
-    .locals 1
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    const/4 v0, 0x0
-
-    iput-object v0, p0, Llaa;->a:Ljava/lang/Object;
-
-    iput-object v0, p0, Llaa;->b:Lkzd;
-
-    iput-object v0, p0, Llaa;->c:Lkzw;
-
-    iput-object v0, p0, Llaa;->d:Lkzw;
-
-    return-void
-.end method
-
-.method public static j()Llaa;
-    .locals 1
-
-    new-instance v0, Llaa;
-
-    invoke-direct {v0}, Llaa;-><init>()V
-
-    return-object v0
-.end method
-
-.method public static k(Ljava/lang/Object;Lkye;Llaa;)V
+.method public constructor <init>(I)V
     .locals 0
 
-    :try_start_0
-    invoke-interface {p1, p0}, Lkye;->a(Ljava/lang/Object;)Ljava/lang/Object;
+    iput p1, p0, Llaa;->a:I
 
-    move-result-object p0
-
-    invoke-virtual {p2, p0}, Llaa;->l(Ljava/lang/Object;)V
-    :try_end_0
-    .catch Lkzd; {:try_start_0 .. :try_end_0} :catch_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    return-void
-
-    :catchall_0
-    move-exception p0
-
-    invoke-static {p0}, Lkzd;->a(Ljava/lang/Throwable;)Lkzd;
-
-    move-result-object p0
-
-    invoke-virtual {p2, p0}, Llaa;->m(Lkzd;)V
-
-    return-void
-
-    :catch_0
-    move-exception p0
-
-    invoke-virtual {p2, p0}, Llaa;->m(Lkzd;)V
-
-    return-void
-.end method
-
-.method public static o(Ljava/lang/Object;Lkzg;Ljava/util/concurrent/Executor;Llaa;)V
-    .locals 1
-
-    :try_start_0
-    invoke-interface {p1, p0, p2}, Lkzg;->a(Ljava/lang/Object;Ljava/util/concurrent/Executor;)Lkzc;
-
-    move-result-object p0
-
-    sget-object p1, Lnnv;->a:Lnnv;
-
-    new-instance p2, Lkzy;
-
-    invoke-direct {p2, p3}, Lkzy;-><init>(Llaa;)V
-
-    new-instance v0, Lkzx;
-
-    invoke-direct {v0, p3}, Lkzx;-><init>(Llaa;)V
-
-    invoke-interface {p0, p1, p2, v0}, Lkzc;->c(Ljava/util/concurrent/Executor;Lkye;Lkye;)Lkzc;
-
-    move-result-object p0
-
-    sget-object p1, Lkyo;->a:Lkyo;
-
-    invoke-interface {p0, p1}, Lkzc;->h(Lkyo;)V
-    :try_end_0
-    .catch Lkzd; {:try_start_0 .. :try_end_0} :catch_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    return-void
-
-    :catchall_0
-    move-exception p0
-
-    invoke-static {p0}, Lkzd;->a(Ljava/lang/Throwable;)Lkzd;
-
-    move-result-object p0
-
-    invoke-virtual {p3, p0}, Llaa;->m(Lkzd;)V
-
-    return-void
-
-    :catch_0
-    move-exception p0
-
-    invoke-virtual {p3, p0}, Llaa;->m(Lkzd;)V
-
-    return-void
-.end method
-
-.method private final p()V
-    .locals 2
-
-    monitor-enter p0
-
-    :try_start_0
-    iget-object v0, p0, Llaa;->c:Lkzw;
-
-    const/4 v1, 0x0
-
-    iput-object v1, p0, Llaa;->c:Lkzw;
-
-    iput-object v1, p0, Llaa;->d:Lkzw;
-
-    invoke-virtual {p0}, Ljava/lang/Object;->notifyAll()V
-
-    monitor-exit p0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    :goto_0
-    if-eqz v0, :cond_0
-
-    invoke-virtual {v0}, Lkzw;->a()V
-
-    iget-object v0, v0, Lkzw;->a:Lkzw;
-
-    goto :goto_0
-
-    :cond_0
-    return-void
-
-    :catchall_0
-    move-exception v0
-
-    :try_start_1
-    monitor-exit p0
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    goto :goto_2
-
-    :goto_1
-    throw v0
-
-    :goto_2
-    goto :goto_1
-.end method
-
-.method private final q(Ljava/util/concurrent/Executor;Ljava/lang/Runnable;Llaa;)V
-    .locals 1
-
-    monitor-enter p0
-
-    :try_start_0
-    invoke-virtual {p0}, Llaa;->g()Z
-
-    move-result v0
-
-    if-nez v0, :cond_1
-
-    new-instance v0, Lkzw;
-
-    invoke-direct {v0, p1, p2, p3}, Lkzw;-><init>(Ljava/util/concurrent/Executor;Ljava/lang/Runnable;Llaa;)V
-
-    iget-object p1, p0, Llaa;->d:Lkzw;
-
-    if-eqz p1, :cond_0
-
-    iput-object v0, p1, Lkzw;->a:Lkzw;
-
-    goto :goto_0
-
-    :cond_0
-    iput-object v0, p0, Llaa;->c:Lkzw;
-
-    :goto_0
-    iput-object v0, p0, Llaa;->d:Lkzw;
-
-    monitor-exit p0
-
-    return-void
-
-    :cond_1
-    new-instance p1, Ljava/lang/IllegalStateException;
-
-    const-string p2, "Should not be delaying execution when done"
-
-    invoke-direct {p1, p2}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw p1
-
-    :catchall_0
-    move-exception p1
-
-    monitor-exit p0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw p1
-.end method
-
-.method private static r(Lkzd;Lkye;Ljava/util/concurrent/Executor;Llaa;)V
-    .locals 2
-
-    :try_start_0
-    new-instance v0, Lkzu;
-
-    const/4 v1, 0x0
-
-    invoke-direct {v0, p0, p1, p3, v1}, Lkzu;-><init>(Ljava/lang/Object;Lkye;Llaa;I)V
-
-    invoke-interface {p2, v0}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    return-void
-
-    :catchall_0
-    move-exception p0
-
-    invoke-static {p0}, Lkzd;->a(Ljava/lang/Throwable;)Lkzd;
-
-    move-result-object p0
-
-    invoke-virtual {p3, p0}, Llaa;->m(Lkzd;)V
-
-    return-void
-.end method
-
-.method private static s(Ljava/lang/Object;Lkye;Ljava/util/concurrent/Executor;Llaa;)V
-    .locals 2
-
-    :try_start_0
-    new-instance v0, Lkzu;
-
-    const/4 v1, 0x0
-
-    invoke-direct {v0, p0, p1, p3, v1}, Lkzu;-><init>(Ljava/lang/Object;Lkye;Llaa;I)V
-
-    invoke-interface {p2, v0}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    return-void
-
-    :catchall_0
-    move-exception p0
-
-    invoke-static {p0}, Lkzd;->a(Ljava/lang/Throwable;)Lkzd;
-
-    move-result-object p0
-
-    invoke-virtual {p3, p0}, Llaa;->m(Lkzd;)V
-
-    return-void
-.end method
-
-.method private static t(Lkzd;Lkzg;Ljava/util/concurrent/Executor;Llaa;Llpm;)V
-    .locals 9
-
-    :try_start_0
-    new-instance v8, Lkzv;
-
-    const/4 v6, 0x0
-
-    const/4 v7, 0x0
-
-    move-object v0, v8
-
-    move-object v1, p0
-
-    move-object v2, p1
-
-    move-object v3, p2
-
-    move-object v4, p3
-
-    move-object v5, p4
-
-    invoke-direct/range {v0 .. v7}, Lkzv;-><init>(Ljava/lang/Object;Lkzg;Ljava/util/concurrent/Executor;Llaa;Llpm;[B[B)V
-
-    invoke-interface {p2, v8}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    return-void
-
-    :catchall_0
-    move-exception p0
-
-    invoke-static {p0}, Lkzd;->a(Ljava/lang/Throwable;)Lkzd;
-
-    move-result-object p0
-
-    invoke-virtual {p3, p0}, Llaa;->m(Lkzd;)V
-
-    return-void
-.end method
-
-.method private static u(Ljava/lang/Object;Lkzg;Ljava/util/concurrent/Executor;Llaa;Llpm;)V
-    .locals 9
-
-    :try_start_0
-    new-instance v8, Lkzv;
-
-    const/4 v6, 0x0
-
-    const/4 v7, 0x0
-
-    move-object v0, v8
-
-    move-object v1, p0
-
-    move-object v2, p1
-
-    move-object v3, p2
-
-    move-object v4, p3
-
-    move-object v5, p4
-
-    invoke-direct/range {v0 .. v7}, Lkzv;-><init>(Ljava/lang/Object;Lkzg;Ljava/util/concurrent/Executor;Llaa;Llpm;[B[B)V
-
-    invoke-interface {p2, v8}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    return-void
-
-    :catchall_0
-    move-exception p0
-
-    invoke-static {p0}, Lkzd;->a(Ljava/lang/Throwable;)Lkzd;
-
-    move-result-object p0
-
-    invoke-virtual {p3, p0}, Llaa;->m(Lkzd;)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Ljava/util/concurrent/Executor;Lkye;)Lkzc;
-    .locals 3
-
-    invoke-static {}, Llaa;->j()Llaa;
-
-    move-result-object v0
-
-    iget-object v1, p0, Llaa;->a:Ljava/lang/Object;
-
-    if-eqz v1, :cond_0
-
-    invoke-static {v1, p2, p1, v0}, Llaa;->s(Ljava/lang/Object;Lkye;Ljava/util/concurrent/Executor;Llaa;)V
-
-    return-object v0
-
-    :cond_0
-    iget-object v1, p0, Llaa;->b:Lkzd;
-
-    if-eqz v1, :cond_1
-
-    invoke-virtual {v0, v1}, Llaa;->m(Lkzd;)V
-
-    return-object v0
-
-    :cond_1
-    monitor-enter p0
-
-    :try_start_0
-    iget-object v2, p0, Llaa;->a:Ljava/lang/Object;
-
-    if-nez v2, :cond_2
-
-    iget-object v1, p0, Llaa;->b:Lkzd;
-
-    if-nez v1, :cond_2
-
-    new-instance v1, Llbz;
-
-    const/4 v2, 0x1
-
-    invoke-direct {v1, p0, p2, v0, v2}, Llbz;-><init>(Llaa;Lkye;Llaa;I)V
-
-    invoke-direct {p0, p1, v1, v0}, Llaa;->q(Ljava/util/concurrent/Executor;Ljava/lang/Runnable;Llaa;)V
-
-    monitor-exit p0
-
-    return-object v0
-
-    :cond_2
-    monitor-exit p0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    if-eqz v2, :cond_3
-
-    invoke-static {v2, p2, p1, v0}, Llaa;->s(Ljava/lang/Object;Lkye;Ljava/util/concurrent/Executor;Llaa;)V
-
-    goto :goto_0
-
-    :cond_3
-    invoke-virtual {v0, v1}, Llaa;->m(Lkzd;)V
-
-    :goto_0
-    return-object v0
-
-    :catchall_0
-    move-exception p1
-
-    :try_start_1
-    monitor-exit p0
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    throw p1
-.end method
-
-.method public final b(Ljava/util/concurrent/Executor;Lkzg;)Lkzc;
-    .locals 10
-
-    sget-object v5, Llab;->a:Llpm;
-
-    invoke-static {}, Llaa;->j()Llaa;
-
-    move-result-object v8
-
-    iget-object v0, p0, Llaa;->a:Ljava/lang/Object;
-
-    if-eqz v0, :cond_0
-
-    invoke-static {v0, p2, p1, v8, v5}, Llaa;->u(Ljava/lang/Object;Lkzg;Ljava/util/concurrent/Executor;Llaa;Llpm;)V
-
-    return-object v8
-
-    :cond_0
-    iget-object v0, p0, Llaa;->b:Lkzd;
-
-    if-eqz v0, :cond_1
-
-    invoke-virtual {v8, v0}, Llaa;->m(Lkzd;)V
-
-    return-object v8
-
-    :cond_1
-    monitor-enter p0
-
-    :try_start_0
-    iget-object v1, p0, Llaa;->a:Ljava/lang/Object;
-
-    if-nez v1, :cond_2
-
-    iget-object v0, p0, Llaa;->b:Lkzd;
-
-    if-nez v0, :cond_2
-
-    new-instance v9, Lkzs;
-
-    const/4 v6, 0x0
-
-    const/4 v7, 0x0
-
-    move-object v0, v9
-
-    move-object v1, p0
-
-    move-object v2, p2
-
-    move-object v3, p1
-
-    move-object v4, v8
-
-    invoke-direct/range {v0 .. v7}, Lkzs;-><init>(Llaa;Lkzg;Ljava/util/concurrent/Executor;Llaa;Llpm;[B[B)V
-
-    invoke-direct {p0, p1, v9, v8}, Llaa;->q(Ljava/util/concurrent/Executor;Ljava/lang/Runnable;Llaa;)V
-
-    monitor-exit p0
-
-    return-object v8
-
-    :cond_2
-    monitor-exit p0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    if-eqz v1, :cond_3
-
-    invoke-static {v1, p2, p1, v8, v5}, Llaa;->u(Ljava/lang/Object;Lkzg;Ljava/util/concurrent/Executor;Llaa;Llpm;)V
-
-    goto :goto_0
-
-    :cond_3
-    invoke-virtual {v8, v0}, Llaa;->m(Lkzd;)V
-
-    :goto_0
-    return-object v8
-
-    :catchall_0
-    move-exception p1
-
-    :try_start_1
-    monitor-exit p0
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    throw p1
-.end method
-
-.method public final c(Ljava/util/concurrent/Executor;Lkye;Lkye;)Lkzc;
-    .locals 3
-
-    invoke-static {}, Llaa;->j()Llaa;
-
-    move-result-object v0
-
-    iget-object v1, p0, Llaa;->a:Ljava/lang/Object;
-
-    if-eqz v1, :cond_0
-
-    invoke-static {v1, p2, p1, v0}, Llaa;->s(Ljava/lang/Object;Lkye;Ljava/util/concurrent/Executor;Llaa;)V
-
-    return-object v0
-
-    :cond_0
-    iget-object v1, p0, Llaa;->b:Lkzd;
-
-    if-eqz v1, :cond_1
-
-    invoke-static {v1, p3, p1, v0}, Llaa;->r(Lkzd;Lkye;Ljava/util/concurrent/Executor;Llaa;)V
-
-    return-object v0
-
-    :cond_1
-    monitor-enter p0
-
-    :try_start_0
-    iget-object v2, p0, Llaa;->a:Ljava/lang/Object;
-
-    if-nez v2, :cond_2
-
-    iget-object v1, p0, Llaa;->b:Lkzd;
-
-    if-nez v1, :cond_2
-
-    new-instance v1, Lkzr;
-
-    invoke-direct {v1, p0, p2, v0, p3}, Lkzr;-><init>(Llaa;Lkye;Llaa;Lkye;)V
-
-    invoke-direct {p0, p1, v1, v0}, Llaa;->q(Ljava/util/concurrent/Executor;Ljava/lang/Runnable;Llaa;)V
-
-    monitor-exit p0
-
-    return-object v0
-
-    :cond_2
-    monitor-exit p0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    if-eqz v2, :cond_3
-
-    invoke-static {v2, p2, p1, v0}, Llaa;->s(Ljava/lang/Object;Lkye;Ljava/util/concurrent/Executor;Llaa;)V
-
-    goto :goto_0
-
-    :cond_3
-    invoke-static {v1, p3, p1, v0}, Llaa;->r(Lkzd;Lkye;Ljava/util/concurrent/Executor;Llaa;)V
-
-    :goto_0
-    return-object v0
-
-    :catchall_0
-    move-exception p1
-
-    :try_start_1
-    monitor-exit p0
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    throw p1
-.end method
-
-.method public final d(Ljava/util/concurrent/Executor;Lkzg;Lkzg;)Lkzc;
-    .locals 11
-
-    sget-object v5, Llab;->a:Llpm;
-
-    invoke-static {}, Llaa;->j()Llaa;
-
-    move-result-object v9
-
-    iget-object v0, p0, Llaa;->a:Ljava/lang/Object;
-
-    if-eqz v0, :cond_0
-
-    invoke-static {v0, p2, p1, v9, v5}, Llaa;->u(Ljava/lang/Object;Lkzg;Ljava/util/concurrent/Executor;Llaa;Llpm;)V
-
-    return-object v9
-
-    :cond_0
-    iget-object v0, p0, Llaa;->b:Lkzd;
-
-    if-eqz v0, :cond_1
-
-    invoke-static {v0, p3, p1, v9, v5}, Llaa;->t(Lkzd;Lkzg;Ljava/util/concurrent/Executor;Llaa;Llpm;)V
-
-    return-object v9
-
-    :cond_1
-    monitor-enter p0
-
-    :try_start_0
-    iget-object v1, p0, Llaa;->a:Ljava/lang/Object;
-
-    if-nez v1, :cond_2
-
-    iget-object v0, p0, Llaa;->b:Lkzd;
-
-    if-nez v0, :cond_2
-
-    new-instance v10, Lkzt;
-
-    const/4 v7, 0x0
-
-    const/4 v8, 0x0
-
-    move-object v0, v10
-
-    move-object v1, p0
-
-    move-object v2, p2
-
-    move-object v3, p1
-
-    move-object v4, v9
-
-    move-object v6, p3
-
-    invoke-direct/range {v0 .. v8}, Lkzt;-><init>(Llaa;Lkzg;Ljava/util/concurrent/Executor;Llaa;Llpm;Lkzg;[B[B)V
-
-    invoke-direct {p0, p1, v10, v9}, Llaa;->q(Ljava/util/concurrent/Executor;Ljava/lang/Runnable;Llaa;)V
-
-    monitor-exit p0
-
-    return-object v9
-
-    :cond_2
-    monitor-exit p0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    if-eqz v1, :cond_3
-
-    invoke-static {v1, p2, p1, v9, v5}, Llaa;->u(Ljava/lang/Object;Lkzg;Ljava/util/concurrent/Executor;Llaa;Llpm;)V
-
-    goto :goto_0
-
-    :cond_3
-    invoke-static {v0, p3, p1, v9, v5}, Llaa;->t(Lkzd;Lkzg;Ljava/util/concurrent/Executor;Llaa;Llpm;)V
-
-    :goto_0
-    return-object v9
-
-    :catchall_0
-    move-exception p1
-
-    :try_start_1
-    monitor-exit p0
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    throw p1
-.end method
-
-.method public final e()Lnou;
+.method public final synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
     .locals 2
 
-    new-instance v0, Lkzz;
+    iget v0, p0, Llaa;->a:I
 
     const/4 v1, 0x0
 
-    invoke-direct {v0, p0, v1}, Lkzz;-><init>(Llaa;I)V
+    packed-switch v0, :pswitch_data_0
 
-    return-object v0
-.end method
+    new-instance v0, Lpyc;
 
-.method public final f()Ljava/lang/Object;
-    .locals 1
-
-    iget-object v0, p0, Llaa;->a:Ljava/lang/Object;
-
-    if-eqz v0, :cond_0
+    invoke-direct {v0, p1}, Lpyc;-><init>(Landroid/os/Parcel;)V
 
     return-object v0
 
-    :cond_0
-    iget-object v0, p0, Llaa;->b:Lkzd;
+    :pswitch_0
+    new-instance v0, Lpyb;
 
-    if-nez v0, :cond_3
+    invoke-direct {v0, p1}, Lpyb;-><init>(Landroid/os/Parcel;)V
 
-    monitor-enter p0
+    return-object v0
 
-    :goto_0
+    :pswitch_1
+    new-instance v0, Lpxx;
+
+    invoke-direct {v0, p1}, Lpxx;-><init>(Landroid/os/Parcel;)V
+
+    return-object v0
+
+    :pswitch_2
+    new-instance v0, Lpxw;
+
+    invoke-direct {v0, p1}, Lpxw;-><init>(Landroid/os/Parcel;)V
+
+    return-object v0
+
+    :pswitch_3
+    new-instance v0, Lpxv;
+
+    invoke-direct {v0, p1}, Lpxv;-><init>(Landroid/os/Parcel;)V
+
+    return-object v0
+
+    :pswitch_4
+    new-instance v0, Lpxu;
+
+    invoke-direct {v0, p1}, Lpxu;-><init>(Landroid/os/Parcel;)V
+
+    return-object v0
+
+    :pswitch_5
+    new-instance v0, Lpxt;
+
+    invoke-direct {v0, p1}, Lpxt;-><init>(Landroid/os/Parcel;)V
+
+    return-object v0
+
+    :pswitch_6
+    sget-object v0, Lpxr;->b:Ljava/lang/Object;
+
+    monitor-enter v0
+
     :try_start_0
-    invoke-virtual {p0}, Llaa;->g()Z
+    sget-object v1, Lpxr;->a:Ljava/util/ArrayDeque;
 
-    move-result v0
+    invoke-virtual {v1}, Ljava/util/ArrayDeque;->isEmpty()Z
 
-    if-nez v0, :cond_1
+    move-result v1
 
-    invoke-virtual {p0}, Ljava/lang/Object;->wait()V
+    if-eqz v1, :cond_0
+
+    new-instance v1, Lpxr;
+
+    invoke-direct {v1}, Lpxr;-><init>()V
 
     goto :goto_0
 
-    :cond_1
-    iget-object v0, p0, Llaa;->a:Ljava/lang/Object;
+    :cond_0
+    sget-object v1, Lpxr;->a:Ljava/util/ArrayDeque;
 
-    if-eqz v0, :cond_2
+    invoke-virtual {v1}, Ljava/util/ArrayDeque;->remove()Ljava/lang/Object;
 
-    monitor-exit p0
+    move-result-object v1
 
-    return-object v0
+    check-cast v1, Lpxr;
 
-    :cond_2
-    iget-object v0, p0, Llaa;->b:Lkzd;
-
-    throw v0
-
-    :catchall_0
-    move-exception v0
-
-    monitor-exit p0
+    :goto_0
+    monitor-exit v0
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    throw v0
+    invoke-virtual {v1, p1}, Lpxs;->c(Landroid/os/Parcel;)V
 
-    :cond_3
-    iget-object v0, p0, Llaa;->b:Lkzd;
+    return-object v1
 
-    goto :goto_2
+    :catchall_0
+    move-exception p1
+
+    :try_start_1
+    monitor-exit v0
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    throw p1
+
+    :pswitch_7
+    sget-object v0, Lpxs;->k:Ljava/lang/Object;
+
+    monitor-enter v0
+
+    :try_start_2
+    sget-object v1, Lpxs;->j:Ljava/util/ArrayDeque;
+
+    invoke-virtual {v1}, Ljava/util/ArrayDeque;->isEmpty()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_1
+
+    new-instance v1, Lpxs;
+
+    invoke-direct {v1}, Lpxs;-><init>()V
+
+    goto :goto_1
+
+    :cond_1
+    sget-object v1, Lpxs;->j:Ljava/util/ArrayDeque;
+
+    invoke-virtual {v1}, Ljava/util/ArrayDeque;->remove()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Lpxs;
 
     :goto_1
-    throw v0
+    monitor-exit v0
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_1
 
-    :goto_2
-    goto :goto_1
-.end method
+    invoke-virtual {v1, p1}, Lpxs;->c(Landroid/os/Parcel;)V
 
-.method public final g()Z
-    .locals 1
+    return-object v1
 
-    iget-object v0, p0, Llaa;->a:Ljava/lang/Object;
-
-    if-nez v0, :cond_1
-
-    iget-object v0, p0, Llaa;->b:Lkzd;
-
-    if-eqz v0, :cond_0
-
-    goto :goto_0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    return v0
-
-    :cond_1
-    :goto_0
-    const/4 v0, 0x1
-
-    return v0
-.end method
-
-.method public final h(Lkyo;)V
-    .locals 3
-
-    iget-object v0, p0, Llaa;->a:Ljava/lang/Object;
-
-    if-eqz v0, :cond_0
-
-    return-void
-
-    :cond_0
-    iget-object v0, p0, Llaa;->b:Lkzd;
-
-    if-nez v0, :cond_4
-
-    monitor-enter p0
-
-    :try_start_0
-    iget-object v1, p0, Llaa;->a:Ljava/lang/Object;
-
-    if-nez v1, :cond_2
-
-    iget-object v0, p0, Llaa;->b:Lkzd;
-
-    if-nez v0, :cond_1
-
-    sget-object v0, Lnnv;->a:Lnnv;
-
-    new-instance v1, Lkzj;
-
-    const/4 v2, 0x2
-
-    invoke-direct {v1, p0, p1, v2}, Lkzj;-><init>(Llaa;Lkyo;I)V
-
-    invoke-virtual {p0, v0, v1}, Llaa;->n(Ljava/util/concurrent/Executor;Ljava/lang/Runnable;)V
-
-    monitor-exit p0
-
-    return-void
-
-    :cond_1
-    goto :goto_0
-
-    :cond_2
-    :goto_0
-    monitor-exit p0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    if-eqz v1, :cond_3
-
-    return-void
-
-    :cond_3
-    invoke-static {v0}, Lmrp;->a(Ljava/lang/Throwable;)Ljava/lang/RuntimeException;
-
-    move-result-object p1
-
-    throw p1
-
-    :catchall_0
+    :catchall_1
     move-exception p1
 
-    :try_start_1
-    monitor-exit p0
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+    :try_start_3
+    monitor-exit v0
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_1
 
     throw p1
 
-    :cond_4
-    invoke-static {v0}, Lmrp;->a(Ljava/lang/Throwable;)Ljava/lang/RuntimeException;
+    :pswitch_8
+    new-instance v0, Lpxp;
 
-    move-result-object p1
+    invoke-direct {v0, p1}, Lpxp;-><init>(Landroid/os/Parcel;)V
 
-    throw p1
+    return-object v0
+
+    :pswitch_9
+    new-instance v0, Lpxo;
+
+    invoke-direct {v0, p1}, Lpxo;-><init>(Landroid/os/Parcel;)V
+
+    return-object v0
+
+    :pswitch_a
+    new-instance v0, Lpxn;
+
+    invoke-direct {v0, p1}, Lpxn;-><init>(Landroid/os/Parcel;)V
+
+    return-object v0
+
+    :pswitch_b
+    new-instance v0, Lnic;
+
+    invoke-direct {v0, p1}, Lnic;-><init>(Landroid/os/Parcel;)V
+
+    return-object v0
+
+    :pswitch_c
+    new-instance v0, Lcom/google/android/libraries/barhopper/Barcode$WiFi;
+
+    invoke-direct {v0, p1, v1}, Lcom/google/android/libraries/barhopper/Barcode$WiFi;-><init>(Landroid/os/Parcel;Lcom/google/android/libraries/barhopper/Barcode$WiFi-IA;)V
+
+    return-object v0
+
+    :pswitch_d
+    new-instance v0, Lcom/google/android/libraries/barhopper/Barcode$UrlBookmark;
+
+    invoke-direct {v0, p1, v1}, Lcom/google/android/libraries/barhopper/Barcode$UrlBookmark;-><init>(Landroid/os/Parcel;Lcom/google/android/libraries/barhopper/Barcode$UrlBookmark-IA;)V
+
+    return-object v0
+
+    :pswitch_e
+    new-instance v0, Lcom/google/android/libraries/barhopper/Barcode$Sms;
+
+    invoke-direct {v0, p1, v1}, Lcom/google/android/libraries/barhopper/Barcode$Sms;-><init>(Landroid/os/Parcel;Lcom/google/android/libraries/barhopper/Barcode$Sms-IA;)V
+
+    return-object v0
+
+    :pswitch_f
+    new-instance v0, Lcom/google/android/libraries/barhopper/Barcode$PersonName;
+
+    invoke-direct {v0, p1, v1}, Lcom/google/android/libraries/barhopper/Barcode$PersonName;-><init>(Landroid/os/Parcel;Lcom/google/android/libraries/barhopper/Barcode$PersonName-IA;)V
+
+    return-object v0
+
+    :pswitch_10
+    new-instance v0, Lcom/google/android/libraries/barhopper/Barcode$Phone;
+
+    invoke-direct {v0, p1, v1}, Lcom/google/android/libraries/barhopper/Barcode$Phone;-><init>(Landroid/os/Parcel;Lcom/google/android/libraries/barhopper/Barcode$Phone-IA;)V
+
+    return-object v0
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_10
+        :pswitch_f
+        :pswitch_e
+        :pswitch_d
+        :pswitch_c
+        :pswitch_b
+        :pswitch_a
+        :pswitch_9
+        :pswitch_8
+        :pswitch_7
+        :pswitch_6
+        :pswitch_5
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method
 
-.method public final i(Ljava/util/concurrent/Executor;Llhe;)Lkzc;
-    .locals 3
+.method public final synthetic newArray(I)[Ljava/lang/Object;
+    .locals 1
 
-    new-instance v0, Lkzp;
+    iget v0, p0, Llaa;->a:I
 
-    const/4 v1, 0x0
+    packed-switch v0, :pswitch_data_0
 
-    invoke-direct {v0, p0, p2, v1}, Lkzp;-><init>(Llaa;Llhe;[B)V
-
-    new-instance v2, Lkzq;
-
-    invoke-direct {v2, p0, p2, v1}, Lkzq;-><init>(Llaa;Llhe;[B)V
-
-    invoke-virtual {p0, p1, v0, v2}, Llaa;->d(Ljava/util/concurrent/Executor;Lkzg;Lkzg;)Lkzc;
-
-    move-result-object p1
+    new-array p1, p1, [Lpyc;
 
     return-object p1
-.end method
 
-.method public final l(Ljava/lang/Object;)V
-    .locals 1
+    :pswitch_0
+    new-array p1, p1, [Lpyb;
 
-    invoke-virtual {p0}, Llaa;->g()Z
+    return-object p1
 
-    move-result v0
+    :pswitch_1
+    new-array p1, p1, [Lpxx;
 
-    if-eqz v0, :cond_0
+    return-object p1
 
-    return-void
+    :pswitch_2
+    new-array p1, p1, [Lpxw;
 
-    :cond_0
-    monitor-enter p0
+    return-object p1
 
-    :try_start_0
-    invoke-virtual {p0}, Llaa;->g()Z
+    :pswitch_3
+    new-array p1, p1, [Lpxv;
 
-    move-result v0
+    return-object p1
 
-    if-eqz v0, :cond_1
+    :pswitch_4
+    new-array p1, p1, [Lpxu;
 
-    monitor-exit p0
+    return-object p1
 
-    return-void
+    :pswitch_5
+    new-array p1, p1, [Lpxt;
 
-    :cond_1
-    iput-object p1, p0, Llaa;->a:Ljava/lang/Object;
+    return-object p1
 
-    monitor-exit p0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    :pswitch_6
+    new-array p1, p1, [Lpxr;
 
-    invoke-direct {p0}, Llaa;->p()V
+    return-object p1
 
-    return-void
+    :pswitch_7
+    new-array p1, p1, [Lpxs;
 
-    :catchall_0
-    move-exception p1
+    return-object p1
 
-    :try_start_1
-    monitor-exit p0
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+    :pswitch_8
+    new-array p1, p1, [Lpxp;
 
-    throw p1
-.end method
+    return-object p1
 
-.method public final m(Lkzd;)V
-    .locals 1
+    :pswitch_9
+    new-array p1, p1, [Lpxo;
 
-    invoke-virtual {p0}, Llaa;->g()Z
+    return-object p1
 
-    move-result v0
+    :pswitch_a
+    new-array p1, p1, [Lpxn;
 
-    if-eqz v0, :cond_0
+    return-object p1
 
-    return-void
+    :pswitch_b
+    new-array p1, p1, [Lnic;
 
-    :cond_0
-    monitor-enter p0
+    return-object p1
 
-    :try_start_0
-    invoke-virtual {p0}, Llaa;->g()Z
+    :pswitch_c
+    new-array p1, p1, [Lcom/google/android/libraries/barhopper/Barcode$WiFi;
 
-    move-result v0
+    return-object p1
 
-    if-eqz v0, :cond_1
+    :pswitch_d
+    new-array p1, p1, [Lcom/google/android/libraries/barhopper/Barcode$UrlBookmark;
 
-    monitor-exit p0
+    return-object p1
 
-    return-void
+    :pswitch_e
+    new-array p1, p1, [Lcom/google/android/libraries/barhopper/Barcode$Sms;
 
-    :cond_1
-    iput-object p1, p0, Llaa;->b:Lkzd;
+    return-object p1
 
-    monitor-exit p0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    :pswitch_f
+    new-array p1, p1, [Lcom/google/android/libraries/barhopper/Barcode$PersonName;
 
-    invoke-direct {p0}, Llaa;->p()V
+    return-object p1
 
-    return-void
+    :pswitch_10
+    new-array p1, p1, [Lcom/google/android/libraries/barhopper/Barcode$Phone;
 
-    :catchall_0
-    move-exception p1
+    return-object p1
 
-    :try_start_1
-    monitor-exit p0
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+    nop
 
-    throw p1
-.end method
-
-.method public final n(Ljava/util/concurrent/Executor;Ljava/lang/Runnable;)V
-    .locals 1
-
-    monitor-enter p0
-
-    :try_start_0
-    invoke-virtual {p0}, Llaa;->g()Z
-
-    move-result v0
-
-    if-nez v0, :cond_1
-
-    new-instance v0, Lkzw;
-
-    invoke-direct {v0, p1, p2}, Lkzw;-><init>(Ljava/util/concurrent/Executor;Ljava/lang/Runnable;)V
-
-    iget-object p1, p0, Llaa;->d:Lkzw;
-
-    if-eqz p1, :cond_0
-
-    iput-object v0, p1, Lkzw;->a:Lkzw;
-
-    goto :goto_0
-
-    :cond_0
-    iput-object v0, p0, Llaa;->c:Lkzw;
-
-    :goto_0
-    iput-object v0, p0, Llaa;->d:Lkzw;
-
-    monitor-exit p0
-
-    return-void
-
-    :cond_1
-    new-instance p1, Ljava/lang/IllegalStateException;
-
-    const-string p2, "Should not be delaying execution when done"
-
-    invoke-direct {p1, p2}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw p1
-
-    :catchall_0
-    move-exception p1
-
-    monitor-exit p0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw p1
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_10
+        :pswitch_f
+        :pswitch_e
+        :pswitch_d
+        :pswitch_c
+        :pswitch_b
+        :pswitch_a
+        :pswitch_9
+        :pswitch_8
+        :pswitch_7
+        :pswitch_6
+        :pswitch_5
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method

@@ -1,28 +1,18 @@
-.class final Llpj;
+.class public final Llpj;
 .super Ljava/lang/Object;
 
 
-# static fields
-.field static final a:Llzz;
+# instance fields
+.field public final a:Llnf;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 4
+.method public constructor <init>(Llnf;)V
+    .locals 0
 
-    sget-object v0, Lnzl;->i:Lnzl;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    sget-object v1, Lnzl;->k:Lnzl;
-
-    sget-object v2, Llpi;->d:Llpi;
-
-    const-string v3, ""
-
-    invoke-static {v0, v3, v1, v2}, Llzz;->B(Lnzl;Ljava/lang/Object;Lnzl;Ljava/lang/Object;)Llzz;
-
-    move-result-object v0
-
-    sput-object v0, Llpj;->a:Llzz;
+    iput-object p1, p0, Llpj;->a:Llnf;
 
     return-void
 .end method

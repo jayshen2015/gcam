@@ -1,61 +1,49 @@
 .class public final Lfjy;
 .super Ljava/lang/Object;
 
-# interfaces
-.implements Logk;
-
 
 # instance fields
-.field private final a:Loiw;
+.field public a:Lhsr;
+
+.field public b:Lpcw;
+
+.field public c:Ljava/lang/Float;
 
 
 # direct methods
-.method public constructor <init>(Loiw;)V
+.method public constructor <init>()V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lfjy;->a:Loiw;
-
     return-void
-.end method
-
-.method public static b(Loiw;)Lfjy;
-    .locals 1
-
-    new-instance v0, Lfjy;
-
-    invoke-direct {v0, p0}, Lfjy;-><init>(Loiw;)V
-
-    return-object v0
 .end method
 
 
 # virtual methods
-.method public final a()Lfjx;
-    .locals 2
+.method public final a()Lfjz;
+    .locals 4
 
-    iget-object v0, p0, Lfjy;->a:Loiw;
+    iget-object v0, p0, Lfjy;->a:Lhsr;
 
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
+    if-eqz v0, :cond_0
 
-    move-result-object v0
+    new-instance v1, Lfjz;
 
-    check-cast v0, Leah;
+    iget-object v2, p0, Lfjy;->b:Lpcw;
 
-    new-instance v1, Lfjx;
+    iget-object v3, p0, Lfjy;->c:Ljava/lang/Float;
 
-    invoke-direct {v1, v0}, Lfjx;-><init>(Leah;)V
+    invoke-direct {v1, v0, v2, v3}, Lfjz;-><init>(Lhsr;Lpcw;Ljava/lang/Float;)V
 
     return-object v1
-.end method
 
-.method public final bridge synthetic get()Ljava/lang/Object;
-    .locals 1
+    :cond_0
+    new-instance v0, Ljava/lang/IllegalStateException;
 
-    invoke-virtual {p0}, Lfjy;->a()Lfjx;
+    const-string v1, "Missing required properties: sessionType"
 
-    move-result-object v0
+    invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 
-    return-object v0
+    throw v0
 .end method

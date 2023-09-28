@@ -2,21 +2,17 @@
 .super Ljava/lang/Object;
 
 
-# static fields
-.field public static final a:Lcla;
+# instance fields
+.field public final synthetic a:Lcug;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
+.method public constructor <init>(Lcug;)V
+    .locals 0
 
-    new-instance v0, Lcla;
+    iput-object p1, p0, Lcub;->a:Lcug;
 
-    const/16 v1, 0x10
-
-    invoke-direct {v0, v1}, Lcla;-><init>(I)V
-
-    sput-object v0, Lcub;->a:Lcla;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method

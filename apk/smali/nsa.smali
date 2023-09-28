@@ -1,56 +1,53 @@
-.class public final Lnsa;
+.class final Lnsa;
 .super Ljava/lang/Object;
+
+# interfaces
+.implements Lqco;
 
 
 # instance fields
-.field public final a:Ljava/lang/Object;
+.field final synthetic a:Lnsb;
 
-.field public b:Z
-
-.field public c:Z
-
-.field public d:Z
-
-.field public final e:Ljava/lang/Runnable;
-
-.field public final f:Ljava/lang/Runnable;
+.field final synthetic b:Lnrl;
 
 
 # direct methods
-.method public constructor <init>(Lkpb;Landroid/hardware/HardwareBuffer;)V
-    .locals 2
+.method public constructor <init>(Lnsb;Lnrl;)V
+    .locals 0
+
+    iput-object p1, p0, Lnsa;->a:Lnsb;
+
+    iput-object p2, p0, Lnsa;->b:Lnrl;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    new-instance v0, Ljava/lang/Object;
-
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
-
-    iput-object v0, p0, Lnsa;->a:Ljava/lang/Object;
-
-    const/4 v0, 0x0
-
-    iput-boolean v0, p0, Lnsa;->b:Z
-
-    iput-boolean v0, p0, Lnsa;->c:Z
-
-    iput-boolean v0, p0, Lnsa;->d:Z
-
-    new-instance v0, Llkq;
-
-    const/16 v1, 0x9
-
-    invoke-direct {v0, p0, p1, v1}, Llkq;-><init>(Lnsa;Lkpb;I)V
-
-    iput-object v0, p0, Lnsa;->e:Ljava/lang/Runnable;
-
-    new-instance v0, Lkgc;
-
-    const/16 v1, 0xa
-
-    invoke-direct {v0, p0, p1, p2, v1}, Lkgc;-><init>(Lnsa;Lkpb;Landroid/hardware/HardwareBuffer;I)V
-
-    iput-object v0, p0, Lnsa;->f:Ljava/lang/Runnable;
-
     return-void
+.end method
+
+
+# virtual methods
+.method public final bridge synthetic a(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 3
+
+    check-cast p1, Ljava/lang/Throwable;
+
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    iget-object v0, p0, Lnsa;->a:Lnsb;
+
+    iget-object v0, v0, Lnsb;->b:Lnrm;
+
+    iget-object v1, p0, Lnsa;->b:Lnrl;
+
+    const/16 v2, 0x19
+
+    invoke-static {v1, v2, p1}, Lnrl;->d(Lnrl;ILjava/lang/Throwable;)Lnna;
+
+    move-result-object p1
+
+    invoke-virtual {v0, p1}, Lnrm;->a(Lnna;)V
+
+    sget-object p1, Lqkx;->a:Lqkx;
+
+    return-object p1
 .end method

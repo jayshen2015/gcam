@@ -1,43 +1,36 @@
-.class public final synthetic Lmmy;
-.super Ljava/lang/Object;
-
-# interfaces
-.implements Lnno;
+.class final Lmmy;
+.super Lmmh;
 
 
 # instance fields
-.field public final synthetic a:Lmnb;
-
-.field public final synthetic b:I
+.field private final a:Lmoa;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lmnb;I)V
+.method public constructor <init>(Lmoa;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Lmmh;-><init>()V
 
-    iput-object p1, p0, Lmmy;->a:Lmnb;
-
-    iput p2, p0, Lmmy;->b:I
+    iput-object p1, p0, Lmmy;->a:Lmoa;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Ljava/lang/Object;)Lnou;
-    .locals 2
+.method public final bridge synthetic b(Ljava/lang/Object;)V
+    .locals 1
 
-    iget-object v0, p0, Lmmy;->a:Lmnb;
+    check-cast p1, Lmnc;
 
-    iget v1, p0, Lmmy;->b:I
+    iget-object v0, p0, Lmmy;->a:Lmoa;
 
-    check-cast p1, Ljava/lang/Throwable;
-
-    invoke-virtual {v0, v1}, Lmnb;->d(I)Lnou;
+    invoke-static {p1}, Lmnc;->a(Ljava/lang/Throwable;)Lmnc;
 
     move-result-object p1
 
-    return-object p1
+    invoke-virtual {v0, p1}, Lmoa;->l(Lmnc;)V
+
+    return-void
 .end method

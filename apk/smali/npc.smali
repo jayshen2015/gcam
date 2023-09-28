@@ -1,163 +1,79 @@
-.class public final Lnpc;
-.super Lnoz;
+.class final Lnpc;
+.super Ljava/lang/Object;
 
 # interfaces
-.implements Lnox;
+.implements Ljava/util/concurrent/Callable;
 
 
 # instance fields
-.field final a:Ljava/util/concurrent/ScheduledExecutorService;
+.field final synthetic a:Ljava/lang/Iterable;
+
+.field final synthetic b:Lnpd;
 
 
 # direct methods
-.method public constructor <init>(Ljava/util/concurrent/ScheduledExecutorService;)V
+.method public constructor <init>(Lnpd;Ljava/lang/Iterable;)V
     .locals 0
 
-    invoke-direct {p0, p1}, Lnoz;-><init>(Ljava/util/concurrent/ExecutorService;)V
+    iput-object p1, p0, Lnpc;->b:Lnpd;
 
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    iput-object p2, p0, Lnpc;->a:Ljava/lang/Iterable;
 
-    iput-object p1, p0, Lnpc;->a:Ljava/util/concurrent/ScheduledExecutorService;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final d(Ljava/lang/Runnable;JLjava/util/concurrent/TimeUnit;)Lnpa;
-    .locals 1
+.method public final bridge synthetic call()Ljava/lang/Object;
+    .locals 2
 
-    const/4 v0, 0x0
+    iget-object v0, p0, Lnpc;->b:Lnpd;
 
-    invoke-static {p1, v0}, Lnpo;->i(Ljava/lang/Runnable;Ljava/lang/Object;)Lnpo;
+    iget-object v0, v0, Lnpd;->a:Laii;
 
-    move-result-object p1
+    invoke-virtual {v0}, Laii;->h()V
 
-    iget-object v0, p0, Lnpc;->a:Ljava/util/concurrent/ScheduledExecutorService;
+    :try_start_0
+    iget-object v0, p0, Lnpc;->b:Lnpd;
 
-    invoke-interface {v0, p1, p2, p3, p4}, Ljava/util/concurrent/ScheduledExecutorService;->schedule(Ljava/lang/Runnable;JLjava/util/concurrent/TimeUnit;)Ljava/util/concurrent/ScheduledFuture;
+    iget-object v0, v0, Lnpd;->b:Lahz;
 
-    move-result-object p2
+    iget-object v1, p0, Lnpc;->a:Ljava/lang/Iterable;
 
-    new-instance p3, Lnpa;
+    invoke-virtual {v0, v1}, Lahz;->b(Ljava/lang/Iterable;)I
 
-    invoke-direct {p3, p1, p2}, Lnpa;-><init>(Lnou;Ljava/util/concurrent/ScheduledFuture;)V
+    move-result v0
 
-    return-object p3
-.end method
+    iget-object v1, p0, Lnpc;->b:Lnpd;
 
-.method public final e(Ljava/util/concurrent/Callable;JLjava/util/concurrent/TimeUnit;)Lnpa;
-    .locals 1
+    iget-object v1, v1, Lnpd;->a:Laii;
 
-    invoke-static {p1}, Lnpo;->h(Ljava/util/concurrent/Callable;)Lnpo;
+    invoke-virtual {v1}, Laii;->j()V
 
-    move-result-object p1
+    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    iget-object v0, p0, Lnpc;->a:Ljava/util/concurrent/ScheduledExecutorService;
+    move-result-object v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    invoke-interface {v0, p1, p2, p3, p4}, Ljava/util/concurrent/ScheduledExecutorService;->schedule(Ljava/lang/Runnable;JLjava/util/concurrent/TimeUnit;)Ljava/util/concurrent/ScheduledFuture;
+    iget-object v1, p0, Lnpc;->b:Lnpd;
 
-    move-result-object p2
+    iget-object v1, v1, Lnpd;->a:Laii;
 
-    new-instance p3, Lnpa;
+    invoke-virtual {v1}, Laii;->i()V
 
-    invoke-direct {p3, p1, p2}, Lnpa;-><init>(Lnou;Ljava/util/concurrent/ScheduledFuture;)V
+    return-object v0
 
-    return-object p3
-.end method
+    :catchall_0
+    move-exception v0
 
-.method public final f(Ljava/lang/Runnable;JJLjava/util/concurrent/TimeUnit;)Lnpa;
-    .locals 8
+    iget-object v1, p0, Lnpc;->b:Lnpd;
 
-    new-instance v7, Lnpb;
+    iget-object v1, v1, Lnpd;->a:Laii;
 
-    invoke-direct {v7, p1}, Lnpb;-><init>(Ljava/lang/Runnable;)V
+    invoke-virtual {v1}, Laii;->i()V
 
-    iget-object v0, p0, Lnpc;->a:Ljava/util/concurrent/ScheduledExecutorService;
-
-    move-object v1, v7
-
-    move-wide v2, p2
-
-    move-wide v4, p4
-
-    move-object v6, p6
-
-    invoke-interface/range {v0 .. v6}, Ljava/util/concurrent/ScheduledExecutorService;->scheduleAtFixedRate(Ljava/lang/Runnable;JJLjava/util/concurrent/TimeUnit;)Ljava/util/concurrent/ScheduledFuture;
-
-    move-result-object p1
-
-    new-instance p2, Lnpa;
-
-    invoke-direct {p2, v7, p1}, Lnpa;-><init>(Lnou;Ljava/util/concurrent/ScheduledFuture;)V
-
-    return-object p2
-.end method
-
-.method public final g(Ljava/lang/Runnable;JJLjava/util/concurrent/TimeUnit;)Lnpa;
-    .locals 8
-
-    new-instance v7, Lnpb;
-
-    invoke-direct {v7, p1}, Lnpb;-><init>(Ljava/lang/Runnable;)V
-
-    iget-object v0, p0, Lnpc;->a:Ljava/util/concurrent/ScheduledExecutorService;
-
-    move-object v1, v7
-
-    move-wide v2, p2
-
-    move-wide v4, p4
-
-    move-object v6, p6
-
-    invoke-interface/range {v0 .. v6}, Ljava/util/concurrent/ScheduledExecutorService;->scheduleWithFixedDelay(Ljava/lang/Runnable;JJLjava/util/concurrent/TimeUnit;)Ljava/util/concurrent/ScheduledFuture;
-
-    move-result-object p1
-
-    new-instance p2, Lnpa;
-
-    invoke-direct {p2, v7, p1}, Lnpa;-><init>(Lnou;Ljava/util/concurrent/ScheduledFuture;)V
-
-    return-object p2
-.end method
-
-.method public final bridge synthetic schedule(Ljava/lang/Runnable;JLjava/util/concurrent/TimeUnit;)Ljava/util/concurrent/ScheduledFuture;
-    .locals 0
-
-    invoke-virtual {p0, p1, p2, p3, p4}, Lnpc;->d(Ljava/lang/Runnable;JLjava/util/concurrent/TimeUnit;)Lnpa;
-
-    move-result-object p1
-
-    return-object p1
-.end method
-
-.method public final bridge synthetic schedule(Ljava/util/concurrent/Callable;JLjava/util/concurrent/TimeUnit;)Ljava/util/concurrent/ScheduledFuture;
-    .locals 0
-
-    invoke-virtual {p0, p1, p2, p3, p4}, Lnpc;->e(Ljava/util/concurrent/Callable;JLjava/util/concurrent/TimeUnit;)Lnpa;
-
-    move-result-object p1
-
-    return-object p1
-.end method
-
-.method public final bridge synthetic scheduleAtFixedRate(Ljava/lang/Runnable;JJLjava/util/concurrent/TimeUnit;)Ljava/util/concurrent/ScheduledFuture;
-    .locals 0
-
-    invoke-virtual/range {p0 .. p6}, Lnpc;->f(Ljava/lang/Runnable;JJLjava/util/concurrent/TimeUnit;)Lnpa;
-
-    move-result-object p1
-
-    return-object p1
-.end method
-
-.method public final bridge synthetic scheduleWithFixedDelay(Ljava/lang/Runnable;JJLjava/util/concurrent/TimeUnit;)Ljava/util/concurrent/ScheduledFuture;
-    .locals 0
-
-    invoke-virtual/range {p0 .. p6}, Lnpc;->g(Ljava/lang/Runnable;JJLjava/util/concurrent/TimeUnit;)Lnpa;
-
-    move-result-object p1
-
-    return-object p1
+    throw v0
 .end method

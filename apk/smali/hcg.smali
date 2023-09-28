@@ -1,36 +1,110 @@
 .class public final Lhcg;
-.super Landroid/animation/AnimatorListenerAdapter;
+.super Ljava/lang/Object;
 
 
 # instance fields
-.field final synthetic a:I
+.field public final a:Llnx;
 
-.field final synthetic b:Lcom/google/android/apps/camera/smarts/SmartsChipView;
+.field public final b:Llnx;
+
+.field public final c:Llnx;
+
+.field public final d:Llnx;
+
+.field public final e:Llnx;
+
+.field public final f:Llnx;
+
+.field public final g:Llnx;
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/apps/camera/smarts/SmartsChipView;I)V
-    .locals 0
+.method public constructor <init>(Ljava/util/Map;)V
+    .locals 1
 
-    iput-object p1, p0, Lhcg;->b:Lcom/google/android/apps/camera/smarts/SmartsChipView;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput p2, p0, Lhcg;->a:I
+    sget-object v0, Lhdr;->a:Lhdr;
 
-    invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
+    invoke-interface {p1, v0}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Llnx;
+
+    iput-object v0, p0, Lhcg;->a:Llnx;
+
+    sget-object v0, Lhdr;->c:Lhdr;
+
+    invoke-interface {p1, v0}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Llnx;
+
+    iput-object v0, p0, Lhcg;->b:Llnx;
+
+    sget-object v0, Lhdr;->d:Lhdr;
+
+    invoke-interface {p1, v0}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Llnx;
+
+    iput-object v0, p0, Lhcg;->c:Llnx;
+
+    sget-object v0, Lhdr;->b:Lhdr;
+
+    invoke-interface {p1, v0}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Llnx;
+
+    iput-object v0, p0, Lhcg;->d:Llnx;
+
+    sget-object v0, Lhdr;->e:Lhdr;
+
+    invoke-interface {p1, v0}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Llnx;
+
+    iput-object v0, p0, Lhcg;->e:Llnx;
+
+    sget-object v0, Lhdr;->f:Lhdr;
+
+    invoke-interface {p1, v0}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Llnx;
+
+    iput-object v0, p0, Lhcg;->f:Llnx;
+
+    sget-object v0, Lhdr;->h:Lhdr;
+
+    invoke-interface {p1, v0}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p1
+
+    check-cast p1, Llnx;
+
+    iput-object p1, p0, Lhcg;->g:Llnx;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onAnimationEnd(Landroid/animation/Animator;)V
+.method public final a(Llmr;)Lhcf;
     .locals 1
 
-    iget-object p1, p0, Lhcg;->b:Lcom/google/android/apps/camera/smarts/SmartsChipView;
+    new-instance v0, Lhcf;
 
-    iget v0, p0, Lhcg;->a:I
+    invoke-direct {v0, p0, p1}, Lhcf;-><init>(Lhcg;Llmr;)V
 
-    invoke-virtual {p1, v0}, Lcom/google/android/apps/camera/smarts/SmartsChipView;->setVisibility(I)V
-
-    return-void
+    return-object v0
 .end method

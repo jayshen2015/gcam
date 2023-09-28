@@ -1,69 +1,166 @@
 .class public final Lkyw;
-.super Ljava/lang/Object;
+.super Lkno;
 
-# interfaces
-.implements Ljava/util/concurrent/Executor;
+
+# static fields
+.field public static final CREATOR:Landroid/os/Parcelable$Creator;
 
 
 # instance fields
-.field public final a:Ljava/util/concurrent/ArrayBlockingQueue;
+.field public final a:I
 
-.field public b:Z
+.field public final b:Ljava/lang/String;
+
+.field public final c:[B
+
+.field public final d:Ljava/lang/String;
 
 
 # direct methods
-.method public constructor <init>()V
+.method static constructor <clinit>()V
     .locals 2
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance v0, Lkza;
 
-    new-instance v0, Ljava/util/concurrent/ArrayBlockingQueue;
+    const/4 v1, 0x1
 
-    const/16 v1, 0x10
+    invoke-direct {v0, v1}, Lkza;-><init>(I)V
 
-    invoke-direct {v0, v1}, Ljava/util/concurrent/ArrayBlockingQueue;-><init>(I)V
+    sput-object v0, Lkyw;->CREATOR:Landroid/os/Parcelable$Creator;
 
-    iput-object v0, p0, Lkyw;->a:Ljava/util/concurrent/ArrayBlockingQueue;
+    return-void
+.end method
+
+.method public constructor <init>(ILjava/lang/String;[BLjava/lang/String;)V
+    .locals 0
+
+    invoke-direct {p0}, Lkno;-><init>()V
+
+    iput p1, p0, Lkyw;->a:I
+
+    iput-object p2, p0, Lkyw;->b:Ljava/lang/String;
+
+    iput-object p3, p0, Lkyw;->c:[B
+
+    iput-object p4, p0, Lkyw;->d:Ljava/lang/String;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()V
+.method public final toString()Ljava/lang/String;
+    .locals 6
+
+    iget v0, p0, Lkyw;->a:I
+
+    iget-object v1, p0, Lkyw;->b:Ljava/lang/String;
+
+    iget-object v2, p0, Lkyw;->c:[B
+
+    if-nez v2, :cond_0
+
+    const-string v2, "null"
+
+    goto :goto_0
+
+    :cond_0
+    array-length v2, v2
+
+    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v2
+
+    :goto_0
+    invoke-static {v2}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/lang/String;->length()I
+
+    move-result v3
+
+    invoke-static {v2}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-virtual {v4}, Ljava/lang/String;->length()I
+
+    move-result v4
+
+    new-instance v5, Ljava/lang/StringBuilder;
+
+    add-int/lit8 v3, v3, 0x2b
+
+    add-int/2addr v3, v4
+
+    invoke-direct {v5, v3}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string v3, "MessageEventParcelable["
+
+    invoke-virtual {v5, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v5, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    const-string v0, ","
+
+    invoke-virtual {v5, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v5, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v0, ", size="
+
+    invoke-virtual {v5, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v5, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v0, "]"
+
+    invoke-virtual {v5, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public final writeToParcel(Landroid/os/Parcel;I)V
     .locals 2
 
-    new-instance v0, Lkxc;
+    invoke-static {p1}, Lmip;->ct(Landroid/os/Parcel;)I
+
+    move-result p2
+
+    iget v0, p0, Lkyw;->a:I
+
+    const/4 v1, 0x2
+
+    invoke-static {p1, v1, v0}, Lmip;->cA(Landroid/os/Parcel;II)V
+
+    iget-object v0, p0, Lkyw;->b:Ljava/lang/String;
+
+    const/4 v1, 0x3
+
+    invoke-static {p1, v1, v0}, Lmip;->cI(Landroid/os/Parcel;ILjava/lang/String;)V
+
+    iget-object v0, p0, Lkyw;->c:[B
+
+    const/4 v1, 0x4
+
+    invoke-static {p1, v1, v0}, Lmip;->cD(Landroid/os/Parcel;I[B)V
+
+    iget-object v0, p0, Lkyw;->d:Ljava/lang/String;
 
     const/4 v1, 0x5
 
-    invoke-direct {v0, p0, v1}, Lkxc;-><init>(Lkyw;I)V
+    invoke-static {p1, v1, v0}, Lmip;->cI(Landroid/os/Parcel;ILjava/lang/String;)V
 
-    invoke-virtual {p0, v0}, Lkyw;->execute(Ljava/lang/Runnable;)V
-
-    return-void
-.end method
-
-.method public final execute(Ljava/lang/Runnable;)V
-    .locals 1
-
-    :try_start_0
-    iget-object v0, p0, Lkyw;->a:Ljava/util/concurrent/ArrayBlockingQueue;
-
-    invoke-virtual {v0, p1}, Ljava/util/concurrent/ArrayBlockingQueue;->put(Ljava/lang/Object;)V
-    :try_end_0
-    .catch Ljava/lang/InterruptedException; {:try_start_0 .. :try_end_0} :catch_0
-
-    return-void
-
-    :catch_0
-    move-exception p1
-
-    const-string p1, "BlockingEventLoop"
-
-    const-string v0, "Interrupted while attempting to post event: Dropping event."
-
-    invoke-static {p1, v0}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {p1, p2}, Lmip;->cv(Landroid/os/Parcel;I)V
 
     return-void
 .end method

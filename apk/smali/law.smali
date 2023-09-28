@@ -2,108 +2,58 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Ljava/util/concurrent/Callable;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field final synthetic a:Llbd;
+.field final synthetic a:Llax;
 
-.field final synthetic b:I
-
-.field final synthetic c:Ljava/nio/ByteBuffer;
+.field private final b:Ljava/lang/Runnable;
 
 
 # direct methods
-.method public constructor <init>(Llbd;ILjava/nio/ByteBuffer;)V
+.method public constructor <init>(Llax;Ljava/lang/Runnable;)V
     .locals 0
 
-    iput-object p1, p0, Llaw;->a:Llbd;
-
-    iput p2, p0, Llaw;->b:I
-
-    iput-object p3, p0, Llaw;->c:Ljava/nio/ByteBuffer;
+    iput-object p1, p0, Llaw;->a:Llax;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p2, p0, Llaw;->b:Ljava/lang/Runnable;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final bridge synthetic call()Ljava/lang/Object;
+.method public final run()V
     .locals 5
 
-    iget-object v0, p0, Llaw;->a:Llbd;
+    :try_start_0
+    iget-object v0, p0, Llaw;->b:Ljava/lang/Runnable;
 
-    invoke-interface {v0}, Llbd;->e()Lldg;
+    invoke-interface {v0}, Ljava/lang/Runnable;->run()V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    iget v0, p0, Llaw;->b:I
+    return-void
 
-    const/4 v1, 0x1
+    :catchall_0
+    move-exception v0
 
-    new-array v2, v1, [I
+    iget-object v1, p0, Llaw;->a:Llax;
 
-    const/4 v3, 0x0
+    iget-object v1, v1, Llax;->b:Llar;
 
-    invoke-static {v1, v2, v3}, Landroid/opengl/GLES20;->glGenBuffers(I[II)V
+    new-instance v2, Lkqn;
 
-    new-instance v1, Llcm;
+    const/4 v3, 0x2
 
-    aget v2, v2, v3
+    const/4 v4, 0x0
 
-    invoke-direct {v1, v2, v0}, Llcm;-><init>(II)V
+    invoke-direct {v2, v0, v3, v4}, Lkqn;-><init>(Ljava/lang/Throwable;I[B)V
 
-    iget-object v0, p0, Llaw;->c:Ljava/nio/ByteBuffer;
+    invoke-virtual {v1, v2}, Llar;->execute(Ljava/lang/Runnable;)V
 
-    invoke-virtual {v1}, Llcm;->b()V
-
-    invoke-virtual {v0}, Ljava/nio/ByteBuffer;->limit()I
-
-    move-result v2
-
-    iget v3, v1, Llcm;->a:I
-
-    const v4, 0x88e4
-
-    invoke-static {v3, v2, v0, v4}, Landroid/opengl/GLES20;->glBufferData(IILjava/nio/Buffer;I)V
-
-    return-object v1
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .locals 4
-
-    iget v0, p0, Llaw;->b:I
-
-    iget-object v1, p0, Llaw;->c:Ljava/nio/ByteBuffer;
-
-    invoke-virtual {v1}, Ljava/nio/ByteBuffer;->remaining()I
-
-    move-result v1
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v3, "createBufferWithStaticData("
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    const-string v0, ","
-
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    const-string v0, ")"
-
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    return-object v0
+    return-void
 .end method

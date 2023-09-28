@@ -1,122 +1,95 @@
-.class public final Lgcj;
+.class final Lgcj;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lkee;
-.implements Lkad;
+.implements Lebz;
 
 
 # instance fields
-.field public final a:Ljava/lang/Object;
+.field final synthetic a:Lgfi;
 
-.field public b:Z
+.field final synthetic b:J
 
-.field public final synthetic c:Lgcl;
+.field final synthetic c:Llzv;
 
-.field private final d:Lmrl;
+.field final synthetic d:Lmad;
 
-.field private e:J
+.field final synthetic e:Llwk;
+
+.field final synthetic f:Lgex;
+
+.field final synthetic g:Lgcl;
 
 
 # direct methods
-.method public constructor <init>(Lgcl;Lmrl;)V
+.method public constructor <init>(Lgcl;Lgfi;JLlzv;Lmad;Llwk;Lgex;)V
     .locals 0
 
-    iput-object p1, p0, Lgcj;->c:Lgcl;
+    iput-object p1, p0, Lgcj;->g:Lgcl;
+
+    iput-object p2, p0, Lgcj;->a:Lgfi;
+
+    iput-wide p3, p0, Lgcj;->b:J
+
+    iput-object p5, p0, Lgcj;->c:Llzv;
+
+    iput-object p6, p0, Lgcj;->d:Lmad;
+
+    iput-object p7, p0, Lgcj;->e:Llwk;
+
+    iput-object p8, p0, Lgcj;->f:Lgex;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    new-instance p1, Ljava/lang/Object;
-
-    invoke-direct {p1}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lgcj;->a:Ljava/lang/Object;
-
-    iput-object p2, p0, Lgcj;->d:Lmrl;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final c(Lkhr;)V
-    .locals 7
+.method public final a(Lcom/google/googlex/gcam/YuvImage;Lcom/google/googlex/gcam/ShotMetadata;)V
+    .locals 5
 
-    invoke-virtual {p1}, Lkhr;->b()Lkeg;
+    new-instance v0, Lgcm;
 
-    move-result-object v0
+    iget-object v1, p0, Lgcj;->a:Lgfi;
 
-    if-nez v0, :cond_0
+    iget-object v1, v1, Lgfi;->a:Lhtf;
 
-    return-void
+    iget-wide v2, p0, Lgcj;->b:J
 
-    :cond_0
-    iget-wide v1, v0, Lkeg;->c:J
+    invoke-static {v2, v3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
-    iget-wide v3, p0, Lgcj;->e:J
+    move-result-object v2
 
-    iget-object v5, p0, Lgcj;->d:Lmrl;
+    iget-object v3, p0, Lgcj;->c:Llzv;
 
-    invoke-interface {v5}, Lmrl;->a()Ljava/lang/Object;
+    invoke-static {v3}, Lplk;->V(Ljava/lang/Object;)Lpht;
 
-    move-result-object v5
+    move-result-object v3
 
-    check-cast v5, Ljava/lang/Integer;
+    iget-object v4, p0, Lgcj;->a:Lgfi;
 
-    invoke-virtual {v5}, Ljava/lang/Integer;->intValue()I
+    iget-boolean v4, v4, Lgfi;->b:Z
 
-    move-result v5
+    invoke-direct {v0, v1, v2, v3, v4}, Lgcm;-><init>(Lhtf;Ljava/lang/Long;Lpht;Z)V
 
-    int-to-long v5, v5
+    iget-object v1, p0, Lgcj;->g:Lgcl;
 
-    add-long/2addr v3, v5
+    iget-object v1, v1, Lgcl;->d:Lgcn;
 
-    cmp-long v5, v1, v3
+    iget-object v2, p0, Lgcj;->d:Lmad;
 
-    if-gez v5, :cond_1
+    invoke-interface {v1, v0, p1, v2, p2}, Lgcn;->a(Lgcm;Lcom/google/googlex/gcam/YuvWriteView;Lmad;Lcom/google/googlex/gcam/ShotMetadata;)Lmad;
 
-    return-void
+    move-result-object p1
 
-    :cond_1
-    iput-wide v1, p0, Lgcj;->e:J
+    iget-object p2, p0, Lgcj;->e:Llwk;
 
-    new-instance v1, Lctg;
+    invoke-virtual {p2}, Llwk;->l()V
 
-    const/4 v2, 0x3
+    iget-object p2, p0, Lgcj;->f:Lgex;
 
-    invoke-direct {v1, p0, v0, v2}, Lctg;-><init>(Lgcj;Lkeg;I)V
-
-    invoke-static {p1, v1}, Lkfg;->B(Lkhr;Lkex;)V
+    invoke-interface {p2, p1}, Lgex;->c(Lmad;)V
 
     return-void
-.end method
-
-.method public final close()V
-    .locals 2
-
-    iget-object v0, p0, Lgcj;->c:Lgcl;
-
-    iget-object v0, v0, Lgcl;->c:Ljava/lang/Object;
-
-    monitor-enter v0
-
-    :try_start_0
-    iget-object v1, p0, Lgcj;->c:Lgcl;
-
-    iget-object v1, v1, Lgcl;->k:Lgci;
-
-    invoke-virtual {v1}, Lgci;->c()V
-
-    monitor-exit v0
-
-    return-void
-
-    :catchall_0
-    move-exception v1
-
-    monitor-exit v0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw v1
 .end method

@@ -118,11 +118,11 @@
 
     check-cast v0, Landroid/view/LayoutInflater;
 
-    const v1, 0x7f0e00d8
+    const v1, 0x7f0e00d1
 
     invoke-virtual {v0, v1, p0}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;)Landroid/view/View;
 
-    const v0, 0x7f0b0110
+    const v0, 0x7f0b00ec
 
     invoke-virtual {p0, v0}, Lcom/google/android/apps/camera/ui/remotecontrol/RemoteControlView;->findViewById(I)Landroid/view/View;
 
@@ -132,7 +132,7 @@
 
     iput-object v0, p0, Lcom/google/android/apps/camera/ui/remotecontrol/RemoteControlView;->a:Landroid/widget/TextView;
 
-    const v0, 0x7f0b028b
+    const v0, 0x7f0b023a
 
     invoke-virtual {p0, v0}, Lcom/google/android/apps/camera/ui/remotecontrol/RemoteControlView;->findViewById(I)Landroid/view/View;
 
@@ -142,7 +142,7 @@
 
     iput-object v0, p0, Lcom/google/android/apps/camera/ui/remotecontrol/RemoteControlView;->b:Landroid/widget/TextView;
 
-    const v0, 0x7f0b03ff
+    const v0, 0x7f0b0374
 
     invoke-virtual {p0, v0}, Lcom/google/android/apps/camera/ui/remotecontrol/RemoteControlView;->findViewById(I)Landroid/view/View;
 
@@ -152,7 +152,7 @@
 
     iput-object v0, p0, Lcom/google/android/apps/camera/ui/remotecontrol/RemoteControlView;->c:Landroid/widget/TextView;
 
-    const v0, 0x7f0b0402
+    const v0, 0x7f0b0377
 
     invoke-virtual {p0, v0}, Lcom/google/android/apps/camera/ui/remotecontrol/RemoteControlView;->findViewById(I)Landroid/view/View;
 
@@ -162,7 +162,7 @@
 
     iput-object v0, p0, Lcom/google/android/apps/camera/ui/remotecontrol/RemoteControlView;->d:Landroid/widget/TextView;
 
-    const v0, 0x7f0b0400
+    const v0, 0x7f0b0375
 
     invoke-virtual {p0, v0}, Lcom/google/android/apps/camera/ui/remotecontrol/RemoteControlView;->findViewById(I)Landroid/view/View;
 
@@ -170,7 +170,7 @@
 
     iput-object v0, p0, Lcom/google/android/apps/camera/ui/remotecontrol/RemoteControlView;->e:Landroid/view/View;
 
-    const v0, 0x7f0b0403
+    const v0, 0x7f0b0378
 
     invoke-virtual {p0, v0}, Lcom/google/android/apps/camera/ui/remotecontrol/RemoteControlView;->findViewById(I)Landroid/view/View;
 
@@ -178,7 +178,7 @@
 
     iput-object v0, p0, Lcom/google/android/apps/camera/ui/remotecontrol/RemoteControlView;->f:Landroid/view/View;
 
-    const v0, 0x7f0b02bb
+    const v0, 0x7f0b0253
 
     invoke-virtual {p0, v0}, Lcom/google/android/apps/camera/ui/remotecontrol/RemoteControlView;->findViewById(I)Landroid/view/View;
 
@@ -192,13 +192,19 @@
 
     move-result-object v0
 
-    const v1, 0x7f0705f8
+    const v1, 0x7f0704f2
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
     move-result v0
 
     iput v0, p0, Lcom/google/android/apps/camera/ui/remotecontrol/RemoteControlView;->h:I
+
+    const/4 v0, 0x1
+
+    const/4 v1, 0x0
+
+    invoke-virtual {p0, v0, v1}, Lcom/google/android/apps/camera/ui/remotecontrol/RemoteControlView;->setLayerType(ILandroid/graphics/Paint;)V
 
     invoke-virtual {p0}, Lcom/google/android/apps/camera/ui/remotecontrol/RemoteControlView;->a()V
 
@@ -218,11 +224,11 @@
 
     move-result-object v1
 
-    invoke-static {v0, v1}, Liko;->b(Landroid/view/Display;Landroid/content/Context;)Liko;
+    invoke-static {v0, v1}, Ljrz;->a(Landroid/view/Display;Landroid/content/Context;)Ljrz;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Liko;->ordinal()I
+    invoke-virtual {v0}, Ljrz;->ordinal()I
 
     move-result v0
 

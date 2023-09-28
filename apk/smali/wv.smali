@@ -4,6 +4,8 @@
 # interfaces
 .implements Ljava/util/Iterator;
 .implements Ljava/util/Map$Entry;
+.implements Lj$/util/Iterator;
+.implements Lj$/util/Map$Entry;
 
 
 # instance fields
@@ -24,7 +26,7 @@
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iget p1, p1, Lxf;->d:I
+    iget p1, p1, Lwy;->j:I
 
     const/4 v0, -0x1
 
@@ -65,11 +67,11 @@
 
     iget v3, p0, Lwv;->b:I
 
-    invoke-virtual {v2, v3}, Lxf;->d(I)Ljava/lang/Object;
+    invoke-virtual {v2, v3}, Lxf;->f(I)Ljava/lang/Object;
 
     move-result-object v2
 
-    invoke-static {v0, v2}, Lone;->c(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {v0, v2}, Lxb;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v0
 
@@ -83,11 +85,11 @@
 
     iget v2, p0, Lwv;->b:I
 
-    invoke-virtual {v0, v2}, Lxf;->g(I)Ljava/lang/Object;
+    invoke-virtual {v0, v2}, Lxf;->i(I)Ljava/lang/Object;
 
     move-result-object v0
 
-    invoke-static {p1, v0}, Lone;->c(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {p1, v0}, Lxb;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result p1
 
@@ -110,6 +112,14 @@
     throw p1
 .end method
 
+.method public final synthetic forEachRemaining(Lj$/util/function/Consumer;)V
+    .locals 0
+
+    invoke-static {p0, p1}, Lj$/util/Iterator$-CC;->$default$forEachRemaining(Ljava/util/Iterator;Lj$/util/function/Consumer;)V
+
+    return-void
+.end method
+
 .method public final getKey()Ljava/lang/Object;
     .locals 2
 
@@ -121,7 +131,7 @@
 
     iget v1, p0, Lwv;->b:I
 
-    invoke-virtual {v0, v1}, Lxf;->d(I)Ljava/lang/Object;
+    invoke-virtual {v0, v1}, Lxf;->f(I)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -148,7 +158,7 @@
 
     iget v1, p0, Lwv;->b:I
 
-    invoke-virtual {v0, v1}, Lxf;->g(I)Ljava/lang/Object;
+    invoke-virtual {v0, v1}, Lxf;->i(I)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -194,7 +204,7 @@
 
     iget v1, p0, Lwv;->b:I
 
-    invoke-virtual {v0, v1}, Lxf;->d(I)Ljava/lang/Object;
+    invoke-virtual {v0, v1}, Lxf;->f(I)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -202,7 +212,7 @@
 
     iget v2, p0, Lwv;->b:I
 
-    invoke-virtual {v1, v2}, Lxf;->g(I)Ljava/lang/Object;
+    invoke-virtual {v1, v2}, Lxf;->i(I)Ljava/lang/Object;
 
     move-result-object v1
 
@@ -284,7 +294,7 @@
 
     iget v1, p0, Lwv;->b:I
 
-    invoke-virtual {v0, v1}, Lxf;->e(I)Ljava/lang/Object;
+    invoke-virtual {v0, v1}, Lxf;->g(I)Ljava/lang/Object;
 
     iget v0, p0, Lwv;->b:I
 
@@ -323,7 +333,7 @@
 
     iget v1, p0, Lwv;->b:I
 
-    invoke-virtual {v0, v1, p1}, Lxf;->f(ILjava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v0, v1, p1}, Lxf;->h(ILjava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p1
 

@@ -1,53 +1,40 @@
 .class final Ljvf;
-.super Ljava/lang/Object;
+.super Ljvn;
 
-# interfaces
-.implements Ljve;
+
+# instance fields
+.field final synthetic a:Ljvg;
 
 
 # direct methods
-.method public constructor <init>()V
+.method public constructor <init>(Ljvg;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Ljvf;->a:Ljvg;
+
+    invoke-direct {p0}, Ljvn;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Lkad;)V
-    .locals 0
+.method public final b()V
+    .locals 2
 
-    invoke-interface {p1}, Lkad;->close()V
+    iget-object v0, p0, Ljvf;->a:Ljvg;
 
-    return-void
-.end method
+    iget-object v0, v0, Ljvg;->a:Lihu;
 
-.method public final b(Ljava/lang/Iterable;)V
-    .locals 1
+    invoke-virtual {v0}, Lihu;->e()V
 
-    invoke-interface {p1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
+    iget-object v0, p0, Ljvf;->a:Ljvg;
 
-    move-result-object p1
+    iget-object v1, v0, Ljvg;->a:Lihu;
 
-    :goto_0
-    invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
+    iget-object v0, v0, Ljvg;->b:Lihw;
 
-    move-result v0
+    invoke-virtual {v1, v0}, Lihu;->g(Lihw;)V
 
-    if-eqz v0, :cond_0
-
-    invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lkad;
-
-    invoke-interface {v0}, Lkad;->close()V
-
-    goto :goto_0
-
-    :cond_0
     return-void
 .end method

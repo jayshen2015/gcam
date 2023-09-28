@@ -1,45 +1,28 @@
-.class public final Lelw;
+.class public interface abstract Lelw;
 .super Ljava/lang/Object;
-
-# interfaces
-.implements Logk;
-
-
-# instance fields
-.field private final a:Lgxb;
-
-
-# direct methods
-.method public constructor <init>(Lgxb;[B[B[B[B)V
-    .locals 0
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lelw;->a:Lgxb;
-
-    return-void
-.end method
 
 
 # virtual methods
-.method public final a()Landroid/app/Application;
-    .locals 1
-
-    iget-object v0, p0, Lelw;->a:Lgxb;
-
-    iget-object v0, v0, Lgxb;->b:Ljava/lang/Object;
-
-    check-cast v0, Landroid/app/Application;
-
-    return-object v0
+.method public abstract d(Lelv;)Llie;
 .end method
 
-.method public final bridge synthetic get()Ljava/lang/Object;
-    .locals 1
+.method public abstract e(Lelx;)Llie;
+.end method
 
-    invoke-virtual {p0}, Lelw;->a()Landroid/app/Application;
+.method public abstract g(Lelv;)V
+.end method
 
-    move-result-object v0
+.method public abstract h(Ljava/lang/Object;)V
+.end method
 
-    return-object v0
+.method public abstract i()V
+.end method
+
+.method public abstract j(Lelx;)V
+.end method
+
+.method public abstract m(Lelx;)V
+.end method
+
+.method public abstract n()V
 .end method

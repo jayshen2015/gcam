@@ -1,172 +1,140 @@
 .class public final Lnis;
-.super Lnws;
-
-# interfaces
-.implements Lnxz;
+.super Ljava/lang/Object;
 
 
 # static fields
-.field public static final d:Lnis;
+.field public static final a:Ljava/util/regex/Pattern;
 
-.field private static volatile e:Lnyf;
+.field static final b:Landroid/accounts/Account;
 
+.field public static final c:Ljava/util/Set;
 
-# instance fields
-.field public a:I
-
-.field public b:F
-
-.field public c:F
+.field public static final d:Ljava/util/Set;
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 2
+    .locals 10
 
-    new-instance v0, Lnis;
+    const-string v0, "[a-z]+(_[a-z]+)*"
 
-    invoke-direct {v0}, Lnis;-><init>()V
+    invoke-static {v0}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;
 
-    sput-object v0, Lnis;->d:Lnis;
+    move-result-object v0
 
-    const-class v1, Lnis;
+    sput-object v0, Lnis;->a:Ljava/util/regex/Pattern;
 
-    invoke-static {v1, v0}, Lnws;->aa(Ljava/lang/Class;Lnws;)V
+    sget-object v0, Lnip;->a:Landroid/accounts/Account;
+
+    sput-object v0, Lnis;->b:Landroid/accounts/Account;
+
+    new-instance v0, Ljava/util/HashSet;
+
+    const/4 v1, 0x7
+
+    new-array v1, v1, [Ljava/lang/String;
+
+    const-string v2, "default"
+
+    const/4 v3, 0x0
+
+    aput-object v2, v1, v3
+
+    const-string v2, "unused"
+
+    const/4 v4, 0x1
+
+    aput-object v2, v1, v4
+
+    const-string v2, "special"
+
+    const/4 v5, 0x2
+
+    aput-object v2, v1, v5
+
+    const-string v2, "reserved"
+
+    const/4 v6, 0x3
+
+    aput-object v2, v1, v6
+
+    const-string v2, "shared"
+
+    const/4 v7, 0x4
+
+    aput-object v2, v1, v7
+
+    const-string v2, "virtual"
+
+    const/4 v8, 0x5
+
+    aput-object v2, v1, v8
+
+    const/4 v2, 0x6
+
+    const-string v9, "managed"
+
+    aput-object v9, v1, v2
+
+    invoke-static {v1}, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
+
+    move-result-object v1
+
+    invoke-direct {v0, v1}, Ljava/util/HashSet;-><init>(Ljava/util/Collection;)V
+
+    invoke-static {v0}, Ljava/util/Collections;->unmodifiableSet(Ljava/util/Set;)Ljava/util/Set;
+
+    move-result-object v0
+
+    sput-object v0, Lnis;->c:Ljava/util/Set;
+
+    new-instance v0, Ljava/util/HashSet;
+
+    new-array v1, v2, [Ljava/lang/String;
+
+    const-string v2, "files"
+
+    aput-object v2, v1, v3
+
+    const-string v2, "cache"
+
+    aput-object v2, v1, v4
+
+    aput-object v9, v1, v5
+
+    const-string v2, "directboot-files"
+
+    aput-object v2, v1, v6
+
+    const-string v2, "directboot-cache"
+
+    aput-object v2, v1, v7
+
+    const-string v2, "external"
+
+    aput-object v2, v1, v8
+
+    invoke-static {v1}, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
+
+    move-result-object v1
+
+    invoke-direct {v0, v1}, Ljava/util/HashSet;-><init>(Ljava/util/Collection;)V
+
+    invoke-static {v0}, Ljava/util/Collections;->unmodifiableSet(Ljava/util/Set;)Ljava/util/Set;
+
+    move-result-object v0
+
+    sput-object v0, Lnis;->d:Ljava/util/Set;
 
     return-void
 .end method
 
-.method private constructor <init>()V
-    .locals 0
+.method public static a(Landroid/content/Context;)Lnir;
+    .locals 1
 
-    invoke-direct {p0}, Lnws;-><init>()V
+    new-instance v0, Lnir;
 
-    return-void
-.end method
+    invoke-direct {v0, p0}, Lnir;-><init>(Landroid/content/Context;)V
 
-
-# virtual methods
-.method protected final a(ILjava/lang/Object;)Ljava/lang/Object;
-    .locals 3
-
-    add-int/lit8 p1, p1, -0x1
-
-    const/4 p2, 0x1
-
-    packed-switch p1, :pswitch_data_0
-
-    :pswitch_0
-    const/4 p1, 0x0
-
-    return-object p1
-
-    :pswitch_1
-    sget-object p1, Lnis;->e:Lnyf;
-
-    if-nez p1, :cond_1
-
-    const-class p2, Lnis;
-
-    monitor-enter p2
-
-    :try_start_0
-    sget-object p1, Lnis;->e:Lnyf;
-
-    if-nez p1, :cond_0
-
-    new-instance p1, Lnwo;
-
-    sget-object v0, Lnis;->d:Lnis;
-
-    invoke-direct {p1, v0}, Lnwo;-><init>(Lnws;)V
-
-    sput-object p1, Lnis;->e:Lnyf;
-
-    :cond_0
-    monitor-exit p2
-
-    goto :goto_0
-
-    :catchall_0
-    move-exception p1
-
-    monitor-exit p2
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw p1
-
-    :cond_1
-    :goto_0
-    return-object p1
-
-    :pswitch_2
-    sget-object p1, Lnis;->d:Lnis;
-
-    return-object p1
-
-    :pswitch_3
-    new-instance p1, Lnwn;
-
-    sget-object p2, Lnis;->d:Lnis;
-
-    invoke-direct {p1, p2}, Lnwn;-><init>(Lnws;)V
-
-    return-object p1
-
-    :pswitch_4
-    new-instance p1, Lnis;
-
-    invoke-direct {p1}, Lnis;-><init>()V
-
-    return-object p1
-
-    :pswitch_5
-    const-string p1, "a"
-
-    const-string v0, "\u0001\u0002\u0000\u0001\u0001\u0002\u0002\u0000\u0000\u0000\u0001\u1001\u0000\u0002\u1001\u0001"
-
-    const/4 v1, 0x3
-
-    new-array v1, v1, [Ljava/lang/Object;
-
-    const/4 v2, 0x0
-
-    aput-object p1, v1, v2
-
-    const-string p1, "b"
-
-    aput-object p1, v1, p2
-
-    const/4 p1, 0x2
-
-    const-string p2, "c"
-
-    aput-object p2, v1, p1
-
-    sget-object p1, Lnis;->d:Lnis;
-
-    invoke-static {p1, v0, v1}, Lnis;->X(Lnxy;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object p1
-
-    return-object p1
-
-    :pswitch_6
-    invoke-static {p2}, Ljava/lang/Byte;->valueOf(B)Ljava/lang/Byte;
-
-    move-result-object p1
-
-    return-object p1
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_6
-        :pswitch_0
-        :pswitch_5
-        :pswitch_4
-        :pswitch_3
-        :pswitch_2
-        :pswitch_1
-    .end packed-switch
+    return-object v0
 .end method

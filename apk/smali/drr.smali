@@ -1,91 +1,80 @@
-.class final Ldrr;
+.class public final Ldrr;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lfwu;
+.implements Ldqs;
 
 
 # instance fields
-.field final synthetic a:Ldry;
+.field public a:Landroid/graphics/Rect;
 
-.field final synthetic b:Lj$/time/Instant;
+.field public b:Lbrg;
 
-.field final synthetic c:Lmqp;
-
-.field final synthetic d:Ldru;
+.field public final c:Ldsg;
 
 
 # direct methods
-.method public constructor <init>(Ldru;Ldry;Lj$/time/Instant;Lmqp;)V
+.method public constructor <init>(Ldsg;)V
     .locals 0
 
-    iput-object p1, p0, Ldrr;->d:Ldru;
-
-    iput-object p2, p0, Ldrr;->a:Ldry;
-
-    iput-object p3, p0, Ldrr;->b:Lj$/time/Instant;
-
-    iput-object p4, p0, Ldrr;->c:Lmqp;
-
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Ldrr;->c:Ldsg;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Lnou;
-    .locals 4
-
-    iget-object v0, p0, Ldrr;->d:Ldru;
-
-    new-instance v1, Ldrt;
-
-    iget-object v2, p0, Ldrr;->a:Ldry;
-
-    invoke-interface {v2}, Ldry;->a()Landroid/hardware/HardwareBuffer;
-
-    move-result-object v2
-
-    iget-object v3, p0, Ldrr;->b:Lj$/time/Instant;
-
-    invoke-direct {v1, v0, v2, v3}, Ldrt;-><init>(Ldru;Landroid/hardware/HardwareBuffer;Lj$/time/Instant;)V
-
-    iput-object v1, v0, Ldru;->e:Ldrt;
-
-    iget-object v0, p0, Ldrr;->d:Ldru;
-
-    iget-object v1, p0, Ldrr;->a:Ldry;
-
-    iget-object v2, v0, Ldru;->a:Llbd;
-
-    invoke-interface {v1, v2}, Ldry;->c(Llbd;)Llde;
-
-    move-result-object v1
-
-    iput-object v1, v0, Ldru;->f:Llde;
-
-    iget-object v0, p0, Ldrr;->d:Ldru;
-
-    iget-object v1, p0, Ldrr;->a:Ldry;
-
-    iget-object v2, p0, Ldrr;->b:Lj$/time/Instant;
-
-    iget-object v3, p0, Ldrr;->c:Lmqp;
-
-    invoke-virtual {v0, v1, v2, v3}, Ldru;->a(Ldry;Lj$/time/Instant;Lmqp;)Lnou;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public final b()Lnou;
+.method public final declared-synchronized a(Llvp;Lbrg;)V
     .locals 1
 
-    invoke-static {}, Lnsy;->z()Lnou;
+    monitor-enter p0
 
-    move-result-object v0
+    :try_start_0
+    sget-object v0, Landroid/hardware/camera2/CameraCharacteristics;->SENSOR_INFO_ACTIVE_ARRAY_SIZE:Landroid/hardware/camera2/CameraCharacteristics$Key;
 
-    return-object v0
+    invoke-interface {p1, v0}, Llvp;->l(Landroid/hardware/camera2/CameraCharacteristics$Key;)Ljava/lang/Object;
+
+    move-result-object p1
+
+    check-cast p1, Landroid/graphics/Rect;
+
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    iput-object p1, p0, Ldrr;->a:Landroid/graphics/Rect;
+
+    iput-object p2, p0, Ldrr;->b:Lbrg;
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    monitor-exit p0
+
+    return-void
+
+    :catchall_0
+    move-exception p1
+
+    monitor-exit p0
+
+    throw p1
+.end method
+
+.method public final b(Llmr;Llnx;)V
+    .locals 1
+
+    invoke-interface {p1}, Llmr;->a()Llmr;
+
+    move-result-object p1
+
+    if-eqz p1, :cond_0
+
+    new-instance v0, Ldrq;
+
+    invoke-direct {v0, p0, p1, p2}, Ldrq;-><init>(Ldrr;Llmr;Llnx;)V
+
+    invoke-interface {p1, v0}, Llmr;->j(Lmip;)V
+
+    :cond_0
+    return-void
 .end method

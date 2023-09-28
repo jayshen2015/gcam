@@ -1,80 +1,41 @@
-.class public final Lhbl;
+.class public final synthetic Lhbl;
 .super Ljava/lang/Object;
+
+# interfaces
+.implements Lheu;
 
 
 # static fields
-.field private static final a:Lnak;
+.field public static final synthetic a:Lhbl;
 
 
 # direct methods
-.method static constructor <clinit>()V
+.method static synthetic constructor <clinit>()V
     .locals 1
 
-    const-string v0, "com/google/android/apps/camera/sideline/util/SidelineCoreUtils"
+    new-instance v0, Lhbl;
 
-    invoke-static {v0}, Lnak;->h(Ljava/lang/String;)Lnak;
+    invoke-direct {v0}, Lhbl;-><init>()V
 
-    move-result-object v0
-
-    sput-object v0, Lhbl;->a:Lnak;
+    sput-object v0, Lhbl;->a:Lhbl;
 
     return-void
 .end method
 
-.method public static a(Landroid/content/Context;I)J
-    .locals 2
+.method private synthetic constructor <init>()V
+    .locals 0
 
-    :try_start_0
-    invoke-virtual {p0}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    move-result-object p0
-
-    const-string v0, "com.google.pixel.camera.hal"
-
-    const/high16 v1, 0x40000000    # 2.0f
-
-    or-int/2addr p1, v1
-
-    invoke-virtual {p0, v0, p1}, Landroid/content/pm/PackageManager;->getPackageInfo(Ljava/lang/String;I)Landroid/content/pm/PackageInfo;
-
-    move-result-object p0
-
-    invoke-virtual {p0}, Landroid/content/pm/PackageInfo;->getLongVersionCode()J
-
-    move-result-wide p0
-    :try_end_0
-    .catch Landroid/content/pm/PackageManager$NameNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
-
-    return-wide p0
-
-    :catch_0
-    move-exception p0
-
-    sget-object p0, Lhbl;->a:Lnak;
-
-    invoke-virtual {p0}, Lnaf;->c()Lnaz;
-
-    move-result-object p0
-
-    const-string p1, "Camera HAL package not found."
-
-    const/16 v0, 0xd87
-
-    invoke-static {p0, p1, v0}, Ld;->g(Lnaz;Ljava/lang/String;C)V
-
-    const-wide/16 p0, -0x1
-
-    return-wide p0
+    return-void
 .end method
 
-.method public static b(Landroid/content/Context;)J
-    .locals 2
 
-    const/4 v0, 0x0
+# virtual methods
+.method public final a(Llmr;)Z
+    .locals 0
 
-    invoke-static {p0, v0}, Lhbl;->a(Landroid/content/Context;I)J
+    const/4 p1, 0x1
 
-    move-result-wide v0
-
-    return-wide v0
+    return p1
 .end method

@@ -9,10 +9,8 @@
 
 
 # direct methods
-.method public constructor <init>(JLnrg;)V
+.method public constructor <init>(JI)V
     .locals 0
-
-    iget p3, p3, Lnrg;->q:I
 
     invoke-static {p1, p2, p3}, Lcom/google/googlex/gcam/GcamModuleJNI;->new_FrameMetadataKey(JI)J
 

@@ -1,81 +1,65 @@
-.class public final Lbmo;
-.super Ljava/lang/Object;
+.class public Lbmo;
+.super Landroid/os/Binder;
 
 # interfaces
-.implements Landroid/hardware/Camera$PictureCallback;
-
-
-# instance fields
-.field final synthetic a:Landroid/os/Handler;
-
-.field public final synthetic b:Lbnc;
-
-.field final synthetic c:Lbmp;
+.implements Landroid/os/IInterface;
 
 
 # direct methods
-.method public constructor <init>(Lbmp;Landroid/os/Handler;Lbnc;)V
+.method protected constructor <init>(Ljava/lang/String;)V
     .locals 0
 
-    iput-object p1, p0, Lbmo;->c:Lbmp;
+    invoke-direct {p0}, Landroid/os/Binder;-><init>()V
 
-    iput-object p2, p0, Lbmo;->a:Landroid/os/Handler;
-
-    iput-object p3, p0, Lbmo;->b:Lbnc;
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-virtual {p0, p0, p1}, Lbmo;->attachInterface(Landroid/os/IInterface;Ljava/lang/String;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onPictureTaken([BLandroid/hardware/Camera;)V
-    .locals 2
+.method public final asBinder()Landroid/os/IBinder;
+    .locals 0
 
-    iget-object p2, p0, Lbmo;->c:Lbmp;
+    return-object p0
+.end method
 
-    iget-object p2, p2, Lbmp;->a:Lbmv;
+.method public final onTransact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
+    .locals 1
 
-    iget-object p2, p2, Lbmv;->e:Lbnx;
+    const v0, 0xffffff
 
-    invoke-virtual {p2}, Lbnx;->a()I
+    if-le p1, v0, :cond_0
 
-    move-result p2
+    invoke-super {p0, p1, p2, p3, p4}, Landroid/os/Binder;->onTransact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
-    const/16 v0, 0x8
+    move-result p4
 
-    if-eq p2, v0, :cond_0
+    if-eqz p4, :cond_1
 
-    sget-object p2, Lbmv;->a:Lboc;
+    const/4 p1, 0x1
 
-    const-string v0, "picture callback returning when not capturing"
-
-    invoke-static {p2, v0}, Lbod;->c(Lboc;Ljava/lang/String;)V
-
-    goto :goto_0
+    return p1
 
     :cond_0
-    iget-object p2, p0, Lbmo;->c:Lbmp;
+    invoke-virtual {p0}, Lbmo;->getInterfaceDescriptor()Ljava/lang/String;
 
-    iget-object p2, p2, Lbmp;->a:Lbmv;
+    move-result-object p4
 
-    iget-object p2, p2, Lbmv;->e:Lbnx;
+    invoke-virtual {p2, p4}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
-    const/4 v0, 0x2
+    :cond_1
+    invoke-virtual {p0, p1, p2, p3}, Lbmo;->x(ILandroid/os/Parcel;Landroid/os/Parcel;)Z
 
-    invoke-virtual {p2, v0}, Lbnx;->c(I)V
+    move-result p1
 
-    :goto_0
-    iget-object p2, p0, Lbmo;->a:Landroid/os/Handler;
+    return p1
+.end method
 
-    new-instance v0, Lbem;
+.method protected x(ILandroid/os/Parcel;Landroid/os/Parcel;)Z
+    .locals 0
 
-    const/4 v1, 0x5
+    const/4 p1, 0x0
 
-    invoke-direct {v0, p0, p1, v1}, Lbem;-><init>(Lbmo;[BI)V
-
-    invoke-virtual {p2, v0}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
-
-    return-void
+    return p1
 .end method

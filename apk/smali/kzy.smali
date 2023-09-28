@@ -1,30 +1,69 @@
-.class final Lkzy;
-.super Lkyp;
+.class public abstract Lkzy;
+.super Ljava/lang/Object;
+
+
+# static fields
+.field public static a:Landroid/content/ContentResolver;
 
 
 # instance fields
-.field private final a:Llaa;
+.field protected final b:Ljava/lang/String;
+
+.field protected final c:Ljava/lang/Object;
 
 
 # direct methods
-.method public constructor <init>(Llaa;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 1
 
-    invoke-direct {p0}, Lkyp;-><init>()V
+    const/4 v0, 0x0
 
-    iput-object p1, p0, Lkzy;->a:Llaa;
+    sput-object v0, Lkzy;->a:Landroid/content/ContentResolver;
 
     return-void
 .end method
 
+.method protected constructor <init>(Ljava/lang/String;Ljava/lang/Object;)V
+    .locals 0
 
-# virtual methods
-.method public final b(Ljava/lang/Object;)V
-    .locals 1
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iget-object v0, p0, Lkzy;->a:Llaa;
+    iput-object p1, p0, Lkzy;->b:Ljava/lang/String;
 
-    invoke-virtual {v0, p1}, Llaa;->l(Ljava/lang/Object;)V
+    iput-object p2, p0, Lkzy;->c:Ljava/lang/Object;
 
     return-void
+.end method
+
+.method public static b(Landroid/content/Context;)V
+    .locals 0
+
+    invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+
+    move-result-object p0
+
+    sput-object p0, Lkzy;->a:Landroid/content/ContentResolver;
+
+    return-void
+.end method
+
+.method public static c(Ljava/lang/String;)Lkzy;
+    .locals 2
+
+    new-instance v0, Lkzw;
+
+    const/4 v1, 0x0
+
+    invoke-static {v1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    move-result-object v1
+
+    invoke-direct {v0, p0, v1}, Lkzw;-><init>(Ljava/lang/String;Ljava/lang/Boolean;)V
+
+    return-object v0
+.end method
+
+
+# virtual methods
+.method public abstract a()Ljava/lang/Object;
 .end method

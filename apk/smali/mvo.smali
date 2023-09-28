@@ -1,39 +1,22 @@
-.class final Lmvo;
+.class public final Lmvo;
 .super Ljava/lang/Object;
-
-# interfaces
-.implements Ljava/io/Serializable;
-
-
-# static fields
-.field private static final serialVersionUID:J
 
 
 # instance fields
-.field final a:Ljava/util/EnumMap;
+.field public final a:Lovq;
+
+.field public final b:I
 
 
 # direct methods
-.method public constructor <init>(Ljava/util/EnumMap;)V
+.method public constructor <init>(Lovq;I)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lmvo;->a:Ljava/util/EnumMap;
+    iput-object p1, p0, Lmvo;->a:Lovq;
+
+    iput p2, p0, Lmvo;->b:I
 
     return-void
-.end method
-
-
-# virtual methods
-.method readResolve()Ljava/lang/Object;
-    .locals 2
-
-    new-instance v0, Lmvp;
-
-    iget-object v1, p0, Lmvo;->a:Ljava/util/EnumMap;
-
-    invoke-direct {v0, v1}, Lmvp;-><init>(Ljava/util/EnumMap;)V
-
-    return-object v0
 .end method

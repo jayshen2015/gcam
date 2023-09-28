@@ -1,118 +1,151 @@
-.class public final Lmcp;
-.super Loln;
+.class Lmcp;
+.super Lmcm;
 
 # interfaces
-.implements Lomk;
-
-
-# annotations
-.annotation runtime Lolj;
-    b = "com.google.android.libraries.vision.visionkit.f250.internal.uploader.work.upload.ResourceManifestUploader$failOnErroneousAttachmentComplete$2"
-    c = "ResourceManifestUploader.kt"
-    d = "invokeSuspend"
-    e = {
-        0x6a
-    }
-.end annotation
-
-
-# instance fields
-.field a:I
-
-.field final synthetic b:Lmdd;
-
-.field final synthetic c:Llwc;
+.implements Lmce;
 
 
 # direct methods
-.method public constructor <init>(Llwc;Lmdd;Loku;[B)V
-    .locals 0
+.method public constructor <init>(Lmip;Lmce;Llis;[B[B[B)V
+    .locals 7
 
-    iput-object p1, p0, Lmcp;->c:Llwc;
+    const/4 v4, 0x0
 
-    iput-object p2, p0, Lmcp;->b:Lmdd;
+    const/4 v5, 0x0
 
-    const/4 p1, 0x1
+    const/4 v6, 0x0
 
-    invoke-direct {p0, p1, p3}, Loln;-><init>(ILoku;)V
+    move-object v0, p0
+
+    move-object v1, p1
+
+    move-object v2, p2
+
+    move-object v3, p3
+
+    invoke-direct/range {v0 .. v6}, Lmcm;-><init>(Lmip;Lmcd;Llis;[B[B[B)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final bridge synthetic a(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 4
+.method public final a()J
+    .locals 2
 
-    check-cast p1, Loku;
+    invoke-virtual {p0}, Lmcm;->l()Lmcd;
 
-    new-instance v0, Lmcp;
+    move-result-object v0
 
-    iget-object v1, p0, Lmcp;->c:Llwc;
+    invoke-interface {v0}, Lmce;->a()J
 
-    iget-object v2, p0, Lmcp;->b:Lmdd;
+    move-result-wide v0
 
-    const/4 v3, 0x0
-
-    invoke-direct {v0, v1, v2, p1, v3}, Lmcp;-><init>(Llwc;Lmdd;Loku;[B)V
-
-    sget-object p1, Lojk;->a:Lojk;
-
-    invoke-virtual {v0, p1}, Lmcp;->b(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object p1
-
-    return-object p1
+    return-wide v0
 .end method
 
-.method public final b(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 3
+.method public final e()Z
+    .locals 1
 
-    sget-object v0, Lolc;->a:Lolc;
+    invoke-virtual {p0}, Lmcm;->l()Lmcd;
 
-    iget v1, p0, Lmcp;->a:I
+    move-result-object v0
 
-    packed-switch v1, :pswitch_data_0
+    invoke-interface {v0}, Lmce;->e()Z
 
-    invoke-static {p1}, Lljr;->aO(Ljava/lang/Object;)V
+    move-result v0
 
-    goto :goto_0
+    return v0
+.end method
 
-    :pswitch_0
-    invoke-static {p1}, Lljr;->aO(Ljava/lang/Object;)V
+.method public final f()Z
+    .locals 1
 
-    iget-object p1, p0, Lmcp;->c:Llwc;
+    invoke-virtual {p0}, Lmcm;->l()Lmcd;
 
-    iget-object p1, p1, Llwc;->a:Ljava/lang/Object;
+    move-result-object v0
 
-    iget-object v1, p0, Lmcp;->b:Lmdd;
+    invoke-interface {v0}, Lmce;->f()Z
 
-    iget-object v1, v1, Lmdd;->a:Llyf;
+    move-result v0
 
-    const/4 v2, 0x1
+    return v0
+.end method
 
-    iput v2, p0, Lmcp;->a:I
+.method public final h()Landroid/net/Uri;
+    .locals 1
 
-    check-cast p1, Llyz;
+    invoke-virtual {p0}, Lmcm;->l()Lmcd;
 
-    invoke-virtual {p1, v1, p0}, Llyz;->a(Llyf;Loku;)Ljava/lang/Object;
+    move-result-object v0
 
-    move-result-object p1
+    invoke-interface {v0}, Lmce;->h()Landroid/net/Uri;
 
-    if-ne p1, v0, :cond_0
+    move-result-object v0
 
     return-object v0
+.end method
 
-    :cond_0
-    :goto_0
-    sget-object p1, Lojk;->a:Lojk;
+.method public final i()Lmcn;
+    .locals 1
 
-    return-object p1
+    invoke-virtual {p0}, Lmcm;->l()Lmcd;
 
-    nop
+    move-result-object v0
 
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+    invoke-interface {v0}, Lmce;->i()Lmcn;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public final j()V
+    .locals 1
+
+    iget-object v0, p0, Lmcm;->c:Ljava/util/concurrent/locks/ReadWriteLock;
+
+    invoke-interface {v0}, Ljava/util/concurrent/locks/ReadWriteLock;->writeLock()Ljava/util/concurrent/locks/Lock;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Ljava/util/concurrent/locks/Lock;->lockInterruptibly()V
+
+    iget-object v0, p0, Lmcm;->c:Ljava/util/concurrent/locks/ReadWriteLock;
+
+    invoke-interface {v0}, Ljava/util/concurrent/locks/ReadWriteLock;->writeLock()Ljava/util/concurrent/locks/Lock;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Ljava/util/concurrent/locks/Lock;->unlock()V
+
+    return-void
+.end method
+
+.method public final k()Z
+    .locals 1
+
+    invoke-virtual {p0}, Lmcm;->l()Lmcd;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Lmce;->k()Z
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .locals 1
+
+    invoke-virtual {p0}, Lmcm;->l()Lmcd;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/Object;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
 .end method

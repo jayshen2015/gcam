@@ -1,128 +1,146 @@
-.class Lhts;
-.super Lhtm;
+.class public abstract Lhts;
+.super Ljava/lang/Object;
+
+
+# static fields
+.field public static final synthetic c:I
+
+.field private static final d:Ljava/util/Map;
 
 
 # instance fields
-.field final synthetic a:Lhtz;
+.field public final a:Ljava/lang/String;
+
+.field final b:Lhtr;
 
 
 # direct methods
-.method public constructor <init>(Lhtz;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 1
 
-    iput-object p1, p0, Lhts;->a:Lhtz;
+    new-instance v0, Ljava/util/HashMap;
 
-    invoke-direct {p0}, Lhtm;-><init>()V
+    invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
+
+    sput-object v0, Lhts;->d:Ljava/util/Map;
 
     return-void
+.end method
+
+.method public constructor <init>(Ljava/lang/String;Lhtr;)V
+    .locals 0
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lhts;->a:Ljava/lang/String;
+
+    iput-object p2, p0, Lhts;->b:Lhtr;
+
+    invoke-direct {p0}, Lhts;->d()V
+
+    return-void
+.end method
+
+.method public constructor <init>(Ljava/lang/String;Ljava/lang/Object;)V
+    .locals 1
+
+    new-instance v0, Lhtq;
+
+    invoke-direct {v0, p2}, Lhtq;-><init>(Ljava/lang/Object;)V
+
+    invoke-direct {p0, p1, v0}, Lhts;-><init>(Ljava/lang/String;Lhtr;)V
+
+    return-void
+.end method
+
+.method public static a(Ljava/lang/String;)Lhts;
+    .locals 1
+
+    sget-object v0, Lhts;->d:Ljava/util/Map;
+
+    invoke-interface {v0, p0}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p0
+
+    check-cast p0, Lhts;
+
+    return-object p0
+.end method
+
+.method private final declared-synchronized d()V
+    .locals 4
+
+    monitor-enter p0
+
+    :try_start_0
+    sget-object v0, Lhts;->d:Ljava/util/Map;
+
+    iget-object v1, p0, Lhts;->a:Ljava/lang/String;
+
+    invoke-interface {v0, v1}, Ljava/util/Map;->containsKey(Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_1
+
+    new-instance v0, Ljava/lang/IllegalArgumentException;
+
+    iget-object v1, p0, Lhts;->a:Ljava/lang/String;
+
+    const-string v2, "Duplicate setting key for: "
+
+    invoke-virtual {v1}, Ljava/lang/String;->length()I
+
+    move-result v3
+
+    if-eqz v3, :cond_0
+
+    invoke-virtual {v2, v1}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v1
+
+    goto :goto_0
+
+    :cond_0
+    new-instance v1, Ljava/lang/String;
+
+    invoke-direct {v1, v2}, Ljava/lang/String;-><init>(Ljava/lang/String;)V
+
+    :goto_0
+    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+
+    :cond_1
+    iget-object v1, p0, Lhts;->a:Ljava/lang/String;
+
+    invoke-interface {v0, v1, p0}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    monitor-exit p0
+
+    return-void
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit p0
+
+    throw v0
 .end method
 
 
 # virtual methods
-.method public c()V
+.method public abstract b(Ljava/lang/String;)Ljava/lang/Object;
+.end method
+
+.method public c(Ljava/lang/Object;)Ljava/lang/String;
     .locals 0
 
-    return-void
-.end method
+    invoke-virtual {p1}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
-.method public d()V
-    .locals 0
+    move-result-object p1
 
-    return-void
-.end method
-
-.method public final f()V
-    .locals 3
-
-    iget-object v0, p0, Lhts;->a:Lhtz;
-
-    invoke-virtual {v0}, Lhtz;->y()V
-
-    iget-object v0, p0, Lhts;->a:Lhtz;
-
-    iget-object v0, v0, Lhtz;->c:Libj;
-
-    sget-object v1, Lika;->b:Lika;
-
-    iget-object v2, p0, Lhts;->a:Lhtz;
-
-    iget-boolean v2, v2, Lhtz;->m:Z
-
-    invoke-interface {v0, v1, v2}, Libj;->j(Lika;Z)V
-
-    iget-object v0, p0, Lhts;->a:Lhtz;
-
-    const/4 v1, 0x1
-
-    iput-boolean v1, v0, Lhtz;->m:Z
-
-    sget-object v1, Lika;->b:Lika;
-
-    invoke-virtual {v0, v1}, Lhtz;->B(Lika;)V
-
-    return-void
-.end method
-
-.method public final g()V
-    .locals 1
-
-    iget-object v0, p0, Lhts;->a:Lhtz;
-
-    invoke-virtual {v0}, Lhtz;->z()V
-
-    iget-object v0, p0, Lhts;->a:Lhtz;
-
-    iget-object v0, v0, Lhtz;->j:Licj;
-
-    invoke-virtual {v0}, Licj;->a()V
-
-    return-void
-.end method
-
-.method public i()V
-    .locals 0
-
-    return-void
-.end method
-
-.method public j()V
-    .locals 0
-
-    return-void
-.end method
-
-.method public l()V
-    .locals 0
-
-    return-void
-.end method
-
-.method public m()V
-    .locals 0
-
-    return-void
-.end method
-
-.method public n()V
-    .locals 0
-
-    return-void
-.end method
-
-.method public o()V
-    .locals 0
-
-    return-void
-.end method
-
-.method public p()V
-    .locals 0
-
-    return-void
-.end method
-
-.method public q()V
-    .locals 0
-
-    return-void
+    return-object p1
 .end method

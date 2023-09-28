@@ -1,22 +1,41 @@
-.class public final Lgav;
+.class public final synthetic Lgav;
 .super Ljava/lang/Object;
 
+# interfaces
+.implements Ljava/lang/Runnable;
 
-# static fields
-.field public static final a:Lgaw;
+
+# instance fields
+.field public final synthetic a:Lcom/google/android/apps/camera/moments/FastMomentsHdrImpl;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
+.method public synthetic constructor <init>(Lcom/google/android/apps/camera/moments/FastMomentsHdrImpl;)V
+    .locals 0
 
-    new-instance v0, Lgaw;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const/4 v1, 0x0
+    iput-object p1, p0, Lgav;->a:Lcom/google/android/apps/camera/moments/FastMomentsHdrImpl;
 
-    invoke-direct {v0, v1}, Lgaw;-><init>(I)V
+    return-void
+.end method
 
-    sput-object v0, Lgav;->a:Lgaw;
+
+# virtual methods
+.method public final run()V
+    .locals 5
+
+    iget-object v0, p0, Lgav;->a:Lcom/google/android/apps/camera/moments/FastMomentsHdrImpl;
+
+    iget-wide v1, v0, Lcom/google/android/apps/camera/moments/FastMomentsHdrImpl;->b:J
+
+    iget-object v3, v0, Lcom/google/android/apps/camera/moments/FastMomentsHdrImpl;->c:Lcom/google/googlex/gcam/Gcam;
+
+    invoke-static {v3}, Lcom/google/googlex/gcam/Gcam;->a(Lcom/google/googlex/gcam/Gcam;)J
+
+    move-result-wide v3
+
+    invoke-virtual {v0, v1, v2, v3, v4}, Lcom/google/android/apps/camera/moments/FastMomentsHdrImpl;->initializeProcessingQueueNative(JJ)V
 
     return-void
 .end method

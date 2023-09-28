@@ -1,13 +1,13 @@
 .class public abstract Landroidx/work/CoroutineWorker;
-.super Laxp;
+.super Landroidx/work/ListenableWorker;
 
 
 # instance fields
-.field public final a:Lord;
+.field public final a:Lqrj;
 
-.field public final b:Lbej;
+.field public final b:Lasl;
 
-.field private final g:Lopq;
+.field private final g:Lqqf;
 
 
 # direct methods
@@ -18,84 +18,82 @@
 
     invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    invoke-direct {p0, p1, p2}, Laxp;-><init>(Landroid/content/Context;Landroidx/work/WorkerParameters;)V
+    invoke-direct {p0, p1, p2}, Landroidx/work/ListenableWorker;-><init>(Landroid/content/Context;Landroidx/work/WorkerParameters;)V
 
-    invoke-static {}, Lopx;->j()Lord;
-
-    move-result-object p1
-
-    iput-object p1, p0, Landroidx/work/CoroutineWorker;->a:Lord;
-
-    invoke-static {}, Lbej;->g()Lbej;
+    invoke-static {}, Lqno;->z()Lqrj;
 
     move-result-object p1
 
-    iput-object p1, p0, Landroidx/work/CoroutineWorker;->b:Lbej;
+    iput-object p1, p0, Landroidx/work/CoroutineWorker;->a:Lqrj;
 
-    new-instance p2, Lnk;
+    invoke-static {}, Lasl;->h()Lasl;
 
-    const/16 v0, 0x14
+    move-result-object p1
 
-    invoke-direct {p2, p0, v0}, Lnk;-><init>(Landroidx/work/CoroutineWorker;I)V
+    iput-object p1, p0, Landroidx/work/CoroutineWorker;->b:Lasl;
 
-    iget-object v0, p0, Laxp;->d:Landroidx/work/WorkerParameters;
+    new-instance p2, Lamo;
 
-    iget-object v0, v0, Landroidx/work/WorkerParameters;->f:Lva;
+    invoke-direct {p2, p0}, Lamo;-><init>(Landroidx/work/CoroutineWorker;)V
 
-    iget-object v0, v0, Lva;->a:Ljava/lang/Object;
+    invoke-virtual {p0}, Landroidx/work/ListenableWorker;->j()Laso;
 
-    invoke-virtual {p1, p2, v0}, Lbej;->d(Ljava/lang/Runnable;Ljava/util/concurrent/Executor;)V
+    move-result-object v0
 
-    sget-object p1, Loqf;->a:Lopq;
+    iget-object v0, v0, Laso;->a:Larq;
 
-    iput-object p1, p0, Landroidx/work/CoroutineWorker;->g:Lopq;
+    invoke-virtual {p1, p2, v0}, Lasl;->d(Ljava/lang/Runnable;Ljava/util/concurrent/Executor;)V
+
+    sget-object p1, Lqqq;->a:Lqqf;
+
+    iput-object p1, p0, Landroidx/work/CoroutineWorker;->g:Lqqf;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Lnou;
+.method public final a()Lpht;
     .locals 4
 
-    iget-object v0, p0, Landroidx/work/CoroutineWorker;->g:Lopq;
+    iget-object v0, p0, Landroidx/work/CoroutineWorker;->g:Lqqf;
 
-    iget-object v1, p0, Landroidx/work/CoroutineWorker;->a:Lord;
+    iget-object v1, p0, Landroidx/work/CoroutineWorker;->a:Lqrj;
 
-    invoke-virtual {v0, v1}, Lokp;->plus(Lola;)Lola;
-
-    move-result-object v0
-
-    invoke-static {v0}, Lopx;->e(Lola;)Lopu;
+    invoke-virtual {v0, v1}, Lqlc;->plus(Lqln;)Lqln;
 
     move-result-object v0
 
-    new-instance v1, Laxg;
+    invoke-static {v0}, Lqnm;->j(Lqln;)Lqqj;
+
+    move-result-object v0
+
+    new-instance v1, Lamp;
 
     const/4 v2, 0x0
 
-    invoke-direct {v1, p0, v2}, Laxg;-><init>(Landroidx/work/CoroutineWorker;Loku;)V
+    invoke-direct {v1, p0, v2}, Lamp;-><init>(Landroidx/work/CoroutineWorker;Lqlh;)V
 
     const/4 v3, 0x3
 
-    invoke-static {v0, v2, v1, v3}, Lone;->j(Lopu;Lola;Lomo;I)Lora;
+    invoke-static {v0, v2, v1, v3}, Lqmd;->l(Lqqj;Lqln;Lqmy;I)Lqrg;
 
-    iget-object v0, p0, Landroidx/work/CoroutineWorker;->b:Lbej;
+    iget-object v0, p0, Landroidx/work/CoroutineWorker;->b:Lasl;
 
     return-object v0
 .end method
 
-.method public abstract b(Loku;)Ljava/lang/Object;
+.method public abstract b(Lqlh;)Ljava/lang/Object;
 .end method
 
 .method public final c()V
     .locals 2
 
-    iget-object v0, p0, Landroidx/work/CoroutineWorker;->b:Lbej;
+    iget-object v0, p0, Landroidx/work/CoroutineWorker;->b:Lasl;
 
     const/4 v1, 0x0
 
-    invoke-virtual {v0, v1}, Lbej;->cancel(Z)Z
+    invoke-virtual {v0, v1}, Lasl;->cancel(Z)Z
 
     return-void
 .end method

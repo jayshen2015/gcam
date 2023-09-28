@@ -1,37 +1,36 @@
 .class public final Ljnu;
-.super Lcbe;
+.super Ljava/lang/Object;
 
-# interfaces
-.implements Landroid/os/IInterface;
+
+# static fields
+.field public static final a:Louj;
+
+
+# instance fields
+.field public final b:Ljns;
 
 
 # direct methods
-.method public constructor <init>(Landroid/os/IBinder;)V
+.method static constructor <clinit>()V
     .locals 1
 
-    const-string v0, "com.google.android.gms.phenotype.internal.IPhenotypeService"
+    const-string v0, "com/google/android/apps/camera/ui/views/CameraUiModule"
 
-    invoke-direct {p0, p1, v0}, Lcbe;-><init>(Landroid/os/IBinder;Ljava/lang/String;)V
+    invoke-static {v0}, Louj;->h(Ljava/lang/String;)Louj;
+
+    move-result-object v0
+
+    sput-object v0, Ljnu;->a:Louj;
 
     return-void
 .end method
 
+.method public constructor <init>(Ljns;)V
+    .locals 0
 
-# virtual methods
-.method public final e(Ljnt;Ljava/lang/String;)V
-    .locals 1
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-virtual {p0}, Lcbe;->a()Landroid/os/Parcel;
-
-    move-result-object v0
-
-    invoke-static {v0, p1}, Lcbg;->d(Landroid/os/Parcel;Landroid/os/IInterface;)V
-
-    invoke-virtual {v0, p2}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
-
-    const/4 p1, 0x5
-
-    invoke-virtual {p0, p1, v0}, Lcbe;->z(ILandroid/os/Parcel;)V
+    iput-object p1, p0, Ljnu;->b:Ljns;
 
     return-void
 .end method

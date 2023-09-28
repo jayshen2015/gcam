@@ -1,67 +1,103 @@
-.class public final Leqz;
+.class public final synthetic Leqz;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Logk;
+.implements Llij;
 
 
 # instance fields
-.field private final a:Lva;
+.field public final synthetic a:Lerb;
 
 
 # direct methods
-.method public constructor <init>(Lva;[B[B[B[B)V
+.method public synthetic constructor <init>(Lerb;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Leqz;->a:Lva;
+    iput-object p1, p0, Leqz;->a:Lerb;
 
     return-void
 .end method
 
-.method public static b(Lva;)Leqz;
-    .locals 7
-
-    new-instance v6, Leqz;
-
-    const/4 v2, 0x0
-
-    const/4 v3, 0x0
-
-    const/4 v4, 0x0
-
-    const/4 v5, 0x0
-
-    move-object v0, v6
-
-    move-object v1, p0
-
-    invoke-direct/range {v0 .. v5}, Leqz;-><init>(Lva;[B[B[B[B)V
-
-    return-object v6
-.end method
-
 
 # virtual methods
-.method public final a()Lcdi;
-    .locals 1
+.method public final fB(Ljava/lang/Object;)V
+    .locals 4
 
-    iget-object v0, p0, Leqz;->a:Lva;
+    iget-object v0, p0, Leqz;->a:Lerb;
 
-    iget-object v0, v0, Lva;->a:Ljava/lang/Object;
+    check-cast p1, Ljava/lang/Integer;
 
-    check-cast v0, Lcdi;
+    invoke-virtual {p1}, Ljava/lang/Integer;->intValue()I
 
-    return-object v0
-.end method
+    move-result p1
 
-.method public final bridge synthetic get()Ljava/lang/Object;
-    .locals 1
+    invoke-static {p1}, Lesn;->a(I)Lesn;
 
-    invoke-virtual {p0}, Leqz;->a()Lcdi;
+    move-result-object p1
+
+    iget-object v1, v0, Lerb;->c:Ljdy;
+
+    iget-object v1, v1, Ljdy;->h:Ljava/util/List;
+
+    invoke-interface {v1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+
+    move-result-object v1
+
+    :cond_0
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_1
+
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Ljdz;
+
+    iget-object v3, v2, Ljdz;->a:Ljava/lang/Object;
+
+    check-cast v3, Lesn;
+
+    invoke-virtual {v3, p1}, Lesn;->equals(Ljava/lang/Object;)Z
+
+    move-result v3
+
+    if-eqz v3, :cond_0
+
+    goto :goto_0
+
+    :cond_1
+    const/4 v2, 0x0
+
+    :goto_0
+    if-nez v2, :cond_2
+
+    invoke-virtual {v0}, Lerb;->d()V
+
+    return-void
+
+    :cond_2
+    iget-object p1, v0, Lerb;->b:Lcom/google/android/apps/camera/ui/modeslider/ModeSliderUi;
+
+    invoke-virtual {p1}, Lcom/google/android/apps/camera/ui/modeslider/ModeSliderUi;->b()Lcom/google/android/apps/camera/ui/modeslider/ModeSlider;
+
+    move-result-object p1
+
+    invoke-virtual {p1, v2}, Lcom/google/android/apps/camera/ui/modeslider/ModeSlider;->b(Ljdz;)I
+
+    move-result p1
+
+    iget-object v0, v0, Lerb;->b:Lcom/google/android/apps/camera/ui/modeslider/ModeSliderUi;
+
+    invoke-virtual {v0}, Lcom/google/android/apps/camera/ui/modeslider/ModeSliderUi;->b()Lcom/google/android/apps/camera/ui/modeslider/ModeSlider;
 
     move-result-object v0
 
-    return-object v0
+    invoke-virtual {v0, p1}, Lcom/google/android/apps/camera/ui/modeslider/ModeSlider;->k(I)V
+
+    return-void
 .end method

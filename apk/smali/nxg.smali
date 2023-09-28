@@ -1,93 +1,105 @@
-.class final Lnxg;
+.class public final Lnxg;
 .super Ljava/lang/Object;
-
-# interfaces
-.implements Ljava/util/Map$Entry;
 
 
 # instance fields
-.field public final a:Ljava/util/Map$Entry;
+.field public a:I
+
+.field public b:I
+
+.field private final c:Landroid/view/View;
+
+.field private d:I
 
 
 # direct methods
-.method public constructor <init>(Ljava/util/Map$Entry;)V
+.method public constructor <init>(Landroid/view/View;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lnxg;->a:Ljava/util/Map$Entry;
+    iput-object p1, p0, Lnxg;->c:Landroid/view/View;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final getKey()Ljava/lang/Object;
+.method public final a()V
+    .locals 4
+
+    iget-object v0, p0, Lnxg;->c:Landroid/view/View;
+
+    iget v1, p0, Lnxg;->b:I
+
+    invoke-virtual {v0}, Landroid/view/View;->getTop()I
+
+    move-result v2
+
+    iget v3, p0, Lnxg;->a:I
+
+    sub-int/2addr v2, v3
+
+    sub-int/2addr v1, v2
+
+    invoke-static {v0, v1}, Lgl;->y(Landroid/view/View;I)V
+
+    iget-object v0, p0, Lnxg;->c:Landroid/view/View;
+
+    invoke-virtual {v0}, Landroid/view/View;->getLeft()I
+
+    move-result v1
+
+    iget v2, p0, Lnxg;->d:I
+
+    sub-int/2addr v1, v2
+
+    neg-int v1, v1
+
+    invoke-static {v0, v1}, Lgl;->x(Landroid/view/View;I)V
+
+    return-void
+.end method
+
+.method public final b()V
     .locals 1
 
-    iget-object v0, p0, Lnxg;->a:Ljava/util/Map$Entry;
+    iget-object v0, p0, Lnxg;->c:Landroid/view/View;
 
-    invoke-interface {v0}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
+    invoke-virtual {v0}, Landroid/view/View;->getTop()I
 
-    move-result-object v0
+    move-result v0
 
-    return-object v0
+    iput v0, p0, Lnxg;->a:I
+
+    iget-object v0, p0, Lnxg;->c:Landroid/view/View;
+
+    invoke-virtual {v0}, Landroid/view/View;->getLeft()I
+
+    move-result v0
+
+    iput v0, p0, Lnxg;->d:I
+
+    return-void
 .end method
 
-.method public final getValue()Ljava/lang/Object;
-    .locals 2
+.method public final c(I)Z
+    .locals 1
 
-    iget-object v0, p0, Lnxg;->a:Ljava/util/Map$Entry;
+    iget v0, p0, Lnxg;->b:I
 
-    invoke-interface {v0}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
+    if-eq v0, p1, :cond_0
 
-    move-result-object v0
+    iput p1, p0, Lnxg;->b:I
 
-    check-cast v0, Lnxi;
+    invoke-virtual {p0}, Lnxg;->a()V
 
-    const/4 v1, 0x0
+    const/4 p1, 0x1
 
-    if-nez v0, :cond_0
-
-    return-object v1
+    return p1
 
     :cond_0
-    throw v1
-.end method
+    const/4 p1, 0x0
 
-.method public final setValue(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 3
-
-    instance-of v0, p1, Lnxy;
-
-    if-eqz v0, :cond_0
-
-    iget-object v0, p0, Lnxg;->a:Ljava/util/Map$Entry;
-
-    invoke-interface {v0}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lnxi;
-
-    check-cast p1, Lnxy;
-
-    iget-object v1, v0, Lnxj;->a:Lnxy;
-
-    const/4 v2, 0x0
-
-    iput-object v2, v0, Lnxj;->b:Lnvt;
-
-    iput-object p1, v0, Lnxj;->a:Lnxy;
-
-    return-object v1
-
-    :cond_0
-    new-instance p1, Ljava/lang/IllegalArgumentException;
-
-    const-string v0, "LazyField now only used for MessageSet, and the value of MessageSet must be an instance of MessageLite"
-
-    invoke-direct {p1, v0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw p1
+    return p1
 .end method

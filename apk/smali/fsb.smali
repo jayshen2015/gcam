@@ -1,101 +1,64 @@
-.class public final Lfsb;
+.class final Lfsb;
 .super Ljava/lang/Object;
-
-# interfaces
-.implements Lfsm;
-
-
-# static fields
-.field public static final a:Lnak;
 
 
 # instance fields
-.field public final b:Landroid/os/Handler;
+.field public final a:Llig;
 
-.field private final c:Lfsm;
+.field public final b:J
+
+.field public final c:Lpih;
+
+.field public final d:Lpih;
+
+.field public final e:Lpih;
+
+.field public final f:Lpih;
+
+.field public volatile g:Z
+
+.field public final h:I
 
 
 # direct methods
-.method static constructor <clinit>()V
+.method public constructor <init>(Llig;JI)V
     .locals 1
-
-    const-string v0, "com/google/android/apps/camera/moments/TimeLimitedMomentsHdrPlusLauncher"
-
-    invoke-static {v0}, Lnak;->h(Ljava/lang/String;)Lnak;
-
-    move-result-object v0
-
-    sput-object v0, Lfsb;->a:Lnak;
-
-    return-void
-.end method
-
-.method public constructor <init>(Lfsm;Landroid/os/Handler;)V
-    .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lfsb;->c:Lfsm;
+    invoke-static {}, Lpih;->f()Lpih;
 
-    iput-object p2, p0, Lfsb;->b:Landroid/os/Handler;
+    move-result-object v0
 
-    return-void
-.end method
+    iput-object v0, p0, Lfsb;->c:Lpih;
 
+    invoke-static {}, Lpih;->f()Lpih;
 
-# virtual methods
-.method public final a()I
-    .locals 1
+    move-result-object v0
 
-    iget-object v0, p0, Lfsb;->c:Lfsm;
+    iput-object v0, p0, Lfsb;->d:Lpih;
 
-    invoke-interface {v0}, Lfsm;->a()I
+    invoke-static {}, Lpih;->f()Lpih;
 
-    const/4 v0, 0x1
+    move-result-object v0
 
-    return v0
-.end method
+    iput-object v0, p0, Lfsb;->e:Lpih;
 
-.method public final b(Lkeb;Lgue;)Z
-    .locals 0
+    invoke-static {}, Lpih;->f()Lpih;
 
-    const/4 p1, 0x1
+    move-result-object v0
 
-    return p1
-.end method
+    iput-object v0, p0, Lfsb;->f:Lpih;
 
-.method public final c(Lkeb;Lfte;Lnom;Lfsl;)V
-    .locals 6
+    const/4 v0, 0x0
 
-    new-instance v0, Ljava/util/concurrent/atomic/AtomicBoolean;
+    iput-boolean v0, p0, Lfsb;->g:Z
 
-    const/4 v1, 0x0
+    iput-object p1, p0, Lfsb;->a:Llig;
 
-    invoke-direct {v0, v1}, Ljava/util/concurrent/atomic/AtomicBoolean;-><init>(Z)V
+    iput-wide p2, p0, Lfsb;->b:J
 
-    new-instance v1, Ljava/lang/Object;
-
-    invoke-direct {v1}, Ljava/lang/Object;-><init>()V
-
-    iget-object v2, p0, Lfsb;->b:Landroid/os/Handler;
-
-    new-instance v3, Lfqt;
-
-    const/4 v4, 0x6
-
-    invoke-direct {v3, v0, p4, v4}, Lfqt;-><init>(Ljava/util/concurrent/atomic/AtomicBoolean;Lfsl;I)V
-
-    const-wide/16 v4, 0x2710
-
-    invoke-virtual {v2, v3, v1, v4, v5}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;Ljava/lang/Object;J)Z
-
-    iget-object v2, p0, Lfsb;->c:Lfsm;
-
-    new-instance v3, Lfsa;
-
-    invoke-direct {v3, p0, v1, v0, p4}, Lfsa;-><init>(Lfsb;Ljava/lang/Object;Ljava/util/concurrent/atomic/AtomicBoolean;Lfsl;)V
-
-    invoke-interface {v2, p1, p2, p3, v3}, Lfsm;->c(Lkeb;Lfte;Lnom;Lfsl;)V
+    iput p4, p0, Lfsb;->h:I
 
     return-void
 .end method

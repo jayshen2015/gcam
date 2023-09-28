@@ -1,37 +1,73 @@
-.class public interface abstract Lrw;
-.super Ljava/lang/Object;
+.class final Lrw;
+.super Lgq;
+
+
+# instance fields
+.field final synthetic a:I
+
+.field final synthetic b:Lrx;
+
+.field private c:Z
+
+
+# direct methods
+.method public constructor <init>(Lrx;I)V
+    .locals 0
+
+    iput-object p1, p0, Lrw;->b:Lrx;
+
+    iput p2, p0, Lrw;->a:I
+
+    invoke-direct {p0}, Lgq;-><init>()V
+
+    const/4 p1, 0x0
+
+    iput-boolean p1, p0, Lrw;->c:Z
+
+    return-void
+.end method
 
 
 # virtual methods
-.method public abstract a(Lrx;)V
+.method public final a()V
+    .locals 1
+
+    const/4 v0, 0x1
+
+    iput-boolean v0, p0, Lrw;->c:Z
+
+    return-void
 .end method
 
-.method public abstract b(Ltj;)V
+.method public final b()V
+    .locals 2
+
+    iget-boolean v0, p0, Lrw;->c:Z
+
+    if-nez v0, :cond_0
+
+    iget-object v0, p0, Lrw;->b:Lrx;
+
+    iget-object v0, v0, Lrx;->a:Landroid/support/v7/widget/Toolbar;
+
+    iget v1, p0, Lrw;->a:I
+
+    invoke-virtual {v0, v1}, Landroid/support/v7/widget/Toolbar;->setVisibility(I)V
+
+    :cond_0
+    return-void
 .end method
 
-.method public abstract c(Ltj;)V
-.end method
+.method public final c()V
+    .locals 2
 
-.method public abstract d(Ltj;)V
-.end method
+    iget-object v0, p0, Lrw;->b:Lrx;
 
-.method public abstract e(JI)V
-.end method
+    iget-object v0, v0, Lrx;->a:Landroid/support/v7/widget/Toolbar;
 
-.method public abstract f()V
-.end method
+    const/4 v1, 0x0
 
-.method public abstract g()V
-.end method
+    invoke-virtual {v0, v1}, Landroid/support/v7/widget/Toolbar;->setVisibility(I)V
 
-.method public abstract h(Ltj;)V
-.end method
-
-.method public abstract i(JJ)V
-.end method
-
-.method public abstract j()V
-.end method
-
-.method public abstract k(Ltj;)V
+    return-void
 .end method

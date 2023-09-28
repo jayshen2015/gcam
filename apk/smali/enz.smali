@@ -1,22 +1,45 @@
-.class public interface abstract Lenz;
+.class public final synthetic Lenz;
 .super Ljava/lang/Object;
+
+# interfaces
+.implements Ljava/lang/Runnable;
+
+
+# instance fields
+.field public final synthetic a:Lpyn;
+
+.field public final synthetic b:Lfhv;
+
+
+# direct methods
+.method public synthetic constructor <init>(Lfhv;Lpyn;)V
+    .locals 0
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lenz;->b:Lfhv;
+
+    iput-object p2, p0, Lenz;->a:Lpyn;
+
+    return-void
+.end method
 
 
 # virtual methods
-.method public abstract a(Z)V
-.end method
+.method public final run()V
+    .locals 2
 
-.method public abstract b(Z)V
-.end method
+    iget-object v0, p0, Lenz;->b:Lfhv;
 
-.method public abstract c()V
-.end method
+    iget-object v1, p0, Lenz;->a:Lpyn;
 
-.method public abstract d(Z)V
-.end method
+    invoke-interface {v1}, Lpyn;->get()Ljava/lang/Object;
 
-.method public abstract e(Z)V
-.end method
+    move-result-object v1
 
-.method public abstract f(Z)V
+    check-cast v1, Lenv;
+
+    invoke-virtual {v0, v1}, Lfhv;->e(Lfik;)V
+
+    return-void
 .end method

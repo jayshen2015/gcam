@@ -3,15 +3,17 @@
 
 
 # instance fields
-.field public final a:Z
+.field public final a:Liap;
 
 .field public final b:Z
 
 .field public final c:Z
 
-.field public final d:Ljvs;
+.field public final d:Z
 
-.field public final e:Ljvs;
+.field public final e:Z
+
+.field public final f:I
 
 
 # direct methods
@@ -23,54 +25,48 @@
     return-void
 .end method
 
-.method public constructor <init>(ZZZLjvs;Ljvs;)V
+.method public constructor <init>(Liap;IZZZZ)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-boolean p1, p0, Lhxa;->a:Z
+    iput-object p1, p0, Lhxa;->a:Liap;
 
-    iput-boolean p2, p0, Lhxa;->b:Z
+    iput p2, p0, Lhxa;->f:I
 
-    iput-boolean p3, p0, Lhxa;->c:Z
+    iput-boolean p3, p0, Lhxa;->b:Z
 
-    iput-object p4, p0, Lhxa;->d:Ljvs;
+    iput-boolean p4, p0, Lhxa;->c:Z
 
-    iput-object p5, p0, Lhxa;->e:Ljvs;
+    iput-boolean p5, p0, Lhxa;->d:Z
+
+    iput-boolean p6, p0, Lhxa;->e:Z
 
     return-void
 .end method
 
-.method public static a()Lhwz;
-    .locals 3
+.method static a(Liap;)Lhwz;
+    .locals 1
 
     new-instance v0, Lhwz;
 
     invoke-direct {v0}, Lhwz;-><init>()V
 
-    const/4 v1, 0x0
+    iput-object p0, v0, Lhwz;->a:Liap;
 
-    invoke-virtual {v0, v1}, Lhwz;->e(Z)V
+    const/4 p0, 0x1
 
-    invoke-virtual {v0, v1}, Lhwz;->d(Z)V
+    invoke-virtual {v0, p0}, Lhwz;->f(I)V
 
-    invoke-virtual {v0, v1}, Lhwz;->f(Z)V
+    const/4 p0, 0x0
 
-    new-instance v2, Ljvk;
+    invoke-virtual {v0, p0}, Lhwz;->b(Z)V
 
-    invoke-static {v1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+    invoke-virtual {v0, p0}, Lhwz;->d(Z)V
 
-    move-result-object v1
+    invoke-virtual {v0, p0}, Lhwz;->c(Z)V
 
-    invoke-direct {v2, v1}, Ljvk;-><init>(Ljava/lang/Object;)V
-
-    invoke-virtual {v0, v2}, Lhwz;->c(Ljvs;)V
-
-    new-instance v2, Ljvk;
-
-    invoke-direct {v2, v1}, Ljvk;-><init>(Ljava/lang/Object;)V
-
-    invoke-virtual {v0, v2}, Lhwz;->b(Ljvs;)V
+    invoke-virtual {v0, p0}, Lhwz;->e(Z)V
 
     return-object v0
 .end method
@@ -91,194 +87,292 @@
 
     const/4 v2, 0x0
 
-    if-eqz v1, :cond_1
+    if-eqz v1, :cond_3
 
     check-cast p1, Lhxa;
 
-    iget-boolean v1, p0, Lhxa;->a:Z
+    iget-object v1, p0, Lhxa;->a:Liap;
 
-    iget-boolean v3, p1, Lhxa;->a:Z
-
-    if-ne v1, v3, :cond_1
-
-    iget-boolean v1, p0, Lhxa;->b:Z
-
-    iget-boolean v3, p1, Lhxa;->b:Z
-
-    if-ne v1, v3, :cond_1
-
-    iget-boolean v1, p0, Lhxa;->c:Z
-
-    iget-boolean v3, p1, Lhxa;->c:Z
-
-    if-ne v1, v3, :cond_1
-
-    iget-object v1, p0, Lhxa;->d:Ljvs;
-
-    iget-object v3, p1, Lhxa;->d:Ljvs;
+    iget-object v3, p1, Lhxa;->a:Liap;
 
     invoke-virtual {v1, v3}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
 
     move-result v1
 
+    if-eqz v1, :cond_2
+
+    iget v1, p0, Lhxa;->f:I
+
+    iget v3, p1, Lhxa;->f:I
+
     if-eqz v1, :cond_1
 
-    iget-object v1, p0, Lhxa;->e:Ljvs;
+    if-ne v1, v3, :cond_2
 
-    iget-object p1, p1, Lhxa;->e:Ljvs;
+    iget-boolean v1, p0, Lhxa;->b:Z
 
-    invoke-virtual {v1, p1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+    iget-boolean v3, p1, Lhxa;->b:Z
 
-    move-result p1
+    if-ne v1, v3, :cond_2
 
-    if-eqz p1, :cond_1
+    iget-boolean v1, p0, Lhxa;->c:Z
+
+    iget-boolean v3, p1, Lhxa;->c:Z
+
+    if-ne v1, v3, :cond_2
+
+    iget-boolean v1, p0, Lhxa;->d:Z
+
+    iget-boolean v3, p1, Lhxa;->d:Z
+
+    if-ne v1, v3, :cond_2
+
+    iget-boolean v1, p0, Lhxa;->e:Z
+
+    iget-boolean p1, p1, Lhxa;->e:Z
+
+    if-ne v1, p1, :cond_2
 
     return v0
 
     :cond_1
+    const/4 p1, 0x0
+
+    throw p1
+
+    :cond_2
+    return v2
+
+    :cond_3
     return v2
 .end method
 
 .method public final hashCode()I
     .locals 6
 
-    iget-boolean v0, p0, Lhxa;->a:Z
+    iget-object v0, p0, Lhxa;->a:Liap;
 
-    const/16 v1, 0x4d5
+    invoke-virtual {v0}, Ljava/lang/Object;->hashCode()I
 
-    const/16 v2, 0x4cf
+    move-result v0
 
-    const/4 v3, 0x1
+    const v1, 0xf4243
 
-    if-eq v3, v0, :cond_0
+    xor-int/2addr v0, v1
 
-    const/16 v0, 0x4d5
+    mul-int v0, v0, v1
+
+    iget v2, p0, Lhxa;->f:I
+
+    if-eqz v2, :cond_4
+
+    xor-int/2addr v0, v2
+
+    mul-int v0, v0, v1
+
+    iget-boolean v2, p0, Lhxa;->b:Z
+
+    const/16 v3, 0x4d5
+
+    const/16 v4, 0x4cf
+
+    const/4 v5, 0x1
+
+    if-eq v5, v2, :cond_0
+
+    const/16 v2, 0x4d5
 
     goto :goto_0
 
     :cond_0
-    const/16 v0, 0x4cf
+    const/16 v2, 0x4cf
 
     :goto_0
-    iget-boolean v4, p0, Lhxa;->b:Z
+    xor-int/2addr v0, v2
 
-    if-eq v3, v4, :cond_1
+    mul-int v0, v0, v1
 
-    const/16 v4, 0x4d5
+    iget-boolean v2, p0, Lhxa;->c:Z
+
+    if-eq v5, v2, :cond_1
+
+    const/16 v2, 0x4d5
 
     goto :goto_1
 
     :cond_1
-    const/16 v4, 0x4cf
+    const/16 v2, 0x4cf
 
     :goto_1
-    iget-boolean v5, p0, Lhxa;->c:Z
+    xor-int/2addr v0, v2
 
-    if-eq v3, v5, :cond_2
+    mul-int v0, v0, v1
+
+    iget-boolean v2, p0, Lhxa;->d:Z
+
+    if-eq v5, v2, :cond_2
+
+    const/16 v2, 0x4d5
 
     goto :goto_2
 
     :cond_2
-    const/16 v1, 0x4cf
+    const/16 v2, 0x4cf
 
     :goto_2
-    iget-object v2, p0, Lhxa;->d:Ljvs;
-
-    invoke-virtual {v2}, Ljava/lang/Object;->hashCode()I
-
-    move-result v2
-
-    const v3, 0xf4243
-
-    xor-int/2addr v0, v3
-
-    mul-int v0, v0, v3
-
-    xor-int/2addr v0, v4
-
-    mul-int v0, v0, v3
-
-    xor-int/2addr v0, v1
-
-    mul-int v0, v0, v3
-
     xor-int/2addr v0, v2
 
-    iget-object v1, p0, Lhxa;->e:Ljvs;
+    mul-int v0, v0, v1
 
-    invoke-virtual {v1}, Ljava/lang/Object;->hashCode()I
+    iget-boolean v1, p0, Lhxa;->e:Z
 
-    move-result v1
+    if-eq v5, v1, :cond_3
 
-    mul-int v0, v0, v3
+    goto :goto_3
 
-    xor-int/2addr v0, v1
+    :cond_3
+    const/16 v3, 0x4cf
+
+    :goto_3
+    xor-int/2addr v0, v3
 
     return v0
+
+    :cond_4
+    const/4 v0, 0x0
+
+    throw v0
 .end method
 
 .method public final toString()Ljava/lang/String;
-    .locals 7
+    .locals 9
 
-    iget-boolean v0, p0, Lhxa;->a:Z
+    iget-object v0, p0, Lhxa;->a:Liap;
 
-    iget-boolean v1, p0, Lhxa;->b:Z
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
-    iget-boolean v2, p0, Lhxa;->c:Z
+    move-result-object v0
 
-    iget-object v3, p0, Lhxa;->d:Ljvs;
+    iget v1, p0, Lhxa;->f:I
 
-    invoke-static {v3}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+    packed-switch v1, :pswitch_data_0
 
-    move-result-object v3
+    const-string v1, "null"
 
-    iget-object v4, p0, Lhxa;->e:Ljvs;
+    goto :goto_0
 
-    invoke-static {v4}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+    :pswitch_0
+    const-string v1, "DOUBLE_TAP_ZOOM"
 
-    move-result-object v4
+    goto :goto_0
 
-    new-instance v5, Ljava/lang/StringBuilder;
+    :pswitch_1
+    const-string v1, "CONTINUOUS_ZOOM"
 
-    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
+    goto :goto_0
 
-    const-string v6, "ElapsedTimeUIConfig{showOutputTimer="
+    :pswitch_2
+    const-string v1, "SLIDING"
 
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    goto :goto_0
 
-    invoke-virtual {v5, v0}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+    :pswitch_3
+    const-string v1, "RESTING"
 
-    const-string v0, ", showMutedAudioIcon="
+    goto :goto_0
 
-    invoke-virtual {v5, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    :pswitch_4
+    const-string v1, "ZOOMING"
 
-    invoke-virtual {v5, v1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+    goto :goto_0
 
-    const-string v0, ", showSpeechEnhanceIcon="
+    :pswitch_5
+    const-string v1, "HIDE"
 
-    invoke-virtual {v5, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    :goto_0
+    iget-boolean v2, p0, Lhxa;->b:Z
 
-    invoke-virtual {v5, v2}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+    iget-boolean v3, p0, Lhxa;->c:Z
 
-    const-string v0, ", showMicInputExtWired="
+    iget-boolean v4, p0, Lhxa;->d:Z
 
-    invoke-virtual {v5, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    iget-boolean v5, p0, Lhxa;->e:Z
 
-    invoke-virtual {v5, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
-    const-string v0, ", showMicInputExtBluetooth="
+    move-result-object v6
 
-    invoke-virtual {v5, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v6}, Ljava/lang/String;->length()I
 
-    invoke-virtual {v5, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result v6
+
+    invoke-virtual {v1}, Ljava/lang/String;->length()I
+
+    move-result v7
+
+    new-instance v8, Ljava/lang/StringBuilder;
+
+    add-int/lit16 v6, v6, 0x97
+
+    add-int/2addr v6, v7
+
+    invoke-direct {v8, v6}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string v6, "SmartChipCharacteristics{entry="
+
+    invoke-virtual {v8, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v8, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v0, ", zoomUiMode="
+
+    invoke-virtual {v8, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v8, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v0, ", isLayoutUpdate="
+
+    invoke-virtual {v8, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v8, v2}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    const-string v0, ", isZoomInViewfinder="
+
+    invoke-virtual {v8, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v8, v3}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    const-string v0, ", isVideoControlUiVisible="
+
+    invoke-virtual {v8, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v8, v4}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    const-string v0, ", isZoomToggleEnabled="
+
+    invoke-virtual {v8, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v8, v5}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
     const-string v0, "}"
 
-    invoke-virtual {v5, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v8, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v8}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v0
 
     return-object v0
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x1
+        :pswitch_5
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method

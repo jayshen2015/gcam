@@ -1,125 +1,159 @@
-.class public final Lkld;
+.class final Lkld;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lkow;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field private final a:Ljava/lang/Object;
+.field final synthetic a:Lkuq;
 
-.field private final b:Landroid/hardware/camera2/params/OutputConfiguration;
+.field final synthetic b:Lkle;
 
 
 # direct methods
-.method public constructor <init>(Landroid/hardware/camera2/params/OutputConfiguration;)V
-    .locals 1
+.method public constructor <init>(Lkle;Lkuq;)V
+    .locals 0
+
+    iput-object p1, p0, Lkld;->b:Lkle;
+
+    iput-object p2, p0, Lkld;->a:Lkuq;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    new-instance v0, Ljava/lang/Object;
-
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
-
-    iput-object v0, p0, Lkld;->a:Ljava/lang/Object;
-
-    iput-object p1, p0, Lkld;->b:Landroid/hardware/camera2/params/OutputConfiguration;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Ljava/util/List;
-    .locals 2
+.method public final run()V
+    .locals 5
 
-    iget-object v0, p0, Lkld;->a:Ljava/lang/Object;
+    iget-object v0, p0, Lkld;->b:Lkle;
 
-    monitor-enter v0
+    iget-object v1, p0, Lkld;->a:Lkuq;
 
-    :try_start_0
-    iget-object v1, p0, Lkld;->b:Landroid/hardware/camera2/params/OutputConfiguration;
+    iget-object v2, v1, Lkuq;->b:Lkhi;
 
-    invoke-virtual {v1}, Landroid/hardware/camera2/params/OutputConfiguration;->getSurfaces()Ljava/util/List;
+    invoke-virtual {v2}, Lkhi;->c()Z
 
-    move-result-object v1
+    move-result v3
 
-    monitor-exit v0
+    if-eqz v3, :cond_3
 
-    return-object v1
+    iget-object v1, v1, Lkuq;->c:Lknj;
 
-    :catchall_0
-    move-exception v1
+    invoke-static {v1}, Lmip;->dk(Ljava/lang/Object;)Ljava/lang/Object;
 
-    monitor-exit v0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    iget-object v2, v1, Lknj;->c:Lkhi;
 
-    throw v1
-.end method
+    invoke-virtual {v2}, Lkhi;->c()Z
 
-.method public final j()Lkgd;
-    .locals 3
+    move-result v3
 
-    iget-object v0, p0, Lkld;->a:Ljava/lang/Object;
+    if-nez v3, :cond_0
 
-    monitor-enter v0
-
-    :try_start_0
-    new-instance v1, Lkgd;
-
-    iget-object v2, p0, Lkld;->b:Landroid/hardware/camera2/params/OutputConfiguration;
-
-    invoke-direct {v1, v2}, Lkgd;-><init>(Ljava/lang/Object;)V
-
-    monitor-exit v0
-
-    return-object v1
-
-    :catchall_0
-    move-exception v1
-
-    monitor-exit v0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw v1
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .locals 4
-
-    iget-object v0, p0, Lkld;->a:Ljava/lang/Object;
-
-    monitor-enter v0
-
-    :try_start_0
-    const-string v1, "AndroidOutputConfiguration"
-
-    invoke-static {v1}, Lmoz;->z(Ljava/lang/String;)Lmqo;
+    invoke-static {v2}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v1
 
-    const-string v2, "outputConfiguration"
+    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
-    iget-object v3, p0, Lkld;->b:Landroid/hardware/camera2/params/OutputConfiguration;
+    move-result-object v3
 
-    invoke-virtual {v1, v2, v3}, Lmqo;->b(Ljava/lang/String;Ljava/lang/Object;)V
+    invoke-virtual {v3}, Ljava/lang/String;->length()I
 
-    invoke-virtual {v1}, Lmqo;->toString()Ljava/lang/String;
+    move-result v3
+
+    new-instance v4, Ljava/lang/StringBuilder;
+
+    add-int/lit8 v3, v3, 0x30
+
+    invoke-direct {v4, v3}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string v3, "Sign-in succeeded with resolve account failure: "
+
+    invoke-virtual {v4, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v4, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v1
 
-    monitor-exit v0
+    new-instance v3, Ljava/lang/Exception;
 
-    return-object v1
+    invoke-direct {v3}, Ljava/lang/Exception;-><init>()V
 
-    :catchall_0
-    move-exception v1
+    const-string v4, "SignInCoordinator"
 
-    monitor-exit v0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    invoke-static {v4, v1, v3}, Landroid/util/Log;->wtf(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    throw v1
+    iget-object v1, v0, Lkle;->f:Lkkf;
+
+    invoke-virtual {v1, v2}, Lkkf;->b(Lkhi;)V
+
+    iget-object v0, v0, Lkle;->e:Lkui;
+
+    invoke-interface {v0}, Lkui;->i()V
+
+    return-void
+
+    :cond_0
+    iget-object v2, v0, Lkle;->f:Lkkf;
+
+    invoke-virtual {v1}, Lknj;->a()Lkmy;
+
+    move-result-object v1
+
+    iget-object v3, v0, Lkle;->c:Ljava/util/Set;
+
+    if-eqz v1, :cond_2
+
+    if-nez v3, :cond_1
+
+    goto :goto_0
+
+    :cond_1
+    iput-object v1, v2, Lkkf;->f:Lkmy;
+
+    iput-object v3, v2, Lkkf;->c:Ljava/util/Set;
+
+    invoke-virtual {v2}, Lkkf;->c()V
+
+    goto :goto_1
+
+    :cond_2
+    :goto_0
+    new-instance v1, Ljava/lang/Exception;
+
+    invoke-direct {v1}, Ljava/lang/Exception;-><init>()V
+
+    const-string v3, "GoogleApiManager"
+
+    const-string v4, "Received null response from onSignInSuccess"
+
+    invoke-static {v3, v4, v1}, Landroid/util/Log;->wtf(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+
+    new-instance v1, Lkhi;
+
+    const/4 v3, 0x4
+
+    invoke-direct {v1, v3}, Lkhi;-><init>(I)V
+
+    invoke-virtual {v2, v1}, Lkkf;->b(Lkhi;)V
+
+    goto :goto_1
+
+    :cond_3
+    iget-object v1, v0, Lkle;->f:Lkkf;
+
+    invoke-virtual {v1, v2}, Lkkf;->b(Lkhi;)V
+
+    :goto_1
+    iget-object v0, v0, Lkle;->e:Lkui;
+
+    invoke-interface {v0}, Lkui;->i()V
+
+    return-void
 .end method

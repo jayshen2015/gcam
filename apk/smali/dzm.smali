@@ -1,87 +1,67 @@
-.class public final Ldzm;
+.class final Ldzm;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Logk;
+.implements Lebx;
 
 
 # instance fields
-.field private final a:Loiw;
+.field final synthetic a:Lecp;
 
-.field private final b:Loiw;
+.field final synthetic b:Ldzu;
 
-.field private final c:Loiw;
-
-.field private final d:Loiw;
+.field final synthetic c:Ldzr;
 
 
 # direct methods
-.method public constructor <init>(Loiw;Loiw;Loiw;Loiw;)V
+.method public constructor <init>(Ldzr;Lecp;Ldzu;)V
     .locals 0
 
+    iput-object p1, p0, Ldzm;->c:Ldzr;
+
+    iput-object p2, p0, Ldzm;->a:Lecp;
+
+    iput-object p3, p0, Ldzm;->b:Ldzu;
+
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Ldzm;->a:Loiw;
-
-    iput-object p2, p0, Ldzm;->b:Loiw;
-
-    iput-object p3, p0, Ldzm;->c:Loiw;
-
-    iput-object p4, p0, Ldzm;->d:Loiw;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Ldzl;
-    .locals 7
+.method public final a(Lcom/google/googlex/gcam/InterleavedImageU8;Lcom/google/googlex/gcam/ShotMetadata;)V
+    .locals 2
 
-    iget-object v0, p0, Ldzm;->a:Loiw;
+    iget-object v0, p0, Ldzm;->c:Ldzr;
 
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
+    iget-object v0, v0, Ldzr;->i:Lljf;
 
-    move-result-object v0
+    const-string v1, "RgbCallback"
 
-    move-object v2, v0
+    invoke-interface {v0, v1}, Lljf;->e(Ljava/lang/String;)V
 
-    check-cast v2, Ldym;
+    iget-object v0, p0, Ldzm;->a:Lecp;
 
-    iget-object v0, p0, Ldzm;->b:Loiw;
+    iput-object p1, v0, Lecp;->a:Lcom/google/googlex/gcam/InterleavedImageU8;
 
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
+    iput-object p2, v0, Lecp;->d:Lcom/google/googlex/gcam/ShotMetadata;
 
-    move-result-object v0
+    invoke-virtual {v0}, Lecp;->a()Lecq;
 
-    move-object v3, v0
+    move-result-object p1
 
-    check-cast v3, Lkbc;
+    iget-object p2, p0, Ldzm;->c:Ldzr;
 
-    invoke-static {}, Lduq;->b()Ldzn;
+    iget-object v0, p0, Ldzm;->b:Ldzu;
 
-    move-result-object v4
+    invoke-virtual {p2, v0, p1}, Ldzr;->b(Ldzu;Lecq;)V
 
-    invoke-static {}, Lduq;->c()Ldzn;
+    iget-object p1, p0, Ldzm;->c:Ldzr;
 
-    move-result-object v5
+    iget-object p1, p1, Ldzr;->i:Lljf;
 
-    new-instance v0, Ldzl;
+    invoke-interface {p1}, Lljf;->f()V
 
-    const/4 v6, 0x0
-
-    move-object v1, v0
-
-    invoke-direct/range {v1 .. v6}, Ldzl;-><init>(Ldym;Lkbc;Ldzn;Ldzn;[B)V
-
-    return-object v0
-.end method
-
-.method public final bridge synthetic get()Ljava/lang/Object;
-    .locals 1
-
-    invoke-virtual {p0}, Ldzm;->a()Ldzl;
-
-    move-result-object v0
-
-    return-object v0
+    return-void
 .end method

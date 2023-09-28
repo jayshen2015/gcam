@@ -1,83 +1,35 @@
 .class public final Lkcd;
-.super Ljava/lang/Object;
+.super Lbmn;
 
 # interfaces
-.implements Logk;
-
-
-# instance fields
-.field private final a:Loiw;
-
-.field private final b:Loiw;
-
-.field private final c:Loiw;
-
-.field private final d:Loiw;
-
-.field private final e:Loiw;
-
-.field private final f:Loiw;
-
-.field private final g:Loiw;
+.implements Landroid/os/IInterface;
 
 
 # direct methods
-.method public constructor <init>(Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;)V
-    .locals 0
+.method public constructor <init>(Landroid/os/IBinder;)V
+    .locals 1
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const-string v0, "com.google.android.apps.gsa.publicsearch.IPublicSearchServiceSession"
 
-    iput-object p1, p0, Lkcd;->a:Loiw;
-
-    iput-object p2, p0, Lkcd;->b:Loiw;
-
-    iput-object p3, p0, Lkcd;->c:Loiw;
-
-    iput-object p4, p0, Lkcd;->d:Loiw;
-
-    iput-object p5, p0, Lkcd;->e:Loiw;
-
-    iput-object p6, p0, Lkcd;->f:Loiw;
-
-    iput-object p7, p0, Lkcd;->g:Loiw;
+    invoke-direct {p0, p1, v0}, Lbmn;-><init>(Landroid/os/IBinder;Ljava/lang/String;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Lkpo;
-    .locals 9
-
-    iget-object v1, p0, Lkcd;->a:Loiw;
-
-    iget-object v2, p0, Lkcd;->b:Loiw;
-
-    iget-object v3, p0, Lkcd;->c:Loiw;
-
-    iget-object v4, p0, Lkcd;->d:Loiw;
-
-    iget-object v5, p0, Lkcd;->e:Loiw;
-
-    iget-object v6, p0, Lkcd;->f:Loiw;
-
-    new-instance v8, Lkpo;
-
-    const/4 v7, 0x0
-
-    move-object v0, v8
-
-    invoke-direct/range {v0 .. v7}, Lkpo;-><init>(Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;[B)V
-
-    return-object v8
-.end method
-
-.method public final bridge synthetic get()Ljava/lang/Object;
+.method public final e([B)V
     .locals 1
 
-    invoke-virtual {p0}, Lkcd;->a()Lkpo;
+    invoke-virtual {p0}, Lbmn;->a()Landroid/os/Parcel;
 
     move-result-object v0
 
-    return-object v0
+    invoke-virtual {v0, p1}, Landroid/os/Parcel;->writeByteArray([B)V
+
+    const/4 p1, 0x1
+
+    invoke-virtual {p0, p1, v0}, Lbmn;->A(ILandroid/os/Parcel;)V
+
+    return-void
 .end method

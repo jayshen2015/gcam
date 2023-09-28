@@ -1,166 +1,71 @@
 .class public final Lkwd;
-.super Lnws;
+.super Ljava/lang/Object;
 
 # interfaces
-.implements Lnxz;
-
-
-# static fields
-.field public static final c:Lkwd;
-
-.field private static volatile d:Lnyf;
+.implements Lkiv;
 
 
 # instance fields
-.field public a:I
+.field public final a:Lkvz;
 
-.field public b:Z
+.field private final b:Lcom/google/android/gms/common/api/Status;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
-
-    new-instance v0, Lkwd;
-
-    invoke-direct {v0}, Lkwd;-><init>()V
-
-    sput-object v0, Lkwd;->c:Lkwd;
-
-    const-class v1, Lkwd;
-
-    invoke-static {v1, v0}, Lnws;->aa(Ljava/lang/Class;Lnws;)V
-
-    return-void
-.end method
-
-.method private constructor <init>()V
+.method public constructor <init>(Lcom/google/android/gms/common/api/Status;Lkvz;)V
     .locals 0
 
-    invoke-direct {p0}, Lnws;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lkwd;->b:Lcom/google/android/gms/common/api/Status;
+
+    iput-object p2, p0, Lkwd;->a:Lkvz;
 
     return-void
 .end method
 
 
 # virtual methods
-.method protected final a(ILjava/lang/Object;)Ljava/lang/Object;
-    .locals 3
+.method public final a()Lcom/google/android/gms/common/api/Status;
+    .locals 1
 
-    add-int/lit8 p1, p1, -0x1
+    iget-object v0, p0, Lkwd;->b:Lcom/google/android/gms/common/api/Status;
 
-    const/4 p2, 0x1
+    return-object v0
+.end method
 
-    packed-switch p1, :pswitch_data_0
+.method public final toString()Ljava/lang/String;
+    .locals 4
 
-    :pswitch_0
-    const/4 p1, 0x0
+    const/4 v0, 0x1
 
-    return-object p1
+    new-array v1, v0, [Ljava/lang/Object;
 
-    :pswitch_1
-    sget-object p1, Lkwd;->d:Lnyf;
+    iget-object v2, p0, Lkwd;->a:Lkvz;
 
-    if-nez p1, :cond_1
+    iget v2, v2, Lkvz;->a:I
 
-    const-class p2, Lkwd;
+    const/4 v3, 0x0
 
-    monitor-enter p2
-
-    :try_start_0
-    sget-object p1, Lkwd;->d:Lnyf;
-
-    if-nez p1, :cond_0
-
-    new-instance p1, Lnwo;
-
-    sget-object v0, Lkwd;->c:Lkwd;
-
-    invoke-direct {p1, v0}, Lnwo;-><init>(Lnws;)V
-
-    sput-object p1, Lkwd;->d:Lnyf;
-
-    :cond_0
-    monitor-exit p2
+    if-ne v2, v0, :cond_0
 
     goto :goto_0
 
-    :catchall_0
-    move-exception p1
+    :cond_0
+    const/4 v0, 0x0
 
-    monitor-exit p2
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw p1
-
-    :cond_1
     :goto_0
-    return-object p1
+    invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
-    :pswitch_2
-    sget-object p1, Lkwd;->c:Lkwd;
+    move-result-object v0
 
-    return-object p1
+    aput-object v0, v1, v3
 
-    :pswitch_3
-    new-instance p1, Lnwn;
+    const-string v0, "OptInOptionsResultImpl[%s]"
 
-    sget-object p2, Lkwd;->c:Lkwd;
+    invoke-static {v0, v1}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
-    invoke-direct {p1, p2}, Lnwn;-><init>(Lnws;)V
+    move-result-object v0
 
-    return-object p1
-
-    :pswitch_4
-    new-instance p1, Lkwd;
-
-    invoke-direct {p1}, Lkwd;-><init>()V
-
-    return-object p1
-
-    :pswitch_5
-    const-string p1, "a"
-
-    const-string v0, "\u0001\u0001\u0000\u0001\u0002\u0002\u0001\u0000\u0000\u0000\u0002\u1007\u0001"
-
-    const/4 v1, 0x2
-
-    new-array v1, v1, [Ljava/lang/Object;
-
-    const/4 v2, 0x0
-
-    aput-object p1, v1, v2
-
-    const-string p1, "b"
-
-    aput-object p1, v1, p2
-
-    sget-object p1, Lkwd;->c:Lkwd;
-
-    invoke-static {p1, v0, v1}, Lkwd;->X(Lnxy;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object p1
-
-    return-object p1
-
-    :pswitch_6
-    invoke-static {p2}, Ljava/lang/Byte;->valueOf(B)Ljava/lang/Byte;
-
-    move-result-object p1
-
-    return-object p1
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_6
-        :pswitch_0
-        :pswitch_5
-        :pswitch_4
-        :pswitch_3
-        :pswitch_2
-        :pswitch_1
-    .end packed-switch
+    return-object v0
 .end method

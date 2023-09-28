@@ -1,40 +1,109 @@
 .class public final Lkxo;
-.super Lkxk;
+.super Lklr;
+
+
+# instance fields
+.field private final d:I
 
 
 # direct methods
-.method public constructor <init>(JJ)V
-    .locals 3
+.method public constructor <init>(Lcom/google/android/gms/common/data/DataHolder;II)V
+    .locals 0
 
-    sget-object v0, Ljava/util/Locale;->US:Ljava/util/Locale;
+    invoke-direct {p0, p1, p2}, Lklr;-><init>(Lcom/google/android/gms/common/data/DataHolder;I)V
+
+    iput p3, p0, Lkxo;->d:I
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public final toString()Ljava/lang/String;
+    .locals 5
+
+    invoke-virtual {p0}, Lklr;->b()I
+
+    move-result v0
+
+    const/4 v1, 0x1
+
+    if-ne v0, v1, :cond_0
+
+    const-string v0, "changed"
+
+    goto :goto_0
+
+    :cond_0
+    invoke-virtual {p0}, Lklr;->b()I
+
+    move-result v0
 
     const/4 v1, 0x2
 
-    new-array v1, v1, [Ljava/lang/Object;
+    if-ne v0, v1, :cond_1
 
-    const/4 v2, 0x0
+    const-string v0, "deleted"
 
-    invoke-static {p1, p2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+    goto :goto_0
 
-    move-result-object p1
+    :cond_1
+    const-string v0, "unknown"
 
-    aput-object p1, v1, v2
+    :goto_0
+    new-instance v1, Lkxq;
 
-    invoke-static {p3, p4}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+    iget-object v2, p0, Lkxo;->a:Lcom/google/android/gms/common/data/DataHolder;
 
-    move-result-object p1
+    iget v3, p0, Lkxo;->b:I
 
-    const/4 p2, 0x1
+    iget v4, p0, Lkxo;->d:I
 
-    aput-object p1, v1, p2
+    invoke-direct {v1, v2, v3, v4}, Lkxq;-><init>(Lcom/google/android/gms/common/data/DataHolder;II)V
 
-    const-string p1, "getNextBox - Next box (is it a box?) claims length of %s but has only %s "
+    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
-    invoke-static {v0, p1, v1}, Ljava/lang/String;->format(Ljava/util/Locale;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+    move-result-object v1
 
-    move-result-object p1
+    invoke-virtual {v0}, Ljava/lang/String;->length()I
 
-    invoke-direct {p0, p1}, Lkxk;-><init>(Ljava/lang/String;)V
+    move-result v2
 
-    return-void
+    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/lang/String;->length()I
+
+    move-result v3
+
+    new-instance v4, Ljava/lang/StringBuilder;
+
+    add-int/lit8 v2, v2, 0x20
+
+    add-int/2addr v2, v3
+
+    invoke-direct {v4, v2}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string v2, "DataEventRef{ type="
+
+    invoke-virtual {v4, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v0, ", dataitem="
+
+    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v4, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v0, " }"
+
+    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
 .end method

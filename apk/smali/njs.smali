@@ -1,186 +1,166 @@
-.class public final Lnjs;
-.super Lnws;
+.class public final synthetic Lnjs;
+.super Ljava/lang/Object;
 
 # interfaces
-.implements Lnxz;
-
-
-# static fields
-.field public static final e:Lnjs;
-
-.field private static volatile f:Lnyf;
+.implements Lpgk;
 
 
 # instance fields
-.field public a:I
+.field public final synthetic a:Lnjt;
 
-.field public b:I
+.field public final synthetic b:Ljava/util/List;
 
-.field public c:I
+.field public final synthetic c:I
 
-.field public d:I
+.field private final synthetic d:I
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
+.method public synthetic constructor <init>(Lnjt;ILjava/util/List;I)V
+    .locals 0
 
-    new-instance v0, Lnjs;
+    iput p4, p0, Lnjs;->d:I
 
-    invoke-direct {v0}, Lnjs;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    sput-object v0, Lnjs;->e:Lnjs;
+    iput-object p1, p0, Lnjs;->a:Lnjt;
 
-    const-class v1, Lnjs;
+    iput p2, p0, Lnjs;->c:I
 
-    invoke-static {v1, v0}, Lnws;->aa(Ljava/lang/Class;Lnws;)V
+    iput-object p3, p0, Lnjs;->b:Ljava/util/List;
 
     return-void
 .end method
 
-.method private constructor <init>()V
+.method public synthetic constructor <init>(Lnjt;Ljava/util/List;II)V
     .locals 0
 
-    invoke-direct {p0}, Lnws;-><init>()V
+    iput p4, p0, Lnjs;->d:I
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lnjs;->a:Lnjt;
+
+    iput-object p2, p0, Lnjs;->b:Ljava/util/List;
+
+    iput p3, p0, Lnjs;->c:I
 
     return-void
 .end method
 
 
 # virtual methods
-.method protected final a(ILjava/lang/Object;)Ljava/lang/Object;
-    .locals 3
+.method public final a(Ljava/lang/Object;)Lpht;
+    .locals 5
 
-    add-int/lit8 p1, p1, -0x1
+    iget v0, p0, Lnjs;->d:I
 
-    const/4 p2, 0x1
+    packed-switch v0, :pswitch_data_0
 
-    packed-switch p1, :pswitch_data_0
+    iget-object p1, p0, Lnjs;->a:Lnjt;
 
-    :pswitch_0
-    const/4 p1, 0x0
+    iget v0, p0, Lnjs;->c:I
 
-    return-object p1
+    iget-object v1, p0, Lnjs;->b:Ljava/util/List;
 
-    :pswitch_1
-    sget-object p1, Lnjs;->f:Lnyf;
+    new-instance v2, Ljava/util/ArrayList;
 
-    if-nez p1, :cond_1
+    invoke-direct {v2, v0}, Ljava/util/ArrayList;-><init>(I)V
 
-    const-class p2, Lnjs;
-
-    monitor-enter p2
-
-    :try_start_0
-    sget-object p1, Lnjs;->f:Lnyf;
-
-    if-nez p1, :cond_0
-
-    new-instance p1, Lnwo;
-
-    sget-object v0, Lnjs;->e:Lnjs;
-
-    invoke-direct {p1, v0}, Lnwo;-><init>(Lnws;)V
-
-    sput-object p1, Lnjs;->f:Lnyf;
-
-    :cond_0
-    monitor-exit p2
+    const/4 v3, 0x0
 
     goto :goto_0
 
-    :catchall_0
-    move-exception p1
+    :pswitch_0
+    iget-object v0, p0, Lnjs;->a:Lnjt;
 
-    monitor-exit p2
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    iget-object v1, p0, Lnjs;->b:Ljava/util/List;
 
-    throw p1
+    iget v2, p0, Lnjs;->c:I
+
+    check-cast p1, Lpqm;
+
+    invoke-static {v1}, Lplk;->O(Ljava/lang/Iterable;)Lphm;
+
+    move-result-object v3
+
+    new-instance v4, Lnjq;
+
+    invoke-direct {v4, v0, p1, v2, v1}, Lnjq;-><init>(Lnjt;Lpqm;ILjava/util/List;)V
+
+    invoke-static {v4}, Logl;->a(Lpgj;)Lpgj;
+
+    move-result-object p1
+
+    iget-object v0, v0, Lnjt;->b:Ljava/util/concurrent/Executor;
+
+    invoke-virtual {v3, p1, v0}, Lphm;->b(Lpgj;Ljava/util/concurrent/Executor;)Lpht;
+
+    move-result-object p1
+
+    return-object p1
+
+    :goto_0
+    if-ge v3, v0, :cond_1
+
+    invoke-interface {v1, v3}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v4
+
+    check-cast v4, Ljava/util/concurrent/Future;
+
+    invoke-static {v4}, Lplk;->ad(Ljava/util/concurrent/Future;)Ljava/lang/Object;
+
+    move-result-object v4
+
+    check-cast v4, Ljava/lang/Boolean;
+
+    invoke-virtual {v4}, Ljava/lang/Boolean;->booleanValue()Z
+
+    move-result v4
+
+    if-eqz v4, :cond_0
+
+    iget-object v4, p1, Lnjt;->a:Ljava/util/List;
+
+    invoke-interface {v4, v3}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v4
+
+    check-cast v4, Lnjp;
+
+    invoke-interface {v4}, Lnjp;->a()Lpht;
+
+    move-result-object v4
+
+    invoke-interface {v2, v4}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    :cond_0
+    add-int/lit8 v3, v3, 0x1
+
+    goto :goto_0
 
     :cond_1
-    :goto_0
-    return-object p1
+    invoke-static {v2}, Lplk;->Q(Ljava/lang/Iterable;)Lphm;
 
-    :pswitch_2
-    sget-object p1, Lnjs;->e:Lnjs;
+    move-result-object p1
 
-    return-object p1
+    invoke-static {}, Lplk;->ah()Ljava/util/concurrent/Callable;
 
-    :pswitch_3
-    new-instance p1, Lnwn;
+    move-result-object v0
 
-    sget-object p2, Lnjs;->e:Lnjs;
+    sget-object v1, Lpgr;->a:Lpgr;
 
-    invoke-direct {p1, p2}, Lnwn;-><init>(Lnws;)V
-
-    return-object p1
-
-    :pswitch_4
-    new-instance p1, Lnjs;
-
-    invoke-direct {p1}, Lnjs;-><init>()V
-
-    return-object p1
-
-    :pswitch_5
-    const-string p1, "a"
-
-    const-string v0, "\u0001\u0003\u0000\u0001\u0001\u0003\u0003\u0000\u0000\u0000\u0001\u1004\u0000\u0002\u100c\u0001\u0003\u1004\u0002"
-
-    const/4 v1, 0x5
-
-    new-array v1, v1, [Ljava/lang/Object;
-
-    const/4 v2, 0x0
-
-    aput-object p1, v1, v2
-
-    const-string p1, "b"
-
-    aput-object p1, v1, p2
-
-    const/4 p1, 0x2
-
-    const-string p2, "c"
-
-    aput-object p2, v1, p1
-
-    const/4 p1, 0x3
-
-    sget-object p2, Lnjb;->t:Lnww;
-
-    aput-object p2, v1, p1
-
-    const/4 p1, 0x4
-
-    const-string p2, "d"
-
-    aput-object p2, v1, p1
-
-    sget-object p1, Lnjs;->e:Lnjs;
-
-    invoke-static {p1, v0, v1}, Lnjs;->X(Lnxy;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {p1, v0, v1}, Lphm;->a(Ljava/util/concurrent/Callable;Ljava/util/concurrent/Executor;)Lpht;
 
     move-result-object p1
 
     return-object p1
 
-    :pswitch_6
-    invoke-static {p2}, Ljava/lang/Byte;->valueOf(B)Ljava/lang/Byte;
-
-    move-result-object p1
-
-    return-object p1
+    nop
 
     :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_6
         :pswitch_0
-        :pswitch_5
-        :pswitch_4
-        :pswitch_3
-        :pswitch_2
-        :pswitch_1
     .end packed-switch
 .end method

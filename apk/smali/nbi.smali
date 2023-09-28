@@ -1,37 +1,86 @@
-.class final Lnbi;
-.super Lnag;
-
-# interfaces
-.implements Lnbf;
+.class public final Lnbi;
+.super Lmvd;
 
 
 # instance fields
-.field final synthetic a:Lnbj;
+.field final synthetic d:Lojq;
 
 
 # direct methods
-.method public constructor <init>(Lnbj;Ljava/util/logging/Level;)V
+.method public constructor <init>(Lpyn;Landroid/content/Context;Lojq;)V
     .locals 0
 
-    iput-object p1, p0, Lnbi;->a:Lnbj;
+    iput-object p3, p0, Lnbi;->d:Lojq;
 
-    invoke-direct {p0, p2}, Lnag;-><init>(Ljava/util/logging/Level;)V
+    const-string p3, "StorageMetric"
+
+    invoke-direct {p0, p3, p1, p2}, Lmvd;-><init>(Ljava/lang/String;Lpyn;Landroid/content/Context;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method protected final synthetic c()Lnaf;
-    .locals 1
+.method public final a(Lqyk;)Lope;
+    .locals 3
 
-    iget-object v0, p0, Lnbi;->a:Lnbj;
+    iget v0, p1, Lqyk;->a:I
 
-    return-object v0
-.end method
+    and-int/lit16 v0, v0, 0x100
 
-.method protected final bridge synthetic d()Lnaz;
-    .locals 0
+    if-eqz v0, :cond_2
 
-    return-object p0
+    invoke-static {}, Lope;->D()Lopc;
+
+    move-result-object v0
+
+    iget-object p1, p1, Lqyk;->i:Lqyf;
+
+    if-nez p1, :cond_0
+
+    sget-object p1, Lqyf;->k:Lqyf;
+
+    :cond_0
+    iget-object p1, p1, Lqyf;->j:Lppm;
+
+    invoke-interface {p1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+
+    move-result-object p1
+
+    :goto_0
+    invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_1
+
+    invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Lqye;
+
+    iget-object v2, p0, Lnbi;->d:Lojq;
+
+    iget-object v1, v1, Lqye;->b:Ljava/lang/String;
+
+    invoke-virtual {v2, v1}, Lojq;->g(Ljava/lang/CharSequence;)Ljava/util/List;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Lopc;->i(Ljava/lang/Iterable;)V
+
+    goto :goto_0
+
+    :cond_1
+    invoke-virtual {v0}, Lopc;->f()Lope;
+
+    move-result-object p1
+
+    return-object p1
+
+    :cond_2
+    sget-object p1, Lorx;->a:Lorx;
+
+    return-object p1
 .end method

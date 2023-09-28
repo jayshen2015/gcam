@@ -1,17 +1,13 @@
-.class public final Ljmd;
-.super Lcbe;
-
-# interfaces
-.implements Landroid/os/IInterface;
+.class public interface abstract Ljmd;
+.super Ljava/lang/Object;
 
 
-# direct methods
-.method public constructor <init>(Landroid/os/IBinder;)V
-    .locals 1
+# virtual methods
+.method public abstract c(Landroid/view/View;I)V
+.end method
 
-    const-string v0, "com.google.android.gms.location.ILocationCallback"
+.method public abstract m(Landroid/view/View;I)V
+.end method
 
-    invoke-direct {p0, p1, v0}, Lcbe;-><init>(Landroid/os/IBinder;Ljava/lang/String;)V
-
-    return-void
+.method public abstract t(Landroid/view/View;)V
 .end method

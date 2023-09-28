@@ -1,115 +1,121 @@
-.class public final enum Lngo;
-.super Ljava/lang/Enum;
+.class public final synthetic Lngo;
+.super Ljava/lang/Object;
 
 # interfaces
-.implements Lnwv;
-
-
-# static fields
-.field public static final enum a:Lngo;
-
-.field public static final enum b:Lngo;
-
-.field public static final enum c:Lngo;
-
-.field private static final synthetic e:[Lngo;
+.implements Lpgk;
 
 
 # instance fields
-.field public final d:I
+.field public final synthetic a:Lnfm;
+
+.field private final synthetic b:I
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 7
-
-    new-instance v0, Lngo;
-
-    const-string v1, "UNKNOWN_CAMERA_DIRECTION"
-
-    const/4 v2, 0x0
-
-    invoke-direct {v0, v1, v2, v2}, Lngo;-><init>(Ljava/lang/String;II)V
-
-    sput-object v0, Lngo;->a:Lngo;
-
-    new-instance v1, Lngo;
-
-    const-string v3, "FRONT"
-
-    const/4 v4, 0x1
-
-    invoke-direct {v1, v3, v4, v4}, Lngo;-><init>(Ljava/lang/String;II)V
-
-    sput-object v1, Lngo;->b:Lngo;
-
-    new-instance v3, Lngo;
-
-    const-string v5, "BACK"
-
-    const/4 v6, 0x2
-
-    invoke-direct {v3, v5, v6, v6}, Lngo;-><init>(Ljava/lang/String;II)V
-
-    sput-object v3, Lngo;->c:Lngo;
-
-    const/4 v5, 0x3
-
-    new-array v5, v5, [Lngo;
-
-    aput-object v0, v5, v2
-
-    aput-object v1, v5, v4
-
-    aput-object v3, v5, v6
-
-    sput-object v5, Lngo;->e:[Lngo;
-
-    return-void
-.end method
-
-.method private constructor <init>(Ljava/lang/String;II)V
+.method public synthetic constructor <init>(Lnfm;I)V
     .locals 0
 
-    invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+    iput p2, p0, Lngo;->b:I
 
-    iput p3, p0, Lngo;->d:I
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lngo;->a:Lnfm;
 
     return-void
-.end method
-
-.method public static values()[Lngo;
-    .locals 1
-
-    sget-object v0, Lngo;->e:[Lngo;
-
-    invoke-virtual {v0}, [Lngo;->clone()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, [Lngo;
-
-    return-object v0
 .end method
 
 
 # virtual methods
-.method public final a()I
-    .locals 1
+.method public final a(Ljava/lang/Object;)Lpht;
+    .locals 7
 
-    iget v0, p0, Lngo;->d:I
+    iget v0, p0, Lngo;->b:I
 
-    return v0
-.end method
+    packed-switch v0, :pswitch_data_0
 
-.method public final toString()Ljava/lang/String;
-    .locals 1
+    iget-object v0, p0, Lngo;->a:Lnfm;
 
-    iget v0, p0, Lngo;->d:I
+    check-cast p1, Lnew;
 
-    invoke-static {v0}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
+    iget v1, p1, Lnew;->a:I
 
-    move-result-object v0
+    const/16 v2, 0x733d
 
-    return-object v0
+    if-ne v1, v2, :cond_0
+
+    iget-object v1, v0, Lnfm;->c:Ljava/lang/String;
+
+    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/String;->length()I
+
+    move-result v2
+
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    add-int/lit8 v2, v2, 0x44
+
+    invoke-direct {v3, v2}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string v2, "Failed to commit due to stale snapshot for "
+
+    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v1, ", triggering flag update."
+
+    invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    const-string v2, "ProtoDataStoreFlagStore"
+
+    invoke-static {v2, v1, p1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+
+    invoke-virtual {v0}, Lnfm;->c()V
+
+    goto :goto_0
+
+    :pswitch_0
+    iget-object v0, p0, Lngo;->a:Lnfm;
+
+    move-object v4, p1
+
+    check-cast v4, Lngu;
+
+    iget-object v1, v0, Lnfm;->b:Lnei;
+
+    iget-object v2, v0, Lnfm;->c:Ljava/lang/String;
+
+    iget-object v3, v0, Lnfm;->d:Ljava/lang/String;
+
+    iget-boolean v5, v0, Lnfm;->g:Z
+
+    iget-boolean v6, v0, Lnfm;->h:Z
+
+    invoke-static/range {v1 .. v6}, Lngt;->e(Lnei;Ljava/lang/String;Ljava/lang/String;Lngu;ZZ)Lpht;
+
+    move-result-object p1
+
+    return-object p1
+
+    :cond_0
+    :goto_0
+    invoke-static {p1}, Lplk;->U(Ljava/lang/Throwable;)Lpht;
+
+    move-result-object p1
+
+    return-object p1
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

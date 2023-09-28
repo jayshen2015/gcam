@@ -2,69 +2,49 @@
 .super Ljava/lang/Object;
 
 
-# static fields
-.field public static final a:Landroid/hardware/camera2/CaptureRequest$Key;
+# instance fields
+.field public final a:Ldvp;
 
-.field public static final b:Landroid/hardware/camera2/CaptureRequest$Key;
+.field public final b:Ljava/util/List;
 
-.field public static final c:Landroid/hardware/camera2/CaptureRequest$Key;
+.field public final c:Lfun;
 
-.field public static final d:Landroid/hardware/camera2/CaptureRequest$Key;
+.field public final d:Lddf;
 
-.field public static final e:Landroid/hardware/camera2/CaptureResult$Key;
+.field public final e:Ljava/util/concurrent/Executor;
+
+.field public final f:Lfus;
+
+.field public final g:Lhko;
+
+.field public final h:Lgxm;
+
+.field public final i:Lfvq;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 3
+.method public constructor <init>(Ldvp;Ljava/util/List;Lfun;Lgxm;Lddf;Ljava/util/concurrent/Executor;Lfus;Lhko;Lfvq;[B[B[B)V
+    .locals 0
 
-    new-instance v0, Landroid/hardware/camera2/CaptureRequest$Key;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const-string v1, "com.google.internal.IsCameraApp1P"
+    iput-object p1, p0, Lfva;->a:Ldvp;
 
-    const-class v2, Ljava/lang/Integer;
+    iput-object p2, p0, Lfva;->b:Ljava/util/List;
 
-    invoke-direct {v0, v1, v2}, Landroid/hardware/camera2/CaptureRequest$Key;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
+    iput-object p3, p0, Lfva;->c:Lfun;
 
-    sput-object v0, Lfva;->a:Landroid/hardware/camera2/CaptureRequest$Key;
+    iput-object p4, p0, Lfva;->h:Lgxm;
 
-    new-instance v0, Landroid/hardware/camera2/CaptureRequest$Key;
+    iput-object p5, p0, Lfva;->d:Lddf;
 
-    const-class v1, Ljava/lang/Integer;
+    iput-object p6, p0, Lfva;->e:Ljava/util/concurrent/Executor;
 
-    const-string v2, "com.google.internal.SensorBinningMode"
+    iput-object p7, p0, Lfva;->f:Lfus;
 
-    invoke-direct {v0, v2, v1}, Landroid/hardware/camera2/CaptureRequest$Key;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
+    iput-object p8, p0, Lfva;->g:Lhko;
 
-    sput-object v0, Lfva;->b:Landroid/hardware/camera2/CaptureRequest$Key;
-
-    new-instance v0, Landroid/hardware/camera2/CaptureRequest$Key;
-
-    const-class v1, Ljava/lang/Byte;
-
-    const-string v2, "com.google.internal.Video60to30FPSThermalThrottle"
-
-    invoke-direct {v0, v2, v1}, Landroid/hardware/camera2/CaptureRequest$Key;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
-
-    sput-object v0, Lfva;->c:Landroid/hardware/camera2/CaptureRequest$Key;
-
-    new-instance v0, Landroid/hardware/camera2/CaptureRequest$Key;
-
-    const-class v1, [Ljava/lang/Float;
-
-    const-string v2, "com.google.pixel.experimental2020.eisTrackRegion"
-
-    invoke-direct {v0, v2, v1}, Landroid/hardware/camera2/CaptureRequest$Key;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
-
-    sput-object v0, Lfva;->d:Landroid/hardware/camera2/CaptureRequest$Key;
-
-    new-instance v0, Landroid/hardware/camera2/CaptureResult$Key;
-
-    const-class v1, [Ljava/lang/Float;
-
-    invoke-direct {v0, v2, v1}, Landroid/hardware/camera2/CaptureResult$Key;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
-
-    sput-object v0, Lfva;->e:Landroid/hardware/camera2/CaptureResult$Key;
+    iput-object p9, p0, Lfva;->i:Lfvq;
 
     return-void
 .end method

@@ -2,134 +2,235 @@
 .super Ljava/lang/Object;
 
 
-# static fields
-.field public static final a:Lj$/time/Duration;
+# instance fields
+.field public final a:Ljava/lang/String;
 
-.field public static final b:D
-
-.field public static final c:Lj$/time/Duration;
+.field public final b:Lojc;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 6
+.method public constructor <init>()V
+    .locals 0
 
-    const-wide/high16 v0, -0x8000000000000000L
-
-    invoke-static {v0, v1}, Lj$/time/Duration;->ofSeconds(J)Lj$/time/Duration;
-
-    move-result-object v2
-
-    sput-object v2, Lnmf;->a:Lj$/time/Duration;
-
-    invoke-virtual {v2}, Lj$/time/Duration;->getSeconds()J
-
-    move-result-wide v2
-
-    long-to-double v2, v2
-
-    sput-wide v2, Lnmf;->b:D
-
-    const-wide v2, 0x7fffffffffffffffL
-
-    const-wide/32 v4, 0x3b9ac9ff
-
-    invoke-static {v2, v3, v4, v5}, Lj$/time/Duration;->ofSeconds(JJ)Lj$/time/Duration;
-
-    move-result-object v4
-
-    sput-object v4, Lnmf;->c:Lj$/time/Duration;
-
-    invoke-static {v2, v3}, Lj$/time/Duration;->ofMillis(J)Lj$/time/Duration;
-
-    invoke-static {v0, v1}, Lj$/time/Duration;->ofMillis(J)Lj$/time/Duration;
-
-    invoke-static {v2, v3}, Lnmf;->b(J)V
-
-    invoke-static {v0, v1}, Lnmf;->b(J)V
-
-    invoke-static {v2, v3}, Lj$/time/Duration;->ofNanos(J)Lj$/time/Duration;
-
-    invoke-static {v0, v1}, Lj$/time/Duration;->ofNanos(J)Lj$/time/Duration;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
-.method public static a(Lj$/time/Duration;)J
-    .locals 7
+.method public constructor <init>(Ljava/lang/String;Lojc;)V
+    .locals 0
 
-    invoke-virtual {p0}, Lj$/time/Duration;->getSeconds()J
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    move-result-wide v0
+    if-eqz p1, :cond_0
 
-    const-wide v2, -0x8637bd05af6L
+    iput-object p1, p0, Lnmf;->a:Ljava/lang/String;
 
-    const-wide/32 v4, 0xf4240
+    iput-object p2, p0, Lnmf;->b:Lojc;
 
-    cmp-long v6, v0, v2
-
-    if-gez v6, :cond_0
-
-    invoke-virtual {p0}, Lj$/time/Duration;->getSeconds()J
-
-    move-result-wide v0
-
-    const-wide/16 v2, 0x1
-
-    add-long/2addr v0, v2
-
-    invoke-static {v0, v1, v4, v5}, Lnsy;->ad(JJ)J
-
-    move-result-wide v0
-
-    invoke-virtual {p0}, Lj$/time/Duration;->getNano()I
-
-    move-result p0
-
-    div-int/lit16 p0, p0, 0x3e8
-
-    const v2, -0xf4240
-
-    add-int/2addr p0, v2
-
-    int-to-long v2, p0
-
-    invoke-static {v0, v1, v2, v3}, Lnsy;->ac(JJ)J
-
-    move-result-wide v0
-
-    return-wide v0
+    return-void
 
     :cond_0
-    invoke-virtual {p0}, Lj$/time/Duration;->getSeconds()J
+    new-instance p1, Ljava/lang/NullPointerException;
 
-    move-result-wide v0
+    const-string p2, "Null actionText"
 
-    invoke-static {v0, v1, v4, v5}, Lnsy;->ad(JJ)J
+    invoke-direct {p1, p2}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
 
-    move-result-wide v0
-
-    invoke-virtual {p0}, Lj$/time/Duration;->getNano()I
-
-    move-result p0
-
-    div-int/lit16 p0, p0, 0x3e8
-
-    int-to-long v2, p0
-
-    invoke-static {v0, v1, v2, v3}, Lnsy;->ac(JJ)J
-
-    move-result-wide v0
-
-    return-wide v0
+    throw p1
 .end method
 
-.method public static b(J)V
+.method public static a(Ljava/lang/String;)Lnmf;
+    .locals 2
+
+    new-instance v0, Lnmf;
+
+    sget-object v1, Loih;->a:Loih;
+
+    invoke-direct {v0, p0, v1}, Lnmf;-><init>(Ljava/lang/String;Lojc;)V
+
+    return-object v0
+.end method
+
+.method private static d(Ljava/lang/String;Ljava/lang/String;)Lnmf;
+    .locals 2
+
+    invoke-virtual {p0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    const/4 v1, 0x1
+
+    if-ne v1, v0, :cond_0
+
+    const/4 p1, 0x0
+
+    :cond_0
+    new-instance v0, Lnmf;
+
+    invoke-static {p1}, Lojc;->h(Ljava/lang/Object;)Lojc;
+
+    move-result-object p1
+
+    invoke-direct {v0, p0, p1}, Lnmf;-><init>(Ljava/lang/String;Lojc;)V
+
+    return-object v0
+.end method
+
+
+# virtual methods
+.method public final b(Ljava/lang/String;)Lnmf;
     .locals 1
 
-    sget-object v0, Lj$/time/temporal/ChronoUnit;->MICROS:Lj$/time/temporal/ChronoUnit;
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    invoke-static {p0, p1, v0}, Lj$/time/Duration;->of(JLj$/time/temporal/TemporalUnit;)Lj$/time/Duration;
+    iget-object v0, p0, Lnmf;->b:Lojc;
 
-    return-void
+    invoke-virtual {v0}, Lojc;->f()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/String;
+
+    invoke-static {p1, v0}, Lnmf;->d(Ljava/lang/String;Ljava/lang/String;)Lnmf;
+
+    move-result-object p1
+
+    return-object p1
+.end method
+
+.method public final c(Ljava/lang/String;)Lnmf;
+    .locals 1
+
+    iget-object v0, p0, Lnmf;->a:Ljava/lang/String;
+
+    invoke-static {v0, p1}, Lnmf;->d(Ljava/lang/String;Ljava/lang/String;)Lnmf;
+
+    move-result-object p1
+
+    return-object p1
+.end method
+
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 4
+
+    const/4 v0, 0x1
+
+    if-ne p1, p0, :cond_0
+
+    return v0
+
+    :cond_0
+    instance-of v1, p1, Lnmf;
+
+    const/4 v2, 0x0
+
+    if-eqz v1, :cond_1
+
+    check-cast p1, Lnmf;
+
+    iget-object v1, p0, Lnmf;->a:Ljava/lang/String;
+
+    iget-object v3, p1, Lnmf;->a:Ljava/lang/String;
+
+    invoke-virtual {v1, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_1
+
+    iget-object v1, p0, Lnmf;->b:Lojc;
+
+    iget-object p1, p1, Lnmf;->b:Lojc;
+
+    invoke-virtual {v1, p1}, Lojc;->equals(Ljava/lang/Object;)Z
+
+    move-result p1
+
+    if-eqz p1, :cond_1
+
+    return v0
+
+    :cond_1
+    return v2
+.end method
+
+.method public final hashCode()I
+    .locals 2
+
+    iget-object v0, p0, Lnmf;->a:Ljava/lang/String;
+
+    invoke-virtual {v0}, Ljava/lang/String;->hashCode()I
+
+    move-result v0
+
+    const v1, 0xf4243
+
+    xor-int/2addr v0, v1
+
+    mul-int v0, v0, v1
+
+    iget-object v1, p0, Lnmf;->b:Lojc;
+
+    invoke-virtual {v1}, Lojc;->hashCode()I
+
+    move-result v1
+
+    xor-int/2addr v0, v1
+
+    return v0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .locals 5
+
+    iget-object v0, p0, Lnmf;->a:Ljava/lang/String;
+
+    iget-object v1, p0, Lnmf;->b:Lojc;
+
+    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v0}, Ljava/lang/String;->length()I
+
+    move-result v2
+
+    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/lang/String;->length()I
+
+    move-result v3
+
+    new-instance v4, Ljava/lang/StringBuilder;
+
+    add-int/lit8 v2, v2, 0x2d
+
+    add-int/2addr v2, v3
+
+    invoke-direct {v4, v2}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string v2, "SemanticResultText{actionText="
+
+    invoke-virtual {v4, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v0, ", displayText="
+
+    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v4, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v0, "}"
+
+    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
 .end method

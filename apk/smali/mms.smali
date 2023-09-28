@@ -1,47 +1,23 @@
-.class public final Lmms;
+.class final Lmms;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Landroid/content/ServiceConnection;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field final synthetic a:Ljava/lang/Object;
+.field final synthetic a:Lmmt;
 
-.field private final synthetic b:I
+.field final synthetic b:Lmmv;
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/apps/camera/remotecontrol/RemoteControlService;I)V
+.method public constructor <init>(Lmmt;Lmmv;)V
     .locals 0
 
-    iput p2, p0, Lmms;->b:I
+    iput-object p1, p0, Lmms;->a:Lmmt;
 
-    iput-object p1, p0, Lmms;->a:Ljava/lang/Object;
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
-.end method
-
-.method public constructor <init>(Lcom/google/vr/ndk/base/DaydreamApi;I)V
-    .locals 0
-
-    iput p2, p0, Lmms;->b:I
-
-    iput-object p1, p0, Lmms;->a:Ljava/lang/Object;
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
-.end method
-
-.method public constructor <init>(Lmmt;I)V
-    .locals 0
-
-    iput p2, p0, Lmms;->b:I
-
-    iput-object p1, p0, Lmms;->a:Ljava/lang/Object;
+    iput-object p2, p0, Lmms;->b:Lmmv;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -50,277 +26,101 @@
 
 
 # virtual methods
-.method public final onServiceConnected(Landroid/content/ComponentName;Landroid/os/IBinder;)V
-    .locals 4
+.method public final run()V
+    .locals 5
 
-    const-string p1, "DaydreamApi"
+    iget-object v0, p0, Lmms;->a:Lmmt;
 
-    iget v0, p0, Lmms;->b:I
+    iget-object v0, v0, Lmmt;->a:Lmoa;
 
-    const/4 v1, 0x0
+    iget-object v1, p0, Lmms;->b:Lmmv;
 
-    packed-switch v0, :pswitch_data_0
+    const/4 v2, 0x1
 
-    iget-object v0, p0, Lmms;->a:Ljava/lang/Object;
-
-    if-nez p2, :cond_2
-
-    move-object v2, v1
-
-    goto :goto_1
-
-    :pswitch_0
-    iget-object p1, p0, Lmms;->a:Ljava/lang/Object;
-
-    if-nez p2, :cond_0
-
-    goto :goto_0
+    iput-boolean v2, v1, Lmmv;->b:Z
 
     :cond_0
-    const-string v0, "com.google.android.apps.photos.cameraassistant.ICameraAssistantService"
+    :goto_0
+    iget-boolean v2, v1, Lmmv;->b:Z
 
-    invoke-interface {p2, v0}, Landroid/os/IBinder;->queryLocalInterface(Ljava/lang/String;)Landroid/os/IInterface;
+    if-eqz v2, :cond_1
 
-    move-result-object v0
+    :try_start_0
+    iget-object v2, v1, Lmmv;->a:Ljava/util/concurrent/ArrayBlockingQueue;
 
-    instance-of v1, v0, Lius;
+    invoke-virtual {v2}, Ljava/util/concurrent/ArrayBlockingQueue;->take()Ljava/lang/Object;
 
-    if-eqz v1, :cond_1
+    move-result-object v2
 
-    move-object v1, v0
+    check-cast v2, Ljava/lang/Runnable;
+    :try_end_0
+    .catch Ljava/lang/InterruptedException; {:try_start_0 .. :try_end_0} :catch_0
 
-    check-cast v1, Lius;
+    if-eqz v2, :cond_0
+
+    invoke-interface {v2}, Ljava/lang/Runnable;->run()V
 
     goto :goto_0
 
-    :cond_1
-    new-instance v1, Lius;
-
-    invoke-direct {v1, p2}, Lius;-><init>(Landroid/os/IBinder;)V
-
-    :goto_0
-    check-cast p1, Lcom/google/android/apps/camera/remotecontrol/RemoteControlService;
-
-    iput-object v1, p1, Lcom/google/android/apps/camera/remotecontrol/RemoteControlService;->h:Lius;
-
-    iget-object p1, p0, Lmms;->a:Ljava/lang/Object;
-
-    check-cast p1, Lcom/google/android/apps/camera/remotecontrol/RemoteControlService;
-
-    const/4 p2, 0x1
-
-    iput-boolean p2, p1, Lcom/google/android/apps/camera/remotecontrol/RemoteControlService;->c:Z
-
-    return-void
-
-    :pswitch_1
-    iget-object p1, p0, Lmms;->a:Ljava/lang/Object;
-
-    new-instance v0, Lmmq;
-
-    invoke-direct {v0, p0, p2}, Lmmq;-><init>(Lmms;Landroid/os/IBinder;)V
-
-    check-cast p1, Lmmt;
-
-    invoke-virtual {p1, v0}, Lmmt;->c(Lmmk;)V
-
-    return-void
-
-    :cond_2
-    const-string v2, "com.google.vr.vrcore.common.api.IVrCoreSdkService"
-
-    invoke-interface {p2, v2}, Landroid/os/IBinder;->queryLocalInterface(Ljava/lang/String;)Landroid/os/IInterface;
-
-    move-result-object v2
-
-    instance-of v3, v2, Lofe;
-
-    if-eqz v3, :cond_3
-
-    check-cast v2, Lofe;
-
-    goto :goto_1
-
-    :cond_3
-    new-instance v2, Lofe;
-
-    invoke-direct {v2, p2}, Lofe;-><init>(Landroid/os/IBinder;)V
-
-    :goto_1
-    check-cast v0, Lcom/google/vr/ndk/base/DaydreamApi;
-
-    iput-object v2, v0, Lcom/google/vr/ndk/base/DaydreamApi;->e:Lofe;
-
-    :try_start_0
-    iget-object p2, p0, Lmms;->a:Ljava/lang/Object;
-
-    move-object v0, p2
-
-    check-cast v0, Lcom/google/vr/ndk/base/DaydreamApi;
-
-    iget-object v0, v0, Lcom/google/vr/ndk/base/DaydreamApi;->e:Lofe;
-
-    invoke-virtual {v0}, Lcbe;->a()Landroid/os/Parcel;
-
-    move-result-object v2
-
-    const/4 v3, 0x2
-
-    invoke-virtual {v0, v3, v2}, Lcbe;->y(ILandroid/os/Parcel;)Landroid/os/Parcel;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Landroid/os/Parcel;->readStrongBinder()Landroid/os/IBinder;
-
-    move-result-object v2
-
-    if-nez v2, :cond_4
-
-    goto :goto_2
-
-    :cond_4
-    const-string v1, "com.google.vr.vrcore.common.api.IDaydreamManager"
-
-    invoke-interface {v2, v1}, Landroid/os/IBinder;->queryLocalInterface(Ljava/lang/String;)Landroid/os/IInterface;
-
-    move-result-object v1
-
-    instance-of v3, v1, Lofc;
-
-    if-eqz v3, :cond_5
-
-    check-cast v1, Lofc;
-
-    goto :goto_2
-
-    :cond_5
-    new-instance v1, Lofc;
-
-    invoke-direct {v1, v2}, Lofc;-><init>(Landroid/os/IBinder;)V
-
-    :goto_2
-    invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
-
-    check-cast p2, Lcom/google/vr/ndk/base/DaydreamApi;
-
-    iput-object v1, p2, Lcom/google/vr/ndk/base/DaydreamApi;->f:Lofc;
-    :try_end_0
-    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
-
-    goto :goto_3
-
     :catch_0
-    move-exception p2
+    move-exception v2
 
-    const-string p2, "RemoteException in onServiceConnected"
+    invoke-static {}, Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
 
-    invoke-static {p1, p2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+    move-result-object v2
 
-    :goto_3
-    iget-object p2, p0, Lmms;->a:Ljava/lang/Object;
+    invoke-static {v2}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
-    check-cast p2, Lcom/google/vr/ndk/base/DaydreamApi;
+    move-result-object v2
 
-    iget-object p2, p2, Lcom/google/vr/ndk/base/DaydreamApi;->f:Lofc;
+    invoke-static {v2}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
-    if-nez p2, :cond_6
+    move-result-object v3
 
-    const-string p2, "Daydream service component unavailable."
+    invoke-virtual {v3}, Ljava/lang/String;->length()I
 
-    invoke-static {p1, p2}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
+    move-result v3
 
-    :cond_6
-    iget-object p1, p0, Lmms;->a:Ljava/lang/Object;
+    new-instance v4, Ljava/lang/StringBuilder;
 
-    check-cast p1, Lcom/google/vr/ndk/base/DaydreamApi;
+    add-int/lit8 v3, v3, 0x1b
 
-    iget-object p1, p1, Lcom/google/vr/ndk/base/DaydreamApi;->b:Ljava/util/ArrayList;
+    invoke-direct {v4, v3}, Ljava/lang/StringBuilder;-><init>(I)V
 
-    invoke-interface {p1}, Ljava/util/List;->size()I
+    const-string v3, "Event loop on "
 
-    move-result p2
+    invoke-virtual {v4, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const/4 v0, 0x0
+    invoke-virtual {v4, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    :goto_4
-    if-ge v0, p2, :cond_7
+    const-string v2, " interrupted."
 
-    invoke-interface {p1, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
+    invoke-virtual {v4, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v1
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    check-cast v1, Ljava/lang/Runnable;
+    move-result-object v2
 
-    invoke-interface {v1}, Ljava/lang/Runnable;->run()V
+    const-string v3, "BlockingEventLoop"
 
-    add-int/lit8 v0, v0, 0x1
+    invoke-static {v3, v2}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    goto :goto_4
+    :cond_1
+    new-instance v2, Ljava/util/ArrayList;
 
-    :cond_7
-    iget-object p1, p0, Lmms;->a:Ljava/lang/Object;
+    iget-object v3, v1, Lmmv;->a:Ljava/util/concurrent/ArrayBlockingQueue;
 
-    check-cast p1, Lcom/google/vr/ndk/base/DaydreamApi;
+    invoke-virtual {v3}, Ljava/util/concurrent/ArrayBlockingQueue;->size()I
 
-    iget-object p1, p1, Lcom/google/vr/ndk/base/DaydreamApi;->b:Ljava/util/ArrayList;
+    move-result v3
 
-    invoke-virtual {p1}, Ljava/util/ArrayList;->clear()V
+    invoke-direct {v2, v3}, Ljava/util/ArrayList;-><init>(I)V
 
-    return-void
+    iget-object v1, v1, Lmmv;->a:Ljava/util/concurrent/ArrayBlockingQueue;
 
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
-.end method
+    invoke-virtual {v1, v2}, Ljava/util/concurrent/ArrayBlockingQueue;->drainTo(Ljava/util/Collection;)I
 
-.method public final onServiceDisconnected(Landroid/content/ComponentName;)V
-    .locals 1
-
-    iget p1, p0, Lmms;->b:I
-
-    const/4 v0, 0x0
-
-    packed-switch p1, :pswitch_data_0
-
-    iget-object p1, p0, Lmms;->a:Ljava/lang/Object;
-
-    check-cast p1, Lcom/google/vr/ndk/base/DaydreamApi;
-
-    iput-object v0, p1, Lcom/google/vr/ndk/base/DaydreamApi;->e:Lofe;
+    invoke-virtual {v0, v2}, Lmoa;->k(Ljava/lang/Object;)V
 
     return-void
-
-    :pswitch_0
-    iget-object p1, p0, Lmms;->a:Ljava/lang/Object;
-
-    check-cast p1, Lcom/google/android/apps/camera/remotecontrol/RemoteControlService;
-
-    iput-object v0, p1, Lcom/google/android/apps/camera/remotecontrol/RemoteControlService;->h:Lius;
-
-    const/4 v0, 0x0
-
-    iput-boolean v0, p1, Lcom/google/android/apps/camera/remotecontrol/RemoteControlService;->c:Z
-
-    return-void
-
-    :pswitch_1
-    iget-object p1, p0, Lmms;->a:Ljava/lang/Object;
-
-    new-instance v0, Lmmr;
-
-    invoke-direct {v0, p0}, Lmmr;-><init>(Lmms;)V
-
-    check-cast p1, Lmmt;
-
-    invoke-virtual {p1, v0}, Lmmt;->c(Lmmk;)V
-
-    return-void
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
 .end method

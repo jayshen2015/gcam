@@ -1,66 +1,79 @@
-.class final Livf;
-.super Landroid/animation/AnimatorListenerAdapter;
+.class public final Livf;
+.super Ljava/lang/Object;
 
 
 # instance fields
-.field private final a:Lcom/google/android/clockwork/common/wearable/wearmaterial/button/WearSnapshot;
+.field public a:Landroid/animation/ValueAnimator;
+
+.field public b:Livh;
+
+.field public c:Livh;
+
+.field public final d:Ljava/lang/Object;
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/clockwork/common/wearable/wearmaterial/button/WearSnapshot;)V
-    .locals 0
+.method public constructor <init>()V
+    .locals 1
 
-    invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Livf;->a:Lcom/google/android/clockwork/common/wearable/wearmaterial/button/WearSnapshot;
+    sget-object v0, Livh;->a:Livh;
+
+    iput-object v0, p0, Livf;->b:Livh;
+
+    sget-object v0, Livh;->a:Livh;
+
+    iput-object v0, p0, Livf;->c:Livh;
+
+    new-instance v0, Ljava/lang/Object;
+
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+
+    iput-object v0, p0, Livf;->d:Ljava/lang/Object;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onAnimationCancel(Landroid/animation/Animator;)V
-    .locals 0
+.method public final a(Livh;)V
+    .locals 2
 
-    iget-object p1, p0, Livf;->a:Lcom/google/android/clockwork/common/wearable/wearmaterial/button/WearSnapshot;
+    iget-object v0, p0, Livf;->d:Ljava/lang/Object;
 
-    invoke-virtual {p1}, Lcom/google/android/clockwork/common/wearable/wearmaterial/button/WearSnapshot;->b()V
+    monitor-enter v0
 
-    return-void
-.end method
+    :try_start_0
+    iput-object p1, p0, Livf;->c:Livh;
 
-.method public final onAnimationEnd(Landroid/animation/Animator;)V
-    .locals 0
+    iget-object v1, p0, Livf;->b:Livh;
 
-    iget-object p1, p0, Livf;->a:Lcom/google/android/clockwork/common/wearable/wearmaterial/button/WearSnapshot;
+    invoke-virtual {v1, p1}, Livh;->equals(Ljava/lang/Object;)Z
 
-    invoke-virtual {p1}, Lcom/google/android/clockwork/common/wearable/wearmaterial/button/WearSnapshot;->b()V
+    move-result p1
 
-    return-void
-.end method
+    if-eqz p1, :cond_0
 
-.method public final onAnimationStart(Landroid/animation/Animator;)V
-    .locals 1
-
-    iget-object p1, p0, Livf;->a:Lcom/google/android/clockwork/common/wearable/wearmaterial/button/WearSnapshot;
-
-    iget-object p1, p1, Lcom/google/android/clockwork/common/wearable/wearmaterial/button/WearSnapshot;->a:Landroid/graphics/drawable/BitmapDrawable;
-
-    invoke-virtual {p1}, Landroid/graphics/drawable/BitmapDrawable;->getBitmap()Landroid/graphics/Bitmap;
-
-    move-result-object p1
-
-    invoke-virtual {p1}, Landroid/graphics/Bitmap;->prepareToDraw()V
-
-    iget-object p1, p0, Livf;->a:Lcom/google/android/clockwork/common/wearable/wearmaterial/button/WearSnapshot;
-
-    invoke-virtual {p1}, Lcom/google/android/clockwork/common/wearable/wearmaterial/button/WearSnapshot;->a()Landroid/view/ViewOverlay;
-
-    move-result-object v0
-
-    iget-object p1, p1, Lcom/google/android/clockwork/common/wearable/wearmaterial/button/WearSnapshot;->a:Landroid/graphics/drawable/BitmapDrawable;
-
-    invoke-virtual {v0, p1}, Landroid/view/ViewOverlay;->add(Landroid/graphics/drawable/Drawable;)V
+    monitor-exit v0
 
     return-void
+
+    :cond_0
+    iget-object p1, p0, Livf;->a:Landroid/animation/ValueAnimator;
+
+    invoke-virtual {p1}, Landroid/animation/ValueAnimator;->start()V
+
+    monitor-exit v0
+
+    return-void
+
+    :catchall_0
+    move-exception p1
+
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw p1
 .end method

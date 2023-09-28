@@ -1,69 +1,97 @@
-.class public final Lfzm;
-.super Lkfg;
+.class public final synthetic Lfzm;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field private final a:Lkai;
+.field public final synthetic a:Lfzn;
+
+.field public final synthetic b:Ljrl;
+
+.field private final synthetic c:I
 
 
 # direct methods
-.method public constructor <init>(Lkai;)V
+.method public synthetic constructor <init>(Lfzn;Ljrl;I)V
     .locals 0
 
-    invoke-direct {p0}, Lkfg;-><init>()V
+    iput p3, p0, Lfzm;->c:I
 
-    iput-object p1, p0, Lfzm;->a:Lkai;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lfzm;->a:Lfzn;
+
+    iput-object p2, p0, Lfzm;->b:Ljrl;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final bC(Lkou;)V
-    .locals 6
+.method public final run()V
+    .locals 3
 
-    sget-object v0, Landroid/hardware/camera2/CaptureResult;->STATISTICS_FACES:Landroid/hardware/camera2/CaptureResult$Key;
+    iget v0, p0, Lfzm;->c:I
 
-    invoke-interface {p1, v0}, Lkou;->d(Landroid/hardware/camera2/CaptureResult$Key;)Ljava/lang/Object;
+    packed-switch v0, :pswitch_data_0
 
-    move-result-object v0
+    iget-object v0, p0, Lfzm;->a:Lfzn;
 
-    check-cast v0, [Landroid/hardware/camera2/params/Face;
+    iget-object v1, p0, Lfzm;->b:Ljrl;
 
-    sget-object v1, Landroid/hardware/camera2/CaptureResult;->SCALER_CROP_REGION:Landroid/hardware/camera2/CaptureResult$Key;
+    iget-object v2, v0, Lfzn;->e:Lqkg;
 
-    invoke-interface {p1, v1}, Lkou;->d(Landroid/hardware/camera2/CaptureResult$Key;)Ljava/lang/Object;
+    invoke-interface {v2}, Lqkg;->get()Ljava/lang/Object;
 
-    move-result-object v1
+    move-result-object v2
 
-    check-cast v1, Landroid/graphics/Rect;
+    check-cast v2, Lbuf;
 
-    sget-object v2, Landroid/hardware/camera2/CaptureResult;->SENSOR_FRAME_DURATION:Landroid/hardware/camera2/CaptureResult$Key;
+    invoke-virtual {v0, v2, v1}, Lfzn;->u(Lbuf;Ljrl;)V
 
-    invoke-interface {p1, v2}, Lkou;->d(Landroid/hardware/camera2/CaptureResult$Key;)Ljava/lang/Object;
-
-    move-result-object p1
-
-    check-cast p1, Ljava/lang/Long;
-
-    if-eqz v0, :cond_0
-
-    if-eqz v1, :cond_0
-
-    if-eqz p1, :cond_0
-
-    iget-object v2, p0, Lfzm;->a:Lkai;
-
-    new-instance v3, Lift;
-
-    invoke-virtual {p1}, Ljava/lang/Long;->longValue()J
-
-    move-result-wide v4
-
-    invoke-direct {v3, v0, v1, v4, v5}, Lift;-><init>([Landroid/hardware/camera2/params/Face;Landroid/graphics/Rect;J)V
-
-    invoke-interface {v2, v3}, Lkai;->bn(Ljava/lang/Object;)V
-
-    :cond_0
     return-void
+
+    :pswitch_0
+    iget-object v0, p0, Lfzm;->a:Lfzn;
+
+    iget-object v1, p0, Lfzm;->b:Ljrl;
+
+    iget-object v2, v0, Lfzn;->d:Lqkg;
+
+    invoke-interface {v2}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Lbuf;
+
+    invoke-virtual {v0, v2, v1}, Lfzn;->u(Lbuf;Ljrl;)V
+
+    return-void
+
+    :pswitch_1
+    iget-object v0, p0, Lfzm;->a:Lfzn;
+
+    iget-object v1, p0, Lfzm;->b:Ljrl;
+
+    iget-object v2, v0, Lfzn;->c:Lqkg;
+
+    invoke-interface {v2}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Lbuf;
+
+    invoke-virtual {v0, v2, v1}, Lfzn;->u(Lbuf;Ljrl;)V
+
+    return-void
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method

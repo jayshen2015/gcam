@@ -1,151 +1,137 @@
-.class final Lggc;
-.super Lkfg;
+.class public final Lggc;
+.super Ljava/lang/Object;
 
 
 # instance fields
-.field public a:Z
+.field private a:Lhka;
 
-.field public volatile b:Ljava/lang/Long;
-
-.field private volatile c:Ljava/lang/Long;
+.field private b:Lhkb;
 
 
 # direct methods
 .method public constructor <init>()V
-    .locals 1
+    .locals 0
 
-    invoke-direct {p0}, Lkfg;-><init>()V
-
-    const/4 v0, 0x1
-
-    iput-boolean v0, p0, Lggc;->a:Z
-
-    const/4 v0, 0x0
-
-    iput-object v0, p0, Lggc;->c:Ljava/lang/Long;
-
-    iput-object v0, p0, Lggc;->b:Ljava/lang/Long;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
-.end method
-
-.method private final p()V
-    .locals 1
-
-    monitor-enter p0
-
-    const/4 v0, 0x0
-
-    :try_start_0
-    iput-boolean v0, p0, Lggc;->a:Z
-
-    invoke-virtual {p0}, Ljava/lang/Object;->notifyAll()V
-
-    monitor-exit p0
-
-    return-void
-
-    :catchall_0
-    move-exception v0
-
-    monitor-exit p0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw v0
 .end method
 
 
 # virtual methods
-.method public final bC(Lkou;)V
+.method public final a()Lggd;
     .locals 4
 
-    sget-object v0, Landroid/hardware/camera2/CaptureResult;->CONTROL_AF_STATE:Landroid/hardware/camera2/CaptureResult$Key;
-
-    invoke-interface {p1, v0}, Lkou;->d(Landroid/hardware/camera2/CaptureResult$Key;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/lang/Integer;
+    iget-object v0, p0, Lggc;->a:Lhka;
 
     if-eqz v0, :cond_1
 
-    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
+    iget-object v1, p0, Lggc;->b:Lhkb;
 
-    move-result v0
-
-    const/4 v1, 0x2
-
-    if-eq v0, v1, :cond_0
-
-    const/4 v1, 0x6
-
-    if-eq v0, v1, :cond_0
-
-    const/4 v1, 0x4
-
-    if-eq v0, v1, :cond_0
-
-    const/4 v1, 0x5
-
-    if-eq v0, v1, :cond_0
+    if-nez v1, :cond_0
 
     goto :goto_0
 
     :cond_0
-    invoke-interface {p1}, Lkou;->b()J
+    new-instance v2, Lggd;
 
-    move-result-wide v0
+    invoke-direct {v2, v0, v1}, Lggd;-><init>(Lhka;Lhkb;)V
 
-    invoke-static {v0, v1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    move-result-object p1
-
-    iput-object p1, p0, Lggc;->b:Ljava/lang/Long;
-
-    invoke-direct {p0}, Lggc;->p()V
-
-    return-void
+    return-object v2
 
     :cond_1
     :goto_0
-    sget-object v0, Landroid/hardware/camera2/CaptureResult;->SENSOR_TIMESTAMP:Landroid/hardware/camera2/CaptureResult$Key;
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    invoke-interface {p1, v0}, Lkou;->d(Landroid/hardware/camera2/CaptureResult$Key;)Ljava/lang/Object;
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    move-result-object p1
+    iget-object v1, p0, Lggc;->a:Lhka;
 
-    check-cast p1, Ljava/lang/Long;
+    if-nez v1, :cond_2
 
-    if-eqz p1, :cond_3
+    const-string v1, " aeMode"
 
-    iget-object v0, p0, Lggc;->c:Ljava/lang/Long;
-
-    if-nez v0, :cond_2
-
-    iput-object p1, p0, Lggc;->c:Ljava/lang/Long;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     :cond_2
-    invoke-virtual {p1}, Ljava/lang/Long;->longValue()J
+    iget-object v1, p0, Lggc;->b:Lhkb;
 
-    move-result-wide v0
+    if-nez v1, :cond_3
 
-    iget-object p1, p0, Lggc;->c:Ljava/lang/Long;
+    const-string v1, " aeState"
 
-    invoke-virtual {p1}, Ljava/lang/Long;->longValue()J
-
-    move-result-wide v2
-
-    sub-long/2addr v0, v2
-
-    const-wide/32 v2, 0x3b9aca00
-
-    cmp-long p1, v0, v2
-
-    if-lez p1, :cond_3
-
-    invoke-direct {p0}, Lggc;->p()V
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     :cond_3
+    new-instance v1, Ljava/lang/IllegalStateException;
+
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/String;->length()I
+
+    move-result v2
+
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    add-int/lit8 v2, v2, 0x1c
+
+    invoke-direct {v3, v2}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string v2, "Missing required properties:"
+
+    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-direct {v1, v0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw v1
+.end method
+
+.method public final b(Lhka;)V
+    .locals 1
+
+    if-eqz p1, :cond_0
+
+    iput-object p1, p0, Lggc;->a:Lhka;
+
     return-void
+
+    :cond_0
+    new-instance p1, Ljava/lang/NullPointerException;
+
+    const-string v0, "Null aeMode"
+
+    invoke-direct {p1, v0}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
+
+    throw p1
+.end method
+
+.method public final c(Lhkb;)V
+    .locals 1
+
+    if-eqz p1, :cond_0
+
+    iput-object p1, p0, Lggc;->b:Lhkb;
+
+    return-void
+
+    :cond_0
+    new-instance p1, Ljava/lang/NullPointerException;
+
+    const-string v0, "Null aeState"
+
+    invoke-direct {p1, v0}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
+
+    throw p1
 .end method

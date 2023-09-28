@@ -1,46 +1,22 @@
-.class final Lbrw;
-.super Lbry;
+.class public final Lbrw;
+.super Ljava/lang/Object;
+
+
+# static fields
+.field public static final a:Lbpw;
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 2
 
-    invoke-direct {p0}, Lbry;-><init>()V
+    new-instance v0, Lbpw;
+
+    const/4 v1, 0x2
+
+    invoke-direct {v0, v1}, Lbpw;-><init>(I)V
+
+    sput-object v0, Lbrw;->a:Lbpw;
 
     return-void
-.end method
-
-
-# virtual methods
-.method public final a()Z
-    .locals 1
-
-    const/4 v0, 0x1
-
-    return v0
-.end method
-
-.method public final b()Z
-    .locals 1
-
-    const/4 v0, 0x0
-
-    return v0
-.end method
-
-.method public final c(I)Z
-    .locals 0
-
-    const/4 p1, 0x1
-
-    return p1
-.end method
-
-.method public final d(ZII)Z
-    .locals 0
-
-    const/4 p1, 0x0
-
-    return p1
 .end method

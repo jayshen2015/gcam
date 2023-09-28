@@ -1,177 +1,231 @@
-.class public abstract Lmuc;
+.class public final Lmuc;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Ljava/lang/Comparable;
-.implements Ljava/io/Serializable;
-
-
-# static fields
-.field private static final serialVersionUID:J
+.implements Ljava/lang/Iterable;
 
 
 # instance fields
-.field final b:Ljava/lang/Comparable;
+.field public final a:[I
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/Comparable;)V
-    .locals 0
+.method private constructor <init>([I)V
+    .locals 7
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lmuc;->b:Ljava/lang/Comparable;
+    array-length v0, p1
 
+    const/4 v1, 0x0
+
+    if-nez v0, :cond_0
+
+    new-array p1, v1, [I
+
+    iput-object p1, p0, Lmuc;->a:[I
+
+    return-void
+
+    :cond_0
+    invoke-static {p1}, Ljava/util/Arrays;->sort([I)V
+
+    aget v2, p1, v1
+
+    const/4 v3, 0x1
+
+    add-int/2addr v2, v3
+
+    const/4 v4, 0x0
+
+    const/4 v5, 0x0
+
+    :goto_0
+    if-ge v4, v0, :cond_2
+
+    aget v6, p1, v4
+
+    if-ne v2, v6, :cond_1
+
+    const/4 v2, 0x0
+
+    goto :goto_1
+
+    :cond_1
+    const/4 v2, 0x1
+
+    :goto_1
+    add-int/2addr v5, v2
+
+    add-int/lit8 v4, v4, 0x1
+
+    move v2, v6
+
+    goto :goto_0
+
+    :cond_2
+    new-array v0, v5, [I
+
+    iput-object v0, p0, Lmuc;->a:[I
+
+    aget v2, p1, v1
+
+    add-int/2addr v2, v3
+
+    array-length v3, p1
+
+    move v4, v2
+
+    const/4 v2, 0x0
+
+    :goto_2
+    if-ge v1, v3, :cond_4
+
+    aget v5, p1, v1
+
+    if-eq v4, v5, :cond_3
+
+    add-int/lit8 v4, v2, 0x1
+
+    aput v5, v0, v2
+
+    move v2, v4
+
+    move v4, v5
+
+    goto :goto_3
+
+    :cond_3
+    :goto_3
+    add-int/lit8 v1, v1, 0x1
+
+    goto :goto_2
+
+    :cond_4
     return-void
 .end method
 
-.method static j(Ljava/lang/Comparable;)Lmuc;
-    .locals 1
+.method public static varargs a([I)Lmuc;
+    .locals 2
 
-    new-instance v0, Lmtz;
+    new-instance v0, Lmuc;
 
-    invoke-direct {v0, p0}, Lmtz;-><init>(Ljava/lang/Comparable;)V
+    array-length v1, p0
 
-    return-object v0
-.end method
+    invoke-static {p0, v1}, Ljava/util/Arrays;->copyOf([II)[I
 
-.method static k(Ljava/lang/Comparable;)Lmuc;
-    .locals 1
+    move-result-object p0
 
-    new-instance v0, Lmub;
-
-    invoke-direct {v0, p0}, Lmub;-><init>(Ljava/lang/Comparable;)V
+    invoke-direct {v0, p0}, Lmuc;-><init>([I)V
 
     return-object v0
 .end method
 
 
 # virtual methods
-.method public a(Lmuc;)I
-    .locals 4
+.method public final b()Z
+    .locals 2
 
-    sget-object v0, Lmua;->a:Lmua;
+    iget-object v0, p0, Lmuc;->a:[I
 
-    const/4 v1, 0x1
+    const v1, 0x8058
 
-    if-eq p1, v0, :cond_3
-
-    sget-object v0, Lmty;->a:Lmty;
-
-    const/4 v2, -0x1
-
-    if-ne p1, v0, :cond_0
-
-    return v2
-
-    :cond_0
-    iget-object v0, p0, Lmuc;->b:Ljava/lang/Comparable;
-
-    iget-object v3, p1, Lmuc;->b:Ljava/lang/Comparable;
-
-    invoke-static {v0, v3}, Lmym;->b(Ljava/lang/Comparable;Ljava/lang/Comparable;)I
+    invoke-static {v0, v1}, Ljava/util/Arrays;->binarySearch([II)I
 
     move-result v0
 
-    if-eqz v0, :cond_1
+    if-ltz v0, :cond_0
+
+    const/4 v0, 0x1
 
     return v0
 
-    :cond_1
-    instance-of v0, p0, Lmtz;
+    :cond_0
+    const/4 v0, 0x0
 
-    instance-of p1, p1, Lmtz;
-
-    if-ne v0, p1, :cond_2
-
-    const/4 v2, 0x0
-
-    goto :goto_0
-
-    :cond_2
-    if-nez v0, :cond_3
-
-    :goto_0
-    return v2
-
-    :cond_3
-    return v1
-.end method
-
-.method public b()Ljava/lang/Comparable;
-    .locals 1
-
-    iget-object v0, p0, Lmuc;->b:Ljava/lang/Comparable;
-
-    return-object v0
-.end method
-
-.method public abstract c(Lmuh;)Ljava/lang/Comparable;
-.end method
-
-.method public bridge synthetic compareTo(Ljava/lang/Object;)I
-    .locals 0
-
-    check-cast p1, Lmuc;
-
-    invoke-virtual {p0, p1}, Lmuc;->a(Lmuc;)I
-
-    move-result p1
-
-    return p1
-.end method
-
-.method public abstract d(Lmuh;)Ljava/lang/Comparable;
-.end method
-
-.method public abstract e(Ljava/lang/StringBuilder;)V
+    return v0
 .end method
 
 .method public final equals(Ljava/lang/Object;)Z
-    .locals 2
+    .locals 1
 
-    instance-of v0, p1, Lmuc;
-
-    const/4 v1, 0x0
-
-    if-eqz v0, :cond_1
-
-    check-cast p1, Lmuc;
-
-    :try_start_0
-    invoke-virtual {p0, p1}, Lmuc;->a(Lmuc;)I
-
-    move-result p1
-    :try_end_0
-    .catch Ljava/lang/ClassCastException; {:try_start_0 .. :try_end_0} :catch_0
-
-    if-nez p1, :cond_0
+    if-ne p0, p1, :cond_0
 
     const/4 p1, 0x1
 
     return p1
 
     :cond_0
-    return v1
+    instance-of v0, p1, Lmuc;
 
-    :catch_0
-    move-exception p1
+    if-nez v0, :cond_1
+
+    const/4 p1, 0x0
+
+    return p1
 
     :cond_1
-    return v1
+    check-cast p1, Lmuc;
+
+    iget-object v0, p0, Lmuc;->a:[I
+
+    iget-object p1, p1, Lmuc;->a:[I
+
+    invoke-static {v0, p1}, Ljava/util/Arrays;->equals([I[I)Z
+
+    move-result p1
+
+    return p1
 .end method
 
-.method public abstract f(Ljava/lang/StringBuilder;)V
+.method public final hashCode()I
+    .locals 1
+
+    iget-object v0, p0, Lmuc;->a:[I
+
+    invoke-static {v0}, Ljava/util/Arrays;->hashCode([I)I
+
+    move-result v0
+
+    return v0
 .end method
 
-.method public abstract g(Ljava/lang/Comparable;)Z
+.method public final iterator()Ljava/util/Iterator;
+    .locals 1
+
+    new-instance v0, Lmub;
+
+    invoke-direct {v0, p0}, Lmub;-><init>(Lmuc;)V
+
+    return-object v0
 .end method
 
-.method public abstract h(Lmuh;)Lmuc;
-.end method
+.method public final toString()Ljava/lang/String;
+    .locals 3
 
-.method public abstract hashCode()I
-.end method
+    iget-object v0, p0, Lmuc;->a:[I
 
-.method public abstract i(Lmuh;)Lmuc;
+    array-length v0, v0
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    const/16 v2, 0x13
+
+    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string v2, "IntSet["
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    const-string v0, "]"
+
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
 .end method

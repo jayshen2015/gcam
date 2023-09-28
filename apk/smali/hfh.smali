@@ -1,51 +1,55 @@
-.class public interface abstract Lhfh;
+.class public final synthetic Lhfh;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lfav;
-.implements Lezc;
-.implements Lhis;
+.implements Ljava/lang/Runnable;
+
+
+# instance fields
+.field public final synthetic a:Lbxy;
+
+.field private final synthetic b:I
+
+
+# direct methods
+.method public synthetic constructor <init>(Lbxy;I)V
+    .locals 0
+
+    iput p2, p0, Lhfh;->b:I
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lhfh;->a:Lbxy;
+
+    return-void
+.end method
 
 
 # virtual methods
-.method public abstract a()V
-.end method
+.method public final run()V
+    .locals 1
 
-.method public abstract b(Lchd;Z)V
-.end method
+    iget v0, p0, Lhfh;->b:I
 
-.method public abstract bN()V
-.end method
+    packed-switch v0, :pswitch_data_0
 
-.method public abstract bP()Z
-.end method
+    iget-object v0, p0, Lhfh;->a:Lbxy;
 
-.method public abstract cj()V
-.end method
+    invoke-virtual {v0}, Lbxy;->b()V
 
-.method public abstract d(Lchd;Z)V
-.end method
+    return-void
 
-.method public abstract i()V
-.end method
+    :pswitch_0
+    iget-object v0, p0, Lhfh;->a:Lbxy;
 
-.method public abstract j()V
-.end method
+    invoke-virtual {v0}, Lbxy;->b()V
 
-.method public abstract k()V
-.end method
+    return-void
 
-.method public abstract l(Landroid/content/pm/ResolveInfo;)V
-.end method
+    nop
 
-.method public abstract m()V
-.end method
-
-.method public abstract n()V
-.end method
-
-.method public abstract o()V
-.end method
-
-.method public abstract p(J)V
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

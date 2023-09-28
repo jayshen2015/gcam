@@ -1,66 +1,52 @@
-.class Lgz;
-.super Laej;
+.class public final Lgz;
+.super Landroid/text/style/ClickableSpan;
 
 
 # instance fields
-.field final a:Landroid/view/ActionProvider;
+.field private final a:I
+
+.field private final b:Lhb;
+
+.field private final c:I
 
 
 # direct methods
-.method public constructor <init>(Landroid/view/ActionProvider;)V
+.method public constructor <init>(ILhb;I)V
     .locals 0
 
-    invoke-direct {p0}, Laej;-><init>()V
+    invoke-direct {p0}, Landroid/text/style/ClickableSpan;-><init>()V
 
-    iput-object p1, p0, Lgz;->a:Landroid/view/ActionProvider;
+    iput p1, p0, Lgz;->a:I
+
+    iput-object p2, p0, Lgz;->b:Lhb;
+
+    iput p3, p0, Lgz;->c:I
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Landroid/view/View;
-    .locals 1
+.method public final onClick(Landroid/view/View;)V
+    .locals 2
 
-    iget-object v0, p0, Lgz;->a:Landroid/view/ActionProvider;
+    new-instance p1, Landroid/os/Bundle;
 
-    invoke-virtual {v0}, Landroid/view/ActionProvider;->onCreateActionView()Landroid/view/View;
+    invoke-direct {p1}, Landroid/os/Bundle;-><init>()V
 
-    move-result-object v0
+    iget v0, p0, Lgz;->a:I
 
-    return-object v0
-.end method
+    const-string v1, "ACCESSIBILITY_CLICKABLE_SPAN_ID"
 
-.method public final b(Landroid/view/SubMenu;)V
-    .locals 1
+    invoke-virtual {p1, v1, v0}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
 
-    iget-object v0, p0, Lgz;->a:Landroid/view/ActionProvider;
+    iget-object v0, p0, Lgz;->b:Lhb;
 
-    invoke-virtual {v0, p1}, Landroid/view/ActionProvider;->onPrepareSubMenu(Landroid/view/SubMenu;)V
+    iget v1, p0, Lgz;->c:I
+
+    iget-object v0, v0, Lhb;->a:Landroid/view/accessibility/AccessibilityNodeInfo;
+
+    invoke-virtual {v0, v1, p1}, Landroid/view/accessibility/AccessibilityNodeInfo;->performAction(ILandroid/os/Bundle;)Z
 
     return-void
-.end method
-
-.method public final c()Z
-    .locals 1
-
-    iget-object v0, p0, Lgz;->a:Landroid/view/ActionProvider;
-
-    invoke-virtual {v0}, Landroid/view/ActionProvider;->hasSubMenu()Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public final d()Z
-    .locals 1
-
-    iget-object v0, p0, Lgz;->a:Landroid/view/ActionProvider;
-
-    invoke-virtual {v0}, Landroid/view/ActionProvider;->onPerformDefaultAction()Z
-
-    move-result v0
-
-    return v0
 .end method

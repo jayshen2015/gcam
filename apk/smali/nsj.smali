@@ -1,154 +1,212 @@
-.class public final synthetic Lnsj;
-.super Ljava/lang/Object;
+.class public final Lnsj;
+.super Lqmb;
 
 # interfaces
-.implements Lcom/google/googlex/gcam/hdrplus/MergedRawCallback;
+.implements Lqmy;
+
+
+# annotations
+.annotation runtime Lqlw;
+    b = "com.google.android.libraries.vision.visionkit.f250.internal.uploader.work.F250Worker$uploadAllValidResources$2"
+    c = "F250Worker.kt"
+    d = "invokeSuspend"
+    e = {
+        0xa1,
+        0xa2
+    }
+.end annotation
 
 
 # instance fields
-.field public final synthetic a:Lfxf;
+.field a:I
+
+.field final synthetic b:Lcom/google/android/libraries/vision/visionkit/f250/internal/uploader/work/F250Worker;
+
+.field final synthetic c:Lnrl;
+
+.field private synthetic d:Ljava/lang/Object;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lfxf;[B[B)V
+.method public constructor <init>(Lcom/google/android/libraries/vision/visionkit/f250/internal/uploader/work/F250Worker;Lnrl;Lqlh;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lnsj;->b:Lcom/google/android/libraries/vision/visionkit/f250/internal/uploader/work/F250Worker;
 
-    iput-object p1, p0, Lnsj;->a:Lfxf;
+    iput-object p2, p0, Lnsj;->c:Lnrl;
+
+    const/4 p1, 0x2
+
+    invoke-direct {p0, p1, p3}, Lqmb;-><init>(ILqlh;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final accept(IJJJI)V
-    .locals 4
+.method public final create(Ljava/lang/Object;Lqlh;)Lqlh;
+    .locals 3
 
-    iget-object v0, p0, Lnsj;->a:Lfxf;
+    new-instance v0, Lnsj;
 
-    new-instance v1, Lcom/google/googlex/gcam/ShotMetadata;
+    iget-object v1, p0, Lnsj;->b:Lcom/google/android/libraries/vision/visionkit/f250/internal/uploader/work/F250Worker;
 
-    invoke-direct {v1, p4, p5}, Lcom/google/googlex/gcam/ShotMetadata;-><init>(J)V
+    iget-object v2, p0, Lnsj;->c:Lnrl;
 
-    new-instance p4, Lnqv;
+    invoke-direct {v0, v1, v2, p2}, Lnsj;-><init>(Lcom/google/android/libraries/vision/visionkit/f250/internal/uploader/work/F250Worker;Lnrl;Lqlh;)V
 
-    invoke-direct {p4, p6, p7}, Lnqv;-><init>(J)V
+    iput-object p1, v0, Lnsj;->d:Ljava/lang/Object;
 
-    invoke-static {p8}, Lnqz;->a(I)Lnqz;
+    return-object v0
+.end method
 
-    iget-object p5, v0, Lfxf;->b:Ljava/lang/Object;
+.method public final bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 0
 
-    iget-object p6, v0, Lfxf;->a:Ljava/lang/Object;
+    check-cast p1, Lqts;
 
-    check-cast p5, Leea;
+    check-cast p2, Lqlh;
 
-    iget-object p7, p5, Leea;->r:Lhna;
+    invoke-virtual {p0, p1, p2}, Lqls;->create(Ljava/lang/Object;Lqlh;)Lqlh;
 
-    invoke-static {p7}, Leea;->d(Lhna;)Lnqn;
+    move-result-object p1
 
-    move-result-object p7
+    sget-object p2, Lqks;->a:Lqks;
 
-    invoke-static {v1, p7}, Lnsy;->j(Lcom/google/googlex/gcam/ShotMetadata;Lnqn;)V
+    check-cast p1, Lnsj;
 
-    iget p7, p5, Leea;->s:I
+    invoke-virtual {p1, p2}, Lnsj;->invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
 
-    const/4 p8, 0x0
+    move-result-object p1
 
-    const/4 v0, 0x1
+    return-object p1
+.end method
 
-    if-ne p7, v0, :cond_0
+.method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 8
 
-    const/4 p7, 0x1
+    sget-object v0, Lqlp;->a:Lqlp;
+
+    iget v1, p0, Lnsj;->a:I
+
+    packed-switch v1, :pswitch_data_0
+
+    iget-object v1, p0, Lnsj;->d:Ljava/lang/Object;
+
+    check-cast v1, Lqts;
+
+    invoke-static {p1}, Lqmd;->M(Ljava/lang/Object;)V
+
+    move-object p1, p0
+
+    goto :goto_0
+
+    :pswitch_0
+    iget-object v1, p0, Lnsj;->d:Ljava/lang/Object;
+
+    check-cast v1, Lqts;
+
+    invoke-static {p1}, Lqmd;->M(Ljava/lang/Object;)V
+
+    move-object v2, v1
+
+    move-object v1, v0
+
+    move-object v0, p0
+
+    goto :goto_1
+
+    :pswitch_1
+    invoke-static {p1}, Lqmd;->M(Ljava/lang/Object;)V
+
+    iget-object p1, p0, Lnsj;->d:Ljava/lang/Object;
+
+    check-cast p1, Lqts;
+
+    move-object v1, p1
+
+    move-object p1, p0
+
+    goto :goto_0
+
+    :goto_0
+    iget-object v2, p1, Lnsj;->b:Lcom/google/android/libraries/vision/visionkit/f250/internal/uploader/work/F250Worker;
+
+    iget-object v2, v2, Lcom/google/android/libraries/vision/visionkit/f250/internal/uploader/work/F250Worker;->h:Lnou;
+
+    iget-object v3, p1, Lnsj;->c:Lnrl;
+
+    iput-object v1, p1, Lnsj;->d:Ljava/lang/Object;
+
+    const/4 v4, 0x1
+
+    iput v4, p1, Lnsj;->a:I
+
+    iget-object v4, v2, Lnou;->b:Lnrm;
+
+    new-instance v5, Lnos;
+
+    const/4 v6, 0x0
+
+    invoke-direct {v5, v2, v6}, Lnos;-><init>(Lnou;Lqlh;)V
+
+    invoke-static {v4, v3, v5, p1}, Lohh;->ae(Lnrm;Lnrl;Lqmu;Lqlh;)Ljava/lang/Object;
+
+    move-result-object v2
+
+    if-eq v2, v0, :cond_2
+
+    move-object v7, v0
+
+    move-object v0, p1
+
+    move-object p1, v2
+
+    move-object v2, v1
+
+    move-object v1, v7
+
+    :goto_1
+    check-cast p1, Lnqi;
+
+    if-eqz p1, :cond_1
+
+    iput-object v2, v0, Lnsj;->d:Ljava/lang/Object;
+
+    const/4 v3, 0x2
+
+    iput v3, v0, Lnsj;->a:I
+
+    invoke-interface {v2, p1, v0}, Lqts;->emit(Ljava/lang/Object;Lqlh;)Ljava/lang/Object;
+
+    move-result-object p1
+
+    if-eq p1, v1, :cond_0
+
+    move-object p1, v0
+
+    move-object v0, v1
+
+    move-object v1, v2
 
     goto :goto_0
 
     :cond_0
-    const/4 p7, 0x0
-
-    :goto_0
-    invoke-static {p7}, Lmoz;->p(Z)V
-
-    iget-object p7, p5, Leea;->l:Leec;
-
-    invoke-virtual {p7}, Leec;->j()Lmqp;
-
-    move-result-object p7
-
-    invoke-virtual {p7}, Lmqp;->g()Z
-
-    move-result p7
-
-    const-string v2, "Got merged RAW callback but no callback present"
-
-    invoke-static {p7, v2}, Lmoz;->q(ZLjava/lang/Object;)V
-
-    invoke-static {}, Lcom/google/googlex/gcam/GcamModuleJNI;->kInvalidAllocationId_get()J
-
-    move-result-wide v2
-
-    cmp-long p7, p2, v2
-
-    if-eqz p7, :cond_1
-
-    check-cast p6, Lnrr;
-
-    iget-boolean p1, p6, Lnrr;->b:Z
-
-    const-string p2, "doneWriting() must be called before getImage."
-
-    invoke-static {p1, p2}, Lmoz;->q(ZLjava/lang/Object;)V
-
-    iget-object p1, p6, Lnrr;->a:Lnrc;
-
-    iget-object p2, p5, Leea;->l:Leec;
-
-    invoke-virtual {p2}, Leec;->j()Lmqp;
-
-    move-result-object p2
-
-    invoke-virtual {p2}, Lmqp;->c()Ljava/lang/Object;
-
-    move-result-object p2
-
-    check-cast p2, Lecu;
-
-    invoke-interface {p2, p5, p1, v1, p4}, Lecu;->a(Leea;Lnrc;Lcom/google/googlex/gcam/ShotMetadata;Lnqv;)V
-
-    return-void
+    return-object v1
 
     :cond_1
-    iget-object p2, p5, Leea;->l:Leec;
+    sget-object p1, Lqks;->a:Lqks;
 
-    invoke-virtual {p2}, Leec;->j()Lmqp;
+    return-object p1
 
-    move-result-object p2
+    :cond_2
+    return-object v0
 
-    invoke-virtual {p2}, Lmqp;->c()Ljava/lang/Object;
+    nop
 
-    move-result-object p2
-
-    check-cast p2, Lecu;
-
-    new-instance p3, Lecq;
-
-    new-array p4, v0, [Ljava/lang/Object;
-
-    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object p1
-
-    aput-object p1, p4, p8
-
-    const-string p1, "MergeRaw failed (shotId = %d)"
-
-    invoke-static {p1, p4}, Lkba;->c(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object p1
-
-    invoke-direct {p3, p1}, Lecq;-><init>(Ljava/lang/String;)V
-
-    invoke-interface {p2, p3}, Lecu;->b(Lecq;)V
-
-    return-void
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method

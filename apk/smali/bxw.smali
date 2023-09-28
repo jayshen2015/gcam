@@ -1,78 +1,63 @@
-.class public final Lbxw;
+.class public final synthetic Lbxw;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lbqi;
+.implements Llie;
+
+
+# instance fields
+.field public final synthetic a:I
+
+.field public final synthetic b:Lkfm;
 
 
 # direct methods
-.method public constructor <init>()V
+.method public synthetic constructor <init>(ILkfm;[B[B[B)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput p1, p0, Lbxw;->a:I
+
+    iput-object p2, p0, Lbxw;->b:Lkfm;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final bridge synthetic a(Ljava/lang/Object;Ljava/io/File;Lbqf;)Z
-    .locals 1
+.method public final close()V
+    .locals 7
 
-    check-cast p1, Lbsn;
+    iget v0, p0, Lbxw;->a:I
 
-    invoke-interface {p1}, Lbsn;->c()Ljava/lang/Object;
+    iget-object v1, p0, Lbxw;->b:Lkfm;
 
-    move-result-object p1
+    iget-wide v2, v1, Lkfm;->a:J
 
-    check-cast p1, Lbxv;
+    const-wide/16 v4, 0x0
 
-    :try_start_0
-    invoke-virtual {p1}, Lbxv;->b()Ljava/nio/ByteBuffer;
+    cmp-long v6, v2, v4
 
-    move-result-object p1
+    if-eqz v6, :cond_0
 
-    invoke-static {p1, p2}, Lcaj;->d(Ljava/nio/ByteBuffer;Ljava/io/File;)V
-    :try_end_0
-    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
-
-    const/4 p1, 0x1
-
-    goto :goto_1
-
-    :catch_0
-    move-exception p1
-
-    const/4 p2, 0x5
-
-    const-string p3, "GifEncoder"
-
-    invoke-static {p3, p2}, Landroid/util/Log;->isLoggable(Ljava/lang/String;I)Z
-
-    move-result p2
-
-    const/4 v0, 0x0
-
-    if-eqz p2, :cond_0
-
-    const-string p2, "Failed to encode GIF drawable data"
-
-    invoke-static {p3, p2, p1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+    const/4 v2, 0x1
 
     goto :goto_0
 
     :cond_0
+    const/4 v2, 0x0
+
     :goto_0
-    const/4 p1, 0x0
+    invoke-static {v2}, Lobr;->ap(Z)V
 
-    :goto_1
-    return p1
-.end method
+    iget-wide v2, v1, Lkfm;->a:J
 
-.method public final b()I
-    .locals 1
+    iput-wide v4, v1, Lkfm;->a:J
 
-    const/4 v0, 0x1
+    invoke-static {v0, v2, v3}, Lcom/google/android/apps/camera/async/tt/CpuSets;->nativeRestoreCpuSet(IJ)V
 
-    return v0
+    invoke-static {}, Landroid/os/Trace;->endSection()V
+
+    return-void
 .end method

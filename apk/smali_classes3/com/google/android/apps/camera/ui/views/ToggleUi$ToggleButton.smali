@@ -3,7 +3,7 @@
 
 
 # static fields
-.field private static final b:Lnak;
+.field private static final b:Louj;
 
 
 # instance fields
@@ -16,11 +16,11 @@
 
     const-string v0, "com/google/android/apps/camera/ui/views/ToggleUi$ToggleButton"
 
-    invoke-static {v0}, Lnak;->h(Ljava/lang/String;)Lnak;
+    invoke-static {v0}, Louj;->h(Ljava/lang/String;)Louj;
 
     move-result-object v0
 
-    sput-object v0, Lcom/google/android/apps/camera/ui/views/ToggleUi$ToggleButton;->b:Lnak;
+    sput-object v0, Lcom/google/android/apps/camera/ui/views/ToggleUi$ToggleButton;->b:Louj;
 
     return-void
 .end method
@@ -71,9 +71,9 @@
     return-void
 
     :cond_0
-    sget-object v0, Lcom/google/android/apps/camera/ui/views/ToggleUi$ToggleButton;->b:Lnak;
+    sget-object v0, Lcom/google/android/apps/camera/ui/views/ToggleUi$ToggleButton;->b:Louj;
 
-    invoke-virtual {v0}, Lnaf;->c()Lnaz;
+    invoke-virtual {v0}, Loue;->c()Lova;
 
     move-result-object v0
 
@@ -81,11 +81,11 @@
 
     move-result-object p1
 
-    const-string v1, "setScaleX ignored %s"
+    const/16 v1, 0xd8b
 
-    const/16 v2, 0x10ae
+    const-string v2, "setScaleX ignored %s"
 
-    invoke-static {v0, v1, p1, v2}, Ld;->j(Lnaz;Ljava/lang/String;Ljava/lang/Object;C)V
+    invoke-static {v0, v2, p1, v1}, Ld;->u(Lova;Ljava/lang/String;Ljava/lang/Object;C)V
 
     return-void
 .end method
@@ -102,9 +102,9 @@
     return-void
 
     :cond_0
-    sget-object v0, Lcom/google/android/apps/camera/ui/views/ToggleUi$ToggleButton;->b:Lnak;
+    sget-object v0, Lcom/google/android/apps/camera/ui/views/ToggleUi$ToggleButton;->b:Louj;
 
-    invoke-virtual {v0}, Lnaf;->c()Lnaz;
+    invoke-virtual {v0}, Loue;->c()Lova;
 
     move-result-object v0
 
@@ -112,11 +112,11 @@
 
     move-result-object p1
 
-    const-string v1, "setScaleY ignored %s"
+    const/16 v1, 0xd8c
 
-    const/16 v2, 0x10af
+    const-string v2, "setScaleY ignored %s"
 
-    invoke-static {v0, v1, p1, v2}, Ld;->j(Lnaz;Ljava/lang/String;Ljava/lang/Object;C)V
+    invoke-static {v0, v2, p1, v1}, Ld;->u(Lova;Ljava/lang/String;Ljava/lang/Object;C)V
 
     return-void
 .end method

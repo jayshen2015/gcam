@@ -1,63 +1,33 @@
-.class public final Ldaq;
+.class public final synthetic Ldaq;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Logk;
+.implements Llie;
 
 
 # instance fields
-.field private final a:Loiw;
-
-.field private final b:Loiw;
+.field public final synthetic a:Ldbe;
 
 
 # direct methods
-.method public constructor <init>(Loiw;Loiw;)V
+.method public synthetic constructor <init>(Ldbe;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Ldaq;->a:Loiw;
-
-    iput-object p2, p0, Ldaq;->b:Loiw;
+    iput-object p1, p0, Ldaq;->a:Ldbe;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Lict;
-    .locals 3
-
-    iget-object v0, p0, Ldaq;->a:Loiw;
-
-    check-cast v0, Ldwh;
-
-    invoke-virtual {v0}, Ldwh;->a()Landroid/content/Context;
-
-    move-result-object v0
-
-    iget-object v1, p0, Ldaq;->b:Loiw;
-
-    invoke-interface {v1}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Ldhi;
-
-    new-instance v2, Lict;
-
-    invoke-direct {v2, v0, v1}, Lict;-><init>(Landroid/content/Context;Ldhi;)V
-
-    return-object v2
-.end method
-
-.method public final bridge synthetic get()Ljava/lang/Object;
+.method public final close()V
     .locals 1
 
-    invoke-virtual {p0}, Ldaq;->a()Lict;
+    iget-object v0, p0, Ldaq;->a:Ldbe;
 
-    move-result-object v0
+    invoke-virtual {v0}, Ldbe;->b()V
 
-    return-object v0
+    return-void
 .end method

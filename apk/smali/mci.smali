@@ -1,65 +1,86 @@
-.class final Lmci;
-.super Lolh;
-
-
-# annotations
-.annotation runtime Lolj;
-    b = "com.google.android.libraries.vision.visionkit.f250.internal.uploader.work.upload.OneResourceUploaderImpl"
-    c = "OneResourceUploaderImpl.kt"
-    d = "constructResourceManifest"
-    e = {
-        0x9f
-    }
-.end annotation
+.class public final Lmci;
+.super Ljava/lang/Object;
 
 
 # instance fields
-.field synthetic a:Ljava/lang/Object;
-
-.field final synthetic b:Lmcl;
-
-.field c:I
-
-.field d:Lmcl;
-
-.field e:Llyf;
-
-.field f:Ljava/util/List;
+.field private final a:Landroid/content/ContentValues;
 
 
 # direct methods
-.method public constructor <init>(Lmcl;Loku;)V
+.method public constructor <init>()V
+    .locals 1
+
+    new-instance v0, Landroid/content/ContentValues;
+
+    invoke-direct {v0}, Landroid/content/ContentValues;-><init>()V
+
+    invoke-direct {p0, v0}, Lmci;-><init>(Landroid/content/ContentValues;)V
+
+    return-void
+.end method
+
+.method public constructor <init>(Landroid/content/ContentValues;)V
     .locals 0
 
-    iput-object p1, p0, Lmci;->b:Lmcl;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0, p2}, Lolh;-><init>(Loku;)V
+    iput-object p1, p0, Lmci;->a:Landroid/content/ContentValues;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final b(Ljava/lang/Object;)Ljava/lang/Object;
+.method public final a()Lmcj;
+    .locals 3
+
+    new-instance v0, Lmcj;
+
+    new-instance v1, Landroid/content/ContentValues;
+
+    iget-object v2, p0, Lmci;->a:Landroid/content/ContentValues;
+
+    invoke-direct {v1, v2}, Landroid/content/ContentValues;-><init>(Landroid/content/ContentValues;)V
+
+    invoke-direct {v0, v1}, Lmcj;-><init>(Landroid/content/ContentValues;)V
+
+    return-object v0
+.end method
+
+.method public final b(Ljava/lang/String;I)V
     .locals 1
 
-    iput-object p1, p0, Lmci;->a:Ljava/lang/Object;
+    iget-object v0, p0, Lmci;->a:Landroid/content/ContentValues;
 
-    iget p1, p0, Lmci;->c:I
+    invoke-static {p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    const/high16 v0, -0x80000000
+    move-result-object p2
 
-    or-int/2addr p1, v0
+    invoke-virtual {v0, p1, p2}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
 
-    iput p1, p0, Lmci;->c:I
+    return-void
+.end method
 
-    iget-object p1, p0, Lmci;->b:Lmcl;
+.method public final c(Ljava/lang/String;J)V
+    .locals 1
 
-    const/4 v0, 0x0
+    iget-object v0, p0, Lmci;->a:Landroid/content/ContentValues;
 
-    invoke-virtual {p1, v0, v0, v0, p0}, Lmcl;->c(Llzy;Llyf;Ljava/util/List;Loku;)Ljava/lang/Object;
+    invoke-static {p2, p3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
-    move-result-object p1
+    move-result-object p2
 
-    return-object p1
+    invoke-virtual {v0, p1, p2}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Long;)V
+
+    return-void
+.end method
+
+.method public final d(Ljava/lang/String;Ljava/lang/String;)V
+    .locals 1
+
+    iget-object v0, p0, Lmci;->a:Landroid/content/ContentValues;
+
+    invoke-virtual {v0, p1, p2}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
+
+    return-void
 .end method

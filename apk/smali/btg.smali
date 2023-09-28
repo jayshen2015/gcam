@@ -1,4 +1,4 @@
-.class interface abstract Lbtg;
+.class public interface abstract Lbtg;
 .super Ljava/lang/Object;
 
 

@@ -3,160 +3,98 @@
 
 
 # static fields
-.field public static final a:Lmvv;
+.field public static final a:Lddg;
+
+.field public static final b:Lddg;
+
+.field public static final c:Lddg;
+
+.field public static final d:Lddg;
+
+.field public static final e:Lddg;
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 14
+    .locals 2
 
-    const/16 v0, 0x13
+    new-instance v0, Lddh;
 
-    new-array v13, v0, [Ljava/lang/String;
+    invoke-direct {v0}, Lddh;-><init>()V
 
-    const/4 v0, 0x0
+    const-string v1, "camera.optbar.hdr"
 
-    const-string v1, "/m/0k4j"
+    iput-object v1, v0, Lddh;->a:Ljava/lang/String;
 
-    aput-object v1, v13, v0
+    new-instance v0, Lddh;
 
-    const/4 v0, 0x1
+    invoke-direct {v0}, Lddh;-><init>()V
 
-    const-string v1, "/m/0jnvp"
+    const-string v1, "default_aspect_ratio"
 
-    aput-object v1, v13, v0
+    iput-object v1, v0, Lddh;->a:Ljava/lang/String;
 
-    const/4 v0, 0x2
-
-    const-string v1, "/m/0b3yr"
-
-    aput-object v1, v13, v0
-
-    const/4 v0, 0x3
-
-    const-string v1, "/m/012mj"
-
-    aput-object v1, v13, v0
-
-    const/4 v0, 0x4
-
-    const-string v1, "/m/079cl"
-
-    aput-object v1, v13, v0
-
-    const/4 v0, 0x5
-
-    const-string v1, "/m/0g6b5"
-
-    aput-object v1, v13, v0
-
-    const/4 v0, 0x6
-
-    const-string v1, "/m/0c9ph5"
-
-    aput-object v1, v13, v0
-
-    const/4 v0, 0x7
-
-    const-string v1, "/m/02xwb"
-
-    aput-object v1, v13, v0
-
-    const/16 v0, 0x8
-
-    const-string v1, "/m/03bmqb"
-
-    aput-object v1, v13, v0
-
-    const/16 v0, 0x9
-
-    const-string v1, "/m/01g317"
-
-    aput-object v1, v13, v0
-
-    const/16 v0, 0xa
-
-    const-string v1, "/m/011l78"
-
-    aput-object v1, v13, v0
-
-    const/16 v0, 0xb
-
-    const-string v1, "/m/06ntj"
-
-    aput-object v1, v13, v0
-
-    const/16 v0, 0xc
-
-    const-string v1, "/m/025xryy"
-
-    aput-object v1, v13, v0
-
-    const/16 v0, 0xd
-
-    const-string v1, "/m/02h00q"
-
-    aput-object v1, v13, v0
-
-    const/16 v0, 0xe
-
-    const-string v1, "/m/02qdwbp"
-
-    aput-object v1, v13, v0
-
-    const/16 v0, 0xf
-
-    const-string v1, "/m/0j2kx"
-
-    aput-object v1, v13, v0
-
-    const/16 v0, 0x10
-
-    const-string v1, "/m/03qtwd"
-
-    aput-object v1, v13, v0
-
-    const/16 v0, 0x11
-
-    const-string v1, "/m/0204fg"
-
-    aput-object v1, v13, v0
-
-    const/16 v0, 0x12
-
-    const-string v1, "/m/0cgh4"
-
-    aput-object v1, v13, v0
-
-    const-string v1, "/m/0bt9lr"
-
-    const-string v2, "/m/01yrx"
-
-    const-string v3, "/m/068hy"
-
-    const-string v4, "/m/02wbm"
-
-    const-string v5, "/m/0dzct"
-
-    const-string v6, "/m/0sgh53y"
-
-    const-string v7, "/m/04h4w"
-
-    const-string v8, "/m/06cnp"
-
-    const-string v9, "/m/0brn2d"
-
-    const-string v10, "/m/01bqvp"
-
-    const-string v11, "/m/06_dn"
-
-    const-string v12, "/m/01b2w5"
-
-    invoke-static/range {v1 .. v13}, Lmvv;->q(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;[Ljava/lang/Object;)Lmvv;
+    invoke-virtual {v0}, Lddh;->f()Lddg;
 
     move-result-object v0
 
-    sput-object v0, Lddv;->a:Lmvv;
+    sput-object v0, Lddv;->a:Lddg;
+
+    new-instance v0, Lddh;
+
+    invoke-direct {v0}, Lddh;-><init>()V
+
+    const-string v1, "camera.use_video_resolution_option"
+
+    iput-object v1, v0, Lddh;->a:Ljava/lang/String;
+
+    invoke-virtual {v0}, Lddh;->f()Lddg;
+
+    move-result-object v0
+
+    sput-object v0, Lddv;->b:Lddg;
+
+    new-instance v0, Lddh;
+
+    invoke-direct {v0}, Lddh;-><init>()V
+
+    const-string v1, "camera.optbar.show_auto_flash_option"
+
+    iput-object v1, v0, Lddh;->a:Ljava/lang/String;
+
+    invoke-virtual {v0}, Lddh;->d()Lddg;
+
+    move-result-object v0
+
+    sput-object v0, Lddv;->c:Lddg;
+
+    new-instance v0, Lddh;
+
+    invoke-direct {v0}, Lddh;-><init>()V
+
+    const-string v1, "camera.optbar.standalone_settings_button"
+
+    iput-object v1, v0, Lddh;->a:Ljava/lang/String;
+
+    invoke-virtual {v0}, Lddh;->f()Lddg;
+
+    move-result-object v0
+
+    sput-object v0, Lddv;->d:Lddg;
+
+    new-instance v0, Lddh;
+
+    invoke-direct {v0}, Lddh;-><init>()V
+
+    const-string v1, "camera.optbar.icons_on_closed_menu"
+
+    iput-object v1, v0, Lddh;->a:Ljava/lang/String;
+
+    invoke-virtual {v0}, Lddh;->f()Lddg;
+
+    move-result-object v0
+
+    sput-object v0, Lddv;->e:Lddg;
 
     return-void
 .end method

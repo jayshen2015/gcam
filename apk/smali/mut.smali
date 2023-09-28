@@ -1,9 +1,12 @@
-.class public abstract Lmut;
+.class public final Lmut;
 .super Ljava/lang/Object;
+
+# interfaces
+.implements Ljava/util/concurrent/RejectedExecutionHandler;
 
 
 # direct methods
-.method protected constructor <init>()V
+.method public constructor <init>()V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -13,19 +16,8 @@
 
 
 # virtual methods
-.method protected abstract a()Ljava/lang/Object;
-.end method
+.method public final rejectedExecution(Ljava/lang/Runnable;Ljava/util/concurrent/ThreadPoolExecutor;)V
+    .locals 0
 
-.method public toString()Ljava/lang/String;
-    .locals 1
-
-    invoke-virtual {p0}, Lmut;->a()Ljava/lang/Object;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/Object;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    return-object v0
+    return-void
 .end method

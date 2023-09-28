@@ -1,30 +1,22 @@
-.class public final Ldiq;
-.super Ljava/lang/Object;
-
-
-# static fields
-.field public static final a:Llox;
+.class final Ldiq;
+.super Laiy;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
+.method public constructor <init>(Laii;)V
+    .locals 0
 
-    new-instance v0, Llox;
-
-    const-string v1, "com.google.android.apps.camera"
-
-    invoke-static {v1}, Llol;->a(Ljava/lang/String;)Landroid/net/Uri;
-
-    move-result-object v1
-
-    invoke-direct {v0, v1}, Llox;-><init>(Landroid/net/Uri;)V
-
-    invoke-virtual {v0}, Llox;->b()Llox;
-
-    move-result-object v0
-
-    sput-object v0, Ldiq;->a:Llox;
+    invoke-direct {p0, p1}, Laiy;-><init>(Laii;)V
 
     return-void
+.end method
+
+
+# virtual methods
+.method public final d()Ljava/lang/String;
+    .locals 1
+
+    const-string v0, "UPDATE shots SET most_recent_event_millis = ? WHERE shot_id = ?"
+
+    return-object v0
 .end method

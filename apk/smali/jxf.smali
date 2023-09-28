@@ -1,22 +1,28 @@
-.class public final Ljxf;
+.class public interface abstract Ljxf;
 .super Ljava/lang/Object;
 
 
 # static fields
-.field public static final a:Lims;
+.field public static final m:Ljxf;
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 2
+    .locals 1
 
-    new-instance v0, Lims;
+    new-instance v0, Ljxe;
 
-    const/16 v1, 0xd
+    invoke-direct {v0}, Ljxe;-><init>()V
 
-    invoke-direct {v0, v1}, Lims;-><init>(I)V
-
-    sput-object v0, Ljxf;->a:Lims;
+    sput-object v0, Ljxf;->m:Ljxf;
 
     return-void
+.end method
+
+
+# virtual methods
+.method public abstract b()V
+.end method
+
+.method public abstract g()V
 .end method

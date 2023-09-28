@@ -52,12 +52,10 @@
 
 
 # virtual methods
-.method public final a(Lnqb;)F
+.method public final a(I)F
     .locals 2
 
     iget-wide v0, p0, Lcom/google/googlex/gcam/AeResults;->a:J
-
-    iget p1, p1, Lnqb;->c:I
 
     invoke-static {v0, v1, p0, p1}, Lcom/google/googlex/gcam/GcamModuleJNI;->AeResults_FinalTet(JLcom/google/googlex/gcam/AeResults;I)F
 

@@ -1,26 +1,22 @@
 .class public final Lmxr;
-.super Lmzv;
+.super Ljava/lang/Object;
+
+
+# static fields
+.field public static final a:Louj;
 
 
 # direct methods
-.method public constructor <init>(Ljava/util/Iterator;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 1
 
-    invoke-direct {p0, p1}, Lmzv;-><init>(Ljava/util/Iterator;)V
+    const-string v0, "com/google/android/libraries/performance/primes/metrics/core/PrimesCoreMetricDaggerModule"
+
+    invoke-static {v0}, Louj;->h(Ljava/lang/String;)Louj;
+
+    move-result-object v0
+
+    sput-object v0, Lmxr;->a:Louj;
 
     return-void
-.end method
-
-
-# virtual methods
-.method public final bridge synthetic a(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 0
-
-    check-cast p1, Ljava/util/Map$Entry;
-
-    invoke-interface {p1}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
-
-    move-result-object p1
-
-    return-object p1
 .end method

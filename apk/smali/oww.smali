@@ -1,46 +1,87 @@
-.class final Loww;
+.class public final Loww;
 .super Ljava/lang/Object;
 
 
-# instance fields
-.field public final a:Lowr;
+# static fields
+.field private static final a:Ljava/util/concurrent/atomic/AtomicBoolean;
 
 
 # direct methods
-.method public constructor <init>(Lowr;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 2
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance v0, Ljava/util/concurrent/atomic/AtomicBoolean;
 
-    iput-object p1, p0, Loww;->a:Lowr;
+    const/4 v1, 0x0
+
+    invoke-direct {v0, v1}, Ljava/util/concurrent/atomic/AtomicBoolean;-><init>(Z)V
+
+    sput-object v0, Loww;->a:Ljava/util/concurrent/atomic/AtomicBoolean;
 
     return-void
 .end method
 
-
-# virtual methods
-.method public final toString()Ljava/lang/String;
+.method public static a(Lowv;)V
     .locals 3
 
-    iget-object v0, p0, Loww;->a:Lowr;
+    sget-object v0, Loww;->a:Ljava/util/concurrent/atomic/AtomicBoolean;
 
-    new-instance v1, Ljava/lang/StringBuilder;
+    const/4 v1, 0x0
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+    const/4 v2, 0x1
 
-    const-string v2, "Removed["
+    invoke-virtual {v0, v1, v2}, Ljava/util/concurrent/atomic/AtomicBoolean;->compareAndSet(ZZ)Z
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result v0
 
-    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    if-eqz v0, :cond_2
 
-    const-string v0, "]"
+    iget-object p0, p0, Lowv;->a:Lowu;
 
-    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    if-nez p0, :cond_0
 
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    new-instance p0, Loxe;
 
-    move-result-object v0
+    invoke-direct {p0}, Loxe;-><init>()V
 
-    return-object v0
+    :cond_0
+    sget-object v0, Loxc;->a:Ljava/util/concurrent/atomic/AtomicReference;
+
+    const/4 v1, 0x0
+
+    invoke-virtual {v0, v1, p0}, Ljava/util/concurrent/atomic/AtomicReference;->compareAndSet(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result p0
+
+    if-eqz p0, :cond_1
+
+    invoke-static {}, Loxc;->e()V
+
+    sget-object p0, Loxd;->a:Loxd;
+
+    iget-object p0, p0, Loxd;->b:Ljava/util/concurrent/atomic/AtomicReference;
+
+    sget-object v0, Loxj;->a:Loxh;
+
+    invoke-virtual {p0, v0}, Ljava/util/concurrent/atomic/AtomicReference;->set(Ljava/lang/Object;)V
+
+    return-void
+
+    :cond_1
+    new-instance p0, Ljava/lang/IllegalStateException;
+
+    const-string v0, "Logger backends can only be configured once."
+
+    invoke-direct {p0, v0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw p0
+
+    :cond_2
+    new-instance p0, Ljava/lang/IllegalStateException;
+
+    const-string v0, "Logger backend configuration may only occur once."
+
+    invoke-direct {p0, v0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw p0
 .end method

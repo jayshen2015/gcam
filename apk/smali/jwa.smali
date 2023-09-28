@@ -1,48 +1,44 @@
-.class public final Ljwa;
+.class public final synthetic Ljwa;
 .super Ljava/lang/Object;
 
+# interfaces
+.implements Landroid/view/View$OnTouchListener;
 
-# static fields
-.field public static final a:Lkad;
+
+# instance fields
+.field public final synthetic a:Ljwd;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
+.method public synthetic constructor <init>(Ljwd;)V
+    .locals 0
 
-    new-instance v0, Lgnl;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const/16 v1, 0xe
-
-    invoke-direct {v0, v1}, Lgnl;-><init>(I)V
-
-    sput-object v0, Ljwa;->a:Lkad;
+    iput-object p1, p0, Ljwa;->a:Ljwd;
 
     return-void
 .end method
 
-.method public static a(Ljava/lang/Object;)Ljwb;
+
+# virtual methods
+.method public final onTouch(Landroid/view/View;Landroid/view/MotionEvent;)Z
     .locals 1
 
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    iget-object p1, p0, Ljwa;->a:Ljwd;
 
-    new-instance v0, Ljvz;
+    invoke-virtual {p2}, Landroid/view/MotionEvent;->getAction()I
 
-    invoke-direct {v0, p0}, Ljvz;-><init>(Ljava/lang/Object;)V
+    move-result p2
 
-    return-object v0
-.end method
+    const/4 v0, 0x1
 
-.method public static b(Ljwb;Lmqi;Lmqi;)Ljwb;
-    .locals 1
+    if-ne p2, v0, :cond_0
 
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    iget-object p1, p1, Ljwd;->b:Ljvb;
 
-    invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    invoke-virtual {p1}, Ljuy;->c()V
 
-    new-instance v0, Ljvy;
-
-    invoke-direct {v0, p0, p1, p2}, Ljvy;-><init>(Ljwb;Lmqi;Lmqi;)V
-
-    return-object v0
+    :cond_0
+    return v0
 .end method

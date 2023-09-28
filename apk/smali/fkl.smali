@@ -1,22 +1,37 @@
-.class public final Lfkl;
+.class public final synthetic Lfkl;
 .super Ljava/lang/Object;
 
+# interfaces
+.implements Llij;
 
-# static fields
-.field public static final a:Lfiw;
+
+# instance fields
+.field public final synthetic a:Lbod;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
+.method public synthetic constructor <init>(Lbod;)V
+    .locals 0
 
-    new-instance v0, Lfiw;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const/16 v1, 0xc
+    iput-object p1, p0, Lfkl;->a:Lbod;
 
-    invoke-direct {v0, v1}, Lfiw;-><init>(I)V
+    return-void
+.end method
 
-    sput-object v0, Lfkl;->a:Lfiw;
+
+# virtual methods
+.method public final fB(Ljava/lang/Object;)V
+    .locals 1
+
+    iget-object v0, p0, Lfkl;->a:Lbod;
+
+    check-cast p1, Ljrl;
+
+    invoke-static {}, Llar;->a()V
+
+    iput-object p1, v0, Lbod;->a:Ljrl;
 
     return-void
 .end method

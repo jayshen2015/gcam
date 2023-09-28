@@ -1,66 +1,79 @@
-.class public final Ljst;
-.super Ljhn;
+.class public final synthetic Ljst;
+.super Ljava/lang/Object;
 
-
-# static fields
-.field public static final CREATOR:Landroid/os/Parcelable$Creator;
+# interfaces
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field public final a:I
+.field public final synthetic a:Ljsu;
 
-.field public final b:Ljqy;
+.field public final synthetic b:I
+
+.field public final synthetic c:I
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
-
-    new-instance v0, Ljro;
-
-    const/16 v1, 0x12
-
-    invoke-direct {v0, v1}, Ljro;-><init>(I)V
-
-    sput-object v0, Ljst;->CREATOR:Landroid/os/Parcelable$Creator;
-
-    return-void
-.end method
-
-.method public constructor <init>(ILjqy;)V
+.method public synthetic constructor <init>(Ljsu;II)V
     .locals 0
 
-    invoke-direct {p0}, Ljhn;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput p1, p0, Ljst;->a:I
+    iput-object p1, p0, Ljst;->a:Ljsu;
 
-    iput-object p2, p0, Ljst;->b:Ljqy;
+    iput p2, p0, Ljst;->c:I
+
+    iput p3, p0, Ljst;->b:I
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final writeToParcel(Landroid/os/Parcel;I)V
-    .locals 3
+.method public final run()V
+    .locals 6
 
-    invoke-static {p1}, Ljhp;->a(Landroid/os/Parcel;)I
+    iget-object v0, p0, Ljst;->a:Ljsu;
 
-    move-result v0
+    iget v1, p0, Ljst;->c:I
 
-    iget v1, p0, Ljst;->a:I
+    iget v2, p0, Ljst;->b:I
 
-    const/4 v2, 0x2
+    iget-object v0, v0, Ljsu;->c:Landroid/content/Context;
 
-    invoke-static {p1, v2, v1}, Ljhp;->g(Landroid/os/Parcel;II)V
+    sget-object v3, Ljava/util/Locale;->US:Ljava/util/Locale;
 
-    iget-object v1, p0, Ljst;->b:Ljqy;
+    const/4 v4, 0x2
 
-    const/4 v2, 0x3
+    new-array v4, v4, [Ljava/lang/Object;
 
-    invoke-static {p1, v2, v1, p2}, Ljhp;->o(Landroid/os/Parcel;ILandroid/os/Parcelable;I)V
+    invoke-static {v1}, Loxh;->ac(I)Ljava/lang/String;
 
-    invoke-static {p1, v0}, Ljhp;->c(Landroid/os/Parcel;I)V
+    move-result-object v1
+
+    const/4 v5, 0x0
+
+    aput-object v1, v4, v5
+
+    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v1
+
+    const/4 v2, 0x1
+
+    aput-object v1, v4, v2
+
+    const-string v1, "Update failed! type=%s, code=%d. Please file a bug report."
+
+    invoke-static {v3, v1, v4}, Ljava/lang/String;->format(Ljava/util/Locale;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v0, v1, v5}, Landroid/widget/Toast;->makeText(Landroid/content/Context;Ljava/lang/CharSequence;I)Landroid/widget/Toast;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroid/widget/Toast;->show()V
 
     return-void
 .end method

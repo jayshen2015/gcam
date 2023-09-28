@@ -2,28 +2,20 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Logk;
+.implements Lpys;
 
 
 # instance fields
-.field private final a:Loiw;
-
-.field private final b:Loiw;
-
-.field private final c:Loiw;
+.field private final a:Lqkg;
 
 
 # direct methods
-.method public constructor <init>(Loiw;Loiw;Loiw;)V
+.method public constructor <init>(Lqkg;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Leiu;->a:Loiw;
-
-    iput-object p2, p0, Leiu;->b:Loiw;
-
-    iput-object p3, p0, Leiu;->c:Loiw;
+    iput-object p1, p0, Leiu;->a:Lqkg;
 
     return-void
 .end method
@@ -33,33 +25,17 @@
 .method public final a()Leit;
     .locals 2
 
-    iget-object v0, p0, Leiu;->a:Loiw;
+    iget-object v0, p0, Leiu;->a:Lqkg;
 
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Leir;
-
-    iget-object v0, p0, Leiu;->b:Loiw;
-
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
+    invoke-interface {v0}, Lqkg;->get()Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Leik;
-
-    iget-object v0, p0, Leiu;->c:Loiw;
-
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ldhi;
+    check-cast v0, Leij;
 
     new-instance v1, Leit;
 
-    invoke-direct {v1, v0}, Leit;-><init>(Ldhi;)V
+    invoke-direct {v1, v0}, Leit;-><init>(Leij;)V
 
     return-object v1
 .end method

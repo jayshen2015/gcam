@@ -1,118 +1,162 @@
 .class public final Lcdo;
 .super Ljava/lang/Object;
 
-# interfaces
-.implements Lcik;
-
 
 # instance fields
-.field public final a:Ldbz;
+.field public final a:Llmr;
 
-.field public final b:Lcom/google/android/apps/camera/stats/timing/CameraActivityTiming;
-
-.field public final c:Ldns;
-
-.field public final d:Ljava/util/concurrent/Executor;
-
-.field public final e:Lcvr;
-
-.field private final f:Lcdn;
+.field public final b:Llnx;
 
 
 # direct methods
-.method public constructor <init>(Lcdn;Ldbz;Lcom/google/android/apps/camera/stats/timing/CameraActivityTiming;Lcvr;Ldns;Ljava/util/concurrent/Executor;[B)V
+.method public constructor <init>()V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lcdo;->f:Lcdn;
+    return-void
+.end method
 
-    iput-object p2, p0, Lcdo;->a:Ldbz;
+.method public constructor <init>(Llmr;Llnx;)V
+    .locals 0
 
-    iput-object p3, p0, Lcdo;->b:Lcom/google/android/apps/camera/stats/timing/CameraActivityTiming;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p4, p0, Lcdo;->e:Lcvr;
+    iput-object p1, p0, Lcdo;->a:Llmr;
 
-    iput-object p5, p0, Lcdo;->c:Ldns;
-
-    iput-object p6, p0, Lcdo;->d:Ljava/util/concurrent/Executor;
+    iput-object p2, p0, Lcdo;->b:Llnx;
 
     return-void
 .end method
 
-.method public static a(Ldmy;)Lkbo;
-    .locals 0
-
-    iget-object p0, p0, Ldmy;->b:Lkbo;
-
-    if-nez p0, :cond_0
-
-    sget-object p0, Lkbo;->m:Lkbo;
-
-    :cond_0
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    return-object p0
-.end method
-
 
 # virtual methods
-.method public final bl()Lnou;
+.method public final equals(Ljava/lang/Object;)Z
     .locals 4
 
-    iget-object v0, p0, Lcdo;->b:Lcom/google/android/apps/camera/stats/timing/CameraActivityTiming;
+    const/4 v0, 0x1
 
-    sget-object v1, Lhju;->e:Lhju;
+    if-ne p1, p0, :cond_0
 
-    sget-object v2, Lcom/google/android/apps/camera/stats/timing/CameraActivityTiming;->b:Lhkg;
+    return v0
 
-    invoke-virtual {v0, v1, v2}, Lhkh;->i(Ljava/lang/Enum;Lhkg;)V
+    :cond_0
+    instance-of v1, p1, Lcdo;
 
-    iget-object v1, v0, Lcom/google/android/apps/camera/stats/timing/CameraActivityTiming;->e:Lkbc;
+    const/4 v2, 0x0
 
-    const-string v2, "waitForCameraDevice"
+    if-eqz v1, :cond_1
 
-    invoke-interface {v1, v2}, Lkbc;->a(Ljava/lang/String;)Lkbf;
+    check-cast p1, Lcdo;
+
+    iget-object v1, p0, Lcdo;->a:Llmr;
+
+    iget-object v3, p1, Lcdo;->a:Llmr;
+
+    invoke-virtual {v1, v3}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_1
+
+    iget-object v1, p0, Lcdo;->b:Llnx;
+
+    iget-object p1, p1, Lcdo;->b:Llnx;
+
+    invoke-virtual {v1, p1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+
+    move-result p1
+
+    if-eqz p1, :cond_1
+
+    return v0
+
+    :cond_1
+    return v2
+.end method
+
+.method public final hashCode()I
+    .locals 2
+
+    iget-object v0, p0, Lcdo;->a:Llmr;
+
+    invoke-virtual {v0}, Ljava/lang/Object;->hashCode()I
+
+    move-result v0
+
+    const v1, 0xf4243
+
+    xor-int/2addr v0, v1
+
+    mul-int v0, v0, v1
+
+    iget-object v1, p0, Lcdo;->b:Llnx;
+
+    invoke-virtual {v1}, Ljava/lang/Object;->hashCode()I
+
+    move-result v1
+
+    xor-int/2addr v0, v1
+
+    return v0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .locals 5
+
+    iget-object v0, p0, Lcdo;->a:Llmr;
+
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lcdo;->b:Llnx;
+
+    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v1
 
-    iput-object v1, v0, Lcom/google/android/apps/camera/stats/timing/CameraActivityTiming;->i:Lkbf;
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
-    iget-object v0, p0, Lcdo;->f:Lcdn;
+    move-result-object v2
 
-    invoke-virtual {v0}, Lcdn;->a()Lnou;
+    invoke-virtual {v2}, Ljava/lang/String;->length()I
 
-    move-result-object v0
+    move-result v2
 
-    new-instance v1, Lcdu;
+    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
-    const/4 v2, 0x1
+    move-result-object v3
 
-    invoke-direct {v1, p0, v2}, Lcdu;-><init>(Lcdo;I)V
+    invoke-virtual {v3}, Ljava/lang/String;->length()I
 
-    sget-object v2, Lnnv;->a:Lnnv;
+    move-result v3
 
-    invoke-static {v0, v1, v2}, Lnnf;->i(Lnou;Lmqi;Ljava/util/concurrent/Executor;)Lnou;
+    new-instance v4, Ljava/lang/StringBuilder;
 
-    move-result-object v0
+    add-int/lit8 v2, v2, 0x1d
 
-    const-class v1, Ljava/lang/Throwable;
+    add-int/2addr v2, v3
 
-    sget-object v2, Letf;->b:Letf;
+    invoke-direct {v4, v2}, Ljava/lang/StringBuilder;-><init>(I)V
 
-    sget-object v3, Lnnv;->a:Lnnv;
+    const-string v2, "FrameFeature{frame="
 
-    invoke-static {v0, v1, v2, v3}, Lnml;->j(Lnou;Ljava/lang/Class;Lnno;Ljava/util/concurrent/Executor;)Lnou;
+    invoke-virtual {v4, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v0
+    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    return-object v0
-.end method
+    const-string v0, ", stream="
 
-.method public final synthetic c()Ljava/lang/String;
-    .locals 1
+    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-static {p0}, Ldez;->d(Lcik;)Ljava/lang/String;
+    invoke-virtual {v4, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v0, "}"
+
+    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v0
 

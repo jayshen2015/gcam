@@ -1,32 +1,30 @@
-.class final Lcid;
-.super Landroid/view/View$AccessibilityDelegate;
+.class public final Lcid;
+.super Ljava/lang/Object;
+
+
+# instance fields
+.field public final a:Z
+
+.field public final b:Lcje;
+
+.field public final c:Lojc;
+
+.field public final d:Lojc;
 
 
 # direct methods
-.method public constructor <init>()V
+.method public constructor <init>(ZLcje;Lojc;Lojc;)V
     .locals 0
 
-    invoke-direct {p0}, Landroid/view/View$AccessibilityDelegate;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    return-void
-.end method
+    iput-boolean p1, p0, Lcid;->a:Z
 
+    iput-object p2, p0, Lcid;->b:Lcje;
 
-# virtual methods
-.method public final onInitializeAccessibilityNodeInfo(Landroid/view/View;Landroid/view/accessibility/AccessibilityNodeInfo;)V
-    .locals 1
+    iput-object p3, p0, Lcid;->d:Lojc;
 
-    invoke-super {p0, p1, p2}, Landroid/view/View$AccessibilityDelegate;->onInitializeAccessibilityNodeInfo(Landroid/view/View;Landroid/view/accessibility/AccessibilityNodeInfo;)V
-
-    invoke-virtual {p2}, Landroid/view/accessibility/AccessibilityNodeInfo;->getExtras()Landroid/os/Bundle;
-
-    move-result-object p1
-
-    const-string p2, "AccessibilityNodeInfo.hasImageForOCR"
-
-    const/4 v0, 0x1
-
-    invoke-virtual {p1, p2, v0}, Landroid/os/Bundle;->putBoolean(Ljava/lang/String;Z)V
+    iput-object p4, p0, Lcid;->c:Lojc;
 
     return-void
 .end method

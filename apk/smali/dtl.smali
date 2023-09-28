@@ -1,47 +1,41 @@
-.class public final Ldtl;
+.class public final synthetic Ldtl;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Ldsu;
+.implements Ldti;
 
 
 # instance fields
-.field final synthetic a:Ljava/lang/Runnable;
+.field public final synthetic a:Ldtk;
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/Runnable;)V
+.method public synthetic constructor <init>(Ldtk;)V
     .locals 0
 
-    iput-object p1, p0, Ldtl;->a:Ljava/lang/Runnable;
-
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Ldtl;->a:Ldtk;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()V
-    .locals 0
+.method public final a(J[F)I
+    .locals 1
 
-    return-void
-.end method
+    iget-object v0, p0, Ldtl;->a:Ldtk;
 
-.method public final c(Lkli;)V
-    .locals 0
+    invoke-interface {v0, p1, p2}, Ldtk;->a(J)F
 
-    iget-object p1, p0, Ldtl;->a:Ljava/lang/Runnable;
+    move-result p1
 
-    invoke-interface {p1}, Ljava/lang/Runnable;->run()V
+    const/4 p2, 0x0
 
-    return-void
-.end method
+    aput p1, p3, p2
 
-.method public final synthetic d(Lkli;Lcea;)V
-    .locals 0
+    const/4 p1, 0x1
 
-    invoke-static {p0, p1}, Ldst;->a(Ldsu;Lkli;)V
-
-    return-void
+    return p1
 .end method

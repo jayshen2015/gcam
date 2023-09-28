@@ -1,12 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <plurals name="accessibility_timelapse_manual_record_speed_desc">
-        <item quantity="other">টাইম ল্যাপ্স %d গুণ স্পিড</item>
-        <item quantity="one">টাইম ল্যাপ্স %d গুণ স্পিড</item>
-    </plurals>
-    <plurals name="number_of_cropped_face">
-        <item quantity="other">%dটি ক্রপ করা হয়েছে।</item>
-        <item quantity="one">%dটি ক্রপ করা হয়েছে।</item>
+    <plurals name="number_of_faces_announcement">
+        <item quantity="other">%1$dটি মুখ৷</item>
+        <item quantity="one">%1$dটি মুখ৷</item>
     </plurals>
     <plurals name="photos_remaining">
         <item quantity="other">প্রায় %sটি ফটো তোলা যাবে</item>
@@ -17,8 +13,8 @@
         <item quantity="one">(%1$dটি অ্যাপ বেছে নেওয়া হয়েছে)</item>
     </plurals>
     <plurals name="social_share_info">
-        <item quantity="other">"ক্যামেরা থেকে সামাজিক অ্যাপে ফটো ও ভিডিও ঝটপট শেয়ার করুন। সর্বাধিক %1$dটি অ্যাপ বেছে নিন। 'লক করা ফোল্ডারে' সেভ থাকা ফটো ও ভিডিও শেয়ার করা যাবে না।"</item>
-        <item quantity="one">"ক্যামেরা থেকে সামাজিক অ্যাপে ফটো ও ভিডিও ঝটপট শেয়ার করুন। সর্বাধিক %1$dটি অ্যাপ বেছে নিন। 'লক করা ফোল্ডারে' সেভ থাকা ফটো ও ভিডিও শেয়ার করা যাবে না।"</item>
+        <item quantity="other">ক্যামেরা থেকে সরাসরি সামাজিক অ্যাপে ফটো ও ভিডিও দ্রুত শেয়ার করুন। সর্বাধিক %1$dটি অ্যাপ বেছে নিন। লক করা ফোল্ডারে সেভ থাকা ফটো ও ভিডিও শেয়ার করা যাবে না।</item>
+        <item quantity="one">ক্যামেরা থেকে সরাসরি সামাজিক অ্যাপে ফটো ও ভিডিও দ্রুত শেয়ার করুন। সর্বাধিক %1$dটি অ্যাপ বেছে নিন। লক করা ফোল্ডারে সেভ থাকা ফটো ও ভিডিও শেয়ার করা যাবে না।</item>
     </plurals>
     <plurals name="social_share_select_error">
         <item quantity="other">সর্বাধিক %1$dটি অ্যাপ বেছে নিন</item>

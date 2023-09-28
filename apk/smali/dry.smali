@@ -1,19 +1,22 @@
-.class public interface abstract Ldry;
+.class public final Ldry;
 .super Ljava/lang/Object;
 
 
-# virtual methods
-.method public abstract a()Landroid/hardware/HardwareBuffer;
-.end method
+# static fields
+.field public static final a:Ldln;
 
-.method public abstract b(Landroid/hardware/HardwareBuffer;)Ldrz;
-.end method
 
-.method public abstract c(Llbd;)Llde;
-.end method
+# direct methods
+.method static constructor <clinit>()V
+    .locals 2
 
-.method public abstract d()Ljava/lang/Object;
-.end method
+    new-instance v0, Ldln;
 
-.method public abstract e()V
+    const/16 v1, 0xb
+
+    invoke-direct {v0, v1}, Ldln;-><init>(I)V
+
+    sput-object v0, Ldry;->a:Ldln;
+
+    return-void
 .end method

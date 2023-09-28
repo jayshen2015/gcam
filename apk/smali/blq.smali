@@ -1,24 +1,26 @@
-.class final Lblq;
-.super Ljava/lang/ThreadLocal;
+.class public final Lblq;
+.super Ljava/lang/Object;
+
+
+# instance fields
+.field public final a:I
+
+.field public final b:I
+
+.field public final c:[B
 
 
 # direct methods
-.method public constructor <init>()V
+.method public constructor <init>([BII)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/ThreadLocal;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lblq;->c:[B
+
+    iput p2, p0, Lblq;->a:I
+
+    iput p3, p0, Lblq;->b:I
 
     return-void
-.end method
-
-
-# virtual methods
-.method protected final bridge synthetic initialValue()Ljava/lang/Object;
-    .locals 1
-
-    new-instance v0, Landroid/graphics/Path;
-
-    invoke-direct {v0}, Landroid/graphics/Path;-><init>()V
-
-    return-object v0
 .end method

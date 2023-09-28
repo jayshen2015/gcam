@@ -2,90 +2,127 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lfzy;
+.implements Llij;
 
 
 # instance fields
-.field public a:Z
+.field final synthetic a:Lfzx;
 
-.field final synthetic b:Lfzv;
+.field private b:Z
+
+.field private final synthetic c:I
 
 
 # direct methods
-.method public constructor <init>(Lfzv;)V
+.method public constructor <init>(Lfzx;I)V
     .locals 0
 
-    iput-object p1, p0, Lfzu;->b:Lfzv;
+    iput p2, p0, Lfzu;->c:I
+
+    iput-object p1, p0, Lfzu;->a:Lfzx;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const/4 p1, 0x0
+    const/4 p1, 0x1
 
-    iput-boolean p1, p0, Lfzu;->a:Z
+    iput-boolean p1, p0, Lfzu;->b:Z
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic b()V
-    .locals 0
-
-    return-void
-.end method
-
-.method public final bridge synthetic bn(Ljava/lang/Object;)V
+.method public final synthetic fB(Ljava/lang/Object;)V
     .locals 2
 
-    check-cast p1, Ljava/lang/Void;
+    iget v0, p0, Lfzu;->c:I
 
-    iget-object p1, p0, Lfzu;->b:Lfzv;
+    const/4 v1, 0x0
 
-    iget-object p1, p1, Lfzv;->b:Ljuh;
+    packed-switch v0, :pswitch_data_0
 
-    new-instance v0, Lfzr;
+    check-cast p1, Lhtl;
 
-    const/4 v1, 0x7
+    iget-object p1, p0, Lfzu;->a:Lfzx;
 
-    invoke-direct {v0, p0, v1}, Lfzr;-><init>(Lfzu;I)V
+    iget-object p1, p1, Lfzx;->m:Ljava/lang/Object;
 
-    invoke-virtual {p1, v0}, Ljuh;->execute(Ljava/lang/Runnable;)V
+    monitor-enter p1
 
-    return-void
-.end method
+    goto :goto_0
 
-.method public final e(I)V
-    .locals 0
+    :pswitch_0
+    check-cast p1, Lhtk;
 
-    return-void
-.end method
+    iget-object p1, p0, Lfzu;->a:Lfzx;
 
-.method public final f(Z)V
-    .locals 0
+    iget-object v0, p1, Lfzx;->m:Ljava/lang/Object;
 
-    return-void
-.end method
+    monitor-enter v0
 
-.method public final g(J)V
-    .locals 0
+    :try_start_0
+    iget-boolean p1, p0, Lfzu;->b:Z
 
-    return-void
-.end method
+    if-eqz p1, :cond_0
 
-.method public final h()V
-    .locals 3
+    iput-boolean v1, p0, Lfzu;->b:Z
 
-    iget-object v0, p0, Lfzu;->b:Lfzv;
-
-    iget-object v0, v0, Lfzv;->b:Ljuh;
-
-    new-instance v1, Lfzr;
-
-    const/4 v2, 0x7
-
-    invoke-direct {v1, p0, v2}, Lfzr;-><init>(Lfzu;I)V
-
-    invoke-virtual {v0, v1}, Ljuh;->execute(Ljava/lang/Runnable;)V
+    monitor-exit v0
 
     return-void
+
+    :cond_0
+    iget-object p1, p0, Lfzu;->a:Lfzx;
+
+    invoke-virtual {p1}, Lfzx;->u()V
+
+    monitor-exit v0
+
+    return-void
+
+    :catchall_0
+    move-exception p1
+
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw p1
+
+    :goto_0
+    :try_start_1
+    iget-boolean v0, p0, Lfzu;->b:Z
+
+    if-eqz v0, :cond_1
+
+    iput-boolean v1, p0, Lfzu;->b:Z
+
+    monitor-exit p1
+
+    return-void
+
+    :cond_1
+    iget-object v0, p0, Lfzu;->a:Lfzx;
+
+    invoke-virtual {v0}, Lfzx;->u()V
+
+    monitor-exit p1
+
+    return-void
+
+    :catchall_1
+    move-exception v0
+
+    monitor-exit p1
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_1
+
+    throw v0
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

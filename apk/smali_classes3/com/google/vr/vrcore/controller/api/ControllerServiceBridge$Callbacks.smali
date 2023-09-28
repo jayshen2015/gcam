@@ -3,13 +3,13 @@
 
 
 # virtual methods
-.method public abstract a(Lofk;)V
+.method public abstract a(Lpxs;)V
 .end method
 
-.method public abstract b(Lofj;)V
+.method public abstract b(Lpxr;)V
 .end method
 
-.method public abstract c(Lofn;)V
+.method public abstract c(Lpxv;)V
 .end method
 
 .method public abstract d(II)V

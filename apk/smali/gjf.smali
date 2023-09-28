@@ -2,58 +2,42 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lfsk;
+.implements Lpys;
 
 
 # instance fields
-.field final synthetic a:Lgnk;
-
-.field private final synthetic b:I
+.field private final a:Lgiu;
 
 
 # direct methods
-.method public constructor <init>(Lgnk;I)V
+.method public constructor <init>(Lgiu;)V
     .locals 0
 
-    iput p2, p0, Lgjf;->b:I
-
-    iput-object p1, p0, Lgjf;->a:Lgnk;
-
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lgjf;->a:Lgiu;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(J)Lkeb;
+.method public final a()Lnez;
     .locals 1
 
-    iget v0, p0, Lgjf;->b:I
+    iget-object v0, p0, Lgjf;->a:Lgiu;
 
-    packed-switch v0, :pswitch_data_0
+    iget-object v0, v0, Lgiu;->j:Lnez;
 
-    iget-object v0, p0, Lgjf;->a:Lgnk;
+    return-object v0
+.end method
 
-    invoke-interface {v0, p1, p2}, Lgnk;->b(J)Lkeb;
+.method public final bridge synthetic get()Ljava/lang/Object;
+    .locals 1
 
-    move-result-object p1
+    invoke-virtual {p0}, Lgjf;->a()Lnez;
 
-    return-object p1
+    move-result-object v0
 
-    :pswitch_0
-    iget-object v0, p0, Lgjf;->a:Lgnk;
-
-    invoke-interface {v0, p1, p2}, Lgnk;->b(J)Lkeb;
-
-    move-result-object p1
-
-    return-object p1
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+    return-object v0
 .end method

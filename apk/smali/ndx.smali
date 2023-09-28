@@ -1,93 +1,138 @@
-.class public final Lndx;
+.class public final synthetic Lndx;
 .super Ljava/lang/Object;
 
+# interfaces
+.implements Lneb;
 
-# static fields
-.field public static final a:Lnea;
 
-.field private static final b:[Ljava/lang/String;
+# instance fields
+.field public final synthetic a:Lndz;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 6
+.method public synthetic constructor <init>(Lndz;)V
+    .locals 0
 
-    const/4 v0, 0x2
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    new-array v1, v0, [Ljava/lang/String;
+    iput-object p1, p0, Lndx;->a:Lndz;
 
-    const/4 v2, 0x0
+    return-void
+.end method
 
-    const-string v3, "com.google.common.flogger.util.StackWalkerStackGetter"
 
-    aput-object v3, v1, v2
+# virtual methods
+.method public final a()Ljava/lang/Object;
+    .locals 7
 
-    const/4 v3, 0x1
+    iget-object v0, p0, Lndx;->a:Lndz;
 
-    const-string v4, "com.google.common.flogger.util.JavaLangAccessStackGetter"
+    iget-object v1, v0, Lndz;->c:Landroid/content/ContentResolver;
 
-    aput-object v4, v1, v3
+    iget-object v2, v0, Lndz;->d:Landroid/net/Uri;
 
-    sput-object v1, Lndx;->b:[Ljava/lang/String;
-
-    const/4 v3, 0x0
-
-    :goto_0
-    if-ge v3, v0, :cond_1
-
-    aget-object v4, v1, v3
-
-    :try_start_0
-    invoke-static {v4}, Ljava/lang/Class;->forName(Ljava/lang/String;)Ljava/lang/Class;
-
-    move-result-object v4
-
-    const-class v5, Lnea;
-
-    invoke-virtual {v4, v5}, Ljava/lang/Class;->asSubclass(Ljava/lang/Class;)Ljava/lang/Class;
-
-    move-result-object v4
-
-    new-array v5, v2, [Ljava/lang/Class;
-
-    invoke-virtual {v4, v5}, Ljava/lang/Class;->getDeclaredConstructor([Ljava/lang/Class;)Ljava/lang/reflect/Constructor;
-
-    move-result-object v4
-
-    new-array v5, v2, [Ljava/lang/Object;
-
-    invoke-virtual {v4, v5}, Ljava/lang/reflect/Constructor;->newInstance([Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v4
-
-    check-cast v4, Lnea;
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    goto :goto_1
-
-    :catchall_0
-    move-exception v4
+    sget-object v3, Lndz;->b:[Ljava/lang/String;
 
     const/4 v4, 0x0
 
-    :goto_1
-    if-eqz v4, :cond_0
+    const/4 v5, 0x0
 
-    goto :goto_2
+    const/4 v6, 0x0
+
+    invoke-virtual/range {v1 .. v6}, Landroid/content/ContentResolver;->query(Landroid/net/Uri;[Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;)Landroid/database/Cursor;
+
+    move-result-object v0
+
+    if-nez v0, :cond_0
+
+    invoke-static {}, Ljava/util/Collections;->emptyMap()Ljava/util/Map;
+
+    move-result-object v0
+
+    goto :goto_1
 
     :cond_0
-    add-int/lit8 v3, v3, 0x1
+    :try_start_0
+    invoke-interface {v0}, Landroid/database/Cursor;->getCount()I
+
+    move-result v1
+
+    if-nez v1, :cond_1
+
+    invoke-static {}, Ljava/util/Collections;->emptyMap()Ljava/util/Map;
+
+    move-result-object v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    invoke-interface {v0}, Landroid/database/Cursor;->close()V
+
+    move-object v0, v1
+
+    goto :goto_1
+
+    :cond_1
+    const/16 v2, 0x100
+
+    if-gt v1, v2, :cond_2
+
+    :try_start_1
+    new-instance v2, Lwy;
+
+    invoke-direct {v2, v1}, Lwy;-><init>(I)V
 
     goto :goto_0
 
-    :cond_1
-    new-instance v4, Lneb;
+    :cond_2
+    new-instance v2, Ljava/util/HashMap;
 
-    invoke-direct {v4}, Lneb;-><init>()V
+    const/high16 v3, 0x3f800000    # 1.0f
+
+    invoke-direct {v2, v1, v3}, Ljava/util/HashMap;-><init>(IF)V
+
+    :goto_0
+    invoke-interface {v0}, Landroid/database/Cursor;->moveToNext()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_3
+
+    const/4 v1, 0x0
+
+    invoke-interface {v0, v1}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
+
+    move-result-object v1
+
+    const/4 v3, 0x1
+
+    invoke-interface {v0, v3}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-interface {v2, v1, v3}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    goto :goto_0
+
+    :cond_3
+    invoke-interface {v0}, Landroid/database/Cursor;->close()V
+
+    move-object v0, v2
+
+    :goto_1
+    return-object v0
+
+    :catchall_0
+    move-exception v1
+
+    invoke-interface {v0}, Landroid/database/Cursor;->close()V
+
+    goto :goto_3
 
     :goto_2
-    sput-object v4, Lndx;->a:Lnea;
+    throw v1
 
-    return-void
+    :goto_3
+    goto :goto_2
 .end method

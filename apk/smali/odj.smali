@@ -1,34 +1,26 @@
-.class public interface abstract Lodj;
+.class public final Lodj;
 .super Ljava/lang/Object;
 
-# interfaces
-.implements Ljava/io/Closeable;
+
+# static fields
+.field public static final a:[I
 
 
-# virtual methods
-.method public abstract a([BII)I
-.end method
+# direct methods
+.method static constructor <clinit>()V
+    .locals 3
 
-.method public abstract b()J
-.end method
+    const/4 v0, 0x1
 
-.method public abstract c()J
-.end method
+    new-array v0, v0, [I
 
-.method public abstract close()V
-.end method
+    const/4 v1, 0x0
 
-.method public abstract d()J
-.end method
+    const v2, 0x1010220
 
-.method public abstract e()V
-.end method
+    aput v2, v0, v1
 
-.method public abstract f()V
-.end method
+    sput-object v0, Lodj;->a:[I
 
-.method public abstract g()Z
-.end method
-
-.method public abstract h(J)V
+    return-void
 .end method

@@ -1,185 +1,67 @@
-.class final Llct;
+.class public final Llct;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Llcn;
+.implements Llco;
 
 
 # instance fields
-.field final synthetic a:Llcs;
-
-.field final synthetic b:Landroid/view/SurfaceHolder;
-
-.field private final c:Llcn;
+.field public final synthetic a:Ljava/lang/Object;
 
 
 # direct methods
-.method public constructor <init>(Llcn;Llcs;Landroid/view/SurfaceHolder;)V
+.method public constructor <init>(Ljava/lang/Object;)V
     .locals 0
 
-    iput-object p2, p0, Llct;->a:Llcs;
-
-    iput-object p3, p0, Llct;->b:Landroid/view/SurfaceHolder;
+    iput-object p1, p0, Llct;->a:Ljava/lang/Object;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Llct;->c:Llcn;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Lkzf;
+.method public final a(Llij;Ljava/util/concurrent/Executor;)Llie;
+    .locals 3
+
+    iget-object v0, p0, Llct;->a:Ljava/lang/Object;
+
+    new-instance v1, Llcs;
+
+    const/4 v2, 0x0
+
+    invoke-direct {v1, p1, v0, v2}, Llcs;-><init>(Llij;Ljava/lang/Object;I)V
+
+    invoke-interface {p2, v1}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
+
+    sget-object p1, Llcv;->a:Llie;
+
+    return-object p1
+.end method
+
+.method public final fA()Ljava/lang/Object;
     .locals 1
 
-    invoke-virtual {p0}, Llct;->b()V
-
-    iget-object v0, p0, Llct;->c:Llcn;
-
-    invoke-interface {v0}, Llcn;->a()Lkzf;
-
-    move-result-object v0
+    iget-object v0, p0, Llct;->a:Ljava/lang/Object;
 
     return-object v0
 .end method
 
-.method protected final b()V
+.method public final toString()Ljava/lang/String;
     .locals 2
 
-    iget-object v0, p0, Llct;->a:Llcs;
+    const-string v0, "Obs.of"
 
-    const/4 v1, 0x0
-
-    iput-boolean v1, v0, Llcs;->c:Z
-
-    iget-object v0, p0, Llct;->b:Landroid/view/SurfaceHolder;
-
-    iget-object v1, p0, Llct;->a:Llcs;
-
-    invoke-interface {v0, v1}, Landroid/view/SurfaceHolder;->removeCallback(Landroid/view/SurfaceHolder$Callback;)V
-
-    return-void
-.end method
-
-.method public final close()V
-    .locals 1
-
-    invoke-virtual {p0}, Llct;->b()V
-
-    iget-object v0, p0, Llct;->c:Llcn;
-
-    invoke-interface {v0}, Llcn;->close()V
-
-    return-void
-.end method
-
-.method public final d()Landroid/opengl/EGLConfig;
-    .locals 1
-
-    iget-object v0, p0, Llct;->c:Llcn;
-
-    invoke-interface {v0}, Llcn;->d()Landroid/opengl/EGLConfig;
+    invoke-static {v0}, Lobr;->ba(Ljava/lang/String;)Lojb;
 
     move-result-object v0
 
-    return-object v0
-.end method
+    iget-object v1, p0, Llct;->a:Ljava/lang/Object;
 
-.method public final e()Landroid/opengl/EGLContext;
-    .locals 1
+    invoke-virtual {v0, v1}, Lojb;->a(Ljava/lang/Object;)V
 
-    iget-object v0, p0, Llct;->c:Llcn;
-
-    invoke-interface {v0}, Llcn;->e()Landroid/opengl/EGLContext;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public final f()Landroid/opengl/EGLDisplay;
-    .locals 1
-
-    iget-object v0, p0, Llct;->c:Llcn;
-
-    invoke-interface {v0}, Llcn;->f()Landroid/opengl/EGLDisplay;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public final g()Landroid/opengl/EGLSurface;
-    .locals 1
-
-    iget-object v0, p0, Llct;->c:Llcn;
-
-    invoke-interface {v0}, Llcn;->g()Landroid/opengl/EGLSurface;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public final h()Lldg;
-    .locals 1
-
-    iget-object v0, p0, Llct;->c:Llcn;
-
-    invoke-interface {v0}, Llcn;->h()Lldg;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public final i()V
-    .locals 1
-
-    iget-object v0, p0, Llct;->c:Llcn;
-
-    invoke-interface {v0}, Llcn;->i()V
-
-    return-void
-.end method
-
-.method public final k()V
-    .locals 1
-
-    iget-object v0, p0, Llct;->c:Llcn;
-
-    invoke-interface {v0}, Llcn;->k()V
-
-    return-void
-.end method
-
-.method public final l(Ljava/nio/Buffer;)V
-    .locals 1
-
-    iget-object v0, p0, Llct;->c:Llcn;
-
-    invoke-interface {v0, p1}, Llcn;->l(Ljava/nio/Buffer;)V
-
-    return-void
-.end method
-
-.method public final m()V
-    .locals 1
-
-    iget-object v0, p0, Llct;->c:Llcn;
-
-    invoke-interface {v0}, Llcn;->m()V
-
-    return-void
-.end method
-
-.method public final n()Llaq;
-    .locals 1
-
-    iget-object v0, p0, Llct;->c:Llcn;
-
-    invoke-interface {v0}, Llcn;->n()Llaq;
+    invoke-virtual {v0}, Lojb;->toString()Ljava/lang/String;
 
     move-result-object v0
 

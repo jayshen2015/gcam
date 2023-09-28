@@ -1,25 +1,60 @@
-.class public abstract Ljdl;
-.super Ljava/lang/Object;
+.class final Ljdl;
+.super Ljeb;
+
+
+# instance fields
+.field final synthetic a:Ljdq;
 
 
 # direct methods
-.method public constructor <init>()V
+.method public constructor <init>(Ljdq;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Ljdl;->a:Ljdq;
+
+    invoke-direct {p0, p1}, Ljeb;-><init>(Ljeg;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public k(Ljdk;)V
-    .locals 0
+.method public final a()V
+    .locals 2
 
-    const/4 p1, 0x0
+    iget-object v0, p0, Ljdl;->a:Ljdq;
 
-    throw p1
+    iget-object v0, v0, Ljdq;->a:Lihu;
+
+    invoke-virtual {v0}, Lihu;->e()V
+
+    iget-object v0, p0, Ljdl;->a:Ljdq;
+
+    iget-object v1, v0, Ljdq;->a:Lihu;
+
+    iget-object v0, v0, Ljdq;->b:Lihw;
+
+    invoke-virtual {v1, v0}, Lihu;->g(Lihw;)V
+
+    return-void
 .end method
 
-.method public abstract l(Ljava/util/concurrent/TimeUnit;)Ljdq;
+.method public final b()V
+    .locals 2
+
+    iget-object v0, p0, Ljdl;->a:Ljdq;
+
+    iget-object v0, v0, Ljdq;->a:Lihu;
+
+    invoke-virtual {v0}, Lihu;->e()V
+
+    iget-object v0, p0, Ljdl;->a:Ljdq;
+
+    iget-object v1, v0, Ljdq;->a:Lihu;
+
+    iget-object v0, v0, Ljdq;->c:Lihw;
+
+    invoke-virtual {v1, v0}, Lihu;->g(Lihw;)V
+
+    return-void
 .end method

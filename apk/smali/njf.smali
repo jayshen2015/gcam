@@ -1,194 +1,127 @@
 .class public final Lnjf;
-.super Lnws;
+.super Ljava/lang/Object;
 
 # interfaces
-.implements Lnxz;
-
-
-# static fields
-.field public static final e:Lnjf;
-
-.field private static volatile f:Lnyf;
+.implements Lnin;
 
 
 # instance fields
-.field public a:I
-
-.field public b:I
-
-.field public c:I
-
-.field public d:Lnis;
+.field public a:Z
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 2
+    .locals 1
 
-    new-instance v0, Lnjf;
+    new-instance v0, Ljava/util/concurrent/atomic/AtomicInteger;
 
-    invoke-direct {v0}, Lnjf;-><init>()V
-
-    sput-object v0, Lnjf;->e:Lnjf;
-
-    const-class v1, Lnjf;
-
-    invoke-static {v1, v0}, Lnws;->aa(Ljava/lang/Class;Lnws;)V
+    invoke-direct {v0}, Ljava/util/concurrent/atomic/AtomicInteger;-><init>()V
 
     return-void
 .end method
 
-.method private constructor <init>()V
-    .locals 0
+.method public constructor <init>()V
+    .locals 1
 
-    invoke-direct {p0}, Lnws;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    const/4 v0, 0x0
+
+    iput-boolean v0, p0, Lnjf;->a:Z
 
     return-void
 .end method
 
 
 # virtual methods
-.method protected final a(ILjava/lang/Object;)Ljava/lang/Object;
-    .locals 3
+.method public final bridge synthetic a(Lnim;)Ljava/lang/Object;
+    .locals 2
 
-    add-int/lit8 p1, p1, -0x1
+    iget-boolean v0, p0, Lnjf;->a:Z
 
-    const/4 p2, 0x1
+    if-eqz v0, :cond_1
 
-    packed-switch p1, :pswitch_data_0
+    iget-object v0, p1, Lnim;->b:Ljava/util/List;
 
-    :pswitch_0
-    const/4 p1, 0x0
+    invoke-interface {v0}, Ljava/util/List;->isEmpty()Z
 
-    return-object p1
+    move-result v0
 
-    :pswitch_1
-    sget-object p1, Lnjf;->f:Lnyf;
+    if-eqz v0, :cond_0
 
-    if-nez p1, :cond_1
+    iget-object v0, p1, Lnim;->a:Lnji;
 
-    const-class p2, Lnjf;
+    iget-object p1, p1, Lnim;->d:Landroid/net/Uri;
 
-    monitor-enter p2
+    invoke-interface {v0, p1}, Lnji;->c(Landroid/net/Uri;)Ljava/io/File;
 
-    :try_start_0
-    sget-object p1, Lnjf;->f:Lnyf;
-
-    if-nez p1, :cond_0
-
-    new-instance p1, Lnwo;
-
-    sget-object v0, Lnjf;->e:Lnjf;
-
-    invoke-direct {p1, v0}, Lnwo;-><init>(Lnws;)V
-
-    sput-object p1, Lnjf;->f:Lnyf;
-
-    :cond_0
-    monitor-exit p2
+    move-result-object p1
 
     goto :goto_0
 
-    :catchall_0
-    move-exception p1
+    :cond_0
+    new-instance p1, Lniz;
 
-    monitor-exit p2
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    const-string v0, "Short circuit would skip transforms."
+
+    invoke-direct {p1, v0}, Lniz;-><init>(Ljava/lang/String;)V
 
     throw p1
 
     :cond_1
+    invoke-static {p1}, Lnjg;->b(Lnim;)Ljava/io/InputStream;
+
+    move-result-object p1
+
+    new-instance v0, Lniy;
+
+    invoke-direct {v0, p1}, Lniy;-><init>(Ljava/io/Closeable;)V
+
+    :try_start_0
+    iget-object p1, v0, Lniy;->a:Ljava/io/Closeable;
+
+    instance-of v1, p1, Lniv;
+
+    if-eqz v1, :cond_2
+
+    check-cast p1, Lniv;
+
+    invoke-interface {p1}, Lniv;->a()Ljava/io/File;
+
+    move-result-object p1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    invoke-virtual {v0}, Lniy;->close()V
+
     :goto_0
     return-object p1
 
-    :pswitch_2
-    sget-object p1, Lnjf;->e:Lnjf;
+    :cond_2
+    :try_start_1
+    new-instance p1, Ljava/io/IOException;
 
-    return-object p1
+    const-string v1, "Not convertible and fallback to pipe is disabled."
 
-    :pswitch_3
-    new-instance p1, Lnwn;
+    invoke-direct {p1, v1}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
 
-    sget-object p2, Lnjf;->e:Lnjf;
+    throw p1
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    invoke-direct {p1, p2}, Lnwn;-><init>(Lnws;)V
+    :catchall_0
+    move-exception p1
 
-    return-object p1
+    :try_start_2
+    invoke-virtual {v0}, Lniy;->close()V
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_1
 
-    :pswitch_4
-    new-instance p1, Lnjf;
+    goto :goto_1
 
-    invoke-direct {p1}, Lnjf;-><init>()V
+    :catchall_1
+    move-exception v0
 
-    return-object p1
-
-    :pswitch_5
-    const-string p1, "a"
-
-    const-string v0, "\u0001\u0003\u0000\u0001\u0001\u0003\u0003\u0000\u0000\u0000\u0001\u100c\u0000\u0002\u100c\u0001\u0003\u1009\u0002"
-
-    const/4 v1, 0x6
-
-    new-array v1, v1, [Ljava/lang/Object;
-
-    const/4 v2, 0x0
-
-    aput-object p1, v1, v2
-
-    const-string p1, "b"
-
-    aput-object p1, v1, p2
-
-    const/4 p1, 0x2
-
-    sget-object p2, Lnjb;->i:Lnww;
-
-    aput-object p2, v1, p1
-
-    const/4 p1, 0x3
-
-    const-string p2, "c"
-
-    aput-object p2, v1, p1
-
-    const/4 p1, 0x4
-
-    sget-object p2, Lnjb;->h:Lnww;
-
-    aput-object p2, v1, p1
-
-    const/4 p1, 0x5
-
-    const-string p2, "d"
-
-    aput-object p2, v1, p1
-
-    sget-object p1, Lnjf;->e:Lnjf;
-
-    invoke-static {p1, v0, v1}, Lnjf;->X(Lnxy;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object p1
-
-    return-object p1
-
-    :pswitch_6
-    invoke-static {p2}, Ljava/lang/Byte;->valueOf(B)Ljava/lang/Byte;
-
-    move-result-object p1
-
-    return-object p1
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_6
-        :pswitch_0
-        :pswitch_5
-        :pswitch_4
-        :pswitch_3
-        :pswitch_2
-        :pswitch_1
-    .end packed-switch
+    :goto_1
+    throw p1
 .end method

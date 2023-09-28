@@ -1,5 +1,8 @@
 .class final Lfdk;
-.super Lfds;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Lavu;
 
 
 # instance fields
@@ -12,73 +15,54 @@
 
     iput-object p1, p0, Lfdk;->a:Lfdm;
 
-    invoke-direct {p0, p1}, Lfds;-><init>(Lfdu;)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()V
-    .locals 2
+.method public final a(ZLawl;)V
+    .locals 3
 
-    iget-object v0, p0, Lfdk;->a:Lfdm;
+    iget-object p1, p0, Lfdk;->a:Lfdm;
 
-    iget-object v0, v0, Lfdm;->a:Lhiu;
+    iget-object p1, p1, Lfdm;->h:Lfdt;
 
-    invoke-virtual {v0}, Lhiu;->e()V
+    iget-object p2, p1, Lfdt;->b:Lfeg;
 
-    invoke-super {p0}, Lfds;->a()V
+    const/4 v0, 0x0
 
-    iget-object v0, p0, Lfdk;->a:Lfdm;
+    if-eqz p2, :cond_0
 
-    iget-object v1, v0, Lfdm;->a:Lhiu;
+    invoke-virtual {p2}, Lfeg;->b()V
 
-    iget-object v0, v0, Lfdm;->c:Lhiw;
+    iget-object p2, p1, Lfdt;->b:Lfeg;
 
-    invoke-virtual {v1, v0}, Lhiu;->g(Lhiw;)V
+    invoke-virtual {p2}, Lfeg;->e()[F
 
-    return-void
-.end method
+    invoke-static {}, Landroid/os/SystemClock;->elapsedRealtimeNanos()J
 
-.method public final bV()V
-    .locals 2
+    move-result-wide v1
 
-    iget-object v0, p0, Lfdk;->a:Lfdm;
+    iput-wide v1, p1, Lfdt;->c:J
 
-    iget-object v0, v0, Lfdm;->a:Lhiu;
+    iget-object p2, p1, Lfdt;->b:Lfeg;
 
-    invoke-virtual {v0}, Lhiu;->e()V
+    iget p2, p2, Lfeg;->k:F
 
-    invoke-super {p0}, Lfds;->bV()V
+    invoke-static {p2}, Lfcz;->p(F)V
 
-    iget-object v0, p0, Lfdk;->a:Lfdm;
+    const/4 p2, 0x1
 
-    iget-object v1, v0, Lfdm;->a:Lhiu;
+    iput-boolean p2, p1, Lfdt;->g:Z
 
-    iget-object v0, v0, Lfdm;->c:Lhiw;
+    iput-boolean v0, p1, Lfdt;->h:Z
 
-    invoke-virtual {v1, v0}, Lhiu;->g(Lhiw;)V
+    :cond_0
+    iget-object p1, p0, Lfdk;->a:Lfdm;
 
-    return-void
-.end method
-
-.method public final d()V
-    .locals 2
-
-    iget-object v0, p0, Lfdk;->a:Lfdm;
-
-    iget-object v0, v0, Lfdm;->a:Lhiu;
-
-    invoke-virtual {v0}, Lhiu;->e()V
-
-    iget-object v0, p0, Lfdk;->a:Lfdm;
-
-    iget-object v1, v0, Lfdm;->a:Lhiu;
-
-    iget-object v0, v0, Lfdm;->b:Lhiw;
-
-    invoke-virtual {v1, v0}, Lhiu;->g(Lhiw;)V
+    iput-boolean v0, p1, Lfdm;->v:Z
 
     return-void
 .end method

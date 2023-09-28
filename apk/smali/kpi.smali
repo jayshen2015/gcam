@@ -1,26 +1,17 @@
 .class public final Lkpi;
-.super Ljava/lang/Object;
+.super Lbmn;
 
-
-# instance fields
-.field public a:J
-
-.field public b:J
-
-.field public c:Ljava/lang/String;
-
-.field public d:Lkqu;
-
-.field public e:Lkqq;
-
-.field public f:B
+# interfaces
+.implements Landroid/os/IInterface;
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 0
+.method public constructor <init>(Landroid/os/IBinder;)V
+    .locals 1
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const-string v0, "com.google.android.gms.feedback.internal.IFeedbackService"
+
+    invoke-direct {p0, p1, v0}, Lbmn;-><init>(Landroid/os/IBinder;Ljava/lang/String;)V
 
     return-void
 .end method

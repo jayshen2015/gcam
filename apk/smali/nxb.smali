@@ -1,160 +1,83 @@
-.class public final Lnxb;
+.class final Lnxb;
 .super Ljava/lang/Object;
 
+# interfaces
+.implements Ljava/lang/Runnable;
 
-# static fields
-.field public static final a:Ljava/nio/charset/Charset;
 
-.field public static final b:[B
+# instance fields
+.field final synthetic a:Lnxc;
 
-.field public static final c:Ljava/nio/ByteBuffer;
+.field private final b:Landroidx/coordinatorlayout/widget/CoordinatorLayout;
+
+.field private final c:Landroid/view/View;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
-
-    const-string v0, "US-ASCII"
-
-    invoke-static {v0}, Ljava/nio/charset/Charset;->forName(Ljava/lang/String;)Ljava/nio/charset/Charset;
-
-    const-string v0, "UTF-8"
-
-    invoke-static {v0}, Ljava/nio/charset/Charset;->forName(Ljava/lang/String;)Ljava/nio/charset/Charset;
-
-    move-result-object v0
-
-    sput-object v0, Lnxb;->a:Ljava/nio/charset/Charset;
-
-    const-string v0, "ISO-8859-1"
-
-    invoke-static {v0}, Ljava/nio/charset/Charset;->forName(Ljava/lang/String;)Ljava/nio/charset/Charset;
-
-    const/4 v0, 0x0
-
-    new-array v0, v0, [B
-
-    sput-object v0, Lnxb;->b:[B
-
-    invoke-static {v0}, Ljava/nio/ByteBuffer;->wrap([B)Ljava/nio/ByteBuffer;
-
-    move-result-object v1
-
-    sput-object v1, Lnxb;->c:Ljava/nio/ByteBuffer;
-
-    invoke-static {v0}, Lnvy;->K([B)Lnvy;
-
-    return-void
-.end method
-
-.method public static a(Z)I
+.method public constructor <init>(Lnxc;Landroidx/coordinatorlayout/widget/CoordinatorLayout;Landroid/view/View;)V
     .locals 0
 
-    if-eqz p0, :cond_0
+    iput-object p1, p0, Lnxb;->a:Lnxc;
 
-    const/16 p0, 0x4cf
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    return p0
+    iput-object p2, p0, Lnxb;->b:Landroidx/coordinatorlayout/widget/CoordinatorLayout;
 
-    :cond_0
-    const/16 p0, 0x4d5
+    iput-object p3, p0, Lnxb;->c:Landroid/view/View;
 
-    return p0
+    return-void
 .end method
 
-.method public static b(J)I
-    .locals 2
 
-    const/16 v0, 0x20
+# virtual methods
+.method public final run()V
+    .locals 4
 
-    ushr-long v0, p0, v0
+    iget-object v0, p0, Lnxb;->c:Landroid/view/View;
 
-    xor-long/2addr p0, v0
+    if-eqz v0, :cond_1
 
-    long-to-int p1, p0
+    iget-object v0, p0, Lnxb;->a:Lnxc;
 
-    return p1
-.end method
+    iget-object v0, v0, Lnxc;->c:Landroid/widget/OverScroller;
 
-.method static c(I[BII)I
-    .locals 2
+    if-eqz v0, :cond_1
 
-    move v0, p2
+    invoke-virtual {v0}, Landroid/widget/OverScroller;->computeScrollOffset()Z
 
-    :goto_0
-    add-int v1, p2, p3
+    move-result v0
 
-    if-ge v0, v1, :cond_0
+    if-eqz v0, :cond_0
 
-    mul-int/lit8 p0, p0, 0x1f
+    iget-object v0, p0, Lnxb;->a:Lnxc;
 
-    aget-byte v1, p1, v0
+    iget-object v1, p0, Lnxb;->b:Landroidx/coordinatorlayout/widget/CoordinatorLayout;
 
-    add-int/2addr p0, v1
+    iget-object v2, p0, Lnxb;->c:Landroid/view/View;
 
-    add-int/lit8 v0, v0, 0x1
+    iget-object v3, v0, Lnxc;->c:Landroid/widget/OverScroller;
 
-    goto :goto_0
+    invoke-virtual {v3}, Landroid/widget/OverScroller;->getCurrY()I
 
-    :cond_0
-    return p0
-.end method
+    move-result v3
 
-.method public static d([B)Ljava/lang/String;
-    .locals 2
+    invoke-virtual {v0, v1, v2, v3}, Lnxc;->F(Landroidx/coordinatorlayout/widget/CoordinatorLayout;Landroid/view/View;I)V
 
-    new-instance v0, Ljava/lang/String;
+    iget-object v0, p0, Lnxb;->c:Landroid/view/View;
 
-    sget-object v1, Lnxb;->a:Ljava/nio/charset/Charset;
-
-    invoke-direct {v0, p0, v1}, Ljava/lang/String;-><init>([BLjava/nio/charset/Charset;)V
-
-    return-object v0
-.end method
-
-.method static e(Ljava/lang/Object;)V
-    .locals 0
-
-    if-eqz p0, :cond_0
+    invoke-static {v0, p0}, Lgl;->A(Landroid/view/View;Ljava/lang/Runnable;)V
 
     return-void
 
     :cond_0
-    const/4 p0, 0x0
+    iget-object v0, p0, Lnxb;->a:Lnxc;
 
-    throw p0
-.end method
+    iget-object v1, p0, Lnxb;->b:Landroidx/coordinatorlayout/widget/CoordinatorLayout;
 
-.method static f(Lnxy;)V
-    .locals 1
+    iget-object v2, p0, Lnxb;->c:Landroid/view/View;
 
-    instance-of v0, p0, Lnvf;
+    invoke-virtual {v0, v1, v2}, Lnxc;->B(Landroidx/coordinatorlayout/widget/CoordinatorLayout;Landroid/view/View;)V
 
-    if-nez v0, :cond_0
-
+    :cond_1
     return-void
-
-    :cond_0
-    check-cast p0, Lnvf;
-
-    const/4 p0, 0x0
-
-    throw p0
-.end method
-
-.method static g(Ljava/lang/Object;)V
-    .locals 1
-
-    if-eqz p0, :cond_0
-
-    return-void
-
-    :cond_0
-    new-instance p0, Ljava/lang/NullPointerException;
-
-    const-string v0, "messageType"
-
-    invoke-direct {p0, v0}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
-
-    throw p0
 .end method

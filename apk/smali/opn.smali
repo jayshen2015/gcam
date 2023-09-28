@@ -1,7 +1,12 @@
-.class public interface abstract Lopn;
-.super Ljava/lang/Object;
+.class abstract Lopn;
+.super Lope;
 
 
-# virtual methods
-.method public abstract a()Ljava/lang/Throwable;
+# direct methods
+.method public constructor <init>()V
+    .locals 0
+
+    invoke-direct {p0}, Lope;-><init>()V
+
+    return-void
 .end method

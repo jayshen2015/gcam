@@ -1,30 +1,39 @@
-.class final Lifh;
-.super Lifk;
+.class public final synthetic Lifh;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field final synthetic a:Lifi;
+.field public final synthetic a:Lifj;
+
+.field public final synthetic b:Landroid/support/constraint/ConstraintLayout;
 
 
 # direct methods
-.method public constructor <init>(Lifi;)V
+.method public synthetic constructor <init>(Lifj;Landroid/support/constraint/ConstraintLayout;)V
     .locals 0
 
-    iput-object p1, p0, Lifh;->a:Lifi;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0}, Lifk;-><init>()V
+    iput-object p1, p0, Lifh;->a:Lifj;
+
+    iput-object p2, p0, Lifh;->b:Landroid/support/constraint/ConstraintLayout;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onShutterButtonPressedStateChanged(Z)V
-    .locals 1
+.method public final run()V
+    .locals 2
 
-    iget-object v0, p0, Lifh;->a:Lifi;
+    iget-object v0, p0, Lifh;->a:Lifj;
 
-    invoke-virtual {v0, p1}, Lifi;->z(Z)V
+    iget-object v1, p0, Lifh;->b:Landroid/support/constraint/ConstraintLayout;
+
+    invoke-virtual {v0, v1}, Lifj;->b(Landroid/support/constraint/ConstraintLayout;)V
 
     return-void
 .end method

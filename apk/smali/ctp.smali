@@ -1,169 +1,71 @@
-.class public final Lctp;
-.super Lkfg;
+.class final Lctp;
+.super Ljava/lang/Object;
 
-
-# static fields
-.field private static final c:Lnak;
+# interfaces
+.implements Landroid/animation/LayoutTransition$TransitionListener;
 
 
 # instance fields
-.field public a:I
-
-.field public b:I
+.field final synthetic a:Lctq;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
+.method public constructor <init>(Lctq;)V
+    .locals 0
 
-    const-string v0, "com/google/android/apps/camera/camcorder/frameserver/listener/AutoFrameListener"
+    iput-object p1, p0, Lctp;->a:Lctq;
 
-    invoke-static {v0}, Lnak;->h(Ljava/lang/String;)Lnak;
-
-    move-result-object v0
-
-    sput-object v0, Lctp;->c:Lnak;
-
-    return-void
-.end method
-
-.method public constructor <init>()V
-    .locals 1
-
-    invoke-direct {p0}, Lkfg;-><init>()V
-
-    const/4 v0, 0x0
-
-    iput v0, p0, Lctp;->a:I
-
-    iput v0, p0, Lctp;->b:I
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final bC(Lkou;)V
-    .locals 2
+.method public final endTransition(Landroid/animation/LayoutTransition;Landroid/view/ViewGroup;Landroid/view/View;I)V
+    .locals 0
 
-    sget-object v0, Landroid/hardware/camera2/CaptureResult;->SENSOR_FRAME_DURATION:Landroid/hardware/camera2/CaptureResult$Key;
+    iget-object p2, p0, Lctp;->a:Lctq;
 
-    invoke-interface {p1, v0}, Lkou;->d(Landroid/hardware/camera2/CaptureResult$Key;)Ljava/lang/Object;
+    iget-object p2, p2, Lctq;->b:Lctr;
 
-    move-result-object p1
+    iget-object p2, p2, Lctr;->f:Lcts;
 
-    check-cast p1, Ljava/lang/Long;
+    iget-object p2, p2, Lcts;->p:Lcth;
 
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    if-eqz p2, :cond_0
 
-    invoke-virtual {p1}, Ljava/lang/Long;->longValue()J
+    iget-object p2, p2, Lcth;->a:Lctl;
 
-    move-result-wide v0
+    sget-object p3, Ljrl;->c:Ljrl;
 
-    invoke-virtual {p0, v0, v1}, Lctp;->g(J)V
+    invoke-virtual {p2, p3}, Lctl;->i(Ljrl;)V
+
+    :cond_0
+    invoke-virtual {p1, p0}, Landroid/animation/LayoutTransition;->removeTransitionListener(Landroid/animation/LayoutTransition$TransitionListener;)V
 
     return-void
 .end method
 
-.method final declared-synchronized g(J)V
-    .locals 3
+.method public final startTransition(Landroid/animation/LayoutTransition;Landroid/view/ViewGroup;Landroid/view/View;I)V
+    .locals 0
 
-    monitor-enter p0
+    iget-object p1, p0, Lctp;->a:Lctq;
 
-    const-wide/32 v0, 0x1c97178
+    iget-object p1, p1, Lctq;->b:Lctr;
 
-    cmp-long v2, p1, v0
+    iget-object p1, p1, Lctr;->f:Lcts;
 
-    if-ltz v2, :cond_1
+    iget-object p1, p1, Lcts;->p:Lcth;
 
-    const-wide/32 v0, 0x22f18e8
+    if-eqz p1, :cond_0
 
-    cmp-long v2, p1, v0
+    iget-object p1, p1, Lcth;->a:Lctl;
 
-    if-lez v2, :cond_0
+    sget-object p2, Ljrl;->c:Ljrl;
 
-    goto :goto_1
+    invoke-virtual {p1, p2}, Lctl;->l(Ljrl;)Z
 
     :cond_0
-    :try_start_0
-    iget p1, p0, Lctp;->a:I
-
-    add-int/lit8 p1, p1, 0x1
-
-    iput p1, p0, Lctp;->a:I
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    :goto_0
-    monitor-exit p0
-
     return-void
-
-    :cond_1
-    :goto_1
-    const-wide/32 v0, 0xe4df68
-
-    cmp-long v2, p1, v0
-
-    if-ltz v2, :cond_2
-
-    const-wide/32 v0, 0x117bbb8
-
-    cmp-long v2, p1, v0
-
-    if-gtz v2, :cond_2
-
-    :try_start_1
-    iget p1, p0, Lctp;->b:I
-
-    add-int/lit8 p1, p1, 0x1
-
-    iput p1, p0, Lctp;->b:I
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    monitor-exit p0
-
-    return-void
-
-    :cond_2
-    :try_start_2
-    sget-object v0, Lctp;->c:Lnak;
-
-    invoke-virtual {v0}, Lnaf;->c()Lnaz;
-
-    move-result-object v0
-
-    long-to-float p1, p1
-
-    const-string p2, "Auto FPS received a frame that was neither 30 or 60 fps. Frame was: %f"
-
-    const v1, 0x4e6e6b28    # 1.0E9f
-
-    div-float/2addr v1, p1
-
-    invoke-static {v1}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
-
-    move-result-object p1
-
-    const/16 v1, 0x28a
-
-    invoke-static {v0, p2, p1, v1}, Ld;->j(Lnaz;Ljava/lang/String;Ljava/lang/Object;C)V
-    :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_0
-
-    goto :goto_0
-
-    :catchall_0
-    move-exception p1
-
-    monitor-exit p0
-
-    goto :goto_3
-
-    :goto_2
-    throw p1
-
-    :goto_3
-    goto :goto_2
 .end method

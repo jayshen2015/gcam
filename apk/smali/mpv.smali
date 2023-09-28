@@ -1,30 +1,45 @@
 .class final Lmpv;
-.super Lmrq;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Lmqa;
+
+
+# instance fields
+.field final synthetic a:Ljava/lang/String;
+
+.field final synthetic b:I
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 0
+.method public constructor <init>(I)V
+    .locals 1
 
-    invoke-direct {p0}, Lmrq;-><init>()V
+    const-string v0, "weightLen"
+
+    iput-object v0, p0, Lmpv;->a:Ljava/lang/String;
+
+    iput p1, p0, Lmpv;->b:I
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()J
-    .locals 3
+.method public final a(Lmqy;)V
+    .locals 1
 
-    sget-object v0, Ljava/util/concurrent/TimeUnit;->MILLISECONDS:Ljava/util/concurrent/TimeUnit;
+    iget-object v0, p0, Lmpv;->a:Ljava/lang/String;
 
-    invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
+    invoke-virtual {p1, v0}, Lmqy;->b(Ljava/lang/String;)I
 
-    move-result-wide v1
+    move-result p1
 
-    invoke-virtual {v0, v1, v2}, Ljava/util/concurrent/TimeUnit;->toNanos(J)J
+    iget v0, p0, Lmpv;->b:I
 
-    move-result-wide v0
+    invoke-static {p1, v0}, Landroid/opengl/GLES20;->glUniform1i(II)V
 
-    return-wide v0
+    return-void
 .end method

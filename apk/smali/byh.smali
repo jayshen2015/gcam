@@ -1,153 +1,53 @@
-.class public final Lbyh;
+.class public final synthetic Lbyh;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lbyg;
-
-
-# static fields
-.field public static final a:Lbyh;
+.implements Landroid/view/View$OnClickListener;
 
 
 # instance fields
-.field private final synthetic b:I
+.field public final synthetic a:Lbyp;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
-
-    new-instance v0, Lbyh;
-
-    const/4 v1, 0x0
-
-    invoke-direct {v0, v1}, Lbyh;-><init>(I)V
-
-    sput-object v0, Lbyh;->a:Lbyh;
-
-    return-void
-.end method
-
-.method public constructor <init>(I)V
+.method public synthetic constructor <init>(Lbyp;)V
     .locals 0
 
-    iput p1, p0, Lbyh;->b:I
-
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lbyh;->a:Lbyp;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Lbsn;Lbqf;)Lbsn;
-    .locals 4
+.method public final onClick(Landroid/view/View;)V
+    .locals 1
 
-    iget p2, p0, Lbyh;->b:I
+    iget-object p1, p0, Lbyh;->a:Lbyp;
 
-    packed-switch p2, :pswitch_data_0
+    iget-object v0, p1, Lbyp;->b:Llda;
 
-    invoke-interface {p1}, Lbsn;->c()Ljava/lang/Object;
+    check-cast v0, Llce;
 
-    move-result-object p1
+    iget-object v0, v0, Llce;->d:Ljava/lang/Object;
 
-    check-cast p1, Lbxv;
+    check-cast v0, Ljava/lang/Boolean;
 
-    invoke-virtual {p1}, Lbxv;->b()Ljava/nio/ByteBuffer;
-
-    move-result-object p1
-
-    new-instance p2, Lbxn;
-
-    sget v0, Lcaj;->a:I
-
-    invoke-virtual {p1}, Ljava/nio/ByteBuffer;->isReadOnly()Z
+    invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
 
     move-result v0
 
-    const/4 v1, 0x0
+    iget-object p1, p1, Lbyp;->b:Llda;
 
-    if-nez v0, :cond_0
+    xor-int/lit8 v0, v0, 0x1
 
-    invoke-virtual {p1}, Ljava/nio/ByteBuffer;->hasArray()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    new-instance v1, Lgqy;
-
-    invoke-virtual {p1}, Ljava/nio/ByteBuffer;->array()[B
+    invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     move-result-object v0
 
-    invoke-virtual {p1}, Ljava/nio/ByteBuffer;->arrayOffset()I
+    invoke-interface {p1, v0}, Llda;->fB(Ljava/lang/Object;)V
 
-    move-result v2
-
-    invoke-virtual {p1}, Ljava/nio/ByteBuffer;->limit()I
-
-    move-result v3
-
-    invoke-direct {v1, v0, v2, v3}, Lgqy;-><init>([BII)V
-
-    goto :goto_0
-
-    :pswitch_0
-    return-object p1
-
-    :cond_0
-    :goto_0
-    if-eqz v1, :cond_1
-
-    iget v0, v1, Lgqy;->b:I
-
-    if-nez v0, :cond_1
-
-    iget v0, v1, Lgqy;->a:I
-
-    iget-object v1, v1, Lgqy;->c:Ljava/lang/Object;
-
-    check-cast v1, [B
-
-    array-length v1, v1
-
-    if-ne v0, v1, :cond_1
-
-    invoke-virtual {p1}, Ljava/nio/ByteBuffer;->array()[B
-
-    move-result-object p1
-
-    goto :goto_1
-
-    :cond_1
-    invoke-virtual {p1}, Ljava/nio/ByteBuffer;->asReadOnlyBuffer()Ljava/nio/ByteBuffer;
-
-    move-result-object p1
-
-    invoke-virtual {p1}, Ljava/nio/ByteBuffer;->limit()I
-
-    move-result v0
-
-    new-array v0, v0, [B
-
-    invoke-static {p1}, Lcaj;->c(Ljava/nio/ByteBuffer;)Ljava/nio/ByteBuffer;
-
-    invoke-virtual {p1, v0}, Ljava/nio/ByteBuffer;->get([B)Ljava/nio/ByteBuffer;
-
-    move-object p1, v0
-
-    :goto_1
-    const/4 v0, 0x0
-
-    invoke-direct {p2, p1, v0}, Lbxn;-><init>([BI)V
-
-    return-object p2
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+    return-void
 .end method

@@ -1,124 +1,143 @@
-.class public final Llqf;
+.class public final synthetic Llqf;
 .super Ljava/lang/Object;
+
+# interfaces
+.implements Lojz;
+
+
+# instance fields
+.field public final synthetic a:Llqg;
+
+.field public final synthetic b:Lope;
+
+.field public final synthetic c:J
+
+.field public final synthetic d:I
 
 
 # direct methods
-.method public static final a(Ljava/lang/String;DLjava/lang/String;Ljava/util/Set;ZZ)Llqb;
-    .locals 1
+.method public synthetic constructor <init>(Llqg;Lope;JI)V
+    .locals 0
 
-    new-instance p0, Llqb;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const-wide/high16 p1, 0x3ff0000000000000L    # 1.0
+    iput-object p1, p0, Llqf;->a:Llqg;
 
-    invoke-static {p1, p2}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
+    iput-object p2, p0, Llqf;->b:Lope;
 
-    move-result-object p1
+    iput-wide p3, p0, Llqf;->c:J
 
-    new-instance p2, Llpl;
+    iput p5, p0, Llqf;->d:I
 
-    sget-object p3, Llqd;->b:Llqd;
-
-    new-instance p5, Llqc;
-
-    const-class p6, Ljava/lang/Double;
-
-    const/4 v0, 0x2
-
-    invoke-direct {p5, p6, v0}, Llqc;-><init>(Ljava/lang/Class;I)V
-
-    const/4 p6, 0x0
-
-    invoke-direct {p2, p6, p4, p3, p5}, Llpl;-><init>(ZLjava/util/Set;Llqe;Llqe;)V
-
-    const-string p3, "com.google.android.libraries.consentverifier"
-
-    const-string p4, "CollectionBasisVerifierFeatures__log_sampling_rate"
-
-    invoke-direct {p0, p3, p4, p1, p2}, Llqb;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Object;Llpn;)V
-
-    return-object p0
+    return-void
 .end method
 
-.method public static final b(Ljava/lang/String;JLjava/lang/String;Ljava/util/Set;ZZ)Llqb;
-    .locals 4
 
-    new-instance p5, Llqb;
+# virtual methods
+.method public final a()Ljava/lang/Object;
+    .locals 8
 
-    invoke-static {p1, p2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+    iget-object v0, p0, Llqf;->a:Llqg;
 
-    move-result-object p1
+    iget-object v1, p0, Llqf;->b:Lope;
 
-    new-instance p2, Llpl;
+    iget-wide v2, p0, Llqf;->c:J
 
-    sget-object v0, Llqd;->c:Llqd;
+    iget v4, p0, Llqf;->d:I
 
-    new-instance v1, Llqc;
+    new-instance v5, Ljava/util/ArrayList;
 
-    const-class v2, Ljava/lang/Long;
+    invoke-virtual {v1}, Lope;->size()I
 
-    const/4 v3, 0x4
+    move-result v6
 
-    invoke-direct {v1, v2, v3}, Llqc;-><init>(Ljava/lang/Class;I)V
+    add-int/lit8 v6, v6, 0x1
 
-    invoke-direct {p2, p6, p4, v0, v1}, Llpl;-><init>(ZLjava/util/Set;Llqe;Llqe;)V
+    invoke-direct {v5, v6}, Ljava/util/ArrayList;-><init>(I)V
 
-    invoke-direct {p5, p3, p0, p1, p2}, Llqb;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Object;Llpn;)V
+    invoke-virtual {v1}, Lope;->gH()Loti;
 
-    return-object p5
-.end method
+    move-result-object v1
 
-.method public static final c(Ljava/lang/String;ZLjava/lang/String;Ljava/util/Set;ZZ)Llqb;
-    .locals 5
+    :goto_0
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
-    new-instance p4, Llqb;
+    move-result v6
 
-    invoke-static {p1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+    if-eqz v6, :cond_0
 
-    move-result-object p1
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    new-instance v0, Llpl;
+    move-result-object v6
 
-    sget-object v1, Llqd;->a:Llqd;
+    check-cast v6, Lltw;
 
-    new-instance v2, Llqc;
+    iget-object v6, v6, Lltw;->b:Lltx;
 
-    const-class v3, Ljava/lang/Boolean;
+    iget-object v6, v6, Lltx;->a:Llxv;
 
-    const/4 v4, 0x3
+    invoke-virtual {v6}, Llxv;->b()Llco;
 
-    invoke-direct {v2, v3, v4}, Llqc;-><init>(Ljava/lang/Class;I)V
+    move-result-object v6
 
-    invoke-direct {v0, p5, p3, v1, v2}, Llpl;-><init>(ZLjava/util/Set;Llqe;Llqe;)V
+    invoke-interface {v5, v6}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    invoke-direct {p4, p2, p0, p1, v0}, Llqb;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Object;Llpn;)V
+    goto :goto_0
 
-    return-object p4
-.end method
+    :cond_0
+    const-wide/16 v6, 0x0
 
-.method public static final d(Ljava/lang/String;Ljava/lang/Object;Llqe;Ljava/lang/String;Ljava/util/Set;ZZ)Llqb;
-    .locals 3
+    cmp-long v1, v2, v6
 
-    new-instance p3, Llqb;
+    if-lez v1, :cond_1
 
-    new-instance p5, Llpl;
+    iget-object v0, v0, Llqg;->a:Llxv;
 
-    new-instance p6, Llqc;
+    invoke-virtual {v0}, Llxv;->b()Llco;
 
-    const/4 v0, 0x1
+    move-result-object v0
 
-    invoke-direct {p6, p2, v0}, Llqc;-><init>(Llqe;I)V
+    new-instance v1, Llgj;
 
-    new-instance v1, Llqc;
+    const/4 v6, 0x2
+
+    invoke-direct {v1, v2, v3, v6}, Llgj;-><init>(JI)V
+
+    invoke-static {v0, v1}, Llcv;->j(Llco;Loiu;)Llco;
+
+    move-result-object v0
+
+    invoke-interface {v5, v0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    :cond_1
+    if-lez v4, :cond_2
+
+    int-to-long v0, v4
+
+    invoke-static {v0, v1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object v0
+
+    invoke-static {v0}, Llcv;->g(Ljava/lang/Object;)Llco;
+
+    move-result-object v0
+
+    invoke-interface {v5, v0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    :cond_2
+    invoke-static {v5}, Llcv;->f(Ljava/util/Collection;)Llco;
+
+    move-result-object v0
+
+    new-instance v1, Llqe;
 
     const/4 v2, 0x0
 
-    invoke-direct {v1, p2, v2}, Llqc;-><init>(Llqe;I)V
+    invoke-direct {v1, v4, v2}, Llqe;-><init>(II)V
 
-    invoke-direct {p5, v0, p4, p6, v1}, Llpl;-><init>(ZLjava/util/Set;Llqe;Llqe;)V
+    invoke-static {v0, v1}, Llcv;->j(Llco;Loiu;)Llco;
 
-    const-string p2, "com.google.android.libraries.performance.primes"
+    move-result-object v0
 
-    invoke-direct {p3, p2, p0, p1, p5}, Llqb;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Object;Llpn;)V
-
-    return-object p3
+    return-object v0
 .end method

@@ -76,11 +76,9 @@
 
     iput-object p1, p0, Lcom/google/android/apps/camera/ui/views/CaptureAnimationOverlay;->g:Landroid/view/animation/Interpolator;
 
-    new-instance p1, Liba;
+    new-instance p1, Ljoe;
 
-    const/16 p2, 0xc
-
-    invoke-direct {p1, p0, p2}, Liba;-><init>(Lcom/google/android/apps/camera/ui/views/CaptureAnimationOverlay;I)V
+    invoke-direct {p1, p0}, Ljoe;-><init>(Lcom/google/android/apps/camera/ui/views/CaptureAnimationOverlay;)V
 
     iput-object p1, p0, Lcom/google/android/apps/camera/ui/views/CaptureAnimationOverlay;->h:Landroid/animation/ValueAnimator$AnimatorUpdateListener;
 
@@ -161,9 +159,9 @@
 
     iget-object v0, p0, Lcom/google/android/apps/camera/ui/views/CaptureAnimationOverlay;->b:Landroid/animation/AnimatorSet;
 
-    new-instance v1, Liht;
+    new-instance v1, Ljoh;
 
-    invoke-direct {v1, p0, p1}, Liht;-><init>(Lcom/google/android/apps/camera/ui/views/CaptureAnimationOverlay;Z)V
+    invoke-direct {v1, p0, p1}, Ljoh;-><init>(Lcom/google/android/apps/camera/ui/views/CaptureAnimationOverlay;Z)V
 
     invoke-virtual {v0, v1}, Landroid/animation/AnimatorSet;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
@@ -231,15 +229,15 @@
 
     invoke-virtual {v0, v2}, Landroid/animation/ValueAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    new-instance v2, Lihr;
+    new-instance v2, Ljof;
 
-    invoke-direct {v2, p0, v0}, Lihr;-><init>(Lcom/google/android/apps/camera/ui/views/CaptureAnimationOverlay;Landroid/animation/ValueAnimator;)V
+    invoke-direct {v2, p0, v0}, Ljof;-><init>(Lcom/google/android/apps/camera/ui/views/CaptureAnimationOverlay;Landroid/animation/ValueAnimator;)V
 
     invoke-virtual {v1, v2}, Landroid/animation/ValueAnimator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    new-instance v2, Lihs;
+    new-instance v2, Ljog;
 
-    invoke-direct {v2, p0}, Lihs;-><init>(Lcom/google/android/apps/camera/ui/views/CaptureAnimationOverlay;)V
+    invoke-direct {v2, p0}, Ljog;-><init>(Lcom/google/android/apps/camera/ui/views/CaptureAnimationOverlay;)V
 
     invoke-virtual {v0, v2}, Landroid/animation/ValueAnimator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 

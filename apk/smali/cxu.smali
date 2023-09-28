@@ -1,64 +1,66 @@
 .class final Lcxu;
-.super Lcyo;
-
-
-# instance fields
-.field final synthetic a:Lcxv;
+.super Laia;
 
 
 # direct methods
-.method public constructor <init>(Lcxv;)V
+.method public constructor <init>(Laii;)V
     .locals 0
 
-    iput-object p1, p0, Lcxu;->a:Lcxv;
-
-    invoke-direct {p0, p1}, Lcyo;-><init>(Lcyp;)V
+    invoke-direct {p0, p1}, Laia;-><init>(Laii;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final b()V
-    .locals 2
+.method public final bridge synthetic b(Lake;Ljava/lang/Object;)V
+    .locals 3
 
-    iget-object v0, p0, Lcxu;->a:Lcxv;
+    check-cast p2, Lcxs;
 
-    iget-object v0, v0, Lcxv;->a:Lhiu;
+    iget-object v0, p2, Lcxs;->a:Lcxy;
 
-    invoke-virtual {v0}, Lhiu;->e()V
+    invoke-virtual {v0}, Lcxy;->ordinal()I
 
-    invoke-super {p0}, Lcyo;->b()V
+    move-result v0
 
-    iget-object v0, p0, Lcxu;->a:Lcxv;
+    int-to-long v0, v0
 
-    iget-object v1, v0, Lcxv;->a:Lhiu;
+    const/4 v2, 0x1
 
-    iget-object v0, v0, Lcxv;->c:Lhiw;
+    invoke-virtual {p1, v2, v0, v1}, Lake;->e(IJ)V
 
-    invoke-virtual {v1, v0}, Lhiu;->g(Lhiw;)V
+    iget v0, p2, Lcxs;->b:I
+
+    int-to-long v0, v0
+
+    const/4 v2, 0x2
+
+    invoke-virtual {p1, v2, v0, v1}, Lake;->e(IJ)V
+
+    iget v0, p2, Lcxs;->c:I
+
+    int-to-long v0, v0
+
+    const/4 v2, 0x3
+
+    invoke-virtual {p1, v2, v0, v1}, Lake;->e(IJ)V
+
+    iget p2, p2, Lcxs;->d:I
+
+    int-to-long v0, p2
+
+    const/4 p2, 0x4
+
+    invoke-virtual {p1, p2, v0, v1}, Lake;->e(IJ)V
 
     return-void
 .end method
 
-.method public final d()V
-    .locals 2
+.method public final d()Ljava/lang/String;
+    .locals 1
 
-    iget-object v0, p0, Lcxu;->a:Lcxv;
+    const-string v0, "INSERT OR IGNORE INTO `HardwareHelpDialogCounts` (`reason`,`impressionsBeforeReboot`,`impressionsAfterReboot`,`rebootCount`) VALUES (?,?,?,?)"
 
-    iget-object v0, v0, Lcxv;->a:Lhiu;
-
-    invoke-virtual {v0}, Lhiu;->e()V
-
-    invoke-super {p0}, Lcyo;->d()V
-
-    iget-object v0, p0, Lcxu;->a:Lcxv;
-
-    iget-object v1, v0, Lcxv;->a:Lhiu;
-
-    iget-object v0, v0, Lcxv;->b:Lhiw;
-
-    invoke-virtual {v1, v0}, Lhiu;->g(Lhiw;)V
-
-    return-void
+    return-object v0
 .end method

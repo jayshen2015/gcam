@@ -1,70 +1,65 @@
 .class public final Likk;
-.super Landroid/animation/AnimatorListenerAdapter;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Lpys;
 
 
 # instance fields
-.field private final a:Landroid/view/View;
+.field private final a:Lqkg;
 
-.field private final b:I
+.field private final b:Lqkg;
 
 
 # direct methods
-.method public constructor <init>(Landroid/view/View;)V
+.method public constructor <init>(Lqkg;Lqkg;)V
     .locals 0
 
-    invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Likk;->a:Landroid/view/View;
+    iput-object p1, p0, Likk;->a:Lqkg;
 
-    invoke-virtual {p1}, Landroid/view/View;->getLayerType()I
-
-    move-result p1
-
-    iput p1, p0, Likk;->b:I
+    iput-object p2, p0, Likk;->b:Lqkg;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onAnimationCancel(Landroid/animation/Animator;)V
+.method public final a()Lkme;
     .locals 2
 
-    iget-object p1, p0, Likk;->a:Landroid/view/View;
+    iget-object v0, p0, Likk;->a:Lqkg;
 
-    iget v0, p0, Likk;->b:I
+    invoke-interface {v0}, Lqkg;->get()Ljava/lang/Object;
 
-    const/4 v1, 0x0
+    move-result-object v0
 
-    invoke-virtual {p1, v0, v1}, Landroid/view/View;->setLayerType(ILandroid/graphics/Paint;)V
+    check-cast v0, Likj;
 
-    return-void
+    iget-object v1, p0, Likk;->b:Lqkg;
+
+    invoke-interface {v1}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Liki;
+
+    invoke-virtual {v0, v1}, Likj;->a(Liki;)Lkme;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lqmd;->ae(Ljava/lang/Object;)V
+
+    return-object v0
 .end method
 
-.method public final onAnimationEnd(Landroid/animation/Animator;)V
-    .locals 2
+.method public final bridge synthetic get()Ljava/lang/Object;
+    .locals 1
 
-    iget-object p1, p0, Likk;->a:Landroid/view/View;
+    invoke-virtual {p0}, Likk;->a()Lkme;
 
-    iget v0, p0, Likk;->b:I
+    move-result-object v0
 
-    const/4 v1, 0x0
-
-    invoke-virtual {p1, v0, v1}, Landroid/view/View;->setLayerType(ILandroid/graphics/Paint;)V
-
-    return-void
-.end method
-
-.method public final onAnimationStart(Landroid/animation/Animator;)V
-    .locals 2
-
-    iget-object p1, p0, Likk;->a:Landroid/view/View;
-
-    const/4 v0, 0x2
-
-    const/4 v1, 0x0
-
-    invoke-virtual {p1, v0, v1}, Landroid/view/View;->setLayerType(ILandroid/graphics/Paint;)V
-
-    return-void
+    return-object v0
 .end method

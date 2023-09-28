@@ -1,161 +1,110 @@
-.class public final Ldsh;
+.class public final synthetic Ldsh;
 .super Ljava/lang/Object;
+
+# interfaces
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field public a:I
+.field public final synthetic a:Ldsf;
 
-.field public b:Landroid/graphics/RectF;
-
-.field public c:Landroid/graphics/PointF;
-
-.field public d:Landroid/graphics/PointF;
-
-.field public e:B
-
-.field private f:F
-
-.field private g:F
+.field private final synthetic b:I
 
 
 # direct methods
-.method public constructor <init>()V
+.method public synthetic constructor <init>(Ldsf;I)V
     .locals 0
 
+    iput p2, p0, Ldsh;->b:I
+
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Ldsh;->a:Ldsf;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Lcom/google/android/apps/camera/faceobfuscation/api/FaceToObfuscate;
-    .locals 9
+.method public final run()V
+    .locals 4
 
-    iget-byte v0, p0, Ldsh;->e:B
+    iget v0, p0, Ldsh;->b:I
 
-    const/4 v1, 0x7
+    packed-switch v0, :pswitch_data_0
 
-    if-ne v0, v1, :cond_1
+    iget-object v0, p0, Ldsh;->a:Ldsf;
 
-    iget-object v5, p0, Ldsh;->b:Landroid/graphics/RectF;
+    iget-object v1, v0, Ldsf;->b:Ljava/lang/Object;
 
-    if-nez v5, :cond_0
+    monitor-enter v1
 
     goto :goto_0
 
+    :pswitch_0
+    iget-object v0, p0, Ldsh;->a:Ldsf;
+
+    iget-object v1, v0, Ldsf;->b:Ljava/lang/Object;
+
+    monitor-enter v1
+
+    :try_start_0
+    iget-object v2, v0, Ldsf;->c:Llxa;
+
+    if-eqz v2, :cond_0
+
+    invoke-interface {v2}, Llxa;->close()V
+
+    const/4 v2, 0x0
+
+    iput-object v2, v0, Ldsf;->c:Llxa;
+
     :cond_0
-    new-instance v0, Ldrw;
+    monitor-exit v1
 
-    iget v3, p0, Ldsh;->a:I
+    return-void
 
-    iget v4, p0, Ldsh;->f:F
+    :catchall_0
+    move-exception v0
 
-    iget-object v6, p0, Ldsh;->c:Landroid/graphics/PointF;
+    monitor-exit v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    iget-object v7, p0, Ldsh;->d:Landroid/graphics/PointF;
+    throw v0
 
-    iget v8, p0, Ldsh;->g:F
+    :goto_0
+    :try_start_1
+    iget-object v2, v0, Ldsf;->c:Llxa;
 
-    move-object v2, v0
+    if-nez v2, :cond_1
 
-    invoke-direct/range {v2 .. v8}, Ldrw;-><init>(IFLandroid/graphics/RectF;Landroid/graphics/PointF;Landroid/graphics/PointF;F)V
+    iget-object v2, v0, Ldsf;->a:Llxb;
 
-    return-object v0
+    const-string v3, "FeatureCentral"
+
+    invoke-interface {v2, v3}, Llxb;->a(Ljava/lang/String;)Llxa;
+
+    move-result-object v2
+
+    iput-object v2, v0, Ldsf;->c:Llxa;
 
     :cond_1
-    :goto_0
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
-    iget-byte v1, p0, Ldsh;->e:B
-
-    and-int/lit8 v1, v1, 0x1
-
-    if-nez v1, :cond_2
-
-    const-string v1, " id"
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    :cond_2
-    iget-byte v1, p0, Ldsh;->e:B
-
-    and-int/lit8 v1, v1, 0x2
-
-    if-nez v1, :cond_3
-
-    const-string v1, " score"
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    :cond_3
-    iget-object v1, p0, Ldsh;->b:Landroid/graphics/RectF;
-
-    if-nez v1, :cond_4
-
-    const-string v1, " bounds"
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    :cond_4
-    iget-byte v1, p0, Ldsh;->e:B
-
-    and-int/lit8 v1, v1, 0x4
-
-    if-nez v1, :cond_5
-
-    const-string v1, " faceRoll"
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    :cond_5
-    new-instance v1, Ljava/lang/IllegalStateException;
-
-    invoke-virtual {v0}, Ljava/lang/Object;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    const-string v2, "Missing required properties:"
-
-    invoke-virtual {v2, v0}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-direct {v1, v0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw v1
-.end method
-
-.method public final b(F)V
-    .locals 0
-
-    iput p1, p0, Ldsh;->g:F
-
-    iget-byte p1, p0, Ldsh;->e:B
-
-    or-int/lit8 p1, p1, 0x4
-
-    int-to-byte p1, p1
-
-    iput-byte p1, p0, Ldsh;->e:B
+    monitor-exit v1
 
     return-void
-.end method
 
-.method public final c(F)V
-    .locals 0
+    :catchall_1
+    move-exception v0
 
-    iput p1, p0, Ldsh;->f:F
+    monitor-exit v1
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
-    iget-byte p1, p0, Ldsh;->e:B
+    throw v0
 
-    or-int/lit8 p1, p1, 0x2
-
-    int-to-byte p1, p1
-
-    iput-byte p1, p0, Ldsh;->e:B
-
-    return-void
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

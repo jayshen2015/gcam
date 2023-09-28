@@ -1,64 +1,52 @@
-.class public final Lbjz;
+.class final Lbjz;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Ljava/io/Closeable;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field public final a:Ljava/net/HttpURLConnection;
+.field final synthetic a:Z
+
+.field final synthetic b:Lbka;
 
 
 # direct methods
-.method public constructor <init>(Ljava/net/HttpURLConnection;)V
+.method public constructor <init>(Lbka;Z)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lbjz;->b:Lbka;
 
-    iput-object p1, p0, Lbjz;->a:Ljava/net/HttpURLConnection;
+    iput-boolean p2, p0, Lbjz;->a:Z
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Z
+.method public final run()V
     .locals 3
 
-    const/4 v0, 0x0
+    iget-object v0, p0, Lbjz;->b:Lbka;
 
-    :try_start_0
-    iget-object v1, p0, Lbjz;->a:Ljava/net/HttpURLConnection;
+    iget-boolean v1, p0, Lbjz;->a:Z
 
-    invoke-virtual {v1}, Ljava/net/HttpURLConnection;->getResponseCode()I
+    invoke-static {}, Lbmf;->i()V
 
-    move-result v1
+    iget-object v0, v0, Lbka;->a:Lbkb;
 
-    div-int/lit8 v1, v1, 0x64
-    :try_end_0
-    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
+    iget-boolean v2, v0, Lbkb;->a:Z
 
-    const/4 v2, 0x2
+    iput-boolean v1, v0, Lbkb;->a:Z
 
-    if-ne v1, v2, :cond_0
+    if-eq v2, v1, :cond_0
 
-    const/4 v0, 0x1
+    iget-object v0, v0, Lbkb;->b:Lbjl;
+
+    invoke-interface {v0, v1}, Lbjl;->a(Z)V
 
     :cond_0
-    return v0
-
-    :catch_0
-    move-exception v1
-
-    return v0
-.end method
-
-.method public final close()V
-    .locals 1
-
-    iget-object v0, p0, Lbjz;->a:Ljava/net/HttpURLConnection;
-
-    invoke-virtual {v0}, Ljava/net/HttpURLConnection;->disconnect()V
-
     return-void
 .end method

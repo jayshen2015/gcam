@@ -1,10 +1,18 @@
-.class public interface abstract Lhrb;
+.class public final Lhrb;
 .super Ljava/lang/Object;
 
 
-# virtual methods
-.method public abstract b()V
-.end method
+# instance fields
+.field final a:Lhsp;
 
-.method public abstract c(Lhrc;)V
+
+# direct methods
+.method public constructor <init>(Lhsp;)V
+    .locals 0
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lhrb;->a:Lhsp;
+
+    return-void
 .end method

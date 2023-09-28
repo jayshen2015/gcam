@@ -3,26 +3,20 @@
 
 
 # static fields
-.field public static final a:Ldve;
+.field public static final a:Ldug;
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 1
+    .locals 2
 
-    sget-object v0, Ldvd;->a:Ldvd;
+    new-instance v0, Ldug;
 
-    sput-object v0, Ldvj;->a:Ldve;
+    const/4 v1, 0x2
+
+    invoke-direct {v0, v1}, Ldug;-><init>(I)V
+
+    sput-object v0, Ldvj;->a:Ldug;
 
     return-void
-.end method
-
-.method public static a(Ldsx;)Ldvi;
-    .locals 1
-
-    new-instance v0, Ldvi;
-
-    invoke-direct {v0, p0}, Ldvi;-><init>(Ldsx;)V
-
-    return-object v0
 .end method

@@ -1,81 +1,148 @@
-.class public final Llsy;
-.super Llsh;
+.class final Llsy;
+.super Lorh;
 
 
 # instance fields
-.field private final a:Lnxy;
+.field private final a:Loor;
 
 
 # direct methods
-.method public constructor <init>(Lnxy;)V
-    .locals 0
+.method public constructor <init>(Ljava/util/List;)V
+    .locals 4
 
-    invoke-direct {p0}, Llsh;-><init>()V
+    move-object v0, p1
 
-    iput-object p1, p0, Llsy;->a:Lnxy;
+    check-cast v0, Lorr;
+
+    iget v0, v0, Lorr;->c:I
+
+    invoke-static {v0}, Loor;->n(I)Loon;
+
+    move-result-object v0
+
+    check-cast p1, Loom;
+
+    invoke-virtual {p1}, Loom;->t()Lotj;
+
+    move-result-object p1
+
+    const/4 v1, 0x0
+
+    :goto_0
+    invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_0
+
+    add-int/lit8 v2, v1, 0x1
+
+    invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v3
+
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v3, v1}, Loon;->e(Ljava/lang/Object;Ljava/lang/Object;)V
+
+    move v1, v2
+
+    goto :goto_0
+
+    :cond_0
+    invoke-virtual {v0}, Loon;->c()Loor;
+
+    move-result-object p1
+
+    invoke-direct {p0}, Lorh;-><init>()V
+
+    iput-object p1, p0, Llsy;->a:Loor;
 
     return-void
 .end method
 
+.method private final i(Ljava/lang/Object;)I
+    .locals 1
 
-# virtual methods
-.method public final a(Ljava/io/IOException;Llhe;)Lnou;
-    .locals 3
+    iget-object v0, p0, Llsy;->a:Loor;
 
-    invoke-virtual {p1}, Ljava/io/IOException;->getCause()Ljava/lang/Throwable;
-
-    move-result-object v0
-
-    instance-of v0, v0, Lnxd;
-
-    if-nez v0, :cond_0
-
-    invoke-static {p1}, Lnsy;->A(Ljava/lang/Throwable;)Lnou;
+    invoke-virtual {v0, p1}, Loor;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p1
 
-    return-object p1
+    check-cast p1, Ljava/lang/Integer;
+
+    if-nez p1, :cond_0
+
+    iget-object p1, p0, Llsy;->a:Loor;
+
+    check-cast p1, Lorw;
+
+    iget p1, p1, Lorw;->c:I
+
+    return p1
 
     :cond_0
-    iget-object v0, p0, Llsy;->a:Lnxy;
+    invoke-virtual {p1}, Ljava/lang/Integer;->intValue()I
 
-    invoke-static {v0}, Lnsy;->B(Ljava/lang/Object;)Lnou;
+    move-result p1
 
-    move-result-object v0
+    return p1
+.end method
 
-    iget-object p2, p2, Llhe;->a:Ljava/lang/Object;
 
-    new-instance v1, Lcmq;
+# virtual methods
+.method public final compare(Ljava/lang/Object;Ljava/lang/Object;)I
+    .locals 0
 
-    check-cast p2, Llsr;
+    invoke-direct {p0, p1}, Llsy;->i(Ljava/lang/Object;)I
 
-    const/16 v2, 0xf
+    move-result p1
 
-    invoke-direct {v1, p2, v2}, Lcmq;-><init>(Llsr;I)V
+    invoke-direct {p0, p2}, Llsy;->i(Ljava/lang/Object;)I
 
-    invoke-static {v1}, Lmny;->b(Lnno;)Lnno;
+    move-result p2
 
-    move-result-object v1
+    sub-int/2addr p1, p2
 
-    iget-object p2, p2, Llsr;->c:Ljava/util/concurrent/Executor;
+    return p1
+.end method
 
-    invoke-static {v0, v1, p2}, Lnnf;->j(Lnou;Lnno;Ljava/util/concurrent/Executor;)Lnou;
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 1
 
-    move-result-object p2
+    instance-of v0, p1, Llsy;
 
-    new-instance v0, Llsx;
+    if-eqz v0, :cond_0
 
-    const/4 v1, 0x0
+    check-cast p1, Llsy;
 
-    invoke-direct {v0, p1, v1}, Llsx;-><init>(Ljava/io/IOException;I)V
+    iget-object v0, p0, Llsy;->a:Loor;
 
-    sget-object p1, Lnnv;->a:Lnnv;
+    iget-object p1, p1, Llsy;->a:Loor;
 
-    const-class v1, Ljava/io/IOException;
+    invoke-virtual {v0, p1}, Loor;->equals(Ljava/lang/Object;)Z
 
-    invoke-static {p2, v1, v0, p1}, Lnml;->j(Lnou;Ljava/lang/Class;Lnno;Ljava/util/concurrent/Executor;)Lnou;
+    move-result p1
 
-    move-result-object p1
+    return p1
 
-    return-object p1
+    :cond_0
+    const/4 p1, 0x0
+
+    return p1
+.end method
+
+.method public final hashCode()I
+    .locals 1
+
+    iget-object v0, p0, Llsy;->a:Loor;
+
+    invoke-virtual {v0}, Loor;->hashCode()I
+
+    move-result v0
+
+    return v0
 .end method

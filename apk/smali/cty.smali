@@ -1,301 +1,279 @@
-.class public final Lcty;
+.class public final synthetic Lcty;
 .super Ljava/lang/Object;
+
+# interfaces
+.implements Landroid/view/View$OnClickListener;
 
 
 # instance fields
-.field public final a:Lhxb;
-
-.field public final b:Lipk;
-
-.field public final c:Ljuh;
-
-.field public final d:Lmrg;
-
-.field public e:Lmqp;
-
-.field private final f:Ljava/util/Timer;
-
-.field private final g:Ljava/util/Map;
-
-.field private final h:Ljava/util/TimerTask;
-
-.field private i:Lj$/time/Duration;
-
-.field private j:I
+.field public final synthetic a:Lcug;
 
 
 # direct methods
-.method public constructor <init>(Lhxb;Lipk;Ljuh;Lmrg;)V
-    .locals 1
+.method public synthetic constructor <init>(Lcug;)V
+    .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    new-instance v0, Ljava/util/Timer;
-
-    invoke-direct {v0}, Ljava/util/Timer;-><init>()V
-
-    iput-object v0, p0, Lcty;->f:Ljava/util/Timer;
-
-    new-instance v0, Ljava/util/HashMap;
-
-    invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
-
-    iput-object v0, p0, Lcty;->g:Ljava/util/Map;
-
-    sget-object v0, Lmpx;->a:Lmpx;
-
-    iput-object v0, p0, Lcty;->e:Lmqp;
-
-    new-instance v0, Lctx;
-
-    invoke-direct {v0, p0}, Lctx;-><init>(Lcty;)V
-
-    iput-object v0, p0, Lcty;->h:Ljava/util/TimerTask;
-
-    sget-object v0, Lj$/time/Duration;->ZERO:Lj$/time/Duration;
-
-    iput-object v0, p0, Lcty;->i:Lj$/time/Duration;
-
-    const/4 v0, -0x1
-
-    iput v0, p0, Lcty;->j:I
-
-    iput-object p1, p0, Lcty;->a:Lhxb;
-
-    iput-object p2, p0, Lcty;->b:Lipk;
-
-    iput-object p3, p0, Lcty;->c:Ljuh;
-
-    iput-object p4, p0, Lcty;->d:Lmrg;
-
-    return-void
-.end method
-
-.method private final g(I)V
-    .locals 3
-
-    iget-object v0, p0, Lcty;->d:Lmrg;
-
-    sget-object v1, Ljava/util/concurrent/TimeUnit;->MILLISECONDS:Ljava/util/concurrent/TimeUnit;
-
-    invoke-virtual {v0, v1}, Lmrg;->a(Ljava/util/concurrent/TimeUnit;)J
-
-    move-result-wide v0
-
-    invoke-static {v0, v1}, Lj$/time/Duration;->ofMillis(J)Lj$/time/Duration;
-
-    move-result-object v0
-
-    iget-object v1, p0, Lcty;->g:Ljava/util/Map;
-
-    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object p1
-
-    iget-object v2, p0, Lcty;->i:Lj$/time/Duration;
-
-    invoke-virtual {v0, v2}, Lj$/time/Duration;->minus(Lj$/time/Duration;)Lj$/time/Duration;
-
-    move-result-object v2
-
-    invoke-interface {v1, p1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    iput-object v0, p0, Lcty;->i:Lj$/time/Duration;
+    iput-object p1, p0, Lcty;->a:Lcug;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(I)J
-    .locals 4
+.method public final onClick(Landroid/view/View;)V
+    .locals 6
 
-    iget-object v0, p0, Lcty;->g:Ljava/util/Map;
+    iget-object v0, p0, Lcty;->a:Lcug;
 
-    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    iget-object v1, v0, Lcug;->o:Lcui;
 
-    move-result-object p1
+    iget-boolean v2, v1, Lcui;->e:Z
 
-    invoke-interface {v0, p1}, Ljava/util/Map;->containsKey(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-nez v0, :cond_0
-
-    iget-object p1, p0, Lcty;->d:Lmrg;
-
-    sget-object v0, Ljava/util/concurrent/TimeUnit;->MILLISECONDS:Ljava/util/concurrent/TimeUnit;
-
-    invoke-virtual {p1, v0}, Lmrg;->a(Ljava/util/concurrent/TimeUnit;)J
-
-    move-result-wide v0
-
-    iget-object p1, p0, Lcty;->i:Lj$/time/Duration;
-
-    invoke-virtual {p1}, Lj$/time/Duration;->toMillis()J
-
-    move-result-wide v2
-
-    sub-long/2addr v0, v2
-
-    return-wide v0
+    if-nez v2, :cond_1
 
     :cond_0
-    iget-object v0, p0, Lcty;->g:Ljava/util/Map;
+    goto/16 :goto_3
 
-    invoke-interface {v0, p1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object p1
-
-    check-cast p1, Lj$/time/Duration;
-
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    invoke-virtual {p1}, Lj$/time/Duration;->toMillis()J
-
-    move-result-wide v0
-
-    return-wide v0
-.end method
-
-.method public final b(I)V
-    .locals 2
-
-    iget v0, p0, Lcty;->j:I
-
-    const/4 v1, -0x1
-
-    if-eq v0, v1, :cond_0
-
-    invoke-direct {p0, v0}, Lcty;->g(I)V
-
-    :cond_0
-    iput p1, p0, Lcty;->j:I
-
-    return-void
-.end method
-
-.method public final c()V
-    .locals 4
-
-    iget-object v0, p0, Lcty;->d:Lmrg;
-
-    iget-boolean v1, v0, Lmrg;->a:Z
-
-    if-eqz v1, :cond_0
-
-    invoke-virtual {v0}, Lmrg;->f()V
-
-    iget-object v0, p0, Lcty;->c:Ljuh;
-
-    new-instance v1, Lcqf;
-
-    const/16 v2, 0x14
-
-    invoke-direct {v1, p0, v2}, Lcqf;-><init>(Lcty;I)V
-
-    invoke-virtual {v0, v1}, Ljuh;->c(Ljava/lang/Runnable;)V
-
-    iget-object v0, p0, Lcty;->b:Lipk;
-
-    const-string v1, "/video_state_paused"
-
-    const-wide/16 v2, -0x1
-
-    invoke-interface {v0, v1, v2, v3}, Lipk;->l(Ljava/lang/String;J)V
-
-    :cond_0
-    return-void
-.end method
-
-.method public final d()V
-    .locals 4
-
-    iget-object v0, p0, Lcty;->d:Lmrg;
-
-    iget-boolean v1, v0, Lmrg;->a:Z
-
-    if-nez v1, :cond_0
-
-    invoke-virtual {v0}, Lmrg;->e()V
-
-    iget-object v0, p0, Lcty;->c:Ljuh;
-
-    new-instance v1, Lctw;
+    :cond_1
+    iget-boolean v1, v1, Lcui;->d:Z
 
     const/4 v2, 0x1
 
-    invoke-direct {v1, p0, v2}, Lctw;-><init>(Lcty;I)V
+    const/4 v3, 0x0
 
-    invoke-virtual {v0, v1}, Ljuh;->c(Ljava/lang/Runnable;)V
+    if-nez v1, :cond_3
 
-    iget-object v0, p0, Lcty;->b:Lipk;
+    invoke-static {p1}, Ljty;->e(Landroid/view/View;)V
 
-    const-string v1, "/video_state_resumed"
+    iget-object p1, v0, Lcug;->t:Llie;
 
-    const-wide/16 v2, -0x1
+    if-nez p1, :cond_0
 
-    invoke-interface {v0, v1, v2, v3}, Lipk;->l(Ljava/lang/String;J)V
+    iget-object p1, v0, Lcug;->l:Lgtg;
 
-    :cond_0
+    invoke-virtual {p1}, Lgtg;->E()Z
+
+    move-result p1
+
+    if-eqz p1, :cond_2
+
+    iget-object p1, v0, Lcug;->l:Lgtg;
+
+    iget-object v1, p1, Lgtg;->bf:Lojc;
+
+    invoke-virtual {v1}, Lojc;->g()Z
+
+    move-result v1
+
+    invoke-static {v1}, Lobr;->aQ(Z)V
+
+    iget-object p1, p1, Lgtg;->bf:Lojc;
+
+    invoke-virtual {p1}, Lojc;->c()Ljava/lang/Object;
+
+    move-result-object p1
+
+    check-cast p1, Lgts;
+
+    iget-object p1, p1, Lgts;->b:Lcom/google/android/apps/camera/optionsbar/common/LinearMinibarImpl;
+
+    goto :goto_0
+
+    :cond_2
+    iget-object p1, v0, Lcug;->g:Lqkg;
+
+    check-cast p1, Ljnw;
+
+    invoke-virtual {p1}, Ljnw;->a()Ljns;
+
+    move-result-object p1
+
+    iget-object p1, p1, Ljns;->h:Lcom/google/android/apps/camera/optionsbar/view/OptionsMenuContainer;
+
+    invoke-virtual {p1}, Lcom/google/android/apps/camera/optionsbar/view/OptionsMenuContainer;->f()Landroid/widget/FrameLayout;
+
+    move-result-object p1
+
+    :goto_0
+    new-instance v1, Ljlz;
+
+    iget-object v4, v0, Lcug;->f:Landroid/content/Context;
+
+    invoke-virtual {v4}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v4
+
+    const v5, 0x7f14014c
+
+    invoke-virtual {v4, v5}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-direct {v1, v4}, Ljlz;-><init>(Ljava/lang/String;)V
+
+    sget-object v4, Ljrz;->a:Ljrz;
+
+    iget-object v4, v0, Lcug;->n:Lcom/google/android/apps/camera/camcorder/ui/stabilization/StabilizationUi;
+
+    iget-object v4, v4, Lcom/google/android/apps/camera/camcorder/ui/stabilization/StabilizationUi;->d:Ljrz;
+
+    invoke-virtual {v4}, Ljrz;->ordinal()I
+
+    move-result v4
+
+    const/16 v5, 0x14
+
+    packed-switch v4, :pswitch_data_0
+
+    invoke-virtual {v1, p1}, Ljlz;->u(Landroid/view/View;)V
+
+    goto :goto_1
+
+    :pswitch_0
+    invoke-virtual {v1, p1, v5}, Ljlz;->l(Landroid/view/View;I)V
+
+    goto :goto_1
+
+    :pswitch_1
+    invoke-virtual {v1, p1, v5}, Ljlz;->h(Landroid/view/View;I)V
+
+    :goto_1
+    invoke-interface {v1}, Ljma;->i()V
+
+    iget-object p1, v0, Lcug;->i:Lddf;
+
+    sget-object v4, Lddl;->ay:Lddg;
+
+    invoke-interface {p1, v4}, Lddf;->k(Lddg;)Z
+
+    move-result p1
+
+    iput-boolean p1, v1, Ljlz;->h:Z
+
+    invoke-interface {v1}, Ljmb;->n()V
+
+    new-instance p1, Lctz;
+
+    invoke-direct {p1, v0, v2}, Lctz;-><init>(Lcug;I)V
+
+    iget-object v2, v0, Lcug;->e:Llar;
+
+    invoke-interface {v1, p1, v2}, Ljmc;->g(Ljava/lang/Runnable;Ljava/util/concurrent/Executor;)V
+
+    new-instance p1, Lctz;
+
+    invoke-direct {p1, v0, v3}, Lctz;-><init>(Lcug;I)V
+
+    iget-object v2, v0, Lcug;->e:Llar;
+
+    invoke-interface {v1, p1, v2}, Ljmc;->f(Ljava/lang/Runnable;Ljava/util/concurrent/Executor;)V
+
+    const/16 p1, 0x1388
+
+    iput p1, v1, Ljlz;->d:I
+
+    const/16 p1, 0xa
+
+    iput p1, v1, Ljlz;->m:I
+
+    iget-object p1, v0, Lcug;->c:Lelw;
+
+    iput-object p1, v1, Ljlz;->i:Lelw;
+
+    iput-boolean v3, v1, Ljlz;->e:Z
+
+    iput-boolean v3, v1, Ljlz;->f:Z
+
+    invoke-interface {v1}, Ljmc;->o()V
+
+    invoke-interface {v1}, Ljmc;->r()V
+
+    invoke-interface {v1}, Ljmc;->a()Llie;
+
+    move-result-object p1
+
+    iput-object p1, v0, Lcug;->t:Llie;
+
     return-void
-.end method
 
-.method public final e()V
-    .locals 7
+    :cond_3
+    iget-object v1, v0, Lcug;->j:Ljava/util/concurrent/atomic/AtomicBoolean;
 
-    iget-object v0, p0, Lcty;->d:Lmrg;
+    invoke-virtual {v1}, Ljava/util/concurrent/atomic/AtomicBoolean;->get()Z
 
-    invoke-virtual {v0}, Lmrg;->e()V
+    move-result v1
 
-    iget-object v1, p0, Lcty;->f:Ljava/util/Timer;
+    if-nez v1, :cond_5
 
-    iget-object v2, p0, Lcty;->h:Ljava/util/TimerTask;
+    invoke-static {p1}, Ljty;->e(Landroid/view/View;)V
 
-    const-wide/16 v3, 0x0
+    iget-object p1, v0, Lcug;->a:Lcuu;
 
-    const-wide/16 v5, 0x3e8
+    invoke-interface {p1}, Lcuu;->c()Z
 
-    invoke-virtual/range {v1 .. v6}, Ljava/util/Timer;->scheduleAtFixedRate(Ljava/util/TimerTask;JJ)V
+    move-result p1
+
+    if-eqz p1, :cond_4
+
+    iget-object p1, v0, Lcug;->a:Lcuu;
+
+    invoke-interface {p1}, Lcuu;->b()V
+
+    goto :goto_2
+
+    :cond_4
+    iget-object p1, v0, Lcug;->a:Lcuu;
+
+    check-cast p1, Lcus;
+
+    iget-object v1, p1, Lcus;->b:Lcom/google/android/apps/camera/ui/popupmenu/PopupMenuView;
+
+    invoke-virtual {v1}, Lcom/google/android/apps/camera/ui/popupmenu/PopupMenuView;->d()V
+
+    iget-object p1, p1, Lcus;->d:Ljava/util/List;
+
+    invoke-static {p1}, Lj$/util/Collection$-EL;->stream(Ljava/util/Collection;)Lj$/util/stream/Stream;
+
+    move-result-object p1
+
+    sget-object v1, Lcez;->f:Lcez;
+
+    invoke-interface {p1, v1}, Lj$/util/stream/Stream;->forEach(Lj$/util/function/Consumer;)V
+
+    :goto_2
+    iget-object p1, v0, Lcug;->k:Lhug;
+
+    sget-object v1, Lhtu;->w:Lhul;
+
+    invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v3
+
+    invoke-interface {p1, v1, v3}, Lhug;->e(Lhts;Ljava/lang/Object;)V
+
+    iget-object p1, v0, Lcug;->k:Lhug;
+
+    sget-object v0, Lhtu;->y:Lhuk;
+
+    invoke-static {v2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    move-result-object v1
+
+    invoke-interface {p1, v0, v1}, Lhug;->e(Lhts;Ljava/lang/Object;)V
 
     return-void
-.end method
 
-.method public final f()V
-    .locals 4
-
-    iget-object v0, p0, Lcty;->d:Lmrg;
-
-    iget-boolean v1, v0, Lmrg;->a:Z
-
-    if-eqz v1, :cond_0
-
-    invoke-virtual {v0}, Lmrg;->f()V
-
-    :cond_0
-    sget-object v0, Lmpx;->a:Lmpx;
-
-    iput-object v0, p0, Lcty;->e:Lmqp;
-
-    iget v0, p0, Lcty;->j:I
-
-    invoke-direct {p0, v0}, Lcty;->g(I)V
-
-    iget-object v0, p0, Lcty;->b:Lipk;
-
-    const-string v1, "/video_state_stopped"
-
-    const-wide/16 v2, -0x1
-
-    invoke-interface {v0, v1, v2, v3}, Lipk;->l(Ljava/lang/String;J)V
-
-    iget-object v0, p0, Lcty;->f:Ljava/util/Timer;
-
-    invoke-virtual {v0}, Ljava/util/Timer;->cancel()V
-
-    iget-object v0, p0, Lcty;->h:Ljava/util/TimerTask;
-
-    invoke-virtual {v0}, Ljava/util/TimerTask;->cancel()Z
-
+    :cond_5
+    :goto_3
     return-void
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x1
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method

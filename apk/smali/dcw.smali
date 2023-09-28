@@ -1,90 +1,86 @@
 .class public final Ldcw;
-.super Ldcr;
+.super Ljava/lang/Object;
 
 
 # instance fields
-.field public final a:Lapt;
+.field public final a:F
 
-.field public final b:Lapo;
+.field public final b:F
 
-.field public final c:Laqa;
+.field public final c:F
 
-.field public final d:Laqa;
-
-.field private final e:Lapn;
+.field public final d:F
 
 
 # direct methods
-.method public constructor <init>(Lapt;)V
+.method constructor <init>()V
     .locals 1
 
-    invoke-direct {p0}, Ldcr;-><init>()V
+    const/4 v0, 0x0
 
-    iput-object p1, p0, Ldcw;->a:Lapt;
+    invoke-direct {p0, v0, v0, v0, v0}, Ldcw;-><init>(FFFF)V
 
-    new-instance v0, Ldcs;
+    return-void
+.end method
 
-    invoke-direct {v0, p1}, Ldcs;-><init>(Lapt;)V
+.method public constructor <init>(FFFF)V
+    .locals 0
 
-    iput-object v0, p0, Ldcw;->b:Lapo;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    new-instance v0, Ldct;
+    iput p1, p0, Ldcw;->a:F
 
-    invoke-direct {v0, p1}, Ldct;-><init>(Lapt;)V
+    iput p2, p0, Ldcw;->b:F
 
-    iput-object v0, p0, Ldcw;->e:Lapn;
+    iput p4, p0, Ldcw;->c:F
 
-    new-instance v0, Ldcu;
-
-    invoke-direct {v0, p1}, Ldcu;-><init>(Lapt;)V
-
-    iput-object v0, p0, Ldcw;->c:Laqa;
-
-    new-instance v0, Ldcv;
-
-    invoke-direct {v0, p1}, Ldcv;-><init>(Lapt;)V
-
-    iput-object v0, p0, Ldcw;->d:Laqa;
+    iput p3, p0, Ldcw;->d:F
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Ldcq;)V
-    .locals 1
+.method public final toString()Ljava/lang/String;
+    .locals 5
 
-    iget-object v0, p0, Ldcw;->a:Lapt;
+    iget v0, p0, Ldcw;->a:F
 
-    invoke-virtual {v0}, Lapt;->l()V
+    iget v1, p0, Ldcw;->b:F
 
-    iget-object v0, p0, Ldcw;->a:Lapt;
+    iget v2, p0, Ldcw;->d:F
 
-    invoke-virtual {v0}, Lapt;->m()V
+    new-instance v3, Ljava/lang/StringBuilder;
 
-    :try_start_0
-    iget-object v0, p0, Ldcw;->e:Lapn;
+    const/16 v4, 0x41
 
-    invoke-virtual {v0, p1}, Lapn;->a(Ljava/lang/Object;)I
+    invoke-direct {v3, v4}, Ljava/lang/StringBuilder;-><init>(I)V
 
-    iget-object p1, p0, Ldcw;->a:Lapt;
+    const-string v4, "CutoutInfo(x="
 
-    invoke-virtual {p1}, Lapt;->q()V
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget-object p1, p0, Ldcw;->a:Lapt;
+    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
 
-    invoke-virtual {p1}, Lapt;->o()V
+    const-string v0, ",y="
 
-    return-void
+    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    :catchall_0
-    move-exception p1
+    invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
 
-    iget-object v0, p0, Ldcw;->a:Lapt;
+    const-string v0, ",r="
 
-    invoke-virtual {v0}, Lapt;->o()V
+    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    throw p1
+    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
+
+    const-string v0, ")"
+
+    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
 .end method

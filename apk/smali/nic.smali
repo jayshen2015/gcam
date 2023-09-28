@@ -1,216 +1,179 @@
 .class public final Lnic;
-.super Lnws;
+.super Ljava/lang/Object;
 
 # interfaces
-.implements Lnxz;
+.implements Ljava/lang/Comparable;
+.implements Landroid/os/Parcelable;
 
 
 # static fields
-.field public static final i:Lnic;
-
-.field private static volatile j:Lnyf;
+.field public static final CREATOR:Landroid/os/Parcelable$Creator;
 
 
 # instance fields
-.field public a:I
+.field public final a:Ljava/lang/String;
 
-.field public b:Ljava/lang/String;
+.field public final b:J
 
-.field public c:I
+.field public final c:I
 
-.field public d:I
-
-.field public e:I
-
-.field public f:I
-
-.field public g:I
-
-.field public h:J
+.field public final d:Ljava/lang/String;
 
 
 # direct methods
 .method static constructor <clinit>()V
     .locals 2
 
-    new-instance v0, Lnic;
+    new-instance v0, Llaa;
 
-    invoke-direct {v0}, Lnic;-><init>()V
+    const/4 v1, 0x5
 
-    sput-object v0, Lnic;->i:Lnic;
+    invoke-direct {v0, v1}, Llaa;-><init>(I)V
 
-    const-class v1, Lnic;
-
-    invoke-static {v1, v0}, Lnws;->aa(Ljava/lang/Class;Lnws;)V
+    sput-object v0, Lnic;->CREATOR:Landroid/os/Parcelable$Creator;
 
     return-void
 .end method
 
-.method private constructor <init>()V
-    .locals 1
+.method public constructor <init>(Landroid/os/Parcel;)V
+    .locals 2
 
-    invoke-direct {p0}, Lnws;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const-string v0, ""
+    invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
-    iput-object v0, p0, Lnic;->b:Ljava/lang/String;
+    move-result-object v0
+
+    iput-object v0, p0, Lnic;->a:Ljava/lang/String;
+
+    invoke-virtual {p1}, Landroid/os/Parcel;->readLong()J
+
+    move-result-wide v0
+
+    iput-wide v0, p0, Lnic;->b:J
+
+    invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
+
+    move-result v0
+
+    iput v0, p0, Lnic;->c:I
+
+    invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
+
+    move-result-object p1
+
+    iput-object p1, p0, Lnic;->d:Ljava/lang/String;
+
+    return-void
+.end method
+
+.method public constructor <init>(Ljava/lang/String;JI)V
+    .locals 0
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lnic;->a:Ljava/lang/String;
+
+    iput-wide p2, p0, Lnic;->b:J
+
+    iput p4, p0, Lnic;->c:I
+
+    const-string p1, ""
+
+    iput-object p1, p0, Lnic;->d:Ljava/lang/String;
 
     return-void
 .end method
 
 
 # virtual methods
-.method protected final a(ILjava/lang/Object;)Ljava/lang/Object;
-    .locals 3
+.method public final bridge synthetic compareTo(Ljava/lang/Object;)I
+    .locals 1
 
-    add-int/lit8 p1, p1, -0x1
+    check-cast p1, Lnic;
 
-    const/4 p2, 0x1
+    iget-object v0, p0, Lnic;->a:Ljava/lang/String;
 
-    packed-switch p1, :pswitch_data_0
+    iget-object p1, p1, Lnic;->a:Ljava/lang/String;
 
-    :pswitch_0
+    invoke-virtual {v0, p1}, Ljava/lang/String;->compareTo(Ljava/lang/String;)I
+
+    move-result p1
+
+    return p1
+.end method
+
+.method public final describeContents()I
+    .locals 1
+
+    const/4 v0, 0x0
+
+    return v0
+.end method
+
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 1
+
+    instance-of v0, p1, Lnic;
+
+    if-nez v0, :cond_0
+
     const/4 p1, 0x0
 
-    return-object p1
-
-    :pswitch_1
-    sget-object p1, Lnic;->j:Lnyf;
-
-    if-nez p1, :cond_1
-
-    const-class p2, Lnic;
-
-    monitor-enter p2
-
-    :try_start_0
-    sget-object p1, Lnic;->j:Lnyf;
-
-    if-nez p1, :cond_0
-
-    new-instance p1, Lnwo;
-
-    sget-object v0, Lnic;->i:Lnic;
-
-    invoke-direct {p1, v0}, Lnwo;-><init>(Lnws;)V
-
-    sput-object p1, Lnic;->j:Lnyf;
+    return p1
 
     :cond_0
-    monitor-exit p2
+    check-cast p1, Lnic;
 
-    goto :goto_0
+    iget-object v0, p0, Lnic;->a:Ljava/lang/String;
 
-    :catchall_0
-    move-exception p1
+    iget-object p1, p1, Lnic;->a:Ljava/lang/String;
 
-    monitor-exit p2
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    invoke-virtual {v0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    throw p1
+    move-result p1
 
-    :cond_1
-    :goto_0
-    return-object p1
+    return p1
+.end method
 
-    :pswitch_2
-    sget-object p1, Lnic;->i:Lnic;
+.method public final hashCode()I
+    .locals 1
 
-    return-object p1
+    iget-object v0, p0, Lnic;->a:Ljava/lang/String;
 
-    :pswitch_3
-    new-instance p1, Lnwn;
+    invoke-virtual {v0}, Ljava/lang/String;->hashCode()I
 
-    sget-object p2, Lnic;->i:Lnic;
+    move-result v0
 
-    invoke-direct {p1, p2}, Lnwn;-><init>(Lnws;)V
+    return v0
+.end method
 
-    return-object p1
+.method public final toString()Ljava/lang/String;
+    .locals 1
 
-    :pswitch_4
-    new-instance p1, Lnic;
+    iget-object v0, p0, Lnic;->a:Ljava/lang/String;
 
-    invoke-direct {p1}, Lnic;-><init>()V
+    return-object v0
+.end method
 
-    return-object p1
+.method public final writeToParcel(Landroid/os/Parcel;I)V
+    .locals 2
 
-    :pswitch_5
-    const-string p1, "b"
+    iget-object p2, p0, Lnic;->a:Ljava/lang/String;
 
-    const-string v0, "\u0001\u0007\u0000\u0001\u0001\u0007\u0007\u0000\u0000\u0000\u0001\u1008\u0000\u0002\u1004\u0001\u0003\u1004\u0002\u0004\u1004\u0003\u0005\u1004\u0004\u0006\u1004\u0005\u0007\u1002\u0006"
+    invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    const/16 v1, 0x8
+    iget-wide v0, p0, Lnic;->b:J
 
-    new-array v1, v1, [Ljava/lang/Object;
+    invoke-virtual {p1, v0, v1}, Landroid/os/Parcel;->writeLong(J)V
 
-    const/4 v2, 0x0
+    iget p2, p0, Lnic;->c:I
 
-    aput-object p1, v1, v2
+    invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeInt(I)V
 
-    const-string p1, "b"
+    iget-object p2, p0, Lnic;->d:Ljava/lang/String;
 
-    aput-object p1, v1, p2
+    invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    const/4 p1, 0x2
-
-    const-string p2, "c"
-
-    aput-object p2, v1, p1
-
-    const/4 p1, 0x3
-
-    const-string p2, "d"
-
-    aput-object p2, v1, p1
-
-    const/4 p1, 0x4
-
-    const-string p2, "e"
-
-    aput-object p2, v1, p1
-
-    const/4 p1, 0x5
-
-    const-string p2, "f"
-
-    aput-object p2, v1, p1
-
-    const/4 p1, 0x6
-
-    const-string p2, "g"
-
-    aput-object p2, v1, p1
-
-    const/4 p1, 0x7
-
-    const-string p2, "h"
-
-    aput-object p2, v1, p1
-
-    sget-object p1, Lnic;->i:Lnic;
-
-    invoke-static {p1, v0, v1}, Lnic;->X(Lnxy;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object p1
-
-    return-object p1
-
-    :pswitch_6
-    invoke-static {p2}, Ljava/lang/Byte;->valueOf(B)Ljava/lang/Byte;
-
-    move-result-object p1
-
-    return-object p1
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_6
-        :pswitch_0
-        :pswitch_5
-        :pswitch_4
-        :pswitch_3
-        :pswitch_2
-        :pswitch_1
-    .end packed-switch
+    return-void
 .end method

@@ -1,64 +1,59 @@
-.class public interface abstract Ldol;
+.class public final synthetic Ldol;
 .super Ljava/lang/Object;
+
+# interfaces
+.implements Llij;
+
+
+# instance fields
+.field public final synthetic a:Ldom;
+
+.field private final synthetic b:I
+
+
+# direct methods
+.method public synthetic constructor <init>(Ldom;I)V
+    .locals 0
+
+    iput p2, p0, Ldol;->b:I
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Ldol;->a:Ldom;
+
+    return-void
+.end method
 
 
 # virtual methods
-.method public abstract a()Ljvs;
-.end method
+.method public final fB(Ljava/lang/Object;)V
+    .locals 1
 
-.method public abstract b()Ljvs;
-.end method
+    iget v0, p0, Ldol;->b:I
 
-.method public abstract c()Ljvs;
-.end method
+    packed-switch v0, :pswitch_data_0
 
-.method public abstract d()V
-.end method
+    iget-object v0, p0, Ldol;->a:Ldom;
 
-.method public abstract e()V
-.end method
+    check-cast p1, Ljrl;
 
-.method public abstract f()V
-.end method
+    invoke-virtual {v0}, Ldom;->d()V
 
-.method public abstract g(IIF)V
-.end method
+    return-void
 
-.method public abstract h()V
-.end method
+    :pswitch_0
+    iget-object v0, p0, Ldol;->a:Ldom;
 
-.method public abstract i()V
-.end method
+    check-cast p1, Ljava/lang/Boolean;
 
-.method public abstract j(Z)V
-.end method
+    invoke-virtual {v0}, Ldom;->d()V
 
-.method public abstract k()V
-.end method
+    return-void
 
-.method public abstract l(Z)V
-.end method
+    nop
 
-.method public abstract m(Z)V
-.end method
-
-.method public abstract n(Ldoh;)V
-.end method
-
-.method public abstract o(Liko;)V
-.end method
-
-.method public abstract p(ZZ)V
-.end method
-
-.method public abstract q(I)V
-.end method
-
-.method public abstract r(Lhyn;Lika;)V
-.end method
-
-.method public abstract s(Landroidx/wear/ambient/AmbientModeSupport$AmbientController;)V
-.end method
-
-.method public abstract t(Lcom/google/android/apps/camera/evcomp/EvCompView;Ljwb;Ljwb;Ljwb;Ljwb;Ldja;Lmqp;Licj;)V
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

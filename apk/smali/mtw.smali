@@ -1,56 +1,76 @@
-.class public abstract Lmtw;
+.class public final Lmtw;
 .super Ljava/lang/Object;
 
 
-# static fields
-.field public static final b:Lmtw;
-
-.field public static final c:Lmtw;
-
-.field public static final d:Lmtw;
+# instance fields
+.field private final a:Ljava/lang/Iterable;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
-
-    new-instance v0, Lmtu;
-
-    invoke-direct {v0}, Lmtu;-><init>()V
-
-    sput-object v0, Lmtw;->b:Lmtw;
-
-    new-instance v0, Lmtv;
-
-    const/4 v1, -0x1
-
-    invoke-direct {v0, v1}, Lmtv;-><init>(I)V
-
-    sput-object v0, Lmtw;->c:Lmtw;
-
-    new-instance v0, Lmtv;
-
-    const/4 v1, 0x1
-
-    invoke-direct {v0, v1}, Lmtv;-><init>(I)V
-
-    sput-object v0, Lmtw;->d:Lmtw;
-
-    return-void
-.end method
-
-.method public constructor <init>()V
+.method public constructor <init>(Ljava/lang/Iterable;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lmtw;->a:Ljava/lang/Iterable;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public abstract a()I
-.end method
+.method public final a()Lmne;
+    .locals 3
 
-.method public abstract b(Ljava/lang/Comparable;Ljava/lang/Comparable;)Lmtw;
+    new-instance v0, Ljava/util/ArrayList;
+
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+
+    iget-object v1, p0, Lmtw;->a:Ljava/lang/Iterable;
+
+    invoke-interface {v1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
+
+    move-result-object v1
+
+    :goto_0
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_0
+
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Lmls;
+
+    invoke-interface {v2}, Lmls;->a()Lmne;
+
+    move-result-object v2
+
+    invoke-interface {v0, v2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    goto :goto_0
+
+    :cond_0
+    invoke-static {v0}, Lmip;->Z(Ljava/lang/Iterable;)Lmnb;
+
+    move-result-object v0
+
+    sget-object v1, Lpgr;->a:Lpgr;
+
+    invoke-static {}, Lmip;->ai()Lmmh;
+
+    move-result-object v2
+
+    invoke-interface {v0, v1, v2}, Lmnb;->a(Ljava/util/concurrent/Executor;Lmlu;)Lmnb;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lmne;->i(Lmnb;)Lmne;
+
+    move-result-object v0
+
+    return-object v0
 .end method

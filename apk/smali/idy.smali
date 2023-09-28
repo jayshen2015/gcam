@@ -1,187 +1,167 @@
-.class public final Lidy;
+.class public final synthetic Lidy;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lelk;
+.implements Lj$/util/function/ToIntFunction;
 
 
 # instance fields
-.field private final a:Lcom/google/android/apps/camera/ui/remotecontrol/RemoteControlView;
-
-.field private b:Ljava/util/Date;
+.field public final synthetic a:Liec;
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/apps/camera/ui/remotecontrol/RemoteControlView;)V
+.method public synthetic constructor <init>(Liec;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lidy;->a:Lcom/google/android/apps/camera/ui/remotecontrol/RemoteControlView;
+    iput-object p1, p0, Lidy;->a:Liec;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()I
-    .locals 1
+.method public final applyAsInt(Ljava/lang/Object;)I
+    .locals 6
 
-    const v0, 0x7fffffff
+    iget-object v0, p0, Lidy;->a:Liec;
 
-    return v0
-.end method
+    check-cast p1, Landroid/content/pm/ResolveInfo;
 
-.method public final b()Lelm;
-    .locals 1
+    iget-object p1, p1, Landroid/content/pm/ResolveInfo;->activityInfo:Landroid/content/pm/ActivityInfo;
 
-    sget-object v0, Lelm;->a:Lelm;
+    iget-object p1, p1, Landroid/content/pm/ActivityInfo;->packageName:Ljava/lang/String;
 
-    return-object v0
-.end method
+    invoke-static {}, Loor;->m()Loon;
 
-.method public final synthetic c()Ljava/lang/Object;
-    .locals 1
+    move-result-object v1
 
-    invoke-static {}, Lfcr;->f()Ljava/lang/Object;
+    sget-object v2, Lpzi;->a:Lpzi;
+
+    invoke-virtual {v2}, Lpzi;->b()Lpzj;
+
+    move-result-object v2
+
+    invoke-interface {v2}, Lpzj;->c()Ljava/lang/String;
+
+    move-result-object v2
+
+    sget-object v3, Lidn;->f:Lope;
+
+    invoke-static {v2, v3}, Liec;->k(Ljava/lang/String;Lope;)Lope;
+
+    move-result-object v2
+
+    sget-object v3, Lpzi;->a:Lpzi;
+
+    invoke-virtual {v3}, Lpzi;->b()Lpzj;
+
+    move-result-object v3
+
+    invoke-interface {v3}, Lpzj;->a()Ljava/lang/String;
+
+    move-result-object v3
+
+    sget-object v4, Lorx;->a:Lorx;
+
+    invoke-static {v3, v4}, Liec;->k(Ljava/lang/String;Lope;)Lope;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Lope;->isEmpty()Z
+
+    move-result v4
+
+    const/4 v5, 0x0
+
+    if-nez v4, :cond_0
+
+    invoke-virtual {v0}, Liec;->m()Z
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    new-instance v0, Ljava/util/ArrayList;
+
+    invoke-direct {v0, v2}, Ljava/util/ArrayList;-><init>(Ljava/util/Collection;)V
+
+    invoke-virtual {v0, v3}, Ljava/util/ArrayList;->removeAll(Ljava/util/Collection;)Z
+
+    invoke-virtual {v0, v5, v3}, Ljava/util/ArrayList;->addAll(ILjava/util/Collection;)Z
+
+    invoke-static {v0}, Lope;->F(Ljava/util/Collection;)Lope;
+
+    move-result-object v2
+
+    goto :goto_0
+
+    :cond_0
+    :goto_0
+    invoke-virtual {v2}, Lope;->gH()Loti;
 
     move-result-object v0
 
-    return-object v0
-.end method
+    :cond_1
+    :goto_1
+    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
-.method public final synthetic d()Ljava/lang/Runnable;
-    .locals 1
+    move-result v2
 
-    const/4 v0, 0x0
+    if-eqz v2, :cond_2
 
-    return-object v0
-.end method
+    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-.method public final e()Ljava/util/Date;
-    .locals 1
+    move-result-object v2
 
-    iget-object v0, p0, Lidy;->b:Ljava/util/Date;
+    check-cast v2, Ljava/lang/String;
 
-    return-object v0
-.end method
+    sget-object v3, Liec;->b:Ljava/util/regex/Pattern;
 
-.method public final f(Ljava/lang/Runnable;)V
-    .locals 2
+    invoke-virtual {v3, v2}, Ljava/util/regex/Pattern;->matcher(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;
 
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/util/regex/Matcher;->matches()Z
+
+    move-result v3
+
+    if-eqz v3, :cond_1
+
+    invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v3
+
+    invoke-virtual {v1, v2, v3}, Loon;->e(Ljava/lang/Object;Ljava/lang/Object;)V
+
+    add-int/lit8 v5, v5, 0x1
+
+    goto :goto_1
+
+    :cond_2
+    invoke-virtual {v1}, Loon;->c()Loor;
+
+    move-result-object v0
+
+    invoke-virtual {v0, p1}, Loor;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p1
 
-    new-instance v0, Ljava/lang/UnsupportedOperationException;
+    check-cast p1, Ljava/lang/Integer;
 
-    invoke-virtual {p1}, Ljava/lang/Class;->getName()Ljava/lang/String;
+    if-nez p1, :cond_3
 
-    move-result-object p1
+    const p1, 0x7fffffff
 
-    invoke-static {p1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object p1
-
-    const-string v1, "Unsupported Operation delayedHide(Runnable) in: "
-
-    invoke-virtual {v1, p1}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object p1
 
-    invoke-direct {v0, p1}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
+    :cond_3
+    invoke-virtual {p1}, Ljava/lang/Integer;->intValue()I
 
-    throw v0
-.end method
+    move-result p1
 
-.method public final g()V
-    .locals 2
-
-    iget-object v0, p0, Lidy;->a:Lcom/google/android/apps/camera/ui/remotecontrol/RemoteControlView;
-
-    const/16 v1, 0x8
-
-    invoke-virtual {v0, v1}, Lcom/google/android/apps/camera/ui/remotecontrol/RemoteControlView;->setVisibility(I)V
-
-    return-void
-.end method
-
-.method public final synthetic h()V
-    .locals 0
-
-    return-void
-.end method
-
-.method public final i(Ljava/util/Date;)V
-    .locals 0
-
-    iput-object p1, p0, Lidy;->b:Ljava/util/Date;
-
-    return-void
-.end method
-
-.method public final j()V
-    .locals 2
-
-    iget-object v0, p0, Lidy;->a:Lcom/google/android/apps/camera/ui/remotecontrol/RemoteControlView;
-
-    const/4 v1, 0x0
-
-    invoke-virtual {v0, v1}, Lcom/google/android/apps/camera/ui/remotecontrol/RemoteControlView;->setVisibility(I)V
-
-    return-void
-.end method
-
-.method public final synthetic k()Z
-    .locals 1
-
-    const/4 v0, 0x0
-
-    return v0
-.end method
-
-.method public final synthetic l()Z
-    .locals 1
-
-    const/4 v0, 0x0
-
-    return v0
-.end method
-
-.method public final m()Z
-    .locals 1
-
-    const/4 v0, 0x1
-
-    return v0
-.end method
-
-.method public final n()Z
-    .locals 1
-
-    const/4 v0, 0x0
-
-    return v0
-.end method
-
-.method public final synthetic o()Z
-    .locals 1
-
-    const/4 v0, 0x1
-
-    return v0
-.end method
-
-.method public final p()I
-    .locals 1
-
-    const/4 v0, 0x7
-
-    return v0
-.end method
-
-.method public final synthetic q(IZZLiko;Lhyn;)V
-    .locals 0
-
-    return-void
+    return p1
 .end method

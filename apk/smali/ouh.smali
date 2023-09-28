@@ -1,55 +1,37 @@
-.class public final Louh;
-.super Lolh;
+.class final Louh;
+.super Louf;
 
-
-# annotations
-.annotation runtime Lolj;
-    b = "kotlinx.coroutines.flow.FlowKt__ErrorsKt"
-    c = "Errors.kt"
-    d = "catchImpl"
-    e = {
-        0x9c
-    }
-.end annotation
+# interfaces
+.implements Loug;
 
 
 # instance fields
-.field public synthetic a:Ljava/lang/Object;
-
-.field public b:I
-
-.field public c:Lonk;
+.field final synthetic a:Louj;
 
 
 # direct methods
-.method public constructor <init>(Loku;)V
+.method public constructor <init>(Louj;Ljava/util/logging/Level;)V
     .locals 0
 
-    invoke-direct {p0, p1}, Lolh;-><init>(Loku;)V
+    iput-object p1, p0, Louh;->a:Louj;
+
+    invoke-direct {p0, p2}, Louf;-><init>(Ljava/util/logging/Level;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final b(Ljava/lang/Object;)Ljava/lang/Object;
+.method protected final synthetic c()Loue;
     .locals 1
 
-    iput-object p1, p0, Louh;->a:Ljava/lang/Object;
+    iget-object v0, p0, Louh;->a:Louj;
 
-    iget p1, p0, Louh;->b:I
+    return-object v0
+.end method
 
-    const/high16 v0, -0x80000000
+.method protected final bridge synthetic d()Lova;
+    .locals 0
 
-    or-int/2addr p1, v0
-
-    iput p1, p0, Louh;->b:I
-
-    const/4 p1, 0x0
-
-    invoke-static {p1, p1, p0}, Lone;->n(Lott;Lotu;Loku;)Ljava/lang/Object;
-
-    move-result-object p1
-
-    return-object p1
+    return-object p0
 .end method

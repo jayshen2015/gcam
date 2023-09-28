@@ -1,71 +1,29 @@
-.class public final Lhzy;
-.super Lian;
+.class final Lhzy;
+.super Ljava/lang/Object;
 
 # interfaces
-.implements Lhiv;
+.implements Liay;
 
 
 # instance fields
-.field public final a:Lhiu;
+.field final synthetic a:Liav;
 
-.field public final b:Lhiw;
+.field final synthetic b:Liat;
 
-.field public final c:Lhiw;
-
-.field private final g:Lhiw;
+.field final synthetic c:Lhzz;
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 5
+.method public constructor <init>(Lhzz;Liav;Liat;)V
+    .locals 0
 
-    invoke-direct {p0}, Lian;-><init>()V
+    iput-object p1, p0, Lhzy;->c:Lhzz;
 
-    new-instance v0, Lhzv;
+    iput-object p2, p0, Lhzy;->a:Liav;
 
-    invoke-direct {v0, p0}, Lhzv;-><init>(Lhzy;)V
+    iput-object p3, p0, Lhzy;->b:Liat;
 
-    new-instance v1, Lhiw;
-
-    const/4 v2, 0x0
-
-    new-array v3, v2, [Lhis;
-
-    invoke-direct {v1, v0, v3}, Lhiw;-><init>(Lhis;[Lhis;)V
-
-    iput-object v1, p0, Lhzy;->g:Lhiw;
-
-    new-instance v0, Lhzw;
-
-    invoke-direct {v0, p0}, Lhzw;-><init>(Lhzy;)V
-
-    new-instance v3, Lhiw;
-
-    new-array v4, v2, [Lhis;
-
-    invoke-direct {v3, v0, v4}, Lhiw;-><init>(Lhis;[Lhis;)V
-
-    iput-object v3, p0, Lhzy;->b:Lhiw;
-
-    new-instance v0, Lhzx;
-
-    invoke-direct {v0, p0}, Lhzx;-><init>(Lhzy;)V
-
-    new-instance v3, Lhiw;
-
-    new-array v4, v2, [Lhis;
-
-    invoke-direct {v3, v0, v4}, Lhiw;-><init>(Lhis;[Lhis;)V
-
-    iput-object v3, p0, Lhzy;->c:Lhiw;
-
-    new-instance v0, Lhiu;
-
-    invoke-direct {v0, v1, v2}, Lhiu;-><init>(Lhiw;Z)V
-
-    iput-object v0, p0, Lhzy;->a:Lhiu;
-
-    invoke-virtual {v0}, Lhiu;->f()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -75,165 +33,23 @@
 .method public final a()V
     .locals 1
 
-    iget-object v0, p0, Lhzy;->a:Lhiu;
+    const/4 v0, 0x0
 
-    invoke-virtual {v0}, Lhiu;->a()Lhiw;
-
-    move-result-object v0
-
-    if-nez v0, :cond_0
-
-    return-void
-
-    :cond_0
-    iget-object v0, p0, Lhzy;->a:Lhiu;
-
-    invoke-virtual {v0}, Lhiu;->a()Lhiw;
-
-    move-result-object v0
-
-    iget-object v0, v0, Lhiw;->a:Lhis;
-
-    check-cast v0, Liad;
-
-    invoke-virtual {v0}, Liad;->a()V
-
-    return-void
+    throw v0
 .end method
 
-.method public final b()V
-    .locals 1
-
-    iget-object v0, p0, Lhzy;->a:Lhiu;
-
-    invoke-virtual {v0}, Lhiu;->a()Lhiw;
-
-    move-result-object v0
-
-    if-nez v0, :cond_0
-
-    return-void
-
-    :cond_0
-    iget-object v0, p0, Lhzy;->a:Lhiu;
-
-    invoke-virtual {v0}, Lhiu;->a()Lhiw;
-
-    move-result-object v0
-
-    iget-object v0, v0, Lhiw;->a:Lhis;
-
-    check-cast v0, Liad;
-
-    invoke-virtual {v0}, Liad;->b()V
-
-    return-void
-.end method
-
-.method public final c()V
-    .locals 1
-
-    iget-object v0, p0, Lhzy;->a:Lhiu;
-
-    invoke-virtual {v0}, Lhiu;->a()Lhiw;
-
-    move-result-object v0
-
-    if-nez v0, :cond_0
-
-    return-void
-
-    :cond_0
-    iget-object v0, p0, Lhzy;->a:Lhiu;
-
-    invoke-virtual {v0}, Lhiu;->a()Lhiw;
-
-    move-result-object v0
-
-    iget-object v0, v0, Lhiw;->a:Lhis;
-
-    check-cast v0, Liad;
-
-    invoke-virtual {v0}, Liad;->c()V
-
-    return-void
-.end method
-
-.method public final d()V
-    .locals 1
-
-    iget-object v0, p0, Lhzy;->a:Lhiu;
-
-    invoke-virtual {v0}, Lhiu;->a()Lhiw;
-
-    move-result-object v0
-
-    if-nez v0, :cond_0
-
-    return-void
-
-    :cond_0
-    iget-object v0, p0, Lhzy;->a:Lhiu;
-
-    invoke-virtual {v0}, Lhiu;->a()Lhiw;
-
-    move-result-object v0
-
-    iget-object v0, v0, Lhiw;->a:Lhis;
-
-    check-cast v0, Liad;
-
-    invoke-virtual {v0}, Liad;->d()V
-
-    return-void
-.end method
-
-.method public final e()V
-    .locals 1
-
-    iget-object v0, p0, Lhzy;->a:Lhiu;
-
-    invoke-virtual {v0}, Lhiu;->b()V
-
-    iget-object v0, p0, Lhzy;->g:Lhiw;
-
-    invoke-virtual {v0}, Lhiw;->e()V
-
-    iget-object v0, p0, Lhzy;->b:Lhiw;
-
-    invoke-virtual {v0}, Lhiw;->e()V
-
-    iget-object v0, p0, Lhzy;->c:Lhiw;
-
-    invoke-virtual {v0}, Lhiw;->e()V
-
-    return-void
-.end method
-
-.method public final f()V
-    .locals 1
-
-    iget-object v0, p0, Lhzy;->a:Lhiu;
-
-    invoke-virtual {v0}, Lhiu;->c()V
-
-    return-void
-.end method
-
-.method public final g()V
-    .locals 1
-
-    iget-object v0, p0, Lhzy;->a:Lhiu;
-
-    invoke-virtual {v0}, Lhiu;->d()V
-
-    return-void
-.end method
-
-.method public final h()V
+.method public final b(Liax;)V
     .locals 0
 
-    invoke-static {p0}, Ljcb;->l(Lhiv;)V
+    const/4 p1, 0x0
 
-    return-void
+    throw p1
+.end method
+
+.method public final c(Liax;)V
+    .locals 0
+
+    const/4 p1, 0x0
+
+    throw p1
 .end method

@@ -1,226 +1,390 @@
 .class public final Lejk;
-.super Ldgf;
+.super Ljava/lang/Object;
 
-
-# static fields
-.field private static final d:Lmwa;
+# interfaces
+.implements Leii;
 
 
 # instance fields
-.field public final c:Lflf;
+.field public final a:Leli;
 
-.field private final e:Landroid/content/res/Resources;
+.field private final b:Leij;
 
-.field private final f:Lcmo;
+.field private final c:Lelg;
+
+.field private final d:Lelf;
+
+.field private final e:[F
+
+.field private final f:[F
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 8
+.method public constructor <init>(Lcom/google/android/libraries/vision/opengl/Texture;Leij;)V
+    .locals 1
 
-    const-string v6, "/m/01bqvp"
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const-string v4, "/m/0brn2d"
+    const/16 v0, 0x10
 
-    const-string v2, "/m/06cnp"
+    new-array v0, v0, [F
 
-    const-string v0, "/m/04h4w"
+    fill-array-data v0, :array_0
 
-    const/high16 v1, 0x3f000000    # 0.5f
+    iput-object v0, p0, Lejk;->e:[F
 
-    invoke-static {v1}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
+    const/16 v0, 0x8
 
-    move-result-object v7
+    new-array v0, v0, [F
 
-    move-object v1, v7
+    iput-object v0, p0, Lejk;->f:[F
 
-    move-object v3, v7
+    iput-object p2, p0, Lejk;->b:Leij;
 
-    move-object v5, v7
+    new-instance p2, Leli;
 
-    invoke-static/range {v0 .. v7}, Lmwa;->q(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Lmwa;
+    invoke-direct {p2}, Leli;-><init>()V
 
-    move-result-object v0
+    iput-object p2, p0, Lejk;->a:Leli;
 
-    sput-object v0, Lejk;->d:Lmwa;
+    iput-object p1, p2, Leli;->b:Lcom/google/android/libraries/vision/opengl/Texture;
 
-    return-void
-.end method
+    const p1, 0x812d
 
-.method public constructor <init>(Landroid/content/res/Resources;Lflf;Ljew;Lcmo;[B[B[B[B)V
-    .locals 7
+    iput p1, p2, Leli;->c:I
 
-    const-string v2, "imax_smarts_chip"
+    new-instance p1, Lelg;
 
-    const/4 v3, 0x0
+    invoke-direct {p1}, Lelg;-><init>()V
 
-    const/4 v4, 0x0
+    iput-object p1, p0, Lejk;->c:Lelg;
 
-    const/4 v5, 0x0
+    new-instance p1, Lelf;
 
-    const/4 v6, 0x0
+    invoke-direct {p1}, Lelf;-><init>()V
 
-    move-object v0, p0
-
-    move-object v1, p3
-
-    invoke-direct/range {v0 .. v6}, Ldgf;-><init>(Ljew;Ljava/lang/String;[B[B[B[B)V
-
-    iput-object p1, p0, Lejk;->e:Landroid/content/res/Resources;
-
-    iput-object p2, p0, Lejk;->c:Lflf;
-
-    iput-object p4, p0, Lejk;->f:Lcmo;
+    iput-object p1, p0, Lejk;->d:Lelf;
 
     return-void
+
+    nop
+
+    :array_0
+    .array-data 4
+        0x0
+        0x0
+        0x0
+        0x3f000000    # 0.5f
+        0x0
+        0x0
+        0x0
+        0x3f000000    # 0.5f
+        0x0
+        0x0
+        0x0
+        0x3f000000    # 0.5f
+        0x0
+        0x0
+        0x0
+        0x3f000000    # 0.5f
+    .end array-data
 .end method
 
 
 # virtual methods
-.method public final bz()Ljava/util/Map;
+.method public final a()V
     .locals 1
 
-    sget-object v0, Lejk;->d:Lmwa;
+    iget-object v0, p0, Lejk;->a:Leli;
 
-    return-object v0
+    invoke-virtual {v0}, Leli;->a()V
+
+    iget-object v0, p0, Lejk;->c:Lelg;
+
+    invoke-virtual {v0}, Lelg;->a()V
+
+    iget-object v0, p0, Lejk;->d:Lelf;
+
+    invoke-virtual {v0}, Lelf;->a()V
+
+    return-void
 .end method
 
-.method protected final c()Ldge;
-    .locals 5
+.method public final b()V
+    .locals 14
 
-    invoke-static {}, Ldge;->a()Lllz;
+    iget-object v0, p0, Lejk;->b:Leij;
 
-    move-result-object v0
+    iget v1, v0, Leij;->j:I
 
-    invoke-static {}, Lheb;->a()Lhea;
+    iget v0, v0, Leij;->k:I
 
-    move-result-object v1
+    const/4 v2, 0x0
 
-    iget-object v2, p0, Lejk;->e:Landroid/content/res/Resources;
+    invoke-static {v2, v2, v1, v0}, Landroid/opengl/GLES20;->glViewport(IIII)V
 
-    const v3, 0x7f140233
+    const/16 v0, 0x4000
 
-    invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
+    invoke-static {v0}, Landroid/opengl/GLES20;->glClear(I)V
 
-    move-result-object v2
+    iget-object v0, p0, Lejk;->a:Leli;
 
-    iput-object v2, v1, Lhea;->a:Ljava/lang/String;
+    invoke-virtual {v0}, Leli;->b()V
 
-    iget-object v2, p0, Lejk;->e:Landroid/content/res/Resources;
+    const/16 v0, 0xbe2
 
-    const v3, 0x7f0803a0
+    invoke-static {v0}, Landroid/opengl/GLES20;->glEnable(I)V
 
-    const/4 v4, 0x0
+    const/16 v1, 0x302
 
-    invoke-virtual {v2, v3, v4}, Landroid/content/res/Resources;->getDrawable(ILandroid/content/res/Resources$Theme;)Landroid/graphics/drawable/Drawable;
+    const/16 v3, 0x303
 
-    move-result-object v2
+    invoke-static {v1, v3}, Landroid/opengl/GLES20;->glBlendFunc(II)V
 
-    iput-object v2, v1, Lhea;->b:Landroid/graphics/drawable/Drawable;
+    iget-object v1, p0, Lejk;->c:Lelg;
 
-    new-instance v2, Leer;
+    iget-object v3, p0, Lejk;->e:[F
 
-    const/16 v3, 0xf
+    invoke-virtual {v1, v3}, Lelg;->e([F)V
 
-    invoke-direct {v2, p0, v3}, Leer;-><init>(Lejk;I)V
+    iget-object v1, p0, Lejk;->c:Lelg;
 
-    iput-object v2, v1, Lhea;->c:Ljava/lang/Runnable;
+    iget-object v3, p0, Lejk;->b:Leij;
 
-    const-wide/16 v2, 0x1b58
+    iget v3, v3, Leij;->a:F
 
-    invoke-virtual {v1, v2, v3}, Lhea;->e(J)V
+    neg-float v4, v3
 
-    invoke-virtual {v1}, Lhea;->a()Lheb;
+    const/high16 v5, 0x3f800000    # 1.0f
 
-    move-result-object v1
+    const/high16 v6, -0x40800000    # -1.0f
 
-    iput-object v1, v0, Lllz;->c:Ljava/lang/Object;
+    invoke-virtual {v1, v4, v5, v3, v6}, Lelg;->d(FFFF)V
 
-    invoke-virtual {v0}, Lllz;->f()Ldge;
+    iget-object v1, p0, Lejk;->c:Lelg;
 
-    move-result-object v0
+    invoke-virtual {v1}, Lelg;->b()V
 
-    return-object v0
-.end method
+    invoke-static {v0}, Landroid/opengl/GLES20;->glDisable(I)V
 
-.method protected final e(Ljava/util/Map;)Z
-    .locals 4
+    iget-object v0, p0, Lejk;->b:Leij;
 
-    invoke-interface {p1}, Ljava/util/Map;->entrySet()Ljava/util/Set;
+    iget-boolean v1, v0, Leij;->n:Z
 
-    move-result-object p1
+    const/4 v3, 0x2
 
-    invoke-interface {p1}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
+    if-nez v1, :cond_1
 
-    move-result-object p1
+    iget v1, v0, Leij;->j:I
 
-    :cond_0
-    invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
+    iget v0, v0, Leij;->k:I
 
-    move-result v0
+    div-int/lit8 v4, v1, 0x4
 
-    if-eqz v0, :cond_1
+    div-int/lit8 v7, v0, 0x4
 
-    invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    div-int/2addr v1, v3
 
-    move-result-object v0
+    div-int/2addr v0, v3
 
-    check-cast v0, Ljava/util/Map$Entry;
+    invoke-static {v4, v7, v1, v0}, Landroid/opengl/GLES20;->glViewport(IIII)V
 
-    invoke-interface {v0}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
+    iget-object v0, p0, Lejk;->b:Leij;
 
-    move-result-object v1
+    iget-boolean v1, v0, Leij;->h:Z
 
-    check-cast v1, Ljava/lang/String;
+    const v4, 0x3f666666    # 0.9f
 
-    invoke-interface {v0}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
+    const v7, 0x3f8ccccd    # 1.1f
 
-    move-result-object v0
+    if-eqz v1, :cond_0
 
-    check-cast v0, Ljava/lang/Float;
+    iget v1, v0, Leij;->j:I
 
-    sget-object v2, Lejk;->d:Lmwa;
+    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    const v3, 0x7f7fffff    # Float.MAX_VALUE
+    iget v8, v0, Leij;->k:I
 
-    invoke-static {v3}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
+    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    move-result-object v3
+    div-int/lit8 v0, v1, 0x4
 
-    invoke-virtual {v2, v1, v3}, Lmwa;->getOrDefault(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    int-to-float v0, v0
 
-    move-result-object v1
+    mul-float v0, v0, v7
 
-    check-cast v1, Ljava/lang/Float;
+    float-to-int v0, v0
 
-    invoke-virtual {v1}, Ljava/lang/Float;->floatValue()F
+    div-int/lit8 v7, v8, 0x4
 
-    move-result v1
+    div-int/2addr v1, v3
 
-    invoke-virtual {v0}, Ljava/lang/Float;->floatValue()F
+    int-to-float v1, v1
 
-    move-result v0
+    mul-float v1, v1, v4
 
-    cmpg-float v0, v1, v0
+    float-to-int v1, v1
 
-    if-gtz v0, :cond_0
+    div-int/2addr v8, v3
 
-    const/4 p1, 0x1
+    invoke-static {v0, v7, v1, v8}, Landroid/opengl/GLES20;->glScissor(IIII)V
 
     goto :goto_0
 
-    :cond_1
-    const/4 p1, 0x0
+    :cond_0
+    iget v1, v0, Leij;->j:I
+
+    iget v8, v0, Leij;->k:I
+
+    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    div-int/lit8 v0, v1, 0x4
+
+    div-int/lit8 v9, v8, 0x4
+
+    int-to-float v9, v9
+
+    mul-float v9, v9, v7
+
+    float-to-int v7, v9
+
+    div-int/2addr v1, v3
+
+    div-int/2addr v8, v3
+
+    int-to-float v8, v8
+
+    mul-float v8, v8, v4
+
+    float-to-int v4, v8
+
+    invoke-static {v0, v7, v1, v4}, Landroid/opengl/GLES20;->glScissor(IIII)V
 
     :goto_0
-    if-eqz p1, :cond_2
+    const/16 v0, 0xc11
 
-    iget-object v0, p0, Lejk;->f:Lcmo;
+    invoke-static {v0}, Landroid/opengl/GLES20;->glEnable(I)V
 
-    sget-object v1, Lika;->d:Lika;
+    iget-object v1, p0, Lejk;->a:Leli;
 
-    invoke-interface {v0, v1}, Lcmo;->f(Lika;)V
+    invoke-virtual {v1}, Leli;->b()V
+
+    invoke-static {v0}, Landroid/opengl/GLES20;->glDisable(I)V
+
+    :cond_1
+    iget-object v0, p0, Lejk;->b:Leij;
+
+    iget v1, v0, Leij;->j:I
+
+    iget v0, v0, Leij;->k:I
+
+    invoke-static {v2, v2, v1, v0}, Landroid/opengl/GLES20;->glViewport(IIII)V
+
+    iget-object v0, p0, Lejk;->b:Leij;
+
+    iget-boolean v1, v0, Leij;->h:Z
+
+    const/4 v4, 0x7
+
+    const/4 v7, 0x6
+
+    const/4 v8, 0x5
+
+    const/4 v9, 0x3
+
+    const/4 v10, 0x1
+
+    const/high16 v11, 0x40000000    # 2.0f
+
+    const/4 v12, 0x4
+
+    if-eqz v1, :cond_2
+
+    iget v0, v0, Leij;->d:F
+
+    div-float/2addr v0, v11
+
+    iget-object v1, p0, Lejk;->f:[F
+
+    neg-float v13, v0
+
+    aput v13, v1, v2
+
+    aput v5, v1, v10
+
+    aput v13, v1, v3
+
+    aput v6, v1, v9
+
+    aput v0, v1, v12
+
+    aput v5, v1, v8
+
+    aput v0, v1, v7
+
+    aput v6, v1, v4
+
+    goto :goto_1
 
     :cond_2
-    return p1
+    iget v1, v0, Leij;->e:F
+
+    div-float/2addr v1, v11
+
+    iget-object v5, p0, Lejk;->f:[F
+
+    iget v0, v0, Leij;->a:F
+
+    neg-float v6, v0
+
+    aput v6, v5, v2
+
+    aput v1, v5, v10
+
+    aput v0, v5, v3
+
+    aput v1, v5, v9
+
+    aput v6, v5, v12
+
+    neg-float v1, v1
+
+    aput v1, v5, v8
+
+    aput v0, v5, v7
+
+    aput v1, v5, v4
+
+    :goto_1
+    iget-object v0, p0, Lejk;->d:Lelf;
+
+    iget-object v1, p0, Lejk;->f:[F
+
+    invoke-virtual {v0, v1, v11}, Lelf;->c([FF)V
+
+    iget-object v0, p0, Lejk;->d:Lelf;
+
+    invoke-virtual {v0}, Lelf;->b()V
+
+    return-void
+.end method
+
+.method public final c(II)V
+    .locals 1
+
+    int-to-float p1, p1
+
+    int-to-float p2, p2
+
+    iget-object v0, p0, Lejk;->c:Lelg;
+
+    invoke-virtual {v0, p1, p2}, Lelg;->c(FF)V
+
+    iget-object v0, p0, Lejk;->d:Lelf;
+
+    invoke-virtual {v0, p1, p2}, Lelf;->d(FF)V
+
+    return-void
 .end method

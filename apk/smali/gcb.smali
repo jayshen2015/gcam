@@ -1,147 +1,85 @@
 .class public final Lgcb;
-.super Ljwh;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Lpys;
+
+
+# instance fields
+.field private final a:Lqkg;
+
+.field private final b:Lqkg;
+
+.field private final c:Lqkg;
 
 
 # direct methods
-.method public constructor <init>(Ljvs;Ljvs;Ljvs;Ljvs;Ljvs;Ljvs;)V
-    .locals 2
+.method public constructor <init>(Lqkg;Lqkg;Lqkg;)V
+    .locals 0
 
-    const/4 v0, 0x6
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    new-array v0, v0, [Ljvs;
+    iput-object p1, p0, Lgcb;->a:Lqkg;
 
-    const/4 v1, 0x0
+    iput-object p2, p0, Lgcb;->b:Lqkg;
 
-    aput-object p1, v0, v1
-
-    const/4 p1, 0x1
-
-    aput-object p3, v0, p1
-
-    const/4 p1, 0x2
-
-    aput-object p4, v0, p1
-
-    const/4 p1, 0x3
-
-    aput-object p5, v0, p1
-
-    const/4 p1, 0x4
-
-    aput-object p2, v0, p1
-
-    const/4 p1, 0x5
-
-    aput-object p6, v0, p1
-
-    invoke-static {v0}, Ljvw;->b([Ljvs;)Ljvs;
-
-    move-result-object p1
-
-    invoke-direct {p0, p1}, Ljwh;-><init>(Ljvs;)V
+    iput-object p3, p0, Lgcb;->c:Lqkg;
 
     return-void
 .end method
 
+.method public static b(Lqkg;Lqkg;Lqkg;)Lgcb;
+    .locals 1
+
+    new-instance v0, Lgcb;
+
+    invoke-direct {v0, p0, p1, p2}, Lgcb;-><init>(Lqkg;Lqkg;Lqkg;)V
+
+    return-object v0
+.end method
+
 
 # virtual methods
-.method protected final bridge synthetic d(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 6
+.method public final a()Lgas;
+    .locals 4
 
-    check-cast p1, Ljava/util/List;
+    iget-object v0, p0, Lgcb;->a:Lqkg;
 
-    const/4 v0, 0x0
-
-    invoke-interface {p1, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
+    invoke-interface {v0}, Lqkg;->get()Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Lgcc;
+    check-cast v0, Lgay;
 
-    const/4 v1, 0x1
+    iget-object v1, p0, Lgcb;->b:Lqkg;
 
-    invoke-interface {p1, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
+    invoke-interface {v1}, Lqkg;->get()Ljava/lang/Object;
 
     move-result-object v1
 
-    check-cast v1, Ljava/lang/Integer;
+    check-cast v1, Landroid/os/Handler;
 
-    invoke-virtual {v1}, Ljava/lang/Integer;->intValue()I
+    iget-object v2, p0, Lgcb;->c:Lqkg;
 
-    move-result v1
-
-    const/4 v2, 0x2
-
-    invoke-interface {p1, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
+    invoke-interface {v2}, Lqkg;->get()Ljava/lang/Object;
 
     move-result-object v2
 
-    check-cast v2, Ljava/lang/Float;
+    check-cast v2, Lhcg;
 
-    invoke-virtual {v2}, Ljava/lang/Float;->floatValue()F
+    new-instance v3, Lgas;
 
-    move-result v2
+    invoke-direct {v3, v0, v1, v2}, Lgas;-><init>(Lgey;Landroid/os/Handler;Lhcg;)V
 
-    const/4 v3, 0x3
+    return-object v3
+.end method
 
-    invoke-interface {p1, v3}, Ljava/util/List;->get(I)Ljava/lang/Object;
+.method public final bridge synthetic get()Ljava/lang/Object;
+    .locals 1
 
-    move-result-object v3
+    invoke-virtual {p0}, Lgcb;->a()Lgas;
 
-    check-cast v3, Ljava/lang/Float;
-
-    invoke-virtual {v3}, Ljava/lang/Float;->floatValue()F
-
-    move-result v3
-
-    const/4 v4, 0x4
-
-    invoke-interface {p1, v4}, Ljava/util/List;->get(I)Ljava/lang/Object;
-
-    move-result-object v4
-
-    check-cast v4, Ljava/lang/Boolean;
-
-    invoke-virtual {v4}, Ljava/lang/Boolean;->booleanValue()Z
-
-    move-result v4
-
-    const/4 v5, 0x5
-
-    invoke-interface {p1, v5}, Ljava/util/List;->get(I)Ljava/lang/Object;
-
-    move-result-object p1
-
-    check-cast p1, Ljava/lang/Boolean;
-
-    invoke-virtual {p1}, Ljava/lang/Boolean;->booleanValue()Z
-
-    move-result p1
-
-    if-nez v1, :cond_1
-
-    const/high16 v1, -0x40800000    # -1.0f
-
-    cmpl-float v2, v2, v1
-
-    if-nez v2, :cond_1
-
-    cmpl-float v1, v3, v1
-
-    if-eqz v1, :cond_0
-
-    goto :goto_0
-
-    :cond_0
-    if-nez v4, :cond_1
-
-    if-nez p1, :cond_1
+    move-result-object v0
 
     return-object v0
-
-    :cond_1
-    :goto_0
-    sget-object p1, Lgcc;->b:Lgcc;
-
-    return-object p1
 .end method

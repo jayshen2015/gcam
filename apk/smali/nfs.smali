@@ -1,39 +1,67 @@
-.class final Lnfs;
+.class public final synthetic Lnfs;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Ljava/util/function/Consumer;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field a:Ljava/lang/Object;
+.field public final synthetic a:Ljava/util/concurrent/ExecutionException;
+
+.field private final synthetic b:I
 
 
 # direct methods
-.method public constructor <init>()V
+.method public synthetic constructor <init>(Ljava/util/concurrent/ExecutionException;I)V
     .locals 0
 
+    iput p2, p0, Lnfs;->b:I
+
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lnfs;->a:Ljava/util/concurrent/ExecutionException;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final accept(Ljava/lang/Object;)V
-    .locals 0
+.method public final run()V
+    .locals 2
 
-    iput-object p1, p0, Lnfs;->a:Ljava/lang/Object;
+    iget v0, p0, Lnfs;->b:I
 
-    return-void
-.end method
+    packed-switch v0, :pswitch_data_0
 
-.method public final synthetic andThen(Ljava/util/function/Consumer;)Ljava/util/function/Consumer;
-    .locals 0
+    iget-object v0, p0, Lnfs;->a:Ljava/util/concurrent/ExecutionException;
 
-    invoke-static {p0, p1}, Lj$/util/function/Consumer$-CC;->$default$andThen(Ljava/util/function/Consumer;Ljava/util/function/Consumer;)Ljava/util/function/Consumer;
+    new-instance v1, Llaz;
 
-    move-result-object p1
+    invoke-virtual {v0}, Ljava/util/concurrent/ExecutionException;->getCause()Ljava/lang/Throwable;
 
-    return-object p1
+    move-result-object v0
+
+    invoke-direct {v1, v0}, Llaz;-><init>(Ljava/lang/Throwable;)V
+
+    throw v1
+
+    :pswitch_0
+    iget-object v0, p0, Lnfs;->a:Ljava/util/concurrent/ExecutionException;
+
+    new-instance v1, Ljava/lang/RuntimeException;
+
+    invoke-virtual {v0}, Ljava/util/concurrent/ExecutionException;->getCause()Ljava/lang/Throwable;
+
+    move-result-object v0
+
+    invoke-direct {v1, v0}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/Throwable;)V
+
+    throw v1
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

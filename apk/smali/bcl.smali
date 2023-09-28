@@ -1,22 +1,16 @@
-.class final Lbcl;
-.super Laqa;
-
-
-# direct methods
-.method public constructor <init>(Lapt;)V
-    .locals 0
-
-    invoke-direct {p0, p1}, Laqa;-><init>(Lapt;)V
-
-    return-void
-.end method
+.class public interface abstract Lbcl;
+.super Ljava/lang/Object;
 
 
 # virtual methods
-.method public final d()Ljava/lang/String;
-    .locals 1
+.method public abstract a()I
+.end method
 
-    const-string v0, "UPDATE workspec SET schedule_requested_at=? WHERE id=?"
+.method public abstract b()Ljava/lang/Class;
+.end method
 
-    return-object v0
+.method public abstract c()Ljava/lang/Object;
+.end method
+
+.method public abstract e()V
 .end method

@@ -1,55 +1,26 @@
-.class final Ljlt;
-.super Ljeu;
+.class public final Ljlt;
+.super Ljava/lang/Object;
 
 
 # instance fields
-.field final synthetic a:Ljln;
+.field public final a:Ljava/lang/Runnable;
 
-.field final synthetic b:Lkgd;
+.field public final b:Ljava/util/concurrent/Executor;
+
+.field public final c:J
 
 
 # direct methods
-.method public constructor <init>(Lkgd;Ljln;[B[B)V
+.method public constructor <init>(Ljava/lang/Runnable;Ljava/util/concurrent/Executor;J)V
     .locals 0
 
-    iput-object p1, p0, Ljlt;->b:Lkgd;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p2, p0, Ljlt;->a:Ljln;
+    iput-object p1, p0, Ljlt;->a:Ljava/lang/Runnable;
 
-    invoke-direct {p0}, Ljeu;-><init>()V
+    iput-object p2, p0, Ljlt;->b:Ljava/util/concurrent/Executor;
 
-    return-void
-.end method
-
-
-# virtual methods
-.method public final b(Lcom/google/android/gms/common/api/Status;)V
-    .locals 2
-
-    iget v0, p1, Lcom/google/android/gms/common/api/Status;->g:I
-
-    if-nez v0, :cond_0
-
-    iget-object p1, p0, Ljlt;->b:Lkgd;
-
-    new-instance v0, Ljlw;
-
-    iget-object v1, p0, Ljlt;->a:Ljln;
-
-    invoke-direct {v0, v1}, Ljlw;-><init>(Ljln;)V
-
-    invoke-virtual {p1, v0}, Lkgd;->i(Ljava/lang/Object;)V
-
-    return-void
-
-    :cond_0
-    iget-object v0, p0, Ljlt;->b:Lkgd;
-
-    new-instance v1, Ljda;
-
-    invoke-direct {v1, p1}, Ljda;-><init>(Lcom/google/android/gms/common/api/Status;)V
-
-    invoke-virtual {v0, v1}, Lkgd;->h(Ljava/lang/Exception;)V
+    iput-wide p3, p0, Ljlt;->c:J
 
     return-void
 .end method

@@ -1,18 +1,22 @@
-.class public interface abstract Lmla;
+.class public final Lmla;
 .super Ljava/lang/Object;
 
 
-# annotations
-.annotation runtime Ljava/lang/Deprecated;
-.end annotation
+# instance fields
+.field public final a:J
+
+.field public final b:Z
 
 
-# virtual methods
-.method public abstract a(Lmle;)V
-.end method
+# direct methods
+.method public constructor <init>(JZ)V
+    .locals 0
 
-.method public abstract b(Lmle;)V
-.end method
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-.method public abstract c()V
+    iput-wide p1, p0, Lmla;->a:J
+
+    iput-boolean p3, p0, Lmla;->b:Z
+
+    return-void
 .end method

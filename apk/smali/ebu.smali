@@ -3,32 +3,8 @@
 
 
 # virtual methods
-.method public abstract d(Lgxy;)V
-    .annotation runtime Ljava/lang/Deprecated;
-    .end annotation
+.method public abstract a(Lcom/google/googlex/gcam/InterleavedImageU16;)V
 .end method
 
-.method public abstract e(Leea;Lkeb;)V
-    .annotation runtime Ljava/lang/Deprecated;
-    .end annotation
-.end method
-
-.method public abstract f(Leea;Lcom/google/googlex/gcam/BurstSpec;Lkou;)V
-    .annotation runtime Ljava/lang/Deprecated;
-    .end annotation
-.end method
-
-.method public abstract g(Lgxy;)V
-    .annotation runtime Ljava/lang/Deprecated;
-    .end annotation
-.end method
-
-.method public abstract h(Leea;)V
-    .annotation runtime Ljava/lang/Deprecated;
-    .end annotation
-.end method
-
-.method public abstract i(Leea;)V
-    .annotation runtime Ljava/lang/Deprecated;
-    .end annotation
+.method public abstract b(Lebr;)V
 .end method

@@ -1,40 +1,90 @@
 .class final Lcxn;
-.super Lcyg;
-
-
-# instance fields
-.field final synthetic a:Lcyh;
+.super Laia;
 
 
 # direct methods
-.method public constructor <init>(Lcyh;)V
+.method public constructor <init>(Laii;)V
     .locals 0
 
-    iput-object p1, p0, Lcxn;->a:Lcyh;
-
-    invoke-direct {p0, p1}, Lcyg;-><init>(Lcyh;)V
+    invoke-direct {p0, p1}, Laia;-><init>(Laii;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final b()V
-    .locals 2
+.method public final bridge synthetic b(Lake;Ljava/lang/Object;)V
+    .locals 3
 
-    iget-object v0, p0, Lcxn;->a:Lcyh;
+    check-cast p2, Lcxl;
 
-    iget-object v0, v0, Lcyh;->c:Lhiu;
+    iget-object v0, p2, Lcxl;->a:Ljava/lang/String;
 
-    invoke-virtual {v0}, Lhiu;->e()V
+    const/4 v1, 0x1
 
-    iget-object v0, p0, Lcxn;->a:Lcyh;
+    if-nez v0, :cond_0
 
-    iget-object v1, v0, Lcyh;->c:Lhiu;
+    invoke-virtual {p1, v1}, Lake;->f(I)V
 
-    iget-object v0, v0, Lcyh;->d:Lhiw;
+    goto :goto_0
 
-    invoke-virtual {v1, v0}, Lhiu;->g(Lhiw;)V
+    :cond_0
+    invoke-virtual {p1, v1, v0}, Lake;->g(ILjava/lang/String;)V
+
+    :goto_0
+    const/4 v0, 0x2
+
+    iget v1, p2, Lcxl;->b:I
+
+    int-to-long v1, v1
+
+    invoke-virtual {p1, v0, v1, v2}, Lake;->e(IJ)V
+
+    const/4 v0, 0x3
+
+    iget v1, p2, Lcxl;->c:I
+
+    int-to-long v1, v1
+
+    invoke-virtual {p1, v0, v1, v2}, Lake;->e(IJ)V
+
+    const/4 v0, 0x4
+
+    iget v1, p2, Lcxl;->d:I
+
+    int-to-long v1, v1
+
+    invoke-virtual {p1, v0, v1, v2}, Lake;->e(IJ)V
+
+    const/4 v0, 0x5
+
+    iget v1, p2, Lcxl;->e:I
+
+    int-to-long v1, v1
+
+    invoke-virtual {p1, v0, v1, v2}, Lake;->e(IJ)V
+
+    const/4 v0, 0x6
+
+    iget-wide v1, p2, Lcxl;->f:J
+
+    invoke-virtual {p1, v0, v1, v2}, Lake;->e(IJ)V
+
+    const/4 v0, 0x7
+
+    iget p2, p2, Lcxl;->g:I
+
+    int-to-long v1, p2
+
+    invoke-virtual {p1, v0, v1, v2}, Lake;->e(IJ)V
 
     return-void
+.end method
+
+.method public final d()Ljava/lang/String;
+    .locals 1
+
+    const-string v0, "INSERT OR IGNORE INTO `FatalErrorCounts` (`cameraId`,`failuresBeforeRebootDuringOpen`,`failuresAfterRebootDuringOpen`,`failuresBeforeRebootDuringSession`,`failuresAfterRebootDuringSession`,`lastFatalErrorTimestamp`,`rebootCount`) VALUES (?,?,?,?,?,?,?)"
+
+    return-object v0
 .end method

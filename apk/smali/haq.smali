@@ -1,98 +1,179 @@
-.class public final enum Lhaq;
-.super Ljava/lang/Enum;
+.class public final Lhaq;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Lpys;
 
 
-# static fields
-.field public static final enum a:Lhaq;
+# instance fields
+.field private final a:Lqkg;
 
-.field public static final enum b:Lhaq;
+.field private final b:Lqkg;
 
-.field public static final enum c:Lhaq;
+.field private final c:Lqkg;
 
-.field public static final enum d:Lhaq;
+.field private final d:Lqkg;
 
-.field private static final synthetic e:[Lhaq;
+.field private final e:Lqkg;
+
+.field private final f:Lqkg;
+
+.field private final g:Lqkg;
+
+.field private final h:Lqkg;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 9
-
-    new-instance v0, Lhaq;
-
-    const-string v1, "SHUTTER"
-
-    const/4 v2, 0x0
-
-    invoke-direct {v0, v1, v2}, Lhaq;-><init>(Ljava/lang/String;I)V
-
-    sput-object v0, Lhaq;->a:Lhaq;
-
-    new-instance v1, Lhaq;
-
-    const-string v3, "ZOOM"
-
-    const/4 v4, 0x1
-
-    invoke-direct {v1, v3, v4}, Lhaq;-><init>(Ljava/lang/String;I)V
-
-    sput-object v1, Lhaq;->b:Lhaq;
-
-    new-instance v3, Lhaq;
-
-    const-string v5, "VOLUME"
-
-    const/4 v6, 0x2
-
-    invoke-direct {v3, v5, v6}, Lhaq;-><init>(Ljava/lang/String;I)V
-
-    sput-object v3, Lhaq;->c:Lhaq;
-
-    new-instance v5, Lhaq;
-
-    const-string v7, "OFF"
-
-    const/4 v8, 0x3
-
-    invoke-direct {v5, v7, v8}, Lhaq;-><init>(Ljava/lang/String;I)V
-
-    sput-object v5, Lhaq;->d:Lhaq;
-
-    const/4 v7, 0x4
-
-    new-array v7, v7, [Lhaq;
-
-    aput-object v0, v7, v2
-
-    aput-object v1, v7, v4
-
-    aput-object v3, v7, v6
-
-    aput-object v5, v7, v8
-
-    sput-object v7, Lhaq;->e:[Lhaq;
-
-    return-void
-.end method
-
-.method private constructor <init>(Ljava/lang/String;I)V
+.method public constructor <init>(Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;)V
     .locals 0
 
-    invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lhaq;->a:Lqkg;
+
+    iput-object p2, p0, Lhaq;->b:Lqkg;
+
+    iput-object p3, p0, Lhaq;->c:Lqkg;
+
+    iput-object p4, p0, Lhaq;->d:Lqkg;
+
+    iput-object p5, p0, Lhaq;->e:Lqkg;
+
+    iput-object p6, p0, Lhaq;->f:Lqkg;
+
+    iput-object p7, p0, Lhaq;->g:Lqkg;
+
+    iput-object p8, p0, Lhaq;->h:Lqkg;
 
     return-void
 .end method
 
-.method public static values()[Lhaq;
-    .locals 1
+.method public static b(Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;)Lhaq;
+    .locals 10
 
-    sget-object v0, Lhaq;->e:[Lhaq;
+    new-instance v9, Lhaq;
 
-    invoke-virtual {v0}, [Lhaq;->clone()Ljava/lang/Object;
+    move-object v0, v9
+
+    move-object v1, p0
+
+    move-object v2, p1
+
+    move-object v3, p2
+
+    move-object v4, p3
+
+    move-object v5, p4
+
+    move-object v6, p5
+
+    move-object/from16 v7, p6
+
+    move-object/from16 v8, p7
+
+    invoke-direct/range {v0 .. v8}, Lhaq;-><init>(Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;)V
+
+    return-object v9
+.end method
+
+
+# virtual methods
+.method public final a()Lhap;
+    .locals 10
+
+    iget-object v0, p0, Lhaq;->a:Lqkg;
+
+    invoke-interface {v0}, Lqkg;->get()Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, [Lhaq;
+    move-object v2, v0
+
+    check-cast v2, Llnc;
+
+    iget-object v0, p0, Lhaq;->b:Lqkg;
+
+    invoke-interface {v0}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    move-object v3, v0
+
+    check-cast v3, Lhcs;
+
+    iget-object v0, p0, Lhaq;->c:Lqkg;
+
+    invoke-interface {v0}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    move-object v4, v0
+
+    check-cast v4, Llco;
+
+    iget-object v0, p0, Lhaq;->d:Lqkg;
+
+    invoke-interface {v0}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    move-object v5, v0
+
+    check-cast v5, Lgwi;
+
+    iget-object v0, p0, Lhaq;->e:Lqkg;
+
+    invoke-interface {v0}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    move-object v6, v0
+
+    check-cast v6, Lljf;
+
+    iget-object v0, p0, Lhaq;->f:Lqkg;
+
+    check-cast v0, Lhbc;
+
+    invoke-virtual {v0}, Lhbc;->a()Lhbb;
+
+    move-result-object v7
+
+    iget-object v0, p0, Lhaq;->g:Lqkg;
+
+    invoke-interface {v0}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    move-object v8, v0
+
+    check-cast v8, Lddf;
+
+    iget-object v0, p0, Lhaq;->h:Lqkg;
+
+    invoke-interface {v0}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    move-object v9, v0
+
+    check-cast v9, Llap;
+
+    new-instance v0, Lhap;
+
+    move-object v1, v0
+
+    invoke-direct/range {v1 .. v9}, Lhap;-><init>(Llnc;Lhcs;Llco;Lgwi;Lljf;Lhbb;Lddf;Llap;)V
+
+    return-object v0
+.end method
+
+.method public final bridge synthetic get()Ljava/lang/Object;
+    .locals 1
+
+    invoke-virtual {p0}, Lhaq;->a()Lhap;
+
+    move-result-object v0
 
     return-object v0
 .end method

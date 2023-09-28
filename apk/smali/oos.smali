@@ -1,41 +1,39 @@
-.class public final Loos;
+.class final Loos;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Loro;
+.implements Ljava/io/Serializable;
 
 
 # static fields
-.field public static final a:Loos;
+.field private static final serialVersionUID:J
+
+
+# instance fields
+.field final a:Loor;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
-
-    new-instance v0, Loos;
-
-    invoke-direct {v0}, Loos;-><init>()V
-
-    sput-object v0, Loos;->a:Loos;
-
-    return-void
-.end method
-
-.method private constructor <init>()V
+.method public constructor <init>(Loor;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Loos;->a:Loor;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final toString()Ljava/lang/String;
+.method readResolve()Ljava/lang/Object;
     .locals 1
 
-    const-string v0, "Active"
+    iget-object v0, p0, Loos;->a:Loor;
+
+    invoke-virtual {v0}, Loor;->t()Lope;
+
+    move-result-object v0
 
     return-object v0
 .end method

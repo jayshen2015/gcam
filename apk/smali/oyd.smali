@@ -1,184 +1,64 @@
 .class public final Loyd;
-.super Lnws;
+.super Ljava/lang/Object;
 
 # interfaces
-.implements Lnxz;
+.implements Ljava/io/Closeable;
 
 
 # static fields
-.field public static final c:Loyd;
-
-.field private static volatile e:Lnyf;
+.field public static final a:Ljava/lang/ThreadLocal;
 
 
 # instance fields
-.field public a:I
-
-.field public b:Loyc;
-
-.field private d:B
+.field public b:I
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 2
+    .locals 1
 
-    new-instance v0, Loyd;
+    new-instance v0, Loyc;
 
-    invoke-direct {v0}, Loyd;-><init>()V
+    invoke-direct {v0}, Loyc;-><init>()V
 
-    sput-object v0, Loyd;->c:Loyd;
-
-    const-class v1, Loyd;
-
-    invoke-static {v1, v0}, Lnws;->aa(Ljava/lang/Class;Lnws;)V
+    sput-object v0, Loyd;->a:Ljava/lang/ThreadLocal;
 
     return-void
 .end method
 
-.method private constructor <init>()V
+.method public constructor <init>()V
     .locals 1
 
-    invoke-direct {p0}, Lnws;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const/4 v0, 0x2
+    const/4 v0, 0x0
 
-    iput-byte v0, p0, Loyd;->d:B
+    iput v0, p0, Loyd;->b:I
 
     return-void
 .end method
 
 
 # virtual methods
-.method protected final a(ILjava/lang/Object;)Ljava/lang/Object;
-    .locals 3
+.method public final close()V
+    .locals 2
 
-    add-int/lit8 p1, p1, -0x1
+    iget v0, p0, Loyd;->b:I
 
-    const/4 v0, 0x1
+    if-lez v0, :cond_0
 
-    const/4 v1, 0x0
+    add-int/lit8 v0, v0, -0x1
 
-    packed-switch p1, :pswitch_data_0
+    iput v0, p0, Loyd;->b:I
 
-    :pswitch_0
-    if-nez p2, :cond_2
-
-    const/4 v0, 0x0
-
-    goto :goto_1
-
-    :pswitch_1
-    sget-object p1, Loyd;->e:Lnyf;
-
-    if-nez p1, :cond_1
-
-    const-class p2, Loyd;
-
-    monitor-enter p2
-
-    :try_start_0
-    sget-object p1, Loyd;->e:Lnyf;
-
-    if-nez p1, :cond_0
-
-    new-instance p1, Lnwo;
-
-    sget-object v0, Loyd;->c:Loyd;
-
-    invoke-direct {p1, v0}, Lnwo;-><init>(Lnws;)V
-
-    sput-object p1, Loyd;->e:Lnyf;
+    return-void
 
     :cond_0
-    monitor-exit p2
+    new-instance v0, Ljava/lang/AssertionError;
 
-    goto :goto_0
+    const-string v1, "Mismatched calls to RecursionDepth (possible error in core library)"
 
-    :catchall_0
-    move-exception p1
+    invoke-direct {v0, v1}, Ljava/lang/AssertionError;-><init>(Ljava/lang/Object;)V
 
-    monitor-exit p2
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw p1
-
-    :cond_1
-    :goto_0
-    return-object p1
-
-    :pswitch_2
-    sget-object p1, Loyd;->c:Loyd;
-
-    return-object p1
-
-    :pswitch_3
-    new-instance p1, Lnwn;
-
-    sget-object p2, Loyd;->c:Loyd;
-
-    invoke-direct {p1, p2}, Lnwn;-><init>(Lnws;)V
-
-    return-object p1
-
-    :pswitch_4
-    new-instance p1, Loyd;
-
-    invoke-direct {p1}, Loyd;-><init>()V
-
-    return-object p1
-
-    :pswitch_5
-    const-string p1, "a"
-
-    const-string p2, "\u0001\u0001\u0000\u0001\u0001\u0001\u0001\u0000\u0000\u0001\u0001\u1409\u0000"
-
-    const/4 v2, 0x2
-
-    new-array v2, v2, [Ljava/lang/Object;
-
-    aput-object p1, v2, v1
-
-    const-string p1, "b"
-
-    aput-object p1, v2, v0
-
-    sget-object p1, Loyd;->c:Loyd;
-
-    invoke-static {p1, p2, v2}, Loyd;->X(Lnxy;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object p1
-
-    return-object p1
-
-    :pswitch_6
-    iget-byte p1, p0, Loyd;->d:B
-
-    invoke-static {p1}, Ljava/lang/Byte;->valueOf(B)Ljava/lang/Byte;
-
-    move-result-object p1
-
-    return-object p1
-
-    :cond_2
-    :goto_1
-    iput-byte v0, p0, Loyd;->d:B
-
-    const/4 p1, 0x0
-
-    return-object p1
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_6
-        :pswitch_0
-        :pswitch_5
-        :pswitch_4
-        :pswitch_3
-        :pswitch_2
-        :pswitch_1
-    .end packed-switch
+    throw v0
 .end method

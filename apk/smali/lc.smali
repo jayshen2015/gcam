@@ -1,22 +1,28 @@
 .class public final Llc;
-.super Ljava/lang/Object;
+.super Landroid/widget/FrameLayout;
+
+
+# instance fields
+.field public final a:Landroid/view/CollapsibleActionView;
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 0
+.method public constructor <init>(Landroid/view/View;)V
+    .locals 1
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-virtual {p1}, Landroid/view/View;->getContext()Landroid/content/Context;
+
+    move-result-object v0
+
+    invoke-direct {p0, v0}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
+
+    move-object v0, p1
+
+    check-cast v0, Landroid/view/CollapsibleActionView;
+
+    iput-object v0, p0, Llc;->a:Landroid/view/CollapsibleActionView;
+
+    invoke-virtual {p0, p1}, Llc;->addView(Landroid/view/View;)V
 
     return-void
-.end method
-
-.method static a(Landroid/widget/PopupWindow;Landroid/view/View;IZ)I
-    .locals 0
-
-    invoke-virtual {p0, p1, p2, p3}, Landroid/widget/PopupWindow;->getMaxAvailableHeight(Landroid/view/View;IZ)I
-
-    move-result p0
-
-    return p0
 .end method

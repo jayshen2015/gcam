@@ -1,51 +1,57 @@
-.class public final Lcfr;
+.class public final synthetic Lcfr;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Logk;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field private final a:Loiw;
+.field public final synthetic a:Lcfy;
+
+.field public final synthetic b:Z
 
 
 # direct methods
-.method public constructor <init>(Loiw;)V
+.method public synthetic constructor <init>(Lcfy;Z)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lcfr;->a:Loiw;
+    iput-object p1, p0, Lcfr;->a:Lcfy;
+
+    iput-boolean p2, p0, Lcfr;->b:Z
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Lcfq;
-    .locals 2
+.method public final run()V
+    .locals 4
 
-    iget-object v0, p0, Lcfr;->a:Loiw;
+    iget-object v0, p0, Lcfr;->a:Lcfy;
 
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
+    iget-boolean v1, p0, Lcfr;->b:Z
 
-    move-result-object v0
+    iget-object v2, v0, Lcfy;->h:Lcju;
 
-    check-cast v0, Lgzm;
+    iget-object v2, v2, Lcju;->h:Llda;
 
-    new-instance v1, Lcfq;
+    const/4 v3, 0x1
 
-    invoke-direct {v1, v0}, Lcfq;-><init>(Lgzm;)V
+    invoke-static {v3}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
-    return-object v1
-.end method
+    move-result-object v3
 
-.method public final bridge synthetic get()Ljava/lang/Object;
-    .locals 1
+    invoke-interface {v2, v3}, Llda;->fB(Ljava/lang/Object;)V
 
-    invoke-virtual {p0}, Lcfr;->a()Lcfq;
+    const/4 v2, 0x0
 
-    move-result-object v0
+    invoke-virtual {v0, v2}, Lcfy;->n(Z)Lpht;
 
-    return-object v0
+    iget-object v0, v0, Lcfy;->e:Lcgx;
+
+    invoke-virtual {v0, v1}, Lcgx;->d(Z)V
+
+    return-void
 .end method

@@ -1,12 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <plurals name="accessibility_timelapse_manual_record_speed_desc">
-        <item quantity="other">टाइम ल्याप्सको गति: %d</item>
-        <item quantity="one">टाइम ल्याप्सको गति: %d</item>
-    </plurals>
-    <plurals name="number_of_cropped_face">
-        <item quantity="other">%d वटा अनुहार क्रप गरिएका छन्।</item>
-        <item quantity="one">एउटा अनुहार क्रप गरिएको छ।</item>
+    <plurals name="number_of_faces_announcement">
+        <item quantity="other">%1$d अनुहारहरू छन्।</item>
+        <item quantity="one">%1$d अनुहार छ।</item>
     </plurals>
     <plurals name="photos_remaining">
         <item quantity="other">लगभग %s वटा फोटो</item>

@@ -1,140 +1,210 @@
 .class public final Ljbl;
-.super Ljhn;
-
-
-# static fields
-.field public static final CREATOR:Landroid/os/Parcelable$Creator;
+.super Ljava/lang/Object;
 
 
 # instance fields
-.field public final a:Ljava/util/List;
+.field public final a:Landroid/graphics/RectF;
+
+.field public b:Ljbm;
+
+.field public final c:Landroid/view/View;
+
+.field public final d:Ljbo;
+
+.field public final e:Ljbo;
+
+.field public final f:Ljbo;
+
+.field public final g:Ljbk;
+
+.field public final h:Ljbk;
+
+.field public final i:Ljbk;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
+.method public constructor <init>(Lcom/google/android/apps/camera/ui/gridlines/GridLinesUi;Landroid/graphics/Paint;Landroid/graphics/Paint;)V
+    .locals 1
 
-    new-instance v0, Ljay;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const/4 v1, 0x3
+    new-instance v0, Landroid/graphics/RectF;
 
-    invoke-direct {v0, v1}, Ljay;-><init>(I)V
+    invoke-direct {v0}, Landroid/graphics/RectF;-><init>()V
 
-    sput-object v0, Ljbl;->CREATOR:Landroid/os/Parcelable$Creator;
+    iput-object v0, p0, Ljbl;->a:Landroid/graphics/RectF;
 
-    return-void
-.end method
+    iput-object p1, p0, Ljbl;->c:Landroid/view/View;
 
-.method public constructor <init>(Ljava/util/List;)V
-    .locals 0
+    new-instance p1, Ljbo;
 
-    invoke-direct {p0}, Ljhn;-><init>()V
+    invoke-direct {p1, p2}, Ljbo;-><init>(Landroid/graphics/Paint;)V
 
-    invoke-static {p1}, Ljava/util/Collections;->unmodifiableList(Ljava/util/List;)Ljava/util/List;
+    iput-object p1, p0, Ljbl;->d:Ljbo;
 
-    move-result-object p1
+    new-instance p1, Ljbo;
 
-    iput-object p1, p0, Ljbl;->a:Ljava/util/List;
+    invoke-direct {p1, p2}, Ljbo;-><init>(Landroid/graphics/Paint;)V
+
+    iput-object p1, p0, Ljbl;->e:Ljbo;
+
+    new-instance p1, Ljbk;
+
+    invoke-direct {p1, p2}, Ljbk;-><init>(Landroid/graphics/Paint;)V
+
+    iput-object p1, p0, Ljbl;->g:Ljbk;
+
+    new-instance p1, Ljbk;
+
+    invoke-direct {p1, p2}, Ljbk;-><init>(Landroid/graphics/Paint;)V
+
+    iput-object p1, p0, Ljbl;->h:Ljbk;
+
+    new-instance p1, Ljbo;
+
+    invoke-direct {p1, p3}, Ljbo;-><init>(Landroid/graphics/Paint;)V
+
+    iput-object p1, p0, Ljbl;->f:Ljbo;
+
+    new-instance p1, Ljbk;
+
+    invoke-direct {p1, p3}, Ljbk;-><init>(Landroid/graphics/Paint;)V
+
+    iput-object p1, p0, Ljbl;->i:Ljbk;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 1
+.method public final a(Ljbm;)V
+    .locals 0
 
-    if-ne p0, p1, :cond_0
+    iput-object p1, p0, Ljbl;->b:Ljbm;
 
-    const/4 p1, 0x1
+    invoke-virtual {p0}, Ljbl;->b()V
 
-    return p1
+    iget-object p1, p0, Ljbl;->c:Landroid/view/View;
 
-    :cond_0
-    instance-of v0, p1, Ljbl;
+    invoke-virtual {p1}, Landroid/view/View;->invalidate()V
 
-    if-nez v0, :cond_1
-
-    const/4 p1, 0x0
-
-    return p1
-
-    :cond_1
-    check-cast p1, Ljbl;
-
-    iget-object v0, p0, Ljbl;->a:Ljava/util/List;
-
-    iget-object p1, p1, Ljbl;->a:Ljava/util/List;
-
-    invoke-virtual {v0, p1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
-
-    move-result p1
-
-    return p1
+    return-void
 .end method
 
-.method public final hashCode()I
-    .locals 3
+.method public final b()V
+    .locals 5
 
-    const/4 v0, 0x1
+    iget-object v0, p0, Ljbl;->d:Ljbo;
 
-    new-array v0, v0, [Ljava/lang/Object;
+    iget-object v1, p0, Ljbl;->b:Ljbm;
+
+    iget-boolean v2, v1, Ljbm;->i:Z
+
+    iput-boolean v2, v0, Ljbo;->b:Z
+
+    iget-object v0, p0, Ljbl;->e:Ljbo;
+
+    iput-boolean v2, v0, Ljbo;->b:Z
+
+    iget-object v0, p0, Ljbl;->g:Ljbk;
+
+    iput-boolean v2, v0, Ljbk;->b:Z
+
+    iget-object v0, p0, Ljbl;->h:Ljbk;
+
+    iput-boolean v2, v0, Ljbk;->b:Z
+
+    iget-object v0, p0, Ljbl;->f:Ljbo;
+
+    iput-boolean v2, v0, Ljbo;->b:Z
+
+    iget-object v3, p0, Ljbl;->i:Ljbk;
+
+    iput-boolean v2, v3, Ljbk;->b:Z
+
+    iget-boolean v1, v1, Ljbm;->h:Z
+
+    const/4 v2, 0x0
+
+    const/16 v3, 0xff
+
+    const/4 v4, 0x1
+
+    if-eq v4, v1, :cond_0
 
     const/4 v1, 0x0
 
-    iget-object v2, p0, Ljbl;->a:Ljava/util/List;
+    goto :goto_0
 
-    aput-object v2, v0, v1
+    :cond_0
+    const/16 v1, 0xff
 
-    invoke-static {v0}, Ljava/util/Arrays;->hashCode([Ljava/lang/Object;)I
+    :goto_0
+    invoke-virtual {v0, v1}, Ljbk;->a(I)V
 
-    move-result v0
+    iget-object v0, p0, Ljbl;->i:Ljbk;
 
-    return v0
-.end method
+    iget-object v1, p0, Ljbl;->b:Ljbm;
 
-.method public final toString()Ljava/lang/String;
-    .locals 2
+    iget-boolean v1, v1, Ljbm;->h:Z
 
-    new-instance v0, Ljava/lang/StringBuilder;
+    if-eq v4, v1, :cond_1
 
-    const-string v1, "BatchedLogErrorParcelable["
+    goto :goto_1
 
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    :cond_1
+    const/16 v2, 0xff
 
-    const-string v1, "LogErrors: "
+    :goto_1
+    invoke-virtual {v0, v2}, Ljbk;->a(I)V
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    iget-object v0, p0, Ljbl;->b:Ljbm;
 
-    iget-object v1, p0, Ljbl;->a:Ljava/util/List;
+    iget-object v1, p0, Ljbl;->a:Landroid/graphics/RectF;
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v1}, Ljbm;->a(Landroid/graphics/RectF;)V
 
-    const-string v1, "]"
+    iget-object v0, p0, Ljbl;->d:Ljbo;
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    iget-object v1, p0, Ljbl;->b:Ljbm;
 
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    iget v2, v1, Ljbm;->a:I
 
-    move-result-object v0
+    iput v2, v0, Ljbo;->a:I
 
-    return-object v0
-.end method
+    iget-object v0, p0, Ljbl;->e:Ljbo;
 
-.method public final writeToParcel(Landroid/os/Parcel;I)V
-    .locals 2
+    iget v2, v1, Ljbm;->b:I
 
-    invoke-static {p1}, Ljhp;->a(Landroid/os/Parcel;)I
+    iput v2, v0, Ljbo;->a:I
 
-    move-result p2
+    iget-object v0, p0, Ljbl;->g:Ljbk;
 
-    iget-object v0, p0, Ljbl;->a:Ljava/util/List;
+    iget v2, v1, Ljbm;->c:I
 
-    const/4 v1, 0x1
+    iput v2, v0, Ljbk;->a:I
 
-    invoke-static {p1, v1, v0}, Ljhp;->t(Landroid/os/Parcel;ILjava/util/List;)V
+    iget-object v0, p0, Ljbl;->h:Ljbk;
 
-    invoke-static {p1, p2}, Ljhp;->c(Landroid/os/Parcel;I)V
+    iget v2, v1, Ljbm;->d:I
+
+    iput v2, v0, Ljbk;->a:I
+
+    iget-object v0, p0, Ljbl;->f:Ljbo;
+
+    iget v2, v1, Ljbm;->e:I
+
+    iput v2, v0, Ljbo;->a:I
+
+    iget-object v0, p0, Ljbl;->i:Ljbk;
+
+    iget v1, v1, Ljbm;->f:I
+
+    iput v1, v0, Ljbk;->a:I
+
+    iget-object v0, p0, Ljbl;->c:Landroid/view/View;
+
+    invoke-virtual {v0}, Landroid/view/View;->invalidate()V
 
     return-void
 .end method

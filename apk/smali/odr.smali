@@ -1,132 +1,161 @@
-.class public final enum Lodr;
-.super Ljava/lang/Enum;
-
-
-# static fields
-.field public static final enum a:Lodr;
-
-.field public static final enum b:Lodr;
-
-.field public static final enum c:Lodr;
-
-.field public static final enum d:Lodr;
-
-.field public static final enum e:Lodr;
-
-.field public static final enum f:Lodr;
-
-.field private static final synthetic h:[Lodr;
+.class public final Lodr;
+.super Ljava/lang/Object;
 
 
 # instance fields
-.field public final g:Z
+.field public final a:I
+
+.field public final b:I
+
+.field public final c:I
+
+.field public d:Z
+
+.field private final e:J
+
+.field private final f:J
+
+.field private final g:Landroid/app/PendingIntent;
+
+.field private final h:Landroid/app/PendingIntent;
+
+.field private final i:Landroid/app/PendingIntent;
+
+.field private final j:Landroid/app/PendingIntent;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 13
-
-    new-instance v0, Lodr;
-
-    const-string v1, "BAD_URL"
-
-    const/4 v2, 0x0
-
-    invoke-direct {v0, v1, v2, v2}, Lodr;-><init>(Ljava/lang/String;IZ)V
-
-    sput-object v0, Lodr;->a:Lodr;
-
-    new-instance v1, Lodr;
-
-    const-string v3, "CANCELED"
-
-    const/4 v4, 0x1
-
-    invoke-direct {v1, v3, v4, v2}, Lodr;-><init>(Ljava/lang/String;IZ)V
-
-    sput-object v1, Lodr;->b:Lodr;
-
-    new-instance v3, Lodr;
-
-    const-string v5, "REQUEST_BODY_READ_ERROR"
-
-    const/4 v6, 0x2
-
-    invoke-direct {v3, v5, v6, v2}, Lodr;-><init>(Ljava/lang/String;IZ)V
-
-    sput-object v3, Lodr;->c:Lodr;
-
-    new-instance v5, Lodr;
-
-    const-string v7, "CONNECTION_ERROR"
-
-    const/4 v8, 0x3
-
-    invoke-direct {v5, v7, v8, v4}, Lodr;-><init>(Ljava/lang/String;IZ)V
-
-    sput-object v5, Lodr;->d:Lodr;
-
-    new-instance v7, Lodr;
-
-    const-string v9, "SERVER_ERROR"
-
-    const/4 v10, 0x4
-
-    invoke-direct {v7, v9, v10, v4}, Lodr;-><init>(Ljava/lang/String;IZ)V
-
-    sput-object v7, Lodr;->e:Lodr;
-
-    new-instance v9, Lodr;
-
-    const-string v11, "UNKNOWN"
-
-    const/4 v12, 0x5
-
-    invoke-direct {v9, v11, v12, v2}, Lodr;-><init>(Ljava/lang/String;IZ)V
-
-    sput-object v9, Lodr;->f:Lodr;
-
-    const/4 v11, 0x6
-
-    new-array v11, v11, [Lodr;
-
-    aput-object v0, v11, v2
-
-    aput-object v1, v11, v4
-
-    aput-object v3, v11, v6
-
-    aput-object v5, v11, v8
-
-    aput-object v7, v11, v10
-
-    aput-object v9, v11, v12
-
-    sput-object v11, Lodr;->h:[Lodr;
-
-    return-void
-.end method
-
-.method private constructor <init>(Ljava/lang/String;IZ)V
-    .locals 0
-
-    invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
-    iput-boolean p3, p0, Lodr;->g:Z
-
-    return-void
-.end method
-
-.method public static values()[Lodr;
+.method public constructor <init>(IIIJJLandroid/app/PendingIntent;Landroid/app/PendingIntent;Landroid/app/PendingIntent;Landroid/app/PendingIntent;)V
     .locals 1
 
-    sget-object v0, Lodr;->h:[Lodr;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-virtual {v0}, [Lodr;->clone()Ljava/lang/Object;
+    const/4 v0, 0x0
+
+    iput-boolean v0, p0, Lodr;->d:Z
+
+    iput p1, p0, Lodr;->a:I
+
+    iput p2, p0, Lodr;->b:I
+
+    iput p3, p0, Lodr;->c:I
+
+    iput-wide p4, p0, Lodr;->e:J
+
+    iput-wide p6, p0, Lodr;->f:J
+
+    iput-object p8, p0, Lodr;->g:Landroid/app/PendingIntent;
+
+    iput-object p9, p0, Lodr;->h:Landroid/app/PendingIntent;
+
+    iput-object p10, p0, Lodr;->i:Landroid/app/PendingIntent;
+
+    iput-object p11, p0, Lodr;->j:Landroid/app/PendingIntent;
+
+    return-void
+.end method
+
+.method private final c(Lody;)Z
+    .locals 4
+
+    iget-boolean p1, p1, Lody;->b:Z
+
+    if-eqz p1, :cond_0
+
+    iget-wide v0, p0, Lodr;->e:J
+
+    iget-wide v2, p0, Lodr;->f:J
+
+    cmp-long p1, v0, v2
+
+    if-gtz p1, :cond_0
+
+    const/4 p1, 0x1
+
+    return p1
+
+    :cond_0
+    const/4 p1, 0x0
+
+    return p1
+.end method
+
+
+# virtual methods
+.method final a(Lody;)Landroid/app/PendingIntent;
+    .locals 3
+
+    iget v0, p1, Lody;->a:I
+
+    const/4 v1, 0x0
+
+    if-nez v0, :cond_2
+
+    iget-object v0, p0, Lodr;->h:Landroid/app/PendingIntent;
+
+    if-eqz v0, :cond_0
+
+    return-object v0
+
+    :cond_0
+    invoke-direct {p0, p1}, Lodr;->c(Lody;)Z
+
+    move-result p1
+
+    if-eqz p1, :cond_1
+
+    iget-object p1, p0, Lodr;->j:Landroid/app/PendingIntent;
+
+    return-object p1
+
+    :cond_1
+    return-object v1
+
+    :cond_2
+    const/4 v2, 0x1
+
+    if-ne v0, v2, :cond_4
+
+    iget-object v0, p0, Lodr;->g:Landroid/app/PendingIntent;
+
+    if-eqz v0, :cond_3
+
+    return-object v0
+
+    :cond_3
+    invoke-direct {p0, p1}, Lodr;->c(Lody;)Z
+
+    move-result p1
+
+    if-eqz p1, :cond_4
+
+    iget-object p1, p0, Lodr;->i:Landroid/app/PendingIntent;
+
+    return-object p1
+
+    :cond_4
+    return-object v1
+.end method
+
+.method public final b()Z
+    .locals 1
+
+    invoke-static {}, Lody;->a()Lody;
 
     move-result-object v0
 
-    check-cast v0, [Lodr;
+    invoke-virtual {p0, v0}, Lodr;->a(Lody;)Landroid/app/PendingIntent;
 
-    return-object v0
+    move-result-object v0
+
+    if-eqz v0, :cond_0
+
+    const/4 v0, 0x1
+
+    return v0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    return v0
 .end method

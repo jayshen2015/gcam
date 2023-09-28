@@ -1,1135 +1,1050 @@
-.class public final Ltc;
-.super Landroid/hardware/camera2/CameraCaptureSession$CaptureCallback;
+.class public Ltc;
+.super Landroid/widget/FrameLayout;
 
-# interfaces
-.implements Lrm;
+
+# annotations
+.annotation runtime Ljava/lang/Deprecated;
+.end annotation
 
 
 # instance fields
-.field public final a:Z
+.field public a:Lto;
 
-.field public final b:Ljava/util/List;
+.field public b:Lto;
 
-.field public final c:Ljava/util/List;
+.field public c:Lto;
 
-.field public final d:Ljava/util/List;
+.field private d:I
 
-.field public volatile e:Ljava/lang/Integer;
+.field private e:I
 
-.field private final f:Ljava/util/Map;
+.field private f:F
 
-.field private final g:Ljava/util/Map;
+.field private g:I
 
-.field private final h:J
+.field private h:F
 
-.field private final i:Landroidx/wear/ambient/AmbientMode$AmbientController;
+.field private i:F
+
+.field private j:Z
+
+.field private k:Z
+
+.field private l:Z
+
+.field private m:Z
+
+.field private n:Z
+
+.field private o:Landroid/view/VelocityTracker;
+
+.field private p:F
+
+.field private q:F
+
+.field private final r:F
 
 
 # direct methods
-.method public constructor <init>(ZLjava/util/List;Ljava/util/List;Ljava/util/List;Landroidx/wear/ambient/AmbientMode$AmbientController;Ljava/util/Map;Ljava/util/Map;[B[B)V
-    .locals 0
+.method public constructor <init>(Landroid/content/Context;)V
+    .locals 1
 
-    invoke-direct {p0}, Landroid/hardware/camera2/CameraCaptureSession$CaptureCallback;-><init>()V
+    invoke-direct {p0, p1}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
 
-    iput-boolean p1, p0, Ltc;->a:Z
+    const/4 v0, 0x1
 
-    iput-object p2, p0, Ltc;->b:Ljava/util/List;
+    iput-boolean v0, p0, Ltc;->l:Z
 
-    iput-object p3, p0, Ltc;->c:Ljava/util/List;
+    const v0, 0x3ea8f5c3    # 0.33f
 
-    iput-object p4, p0, Ltc;->d:Ljava/util/List;
+    iput v0, p0, Ltc;->r:F
 
-    iput-object p5, p0, Ltc;->i:Landroidx/wear/ambient/AmbientMode$AmbientController;
-
-    iput-object p6, p0, Ltc;->f:Ljava/util/Map;
-
-    iput-object p7, p0, Ltc;->g:Ljava/util/Map;
-
-    sget-object p1, Lte;->b:Looo;
-
-    invoke-virtual {p1}, Looo;->c()J
-
-    move-result-wide p1
-
-    iput-wide p1, p0, Ltc;->h:J
+    invoke-direct {p0, p1}, Ltc;->c(Landroid/content/Context;)V
 
     return-void
 .end method
 
-.method private final d(J)Ltj;
-    .locals 2
+.method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
+    .locals 0
 
-    iget-object v0, p0, Ltc;->f:Ljava/util/Map;
+    invoke-direct {p0, p1, p2}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
-    invoke-static {p1, p2}, Lry;->a(J)Lry;
+    const/4 p2, 0x1
 
-    move-result-object v1
+    iput-boolean p2, p0, Ltc;->l:Z
 
-    invoke-interface {v0, v1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    const p2, 0x3ea8f5c3    # 0.33f
 
-    move-result-object v0
+    iput p2, p0, Ltc;->r:F
+
+    invoke-direct {p0, p1}, Ltc;->c(Landroid/content/Context;)V
+
+    return-void
+.end method
+
+.method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
+    .locals 0
+
+    invoke-direct {p0, p1, p2, p3}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
+
+    const/4 p2, 0x1
+
+    iput-boolean p2, p0, Ltc;->l:Z
+
+    const p2, 0x3ea8f5c3    # 0.33f
+
+    iput p2, p0, Ltc;->r:F
+
+    invoke-direct {p0, p1}, Ltc;->c(Landroid/content/Context;)V
+
+    return-void
+.end method
+
+.method private final c(Landroid/content/Context;)V
+    .locals 1
+
+    invoke-static {p1}, Landroid/view/ViewConfiguration;->get(Landroid/content/Context;)Landroid/view/ViewConfiguration;
+
+    move-result-object p1
+
+    invoke-virtual {p1}, Landroid/view/ViewConfiguration;->getScaledTouchSlop()I
+
+    move-result v0
+
+    iput v0, p0, Ltc;->d:I
+
+    invoke-virtual {p1}, Landroid/view/ViewConfiguration;->getScaledMinimumFlingVelocity()I
+
+    move-result p1
+
+    iput p1, p0, Ltc;->e:I
+
+    invoke-static {}, Landroid/content/res/Resources;->getSystem()Landroid/content/res/Resources;
+
+    move-result-object p1
+
+    invoke-virtual {p1}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
+
+    move-result-object p1
+
+    iget p1, p1, Landroid/util/DisplayMetrics;->widthPixels:I
+
+    int-to-float p1, p1
+
+    const v0, 0x3dcccccd    # 0.1f
+
+    mul-float p1, p1, v0
+
+    iput p1, p0, Ltc;->f:F
+
+    const/4 p1, 0x1
+
+    iput-boolean p1, p0, Ltc;->j:Z
+
+    return-void
+.end method
+
+.method private final d()V
+    .locals 1
+
+    iget-object v0, p0, Ltc;->o:Landroid/view/VelocityTracker;
 
     if-eqz v0, :cond_0
 
-    check-cast v0, Ltj;
-
-    return-object v0
+    invoke-virtual {v0}, Landroid/view/VelocityTracker;->recycle()V
 
     :cond_0
-    new-instance v0, Ljava/lang/StringBuilder;
+    const/4 v0, 0x0
 
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+    iput-object v0, p0, Ltc;->o:Landroid/view/VelocityTracker;
 
-    const-string v1, "Unable to find the request for "
+    const/4 v0, 0x0
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    iput v0, p0, Ltc;->p:F
 
-    invoke-static {p1, p2}, Lry;->b(J)Ljava/lang/String;
+    iput v0, p0, Ltc;->h:F
 
-    move-result-object p1
+    iput v0, p0, Ltc;->i:F
 
-    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    const/4 v0, 0x0
 
-    const/16 p1, 0x21
+    iput-boolean v0, p0, Ltc;->k:Z
 
-    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+    iput-boolean v0, p0, Ltc;->m:Z
 
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    iput-boolean v0, p0, Ltc;->n:Z
 
-    move-result-object p1
+    const/4 v0, 0x1
 
-    new-instance p2, Ljava/lang/IllegalStateException;
+    iput-boolean v0, p0, Ltc;->l:Z
 
-    invoke-direct {p2, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw p2
+    return-void
 .end method
 
-.method private static final e(Landroid/hardware/camera2/CaptureRequest;)J
-    .locals 2
+.method private final e(Landroid/view/MotionEvent;)V
+    .locals 4
 
-    invoke-virtual {p0}, Landroid/hardware/camera2/CaptureRequest;->getTag()Ljava/lang/Object;
+    iget-boolean v0, p0, Ltc;->k:Z
 
-    move-result-object p0
+    if-nez v0, :cond_1
 
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    invoke-virtual {p1}, Landroid/view/MotionEvent;->getRawX()F
 
-    check-cast p0, Lry;
+    move-result v0
 
-    iget-wide v0, p0, Lry;->a:J
+    iget v1, p0, Ltc;->h:F
 
-    return-wide v0
+    sub-float/2addr v0, v1
+
+    invoke-virtual {p1}, Landroid/view/MotionEvent;->getRawY()F
+
+    move-result p1
+
+    iget v1, p0, Ltc;->i:F
+
+    sub-float/2addr p1, v1
+
+    iget v1, p0, Ltc;->d:I
+
+    mul-float v2, v0, v0
+
+    mul-float v3, p1, p1
+
+    add-float/2addr v2, v3
+
+    mul-int v1, v1, v1
+
+    int-to-float v1, v1
+
+    cmpl-float v1, v2, v1
+
+    if-lez v1, :cond_1
+
+    iget-boolean v1, p0, Ltc;->l:Z
+
+    const/4 v2, 0x0
+
+    if-eqz v1, :cond_0
+
+    invoke-static {p1}, Ljava/lang/Math;->abs(F)F
+
+    move-result p1
+
+    invoke-static {v0}, Ljava/lang/Math;->abs(F)F
+
+    move-result v1
+
+    cmpg-float p1, p1, v1
+
+    if-gez p1, :cond_0
+
+    const/4 p1, 0x0
+
+    cmpl-float p1, v0, p1
+
+    if-lez p1, :cond_0
+
+    const/4 v2, 0x1
+
+    goto :goto_0
+
+    :cond_0
+    :goto_0
+    iput-boolean v2, p0, Ltc;->k:Z
+
+    iput-boolean v2, p0, Ltc;->l:Z
+
+    :cond_1
+    return-void
 .end method
 
 
 # virtual methods
-.method public final a()Ljava/util/List;
-    .locals 1
+.method protected final a()V
+    .locals 4
 
-    iget-object v0, p0, Ltc;->c:Ljava/util/List;
-
-    return-object v0
-.end method
-
-.method public final b()Ljava/util/List;
-    .locals 1
-
-    iget-object v0, p0, Ltc;->d:Ljava/util/List;
-
-    return-object v0
-.end method
-
-.method public final c()I
-    .locals 3
-
-    iget-object v0, p0, Ltc;->e:Ljava/lang/Integer;
-
-    const/16 v1, 0x21
-
-    if-nez v0, :cond_1
-
-    monitor-enter p0
-
-    :try_start_0
-    iget-object v0, p0, Ltc;->e:Ljava/lang/Integer;
+    iget-object v0, p0, Ltc;->a:Lto;
 
     if-eqz v0, :cond_0
 
-    invoke-virtual {v0}, Ljava/lang/Number;->intValue()I
+    iget-object v1, v0, Lto;->a:Landroid/support/wearable/view/SwipeDismissFrameLayout;
 
-    move-result v0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    const/4 v2, 0x0
 
-    monitor-exit p0
+    iput-boolean v2, v1, Landroid/support/wearable/view/SwipeDismissFrameLayout;->i:Z
 
-    return v0
-
-    :cond_0
-    :try_start_1
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, "SequenceNumber has not been set for "
-
-    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    new-instance v1, Ljava/lang/IllegalStateException;
-
-    invoke-direct {v1, v0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw v1
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    :catchall_0
-    move-exception v0
-
-    monitor-exit p0
-
-    throw v0
-
-    :cond_1
-    iget-object v0, p0, Ltc;->e:Ljava/lang/Integer;
-
-    if-eqz v0, :cond_2
-
-    invoke-virtual {v0}, Ljava/lang/Number;->intValue()I
-
-    move-result v0
-
-    return v0
-
-    :cond_2
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, "SequenceNumber has not been set for "
-
-    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    new-instance v1, Ljava/lang/IllegalStateException;
-
-    invoke-direct {v1, v0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw v1
-.end method
-
-.method public final onCaptureBufferLost(Landroid/hardware/camera2/CameraCaptureSession;Landroid/hardware/camera2/CaptureRequest;Landroid/view/Surface;J)V
-    .locals 3
-
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    invoke-virtual {p3}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    invoke-static {p2}, Ltc;->e(Landroid/hardware/camera2/CaptureRequest;)J
-
-    move-result-wide p1
-
-    iget-object v0, p0, Ltc;->g:Ljava/util/Map;
-
-    invoke-interface {v0, p3}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    if-eqz v0, :cond_2
-
-    check-cast v0, Lsc;
-
-    iget p3, v0, Lsc;->a:I
-
-    invoke-direct {p0, p1, p2}, Ltc;->d(J)Ltj;
-
-    move-result-object p1
-
-    iget-object p2, p0, Ltc;->d:Ljava/util/List;
-
-    invoke-interface {p2}, Ljava/util/List;->size()I
-
-    move-result p2
-
-    const/4 v0, 0x0
-
-    const/4 v1, 0x0
-
-    :goto_0
-    if-ge v1, p2, :cond_0
-
-    iget-object v2, p0, Ltc;->d:Ljava/util/List;
-
-    invoke-interface {v2, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Lrw;
-
-    invoke-interface {v2, p4, p5, p3}, Lrw;->e(JI)V
-
-    add-int/lit8 v1, v1, 0x1
-
-    goto :goto_0
-
-    :cond_0
-    iget-object p2, p1, Ltj;->a:Ljava/lang/Object;
-
-    check-cast p2, Lrx;
-
-    iget-object p2, p2, Lrx;->c:Ljava/util/List;
-
-    invoke-interface {p2}, Ljava/util/List;->size()I
-
-    move-result p2
-
-    :goto_1
-    if-ge v0, p2, :cond_1
-
-    iget-object v1, p1, Ltj;->a:Ljava/lang/Object;
-
-    check-cast v1, Lrx;
-
-    iget-object v1, v1, Lrx;->c:Ljava/util/List;
-
-    invoke-interface {v1, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
+    invoke-virtual {v1}, Landroid/support/wearable/view/SwipeDismissFrameLayout;->animate()Landroid/view/ViewPropertyAnimator;
 
     move-result-object v1
 
-    check-cast v1, Lrw;
+    const/4 v2, 0x0
 
-    invoke-interface {v1, p4, p5, p3}, Lrw;->e(JI)V
+    invoke-virtual {v1, v2}, Landroid/view/ViewPropertyAnimator;->translationX(F)Landroid/view/ViewPropertyAnimator;
 
-    add-int/lit8 v0, v0, 0x1
+    move-result-object v1
+
+    const/high16 v2, 0x3f800000    # 1.0f
+
+    invoke-virtual {v1, v2}, Landroid/view/ViewPropertyAnimator;->alpha(F)Landroid/view/ViewPropertyAnimator;
+
+    move-result-object v1
+
+    iget-object v2, v0, Lto;->a:Landroid/support/wearable/view/SwipeDismissFrameLayout;
+
+    iget v2, v2, Landroid/support/wearable/view/SwipeDismissFrameLayout;->e:I
+
+    int-to-long v2, v2
+
+    invoke-virtual {v1, v2, v3}, Landroid/view/ViewPropertyAnimator;->setDuration(J)Landroid/view/ViewPropertyAnimator;
+
+    move-result-object v1
+
+    iget-object v2, v0, Lto;->a:Landroid/support/wearable/view/SwipeDismissFrameLayout;
+
+    iget-object v2, v2, Landroid/support/wearable/view/SwipeDismissFrameLayout;->f:Landroid/view/animation/DecelerateInterpolator;
+
+    invoke-virtual {v1, v2}, Landroid/view/ViewPropertyAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)Landroid/view/ViewPropertyAnimator;
+
+    move-result-object v1
+
+    new-instance v2, Ltn;
+
+    invoke-direct {v2, v0}, Ltn;-><init>(Lto;)V
+
+    invoke-virtual {v1, v2}, Landroid/view/ViewPropertyAnimator;->withEndAction(Ljava/lang/Runnable;)Landroid/view/ViewPropertyAnimator;
+
+    :cond_0
+    return-void
+.end method
+
+.method protected final b(Landroid/view/View;ZFFF)Z
+    .locals 12
+
+    move-object v0, p1
+
+    instance-of v1, v0, Landroid/view/ViewGroup;
+
+    const/4 v2, 0x1
+
+    if-eqz v1, :cond_2
+
+    move-object v1, v0
+
+    check-cast v1, Landroid/view/ViewGroup;
+
+    invoke-virtual {p1}, Landroid/view/View;->getScrollX()I
+
+    move-result v3
+
+    invoke-virtual {p1}, Landroid/view/View;->getScrollY()I
+
+    move-result v4
+
+    invoke-virtual {v1}, Landroid/view/ViewGroup;->getChildCount()I
+
+    move-result v5
+
+    add-int/lit8 v5, v5, -0x1
+
+    :goto_0
+    if-ltz v5, :cond_2
+
+    invoke-virtual {v1, v5}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
+
+    move-result-object v7
+
+    int-to-float v6, v3
+
+    add-float v6, p4, v6
+
+    invoke-virtual {v7}, Landroid/view/View;->getLeft()I
+
+    move-result v8
+
+    int-to-float v8, v8
+
+    cmpl-float v8, v6, v8
+
+    if-ltz v8, :cond_1
+
+    invoke-virtual {v7}, Landroid/view/View;->getRight()I
+
+    move-result v8
+
+    int-to-float v8, v8
+
+    cmpg-float v8, v6, v8
+
+    if-gez v8, :cond_1
+
+    int-to-float v8, v4
+
+    add-float v8, p5, v8
+
+    invoke-virtual {v7}, Landroid/view/View;->getTop()I
+
+    move-result v9
+
+    int-to-float v9, v9
+
+    cmpl-float v9, v8, v9
+
+    if-ltz v9, :cond_1
+
+    invoke-virtual {v7}, Landroid/view/View;->getBottom()I
+
+    move-result v9
+
+    int-to-float v9, v9
+
+    cmpg-float v9, v8, v9
+
+    if-gez v9, :cond_1
+
+    const/4 v9, 0x1
+
+    invoke-virtual {v7}, Landroid/view/View;->getLeft()I
+
+    move-result v10
+
+    int-to-float v10, v10
+
+    sub-float v10, v6, v10
+
+    invoke-virtual {v7}, Landroid/view/View;->getTop()I
+
+    move-result v6
+
+    int-to-float v6, v6
+
+    sub-float v11, v8, v6
+
+    move-object v6, p0
+
+    move v8, v9
+
+    move v9, p3
+
+    invoke-virtual/range {v6 .. v11}, Ltc;->b(Landroid/view/View;ZFFF)Z
+
+    move-result v6
+
+    if-nez v6, :cond_0
 
     goto :goto_1
 
+    :cond_0
+    return v2
+
     :cond_1
-    return-void
+    :goto_1
+    add-int/lit8 v5, v5, -0x1
+
+    goto :goto_0
 
     :cond_2
-    new-instance p1, Ljava/lang/StringBuilder;
+    if-eqz p2, :cond_3
 
-    invoke-direct {p1}, Ljava/lang/StringBuilder;-><init>()V
+    move v1, p3
 
-    const-string p2, "Unable to find the streamId for "
+    neg-float v1, v1
 
-    invoke-virtual {p1, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    float-to-int v1, v1
 
-    invoke-virtual {p1, p3}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {p1, v1}, Landroid/view/View;->canScrollHorizontally(I)Z
 
-    const-string p2, " on frame "
+    move-result v0
 
-    invoke-virtual {p1, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    if-eqz v0, :cond_3
 
-    new-instance p2, Ljava/lang/StringBuilder;
+    return v2
 
-    invoke-direct {p2}, Ljava/lang/StringBuilder;-><init>()V
+    :cond_3
+    const/4 v0, 0x0
 
-    const-string p3, "FrameNumber(value="
-
-    invoke-virtual {p2, p3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {p2, p4, p5}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    const/16 p3, 0x29
-
-    invoke-virtual {p2, p3}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
-
-    invoke-virtual {p2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p2
-
-    invoke-virtual {p1, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {p1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p1
-
-    new-instance p2, Ljava/lang/IllegalStateException;
-
-    invoke-direct {p2, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    goto :goto_3
-
-    :goto_2
-    throw p2
-
-    :goto_3
-    goto :goto_2
+    return v0
 .end method
 
-.method public final onCaptureCompleted(Landroid/hardware/camera2/CameraCaptureSession;Landroid/hardware/camera2/CaptureRequest;Landroid/hardware/camera2/TotalCaptureResult;)V
-    .locals 3
+.method public final canScrollHorizontally(I)Z
+    .locals 0
 
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    if-gez p1, :cond_0
 
-    invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    iget-boolean p1, p0, Ltc;->j:Z
 
-    invoke-virtual {p3}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    if-eqz p1, :cond_0
 
-    iget-object p1, p0, Ltc;->i:Landroidx/wear/ambient/AmbientMode$AmbientController;
+    invoke-virtual {p0}, Ltc;->getVisibility()I
 
-    invoke-virtual {p1, p0}, Landroidx/wear/ambient/AmbientMode$AmbientController;->c(Lrm;)V
+    move-result p1
 
-    invoke-static {p2}, Ltc;->e(Landroid/hardware/camera2/CaptureRequest;)J
+    if-nez p1, :cond_0
 
-    move-result-wide p1
+    const/4 p1, 0x1
 
-    invoke-virtual {p3}, Landroid/hardware/camera2/TotalCaptureResult;->getFrameNumber()J
+    return p1
 
-    invoke-direct {p0, p1, p2}, Ltc;->d(J)Ltj;
+    :cond_0
+    const/4 p1, 0x0
 
-    move-result-object p1
+    return p1
+.end method
 
-    new-instance p2, Ltj;
+.method public final onInterceptTouchEvent(Landroid/view/MotionEvent;)Z
+    .locals 12
+
+    iget-boolean v0, p0, Ltc;->j:Z
+
+    if-nez v0, :cond_0
+
+    invoke-super {p0, p1}, Landroid/widget/FrameLayout;->onInterceptTouchEvent(Landroid/view/MotionEvent;)Z
+
+    move-result p1
+
+    return p1
+
+    :cond_0
+    iget v0, p0, Ltc;->p:F
+
+    const/4 v1, 0x0
+
+    invoke-virtual {p1, v0, v1}, Landroid/view/MotionEvent;->offsetLocation(FF)V
+
+    invoke-virtual {p1}, Landroid/view/MotionEvent;->getActionMasked()I
+
+    move-result v0
+
+    const/4 v2, 0x0
+
+    const/4 v3, 0x1
+
+    packed-switch v0, :pswitch_data_0
+
+    :pswitch_0
+    goto/16 :goto_1
+
+    :pswitch_1
+    invoke-virtual {p1}, Landroid/view/MotionEvent;->getActionIndex()I
+
+    move-result v0
+
+    invoke-virtual {p1, v0}, Landroid/view/MotionEvent;->getPointerId(I)I
+
+    move-result v1
+
+    iget v4, p0, Ltc;->g:I
+
+    if-ne v1, v4, :cond_4
+
+    if-nez v0, :cond_1
 
     const/4 v0, 0x1
 
-    invoke-direct {p2, p3, v0}, Ltj;-><init>(Landroid/hardware/camera2/TotalCaptureResult;I)V
-
-    iget-object p3, p0, Ltc;->d:Ljava/util/List;
-
-    invoke-interface {p3}, Ljava/util/List;->size()I
-
-    move-result p3
-
-    const/4 v0, 0x0
-
-    const/4 v1, 0x0
-
-    :goto_0
-    if-ge v1, p3, :cond_0
-
-    iget-object v2, p0, Ltc;->d:Ljava/util/List;
-
-    invoke-interface {v2, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Lrw;
-
-    invoke-interface {v2, p2}, Lrw;->k(Ltj;)V
-
-    add-int/lit8 v1, v1, 0x1
-
     goto :goto_0
 
-    :cond_0
-    iget-object p3, p1, Ltj;->a:Ljava/lang/Object;
+    :cond_1
+    const/4 v0, 0x0
 
-    check-cast p3, Lrx;
+    :goto_0
+    invoke-virtual {p1, v0}, Landroid/view/MotionEvent;->getPointerId(I)I
 
-    iget-object p3, p3, Lrx;->c:Ljava/util/List;
+    move-result p1
 
-    invoke-interface {p3}, Ljava/util/List;->size()I
+    iput p1, p0, Ltc;->g:I
 
-    move-result p3
+    goto/16 :goto_1
 
-    const/4 v1, 0x0
+    :pswitch_2
+    invoke-virtual {p1}, Landroid/view/MotionEvent;->getActionIndex()I
 
-    :goto_1
-    if-ge v1, p3, :cond_1
+    move-result v0
 
-    iget-object v2, p1, Ltj;->a:Ljava/lang/Object;
+    invoke-virtual {p1, v0}, Landroid/view/MotionEvent;->getPointerId(I)I
 
-    check-cast v2, Lrx;
+    move-result p1
 
-    iget-object v2, v2, Lrx;->c:Ljava/util/List;
-
-    invoke-interface {v2, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Lrw;
-
-    invoke-interface {v2, p2}, Lrw;->k(Ltj;)V
-
-    add-int/lit8 v1, v1, 0x1
+    iput p1, p0, Ltc;->g:I
 
     goto :goto_1
 
-    :cond_1
-    iget-object p2, p0, Ltc;->d:Ljava/util/List;
+    :pswitch_3
+    iget-object v0, p0, Ltc;->o:Landroid/view/VelocityTracker;
 
-    invoke-interface {p2}, Ljava/util/List;->size()I
+    if-eqz v0, :cond_4
 
-    move-result p2
+    iget-boolean v0, p0, Ltc;->n:Z
 
-    const/4 p3, 0x0
+    if-nez v0, :cond_4
 
-    :goto_2
-    if-ge p3, p2, :cond_2
+    iget v0, p0, Ltc;->g:I
 
-    iget-object v1, p0, Ltc;->d:Ljava/util/List;
+    invoke-virtual {p1, v0}, Landroid/view/MotionEvent;->findPointerIndex(I)I
 
-    invoke-interface {v1, p3}, Ljava/util/List;->get(I)Ljava/lang/Object;
+    move-result v0
 
-    move-result-object v1
+    const/4 v4, -0x1
 
-    check-cast v1, Lrw;
+    if-ne v0, v4, :cond_2
 
-    invoke-interface {v1}, Lrw;->f()V
+    const-string p1, "SwipeDismissLayout"
 
-    add-int/lit8 p3, p3, 0x1
+    const-string v0, "Invalid pointer index: ignoring."
 
-    goto :goto_2
+    invoke-static {p1, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+
+    iput-boolean v3, p0, Ltc;->n:Z
+
+    goto :goto_1
 
     :cond_2
-    iget-object p2, p1, Ltj;->a:Ljava/lang/Object;
+    invoke-virtual {p1}, Landroid/view/MotionEvent;->getRawX()F
 
-    check-cast p2, Lrx;
+    move-result v4
 
-    iget-object p2, p2, Lrx;->c:Ljava/util/List;
+    iget v5, p0, Ltc;->h:F
 
-    invoke-interface {p2}, Ljava/util/List;->size()I
+    sub-float v9, v4, v5
 
-    move-result p2
+    invoke-virtual {p1, v0}, Landroid/view/MotionEvent;->getX(I)F
 
-    :goto_3
-    if-ge v0, p2, :cond_3
+    move-result v10
 
-    iget-object p3, p1, Ltj;->a:Ljava/lang/Object;
+    invoke-virtual {p1, v0}, Landroid/view/MotionEvent;->getY(I)F
 
-    check-cast p3, Lrx;
+    move-result v11
 
-    iget-object p3, p3, Lrx;->c:Ljava/util/List;
+    cmpl-float v0, v9, v1
 
-    invoke-interface {p3, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
+    if-eqz v0, :cond_3
 
-    move-result-object p3
+    iget v0, p0, Ltc;->h:F
 
-    check-cast p3, Lrw;
+    iget v1, p0, Ltc;->f:F
 
-    invoke-interface {p3}, Lrw;->f()V
+    cmpl-float v0, v0, v1
 
-    add-int/lit8 v0, v0, 0x1
+    if-ltz v0, :cond_3
 
-    goto :goto_3
+    const/4 v8, 0x0
+
+    move-object v6, p0
+
+    move-object v7, p0
+
+    invoke-virtual/range {v6 .. v11}, Ltc;->b(Landroid/view/View;ZFFF)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_3
+
+    iput-boolean v3, p0, Ltc;->n:Z
+
+    goto :goto_1
 
     :cond_3
-    return-void
-.end method
+    invoke-direct {p0, p1}, Ltc;->e(Landroid/view/MotionEvent;)V
 
-.method public final onCaptureFailed(Landroid/hardware/camera2/CameraCaptureSession;Landroid/hardware/camera2/CaptureRequest;Landroid/hardware/camera2/CaptureFailure;)V
-    .locals 2
+    goto :goto_1
 
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    :pswitch_4
+    invoke-direct {p0}, Ltc;->d()V
 
-    invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    goto :goto_1
 
-    invoke-virtual {p3}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    :pswitch_5
+    invoke-direct {p0}, Ltc;->d()V
 
-    iget-object p1, p0, Ltc;->i:Landroidx/wear/ambient/AmbientMode$AmbientController;
+    invoke-virtual {p1}, Landroid/view/MotionEvent;->getRawX()F
 
-    invoke-virtual {p1, p0}, Landroidx/wear/ambient/AmbientMode$AmbientController;->c(Lrm;)V
+    move-result v0
 
-    invoke-static {p2}, Ltc;->e(Landroid/hardware/camera2/CaptureRequest;)J
+    iput v0, p0, Ltc;->h:F
 
-    move-result-wide p1
+    invoke-virtual {p1}, Landroid/view/MotionEvent;->getRawY()F
 
-    invoke-virtual {p3}, Landroid/hardware/camera2/CaptureFailure;->getFrameNumber()J
+    move-result v0
 
-    invoke-direct {p0, p1, p2}, Ltc;->d(J)Ltj;
+    iput v0, p0, Ltc;->i:F
 
-    move-result-object p1
+    invoke-virtual {p1, v2}, Landroid/view/MotionEvent;->getPointerId(I)I
 
-    iget-object p2, p0, Ltc;->d:Ljava/util/List;
+    move-result v0
 
-    invoke-interface {p2}, Ljava/util/List;->size()I
+    iput v0, p0, Ltc;->g:I
 
-    move-result p2
-
-    const/4 p3, 0x0
-
-    const/4 v0, 0x0
-
-    :goto_0
-    if-ge v0, p2, :cond_0
-
-    iget-object v1, p0, Ltc;->d:Ljava/util/List;
-
-    invoke-interface {v1, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Lrw;
-
-    invoke-interface {v1}, Lrw;->g()V
-
-    add-int/lit8 v0, v0, 0x1
-
-    goto :goto_0
-
-    :cond_0
-    iget-object p2, p1, Ltj;->a:Ljava/lang/Object;
-
-    check-cast p2, Lrx;
-
-    iget-object p2, p2, Lrx;->c:Ljava/util/List;
-
-    invoke-interface {p2}, Ljava/util/List;->size()I
-
-    move-result p2
-
-    :goto_1
-    if-ge p3, p2, :cond_1
-
-    iget-object v0, p1, Ltj;->a:Ljava/lang/Object;
-
-    check-cast v0, Lrx;
-
-    iget-object v0, v0, Lrx;->c:Ljava/util/List;
-
-    invoke-interface {v0, p3}, Ljava/util/List;->get(I)Ljava/lang/Object;
+    invoke-static {}, Landroid/view/VelocityTracker;->obtain()Landroid/view/VelocityTracker;
 
     move-result-object v0
 
-    check-cast v0, Lrw;
+    iput-object v0, p0, Ltc;->o:Landroid/view/VelocityTracker;
 
-    invoke-interface {v0}, Lrw;->g()V
-
-    add-int/lit8 p3, p3, 0x1
-
-    goto :goto_1
-
-    :cond_1
-    return-void
-.end method
-
-.method public final onCaptureProgressed(Landroid/hardware/camera2/CameraCaptureSession;Landroid/hardware/camera2/CaptureRequest;Landroid/hardware/camera2/CaptureResult;)V
-    .locals 2
-
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    invoke-virtual {p3}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    invoke-static {p2}, Ltc;->e(Landroid/hardware/camera2/CaptureRequest;)J
-
-    move-result-wide p1
-
-    invoke-virtual {p3}, Landroid/hardware/camera2/CaptureResult;->getFrameNumber()J
-
-    invoke-direct {p0, p1, p2}, Ltc;->d(J)Ltj;
-
-    move-result-object p1
-
-    iget-object p2, p0, Ltc;->d:Ljava/util/List;
-
-    invoke-interface {p2}, Ljava/util/List;->size()I
-
-    move-result p2
-
-    const/4 p3, 0x0
-
-    const/4 v0, 0x0
-
-    :goto_0
-    if-ge v0, p2, :cond_0
-
-    iget-object v1, p0, Ltc;->d:Ljava/util/List;
-
-    invoke-interface {v1, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Lrw;
-
-    invoke-interface {v1}, Lrw;->j()V
-
-    add-int/lit8 v0, v0, 0x1
-
-    goto :goto_0
-
-    :cond_0
-    iget-object p2, p1, Ltj;->a:Ljava/lang/Object;
-
-    check-cast p2, Lrx;
-
-    iget-object p2, p2, Lrx;->c:Ljava/util/List;
-
-    invoke-interface {p2}, Ljava/util/List;->size()I
-
-    move-result p2
-
-    :goto_1
-    if-ge p3, p2, :cond_1
-
-    iget-object v0, p1, Ltj;->a:Ljava/lang/Object;
-
-    check-cast v0, Lrx;
-
-    iget-object v0, v0, Lrx;->c:Ljava/util/List;
-
-    invoke-interface {v0, p3}, Ljava/util/List;->get(I)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lrw;
-
-    invoke-interface {v0}, Lrw;->j()V
-
-    add-int/lit8 p3, p3, 0x1
-
-    goto :goto_1
-
-    :cond_1
-    return-void
-.end method
-
-.method public final onCaptureSequenceAborted(Landroid/hardware/camera2/CameraCaptureSession;I)V
-    .locals 5
-
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    iget-object p1, p0, Ltc;->i:Landroidx/wear/ambient/AmbientMode$AmbientController;
-
-    invoke-virtual {p1, p0}, Landroidx/wear/ambient/AmbientMode$AmbientController;->c(Lrm;)V
-
-    invoke-virtual {p0}, Ltc;->c()I
-
-    move-result p1
-
-    if-ne p1, p2, :cond_4
-
-    iget-object p1, p0, Ltc;->c:Ljava/util/List;
-
-    invoke-interface {p1}, Ljava/util/List;->size()I
-
-    move-result p1
-
-    const/4 p2, 0x0
-
-    const/4 v0, 0x0
-
-    :goto_0
-    if-ge v0, p1, :cond_1
-
-    iget-object v1, p0, Ltc;->c:Ljava/util/List;
-
-    invoke-interface {v1, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Ltj;
-
-    iget-object v2, p0, Ltc;->d:Ljava/util/List;
-
-    invoke-interface {v2}, Ljava/util/List;->size()I
-
-    move-result v2
-
-    const/4 v3, 0x0
-
-    :goto_1
-    if-ge v3, v2, :cond_0
-
-    iget-object v4, p0, Ltc;->d:Ljava/util/List;
-
-    invoke-interface {v4, v3}, Ljava/util/List;->get(I)Ljava/lang/Object;
-
-    move-result-object v4
-
-    check-cast v4, Lrw;
-
-    invoke-interface {v4, v1}, Lrw;->b(Ltj;)V
-
-    add-int/lit8 v3, v3, 0x1
-
-    goto :goto_1
-
-    :cond_0
-    add-int/lit8 v0, v0, 0x1
-
-    goto :goto_0
-
-    :cond_1
-    iget-object p1, p0, Ltc;->c:Ljava/util/List;
-
-    invoke-interface {p1}, Ljava/util/List;->size()I
-
-    move-result p1
-
-    const/4 v0, 0x0
-
-    :goto_2
-    if-ge v0, p1, :cond_3
-
-    iget-object v1, p0, Ltc;->c:Ljava/util/List;
-
-    invoke-interface {v1, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Ltj;
-
-    iget-object v2, v1, Ltj;->a:Ljava/lang/Object;
-
-    check-cast v2, Lrx;
-
-    iget-object v2, v2, Lrx;->c:Ljava/util/List;
-
-    invoke-interface {v2}, Ljava/util/List;->size()I
-
-    move-result v2
-
-    const/4 v3, 0x0
-
-    :goto_3
-    if-ge v3, v2, :cond_2
-
-    iget-object v4, v1, Ltj;->a:Ljava/lang/Object;
-
-    check-cast v4, Lrx;
-
-    iget-object v4, v4, Lrx;->c:Ljava/util/List;
-
-    invoke-interface {v4, v3}, Ljava/util/List;->get(I)Ljava/lang/Object;
-
-    move-result-object v4
-
-    check-cast v4, Lrw;
-
-    invoke-interface {v4, v1}, Lrw;->b(Ltj;)V
-
-    add-int/lit8 v3, v3, 0x1
-
-    goto :goto_3
-
-    :cond_2
-    add-int/lit8 v0, v0, 0x1
-
-    goto :goto_2
-
-    :cond_3
-    return-void
+    invoke-virtual {v0, p1}, Landroid/view/VelocityTracker;->addMovement(Landroid/view/MotionEvent;)V
 
     :cond_4
-    new-instance p1, Ljava/lang/StringBuilder;
+    :goto_1
+    iget-object p1, p0, Ltc;->b:Lto;
 
-    invoke-direct {p1}, Ljava/lang/StringBuilder;-><init>()V
+    if-eqz p1, :cond_5
 
-    const-string v0, "onCaptureSequenceAborted was invoked on "
+    invoke-virtual {p1}, Lto;->a()V
 
-    invoke-virtual {p1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    :cond_5
+    iget-boolean p1, p0, Ltc;->n:Z
 
-    invoke-virtual {p0}, Ltc;->c()I
+    if-nez p1, :cond_6
 
-    move-result v0
+    iget-boolean p1, p0, Ltc;->k:Z
 
-    invoke-virtual {p1, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    if-eqz p1, :cond_6
 
-    const-string v0, ", but expected "
+    return v3
 
-    invoke-virtual {p1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    :cond_6
+    return v2
 
-    invoke-virtual {p1, p2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    const/16 p2, 0x21
-
-    invoke-virtual {p1, p2}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
-
-    invoke-virtual {p1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p1
-
-    new-instance p2, Ljava/lang/IllegalStateException;
-
-    invoke-direct {p2, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    goto :goto_5
-
-    :goto_4
-    throw p2
-
-    :goto_5
-    goto :goto_4
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_5
+        :pswitch_4
+        :pswitch_3
+        :pswitch_4
+        :pswitch_0
+        :pswitch_2
+        :pswitch_1
+    .end packed-switch
 .end method
 
-.method public final onCaptureSequenceCompleted(Landroid/hardware/camera2/CameraCaptureSession;IJ)V
-    .locals 3
+.method public final onTouchEvent(Landroid/view/MotionEvent;)Z
+    .locals 6
 
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    iget-boolean v0, p0, Ltc;->j:Z
 
-    iget-object p1, p0, Ltc;->i:Landroidx/wear/ambient/AmbientMode$AmbientController;
+    if-nez v0, :cond_0
 
-    invoke-virtual {p1, p0}, Landroidx/wear/ambient/AmbientMode$AmbientController;->c(Lrm;)V
-
-    invoke-virtual {p0}, Ltc;->c()I
+    invoke-super {p0, p1}, Landroid/widget/FrameLayout;->onTouchEvent(Landroid/view/MotionEvent;)Z
 
     move-result p1
 
-    if-ne p1, p2, :cond_4
-
-    iget-object p1, p0, Ltc;->c:Ljava/util/List;
-
-    invoke-interface {p1}, Ljava/util/List;->size()I
-
-    move-result p1
-
-    const/4 p2, 0x0
-
-    const/4 p3, 0x0
-
-    :goto_0
-    if-ge p3, p1, :cond_1
-
-    iget-object p4, p0, Ltc;->c:Ljava/util/List;
-
-    invoke-interface {p4, p3}, Ljava/util/List;->get(I)Ljava/lang/Object;
-
-    move-result-object p4
-
-    check-cast p4, Ltj;
-
-    iget-object v0, p0, Ltc;->d:Ljava/util/List;
-
-    invoke-interface {v0}, Ljava/util/List;->size()I
-
-    move-result v0
-
-    const/4 v1, 0x0
-
-    :goto_1
-    if-ge v1, v0, :cond_0
-
-    iget-object v2, p0, Ltc;->d:Ljava/util/List;
-
-    invoke-interface {v2, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Lrw;
-
-    invoke-interface {v2, p4}, Lrw;->h(Ltj;)V
-
-    add-int/lit8 v1, v1, 0x1
-
-    goto :goto_1
+    return p1
 
     :cond_0
-    add-int/lit8 p3, p3, 0x1
+    iget-object v0, p0, Ltc;->o:Landroid/view/VelocityTracker;
 
-    goto :goto_0
+    if-nez v0, :cond_1
 
-    :cond_1
-    iget-object p1, p0, Ltc;->c:Ljava/util/List;
-
-    invoke-interface {p1}, Ljava/util/List;->size()I
+    invoke-super {p0, p1}, Landroid/widget/FrameLayout;->onTouchEvent(Landroid/view/MotionEvent;)Z
 
     move-result p1
 
-    const/4 p3, 0x0
+    return p1
 
-    :goto_2
-    if-ge p3, p1, :cond_3
+    :cond_1
+    iget-object v0, p0, Ltc;->b:Lto;
 
-    iget-object p4, p0, Ltc;->c:Ljava/util/List;
+    if-eqz v0, :cond_2
 
-    invoke-interface {p4, p3}, Ljava/util/List;->get(I)Ljava/lang/Object;
-
-    move-result-object p4
-
-    check-cast p4, Ltj;
-
-    iget-object v0, p4, Ltj;->a:Ljava/lang/Object;
-
-    check-cast v0, Lrx;
-
-    iget-object v0, v0, Lrx;->c:Ljava/util/List;
-
-    invoke-interface {v0}, Ljava/util/List;->size()I
-
-    move-result v0
-
-    const/4 v1, 0x0
-
-    :goto_3
-    if-ge v1, v0, :cond_2
-
-    iget-object v2, p4, Ltj;->a:Ljava/lang/Object;
-
-    check-cast v2, Lrx;
-
-    iget-object v2, v2, Lrx;->c:Ljava/util/List;
-
-    invoke-interface {v2, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Lrw;
-
-    invoke-interface {v2, p4}, Lrw;->h(Ltj;)V
-
-    add-int/lit8 v1, v1, 0x1
-
-    goto :goto_3
+    invoke-virtual {v0}, Lto;->a()V
 
     :cond_2
-    add-int/lit8 p3, p3, 0x1
-
-    goto :goto_2
-
-    :cond_3
-    return-void
-
-    :cond_4
-    new-instance p1, Ljava/lang/StringBuilder;
-
-    invoke-direct {p1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string p3, "onCaptureSequenceCompleted was invoked on "
-
-    invoke-virtual {p1, p3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {p0}, Ltc;->c()I
-
-    move-result p3
-
-    invoke-virtual {p1, p3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    const-string p3, ", but expected "
-
-    invoke-virtual {p1, p3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {p1, p2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    const/16 p2, 0x21
-
-    invoke-virtual {p1, p2}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
-
-    invoke-virtual {p1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p1
-
-    new-instance p2, Ljava/lang/IllegalStateException;
-
-    invoke-direct {p2, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    goto :goto_5
-
-    :goto_4
-    throw p2
-
-    :goto_5
-    goto :goto_4
-.end method
-
-.method public final onCaptureStarted(Landroid/hardware/camera2/CameraCaptureSession;Landroid/hardware/camera2/CaptureRequest;JJ)V
-    .locals 3
-
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    invoke-static {p2}, Ltc;->e(Landroid/hardware/camera2/CaptureRequest;)J
-
-    move-result-wide p1
-
-    invoke-direct {p0, p1, p2}, Ltc;->d(J)Ltj;
-
-    move-result-object p1
-
-    iget-object p2, p0, Ltc;->d:Ljava/util/List;
-
-    invoke-interface {p2}, Ljava/util/List;->size()I
-
-    move-result p2
-
-    const/4 v0, 0x0
+    iget v0, p0, Ltc;->p:F
 
     const/4 v1, 0x0
 
-    :goto_0
-    if-ge v1, p2, :cond_0
+    invoke-virtual {p1, v0, v1}, Landroid/view/MotionEvent;->offsetLocation(FF)V
 
-    iget-object v2, p0, Ltc;->d:Ljava/util/List;
+    invoke-virtual {p1}, Landroid/view/MotionEvent;->getActionMasked()I
 
-    invoke-interface {v2, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
+    move-result v0
 
-    move-result-object v2
+    const/4 v2, 0x0
 
-    check-cast v2, Lrw;
+    const/4 v3, 0x1
 
-    invoke-interface {v2, p5, p6, p3, p4}, Lrw;->i(JJ)V
+    packed-switch v0, :pswitch_data_0
 
-    add-int/lit8 v1, v1, 0x1
+    goto/16 :goto_2
 
-    goto :goto_0
+    :pswitch_0
+    invoke-virtual {p0}, Ltc;->a()V
 
-    :cond_0
-    iget-object p2, p1, Ltj;->a:Ljava/lang/Object;
+    invoke-direct {p0}, Ltc;->d()V
 
-    check-cast p2, Lrx;
+    goto/16 :goto_2
 
-    iget-object p2, p2, Lrx;->c:Ljava/util/List;
+    :pswitch_1
+    iget-object v0, p0, Ltc;->o:Landroid/view/VelocityTracker;
 
-    invoke-interface {p2}, Ljava/util/List;->size()I
+    invoke-virtual {v0, p1}, Landroid/view/VelocityTracker;->addMovement(Landroid/view/MotionEvent;)V
 
-    move-result p2
+    invoke-virtual {p1}, Landroid/view/MotionEvent;->getRawX()F
 
-    :goto_1
-    if-ge v0, p2, :cond_1
+    move-result v0
 
-    iget-object v1, p1, Ltj;->a:Ljava/lang/Object;
+    iput v0, p0, Ltc;->q:F
 
-    check-cast v1, Lrx;
+    invoke-direct {p0, p1}, Ltc;->e(Landroid/view/MotionEvent;)V
 
-    iget-object v1, v1, Lrx;->c:Ljava/util/List;
+    iget-boolean v0, p0, Ltc;->k:Z
 
-    invoke-interface {v1, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
+    if-eqz v0, :cond_b
 
-    move-result-object v1
+    invoke-virtual {p1}, Landroid/view/MotionEvent;->getRawX()F
 
-    check-cast v1, Lrw;
+    move-result p1
 
-    invoke-interface {v1, p5, p6, p3, p4}, Lrw;->i(JJ)V
+    iget v0, p0, Ltc;->h:F
 
-    add-int/lit8 v0, v0, 0x1
+    sub-float/2addr p1, v0
 
-    goto :goto_1
+    iput p1, p0, Ltc;->p:F
 
-    :cond_1
-    return-void
-.end method
+    iget-object v0, p0, Ltc;->a:Lto;
 
-.method public final toString()Ljava/lang/String;
-    .locals 3
+    if-eqz v0, :cond_b
 
-    new-instance v0, Ljava/lang/StringBuilder;
+    cmpl-float v1, p1, v1
 
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+    if-ltz v1, :cond_b
 
-    const-string v1, "Camera2CaptureSequence-"
+    invoke-virtual {p0}, Ltc;->getWidth()I
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result v1
 
-    iget-wide v1, p0, Ltc;->h:J
+    iget-object v4, v0, Lto;->a:Landroid/support/wearable/view/SwipeDismissFrameLayout;
 
-    invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+    invoke-virtual {v4, p1}, Landroid/support/wearable/view/SwipeDismissFrameLayout;->setTranslationX(F)V
 
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    iget-object v4, v0, Lto;->a:Landroid/support/wearable/view/SwipeDismissFrameLayout;
+
+    const/high16 v5, 0x3f800000    # 1.0f
+
+    int-to-float v1, v1
+
+    div-float/2addr p1, v1
+
+    const/high16 v1, 0x3f000000    # 0.5f
+
+    mul-float p1, p1, v1
+
+    sub-float/2addr v5, p1
+
+    invoke-virtual {v4, v5}, Landroid/support/wearable/view/SwipeDismissFrameLayout;->setAlpha(F)V
+
+    iget-object p1, v0, Lto;->a:Landroid/support/wearable/view/SwipeDismissFrameLayout;
+
+    iget-boolean v1, p1, Landroid/support/wearable/view/SwipeDismissFrameLayout;->i:Z
+
+    if-nez v1, :cond_b
+
+    iget-object p1, p1, Landroid/support/wearable/view/SwipeDismissFrameLayout;->d:Ljava/util/ArrayList;
+
+    invoke-virtual {p1}, Ljava/util/ArrayList;->size()I
+
+    move-result p1
+
+    add-int/lit8 p1, p1, -0x1
+
+    if-gez p1, :cond_3
+
+    iget-object p1, v0, Lto;->a:Landroid/support/wearable/view/SwipeDismissFrameLayout;
+
+    iput-boolean v3, p1, Landroid/support/wearable/view/SwipeDismissFrameLayout;->i:Z
+
+    goto/16 :goto_2
+
+    :cond_3
+    iget-object v0, v0, Lto;->a:Landroid/support/wearable/view/SwipeDismissFrameLayout;
+
+    iget-object v0, v0, Landroid/support/wearable/view/SwipeDismissFrameLayout;->d:Ljava/util/ArrayList;
+
+    invoke-virtual {v0, p1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+
+    move-result-object p1
+
+    check-cast p1, Lgj;
+
+    throw v2
+
+    :pswitch_2
+    invoke-virtual {p1}, Landroid/view/MotionEvent;->getRawX()F
+
+    move-result v0
+
+    iget v4, p0, Ltc;->h:F
+
+    sub-float/2addr v0, v4
+
+    iget-object v4, p0, Ltc;->o:Landroid/view/VelocityTracker;
+
+    invoke-virtual {v4, p1}, Landroid/view/VelocityTracker;->addMovement(Landroid/view/MotionEvent;)V
+
+    iget-object v4, p0, Ltc;->o:Landroid/view/VelocityTracker;
+
+    const/16 v5, 0x3e8
+
+    invoke-virtual {v4, v5}, Landroid/view/VelocityTracker;->computeCurrentVelocity(I)V
+
+    iget-boolean v4, p0, Ltc;->m:Z
+
+    if-nez v4, :cond_6
+
+    invoke-virtual {p0}, Ltc;->getWidth()I
+
+    move-result v4
+
+    int-to-float v4, v4
+
+    iget v5, p0, Ltc;->r:F
+
+    mul-float v4, v4, v5
+
+    cmpl-float v0, v0, v4
+
+    if-lez v0, :cond_4
+
+    invoke-virtual {p1}, Landroid/view/MotionEvent;->getRawX()F
+
+    move-result p1
+
+    iget v0, p0, Ltc;->q:F
+
+    cmpl-float p1, p1, v0
+
+    if-gez p1, :cond_5
+
+    :cond_4
+    iget-object p1, p0, Ltc;->o:Landroid/view/VelocityTracker;
+
+    invoke-virtual {p1}, Landroid/view/VelocityTracker;->getXVelocity()F
+
+    move-result p1
+
+    iget v0, p0, Ltc;->e:I
+
+    int-to-float v0, v0
+
+    cmpl-float p1, p1, v0
+
+    if-ltz p1, :cond_6
+
+    :cond_5
+    iput-boolean v3, p0, Ltc;->m:Z
+
+    :cond_6
+    iget-boolean p1, p0, Ltc;->m:Z
+
+    if-eqz p1, :cond_7
+
+    iget-boolean p1, p0, Ltc;->k:Z
+
+    if-eqz p1, :cond_7
+
+    iget-object p1, p0, Ltc;->o:Landroid/view/VelocityTracker;
+
+    invoke-virtual {p1}, Landroid/view/VelocityTracker;->getXVelocity()F
+
+    move-result p1
+
+    iget v0, p0, Ltc;->e:I
+
+    neg-int v0, v0
+
+    int-to-float v0, v0
+
+    cmpg-float p1, p1, v0
+
+    if-gez p1, :cond_7
+
+    const/4 p1, 0x0
+
+    iput-boolean p1, p0, Ltc;->m:Z
+
+    :cond_7
+    iget-boolean p1, p0, Ltc;->m:Z
+
+    if-eqz p1, :cond_9
+
+    iget-object p1, p0, Ltc;->c:Lto;
+
+    if-eqz p1, :cond_a
+
+    iget-object v0, p1, Lto;->a:Landroid/support/wearable/view/SwipeDismissFrameLayout;
+
+    invoke-virtual {v0}, Landroid/support/wearable/view/SwipeDismissFrameLayout;->animate()Landroid/view/ViewPropertyAnimator;
 
     move-result-object v0
 
-    return-object v0
+    iget-object v4, p1, Lto;->a:Landroid/support/wearable/view/SwipeDismissFrameLayout;
+
+    invoke-virtual {v4}, Landroid/support/wearable/view/SwipeDismissFrameLayout;->getWidth()I
+
+    move-result v4
+
+    int-to-float v4, v4
+
+    invoke-virtual {v0, v4}, Landroid/view/ViewPropertyAnimator;->translationX(F)Landroid/view/ViewPropertyAnimator;
+
+    move-result-object v0
+
+    invoke-virtual {v0, v1}, Landroid/view/ViewPropertyAnimator;->alpha(F)Landroid/view/ViewPropertyAnimator;
+
+    move-result-object v0
+
+    iget-object v1, p1, Lto;->a:Landroid/support/wearable/view/SwipeDismissFrameLayout;
+
+    iget v1, v1, Landroid/support/wearable/view/SwipeDismissFrameLayout;->e:I
+
+    int-to-long v4, v1
+
+    invoke-virtual {v0, v4, v5}, Landroid/view/ViewPropertyAnimator;->setDuration(J)Landroid/view/ViewPropertyAnimator;
+
+    move-result-object v0
+
+    iget-object v1, p1, Lto;->a:Landroid/support/wearable/view/SwipeDismissFrameLayout;
+
+    iget-boolean v4, v1, Landroid/support/wearable/view/SwipeDismissFrameLayout;->i:Z
+
+    if-eqz v4, :cond_8
+
+    iget-object v1, v1, Landroid/support/wearable/view/SwipeDismissFrameLayout;->h:Landroid/view/animation/DecelerateInterpolator;
+
+    goto :goto_0
+
+    :cond_8
+    iget-object v1, v1, Landroid/support/wearable/view/SwipeDismissFrameLayout;->g:Landroid/view/animation/AccelerateInterpolator;
+
+    :goto_0
+    invoke-virtual {v0, v1}, Landroid/view/ViewPropertyAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)Landroid/view/ViewPropertyAnimator;
+
+    move-result-object v0
+
+    new-instance v1, Ltm;
+
+    invoke-direct {v1, p1, v2, v2}, Ltm;-><init>(Lto;[B[B)V
+
+    invoke-virtual {v0, v1}, Landroid/view/ViewPropertyAnimator;->withEndAction(Ljava/lang/Runnable;)Landroid/view/ViewPropertyAnimator;
+
+    goto :goto_1
+
+    :cond_9
+    iget-boolean p1, p0, Ltc;->k:Z
+
+    if-eqz p1, :cond_a
+
+    invoke-virtual {p0}, Ltc;->a()V
+
+    :cond_a
+    :goto_1
+    invoke-direct {p0}, Ltc;->d()V
+
+    :cond_b
+    :goto_2
+    return v3
+
+    :pswitch_data_0
+    .packed-switch 0x1
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method

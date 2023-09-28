@@ -1,84 +1,89 @@
-.class public final Ldmm;
-.super Landroid/preference/Preference;
+.class final Ldmm;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Landroid/view/animation/Animation$AnimationListener;
 
 
 # instance fields
-.field public a:Landroid/widget/SearchView;
+.field final synthetic a:Ldmn;
 
-.field public b:Landroid/widget/SearchView$OnQueryTextListener;
-
-.field public c:Ljava/lang/CharSequence;
+.field private final synthetic b:I
 
 
 # direct methods
-.method public constructor <init>(Landroid/content/Context;)V
+.method public constructor <init>(Ldmn;I)V
     .locals 0
 
-    invoke-direct {p0, p1}, Landroid/preference/Preference;-><init>(Landroid/content/Context;)V
+    iput p2, p0, Ldmm;->b:I
 
-    const-string p1, ""
+    iput-object p1, p0, Ldmm;->a:Ldmn;
 
-    iput-object p1, p0, Ldmm;->c:Ljava/lang/CharSequence;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method protected final onCreateView(Landroid/view/ViewGroup;)Landroid/view/View;
-    .locals 4
+.method public final onAnimationEnd(Landroid/view/animation/Animation;)V
+    .locals 1
 
-    invoke-super {p0, p1}, Landroid/preference/Preference;->onCreateView(Landroid/view/ViewGroup;)Landroid/view/View;
+    iget p1, p0, Ldmm;->b:I
 
-    invoke-virtual {p0}, Ldmm;->getContext()Landroid/content/Context;
+    packed-switch p1, :pswitch_data_0
 
-    move-result-object v0
+    return-void
 
-    const-string v1, "layout_inflater"
+    :pswitch_0
+    iget-object p1, p0, Ldmm;->a:Ldmn;
 
-    invoke-virtual {v0, v1}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+    iget-object p1, p1, Ldmn;->e:Lcom/google/android/apps/camera/evcomp/EvCompView;
 
-    move-result-object v0
+    iget-object p1, p1, Lcom/google/android/apps/camera/evcomp/EvCompView;->e:Landroid/widget/ImageButton;
 
-    check-cast v0, Landroid/view/LayoutInflater;
+    const/16 v0, 0x8
 
-    const v1, 0x7f0e00df
+    invoke-virtual {p1, v0}, Landroid/widget/ImageButton;->setVisibility(I)V
 
-    const/4 v2, 0x0
+    return-void
 
-    invoke-virtual {v0, v1, p1, v2}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
+.end method
 
-    move-result-object p1
+.method public final onAnimationRepeat(Landroid/view/animation/Animation;)V
+    .locals 0
 
-    const v0, 0x7f0b02fc
+    iget p1, p0, Ldmm;->b:I
 
-    invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+    return-void
+.end method
 
-    move-result-object v0
+.method public final onAnimationStart(Landroid/view/animation/Animation;)V
+    .locals 1
 
-    check-cast v0, Landroid/widget/SearchView;
+    iget p1, p0, Ldmm;->b:I
 
-    iput-object v0, p0, Ldmm;->a:Landroid/widget/SearchView;
+    packed-switch p1, :pswitch_data_0
 
-    const/4 v1, 0x1
+    iget-object p1, p0, Ldmm;->a:Ldmn;
 
-    invoke-virtual {v0, v1}, Landroid/widget/SearchView;->setSubmitButtonEnabled(Z)V
+    iget-object p1, p1, Ldmn;->e:Lcom/google/android/apps/camera/evcomp/EvCompView;
 
-    iget-object v0, p0, Ldmm;->a:Landroid/widget/SearchView;
+    iget-object p1, p1, Lcom/google/android/apps/camera/evcomp/EvCompView;->e:Landroid/widget/ImageButton;
 
-    new-instance v2, Ldmk;
+    const/4 v0, 0x0
 
-    const/4 v3, 0x3
+    invoke-virtual {p1, v0}, Landroid/widget/ImageButton;->setVisibility(I)V
 
-    invoke-direct {v2, p0, v3}, Ldmk;-><init>(Ldmm;I)V
+    :pswitch_0
+    return-void
 
-    invoke-virtual {v0, v2}, Landroid/widget/SearchView;->setOnQueryTextListener(Landroid/widget/SearchView$OnQueryTextListener;)V
-
-    iget-object v0, p0, Ldmm;->a:Landroid/widget/SearchView;
-
-    iget-object v2, p0, Ldmm;->c:Ljava/lang/CharSequence;
-
-    invoke-virtual {v0, v2, v1}, Landroid/widget/SearchView;->setQuery(Ljava/lang/CharSequence;Z)V
-
-    return-object p1
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

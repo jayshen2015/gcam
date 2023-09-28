@@ -2,60 +2,75 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Logk;
+.implements Llht;
 
 
 # instance fields
-.field private final a:Loiw;
+.field final synthetic a:Ljava/lang/String;
+
+.field final synthetic b:Lfdy;
+
+.field final synthetic c:Lfyg;
 
 
 # direct methods
-.method public constructor <init>(Loiw;)V
+.method public constructor <init>(Lfyg;Ljava/lang/String;Lfdy;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lfyf;->c:Lfyg;
 
-    iput-object p1, p0, Lfyf;->a:Loiw;
+    iput-object p2, p0, Lfyf;->a:Ljava/lang/String;
+
+    iput-object p3, p0, Lfyf;->b:Lfdy;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
-.method public static a(Loiw;)Lfyf;
-    .locals 1
-
-    new-instance v0, Lfyf;
-
-    invoke-direct {v0, p0}, Lfyf;-><init>(Loiw;)V
-
-    return-object v0
-.end method
-
 
 # virtual methods
-.method public final b()Lbkb;
+.method public final bridge synthetic a(Ljava/lang/Object;)V
     .locals 2
 
-    iget-object v0, p0, Lfyf;->a:Loiw;
+    check-cast p1, Lhhn;
 
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
+    iget-object p1, p0, Lfyf;->c:Lfyg;
 
-    move-result-object v0
+    iget-object p1, p1, Lfyg;->b:Lfyr;
 
-    check-cast v0, Lgqh;
+    iget-object p1, p1, Lfyr;->E:Ljava/util/Set;
 
-    new-instance v1, Lbkb;
+    monitor-enter p1
 
-    invoke-direct {v1, v0}, Lbkb;-><init>(Lgqh;)V
+    :try_start_0
+    iget-object v0, p0, Lfyf;->c:Lfyg;
 
-    return-object v1
-.end method
+    iget-object v0, v0, Lfyg;->b:Lfyr;
 
-.method public final bridge synthetic get()Ljava/lang/Object;
-    .locals 1
+    iget-object v0, v0, Lfyr;->E:Ljava/util/Set;
 
-    invoke-virtual {p0}, Lfyf;->b()Lbkb;
+    iget-object v1, p0, Lfyf;->a:Ljava/lang/String;
 
-    move-result-object v0
+    invoke-interface {v0, v1}, Ljava/util/Set;->remove(Ljava/lang/Object;)Z
 
-    return-object v0
+    monitor-exit p1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    iget-object p1, p0, Lfyf;->b:Lfdy;
+
+    invoke-virtual {p1, p0}, Lfdy;->e(Llht;)V
+
+    return-void
+
+    :catchall_0
+    move-exception v0
+
+    :try_start_1
+    monitor-exit p1
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    throw v0
 .end method

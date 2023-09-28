@@ -1,30 +1,37 @@
-.class public final Lexk;
+.class public final synthetic Lexk;
 .super Ljava/lang/Object;
+
+# interfaces
+.implements Lojz;
 
 
 # instance fields
-.field public a:J
-
-.field final synthetic b:J
-
-.field public final synthetic c:Ljava/io/File;
-
-.field public final synthetic d:Lexl;
+.field public final synthetic a:Lexm;
 
 
 # direct methods
-.method public constructor <init>(Lexl;JLjava/io/File;)V
+.method public synthetic constructor <init>(Lexm;)V
     .locals 0
-
-    iput-object p1, p0, Lexk;->d:Lexl;
-
-    iput-wide p2, p0, Lexk;->b:J
-
-    iput-object p4, p0, Lexk;->c:Ljava/io/File;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-wide p2, p0, Lexk;->a:J
+    iput-object p1, p0, Lexk;->a:Lexm;
 
     return-void
+.end method
+
+
+# virtual methods
+.method public final a()Ljava/lang/Object;
+    .locals 1
+
+    iget-object v0, p0, Lexk;->a:Lexm;
+
+    iget-boolean v0, v0, Lexm;->c:Z
+
+    invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    move-result-object v0
+
+    return-object v0
 .end method

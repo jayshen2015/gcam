@@ -2,216 +2,205 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lkee;
+.implements Llij;
 
 
 # instance fields
-.field public final synthetic a:Ljava/lang/Object;
+.field public final synthetic a:Lctl;
 
-.field public final synthetic b:Ljava/lang/Object;
-
-.field private final synthetic c:I
+.field private final synthetic b:I
 
 
 # direct methods
-.method public synthetic constructor <init>(Lctl;Lkfj;I)V
+.method public synthetic constructor <init>(Lctl;I)V
     .locals 0
 
-    iput p3, p0, Lctf;->c:I
+    iput p2, p0, Lctf;->b:I
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lctf;->a:Ljava/lang/Object;
-
-    iput-object p2, p0, Lctf;->b:Ljava/lang/Object;
-
-    return-void
-.end method
-
-.method public synthetic constructor <init>(Lczc;Lkfj;I)V
-    .locals 0
-
-    iput p3, p0, Lctf;->c:I
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lctf;->a:Ljava/lang/Object;
-
-    iput-object p2, p0, Lctf;->b:Ljava/lang/Object;
-
-    return-void
-.end method
-
-.method public synthetic constructor <init>(Leia;Lkai;I)V
-    .locals 0
-
-    iput p3, p0, Lctf;->c:I
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lctf;->a:Ljava/lang/Object;
-
-    iput-object p2, p0, Lctf;->b:Ljava/lang/Object;
-
-    return-void
-.end method
-
-.method public synthetic constructor <init>(Lhsh;Lmqp;I[B)V
-    .locals 0
-
-    iput p3, p0, Lctf;->c:I
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lctf;->a:Ljava/lang/Object;
-
-    iput-object p2, p0, Lctf;->b:Ljava/lang/Object;
-
-    return-void
-.end method
-
-.method public synthetic constructor <init>(Lmqp;Lmqp;I)V
-    .locals 0
-
-    iput p3, p0, Lctf;->c:I
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lctf;->a:Ljava/lang/Object;
-
-    iput-object p2, p0, Lctf;->b:Ljava/lang/Object;
+    iput-object p1, p0, Lctf;->a:Lctl;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final c(Lkhr;)V
+.method public final fB(Ljava/lang/Object;)V
     .locals 4
 
-    iget v0, p0, Lctf;->c:I
+    iget v0, p0, Lctf;->b:I
 
     packed-switch v0, :pswitch_data_0
 
-    iget-object v0, p0, Lctf;->a:Ljava/lang/Object;
+    iget-object v0, p0, Lctf;->a:Lctl;
 
-    iget-object v1, p0, Lctf;->b:Ljava/lang/Object;
+    check-cast p1, Ljrl;
 
-    check-cast v1, Lmqp;
+    invoke-virtual {v0, p1}, Lctl;->k(Ljrl;)Z
 
-    invoke-virtual {v1}, Lmqp;->c()Ljava/lang/Object;
+    move-result v1
 
-    move-result-object v1
+    if-nez v1, :cond_5
 
-    check-cast v1, Lkfj;
+    iget-object v1, v0, Lctl;->i:Ljava/lang/Object;
 
-    check-cast v0, Lhsh;
+    monitor-enter v1
 
-    invoke-virtual {v0, p1, v1}, Lhsh;->i(Lkhr;Lkfj;)V
-
-    return-void
+    goto :goto_2
 
     :pswitch_0
-    iget-object v0, p0, Lctf;->a:Ljava/lang/Object;
+    iget-object v0, p0, Lctf;->a:Lctl;
 
-    iget-object v1, p0, Lctf;->b:Ljava/lang/Object;
+    check-cast p1, Lcwi;
 
-    new-instance v2, Lctg;
+    iget-object v1, v0, Lctl;->l:Lcom/google/android/apps/camera/ui/modeslider/ModeSliderUi;
 
-    check-cast v1, Lmqp;
+    if-eqz v1, :cond_1
 
-    check-cast v0, Lmqp;
+    invoke-virtual {v1}, Lcom/google/android/apps/camera/ui/modeslider/ModeSliderUi;->getVisibility()I
 
-    const/4 v3, 0x4
+    move-result v1
 
-    invoke-direct {v2, v0, v1, v3}, Lctg;-><init>(Lmqp;Lmqp;I)V
+    if-eqz v1, :cond_0
 
-    invoke-static {p1, v2}, Lkfg;->B(Lkhr;Lkex;)V
+    goto :goto_0
 
-    return-void
-
-    :pswitch_1
-    iget-object v0, p0, Lctf;->a:Ljava/lang/Object;
-
-    iget-object v1, p0, Lctf;->b:Ljava/lang/Object;
-
-    invoke-virtual {p1}, Lkhr;->a()Lkeb;
+    :cond_0
+    invoke-virtual {p1}, Lcwi;->a()Llwd;
 
     move-result-object p1
 
-    if-nez p1, :cond_0
+    invoke-virtual {v0, p1}, Lctl;->j(Llwd;)V
 
     return-void
 
-    :cond_0
-    new-instance v2, Lehy;
+    :cond_1
+    :goto_0
+    return-void
 
-    check-cast v0, Leia;
+    :pswitch_1
+    iget-object v0, p0, Lctf;->a:Lctl;
 
-    invoke-direct {v2, v0, p1, v1}, Lehy;-><init>(Leia;Lkeb;Lkai;)V
+    check-cast p1, Lfxl;
 
-    invoke-interface {p1, v2}, Lkeb;->k(Lkfg;)V
+    iget-boolean p1, p1, Lfxl;->c:Z
+
+    if-eqz p1, :cond_3
+
+    iget-object p1, v0, Lctl;->e:Lctn;
+
+    iget-object p1, p1, Lctn;->f:Ljava/util/LinkedHashMap;
+
+    iget-object v1, v0, Lctl;->a:Llda;
+
+    invoke-interface {v1}, Llda;->fA()Ljava/lang/Object;
+
+    move-result-object v1
+
+    invoke-virtual {p1, v1}, Ljava/util/LinkedHashMap;->containsKey(Ljava/lang/Object;)Z
+
+    move-result p1
+
+    if-nez p1, :cond_2
+
+    goto :goto_1
+
+    :cond_2
+    invoke-virtual {v0}, Lctl;->a()V
+
+    const/4 p1, 0x1
+
+    invoke-virtual {v0, p1}, Lctl;->f(Z)V
+
+    iget-object v1, v0, Lctl;->j:Lojc;
+
+    invoke-virtual {v1}, Lojc;->g()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_3
+
+    iget-object v0, v0, Lctl;->j:Lojc;
+
+    invoke-virtual {v0}, Lojc;->c()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lctw;
+
+    invoke-interface {v0, p1}, Lctw;->g(Z)V
 
     return-void
 
-    :pswitch_2
-    iget-object v0, p0, Lctf;->a:Ljava/lang/Object;
+    :cond_3
+    :goto_1
+    return-void
 
-    iget-object v1, p0, Lctf;->b:Ljava/lang/Object;
+    :goto_2
+    :try_start_0
+    iput-object p1, v0, Lctl;->k:Ljrl;
 
-    new-instance v2, Lctg;
+    iget-object v2, v0, Lctl;->c:Ljava/util/Set;
 
-    check-cast v0, Lczc;
+    invoke-interface {v2}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
 
-    const/4 v3, 0x2
+    move-result-object v2
 
-    invoke-direct {v2, v0, v1, v3}, Lctg;-><init>(Lczc;Lkfj;I)V
+    :goto_3
+    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
 
-    invoke-static {p1, v2}, Lkfg;->B(Lkhr;Lkex;)V
+    move-result v3
+
+    if-eqz v3, :cond_4
+
+    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v3
+
+    check-cast v3, Lfzk;
+
+    invoke-virtual {v3, p1}, Lfzk;->a(Ljrl;)V
+
+    goto :goto_3
+
+    :cond_4
+    monitor-exit v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    const/4 p1, 0x0
+
+    invoke-virtual {v0, p1}, Lctl;->d(Z)V
 
     return-void
 
-    :pswitch_3
-    iget-object v0, p0, Lctf;->a:Ljava/lang/Object;
+    :catchall_0
+    move-exception p1
 
-    iget-object v1, p0, Lctf;->b:Ljava/lang/Object;
+    :try_start_1
+    monitor-exit v1
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    new-instance v2, Lctg;
+    throw p1
 
-    check-cast v0, Lctl;
+    :cond_5
+    invoke-virtual {v0, p1}, Lctl;->l(Ljrl;)Z
 
-    const/4 v3, 0x0
+    move-result v1
 
-    invoke-direct {v2, v0, v1, v3}, Lctg;-><init>(Lctl;Lkfj;I)V
+    if-eqz v1, :cond_6
 
-    invoke-static {p1, v2}, Lkfg;->B(Lkhr;Lkex;)V
+    invoke-virtual {v0, p1}, Lctl;->i(Ljrl;)V
 
-    return-void
-
-    :pswitch_4
-    iget-object v0, p0, Lctf;->a:Ljava/lang/Object;
-
-    iget-object v1, p0, Lctf;->b:Ljava/lang/Object;
-
-    new-instance v2, Lctg;
-
-    check-cast v0, Lctl;
-
-    const/4 v3, 0x1
-
-    invoke-direct {v2, v0, v1, v3}, Lctg;-><init>(Lctl;Lkfj;I)V
-
-    invoke-static {p1, v2}, Lkfg;->B(Lkhr;Lkex;)V
-
+    :cond_6
     return-void
 
     nop
 
     :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_4
-        :pswitch_3
-        :pswitch_2
         :pswitch_1
         :pswitch_0
     .end packed-switch

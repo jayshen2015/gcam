@@ -13,6 +13,14 @@
 
 
 # virtual methods
+.method protected final n()Z
+    .locals 1
+
+    const/4 v0, 0x1
+
+    return v0
+.end method
+
 .method protected final onPause()V
     .locals 1
 
@@ -20,17 +28,9 @@
 
     move-result-object v0
 
-    invoke-static {v0}, Lcdg;->f(Landroid/content/Intent;)V
+    invoke-static {v0}, Lbqe;->f(Landroid/content/Intent;)V
 
     invoke-super {p0}, Lcom/google/android/apps/camera/legacy/app/activity/main/CameraActivity;->onPause()V
 
     return-void
-.end method
-
-.method protected final q()Z
-    .locals 1
-
-    const/4 v0, 0x1
-
-    return v0
 .end method

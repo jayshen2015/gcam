@@ -1,333 +1,149 @@
 .class public final Ljzh;
 .super Ljava/lang/Object;
 
-# interfaces
-.implements Ljyd;
-
 
 # instance fields
-.field public final a:Lnow;
-
-.field public final b:Ljzd;
-
-.field public final c:Ljzc;
-
-.field public d:Ljwx;
-
-.field public e:Ljxa;
-
-.field public f:I
-
-.field public g:J
-
-.field public h:I
-
-.field public i:Lnou;
-
-.field public j:Landroid/location/Location;
-
-.field public k:Landroid/view/Surface;
-
-.field public l:Ljye;
-
-.field public m:I
+.field private a:Lius;
 
 
 # direct methods
-.method public constructor <init>(Ljzd;Lnow;Ljzc;)V
-    .locals 3
+.method public constructor <init>()V
+    .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    const/4 v0, 0x0
-
-    iput v0, p0, Ljzh;->f:I
-
-    const-wide/16 v1, 0x0
-
-    iput-wide v1, p0, Ljzh;->g:J
-
-    iput v0, p0, Ljzh;->h:I
-
-    const/4 v0, 0x6
-
-    iput v0, p0, Ljzh;->m:I
-
-    iput-object p2, p0, Ljzh;->a:Lnow;
-
-    iput-object p1, p0, Ljzh;->b:Ljzd;
-
-    iput-object p3, p0, Ljzh;->c:Ljzc;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final bridge synthetic a()Ljyc;
-    .locals 2
-
-    iget-object v0, p0, Ljzh;->i:Lnou;
-
-    if-eqz v0, :cond_0
-
-    new-instance v0, Ljzi;
-
-    invoke-direct {v0, p0}, Ljzi;-><init>(Ljzh;)V
-
-    return-object v0
-
-    :cond_0
-    new-instance v0, Ljava/lang/IllegalArgumentException;
-
-    const-string v1, "Either Output video file path or descriptor is required"
-
-    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-.end method
-
-.method public final b(Ljye;)Ljyd;
+.method public final a(Lius;)V
     .locals 0
 
-    iput-object p1, p0, Ljzh;->l:Ljye;
-
-    return-object p0
-.end method
-
-.method public final c(Ljwx;)V
-    .locals 0
-
-    iput-object p1, p0, Ljzh;->d:Ljwx;
+    iput-object p1, p0, Ljzh;->a:Lius;
 
     return-void
 .end method
 
-.method public final d(I)V
-    .locals 0
+.method public final b(Landroid/content/Context;)V
+    .locals 7
 
-    iput p1, p0, Ljzh;->m:I
+    iget-object v0, p0, Ljzh;->a:Lius;
 
-    return-void
-.end method
-
-.method public final e(Ljxr;)V
-    .locals 5
-
-    sget-object v0, Ljxr;->a:Ljxr;
-
-    if-ne p1, v0, :cond_0
+    if-nez v0, :cond_0
 
     return-void
 
     :cond_0
-    new-instance v1, Ljava/lang/IllegalArgumentException;
+    invoke-static {}, Llar;->a()V
 
-    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+    new-instance v4, Landroid/widget/FrameLayout;
+
+    invoke-direct {v4, p1}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
+
+    const v0, 0x7f0e002f
+
+    invoke-static {p1, v0, v4}, Landroid/view/View;->inflate(Landroid/content/Context;ILandroid/view/ViewGroup;)Landroid/view/View;
+
+    const v0, 0x7f0b037d
+
+    invoke-virtual {v4, v0}, Landroid/widget/FrameLayout;->findViewById(I)Landroid/view/View;
 
     move-result-object v0
 
-    const-class v2, Ljzi;
+    check-cast v0, Landroid/widget/TextView;
 
-    invoke-virtual {v2}, Ljava/lang/Class;->getSimpleName()Ljava/lang/String;
+    const v1, 0x7f140518
+
+    invoke-virtual {p1, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+
+    move-result-object v1
+
+    const v2, 0x7f140519
+
+    invoke-virtual {p1, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
     move-result-object v2
 
-    invoke-virtual {p1}, Ljava/lang/Object;->toString()Ljava/lang/String;
+    new-instance v3, Landroid/text/SpannableStringBuilder;
 
-    move-result-object p1
+    invoke-direct {v3, v1}, Landroid/text/SpannableStringBuilder;-><init>(Ljava/lang/CharSequence;)V
 
-    new-instance v3, Ljava/lang/StringBuilder;
+    invoke-virtual {v3, v2}, Landroid/text/SpannableStringBuilder;->append(Ljava/lang/CharSequence;)Landroid/text/SpannableStringBuilder;
 
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+    new-instance v1, Ljzg;
 
-    const-string v4, "Only "
+    invoke-direct {v1, p1}, Ljzg;-><init>(Landroid/content/Context;)V
 
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v3}, Landroid/text/SpannableStringBuilder;->length()I
 
-    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result v5
 
-    const-string v0, " is supported for "
+    invoke-virtual {v2}, Ljava/lang/String;->length()I
 
-    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result v2
 
-    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    sub-int/2addr v5, v2
 
-    const-string v0, ", but we get "
+    invoke-virtual {v3}, Landroid/text/SpannableStringBuilder;->length()I
 
-    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result v2
 
-    invoke-virtual {v3, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    const/4 v6, 0x0
 
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v3, v1, v5, v2, v6}, Landroid/text/SpannableStringBuilder;->setSpan(Ljava/lang/Object;III)V
 
-    move-result-object p1
+    invoke-static {}, Landroid/text/method/LinkMovementMethod;->getInstance()Landroid/text/method/MovementMethod;
 
-    invoke-direct {v1, p1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+    move-result-object v1
 
-    throw v1
-.end method
+    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setMovementMethod(Landroid/text/method/MovementMethod;)V
 
-.method public final f(I)V
-    .locals 1
+    sget-object v1, Landroid/widget/TextView$BufferType;->SPANNABLE:Landroid/widget/TextView$BufferType;
 
-    new-instance p1, Ljava/lang/UnsupportedOperationException;
+    invoke-virtual {v0, v3, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;Landroid/widget/TextView$BufferType;)V
 
-    const-string v0, "Color standard is not supported, please use VideoRecorderMediaCodec"
+    invoke-static {v0}, Lmip;->dR(Landroid/view/View;)I
 
-    invoke-direct {p1, v0}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
+    move-result v1
 
-    throw p1
-.end method
+    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setLinkTextColor(I)V
 
-.method public final g(Landroid/view/Surface;)V
-    .locals 0
+    const v0, 0x7f0b037b
 
-    iput-object p1, p0, Ljzh;->k:Landroid/view/Surface;
+    invoke-virtual {v4, v0}, Landroid/widget/FrameLayout;->findViewById(I)Landroid/view/View;
 
-    return-void
-.end method
+    move-result-object v0
 
-.method public final h(Landroid/location/Location;)V
-    .locals 0
+    check-cast v0, Lcom/google/android/apps/camera/ui/eduimageview/EduImageView;
 
-    iput-object p1, p0, Ljzh;->j:Landroid/location/Location;
+    const v1, 0x7f140516
 
-    return-void
-.end method
+    invoke-virtual {p1, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
-.method public final i(Lnou;)V
-    .locals 2
+    move-result-object v1
 
-    :try_start_0
-    invoke-interface {p1}, Lnou;->get()Ljava/lang/Object;
+    const v2, 0x7f140515
 
-    move-result-object p1
+    invoke-virtual {p1, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
-    check-cast p1, Lmqp;
+    move-result-object v2
 
-    invoke-virtual {p1}, Lmqp;->g()Z
+    invoke-virtual {v0, v1, v2}, Lcom/google/android/apps/camera/ui/eduimageview/EduImageView;->b(Ljava/lang/String;Ljava/lang/String;)V
 
-    move-result v0
+    invoke-virtual {v0}, Lcom/google/android/apps/camera/ui/eduimageview/EduImageView;->a()V
 
-    if-eqz v0, :cond_0
+    iget-object v1, p0, Ljzh;->a:Lius;
 
-    invoke-virtual {p1}, Lmqp;->c()Ljava/lang/Object;
+    const/16 v2, 0xb
 
-    move-result-object p1
+    const v3, 0x7f14051a
 
-    check-cast p1, Landroid/location/Location;
+    const/4 v5, 0x0
 
-    iput-object p1, p0, Ljzh;->j:Landroid/location/Location;
-    :try_end_0
-    .catch Ljava/util/concurrent/ExecutionException; {:try_start_0 .. :try_end_0} :catch_1
-    .catch Ljava/lang/InterruptedException; {:try_start_0 .. :try_end_0} :catch_0
+    move-object v6, p1
 
-    :cond_0
-    return-void
-
-    :catch_0
-    move-exception p1
-
-    goto :goto_0
-
-    :catch_1
-    move-exception p1
-
-    :goto_0
-    const-string v0, "VidRecMedRec"
-
-    const-string v1, "Failed to set the location, Ignoring."
-
-    invoke-static {v0, v1, p1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
-
-    return-void
-.end method
-
-.method public final j(I)V
-    .locals 0
-
-    iput p1, p0, Ljzh;->f:I
-
-    return-void
-.end method
-
-.method public final k(J)V
-    .locals 0
-
-    iput-wide p1, p0, Ljzh;->g:J
-
-    return-void
-.end method
-
-.method public final l(J)V
-    .locals 0
-
-    return-void
-.end method
-
-.method public final m(Landroid/media/MediaCodec$Callback;)V
-    .locals 1
-
-    new-instance p1, Ljava/lang/UnsupportedOperationException;
-
-    const-string v0, "Cannot add a MediaCodec\'s callback with VideoRecorderMediaRecorder, please use VideoRecorderMediaCodec"
-
-    invoke-direct {p1, v0}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
-
-    throw p1
-.end method
-
-.method public final n(Z)V
-    .locals 1
-
-    new-instance p1, Ljava/lang/UnsupportedOperationException;
-
-    const-string v0, "Cannot apply synchronous mode with VideoRecorderMediaRecorder, please use VideoRecorderMediaCodec"
-
-    invoke-direct {p1, v0}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
-
-    throw p1
-.end method
-
-.method public final o(I)V
-    .locals 0
-
-    iput p1, p0, Ljzh;->h:I
-
-    return-void
-.end method
-
-.method public final p(Lnou;)V
-    .locals 0
-
-    iput-object p1, p0, Ljzh;->i:Lnou;
-
-    return-void
-.end method
-
-.method public final q(Ljava/io/FileDescriptor;)V
-    .locals 0
-
-    invoke-static {p1}, Lnsy;->B(Ljava/lang/Object;)Lnou;
-
-    move-result-object p1
-
-    iput-object p1, p0, Ljzh;->i:Lnou;
-
-    return-void
-.end method
-
-.method public final r(Ljxa;)V
-    .locals 0
-
-    iput-object p1, p0, Ljzh;->e:Ljxa;
-
-    return-void
-.end method
-
-.method public final s(Z)V
-    .locals 0
+    invoke-virtual/range {v1 .. v6}, Lius;->g(IILandroid/view/View;Landroid/content/DialogInterface$OnDismissListener;Landroid/content/Context;)V
 
     return-void
 .end method

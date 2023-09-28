@@ -6,26 +6,18 @@
 
 
 # instance fields
-.field final synthetic a:Ldl;
+.field final synthetic a:Ljava/util/List;
 
-.field final synthetic b:Ldl;
-
-.field final synthetic c:Z
-
-.field final synthetic d:Lwy;
+.field final synthetic b:Ldp;
 
 
 # direct methods
-.method public constructor <init>(Ldl;Ldl;ZLwy;)V
+.method public constructor <init>(Ljava/util/List;Ldp;)V
     .locals 0
 
-    iput-object p1, p0, Lbc;->a:Ldl;
+    iput-object p1, p0, Lbc;->a:Ljava/util/List;
 
-    iput-object p2, p0, Lbc;->b:Ldl;
-
-    iput-boolean p3, p0, Lbc;->c:Z
-
-    iput-object p4, p0, Lbc;->d:Lwy;
+    iput-object p2, p0, Lbc;->b:Ldp;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -35,23 +27,28 @@
 
 # virtual methods
 .method public final run()V
-    .locals 5
+    .locals 2
 
-    iget-object v0, p0, Lbc;->a:Ldl;
+    iget-object v0, p0, Lbc;->a:Ljava/util/List;
 
-    iget-object v0, v0, Ldl;->a:Lbw;
+    iget-object v1, p0, Lbc;->b:Ldp;
 
-    iget-object v1, p0, Lbc;->b:Ldl;
+    invoke-interface {v0, v1}, Ljava/util/List;->contains(Ljava/lang/Object;)Z
 
-    iget-object v1, v1, Ldl;->a:Lbw;
+    move-result v0
 
-    iget-boolean v2, p0, Lbc;->c:Z
+    if-eqz v0, :cond_0
 
-    iget-object v3, p0, Lbc;->d:Lwy;
+    iget-object v0, p0, Lbc;->a:Ljava/util/List;
 
-    const/4 v4, 0x0
+    iget-object v1, p0, Lbc;->b:Ldp;
 
-    invoke-static {v0, v1, v2, v3, v4}, Lcy;->a(Lbw;Lbw;ZLwy;Z)V
+    invoke-interface {v0, v1}, Ljava/util/List;->remove(Ljava/lang/Object;)Z
 
+    iget-object v0, p0, Lbc;->b:Ldp;
+
+    invoke-static {v0}, Ldq;->f(Ldp;)V
+
+    :cond_0
     return-void
 .end method

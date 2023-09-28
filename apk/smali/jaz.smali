@@ -1,65 +1,35 @@
-.class public final Ljaz;
+.class public final synthetic Ljaz;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lamc;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field final synthetic a:Lcom/google/android/gms/auth/api/signin/internal/SignInHubActivity;
+.field public final synthetic a:Landroid/widget/LinearLayout;
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/gms/auth/api/signin/internal/SignInHubActivity;)V
+.method public synthetic constructor <init>(Landroid/widget/LinearLayout;)V
     .locals 0
 
-    iput-object p1, p0, Ljaz;->a:Lcom/google/android/gms/auth/api/signin/internal/SignInHubActivity;
-
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Ljaz;->a:Landroid/widget/LinearLayout;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Lamk;
-    .locals 3
-
-    new-instance v0, Ljak;
-
-    iget-object v1, p0, Ljaz;->a:Lcom/google/android/gms/auth/api/signin/internal/SignInHubActivity;
-
-    invoke-static {}, Ljdh;->a()Ljava/util/Set;
-
-    move-result-object v2
-
-    invoke-direct {v0, v1, v2}, Ljak;-><init>(Landroid/content/Context;Ljava/util/Set;)V
-
-    return-object v0
-.end method
-
-.method public final bridge synthetic b(Ljava/lang/Object;)V
+.method public final run()V
     .locals 2
 
-    check-cast p1, Ljava/lang/Void;
+    iget-object v0, p0, Ljaz;->a:Landroid/widget/LinearLayout;
 
-    iget-object p1, p0, Ljaz;->a:Lcom/google/android/gms/auth/api/signin/internal/SignInHubActivity;
+    const/4 v1, 0x0
 
-    iget v0, p1, Lcom/google/android/gms/auth/api/signin/internal/SignInHubActivity;->q:I
-
-    iget-object v1, p1, Lcom/google/android/gms/auth/api/signin/internal/SignInHubActivity;->r:Landroid/content/Intent;
-
-    invoke-virtual {p1, v0, v1}, Lcom/google/android/gms/auth/api/signin/internal/SignInHubActivity;->setResult(ILandroid/content/Intent;)V
-
-    iget-object p1, p0, Ljaz;->a:Lcom/google/android/gms/auth/api/signin/internal/SignInHubActivity;
-
-    invoke-virtual {p1}, Lcom/google/android/gms/auth/api/signin/internal/SignInHubActivity;->finish()V
-
-    return-void
-.end method
-
-.method public final c()V
-    .locals 0
+    invoke-virtual {v0, v1}, Landroid/widget/LinearLayout;->setVisibility(I)V
 
     return-void
 .end method

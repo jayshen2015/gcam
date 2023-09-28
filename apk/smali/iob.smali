@@ -2,94 +2,50 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Landroid/media/MediaPlayer$OnPreparedListener;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field public final synthetic a:Ljava/lang/Object;
-
-.field private final synthetic b:I
+.field public final synthetic a:Liod;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lcom/google/android/apps/camera/ui/compositevideoview/CompositeVideoView;I)V
+.method public synthetic constructor <init>(Liod;)V
     .locals 0
-
-    iput p2, p0, Liob;->b:I
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Liob;->a:Ljava/lang/Object;
-
-    return-void
-.end method
-
-.method public synthetic constructor <init>(Lioc;I)V
-    .locals 0
-
-    iput p2, p0, Liob;->b:I
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Liob;->a:Ljava/lang/Object;
+    iput-object p1, p0, Liob;->a:Liod;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onPrepared(Landroid/media/MediaPlayer;)V
-    .locals 2
+.method public final run()V
+    .locals 4
 
-    iget v0, p0, Liob;->b:I
+    iget-object v0, p0, Liob;->a:Liod;
 
-    packed-switch v0, :pswitch_data_0
+    iget-object v1, v0, Liod;->c:Ljava/util/concurrent/atomic/AtomicBoolean;
 
-    iget-object v0, p0, Liob;->a:Ljava/lang/Object;
+    const/4 v2, 0x1
 
-    check-cast v0, Lcom/google/android/apps/camera/ui/compositevideoview/CompositeVideoView;
+    invoke-virtual {v1, v2}, Ljava/util/concurrent/atomic/AtomicBoolean;->set(Z)V
 
-    iget-object v0, v0, Lcom/google/android/apps/camera/ui/compositevideoview/CompositeVideoView;->b:Lhsw;
+    iget-object v0, v0, Liod;->n:Ljava/util/concurrent/atomic/AtomicLong;
 
-    if-eqz v0, :cond_1
+    sget-object v1, Ljava/util/concurrent/TimeUnit;->MILLISECONDS:Ljava/util/concurrent/TimeUnit;
 
-    invoke-interface {v0, p1}, Lhsw;->onPrepared(Landroid/media/MediaPlayer;)V
+    invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
 
-    return-void
+    move-result-wide v2
 
-    :pswitch_0
-    iget-object v0, p0, Liob;->a:Ljava/lang/Object;
+    invoke-virtual {v1, v2, v3}, Ljava/util/concurrent/TimeUnit;->toNanos(J)J
 
-    check-cast v0, Lioc;
+    move-result-wide v1
 
-    iget-object v1, v0, Lioc;->b:Liod;
-
-    iget-boolean v1, v1, Liod;->k:Z
-
-    invoke-virtual {p1, v1}, Landroid/media/MediaPlayer;->setLooping(Z)V
-
-    iget-object p1, v0, Lioc;->b:Liod;
-
-    iget-boolean v0, p1, Liod;->j:Z
-
-    if-eqz v0, :cond_0
-
-    invoke-virtual {p1}, Linx;->i()V
+    invoke-virtual {v0, v1, v2}, Ljava/util/concurrent/atomic/AtomicLong;->set(J)V
 
     return-void
-
-    :cond_0
-    invoke-virtual {p1}, Linx;->co()V
-
-    return-void
-
-    :cond_1
-    return-void
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
 .end method

@@ -1,75 +1,43 @@
 .class final Lbf;
-.super Lbg;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field private final c:Z
-
-.field private d:Z
-
-.field private e:Lbby;
+.field final synthetic a:Lbg;
 
 
 # direct methods
-.method public constructor <init>(Ldl;Lexj;Z[B)V
+.method public constructor <init>(Lbg;)V
     .locals 0
 
-    const/4 p4, 0x0
+    iput-object p1, p0, Lbf;->a:Lbg;
 
-    invoke-direct {p0, p1, p2, p4}, Lbg;-><init>(Ldl;Lexj;[B)V
-
-    const/4 p1, 0x0
-
-    iput-boolean p1, p0, Lbf;->d:Z
-
-    iput-boolean p3, p0, Lbf;->c:Z
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method final a(Landroid/content/Context;)Lbby;
-    .locals 4
+.method public final run()V
+    .locals 2
 
-    iget-boolean v0, p0, Lbf;->d:Z
+    iget-object v0, p0, Lbf;->a:Lbg;
 
-    if-nez v0, :cond_1
+    iget-object v1, v0, Lbg;->b:Landroid/view/ViewGroup;
 
-    iget-object v0, p0, Lbg;->a:Ldl;
+    iget-object v0, v0, Lbg;->c:Landroid/view/View;
 
-    iget-object v1, v0, Ldl;->a:Lbw;
+    invoke-virtual {v1, v0}, Landroid/view/ViewGroup;->endViewTransition(Landroid/view/View;)V
 
-    iget v0, v0, Ldl;->e:I
+    iget-object v0, p0, Lbf;->a:Lbg;
 
-    const/4 v2, 0x2
+    iget-object v0, v0, Lbg;->d:Lbi;
 
-    const/4 v3, 0x1
+    invoke-virtual {v0}, Lbj;->b()V
 
-    if-ne v0, v2, :cond_0
-
-    const/4 v0, 0x1
-
-    goto :goto_0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    :goto_0
-    iget-boolean v2, p0, Lbf;->c:Z
-
-    invoke-static {p1, v1, v0, v2}, Ld;->f(Landroid/content/Context;Lbw;ZZ)Lbby;
-
-    move-result-object p1
-
-    iput-object p1, p0, Lbf;->e:Lbby;
-
-    iput-boolean v3, p0, Lbf;->d:Z
-
-    return-object p1
-
-    :cond_1
-    iget-object p1, p0, Lbf;->e:Lbby;
-
-    return-object p1
+    return-void
 .end method

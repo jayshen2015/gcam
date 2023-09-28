@@ -3,5 +3,5 @@
 
 
 # virtual methods
-.method public abstract a()V
+.method public abstract a(Lmfx;)V
 .end method

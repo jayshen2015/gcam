@@ -1,36 +1,26 @@
-.class final Lcfi;
-.super Lbze;
+.class public final Lcfi;
+.super Ljava/lang/Object;
 
 
 # instance fields
-.field final synthetic a:Lcfj;
+.field public final a:Lcjp;
+
+.field public final b:Lcna;
+
+.field public final c:Lcnd;
 
 
 # direct methods
-.method public constructor <init>(Lcfj;)V
+.method public constructor <init>(Lcjp;Lcna;Lcnd;)V
     .locals 0
 
-    iput-object p1, p0, Lcfi;->a:Lcfj;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const/4 p1, 0x0
+    iput-object p1, p0, Lcfi;->a:Lcjp;
 
-    invoke-direct {p0, p1}, Lbze;-><init>([I)V
+    iput-object p2, p0, Lcfi;->b:Lcna;
 
-    return-void
-.end method
-
-
-# virtual methods
-.method public final h()V
-    .locals 2
-
-    iget-object v0, p0, Lcfi;->a:Lcfj;
-
-    const/4 v1, 0x0
-
-    iput-object v1, v0, Lcfj;->f:Lcew;
-
-    invoke-virtual {v0}, Lcfj;->g()V
+    iput-object p3, p0, Lcfi;->c:Lcnd;
 
     return-void
 .end method

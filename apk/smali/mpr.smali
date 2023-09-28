@@ -1,156 +1,62 @@
 .class public final Lmpr;
-.super Lnws;
-
-# interfaces
-.implements Lnxz;
-
-
-# static fields
-.field public static final b:Lmpr;
-
-.field private static volatile c:Lnyf;
+.super Lmpl;
 
 
 # instance fields
-.field public a:I
+.field final synthetic b:Lmmt;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
-
-    new-instance v0, Lmpr;
-
-    invoke-direct {v0}, Lmpr;-><init>()V
-
-    sput-object v0, Lmpr;->b:Lmpr;
-
-    const-class v1, Lmpr;
-
-    invoke-static {v1, v0}, Lnws;->aa(Ljava/lang/Class;Lnws;)V
-
-    return-void
-.end method
-
-.method private constructor <init>()V
+.method public constructor <init>(Ljava/util/concurrent/Executor;Lmmt;)V
     .locals 0
 
-    invoke-direct {p0}, Lnws;-><init>()V
+    iput-object p2, p0, Lmpr;->b:Lmmt;
+
+    invoke-direct {p0, p1}, Lmpl;-><init>(Ljava/util/concurrent/Executor;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method protected final a(ILjava/lang/Object;)Ljava/lang/Object;
-    .locals 2
+.method public final i()Lmne;
+    .locals 3
 
-    add-int/lit8 p1, p1, -0x1
+    iget-object v0, p0, Lmpr;->b:Lmmt;
 
-    const/4 p2, 0x1
+    invoke-virtual {v0}, Lmmt;->shutdown()V
 
-    packed-switch p1, :pswitch_data_0
+    iget-object v0, p0, Lmpr;->b:Lmmt;
 
-    :pswitch_0
-    const/4 p1, 0x0
+    iget-object v0, v0, Lmmt;->a:Lmoa;
 
-    return-object p1
+    sget-object v1, Lpgr;->a:Lpgr;
 
-    :pswitch_1
-    sget-object p1, Lmpr;->c:Lnyf;
+    invoke-static {}, Lmip;->ai()Lmmh;
 
-    if-nez p1, :cond_1
+    move-result-object v2
 
-    const-class p2, Lmpr;
+    invoke-virtual {v0, v1, v2}, Lmoa;->a(Ljava/util/concurrent/Executor;Lmlu;)Lmnb;
 
-    monitor-enter p2
+    move-result-object v0
 
-    :try_start_0
-    sget-object p1, Lmpr;->c:Lnyf;
+    invoke-static {v0}, Lmne;->i(Lmnb;)Lmne;
 
-    if-nez p1, :cond_0
+    move-result-object v0
 
-    new-instance p1, Lnwo;
+    sget-object v1, Lpgr;->a:Lpgr;
 
-    sget-object v0, Lmpr;->b:Lmpr;
+    new-instance v2, Lmpq;
 
-    invoke-direct {p1, v0}, Lnwo;-><init>(Lnws;)V
+    invoke-direct {v2, p0}, Lmpq;-><init>(Lmpr;)V
 
-    sput-object p1, Lmpr;->c:Lnyf;
+    invoke-virtual {v0, v1, v2}, Lmne;->a(Ljava/util/concurrent/Executor;Lmlu;)Lmnb;
 
-    :cond_0
-    monitor-exit p2
+    move-result-object v0
 
-    goto :goto_0
+    invoke-static {v0}, Lmne;->i(Lmnb;)Lmne;
 
-    :catchall_0
-    move-exception p1
+    move-result-object v0
 
-    monitor-exit p2
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw p1
-
-    :cond_1
-    :goto_0
-    return-object p1
-
-    :pswitch_2
-    sget-object p1, Lmpr;->b:Lmpr;
-
-    return-object p1
-
-    :pswitch_3
-    new-instance p1, Lnwn;
-
-    sget-object p2, Lmpr;->b:Lmpr;
-
-    invoke-direct {p1, p2}, Lnwn;-><init>(Lnws;)V
-
-    return-object p1
-
-    :pswitch_4
-    new-instance p1, Lmpr;
-
-    invoke-direct {p1}, Lmpr;-><init>()V
-
-    return-object p1
-
-    :pswitch_5
-    const-string p1, "\u0000\u0001\u0000\u0000\u0003\u0003\u0001\u0000\u0000\u0000\u0003\u000f"
-
-    new-array p2, p2, [Ljava/lang/Object;
-
-    const/4 v0, 0x0
-
-    const-string v1, "a"
-
-    aput-object v1, p2, v0
-
-    sget-object v0, Lmpr;->b:Lmpr;
-
-    invoke-static {v0, p1, p2}, Lmpr;->X(Lnxy;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object p1
-
-    return-object p1
-
-    :pswitch_6
-    invoke-static {p2}, Ljava/lang/Byte;->valueOf(B)Ljava/lang/Byte;
-
-    move-result-object p1
-
-    return-object p1
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_6
-        :pswitch_0
-        :pswitch_5
-        :pswitch_4
-        :pswitch_3
-        :pswitch_2
-        :pswitch_1
-    .end packed-switch
+    return-object v0
 .end method

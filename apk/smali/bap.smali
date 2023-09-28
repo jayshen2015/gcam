@@ -1,22 +1,37 @@
 .class public final Lbap;
 .super Ljava/lang/Object;
 
-
-# static fields
-.field public static final a:Ljava/lang/String;
+# interfaces
+.implements Lbad;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
+.method public constructor <init>()V
+    .locals 0
 
-    const-string v0, "BatteryChrgTracker"
-
-    invoke-static {v0}, Laxq;->b(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v0
-
-    sput-object v0, Lbap;->a:Ljava/lang/String;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
+.end method
+
+
+# virtual methods
+.method public final bridge synthetic a(Ljava/lang/Object;)Lbae;
+    .locals 1
+
+    check-cast p1, Landroid/os/ParcelFileDescriptor;
+
+    new-instance v0, Lbaq;
+
+    invoke-direct {v0, p1}, Lbaq;-><init>(Landroid/os/ParcelFileDescriptor;)V
+
+    return-object v0
+.end method
+
+.method public final b()Ljava/lang/Class;
+    .locals 1
+
+    const-class v0, Landroid/os/ParcelFileDescriptor;
+
+    return-object v0
 .end method

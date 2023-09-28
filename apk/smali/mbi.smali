@@ -3,192 +3,142 @@
 
 
 # instance fields
-.field public final a:Llyf;
+.field public a:Ljava/lang/String;
 
-.field public final b:Llwq;
+.field public b:Ljava/lang/String;
 
-.field public final c:Llzy;
+.field public c:Ljava/lang/String;
+
+.field public d:Ljava/lang/String;
+
+.field public e:Ljava/lang/String;
+
+.field public f:Ljava/lang/String;
+
+.field public g:Ljava/lang/Integer;
+
+.field public h:Ljava/lang/Boolean;
+
+.field public i:Ljava/lang/Boolean;
+
+.field public j:Ljava/text/DateFormat;
+
+.field public k:Loor;
+
+.field public l:Landroid/content/Context;
+
+.field public m:Ljava/lang/String;
+
+.field public n:Ljava/lang/String;
+
+.field public o:Ljava/lang/String;
+
+.field public p:Lmcc;
+
+.field public q:Ljava/lang/Boolean;
+
+.field public r:Ljava/lang/Long;
+
+.field public s:Ljava/lang/Long;
 
 
 # direct methods
-.method public constructor <init>(Llyf;Llwq;Llzy;)V
+.method public constructor <init>()V
     .locals 0
 
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    invoke-virtual {p3}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lmbi;->a:Llyf;
-
-    iput-object p2, p0, Lmbi;->b:Llwq;
-
-    iput-object p3, p0, Lmbi;->c:Llzy;
 
     return-void
 .end method
 
-.method public static synthetic a(Lmbi;Llyf;Llwq;I)Lmbi;
-    .locals 0
-
-    and-int/lit8 p3, p3, 0x1
-
-    if-eqz p3, :cond_0
-
-    iget-object p1, p0, Lmbi;->a:Llyf;
-
-    :cond_0
-    iget-object p0, p0, Lmbi;->c:Llzy;
-
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    new-instance p3, Lmbi;
-
-    invoke-direct {p3, p1, p2, p0}, Lmbi;-><init>(Llyf;Llwq;Llzy;)V
-
-    return-object p3
-.end method
-
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 4
+.method public final a(I)V
+    .locals 0
 
-    const/4 v0, 0x1
+    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    if-ne p0, p1, :cond_0
+    move-result-object p1
 
-    return v0
+    iput-object p1, p0, Lmbi;->g:Ljava/lang/Integer;
 
-    :cond_0
-    instance-of v1, p1, Lmbi;
-
-    const/4 v2, 0x0
-
-    if-nez v1, :cond_1
-
-    return v2
-
-    :cond_1
-    check-cast p1, Lmbi;
-
-    iget-object v1, p0, Lmbi;->a:Llyf;
-
-    iget-object v3, p1, Lmbi;->a:Llyf;
-
-    invoke-static {v1, v3}, Lone;->c(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-nez v1, :cond_2
-
-    return v2
-
-    :cond_2
-    iget-object v1, p0, Lmbi;->b:Llwq;
-
-    iget-object v3, p1, Lmbi;->b:Llwq;
-
-    invoke-static {v1, v3}, Lone;->c(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-nez v1, :cond_3
-
-    return v2
-
-    :cond_3
-    iget-object v1, p0, Lmbi;->c:Llzy;
-
-    iget-object p1, p1, Lmbi;->c:Llzy;
-
-    invoke-static {v1, p1}, Lone;->c(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result p1
-
-    if-nez p1, :cond_4
-
-    return v2
-
-    :cond_4
-    return v0
+    return-void
 .end method
 
-.method public final hashCode()I
+.method public final b()V
+    .locals 1
+
+    const-string v0, "COVER"
+
+    iput-object v0, p0, Lmbi;->f:Ljava/lang/String;
+
+    return-void
+.end method
+
+.method public final c()V
+    .locals 1
+
+    const-string v0, "BURST-"
+
+    iput-object v0, p0, Lmbi;->e:Ljava/lang/String;
+
+    return-void
+.end method
+
+.method public final d(Z)V
+    .locals 0
+
+    invoke-static {p1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    move-result-object p1
+
+    iput-object p1, p0, Lmbi;->h:Ljava/lang/Boolean;
+
+    return-void
+.end method
+
+.method public final e(Z)V
+    .locals 0
+
+    invoke-static {p1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    move-result-object p1
+
+    iput-object p1, p0, Lmbi;->i:Ljava/lang/Boolean;
+
+    return-void
+.end method
+
+.method public final f()V
     .locals 2
 
-    iget-object v0, p0, Lmbi;->a:Llyf;
+    const-wide/16 v0, 0x4e20
 
-    invoke-virtual {v0}, Llyf;->hashCode()I
-
-    move-result v0
-
-    mul-int/lit8 v0, v0, 0x1f
-
-    iget-object v1, p0, Lmbi;->b:Llwq;
-
-    invoke-virtual {v1}, Llwq;->hashCode()I
-
-    move-result v1
-
-    add-int/2addr v0, v1
-
-    iget-object v1, p0, Lmbi;->c:Llzy;
-
-    invoke-virtual {v1}, Llzy;->hashCode()I
-
-    move-result v1
-
-    mul-int/lit8 v0, v0, 0x1f
-
-    add-int/2addr v0, v1
-
-    return v0
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .locals 5
-
-    iget-object v0, p0, Lmbi;->a:Llyf;
-
-    iget-object v1, p0, Lmbi;->b:Llwq;
-
-    iget-object v2, p0, Lmbi;->c:Llzy;
-
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v4, "AttachmentItem(resource="
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const-string v0, ", attachment="
-
-    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const-string v0, ", logStarter="
-
-    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const-string v0, ")"
-
-    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-static {v0, v1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     move-result-object v0
 
-    return-object v0
+    iput-object v0, p0, Lmbi;->s:Ljava/lang/Long;
+
+    return-void
+.end method
+
+.method public final g()V
+    .locals 1
+
+    const-string v0, ""
+
+    iput-object v0, p0, Lmbi;->m:Ljava/lang/String;
+
+    return-void
+.end method
+
+.method public final h()V
+    .locals 1
+
+    const-string v0, "Camera"
+
+    iput-object v0, p0, Lmbi;->o:Ljava/lang/String;
+
+    return-void
 .end method

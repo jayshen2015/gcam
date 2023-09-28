@@ -1,305 +1,293 @@
 .class public final Lguq;
-.super Ljava/lang/Object;
-
-# interfaces
-.implements Lfaz;
-.implements Lfaq;
-.implements Lfax;
-.implements Lfay;
-.implements Lfan;
+.super Landroid/support/constraint/ConstraintLayout;
 
 
 # instance fields
-.field public final a:Lkaq;
+.field public final d:Ljava/util/ArrayList;
 
-.field public b:Z
+.field public final e:Ljava/util/Map;
 
-.field c:Z
+.field public final f:Ljava/util/Map;
 
-.field private final d:Landroid/content/Context;
+.field public final g:Landroid/widget/TextView;
 
-.field private final e:Lcdx;
+.field public final h:Landroid/widget/TextView;
 
-.field private f:Z
+.field public final i:Landroid/widget/LinearLayout;
 
-.field private final g:Landroid/content/BroadcastReceiver;
+.field public final j:Landroid/widget/ImageView;
 
-.field private final h:Landroid/content/BroadcastReceiver;
+.field public final k:Lgtk;
 
-.field private final i:Landroid/content/BroadcastReceiver;
+.field public final l:Z
+
+.field public final m:Landroid/content/Context;
+
+.field public n:Lgtv;
+
+.field public final o:Lgtw;
+
+.field public final p:Lgtp;
+
+.field public final q:Lgtb;
 
 
 # direct methods
-.method public constructor <init>(Landroid/content/Context;Lcdx;Lkap;)V
-    .locals 2
+.method public constructor <init>(Landroid/content/Context;Lgtk;Lgtv;Lgtw;Lgtp;Lgtb;Lddf;)V
+    .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0, p1}, Landroid/support/constraint/ConstraintLayout;-><init>(Landroid/content/Context;)V
 
-    const/4 v0, 0x0
+    iput-object p2, p0, Lguq;->k:Lgtk;
 
-    iput-boolean v0, p0, Lguq;->b:Z
+    iput-object p3, p0, Lguq;->n:Lgtv;
 
-    iput-boolean v0, p0, Lguq;->c:Z
+    iput-object p1, p0, Lguq;->m:Landroid/content/Context;
 
-    new-instance v1, Lgun;
+    iput-object p4, p0, Lguq;->o:Lgtw;
 
-    invoke-direct {v1, p0}, Lgun;-><init>(Lguq;)V
+    iput-object p5, p0, Lguq;->p:Lgtp;
 
-    iput-object v1, p0, Lguq;->g:Landroid/content/BroadcastReceiver;
+    iput-object p6, p0, Lguq;->q:Lgtb;
 
-    new-instance v1, Lguo;
+    sget-object p2, Lddl;->ay:Lddg;
 
-    invoke-direct {v1, p0}, Lguo;-><init>(Lguq;)V
+    invoke-interface {p7, p2}, Lddf;->k(Lddg;)Z
 
-    iput-object v1, p0, Lguq;->h:Landroid/content/BroadcastReceiver;
+    move-result p2
 
-    new-instance v1, Lgup;
+    iput-boolean p2, p0, Lguq;->l:Z
 
-    invoke-direct {v1, p0}, Lgup;-><init>(Lguq;)V
+    new-instance p2, Ljava/util/ArrayList;
 
-    iput-object v1, p0, Lguq;->i:Landroid/content/BroadcastReceiver;
+    invoke-direct {p2}, Ljava/util/ArrayList;-><init>()V
 
-    iput-object p1, p0, Lguq;->d:Landroid/content/Context;
+    iput-object p2, p0, Lguq;->d:Ljava/util/ArrayList;
 
-    iput-object p2, p0, Lguq;->e:Lcdx;
+    new-instance p2, Ljava/util/HashMap;
 
-    const-string p1, "ActivityCloseSec"
+    invoke-direct {p2}, Ljava/util/HashMap;-><init>()V
 
-    invoke-interface {p3, p1}, Lkap;->a(Ljava/lang/String;)Lkaq;
+    iput-object p2, p0, Lguq;->e:Ljava/util/Map;
 
-    move-result-object p1
+    new-instance p2, Ljava/util/HashMap;
 
-    iput-object p1, p0, Lguq;->a:Lkaq;
+    invoke-direct {p2}, Ljava/util/HashMap;-><init>()V
 
-    iput-boolean v0, p0, Lguq;->f:Z
+    iput-object p2, p0, Lguq;->f:Ljava/util/Map;
+
+    new-instance p2, Landroid/widget/TextView;
+
+    invoke-direct {p2, p1}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
+
+    iput-object p2, p0, Lguq;->g:Landroid/widget/TextView;
+
+    invoke-static {}, Landroid/view/View;->generateViewId()I
+
+    move-result p3
+
+    invoke-virtual {p2, p3}, Landroid/widget/TextView;->setId(I)V
+
+    new-instance p2, Landroid/widget/TextView;
+
+    invoke-direct {p2, p1}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
+
+    iput-object p2, p0, Lguq;->h:Landroid/widget/TextView;
+
+    invoke-static {}, Landroid/view/View;->generateViewId()I
+
+    move-result p3
+
+    invoke-virtual {p2, p3}, Landroid/widget/TextView;->setId(I)V
+
+    new-instance p2, Landroid/widget/LinearLayout;
+
+    invoke-direct {p2, p1}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;)V
+
+    iput-object p2, p0, Lguq;->i:Landroid/widget/LinearLayout;
+
+    new-instance p2, Landroid/widget/ImageView;
+
+    invoke-direct {p2, p1}, Landroid/widget/ImageView;-><init>(Landroid/content/Context;)V
+
+    iput-object p2, p0, Lguq;->j:Landroid/widget/ImageView;
+
+    invoke-static {}, Landroid/view/View;->generateViewId()I
+
+    move-result p1
+
+    invoke-virtual {p2, p1}, Landroid/widget/ImageView;->setId(I)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final b()V
-    .locals 3
+.method public final d(Lgtv;)V
+    .locals 6
 
-    iget-boolean v0, p0, Lguq;->f:Z
+    iput-object p1, p0, Lguq;->n:Lgtv;
 
-    if-eqz v0, :cond_0
+    invoke-virtual {p0}, Lguq;->isEnabled()Z
 
-    iget-object v0, p0, Lguq;->a:Lkaq;
-
-    const-string v1, "Detaching secure activity shutdown receivers."
-
-    invoke-interface {v0, v1}, Lkaq;->b(Ljava/lang/String;)V
-
-    :try_start_0
-    iget-object v0, p0, Lguq;->d:Landroid/content/Context;
-
-    iget-object v1, p0, Lguq;->h:Landroid/content/BroadcastReceiver;
-
-    invoke-virtual {v0, v1}, Landroid/content/Context;->unregisterReceiver(Landroid/content/BroadcastReceiver;)V
-    :try_end_0
-    .catch Ljava/lang/IllegalArgumentException; {:try_start_0 .. :try_end_0} :catch_0
-
-    goto :goto_0
-
-    :catch_0
-    move-exception v0
-
-    iget-object v1, p0, Lguq;->a:Lkaq;
-
-    invoke-virtual {v0}, Ljava/lang/IllegalArgumentException;->getMessage()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v0
-
-    const-string v2, "unregisterReceiver screenOffReceiver fail"
-
-    invoke-virtual {v2, v0}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-interface {v1, v0}, Lkaq;->f(Ljava/lang/String;)V
-
-    :goto_0
-    :try_start_1
-    iget-object v0, p0, Lguq;->d:Landroid/content/Context;
-
-    iget-object v1, p0, Lguq;->g:Landroid/content/BroadcastReceiver;
-
-    invoke-virtual {v0, v1}, Landroid/content/Context;->unregisterReceiver(Landroid/content/BroadcastReceiver;)V
-    :try_end_1
-    .catch Ljava/lang/IllegalArgumentException; {:try_start_1 .. :try_end_1} :catch_1
-
-    goto :goto_1
-
-    :catch_1
-    move-exception v0
-
-    iget-object v1, p0, Lguq;->a:Lkaq;
-
-    invoke-virtual {v0}, Ljava/lang/IllegalArgumentException;->getMessage()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v0
-
-    const-string v2, "unregisterReceiver screenOnReceiver fail"
-
-    invoke-virtual {v2, v0}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-interface {v1, v0}, Lkaq;->f(Ljava/lang/String;)V
-
-    :goto_1
-    :try_start_2
-    iget-object v0, p0, Lguq;->d:Landroid/content/Context;
-
-    iget-object v1, p0, Lguq;->i:Landroid/content/BroadcastReceiver;
-
-    invoke-virtual {v0, v1}, Landroid/content/Context;->unregisterReceiver(Landroid/content/BroadcastReceiver;)V
-    :try_end_2
-    .catch Ljava/lang/IllegalArgumentException; {:try_start_2 .. :try_end_2} :catch_2
-
-    goto :goto_2
-
-    :catch_2
-    move-exception v0
-
-    iget-object v1, p0, Lguq;->a:Lkaq;
-
-    invoke-virtual {v0}, Ljava/lang/IllegalArgumentException;->getMessage()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v0
-
-    const-string v2, "unregisterReceiver userUnlockReceiver fail"
-
-    invoke-virtual {v2, v0}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-interface {v1, v0}, Lkaq;->f(Ljava/lang/String;)V
-
-    :goto_2
-    const/4 v0, 0x0
-
-    iput-boolean v0, p0, Lguq;->f:Z
-
-    :cond_0
-    return-void
-.end method
-
-.method public final bK()V
-    .locals 0
-
-    invoke-virtual {p0}, Lguq;->b()V
-
-    return-void
-.end method
-
-.method public final bO()V
-    .locals 1
-
-    const/4 v0, 0x1
-
-    iput-boolean v0, p0, Lguq;->b:Z
-
-    return-void
-.end method
-
-.method public final bQ()V
-    .locals 3
-
-    iget-boolean v0, p0, Lguq;->f:Z
+    move-result v0
 
     if-nez v0, :cond_0
 
-    iget-object v0, p0, Lguq;->a:Lkaq;
+    return-void
 
-    const-string v1, "Attaching secure activity shutdown receivers."
+    :cond_0
+    iget-object v0, p0, Lguq;->d:Ljava/util/ArrayList;
 
-    invoke-interface {v0, v1}, Lkaq;->f(Ljava/lang/String;)V
+    invoke-interface {v0}, Ljava/util/List;->size()I
 
-    new-instance v0, Landroid/content/IntentFilter;
+    move-result v1
 
-    const-string v1, "android.intent.action.SCREEN_OFF"
+    const/4 v2, 0x0
 
-    invoke-direct {v0, v1}, Landroid/content/IntentFilter;-><init>(Ljava/lang/String;)V
+    const/4 v3, 0x0
 
-    iget-object v1, p0, Lguq;->d:Landroid/content/Context;
+    :goto_0
+    if-ge v3, v1, :cond_2
 
-    iget-object v2, p0, Lguq;->h:Landroid/content/BroadcastReceiver;
+    invoke-interface {v0, v3}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
-    invoke-virtual {v1, v2, v0}, Landroid/content/Context;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;)Landroid/content/Intent;
+    move-result-object v4
 
-    new-instance v0, Landroid/content/IntentFilter;
+    check-cast v4, Landroid/widget/FrameLayout;
 
-    const-string v1, "android.intent.action.SCREEN_ON"
+    invoke-virtual {v4, v2}, Landroid/widget/FrameLayout;->getChildAt(I)Landroid/view/View;
 
-    invoke-direct {v0, v1}, Landroid/content/IntentFilter;-><init>(Ljava/lang/String;)V
+    move-result-object v4
 
-    iget-object v1, p0, Lguq;->d:Landroid/content/Context;
+    check-cast v4, Landroid/widget/ImageButton;
 
-    iget-object v2, p0, Lguq;->g:Landroid/content/BroadcastReceiver;
+    iget-object v5, p0, Lguq;->e:Ljava/util/Map;
 
-    invoke-virtual {v1, v2, v0}, Landroid/content/Context;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;)Landroid/content/Intent;
+    invoke-interface {v5, p1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
-    new-instance v0, Landroid/content/IntentFilter;
+    move-result-object v5
 
-    const-string v1, "android.intent.action.USER_PRESENT"
+    if-ne v5, v4, :cond_1
 
-    invoke-direct {v0, v1}, Landroid/content/IntentFilter;-><init>(Ljava/lang/String;)V
+    invoke-virtual {p0, v4}, Lguq;->e(Landroid/widget/ImageButton;)V
 
-    iget-object v1, p0, Lguq;->d:Landroid/content/Context;
+    goto :goto_1
 
-    iget-object v2, p0, Lguq;->i:Landroid/content/BroadcastReceiver;
+    :cond_1
+    invoke-virtual {p0, v4}, Lguq;->f(Landroid/widget/ImageButton;)V
 
-    invoke-virtual {v1, v2, v0}, Landroid/content/Context;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;)Landroid/content/Intent;
+    :goto_1
+    add-int/lit8 v3, v3, 0x1
 
+    goto :goto_0
+
+    :cond_2
+    iget-object v0, p0, Lguq;->k:Lgtk;
+
+    iget-object v0, v0, Lgtk;->d:Loom;
+
+    invoke-interface {v0}, Ljava/util/List;->size()I
+
+    move-result v1
+
+    :cond_3
+    if-ge v2, v1, :cond_4
+
+    invoke-interface {v0, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v3
+
+    check-cast v3, Lgtl;
+
+    add-int/lit8 v2, v2, 0x1
+
+    iget-object v4, v3, Lgtl;->a:Lgtv;
+
+    if-ne v4, p1, :cond_3
+
+    invoke-virtual {p0}, Lguq;->getResources()Landroid/content/res/Resources;
+
+    move-result-object p1
+
+    invoke-virtual {v3, p1}, Lgtl;->b(Landroid/content/res/Resources;)Ljava/lang/String;
+
+    move-result-object p1
+
+    iget-object v0, p0, Lguq;->h:Landroid/widget/TextView;
+
+    invoke-virtual {v0, p1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+
+    invoke-virtual {p0}, Lguq;->getResources()Landroid/content/res/Resources;
+
+    move-result-object p1
+
+    invoke-virtual {v3, p1}, Lgtl;->a(Landroid/content/res/Resources;)Ljava/lang/String;
+
+    move-result-object p1
+
+    iget-object v0, p0, Lguq;->h:Landroid/widget/TextView;
+
+    invoke-virtual {v0, p1}, Landroid/widget/TextView;->setContentDescription(Ljava/lang/CharSequence;)V
+
+    iget-object v0, p0, Lguq;->h:Landroid/widget/TextView;
+
+    invoke-virtual {v0, p1}, Landroid/widget/TextView;->announceForAccessibility(Ljava/lang/CharSequence;)V
+
+    :cond_4
+    return-void
+.end method
+
+.method public final e(Landroid/widget/ImageButton;)V
+    .locals 2
+
+    iget-boolean v0, p0, Lguq;->l:Z
+
+    if-nez v0, :cond_0
+
+    iget-object v0, p0, Lguq;->m:Landroid/content/Context;
+
+    const v1, 0x7f0805c0
+
+    invoke-virtual {v0, v1}, Landroid/content/Context;->getDrawable(I)Landroid/graphics/drawable/Drawable;
+
+    move-result-object v0
+
+    invoke-virtual {p1, v0}, Landroid/widget/ImageButton;->setBackground(Landroid/graphics/drawable/Drawable;)V
+
+    return-void
+
+    :cond_0
     const/4 v0, 0x1
 
-    iput-boolean v0, p0, Lguq;->f:Z
+    invoke-virtual {p1, v0}, Landroid/widget/ImageButton;->setSelected(Z)V
+
+    return-void
+.end method
+
+.method public final f(Landroid/widget/ImageButton;)V
+    .locals 2
+
+    iget-boolean v0, p0, Lguq;->l:Z
+
+    if-nez v0, :cond_0
+
+    iget-object v0, p0, Lguq;->m:Landroid/content/Context;
+
+    const v1, 0x7f0805c2
+
+    invoke-virtual {v0, v1}, Landroid/content/Context;->getDrawable(I)Landroid/graphics/drawable/Drawable;
+
+    move-result-object v0
+
+    invoke-virtual {p1, v0}, Landroid/widget/ImageButton;->setBackground(Landroid/graphics/drawable/Drawable;)V
+
+    return-void
 
     :cond_0
-    return-void
-.end method
-
-.method public final c(Ljava/lang/String;)V
-    .locals 1
-
-    invoke-virtual {p0}, Lguq;->b()V
-
-    iget-object v0, p0, Lguq;->e:Lcdx;
-
-    invoke-virtual {v0, p1}, Lcdx;->a(Ljava/lang/String;)V
-
-    return-void
-.end method
-
-.method public final e()V
-    .locals 1
-
     const/4 v0, 0x0
 
-    iput-boolean v0, p0, Lguq;->b:Z
+    invoke-virtual {p1, v0}, Landroid/widget/ImageButton;->setSelected(Z)V
 
-    iget-boolean v0, p0, Lguq;->c:Z
-
-    if-eqz v0, :cond_0
-
-    const-string v0, "Already received ScreenOff broadcast so closing the activity."
-
-    invoke-virtual {p0, v0}, Lguq;->c(Ljava/lang/String;)V
-
-    :cond_0
     return-void
 .end method

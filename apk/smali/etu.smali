@@ -1,48 +1,43 @@
-.class final Letu;
-.super Lcom/google/android/apps/camera/bottombar/BottomBarListener;
+.class public final Letu;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Lpys;
 
 
 # instance fields
-.field final synthetic a:Leuc;
+.field private final a:Lett;
 
 
 # direct methods
-.method public constructor <init>(Leuc;)V
+.method public constructor <init>(Lett;)V
     .locals 0
 
-    iput-object p1, p0, Letu;->a:Leuc;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0}, Lcom/google/android/apps/camera/bottombar/BottomBarListener;-><init>()V
+    iput-object p1, p0, Letu;->a:Lett;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onCameraSwitchButtonClicked()V
-    .locals 3
+.method public final a()Lpht;
+    .locals 1
 
-    iget-object v0, p0, Letu;->a:Leuc;
+    iget-object v0, p0, Letu;->a:Lett;
 
-    invoke-virtual {v0}, Leuc;->x()V
+    iget-object v0, v0, Lett;->b:Lpht;
 
-    iget-object v0, p0, Letu;->a:Leuc;
-
-    iget-object v0, v0, Leuc;->d:Ldbf;
-
-    new-instance v1, Lett;
-
-    const/4 v2, 0x0
-
-    invoke-direct {v1, p0, v2}, Lett;-><init>(Letu;I)V
-
-    invoke-virtual {v0, v1}, Ldbf;->h(Ljava/lang/Runnable;)V
-
-    return-void
+    return-object v0
 .end method
 
-.method public final onThumbnailButtonClicked()V
-    .locals 0
+.method public final bridge synthetic get()Ljava/lang/Object;
+    .locals 1
 
-    return-void
+    invoke-virtual {p0}, Letu;->a()Lpht;
+
+    move-result-object v0
+
+    return-object v0
 .end method

@@ -1,73 +1,61 @@
 .class public final Lgjx;
 .super Ljava/lang/Object;
 
-# interfaces
-.implements Logk;
-
 
 # instance fields
-.field private final a:Loiw;
+.field public final a:J
 
-.field private final b:Loiw;
+.field public final b:[B
 
-.field private final c:Loiw;
+.field public final c:I
+
+.field public final d:Lcom/google/android/libraries/camera/exif/ExifInterface;
+
+.field public final e:Llig;
 
 
 # direct methods
-.method public constructor <init>(Loiw;Loiw;Loiw;)V
+.method private constructor <init>(J[BLlig;ILcom/google/android/libraries/camera/exif/ExifInterface;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lgjx;->a:Loiw;
+    iput-wide p1, p0, Lgjx;->a:J
 
-    iput-object p2, p0, Lgjx;->b:Loiw;
+    iput-object p3, p0, Lgjx;->b:[B
 
-    iput-object p3, p0, Lgjx;->c:Loiw;
+    iput p5, p0, Lgjx;->c:I
+
+    iput-object p4, p0, Lgjx;->e:Llig;
+
+    iput-object p6, p0, Lgjx;->d:Lcom/google/android/libraries/camera/exif/ExifInterface;
 
     return-void
 .end method
 
-.method public static a(Loiw;Loiw;Loiw;)Lgjx;
-    .locals 1
+.method public static a(J[BLlig;ILcom/google/android/libraries/camera/exif/ExifInterface;Ljtx;)Lgjx;
+    .locals 7
 
-    new-instance v0, Lgjx;
+    if-eqz p6, :cond_0
 
-    invoke-direct {v0, p0, p1, p2}, Lgjx;-><init>(Loiw;Loiw;Loiw;)V
+    invoke-virtual {p6, p5}, Ljtx;->a(Lcom/google/android/libraries/camera/exif/ExifInterface;)V
 
-    return-object v0
-.end method
+    :cond_0
+    new-instance p6, Lgjx;
 
+    move-object v0, p6
 
-# virtual methods
-.method public final b()Lva;
-    .locals 4
+    move-wide v1, p0
 
-    iget-object v0, p0, Lgjx;->a:Loiw;
+    move-object v3, p2
 
-    iget-object v1, p0, Lgjx;->b:Loiw;
+    move-object v4, p3
 
-    iget-object v2, p0, Lgjx;->c:Loiw;
+    move v5, p4
 
-    invoke-interface {v2}, Loiw;->get()Ljava/lang/Object;
+    move-object v6, p5
 
-    move-result-object v2
+    invoke-direct/range {v0 .. v6}, Lgjx;-><init>(J[BLlig;ILcom/google/android/libraries/camera/exif/ExifInterface;)V
 
-    check-cast v2, Lmqp;
-
-    new-instance v3, Lva;
-
-    invoke-direct {v3, v0, v1, v2}, Lva;-><init>(Loiw;Loiw;Lmqp;)V
-
-    return-object v3
-.end method
-
-.method public final bridge synthetic get()Ljava/lang/Object;
-    .locals 1
-
-    invoke-virtual {p0}, Lgjx;->b()Lva;
-
-    move-result-object v0
-
-    return-object v0
+    return-object p6
 .end method

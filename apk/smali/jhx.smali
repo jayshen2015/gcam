@@ -1,28 +1,26 @@
 .class public final Ljhx;
-.super Ljava/lang/Object;
-
-
-# static fields
-.field public static final a:Ljhx;
+.super Landroid/view/View$AccessibilityDelegate;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
+.method public constructor <init>()V
+    .locals 0
 
-    new-instance v0, Ljhx;
-
-    invoke-direct {v0}, Ljhx;-><init>()V
-
-    sput-object v0, Ljhx;->a:Ljhx;
+    invoke-direct {p0}, Landroid/view/View$AccessibilityDelegate;-><init>()V
 
     return-void
 .end method
 
-.method private constructor <init>()V
+
+# virtual methods
+.method public final onInitializeAccessibilityNodeInfo(Landroid/view/View;Landroid/view/accessibility/AccessibilityNodeInfo;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-super {p0, p1, p2}, Landroid/view/View$AccessibilityDelegate;->onInitializeAccessibilityNodeInfo(Landroid/view/View;Landroid/view/accessibility/AccessibilityNodeInfo;)V
+
+    const/4 p1, 0x1
+
+    invoke-virtual {p2, p1}, Landroid/view/accessibility/AccessibilityNodeInfo;->addAction(I)V
 
     return-void
 .end method

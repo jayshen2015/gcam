@@ -1,44 +1,18 @@
 .class public final Ldvy;
-.super Landroid/animation/AnimatorListenerAdapter;
+.super Ljava/lang/Object;
 
 
 # instance fields
-.field final synthetic a:Lcom/google/android/apps/camera/focusindicator/FocusIndicatorAccessoryView;
+.field public final a:Lhax;
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/apps/camera/focusindicator/FocusIndicatorAccessoryView;)V
+.method public constructor <init>(Lhax;[B)V
     .locals 0
 
-    iput-object p1, p0, Ldvy;->a:Lcom/google/android/apps/camera/focusindicator/FocusIndicatorAccessoryView;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
-
-    return-void
-.end method
-
-
-# virtual methods
-.method public final onAnimationCancel(Landroid/animation/Animator;)V
-    .locals 1
-
-    iget-object p1, p0, Ldvy;->a:Lcom/google/android/apps/camera/focusindicator/FocusIndicatorAccessoryView;
-
-    const/16 v0, 0x8
-
-    invoke-virtual {p1, v0}, Lcom/google/android/apps/camera/focusindicator/FocusIndicatorAccessoryView;->setVisibility(I)V
-
-    return-void
-.end method
-
-.method public final onAnimationEnd(Landroid/animation/Animator;)V
-    .locals 1
-
-    iget-object p1, p0, Ldvy;->a:Lcom/google/android/apps/camera/focusindicator/FocusIndicatorAccessoryView;
-
-    const/16 v0, 0x8
-
-    invoke-virtual {p1, v0}, Lcom/google/android/apps/camera/focusindicator/FocusIndicatorAccessoryView;->setVisibility(I)V
+    iput-object p1, p0, Ldvy;->a:Lhax;
 
     return-void
 .end method

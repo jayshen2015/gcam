@@ -3,19 +3,17 @@
 
 
 # instance fields
-.field public final a:Ldwa;
+.field public final a:Lduj;
 
-.field public final b:Ldwc;
+.field public final b:Ldul;
 
-.field public final c:F
+.field public c:Landroid/graphics/PointF;
 
-.field public d:Landroid/graphics/PointF;
+.field public final d:F
 
-.field public e:Liko;
+.field private e:Ljrz;
 
-.field public f:Z
-
-.field public g:Z
+.field private f:Z
 
 
 # direct methods
@@ -24,17 +22,13 @@
 
     invoke-direct {p0, p1, p2}, Landroid/view/View;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
-    sget-object p2, Liko;->a:Liko;
+    new-instance p2, Lduk;
 
-    iput-object p2, p0, Lcom/google/android/apps/camera/focusindicator/FocusIndicatorRingView;->e:Liko;
+    invoke-direct {p2}, Lduk;-><init>()V
 
-    new-instance p2, Ldwb;
+    iput-object p2, p0, Lcom/google/android/apps/camera/focusindicator/FocusIndicatorRingView;->a:Lduj;
 
-    invoke-direct {p2}, Ldwb;-><init>()V
-
-    iput-object p2, p0, Lcom/google/android/apps/camera/focusindicator/FocusIndicatorRingView;->a:Ldwa;
-
-    new-instance p2, Ldwd;
+    new-instance p2, Ldum;
 
     new-instance v0, Landroid/graphics/drawable/shapes/OvalShape;
 
@@ -60,15 +54,15 @@
 
     invoke-virtual {v0, v2}, Landroid/graphics/Paint;->setStyle(Landroid/graphics/Paint$Style;)V
 
-    invoke-direct {p2, v1}, Ldwd;-><init>(Landroid/graphics/drawable/ShapeDrawable;)V
+    invoke-direct {p2, v1}, Ldum;-><init>(Landroid/graphics/drawable/ShapeDrawable;)V
 
-    iput-object p2, p0, Lcom/google/android/apps/camera/focusindicator/FocusIndicatorRingView;->b:Ldwc;
+    iput-object p2, p0, Lcom/google/android/apps/camera/focusindicator/FocusIndicatorRingView;->b:Ldul;
 
     invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object p1
 
-    const p2, 0x7f070146
+    const p2, 0x7f07013a
 
     invoke-virtual {p1, p2}, Landroid/content/res/Resources;->getDimension(I)F
 
@@ -78,29 +72,25 @@
 
     div-float/2addr p1, p2
 
-    iput p1, p0, Lcom/google/android/apps/camera/focusindicator/FocusIndicatorRingView;->c:F
+    iput p1, p0, Lcom/google/android/apps/camera/focusindicator/FocusIndicatorRingView;->d:F
 
     return-void
 .end method
 
-.method constructor <init>(Landroid/content/Context;Ldwa;Ldwc;)V
-    .locals 1
+.method constructor <init>(Landroid/content/Context;Lduj;Ldul;)V
+    .locals 0
 
     invoke-direct {p0, p1}, Landroid/view/View;-><init>(Landroid/content/Context;)V
 
-    sget-object v0, Liko;->a:Liko;
+    iput-object p2, p0, Lcom/google/android/apps/camera/focusindicator/FocusIndicatorRingView;->a:Lduj;
 
-    iput-object v0, p0, Lcom/google/android/apps/camera/focusindicator/FocusIndicatorRingView;->e:Liko;
-
-    iput-object p2, p0, Lcom/google/android/apps/camera/focusindicator/FocusIndicatorRingView;->a:Ldwa;
-
-    iput-object p3, p0, Lcom/google/android/apps/camera/focusindicator/FocusIndicatorRingView;->b:Ldwc;
+    iput-object p3, p0, Lcom/google/android/apps/camera/focusindicator/FocusIndicatorRingView;->b:Ldul;
 
     invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object p1
 
-    const p2, 0x7f070146
+    const p2, 0x7f07013a
 
     invoke-virtual {p1, p2}, Landroid/content/res/Resources;->getDimension(I)F
 
@@ -110,19 +100,19 @@
 
     div-float/2addr p1, p2
 
-    iput p1, p0, Lcom/google/android/apps/camera/focusindicator/FocusIndicatorRingView;->c:F
+    iput p1, p0, Lcom/google/android/apps/camera/focusindicator/FocusIndicatorRingView;->d:F
 
     return-void
 .end method
 
-.method static a(Liko;)I
+.method static a(Ljrz;)I
     .locals 1
 
-    sget-object v0, Liko;->a:Liko;
+    sget-object v0, Ljrz;->a:Ljrz;
 
-    sget-object v0, Lkab;->a:Lkab;
+    sget-object v0, Llic;->a:Llic;
 
-    invoke-virtual {p0}, Liko;->ordinal()I
+    invoke-virtual {p0}, Ljrz;->ordinal()I
 
     move-result p0
 
@@ -166,16 +156,9 @@
 
 # virtual methods
 .method public final b(Landroid/graphics/PointF;)V
-    .locals 3
+    .locals 2
 
-    iget-boolean v0, p0, Lcom/google/android/apps/camera/focusindicator/FocusIndicatorRingView;->g:Z
-
-    if-eqz v0, :cond_0
-
-    return-void
-
-    :cond_0
-    iput-object p1, p0, Lcom/google/android/apps/camera/focusindicator/FocusIndicatorRingView;->d:Landroid/graphics/PointF;
+    iput-object p1, p0, Lcom/google/android/apps/camera/focusindicator/FocusIndicatorRingView;->c:Landroid/graphics/PointF;
 
     iget v0, p1, Landroid/graphics/PointF;->x:F
 
@@ -183,11 +166,9 @@
 
     move-result v1
 
+    div-int/lit8 v1, v1, 0x2
+
     int-to-float v1, v1
-
-    const/high16 v2, 0x40000000    # 2.0f
-
-    div-float/2addr v1, v2
 
     sub-float/2addr v0, v1
 
@@ -199,9 +180,9 @@
 
     move-result v0
 
-    int-to-float v0, v0
+    div-int/lit8 v0, v0, 0x2
 
-    div-float/2addr v0, v2
+    int-to-float v0, v0
 
     sub-float/2addr p1, v0
 
@@ -215,15 +196,183 @@
 
     invoke-super {p0, p1}, Landroid/view/View;->onDraw(Landroid/graphics/Canvas;)V
 
-    iget-object v0, p0, Lcom/google/android/apps/camera/focusindicator/FocusIndicatorRingView;->a:Ldwa;
+    iget-object v0, p0, Lcom/google/android/apps/camera/focusindicator/FocusIndicatorRingView;->a:Lduj;
 
-    invoke-interface {v0, p1}, Ldwa;->b(Landroid/graphics/Canvas;)V
+    invoke-interface {v0, p1}, Lduj;->a(Landroid/graphics/Canvas;)V
 
-    iget-object v0, p0, Lcom/google/android/apps/camera/focusindicator/FocusIndicatorRingView;->b:Ldwc;
+    iget-object v0, p0, Lcom/google/android/apps/camera/focusindicator/FocusIndicatorRingView;->b:Ldul;
 
-    invoke-interface {v0, p1}, Ldwc;->a(Landroid/graphics/Canvas;)V
+    invoke-interface {v0, p1}, Ldul;->a(Landroid/graphics/Canvas;)V
 
     return-void
+.end method
+
+.method protected final onLayout(ZIIII)V
+    .locals 0
+
+    invoke-super/range {p0 .. p5}, Landroid/view/View;->onLayout(ZIIII)V
+
+    invoke-virtual {p0}, Lcom/google/android/apps/camera/focusindicator/FocusIndicatorRingView;->getParent()Landroid/view/ViewParent;
+
+    move-result-object p1
+
+    check-cast p1, Landroid/view/View;
+
+    iget-object p2, p0, Lcom/google/android/apps/camera/focusindicator/FocusIndicatorRingView;->e:Ljrz;
+
+    invoke-virtual {p0}, Lcom/google/android/apps/camera/focusindicator/FocusIndicatorRingView;->getContext()Landroid/content/Context;
+
+    move-result-object p3
+
+    invoke-virtual {p0}, Lcom/google/android/apps/camera/focusindicator/FocusIndicatorRingView;->getDisplay()Landroid/view/Display;
+
+    move-result-object p4
+
+    invoke-static {p4, p3}, Ljrz;->a(Landroid/view/Display;Landroid/content/Context;)Ljrz;
+
+    move-result-object p3
+
+    iput-object p3, p0, Lcom/google/android/apps/camera/focusindicator/FocusIndicatorRingView;->e:Ljrz;
+
+    iget-boolean p4, p0, Lcom/google/android/apps/camera/focusindicator/FocusIndicatorRingView;->f:Z
+
+    if-eqz p4, :cond_0
+
+    iget-object p4, p0, Lcom/google/android/apps/camera/focusindicator/FocusIndicatorRingView;->c:Landroid/graphics/PointF;
+
+    invoke-virtual {p1}, Landroid/view/View;->getWidth()I
+
+    move-result p5
+
+    invoke-virtual {p1}, Landroid/view/View;->getHeight()I
+
+    move-result p1
+
+    invoke-static {p3}, Lcom/google/android/apps/camera/focusindicator/FocusIndicatorRingView;->a(Ljrz;)I
+
+    move-result p3
+
+    invoke-static {p2}, Lcom/google/android/apps/camera/focusindicator/FocusIndicatorRingView;->a(Ljrz;)I
+
+    move-result p2
+
+    sub-int/2addr p3, p2
+
+    sparse-switch p3, :sswitch_data_0
+
+    new-instance p1, Ljava/lang/IllegalArgumentException;
+
+    invoke-direct {p1}, Ljava/lang/IllegalArgumentException;-><init>()V
+
+    throw p1
+
+    :sswitch_0
+    sget-object p2, Llic;->a:Llic;
+
+    goto :goto_0
+
+    :sswitch_1
+    sget-object p2, Llic;->b:Llic;
+
+    goto :goto_0
+
+    :sswitch_2
+    sget-object p2, Llic;->c:Llic;
+
+    goto :goto_0
+
+    :sswitch_3
+    sget-object p2, Llic;->d:Llic;
+
+    :goto_0
+    if-eqz p4, :cond_0
+
+    new-instance p3, Landroid/graphics/PointF;
+
+    invoke-direct {p3}, Landroid/graphics/PointF;-><init>()V
+
+    invoke-virtual {p2}, Llic;->ordinal()I
+
+    move-result p2
+
+    packed-switch p2, :pswitch_data_0
+
+    iget p1, p4, Landroid/graphics/PointF;->x:F
+
+    iget p2, p4, Landroid/graphics/PointF;->y:F
+
+    invoke-virtual {p3, p1, p2}, Landroid/graphics/PointF;->set(FF)V
+
+    goto :goto_1
+
+    :pswitch_0
+    iget p2, p4, Landroid/graphics/PointF;->y:F
+
+    int-to-float p1, p1
+
+    iget p4, p4, Landroid/graphics/PointF;->x:F
+
+    sub-float/2addr p1, p4
+
+    invoke-virtual {p3, p2, p1}, Landroid/graphics/PointF;->set(FF)V
+
+    goto :goto_1
+
+    :pswitch_1
+    int-to-float p2, p5
+
+    iget p5, p4, Landroid/graphics/PointF;->x:F
+
+    sub-float/2addr p2, p5
+
+    int-to-float p1, p1
+
+    iget p4, p4, Landroid/graphics/PointF;->y:F
+
+    sub-float/2addr p1, p4
+
+    invoke-virtual {p3, p2, p1}, Landroid/graphics/PointF;->set(FF)V
+
+    goto :goto_1
+
+    :pswitch_2
+    int-to-float p1, p5
+
+    iget p2, p4, Landroid/graphics/PointF;->y:F
+
+    sub-float/2addr p1, p2
+
+    iget p2, p4, Landroid/graphics/PointF;->x:F
+
+    invoke-virtual {p3, p1, p2}, Landroid/graphics/PointF;->set(FF)V
+
+    :goto_1
+    invoke-virtual {p0, p3}, Lcom/google/android/apps/camera/focusindicator/FocusIndicatorRingView;->b(Landroid/graphics/PointF;)V
+
+    :cond_0
+    const/4 p1, 0x1
+
+    iput-boolean p1, p0, Lcom/google/android/apps/camera/focusindicator/FocusIndicatorRingView;->f:Z
+
+    return-void
+
+    :sswitch_data_0
+    .sparse-switch
+        -0x10e -> :sswitch_3
+        -0xb4 -> :sswitch_2
+        -0x5a -> :sswitch_1
+        0x0 -> :sswitch_0
+        0x5a -> :sswitch_3
+        0xb4 -> :sswitch_2
+        0x10e -> :sswitch_1
+    .end sparse-switch
+
+    :pswitch_data_0
+    .packed-switch 0x1
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method
 
 .method protected final onSizeChanged(IIII)V
@@ -231,13 +380,13 @@
 
     invoke-super {p0, p1, p2, p3, p4}, Landroid/view/View;->onSizeChanged(IIII)V
 
-    iget-object p3, p0, Lcom/google/android/apps/camera/focusindicator/FocusIndicatorRingView;->a:Ldwa;
+    iget-object p3, p0, Lcom/google/android/apps/camera/focusindicator/FocusIndicatorRingView;->a:Lduj;
 
-    invoke-interface {p3, p1, p2}, Ldwa;->i(II)V
+    invoke-interface {p3, p1, p2}, Lduj;->b(II)V
 
-    iget-object p3, p0, Lcom/google/android/apps/camera/focusindicator/FocusIndicatorRingView;->b:Ldwc;
+    iget-object p3, p0, Lcom/google/android/apps/camera/focusindicator/FocusIndicatorRingView;->b:Ldul;
 
-    invoke-interface {p3, p1, p2}, Ldwc;->b(II)V
+    invoke-interface {p3, p1, p2}, Ldul;->b(II)V
 
     return-void
 .end method

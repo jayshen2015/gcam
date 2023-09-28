@@ -1,205 +1,66 @@
-.class final Lmvc;
+.class public final Lmvc;
 .super Ljava/lang/Object;
 
-# interfaces
-.implements Ljava/util/Iterator;
 
-
-# instance fields
-.field final synthetic a:Lmvd;
-
-.field private b:I
-
-.field private c:I
-
-.field private d:I
-
-.field private e:I
+# static fields
+.field private static final a:Louj;
 
 
 # direct methods
-.method public constructor <init>(Lmvd;)V
+.method static constructor <clinit>()V
     .locals 1
 
-    iput-object p1, p0, Lmvc;->a:Lmvd;
+    const-string v0, "com/google/android/libraries/performance/primes/debug/Intents"
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iget-object p1, p1, Lmvd;->b:Lmve;
-
-    iget v0, p1, Lmve;->e:I
-
-    iput v0, p0, Lmvc;->b:I
-
-    const/4 v0, -0x1
-
-    iput v0, p0, Lmvc;->c:I
-
-    iget v0, p1, Lmve;->d:I
-
-    iput v0, p0, Lmvc;->d:I
-
-    iget p1, p1, Lmve;->c:I
-
-    iput p1, p0, Lmvc;->e:I
-
-    return-void
-.end method
-
-.method private final a()V
-    .locals 2
-
-    iget-object v0, p0, Lmvc;->a:Lmvd;
-
-    iget-object v0, v0, Lmvd;->b:Lmve;
-
-    iget v0, v0, Lmve;->d:I
-
-    iget v1, p0, Lmvc;->d:I
-
-    if-ne v0, v1, :cond_0
-
-    return-void
-
-    :cond_0
-    new-instance v0, Ljava/util/ConcurrentModificationException;
-
-    invoke-direct {v0}, Ljava/util/ConcurrentModificationException;-><init>()V
-
-    throw v0
-.end method
-
-
-# virtual methods
-.method public final hasNext()Z
-    .locals 2
-
-    invoke-direct {p0}, Lmvc;->a()V
-
-    iget v0, p0, Lmvc;->b:I
-
-    const/4 v1, -0x2
-
-    if-eq v0, v1, :cond_0
-
-    iget v0, p0, Lmvc;->e:I
-
-    if-lez v0, :cond_0
-
-    const/4 v0, 0x1
-
-    return v0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    return v0
-.end method
-
-.method public final next()Ljava/lang/Object;
-    .locals 3
-
-    invoke-virtual {p0}, Lmvc;->hasNext()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    iget-object v0, p0, Lmvc;->a:Lmvd;
-
-    iget v1, p0, Lmvc;->b:I
-
-    invoke-virtual {v0, v1}, Lmvd;->a(I)Ljava/lang/Object;
+    invoke-static {v0}, Louj;->h(Ljava/lang/String;)Louj;
 
     move-result-object v0
 
-    iget v1, p0, Lmvc;->b:I
+    sput-object v0, Lmvc;->a:Louj;
 
-    iput v1, p0, Lmvc;->c:I
-
-    iget-object v2, p0, Lmvc;->a:Lmvd;
-
-    iget-object v2, v2, Lmvd;->b:Lmve;
-
-    iget-object v2, v2, Lmve;->f:[I
-
-    aget v1, v2, v1
-
-    iput v1, p0, Lmvc;->b:I
-
-    iget v1, p0, Lmvc;->e:I
-
-    add-int/lit8 v1, v1, -0x1
-
-    iput v1, p0, Lmvc;->e:I
-
-    return-object v0
-
-    :cond_0
-    new-instance v0, Ljava/util/NoSuchElementException;
-
-    invoke-direct {v0}, Ljava/util/NoSuchElementException;-><init>()V
-
-    throw v0
+    return-void
 .end method
 
-.method public final remove()V
-    .locals 4
+.method public static a(Landroid/content/Context;)V
+    .locals 2
 
-    invoke-direct {p0}, Lmvc;->a()V
+    :try_start_0
+    new-instance v0, Landroid/content/Intent;
 
-    iget v0, p0, Lmvc;->c:I
+    const-string v1, "com.google.android.primes.action.DEBUG_PRIMES_EVENTS"
 
-    const/4 v1, -0x1
+    invoke-direct {v0, v1}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    if-eq v0, v1, :cond_0
+    invoke-virtual {p0}, Landroid/content/Context;->getPackageName()Ljava/lang/String;
 
-    const/4 v0, 0x1
+    move-result-object v1
 
-    goto :goto_0
+    invoke-virtual {v0, v1}, Landroid/content/Intent;->setPackage(Ljava/lang/String;)Landroid/content/Intent;
 
-    :cond_0
-    const/4 v0, 0x0
+    const/high16 v1, 0x10000000
 
-    :goto_0
-    invoke-static {v0}, Llkj;->u(Z)V
+    invoke-virtual {v0, v1}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
 
-    iget-object v0, p0, Lmvc;->a:Lmvd;
+    invoke-virtual {p0, v0}, Landroid/content/Context;->startActivity(Landroid/content/Intent;)V
+    :try_end_0
+    .catch Landroid/content/ActivityNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
 
-    iget-object v0, v0, Lmvd;->b:Lmve;
+    return-void
 
-    iget v2, p0, Lmvc;->c:I
+    :catch_0
+    move-exception p0
 
-    iget-object v3, v0, Lmve;->a:[Ljava/lang/Object;
+    sget-object p0, Lmvc;->a:Louj;
 
-    aget-object v3, v3, v2
+    invoke-virtual {p0}, Loue;->c()Lova;
 
-    invoke-static {v3}, Llyh;->aa(Ljava/lang/Object;)I
+    move-result-object p0
 
-    move-result v3
+    const/16 v0, 0xe0e
 
-    invoke-virtual {v0, v2, v3}, Lmve;->h(II)V
+    const-string v1, "PrimesEventActivity not found: primes/debug is not included in the app."
 
-    iget v0, p0, Lmvc;->b:I
-
-    iget-object v2, p0, Lmvc;->a:Lmvd;
-
-    iget-object v2, v2, Lmvd;->b:Lmve;
-
-    iget v3, v2, Lmve;->c:I
-
-    if-ne v0, v3, :cond_1
-
-    iget v0, p0, Lmvc;->c:I
-
-    iput v0, p0, Lmvc;->b:I
-
-    :cond_1
-    iput v1, p0, Lmvc;->c:I
-
-    iget v0, v2, Lmve;->d:I
-
-    iput v0, p0, Lmvc;->d:I
+    invoke-static {p0, v1, v0}, Ld;->v(Lova;Ljava/lang/String;C)V
 
     return-void
 .end method

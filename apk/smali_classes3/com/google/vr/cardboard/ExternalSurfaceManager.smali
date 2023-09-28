@@ -7,15 +7,15 @@
 
 
 # instance fields
-.field public final a:Loed;
+.field public final a:Lpwc;
 
 .field private final c:Ljava/lang/Object;
 
-.field private d:I
+.field private volatile d:Lpwi;
 
-.field private e:Z
+.field private e:I
 
-.field private volatile f:Lmaf;
+.field private f:Z
 
 
 # direct methods
@@ -36,9 +36,9 @@
 .method public constructor <init>(J)V
     .locals 1
 
-    new-instance v0, Loed;
+    new-instance v0, Lpwc;
 
-    invoke-direct {v0, p1, p2}, Loed;-><init>(J)V
+    invoke-direct {v0, p1, p2}, Lpwc;-><init>(J)V
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -48,24 +48,22 @@
 
     iput-object p1, p0, Lcom/google/vr/cardboard/ExternalSurfaceManager;->c:Ljava/lang/Object;
 
-    new-instance p1, Lmaf;
+    new-instance p1, Lpwi;
 
-    const/4 p2, 0x0
+    invoke-direct {p1}, Lpwi;-><init>()V
 
-    invoke-direct {p1, p2}, Lmaf;-><init>([C)V
-
-    iput-object p1, p0, Lcom/google/vr/cardboard/ExternalSurfaceManager;->f:Lmaf;
+    iput-object p1, p0, Lcom/google/vr/cardboard/ExternalSurfaceManager;->d:Lpwi;
 
     const/4 p1, 0x1
 
-    iput p1, p0, Lcom/google/vr/cardboard/ExternalSurfaceManager;->d:I
+    iput p1, p0, Lcom/google/vr/cardboard/ExternalSurfaceManager;->e:I
 
-    iput-object v0, p0, Lcom/google/vr/cardboard/ExternalSurfaceManager;->a:Loed;
+    iput-object v0, p0, Lcom/google/vr/cardboard/ExternalSurfaceManager;->a:Lpwc;
 
     return-void
 .end method
 
-.method private final a(IILoeh;Z)I
+.method private final a(IILpwg;Z)I
     .locals 13
 
     move-object v1, p0
@@ -75,47 +73,43 @@
     monitor-enter v2
 
     :try_start_0
-    new-instance v0, Lmaf;
+    new-instance v0, Lpwi;
 
-    iget-object v3, v1, Lcom/google/vr/cardboard/ExternalSurfaceManager;->f:Lmaf;
+    iget-object v3, v1, Lcom/google/vr/cardboard/ExternalSurfaceManager;->d:Lpwi;
 
-    const/4 v4, 0x0
+    invoke-direct {v0, v3}, Lpwi;-><init>(Lpwi;)V
 
-    invoke-direct {v0, v3, v4, v4}, Lmaf;-><init>(Lmaf;[B[B)V
-
-    iget v3, v1, Lcom/google/vr/cardboard/ExternalSurfaceManager;->d:I
+    iget v3, v1, Lcom/google/vr/cardboard/ExternalSurfaceManager;->e:I
 
     add-int/lit8 v4, v3, 0x1
 
-    iput v4, v1, Lcom/google/vr/cardboard/ExternalSurfaceManager;->d:I
+    iput v4, v1, Lcom/google/vr/cardboard/ExternalSurfaceManager;->e:I
 
-    iget-object v4, v0, Lmaf;->a:Ljava/lang/Object;
+    iget-object v10, v0, Lpwi;->a:Ljava/util/HashMap;
 
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v11
 
-    new-instance v12, Loeg;
+    new-instance v12, Lpwf;
 
-    move-object v5, v12
+    move-object v4, v12
 
-    move v6, v3
+    move v5, v3
 
-    move v7, p1
+    move v6, p1
 
-    move v8, p2
+    move v7, p2
 
-    move-object/from16 v9, p3
+    move-object/from16 v8, p3
 
-    move/from16 v10, p4
+    move/from16 v9, p4
 
-    invoke-direct/range {v5 .. v10}, Loeg;-><init>(IIILoeh;Z)V
+    invoke-direct/range {v4 .. v9}, Lpwf;-><init>(IIILpwg;Z)V
 
-    check-cast v4, Ljava/util/HashMap;
+    invoke-virtual {v10, v11, v12}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    invoke-virtual {v4, v11, v12}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    iput-object v0, v1, Lcom/google/vr/cardboard/ExternalSurfaceManager;->f:Lmaf;
+    iput-object v0, v1, Lcom/google/vr/cardboard/ExternalSurfaceManager;->d:Lpwi;
 
     monitor-exit v2
 
@@ -131,18 +125,16 @@
     throw v0
 .end method
 
-.method private final b(Loei;)V
+.method private final b(Lpwh;)V
     .locals 3
 
-    iget-object v0, p0, Lcom/google/vr/cardboard/ExternalSurfaceManager;->f:Lmaf;
+    iget-object v0, p0, Lcom/google/vr/cardboard/ExternalSurfaceManager;->d:Lpwi;
 
-    iget-boolean v1, p0, Lcom/google/vr/cardboard/ExternalSurfaceManager;->e:Z
+    iget-boolean v1, p0, Lcom/google/vr/cardboard/ExternalSurfaceManager;->f:Z
 
     if-eqz v1, :cond_0
 
-    iget-object v1, v0, Lmaf;->a:Ljava/lang/Object;
-
-    check-cast v1, Ljava/util/HashMap;
+    iget-object v1, v0, Lpwi;->a:Ljava/util/HashMap;
 
     invoke-virtual {v1}, Ljava/util/HashMap;->isEmpty()Z
 
@@ -150,9 +142,7 @@
 
     if-nez v1, :cond_0
 
-    iget-object v1, v0, Lmaf;->a:Ljava/lang/Object;
-
-    check-cast v1, Ljava/util/HashMap;
+    iget-object v1, v0, Lpwi;->a:Ljava/util/HashMap;
 
     invoke-virtual {v1}, Ljava/util/HashMap;->values()Ljava/util/Collection;
 
@@ -173,18 +163,16 @@
 
     move-result-object v2
 
-    check-cast v2, Loeg;
+    check-cast v2, Lpwf;
 
-    invoke-virtual {v2}, Loeg;->a()V
+    invoke-virtual {v2}, Lpwf;->a()V
 
-    invoke-interface {p1, v2}, Loei;->a(Loeg;)V
+    invoke-interface {p1, v2}, Lpwh;->a(Lpwf;)V
 
     goto :goto_0
 
     :cond_0
-    iget-object p1, v0, Lmaf;->b:Ljava/lang/Object;
-
-    check-cast p1, Ljava/util/HashMap;
+    iget-object p1, v0, Lpwi;->b:Ljava/util/HashMap;
 
     invoke-virtual {p1}, Ljava/util/HashMap;->isEmpty()Z
 
@@ -192,9 +180,7 @@
 
     if-nez p1, :cond_1
 
-    iget-object p1, v0, Lmaf;->b:Ljava/lang/Object;
-
-    check-cast p1, Ljava/util/HashMap;
+    iget-object p1, v0, Lpwi;->b:Ljava/util/HashMap;
 
     invoke-virtual {p1}, Ljava/util/HashMap;->values()Ljava/util/Collection;
 
@@ -215,11 +201,11 @@
 
     move-result-object v0
 
-    check-cast v0, Loeg;
+    check-cast v0, Lpwf;
 
-    iget-object v1, p0, Lcom/google/vr/cardboard/ExternalSurfaceManager;->a:Loed;
+    iget-object v1, p0, Lcom/google/vr/cardboard/ExternalSurfaceManager;->a:Lpwc;
 
-    invoke-virtual {v0, v1}, Loeg;->c(Loed;)V
+    invoke-virtual {v0, v1}, Lpwf;->c(Lpwc;)V
 
     goto :goto_1
 
@@ -240,13 +226,11 @@
 
     const/4 v0, 0x1
 
-    iput-boolean v0, p0, Lcom/google/vr/cardboard/ExternalSurfaceManager;->e:Z
+    iput-boolean v0, p0, Lcom/google/vr/cardboard/ExternalSurfaceManager;->f:Z
 
-    iget-object v0, p0, Lcom/google/vr/cardboard/ExternalSurfaceManager;->f:Lmaf;
+    iget-object v0, p0, Lcom/google/vr/cardboard/ExternalSurfaceManager;->d:Lpwi;
 
-    iget-object v1, v0, Lmaf;->a:Ljava/lang/Object;
-
-    check-cast v1, Ljava/util/HashMap;
+    iget-object v1, v0, Lpwi;->a:Ljava/util/HashMap;
 
     invoke-virtual {v1}, Ljava/util/HashMap;->isEmpty()Z
 
@@ -254,9 +238,7 @@
 
     if-nez v1, :cond_0
 
-    iget-object v0, v0, Lmaf;->a:Ljava/lang/Object;
-
-    check-cast v0, Ljava/util/HashMap;
+    iget-object v0, v0, Lpwi;->a:Ljava/util/HashMap;
 
     invoke-virtual {v0}, Ljava/util/HashMap;->values()Ljava/util/Collection;
 
@@ -277,9 +259,9 @@
 
     move-result-object v1
 
-    check-cast v1, Loeg;
+    check-cast v1, Lpwf;
 
-    invoke-virtual {v1}, Loeg;->a()V
+    invoke-virtual {v1}, Lpwf;->a()V
 
     goto :goto_0
 
@@ -292,15 +274,13 @@
 
     const/4 v0, 0x1
 
-    iput-boolean v0, p0, Lcom/google/vr/cardboard/ExternalSurfaceManager;->e:Z
+    iput-boolean v0, p0, Lcom/google/vr/cardboard/ExternalSurfaceManager;->f:Z
 
-    iget-object v1, p0, Lcom/google/vr/cardboard/ExternalSurfaceManager;->f:Lmaf;
+    iget-object v1, p0, Lcom/google/vr/cardboard/ExternalSurfaceManager;->d:Lpwi;
 
-    iget-object v2, p0, Lcom/google/vr/cardboard/ExternalSurfaceManager;->f:Lmaf;
+    iget-object v2, p0, Lcom/google/vr/cardboard/ExternalSurfaceManager;->d:Lpwi;
 
-    iget-object v2, v2, Lmaf;->a:Ljava/lang/Object;
-
-    check-cast v2, Ljava/util/HashMap;
+    iget-object v2, v2, Lpwi;->a:Ljava/util/HashMap;
 
     invoke-virtual {v2}, Ljava/util/HashMap;->isEmpty()Z
 
@@ -310,11 +290,9 @@
 
     if-nez v2, :cond_1
 
-    iget-object v2, p0, Lcom/google/vr/cardboard/ExternalSurfaceManager;->f:Lmaf;
+    iget-object v2, p0, Lcom/google/vr/cardboard/ExternalSurfaceManager;->d:Lpwi;
 
-    iget-object v2, v2, Lmaf;->a:Ljava/lang/Object;
-
-    check-cast v2, Ljava/util/HashMap;
+    iget-object v2, v2, Lpwi;->a:Ljava/util/HashMap;
 
     invoke-virtual {v2}, Ljava/util/HashMap;->keySet()Ljava/util/Set;
 
@@ -387,13 +365,11 @@
 
     check-cast v2, Ljava/util/Map$Entry;
 
-    iget-object v4, v1, Lmaf;->a:Ljava/lang/Object;
+    iget-object v4, v1, Lpwi;->a:Ljava/util/HashMap;
 
     invoke-interface {v2}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
     move-result-object v5
-
-    check-cast v4, Ljava/util/HashMap;
 
     invoke-virtual {v4, v5}, Ljava/util/HashMap;->containsKey(Ljava/lang/Object;)Z
 
@@ -401,19 +377,17 @@
 
     if-eqz v4, :cond_2
 
-    iget-object v4, v1, Lmaf;->a:Ljava/lang/Object;
+    iget-object v4, v1, Lpwi;->a:Ljava/util/HashMap;
 
     invoke-interface {v2}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
     move-result-object v5
 
-    check-cast v4, Ljava/util/HashMap;
-
     invoke-virtual {v4, v5}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v4
 
-    check-cast v4, Loeg;
+    check-cast v4, Lpwf;
 
     invoke-interface {v2}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
@@ -425,7 +399,7 @@
 
     move-result v2
 
-    invoke-virtual {v4, v2}, Loeg;->b(I)V
+    invoke-virtual {v4, v2}, Lpwf;->b(I)V
 
     goto :goto_0
 
@@ -459,13 +433,11 @@
 
     const/4 v0, 0x0
 
-    iput-boolean v0, p0, Lcom/google/vr/cardboard/ExternalSurfaceManager;->e:Z
+    iput-boolean v0, p0, Lcom/google/vr/cardboard/ExternalSurfaceManager;->f:Z
 
-    iget-object v1, p0, Lcom/google/vr/cardboard/ExternalSurfaceManager;->f:Lmaf;
+    iget-object v1, p0, Lcom/google/vr/cardboard/ExternalSurfaceManager;->d:Lpwi;
 
-    iget-object v2, v1, Lmaf;->a:Ljava/lang/Object;
-
-    check-cast v2, Ljava/util/HashMap;
+    iget-object v2, v1, Lpwi;->a:Ljava/util/HashMap;
 
     invoke-virtual {v2}, Ljava/util/HashMap;->isEmpty()Z
 
@@ -473,9 +445,7 @@
 
     if-nez v2, :cond_2
 
-    iget-object v1, v1, Lmaf;->a:Ljava/lang/Object;
-
-    check-cast v1, Ljava/util/HashMap;
+    iget-object v1, v1, Lpwi;->a:Ljava/util/HashMap;
 
     invoke-virtual {v1}, Ljava/util/HashMap;->values()Ljava/util/Collection;
 
@@ -497,24 +467,24 @@
 
     move-result-object v2
 
-    check-cast v2, Loeg;
+    check-cast v2, Lpwf;
 
-    iget-boolean v3, v2, Loeg;->i:Z
+    iget-boolean v3, v2, Lpwf;->i:Z
 
     if-eqz v3, :cond_0
 
-    iget-object v3, v2, Loeg;->b:Loeh;
+    iget-object v3, v2, Lpwf;->b:Lpwg;
 
     if-eqz v3, :cond_1
 
-    invoke-interface {v3}, Loeh;->a()V
+    invoke-interface {v3}, Lpwg;->a()V
 
     :cond_1
-    iget-object v3, v2, Loeg;->g:Landroid/graphics/SurfaceTexture;
+    iget-object v3, v2, Lpwf;->g:Landroid/graphics/SurfaceTexture;
 
     invoke-virtual {v3}, Landroid/graphics/SurfaceTexture;->detachFromGLContext()V
 
-    iput-boolean v0, v2, Loeg;->i:Z
+    iput-boolean v0, v2, Lpwf;->i:Z
 
     goto :goto_0
 
@@ -525,13 +495,13 @@
 .method public consumerUpdateManagedSurfaces()V
     .locals 2
 
-    new-instance v0, Loec;
+    new-instance v0, Lpwb;
 
     const/4 v1, 0x1
 
-    invoke-direct {v0, p0, v1}, Loec;-><init>(Lcom/google/vr/cardboard/ExternalSurfaceManager;I)V
+    invoke-direct {v0, p0, v1}, Lpwb;-><init>(Lcom/google/vr/cardboard/ExternalSurfaceManager;I)V
 
-    invoke-direct {p0, v0}, Lcom/google/vr/cardboard/ExternalSurfaceManager;->b(Loei;)V
+    invoke-direct {p0, v0}, Lcom/google/vr/cardboard/ExternalSurfaceManager;->b(Lpwh;)V
 
     return-void
 .end method
@@ -539,13 +509,13 @@
 .method public consumerUpdateManagedSurfacesSequentially()V
     .locals 2
 
-    new-instance v0, Loec;
+    new-instance v0, Lpwb;
 
     const/4 v1, 0x0
 
-    invoke-direct {v0, p0, v1}, Loec;-><init>(Lcom/google/vr/cardboard/ExternalSurfaceManager;I)V
+    invoke-direct {v0, p0, v1}, Lpwb;-><init>(Lcom/google/vr/cardboard/ExternalSurfaceManager;I)V
 
-    invoke-direct {p0, v0}, Lcom/google/vr/cardboard/ExternalSurfaceManager;->b(Loei;)V
+    invoke-direct {p0, v0}, Lcom/google/vr/cardboard/ExternalSurfaceManager;->b(Lpwh;)V
 
     return-void
 .end method
@@ -553,13 +523,13 @@
 .method public createExternalSurface()I
     .locals 3
 
-    const/4 v0, 0x0
+    const/4 v0, -0x1
 
     const/4 v1, 0x0
 
-    const/4 v2, -0x1
+    const/4 v2, 0x0
 
-    invoke-direct {p0, v2, v2, v0, v1}, Lcom/google/vr/cardboard/ExternalSurfaceManager;->a(IILoeh;Z)I
+    invoke-direct {p0, v0, v0, v1, v2}, Lcom/google/vr/cardboard/ExternalSurfaceManager;->a(IILpwg;Z)I
 
     move-result v0
 
@@ -573,13 +543,13 @@
 
     if-eqz p5, :cond_0
 
-    new-instance v0, Loee;
+    new-instance v0, Lpwd;
 
-    invoke-direct {v0, p3, p4, p5}, Loee;-><init>(Ljava/lang/Runnable;Ljava/lang/Runnable;Landroid/os/Handler;)V
+    invoke-direct {v0, p3, p4, p5}, Lpwd;-><init>(Ljava/lang/Runnable;Ljava/lang/Runnable;Landroid/os/Handler;)V
 
     const/4 p3, 0x0
 
-    invoke-direct {p0, p1, p2, v0, p3}, Lcom/google/vr/cardboard/ExternalSurfaceManager;->a(IILoeh;Z)I
+    invoke-direct {p0, p1, p2, v0, p3}, Lcom/google/vr/cardboard/ExternalSurfaceManager;->a(IILpwg;Z)I
 
     move-result p1
 
@@ -598,11 +568,11 @@
 .method public createExternalSurfaceWithNativeCallback(IIJJZ)I
     .locals 1
 
-    new-instance v0, Loek;
+    new-instance v0, Lpwk;
 
-    invoke-direct {v0, p3, p4, p5, p6}, Loek;-><init>(JJ)V
+    invoke-direct {v0, p3, p4, p5, p6}, Lpwk;-><init>(JJ)V
 
-    invoke-direct {p0, p1, p2, v0, p7}, Lcom/google/vr/cardboard/ExternalSurfaceManager;->a(IILoeh;Z)I
+    invoke-direct {p0, p1, p2, v0, p7}, Lcom/google/vr/cardboard/ExternalSurfaceManager;->a(IILpwg;Z)I
 
     move-result p1
 
@@ -612,15 +582,13 @@
 .method public getSurface(I)Landroid/view/Surface;
     .locals 4
 
-    iget-object v0, p0, Lcom/google/vr/cardboard/ExternalSurfaceManager;->f:Lmaf;
+    iget-object v0, p0, Lcom/google/vr/cardboard/ExternalSurfaceManager;->d:Lpwi;
 
-    iget-object v1, v0, Lmaf;->a:Ljava/lang/Object;
+    iget-object v1, v0, Lpwi;->a:Ljava/util/HashMap;
 
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v2
-
-    check-cast v1, Ljava/util/HashMap;
 
     invoke-virtual {v1, v2}, Ljava/util/HashMap;->containsKey(Ljava/lang/Object;)Z
 
@@ -630,24 +598,22 @@
 
     if-eqz v1, :cond_1
 
-    iget-object p1, v0, Lmaf;->a:Ljava/lang/Object;
-
-    check-cast p1, Ljava/util/HashMap;
+    iget-object p1, v0, Lpwi;->a:Ljava/util/HashMap;
 
     invoke-virtual {p1, v2}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p1
 
-    check-cast p1, Loeg;
+    check-cast p1, Lpwf;
 
-    iget-boolean v0, p1, Loeg;->i:Z
+    iget-boolean v0, p1, Lpwf;->i:Z
 
     if-nez v0, :cond_0
 
     return-object v3
 
     :cond_0
-    iget-object p1, p1, Loeg;->h:Landroid/view/Surface;
+    iget-object p1, p1, Lpwf;->h:Landroid/view/Surface;
 
     return-object p1
 
@@ -656,7 +622,9 @@
 
     new-instance v1, Ljava/lang/StringBuilder;
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+    const/16 v2, 0x3a
+
+    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(I)V
 
     const-string v2, "Surface with ID "
 
@@ -685,37 +653,31 @@
     monitor-enter v0
 
     :try_start_0
-    new-instance v1, Lmaf;
+    new-instance v1, Lpwi;
 
-    iget-object v2, p0, Lcom/google/vr/cardboard/ExternalSurfaceManager;->f:Lmaf;
+    iget-object v2, p0, Lcom/google/vr/cardboard/ExternalSurfaceManager;->d:Lpwi;
 
-    const/4 v3, 0x0
+    invoke-direct {v1, v2}, Lpwi;-><init>(Lpwi;)V
 
-    invoke-direct {v1, v2, v3, v3}, Lmaf;-><init>(Lmaf;[B[B)V
-
-    iget-object v2, v1, Lmaf;->a:Ljava/lang/Object;
+    iget-object v2, v1, Lpwi;->a:Ljava/util/HashMap;
 
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
 
-    check-cast v2, Ljava/util/HashMap;
-
     invoke-virtual {v2, v3}, Ljava/util/HashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v2
 
-    check-cast v2, Loeg;
+    check-cast v2, Lpwf;
 
     if-eqz v2, :cond_0
 
-    iget-object p1, v1, Lmaf;->b:Ljava/lang/Object;
-
-    check-cast p1, Ljava/util/HashMap;
+    iget-object p1, v1, Lpwi;->b:Ljava/util/HashMap;
 
     invoke-virtual {p1, v3, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    iput-object v1, p0, Lcom/google/vr/cardboard/ExternalSurfaceManager;->f:Lmaf;
+    iput-object v1, p0, Lcom/google/vr/cardboard/ExternalSurfaceManager;->d:Lpwi;
 
     goto :goto_0
 
@@ -724,7 +686,9 @@
 
     new-instance v2, Ljava/lang/StringBuilder;
 
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+    const/16 v3, 0x30
+
+    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(I)V
 
     const-string v3, "Not releasing nonexistent surface ID "
 
@@ -761,19 +725,15 @@
     monitor-enter v0
 
     :try_start_0
-    iget-object v1, p0, Lcom/google/vr/cardboard/ExternalSurfaceManager;->f:Lmaf;
+    iget-object v1, p0, Lcom/google/vr/cardboard/ExternalSurfaceManager;->d:Lpwi;
 
-    new-instance v2, Lmaf;
+    new-instance v2, Lpwi;
 
-    const/4 v3, 0x0
+    invoke-direct {v2}, Lpwi;-><init>()V
 
-    invoke-direct {v2, v3}, Lmaf;-><init>([C)V
+    iput-object v2, p0, Lcom/google/vr/cardboard/ExternalSurfaceManager;->d:Lpwi;
 
-    iput-object v2, p0, Lcom/google/vr/cardboard/ExternalSurfaceManager;->f:Lmaf;
-
-    iget-object v2, v1, Lmaf;->a:Ljava/lang/Object;
-
-    check-cast v2, Ljava/util/HashMap;
+    iget-object v2, v1, Lpwi;->a:Ljava/util/HashMap;
 
     invoke-virtual {v2}, Ljava/util/HashMap;->isEmpty()Z
 
@@ -781,9 +741,7 @@
 
     if-nez v2, :cond_0
 
-    iget-object v2, v1, Lmaf;->a:Ljava/lang/Object;
-
-    check-cast v2, Ljava/util/HashMap;
+    iget-object v2, v1, Lpwi;->a:Ljava/util/HashMap;
 
     invoke-virtual {v2}, Ljava/util/HashMap;->entrySet()Ljava/util/Set;
 
@@ -810,18 +768,16 @@
 
     move-result-object v3
 
-    check-cast v3, Loeg;
+    check-cast v3, Lpwf;
 
-    iget-object v4, p0, Lcom/google/vr/cardboard/ExternalSurfaceManager;->a:Loed;
+    iget-object v4, p0, Lcom/google/vr/cardboard/ExternalSurfaceManager;->a:Lpwc;
 
-    invoke-virtual {v3, v4}, Loeg;->c(Loed;)V
+    invoke-virtual {v3, v4}, Lpwf;->c(Lpwc;)V
 
     goto :goto_0
 
     :cond_0
-    iget-object v2, v1, Lmaf;->b:Ljava/lang/Object;
-
-    check-cast v2, Ljava/util/HashMap;
+    iget-object v2, v1, Lpwi;->b:Ljava/util/HashMap;
 
     invoke-virtual {v2}, Ljava/util/HashMap;->isEmpty()Z
 
@@ -829,9 +785,7 @@
 
     if-nez v2, :cond_1
 
-    iget-object v1, v1, Lmaf;->b:Ljava/lang/Object;
-
-    check-cast v1, Ljava/util/HashMap;
+    iget-object v1, v1, Lpwi;->b:Ljava/util/HashMap;
 
     invoke-virtual {v1}, Ljava/util/HashMap;->entrySet()Ljava/util/Set;
 
@@ -858,11 +812,11 @@
 
     move-result-object v2
 
-    check-cast v2, Loeg;
+    check-cast v2, Lpwf;
 
-    iget-object v3, p0, Lcom/google/vr/cardboard/ExternalSurfaceManager;->a:Loed;
+    iget-object v3, p0, Lcom/google/vr/cardboard/ExternalSurfaceManager;->a:Lpwc;
 
-    invoke-virtual {v2, v3}, Loeg;->c(Loed;)V
+    invoke-virtual {v2, v3}, Lpwf;->c(Lpwc;)V
 
     goto :goto_1
 

@@ -1,19 +1,26 @@
-.class public interface abstract Lgsm;
+.class public final Lgsm;
 .super Ljava/lang/Object;
 
 
-# virtual methods
-.method public abstract a()I
-.end method
+# instance fields
+.field public final a:Landroid/graphics/Rect;
 
-.method public abstract b()Ldtd;
-.end method
+.field public final b:Landroid/graphics/Rect;
 
-.method public abstract c(J)Lgsl;
-.end method
+.field public final c:F
 
-.method public abstract d(J)Lgsl;
-.end method
 
-.method public abstract e()V
+# direct methods
+.method public constructor <init>(Landroid/graphics/Rect;Landroid/graphics/Rect;F)V
+    .locals 0
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lgsm;->a:Landroid/graphics/Rect;
+
+    iput-object p2, p0, Lgsm;->b:Landroid/graphics/Rect;
+
+    iput p3, p0, Lgsm;->c:F
+
+    return-void
 .end method

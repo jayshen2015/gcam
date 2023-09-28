@@ -1,75 +1,84 @@
-.class public final Linc;
-.super Ljava/lang/Object;
-
-# interfaces
-.implements Lina;
+.class public final enum Linc;
+.super Ljava/lang/Enum;
 
 
-# instance fields
-.field public final a:Ljava/lang/Object;
+# static fields
+.field public static final enum a:Linc;
 
-.field private final synthetic b:I
+.field public static final enum b:Linc;
+
+.field private static final synthetic c:[Linc;
 
 
 # direct methods
-.method public constructor <init>(Landroid/app/Activity;I)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 5
 
-    iput p2, p0, Linc;->b:I
+    new-instance v0, Linc;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const-string v1, "FIRST_PREVIEW_FRAME"
 
-    iput-object p1, p0, Linc;->a:Ljava/lang/Object;
+    const/4 v2, 0x0
+
+    invoke-direct {v0, v1, v2}, Linc;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, Linc;->a:Linc;
+
+    new-instance v1, Linc;
+
+    const-string v3, "SHUTTER_BUTTON_ENABLED"
+
+    const/4 v4, 0x1
+
+    invoke-direct {v1, v3, v4}, Linc;-><init>(Ljava/lang/String;I)V
+
+    sput-object v1, Linc;->b:Linc;
+
+    const/4 v3, 0x2
+
+    new-array v3, v3, [Linc;
+
+    aput-object v0, v3, v2
+
+    aput-object v1, v3, v4
+
+    sput-object v3, Linc;->c:[Linc;
 
     return-void
 .end method
 
-.method public constructor <init>(Landroid/view/View;I)V
+.method private constructor <init>(Ljava/lang/String;I)V
     .locals 0
 
-    iput p2, p0, Linc;->b:I
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Linc;->a:Ljava/lang/Object;
+    invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
 .end method
 
-
-# virtual methods
-.method public final a(I)Landroid/view/View;
+.method public static a(Ljava/lang/String;)Linc;
     .locals 1
 
-    iget v0, p0, Linc;->b:I
+    const-class v0, Linc;
 
-    packed-switch v0, :pswitch_data_0
+    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
 
-    iget-object v0, p0, Linc;->a:Ljava/lang/Object;
+    move-result-object p0
 
-    check-cast v0, Landroid/app/Activity;
+    check-cast p0, Linc;
 
-    invoke-virtual {v0, p1}, Landroid/app/Activity;->findViewById(I)Landroid/view/View;
+    return-object p0
+.end method
 
-    move-result-object p1
+.method public static values()[Linc;
+    .locals 1
 
-    return-object p1
+    sget-object v0, Linc;->c:[Linc;
 
-    :pswitch_0
-    iget-object v0, p0, Linc;->a:Ljava/lang/Object;
+    invoke-virtual {v0}, [Linc;->clone()Ljava/lang/Object;
 
-    check-cast v0, Landroid/view/View;
+    move-result-object v0
 
-    invoke-virtual {v0, p1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+    check-cast v0, [Linc;
 
-    move-result-object p1
-
-    return-object p1
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+    return-object v0
 .end method

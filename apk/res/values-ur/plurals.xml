@@ -1,12 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <plurals name="accessibility_timelapse_manual_record_speed_desc">
-        <item quantity="other">ٹائم لیپس %d گنا رفتار سے</item>
-        <item quantity="one">ٹائم لیپس %d گنا رفتار سے</item>
-    </plurals>
-    <plurals name="number_of_cropped_face">
-        <item quantity="other">%d تراشے گئے۔</item>
-        <item quantity="one">ایک تراشا گیا۔</item>
+    <plurals name="number_of_faces_announcement">
+        <item quantity="other">%1$d چہرے۔</item>
+        <item quantity="one">%1$d چہرہ۔</item>
     </plurals>
     <plurals name="photos_remaining">
         <item quantity="other">%s تصاویر کے بارے میں</item>
@@ -17,8 +13,8 @@
         <item quantity="one">(%1$d ایپ منتخب کی گئی)</item>
     </plurals>
     <plurals name="social_share_info">
-        <item quantity="other">کیمرے سے فوری طور پر سوشل ایپس پر تصاویر اور ویڈیوز کا اشتراک کریں۔ %1$d ایپس تک منتخب کریں۔ مقفل فولڈر میں محفوظ کردہ تصاویر اور ویڈیوز کا اشتراک نہیں کیا جا سکتا۔</item>
-        <item quantity="one">کیمرے سے فوری طور پر سوشل ایپس پر تصاویر اور ویڈیوز کا اشتراک کریں۔ %1$d ایپ منتخب کریں۔ مقفل فولڈر میں محفوظ کردہ تصاویر اور ویڈیوز کا اشتراک نہیں کیا جا سکتا۔</item>
+        <item quantity="other">براہ راست کیمرے سے فوری طور پر سوشل ایپس پر تصاویر اور ویڈیوز کا اشتراک کریں۔ %1$d ایپس تک منتخب کریں۔ مقفل فولڈر میں محفوظ کردہ تصاویر اور ویڈیوز کا اشتراک نہیں کیا جا سکتا۔</item>
+        <item quantity="one">براہ راست کیمرے سے فوری طور پر سوشل ایپس پر تصاویر اور ویڈیوز کا اشتراک کریں۔ %1$d ایپ منتخب کریں۔ مقفل فولڈر میں محفوظ کردہ تصاویر اور ویڈیوز کا اشتراک نہیں کیا جا سکتا۔</item>
     </plurals>
     <plurals name="social_share_select_error">
         <item quantity="other">%1$d ایپس تک منتخب کریں</item>

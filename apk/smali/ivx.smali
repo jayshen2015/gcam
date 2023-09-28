@@ -1,44 +1,54 @@
-.class public final Livx;
-.super Lej;
+.class public final synthetic Livx;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Llij;
 
 
 # instance fields
-.field final synthetic a:Lcom/google/android/clockwork/common/wearable/wearmaterial/list/FadingWearableRecyclerView;
+.field public final synthetic a:Livz;
+
+.field public final synthetic b:Lbue;
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/clockwork/common/wearable/wearmaterial/list/FadingWearableRecyclerView;)V
+.method public synthetic constructor <init>(Livz;Lbue;)V
     .locals 0
 
-    iput-object p1, p0, Livx;->a:Lcom/google/android/clockwork/common/wearable/wearmaterial/list/FadingWearableRecyclerView;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0}, Lej;-><init>()V
+    iput-object p1, p0, Livx;->a:Livz;
+
+    iput-object p2, p0, Livx;->b:Lbue;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final b()V
-    .locals 4
+.method public final fB(Ljava/lang/Object;)V
+    .locals 2
 
-    iget-object v0, p0, Livx;->a:Lcom/google/android/clockwork/common/wearable/wearmaterial/list/FadingWearableRecyclerView;
+    iget-object v0, p0, Livx;->a:Livz;
 
-    const/4 v1, 0x0
+    iget-object v1, p0, Livx;->b:Lbue;
 
-    invoke-virtual {v0, v1}, Lcom/google/android/clockwork/common/wearable/wearmaterial/list/FadingWearableRecyclerView;->a(I)I
+    check-cast p1, Ljava/lang/Boolean;
 
-    move-result v1
+    iget-boolean p1, v0, Livz;->d:Z
 
-    iget-object v2, p0, Livx;->a:Lcom/google/android/clockwork/common/wearable/wearmaterial/list/FadingWearableRecyclerView;
+    if-nez p1, :cond_0
 
-    const/4 v3, 0x1
+    const/4 p1, 0x1
 
-    invoke-virtual {v2, v3}, Lcom/google/android/clockwork/common/wearable/wearmaterial/list/FadingWearableRecyclerView;->a(I)I
+    iput-boolean p1, v0, Livz;->d:Z
 
-    move-result v2
+    return-void
 
-    invoke-virtual {v0, v1, v2}, Lcom/google/android/clockwork/common/wearable/wearmaterial/list/FadingWearableRecyclerView;->az(II)V
+    :cond_0
+    invoke-interface {v1}, Lbue;->h()V
+
+    invoke-virtual {v0}, Livz;->a()V
 
     return-void
 .end method

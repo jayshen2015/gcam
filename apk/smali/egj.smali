@@ -1,64 +1,61 @@
-.class public final synthetic Legj;
+.class public final Legj;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lmqi;
+.implements Lpys;
 
 
 # instance fields
-.field public final synthetic a:F
-
-.field public final synthetic b:F
+.field private final a:Lqkg;
 
 
 # direct methods
-.method public synthetic constructor <init>(FF)V
+.method public constructor <init>(Lqkg;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput p1, p0, Legj;->a:F
-
-    iput p2, p0, Legj;->b:F
+    iput-object p1, p0, Legj;->a:Lqkg;
 
     return-void
 .end method
 
+.method public static b(Lqkg;)Legj;
+    .locals 1
+
+    new-instance v0, Legj;
+
+    invoke-direct {v0, p0}, Legj;-><init>(Lqkg;)V
+
+    return-object v0
+.end method
+
 
 # virtual methods
-.method public final apply(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 4
+.method public final a()Legi;
+    .locals 2
 
-    iget v0, p0, Legj;->a:F
+    iget-object v0, p0, Legj;->a:Lqkg;
 
-    iget v1, p0, Legj;->b:F
+    check-cast v0, Lgix;
 
-    check-cast p1, Ljava/lang/Float;
+    invoke-virtual {v0}, Lgix;->a()Landroid/util/DisplayMetrics;
 
-    invoke-virtual {p1}, Ljava/lang/Float;->floatValue()F
+    move-result-object v0
 
-    move-result v2
+    new-instance v1, Legi;
 
-    const/4 v3, 0x0
+    invoke-direct {v1, v0}, Legi;-><init>(Landroid/util/DisplayMetrics;)V
 
-    cmpl-float v0, v2, v0
+    return-object v1
+.end method
 
-    if-ltz v0, :cond_0
+.method public final bridge synthetic get()Ljava/lang/Object;
+    .locals 1
 
-    invoke-virtual {p1}, Ljava/lang/Float;->floatValue()F
+    invoke-virtual {p0}, Legj;->a()Legi;
 
-    move-result p1
+    move-result-object v0
 
-    cmpg-float p1, p1, v1
-
-    if-gtz p1, :cond_0
-
-    const/4 v3, 0x1
-
-    :cond_0
-    invoke-static {v3}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
-
-    move-result-object p1
-
-    return-object p1
+    return-object v0
 .end method

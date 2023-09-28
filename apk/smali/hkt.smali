@@ -1,70 +1,72 @@
-.class public final Lhkt;
+.class public final synthetic Lhkt;
 .super Ljava/lang/Object;
+
+# interfaces
+.implements Lfpn;
 
 
 # instance fields
-.field public final a:Lkqi;
+.field public final synthetic a:Ljava/lang/Object;
 
-.field public b:Lmqp;
+.field public final synthetic b:Ljava/util/concurrent/ExecutorService;
 
-.field public c:Lmqp;
-
-.field public d:Lmqp;
-
-.field public e:Z
-
-.field public f:Lgcf;
+.field public final synthetic c:Lqkg;
 
 
 # direct methods
-.method public constructor <init>(Lkqi;)V
-    .locals 1
+.method public synthetic constructor <init>(Ljava/lang/Object;Ljava/util/concurrent/ExecutorService;Lqkg;)V
+    .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    sget-object v0, Lmpx;->a:Lmpx;
+    iput-object p1, p0, Lhkt;->a:Ljava/lang/Object;
 
-    iput-object v0, p0, Lhkt;->b:Lmqp;
+    iput-object p2, p0, Lhkt;->b:Ljava/util/concurrent/ExecutorService;
 
-    iput-object v0, p0, Lhkt;->c:Lmqp;
-
-    iput-object v0, p0, Lhkt;->d:Lmqp;
-
-    const/4 v0, 0x0
-
-    iput-boolean v0, p0, Lhkt;->e:Z
-
-    sget-object v0, Lgcf;->c:Lgcf;
-
-    iput-object v0, p0, Lhkt;->f:Lgcf;
-
-    iput-object p1, p0, Lhkt;->a:Lkqi;
+    iput-object p3, p0, Lhkt;->c:Lqkg;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Lcom/google/android/libraries/camera/exif/ExifInterface;)V
-    .locals 0
+.method public final a(J)V
+    .locals 3
 
-    invoke-static {p1}, Lmqp;->h(Ljava/lang/Object;)Lmqp;
+    iget-object v0, p0, Lhkt;->a:Ljava/lang/Object;
 
-    move-result-object p1
+    iget-object v1, p0, Lhkt;->b:Ljava/util/concurrent/ExecutorService;
 
-    iput-object p1, p0, Lhkt;->c:Lmqp;
+    iget-object v2, p0, Lhkt;->c:Lqkg;
+
+    monitor-enter v0
+
+    :try_start_0
+    invoke-interface {v1}, Ljava/util/concurrent/ExecutorService;->isShutdown()Z
+
+    move-result v1
+
+    if-nez v1, :cond_0
+
+    invoke-interface {v2}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Lhkq;
+
+    invoke-virtual {v1, p1, p2}, Lhkq;->b(J)V
+
+    :cond_0
+    monitor-exit v0
 
     return-void
-.end method
 
-.method public final b(Lkab;)V
-    .locals 0
+    :catchall_0
+    move-exception p1
 
-    invoke-static {p1}, Lmqp;->h(Ljava/lang/Object;)Lmqp;
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    move-result-object p1
-
-    iput-object p1, p0, Lhkt;->b:Lmqp;
-
-    return-void
+    throw p1
 .end method

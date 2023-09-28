@@ -1,70 +1,389 @@
-.class public final enum Lbqg;
-.super Ljava/lang/Enum;
+.class public final Lbqg;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Lfie;
+.implements Lfig;
+.implements Lfii;
+.implements Lfij;
+.implements Lfib;
 
 
-# static fields
-.field public static final enum a:Lbqg;
+# instance fields
+.field public final a:Ljava/lang/Object;
 
-.field public static final enum b:Lbqg;
+.field public b:Llap;
 
-.field private static final synthetic c:[Lbqg;
+.field public c:Llap;
+
+.field public d:Llap;
+
+.field public e:Lbws;
+
+.field public f:Lbws;
+
+.field public g:Lbws;
+
+.field public final h:Lbui;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 5
-
-    new-instance v0, Lbqg;
-
-    const-string v1, "SRGB"
-
-    const/4 v2, 0x0
-
-    invoke-direct {v0, v1, v2}, Lbqg;-><init>(Ljava/lang/String;I)V
-
-    sput-object v0, Lbqg;->a:Lbqg;
-
-    new-instance v1, Lbqg;
-
-    const-string v3, "DISPLAY_P3"
-
-    const/4 v4, 0x1
-
-    invoke-direct {v1, v3, v4}, Lbqg;-><init>(Ljava/lang/String;I)V
-
-    sput-object v1, Lbqg;->b:Lbqg;
-
-    const/4 v3, 0x2
-
-    new-array v3, v3, [Lbqg;
-
-    aput-object v0, v3, v2
-
-    aput-object v1, v3, v4
-
-    sput-object v3, Lbqg;->c:[Lbqg;
-
-    return-void
-.end method
-
-.method private constructor <init>(Ljava/lang/String;I)V
-    .locals 0
-
-    invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
-    return-void
-.end method
-
-.method public static values()[Lbqg;
+.method public constructor <init>(Lbui;)V
     .locals 1
 
-    sget-object v0, Lbqg;->c:[Lbqg;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-virtual {v0}, [Lbqg;->clone()Ljava/lang/Object;
+    iput-object p1, p0, Lbqg;->h:Lbui;
+
+    new-instance v0, Ljava/lang/Object;
+
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+
+    iput-object v0, p0, Lbqg;->a:Ljava/lang/Object;
+
+    invoke-virtual {p1}, Lbui;->b()Llap;
 
     move-result-object v0
 
-    check-cast v0, [Lbqg;
+    iput-object v0, p0, Lbqg;->d:Llap;
 
-    return-object v0
+    invoke-virtual {p1, v0}, Lbui;->c(Llap;)Llap;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lbqg;->c:Llap;
+
+    invoke-virtual {p1, v0}, Lbui;->a(Llap;)Llap;
+
+    move-result-object p1
+
+    iput-object p1, p0, Lbqg;->b:Llap;
+
+    iget-object p1, p0, Lbqg;->d:Llap;
+
+    new-instance v0, Lbws;
+
+    invoke-direct {v0}, Lbws;-><init>()V
+
+    invoke-virtual {p1, v0}, Llap;->c(Llie;)V
+
+    iput-object v0, p0, Lbqg;->g:Lbws;
+
+    iget-object p1, p0, Lbqg;->c:Llap;
+
+    new-instance v0, Lbws;
+
+    invoke-direct {v0}, Lbws;-><init>()V
+
+    invoke-virtual {p1, v0}, Llap;->c(Llie;)V
+
+    iput-object v0, p0, Lbqg;->f:Lbws;
+
+    iget-object p1, p0, Lbqg;->b:Llap;
+
+    new-instance v0, Lbws;
+
+    invoke-direct {v0}, Lbws;-><init>()V
+
+    invoke-virtual {p1, v0}, Llap;->c(Llie;)V
+
+    iput-object v0, p0, Lbqg;->e:Lbws;
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public final e()V
+    .locals 2
+
+    iget-object v0, p0, Lbqg;->a:Ljava/lang/Object;
+
+    monitor-enter v0
+
+    :try_start_0
+    iget-object v1, p0, Lbqg;->c:Llap;
+
+    invoke-virtual {v1}, Llap;->close()V
+
+    monitor-exit v0
+
+    return-void
+
+    :catchall_0
+    move-exception v1
+
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw v1
+.end method
+
+.method public final f()Z
+    .locals 2
+
+    iget-object v0, p0, Lbqg;->a:Ljava/lang/Object;
+
+    monitor-enter v0
+
+    :try_start_0
+    iget-object v1, p0, Lbqg;->e:Lbws;
+
+    invoke-virtual {v1}, Lbws;->a()Z
+
+    move-result v1
+
+    monitor-exit v0
+
+    return v1
+
+    :catchall_0
+    move-exception v1
+
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw v1
+.end method
+
+.method public final fT()V
+    .locals 2
+
+    iget-object v0, p0, Lbqg;->a:Ljava/lang/Object;
+
+    monitor-enter v0
+
+    :try_start_0
+    iget-object v1, p0, Lbqg;->d:Llap;
+
+    invoke-virtual {v1}, Llap;->close()V
+
+    monitor-exit v0
+
+    return-void
+
+    :catchall_0
+    move-exception v1
+
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw v1
+.end method
+
+.method public final fU()V
+    .locals 2
+
+    iget-object v0, p0, Lbqg;->a:Ljava/lang/Object;
+
+    monitor-enter v0
+
+    :try_start_0
+    iget-object v1, p0, Lbqg;->b:Llap;
+
+    invoke-virtual {v1}, Llap;->close()V
+
+    monitor-exit v0
+
+    return-void
+
+    :catchall_0
+    move-exception v1
+
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw v1
+.end method
+
+.method public final fV()V
+    .locals 3
+
+    iget-object v0, p0, Lbqg;->a:Ljava/lang/Object;
+
+    monitor-enter v0
+
+    :try_start_0
+    invoke-virtual {p0}, Lbqg;->f()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    iget-object v1, p0, Lbqg;->h:Lbui;
+
+    iget-object v2, p0, Lbqg;->c:Llap;
+
+    invoke-virtual {v1, v2}, Lbui;->a(Llap;)Llap;
+
+    move-result-object v1
+
+    iput-object v1, p0, Lbqg;->b:Llap;
+
+    new-instance v2, Lbws;
+
+    invoke-direct {v2}, Lbws;-><init>()V
+
+    invoke-virtual {v1, v2}, Llap;->c(Llie;)V
+
+    iput-object v2, p0, Lbqg;->e:Lbws;
+
+    :cond_0
+    monitor-exit v0
+
+    return-void
+
+    :catchall_0
+    move-exception v1
+
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw v1
+.end method
+
+.method public final fW()V
+    .locals 3
+
+    iget-object v0, p0, Lbqg;->a:Ljava/lang/Object;
+
+    monitor-enter v0
+
+    :try_start_0
+    invoke-virtual {p0}, Lbqg;->g()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    iget-object v1, p0, Lbqg;->h:Lbui;
+
+    iget-object v2, p0, Lbqg;->d:Llap;
+
+    invoke-virtual {v1, v2}, Lbui;->c(Llap;)Llap;
+
+    move-result-object v1
+
+    iput-object v1, p0, Lbqg;->c:Llap;
+
+    new-instance v2, Lbws;
+
+    invoke-direct {v2}, Lbws;-><init>()V
+
+    invoke-virtual {v1, v2}, Llap;->c(Llie;)V
+
+    iput-object v2, p0, Lbqg;->f:Lbws;
+
+    iget-object v1, p0, Lbqg;->h:Lbui;
+
+    iget-object v2, p0, Lbqg;->c:Llap;
+
+    invoke-virtual {v1, v2}, Lbui;->a(Llap;)Llap;
+
+    move-result-object v1
+
+    iput-object v1, p0, Lbqg;->b:Llap;
+
+    new-instance v2, Lbws;
+
+    invoke-direct {v2}, Lbws;-><init>()V
+
+    invoke-virtual {v1, v2}, Llap;->c(Llie;)V
+
+    iput-object v2, p0, Lbqg;->e:Lbws;
+
+    :cond_0
+    monitor-exit v0
+
+    return-void
+
+    :catchall_0
+    move-exception v1
+
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw v1
+.end method
+
+.method public final g()Z
+    .locals 2
+
+    iget-object v0, p0, Lbqg;->a:Ljava/lang/Object;
+
+    monitor-enter v0
+
+    :try_start_0
+    iget-object v1, p0, Lbqg;->f:Lbws;
+
+    invoke-virtual {v1}, Lbws;->a()Z
+
+    move-result v1
+
+    monitor-exit v0
+
+    return v1
+
+    :catchall_0
+    move-exception v1
+
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw v1
+.end method
+
+.method public final h()Llap;
+    .locals 2
+
+    iget-object v0, p0, Lbqg;->a:Ljava/lang/Object;
+
+    monitor-enter v0
+
+    :try_start_0
+    iget-object v1, p0, Lbqg;->b:Llap;
+
+    monitor-exit v0
+
+    return-object v1
+
+    :catchall_0
+    move-exception v1
+
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw v1
+.end method
+
+.method public final i()Llap;
+    .locals 2
+
+    iget-object v0, p0, Lbqg;->a:Ljava/lang/Object;
+
+    monitor-enter v0
+
+    :try_start_0
+    iget-object v1, p0, Lbqg;->d:Llap;
+
+    monitor-exit v0
+
+    return-object v1
+
+    :catchall_0
+    move-exception v1
+
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw v1
 .end method

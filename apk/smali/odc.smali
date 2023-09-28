@@ -1,28 +1,40 @@
-.class final Lodc;
-.super Ljava/lang/Object;
+.class public final Lodc;
+.super Lgd;
 
 
-# static fields
-.field static final a:Llzz;
+# instance fields
+.field final synthetic a:Lodg;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 4
+.method public constructor <init>(Lodg;)V
+    .locals 0
 
-    sget-object v0, Lnzl;->i:Lnzl;
+    iput-object p1, p0, Lodc;->a:Lodg;
 
-    sget-object v1, Lnzl;->k:Lnzl;
+    invoke-direct {p0}, Lgd;-><init>()V
 
-    sget-object v2, Locz;->a:Locz;
+    return-void
+.end method
 
-    const-string v3, ""
 
-    invoke-static {v0, v3, v1, v2}, Llzz;->B(Lnzl;Ljava/lang/Object;Lnzl;Ljava/lang/Object;)Llzz;
+# virtual methods
+.method public final l()V
+    .locals 1
 
-    move-result-object v0
+    iget-object v0, p0, Lodc;->a:Lodg;
 
-    sput-object v0, Lodc;->a:Llzz;
+    invoke-virtual {v0}, Lodg;->a()V
+
+    return-void
+.end method
+
+.method public final m(ILjava/lang/Object;)V
+    .locals 0
+
+    iget-object p1, p0, Lodc;->a:Lodg;
+
+    invoke-virtual {p1}, Lodg;->a()V
 
     return-void
 .end method

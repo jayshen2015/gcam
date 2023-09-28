@@ -1,174 +1,190 @@
 .class public final Llvu;
 .super Ljava/lang/Object;
 
-# interfaces
-.implements Lotu;
-
 
 # instance fields
-.field final synthetic a:Lotu;
+.field public final a:Ljava/lang/String;
 
-.field final synthetic b:Loni;
-
-.field final synthetic c:Llvy;
-
-.field final synthetic d:Llzy;
+.field public final b:Ljava/lang/Throwable;
 
 
 # direct methods
-.method public constructor <init>(Lotu;Loni;Llvy;Llzy;)V
+.method public constructor <init>()V
     .locals 0
-
-    iput-object p1, p0, Llvu;->a:Lotu;
-
-    iput-object p2, p0, Llvu;->b:Loni;
-
-    iput-object p3, p0, Llvu;->c:Llvy;
-
-    iput-object p4, p0, Llvu;->d:Llzy;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
+.method public constructor <init>(Ljava/lang/String;Ljava/lang/Throwable;)V
+    .locals 0
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Llvu;->a:Ljava/lang/String;
+
+    iput-object p2, p0, Llvu;->b:Ljava/lang/Throwable;
+
+    return-void
+.end method
+
+.method public static a()Llvt;
+    .locals 1
+
+    new-instance v0, Llvt;
+
+    invoke-direct {v0}, Llvt;-><init>()V
+
+    return-object v0
+.end method
+
 
 # virtual methods
-.method public final a(Ljava/lang/Object;Loku;)Ljava/lang/Object;
-    .locals 5
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 4
 
-    instance-of v0, p2, Llvt;
+    const/4 v0, 0x1
 
-    if-eqz v0, :cond_0
+    if-ne p1, p0, :cond_0
 
-    move-object v0, p2
+    return v0
 
-    check-cast v0, Llvt;
+    :cond_0
+    instance-of v1, p1, Llvu;
 
-    iget v1, v0, Llvt;->b:I
+    const/4 v2, 0x0
 
-    const/high16 v2, -0x80000000
+    if-eqz v1, :cond_3
 
-    and-int v3, v1, v2
+    check-cast p1, Llvu;
 
-    if-eqz v3, :cond_0
+    iget-object v1, p0, Llvu;->a:Ljava/lang/String;
 
-    sub-int/2addr v1, v2
+    iget-object v3, p1, Llvu;->a:Ljava/lang/String;
 
-    iput v1, v0, Llvt;->b:I
+    invoke-virtual {v1, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_3
+
+    iget-object v1, p0, Llvu;->b:Ljava/lang/Throwable;
+
+    iget-object p1, p1, Llvu;->b:Ljava/lang/Throwable;
+
+    if-nez v1, :cond_1
+
+    if-nez p1, :cond_3
+
+    goto :goto_0
+
+    :cond_1
+    invoke-virtual {v1, p1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+
+    move-result p1
+
+    if-nez p1, :cond_2
+
+    goto :goto_1
+
+    :cond_2
+    :goto_0
+    return v0
+
+    :cond_3
+    :goto_1
+    return v2
+.end method
+
+.method public final hashCode()I
+    .locals 2
+
+    iget-object v0, p0, Llvu;->a:Ljava/lang/String;
+
+    invoke-virtual {v0}, Ljava/lang/String;->hashCode()I
+
+    move-result v0
+
+    const v1, 0xf4243
+
+    xor-int/2addr v0, v1
+
+    mul-int v0, v0, v1
+
+    iget-object v1, p0, Llvu;->b:Ljava/lang/Throwable;
+
+    if-nez v1, :cond_0
+
+    const/4 v1, 0x0
 
     goto :goto_0
 
     :cond_0
-    new-instance v0, Llvt;
+    invoke-virtual {v1}, Ljava/lang/Object;->hashCode()I
 
-    invoke-direct {v0, p0, p2}, Llvt;-><init>(Llvu;Loku;)V
+    move-result v1
 
     :goto_0
-    iget-object p2, v0, Llvt;->a:Ljava/lang/Object;
+    xor-int/2addr v0, v1
 
-    sget-object v1, Lolc;->a:Lolc;
+    return v0
+.end method
 
-    iget v2, v0, Llvt;->b:I
+.method public final toString()Ljava/lang/String;
+    .locals 5
 
-    packed-switch v2, :pswitch_data_0
+    iget-object v0, p0, Llvu;->a:Ljava/lang/String;
 
-    new-instance p1, Ljava/lang/IllegalStateException;
+    iget-object v1, p0, Llvu;->b:Ljava/lang/Throwable;
 
-    const-string p2, "call to \'resume\' before \'invoke\' with coroutine"
+    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
-    invoke-direct {p1, p2}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+    move-result-object v1
 
-    throw p1
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
-    :pswitch_0
-    invoke-static {p2}, Lljr;->aO(Ljava/lang/Object;)V
+    move-result-object v2
 
-    goto :goto_2
+    invoke-virtual {v2}, Ljava/lang/String;->length()I
 
-    :pswitch_1
-    iget-object p1, v0, Llvt;->d:Ljava/lang/Object;
+    move-result v2
 
-    iget-object v2, v0, Llvt;->e:Lotu;
-
-    invoke-static {p2}, Lljr;->aO(Ljava/lang/Object;)V
-
-    goto :goto_1
-
-    :pswitch_2
-    invoke-static {p2}, Lljr;->aO(Ljava/lang/Object;)V
-
-    iget-object v2, p0, Llvu;->a:Lotu;
-
-    iget-object p2, p0, Llvu;->b:Loni;
-
-    iget-boolean v3, p2, Loni;->a:Z
-
-    if-eqz v3, :cond_2
-
-    const/4 v3, 0x0
-
-    iput-boolean v3, p2, Loni;->a:Z
-
-    iget-object p2, p0, Llvu;->c:Llvy;
-
-    iget-object p2, p2, Llvy;->a:Llzz;
-
-    iget-object v3, p0, Llvu;->d:Llzy;
-
-    invoke-static {v3}, Llzy;->d(Llzy;)Llur;
+    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v3
 
-    iput-object v2, v0, Llvt;->e:Lotu;
+    invoke-virtual {v3}, Ljava/lang/String;->length()I
 
-    iput-object p1, v0, Llvt;->d:Ljava/lang/Object;
+    move-result v3
 
-    const/4 v4, 0x1
+    new-instance v4, Ljava/lang/StringBuilder;
 
-    iput v4, v0, Llvt;->b:I
+    add-int/lit8 v2, v2, 0x26
 
-    invoke-virtual {p2, v3, v0}, Llzz;->a(Llur;Loku;)Ljava/lang/Object;
+    add-int/2addr v2, v3
 
-    move-result-object p2
+    invoke-direct {v4, v2}, Ljava/lang/StringBuilder;-><init>(I)V
 
-    if-eq p2, v1, :cond_1
+    const-string v2, "CameraIdFailure{cameraId="
 
-    goto :goto_1
+    invoke-virtual {v4, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    :cond_1
-    return-object v1
+    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    :cond_2
-    :goto_1
-    const/4 p2, 0x0
+    const-string v0, ", exception="
 
-    iput-object p2, v0, Llvt;->e:Lotu;
+    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iput-object p2, v0, Llvt;->d:Ljava/lang/Object;
+    invoke-virtual {v4, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const/4 p2, 0x2
+    const-string v0, "}"
 
-    iput p2, v0, Llvt;->b:I
+    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-interface {v2, p1, v0}, Lotu;->a(Ljava/lang/Object;Loku;)Ljava/lang/Object;
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object p1
+    move-result-object v0
 
-    if-ne p1, v1, :cond_3
-
-    return-object v1
-
-    :cond_3
-    :goto_2
-    sget-object p1, Lojk;->a:Lojk;
-
-    return-object p1
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_2
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
+    return-object v0
 .end method

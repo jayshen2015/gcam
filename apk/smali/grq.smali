@@ -1,74 +1,59 @@
-.class Lgrq;
-.super Lgrn;
+.class final Lgrq;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field final synthetic b:Lgrr;
+.field final synthetic a:Lgrr;
 
 
 # direct methods
 .method public constructor <init>(Lgrr;)V
     .locals 0
 
-    iput-object p1, p0, Lgrq;->b:Lgrr;
+    iput-object p1, p0, Lgrq;->a:Lgrr;
 
-    invoke-direct {p0}, Lgrn;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public b()V
-    .locals 0
+.method public final run()V
+    .locals 12
 
-    return-void
-.end method
+    iget-object v0, p0, Lgrq;->a:Lgrr;
 
-.method public final f()V
-    .locals 2
+    iget-object v1, v0, Lgrr;->a:Lfjs;
 
-    iget-object v0, p0, Lgrq;->b:Lgrr;
+    invoke-static {}, Loom;->l()Loom;
 
-    iget-object v0, v0, Lgrr;->a:Lcom/google/android/apps/camera/progressoverlay/ProgressOverlay;
+    move-result-object v8
 
-    const/4 v1, 0x0
+    invoke-static {}, Loom;->l()Loom;
 
-    invoke-virtual {v0, v1}, Lcom/google/android/apps/camera/progressoverlay/ProgressOverlay;->setVisibility(I)V
+    move-result-object v9
 
-    iget-object v0, p0, Lgrq;->b:Lgrr;
+    sget-object v10, Llju;->m:Llju;
 
-    const/4 v1, 0x1
+    const/4 v2, 0x1
 
-    iput-boolean v1, v0, Lgrr;->b:Z
+    const-string v3, "api2_lost_images"
 
-    iget-object v0, v0, Lgrr;->c:Landroid/graphics/drawable/AnimatedVectorDrawable;
+    const/4 v4, 0x0
 
-    invoke-virtual {v0}, Landroid/graphics/drawable/AnimatedVectorDrawable;->start()V
+    const/4 v5, -0x1
 
-    return-void
-.end method
+    const/4 v6, -0x1
 
-.method public final g()V
-    .locals 2
+    const/4 v7, 0x0
 
-    iget-object v0, p0, Lgrq;->b:Lgrr;
+    const/4 v11, 0x0
 
-    const/4 v1, 0x0
-
-    iput-boolean v1, v0, Lgrr;->b:Z
-
-    iget-object v0, v0, Lgrr;->c:Landroid/graphics/drawable/AnimatedVectorDrawable;
-
-    invoke-virtual {v0}, Landroid/graphics/drawable/AnimatedVectorDrawable;->stop()V
-
-    iget-object v0, p0, Lgrq;->b:Lgrr;
-
-    iget-object v0, v0, Lgrr;->a:Lcom/google/android/apps/camera/progressoverlay/ProgressOverlay;
-
-    const/16 v1, 0x8
-
-    invoke-virtual {v0, v1}, Lcom/google/android/apps/camera/progressoverlay/ProgressOverlay;->setVisibility(I)V
+    invoke-interface/range {v1 .. v11}, Lfjs;->S(ILjava/lang/String;Ljava/lang/Throwable;IIILjava/util/List;Ljava/util/List;Llju;Z)V
 
     return-void
 .end method

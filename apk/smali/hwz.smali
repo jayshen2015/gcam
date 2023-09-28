@@ -1,19 +1,19 @@
-.class public final Lhwz;
+.class final Lhwz;
 .super Ljava/lang/Object;
 
 
 # instance fields
-.field private a:Z
+.field public a:Liap;
 
-.field private b:Z
+.field private b:Ljava/lang/Boolean;
 
-.field private c:Z
+.field private c:Ljava/lang/Boolean;
 
-.field private d:Ljvs;
+.field private d:Ljava/lang/Boolean;
 
-.field private e:Ljvs;
+.field private e:Ljava/lang/Boolean;
 
-.field private f:B
+.field private f:I
 
 
 # direct methods
@@ -30,36 +30,62 @@
 .method public final a()Lhxa;
     .locals 8
 
-    iget-byte v0, p0, Lhwz;->f:B
+    iget-object v1, p0, Lhwz;->a:Liap;
 
-    const/4 v1, 0x7
+    if-eqz v1, :cond_1
 
-    if-ne v0, v1, :cond_1
+    iget v2, p0, Lhwz;->f:I
 
-    iget-object v6, p0, Lhwz;->d:Ljvs;
+    if-eqz v2, :cond_1
 
-    if-eqz v6, :cond_1
+    iget-object v0, p0, Lhwz;->b:Ljava/lang/Boolean;
 
-    iget-object v7, p0, Lhwz;->e:Ljvs;
+    if-eqz v0, :cond_1
 
-    if-nez v7, :cond_0
+    iget-object v3, p0, Lhwz;->c:Ljava/lang/Boolean;
+
+    if-eqz v3, :cond_1
+
+    iget-object v3, p0, Lhwz;->d:Ljava/lang/Boolean;
+
+    if-eqz v3, :cond_1
+
+    iget-object v3, p0, Lhwz;->e:Ljava/lang/Boolean;
+
+    if-nez v3, :cond_0
 
     goto :goto_0
 
     :cond_0
-    new-instance v0, Lhxa;
+    new-instance v7, Lhxa;
 
-    iget-boolean v3, p0, Lhwz;->a:Z
+    invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
 
-    iget-boolean v4, p0, Lhwz;->b:Z
+    move-result v3
 
-    iget-boolean v5, p0, Lhwz;->c:Z
+    iget-object v0, p0, Lhwz;->c:Ljava/lang/Boolean;
 
-    move-object v2, v0
+    invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
 
-    invoke-direct/range {v2 .. v7}, Lhxa;-><init>(ZZZLjvs;Ljvs;)V
+    move-result v4
 
-    return-object v0
+    iget-object v0, p0, Lhwz;->d:Ljava/lang/Boolean;
+
+    invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
+
+    move-result v5
+
+    iget-object v0, p0, Lhwz;->e:Ljava/lang/Boolean;
+
+    invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
+
+    move-result v6
+
+    move-object v0, v7
+
+    invoke-direct/range {v0 .. v6}, Lhxa;-><init>(Liap;IZZZZ)V
+
+    return-object v7
 
     :cond_1
     :goto_0
@@ -67,66 +93,87 @@
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    iget-byte v1, p0, Lhwz;->f:B
-
-    and-int/lit8 v1, v1, 0x1
+    iget-object v1, p0, Lhwz;->a:Liap;
 
     if-nez v1, :cond_2
 
-    const-string v1, " showOutputTimer"
+    const-string v1, " entry"
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     :cond_2
-    iget-byte v1, p0, Lhwz;->f:B
-
-    and-int/lit8 v1, v1, 0x2
+    iget v1, p0, Lhwz;->f:I
 
     if-nez v1, :cond_3
 
-    const-string v1, " showMutedAudioIcon"
+    const-string v1, " zoomUiMode"
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     :cond_3
-    iget-byte v1, p0, Lhwz;->f:B
-
-    and-int/lit8 v1, v1, 0x4
+    iget-object v1, p0, Lhwz;->b:Ljava/lang/Boolean;
 
     if-nez v1, :cond_4
 
-    const-string v1, " showSpeechEnhanceIcon"
+    const-string v1, " isLayoutUpdate"
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     :cond_4
-    iget-object v1, p0, Lhwz;->d:Ljvs;
+    iget-object v1, p0, Lhwz;->c:Ljava/lang/Boolean;
 
     if-nez v1, :cond_5
 
-    const-string v1, " showMicInputExtWired"
+    const-string v1, " isZoomInViewfinder"
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     :cond_5
-    iget-object v1, p0, Lhwz;->e:Ljvs;
+    iget-object v1, p0, Lhwz;->d:Ljava/lang/Boolean;
 
     if-nez v1, :cond_6
 
-    const-string v1, " showMicInputExtBluetooth"
+    const-string v1, " isVideoControlUiVisible"
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     :cond_6
+    iget-object v1, p0, Lhwz;->e:Ljava/lang/Boolean;
+
+    if-nez v1, :cond_7
+
+    const-string v1, " isZoomToggleEnabled"
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    :cond_7
     new-instance v1, Ljava/lang/IllegalStateException;
 
-    invoke-virtual {v0}, Ljava/lang/Object;->toString()Ljava/lang/String;
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v0
 
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/String;->length()I
+
+    move-result v2
+
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    add-int/lit8 v2, v2, 0x1c
+
+    invoke-direct {v3, v2}, Ljava/lang/StringBuilder;-><init>(I)V
+
     const-string v2, "Missing required properties:"
 
-    invoke-virtual {v2, v0}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
+    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v0
 
@@ -135,56 +182,38 @@
     throw v1
 .end method
 
-.method public final b(Ljvs;)V
-    .locals 1
+.method public final b(Z)V
+    .locals 0
 
-    if-eqz p1, :cond_0
+    invoke-static {p1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
-    iput-object p1, p0, Lhwz;->e:Ljvs;
+    move-result-object p1
+
+    iput-object p1, p0, Lhwz;->b:Ljava/lang/Boolean;
 
     return-void
-
-    :cond_0
-    new-instance p1, Ljava/lang/NullPointerException;
-
-    const-string v0, "Null showMicInputExtBluetooth"
-
-    invoke-direct {p1, v0}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
-
-    throw p1
 .end method
 
-.method public final c(Ljvs;)V
-    .locals 1
+.method public final c(Z)V
+    .locals 0
 
-    if-eqz p1, :cond_0
+    invoke-static {p1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
-    iput-object p1, p0, Lhwz;->d:Ljvs;
+    move-result-object p1
+
+    iput-object p1, p0, Lhwz;->d:Ljava/lang/Boolean;
 
     return-void
-
-    :cond_0
-    new-instance p1, Ljava/lang/NullPointerException;
-
-    const-string v0, "Null showMicInputExtWired"
-
-    invoke-direct {p1, v0}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
-
-    throw p1
 .end method
 
 .method public final d(Z)V
     .locals 0
 
-    iput-boolean p1, p0, Lhwz;->b:Z
+    invoke-static {p1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
-    iget-byte p1, p0, Lhwz;->f:B
+    move-result-object p1
 
-    or-int/lit8 p1, p1, 0x2
-
-    int-to-byte p1, p1
-
-    iput-byte p1, p0, Lhwz;->f:B
+    iput-object p1, p0, Lhwz;->c:Ljava/lang/Boolean;
 
     return-void
 .end method
@@ -192,31 +221,30 @@
 .method public final e(Z)V
     .locals 0
 
-    iput-boolean p1, p0, Lhwz;->a:Z
+    invoke-static {p1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
-    iget-byte p1, p0, Lhwz;->f:B
+    move-result-object p1
 
-    or-int/lit8 p1, p1, 0x1
-
-    int-to-byte p1, p1
-
-    iput-byte p1, p0, Lhwz;->f:B
+    iput-object p1, p0, Lhwz;->e:Ljava/lang/Boolean;
 
     return-void
 .end method
 
-.method public final f(Z)V
-    .locals 0
+.method public final f(I)V
+    .locals 1
 
-    iput-boolean p1, p0, Lhwz;->c:Z
+    if-eqz p1, :cond_0
 
-    iget-byte p1, p0, Lhwz;->f:B
-
-    or-int/lit8 p1, p1, 0x4
-
-    int-to-byte p1, p1
-
-    iput-byte p1, p0, Lhwz;->f:B
+    iput p1, p0, Lhwz;->f:I
 
     return-void
+
+    :cond_0
+    new-instance p1, Ljava/lang/NullPointerException;
+
+    const-string v0, "Null zoomUiMode"
+
+    invoke-direct {p1, v0}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
+
+    throw p1
 .end method

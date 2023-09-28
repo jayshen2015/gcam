@@ -1,81 +1,42 @@
 .class public final Lkpp;
 .super Ljava/lang/Object;
 
-# interfaces
-.implements Logk;
 
+# static fields
+.field public static final a:Lkif;
 
-# instance fields
-.field private final a:Loiw;
-
-.field private final b:Loiw;
-
-.field private final c:Loiw;
-
-.field private final d:Loiw;
-
-.field private final e:Loiw;
-
-.field private final f:Loiw;
-
-.field private final g:Loiw;
+.field public static final b:Lmip;
 
 
 # direct methods
-.method public constructor <init>(Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 9
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance v2, Lkpo;
 
-    iput-object p1, p0, Lkpp;->a:Loiw;
+    invoke-direct {v2}, Lkpo;-><init>()V
 
-    iput-object p2, p0, Lkpp;->b:Loiw;
+    sput-object v2, Lkpp;->b:Lmip;
 
-    iput-object p3, p0, Lkpp;->c:Loiw;
+    new-instance v8, Lkif;
 
-    iput-object p4, p0, Lkpp;->d:Loiw;
+    const-string v1, "Help.API"
 
-    iput-object p5, p0, Lkpp;->e:Loiw;
+    const/4 v3, 0x0
 
-    iput-object p6, p0, Lkpp;->f:Loiw;
+    const/4 v4, 0x0
 
-    iput-object p7, p0, Lkpp;->g:Loiw;
+    const/4 v5, 0x0
+
+    const/4 v6, 0x0
+
+    const/4 v7, 0x0
+
+    move-object v0, v8
+
+    invoke-direct/range {v0 .. v7}, Lkif;-><init>(Ljava/lang/String;Lmip;[B[B[B[B[B)V
+
+    sput-object v8, Lkpp;->a:Lkif;
 
     return-void
-.end method
-
-
-# virtual methods
-.method public final a()Lkpo;
-    .locals 8
-
-    iget-object v1, p0, Lkpp;->a:Loiw;
-
-    iget-object v2, p0, Lkpp;->b:Loiw;
-
-    iget-object v3, p0, Lkpp;->c:Loiw;
-
-    iget-object v4, p0, Lkpp;->e:Loiw;
-
-    iget-object v5, p0, Lkpp;->f:Loiw;
-
-    iget-object v6, p0, Lkpp;->g:Loiw;
-
-    new-instance v7, Lkpo;
-
-    move-object v0, v7
-
-    invoke-direct/range {v0 .. v6}, Lkpo;-><init>(Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;)V
-
-    return-object v7
-.end method
-
-.method public final bridge synthetic get()Ljava/lang/Object;
-    .locals 1
-
-    invoke-virtual {p0}, Lkpp;->a()Lkpo;
-
-    move-result-object v0
-
-    return-object v0
 .end method

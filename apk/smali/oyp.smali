@@ -1,166 +1,216 @@
-.class public final Loyp;
-.super Lnws;
+.class final Loyp;
+.super Loyh;
 
 # interfaces
-.implements Lnxz;
-
-
-# static fields
-.field public static final c:Loyp;
-
-.field private static volatile d:Lnyf;
+.implements Ljava/io/Serializable;
 
 
 # instance fields
-.field public a:I
+.field private final a:Ljava/security/MessageDigest;
 
-.field public b:Z
+.field private final b:I
+
+.field private final c:Z
+
+.field private final d:Ljava/lang/String;
 
 
 # direct methods
-.method static constructor <clinit>()V
+.method public constructor <init>()V
     .locals 2
 
-    new-instance v0, Loyp;
+    invoke-direct {p0}, Loyh;-><init>()V
 
-    invoke-direct {v0}, Loyp;-><init>()V
+    const-string v0, "SHA-256"
 
-    sput-object v0, Loyp;->c:Loyp;
+    invoke-static {v0}, Loyp;->b(Ljava/lang/String;)Ljava/security/MessageDigest;
 
-    const-class v1, Loyp;
+    move-result-object v0
 
-    invoke-static {v1, v0}, Lnws;->aa(Ljava/lang/Class;Lnws;)V
+    iput-object v0, p0, Loyp;->a:Ljava/security/MessageDigest;
+
+    invoke-virtual {v0}, Ljava/security/MessageDigest;->getDigestLength()I
+
+    move-result v1
+
+    iput v1, p0, Loyp;->b:I
+
+    const-string v1, "Hashing.sha256()"
+
+    iput-object v1, p0, Loyp;->d:Ljava/lang/String;
+
+    invoke-static {v0}, Loyp;->c(Ljava/security/MessageDigest;)Z
+
+    move-result v0
+
+    iput-boolean v0, p0, Loyp;->c:Z
 
     return-void
 .end method
 
-.method private constructor <init>()V
-    .locals 0
+.method public constructor <init>(Ljava/lang/String;I)V
+    .locals 3
 
-    invoke-direct {p0}, Lnws;-><init>()V
+    invoke-direct {p0}, Loyh;-><init>()V
+
+    const-string v0, "Hashing.sha256()"
+
+    iput-object v0, p0, Loyp;->d:Ljava/lang/String;
+
+    invoke-static {p1}, Loyp;->b(Ljava/lang/String;)Ljava/security/MessageDigest;
+
+    move-result-object p1
+
+    iput-object p1, p0, Loyp;->a:Ljava/security/MessageDigest;
+
+    invoke-virtual {p1}, Ljava/security/MessageDigest;->getDigestLength()I
+
+    move-result v0
+
+    const/4 v1, 0x0
+
+    const/4 v2, 0x4
+
+    if-lt p2, v2, :cond_0
+
+    if-gt p2, v0, :cond_0
+
+    const/4 v1, 0x1
+
+    goto :goto_0
+
+    :cond_0
+    :goto_0
+    const-string v2, "bytes (%s) must be >= 4 and < %s"
+
+    invoke-static {v1, v2, p2, v0}, Lobr;->aL(ZLjava/lang/String;II)V
+
+    iput p2, p0, Loyp;->b:I
+
+    invoke-static {p1}, Loyp;->c(Ljava/security/MessageDigest;)Z
+
+    move-result p1
+
+    iput-boolean p1, p0, Loyp;->c:Z
 
     return-void
+.end method
+
+.method private static b(Ljava/lang/String;)Ljava/security/MessageDigest;
+    .locals 1
+
+    :try_start_0
+    invoke-static {p0}, Ljava/security/MessageDigest;->getInstance(Ljava/lang/String;)Ljava/security/MessageDigest;
+
+    move-result-object p0
+    :try_end_0
+    .catch Ljava/security/NoSuchAlgorithmException; {:try_start_0 .. :try_end_0} :catch_0
+
+    return-object p0
+
+    :catch_0
+    move-exception p0
+
+    new-instance v0, Ljava/lang/AssertionError;
+
+    invoke-direct {v0, p0}, Ljava/lang/AssertionError;-><init>(Ljava/lang/Object;)V
+
+    throw v0
+.end method
+
+.method private static c(Ljava/security/MessageDigest;)Z
+    .locals 0
+
+    :try_start_0
+    invoke-virtual {p0}, Ljava/security/MessageDigest;->clone()Ljava/lang/Object;
+    :try_end_0
+    .catch Ljava/lang/CloneNotSupportedException; {:try_start_0 .. :try_end_0} :catch_0
+
+    const/4 p0, 0x1
+
+    return p0
+
+    :catch_0
+    move-exception p0
+
+    const/4 p0, 0x0
+
+    return p0
 .end method
 
 
 # virtual methods
-.method protected final a(ILjava/lang/Object;)Ljava/lang/Object;
+.method public final a()Loxh;
     .locals 3
 
-    add-int/lit8 p1, p1, -0x1
+    iget-boolean v0, p0, Loyp;->c:Z
 
-    const/4 p2, 0x1
-
-    packed-switch p1, :pswitch_data_0
-
-    :pswitch_0
-    const/4 p1, 0x0
-
-    return-object p1
-
-    :pswitch_1
-    sget-object p1, Loyp;->d:Lnyf;
-
-    if-nez p1, :cond_1
-
-    const-class p2, Loyp;
-
-    monitor-enter p2
+    if-eqz v0, :cond_0
 
     :try_start_0
-    sget-object p1, Loyp;->d:Lnyf;
+    new-instance v0, Loyn;
 
-    if-nez p1, :cond_0
+    iget-object v1, p0, Loyp;->a:Ljava/security/MessageDigest;
 
-    new-instance p1, Lnwo;
+    invoke-virtual {v1}, Ljava/security/MessageDigest;->clone()Ljava/lang/Object;
 
-    sget-object v0, Loyp;->c:Loyp;
+    move-result-object v1
 
-    invoke-direct {p1, v0}, Lnwo;-><init>(Lnws;)V
+    check-cast v1, Ljava/security/MessageDigest;
 
-    sput-object p1, Loyp;->d:Lnyf;
+    iget v2, p0, Loyp;->b:I
+
+    invoke-direct {v0, v1, v2}, Loyn;-><init>(Ljava/security/MessageDigest;I)V
+    :try_end_0
+    .catch Ljava/lang/CloneNotSupportedException; {:try_start_0 .. :try_end_0} :catch_0
+
+    return-object v0
+
+    :catch_0
+    move-exception v0
 
     :cond_0
-    monitor-exit p2
+    new-instance v0, Loyn;
 
-    goto :goto_0
+    iget-object v1, p0, Loyp;->a:Ljava/security/MessageDigest;
 
-    :catchall_0
-    move-exception p1
+    invoke-virtual {v1}, Ljava/security/MessageDigest;->getAlgorithm()Ljava/lang/String;
 
-    monitor-exit p2
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    move-result-object v1
 
-    throw p1
+    invoke-static {v1}, Loyp;->b(Ljava/lang/String;)Ljava/security/MessageDigest;
 
-    :cond_1
-    :goto_0
-    return-object p1
+    move-result-object v1
 
-    :pswitch_2
-    sget-object p1, Loyp;->c:Loyp;
+    iget v2, p0, Loyp;->b:I
 
-    return-object p1
+    invoke-direct {v0, v1, v2}, Loyn;-><init>(Ljava/security/MessageDigest;I)V
 
-    :pswitch_3
-    new-instance p1, Lnwn;
+    return-object v0
+.end method
 
-    sget-object p2, Loyp;->c:Loyp;
+.method public final toString()Ljava/lang/String;
+    .locals 1
 
-    invoke-direct {p1, p2}, Lnwn;-><init>(Lnws;)V
+    iget-object v0, p0, Loyp;->d:Ljava/lang/String;
 
-    return-object p1
+    return-object v0
+.end method
 
-    :pswitch_4
-    new-instance p1, Loyp;
+.method writeReplace()Ljava/lang/Object;
+    .locals 3
 
-    invoke-direct {p1}, Loyp;-><init>()V
+    new-instance v0, Loyo;
 
-    return-object p1
+    iget-object v1, p0, Loyp;->a:Ljava/security/MessageDigest;
 
-    :pswitch_5
-    const-string p1, "a"
+    invoke-virtual {v1}, Ljava/security/MessageDigest;->getAlgorithm()Ljava/lang/String;
 
-    const-string v0, "\u0001\u0001\u0000\u0001\u0001\u0001\u0001\u0000\u0000\u0000\u0001\u1007\u0000"
+    move-result-object v1
 
-    const/4 v1, 0x2
+    iget v2, p0, Loyp;->b:I
 
-    new-array v1, v1, [Ljava/lang/Object;
+    invoke-direct {v0, v1, v2}, Loyo;-><init>(Ljava/lang/String;I)V
 
-    const/4 v2, 0x0
-
-    aput-object p1, v1, v2
-
-    const-string p1, "b"
-
-    aput-object p1, v1, p2
-
-    sget-object p1, Loyp;->c:Loyp;
-
-    invoke-static {p1, v0, v1}, Loyp;->X(Lnxy;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object p1
-
-    return-object p1
-
-    :pswitch_6
-    invoke-static {p2}, Ljava/lang/Byte;->valueOf(B)Ljava/lang/Byte;
-
-    move-result-object p1
-
-    return-object p1
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_6
-        :pswitch_0
-        :pswitch_5
-        :pswitch_4
-        :pswitch_3
-        :pswitch_2
-        :pswitch_1
-    .end packed-switch
+    return-object v0
 .end method

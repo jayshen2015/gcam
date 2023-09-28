@@ -1,33 +1,47 @@
-.class public final synthetic Lgfx;
+.class public Lgfx;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lchr;
-
-
-# instance fields
-.field public final synthetic a:Lgfy;
+.implements Lgft;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lgfy;)V
+.method public constructor <init>()V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lgfx;->a:Lgfy;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Ljava/lang/Throwable;)V
+.method public A()V
     .locals 0
 
-    iget-object p1, p0, Lgfx;->a:Lgfy;
+    return-void
+.end method
 
-    invoke-virtual {p1}, Lgfy;->a()V
+.method public B()V
+    .locals 0
+
+    return-void
+.end method
+
+.method public D(F)V
+    .locals 0
+
+    return-void
+.end method
+
+.method public E(FI)V
+    .locals 0
+
+    return-void
+.end method
+
+.method public F(FJ)V
+    .locals 0
 
     return-void
 .end method

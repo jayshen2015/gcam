@@ -1,608 +1,634 @@
-.class public final synthetic Lepm;
+.class public final Lepm;
 .super Ljava/lang/Object;
 
-# interfaces
-.implements Ljava/lang/Runnable;
+
+# static fields
+.field public static final a:Louj;
 
 
 # instance fields
-.field public final synthetic a:J
+.field public final b:Ljava/lang/Object;
 
-.field public final synthetic b:Ljava/lang/Object;
+.field public final c:Lcom/google/googlex/gcam/lasagna/LasagnaNativeProcessorJni;
 
-.field private final synthetic c:I
+.field public d:J
 
 
 # direct methods
-.method public synthetic constructor <init>(JLjava/util/concurrent/ExecutorService;I)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 1
 
-    iput p4, p0, Lepm;->c:I
+    const-string v0, "com/google/android/apps/camera/lasagna/LasagnaNativeProcessor"
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-static {v0}, Louj;->h(Ljava/lang/String;)Louj;
 
-    iput-wide p1, p0, Lepm;->a:J
+    move-result-object v0
 
-    iput-object p3, p0, Lepm;->b:Ljava/lang/Object;
-
-    return-void
-.end method
-
-.method public synthetic constructor <init>(JLnsx;I)V
-    .locals 0
-
-    iput p4, p0, Lepm;->c:I
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-wide p1, p0, Lepm;->a:J
-
-    iput-object p3, p0, Lepm;->b:Ljava/lang/Object;
+    sput-object v0, Lepm;->a:Louj;
 
     return-void
 .end method
 
-.method public synthetic constructor <init>(Lfeu;JI)V
-    .locals 0
-
-    iput p4, p0, Lepm;->c:I
+.method public constructor <init>()V
+    .locals 2
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lepm;->b:Ljava/lang/Object;
+    new-instance v0, Ljava/lang/Object;
 
-    iput-wide p2, p0, Lepm;->a:J
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
-    return-void
-.end method
+    iput-object v0, p0, Lepm;->b:Ljava/lang/Object;
 
-.method public synthetic constructor <init>(Lffo;JI)V
-    .locals 0
+    new-instance v0, Lcom/google/googlex/gcam/lasagna/LasagnaNativeProcessorJni;
 
-    iput p4, p0, Lepm;->c:I
+    invoke-direct {v0}, Lcom/google/googlex/gcam/lasagna/LasagnaNativeProcessorJni;-><init>()V
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object v0, p0, Lepm;->c:Lcom/google/googlex/gcam/lasagna/LasagnaNativeProcessorJni;
 
-    iput-object p1, p0, Lepm;->b:Ljava/lang/Object;
+    const-wide/16 v0, 0x0
 
-    iput-wide p2, p0, Lepm;->a:J
-
-    return-void
-.end method
-
-.method public synthetic constructor <init>(Lfpo;JI)V
-    .locals 0
-
-    iput p4, p0, Lepm;->c:I
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lepm;->b:Ljava/lang/Object;
-
-    iput-wide p2, p0, Lepm;->a:J
-
-    return-void
-.end method
-
-.method public synthetic constructor <init>(Lfrn;JI)V
-    .locals 0
-
-    iput p4, p0, Lepm;->c:I
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lepm;->b:Ljava/lang/Object;
-
-    iput-wide p2, p0, Lepm;->a:J
-
-    return-void
-.end method
-
-.method public synthetic constructor <init>(Lgcl;JI)V
-    .locals 0
-
-    iput p4, p0, Lepm;->c:I
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lepm;->b:Ljava/lang/Object;
-
-    iput-wide p2, p0, Lepm;->a:J
+    iput-wide v0, p0, Lepm;->d:J
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final run()V
-    .locals 11
+.method public final declared-synchronized a(I)V
+    .locals 5
 
-    iget v0, p0, Lepm;->c:I
+    monitor-enter p0
 
-    packed-switch v0, :pswitch_data_0
+    :try_start_0
+    iget-wide v0, p0, Lepm;->d:J
 
-    iget-object v0, p0, Lepm;->b:Ljava/lang/Object;
+    const-wide/16 v2, 0x0
 
-    iget-wide v1, p0, Lepm;->a:J
+    cmp-long v4, v0, v2
 
-    goto/16 :goto_2
+    if-eqz v4, :cond_0
 
-    :pswitch_0
-    iget-object v0, p0, Lepm;->b:Ljava/lang/Object;
+    iget-object v2, p0, Lepm;->c:Lcom/google/googlex/gcam/lasagna/LasagnaNativeProcessorJni;
 
-    iget-wide v1, p0, Lepm;->a:J
+    invoke-virtual {v2, v0, v1, p1}, Lcom/google/googlex/gcam/lasagna/LasagnaNativeProcessorJni;->abortShot(JI)V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    check-cast v0, Lfrn;
-
-    invoke-virtual {v0, v1, v2}, Lfrn;->d(J)V
-
-    return-void
-
-    :pswitch_1
-    iget-object v0, p0, Lepm;->b:Ljava/lang/Object;
-
-    iget-wide v1, p0, Lepm;->a:J
-
-    check-cast v0, Lfpo;
-
-    iget-object v0, v0, Lfpo;->a:Lldc;
-
-    invoke-virtual {v0}, Llbk;->c()Llcv;
-
-    move-result-object v0
-
-    check-cast v0, Llcn;
-
-    invoke-interface {v0}, Llcn;->f()Landroid/opengl/EGLDisplay;
-
-    move-result-object v3
-
-    invoke-interface {v0}, Llcn;->g()Landroid/opengl/EGLSurface;
-
-    move-result-object v0
-
-    invoke-static {v3, v0, v1, v2}, Landroid/opengl/EGLExt;->eglPresentationTimeANDROID(Landroid/opengl/EGLDisplay;Landroid/opengl/EGLSurface;J)Z
-
-    return-void
-
-    :pswitch_2
-    iget-object v0, p0, Lepm;->b:Ljava/lang/Object;
-
-    iget-wide v1, p0, Lepm;->a:J
-
-    sget-object v3, Lffp;->a:Lnak;
-
-    check-cast v0, Lffo;
-
-    iget-object v3, v0, Lffo;->h:Lnph;
-
-    invoke-virtual {v3}, Lnph;->isDone()Z
-
-    move-result v3
-
-    if-eqz v3, :cond_0
-
-    sget-object v3, Lffp;->a:Lnak;
-
-    invoke-virtual {v3}, Lnaf;->c()Lnaz;
-
-    move-result-object v3
-
-    check-cast v3, Lnah;
-
-    const/16 v4, 0x88e
-
-    invoke-interface {v3, v4}, Lnah;->G(I)Lnaz;
-
-    move-result-object v3
-
-    check-cast v3, Lnah;
-
-    iget-object v0, v0, Lffo;->h:Lnph;
-
-    invoke-static {v0}, Lnsy;->K(Ljava/util/concurrent/Future;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    const-string v4, "Trying to correct timestamp to %d but it was already set as %d"
-
-    invoke-interface {v3, v4, v1, v2, v0}, Lnah;->w(Ljava/lang/String;JLjava/lang/Object;)V
+    monitor-exit p0
 
     return-void
 
     :cond_0
-    iget-wide v3, v0, Lffo;->e:J
+    :try_start_1
+    sget-object p1, Lepm;->a:Louj;
 
-    iget-object v0, v0, Lffo;->h:Lnph;
+    invoke-virtual {p1}, Loue;->c()Lova;
 
-    invoke-static {v1, v2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+    move-result-object p1
 
-    move-result-object v1
+    const-string v0, "abortShot(): processor hasn\'t been initialized."
 
-    invoke-virtual {v0, v1}, Lnph;->e(Ljava/lang/Object;)Z
+    const/16 v1, 0x541
 
-    return-void
+    invoke-static {p1, v0, v1}, Ld;->v(Lova;Ljava/lang/String;C)V
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    :pswitch_3
-    iget-object v0, p0, Lepm;->b:Ljava/lang/Object;
-
-    iget-wide v1, p0, Lepm;->a:J
-
-    check-cast v0, Lfeu;
-
-    iget-object v3, v0, Lfeu;->f:Landroid/os/Handler;
-
-    new-instance v4, Lepm;
-
-    const/4 v5, 0x2
-
-    invoke-direct {v4, v0, v1, v2, v5}, Lepm;-><init>(Lfeu;JI)V
-
-    invoke-virtual {v3, v4}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
+    monitor-exit p0
 
     return-void
 
-    :pswitch_4
-    iget-object v0, p0, Lepm;->b:Ljava/lang/Object;
+    :catchall_0
+    move-exception p1
 
-    iget-wide v1, p0, Lepm;->a:J
+    monitor-exit p0
 
-    check-cast v0, Lfeu;
+    throw p1
+.end method
 
-    iget-object v0, v0, Lfeu;->c:Lhxb;
+.method public final declared-synchronized b()V
+    .locals 6
 
-    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
-
-    move-result-wide v3
-
-    sub-long/2addr v3, v1
-
-    invoke-interface {v0, v3, v4}, Lhxb;->h(J)V
-
-    return-void
-
-    :pswitch_5
-    iget-wide v0, p0, Lepm;->a:J
-
-    iget-object v2, p0, Lepm;->b:Ljava/lang/Object;
-
-    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
-
-    move-result-wide v3
-
-    const-wide/16 v5, 0x3a98
-
-    add-long/2addr v3, v5
-
-    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
-
-    move-result-wide v5
-
-    cmp-long v7, v5, v3
-
-    if-gez v7, :cond_1
-
-    invoke-static {}, Llat;->a()I
-
-    :cond_1
-    invoke-interface {v2}, Ljava/util/concurrent/ExecutorService;->shutdown()V
-
-    sget-boolean v2, Llat;->a:Z
-
-    invoke-static {}, Llat;->a()I
-
-    new-instance v2, Ljava/util/ArrayList;
-
-    invoke-direct {v2}, Ljava/util/ArrayList;-><init>()V
-
-    sget-object v3, Llat;->b:Ljava/util/Map;
-
-    monitor-enter v3
+    monitor-enter p0
 
     :try_start_0
-    sget-object v4, Llat;->b:Ljava/util/Map;
+    iget-object v0, p0, Lepm;->b:Ljava/lang/Object;
 
-    invoke-interface {v4}, Ljava/util/Map;->entrySet()Ljava/util/Set;
+    monitor-enter v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_1
 
-    move-result-object v4
+    :try_start_1
+    iget-wide v1, p0, Lepm;->d:J
 
-    invoke-interface {v4}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
+    const-wide/16 v3, 0x0
 
-    move-result-object v4
+    cmp-long v5, v1, v3
 
-    :cond_2
-    :goto_0
-    invoke-interface {v4}, Ljava/util/Iterator;->hasNext()Z
+    if-eqz v5, :cond_0
 
-    move-result v5
+    iget-object v5, p0, Lepm;->c:Lcom/google/googlex/gcam/lasagna/LasagnaNativeProcessorJni;
 
-    if-eqz v5, :cond_3
+    invoke-virtual {v5, v1, v2}, Lcom/google/googlex/gcam/lasagna/LasagnaNativeProcessorJni;->delete(J)V
 
-    invoke-interface {v4}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v5
-
-    check-cast v5, Ljava/util/Map$Entry;
-
-    invoke-interface {v5}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
-
-    move-result-object v6
-
-    check-cast v6, Llas;
-
-    iget-wide v6, v6, Llas;->a:J
-
-    cmp-long v8, v6, v0
-
-    if-gtz v8, :cond_2
-
-    invoke-interface {v5}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
-
-    move-result-object v5
-
-    invoke-interface {v2, v5}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+    iput-wide v3, p0, Lepm;->d:J
 
     goto :goto_0
 
-    :cond_3
-    monitor-exit v3
+    :cond_0
+    sget-object v1, Lepm;->a:Louj;
+
+    invoke-virtual {v1}, Loue;->c()Lova;
+
+    move-result-object v1
+
+    check-cast v1, Loug;
+
+    const/16 v2, 0x543
+
+    invoke-interface {v1, v2}, Loug;->G(I)Lova;
+
+    move-result-object v1
+
+    check-cast v1, Loug;
+
+    const-string v2, "Calling close() on an already closed processor."
+
+    invoke-interface {v1, v2}, Loug;->o(Ljava/lang/String;)V
+
+    :goto_0
+    monitor-exit v0
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    monitor-exit p0
+
+    return-void
+
+    :catchall_0
+    move-exception v1
+
+    :try_start_2
+    monitor-exit v0
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
+
+    :try_start_3
+    throw v1
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_1
+
+    :catchall_1
+    move-exception v0
+
+    monitor-exit p0
+
+    throw v0
+.end method
+
+.method public final declared-synchronized c(I)V
+    .locals 5
+
+    monitor-enter p0
+
+    :try_start_0
+    iget-wide v0, p0, Lepm;->d:J
+
+    const-wide/16 v2, 0x0
+
+    cmp-long v4, v0, v2
+
+    if-eqz v4, :cond_0
+
+    iget-object v2, p0, Lepm;->c:Lcom/google/googlex/gcam/lasagna/LasagnaNativeProcessorJni;
+
+    invoke-virtual {v2, v0, v1, p1}, Lcom/google/googlex/gcam/lasagna/LasagnaNativeProcessorJni;->endShot(JI)V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    invoke-interface {v2}, Ljava/util/List;->size()I
+    monitor-exit p0
 
-    move-result v0
+    return-void
 
-    const/4 v1, 0x0
+    :cond_0
+    :try_start_1
+    sget-object p1, Lepm;->a:Louj;
 
-    :goto_1
-    if-ge v1, v0, :cond_4
+    invoke-virtual {p1}, Loue;->c()Lova;
 
-    invoke-interface {v2, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
+    move-result-object p1
 
-    move-result-object v3
+    const-string v0, "endShot(): processor hasn\'t been initialized."
 
-    sget-object v4, Llat;->b:Ljava/util/Map;
+    const/16 v1, 0x545
 
-    invoke-interface {v4, v3}, Ljava/util/Map;->remove(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {p1, v0, v1}, Ld;->v(Lova;Ljava/lang/String;C)V
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    add-int/lit8 v1, v1, 0x1
+    monitor-exit p0
 
-    goto :goto_1
+    return-void
 
-    :cond_4
+    :catchall_0
+    move-exception p1
+
+    monitor-exit p0
+
+    throw p1
+.end method
+
+.method public final declared-synchronized d(IIILjava/lang/String;JLcom/google/googlex/gcam/clientallocator/InterleavedU8ClientAllocator;Lcom/google/googlex/gcam/lasagna/LasagnaCallbacks;)V
+    .locals 12
+
+    move-object v1, p0
+
+    monitor-enter p0
+
+    :try_start_0
+    iget-object v2, v1, Lepm;->b:Ljava/lang/Object;
+
+    monitor-enter v2
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_1
+
+    :try_start_1
+    iget-object v3, v1, Lepm;->c:Lcom/google/googlex/gcam/lasagna/LasagnaNativeProcessorJni;
+
+    move v4, p1
+
+    move v5, p2
+
+    move v6, p3
+
+    move-object/from16 v7, p4
+
+    move-wide/from16 v8, p5
+
+    move-object/from16 v10, p7
+
+    move-object/from16 v11, p8
+
+    invoke-virtual/range {v3 .. v11}, Lcom/google/googlex/gcam/lasagna/LasagnaNativeProcessorJni;->create(IIILjava/lang/String;JLcom/google/googlex/gcam/clientallocator/InterleavedU8ClientAllocator;Lcom/google/googlex/gcam/lasagna/LasagnaCallbacks;)J
+
+    move-result-wide v3
+
+    iput-wide v3, v1, Lepm;->d:J
+
+    const-wide/16 v5, 0x0
+
+    cmp-long v0, v3, v5
+
+    if-eqz v0, :cond_0
+
+    const/4 v0, 0x1
+
+    goto :goto_0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    :goto_0
+    invoke-static {v0}, Lobr;->aQ(Z)V
+
+    monitor-exit v2
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    monitor-exit p0
+
     return-void
 
     :catchall_0
     move-exception v0
 
-    :try_start_1
-    monitor-exit v3
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    throw v0
-
-    :pswitch_6
-    iget-wide v0, p0, Lepm;->a:J
-
-    iget-object v2, p0, Lepm;->b:Ljava/lang/Object;
-
-    sget-object v3, Lepo;->a:Lnak;
-
-    invoke-virtual {v3}, Lnaf;->c()Lnaz;
-
-    move-result-object v3
-
-    check-cast v3, Lnah;
-
-    const/16 v4, 0x6f6
-
-    invoke-interface {v3, v4}, Lnah;->G(I)Lnaz;
-
-    move-result-object v3
-
-    check-cast v3, Lnah;
-
-    const-string v4, "Couldn\'t submit frame %s."
-
-    invoke-interface {v3, v4, v0, v1}, Lnah;->q(Ljava/lang/String;J)V
-
-    check-cast v2, Lnsx;
-
-    iget-object v0, v2, Lnsx;->d:Ljava/lang/Runnable;
-
-    invoke-interface {v0}, Ljava/lang/Runnable;->run()V
-
-    return-void
-
-    :goto_2
     :try_start_2
-    move-object v3, v0
-
-    check-cast v3, Lgcl;
-
-    iget-object v3, v3, Lgcl;->g:Lkbc;
-
-    const-string v4, "waitUntilFrame"
-
-    invoke-interface {v3, v4}, Lkbc;->e(Ljava/lang/String;)V
-
-    move-object v3, v0
-
-    check-cast v3, Lgcl;
-
-    iget-object v3, v3, Lgcl;->d:Lfvt;
-
-    sget-object v4, Ljava/util/concurrent/TimeUnit;->MILLISECONDS:Ljava/util/concurrent/TimeUnit;
-
-    const-wide/16 v5, 0xa5
-
-    invoke-virtual {v4, v5, v6}, Ljava/util/concurrent/TimeUnit;->toNanos(J)J
-
-    move-result-wide v4
-
-    iget-object v6, v3, Lfvt;->a:Ljava/util/concurrent/locks/ReentrantLock;
-
-    invoke-virtual {v6}, Ljava/util/concurrent/locks/ReentrantLock;->lock()V
+    monitor-exit v2
     :try_end_2
-    .catch Ljava/lang/InterruptedException; {:try_start_2 .. :try_end_2} :catch_0
-    .catchall {:try_start_2 .. :try_end_2} :catchall_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
-    :goto_3
     :try_start_3
-    iget-wide v6, v3, Lfvt;->c:J
-
-    const-wide/16 v8, 0x0
-
-    cmp-long v10, v6, v1
-
-    if-gez v10, :cond_5
-
-    cmp-long v6, v4, v8
-
-    if-lez v6, :cond_5
-
-    iget-object v6, v3, Lfvt;->b:Ljava/util/concurrent/locks/Condition;
-
-    invoke-interface {v6, v4, v5}, Ljava/util/concurrent/locks/Condition;->awaitNanos(J)J
-
-    move-result-wide v4
+    throw v0
     :try_end_3
     .catchall {:try_start_3 .. :try_end_3} :catchall_1
 
-    goto :goto_3
+    :catchall_1
+    move-exception v0
 
-    :cond_5
-    :try_start_4
-    iget-object v3, v3, Lfvt;->a:Ljava/util/concurrent/locks/ReentrantLock;
+    monitor-exit p0
 
-    invoke-virtual {v3}, Ljava/util/concurrent/locks/ReentrantLock;->unlock()V
+    throw v0
+.end method
 
-    cmp-long v3, v4, v8
+.method public final declared-synchronized e()V
+    .locals 5
 
-    if-gtz v3, :cond_6
+    monitor-enter p0
 
-    sget-object v3, Lgcl;->a:Lnak;
+    :try_start_0
+    iget-wide v0, p0, Lepm;->d:J
 
-    invoke-virtual {v3}, Lnaf;->b()Lnaz;
+    const-wide/16 v2, 0x0
 
-    move-result-object v3
+    cmp-long v4, v0, v2
 
-    check-cast v3, Lnah;
+    if-eqz v4, :cond_0
 
-    const/16 v4, 0x9fa
+    iget-object v2, p0, Lepm;->c:Lcom/google/googlex/gcam/lasagna/LasagnaNativeProcessorJni;
 
-    invoke-interface {v3, v4}, Lnah;->G(I)Lnaz;
+    invoke-virtual {v2, v0, v1}, Lcom/google/googlex/gcam/lasagna/LasagnaNativeProcessorJni;->printDiagnosticsToLog(J)V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    move-result-object v3
-
-    check-cast v3, Lnah;
-
-    const-string v4, "Timeout waiting for frame %d"
-
-    invoke-interface {v3, v4, v1, v2}, Lnah;->q(Ljava/lang/String;J)V
-    :try_end_4
-    .catch Ljava/lang/InterruptedException; {:try_start_4 .. :try_end_4} :catch_0
-    .catchall {:try_start_4 .. :try_end_4} :catchall_2
-
-    :cond_6
-    check-cast v0, Lgcl;
-
-    iget-object v0, v0, Lgcl;->g:Lkbc;
-
-    :goto_4
-    invoke-interface {v0}, Lkbc;->f()V
+    monitor-exit p0
 
     return-void
 
-    :catchall_1
-    move-exception v4
+    :cond_0
+    :try_start_1
+    sget-object v0, Lepm;->a:Louj;
 
-    :try_start_5
-    iget-object v3, v3, Lfvt;->a:Ljava/util/concurrent/locks/ReentrantLock;
+    invoke-virtual {v0}, Loue;->c()Lova;
 
-    invoke-virtual {v3}, Ljava/util/concurrent/locks/ReentrantLock;->unlock()V
+    move-result-object v0
 
-    throw v4
-    :try_end_5
-    .catch Ljava/lang/InterruptedException; {:try_start_5 .. :try_end_5} :catch_0
-    .catchall {:try_start_5 .. :try_end_5} :catchall_2
+    const-string v1, "printDiagnostics(): processor hasn\'t been initialized."
 
-    :catchall_2
-    move-exception v1
+    const/16 v2, 0x546
 
-    goto :goto_5
+    invoke-static {v0, v1, v2}, Ld;->v(Lova;Ljava/lang/String;C)V
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    :catch_0
-    move-exception v3
+    monitor-exit p0
 
-    :try_start_6
-    sget-object v4, Lgcl;->a:Lnak;
+    return-void
 
-    invoke-virtual {v4}, Lnaf;->b()Lnaz;
+    :catchall_0
+    move-exception v0
 
-    move-result-object v4
+    monitor-exit p0
 
-    check-cast v4, Lnah;
+    throw v0
+.end method
 
-    invoke-interface {v4, v3}, Lnah;->h(Ljava/lang/Throwable;)Lnaz;
+.method public final declared-synchronized f(I)Z
+    .locals 5
 
-    move-result-object v3
+    monitor-enter p0
 
-    check-cast v3, Lnah;
+    :try_start_0
+    iget-wide v0, p0, Lepm;->d:J
 
-    const/16 v4, 0x9fb
+    const-wide/16 v2, 0x0
 
-    invoke-interface {v3, v4}, Lnah;->G(I)Lnaz;
+    cmp-long v4, v0, v2
 
-    move-result-object v3
+    if-eqz v4, :cond_0
 
-    check-cast v3, Lnah;
+    iget-object v2, p0, Lepm;->c:Lcom/google/googlex/gcam/lasagna/LasagnaNativeProcessorJni;
 
-    const-string v4, "Error waiting for frame %d"
+    invoke-virtual {v2, v0, v1, p1}, Lcom/google/googlex/gcam/lasagna/LasagnaNativeProcessorJni;->beginShot(JI)V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    invoke-interface {v3, v4, v1, v2}, Lnah;->q(Ljava/lang/String;J)V
+    const/4 p1, 0x1
 
-    invoke-static {}, Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
+    monitor-exit p0
 
-    move-result-object v1
+    return p1
 
-    invoke-virtual {v1}, Ljava/lang/Thread;->interrupt()V
-    :try_end_6
-    .catchall {:try_start_6 .. :try_end_6} :catchall_2
+    :cond_0
+    :try_start_1
+    sget-object p1, Lepm;->a:Louj;
 
-    check-cast v0, Lgcl;
+    invoke-virtual {p1}, Loue;->c()Lova;
 
-    iget-object v0, v0, Lgcl;->g:Lkbc;
+    move-result-object p1
 
-    goto :goto_4
+    const-string v0, "beginShot(): processor hasn\'t been initialized."
 
-    :goto_5
-    check-cast v0, Lgcl;
+    const/16 v1, 0x548
 
-    iget-object v0, v0, Lgcl;->g:Lkbc;
+    invoke-static {p1, v0, v1}, Ld;->v(Lova;Ljava/lang/String;C)V
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    invoke-interface {v0}, Lkbc;->f()V
+    const/4 p1, 0x0
 
-    goto :goto_7
+    monitor-exit p0
 
-    :goto_6
-    throw v1
+    return p1
 
-    :goto_7
-    goto :goto_6
+    :catchall_0
+    move-exception p1
 
-    nop
+    monitor-exit p0
 
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_6
-        :pswitch_5
-        :pswitch_4
-        :pswitch_3
-        :pswitch_2
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
+    throw p1
+.end method
+
+.method public final declared-synchronized g(ILplj;)V
+    .locals 11
+
+    monitor-enter p0
+
+    :try_start_0
+    iget-wide v1, p0, Lepm;->d:J
+
+    const-wide/16 v3, 0x0
+
+    cmp-long v0, v1, v3
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lepm;->c:Lcom/google/googlex/gcam/lasagna/LasagnaNativeProcessorJni;
+
+    iget-object v3, p2, Lplj;->a:Lcom/google/googlex/gcam/RawWriteView;
+
+    invoke-static {v3}, Lcom/google/googlex/gcam/RawWriteView;->c(Lcom/google/googlex/gcam/RawWriteView;)J
+
+    move-result-wide v4
+
+    iget-object v3, p2, Lplj;->b:Lcom/google/googlex/gcam/FrameMetadata;
+
+    invoke-static {v3}, Lcom/google/googlex/gcam/FrameMetadata;->b(Lcom/google/googlex/gcam/FrameMetadata;)J
+
+    move-result-wide v6
+
+    iget-object v3, p2, Lplj;->c:Lcom/google/googlex/gcam/SpatialGainMap;
+
+    iget-wide v8, v3, Lcom/google/googlex/gcam/SpatialGainMap;->a:J
+
+    iget-object v10, p2, Lplj;->d:Ljava/lang/Runnable;
+
+    move v3, p1
+
+    invoke-virtual/range {v0 .. v10}, Lcom/google/googlex/gcam/lasagna/LasagnaNativeProcessorJni;->processPslFrame(JIJJJLjava/lang/Runnable;)V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    monitor-exit p0
+
+    return-void
+
+    :cond_0
+    :try_start_1
+    sget-object p1, Lepm;->a:Louj;
+
+    invoke-virtual {p1}, Loue;->c()Lova;
+
+    move-result-object p1
+
+    const-string p2, "processZslBurst(): processor hasn\'t been initialized."
+
+    const/16 v0, 0x549
+
+    invoke-static {p1, p2, v0}, Ld;->v(Lova;Ljava/lang/String;C)V
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    monitor-exit p0
+
+    return-void
+
+    :catchall_0
+    move-exception p1
+
+    monitor-exit p0
+
+    throw p1
+.end method
+
+.method public final declared-synchronized h(IFIZ)Z
+    .locals 9
+
+    monitor-enter p0
+
+    :try_start_0
+    iget-wide v1, p0, Lepm;->d:J
+
+    const-wide/16 v3, 0x0
+
+    cmp-long v0, v1, v3
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lepm;->c:Lcom/google/googlex/gcam/lasagna/LasagnaNativeProcessorJni;
+
+    const/4 v4, 0x0
+
+    const/4 v7, 0x0
+
+    move v3, p1
+
+    move v5, p2
+
+    move v6, p3
+
+    move v8, p4
+
+    invoke-virtual/range {v0 .. v8}, Lcom/google/googlex/gcam/lasagna/LasagnaNativeProcessorJni;->setOptions(JIZFIZZ)V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    const/4 p1, 0x1
+
+    monitor-exit p0
+
+    return p1
+
+    :cond_0
+    :try_start_1
+    sget-object p1, Lepm;->a:Louj;
+
+    invoke-virtual {p1}, Loue;->c()Lova;
+
+    move-result-object p1
+
+    const-string p2, "setOptions(): processor hasn\'t been initialized."
+
+    const/16 p3, 0x54b
+
+    invoke-static {p1, p2, p3}, Ld;->v(Lova;Ljava/lang/String;C)V
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    const/4 p1, 0x0
+
+    monitor-exit p0
+
+    return p1
+
+    :catchall_0
+    move-exception p1
+
+    monitor-exit p0
+
+    throw p1
+.end method
+
+.method public final declared-synchronized i(ILpll;)Z
+    .locals 8
+
+    monitor-enter p0
+
+    :try_start_0
+    iget-wide v1, p0, Lepm;->d:J
+
+    const-wide/16 v3, 0x0
+
+    cmp-long v0, v1, v3
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lepm;->c:Lcom/google/googlex/gcam/lasagna/LasagnaNativeProcessorJni;
+
+    invoke-interface {p2}, Lpll;->a()J
+
+    move-result-wide v4
+
+    const-wide/16 v6, 0x0
+
+    move v3, p1
+
+    invoke-virtual/range {v0 .. v7}, Lcom/google/googlex/gcam/lasagna/LasagnaNativeProcessorJni;->processZslBurst(JIJJ)V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    const/4 p1, 0x1
+
+    monitor-exit p0
+
+    return p1
+
+    :cond_0
+    :try_start_1
+    sget-object p1, Lepm;->a:Louj;
+
+    invoke-virtual {p1}, Loue;->c()Lova;
+
+    move-result-object p1
+
+    const-string p2, "processZslBurst(): processor hasn\'t been initialized."
+
+    const/16 v0, 0x54a
+
+    invoke-static {p1, p2, v0}, Ld;->v(Lova;Ljava/lang/String;C)V
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    const/4 p1, 0x0
+
+    monitor-exit p0
+
+    return p1
+
+    :catchall_0
+    move-exception p1
+
+    monitor-exit p0
+
+    throw p1
 .end method

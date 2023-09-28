@@ -1,335 +1,203 @@
 .class public final Lbev;
 .super Ljava/lang/Object;
 
+# interfaces
+.implements Lazp;
+
 
 # instance fields
-.field public a:[B
+.field public final b:Lbew;
 
-.field public b:I
+.field public final c:Ljava/net/URL;
 
-.field private c:Ljava/lang/String;
+.field public final d:Ljava/lang/String;
+
+.field public e:Ljava/lang/String;
+
+.field public f:Ljava/net/URL;
+
+.field private volatile g:[B
+
+.field private h:I
 
 
 # direct methods
-.method public constructor <init>(I)V
-    .locals 1
+.method public constructor <init>(Ljava/lang/String;)V
+    .locals 2
+
+    sget-object v0, Lbew;->a:Lbew;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const/4 v0, 0x0
+    const/4 v1, 0x0
 
-    iput-object v0, p0, Lbev;->c:Ljava/lang/String;
+    iput-object v1, p0, Lbev;->c:Ljava/net/URL;
 
-    new-array p1, p1, [B
+    invoke-static {p1}, Laae;->u(Ljava/lang/String;)V
 
-    iput-object p1, p0, Lbev;->a:[B
+    iput-object p1, p0, Lbev;->d:Ljava/lang/String;
+
+    invoke-static {v0}, Laae;->s(Ljava/lang/Object;)Ljava/lang/Object;
+
+    iput-object v0, p0, Lbev;->b:Lbew;
+
+    return-void
+.end method
+
+.method public constructor <init>(Ljava/net/URL;)V
+    .locals 1
+
+    sget-object v0, Lbew;->a:Lbew;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    invoke-static {p1}, Laae;->s(Ljava/lang/Object;)Ljava/lang/Object;
+
+    iput-object p1, p0, Lbev;->c:Ljava/net/URL;
 
     const/4 p1, 0x0
 
-    iput p1, p0, Lbev;->b:I
+    iput-object p1, p0, Lbev;->d:Ljava/lang/String;
 
-    return-void
-.end method
+    invoke-static {v0}, Laae;->s(Ljava/lang/Object;)Ljava/lang/Object;
 
-.method public constructor <init>(Ljava/io/InputStream;)V
-    .locals 3
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    const/4 v0, 0x0
-
-    iput-object v0, p0, Lbev;->c:Ljava/lang/String;
-
-    const/4 v0, 0x0
-
-    iput v0, p0, Lbev;->b:I
-
-    const/16 v0, 0x4000
-
-    new-array v1, v0, [B
-
-    iput-object v1, p0, Lbev;->a:[B
-
-    :goto_0
-    iget-object v1, p0, Lbev;->a:[B
-
-    iget v2, p0, Lbev;->b:I
-
-    invoke-virtual {p1, v1, v2, v0}, Ljava/io/InputStream;->read([BII)I
-
-    move-result v1
-
-    if-lez v1, :cond_0
-
-    iget v2, p0, Lbev;->b:I
-
-    add-int/2addr v2, v1
-
-    iput v2, p0, Lbev;->b:I
-
-    if-ne v1, v0, :cond_0
-
-    add-int/lit16 v2, v2, 0x4000
-
-    invoke-virtual {p0, v2}, Lbev;->d(I)V
-
-    goto :goto_0
-
-    :cond_0
-    return-void
-.end method
-
-.method public constructor <init>([B)V
-    .locals 1
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    const/4 v0, 0x0
-
-    iput-object v0, p0, Lbev;->c:Ljava/lang/String;
-
-    iput-object p1, p0, Lbev;->a:[B
-
-    array-length p1, p1
-
-    iput p1, p0, Lbev;->b:I
+    iput-object v0, p0, Lbev;->b:Lbew;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Ljava/io/InputStream;
-    .locals 4
+.method public final a(Ljava/security/MessageDigest;)V
+    .locals 2
 
-    new-instance v0, Ljava/io/ByteArrayInputStream;
+    iget-object v0, p0, Lbev;->g:[B
 
-    iget-object v1, p0, Lbev;->a:[B
+    if-nez v0, :cond_0
 
-    const/4 v2, 0x0
+    invoke-virtual {p0}, Lbev;->b()Ljava/lang/String;
 
-    iget v3, p0, Lbev;->b:I
+    move-result-object v0
 
-    invoke-direct {v0, v1, v2, v3}, Ljava/io/ByteArrayInputStream;-><init>([BII)V
+    sget-object v1, Lbev;->a:Ljava/nio/charset/Charset;
 
-    return-object v0
+    invoke-virtual {v0, v1}, Ljava/lang/String;->getBytes(Ljava/nio/charset/Charset;)[B
+
+    move-result-object v0
+
+    iput-object v0, p0, Lbev;->g:[B
+
+    :cond_0
+    iget-object v0, p0, Lbev;->g:[B
+
+    invoke-virtual {p1, v0}, Ljava/security/MessageDigest;->update([B)V
+
+    return-void
 .end method
 
 .method public final b()Ljava/lang/String;
-    .locals 10
+    .locals 1
 
-    iget-object v0, p0, Lbev;->c:Ljava/lang/String;
+    iget-object v0, p0, Lbev;->d:Ljava/lang/String;
 
-    if-nez v0, :cond_d
+    if-eqz v0, :cond_0
 
-    iget v0, p0, Lbev;->b:I
-
-    const-string v1, "UTF-8"
-
-    const/4 v2, 0x2
-
-    if-ge v0, v2, :cond_0
-
-    iput-object v1, p0, Lbev;->c:Ljava/lang/String;
-
-    goto/16 :goto_5
+    return-object v0
 
     :cond_0
-    iget-object v3, p0, Lbev;->a:[B
+    iget-object v0, p0, Lbev;->c:Ljava/net/URL;
 
-    const/4 v4, 0x0
+    invoke-static {v0}, Laae;->s(Ljava/lang/Object;)Ljava/lang/Object;
 
-    aget-byte v4, v3, v4
+    invoke-virtual {v0}, Ljava/net/URL;->toString()Ljava/lang/String;
 
-    const-string v5, "UTF-32"
-
-    const/16 v6, 0xfe
-
-    const/4 v7, 0x1
-
-    const/4 v8, 0x4
-
-    const/16 v9, 0xff
-
-    if-nez v4, :cond_4
-
-    if-lt v0, v8, :cond_3
-
-    aget-byte v0, v3, v7
-
-    if-eqz v0, :cond_1
-
-    goto :goto_0
-
-    :cond_1
-    aget-byte v0, v3, v2
-
-    and-int/2addr v0, v9
-
-    if-ne v0, v6, :cond_2
-
-    const/4 v0, 0x3
-
-    aget-byte v0, v3, v0
-
-    and-int/2addr v0, v9
-
-    if-ne v0, v9, :cond_2
-
-    const-string v0, "UTF-32BE"
-
-    iput-object v0, p0, Lbev;->c:Ljava/lang/String;
-
-    goto :goto_5
-
-    :cond_2
-    iput-object v5, p0, Lbev;->c:Ljava/lang/String;
-
-    goto :goto_5
-
-    :cond_3
-    :goto_0
-    const-string v0, "UTF-16BE"
-
-    iput-object v0, p0, Lbev;->c:Ljava/lang/String;
-
-    goto :goto_5
-
-    :cond_4
-    and-int/2addr v4, v9
-
-    const/16 v9, 0x80
-
-    if-ge v4, v9, :cond_8
-
-    aget-byte v4, v3, v7
-
-    if-eqz v4, :cond_5
-
-    iput-object v1, p0, Lbev;->c:Ljava/lang/String;
-
-    goto :goto_5
-
-    :cond_5
-    if-lt v0, v8, :cond_7
-
-    aget-byte v0, v3, v2
-
-    if-eqz v0, :cond_6
-
-    goto :goto_1
-
-    :cond_6
-    const-string v0, "UTF-32LE"
-
-    goto :goto_2
-
-    :cond_7
-    :goto_1
-    const-string v0, "UTF-16LE"
-
-    :goto_2
-    iput-object v0, p0, Lbev;->c:Ljava/lang/String;
-
-    goto :goto_5
-
-    :cond_8
-    const/16 v7, 0xef
-
-    if-ne v4, v7, :cond_9
-
-    :goto_3
-    iput-object v1, p0, Lbev;->c:Ljava/lang/String;
-
-    goto :goto_5
-
-    :cond_9
-    const-string v1, "UTF-16"
-
-    if-ne v4, v6, :cond_a
-
-    goto :goto_3
-
-    :cond_a
-    if-lt v0, v8, :cond_c
-
-    aget-byte v0, v3, v2
-
-    if-eqz v0, :cond_b
-
-    goto :goto_4
-
-    :cond_b
-    iput-object v5, p0, Lbev;->c:Ljava/lang/String;
-
-    goto :goto_5
-
-    :cond_c
-    :goto_4
-    iput-object v1, p0, Lbev;->c:Ljava/lang/String;
-
-    :cond_d
-    :goto_5
-    iget-object v0, p0, Lbev;->c:Ljava/lang/String;
+    move-result-object v0
 
     return-object v0
 .end method
 
-.method public final c([B)V
-    .locals 1
-
-    array-length v0, p1
-
-    invoke-virtual {p0, p1, v0}, Lbev;->e([BI)V
-
-    return-void
-.end method
-
-.method public final d(I)V
+.method public final equals(Ljava/lang/Object;)Z
     .locals 3
 
-    iget-object v0, p0, Lbev;->a:[B
+    instance-of v0, p1, Lbev;
 
-    array-length v1, v0
+    const/4 v1, 0x0
 
-    if-le p1, v1, :cond_0
+    if-eqz v0, :cond_0
 
-    add-int p1, v1, v1
+    check-cast p1, Lbev;
 
-    new-array p1, p1, [B
+    invoke-virtual {p0}, Lbev;->b()Ljava/lang/String;
 
-    iput-object p1, p0, Lbev;->a:[B
+    move-result-object v0
 
-    const/4 v2, 0x0
+    invoke-virtual {p1}, Lbev;->b()Ljava/lang/String;
 
-    invoke-static {v0, v2, p1, v2, v1}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
+    move-result-object v2
+
+    invoke-virtual {v0, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lbev;->b:Lbew;
+
+    iget-object p1, p1, Lbev;->b:Lbew;
+
+    invoke-virtual {v0, p1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+
+    move-result p1
+
+    if-eqz p1, :cond_0
+
+    const/4 p1, 0x1
+
+    return p1
 
     :cond_0
-    return-void
+    return v1
 .end method
 
-.method public final e([BI)V
-    .locals 3
+.method public final hashCode()I
+    .locals 2
 
-    iget v0, p0, Lbev;->b:I
+    iget v0, p0, Lbev;->h:I
 
-    add-int/2addr v0, p2
+    if-nez v0, :cond_0
 
-    invoke-virtual {p0, v0}, Lbev;->d(I)V
+    invoke-virtual {p0}, Lbev;->b()Ljava/lang/String;
 
-    iget-object v0, p0, Lbev;->a:[B
+    move-result-object v0
 
-    iget v1, p0, Lbev;->b:I
+    invoke-virtual {v0}, Ljava/lang/String;->hashCode()I
 
-    const/4 v2, 0x0
+    move-result v0
 
-    invoke-static {p1, v2, v0, v1, p2}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
+    iput v0, p0, Lbev;->h:I
 
-    iget p1, p0, Lbev;->b:I
+    mul-int/lit8 v0, v0, 0x1f
 
-    add-int/2addr p1, p2
+    iget-object v1, p0, Lbev;->b:Lbew;
 
-    iput p1, p0, Lbev;->b:I
+    invoke-virtual {v1}, Ljava/lang/Object;->hashCode()I
 
-    return-void
+    move-result v1
+
+    add-int/2addr v0, v1
+
+    iput v0, p0, Lbev;->h:I
+
+    :cond_0
+    return v0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .locals 1
+
+    invoke-virtual {p0}, Lbev;->b()Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
 .end method

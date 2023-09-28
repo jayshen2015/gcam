@@ -1,50 +1,19 @@
 .class final Lbei;
 .super Ljava/lang/Object;
 
-
-# static fields
-.field static final a:Lbei;
+# interfaces
+.implements Lbeg;
 
 
 # instance fields
-.field volatile b:Ljava/lang/Thread;
-
-.field volatile c:Lbei;
+.field private final synthetic a:I
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
-
-    new-instance v0, Lbei;
-
-    const/4 v1, 0x0
-
-    invoke-direct {v0, v1}, Lbei;-><init>([B)V
-
-    sput-object v0, Lbei;->a:Lbei;
-
-    return-void
-.end method
-
-.method public constructor <init>()V
-    .locals 2
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    sget-object v0, Lbej;->b:Lbea;
-
-    invoke-static {}, Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
-
-    move-result-object v1
-
-    invoke-virtual {v0, p0, v1}, Lbea;->b(Lbei;Ljava/lang/Thread;)V
-
-    return-void
-.end method
-
-.method public constructor <init>([B)V
+.method public constructor <init>(I)V
     .locals 0
+
+    iput p1, p0, Lbei;->a:I
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -53,12 +22,52 @@
 
 
 # virtual methods
-.method final a(Lbei;)V
+.method public final a()Ljava/lang/Class;
     .locals 1
 
-    sget-object v0, Lbej;->b:Lbea;
+    iget v0, p0, Lbei;->a:I
 
-    invoke-virtual {v0, p0, p1}, Lbea;->a(Lbei;Lbei;)V
+    packed-switch v0, :pswitch_data_0
 
-    return-void
+    const-class v0, Ljava/nio/ByteBuffer;
+
+    return-object v0
+
+    :pswitch_0
+    const-class v0, Ljava/io/InputStream;
+
+    return-object v0
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
+.end method
+
+.method public final synthetic b([B)Ljava/lang/Object;
+    .locals 1
+
+    iget v0, p0, Lbei;->a:I
+
+    packed-switch v0, :pswitch_data_0
+
+    invoke-static {p1}, Ljava/nio/ByteBuffer;->wrap([B)Ljava/nio/ByteBuffer;
+
+    move-result-object p1
+
+    return-object p1
+
+    :pswitch_0
+    new-instance v0, Ljava/io/ByteArrayInputStream;
+
+    invoke-direct {v0, p1}, Ljava/io/ByteArrayInputStream;-><init>([B)V
+
+    return-object v0
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

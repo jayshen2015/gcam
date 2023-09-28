@@ -22,9 +22,9 @@
     <string name="abc_toolbar_collapse_description">Recolher</string>
     <string name="copy">Copiar</string>
     <string name="expand_button_title">Avançado</string>
-    <string name="install_type_instant">App instantâneo</string>
     <string name="not_set">Não definido</string>
-    <string name="preferences_license_title">Avisos de terceiros</string>
+    <string name="preference_copied">\"%1$s\" copiado para a área de transferência.</string>
+    <string name="preferences_license_title">Licenças de código aberto</string>
     <string name="summary_collapsed_preference_list">%1$s, %2$s</string>
     <string name="v7_preference_off">DESATIVADO</string>
     <string name="v7_preference_on">ATIVADO</string>

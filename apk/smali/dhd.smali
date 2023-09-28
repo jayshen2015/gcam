@@ -2,193 +2,355 @@
 .super Ljava/lang/Object;
 
 
-# static fields
-.field public static final a:Ldhj;
-
-.field public static final b:Ldhj;
-
-.field public static final c:Ldhj;
-
-.field public static final d:Ldhj;
-
-.field public static final e:Ldhj;
-
-.field public static final f:Ldhj;
-
-.field public static final g:Ldhj;
+# instance fields
+.field final synthetic a:Ldhg;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
+.method public constructor <init>(Ldhg;)V
+    .locals 0
 
-    new-instance v0, Lnoc;
+    iput-object p1, p0, Ldhd;->a:Ldhg;
 
-    invoke-direct {v0}, Lnoc;-><init>()V
-
-    const-string v1, "camera.face_db"
-
-    iput-object v1, v0, Lnoc;->b:Ljava/lang/Object;
-
-    invoke-virtual {v0}, Lnoc;->t()Ldhj;
-
-    move-result-object v0
-
-    sput-object v0, Ldhd;->a:Ldhj;
-
-    new-instance v0, Lnoc;
-
-    invoke-direct {v0}, Lnoc;-><init>()V
-
-    const-string v1, "camera.post_face_meta"
-
-    iput-object v1, v0, Lnoc;->b:Ljava/lang/Object;
-
-    new-instance v0, Lnoc;
-
-    invoke-direct {v0}, Lnoc;-><init>()V
-
-    const-string v1, "camera.face_db_yuv"
-
-    iput-object v1, v0, Lnoc;->b:Ljava/lang/Object;
-
-    new-instance v0, Lnoc;
-
-    invoke-direct {v0}, Lnoc;-><init>()V
-
-    const-string v1, "camera.face_db_darwinn"
-
-    iput-object v1, v0, Lnoc;->b:Ljava/lang/Object;
-
-    invoke-virtual {v0}, Lnoc;->t()Ldhj;
-
-    move-result-object v0
-
-    sput-object v0, Ldhd;->b:Ldhj;
-
-    new-instance v0, Lnoc;
-
-    invoke-direct {v0}, Lnoc;-><init>()V
-
-    const-string v1, "camera.face_db_gpu"
-
-    iput-object v1, v0, Lnoc;->b:Ljava/lang/Object;
-
-    invoke-virtual {v0}, Lnoc;->t()Ldhj;
-
-    move-result-object v0
-
-    sput-object v0, Ldhd;->c:Ldhj;
-
-    new-instance v0, Lnoc;
-
-    invoke-direct {v0}, Lnoc;-><init>()V
-
-    const-string v1, "camera.face_db_tm"
-
-    iput-object v1, v0, Lnoc;->b:Ljava/lang/Object;
-
-    invoke-virtual {v0}, Lnoc;->t()Ldhj;
-
-    move-result-object v0
-
-    sput-object v0, Ldhd;->d:Ldhj;
-
-    new-instance v0, Lnoc;
-
-    invoke-direct {v0}, Lnoc;-><init>()V
-
-    const-string v1, "camera.face_db_save_original"
-
-    iput-object v1, v0, Lnoc;->b:Ljava/lang/Object;
-
-    new-instance v0, Lnoc;
-
-    invoke-direct {v0}, Lnoc;-><init>()V
-
-    const-string v1, "camera.face_db_debug"
-
-    iput-object v1, v0, Lnoc;->b:Ljava/lang/Object;
-
-    new-instance v0, Lnoc;
-
-    invoke-direct {v0}, Lnoc;-><init>()V
-
-    const-string v1, "camera.face_db_smart_emb"
-
-    iput-object v1, v0, Lnoc;->b:Ljava/lang/Object;
-
-    invoke-virtual {v0}, Lnoc;->t()Ldhj;
-
-    move-result-object v0
-
-    sput-object v0, Ldhd;->e:Ldhj;
-
-    new-instance v0, Lnoc;
-
-    invoke-direct {v0}, Lnoc;-><init>()V
-
-    const-string v1, "camera.face_db_af"
-
-    iput-object v1, v0, Lnoc;->b:Ljava/lang/Object;
-
-    invoke-virtual {v0}, Lnoc;->t()Ldhj;
-
-    move-result-object v0
-
-    sput-object v0, Ldhd;->f:Ldhj;
-
-    new-instance v0, Lnoc;
-
-    invoke-direct {v0}, Lnoc;-><init>()V
-
-    const-string v1, "camera.face_deblur_model_asset_name"
-
-    iput-object v1, v0, Lnoc;->b:Ljava/lang/Object;
-
-    invoke-virtual {v0}, Lnoc;->u()Ldhj;
-
-    move-result-object v0
-
-    sput-object v0, Ldhd;->g:Ldhj;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
-.method public static a(Ldhm;)V
-    .locals 2
 
-    sget-object v0, Ldhd;->a:Ldhj;
+# virtual methods
+.method public final a(IDD)V
+    .locals 9
 
-    const/4 v1, 0x0
+    iget-object v0, p0, Ldhd;->a:Ldhg;
 
-    invoke-interface {p0, v0, v1}, Ldhm;->u(Ldhj;Z)V
+    monitor-enter v0
 
-    sget-object v0, Ldhd;->b:Ldhj;
+    :try_start_0
+    iget-object v1, p0, Ldhd;->a:Ldhg;
 
-    invoke-interface {p0, v0, v1}, Ldhm;->u(Ldhj;Z)V
+    iget-object v1, v1, Ldhg;->b:Ljava/util/List;
 
-    sget-object v0, Ldhd;->c:Ldhj;
+    invoke-interface {v1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
-    invoke-interface {p0, v0, v1}, Ldhm;->u(Ldhj;Z)V
+    move-result-object v1
 
-    sget-object v0, Ldhd;->d:Ldhj;
+    :goto_0
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
-    invoke-interface {p0, v0, v1}, Ldhm;->u(Ldhj;Z)V
+    move-result v2
 
-    sget-object v0, Ldhd;->e:Ldhj;
+    const/4 v3, 0x1
 
-    invoke-interface {p0, v0, v1}, Ldhm;->u(Ldhj;Z)V
+    if-eqz v2, :cond_4
 
-    sget-object v0, Ldhd;->f:Ldhj;
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    invoke-interface {p0, v0, v1}, Ldhm;->u(Ldhj;Z)V
+    move-result-object v2
 
-    sget-object v0, Ldhd;->g:Ldhj;
+    check-cast v2, Ldhf;
 
-    const/4 v1, 0x0
+    div-double v4, p2, p4
 
-    invoke-interface {p0, v0, v1}, Ldhm;->v(Ldhj;Ljava/lang/String;)V
+    iget-object v6, v2, Ldhf;->b:Ljava/util/Map;
+
+    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v7
+
+    invoke-interface {v6, v7}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v6
+
+    check-cast v6, Lfcr;
+
+    if-nez v6, :cond_0
+
+    new-instance v6, Lfcr;
+
+    const/4 v8, 0x0
+
+    invoke-direct {v6, v8}, Lfcr;-><init>([S)V
+
+    iget-object v2, v2, Ldhf;->b:Ljava/util/Map;
+
+    invoke-interface {v2, v7, v6}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    :cond_0
+    const-wide/high16 v7, 0x3ff8000000000000L    # 1.5
+
+    cmpg-double v2, v4, v7
+
+    if-gez v2, :cond_1
+
+    iget v2, v6, Lfcr;->d:I
+
+    add-int/2addr v2, v3
+
+    iput v2, v6, Lfcr;->d:I
+
+    goto :goto_0
+
+    :cond_1
+    const-wide/high16 v7, 0x4004000000000000L    # 2.5
+
+    cmpg-double v2, v4, v7
+
+    if-gez v2, :cond_2
+
+    iget v2, v6, Lfcr;->b:I
+
+    add-int/2addr v2, v3
+
+    iput v2, v6, Lfcr;->b:I
+
+    goto :goto_0
+
+    :cond_2
+    const-wide/high16 v7, 0x4014000000000000L    # 5.0
+
+    cmpg-double v2, v4, v7
+
+    if-gez v2, :cond_3
+
+    iget v2, v6, Lfcr;->c:I
+
+    add-int/2addr v2, v3
+
+    iput v2, v6, Lfcr;->c:I
+
+    goto :goto_0
+
+    :cond_3
+    iget v2, v6, Lfcr;->a:I
+
+    add-int/2addr v2, v3
+
+    iput v2, v6, Lfcr;->a:I
+
+    goto :goto_0
+
+    :cond_4
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    sget-object v0, Ldhg;->a:Louj;
+
+    invoke-virtual {v0}, Loue;->c()Lova;
+
+    move-result-object v0
+
+    check-cast v0, Loug;
+
+    const/16 v1, 0x309
+
+    invoke-interface {v0, v1}, Loug;->G(I)Lova;
+
+    move-result-object v0
+
+    check-cast v0, Loug;
+
+    iget-object v1, p0, Ldhd;->a:Ldhg;
+
+    iget-object v1, v1, Ldhg;->d:Ljrl;
+
+    const/4 v2, 0x0
+
+    const/4 v4, 0x2
+
+    packed-switch p1, :pswitch_data_0
+
+    new-array p1, v4, [Ljava/lang/Object;
+
+    invoke-static {p2, p3}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
+
+    move-result-object p2
+
+    aput-object p2, p1, v2
+
+    invoke-static {p4, p5}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
+
+    move-result-object p2
+
+    aput-object p2, p1, v3
+
+    const-string p2, "rel pipeline latency = %.2f > %.2f"
+
+    invoke-static {p2, p1}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object p1
+
+    goto/16 :goto_1
+
+    :pswitch_0
+    new-array p1, v4, [Ljava/lang/Object;
+
+    invoke-static {p2, p3}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
+
+    move-result-object p2
+
+    aput-object p2, p1, v2
+
+    invoke-static {p4, p5}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
+
+    move-result-object p2
+
+    aput-object p2, p1, v3
+
+    const-string p2, "abs pipeline latency = %.2f ms > %.2f ms"
+
+    invoke-static {p2, p1}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object p1
+
+    goto :goto_1
+
+    :pswitch_1
+    new-array p1, v4, [Ljava/lang/Object;
+
+    invoke-static {p2, p3}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
+
+    move-result-object p2
+
+    aput-object p2, p1, v2
+
+    invoke-static {p4, p5}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
+
+    move-result-object p2
+
+    aput-object p2, p1, v3
+
+    const-string p2, "rel \u0394(surface sensor timestamp) = %.2f > %.2f"
+
+    invoke-static {p2, p1}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object p1
+
+    goto :goto_1
+
+    :pswitch_2
+    new-array p1, v4, [Ljava/lang/Object;
+
+    invoke-static {p2, p3}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
+
+    move-result-object p2
+
+    aput-object p2, p1, v2
+
+    invoke-static {p4, p5}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
+
+    move-result-object p2
+
+    aput-object p2, p1, v3
+
+    const-string p2, "abs \u0394(surface sensor timestamp) = %.2f ms > %.2f ms"
+
+    invoke-static {p2, p1}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object p1
+
+    goto :goto_1
+
+    :pswitch_3
+    new-array p1, v4, [Ljava/lang/Object;
+
+    invoke-static {p2, p3}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
+
+    move-result-object p2
+
+    aput-object p2, p1, v2
+
+    invoke-static {p4, p5}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
+
+    move-result-object p2
+
+    aput-object p2, p1, v3
+
+    const-string p2, "result sensor delay = %.2f > %.2f"
+
+    invoke-static {p2, p1}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object p1
+
+    goto :goto_1
+
+    :pswitch_4
+    new-array p1, v4, [Ljava/lang/Object;
+
+    invoke-static {p2, p3}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
+
+    move-result-object p2
+
+    aput-object p2, p1, v2
+
+    invoke-static {p4, p5}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
+
+    move-result-object p2
+
+    aput-object p2, p1, v3
+
+    const-string p2, "rel \u0394(result sensor timestamp) = %.2f > %.2f"
+
+    invoke-static {p2, p1}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object p1
+
+    goto :goto_1
+
+    :pswitch_5
+    new-array p1, v4, [Ljava/lang/Object;
+
+    invoke-static {p2, p3}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
+
+    move-result-object p2
+
+    aput-object p2, p1, v2
+
+    invoke-static {p4, p5}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
+
+    move-result-object p2
+
+    aput-object p2, p1, v3
+
+    const-string p2, "abs \u0394(result sensor timestamp) = %.2f ms > %.2f ms"
+
+    invoke-static {p2, p1}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object p1
+
+    :goto_1
+    const-string p2, "%s > %s"
+
+    invoke-interface {v0, p2, v1, p1}, Loug;->y(Ljava/lang/String;Ljava/lang/Object;Ljava/lang/Object;)V
 
     return-void
+
+    :catchall_0
+    move-exception p1
+
+    :try_start_1
+    monitor-exit v0
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    goto :goto_3
+
+    :goto_2
+    throw p1
+
+    :goto_3
+    goto :goto_2
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_5
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method

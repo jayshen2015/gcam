@@ -1,60 +1,74 @@
-.class public final Lgvy;
+.class public final synthetic Lgvy;
 .super Ljava/lang/Object;
+
+# interfaces
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field public final a:F
+.field public final synthetic a:Lojc;
 
-.field public final b:F
+.field public final synthetic b:Llap;
 
-.field public final c:F
+.field public final synthetic c:Llnc;
 
 
 # direct methods
-.method public constructor <init>(FFF)V
+.method public synthetic constructor <init>(Lojc;Llap;Llnc;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput p1, p0, Lgvy;->a:F
+    iput-object p1, p0, Lgvy;->a:Lojc;
 
-    iput p2, p0, Lgvy;->b:F
+    iput-object p2, p0, Lgvy;->b:Llap;
 
-    iput p3, p0, Lgvy;->c:F
+    iput-object p3, p0, Lgvy;->c:Llnc;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final toString()Ljava/lang/String;
-    .locals 3
+.method public final run()V
+    .locals 5
 
-    invoke-static {p0}, Lmoz;->y(Ljava/lang/Object;)Lmqo;
+    iget-object v0, p0, Lgvy;->a:Lojc;
 
-    move-result-object v0
+    iget-object v1, p0, Lgvy;->b:Llap;
 
-    iget v1, p0, Lgvy;->a:F
+    iget-object v2, p0, Lgvy;->c:Llnc;
 
-    const-string v2, "azimuth"
+    invoke-virtual {v0}, Lojc;->g()Z
 
-    invoke-virtual {v0, v2, v1}, Lmqo;->d(Ljava/lang/String;F)V
+    move-result v3
 
-    iget v1, p0, Lgvy;->b:F
+    if-nez v3, :cond_0
 
-    const-string v2, "pitch"
+    return-void
 
-    invoke-virtual {v0, v2, v1}, Lmqo;->d(Ljava/lang/String;F)V
-
-    iget v1, p0, Lgvy;->c:F
-
-    const-string v2, "roll"
-
-    invoke-virtual {v0, v2, v1}, Lmqo;->d(Ljava/lang/String;F)V
-
-    invoke-virtual {v0}, Lmqo;->toString()Ljava/lang/String;
+    :cond_0
+    invoke-virtual {v0}, Lojc;->c()Ljava/lang/Object;
 
     move-result-object v0
 
-    return-object v0
+    check-cast v0, Lhcl;
+
+    invoke-interface {v0}, Lhcl;->b()Llda;
+
+    move-result-object v3
+
+    new-instance v4, Lgwb;
+
+    invoke-direct {v4, v2, v0}, Lgwb;-><init>(Llnc;Lhcl;)V
+
+    sget-object v0, Lpgr;->a:Lpgr;
+
+    invoke-interface {v3, v4, v0}, Llda;->a(Llij;Ljava/util/concurrent/Executor;)Llie;
+
+    move-result-object v0
+
+    invoke-virtual {v1, v0}, Llap;->c(Llie;)V
+
+    return-void
 .end method

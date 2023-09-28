@@ -117,7 +117,7 @@
     return-void
 .end method
 
-.method public final g()Lnrf;
+.method public final g()Lpjk;
     .locals 5
 
     iget-wide v0, p0, Lcom/google/googlex/gcam/InterleavedReadViewU8;->a:J
@@ -137,9 +137,9 @@
     return-object v0
 
     :cond_0
-    new-instance v2, Lnrf;
+    new-instance v2, Lpjk;
 
-    invoke-direct {v2, v0, v1}, Lnrf;-><init>(J)V
+    invoke-direct {v2, v0, v1}, Lpjk;-><init>(J)V
 
     return-object v2
 .end method

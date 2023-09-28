@@ -1,104 +1,119 @@
-.class public final Lmkj;
-.super Lmkl;
+.class final Lmkj;
+.super Ljava/lang/Object;
 
-
-# static fields
-.field private static final h:Landroid/graphics/RectF;
+# interfaces
+.implements Lmkc;
+.implements Lmks;
 
 
 # instance fields
-.field public final a:F
-    .annotation runtime Ljava/lang/Deprecated;
-    .end annotation
-.end field
+.field a:J
 
-.field public final b:F
-    .annotation runtime Ljava/lang/Deprecated;
-    .end annotation
-.end field
+.field b:I
 
-.field public final c:F
-    .annotation runtime Ljava/lang/Deprecated;
-    .end annotation
-.end field
+.field final c:Landroid/media/MediaFormat;
 
-.field public final d:F
-    .annotation runtime Ljava/lang/Deprecated;
-    .end annotation
-.end field
+.field public final d:Ljava/util/List;
 
-.field public e:F
-    .annotation runtime Ljava/lang/Deprecated;
-    .end annotation
-.end field
+.field private final e:Ljava/util/List;
 
-.field public f:F
-    .annotation runtime Ljava/lang/Deprecated;
-    .end annotation
-.end field
+.field private final f:Ljava/util/List;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
+.method public constructor <init>(Landroid/media/MediaFormat;)V
+    .locals 2
 
-    new-instance v0, Landroid/graphics/RectF;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {v0}, Landroid/graphics/RectF;-><init>()V
+    new-instance v0, Ljava/util/ArrayList;
 
-    sput-object v0, Lmkj;->h:Landroid/graphics/RectF;
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    return-void
-.end method
+    iput-object v0, p0, Lmkj;->d:Ljava/util/List;
 
-.method public constructor <init>(FFFF)V
-    .locals 0
+    new-instance v0, Ljava/util/ArrayList;
 
-    invoke-direct {p0}, Lmkl;-><init>()V
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    iput p1, p0, Lmkj;->a:F
+    iput-object v0, p0, Lmkj;->e:Ljava/util/List;
 
-    iput p2, p0, Lmkj;->b:F
+    new-instance v0, Ljava/util/ArrayList;
 
-    iput p3, p0, Lmkj;->c:F
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    iput p4, p0, Lmkj;->d:F
+    iput-object v0, p0, Lmkj;->f:Ljava/util/List;
+
+    iput-object p1, p0, Lmkj;->c:Landroid/media/MediaFormat;
+
+    const-wide/16 v0, -0x1
+
+    iput-wide v0, p0, Lmkj;->a:J
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Landroid/graphics/Matrix;Landroid/graphics/Path;)V
-    .locals 5
+.method public final a()I
+    .locals 1
 
-    iget-object v0, p0, Lmkj;->g:Landroid/graphics/Matrix;
+    iget-object v0, p0, Lmkj;->c:Landroid/media/MediaFormat;
 
-    invoke-virtual {p1, v0}, Landroid/graphics/Matrix;->invert(Landroid/graphics/Matrix;)Z
+    invoke-static {v0}, Lmip;->aq(Landroid/media/MediaFormat;)Z
 
-    invoke-virtual {p2, v0}, Landroid/graphics/Path;->transform(Landroid/graphics/Matrix;)V
+    move-result v0
 
-    sget-object v0, Lmkj;->h:Landroid/graphics/RectF;
+    if-eqz v0, :cond_0
 
-    iget v1, p0, Lmkj;->a:F
+    const v0, 0x15f90
 
-    iget v2, p0, Lmkj;->b:F
+    return v0
 
-    iget v3, p0, Lmkj;->c:F
+    :cond_0
+    const v0, 0xbb80
 
-    iget v4, p0, Lmkj;->d:F
+    return v0
+.end method
 
-    invoke-virtual {v0, v1, v2, v3, v4}, Landroid/graphics/RectF;->set(FFFF)V
+.method public final b()Landroid/media/MediaFormat;
+    .locals 1
 
-    iget v1, p0, Lmkj;->e:F
+    iget-object v0, p0, Lmkj;->c:Landroid/media/MediaFormat;
 
-    iget v2, p0, Lmkj;->f:F
+    return-object v0
+.end method
 
-    const/4 v3, 0x0
+.method public final c()Loom;
+    .locals 1
 
-    invoke-virtual {p2, v0, v1, v2, v3}, Landroid/graphics/Path;->arcTo(Landroid/graphics/RectF;FFZ)V
+    iget-object v0, p0, Lmkj;->e:Ljava/util/List;
 
-    invoke-virtual {p2, p1}, Landroid/graphics/Path;->transform(Landroid/graphics/Matrix;)V
+    invoke-static {v0}, Loom;->j(Ljava/util/Collection;)Loom;
 
-    return-void
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public final d()Loom;
+    .locals 1
+
+    iget-object v0, p0, Lmkj;->f:Ljava/util/List;
+
+    invoke-static {v0}, Loom;->j(Ljava/util/Collection;)Loom;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public final e()Loom;
+    .locals 1
+
+    invoke-static {}, Loom;->l()Loom;
+
+    move-result-object v0
+
+    return-object v0
 .end method

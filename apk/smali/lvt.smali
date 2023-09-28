@@ -1,64 +1,45 @@
 .class public final Llvt;
-.super Lolh;
-
-
-# annotations
-.annotation runtime Lolj;
-    b = "com.google.android.libraries.vision.visionkit.f250.internal.airlock.F250AirlockInternal$logOnFirstAndError$$inlined$map$1$2"
-    c = "F250AirlockInternal.kt"
-    d = "emit"
-    e = {
-        0xe2,
-        0xdf
-    }
-.end annotation
+.super Ljava/lang/Object;
 
 
 # instance fields
-.field synthetic a:Ljava/lang/Object;
+.field public a:Ljava/lang/String;
 
-.field b:I
-
-.field final synthetic c:Llvu;
-
-.field d:Ljava/lang/Object;
-
-.field e:Lotu;
+.field public b:Ljava/lang/Throwable;
 
 
 # direct methods
-.method public constructor <init>(Llvu;Loku;)V
+.method public constructor <init>()V
     .locals 0
 
-    iput-object p1, p0, Llvt;->c:Llvu;
-
-    invoke-direct {p0, p2}, Lolh;-><init>(Loku;)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final b(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 1
+.method public final a()Llvu;
+    .locals 3
 
-    iput-object p1, p0, Llvt;->a:Ljava/lang/Object;
+    iget-object v0, p0, Llvt;->a:Ljava/lang/String;
 
-    iget p1, p0, Llvt;->b:I
+    if-eqz v0, :cond_0
 
-    const/high16 v0, -0x80000000
+    new-instance v1, Llvu;
 
-    or-int/2addr p1, v0
+    iget-object v2, p0, Llvt;->b:Ljava/lang/Throwable;
 
-    iput p1, p0, Llvt;->b:I
+    invoke-direct {v1, v0, v2}, Llvu;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
 
-    iget-object p1, p0, Llvt;->c:Llvu;
+    return-object v1
 
-    const/4 v0, 0x0
+    :cond_0
+    new-instance v0, Ljava/lang/IllegalStateException;
 
-    invoke-virtual {p1, v0, p0}, Llvu;->a(Ljava/lang/Object;Loku;)Ljava/lang/Object;
+    const-string v1, "Missing required properties: cameraId"
 
-    move-result-object p1
+    invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 
-    return-object p1
+    throw v0
 .end method

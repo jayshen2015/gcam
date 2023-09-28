@@ -1,86 +1,93 @@
-.class final Ltw;
-.super Loln;
+.class public final synthetic Ltw;
+.super Ljava/lang/Object;
 
 # interfaces
-.implements Lomo;
-
-
-# annotations
-.annotation runtime Lolj;
-    b = "androidx.camera.camera2.pipe.compat.CaptureSessionState$configureSurfaceMap$1$1"
-    c = "CaptureSessionState.kt"
-    d = "invokeSuspend"
-    e = {}
-.end annotation
+.implements Lajl;
 
 
 # instance fields
-.field final synthetic a:Lty;
+.field public final synthetic a:Lub;
 
 
 # direct methods
-.method public constructor <init>(Lty;Loku;)V
+.method public synthetic constructor <init>(Lub;)V
     .locals 0
 
-    iput-object p1, p0, Ltw;->a:Lty;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const/4 p1, 0x2
-
-    invoke-direct {p0, p1, p2}, Loln;-><init>(ILoku;)V
+    iput-object p1, p0, Ltw;->a:Lub;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final bridge synthetic a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 0
+.method public final a()Landroid/os/Bundle;
+    .locals 4
 
-    check-cast p1, Lopu;
+    iget-object v0, p0, Ltw;->a:Lub;
 
-    check-cast p2, Loku;
+    new-instance v1, Landroid/os/Bundle;
 
-    invoke-virtual {p0, p1, p2}, Lolf;->c(Ljava/lang/Object;Loku;)Loku;
+    invoke-direct {v1}, Landroid/os/Bundle;-><init>()V
 
-    move-result-object p1
+    iget-object v0, v0, Lub;->i:Lum;
 
-    sget-object p2, Lojk;->a:Lojk;
+    new-instance v2, Ljava/util/ArrayList;
 
-    check-cast p1, Ltw;
+    iget-object v3, v0, Lum;->c:Ljava/util/Map;
 
-    invoke-virtual {p1, p2}, Ltw;->b(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {v3}, Ljava/util/Map;->values()Ljava/util/Collection;
 
-    move-result-object p1
+    move-result-object v3
 
-    return-object p1
-.end method
+    invoke-direct {v2, v3}, Ljava/util/ArrayList;-><init>(Ljava/util/Collection;)V
 
-.method public final b(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 1
+    const-string v3, "KEY_COMPONENT_ACTIVITY_REGISTERED_RCS"
 
-    sget-object v0, Lolc;->a:Lolc;
+    invoke-virtual {v1, v3, v2}, Landroid/os/Bundle;->putIntegerArrayList(Ljava/lang/String;Ljava/util/ArrayList;)V
 
-    invoke-static {p1}, Lljr;->aO(Ljava/lang/Object;)V
+    new-instance v2, Ljava/util/ArrayList;
 
-    iget-object p1, p0, Ltw;->a:Lty;
+    iget-object v3, v0, Lum;->c:Ljava/util/Map;
 
-    const/4 v0, 0x1
+    invoke-interface {v3}, Ljava/util/Map;->keySet()Ljava/util/Set;
 
-    invoke-virtual {p1, v0}, Lty;->e(Z)V
+    move-result-object v3
 
-    sget-object p1, Lojk;->a:Lojk;
+    invoke-direct {v2, v3}, Ljava/util/ArrayList;-><init>(Ljava/util/Collection;)V
 
-    return-object p1
-.end method
+    const-string v3, "KEY_COMPONENT_ACTIVITY_REGISTERED_KEYS"
 
-.method public final c(Ljava/lang/Object;Loku;)Loku;
-    .locals 1
+    invoke-virtual {v1, v3, v2}, Landroid/os/Bundle;->putStringArrayList(Ljava/lang/String;Ljava/util/ArrayList;)V
 
-    new-instance p1, Ltw;
+    new-instance v2, Ljava/util/ArrayList;
 
-    iget-object v0, p0, Ltw;->a:Lty;
+    iget-object v3, v0, Lum;->e:Ljava/util/ArrayList;
 
-    invoke-direct {p1, v0, p2}, Ltw;-><init>(Lty;Loku;)V
+    invoke-direct {v2, v3}, Ljava/util/ArrayList;-><init>(Ljava/util/Collection;)V
 
-    return-object p1
+    const-string v3, "KEY_COMPONENT_ACTIVITY_LAUNCHED_KEYS"
+
+    invoke-virtual {v1, v3, v2}, Landroid/os/Bundle;->putStringArrayList(Ljava/lang/String;Ljava/util/ArrayList;)V
+
+    iget-object v2, v0, Lum;->h:Landroid/os/Bundle;
+
+    invoke-virtual {v2}, Landroid/os/Bundle;->clone()Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Landroid/os/Bundle;
+
+    const-string v3, "KEY_COMPONENT_ACTIVITY_PENDING_RESULT"
+
+    invoke-virtual {v1, v3, v2}, Landroid/os/Bundle;->putBundle(Ljava/lang/String;Landroid/os/Bundle;)V
+
+    iget-object v0, v0, Lum;->a:Ljava/util/Random;
+
+    const-string v2, "KEY_COMPONENT_ACTIVITY_RANDOM_OBJECT"
+
+    invoke-virtual {v1, v2, v0}, Landroid/os/Bundle;->putSerializable(Ljava/lang/String;Ljava/io/Serializable;)V
+
+    return-object v1
 .end method

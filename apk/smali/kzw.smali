@@ -1,79 +1,163 @@
 .class final Lkzw;
-.super Ljava/lang/Object;
-
-
-# instance fields
-.field public a:Lkzw;
-
-.field private final b:Ljava/util/concurrent/Executor;
-
-.field private final c:Ljava/lang/Runnable;
-
-.field private final d:Llaa;
+.super Lkzy;
 
 
 # direct methods
-.method public constructor <init>(Ljava/util/concurrent/Executor;Ljava/lang/Runnable;)V
+.method public constructor <init>(Ljava/lang/String;Ljava/lang/Boolean;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lkzw;->b:Ljava/util/concurrent/Executor;
-
-    iput-object p2, p0, Lkzw;->c:Ljava/lang/Runnable;
-
-    const/4 p1, 0x0
-
-    iput-object p1, p0, Lkzw;->d:Llaa;
-
-    return-void
-.end method
-
-.method public constructor <init>(Ljava/util/concurrent/Executor;Ljava/lang/Runnable;Llaa;)V
-    .locals 0
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lkzw;->b:Ljava/util/concurrent/Executor;
-
-    iput-object p2, p0, Lkzw;->c:Ljava/lang/Runnable;
-
-    iput-object p3, p0, Lkzw;->d:Llaa;
+    invoke-direct {p0, p1, p2}, Lkzy;-><init>(Ljava/lang/String;Ljava/lang/Object;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()V
-    .locals 2
+.method public final synthetic a()Ljava/lang/Object;
+    .locals 8
 
-    :try_start_0
-    iget-object v0, p0, Lkzw;->b:Ljava/util/concurrent/Executor;
+    sget-object v0, Lkzy;->a:Landroid/content/ContentResolver;
 
-    iget-object v1, p0, Lkzw;->c:Ljava/lang/Runnable;
+    iget-object v1, p0, Lkzw;->b:Ljava/lang/String;
 
-    invoke-interface {v0, v1}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    iget-object v2, p0, Lkzw;->c:Ljava/lang/Object;
 
-    return-void
+    check-cast v2, Ljava/lang/Boolean;
 
-    :catchall_0
-    move-exception v0
+    invoke-virtual {v2}, Ljava/lang/Boolean;->booleanValue()Z
 
-    iget-object v1, p0, Lkzw;->d:Llaa;
+    move-result v2
 
-    if-eqz v1, :cond_0
+    invoke-static {v0}, Lkzv;->c(Landroid/content/ContentResolver;)Ljava/lang/Object;
 
-    invoke-static {v0}, Lkzd;->a(Ljava/lang/Throwable;)Lkzd;
+    move-result-object v3
+
+    sget-object v4, Lkzv;->g:Ljava/util/HashMap;
+
+    invoke-static {v2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    move-result-object v5
+
+    invoke-static {v4, v1, v5}, Lkzv;->b(Ljava/util/HashMap;Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v4
+
+    check-cast v4, Ljava/lang/Boolean;
+
+    if-eqz v4, :cond_0
+
+    invoke-virtual {v4}, Ljava/lang/Boolean;->booleanValue()Z
+
+    move-result v0
+
+    goto :goto_1
+
+    :cond_0
+    invoke-static {v0, v1}, Lkzv;->f(Landroid/content/ContentResolver;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
-    invoke-virtual {v1, v0}, Llaa;->m(Lkzd;)V
+    const/4 v5, 0x0
 
-    return-void
+    const/4 v6, 0x1
 
-    :cond_0
-    throw v0
+    if-eqz v0, :cond_4
+
+    const-string v7, ""
+
+    invoke-virtual {v0, v7}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v7
+
+    if-eqz v7, :cond_1
+
+    goto :goto_0
+
+    :cond_1
+    sget-object v7, Lkzv;->c:Ljava/util/regex/Pattern;
+
+    invoke-virtual {v7, v0}, Ljava/util/regex/Pattern;->matcher(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;
+
+    move-result-object v7
+
+    invoke-virtual {v7}, Ljava/util/regex/Matcher;->matches()Z
+
+    move-result v7
+
+    if-eqz v7, :cond_2
+
+    invoke-static {v6}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    move-result-object v4
+
+    const/4 v2, 0x1
+
+    goto :goto_0
+
+    :cond_2
+    sget-object v6, Lkzv;->d:Ljava/util/regex/Pattern;
+
+    invoke-virtual {v6, v0}, Ljava/util/regex/Pattern;->matcher(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;
+
+    move-result-object v6
+
+    invoke-virtual {v6}, Ljava/util/regex/Matcher;->matches()Z
+
+    move-result v6
+
+    if-eqz v6, :cond_3
+
+    invoke-static {v5}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    move-result-object v4
+
+    const/4 v2, 0x0
+
+    goto :goto_0
+
+    :cond_3
+    new-instance v5, Ljava/lang/StringBuilder;
+
+    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v6, "attempt to read gservices key "
+
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v5, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v6, " (value \""
+
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v5, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v0, "\") as boolean"
+
+    invoke-virtual {v5, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    const-string v5, "Gservices"
+
+    invoke-static {v5, v0}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
+
+    goto :goto_0
+
+    :cond_4
+    :goto_0
+    sget-object v0, Lkzv;->g:Ljava/util/HashMap;
+
+    invoke-static {v3, v0, v1, v4}, Lkzv;->e(Ljava/lang/Object;Ljava/util/HashMap;Ljava/lang/String;Ljava/lang/Object;)V
+
+    move v0, v2
+
+    :goto_1
+    invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    move-result-object v0
+
+    return-object v0
 .end method

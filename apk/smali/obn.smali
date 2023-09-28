@@ -1,146 +1,90 @@
 .class public final Lobn;
-.super Lnws;
+.super Ljava/lang/Object;
 
 # interfaces
-.implements Lnxz;
+.implements Lobp;
 
 
-# static fields
-.field public static final a:Lobn;
-
-.field private static volatile b:Lnyf;
+# instance fields
+.field private final a:F
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
-
-    new-instance v0, Lobn;
-
-    invoke-direct {v0}, Lobn;-><init>()V
-
-    sput-object v0, Lobn;->a:Lobn;
-
-    const-class v1, Lobn;
-
-    invoke-static {v1, v0}, Lnws;->aa(Ljava/lang/Class;Lnws;)V
-
-    return-void
-.end method
-
-.method private constructor <init>()V
+.method public constructor <init>(F)V
     .locals 0
 
-    invoke-direct {p0}, Lnws;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput p1, p0, Lobn;->a:F
 
     return-void
 .end method
 
 
 # virtual methods
-.method protected final a(ILjava/lang/Object;)Ljava/lang/Object;
-    .locals 1
+.method public final a(Landroid/graphics/RectF;)F
+    .locals 0
 
-    add-int/lit8 p1, p1, -0x1
+    iget p1, p0, Lobn;->a:F
 
-    const/4 p2, 0x0
+    return p1
+.end method
 
-    packed-switch p1, :pswitch_data_0
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 3
 
-    :pswitch_0
-    return-object p2
+    const/4 v0, 0x1
 
-    :pswitch_1
-    sget-object p1, Lobn;->b:Lnyf;
+    if-ne p0, p1, :cond_0
 
-    if-nez p1, :cond_1
-
-    const-class p2, Lobn;
-
-    monitor-enter p2
-
-    :try_start_0
-    sget-object p1, Lobn;->b:Lnyf;
-
-    if-nez p1, :cond_0
-
-    new-instance p1, Lnwo;
-
-    sget-object v0, Lobn;->a:Lobn;
-
-    invoke-direct {p1, v0}, Lnwo;-><init>(Lnws;)V
-
-    sput-object p1, Lobn;->b:Lnyf;
+    return v0
 
     :cond_0
-    monitor-exit p2
+    instance-of v1, p1, Lobn;
 
-    goto :goto_0
+    const/4 v2, 0x0
 
-    :catchall_0
-    move-exception p1
+    if-nez v1, :cond_1
 
-    monitor-exit p2
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw p1
+    return v2
 
     :cond_1
-    :goto_0
-    return-object p1
+    check-cast p1, Lobn;
 
-    :pswitch_2
-    sget-object p1, Lobn;->a:Lobn;
+    iget v1, p0, Lobn;->a:F
 
-    return-object p1
+    iget p1, p1, Lobn;->a:F
 
-    :pswitch_3
-    new-instance p1, Lnwn;
+    cmpl-float p1, v1, p1
 
-    sget-object p2, Lobn;->a:Lobn;
+    if-nez p1, :cond_2
 
-    invoke-direct {p1, p2}, Lnwn;-><init>(Lnws;)V
+    return v0
 
-    return-object p1
+    :cond_2
+    return v2
+.end method
 
-    :pswitch_4
-    new-instance p1, Lobn;
+.method public final hashCode()I
+    .locals 3
 
-    invoke-direct {p1}, Lobn;-><init>()V
+    const/4 v0, 0x1
 
-    return-object p1
+    new-array v0, v0, [Ljava/lang/Object;
 
-    :pswitch_5
-    sget-object p1, Lobn;->a:Lobn;
+    iget v1, p0, Lobn;->a:F
 
-    const-string v0, "\u0001\u0000"
+    invoke-static {v1}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
 
-    invoke-static {p1, v0, p2}, Lobn;->X(Lnxy;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/Object;
+    move-result-object v1
 
-    move-result-object p1
+    const/4 v2, 0x0
 
-    return-object p1
+    aput-object v1, v0, v2
 
-    :pswitch_6
-    const/4 p1, 0x1
+    invoke-static {v0}, Ljava/util/Arrays;->hashCode([Ljava/lang/Object;)I
 
-    invoke-static {p1}, Ljava/lang/Byte;->valueOf(B)Ljava/lang/Byte;
+    move-result v0
 
-    move-result-object p1
-
-    return-object p1
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_6
-        :pswitch_0
-        :pswitch_5
-        :pswitch_4
-        :pswitch_3
-        :pswitch_2
-        :pswitch_1
-    .end packed-switch
+    return v0
 .end method

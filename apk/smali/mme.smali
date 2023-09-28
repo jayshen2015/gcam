@@ -1,123 +1,68 @@
 .class public final Lmme;
-.super Ljava/lang/Object;
-
-
-# static fields
-.field private static final a:Ljava/util/Map;
+.super Lmmf;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 6
+.method public constructor <init>(II)V
+    .locals 2
 
-    new-instance v0, Ljava/util/HashSet;
+    const/4 v0, 0x2
 
-    const/4 v1, 0x2
+    new-array v0, v0, [I
 
-    new-array v2, v1, [Ljava/lang/String;
+    const/4 v1, 0x0
 
-    const/4 v3, 0x0
+    aput p1, v0, v1
 
-    const-string v4, "app_update"
+    const/4 p1, 0x1
 
-    aput-object v4, v2, v3
+    aput p2, v0, p1
 
-    const-string v4, "review"
-
-    const/4 v5, 0x1
-
-    aput-object v4, v2, v5
-
-    invoke-static {v2}, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
-
-    move-result-object v2
-
-    invoke-direct {v0, v2}, Ljava/util/HashSet;-><init>(Ljava/util/Collection;)V
-
-    new-instance v0, Ljava/util/HashSet;
-
-    new-array v1, v1, [Ljava/lang/String;
-
-    const-string v2, "native"
-
-    aput-object v2, v1, v3
-
-    const-string v2, "unity"
-
-    aput-object v2, v1, v5
-
-    invoke-static {v1}, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
-
-    move-result-object v1
-
-    invoke-direct {v0, v1}, Ljava/util/HashSet;-><init>(Ljava/util/Collection;)V
-
-    new-instance v0, Ljava/util/HashMap;
-
-    invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
-
-    sput-object v0, Lmme;->a:Ljava/util/Map;
-
-    new-instance v0, Llzz;
-
-    const-string v1, "PlayCoreVersion"
-
-    invoke-direct {v0, v1}, Llzz;-><init>(Ljava/lang/String;)V
+    invoke-direct {p0, v0}, Lmmf;-><init>([I)V
 
     return-void
 .end method
 
-.method public static declared-synchronized a()Ljava/util/Map;
-    .locals 6
 
-    const-class v0, Lmme;
+# virtual methods
+.method public final toString()Ljava/lang/String;
+    .locals 4
 
-    monitor-enter v0
+    sget-object v0, Ljava/util/Locale;->ENGLISH:Ljava/util/Locale;
 
-    :try_start_0
-    sget-object v1, Lmme;->a:Ljava/util/Map;
+    const/4 v1, 0x2
 
-    const-string v2, "app_update"
+    new-array v1, v1, [Ljava/lang/Object;
 
-    invoke-interface {v1, v2}, Ljava/util/Map;->containsKey(Ljava/lang/Object;)Z
+    invoke-virtual {p0}, Lmmf;->b()I
 
-    move-result v3
+    move-result v2
 
-    if-nez v3, :cond_0
+    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    new-instance v3, Ljava/util/HashMap;
+    move-result-object v2
 
-    invoke-direct {v3}, Ljava/util/HashMap;-><init>()V
+    const/4 v3, 0x0
 
-    const-string v4, "java"
+    aput-object v2, v1, v3
 
-    const/16 v5, 0x2afc
+    invoke-virtual {p0}, Lmmf;->a()I
 
-    invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    move-result v2
 
-    move-result-object v5
+    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    invoke-interface {v3, v4, v5}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    move-result-object v2
 
-    invoke-interface {v1, v2, v3}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    const/4 v3, 0x1
 
-    :cond_0
-    invoke-interface {v1, v2}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    aput-object v2, v1, v3
 
-    move-result-object v1
+    const-string v2, "Size(%d, %d)"
 
-    check-cast v1, Ljava/util/Map;
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    invoke-static {v0, v2, v1}, Ljava/lang/String;->format(Ljava/util/Locale;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
-    monitor-exit v0
+    move-result-object v0
 
-    return-object v1
-
-    :catchall_0
-    move-exception v1
-
-    monitor-exit v0
-
-    throw v1
+    return-object v0
 .end method

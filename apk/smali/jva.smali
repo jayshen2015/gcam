@@ -1,85 +1,48 @@
-.class public final synthetic Ljva;
-.super Ljava/lang/Object;
-
-# interfaces
-.implements Ljava/util/concurrent/Executor;
+.class Ljva;
+.super Ljuy;
 
 
 # instance fields
-.field public final synthetic a:Ljava/lang/Runnable;
-
-.field public final synthetic b:Ljava/util/concurrent/Executor;
-
-.field public final synthetic c:Ljvb;
-
-.field private final synthetic d:I
+.field final synthetic a:Ljvb;
 
 
 # direct methods
-.method public synthetic constructor <init>(Ljvb;Ljava/lang/Runnable;Ljava/util/concurrent/Executor;I)V
+.method public constructor <init>(Ljvb;)V
     .locals 0
 
-    iput p4, p0, Ljva;->d:I
+    iput-object p1, p0, Ljva;->a:Ljvb;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Ljva;->c:Ljvb;
-
-    iput-object p2, p0, Ljva;->a:Ljava/lang/Runnable;
-
-    iput-object p3, p0, Ljva;->b:Ljava/util/concurrent/Executor;
+    invoke-direct {p0}, Ljuy;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final execute(Ljava/lang/Runnable;)V
-    .locals 4
-
-    iget v0, p0, Ljva;->d:I
-
-    packed-switch v0, :pswitch_data_0
-
-    iget-object v0, p0, Ljva;->c:Ljvb;
-
-    iget-object v1, p0, Ljva;->a:Ljava/lang/Runnable;
-
-    iget-object v2, p0, Ljva;->b:Ljava/util/concurrent/Executor;
-
-    invoke-virtual {v0, p1}, Ljvb;->a(Ljava/lang/Runnable;)Lnou;
-
-    move-result-object p1
-
-    new-instance v0, Ljoq;
-
-    const/4 v3, 0x6
-
-    invoke-direct {v0, p1, v1, v3}, Ljoq;-><init>(Lnou;Ljava/lang/Runnable;I)V
-
-    invoke-interface {p1, v0, v2}, Lnou;->d(Ljava/lang/Runnable;Ljava/util/concurrent/Executor;)V
+.method public b()V
+    .locals 0
 
     return-void
+.end method
 
-    :pswitch_0
-    iget-object v0, p0, Ljva;->c:Ljvb;
-
-    iget-object v1, p0, Ljva;->a:Ljava/lang/Runnable;
-
-    iget-object v2, p0, Ljva;->b:Ljava/util/concurrent/Executor;
-
-    invoke-virtual {v0, p1}, Ljvb;->a(Ljava/lang/Runnable;)Lnou;
-
-    move-result-object p1
-
-    invoke-interface {p1, v1, v2}, Lnou;->d(Ljava/lang/Runnable;Ljava/util/concurrent/Executor;)V
+.method public c()V
+    .locals 0
 
     return-void
+.end method
 
-    nop
+.method public final f()V
+    .locals 1
 
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+    iget-object v0, p0, Ljva;->a:Ljvb;
+
+    iget-object v0, v0, Ljvb;->a:Lqkg;
+
+    invoke-interface {v0}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Ljvy;->c()V
+
+    return-void
 .end method

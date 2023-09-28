@@ -1,12 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <plurals name="accessibility_timelapse_manual_record_speed_desc">
-        <item quantity="other">%d пъти скоростта на цайтрафера</item>
-        <item quantity="one">%d път скоростта на цайтрафера</item>
-    </plurals>
-    <plurals name="number_of_cropped_face">
-        <item quantity="other">Подрязани са %d.</item>
-        <item quantity="one">Подрязано е едно.</item>
+    <plurals name="number_of_faces_announcement">
+        <item quantity="other">%1$d лица.</item>
+        <item quantity="one">%1$d лице.</item>
     </plurals>
     <plurals name="photos_remaining">
         <item quantity="other">Около %s снимка</item>
@@ -17,8 +13,8 @@
         <item quantity="one">(избрано е %1$d приложение)</item>
     </plurals>
     <plurals name="social_share_info">
-        <item quantity="other">Бързо споделяйте в социалните приложения снимки и видеоклипове от Камера. Изберете до %1$d приложения. Не могат да се споделят снимки и видеоклипове, запазени в заключена папка.</item>
-        <item quantity="one">Бързо споделяйте в социалните приложения снимки и видеоклипове от Камера. Изберете %1$d приложение. Не могат да се споделят снимки и видеоклипове, запазени в заключена папка.</item>
+        <item quantity="other">Бързо споделяйте снимки и видеоклипове в социалните приложения направо от камерата. Изберете до %1$d приложения. Не могат да се споделят снимки и видеоклипове, запазени в заключена папка.</item>
+        <item quantity="one">Бързо споделяйте снимки и видеоклипове в социалните приложения направо от камерата. Изберете %1$d приложение. Не могат да се споделят снимки и видеоклипове, запазени в заключена папка.</item>
     </plurals>
     <plurals name="social_share_select_error">
         <item quantity="other">Изберете до %1$d приложения</item>

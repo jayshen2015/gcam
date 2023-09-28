@@ -1,22 +1,33 @@
-.class public final Ldyn;
+.class public final synthetic Ldyn;
 .super Ljava/lang/Object;
 
+# interfaces
+.implements Ldys;
 
-# static fields
-.field public static final a:Lduq;
+
+# instance fields
+.field public final synthetic a:Lenr;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
+.method public synthetic constructor <init>(Lenr;)V
+    .locals 0
 
-    new-instance v0, Lduq;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const/16 v1, 0xb
+    iput-object p1, p0, Ldyn;->a:Lenr;
 
-    invoke-direct {v0, v1}, Lduq;-><init>(I)V
+    return-void
+.end method
 
-    sput-object v0, Ldyn;->a:Lduq;
+
+# virtual methods
+.method public final a(JFF)V
+    .locals 1
+
+    iget-object v0, p0, Ldyn;->a:Lenr;
+
+    invoke-interface {v0, p1, p2, p3, p4}, Lenr;->c(JFF)V
 
     return-void
 .end method

@@ -1,166 +1,393 @@
 .class public final Lozb;
-.super Lnws;
+.super Ljava/lang/Object;
 
 # interfaces
-.implements Lnxz;
-
-
-# static fields
-.field public static final c:Lozb;
-
-.field private static volatile d:Lnyf;
+.implements Loyx;
 
 
 # instance fields
-.field public a:I
-
-.field public b:Loza;
+.field final a:Ljava/io/DataInput;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
+.method public constructor <init>(Ljava/io/ByteArrayInputStream;)V
+    .locals 1
 
-    new-instance v0, Lozb;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {v0}, Lozb;-><init>()V
+    new-instance v0, Ljava/io/DataInputStream;
 
-    sput-object v0, Lozb;->c:Lozb;
+    invoke-direct {v0, p1}, Ljava/io/DataInputStream;-><init>(Ljava/io/InputStream;)V
 
-    const-class v1, Lozb;
-
-    invoke-static {v1, v0}, Lnws;->aa(Ljava/lang/Class;Lnws;)V
-
-    return-void
-.end method
-
-.method private constructor <init>()V
-    .locals 0
-
-    invoke-direct {p0}, Lnws;-><init>()V
+    iput-object v0, p0, Lozb;->a:Ljava/io/DataInput;
 
     return-void
 .end method
 
 
 # virtual methods
-.method protected final a(ILjava/lang/Object;)Ljava/lang/Object;
-    .locals 3
-
-    add-int/lit8 p1, p1, -0x1
-
-    const/4 p2, 0x1
-
-    packed-switch p1, :pswitch_data_0
-
-    :pswitch_0
-    const/4 p1, 0x0
-
-    return-object p1
-
-    :pswitch_1
-    sget-object p1, Lozb;->d:Lnyf;
-
-    if-nez p1, :cond_1
-
-    const-class p2, Lozb;
-
-    monitor-enter p2
+.method public final readBoolean()Z
+    .locals 2
 
     :try_start_0
-    sget-object p1, Lozb;->d:Lnyf;
+    iget-object v0, p0, Lozb;->a:Ljava/io/DataInput;
 
-    if-nez p1, :cond_0
+    invoke-interface {v0}, Ljava/io/DataInput;->readBoolean()Z
 
-    new-instance p1, Lnwo;
+    move-result v0
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
-    sget-object v0, Lozb;->c:Lozb;
+    return v0
 
-    invoke-direct {p1, v0}, Lnwo;-><init>(Lnws;)V
+    :catch_0
+    move-exception v0
 
-    sput-object p1, Lozb;->d:Lnyf;
+    new-instance v1, Ljava/lang/IllegalStateException;
 
-    :cond_0
-    monitor-exit p2
+    invoke-direct {v1, v0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/Throwable;)V
 
-    goto :goto_0
+    throw v1
+.end method
 
-    :catchall_0
+.method public final readByte()B
+    .locals 2
+
+    :try_start_0
+    iget-object v0, p0, Lozb;->a:Ljava/io/DataInput;
+
+    invoke-interface {v0}, Ljava/io/DataInput;->readByte()B
+
+    move-result v0
+    :try_end_0
+    .catch Ljava/io/EOFException; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
+
+    return v0
+
+    :catch_0
+    move-exception v0
+
+    new-instance v1, Ljava/lang/AssertionError;
+
+    invoke-direct {v1, v0}, Ljava/lang/AssertionError;-><init>(Ljava/lang/Object;)V
+
+    throw v1
+
+    :catch_1
+    move-exception v0
+
+    new-instance v1, Ljava/lang/IllegalStateException;
+
+    invoke-direct {v1, v0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/Throwable;)V
+
+    throw v1
+.end method
+
+.method public final readChar()C
+    .locals 2
+
+    :try_start_0
+    iget-object v0, p0, Lozb;->a:Ljava/io/DataInput;
+
+    invoke-interface {v0}, Ljava/io/DataInput;->readChar()C
+
+    move-result v0
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
+
+    return v0
+
+    :catch_0
+    move-exception v0
+
+    new-instance v1, Ljava/lang/IllegalStateException;
+
+    invoke-direct {v1, v0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/Throwable;)V
+
+    throw v1
+.end method
+
+.method public final readDouble()D
+    .locals 2
+
+    :try_start_0
+    iget-object v0, p0, Lozb;->a:Ljava/io/DataInput;
+
+    invoke-interface {v0}, Ljava/io/DataInput;->readDouble()D
+
+    move-result-wide v0
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
+
+    return-wide v0
+
+    :catch_0
+    move-exception v0
+
+    new-instance v1, Ljava/lang/IllegalStateException;
+
+    invoke-direct {v1, v0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/Throwable;)V
+
+    throw v1
+.end method
+
+.method public final readFloat()F
+    .locals 2
+
+    :try_start_0
+    iget-object v0, p0, Lozb;->a:Ljava/io/DataInput;
+
+    invoke-interface {v0}, Ljava/io/DataInput;->readFloat()F
+
+    move-result v0
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
+
+    return v0
+
+    :catch_0
+    move-exception v0
+
+    new-instance v1, Ljava/lang/IllegalStateException;
+
+    invoke-direct {v1, v0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/Throwable;)V
+
+    throw v1
+.end method
+
+.method public final readFully([B)V
+    .locals 1
+
+    :try_start_0
+    iget-object v0, p0, Lozb;->a:Ljava/io/DataInput;
+
+    invoke-interface {v0, p1}, Ljava/io/DataInput;->readFully([B)V
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
+
+    return-void
+
+    :catch_0
     move-exception p1
 
-    monitor-exit p2
+    new-instance v0, Ljava/lang/IllegalStateException;
+
+    invoke-direct {v0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/Throwable;)V
+
+    throw v0
+.end method
+
+.method public final readFully([BII)V
+    .locals 1
+
+    :try_start_0
+    iget-object v0, p0, Lozb;->a:Ljava/io/DataInput;
+
+    invoke-interface {v0, p1, p2, p3}, Ljava/io/DataInput;->readFully([BII)V
     :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
-    throw p1
+    return-void
 
-    :cond_1
-    :goto_0
-    return-object p1
+    :catch_0
+    move-exception p1
 
-    :pswitch_2
-    sget-object p1, Lozb;->c:Lozb;
+    new-instance p2, Ljava/lang/IllegalStateException;
 
-    return-object p1
+    invoke-direct {p2, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/Throwable;)V
 
-    :pswitch_3
-    new-instance p1, Lnwn;
+    throw p2
+.end method
 
-    sget-object p2, Lozb;->c:Lozb;
+.method public final readInt()I
+    .locals 2
 
-    invoke-direct {p1, p2}, Lnwn;-><init>(Lnws;)V
+    :try_start_0
+    iget-object v0, p0, Lozb;->a:Ljava/io/DataInput;
 
-    return-object p1
+    invoke-interface {v0}, Ljava/io/DataInput;->readInt()I
 
-    :pswitch_4
-    new-instance p1, Lozb;
+    move-result v0
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
-    invoke-direct {p1}, Lozb;-><init>()V
+    return v0
 
-    return-object p1
+    :catch_0
+    move-exception v0
 
-    :pswitch_5
-    const-string p1, "a"
+    new-instance v1, Ljava/lang/IllegalStateException;
 
-    const-string v0, "\u0001\u0001\u0000\u0001\u0001\u0001\u0001\u0000\u0000\u0000\u0001\u1009\u0000"
+    invoke-direct {v1, v0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/Throwable;)V
 
-    const/4 v1, 0x2
+    throw v1
+.end method
 
-    new-array v1, v1, [Ljava/lang/Object;
+.method public final readLine()Ljava/lang/String;
+    .locals 2
 
-    const/4 v2, 0x0
+    :try_start_0
+    iget-object v0, p0, Lozb;->a:Ljava/io/DataInput;
 
-    aput-object p1, v1, v2
+    invoke-interface {v0}, Ljava/io/DataInput;->readLine()Ljava/lang/String;
 
-    const-string p1, "b"
+    move-result-object v0
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
-    aput-object p1, v1, p2
+    return-object v0
 
-    sget-object p1, Lozb;->c:Lozb;
+    :catch_0
+    move-exception v0
 
-    invoke-static {p1, v0, v1}, Lozb;->X(Lnxy;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/Object;
+    new-instance v1, Ljava/lang/IllegalStateException;
 
-    move-result-object p1
+    invoke-direct {v1, v0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/Throwable;)V
 
-    return-object p1
+    throw v1
+.end method
 
-    :pswitch_6
-    invoke-static {p2}, Ljava/lang/Byte;->valueOf(B)Ljava/lang/Byte;
+.method public final readLong()J
+    .locals 2
 
-    move-result-object p1
+    :try_start_0
+    iget-object v0, p0, Lozb;->a:Ljava/io/DataInput;
 
-    return-object p1
+    invoke-interface {v0}, Ljava/io/DataInput;->readLong()J
 
-    nop
+    move-result-wide v0
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_6
-        :pswitch_0
-        :pswitch_5
-        :pswitch_4
-        :pswitch_3
-        :pswitch_2
-        :pswitch_1
-    .end packed-switch
+    return-wide v0
+
+    :catch_0
+    move-exception v0
+
+    new-instance v1, Ljava/lang/IllegalStateException;
+
+    invoke-direct {v1, v0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/Throwable;)V
+
+    throw v1
+.end method
+
+.method public final readShort()S
+    .locals 2
+
+    :try_start_0
+    iget-object v0, p0, Lozb;->a:Ljava/io/DataInput;
+
+    invoke-interface {v0}, Ljava/io/DataInput;->readShort()S
+
+    move-result v0
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
+
+    return v0
+
+    :catch_0
+    move-exception v0
+
+    new-instance v1, Ljava/lang/IllegalStateException;
+
+    invoke-direct {v1, v0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/Throwable;)V
+
+    throw v1
+.end method
+
+.method public final readUTF()Ljava/lang/String;
+    .locals 2
+
+    :try_start_0
+    iget-object v0, p0, Lozb;->a:Ljava/io/DataInput;
+
+    invoke-interface {v0}, Ljava/io/DataInput;->readUTF()Ljava/lang/String;
+
+    move-result-object v0
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
+
+    return-object v0
+
+    :catch_0
+    move-exception v0
+
+    new-instance v1, Ljava/lang/IllegalStateException;
+
+    invoke-direct {v1, v0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/Throwable;)V
+
+    throw v1
+.end method
+
+.method public final readUnsignedByte()I
+    .locals 2
+
+    :try_start_0
+    iget-object v0, p0, Lozb;->a:Ljava/io/DataInput;
+
+    invoke-interface {v0}, Ljava/io/DataInput;->readUnsignedByte()I
+
+    move-result v0
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
+
+    return v0
+
+    :catch_0
+    move-exception v0
+
+    new-instance v1, Ljava/lang/IllegalStateException;
+
+    invoke-direct {v1, v0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/Throwable;)V
+
+    throw v1
+.end method
+
+.method public final readUnsignedShort()I
+    .locals 2
+
+    :try_start_0
+    iget-object v0, p0, Lozb;->a:Ljava/io/DataInput;
+
+    invoke-interface {v0}, Ljava/io/DataInput;->readUnsignedShort()I
+
+    move-result v0
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
+
+    return v0
+
+    :catch_0
+    move-exception v0
+
+    new-instance v1, Ljava/lang/IllegalStateException;
+
+    invoke-direct {v1, v0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/Throwable;)V
+
+    throw v1
+.end method
+
+.method public final skipBytes(I)I
+    .locals 1
+
+    :try_start_0
+    iget-object v0, p0, Lozb;->a:Ljava/io/DataInput;
+
+    invoke-interface {v0, p1}, Ljava/io/DataInput;->skipBytes(I)I
+
+    move-result p1
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
+
+    return p1
+
+    :catch_0
+    move-exception p1
+
+    new-instance v0, Ljava/lang/IllegalStateException;
+
+    invoke-direct {v0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/Throwable;)V
+
+    throw v0
 .end method

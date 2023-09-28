@@ -1,154 +1,127 @@
 .class public final Lgld;
 .super Ljava/lang/Object;
 
+# interfaces
+.implements Loiu;
+
 
 # instance fields
-.field public final a:F
-
-.field public final b:F
+.field final synthetic a:Ljava/util/List;
 
 
 # direct methods
-.method public constructor <init>()V
+.method public constructor <init>(Ljava/util/List;)V
     .locals 0
+
+    iput-object p1, p0, Lgld;->a:Ljava/util/List;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
-.end method
-
-.method public constructor <init>(FF)V
-    .locals 0
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput p1, p0, Lgld;->a:F
-
-    iput p2, p0, Lgld;->b:F
-
-    return-void
-.end method
-
-.method public static a(FF)Lgld;
-    .locals 1
-
-    new-instance v0, Lgld;
-
-    invoke-direct {v0, p0, p1}, Lgld;-><init>(FF)V
-
-    return-object v0
 .end method
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 4
+.method public final bridge synthetic a(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 7
 
-    const/4 v0, 0x1
+    check-cast p1, Ljava/util/Set;
 
-    if-ne p1, p0, :cond_0
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    return v0
-
-    :cond_0
-    instance-of v1, p1, Lgld;
-
-    const/4 v2, 0x0
-
-    if-eqz v1, :cond_1
-
-    check-cast p1, Lgld;
-
-    iget v1, p0, Lgld;->a:F
-
-    invoke-static {v1}, Ljava/lang/Float;->floatToIntBits(F)I
-
-    move-result v1
-
-    iget v3, p1, Lgld;->a:F
-
-    invoke-static {v3}, Ljava/lang/Float;->floatToIntBits(F)I
-
-    move-result v3
-
-    if-ne v1, v3, :cond_1
-
-    iget v1, p0, Lgld;->b:F
-
-    invoke-static {v1}, Ljava/lang/Float;->floatToIntBits(F)I
-
-    move-result v1
-
-    iget p1, p1, Lgld;->b:F
-
-    invoke-static {p1}, Ljava/lang/Float;->floatToIntBits(F)I
-
-    move-result p1
-
-    if-ne v1, p1, :cond_1
-
-    return v0
-
-    :cond_1
-    return v2
-.end method
-
-.method public final hashCode()I
-    .locals 3
-
-    iget v0, p0, Lgld;->a:F
-
-    invoke-static {v0}, Ljava/lang/Float;->floatToIntBits(F)I
+    invoke-interface {p1}, Ljava/util/Set;->size()I
 
     move-result v0
 
-    const v1, 0xf4243
+    const/4 v1, 0x0
 
-    xor-int/2addr v0, v1
+    const/4 v2, 0x1
 
-    iget v2, p0, Lgld;->b:F
+    if-ne v0, v2, :cond_0
 
-    invoke-static {v2}, Ljava/lang/Float;->floatToIntBits(F)I
+    const/4 v0, 0x1
 
-    move-result v2
+    goto :goto_0
 
-    mul-int v0, v0, v1
+    :cond_0
+    const/4 v0, 0x0
 
-    xor-int/2addr v0, v2
+    :goto_0
+    invoke-static {v0}, Lobr;->aQ(Z)V
 
-    return v0
-.end method
+    invoke-static {p1, v1}, Lohh;->r(Ljava/lang/Iterable;I)Ljava/lang/Object;
 
-.method public final toString()Ljava/lang/String;
-    .locals 4
+    move-result-object p1
 
-    iget v0, p0, Lgld;->a:F
+    check-cast p1, Lhin;
 
-    iget v1, p0, Lgld;->b:F
+    iget-object v0, p1, Lhin;->a:Lmad;
 
-    new-instance v2, Ljava/lang/StringBuilder;
+    invoke-interface {v0}, Lmad;->d()J
 
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+    move-result-wide v3
 
-    const-string v3, "DualEvKnobPositions{brightness="
+    iget-object p1, p1, Lhin;->a:Lmad;
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-interface {p1}, Lmad;->close()V
 
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
+    new-instance p1, Ljava/util/ArrayList;
 
-    const-string v0, ", shadow="
+    invoke-direct {p1}, Ljava/util/ArrayList;-><init>()V
 
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    iget-object v0, p0, Lgld;->a:Ljava/util/List;
 
-    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
-
-    const-string v0, "}"
-
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object v0
 
-    return-object v0
+    :goto_1
+    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v5
+
+    if-eqz v5, :cond_1
+
+    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v5
+
+    check-cast v5, Lmad;
+
+    invoke-interface {v5}, Lmad;->d()J
+
+    move-result-wide v5
+
+    invoke-static {v5, v6}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object v5
+
+    invoke-interface {p1, v5}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    goto :goto_1
+
+    :cond_1
+    invoke-static {v3, v4}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object v0
+
+    invoke-interface {p1, v0}, Ljava/util/List;->indexOf(Ljava/lang/Object;)I
+
+    move-result p1
+
+    if-ltz p1, :cond_2
+
+    const/4 v1, 0x1
+
+    goto :goto_2
+
+    :cond_2
+    :goto_2
+    invoke-static {v1}, Lobr;->aQ(Z)V
+
+    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object p1
+
+    return-object p1
 .end method

@@ -1,72 +1,46 @@
-.class Ldoz;
-.super Ldoy;
+.class public Ldoz;
+.super Landroid/view/SurfaceView;
 
 
 # instance fields
-.field final synthetic a:Ldpc;
+.field public final a:Lljm;
 
 
 # direct methods
-.method public constructor <init>(Ldpc;)V
+.method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
     .locals 0
 
-    iput-object p1, p0, Ldoz;->a:Ldpc;
+    invoke-direct {p0, p1, p2}, Landroid/view/SurfaceView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
-    invoke-direct {p0}, Ldoy;-><init>()V
+    new-instance p1, Lljm;
+
+    invoke-direct {p1}, Lljm;-><init>()V
+
+    iput-object p1, p0, Ldoz;->a:Lljm;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public c()V
-    .locals 0
-
-    return-void
-.end method
-
-.method public d(FLdok;)V
+.method public final layout(IIII)V
     .locals 2
 
-    iget-object v0, p0, Ldoz;->a:Ldpc;
+    invoke-super {p0, p1, p2, p3, p4}, Landroid/view/SurfaceView;->layout(IIII)V
 
-    iget-object v0, v0, Ldpc;->j:Ljwb;
+    iget-object v0, p0, Ldoz;->a:Lljm;
 
-    const/4 v1, 0x0
-
-    invoke-static {v1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+    invoke-virtual {p0}, Ldoz;->getContext()Landroid/content/Context;
 
     move-result-object v1
 
-    invoke-interface {v0, v1}, Ljwb;->bn(Ljava/lang/Object;)V
+    invoke-static {v1}, Lnle;->g(Landroid/content/Context;)I
 
-    iget-object v0, p0, Ldoz;->a:Ldpc;
+    move-result v1
 
-    invoke-virtual {v0, p1, p2}, Ldpc;->m(FLdok;)V
+    invoke-static {v1}, Llic;->e(I)Llic;
 
-    return-void
-.end method
-
-.method public final f()V
-    .locals 0
-
-    return-void
-.end method
-
-.method public final g()V
-    .locals 2
-
-    iget-object v0, p0, Ldoz;->a:Ldpc;
-
-    iget-object v0, v0, Ldpc;->d:Ljwb;
-
-    const/4 v1, 0x0
-
-    invoke-static {v1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
-
-    move-result-object v1
-
-    invoke-interface {v0, v1}, Ljwb;->bn(Ljava/lang/Object;)V
+    invoke-virtual {v0, p1, p2, p3, p4}, Lljm;->b(IIII)V
 
     return-void
 .end method

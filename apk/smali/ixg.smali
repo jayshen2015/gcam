@@ -1,52 +1,39 @@
-.class public final Lixg;
+.class public final synthetic Lixg;
 .super Ljava/lang/Object;
 
+# interfaces
+.implements Liib;
 
-# static fields
-.field public static final a:[I
 
-.field public static final b:[I
-
-.field public static final c:[I
+# instance fields
+.field public final synthetic a:Ljak;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 4
+.method public synthetic constructor <init>(Ljak;)V
+    .locals 0
 
-    const v0, 0x7f04056e
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const v1, 0x7f040730
-
-    const v2, 0x7f040341
-
-    const v3, 0x7f04056c
-
-    filled-new-array {v2, v3, v0, v1}, [I
-
-    move-result-object v0
-
-    sput-object v0, Lixg;->a:[I
-
-    const v0, 0x10100c4
-
-    const v1, 0x7f040731
-
-    filled-new-array {v0, v1}, [I
-
-    move-result-object v0
-
-    sput-object v0, Lixg;->b:[I
-
-    const v0, 0x1010001
-
-    const v1, 0x7f040346
-
-    filled-new-array {v0, v1}, [I
-
-    move-result-object v0
-
-    sput-object v0, Lixg;->c:[I
+    iput-object p1, p0, Lixg;->a:Ljak;
 
     return-void
+.end method
+
+
+# virtual methods
+.method public final a()Llie;
+    .locals 2
+
+    iget-object v0, p0, Lixg;->a:Ljak;
+
+    const/4 v1, 0x0
+
+    invoke-virtual {v0, v1}, Ljak;->d(Z)V
+
+    new-instance v1, Ljai;
+
+    invoke-direct {v1, v0}, Ljai;-><init>(Ljak;)V
+
+    return-object v1
 .end method

@@ -1,57 +1,60 @@
 .class public final Lcin;
 .super Ljava/lang/Object;
 
-# interfaces
-.implements Lcik;
-
 
 # static fields
-.field public static final a:Lcin;
+.field public static final a:Louj;
+
+
+# instance fields
+.field public final b:Ljava/util/concurrent/atomic/AtomicBoolean;
+
+.field public final c:Ljava/lang/Object;
+
+.field public d:I
+
+.field public e:I
+
+.field public f:J
+
+.field public g:Lj$/time/Duration;
+
+.field public h:J
 
 
 # direct methods
 .method static constructor <clinit>()V
     .locals 1
 
-    new-instance v0, Lcin;
+    const-string v0, "com/google/android/apps/camera/camcorder/audio/processor/AudioFrameDropWatcherImpl"
 
-    invoke-direct {v0}, Lcin;-><init>()V
+    invoke-static {v0}, Louj;->h(Ljava/lang/String;)Louj;
 
-    sput-object v0, Lcin;->a:Lcin;
+    move-result-object v0
+
+    sput-object v0, Lcin;->a:Louj;
 
     return-void
 .end method
 
-.method private constructor <init>()V
-    .locals 0
+.method public constructor <init>()V
+    .locals 2
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    new-instance v0, Ljava/util/concurrent/atomic/AtomicBoolean;
+
+    const/4 v1, 0x1
+
+    invoke-direct {v0, v1}, Ljava/util/concurrent/atomic/AtomicBoolean;-><init>(Z)V
+
+    iput-object v0, p0, Lcin;->b:Ljava/util/concurrent/atomic/AtomicBoolean;
+
+    new-instance v0, Ljava/lang/Object;
+
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+
+    iput-object v0, p0, Lcin;->c:Ljava/lang/Object;
+
     return-void
-.end method
-
-
-# virtual methods
-.method public final bl()Lnou;
-    .locals 1
-
-    const/4 v0, 0x1
-
-    invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
-
-    move-result-object v0
-
-    invoke-static {v0}, Lnsy;->B(Ljava/lang/Object;)Lnou;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public final c()Ljava/lang/String;
-    .locals 1
-
-    const-string v0, "noop"
-
-    return-object v0
 .end method

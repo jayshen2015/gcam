@@ -1,80 +1,63 @@
-.class final Llwb;
-.super Lolh;
+.class public final Llwb;
+.super Ljava/lang/Object;
 
-
-# annotations
-.annotation runtime Lolj;
-    b = "com.google.android.libraries.vision.visionkit.f250.internal.airlock.ResourceDeleter"
-    c = "Deleter.kt"
-    d = "deleteResources"
-    e = {
-        0x3d,
-        0x8d,
-        0x4e,
-        0xa5,
-        0x52,
-        0x5d,
-        0xb3,
-        0x62
-    }
-.end annotation
+# interfaces
+.implements Lpys;
 
 
 # instance fields
-.field a:Ljava/lang/Object;
+.field private final a:Lqkg;
 
-.field b:Ljava/lang/Object;
-
-.field c:Ljava/lang/Object;
-
-.field d:Ljava/lang/Object;
-
-.field synthetic e:Ljava/lang/Object;
-
-.field final synthetic f:Llwc;
-
-.field g:I
-
-.field h:Llzy;
-
-.field i:Ljava/util/List;
-
-.field j:Ljava/util/List;
+.field private final b:Lqkg;
 
 
 # direct methods
-.method public constructor <init>(Llwc;Loku;)V
+.method public constructor <init>(Lqkg;Lqkg;)V
     .locals 0
 
-    iput-object p1, p0, Llwb;->f:Llwc;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0, p2}, Lolh;-><init>(Loku;)V
+    iput-object p1, p0, Llwb;->a:Lqkg;
+
+    iput-object p2, p0, Llwb;->b:Lqkg;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final b(Ljava/lang/Object;)Ljava/lang/Object;
+.method public final a()Llwa;
+    .locals 3
+
+    iget-object v0, p0, Llwb;->a:Lqkg;
+
+    check-cast v0, Lemu;
+
+    invoke-virtual {v0}, Lemu;->a()Landroid/hardware/camera2/CameraManager;
+
+    move-result-object v0
+
+    iget-object v1, p0, Llwb;->b:Lqkg;
+
+    check-cast v1, Lliq;
+
+    invoke-virtual {v1}, Lliq;->a()Llis;
+
+    move-result-object v1
+
+    new-instance v2, Llwa;
+
+    invoke-direct {v2, v0, v1}, Llwa;-><init>(Landroid/hardware/camera2/CameraManager;Llis;)V
+
+    return-object v2
+.end method
+
+.method public final bridge synthetic get()Ljava/lang/Object;
     .locals 1
 
-    iput-object p1, p0, Llwb;->e:Ljava/lang/Object;
+    invoke-virtual {p0}, Llwb;->a()Llwa;
 
-    iget p1, p0, Llwb;->g:I
+    move-result-object v0
 
-    const/high16 v0, -0x80000000
-
-    or-int/2addr p1, v0
-
-    iput p1, p0, Llwb;->g:I
-
-    iget-object p1, p0, Llwb;->f:Llwc;
-
-    const/4 v0, 0x0
-
-    invoke-virtual {p1, v0, v0, p0}, Llwc;->b(Llzy;Ljava/util/List;Loku;)Ljava/lang/Object;
-
-    move-result-object p1
-
-    return-object p1
+    return-object v0
 .end method

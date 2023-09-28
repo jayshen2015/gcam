@@ -1,45 +1,90 @@
-.class public final Loso;
-.super Lowp;
+.class Loso;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Ljava/io/Serializable;
+
+
+# static fields
+.field private static final serialVersionUID:J
 
 
 # instance fields
-.field final synthetic a:Losp;
+.field final g:Ljava/lang/Object;
+
+.field final h:Ljava/lang/Object;
 
 
 # direct methods
-.method public constructor <init>(Lowr;Losp;)V
+.method public constructor <init>(Ljava/lang/Object;Ljava/lang/Object;)V
     .locals 0
 
-    iput-object p2, p0, Loso;->a:Losp;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0, p1}, Lowp;-><init>(Lowr;)V
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    iput-object p1, p0, Loso;->g:Ljava/lang/Object;
+
+    if-nez p2, :cond_0
+
+    move-object p2, p0
+
+    :cond_0
+    iput-object p2, p0, Loso;->h:Ljava/lang/Object;
 
     return-void
 .end method
 
+.method private writeObject(Ljava/io/ObjectOutputStream;)V
+    .locals 1
+
+    iget-object v0, p0, Loso;->h:Ljava/lang/Object;
+
+    monitor-enter v0
+
+    :try_start_0
+    invoke-virtual {p1}, Ljava/io/ObjectOutputStream;->defaultWriteObject()V
+
+    monitor-exit v0
+
+    return-void
+
+    :catchall_0
+    move-exception p1
+
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw p1
+.end method
+
 
 # virtual methods
-.method public final bridge synthetic a(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 0
+.method public final toString()Ljava/lang/String;
+    .locals 2
 
-    check-cast p1, Lowr;
+    iget-object v0, p0, Loso;->h:Ljava/lang/Object;
 
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    monitor-enter v0
 
-    iget-object p1, p0, Loso;->a:Losp;
+    :try_start_0
+    iget-object v1, p0, Loso;->g:Ljava/lang/Object;
 
-    invoke-virtual {p1}, Losp;->z()Z
+    invoke-virtual {v1}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
-    move-result p1
+    move-result-object v1
 
-    if-eqz p1, :cond_0
+    monitor-exit v0
 
-    const/4 p1, 0x0
+    return-object v1
 
-    return-object p1
+    :catchall_0
+    move-exception v1
 
-    :cond_0
-    sget-object p1, Lowo;->a:Ljava/lang/Object;
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    return-object p1
+    throw v1
 .end method

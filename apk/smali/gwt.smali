@@ -1,150 +1,177 @@
-.class final Lgwt;
+.class public final Lgwt;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lgxw;
+.implements Lpys;
 
 
 # instance fields
-.field final synthetic a:Ljava/io/File;
+.field private final a:Lqkg;
 
-.field final synthetic b:Lgxl;
+.field private final b:Lqkg;
 
-.field final synthetic c:Lgwu;
+.field private final c:Lqkg;
+
+.field private final d:Lqkg;
+
+.field private final e:Lqkg;
+
+.field private final f:Lqkg;
+
+.field private final g:Lqkg;
+
+.field private final h:Lqkg;
 
 
 # direct methods
-.method public constructor <init>(Lgwu;Ljava/io/File;Lgxl;)V
+.method public constructor <init>(Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;)V
     .locals 0
-
-    iput-object p1, p0, Lgwt;->c:Lgwu;
-
-    iput-object p2, p0, Lgwt;->a:Ljava/io/File;
-
-    iput-object p3, p0, Lgwt;->b:Lgxl;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    iput-object p1, p0, Lgwt;->a:Lqkg;
+
+    iput-object p2, p0, Lgwt;->b:Lqkg;
+
+    iput-object p3, p0, Lgwt;->c:Lqkg;
+
+    iput-object p4, p0, Lgwt;->d:Lqkg;
+
+    iput-object p5, p0, Lgwt;->e:Lqkg;
+
+    iput-object p6, p0, Lgwt;->f:Lqkg;
+
+    iput-object p7, p0, Lgwt;->g:Lqkg;
+
+    iput-object p8, p0, Lgwt;->h:Lqkg;
+
     return-void
+.end method
+
+.method public static b(Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;)Lgwt;
+    .locals 10
+
+    new-instance v9, Lgwt;
+
+    move-object v0, v9
+
+    move-object v1, p0
+
+    move-object v2, p1
+
+    move-object v3, p2
+
+    move-object v4, p3
+
+    move-object v5, p4
+
+    move-object v6, p5
+
+    move-object/from16 v7, p6
+
+    move-object/from16 v8, p7
+
+    invoke-direct/range {v0 .. v8}, Lgwt;-><init>(Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;)V
+
+    return-object v9
 .end method
 
 
 # virtual methods
-.method public final a()V
-    .locals 4
+.method public final a()Lgws;
+    .locals 10
 
-    iget-object v0, p0, Lgwt;->c:Lgwu;
+    iget-object v0, p0, Lgwt;->a:Lqkg;
 
-    iget-object v0, v0, Lgwu;->c:Ljava/util/concurrent/Executor;
+    invoke-interface {v0}, Lqkg;->get()Ljava/lang/Object;
 
-    iget-object v1, p0, Lgwt;->a:Ljava/io/File;
+    move-result-object v0
 
-    new-instance v2, Lgot;
+    move-object v2, v0
 
-    const/16 v3, 0x10
+    check-cast v2, Llnc;
 
-    invoke-direct {v2, v1, v3}, Lgot;-><init>(Ljava/io/File;I)V
+    iget-object v0, p0, Lgwt;->b:Lqkg;
 
-    invoke-interface {v0, v2}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
+    check-cast v0, Lggr;
 
-    return-void
+    invoke-virtual {v0}, Lggr;->b()Llbi;
+
+    move-result-object v3
+
+    iget-object v0, p0, Lgwt;->c:Lqkg;
+
+    invoke-interface {v0}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    move-object v4, v0
+
+    check-cast v4, Lbod;
+
+    iget-object v0, p0, Lgwt;->d:Lqkg;
+
+    invoke-interface {v0}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    move-object v5, v0
+
+    check-cast v5, Lgfy;
+
+    iget-object v0, p0, Lgwt;->e:Lqkg;
+
+    check-cast v0, Lbnz;
+
+    invoke-virtual {v0}, Lbnz;->a()Lbny;
+
+    move-result-object v6
+
+    iget-object v0, p0, Lgwt;->f:Lqkg;
+
+    invoke-interface {v0}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    move-object v7, v0
+
+    check-cast v7, Lhbq;
+
+    iget-object v0, p0, Lgwt;->g:Lqkg;
+
+    invoke-interface {v0}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    move-object v8, v0
+
+    check-cast v8, Llce;
+
+    iget-object v0, p0, Lgwt;->h:Lqkg;
+
+    invoke-interface {v0}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    move-object v9, v0
+
+    check-cast v9, Lddf;
+
+    new-instance v0, Lgws;
+
+    move-object v1, v0
+
+    invoke-direct/range {v1 .. v9}, Lgws;-><init>(Llnc;Llbi;Lbod;Lgfy;Lbny;Lhbq;Llce;Lddf;)V
+
+    return-object v0
 .end method
 
-.method public final synthetic b()V
-    .locals 0
-
-    return-void
-.end method
-
-.method public final synthetic c(Lfce;)V
-    .locals 0
-
-    return-void
-.end method
-
-.method public final d(Landroid/graphics/Bitmap;)V
-    .locals 5
-
-    iget-object v0, p0, Lgwt;->c:Lgwu;
-
-    iget-object v0, v0, Lgwu;->b:Ldhi;
-
-    sget-object v1, Ldho;->bv:Ldhj;
-
-    invoke-interface {v0, v1}, Ldhi;->l(Ldhj;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    return-void
-
-    :cond_0
-    iget-object v0, p0, Lgwt;->c:Lgwu;
-
-    iget-object v0, v0, Lgwu;->c:Ljava/util/concurrent/Executor;
-
-    iget-object v1, p0, Lgwt;->a:Ljava/io/File;
-
-    iget-object v2, p0, Lgwt;->b:Lgxl;
-
-    new-instance v3, Lgwr;
-
-    const/4 v4, 0x2
-
-    invoke-direct {v3, p1, v1, v2, v4}, Lgwr;-><init>(Landroid/graphics/Bitmap;Ljava/io/File;Lgxl;I)V
-
-    invoke-interface {v0, v3}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
-
-    return-void
-.end method
-
-.method public final synthetic e()V
-    .locals 0
-
-    return-void
-.end method
-
-.method public final synthetic f(Lmqp;)V
-    .locals 0
-
-    return-void
-.end method
-
-.method public final g(IILjava/lang/Throwable;)V
+.method public final bridge synthetic get()Ljava/lang/Object;
     .locals 1
 
-    iget-object p1, p0, Lgwt;->c:Lgwu;
+    invoke-virtual {p0}, Lgwt;->a()Lgws;
 
-    iget-object p1, p1, Lgwu;->c:Ljava/util/concurrent/Executor;
+    move-result-object v0
 
-    iget-object p2, p0, Lgwt;->a:Ljava/io/File;
-
-    new-instance p3, Lgot;
-
-    const/16 v0, 0x11
-
-    invoke-direct {p3, p2, v0}, Lgot;-><init>(Ljava/io/File;I)V
-
-    invoke-interface {p1, p3}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
-
-    return-void
-.end method
-
-.method public final synthetic h(IILjava/lang/Throwable;)V
-    .locals 0
-
-    return-void
-.end method
-
-.method public final synthetic i(II)V
-    .locals 0
-
-    return-void
-.end method
-
-.method public final synthetic j(II)V
-    .locals 0
-
-    return-void
+    return-object v0
 .end method

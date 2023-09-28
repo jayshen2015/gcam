@@ -1,64 +1,64 @@
-.class final Lcxs;
-.super Lcym;
+.class public final Lcxs;
+.super Ljava/lang/Object;
 
 
 # instance fields
-.field final synthetic a:Lcxv;
+.field public final a:Lcxy;
+
+.field public b:I
+
+.field public c:I
+
+.field public d:I
 
 
 # direct methods
-.method public constructor <init>(Lcxv;)V
+.method public constructor <init>(Lcxy;)V
     .locals 0
 
-    iput-object p1, p0, Lcxs;->a:Lcxv;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0, p1}, Lcym;-><init>(Lcyp;)V
+    iput-object p1, p0, Lcxs;->a:Lcxy;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()V
-    .locals 2
+.method public final toString()Ljava/lang/String;
+    .locals 3
 
-    iget-object v0, p0, Lcxs;->a:Lcxv;
+    invoke-static {p0}, Lobr;->aZ(Ljava/lang/Object;)Lojb;
 
-    iget-object v0, v0, Lcxv;->a:Lhiu;
+    move-result-object v0
 
-    invoke-virtual {v0}, Lhiu;->e()V
+    iget-object v1, p0, Lcxs;->a:Lcxy;
 
-    invoke-super {p0}, Lcym;->a()V
+    const-string v2, "Reason"
 
-    iget-object v0, p0, Lcxs;->a:Lcxv;
+    invoke-virtual {v0, v2, v1}, Lojb;->b(Ljava/lang/String;Ljava/lang/Object;)V
 
-    iget-object v1, v0, Lcxv;->a:Lhiu;
+    iget v1, p0, Lcxs;->b:I
 
-    iget-object v0, v0, Lcxv;->d:Lhiw;
+    const-string v2, "Impressions before reboot"
 
-    invoke-virtual {v1, v0}, Lhiu;->g(Lhiw;)V
+    invoke-virtual {v0, v2, v1}, Lojb;->e(Ljava/lang/String;I)V
 
-    return-void
-.end method
+    iget v1, p0, Lcxs;->c:I
 
-.method public final b()V
-    .locals 2
+    const-string v2, "Impressions after reboot"
 
-    iget-object v0, p0, Lcxs;->a:Lcxv;
+    invoke-virtual {v0, v2, v1}, Lojb;->e(Ljava/lang/String;I)V
 
-    iget-object v0, v0, Lcxv;->a:Lhiu;
+    iget v1, p0, Lcxs;->d:I
 
-    invoke-virtual {v0}, Lhiu;->e()V
+    const-string v2, "Reboot count"
 
-    invoke-super {p0}, Lcym;->b()V
+    invoke-virtual {v0, v2, v1}, Lojb;->e(Ljava/lang/String;I)V
 
-    iget-object v0, p0, Lcxs;->a:Lcxv;
+    invoke-virtual {v0}, Lojb;->toString()Ljava/lang/String;
 
-    iget-object v1, v0, Lcxv;->a:Lhiu;
+    move-result-object v0
 
-    iget-object v0, v0, Lcxv;->c:Lhiw;
-
-    invoke-virtual {v1, v0}, Lhiu;->g(Lhiw;)V
-
-    return-void
+    return-object v0
 .end method

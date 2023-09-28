@@ -1,79 +1,55 @@
-.class final enum Lbek;
-.super Ljava/lang/Enum;
+.class public final Lbek;
+.super Ljava/lang/Object;
 
 # interfaces
-.implements Ljava/util/concurrent/Executor;
+.implements Lbfg;
 
 
-# static fields
-.field public static final enum a:Lbek;
-
-.field private static final synthetic b:[Lbek;
+# instance fields
+.field private final a:Lbeg;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 3
+.method public constructor <init>(Lbeg;)V
+    .locals 0
 
-    new-instance v0, Lbek;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {v0}, Lbek;-><init>()V
-
-    sput-object v0, Lbek;->a:Lbek;
-
-    const/4 v1, 0x1
-
-    new-array v1, v1, [Lbek;
-
-    const/4 v2, 0x0
-
-    aput-object v0, v1, v2
-
-    sput-object v1, Lbek;->b:[Lbek;
+    iput-object p1, p0, Lbek;->a:Lbeg;
 
     return-void
-.end method
-
-.method private constructor <init>()V
-    .locals 2
-
-    const-string v0, "INSTANCE"
-
-    const/4 v1, 0x0
-
-    invoke-direct {p0, v0, v1}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
-    return-void
-.end method
-
-.method public static values()[Lbek;
-    .locals 1
-
-    sget-object v0, Lbek;->b:[Lbek;
-
-    invoke-virtual {v0}, [Lbek;->clone()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, [Lbek;
-
-    return-object v0
 .end method
 
 
 # virtual methods
-.method public final execute(Ljava/lang/Runnable;)V
-    .locals 0
-
-    invoke-interface {p1}, Ljava/lang/Runnable;->run()V
-
-    return-void
-.end method
-
-.method public final toString()Ljava/lang/String;
+.method public final bridge synthetic a(Ljava/lang/Object;IILazt;)Lbff;
     .locals 1
 
-    const-string v0, "DirectExecutor"
+    check-cast p1, [B
 
-    return-object v0
+    new-instance p2, Lbff;
+
+    new-instance p3, Lblo;
+
+    invoke-direct {p3, p1}, Lblo;-><init>(Ljava/lang/Object;)V
+
+    new-instance p4, Lbeh;
+
+    iget-object v0, p0, Lbek;->a:Lbeg;
+
+    invoke-direct {p4, p1, v0}, Lbeh;-><init>([BLbeg;)V
+
+    invoke-direct {p2, p3, p4}, Lbff;-><init>(Lazp;Lbac;)V
+
+    return-object p2
+.end method
+
+.method public final bridge synthetic b(Ljava/lang/Object;)Z
+    .locals 0
+
+    check-cast p1, [B
+
+    const/4 p1, 0x1
+
+    return p1
 .end method

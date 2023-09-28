@@ -1,22 +1,42 @@
 .class public final Ldun;
-.super Ljava/lang/Object;
+.super Landroid/animation/AnimatorListenerAdapter;
 
 
-# static fields
-.field public static final a:Ldpt;
+# instance fields
+.field final synthetic a:Lcom/google/android/apps/camera/focusindicator/FocusIndicatorView;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
+.method public constructor <init>(Lcom/google/android/apps/camera/focusindicator/FocusIndicatorView;)V
+    .locals 0
 
-    new-instance v0, Ldpt;
+    iput-object p1, p0, Ldun;->a:Lcom/google/android/apps/camera/focusindicator/FocusIndicatorView;
 
-    const/16 v1, 0x14
+    invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
 
-    invoke-direct {v0, v1}, Ldpt;-><init>(I)V
+    return-void
+.end method
 
-    sput-object v0, Ldun;->a:Ldpt;
+
+# virtual methods
+.method public final onAnimationEnd(Landroid/animation/Animator;)V
+    .locals 1
+
+    iget-object p1, p0, Ldun;->a:Lcom/google/android/apps/camera/focusindicator/FocusIndicatorView;
+
+    const/4 v0, 0x0
+
+    iput-object v0, p1, Lcom/google/android/apps/camera/focusindicator/FocusIndicatorView;->m:Landroid/animation/Animator;
+
+    return-void
+.end method
+
+.method public final onAnimationStart(Landroid/animation/Animator;)V
+    .locals 1
+
+    iget-object v0, p0, Ldun;->a:Lcom/google/android/apps/camera/focusindicator/FocusIndicatorView;
+
+    iput-object p1, v0, Lcom/google/android/apps/camera/focusindicator/FocusIndicatorView;->m:Landroid/animation/Animator;
 
     return-void
 .end method

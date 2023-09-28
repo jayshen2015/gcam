@@ -1,115 +1,110 @@
-.class public final Lccf;
+.class public final synthetic Lccf;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lgtn;
+.implements Lpgj;
 
 
 # instance fields
-.field private final a:Lgto;
+.field public final synthetic a:Lccn;
 
-.field private final b:Lken;
+.field public final synthetic b:Loiu;
 
 
 # direct methods
-.method public constructor <init>(Lgto;Lken;)V
+.method public synthetic constructor <init>(Lccn;Loiu;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lccf;->a:Lgto;
+    iput-object p1, p0, Lccf;->a:Lccn;
 
-    iput-object p2, p0, Lccf;->b:Lken;
+    iput-object p2, p0, Lccf;->b:Loiu;
 
-    return-void
-.end method
-
-.method private final e(I)V
-    .locals 2
-
-    sget-object v0, Liuz;->g:Landroid/hardware/camera2/CaptureRequest$Key;
-
-    if-eqz v0, :cond_0
-
-    iget-object v0, p0, Lccf;->b:Lken;
-
-    sget-object v1, Liuz;->g:Landroid/hardware/camera2/CaptureRequest$Key;
-
-    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object p1
-
-    invoke-interface {v0, v1, p1}, Lken;->i(Landroid/hardware/camera2/CaptureRequest$Key;Ljava/lang/Object;)V
-
-    :cond_0
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(I)V
-    .locals 0
+.method public final a()Lpht;
+    .locals 6
 
-    return-void
-.end method
+    iget-object v0, p0, Lccf;->a:Lccn;
 
-.method public final b(Z)V
-    .locals 0
+    iget-object v1, p0, Lccf;->b:Loiu;
 
-    if-nez p1, :cond_0
+    iget-object v2, v0, Lccn;->b:Lcco;
 
-    const/4 p1, 0x0
+    invoke-virtual {v2}, Lcco;->getWritableDatabase()Landroid/database/sqlite/SQLiteDatabase;
 
-    invoke-direct {p0, p1}, Lccf;->e(I)V
+    move-result-object v2
 
-    return-void
+    :try_start_0
+    invoke-virtual {v2}, Landroid/database/sqlite/SQLiteDatabase;->beginTransaction()V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_1
+
+    :try_start_1
+    new-instance v3, Lccm;
+
+    iget-object v4, v0, Lccn;->c:Lmdf;
+
+    iget-object v5, v0, Lccn;->d:Ljava/util/Random;
+
+    iget v0, v0, Lccn;->g:I
+
+    invoke-direct {v3, v2, v4, v5, v0}, Lccm;-><init>(Landroid/database/sqlite/SQLiteDatabase;Lmdf;Ljava/util/Random;I)V
+
+    invoke-interface {v1, v3}, Loiu;->a(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    invoke-virtual {v2}, Landroid/database/sqlite/SQLiteDatabase;->setTransactionSuccessful()V
+
+    invoke-static {v0}, Lplk;->V(Ljava/lang/Object;)Lpht;
+
+    move-result-object v0
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    :try_start_2
+    invoke-virtual {v2}, Landroid/database/sqlite/SQLiteDatabase;->endTransaction()V
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_1
+
+    if-eqz v2, :cond_0
+
+    invoke-virtual {v2}, Landroid/database/sqlite/SQLiteDatabase;->close()V
 
     :cond_0
-    iget-object p1, p0, Lccf;->a:Lgto;
+    return-object v0
 
-    invoke-virtual {p1}, Lgto;->d()Z
+    :catchall_0
+    move-exception v0
 
-    move-result p1
+    :try_start_3
+    invoke-virtual {v2}, Landroid/database/sqlite/SQLiteDatabase;->endTransaction()V
 
-    if-nez p1, :cond_1
+    throw v0
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_1
 
-    const p1, 0x7fffffff
+    :catchall_1
+    move-exception v0
 
-    invoke-direct {p0, p1}, Lccf;->e(I)V
+    if-eqz v2, :cond_1
+
+    :try_start_4
+    invoke-virtual {v2}, Landroid/database/sqlite/SQLiteDatabase;->close()V
+    :try_end_4
+    .catchall {:try_start_4 .. :try_end_4} :catchall_2
+
+    goto :goto_0
+
+    :catchall_2
+    move-exception v1
 
     :cond_1
-    return-void
-.end method
-
-.method public final c(F)V
-    .locals 2
-
-    iget-object v0, p0, Lccf;->a:Lgto;
-
-    iget-boolean v1, v0, Lgto;->a:Z
-
-    if-eqz v1, :cond_0
-
-    invoke-virtual {v0}, Lgto;->d()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    invoke-static {p1}, Ljava/lang/Math;->round(F)I
-
-    move-result p1
-
-    mul-int/lit8 p1, p1, 0x64
-
-    invoke-direct {p0, p1}, Lccf;->e(I)V
-
-    :cond_0
-    return-void
-.end method
-
-.method public final d(F)V
-    .locals 0
-
-    return-void
+    :goto_0
+    throw v0
 .end method

@@ -1,200 +1,106 @@
-.class public final Lnjj;
-.super Lnws;
+.class public abstract Lnjj;
+.super Ljava/lang/Object;
 
 # interfaces
-.implements Lnxz;
-
-
-# static fields
-.field public static final g:Lnjj;
-
-.field private static volatile h:Lnyf;
-
-
-# instance fields
-.field public a:I
-
-.field public b:I
-
-.field public c:F
-
-.field public d:F
-
-.field public e:F
-
-.field public f:J
+.implements Lnji;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
+.method public constructor <init>()V
+    .locals 0
 
-    new-instance v0, Lnjj;
-
-    invoke-direct {v0}, Lnjj;-><init>()V
-
-    sput-object v0, Lnjj;->g:Lnjj;
-
-    const-class v1, Lnjj;
-
-    invoke-static {v1, v0}, Lnws;->aa(Ljava/lang/Class;Lnws;)V
-
-    return-void
-.end method
-
-.method private constructor <init>()V
-    .locals 1
-
-    invoke-direct {p0}, Lnws;-><init>()V
-
-    sget-object v0, Lnyi;->b:Lnyi;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method protected final a(ILjava/lang/Object;)Ljava/lang/Object;
-    .locals 3
+.method protected a(Landroid/net/Uri;)Landroid/net/Uri;
+    .locals 0
 
-    add-int/lit8 p1, p1, -0x1
-
-    const/4 p2, 0x1
-
-    packed-switch p1, :pswitch_data_0
-
-    :pswitch_0
     const/4 p1, 0x0
 
-    return-object p1
+    throw p1
+.end method
 
-    :pswitch_1
-    sget-object p1, Lnjj;->h:Lnyf;
+.method protected abstract b()Lnji;
+.end method
 
-    if-nez p1, :cond_1
+.method public synthetic c(Landroid/net/Uri;)Ljava/io/File;
+    .locals 0
 
-    const-class p2, Lnjj;
-
-    monitor-enter p2
-
-    :try_start_0
-    sget-object p1, Lnjj;->h:Lnyf;
-
-    if-nez p1, :cond_0
-
-    new-instance p1, Lnwo;
-
-    sget-object v0, Lnjj;->g:Lnjj;
-
-    invoke-direct {p1, v0}, Lnwo;-><init>(Lnws;)V
-
-    sput-object p1, Lnjj;->h:Lnyf;
-
-    :cond_0
-    monitor-exit p2
-
-    goto :goto_0
-
-    :catchall_0
-    move-exception p1
-
-    monitor-exit p2
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    const/4 p1, 0x0
 
     throw p1
+.end method
 
-    :cond_1
-    :goto_0
-    return-object p1
+.method public d(Landroid/net/Uri;)Ljava/io/InputStream;
+    .locals 0
 
-    :pswitch_2
-    sget-object p1, Lnjj;->g:Lnjj;
+    const/4 p1, 0x0
 
-    return-object p1
+    throw p1
+.end method
 
-    :pswitch_3
-    new-instance p1, Lnwn;
+.method public f(Landroid/net/Uri;)Z
+    .locals 0
 
-    sget-object p2, Lnjj;->g:Lnjj;
+    const/4 p1, 0x0
 
-    invoke-direct {p1, p2}, Lnwn;-><init>(Lnws;)V
+    throw p1
+.end method
 
-    return-object p1
+.method public final g(Landroid/net/Uri;Landroid/net/Uri;)V
+    .locals 1
 
-    :pswitch_4
-    new-instance p1, Lnjj;
+    invoke-virtual {p0}, Lnjj;->b()Lnji;
 
-    invoke-direct {p1}, Lnjj;-><init>()V
+    move-result-object v0
 
-    return-object p1
+    invoke-virtual {p0, p1}, Lnjj;->a(Landroid/net/Uri;)Landroid/net/Uri;
 
-    :pswitch_5
-    const-string p1, "a"
+    move-result-object p1
 
-    const-string v0, "\u0001\u0005\u0000\u0001\u0001\u0005\u0005\u0000\u0000\u0000\u0001\u1004\u0000\u0002\u1001\u0001\u0003\u1001\u0002\u0004\u1001\u0003\u0005\u1002\u0004"
+    invoke-virtual {p0, p2}, Lnjj;->a(Landroid/net/Uri;)Landroid/net/Uri;
 
-    const/4 v1, 0x6
+    move-result-object p2
 
-    new-array v1, v1, [Ljava/lang/Object;
+    invoke-interface {v0, p1, p2}, Lnji;->g(Landroid/net/Uri;Landroid/net/Uri;)V
 
-    const/4 v2, 0x0
+    return-void
+.end method
 
-    aput-object p1, v1, v2
+.method public final j(Landroid/net/Uri;)Ljava/io/OutputStream;
+    .locals 1
 
-    const-string p1, "b"
+    invoke-virtual {p0}, Lnjj;->b()Lnji;
 
-    aput-object p1, v1, p2
+    move-result-object v0
 
-    const/4 p1, 0x2
+    invoke-virtual {p0, p1}, Lnjj;->a(Landroid/net/Uri;)Landroid/net/Uri;
 
-    const-string p2, "c"
+    move-result-object p1
 
-    aput-object p2, v1, p1
-
-    const/4 p1, 0x3
-
-    const-string p2, "d"
-
-    aput-object p2, v1, p1
-
-    const/4 p1, 0x4
-
-    const-string p2, "e"
-
-    aput-object p2, v1, p1
-
-    const/4 p1, 0x5
-
-    const-string p2, "f"
-
-    aput-object p2, v1, p1
-
-    sget-object p1, Lnjj;->g:Lnjj;
-
-    invoke-static {p1, v0, v1}, Lnjj;->X(Lnxy;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {v0, p1}, Lnji;->j(Landroid/net/Uri;)Ljava/io/OutputStream;
 
     move-result-object p1
 
     return-object p1
+.end method
 
-    :pswitch_6
-    invoke-static {p2}, Ljava/lang/Byte;->valueOf(B)Ljava/lang/Byte;
+.method public final k(Landroid/net/Uri;)V
+    .locals 1
+
+    invoke-virtual {p0}, Lnjj;->b()Lnji;
+
+    move-result-object v0
+
+    invoke-virtual {p0, p1}, Lnjj;->a(Landroid/net/Uri;)Landroid/net/Uri;
 
     move-result-object p1
 
-    return-object p1
+    invoke-interface {v0, p1}, Lnji;->k(Landroid/net/Uri;)V
 
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_6
-        :pswitch_0
-        :pswitch_5
-        :pswitch_4
-        :pswitch_3
-        :pswitch_2
-        :pswitch_1
-    .end packed-switch
+    return-void
 .end method

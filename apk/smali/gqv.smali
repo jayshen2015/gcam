@@ -1,58 +1,44 @@
-.class public final Lgqv;
-.super Ljava/lang/Object;
-
-# interfaces
-.implements Lgqk;
+.class final Lgqv;
+.super Lldn;
 
 
 # instance fields
-.field public final a:Lnph;
-
-.field public b:Lgqr;
+.field private final a:Lgqt;
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 1
+.method public constructor <init>(Llda;Lgqt;)V
+    .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0, p1}, Lldn;-><init>(Llda;)V
 
-    invoke-static {}, Lnph;->g()Lnph;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lgqv;->a:Lnph;
+    iput-object p2, p0, Lgqv;->a:Lgqt;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final close()V
-    .locals 2
+.method protected final bridge synthetic b(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 1
 
-    iget-object v0, p0, Lgqv;->b:Lgqr;
+    check-cast p1, Ljava/lang/String;
 
-    if-nez v0, :cond_0
+    iget-object v0, p0, Lgqv;->a:Lgqt;
 
-    iget-object v0, p0, Lgqv;->a:Lnph;
+    invoke-static {p1, v0}, Lgqt;->a(Ljava/lang/String;Lgqt;)Lgqt;
 
-    invoke-static {}, Ljava/util/Collections;->emptySet()Ljava/util/Set;
+    move-result-object p1
 
-    move-result-object v1
+    return-object p1
+.end method
 
-    invoke-virtual {v0, v1}, Lnph;->e(Ljava/lang/Object;)Z
+.method protected final synthetic c(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 0
 
-    return-void
+    check-cast p1, Lgqt;
 
-    :cond_0
-    iget-object v1, p0, Lgqv;->a:Lnph;
+    iget-object p1, p1, Lgqt;->d:Ljava/lang/String;
 
-    invoke-static {v0}, Lmwn;->H(Ljava/lang/Object;)Lmwn;
-
-    move-result-object v0
-
-    invoke-virtual {v1, v0}, Lnph;->e(Ljava/lang/Object;)Z
-
-    return-void
+    return-object p1
 .end method

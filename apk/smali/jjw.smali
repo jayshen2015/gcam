@@ -1,76 +1,55 @@
-.class public final Ljjw;
-.super Ljhn;
+.class public final synthetic Ljjw;
+.super Ljava/lang/Object;
 
-
-# static fields
-.field public static final CREATOR:Landroid/os/Parcelable$Creator;
+# interfaces
+.implements Landroid/animation/ValueAnimator$AnimatorUpdateListener;
 
 
 # instance fields
-.field final a:I
+.field public final synthetic a:Lcom/google/android/apps/camera/ui/shutterbutton/ShutterButton;
 
-.field final b:Ljava/lang/String;
-
-.field final c:Landroid/content/Intent;
+.field private final synthetic b:I
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
-
-    new-instance v0, Ljhi;
-
-    const/16 v1, 0xc
-
-    invoke-direct {v0, v1}, Ljhi;-><init>(I)V
-
-    sput-object v0, Ljjw;->CREATOR:Landroid/os/Parcelable$Creator;
-
-    return-void
-.end method
-
-.method public constructor <init>(ILjava/lang/String;Landroid/content/Intent;)V
+.method public synthetic constructor <init>(Lcom/google/android/apps/camera/ui/shutterbutton/ShutterButton;I)V
     .locals 0
 
-    invoke-direct {p0}, Ljhn;-><init>()V
+    iput p2, p0, Ljjw;->b:I
 
-    iput p1, p0, Ljjw;->a:I
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p2, p0, Ljjw;->b:Ljava/lang/String;
-
-    iput-object p3, p0, Ljjw;->c:Landroid/content/Intent;
+    iput-object p1, p0, Ljjw;->a:Lcom/google/android/apps/camera/ui/shutterbutton/ShutterButton;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final writeToParcel(Landroid/os/Parcel;I)V
-    .locals 3
+.method public final onAnimationUpdate(Landroid/animation/ValueAnimator;)V
+    .locals 1
 
-    invoke-static {p1}, Ljhp;->a(Landroid/os/Parcel;)I
+    iget v0, p0, Ljjw;->b:I
 
-    move-result v0
+    packed-switch v0, :pswitch_data_0
 
-    iget v1, p0, Ljjw;->a:I
+    iget-object v0, p0, Ljjw;->a:Lcom/google/android/apps/camera/ui/shutterbutton/ShutterButton;
 
-    const/4 v2, 0x2
-
-    invoke-static {p1, v2, v1}, Ljhp;->g(Landroid/os/Parcel;II)V
-
-    iget-object v1, p0, Ljjw;->b:Ljava/lang/String;
-
-    const/4 v2, 0x3
-
-    invoke-static {p1, v2, v1}, Ljhp;->p(Landroid/os/Parcel;ILjava/lang/String;)V
-
-    iget-object v1, p0, Ljjw;->c:Landroid/content/Intent;
-
-    const/4 v2, 0x4
-
-    invoke-static {p1, v2, v1, p2}, Ljhp;->o(Landroid/os/Parcel;ILandroid/os/Parcelable;I)V
-
-    invoke-static {p1, v0}, Ljhp;->c(Landroid/os/Parcel;I)V
+    invoke-virtual {v0, p1}, Lcom/google/android/apps/camera/ui/shutterbutton/ShutterButton;->lambda$animateToScale$3$com-google-android-apps-camera-ui-shutterbutton-ShutterButton(Landroid/animation/ValueAnimator;)V
 
     return-void
+
+    :pswitch_0
+    iget-object v0, p0, Ljjw;->a:Lcom/google/android/apps/camera/ui/shutterbutton/ShutterButton;
+
+    invoke-virtual {v0, p1}, Lcom/google/android/apps/camera/ui/shutterbutton/ShutterButton;->lambda$runEnableChangeAnimation$2$com-google-android-apps-camera-ui-shutterbutton-ShutterButton(Landroid/animation/ValueAnimator;)V
+
+    return-void
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

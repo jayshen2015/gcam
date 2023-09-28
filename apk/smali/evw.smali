@@ -1,59 +1,51 @@
 .class public final Levw;
-.super Lpn;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Lqkg;
 
 
 # instance fields
-.field final synthetic a:Lcom/google/android/apps/camera/legacy/app/settings/CameraSettingsActivity;
+.field private final a:Lqkg;
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/apps/camera/legacy/app/settings/CameraSettingsActivity;)V
+.method public constructor <init>(Lqkg;)V
     .locals 0
 
-    iput-object p1, p0, Levw;->a:Lcom/google/android/apps/camera/legacy/app/settings/CameraSettingsActivity;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const/4 p1, 0x1
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    invoke-direct {p0, p1}, Lpn;-><init>(Z)V
+    iput-object p1, p0, Levw;->a:Lqkg;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()V
-    .locals 2
+.method public final a()Lj$/util/Optional;
+    .locals 1
 
-    iget-object v0, p0, Levw;->a:Lcom/google/android/apps/camera/legacy/app/settings/CameraSettingsActivity;
+    iget-object v0, p0, Levw;->a:Lqkg;
 
-    invoke-virtual {v0}, Lcom/google/android/apps/camera/legacy/app/settings/CameraSettingsActivity;->getIntent()Landroid/content/Intent;
+    invoke-interface {v0}, Lqkg;->get()Ljava/lang/Object;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Landroid/content/Intent;->getFlags()I
+    invoke-static {v0}, Lj$/util/Optional;->of(Ljava/lang/Object;)Lj$/util/Optional;
 
-    move-result v0
+    move-result-object v0
 
-    const/high16 v1, 0x2000000
+    return-object v0
+.end method
 
-    and-int/2addr v0, v1
+.method public final bridge synthetic get()Ljava/lang/Object;
+    .locals 1
 
-    if-eqz v0, :cond_0
+    invoke-virtual {p0}, Levw;->a()Lj$/util/Optional;
 
-    iget-object v0, p0, Levw;->a:Lcom/google/android/apps/camera/legacy/app/settings/CameraSettingsActivity;
+    move-result-object v0
 
-    const/4 v1, -0x1
-
-    invoke-virtual {v0, v1}, Lcom/google/android/apps/camera/legacy/app/settings/CameraSettingsActivity;->setResult(I)V
-
-    :cond_0
-    const/4 v0, 0x0
-
-    invoke-virtual {p0, v0}, Lpn;->d(Z)V
-
-    iget-object v0, p0, Levw;->a:Lcom/google/android/apps/camera/legacy/app/settings/CameraSettingsActivity;
-
-    invoke-virtual {v0}, Lpl;->onBackPressed()V
-
-    return-void
+    return-object v0
 .end method

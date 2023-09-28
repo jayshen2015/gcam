@@ -1,38 +1,100 @@
-.class final Ljpg;
-.super Ljfc;
+.class public final Ljpg;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Ljqn;
+
+
+# instance fields
+.field private final a:Lojc;
+
+.field private final b:Lqkg;
+
+.field private final c:Landroid/content/Context;
 
 
 # direct methods
-.method public constructor <init>()V
+.method public constructor <init>(Lojc;Lqkg;Landroid/content/Context;)V
     .locals 0
 
-    invoke-direct {p0}, Ljfc;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Ljpg;->a:Lojc;
+
+    iput-object p2, p0, Ljpg;->b:Lqkg;
+
+    iput-object p3, p0, Ljpg;->c:Landroid/content/Context;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final bridge synthetic a(Landroid/content/Context;Landroid/os/Looper;Ljge;Ljava/lang/Object;Ljdf;Ljdg;)Ljcz;
-    .locals 6
+.method public final a()V
+    .locals 3
 
-    check-cast p4, Ljpi;
+    iget-object v0, p0, Ljpg;->a:Lojc;
 
-    new-instance p4, Ljpt;
+    invoke-virtual {v0}, Lojc;->g()Z
 
-    move-object v0, p4
+    move-result v0
 
-    move-object v1, p1
+    if-eqz v0, :cond_0
 
-    move-object v2, p2
+    iget-object v0, p0, Ljpg;->b:Lqkg;
 
-    move-object v3, p3
+    invoke-interface {v0}, Lqkg;->get()Ljava/lang/Object;
 
-    move-object v4, p5
+    move-result-object v0
 
-    move-object v5, p6
+    check-cast v0, Ljnr;
 
-    invoke-direct/range {v0 .. v5}, Ljpt;-><init>(Landroid/content/Context;Landroid/os/Looper;Ljge;Ljdf;Ljdg;)V
+    iget-object v0, v0, Ljnr;->c:Ljus;
 
-    return-object p4
+    const v1, 0x7f0b0331
+
+    invoke-virtual {v0, v1}, Ljus;->c(I)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/view/ViewStub;
+
+    iget-object v1, p0, Ljpg;->a:Lojc;
+
+    invoke-virtual {v1}, Lojc;->c()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Lbys;
+
+    iget-object v2, p0, Ljpg;->c:Landroid/content/Context;
+
+    invoke-interface {v1, v0, v2}, Lbys;->g(Landroid/view/ViewStub;Landroid/content/Context;)V
+
+    iget-object v0, p0, Ljpg;->b:Lqkg;
+
+    invoke-interface {v0}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljnr;
+
+    iget-object v0, v0, Ljnr;->c:Ljus;
+
+    const v1, 0x7f0b0053
+
+    invoke-virtual {v0, v1}, Ljus;->c(I)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/google/android/apps/camera/ui/views/MainActivityLayout;
+
+    iget-object v1, p0, Ljpg;->a:Lojc;
+
+    iput-object v1, v0, Lcom/google/android/apps/camera/ui/views/MainActivityLayout;->l:Lojc;
+
+    invoke-virtual {v0}, Lcom/google/android/apps/camera/ui/views/MainActivityLayout;->j()V
+
+    :cond_0
+    return-void
 .end method

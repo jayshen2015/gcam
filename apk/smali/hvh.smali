@@ -1,40 +1,85 @@
-.class final Lhvh;
-.super Lhvs;
+.class public final Lhvh;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Lpys;
 
 
 # instance fields
-.field final synthetic a:Lhvi;
+.field private final a:Lqkg;
+
+.field private final b:Lqkg;
+
+.field private final c:Lqkg;
 
 
 # direct methods
-.method public constructor <init>(Lhvi;)V
+.method public constructor <init>(Lqkg;Lqkg;Lqkg;)V
     .locals 0
 
-    iput-object p1, p0, Lhvh;->a:Lhvi;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0, p1}, Lhvs;-><init>(Lhvt;)V
+    iput-object p1, p0, Lhvh;->a:Lqkg;
+
+    iput-object p2, p0, Lhvh;->b:Lqkg;
+
+    iput-object p3, p0, Lhvh;->c:Lqkg;
 
     return-void
 .end method
 
+.method public static b(Lqkg;Lqkg;Lqkg;)Lhvh;
+    .locals 1
+
+    new-instance v0, Lhvh;
+
+    invoke-direct {v0, p0, p1, p2}, Lhvh;-><init>(Lqkg;Lqkg;Lqkg;)V
+
+    return-object v0
+.end method
+
 
 # virtual methods
-.method public final b()V
-    .locals 2
+.method public final a()Lhvg;
+    .locals 4
 
-    iget-object v0, p0, Lhvh;->a:Lhvi;
+    iget-object v0, p0, Lhvh;->a:Lqkg;
 
-    iget-object v0, v0, Lhvi;->a:Lhiu;
+    invoke-interface {v0}, Lqkg;->get()Ljava/lang/Object;
 
-    invoke-virtual {v0}, Lhiu;->e()V
+    move-result-object v0
 
-    iget-object v0, p0, Lhvh;->a:Lhvi;
+    check-cast v0, Lhub;
 
-    iget-object v1, v0, Lhvi;->a:Lhiu;
+    iget-object v1, p0, Lhvh;->b:Lqkg;
 
-    iget-object v0, v0, Lhvi;->b:Lhiw;
+    invoke-interface {v1}, Lqkg;->get()Ljava/lang/Object;
 
-    invoke-virtual {v1, v0}, Lhiu;->g(Lhiw;)V
+    move-result-object v1
 
-    return-void
+    check-cast v1, Llwf;
+
+    iget-object v2, p0, Lhvh;->c:Lqkg;
+
+    invoke-interface {v2}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Lddf;
+
+    new-instance v3, Lhvg;
+
+    invoke-direct {v3, v0, v1, v2}, Lhvg;-><init>(Lhub;Llwf;Lddf;)V
+
+    return-object v3
+.end method
+
+.method public final bridge synthetic get()Ljava/lang/Object;
+    .locals 1
+
+    invoke-virtual {p0}, Lhvh;->a()Lhvg;
+
+    move-result-object v0
+
+    return-object v0
 .end method

@@ -1,115 +1,67 @@
-.class public final Ljhv;
-.super Ljgm;
+.class public final synthetic Ljhv;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Landroid/view/View$OnClickListener;
+
+
+# instance fields
+.field public final synthetic a:Lcom/google/android/apps/camera/ui/preference/KeyListenerPreference;
+
+.field public final synthetic b:Landroid/widget/TextView;
+
+.field public final synthetic c:Landroid/widget/Button;
+
+.field public final synthetic d:Landroid/widget/Button;
 
 
 # direct methods
-.method public constructor <init>(Landroid/content/Context;Landroid/os/Looper;Ljge;Ljei;Ljff;)V
-    .locals 7
+.method public synthetic constructor <init>(Lcom/google/android/apps/camera/ui/preference/KeyListenerPreference;Landroid/widget/TextView;Landroid/widget/Button;Landroid/widget/Button;)V
+    .locals 0
 
-    const/16 v3, 0x10e
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    move-object v0, p0
+    iput-object p1, p0, Ljhv;->a:Lcom/google/android/apps/camera/ui/preference/KeyListenerPreference;
 
-    move-object v1, p1
+    iput-object p2, p0, Ljhv;->b:Landroid/widget/TextView;
 
-    move-object v2, p2
+    iput-object p3, p0, Ljhv;->c:Landroid/widget/Button;
 
-    move-object v4, p3
-
-    move-object v5, p4
-
-    move-object v6, p5
-
-    invoke-direct/range {v0 .. v6}, Ljgm;-><init>(Landroid/content/Context;Landroid/os/Looper;ILjge;Ljei;Ljff;)V
+    iput-object p4, p0, Ljhv;->d:Landroid/widget/Button;
 
     return-void
 .end method
 
 
 # virtual methods
-.method protected final A()Z
-    .locals 1
+.method public final onClick(Landroid/view/View;)V
+    .locals 4
 
-    const/4 v0, 0x1
+    iget-object p1, p0, Ljhv;->a:Lcom/google/android/apps/camera/ui/preference/KeyListenerPreference;
 
-    return v0
-.end method
+    iget-object v0, p0, Ljhv;->b:Landroid/widget/TextView;
 
-.method public final a()I
-    .locals 1
+    iget-object v1, p0, Ljhv;->c:Landroid/widget/Button;
 
-    const v0, 0xc1fa340
+    iget-object v2, p0, Ljhv;->d:Landroid/widget/Button;
 
-    return v0
-.end method
+    const-string v3, "-1"
 
-.method protected final synthetic b(Landroid/os/IBinder;)Landroid/os/IInterface;
-    .locals 2
+    invoke-virtual {p1, v3}, Lcom/google/android/apps/camera/ui/preference/KeyListenerPreference;->b(Ljava/lang/String;)V
 
-    if-nez p1, :cond_0
+    const-string p1, "Current Key Bind: None\nPress key to bind"
 
-    const/4 p1, 0x0
+    invoke-virtual {v0, p1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    goto :goto_0
+    const/4 p1, 0x4
 
-    :cond_0
-    const-string v0, "com.google.android.gms.common.internal.service.IClientTelemetryService"
+    invoke-virtual {v0, p1}, Landroid/widget/TextView;->sendAccessibilityEvent(I)V
 
-    invoke-interface {p1, v0}, Landroid/os/IBinder;->queryLocalInterface(Ljava/lang/String;)Landroid/os/IInterface;
+    invoke-virtual {v1, p1}, Landroid/widget/Button;->setVisibility(I)V
 
-    move-result-object v0
+    const/4 p1, 0x1
 
-    instance-of v1, v0, Ljhr;
+    invoke-virtual {v2, p1}, Landroid/widget/Button;->setEnabled(Z)V
 
-    if-eqz v1, :cond_1
-
-    move-object p1, v0
-
-    check-cast p1, Ljhr;
-
-    goto :goto_0
-
-    :cond_1
-    new-instance v0, Ljhr;
-
-    invoke-direct {v0, p1}, Ljhr;-><init>(Landroid/os/IBinder;)V
-
-    move-object p1, v0
-
-    :goto_0
-    return-object p1
-.end method
-
-.method protected final c()Ljava/lang/String;
-    .locals 1
-
-    const-string v0, "com.google.android.gms.common.internal.service.IClientTelemetryService"
-
-    return-object v0
-.end method
-
-.method protected final d()Ljava/lang/String;
-    .locals 1
-
-    const-string v0, "com.google.android.gms.common.telemetry.service.START"
-
-    return-object v0
-.end method
-
-.method public final e()[Ljca;
-    .locals 1
-
-    sget-object v0, Ljbx;->b:[Ljca;
-
-    return-object v0
-.end method
-
-.method protected final t()Landroid/os/Bundle;
-    .locals 1
-
-    new-instance v0, Landroid/os/Bundle;
-
-    invoke-direct {v0}, Landroid/os/Bundle;-><init>()V
-
-    return-object v0
+    return-void
 .end method

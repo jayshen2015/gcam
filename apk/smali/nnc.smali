@@ -1,103 +1,97 @@
-.class public abstract Lnnc;
-.super Ljava/util/concurrent/AbstractExecutorService;
+.class public final Lnnc;
+.super Lohh;
 
-# interfaces
-.implements Lnow;
+
+# instance fields
+.field public final a:Loyj;
 
 
 # direct methods
-.method public constructor <init>()V
+.method public constructor <init>(Loyj;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/util/concurrent/AbstractExecutorService;-><init>()V
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    invoke-direct {p0}, Lohh;-><init>()V
+
+    iput-object p1, p0, Lnnc;->a:Loyj;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Ljava/lang/Runnable;)Lnou;
-    .locals 0
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 3
 
-    invoke-super {p0, p1}, Ljava/util/concurrent/AbstractExecutorService;->submit(Ljava/lang/Runnable;)Ljava/util/concurrent/Future;
+    const/4 v0, 0x1
 
-    move-result-object p1
+    if-ne p0, p1, :cond_0
 
-    check-cast p1, Lnou;
+    return v0
 
-    return-object p1
+    :cond_0
+    instance-of v1, p1, Lnnc;
+
+    const/4 v2, 0x0
+
+    if-nez v1, :cond_1
+
+    return v2
+
+    :cond_1
+    check-cast p1, Lnnc;
+
+    iget-object v1, p0, Lnnc;->a:Loyj;
+
+    iget-object p1, p1, Lnnc;->a:Loyj;
+
+    invoke-static {v1, p1}, Lqno;->c(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result p1
+
+    if-nez p1, :cond_2
+
+    return v2
+
+    :cond_2
+    return v0
 .end method
 
-.method public final b(Ljava/util/concurrent/Callable;)Lnou;
-    .locals 0
+.method public final hashCode()I
+    .locals 1
 
-    invoke-super {p0, p1}, Ljava/util/concurrent/AbstractExecutorService;->submit(Ljava/util/concurrent/Callable;)Ljava/util/concurrent/Future;
+    iget-object v0, p0, Lnnc;->a:Loyj;
 
-    move-result-object p1
+    invoke-virtual {v0}, Loyj;->hashCode()I
 
-    check-cast p1, Lnou;
+    move-result v0
 
-    return-object p1
+    return v0
 .end method
 
-.method public final c(Ljava/lang/Runnable;Ljava/lang/Object;)Lnou;
-    .locals 0
+.method public final toString()Ljava/lang/String;
+    .locals 2
 
-    invoke-super {p0, p1, p2}, Ljava/util/concurrent/AbstractExecutorService;->submit(Ljava/lang/Runnable;Ljava/lang/Object;)Ljava/util/concurrent/Future;
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    move-result-object p1
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    check-cast p1, Lnou;
+    const-string v1, "NonSignedInDataOwner(userHashCode="
 
-    return-object p1
-.end method
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-.method protected final newTaskFor(Ljava/lang/Runnable;Ljava/lang/Object;)Ljava/util/concurrent/RunnableFuture;
-    .locals 0
+    iget-object v1, p0, Lnnc;->a:Loyj;
 
-    invoke-static {p1, p2}, Lnpo;->i(Ljava/lang/Runnable;Ljava/lang/Object;)Lnpo;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    move-result-object p1
+    const/16 v1, 0x29
 
-    return-object p1
-.end method
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-.method protected final newTaskFor(Ljava/util/concurrent/Callable;)Ljava/util/concurrent/RunnableFuture;
-    .locals 0
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    invoke-static {p1}, Lnpo;->h(Ljava/util/concurrent/Callable;)Lnpo;
+    move-result-object v0
 
-    move-result-object p1
-
-    return-object p1
-.end method
-
-.method public final bridge synthetic submit(Ljava/lang/Runnable;)Ljava/util/concurrent/Future;
-    .locals 0
-
-    invoke-virtual {p0, p1}, Lnnc;->a(Ljava/lang/Runnable;)Lnou;
-
-    move-result-object p1
-
-    return-object p1
-.end method
-
-.method public final bridge synthetic submit(Ljava/lang/Runnable;Ljava/lang/Object;)Ljava/util/concurrent/Future;
-    .locals 0
-
-    invoke-virtual {p0, p1, p2}, Lnnc;->c(Ljava/lang/Runnable;Ljava/lang/Object;)Lnou;
-
-    move-result-object p1
-
-    return-object p1
-.end method
-
-.method public final bridge synthetic submit(Ljava/util/concurrent/Callable;)Ljava/util/concurrent/Future;
-    .locals 0
-
-    invoke-virtual {p0, p1}, Lnnc;->b(Ljava/util/concurrent/Callable;)Lnou;
-
-    move-result-object p1
-
-    return-object p1
+    return-object v0
 .end method

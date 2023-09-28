@@ -1,22 +1,33 @@
-.class public final Lgsq;
+.class public final synthetic Lgsq;
 .super Ljava/lang/Object;
 
+# interfaces
+.implements Llie;
 
-# static fields
-.field public static final a:Lgsi;
+
+# instance fields
+.field public final synthetic a:Lgtg;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
+.method public synthetic constructor <init>(Lgtg;)V
+    .locals 0
 
-    new-instance v0, Lgsi;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const/4 v1, 0x5
+    iput-object p1, p0, Lgsq;->a:Lgtg;
 
-    invoke-direct {v0, v1}, Lgsi;-><init>(I)V
+    return-void
+.end method
 
-    sput-object v0, Lgsq;->a:Lgsi;
+
+# virtual methods
+.method public final close()V
+    .locals 1
+
+    iget-object v0, p0, Lgsq;->a:Lgtg;
+
+    invoke-virtual {v0}, Lgtg;->j()V
 
     return-void
 .end method

@@ -1,262 +1,249 @@
 .class public final Lnhh;
-.super Lnws;
+.super Ljava/lang/Object;
 
 # interfaces
-.implements Lnxz;
+.implements Ljava/io/Externalizable;
 
 
 # static fields
-.field public static final n:Lnhh;
-
-.field private static volatile o:Lnyf;
+.field private static final serialVersionUID:J = 0x1L
 
 
 # instance fields
-.field public a:I
+.field public a:Ljava/lang/String;
 
-.field public b:J
+.field public final b:Ljava/util/List;
 
-.field public c:J
+.field public final c:Ljava/util/List;
 
-.field public d:J
+.field private d:Z
 
-.field public e:J
+.field private e:Z
 
-.field public f:J
-
-.field public g:J
-
-.field public h:J
-
-.field public i:J
-
-.field public j:Lnxa;
-
-.field public k:J
-
-.field public l:J
-
-.field public m:J
+.field private f:Ljava/lang/String;
 
 
 # direct methods
-.method static constructor <clinit>()V
+.method public constructor <init>()V
     .locals 2
 
-    new-instance v0, Lnhh;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {v0}, Lnhh;-><init>()V
+    const-string v0, ""
 
-    sput-object v0, Lnhh;->n:Lnhh;
+    iput-object v0, p0, Lnhh;->a:Ljava/lang/String;
 
-    const-class v1, Lnhh;
+    new-instance v1, Ljava/util/ArrayList;
 
-    invoke-static {v1, v0}, Lnws;->aa(Ljava/lang/Class;Lnws;)V
+    invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
 
-    return-void
-.end method
+    iput-object v1, p0, Lnhh;->b:Ljava/util/List;
 
-.method private constructor <init>()V
-    .locals 1
+    new-instance v1, Ljava/util/ArrayList;
 
-    invoke-direct {p0}, Lnws;-><init>()V
+    invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
 
-    sget-object v0, Lnyi;->b:Lnyi;
+    iput-object v1, p0, Lnhh;->c:Ljava/util/List;
 
-    iput-object v0, p0, Lnhh;->j:Lnxa;
+    iput-object v0, p0, Lnhh;->f:Ljava/lang/String;
 
     return-void
 .end method
 
 
 # virtual methods
-.method protected final a(ILjava/lang/Object;)Ljava/lang/Object;
-    .locals 3
+.method public final a()I
+    .locals 1
 
-    add-int/lit8 p1, p1, -0x1
+    iget-object v0, p0, Lnhh;->b:Ljava/util/List;
 
-    const/4 p2, 0x1
+    invoke-interface {v0}, Ljava/util/List;->size()I
 
-    packed-switch p1, :pswitch_data_0
+    move-result v0
 
-    :pswitch_0
-    const/4 p1, 0x0
+    return v0
+.end method
 
-    return-object p1
+.method public final readExternal(Ljava/io/ObjectInput;)V
+    .locals 6
 
-    :pswitch_1
-    sget-object p1, Lnhh;->o:Lnyf;
+    invoke-interface {p1}, Ljava/io/ObjectInput;->readBoolean()Z
 
-    if-nez p1, :cond_1
+    move-result v0
 
-    const-class p2, Lnhh;
+    const/4 v1, 0x1
 
-    monitor-enter p2
+    if-eqz v0, :cond_0
 
-    :try_start_0
-    sget-object p1, Lnhh;->o:Lnyf;
+    invoke-interface {p1}, Ljava/io/ObjectInput;->readUTF()Ljava/lang/String;
 
-    if-nez p1, :cond_0
+    move-result-object v0
 
-    new-instance p1, Lnwo;
+    iput-boolean v1, p0, Lnhh;->d:Z
 
-    sget-object v0, Lnhh;->n:Lnhh;
-
-    invoke-direct {p1, v0}, Lnwo;-><init>(Lnws;)V
-
-    sput-object p1, Lnhh;->o:Lnyf;
+    iput-object v0, p0, Lnhh;->a:Ljava/lang/String;
 
     :cond_0
-    monitor-exit p2
+    invoke-interface {p1}, Ljava/io/ObjectInput;->readInt()I
 
-    goto :goto_0
-
-    :catchall_0
-    move-exception p1
-
-    monitor-exit p2
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw p1
-
-    :cond_1
-    :goto_0
-    return-object p1
-
-    :pswitch_2
-    sget-object p1, Lnhh;->n:Lnhh;
-
-    return-object p1
-
-    :pswitch_3
-    new-instance p1, Lnwn;
-
-    sget-object p2, Lnhh;->n:Lnhh;
-
-    invoke-direct {p1, p2}, Lnwn;-><init>(Lnws;)V
-
-    return-object p1
-
-    :pswitch_4
-    new-instance p1, Lnhh;
-
-    invoke-direct {p1}, Lnhh;-><init>()V
-
-    return-object p1
-
-    :pswitch_5
-    const-string p1, "a"
-
-    const-string v0, "\u0001\u000c\u0000\u0001\u0001\u0011\u000c\u0000\u0001\u0000\u0001\u1002\u0000\u0002\u1002\u0001\u0003\u1002\u0002\u0004\u1002\t\u0005\u1002\n\u0006\u1002\u000c\t\u1002\u0005\n\u1002\u0006\u000e\u001b\u000f\u1002\r\u0010\u1002\u000e\u0011\u1002\u000f"
-
-    const/16 v1, 0xe
-
-    new-array v1, v1, [Ljava/lang/Object;
+    move-result v0
 
     const/4 v2, 0x0
 
-    aput-object p1, v1, v2
+    const/4 v3, 0x0
 
-    const-string p1, "b"
+    :goto_0
+    if-ge v3, v0, :cond_1
 
-    aput-object p1, v1, p2
+    iget-object v4, p0, Lnhh;->b:Ljava/util/List;
 
-    const/4 p1, 0x2
+    invoke-interface {p1}, Ljava/io/ObjectInput;->readInt()I
 
-    const-string p2, "c"
+    move-result v5
 
-    aput-object p2, v1, p1
+    invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    const/4 p1, 0x3
+    move-result-object v5
 
-    const-string p2, "d"
+    invoke-interface {v4, v5}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    aput-object p2, v1, p1
+    add-int/lit8 v3, v3, 0x1
 
-    const/4 p1, 0x4
+    goto :goto_0
 
-    const-string p2, "g"
+    :cond_1
+    invoke-interface {p1}, Ljava/io/ObjectInput;->readInt()I
 
-    aput-object p2, v1, p1
+    move-result v0
 
-    const/4 p1, 0x5
+    :goto_1
+    if-ge v2, v0, :cond_2
 
-    const-string p2, "h"
+    iget-object v3, p0, Lnhh;->c:Ljava/util/List;
 
-    aput-object p2, v1, p1
+    invoke-interface {p1}, Ljava/io/ObjectInput;->readInt()I
 
-    const/4 p1, 0x6
+    move-result v4
 
-    const-string p2, "i"
+    invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    aput-object p2, v1, p1
+    move-result-object v4
 
-    const/4 p1, 0x7
+    invoke-interface {v3, v4}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    const-string p2, "e"
+    add-int/lit8 v2, v2, 0x1
 
-    aput-object p2, v1, p1
+    goto :goto_1
 
-    const/16 p1, 0x8
+    :cond_2
+    invoke-interface {p1}, Ljava/io/ObjectInput;->readBoolean()Z
 
-    const-string p2, "f"
+    move-result v0
 
-    aput-object p2, v1, p1
+    if-eqz v0, :cond_3
 
-    const/16 p1, 0x9
-
-    const-string p2, "j"
-
-    aput-object p2, v1, p1
-
-    const/16 p1, 0xa
-
-    const-class p2, Lnjl;
-
-    aput-object p2, v1, p1
-
-    const/16 p1, 0xb
-
-    const-string p2, "k"
-
-    aput-object p2, v1, p1
-
-    const/16 p1, 0xc
-
-    const-string p2, "l"
-
-    aput-object p2, v1, p1
-
-    const/16 p1, 0xd
-
-    const-string p2, "m"
-
-    aput-object p2, v1, p1
-
-    sget-object p1, Lnhh;->n:Lnhh;
-
-    invoke-static {p1, v0, v1}, Lnhh;->X(Lnxy;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {p1}, Ljava/io/ObjectInput;->readUTF()Ljava/lang/String;
 
     move-result-object p1
 
-    return-object p1
+    iput-boolean v1, p0, Lnhh;->e:Z
 
-    :pswitch_6
-    invoke-static {p2}, Ljava/lang/Byte;->valueOf(B)Ljava/lang/Byte;
+    iput-object p1, p0, Lnhh;->f:Ljava/lang/String;
 
-    move-result-object p1
+    :cond_3
+    return-void
+.end method
 
-    return-object p1
+.method public final writeExternal(Ljava/io/ObjectOutput;)V
+    .locals 4
 
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_6
-        :pswitch_0
-        :pswitch_5
-        :pswitch_4
-        :pswitch_3
-        :pswitch_2
-        :pswitch_1
-    .end packed-switch
+    iget-boolean v0, p0, Lnhh;->d:Z
+
+    invoke-interface {p1, v0}, Ljava/io/ObjectOutput;->writeBoolean(Z)V
+
+    iget-boolean v0, p0, Lnhh;->d:Z
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lnhh;->a:Ljava/lang/String;
+
+    invoke-interface {p1, v0}, Ljava/io/ObjectOutput;->writeUTF(Ljava/lang/String;)V
+
+    :cond_0
+    invoke-virtual {p0}, Lnhh;->a()I
+
+    move-result v0
+
+    invoke-interface {p1, v0}, Ljava/io/ObjectOutput;->writeInt(I)V
+
+    const/4 v1, 0x0
+
+    const/4 v2, 0x0
+
+    :goto_0
+    if-ge v2, v0, :cond_1
+
+    iget-object v3, p0, Lnhh;->b:Ljava/util/List;
+
+    invoke-interface {v3, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v3
+
+    check-cast v3, Ljava/lang/Integer;
+
+    invoke-virtual {v3}, Ljava/lang/Integer;->intValue()I
+
+    move-result v3
+
+    invoke-interface {p1, v3}, Ljava/io/ObjectOutput;->writeInt(I)V
+
+    add-int/lit8 v2, v2, 0x1
+
+    goto :goto_0
+
+    :cond_1
+    iget-object v0, p0, Lnhh;->c:Ljava/util/List;
+
+    invoke-interface {v0}, Ljava/util/List;->size()I
+
+    move-result v0
+
+    invoke-interface {p1, v0}, Ljava/io/ObjectOutput;->writeInt(I)V
+
+    :goto_1
+    if-ge v1, v0, :cond_2
+
+    iget-object v2, p0, Lnhh;->c:Ljava/util/List;
+
+    invoke-interface {v2, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Ljava/lang/Integer;
+
+    invoke-virtual {v2}, Ljava/lang/Integer;->intValue()I
+
+    move-result v2
+
+    invoke-interface {p1, v2}, Ljava/io/ObjectOutput;->writeInt(I)V
+
+    add-int/lit8 v1, v1, 0x1
+
+    goto :goto_1
+
+    :cond_2
+    iget-boolean v0, p0, Lnhh;->e:Z
+
+    invoke-interface {p1, v0}, Ljava/io/ObjectOutput;->writeBoolean(Z)V
+
+    iget-boolean v0, p0, Lnhh;->e:Z
+
+    if-eqz v0, :cond_3
+
+    iget-object v0, p0, Lnhh;->f:Ljava/lang/String;
+
+    invoke-interface {p1, v0}, Ljava/io/ObjectOutput;->writeUTF(Ljava/lang/String;)V
+
+    :cond_3
+    return-void
 .end method

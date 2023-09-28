@@ -2,28 +2,25 @@
 .super Ljava/lang/Object;
 
 
-# annotations
-.annotation system Ldalvik/annotation/Signature;
-    value = {
-        "<T:",
-        "Ljava/lang/Object;",
-        ">",
-        "Ljava/lang/Object;"
-    }
-.end annotation
-
-
 # direct methods
-.method public static $default$andThen(Ljava/util/function/Consumer;Ljava/util/function/Consumer;)Ljava/util/function/Consumer;
-    .locals 2
+.method public static $default$andThen(Lj$/util/function/Consumer;Lj$/util/function/Consumer;)Lj$/util/function/Consumer;
+    .locals 1
 
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    new-instance v0, Lj$/util/concurrent/t;
+    new-instance v0, Lj$/util/function/Consumer$$ExternalSyntheticLambda0;
 
-    const/4 v1, 0x3
-
-    invoke-direct {v0, v1, p0, p1}, Lj$/util/concurrent/t;-><init>(ILjava/lang/Object;Ljava/lang/Object;)V
+    invoke-direct {v0, p0, p1}, Lj$/util/function/Consumer$$ExternalSyntheticLambda0;-><init>(Lj$/util/function/Consumer;Lj$/util/function/Consumer;)V
 
     return-object v0
+.end method
+
+.method public static synthetic lambda$andThen$0(Lj$/util/function/Consumer;Lj$/util/function/Consumer;Ljava/lang/Object;)V
+    .locals 0
+
+    invoke-interface {p0, p2}, Lj$/util/function/Consumer;->accept(Ljava/lang/Object;)V
+
+    invoke-interface {p1, p2}, Lj$/util/function/Consumer;->accept(Ljava/lang/Object;)V
+
+    return-void
 .end method

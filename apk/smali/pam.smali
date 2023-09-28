@@ -1,299 +1,558 @@
 .class public final Lpam;
-.super Ljava/lang/Object;
+.super Lppd;
+
+# interfaces
+.implements Lpqn;
 
 
 # static fields
-.field private static final c:Ljava/nio/ByteBuffer;
+.field public static final T:Lpam;
+
+.field private static volatile U:Lpqs;
 
 
 # instance fields
-.field a:Ljava/nio/ByteBuffer;
+.field public A:Z
 
-.field b:Z
+.field public B:I
 
-.field private final d:Ljava/nio/channels/ReadableByteChannel;
+.field public C:Lpeg;
 
-.field private final e:Lpan;
+.field public D:Lozr;
+
+.field public E:Z
+
+.field public F:Lpba;
+
+.field public G:Z
+
+.field public H:Z
+
+.field public I:Lpen;
+
+.field public J:Lpbt;
+
+.field public K:I
+
+.field public L:Lpet;
+
+.field public M:Lozu;
+
+.field public N:Lozs;
+
+.field public O:Z
+
+.field public P:Lpbj;
+
+.field public Q:Lpdb;
+
+.field public R:Z
+
+.field public S:Lpcu;
+
+.field public a:I
+
+.field public b:I
+
+.field public c:I
+
+.field public d:Z
+
+.field public e:F
+
+.field public f:F
+
+.field public g:Lpbe;
+
+.field public h:Z
+
+.field public i:F
+
+.field public j:I
+
+.field public k:Z
+
+.field public l:Lppm;
+
+.field public m:Lpdh;
+
+.field public n:Lpem;
+
+.field public o:Lpbv;
+
+.field public p:Lpdg;
+
+.field public q:Lpas;
+
+.field public r:Lpcs;
+
+.field public s:I
+
+.field public t:I
+
+.field public u:Lpcw;
+
+.field public v:Lpbh;
+
+.field public w:Lpdn;
+
+.field public x:Lpbx;
+
+.field public y:Lpbg;
+
+.field public z:I
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 1
+    .locals 2
 
-    const/4 v0, 0x0
+    new-instance v0, Lpam;
 
-    invoke-static {v0}, Ljava/nio/ByteBuffer;->allocate(I)Ljava/nio/ByteBuffer;
+    invoke-direct {v0}, Lpam;-><init>()V
 
-    move-result-object v0
+    sput-object v0, Lpam;->T:Lpam;
 
-    sput-object v0, Lpam;->c:Ljava/nio/ByteBuffer;
+    const-class v1, Lpam;
+
+    invoke-static {v1, v0}, Lppd;->F(Ljava/lang/Class;Lppd;)V
 
     return-void
 .end method
 
-.method public constructor <init>(Ljava/nio/channels/ReadableByteChannel;)V
+.method private constructor <init>()V
     .locals 1
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Lppd;-><init>()V
 
-    if-eqz p1, :cond_0
+    sget-object v0, Lpqv;->b:Lpqv;
 
-    iput-object p1, p0, Lpam;->d:Ljava/nio/channels/ReadableByteChannel;
+    iput-object v0, p0, Lpam;->l:Lppm;
 
-    new-instance p1, Lpan;
+    const/4 v0, 0x4
 
-    invoke-direct {p1}, Lpan;-><init>()V
-
-    iput-object p1, p0, Lpam;->e:Lpan;
+    iput v0, p0, Lpam;->K:I
 
     return-void
-
-    :cond_0
-    new-instance p1, Ljava/lang/NullPointerException;
-
-    const-string v0, "source can not be null"
-
-    invoke-direct {p1, v0}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
-
-    throw p1
-.end method
-
-.method private final c(Ljava/lang/String;)V
-    .locals 1
-
-    :try_start_0
-    invoke-virtual {p0}, Lpam;->b()V
-    :try_end_0
-    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
-
-    goto :goto_0
-
-    :catch_0
-    move-exception v0
-
-    :goto_0
-    new-instance v0, Ljava/io/IOException;
-
-    invoke-direct {v0, p1}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
-
-    throw v0
 .end method
 
 
 # virtual methods
-.method final a()I
-    .locals 8
+.method protected final a(ILjava/lang/Object;)Ljava/lang/Object;
+    .locals 2
 
-    :goto_0
-    iget-object v0, p0, Lpam;->a:Ljava/nio/ByteBuffer;
+    add-int/lit8 p1, p1, -0x1
 
-    const/4 v1, 0x0
+    const/4 p2, 0x1
 
-    if-eqz v0, :cond_1
-
-    invoke-virtual {v0}, Ljava/nio/ByteBuffer;->hasRemaining()Z
-
-    move-result v0
-
-    if-nez v0, :cond_0
-
-    iput-object v1, p0, Lpam;->a:Ljava/nio/ByteBuffer;
-
-    goto :goto_1
-
-    :cond_0
-    iget-object v0, p0, Lpam;->a:Ljava/nio/ByteBuffer;
-
-    invoke-virtual {v0}, Ljava/nio/ByteBuffer;->remaining()I
-
-    move-result v0
-
-    return v0
-
-    :cond_1
-    :goto_1
-    iget-object v0, p0, Lpam;->e:Lpan;
-
-    iget v2, v0, Lpan;->c:I
-
-    add-int/lit8 v3, v2, -0x1
-
-    if-eqz v2, :cond_7
-
-    const/4 v1, 0x0
-
-    const/4 v4, -0x1
-
-    packed-switch v3, :pswitch_data_0
-
-    const-string v0, "corrupted input"
-
-    invoke-direct {p0, v0}, Lpam;->c(Ljava/lang/String;)V
-
-    goto :goto_0
+    packed-switch p1, :pswitch_data_0
 
     :pswitch_0
-    invoke-virtual {v0, v1}, Lpan;->c(I)V
+    const/4 p1, 0x0
 
-    goto :goto_0
+    return-object p1
 
     :pswitch_1
-    iget-object v3, v0, Lpan;->a:[J
+    sget-object p1, Lpam;->U:Lpqs;
 
-    aget-wide v4, v3, v1
+    if-nez p1, :cond_1
 
-    const-wide/16 v6, 0x0
+    const-class p2, Lpam;
 
-    cmp-long v1, v4, v6
+    monitor-enter p2
 
-    if-eqz v1, :cond_4
+    :try_start_0
+    sget-object p1, Lpam;->U:Lpqs;
 
-    const/4 v1, 0x4
+    if-nez p1, :cond_0
 
-    if-eq v2, v1, :cond_3
+    new-instance p1, Lpoz;
 
-    const/4 v1, 0x2
+    sget-object v0, Lpam;->T:Lpam;
 
-    aget-wide v4, v3, v1
+    invoke-direct {p1, v0}, Lpoz;-><init>(Lppd;)V
 
-    cmp-long v1, v4, v6
+    sput-object p1, Lpam;->U:Lpqs;
 
-    if-eqz v1, :cond_2
-
-    goto :goto_2
-
-    :cond_2
-    invoke-static {v2}, Llkj;->L(I)Ljava/lang/String;
-
-    move-result-object v0
-
-    new-instance v1, Ljava/lang/IllegalStateException;
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v3, "pulling output from decoder in "
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v0, " state"
-
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-direct {v1, v0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw v1
-
-    :cond_3
-    :goto_2
-    invoke-static {v3}, Lorg/brotli/wrapper/dec/DecoderJNI;->nativePull([J)Ljava/nio/ByteBuffer;
-
-    move-result-object v1
-
-    invoke-virtual {v0}, Lpan;->b()V
-
-    iput-object v1, p0, Lpam;->a:Ljava/nio/ByteBuffer;
+    :cond_0
+    monitor-exit p2
 
     goto :goto_0
 
-    :cond_4
-    new-instance v0, Ljava/lang/IllegalStateException;
+    :catchall_0
+    move-exception p1
 
-    const-string v1, "brotli decoder is already destroyed"
+    monitor-exit p2
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+    throw p1
 
-    throw v0
+    :cond_1
+    :goto_0
+    return-object p1
 
     :pswitch_2
-    iget-object v0, v0, Lpan;->b:Ljava/nio/ByteBuffer;
+    sget-object p1, Lpam;->T:Lpam;
 
-    invoke-virtual {v0}, Ljava/nio/Buffer;->clear()Ljava/nio/Buffer;
-
-    iget-object v2, p0, Lpam;->d:Ljava/nio/channels/ReadableByteChannel;
-
-    invoke-interface {v2, v0}, Ljava/nio/channels/ReadableByteChannel;->read(Ljava/nio/ByteBuffer;)I
-
-    move-result v0
-
-    if-ne v0, v4, :cond_5
-
-    const-string v0, "unexpected end of input"
-
-    invoke-direct {p0, v0}, Lpam;->c(Ljava/lang/String;)V
-
-    goto :goto_3
-
-    :cond_5
-    move v4, v0
-
-    :goto_3
-    if-nez v4, :cond_6
-
-    sget-object v0, Lpam;->c:Ljava/nio/ByteBuffer;
-
-    iput-object v0, p0, Lpam;->a:Ljava/nio/ByteBuffer;
-
-    return v1
-
-    :cond_6
-    iget-object v0, p0, Lpam;->e:Lpan;
-
-    invoke-virtual {v0, v4}, Lpan;->c(I)V
-
-    goto/16 :goto_0
+    return-object p1
 
     :pswitch_3
-    return v4
+    new-instance p1, Lpoy;
 
-    :cond_7
-    goto :goto_5
+    sget-object p2, Lpam;->T:Lpam;
 
-    :goto_4
-    throw v1
+    invoke-direct {p1, p2}, Lpoy;-><init>(Lppd;)V
 
-    :goto_5
-    goto :goto_4
+    return-object p1
 
-    nop
+    :pswitch_4
+    new-instance p1, Lpam;
+
+    invoke-direct {p1}, Lpam;-><init>()V
+
+    return-object p1
+
+    :pswitch_5
+    const/16 p1, 0x34
+
+    new-array p1, p1, [Ljava/lang/Object;
+
+    const/4 v0, 0x0
+
+    const-string v1, "a"
+
+    aput-object v1, p1, v0
+
+    const-string v0, "b"
+
+    aput-object v0, p1, p2
+
+    const/4 p2, 0x2
+
+    const-string v0, "c"
+
+    aput-object v0, p1, p2
+
+    const/4 p2, 0x3
+
+    sget-object v0, Lpcm;->n:Lppi;
+
+    aput-object v0, p1, p2
+
+    const/4 p2, 0x4
+
+    const-string v0, "d"
+
+    aput-object v0, p1, p2
+
+    const/4 p2, 0x5
+
+    const-string v0, "e"
+
+    aput-object v0, p1, p2
+
+    const/4 p2, 0x6
+
+    const-string v0, "f"
+
+    aput-object v0, p1, p2
+
+    const/4 p2, 0x7
+
+    const-string v0, "g"
+
+    aput-object v0, p1, p2
+
+    const/16 p2, 0x8
+
+    const-string v0, "h"
+
+    aput-object v0, p1, p2
+
+    const/16 p2, 0x9
+
+    const-string v0, "i"
+
+    aput-object v0, p1, p2
+
+    const/16 p2, 0xa
+
+    const-string v0, "j"
+
+    aput-object v0, p1, p2
+
+    const/16 p2, 0xb
+
+    sget-object v0, Lpaf;->j:Lppi;
+
+    aput-object v0, p1, p2
+
+    const/16 p2, 0xc
+
+    const-string v0, "k"
+
+    aput-object v0, p1, p2
+
+    const/16 p2, 0xd
+
+    const-string v0, "l"
+
+    aput-object v0, p1, p2
+
+    const/16 p2, 0xe
+
+    const-class v0, Lpbf;
+
+    aput-object v0, p1, p2
+
+    const/16 p2, 0xf
+
+    const-string v0, "m"
+
+    aput-object v0, p1, p2
+
+    const/16 p2, 0x10
+
+    const-string v0, "n"
+
+    aput-object v0, p1, p2
+
+    const/16 p2, 0x11
+
+    const-string v0, "o"
+
+    aput-object v0, p1, p2
+
+    const/16 p2, 0x12
+
+    const-string v0, "p"
+
+    aput-object v0, p1, p2
+
+    const/16 p2, 0x13
+
+    const-string v0, "q"
+
+    aput-object v0, p1, p2
+
+    const/16 p2, 0x14
+
+    const-string v0, "r"
+
+    aput-object v0, p1, p2
+
+    const/16 p2, 0x15
+
+    const-string v0, "s"
+
+    aput-object v0, p1, p2
+
+    const/16 p2, 0x16
+
+    const-string v0, "t"
+
+    aput-object v0, p1, p2
+
+    const/16 p2, 0x17
+
+    sget-object v0, Lpaf;->h:Lppi;
+
+    aput-object v0, p1, p2
+
+    const/16 p2, 0x18
+
+    const-string v0, "u"
+
+    aput-object v0, p1, p2
+
+    const/16 p2, 0x19
+
+    const-string v0, "v"
+
+    aput-object v0, p1, p2
+
+    const/16 p2, 0x1a
+
+    const-string v0, "w"
+
+    aput-object v0, p1, p2
+
+    const/16 p2, 0x1b
+
+    const-string v0, "x"
+
+    aput-object v0, p1, p2
+
+    const/16 p2, 0x1c
+
+    const-string v0, "y"
+
+    aput-object v0, p1, p2
+
+    const/16 p2, 0x1d
+
+    const-string v0, "z"
+
+    aput-object v0, p1, p2
+
+    const/16 p2, 0x1e
+
+    sget-object v0, Lpaf;->i:Lppi;
+
+    aput-object v0, p1, p2
+
+    const/16 p2, 0x1f
+
+    const-string v0, "A"
+
+    aput-object v0, p1, p2
+
+    const/16 p2, 0x20
+
+    const-string v0, "B"
+
+    aput-object v0, p1, p2
+
+    const/16 p2, 0x21
+
+    sget-object v0, Lmfw;->o:Lppi;
+
+    aput-object v0, p1, p2
+
+    const/16 p2, 0x22
+
+    const-string v0, "C"
+
+    aput-object v0, p1, p2
+
+    const/16 p2, 0x23
+
+    const-string v0, "D"
+
+    aput-object v0, p1, p2
+
+    const/16 p2, 0x24
+
+    const-string v0, "E"
+
+    aput-object v0, p1, p2
+
+    const/16 p2, 0x25
+
+    const-string v0, "F"
+
+    aput-object v0, p1, p2
+
+    const/16 p2, 0x26
+
+    const-string v0, "G"
+
+    aput-object v0, p1, p2
+
+    const/16 p2, 0x27
+
+    const-string v0, "H"
+
+    aput-object v0, p1, p2
+
+    const/16 p2, 0x28
+
+    const-string v0, "I"
+
+    aput-object v0, p1, p2
+
+    const/16 p2, 0x29
+
+    const-string v0, "J"
+
+    aput-object v0, p1, p2
+
+    const/16 p2, 0x2a
+
+    const-string v0, "K"
+
+    aput-object v0, p1, p2
+
+    const/16 p2, 0x2b
+
+    sget-object v0, Lpdq;->o:Lppi;
+
+    aput-object v0, p1, p2
+
+    const/16 p2, 0x2c
+
+    const-string v0, "L"
+
+    aput-object v0, p1, p2
+
+    const/16 p2, 0x2d
+
+    const-string v0, "M"
+
+    aput-object v0, p1, p2
+
+    const/16 p2, 0x2e
+
+    const-string v0, "N"
+
+    aput-object v0, p1, p2
+
+    const/16 p2, 0x2f
+
+    const-string v0, "O"
+
+    aput-object v0, p1, p2
+
+    const/16 p2, 0x30
+
+    const-string v0, "P"
+
+    aput-object v0, p1, p2
+
+    const/16 p2, 0x31
+
+    const-string v0, "Q"
+
+    aput-object v0, p1, p2
+
+    const/16 p2, 0x32
+
+    const-string v0, "R"
+
+    aput-object v0, p1, p2
+
+    const/16 p2, 0x33
+
+    const-string v0, "S"
+
+    aput-object v0, p1, p2
+
+    sget-object p2, Lpam;->T:Lpam;
+
+    const-string v0, "\u0001+\u0000\u0002\u0003A+\u0000\u0001\u0000\u0003\u100c\u0001\u0006\u1007\u0002\u0007\u1001\u0003\u0008\u1001\u0004\t\u1009\u0005\n\u1007\u0006\u000b\u1001\u0007\u000c\u100c\u0008\r\u1007\t\u000f\u001b\u0014\u1009\u000c\u0015\u1009\r\u0016\u1009\u000e\u0018\u1009\u0010\u001d\u1009\u0013\u001f\u1009\u0015#\u1004\u0019$\u100c\u001a%\u1009\u001b&\u1009\u001c\'\u1009\u001d(\u1009\u001e)\u1009\u001f*\u100c!,\u1007\"-\u100c#.\u1009$/\u1009%0\u1007&1\u1009\'2\u1007(3\u1007)4\u1009*5\u1009+6\u100c,7\u1009-9\u1009/:\u10090;\u10071<\u10092?\u10095@\u10076A\u10097"
+
+    invoke-static {p2, v0, p1}, Lpam;->E(Lpqm;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p1
+
+    return-object p1
+
+    :pswitch_6
+    invoke-static {p2}, Ljava/lang/Byte;->valueOf(B)Ljava/lang/Byte;
+
+    move-result-object p1
+
+    return-object p1
 
     :pswitch_data_0
-    .packed-switch 0x1
+    .packed-switch 0x0
+        :pswitch_6
+        :pswitch_0
+        :pswitch_5
+        :pswitch_4
         :pswitch_3
         :pswitch_2
         :pswitch_1
-        :pswitch_0
     .end packed-switch
-.end method
-
-.method final b()V
-    .locals 1
-
-    iget-boolean v0, p0, Lpam;->b:Z
-
-    if-eqz v0, :cond_0
-
-    return-void
-
-    :cond_0
-    const/4 v0, 0x1
-
-    iput-boolean v0, p0, Lpam;->b:Z
-
-    iget-object v0, p0, Lpam;->e:Lpan;
-
-    invoke-virtual {v0}, Lpan;->a()V
-
-    iget-object v0, p0, Lpam;->d:Ljava/nio/channels/ReadableByteChannel;
-
-    invoke-interface {v0}, Ljava/nio/channels/ReadableByteChannel;->close()V
-
-    return-void
 .end method

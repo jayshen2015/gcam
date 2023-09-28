@@ -1,64 +1,40 @@
-.class final Lhvk;
-.super Lhvw;
+.class public final Lhvk;
+.super Ljava/lang/Object;
 
 
-# instance fields
-.field final synthetic a:Lhvz;
+# static fields
+.field public static final a:Llig;
 
 
 # direct methods
-.method public constructor <init>(Lhvz;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 3
 
-    iput-object p1, p0, Lhvk;->a:Lhvz;
+    new-instance v0, Llig;
 
-    invoke-direct {p0, p1}, Lhvw;-><init>(Lhvz;)V
+    const/16 v1, 0xcc0
 
-    return-void
-.end method
+    const/16 v2, 0x72c
 
+    invoke-direct {v0, v1, v2}, Llig;-><init>(II)V
 
-# virtual methods
-.method public final a()V
-    .locals 2
+    sput-object v0, Lhvk;->a:Llig;
 
-    iget-object v0, p0, Lhvk;->a:Lhvz;
+    new-instance v0, Llig;
 
-    iget-object v0, v0, Lhvz;->e:Lhiu;
+    const/16 v1, 0x10
 
-    invoke-virtual {v0}, Lhiu;->e()V
+    const/16 v2, 0x9
 
-    invoke-super {p0}, Lhvw;->a()V
+    invoke-direct {v0, v1, v2}, Llig;-><init>(II)V
 
-    iget-object v0, p0, Lhvk;->a:Lhvz;
+    new-instance v0, Llig;
 
-    iget-object v1, v0, Lhvz;->e:Lhiu;
+    const/4 v1, 0x4
 
-    iget-object v0, v0, Lhvz;->i:Lhiw;
+    const/4 v2, 0x3
 
-    invoke-virtual {v1, v0}, Lhiu;->g(Lhiw;)V
-
-    return-void
-.end method
-
-.method public final c()V
-    .locals 2
-
-    iget-object v0, p0, Lhvk;->a:Lhvz;
-
-    iget-object v0, v0, Lhvz;->e:Lhiu;
-
-    invoke-virtual {v0}, Lhiu;->e()V
-
-    invoke-super {p0}, Lhvw;->c()V
-
-    iget-object v0, p0, Lhvk;->a:Lhvz;
-
-    iget-object v1, v0, Lhvz;->e:Lhiu;
-
-    iget-object v0, v0, Lhvz;->i:Lhiw;
-
-    invoke-virtual {v1, v0}, Lhiu;->g(Lhiw;)V
+    invoke-direct {v0, v1, v2}, Llig;-><init>(II)V
 
     return-void
 .end method

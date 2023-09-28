@@ -1,162 +1,66 @@
 .class public final Lmeu;
-.super Lnws;
-
-# interfaces
-.implements Lnxz;
+.super Ljava/lang/Object;
 
 
 # static fields
-.field public static final b:Lmeu;
+.field public static a:Lmet;
 
-.field private static volatile c:Lnyf;
+.field public static final b:Ljava/lang/Object;
 
-
-# instance fields
-.field public a:Lnwx;
+.field public static c:Z
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 2
-
-    new-instance v0, Lmeu;
-
-    invoke-direct {v0}, Lmeu;-><init>()V
-
-    sput-object v0, Lmeu;->b:Lmeu;
-
-    const-class v1, Lmeu;
-
-    invoke-static {v1, v0}, Lnws;->aa(Ljava/lang/Class;Lnws;)V
-
-    return-void
-.end method
-
-.method private constructor <init>()V
     .locals 1
 
-    invoke-direct {p0}, Lnws;-><init>()V
+    new-instance v0, Ljava/lang/Object;
 
-    sget-object v0, Lnwl;->b:Lnwl;
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
-    iput-object v0, p0, Lmeu;->a:Lnwx;
-
-    sget-object v0, Lnvt;->b:Lnvt;
+    sput-object v0, Lmeu;->b:Ljava/lang/Object;
 
     return-void
 .end method
 
+.method public static a(Landroid/content/Context;Lmeq;)Z
+    .locals 4
 
-# virtual methods
-.method protected final a(ILjava/lang/Object;)Ljava/lang/Object;
-    .locals 2
+    invoke-static {}, Lpzl;->c()Z
 
-    add-int/lit8 p1, p1, -0x1
+    move-result v0
 
-    const/4 p2, 0x1
+    const/4 v1, 0x0
 
-    packed-switch p1, :pswitch_data_0
+    if-nez v0, :cond_0
 
-    :pswitch_0
-    const/4 p1, 0x0
-
-    return-object p1
-
-    :pswitch_1
-    sget-object p1, Lmeu;->c:Lnyf;
-
-    if-nez p1, :cond_1
-
-    const-class p2, Lmeu;
-
-    monitor-enter p2
-
-    :try_start_0
-    sget-object p1, Lmeu;->c:Lnyf;
-
-    if-nez p1, :cond_0
-
-    new-instance p1, Lnwo;
-
-    sget-object v0, Lmeu;->b:Lmeu;
-
-    invoke-direct {p1, v0}, Lnwo;-><init>(Lnws;)V
-
-    sput-object p1, Lmeu;->c:Lnyf;
+    return v1
 
     :cond_0
-    monitor-exit p2
+    invoke-virtual {p1, p0}, Lmeq;->a(Landroid/content/Context;)I
 
-    goto :goto_0
+    move-result p0
 
-    :catchall_0
-    move-exception p1
+    int-to-long p0, p0
 
-    monitor-exit p2
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    sget-object v0, Lpzl;->a:Lpzl;
 
-    throw p1
+    invoke-virtual {v0}, Lpzl;->b()Lpzm;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Lpzm;->c()J
+
+    move-result-wide v2
+
+    cmp-long v0, p0, v2
+
+    if-ltz v0, :cond_1
+
+    const/4 p0, 0x1
+
+    return p0
 
     :cond_1
-    :goto_0
-    return-object p1
-
-    :pswitch_2
-    sget-object p1, Lmeu;->b:Lmeu;
-
-    return-object p1
-
-    :pswitch_3
-    new-instance p1, Lnwn;
-
-    sget-object p2, Lmeu;->b:Lmeu;
-
-    invoke-direct {p1, p2}, Lnwn;-><init>(Lnws;)V
-
-    return-object p1
-
-    :pswitch_4
-    new-instance p1, Lmeu;
-
-    invoke-direct {p1}, Lmeu;-><init>()V
-
-    return-object p1
-
-    :pswitch_5
-    const-string p1, "\u0001\u0001\u0000\u0000\u0001\u0001\u0001\u0000\u0001\u0000\u0001$"
-
-    new-array p2, p2, [Ljava/lang/Object;
-
-    const/4 v0, 0x0
-
-    const-string v1, "a"
-
-    aput-object v1, p2, v0
-
-    sget-object v0, Lmeu;->b:Lmeu;
-
-    invoke-static {v0, p1, p2}, Lmeu;->X(Lnxy;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object p1
-
-    return-object p1
-
-    :pswitch_6
-    invoke-static {p2}, Ljava/lang/Byte;->valueOf(B)Ljava/lang/Byte;
-
-    move-result-object p1
-
-    return-object p1
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_6
-        :pswitch_0
-        :pswitch_5
-        :pswitch_4
-        :pswitch_3
-        :pswitch_2
-        :pswitch_1
-    .end packed-switch
+    return v1
 .end method

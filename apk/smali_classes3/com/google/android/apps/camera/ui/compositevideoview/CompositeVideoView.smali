@@ -2,13 +2,13 @@
 .super Landroid/widget/FrameLayout;
 
 # interfaces
-.implements Lhsx;
+.implements Liwh;
 
 
 # instance fields
 .field public a:Landroid/widget/VideoView;
 
-.field public b:Lhsw;
+.field public b:Liwg;
 
 .field private c:Landroid/widget/ImageView;
 
@@ -55,18 +55,6 @@
 .end method
 
 .method public final b()V
-    .locals 2
-
-    iget-object v0, p0, Lcom/google/android/apps/camera/ui/compositevideoview/CompositeVideoView;->d:Lcom/google/android/material/progressindicator/CircularProgressIndicator;
-
-    const/16 v1, 0x8
-
-    invoke-virtual {v0, v1}, Lcom/google/android/material/progressindicator/CircularProgressIndicator;->setVisibility(I)V
-
-    return-void
-.end method
-
-.method public final c()V
     .locals 1
 
     iget-object v0, p0, Lcom/google/android/apps/camera/ui/compositevideoview/CompositeVideoView;->a:Landroid/widget/VideoView;
@@ -76,38 +64,22 @@
     return-void
 .end method
 
-.method public final d(I)V
-    .locals 1
-
-    iget-object v0, p0, Lcom/google/android/apps/camera/ui/compositevideoview/CompositeVideoView;->a:Landroid/widget/VideoView;
-
-    invoke-virtual {v0, p1}, Landroid/widget/VideoView;->seekTo(I)V
-
-    iget-object p1, p0, Lcom/google/android/apps/camera/ui/compositevideoview/CompositeVideoView;->a:Landroid/widget/VideoView;
-
-    const/4 v0, 0x0
-
-    invoke-virtual {p1, v0}, Landroid/widget/VideoView;->setBackground(Landroid/graphics/drawable/Drawable;)V
-
-    return-void
-.end method
-
-.method public final e(Lhsw;)V
+.method public final c(Liwg;)V
     .locals 0
 
-    iput-object p1, p0, Lcom/google/android/apps/camera/ui/compositevideoview/CompositeVideoView;->b:Lhsw;
+    iput-object p1, p0, Lcom/google/android/apps/camera/ui/compositevideoview/CompositeVideoView;->b:Liwg;
 
     return-void
 .end method
 
-.method public final f(F)V
+.method public final d(F)V
     .locals 2
 
     iget-object v0, p0, Lcom/google/android/apps/camera/ui/compositevideoview/CompositeVideoView;->d:Lcom/google/android/material/progressindicator/CircularProgressIndicator;
 
     const/4 v1, 0x0
 
-    invoke-virtual {v0, v1}, Lmil;->setIndeterminate(Z)V
+    invoke-virtual {v0, v1}, Loae;->setIndeterminate(Z)V
 
     iget-object v0, p0, Lcom/google/android/apps/camera/ui/compositevideoview/CompositeVideoView;->d:Lcom/google/android/material/progressindicator/CircularProgressIndicator;
 
@@ -121,32 +93,12 @@
 
     float-to-int p1, v1
 
-    invoke-virtual {v0, p1}, Lmil;->setProgress(I)V
+    invoke-virtual {v0, p1}, Loae;->setProgress(I)V
 
     return-void
 .end method
 
-.method public final g()V
-    .locals 1
-
-    const v0, 0x7f080186
-
-    invoke-virtual {p0, v0}, Lcom/google/android/apps/camera/ui/compositevideoview/CompositeVideoView;->setBackgroundResource(I)V
-
-    return-void
-.end method
-
-.method public final h()V
-    .locals 1
-
-    const v0, 0x7f080187
-
-    invoke-virtual {p0, v0}, Lcom/google/android/apps/camera/ui/compositevideoview/CompositeVideoView;->setBackgroundResource(I)V
-
-    return-void
-.end method
-
-.method public final i(Ljava/lang/String;)V
+.method public final e(Ljava/lang/String;)V
     .locals 1
 
     iget-object v0, p0, Lcom/google/android/apps/camera/ui/compositevideoview/CompositeVideoView;->a:Landroid/widget/VideoView;
@@ -160,7 +112,7 @@
     return-void
 .end method
 
-.method public final j()V
+.method public final f()V
     .locals 3
 
     iget-object v0, p0, Lcom/google/android/apps/camera/ui/compositevideoview/CompositeVideoView;->d:Lcom/google/android/material/progressindicator/CircularProgressIndicator;
@@ -171,7 +123,7 @@
 
     iget-object v0, p0, Lcom/google/android/apps/camera/ui/compositevideoview/CompositeVideoView;->c:Landroid/widget/ImageView;
 
-    const v1, 0x7f08034a
+    const v1, 0x7f080602
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageResource(I)V
 
@@ -181,7 +133,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f140139
+    const v2, 0x7f14011c
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -191,24 +143,22 @@
 
     iget-object v0, p0, Lcom/google/android/apps/camera/ui/compositevideoview/CompositeVideoView;->c:Landroid/widget/ImageView;
 
-    new-instance v1, Lgdu;
+    new-instance v1, Liwd;
 
-    const/16 v2, 0xb
+    const/4 v2, 0x0
 
-    invoke-direct {v1, p0, v2}, Lgdu;-><init>(Lcom/google/android/apps/camera/ui/compositevideoview/CompositeVideoView;I)V
+    invoke-direct {v1, p0, v2}, Liwd;-><init>(Lcom/google/android/apps/camera/ui/compositevideoview/CompositeVideoView;I)V
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     iget-object v0, p0, Lcom/google/android/apps/camera/ui/compositevideoview/CompositeVideoView;->c:Landroid/widget/ImageView;
 
-    const/4 v1, 0x0
-
-    invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setVisibility(I)V
+    invoke-virtual {v0, v2}, Landroid/widget/ImageView;->setVisibility(I)V
 
     return-void
 .end method
 
-.method public final k()V
+.method public final g()V
     .locals 3
 
     iget-object v0, p0, Lcom/google/android/apps/camera/ui/compositevideoview/CompositeVideoView;->d:Lcom/google/android/material/progressindicator/CircularProgressIndicator;
@@ -219,7 +169,7 @@
 
     iget-object v0, p0, Lcom/google/android/apps/camera/ui/compositevideoview/CompositeVideoView;->c:Landroid/widget/ImageView;
 
-    const v1, 0x7f0801a6
+    const v1, 0x7f0804b3
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageResource(I)V
 
@@ -229,7 +179,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f14013a
+    const v2, 0x7f14011d
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -239,11 +189,11 @@
 
     iget-object v0, p0, Lcom/google/android/apps/camera/ui/compositevideoview/CompositeVideoView;->c:Landroid/widget/ImageView;
 
-    new-instance v1, Lgdu;
+    new-instance v1, Liwd;
 
-    const/16 v2, 0xc
+    const/4 v2, 0x2
 
-    invoke-direct {v1, p0, v2}, Lgdu;-><init>(Lcom/google/android/apps/camera/ui/compositevideoview/CompositeVideoView;I)V
+    invoke-direct {v1, p0, v2}, Liwd;-><init>(Lcom/google/android/apps/camera/ui/compositevideoview/CompositeVideoView;I)V
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
@@ -256,12 +206,12 @@
     return-void
 .end method
 
-.method public final l()V
+.method public final h()V
     .locals 3
 
     iget-object v0, p0, Lcom/google/android/apps/camera/ui/compositevideoview/CompositeVideoView;->c:Landroid/widget/ImageView;
 
-    const v1, 0x7f08034a
+    const v1, 0x7f080602
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageResource(I)V
 
@@ -271,7 +221,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f140139
+    const v2, 0x7f14011c
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -298,7 +248,7 @@
     return-void
 .end method
 
-.method public final m()V
+.method public final i()V
     .locals 2
 
     iget-object v0, p0, Lcom/google/android/apps/camera/ui/compositevideoview/CompositeVideoView;->a:Landroid/widget/VideoView;
@@ -314,7 +264,7 @@
     return-void
 .end method
 
-.method public final n()V
+.method public final j()V
     .locals 1
 
     iget-object v0, p0, Lcom/google/android/apps/camera/ui/compositevideoview/CompositeVideoView;->a:Landroid/widget/VideoView;
@@ -324,7 +274,7 @@
     return-void
 .end method
 
-.method public final o()Z
+.method public final k()Z
     .locals 1
 
     iget-object v0, p0, Lcom/google/android/apps/camera/ui/compositevideoview/CompositeVideoView;->a:Landroid/widget/VideoView;
@@ -336,12 +286,30 @@
     return v0
 .end method
 
+.method public final l()V
+    .locals 2
+
+    iget-object v0, p0, Lcom/google/android/apps/camera/ui/compositevideoview/CompositeVideoView;->a:Landroid/widget/VideoView;
+
+    const/16 v1, 0x29
+
+    invoke-virtual {v0, v1}, Landroid/widget/VideoView;->seekTo(I)V
+
+    iget-object v0, p0, Lcom/google/android/apps/camera/ui/compositevideoview/CompositeVideoView;->a:Landroid/widget/VideoView;
+
+    const/4 v1, 0x0
+
+    invoke-virtual {v0, v1}, Landroid/widget/VideoView;->setBackground(Landroid/graphics/drawable/Drawable;)V
+
+    return-void
+.end method
+
 .method protected final onFinishInflate()V
     .locals 5
 
     invoke-super {p0}, Landroid/widget/FrameLayout;->onFinishInflate()V
 
-    const v0, 0x7f080185
+    const v0, 0x7f080496
 
     invoke-virtual {p0, v0}, Lcom/google/android/apps/camera/ui/compositevideoview/CompositeVideoView;->setBackgroundResource(I)V
 
@@ -361,11 +329,11 @@
 
     move-result-object v1
 
-    const v2, 0x7f0e003b
+    const v2, 0x7f0e0035
 
     invoke-virtual {v1, v2, p0}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;)Landroid/view/View;
 
-    const v1, 0x7f0b0100
+    const v1, 0x7f0b00dc
 
     invoke-virtual {p0, v1}, Lcom/google/android/apps/camera/ui/compositevideoview/CompositeVideoView;->findViewById(I)Landroid/view/View;
 
@@ -375,7 +343,7 @@
 
     iput-object v1, p0, Lcom/google/android/apps/camera/ui/compositevideoview/CompositeVideoView;->a:Landroid/widget/VideoView;
 
-    const v1, 0x7f0b00fe
+    const v1, 0x7f0b00da
 
     invoke-virtual {p0, v1}, Lcom/google/android/apps/camera/ui/compositevideoview/CompositeVideoView;->findViewById(I)Landroid/view/View;
 
@@ -385,7 +353,7 @@
 
     iput-object v1, p0, Lcom/google/android/apps/camera/ui/compositevideoview/CompositeVideoView;->c:Landroid/widget/ImageView;
 
-    const v1, 0x7f0b00ff
+    const v1, 0x7f0b00db
 
     invoke-virtual {p0, v1}, Lcom/google/android/apps/camera/ui/compositevideoview/CompositeVideoView;->findViewById(I)Landroid/view/View;
 
@@ -401,49 +369,47 @@
 
     move-result-object v2
 
-    new-instance v3, Lhsv;
+    new-instance v3, Liwf;
 
-    invoke-direct {v3, p0}, Lhsv;-><init>(Lcom/google/android/apps/camera/ui/compositevideoview/CompositeVideoView;)V
+    invoke-direct {v3, p0}, Liwf;-><init>(Lcom/google/android/apps/camera/ui/compositevideoview/CompositeVideoView;)V
 
     invoke-direct {v1, v2, v3}, Landroid/view/GestureDetector;-><init>(Landroid/content/Context;Landroid/view/GestureDetector$OnGestureListener;)V
 
     iget-object v2, p0, Lcom/google/android/apps/camera/ui/compositevideoview/CompositeVideoView;->a:Landroid/widget/VideoView;
 
-    new-instance v3, Lclb;
+    new-instance v3, Liwe;
 
-    const/16 v4, 0x10
+    const/4 v4, 0x0
 
-    invoke-direct {v3, v1, v4}, Lclb;-><init>(Landroid/view/GestureDetector;I)V
+    invoke-direct {v3, v1, v4}, Liwe;-><init>(Landroid/view/GestureDetector;I)V
 
     invoke-virtual {v2, v3}, Landroid/widget/VideoView;->setOnTouchListener(Landroid/view/View$OnTouchListener;)V
 
     iget-object v1, p0, Lcom/google/android/apps/camera/ui/compositevideoview/CompositeVideoView;->a:Landroid/widget/VideoView;
 
-    new-instance v2, Lgdu;
+    new-instance v2, Liwd;
 
-    const/16 v3, 0xd
-
-    invoke-direct {v2, p0, v3}, Lgdu;-><init>(Lcom/google/android/apps/camera/ui/compositevideoview/CompositeVideoView;I)V
+    invoke-direct {v2, p0, v0}, Liwd;-><init>(Lcom/google/android/apps/camera/ui/compositevideoview/CompositeVideoView;I)V
 
     invoke-virtual {v1, v2}, Landroid/widget/VideoView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    iget-object v1, p0, Lcom/google/android/apps/camera/ui/compositevideoview/CompositeVideoView;->a:Landroid/widget/VideoView;
+    iget-object v0, p0, Lcom/google/android/apps/camera/ui/compositevideoview/CompositeVideoView;->a:Landroid/widget/VideoView;
 
-    new-instance v2, Lioa;
+    new-instance v1, Liwb;
 
-    invoke-direct {v2, p0, v0}, Lioa;-><init>(Lcom/google/android/apps/camera/ui/compositevideoview/CompositeVideoView;I)V
+    invoke-direct {v1, p0}, Liwb;-><init>(Lcom/google/android/apps/camera/ui/compositevideoview/CompositeVideoView;)V
 
-    invoke-virtual {v1, v2}, Landroid/widget/VideoView;->setOnCompletionListener(Landroid/media/MediaPlayer$OnCompletionListener;)V
+    invoke-virtual {v0, v1}, Landroid/widget/VideoView;->setOnCompletionListener(Landroid/media/MediaPlayer$OnCompletionListener;)V
 
-    iget-object v1, p0, Lcom/google/android/apps/camera/ui/compositevideoview/CompositeVideoView;->a:Landroid/widget/VideoView;
+    iget-object v0, p0, Lcom/google/android/apps/camera/ui/compositevideoview/CompositeVideoView;->a:Landroid/widget/VideoView;
 
-    new-instance v2, Liob;
+    new-instance v1, Liwc;
 
-    invoke-direct {v2, p0, v0}, Liob;-><init>(Lcom/google/android/apps/camera/ui/compositevideoview/CompositeVideoView;I)V
+    invoke-direct {v1, p0}, Liwc;-><init>(Lcom/google/android/apps/camera/ui/compositevideoview/CompositeVideoView;)V
 
-    invoke-virtual {v1, v2}, Landroid/widget/VideoView;->setOnPreparedListener(Landroid/media/MediaPlayer$OnPreparedListener;)V
+    invoke-virtual {v0, v1}, Landroid/widget/VideoView;->setOnPreparedListener(Landroid/media/MediaPlayer$OnPreparedListener;)V
 
-    invoke-virtual {p0}, Lcom/google/android/apps/camera/ui/compositevideoview/CompositeVideoView;->j()V
+    invoke-virtual {p0}, Lcom/google/android/apps/camera/ui/compositevideoview/CompositeVideoView;->f()V
 
     return-void
 .end method

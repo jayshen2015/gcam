@@ -1,43 +1,71 @@
-.class public final synthetic Lirw;
-.super Ljava/lang/Object;
-
-# interfaces
-.implements Landroid/view/View$OnLongClickListener;
+.class public final Lirw;
+.super Landroid/widget/FrameLayout;
 
 
 # instance fields
-.field public final synthetic a:Lisi;
-
-.field public final synthetic b:Z
+.field final synthetic a:Lirz;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lisi;Z)V
+.method public constructor <init>(Lirz;Landroid/content/Context;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lirw;->a:Lirz;
 
-    iput-object p1, p0, Lirw;->a:Lisi;
-
-    iput-boolean p2, p0, Lirw;->b:Z
+    invoke-direct {p0, p2}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onLongClick(Landroid/view/View;)Z
-    .locals 1
+.method protected final onLayout(ZIIII)V
+    .locals 0
 
-    iget-object p1, p0, Lirw;->a:Lisi;
+    invoke-super/range {p0 .. p5}, Landroid/widget/FrameLayout;->onLayout(ZIIII)V
 
-    iget-boolean v0, p0, Lirw;->b:Z
+    iget-object p2, p0, Lirw;->a:Lirz;
 
-    iget-object p1, p1, Lisi;->E:Lita;
+    iget-object p2, p2, Lirz;->i:Landroid/view/WindowManager;
 
-    invoke-virtual {p1, v0}, Lisk;->o(Z)V
+    invoke-interface {p2}, Landroid/view/WindowManager;->getDefaultDisplay()Landroid/view/Display;
 
-    const/4 p1, 0x1
+    move-result-object p2
 
-    return p1
+    iget-object p3, p0, Lirw;->a:Lirz;
+
+    iget-object p3, p3, Lirz;->c:Landroid/content/Context;
+
+    invoke-static {p2, p3}, Ljrz;->a(Landroid/view/Display;Landroid/content/Context;)Ljrz;
+
+    move-result-object p2
+
+    if-nez p1, :cond_1
+
+    iget-object p1, p0, Lirw;->a:Lirz;
+
+    iget-object p1, p1, Lirz;->b:Llce;
+
+    iget-object p1, p1, Llce;->d:Ljava/lang/Object;
+
+    check-cast p1, Ljrz;
+
+    invoke-virtual {p1, p2}, Ljrz;->equals(Ljava/lang/Object;)Z
+
+    move-result p1
+
+    if-nez p1, :cond_0
+
+    goto :goto_0
+
+    :cond_0
+    return-void
+
+    :cond_1
+    :goto_0
+    iget-object p1, p0, Lirw;->a:Lirz;
+
+    invoke-virtual {p1, p2}, Lirz;->b(Ljrz;)V
+
+    return-void
 .end method

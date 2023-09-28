@@ -1,67 +1,58 @@
-.class final Lijh;
-.super Ljava/lang/Object;
-
-# interfaces
-.implements Ldaw;
+.class public final enum Lijh;
+.super Ljava/lang/Enum;
 
 
-# instance fields
-.field final synthetic a:Lihg;
+# static fields
+.field public static final enum a:Lijh;
 
-.field final synthetic b:Liji;
+.field private static final synthetic b:[Lijh;
 
 
 # direct methods
-.method public constructor <init>(Liji;Lihg;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 3
 
-    iput-object p1, p0, Lijh;->b:Liji;
+    new-instance v0, Lijh;
 
-    iput-object p2, p0, Lijh;->a:Lihg;
+    invoke-direct {v0}, Lijh;-><init>()V
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    sput-object v0, Lijh;->a:Lijh;
 
-    return-void
-.end method
+    const/4 v1, 0x1
 
+    new-array v1, v1, [Lijh;
 
-# virtual methods
-.method public final a()V
-    .locals 2
+    const/4 v2, 0x0
 
-    iget-object v0, p0, Lijh;->a:Lihg;
+    aput-object v0, v1, v2
 
-    iget-object v0, v0, Lihg;->c:Ljava/lang/Object;
-
-    iget-object v1, p0, Lijh;->b:Liji;
-
-    iget-object v1, v1, Liji;->a:Ljava/lang/Object;
-
-    check-cast v1, Ljvd;
-
-    check-cast v0, Lcom/google/android/apps/camera/ui/views/MainActivityLayout;
-
-    invoke-virtual {v0, v1}, Lcom/google/android/apps/camera/ui/views/MainActivityLayout;->t(Ljvd;)V
+    sput-object v1, Lijh;->b:[Lijh;
 
     return-void
 .end method
 
-.method public final b()V
+.method private constructor <init>()V
     .locals 2
 
-    iget-object v0, p0, Lijh;->a:Lihg;
+    const-string v0, "CAMERA_CHANGE_END"
 
-    iget-object v0, v0, Lihg;->c:Ljava/lang/Object;
+    const/4 v1, 0x0
 
-    iget-object v1, p0, Lijh;->b:Liji;
-
-    iget-object v1, v1, Liji;->a:Ljava/lang/Object;
-
-    check-cast v1, Ljvd;
-
-    check-cast v0, Lcom/google/android/apps/camera/ui/views/MainActivityLayout;
-
-    invoke-virtual {v0, v1}, Lcom/google/android/apps/camera/ui/views/MainActivityLayout;->s(Ljvd;)V
+    invoke-direct {p0, v0, v1}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
+.end method
+
+.method public static values()[Lijh;
+    .locals 1
+
+    sget-object v0, Lijh;->b:[Lijh;
+
+    invoke-virtual {v0}, [Lijh;->clone()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, [Lijh;
+
+    return-object v0
 .end method

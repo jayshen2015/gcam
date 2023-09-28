@@ -1,39 +1,28 @@
-.class public final synthetic Ldeh;
+.class public final Ldeh;
 .super Ljava/lang/Object;
-
-# interfaces
-.implements Ldej;
 
 
 # static fields
-.field public static final synthetic a:Ldeh;
+.field public static final a:Lddg;
 
 
 # direct methods
-.method static synthetic constructor <clinit>()V
-    .locals 1
+.method static constructor <clinit>()V
+    .locals 2
 
-    new-instance v0, Ldeh;
+    new-instance v0, Lddh;
 
-    invoke-direct {v0}, Ldeh;-><init>()V
+    invoke-direct {v0}, Lddh;-><init>()V
 
-    sput-object v0, Ldeh;->a:Ldeh;
+    const-string v1, "camera.chameleon.enabled"
 
-    return-void
-.end method
+    iput-object v1, v0, Lddh;->a:Ljava/lang/String;
 
-.method private synthetic constructor <init>()V
-    .locals 0
+    invoke-virtual {v0}, Lddh;->f()Lddg;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    move-result-object v0
 
-    return-void
-.end method
-
-
-# virtual methods
-.method public final a(Ljava/lang/Long;)V
-    .locals 0
+    sput-object v0, Ldeh;->a:Lddg;
 
     return-void
 .end method

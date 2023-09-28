@@ -1,193 +1,193 @@
-.class public final Lneq;
-.super Lnes;
+.class final Lneq;
+.super Ljava/lang/Object;
 
 
 # instance fields
-.field private final a:Lnes;
+.field public final a:Landroid/content/Context;
 
-.field private final b:Ljava/lang/String;
+.field public final b:Lojz;
 
 
 # direct methods
-.method public constructor <init>(Lnes;)V
-    .locals 2
+.method public constructor <init>()V
+    .locals 0
 
-    invoke-direct {p0}, Lnes;-><init>()V
-
-    iput-object p1, p0, Lneq;->a:Lnes;
-
-    const-string p1, ":"
-
-    iput-object p1, p0, Lneq;->b:Ljava/lang/String;
-
-    const-string p1, "Cannot add a separator after every %s chars"
-
-    const/4 v0, 0x2
-
-    const/4 v1, 0x1
-
-    invoke-static {v1, p1, v0}, Lmoz;->h(ZLjava/lang/String;I)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
+.end method
+
+.method public constructor <init>(Landroid/content/Context;Lojz;)V
+    .locals 0
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    if-eqz p1, :cond_0
+
+    iput-object p1, p0, Lneq;->a:Landroid/content/Context;
+
+    iput-object p2, p0, Lneq;->b:Lojz;
+
+    return-void
+
+    :cond_0
+    new-instance p1, Ljava/lang/NullPointerException;
+
+    const-string p2, "Null context"
+
+    invoke-direct {p1, p2}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
+
+    throw p1
 .end method
 
 
 # virtual methods
-.method public final a([BLjava/lang/CharSequence;)I
+.method public final equals(Ljava/lang/Object;)Z
     .locals 4
 
-    new-instance v0, Ljava/lang/StringBuilder;
+    const/4 v0, 0x1
 
-    invoke-interface {p2}, Ljava/lang/CharSequence;->length()I
+    if-ne p1, p0, :cond_0
+
+    return v0
+
+    :cond_0
+    instance-of v1, p1, Lneq;
+
+    const/4 v2, 0x0
+
+    if-eqz v1, :cond_3
+
+    check-cast p1, Lneq;
+
+    iget-object v1, p0, Lneq;->a:Landroid/content/Context;
+
+    iget-object v3, p1, Lneq;->a:Landroid/content/Context;
+
+    invoke-virtual {v1, v3}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
 
     move-result v1
 
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(I)V
+    if-eqz v1, :cond_3
 
-    const/4 v1, 0x0
+    iget-object v1, p0, Lneq;->b:Lojz;
 
-    :goto_0
-    invoke-interface {p2}, Ljava/lang/CharSequence;->length()I
+    iget-object p1, p1, Lneq;->b:Lojz;
 
-    move-result v2
+    if-nez v1, :cond_1
 
-    if-ge v1, v2, :cond_1
-
-    invoke-interface {p2, v1}, Ljava/lang/CharSequence;->charAt(I)C
-
-    move-result v2
-
-    iget-object v3, p0, Lneq;->b:Ljava/lang/String;
-
-    invoke-virtual {v3, v2}, Ljava/lang/String;->indexOf(I)I
-
-    move-result v3
-
-    if-gez v3, :cond_0
-
-    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
-
-    :cond_0
-    add-int/lit8 v1, v1, 0x1
+    if-nez p1, :cond_3
 
     goto :goto_0
 
     :cond_1
-    iget-object p2, p0, Lneq;->a:Lnes;
-
-    invoke-virtual {p2, p1, v0}, Lnes;->a([BLjava/lang/CharSequence;)I
+    invoke-virtual {v1, p1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
 
     move-result p1
 
-    return p1
+    if-nez p1, :cond_2
+
+    goto :goto_1
+
+    :cond_2
+    :goto_0
+    return v0
+
+    :cond_3
+    :goto_1
+    return v2
 .end method
 
-.method public final b(Ljava/lang/Appendable;[BI)V
+.method public final hashCode()I
     .locals 2
 
-    iget-object v0, p0, Lneq;->a:Lnes;
+    iget-object v0, p0, Lneq;->a:Landroid/content/Context;
 
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    const/4 v1, 0x1
-
-    invoke-static {v1}, Lmoz;->e(Z)V
-
-    new-instance v1, Lnem;
-
-    invoke-direct {v1, p1}, Lnem;-><init>(Ljava/lang/Appendable;)V
-
-    invoke-virtual {v0, v1, p2, p3}, Lnes;->b(Ljava/lang/Appendable;[BI)V
-
-    return-void
-.end method
-
-.method public final c(I)I
-    .locals 1
-
-    iget-object v0, p0, Lneq;->a:Lnes;
-
-    invoke-virtual {v0, p1}, Lnes;->c(I)I
-
-    move-result p1
-
-    return p1
-.end method
-
-.method public final d(I)I
-    .locals 4
-
-    iget-object v0, p0, Lneq;->a:Lnes;
-
-    invoke-virtual {v0, p1}, Lnes;->d(I)I
-
-    move-result p1
-
-    iget-object v0, p0, Lneq;->b:Ljava/lang/String;
-
-    invoke-virtual {v0}, Ljava/lang/String;->length()I
+    invoke-virtual {v0}, Ljava/lang/Object;->hashCode()I
 
     move-result v0
 
-    add-int/lit8 v1, p1, -0x1
+    const v1, 0xf4243
 
-    const/4 v2, 0x0
-
-    invoke-static {v2, v1}, Ljava/lang/Math;->max(II)I
-
-    move-result v1
-
-    const/4 v2, 0x2
-
-    sget-object v3, Ljava/math/RoundingMode;->FLOOR:Ljava/math/RoundingMode;
-
-    invoke-static {v1, v2, v3}, Lnsy;->ag(IILjava/math/RoundingMode;)I
-
-    move-result v1
+    xor-int/2addr v0, v1
 
     mul-int v0, v0, v1
 
-    add-int/2addr p1, v0
+    iget-object v1, p0, Lneq;->b:Lojz;
 
-    return p1
-.end method
+    if-nez v1, :cond_0
 
-.method public final e(Ljava/lang/CharSequence;)Ljava/lang/CharSequence;
-    .locals 1
+    const/4 v1, 0x0
 
-    iget-object v0, p0, Lneq;->a:Lnes;
+    goto :goto_0
 
-    invoke-virtual {v0, p1}, Lnes;->e(Ljava/lang/CharSequence;)Ljava/lang/CharSequence;
+    :cond_0
+    invoke-virtual {v1}, Ljava/lang/Object;->hashCode()I
 
-    move-result-object p1
+    move-result v1
 
-    return-object p1
+    :goto_0
+    xor-int/2addr v0, v1
+
+    return v0
 .end method
 
 .method public final toString()Ljava/lang/String;
-    .locals 2
+    .locals 5
 
-    new-instance v0, Ljava/lang/StringBuilder;
+    iget-object v0, p0, Lneq;->a:Landroid/content/Context;
 
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
-    iget-object v1, p0, Lneq;->a:Lnes;
+    move-result-object v0
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    iget-object v1, p0, Lneq;->b:Lojz;
 
-    const-string v1, ".withSeparator(\""
+    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result-object v1
 
-    iget-object v1, p0, Lneq;->b:Ljava/lang/String;
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result-object v2
 
-    const-string v1, "\", 2)"
+    invoke-virtual {v2}, Ljava/lang/String;->length()I
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result v2
 
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/lang/String;->length()I
+
+    move-result v3
+
+    new-instance v4, Ljava/lang/StringBuilder;
+
+    add-int/lit8 v2, v2, 0x2e
+
+    add-int/2addr v2, v3
+
+    invoke-direct {v4, v2}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string v2, "FlagsContext{context="
+
+    invoke-virtual {v4, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v0, ", hermeticFileOverrides="
+
+    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v4, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v0, "}"
+
+    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v0
 

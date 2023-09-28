@@ -1,70 +1,176 @@
-.class public final Lixn;
-.super Ljava/lang/Object;
+.class Lixn;
+.super Lixk;
 
 
-# static fields
-.field public static final a:[I
-
-.field public static final b:[I
-
-.field public static final c:[I
+# instance fields
+.field final synthetic a:Lixx;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 5
+.method public constructor <init>(Lixx;)V
+    .locals 0
 
-    const/16 v0, 0xc
+    iput-object p1, p0, Lixn;->a:Lixx;
 
-    new-array v0, v0, [I
-
-    fill-array-data v0, :array_0
-
-    sput-object v0, Lixn;->a:[I
-
-    const v0, 0x7f0404cf
-
-    const v1, 0x7f04051a
-
-    filled-new-array {v0, v1}, [I
-
-    move-result-object v0
-
-    sput-object v0, Lixn;->b:[I
-
-    const v0, 0x7f040527
-
-    const v1, 0x7f040528
-
-    const v2, 0x7f040524
-
-    const v3, 0x7f040525
-
-    const v4, 0x7f040526
-
-    filled-new-array {v2, v3, v4, v0, v1}, [I
-
-    move-result-object v0
-
-    sput-object v0, Lixn;->c:[I
+    invoke-direct {p0}, Lixk;-><init>()V
 
     return-void
+.end method
 
-    nop
 
-    :array_0
-    .array-data 4
-        0x10101f2
-        0x10101f3
-        0x10101f4
-        0x10101f5
-        0x10101f6
-        0x10101f7
-        0x7f04021b
-        0x7f04021c
-        0x7f04021d
-        0x7f040221
-        0x7f0404ce
-        0x7f040519
-    .end array-data
+# virtual methods
+.method public final a()V
+    .locals 2
+
+    iget-object v0, p0, Lixn;->a:Lixx;
+
+    const/4 v1, 0x0
+
+    iput-boolean v1, v0, Lixx;->m:Z
+
+    invoke-virtual {p0}, Lixk;->k()V
+
+    return-void
+.end method
+
+.method public b()V
+    .locals 0
+
+    return-void
+.end method
+
+.method public c()V
+    .locals 0
+
+    return-void
+.end method
+
+.method public final f()V
+    .locals 3
+
+    iget-object v0, p0, Lixn;->a:Lixx;
+
+    iget-object v0, v0, Lixx;->b:Ljfn;
+
+    invoke-interface {v0}, Ljfn;->m()V
+
+    iget-object v0, p0, Lixn;->a:Lixx;
+
+    iget-object v0, v0, Lixx;->b:Ljfn;
+
+    sget-object v1, Ljrl;->p:Ljrl;
+
+    const/4 v2, 0x1
+
+    invoke-interface {v0, v1, v2}, Ljfn;->j(Ljrl;Z)V
+
+    iget-object v0, p0, Lixn;->a:Lixx;
+
+    sget-object v1, Ljrl;->p:Ljrl;
+
+    invoke-virtual {v0, v1}, Lixx;->A(Ljrl;)V
+
+    iget-object v0, p0, Lixn;->a:Lixx;
+
+    invoke-virtual {v0}, Lixx;->s()Lcom/google/android/apps/camera/ui/wirers/PreviewOverlay;
+
+    move-result-object v0
+
+    iput-boolean v2, v0, Lcom/google/android/apps/camera/ui/wirers/PreviewOverlay;->d:Z
+
+    iget-object v0, p0, Lixn;->a:Lixx;
+
+    iget-object v0, v0, Lixx;->b:Ljfn;
+
+    invoke-interface {v0}, Ljfn;->n()V
+
+    iget-object v0, p0, Lixn;->a:Lixx;
+
+    invoke-virtual {v0}, Lixx;->u()V
+
+    iget-object v0, p0, Lixn;->a:Lixx;
+
+    invoke-virtual {v0}, Lixx;->t()V
+
+    iget-object v0, p0, Lixn;->a:Lixx;
+
+    iget-object v0, v0, Lixx;->a:Lkas;
+
+    const/4 v1, 0x0
+
+    invoke-interface {v0, v1}, Lkas;->v(Z)V
+
+    iget-object v0, p0, Lixn;->a:Lixx;
+
+    iget-object v0, v0, Lixx;->g:Lbta;
+
+    invoke-virtual {v0}, Lbta;->c()V
+
+    return-void
+.end method
+
+.method public final g()V
+    .locals 2
+
+    iget-object v0, p0, Lixn;->a:Lixx;
+
+    invoke-virtual {v0}, Lixx;->s()Lcom/google/android/apps/camera/ui/wirers/PreviewOverlay;
+
+    move-result-object v0
+
+    const/4 v1, 0x0
+
+    iput-boolean v1, v0, Lcom/google/android/apps/camera/ui/wirers/PreviewOverlay;->d:Z
+
+    iget-object v0, p0, Lixn;->a:Lixx;
+
+    iget-object v1, v0, Lixx;->b:Ljfn;
+
+    iget-boolean v0, v0, Lixx;->m:Z
+
+    invoke-interface {v1, v0}, Ljfn;->d(Z)V
+
+    return-void
+.end method
+
+.method public i()V
+    .locals 0
+
+    return-void
+.end method
+
+.method public j()V
+    .locals 0
+
+    return-void
+.end method
+
+.method public k()V
+    .locals 0
+
+    return-void
+.end method
+
+.method public l()V
+    .locals 0
+
+    return-void
+.end method
+
+.method public n()V
+    .locals 0
+
+    return-void
+.end method
+
+.method public o()V
+    .locals 0
+
+    return-void
+.end method
+
+.method public p()V
+    .locals 0
+
+    return-void
 .end method

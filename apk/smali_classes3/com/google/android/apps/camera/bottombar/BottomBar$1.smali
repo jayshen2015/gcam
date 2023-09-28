@@ -2,7 +2,7 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Like;
+.implements Ljrp;
 
 
 # instance fields

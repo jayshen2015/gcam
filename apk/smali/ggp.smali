@@ -1,35 +1,22 @@
 .class public final Lggp;
 .super Ljava/lang/Object;
 
-# interfaces
-.implements Lfub;
+
+# instance fields
+.field public final a:Lggn;
+
+.field public final b:Lggn;
 
 
 # direct methods
-.method public constructor <init>()V
+.method public constructor <init>(Lggn;Lggn;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    return-void
-.end method
+    iput-object p1, p0, Lggp;->a:Lggn;
 
-
-# virtual methods
-.method public final a()J
-    .locals 2
-
-    const-wide/16 v0, -0x1
-
-    return-wide v0
-.end method
-
-.method public final declared-synchronized close()V
-    .locals 0
-
-    monitor-enter p0
-
-    monitor-exit p0
+    iput-object p2, p0, Lggp;->b:Lggn;
 
     return-void
 .end method

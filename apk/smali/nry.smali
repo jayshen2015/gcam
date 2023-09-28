@@ -1,143 +1,49 @@
-.class public final synthetic Lnry;
+.class final Lnry;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lcom/google/googlex/gcam/hdrplus/EncodedBlobCallback;
+.implements Lqcn;
 
 
 # instance fields
-.field public final synthetic a:Ljava/lang/Object;
+.field final synthetic a:Lnsb;
 
-.field private final synthetic b:I
+.field final synthetic b:Lnrl;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lcom/google/googlex/gcam/hdrplus/EncodedBlobCallback;I)V
+.method public constructor <init>(Lnsb;Lnrl;)V
     .locals 0
 
-    iput p2, p0, Lnry;->b:I
+    iput-object p1, p0, Lnry;->a:Lnsb;
+
+    iput-object p2, p0, Lnry;->b:Lnrl;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lnry;->a:Ljava/lang/Object;
-
-    return-void
-.end method
-
-.method public synthetic constructor <init>(Leea;I)V
-    .locals 0
-
-    iput p2, p0, Lnry;->b:I
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lnry;->a:Ljava/lang/Object;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onDataAvailable(ILjava/nio/ByteBuffer;II)V
-    .locals 1
+.method public final bridge synthetic a(Ljava/lang/Object;)V
+    .locals 3
 
-    iget p1, p0, Lnry;->b:I
+    check-cast p1, Ljava/lang/Throwable;
 
-    const/4 p3, 0x0
+    iget-object v0, p0, Lnry;->a:Lnsb;
 
-    const/4 p4, 0x1
+    iget-object v0, v0, Lnsb;->b:Lnrm;
 
-    packed-switch p1, :pswitch_data_0
+    iget-object v1, p0, Lnry;->b:Lnrl;
 
-    iget-object p1, p0, Lnry;->a:Ljava/lang/Object;
+    const/16 v2, 0x18
 
-    invoke-virtual {p2}, Ljava/nio/ByteBuffer;->capacity()I
-
-    check-cast p1, Leea;
-
-    iget v0, p1, Leea;->s:I
-
-    if-ne v0, p4, :cond_1
-
-    const/4 p3, 0x1
-
-    goto :goto_1
-
-    :pswitch_0
-    iget-object p1, p0, Lnry;->a:Ljava/lang/Object;
-
-    invoke-static {p2, p4}, Lcom/google/googlex/gcam/BufferUtils;->d(Ljava/nio/ByteBuffer;Z)Ljava/nio/ByteBuffer;
-
-    move-result-object p2
-
-    check-cast p1, Lnry;
-
-    iget-object p1, p1, Lnry;->a:Ljava/lang/Object;
-
-    invoke-virtual {p2}, Ljava/nio/ByteBuffer;->capacity()I
-
-    check-cast p1, Leea;
-
-    iget v0, p1, Leea;->s:I
-
-    if-ne v0, p4, :cond_0
-
-    const/4 p3, 0x1
-
-    goto :goto_0
-
-    :cond_0
-    :goto_0
-    invoke-static {p3}, Lmoz;->p(Z)V
-
-    iget-object p1, p1, Leea;->l:Leec;
-
-    invoke-virtual {p1}, Leec;->c()Lmqp;
+    invoke-static {v1, v2, p1}, Lnrl;->d(Lnrl;ILjava/lang/Throwable;)Lnna;
 
     move-result-object p1
 
-    invoke-virtual {p1}, Lmqp;->c()Ljava/lang/Object;
-
-    move-result-object p1
-
-    check-cast p1, Leco;
-
-    new-instance p3, Lbkc;
-
-    invoke-direct {p3, p2}, Lbkc;-><init>(Ljava/nio/ByteBuffer;)V
-
-    invoke-interface {p1, p3}, Leco;->a(Lbkc;)V
+    invoke-virtual {v0, p1}, Lnrm;->a(Lnna;)V
 
     return-void
-
-    :cond_1
-    :goto_1
-    invoke-static {p3}, Lmoz;->p(Z)V
-
-    iget-object p1, p1, Leea;->l:Leec;
-
-    invoke-virtual {p1}, Leec;->c()Lmqp;
-
-    move-result-object p1
-
-    invoke-virtual {p1}, Lmqp;->c()Ljava/lang/Object;
-
-    move-result-object p1
-
-    check-cast p1, Leco;
-
-    new-instance p3, Lbkc;
-
-    invoke-direct {p3, p2}, Lbkc;-><init>(Ljava/nio/ByteBuffer;)V
-
-    invoke-interface {p1, p3}, Leco;->a(Lbkc;)V
-
-    return-void
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
 .end method

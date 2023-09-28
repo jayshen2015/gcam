@@ -2,94 +2,51 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Logk;
-
-
-# instance fields
-.field private final a:Loiw;
-
-.field private final b:Loiw;
-
-.field private final c:Loiw;
+.implements Lkuu;
 
 
 # direct methods
-.method public constructor <init>(Loiw;Loiw;Loiw;)V
+.method public constructor <init>()V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lklk;->a:Loiw;
-
-    iput-object p2, p0, Lklk;->b:Loiw;
-
-    iput-object p3, p0, Lklk;->c:Loiw;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Lklp;
-    .locals 4
+.method public final bridge synthetic a(Lkvk;)Ljava/lang/Object;
+    .locals 3
 
-    iget-object v0, p0, Lklk;->a:Loiw;
+    invoke-virtual {p1}, Lkvk;->c()Ljava/lang/Object;
 
-    check-cast v0, Lest;
+    move-result-object p1
 
-    invoke-virtual {v0}, Lest;->a()Lmqp;
+    check-cast p1, Ljava/lang/Boolean;
 
-    move-result-object v0
+    invoke-virtual {p1}, Ljava/lang/Boolean;->booleanValue()Z
 
-    iget-object v1, p0, Lklk;->b:Loiw;
+    move-result p1
 
-    iget-object v2, p0, Lklk;->c:Loiw;
+    if-eqz p1, :cond_0
 
-    const/4 v3, 0x0
+    const/4 p1, 0x0
 
-    invoke-static {v3}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
-
-    move-result-object v3
-
-    invoke-virtual {v0, v3}, Lmqp;->e(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/lang/Boolean;
-
-    invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    invoke-interface {v1}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lklp;
-
-    goto :goto_0
+    return-object p1
 
     :cond_0
-    check-cast v2, Lklt;
+    new-instance p1, Lkig;
 
-    invoke-virtual {v2}, Lklt;->a()Lkls;
+    new-instance v0, Lcom/google/android/gms/common/api/Status;
 
-    move-result-object v0
+    const/16 v1, 0xd
 
-    :goto_0
-    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    const-string v2, "listener already unregistered"
 
-    return-object v0
-.end method
+    invoke-direct {v0, v1, v2}, Lcom/google/android/gms/common/api/Status;-><init>(ILjava/lang/String;)V
 
-.method public final bridge synthetic get()Ljava/lang/Object;
-    .locals 1
+    invoke-direct {p1, v0}, Lkig;-><init>(Lcom/google/android/gms/common/api/Status;)V
 
-    invoke-virtual {p0}, Lklk;->a()Lklp;
-
-    move-result-object v0
-
-    return-object v0
+    throw p1
 .end method

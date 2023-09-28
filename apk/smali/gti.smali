@@ -3,20 +3,20 @@
 
 
 # static fields
-.field public static final a:Lgsi;
+.field public static final a:Lgvo;
 
 
 # direct methods
 .method static constructor <clinit>()V
     .locals 2
 
-    new-instance v0, Lgsi;
+    new-instance v0, Lgvo;
 
-    const/16 v1, 0xa
+    const/4 v1, 0x1
 
-    invoke-direct {v0, v1}, Lgsi;-><init>(I)V
+    invoke-direct {v0, v1}, Lgvo;-><init>(I)V
 
-    sput-object v0, Lgti;->a:Lgsi;
+    sput-object v0, Lgti;->a:Lgvo;
 
     return-void
 .end method

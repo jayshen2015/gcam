@@ -1,89 +1,73 @@
 .class public final Lofb;
-.super Ljava/lang/Exception;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Lofg;
+
+
+# instance fields
+.field public final a:Ljava/lang/Object;
+
+.field private final b:Ljava/util/concurrent/Executor;
 
 
 # direct methods
-.method public constructor <init>(I)V
+.method public constructor <init>(Ljava/util/concurrent/Executor;)V
+    .locals 1
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    new-instance v0, Ljava/lang/Object;
+
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+
+    iput-object v0, p0, Lofb;->a:Ljava/lang/Object;
+
+    iput-object p1, p0, Lofb;->b:Ljava/util/concurrent/Executor;
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public final a(Loff;)V
     .locals 2
 
-    packed-switch p1, :pswitch_data_0
+    invoke-virtual {p1}, Loff;->b()Z
 
-    new-instance v0, Ljava/lang/StringBuilder;
+    move-result v0
 
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+    if-nez v0, :cond_0
 
-    const-string v1, "Invalid connection result: "
+    iget-object v0, p0, Lofb;->a:Ljava/lang/Object;
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    monitor-enter v0
 
-    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    :try_start_0
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    iget-object v0, p0, Lofb;->b:Ljava/util/concurrent/Executor;
 
-    move-result-object p1
+    new-instance v1, Lofa;
 
-    goto :goto_0
+    invoke-direct {v1, p0, p1}, Lofa;-><init>(Lofb;Loff;)V
 
-    :pswitch_0
-    const-string p1, "An unknown failure occurred"
-
-    goto :goto_0
-
-    :pswitch_1
-    const-string p1, "This operation is not supported on this device"
-
-    goto :goto_0
-
-    :pswitch_2
-    const-string p1, "No permission to do operation"
-
-    goto :goto_0
-
-    :pswitch_3
-    const-string p1, "VR Service not connected"
-
-    goto :goto_0
-
-    :pswitch_4
-    const-string p1, "VR Service obsolete"
-
-    goto :goto_0
-
-    :pswitch_5
-    const-string p1, "VR Service updating"
-
-    goto :goto_0
-
-    :pswitch_6
-    const-string p1, "VR Service disabled"
-
-    goto :goto_0
-
-    :pswitch_7
-    const-string p1, "VR Service missing"
-
-    goto :goto_0
-
-    :pswitch_8
-    const-string p1, "VR Service present"
-
-    :goto_0
-    invoke-direct {p0, p1}, Ljava/lang/Exception;-><init>(Ljava/lang/String;)V
+    invoke-interface {v0, v1}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
 
     return-void
 
-    nop
+    :catchall_0
+    move-exception p1
 
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_8
-        :pswitch_7
-        :pswitch_6
-        :pswitch_5
-        :pswitch_4
-        :pswitch_3
-        :pswitch_2
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
+    :try_start_1
+    monitor-exit v0
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    throw p1
+
+    :cond_0
+    return-void
 .end method

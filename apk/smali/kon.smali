@@ -1,31 +1,39 @@
-.class public interface abstract Lkon;
+.class public final Lkon;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lkad;
+.implements Lkop;
+
+
+# instance fields
+.field private final a:I
+
+
+# direct methods
+.method public constructor <init>(I)V
+    .locals 0
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput p1, p0, Lkon;->a:I
+
+    return-void
+.end method
 
 
 # virtual methods
-.method public abstract a(Lkop;Lkol;Landroid/os/Handler;)I
+.method public final a(Landroid/content/Context;)I
+    .locals 0
+
+    iget p1, p0, Lkon;->a:I
+
+    return p1
 .end method
 
-.method public abstract b(Ljava/util/List;Lkol;Landroid/os/Handler;)I
-.end method
+.method public final b(Landroid/content/Context;)I
+    .locals 0
 
-.method public abstract c(Lkop;Lkol;Landroid/os/Handler;)I
-.end method
+    const/4 p1, 0x0
 
-.method public abstract d()Lkoo;
-.end method
-
-.method public abstract e()V
-.end method
-
-.method public abstract f(Ljava/util/List;)V
-.end method
-
-.method public abstract g(Landroid/view/Surface;I)V
-.end method
-
-.method public abstract h()V
+    return p1
 .end method

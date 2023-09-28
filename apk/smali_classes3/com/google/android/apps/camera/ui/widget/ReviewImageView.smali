@@ -162,21 +162,21 @@
 
     invoke-virtual {p5, v0, v0}, Landroid/graphics/Matrix;->setScale(FF)V
 
+    const/high16 v1, 0x40000000    # 2.0f
+
+    div-float/2addr p3, v1
+
     mul-float p2, p2, v0
 
-    mul-float p1, p1, v0
-
-    const/high16 v0, 0x40000000    # 2.0f
-
-    div-float/2addr p3, v0
-
-    div-float/2addr p2, v0
+    div-float/2addr p2, v1
 
     sub-float/2addr p3, p2
 
-    div-float/2addr p4, v0
+    div-float/2addr p4, v1
 
-    div-float/2addr p1, v0
+    mul-float p1, p1, v0
+
+    div-float/2addr p1, v1
 
     sub-float/2addr p4, p1
 

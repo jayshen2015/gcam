@@ -1,47 +1,66 @@
 .class public final Lekl;
 .super Ljava/lang/Object;
 
-# interfaces
-.implements Lekk;
+
+# static fields
+.field public static final a:Louj;
+
+
+# instance fields
+.field public final b:Lejr;
+
+.field public c:Z
+
+.field public final d:Z
+
+.field public final e:D
+
+.field public final f:D
+
+.field public final g:Lehc;
 
 
 # direct methods
 .method static constructor <clinit>()V
     .locals 1
 
-    const-string v0, "cyclops"
+    const-string v0, "com/google/android/apps/camera/imax/cyclops/processing/OfflineOmnistereoStitcher"
 
-    invoke-static {v0}, Ljava/lang/System;->loadLibrary(Ljava/lang/String;)V
+    invoke-static {v0}, Louj;->h(Ljava/lang/String;)Louj;
+
+    move-result-object v0
+
+    sput-object v0, Lekl;->a:Louj;
 
     return-void
 .end method
 
-.method public constructor <init>()V
-    .locals 0
+.method public constructor <init>(Lehc;ZDD)V
+    .locals 1
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    return-void
-.end method
+    const-class v0, Lejr;
 
+    invoke-static {v0}, Lekh;->a(Ljava/lang/Class;)Ljava/lang/Object;
 
-# virtual methods
-.method public final a(Lcom/google/android/apps/camera/imax/cyclops/image/StereoPanorama;Ljava/lang/String;Lcom/google/geo/lightfield/processing/ProgressCallback;)V
-    .locals 2
+    move-result-object v0
 
-    const v0, 0x3e4ccccd    # 0.2f
+    check-cast v0, Lejr;
 
-    invoke-interface {p3, v0}, Lcom/google/geo/lightfield/processing/ProgressCallback;->setProgress(F)V
+    iput-object v0, p0, Lekl;->b:Lejr;
 
-    iget-object p3, p1, Lcom/google/android/apps/camera/imax/cyclops/image/StereoPanorama;->a:[B
+    const/4 v0, 0x0
 
-    iget-object v0, p1, Lcom/google/android/apps/camera/imax/cyclops/image/StereoPanorama;->b:[B
+    iput-boolean v0, p0, Lekl;->c:Z
 
-    iget-object v1, p1, Lcom/google/android/apps/camera/imax/cyclops/image/StereoPanorama;->c:Lcom/google/android/apps/camera/imax/cyclops/metadata/PanoMeta;
+    iput-object p1, p0, Lekl;->g:Lehc;
 
-    iget-object p1, p1, Lcom/google/android/apps/camera/imax/cyclops/image/StereoPanorama;->d:Lcom/google/android/apps/camera/imax/cyclops/audio/AudioTrack;
+    iput-boolean p2, p0, Lekl;->d:Z
 
-    invoke-static {p3, v0, v1, p1, p2}, Lcom/google/android/apps/camera/imax/cyclops/image/CyclopsPhotoWriter;->writeToFile([B[BLcom/google/android/apps/camera/imax/cyclops/metadata/PanoMeta;Lcom/google/android/apps/camera/imax/cyclops/audio/AudioTrack;Ljava/lang/String;)Z
+    iput-wide p3, p0, Lekl;->e:D
+
+    iput-wide p5, p0, Lekl;->f:D
 
     return-void
 .end method

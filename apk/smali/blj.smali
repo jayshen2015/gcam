@@ -1,210 +1,293 @@
-.class public Lblj;
-.super Landroid/animation/ValueAnimator;
+.class final Lblj;
+.super Ljava/lang/Object;
+
+
+# static fields
+.field static a:Ljava/lang/Integer;
 
 
 # instance fields
-.field public final a:Ljava/util/Set;
+.field public final b:Landroid/view/View;
 
-.field private final b:Ljava/util/Set;
+.field public final c:Ljava/util/List;
+
+.field public d:Lbli;
 
 
 # direct methods
-.method public constructor <init>()V
+.method public constructor <init>(Landroid/view/View;)V
     .locals 1
 
-    invoke-direct {p0}, Landroid/animation/ValueAnimator;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    new-instance v0, Ljava/util/concurrent/CopyOnWriteArraySet;
+    new-instance v0, Ljava/util/ArrayList;
 
-    invoke-direct {v0}, Ljava/util/concurrent/CopyOnWriteArraySet;-><init>()V
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    iput-object v0, p0, Lblj;->b:Ljava/util/Set;
+    iput-object v0, p0, Lblj;->c:Ljava/util/List;
 
-    new-instance v0, Ljava/util/concurrent/CopyOnWriteArraySet;
-
-    invoke-direct {v0}, Ljava/util/concurrent/CopyOnWriteArraySet;-><init>()V
-
-    iput-object v0, p0, Lblj;->a:Ljava/util/Set;
+    iput-object p1, p0, Lblj;->b:Landroid/view/View;
 
     return-void
+.end method
+
+.method public static final d(II)Z
+    .locals 0
+
+    invoke-static {p0}, Lblj;->f(I)Z
+
+    move-result p0
+
+    if-eqz p0, :cond_0
+
+    invoke-static {p1}, Lblj;->f(I)Z
+
+    move-result p0
+
+    if-eqz p0, :cond_0
+
+    const/4 p0, 0x1
+
+    return p0
+
+    :cond_0
+    const/4 p0, 0x0
+
+    return p0
+.end method
+
+.method private final e(III)I
+    .locals 1
+
+    sub-int v0, p2, p3
+
+    if-lez v0, :cond_0
+
+    return v0
+
+    :cond_0
+    sub-int/2addr p1, p3
+
+    if-lez p1, :cond_1
+
+    return p1
+
+    :cond_1
+    iget-object p1, p0, Lblj;->b:Landroid/view/View;
+
+    invoke-virtual {p1}, Landroid/view/View;->isLayoutRequested()Z
+
+    move-result p1
+
+    if-nez p1, :cond_3
+
+    const/4 p1, -0x2
+
+    if-ne p2, p1, :cond_3
+
+    iget-object p1, p0, Lblj;->b:Landroid/view/View;
+
+    invoke-virtual {p1}, Landroid/view/View;->getContext()Landroid/content/Context;
+
+    move-result-object p1
+
+    sget-object p2, Lblj;->a:Ljava/lang/Integer;
+
+    if-nez p2, :cond_2
+
+    const-string p2, "window"
+
+    invoke-virtual {p1, p2}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object p1
+
+    check-cast p1, Landroid/view/WindowManager;
+
+    invoke-static {p1}, Laae;->s(Ljava/lang/Object;)Ljava/lang/Object;
+
+    invoke-interface {p1}, Landroid/view/WindowManager;->getDefaultDisplay()Landroid/view/Display;
+
+    move-result-object p1
+
+    new-instance p2, Landroid/graphics/Point;
+
+    invoke-direct {p2}, Landroid/graphics/Point;-><init>()V
+
+    invoke-virtual {p1, p2}, Landroid/view/Display;->getSize(Landroid/graphics/Point;)V
+
+    iget p1, p2, Landroid/graphics/Point;->x:I
+
+    iget p2, p2, Landroid/graphics/Point;->y:I
+
+    invoke-static {p1, p2}, Ljava/lang/Math;->max(II)I
+
+    move-result p1
+
+    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object p1
+
+    sput-object p1, Lblj;->a:Ljava/lang/Integer;
+
+    :cond_2
+    sget-object p1, Lblj;->a:Ljava/lang/Integer;
+
+    invoke-virtual {p1}, Ljava/lang/Integer;->intValue()I
+
+    move-result p1
+
+    return p1
+
+    :cond_3
+    const/4 p1, 0x0
+
+    return p1
+.end method
+
+.method private static final f(I)Z
+    .locals 1
+
+    if-gtz p0, :cond_1
+
+    const/high16 v0, -0x80000000
+
+    if-ne p0, v0, :cond_0
+
+    goto :goto_0
+
+    :cond_0
+    const/4 p0, 0x0
+
+    return p0
+
+    :cond_1
+    :goto_0
+    const/4 p0, 0x1
+
+    return p0
 .end method
 
 
 # virtual methods
-.method final a(Z)V
+.method public final a()I
+    .locals 3
+
+    iget-object v0, p0, Lblj;->b:Landroid/view/View;
+
+    invoke-virtual {v0}, Landroid/view/View;->getPaddingTop()I
+
+    move-result v0
+
+    iget-object v1, p0, Lblj;->b:Landroid/view/View;
+
+    invoke-virtual {v1}, Landroid/view/View;->getPaddingBottom()I
+
+    move-result v1
+
+    add-int/2addr v0, v1
+
+    iget-object v1, p0, Lblj;->b:Landroid/view/View;
+
+    invoke-virtual {v1}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
+
+    move-result-object v1
+
+    if-eqz v1, :cond_0
+
+    iget v1, v1, Landroid/view/ViewGroup$LayoutParams;->height:I
+
+    goto :goto_0
+
+    :cond_0
+    const/4 v1, 0x0
+
+    :goto_0
+    iget-object v2, p0, Lblj;->b:Landroid/view/View;
+
+    invoke-virtual {v2}, Landroid/view/View;->getHeight()I
+
+    move-result v2
+
+    invoke-direct {p0, v2, v1, v0}, Lblj;->e(III)I
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public final b()I
+    .locals 3
+
+    iget-object v0, p0, Lblj;->b:Landroid/view/View;
+
+    invoke-virtual {v0}, Landroid/view/View;->getPaddingLeft()I
+
+    move-result v0
+
+    iget-object v1, p0, Lblj;->b:Landroid/view/View;
+
+    invoke-virtual {v1}, Landroid/view/View;->getPaddingRight()I
+
+    move-result v1
+
+    add-int/2addr v0, v1
+
+    iget-object v1, p0, Lblj;->b:Landroid/view/View;
+
+    invoke-virtual {v1}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
+
+    move-result-object v1
+
+    if-eqz v1, :cond_0
+
+    iget v1, v1, Landroid/view/ViewGroup$LayoutParams;->width:I
+
+    goto :goto_0
+
+    :cond_0
+    const/4 v1, 0x0
+
+    :goto_0
+    iget-object v2, p0, Lblj;->b:Landroid/view/View;
+
+    invoke-virtual {v2}, Landroid/view/View;->getWidth()I
+
+    move-result v2
+
+    invoke-direct {p0, v2, v1, v0}, Lblj;->e(III)I
+
+    move-result v0
+
+    return v0
+.end method
+
+.method final c()V
     .locals 2
 
-    iget-object v0, p0, Lblj;->a:Ljava/util/Set;
+    iget-object v0, p0, Lblj;->b:Landroid/view/View;
 
-    invoke-interface {v0}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
+    invoke-virtual {v0}, Landroid/view/View;->getViewTreeObserver()Landroid/view/ViewTreeObserver;
 
     move-result-object v0
 
-    :goto_0
-    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
+    invoke-virtual {v0}, Landroid/view/ViewTreeObserver;->isAlive()Z
 
     move-result v1
 
     if-eqz v1, :cond_0
 
-    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    iget-object v1, p0, Lblj;->d:Lbli;
 
-    move-result-object v1
-
-    check-cast v1, Landroid/animation/Animator$AnimatorListener;
-
-    invoke-interface {v1, p0, p1}, Landroid/animation/Animator$AnimatorListener;->onAnimationEnd(Landroid/animation/Animator;Z)V
-
-    goto :goto_0
+    invoke-virtual {v0, v1}, Landroid/view/ViewTreeObserver;->removeOnPreDrawListener(Landroid/view/ViewTreeObserver$OnPreDrawListener;)V
 
     :cond_0
-    return-void
-.end method
+    const/4 v0, 0x0
 
-.method public final addListener(Landroid/animation/Animator$AnimatorListener;)V
-    .locals 1
+    iput-object v0, p0, Lblj;->d:Lbli;
 
-    iget-object v0, p0, Lblj;->a:Ljava/util/Set;
+    iget-object v0, p0, Lblj;->c:Ljava/util/List;
 
-    invoke-interface {v0, p1}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
+    invoke-interface {v0}, Ljava/util/List;->clear()V
 
     return-void
-.end method
-
-.method public final addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
-    .locals 1
-
-    iget-object v0, p0, Lblj;->b:Ljava/util/Set;
-
-    invoke-interface {v0, p1}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
-
-    return-void
-.end method
-
-.method public final b()V
-    .locals 2
-
-    iget-object v0, p0, Lblj;->b:Ljava/util/Set;
-
-    invoke-interface {v0}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
-
-    move-result-object v0
-
-    :goto_0
-    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_0
-
-    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Landroid/animation/ValueAnimator$AnimatorUpdateListener;
-
-    invoke-interface {v1, p0}, Landroid/animation/ValueAnimator$AnimatorUpdateListener;->onAnimationUpdate(Landroid/animation/ValueAnimator;)V
-
-    goto :goto_0
-
-    :cond_0
-    return-void
-.end method
-
-.method public final getStartDelay()J
-    .locals 2
-
-    new-instance v0, Ljava/lang/UnsupportedOperationException;
-
-    const-string v1, "LottieAnimator does not support getStartDelay."
-
-    invoke-direct {v0, v1}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-.end method
-
-.method public final removeAllListeners()V
-    .locals 1
-
-    iget-object v0, p0, Lblj;->a:Ljava/util/Set;
-
-    invoke-interface {v0}, Ljava/util/Set;->clear()V
-
-    return-void
-.end method
-
-.method public final removeAllUpdateListeners()V
-    .locals 1
-
-    iget-object v0, p0, Lblj;->b:Ljava/util/Set;
-
-    invoke-interface {v0}, Ljava/util/Set;->clear()V
-
-    return-void
-.end method
-
-.method public final removeListener(Landroid/animation/Animator$AnimatorListener;)V
-    .locals 1
-
-    iget-object v0, p0, Lblj;->a:Ljava/util/Set;
-
-    invoke-interface {v0, p1}, Ljava/util/Set;->remove(Ljava/lang/Object;)Z
-
-    return-void
-.end method
-
-.method public final removeUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
-    .locals 1
-
-    iget-object v0, p0, Lblj;->b:Ljava/util/Set;
-
-    invoke-interface {v0, p1}, Ljava/util/Set;->remove(Ljava/lang/Object;)Z
-
-    return-void
-.end method
-
-.method public final bridge synthetic setDuration(J)Landroid/animation/Animator;
-    .locals 0
-
-    invoke-virtual {p0, p1, p2}, Lblj;->setDuration(J)Landroid/animation/ValueAnimator;
-
-    move-result-object p1
-
-    return-object p1
-.end method
-
-.method public final setDuration(J)Landroid/animation/ValueAnimator;
-    .locals 0
-
-    new-instance p1, Ljava/lang/UnsupportedOperationException;
-
-    const-string p2, "LottieAnimator does not support setDuration."
-
-    invoke-direct {p1, p2}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
-
-    throw p1
-.end method
-
-.method public final setInterpolator(Landroid/animation/TimeInterpolator;)V
-    .locals 1
-
-    new-instance p1, Ljava/lang/UnsupportedOperationException;
-
-    const-string v0, "LottieAnimator does not support setInterpolator."
-
-    invoke-direct {p1, v0}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
-
-    throw p1
-.end method
-
-.method public final setStartDelay(J)V
-    .locals 0
-
-    new-instance p1, Ljava/lang/UnsupportedOperationException;
-
-    const-string p2, "LottieAnimator does not support setStartDelay."
-
-    invoke-direct {p1, p2}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
-
-    throw p1
 .end method

@@ -1,42 +1,43 @@
 .class public final Lncg;
-.super Ljava/util/AbstractSet;
+.super Ljava/lang/Object;
 
 
 # instance fields
-.field public final synthetic a:Lnci;
+.field public final a:F
+
+.field public final b:Ljava/util/Random;
 
 
 # direct methods
-.method public constructor <init>(Lnci;)V
-    .locals 0
-
-    iput-object p1, p0, Lncg;->a:Lnci;
-
-    invoke-direct {p0}, Ljava/util/AbstractSet;-><init>()V
-
-    return-void
-.end method
-
-
-# virtual methods
-.method public final iterator()Ljava/util/Iterator;
+.method public constructor <init>(Ljava/util/Random;F)V
     .locals 2
 
-    new-instance v0, Llfm;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const/4 v1, 0x2
+    const/4 v0, 0x0
 
-    invoke-direct {v0, p0, v1}, Llfm;-><init>(Lncg;I)V
+    const/4 v1, 0x0
 
-    return-object v0
-.end method
+    cmpl-float v1, p2, v1
 
-.method public final size()I
-    .locals 1
+    if-ltz v1, :cond_0
 
-    iget-object v0, p0, Lncg;->a:Lnci;
+    const/high16 v1, 0x3f800000    # 1.0f
 
-    iget v0, v0, Lnci;->b:I
+    cmpg-float v1, p2, v1
 
-    return v0
+    if-gtz v1, :cond_0
+
+    const/4 v0, 0x1
+
+    :cond_0
+    const-string v1, "Sampling rate should be a floating number >= 0 and <= 1."
+
+    invoke-static {v0, v1}, Lobr;->aG(ZLjava/lang/Object;)V
+
+    iput p2, p0, Lncg;->a:F
+
+    iput-object p1, p0, Lncg;->b:Ljava/util/Random;
+
+    return-void
 .end method

@@ -1,32 +1,48 @@
-.class public final Ljjm;
-.super Ljava/lang/Object;
+.class final Ljjm;
+.super Landroid/animation/AnimatorListenerAdapter;
 
 
-# static fields
-.field public static final a:Ljfc;
-
-.field public static final b:Ligo;
+# instance fields
+.field final synthetic a:Ljjn;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 4
+.method public constructor <init>(Ljjn;)V
+    .locals 0
 
-    new-instance v0, Ljjl;
+    iput-object p1, p0, Ljjm;->a:Ljjn;
 
-    invoke-direct {v0}, Ljjl;-><init>()V
+    invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
 
-    sput-object v0, Ljjm;->a:Ljfc;
+    return-void
+.end method
 
-    new-instance v1, Ligo;
 
-    const-string v2, "Help.API"
+# virtual methods
+.method public final onAnimationCancel(Landroid/animation/Animator;)V
+    .locals 1
 
-    const/4 v3, 0x0
+    invoke-super {p0, p1}, Landroid/animation/AnimatorListenerAdapter;->onAnimationCancel(Landroid/animation/Animator;)V
 
-    invoke-direct {v1, v2, v0, v3, v3}, Ligo;-><init>(Ljava/lang/String;Ljfc;[B[B)V
+    iget-object p1, p0, Ljjm;->a:Ljjn;
 
-    sput-object v1, Ljjm;->b:Ligo;
+    const/16 v0, 0x8
+
+    invoke-virtual {p1, v0}, Ljjn;->setVisibility(I)V
+
+    return-void
+.end method
+
+.method public final onAnimationEnd(Landroid/animation/Animator;)V
+    .locals 1
+
+    invoke-super {p0, p1}, Landroid/animation/AnimatorListenerAdapter;->onAnimationEnd(Landroid/animation/Animator;)V
+
+    iget-object p1, p0, Ljjm;->a:Ljjn;
+
+    const/16 v0, 0x8
+
+    invoke-virtual {p1, v0}, Ljjn;->setVisibility(I)V
 
     return-void
 .end method

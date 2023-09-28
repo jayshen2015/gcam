@@ -1,77 +1,52 @@
-.class public final synthetic Lkgb;
-.super Ljava/lang/Object;
-
-# interfaces
-.implements Landroid/util/Printer;
-
-
-# instance fields
-.field public final synthetic a:Ljava/lang/Object;
-
-.field private final synthetic b:I
+.class public final Lkgb;
+.super Lkgc;
 
 
 # direct methods
-.method public synthetic constructor <init>(Landroid/util/Printer;I)V
+.method public constructor <init>(Lkim;)V
     .locals 0
 
-    iput p2, p0, Lkgb;->b:I
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lkgb;->a:Ljava/lang/Object;
-
-    return-void
-.end method
-
-.method public synthetic constructor <init>(Lkaq;I)V
-    .locals 0
-
-    iput p2, p0, Lkgb;->b:I
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lkgb;->a:Ljava/lang/Object;
+    invoke-direct {p0, p1}, Lkgc;-><init>(Lkim;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final println(Ljava/lang/String;)V
-    .locals 2
+.method protected final bridge synthetic a(Lcom/google/android/gms/common/api/Status;)Lkiv;
+    .locals 0
 
-    iget v0, p0, Lkgb;->b:I
+    return-object p1
+.end method
 
-    packed-switch v0, :pswitch_data_0
+.method protected final bridge synthetic b(Lkhz;)V
+    .locals 3
 
-    iget-object v0, p0, Lkgb;->a:Ljava/lang/Object;
+    check-cast p1, Lkfv;
 
-    const-string v1, "  "
+    invoke-virtual {p1}, Lkmb;->u()Landroid/os/IInterface;
 
-    invoke-static {p1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+    move-result-object v0
 
-    move-result-object p1
+    check-cast v0, Lkgi;
 
-    invoke-virtual {v1, p1}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
+    new-instance v1, Lkga;
 
-    move-result-object p1
+    invoke-direct {v1, p0}, Lkga;-><init>(Lkgb;)V
 
-    invoke-interface {v0, p1}, Landroid/util/Printer;->println(Ljava/lang/String;)V
+    iget-object p1, p1, Lkfv;->a:Lcom/google/android/gms/auth/api/signin/GoogleSignInOptions;
+
+    invoke-virtual {v0}, Lbmn;->a()Landroid/os/Parcel;
+
+    move-result-object v2
+
+    invoke-static {v2, v1}, Lbmp;->e(Landroid/os/Parcel;Landroid/os/IInterface;)V
+
+    invoke-static {v2, p1}, Lbmp;->c(Landroid/os/Parcel;Landroid/os/Parcelable;)V
+
+    const/16 p1, 0x67
+
+    invoke-virtual {v0, p1, v2}, Lbmn;->z(ILandroid/os/Parcel;)V
 
     return-void
-
-    :pswitch_0
-    iget-object v0, p0, Lkgb;->a:Ljava/lang/Object;
-
-    invoke-interface {v0, p1}, Lkaq;->f(Ljava/lang/String;)V
-
-    return-void
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
 .end method

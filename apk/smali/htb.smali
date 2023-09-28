@@ -1,52 +1,54 @@
-.class public Lhtb;
-.super Lhsy;
-
-
-# instance fields
-.field public final a:Lclc;
-
-.field public final b:Libj;
-
-.field public final c:Lcom/google/android/apps/camera/bottombar/BottomBarController;
-
-.field public final d:Liff;
-
-.field public final e:Lhwu;
-
-.field public final f:Lgeh;
-
-.field public final g:Litm;
-
-.field public final h:Lhrq;
-
-.field public i:Z
-
-.field public final j:Lbkb;
+.class public final Lhtb;
+.super Lhto;
 
 
 # direct methods
-.method public constructor <init>(Lclc;Lcom/google/android/apps/camera/bottombar/BottomBarController;Liff;Lhwu;Libj;Lgeh;Lbkb;Litm;Lhrq;[B[B[B[B)V
-    .locals 0
+.method public constructor <init>(Lhub;)V
+    .locals 1
 
-    invoke-direct {p0}, Lhsy;-><init>()V
+    const-string v0, "pref_link_first_time_chip_click_ms"
 
-    iput-object p1, p0, Lhtb;->a:Lclc;
+    invoke-direct {p0, p1, v0}, Lhto;-><init>(Lhub;Ljava/lang/String;)V
 
-    iput-object p5, p0, Lhtb;->b:Libj;
+    return-void
+.end method
 
-    iput-object p2, p0, Lhtb;->c:Lcom/google/android/apps/camera/bottombar/BottomBarController;
 
-    iput-object p3, p0, Lhtb;->d:Liff;
+# virtual methods
+.method protected final bridge synthetic c()Ljava/lang/Object;
+    .locals 2
 
-    iput-object p4, p0, Lhtb;->e:Lhwu;
+    iget-object v0, p0, Lhtb;->a:Lhub;
 
-    iput-object p6, p0, Lhtb;->f:Lgeh;
+    iget-object v1, p0, Lhtb;->b:Ljava/lang/String;
 
-    iput-object p7, p0, Lhtb;->j:Lbkb;
+    invoke-virtual {v0, v1}, Lhub;->c(Ljava/lang/String;)J
 
-    iput-object p8, p0, Lhtb;->g:Litm;
+    move-result-wide v0
 
-    iput-object p9, p0, Lhtb;->h:Lhrq;
+    invoke-static {v0, v1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public final bridge synthetic fB(Ljava/lang/Object;)V
+    .locals 4
+
+    check-cast p1, Ljava/lang/Long;
+
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    iget-object v0, p0, Lhtb;->a:Lhub;
+
+    iget-object v1, p0, Lhtb;->b:Ljava/lang/String;
+
+    invoke-virtual {p1}, Ljava/lang/Long;->longValue()J
+
+    move-result-wide v2
+
+    invoke-virtual {v0, v1, v2, v3}, Lhub;->j(Ljava/lang/String;J)V
 
     return-void
 .end method

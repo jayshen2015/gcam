@@ -1,107 +1,50 @@
-.class abstract Lmzw;
-.super Lmzv;
+.class public final synthetic Lmzw;
+.super Ljava/lang/Object;
 
 # interfaces
-.implements Ljava/util/ListIterator;
+.implements Lmzt;
+
+
+# instance fields
+.field public final synthetic a:Lmzv;
 
 
 # direct methods
-.method public constructor <init>(Ljava/util/ListIterator;)V
+.method public synthetic constructor <init>(Lmzv;)V
     .locals 0
 
-    invoke-direct {p0, p1}, Lmzv;-><init>(Ljava/util/Iterator;)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lmzw;->a:Lmzv;
 
     return-void
 .end method
 
-.method private final b()Ljava/util/ListIterator;
-    .locals 1
-
-    iget-object v0, p0, Lmzw;->b:Ljava/util/Iterator;
-
-    check-cast v0, Ljava/util/ListIterator;
-
-    return-object v0
-.end method
-
 
 # virtual methods
-.method public final add(Ljava/lang/Object;)V
-    .locals 0
+.method public final a(ILjava/lang/String;)V
+    .locals 2
 
-    new-instance p1, Ljava/lang/UnsupportedOperationException;
+    iget-object v0, p0, Lmzw;->a:Lmzv;
 
-    invoke-direct {p1}, Ljava/lang/UnsupportedOperationException;-><init>()V
+    iget-object v1, v0, Lmzv;->c:Lmuz;
 
-    throw p1
-.end method
+    iget-boolean v1, v1, Lmuz;->b:Z
 
-.method public final hasPrevious()Z
-    .locals 1
+    if-eqz v1, :cond_0
 
-    invoke-direct {p0}, Lmzw;->b()Ljava/util/ListIterator;
+    invoke-static {}, Lplk;->T()Lpht;
 
-    move-result-object v0
+    return-void
 
-    invoke-interface {v0}, Ljava/util/ListIterator;->hasPrevious()Z
+    :cond_0
+    new-instance v1, Lmzx;
 
-    move-result v0
+    invoke-direct {v1, v0, p1, p2}, Lmzx;-><init>(Lmzv;ILjava/lang/String;)V
 
-    return v0
-.end method
+    iget-object p1, v0, Lmzv;->b:Lphw;
 
-.method public final nextIndex()I
-    .locals 1
+    invoke-static {v1, p1}, Lplk;->aa(Lpgj;Ljava/util/concurrent/Executor;)Lpht;
 
-    invoke-direct {p0}, Lmzw;->b()Ljava/util/ListIterator;
-
-    move-result-object v0
-
-    invoke-interface {v0}, Ljava/util/ListIterator;->nextIndex()I
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public final previous()Ljava/lang/Object;
-    .locals 1
-
-    invoke-direct {p0}, Lmzw;->b()Ljava/util/ListIterator;
-
-    move-result-object v0
-
-    invoke-interface {v0}, Ljava/util/ListIterator;->previous()Ljava/lang/Object;
-
-    move-result-object v0
-
-    invoke-virtual {p0, v0}, Lmzw;->a(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public final previousIndex()I
-    .locals 1
-
-    invoke-direct {p0}, Lmzw;->b()Ljava/util/ListIterator;
-
-    move-result-object v0
-
-    invoke-interface {v0}, Ljava/util/ListIterator;->previousIndex()I
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public final set(Ljava/lang/Object;)V
-    .locals 0
-
-    new-instance p1, Ljava/lang/UnsupportedOperationException;
-
-    invoke-direct {p1}, Ljava/lang/UnsupportedOperationException;-><init>()V
-
-    throw p1
+    return-void
 .end method

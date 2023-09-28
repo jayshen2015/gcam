@@ -1,12 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <plurals name="accessibility_timelapse_manual_record_speed_desc">
-        <item quantity="other">ความเร็ว %d สำหรับไทม์แลปส์</item>
-        <item quantity="one">ความเร็ว %d สำหรับไทม์แลปส์</item>
-    </plurals>
-    <plurals name="number_of_cropped_face">
-        <item quantity="other">ครอบตัดแล้ว %d ใบหน้า</item>
-        <item quantity="one">ครอบตัดแล้ว 1 ใบหน้า</item>
+    <plurals name="number_of_faces_announcement">
+        <item quantity="other">%1$d ใบหน้า</item>
+        <item quantity="one">%1$d ใบหน้า</item>
     </plurals>
     <plurals name="photos_remaining">
         <item quantity="other">ประมาณ %s รูป</item>
@@ -37,8 +33,8 @@
         <item quantity="one">%d น</item>
     </plurals>
     <plurals name="time_difference_words_days">
-        <item quantity="other">%d วัน</item>
-        <item quantity="one">%d วัน</item>
+        <item quantity="other">%d ว</item>
+        <item quantity="one">%d ว</item>
     </plurals>
     <plurals name="time_difference_words_hours">
         <item quantity="other">%d ชั่วโมง</item>

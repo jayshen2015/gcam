@@ -1,61 +1,22 @@
 .class public final Likq;
 .super Ljava/lang/Object;
 
-# interfaces
-.implements Lcom/google/android/apps/camera/uiutils/ViewSmoothRotationUtil$Rotatee;
 
-
-# instance fields
-.field final synthetic a:Landroid/view/View;
+# static fields
+.field public static final a:Liiy;
 
 
 # direct methods
-.method public constructor <init>(Landroid/view/View;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 2
 
-    iput-object p1, p0, Likq;->a:Landroid/view/View;
+    new-instance v0, Liiy;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const/4 v1, 0x4
 
-    return-void
-.end method
+    invoke-direct {v0, v1}, Liiy;-><init>(I)V
 
-
-# virtual methods
-.method public final a()F
-    .locals 1
-
-    iget-object v0, p0, Likq;->a:Landroid/view/View;
-
-    invoke-virtual {v0}, Landroid/view/View;->getRotation()F
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public final b()Ljava/lang/Object;
-    .locals 1
-
-    iget-object v0, p0, Likq;->a:Landroid/view/View;
-
-    return-object v0
-.end method
-
-.method public final c()Ljava/lang/String;
-    .locals 1
-
-    const-string v0, "rotation"
-
-    return-object v0
-.end method
-
-.method public final setRotationDegree(F)V
-    .locals 1
-
-    iget-object v0, p0, Likq;->a:Landroid/view/View;
-
-    invoke-virtual {v0, p1}, Landroid/view/View;->setRotation(F)V
+    sput-object v0, Likq;->a:Liiy;
 
     return-void
 .end method

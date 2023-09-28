@@ -1,19 +1,45 @@
-.class public interface abstract Lceu;
+.class public final synthetic Lceu;
 .super Ljava/lang/Object;
+
+# interfaces
+.implements Ljava/util/concurrent/Callable;
+
+
+# instance fields
+.field public final synthetic a:Lcev;
+
+.field public final synthetic b:Lckd;
+
+
+# direct methods
+.method public synthetic constructor <init>(Lcev;Lckd;)V
+    .locals 0
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lceu;->a:Lcev;
+
+    iput-object p2, p0, Lceu;->b:Lckd;
+
+    return-void
+.end method
 
 
 # virtual methods
-.method public abstract b()Lceq;
-.end method
+.method public final call()Ljava/lang/Object;
+    .locals 2
 
-.method public abstract c()V
-.end method
+    iget-object v0, p0, Lceu;->a:Lcev;
 
-.method public abstract d(Lkll;)V
-.end method
+    iget-object v1, p0, Lceu;->b:Lckd;
 
-.method public abstract e(Lkli;)V
-.end method
+    iget-object v0, v0, Lcev;->i:Lcsh;
 
-.method public abstract f(Lcey;)V
+    iget-object v1, v1, Lckd;->e:Lleb;
+
+    invoke-virtual {v0, v1}, Lcsh;->a(Lleb;)Lojc;
+
+    move-result-object v0
+
+    return-object v0
 .end method

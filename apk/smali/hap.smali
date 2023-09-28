@@ -1,546 +1,485 @@
 .class public final Lhap;
 .super Ljava/lang/Object;
 
+# interfaces
+.implements Lgoy;
+
 
 # static fields
-.field private static final a:Lnak;
+.field private static final a:Louj;
 
-.field private static final b:Ljava/util/EnumMap;
+
+# instance fields
+.field private final b:Llnc;
+
+.field private final c:Lhcs;
+
+.field private final d:Llco;
+
+.field private final e:Lgwi;
+
+.field private final f:Lhbb;
+
+.field private final g:Lljf;
+
+.field private final h:Llnv;
+
+.field private final i:Lddf;
+
+.field private final j:Llap;
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 2
+    .locals 1
 
-    const-string v0, "com/google/android/apps/camera/settings/util/SettingsUtil"
+    const-string v0, "com/google/android/apps/camera/pixelcamerakit/commands/PckSingleFlashHdrPlusImageCaptureCommand"
 
-    invoke-static {v0}, Lnak;->h(Ljava/lang/String;)Lnak;
+    invoke-static {v0}, Louj;->h(Ljava/lang/String;)Louj;
 
     move-result-object v0
 
-    sput-object v0, Lhap;->a:Lnak;
-
-    new-instance v0, Ljava/util/EnumMap;
-
-    const-class v1, Lklv;
-
-    invoke-direct {v0, v1}, Ljava/util/EnumMap;-><init>(Ljava/lang/Class;)V
-
-    sput-object v0, Lhap;->b:Ljava/util/EnumMap;
+    sput-object v0, Lhap;->a:Louj;
 
     return-void
 .end method
 
-.method public static a(Ljava/lang/String;Ljava/util/List;Lklv;)Lkaf;
-    .locals 18
+.method public constructor <init>(Llnc;Lhcs;Llco;Lgwi;Lljf;Lhbb;Lddf;Llap;)V
+    .locals 0
 
-    move-object/from16 v0, p0
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    move-object/from16 v1, p1
+    iput-object p1, p0, Lhap;->b:Llnc;
 
-    move-object/from16 v2, p2
+    iput-object p2, p0, Lhap;->c:Lhcs;
 
-    const-string v3, "1836x3264"
+    iput-object p3, p0, Lhap;->d:Llco;
 
-    invoke-virtual {v3, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    iput-object p4, p0, Lhap;->e:Lgwi;
 
-    move-result v3
+    iput-object p5, p0, Lhap;->g:Lljf;
 
-    if-nez v3, :cond_e
+    iput-object p6, p0, Lhap;->f:Lhbb;
 
-    new-instance v3, Ljava/util/ArrayList;
+    iput-object p7, p0, Lhap;->i:Lddf;
 
-    invoke-direct {v3, v1}, Ljava/util/ArrayList;-><init>(Ljava/util/Collection;)V
+    iput-object p8, p0, Lhap;->j:Llap;
 
-    sget-object v4, Lhap;->b:Ljava/util/EnumMap;
+    invoke-static {}, Llnv;->a()Llnu;
 
-    invoke-virtual {v4, v2}, Ljava/util/EnumMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    move-result-object p1
 
-    move-result-object v5
+    const/4 p2, 0x3
 
-    const/4 v6, 0x2
+    invoke-virtual {p1, p2}, Llnu;->b(I)V
 
-    if-eqz v5, :cond_0
+    const/4 p2, 0x4
 
-    invoke-virtual {v4, v2}, Ljava/util/EnumMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {p1, p2}, Llnu;->c(I)V
+
+    const/4 p2, 0x1
+
+    invoke-virtual {p1, p2}, Llnu;->e(I)V
+
+    invoke-virtual {p1, p2}, Llnu;->d(Z)V
+
+    invoke-virtual {p1}, Llnu;->a()Llnv;
+
+    move-result-object p1
+
+    iput-object p1, p0, Lhap;->h:Llnv;
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public final a()Llco;
+    .locals 1
+
+    iget-object v0, p0, Lhap;->d:Llco;
+
+    return-object v0
+.end method
+
+.method public final b()Llco;
+    .locals 1
+
+    invoke-static {}, Lfcy;->l()Lgjm;
+
+    move-result-object v0
+
+    invoke-static {v0}, Llcv;->g(Ljava/lang/Object;)Llco;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public final c(Lgox;Lgog;)V
+    .locals 10
+
+    const-string v0, "Image capture failed. Aborting capture!"
+
+    const-string v1, "Error capturing image."
+
+    iget-object v2, p0, Lhap;->c:Lhcs;
+
+    invoke-interface {v2}, Lhcs;->a()Ljava/lang/Object;
 
     move-result-object v2
 
-    check-cast v2, Lhao;
+    iget-object v3, p0, Lhap;->g:Lljf;
 
-    goto/16 :goto_4
+    const-string v4, "pckFlashHdr#sessionAnd3A"
 
-    :cond_0
-    new-instance v4, Lhao;
+    invoke-interface {v3, v4}, Lljf;->e(Ljava/lang/String;)V
 
-    invoke-direct {v4}, Lhao;-><init>()V
+    const/4 v3, 0x0
 
-    new-instance v5, Lye;
+    const/4 v4, 0x0
 
-    const/4 v7, 0x6
+    :try_start_0
+    iget-object v5, p0, Lhap;->b:Llnc;
 
-    invoke-direct {v5, v7}, Lye;-><init>(I)V
-
-    invoke-static {v3, v5}, Ljava/util/Collections;->sort(Ljava/util/List;Ljava/util/Comparator;)V
-
-    const/4 v5, 0x0
-
-    invoke-interface {v3, v5}, Ljava/util/List;->remove(I)Ljava/lang/Object;
-
-    move-result-object v7
-
-    check-cast v7, Lkaf;
-
-    iput-object v7, v4, Lhao;->a:Lkaf;
-
-    iget-object v7, v4, Lhao;->a:Lkaf;
-
-    iget v8, v7, Lkaf;->a:I
-
-    int-to-float v8, v8
-
-    iget v7, v7, Lkaf;->b:I
-
-    int-to-float v7, v7
-
-    new-instance v9, Ljava/util/ArrayList;
-
-    invoke-direct {v9}, Ljava/util/ArrayList;-><init>()V
-
-    invoke-interface {v3}, Ljava/util/List;->size()I
-
-    move-result v10
-
-    const/4 v11, 0x0
-
-    :goto_0
-    if-ge v11, v10, :cond_2
-
-    div-float v12, v8, v7
-
-    invoke-interface {v3, v11}, Ljava/util/List;->get(I)Ljava/lang/Object;
-
-    move-result-object v13
-
-    check-cast v13, Lkaf;
-
-    iget v14, v13, Lkaf;->a:I
-
-    int-to-float v14, v14
-
-    iget v15, v13, Lkaf;->b:I
-
-    int-to-float v15, v15
-
-    div-float/2addr v14, v15
-
-    sub-float/2addr v14, v12
-
-    invoke-static {v14}, Ljava/lang/Math;->abs(F)F
-
-    move-result v12
-
-    float-to-double v14, v12
-
-    const-wide v16, 0x3f847ae147ae147bL    # 0.01
-
-    cmpg-double v12, v14, v16
-
-    if-gez v12, :cond_1
-
-    invoke-virtual {v9, v13}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    :cond_1
-    add-int/lit8 v11, v11, 0x1
-
-    goto :goto_0
-
-    :cond_2
-    invoke-virtual {v9}, Ljava/util/ArrayList;->size()I
-
-    move-result v7
-
-    if-lt v7, v6, :cond_3
-
-    move-object v3, v9
-
-    goto :goto_1
-
-    :cond_3
-    :goto_1
-    invoke-interface {v3}, Ljava/util/List;->isEmpty()Z
-
-    move-result v7
-
-    if-eqz v7, :cond_4
-
-    sget-object v3, Lhap;->a:Lnak;
-
-    invoke-virtual {v3}, Lnaf;->c()Lnaz;
-
-    move-result-object v3
-
-    const-string v5, "Only one supported resolution."
-
-    const/16 v7, 0xd4c
-
-    invoke-static {v3, v5, v7}, Ld;->g(Lnaz;Ljava/lang/String;C)V
-
-    iget-object v3, v4, Lhao;->a:Lkaf;
-
-    iput-object v3, v4, Lhao;->b:Lkaf;
-
-    iput-object v3, v4, Lhao;->c:Lkaf;
-
-    goto/16 :goto_3
-
-    :cond_4
-    invoke-interface {v3}, Ljava/util/List;->size()I
-
-    move-result v7
-
-    const/4 v8, 0x1
-
-    if-ne v7, v8, :cond_5
-
-    sget-object v7, Lhap;->a:Lnak;
-
-    invoke-virtual {v7}, Lnaf;->c()Lnaz;
-
-    move-result-object v7
-
-    const-string v8, "Only two supported resolutions."
-
-    const/16 v9, 0xd4b
-
-    invoke-static {v7, v8, v9}, Ld;->g(Lnaz;Ljava/lang/String;C)V
-
-    invoke-interface {v3, v5}, Ljava/util/List;->get(I)Ljava/lang/Object;
-
-    move-result-object v7
-
-    check-cast v7, Lkaf;
-
-    iput-object v7, v4, Lhao;->b:Lkaf;
-
-    invoke-interface {v3, v5}, Ljava/util/List;->get(I)Ljava/lang/Object;
-
-    move-result-object v3
-
-    check-cast v3, Lkaf;
-
-    iput-object v3, v4, Lhao;->c:Lkaf;
-
-    goto :goto_3
-
-    :cond_5
-    invoke-interface {v3}, Ljava/util/List;->size()I
-
-    move-result v7
-
-    if-ne v7, v6, :cond_6
-
-    sget-object v7, Lhap;->a:Lnak;
-
-    invoke-virtual {v7}, Lnaf;->c()Lnaz;
-
-    move-result-object v7
-
-    const-string v9, "Exactly three supported resolutions."
-
-    const/16 v10, 0xd4a
-
-    invoke-static {v7, v9, v10}, Ld;->g(Lnaz;Ljava/lang/String;C)V
-
-    invoke-interface {v3, v5}, Ljava/util/List;->get(I)Ljava/lang/Object;
+    invoke-interface {v5}, Llnc;->c()Llng;
 
     move-result-object v5
+    :try_end_0
+    .catch Ldmd; {:try_start_0 .. :try_end_0} :catch_1
+    .catchall {:try_start_0 .. :try_end_0} :catchall_7
 
-    check-cast v5, Lkaf;
+    :try_start_1
+    iget-object v6, p0, Lhap;->e:Lgwi;
 
-    iput-object v5, v4, Lhao;->b:Lkaf;
+    iget-object v7, p0, Lhap;->h:Llnv;
 
-    invoke-interface {v3, v8}, Ljava/util/List;->get(I)Ljava/lang/Object;
+    invoke-virtual {v6, v5, v7}, Lgwi;->a(Llng;Llnv;)Lggx;
 
-    move-result-object v3
+    move-result-object v6
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_4
 
-    check-cast v3, Lkaf;
+    :try_start_2
+    iget-object v7, p2, Lgog;->a:Lgfs;
 
-    iput-object v3, v4, Lhao;->c:Lkaf;
+    iget-object v7, v7, Lgfs;->g:Llda;
 
-    goto :goto_3
-
-    :cond_6
-    iget-object v5, v4, Lhao;->a:Lkaf;
-
-    iget v7, v5, Lkaf;->a:I
-
-    iget v5, v5, Lkaf;->b:I
-
-    mul-int v7, v7, v5
-
-    int-to-float v5, v7
-
-    const/high16 v7, 0x3f000000    # 0.5f
-
-    mul-float v7, v7, v5
-
-    float-to-int v7, v7
-
-    invoke-static {v3, v7}, Lhap;->c(Ljava/util/List;I)I
-
-    move-result v7
-
-    const/high16 v8, 0x3e800000    # 0.25f
-
-    mul-float v5, v5, v8
-
-    float-to-int v5, v5
-
-    invoke-static {v3, v5}, Lhap;->c(Ljava/util/List;I)I
-
-    move-result v5
-
-    invoke-interface {v3, v7}, Ljava/util/List;->get(I)Ljava/lang/Object;
+    invoke-static {v4}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     move-result-object v8
 
-    check-cast v8, Lkaf;
+    invoke-interface {v7, v8}, Llda;->fB(Ljava/lang/Object;)V
 
-    invoke-interface {v3, v5}, Ljava/util/List;->get(I)Ljava/lang/Object;
+    iget-object v7, p0, Lhap;->g:Lljf;
 
-    move-result-object v9
+    const-string v8, "pckFlashHdr#submitCaptureRequest"
 
-    invoke-virtual {v8, v9}, Lkaf;->equals(Ljava/lang/Object;)Z
+    invoke-interface {v7, v8}, Lljf;->g(Ljava/lang/String;)V
 
-    move-result v8
-
-    if-eqz v8, :cond_8
-
-    invoke-interface {v3}, Ljava/util/List;->size()I
-
-    move-result v8
-
-    add-int/lit8 v8, v8, -0x1
-
-    if-ge v5, v8, :cond_7
-
-    add-int/lit8 v5, v5, 0x1
-
-    goto :goto_2
-
-    :cond_7
-    add-int/lit8 v7, v7, -0x1
-
-    :cond_8
-    :goto_2
-    invoke-interface {v3, v7}, Ljava/util/List;->get(I)Ljava/lang/Object;
+    invoke-interface {v5}, Llng;->i()Llpc;
 
     move-result-object v7
 
-    check-cast v7, Lkaf;
+    move-object v8, v2
 
-    iput-object v7, v4, Lhao;->b:Lkaf;
+    check-cast v8, Llqd;
 
-    invoke-interface {v3, v5}, Ljava/util/List;->get(I)Ljava/lang/Object;
+    invoke-virtual {v7, v8}, Llpc;->f(Llqd;)V
 
-    move-result-object v3
+    iget-object v8, p0, Lhap;->i:Lddf;
 
-    check-cast v3, Lkaf;
+    invoke-static {v8, v7}, Lenl;->x(Lddf;Llpc;)V
 
-    iput-object v3, v4, Lhao;->c:Lkaf;
+    invoke-virtual {v7}, Llpc;->b()Llpd;
 
-    :goto_3
-    sget-object v3, Lhap;->b:Ljava/util/EnumMap;
+    move-result-object v7
 
-    invoke-virtual {v3, v2, v4}, Ljava/util/EnumMap;->put(Ljava/lang/Enum;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {v5, v7}, Llng;->d(Llpd;)Llqa;
 
-    move-object v2, v4
+    move-result-object v7
 
-    :goto_4
-    invoke-virtual {v2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    iget-object v8, p2, Lgog;->c:Lgof;
 
-    const-string v3, "large"
+    invoke-interface {v8}, Lgof;->c()Lgoe;
 
-    invoke-virtual {v3, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    move-result-object v8
 
-    move-result v3
+    invoke-interface {v8}, Lgoe;->g()V
 
-    if-eqz v3, :cond_9
+    invoke-interface {p1}, Lgox;->close()V
 
-    iget-object v0, v2, Lhao;->a:Lkaf;
+    invoke-interface {v6}, Lggx;->close()V
 
-    goto :goto_5
+    invoke-interface {v5}, Llng;->close()V
 
-    :cond_9
-    const-string v3, "medium"
+    iget-object v8, p0, Lhap;->g:Lljf;
 
-    invoke-virtual {v3, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    const-string v9, "pckFlashHdr#getFrame"
 
-    move-result v3
+    invoke-interface {v8, v9}, Lljf;->g(Ljava/lang/String;)V
 
-    if-eqz v3, :cond_a
+    check-cast v2, Llqd;
 
-    iget-object v0, v2, Lhao;->b:Lkaf;
+    invoke-virtual {v7, v2}, Llqa;->a(Llqd;)Llmr;
 
-    goto :goto_5
+    move-result-object v2
 
-    :cond_a
-    const-string v3, "small"
+    invoke-virtual {v7}, Llqa;->close()V
 
-    invoke-virtual {v3, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    if-eqz v2, :cond_0
 
-    move-result v3
+    invoke-static {v2}, Lmip;->bh(Llmr;)V
 
-    if-eqz v3, :cond_b
+    iget-object v7, p0, Lhap;->g:Lljf;
 
-    iget-object v0, v2, Lhao;->c:Lkaf;
+    const-string v8, "pckFlashHdr#process"
 
-    goto :goto_5
+    invoke-interface {v7, v8}, Lljf;->g(Ljava/lang/String;)V
 
-    :cond_b
-    if-eqz v0, :cond_d
+    iget-object v7, p0, Lhap;->f:Lhbb;
 
-    const-string v3, "x"
+    invoke-static {v2}, Loom;->m(Ljava/lang/Object;)Loom;
 
-    invoke-virtual {v0, v3}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
+    move-result-object v2
 
-    move-result-object v3
+    sget-object v8, Lhao;->a:Lhao;
 
-    array-length v3, v3
+    invoke-virtual {v7, v2, v8, p2}, Lhbb;->g(Ljava/util/List;Lgox;Lgog;)V
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_2
 
-    if-ne v3, v6, :cond_d
+    const/4 v2, 0x1
 
-    invoke-static/range {p0 .. p0}, Lkba;->e(Ljava/lang/String;)Lkaf;
+    const/4 v4, 0x1
 
-    move-result-object v0
+    goto :goto_0
 
-    invoke-interface {v1, v0}, Ljava/util/List;->contains(Ljava/lang/Object;)Z
+    :cond_0
+    :goto_0
+    :try_start_3
+    invoke-interface {v6}, Lggx;->close()V
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_1
+
+    :try_start_4
+    invoke-interface {v5}, Llng;->close()V
+    :try_end_4
+    .catch Ldmd; {:try_start_4 .. :try_end_4} :catch_0
+    .catchall {:try_start_4 .. :try_end_4} :catchall_0
+
+    if-nez v4, :cond_2
+
+    sget-object v2, Lhap;->a:Louj;
+
+    invoke-virtual {v2}, Loue;->b()Lova;
+
+    move-result-object v2
+
+    const/16 v4, 0x8d7
+
+    invoke-static {v2, v1, v4}, Ld;->v(Lova;Ljava/lang/String;C)V
+
+    iget-object v1, p2, Lgog;->c:Lgof;
+
+    invoke-interface {v1}, Lgof;->f()V
+
+    iget-object p2, p2, Lgog;->b:Lhsa;
+
+    iget-object v1, p0, Lhap;->j:Llap;
+
+    invoke-virtual {v1}, Llap;->a()Z
 
     move-result v1
 
-    if-nez v1, :cond_c
+    if-eqz v1, :cond_1
 
-    goto :goto_6
+    new-instance v0, Ldmb;
 
-    :cond_c
-    :goto_5
-    return-object v0
+    invoke-direct {v0, v3}, Ldmb;-><init>(Ljava/lang/Throwable;)V
 
-    :cond_d
-    :goto_6
-    iget-object v0, v2, Lhao;->a:Lkaf;
-
-    return-object v0
-
-    :cond_e
-    sget-object v0, Lhan;->a:Lkaf;
-
-    return-object v0
-.end method
-
-.method public static b(Lklv;)Ljava/lang/String;
-    .locals 3
-
-    sget-object v0, Lklv;->a:Lklv;
-
-    invoke-virtual {p0}, Lklv;->ordinal()I
-
-    move-result v0
-
-    packed-switch v0, :pswitch_data_0
-
-    sget-object v0, Lhap;->a:Lnak;
-
-    invoke-virtual {v0}, Lnaf;->c()Lnaz;
-
-    move-result-object v0
-
-    const-string v1, "Unsupported facing value: %s"
-
-    const/16 v2, 0xd4d
-
-    invoke-static {v0, v1, p0, v2}, Ld;->j(Lnaz;Ljava/lang/String;Ljava/lang/Object;C)V
-
-    const/4 p0, 0x0
-
-    goto :goto_0
-
-    :pswitch_0
-    const-string p0, "pref_camera_picturesize_back_key"
-
-    goto :goto_0
-
-    :pswitch_1
-    const-string p0, "pref_camera_picturesize_front_key"
-
-    :goto_0
-    return-object p0
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
-.end method
-
-.method private static c(Ljava/util/List;I)I
-    .locals 5
-
-    const/4 v0, 0x0
-
-    const v1, 0x7fffffff
-
-    const/4 v1, 0x0
-
-    const v2, 0x7fffffff
-
-    :goto_0
-    invoke-interface {p0}, Ljava/util/List;->size()I
-
-    move-result v3
-
-    if-ge v0, v3, :cond_2
-
-    invoke-interface {p0, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
-
-    move-result-object v3
-
-    check-cast v3, Lkaf;
-
-    iget v4, v3, Lkaf;->a:I
-
-    iget v3, v3, Lkaf;->b:I
-
-    mul-int v4, v4, v3
-
-    sub-int/2addr v4, p1
-
-    invoke-static {v4}, Ljava/lang/Math;->abs(I)I
-
-    move-result v3
-
-    if-ge v3, v2, :cond_0
-
-    move v4, v3
+    invoke-interface {p2, v0}, Lhsa;->w(Ljava/lang/Throwable;)V
 
     goto :goto_1
 
-    :cond_0
-    move v4, v2
-
-    :goto_1
-    if-ge v3, v2, :cond_1
-
-    move v1, v0
-
     :cond_1
-    add-int/lit8 v0, v0, 0x1
+    sget-object v1, Ljmq;->a:Ljmo;
 
-    move v2, v4
+    new-instance v2, Ldmd;
 
-    goto :goto_0
+    invoke-direct {v2, v0}, Ldmd;-><init>(Ljava/lang/String;)V
+
+    invoke-interface {p2, v1, v2}, Lhsa;->C(Ljmo;Ljava/lang/Throwable;)V
 
     :cond_2
-    return v1
+    :goto_1
+    invoke-interface {p1}, Lgox;->close()V
+
+    iget-object p1, p0, Lhap;->g:Lljf;
+
+    invoke-interface {p1}, Lljf;->f()V
+
+    return-void
+
+    :catchall_0
+    move-exception v2
+
+    goto :goto_5
+
+    :catch_0
+    move-exception v0
+
+    goto :goto_7
+
+    :catchall_1
+    move-exception v2
+
+    goto :goto_3
+
+    :catchall_2
+    move-exception v2
+
+    :try_start_5
+    invoke-interface {v6}, Lggx;->close()V
+    :try_end_5
+    .catchall {:try_start_5 .. :try_end_5} :catchall_3
+
+    goto :goto_2
+
+    :catchall_3
+    move-exception v6
+
+    :goto_2
+    :try_start_6
+    throw v2
+    :try_end_6
+    .catchall {:try_start_6 .. :try_end_6} :catchall_4
+
+    :catchall_4
+    move-exception v2
+
+    :goto_3
+    :try_start_7
+    invoke-interface {v5}, Llng;->close()V
+    :try_end_7
+    .catchall {:try_start_7 .. :try_end_7} :catchall_5
+
+    goto :goto_4
+
+    :catchall_5
+    move-exception v5
+
+    :goto_4
+    :try_start_8
+    throw v2
+    :try_end_8
+    .catch Ldmd; {:try_start_8 .. :try_end_8} :catch_1
+    .catchall {:try_start_8 .. :try_end_8} :catchall_6
+
+    :catchall_6
+    move-exception v2
+
+    goto :goto_5
+
+    :catchall_7
+    move-exception v2
+
+    :goto_5
+    if-nez v4, :cond_4
+
+    sget-object v4, Lhap;->a:Louj;
+
+    invoke-virtual {v4}, Loue;->b()Lova;
+
+    move-result-object v4
+
+    const/16 v5, 0x8d9
+
+    invoke-static {v4, v1, v5}, Ld;->v(Lova;Ljava/lang/String;C)V
+
+    iget-object v1, p2, Lgog;->c:Lgof;
+
+    invoke-interface {v1}, Lgof;->f()V
+
+    iget-object p2, p2, Lgog;->b:Lhsa;
+
+    iget-object v1, p0, Lhap;->j:Llap;
+
+    invoke-virtual {v1}, Llap;->a()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_3
+
+    new-instance v0, Ldmb;
+
+    invoke-direct {v0, v3}, Ldmb;-><init>(Ljava/lang/Throwable;)V
+
+    invoke-interface {p2, v0}, Lhsa;->w(Ljava/lang/Throwable;)V
+
+    goto :goto_6
+
+    :cond_3
+    sget-object v1, Ljmq;->a:Ljmo;
+
+    new-instance v3, Ldmd;
+
+    invoke-direct {v3, v0}, Ldmd;-><init>(Ljava/lang/String;)V
+
+    invoke-interface {p2, v1, v3}, Lhsa;->C(Ljmo;Ljava/lang/Throwable;)V
+
+    :cond_4
+    :goto_6
+    invoke-interface {p1}, Lgox;->close()V
+
+    iget-object p1, p0, Lhap;->g:Lljf;
+
+    invoke-interface {p1}, Lljf;->f()V
+
+    throw v2
+
+    :catch_1
+    move-exception v0
+
+    :goto_7
+    if-nez v4, :cond_2
+
+    sget-object v2, Lhap;->a:Louj;
+
+    invoke-virtual {v2}, Loue;->b()Lova;
+
+    move-result-object v2
+
+    const/16 v3, 0x8d8
+
+    invoke-static {v2, v1, v3}, Ld;->v(Lova;Ljava/lang/String;C)V
+
+    iget-object v1, p2, Lgog;->c:Lgof;
+
+    invoke-interface {v1}, Lgof;->f()V
+
+    iget-object p2, p2, Lgog;->b:Lhsa;
+
+    iget-object v1, p0, Lhap;->j:Llap;
+
+    invoke-virtual {v1}, Llap;->a()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_5
+
+    new-instance v1, Ldmb;
+
+    invoke-direct {v1, v0}, Ldmb;-><init>(Ljava/lang/Throwable;)V
+
+    invoke-interface {p2, v1}, Lhsa;->w(Ljava/lang/Throwable;)V
+
+    goto :goto_1
+
+    :cond_5
+    sget-object v1, Ljmq;->a:Ljmo;
+
+    invoke-interface {p2, v1, v0}, Lhsa;->C(Ljmo;Ljava/lang/Throwable;)V
+
+    goto/16 :goto_1
 .end method

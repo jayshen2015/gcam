@@ -1,54 +1,59 @@
-.class final Lcsn;
-.super Landroid/database/ContentObserver;
+.class public final Lcsn;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Lpys;
 
 
 # instance fields
-.field final synthetic a:Lcsp;
+.field private final a:Lqkg;
 
 
 # direct methods
-.method public constructor <init>(Lcsp;Landroid/os/Handler;)V
+.method public constructor <init>(Lqkg;)V
     .locals 0
 
-    iput-object p1, p0, Lcsn;->a:Lcsp;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0, p2}, Landroid/database/ContentObserver;-><init>(Landroid/os/Handler;)V
+    iput-object p1, p0, Lcsn;->a:Lqkg;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onChange(Z)V
+.method public final a()Lghx;
     .locals 2
 
-    iget-object p1, p0, Lcsn;->a:Lcsp;
+    iget-object v0, p0, Lcsn;->a:Lqkg;
 
-    iget-boolean v0, p1, Lcsp;->e:Z
+    check-cast v0, Lcop;
 
-    const/4 v1, 0x1
+    invoke-virtual {v0}, Lcop;->a()Llnc;
 
-    if-eqz v0, :cond_0
+    move-result-object v0
 
-    iget-object p1, p1, Lcsp;->a:Lcsk;
+    new-instance v1, Lghx;
 
-    const/4 v0, 0x0
+    invoke-interface {v0}, Llnc;->b()Llnd;
 
-    invoke-virtual {p1, v1, v0}, Lcsk;->d(IZ)V
+    move-result-object v0
 
-    return-void
+    invoke-interface {v0}, Llnd;->c()Llvp;
 
-    :cond_0
-    iget-boolean v0, p1, Lcsp;->d:Z
+    move-result-object v0
 
-    if-nez v0, :cond_1
+    invoke-direct {v1, v0}, Lghx;-><init>(Llvp;)V
 
-    iput-boolean v1, p1, Lcsp;->d:Z
+    return-object v1
+.end method
 
-    iget-object p1, p1, Lcsp;->a:Lcsk;
+.method public final bridge synthetic get()Ljava/lang/Object;
+    .locals 1
 
-    invoke-virtual {p1}, Lcsk;->b()V
+    invoke-virtual {p0}, Lcsn;->a()Lghx;
 
-    :cond_1
-    return-void
+    move-result-object v0
+
+    return-object v0
 .end method

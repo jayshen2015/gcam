@@ -1,232 +1,65 @@
-.class final Lmsf;
-.super Lmxx;
+.class public final synthetic Lmsf;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Loiu;
 
 
 # instance fields
-.field final transient a:Ljava/util/Map;
+.field public final synthetic a:Lmsh;
 
-.field final synthetic b:Lmsp;
+.field public final synthetic b:Landroid/media/MediaFormat;
+
+.field public final synthetic c:Lpih;
 
 
 # direct methods
-.method public constructor <init>(Lmsp;Ljava/util/Map;)V
+.method public synthetic constructor <init>(Lmsh;Landroid/media/MediaFormat;Lpih;)V
     .locals 0
 
-    iput-object p1, p0, Lmsf;->b:Lmsp;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0}, Lmxx;-><init>()V
+    iput-object p1, p0, Lmsf;->a:Lmsh;
 
-    iput-object p2, p0, Lmsf;->a:Ljava/util/Map;
+    iput-object p2, p0, Lmsf;->b:Landroid/media/MediaFormat;
+
+    iput-object p3, p0, Lmsf;->c:Lpih;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Ljava/util/Set;
-    .locals 1
+.method public final a(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 4
 
-    new-instance v0, Lmsd;
+    iget-object v0, p0, Lmsf;->a:Lmsh;
 
-    invoke-direct {v0, p0}, Lmsd;-><init>(Lmsf;)V
+    iget-object v1, p0, Lmsf;->b:Landroid/media/MediaFormat;
 
-    return-object v0
-.end method
+    iget-object v2, p0, Lmsf;->c:Lpih;
 
-.method public final clear()V
-    .locals 3
+    check-cast p1, Lmsc;
 
-    iget-object v0, p0, Lmsf;->a:Ljava/util/Map;
+    iget-object v0, v0, Lmsh;->a:Ljava/util/List;
 
-    iget-object v1, p0, Lmsf;->b:Lmsp;
+    invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    iget-object v2, v1, Lmsp;->a:Ljava/util/Map;
-
-    if-ne v0, v2, :cond_0
-
-    invoke-virtual {v1}, Lmsp;->j()V
-
-    return-void
-
-    :cond_0
-    new-instance v0, Lmse;
-
-    invoke-direct {v0, p0}, Lmse;-><init>(Lmsf;)V
-
-    invoke-static {v0}, Llyh;->O(Ljava/util/Iterator;)V
-
-    return-void
-.end method
-
-.method public final containsKey(Ljava/lang/Object;)Z
-    .locals 1
-
-    iget-object v0, p0, Lmsf;->a:Ljava/util/Map;
-
-    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    :try_start_0
-    invoke-interface {v0, p1}, Ljava/util/Map;->containsKey(Ljava/lang/Object;)Z
-
-    move-result p1
-    :try_end_0
-    .catch Ljava/lang/ClassCastException; {:try_start_0 .. :try_end_0} :catch_1
-    .catch Ljava/lang/NullPointerException; {:try_start_0 .. :try_end_0} :catch_0
-
-    goto :goto_1
-
-    :catch_0
-    move-exception p1
-
-    goto :goto_0
-
-    :catch_1
-    move-exception p1
-
-    :goto_0
-    const/4 p1, 0x0
-
-    :goto_1
-    return p1
-.end method
-
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 1
-
-    if-eq p0, p1, :cond_1
-
-    iget-object v0, p0, Lmsf;->a:Ljava/util/Map;
-
-    invoke-virtual {v0, p1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
-
-    move-result p1
-
-    if-eqz p1, :cond_0
-
-    goto :goto_0
-
-    :cond_0
-    const/4 p1, 0x0
-
-    return p1
-
-    :cond_1
-    :goto_0
-    const/4 p1, 0x1
-
-    return p1
-.end method
-
-.method public final bridge synthetic get(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 2
-
-    iget-object v0, p0, Lmsf;->a:Ljava/util/Map;
-
-    invoke-static {v0, p1}, Llyh;->v(Ljava/util/Map;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {p1}, Lmsc;->b()Lpht;
 
     move-result-object v0
 
-    check-cast v0, Ljava/util/Collection;
+    new-instance v3, Lmse;
 
-    if-nez v0, :cond_0
+    invoke-direct {v3, v1}, Lmse;-><init>(Landroid/media/MediaFormat;)V
 
-    const/4 p1, 0x0
+    sget-object v1, Lpgr;->a:Lpgr;
+
+    invoke-static {v0, v3, v1}, Lpgb;->h(Lpht;Loiu;Ljava/util/concurrent/Executor;)Lpht;
+
+    move-result-object v0
+
+    invoke-virtual {v2, v0}, Lpih;->e(Lpht;)Z
 
     return-object p1
-
-    :cond_0
-    iget-object v1, p0, Lmsf;->b:Lmsp;
-
-    invoke-virtual {v1, p1, v0}, Lmsp;->c(Ljava/lang/Object;Ljava/util/Collection;)Ljava/util/Collection;
-
-    move-result-object p1
-
-    return-object p1
-.end method
-
-.method public final hashCode()I
-    .locals 1
-
-    iget-object v0, p0, Lmsf;->a:Ljava/util/Map;
-
-    invoke-virtual {v0}, Ljava/lang/Object;->hashCode()I
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public final keySet()Ljava/util/Set;
-    .locals 1
-
-    iget-object v0, p0, Lmsf;->b:Lmsp;
-
-    invoke-virtual {v0}, Lmst;->r()Ljava/util/Set;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public final bridge synthetic remove(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 3
-
-    iget-object v0, p0, Lmsf;->a:Ljava/util/Map;
-
-    invoke-interface {v0, p1}, Ljava/util/Map;->remove(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object p1
-
-    check-cast p1, Ljava/util/Collection;
-
-    if-nez p1, :cond_0
-
-    const/4 p1, 0x0
-
-    return-object p1
-
-    :cond_0
-    iget-object v0, p0, Lmsf;->b:Lmsp;
-
-    invoke-virtual {v0}, Lmsp;->a()Ljava/util/Collection;
-
-    move-result-object v0
-
-    invoke-interface {v0, p1}, Ljava/util/Collection;->addAll(Ljava/util/Collection;)Z
-
-    iget-object v1, p0, Lmsf;->b:Lmsp;
-
-    invoke-interface {p1}, Ljava/util/Collection;->size()I
-
-    move-result v2
-
-    invoke-static {v1, v2}, Lmsp;->o(Lmsp;I)V
-
-    invoke-interface {p1}, Ljava/util/Collection;->clear()V
-
-    return-object v0
-.end method
-
-.method public final size()I
-    .locals 1
-
-    iget-object v0, p0, Lmsf;->a:Ljava/util/Map;
-
-    invoke-interface {v0}, Ljava/util/Map;->size()I
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .locals 1
-
-    iget-object v0, p0, Lmsf;->a:Ljava/util/Map;
-
-    invoke-virtual {v0}, Ljava/lang/Object;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    return-object v0
 .end method

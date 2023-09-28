@@ -1,67 +1,67 @@
-.class public final Leyr;
+.class public final synthetic Leyr;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lhdw;
+.implements Landroid/view/View$OnClickListener;
 
 
 # instance fields
-.field final synthetic a:Lcom/google/android/libraries/lens/lenslite/api/LinkChipResult;
-
-.field final synthetic b:Lmqp;
-
-.field final synthetic c:Lkvj;
-
-.field public final synthetic d:Leys;
+.field public final synthetic a:Lezg;
 
 
 # direct methods
-.method public constructor <init>(Leys;Lcom/google/android/libraries/lens/lenslite/api/LinkChipResult;Lmqp;Lkvj;)V
+.method public synthetic constructor <init>(Lezg;)V
     .locals 0
 
-    iput-object p1, p0, Leyr;->d:Leys;
-
-    iput-object p2, p0, Leyr;->a:Lcom/google/android/libraries/lens/lenslite/api/LinkChipResult;
-
-    iput-object p3, p0, Leyr;->b:Lmqp;
-
-    iput-object p4, p0, Leyr;->c:Lkvj;
-
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Leyr;->a:Lezg;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Landroid/graphics/Bitmap;)V
-    .locals 9
+.method public final onClick(Landroid/view/View;)V
+    .locals 2
 
-    if-eqz p1, :cond_0
+    iget-object p1, p0, Leyr;->a:Lezg;
 
-    iget-object v0, p0, Leyr;->d:Leys;
+    iget-object v0, p1, Lezg;->v:Llda;
 
-    iget-object v0, v0, Leys;->z:Ljuh;
+    invoke-interface {v0}, Llda;->fA()Ljava/lang/Object;
 
-    iget-object v4, p0, Leyr;->a:Lcom/google/android/libraries/lens/lenslite/api/LinkChipResult;
+    move-result-object v0
 
-    iget-object v5, p0, Leyr;->b:Lmqp;
+    check-cast v0, Ljava/lang/Integer;
 
-    iget-object v6, p0, Leyr;->c:Lkvj;
+    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
 
-    new-instance v8, Lcfu;
+    move-result v0
 
-    const/16 v7, 0xa
+    iget-object v1, p1, Lezg;->l:Lojc;
 
-    move-object v1, v8
+    invoke-virtual {v1}, Lojc;->g()Z
 
-    move-object v2, p0
+    move-result v1
 
-    move-object v3, p1
+    if-eqz v1, :cond_0
 
-    invoke-direct/range {v1 .. v7}, Lcfu;-><init>(Leyr;Landroid/graphics/Bitmap;Lcom/google/android/libraries/lens/lenslite/api/LinkChipResult;Lmqp;Lkvj;I)V
+    iget-object p1, p1, Lezg;->l:Lojc;
 
-    invoke-virtual {v0, v8}, Ljuh;->c(Ljava/lang/Runnable;)V
+    invoke-virtual {p1}, Lojc;->c()Ljava/lang/Object;
+
+    move-result-object p1
+
+    check-cast p1, Lesi;
+
+    invoke-static {v0}, Lesn;->a(I)Lesn;
+
+    move-result-object v0
+
+    const/4 v1, 0x3
+
+    invoke-interface {p1, v0, v1}, Lesi;->d(Lesn;I)V
 
     :cond_0
     return-void

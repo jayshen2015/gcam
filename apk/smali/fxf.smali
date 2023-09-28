@@ -3,90 +3,84 @@
 
 
 # instance fields
-.field public final synthetic a:Ljava/lang/Object;
+.field public final a:Lbrc;
 
-.field public final synthetic b:Ljava/lang/Object;
+.field public final b:Lqkg;
+
+.field public final c:Lpyn;
+
+.field public final d:Landroid/content/DialogInterface$OnClickListener;
+
+.field public final e:Likm;
+
+.field private final f:Lilu;
+
+.field private final g:Llar;
+
+.field private final h:Lilx;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lbkb;Lduv;[B[B)V
-    .locals 0
+.method public constructor <init>(Likm;Lbrc;Lilx;Lilu;Lqkg;Lpyn;Llar;)V
+    .locals 1
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lfxf;->a:Ljava/lang/Object;
+    new-instance v0, Lfxe;
 
-    iput-object p2, p0, Lfxf;->b:Ljava/lang/Object;
+    invoke-direct {v0, p0}, Lfxe;-><init>(Lfxf;)V
 
-    return-void
-.end method
+    iput-object v0, p0, Lfxf;->d:Landroid/content/DialogInterface$OnClickListener;
 
-.method public synthetic constructor <init>(Leea;Lnrr;)V
-    .locals 0
+    iput-object p2, p0, Lfxf;->a:Lbrc;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lfxf;->e:Likm;
 
-    iput-object p1, p0, Lfxf;->b:Ljava/lang/Object;
+    iput-object p3, p0, Lfxf;->h:Lilx;
 
-    iput-object p2, p0, Lfxf;->a:Ljava/lang/Object;
+    iput-object p4, p0, Lfxf;->f:Lilu;
 
-    return-void
-.end method
+    iput-object p5, p0, Lfxf;->b:Lqkg;
 
-.method public synthetic constructor <init>(Leys;Lhec;)V
-    .locals 0
+    iput-object p6, p0, Lfxf;->c:Lpyn;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lfxf;->b:Ljava/lang/Object;
-
-    iput-object p2, p0, Lfxf;->a:Ljava/lang/Object;
-
-    return-void
-.end method
-
-.method public constructor <init>(Lfng;Lcom/google/android/apps/camera/legacy/lightcycle/storage/LocalSessionStorage;)V
-    .locals 0
-
-    iput-object p1, p0, Lfxf;->a:Ljava/lang/Object;
-
-    iput-object p2, p0, Lfxf;->b:Ljava/lang/Object;
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
-.end method
-
-.method public constructor <init>(Lfxg;Lfyy;)V
-    .locals 0
-
-    iput-object p1, p0, Lfxf;->b:Ljava/lang/Object;
-
-    iput-object p2, p0, Lfxf;->a:Ljava/lang/Object;
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p7, p0, Lfxf;->g:Llar;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Lhza;)V
-    .locals 4
+.method public final a()V
+    .locals 3
 
-    iget-object v0, p0, Lfxf;->b:Ljava/lang/Object;
+    iget-object v0, p0, Lfxf;->h:Lilx;
 
-    iget-object v1, p0, Lfxf;->a:Ljava/lang/Object;
+    invoke-virtual {v0}, Lilx;->a()Lpht;
 
-    check-cast v0, Leys;
+    move-result-object v0
 
-    iget-object v2, v0, Leys;->d:Ljava/util/concurrent/Executor;
+    new-instance v1, Lfxd;
 
-    new-instance v3, Leyl;
+    invoke-direct {v1, p0}, Lfxd;-><init>(Lfxf;)V
 
-    invoke-direct {v3, v0, p1, v1}, Leyl;-><init>(Leys;Lhza;Lhec;)V
+    iget-object v2, p0, Lfxf;->g:Llar;
 
-    invoke-interface {v2, v3}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
+    invoke-static {v0, v1, v2}, Lmip;->ca(Lpht;Llht;Ljava/util/concurrent/Executor;)V
+
+    return-void
+.end method
+
+.method public final b()V
+    .locals 2
+
+    iget-object v0, p0, Lfxf;->f:Lilu;
+
+    sget-object v1, Lilv;->a:Lilv;
+
+    iput-object v1, v0, Lilu;->b:Lilv;
+
+    iget-object v0, v0, Lilu;->c:Lilx;
 
     return-void
 .end method

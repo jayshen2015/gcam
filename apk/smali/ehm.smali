@@ -1,85 +1,63 @@
-.class public final Lehm;
+.class public final synthetic Lehm;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Logk;
+.implements Llie;
 
 
 # instance fields
-.field private final a:Loiw;
+.field public final synthetic a:Lehr;
 
-.field private final b:Loiw;
-
-.field private final c:Loiw;
+.field private final synthetic b:I
 
 
 # direct methods
-.method public constructor <init>(Loiw;Loiw;Loiw;)V
+.method public synthetic constructor <init>(Lehr;I)V
     .locals 0
+
+    iput p2, p0, Lehm;->b:I
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lehm;->a:Loiw;
-
-    iput-object p2, p0, Lehm;->b:Loiw;
-
-    iput-object p3, p0, Lehm;->c:Loiw;
+    iput-object p1, p0, Lehm;->a:Lehr;
 
     return-void
 .end method
 
-.method public static a(Loiw;Loiw;Loiw;)Lehm;
-    .locals 1
-
-    new-instance v0, Lehm;
-
-    invoke-direct {v0, p0, p1, p2}, Lehm;-><init>(Loiw;Loiw;Loiw;)V
-
-    return-object v0
-.end method
-
 
 # virtual methods
-.method public final b()Lva;
-    .locals 4
+.method public final close()V
+    .locals 2
 
-    iget-object v0, p0, Lehm;->a:Loiw;
+    iget v0, p0, Lehm;->b:I
 
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
+    packed-switch v0, :pswitch_data_0
 
-    move-result-object v0
+    iget-object v0, p0, Lehm;->a:Lehr;
 
-    check-cast v0, Lnsb;
+    iget-object v1, v0, Lehr;->d:Lcom/google/android/apps/camera/bottombar/BottomBarController;
 
-    iget-object v1, p0, Lehm;->b:Loiw;
+    iget-object v0, v0, Lehr;->i:Lcom/google/android/apps/camera/bottombar/BottomBarListener;
 
-    check-cast v1, Lceb;
+    invoke-virtual {v1, v0}, Lcom/google/android/apps/camera/bottombar/BottomBarController;->removeListener(Lcom/google/android/apps/camera/bottombar/BottomBarListener;)V
 
-    invoke-virtual {v1}, Lceb;->a()Lcea;
+    return-void
 
-    move-result-object v1
+    :pswitch_0
+    iget-object v0, p0, Lehm;->a:Lehr;
 
-    iget-object v2, p0, Lehm;->c:Loiw;
+    iget-object v1, v0, Lehr;->e:Lepj;
 
-    invoke-interface {v2}, Loiw;->get()Ljava/lang/Object;
+    iget-object v0, v0, Lehr;->k:Lepi;
 
-    move-result-object v2
+    invoke-virtual {v1, v0}, Lepj;->b(Lepi;)V
 
-    check-cast v2, Lkbc;
+    return-void
 
-    new-instance v3, Lva;
+    nop
 
-    invoke-direct {v3, v0, v1, v2}, Lva;-><init>(Lnsb;Lcea;Lkbc;)V
-
-    return-object v3
-.end method
-
-.method public final bridge synthetic get()Ljava/lang/Object;
-    .locals 1
-
-    invoke-virtual {p0}, Lehm;->b()Lva;
-
-    move-result-object v0
-
-    return-object v0
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

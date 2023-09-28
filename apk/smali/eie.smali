@@ -1,46 +1,33 @@
-.class public final Leie;
-.super Lcom/google/android/apps/camera/bottombar/BottomBarListener;
+.class public final synthetic Leie;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field final synthetic a:Leio;
+.field public final synthetic a:Lejj;
 
 
 # direct methods
-.method public constructor <init>(Leio;)V
+.method public synthetic constructor <init>(Lejj;)V
     .locals 0
 
-    iput-object p1, p0, Leie;->a:Leio;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0}, Lcom/google/android/apps/camera/bottombar/BottomBarListener;-><init>()V
+    iput-object p1, p0, Leie;->a:Lejj;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onCancelButtonPressed()V
-    .locals 3
+.method public final run()V
+    .locals 1
 
-    iget-object v0, p0, Leie;->a:Leio;
+    iget-object v0, p0, Leie;->a:Lejj;
 
-    const/4 v1, 0x0
-
-    const/4 v2, 0x2
-
-    invoke-virtual {v0, v1, v2}, Leio;->h(ZI)V
-
-    return-void
-.end method
-
-.method public final onThumbnailButtonClicked()V
-    .locals 2
-
-    iget-object v0, p0, Leie;->a:Leio;
-
-    const/4 v1, 0x1
-
-    iput-boolean v1, v0, Leio;->C:Z
+    invoke-virtual {v0}, Lejg;->a()V
 
     return-void
 .end method

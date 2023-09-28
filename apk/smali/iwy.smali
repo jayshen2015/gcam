@@ -1,30 +1,67 @@
-.class final Liwy;
-.super Les;
+.class public final synthetic Liwy;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Liib;
 
 
 # instance fields
-.field final synthetic a:Lixa;
+.field public final synthetic a:Lcom/google/android/apps/camera/bottombar/BottomBarController;
+
+.field private final synthetic b:I
 
 
 # direct methods
-.method public constructor <init>(Lixa;)V
+.method public synthetic constructor <init>(Lcom/google/android/apps/camera/bottombar/BottomBarController;I)V
     .locals 0
 
-    iput-object p1, p0, Liwy;->a:Lixa;
+    iput p2, p0, Liwy;->b:I
 
-    invoke-direct {p0}, Les;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Liwy;->a:Lcom/google/android/apps/camera/bottombar/BottomBarController;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final d(I)V
+.method public final a()Llie;
     .locals 1
 
-    iget-object v0, p0, Liwy;->a:Lixa;
+    iget v0, p0, Liwy;->b:I
 
-    iput p1, v0, Lixa;->i:I
+    packed-switch v0, :pswitch_data_0
 
-    return-void
+    iget-object v0, p0, Liwy;->a:Lcom/google/android/apps/camera/bottombar/BottomBarController;
+
+    invoke-virtual {v0}, Lcom/google/android/apps/camera/bottombar/BottomBarController;->lowerAccessibilityImportanceAwhile()Llie;
+
+    move-result-object v0
+
+    return-object v0
+
+    :pswitch_0
+    iget-object v0, p0, Liwy;->a:Lcom/google/android/apps/camera/bottombar/BottomBarController;
+
+    invoke-virtual {v0}, Lcom/google/android/apps/camera/bottombar/BottomBarController;->makeClickableAwhile()Llie;
+
+    move-result-object v0
+
+    return-object v0
+
+    :pswitch_1
+    iget-object v0, p0, Liwy;->a:Lcom/google/android/apps/camera/bottombar/BottomBarController;
+
+    invoke-virtual {v0}, Lcom/google/android/apps/camera/bottombar/BottomBarController;->disableCameraSwitchAwhile()Llie;
+
+    move-result-object v0
+
+    return-object v0
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method

@@ -56,107 +56,107 @@
 
     new-array v0, v0, [Lcom/google/android/libraries/lens/lenslite/dynamicloading/ApiVersion;
 
-    const/4 v1, 0x0
+    sget-object v1, Lcom/google/android/libraries/lens/lenslite/dynamicloading/ApiVersion;->ORIGINAL:Lcom/google/android/libraries/lens/lenslite/dynamicloading/ApiVersion;
 
-    sget-object v2, Lcom/google/android/libraries/lens/lenslite/dynamicloading/ApiVersion;->ORIGINAL:Lcom/google/android/libraries/lens/lenslite/dynamicloading/ApiVersion;
+    const/4 v2, 0x0
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/4 v1, 0x1
+    sget-object v1, Lcom/google/android/libraries/lens/lenslite/dynamicloading/ApiVersion;->VERSION_2:Lcom/google/android/libraries/lens/lenslite/dynamicloading/ApiVersion;
 
-    sget-object v2, Lcom/google/android/libraries/lens/lenslite/dynamicloading/ApiVersion;->VERSION_2:Lcom/google/android/libraries/lens/lenslite/dynamicloading/ApiVersion;
+    const/4 v2, 0x1
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/4 v1, 0x2
+    sget-object v1, Lcom/google/android/libraries/lens/lenslite/dynamicloading/ApiVersion;->VERSION_3:Lcom/google/android/libraries/lens/lenslite/dynamicloading/ApiVersion;
 
-    sget-object v2, Lcom/google/android/libraries/lens/lenslite/dynamicloading/ApiVersion;->VERSION_3:Lcom/google/android/libraries/lens/lenslite/dynamicloading/ApiVersion;
+    const/4 v2, 0x2
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/4 v1, 0x3
+    sget-object v1, Lcom/google/android/libraries/lens/lenslite/dynamicloading/ApiVersion;->VERSION_4:Lcom/google/android/libraries/lens/lenslite/dynamicloading/ApiVersion;
 
-    sget-object v2, Lcom/google/android/libraries/lens/lenslite/dynamicloading/ApiVersion;->VERSION_4:Lcom/google/android/libraries/lens/lenslite/dynamicloading/ApiVersion;
+    const/4 v2, 0x3
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/4 v1, 0x4
+    sget-object v1, Lcom/google/android/libraries/lens/lenslite/dynamicloading/ApiVersion;->VERSION_5:Lcom/google/android/libraries/lens/lenslite/dynamicloading/ApiVersion;
 
-    sget-object v2, Lcom/google/android/libraries/lens/lenslite/dynamicloading/ApiVersion;->VERSION_5:Lcom/google/android/libraries/lens/lenslite/dynamicloading/ApiVersion;
+    const/4 v2, 0x4
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/4 v1, 0x5
+    sget-object v1, Lcom/google/android/libraries/lens/lenslite/dynamicloading/ApiVersion;->VERSION_6:Lcom/google/android/libraries/lens/lenslite/dynamicloading/ApiVersion;
 
-    sget-object v2, Lcom/google/android/libraries/lens/lenslite/dynamicloading/ApiVersion;->VERSION_6:Lcom/google/android/libraries/lens/lenslite/dynamicloading/ApiVersion;
+    const/4 v2, 0x5
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/4 v1, 0x6
+    sget-object v1, Lcom/google/android/libraries/lens/lenslite/dynamicloading/ApiVersion;->VERSION_7:Lcom/google/android/libraries/lens/lenslite/dynamicloading/ApiVersion;
 
-    sget-object v2, Lcom/google/android/libraries/lens/lenslite/dynamicloading/ApiVersion;->VERSION_7:Lcom/google/android/libraries/lens/lenslite/dynamicloading/ApiVersion;
+    const/4 v2, 0x6
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/4 v1, 0x7
+    sget-object v1, Lcom/google/android/libraries/lens/lenslite/dynamicloading/ApiVersion;->VERSION_8:Lcom/google/android/libraries/lens/lenslite/dynamicloading/ApiVersion;
 
-    sget-object v2, Lcom/google/android/libraries/lens/lenslite/dynamicloading/ApiVersion;->VERSION_8:Lcom/google/android/libraries/lens/lenslite/dynamicloading/ApiVersion;
+    const/4 v2, 0x7
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0x8
+    sget-object v1, Lcom/google/android/libraries/lens/lenslite/dynamicloading/ApiVersion;->VERSION_9:Lcom/google/android/libraries/lens/lenslite/dynamicloading/ApiVersion;
 
-    sget-object v2, Lcom/google/android/libraries/lens/lenslite/dynamicloading/ApiVersion;->VERSION_9:Lcom/google/android/libraries/lens/lenslite/dynamicloading/ApiVersion;
+    const/16 v2, 0x8
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0x9
+    sget-object v1, Lcom/google/android/libraries/lens/lenslite/dynamicloading/ApiVersion;->VERSION_10:Lcom/google/android/libraries/lens/lenslite/dynamicloading/ApiVersion;
 
-    sget-object v2, Lcom/google/android/libraries/lens/lenslite/dynamicloading/ApiVersion;->VERSION_10:Lcom/google/android/libraries/lens/lenslite/dynamicloading/ApiVersion;
+    const/16 v2, 0x9
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0xa
+    sget-object v1, Lcom/google/android/libraries/lens/lenslite/dynamicloading/ApiVersion;->VERSION_11:Lcom/google/android/libraries/lens/lenslite/dynamicloading/ApiVersion;
 
-    sget-object v2, Lcom/google/android/libraries/lens/lenslite/dynamicloading/ApiVersion;->VERSION_11:Lcom/google/android/libraries/lens/lenslite/dynamicloading/ApiVersion;
+    const/16 v2, 0xa
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0xb
+    sget-object v1, Lcom/google/android/libraries/lens/lenslite/dynamicloading/ApiVersion;->VERSION_12:Lcom/google/android/libraries/lens/lenslite/dynamicloading/ApiVersion;
 
-    sget-object v2, Lcom/google/android/libraries/lens/lenslite/dynamicloading/ApiVersion;->VERSION_12:Lcom/google/android/libraries/lens/lenslite/dynamicloading/ApiVersion;
+    const/16 v2, 0xb
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0xc
+    sget-object v1, Lcom/google/android/libraries/lens/lenslite/dynamicloading/ApiVersion;->VERSION_13:Lcom/google/android/libraries/lens/lenslite/dynamicloading/ApiVersion;
 
-    sget-object v2, Lcom/google/android/libraries/lens/lenslite/dynamicloading/ApiVersion;->VERSION_13:Lcom/google/android/libraries/lens/lenslite/dynamicloading/ApiVersion;
+    const/16 v2, 0xc
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0xd
+    sget-object v1, Lcom/google/android/libraries/lens/lenslite/dynamicloading/ApiVersion;->VERSION_14:Lcom/google/android/libraries/lens/lenslite/dynamicloading/ApiVersion;
 
-    sget-object v2, Lcom/google/android/libraries/lens/lenslite/dynamicloading/ApiVersion;->VERSION_14:Lcom/google/android/libraries/lens/lenslite/dynamicloading/ApiVersion;
+    const/16 v2, 0xd
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0xe
+    sget-object v1, Lcom/google/android/libraries/lens/lenslite/dynamicloading/ApiVersion;->VERSION_15:Lcom/google/android/libraries/lens/lenslite/dynamicloading/ApiVersion;
 
-    sget-object v2, Lcom/google/android/libraries/lens/lenslite/dynamicloading/ApiVersion;->VERSION_15:Lcom/google/android/libraries/lens/lenslite/dynamicloading/ApiVersion;
+    const/16 v2, 0xe
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0xf
+    sget-object v1, Lcom/google/android/libraries/lens/lenslite/dynamicloading/ApiVersion;->VERSION_16:Lcom/google/android/libraries/lens/lenslite/dynamicloading/ApiVersion;
 
-    sget-object v2, Lcom/google/android/libraries/lens/lenslite/dynamicloading/ApiVersion;->VERSION_16:Lcom/google/android/libraries/lens/lenslite/dynamicloading/ApiVersion;
+    const/16 v2, 0xf
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
-    const/16 v1, 0x10
+    sget-object v1, Lcom/google/android/libraries/lens/lenslite/dynamicloading/ApiVersion;->VERSION_17:Lcom/google/android/libraries/lens/lenslite/dynamicloading/ApiVersion;
 
-    sget-object v2, Lcom/google/android/libraries/lens/lenslite/dynamicloading/ApiVersion;->VERSION_17:Lcom/google/android/libraries/lens/lenslite/dynamicloading/ApiVersion;
+    const/16 v2, 0x10
 
-    aput-object v2, v0, v1
+    aput-object v1, v0, v2
 
     return-object v0
 .end method

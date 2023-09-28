@@ -1,38 +1,41 @@
-.class final Ljms;
-.super Ljfc;
+.class public final Ljms;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Ljmo;
+
+
+# instance fields
+.field private final a:I
+
+.field private final b:[Ljava/lang/Object;
 
 
 # direct methods
-.method public constructor <init>()V
+.method public varargs constructor <init>(I[Ljava/lang/Object;)V
     .locals 0
 
-    invoke-direct {p0}, Ljfc;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput p1, p0, Ljms;->a:I
+
+    iput-object p2, p0, Ljms;->b:[Ljava/lang/Object;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final bridge synthetic e(Landroid/content/Context;Landroid/os/Looper;Ljge;Ljava/lang/Object;Ljei;Ljff;)Ljcz;
-    .locals 6
+.method public final a(Landroid/content/res/Resources;)Ljava/lang/String;
+    .locals 2
 
-    check-cast p4, Ljcx;
+    iget v0, p0, Ljms;->a:I
 
-    new-instance p4, Ljmz;
+    iget-object v1, p0, Ljms;->b:[Ljava/lang/Object;
 
-    move-object v0, p4
+    invoke-virtual {p1, v0, v1}, Landroid/content/res/Resources;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
 
-    move-object v1, p1
+    move-result-object p1
 
-    move-object v2, p2
-
-    move-object v3, p3
-
-    move-object v4, p5
-
-    move-object v5, p6
-
-    invoke-direct/range {v0 .. v5}, Ljmz;-><init>(Landroid/content/Context;Landroid/os/Looper;Ljge;Ljei;Ljff;)V
-
-    return-object p4
+    return-object p1
 .end method

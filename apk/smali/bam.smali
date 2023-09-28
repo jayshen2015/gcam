@@ -1,72 +1,45 @@
 .class public final Lbam;
-.super Lbai;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Lbad;
+
+
+# instance fields
+.field private final a:Lbct;
 
 
 # direct methods
-.method public constructor <init>(Lbav;)V
+.method public constructor <init>(Lbct;)V
     .locals 0
 
-    invoke-direct {p0, p1}, Lbai;-><init>(Lbav;)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lbam;->a:Lbct;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final b(Lbcj;)Z
-    .locals 1
+.method public final bridge synthetic a(Ljava/lang/Object;)Lbae;
+    .locals 2
 
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    check-cast p1, Ljava/io/InputStream;
 
-    iget-object p1, p1, Lbcj;->i:Laxf;
+    new-instance v0, Lban;
 
-    iget p1, p1, Laxf;->i:I
+    iget-object v1, p0, Lbam;->a:Lbct;
 
-    const/4 v0, 0x3
+    invoke-direct {v0, p1, v1}, Lban;-><init>(Ljava/io/InputStream;Lbct;)V
 
-    if-eq p1, v0, :cond_1
-
-    const/4 v0, 0x6
-
-    if-ne p1, v0, :cond_0
-
-    goto :goto_0
-
-    :cond_0
-    const/4 p1, 0x0
-
-    return p1
-
-    :cond_1
-    :goto_0
-    const/4 p1, 0x1
-
-    return p1
+    return-object v0
 .end method
 
-.method public final bridge synthetic c(Ljava/lang/Object;)Z
+.method public final b()Ljava/lang/Class;
     .locals 1
 
-    check-cast p1, Lbaa;
+    const-class v0, Ljava/io/InputStream;
 
-    iget-boolean v0, p1, Lbaa;->a:Z
-
-    if-eqz v0, :cond_1
-
-    iget-boolean p1, p1, Lbaa;->c:Z
-
-    if-eqz p1, :cond_0
-
-    goto :goto_0
-
-    :cond_0
-    const/4 p1, 0x0
-
-    return p1
-
-    :cond_1
-    :goto_0
-    const/4 p1, 0x1
-
-    return p1
+    return-object v0
 .end method

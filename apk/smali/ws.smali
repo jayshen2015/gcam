@@ -36,7 +36,7 @@
 
     iget-object v0, p0, Lws;->a:Lwy;
 
-    iget v0, v0, Lxf;->d:I
+    iget v0, v0, Lwy;->j:I
 
     return v0
 .end method

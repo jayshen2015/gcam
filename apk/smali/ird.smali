@@ -1,981 +1,294 @@
 .class public final Lird;
 .super Ljava/lang/Object;
 
-# interfaces
-.implements Logk;
-
 
 # instance fields
-.field private final a:Loiw;
+.field public final a:Ljava/nio/FloatBuffer;
 
-.field private final b:Loiw;
+.field public final b:I
 
-.field private final synthetic c:I
+.field public final c:I
+
+.field public final d:I
+
+.field public final e:Ljava/nio/ShortBuffer;
+
+.field public f:[I
+
+.field public g:[I
+
+.field public h:I
+
+.field public final i:Lmip;
+
+.field private j:I
 
 
 # direct methods
-.method public constructor <init>(Loiw;Loiw;I)V
-    .locals 0
-
-    iput p3, p0, Lird;->c:I
+.method public constructor <init>(Lmip;II[B[B[B[B[B[B)V
+    .locals 1
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lird;->a:Loiw;
+    const/4 p4, 0x1
 
-    iput-object p2, p0, Lird;->b:Loiw;
+    new-array p5, p4, [I
 
-    return-void
-.end method
+    iput-object p5, p0, Lird;->f:[I
 
-.method public constructor <init>(Loiw;Loiw;I[B)V
-    .locals 0
+    const/4 p5, 0x2
 
-    iput p3, p0, Lird;->c:I
+    new-array p6, p5, [I
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p6, p0, Lird;->g:[I
 
-    iput-object p1, p0, Lird;->b:Loiw;
+    const/4 p6, 0x0
 
-    iput-object p2, p0, Lird;->a:Loiw;
+    iput p6, p0, Lird;->h:I
 
-    return-void
-.end method
+    iput-object p1, p0, Lird;->i:Lmip;
 
-.method public constructor <init>(Loiw;Loiw;I[C)V
-    .locals 0
+    iput p2, p0, Lird;->c:I
 
-    iput p3, p0, Lird;->c:I
+    iput p3, p0, Lird;->b:I
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const p1, 0x8b31
 
-    iput-object p1, p0, Lird;->b:Loiw;
+    const-string p7, "      attribute vec4 a_vertex;\n      varying vec2 o_texture;\n      void main() {\n        // Scale the position to [-1, 1]\n        gl_Position.xy = a_vertex.xy * 2.0 - 1.0;\n        gl_Position.z = 0.0;\n        gl_Position.w = 1.0;\n        o_texture = a_vertex.zw;\n      }"
 
-    iput-object p2, p0, Lird;->a:Loiw;
+    invoke-static {p1, p7}, Lird;->b(ILjava/lang/String;)I
 
-    return-void
-.end method
+    move-result p1
 
-.method public constructor <init>(Loiw;Loiw;I[F)V
-    .locals 0
+    const p7, 0x8b30
 
-    iput p3, p0, Lird;->c:I
+    const-string p8, "      uniform sampler2D texture;\n      varying vec2 o_texture;\n      void main() {\n        vec3 val = texture2D(texture, o_texture).rgb;\n        gl_FragColor = vec4(val, 1.0);\n      }"
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-static {p7, p8}, Lird;->b(ILjava/lang/String;)I
 
-    iput-object p1, p0, Lird;->b:Loiw;
+    move-result p7
 
-    iput-object p2, p0, Lird;->a:Loiw;
+    invoke-static {}, Landroid/opengl/GLES30;->glCreateProgram()I
 
-    return-void
-.end method
+    move-result p8
 
-.method public constructor <init>(Loiw;Loiw;I[I)V
-    .locals 0
+    iput p8, p0, Lird;->j:I
 
-    iput p3, p0, Lird;->c:I
+    invoke-static {p8, p1}, Landroid/opengl/GLES30;->glAttachShader(II)V
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iget p1, p0, Lird;->j:I
 
-    iput-object p1, p0, Lird;->b:Loiw;
+    invoke-static {p1, p7}, Landroid/opengl/GLES30;->glAttachShader(II)V
 
-    iput-object p2, p0, Lird;->a:Loiw;
+    iget p1, p0, Lird;->j:I
 
-    return-void
-.end method
+    invoke-static {p1}, Landroid/opengl/GLES30;->glLinkProgram(I)V
 
-.method public constructor <init>(Loiw;Loiw;I[S)V
-    .locals 0
+    iget p1, p0, Lird;->j:I
 
-    iput p3, p0, Lird;->c:I
+    invoke-static {p1}, Landroid/opengl/GLES30;->glUseProgram(I)V
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iget-object p1, p0, Lird;->g:[I
 
-    iput-object p1, p0, Lird;->b:Loiw;
+    invoke-static {p5, p1, p6}, Landroid/opengl/GLES30;->glGenBuffers(I[II)V
 
-    iput-object p2, p0, Lird;->a:Loiw;
+    iget-object p1, p0, Lird;->g:[I
 
-    return-void
-.end method
+    aget p1, p1, p6
 
-.method public constructor <init>(Loiw;Loiw;I[Z)V
-    .locals 0
+    const p5, 0x88eb
 
-    iput p3, p0, Lird;->c:I
+    invoke-static {p5, p1}, Landroid/opengl/GLES30;->glBindBuffer(II)V
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    mul-int/lit8 p2, p2, 0x4
 
-    iput-object p1, p0, Lird;->b:Loiw;
+    mul-int p2, p2, p3
 
-    iput-object p2, p0, Lird;->a:Loiw;
+    const/4 p1, 0x0
 
-    return-void
-.end method
+    const p3, 0x88e5
 
-.method public constructor <init>(Loiw;Loiw;I[[B)V
-    .locals 0
+    invoke-static {p5, p2, p1, p3}, Landroid/opengl/GLES30;->glBufferData(IILjava/nio/Buffer;I)V
 
-    iput p3, p0, Lird;->c:I
+    iget-object p7, p0, Lird;->g:[I
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    aget p7, p7, p4
 
-    iput-object p1, p0, Lird;->b:Loiw;
+    invoke-static {p5, p7}, Landroid/opengl/GLES30;->glBindBuffer(II)V
 
-    iput-object p2, p0, Lird;->a:Loiw;
+    invoke-static {p5, p2, p1, p3}, Landroid/opengl/GLES30;->glBufferData(IILjava/nio/Buffer;I)V
 
-    return-void
-.end method
+    invoke-static {p5, p6}, Landroid/opengl/GLES30;->glBindBuffer(II)V
 
-.method public constructor <init>(Loiw;Loiw;I[[C)V
-    .locals 0
+    iget-object p1, p0, Lird;->f:[I
 
-    iput p3, p0, Lird;->c:I
+    invoke-static {p4, p1, p6}, Landroid/opengl/GLES30;->glGenTextures(I[II)V
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const p1, 0x84c0
 
-    iput-object p1, p0, Lird;->b:Loiw;
+    invoke-static {p1}, Landroid/opengl/GLES30;->glActiveTexture(I)V
 
-    iput-object p2, p0, Lird;->a:Loiw;
+    iget-object p1, p0, Lird;->f:[I
 
-    return-void
-.end method
+    aget p1, p1, p6
 
-.method public constructor <init>(Loiw;Loiw;I[[F)V
-    .locals 0
+    const/16 p2, 0xde1
 
-    iput p3, p0, Lird;->c:I
+    invoke-static {p2, p1}, Landroid/opengl/GLES30;->glBindTexture(II)V
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const/16 p1, 0x2802
 
-    iput-object p1, p0, Lird;->b:Loiw;
+    const p3, 0x47012f00    # 33071.0f
 
-    iput-object p2, p0, Lird;->a:Loiw;
+    invoke-static {p2, p1, p3}, Landroid/opengl/GLES30;->glTexParameterf(IIF)V
 
-    return-void
-.end method
+    const/16 p1, 0x2803
 
-.method public constructor <init>(Loiw;Loiw;I[[I)V
-    .locals 0
+    invoke-static {p2, p1, p3}, Landroid/opengl/GLES30;->glTexParameterf(IIF)V
 
-    iput p3, p0, Lird;->c:I
+    const/16 p1, 0x2801
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const p3, 0x46180400    # 9729.0f
 
-    iput-object p1, p0, Lird;->b:Loiw;
+    invoke-static {p2, p1, p3}, Landroid/opengl/GLES30;->glTexParameterf(IIF)V
 
-    iput-object p2, p0, Lird;->a:Loiw;
+    const/16 p1, 0x2800
 
-    return-void
-.end method
+    invoke-static {p2, p1, p3}, Landroid/opengl/GLES30;->glTexParameterf(IIF)V
 
-.method public constructor <init>(Loiw;Loiw;I[[S)V
-    .locals 0
+    iget p1, p0, Lird;->j:I
 
-    iput p3, p0, Lird;->c:I
+    const-string p2, "a_vertex"
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-static {p1, p2}, Landroid/opengl/GLES30;->glGetAttribLocation(ILjava/lang/String;)I
 
-    iput-object p1, p0, Lird;->b:Loiw;
+    move-result p1
 
-    iput-object p2, p0, Lird;->a:Loiw;
+    iput p1, p0, Lird;->d:I
 
-    return-void
-.end method
+    const/16 p1, 0x5ac
 
-.method public constructor <init>(Loiw;Loiw;I[[Z)V
-    .locals 0
+    invoke-static {p1}, Ljava/nio/ByteBuffer;->allocateDirect(I)Ljava/nio/ByteBuffer;
 
-    iput p3, p0, Lird;->c:I
+    move-result-object p1
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-static {}, Ljava/nio/ByteOrder;->nativeOrder()Ljava/nio/ByteOrder;
 
-    iput-object p1, p0, Lird;->b:Loiw;
+    move-result-object p2
 
-    iput-object p2, p0, Lird;->a:Loiw;
+    invoke-virtual {p1, p2}, Ljava/nio/ByteBuffer;->order(Ljava/nio/ByteOrder;)Ljava/nio/ByteBuffer;
 
-    return-void
-.end method
+    invoke-virtual {p1}, Ljava/nio/ByteBuffer;->asShortBuffer()Ljava/nio/ShortBuffer;
 
-.method public constructor <init>(Loiw;Loiw;I[[[B)V
-    .locals 0
+    move-result-object p1
 
-    iput p3, p0, Lird;->c:I
+    const/4 p2, 0x0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    :goto_0
+    const/16 p3, 0xb
 
-    iput-object p1, p0, Lird;->b:Loiw;
+    if-ge p2, p3, :cond_1
 
-    iput-object p2, p0, Lird;->a:Loiw;
+    const/4 p5, 0x0
 
-    return-void
-.end method
+    :goto_1
+    if-ge p5, p3, :cond_0
 
-.method public static a(Loiw;Loiw;)Lird;
-    .locals 3
+    mul-int/lit8 p7, p2, 0xc
 
-    new-instance v0, Lird;
+    add-int/2addr p7, p5
 
-    const/4 v1, 0x1
+    add-int/lit8 p8, p7, 0x1
 
-    const/4 v2, 0x0
+    int-to-short p8, p8
 
-    invoke-direct {v0, p0, p1, v1, v2}, Lird;-><init>(Loiw;Loiw;I[B)V
+    add-int/lit8 p9, p2, 0x1
 
-    return-object v0
-.end method
+    mul-int/lit8 p9, p9, 0xc
 
+    add-int/2addr p9, p5
 
-# virtual methods
-.method public final synthetic get()Ljava/lang/Object;
-    .locals 13
+    int-to-short v0, p9
 
-    iget v0, p0, Lird;->c:I
+    int-to-short p7, p7
 
-    const/4 v1, 0x0
+    invoke-virtual {p1, p7}, Ljava/nio/ShortBuffer;->put(S)Ljava/nio/ShortBuffer;
 
-    packed-switch v0, :pswitch_data_0
+    invoke-virtual {p1, p8}, Ljava/nio/ShortBuffer;->put(S)Ljava/nio/ShortBuffer;
 
-    iget-object v0, p0, Lird;->b:Loiw;
+    invoke-virtual {p1, v0}, Ljava/nio/ShortBuffer;->put(S)Ljava/nio/ShortBuffer;
 
-    check-cast v0, Ldwh;
+    invoke-virtual {p1, p8}, Ljava/nio/ShortBuffer;->put(S)Ljava/nio/ShortBuffer;
 
-    invoke-virtual {v0}, Ldwh;->a()Landroid/content/Context;
+    add-int/2addr p9, p4
 
-    move-result-object v0
+    int-to-short p7, p9
 
-    iget-object v2, p0, Lird;->a:Loiw;
+    invoke-virtual {p1, p7}, Ljava/nio/ShortBuffer;->put(S)Ljava/nio/ShortBuffer;
 
-    invoke-interface {v2}, Loiw;->get()Ljava/lang/Object;
+    invoke-virtual {p1, v0}, Ljava/nio/ShortBuffer;->put(S)Ljava/nio/ShortBuffer;
 
-    move-result-object v2
+    add-int/lit8 p5, p5, 0x1
 
-    check-cast v2, Llhe;
-
-    new-instance v3, Llhe;
-
-    invoke-direct {v3, v0, v2, v1}, Llhe;-><init>(Landroid/content/Context;Llhe;[B)V
-
-    return-object v3
-
-    :pswitch_0
-    iget-object v0, p0, Lird;->b:Loiw;
-
-    check-cast v0, Ldwh;
-
-    invoke-virtual {v0}, Ldwh;->a()Landroid/content/Context;
-
-    move-result-object v0
-
-    iget-object v1, p0, Lird;->a:Loiw;
-
-    invoke-interface {v1}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Ljava/util/concurrent/Executor;
-
-    new-instance v2, Llgn;
-
-    invoke-direct {v2, v0, v1}, Llgn;-><init>(Landroid/content/Context;Ljava/util/concurrent/Executor;)V
-
-    return-object v2
-
-    :pswitch_1
-    iget-object v0, p0, Lird;->a:Loiw;
-
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Llgd;
-
-    iget-object v1, p0, Lird;->b:Loiw;
-
-    check-cast v1, Lkrs;
-
-    invoke-virtual {v1}, Lkrs;->a()Llhe;
-
-    move-result-object v1
-
-    iget-object v2, v0, Llgd;->a:Lnox;
-
-    if-nez v2, :cond_1
-
-    iget v2, v0, Llgd;->c:I
-
-    new-instance v3, Ljava/util/concurrent/ScheduledThreadPoolExecutor;
-
-    new-instance v4, Llgc;
-
-    iget v0, v0, Llgd;->b:I
-
-    invoke-direct {v4, v0}, Llgc;-><init>(I)V
-
-    new-instance v0, Llgb;
-
-    invoke-direct {v0}, Llgb;-><init>()V
-
-    invoke-direct {v3, v2, v4, v0}, Ljava/util/concurrent/ScheduledThreadPoolExecutor;-><init>(ILjava/util/concurrent/ThreadFactory;Ljava/util/concurrent/RejectedExecutionHandler;)V
-
-    invoke-virtual {v3, v2}, Ljava/util/concurrent/ScheduledThreadPoolExecutor;->setMaximumPoolSize(I)V
-
-    invoke-static {v3}, Lnsy;->r(Ljava/util/concurrent/ScheduledExecutorService;)Lnox;
-
-    move-result-object v2
-
-    iget-object v0, v1, Llhe;->a:Ljava/lang/Object;
-
-    if-nez v0, :cond_0
-
-    goto :goto_0
+    goto :goto_1
 
     :cond_0
-    invoke-interface {v0}, Lkrt;->a()Lnox;
-
-    move-result-object v2
+    add-int/lit8 p2, p2, 0x1
 
     goto :goto_0
 
     :cond_1
-    :goto_0
-    invoke-virtual {v2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    invoke-virtual {p1, p6}, Ljava/nio/ShortBuffer;->position(I)Ljava/nio/Buffer;
 
-    return-object v2
+    move-result-object p2
 
-    :pswitch_2
-    iget-object v0, p0, Lird;->b:Loiw;
+    check-cast p2, Ljava/nio/ShortBuffer;
 
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
+    iput-object p1, p0, Lird;->e:Ljava/nio/ShortBuffer;
 
-    move-result-object v0
+    const/16 p1, 0x900
 
-    check-cast v0, Lnox;
+    invoke-static {p1}, Ljava/nio/ByteBuffer;->allocateDirect(I)Ljava/nio/ByteBuffer;
 
-    iget-object v1, p0, Lird;->a:Loiw;
+    move-result-object p1
 
-    invoke-interface {v1}, Loiw;->get()Ljava/lang/Object;
+    invoke-static {}, Ljava/nio/ByteOrder;->nativeOrder()Ljava/nio/ByteOrder;
 
-    move-result-object v1
+    move-result-object p2
 
-    check-cast v1, Llhe;
+    invoke-virtual {p1, p2}, Ljava/nio/ByteBuffer;->order(Ljava/nio/ByteOrder;)Ljava/nio/ByteBuffer;
 
-    new-instance v2, Llfq;
+    invoke-virtual {p1}, Ljava/nio/ByteBuffer;->asFloatBuffer()Ljava/nio/FloatBuffer;
 
-    invoke-direct {v2, v0, v1}, Llfq;-><init>(Lnox;Llhe;)V
+    move-result-object p1
 
-    return-object v2
+    iput-object p1, p0, Lird;->a:Ljava/nio/FloatBuffer;
 
-    :pswitch_3
-    iget-object v0, p0, Lird;->b:Loiw;
+    return-void
+.end method
 
-    check-cast v0, Ldwh;
+.method private static b(ILjava/lang/String;)I
+    .locals 0
 
-    invoke-virtual {v0}, Ldwh;->a()Landroid/content/Context;
+    invoke-static {p0}, Landroid/opengl/GLES30;->glCreateShader(I)I
 
-    move-result-object v0
+    move-result p0
 
-    iget-object v1, p0, Lird;->a:Loiw;
+    invoke-static {p0, p1}, Landroid/opengl/GLES30;->glShaderSource(ILjava/lang/String;)V
 
-    check-cast v1, Lhhx;
+    invoke-static {p0}, Landroid/opengl/GLES30;->glCompileShader(I)V
 
-    invoke-virtual {v1}, Lhhx;->a()Lmqp;
+    return p0
+.end method
 
-    move-result-object v1
 
-    new-instance v2, Ldet;
+# virtual methods
+.method public final a()I
+    .locals 1
 
-    const/16 v3, 0xd
+    iget v0, p0, Lird;->h:I
 
-    invoke-direct {v2, v0, v3}, Ldet;-><init>(Landroid/content/Context;I)V
+    rsub-int/lit8 v0, v0, 0x1
 
-    invoke-virtual {v1, v2}, Lmqp;->e(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lmrl;
-
-    invoke-interface {v0}, Lmrl;->a()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/content/SharedPreferences;
-
-    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    return-object v0
-
-    :pswitch_4
-    iget-object v0, p0, Lird;->a:Loiw;
-
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lkoe;
-
-    iget-object v1, p0, Lird;->b:Loiw;
-
-    iget-boolean v0, v0, Lkoe;->c:Z
-
-    const-string v0, "MediaFsQModule"
-
-    const-string v2, "Returning Q MediaFs implementation"
-
-    invoke-static {v0, v2}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
-
-    check-cast v1, Lkqm;
-
-    invoke-virtual {v1}, Lkqm;->a()Lkql;
-
-    move-result-object v0
-
-    return-object v0
-
-    :pswitch_5
-    iget-object v0, p0, Lird;->b:Loiw;
-
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lmqp;
-
-    iget-object v1, p0, Lird;->a:Loiw;
-
-    invoke-virtual {v0}, Lmqp;->g()Z
-
-    move-result v2
-
-    if-eqz v2, :cond_2
-
-    invoke-virtual {v0}, Lmqp;->c()Ljava/lang/Object;
-
-    move-result-object v0
-
-    goto :goto_1
-
-    :cond_2
-    invoke-interface {v1}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    :goto_1
-    check-cast v0, Lkmn;
-
-    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    return-object v0
-
-    :pswitch_6
-    iget-object v0, p0, Lird;->a:Loiw;
-
-    check-cast v0, Lemh;
-
-    invoke-virtual {v0}, Lemh;->a()Landroid/hardware/SensorManager;
-
-    move-result-object v0
-
-    iget-object v1, p0, Lird;->b:Loiw;
-
-    check-cast v1, Lkao;
-
-    invoke-virtual {v1}, Lkao;->a()Lkaq;
-
-    move-result-object v1
-
-    new-instance v2, Lkmj;
-
-    invoke-direct {v2, v0, v1}, Lkmj;-><init>(Landroid/hardware/SensorManager;Lkaq;)V
-
-    return-object v2
-
-    :pswitch_7
-    iget-object v0, p0, Lird;->a:Loiw;
-
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Llas;
-
-    iget-object v0, p0, Lird;->b:Loiw;
-
-    check-cast v0, Lfmj;
-
-    invoke-virtual {v0}, Lfmj;->a()Lkli;
-
-    move-result-object v0
-
-    new-instance v1, Lkkk;
-
-    invoke-direct {v1, v0}, Lkkk;-><init>(Lkli;)V
-
-    return-object v1
-
-    :pswitch_8
-    iget-object v0, p0, Lird;->b:Loiw;
-
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lrb;
-
-    iget-object v1, p0, Lird;->a:Loiw;
-
-    invoke-interface {v1}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Ljava/util/Map;
-
-    new-instance v2, Lkjr;
-
-    invoke-direct {v2, v0, v1}, Lkjr;-><init>(Lrb;Ljava/util/Map;)V
-
-    return-object v2
-
-    :pswitch_9
-    iget-object v0, p0, Lird;->a:Loiw;
-
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lkjc;
-
-    iget-object v1, p0, Lird;->b:Loiw;
-
-    invoke-interface {v1}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Lmqp;
-
-    invoke-virtual {v1}, Lmqp;->g()Z
-
-    move-result v2
-
-    if-eqz v2, :cond_3
-
-    invoke-virtual {v1}, Lmqp;->c()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lkhw;
-
-    goto :goto_2
-
-    :cond_3
-    :goto_2
-    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    return-object v0
-
-    :pswitch_a
-    iget-object v0, p0, Lird;->b:Loiw;
-
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljuf;
-
-    iget-object v1, p0, Lird;->a:Loiw;
-
-    invoke-interface {v1}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Ljvd;
-
-    new-instance v1, Landroid/os/HandlerThread;
-
-    const-string v2, "Session-Handler"
-
-    const/4 v3, -0x4
-
-    invoke-direct {v1, v2, v3}, Landroid/os/HandlerThread;-><init>(Ljava/lang/String;I)V
-
-    invoke-virtual {v1}, Landroid/os/HandlerThread;->start()V
-
-    new-instance v2, Ljue;
-
-    invoke-direct {v2, v1}, Ljue;-><init>(Landroid/os/HandlerThread;)V
-
-    invoke-virtual {v0, v2}, Ljuf;->d(Lkad;)V
-
-    invoke-virtual {v1}, Landroid/os/HandlerThread;->getLooper()Landroid/os/Looper;
-
-    move-result-object v0
-
-    invoke-static {v0}, Ljvd;->o(Landroid/os/Looper;)Landroid/os/Handler;
-
-    move-result-object v0
-
-    return-object v0
-
-    :pswitch_b
-    iget-object v0, p0, Lird;->a:Loiw;
-
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    move-object v2, v0
-
-    check-cast v2, Landroidx/wear/ambient/AmbientDelegate;
-
-    iget-object v0, p0, Lird;->b:Loiw;
-
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    move-object v3, v0
-
-    check-cast v3, Lkgd;
-
-    new-instance v0, Ligo;
-
-    const/4 v4, 0x0
-
-    const/4 v5, 0x0
-
-    const/4 v6, 0x0
-
-    const/4 v7, 0x0
-
-    const/4 v8, 0x0
-
-    move-object v1, v0
-
-    invoke-direct/range {v1 .. v8}, Ligo;-><init>(Landroidx/wear/ambient/AmbientDelegate;Lkgd;[B[B[B[B[B)V
-
-    return-object v0
-
-    :pswitch_c
-    iget-object v0, p0, Lird;->b:Loiw;
-
-    check-cast v0, Lkge;
-
-    invoke-virtual {v0}, Lkge;->a()Lkeq;
-
-    iget-object v0, p0, Lird;->a:Loiw;
-
-    check-cast v0, Lkao;
-
-    invoke-virtual {v0}, Lkao;->a()Lkaq;
-
-    move-result-object v6
-
-    new-instance v0, Lkpo;
-
-    sget-object v2, Lmza;->a:Lmza;
-
-    sget-object v1, Landroid/hardware/camera2/CaptureRequest;->CONTROL_AF_TRIGGER:Landroid/hardware/camera2/CaptureRequest$Key;
-
-    sget-object v3, Landroid/hardware/camera2/CaptureRequest;->CONTROL_AE_LOCK:Landroid/hardware/camera2/CaptureRequest$Key;
-
-    sget-object v4, Landroid/hardware/camera2/CaptureRequest;->CONTROL_AWB_LOCK:Landroid/hardware/camera2/CaptureRequest$Key;
-
-    invoke-static {v1, v3, v4}, Lmwn;->J(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Lmwn;
-
-    move-result-object v3
-
-    sget-object v5, Lmza;->a:Lmza;
-
-    move-object v1, v0
-
-    move-object v4, v5
-
-    invoke-direct/range {v1 .. v6}, Lkpo;-><init>(Ljava/util/Set;Ljava/util/Set;Ljava/util/Set;Ljava/util/Set;Lkaq;)V
-
-    return-object v0
-
-    :pswitch_d
-    iget-object v0, p0, Lird;->a:Loiw;
-
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljuf;
-
-    iget-object v1, p0, Lird;->b:Loiw;
-
-    invoke-interface {v1}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Ljvd;
-
-    const-string v1, "CallbackHndlr"
-
-    invoke-static {v0, v1}, Ljvd;->p(Ljuf;Ljava/lang/String;)Landroid/os/Handler;
-
-    move-result-object v0
-
-    return-object v0
-
-    :pswitch_e
-    iget-object v0, p0, Lird;->b:Loiw;
-
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/util/concurrent/Executor;
-
-    iget-object v1, p0, Lird;->a:Loiw;
-
-    invoke-interface {v1}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Lkbc;
-
-    new-instance v2, Ligo;
-
-    new-instance v3, Lkbi;
-
-    const-string v4, "FrameEventHandler"
-
-    invoke-direct {v3, v0, v1, v4}, Lkbi;-><init>(Ljava/util/concurrent/Executor;Lkbc;Ljava/lang/String;)V
-
-    invoke-direct {v2, v3}, Ligo;-><init>(Ljava/util/concurrent/Executor;)V
-
-    return-object v2
-
-    :pswitch_f
-    iget-object v0, p0, Lird;->b:Loiw;
-
-    check-cast v0, Lfmj;
-
-    invoke-virtual {v0}, Lfmj;->a()Lkli;
-
-    move-result-object v0
-
-    iget-object v1, p0, Lird;->a:Loiw;
-
-    invoke-interface {v1}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Lmwn;
-
-    new-instance v2, Lkte;
-
-    invoke-direct {v2, v0, v1}, Lkte;-><init>(Lkli;Lmwn;)V
-
-    return-object v2
-
-    :pswitch_10
-    iget-object v0, p0, Lird;->b:Loiw;
-
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lkoe;
-
-    iget-object v1, p0, Lird;->a:Loiw;
-
-    iget-boolean v0, v0, Lkoe;->d:Z
-
-    check-cast v1, Lkbn;
-
-    invoke-virtual {v1}, Lkbn;->a()Lkbm;
-
-    move-result-object v0
-
-    return-object v0
-
-    :pswitch_11
-    iget-object v0, p0, Lird;->b:Loiw;
-
-    check-cast v0, Ljzp;
-
-    invoke-virtual {v0}, Ljzp;->a()Landroid/content/Context;
-
-    move-result-object v3
-
-    iget-object v0, p0, Lird;->a:Loiw;
-
-    check-cast v0, Logl;
-
-    iget-object v0, v0, Logl;->a:Ljava/lang/Object;
-
-    check-cast v0, Ljava/util/Set;
-
-    new-instance v2, Ljava/util/HashMap;
-
-    invoke-interface {v0}, Ljava/util/Set;->size()I
-
-    move-result v4
-
-    invoke-direct {v2, v4}, Ljava/util/HashMap;-><init>(I)V
-
-    invoke-static {v2, v0}, Lljr;->Z(Ljava/util/Map;Ljava/lang/Iterable;)V
-
-    invoke-virtual {v2}, Ljava/util/HashMap;->size()I
-
-    move-result v4
-
-    invoke-interface {v0}, Ljava/util/Set;->size()I
-
-    move-result v5
-
-    if-ne v4, v5, :cond_4
-
-    new-instance v0, Lrh;
-
-    new-instance v12, Lrf;
-
-    new-instance v6, Lbkb;
-
-    invoke-direct {v6, v2}, Lbkb;-><init>(Ljava/util/Map;)V
-
-    new-instance v4, Lrg;
-
-    invoke-direct {v4, v1}, Lrg;-><init>([B)V
-
-    new-instance v5, Lbkb;
-
-    invoke-direct {v5, v1, v1, v1}, Lbkb;-><init>([B[C[B)V
-
-    new-instance v7, Lre;
-
-    invoke-direct {v7, v1}, Lre;-><init>([B)V
-
-    const/4 v8, 0x0
-
-    const/4 v9, 0x0
-
-    const/4 v10, 0x0
-
-    const/4 v11, 0x0
-
-    move-object v2, v12
-
-    invoke-direct/range {v2 .. v11}, Lrf;-><init>(Landroid/content/Context;Lrg;Lbkb;Lbkb;Lre;[B[B[B[B)V
-
-    invoke-direct {v0, v12}, Lrh;-><init>(Lrf;)V
-
-    return-object v0
-
-    :cond_4
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, "Unexpected or mismatched cameraBackends! Received: "
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/Object;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-virtual {v2, v0}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v0
-
-    new-instance v1, Ljava/lang/IllegalStateException;
-
-    invoke-direct {v1, v0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw v1
-
-    :pswitch_12
-    iget-object v0, p0, Lird;->b:Loiw;
-
-    iget-object v1, p0, Lird;->a:Loiw;
-
-    invoke-interface {v1}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Ldhi;
-
-    sget-object v2, Ldim;->a:Ldhj;
-
-    invoke-interface {v1, v2}, Ldhi;->l(Ldhj;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_5
-
-    check-cast v0, Lest;
-
-    invoke-virtual {v0}, Lest;->a()Lmqp;
-
-    move-result-object v0
-
-    goto :goto_3
-
-    :cond_5
-    sget-object v0, Lmpx;->a:Lmpx;
-
-    :goto_3
-    return-object v0
-
-    :pswitch_13
-    iget-object v0, p0, Lird;->a:Loiw;
-
-    iget-object v1, p0, Lird;->b:Loiw;
-
-    invoke-interface {v1}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Ldhi;
-
-    sget-object v2, Ldim;->a:Ldhj;
-
-    invoke-interface {v1, v2}, Ldhi;->l(Ldhj;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_6
-
-    check-cast v0, Lest;
-
-    invoke-virtual {v0}, Lest;->a()Lmqp;
-
-    move-result-object v0
-
-    goto :goto_4
-
-    :cond_6
-    sget-object v0, Lmpx;->a:Lmpx;
-
-    :goto_4
-    return-object v0
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_13
-        :pswitch_12
-        :pswitch_11
-        :pswitch_10
-        :pswitch_f
-        :pswitch_e
-        :pswitch_d
-        :pswitch_c
-        :pswitch_b
-        :pswitch_a
-        :pswitch_9
-        :pswitch_8
-        :pswitch_7
-        :pswitch_6
-        :pswitch_5
-        :pswitch_4
-        :pswitch_3
-        :pswitch_2
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
+    return v0
 .end method

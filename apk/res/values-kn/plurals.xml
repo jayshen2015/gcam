@@ -1,12 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <plurals name="accessibility_timelapse_manual_record_speed_desc">
-        <item quantity="other">ಟೈಮ್ ಲ್ಯಾಪ್ಸ್ %d ಪಟ್ಟು ವೇಗ</item>
-        <item quantity="one">ಟೈಮ್ ಲ್ಯಾಪ್ಸ್ %d ಪಟ್ಟು ವೇಗ</item>
-    </plurals>
-    <plurals name="number_of_cropped_face">
-        <item quantity="other">%d ಮುಖಗಳನ್ನು ಕ್ರಾಪ್ ಮಾಡಲಾಗಿದೆ.</item>
-        <item quantity="one">%d ಮುಖಗಳನ್ನು ಕ್ರಾಪ್ ಮಾಡಲಾಗಿದೆ.</item>
+    <plurals name="number_of_faces_announcement">
+        <item quantity="other">%1$d ಮುಖಗಳು.</item>
+        <item quantity="one">%1$d ಮುಖಗಳು.</item>
     </plurals>
     <plurals name="photos_remaining">
         <item quantity="other">%s ಫೋಟೋಗಳ ಬಗ್ಗೆ</item>
@@ -17,8 +13,8 @@
         <item quantity="one">(%1$d ಆ್ಯಪ್‌ಗಳನ್ನು ಆಯ್ಕೆ ಮಾಡಲಾಗಿದೆ)</item>
     </plurals>
     <plurals name="social_share_info">
-        <item quantity="other">ಕ್ಯಾಮರಾದಿಂದ ಸಾಮಾಜಿಕ ಆ್ಯಪ್‌ಗಳಲ್ಲಿ ತ್ವರಿತವಾಗಿ ಫೋಟೋಗಳು ಮತ್ತು ವೀಡಿಯೊಗಳನ್ನು ಹಂಚಿಕೊಳ್ಳಿ. %1$d ಆ್ಯಪ್‌ಗಳವರೆಗೆ ಆಯ್ಕೆಮಾಡಿ. ಲಾಕ್ ಮಾಡಿದ ಫೋಲ್ಡರ್‌ನಲ್ಲಿ ಉಳಿಸಲಾದ ಫೋಟೋಗಳು ಮತ್ತು ವೀಡಿಯೊಗಳನ್ನು ಹಂಚಿಕೊಳ್ಳಲಾಗುವುದಿಲ್ಲ.</item>
-        <item quantity="one">ಕ್ಯಾಮರಾದಿಂದ ಸಾಮಾಜಿಕ ಆ್ಯಪ್‌ಗಳಲ್ಲಿ ತ್ವರಿತವಾಗಿ ಫೋಟೋಗಳು ಮತ್ತು ವೀಡಿಯೊಗಳನ್ನು ಹಂಚಿಕೊಳ್ಳಿ. %1$d ಆ್ಯಪ್‌ಗಳವರೆಗೆ ಆಯ್ಕೆಮಾಡಿ. ಲಾಕ್ ಮಾಡಿದ ಫೋಲ್ಡರ್‌ನಲ್ಲಿ ಉಳಿಸಲಾದ ಫೋಟೋಗಳು ಮತ್ತು ವೀಡಿಯೊಗಳನ್ನು ಹಂಚಿಕೊಳ್ಳಲಾಗುವುದಿಲ್ಲ.</item>
+        <item quantity="other">ಕ್ಯಾಮರಾದಿಂದಲೇ ನೇರವಾಗಿ ಸಾಮಾಜಿಕ ಆ್ಯಪ್‌ಗಳಲ್ಲಿ ತ್ವರಿತವಾಗಿ ಫೋಟೋಗಳು ಮತ್ತು ವೀಡಿಯೊಗಳನ್ನು ಹಂಚಿಕೊಳ್ಳಿ. %1$d ಆ್ಯಪ್‌ಗಳವರೆಗೆ ಆಯ್ಕೆಮಾಡಿ. ಲಾಕ್ ಮಾಡಿದ ಫೋಲ್ಡರ್‌ಗೆ ಉಳಿಸಲಾದ ಫೋಟೋಗಳು ಮತ್ತು ವೀಡಿಯೊಗಳನ್ನು ಹಂಚಿಕೊಳ್ಳಲಾಗುವುದಿಲ್ಲ.</item>
+        <item quantity="one">ಕ್ಯಾಮರಾದಿಂದಲೇ ನೇರವಾಗಿ ಸಾಮಾಜಿಕ ಆ್ಯಪ್‌ಗಳಲ್ಲಿ ತ್ವರಿತವಾಗಿ ಫೋಟೋಗಳು ಮತ್ತು ವೀಡಿಯೊಗಳನ್ನು ಹಂಚಿಕೊಳ್ಳಿ. %1$d ಆ್ಯಪ್‌ಗಳವರೆಗೆ ಆಯ್ಕೆಮಾಡಿ. ಲಾಕ್ ಮಾಡಿದ ಫೋಲ್ಡರ್‌ಗೆ ಉಳಿಸಲಾದ ಫೋಟೋಗಳು ಮತ್ತು ವೀಡಿಯೊಗಳನ್ನು ಹಂಚಿಕೊಳ್ಳಲಾಗುವುದಿಲ್ಲ.</item>
     </plurals>
     <plurals name="social_share_select_error">
         <item quantity="other">%1$d ಆ್ಯಪ್‌ಗಳವರೆಗೆ ಆಯ್ಕೆಮಾಡಿ</item>

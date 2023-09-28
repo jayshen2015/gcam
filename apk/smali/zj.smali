@@ -1,155 +1,364 @@
-.class public final Lzj;
+.class final Lzj;
 .super Ljava/lang/Object;
 
 
-# instance fields
-.field public final a:Z
-
-.field final b:Ljava/lang/String;
-
-.field public c:I
-
-.field public d:F
-
-.field public e:Ljava/lang/String;
-
-.field f:Z
-
-.field public g:I
-
-.field public final h:I
+# static fields
+.field public static final a:Landroid/util/SparseIntArray;
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/String;ILjava/lang/Object;Z)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 5
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance v0, Landroid/util/SparseIntArray;
 
-    iput-object p1, p0, Lzj;->b:Ljava/lang/String;
+    invoke-direct {v0}, Landroid/util/SparseIntArray;-><init>()V
 
-    iput p2, p0, Lzj;->h:I
+    sput-object v0, Lzj;->a:Landroid/util/SparseIntArray;
 
-    iput-boolean p4, p0, Lzj;->a:Z
+    sget-object v1, Lzz;->a:[I
 
-    invoke-virtual {p0, p3}, Lzj;->a(Ljava/lang/Object;)V
+    const/16 v1, 0x61
+
+    const/16 v2, 0x40
+
+    invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->append(II)V
+
+    const/16 v1, 0x4a
+
+    const/16 v3, 0x41
+
+    invoke-virtual {v0, v1, v3}, Landroid/util/SparseIntArray;->append(II)V
+
+    const/16 v1, 0x53
+
+    const/16 v4, 0x8
+
+    invoke-virtual {v0, v1, v4}, Landroid/util/SparseIntArray;->append(II)V
+
+    const/16 v1, 0x54
+
+    const/16 v4, 0x9
+
+    invoke-virtual {v0, v1, v4}, Landroid/util/SparseIntArray;->append(II)V
+
+    const/16 v1, 0x56
+
+    const/16 v4, 0xa
+
+    invoke-virtual {v0, v1, v4}, Landroid/util/SparseIntArray;->append(II)V
+
+    const/16 v1, 0x57
+
+    const/16 v4, 0xb
+
+    invoke-virtual {v0, v1, v4}, Landroid/util/SparseIntArray;->append(II)V
+
+    const/16 v1, 0x5d
+
+    const/16 v4, 0xc
+
+    invoke-virtual {v0, v1, v4}, Landroid/util/SparseIntArray;->append(II)V
+
+    const/16 v1, 0x5c
+
+    const/16 v4, 0xd
+
+    invoke-virtual {v0, v1, v4}, Landroid/util/SparseIntArray;->append(II)V
+
+    const/16 v1, 0xe
+
+    invoke-virtual {v0, v2, v1}, Landroid/util/SparseIntArray;->append(II)V
+
+    const/16 v1, 0x3f
+
+    const/16 v2, 0xf
+
+    invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->append(II)V
+
+    const/16 v1, 0x3b
+
+    const/16 v2, 0x10
+
+    invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->append(II)V
+
+    const/16 v1, 0x3d
+
+    const/16 v2, 0x34
+
+    invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->append(II)V
+
+    const/16 v1, 0x3c
+
+    const/16 v2, 0x35
+
+    invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->append(II)V
+
+    const/4 v1, 0x2
+
+    invoke-virtual {v0, v3, v1}, Landroid/util/SparseIntArray;->append(II)V
+
+    const/16 v1, 0x43
+
+    const/4 v2, 0x3
+
+    invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->append(II)V
+
+    const/16 v1, 0x42
+
+    const/4 v2, 0x4
+
+    invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->append(II)V
+
+    const/16 v2, 0x66
+
+    const/16 v3, 0x31
+
+    invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->append(II)V
+
+    const/16 v2, 0x67
+
+    const/16 v3, 0x32
+
+    invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->append(II)V
+
+    const/16 v2, 0x47
+
+    const/4 v3, 0x5
+
+    invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->append(II)V
+
+    const/16 v2, 0x48
+
+    const/4 v3, 0x6
+
+    invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->append(II)V
+
+    const/16 v2, 0x49
+
+    const/4 v3, 0x7
+
+    invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->append(II)V
+
+    const/4 v2, 0x0
+
+    const/4 v3, 0x1
+
+    invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->append(II)V
+
+    const/16 v2, 0x58
+
+    const/16 v3, 0x11
+
+    invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->append(II)V
+
+    const/16 v2, 0x59
+
+    const/16 v3, 0x12
+
+    invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->append(II)V
+
+    const/16 v2, 0x46
+
+    const/16 v3, 0x13
+
+    invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->append(II)V
+
+    const/16 v2, 0x45
+
+    const/16 v3, 0x14
+
+    invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->append(II)V
+
+    const/16 v2, 0x6b
+
+    const/16 v3, 0x15
+
+    invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->append(II)V
+
+    const/16 v2, 0x6e
+
+    const/16 v3, 0x16
+
+    invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->append(II)V
+
+    const/16 v2, 0x6c
+
+    const/16 v3, 0x17
+
+    invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->append(II)V
+
+    const/16 v2, 0x69
+
+    const/16 v3, 0x18
+
+    invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->append(II)V
+
+    const/16 v2, 0x6d
+
+    const/16 v3, 0x19
+
+    invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->append(II)V
+
+    const/16 v2, 0x6a
+
+    const/16 v3, 0x1a
+
+    invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->append(II)V
+
+    const/16 v2, 0x68
+
+    const/16 v3, 0x37
+
+    invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->append(II)V
+
+    const/16 v2, 0x6f
+
+    const/16 v3, 0x36
+
+    invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->append(II)V
+
+    const/16 v2, 0x4f
+
+    const/16 v3, 0x1d
+
+    invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->append(II)V
+
+    const/16 v2, 0x5e
+
+    const/16 v3, 0x1e
+
+    invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->append(II)V
+
+    const/16 v2, 0x44
+
+    const/16 v3, 0x2c
+
+    invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->append(II)V
+
+    const/16 v2, 0x51
+
+    const/16 v3, 0x2d
+
+    invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->append(II)V
+
+    const/16 v2, 0x60
+
+    const/16 v3, 0x2e
+
+    invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->append(II)V
+
+    const/16 v2, 0x50
+
+    const/16 v3, 0x2f
+
+    invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->append(II)V
+
+    const/16 v2, 0x5f
+
+    const/16 v3, 0x30
+
+    invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->append(II)V
+
+    const/16 v2, 0x39
+
+    const/16 v3, 0x1b
+
+    invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->append(II)V
+
+    const/16 v2, 0x38
+
+    const/16 v3, 0x1c
+
+    invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->append(II)V
+
+    const/16 v2, 0x62
+
+    const/16 v3, 0x1f
+
+    invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->append(II)V
+
+    const/16 v2, 0x4b
+
+    const/16 v3, 0x20
+
+    invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->append(II)V
+
+    const/16 v2, 0x64
+
+    const/16 v3, 0x21
+
+    invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->append(II)V
+
+    const/16 v2, 0x63
+
+    const/16 v3, 0x22
+
+    invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->append(II)V
+
+    const/16 v2, 0x65
+
+    const/16 v3, 0x23
+
+    invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->append(II)V
+
+    const/16 v2, 0x4d
+
+    const/16 v3, 0x24
+
+    invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->append(II)V
+
+    const/16 v2, 0x4c
+
+    const/16 v3, 0x25
+
+    invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->append(II)V
+
+    const/16 v2, 0x4e
+
+    const/16 v3, 0x26
+
+    invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->append(II)V
+
+    const/16 v2, 0x52
+
+    const/16 v3, 0x27
+
+    invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->append(II)V
+
+    const/16 v2, 0x5b
+
+    const/16 v3, 0x28
+
+    invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->append(II)V
+
+    const/16 v2, 0x55
+
+    const/16 v3, 0x29
+
+    invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->append(II)V
+
+    const/16 v2, 0x3e
+
+    const/16 v3, 0x2a
+
+    invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->append(II)V
+
+    const/16 v2, 0x3a
+
+    const/16 v3, 0x2b
+
+    invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->append(II)V
+
+    const/16 v2, 0x5a
+
+    const/16 v3, 0x33
+
+    invoke-virtual {v0, v2, v3}, Landroid/util/SparseIntArray;->append(II)V
+
+    const/16 v2, 0x71
+
+    invoke-virtual {v0, v2, v1}, Landroid/util/SparseIntArray;->append(II)V
 
     return-void
-.end method
-
-.method public constructor <init>(Lzj;Ljava/lang/Object;)V
-    .locals 1
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    const/4 v0, 0x0
-
-    iput-boolean v0, p0, Lzj;->a:Z
-
-    iget-object v0, p1, Lzj;->b:Ljava/lang/String;
-
-    iput-object v0, p0, Lzj;->b:Ljava/lang/String;
-
-    iget p1, p1, Lzj;->h:I
-
-    iput p1, p0, Lzj;->h:I
-
-    invoke-virtual {p0, p2}, Lzj;->a(Ljava/lang/Object;)V
-
-    return-void
-.end method
-
-
-# virtual methods
-.method public final a(Ljava/lang/Object;)V
-    .locals 2
-
-    iget v0, p0, Lzj;->h:I
-
-    add-int/lit8 v1, v0, -0x1
-
-    if-eqz v0, :cond_0
-
-    packed-switch v1, :pswitch_data_0
-
-    return-void
-
-    :pswitch_0
-    check-cast p1, Ljava/lang/Float;
-
-    invoke-virtual {p1}, Ljava/lang/Float;->floatValue()F
-
-    move-result p1
-
-    iput p1, p0, Lzj;->d:F
-
-    return-void
-
-    :pswitch_1
-    check-cast p1, Ljava/lang/Boolean;
-
-    invoke-virtual {p1}, Ljava/lang/Boolean;->booleanValue()Z
-
-    move-result p1
-
-    iput-boolean p1, p0, Lzj;->f:Z
-
-    return-void
-
-    :pswitch_2
-    check-cast p1, Ljava/lang/String;
-
-    iput-object p1, p0, Lzj;->e:Ljava/lang/String;
-
-    return-void
-
-    :pswitch_3
-    check-cast p1, Ljava/lang/Integer;
-
-    invoke-virtual {p1}, Ljava/lang/Integer;->intValue()I
-
-    move-result p1
-
-    iput p1, p0, Lzj;->g:I
-
-    return-void
-
-    :pswitch_4
-    check-cast p1, Ljava/lang/Float;
-
-    invoke-virtual {p1}, Ljava/lang/Float;->floatValue()F
-
-    move-result p1
-
-    iput p1, p0, Lzj;->d:F
-
-    return-void
-
-    :pswitch_5
-    check-cast p1, Ljava/lang/Integer;
-
-    invoke-virtual {p1}, Ljava/lang/Integer;->intValue()I
-
-    move-result p1
-
-    iput p1, p0, Lzj;->c:I
-
-    return-void
-
-    :cond_0
-    const/4 p1, 0x0
-
-    throw p1
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_5
-        :pswitch_4
-        :pswitch_3
-        :pswitch_3
-        :pswitch_2
-        :pswitch_1
-        :pswitch_0
-        :pswitch_5
-    .end packed-switch
 .end method

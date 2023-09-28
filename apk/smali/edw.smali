@@ -2,147 +2,187 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lcom/google/googlex/gcam/base/function/IntLongConsumer;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field public final synthetic a:Leea;
+.field public final synthetic a:Lcom/google/android/apps/camera/hdrplus/deblurfusion/DeblurFusionControllerImpl;
+
+.field private final synthetic b:I
 
 
 # direct methods
-.method public synthetic constructor <init>(Leea;)V
+.method public synthetic constructor <init>(Lcom/google/android/apps/camera/hdrplus/deblurfusion/DeblurFusionControllerImpl;I)V
     .locals 0
+
+    iput p2, p0, Ledw;->b:I
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Ledw;->a:Leea;
+    iput-object p1, p0, Ledw;->a:Lcom/google/android/apps/camera/hdrplus/deblurfusion/DeblurFusionControllerImpl;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final accept(IJ)V
-    .locals 6
+.method public final run()V
+    .locals 7
 
-    iget-object v0, p0, Ledw;->a:Leea;
+    iget v0, p0, Ledw;->b:I
 
-    iget v1, v0, Leea;->s:I
+    packed-switch v0, :pswitch_data_0
 
-    const/4 v2, 0x0
+    iget-object v0, p0, Ledw;->a:Lcom/google/android/apps/camera/hdrplus/deblurfusion/DeblurFusionControllerImpl;
 
-    const/4 v3, 0x1
+    iget-object v1, v0, Lcom/google/android/apps/camera/hdrplus/deblurfusion/DeblurFusionControllerImpl;->e:Ljava/lang/Object;
 
-    if-ne v1, v3, :cond_0
-
-    const/4 v1, 0x1
+    monitor-enter v1
 
     goto :goto_0
 
-    :cond_0
-    const/4 v1, 0x0
+    :pswitch_0
+    iget-object v0, p0, Ledw;->a:Lcom/google/android/apps/camera/hdrplus/deblurfusion/DeblurFusionControllerImpl;
+
+    invoke-virtual {v0}, Lcom/google/android/apps/camera/hdrplus/deblurfusion/DeblurFusionControllerImpl;->c()V
+
+    return-void
 
     :goto_0
-    invoke-static {v1}, Lmoz;->p(Z)V
+    :try_start_0
+    iget-object v2, v0, Lcom/google/android/apps/camera/hdrplus/deblurfusion/DeblurFusionControllerImpl;->f:Ljava/util/concurrent/atomic/AtomicBoolean;
 
-    iget-object v1, v0, Leea;->l:Leec;
+    invoke-virtual {v2}, Ljava/util/concurrent/atomic/AtomicBoolean;->get()Z
 
-    invoke-virtual {v1}, Leec;->e()Lmqp;
+    move-result v2
 
-    move-result-object v1
+    if-eqz v2, :cond_0
 
-    invoke-virtual {v1}, Lmqp;->g()Z
+    sget-object v0, Lovl;->a:Lovd;
 
-    move-result v1
-
-    const-string v4, "Got PD with no callback present"
-
-    invoke-static {v1, v4}, Lmoz;->q(ZLjava/lang/Object;)V
-
-    invoke-static {}, Lcom/google/googlex/gcam/GcamModuleJNI;->kInvalidAllocationId_get()J
-
-    move-result-wide v4
-
-    cmp-long v1, p2, v4
-
-    if-eqz v1, :cond_1
-
-    iget-object p1, v0, Leea;->k:Lnrp;
-
-    iget-boolean p2, p1, Lnrp;->b:Z
-
-    const-string p3, "doneWriting() must be called before getImage."
-
-    invoke-static {p2, p3}, Lmoz;->q(ZLjava/lang/Object;)V
-
-    iget-object p1, p1, Lnrp;->a:Lcom/google/googlex/gcam/InterleavedImageU16;
-
-    iget-object p2, v0, Leea;->l:Leec;
-
-    invoke-virtual {p2}, Leec;->e()Lmqp;
-
-    move-result-object p2
-
-    invoke-virtual {p2}, Lmqp;->c()Ljava/lang/Object;
-
-    move-result-object p2
-
-    check-cast p2, Lecs;
-
-    invoke-interface {p2, p1}, Lecs;->a(Lcom/google/googlex/gcam/InterleavedImageU16;)V
+    monitor-exit v1
 
     return-void
+
+    :cond_0
+    iget-object v2, v0, Lcom/google/android/apps/camera/hdrplus/deblurfusion/DeblurFusionControllerImpl;->b:Lhgm;
+
+    invoke-interface {v2}, Lhgm;->a()J
+
+    move-result-wide v2
+
+    const-wide/16 v4, 0x0
+
+    cmp-long v6, v2, v4
+
+    if-nez v6, :cond_1
+
+    iget-object v2, v0, Lcom/google/android/apps/camera/hdrplus/deblurfusion/DeblurFusionControllerImpl;->c:Lljf;
+
+    const-string v3, "PortraitSegmenter#init"
+
+    invoke-interface {v2, v3}, Lljf;->e(Ljava/lang/String;)V
+
+    iget-object v2, v0, Lcom/google/android/apps/camera/hdrplus/deblurfusion/DeblurFusionControllerImpl;->b:Lhgm;
+
+    invoke-interface {v2}, Lhgm;->b()V
+
+    iget-object v2, v0, Lcom/google/android/apps/camera/hdrplus/deblurfusion/DeblurFusionControllerImpl;->c:Lljf;
+
+    invoke-interface {v2}, Lljf;->f()V
 
     :cond_1
-    sget-object p2, Leea;->a:Lnak;
+    iget-object v2, v0, Lcom/google/android/apps/camera/hdrplus/deblurfusion/DeblurFusionControllerImpl;->c:Lljf;
 
-    invoke-virtual {p2}, Lnaf;->c()Lnaz;
+    const-string v3, "DeblurFusionController#init"
 
-    move-result-object p2
+    invoke-interface {v2, v3}, Lljf;->e(Ljava/lang/String;)V
 
-    check-cast p2, Lnah;
+    iget-object v2, v0, Lcom/google/android/apps/camera/hdrplus/deblurfusion/DeblurFusionControllerImpl;->f:Ljava/util/concurrent/atomic/AtomicBoolean;
 
-    const/16 p3, 0x535
+    sget-object v3, Landroid/os/Build;->DEVICE:Ljava/lang/String;
 
-    invoke-interface {p2, p3}, Lnah;->G(I)Lnaz;
+    invoke-virtual {v0}, Lcom/google/android/apps/camera/hdrplus/deblurfusion/DeblurFusionControllerImpl;->a()Ljava/lang/String;
 
-    move-result-object p2
+    move-result-object v4
 
-    check-cast p2, Lnah;
+    invoke-static {v3, v4}, Lcom/google/android/apps/camera/hdrplus/deblurfusion/DeblurFusionControllerImpl;->initialize(Ljava/lang/String;Ljava/lang/String;)Z
 
-    const-string p3, "MergePD failed (shotId = %d)"
+    move-result v3
 
-    invoke-interface {p2, p3, p1}, Lnah;->p(Ljava/lang/String;I)V
+    invoke-virtual {v2, v3}, Ljava/util/concurrent/atomic/AtomicBoolean;->set(Z)V
 
-    iget-object p2, v0, Leea;->l:Leec;
+    iget-object v2, v0, Lcom/google/android/apps/camera/hdrplus/deblurfusion/DeblurFusionControllerImpl;->c:Lljf;
 
-    invoke-virtual {p2}, Leec;->e()Lmqp;
+    invoke-interface {v2}, Lljf;->f()V
 
-    move-result-object p2
+    iget-object v2, v0, Lcom/google/android/apps/camera/hdrplus/deblurfusion/DeblurFusionControllerImpl;->f:Ljava/util/concurrent/atomic/AtomicBoolean;
 
-    invoke-virtual {p2}, Lmqp;->c()Ljava/lang/Object;
+    invoke-virtual {v2}, Ljava/util/concurrent/atomic/AtomicBoolean;->get()Z
 
-    move-result-object p2
+    move-result v2
 
-    check-cast p2, Lecs;
+    if-nez v2, :cond_2
 
-    new-instance v0, Lecq;
+    sget-object v0, Lcom/google/android/apps/camera/hdrplus/deblurfusion/DeblurFusionControllerImpl;->a:Louj;
 
-    new-array v1, v3, [Ljava/lang/Object;
+    invoke-virtual {v0}, Loue;->c()Lova;
 
-    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    move-result-object v0
 
-    move-result-object p1
+    sget-object v2, Lovl;->a:Lovd;
 
-    aput-object p1, v1, v2
+    const-string v3, "FalconController"
 
-    invoke-static {p3, v1}, Lkba;->c(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-interface {v0, v2, v3}, Lova;->g(Lovd;Ljava/lang/Object;)Lova;
 
-    move-result-object p1
+    move-result-object v0
 
-    invoke-direct {v0, p1}, Lecq;-><init>(Ljava/lang/String;)V
+    check-cast v0, Loug;
 
-    invoke-interface {p2, v0}, Lecs;->b(Lecq;)V
+    const/16 v2, 0x43e
+
+    invoke-interface {v0, v2}, Loug;->G(I)Lova;
+
+    move-result-object v0
+
+    check-cast v0, Loug;
+
+    const-string v2, "Failed to initialize DeblurFusionController."
+
+    invoke-interface {v0, v2}, Loug;->o(Ljava/lang/String;)V
+
+    goto :goto_1
+
+    :cond_2
+    sget-object v2, Lovl;->a:Lovd;
+
+    iget-object v0, v0, Lcom/google/android/apps/camera/hdrplus/deblurfusion/DeblurFusionControllerImpl;->g:Llce;
+
+    const/4 v2, 0x1
+
+    invoke-static {v2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    move-result-object v2
+
+    invoke-virtual {v0, v2}, Llce;->fB(Ljava/lang/Object;)V
+
+    :goto_1
+    monitor-exit v1
 
     return-void
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw v0
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

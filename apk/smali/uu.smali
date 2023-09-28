@@ -1,86 +1,65 @@
 .class final Luu;
-.super Loln;
+.super Ljava/lang/Object;
 
 # interfaces
-.implements Lomo;
-
-
-# annotations
-.annotation runtime Lolj;
-    b = "androidx.camera.camera2.pipe.compat.VirtualCameraManager$requestLoop$2$3"
-    c = "VirtualCameraManager.kt"
-    d = "invokeSuspend"
-    e = {}
-.end annotation
+.implements Ljava/util/concurrent/ThreadFactory;
 
 
 # instance fields
-.field final synthetic a:Landroidx/wear/ambient/AmbientDelegate;
+.field private final a:Ljava/util/concurrent/atomic/AtomicInteger;
 
 
 # direct methods
-.method public constructor <init>(Landroidx/wear/ambient/AmbientDelegate;Loku;[B)V
-    .locals 0
+.method public constructor <init>()V
+    .locals 2
 
-    iput-object p1, p0, Luu;->a:Landroidx/wear/ambient/AmbientDelegate;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const/4 p1, 0x2
+    new-instance v0, Ljava/util/concurrent/atomic/AtomicInteger;
 
-    invoke-direct {p0, p1, p2}, Loln;-><init>(ILoku;)V
+    const/4 v1, 0x0
+
+    invoke-direct {v0, v1}, Ljava/util/concurrent/atomic/AtomicInteger;-><init>(I)V
+
+    iput-object v0, p0, Luu;->a:Ljava/util/concurrent/atomic/AtomicInteger;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final bridge synthetic a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 0
+.method public final newThread(Ljava/lang/Runnable;)Ljava/lang/Thread;
+    .locals 3
 
-    check-cast p1, Lopu;
+    new-instance v0, Ljava/lang/Thread;
 
-    check-cast p2, Loku;
+    invoke-direct {v0, p1}, Ljava/lang/Thread;-><init>(Ljava/lang/Runnable;)V
 
-    invoke-virtual {p0, p1, p2}, Lolf;->c(Ljava/lang/Object;Loku;)Loku;
+    const/4 p1, 0x1
+
+    new-array p1, p1, [Ljava/lang/Object;
+
+    iget-object v1, p0, Luu;->a:Ljava/util/concurrent/atomic/AtomicInteger;
+
+    invoke-virtual {v1}, Ljava/util/concurrent/atomic/AtomicInteger;->getAndIncrement()I
+
+    move-result v1
+
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v1
+
+    const/4 v2, 0x0
+
+    aput-object v1, p1, v2
+
+    const-string v1, "arch_disk_io_%d"
+
+    invoke-static {v1, p1}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p1
 
-    sget-object p2, Lojk;->a:Lojk;
+    invoke-virtual {v0, p1}, Ljava/lang/Thread;->setName(Ljava/lang/String;)V
 
-    check-cast p1, Luu;
-
-    invoke-virtual {p1, p2}, Luu;->b(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object p1
-
-    return-object p1
-.end method
-
-.method public final b(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 1
-
-    sget-object v0, Lolc;->a:Lolc;
-
-    invoke-static {p1}, Lljr;->aO(Ljava/lang/Object;)V
-
-    iget-object p1, p0, Luu;->a:Landroidx/wear/ambient/AmbientDelegate;
-
-    invoke-virtual {p1}, Landroidx/wear/ambient/AmbientDelegate;->k()V
-
-    sget-object p1, Lojk;->a:Lojk;
-
-    return-object p1
-.end method
-
-.method public final c(Ljava/lang/Object;Loku;)Loku;
-    .locals 2
-
-    new-instance p1, Luu;
-
-    iget-object v0, p0, Luu;->a:Landroidx/wear/ambient/AmbientDelegate;
-
-    const/4 v1, 0x0
-
-    invoke-direct {p1, v0, p2, v1}, Luu;-><init>(Landroidx/wear/ambient/AmbientDelegate;Loku;[B)V
-
-    return-object p1
+    return-object v0
 .end method

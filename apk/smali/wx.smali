@@ -1,5 +1,5 @@
 .class final Lwx;
-.super Lxb;
+.super Lxc;
 
 
 # instance fields
@@ -12,9 +12,9 @@
 
     iput-object p1, p0, Lwx;->a:Lwy;
 
-    iget p1, p1, Lxf;->d:I
+    iget p1, p1, Lwy;->j:I
 
-    invoke-direct {p0, p1}, Lxb;-><init>(I)V
+    invoke-direct {p0, p1}, Lxc;-><init>(I)V
 
     return-void
 .end method
@@ -26,7 +26,7 @@
 
     iget-object v0, p0, Lwx;->a:Lwy;
 
-    invoke-virtual {v0, p1}, Lxf;->g(I)Ljava/lang/Object;
+    invoke-virtual {v0, p1}, Lxf;->i(I)Ljava/lang/Object;
 
     move-result-object p1
 
@@ -38,7 +38,7 @@
 
     iget-object v0, p0, Lwx;->a:Lwy;
 
-    invoke-virtual {v0, p1}, Lxf;->e(I)Ljava/lang/Object;
+    invoke-virtual {v0, p1}, Lxf;->g(I)Ljava/lang/Object;
 
     return-void
 .end method

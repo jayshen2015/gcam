@@ -3,121 +3,98 @@
 
 
 # instance fields
-.field public final a:I
+.field public final a:Landroid/accounts/Account;
 
-.field public final b:Lkaf;
+.field public final b:Ljava/util/Set;
+
+.field public final c:Ljava/util/Set;
+
+.field public final d:Ljava/util/Map;
+
+.field public final e:Ljava/lang/String;
+
+.field public final f:Ljava/lang/String;
+
+.field public final g:Lkuj;
+
+.field public h:Ljava/lang/Integer;
 
 
 # direct methods
-.method public constructor <init>(ILkaf;)V
+.method public constructor <init>(Landroid/accounts/Account;Ljava/util/Set;Ljava/lang/String;Ljava/lang/String;Lkuj;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput p1, p0, Lkmf;->a:I
+    iput-object p1, p0, Lkmf;->a:Landroid/accounts/Account;
 
-    iput-object p2, p0, Lkmf;->b:Lkaf;
+    if-nez p2, :cond_0
 
-    return-void
-.end method
+    invoke-static {}, Ljava/util/Collections;->emptySet()Ljava/util/Set;
 
+    move-result-object p1
 
-# virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 2
-
-    if-eqz p1, :cond_0
-
-    instance-of v0, p1, Lkmf;
-
-    if-eqz v0, :cond_0
-
-    check-cast p1, Lkmf;
-
-    iget v0, p1, Lkmf;->a:I
-
-    iget v1, p0, Lkmf;->a:I
-
-    if-ne v0, v1, :cond_0
-
-    iget-object p1, p1, Lkmf;->b:Lkaf;
-
-    iget-object v0, p0, Lkmf;->b:Lkaf;
-
-    invoke-virtual {p1, v0}, Lkaf;->equals(Ljava/lang/Object;)Z
-
-    move-result p1
-
-    if-eqz p1, :cond_0
-
-    const/4 p1, 0x1
-
-    return p1
+    goto :goto_0
 
     :cond_0
-    const/4 p1, 0x0
+    invoke-static {p2}, Ljava/util/Collections;->unmodifiableSet(Ljava/util/Set;)Ljava/util/Set;
 
-    return p1
-.end method
+    move-result-object p1
 
-.method public final hashCode()I
-    .locals 3
+    :goto_0
+    iput-object p1, p0, Lkmf;->b:Ljava/util/Set;
 
-    const/4 v0, 0x2
+    invoke-static {}, Ljava/util/Collections;->emptyMap()Ljava/util/Map;
 
-    new-array v0, v0, [Ljava/lang/Object;
+    move-result-object p2
 
-    iget v1, p0, Lkmf;->a:I
+    iput-object p2, p0, Lkmf;->d:Ljava/util/Map;
 
-    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    iput-object p3, p0, Lkmf;->e:Ljava/lang/String;
 
-    move-result-object v1
+    iput-object p4, p0, Lkmf;->f:Ljava/lang/String;
 
-    const/4 v2, 0x0
+    iput-object p5, p0, Lkmf;->g:Lkuj;
 
-    aput-object v1, v0, v2
+    new-instance p3, Ljava/util/HashSet;
 
-    const/4 v1, 0x1
+    invoke-direct {p3, p1}, Ljava/util/HashSet;-><init>(Ljava/util/Collection;)V
 
-    iget-object v2, p0, Lkmf;->b:Lkaf;
+    invoke-interface {p2}, Ljava/util/Map;->values()Ljava/util/Collection;
 
-    aput-object v2, v0, v1
+    move-result-object p1
 
-    invoke-static {v0}, Ljava/util/Arrays;->hashCode([Ljava/lang/Object;)I
+    invoke-interface {p1}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
 
-    move-result v0
+    move-result-object p1
 
-    return v0
-.end method
+    :goto_1
+    invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
 
-.method public final toString()Ljava/lang/String;
-    .locals 3
+    move-result p2
 
-    const-string v0, "ImageReaderFormat"
+    if-eqz p2, :cond_1
 
-    invoke-static {v0}, Lmoz;->z(Ljava/lang/String;)Lmqo;
+    invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    move-result-object v0
+    move-result-object p2
 
-    iget v1, p0, Lkmf;->a:I
+    check-cast p2, Lkme;
 
-    invoke-static {v1}, Llho;->E(I)Ljava/lang/String;
+    iget-object p2, p2, Lkme;->a:Ljava/util/Set;
 
-    move-result-object v1
+    const/4 p2, 0x0
 
-    const-string v2, "ImageFormat"
+    invoke-interface {p3, p2}, Ljava/util/Set;->addAll(Ljava/util/Collection;)Z
 
-    invoke-virtual {v0, v2, v1}, Lmqo;->b(Ljava/lang/String;Ljava/lang/Object;)V
+    goto :goto_1
 
-    iget-object v1, p0, Lkmf;->b:Lkaf;
+    :cond_1
+    invoke-static {p3}, Ljava/util/Collections;->unmodifiableSet(Ljava/util/Set;)Ljava/util/Set;
 
-    const-string v2, "Size"
+    move-result-object p1
 
-    invoke-virtual {v0, v2, v1}, Lmqo;->b(Ljava/lang/String;Ljava/lang/Object;)V
+    iput-object p1, p0, Lkmf;->c:Ljava/util/Set;
 
-    invoke-virtual {v0}, Lmqo;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    return-object v0
+    return-void
 .end method

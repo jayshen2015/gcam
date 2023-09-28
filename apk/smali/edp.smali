@@ -2,34 +2,42 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lcom/google/android/apps/camera/rectiface/Rectiface$RectifaceCallback;
+.implements Lgjt;
 
 
 # instance fields
-.field final synthetic a:Ledo;
+.field final synthetic a:I
 
 .field final synthetic b:Z
 
-.field final synthetic c:Ljava/util/concurrent/atomic/AtomicReference;
+.field final synthetic c:Lcom/google/googlex/gcam/ShotMetadata;
 
-.field final synthetic d:Ledq;
+.field final synthetic d:I
 
-.field private final synthetic e:I
+.field final synthetic e:Lhsa;
+
+.field final synthetic f:Ledu;
+
+.field final synthetic g:Lmsq;
 
 
 # direct methods
-.method public constructor <init>(Ledq;Ledo;ZLjava/util/concurrent/atomic/AtomicReference;I)V
+.method public constructor <init>(Ledu;Lmsq;IZLcom/google/googlex/gcam/ShotMetadata;ILhsa;[B)V
     .locals 0
 
-    iput p5, p0, Ledp;->e:I
+    iput-object p1, p0, Ledp;->f:Ledu;
 
-    iput-object p1, p0, Ledp;->d:Ledq;
+    iput-object p2, p0, Ledp;->g:Lmsq;
 
-    iput-object p2, p0, Ledp;->a:Ledo;
+    iput p3, p0, Ledp;->a:I
 
-    iput-boolean p3, p0, Ledp;->b:Z
+    iput-boolean p4, p0, Ledp;->b:Z
 
-    iput-object p4, p0, Ledp;->c:Ljava/util/concurrent/atomic/AtomicReference;
+    iput-object p5, p0, Ledp;->c:Lcom/google/googlex/gcam/ShotMetadata;
+
+    iput p6, p0, Ledp;->d:I
+
+    iput-object p7, p0, Ledp;->e:Lhsa;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -38,138 +46,60 @@
 
 
 # virtual methods
-.method public final saveImageCopy()V
-    .locals 3
+.method public final a()Lpht;
+    .locals 13
 
-    iget v0, p0, Ledp;->e:I
+    invoke-static {}, Lpih;->f()Lpih;
 
-    packed-switch v0, :pswitch_data_0
+    move-result-object v10
 
-    iget-object v0, p0, Ledp;->d:Ledq;
+    iget-object v1, p0, Ledp;->f:Ledu;
 
-    iget-object v1, p0, Ledp;->c:Ljava/util/concurrent/atomic/AtomicReference;
+    iget-object v11, v1, Ledu;->d:Ljava/util/concurrent/Executor;
 
-    invoke-virtual {v1}, Ljava/util/concurrent/atomic/AtomicReference;->get()Ljava/lang/Object;
+    new-instance v12, Leds;
 
-    move-result-object v1
+    iget-object v2, p0, Ledp;->g:Lmsq;
 
-    check-cast v1, Ledo;
+    iget v4, p0, Ledp;->a:I
 
-    invoke-virtual {v0, v1}, Ledq;->g(Ledo;)Z
+    iget-boolean v5, p0, Ledp;->b:Z
 
-    move-result v0
+    iget-object v6, p0, Ledp;->c:Lcom/google/googlex/gcam/ShotMetadata;
 
-    if-eqz v0, :cond_1
+    iget v7, p0, Ledp;->d:I
 
-    iget-object v0, p0, Ledp;->d:Ledq;
+    iget-object v0, p0, Ledp;->e:Lhsa;
 
-    iget-object v1, p0, Ledp;->a:Ledo;
+    invoke-interface {v0}, Lhsa;->m()Lojc;
 
-    sget-object v2, Ldyy;->n:Ldyy;
+    move-result-object v8
 
-    invoke-virtual {v0, v1, v2}, Ledq;->f(Ledo;Ldyy;)V
+    const/4 v9, 0x0
 
-    return-void
+    move-object v0, v12
 
-    :pswitch_0
-    iget-object v0, p0, Ledp;->d:Ledq;
+    move-object v3, v10
 
-    iget-object v1, p0, Ledp;->c:Ljava/util/concurrent/atomic/AtomicReference;
+    invoke-direct/range {v0 .. v9}, Leds;-><init>(Ledu;Lmsq;Lpih;IZLcom/google/googlex/gcam/ShotMetadata;ILojc;[B)V
 
-    invoke-virtual {v1}, Ljava/util/concurrent/atomic/AtomicReference;->get()Ljava/lang/Object;
+    invoke-interface {v11, v12}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
 
-    move-result-object v1
-
-    check-cast v1, Ledo;
-
-    invoke-virtual {v0, v1}, Ledq;->g(Ledo;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    iget-object v0, p0, Ledp;->d:Ledq;
-
-    iget-object v1, p0, Ledp;->a:Ledo;
-
-    sget-object v2, Ldyy;->n:Ldyy;
-
-    invoke-virtual {v0, v1, v2}, Ledq;->f(Ledo;Ldyy;)V
-
-    :cond_0
-    return-void
-
-    :cond_1
-    return-void
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+    return-object v10
 .end method
 
-.method public final update(F)V
+.method public final b()Lpht;
     .locals 2
 
-    iget v0, p0, Ledp;->e:I
+    new-instance v0, Lllv;
 
-    packed-switch v0, :pswitch_data_0
+    const-string v1, "RGB image couldn\'t be encoded into jpeg."
 
-    iget-object v0, p0, Ledp;->a:Ledo;
+    invoke-direct {v0, v1}, Lllv;-><init>(Ljava/lang/String;)V
 
-    iget-object v0, v0, Ledo;->n:Lgkr;
+    invoke-static {v0}, Lplk;->U(Ljava/lang/Throwable;)Lpht;
 
-    iget-object v0, v0, Lgkr;->a:Ljava/lang/Object;
+    move-result-object v0
 
-    sget-object v1, Ledq;->a:Lilz;
-
-    invoke-interface {v0, v1, p1}, Lgaa;->a(Lilz;F)V
-
-    iget-boolean p1, p0, Ledp;->b:Z
-
-    if-eqz p1, :cond_1
-
-    iget-object p1, p0, Ledp;->d:Ledq;
-
-    iget-object p1, p1, Ledq;->h:Ldhi;
-
-    sget v0, Ldha;->a:I
-
-    invoke-interface {p1}, Ldhi;->e()V
-
-    return-void
-
-    :pswitch_0
-    iget-object v0, p0, Ledp;->a:Ledo;
-
-    iget-object v0, v0, Ledo;->n:Lgkr;
-
-    iget-object v0, v0, Lgkr;->a:Ljava/lang/Object;
-
-    sget-object v1, Ledq;->a:Lilz;
-
-    invoke-interface {v0, v1, p1}, Lgaa;->a(Lilz;F)V
-
-    iget-boolean p1, p0, Ledp;->b:Z
-
-    if-eqz p1, :cond_0
-
-    iget-object p1, p0, Ledp;->d:Ledq;
-
-    iget-object p1, p1, Ledq;->h:Ldhi;
-
-    sget v0, Ldha;->a:I
-
-    invoke-interface {p1}, Ldhi;->e()V
-
-    :cond_0
-    return-void
-
-    :cond_1
-    return-void
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+    return-object v0
 .end method

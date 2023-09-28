@@ -1,78 +1,46 @@
 .class public final Lrh;
-.super Ljava/lang/Object;
-
-
-# instance fields
-.field public final a:Lvb;
-
-.field private final b:I
+.super Landroid/util/Property;
 
 
 # direct methods
-.method public constructor <init>(Lrf;)V
-    .locals 9
+.method public constructor <init>(Ljava/lang/Class;)V
+    .locals 1
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const-string v0, "thumbPos"
 
-    sget-object v0, Lri;->a:Loon;
-
-    invoke-virtual {v0}, Loon;->b()I
-
-    move-result v0
-
-    iput v0, p0, Lrh;->b:I
-
-    new-instance v2, Lbkb;
-
-    invoke-direct {v2, p1}, Lbkb;-><init>(Lrf;)V
-
-    new-instance v3, Loxq;
-
-    const/4 p1, 0x0
-
-    invoke-direct {v3, p1}, Loxq;-><init>([B)V
-
-    new-instance p1, Lvg;
-
-    const/4 v4, 0x0
-
-    const/4 v5, 0x0
-
-    const/4 v6, 0x0
-
-    const/4 v7, 0x0
-
-    const/4 v8, 0x0
-
-    move-object v1, p1
-
-    invoke-direct/range {v1 .. v8}, Lvg;-><init>(Lbkb;Loxq;[B[B[B[B[B)V
-
-    iput-object p1, p0, Lrh;->a:Lvb;
+    invoke-direct {p0, p1, v0}, Landroid/util/Property;-><init>(Ljava/lang/Class;Ljava/lang/String;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final toString()Ljava/lang/String;
-    .locals 2
+.method public final bridge synthetic get(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 0
 
-    new-instance v0, Ljava/lang/StringBuilder;
+    check-cast p1, Landroid/support/v7/widget/SwitchCompat;
 
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+    iget p1, p1, Landroid/support/v7/widget/SwitchCompat;->c:F
 
-    const-string v1, "CameraPipe-"
+    invoke-static {p1}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result-object p1
 
-    iget v1, p0, Lrh;->b:I
+    return-object p1
+.end method
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+.method public final bridge synthetic set(Ljava/lang/Object;Ljava/lang/Object;)V
+    .locals 0
 
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    check-cast p1, Landroid/support/v7/widget/SwitchCompat;
 
-    move-result-object v0
+    check-cast p2, Ljava/lang/Float;
 
-    return-object v0
+    invoke-virtual {p2}, Ljava/lang/Float;->floatValue()F
+
+    move-result p2
+
+    invoke-virtual {p1, p2}, Landroid/support/v7/widget/SwitchCompat;->d(F)V
+
+    return-void
 .end method

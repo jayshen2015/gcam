@@ -1,170 +1,92 @@
 .class public final Lnpw;
-.super Lnws;
-
-# interfaces
-.implements Lnxz;
+.super Ljava/lang/Object;
 
 
 # static fields
-.field public static final c:Lnpw;
+.field public static final a:Lajd;
 
-.field private static volatile d:Lnyf;
+.field public static final b:Lajd;
 
+.field public static final c:Lajd;
 
-# instance fields
-.field public a:I
+.field public static final d:Lajd;
 
-.field public b:I
+.field public static final e:Lajd;
+
+.field public static final f:Lajd;
+
+.field public static final g:Lajd;
+
+.field public static final h:Lajd;
+
+.field public static final i:Lajd;
+
+.field public static final j:Lajd;
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 2
+    .locals 1
 
-    new-instance v0, Lnpw;
+    new-instance v0, Lnpm;
 
-    invoke-direct {v0}, Lnpw;-><init>()V
+    invoke-direct {v0}, Lnpm;-><init>()V
 
-    sput-object v0, Lnpw;->c:Lnpw;
+    sput-object v0, Lnpw;->a:Lajd;
 
-    const-class v1, Lnpw;
+    new-instance v0, Lnpq;
 
-    invoke-static {v1, v0}, Lnws;->aa(Ljava/lang/Class;Lnws;)V
+    invoke-direct {v0}, Lnpq;-><init>()V
+
+    sput-object v0, Lnpw;->b:Lajd;
+
+    new-instance v0, Lnpn;
+
+    invoke-direct {v0}, Lnpn;-><init>()V
+
+    sput-object v0, Lnpw;->c:Lajd;
+
+    new-instance v0, Lnpt;
+
+    invoke-direct {v0}, Lnpt;-><init>()V
+
+    sput-object v0, Lnpw;->d:Lajd;
+
+    new-instance v0, Lnpr;
+
+    invoke-direct {v0}, Lnpr;-><init>()V
+
+    sput-object v0, Lnpw;->e:Lajd;
+
+    new-instance v0, Lnpo;
+
+    invoke-direct {v0}, Lnpo;-><init>()V
+
+    sput-object v0, Lnpw;->f:Lajd;
+
+    new-instance v0, Lnpv;
+
+    invoke-direct {v0}, Lnpv;-><init>()V
+
+    sput-object v0, Lnpw;->g:Lajd;
+
+    new-instance v0, Lnpp;
+
+    invoke-direct {v0}, Lnpp;-><init>()V
+
+    sput-object v0, Lnpw;->h:Lajd;
+
+    new-instance v0, Lnps;
+
+    invoke-direct {v0}, Lnps;-><init>()V
+
+    sput-object v0, Lnpw;->i:Lajd;
+
+    new-instance v0, Lnpu;
+
+    invoke-direct {v0}, Lnpu;-><init>()V
+
+    sput-object v0, Lnpw;->j:Lajd;
 
     return-void
-.end method
-
-.method private constructor <init>()V
-    .locals 0
-
-    invoke-direct {p0}, Lnws;-><init>()V
-
-    return-void
-.end method
-
-
-# virtual methods
-.method protected final a(ILjava/lang/Object;)Ljava/lang/Object;
-    .locals 3
-
-    add-int/lit8 p1, p1, -0x1
-
-    const/4 p2, 0x1
-
-    packed-switch p1, :pswitch_data_0
-
-    :pswitch_0
-    const/4 p1, 0x0
-
-    return-object p1
-
-    :pswitch_1
-    sget-object p1, Lnpw;->d:Lnyf;
-
-    if-nez p1, :cond_1
-
-    const-class p2, Lnpw;
-
-    monitor-enter p2
-
-    :try_start_0
-    sget-object p1, Lnpw;->d:Lnyf;
-
-    if-nez p1, :cond_0
-
-    new-instance p1, Lnwo;
-
-    sget-object v0, Lnpw;->c:Lnpw;
-
-    invoke-direct {p1, v0}, Lnwo;-><init>(Lnws;)V
-
-    sput-object p1, Lnpw;->d:Lnyf;
-
-    :cond_0
-    monitor-exit p2
-
-    goto :goto_0
-
-    :catchall_0
-    move-exception p1
-
-    monitor-exit p2
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw p1
-
-    :cond_1
-    :goto_0
-    return-object p1
-
-    :pswitch_2
-    sget-object p1, Lnpw;->c:Lnpw;
-
-    return-object p1
-
-    :pswitch_3
-    new-instance p1, Lnwn;
-
-    sget-object p2, Lnpw;->c:Lnpw;
-
-    invoke-direct {p1, p2}, Lnwn;-><init>(Lnws;)V
-
-    return-object p1
-
-    :pswitch_4
-    new-instance p1, Lnpw;
-
-    invoke-direct {p1}, Lnpw;-><init>()V
-
-    return-object p1
-
-    :pswitch_5
-    const-string p1, "a"
-
-    const-string v0, "\u0001\u0001\u0000\u0001\u0006\u0006\u0001\u0000\u0000\u0000\u0006\u100c\u0000"
-
-    const/4 v1, 0x3
-
-    new-array v1, v1, [Ljava/lang/Object;
-
-    const/4 v2, 0x0
-
-    aput-object p1, v1, v2
-
-    const-string p1, "b"
-
-    aput-object p1, v1, p2
-
-    const/4 p1, 0x2
-
-    sget-object p2, Lnkx;->s:Lnww;
-
-    aput-object p2, v1, p1
-
-    sget-object p1, Lnpw;->c:Lnpw;
-
-    invoke-static {p1, v0, v1}, Lnpw;->X(Lnxy;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object p1
-
-    return-object p1
-
-    :pswitch_6
-    invoke-static {p2}, Ljava/lang/Byte;->valueOf(B)Ljava/lang/Byte;
-
-    move-result-object p1
-
-    return-object p1
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_6
-        :pswitch_0
-        :pswitch_5
-        :pswitch_4
-        :pswitch_3
-        :pswitch_2
-        :pswitch_1
-    .end packed-switch
 .end method

@@ -1,57 +1,13 @@
-.class public final synthetic Ljsn;
+.class public final Ljsn;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Ljhf;
-
-
-# static fields
-.field public static final synthetic a:Ljsn;
-
-.field public static final synthetic b:Ljsn;
-
-.field public static final synthetic c:Ljsn;
-
-
-# instance fields
-.field private final synthetic d:I
+.implements Ljsj;
 
 
 # direct methods
-.method static synthetic constructor <clinit>()V
-    .locals 2
-
-    new-instance v0, Ljsn;
-
-    const/4 v1, 0x2
-
-    invoke-direct {v0, v1}, Ljsn;-><init>(I)V
-
-    sput-object v0, Ljsn;->c:Ljsn;
-
-    new-instance v0, Ljsn;
-
-    const/4 v1, 0x1
-
-    invoke-direct {v0, v1}, Ljsn;-><init>(I)V
-
-    sput-object v0, Ljsn;->b:Ljsn;
-
-    new-instance v0, Ljsn;
-
-    const/4 v1, 0x0
-
-    invoke-direct {v0, v1}, Ljsn;-><init>(I)V
-
-    sput-object v0, Ljsn;->a:Ljsn;
-
-    return-void
-.end method
-
-.method private synthetic constructor <init>(I)V
+.method public constructor <init>()V
     .locals 0
-
-    iput p1, p0, Ljsn;->d:I
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -60,40 +16,24 @@
 
 
 # virtual methods
-.method public final a(Ljdq;)Ljava/lang/Object;
+.method public final a()Lpht;
     .locals 1
 
-    iget v0, p0, Ljsn;->d:I
+    sget-object v0, Ljsn;->a:Lpht;
 
-    packed-switch v0, :pswitch_data_0
+    return-object v0
+.end method
 
-    check-cast p1, Ljqu;
+.method public final b(Ljsi;)V
+    .locals 0
 
-    iget-object p1, p1, Ljqu;->a:Ljava/lang/Object;
+    invoke-interface {p1}, Ljsi;->a()V
 
-    return-object p1
+    return-void
+.end method
 
-    :pswitch_0
-    check-cast p1, Ljqu;
+.method public final c()V
+    .locals 0
 
-    iget-object p1, p1, Ljqu;->a:Ljava/lang/Object;
-
-    return-object p1
-
-    :pswitch_1
-    check-cast p1, Ljsm;
-
-    iget p1, p1, Ljsm;->a:I
-
-    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object p1
-
-    return-object p1
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
+    return-void
 .end method

@@ -14,7 +14,7 @@
 
 # virtual methods
 .method public final onReceive(Landroid/content/Context;Landroid/content/Intent;)V
-    .locals 10
+    .locals 11
 
     const-string v0, "PrimesLifeboatReceiver"
 
@@ -34,7 +34,7 @@
 
     if-nez v3, :cond_0
 
-    goto/16 :goto_2
+    goto :goto_2
 
     :cond_0
     invoke-virtual {p2, v1}, Landroid/content/Intent;->getByteArrayExtra(Ljava/lang/String;)[B
@@ -43,26 +43,22 @@
 
     invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
+    check-cast v1, [B
+
     :try_start_0
-    invoke-static {}, Lnwh;->a()Lnwh;
+    invoke-static {}, Lpos;->b()Lpos;
 
     move-result-object v3
 
-    sget-object v4, Llnj;->c:Llnj;
+    sget-object v4, Lndf;->c:Lndf;
 
-    array-length v5, v1
-
-    const/4 v6, 0x0
-
-    invoke-static {v4, v1, v6, v5, v3}, Lnws;->Q(Lnws;[BIILnwh;)Lnws;
+    invoke-static {v4, v1, v3}, Lppd;->s(Lppd;[BLpos;)Lppd;
 
     move-result-object v1
 
-    invoke-static {v1}, Lnws;->ae(Lnws;)V
-
-    check-cast v1, Llnj;
+    check-cast v1, Lndf;
     :try_end_0
-    .catch Lnxd; {:try_start_0 .. :try_end_0} :catch_0
+    .catch Lppp; {:try_start_0 .. :try_end_0} :catch_0
 
     invoke-virtual {p0}, Lcom/google/android/libraries/performance/primes/transmitter/LifeboatReceiver;->goAsync()Landroid/content/BroadcastReceiver$PendingResult;
 
@@ -74,90 +70,90 @@
 
     invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    new-instance v2, Ljava/util/ArrayList;
+    check-cast p2, [Ljava/lang/String;
 
-    array-length v4, p2
+    array-length v2, p2
 
-    invoke-direct {v2, v4}, Ljava/util/ArrayList;-><init>(I)V
+    new-instance v4, Ljava/util/ArrayList;
 
-    const/4 v4, 0x0
+    invoke-direct {v4, v2}, Ljava/util/ArrayList;-><init>(I)V
+
+    const/4 v5, 0x0
+
+    const/4 v6, 0x0
 
     :goto_0
-    array-length v5, p2
+    if-ge v6, v2, :cond_1
 
-    if-ge v4, v5, :cond_1
+    aget-object v7, p2, v6
 
-    aget-object v5, p2, v4
-
-    const/4 v7, 0x1
+    const/4 v8, 0x1
 
     :try_start_1
-    invoke-static {v5}, Ljava/lang/Class;->forName(Ljava/lang/String;)Ljava/lang/Class;
+    invoke-static {v7}, Ljava/lang/Class;->forName(Ljava/lang/String;)Ljava/lang/Class;
 
-    move-result-object v8
+    move-result-object v9
 
-    new-array v9, v6, [Ljava/lang/Class;
+    new-array v10, v5, [Ljava/lang/Class;
 
-    invoke-virtual {v8, v9}, Ljava/lang/Class;->getDeclaredConstructor([Ljava/lang/Class;)Ljava/lang/reflect/Constructor;
+    invoke-virtual {v9, v10}, Ljava/lang/Class;->getDeclaredConstructor([Ljava/lang/Class;)Ljava/lang/reflect/Constructor;
 
-    move-result-object v8
+    move-result-object v9
 
-    invoke-virtual {v8, v7}, Ljava/lang/reflect/Constructor;->setAccessible(Z)V
+    invoke-virtual {v9, v8}, Ljava/lang/reflect/Constructor;->setAccessible(Z)V
 
-    new-array v9, v6, [Ljava/lang/Object;
+    new-array v10, v5, [Ljava/lang/Object;
 
-    invoke-virtual {v8, v9}, Ljava/lang/reflect/Constructor;->newInstance([Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v9, v10}, Ljava/lang/reflect/Constructor;->newInstance([Ljava/lang/Object;)Ljava/lang/Object;
 
-    move-result-object v8
+    move-result-object v9
 
-    check-cast v8, Llnk;
+    check-cast v9, Lndh;
 
-    invoke-interface {v8, p1, v1}, Llnk;->a(Landroid/content/Context;Llnj;)Lnou;
+    invoke-interface {v9, p1, v1}, Lndh;->a(Landroid/content/Context;Lndf;)Lpht;
 
-    move-result-object v8
+    move-result-object v9
 
-    invoke-interface {v2, v8}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+    invoke-interface {v4, v9}, Ljava/util/List;->add(Ljava/lang/Object;)Z
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     goto :goto_1
 
     :catchall_0
-    move-exception v8
+    move-exception v9
 
-    new-array v7, v7, [Ljava/lang/Object;
+    new-array v8, v8, [Ljava/lang/Object;
 
-    aput-object v5, v7, v6
+    aput-object v7, v8, v5
 
-    const-string v5, "Unable to transmit the crash using %s."
+    const-string v7, "Unable to transmit the crash using %s."
 
-    invoke-static {v5, v7}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {v7, v8}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
-    move-result-object v5
+    move-result-object v7
 
-    invoke-static {v0, v5, v8}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+    invoke-static {v0, v7, v9}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
     :goto_1
-    add-int/lit8 v4, v4, 0x1
+    add-int/lit8 v6, v6, 0x1
 
     goto :goto_0
 
     :cond_1
-    invoke-static {v2}, Lnsy;->H(Ljava/lang/Iterable;)Lnou;
+    invoke-static {v4}, Lplk;->ab(Ljava/lang/Iterable;)Lpht;
 
     move-result-object p1
 
     invoke-virtual {v3}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    new-instance p2, Llmm;
+    new-instance p2, Lnde;
 
-    const/4 v0, 0x2
+    invoke-direct {p2, v3}, Lnde;-><init>(Landroid/content/BroadcastReceiver$PendingResult;)V
 
-    invoke-direct {p2, v3, v0}, Llmm;-><init>(Landroid/content/BroadcastReceiver$PendingResult;I)V
+    sget-object v0, Lpgr;->a:Lpgr;
 
-    sget-object v0, Lnnv;->a:Lnnv;
-
-    invoke-interface {p1, p2, v0}, Lnou;->d(Ljava/lang/Runnable;Ljava/util/concurrent/Executor;)V
+    invoke-interface {p1, p2, v0}, Lpht;->d(Ljava/lang/Runnable;Ljava/util/concurrent/Executor;)V
 
     return-void
 

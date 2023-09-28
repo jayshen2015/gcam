@@ -1,30 +1,17 @@
-.class final Lksq;
-.super Landroid/database/ContentObserver;
+.class public final Lksq;
+.super Lbmn;
 
-
-# instance fields
-.field final synthetic a:Lksr;
+# interfaces
+.implements Lkss;
 
 
 # direct methods
-.method public constructor <init>(Lksr;Landroid/os/Handler;)V
-    .locals 0
+.method public constructor <init>(Landroid/os/IBinder;)V
+    .locals 1
 
-    iput-object p1, p0, Lksq;->a:Lksr;
+    const-string v0, "com.google.android.gms.location.IDeviceOrientationListener"
 
-    invoke-direct {p0, p2}, Landroid/database/ContentObserver;-><init>(Landroid/os/Handler;)V
-
-    return-void
-.end method
-
-
-# virtual methods
-.method public final onChange(ZLandroid/net/Uri;)V
-    .locals 0
-
-    iget-object p1, p0, Lksq;->a:Lksr;
-
-    invoke-virtual {p1}, Lksr;->b()Z
+    invoke-direct {p0, p1, v0}, Lbmn;-><init>(Landroid/os/IBinder;Ljava/lang/String;)V
 
     return-void
 .end method

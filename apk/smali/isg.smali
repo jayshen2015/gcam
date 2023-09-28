@@ -1,30 +1,41 @@
-.class public final Lisg;
-.super Laei;
+.class public final synthetic Lisg;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Ljava/lang/Runnable;
+
+
+# instance fields
+.field public final synthetic a:Lish;
+
+.field public final synthetic b:Lisi;
 
 
 # direct methods
-.method public constructor <init>()V
+.method public synthetic constructor <init>(Lish;Lisi;)V
     .locals 0
 
-    invoke-direct {p0}, Laei;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lisg;->a:Lish;
+
+    iput-object p2, p0, Lisg;->b:Lisi;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final b(Landroid/view/View;Lagt;)V
-    .locals 0
+.method public final run()V
+    .locals 2
 
-    invoke-super {p0, p1, p2}, Laei;->b(Landroid/view/View;Lagt;)V
+    iget-object v0, p0, Lisg;->a:Lish;
 
-    const-class p1, Landroid/widget/Button;
+    iget-object v1, p0, Lisg;->b:Lisi;
 
-    invoke-virtual {p1}, Ljava/lang/Class;->getName()Ljava/lang/String;
+    iget-object v0, v0, Lish;->i:Lelw;
 
-    move-result-object p1
-
-    invoke-virtual {p2, p1}, Lagt;->i(Ljava/lang/CharSequence;)V
+    invoke-interface {v0, v1}, Lelw;->g(Lelv;)V
 
     return-void
 .end method

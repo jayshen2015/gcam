@@ -1,99 +1,224 @@
-.class public final Lgny;
+.class final Lgny;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lfvh;
+.implements Lgoe;
 
 
 # instance fields
-.field private final a:Landroid/hardware/camera2/CaptureResult$Key;
+.field public a:I
 
-.field private final b:Ljava/lang/Object;
+.field public b:I
+
+.field public c:J
+
+.field final synthetic d:Lgob;
+
+.field private e:Z
 
 
 # direct methods
-.method public constructor <init>(Landroid/hardware/camera2/CaptureResult$Key;Ljava/lang/Object;)V
-    .locals 0
+.method public constructor <init>(Lgob;)V
+    .locals 2
+
+    iput-object p1, p0, Lgny;->d:Lgob;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lgny;->a:Landroid/hardware/camera2/CaptureResult$Key;
+    const/4 p1, 0x0
 
-    iput-object p2, p0, Lgny;->b:Ljava/lang/Object;
+    iput-boolean p1, p0, Lgny;->e:Z
+
+    const/4 v0, 0x1
+
+    iput v0, p0, Lgny;->a:I
+
+    iput p1, p0, Lgny;->b:I
+
+    const-wide/16 v0, -0x1
+
+    iput-wide v0, p0, Lgny;->c:J
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Lkou;)Z
-    .locals 5
+.method public final synthetic b()V
+    .locals 0
 
-    const/4 v0, 0x0
+    return-void
+.end method
 
-    if-nez p1, :cond_0
+.method public final c()V
+    .locals 6
 
-    sget-object p1, Lgoa;->a:Lnak;
+    iget-boolean v0, p0, Lgny;->e:Z
 
-    invoke-virtual {p1}, Lnaf;->c()Lnaz;
+    if-nez v0, :cond_1
 
-    move-result-object p1
+    iget-object v0, p0, Lgny;->d:Lgob;
 
-    const-string v1, "Missing metadata."
+    iget-object v0, v0, Lgob;->c:Ljava/util/concurrent/atomic/AtomicBoolean;
 
-    const/16 v2, 0xc31
+    invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicBoolean;->get()Z
 
-    invoke-static {p1, v1, v2}, Ld;->g(Lnaz;Ljava/lang/String;C)V
+    move-result v0
 
-    return v0
+    if-eqz v0, :cond_1
+
+    const/4 v0, 0x1
+
+    iput-boolean v0, p0, Lgny;->e:Z
+
+    iget-object v0, p0, Lgny;->d:Lgob;
+
+    iget-object v0, v0, Lgob;->d:Lhsa;
+
+    invoke-interface {v0}, Lhsa;->y()V
+
+    monitor-enter p0
+
+    :try_start_0
+    iget-wide v0, p0, Lgny;->c:J
+
+    const-wide/16 v2, 0x0
+
+    const/4 v4, 0x0
+
+    cmp-long v5, v0, v2
+
+    if-lez v5, :cond_0
+
+    iget-object v2, p0, Lgny;->d:Lgob;
+
+    iget-object v2, v2, Lgob;->a:Lgfs;
+
+    iget-object v2, v2, Lgfs;->b:Lgft;
+
+    invoke-interface {v2, v4, v0, v1}, Lgft;->F(FJ)V
+
+    goto :goto_0
 
     :cond_0
-    iget-object v1, p0, Lgny;->a:Landroid/hardware/camera2/CaptureResult$Key;
+    iget-object v0, p0, Lgny;->d:Lgob;
 
-    invoke-interface {p1, v1}, Lkou;->d(Landroid/hardware/camera2/CaptureResult$Key;)Ljava/lang/Object;
+    iget-object v0, v0, Lgob;->a:Lgfs;
 
-    move-result-object v1
+    iget-object v0, v0, Lgfs;->b:Lgft;
 
-    iget-object v2, p0, Lgny;->b:Ljava/lang/Object;
+    iget v1, p0, Lgny;->a:I
 
-    invoke-static {v1, v2}, Lmoz;->B(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-interface {v0, v4, v1}, Lgft;->E(FI)V
 
-    move-result v1
+    :goto_0
+    monitor-exit p0
 
-    if-eqz v1, :cond_1
+    return-void
 
-    const/4 p1, 0x1
+    :catchall_0
+    move-exception v0
 
-    return p1
+    monitor-exit p0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw v0
 
     :cond_1
-    sget-object v1, Lgoa;->a:Lnak;
+    return-void
+.end method
 
-    invoke-virtual {v1}, Lnaf;->c()Lnaz;
+.method public final declared-synchronized e(I)V
+    .locals 1
 
-    move-result-object v1
+    monitor-enter p0
 
-    check-cast v1, Lnah;
+    if-lez p1, :cond_0
 
-    const/16 v2, 0xc30
+    const/4 v0, 0x1
 
-    invoke-interface {v1, v2}, Lnah;->G(I)Lnaz;
+    goto :goto_0
 
-    move-result-object v1
+    :cond_0
+    const/4 v0, 0x0
 
-    check-cast v1, Lnah;
+    :goto_0
+    :try_start_0
+    invoke-static {v0}, Lobr;->aF(Z)V
 
-    iget-object v2, p0, Lgny;->a:Landroid/hardware/camera2/CaptureResult$Key;
+    iput p1, p0, Lgny;->a:I
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    iget-object v3, p0, Lgny;->b:Ljava/lang/Object;
+    monitor-exit p0
 
-    invoke-interface {p1, v2}, Lkou;->d(Landroid/hardware/camera2/CaptureResult$Key;)Ljava/lang/Object;
+    return-void
 
-    move-result-object p1
+    :catchall_0
+    move-exception p1
 
-    const-string v4, "Metadata mismatch for key %s. Expected: %s, got: %s."
+    monitor-exit p0
 
-    invoke-interface {v1, v4, v2, v3, p1}, Lnah;->B(Ljava/lang/String;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V
+    throw p1
+.end method
 
-    return v0
+.method public final declared-synchronized f(J)V
+    .locals 0
+
+    monitor-enter p0
+
+    :try_start_0
+    iput-wide p1, p0, Lgny;->c:J
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    monitor-exit p0
+
+    return-void
+
+    :catchall_0
+    move-exception p1
+
+    monitor-exit p0
+
+    throw p1
+.end method
+
+.method public final bridge synthetic fB(Ljava/lang/Object;)V
+    .locals 2
+
+    check-cast p1, Ljava/lang/Void;
+
+    iget-object p1, p0, Lgny;->d:Lgob;
+
+    iget-object p1, p1, Lgob;->b:Llar;
+
+    new-instance v0, Lgnx;
+
+    const/4 v1, 0x0
+
+    invoke-direct {v0, p0, v1}, Lgnx;-><init>(Lgny;I)V
+
+    invoke-virtual {p1, v0}, Llar;->execute(Ljava/lang/Runnable;)V
+
+    return-void
+.end method
+
+.method public final g()V
+    .locals 3
+
+    iget-object v0, p0, Lgny;->d:Lgob;
+
+    iget-object v0, v0, Lgob;->b:Llar;
+
+    new-instance v1, Lgnx;
+
+    const/4 v2, 0x1
+
+    invoke-direct {v1, p0, v2}, Lgnx;-><init>(Lgny;I)V
+
+    invoke-virtual {v0, v1}, Llar;->execute(Ljava/lang/Runnable;)V
+
+    return-void
 .end method

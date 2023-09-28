@@ -1,77 +1,103 @@
-.class public final Lkas;
-.super Ljava/util/logging/Handler;
-
-
-# static fields
-.field public static final a:Lkas;
-
-
-# instance fields
-.field private final b:Ljuh;
-
-
-# direct methods
-.method static constructor <clinit>()V
-    .locals 1
-
-    new-instance v0, Lkas;
-
-    invoke-direct {v0}, Lkas;-><init>()V
-
-    sput-object v0, Lkas;->a:Lkas;
-
-    return-void
-.end method
-
-.method private constructor <init>()V
-    .locals 1
-
-    invoke-direct {p0}, Ljava/util/logging/Handler;-><init>()V
-
-    sget-object v0, Ljuh;->b:Ljuh;
-
-    iput-object v0, p0, Lkas;->b:Ljuh;
-
-    return-void
-.end method
+.class public interface abstract Lkas;
+.super Ljava/lang/Object;
 
 
 # virtual methods
-.method public final close()V
-    .locals 0
-
-    return-void
+.method public abstract A()V
 .end method
 
-.method public final flush()V
-    .locals 0
-
-    return-void
+.method public abstract B(F)V
 .end method
 
-.method public final publish(Ljava/util/logging/LogRecord;)V
-    .locals 4
+.method public abstract C()Z
+.end method
 
-    invoke-virtual {p1}, Ljava/util/logging/LogRecord;->getThrown()Ljava/lang/Throwable;
+.method public abstract D(Ljrl;)Z
+.end method
 
-    move-result-object v0
+.method public abstract E()Z
+.end method
 
-    invoke-virtual {p1}, Ljava/util/logging/LogRecord;->getMessage()Ljava/lang/String;
+.method public abstract F()V
+.end method
 
-    move-result-object p1
+.method public abstract G(Ljrl;Z)V
+.end method
 
-    if-eqz v0, :cond_0
+.method public abstract a(ZLjrl;)F
+.end method
 
-    iget-object v1, p0, Lkas;->b:Ljuh;
+.method public abstract b()F
+.end method
 
-    new-instance v2, Ljoq;
+.method public abstract c()F
+.end method
 
-    const/16 v3, 0x12
+.method public abstract d()F
+.end method
 
-    invoke-direct {v2, p1, v0, v3}, Ljoq;-><init>(Ljava/lang/String;Ljava/lang/Throwable;I)V
+.method public abstract e(Lkar;)V
+.end method
 
-    invoke-virtual {v1, v2}, Ljuh;->execute(Ljava/lang/Runnable;)V
+.method public abstract f(Z)V
+.end method
 
-    :cond_0
-    return-void
+.method public abstract g()V
+.end method
+
+.method public abstract h()V
+.end method
+
+.method public abstract i(Z)V
+.end method
+
+.method public abstract j()V
+.end method
+
+.method public abstract k(F)V
+.end method
+
+.method public abstract l()V
+.end method
+
+.method public abstract m()V
+.end method
+
+.method public abstract n()V
+.end method
+
+.method public abstract o()V
+.end method
+
+.method public abstract p(Z)V
+.end method
+
+.method public abstract q()V
+.end method
+
+.method public abstract r(F)V
+.end method
+
+.method public abstract s(F)V
+.end method
+
+.method public abstract t(F)V
+.end method
+
+.method public abstract u()V
+.end method
+
+.method public abstract v(Z)V
+.end method
+
+.method public abstract w(Lkag;)V
+.end method
+
+.method public abstract x()V
+.end method
+
+.method public abstract y(Lojc;Z)V
+.end method
+
+.method public abstract z()V
 .end method

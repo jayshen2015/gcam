@@ -1,30 +1,37 @@
-.class abstract Lm;
+.class final Lm;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Ljava/io/Serializable;
-.implements Ln;
+.implements Lp;
 
 
 # static fields
-.field private static final serialVersionUID:J = 0x1L
-
-
-# instance fields
-.field protected final a:Ln;
-
-.field protected final b:Ln;
+.field private static final serialVersionUID:J = 0x7f2b2ad155970a18L
 
 
 # direct methods
-.method protected constructor <init>(Ln;Ln;)V
+.method public constructor <init>()V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lm;->a:Ln;
-
-    iput-object p2, p0, Lm;->b:Ln;
-
     return-void
+.end method
+
+
+# virtual methods
+.method public final a(Lq;)Z
+    .locals 0
+
+    const/4 p1, 0x1
+
+    return p1
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .locals 1
+
+    const-string v0, ""
+
+    return-object v0
 .end method

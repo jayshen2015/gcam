@@ -1,206 +1,74 @@
 .class public final Lobq;
-.super Lnws;
-
-# interfaces
-.implements Lnxz;
-
-
-# static fields
-.field public static final g:Lobq;
-
-.field private static volatile h:Lnyf;
-
-
-# instance fields
-.field public a:I
-
-.field public b:Ljava/lang/String;
-
-.field public c:Ljava/lang/String;
-
-.field public d:Ljava/lang/String;
-
-.field public e:Lobn;
-
-.field public f:Z
+.super Lobr;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
+.method public constructor <init>()V
+    .locals 0
 
-    new-instance v0, Lobq;
-
-    invoke-direct {v0}, Lobq;-><init>()V
-
-    sput-object v0, Lobq;->g:Lobq;
-
-    const-class v1, Lobq;
-
-    invoke-static {v1, v0}, Lnws;->aa(Ljava/lang/Class;Lnws;)V
-
-    return-void
-.end method
-
-.method private constructor <init>()V
-    .locals 1
-
-    invoke-direct {p0}, Lnws;-><init>()V
-
-    const-string v0, ""
-
-    iput-object v0, p0, Lobq;->b:Ljava/lang/String;
-
-    iput-object v0, p0, Lobq;->c:Ljava/lang/String;
-
-    iput-object v0, p0, Lobq;->d:Ljava/lang/String;
+    invoke-direct {p0}, Lobr;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method protected final a(ILjava/lang/Object;)Ljava/lang/Object;
-    .locals 3
+.method public final a(Loch;FF)V
+    .locals 5
 
-    add-int/lit8 p1, p1, -0x1
+    mul-float v0, p3, p2
 
-    const/4 p2, 0x1
+    const/high16 v1, 0x43340000    # 180.0f
 
-    packed-switch p1, :pswitch_data_0
+    const/high16 v2, 0x42b40000    # 90.0f
 
-    :pswitch_0
-    const/4 p1, 0x0
+    invoke-virtual {p1, v0, v1, v2}, Loch;->f(FFF)V
 
-    return-object p1
+    float-to-double v0, p3
 
-    :pswitch_1
-    sget-object p1, Lobq;->h:Lnyf;
+    float-to-double p2, p2
 
-    if-nez p1, :cond_1
+    const-wide v2, 0x4056800000000000L    # 90.0
 
-    const-class p2, Lobq;
+    invoke-static {v2, v3}, Ljava/lang/Math;->toRadians(D)D
 
-    monitor-enter p2
+    move-result-wide v2
 
-    :try_start_0
-    sget-object p1, Lobq;->h:Lnyf;
+    invoke-static {v2, v3}, Ljava/lang/Math;->sin(D)D
 
-    if-nez p1, :cond_0
+    move-result-wide v2
 
-    new-instance p1, Lnwo;
+    invoke-static {v0, v1}, Ljava/lang/Double;->isNaN(D)Z
 
-    sget-object v0, Lobq;->g:Lobq;
+    mul-double v2, v2, v0
 
-    invoke-direct {p1, v0}, Lnwo;-><init>(Lnws;)V
+    invoke-static {p2, p3}, Ljava/lang/Double;->isNaN(D)Z
 
-    sput-object p1, Lobq;->h:Lnyf;
+    mul-double v2, v2, p2
 
-    :cond_0
-    monitor-exit p2
+    double-to-float v2, v2
 
-    goto :goto_0
+    const-wide/16 v3, 0x0
 
-    :catchall_0
-    move-exception p1
+    invoke-static {v3, v4}, Ljava/lang/Math;->toRadians(D)D
 
-    monitor-exit p2
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    move-result-wide v3
 
-    throw p1
+    invoke-static {v3, v4}, Ljava/lang/Math;->sin(D)D
 
-    :cond_1
-    :goto_0
-    return-object p1
+    move-result-wide v3
 
-    :pswitch_2
-    sget-object p1, Lobq;->g:Lobq;
+    invoke-static {v0, v1}, Ljava/lang/Double;->isNaN(D)Z
 
-    return-object p1
+    mul-double v3, v3, v0
 
-    :pswitch_3
-    new-instance p1, Lnwn;
+    invoke-static {p2, p3}, Ljava/lang/Double;->isNaN(D)Z
 
-    sget-object p2, Lobq;->g:Lobq;
+    mul-double v3, v3, p2
 
-    invoke-direct {p1, p2}, Lnwn;-><init>(Lnws;)V
+    double-to-float p2, v3
 
-    return-object p1
+    invoke-virtual {p1, v2, p2}, Loch;->d(FF)V
 
-    :pswitch_4
-    new-instance p1, Lobq;
-
-    invoke-direct {p1}, Lobq;-><init>()V
-
-    return-object p1
-
-    :pswitch_5
-    const-string p1, "a"
-
-    const-string v0, "\u0001\u0005\u0000\u0001\u0001\u0010\u0005\u0000\u0000\u0000\u0001\u1008\u0000\u0002\u1008\u0001\u0003\u1008\u0002\u0004\u1009\u0003\u0010\u1007\u0005"
-
-    const/4 v1, 0x6
-
-    new-array v1, v1, [Ljava/lang/Object;
-
-    const/4 v2, 0x0
-
-    aput-object p1, v1, v2
-
-    const-string p1, "b"
-
-    aput-object p1, v1, p2
-
-    const/4 p1, 0x2
-
-    const-string p2, "c"
-
-    aput-object p2, v1, p1
-
-    const/4 p1, 0x3
-
-    const-string p2, "d"
-
-    aput-object p2, v1, p1
-
-    const/4 p1, 0x4
-
-    const-string p2, "e"
-
-    aput-object p2, v1, p1
-
-    const/4 p1, 0x5
-
-    const-string p2, "f"
-
-    aput-object p2, v1, p1
-
-    sget-object p1, Lobq;->g:Lobq;
-
-    invoke-static {p1, v0, v1}, Lobq;->X(Lnxy;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object p1
-
-    return-object p1
-
-    :pswitch_6
-    invoke-static {p2}, Ljava/lang/Byte;->valueOf(B)Ljava/lang/Byte;
-
-    move-result-object p1
-
-    return-object p1
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_6
-        :pswitch_0
-        :pswitch_5
-        :pswitch_4
-        :pswitch_3
-        :pswitch_2
-        :pswitch_1
-    .end packed-switch
+    return-void
 .end method

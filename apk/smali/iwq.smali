@@ -1,28 +1,41 @@
-.class public final Liwq;
+.class final Liwq;
 .super Ljava/lang/Object;
 
+# interfaces
+.implements Llie;
 
-# static fields
-.field public static final a:[I
+
+# instance fields
+.field final synthetic a:Liwr;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 4
+.method public constructor <init>(Liwr;)V
+    .locals 0
 
-    const v0, 0x7f040582
+    iput-object p1, p0, Liwq;->a:Liwr;
 
-    const v1, 0x7f040720
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const v2, 0x7f040439
+    return-void
+.end method
 
-    const v3, 0x7f040547
 
-    filled-new-array {v2, v3, v0, v1}, [I
+# virtual methods
+.method public final close()V
+    .locals 3
 
-    move-result-object v0
+    iget-object v0, p0, Liwq;->a:Liwr;
 
-    sput-object v0, Liwq;->a:[I
+    iget-object v0, v0, Liwr;->a:Liwt;
+
+    iget-object v1, v0, Liwt;->a:Llar;
+
+    new-instance v2, Liwp;
+
+    invoke-direct {v2, v0}, Liwp;-><init>(Liwt;)V
+
+    invoke-virtual {v1, v2}, Llar;->execute(Ljava/lang/Runnable;)V
 
     return-void
 .end method

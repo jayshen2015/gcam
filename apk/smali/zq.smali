@@ -2,271 +2,619 @@
 .super Ljava/lang/Object;
 
 
+# static fields
+.field public static final a:Landroid/util/SparseIntArray;
+
+
 # instance fields
-.field a:F
+.field public A:I
 
-.field b:F
+.field public B:I
 
-.field c:F
+.field public C:F
 
-.field d:F
+.field public D:I
+
+.field public E:I
+
+.field public F:I
+
+.field public G:I
+
+.field public H:I
+
+.field public I:I
+
+.field public J:I
+
+.field public K:I
+
+.field public L:I
+
+.field public M:I
+
+.field public N:I
+
+.field public O:I
+
+.field public P:I
+
+.field public Q:I
+
+.field public R:I
+
+.field public S:I
+
+.field public T:I
+
+.field public U:F
+
+.field public V:F
+
+.field public W:I
+
+.field public X:I
+
+.field public Y:I
+
+.field public Z:I
+
+.field public aa:I
+
+.field public ab:I
+
+.field public ac:I
+
+.field public ad:I
+
+.field public ae:F
+
+.field public af:F
+
+.field public ag:I
+
+.field public ah:I
+
+.field public ai:I
+
+.field public aj:[I
+
+.field public ak:Ljava/lang/String;
+
+.field public al:Ljava/lang/String;
+
+.field public am:Z
+
+.field public an:Z
+
+.field public ao:Z
+
+.field public ap:I
+
+.field public b:Z
+
+.field public c:Z
+
+.field public d:I
 
 .field public e:I
 
-.field public f:Lzy;
+.field public f:I
+
+.field public g:I
+
+.field public h:F
+
+.field public i:I
+
+.field public j:I
+
+.field public k:I
+
+.field public l:I
+
+.field public m:I
+
+.field public n:I
+
+.field public o:I
+
+.field public p:I
+
+.field public q:I
+
+.field public r:I
+
+.field public s:I
+
+.field public t:I
+
+.field public u:I
+
+.field public v:I
+
+.field public w:I
+
+.field public x:F
+
+.field public y:F
+
+.field public z:Ljava/lang/String;
 
 
 # direct methods
-.method public constructor <init>(Landroid/content/Context;Lorg/xmlpull/v1/XmlPullParser;)V
-    .locals 6
+.method static constructor <clinit>()V
+    .locals 16
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance v0, Landroid/util/SparseIntArray;
 
-    const/high16 v0, 0x7fc00000    # Float.NaN
+    invoke-direct {v0}, Landroid/util/SparseIntArray;-><init>()V
 
-    iput v0, p0, Lzq;->a:F
+    sput-object v0, Lzq;->a:Landroid/util/SparseIntArray;
 
-    iput v0, p0, Lzq;->b:F
+    sget-object v1, Lzz;->a:[I
 
-    iput v0, p0, Lzq;->c:F
+    const/16 v1, 0x2a
 
-    iput v0, p0, Lzq;->d:F
+    const/16 v2, 0x18
 
-    const/4 v0, -0x1
+    invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->append(II)V
 
-    iput v0, p0, Lzq;->e:I
+    const/16 v3, 0x2b
 
-    invoke-static {p2}, Landroid/util/Xml;->asAttributeSet(Lorg/xmlpull/v1/XmlPullParser;)Landroid/util/AttributeSet;
+    const/16 v4, 0x19
 
-    move-result-object p2
+    invoke-virtual {v0, v3, v4}, Landroid/util/SparseIntArray;->append(II)V
 
-    sget-object v0, Laad;->j:[I
+    const/16 v3, 0x2d
 
-    invoke-virtual {p1, p2, v0}, Landroid/content/Context;->obtainStyledAttributes(Landroid/util/AttributeSet;[I)Landroid/content/res/TypedArray;
+    const/16 v5, 0x1c
 
-    move-result-object p2
+    invoke-virtual {v0, v3, v5}, Landroid/util/SparseIntArray;->append(II)V
 
-    invoke-virtual {p2}, Landroid/content/res/TypedArray;->getIndexCount()I
+    const/16 v3, 0x2e
 
-    move-result v0
+    const/16 v6, 0x1d
 
-    const/4 v1, 0x0
+    invoke-virtual {v0, v3, v6}, Landroid/util/SparseIntArray;->append(II)V
 
-    const/4 v2, 0x0
+    const/16 v3, 0x33
 
-    :goto_0
-    if-ge v2, v0, :cond_5
+    const/16 v7, 0x23
 
-    invoke-virtual {p2, v2}, Landroid/content/res/TypedArray;->getIndex(I)I
+    invoke-virtual {v0, v3, v7}, Landroid/util/SparseIntArray;->append(II)V
 
-    move-result v3
+    const/16 v3, 0x32
 
-    if-nez v3, :cond_0
+    const/16 v7, 0x22
 
-    iget v3, p0, Lzq;->e:I
+    invoke-virtual {v0, v3, v7}, Landroid/util/SparseIntArray;->append(II)V
 
-    invoke-virtual {p2, v1, v3}, Landroid/content/res/TypedArray;->getResourceId(II)I
+    const/16 v3, 0x17
 
-    move-result v3
+    const/4 v7, 0x4
 
-    iput v3, p0, Lzq;->e:I
+    invoke-virtual {v0, v3, v7}, Landroid/util/SparseIntArray;->append(II)V
 
-    invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+    const/16 v8, 0x16
 
-    move-result-object v3
+    const/4 v9, 0x3
 
-    iget v4, p0, Lzq;->e:I
+    invoke-virtual {v0, v8, v9}, Landroid/util/SparseIntArray;->append(II)V
 
-    invoke-virtual {v3, v4}, Landroid/content/res/Resources;->getResourceTypeName(I)Ljava/lang/String;
+    const/16 v10, 0x12
 
-    move-result-object v3
+    const/4 v11, 0x1
 
-    invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+    invoke-virtual {v0, v10, v11}, Landroid/util/SparseIntArray;->append(II)V
 
-    move-result-object v4
+    const/16 v12, 0x3c
 
-    iget v5, p0, Lzq;->e:I
+    const/4 v13, 0x6
 
-    invoke-virtual {v4, v5}, Landroid/content/res/Resources;->getResourceName(I)Ljava/lang/String;
+    invoke-virtual {v0, v12, v13}, Landroid/util/SparseIntArray;->append(II)V
 
-    const-string v4, "layout"
+    const/16 v12, 0x3d
 
-    invoke-virtual {v4, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    const/4 v14, 0x7
 
-    move-result v3
+    invoke-virtual {v0, v12, v14}, Landroid/util/SparseIntArray;->append(II)V
 
-    if-eqz v3, :cond_4
+    const/16 v15, 0x1e
 
-    new-instance v3, Lzy;
+    const/16 v4, 0x11
 
-    invoke-direct {v3}, Lzy;-><init>()V
+    invoke-virtual {v0, v15, v4}, Landroid/util/SparseIntArray;->append(II)V
 
-    iput-object v3, p0, Lzq;->f:Lzy;
+    const/16 v2, 0x1f
 
-    iget v4, p0, Lzq;->e:I
+    invoke-virtual {v0, v2, v10}, Landroid/util/SparseIntArray;->append(II)V
 
-    invoke-virtual {v3, p1, v4}, Lzy;->f(Landroid/content/Context;I)V
+    const/16 v10, 0x20
 
-    goto :goto_1
+    const/16 v12, 0x13
 
-    :cond_0
-    const/4 v4, 0x1
+    invoke-virtual {v0, v10, v12}, Landroid/util/SparseIntArray;->append(II)V
 
-    if-ne v3, v4, :cond_1
+    const/4 v12, 0x0
 
-    iget v3, p0, Lzq;->d:F
+    const/16 v1, 0x1a
 
-    invoke-virtual {p2, v4, v3}, Landroid/content/res/TypedArray;->getDimension(IF)F
+    invoke-virtual {v0, v12, v1}, Landroid/util/SparseIntArray;->append(II)V
 
-    move-result v3
+    const/16 v12, 0x2f
 
-    iput v3, p0, Lzq;->d:F
+    invoke-virtual {v0, v12, v2}, Landroid/util/SparseIntArray;->append(II)V
 
-    goto :goto_1
+    const/16 v2, 0x30
 
-    :cond_1
-    const/4 v4, 0x2
+    invoke-virtual {v0, v2, v10}, Landroid/util/SparseIntArray;->append(II)V
 
-    if-ne v3, v4, :cond_2
+    const/16 v2, 0xa
 
-    iget v3, p0, Lzq;->b:F
+    invoke-virtual {v0, v6, v2}, Landroid/util/SparseIntArray;->append(II)V
 
-    invoke-virtual {p2, v4, v3}, Landroid/content/res/TypedArray;->getDimension(IF)F
+    const/16 v6, 0x9
 
-    move-result v3
+    invoke-virtual {v0, v5, v6}, Landroid/util/SparseIntArray;->append(II)V
 
-    iput v3, p0, Lzq;->b:F
+    const/16 v5, 0x41
 
-    goto :goto_1
+    const/16 v6, 0xd
 
-    :cond_2
-    const/4 v4, 0x3
+    invoke-virtual {v0, v5, v6}, Landroid/util/SparseIntArray;->append(II)V
 
-    if-ne v3, v4, :cond_3
+    const/16 v5, 0x44
 
-    iget v3, p0, Lzq;->c:F
+    const/16 v6, 0x10
 
-    invoke-virtual {p2, v4, v3}, Landroid/content/res/TypedArray;->getDimension(IF)F
+    invoke-virtual {v0, v5, v6}, Landroid/util/SparseIntArray;->append(II)V
 
-    move-result v3
+    const/16 v5, 0x42
 
-    iput v3, p0, Lzq;->c:F
+    const/16 v6, 0xe
 
-    goto :goto_1
+    invoke-virtual {v0, v5, v6}, Landroid/util/SparseIntArray;->append(II)V
 
-    :cond_3
-    const/4 v4, 0x4
+    const/16 v5, 0x3f
 
-    if-ne v3, v4, :cond_4
+    const/16 v6, 0xb
 
-    iget v3, p0, Lzq;->a:F
+    invoke-virtual {v0, v5, v6}, Landroid/util/SparseIntArray;->append(II)V
 
-    invoke-virtual {p2, v4, v3}, Landroid/content/res/TypedArray;->getDimension(IF)F
+    const/16 v5, 0x43
 
-    move-result v3
+    const/16 v6, 0xf
 
-    iput v3, p0, Lzq;->a:F
+    invoke-virtual {v0, v5, v6}, Landroid/util/SparseIntArray;->append(II)V
 
-    :cond_4
-    :goto_1
-    add-int/lit8 v2, v2, 0x1
+    const/16 v5, 0x40
 
-    goto :goto_0
+    const/16 v6, 0xc
 
-    :cond_5
-    invoke-virtual {p2}, Landroid/content/res/TypedArray;->recycle()V
+    invoke-virtual {v0, v5, v6}, Landroid/util/SparseIntArray;->append(II)V
+
+    const/16 v5, 0x36
+
+    const/16 v6, 0x26
+
+    invoke-virtual {v0, v5, v6}, Landroid/util/SparseIntArray;->append(II)V
+
+    const/16 v5, 0x28
+
+    const/16 v6, 0x25
+
+    invoke-virtual {v0, v5, v6}, Landroid/util/SparseIntArray;->append(II)V
+
+    const/16 v5, 0x27
+
+    const/16 v6, 0x27
+
+    invoke-virtual {v0, v5, v6}, Landroid/util/SparseIntArray;->append(II)V
+
+    const/16 v5, 0x35
+
+    const/16 v6, 0x28
+
+    invoke-virtual {v0, v5, v6}, Landroid/util/SparseIntArray;->append(II)V
+
+    const/16 v5, 0x26
+
+    const/16 v6, 0x14
+
+    invoke-virtual {v0, v5, v6}, Landroid/util/SparseIntArray;->append(II)V
+
+    const/16 v5, 0x34
+
+    const/16 v6, 0x24
+
+    invoke-virtual {v0, v5, v6}, Landroid/util/SparseIntArray;->append(II)V
+
+    const/16 v5, 0x1b
+
+    const/4 v6, 0x5
+
+    invoke-virtual {v0, v5, v6}, Landroid/util/SparseIntArray;->append(II)V
+
+    const/16 v5, 0x29
+
+    const/16 v6, 0x4c
+
+    invoke-virtual {v0, v5, v6}, Landroid/util/SparseIntArray;->append(II)V
+
+    const/16 v10, 0x31
+
+    invoke-virtual {v0, v10, v6}, Landroid/util/SparseIntArray;->append(II)V
+
+    const/16 v10, 0x2c
+
+    invoke-virtual {v0, v10, v6}, Landroid/util/SparseIntArray;->append(II)V
+
+    const/16 v10, 0x15
+
+    invoke-virtual {v0, v10, v6}, Landroid/util/SparseIntArray;->append(II)V
+
+    invoke-virtual {v0, v4, v6}, Landroid/util/SparseIntArray;->append(II)V
+
+    invoke-virtual {v0, v9, v3}, Landroid/util/SparseIntArray;->append(II)V
+
+    const/4 v3, 0x5
+
+    const/16 v4, 0x1b
+
+    invoke-virtual {v0, v3, v4}, Landroid/util/SparseIntArray;->append(II)V
+
+    invoke-virtual {v0, v14, v15}, Landroid/util/SparseIntArray;->append(II)V
+
+    const/16 v3, 0x8
+
+    const/16 v4, 0x8
+
+    invoke-virtual {v0, v3, v4}, Landroid/util/SparseIntArray;->append(II)V
+
+    const/16 v3, 0x21
+
+    invoke-virtual {v0, v7, v3}, Landroid/util/SparseIntArray;->append(II)V
+
+    const/4 v3, 0x2
+
+    invoke-virtual {v0, v13, v3}, Landroid/util/SparseIntArray;->append(II)V
+
+    invoke-virtual {v0, v11, v8}, Landroid/util/SparseIntArray;->append(II)V
+
+    const/16 v4, 0x15
+
+    invoke-virtual {v0, v3, v4}, Landroid/util/SparseIntArray;->append(II)V
+
+    const/16 v3, 0x37
+
+    invoke-virtual {v0, v3, v5}, Landroid/util/SparseIntArray;->append(II)V
+
+    const/16 v3, 0x21
+
+    const/16 v4, 0x2a
+
+    invoke-virtual {v0, v3, v4}, Landroid/util/SparseIntArray;->append(II)V
+
+    const/16 v3, 0x10
+
+    invoke-virtual {v0, v3, v5}, Landroid/util/SparseIntArray;->append(II)V
+
+    const/16 v3, 0xf
+
+    invoke-virtual {v0, v3, v4}, Landroid/util/SparseIntArray;->append(II)V
+
+    const/16 v3, 0x46
+
+    const/16 v4, 0x61
+
+    invoke-virtual {v0, v3, v4}, Landroid/util/SparseIntArray;->append(II)V
+
+    const/16 v3, 0x3d
+
+    const/16 v4, 0x18
+
+    invoke-virtual {v0, v4, v3}, Landroid/util/SparseIntArray;->append(II)V
+
+    const/16 v3, 0x3e
+
+    invoke-virtual {v0, v1, v3}, Landroid/util/SparseIntArray;->append(II)V
+
+    const/16 v1, 0x3f
+
+    const/16 v3, 0x19
+
+    invoke-virtual {v0, v3, v1}, Landroid/util/SparseIntArray;->append(II)V
+
+    const/16 v1, 0x3b
+
+    const/16 v3, 0x45
+
+    invoke-virtual {v0, v1, v3}, Landroid/util/SparseIntArray;->append(II)V
+
+    const/16 v1, 0x25
+
+    const/16 v3, 0x46
+
+    invoke-virtual {v0, v1, v3}, Landroid/util/SparseIntArray;->append(II)V
+
+    const/16 v1, 0xc
+
+    const/16 v3, 0x47
+
+    invoke-virtual {v0, v1, v3}, Landroid/util/SparseIntArray;->append(II)V
+
+    const/16 v1, 0x48
+
+    invoke-virtual {v0, v2, v1}, Landroid/util/SparseIntArray;->append(II)V
+
+    const/16 v1, 0xb
+
+    const/16 v2, 0x49
+
+    invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->append(II)V
+
+    const/16 v1, 0xd
+
+    const/16 v2, 0x4a
+
+    invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->append(II)V
+
+    const/16 v1, 0x9
+
+    const/16 v2, 0x4b
+
+    invoke-virtual {v0, v1, v2}, Landroid/util/SparseIntArray;->append(II)V
 
     return-void
 .end method
 
+.method public constructor <init>()V
+    .locals 4
 
-# virtual methods
-.method public final a(FF)Z
-    .locals 2
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iget v0, p0, Lzq;->a:F
+    const/4 v0, 0x0
 
-    invoke-static {v0}, Ljava/lang/Float;->isNaN(F)Z
+    iput-boolean v0, p0, Lzq;->b:Z
 
-    move-result v0
+    iput-boolean v0, p0, Lzq;->c:Z
 
-    const/4 v1, 0x0
+    const/4 v1, -0x1
 
-    if-nez v0, :cond_1
+    iput v1, p0, Lzq;->f:I
 
-    iget v0, p0, Lzq;->a:F
+    iput v1, p0, Lzq;->g:I
 
-    cmpg-float v0, p1, v0
+    const/high16 v2, -0x40800000    # -1.0f
 
-    if-ltz v0, :cond_0
+    iput v2, p0, Lzq;->h:F
 
-    goto :goto_0
+    iput v1, p0, Lzq;->i:I
 
-    :cond_0
-    return v1
+    iput v1, p0, Lzq;->j:I
 
-    :cond_1
-    :goto_0
-    iget v0, p0, Lzq;->b:F
+    iput v1, p0, Lzq;->k:I
 
-    invoke-static {v0}, Ljava/lang/Float;->isNaN(F)Z
+    iput v1, p0, Lzq;->l:I
 
-    move-result v0
+    iput v1, p0, Lzq;->m:I
 
-    if-nez v0, :cond_3
+    iput v1, p0, Lzq;->n:I
 
-    iget v0, p0, Lzq;->b:F
+    iput v1, p0, Lzq;->o:I
 
-    cmpg-float v0, p2, v0
+    iput v1, p0, Lzq;->p:I
 
-    if-ltz v0, :cond_2
+    iput v1, p0, Lzq;->q:I
 
-    goto :goto_1
+    iput v1, p0, Lzq;->r:I
 
-    :cond_2
-    return v1
+    iput v1, p0, Lzq;->s:I
 
-    :cond_3
-    :goto_1
-    iget v0, p0, Lzq;->c:F
+    iput v1, p0, Lzq;->t:I
 
-    invoke-static {v0}, Ljava/lang/Float;->isNaN(F)Z
+    iput v1, p0, Lzq;->u:I
 
-    move-result v0
+    iput v1, p0, Lzq;->v:I
 
-    if-nez v0, :cond_5
+    iput v1, p0, Lzq;->w:I
 
-    iget v0, p0, Lzq;->c:F
+    const/high16 v3, 0x3f000000    # 0.5f
 
-    cmpl-float p1, p1, v0
+    iput v3, p0, Lzq;->x:F
 
-    if-gtz p1, :cond_4
+    iput v3, p0, Lzq;->y:F
 
-    goto :goto_2
+    const/4 v3, 0x0
 
-    :cond_4
-    return v1
+    iput-object v3, p0, Lzq;->z:Ljava/lang/String;
 
-    :cond_5
-    :goto_2
-    iget p1, p0, Lzq;->d:F
+    iput v1, p0, Lzq;->A:I
 
-    invoke-static {p1}, Ljava/lang/Float;->isNaN(F)Z
+    iput v0, p0, Lzq;->B:I
 
-    move-result p1
+    const/4 v3, 0x0
 
-    if-nez p1, :cond_6
+    iput v3, p0, Lzq;->C:F
 
-    iget p1, p0, Lzq;->d:F
+    iput v1, p0, Lzq;->D:I
 
-    cmpl-float p1, p2, p1
+    iput v1, p0, Lzq;->E:I
 
-    if-lez p1, :cond_6
+    iput v1, p0, Lzq;->F:I
 
-    return v1
+    iput v0, p0, Lzq;->G:I
 
-    :cond_6
-    const/4 p1, 0x1
+    iput v0, p0, Lzq;->H:I
 
-    return p1
+    iput v0, p0, Lzq;->I:I
+
+    iput v0, p0, Lzq;->J:I
+
+    iput v0, p0, Lzq;->K:I
+
+    iput v0, p0, Lzq;->L:I
+
+    iput v0, p0, Lzq;->M:I
+
+    const/high16 v3, -0x80000000
+
+    iput v3, p0, Lzq;->N:I
+
+    iput v3, p0, Lzq;->O:I
+
+    iput v3, p0, Lzq;->P:I
+
+    iput v3, p0, Lzq;->Q:I
+
+    iput v3, p0, Lzq;->R:I
+
+    iput v3, p0, Lzq;->S:I
+
+    iput v3, p0, Lzq;->T:I
+
+    iput v2, p0, Lzq;->U:F
+
+    iput v2, p0, Lzq;->V:F
+
+    iput v0, p0, Lzq;->W:I
+
+    iput v0, p0, Lzq;->X:I
+
+    iput v0, p0, Lzq;->Y:I
+
+    iput v0, p0, Lzq;->Z:I
+
+    iput v1, p0, Lzq;->aa:I
+
+    iput v1, p0, Lzq;->ab:I
+
+    iput v1, p0, Lzq;->ac:I
+
+    iput v1, p0, Lzq;->ad:I
+
+    const/high16 v2, 0x3f800000    # 1.0f
+
+    iput v2, p0, Lzq;->ae:F
+
+    iput v2, p0, Lzq;->af:F
+
+    iput v1, p0, Lzq;->ag:I
+
+    iput v0, p0, Lzq;->ah:I
+
+    iput v1, p0, Lzq;->ai:I
+
+    iput-boolean v0, p0, Lzq;->am:Z
+
+    iput-boolean v0, p0, Lzq;->an:Z
+
+    const/4 v1, 0x1
+
+    iput-boolean v1, p0, Lzq;->ao:Z
+
+    iput v0, p0, Lzq;->ap:I
+
+    return-void
 .end method

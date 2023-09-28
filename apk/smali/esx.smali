@@ -1,22 +1,48 @@
-.class public final Lesx;
-.super Ljava/lang/Object;
+.class Lesx;
+.super Lesv;
 
 
-# static fields
-.field public static final a:Loiw;
+# instance fields
+.field final synthetic b:Leta;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
+.method public constructor <init>(Leta;)V
+    .locals 0
 
-    sget-object v0, Lmpx;->a:Lmpx;
+    iput-object p1, p0, Lesx;->b:Leta;
 
-    invoke-static {v0}, Logl;->a(Ljava/lang/Object;)Logk;
+    invoke-direct {p0}, Lesv;-><init>()V
 
-    move-result-object v0
+    return-void
+.end method
 
-    sput-object v0, Lesx;->a:Loiw;
+
+# virtual methods
+.method public b()V
+    .locals 0
+
+    return-void
+.end method
+
+.method public c()V
+    .locals 0
+
+    return-void
+.end method
+
+.method public final f()V
+    .locals 2
+
+    sget-object v0, Lovl;->a:Lovd;
+
+    iget-object v0, p0, Lesx;->b:Leta;
+
+    iget-object v0, v0, Leta;->e:Ljlb;
+
+    const/4 v1, 0x0
+
+    invoke-interface {v0, v1}, Ljlb;->H(Z)V
 
     return-void
 .end method

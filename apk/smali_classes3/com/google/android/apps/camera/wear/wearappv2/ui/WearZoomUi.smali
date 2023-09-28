@@ -1,21 +1,19 @@
 .class public final Lcom/google/android/apps/camera/wear/wearappv2/ui/WearZoomUi;
-.super Landroid/widget/ScrollView;
+.super Landroid/view/View;
 
 
 # instance fields
-.field public a:F
+.field private final a:Landroid/graphics/Paint;
 
 .field private final b:Landroid/graphics/Paint;
 
 .field private final c:Landroid/graphics/Paint;
 
-.field private final d:Landroid/graphics/Paint;
+.field private final d:F
 
 .field private final e:F
 
-.field private final f:F
-
-.field private final g:Landroid/animation/ValueAnimator;
+.field private f:F
 
 
 # direct methods
@@ -24,17 +22,25 @@
 
     const/4 v0, 0x0
 
-    invoke-direct {p0, p1, p2, v0, v0}, Landroid/widget/ScrollView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;II)V
+    invoke-direct {p0, p1, p2, v0, v0}, Landroid/view/View;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;II)V
 
-    const/high16 p2, 0x431a0000    # 154.0f
+    const/high16 p2, 0x43700000    # 240.0f
 
-    iput p2, p0, Lcom/google/android/apps/camera/wear/wearappv2/ui/WearZoomUi;->a:F
+    iput p2, p0, Lcom/google/android/apps/camera/wear/wearappv2/ui/WearZoomUi;->f:F
 
     invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object p2
 
-    const v0, 0x7f070874
+    const v0, 0x7f070615
+
+    invoke-virtual {p2, v0}, Landroid/content/res/Resources;->getDimension(I)F
+
+    move-result v0
+
+    iput v0, p0, Lcom/google/android/apps/camera/wear/wearappv2/ui/WearZoomUi;->d:F
+
+    const v0, 0x7f070617
 
     invoke-virtual {p2, v0}, Landroid/content/res/Resources;->getDimension(I)F
 
@@ -42,23 +48,15 @@
 
     iput v0, p0, Lcom/google/android/apps/camera/wear/wearappv2/ui/WearZoomUi;->e:F
 
-    const v0, 0x7f070871
-
-    invoke-virtual {p2, v0}, Landroid/content/res/Resources;->getDimension(I)F
-
-    move-result v0
-
-    iput v0, p0, Lcom/google/android/apps/camera/wear/wearappv2/ui/WearZoomUi;->f:F
-
     new-instance v0, Landroid/graphics/Paint;
 
     invoke-direct {v0}, Landroid/graphics/Paint;-><init>()V
 
-    iput-object v0, p0, Lcom/google/android/apps/camera/wear/wearappv2/ui/WearZoomUi;->b:Landroid/graphics/Paint;
+    iput-object v0, p0, Lcom/google/android/apps/camera/wear/wearappv2/ui/WearZoomUi;->a:Landroid/graphics/Paint;
 
-    const v1, 0x7f0604ff
+    const v1, 0x7f06049f
 
-    invoke-static {p1, v1}, Labu;->a(Landroid/content/Context;I)I
+    invoke-static {p1, v1}, Laas;->a(Landroid/content/Context;I)I
 
     move-result v1
 
@@ -80,7 +78,7 @@
 
     invoke-virtual {v0, v2}, Landroid/graphics/Paint;->setStrokeCap(Landroid/graphics/Paint$Cap;)V
 
-    const v2, 0x7f070875
+    const v2, 0x7f070616
 
     invoke-virtual {p2, v2}, Landroid/content/res/Resources;->getDimension(I)F
 
@@ -92,11 +90,11 @@
 
     invoke-direct {v0}, Landroid/graphics/Paint;-><init>()V
 
-    iput-object v0, p0, Lcom/google/android/apps/camera/wear/wearappv2/ui/WearZoomUi;->c:Landroid/graphics/Paint;
+    iput-object v0, p0, Lcom/google/android/apps/camera/wear/wearappv2/ui/WearZoomUi;->b:Landroid/graphics/Paint;
 
     const v2, 0x106000b
 
-    invoke-static {p1, v2}, Labu;->a(Landroid/content/Context;I)I
+    invoke-static {p1, v2}, Laas;->a(Landroid/content/Context;I)I
 
     move-result v2
 
@@ -108,90 +106,54 @@
 
     invoke-direct {v0}, Landroid/graphics/Paint;-><init>()V
 
-    iput-object v0, p0, Lcom/google/android/apps/camera/wear/wearappv2/ui/WearZoomUi;->d:Landroid/graphics/Paint;
+    iput-object v0, p0, Lcom/google/android/apps/camera/wear/wearappv2/ui/WearZoomUi;->c:Landroid/graphics/Paint;
 
-    const v2, 0x7f060a90
+    const v2, 0x7f06087a
 
-    invoke-static {p1, v2}, Labu;->a(Landroid/content/Context;I)I
+    invoke-static {p1, v2}, Laas;->a(Landroid/content/Context;I)I
 
-    move-result v2
+    move-result p1
 
-    invoke-virtual {v0, v2}, Landroid/graphics/Paint;->setColor(I)V
+    invoke-virtual {v0, p1}, Landroid/graphics/Paint;->setColor(I)V
 
     invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setAntiAlias(Z)V
 
     :try_start_0
-    const-string v2, "google-sans"
+    const-string p1, "google-sans"
 
-    invoke-static {v2, v1}, Landroid/graphics/Typeface;->create(Ljava/lang/String;I)Landroid/graphics/Typeface;
+    invoke-static {p1, v1}, Landroid/graphics/Typeface;->create(Ljava/lang/String;I)Landroid/graphics/Typeface;
 
-    move-result-object v2
+    move-result-object p1
 
-    invoke-virtual {v0, v2}, Landroid/graphics/Paint;->setTypeface(Landroid/graphics/Typeface;)Landroid/graphics/Typeface;
+    invoke-virtual {v0, p1}, Landroid/graphics/Paint;->setTypeface(Landroid/graphics/Typeface;)Landroid/graphics/Typeface;
     :try_end_0
     .catch Ljava/lang/RuntimeException; {:try_start_0 .. :try_end_0} :catch_0
 
     goto :goto_0
 
     :catch_0
-    move-exception v0
+    move-exception p1
 
-    iget-object v0, p0, Lcom/google/android/apps/camera/wear/wearappv2/ui/WearZoomUi;->d:Landroid/graphics/Paint;
+    iget-object p1, p0, Lcom/google/android/apps/camera/wear/wearappv2/ui/WearZoomUi;->c:Landroid/graphics/Paint;
 
-    sget-object v2, Landroid/graphics/Typeface;->SANS_SERIF:Landroid/graphics/Typeface;
+    sget-object v0, Landroid/graphics/Typeface;->SANS_SERIF:Landroid/graphics/Typeface;
 
-    invoke-static {v2, v1}, Landroid/graphics/Typeface;->create(Landroid/graphics/Typeface;I)Landroid/graphics/Typeface;
+    invoke-static {v0, v1}, Landroid/graphics/Typeface;->create(Landroid/graphics/Typeface;I)Landroid/graphics/Typeface;
 
-    move-result-object v1
+    move-result-object v0
 
-    invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setTypeface(Landroid/graphics/Typeface;)Landroid/graphics/Typeface;
+    invoke-virtual {p1, v0}, Landroid/graphics/Paint;->setTypeface(Landroid/graphics/Typeface;)Landroid/graphics/Typeface;
 
     :goto_0
-    iget-object v0, p0, Lcom/google/android/apps/camera/wear/wearappv2/ui/WearZoomUi;->d:Landroid/graphics/Paint;
+    iget-object p1, p0, Lcom/google/android/apps/camera/wear/wearappv2/ui/WearZoomUi;->c:Landroid/graphics/Paint;
 
-    const v1, 0x7f070873
+    const v0, 0x7f070618
 
-    invoke-virtual {p2, v1}, Landroid/content/res/Resources;->getDimension(I)F
+    invoke-virtual {p2, v0}, Landroid/content/res/Resources;->getDimension(I)F
 
     move-result p2
 
-    invoke-virtual {v0, p2}, Landroid/graphics/Paint;->setTextSize(F)V
-
-    new-instance p2, Landroid/animation/ValueAnimator;
-
-    invoke-direct {p2}, Landroid/animation/ValueAnimator;-><init>()V
-
-    iput-object p2, p0, Lcom/google/android/apps/camera/wear/wearappv2/ui/WearZoomUi;->g:Landroid/animation/ValueAnimator;
-
-    invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
-
-    move-result-object p1
-
-    const v0, 0x7f0c00cb
-
-    invoke-virtual {p1, v0}, Landroid/content/res/Resources;->getInteger(I)I
-
-    move-result p1
-
-    int-to-long v0, p1
-
-    invoke-static {v0, v1}, Lj$/time/Duration;->ofMillis(J)Lj$/time/Duration;
-
-    move-result-object p1
-
-    invoke-virtual {p1}, Lj$/time/Duration;->toMillis()J
-
-    move-result-wide v0
-
-    invoke-virtual {p2, v0, v1}, Landroid/animation/ValueAnimator;->setDuration(J)Landroid/animation/ValueAnimator;
-
-    new-instance p1, Liid;
-
-    const/4 v0, 0x3
-
-    invoke-direct {p1, p0, v0}, Liid;-><init>(Lcom/google/android/apps/camera/wear/wearappv2/ui/WearZoomUi;I)V
-
-    invoke-virtual {p2, p1}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
+    invoke-virtual {p1, p2}, Landroid/graphics/Paint;->setTextSize(F)V
 
     return-void
 .end method
@@ -245,13 +207,11 @@
 
     move-result v0
 
+    div-int/lit8 v0, v0, 0x2
+
     int-to-float v0, v0
 
-    const/high16 v1, 0x40000000    # 2.0f
-
-    div-float/2addr v0, v1
-
-    iget v1, p0, Lcom/google/android/apps/camera/wear/wearappv2/ui/WearZoomUi;->e:F
+    iget v1, p0, Lcom/google/android/apps/camera/wear/wearappv2/ui/WearZoomUi;->d:F
 
     sub-float/2addr v0, v1
 
@@ -279,35 +239,41 @@
 
     add-float v6, v1, v0
 
-    const/high16 v7, 0x431a0000    # 154.0f
+    iget-object v10, p0, Lcom/google/android/apps/camera/wear/wearappv2/ui/WearZoomUi;->a:Landroid/graphics/Paint;
 
-    const/high16 v8, 0x42500000    # 52.0f
+    const/high16 v7, 0x43160000    # 150.0f
+
+    const/high16 v8, 0x42700000    # 60.0f
 
     const/4 v9, 0x0
-
-    iget-object v10, p0, Lcom/google/android/apps/camera/wear/wearappv2/ui/WearZoomUi;->b:Landroid/graphics/Paint;
 
     move-object v2, p1
 
     invoke-virtual/range {v2 .. v10}, Landroid/graphics/Canvas;->drawArc(FFFFFFZLandroid/graphics/Paint;)V
 
-    iget v1, p0, Lcom/google/android/apps/camera/wear/wearappv2/ui/WearZoomUi;->a:F
+    iget v1, p0, Lcom/google/android/apps/camera/wear/wearappv2/ui/WearZoomUi;->f:F
 
     float-to-double v1, v1
 
+    float-to-double v3, v0
+
+    const-wide v5, -0x3fa9800000000000L    # -90.0
+
+    invoke-static {v1, v2}, Ljava/lang/Double;->isNaN(D)Z
+
+    add-double/2addr v1, v5
+
     invoke-static {v1, v2}, Ljava/lang/Math;->toRadians(D)D
 
-    move-result-wide v3
+    move-result-wide v5
 
-    invoke-static {v3, v4}, Ljava/lang/Math;->cos(D)D
+    invoke-static {v5, v6}, Ljava/lang/Math;->cos(D)D
 
-    move-result-wide v3
+    move-result-wide v5
 
-    float-to-double v5, v0
+    invoke-static {v3, v4}, Ljava/lang/Double;->isNaN(D)Z
 
-    invoke-static {v5, v6}, Ljava/lang/Double;->isNaN(D)Z
-
-    mul-double v3, v3, v5
+    mul-double v5, v5, v3
 
     invoke-virtual {p0}, Lcom/google/android/apps/camera/wear/wearappv2/ui/WearZoomUi;->a()F
 
@@ -315,45 +281,45 @@
 
     float-to-double v7, v0
 
+    invoke-static {v7, v8}, Ljava/lang/Double;->isNaN(D)Z
+
+    add-double/2addr v5, v7
+
+    double-to-float v0, v5
+
     invoke-static {v1, v2}, Ljava/lang/Math;->toRadians(D)D
 
-    move-result-wide v0
+    move-result-wide v1
 
-    invoke-static {v0, v1}, Ljava/lang/Math;->sin(D)D
+    invoke-static {v1, v2}, Ljava/lang/Math;->sin(D)D
 
-    move-result-wide v0
+    move-result-wide v1
 
-    invoke-static {v5, v6}, Ljava/lang/Double;->isNaN(D)Z
+    invoke-static {v3, v4}, Ljava/lang/Double;->isNaN(D)Z
 
-    mul-double v0, v0, v5
+    mul-double v1, v1, v3
 
     invoke-virtual {p0}, Lcom/google/android/apps/camera/wear/wearappv2/ui/WearZoomUi;->b()F
 
-    move-result v2
+    move-result v3
 
-    float-to-double v5, v2
+    float-to-double v3, v3
 
-    invoke-static {v5, v6}, Ljava/lang/Double;->isNaN(D)Z
+    invoke-static {v3, v4}, Ljava/lang/Double;->isNaN(D)Z
 
-    add-double/2addr v0, v5
+    add-double/2addr v1, v3
 
-    invoke-static {v7, v8}, Ljava/lang/Double;->isNaN(D)Z
+    double-to-float v1, v1
 
-    add-double/2addr v3, v7
+    iget v2, p0, Lcom/google/android/apps/camera/wear/wearappv2/ui/WearZoomUi;->e:F
 
-    double-to-float v2, v3
+    iget-object v3, p0, Lcom/google/android/apps/camera/wear/wearappv2/ui/WearZoomUi;->b:Landroid/graphics/Paint;
 
-    double-to-float v0, v0
+    invoke-virtual {p1, v0, v1, v2, v3}, Landroid/graphics/Canvas;->drawCircle(FFFLandroid/graphics/Paint;)V
 
-    iget v1, p0, Lcom/google/android/apps/camera/wear/wearappv2/ui/WearZoomUi;->f:F
+    const/4 v2, 0x0
 
-    iget-object v3, p0, Lcom/google/android/apps/camera/wear/wearappv2/ui/WearZoomUi;->c:Landroid/graphics/Paint;
-
-    invoke-virtual {p1, v2, v0, v1, v3}, Landroid/graphics/Canvas;->drawCircle(FFFLandroid/graphics/Paint;)V
-
-    const/4 v1, 0x0
-
-    invoke-static {v1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+    invoke-static {v2}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v3
 
@@ -364,13 +330,13 @@
     :cond_0
     const/high16 v3, 0x43340000    # 180.0f
 
-    invoke-virtual {p1, v3, v2, v0}, Landroid/graphics/Canvas;->rotate(FFF)V
+    invoke-virtual {p1, v3, v0, v1}, Landroid/graphics/Canvas;->rotate(FFF)V
 
     new-instance p1, Landroid/graphics/Rect;
 
     invoke-direct {p1}, Landroid/graphics/Rect;-><init>()V
 
-    throw v1
+    throw v2
 .end method
 
 .method public final setPressed(Z)V
@@ -378,7 +344,7 @@
 
     invoke-virtual {p0}, Lcom/google/android/apps/camera/wear/wearappv2/ui/WearZoomUi;->isPressed()Z
 
-    invoke-super {p0, p1}, Landroid/widget/ScrollView;->setPressed(Z)V
+    invoke-super {p0, p1}, Landroid/view/View;->setPressed(Z)V
 
     return-void
 .end method

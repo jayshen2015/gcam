@@ -1,63 +1,120 @@
 .class final Liyq;
-.super Ljava/lang/Object;
-
-# interfaces
-.implements Ljava/util/concurrent/ThreadFactory;
+.super Lixo;
 
 
-# static fields
-.field private static final a:Ljava/util/concurrent/atomic/AtomicInteger;
+# instance fields
+.field final synthetic b:Liyx;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
-
-    new-instance v0, Ljava/util/concurrent/atomic/AtomicInteger;
-
-    invoke-direct {v0}, Ljava/util/concurrent/atomic/AtomicInteger;-><init>()V
-
-    sput-object v0, Liyq;->a:Ljava/util/concurrent/atomic/AtomicInteger;
-
-    return-void
-.end method
-
-.method public constructor <init>()V
+.method public constructor <init>(Liyx;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Liyq;->b:Liyx;
+
+    invoke-direct {p0, p1}, Lixo;-><init>(Lixx;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final newThread(Ljava/lang/Runnable;)Ljava/lang/Thread;
-    .locals 3
+.method public final c()V
+    .locals 2
 
-    sget-object v0, Liyq;->a:Ljava/util/concurrent/atomic/AtomicInteger;
+    iget-object v0, p0, Liyq;->b:Liyx;
 
-    invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicInteger;->incrementAndGet()I
+    iget-object v0, v0, Liyx;->p:Lihu;
 
-    move-result v0
+    invoke-virtual {v0}, Lihu;->e()V
 
-    new-instance v1, Ljava/lang/StringBuilder;
+    iget-object v0, p0, Liyq;->b:Liyx;
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+    iget-object v1, v0, Liyx;->p:Lihu;
 
-    const-string v2, "measurement-"
+    iget-object v0, v0, Liyx;->q:Lihw;
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v0}, Lihu;->g(Lihw;)V
 
-    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    return-void
+.end method
 
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+.method public final d()V
+    .locals 2
 
-    move-result-object v0
+    iget-object v0, p0, Liyq;->b:Liyx;
 
-    new-instance v1, Liyr;
+    iget-object v0, v0, Liyx;->p:Lihu;
 
-    invoke-direct {v1, p1, v0}, Liyr;-><init>(Ljava/lang/Runnable;Ljava/lang/String;)V
+    invoke-virtual {v0}, Lihu;->e()V
 
-    return-object v1
+    iget-object v0, p0, Liyq;->b:Liyx;
+
+    iget-object v1, v0, Liyx;->p:Lihu;
+
+    iget-object v0, v0, Liyx;->r:Lihw;
+
+    invoke-virtual {v1, v0}, Lihu;->g(Lihw;)V
+
+    return-void
+.end method
+
+.method public final k()V
+    .locals 2
+
+    iget-object v0, p0, Liyq;->b:Liyx;
+
+    iget-object v0, v0, Liyx;->p:Lihu;
+
+    invoke-virtual {v0}, Lihu;->e()V
+
+    iget-object v0, p0, Liyq;->b:Liyx;
+
+    iget-object v1, v0, Liyx;->p:Lihu;
+
+    iget-object v0, v0, Liyx;->v:Lihw;
+
+    invoke-virtual {v1, v0}, Lihu;->g(Lihw;)V
+
+    return-void
+.end method
+
+.method public final l()V
+    .locals 2
+
+    iget-object v0, p0, Liyq;->b:Liyx;
+
+    iget-object v0, v0, Liyx;->p:Lihu;
+
+    invoke-virtual {v0}, Lihu;->e()V
+
+    iget-object v0, p0, Liyq;->b:Liyx;
+
+    iget-object v1, v0, Liyx;->p:Lihu;
+
+    iget-object v0, v0, Liyx;->w:Lihw;
+
+    invoke-virtual {v1, v0}, Lihu;->g(Lihw;)V
+
+    return-void
+.end method
+
+.method public final p()V
+    .locals 2
+
+    iget-object v0, p0, Liyq;->b:Liyx;
+
+    iget-object v0, v0, Liyx;->p:Lihu;
+
+    invoke-virtual {v0}, Lihu;->e()V
+
+    iget-object v0, p0, Liyq;->b:Liyx;
+
+    iget-object v1, v0, Liyx;->p:Lihu;
+
+    iget-object v0, v0, Liyx;->A:Lihw;
+
+    invoke-virtual {v1, v0}, Lihu;->g(Lihw;)V
+
+    return-void
 .end method

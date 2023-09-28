@@ -1,26 +1,42 @@
-.class Lxl;
-.super Ljava/lang/Throwable;
+.class final Lxl;
+.super Ljava/lang/Object;
+
+
+# static fields
+.field static final a:Lxl;
+
+
+# instance fields
+.field final b:Ljava/lang/Runnable;
+
+.field final c:Ljava/util/concurrent/Executor;
+
+.field next:Lxl;
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 1
+.method static constructor <clinit>()V
+    .locals 2
 
-    const-string v0, "Failure occurred while trying to finish a future."
+    new-instance v0, Lxl;
 
-    invoke-direct {p0, v0}, Ljava/lang/Throwable;-><init>(Ljava/lang/String;)V
+    const/4 v1, 0x0
+
+    invoke-direct {v0, v1, v1}, Lxl;-><init>(Ljava/lang/Runnable;Ljava/util/concurrent/Executor;)V
+
+    sput-object v0, Lxl;->a:Lxl;
 
     return-void
 .end method
 
-
-# virtual methods
-.method public final declared-synchronized fillInStackTrace()Ljava/lang/Throwable;
+.method public constructor <init>(Ljava/lang/Runnable;Ljava/util/concurrent/Executor;)V
     .locals 0
 
-    monitor-enter p0
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    monitor-exit p0
+    iput-object p1, p0, Lxl;->b:Ljava/lang/Runnable;
 
-    return-object p0
+    iput-object p2, p0, Lxl;->c:Ljava/util/concurrent/Executor;
+
+    return-void
 .end method

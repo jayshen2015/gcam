@@ -3,17 +3,13 @@
 
 
 # instance fields
-.field public final a:Lhdu;
+.field public final a:F
 
-.field public final b:Z
+.field public final b:F
 
-.field public final c:Z
+.field public final c:F
 
-.field public final d:Z
-
-.field public final e:Z
-
-.field public final f:I
+.field public final d:I
 
 
 # direct methods
@@ -25,48 +21,28 @@
     return-void
 .end method
 
-.method public constructor <init>(Lhdu;IZZZZ)V
+.method public constructor <init>(FFFI)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lhbp;->a:Lhdu;
+    iput p1, p0, Lhbp;->a:F
 
-    iput p2, p0, Lhbp;->f:I
+    iput p2, p0, Lhbp;->b:F
 
-    iput-boolean p3, p0, Lhbp;->b:Z
+    iput p3, p0, Lhbp;->c:F
 
-    iput-boolean p4, p0, Lhbp;->c:Z
-
-    iput-boolean p5, p0, Lhbp;->d:Z
-
-    iput-boolean p6, p0, Lhbp;->e:Z
+    iput p4, p0, Lhbp;->d:I
 
     return-void
 .end method
 
-.method public static a(Lhdu;)Lhbo;
+.method public static a(FFFI)Lhbp;
     .locals 1
 
-    new-instance v0, Lhbo;
+    new-instance v0, Lhbp;
 
-    invoke-direct {v0}, Lhbo;-><init>()V
-
-    iput-object p0, v0, Lhbo;->a:Lhdu;
-
-    const/4 p0, 0x1
-
-    invoke-virtual {v0, p0}, Lhbo;->f(I)V
-
-    const/4 p0, 0x0
-
-    invoke-virtual {v0, p0}, Lhbo;->b(Z)V
-
-    invoke-virtual {v0, p0}, Lhbo;->d(Z)V
-
-    invoke-virtual {v0, p0}, Lhbo;->c(Z)V
-
-    invoke-virtual {v0, p0}, Lhbo;->e(Z)V
+    invoke-direct {v0, p0, p1, p2, p3}, Lhbp;-><init>(FFFI)V
 
     return-object v0
 .end method
@@ -87,72 +63,70 @@
 
     const/4 v2, 0x0
 
-    if-eqz v1, :cond_3
+    if-eqz v1, :cond_1
 
     check-cast p1, Lhbp;
 
-    iget-object v1, p0, Lhbp;->a:Lhdu;
+    iget v1, p0, Lhbp;->a:F
 
-    iget-object v3, p1, Lhbp;->a:Lhdu;
-
-    invoke-virtual {v1, v3}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+    invoke-static {v1}, Ljava/lang/Float;->floatToIntBits(F)I
 
     move-result v1
 
-    if-eqz v1, :cond_2
+    iget v3, p1, Lhbp;->a:F
 
-    iget v1, p0, Lhbp;->f:I
+    invoke-static {v3}, Ljava/lang/Float;->floatToIntBits(F)I
 
-    iget v3, p1, Lhbp;->f:I
+    move-result v3
 
-    if-eqz v1, :cond_1
+    if-ne v1, v3, :cond_1
 
-    if-ne v1, v3, :cond_2
+    iget v1, p0, Lhbp;->b:F
 
-    iget-boolean v1, p0, Lhbp;->b:Z
+    invoke-static {v1}, Ljava/lang/Float;->floatToIntBits(F)I
 
-    iget-boolean v3, p1, Lhbp;->b:Z
+    move-result v1
 
-    if-ne v1, v3, :cond_2
+    iget v3, p1, Lhbp;->b:F
 
-    iget-boolean v1, p0, Lhbp;->c:Z
+    invoke-static {v3}, Ljava/lang/Float;->floatToIntBits(F)I
 
-    iget-boolean v3, p1, Lhbp;->c:Z
+    move-result v3
 
-    if-ne v1, v3, :cond_2
+    if-ne v1, v3, :cond_1
 
-    iget-boolean v1, p0, Lhbp;->d:Z
+    iget v1, p0, Lhbp;->c:F
 
-    iget-boolean v3, p1, Lhbp;->d:Z
+    invoke-static {v1}, Ljava/lang/Float;->floatToIntBits(F)I
 
-    if-ne v1, v3, :cond_2
+    move-result v1
 
-    iget-boolean v1, p0, Lhbp;->e:Z
+    iget v3, p1, Lhbp;->c:F
 
-    iget-boolean p1, p1, Lhbp;->e:Z
+    invoke-static {v3}, Ljava/lang/Float;->floatToIntBits(F)I
 
-    if-ne v1, p1, :cond_2
+    move-result v3
+
+    if-ne v1, v3, :cond_1
+
+    iget v1, p0, Lhbp;->d:I
+
+    iget p1, p1, Lhbp;->d:I
+
+    if-ne v1, p1, :cond_1
 
     return v0
 
     :cond_1
-    const/4 p1, 0x0
-
-    throw p1
-
-    :cond_2
-    return v2
-
-    :cond_3
     return v2
 .end method
 
 .method public final hashCode()I
-    .locals 10
+    .locals 3
 
-    iget-object v0, p0, Lhbp;->a:Lhdu;
+    iget v0, p0, Lhbp;->a:F
 
-    invoke-virtual {v0}, Ljava/lang/Object;->hashCode()I
+    invoke-static {v0}, Ljava/lang/Float;->floatToIntBits(F)I
 
     move-result v0
 
@@ -160,209 +134,83 @@
 
     xor-int/2addr v0, v1
 
-    iget v2, p0, Lhbp;->f:I
-
-    if-eqz v2, :cond_4
-
     mul-int v0, v0, v1
 
-    iget-boolean v3, p0, Lhbp;->b:Z
+    iget v2, p0, Lhbp;->b:F
 
-    const/16 v4, 0x4d5
+    invoke-static {v2}, Ljava/lang/Float;->floatToIntBits(F)I
 
-    const/16 v5, 0x4cf
+    move-result v2
 
-    const/4 v6, 0x1
-
-    if-eq v6, v3, :cond_0
-
-    const/16 v3, 0x4d5
-
-    goto :goto_0
-
-    :cond_0
-    const/16 v3, 0x4cf
-
-    :goto_0
-    iget-boolean v7, p0, Lhbp;->c:Z
-
-    if-eq v6, v7, :cond_1
-
-    const/16 v7, 0x4d5
-
-    goto :goto_1
-
-    :cond_1
-    const/16 v7, 0x4cf
-
-    :goto_1
-    iget-boolean v8, p0, Lhbp;->d:Z
-
-    if-eq v6, v8, :cond_2
-
-    const/16 v8, 0x4d5
-
-    goto :goto_2
-
-    :cond_2
-    const/16 v8, 0x4cf
-
-    :goto_2
-    iget-boolean v9, p0, Lhbp;->e:Z
-
-    if-eq v6, v9, :cond_3
-
-    goto :goto_3
-
-    :cond_3
-    const/16 v4, 0x4cf
-
-    :goto_3
     xor-int/2addr v0, v2
 
     mul-int v0, v0, v1
 
-    xor-int/2addr v0, v3
+    iget v2, p0, Lhbp;->c:F
+
+    invoke-static {v2}, Ljava/lang/Float;->floatToIntBits(F)I
+
+    move-result v2
+
+    xor-int/2addr v0, v2
 
     mul-int v0, v0, v1
 
-    xor-int/2addr v0, v7
+    iget v1, p0, Lhbp;->d:I
 
-    mul-int v0, v0, v1
-
-    xor-int/2addr v0, v8
-
-    mul-int v0, v0, v1
-
-    xor-int/2addr v0, v4
+    xor-int/2addr v0, v1
 
     return v0
-
-    :cond_4
-    const/4 v0, 0x0
-
-    throw v0
 .end method
 
 .method public final toString()Ljava/lang/String;
-    .locals 8
+    .locals 6
 
-    iget-object v0, p0, Lhbp;->a:Lhdu;
+    iget v0, p0, Lhbp;->a:F
 
-    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+    iget v1, p0, Lhbp;->b:F
 
-    move-result-object v0
+    iget v2, p0, Lhbp;->c:F
 
-    iget v1, p0, Lhbp;->f:I
+    iget v3, p0, Lhbp;->d:I
 
-    packed-switch v1, :pswitch_data_0
+    new-instance v4, Ljava/lang/StringBuilder;
 
-    const-string v1, "null"
+    const/16 v5, 0x88
 
-    goto :goto_0
+    invoke-direct {v4, v5}, Ljava/lang/StringBuilder;-><init>(I)V
 
-    :pswitch_0
-    const-string v1, "COLLAPSED"
+    const-string v5, "DualEvHdrSettings{shortTet="
 
-    goto :goto_0
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    :pswitch_1
-    const-string v1, "DOUBLE_TAP_ZOOM"
+    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
 
-    goto :goto_0
+    const-string v0, ", longTet="
 
-    :pswitch_2
-    const-string v1, "CONTINUOUS_ZOOM"
+    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    goto :goto_0
+    invoke-virtual {v4, v1}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
 
-    :pswitch_3
-    const-string v1, "SLIDING"
+    const-string v0, ", portraitTet="
 
-    goto :goto_0
+    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    :pswitch_4
-    const-string v1, "RESTING"
+    invoke-virtual {v4, v2}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
 
-    goto :goto_0
+    const-string v0, ", exposureCompensationSteps="
 
-    :pswitch_5
-    const-string v1, "ZOOMING"
+    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    goto :goto_0
-
-    :pswitch_6
-    const-string v1, "HIDE"
-
-    :goto_0
-    iget-boolean v2, p0, Lhbp;->b:Z
-
-    iget-boolean v3, p0, Lhbp;->c:Z
-
-    iget-boolean v4, p0, Lhbp;->d:Z
-
-    iget-boolean v5, p0, Lhbp;->e:Z
-
-    new-instance v6, Ljava/lang/StringBuilder;
-
-    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v7, "SmartChipCharacteristics{entry="
-
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v6, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v0, ", zoomUiMode="
-
-    invoke-virtual {v6, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v6, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v0, ", isLayoutUpdate="
-
-    invoke-virtual {v6, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v6, v2}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    const-string v0, ", isZoomInViewfinder="
-
-    invoke-virtual {v6, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v6, v3}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    const-string v0, ", isVideoControlUiVisible="
-
-    invoke-virtual {v6, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v6, v4}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    const-string v0, ", isZoomToggleEnabled="
-
-    invoke-virtual {v6, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v6, v5}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+    invoke-virtual {v4, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     const-string v0, "}"
 
-    invoke-virtual {v6, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v0
 
     return-object v0
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x1
-        :pswitch_6
-        :pswitch_5
-        :pswitch_4
-        :pswitch_3
-        :pswitch_2
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
 .end method

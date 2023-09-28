@@ -1,83 +1,81 @@
 .class public final Llik;
 .super Ljava/lang/Object;
 
-# interfaces
-.implements Logk;
-
 
 # instance fields
-.field private final a:Loiw;
+.field final a:Ljava/lang/String;
 
-.field private final b:Loiw;
-
-.field private final c:Loiw;
-
-.field private final d:Loiw;
-
-.field private final e:Loiw;
-
-.field private final f:Loiw;
-
-.field private final g:Loiw;
+.field private b:Z
 
 
 # direct methods
-.method public constructor <init>(Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;)V
-    .locals 0
+.method public constructor <init>(Ljava/lang/String;)V
+    .locals 1
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Llik;->a:Loiw;
+    const/4 v0, 0x0
 
-    iput-object p2, p0, Llik;->b:Loiw;
+    iput-boolean v0, p0, Llik;->b:Z
 
-    iput-object p3, p0, Llik;->c:Loiw;
-
-    iput-object p4, p0, Llik;->d:Loiw;
-
-    iput-object p5, p0, Llik;->e:Loiw;
-
-    iput-object p6, p0, Llik;->f:Loiw;
-
-    iput-object p7, p0, Llik;->g:Loiw;
+    iput-object p1, p0, Llik;->a:Ljava/lang/String;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Llij;
-    .locals 9
-
-    iget-object v1, p0, Llik;->a:Loiw;
-
-    iget-object v2, p0, Llik;->b:Loiw;
-
-    iget-object v3, p0, Llik;->c:Loiw;
-
-    iget-object v4, p0, Llik;->d:Loiw;
-
-    iget-object v5, p0, Llik;->e:Loiw;
-
-    iget-object v6, p0, Llik;->f:Loiw;
-
-    iget-object v7, p0, Llik;->g:Loiw;
-
-    new-instance v8, Llij;
-
-    move-object v0, v8
-
-    invoke-direct/range {v0 .. v7}, Llij;-><init>(Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;)V
-
-    return-object v8
-.end method
-
-.method public final bridge synthetic get()Ljava/lang/Object;
+.method public final declared-synchronized a()Z
     .locals 1
 
-    invoke-virtual {p0}, Llik;->a()Llij;
+    monitor-enter p0
 
-    move-result-object v0
+    :try_start_0
+    iget-boolean v0, p0, Llik;->b:Z
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    return-object v0
+    monitor-exit p0
+
+    return v0
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit p0
+
+    throw v0
+.end method
+
+.method public final declared-synchronized b()V
+    .locals 1
+
+    monitor-enter p0
+
+    :try_start_0
+    iget-boolean v0, p0, Llik;->b:Z
+
+    if-nez v0, :cond_0
+
+    iget-object v0, p0, Llik;->a:Ljava/lang/String;
+
+    invoke-static {v0}, Lcom/agc/Library;->loadLibrary(Ljava/lang/String;)V
+
+    const/4 v0, 0x1
+
+    iput-boolean v0, p0, Llik;->b:Z
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    :cond_0
+    monitor-exit p0
+
+    return-void
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit p0
+
+    throw v0
 .end method

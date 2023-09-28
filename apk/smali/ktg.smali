@@ -1,136 +1,56 @@
-.class public final Lktg;
-.super Ljava/lang/Object;
+.class public abstract Lktg;
+.super Lbmo;
 
-
-# instance fields
-.field private final a:Ljava/lang/Long;
-
-.field private final b:I
+# interfaces
+.implements Lkth;
 
 
 # direct methods
 .method public constructor <init>()V
-    .locals 0
+    .locals 1
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const-string v0, "com.google.android.gms.location.internal.IFusedLocationProviderCallback"
 
-    return-void
-.end method
-
-.method public constructor <init>(Ljava/lang/Long;I)V
-    .locals 0
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lktg;->a:Ljava/lang/Long;
-
-    iput p2, p0, Lktg;->b:I
+    invoke-direct {p0, v0}, Lbmo;-><init>(Ljava/lang/String;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 4
+.method protected final x(ILandroid/os/Parcel;Landroid/os/Parcel;)Z
+    .locals 0
 
-    const/4 v0, 0x1
+    packed-switch p1, :pswitch_data_0
 
-    if-ne p1, p0, :cond_0
+    const/4 p1, 0x0
 
-    return v0
+    return p1
 
-    :cond_0
-    instance-of v1, p1, Lktg;
+    :pswitch_0
+    invoke-virtual {p0}, Lktg;->c()V
 
-    const/4 v2, 0x0
+    goto :goto_0
 
-    if-eqz v1, :cond_1
+    :pswitch_1
+    sget-object p1, Lkte;->CREATOR:Landroid/os/Parcelable$Creator;
 
-    check-cast p1, Lktg;
+    invoke-static {p2, p1}, Lbmp;->a(Landroid/os/Parcel;Landroid/os/Parcelable$Creator;)Landroid/os/Parcelable;
 
-    iget-object v1, p0, Lktg;->a:Ljava/lang/Long;
+    move-result-object p1
 
-    iget-object v3, p1, Lktg;->a:Ljava/lang/Long;
+    check-cast p1, Lkte;
 
-    invoke-virtual {v1, v3}, Ljava/lang/Long;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {p0, p1}, Lktg;->b(Lkte;)V
 
-    move-result v1
+    :goto_0
+    const/4 p1, 0x1
 
-    if-eqz v1, :cond_1
+    return p1
 
-    iget v1, p0, Lktg;->b:I
-
-    iget p1, p1, Lktg;->b:I
-
-    if-ne v1, p1, :cond_1
-
-    return v0
-
-    :cond_1
-    return v2
-.end method
-
-.method public final hashCode()I
-    .locals 2
-
-    iget-object v0, p0, Lktg;->a:Ljava/lang/Long;
-
-    invoke-virtual {v0}, Ljava/lang/Long;->hashCode()I
-
-    move-result v0
-
-    const v1, 0xf4243
-
-    xor-int/2addr v0, v1
-
-    mul-int v0, v0, v1
-
-    iget v1, p0, Lktg;->b:I
-
-    xor-int/2addr v0, v1
-
-    return v0
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .locals 4
-
-    iget-object v0, p0, Lktg;->a:Ljava/lang/Long;
-
-    iget v1, p0, Lktg;->b:I
-
-    invoke-static {v1}, Lkwp;->x(I)I
-
-    move-result v1
-
-    invoke-static {v1}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
-
-    move-result-object v1
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v3, "VerificationFailureKey{protoId="
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const-string v0, ", verificationFailure="
-
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v0, "}"
-
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    return-object v0
+    :pswitch_data_0
+    .packed-switch 0x1
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method

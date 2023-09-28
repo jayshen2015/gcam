@@ -2,16 +2,34 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lkad;
+.implements Llie;
+
+
+# static fields
+.field public static final a:Louj;
 
 
 # instance fields
-.field public final a:J
+.field public final b:J
 
-.field public b:Z
+.field public c:Z
 
 
 # direct methods
+.method static constructor <clinit>()V
+    .locals 1
+
+    const-string v0, "com/google/android/apps/camera/jni/federatedphoto/ModeSuggestionClient"
+
+    invoke-static {v0}, Louj;->h(Ljava/lang/String;)Louj;
+
+    move-result-object v0
+
+    sput-object v0, Lcom/google/android/apps/camera/jni/federatedphoto/ModeSuggestionClient;->a:Louj;
+
+    return-void
+.end method
+
 .method public constructor <init>()V
     .locals 5
 
@@ -21,7 +39,7 @@
 
     const-string v1, "modesuggestion-jni"
 
-    invoke-static {v0, v1}, Lkak;->b(Ljava/lang/Class;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Llil;->b(Ljava/lang/Class;Ljava/lang/String;)V
 
     const-string v0, "ICALabelSensorDenseV1"
 
@@ -29,7 +47,7 @@
 
     move-result-wide v0
 
-    iput-wide v0, p0, Lcom/google/android/apps/camera/jni/federatedphoto/ModeSuggestionClient;->a:J
+    iput-wide v0, p0, Lcom/google/android/apps/camera/jni/federatedphoto/ModeSuggestionClient;->b:J
 
     const-wide/16 v2, 0x0
 
@@ -39,7 +57,7 @@
 
     const/4 v0, 0x0
 
-    iput-boolean v0, p0, Lcom/google/android/apps/camera/jni/federatedphoto/ModeSuggestionClient;->b:Z
+    iput-boolean v0, p0, Lcom/google/android/apps/camera/jni/federatedphoto/ModeSuggestionClient;->c:Z
 
     return-void
 
@@ -67,17 +85,17 @@
     monitor-enter p0
 
     :try_start_0
-    iget-boolean v0, p0, Lcom/google/android/apps/camera/jni/federatedphoto/ModeSuggestionClient;->b:Z
+    iget-boolean v0, p0, Lcom/google/android/apps/camera/jni/federatedphoto/ModeSuggestionClient;->c:Z
 
     if-nez v0, :cond_0
 
-    iget-wide v0, p0, Lcom/google/android/apps/camera/jni/federatedphoto/ModeSuggestionClient;->a:J
+    iget-wide v0, p0, Lcom/google/android/apps/camera/jni/federatedphoto/ModeSuggestionClient;->b:J
 
     invoke-direct {p0, v0, v1}, Lcom/google/android/apps/camera/jni/federatedphoto/ModeSuggestionClient;->nativeClose(J)V
 
     const/4 v0, 0x1
 
-    iput-boolean v0, p0, Lcom/google/android/apps/camera/jni/federatedphoto/ModeSuggestionClient;->b:Z
+    iput-boolean v0, p0, Lcom/google/android/apps/camera/jni/federatedphoto/ModeSuggestionClient;->c:Z
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
@@ -92,4 +110,7 @@
     monitor-exit p0
 
     throw v0
+.end method
+
+.method public native nativeProcess(J[B)[B
 .end method

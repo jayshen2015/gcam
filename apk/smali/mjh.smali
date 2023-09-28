@@ -1,48 +1,88 @@
-.class final Lmjh;
-.super Landroid/animation/AnimatorListenerAdapter;
+.class public final Lmjh;
+.super Ljava/lang/Object;
 
 
-# instance fields
-.field final synthetic a:Lmjk;
+# static fields
+.field public static final a:Lmlf;
+
+.field public static final b:Lmlf;
+
+.field public static final c:Lmlf;
+
+.field public static final d:Lmlf;
+
+.field public static final e:Lmlf;
+
+.field public static final f:Lmlf;
 
 
 # direct methods
-.method public constructor <init>(Lmjk;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 4
 
-    iput-object p1, p0, Lmjh;->a:Lmjk;
+    new-instance v0, Lmlf;
 
-    invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
+    const-string v1, "tkhd"
+
+    const/16 v2, 0xc
+
+    invoke-direct {v0, v1, v2}, Lmlf;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, Lmjh;->a:Lmlf;
+
+    new-instance v0, Lmlf;
+
+    const/16 v3, 0x14
+
+    invoke-direct {v0, v1, v3}, Lmlf;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, Lmjh;->b:Lmlf;
+
+    new-instance v0, Lmlf;
+
+    const-string v1, "mvhd"
+
+    invoke-direct {v0, v1, v2}, Lmlf;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, Lmjh;->c:Lmlf;
+
+    new-instance v0, Lmlf;
+
+    const/16 v3, 0x10
+
+    invoke-direct {v0, v1, v3}, Lmlf;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, Lmjh;->d:Lmlf;
+
+    new-instance v0, Lmlf;
+
+    const-string v1, "mdhd"
+
+    invoke-direct {v0, v1, v2}, Lmlf;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, Lmjh;->e:Lmlf;
+
+    new-instance v0, Lmlf;
+
+    invoke-direct {v0, v1, v3}, Lmlf;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, Lmjh;->f:Lmlf;
 
     return-void
 .end method
 
+.method public static a(II)J
+    .locals 4
 
-# virtual methods
-.method public final onAnimationRepeat(Landroid/animation/Animator;)V
-    .locals 3
+    int-to-long v0, p1
 
-    invoke-super {p0, p1}, Landroid/animation/AnimatorListenerAdapter;->onAnimationRepeat(Landroid/animation/Animator;)V
+    const-wide/32 v2, 0xf4240
 
-    iget-object p1, p0, Lmjh;->a:Lmjk;
+    mul-long v0, v0, v2
 
-    iget v0, p1, Lmjk;->e:I
+    int-to-long p0, p0
 
-    const/4 v1, 0x1
+    div-long/2addr v0, p0
 
-    add-int/2addr v0, v1
-
-    iget-object v2, p1, Lmjk;->d:Lmim;
-
-    iget-object v2, v2, Lmim;->c:[I
-
-    array-length v2, v2
-
-    rem-int/2addr v0, v2
-
-    iput v0, p1, Lmjk;->e:I
-
-    iput-boolean v1, p1, Lmjk;->f:Z
-
-    return-void
+    return-wide v0
 .end method

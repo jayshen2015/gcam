@@ -1,233 +1,269 @@
-.class final Lokd;
+.class public final Lokd;
 .super Ljava/lang/Object;
 
-# interfaces
-.implements Ljava/util/ListIterator;
 
-
-# instance fields
-.field private final a:Loke;
-
-.field private b:I
-
-.field private c:I
+# static fields
+.field private static final a:Ljava/lang/Object;
 
 
 # direct methods
-.method public constructor <init>(Loke;I)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 4
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-static {}, Lokd;->e()Ljava/lang/Object;
 
-    iput-object p1, p0, Lokd;->a:Loke;
+    move-result-object v0
 
-    iput p2, p0, Lokd;->b:I
+    sput-object v0, Lokd;->a:Ljava/lang/Object;
 
-    const/4 p1, -0x1
+    if-eqz v0, :cond_0
 
-    iput p1, p0, Lokd;->c:I
+    const/4 v1, 0x2
+
+    new-array v1, v1, [Ljava/lang/Class;
+
+    const/4 v2, 0x0
+
+    const-class v3, Ljava/lang/Throwable;
+
+    aput-object v3, v1, v2
+
+    const/4 v2, 0x1
+
+    sget-object v3, Ljava/lang/Integer;->TYPE:Ljava/lang/Class;
+
+    aput-object v3, v1, v2
+
+    const-string v2, "getStackTraceElement"
+
+    invoke-static {v2, v1}, Lokd;->f(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
+
+    :cond_0
+    if-nez v0, :cond_1
+
+    return-void
+
+    :cond_1
+    invoke-static {v0}, Lokd;->g(Ljava/lang/Object;)V
 
     return-void
 .end method
 
+.method public static a(Ljava/lang/Throwable;)Ljava/lang/RuntimeException;
+    .locals 1
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
 
-# virtual methods
-.method public final add(Ljava/lang/Object;)V
-    .locals 3
+    invoke-static {p0}, Lokd;->d(Ljava/lang/Throwable;)V
 
-    iget-object v0, p0, Lokd;->a:Loke;
+    new-instance v0, Ljava/lang/RuntimeException;
 
-    iget v1, p0, Lokd;->b:I
+    invoke-direct {v0, p0}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/Throwable;)V
 
-    add-int/lit8 v2, v1, 0x1
-
-    iput v2, p0, Lokd;->b:I
-
-    invoke-virtual {v0, v1, p1}, Loke;->add(ILjava/lang/Object;)V
-
-    const/4 p1, -0x1
-
-    iput p1, p0, Lokd;->c:I
-
-    return-void
+    throw v0
 .end method
 
-.method public final hasNext()Z
+.method public static b(Ljava/lang/Throwable;)Ljava/lang/String;
     .locals 2
 
-    iget v0, p0, Lokd;->b:I
+    new-instance v0, Ljava/io/StringWriter;
 
-    iget-object v1, p0, Lokd;->a:Loke;
+    invoke-direct {v0}, Ljava/io/StringWriter;-><init>()V
 
-    iget v1, v1, Loke;->c:I
+    new-instance v1, Ljava/io/PrintWriter;
 
-    if-ge v0, v1, :cond_0
+    invoke-direct {v1, v0}, Ljava/io/PrintWriter;-><init>(Ljava/io/Writer;)V
 
-    const/4 v0, 0x1
+    invoke-virtual {p0, v1}, Ljava/lang/Throwable;->printStackTrace(Ljava/io/PrintWriter;)V
 
-    return v0
+    invoke-virtual {v0}, Ljava/io/StringWriter;->toString()Ljava/lang/String;
 
-    :cond_0
-    const/4 v0, 0x0
+    move-result-object p0
 
-    return v0
+    return-object p0
 .end method
 
-.method public final hasPrevious()Z
+.method public static c(Ljava/lang/Throwable;Ljava/lang/Class;)V
     .locals 1
 
-    iget v0, p0, Lokd;->b:I
+    invoke-virtual {p1, p0}, Ljava/lang/Class;->isInstance(Ljava/lang/Object;)Z
 
-    if-lez v0, :cond_0
+    move-result v0
 
-    const/4 v0, 0x1
+    if-nez v0, :cond_0
 
-    return v0
+    invoke-static {p0}, Lokd;->d(Ljava/lang/Throwable;)V
+
+    return-void
 
     :cond_0
-    const/4 v0, 0x0
+    invoke-virtual {p1, p0}, Ljava/lang/Class;->cast(Ljava/lang/Object;)Ljava/lang/Object;
 
-    return v0
+    move-result-object p0
+
+    check-cast p0, Ljava/lang/Throwable;
+
+    throw p0
 .end method
 
-.method public final next()Ljava/lang/Object;
-    .locals 3
+.method public static d(Ljava/lang/Throwable;)V
+    .locals 1
 
-    iget v0, p0, Lokd;->b:I
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    iget-object v1, p0, Lokd;->a:Loke;
+    instance-of v0, p0, Ljava/lang/RuntimeException;
 
-    iget v2, v1, Loke;->c:I
+    if-nez v0, :cond_1
 
-    if-ge v0, v2, :cond_0
+    instance-of v0, p0, Ljava/lang/Error;
 
-    add-int/lit8 v2, v0, 0x1
+    if-nez v0, :cond_0
 
-    iput v2, p0, Lokd;->b:I
+    return-void
 
-    iput v0, p0, Lokd;->c:I
+    :cond_0
+    check-cast p0, Ljava/lang/Error;
 
-    iget-object v2, v1, Loke;->a:[Ljava/lang/Object;
+    throw p0
 
-    iget v1, v1, Loke;->b:I
+    :cond_1
+    check-cast p0, Ljava/lang/RuntimeException;
 
-    add-int/2addr v1, v0
+    throw p0
+.end method
 
-    aget-object v0, v2, v1
+.method private static e()Ljava/lang/Object;
+    .locals 5
+
+    const/4 v0, 0x0
+
+    :try_start_0
+    const-string v1, "sun.misc.SharedSecrets"
+
+    const/4 v2, 0x0
+
+    invoke-static {v1, v2, v0}, Ljava/lang/Class;->forName(Ljava/lang/String;ZLjava/lang/ClassLoader;)Ljava/lang/Class;
+
+    move-result-object v1
+
+    const-string v3, "getJavaLangAccess"
+
+    new-array v4, v2, [Ljava/lang/Class;
+
+    invoke-virtual {v1, v3, v4}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
+
+    move-result-object v1
+
+    new-array v2, v2, [Ljava/lang/Object;
+
+    invoke-virtual {v1, v0, v2}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+    :try_end_0
+    .catch Ljava/lang/ThreadDeath; {:try_start_0 .. :try_end_0} :catch_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     return-object v0
 
-    :cond_0
-    new-instance v0, Ljava/util/NoSuchElementException;
-
-    invoke-direct {v0}, Ljava/util/NoSuchElementException;-><init>()V
-
-    throw v0
-.end method
-
-.method public final nextIndex()I
-    .locals 1
-
-    iget v0, p0, Lokd;->b:I
-
-    return v0
-.end method
-
-.method public final previous()Ljava/lang/Object;
-    .locals 3
-
-    iget v0, p0, Lokd;->b:I
-
-    if-lez v0, :cond_0
-
-    add-int/lit8 v0, v0, -0x1
-
-    iput v0, p0, Lokd;->b:I
-
-    iput v0, p0, Lokd;->c:I
-
-    iget-object v1, p0, Lokd;->a:Loke;
-
-    iget-object v2, v1, Loke;->a:[Ljava/lang/Object;
-
-    iget v1, v1, Loke;->b:I
-
-    add-int/2addr v1, v0
-
-    aget-object v0, v2, v1
+    :catchall_0
+    move-exception v1
 
     return-object v0
 
-    :cond_0
-    new-instance v0, Ljava/util/NoSuchElementException;
-
-    invoke-direct {v0}, Ljava/util/NoSuchElementException;-><init>()V
+    :catch_0
+    move-exception v0
 
     throw v0
 .end method
 
-.method public final previousIndex()I
-    .locals 1
-
-    iget v0, p0, Lokd;->b:I
-
-    add-int/lit8 v0, v0, -0x1
-
-    return v0
-.end method
-
-.method public final remove()V
+.method private static varargs f(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
     .locals 3
 
-    iget v0, p0, Lokd;->c:I
+    const/4 v0, 0x0
 
-    const/4 v1, -0x1
+    :try_start_0
+    const-string v1, "sun.misc.JavaLangAccess"
 
-    if-eq v0, v1, :cond_0
+    const/4 v2, 0x0
 
-    iget-object v2, p0, Lokd;->a:Loke;
+    invoke-static {v1, v2, v0}, Ljava/lang/Class;->forName(Ljava/lang/String;ZLjava/lang/ClassLoader;)Ljava/lang/Class;
 
-    invoke-virtual {v2, v0}, Lojs;->b(I)Ljava/lang/Object;
+    move-result-object v1
 
-    iget v0, p0, Lokd;->c:I
+    invoke-virtual {v1, p0, p1}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
 
-    iput v0, p0, Lokd;->b:I
+    move-result-object p0
+    :try_end_0
+    .catch Ljava/lang/ThreadDeath; {:try_start_0 .. :try_end_0} :catch_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    iput v1, p0, Lokd;->c:I
+    return-object p0
 
-    return-void
+    :catchall_0
+    move-exception p0
 
-    :cond_0
-    new-instance v0, Ljava/lang/IllegalStateException;
+    return-object v0
 
-    const-string v1, "Call next() or previous() before removing element from the iterator."
+    :catch_0
+    move-exception p0
 
-    invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw v0
+    throw p0
 .end method
 
-.method public final set(Ljava/lang/Object;)V
-    .locals 2
+.method private static g(Ljava/lang/Object;)V
+    .locals 4
 
-    iget v0, p0, Lokd;->c:I
+    const/4 v0, 0x1
 
-    const/4 v1, -0x1
+    :try_start_0
+    new-array v1, v0, [Ljava/lang/Class;
 
-    if-eq v0, v1, :cond_0
+    const-class v2, Ljava/lang/Throwable;
 
-    iget-object v1, p0, Lokd;->a:Loke;
+    const/4 v3, 0x0
 
-    invoke-virtual {v1, v0, p1}, Loke;->set(ILjava/lang/Object;)Ljava/lang/Object;
+    aput-object v2, v1, v3
+
+    const-string v2, "getStackTraceDepth"
+
+    invoke-static {v2, v1}, Lokd;->f(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
+
+    move-result-object v1
+
+    if-nez v1, :cond_0
 
     return-void
 
     :cond_0
-    new-instance p1, Ljava/lang/IllegalStateException;
+    new-array v0, v0, [Ljava/lang/Object;
 
-    const-string v0, "Call next() or previous() before replacing element from the iterator."
+    new-instance v2, Ljava/lang/Throwable;
 
-    invoke-direct {p1, v0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+    invoke-direct {v2}, Ljava/lang/Throwable;-><init>()V
 
-    throw p1
+    aput-object v2, v0, v3
+
+    invoke-virtual {v1, p0, v0}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
+    :try_end_0
+    .catch Ljava/lang/UnsupportedOperationException; {:try_start_0 .. :try_end_0} :catch_2
+    .catch Ljava/lang/IllegalAccessException; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Ljava/lang/reflect/InvocationTargetException; {:try_start_0 .. :try_end_0} :catch_0
+
+    return-void
+
+    :catch_0
+    move-exception p0
+
+    goto :goto_0
+
+    :catch_1
+    move-exception p0
+
+    goto :goto_0
+
+    :catch_2
+    move-exception p0
+
+    :goto_0
+    return-void
 .end method

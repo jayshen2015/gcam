@@ -1,116 +1,115 @@
-.class public final Lewo;
+.class public final synthetic Lewo;
 .super Ljava/lang/Object;
+
+# interfaces
+.implements Loiu;
 
 
 # instance fields
-.field public a:Z
-
-.field private b:J
-
-.field private c:D
+.field public final synthetic a:Lexi;
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 1
+.method public synthetic constructor <init>(Lexi;)V
+    .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const/4 v0, 0x1
-
-    iput-boolean v0, p0, Lewo;->a:Z
+    iput-object p1, p0, Lewo;->a:Lexi;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()D
-    .locals 9
+.method public final a(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 6
 
-    iget-boolean v0, p0, Lewo;->a:Z
+    iget-object v0, p0, Lewo;->a:Lexi;
 
-    const-wide/high16 v1, 0x3ff0000000000000L    # 1.0
+    check-cast p1, Ljava/util/List;
 
-    if-eqz v0, :cond_0
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    return-wide v1
+    invoke-interface {p1}, Ljava/util/List;->size()I
+
+    move-result v1
+
+    const/4 v2, 0x1
+
+    const/4 v3, 0x0
+
+    const/4 v4, 0x3
+
+    if-ne v1, v4, :cond_0
+
+    const/4 v1, 0x1
+
+    goto :goto_0
 
     :cond_0
-    invoke-static {}, Landroid/os/SystemClock;->elapsedRealtimeNanos()J
+    const/4 v1, 0x0
 
-    move-result-wide v3
+    :goto_0
+    invoke-static {v1}, Lobr;->aF(Z)V
 
-    iget-wide v5, p0, Lewo;->b:J
+    invoke-interface {p1, v3}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
-    sub-long/2addr v3, v5
+    move-result-object v1
 
-    iget-wide v5, p0, Lewo;->c:D
+    check-cast v1, Ljava/lang/Boolean;
 
-    long-to-double v3, v3
+    invoke-virtual {v1}, Ljava/lang/Boolean;->booleanValue()Z
 
-    const-wide v7, 0x41cdcd6500000000L    # 1.0E9
+    move-result v1
 
-    invoke-static {v3, v4}, Ljava/lang/Double;->isNaN(D)Z
+    invoke-interface {p1, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
-    div-double/2addr v3, v7
+    move-result-object v4
 
-    invoke-static {v5, v6, v3, v4}, Ljava/lang/Math;->min(DD)D
+    check-cast v4, Ljava/lang/Boolean;
 
-    move-result-wide v3
+    invoke-virtual {v4}, Ljava/lang/Boolean;->booleanValue()Z
 
-    iget-wide v5, p0, Lewo;->c:D
+    move-result v4
 
-    div-double/2addr v3, v5
+    const/4 v5, 0x2
 
-    const-wide/high16 v5, -0x4010000000000000L    # -1.0
+    invoke-interface {p1, v5}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
-    add-double/2addr v5, v3
+    move-result-object p1
 
-    invoke-static {v5, v6}, Ljava/lang/Math;->abs(D)D
+    check-cast p1, Ljava/lang/Boolean;
 
-    move-result-wide v5
+    invoke-virtual {p1}, Ljava/lang/Boolean;->booleanValue()Z
 
-    const-wide v7, 0x3f1a36e2eb1c432dL    # 1.0E-4
+    move-result p1
 
-    cmpg-double v0, v5, v7
+    if-nez v1, :cond_1
 
-    if-gez v0, :cond_1
+    if-nez v4, :cond_1
 
-    const/4 v0, 0x1
+    if-nez p1, :cond_1
 
-    iput-boolean v0, p0, Lewo;->a:Z
+    iget-object p1, v0, Lexi;->c:Lgqy;
+
+    invoke-virtual {p1}, Lldn;->fA()Ljava/lang/Object;
+
+    move-result-object p1
+
+    sget-object v0, Lgqx;->a:Lgqx;
+
+    if-ne p1, v0, :cond_1
+
+    goto :goto_1
 
     :cond_1
-    const-wide/high16 v5, -0x3fe6000000000000L    # -6.5
+    const/4 v2, 0x0
 
-    mul-double v3, v3, v5
+    :goto_1
+    invoke-static {v2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
-    invoke-static {v3, v4}, Ljava/lang/Math;->exp(D)D
+    move-result-object p1
 
-    move-result-wide v3
-
-    sub-double/2addr v1, v3
-
-    return-wide v1
-.end method
-
-.method public final b()V
-    .locals 2
-
-    invoke-static {}, Landroid/os/SystemClock;->elapsedRealtimeNanos()J
-
-    move-result-wide v0
-
-    iput-wide v0, p0, Lewo;->b:J
-
-    const-wide v0, 0x3fe6666666666666L    # 0.7
-
-    iput-wide v0, p0, Lewo;->c:D
-
-    const/4 v0, 0x0
-
-    iput-boolean v0, p0, Lewo;->a:Z
-
-    return-void
+    return-object p1
 .end method

@@ -1,104 +1,59 @@
-.class public final Lcgr;
-.super Lcly;
+.class final Lcgr;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Lphh;
 
 
 # instance fields
-.field private final a:Loiw;
-
-.field private final b:Lkbc;
-
-.field private final c:Lfak;
-
-.field private d:Z
+.field final synthetic a:Lcgs;
 
 
 # direct methods
-.method public constructor <init>(Loiw;Ljuh;Lfak;Lkbc;)V
+.method public constructor <init>(Lcgs;)V
     .locals 0
 
-    invoke-direct {p0, p2}, Lcly;-><init>(Ljava/util/concurrent/Executor;)V
+    iput-object p1, p0, Lcgr;->a:Lcgs;
 
-    iput-object p1, p0, Lcgr;->a:Loiw;
-
-    iput-object p4, p0, Lcgr;->b:Lkbc;
-
-    iput-object p3, p0, Lcgr;->c:Lfak;
-
-    const/4 p1, 0x0
-
-    iput-boolean p1, p0, Lcgr;->d:Z
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()V
-    .locals 2
+.method public final a(Ljava/lang/Throwable;)V
+    .locals 0
 
-    invoke-virtual {p0}, Lcgr;->d()Z
-
-    move-result v0
-
-    if-nez v0, :cond_0
-
-    iget-object v0, p0, Lcgr;->c:Lfak;
-
-    new-instance v1, Lcgq;
-
-    invoke-direct {v1, p0}, Lcgq;-><init>(Lcgr;)V
-
-    invoke-virtual {v0, v1}, Lfak;->e(Lfaz;)V
-
-    :cond_0
     return-void
 .end method
 
-.method public final d()Z
+.method public final bridge synthetic b(Ljava/lang/Object;)V
     .locals 2
 
-    iget-boolean v0, p0, Lcgr;->d:Z
+    check-cast p1, Lcmz;
 
-    if-eqz v0, :cond_0
+    iget-object v0, p0, Lcgr;->a:Lcgs;
 
-    const/4 v0, 0x1
+    iget-object v0, v0, Lcgs;->d:Ljava/lang/Object;
 
-    return v0
+    monitor-enter v0
 
-    :cond_0
-    iget-object v0, p0, Lcgr;->b:Lkbc;
+    :try_start_0
+    iget-object v1, p0, Lcgr;->a:Lcgs;
 
-    const-string v1, "CameraActivityControllerInitializer#initialize"
+    iput-object p1, v1, Lcgs;->c:Lcmz;
 
-    invoke-interface {v0, v1}, Lkbc;->e(Ljava/lang/String;)V
+    monitor-exit v0
 
-    iget-object v0, p0, Lcgr;->a:Loiw;
+    return-void
 
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
+    :catchall_0
+    move-exception p1
 
-    move-result-object v0
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    check-cast v0, Lcgy;
-
-    iget-object v1, p0, Lcgr;->b:Lkbc;
-
-    invoke-interface {v1}, Lkbc;->h()V
-
-    invoke-interface {v0}, Lcgy;->v()Z
-
-    move-result v0
-
-    iput-boolean v0, p0, Lcgr;->d:Z
-
-    iget-object v0, p0, Lcgr;->b:Lkbc;
-
-    invoke-interface {v0}, Lkbc;->h()V
-
-    iget-object v0, p0, Lcgr;->b:Lkbc;
-
-    invoke-interface {v0}, Lkbc;->f()V
-
-    iget-boolean v0, p0, Lcgr;->d:Z
-
-    return v0
+    throw p1
 .end method

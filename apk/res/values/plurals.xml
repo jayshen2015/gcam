@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <plurals name="accessibility_timelapse_manual_record_speed_desc">
-        <item quantity="other">Time Lapse %d times speed</item>
-        <item quantity="one">Time Lapse %d time speed</item>
-    </plurals>
-    <plurals name="number_of_cropped_face">
-        <item quantity="other">%d cropped.</item>
-        <item quantity="one">One cropped.</item>
+    <item type="plurals" name="APKTOOL_DUMMY_0" />
+    <item type="plurals" name="APKTOOL_DUMMY_1" />
+    <item type="plurals" name="APKTOOL_DUMMY_2" />
+    <plurals name="number_of_faces_announcement">
+        <item quantity="other">%1$d faces.</item>
+        <item quantity="one">%1$d face.</item>
     </plurals>
     <plurals name="photos_remaining">
         <item quantity="other">About %s photos</item>
@@ -18,8 +17,8 @@
         <item quantity="one">(%1$d app selected)</item>
     </plurals>
     <plurals name="social_share_info">
-        <item quantity="other">"Quickly share photos and videos on social apps from Camera. Choose up to %1$d apps. Photos and videos saved to Locked Folder can't be shared."</item>
-        <item quantity="one">"Quickly share photos and videos on social apps from Camera. Choose %1$d app. Photos and videos saved to Locked Folder can't be shared."</item>
+        <item quantity="other">"Quickly share photos and videos on social apps right from Camera. Choose up to %1$d apps. Photos and videos saved to Locked Folder can't be shared."</item>
+        <item quantity="one">"Quickly share photos and videos on social apps right from Camera. Choose %1$d app. Photos and videos saved to Locked Folder can't be shared."</item>
     </plurals>
     <plurals name="social_share_select_error">
         <item quantity="other">Choose up to %1$d apps</item>

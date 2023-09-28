@@ -1,146 +1,59 @@
-.class public final Lkwe;
-.super Lnws;
-
-# interfaces
-.implements Lnxz;
-
-
-# static fields
-.field public static final a:Lkwe;
-
-.field private static volatile b:Lnyf;
+.class final Lkwe;
+.super Lkwa;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
-
-    new-instance v0, Lkwe;
-
-    invoke-direct {v0}, Lkwe;-><init>()V
-
-    sput-object v0, Lkwe;->a:Lkwe;
-
-    const-class v1, Lkwe;
-
-    invoke-static {v1, v0}, Lnws;->aa(Ljava/lang/Class;Lnws;)V
-
-    return-void
-.end method
-
-.method private constructor <init>()V
+.method public constructor <init>()V
     .locals 0
 
-    invoke-direct {p0}, Lnws;-><init>()V
+    invoke-direct {p0}, Lkwa;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method protected final a(ILjava/lang/Object;)Ljava/lang/Object;
-    .locals 1
+.method public final c(Lcom/google/android/gms/common/api/Status;)V
+    .locals 2
 
-    add-int/lit8 p1, p1, -0x1
+    invoke-virtual {p1}, Lcom/google/android/gms/common/api/Status;->b()Z
 
-    const/4 p2, 0x0
+    move-result v0
 
-    packed-switch p1, :pswitch_data_0
+    if-nez v0, :cond_0
 
-    :pswitch_0
-    return-object p2
+    invoke-static {p1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
-    :pswitch_1
-    sget-object p1, Lkwe;->b:Lnyf;
+    move-result-object p1
 
-    if-nez p1, :cond_1
+    invoke-static {p1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
-    const-class p2, Lkwe;
+    move-result-object v0
 
-    monitor-enter p2
+    invoke-virtual {v0}, Ljava/lang/String;->length()I
 
-    :try_start_0
-    sget-object p1, Lkwe;->b:Lnyf;
+    move-result v0
 
-    if-nez p1, :cond_0
+    new-instance v1, Ljava/lang/StringBuilder;
 
-    new-instance p1, Lnwo;
+    add-int/lit8 v0, v0, 0x34
 
-    sget-object v0, Lkwe;->a:Lkwe;
+    invoke-direct {v1, v0}, Ljava/lang/StringBuilder;-><init>(I)V
 
-    invoke-direct {p1, v0}, Lnwo;-><init>(Lnws;)V
+    const-string v0, "disconnect(): Could not unregister listener: status="
 
-    sput-object p1, Lkwe;->b:Lnyf;
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p1
+
+    const-string v0, "UsageReportingClientImp"
+
+    invoke-static {v0, p1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
     :cond_0
-    monitor-exit p2
-
-    goto :goto_0
-
-    :catchall_0
-    move-exception p1
-
-    monitor-exit p2
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw p1
-
-    :cond_1
-    :goto_0
-    return-object p1
-
-    :pswitch_2
-    sget-object p1, Lkwe;->a:Lkwe;
-
-    return-object p1
-
-    :pswitch_3
-    new-instance p1, Lnwn;
-
-    sget-object p2, Lkwe;->a:Lkwe;
-
-    invoke-direct {p1, p2}, Lnwn;-><init>(Lnws;)V
-
-    return-object p1
-
-    :pswitch_4
-    new-instance p1, Lkwe;
-
-    invoke-direct {p1}, Lkwe;-><init>()V
-
-    return-object p1
-
-    :pswitch_5
-    sget-object p1, Lkwe;->a:Lkwe;
-
-    const-string v0, "\u0001\u0000"
-
-    invoke-static {p1, v0, p2}, Lkwe;->X(Lnxy;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object p1
-
-    return-object p1
-
-    :pswitch_6
-    const/4 p1, 0x1
-
-    invoke-static {p1}, Ljava/lang/Byte;->valueOf(B)Ljava/lang/Byte;
-
-    move-result-object p1
-
-    return-object p1
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_6
-        :pswitch_0
-        :pswitch_5
-        :pswitch_4
-        :pswitch_3
-        :pswitch_2
-        :pswitch_1
-    .end packed-switch
+    return-void
 .end method

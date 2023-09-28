@@ -1,154 +1,110 @@
 .class public final Lfui;
-.super Ljwi;
+.super Ljava/lang/Object;
 
 
 # instance fields
-.field public final a:Ljvs;
+.field public final a:Lfpo;
+
+.field public final b:Ljava/util/Map;
+
+.field public final c:Lfud;
+
+.field public final d:Lnvb;
+
+.field private final e:Lojc;
 
 
 # direct methods
-.method public constructor <init>(Ljwb;)V
+.method public constructor <init>(Lojc;Lfud;Lfpo;Lnvb;[B[B)V
     .locals 0
 
-    invoke-direct {p0, p1}, Ljwi;-><init>(Ljwb;)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lfui;->a:Ljvs;
+    new-instance p5, Ljava/util/HashMap;
+
+    invoke-direct {p5}, Ljava/util/HashMap;-><init>()V
+
+    iput-object p5, p0, Lfui;->b:Ljava/util/Map;
+
+    iput-object p1, p0, Lfui;->e:Lojc;
+
+    iput-object p4, p0, Lfui;->d:Lnvb;
+
+    iput-object p2, p0, Lfui;->c:Lfud;
+
+    iput-object p3, p0, Lfui;->a:Lfpo;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final bridge synthetic b(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 1
+.method public final declared-synchronized a(JLhsp;)Lfuh;
+    .locals 3
 
-    check-cast p1, Ljava/lang/Integer;
+    monitor-enter p0
 
-    invoke-virtual {p1}, Ljava/lang/Integer;->intValue()I
+    :try_start_0
+    iget-object v0, p0, Lfui;->b:Ljava/util/Map;
 
-    move-result p1
+    invoke-static {p1, p2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
-    packed-switch p1, :pswitch_data_0
+    move-result-object v1
 
-    :pswitch_0
-    new-instance p1, Ljava/lang/RuntimeException;
+    invoke-interface {v0, v1}, Ljava/util/Map;->containsKey(Ljava/lang/Object;)Z
 
-    const-string v0, "Unknown WB input value"
+    move-result v0
 
-    invoke-direct {p1, v0}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
+    xor-int/lit8 v0, v0, 0x1
 
-    throw p1
+    const-string v2, "Current session exists; didn\'t clear last one?"
 
-    :pswitch_1
-    sget-object p1, Lfuh;->b:Lfuh;
+    invoke-static {v0, v2}, Lobr;->aR(ZLjava/lang/Object;)V
 
-    goto :goto_0
+    iget-object v0, p0, Lfui;->e:Lojc;
 
-    :pswitch_2
-    sget-object p1, Lfuh;->c:Lfuh;
+    invoke-virtual {v0}, Lojc;->g()Z
 
-    goto :goto_0
+    move-result v0
 
-    :pswitch_3
-    sget-object p1, Lfuh;->e:Lfuh;
+    const-string v2, "Trying to create a tone map session with no microvideo API"
 
-    goto :goto_0
+    invoke-static {v0, v2}, Lobr;->aR(ZLjava/lang/Object;)V
 
-    :pswitch_4
-    sget-object p1, Lfuh;->d:Lfuh;
+    iget-object v0, p0, Lfui;->d:Lnvb;
 
-    goto :goto_0
+    invoke-virtual {v0, p3}, Lnvb;->f(Lhsp;)Lede;
 
-    :pswitch_5
-    sget-object p1, Lfuh;->a:Lfuh;
+    move-result-object v0
 
-    :goto_0
+    new-instance v2, Lfug;
+
+    invoke-direct {v2, p0, p1, p2, p3}, Lfug;-><init>(Lfui;JLhsp;)V
+
+    new-instance p1, Lfuh;
+
+    invoke-direct {p1, p0, v2}, Lfuh;-><init>(Lfui;Llie;)V
+
+    invoke-virtual {v0, p1}, Lede;->a(Lebn;)V
+
+    invoke-virtual {v0, p1}, Lede;->c(Lebo;)V
+
+    invoke-virtual {v0, p1}, Lede;->e(Leby;)V
+
+    iget-object p2, p0, Lfui;->b:Ljava/util/Map;
+
+    invoke-interface {p2, v1, p1}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    monitor-exit p0
+
     return-object p1
 
-    :pswitch_data_0
-    .packed-switch 0x1
-        :pswitch_5
-        :pswitch_4
-        :pswitch_3
-        :pswitch_0
-        :pswitch_2
-        :pswitch_1
-    .end packed-switch
-.end method
+    :catchall_0
+    move-exception p1
 
-.method protected final bridge synthetic c(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 1
-
-    check-cast p1, Lfuh;
-
-    invoke-virtual {p1}, Lfuh;->ordinal()I
-
-    move-result p1
-
-    packed-switch p1, :pswitch_data_0
-
-    new-instance p1, Ljava/lang/RuntimeException;
-
-    const-string v0, "Unknown WB output value"
-
-    invoke-direct {p1, v0}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
+    monitor-exit p0
 
     throw p1
-
-    :pswitch_0
-    const/4 p1, 0x3
-
-    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object p1
-
-    goto :goto_0
-
-    :pswitch_1
-    const/4 p1, 0x2
-
-    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object p1
-
-    goto :goto_0
-
-    :pswitch_2
-    const/4 p1, 0x5
-
-    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object p1
-
-    goto :goto_0
-
-    :pswitch_3
-    const/4 p1, 0x6
-
-    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object p1
-
-    goto :goto_0
-
-    :pswitch_4
-    const/4 p1, 0x1
-
-    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object p1
-
-    :goto_0
-    return-object p1
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_4
-        :pswitch_3
-        :pswitch_2
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
 .end method

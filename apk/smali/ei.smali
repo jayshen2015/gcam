@@ -1,1294 +1,1080 @@
-.class public Lei;
-.super Lbz;
-
-# interfaces
-.implements Labp;
-
-
-# instance fields
-.field private q:Lel;
+.class public final Lei;
+.super Ljava/lang/Object;
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 3
+.method static constructor <clinit>()V
+    .locals 2
 
-    invoke-direct {p0}, Lbz;-><init>()V
+    new-instance v0, Ljava/lang/ThreadLocal;
 
-    invoke-virtual {p0}, Lpl;->getSavedStateRegistry()Laqm;
+    invoke-direct {v0}, Ljava/lang/ThreadLocal;-><init>()V
 
-    move-result-object v0
-
-    new-instance v1, Lcg;
-
-    const/4 v2, 0x2
-
-    invoke-direct {v1, p0, v2}, Lcg;-><init>(Lei;I)V
-
-    const-string v2, "androidx:appcompat"
-
-    invoke-virtual {v0, v2, v1}, Laqm;->b(Ljava/lang/String;Laql;)V
-
-    new-instance v0, Leh;
+    new-instance v0, Ljava/util/WeakHashMap;
 
     const/4 v1, 0x0
 
-    invoke-direct {v0, p0, v1}, Leh;-><init>(Lei;I)V
-
-    invoke-virtual {p0, v0}, Lpl;->l(Lpu;)V
+    invoke-direct {v0, v1}, Ljava/util/WeakHashMap;-><init>(I)V
 
     return-void
 .end method
 
-.method private final n()V
-    .locals 1
+.method public static a(Landroid/content/Context;I)Landroid/graphics/Typeface;
+    .locals 7
 
-    invoke-virtual {p0}, Lei;->getWindow()Landroid/view/Window;
+    invoke-virtual {p0}, Landroid/content/Context;->isRestricted()Z
 
-    move-result-object v0
+    move-result v0
 
-    invoke-virtual {v0}, Landroid/view/Window;->getDecorView()Landroid/view/View;
+    if-eqz v0, :cond_0
 
-    move-result-object v0
+    const/4 p0, 0x0
 
-    invoke-static {v0, p0}, Laci;->c(Landroid/view/View;Lakv;)V
-
-    invoke-virtual {p0}, Lei;->getWindow()Landroid/view/Window;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Landroid/view/Window;->getDecorView()Landroid/view/View;
-
-    move-result-object v0
-
-    invoke-static {v0, p0}, Lacj;->b(Landroid/view/View;Lalw;)V
-
-    invoke-virtual {p0}, Lei;->getWindow()Landroid/view/Window;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Landroid/view/Window;->getDecorView()Landroid/view/View;
-
-    move-result-object v0
-
-    invoke-static {v0, p0}, Lafh;->A(Landroid/view/View;Laqn;)V
-
-    invoke-virtual {p0}, Lei;->getWindow()Landroid/view/Window;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Landroid/view/Window;->getDecorView()Landroid/view/View;
-
-    move-result-object v0
-
-    invoke-static {v0, p0}, Lgg;->c(Landroid/view/View;Lps;)V
-
-    return-void
-.end method
-
-
-# virtual methods
-.method public final addContentView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
-    .locals 1
-
-    invoke-direct {p0}, Lei;->n()V
-
-    invoke-virtual {p0}, Lei;->j()Lel;
-
-    move-result-object v0
-
-    invoke-virtual {v0, p1, p2}, Lel;->d(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
-
-    return-void
-.end method
-
-.method protected final attachBaseContext(Landroid/content/Context;)V
-    .locals 8
-
-    invoke-virtual {p0}, Lei;->j()Lel;
-
-    move-result-object v0
-
-    check-cast v0, Lfd;
-
-    const/4 v1, 0x1
-
-    iput-boolean v1, v0, Lfd;->C:Z
-
-    invoke-virtual {v0}, Lfd;->q()I
-
-    move-result v2
-
-    invoke-virtual {v0, p1, v2}, Lfd;->r(Landroid/content/Context;I)I
-
-    move-result v2
-
-    invoke-static {p1}, Lfd;->n(Landroid/content/Context;)Z
-
-    move-result v3
-
-    if-eqz v3, :cond_1
-
-    invoke-static {p1}, Lel;->n(Landroid/content/Context;)Z
-
-    move-result v3
-
-    if-nez v3, :cond_0
-
-    goto :goto_0
+    return-object p0
 
     :cond_0
-    sget-boolean v3, Lel;->c:Z
+    new-instance v2, Landroid/util/TypedValue;
 
-    if-nez v3, :cond_1
+    invoke-direct {v2}, Landroid/util/TypedValue;-><init>()V
 
-    sget-object v3, Lel;->a:Lfi;
-
-    new-instance v4, Lbe;
-
-    const/4 v5, 0x7
-
-    invoke-direct {v4, p1, v5}, Lbe;-><init>(Landroid/content/Context;I)V
-
-    invoke-virtual {v3, v4}, Lfi;->execute(Ljava/lang/Runnable;)V
-
-    :cond_1
-    :goto_0
-    sget-boolean v3, Lfd;->g:Z
+    const/4 v3, 0x0
 
     const/4 v4, 0x0
 
     const/4 v5, 0x0
 
-    if-eqz v3, :cond_2
+    const/4 v6, 0x1
 
-    instance-of v3, p1, Landroid/view/ContextThemeWrapper;
+    move-object v0, p0
 
-    if-eqz v3, :cond_2
+    move v1, p1
 
-    invoke-virtual {v0, p1, v2, v5, v4}, Lfd;->P(Landroid/content/Context;ILandroid/content/res/Configuration;Z)Landroid/content/res/Configuration;
+    invoke-static/range {v0 .. v6}, Lei;->f(Landroid/content/Context;ILandroid/util/TypedValue;ILeg;ZZ)Landroid/graphics/Typeface;
 
-    move-result-object v3
+    move-result-object p0
 
-    :try_start_0
-    move-object v6, p1
+    return-object p0
+.end method
 
-    check-cast v6, Landroid/view/ContextThemeWrapper;
+.method public static b(Landroid/content/Context;I)Landroid/graphics/Typeface;
+    .locals 7
 
-    invoke-virtual {v6, v3}, Landroid/view/ContextThemeWrapper;->applyOverrideConfiguration(Landroid/content/res/Configuration;)V
-    :try_end_0
-    .catch Ljava/lang/IllegalStateException; {:try_start_0 .. :try_end_0} :catch_0
+    invoke-virtual {p0}, Landroid/content/Context;->isRestricted()Z
 
-    goto/16 :goto_3
+    move-result v0
 
-    :catch_0
-    move-exception v3
+    if-eqz v0, :cond_0
 
-    :cond_2
-    instance-of v3, p1, Lqi;
+    const/4 p0, 0x0
 
-    if-eqz v3, :cond_3
+    return-object p0
 
-    invoke-virtual {v0, p1, v2, v5, v4}, Lfd;->P(Landroid/content/Context;ILandroid/content/res/Configuration;Z)Landroid/content/res/Configuration;
+    :cond_0
+    new-instance v2, Landroid/util/TypedValue;
 
-    move-result-object v3
+    invoke-direct {v2}, Landroid/util/TypedValue;-><init>()V
 
-    :try_start_1
-    move-object v4, p1
-
-    check-cast v4, Lqi;
-
-    invoke-virtual {v4, v3}, Lqi;->a(Landroid/content/res/Configuration;)V
-    :try_end_1
-    .catch Ljava/lang/IllegalStateException; {:try_start_1 .. :try_end_1} :catch_1
-
-    goto/16 :goto_3
-
-    :catch_1
-    move-exception v3
-
-    :cond_3
-    sget-boolean v3, Lfd;->f:Z
-
-    if-eqz v3, :cond_1b
-
-    new-instance v3, Landroid/content/res/Configuration;
-
-    invoke-direct {v3}, Landroid/content/res/Configuration;-><init>()V
-
-    const/4 v4, -0x1
-
-    iput v4, v3, Landroid/content/res/Configuration;->uiMode:I
+    const/4 v3, 0x0
 
     const/4 v4, 0x0
 
-    iput v4, v3, Landroid/content/res/Configuration;->fontScale:F
+    const/4 v5, 0x0
 
-    invoke-static {p1, v3}, Ler;->b(Landroid/content/Context;Landroid/content/res/Configuration;)Landroid/content/Context;
+    const/4 v6, 0x0
 
-    move-result-object v3
+    move-object v0, p0
 
-    invoke-virtual {v3}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+    move v1, p1
 
-    move-result-object v3
+    invoke-static/range {v0 .. v6}, Lei;->f(Landroid/content/Context;ILandroid/util/TypedValue;ILeg;ZZ)Landroid/graphics/Typeface;
 
-    invoke-virtual {v3}, Landroid/content/res/Resources;->getConfiguration()Landroid/content/res/Configuration;
+    move-result-object p0
 
-    move-result-object v3
-
-    invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
-
-    move-result-object v6
-
-    invoke-virtual {v6}, Landroid/content/res/Resources;->getConfiguration()Landroid/content/res/Configuration;
-
-    move-result-object v6
-
-    iget v7, v6, Landroid/content/res/Configuration;->uiMode:I
-
-    iput v7, v3, Landroid/content/res/Configuration;->uiMode:I
-
-    invoke-virtual {v3, v6}, Landroid/content/res/Configuration;->equals(Landroid/content/res/Configuration;)Z
-
-    move-result v7
-
-    if-nez v7, :cond_19
-
-    new-instance v5, Landroid/content/res/Configuration;
-
-    invoke-direct {v5}, Landroid/content/res/Configuration;-><init>()V
-
-    iput v4, v5, Landroid/content/res/Configuration;->fontScale:F
-
-    if-eqz v6, :cond_19
-
-    invoke-virtual {v3, v6}, Landroid/content/res/Configuration;->diff(Landroid/content/res/Configuration;)I
-
-    move-result v4
-
-    if-nez v4, :cond_4
-
-    goto/16 :goto_1
-
-    :cond_4
-    iget v4, v3, Landroid/content/res/Configuration;->fontScale:F
-
-    iget v7, v6, Landroid/content/res/Configuration;->fontScale:F
-
-    cmpl-float v4, v4, v7
-
-    if-eqz v4, :cond_5
-
-    iget v4, v6, Landroid/content/res/Configuration;->fontScale:F
-
-    iput v4, v5, Landroid/content/res/Configuration;->fontScale:F
-
-    :cond_5
-    iget v4, v3, Landroid/content/res/Configuration;->mcc:I
-
-    iget v7, v6, Landroid/content/res/Configuration;->mcc:I
-
-    if-eq v4, v7, :cond_6
-
-    iget v4, v6, Landroid/content/res/Configuration;->mcc:I
-
-    iput v4, v5, Landroid/content/res/Configuration;->mcc:I
-
-    :cond_6
-    iget v4, v3, Landroid/content/res/Configuration;->mnc:I
-
-    iget v7, v6, Landroid/content/res/Configuration;->mnc:I
-
-    if-eq v4, v7, :cond_7
-
-    iget v4, v6, Landroid/content/res/Configuration;->mnc:I
-
-    iput v4, v5, Landroid/content/res/Configuration;->mnc:I
-
-    :cond_7
-    invoke-static {v3, v6, v5}, Let;->b(Landroid/content/res/Configuration;Landroid/content/res/Configuration;Landroid/content/res/Configuration;)V
-
-    iget v4, v3, Landroid/content/res/Configuration;->touchscreen:I
-
-    iget v7, v6, Landroid/content/res/Configuration;->touchscreen:I
-
-    if-eq v4, v7, :cond_8
-
-    iget v4, v6, Landroid/content/res/Configuration;->touchscreen:I
-
-    iput v4, v5, Landroid/content/res/Configuration;->touchscreen:I
-
-    :cond_8
-    iget v4, v3, Landroid/content/res/Configuration;->keyboard:I
-
-    iget v7, v6, Landroid/content/res/Configuration;->keyboard:I
-
-    if-eq v4, v7, :cond_9
-
-    iget v4, v6, Landroid/content/res/Configuration;->keyboard:I
-
-    iput v4, v5, Landroid/content/res/Configuration;->keyboard:I
-
-    :cond_9
-    iget v4, v3, Landroid/content/res/Configuration;->keyboardHidden:I
-
-    iget v7, v6, Landroid/content/res/Configuration;->keyboardHidden:I
-
-    if-eq v4, v7, :cond_a
-
-    iget v4, v6, Landroid/content/res/Configuration;->keyboardHidden:I
-
-    iput v4, v5, Landroid/content/res/Configuration;->keyboardHidden:I
-
-    :cond_a
-    iget v4, v3, Landroid/content/res/Configuration;->navigation:I
-
-    iget v7, v6, Landroid/content/res/Configuration;->navigation:I
-
-    if-eq v4, v7, :cond_b
-
-    iget v4, v6, Landroid/content/res/Configuration;->navigation:I
-
-    iput v4, v5, Landroid/content/res/Configuration;->navigation:I
-
-    :cond_b
-    iget v4, v3, Landroid/content/res/Configuration;->navigationHidden:I
-
-    iget v7, v6, Landroid/content/res/Configuration;->navigationHidden:I
-
-    if-eq v4, v7, :cond_c
-
-    iget v4, v6, Landroid/content/res/Configuration;->navigationHidden:I
-
-    iput v4, v5, Landroid/content/res/Configuration;->navigationHidden:I
-
-    :cond_c
-    iget v4, v3, Landroid/content/res/Configuration;->orientation:I
-
-    iget v7, v6, Landroid/content/res/Configuration;->orientation:I
-
-    if-eq v4, v7, :cond_d
-
-    iget v4, v6, Landroid/content/res/Configuration;->orientation:I
-
-    iput v4, v5, Landroid/content/res/Configuration;->orientation:I
-
-    :cond_d
-    iget v4, v3, Landroid/content/res/Configuration;->screenLayout:I
-
-    and-int/lit8 v4, v4, 0xf
-
-    iget v7, v6, Landroid/content/res/Configuration;->screenLayout:I
-
-    and-int/lit8 v7, v7, 0xf
-
-    if-eq v4, v7, :cond_e
-
-    iget v4, v5, Landroid/content/res/Configuration;->screenLayout:I
-
-    iget v7, v6, Landroid/content/res/Configuration;->screenLayout:I
-
-    and-int/lit8 v7, v7, 0xf
-
-    or-int/2addr v4, v7
-
-    iput v4, v5, Landroid/content/res/Configuration;->screenLayout:I
-
-    :cond_e
-    iget v4, v3, Landroid/content/res/Configuration;->screenLayout:I
-
-    and-int/lit16 v4, v4, 0xc0
-
-    iget v7, v6, Landroid/content/res/Configuration;->screenLayout:I
-
-    and-int/lit16 v7, v7, 0xc0
-
-    if-eq v4, v7, :cond_f
-
-    iget v4, v5, Landroid/content/res/Configuration;->screenLayout:I
-
-    iget v7, v6, Landroid/content/res/Configuration;->screenLayout:I
-
-    and-int/lit16 v7, v7, 0xc0
-
-    or-int/2addr v4, v7
-
-    iput v4, v5, Landroid/content/res/Configuration;->screenLayout:I
-
-    :cond_f
-    iget v4, v3, Landroid/content/res/Configuration;->screenLayout:I
-
-    and-int/lit8 v4, v4, 0x30
-
-    iget v7, v6, Landroid/content/res/Configuration;->screenLayout:I
-
-    and-int/lit8 v7, v7, 0x30
-
-    if-eq v4, v7, :cond_10
-
-    iget v4, v5, Landroid/content/res/Configuration;->screenLayout:I
-
-    iget v7, v6, Landroid/content/res/Configuration;->screenLayout:I
-
-    and-int/lit8 v7, v7, 0x30
-
-    or-int/2addr v4, v7
-
-    iput v4, v5, Landroid/content/res/Configuration;->screenLayout:I
-
-    :cond_10
-    iget v4, v3, Landroid/content/res/Configuration;->screenLayout:I
-
-    and-int/lit16 v4, v4, 0x300
-
-    iget v7, v6, Landroid/content/res/Configuration;->screenLayout:I
-
-    and-int/lit16 v7, v7, 0x300
-
-    if-eq v4, v7, :cond_11
-
-    iget v4, v5, Landroid/content/res/Configuration;->screenLayout:I
-
-    iget v7, v6, Landroid/content/res/Configuration;->screenLayout:I
-
-    and-int/lit16 v7, v7, 0x300
-
-    or-int/2addr v4, v7
-
-    iput v4, v5, Landroid/content/res/Configuration;->screenLayout:I
-
-    :cond_11
-    iget v4, v3, Landroid/content/res/Configuration;->colorMode:I
-
-    and-int/lit8 v4, v4, 0x3
-
-    iget v7, v6, Landroid/content/res/Configuration;->colorMode:I
-
-    and-int/lit8 v7, v7, 0x3
-
-    if-eq v4, v7, :cond_12
-
-    iget v4, v5, Landroid/content/res/Configuration;->colorMode:I
-
-    iget v7, v6, Landroid/content/res/Configuration;->colorMode:I
-
-    and-int/lit8 v7, v7, 0x3
-
-    or-int/2addr v4, v7
-
-    iput v4, v5, Landroid/content/res/Configuration;->colorMode:I
-
-    :cond_12
-    iget v4, v3, Landroid/content/res/Configuration;->colorMode:I
-
-    and-int/lit8 v4, v4, 0xc
-
-    iget v7, v6, Landroid/content/res/Configuration;->colorMode:I
-
-    and-int/lit8 v7, v7, 0xc
-
-    if-eq v4, v7, :cond_13
-
-    iget v4, v5, Landroid/content/res/Configuration;->colorMode:I
-
-    iget v7, v6, Landroid/content/res/Configuration;->colorMode:I
-
-    and-int/lit8 v7, v7, 0xc
-
-    or-int/2addr v4, v7
-
-    iput v4, v5, Landroid/content/res/Configuration;->colorMode:I
-
-    :cond_13
-    iget v4, v3, Landroid/content/res/Configuration;->uiMode:I
-
-    and-int/lit8 v4, v4, 0xf
-
-    iget v7, v6, Landroid/content/res/Configuration;->uiMode:I
-
-    and-int/lit8 v7, v7, 0xf
-
-    if-eq v4, v7, :cond_14
-
-    iget v4, v5, Landroid/content/res/Configuration;->uiMode:I
-
-    iget v7, v6, Landroid/content/res/Configuration;->uiMode:I
-
-    and-int/lit8 v7, v7, 0xf
-
-    or-int/2addr v4, v7
-
-    iput v4, v5, Landroid/content/res/Configuration;->uiMode:I
-
-    :cond_14
-    iget v4, v3, Landroid/content/res/Configuration;->uiMode:I
-
-    and-int/lit8 v4, v4, 0x30
-
-    iget v7, v6, Landroid/content/res/Configuration;->uiMode:I
-
-    and-int/lit8 v7, v7, 0x30
-
-    if-eq v4, v7, :cond_15
-
-    iget v4, v5, Landroid/content/res/Configuration;->uiMode:I
-
-    iget v7, v6, Landroid/content/res/Configuration;->uiMode:I
-
-    and-int/lit8 v7, v7, 0x30
-
-    or-int/2addr v4, v7
-
-    iput v4, v5, Landroid/content/res/Configuration;->uiMode:I
-
-    :cond_15
-    iget v4, v3, Landroid/content/res/Configuration;->screenWidthDp:I
-
-    iget v7, v6, Landroid/content/res/Configuration;->screenWidthDp:I
-
-    if-eq v4, v7, :cond_16
-
-    iget v4, v6, Landroid/content/res/Configuration;->screenWidthDp:I
-
-    iput v4, v5, Landroid/content/res/Configuration;->screenWidthDp:I
-
-    :cond_16
-    iget v4, v3, Landroid/content/res/Configuration;->screenHeightDp:I
-
-    iget v7, v6, Landroid/content/res/Configuration;->screenHeightDp:I
-
-    if-eq v4, v7, :cond_17
-
-    iget v4, v6, Landroid/content/res/Configuration;->screenHeightDp:I
-
-    iput v4, v5, Landroid/content/res/Configuration;->screenHeightDp:I
-
-    :cond_17
-    iget v4, v3, Landroid/content/res/Configuration;->smallestScreenWidthDp:I
-
-    iget v7, v6, Landroid/content/res/Configuration;->smallestScreenWidthDp:I
-
-    if-eq v4, v7, :cond_18
-
-    iget v4, v6, Landroid/content/res/Configuration;->smallestScreenWidthDp:I
-
-    iput v4, v5, Landroid/content/res/Configuration;->smallestScreenWidthDp:I
-
-    :cond_18
-    iget v3, v3, Landroid/content/res/Configuration;->densityDpi:I
-
-    iget v4, v6, Landroid/content/res/Configuration;->densityDpi:I
-
-    if-eq v3, v4, :cond_19
-
-    iget v3, v6, Landroid/content/res/Configuration;->densityDpi:I
-
-    iput v3, v5, Landroid/content/res/Configuration;->densityDpi:I
-
-    goto :goto_1
-
-    :cond_19
-    :goto_1
-    invoke-virtual {v0, p1, v2, v5, v1}, Lfd;->P(Landroid/content/Context;ILandroid/content/res/Configuration;Z)Landroid/content/res/Configuration;
-
-    move-result-object v0
-
-    new-instance v1, Lqi;
-
-    const v2, 0x7f1503d6
-
-    invoke-direct {v1, p1, v2}, Lqi;-><init>(Landroid/content/Context;I)V
-
-    invoke-virtual {v1, v0}, Lqi;->a(Landroid/content/res/Configuration;)V
-
-    :try_start_2
-    invoke-virtual {p1}, Landroid/content/Context;->getTheme()Landroid/content/res/Resources$Theme;
-
-    move-result-object p1
-    :try_end_2
-    .catch Ljava/lang/NullPointerException; {:try_start_2 .. :try_end_2} :catch_2
-
-    if-eqz p1, :cond_1a
-
-    invoke-virtual {v1}, Lqi;->getTheme()Landroid/content/res/Resources$Theme;
-
-    move-result-object p1
-
-    invoke-static {p1}, Lacm;->a(Landroid/content/res/Resources$Theme;)V
-
-    goto :goto_2
-
-    :cond_1a
-    goto :goto_2
-
-    :catch_2
-    move-exception p1
-
-    :goto_2
-    move-object p1, v1
-
-    :cond_1b
-    :goto_3
-    invoke-super {p0, p1}, Lbz;->attachBaseContext(Landroid/content/Context;)V
-
-    return-void
+    return-object p0
 .end method
 
-.method public final closeOptionsMenu()V
-    .locals 3
+.method public static c(Landroid/content/Context;ILandroid/util/TypedValue;ILeg;)Landroid/graphics/Typeface;
+    .locals 7
 
-    invoke-virtual {p0}, Lei;->i()Ldy;
-
-    move-result-object v0
-
-    invoke-virtual {p0}, Lei;->getWindow()Landroid/view/Window;
-
-    move-result-object v1
-
-    const/4 v2, 0x0
-
-    invoke-virtual {v1, v2}, Landroid/view/Window;->hasFeature(I)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_1
-
-    if-eqz v0, :cond_0
-
-    invoke-virtual {v0}, Ldy;->k()Z
-
-    move-result v0
-
-    if-nez v0, :cond_1
-
-    :cond_0
-    invoke-super {p0}, Lbz;->closeOptionsMenu()V
-
-    :cond_1
-    return-void
-.end method
-
-.method public dispatchKeyEvent(Landroid/view/KeyEvent;)Z
-    .locals 3
-
-    invoke-virtual {p1}, Landroid/view/KeyEvent;->getKeyCode()I
-
-    move-result v0
-
-    invoke-virtual {p0}, Lei;->i()Ldy;
-
-    move-result-object v1
-
-    const/16 v2, 0x52
-
-    if-ne v0, v2, :cond_0
-
-    if-eqz v1, :cond_0
-
-    invoke-virtual {v1, p1}, Ldy;->o(Landroid/view/KeyEvent;)Z
+    invoke-virtual {p0}, Landroid/content/Context;->isRestricted()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    const/4 p1, 0x1
+    const/4 p0, 0x0
 
-    return p1
-
-    :cond_0
-    invoke-super {p0, p1}, Lbz;->dispatchKeyEvent(Landroid/view/KeyEvent;)Z
-
-    move-result p1
-
-    return p1
-.end method
-
-.method public final findViewById(I)Landroid/view/View;
-    .locals 1
-
-    invoke-virtual {p0}, Lei;->j()Lel;
-
-    move-result-object v0
-
-    invoke-virtual {v0, p1}, Lel;->c(I)Landroid/view/View;
-
-    move-result-object p1
-
-    return-object p1
-.end method
-
-.method public final getMenuInflater()Landroid/view/MenuInflater;
-    .locals 3
-
-    invoke-virtual {p0}, Lei;->j()Lel;
-
-    move-result-object v0
-
-    check-cast v0, Lfd;
-
-    iget-object v1, v0, Lfd;->m:Landroid/view/MenuInflater;
-
-    if-nez v1, :cond_1
-
-    invoke-virtual {v0}, Lfd;->C()V
-
-    new-instance v1, Lgd;
-
-    iget-object v2, v0, Lfd;->l:Ldy;
-
-    if-eqz v2, :cond_0
-
-    invoke-virtual {v2}, Ldy;->b()Landroid/content/Context;
-
-    move-result-object v2
-
-    goto :goto_0
+    return-object p0
 
     :cond_0
-    iget-object v2, v0, Lfd;->i:Landroid/content/Context;
+    const/4 v5, 0x1
 
-    :goto_0
-    invoke-direct {v1, v2}, Lgd;-><init>(Landroid/content/Context;)V
+    const/4 v6, 0x0
 
-    iput-object v1, v0, Lfd;->m:Landroid/view/MenuInflater;
+    move-object v0, p0
 
-    :cond_1
-    iget-object v0, v0, Lfd;->m:Landroid/view/MenuInflater;
+    move v1, p1
 
-    return-object v0
+    move-object v2, p2
+
+    move v3, p3
+
+    move-object v4, p4
+
+    invoke-static/range {v0 .. v6}, Lei;->f(Landroid/content/Context;ILandroid/util/TypedValue;ILeg;ZZ)Landroid/graphics/Typeface;
+
+    move-result-object p0
+
+    return-object p0
 .end method
 
-.method public final h()Landroid/content/Intent;
-    .locals 1
-
-    invoke-static {p0}, Lss;->f(Landroid/app/Activity;)Landroid/content/Intent;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public final i()Ldy;
-    .locals 1
-
-    invoke-virtual {p0}, Lei;->j()Lel;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lel;->b()Ldy;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public final invalidateOptionsMenu()V
-    .locals 1
-
-    invoke-virtual {p0}, Lei;->j()Lel;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lel;->f()V
-
-    return-void
-.end method
-
-.method public final j()Lel;
-    .locals 2
-
-    iget-object v0, p0, Lei;->q:Lel;
-
-    if-nez v0, :cond_0
-
-    sget v0, Lel;->b:I
-
-    new-instance v0, Lfd;
-
-    const/4 v1, 0x0
-
-    invoke-direct {v0, p0, v1, p0}, Lfd;-><init>(Landroid/content/Context;Landroid/view/Window;Ljava/lang/Object;)V
-
-    iput-object v0, p0, Lei;->q:Lel;
-
-    :cond_0
-    iget-object v0, p0, Lei;->q:Lel;
-
-    return-object v0
-.end method
-
-.method public onConfigurationChanged(Landroid/content/res/Configuration;)V
-    .locals 2
-
-    invoke-super {p0, p1}, Lbz;->onConfigurationChanged(Landroid/content/res/Configuration;)V
-
-    invoke-virtual {p0}, Lei;->j()Lel;
-
-    move-result-object p1
-
-    check-cast p1, Lfd;
-
-    iget-boolean v0, p1, Lfd;->w:Z
-
-    if-eqz v0, :cond_0
-
-    iget-boolean v0, p1, Lfd;->t:Z
-
-    if-eqz v0, :cond_0
-
-    invoke-virtual {p1}, Lfd;->b()Ldy;
-
-    move-result-object v0
-
-    if-eqz v0, :cond_0
-
-    invoke-virtual {v0}, Ldy;->q()V
-
-    :cond_0
-    invoke-static {}, Lio;->d()Lio;
-
-    move-result-object v0
-
-    iget-object v1, p1, Lfd;->i:Landroid/content/Context;
-
-    invoke-virtual {v0, v1}, Lio;->e(Landroid/content/Context;)V
-
-    new-instance v0, Landroid/content/res/Configuration;
-
-    iget-object v1, p1, Lfd;->i:Landroid/content/Context;
-
-    invoke-virtual {v1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Landroid/content/res/Resources;->getConfiguration()Landroid/content/res/Configuration;
-
-    move-result-object v1
-
-    invoke-direct {v0, v1}, Landroid/content/res/Configuration;-><init>(Landroid/content/res/Configuration;)V
-
-    iput-object v0, p1, Lfd;->E:Landroid/content/res/Configuration;
-
-    const/4 v0, 0x0
-
-    invoke-virtual {p1, v0}, Lfd;->O(Z)V
-
-    return-void
-.end method
-
-.method public final onContentChanged()V
+.method public static d(Landroid/content/res/Resources;ILandroid/content/res/Resources$Theme;)Landroid/graphics/drawable/Drawable;
     .locals 0
 
+    invoke-virtual {p0, p1, p2}, Landroid/content/res/Resources;->getDrawable(ILandroid/content/res/Resources$Theme;)Landroid/graphics/drawable/Drawable;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public static e(Landroid/content/Context;ILeg;)V
+    .locals 7
+
+    invoke-virtual {p0}, Landroid/content/Context;->isRestricted()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    const/4 p0, -0x4
+
+    invoke-virtual {p2, p0}, Leg;->b(I)V
+
+    return-void
+
+    :cond_0
+    new-instance v2, Landroid/util/TypedValue;
+
+    invoke-direct {v2}, Landroid/util/TypedValue;-><init>()V
+
+    const/4 v3, 0x0
+
+    const/4 v5, 0x0
+
+    const/4 v6, 0x0
+
+    move-object v0, p0
+
+    move v1, p1
+
+    move-object v4, p2
+
+    invoke-static/range {v0 .. v6}, Lei;->f(Landroid/content/Context;ILandroid/util/TypedValue;ILeg;ZZ)Landroid/graphics/Typeface;
+
     return-void
 .end method
 
-.method protected onDestroy()V
-    .locals 1
+.method private static f(Landroid/content/Context;ILandroid/util/TypedValue;ILeg;ZZ)Landroid/graphics/Typeface;
+    .locals 8
 
-    invoke-super {p0}, Lbz;->onDestroy()V
+    invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
-    invoke-virtual {p0}, Lei;->j()Lel;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lel;->g()V
-
-    return-void
-.end method
-
-.method public final onMenuItemSelected(ILandroid/view/MenuItem;)Z
-    .locals 5
-
-    invoke-super {p0, p1, p2}, Lbz;->onMenuItemSelected(ILandroid/view/MenuItem;)Z
-
-    move-result p1
+    move-result-object v1
 
     const/4 v0, 0x1
 
-    if-eqz p1, :cond_0
+    invoke-virtual {v1, p1, p2, v0}, Landroid/content/res/Resources;->getValue(ILandroid/util/TypedValue;Z)V
 
-    return v0
+    move-object v0, p0
 
-    :cond_0
-    invoke-virtual {p0}, Lei;->i()Ldy;
+    move-object v2, p2
 
-    move-result-object p1
+    move v3, p1
 
-    invoke-interface {p2}, Landroid/view/MenuItem;->getItemId()I
+    move v4, p3
 
-    move-result p2
+    move-object v5, p4
 
-    const v1, 0x102002c
+    move v6, p5
 
-    const/4 v2, 0x0
+    move v7, p6
 
-    if-ne p2, v1, :cond_8
+    invoke-static/range {v0 .. v7}, Lei;->g(Landroid/content/Context;Landroid/content/res/Resources;Landroid/util/TypedValue;IILeg;ZZ)Landroid/graphics/Typeface;
 
-    if-eqz p1, :cond_8
+    move-result-object p0
 
-    invoke-virtual {p1}, Ldy;->a()I
+    if-nez p0, :cond_1
 
-    move-result p1
+    if-nez p4, :cond_1
 
-    and-int/lit8 p1, p1, 0x4
-
-    if-eqz p1, :cond_8
-
-    invoke-static {p0}, Lss;->f(Landroid/app/Activity;)Landroid/content/Intent;
-
-    move-result-object p1
-
-    if-eqz p1, :cond_7
-
-    invoke-static {p0, p1}, Laax;->c(Landroid/app/Activity;Landroid/content/Intent;)Z
-
-    move-result p2
-
-    if-eqz p2, :cond_6
-
-    new-instance p1, Labq;
-
-    invoke-direct {p1, p0}, Labq;-><init>(Landroid/content/Context;)V
-
-    invoke-interface {p0}, Labp;->h()Landroid/content/Intent;
-
-    move-result-object p2
-
-    if-nez p2, :cond_1
-
-    invoke-static {p0}, Lss;->f(Landroid/app/Activity;)Landroid/content/Intent;
-
-    move-result-object p2
-
-    :cond_1
-    if-eqz p2, :cond_4
-
-    invoke-virtual {p2}, Landroid/content/Intent;->getComponent()Landroid/content/ComponentName;
-
-    move-result-object v1
-
-    if-nez v1, :cond_2
-
-    iget-object v1, p1, Labq;->b:Landroid/content/Context;
-
-    invoke-virtual {v1}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
-
-    move-result-object v1
-
-    invoke-virtual {p2, v1}, Landroid/content/Intent;->resolveActivity(Landroid/content/pm/PackageManager;)Landroid/content/ComponentName;
-
-    move-result-object v1
-
-    :cond_2
-    iget-object v3, p1, Labq;->a:Ljava/util/ArrayList;
-
-    invoke-virtual {v3}, Ljava/util/ArrayList;->size()I
-
-    move-result v3
-
-    :try_start_0
-    iget-object v4, p1, Labq;->b:Landroid/content/Context;
-
-    invoke-static {v4, v1}, Lss;->g(Landroid/content/Context;Landroid/content/ComponentName;)Landroid/content/Intent;
-
-    move-result-object v1
-
-    :goto_0
-    if-eqz v1, :cond_3
-
-    iget-object v4, p1, Labq;->a:Ljava/util/ArrayList;
-
-    invoke-virtual {v4, v3, v1}, Ljava/util/ArrayList;->add(ILjava/lang/Object;)V
-
-    iget-object v4, p1, Labq;->b:Landroid/content/Context;
-
-    invoke-virtual {v1}, Landroid/content/Intent;->getComponent()Landroid/content/ComponentName;
-
-    move-result-object v1
-
-    invoke-static {v4, v1}, Lss;->g(Landroid/content/Context;Landroid/content/ComponentName;)Landroid/content/Intent;
-
-    move-result-object v1
-    :try_end_0
-    .catch Landroid/content/pm/PackageManager$NameNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
+    if-eqz p6, :cond_0
 
     goto :goto_0
 
-    :cond_3
-    iget-object v1, p1, Labq;->a:Ljava/util/ArrayList;
+    :cond_0
+    new-instance p0, Landroid/content/res/Resources$NotFoundException;
 
-    invoke-virtual {v1, p2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    new-instance p2, Ljava/lang/StringBuilder;
 
-    goto :goto_1
+    invoke-direct {p2}, Ljava/lang/StringBuilder;-><init>()V
 
-    :catch_0
-    move-exception p1
+    const-string p3, "Font resource ID #0x"
 
-    const-string p2, "TaskStackBuilder"
+    invoke-virtual {p2, p3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string v0, "Bad ComponentName while traversing activity parent metadata"
-
-    invoke-static {p2, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
-
-    new-instance p2, Ljava/lang/IllegalArgumentException;
-
-    invoke-direct {p2, p1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/Throwable;)V
-
-    throw p2
-
-    :cond_4
-    :goto_1
-    iget-object p2, p1, Labq;->a:Ljava/util/ArrayList;
-
-    invoke-virtual {p2}, Ljava/util/ArrayList;->isEmpty()Z
-
-    move-result p2
-
-    if-nez p2, :cond_5
-
-    iget-object p2, p1, Labq;->a:Ljava/util/ArrayList;
-
-    new-array v1, v2, [Landroid/content/Intent;
-
-    invoke-virtual {p2, v1}, Ljava/util/ArrayList;->toArray([Ljava/lang/Object;)[Ljava/lang/Object;
-
-    move-result-object p2
-
-    check-cast p2, [Landroid/content/Intent;
-
-    new-instance v1, Landroid/content/Intent;
-
-    aget-object v3, p2, v2
-
-    invoke-direct {v1, v3}, Landroid/content/Intent;-><init>(Landroid/content/Intent;)V
-
-    const v3, 0x1000c000
-
-    invoke-virtual {v1, v3}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
-
-    move-result-object v1
-
-    aput-object v1, p2, v2
-
-    iget-object p1, p1, Labq;->b:Landroid/content/Context;
-
-    const/4 v1, 0x0
-
-    invoke-static {p1, p2, v1}, Labr;->a(Landroid/content/Context;[Landroid/content/Intent;Landroid/os/Bundle;)V
-
-    :try_start_1
-    invoke-static {p0}, Laap;->a(Landroid/app/Activity;)V
-    :try_end_1
-    .catch Ljava/lang/IllegalStateException; {:try_start_1 .. :try_end_1} :catch_1
-
-    goto :goto_2
-
-    :catch_1
-    move-exception p1
-
-    invoke-virtual {p0}, Lei;->finish()V
-
-    goto :goto_2
-
-    :cond_5
-    new-instance p1, Ljava/lang/IllegalStateException;
-
-    const-string p2, "No intents added to TaskStackBuilder; cannot startActivities"
-
-    invoke-direct {p1, p2}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw p1
-
-    :cond_6
-    invoke-static {p0, p1}, Laax;->b(Landroid/app/Activity;Landroid/content/Intent;)Z
-
-    goto :goto_2
-
-    :cond_7
-    const/4 v0, 0x0
-
-    :goto_2
-    return v0
-
-    :cond_8
-    return v2
-.end method
-
-.method protected onPostCreate(Landroid/os/Bundle;)V
-    .locals 0
-
-    invoke-super {p0, p1}, Lbz;->onPostCreate(Landroid/os/Bundle;)V
-
-    invoke-virtual {p0}, Lei;->j()Lel;
+    invoke-static {p1}, Ljava/lang/Integer;->toHexString(I)Ljava/lang/String;
 
     move-result-object p1
 
-    check-cast p1, Lfd;
+    invoke-virtual {p2, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {p1}, Lfd;->B()V
+    const-string p1, " could not be retrieved."
 
-    return-void
+    invoke-virtual {p2, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {p2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-direct {p0, p1}, Landroid/content/res/Resources$NotFoundException;-><init>(Ljava/lang/String;)V
+
+    throw p0
+
+    :cond_1
+    :goto_0
+    return-object p0
 .end method
 
-.method protected onPostResume()V
-    .locals 2
+.method private static g(Landroid/content/Context;Landroid/content/res/Resources;Landroid/util/TypedValue;IILeg;ZZ)Landroid/graphics/Typeface;
+    .locals 23
 
-    invoke-super {p0}, Lbz;->onPostResume()V
+    move-object/from16 v3, p1
 
-    invoke-virtual {p0}, Lei;->j()Lel;
+    move-object/from16 v0, p2
 
-    move-result-object v0
+    move/from16 v4, p3
 
-    check-cast v0, Lfd;
+    move/from16 v5, p4
 
-    invoke-virtual {v0}, Lfd;->b()Ldy;
+    move-object/from16 v8, p5
 
-    move-result-object v0
+    const-string v1, "font-family"
 
-    if-eqz v0, :cond_0
+    const-string v9, "ResourcesCompat"
 
-    const/4 v1, 0x1
+    iget-object v2, v0, Landroid/util/TypedValue;->string:Ljava/lang/CharSequence;
 
-    invoke-virtual {v0, v1}, Ldy;->h(Z)V
+    if-eqz v2, :cond_21
+
+    iget-object v0, v0, Landroid/util/TypedValue;->string:Ljava/lang/CharSequence;
+
+    invoke-interface {v0}, Ljava/lang/CharSequence;->toString()Ljava/lang/String;
+
+    move-result-object v10
+
+    const-string v0, "res/"
+
+    invoke-virtual {v10, v0}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+
+    move-result v0
+
+    const/4 v11, -0x3
+
+    const/4 v12, 0x0
+
+    if-nez v0, :cond_1
+
+    if-eqz v8, :cond_0
+
+    invoke-virtual {v8, v11}, Leg;->b(I)V
 
     :cond_0
-    return-void
-.end method
+    return-object v12
 
-.method protected onStart()V
-    .locals 2
+    :cond_1
+    sget-object v0, Len;->a:Lxe;
 
-    invoke-super {p0}, Lbz;->onStart()V
+    invoke-static {v3, v4, v5}, Len;->b(Landroid/content/res/Resources;II)Ljava/lang/String;
 
-    invoke-virtual {p0}, Lei;->j()Lel;
+    move-result-object v2
 
-    move-result-object v0
-
-    check-cast v0, Lfd;
-
-    const/4 v1, 0x1
-
-    invoke-virtual {v0, v1}, Lfd;->O(Z)V
-
-    return-void
-.end method
-
-.method protected onStop()V
-    .locals 1
-
-    invoke-super {p0}, Lbz;->onStop()V
-
-    invoke-virtual {p0}, Lei;->j()Lel;
+    invoke-virtual {v0, v2}, Lxe;->a(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lel;->h()V
+    check-cast v0, Landroid/graphics/Typeface;
 
-    return-void
-.end method
+    if-eqz v0, :cond_3
 
-.method protected final onTitleChanged(Ljava/lang/CharSequence;I)V
-    .locals 0
+    if-eqz v8, :cond_2
 
-    invoke-super {p0, p1, p2}, Lbz;->onTitleChanged(Ljava/lang/CharSequence;I)V
+    invoke-virtual {v8, v0}, Leg;->c(Landroid/graphics/Typeface;)V
 
-    invoke-virtual {p0}, Lei;->j()Lel;
+    :cond_2
+    return-object v0
 
-    move-result-object p2
+    :cond_3
+    if-eqz p7, :cond_4
 
-    invoke-virtual {p2, p1}, Lel;->m(Ljava/lang/CharSequence;)V
+    return-object v12
 
-    return-void
-.end method
-
-.method public final openOptionsMenu()V
-    .locals 3
-
-    invoke-virtual {p0}, Lei;->i()Ldy;
+    :cond_4
+    :try_start_0
+    invoke-virtual {v10}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
 
     move-result-object v0
 
-    invoke-virtual {p0}, Lei;->getWindow()Landroid/view/Window;
+    const-string v2, ".xml"
+
+    invoke-virtual {v0, v2}, Ljava/lang/String;->endsWith(Ljava/lang/String;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1c
+
+    invoke-virtual {v3, v4}, Landroid/content/res/Resources;->getXml(I)Landroid/content/res/XmlResourceParser;
+
+    move-result-object v0
+
+    :goto_0
+    invoke-interface {v0}, Lorg/xmlpull/v1/XmlPullParser;->next()I
+
+    move-result v2
+
+    const/4 v6, 0x2
+
+    const/4 v7, 0x1
+
+    if-eq v2, v6, :cond_6
+
+    if-eq v2, v7, :cond_5
+
+    goto :goto_0
+
+    :cond_5
+    new-instance v0, Lorg/xmlpull/v1/XmlPullParserException;
+
+    const-string v1, "No start tag found"
+
+    invoke-direct {v0, v1}, Lorg/xmlpull/v1/XmlPullParserException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+
+    :cond_6
+    invoke-interface {v0, v6, v12, v1}, Lorg/xmlpull/v1/XmlPullParser;->require(ILjava/lang/String;Ljava/lang/String;)V
+
+    invoke-interface {v0}, Lorg/xmlpull/v1/XmlPullParser;->getName()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v2, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_19
+
+    invoke-static {v0}, Landroid/util/Xml;->asAttributeSet(Lorg/xmlpull/v1/XmlPullParser;)Landroid/util/AttributeSet;
+
+    move-result-object v1
+
+    sget-object v2, Lae;->b:[I
+
+    invoke-virtual {v3, v1, v2}, Landroid/content/res/Resources;->obtainAttributes(Landroid/util/AttributeSet;[I)Landroid/content/res/TypedArray;
 
     move-result-object v1
 
     const/4 v2, 0x0
 
-    invoke-virtual {v1, v2}, Landroid/view/Window;->hasFeature(I)Z
+    invoke-virtual {v1, v2}, Landroid/content/res/TypedArray;->getString(I)Ljava/lang/String;
+
+    move-result-object v13
+
+    const/4 v14, 0x4
+
+    invoke-virtual {v1, v14}, Landroid/content/res/TypedArray;->getString(I)Ljava/lang/String;
+
+    move-result-object v15
+
+    const/4 v14, 0x5
+
+    invoke-virtual {v1, v14}, Landroid/content/res/TypedArray;->getString(I)Ljava/lang/String;
+
+    move-result-object v12
+
+    invoke-virtual {v1, v7, v2}, Landroid/content/res/TypedArray;->getResourceId(II)I
+
+    move-result v11
+
+    invoke-virtual {v1, v6, v7}, Landroid/content/res/TypedArray;->getInteger(II)I
+
+    move-result v14
+
+    const/16 v6, 0x1f4
+
+    const/4 v7, 0x3
+
+    invoke-virtual {v1, v7, v6}, Landroid/content/res/TypedArray;->getInteger(II)I
+
+    move-result v6
+
+    const/4 v2, 0x6
+
+    invoke-virtual {v1, v2}, Landroid/content/res/TypedArray;->getString(I)Ljava/lang/String;
+
+    move-result-object v7
+
+    invoke-virtual {v1}, Landroid/content/res/TypedArray;->recycle()V
+
+    if-eqz v13, :cond_d
+
+    if-eqz v15, :cond_d
+
+    if-eqz v12, :cond_d
+
+    :goto_1
+    invoke-interface {v0}, Lorg/xmlpull/v1/XmlPullParser;->next()I
 
     move-result v1
 
-    if-eqz v1, :cond_1
+    const/4 v2, 0x3
 
-    if-eqz v0, :cond_0
+    if-eq v1, v2, :cond_7
 
-    invoke-virtual {v0}, Ldy;->p()Z
+    invoke-static {v0}, Ld;->j(Lorg/xmlpull/v1/XmlPullParser;)V
+
+    goto :goto_1
+
+    :cond_7
+    if-nez v11, :cond_8
+
+    invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
+
+    move-result-object v0
+
+    move-object/from16 v16, v10
+
+    goto :goto_3
+
+    :cond_8
+    invoke-virtual {v3, v11}, Landroid/content/res/Resources;->obtainTypedArray(I)Landroid/content/res/TypedArray;
+
+    move-result-object v1
+    :try_end_0
+    .catch Lorg/xmlpull/v1/XmlPullParserException; {:try_start_0 .. :try_end_0} :catch_4
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_3
+
+    :try_start_1
+    invoke-virtual {v1}, Landroid/content/res/TypedArray;->length()I
 
     move-result v0
 
-    if-nez v0, :cond_1
+    if-nez v0, :cond_9
 
-    :cond_0
-    invoke-super {p0}, Lbz;->openOptionsMenu()V
+    invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
 
-    :cond_1
-    return-void
-.end method
+    move-result-object v0
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
-.method public final setContentView(I)V
-    .locals 1
+    :try_start_2
+    invoke-virtual {v1}, Landroid/content/res/TypedArray;->recycle()V
+    :try_end_2
+    .catch Lorg/xmlpull/v1/XmlPullParserException; {:try_start_2 .. :try_end_2} :catch_4
+    .catch Ljava/io/IOException; {:try_start_2 .. :try_end_2} :catch_3
 
-    invoke-direct {p0}, Lei;->n()V
+    move-object/from16 v16, v10
 
-    invoke-virtual {p0}, Lei;->j()Lel;
+    goto :goto_3
+
+    :cond_9
+    :try_start_3
+    new-instance v0, Ljava/util/ArrayList;
+
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_1
+
+    move-object/from16 v16, v10
+
+    const/4 v2, 0x0
+
+    :try_start_4
+    invoke-virtual {v1, v2}, Landroid/content/res/TypedArray;->getType(I)I
+
+    move-result v10
+
+    const/4 v2, 0x1
+
+    if-ne v10, v2, :cond_b
+
+    const/4 v2, 0x0
+
+    :goto_2
+    invoke-virtual {v1}, Landroid/content/res/TypedArray;->length()I
+
+    move-result v10
+
+    if-ge v2, v10, :cond_c
+
+    const/4 v10, 0x0
+
+    invoke-virtual {v1, v2, v10}, Landroid/content/res/TypedArray;->getResourceId(II)I
+
+    move-result v11
+
+    if-eqz v11, :cond_a
+
+    invoke-virtual {v3, v11}, Landroid/content/res/Resources;->getStringArray(I)[Ljava/lang/String;
+
+    move-result-object v10
+
+    invoke-static {v10}, Ld;->i([Ljava/lang/String;)Ljava/util/List;
+
+    move-result-object v10
+
+    invoke-interface {v0, v10}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    :cond_a
+    add-int/lit8 v2, v2, 0x1
+
+    goto :goto_2
+
+    :cond_b
+    invoke-virtual {v3, v11}, Landroid/content/res/Resources;->getStringArray(I)[Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v2}, Ld;->i([Ljava/lang/String;)Ljava/util/List;
+
+    move-result-object v2
+
+    invoke-interface {v0, v2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+    :try_end_4
+    .catchall {:try_start_4 .. :try_end_4} :catchall_0
+
+    :cond_c
+    :try_start_5
+    invoke-virtual {v1}, Landroid/content/res/TypedArray;->recycle()V
+
+    :goto_3
+    new-instance v1, Lec;
+
+    new-instance v2, Labf;
+
+    invoke-direct {v2, v13, v15, v12, v0}, Labf;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/util/List;)V
+
+    invoke-direct {v1, v2, v14, v6, v7}, Lec;-><init>(Labf;IILjava/lang/String;)V
+
+    move-object v2, v1
+
+    goto/16 :goto_d
+
+    :catchall_0
+    move-exception v0
+
+    goto :goto_4
+
+    :catchall_1
+    move-exception v0
+
+    move-object/from16 v16, v10
+
+    :goto_4
+    invoke-virtual {v1}, Landroid/content/res/TypedArray;->recycle()V
+
+    throw v0
+
+    :cond_d
+    move-object/from16 v16, v10
+
+    new-instance v1, Ljava/util/ArrayList;
+
+    invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
+
+    :goto_5
+    invoke-interface {v0}, Lorg/xmlpull/v1/XmlPullParser;->next()I
+
+    move-result v6
+
+    const/4 v7, 0x3
+
+    if-eq v6, v7, :cond_17
+
+    invoke-interface {v0}, Lorg/xmlpull/v1/XmlPullParser;->getEventType()I
+
+    move-result v6
+
+    const/4 v7, 0x2
+
+    if-ne v6, v7, :cond_16
+
+    invoke-interface {v0}, Lorg/xmlpull/v1/XmlPullParser;->getName()Ljava/lang/String;
+
+    move-result-object v6
+
+    const-string v10, "font"
+
+    invoke-virtual {v6, v10}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v6
+
+    if-eqz v6, :cond_15
+
+    invoke-static {v0}, Landroid/util/Xml;->asAttributeSet(Lorg/xmlpull/v1/XmlPullParser;)Landroid/util/AttributeSet;
+
+    move-result-object v6
+
+    sget-object v10, Lae;->c:[I
+
+    invoke-virtual {v3, v6, v10}, Landroid/content/res/Resources;->obtainAttributes(Landroid/util/AttributeSet;[I)Landroid/content/res/TypedArray;
+
+    move-result-object v6
+
+    const/16 v10, 0x8
+
+    invoke-virtual {v6, v10}, Landroid/content/res/TypedArray;->hasValue(I)Z
+
+    move-result v11
+
+    const/4 v12, 0x1
+
+    if-eq v12, v11, :cond_e
+
+    const/4 v10, 0x1
+
+    goto :goto_6
+
+    :cond_e
+    :goto_6
+    const/16 v11, 0x190
+
+    invoke-virtual {v6, v10, v11}, Landroid/content/res/TypedArray;->getInt(II)I
+
+    move-result v18
+
+    invoke-virtual {v6, v2}, Landroid/content/res/TypedArray;->hasValue(I)Z
+
+    move-result v10
+
+    const/4 v11, 0x1
+
+    if-eq v11, v10, :cond_f
+
+    const/4 v10, 0x2
+
+    goto :goto_7
+
+    :cond_f
+    const/4 v10, 0x6
+
+    :goto_7
+    const/4 v12, 0x0
+
+    invoke-virtual {v6, v10, v12}, Landroid/content/res/TypedArray;->getInt(II)I
+
+    move-result v10
+
+    if-ne v10, v11, :cond_10
+
+    const/16 v19, 0x1
+
+    goto :goto_8
+
+    :cond_10
+    const/16 v19, 0x0
+
+    :goto_8
+    const/16 v10, 0x9
+
+    invoke-virtual {v6, v10}, Landroid/content/res/TypedArray;->hasValue(I)Z
+
+    move-result v12
+
+    if-eq v11, v12, :cond_11
+
+    const/4 v10, 0x3
+
+    goto :goto_9
+
+    :cond_11
+    :goto_9
+    const/4 v12, 0x7
+
+    invoke-virtual {v6, v12}, Landroid/content/res/TypedArray;->hasValue(I)Z
+
+    move-result v13
+
+    if-eq v11, v13, :cond_12
+
+    const/4 v12, 0x4
+
+    goto :goto_a
+
+    :cond_12
+    :goto_a
+    invoke-virtual {v6, v12}, Landroid/content/res/TypedArray;->getString(I)Ljava/lang/String;
+
+    move-result-object v20
+
+    const/4 v11, 0x0
+
+    invoke-virtual {v6, v10, v11}, Landroid/content/res/TypedArray;->getInt(II)I
+
+    move-result v21
+
+    const/4 v10, 0x5
+
+    invoke-virtual {v6, v10}, Landroid/content/res/TypedArray;->hasValue(I)Z
+
+    move-result v11
+
+    const/4 v12, 0x1
+
+    if-eq v12, v11, :cond_13
+
+    const/4 v11, 0x0
+
+    goto :goto_b
+
+    :cond_13
+    const/4 v11, 0x5
+
+    :goto_b
+    const/4 v13, 0x0
+
+    invoke-virtual {v6, v11, v13}, Landroid/content/res/TypedArray;->getResourceId(II)I
+
+    move-result v22
+
+    invoke-virtual {v6, v11}, Landroid/content/res/TypedArray;->getString(I)Ljava/lang/String;
+
+    invoke-virtual {v6}, Landroid/content/res/TypedArray;->recycle()V
+
+    :goto_c
+    invoke-interface {v0}, Lorg/xmlpull/v1/XmlPullParser;->next()I
+
+    move-result v6
+
+    const/4 v11, 0x3
+
+    if-eq v6, v11, :cond_14
+
+    invoke-static {v0}, Ld;->j(Lorg/xmlpull/v1/XmlPullParser;)V
+
+    goto :goto_c
+
+    :cond_14
+    new-instance v6, Leb;
+
+    move-object/from16 v17, v6
+
+    invoke-direct/range {v17 .. v22}, Leb;-><init>(IZLjava/lang/String;II)V
+
+    invoke-interface {v1, v6}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    goto/16 :goto_5
+
+    :cond_15
+    const/4 v10, 0x5
+
+    const/4 v11, 0x3
+
+    const/4 v12, 0x1
+
+    const/4 v13, 0x0
+
+    invoke-static {v0}, Ld;->j(Lorg/xmlpull/v1/XmlPullParser;)V
+
+    goto/16 :goto_5
+
+    :cond_16
+    const/4 v10, 0x5
+
+    const/4 v11, 0x3
+
+    const/4 v12, 0x1
+
+    const/4 v13, 0x0
+
+    goto/16 :goto_5
+
+    :cond_17
+    invoke-interface {v1}, Ljava/util/List;->isEmpty()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_18
+
+    const/4 v2, 0x0
+
+    goto :goto_d
+
+    :cond_18
+    new-instance v0, Lea;
+
+    invoke-interface {v1}, Ljava/util/List;->size()I
+
+    move-result v2
+
+    new-array v2, v2, [Leb;
+
+    invoke-interface {v1, v2}, Ljava/util/List;->toArray([Ljava/lang/Object;)[Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, [Leb;
+
+    invoke-direct {v0, v1}, Lea;-><init>([Leb;)V
+
+    move-object v2, v0
+
+    goto :goto_d
+
+    :cond_19
+    move-object/from16 v16, v10
+
+    invoke-static {v0}, Ld;->j(Lorg/xmlpull/v1/XmlPullParser;)V
+
+    const/4 v2, 0x0
+
+    :goto_d
+    if-nez v2, :cond_1b
+
+    const-string v0, "Failed to find font-family tag"
+
+    invoke-static {v9, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+
+    if-eqz v8, :cond_1a
+
+    const/4 v1, -0x3
+
+    invoke-virtual {v8, v1}, Leg;->b(I)V
+
+    :cond_1a
+    const/4 v1, 0x0
+
+    return-object v1
+
+    :cond_1b
+    move-object/from16 v1, p0
+
+    move-object/from16 v3, p1
+
+    move/from16 v4, p3
+
+    move/from16 v5, p4
+
+    move-object/from16 v6, p5
+
+    move/from16 v7, p6
+
+    invoke-static/range {v1 .. v7}, Len;->c(Landroid/content/Context;Ldz;Landroid/content/res/Resources;IILeg;Z)Landroid/graphics/Typeface;
+
+    move-result-object v0
+    :try_end_5
+    .catch Lorg/xmlpull/v1/XmlPullParserException; {:try_start_5 .. :try_end_5} :catch_2
+    .catch Ljava/io/IOException; {:try_start_5 .. :try_end_5} :catch_1
+
+    return-object v0
+
+    :cond_1c
+    move-object/from16 v16, v10
+
+    :try_start_6
+    new-instance v0, Landroid/graphics/fonts/Font$Builder;
+
+    invoke-direct {v0, v3, v4}, Landroid/graphics/fonts/Font$Builder;-><init>(Landroid/content/res/Resources;I)V
+
+    invoke-virtual {v0}, Landroid/graphics/fonts/Font$Builder;->build()Landroid/graphics/fonts/Font;
 
     move-result-object v0
 
-    invoke-virtual {v0, p1}, Lel;->j(I)V
+    new-instance v1, Landroid/graphics/fonts/FontFamily$Builder;
 
-    return-void
-.end method
+    invoke-direct {v1, v0}, Landroid/graphics/fonts/FontFamily$Builder;-><init>(Landroid/graphics/fonts/Font;)V
 
-.method public final setContentView(Landroid/view/View;)V
-    .locals 1
+    invoke-virtual {v1}, Landroid/graphics/fonts/FontFamily$Builder;->build()Landroid/graphics/fonts/FontFamily;
 
-    invoke-direct {p0}, Lei;->n()V
+    move-result-object v1
 
-    invoke-virtual {p0}, Lei;->j()Lel;
+    new-instance v2, Landroid/graphics/Typeface$CustomFallbackBuilder;
 
-    move-result-object v0
+    invoke-direct {v2, v1}, Landroid/graphics/Typeface$CustomFallbackBuilder;-><init>(Landroid/graphics/fonts/FontFamily;)V
 
-    invoke-virtual {v0, p1}, Lel;->k(Landroid/view/View;)V
-
-    return-void
-.end method
-
-.method public final setContentView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
-    .locals 1
-
-    invoke-direct {p0}, Lei;->n()V
-
-    invoke-virtual {p0}, Lei;->j()Lel;
+    invoke-virtual {v0}, Landroid/graphics/fonts/Font;->getStyle()Landroid/graphics/fonts/FontStyle;
 
     move-result-object v0
 
-    invoke-virtual {v0, p1, p2}, Lel;->l(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
-
-    return-void
-.end method
-
-.method public final setTheme(I)V
-    .locals 1
-
-    invoke-super {p0, p1}, Lbz;->setTheme(I)V
-
-    invoke-virtual {p0}, Lei;->j()Lel;
+    invoke-virtual {v2, v0}, Landroid/graphics/Typeface$CustomFallbackBuilder;->setStyle(Landroid/graphics/fonts/FontStyle;)Landroid/graphics/Typeface$CustomFallbackBuilder;
 
     move-result-object v0
 
-    check-cast v0, Lfd;
+    invoke-virtual {v0}, Landroid/graphics/Typeface$CustomFallbackBuilder;->build()Landroid/graphics/Typeface;
 
-    iput p1, v0, Lfd;->F:I
+    move-result-object v1
+    :try_end_6
+    .catch Ljava/lang/Exception; {:try_start_6 .. :try_end_6} :catch_0
 
-    return-void
+    goto :goto_e
+
+    :catch_0
+    move-exception v0
+
+    const/4 v1, 0x0
+
+    :goto_e
+    if-eqz v1, :cond_1d
+
+    :try_start_7
+    invoke-static {v3, v4, v5}, Len;->b(Landroid/content/res/Resources;II)Ljava/lang/String;
+
+    move-result-object v0
+
+    sget-object v2, Len;->a:Lxe;
+
+    invoke-virtual {v2, v0, v1}, Lxe;->b(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    goto :goto_f
+
+    :catch_1
+    move-exception v0
+
+    goto :goto_11
+
+    :catch_2
+    move-exception v0
+
+    move-object/from16 v2, v16
+
+    goto :goto_12
+
+    :cond_1d
+    :goto_f
+    if-eqz v8, :cond_1f
+
+    if-eqz v1, :cond_1e
+
+    invoke-virtual {v8, v1}, Leg;->c(Landroid/graphics/Typeface;)V
+
+    goto :goto_10
+
+    :cond_1e
+    const/4 v2, -0x3
+
+    invoke-virtual {v8, v2}, Leg;->b(I)V
+    :try_end_7
+    .catch Lorg/xmlpull/v1/XmlPullParserException; {:try_start_7 .. :try_end_7} :catch_2
+    .catch Ljava/io/IOException; {:try_start_7 .. :try_end_7} :catch_1
+
+    :cond_1f
+    :goto_10
+    return-object v1
+
+    :catch_3
+    move-exception v0
+
+    move-object/from16 v16, v10
+
+    :goto_11
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v2, "Failed to read xml resource "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-object/from16 v2, v16
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v9, v1, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+
+    goto :goto_13
+
+    :catch_4
+    move-exception v0
+
+    move-object v2, v10
+
+    :goto_12
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v3, "Failed to parse xml resource "
+
+    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v9, v1, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+
+    :goto_13
+    if-eqz v8, :cond_20
+
+    const/4 v1, -0x3
+
+    invoke-virtual {v8, v1}, Leg;->b(I)V
+
+    :cond_20
+    const/4 v1, 0x0
+
+    return-object v1
+
+    :cond_21
+    new-instance v1, Landroid/content/res/Resources$NotFoundException;
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v5, "Resource \""
+
+    invoke-virtual {v2, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v3, v4}, Landroid/content/res/Resources;->getResourceName(I)Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v3, "\" ("
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-static/range {p3 .. p3}, Ljava/lang/Integer;->toHexString(I)Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v3, ") is not a Font: "
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-direct {v1, v0}, Landroid/content/res/Resources$NotFoundException;-><init>(Ljava/lang/String;)V
+
+    goto :goto_15
+
+    :goto_14
+    throw v1
+
+    :goto_15
+    goto :goto_14
 .end method

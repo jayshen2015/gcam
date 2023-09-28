@@ -1,366 +1,272 @@
 .class public final Lmam;
-.super Loln;
-
-# interfaces
-.implements Lomo;
-
-
-# annotations
-.annotation runtime Lolj;
-    b = "com.google.android.libraries.vision.visionkit.f250.internal.uploader.work.F250AutoWorker$doWork$2"
-    c = "F250AutoWorker.kt"
-    d = "invokeSuspend"
-    e = {
-        0x30,
-        0x33,
-        0x34,
-        0x35,
-        0x3a,
-        0x3e
-    }
-.end annotation
+.super Ljava/lang/Object;
 
 
 # instance fields
-.field a:Ljava/lang/Object;
+.field public final a:J
 
-.field b:I
+.field public final b:J
 
-.field final synthetic c:Lcom/google/android/libraries/vision/visionkit/f250/internal/uploader/work/F250AutoWorker;
+.field public final c:Ljava/lang/String;
+
+.field public final d:Lmcj;
+
+.field public final e:Lmce;
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/libraries/vision/visionkit/f250/internal/uploader/work/F250AutoWorker;Loku;)V
+.method public constructor <init>()V
     .locals 0
 
-    iput-object p1, p0, Lmam;->c:Lcom/google/android/libraries/vision/visionkit/f250/internal/uploader/work/F250AutoWorker;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const/4 p1, 0x2
+    return-void
+.end method
 
-    invoke-direct {p0, p1, p2}, Loln;-><init>(ILoku;)V
+.method public constructor <init>(JJLjava/lang/String;Lmcj;Lmce;)V
+    .locals 0
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-wide p1, p0, Lmam;->a:J
+
+    iput-wide p3, p0, Lmam;->b:J
+
+    iput-object p5, p0, Lmam;->c:Ljava/lang/String;
+
+    iput-object p6, p0, Lmam;->d:Lmcj;
+
+    iput-object p7, p0, Lmam;->e:Lmce;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final bridge synthetic a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 0
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 7
 
-    check-cast p1, Lopu;
+    const/4 v0, 0x1
 
-    check-cast p2, Loku;
+    if-ne p1, p0, :cond_0
 
-    invoke-virtual {p0, p1, p2}, Lolf;->c(Ljava/lang/Object;Loku;)Loku;
+    return v0
 
-    move-result-object p1
+    :cond_0
+    instance-of v1, p1, Lmam;
 
-    sget-object p2, Lojk;->a:Lojk;
+    const/4 v2, 0x0
+
+    if-eqz v1, :cond_1
 
     check-cast p1, Lmam;
 
-    invoke-virtual {p1, p2}, Lmam;->b(Ljava/lang/Object;)Ljava/lang/Object;
+    iget-wide v3, p0, Lmam;->a:J
 
-    move-result-object p1
+    iget-wide v5, p1, Lmam;->a:J
 
-    return-object p1
-.end method
+    cmp-long v1, v3, v5
 
-.method public final b(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 7
+    if-nez v1, :cond_1
 
-    sget-object v0, Lolc;->a:Lolc;
+    iget-wide v3, p0, Lmam;->b:J
 
-    iget v1, p0, Lmam;->b:I
+    iget-wide v5, p1, Lmam;->b:J
 
-    const/4 v2, 0x2
+    cmp-long v1, v3, v5
 
-    const/4 v3, 0x0
+    if-nez v1, :cond_1
 
-    packed-switch v1, :pswitch_data_0
+    iget-object v1, p0, Lmam;->c:Ljava/lang/String;
 
-    invoke-static {p1}, Lljr;->aO(Ljava/lang/Object;)V
+    iget-object v3, p1, Lmam;->c:Ljava/lang/String;
 
-    goto/16 :goto_6
+    invoke-virtual {v1, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    :pswitch_0
-    invoke-static {p1}, Lljr;->aO(Ljava/lang/Object;)V
+    move-result v1
 
-    goto/16 :goto_5
+    if-eqz v1, :cond_1
 
-    :pswitch_1
-    iget-object v1, p0, Lmam;->a:Ljava/lang/Object;
+    iget-object v1, p0, Lmam;->d:Lmcj;
 
-    :try_start_0
-    invoke-static {p1}, Lljr;->aO(Ljava/lang/Object;)V
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    iget-object v3, p1, Lmam;->d:Lmcj;
 
-    goto :goto_3
+    invoke-virtual {v1, v3}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
 
-    :pswitch_2
-    iget-object v1, p0, Lmam;->a:Ljava/lang/Object;
+    move-result v1
 
-    :try_start_1
-    invoke-static {p1}, Lljr;->aO(Ljava/lang/Object;)V
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+    if-eqz v1, :cond_1
 
-    goto :goto_2
+    iget-object v1, p0, Lmam;->e:Lmce;
 
-    :pswitch_3
-    iget-object v1, p0, Lmam;->a:Ljava/lang/Object;
+    iget-object p1, p1, Lmam;->e:Lmce;
 
-    :try_start_2
-    invoke-static {p1}, Lljr;->aO(Ljava/lang/Object;)V
-    :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_0
-
-    goto :goto_1
-
-    :catchall_0
-    move-exception p1
-
-    goto :goto_4
-
-    :pswitch_4
-    iget-object v1, p0, Lmam;->a:Ljava/lang/Object;
-
-    invoke-static {p1}, Lljr;->aO(Ljava/lang/Object;)V
-
-    goto :goto_0
-
-    :pswitch_5
-    invoke-static {p1}, Lljr;->aO(Ljava/lang/Object;)V
-
-    new-instance p1, Llzy;
-
-    iget-object v1, p0, Lmam;->c:Lcom/google/android/libraries/vision/visionkit/f250/internal/uploader/work/F250AutoWorker;
-
-    iget-object v1, v1, Lcom/google/android/libraries/vision/visionkit/f250/internal/uploader/work/F250AutoWorker;->g:Lkrn;
-
-    sget-object v4, Llup;->a:Llup;
-
-    invoke-direct {p1, v1, v4, v3, v3}, Llzy;-><init>(Lkrn;Lllj;[B[B)V
-
-    iget-object v1, p0, Lmam;->c:Lcom/google/android/libraries/vision/visionkit/f250/internal/uploader/work/F250AutoWorker;
-
-    iget-object v1, v1, Lcom/google/android/libraries/vision/visionkit/f250/internal/uploader/work/F250AutoWorker;->h:Llzz;
-
-    sget-object v4, Lodt;->n:Lodt;
-
-    const/16 v5, 0xb
-
-    invoke-static {p1, v3, v3, v4, v5}, Llzy;->e(Llzy;Ljava/util/Collection;Ljava/util/Collection;Lodt;I)Llur;
-
-    move-result-object v4
-
-    iput-object p1, p0, Lmam;->a:Ljava/lang/Object;
-
-    const/4 v5, 0x1
-
-    iput v5, p0, Lmam;->b:I
-
-    invoke-virtual {v1, v4, p0}, Llzz;->a(Llur;Loku;)Ljava/lang/Object;
-
-    move-result-object v1
-
-    if-eq v1, v0, :cond_3
-
-    move-object v1, p1
-
-    :goto_0
-    :try_start_3
-    iget-object p1, p0, Lmam;->c:Lcom/google/android/libraries/vision/visionkit/f250/internal/uploader/work/F250AutoWorker;
-
-    iput-object v1, p0, Lmam;->a:Ljava/lang/Object;
-
-    iput v2, p0, Lmam;->b:I
-
-    move-object v4, v1
-
-    check-cast v4, Llzy;
-
-    invoke-virtual {p1, v4, p0}, Lcom/google/android/libraries/vision/visionkit/f250/internal/uploader/work/F250AutoWorker;->k(Llzy;Loku;)Ljava/lang/Object;
-
-    move-result-object p1
-    :try_end_3
-    .catchall {:try_start_3 .. :try_end_3} :catchall_1
-
-    if-eq p1, v0, :cond_0
-
-    :goto_1
-    :try_start_4
-    iget-object p1, p0, Lmam;->c:Lcom/google/android/libraries/vision/visionkit/f250/internal/uploader/work/F250AutoWorker;
-
-    iput-object v1, p0, Lmam;->a:Ljava/lang/Object;
-
-    const/4 v4, 0x3
-
-    iput v4, p0, Lmam;->b:I
-
-    move-object v4, v1
-
-    check-cast v4, Llzy;
-
-    invoke-virtual {p1, v4, p0}, Lcom/google/android/libraries/vision/visionkit/f250/internal/uploader/work/F250AutoWorker;->i(Llzy;Loku;)Ljava/lang/Object;
-
-    move-result-object p1
-
-    if-eq p1, v0, :cond_0
-
-    :goto_2
-    iget-object p1, p0, Lmam;->c:Lcom/google/android/libraries/vision/visionkit/f250/internal/uploader/work/F250AutoWorker;
-
-    iput-object v1, p0, Lmam;->a:Ljava/lang/Object;
-
-    const/4 v4, 0x4
-
-    iput v4, p0, Lmam;->b:I
-
-    move-object v4, v1
-
-    check-cast v4, Llzy;
-
-    invoke-virtual {p1, v4, p0}, Lcom/google/android/libraries/vision/visionkit/f250/internal/uploader/work/F250AutoWorker;->j(Llzy;Loku;)Ljava/lang/Object;
-
-    move-result-object p1
-
-    if-eq p1, v0, :cond_0
-
-    :goto_3
-    invoke-static {}, Ldr;->e()Ldr;
-
-    move-result-object p1
-    :try_end_4
-    .catchall {:try_start_4 .. :try_end_4} :catchall_0
-
-    goto :goto_7
-
-    :cond_0
-    return-object v0
-
-    :catchall_1
-    move-exception p1
-
-    :goto_4
-    instance-of v4, p1, Ljava/util/concurrent/CancellationException;
-
-    if-eqz v4, :cond_2
-
-    iget-object p1, p0, Lmam;->c:Lcom/google/android/libraries/vision/visionkit/f250/internal/uploader/work/F250AutoWorker;
-
-    iget-object v1, p1, Lcom/google/android/libraries/vision/visionkit/f250/internal/uploader/work/F250AutoWorker;->h:Llzz;
-
-    new-instance v2, Llzy;
-
-    iget-object p1, p1, Lcom/google/android/libraries/vision/visionkit/f250/internal/uploader/work/F250AutoWorker;->g:Lkrn;
-
-    sget-object v4, Llvf;->a:Llvf;
-
-    invoke-direct {v2, p1, v4, v3, v3}, Llzy;-><init>(Lkrn;Lllj;[B[B)V
-
-    invoke-static {v2}, Llzy;->d(Llzy;)Llur;
-
-    move-result-object p1
-
-    iput-object v3, p0, Lmam;->a:Ljava/lang/Object;
-
-    const/4 v2, 0x5
-
-    iput v2, p0, Lmam;->b:I
-
-    invoke-virtual {v1, p1, p0}, Llzz;->a(Llur;Loku;)Ljava/lang/Object;
-
-    move-result-object p1
-
-    if-ne p1, v0, :cond_1
-
-    return-object v0
-
-    :cond_1
-    :goto_5
-    invoke-static {}, Ldr;->d()Ldr;
-
-    move-result-object p1
-
-    goto :goto_7
-
-    :cond_2
-    iget-object v4, p0, Lmam;->c:Lcom/google/android/libraries/vision/visionkit/f250/internal/uploader/work/F250AutoWorker;
-
-    iget-object v4, v4, Lcom/google/android/libraries/vision/visionkit/f250/internal/uploader/work/F250AutoWorker;->h:Llzz;
-
-    sget-object v5, Lodt;->F:Lodt;
-
-    check-cast v1, Llzy;
-
-    const/16 v6, 0xc
-
-    invoke-static {v1, v5, p1, v3, v6}, Llzy;->c(Llzy;Lodt;Ljava/lang/Throwable;Llux;I)Llur;
-
-    move-result-object p1
-
-    iput-object v3, p0, Lmam;->a:Ljava/lang/Object;
-
-    const/4 v1, 0x6
-
-    iput v1, p0, Lmam;->b:I
-
-    invoke-virtual {v4, p1, p0}, Llzz;->a(Llur;Loku;)Ljava/lang/Object;
-
-    move-result-object p1
-
-    if-ne p1, v0, :cond_4
-
-    return-object v0
-
-    :cond_3
-    return-object v0
-
-    :cond_4
-    :goto_6
-    iget-object p1, p0, Lmam;->c:Lcom/google/android/libraries/vision/visionkit/f250/internal/uploader/work/F250AutoWorker;
-
-    invoke-virtual {p1}, Laxp;->d()I
+    invoke-virtual {v1, p1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
 
     move-result p1
 
-    if-ge p1, v2, :cond_5
+    if-eqz p1, :cond_1
 
-    invoke-static {}, Ldr;->d()Ldr;
+    return v0
 
-    move-result-object p1
-
-    goto :goto_7
-
-    :cond_5
-    invoke-static {}, Ldr;->c()Ldr;
-
-    move-result-object p1
-
-    :goto_7
-    return-object p1
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_5
-        :pswitch_4
-        :pswitch_3
-        :pswitch_2
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
+    :cond_1
+    return v2
 .end method
 
-.method public final c(Ljava/lang/Object;Loku;)Loku;
-    .locals 1
+.method public final hashCode()I
+    .locals 7
 
-    new-instance p1, Lmam;
+    iget-wide v0, p0, Lmam;->a:J
 
-    iget-object v0, p0, Lmam;->c:Lcom/google/android/libraries/vision/visionkit/f250/internal/uploader/work/F250AutoWorker;
+    iget-wide v2, p0, Lmam;->b:J
 
-    invoke-direct {p1, v0, p2}, Lmam;-><init>(Lcom/google/android/libraries/vision/visionkit/f250/internal/uploader/work/F250AutoWorker;Loku;)V
+    const/16 v4, 0x20
 
-    return-object p1
+    ushr-long v5, v0, v4
+
+    xor-long/2addr v0, v5
+
+    long-to-int v1, v0
+
+    const v0, 0xf4243
+
+    xor-int/2addr v1, v0
+
+    mul-int v1, v1, v0
+
+    ushr-long v4, v2, v4
+
+    xor-long/2addr v2, v4
+
+    long-to-int v3, v2
+
+    xor-int/2addr v1, v3
+
+    mul-int v1, v1, v0
+
+    iget-object v2, p0, Lmam;->c:Ljava/lang/String;
+
+    invoke-virtual {v2}, Ljava/lang/String;->hashCode()I
+
+    move-result v2
+
+    xor-int/2addr v1, v2
+
+    mul-int v1, v1, v0
+
+    iget-object v2, p0, Lmam;->d:Lmcj;
+
+    invoke-virtual {v2}, Ljava/lang/Object;->hashCode()I
+
+    move-result v2
+
+    xor-int/2addr v1, v2
+
+    mul-int v1, v1, v0
+
+    iget-object v0, p0, Lmam;->e:Lmce;
+
+    invoke-virtual {v0}, Ljava/lang/Object;->hashCode()I
+
+    move-result v0
+
+    xor-int/2addr v0, v1
+
+    return v0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .locals 11
+
+    iget-wide v0, p0, Lmam;->a:J
+
+    iget-wide v2, p0, Lmam;->b:J
+
+    iget-object v4, p0, Lmam;->c:Ljava/lang/String;
+
+    iget-object v5, p0, Lmam;->d:Lmcj;
+
+    invoke-static {v5}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v5
+
+    iget-object v6, p0, Lmam;->e:Lmce;
+
+    invoke-static {v6}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v6
+
+    invoke-static {v4}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v7
+
+    invoke-virtual {v7}, Ljava/lang/String;->length()I
+
+    move-result v7
+
+    invoke-static {v5}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v8
+
+    invoke-virtual {v8}, Ljava/lang/String;->length()I
+
+    move-result v8
+
+    invoke-static {v6}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v9
+
+    invoke-virtual {v9}, Ljava/lang/String;->length()I
+
+    move-result v9
+
+    new-instance v10, Ljava/lang/StringBuilder;
+
+    add-int/lit8 v7, v7, 0x72
+
+    add-int/2addr v7, v8
+
+    add-int/2addr v7, v9
+
+    invoke-direct {v10, v7}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string v7, "MediaFileInfo{timestampNs="
+
+    invoke-virtual {v10, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v10, v0, v1}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+
+    const-string v0, ", utcTimestampMs="
+
+    invoke-virtual {v10, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v10, v2, v3}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+
+    const-string v0, ", tag="
+
+    invoke-virtual {v10, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v10, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v0, ", metadata="
+
+    invoke-virtual {v10, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v10, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v0, ", fileObject="
+
+    invoke-virtual {v10, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v10, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v0, "}"
+
+    invoke-virtual {v10, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v10}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
 .end method

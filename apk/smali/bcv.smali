@@ -1,22 +1,19 @@
-.class final Lbcv;
-.super Laqa;
-
-
-# direct methods
-.method public constructor <init>(Lapt;)V
-    .locals 0
-
-    invoke-direct {p0, p1}, Laqa;-><init>(Lapt;)V
-
-    return-void
-.end method
+.class public interface abstract Lbcv;
+.super Ljava/lang/Object;
 
 
 # virtual methods
-.method public final d()Ljava/lang/String;
-    .locals 1
+.method public abstract a(IILandroid/graphics/Bitmap$Config;)Landroid/graphics/Bitmap;
+.end method
 
-    const-string v0, "UPDATE workspec SET last_enqueue_time=? WHERE id=?"
+.method public abstract b(IILandroid/graphics/Bitmap$Config;)Landroid/graphics/Bitmap;
+.end method
 
-    return-object v0
+.method public abstract c()V
+.end method
+
+.method public abstract d(Landroid/graphics/Bitmap;)V
+.end method
+
+.method public abstract e(I)V
 .end method

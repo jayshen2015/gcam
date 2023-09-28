@@ -1,22 +1,78 @@
-.class final Lddb;
-.super Laqa;
+.class public final Lddb;
+.super Ljava/lang/Object;
+
+
+# static fields
+.field public static final synthetic a:I
 
 
 # direct methods
-.method public constructor <init>(Lapt;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 2
 
-    invoke-direct {p0, p1}, Laqa;-><init>(Lapt;)V
+    new-instance v0, Lddh;
+
+    invoke-direct {v0}, Lddh;-><init>()V
+
+    const-string v1, "camera.face_db"
+
+    iput-object v1, v0, Lddh;->a:Ljava/lang/String;
+
+    new-instance v0, Lddh;
+
+    invoke-direct {v0}, Lddh;-><init>()V
+
+    const-string v1, "camera.post_face_meta"
+
+    iput-object v1, v0, Lddh;->a:Ljava/lang/String;
+
+    new-instance v0, Lddh;
+
+    invoke-direct {v0}, Lddh;-><init>()V
+
+    const-string v1, "camera.face_db_yuv"
+
+    iput-object v1, v0, Lddh;->a:Ljava/lang/String;
+
+    new-instance v0, Lddh;
+
+    invoke-direct {v0}, Lddh;-><init>()V
+
+    const-string v1, "camera.face_db_darwinn"
+
+    iput-object v1, v0, Lddh;->a:Ljava/lang/String;
+
+    new-instance v0, Lddh;
+
+    invoke-direct {v0}, Lddh;-><init>()V
+
+    const-string v1, "camera.face_db_gpu"
+
+    iput-object v1, v0, Lddh;->a:Ljava/lang/String;
+
+    new-instance v0, Lddh;
+
+    invoke-direct {v0}, Lddh;-><init>()V
+
+    const-string v1, "camera.face_db_tm"
+
+    iput-object v1, v0, Lddh;->a:Ljava/lang/String;
+
+    new-instance v0, Lddh;
+
+    invoke-direct {v0}, Lddh;-><init>()V
+
+    const-string v1, "camera.face_db_save_original"
+
+    iput-object v1, v0, Lddh;->a:Ljava/lang/String;
+
+    new-instance v0, Lddh;
+
+    invoke-direct {v0}, Lddh;-><init>()V
+
+    const-string v1, "camera.face_db_debug"
+
+    iput-object v1, v0, Lddh;->a:Ljava/lang/String;
 
     return-void
-.end method
-
-
-# virtual methods
-.method public final d()Ljava/lang/String;
-    .locals 1
-
-    const-string v0, "UPDATE HardwareHelpDialogCounts SET rebootCount = rebootCount+1 WHERE reason=? AND impressionsBeforeReboot > ?"
-
-    return-object v0
 .end method

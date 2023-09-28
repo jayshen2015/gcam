@@ -1,95 +1,115 @@
-.class Lbg;
+.class final Lbg;
 .super Ljava/lang/Object;
+
+# interfaces
+.implements Landroid/view/animation/Animation$AnimationListener;
 
 
 # instance fields
-.field public final a:Ldl;
+.field final synthetic a:Ldp;
 
-.field public final b:Lexj;
+.field final synthetic b:Landroid/view/ViewGroup;
+
+.field final synthetic c:Landroid/view/View;
+
+.field final synthetic d:Lbi;
 
 
 # direct methods
-.method public constructor <init>(Ldl;Lexj;[B)V
+.method public constructor <init>(Ldp;Landroid/view/ViewGroup;Landroid/view/View;Lbi;)V
     .locals 0
 
+    iput-object p1, p0, Lbg;->a:Ldp;
+
+    iput-object p2, p0, Lbg;->b:Landroid/view/ViewGroup;
+
+    iput-object p3, p0, Lbg;->c:Landroid/view/View;
+
+    iput-object p4, p0, Lbg;->d:Lbi;
+
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lbg;->a:Ldl;
-
-    iput-object p2, p0, Lbg;->b:Lexj;
 
     return-void
 .end method
 
 
 # virtual methods
-.method final b()V
-    .locals 3
+.method public final onAnimationEnd(Landroid/view/animation/Animation;)V
+    .locals 1
 
-    iget-object v0, p0, Lbg;->a:Ldl;
+    iget-object p1, p0, Lbg;->b:Landroid/view/ViewGroup;
 
-    iget-object v1, p0, Lbg;->b:Lexj;
+    new-instance v0, Lbf;
 
-    iget-object v2, v0, Ldl;->b:Ljava/util/HashSet;
+    invoke-direct {v0, p0}, Lbf;-><init>(Lbg;)V
 
-    invoke-virtual {v2, v1}, Ljava/util/HashSet;->remove(Ljava/lang/Object;)Z
+    invoke-virtual {p1, v0}, Landroid/view/ViewGroup;->post(Ljava/lang/Runnable;)Z
 
-    move-result v1
+    const/4 p1, 0x2
 
-    if-eqz v1, :cond_0
+    invoke-static {p1}, Lcu;->Q(I)Z
 
-    iget-object v1, v0, Ldl;->b:Ljava/util/HashSet;
+    move-result p1
 
-    invoke-virtual {v1}, Ljava/util/HashSet;->isEmpty()Z
+    if-eqz p1, :cond_0
 
-    move-result v1
+    new-instance p1, Ljava/lang/StringBuilder;
 
-    if-eqz v1, :cond_0
+    invoke-direct {p1}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-virtual {v0}, Ldl;->a()V
+    const-string v0, "Animation from operation "
+
+    invoke-virtual {p1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v0, p0, Lbg;->a:Ldp;
+
+    invoke-virtual {p1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string v0, " has ended."
+
+    invoke-virtual {p1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {p1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     :cond_0
     return-void
 .end method
 
-.method final c()Z
-    .locals 5
+.method public final onAnimationRepeat(Landroid/view/animation/Animation;)V
+    .locals 0
 
-    iget-object v0, p0, Lbg;->a:Ldl;
+    return-void
+.end method
 
-    iget-object v0, v0, Ldl;->a:Lbw;
+.method public final onAnimationStart(Landroid/view/animation/Animation;)V
+    .locals 1
 
-    iget-object v0, v0, Lbw;->N:Landroid/view/View;
+    const/4 p1, 0x2
 
-    invoke-static {v0}, Ldp;->t(Landroid/view/View;)I
+    invoke-static {p1}, Lcu;->Q(I)Z
 
-    move-result v0
+    move-result p1
 
-    iget-object v1, p0, Lbg;->a:Ldl;
+    if-eqz p1, :cond_0
 
-    iget v1, v1, Ldl;->e:I
+    new-instance p1, Ljava/lang/StringBuilder;
 
-    const/4 v2, 0x1
+    invoke-direct {p1}, Ljava/lang/StringBuilder;-><init>()V
 
-    if-eq v0, v1, :cond_2
+    const-string v0, "Animation from operation "
 
-    const/4 v3, 0x0
+    invoke-virtual {p1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const/4 v4, 0x2
+    iget-object v0, p0, Lbg;->a:Ldp;
 
-    if-eq v0, v4, :cond_1
+    invoke-virtual {p1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    if-eq v1, v4, :cond_0
+    const-string v0, " has reached onAnimationStart."
 
-    goto :goto_0
+    invoke-virtual {p1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {p1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     :cond_0
-    return v3
-
-    :cond_1
-    const/4 v2, 0x0
-
-    :cond_2
-    :goto_0
-    return v2
+    return-void
 .end method

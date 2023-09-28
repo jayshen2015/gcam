@@ -1,38 +1,36 @@
 .class public Lcom/google/android/apps/camera/ui/notificationchip/NotificationChipView;
-.super Ljs;
+.super Lnu;
 
 
 # instance fields
 .field public final a:Landroid/content/Context;
 
-.field public b:I
+.field public final b:Ljgz;
 
-.field public c:Z
+.field public c:I
 
-.field public d:Lice;
+.field public d:Z
 
-.field public e:Lhyn;
+.field public e:Ljgt;
 
 .field public f:J
 
 .field public g:Ljava/lang/Runnable;
 
-.field public final h:Ljdc;
-
-.field private i:Landroid/widget/FrameLayout$LayoutParams;
+.field private h:Landroid/widget/FrameLayout$LayoutParams;
 
 
 # direct methods
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
     .locals 0
 
-    invoke-direct {p0, p1, p2}, Ljs;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
+    invoke-direct {p0, p1, p2}, Lnu;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
-    new-instance p2, Ljdc;
+    new-instance p2, Ljgz;
 
-    invoke-direct {p2}, Ljdc;-><init>()V
+    invoke-direct {p2}, Ljgz;-><init>()V
 
-    iput-object p2, p0, Lcom/google/android/apps/camera/ui/notificationchip/NotificationChipView;->h:Ljdc;
+    iput-object p2, p0, Lcom/google/android/apps/camera/ui/notificationchip/NotificationChipView;->b:Ljgz;
 
     iput-object p1, p0, Lcom/google/android/apps/camera/ui/notificationchip/NotificationChipView;->a:Landroid/content/Context;
 
@@ -58,13 +56,13 @@
 
     move-result-object v0
 
-    if-eqz v0, :cond_6
+    if-eqz v0, :cond_5
 
-    iget-object v0, p0, Lcom/google/android/apps/camera/ui/notificationchip/NotificationChipView;->i:Landroid/widget/FrameLayout$LayoutParams;
+    iget-object v0, p0, Lcom/google/android/apps/camera/ui/notificationchip/NotificationChipView;->h:Landroid/widget/FrameLayout$LayoutParams;
 
     if-nez v0, :cond_0
 
-    goto/16 :goto_2
+    goto :goto_2
 
     :cond_0
     invoke-virtual {p0}, Lcom/google/android/apps/camera/ui/notificationchip/NotificationChipView;->getDisplay()Landroid/view/Display;
@@ -73,7 +71,7 @@
 
     iget-object v1, p0, Lcom/google/android/apps/camera/ui/notificationchip/NotificationChipView;->a:Landroid/content/Context;
 
-    invoke-static {v0, v1}, Liko;->b(Landroid/view/Display;Landroid/content/Context;)Liko;
+    invoke-static {v0, v1}, Ljrz;->a(Landroid/view/Display;Landroid/content/Context;)Ljrz;
 
     move-result-object v0
 
@@ -83,116 +81,89 @@
 
     check-cast v1, Landroid/widget/FrameLayout$LayoutParams;
 
-    iget-object v2, p0, Lcom/google/android/apps/camera/ui/notificationchip/NotificationChipView;->a:Landroid/content/Context;
+    sget-object v2, Ljrz;->a:Ljrz;
 
-    invoke-virtual {v2}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+    if-ne v0, v2, :cond_1
 
-    move-result-object v2
+    iget-object v0, p0, Lcom/google/android/apps/camera/ui/notificationchip/NotificationChipView;->a:Landroid/content/Context;
 
-    iget-object v3, p0, Lcom/google/android/apps/camera/ui/notificationchip/NotificationChipView;->e:Lhyn;
+    invoke-virtual {v0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
-    invoke-static {v3}, Ljji;->m(Lhyn;)Z
+    move-result-object v0
 
-    move-result v3
+    const v2, 0x7f070462
 
-    if-eqz v3, :cond_1
-
-    new-instance v0, Landroid/widget/FrameLayout$LayoutParams;
-
-    iget-object v3, p0, Lcom/google/android/apps/camera/ui/notificationchip/NotificationChipView;->i:Landroid/widget/FrameLayout$LayoutParams;
-
-    invoke-direct {v0, v3}, Landroid/widget/FrameLayout$LayoutParams;-><init>(Landroid/widget/FrameLayout$LayoutParams;)V
-
-    const v3, 0x7f07054c
-
-    invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
-
-    move-result v2
-
-    iput v2, v0, Landroid/widget/FrameLayout$LayoutParams;->topMargin:I
-
-    goto :goto_0
-
-    :cond_1
-    sget-object v3, Liko;->a:Liko;
-
-    if-ne v0, v3, :cond_2
-
-    const v0, 0x7f07054b
-
-    invoke-virtual {v2, v0}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
+    invoke-virtual {v0, v2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
     move-result v0
 
     new-instance v2, Landroid/widget/FrameLayout$LayoutParams;
 
-    iget-object v3, p0, Lcom/google/android/apps/camera/ui/notificationchip/NotificationChipView;->i:Landroid/widget/FrameLayout$LayoutParams;
+    iget-object v3, p0, Lcom/google/android/apps/camera/ui/notificationchip/NotificationChipView;->h:Landroid/widget/FrameLayout$LayoutParams;
 
     invoke-direct {v2, v3}, Landroid/widget/FrameLayout$LayoutParams;-><init>(Landroid/widget/FrameLayout$LayoutParams;)V
 
     iput v0, v2, Landroid/widget/FrameLayout$LayoutParams;->topMargin:I
 
-    move-object v0, v2
+    goto :goto_0
+
+    :cond_1
+    sget-object v2, Ljrz;->c:Ljrz;
+
+    if-ne v0, v2, :cond_2
+
+    new-instance v2, Landroid/widget/FrameLayout$LayoutParams;
+
+    iget-object v0, p0, Lcom/google/android/apps/camera/ui/notificationchip/NotificationChipView;->h:Landroid/widget/FrameLayout$LayoutParams;
+
+    invoke-direct {v2, v0}, Landroid/widget/FrameLayout$LayoutParams;-><init>(Landroid/widget/FrameLayout$LayoutParams;)V
+
+    iget-object v0, p0, Lcom/google/android/apps/camera/ui/notificationchip/NotificationChipView;->h:Landroid/widget/FrameLayout$LayoutParams;
+
+    iget v0, v0, Landroid/widget/FrameLayout$LayoutParams;->topMargin:I
+
+    iput v0, v2, Landroid/widget/FrameLayout$LayoutParams;->bottomMargin:I
+
+    const/16 v0, 0x51
+
+    iput v0, v2, Landroid/widget/FrameLayout$LayoutParams;->gravity:I
 
     goto :goto_0
 
     :cond_2
-    sget-object v2, Liko;->c:Liko;
-
-    if-ne v0, v2, :cond_3
-
-    new-instance v0, Landroid/widget/FrameLayout$LayoutParams;
-
-    iget-object v2, p0, Lcom/google/android/apps/camera/ui/notificationchip/NotificationChipView;->i:Landroid/widget/FrameLayout$LayoutParams;
-
-    invoke-direct {v0, v2}, Landroid/widget/FrameLayout$LayoutParams;-><init>(Landroid/widget/FrameLayout$LayoutParams;)V
-
-    iget-object v2, p0, Lcom/google/android/apps/camera/ui/notificationchip/NotificationChipView;->i:Landroid/widget/FrameLayout$LayoutParams;
-
-    iget v2, v2, Landroid/widget/FrameLayout$LayoutParams;->topMargin:I
-
-    iput v2, v0, Landroid/widget/FrameLayout$LayoutParams;->bottomMargin:I
-
-    const/16 v2, 0x51
-
-    iput v2, v0, Landroid/widget/FrameLayout$LayoutParams;->gravity:I
-
-    goto :goto_0
-
-    :cond_3
-    iget-object v0, p0, Lcom/google/android/apps/camera/ui/notificationchip/NotificationChipView;->i:Landroid/widget/FrameLayout$LayoutParams;
+    iget-object v2, p0, Lcom/google/android/apps/camera/ui/notificationchip/NotificationChipView;->h:Landroid/widget/FrameLayout$LayoutParams;
 
     :goto_0
-    iget v2, v1, Landroid/widget/FrameLayout$LayoutParams;->topMargin:I
+    iget v0, v1, Landroid/widget/FrameLayout$LayoutParams;->topMargin:I
 
-    iget v3, v0, Landroid/widget/FrameLayout$LayoutParams;->topMargin:I
+    iget v3, v2, Landroid/widget/FrameLayout$LayoutParams;->topMargin:I
 
-    if-ne v2, v3, :cond_5
+    if-ne v0, v3, :cond_4
 
-    iget v2, v1, Landroid/widget/FrameLayout$LayoutParams;->bottomMargin:I
+    iget v0, v1, Landroid/widget/FrameLayout$LayoutParams;->bottomMargin:I
 
-    iget v3, v0, Landroid/widget/FrameLayout$LayoutParams;->bottomMargin:I
+    iget v3, v2, Landroid/widget/FrameLayout$LayoutParams;->bottomMargin:I
 
-    if-ne v2, v3, :cond_5
+    if-ne v0, v3, :cond_4
 
-    iget v1, v1, Landroid/widget/FrameLayout$LayoutParams;->gravity:I
+    iget v0, v1, Landroid/widget/FrameLayout$LayoutParams;->gravity:I
 
-    iget v2, v0, Landroid/widget/FrameLayout$LayoutParams;->gravity:I
+    iget v1, v2, Landroid/widget/FrameLayout$LayoutParams;->gravity:I
 
-    if-eq v1, v2, :cond_4
+    if-eq v0, v1, :cond_3
 
     goto :goto_1
 
+    :cond_3
+    return-void
+
     :cond_4
+    :goto_1
+    invoke-virtual {p0, v2}, Lcom/google/android/apps/camera/ui/notificationchip/NotificationChipView;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
+
     return-void
 
     :cond_5
-    :goto_1
-    invoke-virtual {p0, v0}, Lcom/google/android/apps/camera/ui/notificationchip/NotificationChipView;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
-
-    return-void
-
-    :cond_6
     :goto_2
     return-void
 .end method
@@ -212,7 +183,7 @@
 .method public final onAttachedToWindow()V
     .locals 1
 
-    invoke-super {p0}, Ljs;->onAttachedToWindow()V
+    invoke-super {p0}, Lnu;->onAttachedToWindow()V
 
     invoke-virtual {p0}, Lcom/google/android/apps/camera/ui/notificationchip/NotificationChipView;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
@@ -220,7 +191,7 @@
 
     check-cast v0, Landroid/widget/FrameLayout$LayoutParams;
 
-    iput-object v0, p0, Lcom/google/android/apps/camera/ui/notificationchip/NotificationChipView;->i:Landroid/widget/FrameLayout$LayoutParams;
+    iput-object v0, p0, Lcom/google/android/apps/camera/ui/notificationchip/NotificationChipView;->h:Landroid/widget/FrameLayout$LayoutParams;
 
     return-void
 .end method

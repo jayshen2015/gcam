@@ -1,228 +1,150 @@
-.class final Lgoo;
+.class public final Lgoo;
 .super Ljava/lang/Object;
 
 
 # instance fields
-.field public final a:J
+.field private final a:Lpyn;
 
-.field public final b:Ligo;
+.field private final b:Lpyn;
 
-.field private final c:Ljava/lang/String;
+.field private final c:Llir;
 
-.field private final d:Ljava/lang/String;
+.field private final d:Lljf;
+
+.field private final e:Ljug;
+
+.field private final f:Lddf;
+
+.field private final g:Lghx;
 
 
 # direct methods
-.method public constructor <init>()V
+.method public constructor <init>(Lghx;Lpyn;Lpyn;Lpyn;Ljava/util/concurrent/Executor;Llir;Lljf;Ljug;Lddf;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    iput-object p1, p0, Lgoo;->g:Lghx;
+
+    iput-object p3, p0, Lgoo;->a:Lpyn;
+
+    iput-object p4, p0, Lgoo;->b:Lpyn;
+
+    iput-object p6, p0, Lgoo;->c:Llir;
+
+    iput-object p7, p0, Lgoo;->d:Lljf;
+
+    iput-object p8, p0, Lgoo;->e:Ljug;
+
+    iput-object p9, p0, Lgoo;->f:Lddf;
+
+    new-instance p1, Lgon;
+
+    invoke-direct {p1, p7, p2, p3, p4}, Lgon;-><init>(Lljf;Lpyn;Lpyn;Lpyn;)V
+
+    invoke-interface {p5, p1}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
+
     return-void
-.end method
-
-.method public constructor <init>(Ligo;Ljava/lang/String;Ljava/lang/String;J[B[B)V
-    .locals 0
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lgoo;->b:Ligo;
-
-    if-eqz p2, :cond_1
-
-    iput-object p2, p0, Lgoo;->c:Ljava/lang/String;
-
-    if-eqz p3, :cond_0
-
-    iput-object p3, p0, Lgoo;->d:Ljava/lang/String;
-
-    iput-wide p4, p0, Lgoo;->a:J
-
-    return-void
-
-    :cond_0
-    new-instance p1, Ljava/lang/NullPointerException;
-
-    const-string p2, "Null xmpMetadataExtended"
-
-    invoke-direct {p1, p2}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
-
-    throw p1
-
-    :cond_1
-    new-instance p1, Ljava/lang/NullPointerException;
-
-    const-string p2, "Null xmpMetadataMain"
-
-    invoke-direct {p1, p2}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
-
-    throw p1
 .end method
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 7
+.method public final a(Lgoy;)Lgop;
+    .locals 12
 
-    const/4 v0, 0x1
+    new-instance v11, Lgop;
 
-    if-ne p1, p0, :cond_0
+    sget-object v2, Loih;->a:Loih;
 
-    return v0
+    iget-object v3, p0, Lgoo;->g:Lghx;
 
-    :cond_0
-    instance-of v1, p1, Lgoo;
+    iget-object v4, p0, Lgoo;->a:Lpyn;
 
-    const/4 v2, 0x0
+    iget-object v5, p0, Lgoo;->b:Lpyn;
 
-    if-eqz v1, :cond_1
+    iget-object v8, p0, Lgoo;->c:Llir;
 
-    check-cast p1, Lgoo;
+    iget-object v9, p0, Lgoo;->d:Lljf;
 
-    iget-object v1, p0, Lgoo;->b:Ligo;
+    iget-object v10, p0, Lgoo;->f:Lddf;
 
-    iget-object v3, p1, Lgoo;->b:Ligo;
+    const/4 v6, 0x0
 
-    invoke-virtual {v1, v3}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+    const/4 v7, 0x0
 
-    move-result v1
+    move-object v0, v11
 
-    if-eqz v1, :cond_1
+    move-object v1, p1
 
-    iget-object v1, p0, Lgoo;->c:Ljava/lang/String;
+    invoke-direct/range {v0 .. v10}, Lgop;-><init>(Lgoy;Lojc;Lghx;Lpyn;Lpyn;ZZLlir;Lljf;Lddf;)V
 
-    iget-object v3, p1, Lgoo;->c:Ljava/lang/String;
-
-    invoke-virtual {v1, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_1
-
-    iget-object v1, p0, Lgoo;->d:Ljava/lang/String;
-
-    iget-object v3, p1, Lgoo;->d:Ljava/lang/String;
-
-    invoke-virtual {v1, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_1
-
-    iget-wide v3, p0, Lgoo;->a:J
-
-    iget-wide v5, p1, Lgoo;->a:J
-
-    cmp-long p1, v3, v5
-
-    if-nez p1, :cond_1
-
-    return v0
-
-    :cond_1
-    return v2
+    return-object v11
 .end method
 
-.method public final hashCode()I
-    .locals 6
+.method public final b(Lgoy;Lgoy;)Lgop;
+    .locals 12
 
-    iget-object v0, p0, Lgoo;->b:Ligo;
+    new-instance v11, Lgop;
 
-    invoke-virtual {v0}, Ljava/lang/Object;->hashCode()I
+    invoke-static {p2}, Lojc;->i(Ljava/lang/Object;)Lojc;
 
-    move-result v0
+    move-result-object v2
 
-    const v1, 0xf4243
+    iget-object v3, p0, Lgoo;->g:Lghx;
 
-    xor-int/2addr v0, v1
+    iget-object v4, p0, Lgoo;->a:Lpyn;
 
-    iget-object v2, p0, Lgoo;->c:Ljava/lang/String;
+    iget-object v5, p0, Lgoo;->b:Lpyn;
 
-    invoke-virtual {v2}, Ljava/lang/String;->hashCode()I
+    iget-object v8, p0, Lgoo;->c:Llir;
 
-    move-result v2
+    iget-object v9, p0, Lgoo;->d:Lljf;
 
-    mul-int v0, v0, v1
+    iget-object v10, p0, Lgoo;->f:Lddf;
 
-    xor-int/2addr v0, v2
+    const/4 v6, 0x1
 
-    iget-object v2, p0, Lgoo;->d:Ljava/lang/String;
+    const/4 v7, 0x0
 
-    invoke-virtual {v2}, Ljava/lang/String;->hashCode()I
+    move-object v0, v11
 
-    move-result v2
+    move-object v1, p1
 
-    mul-int v0, v0, v1
+    invoke-direct/range {v0 .. v10}, Lgop;-><init>(Lgoy;Lojc;Lghx;Lpyn;Lpyn;ZZLlir;Lljf;Lddf;)V
 
-    xor-int/2addr v0, v2
-
-    iget-wide v2, p0, Lgoo;->a:J
-
-    const/16 v4, 0x20
-
-    ushr-long v4, v2, v4
-
-    xor-long/2addr v2, v4
-
-    mul-int v0, v0, v1
-
-    long-to-int v1, v2
-
-    xor-int/2addr v0, v1
-
-    return v0
+    return-object v11
 .end method
 
-.method public final toString()Ljava/lang/String;
-    .locals 7
+.method public final c(Lgoy;Lgoy;)Lgop;
+    .locals 12
 
-    iget-object v0, p0, Lgoo;->b:Ligo;
+    new-instance v11, Lgop;
 
-    invoke-virtual {v0}, Ljava/lang/Object;->toString()Ljava/lang/String;
+    invoke-static {p2}, Lojc;->i(Ljava/lang/Object;)Lojc;
 
-    move-result-object v0
+    move-result-object v2
 
-    iget-object v1, p0, Lgoo;->c:Ljava/lang/String;
+    iget-object v3, p0, Lgoo;->g:Lghx;
 
-    iget-object v2, p0, Lgoo;->d:Ljava/lang/String;
+    iget-object v4, p0, Lgoo;->a:Lpyn;
 
-    iget-wide v3, p0, Lgoo;->a:J
+    iget-object v5, p0, Lgoo;->b:Lpyn;
 
-    new-instance v5, Ljava/lang/StringBuilder;
+    iget-object v8, p0, Lgoo;->c:Llir;
 
-    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
+    iget-object v9, p0, Lgoo;->d:Lljf;
 
-    const-string v6, "UpsampledImage{image="
+    iget-object v10, p0, Lgoo;->f:Lddf;
 
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    const/4 v6, 0x1
 
-    invoke-virtual {v5, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    const/4 v7, 0x1
 
-    const-string v0, ", xmpMetadataMain="
+    move-object v0, v11
 
-    invoke-virtual {v5, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-object v1, p1
 
-    invoke-virtual {v5, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-direct/range {v0 .. v10}, Lgop;-><init>(Lgoy;Lojc;Lghx;Lpyn;Lpyn;ZZLlir;Lljf;Lddf;)V
 
-    const-string v0, ", xmpMetadataExtended="
-
-    invoke-virtual {v5, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v5, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v0, ", id="
-
-    invoke-virtual {v5, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v5, v3, v4}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    const-string v0, "}"
-
-    invoke-virtual {v5, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    return-object v0
+    return-object v11
 .end method

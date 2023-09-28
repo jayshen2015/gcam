@@ -1,52 +1,74 @@
-.class public final synthetic Ldki;
+.class final Ldki;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Ldkj;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field public final synthetic a:Ljava/lang/String;
+.field final synthetic a:I
+
+.field final synthetic b:Ldkl;
 
 
 # direct methods
-.method public synthetic constructor <init>(Ljava/lang/String;)V
+.method public constructor <init>(Ldkl;I)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Ldki;->b:Ldkl;
 
-    iput-object p1, p0, Ldki;->a:Ljava/lang/String;
+    iput p2, p0, Ldki;->a:I
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Ljava/util/List;ILhkb;)Z
-    .locals 1
+.method public final run()V
+    .locals 5
 
-    iget-object v0, p0, Ldki;->a:Ljava/lang/String;
+    iget-object v0, p0, Ldki;->b:Ldkl;
 
-    invoke-static {p1, p2}, Ldkl;->c(Ljava/util/List;I)Z
+    iget v1, p0, Ldki;->a:I
 
-    move-result p1
+    invoke-virtual {v0, v1}, Ldkl;->a(I)Ldkk;
 
-    if-eqz p1, :cond_0
+    move-result-object v0
 
-    iget-object p1, p3, Lhkb;->a:Ljava/lang/String;
+    iget-object v1, p0, Ldki;->b:Ldkl;
 
-    invoke-virtual {p1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    iget-object v1, v1, Ldkl;->a:Ljava/lang/Object;
 
-    move-result p1
+    monitor-enter v1
 
-    if-eqz p1, :cond_0
+    :try_start_0
+    iget-object v2, p0, Ldki;->b:Ldkl;
 
-    const/4 p1, 0x1
+    iget-object v3, v2, Ldkl;->b:Lpih;
 
-    return p1
+    const/4 v4, 0x0
 
-    :cond_0
-    const/4 p1, 0x0
+    iput-object v4, v2, Ldkl;->b:Lpih;
 
-    return p1
+    monitor-exit v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    invoke-virtual {v3}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    invoke-virtual {v3, v0}, Lpih;->o(Ljava/lang/Object;)Z
+
+    return-void
+
+    :catchall_0
+    move-exception v0
+
+    :try_start_1
+    monitor-exit v1
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    throw v0
 .end method

@@ -1,62 +1,47 @@
-.class public final Llbn;
-.super Llbh;
+.class public final synthetic Llbn;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Llhx;
 
 
-# instance fields
-.field final synthetic d:Lkyv;
+# static fields
+.field public static final synthetic a:Llbn;
 
 
 # direct methods
-.method public constructor <init>(Ljava/util/concurrent/Executor;Lkyv;)V
+.method static synthetic constructor <clinit>()V
+    .locals 1
+
+    new-instance v0, Llbn;
+
+    invoke-direct {v0}, Llbn;-><init>()V
+
+    sput-object v0, Llbn;->a:Llbn;
+
+    return-void
+.end method
+
+.method private synthetic constructor <init>()V
     .locals 0
 
-    iput-object p2, p0, Llbn;->d:Lkyv;
-
-    invoke-direct {p0, p1}, Llbh;-><init>(Ljava/util/concurrent/Executor;)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final k()Lkzf;
-    .locals 3
+.method public final a(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 0
 
-    iget-object v0, p0, Llbn;->d:Lkyv;
+    check-cast p1, Ljava/util/Deque;
 
-    invoke-virtual {v0}, Lkyv;->shutdown()V
+    invoke-interface {p1}, Ljava/util/Deque;->pollLast()Ljava/lang/Object;
 
-    iget-object v0, p0, Llbn;->d:Lkyv;
+    move-result-object p1
 
-    iget-object v0, v0, Lkyv;->a:Llaa;
+    check-cast p1, Llbt;
 
-    sget-object v1, Lnnv;->a:Lnnv;
-
-    invoke-static {}, Llpm;->q()Lkyp;
-
-    move-result-object v2
-
-    invoke-virtual {v0, v1, v2}, Llaa;->a(Ljava/util/concurrent/Executor;Lkye;)Lkzc;
-
-    move-result-object v0
-
-    invoke-static {v0}, Lkzf;->j(Lkzc;)Lkzf;
-
-    move-result-object v0
-
-    sget-object v1, Lnnv;->a:Lnnv;
-
-    new-instance v2, Llbm;
-
-    invoke-direct {v2, p0}, Llbm;-><init>(Llbn;)V
-
-    invoke-virtual {v0, v1, v2}, Lkzf;->a(Ljava/util/concurrent/Executor;Lkye;)Lkzc;
-
-    move-result-object v0
-
-    invoke-static {v0}, Lkzf;->j(Lkzc;)Lkzf;
-
-    move-result-object v0
-
-    return-object v0
+    return-object p1
 .end method

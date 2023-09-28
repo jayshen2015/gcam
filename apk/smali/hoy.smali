@@ -1,103 +1,82 @@
-.class final Lhoy;
-.super Landroid/content/BroadcastReceiver;
+.class Lhoy;
+.super Lhos;
 
 
 # instance fields
-.field final synthetic a:Lhoz;
+.field final synthetic b:Lhoz;
 
 
 # direct methods
 .method public constructor <init>(Lhoz;)V
     .locals 0
 
-    iput-object p1, p0, Lhoy;->a:Lhoz;
+    iput-object p1, p0, Lhoy;->b:Lhoz;
 
-    invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
+    invoke-direct {p0}, Lhos;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onReceive(Landroid/content/Context;Landroid/content/Intent;)V
-    .locals 5
-
-    iget-object p1, p0, Lhoy;->a:Lhoz;
-
-    iget-object p1, p1, Lhoz;->n:Ljes;
-
-    if-nez p1, :cond_0
+.method public c()V
+    .locals 0
 
     return-void
+.end method
 
-    :cond_0
-    const-string p1, "level"
+.method public d()V
+    .locals 3
 
-    const/4 v0, 0x0
+    iget-object v0, p0, Lhoy;->b:Lhoz;
 
-    invoke-virtual {p2, p1, v0}, Landroid/content/Intent;->getIntExtra(Ljava/lang/String;I)I
+    iget-object v0, v0, Lhoz;->a:Lfjs;
 
-    move-result p1
+    const/4 v1, 0x3
 
-    int-to-long v1, p1
+    const/4 v2, 0x1
 
-    const-wide/16 v3, 0x5
-
-    cmp-long p2, v1, v3
-
-    if-gtz p2, :cond_2
-
-    sget-object p2, Lhoz;->a:Lnak;
-
-    invoke-virtual {p2}, Lnaf;->c()Lnaz;
-
-    move-result-object p2
-
-    check-cast p2, Lnah;
-
-    const/16 v1, 0xf14
-
-    invoke-interface {p2, v1}, Lnah;->G(I)Lnaz;
-
-    move-result-object p2
-
-    check-cast p2, Lnah;
-
-    const-string v1, "Low battery level: %d"
-
-    invoke-interface {p2, v1, p1}, Lnah;->p(Ljava/lang/String;I)V
-
-    iget-object p1, p0, Lhoy;->a:Lhoz;
-
-    iget-object p1, p1, Lhoz;->n:Ljes;
-
-    iget-object p2, p1, Ljes;->b:Ljava/lang/Object;
-
-    check-cast p2, Lhos;
-
-    invoke-virtual {p2}, Lhos;->h()Z
-
-    move-result p2
-
-    if-eqz p2, :cond_1
-
-    iget-object p1, p1, Ljes;->a:Ljava/lang/Object;
-
-    check-cast p1, Lhpq;
-
-    const/4 p2, 0x1
-
-    invoke-virtual {p1, p2}, Lhpq;->g(Z)V
+    invoke-interface {v0, v1, v2}, Lfjs;->an(IZ)V
 
     return-void
+.end method
 
-    :cond_1
-    iget-object p1, p1, Ljes;->a:Ljava/lang/Object;
+.method public final f()V
+    .locals 3
 
-    check-cast p1, Lhpq;
+    iget-object v0, p0, Lhoy;->b:Lhoz;
 
-    invoke-virtual {p1, v0}, Lhpq;->g(Z)V
+    invoke-virtual {v0}, Lhoz;->i()V
 
-    :cond_2
+    iget-object v0, p0, Lhoy;->b:Lhoz;
+
+    iget-object v0, v0, Lhoz;->a:Lfjs;
+
+    const/4 v1, 0x2
+
+    const/4 v2, 0x1
+
+    invoke-interface {v0, v1, v2}, Lfjs;->an(IZ)V
+
+    return-void
+.end method
+
+.method public final g()V
+    .locals 3
+
+    iget-object v0, p0, Lhoy;->b:Lhoz;
+
+    invoke-virtual {v0}, Lhoz;->j()V
+
+    iget-object v0, p0, Lhoy;->b:Lhoz;
+
+    iget-object v0, v0, Lhoz;->a:Lfjs;
+
+    const/4 v1, 0x3
+
+    const/4 v2, 0x0
+
+    invoke-interface {v0, v1, v2}, Lfjs;->an(IZ)V
+
     return-void
 .end method

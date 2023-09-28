@@ -1,458 +1,498 @@
-.class public final Lokz;
-.super Lonf;
-
-# interfaces
-.implements Lomo;
-
-
-# static fields
-.field public static final a:Lokz;
-
-.field public static final b:Lokz;
-
-.field public static final c:Lokz;
-
-.field public static final d:Lokz;
-
-.field public static final e:Lokz;
-
-.field public static final f:Lokz;
-
-.field public static final g:Lokz;
-
-.field public static final h:Lokz;
-
-.field public static final i:Lokz;
+.class Lokz;
+.super Ljava/util/AbstractCollection;
 
 
 # instance fields
-.field private final synthetic j:I
+.field final a:Ljava/lang/Object;
+
+.field b:Ljava/util/Collection;
+
+.field final c:Lokz;
+
+.field final d:Ljava/util/Collection;
+
+.field final synthetic e:Lold;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
-
-    new-instance v0, Lokz;
-
-    const/16 v1, 0x8
-
-    invoke-direct {v0, v1}, Lokz;-><init>(I)V
-
-    sput-object v0, Lokz;->i:Lokz;
-
-    new-instance v0, Lokz;
-
-    const/4 v1, 0x7
-
-    invoke-direct {v0, v1}, Lokz;-><init>(I)V
-
-    sput-object v0, Lokz;->h:Lokz;
-
-    new-instance v0, Lokz;
-
-    const/4 v1, 0x6
-
-    invoke-direct {v0, v1}, Lokz;-><init>(I)V
-
-    sput-object v0, Lokz;->g:Lokz;
-
-    new-instance v0, Lokz;
-
-    const/4 v1, 0x5
-
-    invoke-direct {v0, v1}, Lokz;-><init>(I)V
-
-    sput-object v0, Lokz;->f:Lokz;
-
-    new-instance v0, Lokz;
-
-    const/4 v1, 0x4
-
-    invoke-direct {v0, v1}, Lokz;-><init>(I)V
-
-    sput-object v0, Lokz;->e:Lokz;
-
-    new-instance v0, Lokz;
-
-    const/4 v1, 0x3
-
-    invoke-direct {v0, v1}, Lokz;-><init>(I)V
-
-    sput-object v0, Lokz;->d:Lokz;
-
-    new-instance v0, Lokz;
-
-    const/4 v1, 0x2
-
-    invoke-direct {v0, v1}, Lokz;-><init>(I)V
-
-    sput-object v0, Lokz;->c:Lokz;
-
-    new-instance v0, Lokz;
-
-    const/4 v1, 0x1
-
-    invoke-direct {v0, v1}, Lokz;-><init>(I)V
-
-    sput-object v0, Lokz;->b:Lokz;
-
-    new-instance v0, Lokz;
-
-    const/4 v1, 0x0
-
-    invoke-direct {v0, v1}, Lokz;-><init>(I)V
-
-    sput-object v0, Lokz;->a:Lokz;
-
-    return-void
-.end method
-
-.method public constructor <init>(I)V
+.method public constructor <init>(Lold;Ljava/lang/Object;Ljava/util/Collection;Lokz;)V
     .locals 0
 
-    iput p1, p0, Lokz;->j:I
+    iput-object p1, p0, Lokz;->e:Lold;
 
-    const/4 p1, 0x2
+    invoke-direct {p0}, Ljava/util/AbstractCollection;-><init>()V
 
-    invoke-direct {p0, p1}, Lonf;-><init>(I)V
+    iput-object p2, p0, Lokz;->a:Ljava/lang/Object;
+
+    iput-object p3, p0, Lokz;->b:Ljava/util/Collection;
+
+    iput-object p4, p0, Lokz;->c:Lokz;
+
+    if-nez p4, :cond_0
+
+    const/4 p1, 0x0
+
+    goto :goto_0
+
+    :cond_0
+    iget-object p1, p4, Lokz;->b:Ljava/util/Collection;
+
+    :goto_0
+    iput-object p1, p0, Lokz;->d:Ljava/util/Collection;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+.method final a()V
     .locals 3
 
-    iget v0, p0, Lokz;->j:I
+    iget-object v0, p0, Lokz;->c:Lokz;
 
-    const/4 v1, 0x0
+    if-eqz v0, :cond_0
 
-    const/4 v2, 0x1
+    invoke-virtual {v0}, Lokz;->a()V
 
-    packed-switch v0, :pswitch_data_0
+    return-void
 
-    check-cast p1, Loxi;
+    :cond_0
+    iget-object v0, p0, Lokz;->e:Lold;
 
-    check-cast p2, Lokx;
+    iget-object v0, v0, Lold;->a:Ljava/util/Map;
 
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    iget-object v1, p0, Lokz;->a:Ljava/lang/Object;
 
-    instance-of v0, p2, Lort;
+    iget-object v2, p0, Lokz;->b:Ljava/util/Collection;
 
-    if-eqz v0, :cond_d
+    invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    check-cast p2, Lort;
+    return-void
+.end method
 
-    iget-object v0, p1, Loxi;->a:Lola;
+.method public final add(Ljava/lang/Object;)Z
+    .locals 4
 
-    invoke-interface {p2, v0}, Lort;->cS(Lola;)Ljava/lang/Object;
+    invoke-virtual {p0}, Lokz;->b()V
 
-    move-result-object v0
+    iget-object v0, p0, Lokz;->b:Ljava/util/Collection;
 
-    iget-object v1, p1, Loxi;->b:[Ljava/lang/Object;
+    invoke-interface {v0}, Ljava/util/Collection;->isEmpty()Z
 
-    iget v2, p1, Loxi;->d:I
+    move-result v0
 
-    aput-object v0, v1, v2
+    iget-object v1, p0, Lokz;->b:Ljava/util/Collection;
 
-    iget-object v0, p1, Loxi;->c:[Lort;
+    invoke-interface {v1, p1}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
-    add-int/lit8 v1, v2, 0x1
+    move-result p1
 
-    iput v1, p1, Loxi;->d:I
+    if-eqz p1, :cond_0
 
-    aput-object p2, v0, v2
+    iget-object v1, p0, Lokz;->e:Lold;
 
-    goto/16 :goto_8
+    iget v2, v1, Lold;->b:I
 
-    :pswitch_0
-    check-cast p1, Lort;
+    const/4 v3, 0x1
 
-    check-cast p2, Lokx;
+    add-int/2addr v2, v3
 
-    if-nez p1, :cond_0
+    iput v2, v1, Lold;->b:I
 
-    instance-of p1, p2, Lort;
+    if-eqz v0, :cond_0
+
+    invoke-virtual {p0}, Lokz;->a()V
+
+    return v3
+
+    :cond_0
+    return p1
+.end method
+
+.method public final addAll(Ljava/util/Collection;)Z
+    .locals 4
+
+    invoke-interface {p1}, Ljava/util/Collection;->isEmpty()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    const/4 p1, 0x0
+
+    return p1
+
+    :cond_0
+    invoke-virtual {p0}, Lokz;->size()I
+
+    move-result v0
+
+    iget-object v1, p0, Lokz;->b:Ljava/util/Collection;
+
+    invoke-interface {v1, p1}, Ljava/util/Collection;->addAll(Ljava/util/Collection;)Z
+
+    move-result p1
 
     if-eqz p1, :cond_1
 
-    move-object v1, p2
+    iget-object v1, p0, Lokz;->b:Ljava/util/Collection;
 
-    check-cast v1, Lort;
+    invoke-interface {v1}, Ljava/util/Collection;->size()I
+
+    move-result v1
+
+    iget-object v2, p0, Lokz;->e:Lold;
+
+    iget v3, v2, Lold;->b:I
+
+    sub-int/2addr v1, v0
+
+    add-int/2addr v3, v1
+
+    iput v3, v2, Lold;->b:I
+
+    if-nez v0, :cond_1
+
+    invoke-virtual {p0}, Lokz;->a()V
+
+    const/4 p1, 0x1
+
+    :cond_1
+    return p1
+.end method
+
+.method final b()V
+    .locals 2
+
+    iget-object v0, p0, Lokz;->c:Lokz;
+
+    if-eqz v0, :cond_1
+
+    invoke-virtual {v0}, Lokz;->b()V
+
+    iget-object v0, p0, Lokz;->c:Lokz;
+
+    iget-object v0, v0, Lokz;->b:Ljava/util/Collection;
+
+    iget-object v1, p0, Lokz;->d:Ljava/util/Collection;
+
+    if-ne v0, v1, :cond_0
 
     goto :goto_0
 
     :cond_0
-    move-object v1, p1
+    new-instance v0, Ljava/util/ConcurrentModificationException;
+
+    invoke-direct {v0}, Ljava/util/ConcurrentModificationException;-><init>()V
+
+    throw v0
 
     :cond_1
-    :goto_0
-    return-object v1
+    iget-object v0, p0, Lokz;->b:Ljava/util/Collection;
 
-    :pswitch_1
-    check-cast p2, Lokx;
-
-    instance-of v0, p2, Lort;
-
-    if-eqz v0, :cond_5
-
-    instance-of v0, p1, Ljava/lang/Integer;
-
-    if-eqz v0, :cond_2
-
-    move-object v1, p1
-
-    check-cast v1, Ljava/lang/Integer;
-
-    goto :goto_1
-
-    :cond_2
-    :goto_1
-    if-eqz v1, :cond_3
-
-    invoke-virtual {v1}, Ljava/lang/Integer;->intValue()I
-
-    move-result p1
-
-    goto :goto_2
-
-    :cond_3
-    const/4 p1, 0x1
-
-    :goto_2
-    if-nez p1, :cond_4
-
-    move-object p1, p2
-
-    goto :goto_3
-
-    :cond_4
-    add-int/2addr p1, v2
-
-    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object p1
-
-    :cond_5
-    :goto_3
-    return-object p1
-
-    :pswitch_2
-    check-cast p1, Ljava/lang/Number;
-
-    invoke-virtual {p1}, Ljava/lang/Number;->intValue()I
-
-    move-result p1
-
-    check-cast p2, Lokx;
-
-    add-int/2addr p1, v2
-
-    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object p1
-
-    return-object p1
-
-    :pswitch_3
-    invoke-static {p1, p2}, Lone;->c(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result p1
-
-    invoke-static {p1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
-
-    move-result-object p1
-
-    return-object p1
-
-    :pswitch_4
-    check-cast p1, Ljava/lang/Boolean;
-
-    invoke-virtual {p1}, Ljava/lang/Boolean;->booleanValue()Z
-
-    move-result p1
-
-    check-cast p2, Lokx;
-
-    if-nez p1, :cond_7
-
-    instance-of p1, p2, Lopm;
-
-    if-eqz p1, :cond_6
-
-    goto :goto_4
-
-    :cond_6
-    const/4 v2, 0x0
-
-    goto :goto_4
-
-    :cond_7
-    :goto_4
-    invoke-static {v2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
-
-    move-result-object p1
-
-    return-object p1
-
-    :pswitch_5
-    check-cast p1, Lola;
-
-    check-cast p2, Lokx;
-
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    instance-of v0, p2, Lopm;
-
-    if-eqz v0, :cond_8
-
-    check-cast p2, Lopm;
-
-    invoke-interface {p2}, Lopm;->a()Lopm;
-
-    move-result-object p2
-
-    invoke-interface {p1, p2}, Lola;->plus(Lola;)Lola;
-
-    move-result-object p1
-
-    goto :goto_5
-
-    :cond_8
-    invoke-interface {p1, p2}, Lola;->plus(Lola;)Lola;
-
-    move-result-object p1
-
-    :goto_5
-    return-object p1
-
-    :pswitch_6
-    check-cast p1, Ljava/lang/String;
-
-    check-cast p2, Lokx;
-
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    invoke-interface {p1}, Ljava/lang/CharSequence;->length()I
+    invoke-interface {v0}, Ljava/util/Collection;->isEmpty()Z
 
     move-result v0
 
-    if-nez v0, :cond_9
+    if-eqz v0, :cond_2
 
-    invoke-virtual {p2}, Ljava/lang/Object;->toString()Ljava/lang/String;
+    iget-object v0, p0, Lokz;->e:Lold;
 
-    move-result-object p1
+    iget-object v0, v0, Lold;->a:Ljava/util/Map;
 
-    goto :goto_6
+    iget-object v1, p0, Lokz;->a:Ljava/lang/Object;
 
-    :cond_9
-    new-instance v0, Ljava/lang/StringBuilder;
+    invoke-interface {v0, v1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+    move-result-object v0
 
-    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    check-cast v0, Ljava/util/Collection;
 
-    const-string p1, ", "
+    if-eqz v0, :cond_2
 
-    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    iput-object v0, p0, Lokz;->b:Ljava/util/Collection;
 
-    invoke-virtual {v0, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    return-void
 
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    :cond_2
+    :goto_0
+    return-void
+.end method
 
-    move-result-object p1
+.method final c()V
+    .locals 2
 
-    :goto_6
-    return-object p1
+    iget-object v0, p0, Lokz;->c:Lokz;
 
-    :pswitch_7
-    check-cast p1, Lola;
+    if-eqz v0, :cond_0
 
-    check-cast p2, Lokx;
+    invoke-virtual {v0}, Lokz;->c()V
+
+    return-void
+
+    :cond_0
+    iget-object v0, p0, Lokz;->b:Ljava/util/Collection;
+
+    invoke-interface {v0}, Ljava/util/Collection;->isEmpty()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    iget-object v0, p0, Lokz;->e:Lold;
+
+    iget-object v0, v0, Lold;->a:Ljava/util/Map;
+
+    iget-object v1, p0, Lokz;->a:Ljava/lang/Object;
+
+    invoke-interface {v0, v1}, Ljava/util/Map;->remove(Ljava/lang/Object;)Ljava/lang/Object;
+
+    :cond_1
+    return-void
+.end method
+
+.method public final clear()V
+    .locals 3
+
+    invoke-virtual {p0}, Lokz;->size()I
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    return-void
+
+    :cond_0
+    iget-object v1, p0, Lokz;->b:Ljava/util/Collection;
+
+    invoke-interface {v1}, Ljava/util/Collection;->clear()V
+
+    iget-object v1, p0, Lokz;->e:Lold;
+
+    iget v2, v1, Lold;->b:I
+
+    sub-int/2addr v2, v0
+
+    iput v2, v1, Lold;->b:I
+
+    invoke-virtual {p0}, Lokz;->c()V
+
+    return-void
+.end method
+
+.method public final contains(Ljava/lang/Object;)Z
+    .locals 1
+
+    invoke-virtual {p0}, Lokz;->b()V
+
+    iget-object v0, p0, Lokz;->b:Ljava/util/Collection;
+
+    invoke-interface {v0, p1}, Ljava/util/Collection;->contains(Ljava/lang/Object;)Z
+
+    move-result p1
+
+    return p1
+.end method
+
+.method public final containsAll(Ljava/util/Collection;)Z
+    .locals 1
+
+    invoke-virtual {p0}, Lokz;->b()V
+
+    iget-object v0, p0, Lokz;->b:Ljava/util/Collection;
+
+    invoke-interface {v0, p1}, Ljava/util/Collection;->containsAll(Ljava/util/Collection;)Z
+
+    move-result p1
+
+    return p1
+.end method
+
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 1
+
+    if-ne p1, p0, :cond_0
+
+    const/4 p1, 0x1
+
+    return p1
+
+    :cond_0
+    invoke-virtual {p0}, Lokz;->b()V
+
+    iget-object v0, p0, Lokz;->b:Ljava/util/Collection;
+
+    invoke-interface {v0, p1}, Ljava/util/Collection;->equals(Ljava/lang/Object;)Z
+
+    move-result p1
+
+    return p1
+.end method
+
+.method public final hashCode()I
+    .locals 1
+
+    invoke-virtual {p0}, Lokz;->b()V
+
+    iget-object v0, p0, Lokz;->b:Ljava/util/Collection;
+
+    invoke-interface {v0}, Ljava/util/Collection;->hashCode()I
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public final iterator()Ljava/util/Iterator;
+    .locals 1
+
+    invoke-virtual {p0}, Lokz;->b()V
+
+    new-instance v0, Loky;
+
+    invoke-direct {v0, p0}, Loky;-><init>(Lokz;)V
+
+    return-object v0
+.end method
+
+.method public final remove(Ljava/lang/Object;)Z
+    .locals 2
+
+    invoke-virtual {p0}, Lokz;->b()V
+
+    iget-object v0, p0, Lokz;->b:Ljava/util/Collection;
+
+    invoke-interface {v0, p1}, Ljava/util/Collection;->remove(Ljava/lang/Object;)Z
+
+    move-result p1
+
+    if-eqz p1, :cond_0
+
+    iget-object v0, p0, Lokz;->e:Lold;
+
+    iget v1, v0, Lold;->b:I
+
+    add-int/lit8 v1, v1, -0x1
+
+    iput v1, v0, Lold;->b:I
+
+    invoke-virtual {p0}, Lokz;->c()V
+
+    :cond_0
+    return p1
+.end method
+
+.method public removeAll(Ljava/util/Collection;)Z
+    .locals 4
+
+    invoke-interface {p1}, Ljava/util/Collection;->isEmpty()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    const/4 p1, 0x0
+
+    return p1
+
+    :cond_0
+    invoke-virtual {p0}, Lokz;->size()I
+
+    move-result v0
+
+    iget-object v1, p0, Lokz;->b:Ljava/util/Collection;
+
+    invoke-interface {v1, p1}, Ljava/util/Collection;->removeAll(Ljava/util/Collection;)Z
+
+    move-result p1
+
+    if-eqz p1, :cond_1
+
+    iget-object v1, p0, Lokz;->b:Ljava/util/Collection;
+
+    invoke-interface {v1}, Ljava/util/Collection;->size()I
+
+    move-result v1
+
+    iget-object v2, p0, Lokz;->e:Lold;
+
+    iget v3, v2, Lold;->b:I
+
+    sub-int/2addr v1, v0
+
+    add-int/2addr v3, v1
+
+    iput v3, v2, Lold;->b:I
+
+    invoke-virtual {p0}, Lokz;->c()V
+
+    :cond_1
+    return p1
+.end method
+
+.method public final retainAll(Ljava/util/Collection;)Z
+    .locals 4
 
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    invoke-interface {p2}, Lokx;->getKey()Loky;
+    invoke-virtual {p0}, Lokz;->size()I
+
+    move-result v0
+
+    iget-object v1, p0, Lokz;->b:Ljava/util/Collection;
+
+    invoke-interface {v1, p1}, Ljava/util/Collection;->retainAll(Ljava/util/Collection;)Z
+
+    move-result p1
+
+    if-eqz p1, :cond_0
+
+    iget-object v1, p0, Lokz;->b:Ljava/util/Collection;
+
+    invoke-interface {v1}, Ljava/util/Collection;->size()I
+
+    move-result v1
+
+    iget-object v2, p0, Lokz;->e:Lold;
+
+    iget v3, v2, Lold;->b:I
+
+    sub-int/2addr v1, v0
+
+    add-int/2addr v3, v1
+
+    iput v3, v2, Lold;->b:I
+
+    invoke-virtual {p0}, Lokz;->c()V
+
+    :cond_0
+    return p1
+.end method
+
+.method public final size()I
+    .locals 1
+
+    invoke-virtual {p0}, Lokz;->b()V
+
+    iget-object v0, p0, Lokz;->b:Ljava/util/Collection;
+
+    invoke-interface {v0}, Ljava/util/Collection;->size()I
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .locals 1
+
+    invoke-virtual {p0}, Lokz;->b()V
+
+    iget-object v0, p0, Lokz;->b:Ljava/util/Collection;
+
+    invoke-virtual {v0}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
     move-result-object v0
 
-    invoke-interface {p1, v0}, Lola;->minusKey(Loky;)Lola;
-
-    move-result-object p1
-
-    sget-object v0, Lolb;->a:Lolb;
-
-    if-eq p1, v0, :cond_c
-
-    sget-object v0, Lokw;->a:Lokv;
-
-    invoke-interface {p1, v0}, Lola;->get(Loky;)Lokx;
-
-    move-result-object v0
-
-    check-cast v0, Lokw;
-
-    if-nez v0, :cond_a
-
-    new-instance v0, Lokt;
-
-    invoke-direct {v0, p1, p2}, Lokt;-><init>(Lola;Lokx;)V
-
-    move-object p2, v0
-
-    goto :goto_7
-
-    :cond_a
-    sget-object v1, Lokw;->a:Lokv;
-
-    invoke-interface {p1, v1}, Lola;->minusKey(Loky;)Lola;
-
-    move-result-object p1
-
-    sget-object v1, Lolb;->a:Lolb;
-
-    if-ne p1, v1, :cond_b
-
-    new-instance p1, Lokt;
-
-    invoke-direct {p1, p2, v0}, Lokt;-><init>(Lola;Lokx;)V
-
-    move-object p2, p1
-
-    goto :goto_7
-
-    :cond_b
-    new-instance v1, Lokt;
-
-    new-instance v2, Lokt;
-
-    invoke-direct {v2, p1, p2}, Lokt;-><init>(Lola;Lokx;)V
-
-    invoke-direct {v1, v2, v0}, Lokt;-><init>(Lola;Lokx;)V
-
-    move-object p2, v1
-
-    :cond_c
-    :goto_7
-    return-object p2
-
-    :cond_d
-    :goto_8
-    return-object p1
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_7
-        :pswitch_6
-        :pswitch_5
-        :pswitch_4
-        :pswitch_3
-        :pswitch_2
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
+    return-object v0
 .end method

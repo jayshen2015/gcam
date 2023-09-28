@@ -1,212 +1,96 @@
-.class public final Lgoz;
+.class public final synthetic Lgoz;
 .super Ljava/lang/Object;
+
+# interfaces
+.implements Lojz;
+
+
+# instance fields
+.field public final synthetic a:Lgpd;
+
+.field public final synthetic b:Lgib;
 
 
 # direct methods
-.method public constructor <init>()V
+.method public synthetic constructor <init>(Lgpd;Lgib;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    return-void
-.end method
+    iput-object p1, p0, Lgoz;->a:Lgpd;
 
-.method public static final a(Lmqp;Lmqp;Lmqp;)Lgpa;
-    .locals 1
-
-    new-instance v0, Lgpa;
-
-    invoke-direct {v0, p0, p1, p2}, Lgpa;-><init>(Lmqp;Lmqp;Lmqp;)V
-
-    return-object v0
-.end method
-
-.method public static b(I)I
-    .locals 0
-
-    add-int/lit8 p0, p0, -0x1
-
-    return p0
-.end method
-
-.method public static c(Ldhi;)Z
-    .locals 1
-
-    sget-object v0, Ldib;->i:Ldhj;
-
-    invoke-interface {p0, v0}, Ldhi;->l(Ldhj;)Z
-
-    move-result p0
-
-    return p0
-.end method
-
-.method public static synthetic d(Ljava/lang/Object;Ljava/lang/Object;)Ljava/util/Map$Entry;
-    .locals 1
-
-    new-instance v0, Ljava/util/AbstractMap$SimpleImmutableEntry;
-
-    invoke-direct {v0, p0, p1}, Ljava/util/AbstractMap$SimpleImmutableEntry;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
-
-    return-object v0
-.end method
-
-.method public static synthetic q(Ljava/lang/Throwable;Ljava/lang/Throwable;)V
-    .locals 6
-
-    :try_start_0
-    const-class v0, Ljava/lang/Throwable;
-
-    const-string v1, "addSuppressed"
-
-    const/4 v2, 0x1
-
-    new-array v3, v2, [Ljava/lang/Class;
-
-    const-class v4, Ljava/lang/Throwable;
-
-    const/4 v5, 0x0
-
-    aput-object v4, v3, v5
-
-    invoke-virtual {v0, v1, v3}, Ljava/lang/Class;->getDeclaredMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
-
-    move-result-object v0
-
-    new-array v1, v2, [Ljava/lang/Object;
-
-    aput-object p1, v1, v5
-
-    invoke-virtual {v0, p0, v1}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
-    :try_end_0
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
-
-    return-void
-
-    :catch_0
-    move-exception p0
+    iput-object p2, p0, Lgoz;->b:Lgib;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final declared-synchronized e()V
-    .locals 0
+.method public final a()Ljava/lang/Object;
+    .locals 3
 
-    monitor-enter p0
+    iget-object v0, p0, Lgoz;->a:Lgpd;
 
-    monitor-exit p0
+    iget-object v1, p0, Lgoz;->b:Lgib;
 
-    return-void
-.end method
+    iget-object v2, v0, Lgpd;->a:Lpht;
 
-.method public final declared-synchronized f()V
-    .locals 0
+    invoke-static {v2}, Lmip;->bY(Lpht;)Ljava/lang/Object;
 
-    monitor-enter p0
+    move-result-object v2
 
-    monitor-exit p0
+    check-cast v2, Lgoy;
 
-    return-void
-.end method
+    iget-object v0, v0, Lgpd;->f:Ljava/util/concurrent/atomic/AtomicInteger;
 
-.method public final declared-synchronized g()V
-    .locals 0
+    invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicInteger;->get()I
 
-    monitor-enter p0
+    move-result v0
 
-    monitor-exit p0
+    invoke-virtual {v1}, Lgib;->a()Z
 
-    return-void
-.end method
+    move-result v1
 
-.method public final declared-synchronized h()V
-    .locals 0
+    if-nez v1, :cond_2
 
-    monitor-enter p0
+    if-lez v0, :cond_0
 
-    monitor-exit p0
+    goto :goto_0
 
-    return-void
-.end method
+    :cond_0
+    if-nez v2, :cond_1
 
-.method public final declared-synchronized i()V
-    .locals 0
+    const/4 v0, 0x1
 
-    monitor-enter p0
+    invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
-    monitor-exit p0
+    move-result-object v0
 
-    return-void
-.end method
+    invoke-static {v0}, Llcv;->g(Ljava/lang/Object;)Llco;
 
-.method public final declared-synchronized j()V
-    .locals 0
+    move-result-object v0
 
-    monitor-enter p0
+    goto :goto_1
 
-    monitor-exit p0
+    :cond_1
+    invoke-interface {v2}, Lgoy;->a()Llco;
 
-    return-void
-.end method
+    move-result-object v0
 
-.method public final declared-synchronized k()V
-    .locals 0
+    goto :goto_1
 
-    monitor-enter p0
+    :cond_2
+    :goto_0
+    const/4 v0, 0x0
 
-    monitor-exit p0
+    invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
-    return-void
-.end method
+    move-result-object v0
 
-.method public final declared-synchronized l()V
-    .locals 0
+    invoke-static {v0}, Llcv;->g(Ljava/lang/Object;)Llco;
 
-    monitor-enter p0
+    move-result-object v0
 
-    monitor-exit p0
-
-    return-void
-.end method
-
-.method public final declared-synchronized m()V
-    .locals 0
-
-    monitor-enter p0
-
-    monitor-exit p0
-
-    return-void
-.end method
-
-.method public final declared-synchronized n()V
-    .locals 0
-
-    monitor-enter p0
-
-    monitor-exit p0
-
-    return-void
-.end method
-
-.method public final declared-synchronized o()V
-    .locals 0
-
-    monitor-enter p0
-
-    monitor-exit p0
-
-    return-void
-.end method
-
-.method public final declared-synchronized p()V
-    .locals 0
-
-    monitor-enter p0
-
-    monitor-exit p0
-
-    return-void
+    :goto_1
+    return-object v0
 .end method

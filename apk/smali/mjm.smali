@@ -1,63 +1,113 @@
-.class public final Lmjm;
+.class public final synthetic Lmjm;
 .super Ljava/lang/Object;
 
+# interfaces
+.implements Ljava/lang/Runnable;
 
-# static fields
-.field public static final a:[I
 
-.field public static final b:[I
+# instance fields
+.field public final synthetic a:Lmjr;
 
-.field public static final c:[I
+.field public final synthetic b:I
+
+.field public final synthetic c:Ljava/nio/ByteBuffer;
+
+.field public final synthetic d:Landroid/media/MediaCodec$BufferInfo;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 3
+.method public synthetic constructor <init>(Lmjr;ILjava/nio/ByteBuffer;Landroid/media/MediaCodec$BufferInfo;)V
+    .locals 0
 
-    const/16 v0, 0x9
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    new-array v0, v0, [I
+    iput-object p1, p0, Lmjm;->a:Lmjr;
 
-    fill-array-data v0, :array_0
+    iput p2, p0, Lmjm;->b:I
 
-    sput-object v0, Lmjm;->a:[I
+    iput-object p3, p0, Lmjm;->c:Ljava/nio/ByteBuffer;
 
-    const v0, 0x7f04033a
+    iput-object p4, p0, Lmjm;->d:Landroid/media/MediaCodec$BufferInfo;
 
-    const v1, 0x7f04033b
+    return-void
+.end method
 
-    const v2, 0x7f040338
 
-    filled-new-array {v2, v0, v1}, [I
+# virtual methods
+.method public final run()V
+    .locals 7
 
-    move-result-object v0
+    iget-object v0, p0, Lmjm;->a:Lmjr;
 
-    sput-object v0, Lmjm;->b:[I
+    iget v1, p0, Lmjm;->b:I
 
-    const v0, 0x7f040335
+    iget-object v2, p0, Lmjm;->c:Ljava/nio/ByteBuffer;
 
-    const v1, 0x7f040339
+    iget-object v3, p0, Lmjm;->d:Landroid/media/MediaCodec$BufferInfo;
 
-    filled-new-array {v0, v1}, [I
+    iget-object v4, v0, Lmjr;->e:Ljava/lang/Object;
 
-    move-result-object v0
+    monitor-enter v4
 
-    sput-object v0, Lmjm;->c:[I
+    :try_start_0
+    iget-object v5, v0, Lmjr;->f:Ljava/util/HashMap;
+
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v6
+
+    invoke-virtual {v5, v6}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v5
+
+    check-cast v5, Ljava/lang/Integer;
+
+    if-eqz v5, :cond_0
+
+    monitor-exit v4
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    iget-object v0, v0, Lmjr;->b:Lmah;
+
+    invoke-virtual {v5}, Ljava/lang/Integer;->intValue()I
+
+    move-result v1
+
+    invoke-interface {v0, v1, v2, v3}, Lmah;->h(ILjava/nio/ByteBuffer;Landroid/media/MediaCodec$BufferInfo;)V
 
     return-void
 
-    nop
+    :cond_0
+    :try_start_1
+    new-instance v0, Ljava/lang/IllegalArgumentException;
 
-    :array_0
-    .array-data 4
-        0x1010139
-        0x7f040305
-        0x7f040337
-        0x7f04047e
-        0x7f040597
-        0x7f040599
-        0x7f04070b
-        0x7f04070e
-        0x7f040713
-    .end array-data
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    const/16 v3, 0x1d
+
+    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string v3, "Unknown track id: "
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit v4
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    throw v0
 .end method

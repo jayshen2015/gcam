@@ -1,22 +1,22 @@
-.class public interface abstract Lfzy;
+.class public final Lfzy;
 .super Ljava/lang/Object;
 
-# interfaces
-.implements Lkai;
+
+# static fields
+.field public static final a:Lfuu;
 
 
-# virtual methods
-.method public abstract b()V
-.end method
+# direct methods
+.method static constructor <clinit>()V
+    .locals 2
 
-.method public abstract e(I)V
-.end method
+    new-instance v0, Lfuu;
 
-.method public abstract f(Z)V
-.end method
+    const/16 v1, 0xd
 
-.method public abstract g(J)V
-.end method
+    invoke-direct {v0, v1}, Lfuu;-><init>(I)V
 
-.method public abstract h()V
+    sput-object v0, Lfzy;->a:Lfuu;
+
+    return-void
 .end method

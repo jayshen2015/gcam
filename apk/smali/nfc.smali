@@ -1,58 +1,110 @@
-.class final Lnfc;
+.class public final synthetic Lnfc;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lnfd;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field private final a:Ljava/lang/reflect/Method;
+.field public final synthetic a:Landroid/content/Context;
+
+.field public final synthetic b:Ljava/lang/String;
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/reflect/Method;)V
+.method public synthetic constructor <init>(Landroid/content/Context;Ljava/lang/String;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lnfc;->a:Ljava/lang/reflect/Method;
+    iput-object p1, p0, Lnfc;->a:Landroid/content/Context;
+
+    iput-object p2, p0, Lnfc;->b:Ljava/lang/String;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Ljava/io/Closeable;Ljava/lang/Throwable;Ljava/lang/Throwable;)V
-    .locals 3
+.method public final run()V
+    .locals 6
 
-    if-ne p2, p3, :cond_0
+    iget-object v0, p0, Lnfc;->a:Landroid/content/Context;
 
-    return-void
+    iget-object v1, p0, Lnfc;->b:Ljava/lang/String;
+
+    invoke-static {v0}, Lnfw;->a(Landroid/content/Context;)Landroid/content/SharedPreferences;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Landroid/content/SharedPreferences;->getAll()Ljava/util/Map;
+
+    move-result-object v2
+
+    invoke-interface {v2}, Ljava/util/Map;->entrySet()Ljava/util/Set;
+
+    move-result-object v2
+
+    invoke-interface {v2}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
+
+    move-result-object v2
+
+    const/4 v3, 0x0
 
     :cond_0
-    :try_start_0
-    iget-object v0, p0, Lnfc;->a:Ljava/lang/reflect/Method;
+    :goto_0
+    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
 
-    const/4 v1, 0x1
+    move-result v4
 
-    new-array v1, v1, [Ljava/lang/Object;
+    if-eqz v4, :cond_2
 
-    const/4 v2, 0x0
+    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    aput-object p3, v1, v2
+    move-result-object v4
 
-    invoke-virtual {v0, p2, v1}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    check-cast v4, Ljava/util/Map$Entry;
 
-    return-void
+    invoke-interface {v4}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
-    :catchall_0
-    move-exception v0
+    move-result-object v5
 
-    sget-object v0, Lnfb;->a:Lnfb;
+    instance-of v5, v5, Ljava/lang/String;
 
-    invoke-virtual {v0, p1, p2, p3}, Lnfb;->a(Ljava/io/Closeable;Ljava/lang/Throwable;Ljava/lang/Throwable;)V
+    if-eqz v5, :cond_0
 
+    invoke-interface {v4}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
+
+    move-result-object v5
+
+    invoke-virtual {v5, v1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+
+    move-result v5
+
+    if-eqz v5, :cond_0
+
+    if-nez v3, :cond_1
+
+    invoke-interface {v0}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
+
+    move-result-object v3
+
+    :cond_1
+    invoke-interface {v4}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
+
+    move-result-object v4
+
+    check-cast v4, Ljava/lang/String;
+
+    invoke-interface {v3, v4}, Landroid/content/SharedPreferences$Editor;->remove(Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
+
+    goto :goto_0
+
+    :cond_2
+    if-eqz v3, :cond_3
+
+    invoke-interface {v3}, Landroid/content/SharedPreferences$Editor;->commit()Z
+
+    :cond_3
     return-void
 .end method

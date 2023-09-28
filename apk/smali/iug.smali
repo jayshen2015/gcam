@@ -1,30 +1,61 @@
 .class public final Liug;
 .super Ljava/lang/Object;
 
+# interfaces
+.implements Lpys;
 
-# static fields
-.field public static final a:Llhj;
+
+# instance fields
+.field private final a:Lqkg;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 5
+.method public constructor <init>(Lqkg;)V
+    .locals 0
 
-    sget-object v0, Liuf;->c:Liuf;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    sget-object v1, Liuh;->c:Liuh;
+    iput-object p1, p0, Liug;->a:Lqkg;
 
-    sget-object v2, Liuh;->c:Liuh;
+    return-void
+.end method
 
-    sget-object v3, Lnzl;->k:Lnzl;
+.method public static b(Lqkg;)Liug;
+    .locals 1
 
-    const v4, 0x9198309
+    new-instance v0, Liug;
 
-    invoke-static {v0, v1, v2, v4, v3}, Lnws;->af(Lnxy;Ljava/lang/Object;Lnxy;ILnzl;)Llhj;
+    invoke-direct {v0, p0}, Liug;-><init>(Lqkg;)V
+
+    return-object v0
+.end method
+
+
+# virtual methods
+.method public final a()Liuf;
+    .locals 2
+
+    iget-object v0, p0, Liug;->a:Lqkg;
+
+    check-cast v0, Lems;
+
+    invoke-virtual {v0}, Lems;->a()Landroid/view/accessibility/AccessibilityManager;
 
     move-result-object v0
 
-    sput-object v0, Liug;->a:Llhj;
+    new-instance v1, Liuf;
 
-    return-void
+    invoke-direct {v1, v0}, Liuf;-><init>(Landroid/view/accessibility/AccessibilityManager;)V
+
+    return-object v1
+.end method
+
+.method public final bridge synthetic get()Ljava/lang/Object;
+    .locals 1
+
+    invoke-virtual {p0}, Liug;->a()Liuf;
+
+    move-result-object v0
+
+    return-object v0
 .end method

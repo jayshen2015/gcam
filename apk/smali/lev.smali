@@ -2,56 +2,52 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lleu;
+.implements Lpys;
 
 
 # instance fields
-.field public final b:Lnph;
-
-.field private final c:Llep;
+.field private final a:Lqkg;
 
 
 # direct methods
-.method public constructor <init>(Llep;)V
+.method public constructor <init>(Lqkg;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Llev;->c:Llep;
-
-    invoke-static {}, Lnph;->g()Lnph;
-
-    move-result-object p1
-
-    iput-object p1, p0, Llev;->b:Lnph;
+    iput-object p1, p0, Llev;->a:Lqkg;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Lldv;)V
-    .locals 3
+.method public final a()Lleu;
+    .locals 2
 
-    iget-object v0, p0, Llev;->c:Llep;
+    iget-object v0, p0, Llev;->a:Lqkg;
 
-    iget-object v1, p1, Lldv;->b:Ljava/nio/ByteBuffer;
+    invoke-interface {v0}, Lqkg;->get()Ljava/lang/Object;
 
-    iget-object v2, p1, Lldv;->c:Landroid/media/MediaCodec$BufferInfo;
+    move-result-object v0
 
-    invoke-interface {v0, v1, v2}, Llep;->b(Ljava/nio/ByteBuffer;Landroid/media/MediaCodec$BufferInfo;)V
+    check-cast v0, Lmip;
 
-    invoke-virtual {p1}, Lldv;->close()V
+    new-instance v0, Lleu;
 
-    return-void
+    const/4 v1, 0x0
+
+    invoke-direct {v0, v1}, Lleu;-><init>(I)V
+
+    return-object v0
 .end method
 
-.method public final b(Landroid/media/MediaFormat;)V
+.method public final bridge synthetic get()Ljava/lang/Object;
     .locals 1
 
-    iget-object v0, p0, Llev;->b:Lnph;
+    invoke-virtual {p0}, Llev;->a()Lleu;
 
-    invoke-virtual {v0, p1}, Lnph;->e(Ljava/lang/Object;)Z
+    move-result-object v0
 
-    return-void
+    return-object v0
 .end method

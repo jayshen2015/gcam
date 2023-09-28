@@ -1,110 +1,231 @@
-.class public abstract Lomy;
-.super Ljava/lang/Object;
-
-# interfaces
-.implements Ljava/io/Serializable;
-.implements Lonw;
-
-
-# static fields
-.field public static final a:Ljava/lang/Object;
-
-
-# instance fields
-.field protected final b:Ljava/lang/Object;
-
-.field public final c:Ljava/lang/String;
-
-.field public final d:Ljava/lang/String;
-
-.field private transient e:Lonw;
-
-.field private final f:Ljava/lang/Class;
-
-.field private final g:Z
+.class final Lomy;
+.super Lomm;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
-
-    sget-object v0, Lomx;->a:Lomx;
-
-    sput-object v0, Lomy;->a:Ljava/lang/Object;
-
-    return-void
-.end method
-
-.method protected constructor <init>(Ljava/lang/Object;Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;Z)V
+.method public constructor <init>(Lomw;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lomy;->b:Ljava/lang/Object;
-
-    iput-object p2, p0, Lomy;->f:Ljava/lang/Class;
-
-    iput-object p3, p0, Lomy;->c:Ljava/lang/String;
-
-    iput-object p4, p0, Lomy;->d:Ljava/lang/String;
-
-    iput-boolean p5, p0, Lomy;->g:Z
+    invoke-direct {p0, p1}, Lomm;-><init>(Lomw;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final b()Lonw;
-    .locals 1
+.method public final contains(Ljava/lang/Object;)Z
+    .locals 0
 
-    iget-object v0, p0, Lomy;->e:Lonw;
+    const/4 p1, 0x0
 
-    if-nez v0, :cond_0
+    return p1
+.end method
 
-    invoke-virtual {p0}, Lomy;->e()V
-
-    iput-object p0, p0, Lomy;->e:Lonw;
+.method public final d(Ljava/lang/Comparable;Z)Lomm;
+    .locals 0
 
     return-object p0
+.end method
 
-    :cond_0
+.method public final synthetic descendingIterator()Ljava/util/Iterator;
+    .locals 1
+
+    sget-object v0, Lopy;->a:Lotj;
+
     return-object v0
 .end method
 
-.method public final c()Lony;
-    .locals 2
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 1
 
-    iget-boolean v0, p0, Lomy;->g:Z
+    instance-of v0, p1, Ljava/util/Set;
 
     if-eqz v0, :cond_0
 
-    iget-object v0, p0, Lomy;->f:Ljava/lang/Class;
+    check-cast p1, Ljava/util/Set;
 
-    new-instance v1, Long;
+    invoke-interface {p1}, Ljava/util/Set;->isEmpty()Z
 
-    invoke-direct {v1, v0}, Long;-><init>(Ljava/lang/Class;)V
+    move-result p1
 
-    goto :goto_0
+    return p1
 
     :cond_0
-    iget-object v0, p0, Lomy;->f:Ljava/lang/Class;
+    const/4 p1, 0x0
 
-    invoke-static {v0}, Lonl;->a(Ljava/lang/Class;)Lonx;
-
-    move-result-object v1
-
-    :goto_0
-    return-object v1
+    return p1
 .end method
 
-.method public final varargs d()Ljava/lang/Object;
+.method public final bridge synthetic first()Ljava/lang/Object;
     .locals 1
 
-    const/4 v0, 0x0
+    new-instance v0, Ljava/util/NoSuchElementException;
+
+    invoke-direct {v0}, Ljava/util/NoSuchElementException;-><init>()V
 
     throw v0
 .end method
 
-.method protected abstract e()V
+.method public final g(Ljava/lang/Comparable;ZLjava/lang/Comparable;Z)Lomm;
+    .locals 0
+
+    return-object p0
+.end method
+
+.method public final gG()Loti;
+    .locals 1
+
+    sget-object v0, Lopy;->a:Lotj;
+
+    return-object v0
+.end method
+
+.method public final gH()Loti;
+    .locals 1
+
+    sget-object v0, Lopy;->a:Lotj;
+
+    return-object v0
+.end method
+
+.method public final gI()Z
+    .locals 1
+
+    const/4 v0, 0x0
+
+    return v0
+.end method
+
+.method public final hashCode()I
+    .locals 1
+
+    const/4 v0, 0x0
+
+    return v0
+.end method
+
+.method public final isEmpty()Z
+    .locals 1
+
+    const/4 v0, 0x1
+
+    return v0
+.end method
+
+.method public final synthetic iterator()Ljava/util/Iterator;
+    .locals 1
+
+    sget-object v0, Lopy;->a:Lotj;
+
+    return-object v0
+.end method
+
+.method public final j(Ljava/lang/Comparable;Z)Lomm;
+    .locals 0
+
+    return-object p0
+.end method
+
+.method public final k()Lopm;
+    .locals 1
+
+    sget-object v0, Lorz;->a:Lorz;
+
+    invoke-static {v0}, Lopm;->Q(Ljava/util/Comparator;)Lory;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public final bridge synthetic last()Ljava/lang/Object;
+    .locals 1
+
+    new-instance v0, Ljava/util/NoSuchElementException;
+
+    invoke-direct {v0}, Ljava/util/NoSuchElementException;-><init>()V
+
+    throw v0
+.end method
+
+.method public final bridge synthetic n(Ljava/lang/Object;Z)Lopm;
+    .locals 0
+
+    check-cast p1, Ljava/lang/Comparable;
+
+    return-object p0
+.end method
+
+.method public final bridge synthetic q(Ljava/lang/Object;ZLjava/lang/Object;Z)Lopm;
+    .locals 0
+
+    check-cast p1, Ljava/lang/Comparable;
+
+    check-cast p3, Ljava/lang/Comparable;
+
+    return-object p0
+.end method
+
+.method public final size()I
+    .locals 1
+
+    const/4 v0, 0x0
+
+    return v0
+.end method
+
+.method public final bridge synthetic t(Ljava/lang/Object;Z)Lopm;
+    .locals 0
+
+    check-cast p1, Ljava/lang/Comparable;
+
+    return-object p0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .locals 1
+
+    const-string v0, "[]"
+
+    return-object v0
+.end method
+
+.method public final u()Lorj;
+    .locals 1
+
+    new-instance v0, Ljava/util/NoSuchElementException;
+
+    invoke-direct {v0}, Ljava/util/NoSuchElementException;-><init>()V
+
+    throw v0
+.end method
+
+.method public final v()Loom;
+    .locals 1
+
+    invoke-static {}, Loom;->l()Loom;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public final w()Z
+    .locals 1
+
+    const/4 v0, 0x1
+
+    return v0
+.end method
+
+.method writeReplace()Ljava/lang/Object;
+    .locals 2
+
+    new-instance v0, Lomx;
+
+    iget-object v1, p0, Lomy;->a:Lomw;
+
+    invoke-direct {v0, v1}, Lomx;-><init>(Lomw;)V
+
+    return-object v0
 .end method

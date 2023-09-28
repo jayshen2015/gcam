@@ -1,59 +1,94 @@
-.class abstract Lmwz;
-.super Lmwn;
+.class final Lmwz;
+.super Ljava/lang/Object;
+
+
+# instance fields
+.field public final a:Lqxd;
+
+.field public final b:Ljava/lang/Long;
+
+.field public final c:Ljava/lang/Long;
+
+.field public final d:Ljava/lang/Long;
+
+.field public final e:Ljava/lang/Long;
+
+.field public final f:Lqwt;
+
+.field public final g:Ljava/lang/String;
+
+.field public final h:Lqxe;
 
 
 # direct methods
-.method public constructor <init>()V
+.method public constructor <init>(Lqxd;Ljava/lang/Long;Ljava/lang/Long;Ljava/lang/Long;Ljava/lang/Long;Lqwt;Ljava/lang/String;Lqxe;)V
     .locals 0
 
-    invoke-direct {p0}, Lmwn;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lmwz;->a:Lqxd;
+
+    iput-object p2, p0, Lmwz;->b:Ljava/lang/Long;
+
+    iput-object p3, p0, Lmwz;->c:Ljava/lang/Long;
+
+    iput-object p4, p0, Lmwz;->d:Ljava/lang/Long;
+
+    iput-object p5, p0, Lmwz;->e:Ljava/lang/Long;
+
+    iput-object p6, p0, Lmwz;->f:Lqwt;
+
+    iput-object p7, p0, Lmwz;->g:Ljava/lang/String;
+
+    iput-object p8, p0, Lmwz;->h:Lqxe;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final C()Lmvv;
-    .locals 1
+.method public final toString()Ljava/lang/String;
+    .locals 3
 
-    new-instance v0, Lmwy;
+    const/4 v0, 0x5
 
-    invoke-direct {v0, p0}, Lmwy;-><init>(Lmwz;)V
+    new-array v0, v0, [Ljava/lang/Object;
 
-    return-object v0
-.end method
+    iget-object v1, p0, Lmwz;->b:Ljava/lang/Long;
 
-.method public abstract a(I)Ljava/lang/Object;
-.end method
+    const/4 v2, 0x0
 
-.method public cz()Lnac;
-    .locals 1
+    aput-object v1, v0, v2
 
-    const/4 v0, 0x0
+    iget-object v1, p0, Lmwz;->c:Ljava/lang/Long;
 
-    throw v0
-.end method
+    const/4 v2, 0x1
 
-.method public bridge synthetic iterator()Ljava/util/Iterator;
-    .locals 1
+    aput-object v1, v0, v2
 
-    invoke-virtual {p0}, Lmwz;->cz()Lnac;
+    iget-object v1, p0, Lmwz;->d:Ljava/lang/Long;
+
+    const/4 v2, 0x2
+
+    aput-object v1, v0, v2
+
+    iget-object v1, p0, Lmwz;->e:Ljava/lang/Long;
+
+    const/4 v2, 0x3
+
+    aput-object v1, v0, v2
+
+    iget-object v1, p0, Lmwz;->g:Ljava/lang/String;
+
+    const/4 v2, 0x4
+
+    aput-object v1, v0, v2
+
+    const-string v1, "StatsRecord:\n  elapsed: %d\n  current: %d\n  Primes version: %d\n  version name #: %d\n  customName: %s\n"
+
+    invoke-static {v1, v0}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v0
 
     return-object v0
-.end method
-
-.method public final x([Ljava/lang/Object;I)I
-    .locals 1
-
-    invoke-virtual {p0}, Lmvm;->v()Lmvv;
-
-    move-result-object v0
-
-    invoke-virtual {v0, p1, p2}, Lmvm;->x([Ljava/lang/Object;I)I
-
-    move-result p1
-
-    return p1
 .end method

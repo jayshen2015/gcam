@@ -1,61 +1,67 @@
-.class final Lotn;
-.super Lolh;
+.class public abstract Lotn;
+.super Ljava/lang/Object;
 
 
-# annotations
-.annotation runtime Lolj;
-    b = "kotlinx.coroutines.flow.CallbackFlowBuilder"
-    c = "Builders.kt"
-    d = "collectTo"
-    e = {
-        0x150
-    }
-.end annotation
+# static fields
+.field public static final a:Lotn;
 
 
 # instance fields
-.field synthetic a:Ljava/lang/Object;
-
-.field final synthetic b:Loto;
-
-.field c:I
-
-.field d:Lotd;
+.field protected final b:Lpfc;
 
 
 # direct methods
-.method public constructor <init>(Loto;Loku;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 2
 
-    iput-object p1, p0, Lotn;->b:Loto;
+    new-instance v0, Lotl;
 
-    invoke-direct {p0, p2}, Lolh;-><init>(Loku;)V
+    sget-object v1, Lpfc;->a:Lpfc;
+
+    invoke-direct {v0, v1}, Lotl;-><init>(Lpfc;)V
+
+    sput-object v0, Lotn;->a:Lotn;
 
     return-void
 .end method
 
+.method protected constructor <init>(Lpfc;)V
+    .locals 0
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lotn;->b:Lpfc;
+
+    return-void
+.end method
+
+.method public static b(Lpfc;)Lotn;
+    .locals 2
+
+    iget v0, p0, Lpfc;->c:I
+
+    const/4 v1, 0x1
+
+    if-ne v0, v1, :cond_0
+
+    goto :goto_0
+
+    :cond_0
+    const/4 v1, 0x0
+
+    :goto_0
+    const-string v0, "Expected seq of length 1, found "
+
+    invoke-static {v1, v0, p0}, Lobr;->aK(ZLjava/lang/String;Ljava/lang/Object;)V
+
+    new-instance v0, Lotm;
+
+    invoke-direct {v0, p0}, Lotm;-><init>(Lpfc;)V
+
+    return-object v0
+.end method
+
 
 # virtual methods
-.method public final b(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 1
-
-    iput-object p1, p0, Lotn;->a:Ljava/lang/Object;
-
-    iget p1, p0, Lotn;->c:I
-
-    const/high16 v0, -0x80000000
-
-    or-int/2addr p1, v0
-
-    iput p1, p0, Lotn;->c:I
-
-    iget-object p1, p0, Lotn;->b:Loto;
-
-    const/4 v0, 0x0
-
-    invoke-virtual {p1, v0, p0}, Lotp;->b(Lotd;Loku;)Ljava/lang/Object;
-
-    move-result-object p1
-
-    return-object p1
+.method public abstract a(Lpfc;I)I
 .end method

@@ -1,60 +1,110 @@
-.class public final Leup;
+.class final Leup;
 .super Ljava/lang/Object;
 
-
-# static fields
-.field public static final a:Lnak;
+# interfaces
+.implements Lhsb;
 
 
 # instance fields
-.field public final b:Ljava/lang/ref/WeakReference;
-
-.field public final c:Ljuh;
-
-.field public final d:Lmqp;
-
-.field public final e:Lcgx;
-
-.field public final f:Ljava/util/concurrent/Executor;
+.field final synthetic a:Leur;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
+.method public constructor <init>(Leur;)V
+    .locals 0
 
-    const-string v0, "com/google/android/apps/camera/legacy/app/module/pckimageintent/ImageIntentResultHandler"
+    iput-object p1, p0, Leup;->a:Leur;
 
-    invoke-static {v0}, Lnak;->h(Ljava/lang/String;)Lnak;
-
-    move-result-object v0
-
-    sput-object v0, Leup;->a:Lnak;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
-.method public constructor <init>(Ljava/lang/ref/WeakReference;Ljuh;Lbkc;Lcgy;Ljava/util/concurrent/Executor;[B[B)V
+
+# virtual methods
+.method public final synthetic j(Lhsp;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    return-void
+.end method
 
-    iput-object p1, p0, Leup;->b:Ljava/lang/ref/WeakReference;
+.method public final k(Lhsp;Landroid/graphics/Bitmap;I)V
+    .locals 1
 
-    iput-object p2, p0, Leup;->c:Ljuh;
+    iget-object p1, p0, Leup;->a:Leur;
 
-    iput-object p4, p0, Leup;->e:Lcgx;
+    iget-object p1, p1, Leur;->e:Landroid/os/Handler;
 
-    iput-object p5, p0, Leup;->f:Ljava/util/concurrent/Executor;
+    new-instance v0, Leuo;
 
-    invoke-virtual {p3}, Lbkc;->e()Landroid/content/Intent;
+    invoke-direct {v0, p0, p2, p3}, Leuo;-><init>(Leup;Landroid/graphics/Bitmap;I)V
+
+    invoke-virtual {p1, v0}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
+
+    iget-object p1, p0, Leup;->a:Leur;
+
+    iget-object p1, p1, Leur;->o:Lbuf;
+
+    invoke-virtual {p1}, Lbuf;->s()Z
+
+    move-result p1
+
+    if-eqz p1, :cond_0
+
+    iget-object p1, p0, Leup;->a:Leur;
+
+    iget-object p1, p1, Leur;->Q:Lpyn;
+
+    invoke-interface {p1}, Lpyn;->get()Ljava/lang/Object;
 
     move-result-object p1
 
-    invoke-static {p1}, Lcdg;->e(Landroid/content/Intent;)Lmqp;
+    check-cast p1, Ljxo;
 
-    move-result-object p1
+    invoke-interface {p1, p2}, Ljxo;->f(Landroid/graphics/Bitmap;)V
 
-    iput-object p1, p0, Leup;->d:Lmqp;
+    :cond_0
+    return-void
+.end method
+
+.method public final synthetic l(Lhsp;)V
+    .locals 0
+
+    return-void
+.end method
+
+.method public final synthetic m(J)V
+    .locals 0
+
+    return-void
+.end method
+
+.method public final synthetic n(Landroid/graphics/Bitmap;)V
+    .locals 0
+
+    return-void
+.end method
+
+.method public final synthetic o(Lhsp;Llif;)V
+    .locals 0
+
+    return-void
+.end method
+
+.method public final synthetic p(Lhsp;Lhsj;Lhss;)V
+    .locals 0
+
+    return-void
+.end method
+
+.method public final synthetic q(Lhsp;)V
+    .locals 0
+
+    return-void
+.end method
+
+.method public final synthetic w(Lhsp;)V
+    .locals 0
 
     return-void
 .end method

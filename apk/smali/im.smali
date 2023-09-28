@@ -1,287 +1,151 @@
-.class public final Lim;
+.class final Lim;
 .super Ljava/lang/Object;
+
+# interfaces
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field public a:Landroid/graphics/PorterDuff$Mode;
+.field final synthetic a:Liy;
 
-.field public b:Z
-
-.field public c:Z
-
-.field private final d:Landroid/widget/CompoundButton;
-
-.field private e:Z
+.field private final synthetic b:I
 
 
 # direct methods
-.method public constructor <init>(Landroid/widget/CompoundButton;)V
-    .locals 1
+.method public constructor <init>(Liy;I)V
+    .locals 0
+
+    iput p2, p0, Lim;->b:I
+
+    iput-object p1, p0, Lim;->a:Liy;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    const/4 v0, 0x0
-
-    iput-object v0, p0, Lim;->a:Landroid/graphics/PorterDuff$Mode;
-
-    const/4 v0, 0x0
-
-    iput-boolean v0, p0, Lim;->b:Z
-
-    iput-boolean v0, p0, Lim;->c:Z
-
-    iput-object p1, p0, Lim;->d:Landroid/widget/CompoundButton;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()V
-    .locals 2
+.method public final run()V
+    .locals 4
 
-    iget-object v0, p0, Lim;->d:Landroid/widget/CompoundButton;
-
-    invoke-static {v0}, Lahh;->a(Landroid/widget/CompoundButton;)Landroid/graphics/drawable/Drawable;
-
-    move-result-object v0
-
-    if-eqz v0, :cond_4
-
-    iget-boolean v1, p0, Lim;->b:Z
-
-    if-nez v1, :cond_0
-
-    iget-boolean v1, p0, Lim;->c:Z
-
-    if-eqz v1, :cond_4
-
-    :cond_0
-    invoke-virtual {v0}, Landroid/graphics/drawable/Drawable;->mutate()Landroid/graphics/drawable/Drawable;
-
-    move-result-object v0
-
-    iget-boolean v1, p0, Lim;->b:Z
-
-    if-eqz v1, :cond_1
+    iget v0, p0, Lim;->b:I
 
     const/4 v1, 0x0
 
-    invoke-static {v0, v1}, Lacv;->g(Landroid/graphics/drawable/Drawable;Landroid/content/res/ColorStateList;)V
+    packed-switch v0, :pswitch_data_0
 
-    :cond_1
-    iget-boolean v1, p0, Lim;->c:Z
+    iget-object v0, p0, Lim;->a:Liy;
 
-    if-eqz v1, :cond_2
+    iget v2, v0, Liy;->F:I
 
-    iget-object v1, p0, Lim;->a:Landroid/graphics/PorterDuff$Mode;
+    and-int/lit8 v2, v2, 0x1
 
-    invoke-static {v0, v1}, Lacv;->h(Landroid/graphics/drawable/Drawable;Landroid/graphics/PorterDuff$Mode;)V
+    if-eqz v2, :cond_1
 
-    :cond_2
-    invoke-virtual {v0}, Landroid/graphics/drawable/Drawable;->isStateful()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_3
-
-    iget-object v1, p0, Lim;->d:Landroid/widget/CompoundButton;
-
-    invoke-virtual {v1}, Landroid/widget/CompoundButton;->getDrawableState()[I
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Landroid/graphics/drawable/Drawable;->setState([I)Z
-
-    :cond_3
-    iget-object v1, p0, Lim;->d:Landroid/widget/CompoundButton;
-
-    invoke-virtual {v1, v0}, Landroid/widget/CompoundButton;->setButtonDrawable(Landroid/graphics/drawable/Drawable;)V
-
-    :cond_4
-    return-void
-.end method
-
-.method final b(Landroid/util/AttributeSet;I)V
-    .locals 10
-
-    iget-object v0, p0, Lim;->d:Landroid/widget/CompoundButton;
-
-    invoke-virtual {v0}, Landroid/widget/CompoundButton;->getContext()Landroid/content/Context;
-
-    move-result-object v0
-
-    sget-object v1, Lfr;->m:[I
-
-    const/4 v2, 0x0
-
-    invoke-static {v0, p1, v1, p2, v2}, Landroidx/wear/ambient/AmbientDelegate;->D(Landroid/content/Context;Landroid/util/AttributeSet;[III)Landroidx/wear/ambient/AmbientDelegate;
-
-    move-result-object v0
-
-    iget-object v3, p0, Lim;->d:Landroid/widget/CompoundButton;
-
-    invoke-virtual {v3}, Landroid/widget/CompoundButton;->getContext()Landroid/content/Context;
-
-    move-result-object v4
-
-    sget-object v5, Lfr;->m:[I
-
-    iget-object v1, v0, Landroidx/wear/ambient/AmbientDelegate;->b:Ljava/lang/Object;
-
-    move-object v7, v1
-
-    check-cast v7, Landroid/content/res/TypedArray;
-
-    const/4 v9, 0x0
-
-    move-object v6, p1
-
-    move v8, p2
-
-    invoke-static/range {v3 .. v9}, Lafn;->c(Landroid/view/View;Landroid/content/Context;[ILandroid/util/AttributeSet;Landroid/content/res/TypedArray;II)V
-
-    const/4 p1, 0x1
-
-    :try_start_0
-    invoke-virtual {v0, p1}, Landroidx/wear/ambient/AmbientDelegate;->A(I)Z
-
-    move-result p2
-
-    if-eqz p2, :cond_0
-
-    invoke-virtual {v0, p1, v2}, Landroidx/wear/ambient/AmbientDelegate;->s(II)I
-
-    move-result p1
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    if-eqz p1, :cond_0
-
-    :try_start_1
-    iget-object p2, p0, Lim;->d:Landroid/widget/CompoundButton;
-
-    invoke-virtual {p2}, Landroid/widget/CompoundButton;->getContext()Landroid/content/Context;
-
-    move-result-object v1
-
-    invoke-static {v1, p1}, Lfs;->a(Landroid/content/Context;I)Landroid/graphics/drawable/Drawable;
-
-    move-result-object p1
-
-    invoke-virtual {p2, p1}, Landroid/widget/CompoundButton;->setButtonDrawable(Landroid/graphics/drawable/Drawable;)V
-    :try_end_1
-    .catch Landroid/content/res/Resources$NotFoundException; {:try_start_1 .. :try_end_1} :catch_0
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+    invoke-virtual {v0, v1}, Liy;->y(I)V
 
     goto :goto_0
 
-    :catch_0
-    move-exception p1
+    :pswitch_0
+    iget-object v0, p0, Lim;->a:Liy;
 
-    :cond_0
-    :try_start_2
-    invoke-virtual {v0, v2}, Landroidx/wear/ambient/AmbientDelegate;->A(I)Z
+    iget-object v2, v0, Liy;->n:Landroid/widget/PopupWindow;
 
-    move-result p1
+    iget-object v0, v0, Liy;->m:Landroid/support/v7/widget/ActionBarContextView;
 
-    if-eqz p1, :cond_1
+    const/16 v3, 0x37
 
-    invoke-virtual {v0, v2, v2}, Landroidx/wear/ambient/AmbientDelegate;->s(II)I
+    invoke-virtual {v2, v0, v3, v1, v1}, Landroid/widget/PopupWindow;->showAtLocation(Landroid/view/View;III)V
 
-    move-result p1
+    iget-object v0, p0, Lim;->a:Liy;
 
-    if-eqz p1, :cond_1
+    invoke-virtual {v0}, Liy;->z()V
 
-    iget-object p2, p0, Lim;->d:Landroid/widget/CompoundButton;
+    iget-object v0, p0, Lim;->a:Liy;
 
-    invoke-virtual {p2}, Landroid/widget/CompoundButton;->getContext()Landroid/content/Context;
+    invoke-virtual {v0}, Liy;->G()Z
 
-    move-result-object v1
+    move-result v0
 
-    invoke-static {v1, p1}, Lfs;->a(Landroid/content/Context;I)Landroid/graphics/drawable/Drawable;
-
-    move-result-object p1
-
-    invoke-virtual {p2, p1}, Landroid/widget/CompoundButton;->setButtonDrawable(Landroid/graphics/drawable/Drawable;)V
-
-    :cond_1
-    :goto_0
-    const/4 p1, 0x2
-
-    invoke-virtual {v0, p1}, Landroidx/wear/ambient/AmbientDelegate;->A(I)Z
-
-    move-result p2
-
-    if-eqz p2, :cond_2
-
-    iget-object p2, p0, Lim;->d:Landroid/widget/CompoundButton;
-
-    invoke-virtual {v0, p1}, Landroidx/wear/ambient/AmbientDelegate;->t(I)Landroid/content/res/ColorStateList;
-
-    move-result-object p1
-
-    invoke-static {p2, p1}, Lahg;->c(Landroid/widget/CompoundButton;Landroid/content/res/ColorStateList;)V
-
-    :cond_2
-    const/4 p1, 0x3
-
-    invoke-virtual {v0, p1}, Landroidx/wear/ambient/AmbientDelegate;->A(I)Z
-
-    move-result p2
-
-    if-eqz p2, :cond_3
-
-    iget-object p2, p0, Lim;->d:Landroid/widget/CompoundButton;
-
-    const/4 v1, -0x1
-
-    invoke-virtual {v0, p1, v1}, Landroidx/wear/ambient/AmbientDelegate;->p(II)I
-
-    move-result p1
-
-    const/4 v1, 0x0
-
-    invoke-static {p1, v1}, Lkh;->a(ILandroid/graphics/PorterDuff$Mode;)Landroid/graphics/PorterDuff$Mode;
-
-    move-result-object p1
-
-    invoke-static {p2, p1}, Lahg;->d(Landroid/widget/CompoundButton;Landroid/graphics/PorterDuff$Mode;)V
-    :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_0
-
-    :cond_3
-    invoke-virtual {v0}, Landroidx/wear/ambient/AmbientDelegate;->y()V
-
-    return-void
-
-    :catchall_0
-    move-exception p1
-
-    invoke-virtual {v0}, Landroidx/wear/ambient/AmbientDelegate;->y()V
-
-    throw p1
-.end method
-
-.method final c()V
-    .locals 1
-
-    iget-boolean v0, p0, Lim;->e:Z
+    const/high16 v2, 0x3f800000    # 1.0f
 
     if-eqz v0, :cond_0
 
-    const/4 v0, 0x0
+    iget-object v0, p0, Lim;->a:Liy;
 
-    iput-boolean v0, p0, Lim;->e:Z
+    iget-object v0, v0, Liy;->m:Landroid/support/v7/widget/ActionBarContextView;
+
+    const/4 v1, 0x0
+
+    invoke-virtual {v0, v1}, Landroid/support/v7/widget/ActionBarContextView;->setAlpha(F)V
+
+    iget-object v0, p0, Lim;->a:Liy;
+
+    iget-object v1, v0, Liy;->m:Landroid/support/v7/widget/ActionBarContextView;
+
+    invoke-static {v1}, Lgl;->p(Landroid/view/View;)Lgo;
+
+    move-result-object v1
+
+    invoke-virtual {v1, v2}, Lgo;->b(F)V
+
+    iput-object v1, v0, Liy;->p:Lgo;
+
+    iget-object v0, p0, Lim;->a:Liy;
+
+    iget-object v0, v0, Liy;->p:Lgo;
+
+    new-instance v1, Lil;
+
+    invoke-direct {v1, p0}, Lil;-><init>(Lim;)V
+
+    invoke-virtual {v0, v1}, Lgo;->d(Lgp;)V
 
     return-void
 
     :cond_0
-    const/4 v0, 0x1
+    iget-object v0, p0, Lim;->a:Liy;
 
-    iput-boolean v0, p0, Lim;->e:Z
+    iget-object v0, v0, Liy;->m:Landroid/support/v7/widget/ActionBarContextView;
 
-    invoke-virtual {p0}, Lim;->a()V
+    invoke-virtual {v0, v2}, Landroid/support/v7/widget/ActionBarContextView;->setAlpha(F)V
+
+    iget-object v0, p0, Lim;->a:Liy;
+
+    iget-object v0, v0, Liy;->m:Landroid/support/v7/widget/ActionBarContextView;
+
+    invoke-virtual {v0, v1}, Landroid/support/v7/widget/ActionBarContextView;->setVisibility(I)V
 
     return-void
+
+    :cond_1
+    :goto_0
+    iget-object v0, p0, Lim;->a:Liy;
+
+    iget v2, v0, Liy;->F:I
+
+    and-int/lit16 v2, v2, 0x1000
+
+    if-eqz v2, :cond_2
+
+    const/16 v2, 0x6c
+
+    invoke-virtual {v0, v2}, Liy;->y(I)V
+
+    :cond_2
+    iget-object v0, p0, Lim;->a:Liy;
+
+    iput-boolean v1, v0, Liy;->E:Z
+
+    iput v1, v0, Liy;->F:I
+
+    return-void
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

@@ -1,31 +1,19 @@
 .class public interface abstract Lgft;
 .super Ljava/lang/Object;
 
-# interfaces
-.implements Lgfs;
-
 
 # virtual methods
-.method public abstract c()Lkab;
+.method public abstract A()V
 .end method
 
-.method public abstract f()Lkab;
+.method public abstract B()V
 .end method
 
-.method public abstract g(Lknx;)V
+.method public abstract D(F)V
 .end method
 
-.method public abstract h(Lknx;)V
+.method public abstract E(FI)V
 .end method
 
-.method public abstract i()Z
-.end method
-
-.method public abstract j()I
-.end method
-
-.method public abstract k(Landroidx/wear/ambient/AmbientModeSupport$AmbientController;)V
-.end method
-
-.method public abstract l(Landroidx/wear/ambient/AmbientModeSupport$AmbientController;)V
+.method public abstract F(FJ)V
 .end method

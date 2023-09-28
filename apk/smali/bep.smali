@@ -1,14 +1,39 @@
 .class public final Lbep;
 .super Ljava/lang/Object;
 
+# interfaces
+.implements Lbfh;
+
+
+# instance fields
+.field private final a:Lvk;
+
 
 # direct methods
-.method static constructor <clinit>()V
+.method public constructor <init>()V
     .locals 1
 
-    const-string v0, "UTC"
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-static {v0}, Lj$/util/DesugarTimeZone;->getTimeZone(Ljava/lang/String;)Ljava/util/TimeZone;
+    new-instance v0, Lvk;
+
+    invoke-direct {v0}, Lvk;-><init>()V
+
+    iput-object v0, p0, Lbep;->a:Lvk;
 
     return-void
+.end method
+
+
+# virtual methods
+.method public final b(Lbfn;)Lbfg;
+    .locals 1
+
+    new-instance p1, Lbfl;
+
+    const/4 v0, 0x1
+
+    invoke-direct {p1, v0}, Lbfl;-><init>(I)V
+
+    return-object p1
 .end method

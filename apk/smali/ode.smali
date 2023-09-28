@@ -1,264 +1,171 @@
 .class public final Lode;
-.super Lnws;
-
-# interfaces
-.implements Lnxz;
-
-
-# static fields
-.field public static final a:Lode;
-
-.field private static volatile k:Lnyf;
+.super Lgd;
 
 
 # instance fields
+.field private final a:Ljava/lang/ref/WeakReference;
+
 .field private b:I
 
-.field private c:Lnxt;
-
-.field private d:Lnxt;
-
-.field private e:Locz;
-
-.field private f:Locz;
-
-.field private g:Lnxt;
-
-.field private h:Locz;
-
-.field private i:Lnxt;
-
-.field private j:Lnxt;
+.field private c:I
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
-
-    new-instance v0, Lode;
-
-    invoke-direct {v0}, Lode;-><init>()V
-
-    sput-object v0, Lode;->a:Lode;
-
-    const-class v1, Lode;
-
-    invoke-static {v1, v0}, Lnws;->aa(Ljava/lang/Class;Lnws;)V
-
-    return-void
-.end method
-
-.method private constructor <init>()V
+.method public constructor <init>(Lcom/google/android/material/tabs/TabLayout;)V
     .locals 1
 
-    invoke-direct {p0}, Lnws;-><init>()V
+    invoke-direct {p0}, Lgd;-><init>()V
 
-    sget-object v0, Lnxt;->a:Lnxt;
+    new-instance v0, Ljava/lang/ref/WeakReference;
 
-    iput-object v0, p0, Lode;->c:Lnxt;
+    invoke-direct {v0, p1}, Ljava/lang/ref/WeakReference;-><init>(Ljava/lang/Object;)V
 
-    sget-object v0, Lnxt;->a:Lnxt;
+    iput-object v0, p0, Lode;->a:Ljava/lang/ref/WeakReference;
 
-    iput-object v0, p0, Lode;->d:Lnxt;
+    const/4 p1, 0x0
 
-    iput-object v0, p0, Lode;->g:Lnxt;
+    iput p1, p0, Lode;->c:I
 
-    iput-object v0, p0, Lode;->i:Lnxt;
-
-    iput-object v0, p0, Lode;->j:Lnxt;
+    iput p1, p0, Lode;->b:I
 
     return-void
 .end method
 
 
 # virtual methods
-.method protected final a(ILjava/lang/Object;)Ljava/lang/Object;
-    .locals 3
+.method public final p(I)V
+    .locals 1
 
-    add-int/lit8 p1, p1, -0x1
+    iget v0, p0, Lode;->c:I
 
-    const/4 p2, 0x1
+    iput v0, p0, Lode;->b:I
 
-    packed-switch p1, :pswitch_data_0
+    iput p1, p0, Lode;->c:I
 
-    :pswitch_0
-    const/4 p1, 0x0
+    return-void
+.end method
 
-    return-object p1
+.method public final q(IFI)V
+    .locals 5
 
-    :pswitch_1
-    sget-object p1, Lode;->k:Lnyf;
+    iget-object p3, p0, Lode;->a:Ljava/lang/ref/WeakReference;
 
-    if-nez p1, :cond_1
+    invoke-virtual {p3}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
 
-    const-class p2, Lode;
+    move-result-object p3
 
-    monitor-enter p2
+    check-cast p3, Lcom/google/android/material/tabs/TabLayout;
 
-    :try_start_0
-    sget-object p1, Lode;->k:Lnyf;
+    if-eqz p3, :cond_4
 
-    if-nez p1, :cond_0
+    iget v0, p0, Lode;->c:I
 
-    new-instance p1, Lnwo;
+    const/4 v1, 0x0
 
-    sget-object v0, Lode;->a:Lode;
+    const/4 v2, 0x2
 
-    invoke-direct {p1, v0}, Lnwo;-><init>(Lnws;)V
+    const/4 v3, 0x1
 
-    sput-object p1, Lode;->k:Lnyf;
+    if-ne v0, v2, :cond_1
 
-    :cond_0
-    monitor-exit p2
+    iget v4, p0, Lode;->b:I
+
+    if-ne v4, v3, :cond_0
+
+    const/4 v4, 0x1
 
     goto :goto_0
 
-    :catchall_0
-    move-exception p1
+    :cond_0
+    const/4 v4, 0x0
 
-    monitor-exit p2
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw p1
+    goto :goto_0
 
     :cond_1
+    const/4 v4, 0x1
+
     :goto_0
-    return-object p1
+    if-ne v0, v2, :cond_3
 
-    :pswitch_2
-    sget-object p1, Lode;->a:Lode;
+    iget v0, p0, Lode;->b:I
 
-    return-object p1
+    if-eqz v0, :cond_2
 
-    :pswitch_3
-    new-instance p1, Lnwn;
+    const/4 v1, 0x1
 
-    sget-object p2, Lode;->a:Lode;
+    goto :goto_1
 
-    invoke-direct {p1, p2}, Lnwn;-><init>(Lnws;)V
+    :cond_2
+    goto :goto_1
 
-    return-object p1
+    :cond_3
+    const/4 v1, 0x1
 
-    :pswitch_4
-    new-instance p1, Lode;
+    :goto_1
+    invoke-virtual {p3, p1, p2, v4, v1}, Lcom/google/android/material/tabs/TabLayout;->j(IFZZ)V
 
-    invoke-direct {p1}, Lode;-><init>()V
+    :cond_4
+    return-void
+.end method
 
-    return-object p1
+.method public final r(I)V
+    .locals 5
 
-    :pswitch_5
-    const-string p1, "b"
+    iget-object v0, p0, Lode;->a:Ljava/lang/ref/WeakReference;
 
-    const-string v0, "\u0001\u0008\u0000\u0001\u0001\u0014\u0008\u0005\u0000\u0000\u00012\u00052\u0007\u1009\n\u0008\u1009\u0003\t2\u00122\u0013\u1009\u000b\u00142"
+    invoke-virtual {v0}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
 
-    const/16 v1, 0xe
+    move-result-object v0
 
-    new-array v1, v1, [Ljava/lang/Object;
+    check-cast v0, Lcom/google/android/material/tabs/TabLayout;
+
+    if-eqz v0, :cond_2
+
+    invoke-virtual {v0}, Lcom/google/android/material/tabs/TabLayout;->a()I
+
+    move-result v1
+
+    if-eq v1, p1, :cond_2
+
+    invoke-virtual {v0}, Lcom/google/android/material/tabs/TabLayout;->b()I
+
+    move-result v1
+
+    if-ge p1, v1, :cond_2
+
+    iget v1, p0, Lode;->c:I
 
     const/4 v2, 0x0
 
-    aput-object p1, v1, v2
+    const/4 v3, 0x1
 
-    const-string p1, "c"
+    if-eqz v1, :cond_1
 
-    aput-object p1, v1, p2
+    const/4 v4, 0x2
 
-    sget-object p1, Loda;->a:Llzz;
+    if-ne v1, v4, :cond_0
 
-    const/4 p2, 0x2
+    iget v1, p0, Lode;->b:I
 
-    aput-object p1, v1, p2
+    if-nez v1, :cond_0
 
-    const/4 p1, 0x3
+    const/4 v2, 0x1
 
-    const-string p2, "d"
+    goto :goto_0
 
-    aput-object p2, v1, p1
+    :cond_0
+    goto :goto_0
 
-    sget-object p1, Locw;->a:Llzz;
+    :cond_1
+    const/4 v2, 0x1
 
-    const/4 p2, 0x4
-
-    aput-object p1, v1, p2
-
-    const/4 p1, 0x5
-
-    const-string p2, "f"
-
-    aput-object p2, v1, p1
-
-    const/4 p1, 0x6
-
-    const-string p2, "e"
-
-    aput-object p2, v1, p1
-
-    const/4 p1, 0x7
-
-    const-string p2, "j"
-
-    aput-object p2, v1, p1
-
-    const/16 p1, 0x8
-
-    sget-object p2, Loct;->a:Llzz;
-
-    aput-object p2, v1, p1
-
-    const/16 p1, 0x9
-
-    const-string p2, "g"
-
-    aput-object p2, v1, p1
-
-    const/16 p1, 0xa
-
-    sget-object p2, Lodb;->a:Llzz;
-
-    aput-object p2, v1, p1
-
-    const/16 p1, 0xb
-
-    const-string p2, "h"
-
-    aput-object p2, v1, p1
-
-    const/16 p1, 0xc
-
-    const-string p2, "i"
-
-    aput-object p2, v1, p1
-
-    const/16 p1, 0xd
-
-    sget-object p2, Lodc;->a:Llzz;
-
-    aput-object p2, v1, p1
-
-    sget-object p1, Lode;->a:Lode;
-
-    invoke-static {p1, v0, v1}, Lode;->X(Lnxy;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/Object;
+    :goto_0
+    invoke-virtual {v0, p1}, Lcom/google/android/material/tabs/TabLayout;->c(I)Locx;
 
     move-result-object p1
 
-    return-object p1
+    invoke-virtual {v0, p1, v2}, Lcom/google/android/material/tabs/TabLayout;->i(Locx;Z)V
 
-    :pswitch_6
-    invoke-static {p2}, Ljava/lang/Byte;->valueOf(B)Ljava/lang/Byte;
-
-    move-result-object p1
-
-    return-object p1
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_6
-        :pswitch_0
-        :pswitch_5
-        :pswitch_4
-        :pswitch_3
-        :pswitch_2
-        :pswitch_1
-    .end packed-switch
+    :cond_2
+    return-void
 .end method

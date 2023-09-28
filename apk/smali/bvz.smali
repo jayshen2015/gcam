@@ -1,108 +1,99 @@
-.class public abstract Lbvz;
+.class public final synthetic Lbvz;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lbqj;
+.implements Ljava/lang/Runnable;
+
+
+# instance fields
+.field public final synthetic a:Ljava/lang/String;
+
+.field public final synthetic b:Ljava/lang/Runnable;
+
+.field public final synthetic c:Lpih;
 
 
 # direct methods
-.method public constructor <init>()V
+.method public synthetic constructor <init>(Ljava/lang/String;Ljava/lang/Runnable;Lpih;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lbvz;->a:Ljava/lang/String;
+
+    iput-object p2, p0, Lbvz;->b:Ljava/lang/Runnable;
+
+    iput-object p3, p0, Lbvz;->c:Lpih;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final b(Landroid/content/Context;Lbsn;II)Lbsn;
-    .locals 2
+.method public final run()V
+    .locals 6
 
-    invoke-static {p3, p4}, Lcaw;->n(II)Z
+    iget-object v0, p0, Lbvz;->a:Ljava/lang/String;
 
-    move-result v0
+    iget-object v1, p0, Lbvz;->b:Ljava/lang/Runnable;
 
-    if-eqz v0, :cond_3
+    iget-object v2, p0, Lbvz;->c:Lpih;
 
-    invoke-static {p1}, Lbol;->b(Landroid/content/Context;)Lbol;
+    const/4 v3, 0x0
 
-    move-result-object p1
+    :try_start_0
+    const-string v4, "task:"
 
-    iget-object p1, p1, Lbol;->a:Lbsw;
+    invoke-virtual {v0}, Ljava/lang/String;->length()I
 
-    invoke-interface {p2}, Lbsn;->c()Ljava/lang/Object;
+    move-result v5
+
+    if-eqz v5, :cond_0
+
+    invoke-virtual {v4, v0}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
-    check-cast v0, Landroid/graphics/Bitmap;
-
-    const/high16 v1, -0x80000000
-
-    if-ne p3, v1, :cond_0
-
-    invoke-virtual {v0}, Landroid/graphics/Bitmap;->getWidth()I
-
-    move-result p3
+    goto :goto_0
 
     :cond_0
-    if-ne p4, v1, :cond_1
+    new-instance v0, Ljava/lang/String;
 
-    invoke-virtual {v0}, Landroid/graphics/Bitmap;->getHeight()I
+    invoke-direct {v0, v4}, Ljava/lang/String;-><init>(Ljava/lang/String;)V
 
-    move-result p4
+    :goto_0
+    invoke-static {v0}, Landroid/os/Trace;->beginSection(Ljava/lang/String;)V
 
-    :cond_1
-    invoke-virtual {p0, p1, v0, p3, p4}, Lbvz;->c(Lbsw;Landroid/graphics/Bitmap;II)Landroid/graphics/Bitmap;
+    invoke-interface {v1}, Ljava/lang/Runnable;->run()V
 
-    move-result-object p3
+    invoke-static {}, Landroid/os/Trace;->endSection()V
 
-    invoke-virtual {v0, p3}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+    const/4 v0, 0x1
 
-    move-result p4
+    invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
-    if-eqz p4, :cond_2
+    move-result-object v0
 
-    return-object p2
+    invoke-virtual {v2, v0}, Lpih;->o(Ljava/lang/Object;)Z
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    :cond_2
-    invoke-static {p3, p1}, Lbwy;->g(Landroid/graphics/Bitmap;Lbsw;)Lbwy;
+    invoke-static {v3}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
-    move-result-object p1
+    move-result-object v0
 
-    return-object p1
+    invoke-virtual {v2, v0}, Lpih;->o(Ljava/lang/Object;)Z
 
-    :cond_3
-    new-instance p1, Ljava/lang/IllegalArgumentException;
+    return-void
 
-    new-instance p2, Ljava/lang/StringBuilder;
+    :catchall_0
+    move-exception v0
 
-    invoke-direct {p2}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-static {v3}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
-    const-string v0, "Cannot apply transformation on width: "
+    move-result-object v1
 
-    invoke-virtual {p2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v1}, Lpih;->o(Ljava/lang/Object;)Z
 
-    invoke-virtual {p2, p3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    const-string p3, " or height: "
-
-    invoke-virtual {p2, p3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {p2, p4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    const-string p3, " less than or equal to zero and not Target.SIZE_ORIGINAL"
-
-    invoke-virtual {p2, p3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {p2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p2
-
-    invoke-direct {p1, p2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw p1
-.end method
-
-.method protected abstract c(Lbsw;Landroid/graphics/Bitmap;II)Landroid/graphics/Bitmap;
+    throw v0
 .end method

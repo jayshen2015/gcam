@@ -1,153 +1,152 @@
-.class public final synthetic Lckt;
+.class public final Lckt;
 .super Ljava/lang/Object;
-
-# interfaces
-.implements Lkex;
 
 
 # instance fields
-.field public final synthetic a:Ljava/lang/Object;
+.field public final a:Lcle;
 
-.field private final synthetic b:I
+.field public final b:I
 
 
 # direct methods
-.method public synthetic constructor <init>(Lcfx;I)V
+.method public constructor <init>()V
     .locals 0
 
-    iput p2, p0, Lckt;->b:I
-
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lckt;->a:Ljava/lang/Object;
 
     return-void
 .end method
 
-.method public synthetic constructor <init>(Lckv;I)V
+.method public constructor <init>(Lcle;I)V
     .locals 0
-
-    iput p2, p0, Lckt;->b:I
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lckt;->a:Ljava/lang/Object;
+    iput-object p1, p0, Lckt;->a:Lcle;
+
+    iput p2, p0, Lckt;->b:I
 
     return-void
 .end method
 
-.method public synthetic constructor <init>(Lgnm;I)V
-    .locals 0
+.method public static a()Lcks;
+    .locals 1
 
-    iput p2, p0, Lckt;->b:I
+    new-instance v0, Lcks;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {v0}, Lcks;-><init>()V
 
-    iput-object p1, p0, Lckt;->a:Ljava/lang/Object;
-
-    return-void
-.end method
-
-.method public synthetic constructor <init>(Lgno;I)V
-    .locals 0
-
-    iput p2, p0, Lckt;->b:I
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lckt;->a:Ljava/lang/Object;
-
-    return-void
+    return-object v0
 .end method
 
 
 # virtual methods
-.method public final a(Lkeb;)V
-    .locals 7
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 4
 
-    iget v0, p0, Lckt;->b:I
+    const/4 v0, 0x1
 
-    const/4 v1, 0x1
+    if-ne p1, p0, :cond_0
 
-    packed-switch v0, :pswitch_data_0
+    return v0
 
-    iget-object v0, p0, Lckt;->a:Ljava/lang/Object;
+    :cond_0
+    instance-of v1, p1, Lckt;
 
-    check-cast v0, Lgnm;
+    const/4 v2, 0x0
 
-    iget-object v2, v0, Lgnm;->e:Ljvb;
+    if-eqz v1, :cond_1
 
-    new-array v3, v1, [Lkad;
+    check-cast p1, Lckt;
 
-    const/4 v4, 0x0
+    iget-object v1, p0, Lckt;->a:Lcle;
 
-    aput-object p1, v3, v4
+    iget-object v3, p1, Lckt;->a:Lcle;
 
-    new-instance v5, Ljum;
+    invoke-virtual {v1, v3}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
 
-    const/4 v6, 0x5
+    move-result v1
 
-    invoke-direct {v5, v3, v6}, Ljum;-><init>([Lkad;I)V
+    if-eqz v1, :cond_1
 
-    sget-object v3, Lnnv;->a:Lnnv;
+    iget v1, p0, Lckt;->b:I
 
-    new-instance v6, Ljva;
+    iget p1, p1, Lckt;->b:I
 
-    invoke-direct {v6, v2, v5, v3, v4}, Ljva;-><init>(Ljvb;Ljava/lang/Runnable;Ljava/util/concurrent/Executor;I)V
+    if-ne v1, p1, :cond_1
 
-    new-instance v2, Lgps;
+    return v0
 
-    invoke-direct {v2, v0, p1, v1}, Lgps;-><init>(Lgnm;Lkeb;I)V
+    :cond_1
+    return v2
+.end method
 
-    invoke-interface {v6, v2}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
+.method public final hashCode()I
+    .locals 2
 
-    return-void
+    iget-object v0, p0, Lckt;->a:Lcle;
 
-    :pswitch_0
-    iget-object v0, p0, Lckt;->a:Ljava/lang/Object;
+    invoke-virtual {v0}, Ljava/lang/Object;->hashCode()I
 
-    check-cast v0, Lgno;
+    move-result v0
 
-    invoke-virtual {v0, p1}, Lgno;->b(Lkeb;)Z
+    const v1, 0xf4243
 
-    return-void
+    xor-int/2addr v0, v1
 
-    :pswitch_1
-    iget-object v0, p0, Lckt;->a:Ljava/lang/Object;
+    mul-int v0, v0, v1
 
-    check-cast v0, Lcfx;
+    iget v1, p0, Lckt;->b:I
 
-    iget-object v2, v0, Lcfx;->c:Ljava/util/concurrent/Executor;
+    xor-int/2addr v0, v1
 
-    new-instance v3, Lcfz;
+    return v0
+.end method
 
-    invoke-direct {v3, v0, p1, v1}, Lcfz;-><init>(Lcfx;Lkeb;I)V
+.method public final toString()Ljava/lang/String;
+    .locals 4
 
-    invoke-interface {v2, v3}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
+    iget-object v0, p0, Lckt;->a:Lcle;
 
-    return-void
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
-    :pswitch_2
-    iget-object v0, p0, Lckt;->a:Ljava/lang/Object;
+    move-result-object v0
 
-    check-cast v0, Lckv;
+    iget v1, p0, Lckt;->b:I
 
-    iget-object v1, v0, Lckv;->f:Ljava/util/concurrent/Executor;
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
-    new-instance v2, Lcku;
+    move-result-object v2
 
-    invoke-direct {v2, v0, p1}, Lcku;-><init>(Lckv;Lkeb;)V
+    invoke-virtual {v2}, Ljava/lang/String;->length()I
 
-    invoke-interface {v1, v2}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
+    move-result v2
 
-    return-void
+    new-instance v3, Ljava/lang/StringBuilder;
 
-    nop
+    add-int/lit8 v2, v2, 0x43
 
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_2
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
+    invoke-direct {v3, v2}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string v2, "CamcorderPendingVideoFile{outputVideo="
+
+    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v0, ", pendingVideoId="
+
+    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    const-string v0, "}"
+
+    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
 .end method

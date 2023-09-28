@@ -1,48 +1,53 @@
-.class public final synthetic Ldqk;
+.class public final Ldqk;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lmqi;
+.implements Ljwu;
 
 
 # instance fields
-.field public final synthetic a:Z
+.field private final a:Ldqe;
 
 
 # direct methods
-.method public synthetic constructor <init>(Z)V
+.method public constructor <init>(Ldqe;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-boolean p1, p0, Ldqk;->a:Z
+    iput-object p1, p0, Ldqk;->a:Ldqe;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final apply(Ljava/lang/Object;)Ljava/lang/Object;
+.method public final declared-synchronized a(Ljww;)Ljws;
     .locals 2
 
-    iget-boolean v0, p0, Ldqk;->a:Z
+    monitor-enter p0
 
-    check-cast p1, Lgyq;
+    :try_start_0
+    new-instance v0, Ldqj;
 
-    const/4 v1, 0x0
-
-    if-eqz v0, :cond_0
-
-    sget-object v0, Lgyq;->a:Lgyq;
-
-    if-eq p1, v0, :cond_0
-
-    const/4 v1, 0x1
-
-    :cond_0
-    invoke-static {v1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+    invoke-interface {p1}, Ljww;->b()Lmpi;
 
     move-result-object p1
 
-    return-object p1
+    iget-object v1, p0, Ldqk;->a:Ldqe;
+
+    invoke-direct {v0, p1, v1}, Ldqj;-><init>(Lmpi;Ldqe;)V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    monitor-exit p0
+
+    return-object v0
+
+    :catchall_0
+    move-exception p1
+
+    monitor-exit p0
+
+    throw p1
 .end method

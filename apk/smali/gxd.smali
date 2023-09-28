@@ -1,117 +1,111 @@
-.class public final Lgxd;
+.class public final synthetic Lgxd;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lgxm;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field public final a:Ljava/util/Set;
+.field public final synthetic a:Lgxi;
 
-.field public final b:Ljava/util/Map;
+.field public final synthetic b:Landroid/graphics/PointF;
+
+.field public final synthetic c:Lpih;
+
+.field public final synthetic d:Lpih;
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 1
+.method public synthetic constructor <init>(Lgxi;Landroid/graphics/PointF;Lpih;Lpih;)V
+    .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    new-instance v0, Ljava/util/HashSet;
+    iput-object p1, p0, Lgxd;->a:Lgxi;
 
-    invoke-direct {v0}, Ljava/util/HashSet;-><init>()V
+    iput-object p2, p0, Lgxd;->b:Landroid/graphics/PointF;
 
-    iput-object v0, p0, Lgxd;->a:Ljava/util/Set;
+    iput-object p3, p0, Lgxd;->c:Lpih;
 
-    new-instance v0, Ljava/util/HashMap;
-
-    invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
-
-    iput-object v0, p0, Lgxd;->b:Ljava/util/Map;
+    iput-object p4, p0, Lgxd;->d:Lpih;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic j(Lgxy;)V
-    .locals 0
+.method public final run()V
+    .locals 5
 
-    return-void
-.end method
+    iget-object v0, p0, Lgxd;->a:Lgxi;
 
-.method public final k(Lgxy;)V
-    .locals 1
+    iget-object v1, p0, Lgxd;->b:Landroid/graphics/PointF;
 
-    iget-object v0, p0, Lgxd;->a:Ljava/util/Set;
+    iget-object v2, p0, Lgxd;->c:Lpih;
 
-    invoke-interface {v0, p1}, Ljava/util/Set;->remove(Ljava/lang/Object;)Z
+    iget-object v3, p0, Lgxd;->d:Lpih;
 
-    return-void
-.end method
+    iget-object v4, v0, Lgxi;->a:Lojc;
 
-.method public final l(Lgxy;)V
-    .locals 1
+    invoke-virtual {v4}, Lojc;->c()Ljava/lang/Object;
 
-    iget-object v0, p0, Lgxd;->a:Ljava/util/Set;
+    move-result-object v4
 
-    invoke-interface {v0, p1}, Ljava/util/Set;->remove(Ljava/lang/Object;)Z
+    check-cast v4, Litw;
 
-    return-void
-.end method
+    invoke-interface {v4}, Litw;->h()V
 
-.method public final synthetic m(J)V
-    .locals 0
+    iget-object v4, v0, Lgxi;->a:Lojc;
 
-    return-void
-.end method
+    invoke-virtual {v4}, Lojc;->c()Ljava/lang/Object;
 
-.method public final synthetic n(Landroid/graphics/Bitmap;)V
-    .locals 0
+    move-result-object v4
 
-    return-void
-.end method
+    check-cast v4, Litw;
 
-.method public final synthetic o(Landroid/graphics/Bitmap;I)V
-    .locals 0
+    invoke-interface {v4, v1}, Litw;->b(Landroid/graphics/PointF;)Llco;
 
-    invoke-static {p0, p1}, Ljhp;->aw(Lgxm;Landroid/graphics/Bitmap;)V
+    move-result-object v1
 
-    return-void
-.end method
+    new-instance v4, Lgxb;
 
-.method public final synthetic p(Lgxy;Lkae;)V
-    .locals 0
+    invoke-direct {v4, v0}, Lgxb;-><init>(Lgxi;)V
 
-    return-void
-.end method
+    invoke-static {v1, v4}, Llcv;->j(Llco;Loiu;)Llco;
 
-.method public final q(Lgxy;Lgxt;Lgyb;)V
-    .locals 0
+    move-result-object v4
 
-    iget-object p3, p0, Lgxd;->a:Ljava/util/Set;
+    invoke-virtual {v2, v4}, Lpih;->o(Ljava/lang/Object;)Z
 
-    invoke-interface {p3, p1}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
+    new-instance v2, Lgwz;
 
-    iget-object p3, p0, Lgxd;->b:Ljava/util/Map;
+    invoke-direct {v2, v0}, Lgwz;-><init>(Lgxi;)V
 
-    invoke-interface {p3, p1, p2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    sget-object v4, Lpgr;->a:Lpgr;
 
-    return-void
-.end method
+    invoke-interface {v1, v2, v4}, Llco;->a(Llij;Ljava/util/concurrent/Executor;)Llie;
 
-.method public final r(Lgxy;)V
-    .locals 1
+    move-result-object v2
 
-    iget-object v0, p0, Lgxd;->a:Ljava/util/Set;
+    iput-object v2, v0, Lgxi;->j:Llie;
 
-    invoke-interface {v0, p1}, Ljava/util/Set;->remove(Ljava/lang/Object;)Z
+    new-instance v2, Lgxa;
 
-    return-void
-.end method
+    invoke-direct {v2, v0, v3}, Lgxa;-><init>(Lgxi;Lpih;)V
 
-.method public final synthetic x(Lgxy;)V
-    .locals 0
+    iget-object v3, v0, Lgxi;->e:Lojc;
+
+    invoke-virtual {v3}, Lojc;->c()Ljava/lang/Object;
+
+    move-result-object v3
+
+    check-cast v3, Ljava/util/concurrent/Executor;
+
+    invoke-interface {v1, v2, v3}, Llco;->a(Llij;Ljava/util/concurrent/Executor;)Llie;
+
+    move-result-object v1
+
+    iput-object v1, v0, Lgxi;->k:Llie;
 
     return-void
 .end method

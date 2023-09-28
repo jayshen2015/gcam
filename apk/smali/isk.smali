@@ -1,143 +1,129 @@
-.class public Lisk;
+.class public final synthetic Lisk;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lhis;
+.implements Ljava/lang/Runnable;
+
+
+# instance fields
+.field public final synthetic a:Lcom/google/android/apps/camera/toast/ToastView;
+
+.field private final synthetic b:I
 
 
 # direct methods
-.method public constructor <init>()V
+.method public synthetic constructor <init>(Lcom/google/android/apps/camera/toast/ToastView;I)V
     .locals 0
 
+    iput p2, p0, Lisk;->b:I
+
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lisk;->a:Lcom/google/android/apps/camera/toast/ToastView;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public a()V
-    .locals 0
+.method public final run()V
+    .locals 5
+
+    iget v0, p0, Lisk;->b:I
+
+    packed-switch v0, :pswitch_data_0
+
+    iget-object v0, p0, Lisk;->a:Lcom/google/android/apps/camera/toast/ToastView;
+
+    invoke-virtual {v0}, Lcom/google/android/apps/camera/toast/ToastView;->c()V
+
+    goto :goto_0
+
+    :pswitch_0
+    iget-object v0, p0, Lisk;->a:Lcom/google/android/apps/camera/toast/ToastView;
+
+    invoke-virtual {v0}, Lcom/google/android/apps/camera/toast/ToastView;->animate()Landroid/view/ViewPropertyAnimator;
+
+    move-result-object v1
+
+    const/4 v2, 0x0
+
+    invoke-virtual {v1, v2}, Landroid/view/ViewPropertyAnimator;->alpha(F)Landroid/view/ViewPropertyAnimator;
+
+    move-result-object v1
+
+    iget-object v2, v0, Lcom/google/android/apps/camera/toast/ToastView;->k:Ljava/lang/Runnable;
+
+    invoke-virtual {v1, v2}, Landroid/view/ViewPropertyAnimator;->withEndAction(Ljava/lang/Runnable;)Landroid/view/ViewPropertyAnimator;
+
+    move-result-object v1
+
+    sget-object v2, Lcom/google/android/apps/camera/toast/ToastView;->e:Lj$/time/Duration;
+
+    invoke-virtual {v2}, Lj$/time/Duration;->toMillis()J
+
+    move-result-wide v2
+
+    invoke-virtual {v1, v2, v3}, Landroid/view/ViewPropertyAnimator;->setDuration(J)Landroid/view/ViewPropertyAnimator;
+
+    move-result-object v1
+
+    iget v0, v0, Lcom/google/android/apps/camera/toast/ToastView;->g:F
+
+    invoke-virtual {v1, v0}, Landroid/view/ViewPropertyAnimator;->translationYBy(F)Landroid/view/ViewPropertyAnimator;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroid/view/ViewPropertyAnimator;->start()V
 
     return-void
-.end method
 
-.method public b()V
-    .locals 0
+    :goto_0
+    :try_start_0
+    iget-object v1, v0, Lcom/google/android/apps/camera/toast/ToastView;->m:Landroid/widget/PopupWindow;
 
-    return-void
-.end method
+    iget-object v2, v0, Lcom/google/android/apps/camera/toast/ToastView;->n:Landroid/view/View;
 
-.method public c()V
-    .locals 0
+    const/4 v3, 0x0
 
-    return-void
-.end method
+    invoke-virtual {v1, v2, v3, v3, v3}, Landroid/widget/PopupWindow;->showAtLocation(Landroid/view/View;III)V
+    :try_end_0
+    .catch Ljava/lang/RuntimeException; {:try_start_0 .. :try_end_0} :catch_0
 
-.method public cq()V
-    .locals 0
+    goto :goto_1
 
-    return-void
-.end method
+    :catch_0
+    move-exception v1
 
-.method public d(FI)V
-    .locals 0
+    sget-object v2, Lcom/google/android/apps/camera/toast/ToastView;->f:Louj;
 
-    return-void
-.end method
+    invoke-virtual {v2}, Loue;->b()Lova;
 
-.method public synthetic f()V
-    .locals 0
+    move-result-object v2
 
-    return-void
-.end method
+    invoke-virtual {v1}, Ljava/lang/RuntimeException;->getMessage()Ljava/lang/String;
 
-.method public synthetic g()V
-    .locals 0
+    move-result-object v1
 
-    return-void
-.end method
+    const/16 v3, 0xc4b
 
-.method public synthetic h()V
-    .locals 0
+    const-string v4, "Cannot show the toast. Error = %s"
 
-    return-void
-.end method
+    invoke-static {v2, v4, v1, v3}, Ld;->u(Lova;Ljava/lang/String;Ljava/lang/Object;C)V
 
-.method public i()V
-    .locals 0
+    :goto_1
+    iget-object v1, v0, Lcom/google/android/apps/camera/toast/ToastView;->i:Ljava/lang/Runnable;
+
+    iget-wide v2, v0, Lcom/google/android/apps/camera/toast/ToastView;->h:J
+
+    invoke-virtual {v0, v1, v2, v3}, Lcom/google/android/apps/camera/toast/ToastView;->postDelayed(Ljava/lang/Runnable;J)Z
 
     return-void
-.end method
 
-.method public j()V
-    .locals 0
+    nop
 
-    return-void
-.end method
-
-.method public k()V
-    .locals 0
-
-    return-void
-.end method
-
-.method public l(I)V
-    .locals 0
-
-    return-void
-.end method
-
-.method public m()V
-    .locals 0
-
-    return-void
-.end method
-
-.method public n()V
-    .locals 0
-
-    return-void
-.end method
-
-.method public o(Z)V
-    .locals 0
-
-    return-void
-.end method
-
-.method public p()V
-    .locals 0
-
-    return-void
-.end method
-
-.method public q()V
-    .locals 0
-
-    return-void
-.end method
-
-.method public r()V
-    .locals 0
-
-    return-void
-.end method
-
-.method public s()V
-    .locals 0
-
-    return-void
-.end method
-
-.method public t(F)V
-    .locals 0
-
-    return-void
-.end method
-
-.method public u()V
-    .locals 0
-
-    return-void
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

@@ -1,38 +1,55 @@
-.class public final Leuf;
-.super Lcom/google/android/apps/camera/bottombar/BottomBarListener;
+.class public final synthetic Leuf;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field public final synthetic a:Leuj;
+.field public final synthetic a:Lbuc;
+
+.field private final synthetic b:I
 
 
 # direct methods
-.method public constructor <init>(Leuj;)V
+.method public synthetic constructor <init>(Lbuc;I)V
     .locals 0
 
-    iput-object p1, p0, Leuf;->a:Leuj;
+    iput p2, p0, Leuf;->b:I
 
-    invoke-direct {p0}, Lcom/google/android/apps/camera/bottombar/BottomBarListener;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Leuf;->a:Lbuc;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onCameraSwitchButtonClicked()V
-    .locals 3
+.method public final run()V
+    .locals 1
 
-    iget-object v0, p0, Leuf;->a:Leuj;
+    iget v0, p0, Leuf;->b:I
 
-    iget-object v0, v0, Leuj;->c:Ldbf;
+    packed-switch v0, :pswitch_data_0
 
-    new-instance v1, Lett;
+    iget-object v0, p0, Leuf;->a:Lbuc;
 
-    const/16 v2, 0xb
-
-    invoke-direct {v1, p0, v2}, Lett;-><init>(Leuf;I)V
-
-    invoke-virtual {v0, v1}, Ldbf;->h(Ljava/lang/Runnable;)V
+    invoke-interface {v0}, Lbuc;->h()V
 
     return-void
+
+    :pswitch_0
+    iget-object v0, p0, Leuf;->a:Lbuc;
+
+    invoke-interface {v0}, Lbuc;->g()V
+
+    return-void
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

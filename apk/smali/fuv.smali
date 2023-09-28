@@ -3,5 +3,8 @@
 
 
 # virtual methods
-.method public abstract a(Lgkr;Lmqp;Llpg;Lika;)Lfux;
+.method public abstract a(Lfuj;)V
+.end method
+
+.method public abstract b(JLfuz;)V
 .end method

@@ -8,7 +8,9 @@
 
     const-class v0, Lcom/google/android/apps/camera/jni/facebeautification/GpuRetoucherNative;
 
-    invoke-static {v0}, Lkak;->a(Ljava/lang/Class;)V
+    invoke-static {v0}, Llil;->a(Ljava/lang/Class;)V
+
+    invoke-static {}, Lcom/google/android/apps/camera/jni/facebeautification/GpuRetoucherNative;->init()V
 
     return-void
 .end method
@@ -24,7 +26,10 @@
 .method public static native createRetoucher(ZI)J
 .end method
 
-.method public static native process(JLandroid/hardware/HardwareBuffer;ZLandroid/hardware/HardwareBuffer;ZII[Lcom/google/android/apps/camera/facemetadata/conversions/FaceToBeautify2;I)Z
+.method public static native init()V
+.end method
+
+.method public static native process(JLandroid/hardware/HardwareBuffer;ZLandroid/hardware/HardwareBuffer;ZII[Ljava/lang/Object;FI)Z
 .end method
 
 .method public static native releaseRetoucher(J)V

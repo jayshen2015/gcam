@@ -1,92 +1,98 @@
-.class final Lcii;
-.super Ljava/lang/Object;
-
-# interfaces
-.implements Lnoj;
+.class final enum Lcii;
+.super Ljava/lang/Enum;
 
 
-# instance fields
-.field final synthetic a:Lcij;
+# static fields
+.field public static final enum a:Lcii;
+
+.field public static final enum b:Lcii;
+
+.field public static final enum c:Lcii;
+
+.field public static final enum d:Lcii;
+
+.field private static final synthetic e:[Lcii;
 
 
 # direct methods
-.method public constructor <init>(Lcij;)V
+.method static constructor <clinit>()V
+    .locals 9
+
+    new-instance v0, Lcii;
+
+    const-string v1, "UNINITIALIZED"
+
+    const/4 v2, 0x0
+
+    invoke-direct {v0, v1, v2}, Lcii;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, Lcii;->a:Lcii;
+
+    new-instance v1, Lcii;
+
+    const-string v3, "INITIALIZED"
+
+    const/4 v4, 0x1
+
+    invoke-direct {v1, v3, v4}, Lcii;-><init>(Ljava/lang/String;I)V
+
+    sput-object v1, Lcii;->b:Lcii;
+
+    new-instance v3, Lcii;
+
+    const-string v5, "STARTED"
+
+    const/4 v6, 0x2
+
+    invoke-direct {v3, v5, v6}, Lcii;-><init>(Ljava/lang/String;I)V
+
+    sput-object v3, Lcii;->c:Lcii;
+
+    new-instance v5, Lcii;
+
+    const-string v7, "STOPPED"
+
+    const/4 v8, 0x3
+
+    invoke-direct {v5, v7, v8}, Lcii;-><init>(Ljava/lang/String;I)V
+
+    sput-object v5, Lcii;->d:Lcii;
+
+    const/4 v7, 0x4
+
+    new-array v7, v7, [Lcii;
+
+    aput-object v0, v7, v2
+
+    aput-object v1, v7, v4
+
+    aput-object v3, v7, v6
+
+    aput-object v5, v7, v8
+
+    sput-object v7, Lcii;->e:[Lcii;
+
+    return-void
+.end method
+
+.method private constructor <init>(Ljava/lang/String;I)V
     .locals 0
 
-    iput-object p1, p0, Lcii;->a:Lcij;
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
 .end method
 
-
-# virtual methods
-.method public final a(Ljava/lang/Throwable;)V
+.method public static values()[Lcii;
     .locals 1
 
-    iget-object v0, p0, Lcii;->a:Lcij;
+    sget-object v0, Lcii;->e:[Lcii;
 
-    iget-object v0, v0, Lcij;->d:Lkgd;
+    invoke-virtual {v0}, [Lcii;->clone()Ljava/lang/Object;
 
-    if-eqz v0, :cond_0
+    move-result-object v0
 
-    invoke-virtual {v0, p1}, Lkgd;->f(Ljava/lang/Throwable;)V
+    check-cast v0, [Lcii;
 
-    :cond_0
-    return-void
-.end method
-
-.method public final bridge synthetic b(Ljava/lang/Object;)V
-    .locals 2
-
-    check-cast p1, Ljava/lang/Boolean;
-
-    iget-object v0, p0, Lcii;->a:Lcij;
-
-    iget-object v0, v0, Lcij;->c:Lkaq;
-
-    if-eqz v0, :cond_0
-
-    if-eqz p1, :cond_0
-
-    invoke-virtual {p1}, Ljava/lang/Boolean;->booleanValue()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    iget-object v0, p0, Lcii;->a:Lcij;
-
-    iget-object v0, v0, Lcij;->c:Lkaq;
-
-    const-string v1, "Initialization completed."
-
-    invoke-interface {v0, v1}, Lkaq;->f(Ljava/lang/String;)V
-
-    :cond_0
-    iget-object v0, p0, Lcii;->a:Lcij;
-
-    iget-object v0, v0, Lcij;->c:Lkaq;
-
-    if-eqz v0, :cond_1
-
-    if-eqz p1, :cond_1
-
-    invoke-virtual {p1}, Ljava/lang/Boolean;->booleanValue()Z
-
-    move-result p1
-
-    if-nez p1, :cond_1
-
-    iget-object p1, p0, Lcii;->a:Lcij;
-
-    iget-object p1, p1, Lcij;->c:Lkaq;
-
-    const-string v0, "Initialization failed! One of the tasks did not succeed."
-
-    invoke-interface {p1, v0}, Lkaq;->i(Ljava/lang/String;)V
-
-    :cond_1
-    return-void
+    return-object v0
 .end method

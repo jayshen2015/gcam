@@ -1,32 +1,63 @@
-.class public final Legx;
+.class final Legx;
 .super Ljava/lang/Object;
 
+# interfaces
+.implements Ljava/lang/Runnable;
 
-# static fields
-.field public static final a:J
 
-.field public static final b:J
+# instance fields
+.field final synthetic a:Ljava/lang/Runnable;
+
+.field final synthetic b:Ljava/util/concurrent/atomic/AtomicBoolean;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
+.method public constructor <init>(Ljava/lang/Runnable;Ljava/util/concurrent/atomic/AtomicBoolean;)V
+    .locals 0
 
-    const/16 v0, 0x43
+    iput-object p1, p0, Legx;->a:Ljava/lang/Runnable;
 
-    invoke-static {v0}, Linb;->s(I)J
+    iput-object p2, p0, Legx;->b:Ljava/util/concurrent/atomic/AtomicBoolean;
 
-    move-result-wide v0
-
-    sput-wide v0, Legx;->a:J
-
-    const/16 v0, 0x3ed
-
-    invoke-static {v0}, Linb;->s(I)J
-
-    move-result-wide v0
-
-    sput-wide v0, Legx;->b:J
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
+.end method
+
+
+# virtual methods
+.method public final run()V
+    .locals 3
+
+    iget-object v0, p0, Legx;->a:Ljava/lang/Runnable;
+
+    invoke-interface {v0}, Ljava/lang/Runnable;->run()V
+
+    iget-object v0, p0, Legx;->b:Ljava/util/concurrent/atomic/AtomicBoolean;
+
+    monitor-enter v0
+
+    :try_start_0
+    iget-object v1, p0, Legx;->b:Ljava/util/concurrent/atomic/AtomicBoolean;
+
+    const/4 v2, 0x1
+
+    invoke-virtual {v1, v2}, Ljava/util/concurrent/atomic/AtomicBoolean;->set(Z)V
+
+    iget-object v1, p0, Legx;->b:Ljava/util/concurrent/atomic/AtomicBoolean;
+
+    invoke-virtual {v1}, Ljava/lang/Object;->notify()V
+
+    monitor-exit v0
+
+    return-void
+
+    :catchall_0
+    move-exception v1
+
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw v1
 .end method

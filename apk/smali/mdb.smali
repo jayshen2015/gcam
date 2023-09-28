@@ -1,101 +1,89 @@
-.class public final Lmdb;
+.class final Lmdb;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Logk;
+.implements Lmdd;
 
 
 # instance fields
-.field private final a:Loiw;
-
-.field private final b:Loiw;
-
-.field private final c:Loiw;
-
-.field private final d:Loiw;
+.field private final a:Ljava/io/InputStream;
 
 
 # direct methods
-.method public constructor <init>(Loiw;Loiw;Loiw;Loiw;)V
+.method public constructor <init>(Ljava/io/InputStream;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lmdb;->a:Loiw;
-
-    iput-object p2, p0, Lmdb;->b:Loiw;
-
-    iput-object p3, p0, Lmdb;->c:Loiw;
-
-    iput-object p4, p0, Lmdb;->d:Loiw;
+    iput-object p1, p0, Lmdb;->a:Ljava/io/InputStream;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Llwc;
-    .locals 8
-
-    iget-object v0, p0, Lmdb;->a:Loiw;
-
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    move-object v2, v0
-
-    check-cast v2, Llyh;
-
-    iget-object v0, p0, Lmdb;->b:Loiw;
-
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    move-object v3, v0
-
-    check-cast v3, Llzz;
-
-    iget-object v0, p0, Lmdb;->c:Loiw;
-
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    move-object v4, v0
-
-    check-cast v4, Llyz;
-
-    iget-object v0, p0, Lmdb;->d:Loiw;
-
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    move-object v5, v0
-
-    check-cast v5, Lkrn;
-
-    new-instance v0, Llwc;
-
-    const/4 v6, 0x0
-
-    const/4 v7, 0x0
-
-    move-object v1, v0
-
-    invoke-direct/range {v1 .. v7}, Llwc;-><init>(Llyh;Llzz;Llyz;Lkrn;[B[B)V
-
-    return-object v0
-.end method
-
-.method public final bridge synthetic get()Ljava/lang/Object;
+.method public final a()I
     .locals 1
 
-    invoke-virtual {p0}, Lmdb;->a()Llwc;
+    iget-object v0, p0, Lmdb;->a:Ljava/io/InputStream;
+
+    invoke-virtual {v0}, Ljava/io/InputStream;->read()I
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public final b(II)Lmdc;
+    .locals 3
+
+    new-array v0, p1, [B
+
+    iget-object v1, p0, Lmdb;->a:Ljava/io/InputStream;
+
+    const/4 v2, 0x0
+
+    invoke-static {v1, v0, v2, p1}, Lcom/google/common/io/ByteStreams;->read(Ljava/io/InputStream;[BII)I
+
+    move-result p1
+
+    new-instance v1, Lmdc;
+
+    invoke-direct {v1, v0, p2, v2, p1}, Lmdc;-><init>([BIII)V
+
+    return-object v1
+.end method
+
+.method public final c(I)V
+    .locals 3
+
+    iget-object v0, p0, Lmdb;->a:Ljava/io/InputStream;
+
+    int-to-long v1, p1
+
+    invoke-static {v0, v1, v2}, Lcom/google/common/io/ByteStreams;->skipFully(Ljava/io/InputStream;J)V
+
+    return-void
+.end method
+
+.method public final d()Lmdc;
+    .locals 5
+
+    iget-object v0, p0, Lmdb;->a:Ljava/io/InputStream;
+
+    invoke-static {v0}, Lcom/google/common/io/ByteStreams;->toByteArray(Ljava/io/InputStream;)[B
 
     move-result-object v0
 
-    return-object v0
+    new-instance v1, Lmdc;
+
+    array-length v2, v0
+
+    const/16 v3, 0xda
+
+    const/4 v4, 0x0
+
+    invoke-direct {v1, v0, v3, v4, v2}, Lmdc;-><init>([BIII)V
+
+    return-object v1
 .end method

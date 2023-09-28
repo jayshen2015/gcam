@@ -1,9 +1,28 @@
-.class final Lncv;
+.class public final synthetic Lncv;
 .super Ljava/lang/Object;
+
+# interfaces
+.implements Lncx;
+
+
+# static fields
+.field public static final synthetic a:Lncv;
 
 
 # direct methods
-.method constructor <init>()V
+.method static synthetic constructor <clinit>()V
+    .locals 1
+
+    new-instance v0, Lncv;
+
+    invoke-direct {v0}, Lncv;-><init>()V
+
+    sput-object v0, Lncv;->a:Lncv;
+
+    return-void
+.end method
+
+.method private synthetic constructor <init>()V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -11,12 +30,16 @@
     return-void
 .end method
 
-.method static a()Z
+
+# virtual methods
+.method public final a()Lpht;
     .locals 1
 
-    invoke-static {}, Lncw;->t()Z
+    sget-object v0, Loih;->a:Loih;
 
-    move-result v0
+    invoke-static {v0}, Lplk;->V(Ljava/lang/Object;)Lpht;
 
-    return v0
+    move-result-object v0
+
+    return-object v0
 .end method

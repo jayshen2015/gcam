@@ -1,558 +1,265 @@
 .class public final Lihg;
 .super Ljava/lang/Object;
 
+# interfaces
+.implements Landroid/content/DialogInterface$OnDismissListener;
+.implements Landroid/view/View$OnScrollChangeListener;
+.implements Liur;
+
+
+# static fields
+.field public static final synthetic e:I
+
 
 # instance fields
-.field final a:Ljava/lang/Object;
+.field public final a:Lius;
 
-.field final b:Ljava/lang/Object;
+.field public final b:Landroid/content/Context;
 
-.field public final c:Ljava/lang/Object;
+.field public c:Lihj;
 
-.field public final d:Ljava/lang/Object;
+.field public d:Lihj;
 
-.field public final e:Ljava/lang/Object;
+.field private final f:Lhug;
 
-.field public final f:Ljava/lang/Object;
+.field private final g:Ljava/util/concurrent/Executor;
 
-.field public final g:Ljava/lang/Object;
+.field private final h:Ljava/util/concurrent/ScheduledExecutorService;
 
-.field public final h:Ljava/lang/Object;
+.field private i:Z
 
-.field public final i:Ljava/lang/Object;
+.field private j:Llic;
 
-.field public final j:Ljava/lang/Object;
-
-.field public final k:Ljava/lang/Object;
-
-.field public final l:Ljava/lang/Object;
-
-.field public final m:Ljava/lang/Object;
-
-.field public final n:Ljava/lang/Object;
-
-.field public final o:Ljava/lang/Object;
-
-.field public final p:Ljava/lang/Object;
-
-.field public final q:Ljava/lang/Object;
+.field private final k:Ljts;
 
 
 # direct methods
-.method public constructor <init>(Ljew;[B[B)V
-    .locals 0
+.method public constructor <init>(Lius;Landroid/content/Context;Ljts;Ljava/util/concurrent/Executor;Ljava/util/concurrent/ScheduledExecutorService;Lhug;)V
+    .locals 1
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-static {}, Ljuh;->a()V
+    const/4 v0, 0x0
 
-    iput-object p1, p0, Lihg;->q:Ljava/lang/Object;
+    iput-boolean v0, p0, Lihg;->i:Z
 
-    const p2, 0x7f0b0053
+    sget-object v0, Llic;->a:Llic;
 
-    invoke-virtual {p1, p2}, Ljew;->f(I)Ljava/lang/Object;
+    iput-object v0, p0, Lihg;->j:Llic;
 
-    move-result-object p2
+    iput-object p1, p0, Lihg;->a:Lius;
 
-    check-cast p2, Lcom/google/android/apps/camera/ui/views/MainActivityLayout;
+    iput-object p2, p0, Lihg;->b:Landroid/content/Context;
 
-    iput-object p2, p0, Lihg;->c:Ljava/lang/Object;
+    iput-object p3, p0, Lihg;->k:Ljts;
 
-    const p2, 0x7f0b00a1
+    iput-object p4, p0, Lihg;->g:Ljava/util/concurrent/Executor;
 
-    invoke-virtual {p1, p2}, Ljew;->f(I)Ljava/lang/Object;
+    iput-object p5, p0, Lihg;->h:Ljava/util/concurrent/ScheduledExecutorService;
 
-    move-result-object p2
-
-    check-cast p2, Landroid/view/ViewStub;
-
-    iput-object p2, p0, Lihg;->a:Ljava/lang/Object;
-
-    const p2, 0x7f0b00a2
-
-    invoke-virtual {p1, p2}, Ljew;->f(I)Ljava/lang/Object;
-
-    move-result-object p2
-
-    check-cast p2, Landroid/view/ViewStub;
-
-    iput-object p2, p0, Lihg;->b:Ljava/lang/Object;
-
-    const p2, 0x7f0b03f6
-
-    invoke-virtual {p1, p2}, Ljew;->f(I)Ljava/lang/Object;
-
-    move-result-object p2
-
-    check-cast p2, Landroid/widget/FrameLayout;
-
-    iput-object p2, p0, Lihg;->d:Ljava/lang/Object;
-
-    const p2, 0x7f0b03f2
-
-    invoke-virtual {p1, p2}, Ljew;->f(I)Ljava/lang/Object;
-
-    move-result-object p2
-
-    check-cast p2, Lcom/google/android/apps/camera/ui/views/ViewfinderCover;
-
-    iput-object p2, p0, Lihg;->e:Ljava/lang/Object;
-
-    const p2, 0x7f0b0236
-
-    invoke-virtual {p1, p2}, Ljew;->f(I)Ljava/lang/Object;
-
-    move-result-object p2
-
-    check-cast p2, Lcom/google/android/apps/camera/ui/modeswitcher/ModeSwitcher;
-
-    iput-object p2, p0, Lihg;->j:Ljava/lang/Object;
-
-    const p2, 0x7f0b0097
-
-    invoke-virtual {p1, p2}, Ljew;->f(I)Ljava/lang/Object;
-
-    move-result-object p2
-
-    check-cast p2, Lcom/google/android/apps/camera/ui/breadcrumbs/BreadcrumbsView;
-
-    iput-object p2, p0, Lihg;->k:Ljava/lang/Object;
-
-    const p2, 0x7f0b0315
-
-    invoke-virtual {p1, p2}, Ljew;->f(I)Ljava/lang/Object;
-
-    move-result-object p2
-
-    check-cast p2, Lcom/google/android/apps/camera/ui/shutterbutton/ShutterButton;
-
-    iput-object p2, p0, Lihg;->l:Ljava/lang/Object;
-
-    const p2, 0x7f0b023c
-
-    invoke-virtual {p1, p2}, Ljew;->f(I)Ljava/lang/Object;
-
-    move-result-object p2
-
-    check-cast p2, Lcom/google/android/apps/camera/ui/modeswitcher/MoreModesGrid;
-
-    iput-object p2, p0, Lihg;->m:Ljava/lang/Object;
-
-    const p2, 0x7f0b0271
-
-    invoke-virtual {p1, p2}, Ljew;->f(I)Ljava/lang/Object;
-
-    move-result-object p2
-
-    iput-object p2, p0, Lihg;->h:Ljava/lang/Object;
-
-    const p2, 0x7f0b039c
-
-    invoke-virtual {p1, p2}, Ljew;->f(I)Ljava/lang/Object;
-
-    move-result-object p2
-
-    iput-object p2, p0, Lihg;->i:Ljava/lang/Object;
-
-    const p2, 0x7f0b0087
-
-    invoke-virtual {p1, p2}, Ljew;->f(I)Ljava/lang/Object;
-
-    move-result-object p2
-
-    check-cast p2, Lcom/google/android/apps/camera/bottombar/BottomBar;
-
-    iput-object p2, p0, Lihg;->f:Ljava/lang/Object;
-
-    const p3, 0x7f0b0175
-
-    invoke-virtual {p1, p3}, Ljew;->f(I)Ljava/lang/Object;
-
-    move-result-object p3
-
-    check-cast p3, Lcom/google/android/apps/camera/ui/views/GradientBar;
-
-    iput-object p3, p0, Lihg;->n:Ljava/lang/Object;
-
-    move-object p3, p2
-
-    check-cast p3, Lcom/google/android/apps/camera/bottombar/BottomBar;
-
-    invoke-virtual {p2}, Lcom/google/android/apps/camera/bottombar/BottomBar;->getThumbnailButton()Lcom/google/android/apps/camera/bottombar/RoundedThumbnailView;
-
-    move-result-object p2
-
-    iput-object p2, p0, Lihg;->g:Ljava/lang/Object;
-
-    const p2, 0x7f0b0316
-
-    invoke-virtual {p1, p2}, Ljew;->f(I)Ljava/lang/Object;
-
-    move-result-object p2
-
-    check-cast p2, Lcom/google/android/apps/camera/ui/shutterbutton/ShutterButtonProgressOverlay;
-
-    iput-object p2, p0, Lihg;->o:Ljava/lang/Object;
-
-    const p2, 0x7f0b047d
-
-    invoke-virtual {p1, p2}, Ljew;->f(I)Ljava/lang/Object;
-
-    move-result-object p1
-
-    check-cast p1, Lcom/google/android/apps/camera/ui/zoomlock/ZoomLockView;
-
-    iput-object p1, p0, Lihg;->p:Ljava/lang/Object;
-
-    return-void
-.end method
-
-.method public constructor <init>(Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;)V
-    .locals 2
-
-    move-object v0, p0
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    move-object v1, p1
-
-    iput-object v1, v0, Lihg;->l:Ljava/lang/Object;
-
-    invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    move-object v1, p2
-
-    iput-object v1, v0, Lihg;->a:Ljava/lang/Object;
-
-    invoke-virtual {p3}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    move-object v1, p3
-
-    iput-object v1, v0, Lihg;->i:Ljava/lang/Object;
-
-    invoke-virtual {p4}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    move-object v1, p4
-
-    iput-object v1, v0, Lihg;->o:Ljava/lang/Object;
-
-    invoke-virtual {p5}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    move-object v1, p5
-
-    iput-object v1, v0, Lihg;->f:Ljava/lang/Object;
-
-    invoke-virtual {p6}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    move-object v1, p6
-
-    iput-object v1, v0, Lihg;->b:Ljava/lang/Object;
-
-    invoke-virtual {p7}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    move-object v1, p7
-
-    iput-object v1, v0, Lihg;->m:Ljava/lang/Object;
-
-    invoke-virtual {p8}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    move-object v1, p8
-
-    iput-object v1, v0, Lihg;->q:Ljava/lang/Object;
-
-    invoke-virtual {p9}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    move-object v1, p9
-
-    iput-object v1, v0, Lihg;->j:Ljava/lang/Object;
-
-    invoke-virtual {p10}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    move-object v1, p10
-
-    iput-object v1, v0, Lihg;->p:Ljava/lang/Object;
-
-    invoke-virtual {p11}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    move-object v1, p11
-
-    iput-object v1, v0, Lihg;->e:Ljava/lang/Object;
-
-    invoke-virtual {p12}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    move-object v1, p12
-
-    iput-object v1, v0, Lihg;->k:Ljava/lang/Object;
-
-    invoke-virtual {p13}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    move-object v1, p13
-
-    iput-object v1, v0, Lihg;->d:Ljava/lang/Object;
-
-    invoke-virtual/range {p14 .. p14}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    move-object/from16 v1, p14
-
-    iput-object v1, v0, Lihg;->n:Ljava/lang/Object;
-
-    invoke-virtual/range {p15 .. p15}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    move-object/from16 v1, p15
-
-    iput-object v1, v0, Lihg;->c:Ljava/lang/Object;
-
-    invoke-virtual/range {p16 .. p16}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    move-object/from16 v1, p16
-
-    iput-object v1, v0, Lihg;->h:Ljava/lang/Object;
-
-    invoke-virtual/range {p17 .. p17}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    move-object/from16 v1, p17
-
-    iput-object v1, v0, Lihg;->g:Ljava/lang/Object;
+    iput-object p6, p0, Lihg;->f:Lhug;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Ljava/lang/String;Lgya;)Lflx;
-    .locals 26
+.method public final a()V
+    .locals 15
 
-    move-object/from16 v0, p0
+    invoke-static {}, Llar;->a()V
 
-    move-object/from16 v19, p2
+    iget-object v0, p0, Lihg;->f:Lhug;
 
-    new-instance v25, Lflx;
+    sget-object v1, Lhtu;->u:Lhuk;
 
-    move-object/from16 v1, v25
+    const/4 v2, 0x1
 
-    iget-object v2, v0, Lihg;->l:Ljava/lang/Object;
-
-    invoke-interface {v2}, Loiw;->get()Ljava/lang/Object;
+    invoke-static {v2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     move-result-object v2
 
-    move-object v3, v2
+    invoke-interface {v0, v1, v2}, Lhug;->e(Lhts;Ljava/lang/Object;)V
 
-    check-cast v3, Lfbk;
+    iget-object v3, p0, Lihg;->a:Lius;
 
-    move-object v2, v3
+    iput-object p0, v3, Lius;->f:Landroid/view/View$OnScrollChangeListener;
 
-    invoke-virtual {v3}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    iput-object p0, v3, Lius;->e:Liur;
 
-    iget-object v3, v0, Lihg;->a:Ljava/lang/Object;
+    iget-object v0, p0, Lihg;->b:Landroid/content/Context;
 
-    check-cast v3, Lhld;
+    const v1, 0x7f0e00f7
 
-    invoke-virtual {v3}, Lhld;->a()Ljew;
+    const/4 v2, 0x0
 
-    move-result-object v3
-
-    iget-object v4, v0, Lihg;->i:Ljava/lang/Object;
-
-    invoke-interface {v4}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v4
-
-    move-object v5, v4
-
-    check-cast v5, Lgwf;
-
-    move-object v4, v5
-
-    invoke-virtual {v5}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    iget-object v5, v0, Lihg;->o:Ljava/lang/Object;
-
-    invoke-interface {v5}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v5
-
-    move-object v6, v5
-
-    check-cast v6, Lgft;
-
-    move-object v5, v6
-
-    invoke-virtual {v6}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    iget-object v6, v0, Lihg;->f:Ljava/lang/Object;
-
-    invoke-interface {v6}, Loiw;->get()Ljava/lang/Object;
+    invoke-static {v0, v1, v2}, Landroid/view/View;->inflate(Landroid/content/Context;ILandroid/view/ViewGroup;)Landroid/view/View;
 
     move-result-object v6
 
-    move-object v7, v6
+    const v0, 0x7f0b02d7
 
-    check-cast v7, Lgvw;
+    invoke-virtual {v6, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
-    move-object v6, v7
+    move-result-object v0
 
-    invoke-virtual {v7}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    move-object v8, v0
 
-    iget-object v7, v0, Lihg;->b:Ljava/lang/Object;
+    check-cast v8, Liwh;
 
-    invoke-interface {v7}, Loiw;->get()Ljava/lang/Object;
+    const-string v0, "https://www.gstatic.com/aiux/gca/cocktailparty/test_sample10_off.mp4"
 
-    move-result-object v7
-
-    move-object v8, v7
-
-    check-cast v8, Ljwb;
-
-    move-object v7, v8
-
-    invoke-virtual {v8}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    iget-object v8, v0, Lihg;->m:Ljava/lang/Object;
-
-    invoke-interface {v8}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v8
-
-    move-object v9, v8
-
-    check-cast v9, Ljwb;
-
-    move-object v8, v9
-
-    invoke-virtual {v9}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    iget-object v9, v0, Lihg;->q:Ljava/lang/Object;
-
-    invoke-interface {v9}, Loiw;->get()Ljava/lang/Object;
+    invoke-static {v0}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
 
     move-result-object v9
 
-    move-object v10, v9
+    new-instance v0, Lihj;
 
-    check-cast v10, Ljvs;
+    iget-object v10, p0, Lihg;->b:Landroid/content/Context;
 
-    move-object v9, v10
+    iget-object v11, p0, Lihg;->k:Ljts;
 
-    invoke-virtual {v10}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    iget-object v13, p0, Lihg;->g:Ljava/util/concurrent/Executor;
 
-    iget-object v10, v0, Lihg;->j:Ljava/lang/Object;
+    iget-object v14, p0, Lihg;->h:Ljava/util/concurrent/ScheduledExecutorService;
 
-    invoke-interface {v10}, Loiw;->get()Ljava/lang/Object;
+    move-object v7, v0
 
-    move-result-object v10
+    move-object v12, p0
 
-    move-object v11, v10
+    invoke-direct/range {v7 .. v14}, Lihj;-><init>(Liwh;Landroid/net/Uri;Landroid/content/Context;Ljts;Lihg;Ljava/util/concurrent/Executor;Ljava/util/concurrent/ScheduledExecutorService;)V
 
-    check-cast v11, Ljvs;
+    iput-object v0, p0, Lihg;->c:Lihj;
 
-    move-object v10, v11
+    invoke-virtual {v0}, Lihj;->e()V
 
-    invoke-virtual {v11}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    const v0, 0x7f0b02d5
 
-    iget-object v11, v0, Lihg;->p:Ljava/lang/Object;
+    invoke-virtual {v6, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
-    invoke-interface {v11}, Loiw;->get()Ljava/lang/Object;
+    move-result-object v0
 
-    move-result-object v11
+    move-object v8, v0
 
-    move-object v12, v11
+    check-cast v8, Liwh;
 
-    check-cast v12, Lgzm;
+    const-string v0, "https://www.gstatic.com/aiux/gca/cocktailparty/test_sample10_on.mp4"
 
-    move-object v11, v12
+    invoke-static {v0}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
 
-    invoke-virtual {v12}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    move-result-object v9
 
-    iget-object v12, v0, Lihg;->e:Ljava/lang/Object;
+    new-instance v0, Lihj;
 
-    invoke-interface {v12}, Loiw;->get()Ljava/lang/Object;
+    iget-object v10, p0, Lihg;->b:Landroid/content/Context;
 
-    move-result-object v12
+    iget-object v11, p0, Lihg;->k:Ljts;
 
-    iget-object v13, v0, Lihg;->k:Ljava/lang/Object;
+    iget-object v13, p0, Lihg;->g:Ljava/util/concurrent/Executor;
 
-    invoke-interface {v13}, Loiw;->get()Ljava/lang/Object;
+    iget-object v14, p0, Lihg;->h:Ljava/util/concurrent/ScheduledExecutorService;
 
-    move-result-object v13
+    move-object v7, v0
 
-    move-object v14, v13
+    invoke-direct/range {v7 .. v14}, Lihj;-><init>(Liwh;Landroid/net/Uri;Landroid/content/Context;Ljts;Lihg;Ljava/util/concurrent/Executor;Ljava/util/concurrent/ScheduledExecutorService;)V
 
-    check-cast v14, Lgwu;
+    iput-object v0, p0, Lihg;->d:Lihj;
 
-    move-object v13, v14
+    invoke-virtual {v0}, Lihj;->e()V
 
-    invoke-virtual {v14}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    iget-object v8, p0, Lihg;->b:Landroid/content/Context;
 
-    iget-object v14, v0, Lihg;->d:Ljava/lang/Object;
+    const/16 v4, 0xa
 
-    invoke-interface {v14}, Loiw;->get()Ljava/lang/Object;
+    const v5, 0x7f140456
 
-    move-result-object v14
+    move-object v7, p0
 
-    move-object v15, v14
+    invoke-virtual/range {v3 .. v8}, Lius;->g(IILandroid/view/View;Landroid/content/DialogInterface$OnDismissListener;Landroid/content/Context;)V
 
-    check-cast v15, Lkpo;
+    return-void
+.end method
 
-    move-object v14, v15
+.method public final b(Llic;)V
+    .locals 1
 
-    invoke-virtual {v15}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    const/4 v0, 0x0
 
-    iget-object v15, v0, Lihg;->n:Ljava/lang/Object;
+    iput-boolean v0, p0, Lihg;->i:Z
 
-    invoke-interface {v15}, Loiw;->get()Ljava/lang/Object;
+    iput-object p1, p0, Lihg;->j:Llic;
 
-    move-result-object v15
+    return-void
+.end method
 
-    move-object/from16 v16, v15
+.method public final onDismiss(Landroid/content/DialogInterface;)V
+    .locals 1
 
-    check-cast v16, Lgla;
+    iget-object v0, p0, Lihg;->c:Lihj;
 
-    move-object/from16 v15, v16
+    if-eqz v0, :cond_0
 
-    invoke-virtual/range {v16 .. v16}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    invoke-virtual {v0, p1}, Lihj;->onDismiss(Landroid/content/DialogInterface;)V
 
-    move-object/from16 p1, v1
+    :cond_0
+    iget-object v0, p0, Lihg;->d:Lihj;
 
-    iget-object v1, v0, Lihg;->c:Ljava/lang/Object;
+    if-eqz v0, :cond_1
 
-    check-cast v1, Lcrj;
+    invoke-virtual {v0, p1}, Lihj;->onDismiss(Landroid/content/DialogInterface;)V
 
-    invoke-virtual {v1}, Lcrj;->a()Lmqp;
+    :cond_1
+    iget-object p1, p0, Lihg;->a:Lius;
 
-    move-result-object v16
+    const/4 v0, 0x0
 
-    iget-object v1, v0, Lihg;->h:Ljava/lang/Object;
+    iput-object v0, p1, Lius;->f:Landroid/view/View$OnScrollChangeListener;
 
-    check-cast v1, Lelz;
+    iput-object v0, p1, Lius;->e:Liur;
 
-    invoke-virtual {v1}, Lelz;->a()Landroid/view/accessibility/AccessibilityManager;
+    return-void
+.end method
 
-    move-result-object v17
+.method public final onScrollChange(Landroid/view/View;IIII)V
+    .locals 0
 
-    iget-object v1, v0, Lihg;->g:Ljava/lang/Object;
+    iget-object p2, p0, Lihg;->j:Llic;
 
-    move-object/from16 v18, v1
+    sget-object p3, Llic;->b:Llic;
 
-    invoke-virtual/range {p2 .. p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    invoke-virtual {p2, p3}, Llic;->equals(Ljava/lang/Object;)Z
 
-    check-cast v12, Ldja;
+    move-result p2
 
-    const/16 v20, 0x0
+    if-nez p2, :cond_0
 
-    const/16 v21, 0x0
+    iget-object p2, p0, Lihg;->j:Llic;
 
-    const/16 v22, 0x0
+    sget-object p3, Llic;->d:Llic;
 
-    const/16 v23, 0x0
+    invoke-virtual {p2, p3}, Llic;->equals(Ljava/lang/Object;)Z
 
-    const/16 v24, 0x0
+    move-result p2
 
-    move-object/from16 v1, p1
+    if-eqz p2, :cond_1
 
-    invoke-direct/range {v1 .. v24}, Lflx;-><init>(Lfbk;Ljew;Lgwf;Lgft;Lgvw;Ljwb;Ljwb;Ljvs;Ljvs;Lgzm;Ldja;Lgwu;Lkpo;Lgla;Lmqp;Landroid/view/accessibility/AccessibilityManager;Loiw;Lgya;[B[B[B[B[B)V
+    :cond_0
+    iget-boolean p2, p0, Lihg;->i:Z
 
-    return-object v25
+    if-nez p2, :cond_1
+
+    new-instance p2, Lihf;
+
+    invoke-direct {p2, p1}, Lihf;-><init>(Landroid/view/View;)V
+
+    const-wide/16 p3, 0xfa
+
+    invoke-virtual {p1, p2, p3, p4}, Landroid/view/View;->postDelayed(Ljava/lang/Runnable;J)Z
+
+    const/4 p1, 0x1
+
+    iput-boolean p1, p0, Lihg;->i:Z
+
+    :cond_1
+    return-void
 .end method

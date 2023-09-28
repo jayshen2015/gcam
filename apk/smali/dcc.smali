@@ -1,986 +1,334 @@
-.class public final synthetic Ldcc;
+.class public abstract Ldcc;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Ljava/util/function/Consumer;
+.implements Liat;
+.implements Ldbr;
 
 
 # instance fields
-.field public final synthetic a:Ljava/lang/Object;
+.field public a:I
 
-.field private final synthetic b:I
+.field public b:J
+
+.field private final c:Ljava/util/concurrent/ScheduledExecutorService;
+
+.field private d:Ljava/util/concurrent/ScheduledFuture;
+
+.field private final e:Ljava/util/concurrent/atomic/AtomicBoolean;
+
+.field private f:Liax;
+
+.field private g:I
+
+.field private h:Ljava/util/concurrent/ScheduledFuture;
+
+.field private i:Liay;
+
+.field private final j:Ljava/util/concurrent/atomic/AtomicBoolean;
 
 
 # direct methods
-.method public synthetic constructor <init>(Landroid/content/Intent;I)V
-    .locals 0
-
-    iput p2, p0, Ldcc;->b:I
+.method public constructor <init>()V
+    .locals 2
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Ldcc;->a:Ljava/lang/Object;
+    new-instance v0, Ljava/util/concurrent/atomic/AtomicBoolean;
 
-    return-void
-.end method
+    const/4 v1, 0x0
 
-.method public synthetic constructor <init>(Landroid/content/res/Configuration;I)V
-    .locals 0
+    invoke-direct {v0, v1}, Ljava/util/concurrent/atomic/AtomicBoolean;-><init>(Z)V
 
-    iput p2, p0, Ldcc;->b:I
+    iput-object v0, p0, Ldcc;->j:Ljava/util/concurrent/atomic/AtomicBoolean;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const-string v0, "CoachSDProcessor"
 
-    iput-object p1, p0, Ldcc;->a:Ljava/lang/Object;
+    invoke-static {v0}, Lmip;->bQ(Ljava/lang/String;)Ljava/util/concurrent/ScheduledExecutorService;
 
-    return-void
-.end method
+    move-result-object v0
 
-.method public synthetic constructor <init>(Lcom/google/googlex/gcam/BuildPayloadBurstSpecOptions;I)V
-    .locals 0
+    iput-object v0, p0, Ldcc;->c:Ljava/util/concurrent/ScheduledExecutorService;
 
-    iput p2, p0, Ldcc;->b:I
+    new-instance v0, Ljava/util/concurrent/atomic/AtomicBoolean;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {v0, v1}, Ljava/util/concurrent/atomic/AtomicBoolean;-><init>(Z)V
 
-    iput-object p1, p0, Ldcc;->a:Ljava/lang/Object;
-
-    return-void
-.end method
-
-.method public synthetic constructor <init>(Lcom/google/googlex/gcam/ShotParams;I)V
-    .locals 0
-
-    iput p2, p0, Ldcc;->b:I
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Ldcc;->a:Ljava/lang/Object;
-
-    return-void
-.end method
-
-.method public synthetic constructor <init>(Lczv;I)V
-    .locals 0
-
-    iput p2, p0, Ldcc;->b:I
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Ldcc;->a:Ljava/lang/Object;
-
-    return-void
-.end method
-
-.method public synthetic constructor <init>(Ldbf;I)V
-    .locals 0
-
-    iput p2, p0, Ldcc;->b:I
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Ldcc;->a:Ljava/lang/Object;
-
-    return-void
-.end method
-
-.method public synthetic constructor <init>(Lddf;I)V
-    .locals 0
-
-    iput p2, p0, Ldcc;->b:I
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Ldcc;->a:Ljava/lang/Object;
-
-    return-void
-.end method
-
-.method public synthetic constructor <init>(Lddn;I)V
-    .locals 0
-
-    iput p2, p0, Ldcc;->b:I
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Ldcc;->a:Ljava/lang/Object;
-
-    return-void
-.end method
-
-.method public synthetic constructor <init>(Ldja;I[B)V
-    .locals 0
-
-    iput p2, p0, Ldcc;->b:I
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Ldcc;->a:Ljava/lang/Object;
-
-    return-void
-.end method
-
-.method public synthetic constructor <init>(Lfaj;I)V
-    .locals 0
-
-    iput p2, p0, Ldcc;->b:I
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Ldcc;->a:Ljava/lang/Object;
-
-    return-void
-.end method
-
-.method public synthetic constructor <init>(Lfaz;I)V
-    .locals 0
-
-    iput p2, p0, Ldcc;->b:I
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Ldcc;->a:Ljava/lang/Object;
-
-    return-void
-.end method
-
-.method public synthetic constructor <init>(Lfum;I)V
-    .locals 0
-
-    iput p2, p0, Ldcc;->b:I
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Ldcc;->a:Ljava/lang/Object;
+    iput-object v0, p0, Ldcc;->e:Ljava/util/concurrent/atomic/AtomicBoolean;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final accept(Ljava/lang/Object;)V
-    .locals 8
+.method public final a()V
+    .locals 2
 
-    iget v0, p0, Ldcc;->b:I
+    iget-object v0, p0, Ldcc;->d:Ljava/util/concurrent/ScheduledFuture;
 
-    const/4 v1, 0x2
+    const/4 v1, 0x1
 
-    const/4 v2, 0x1
+    if-eqz v0, :cond_0
 
-    packed-switch v0, :pswitch_data_0
-
-    iget-object v0, p0, Ldcc;->a:Ljava/lang/Object;
-
-    check-cast p1, Ljava/lang/String;
-
-    check-cast v0, Lfum;
-
-    iget-object v0, v0, Lfum;->a:Ljava/util/Map;
-
-    invoke-static {v2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
-
-    move-result-object v1
-
-    invoke-interface {v0, p1, v1}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    return-void
-
-    :pswitch_0
-    iget-object v0, p0, Ldcc;->a:Ljava/lang/Object;
-
-    check-cast p1, Ljava/lang/String;
-
-    check-cast v0, Lfum;
-
-    invoke-virtual {v0, p1}, Lfum;->b(Ljava/lang/String;)V
-
-    return-void
-
-    :pswitch_1
-    iget-object v0, p0, Ldcc;->a:Ljava/lang/Object;
-
-    check-cast p1, Lfaz;
-
-    invoke-interface {v0, p1}, Lfaj;->a(Lfaz;)V
-
-    return-void
-
-    :pswitch_2
-    iget-object v0, p0, Ldcc;->a:Ljava/lang/Object;
-
-    check-cast p1, Lfaj;
-
-    sget v1, Lfak;->l:I
-
-    invoke-interface {p1, v0}, Lfaj;->a(Lfaz;)V
-
-    return-void
-
-    :pswitch_3
-    iget-object v0, p0, Ldcc;->a:Ljava/lang/Object;
-
-    check-cast p1, Lfaj;
-
-    invoke-interface {p1, v0}, Lfaj;->a(Lfaz;)V
-
-    return-void
-
-    :pswitch_4
-    iget-object v0, p0, Ldcc;->a:Ljava/lang/Object;
-
-    check-cast p1, Lfaz;
-
-    invoke-interface {v0, p1}, Lfaj;->a(Lfaz;)V
-
-    return-void
-
-    :pswitch_5
-    iget-object v0, p0, Ldcc;->a:Ljava/lang/Object;
-
-    check-cast p1, Lfaz;
-
-    sget v1, Lezx;->e:I
-
-    instance-of v1, p1, Lezd;
-
-    if-eqz v1, :cond_0
-
-    check-cast p1, Lezd;
-
-    check-cast v0, Landroid/content/res/Configuration;
-
-    invoke-interface {p1, v0}, Lezd;->y(Landroid/content/res/Configuration;)V
+    invoke-interface {v0, v1}, Ljava/util/concurrent/ScheduledFuture;->cancel(Z)Z
 
     :cond_0
-    return-void
+    iget-object v0, p0, Ldcc;->h:Ljava/util/concurrent/ScheduledFuture;
 
-    :pswitch_6
-    iget-object v0, p0, Ldcc;->a:Ljava/lang/Object;
+    if-eqz v0, :cond_1
 
-    check-cast p1, Lfaz;
-
-    sget v1, Lezx;->e:I
-
-    instance-of v1, p1, Lezh;
-
-    if-eqz v1, :cond_1
-
-    check-cast p1, Lezh;
-
-    check-cast v0, Landroid/content/Intent;
-
-    invoke-interface {p1, v0}, Lezh;->bL(Landroid/content/Intent;)V
+    invoke-interface {v0, v1}, Ljava/util/concurrent/ScheduledFuture;->cancel(Z)Z
 
     :cond_1
-    return-void
+    iget-object v0, p0, Ldcc;->c:Ljava/util/concurrent/ScheduledExecutorService;
 
-    :pswitch_7
-    iget-object v0, p0, Ldcc;->a:Ljava/lang/Object;
-
-    check-cast p1, Ljava/lang/Float;
-
-    invoke-virtual {p1}, Ljava/lang/Float;->floatValue()F
-
-    move-result p1
-
-    check-cast v0, Lcom/google/googlex/gcam/ShotParams;
-
-    iget-wide v1, v0, Lcom/google/googlex/gcam/ShotParams;->a:J
-
-    invoke-static {v1, v2, v0, p1}, Lcom/google/googlex/gcam/GcamModuleJNI;->ShotParams_little_cpu_freq_option_set(JLcom/google/googlex/gcam/ShotParams;F)V
+    invoke-interface {v0}, Ljava/util/concurrent/ScheduledExecutorService;->shutdownNow()Ljava/util/List;
 
     return-void
+.end method
 
-    :pswitch_8
-    iget-object v0, p0, Ldcc;->a:Ljava/lang/Object;
+.method public final b(Liay;)V
+    .locals 4
 
-    check-cast p1, Ljava/lang/Float;
+    iput-object p1, p0, Ldcc;->i:Liay;
 
-    invoke-virtual {p1}, Ljava/lang/Float;->floatValue()F
-
-    move-result p1
-
-    check-cast v0, Lcom/google/googlex/gcam/ShotParams;
-
-    iget-wide v1, v0, Lcom/google/googlex/gcam/ShotParams;->a:J
-
-    invoke-static {v1, v2, v0, p1}, Lcom/google/googlex/gcam/GcamModuleJNI;->ShotParams_mid_cpu_freq_option_set(JLcom/google/googlex/gcam/ShotParams;F)V
-
-    return-void
-
-    :pswitch_9
-    iget-object v0, p0, Ldcc;->a:Ljava/lang/Object;
-
-    check-cast p1, Ljava/lang/Float;
-
-    invoke-virtual {p1}, Ljava/lang/Float;->floatValue()F
-
-    move-result p1
-
-    check-cast v0, Lcom/google/googlex/gcam/ShotParams;
-
-    iget-wide v1, v0, Lcom/google/googlex/gcam/ShotParams;->a:J
-
-    invoke-static {v1, v2, v0, p1}, Lcom/google/googlex/gcam/GcamModuleJNI;->ShotParams_big_cpu_freq_option_set(JLcom/google/googlex/gcam/ShotParams;F)V
-
-    return-void
-
-    :pswitch_a
-    iget-object v0, p0, Ldcc;->a:Ljava/lang/Object;
-
-    check-cast p1, Ljava/lang/Float;
-
-    invoke-virtual {p1}, Ljava/lang/Float;->floatValue()F
-
-    move-result p1
-
-    check-cast v0, Lcom/google/googlex/gcam/ShotParams;
-
-    iget-wide v1, v0, Lcom/google/googlex/gcam/ShotParams;->a:J
-
-    invoke-static {v1, v2, v0, p1}, Lcom/google/googlex/gcam/GcamModuleJNI;->ShotParams_psaf_log_scene_brightness_threshold_override_set(JLcom/google/googlex/gcam/ShotParams;F)V
-
-    return-void
-
-    :pswitch_b
-    iget-object v0, p0, Ldcc;->a:Ljava/lang/Object;
-
-    check-cast p1, Ljava/lang/Float;
-
-    invoke-virtual {p1}, Ljava/lang/Float;->floatValue()F
-
-    move-result p1
-
-    check-cast v0, Lcom/google/googlex/gcam/ShotParams;
-
-    iget-wide v1, v0, Lcom/google/googlex/gcam/ShotParams;->a:J
-
-    invoke-static {v1, v2, v0, p1}, Lcom/google/googlex/gcam/GcamModuleJNI;->ShotParams_psaf_max_exposure_time_ms_set(JLcom/google/googlex/gcam/ShotParams;F)V
-
-    return-void
-
-    :pswitch_c
-    iget-object v0, p0, Ldcc;->a:Ljava/lang/Object;
-
-    check-cast p1, Ljava/lang/Float;
-
-    invoke-virtual {p1}, Ljava/lang/Float;->floatValue()F
-
-    move-result p1
-
-    check-cast v0, Lcom/google/googlex/gcam/ShotParams;
-
-    iget-wide v1, v0, Lcom/google/googlex/gcam/ShotParams;->a:J
-
-    invoke-static {v1, v2, v0, p1}, Lcom/google/googlex/gcam/GcamModuleJNI;->ShotParams_shasta_factor_set(JLcom/google/googlex/gcam/ShotParams;F)V
-
-    return-void
-
-    :pswitch_d
-    iget-object v0, p0, Ldcc;->a:Ljava/lang/Object;
-
-    check-cast p1, Ljava/lang/Integer;
-
-    invoke-virtual {p1}, Ljava/lang/Integer;->intValue()I
-
-    move-result p1
-
-    check-cast v0, Lcom/google/googlex/gcam/ShotParams;
-
-    iget-wide v1, v0, Lcom/google/googlex/gcam/ShotParams;->a:J
-
-    invoke-static {v1, v2, v0, p1}, Lcom/google/googlex/gcam/GcamModuleJNI;->ShotParams_pecan_override_set(JLcom/google/googlex/gcam/ShotParams;I)V
-
-    return-void
-
-    :pswitch_e
-    iget-object v0, p0, Ldcc;->a:Ljava/lang/Object;
-
-    check-cast p1, Ljava/lang/Float;
-
-    invoke-virtual {p1}, Ljava/lang/Float;->floatValue()F
-
-    move-result p1
-
-    check-cast v0, Lcom/google/googlex/gcam/BuildPayloadBurstSpecOptions;
-
-    invoke-virtual {v0, p1}, Lcom/google/googlex/gcam/BuildPayloadBurstSpecOptions;->b(F)V
-
-    return-void
-
-    :pswitch_f
-    iget-object v0, p0, Ldcc;->a:Ljava/lang/Object;
-
-    check-cast p1, Landroid/graphics/drawable/Drawable;
-
-    check-cast v0, Lddn;
-
-    iput-object p1, v0, Lddn;->c:Landroid/graphics/drawable/Drawable;
-
-    return-void
-
-    :pswitch_10
-    iget-object v0, p0, Ldcc;->a:Ljava/lang/Object;
-
-    check-cast p1, Lddd;
-
-    check-cast v0, Lddf;
-
-    iget-object v0, v0, Lddf;->a:Lcom/google/android/apps/camera/camerafatalerror/CameraFatalErrorTrackerDatabase;
-
-    invoke-virtual {v0}, Lcom/google/android/apps/camera/camerafatalerror/CameraFatalErrorTrackerDatabase;->y()Ldcy;
+    invoke-virtual {p0}, Ldcc;->c()Ldcb;
 
     move-result-object v0
 
-    new-instance v1, Ldcx;
+    iget-object v1, v0, Ldcb;->b:Liax;
 
-    invoke-direct {v1, p1}, Ldcx;-><init>(Lddd;)V
+    iget-object v2, v1, Liax;->h:Ljava/lang/Runnable;
 
-    invoke-virtual {v0, v1}, Ldcy;->b(Ldcx;)V
+    if-eqz v2, :cond_0
 
-    return-void
+    invoke-virtual {v1}, Liax;->b()Liaw;
 
-    :pswitch_11
-    iget-object v0, p0, Ldcc;->a:Ljava/lang/Object;
+    move-result-object v1
 
-    check-cast p1, Lddd;
+    new-instance v3, Ldbz;
 
-    check-cast v0, Ldja;
+    invoke-direct {v3, p1, v2}, Ldbz;-><init>(Liay;Ljava/lang/Runnable;)V
 
-    iget-object v3, v0, Ldja;->a:Ljava/lang/Object;
+    iput-object v3, v1, Liaw;->g:Ljava/lang/Runnable;
 
-    check-cast v3, Lcom/google/android/apps/camera/camerafatalerror/CameraFatalErrorTrackerDatabase;
+    invoke-virtual {v1}, Liaw;->a()Liax;
 
-    invoke-virtual {v3}, Lcom/google/android/apps/camera/camerafatalerror/CameraFatalErrorTrackerDatabase;->y()Ldcy;
+    move-result-object p1
 
-    move-result-object v3
-
-    iget-object v4, v0, Ldja;->c:Ljava/lang/Object;
-
-    check-cast v4, Lcvr;
-
-    invoke-virtual {v4}, Lcvr;->d()I
-
-    move-result v4
-
-    sget-object v5, Lddd;->d:Lddd;
-
-    if-eq p1, v5, :cond_3
-
-    sget-object v5, Lddd;->c:Lddd;
-
-    if-eq p1, v5, :cond_3
-
-    sget-object v5, Lddd;->b:Lddd;
-
-    if-ne p1, v5, :cond_2
+    iput-object p1, p0, Ldcc;->f:Liax;
 
     goto :goto_0
 
-    :cond_2
-    goto :goto_1
+    :cond_0
+    iput-object v1, p0, Ldcc;->f:Liax;
 
-    :cond_3
     :goto_0
-    iget-object v0, v0, Ldja;->c:Ljava/lang/Object;
+    iget p1, v0, Ldcb;->a:I
 
-    check-cast v0, Lcvr;
+    iput p1, p0, Ldcc;->g:I
 
-    invoke-virtual {v0}, Lcvr;->f()I
+    return-void
+.end method
 
-    move-result v4
+.method protected abstract c()Ldcb;
+.end method
 
-    :goto_1
-    move-object v0, v3
+.method public final d()V
+    .locals 8
 
-    check-cast v0, Lddc;
+    iget-object v0, p0, Ldcc;->e:Ljava/util/concurrent/atomic/AtomicBoolean;
 
-    iget-object v5, v0, Lddc;->a:Lapt;
+    const/4 v1, 0x1
 
-    invoke-virtual {v5}, Lapt;->l()V
+    const/4 v2, 0x0
 
-    iget-object v5, v0, Lddc;->b:Laqa;
+    invoke-virtual {v0, v1, v2}, Ljava/util/concurrent/atomic/AtomicBoolean;->compareAndSet(ZZ)Z
 
-    invoke-virtual {v5}, Laqa;->e()Larf;
+    move-result v0
 
-    move-result-object v5
+    if-eqz v0, :cond_2
 
-    iget-object v6, v0, Lddc;->c:Lbze;
+    iget-object v0, p0, Ldcc;->i:Liay;
 
-    invoke-virtual {p1}, Lddd;->ordinal()I
+    if-eqz v0, :cond_1
+
+    iget-object v3, p0, Ldcc;->f:Liax;
+
+    iget-wide v3, v3, Liax;->a:J
+
+    const-wide/16 v5, 0x0
+
+    cmp-long v7, v3, v5
+
+    if-nez v7, :cond_0
+
+    iget-object v3, p0, Ldcc;->c:Ljava/util/concurrent/ScheduledExecutorService;
+
+    new-instance v4, Lfkf;
+
+    invoke-direct {v4, v0, v1}, Lfkf;-><init>(Liay;I)V
+
+    const-wide/16 v0, 0x3e8
+
+    sget-object v5, Ljava/util/concurrent/TimeUnit;->MILLISECONDS:Ljava/util/concurrent/TimeUnit;
+
+    invoke-interface {v3, v4, v0, v1, v5}, Ljava/util/concurrent/ScheduledExecutorService;->schedule(Ljava/lang/Runnable;JLjava/util/concurrent/TimeUnit;)Ljava/util/concurrent/ScheduledFuture;
+
+    move-result-object v0
+
+    iput-object v0, p0, Ldcc;->d:Ljava/util/concurrent/ScheduledFuture;
+
+    goto :goto_0
+
+    :cond_0
+    invoke-interface {v0}, Liay;->a()V
+
+    :cond_1
+    :goto_0
+    iget-object v0, p0, Ldcc;->h:Ljava/util/concurrent/ScheduledFuture;
+
+    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    invoke-interface {v0, v2}, Ljava/util/concurrent/ScheduledFuture;->cancel(Z)Z
+
+    const/4 v0, 0x0
+
+    iput-object v0, p0, Ldcc;->h:Ljava/util/concurrent/ScheduledFuture;
+
+    return-void
+
+    :cond_2
+    return-void
+.end method
+
+.method protected abstract e(Ljava/util/Map;)Z
+.end method
+
+.method public final fL(JLjava/util/Map;)V
+    .locals 7
+
+    iget-object p1, p0, Ldcc;->j:Ljava/util/concurrent/atomic/AtomicBoolean;
+
+    invoke-virtual {p1}, Ljava/util/concurrent/atomic/AtomicBoolean;->get()Z
 
     move-result p1
 
-    int-to-long v6, p1
-
-    invoke-virtual {v5, v2, v6, v7}, Lare;->e(IJ)V
-
-    int-to-long v6, v4
-
-    invoke-virtual {v5, v1, v6, v7}, Lare;->e(IJ)V
-
-    iget-object p1, v0, Lddc;->a:Lapt;
-
-    invoke-virtual {p1}, Lapt;->m()V
-
-    :try_start_0
-    invoke-virtual {v5}, Larf;->a()I
-
-    check-cast v3, Lddc;
-
-    iget-object p1, v3, Lddc;->a:Lapt;
-
-    invoke-virtual {p1}, Lapt;->q()V
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    iget-object p1, v0, Lddc;->a:Lapt;
-
-    invoke-virtual {p1}, Lapt;->o()V
-
-    iget-object p1, v0, Lddc;->b:Laqa;
-
-    invoke-virtual {p1, v5}, Laqa;->g(Larf;)V
+    if-eqz p1, :cond_0
 
     return-void
 
-    :catchall_0
-    move-exception p1
+    :cond_0
+    invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
-    iget-object v1, v0, Lddc;->a:Lapt;
+    move-result-wide p1
 
-    invoke-virtual {v1}, Lapt;->o()V
+    iput-wide p1, p0, Ldcc;->b:J
 
-    iget-object v0, v0, Lddc;->b:Laqa;
+    invoke-virtual {p0, p3}, Ldcc;->e(Ljava/util/Map;)Z
 
-    invoke-virtual {v0, v5}, Laqa;->g(Larf;)V
+    move-result p1
 
-    throw p1
+    const/4 p2, 0x1
 
-    :pswitch_12
-    iget-object v0, p0, Ldcc;->a:Ljava/lang/Object;
+    const/4 p3, 0x0
 
-    check-cast p1, Ljava/lang/String;
+    if-eqz p1, :cond_1
 
-    check-cast v0, Lczv;
+    iget p1, p0, Ldcc;->a:I
 
-    iget-object v3, v0, Lczv;->q:Ljew;
+    add-int/2addr p1, p2
 
-    invoke-virtual {v3, p1}, Ljew;->X(Ljava/lang/String;)I
+    iget v0, p0, Ldcc;->g:I
 
-    move-result v3
+    invoke-static {p1, v0}, Ljava/lang/Math;->min(II)I
 
-    if-nez v3, :cond_6
+    move-result p1
 
-    iget v3, v0, Lczv;->n:I
+    iput p1, p0, Ldcc;->a:I
 
-    iget-object v4, v0, Lczv;->j:Lcom/google/android/apps/camera/camcorder/ui/modeslider/recordspeed/RecordSpeedSlider;
+    goto :goto_0
 
-    invoke-virtual {v4, v3}, Lcom/google/android/apps/camera/camcorder/ui/modeslider/recordspeed/RecordSpeedSlider;->b(I)I
+    :cond_1
+    iput p3, p0, Ldcc;->a:I
 
-    move-result v4
+    const/4 p1, 0x0
 
-    iget-object v5, v0, Lczv;->j:Lcom/google/android/apps/camera/camcorder/ui/modeslider/recordspeed/RecordSpeedSlider;
+    :goto_0
+    iget v0, p0, Ldcc;->g:I
 
-    invoke-virtual {v5, v3}, Lcom/google/android/apps/camera/camcorder/ui/modeslider/recordspeed/RecordSpeedSlider;->getChildAt(I)Landroid/view/View;
+    if-ne p1, v0, :cond_4
 
-    move-result-object v5
+    iget-object p1, p0, Ldcc;->e:Ljava/util/concurrent/atomic/AtomicBoolean;
 
-    iget-object v6, v0, Lczv;->a:Ljava/util/ArrayList;
+    invoke-virtual {p1, p3, p2}, Ljava/util/concurrent/atomic/AtomicBoolean;->compareAndSet(ZZ)Z
 
-    invoke-virtual {v6, v4}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+    move-result p1
 
-    move-result-object v6
+    if-eqz p1, :cond_3
 
-    check-cast v6, Ljava/lang/Boolean;
+    iget-object p1, p0, Ldcc;->i:Liay;
 
-    invoke-virtual {v6}, Ljava/lang/Boolean;->booleanValue()Z
+    if-eqz p1, :cond_2
 
-    move-result v6
+    iget-object p2, p0, Ldcc;->f:Liax;
 
-    if-nez v6, :cond_5
+    invoke-interface {p1, p2}, Liay;->b(Liax;)V
 
-    if-nez v5, :cond_4
+    :cond_2
+    iget-object v0, p0, Ldcc;->c:Ljava/util/concurrent/ScheduledExecutorService;
 
-    goto/16 :goto_3
+    new-instance v1, Ldby;
+
+    invoke-direct {v1, p0}, Ldby;-><init>(Ldcc;)V
+
+    const-wide/16 v2, 0x1388
+
+    const-wide/16 v4, 0x1388
+
+    sget-object v6, Ljava/util/concurrent/TimeUnit;->MILLISECONDS:Ljava/util/concurrent/TimeUnit;
+
+    invoke-interface/range {v0 .. v6}, Ljava/util/concurrent/ScheduledExecutorService;->scheduleAtFixedRate(Ljava/lang/Runnable;JJLjava/util/concurrent/TimeUnit;)Ljava/util/concurrent/ScheduledFuture;
+
+    move-result-object p1
+
+    iput-object p1, p0, Ldcc;->h:Ljava/util/concurrent/ScheduledFuture;
+
+    :cond_3
+    return-void
 
     :cond_4
-    iget-object v6, v0, Lczv;->j:Lcom/google/android/apps/camera/camcorder/ui/modeslider/recordspeed/RecordSpeedSlider;
+    invoke-virtual {p0}, Ldcc;->d()V
 
-    iget-object v7, v6, Lcom/google/android/apps/camera/camcorder/ui/modeslider/recordspeed/RecordSpeedSlider;->c:Lmtb;
+    return-void
+.end method
 
-    invoke-virtual {v6, v3}, Lcom/google/android/apps/camera/camcorder/ui/modeslider/recordspeed/RecordSpeedSlider;->b(I)I
+.method public final u()V
+    .locals 2
 
-    move-result v3
+    iget-object v0, p0, Ldcc;->j:Ljava/util/concurrent/atomic/AtomicBoolean;
 
-    invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    const/4 v1, 0x1
 
-    move-result-object v3
+    invoke-virtual {v0, v1}, Ljava/util/concurrent/atomic/AtomicBoolean;->set(Z)V
 
-    invoke-virtual {v7, v3}, Lmtb;->d(Ljava/lang/Object;)Ljava/util/List;
-
-    move-result-object v3
-
-    invoke-interface {v3, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Ljava/lang/String;
-
-    invoke-virtual {v5}, Landroid/view/View;->requestLayout()V
-
-    iget-object v3, v0, Lczv;->k:Lkad;
-
-    invoke-interface {v3}, Lkad;->close()V
-
-    iget-object v3, v0, Lczv;->i:Landroid/view/WindowManager;
-
-    invoke-interface {v3}, Landroid/view/WindowManager;->getDefaultDisplay()Landroid/view/Display;
-
-    move-result-object v3
-
-    invoke-virtual {v5}, Landroid/view/View;->getContext()Landroid/content/Context;
-
-    move-result-object v6
-
-    invoke-static {v3, v6}, Liko;->b(Landroid/view/Display;Landroid/content/Context;)Liko;
-
-    move-result-object v3
-
-    invoke-virtual {v5}, Landroid/view/View;->getResources()Landroid/content/res/Resources;
-
-    move-result-object v6
-
-    const v7, 0x7f0705eb
-
-    invoke-virtual {v6, v7}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
-
-    move-result v6
-
-    invoke-virtual {v3}, Liko;->ordinal()I
-
-    move-result v3
-
-    packed-switch v3, :pswitch_data_1
-
-    goto :goto_3
-
-    :pswitch_13
-    new-instance v3, Lifx;
-
-    invoke-direct {v3, v1}, Lifx;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v3, v5, v6}, Lifx;->h(Landroid/view/View;I)V
-
-    invoke-interface {v3}, Lify;->i()V
-
-    goto :goto_2
-
-    :pswitch_14
-    new-instance v3, Lifx;
-
-    invoke-direct {v3, v1}, Lifx;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v3, v5, v6}, Lifx;->j(Landroid/view/View;I)V
-
-    invoke-interface {v3}, Lify;->i()V
-
-    goto :goto_2
-
-    :pswitch_15
-    new-instance v3, Lifx;
-
-    invoke-direct {v3, v1}, Lifx;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v3, v5}, Lifx;->q(Landroid/view/View;)V
-
-    invoke-interface {v3}, Lify;->i()V
-
-    :goto_2
-    invoke-interface {v3}, Lifz;->k()V
-
-    invoke-interface {v3}, Liga;->l()V
-
-    iput-boolean v2, v3, Lifx;->g:Z
-
-    const/16 v1, 0x12c
-
-    iput v1, v3, Lifx;->d:I
-
-    const/16 v1, 0xed8
-
-    iput v1, v3, Lifx;->e:I
-
-    const/4 v1, 0x6
-
-    iput v1, v3, Lifx;->m:I
-
-    new-instance v1, Lbbh;
-
-    const/16 v2, 0x9
-
-    invoke-direct {v1, v0, v4, v2}, Lbbh;-><init>(Lczv;II)V
-
-    iget-object v2, v0, Lczv;->f:Ljuh;
-
-    invoke-interface {v3, v1, v2}, Liga;->f(Ljava/lang/Runnable;Ljava/util/concurrent/Executor;)V
+    iget-object v0, p0, Ldcc;->e:Ljava/util/concurrent/atomic/AtomicBoolean;
 
     const/4 v1, 0x0
 
-    iput-boolean v1, v3, Lifx;->f:Z
-
-    iget-object v1, v0, Lczv;->d:Lell;
-
-    iput-object v1, v3, Lifx;->i:Lell;
-
-    invoke-interface {v3}, Liga;->a()Lkad;
-
-    move-result-object v1
-
-    iput-object v1, v0, Lczv;->k:Lkad;
-
-    iget-object v1, v0, Lczv;->o:Lcdi;
-
-    invoke-virtual {v1}, Lcdi;->i()Ljuf;
-
-    move-result-object v1
-
-    iget-object v2, v0, Lczv;->k:Lkad;
-
-    invoke-virtual {v1, v2}, Ljuf;->d(Lkad;)V
-
-    :cond_5
-    :goto_3
-    iget-object v0, v0, Lczv;->q:Ljew;
-
-    invoke-virtual {v0, p1}, Ljew;->Z(Ljava/lang/String;)I
+    invoke-virtual {v0, v1}, Ljava/util/concurrent/atomic/AtomicBoolean;->set(Z)V
 
     return-void
-
-    :cond_6
-    return-void
-
-    :pswitch_16
-    iget-object v0, p0, Ldcc;->a:Ljava/lang/Object;
-
-    check-cast p1, Ldbv;
-
-    check-cast v0, Ldbf;
-
-    iget-object v0, v0, Ldbf;->c:Ljava/util/List;
-
-    invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-
-    return-void
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_16
-        :pswitch_12
-        :pswitch_11
-        :pswitch_10
-        :pswitch_f
-        :pswitch_e
-        :pswitch_d
-        :pswitch_c
-        :pswitch_b
-        :pswitch_a
-        :pswitch_9
-        :pswitch_8
-        :pswitch_7
-        :pswitch_6
-        :pswitch_5
-        :pswitch_4
-        :pswitch_3
-        :pswitch_2
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
-
-    :pswitch_data_1
-    .packed-switch 0x0
-        :pswitch_15
-        :pswitch_14
-        :pswitch_13
-    .end packed-switch
 .end method
 
-.method public final synthetic andThen(Ljava/util/function/Consumer;)Ljava/util/function/Consumer;
-    .locals 1
+.method public final v()V
+    .locals 2
 
-    iget v0, p0, Ldcc;->b:I
+    iget-object v0, p0, Ldcc;->j:Ljava/util/concurrent/atomic/AtomicBoolean;
 
-    packed-switch v0, :pswitch_data_0
+    const/4 v1, 0x0
 
-    invoke-static {p0, p1}, Lj$/util/function/Consumer$-CC;->$default$andThen(Ljava/util/function/Consumer;Ljava/util/function/Consumer;)Ljava/util/function/Consumer;
+    invoke-virtual {v0, v1}, Ljava/util/concurrent/atomic/AtomicBoolean;->set(Z)V
 
-    move-result-object p1
-
-    return-object p1
-
-    :pswitch_0
-    invoke-static {p0, p1}, Lj$/util/function/Consumer$-CC;->$default$andThen(Ljava/util/function/Consumer;Ljava/util/function/Consumer;)Ljava/util/function/Consumer;
-
-    move-result-object p1
-
-    return-object p1
-
-    :pswitch_1
-    invoke-static {p0, p1}, Lj$/util/function/Consumer$-CC;->$default$andThen(Ljava/util/function/Consumer;Ljava/util/function/Consumer;)Ljava/util/function/Consumer;
-
-    move-result-object p1
-
-    return-object p1
-
-    :pswitch_2
-    invoke-static {p0, p1}, Lj$/util/function/Consumer$-CC;->$default$andThen(Ljava/util/function/Consumer;Ljava/util/function/Consumer;)Ljava/util/function/Consumer;
-
-    move-result-object p1
-
-    return-object p1
-
-    :pswitch_3
-    invoke-static {p0, p1}, Lj$/util/function/Consumer$-CC;->$default$andThen(Ljava/util/function/Consumer;Ljava/util/function/Consumer;)Ljava/util/function/Consumer;
-
-    move-result-object p1
-
-    return-object p1
-
-    :pswitch_4
-    invoke-static {p0, p1}, Lj$/util/function/Consumer$-CC;->$default$andThen(Ljava/util/function/Consumer;Ljava/util/function/Consumer;)Ljava/util/function/Consumer;
-
-    move-result-object p1
-
-    return-object p1
-
-    :pswitch_5
-    invoke-static {p0, p1}, Lj$/util/function/Consumer$-CC;->$default$andThen(Ljava/util/function/Consumer;Ljava/util/function/Consumer;)Ljava/util/function/Consumer;
-
-    move-result-object p1
-
-    return-object p1
-
-    :pswitch_6
-    invoke-static {p0, p1}, Lj$/util/function/Consumer$-CC;->$default$andThen(Ljava/util/function/Consumer;Ljava/util/function/Consumer;)Ljava/util/function/Consumer;
-
-    move-result-object p1
-
-    return-object p1
-
-    :pswitch_7
-    invoke-static {p0, p1}, Lj$/util/function/Consumer$-CC;->$default$andThen(Ljava/util/function/Consumer;Ljava/util/function/Consumer;)Ljava/util/function/Consumer;
-
-    move-result-object p1
-
-    return-object p1
-
-    :pswitch_8
-    invoke-static {p0, p1}, Lj$/util/function/Consumer$-CC;->$default$andThen(Ljava/util/function/Consumer;Ljava/util/function/Consumer;)Ljava/util/function/Consumer;
-
-    move-result-object p1
-
-    return-object p1
-
-    :pswitch_9
-    invoke-static {p0, p1}, Lj$/util/function/Consumer$-CC;->$default$andThen(Ljava/util/function/Consumer;Ljava/util/function/Consumer;)Ljava/util/function/Consumer;
-
-    move-result-object p1
-
-    return-object p1
-
-    :pswitch_a
-    invoke-static {p0, p1}, Lj$/util/function/Consumer$-CC;->$default$andThen(Ljava/util/function/Consumer;Ljava/util/function/Consumer;)Ljava/util/function/Consumer;
-
-    move-result-object p1
-
-    return-object p1
-
-    :pswitch_b
-    invoke-static {p0, p1}, Lj$/util/function/Consumer$-CC;->$default$andThen(Ljava/util/function/Consumer;Ljava/util/function/Consumer;)Ljava/util/function/Consumer;
-
-    move-result-object p1
-
-    return-object p1
-
-    :pswitch_c
-    invoke-static {p0, p1}, Lj$/util/function/Consumer$-CC;->$default$andThen(Ljava/util/function/Consumer;Ljava/util/function/Consumer;)Ljava/util/function/Consumer;
-
-    move-result-object p1
-
-    return-object p1
-
-    :pswitch_d
-    invoke-static {p0, p1}, Lj$/util/function/Consumer$-CC;->$default$andThen(Ljava/util/function/Consumer;Ljava/util/function/Consumer;)Ljava/util/function/Consumer;
-
-    move-result-object p1
-
-    return-object p1
-
-    :pswitch_e
-    invoke-static {p0, p1}, Lj$/util/function/Consumer$-CC;->$default$andThen(Ljava/util/function/Consumer;Ljava/util/function/Consumer;)Ljava/util/function/Consumer;
-
-    move-result-object p1
-
-    return-object p1
-
-    :pswitch_f
-    invoke-static {p0, p1}, Lj$/util/function/Consumer$-CC;->$default$andThen(Ljava/util/function/Consumer;Ljava/util/function/Consumer;)Ljava/util/function/Consumer;
-
-    move-result-object p1
-
-    return-object p1
-
-    :pswitch_10
-    invoke-static {p0, p1}, Lj$/util/function/Consumer$-CC;->$default$andThen(Ljava/util/function/Consumer;Ljava/util/function/Consumer;)Ljava/util/function/Consumer;
-
-    move-result-object p1
-
-    return-object p1
-
-    :pswitch_11
-    invoke-static {p0, p1}, Lj$/util/function/Consumer$-CC;->$default$andThen(Ljava/util/function/Consumer;Ljava/util/function/Consumer;)Ljava/util/function/Consumer;
-
-    move-result-object p1
-
-    return-object p1
-
-    :pswitch_12
-    invoke-static {p0, p1}, Lj$/util/function/Consumer$-CC;->$default$andThen(Ljava/util/function/Consumer;Ljava/util/function/Consumer;)Ljava/util/function/Consumer;
-
-    move-result-object p1
-
-    return-object p1
-
-    :pswitch_13
-    invoke-static {p0, p1}, Lj$/util/function/Consumer$-CC;->$default$andThen(Ljava/util/function/Consumer;Ljava/util/function/Consumer;)Ljava/util/function/Consumer;
-
-    move-result-object p1
-
-    return-object p1
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_13
-        :pswitch_12
-        :pswitch_11
-        :pswitch_10
-        :pswitch_f
-        :pswitch_e
-        :pswitch_d
-        :pswitch_c
-        :pswitch_b
-        :pswitch_a
-        :pswitch_9
-        :pswitch_8
-        :pswitch_7
-        :pswitch_6
-        :pswitch_5
-        :pswitch_4
-        :pswitch_3
-        :pswitch_2
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
+    return-void
 .end method

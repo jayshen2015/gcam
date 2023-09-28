@@ -1,45 +1,79 @@
-.class public final Ljnp;
+.class public final synthetic Ljnp;
 .super Ljava/lang/Object;
 
+# interfaces
+.implements Liho;
 
-# static fields
-.field public static final a:Ligo;
-    .annotation runtime Ljava/lang/Deprecated;
-    .end annotation
-.end field
 
-.field private static final b:Ljfc;
+# instance fields
+.field public final synthetic a:Llar;
+
+.field public final synthetic b:Lfhv;
+
+.field public final synthetic c:Lpyn;
+
+.field private final synthetic d:I
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 4
+.method public synthetic constructor <init>(Llar;Lfhv;Lpyn;I)V
+    .locals 0
 
-    new-instance v0, Ljno;
+    iput p4, p0, Ljnp;->d:I
 
-    invoke-direct {v0}, Ljno;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    sput-object v0, Ljnp;->b:Ljfc;
+    iput-object p1, p0, Ljnp;->a:Llar;
 
-    new-instance v1, Ligo;
+    iput-object p2, p0, Ljnp;->b:Lfhv;
 
-    const-string v2, "Phenotype.API"
-
-    const/4 v3, 0x0
-
-    invoke-direct {v1, v2, v0, v3, v3}, Ligo;-><init>(Ljava/lang/String;Ljfc;[B[B)V
-
-    sput-object v1, Ljnp;->a:Ligo;
+    iput-object p3, p0, Ljnp;->c:Lpyn;
 
     return-void
 .end method
 
-.method public static a(Landroid/content/Context;)Ljns;
-    .locals 1
 
-    new-instance v0, Ljns;
+# virtual methods
+.method public final run()V
+    .locals 4
 
-    invoke-direct {v0, p0}, Ljns;-><init>(Landroid/content/Context;)V
+    iget v0, p0, Ljnp;->d:I
 
-    return-object v0
+    packed-switch v0, :pswitch_data_0
+
+    iget-object v0, p0, Ljnp;->a:Llar;
+
+    iget-object v1, p0, Ljnp;->b:Lfhv;
+
+    iget-object v2, p0, Ljnp;->c:Lpyn;
+
+    new-instance v3, Lenz;
+
+    invoke-direct {v3, v1, v2}, Lenz;-><init>(Lfhv;Lpyn;)V
+
+    invoke-virtual {v0, v3}, Llar;->execute(Ljava/lang/Runnable;)V
+
+    return-void
+
+    :pswitch_0
+    iget-object v0, p0, Ljnp;->a:Llar;
+
+    iget-object v1, p0, Ljnp;->b:Lfhv;
+
+    iget-object v2, p0, Ljnp;->c:Lpyn;
+
+    invoke-interface {v2}, Lpyn;->get()Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Lfik;
+
+    invoke-static {v0, v1, v2}, Lenl;->f(Llar;Lfhv;Lfik;)V
+
+    return-void
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

@@ -1,87 +1,74 @@
-.class public final Lcrn;
-.super Ljava/lang/Object;
-
-# interfaces
-.implements Logk;
+.class Lcrn;
+.super Lcsa;
 
 
 # instance fields
-.field private final a:Loiw;
-
-.field private final b:Loiw;
-
-.field private final c:Loiw;
-
-.field private final d:Loiw;
+.field final synthetic b:Lcro;
 
 
 # direct methods
-.method public constructor <init>(Loiw;Loiw;Loiw;Loiw;)V
+.method public constructor <init>(Lcro;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lcrn;->b:Lcro;
 
-    iput-object p1, p0, Lcrn;->a:Loiw;
-
-    iput-object p2, p0, Lcrn;->b:Loiw;
-
-    iput-object p3, p0, Lcrn;->c:Loiw;
-
-    iput-object p4, p0, Lcrn;->d:Loiw;
+    invoke-direct {p0}, Lcsa;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Lcrm;
-    .locals 5
-
-    iget-object v0, p0, Lcrn;->a:Loiw;
-
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ldbf;
-
-    iget-object v1, p0, Lcrn;->b:Loiw;
-
-    invoke-interface {v1}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Ldhi;
-
-    iget-object v2, p0, Lcrn;->c:Loiw;
-
-    invoke-interface {v2}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Lgzp;
-
-    iget-object v3, p0, Lcrn;->d:Loiw;
-
-    invoke-interface {v3}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v3
-
-    check-cast v3, Lgzp;
-
-    new-instance v4, Lcrm;
-
-    invoke-direct {v4, v0, v1, v2, v3}, Lcrm;-><init>(Ldbf;Ldhi;Lgzp;Lgzp;)V
-
-    return-object v4
-.end method
-
-.method public final bridge synthetic get()Ljava/lang/Object;
+.method public b()V
     .locals 1
 
-    invoke-virtual {p0}, Lcrn;->a()Lcrm;
+    iget-object v0, p0, Lcrn;->b:Lcro;
 
-    move-result-object v0
+    invoke-virtual {v0}, Lcro;->k()V
 
-    return-object v0
+    return-void
+.end method
+
+.method public d()V
+    .locals 1
+
+    iget-object v0, p0, Lcrn;->b:Lcro;
+
+    iget-object v0, v0, Lcro;->i:Lcsb;
+
+    invoke-virtual {v0}, Lcsb;->c()V
+
+    return-void
+.end method
+
+.method public final f()V
+    .locals 2
+
+    iget-object v0, p0, Lcrn;->b:Lcro;
+
+    iput-object p0, v0, Lcro;->l:Lcsa;
+
+    iget-object v0, v0, Lcro;->k:Lgtg;
+
+    const/4 v1, 0x1
+
+    iput-boolean v1, v0, Lgtg;->ax:Z
+
+    return-void
+.end method
+
+.method public final fK()Z
+    .locals 1
+
+    const/4 v0, 0x1
+
+    return v0
+.end method
+
+.method public final j()I
+    .locals 1
+
+    const/4 v0, 0x2
+
+    return v0
 .end method

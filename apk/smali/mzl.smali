@@ -1,403 +1,225 @@
-.class Lmzl;
-.super Lmzq;
-
-# interfaces
-.implements Ljava/util/Collection;
+.class public final Lmzl;
+.super Ljava/lang/Object;
 
 
-# static fields
-.field private static final serialVersionUID:J
+# instance fields
+.field public a:Ljava/lang/Integer;
+
+.field public b:Ljava/lang/Boolean;
+
+.field public c:Lojc;
+
+.field public d:Ljava/lang/Boolean;
+
+.field public e:Ljava/lang/Boolean;
+
+.field public f:Ljava/lang/Boolean;
+
+.field public g:I
 
 
 # direct methods
-.method public constructor <init>(Ljava/util/Collection;Ljava/lang/Object;)V
+.method public constructor <init>()V
     .locals 0
 
-    invoke-direct {p0, p1, p2}, Lmzq;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method
+
+.method public constructor <init>([B)V
+    .locals 0
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    sget-object p1, Loih;->a:Loih;
+
+    iput-object p1, p0, Lmzl;->c:Lojc;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public a()Ljava/util/Collection;
+.method public final a()Lmzm;
+    .locals 9
+
+    iget v1, p0, Lmzl;->g:I
+
+    if-eqz v1, :cond_1
+
+    iget-object v0, p0, Lmzl;->a:Ljava/lang/Integer;
+
+    if-eqz v0, :cond_1
+
+    iget-object v2, p0, Lmzl;->b:Ljava/lang/Boolean;
+
+    if-eqz v2, :cond_1
+
+    iget-object v2, p0, Lmzl;->d:Ljava/lang/Boolean;
+
+    if-eqz v2, :cond_1
+
+    iget-object v2, p0, Lmzl;->e:Ljava/lang/Boolean;
+
+    if-eqz v2, :cond_1
+
+    iget-object v2, p0, Lmzl;->f:Ljava/lang/Boolean;
+
+    if-nez v2, :cond_0
+
+    goto :goto_0
+
+    :cond_0
+    new-instance v8, Lmzm;
+
+    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
+
+    move-result v2
+
+    iget-object v0, p0, Lmzl;->b:Ljava/lang/Boolean;
+
+    invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
+
+    move-result v3
+
+    iget-object v4, p0, Lmzl;->c:Lojc;
+
+    iget-object v0, p0, Lmzl;->d:Ljava/lang/Boolean;
+
+    invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
+
+    move-result v5
+
+    iget-object v0, p0, Lmzl;->e:Ljava/lang/Boolean;
+
+    invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
+
+    move-result v6
+
+    iget-object v0, p0, Lmzl;->f:Ljava/lang/Boolean;
+
+    invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
+
+    move-result v7
+
+    move-object v0, v8
+
+    invoke-direct/range {v0 .. v7}, Lmzm;-><init>(IIZLojc;ZZZ)V
+
+    return-object v8
+
+    :cond_1
+    :goto_0
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
+    iget v1, p0, Lmzl;->g:I
+
+    if-nez v1, :cond_2
+
+    const-string v1, " enablement"
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    :cond_2
+    iget-object v1, p0, Lmzl;->a:Ljava/lang/Integer;
+
+    if-nez v1, :cond_3
+
+    const-string v1, " rateLimitPerSecond"
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    :cond_3
+    iget-object v1, p0, Lmzl;->b:Ljava/lang/Boolean;
+
+    if-nez v1, :cond_4
+
+    const-string v1, " recordMetricPerProcess"
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    :cond_4
+    iget-object v1, p0, Lmzl;->d:Ljava/lang/Boolean;
+
+    if-nez v1, :cond_5
+
+    const-string v1, " forceGcBeforeRecordMemory"
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    :cond_5
+    iget-object v1, p0, Lmzl;->e:Ljava/lang/Boolean;
+
+    if-nez v1, :cond_6
+
+    const-string v1, " captureDebugMetrics"
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    :cond_6
+    iget-object v1, p0, Lmzl;->f:Ljava/lang/Boolean;
+
+    if-nez v1, :cond_7
+
+    const-string v1, " captureMemoryInfo"
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    :cond_7
+    new-instance v1, Ljava/lang/IllegalStateException;
+
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/String;->length()I
+
+    move-result v2
+
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    add-int/lit8 v2, v2, 0x1c
+
+    invoke-direct {v3, v2}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string v2, "Missing required properties:"
+
+    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-direct {v1, v0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw v1
+.end method
+
+.method public final b(Z)V
     .locals 1
 
-    iget-object v0, p0, Lmzq;->g:Ljava/lang/Object;
+    const/4 v0, 0x1
 
-    check-cast v0, Ljava/util/Collection;
+    if-eq v0, p1, :cond_0
 
-    return-object v0
-.end method
+    const/4 p1, 0x2
 
-.method public final add(Ljava/lang/Object;)Z
-    .locals 2
+    goto :goto_0
 
-    iget-object v0, p0, Lmzl;->h:Ljava/lang/Object;
+    :cond_0
+    const/4 p1, 0x3
 
-    monitor-enter v0
-
-    :try_start_0
-    invoke-virtual {p0}, Lmzl;->a()Ljava/util/Collection;
-
-    move-result-object v1
-
-    invoke-interface {v1, p1}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
-
-    move-result p1
-
-    monitor-exit v0
-
-    return p1
-
-    :catchall_0
-    move-exception p1
-
-    monitor-exit v0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw p1
-.end method
-
-.method public final addAll(Ljava/util/Collection;)Z
-    .locals 2
-
-    iget-object v0, p0, Lmzl;->h:Ljava/lang/Object;
-
-    monitor-enter v0
-
-    :try_start_0
-    invoke-virtual {p0}, Lmzl;->a()Ljava/util/Collection;
-
-    move-result-object v1
-
-    invoke-interface {v1, p1}, Ljava/util/Collection;->addAll(Ljava/util/Collection;)Z
-
-    move-result p1
-
-    monitor-exit v0
-
-    return p1
-
-    :catchall_0
-    move-exception p1
-
-    monitor-exit v0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw p1
-.end method
-
-.method public final clear()V
-    .locals 2
-
-    iget-object v0, p0, Lmzl;->h:Ljava/lang/Object;
-
-    monitor-enter v0
-
-    :try_start_0
-    invoke-virtual {p0}, Lmzl;->a()Ljava/util/Collection;
-
-    move-result-object v1
-
-    invoke-interface {v1}, Ljava/util/Collection;->clear()V
-
-    monitor-exit v0
+    :goto_0
+    iput p1, p0, Lmzl;->g:I
 
     return-void
-
-    :catchall_0
-    move-exception v1
-
-    monitor-exit v0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw v1
-.end method
-
-.method public final contains(Ljava/lang/Object;)Z
-    .locals 2
-
-    iget-object v0, p0, Lmzl;->h:Ljava/lang/Object;
-
-    monitor-enter v0
-
-    :try_start_0
-    invoke-virtual {p0}, Lmzl;->a()Ljava/util/Collection;
-
-    move-result-object v1
-
-    invoke-interface {v1, p1}, Ljava/util/Collection;->contains(Ljava/lang/Object;)Z
-
-    move-result p1
-
-    monitor-exit v0
-
-    return p1
-
-    :catchall_0
-    move-exception p1
-
-    monitor-exit v0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw p1
-.end method
-
-.method public final containsAll(Ljava/util/Collection;)Z
-    .locals 2
-
-    iget-object v0, p0, Lmzl;->h:Ljava/lang/Object;
-
-    monitor-enter v0
-
-    :try_start_0
-    invoke-virtual {p0}, Lmzl;->a()Ljava/util/Collection;
-
-    move-result-object v1
-
-    invoke-interface {v1, p1}, Ljava/util/Collection;->containsAll(Ljava/util/Collection;)Z
-
-    move-result p1
-
-    monitor-exit v0
-
-    return p1
-
-    :catchall_0
-    move-exception p1
-
-    monitor-exit v0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw p1
-.end method
-
-.method public final isEmpty()Z
-    .locals 2
-
-    iget-object v0, p0, Lmzl;->h:Ljava/lang/Object;
-
-    monitor-enter v0
-
-    :try_start_0
-    invoke-virtual {p0}, Lmzl;->a()Ljava/util/Collection;
-
-    move-result-object v1
-
-    invoke-interface {v1}, Ljava/util/Collection;->isEmpty()Z
-
-    move-result v1
-
-    monitor-exit v0
-
-    return v1
-
-    :catchall_0
-    move-exception v1
-
-    monitor-exit v0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw v1
-.end method
-
-.method public final iterator()Ljava/util/Iterator;
-    .locals 1
-
-    invoke-virtual {p0}, Lmzl;->a()Ljava/util/Collection;
-
-    move-result-object v0
-
-    invoke-interface {v0}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public final remove(Ljava/lang/Object;)Z
-    .locals 2
-
-    iget-object v0, p0, Lmzl;->h:Ljava/lang/Object;
-
-    monitor-enter v0
-
-    :try_start_0
-    invoke-virtual {p0}, Lmzl;->a()Ljava/util/Collection;
-
-    move-result-object v1
-
-    invoke-interface {v1, p1}, Ljava/util/Collection;->remove(Ljava/lang/Object;)Z
-
-    move-result p1
-
-    monitor-exit v0
-
-    return p1
-
-    :catchall_0
-    move-exception p1
-
-    monitor-exit v0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw p1
-.end method
-
-.method public final removeAll(Ljava/util/Collection;)Z
-    .locals 2
-
-    iget-object v0, p0, Lmzl;->h:Ljava/lang/Object;
-
-    monitor-enter v0
-
-    :try_start_0
-    invoke-virtual {p0}, Lmzl;->a()Ljava/util/Collection;
-
-    move-result-object v1
-
-    invoke-interface {v1, p1}, Ljava/util/Collection;->removeAll(Ljava/util/Collection;)Z
-
-    move-result p1
-
-    monitor-exit v0
-
-    return p1
-
-    :catchall_0
-    move-exception p1
-
-    monitor-exit v0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw p1
-.end method
-
-.method public final retainAll(Ljava/util/Collection;)Z
-    .locals 2
-
-    iget-object v0, p0, Lmzl;->h:Ljava/lang/Object;
-
-    monitor-enter v0
-
-    :try_start_0
-    invoke-virtual {p0}, Lmzl;->a()Ljava/util/Collection;
-
-    move-result-object v1
-
-    invoke-interface {v1, p1}, Ljava/util/Collection;->retainAll(Ljava/util/Collection;)Z
-
-    move-result p1
-
-    monitor-exit v0
-
-    return p1
-
-    :catchall_0
-    move-exception p1
-
-    monitor-exit v0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw p1
-.end method
-
-.method public final size()I
-    .locals 2
-
-    iget-object v0, p0, Lmzl;->h:Ljava/lang/Object;
-
-    monitor-enter v0
-
-    :try_start_0
-    invoke-virtual {p0}, Lmzl;->a()Ljava/util/Collection;
-
-    move-result-object v1
-
-    invoke-interface {v1}, Ljava/util/Collection;->size()I
-
-    move-result v1
-
-    monitor-exit v0
-
-    return v1
-
-    :catchall_0
-    move-exception v1
-
-    monitor-exit v0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw v1
-.end method
-
-.method public final toArray()[Ljava/lang/Object;
-    .locals 2
-
-    iget-object v0, p0, Lmzl;->h:Ljava/lang/Object;
-
-    monitor-enter v0
-
-    :try_start_0
-    invoke-virtual {p0}, Lmzl;->a()Ljava/util/Collection;
-
-    move-result-object v1
-
-    invoke-interface {v1}, Ljava/util/Collection;->toArray()[Ljava/lang/Object;
-
-    move-result-object v1
-
-    monitor-exit v0
-
-    return-object v1
-
-    :catchall_0
-    move-exception v1
-
-    monitor-exit v0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw v1
-.end method
-
-.method public final toArray([Ljava/lang/Object;)[Ljava/lang/Object;
-    .locals 2
-
-    iget-object v0, p0, Lmzl;->h:Ljava/lang/Object;
-
-    monitor-enter v0
-
-    :try_start_0
-    invoke-virtual {p0}, Lmzl;->a()Ljava/util/Collection;
-
-    move-result-object v1
-
-    invoke-interface {v1, p1}, Ljava/util/Collection;->toArray([Ljava/lang/Object;)[Ljava/lang/Object;
-
-    move-result-object p1
-
-    monitor-exit v0
-
-    return-object p1
-
-    :catchall_0
-    move-exception p1
-
-    monitor-exit v0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw p1
 .end method

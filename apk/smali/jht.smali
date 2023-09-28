@@ -1,38 +1,82 @@
-.class final Ljht;
-.super Ljfc;
+.class public final synthetic Ljht;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Landroid/widget/AdapterView$OnItemClickListener;
+
+
+# instance fields
+.field public final synthetic a:Lcom/google/android/apps/camera/ui/popupmenu/PopupMenuView;
+
+.field public final synthetic b:Ljhs;
 
 
 # direct methods
-.method public constructor <init>()V
+.method public synthetic constructor <init>(Lcom/google/android/apps/camera/ui/popupmenu/PopupMenuView;Ljhs;)V
     .locals 0
 
-    invoke-direct {p0}, Ljfc;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Ljht;->a:Lcom/google/android/apps/camera/ui/popupmenu/PopupMenuView;
+
+    iput-object p2, p0, Ljht;->b:Ljhs;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final bridge synthetic e(Landroid/content/Context;Landroid/os/Looper;Ljge;Ljava/lang/Object;Ljei;Ljff;)Ljcz;
-    .locals 6
+.method public final onItemClick(Landroid/widget/AdapterView;Landroid/view/View;IJ)V
+    .locals 1
 
-    check-cast p4, Ljhm;
+    iget-object p1, p0, Ljht;->a:Lcom/google/android/apps/camera/ui/popupmenu/PopupMenuView;
 
-    new-instance p4, Ljhv;
+    iget-object p2, p0, Ljht;->b:Ljhs;
 
-    move-object v0, p4
+    invoke-virtual {p2, p3}, Ljhs;->d(I)V
 
-    move-object v1, p1
+    invoke-virtual {p2, p3}, Ljhs;->a(I)Ljhp;
 
-    move-object v2, p2
+    move-result-object p4
 
-    move-object v3, p3
+    iget-boolean p4, p4, Ljhp;->f:Z
 
-    move-object v4, p5
+    if-nez p4, :cond_0
 
-    move-object v5, p6
+    return-void
 
-    invoke-direct/range {v0 .. v5}, Ljhv;-><init>(Landroid/content/Context;Landroid/os/Looper;Ljge;Ljei;Ljff;)V
+    :cond_0
+    invoke-virtual {p1}, Lcom/google/android/apps/camera/ui/popupmenu/PopupMenuView;->getContext()Landroid/content/Context;
 
-    return-object p4
+    move-result-object p4
+
+    invoke-static {p4}, Ljty;->b(Landroid/content/Context;)V
+
+    invoke-virtual {p1}, Lcom/google/android/apps/camera/ui/popupmenu/PopupMenuView;->getResources()Landroid/content/res/Resources;
+
+    move-result-object p4
+
+    const/4 p5, 0x1
+
+    new-array p5, p5, [Ljava/lang/Object;
+
+    const/4 v0, 0x0
+
+    invoke-virtual {p2, p3}, Ljhs;->a(I)Ljhp;
+
+    move-result-object p2
+
+    iget-object p2, p2, Ljhp;->b:Ljava/lang/String;
+
+    aput-object p2, p5, v0
+
+    const p2, 0x7f14028b
+
+    invoke-virtual {p4, p2, p5}, Landroid/content/res/Resources;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object p2
+
+    invoke-virtual {p1, p2}, Lcom/google/android/apps/camera/ui/popupmenu/PopupMenuView;->announceForAccessibility(Ljava/lang/CharSequence;)V
+
+    return-void
 .end method

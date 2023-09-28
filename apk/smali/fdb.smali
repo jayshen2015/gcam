@@ -2,18 +2,22 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lgxm;
+.implements Lavu;
 
 
 # instance fields
-.field final synthetic a:Lfdc;
+.field final synthetic a:Lawl;
+
+.field final synthetic b:Lfdc;
 
 
 # direct methods
-.method public constructor <init>(Lfdc;)V
+.method public constructor <init>(Lfdc;Lawl;)V
     .locals 0
 
-    iput-object p1, p0, Lfdb;->a:Lfdc;
+    iput-object p1, p0, Lfdb;->b:Lfdc;
+
+    iput-object p2, p0, Lfdb;->a:Lawl;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -22,134 +26,80 @@
 
 
 # virtual methods
-.method public final synthetic j(Lgxy;)V
-    .locals 0
-
-    return-void
-.end method
-
-.method public final synthetic k(Lgxy;)V
-    .locals 0
-
-    return-void
-.end method
-
-.method public final synthetic l(Lgxy;)V
-    .locals 0
-
-    return-void
-.end method
-
-.method public final m(J)V
-    .locals 4
-
-    iget-object v0, p0, Lfdb;->a:Lfdc;
-
-    iget-boolean v1, v0, Lfdc;->c:Z
-
-    if-nez v1, :cond_0
-
-    iget-boolean v1, v0, Lfdc;->d:Z
-
-    if-eqz v1, :cond_0
-
-    invoke-static {v0}, Lfdc;->f(Lfdc;)V
-
-    iget-object v0, p0, Lfdb;->a:Lfdc;
-
-    iget v1, v0, Lfdc;->g:I
-
-    const/4 v2, 0x0
-
-    filled-new-array {v1, v2}, [I
-
-    move-result-object v1
-
-    invoke-static {v1}, Landroid/animation/ValueAnimator;->ofInt([I)Landroid/animation/ValueAnimator;
-
-    move-result-object v1
-
-    new-instance v2, Lafx;
-
-    const/16 v3, 0xd
-
-    invoke-direct {v2, v0, v3}, Lafx;-><init>(Lfdc;I)V
-
-    invoke-virtual {v1, v2}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
-
-    new-instance v0, Landroid/view/animation/AccelerateInterpolator;
-
-    invoke-direct {v0}, Landroid/view/animation/AccelerateInterpolator;-><init>()V
-
-    invoke-virtual {v1, v0}, Landroid/animation/ValueAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
-
-    invoke-virtual {v1, p1, p2}, Landroid/animation/ValueAnimator;->setDuration(J)Landroid/animation/ValueAnimator;
-
-    invoke-virtual {v1}, Landroid/animation/ValueAnimator;->start()V
-
-    :cond_0
-    return-void
-.end method
-
-.method public final synthetic n(Landroid/graphics/Bitmap;)V
-    .locals 0
-
-    return-void
-.end method
-
-.method public final o(Landroid/graphics/Bitmap;I)V
+.method public final a(ZLawl;)V
     .locals 2
 
-    iget-object v0, p0, Lfdb;->a:Lfdc;
+    iget-object p2, p0, Lfdb;->b:Lfdc;
 
-    iget-boolean v1, v0, Lfdc;->d:Z
+    iget-object p2, p2, Lfdc;->a:Lfdj;
+
+    iget v0, p2, Lfdj;->k:I
+
+    add-int/lit8 v0, v0, 0x1
+
+    iput v0, p2, Lfdj;->k:I
+
+    iget-boolean v1, p2, Lfdj;->j:Z
 
     if-eqz v1, :cond_0
 
-    iget v1, v0, Lfdc;->e:I
+    sget-object p1, Lfdj;->a:Louj;
 
-    sub-int/2addr v1, p2
-
-    iget p2, v0, Lfdc;->f:I
-
-    add-int/2addr v1, p2
-
-    invoke-static {v0}, Lfdc;->f(Lfdc;)V
-
-    iget-object p2, p0, Lfdb;->a:Lfdc;
-
-    iget-object p2, p2, Lfdc;->a:Lcom/google/android/apps/camera/ui/widget/ReviewImageView;
-
-    invoke-static {p1, v1}, Lilu;->a(Landroid/graphics/Bitmap;I)Landroid/graphics/Bitmap;
+    invoke-virtual {p1}, Loue;->c()Lova;
 
     move-result-object p1
 
-    invoke-virtual {p2, p1}, Lcom/google/android/apps/camera/ui/widget/ReviewImageView;->b(Landroid/graphics/Bitmap;)V
+    const/16 p2, 0x672
+
+    const-string v0, "Past trial succeeded so nothing to do, shouldn\'t have gotten to this."
+
+    invoke-static {p1, v0, p2}, Ld;->v(Lova;Ljava/lang/String;C)V
+
+    goto :goto_1
 
     :cond_0
-    return-void
-.end method
+    if-nez p1, :cond_1
 
-.method public final synthetic p(Lgxy;Lkae;)V
-    .locals 0
+    const/4 v1, 0x3
 
-    return-void
-.end method
+    if-lt v0, v1, :cond_2
 
-.method public final synthetic q(Lgxy;Lgxt;Lgyb;)V
-    .locals 0
+    :cond_1
+    iget-object v0, p0, Lfdb;->a:Lawl;
 
-    return-void
-.end method
+    invoke-virtual {p2, v0}, Lfdj;->d(Lawl;)V
 
-.method public final synthetic r(Lgxy;)V
-    .locals 0
+    :cond_2
+    iget-object p2, p0, Lfdb;->b:Lfdc;
 
-    return-void
-.end method
+    iget-object p2, p2, Lfdc;->a:Lfdj;
 
-.method public final synthetic x(Lgxy;)V
-    .locals 0
+    if-eqz p1, :cond_3
+
+    iget-wide v0, p2, Lfdj;->i:D
+
+    goto :goto_0
+
+    :cond_3
+    const-wide v0, -0x3f3c7d0000000000L    # -9990.0
+
+    :goto_0
+    iput-wide v0, p2, Lfdj;->h:D
+
+    iget-object p2, p0, Lfdb;->b:Lfdc;
+
+    iget-object p2, p2, Lfdc;->a:Lfdj;
+
+    iput-boolean p1, p2, Lfdj;->j:Z
+
+    :goto_1
+    iget-object p1, p0, Lfdb;->b:Lfdc;
+
+    iget-object p1, p1, Lfdc;->a:Lfdj;
+
+    iget-object p1, p1, Lfdj;->l:Ljava/util/concurrent/Semaphore;
+
+    invoke-virtual {p1}, Ljava/util/concurrent/Semaphore;->release()V
 
     return-void
 .end method

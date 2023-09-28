@@ -1,151 +1,182 @@
-.class public final synthetic Loec;
-.super Ljava/lang/Object;
-
-# interfaces
-.implements Loei;
+.class final Loec;
+.super Loeg;
 
 
 # instance fields
-.field public final synthetic a:Lcom/google/vr/cardboard/ExternalSurfaceManager;
-
-.field private final synthetic b:I
+.field final synthetic a:Loed;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lcom/google/vr/cardboard/ExternalSurfaceManager;I)V
-    .locals 0
+.method public constructor <init>(Loed;Lofi;)V
+    .locals 3
 
-    iput p2, p0, Loec;->b:I
+    iput-object p1, p0, Loec;->a:Loed;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance v0, Loxk;
 
-    iput-object p1, p0, Loec;->a:Lcom/google/vr/cardboard/ExternalSurfaceManager;
+    const-string v1, "OnRequestInstallCallback"
+
+    const/4 v2, 0x0
+
+    invoke-direct {v0, v1, v2}, Loxk;-><init>(Ljava/lang/String;[B)V
+
+    invoke-direct {p0, p1, p2}, Loeg;-><init>(Loed;Lofi;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Loeg;)V
-    .locals 8
+.method public final c(Landroid/os/Bundle;)V
+    .locals 18
 
-    iget v0, p0, Loec;->b:I
+    move-object/from16 v0, p0
 
-    const/4 v1, 0x0
+    move-object/from16 v1, p1
 
-    packed-switch v0, :pswitch_data_0
+    invoke-super/range {p0 .. p1}, Loeg;->c(Landroid/os/Bundle;)V
 
-    iget-object v0, p0, Loec;->a:Lcom/google/vr/cardboard/ExternalSurfaceManager;
+    invoke-static/range {p1 .. p1}, Loed;->a(Landroid/os/Bundle;)I
 
-    iget-object v2, v0, Lcom/google/vr/cardboard/ExternalSurfaceManager;->a:Loed;
+    move-result v2
 
-    iget-boolean v0, p1, Loeg;->i:Z
+    if-eqz v2, :cond_0
 
-    if-nez v0, :cond_3
+    iget-object v2, v0, Loec;->b:Lofi;
+
+    new-instance v3, Loej;
+
+    invoke-static/range {p1 .. p1}, Loed;->a(Landroid/os/Bundle;)I
+
+    move-result v1
+
+    invoke-direct {v3, v1}, Loej;-><init>(I)V
+
+    invoke-virtual {v2, v3}, Lofi;->a(Ljava/lang/Exception;)V
+
+    return-void
 
     :cond_0
-    goto :goto_1
+    iget-object v2, v0, Loec;->b:Lofi;
 
-    :pswitch_0
-    iget-object v0, p0, Loec;->a:Lcom/google/vr/cardboard/ExternalSurfaceManager;
+    iget-object v3, v0, Loec;->a:Loed;
 
-    iget-object v2, v0, Lcom/google/vr/cardboard/ExternalSurfaceManager;->a:Loed;
+    const-string v4, "version.code"
 
-    iget-boolean v0, p1, Loeg;->i:Z
+    const/4 v5, -0x1
 
-    if-nez v0, :cond_1
+    invoke-virtual {v1, v4, v5}, Landroid/os/Bundle;->getInt(Ljava/lang/String;I)I
 
-    goto :goto_0
+    move-result v7
+
+    const-string v4, "update.availability"
+
+    invoke-virtual {v1, v4}, Landroid/os/Bundle;->getInt(Ljava/lang/String;)I
+
+    move-result v8
+
+    const-string v4, "install.status"
+
+    const/4 v6, 0x0
+
+    invoke-virtual {v1, v4, v6}, Landroid/os/Bundle;->getInt(Ljava/lang/String;I)I
+
+    move-result v9
+
+    const-string v4, "client.version.staleness"
+
+    invoke-virtual {v1, v4, v5}, Landroid/os/Bundle;->getInt(Ljava/lang/String;I)I
+
+    move-result v10
+
+    if-eq v10, v5, :cond_1
+
+    invoke-virtual {v1, v4}, Landroid/os/Bundle;->getInt(Ljava/lang/String;)I
 
     :cond_1
-    iget-object v0, p1, Loeg;->d:Ljava/util/concurrent/atomic/AtomicInteger;
+    const-string v4, "in.app.update.priority"
 
-    invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicInteger;->get()I
+    invoke-virtual {v1, v4, v6}, Landroid/os/Bundle;->getInt(Ljava/lang/String;I)I
 
-    move-result v0
+    const-string v4, "bytes.downloaded"
 
-    if-lez v0, :cond_2
+    invoke-virtual {v1, v4}, Landroid/os/Bundle;->getLong(Ljava/lang/String;)J
 
-    iget-object v0, p1, Loeg;->d:Ljava/util/concurrent/atomic/AtomicInteger;
+    const-string v4, "total.bytes.to.download"
 
-    invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicInteger;->decrementAndGet()I
+    invoke-virtual {v1, v4}, Landroid/os/Bundle;->getLong(Ljava/lang/String;)J
 
-    iget-object v0, p1, Loeg;->g:Landroid/graphics/SurfaceTexture;
+    const-string v4, "additional.size.required"
 
-    invoke-virtual {v0}, Landroid/graphics/SurfaceTexture;->updateTexImage()V
+    invoke-virtual {v1, v4}, Landroid/os/Bundle;->getLong(Ljava/lang/String;)J
 
-    iget-object v0, p1, Loeg;->g:Landroid/graphics/SurfaceTexture;
+    move-result-wide v10
 
-    iget-object v3, p1, Loeg;->c:[F
+    iget-object v3, v3, Loed;->d:Lodu;
 
-    invoke-virtual {v0, v3}, Landroid/graphics/SurfaceTexture;->getTransformMatrix([F)V
+    new-instance v4, Ljava/io/File;
 
-    iget-object v0, p1, Loeg;->g:Landroid/graphics/SurfaceTexture;
+    iget-object v3, v3, Lodu;->a:Landroid/content/Context;
 
-    invoke-virtual {v0}, Landroid/graphics/SurfaceTexture;->getTimestamp()J
+    invoke-virtual {v3}, Landroid/content/Context;->getFilesDir()Ljava/io/File;
 
-    move-result-wide v5
+    move-result-object v3
 
-    iget v3, p1, Loeg;->a:I
+    const-string v5, "assetpacks"
 
-    iget-object v0, p1, Loeg;->f:[I
+    invoke-direct {v4, v3, v5}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
 
-    aget v4, v0, v1
+    invoke-static {v4}, Lodu;->a(Ljava/io/File;)J
 
-    iget-object v7, p1, Loeg;->c:[F
+    move-result-wide v12
 
-    invoke-virtual/range {v2 .. v7}, Loed;->a(IIJ[F)V
+    const-string v3, "blocking.intent"
+
+    invoke-virtual {v1, v3}, Landroid/os/Bundle;->getParcelable(Ljava/lang/String;)Landroid/os/Parcelable;
+
+    move-result-object v3
+
+    move-object v14, v3
+
+    check-cast v14, Landroid/app/PendingIntent;
+
+    const-string v3, "nonblocking.intent"
+
+    invoke-virtual {v1, v3}, Landroid/os/Bundle;->getParcelable(Ljava/lang/String;)Landroid/os/Parcelable;
+
+    move-result-object v3
+
+    move-object v15, v3
+
+    check-cast v15, Landroid/app/PendingIntent;
+
+    const-string v3, "blocking.destructive.intent"
+
+    invoke-virtual {v1, v3}, Landroid/os/Bundle;->getParcelable(Ljava/lang/String;)Landroid/os/Parcelable;
+
+    move-result-object v3
+
+    move-object/from16 v16, v3
+
+    check-cast v16, Landroid/app/PendingIntent;
+
+    const-string v3, "nonblocking.destructive.intent"
+
+    invoke-virtual {v1, v3}, Landroid/os/Bundle;->getParcelable(Ljava/lang/String;)Landroid/os/Parcelable;
+
+    move-result-object v1
+
+    move-object/from16 v17, v1
+
+    check-cast v17, Landroid/app/PendingIntent;
+
+    new-instance v1, Lodr;
+
+    move-object v6, v1
+
+    invoke-direct/range {v6 .. v17}, Lodr;-><init>(IIIJJLandroid/app/PendingIntent;Landroid/app/PendingIntent;Landroid/app/PendingIntent;Landroid/app/PendingIntent;)V
+
+    invoke-virtual {v2, v1}, Lofi;->b(Ljava/lang/Object;)V
 
     return-void
-
-    :cond_2
-    :goto_0
-    return-void
-
-    :cond_3
-    iget-object v0, p1, Loeg;->d:Ljava/util/concurrent/atomic/AtomicInteger;
-
-    invoke-virtual {v0, v1}, Ljava/util/concurrent/atomic/AtomicInteger;->getAndSet(I)I
-
-    move-result v0
-
-    if-lez v0, :cond_0
-
-    iget-object v0, p1, Loeg;->g:Landroid/graphics/SurfaceTexture;
-
-    invoke-virtual {v0}, Landroid/graphics/SurfaceTexture;->updateTexImage()V
-
-    iget-object v0, p1, Loeg;->g:Landroid/graphics/SurfaceTexture;
-
-    iget-object v3, p1, Loeg;->c:[F
-
-    invoke-virtual {v0, v3}, Landroid/graphics/SurfaceTexture;->getTransformMatrix([F)V
-
-    iget-object v0, p1, Loeg;->g:Landroid/graphics/SurfaceTexture;
-
-    invoke-virtual {v0}, Landroid/graphics/SurfaceTexture;->getTimestamp()J
-
-    move-result-wide v5
-
-    iget v3, p1, Loeg;->a:I
-
-    iget-object v0, p1, Loeg;->f:[I
-
-    aget v4, v0, v1
-
-    iget-object v7, p1, Loeg;->c:[F
-
-    invoke-virtual/range {v2 .. v7}, Loed;->a(IIJ[F)V
-
-    return-void
-
-    :goto_1
-    return-void
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
 .end method

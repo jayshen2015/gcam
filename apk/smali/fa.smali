@@ -1,133 +1,131 @@
-.class final Lfa;
-.super Landroid/support/v7/widget/ContentFrameLayout;
+.class public Lfa;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Landroid/os/Parcelable;
+
+
+# static fields
+.field public static final CREATOR:Landroid/os/Parcelable$Creator;
 
 
 # instance fields
-.field final synthetic a:Lfd;
+.field a:Lez;
 
 
 # direct methods
-.method public constructor <init>(Lfd;Landroid/content/Context;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 2
 
-    iput-object p1, p0, Lfa;->a:Lfd;
+    new-instance v0, Lba;
 
-    invoke-direct {p0, p2}, Landroid/support/v7/widget/ContentFrameLayout;-><init>(Landroid/content/Context;)V
+    const/16 v1, 0xf
+
+    invoke-direct {v0, v1}, Lba;-><init>(I)V
+
+    sput-object v0, Lfa;->CREATOR:Landroid/os/Parcelable$Creator;
+
+    return-void
+.end method
+
+.method public constructor <init>(Landroid/os/Parcel;)V
+    .locals 2
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    invoke-virtual {p1}, Landroid/os/Parcel;->readStrongBinder()Landroid/os/IBinder;
+
+    move-result-object p1
+
+    if-nez p1, :cond_0
+
+    const/4 p1, 0x0
+
+    goto :goto_0
+
+    :cond_0
+    const-string v0, "android.support.v4.os.IResultReceiver"
+
+    invoke-interface {p1, v0}, Landroid/os/IBinder;->queryLocalInterface(Ljava/lang/String;)Landroid/os/IInterface;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_1
+
+    instance-of v1, v0, Lez;
+
+    if-eqz v1, :cond_1
+
+    move-object p1, v0
+
+    check-cast p1, Lez;
+
+    goto :goto_0
+
+    :cond_1
+    new-instance v0, Lex;
+
+    invoke-direct {v0, p1}, Lex;-><init>(Landroid/os/IBinder;)V
+
+    move-object p1, v0
+
+    :goto_0
+    iput-object p1, p0, Lfa;->a:Lez;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final dispatchKeyEvent(Landroid/view/KeyEvent;)Z
-    .locals 1
+.method protected a()V
+    .locals 0
 
-    iget-object v0, p0, Lfa;->a:Lfd;
-
-    invoke-virtual {v0, p1}, Lfd;->F(Landroid/view/KeyEvent;)Z
-
-    move-result v0
-
-    if-nez v0, :cond_1
-
-    invoke-super {p0, p1}, Landroid/support/v7/widget/ContentFrameLayout;->dispatchKeyEvent(Landroid/view/KeyEvent;)Z
-
-    move-result p1
-
-    if-eqz p1, :cond_0
-
-    goto :goto_0
-
-    :cond_0
-    const/4 p1, 0x0
-
-    return p1
-
-    :cond_1
-    :goto_0
-    const/4 p1, 0x1
-
-    return p1
+    return-void
 .end method
 
-.method public final onInterceptTouchEvent(Landroid/view/MotionEvent;)Z
-    .locals 3
-
-    invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
-
-    move-result v0
-
-    if-nez v0, :cond_1
-
-    invoke-virtual {p1}, Landroid/view/MotionEvent;->getX()F
-
-    move-result v0
-
-    float-to-int v0, v0
-
-    invoke-virtual {p1}, Landroid/view/MotionEvent;->getY()F
-
-    move-result v1
-
-    float-to-int v1, v1
-
-    const/4 v2, -0x5
-
-    if-lt v0, v2, :cond_0
-
-    if-lt v1, v2, :cond_0
-
-    invoke-virtual {p0}, Lfa;->getWidth()I
-
-    move-result v2
-
-    add-int/lit8 v2, v2, 0x5
-
-    if-gt v0, v2, :cond_0
-
-    invoke-virtual {p0}, Lfa;->getHeight()I
-
-    move-result v0
-
-    add-int/lit8 v0, v0, 0x5
-
-    if-le v1, v0, :cond_1
-
-    :cond_0
-    iget-object p1, p0, Lfa;->a:Lfd;
+.method public final describeContents()I
+    .locals 1
 
     const/4 v0, 0x0
 
-    invoke-virtual {p1, v0}, Lfd;->M(I)Lfb;
-
-    move-result-object v0
-
-    const/4 v1, 0x1
-
-    invoke-virtual {p1, v0, v1}, Lfd;->y(Lfb;Z)V
-
-    return v1
-
-    :cond_1
-    invoke-super {p0, p1}, Landroid/support/v7/widget/ContentFrameLayout;->onInterceptTouchEvent(Landroid/view/MotionEvent;)Z
-
-    move-result p1
-
-    return p1
+    return v0
 .end method
 
-.method public final setBackgroundResource(I)V
-    .locals 1
+.method public final writeToParcel(Landroid/os/Parcel;I)V
+    .locals 0
 
-    invoke-virtual {p0}, Lfa;->getContext()Landroid/content/Context;
+    monitor-enter p0
 
-    move-result-object v0
+    :try_start_0
+    iget-object p2, p0, Lfa;->a:Lez;
 
-    invoke-static {v0, p1}, Lfs;->a(Landroid/content/Context;I)Landroid/graphics/drawable/Drawable;
+    if-nez p2, :cond_0
 
-    move-result-object p1
+    new-instance p2, Ley;
 
-    invoke-virtual {p0, p1}, Lfa;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
+    invoke-direct {p2, p0}, Ley;-><init>(Lfa;)V
+
+    iput-object p2, p0, Lfa;->a:Lez;
+
+    :cond_0
+    iget-object p2, p0, Lfa;->a:Lez;
+
+    invoke-interface {p2}, Lez;->asBinder()Landroid/os/IBinder;
+
+    move-result-object p2
+
+    invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeStrongBinder(Landroid/os/IBinder;)V
+
+    monitor-exit p0
 
     return-void
+
+    :catchall_0
+    move-exception p1
+
+    monitor-exit p0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw p1
 .end method

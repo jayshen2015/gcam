@@ -1,51 +1,63 @@
-.class public final Lfwe;
+.class public final synthetic Lfwe;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Logk;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field private final a:Lfvx;
+.field public final synthetic a:Lfwg;
 
 
 # direct methods
-.method public constructor <init>(Lfvx;)V
+.method public synthetic constructor <init>(Lfwg;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lfwe;->a:Lfvx;
+    iput-object p1, p0, Lfwe;->a:Lfwg;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Lkaf;
-    .locals 1
+.method public final run()V
+    .locals 3
 
-    iget-object v0, p0, Lfwe;->a:Lfvx;
+    iget-object v0, p0, Lfwe;->a:Lfwg;
 
-    iget-object v0, v0, Lfvx;->a:Ljava/lang/Object;
+    iget-boolean v1, v0, Lfwg;->g:Z
 
-    check-cast v0, Lflg;
+    if-nez v1, :cond_1
 
-    iget-object v0, v0, Lflg;->d:Lihb;
+    const/4 v1, 0x1
 
-    iget-object v0, v0, Lihb;->a:Lkaf;
+    iput-boolean v1, v0, Lfwg;->g:Z
 
-    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    iget-object v1, v0, Lfwg;->a:Llce;
 
-    return-object v0
-.end method
+    const/4 v2, 0x0
 
-.method public final bridge synthetic get()Ljava/lang/Object;
-    .locals 1
+    invoke-static {v2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
-    invoke-virtual {p0}, Lfwe;->a()Lkaf;
+    move-result-object v2
 
-    move-result-object v0
+    invoke-virtual {v1, v2}, Llce;->fB(Ljava/lang/Object;)V
 
-    return-object v0
+    iget-object v1, v0, Lfwg;->e:Llie;
+
+    if-eqz v1, :cond_0
+
+    invoke-interface {v1}, Llie;->close()V
+
+    :cond_0
+    iget-object v0, v0, Lfwg;->f:Llie;
+
+    if-eqz v0, :cond_1
+
+    invoke-interface {v0}, Llie;->close()V
+
+    :cond_1
+    return-void
 .end method

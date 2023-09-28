@@ -1,66 +1,51 @@
 .class public final Ljrs;
-.super Ljhn;
+.super Ljava/lang/Object;
 
-
-# static fields
-.field public static final CREATOR:Landroid/os/Parcelable$Creator;
+# interfaces
+.implements Lpys;
 
 
 # instance fields
-.field public final a:I
-
-.field public final b:Ljava/lang/String;
+.field private final a:Lqkg;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
-
-    new-instance v0, Ljro;
-
-    const/4 v1, 0x4
-
-    invoke-direct {v0, v1}, Ljro;-><init>(I)V
-
-    sput-object v0, Ljrs;->CREATOR:Landroid/os/Parcelable$Creator;
-
-    return-void
-.end method
-
-.method public constructor <init>(ILjava/lang/String;)V
+.method public constructor <init>(Lqkg;)V
     .locals 0
 
-    invoke-direct {p0}, Ljhn;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput p1, p0, Ljrs;->a:I
-
-    iput-object p2, p0, Ljrs;->b:Ljava/lang/String;
+    iput-object p1, p0, Ljrs;->a:Lqkg;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final writeToParcel(Landroid/os/Parcel;I)V
+.method public final a()Ljrr;
     .locals 2
 
-    invoke-static {p1}, Ljhp;->a(Landroid/os/Parcel;)I
+    iget-object v0, p0, Ljrs;->a:Lqkg;
 
-    move-result p2
+    invoke-interface {v0}, Lqkg;->get()Ljava/lang/Object;
 
-    iget v0, p0, Ljrs;->a:I
+    move-result-object v0
 
-    const/4 v1, 0x2
+    check-cast v0, Lgvb;
 
-    invoke-static {p1, v1, v0}, Ljhp;->g(Landroid/os/Parcel;II)V
+    new-instance v1, Ljrr;
 
-    iget-object v0, p0, Ljrs;->b:Ljava/lang/String;
+    invoke-direct {v1, v0}, Ljrr;-><init>(Lgvb;)V
 
-    const/4 v1, 0x3
+    return-object v1
+.end method
 
-    invoke-static {p1, v1, v0}, Ljhp;->p(Landroid/os/Parcel;ILjava/lang/String;)V
+.method public final bridge synthetic get()Ljava/lang/Object;
+    .locals 1
 
-    invoke-static {p1, p2}, Ljhp;->c(Landroid/os/Parcel;I)V
+    invoke-virtual {p0}, Ljrs;->a()Ljrr;
 
-    return-void
+    move-result-object v0
+
+    return-object v0
 .end method

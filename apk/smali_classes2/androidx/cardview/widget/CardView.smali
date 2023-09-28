@@ -15,18 +15,22 @@
 
 .field public final d:Landroid/graphics/Rect;
 
-.field private final f:Laid;
+.field private final f:Lwp;
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 1
+    .locals 3
 
-    const v0, 0x1010031
+    const/4 v0, 0x1
 
-    filled-new-array {v0}, [I
+    new-array v0, v0, [I
 
-    move-result-object v0
+    const/4 v1, 0x0
+
+    const v2, 0x1010031
+
+    aput v2, v0, v1
 
     sput-object v0, Landroidx/cardview/widget/CardView;->e:[I
 
@@ -46,7 +50,7 @@
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
     .locals 1
 
-    const v0, 0x7f0400f4
+    const v0, 0x7f0400b0
 
     invoke-direct {p0, p1, p2, v0}, Landroidx/cardview/widget/CardView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
@@ -70,23 +74,23 @@
 
     iput-object v1, p0, Landroidx/cardview/widget/CardView;->d:Landroid/graphics/Rect;
 
-    new-instance v1, Laid;
+    new-instance v1, Lwp;
 
-    invoke-direct {v1, p0}, Laid;-><init>(Landroidx/cardview/widget/CardView;)V
+    invoke-direct {v1, p0}, Lwp;-><init>(Landroidx/cardview/widget/CardView;)V
 
-    iput-object v1, p0, Landroidx/cardview/widget/CardView;->f:Laid;
+    iput-object v1, p0, Landroidx/cardview/widget/CardView;->f:Lwp;
 
-    sget-object v2, Lwp;->a:[I
+    sget-object v2, Lwo;->a:[I
 
-    const v3, 0x7f1501aa
+    const v3, 0x7f1501b3
 
     invoke-virtual {p1, p2, v2, p3, v3}, Landroid/content/Context;->obtainStyledAttributes(Landroid/util/AttributeSet;[III)Landroid/content/res/TypedArray;
 
     move-result-object v2
 
-    sget-object v6, Lwp;->a:[I
+    sget-object v6, Lwo;->a:[I
 
-    const v10, 0x7f1501aa
+    const v10, 0x7f1501b3
 
     move-object v4, p0
 
@@ -98,7 +102,7 @@
 
     move v9, p3
 
-    invoke-static/range {v4 .. v10}, Lafn;->c(Landroid/view/View;Landroid/content/Context;[ILandroid/util/AttributeSet;Landroid/content/res/TypedArray;II)V
+    invoke-static/range {v4 .. v10}, Lgl;->E(Landroid/view/View;Landroid/content/Context;[ILandroid/util/AttributeSet;Landroid/content/res/TypedArray;II)V
 
     const/4 p1, 0x2
 
@@ -151,7 +155,7 @@
 
     move-result-object p1
 
-    const p2, 0x7f06005a
+    const p2, 0x7f06005c
 
     invoke-virtual {p1, p2}, Landroid/content/res/Resources;->getColor(I)I
 
@@ -164,7 +168,7 @@
 
     move-result-object p1
 
-    const p2, 0x7f060059
+    const p2, 0x7f06005b
 
     invoke-virtual {p1, p2}, Landroid/content/res/Resources;->getColor(I)I
 
@@ -267,29 +271,25 @@
 
     invoke-direct {v0, p1, p3}, Lwq;-><init>(Landroid/content/res/ColorStateList;F)V
 
-    iput-object v0, v1, Laid;->a:Ljava/lang/Object;
+    iput-object v0, v1, Lwp;->a:Landroid/graphics/drawable/Drawable;
 
-    iget-object p1, v1, Laid;->b:Ljava/lang/Object;
-
-    check-cast p1, Landroidx/cardview/widget/CardView;
+    iget-object p1, v1, Lwp;->b:Landroidx/cardview/widget/CardView;
 
     invoke-virtual {p1, v0}, Landroidx/cardview/widget/CardView;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    iget-object p1, v1, Laid;->b:Ljava/lang/Object;
-
-    check-cast p1, Landroid/view/View;
+    iget-object p1, v1, Lwp;->b:Landroidx/cardview/widget/CardView;
 
     invoke-virtual {p1, v6}, Landroid/view/View;->setClipToOutline(Z)V
 
     invoke-virtual {p1, v4}, Landroid/view/View;->setElevation(F)V
 
-    iget-object p1, v1, Laid;->a:Ljava/lang/Object;
+    iget-object p1, v1, Lwp;->a:Landroid/graphics/drawable/Drawable;
 
-    invoke-virtual {v1}, Laid;->c()Z
+    invoke-virtual {v1}, Lwp;->c()Z
 
     move-result p3
 
-    invoke-virtual {v1}, Laid;->b()Z
+    invoke-virtual {v1}, Lwp;->b()Z
 
     move-result v0
 
@@ -323,18 +323,18 @@
     invoke-virtual {p1}, Lwq;->invalidateSelf()V
 
     :cond_4
-    invoke-virtual {v1}, Laid;->c()Z
+    invoke-virtual {v1}, Lwp;->c()Z
 
     move-result p1
 
     if-nez p1, :cond_5
 
-    invoke-virtual {v1, v3, v3, v3, v3}, Laid;->a(IIII)V
+    invoke-virtual {v1, v3, v3, v3, v3}, Lwp;->a(IIII)V
 
     return-void
 
     :cond_5
-    iget-object p1, v1, Laid;->a:Ljava/lang/Object;
+    iget-object p1, v1, Lwp;->a:Landroid/graphics/drawable/Drawable;
 
     check-cast p1, Lwq;
 
@@ -342,7 +342,7 @@
 
     iget p1, p1, Lwq;->a:F
 
-    invoke-virtual {v1}, Laid;->b()Z
+    invoke-virtual {v1}, Lwp;->b()Z
 
     move-result p3
 
@@ -358,7 +358,7 @@
 
     double-to-int p3, v2
 
-    invoke-virtual {v1}, Laid;->b()Z
+    invoke-virtual {v1}, Lwp;->b()Z
 
     move-result v0
 
@@ -374,7 +374,7 @@
 
     double-to-int p1, p1
 
-    invoke-virtual {v1, p3, p1, p3, p1}, Laid;->a(IIII)V
+    invoke-virtual {v1, p3, p1, p3, p1}, Lwp;->a(IIII)V
 
     return-void
 .end method

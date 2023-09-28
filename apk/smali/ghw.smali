@@ -1,54 +1,85 @@
-.class final Lghw;
-.super Lkfg;
+.class public final Lghw;
+.super Ljava/lang/Object;
 
 
 # instance fields
-.field final synthetic a:Lgxl;
+.field private final a:Lfwi;
+
+.field private final b:Lfxc;
+
+.field private final c:Lpht;
 
 
 # direct methods
-.method public constructor <init>(Lgxl;)V
+.method public constructor <init>(Lfwi;Lfxc;Lpht;)V
     .locals 0
 
-    iput-object p1, p0, Lghw;->a:Lgxl;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0}, Lkfg;-><init>()V
+    iput-object p1, p0, Lghw;->a:Lfwi;
+
+    iput-object p2, p0, Lghw;->b:Lfxc;
+
+    iput-object p3, p0, Lghw;->c:Lpht;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final bC(Lkou;)V
-    .locals 2
+.method public final a(Lghu;)V
+    .locals 6
 
-    iget-object v0, p0, Lghw;->a:Lgxl;
+    iget-object v0, p0, Lghw;->a:Lfwi;
 
-    invoke-interface {v0}, Lgxl;->h()Lgxy;
+    iget-object v1, p0, Lghw;->b:Lfxc;
+
+    iget-object v2, v1, Lfxc;->a:Landroid/content/Intent;
+
+    invoke-static {v2}, Lbqe;->m(Landroid/content/Intent;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_0
+
+    sget-object v2, Llwd;->a:Llwd;
+
+    goto :goto_0
+
+    :cond_0
+    sget-object v2, Llwd;->b:Llwd;
+
+    :goto_0
+    iget-object v3, v1, Lfxc;->b:Ldkm;
+
+    iget-object v4, v1, Lfxc;->d:Llwf;
+
+    iget-object v5, v1, Lfxc;->c:Lddf;
+
+    invoke-virtual {v3, v4, v5, v2}, Ldkm;->b(Llvq;Lddf;Llwd;)Llvs;
+
+    move-result-object v2
+
+    if-nez v2, :cond_1
+
+    iget-object v1, v1, Lfxc;->d:Llwf;
+
+    invoke-virtual {v1}, Llwf;->b()Llvs;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    :cond_1
+    iget-object v1, p1, Lghu;->k:Ljrl;
+
+    invoke-virtual {v0, v2, v1}, Lfwi;->a(Llvs;Ljrl;)Lfvx;
 
     move-result-object v0
 
-    iget v0, v0, Lgxy;->a:I
+    iget-object v1, p0, Lghw;->c:Lpht;
 
-    invoke-interface {p1}, Lkou;->b()J
-
-    sget-object v0, Liuw;->h:Landroid/hardware/camera2/CaptureResult$Key;
-
-    invoke-interface {p1, v0}, Lkou;->d(Landroid/hardware/camera2/CaptureResult$Key;)Ljava/lang/Object;
-
-    sget-object v0, Liuw;->i:Landroid/hardware/camera2/CaptureResult$Key;
-
-    invoke-interface {p1, v0}, Lkou;->d(Landroid/hardware/camera2/CaptureResult$Key;)Ljava/lang/Object;
-
-    sget-object v0, Liuw;->j:Landroid/hardware/camera2/CaptureResult$Key;
-
-    invoke-interface {p1, v0}, Lkou;->d(Landroid/hardware/camera2/CaptureResult$Key;)Ljava/lang/Object;
-
-    iget-object v0, p0, Lghw;->a:Lgxl;
-
-    const/4 v1, 0x0
-
-    invoke-interface {v0, p1, v1}, Lgxl;->N(Lkou;Z)V
+    invoke-virtual {p1, v0, v1}, Lghu;->b(Lfvx;Lpht;)Lpht;
 
     return-void
 .end method

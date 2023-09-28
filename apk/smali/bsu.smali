@@ -1,19 +1,24 @@
-.class public interface abstract Lbsu;
+.class final Lbsu;
 .super Ljava/lang/Object;
 
 
-# virtual methods
-.method public abstract a(ILjava/lang/Class;)Ljava/lang/Object;
-.end method
+# instance fields
+.field public final a:Lbsx;
 
-.method public abstract b()V
-.end method
+.field public final b:Lddf;
 
-.method public abstract c(Ljava/lang/Object;)V
-.end method
+.field public c:Lbss;
 
-.method public abstract d(I)V
-.end method
 
-.method public abstract e(Ljava/lang/Class;)Ljava/lang/Object;
+# direct methods
+.method public constructor <init>(Lbsx;Lddf;)V
+    .locals 0
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lbsu;->a:Lbsx;
+
+    iput-object p2, p0, Lbsu;->b:Lddf;
+
+    return-void
 .end method

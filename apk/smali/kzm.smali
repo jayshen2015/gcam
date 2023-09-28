@@ -1,40 +1,48 @@
 .class final Lkzm;
-.super Lkyp;
-
-
-# instance fields
-.field final synthetic a:I
-
-.field final synthetic b:Lkzo;
+.super Lkzl;
 
 
 # direct methods
-.method public constructor <init>(Lkzo;I)V
+.method public constructor <init>(Lkjj;)V
     .locals 0
 
-    iput-object p1, p0, Lkzm;->b:Lkzo;
-
-    iput p2, p0, Lkzm;->a:I
-
-    invoke-direct {p0}, Lkyp;-><init>()V
+    invoke-direct {p0, p1}, Lkzl;-><init>(Lkjj;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final b(Ljava/lang/Object;)V
+.method public final b(Lkxt;)V
     .locals 3
 
-    iget-object v0, p0, Lkzm;->b:Lkzo;
+    new-instance v0, Lkxe;
 
-    iget-object v1, v0, Lkzo;->b:[Ljava/lang/Object;
+    iget v1, p1, Lkxt;->a:I
 
-    iget v2, p0, Lkzm;->a:I
+    invoke-static {v1}, Lmip;->cc(I)Lcom/google/android/gms/common/api/Status;
 
-    aput-object p1, v1, v2
+    move-result-object v1
 
-    invoke-virtual {v0}, Lkzo;->a()V
+    iget-object p1, p1, Lkxt;->b:Lkxf;
+
+    if-nez p1, :cond_0
+
+    const/4 p1, 0x0
+
+    goto :goto_0
+
+    :cond_0
+    new-instance v2, Lkxd;
+
+    invoke-direct {v2, p1}, Lkxd;-><init>(Lkwg;)V
+
+    move-object p1, v2
+
+    :goto_0
+    invoke-direct {v0, v1, p1}, Lkxe;-><init>(Lcom/google/android/gms/common/api/Status;Lkwg;)V
+
+    invoke-virtual {p0, v0}, Lkzl;->f(Ljava/lang/Object;)V
 
     return-void
 .end method

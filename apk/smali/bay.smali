@@ -1,142 +1,60 @@
-.class public final Lbay;
-.super Lbav;
+.class final Lbay;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field public final e:Landroid/net/ConnectivityManager;
-
-.field private final f:Lbax;
+.field final synthetic a:Lbbb;
 
 
 # direct methods
-.method public constructor <init>(Landroid/content/Context;Lva;[B)V
+.method public constructor <init>(Lbbb;)V
     .locals 0
 
-    const/4 p3, 0x0
+    iput-object p1, p0, Lbay;->a:Lbbb;
 
-    invoke-direct {p0, p1, p2, p3}, Lbav;-><init>(Landroid/content/Context;Lva;[B)V
-
-    iget-object p1, p0, Lbav;->a:Landroid/content/Context;
-
-    const-string p2, "connectivity"
-
-    invoke-virtual {p1, p2}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
-
-    move-result-object p1
-
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    check-cast p1, Landroid/net/ConnectivityManager;
-
-    iput-object p1, p0, Lbay;->e:Landroid/net/ConnectivityManager;
-
-    new-instance p1, Lbax;
-
-    invoke-direct {p1, p0}, Lbax;-><init>(Lbay;)V
-
-    iput-object p1, p0, Lbay;->f:Lbax;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final bridge synthetic b()Ljava/lang/Object;
-    .locals 1
+.method public final run()V
+    .locals 2
 
-    iget-object v0, p0, Lbay;->e:Landroid/net/ConnectivityManager;
+    iget-object v0, p0, Lbay;->a:Lbbb;
 
-    invoke-static {v0}, Lbaz;->a(Landroid/net/ConnectivityManager;)Lbaa;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public final d()V
-    .locals 3
-
-    const-string v0, "Received exception while registering network callback"
+    :goto_0
+    iget-boolean v1, v0, Lbbb;->c:Z
 
     :try_start_0
-    invoke-static {}, Laxq;->a()Laxq;
+    iget-object v1, v0, Lbbb;->b:Ljava/lang/ref/ReferenceQueue;
 
-    sget-object v1, Lbaz;->a:Ljava/lang/String;
+    invoke-virtual {v1}, Ljava/lang/ref/ReferenceQueue;->remove()Ljava/lang/ref/Reference;
 
-    iget-object v1, p0, Lbay;->e:Landroid/net/ConnectivityManager;
+    move-result-object v1
 
-    iget-object v2, p0, Lbay;->f:Lbax;
+    check-cast v1, Lbba;
 
-    invoke-static {v1, v2}, Lbdm;->a(Landroid/net/ConnectivityManager;Landroid/net/ConnectivityManager$NetworkCallback;)V
+    invoke-virtual {v0, v1}, Lbbb;->c(Lbba;)V
+
+    iget-object v1, v0, Lbbb;->d:Lbaz;
     :try_end_0
-    .catch Ljava/lang/IllegalArgumentException; {:try_start_0 .. :try_end_0} :catch_1
-    .catch Ljava/lang/SecurityException; {:try_start_0 .. :try_end_0} :catch_0
+    .catch Ljava/lang/InterruptedException; {:try_start_0 .. :try_end_0} :catch_0
 
-    return-void
+    goto :goto_0
 
     :catch_0
     move-exception v1
 
-    invoke-static {}, Laxq;->a()Laxq;
+    invoke-static {}, Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
 
-    sget-object v2, Lbaz;->a:Ljava/lang/String;
+    move-result-object v1
 
-    invoke-static {v2, v0, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+    invoke-virtual {v1}, Ljava/lang/Thread;->interrupt()V
 
-    return-void
-
-    :catch_1
-    move-exception v1
-
-    invoke-static {}, Laxq;->a()Laxq;
-
-    sget-object v2, Lbaz;->a:Ljava/lang/String;
-
-    invoke-static {v2, v0, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
-
-    return-void
-.end method
-
-.method public final e()V
-    .locals 3
-
-    const-string v0, "Received exception while unregistering network callback"
-
-    :try_start_0
-    invoke-static {}, Laxq;->a()Laxq;
-
-    sget-object v1, Lbaz;->a:Ljava/lang/String;
-
-    iget-object v1, p0, Lbay;->e:Landroid/net/ConnectivityManager;
-
-    iget-object v2, p0, Lbay;->f:Lbax;
-
-    invoke-static {v1, v2}, Lbdk;->b(Landroid/net/ConnectivityManager;Landroid/net/ConnectivityManager$NetworkCallback;)V
-    :try_end_0
-    .catch Ljava/lang/IllegalArgumentException; {:try_start_0 .. :try_end_0} :catch_1
-    .catch Ljava/lang/SecurityException; {:try_start_0 .. :try_end_0} :catch_0
-
-    return-void
-
-    :catch_0
-    move-exception v1
-
-    invoke-static {}, Laxq;->a()Laxq;
-
-    sget-object v2, Lbaz;->a:Ljava/lang/String;
-
-    invoke-static {v2, v0, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
-
-    return-void
-
-    :catch_1
-    move-exception v1
-
-    invoke-static {}, Laxq;->a()Laxq;
-
-    sget-object v2, Lbaz;->a:Ljava/lang/String;
-
-    invoke-static {v2, v0, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
-
-    return-void
+    goto :goto_0
 .end method

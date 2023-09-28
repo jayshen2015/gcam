@@ -1,43 +1,70 @@
 .class public final Lgfy;
 .super Ljava/lang/Object;
 
-# interfaces
-.implements Lhip;
-.implements Lfaz;
-.implements Lfaa;
-
 
 # instance fields
-.field public final a:Landroid/content/Context;
+.field public final a:Llda;
 
-.field public final b:Lezy;
+.field public final b:Llda;
 
-.field public final c:Lchs;
+.field public final c:Llda;
 
-.field public final d:Ljuh;
+.field public final d:Llda;
 
-.field private final e:Ljava/util/concurrent/Executor;
-
-.field private final f:Lkbc;
+.field public final e:Llda;
 
 
 # direct methods
-.method public constructor <init>(Landroid/content/Context;Ljava/util/concurrent/Executor;Lkbc;Lezy;Lchs;Ljuh;)V
-    .locals 0
+.method public constructor <init>()V
+    .locals 3
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lgfy;->a:Landroid/content/Context;
+    new-instance v0, Llce;
 
-    iput-object p2, p0, Lgfy;->e:Ljava/util/concurrent/Executor;
+    const/4 v1, 0x0
 
-    iput-object p3, p0, Lgfy;->f:Lkbc;
+    invoke-static {v1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
-    iput-object p4, p0, Lgfy;->b:Lezy;
+    move-result-object v2
 
-    iput-object p5, p0, Lgfy;->c:Lchs;
+    invoke-direct {v0, v2}, Llce;-><init>(Ljava/lang/Object;)V
 
-    iput-object p6, p0, Lgfy;->d:Ljuh;
+    iput-object v0, p0, Lgfy;->a:Llda;
+
+    new-instance v0, Llce;
+
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v1
+
+    invoke-direct {v0, v1}, Llce;-><init>(Ljava/lang/Object;)V
+
+    iput-object v0, p0, Lgfy;->b:Llda;
+
+    new-instance v0, Llce;
+
+    const/high16 v1, -0x40800000    # -1.0f
+
+    invoke-static {v1}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
+
+    move-result-object v1
+
+    invoke-direct {v0, v1}, Llce;-><init>(Ljava/lang/Object;)V
+
+    iput-object v0, p0, Lgfy;->c:Llda;
+
+    new-instance v0, Llce;
+
+    invoke-direct {v0, v1}, Llce;-><init>(Ljava/lang/Object;)V
+
+    iput-object v0, p0, Lgfy;->d:Llda;
+
+    new-instance v0, Llce;
+
+    invoke-direct {v0, v2}, Llce;-><init>(Ljava/lang/Object;)V
+
+    iput-object v0, p0, Lgfy;->e:Llda;
 
     return-void
 .end method
@@ -45,57 +72,49 @@
 
 # virtual methods
 .method public final a()V
-    .locals 4
+    .locals 3
 
-    iget-object v0, p0, Lgfy;->e:Ljava/util/concurrent/Executor;
+    iget-object v0, p0, Lgfy;->b:Llda;
 
-    iget-object v1, p0, Lgfy;->f:Lkbc;
+    const/4 v1, 0x0
 
-    new-instance v2, Lfzr;
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    const/16 v3, 0x10
+    move-result-object v2
 
-    invoke-direct {v2, p0, v3}, Lfzr;-><init>(Lgfy;I)V
+    invoke-interface {v0, v2}, Llda;->fB(Ljava/lang/Object;)V
 
-    const-string v3, "PhenotypeHelper#commitFlags"
+    iget-object v0, p0, Lgfy;->c:Llda;
 
-    invoke-interface {v1, v3, v2}, Lkbc;->c(Ljava/lang/String;Ljava/lang/Runnable;)Ljava/lang/Runnable;
+    const/high16 v2, -0x40800000    # -1.0f
 
-    move-result-object v1
+    invoke-static {v2}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
 
-    invoke-interface {v0, v1}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
+    move-result-object v2
 
-    return-void
-.end method
+    invoke-interface {v0, v2}, Llda;->fB(Ljava/lang/Object;)V
 
-.method public final b()V
-    .locals 0
+    iget-object v0, p0, Lgfy;->d:Llda;
 
-    invoke-virtual {p0}, Lgfy;->a()V
+    invoke-interface {v0, v2}, Llda;->fB(Ljava/lang/Object;)V
 
-    return-void
-.end method
+    iget-object v0, p0, Lgfy;->a:Llda;
 
-.method public final run()V
-    .locals 4
-
-    iget-object v0, p0, Lgfy;->e:Ljava/util/concurrent/Executor;
-
-    iget-object v1, p0, Lgfy;->f:Lkbc;
-
-    new-instance v2, Lfzr;
-
-    const/16 v3, 0xf
-
-    invoke-direct {v2, p0, v3}, Lfzr;-><init>(Lgfy;I)V
-
-    const-string v3, "PhenotypeHelper#retrieveFlags"
-
-    invoke-interface {v1, v3, v2}, Lkbc;->c(Ljava/lang/String;Ljava/lang/Runnable;)Ljava/lang/Runnable;
+    invoke-static {v1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     move-result-object v1
 
-    invoke-interface {v0, v1}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
+    invoke-interface {v0, v1}, Llda;->fB(Ljava/lang/Object;)V
+
+    iget-object v0, p0, Lgfy;->e:Llda;
+
+    const/4 v1, 0x1
+
+    invoke-static {v1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    move-result-object v1
+
+    invoke-interface {v0, v1}, Llda;->fB(Ljava/lang/Object;)V
 
     return-void
 .end method

@@ -34,12 +34,6 @@
     return-void
 .end method
 
-.method public onJupiterButtonClicked()V
-    .locals 0
-
-    return-void
-.end method
-
 .method public onPauseButtonClicked()V
     .locals 0
 

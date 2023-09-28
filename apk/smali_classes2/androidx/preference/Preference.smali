@@ -10,11 +10,11 @@
 
 .field public B:I
 
-.field public C:Lans;
+.field public C:Lagl;
 
 .field public D:Landroidx/preference/PreferenceGroup;
 
-.field public E:Lanw;
+.field public E:Lagp;
 
 .field private F:Z
 
@@ -30,57 +30,57 @@
 
 .field private L:Z
 
-.field private M:Lanv;
+.field private M:Lago;
 
 .field private final N:Landroid/view/View$OnClickListener;
 
 .field private a:Ljava/lang/CharSequence;
 
-.field private b:I
+.field private b:Landroid/os/Bundle;
 
-.field private c:Landroid/graphics/drawable/Drawable;
+.field private c:Z
 
-.field private d:Landroid/os/Bundle;
+.field private d:Z
 
 .field private e:Z
 
-.field private f:Z
+.field private f:Ljava/lang/String;
 
 .field private g:Z
 
-.field private h:Ljava/lang/String;
+.field private h:Z
 
 .field private i:Z
 
-.field public final j:Landroid/content/Context;
+.field public j:Landroid/content/Context;
 
-.field public k:Laoo;
+.field public k:Lahj;
 
 .field public l:J
 
 .field public m:Z
 
-.field public n:Lant;
+.field public n:Lagm;
 
-.field public o:Lanu;
+.field public o:Lagn;
 
 .field public p:I
 
 .field public q:Ljava/lang/CharSequence;
 
-.field public r:Ljava/lang/String;
+.field public r:I
 
-.field public s:Landroid/content/Intent;
+.field public s:Landroid/graphics/drawable/Drawable;
 
 .field public t:Ljava/lang/String;
 
-.field public u:Z
+.field public u:Landroid/content/Intent;
 
-.field public v:Ljava/lang/Object;
+.field public v:Ljava/lang/String;
 
 .field public w:Z
 
-.field public x:Z
+.field public x:Ljava/lang/Object;
 
 .field public y:Z
 
@@ -101,11 +101,11 @@
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
     .locals 2
 
-    const v0, 0x7f040529
+    const v0, 0x7f0403ff
 
     const v1, 0x101008e
 
-    invoke-static {p1, v0, v1}, Laar;->c(Landroid/content/Context;II)I
+    invoke-static {p1, v0, v1}, Let;->u(Landroid/content/Context;II)I
 
     move-result v0
 
@@ -125,7 +125,7 @@
 .end method
 
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;II)V
-    .locals 4
+    .locals 3
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -135,41 +135,39 @@
 
     const/4 v0, 0x1
 
-    iput-boolean v0, p0, Landroidx/preference/Preference;->e:Z
+    iput-boolean v0, p0, Landroidx/preference/Preference;->c:Z
 
-    iput-boolean v0, p0, Landroidx/preference/Preference;->f:Z
+    iput-boolean v0, p0, Landroidx/preference/Preference;->d:Z
 
-    iput-boolean v0, p0, Landroidx/preference/Preference;->u:Z
+    iput-boolean v0, p0, Landroidx/preference/Preference;->w:Z
+
+    iput-boolean v0, p0, Landroidx/preference/Preference;->g:Z
+
+    iput-boolean v0, p0, Landroidx/preference/Preference;->h:Z
+
+    iput-boolean v0, p0, Landroidx/preference/Preference;->y:Z
 
     iput-boolean v0, p0, Landroidx/preference/Preference;->i:Z
 
     iput-boolean v0, p0, Landroidx/preference/Preference;->F:Z
 
-    iput-boolean v0, p0, Landroidx/preference/Preference;->w:Z
-
-    iput-boolean v0, p0, Landroidx/preference/Preference;->G:Z
-
     iput-boolean v0, p0, Landroidx/preference/Preference;->H:Z
-
-    iput-boolean v0, p0, Landroidx/preference/Preference;->x:Z
 
     iput-boolean v0, p0, Landroidx/preference/Preference;->J:Z
 
-    const v1, 0x7f0e00b9
+    const v1, 0x7f0e00b1
 
     iput v1, p0, Landroidx/preference/Preference;->A:I
 
-    new-instance v2, Lhu;
+    new-instance v2, Lagj;
 
-    const/4 v3, 0x3
-
-    invoke-direct {v2, p0, v3}, Lhu;-><init>(Landroidx/preference/Preference;I)V
+    invoke-direct {v2, p0}, Lagj;-><init>(Landroidx/preference/Preference;)V
 
     iput-object v2, p0, Landroidx/preference/Preference;->N:Landroid/view/View$OnClickListener;
 
     iput-object p1, p0, Landroidx/preference/Preference;->j:Landroid/content/Context;
 
-    sget-object v2, Laos;->g:[I
+    sget-object v2, Lahn;->g:[I
 
     invoke-virtual {p1, p2, v2, p3, p4}, Landroid/content/Context;->obtainStyledAttributes(Landroid/util/AttributeSet;[III)Landroid/content/res/TypedArray;
 
@@ -179,27 +177,27 @@
 
     const/4 p3, 0x0
 
-    invoke-static {p1, p2, p3, p3}, Laar;->e(Landroid/content/res/TypedArray;III)I
+    invoke-static {p1, p2, p3, p3}, Let;->w(Landroid/content/res/TypedArray;III)I
 
     move-result p2
 
-    iput p2, p0, Landroidx/preference/Preference;->b:I
+    iput p2, p0, Landroidx/preference/Preference;->r:I
 
     const/16 p2, 0x1a
 
     const/4 p4, 0x6
 
-    invoke-static {p1, p2, p4}, Laar;->h(Landroid/content/res/TypedArray;II)Ljava/lang/String;
+    invoke-static {p1, p2, p4}, Let;->z(Landroid/content/res/TypedArray;II)Ljava/lang/String;
 
     move-result-object p2
 
-    iput-object p2, p0, Landroidx/preference/Preference;->r:Ljava/lang/String;
+    iput-object p2, p0, Landroidx/preference/Preference;->t:Ljava/lang/String;
 
     const/16 p2, 0x22
 
     const/4 p4, 0x4
 
-    invoke-static {p1, p2, p4}, Laar;->g(Landroid/content/res/TypedArray;II)Ljava/lang/CharSequence;
+    invoke-static {p1, p2, p4}, Let;->y(Landroid/content/res/TypedArray;II)Ljava/lang/CharSequence;
 
     move-result-object p2
 
@@ -209,7 +207,7 @@
 
     const/4 p4, 0x7
 
-    invoke-static {p1, p2, p4}, Laar;->g(Landroid/content/res/TypedArray;II)Ljava/lang/CharSequence;
+    invoke-static {p1, p2, p4}, Let;->y(Landroid/content/res/TypedArray;II)Ljava/lang/CharSequence;
 
     move-result-object p2
 
@@ -219,7 +217,7 @@
 
     const/16 p4, 0x8
 
-    invoke-static {p1, p2, p4}, Laar;->l(Landroid/content/res/TypedArray;II)I
+    invoke-static {p1, p2, p4}, Let;->D(Landroid/content/res/TypedArray;II)I
 
     move-result p2
 
@@ -229,15 +227,17 @@
 
     const/16 p4, 0xd
 
-    invoke-static {p1, p2, p4}, Laar;->h(Landroid/content/res/TypedArray;II)Ljava/lang/String;
+    invoke-static {p1, p2, p4}, Let;->z(Landroid/content/res/TypedArray;II)Ljava/lang/String;
 
     move-result-object p2
 
-    iput-object p2, p0, Landroidx/preference/Preference;->t:Ljava/lang/String;
+    iput-object p2, p0, Landroidx/preference/Preference;->v:Ljava/lang/String;
 
     const/16 p2, 0x1b
 
-    invoke-static {p1, p2, v3, v1}, Laar;->e(Landroid/content/res/TypedArray;III)I
+    const/4 p4, 0x3
+
+    invoke-static {p1, p2, p4, v1}, Let;->w(Landroid/content/res/TypedArray;III)I
 
     move-result p2
 
@@ -247,7 +247,7 @@
 
     const/16 p4, 0x9
 
-    invoke-static {p1, p2, p4, p3}, Laar;->e(Landroid/content/res/TypedArray;III)I
+    invoke-static {p1, p2, p4, p3}, Let;->w(Landroid/content/res/TypedArray;III)I
 
     move-result p2
 
@@ -257,59 +257,59 @@
 
     const/4 p4, 0x2
 
-    invoke-static {p1, p2, p4, v0}, Laar;->i(Landroid/content/res/TypedArray;IIZ)Z
+    invoke-static {p1, p2, p4, v0}, Let;->A(Landroid/content/res/TypedArray;IIZ)Z
 
     move-result p2
 
-    iput-boolean p2, p0, Landroidx/preference/Preference;->e:Z
+    iput-boolean p2, p0, Landroidx/preference/Preference;->c:Z
 
     const/16 p2, 0x1e
 
     const/4 p4, 0x5
 
-    invoke-static {p1, p2, p4, v0}, Laar;->i(Landroid/content/res/TypedArray;IIZ)Z
+    invoke-static {p1, p2, p4, v0}, Let;->A(Landroid/content/res/TypedArray;IIZ)Z
 
     move-result p2
 
-    iput-boolean p2, p0, Landroidx/preference/Preference;->f:Z
+    iput-boolean p2, p0, Landroidx/preference/Preference;->d:Z
 
     const/16 p2, 0x1d
 
-    invoke-static {p1, p2, v0, v0}, Laar;->i(Landroid/content/res/TypedArray;IIZ)Z
+    invoke-static {p1, p2, v0, v0}, Let;->A(Landroid/content/res/TypedArray;IIZ)Z
 
     move-result p2
 
-    iput-boolean p2, p0, Landroidx/preference/Preference;->u:Z
+    iput-boolean p2, p0, Landroidx/preference/Preference;->w:Z
 
     const/16 p2, 0x13
 
     const/16 p4, 0xa
 
-    invoke-static {p1, p2, p4}, Laar;->h(Landroid/content/res/TypedArray;II)Ljava/lang/String;
+    invoke-static {p1, p2, p4}, Let;->z(Landroid/content/res/TypedArray;II)Ljava/lang/String;
 
     move-result-object p2
 
-    iput-object p2, p0, Landroidx/preference/Preference;->h:Ljava/lang/String;
+    iput-object p2, p0, Landroidx/preference/Preference;->f:Ljava/lang/String;
 
-    iget-boolean p2, p0, Landroidx/preference/Preference;->f:Z
+    iget-boolean p2, p0, Landroidx/preference/Preference;->d:Z
 
     const/16 p4, 0x10
 
-    invoke-static {p1, p4, p4, p2}, Laar;->i(Landroid/content/res/TypedArray;IIZ)Z
+    invoke-static {p1, p4, p4, p2}, Let;->A(Landroid/content/res/TypedArray;IIZ)Z
 
     move-result p2
 
-    iput-boolean p2, p0, Landroidx/preference/Preference;->G:Z
+    iput-boolean p2, p0, Landroidx/preference/Preference;->i:Z
 
-    iget-boolean p2, p0, Landroidx/preference/Preference;->f:Z
+    iget-boolean p2, p0, Landroidx/preference/Preference;->d:Z
 
     const/16 p4, 0x11
 
-    invoke-static {p1, p4, p4, p2}, Laar;->i(Landroid/content/res/TypedArray;IIZ)Z
+    invoke-static {p1, p4, p4, p2}, Let;->A(Landroid/content/res/TypedArray;IIZ)Z
 
     move-result p2
 
-    iput-boolean p2, p0, Landroidx/preference/Preference;->H:Z
+    iput-boolean p2, p0, Landroidx/preference/Preference;->F:Z
 
     const/16 p2, 0x12
 
@@ -323,7 +323,7 @@
 
     move-result-object p2
 
-    iput-object p2, p0, Landroidx/preference/Preference;->v:Ljava/lang/Object;
+    iput-object p2, p0, Landroidx/preference/Preference;->x:Ljava/lang/Object;
 
     goto :goto_0
 
@@ -340,7 +340,7 @@
 
     move-result-object p2
 
-    iput-object p2, p0, Landroidx/preference/Preference;->v:Ljava/lang/Object;
+    iput-object p2, p0, Landroidx/preference/Preference;->x:Ljava/lang/Object;
 
     :cond_1
     :goto_0
@@ -348,7 +348,7 @@
 
     const/16 p4, 0xc
 
-    invoke-static {p1, p2, p4, v0}, Laar;->i(Landroid/content/res/TypedArray;IIZ)Z
+    invoke-static {p1, p2, p4, v0}, Let;->A(Landroid/content/res/TypedArray;IIZ)Z
 
     move-result p2
 
@@ -360,40 +360,40 @@
 
     move-result p4
 
-    iput-boolean p4, p0, Landroidx/preference/Preference;->I:Z
+    iput-boolean p4, p0, Landroidx/preference/Preference;->G:Z
 
     if-eqz p4, :cond_2
 
     const/16 p4, 0xe
 
-    invoke-static {p1, p2, p4, v0}, Laar;->i(Landroid/content/res/TypedArray;IIZ)Z
+    invoke-static {p1, p2, p4, v0}, Let;->A(Landroid/content/res/TypedArray;IIZ)Z
 
     move-result p2
 
-    iput-boolean p2, p0, Landroidx/preference/Preference;->x:Z
+    iput-boolean p2, p0, Landroidx/preference/Preference;->H:Z
 
     :cond_2
     const/16 p2, 0x18
 
     const/16 p4, 0xf
 
-    invoke-static {p1, p2, p4, p3}, Laar;->i(Landroid/content/res/TypedArray;IIZ)Z
+    invoke-static {p1, p2, p4, p3}, Let;->A(Landroid/content/res/TypedArray;IIZ)Z
+
+    move-result p2
+
+    iput-boolean p2, p0, Landroidx/preference/Preference;->I:Z
+
+    const/16 p2, 0x19
+
+    invoke-static {p1, p2, p2, v0}, Let;->A(Landroid/content/res/TypedArray;IIZ)Z
 
     move-result p2
 
     iput-boolean p2, p0, Landroidx/preference/Preference;->y:Z
 
-    const/16 p2, 0x19
-
-    invoke-static {p1, p2, p2, v0}, Laar;->i(Landroid/content/res/TypedArray;IIZ)Z
-
-    move-result p2
-
-    iput-boolean p2, p0, Landroidx/preference/Preference;->w:Z
-
     const/16 p2, 0x14
 
-    invoke-static {p1, p2, p2, p3}, Laar;->i(Landroid/content/res/TypedArray;IIZ)Z
+    invoke-static {p1, p2, p2, p3}, Let;->A(Landroid/content/res/TypedArray;IIZ)Z
 
     move-result p2
 
@@ -440,131 +440,54 @@
 
 
 # virtual methods
-.method public A(Landroid/os/Bundle;)V
-    .locals 2
-
-    invoke-virtual {p0}, Landroidx/preference/Preference;->Y()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_1
-
-    const/4 v0, 0x0
-
-    iput-boolean v0, p0, Landroidx/preference/Preference;->L:Z
-
-    invoke-virtual {p0}, Landroidx/preference/Preference;->e()Landroid/os/Parcelable;
-
-    move-result-object v0
-
-    iget-boolean v1, p0, Landroidx/preference/Preference;->L:Z
-
-    if-eqz v1, :cond_0
-
-    if-eqz v0, :cond_1
-
-    iget-object v1, p0, Landroidx/preference/Preference;->r:Ljava/lang/String;
-
-    invoke-virtual {p1, v1, v0}, Landroid/os/Bundle;->putParcelable(Ljava/lang/String;Landroid/os/Parcelable;)V
-
-    return-void
-
-    :cond_0
-    new-instance p1, Ljava/lang/IllegalStateException;
-
-    const-string v0, "Derived class did not call super.onSaveInstanceState()"
-
-    invoke-direct {p1, v0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw p1
-
-    :cond_1
-    return-void
-.end method
-
-.method public B(Z)V
-    .locals 4
-
-    iget-object v0, p0, Landroidx/preference/Preference;->K:Ljava/util/List;
-
-    if-nez v0, :cond_0
-
-    return-void
-
-    :cond_0
-    invoke-interface {v0}, Ljava/util/List;->size()I
-
-    move-result v1
-
-    const/4 v2, 0x0
-
-    :goto_0
-    if-ge v2, v1, :cond_1
-
-    invoke-interface {v0, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
-
-    move-result-object v3
-
-    check-cast v3, Landroidx/preference/Preference;
-
-    invoke-virtual {v3, p1}, Landroidx/preference/Preference;->ab(Z)V
-
-    add-int/lit8 v2, v2, 0x1
-
-    goto :goto_0
-
-    :cond_1
-    return-void
-.end method
-
-.method public final C()V
+.method public final A()V
     .locals 1
 
-    iget-object v0, p0, Landroidx/preference/Preference;->C:Lans;
+    iget-object v0, p0, Landroidx/preference/Preference;->C:Lagl;
 
     if-eqz v0, :cond_0
 
-    invoke-interface {v0}, Lans;->f()V
+    invoke-interface {v0}, Lagl;->f()V
 
     :cond_0
     return-void
 .end method
 
-.method public D()V
+.method public B()V
     .locals 0
 
-    invoke-virtual {p0}, Landroidx/preference/Preference;->I()V
+    invoke-virtual {p0}, Landroidx/preference/Preference;->G()V
 
     return-void
 .end method
 
-.method public final E(Laoo;)V
+.method public final C(Lahj;)V
     .locals 2
 
-    iput-object p1, p0, Landroidx/preference/Preference;->k:Laoo;
+    iput-object p1, p0, Landroidx/preference/Preference;->k:Lahj;
 
     iget-boolean v0, p0, Landroidx/preference/Preference;->m:Z
 
     if-nez v0, :cond_0
 
-    invoke-virtual {p1}, Laoo;->a()J
+    invoke-virtual {p1}, Lahj;->a()J
 
     move-result-wide v0
 
     iput-wide v0, p0, Landroidx/preference/Preference;->l:J
 
     :cond_0
-    invoke-virtual {p0}, Landroidx/preference/Preference;->aa()Z
+    invoke-virtual {p0}, Landroidx/preference/Preference;->Y()Z
 
     move-result p1
 
     if-eqz p1, :cond_2
 
-    invoke-virtual {p0}, Landroidx/preference/Preference;->r()Landroid/content/SharedPreferences;
+    invoke-virtual {p0}, Landroidx/preference/Preference;->q()Landroid/content/SharedPreferences;
 
     move-result-object p1
 
-    iget-object v0, p0, Landroidx/preference/Preference;->r:Ljava/lang/String;
+    iget-object v0, p0, Landroidx/preference/Preference;->t:Ljava/lang/String;
 
     invoke-interface {p1, v0}, Landroid/content/SharedPreferences;->contains(Ljava/lang/String;)Z
 
@@ -579,33 +502,33 @@
 
     const/4 v0, 0x0
 
-    invoke-virtual {p0, p1, v0}, Landroidx/preference/Preference;->G(ZLjava/lang/Object;)V
+    invoke-virtual {p0, p1, v0}, Landroidx/preference/Preference;->E(ZLjava/lang/Object;)V
 
     return-void
 
     :cond_2
     :goto_0
-    iget-object p1, p0, Landroidx/preference/Preference;->v:Ljava/lang/Object;
+    iget-object p1, p0, Landroidx/preference/Preference;->x:Ljava/lang/Object;
 
     if-eqz p1, :cond_3
 
     const/4 v0, 0x0
 
-    invoke-virtual {p0, v0, p1}, Landroidx/preference/Preference;->G(ZLjava/lang/Object;)V
+    invoke-virtual {p0, v0, p1}, Landroidx/preference/Preference;->E(ZLjava/lang/Object;)V
 
     :cond_3
     return-void
 .end method
 
-.method public F()V
+.method public D()V
     .locals 0
 
-    invoke-virtual {p0}, Landroidx/preference/Preference;->V()V
+    invoke-virtual {p0}, Landroidx/preference/Preference;->T()V
 
     return-void
 .end method
 
-.method protected G(ZLjava/lang/Object;)V
+.method protected E(ZLjava/lang/Object;)V
     .locals 0
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
@@ -615,16 +538,16 @@
     return-void
 .end method
 
-.method public final H()V
+.method public final F()V
     .locals 2
 
-    invoke-virtual {p0}, Landroidx/preference/Preference;->Z()Z
+    invoke-virtual {p0}, Landroidx/preference/Preference;->X()Z
 
     move-result v0
 
     if-eqz v0, :cond_6
 
-    iget-boolean v0, p0, Landroidx/preference/Preference;->f:Z
+    iget-boolean v0, p0, Landroidx/preference/Preference;->d:Z
 
     if-nez v0, :cond_0
 
@@ -633,11 +556,11 @@
     :cond_0
     invoke-virtual {p0}, Landroidx/preference/Preference;->c()V
 
-    iget-object v0, p0, Landroidx/preference/Preference;->o:Lanu;
+    iget-object v0, p0, Landroidx/preference/Preference;->o:Lagn;
 
     if-eqz v0, :cond_2
 
-    invoke-interface {v0}, Lanu;->a()Z
+    invoke-interface {v0}, Lagn;->a()Z
 
     move-result v0
 
@@ -650,15 +573,15 @@
 
     :cond_2
     :goto_0
-    iget-object v0, p0, Landroidx/preference/Preference;->k:Laoo;
+    iget-object v0, p0, Landroidx/preference/Preference;->k:Lahj;
 
     if-eqz v0, :cond_4
 
-    iget-object v0, v0, Laoo;->c:Laon;
+    iget-object v0, v0, Lahj;->c:Lahi;
 
     if-eqz v0, :cond_4
 
-    invoke-interface {v0, p0}, Laon;->A(Landroidx/preference/Preference;)Z
+    invoke-interface {v0, p0}, Lahi;->ai(Landroidx/preference/Preference;)Z
 
     move-result v0
 
@@ -671,7 +594,7 @@
 
     :cond_4
     :goto_1
-    iget-object v0, p0, Landroidx/preference/Preference;->s:Landroid/content/Intent;
+    iget-object v0, p0, Landroidx/preference/Preference;->u:Landroid/content/Intent;
 
     if-eqz v0, :cond_5
 
@@ -687,10 +610,10 @@
     return-void
 .end method
 
-.method public final I()V
+.method public final G()V
     .locals 3
 
-    iget-object v0, p0, Landroidx/preference/Preference;->h:Ljava/lang/String;
+    iget-object v0, p0, Landroidx/preference/Preference;->f:Ljava/lang/String;
 
     invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
@@ -701,9 +624,9 @@
     return-void
 
     :cond_0
-    iget-object v0, p0, Landroidx/preference/Preference;->h:Ljava/lang/String;
+    iget-object v0, p0, Landroidx/preference/Preference;->f:Ljava/lang/String;
 
-    invoke-virtual {p0, v0}, Landroidx/preference/Preference;->v(Ljava/lang/String;)Landroidx/preference/Preference;
+    invoke-virtual {p0, v0}, Landroidx/preference/Preference;->t(Ljava/lang/String;)Landroidx/preference/Preference;
 
     move-result-object v0
 
@@ -728,7 +651,7 @@
 
     move-result v0
 
-    invoke-virtual {p0, v0}, Landroidx/preference/Preference;->ab(Z)V
+    invoke-virtual {p0, v0}, Landroidx/preference/Preference;->Z(Z)V
 
     return-void
 
@@ -743,7 +666,7 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget-object v2, p0, Landroidx/preference/Preference;->h:Ljava/lang/String;
+    iget-object v2, p0, Landroidx/preference/Preference;->f:Ljava/lang/String;
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -751,7 +674,7 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget-object v2, p0, Landroidx/preference/Preference;->r:Ljava/lang/String;
+    iget-object v2, p0, Landroidx/preference/Preference;->t:Ljava/lang/String;
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -776,32 +699,32 @@
     throw v0
 .end method
 
-.method public final J(Ljava/lang/String;)V
+.method public final H(Ljava/lang/String;)V
     .locals 0
 
-    invoke-virtual {p0}, Landroidx/preference/Preference;->V()V
+    invoke-virtual {p0}, Landroidx/preference/Preference;->T()V
 
-    iput-object p1, p0, Landroidx/preference/Preference;->h:Ljava/lang/String;
+    iput-object p1, p0, Landroidx/preference/Preference;->f:Ljava/lang/String;
 
-    invoke-virtual {p0}, Landroidx/preference/Preference;->I()V
+    invoke-virtual {p0}, Landroidx/preference/Preference;->G()V
 
     return-void
 .end method
 
-.method public final K(Z)V
+.method public final I(Z)V
     .locals 1
 
-    iget-boolean v0, p0, Landroidx/preference/Preference;->e:Z
+    iget-boolean v0, p0, Landroidx/preference/Preference;->c:Z
 
     if-eq v0, p1, :cond_0
 
-    iput-boolean p1, p0, Landroidx/preference/Preference;->e:Z
+    iput-boolean p1, p0, Landroidx/preference/Preference;->c:Z
 
     invoke-virtual {p0}, Landroidx/preference/Preference;->j()Z
 
     move-result p1
 
-    invoke-virtual {p0, p1}, Landroidx/preference/Preference;->B(Z)V
+    invoke-virtual {p0, p1}, Landroidx/preference/Preference;->z(Z)V
 
     invoke-virtual {p0}, Landroidx/preference/Preference;->d()V
 
@@ -809,34 +732,34 @@
     return-void
 .end method
 
-.method public final L(I)V
+.method public final J(I)V
     .locals 1
 
     iget-object v0, p0, Landroidx/preference/Preference;->j:Landroid/content/Context;
 
-    invoke-static {v0, p1}, Lfs;->a(Landroid/content/Context;I)Landroid/graphics/drawable/Drawable;
+    invoke-static {v0, p1}, Ljr;->b(Landroid/content/Context;I)Landroid/graphics/drawable/Drawable;
 
     move-result-object v0
 
-    invoke-virtual {p0, v0}, Landroidx/preference/Preference;->M(Landroid/graphics/drawable/Drawable;)V
+    invoke-virtual {p0, v0}, Landroidx/preference/Preference;->K(Landroid/graphics/drawable/Drawable;)V
 
-    iput p1, p0, Landroidx/preference/Preference;->b:I
+    iput p1, p0, Landroidx/preference/Preference;->r:I
 
     return-void
 .end method
 
-.method public final M(Landroid/graphics/drawable/Drawable;)V
+.method public final K(Landroid/graphics/drawable/Drawable;)V
     .locals 1
 
-    iget-object v0, p0, Landroidx/preference/Preference;->c:Landroid/graphics/drawable/Drawable;
+    iget-object v0, p0, Landroidx/preference/Preference;->s:Landroid/graphics/drawable/Drawable;
 
     if-eq v0, p1, :cond_0
 
-    iput-object p1, p0, Landroidx/preference/Preference;->c:Landroid/graphics/drawable/Drawable;
+    iput-object p1, p0, Landroidx/preference/Preference;->s:Landroid/graphics/drawable/Drawable;
 
     const/4 p1, 0x0
 
-    iput p1, p0, Landroidx/preference/Preference;->b:I
+    iput p1, p0, Landroidx/preference/Preference;->r:I
 
     invoke-virtual {p0}, Landroidx/preference/Preference;->d()V
 
@@ -844,22 +767,22 @@
     return-void
 .end method
 
-.method public final N(Ljava/lang/String;)V
+.method public final L(Ljava/lang/String;)V
     .locals 1
 
-    iput-object p1, p0, Landroidx/preference/Preference;->r:Ljava/lang/String;
+    iput-object p1, p0, Landroidx/preference/Preference;->t:Ljava/lang/String;
 
-    iget-boolean p1, p0, Landroidx/preference/Preference;->g:Z
+    iget-boolean p1, p0, Landroidx/preference/Preference;->e:Z
 
     if-eqz p1, :cond_1
 
-    invoke-virtual {p0}, Landroidx/preference/Preference;->Y()Z
+    invoke-virtual {p0}, Landroidx/preference/Preference;->W()Z
 
     move-result p1
 
     if-nez p1, :cond_1
 
-    iget-object p1, p0, Landroidx/preference/Preference;->r:Ljava/lang/String;
+    iget-object p1, p0, Landroidx/preference/Preference;->t:Ljava/lang/String;
 
     invoke-static {p1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
@@ -869,7 +792,7 @@
 
     const/4 p1, 0x1
 
-    iput-boolean p1, p0, Landroidx/preference/Preference;->g:Z
+    iput-boolean p1, p0, Landroidx/preference/Preference;->e:Z
 
     return-void
 
@@ -886,15 +809,15 @@
     return-void
 .end method
 
-.method public O(Lant;)V
+.method public M(Lagm;)V
     .locals 0
 
-    iput-object p1, p0, Landroidx/preference/Preference;->n:Lant;
+    iput-object p1, p0, Landroidx/preference/Preference;->n:Lagm;
 
     return-void
 .end method
 
-.method public final P(I)V
+.method public final N(I)V
     .locals 1
 
     iget v0, p0, Landroidx/preference/Preference;->p:I
@@ -903,13 +826,13 @@
 
     iput p1, p0, Landroidx/preference/Preference;->p:I
 
-    invoke-virtual {p0}, Landroidx/preference/Preference;->C()V
+    invoke-virtual {p0}, Landroidx/preference/Preference;->A()V
 
     :cond_0
     return-void
 .end method
 
-.method public final Q(I)V
+.method public final O(I)V
     .locals 1
 
     iget-object v0, p0, Landroidx/preference/Preference;->j:Landroid/content/Context;
@@ -923,17 +846,17 @@
     return-void
 .end method
 
-.method public final R(Lanw;)V
+.method public final P(Lagp;)V
     .locals 0
 
-    iput-object p1, p0, Landroidx/preference/Preference;->E:Lanw;
+    iput-object p1, p0, Landroidx/preference/Preference;->E:Lagp;
 
     invoke-virtual {p0}, Landroidx/preference/Preference;->d()V
 
     return-void
 .end method
 
-.method public final S(I)V
+.method public final Q(I)V
     .locals 1
 
     iget-object v0, p0, Landroidx/preference/Preference;->j:Landroid/content/Context;
@@ -942,12 +865,12 @@
 
     move-result-object p1
 
-    invoke-virtual {p0, p1}, Landroidx/preference/Preference;->T(Ljava/lang/CharSequence;)V
+    invoke-virtual {p0, p1}, Landroidx/preference/Preference;->R(Ljava/lang/CharSequence;)V
 
     return-void
 .end method
 
-.method public T(Ljava/lang/CharSequence;)V
+.method public final R(Ljava/lang/CharSequence;)V
     .locals 1
 
     iget-object v0, p0, Landroidx/preference/Preference;->q:Ljava/lang/CharSequence;
@@ -966,12 +889,12 @@
     return-void
 .end method
 
-.method public final U(Landroid/content/SharedPreferences$Editor;)V
+.method public final S(Landroid/content/SharedPreferences$Editor;)V
     .locals 1
 
-    iget-object v0, p0, Landroidx/preference/Preference;->k:Laoo;
+    iget-object v0, p0, Landroidx/preference/Preference;->k:Lahj;
 
-    iget-boolean v0, v0, Laoo;->a:Z
+    iget-boolean v0, v0, Lahj;->a:Z
 
     if-nez v0, :cond_0
 
@@ -981,14 +904,14 @@
     return-void
 .end method
 
-.method public final V()V
+.method public final T()V
     .locals 1
 
-    iget-object v0, p0, Landroidx/preference/Preference;->h:Ljava/lang/String;
+    iget-object v0, p0, Landroidx/preference/Preference;->f:Ljava/lang/String;
 
     if-eqz v0, :cond_0
 
-    invoke-virtual {p0, v0}, Landroidx/preference/Preference;->v(Ljava/lang/String;)Landroidx/preference/Preference;
+    invoke-virtual {p0, v0}, Landroidx/preference/Preference;->t(Ljava/lang/String;)Landroidx/preference/Preference;
 
     move-result-object v0
 
@@ -1004,14 +927,14 @@
     return-void
 .end method
 
-.method public final W(Ljava/lang/Object;)Z
+.method public final U(Ljava/lang/Object;)Z
     .locals 1
 
-    iget-object v0, p0, Landroidx/preference/Preference;->n:Lant;
+    iget-object v0, p0, Landroidx/preference/Preference;->n:Lagm;
 
     if-eqz v0, :cond_1
 
-    invoke-interface {v0, p0, p1}, Lant;->b(Landroidx/preference/Preference;Ljava/lang/Object;)Z
+    invoke-interface {v0, p0, p1}, Lagm;->b(Landroidx/preference/Preference;Ljava/lang/Object;)Z
 
     move-result p1
 
@@ -1031,10 +954,10 @@
     return p1
 .end method
 
-.method protected X(Z)Z
+.method protected V(Z)Z
     .locals 2
 
-    invoke-virtual {p0}, Landroidx/preference/Preference;->aa()Z
+    invoke-virtual {p0}, Landroidx/preference/Preference;->Y()Z
 
     move-result v0
 
@@ -1043,13 +966,13 @@
     return p1
 
     :cond_0
-    iget-object v0, p0, Landroidx/preference/Preference;->k:Laoo;
+    iget-object v0, p0, Landroidx/preference/Preference;->k:Lahj;
 
-    invoke-virtual {v0}, Laoo;->d()Landroid/content/SharedPreferences;
+    invoke-virtual {v0}, Lahj;->d()Landroid/content/SharedPreferences;
 
     move-result-object v0
 
-    iget-object v1, p0, Landroidx/preference/Preference;->r:Ljava/lang/String;
+    iget-object v1, p0, Landroidx/preference/Preference;->t:Ljava/lang/String;
 
     invoke-interface {v0, v1, p1}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
 
@@ -1058,10 +981,10 @@
     return p1
 .end method
 
-.method public final Y()Z
+.method public final W()Z
     .locals 1
 
-    iget-object v0, p0, Landroidx/preference/Preference;->r:Ljava/lang/String;
+    iget-object v0, p0, Landroidx/preference/Preference;->t:Ljava/lang/String;
 
     invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
@@ -1079,18 +1002,18 @@
     return v0
 .end method
 
-.method public Z()Z
+.method public X()Z
     .locals 1
 
-    iget-boolean v0, p0, Landroidx/preference/Preference;->e:Z
+    iget-boolean v0, p0, Landroidx/preference/Preference;->c:Z
 
     if-eqz v0, :cond_0
 
-    iget-boolean v0, p0, Landroidx/preference/Preference;->i:Z
+    iget-boolean v0, p0, Landroidx/preference/Preference;->g:Z
 
     if-eqz v0, :cond_0
 
-    iget-boolean v0, p0, Landroidx/preference/Preference;->F:Z
+    iget-boolean v0, p0, Landroidx/preference/Preference;->h:Z
 
     if-eqz v0, :cond_0
 
@@ -1104,10 +1027,60 @@
     return v0
 .end method
 
-.method public a(Laor;)V
+.method protected final Y()Z
+    .locals 1
+
+    iget-object v0, p0, Landroidx/preference/Preference;->k:Lahj;
+
+    if-eqz v0, :cond_0
+
+    iget-boolean v0, p0, Landroidx/preference/Preference;->w:Z
+
+    if-eqz v0, :cond_0
+
+    invoke-virtual {p0}, Landroidx/preference/Preference;->W()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    const/4 v0, 0x1
+
+    return v0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    return v0
+.end method
+
+.method public final Z(Z)V
+    .locals 1
+
+    iget-boolean v0, p0, Landroidx/preference/Preference;->g:Z
+
+    if-ne v0, p1, :cond_0
+
+    xor-int/lit8 p1, p1, 0x1
+
+    iput-boolean p1, p0, Landroidx/preference/Preference;->g:Z
+
+    invoke-virtual {p0}, Landroidx/preference/Preference;->j()Z
+
+    move-result p1
+
+    invoke-virtual {p0, p1}, Landroidx/preference/Preference;->z(Z)V
+
+    invoke-virtual {p0}, Landroidx/preference/Preference;->d()V
+
+    :cond_0
+    return-void
+.end method
+
+.method public a(Lahm;)V
     .locals 9
 
-    iget-object v0, p1, Laor;->a:Landroid/view/View;
+    iget-object v0, p1, Lahm;->a:Landroid/view/View;
 
     iget-object v1, p0, Landroidx/preference/Preference;->N:Landroid/view/View$OnClickListener;
 
@@ -1119,7 +1092,7 @@
 
     const v2, 0x1020010
 
-    invoke-virtual {p1, v2}, Laor;->B(I)Landroid/view/View;
+    invoke-virtual {p1, v2}, Lahm;->B(I)Landroid/view/View;
 
     move-result-object v2
 
@@ -1167,7 +1140,7 @@
     :goto_1
     const v5, 0x1020016
 
-    invoke-virtual {p1, v5}, Laor;->B(I)Landroid/view/View;
+    invoke-virtual {p1, v5}, Lahm;->B(I)Landroid/view/View;
 
     move-result-object v5
 
@@ -1187,20 +1160,20 @@
 
     invoke-virtual {v5, v1}, Landroid/widget/TextView;->setVisibility(I)V
 
-    iget-boolean v6, p0, Landroidx/preference/Preference;->I:Z
+    iget-boolean v6, p0, Landroidx/preference/Preference;->G:Z
 
     if-eqz v6, :cond_2
 
-    iget-boolean v6, p0, Landroidx/preference/Preference;->x:Z
+    iget-boolean v6, p0, Landroidx/preference/Preference;->H:Z
 
     invoke-virtual {v5, v6}, Landroid/widget/TextView;->setSingleLine(Z)V
 
     :cond_2
-    iget-boolean v6, p0, Landroidx/preference/Preference;->f:Z
+    iget-boolean v6, p0, Landroidx/preference/Preference;->d:Z
 
     if-nez v6, :cond_4
 
-    invoke-virtual {p0}, Landroidx/preference/Preference;->Z()Z
+    invoke-virtual {p0}, Landroidx/preference/Preference;->X()Z
 
     move-result v6
 
@@ -1223,7 +1196,7 @@
     :goto_2
     const v2, 0x1020006
 
-    invoke-virtual {p1, v2}, Laor;->B(I)Landroid/view/View;
+    invoke-virtual {p1, v2}, Lahm;->B(I)Landroid/view/View;
 
     move-result-object v2
 
@@ -1235,38 +1208,38 @@
 
     if-eqz v2, :cond_a
 
-    iget v7, p0, Landroidx/preference/Preference;->b:I
+    iget v7, p0, Landroidx/preference/Preference;->r:I
 
     if-nez v7, :cond_5
 
-    iget-object v7, p0, Landroidx/preference/Preference;->c:Landroid/graphics/drawable/Drawable;
+    iget-object v7, p0, Landroidx/preference/Preference;->s:Landroid/graphics/drawable/Drawable;
 
     if-eqz v7, :cond_7
 
     const/4 v7, 0x0
 
     :cond_5
-    iget-object v8, p0, Landroidx/preference/Preference;->c:Landroid/graphics/drawable/Drawable;
+    iget-object v8, p0, Landroidx/preference/Preference;->s:Landroid/graphics/drawable/Drawable;
 
     if-nez v8, :cond_6
 
     iget-object v8, p0, Landroidx/preference/Preference;->j:Landroid/content/Context;
 
-    invoke-static {v8, v7}, Lfs;->a(Landroid/content/Context;I)Landroid/graphics/drawable/Drawable;
+    invoke-static {v8, v7}, Ljr;->b(Landroid/content/Context;I)Landroid/graphics/drawable/Drawable;
 
     move-result-object v7
 
-    iput-object v7, p0, Landroidx/preference/Preference;->c:Landroid/graphics/drawable/Drawable;
+    iput-object v7, p0, Landroidx/preference/Preference;->s:Landroid/graphics/drawable/Drawable;
 
     :cond_6
-    iget-object v7, p0, Landroidx/preference/Preference;->c:Landroid/graphics/drawable/Drawable;
+    iget-object v7, p0, Landroidx/preference/Preference;->s:Landroid/graphics/drawable/Drawable;
 
     if-eqz v7, :cond_7
 
     invoke-virtual {v2, v7}, Landroid/widget/ImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
 
     :cond_7
-    iget-object v7, p0, Landroidx/preference/Preference;->c:Landroid/graphics/drawable/Drawable;
+    iget-object v7, p0, Landroidx/preference/Preference;->s:Landroid/graphics/drawable/Drawable;
 
     if-eqz v7, :cond_8
 
@@ -1275,7 +1248,7 @@
     goto :goto_4
 
     :cond_8
-    iget-boolean v7, p0, Landroidx/preference/Preference;->y:Z
+    iget-boolean v7, p0, Landroidx/preference/Preference;->I:Z
 
     if-eq v6, v7, :cond_9
 
@@ -1291,9 +1264,9 @@
 
     :cond_a
     :goto_4
-    const v2, 0x7f0b0196
+    const v2, 0x7f0b0159
 
-    invoke-virtual {p1, v2}, Laor;->B(I)Landroid/view/View;
+    invoke-virtual {p1, v2}, Lahm;->B(I)Landroid/view/View;
 
     move-result-object v2
 
@@ -1301,14 +1274,14 @@
 
     const v2, 0x102003e
 
-    invoke-virtual {p1, v2}, Laor;->B(I)Landroid/view/View;
+    invoke-virtual {p1, v2}, Lahm;->B(I)Landroid/view/View;
 
     move-result-object v2
 
     :cond_b
     if-eqz v2, :cond_e
 
-    iget-object v7, p0, Landroidx/preference/Preference;->c:Landroid/graphics/drawable/Drawable;
+    iget-object v7, p0, Landroidx/preference/Preference;->s:Landroid/graphics/drawable/Drawable;
 
     if-eqz v7, :cond_c
 
@@ -1317,7 +1290,7 @@
     goto :goto_6
 
     :cond_c
-    iget-boolean v1, p0, Landroidx/preference/Preference;->y:Z
+    iget-boolean v1, p0, Landroidx/preference/Preference;->I:Z
 
     if-eq v6, v1, :cond_d
 
@@ -1335,7 +1308,7 @@
 
     if-eqz v1, :cond_f
 
-    invoke-virtual {p0}, Landroidx/preference/Preference;->Z()Z
+    invoke-virtual {p0}, Landroidx/preference/Preference;->X()Z
 
     move-result v1
 
@@ -1347,38 +1320,38 @@
     invoke-direct {p0, v0, v6}, Landroidx/preference/Preference;->k(Landroid/view/View;Z)V
 
     :goto_7
-    iget-boolean v1, p0, Landroidx/preference/Preference;->f:Z
+    iget-boolean v1, p0, Landroidx/preference/Preference;->d:Z
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setFocusable(Z)V
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setClickable(Z)V
 
-    iget-boolean v2, p0, Landroidx/preference/Preference;->G:Z
+    iget-boolean v2, p0, Landroidx/preference/Preference;->i:Z
 
-    iput-boolean v2, p1, Laor;->u:Z
+    iput-boolean v2, p1, Lahm;->u:Z
 
-    iget-boolean v2, p0, Landroidx/preference/Preference;->H:Z
+    iget-boolean v2, p0, Landroidx/preference/Preference;->F:Z
 
-    iput-boolean v2, p1, Laor;->v:Z
+    iput-boolean v2, p1, Lahm;->v:Z
 
     iget-boolean p1, p0, Landroidx/preference/Preference;->z:Z
 
     if-eqz p1, :cond_10
 
-    iget-object v2, p0, Landroidx/preference/Preference;->M:Lanv;
+    iget-object v2, p0, Landroidx/preference/Preference;->M:Lago;
 
     if-nez v2, :cond_10
 
-    new-instance v2, Lanv;
+    new-instance v2, Lago;
 
-    invoke-direct {v2, p0}, Lanv;-><init>(Landroidx/preference/Preference;)V
+    invoke-direct {v2, p0}, Lago;-><init>(Landroidx/preference/Preference;)V
 
-    iput-object v2, p0, Landroidx/preference/Preference;->M:Lanv;
+    iput-object v2, p0, Landroidx/preference/Preference;->M:Lago;
 
     :cond_10
     if-eqz p1, :cond_11
 
-    iget-object v2, p0, Landroidx/preference/Preference;->M:Lanv;
+    iget-object v2, p0, Landroidx/preference/Preference;->M:Lago;
 
     goto :goto_8
 
@@ -1394,97 +1367,39 @@
 
     if-nez v1, :cond_12
 
-    invoke-static {v0, v4}, Lafb;->m(Landroid/view/View;Landroid/graphics/drawable/Drawable;)V
+    invoke-static {v0, v4}, Lgl;->G(Landroid/view/View;Landroid/graphics/drawable/Drawable;)V
 
     :cond_12
     return-void
 .end method
 
-.method public aZ()J
-    .locals 2
-
-    iget-wide v0, p0, Landroidx/preference/Preference;->l:J
-
-    return-wide v0
-.end method
-
-.method protected final aa()Z
+.method public final aa(Z)V
     .locals 1
 
-    iget-object v0, p0, Landroidx/preference/Preference;->k:Laoo;
+    iget-boolean v0, p0, Landroidx/preference/Preference;->h:Z
 
-    if-eqz v0, :cond_0
+    if-ne v0, p1, :cond_0
 
-    iget-boolean v0, p0, Landroidx/preference/Preference;->u:Z
+    xor-int/lit8 p1, p1, 0x1
 
-    if-eqz v0, :cond_0
+    iput-boolean p1, p0, Landroidx/preference/Preference;->h:Z
+
+    invoke-virtual {p0}, Landroidx/preference/Preference;->j()Z
+
+    move-result p1
+
+    invoke-virtual {p0, p1}, Landroidx/preference/Preference;->z(Z)V
+
+    invoke-virtual {p0}, Landroidx/preference/Preference;->d()V
+
+    :cond_0
+    return-void
+.end method
+
+.method protected final ab(Ljava/lang/String;)V
+    .locals 2
 
     invoke-virtual {p0}, Landroidx/preference/Preference;->Y()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    const/4 v0, 0x1
-
-    return v0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    return v0
-.end method
-
-.method public final ab(Z)V
-    .locals 1
-
-    iget-boolean v0, p0, Landroidx/preference/Preference;->i:Z
-
-    if-ne v0, p1, :cond_0
-
-    xor-int/lit8 p1, p1, 0x1
-
-    iput-boolean p1, p0, Landroidx/preference/Preference;->i:Z
-
-    invoke-virtual {p0}, Landroidx/preference/Preference;->j()Z
-
-    move-result p1
-
-    invoke-virtual {p0, p1}, Landroidx/preference/Preference;->B(Z)V
-
-    invoke-virtual {p0}, Landroidx/preference/Preference;->d()V
-
-    :cond_0
-    return-void
-.end method
-
-.method public final ac(Z)V
-    .locals 1
-
-    iget-boolean v0, p0, Landroidx/preference/Preference;->F:Z
-
-    if-ne v0, p1, :cond_0
-
-    xor-int/lit8 p1, p1, 0x1
-
-    iput-boolean p1, p0, Landroidx/preference/Preference;->F:Z
-
-    invoke-virtual {p0}, Landroidx/preference/Preference;->j()Z
-
-    move-result p1
-
-    invoke-virtual {p0, p1}, Landroidx/preference/Preference;->B(Z)V
-
-    invoke-virtual {p0}, Landroidx/preference/Preference;->d()V
-
-    :cond_0
-    return-void
-.end method
-
-.method protected final ad(Ljava/lang/String;)V
-    .locals 2
-
-    invoke-virtual {p0}, Landroidx/preference/Preference;->aa()Z
 
     move-result v0
 
@@ -1495,7 +1410,7 @@
     :cond_0
     const/4 v0, 0x0
 
-    invoke-virtual {p0, v0}, Landroidx/preference/Preference;->w(Ljava/lang/String;)Ljava/lang/String;
+    invoke-virtual {p0, v0}, Landroidx/preference/Preference;->u(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -1508,58 +1423,23 @@
     return-void
 
     :cond_1
-    iget-object v0, p0, Landroidx/preference/Preference;->k:Laoo;
+    iget-object v0, p0, Landroidx/preference/Preference;->k:Lahj;
 
-    invoke-virtual {v0}, Laoo;->b()Landroid/content/SharedPreferences$Editor;
+    invoke-virtual {v0}, Lahj;->b()Landroid/content/SharedPreferences$Editor;
 
     move-result-object v0
 
-    iget-object v1, p0, Landroidx/preference/Preference;->r:Ljava/lang/String;
+    iget-object v1, p0, Landroidx/preference/Preference;->t:Ljava/lang/String;
 
     invoke-interface {v0, v1, p1}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
 
-    invoke-virtual {p0, v0}, Landroidx/preference/Preference;->U(Landroid/content/SharedPreferences$Editor;)V
+    invoke-virtual {p0, v0}, Landroidx/preference/Preference;->S(Landroid/content/SharedPreferences$Editor;)V
 
-    return-void
-.end method
-
-.method public final ae()V
-    .locals 1
-
-    const/4 v0, 0x0
-
-    iput-boolean v0, p0, Landroidx/preference/Preference;->u:Z
-
-    return-void
-.end method
-
-.method public final af()V
-    .locals 1
-
-    iget-boolean v0, p0, Landroidx/preference/Preference;->f:Z
-
-    if-eqz v0, :cond_0
-
-    const/4 v0, 0x0
-
-    iput-boolean v0, p0, Landroidx/preference/Preference;->f:Z
-
-    invoke-virtual {p0}, Landroidx/preference/Preference;->d()V
-
-    :cond_0
     return-void
 .end method
 
 .method protected c()V
     .locals 0
-
-    return-void
-.end method
-
-.method public cm(Landroid/view/View;)V
-    .locals 0
-
-    invoke-virtual {p0}, Landroidx/preference/Preference;->H()V
 
     return-void
 .end method
@@ -1606,13 +1486,13 @@
     return v0
 
     :cond_3
-    invoke-virtual {v0}, Ljava/lang/Object;->toString()Ljava/lang/String;
+    invoke-interface {v0}, Ljava/lang/CharSequence;->toString()Ljava/lang/String;
 
     move-result-object v0
 
     iget-object p1, p1, Landroidx/preference/Preference;->q:Ljava/lang/CharSequence;
 
-    invoke-virtual {p1}, Ljava/lang/Object;->toString()Ljava/lang/String;
+    invoke-interface {p1}, Ljava/lang/CharSequence;->toString()Ljava/lang/String;
 
     move-result-object p1
 
@@ -1626,15 +1506,15 @@
 .method protected d()V
     .locals 3
 
-    iget-object v0, p0, Landroidx/preference/Preference;->C:Lans;
+    iget-object v0, p0, Landroidx/preference/Preference;->C:Lagl;
 
     if-eqz v0, :cond_0
 
     move-object v1, v0
 
-    check-cast v1, Laoj;
+    check-cast v1, Lahe;
 
-    iget-object v1, v1, Laoj;->d:Ljava/util/List;
+    iget-object v1, v1, Lahe;->d:Ljava/util/List;
 
     invoke-interface {v1, p0}, Ljava/util/List;->indexOf(Ljava/lang/Object;)I
 
@@ -1644,11 +1524,11 @@
 
     if-eq v1, v2, :cond_0
 
-    check-cast v0, Lls;
+    check-cast v0, Lpu;
 
-    iget-object v0, v0, Lls;->a:Llt;
+    iget-object v0, v0, Lpu;->a:Lpv;
 
-    invoke-virtual {v0, v1, p0}, Llt;->c(ILjava/lang/Object;)V
+    invoke-virtual {v0, v1, p0}, Lpv;->c(ILjava/lang/Object;)V
 
     :cond_0
     return-void
@@ -1661,7 +1541,7 @@
 
     iput-boolean v0, p0, Landroidx/preference/Preference;->L:Z
 
-    sget-object v0, Lanr;->EMPTY_STATE:Landroid/view/AbsSavedState;
+    sget-object v0, Lagk;->EMPTY_STATE:Landroid/view/AbsSavedState;
 
     return-object v0
 .end method
@@ -1674,6 +1554,14 @@
     return-object p1
 .end method
 
+.method public fp()J
+    .locals 2
+
+    iget-wide v0, p0, Landroidx/preference/Preference;->l:J
+
+    return-wide v0
+.end method
+
 .method protected g(Landroid/os/Parcelable;)V
     .locals 1
 
@@ -1681,7 +1569,7 @@
 
     iput-boolean v0, p0, Landroidx/preference/Preference;->L:Z
 
-    sget-object v0, Lanr;->EMPTY_STATE:Landroid/view/AbsSavedState;
+    sget-object v0, Lagk;->EMPTY_STATE:Landroid/view/AbsSavedState;
 
     if-eq p1, v0, :cond_1
 
@@ -1703,6 +1591,14 @@
     return-void
 .end method
 
+.method public gn(Landroid/view/View;)V
+    .locals 0
+
+    invoke-virtual {p0}, Landroidx/preference/Preference;->F()V
+
+    return-void
+.end method
+
 .method protected h(Ljava/lang/Object;)V
     .locals 0
 
@@ -1712,7 +1608,7 @@
 .method public j()Z
     .locals 1
 
-    invoke-virtual {p0}, Landroidx/preference/Preference;->Z()Z
+    invoke-virtual {p0}, Landroidx/preference/Preference;->X()Z
 
     move-result v0
 
@@ -1731,11 +1627,11 @@
 .method public m()Ljava/lang/CharSequence;
     .locals 1
 
-    iget-object v0, p0, Landroidx/preference/Preference;->E:Lanw;
+    iget-object v0, p0, Landroidx/preference/Preference;->E:Lagp;
 
     if-eqz v0, :cond_0
 
-    invoke-interface {v0, p0}, Lanw;->a(Landroidx/preference/Preference;)Ljava/lang/CharSequence;
+    invoke-interface {v0, p0}, Lagp;->a(Landroidx/preference/Preference;)Ljava/lang/CharSequence;
 
     move-result-object v0
 
@@ -1750,7 +1646,7 @@
 .method public n(Ljava/lang/CharSequence;)V
     .locals 1
 
-    iget-object v0, p0, Landroidx/preference/Preference;->E:Lanw;
+    iget-object v0, p0, Landroidx/preference/Preference;->E:Lagp;
 
     if-nez v0, :cond_1
 
@@ -1779,10 +1675,10 @@
     throw p1
 .end method
 
-.method protected final p(F)F
+.method protected final p(I)I
     .locals 2
 
-    invoke-virtual {p0}, Landroidx/preference/Preference;->aa()Z
+    invoke-virtual {p0}, Landroidx/preference/Preference;->Y()Z
 
     move-result v0
 
@@ -1791,40 +1687,13 @@
     return p1
 
     :cond_0
-    iget-object v0, p0, Landroidx/preference/Preference;->k:Laoo;
+    iget-object v0, p0, Landroidx/preference/Preference;->k:Lahj;
 
-    invoke-virtual {v0}, Laoo;->d()Landroid/content/SharedPreferences;
-
-    move-result-object v0
-
-    iget-object v1, p0, Landroidx/preference/Preference;->r:Ljava/lang/String;
-
-    invoke-interface {v0, v1, p1}, Landroid/content/SharedPreferences;->getFloat(Ljava/lang/String;F)F
-
-    move-result p1
-
-    return p1
-.end method
-
-.method protected final q(I)I
-    .locals 2
-
-    invoke-virtual {p0}, Landroidx/preference/Preference;->aa()Z
-
-    move-result v0
-
-    if-nez v0, :cond_0
-
-    return p1
-
-    :cond_0
-    iget-object v0, p0, Landroidx/preference/Preference;->k:Laoo;
-
-    invoke-virtual {v0}, Laoo;->d()Landroid/content/SharedPreferences;
+    invoke-virtual {v0}, Lahj;->d()Landroid/content/SharedPreferences;
 
     move-result-object v0
 
-    iget-object v1, p0, Landroidx/preference/Preference;->r:Ljava/lang/String;
+    iget-object v1, p0, Landroidx/preference/Preference;->t:Ljava/lang/String;
 
     invoke-interface {v0, v1, p1}, Landroid/content/SharedPreferences;->getInt(Ljava/lang/String;I)I
 
@@ -1833,14 +1702,14 @@
     return p1
 .end method
 
-.method public final r()Landroid/content/SharedPreferences;
+.method public final q()Landroid/content/SharedPreferences;
     .locals 1
 
-    iget-object v0, p0, Landroidx/preference/Preference;->k:Laoo;
+    iget-object v0, p0, Landroidx/preference/Preference;->k:Lahj;
 
     if-eqz v0, :cond_0
 
-    invoke-virtual {v0}, Laoo;->d()Landroid/content/SharedPreferences;
+    invoke-virtual {v0}, Lahj;->d()Landroid/content/SharedPreferences;
 
     move-result-object v0
 
@@ -1852,35 +1721,10 @@
     return-object v0
 .end method
 
-.method public final s()Landroid/graphics/drawable/Drawable;
-    .locals 2
-
-    iget-object v0, p0, Landroidx/preference/Preference;->c:Landroid/graphics/drawable/Drawable;
-
-    if-nez v0, :cond_0
-
-    iget v0, p0, Landroidx/preference/Preference;->b:I
-
-    if-eqz v0, :cond_0
-
-    iget-object v1, p0, Landroidx/preference/Preference;->j:Landroid/content/Context;
-
-    invoke-static {v1, v0}, Lfs;->a(Landroid/content/Context;I)Landroid/graphics/drawable/Drawable;
-
-    move-result-object v0
-
-    iput-object v0, p0, Landroidx/preference/Preference;->c:Landroid/graphics/drawable/Drawable;
-
-    :cond_0
-    iget-object v0, p0, Landroidx/preference/Preference;->c:Landroid/graphics/drawable/Drawable;
-
-    return-object v0
-.end method
-
-.method public final t()Landroid/os/Bundle;
+.method public final r()Landroid/os/Bundle;
     .locals 1
 
-    iget-object v0, p0, Landroidx/preference/Preference;->d:Landroid/os/Bundle;
+    iget-object v0, p0, Landroidx/preference/Preference;->b:Landroid/os/Bundle;
 
     if-nez v0, :cond_0
 
@@ -1888,12 +1732,39 @@
 
     invoke-direct {v0}, Landroid/os/Bundle;-><init>()V
 
-    iput-object v0, p0, Landroidx/preference/Preference;->d:Landroid/os/Bundle;
+    iput-object v0, p0, Landroidx/preference/Preference;->b:Landroid/os/Bundle;
 
     :cond_0
-    iget-object v0, p0, Landroidx/preference/Preference;->d:Landroid/os/Bundle;
+    iget-object v0, p0, Landroidx/preference/Preference;->b:Landroid/os/Bundle;
 
     return-object v0
+.end method
+
+.method public s()Lagm;
+    .locals 1
+
+    iget-object v0, p0, Landroidx/preference/Preference;->n:Lagm;
+
+    return-object v0
+.end method
+
+.method protected final t(Ljava/lang/String;)Landroidx/preference/Preference;
+    .locals 1
+
+    iget-object v0, p0, Landroidx/preference/Preference;->k:Lahj;
+
+    if-nez v0, :cond_0
+
+    const/4 p1, 0x0
+
+    return-object p1
+
+    :cond_0
+    invoke-virtual {v0, p1}, Lahj;->e(Ljava/lang/CharSequence;)Landroidx/preference/Preference;
+
+    move-result-object p1
+
+    return-object p1
 .end method
 
 .method public final toString()Ljava/lang/String;
@@ -1955,37 +1826,10 @@
     return-object v0
 .end method
 
-.method public u()Lant;
-    .locals 1
-
-    iget-object v0, p0, Landroidx/preference/Preference;->n:Lant;
-
-    return-object v0
-.end method
-
-.method protected final v(Ljava/lang/String;)Landroidx/preference/Preference;
-    .locals 1
-
-    iget-object v0, p0, Landroidx/preference/Preference;->k:Laoo;
-
-    if-nez v0, :cond_0
-
-    const/4 p1, 0x0
-
-    return-object p1
-
-    :cond_0
-    invoke-virtual {v0, p1}, Laoo;->e(Ljava/lang/CharSequence;)Landroidx/preference/Preference;
-
-    move-result-object p1
-
-    return-object p1
-.end method
-
-.method protected final w(Ljava/lang/String;)Ljava/lang/String;
+.method protected final u(Ljava/lang/String;)Ljava/lang/String;
     .locals 2
 
-    invoke-virtual {p0}, Landroidx/preference/Preference;->aa()Z
+    invoke-virtual {p0}, Landroidx/preference/Preference;->Y()Z
 
     move-result v0
 
@@ -1994,13 +1838,13 @@
     return-object p1
 
     :cond_0
-    iget-object v0, p0, Landroidx/preference/Preference;->k:Laoo;
+    iget-object v0, p0, Landroidx/preference/Preference;->k:Lahj;
 
-    invoke-virtual {v0}, Laoo;->d()Landroid/content/SharedPreferences;
+    invoke-virtual {v0}, Lahj;->d()Landroid/content/SharedPreferences;
 
     move-result-object v0
 
-    iget-object v1, p0, Landroidx/preference/Preference;->r:Ljava/lang/String;
+    iget-object v1, p0, Landroidx/preference/Preference;->t:Ljava/lang/String;
 
     invoke-interface {v0, v1, p1}, Landroid/content/SharedPreferences;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
@@ -2009,10 +1853,10 @@
     return-object p1
 .end method
 
-.method public final x(Ljava/util/Set;)Ljava/util/Set;
+.method public final v(Ljava/util/Set;)Ljava/util/Set;
     .locals 2
 
-    invoke-virtual {p0}, Landroidx/preference/Preference;->aa()Z
+    invoke-virtual {p0}, Landroidx/preference/Preference;->Y()Z
 
     move-result v0
 
@@ -2021,13 +1865,13 @@
     return-object p1
 
     :cond_0
-    iget-object v0, p0, Landroidx/preference/Preference;->k:Laoo;
+    iget-object v0, p0, Landroidx/preference/Preference;->k:Lahj;
 
-    invoke-virtual {v0}, Laoo;->d()Landroid/content/SharedPreferences;
+    invoke-virtual {v0}, Lahj;->d()Landroid/content/SharedPreferences;
 
     move-result-object v0
 
-    iget-object v1, p0, Landroidx/preference/Preference;->r:Ljava/lang/String;
+    iget-object v1, p0, Landroidx/preference/Preference;->t:Ljava/lang/String;
 
     invoke-interface {v0, v1, p1}, Landroid/content/SharedPreferences;->getStringSet(Ljava/lang/String;Ljava/util/Set;)Ljava/util/Set;
 
@@ -2036,7 +1880,7 @@
     return-object p1
 .end method
 
-.method final y(Landroidx/preference/PreferenceGroup;)V
+.method final w(Landroidx/preference/PreferenceGroup;)V
     .locals 1
 
     if-eqz p1, :cond_1
@@ -2063,16 +1907,16 @@
     return-void
 .end method
 
-.method public z(Landroid/os/Bundle;)V
+.method public x(Landroid/os/Bundle;)V
     .locals 1
 
-    invoke-virtual {p0}, Landroidx/preference/Preference;->Y()Z
+    invoke-virtual {p0}, Landroidx/preference/Preference;->W()Z
 
     move-result v0
 
     if-eqz v0, :cond_1
 
-    iget-object v0, p0, Landroidx/preference/Preference;->r:Ljava/lang/String;
+    iget-object v0, p0, Landroidx/preference/Preference;->t:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Landroid/os/Bundle;->getParcelable(Ljava/lang/String;)Landroid/os/Parcelable;
 
@@ -2103,5 +1947,82 @@
 
     :cond_1
     :goto_0
+    return-void
+.end method
+
+.method public y(Landroid/os/Bundle;)V
+    .locals 2
+
+    invoke-virtual {p0}, Landroidx/preference/Preference;->W()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    const/4 v0, 0x0
+
+    iput-boolean v0, p0, Landroidx/preference/Preference;->L:Z
+
+    invoke-virtual {p0}, Landroidx/preference/Preference;->e()Landroid/os/Parcelable;
+
+    move-result-object v0
+
+    iget-boolean v1, p0, Landroidx/preference/Preference;->L:Z
+
+    if-eqz v1, :cond_0
+
+    if-eqz v0, :cond_1
+
+    iget-object v1, p0, Landroidx/preference/Preference;->t:Ljava/lang/String;
+
+    invoke-virtual {p1, v1, v0}, Landroid/os/Bundle;->putParcelable(Ljava/lang/String;Landroid/os/Parcelable;)V
+
+    return-void
+
+    :cond_0
+    new-instance p1, Ljava/lang/IllegalStateException;
+
+    const-string v0, "Derived class did not call super.onSaveInstanceState()"
+
+    invoke-direct {p1, v0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw p1
+
+    :cond_1
+    return-void
+.end method
+
+.method public z(Z)V
+    .locals 4
+
+    iget-object v0, p0, Landroidx/preference/Preference;->K:Ljava/util/List;
+
+    if-nez v0, :cond_0
+
+    return-void
+
+    :cond_0
+    invoke-interface {v0}, Ljava/util/List;->size()I
+
+    move-result v1
+
+    const/4 v2, 0x0
+
+    :goto_0
+    if-ge v2, v1, :cond_1
+
+    invoke-interface {v0, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v3
+
+    check-cast v3, Landroidx/preference/Preference;
+
+    invoke-virtual {v3, p1}, Landroidx/preference/Preference;->Z(Z)V
+
+    add-int/lit8 v2, v2, 0x1
+
+    goto :goto_0
+
+    :cond_1
     return-void
 .end method

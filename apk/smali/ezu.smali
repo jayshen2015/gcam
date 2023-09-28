@@ -2,73 +2,119 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Ljava/util/function/BiFunction;
+.implements Llij;
 
 
 # instance fields
-.field public final synthetic a:I
+.field public final synthetic a:Lfah;
 
 
 # direct methods
-.method public synthetic constructor <init>(I)V
+.method public synthetic constructor <init>(Lfah;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput p1, p0, Lezu;->a:I
+    iput-object p1, p0, Lezu;->a:Lfah;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic andThen(Ljava/util/function/Function;)Ljava/util/function/BiFunction;
-    .locals 0
+.method public final fB(Ljava/lang/Object;)V
+    .locals 4
 
-    invoke-static {p0, p1}, Lj$/util/function/BiFunction$-CC;->$default$andThen(Ljava/util/function/BiFunction;Ljava/util/function/Function;)Ljava/util/function/BiFunction;
+    iget-object v0, p0, Lezu;->a:Lfah;
 
-    move-result-object p1
+    check-cast p1, Lcwi;
 
-    return-object p1
-.end method
-
-.method public final apply(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 2
-
-    iget v0, p0, Lezu;->a:I
-
-    check-cast p1, Lfaz;
-
-    check-cast p2, Ljava/lang/Boolean;
-
-    sget v1, Lezx;->e:I
-
-    invoke-virtual {p2}, Ljava/lang/Boolean;->booleanValue()Z
-
-    move-result v1
-
-    if-nez v1, :cond_0
-
-    instance-of v1, p1, Lezg;
-
-    if-eqz v1, :cond_0
-
-    check-cast p1, Lezg;
-
-    invoke-interface {p1, v0}, Lezg;->i(I)Z
-
-    move-result p1
+    iget-object p1, v0, Lfah;->v:Lfwc;
 
     if-eqz p1, :cond_0
 
-    const/4 p1, 0x1
+    invoke-virtual {p1}, Lfwc;->close()V
 
-    invoke-static {p1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+    :cond_0
+    const/4 p1, 0x0
+
+    iput-object p1, v0, Lfah;->v:Lfwc;
+
+    iget-object v1, v0, Lfah;->n:Lfwb;
+
+    if-eqz v1, :cond_1
+
+    const/4 v2, 0x1
+
+    invoke-virtual {v1, v2}, Lpfx;->cancel(Z)Z
+
+    iput-object p1, v0, Lfah;->n:Lfwb;
+
+    :cond_1
+    iget-object p1, v0, Lfah;->p:Ljhd;
+
+    invoke-virtual {p1}, Ljhd;->a()V
+
+    iget-object p1, v0, Lfah;->k:Lghg;
+
+    iget-object v1, v0, Lfah;->l:Lcvo;
+
+    iget-object v2, v0, Lfah;->m:Lghu;
+
+    sget-object v3, Ljrl;->h:Ljrl;
+
+    invoke-interface {p1, v1, v2, v3}, Lghg;->a(Lcvo;Lghu;Ljrl;)Lfwb;
 
     move-result-object p1
 
-    return-object p1
+    iput-object p1, v0, Lfah;->n:Lfwb;
 
-    :cond_0
-    return-object p2
+    iget-object p1, v0, Lfah;->d:Lkas;
+
+    move-object v1, p1
+
+    check-cast v1, Lkbi;
+
+    iget-boolean v1, v1, Lkbi;->L:Z
+
+    if-eqz v1, :cond_2
+
+    invoke-interface {p1}, Lkas;->h()V
+
+    :cond_2
+    iget-object p1, v0, Lfah;->u:Lddf;
+
+    sget-object v1, Lddl;->X:Lddg;
+
+    invoke-interface {p1, v1}, Lddf;->k(Lddg;)Z
+
+    move-result p1
+
+    if-eqz p1, :cond_3
+
+    iget-object p1, v0, Lfah;->d:Lkas;
+
+    invoke-interface {p1}, Lkas;->o()V
+
+    iget-object p1, v0, Lfah;->d:Lkas;
+
+    const/4 v1, 0x0
+
+    invoke-interface {p1, v1}, Lkas;->p(Z)V
+
+    :cond_3
+    iget-object p1, v0, Lfah;->n:Lfwb;
+
+    if-eqz p1, :cond_4
+
+    new-instance v1, Lfaf;
+
+    invoke-direct {v1, v0}, Lfaf;-><init>(Lfah;)V
+
+    iget-object v0, v0, Lfah;->g:Llar;
+
+    invoke-static {p1, v1, v0}, Lplk;->af(Lpht;Lphh;Ljava/util/concurrent/Executor;)V
+
+    :cond_4
+    return-void
 .end method

@@ -1,68 +1,128 @@
 .class public final Ljry;
-.super Ljhn;
-
-
-# static fields
-.field public static final CREATOR:Landroid/os/Parcelable$Creator;
+.super Ljava/lang/Object;
 
 
 # instance fields
-.field public final a:I
-
-.field public final b:Landroid/os/ParcelFileDescriptor;
+.field public final a:Lojc;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
+.method public constructor <init>()V
+    .locals 1
 
-    new-instance v0, Ljro;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const/16 v1, 0xa
+    sget-object v0, Loih;->a:Loih;
 
-    invoke-direct {v0, v1}, Ljro;-><init>(I)V
-
-    sput-object v0, Ljry;->CREATOR:Landroid/os/Parcelable$Creator;
+    iput-object v0, p0, Ljry;->a:Lojc;
 
     return-void
 .end method
 
-.method public constructor <init>(ILandroid/os/ParcelFileDescriptor;)V
+.method public constructor <init>(Lojc;)V
     .locals 0
 
-    invoke-direct {p0}, Ljhn;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput p1, p0, Ljry;->a:I
+    iput-object p1, p0, Ljry;->a:Lojc;
 
-    iput-object p2, p0, Ljry;->b:Landroid/os/ParcelFileDescriptor;
+    return-void
+.end method
+
+.method public constructor <init>(Lojc;[B)V
+    .locals 0
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Ljry;->a:Lojc;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final writeToParcel(Landroid/os/Parcel;I)V
-    .locals 3
+.method public final a(Lmad;)F
+    .locals 7
 
-    invoke-static {p1}, Ljhp;->a(Landroid/os/Parcel;)I
+    iget-object v0, p0, Ljry;->a:Lojc;
+
+    invoke-interface {p1}, Lmad;->d()J
+
+    move-result-wide v1
+
+    invoke-static {v0, v1, v2}, Lfcy;->p(Lojc;J)Lojc;
+
+    move-result-object p1
+
+    invoke-virtual {p1}, Lojc;->g()Z
 
     move-result v0
 
-    iget v1, p0, Ljry;->a:I
+    if-nez v0, :cond_0
 
-    const/4 v2, 0x2
+    const/4 p1, 0x0
 
-    invoke-static {p1, v2, v1}, Ljhp;->g(Landroid/os/Parcel;II)V
+    return p1
 
-    iget-object v1, p0, Ljry;->b:Landroid/os/ParcelFileDescriptor;
+    :cond_0
+    invoke-virtual {p1}, Lojc;->c()Ljava/lang/Object;
 
-    or-int/lit8 p2, p2, 0x1
+    move-result-object p1
 
-    const/4 v2, 0x3
+    check-cast p1, Lftm;
 
-    invoke-static {p1, v2, v1, p2}, Ljhp;->o(Landroid/os/Parcel;ILandroid/os/Parcelable;I)V
+    iget v0, p1, Lftm;->b:F
 
-    invoke-static {p1, v0}, Ljhp;->c(Landroid/os/Parcel;I)V
+    invoke-static {v0}, Ljava/lang/Math;->abs(F)F
 
-    return-void
+    move-result v0
+
+    iget p1, p1, Lftm;->c:F
+
+    invoke-static {p1}, Ljava/lang/Math;->abs(F)F
+
+    move-result p1
+
+    float-to-double v1, p1
+
+    float-to-double v3, v0
+
+    const-wide/high16 v5, 0x4024000000000000L    # 10.0
+
+    cmpl-double p1, v3, v5
+
+    if-gtz p1, :cond_2
+
+    cmpl-double p1, v1, v5
+
+    if-lez p1, :cond_1
+
+    goto :goto_0
+
+    :cond_1
+    invoke-static {v1, v2}, Ljava/lang/Math;->exp(D)D
+
+    move-result-wide v0
+
+    const-wide/high16 v2, 0x3ff0000000000000L    # 1.0
+
+    add-double/2addr v0, v2
+
+    div-double/2addr v2, v0
+
+    add-double/2addr v2, v2
+
+    const-wide/high16 v0, -0x4010000000000000L    # -1.0
+
+    add-double/2addr v2, v0
+
+    double-to-float p1, v2
+
+    return p1
+
+    :cond_2
+    :goto_0
+    const/high16 p1, -0x40800000    # -1.0f
+
+    return p1
 .end method

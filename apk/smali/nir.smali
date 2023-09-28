@@ -1,180 +1,261 @@
 .class public final Lnir;
-.super Lnws;
-
-# interfaces
-.implements Lnxz;
-
-
-# static fields
-.field public static final d:Lnir;
-
-.field private static volatile e:Lnyf;
+.super Ljava/lang/Object;
 
 
 # instance fields
-.field public a:I
+.field public a:Ljava/lang/String;
 
-.field public b:J
+.field private final b:Ljava/lang/String;
 
-.field public c:I
+.field private c:Ljava/lang/String;
+
+.field private final d:Landroid/accounts/Account;
+
+.field private e:Ljava/lang/String;
+
+.field private final f:Looh;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
+.method public constructor <init>(Landroid/content/Context;)V
+    .locals 3
 
-    new-instance v0, Lnir;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {v0}, Lnir;-><init>()V
+    const-string v0, "files"
 
-    sput-object v0, Lnir;->d:Lnir;
+    iput-object v0, p0, Lnir;->a:Ljava/lang/String;
 
-    const-class v1, Lnir;
+    const-string v0, "common"
 
-    invoke-static {v1, v0}, Lnws;->aa(Ljava/lang/Class;Lnws;)V
+    iput-object v0, p0, Lnir;->c:Ljava/lang/String;
 
-    return-void
-.end method
+    sget-object v0, Lnis;->b:Landroid/accounts/Account;
 
-.method private constructor <init>()V
-    .locals 0
+    iput-object v0, p0, Lnir;->d:Landroid/accounts/Account;
 
-    invoke-direct {p0}, Lnws;-><init>()V
+    const-string v0, ""
+
+    iput-object v0, p0, Lnir;->e:Ljava/lang/String;
+
+    invoke-static {}, Loom;->e()Looh;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lnir;->f:Looh;
+
+    const/4 v0, 0x0
+
+    new-array v0, v0, [Ljava/lang/Object;
+
+    const/4 v1, 0x1
+
+    const-string v2, "Context cannot be null"
+
+    invoke-static {v1, v2, v0}, Lmyw;->b(ZLjava/lang/String;[Ljava/lang/Object;)V
+
+    invoke-virtual {p1}, Landroid/content/Context;->getPackageName()Ljava/lang/String;
+
+    move-result-object p1
+
+    iput-object p1, p0, Lnir;->b:Ljava/lang/String;
 
     return-void
 .end method
 
 
 # virtual methods
-.method protected final a(ILjava/lang/Object;)Ljava/lang/Object;
-    .locals 3
+.method public final a()Landroid/net/Uri;
+    .locals 9
 
-    add-int/lit8 p1, p1, -0x1
+    iget-object v0, p0, Lnir;->a:Ljava/lang/String;
 
-    const/4 p2, 0x1
+    iget-object v1, p0, Lnir;->c:Ljava/lang/String;
 
-    packed-switch p1, :pswitch_data_0
+    iget-object v2, p0, Lnir;->d:Landroid/accounts/Account;
 
-    :pswitch_0
-    const/4 p1, 0x0
+    invoke-static {v2}, Lnip;->b(Landroid/accounts/Account;)Ljava/lang/String;
 
-    return-object p1
+    move-result-object v2
 
-    :pswitch_1
-    sget-object p1, Lnir;->e:Lnyf;
+    iget-object v3, p0, Lnir;->e:Ljava/lang/String;
 
-    if-nez p1, :cond_1
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
-    const-class p2, Lnir;
+    move-result-object v4
 
-    monitor-enter p2
+    invoke-virtual {v4}, Ljava/lang/String;->length()I
 
-    :try_start_0
-    sget-object p1, Lnir;->e:Lnyf;
+    move-result v4
 
-    if-nez p1, :cond_0
+    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
-    new-instance p1, Lnwo;
+    move-result-object v5
 
-    sget-object v0, Lnir;->d:Lnir;
+    invoke-virtual {v5}, Ljava/lang/String;->length()I
 
-    invoke-direct {p1, v0}, Lnwo;-><init>(Lnws;)V
+    move-result v5
 
-    sput-object p1, Lnir;->e:Lnyf;
+    invoke-static {v2}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v6
+
+    invoke-virtual {v6}, Ljava/lang/String;->length()I
+
+    move-result v6
+
+    invoke-static {v3}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v7
+
+    invoke-virtual {v7}, Ljava/lang/String;->length()I
+
+    move-result v7
+
+    new-instance v8, Ljava/lang/StringBuilder;
+
+    add-int/lit8 v4, v4, 0x4
+
+    add-int/2addr v4, v5
+
+    add-int/2addr v4, v6
+
+    add-int/2addr v4, v7
+
+    invoke-direct {v8, v4}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string v4, "/"
+
+    invoke-virtual {v8, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v8, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v8, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v8, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v8, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v8, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v8, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v8, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v8}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lnir;->f:Looh;
+
+    invoke-virtual {v1}, Looh;->f()Loom;
+
+    move-result-object v1
+
+    invoke-static {v1}, Lnje;->b(Ljava/util/List;)Ljava/lang/String;
+
+    move-result-object v1
+
+    new-instance v2, Landroid/net/Uri$Builder;
+
+    invoke-direct {v2}, Landroid/net/Uri$Builder;-><init>()V
+
+    const-string v3, "android"
+
+    invoke-virtual {v2, v3}, Landroid/net/Uri$Builder;->scheme(Ljava/lang/String;)Landroid/net/Uri$Builder;
+
+    move-result-object v2
+
+    iget-object v3, p0, Lnir;->b:Ljava/lang/String;
+
+    invoke-virtual {v2, v3}, Landroid/net/Uri$Builder;->authority(Ljava/lang/String;)Landroid/net/Uri$Builder;
+
+    move-result-object v2
+
+    invoke-virtual {v2, v0}, Landroid/net/Uri$Builder;->path(Ljava/lang/String;)Landroid/net/Uri$Builder;
+
+    move-result-object v0
+
+    invoke-virtual {v0, v1}, Landroid/net/Uri$Builder;->encodedFragment(Ljava/lang/String;)Landroid/net/Uri$Builder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroid/net/Uri$Builder;->build()Landroid/net/Uri;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public final b()V
+    .locals 6
+
+    sget-object v0, Lnis;->a:Ljava/util/regex/Pattern;
+
+    const-string v1, "phenotype"
+
+    invoke-virtual {v0, v1}, Ljava/util/regex/Pattern;->matcher(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/util/regex/Matcher;->matches()Z
+
+    move-result v0
+
+    const/4 v2, 0x1
+
+    new-array v3, v2, [Ljava/lang/Object;
+
+    const/4 v4, 0x0
+
+    aput-object v1, v3, v4
+
+    const-string v5, "Module must match [a-z]+(_[a-z]+)*: %s"
+
+    invoke-static {v0, v5, v3}, Lmyw;->b(ZLjava/lang/String;[Ljava/lang/Object;)V
+
+    sget-object v0, Lnis;->c:Ljava/util/Set;
+
+    invoke-interface {v0, v1}, Ljava/util/Set;->contains(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    new-array v3, v2, [Ljava/lang/Object;
+
+    aput-object v1, v3, v4
+
+    xor-int/2addr v0, v2
+
+    const-string v2, "Module name is reserved and cannot be used: %s"
+
+    invoke-static {v0, v2, v3}, Lmyw;->b(ZLjava/lang/String;[Ljava/lang/Object;)V
+
+    iput-object v1, p0, Lnir;->c:Ljava/lang/String;
+
+    return-void
+.end method
+
+.method public final c(Ljava/lang/String;)V
+    .locals 1
+
+    const-string v0, "/"
+
+    invoke-virtual {p1, v0}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    const/4 v0, 0x1
+
+    invoke-virtual {p1, v0}, Ljava/lang/String;->substring(I)Ljava/lang/String;
+
+    move-result-object p1
 
     :cond_0
-    monitor-exit p2
+    sget-object v0, Lnis;->a:Ljava/util/regex/Pattern;
 
-    goto :goto_0
+    iput-object p1, p0, Lnir;->e:Ljava/lang/String;
 
-    :catchall_0
-    move-exception p1
-
-    monitor-exit p2
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw p1
-
-    :cond_1
-    :goto_0
-    return-object p1
-
-    :pswitch_2
-    sget-object p1, Lnir;->d:Lnir;
-
-    return-object p1
-
-    :pswitch_3
-    new-instance p1, Lnwn;
-
-    sget-object p2, Lnir;->d:Lnir;
-
-    invoke-direct {p1, p2}, Lnwn;-><init>(Lnws;)V
-
-    return-object p1
-
-    :pswitch_4
-    new-instance p1, Lnir;
-
-    invoke-direct {p1}, Lnir;-><init>()V
-
-    return-object p1
-
-    :pswitch_5
-    const-string p1, "a"
-
-    const-string v0, "\u0001\u0002\u0000\u0001\u0001\u0002\u0002\u0000\u0000\u0000\u0001\u1002\u0000\u0002\u100c\u0001"
-
-    const/4 v1, 0x4
-
-    new-array v1, v1, [Ljava/lang/Object;
-
-    const/4 v2, 0x0
-
-    aput-object p1, v1, v2
-
-    const-string p1, "b"
-
-    aput-object p1, v1, p2
-
-    const/4 p1, 0x2
-
-    const-string p2, "c"
-
-    aput-object p2, v1, p1
-
-    const/4 p1, 0x3
-
-    sget-object p2, Lnia;->r:Lnww;
-
-    aput-object p2, v1, p1
-
-    sget-object p1, Lnir;->d:Lnir;
-
-    invoke-static {p1, v0, v1}, Lnir;->X(Lnxy;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object p1
-
-    return-object p1
-
-    :pswitch_6
-    invoke-static {p2}, Ljava/lang/Byte;->valueOf(B)Ljava/lang/Byte;
-
-    move-result-object p1
-
-    return-object p1
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_6
-        :pswitch_0
-        :pswitch_5
-        :pswitch_4
-        :pswitch_3
-        :pswitch_2
-        :pswitch_1
-    .end packed-switch
+    return-void
 .end method

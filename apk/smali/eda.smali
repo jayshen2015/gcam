@@ -1,74 +1,134 @@
-.class public final Leda;
+.class public final synthetic Leda;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lkai;
+.implements Lpky;
 
 
 # instance fields
-.field public volatile a:Lkou;
+.field public final synthetic a:Ledd;
 
-.field private final b:Lfvh;
+.field public final synthetic b:Lpjq;
 
 
 # direct methods
-.method public constructor <init>(Lfvh;)V
+.method public synthetic constructor <init>(Ledd;Lpjq;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Leda;->b:Lfvh;
+    iput-object p1, p0, Leda;->a:Ledd;
+
+    iput-object p2, p0, Leda;->b:Lpjq;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final bridge synthetic bn(Ljava/lang/Object;)V
-    .locals 1
+.method public final a(IJLcom/google/googlex/gcam/ShotMetadata;I)V
+    .locals 6
 
-    check-cast p1, Lkou;
+    iget-object p5, p0, Leda;->a:Ledd;
 
-    sget-object v0, Landroid/hardware/camera2/CaptureResult;->COLOR_CORRECTION_GAINS:Landroid/hardware/camera2/CaptureResult$Key;
+    iget-object v0, p0, Leda;->b:Lpjq;
 
-    invoke-interface {p1, v0}, Lkou;->d(Landroid/hardware/camera2/CaptureResult$Key;)Ljava/lang/Object;
+    iget v1, p5, Ledd;->q:I
 
-    move-result-object v0
+    const/4 v2, 0x0
 
-    if-nez v0, :cond_0
+    const/4 v3, 0x1
+
+    if-ne v1, v3, :cond_0
+
+    const/4 v1, 0x1
 
     goto :goto_0
 
     :cond_0
-    sget-object v0, Landroid/hardware/camera2/CaptureResult;->COLOR_CORRECTION_TRANSFORM:Landroid/hardware/camera2/CaptureResult$Key;
+    const/4 v1, 0x0
 
-    invoke-interface {p1, v0}, Lkou;->d(Landroid/hardware/camera2/CaptureResult$Key;)Ljava/lang/Object;
+    :goto_0
+    invoke-static {v1}, Lobr;->aQ(Z)V
 
-    move-result-object v0
+    iget-object v1, p5, Ledd;->m:Ledf;
 
-    if-eqz v0, :cond_1
+    invoke-virtual {v1}, Ledf;->j()Lojc;
 
-    sget-object v0, Landroid/hardware/camera2/CaptureResult;->CONTROL_AE_REGIONS:Landroid/hardware/camera2/CaptureResult$Key;
+    move-result-object v1
 
-    invoke-interface {p1, v0}, Lkou;->d(Landroid/hardware/camera2/CaptureResult$Key;)Ljava/lang/Object;
+    invoke-virtual {v1}, Lojc;->g()Z
 
-    move-result-object v0
+    move-result v1
 
-    if-eqz v0, :cond_1
+    const-string v4, "Got merged RAW callback but no callback present"
 
-    iget-object v0, p0, Leda;->b:Lfvh;
+    invoke-static {v1, v4}, Lobr;->aR(ZLjava/lang/Object;)V
 
-    invoke-interface {v0, p1}, Lfvh;->a(Lkou;)Z
+    invoke-static {}, Lcom/google/googlex/gcam/GcamModuleJNI;->kInvalidAllocationId_get()J
 
-    move-result v0
+    move-result-wide v4
 
-    if-eqz v0, :cond_1
+    cmp-long v1, p2, v4
 
-    iput-object p1, p0, Leda;->a:Lkou;
+    if-eqz v1, :cond_1
+
+    iget-boolean p1, v0, Lpjq;->b:Z
+
+    const-string p2, "doneWriting() must be called before getImage."
+
+    invoke-static {p1, p2}, Lobr;->aR(ZLjava/lang/Object;)V
+
+    iget-object p1, v0, Lpjq;->a:Lpjj;
+
+    iget-object p2, p5, Ledd;->m:Ledf;
+
+    invoke-virtual {p2}, Ledf;->j()Lojc;
+
+    move-result-object p2
+
+    invoke-virtual {p2}, Lojc;->c()Ljava/lang/Object;
+
+    move-result-object p2
+
+    check-cast p2, Lebw;
+
+    invoke-interface {p2, p5, p1, p4}, Lebw;->a(Ledd;Lpjj;Lcom/google/googlex/gcam/ShotMetadata;)V
 
     return-void
 
     :cond_1
-    :goto_0
+    iget-object p2, p5, Ledd;->m:Ledf;
+
+    invoke-virtual {p2}, Ledf;->j()Lojc;
+
+    move-result-object p2
+
+    invoke-virtual {p2}, Lojc;->c()Ljava/lang/Object;
+
+    move-result-object p2
+
+    check-cast p2, Lebw;
+
+    new-instance p3, Lebr;
+
+    new-array p4, v3, [Ljava/lang/Object;
+
+    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object p1
+
+    aput-object p1, p4, v2
+
+    const-string p1, "MergeRaw failed (shotId = %d)"
+
+    invoke-static {p1, p4}, Lmip;->bp(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-direct {p3, p1}, Lebr;-><init>(Ljava/lang/String;)V
+
+    invoke-interface {p2, p3}, Lebw;->b(Lebr;)V
+
     return-void
 .end method

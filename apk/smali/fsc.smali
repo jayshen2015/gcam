@@ -1,88 +1,37 @@
-.class public final Lfsc;
+.class public final synthetic Lfsc;
 .super Ljava/lang/Object;
 
+# interfaces
+.implements Lfvo;
 
-# static fields
-.field static final a:[F
 
-.field static final b:[F
-
-.field public static final c:Lbkb;
-
-.field public static final d:Lbkb;
+# instance fields
+.field public final synthetic a:Landroid/media/MediaCodec$BufferInfo;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 3
+.method public synthetic constructor <init>(Landroid/media/MediaCodec$BufferInfo;)V
+    .locals 0
 
-    const/16 v0, 0x10
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    new-array v1, v0, [F
-
-    fill-array-data v1, :array_0
-
-    sput-object v1, Lfsc;->a:[F
-
-    new-array v0, v0, [F
-
-    fill-array-data v0, :array_1
-
-    sput-object v0, Lfsc;->b:[F
-
-    new-instance v2, Lbkb;
-
-    invoke-direct {v2, v0}, Lbkb;-><init>([F)V
-
-    sput-object v2, Lfsc;->c:Lbkb;
-
-    new-instance v0, Lbkb;
-
-    invoke-direct {v0, v1}, Lbkb;-><init>([F)V
-
-    sput-object v0, Lfsc;->d:Lbkb;
+    iput-object p1, p0, Lfsc;->a:Landroid/media/MediaCodec$BufferInfo;
 
     return-void
+.end method
 
-    nop
 
-    :array_0
-    .array-data 4
-        0x3f800000    # 1.0f
-        0x0
-        0x0
-        0x0
-        0x0
-        0x3f800000    # 1.0f
-        0x0
-        0x0
-        0x0
-        0x0
-        0x3f800000    # 1.0f
-        0x0
-        0x0
-        0x0
-        0x0
-        0x3f800000    # 1.0f
-    .end array-data
+# virtual methods
+.method public final a(Ljava/lang/Object;)V
+    .locals 1
 
-    :array_1
-    .array-data 4
-        0x3f800000    # 1.0f
-        0x0
-        0x0
-        0x0
-        0x0
-        -0x40800000    # -1.0f
-        0x0
-        0x0
-        0x0
-        0x0
-        0x3f800000    # 1.0f
-        0x0
-        0x0
-        0x3f800000    # 1.0f
-        0x0
-        0x3f800000    # 1.0f
-    .end array-data
+    iget-object v0, p0, Lfsc;->a:Landroid/media/MediaCodec$BufferInfo;
+
+    check-cast p1, Lfsb;
+
+    iget-object p1, p1, Lfsb;->d:Lpih;
+
+    invoke-virtual {p1, v0}, Lpih;->o(Ljava/lang/Object;)Z
+
+    return-void
 .end method

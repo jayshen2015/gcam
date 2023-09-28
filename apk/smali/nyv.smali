@@ -1,166 +1,43 @@
-.class final Lnyv;
-.super Ljava/util/AbstractSet;
+.class public final Lnyv;
+.super Ljava/lang/Object;
 
 
 # instance fields
-.field final synthetic a:Lnyw;
+.field final synthetic a:Lcom/google/android/material/floatingactionbutton/FloatingActionButton;
 
 
 # direct methods
-.method public constructor <init>(Lnyw;)V
+.method public constructor <init>(Lcom/google/android/material/floatingactionbutton/FloatingActionButton;)V
     .locals 0
 
-    iput-object p1, p0, Lnyv;->a:Lnyw;
+    iput-object p1, p0, Lnyv;->a:Lcom/google/android/material/floatingactionbutton/FloatingActionButton;
 
-    invoke-direct {p0}, Ljava/util/AbstractSet;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final bridge synthetic add(Ljava/lang/Object;)Z
-    .locals 2
-
-    check-cast p1, Ljava/util/Map$Entry;
-
-    invoke-virtual {p0, p1}, Lnyv;->contains(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-nez v0, :cond_0
-
-    iget-object v0, p0, Lnyv;->a:Lnyw;
-
-    invoke-interface {p1}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Ljava/lang/Comparable;
-
-    invoke-interface {p1}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
-
-    move-result-object p1
-
-    invoke-virtual {v0, v1, p1}, Lnyw;->d(Ljava/lang/Comparable;Ljava/lang/Object;)Ljava/lang/Object;
-
-    const/4 p1, 0x1
-
-    return p1
-
-    :cond_0
-    const/4 p1, 0x0
-
-    return p1
-.end method
-
-.method public final clear()V
+.method public final a(Landroid/graphics/drawable/Drawable;)V
     .locals 1
-
-    iget-object v0, p0, Lnyv;->a:Lnyw;
-
-    invoke-virtual {v0}, Lnyw;->clear()V
-
-    return-void
-.end method
-
-.method public final contains(Ljava/lang/Object;)Z
-    .locals 3
-
-    check-cast p1, Ljava/util/Map$Entry;
-
-    iget-object v0, p0, Lnyv;->a:Lnyw;
-
-    invoke-interface {p1}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Lnyw;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    invoke-interface {p1}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
-
-    move-result-object p1
-
-    const/4 v1, 0x1
-
-    if-eq v0, p1, :cond_2
-
-    const/4 v2, 0x0
-
-    if-eqz v0, :cond_1
-
-    invoke-virtual {v0, p1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
-
-    move-result p1
 
     if-eqz p1, :cond_0
 
-    goto :goto_0
+    iget-object v0, p0, Lnyv;->a:Lcom/google/android/material/floatingactionbutton/FloatingActionButton;
+
+    invoke-static {v0, p1}, Lcom/google/android/material/floatingactionbutton/FloatingActionButton;->d(Lcom/google/android/material/floatingactionbutton/FloatingActionButton;Landroid/graphics/drawable/Drawable;)V
 
     :cond_0
-    return v2
-
-    :cond_1
-    const/4 v1, 0x0
-
-    goto :goto_0
-
-    :cond_2
-    :goto_0
-    return v1
+    return-void
 .end method
 
-.method public final iterator()Ljava/util/Iterator;
-    .locals 2
-
-    new-instance v0, Lnyu;
-
-    iget-object v1, p0, Lnyv;->a:Lnyw;
-
-    invoke-direct {v0, v1}, Lnyu;-><init>(Lnyw;)V
-
-    return-object v0
-.end method
-
-.method public final remove(Ljava/lang/Object;)Z
+.method public final b()Z
     .locals 1
 
-    check-cast p1, Ljava/util/Map$Entry;
+    iget-object v0, p0, Lnyv;->a:Lcom/google/android/material/floatingactionbutton/FloatingActionButton;
 
-    invoke-virtual {p0, p1}, Lnyv;->contains(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    iget-object v0, p0, Lnyv;->a:Lnyw;
-
-    invoke-interface {p1}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
-
-    move-result-object p1
-
-    invoke-virtual {v0, p1}, Lnyw;->remove(Ljava/lang/Object;)Ljava/lang/Object;
-
-    const/4 p1, 0x1
-
-    return p1
-
-    :cond_0
-    const/4 p1, 0x0
-
-    return p1
-.end method
-
-.method public final size()I
-    .locals 1
-
-    iget-object v0, p0, Lnyv;->a:Lnyw;
-
-    invoke-virtual {v0}, Lnyw;->size()I
-
-    move-result v0
+    iget-boolean v0, v0, Lcom/google/android/material/floatingactionbutton/FloatingActionButton;->b:Z
 
     return v0
 .end method

@@ -1,107 +1,79 @@
-.class public final Liov;
+.class public final synthetic Liov;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lipc;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field private a:Lipc;
+.field public final synthetic a:Lipx;
+
+.field private final synthetic b:I
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 1
+.method public synthetic constructor <init>(Lipx;I)V
+    .locals 0
+
+    iput p2, p0, Liov;->b:I
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const/4 v0, 0x0
-
-    iput-object v0, p0, Liov;->a:Lipc;
+    iput-object p1, p0, Liov;->a:Lipx;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Landroid/graphics/PointF;)V
+.method public final run()V
     .locals 1
 
-    iget-object v0, p0, Liov;->a:Lipc;
+    iget v0, p0, Liov;->b:I
 
-    if-nez v0, :cond_0
+    packed-switch v0, :pswitch_data_0
 
-    return-void
+    iget-object v0, p0, Liov;->a:Lipx;
 
-    :cond_0
-    invoke-interface {v0, p1}, Lipc;->a(Landroid/graphics/PointF;)V
-
-    return-void
-.end method
-
-.method public final b()V
-    .locals 1
-
-    iget-object v0, p0, Liov;->a:Lipc;
-
-    if-nez v0, :cond_0
+    invoke-virtual {v0}, Liph;->c()V
 
     return-void
 
-    :cond_0
-    invoke-interface {v0}, Lipc;->b()V
+    :pswitch_0
+    iget-object v0, p0, Liov;->a:Lipx;
 
-    return-void
-.end method
-
-.method public final c()V
-    .locals 1
-
-    iget-object v0, p0, Liov;->a:Lipc;
-
-    if-nez v0, :cond_0
+    invoke-interface {v0}, Lihs;->g()V
 
     return-void
 
-    :cond_0
-    invoke-interface {v0}, Lipc;->c()V
+    :pswitch_1
+    iget-object v0, p0, Liov;->a:Lipx;
 
-    return-void
-.end method
-
-.method public final d(Landroid/graphics/PointF;)V
-    .locals 1
-
-    iget-object v0, p0, Liov;->a:Lipc;
-
-    if-nez v0, :cond_0
+    invoke-virtual {v0}, Liph;->f()V
 
     return-void
 
-    :cond_0
-    invoke-interface {v0, p1}, Lipc;->d(Landroid/graphics/PointF;)V
+    :pswitch_2
+    iget-object v0, p0, Liov;->a:Lipx;
+
+    invoke-virtual {v0}, Liph;->gl()V
 
     return-void
-.end method
 
-.method public final e()V
-    .locals 1
+    :pswitch_3
+    iget-object v0, p0, Liov;->a:Lipx;
 
-    invoke-virtual {p0}, Liov;->c()V
-
-    const/4 v0, 0x0
-
-    iput-object v0, p0, Liov;->a:Lipc;
+    invoke-virtual {v0}, Liph;->a()V
 
     return-void
-.end method
 
-.method public final f(Lipc;)V
-    .locals 0
+    nop
 
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    iput-object p1, p0, Liov;->a:Lipc;
-
-    return-void
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method

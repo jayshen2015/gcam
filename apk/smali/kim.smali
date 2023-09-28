@@ -1,51 +1,77 @@
-.class public final Lkim;
+.class public Lkim;
 .super Ljava/lang/Object;
 
-# interfaces
-.implements Logk;
+
+# annotations
+.annotation runtime Ljava/lang/Deprecated;
+.end annotation
 
 
-# instance fields
-.field private final a:Loiw;
+# static fields
+.field private static final a:Ljava/util/Set;
 
 
 # direct methods
-.method public constructor <init>(Loiw;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 1
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance v0, Ljava/util/WeakHashMap;
 
-    iput-object p1, p0, Lkim;->a:Loiw;
+    invoke-direct {v0}, Ljava/util/WeakHashMap;-><init>()V
+
+    invoke-static {v0}, Ljava/util/Collections;->newSetFromMap(Ljava/util/Map;)Ljava/util/Set;
+
+    move-result-object v0
+
+    sput-object v0, Lkim;->a:Ljava/util/Set;
 
     return-void
 .end method
 
+.method public constructor <init>()V
+    .locals 0
 
-# virtual methods
-.method public final a()Lkil;
-    .locals 2
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iget-object v0, p0, Lkim;->a:Loiw;
-
-    check-cast v0, Lkje;
-
-    invoke-virtual {v0}, Lkje;->a()Lkdy;
-
-    move-result-object v0
-
-    new-instance v1, Lkil;
-
-    invoke-direct {v1, v0}, Lkil;-><init>(Lkdy;)V
-
-    return-object v1
+    return-void
 .end method
 
-.method public final bridge synthetic get()Ljava/lang/Object;
-    .locals 1
+.method public static a()Ljava/util/Set;
+    .locals 2
 
-    invoke-virtual {p0}, Lkim;->a()Lkil;
+    sget-object v0, Lkim;->a:Ljava/util/Set;
 
-    move-result-object v0
+    monitor-enter v0
+
+    :try_start_0
+    monitor-exit v0
 
     return-object v0
+
+    :catchall_0
+    move-exception v1
+
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw v1
+.end method
+
+
+# virtual methods
+.method public b(Lkji;)V
+    .locals 0
+
+    const/4 p1, 0x0
+
+    throw p1
+.end method
+
+.method public c(Lkji;)V
+    .locals 0
+
+    const/4 p1, 0x0
+
+    throw p1
 .end method

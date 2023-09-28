@@ -1,159 +1,208 @@
-.class public final Llki;
+.class final Llki;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Llhh;
+.implements Llkc;
 
 
 # instance fields
-.field private final a:I
+.field private final a:Lpih;
 
-.field private final b:I
+.field private final b:Lljf;
 
 
 # direct methods
-.method public constructor <init>()V
+.method public constructor <init>(Lljf;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    return-void
-.end method
+    iput-object p1, p0, Llki;->b:Lljf;
 
-.method public constructor <init>([B)V
-    .locals 0
+    invoke-static {}, Lpih;->f()Lpih;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    move-result-object p1
 
-    const/4 p1, 0x2
-
-    iput p1, p0, Llki;->b:I
-
-    const/16 p1, 0xa
-
-    iput p1, p0, Llki;->a:I
+    iput-object p1, p0, Llki;->a:Lpih;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()I
-    .locals 1
+.method public final a()V
+    .locals 5
 
-    iget v0, p0, Llki;->a:I
+    iget-object v0, p0, Llki;->a:Lpih;
 
-    return v0
+    new-instance v1, Llkh;
+
+    sget-object v2, Llju;->l:Llju;
+
+    sget-object v3, Llju;->l:Llju;
+
+    invoke-virtual {v3}, Llju;->c()Ljava/lang/String;
+
+    move-result-object v3
+
+    const/4 v4, 0x2
+
+    invoke-direct {v1, v4, v2, v3}, Llkh;-><init>(ILlju;Ljava/lang/String;)V
+
+    invoke-virtual {v0, v1}, Lpih;->o(Ljava/lang/Object;)Z
+
+    return-void
 .end method
 
-.method public final b()Z
-    .locals 1
+.method public final b()V
+    .locals 5
 
-    const/4 v0, 0x0
+    iget-object v0, p0, Llki;->a:Lpih;
 
-    return v0
+    new-instance v1, Llkh;
+
+    sget-object v2, Llju;->k:Llju;
+
+    sget-object v3, Llju;->k:Llju;
+
+    invoke-virtual {v3}, Llju;->c()Ljava/lang/String;
+
+    move-result-object v3
+
+    const/4 v4, 0x2
+
+    invoke-direct {v1, v4, v2, v3}, Llkh;-><init>(ILlju;Ljava/lang/String;)V
+
+    invoke-virtual {v0, v1}, Lpih;->o(Ljava/lang/Object;)Z
+
+    return-void
 .end method
 
-.method public final equals(Ljava/lang/Object;)Z
+.method public final c(Llju;)V
     .locals 4
 
-    const/4 v0, 0x1
+    sget-object v0, Llju;->p:Llju;
 
-    if-ne p1, p0, :cond_0
+    if-ne p1, v0, :cond_0
 
-    return v0
+    iget-object v0, p0, Llki;->a:Lpih;
+
+    new-instance v1, Llkh;
+
+    const/4 v2, 0x3
+
+    sget-object v3, Llju;->p:Llju;
+
+    invoke-virtual {v3}, Llju;->c()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-direct {v1, v2, p1, v3}, Llkh;-><init>(ILlju;Ljava/lang/String;)V
+
+    invoke-virtual {v0, v1}, Lpih;->o(Ljava/lang/Object;)Z
 
     :cond_0
-    instance-of v1, p1, Llki;
+    iget-object v0, p0, Llki;->a:Lpih;
 
-    const/4 v2, 0x0
+    new-instance v1, Llkh;
 
-    if-eqz v1, :cond_3
+    const/4 v2, 0x2
 
-    check-cast p1, Llki;
+    invoke-virtual {p1}, Llju;->c()Ljava/lang/String;
 
-    iget v1, p0, Llki;->b:I
+    move-result-object v3
 
-    iget v3, p1, Llki;->b:I
+    invoke-direct {v1, v2, p1, v3}, Llkh;-><init>(ILlju;Ljava/lang/String;)V
 
-    if-eqz v1, :cond_2
+    invoke-virtual {v0, v1}, Lpih;->o(Ljava/lang/Object;)Z
 
-    if-ne v1, v3, :cond_1
-
-    iget v1, p0, Llki;->a:I
-
-    iget p1, p1, Llki;->a:I
-
-    if-ne v1, p1, :cond_1
-
-    return v0
-
-    :cond_1
-    return v2
-
-    :cond_2
-    const/4 p1, 0x0
-
-    throw p1
-
-    :cond_3
-    return v2
+    return-void
 .end method
 
-.method public final hashCode()I
+.method public final d(Llzp;)V
     .locals 2
 
-    iget v0, p0, Llki;->b:I
+    iget-object p1, p0, Llki;->a:Lpih;
 
-    invoke-static {v0}, Llhi;->b(I)V
+    new-instance v0, Llkh;
 
-    const v1, 0xf4243
+    const/4 v1, 0x1
 
-    xor-int/2addr v0, v1
+    invoke-direct {v0, v1}, Llkh;-><init>(I)V
 
-    mul-int v0, v0, v1
+    invoke-virtual {p1, v0}, Lpih;->o(Ljava/lang/Object;)Z
 
-    iget v1, p0, Llki;->a:I
-
-    xor-int/2addr v0, v1
-
-    return v0
+    return-void
 .end method
 
-.method public final toString()Ljava/lang/String;
-    .locals 4
+.method public final e(J)Llkh;
+    .locals 2
 
-    iget v0, p0, Llki;->b:I
+    iget-object v0, p0, Llki;->b:Lljf;
 
-    invoke-static {v0}, Llhi;->a(I)Ljava/lang/String;
+    const-string v1, "awaitResult"
 
-    move-result-object v0
+    invoke-interface {v0, v1}, Lljf;->e(Ljava/lang/String;)V
 
-    iget v1, p0, Llki;->a:I
+    :try_start_0
+    iget-object v0, p0, Llki;->a:Lpih;
 
-    new-instance v2, Ljava/lang/StringBuilder;
+    sget-object v1, Ljava/util/concurrent/TimeUnit;->MILLISECONDS:Ljava/util/concurrent/TimeUnit;
 
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-virtual {v0, p1, p2, v1}, Lpih;->get(JLjava/util/concurrent/TimeUnit;)Ljava/lang/Object;
 
-    const-string v3, "JankConfigurations{enablement="
+    move-result-object p1
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    check-cast p1, Llkh;
+    :try_end_0
+    .catch Ljava/util/concurrent/TimeoutException; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Ljava/util/concurrent/ExecutionException; {:try_start_0 .. :try_end_0} :catch_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    iget-object p2, p0, Llki;->b:Lljf;
 
-    const-string v0, ", rateLimitPerSecond="
+    :goto_0
+    invoke-interface {p2}, Lljf;->f()V
 
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    return-object p1
 
-    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    :catchall_0
+    move-exception p1
 
-    const-string v0, "}"
+    goto :goto_2
 
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    :catch_0
+    move-exception p1
 
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    goto :goto_1
 
-    move-result-object v0
+    :catch_1
+    move-exception p1
 
-    return-object v0
+    :goto_1
+    :try_start_1
+    new-instance p1, Llkh;
+
+    const/4 p2, 0x5
+
+    invoke-direct {p1, p2}, Llkh;-><init>(I)V
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    iget-object p2, p0, Llki;->b:Lljf;
+
+    goto :goto_0
+
+    :goto_2
+    iget-object p2, p0, Llki;->b:Lljf;
+
+    invoke-interface {p2}, Lljf;->f()V
+
+    goto :goto_4
+
+    :goto_3
+    throw p1
+
+    :goto_4
+    goto :goto_3
 .end method

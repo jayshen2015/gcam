@@ -13,7 +13,7 @@
 
 
 # direct methods
-.method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;Lcq;)V
+.method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;Lcu;)V
     .locals 4
 
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
@@ -42,32 +42,35 @@
 
     move-result-object v1
 
-    sget-object v2, Lat;->b:[I
+    sget-object v2, Lax;->b:[I
 
     const/4 v3, 0x0
 
     invoke-virtual {p1, p2, v2, v3, v3}, Landroid/content/Context;->obtainStyledAttributes(Landroid/util/AttributeSet;[III)Landroid/content/res/TypedArray;
 
-    move-result-object v2
+    move-result-object p2
 
     if-nez v1, :cond_0
 
-    invoke-virtual {v2, v3}, Landroid/content/res/TypedArray;->getString(I)Ljava/lang/String;
+    invoke-virtual {p2, v3}, Landroid/content/res/TypedArray;->getString(I)Ljava/lang/String;
 
     move-result-object v1
 
+    goto :goto_0
+
     :cond_0
-    invoke-virtual {v2, v0}, Landroid/content/res/TypedArray;->getString(I)Ljava/lang/String;
+    :goto_0
+    invoke-virtual {p2, v0}, Landroid/content/res/TypedArray;->getString(I)Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object v2
 
-    invoke-virtual {v2}, Landroid/content/res/TypedArray;->recycle()V
+    invoke-virtual {p2}, Landroid/content/res/TypedArray;->recycle()V
 
     invoke-virtual {p0}, Lcc;->getId()I
 
-    move-result v2
+    move-result p2
 
-    invoke-virtual {p3, v2}, Lcq;->d(I)Lbw;
+    invoke-virtual {p3, p2}, Lcu;->c(I)Lbu;
 
     move-result-object v3
 
@@ -75,24 +78,22 @@
 
     if-nez v3, :cond_3
 
-    const/4 v3, -0x1
+    if-gtz p2, :cond_2
 
-    if-ne v2, v3, :cond_2
-
-    if-eqz v0, :cond_1
+    if-eqz v2, :cond_1
 
     const-string p1, " with tag "
 
-    invoke-virtual {p1, v0}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p1, v2}, Lqno;->a(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p1
 
-    goto :goto_0
+    goto :goto_1
 
     :cond_1
     const-string p1, ""
 
-    :goto_0
+    :goto_1
     new-instance p2, Ljava/lang/IllegalStateException;
 
     new-instance p3, Ljava/lang/StringBuilder;
@@ -103,7 +104,7 @@
 
     invoke-virtual {p3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {p3, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {p3, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
     invoke-virtual {p3, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -116,42 +117,48 @@
     throw p2
 
     :cond_2
-    invoke-virtual {p3}, Lcq;->h()Lcd;
+    invoke-virtual {p3}, Lcu;->e()Lce;
 
-    move-result-object v2
+    move-result-object p2
 
     invoke-virtual {p1}, Landroid/content/Context;->getClassLoader()Ljava/lang/ClassLoader;
 
-    invoke-virtual {v2, v1}, Lcd;->b(Ljava/lang/String;)Lbw;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    const/4 v2, 0x0
-
-    invoke-virtual {v1, p1, p2, v2}, Lbw;->onInflate(Landroid/content/Context;Landroid/util/AttributeSet;Landroid/os/Bundle;)V
-
-    invoke-virtual {p3}, Lcq;->i()Lcx;
+    invoke-virtual {p2, v1}, Lce;->b(Ljava/lang/String;)Lbu;
 
     move-result-object p1
 
-    invoke-virtual {p1}, Lcx;->q()V
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    iput-object p0, v1, Lbw;->M:Landroid/view/ViewGroup;
+    invoke-virtual {p1}, Lbu;->ad()V
+
+    invoke-virtual {p3}, Lcu;->h()Ldd;
+
+    move-result-object p2
+
+    iput-boolean v0, p2, Ldd;->s:Z
+
+    iput-object p0, p1, Lbu;->L:Landroid/view/ViewGroup;
 
     invoke-virtual {p0}, Landroid/view/ViewGroup;->getId()I
 
-    move-result p2
+    move-result v1
 
-    invoke-virtual {p1, p2, v1, v0}, Lcx;->n(ILbw;Ljava/lang/String;)V
+    invoke-virtual {p2, v1, p1, v2}, Ldd;->m(ILbu;Ljava/lang/String;)V
 
-    invoke-virtual {p1}, Lcx;->c()V
+    invoke-virtual {p2}, Ldd;->o()V
+
+    move-object p1, p2
+
+    check-cast p1, Lay;
+
+    iget-object p1, p1, Lay;->a:Lcu;
+
+    invoke-virtual {p1, p2, v0}, Lcu;->C(Lcs;Z)V
 
     :cond_3
-    iget-object p1, p3, Lcq;->a:Lcv;
+    iget-object p1, p3, Lcu;->a:Ldb;
 
-    invoke-virtual {p1}, Lcv;->d()Ljava/util/List;
+    invoke-virtual {p1}, Ldb;->e()Ljava/util/List;
 
     move-result-object p1
 
@@ -160,7 +167,7 @@
     move-result-object p1
 
     :cond_4
-    :goto_1
+    :goto_2
     invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
 
     move-result p2
@@ -171,13 +178,11 @@
 
     move-result-object p2
 
-    check-cast p2, Ljea;
+    check-cast p2, Lda;
 
-    iget-object p3, p2, Ljea;->c:Ljava/lang/Object;
+    iget-object p3, p2, Lda;->c:Lbu;
 
-    check-cast p3, Lbw;
-
-    iget v0, p3, Lbw;->D:I
+    iget v0, p3, Lbu;->D:I
 
     invoke-virtual {p0}, Lcc;->getId()I
 
@@ -185,7 +190,7 @@
 
     if-ne v0, v1, :cond_4
 
-    iget-object v0, p3, Lbw;->N:Landroid/view/View;
+    iget-object v0, p3, Lbu;->M:Landroid/view/View;
 
     if-eqz v0, :cond_4
 
@@ -195,11 +200,11 @@
 
     if-nez v0, :cond_4
 
-    iput-object p0, p3, Lbw;->M:Landroid/view/ViewGroup;
+    iput-object p0, p3, Lbu;->L:Landroid/view/ViewGroup;
 
-    invoke-virtual {p2}, Ljea;->b()V
+    invoke-virtual {p2}, Lda;->a()V
 
-    goto :goto_1
+    goto :goto_2
 
     :cond_5
     return-void
@@ -227,21 +232,35 @@
 
 # virtual methods
 .method public final addView(Landroid/view/View;ILandroid/view/ViewGroup$LayoutParams;)V
-    .locals 1
+    .locals 2
 
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    invoke-static {p1}, Lcq;->g(Landroid/view/View;)Lbw;
+    const v0, 0x7f0b0138
+
+    invoke-virtual {p1, v0}, Landroid/view/View;->getTag(I)Ljava/lang/Object;
 
     move-result-object v0
 
-    if-eqz v0, :cond_0
+    instance-of v1, v0, Lbu;
+
+    if-eqz v1, :cond_0
+
+    check-cast v0, Lbu;
+
+    goto :goto_0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    :goto_0
+    if-eqz v0, :cond_1
 
     invoke-super {p0, p1, p2, p3}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;ILandroid/view/ViewGroup$LayoutParams;)V
 
     return-void
 
-    :cond_0
+    :cond_1
     new-instance p2, Ljava/lang/StringBuilder;
 
     invoke-direct {p2}, Ljava/lang/StringBuilder;-><init>()V
@@ -262,6 +281,10 @@
 
     new-instance p2, Ljava/lang/IllegalStateException;
 
+    invoke-virtual {p1}, Ljava/lang/Object;->toString()Ljava/lang/String;
+
+    move-result-object p1
+
     invoke-direct {p2, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 
     throw p2
@@ -272,7 +295,7 @@
 
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    invoke-static {p1}, Lago;->m(Landroid/view/WindowInsets;)Lago;
+    invoke-static {p1}, Lgy;->l(Landroid/view/WindowInsets;)Lgy;
 
     move-result-object v0
 
@@ -286,19 +309,19 @@
 
     invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    invoke-static {v0}, Lago;->m(Landroid/view/WindowInsets;)Lago;
+    invoke-static {v0}, Lgy;->l(Landroid/view/WindowInsets;)Lgy;
 
     move-result-object v0
 
     goto :goto_0
 
     :cond_0
-    invoke-static {p0, v0}, Lafq;->c(Landroid/view/View;Lago;)Lago;
+    invoke-static {p0, v0}, Lgl;->s(Landroid/view/View;Lgy;)Lgy;
 
     move-result-object v0
 
     :goto_0
-    invoke-virtual {v0}, Lago;->q()Z
+    invoke-virtual {v0}, Lgy;->r()Z
 
     move-result v1
 
@@ -308,18 +331,22 @@
 
     move-result v1
 
+    if-lez v1, :cond_1
+
     const/4 v2, 0x0
 
     :goto_1
-    if-ge v2, v1, :cond_1
+    add-int/lit8 v3, v2, 0x1
 
     invoke-virtual {p0, v2}, Lcc;->getChildAt(I)Landroid/view/View;
 
-    move-result-object v3
+    move-result-object v2
 
-    invoke-static {v3, v0}, Lafq;->b(Landroid/view/View;Lago;)Lago;
+    invoke-static {v2, v0}, Lgl;->q(Landroid/view/View;Lgy;)Lgy;
 
-    add-int/lit8 v2, v2, 0x1
+    if-ge v3, v1, :cond_1
+
+    move v2, v3
 
     goto :goto_1
 
@@ -452,18 +479,22 @@
 
     add-int/lit8 v0, v0, -0x1
 
-    :goto_0
     if-ltz v0, :cond_0
+
+    :goto_0
+    add-int/lit8 v1, v0, -0x1
 
     invoke-virtual {p0, v0}, Lcc;->getChildAt(I)Landroid/view/View;
 
-    move-result-object v1
+    move-result-object v0
 
-    invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    invoke-direct {p0, v1}, Lcc;->a(Landroid/view/View;)V
+    invoke-direct {p0, v0}, Lcc;->a(Landroid/view/View;)V
 
-    add-int/lit8 v0, v0, -0x1
+    if-ltz v1, :cond_0
+
+    move v0, v1
 
     goto :goto_0
 
@@ -514,16 +545,18 @@
 .end method
 
 .method public final removeViews(II)V
-    .locals 2
+    .locals 3
 
-    move v0, p1
+    add-int v0, p1, p2
+
+    if-ge p1, v0, :cond_0
+
+    move v1, p1
 
     :goto_0
-    add-int v1, p1, p2
+    add-int/lit8 v2, v1, 0x1
 
-    if-ge v0, v1, :cond_0
-
-    invoke-virtual {p0, v0}, Lcc;->getChildAt(I)Landroid/view/View;
+    invoke-virtual {p0, v1}, Lcc;->getChildAt(I)Landroid/view/View;
 
     move-result-object v1
 
@@ -531,7 +564,9 @@
 
     invoke-direct {p0, v1}, Lcc;->a(Landroid/view/View;)V
 
-    add-int/lit8 v0, v0, 0x1
+    if-ge v2, v0, :cond_0
+
+    move v1, v2
 
     goto :goto_0
 
@@ -542,16 +577,18 @@
 .end method
 
 .method public final removeViewsInLayout(II)V
-    .locals 2
+    .locals 3
 
-    move v0, p1
+    add-int v0, p1, p2
+
+    if-ge p1, v0, :cond_0
+
+    move v1, p1
 
     :goto_0
-    add-int v1, p1, p2
+    add-int/lit8 v2, v1, 0x1
 
-    if-ge v0, v1, :cond_0
-
-    invoke-virtual {p0, v0}, Lcc;->getChildAt(I)Landroid/view/View;
+    invoke-virtual {p0, v1}, Lcc;->getChildAt(I)Landroid/view/View;
 
     move-result-object v1
 
@@ -559,7 +596,9 @@
 
     invoke-direct {p0, v1}, Lcc;->a(Landroid/view/View;)V
 
-    add-int/lit8 v0, v0, 0x1
+    if-ge v2, v0, :cond_0
+
+    move v1, v2
 
     goto :goto_0
 

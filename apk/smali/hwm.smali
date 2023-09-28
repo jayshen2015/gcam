@@ -1,239 +1,250 @@
-.class final Lhwm;
-.super Landroid/os/CountDownTimer;
+.class public final Lhwm;
+.super Ljava/lang/Object;
 
 
 # instance fields
-.field a:J
+.field public final a:Lhuf;
 
-.field final synthetic b:J
+.field public final b:Lhug;
 
-.field final synthetic c:D
+.field public final c:J
 
-.field final synthetic d:Lhwp;
+.field private final d:Landroid/os/UserManager;
+
+.field private final e:Lddf;
+
+.field private final f:Llzh;
+
+.field private final g:Lhwp;
+
+.field private final h:Lqkg;
 
 
 # direct methods
-.method public constructor <init>(Lhwp;JJD)V
+.method public constructor <init>(Landroid/os/UserManager;Lddf;Llzh;Lhuf;Lhug;Lhwp;Lqkg;Landroid/content/pm/PackageInfo;)V
     .locals 0
 
-    iput-object p1, p0, Lhwm;->d:Lhwp;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-wide p4, p0, Lhwm;->b:J
+    iput-object p1, p0, Lhwm;->d:Landroid/os/UserManager;
 
-    iput-wide p6, p0, Lhwm;->c:D
+    iput-object p2, p0, Lhwm;->e:Lddf;
 
-    const-wide/16 p6, 0x19
+    iput-object p3, p0, Lhwm;->f:Llzh;
 
-    invoke-direct {p0, p2, p3, p6, p7}, Landroid/os/CountDownTimer;-><init>(JJ)V
+    iput-object p4, p0, Lhwm;->a:Lhuf;
 
-    long-to-double p1, p4
+    iput-object p5, p0, Lhwm;->b:Lhug;
 
-    const-wide p3, 0x408f400000000000L    # 1000.0
+    iput-object p6, p0, Lhwm;->g:Lhwp;
 
-    invoke-static {p1, p2}, Ljava/lang/Double;->isNaN(D)Z
+    iput-object p7, p0, Lhwm;->h:Lqkg;
 
-    div-double/2addr p1, p3
-
-    invoke-static {p1, p2}, Ljava/lang/Math;->ceil(D)D
+    invoke-virtual {p8}, Landroid/content/pm/PackageInfo;->getLongVersionCode()J
 
     move-result-wide p1
 
-    double-to-long p1, p1
-
-    iput-wide p1, p0, Lhwm;->a:J
+    iput-wide p1, p0, Lhwm;->c:J
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onFinish()V
-    .locals 17
+.method public final a()V
+    .locals 6
 
-    move-object/from16 v0, p0
+    iget-object v0, p0, Lhwm;->g:Lhwp;
 
-    iget-object v1, v0, Lhwm;->d:Lhwp;
+    iget v0, v0, Lhwp;->b:I
 
-    iget-object v2, v1, Lhwp;->c:Lcom/google/android/apps/camera/ui/cuttlefish/CountdownSliderUi;
+    add-int/lit8 v1, v0, -0x1
 
-    sget-object v3, Lj$/time/Duration;->ZERO:Lj$/time/Duration;
+    if-eqz v0, :cond_2
 
-    invoke-virtual {v1, v3}, Lhwp;->b(Lj$/time/Duration;)Ljava/lang/String;
+    sparse-switch v1, :sswitch_data_0
+
+    return-void
+
+    :sswitch_0
+    iget-object v0, p0, Lhwm;->h:Lqkg;
+
+    invoke-interface {v0}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lhwh;
+
+    iget-object v1, v0, Lhwh;->d:Ljava/lang/String;
+
+    if-nez v1, :cond_0
+
+    sget-object v0, Lhwh;->a:Louj;
+
+    invoke-virtual {v0}, Loue;->c()Lova;
+
+    move-result-object v0
+
+    const/16 v1, 0xa76
+
+    const-string v2, "Not eligible for HAL update."
+
+    invoke-static {v0, v2, v1}, Ld;->v(Lova;Ljava/lang/String;C)V
+
+    return-void
+
+    :cond_0
+    iget-object v1, v0, Lhwh;->n:Lhuf;
+
+    sget-object v2, Lhtu;->U:Lhul;
+
+    invoke-interface {v1, v2}, Lhuf;->c(Lhts;)Ljava/lang/Object;
 
     move-result-object v1
 
-    invoke-virtual {v2, v1}, Lcom/google/android/apps/camera/ui/cuttlefish/CountdownSliderUi;->k(Ljava/lang/String;)V
+    check-cast v1, Ljava/lang/Integer;
 
-    iget-object v1, v0, Lhwm;->d:Lhwp;
+    invoke-virtual {v1}, Ljava/lang/Integer;->intValue()I
 
-    iget-object v1, v1, Lhwp;->c:Lcom/google/android/apps/camera/ui/cuttlefish/CountdownSliderUi;
+    move-result v1
 
-    const/4 v2, 0x0
+    int-to-long v1, v1
 
-    const-wide/16 v3, 0xc8
+    invoke-static {}, Lpyz;->b()J
 
-    invoke-virtual {v1, v2, v3, v4}, Lcom/google/android/apps/camera/ui/cuttlefish/CountdownSliderUi;->s(ZJ)V
+    move-result-wide v3
 
-    iget-object v5, v0, Lhwm;->d:Lhwp;
+    cmp-long v5, v1, v3
 
-    iget-object v1, v5, Lhwp;->d:Lcom/google/android/apps/camera/ui/views/CountdownSnapSlider;
+    if-lez v5, :cond_1
 
-    invoke-virtual {v1}, Lcom/google/android/apps/camera/ui/views/CountdownSnapSlider;->c()D
+    sget-object v0, Lhwh;->a:Louj;
 
-    move-result-wide v6
+    invoke-virtual {v0}, Loue;->c()Lova;
 
-    iget-wide v8, v0, Lhwm;->c:D
+    move-result-object v0
 
-    const-wide/16 v10, 0xfa
+    check-cast v0, Loug;
 
-    new-instance v12, Lakf;
+    const/16 v1, 0xa75
 
-    invoke-direct {v12}, Lakf;-><init>()V
+    invoke-interface {v0, v1}, Loug;->G(I)Lova;
 
-    iget-object v1, v0, Lhwm;->d:Lhwp;
+    move-result-object v0
 
-    iget-wide v2, v0, Lhwm;->c:D
+    check-cast v0, Loug;
 
-    const/4 v4, 0x1
+    invoke-static {}, Lpyz;->b()J
 
-    invoke-virtual {v1, v2, v3, v4}, Lhwp;->p(DI)Landroid/animation/AnimatorListenerAdapter;
+    move-result-wide v1
 
-    move-result-object v13
+    const-string v3, "Attempted HAL update for more than %d times. Skipping update."
 
-    const-wide/16 v14, 0xc8
-
-    const/16 v16, 0x1
-
-    invoke-virtual/range {v5 .. v16}, Lhwp;->q(DDJLandroid/animation/TimeInterpolator;Landroid/animation/AnimatorListenerAdapter;JI)V
+    invoke-interface {v0, v3, v1, v2}, Loug;->q(Ljava/lang/String;J)V
 
     return-void
+
+    :cond_1
+    iget-object v1, v0, Lhwh;->d:Ljava/lang/String;
+
+    invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    iget-object v2, v0, Lhwh;->k:Lhwp;
+
+    const/4 v3, 0x2
+
+    invoke-virtual {v2, v3}, Lhwp;->a(I)V
+
+    new-instance v2, Lhwe;
+
+    invoke-direct {v2, v0, v1}, Lhwe;-><init>(Lhwh;Ljava/lang/String;)V
+
+    iget-object v1, v0, Lhwh;->e:Ljava/util/concurrent/Executor;
+
+    invoke-static {v2, v1}, Lplk;->Z(Ljava/util/concurrent/Callable;Ljava/util/concurrent/Executor;)Lpht;
+
+    move-result-object v1
+
+    new-instance v2, Lhwf;
+
+    const/4 v3, 0x1
+
+    invoke-direct {v2, v0, v3}, Lhwf;-><init>(Lhwh;I)V
+
+    iget-object v0, v0, Lhwh;->h:Llar;
+
+    invoke-static {v1, v2, v0}, Lplk;->af(Lpht;Lphh;Ljava/util/concurrent/Executor;)V
+
+    return-void
+
+    :cond_2
+    const/4 v0, 0x0
+
+    throw v0
+
+    nop
+
+    :sswitch_data_0
+    .sparse-switch
+        0x0 -> :sswitch_0
+        0x3 -> :sswitch_0
+    .end sparse-switch
 .end method
 
-.method public final onTick(J)V
-    .locals 9
+.method public final b()Z
+    .locals 3
 
-    long-to-double v0, p1
+    iget-object v0, p0, Lhwm;->f:Llzh;
 
-    const-wide v2, 0x408f400000000000L    # 1000.0
+    iget-boolean v0, v0, Llzh;->h:Z
 
-    invoke-static {v0, v1}, Ljava/lang/Double;->isNaN(D)Z
+    const/4 v1, 0x0
 
-    div-double v2, v0, v2
+    if-nez v0, :cond_0
 
-    invoke-static {v2, v3}, Ljava/lang/Math;->ceil(D)D
-
-    move-result-wide v2
-
-    double-to-long v2, v2
-
-    iget-wide v4, p0, Lhwm;->a:J
-
-    cmp-long v6, v2, v4
-
-    if-eqz v6, :cond_0
-
-    iget-object v4, p0, Lhwm;->d:Lhwp;
-
-    iget-object v5, v4, Lhwp;->c:Lcom/google/android/apps/camera/ui/cuttlefish/CountdownSliderUi;
-
-    invoke-static {v2, v3}, Lj$/time/Duration;->ofSeconds(J)Lj$/time/Duration;
-
-    move-result-object v6
-
-    invoke-virtual {v4, v6}, Lhwp;->b(Lj$/time/Duration;)Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-virtual {v5, v4}, Lcom/google/android/apps/camera/ui/cuttlefish/CountdownSliderUi;->k(Ljava/lang/String;)V
-
-    iget-object v4, p0, Lhwm;->d:Lhwp;
-
-    iget-object v4, v4, Lhwp;->c:Lcom/google/android/apps/camera/ui/cuttlefish/CountdownSliderUi;
-
-    invoke-static {v2, v3}, Ljava/lang/Long;->toString(J)Ljava/lang/String;
-
-    move-result-object v5
-
-    invoke-virtual {v4, v5}, Lcom/google/android/apps/camera/ui/cuttlefish/CountdownSliderUi;->announceForAccessibility(Ljava/lang/CharSequence;)V
-
-    iput-wide v2, p0, Lhwm;->a:J
+    return v1
 
     :cond_0
-    iget-object v2, p0, Lhwm;->d:Lhwp;
+    iget-object v0, p0, Lhwm;->d:Landroid/os/UserManager;
 
-    iget-wide v3, p0, Lhwm;->b:J
+    invoke-virtual {v0}, Landroid/os/UserManager;->isSystemUser()Z
 
-    iget-wide v5, p0, Lhwm;->c:D
+    move-result v0
 
-    long-to-double v3, v3
+    if-nez v0, :cond_1
 
-    iget-object v2, v2, Lhwp;->b:Likf;
+    return v1
 
-    invoke-static {v0, v1}, Ljava/lang/Double;->isNaN(D)Z
+    :cond_1
+    iget-object v0, p0, Lhwm;->e:Lddf;
 
-    invoke-static {v3, v4}, Ljava/lang/Double;->isNaN(D)Z
+    sget-object v2, Lddl;->bt:Lddg;
 
-    div-double/2addr v0, v3
+    invoke-interface {v0, v2}, Lddf;->k(Lddg;)Z
 
-    const-wide/high16 v3, 0x3ff0000000000000L    # 1.0
+    move-result v0
 
-    sub-double v7, v3, v0
+    if-nez v0, :cond_2
 
-    double-to-float v7, v7
+    return v1
 
-    invoke-virtual {v2, v7}, Likf;->getInterpolation(F)F
+    :cond_2
+    sget-object v0, Lpyz;->a:Lpyz;
 
-    move-result v2
+    invoke-virtual {v0}, Lpyz;->c()Lpza;
 
-    float-to-double v7, v2
+    move-result-object v0
 
-    invoke-static {v7, v8}, Ljava/lang/Double;->isNaN(D)Z
+    invoke-interface {v0}, Lpza;->b()Z
 
-    sub-double v7, v3, v7
+    move-result v0
 
-    mul-double v7, v7, v5
+    if-eqz v0, :cond_3
 
-    mul-double v0, v0, v5
+    return v1
 
-    invoke-static {v0, v1, v7, v8}, Ljava/lang/Math;->min(DD)D
+    :cond_3
+    const/4 v0, 0x1
 
-    move-result-wide v0
-
-    iget-object v2, p0, Lhwm;->d:Lhwp;
-
-    iget-object v5, v2, Lhwp;->c:Lcom/google/android/apps/camera/ui/cuttlefish/CountdownSliderUi;
-
-    iget-object v2, v2, Lhwp;->d:Lcom/google/android/apps/camera/ui/views/CountdownSnapSlider;
-
-    invoke-virtual {v2, v0, v1}, Lcom/google/android/apps/camera/ui/views/CountdownSnapSlider;->a(D)D
-
-    move-result-wide v6
-
-    invoke-virtual {v5, v6, v7}, Lcom/google/android/apps/camera/ui/cuttlefish/CountdownSliderUi;->m(D)V
-
-    iget-wide v5, p0, Lhwm;->b:J
-
-    sub-long/2addr v5, p1
-
-    long-to-double p1, v5
-
-    const-wide/high16 v5, 0x4069000000000000L    # 200.0
-
-    invoke-static {p1, p2}, Ljava/lang/Double;->isNaN(D)Z
-
-    div-double/2addr p1, v5
-
-    invoke-static {p1, p2, v3, v4}, Ljava/lang/Math;->min(DD)D
-
-    move-result-wide p1
-
-    iget-object v2, p0, Lhwm;->d:Lhwp;
-
-    iget-object v2, v2, Lhwp;->d:Lcom/google/android/apps/camera/ui/views/CountdownSnapSlider;
-
-    iput-wide p1, v2, Lcom/google/android/apps/camera/ui/views/CountdownSnapSlider;->e:D
-
-    invoke-virtual {v2, v0, v1}, Lcom/google/android/apps/camera/ui/views/CountdownSnapSlider;->e(D)V
-
-    return-void
+    return v0
 .end method

@@ -1,91 +1,104 @@
-.class Lhpd;
+.class public final synthetic Lhpd;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lhou;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field final synthetic b:Lhpg;
+.field public final synthetic a:Lhpe;
+
+.field private final synthetic b:I
 
 
 # direct methods
-.method public constructor <init>(Lhpg;)V
+.method public synthetic constructor <init>(Lhpe;I)V
     .locals 0
 
-    iput-object p1, p0, Lhpd;->b:Lhpg;
+    iput p2, p0, Lhpd;->b:I
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lhpd;->a:Lhpe;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a()V
-    .locals 0
+.method public final run()V
+    .locals 4
+
+    iget v0, p0, Lhpd;->b:I
+
+    packed-switch v0, :pswitch_data_0
+
+    iget-object v0, p0, Lhpd;->a:Lhpe;
+
+    const-string v1, "HeadingSensor.RegisterAccelerometer"
+
+    invoke-static {v1}, Landroid/os/Trace;->beginSection(Ljava/lang/String;)V
+
+    iget-object v1, v0, Lhpe;->c:Landroid/hardware/Sensor;
+
+    const/4 v2, 0x3
+
+    if-eqz v1, :cond_2
+
+    iget-object v3, v0, Lhpe;->b:Landroid/hardware/SensorManager;
+
+    invoke-virtual {v3, v0, v1, v2}, Landroid/hardware/SensorManager;->registerListener(Landroid/hardware/SensorEventListener;Landroid/hardware/Sensor;I)Z
+
+    goto :goto_0
+
+    :pswitch_0
+    iget-object v0, p0, Lhpd;->a:Lhpe;
+
+    iget-object v1, v0, Lhpe;->c:Landroid/hardware/Sensor;
+
+    if-eqz v1, :cond_0
+
+    iget-object v2, v0, Lhpe;->b:Landroid/hardware/SensorManager;
+
+    invoke-virtual {v2, v0, v1}, Landroid/hardware/SensorManager;->unregisterListener(Landroid/hardware/SensorEventListener;Landroid/hardware/Sensor;)V
+
+    :cond_0
+    iget-object v1, v0, Lhpe;->d:Landroid/hardware/Sensor;
+
+    if-eqz v1, :cond_1
+
+    iget-object v2, v0, Lhpe;->b:Landroid/hardware/SensorManager;
+
+    invoke-virtual {v2, v0, v1}, Landroid/hardware/SensorManager;->unregisterListener(Landroid/hardware/SensorEventListener;Landroid/hardware/Sensor;)V
+
+    :cond_1
+    return-void
+
+    :cond_2
+    :goto_0
+    invoke-static {}, Landroid/os/Trace;->endSection()V
+
+    const-string v1, "HeadingSensor.RegisterMagneticSensor"
+
+    invoke-static {v1}, Landroid/os/Trace;->beginSection(Ljava/lang/String;)V
+
+    iget-object v1, v0, Lhpe;->d:Landroid/hardware/Sensor;
+
+    if-eqz v1, :cond_3
+
+    iget-object v3, v0, Lhpe;->b:Landroid/hardware/SensorManager;
+
+    invoke-virtual {v3, v0, v1, v2}, Landroid/hardware/SensorManager;->registerListener(Landroid/hardware/SensorEventListener;Landroid/hardware/Sensor;I)Z
+
+    :cond_3
+    invoke-static {}, Landroid/os/Trace;->endSection()V
 
     return-void
-.end method
 
-.method public final synthetic b()V
-    .locals 0
+    nop
 
-    return-void
-.end method
-
-.method public final synthetic c()V
-    .locals 0
-
-    return-void
-.end method
-
-.method public final synthetic ck()V
-    .locals 0
-
-    return-void
-.end method
-
-.method public d()V
-    .locals 2
-
-    iget-object v0, p0, Lhpd;->b:Lhpg;
-
-    iget-object v0, v0, Lhpg;->l:Lhpq;
-
-    const/high16 v1, 0x3f800000    # 1.0f
-
-    invoke-virtual {v0, v1}, Lhpq;->d(F)V
-
-    return-void
-.end method
-
-.method public final synthetic f()V
-    .locals 0
-
-    return-void
-.end method
-
-.method public final g()V
-    .locals 1
-
-    iget-object v0, p0, Lhpd;->b:Lhpg;
-
-    iget-object v0, v0, Lhpg;->j:Lgeh;
-
-    invoke-interface {v0}, Lgeh;->l()V
-
-    return-void
-.end method
-
-.method public final synthetic h()V
-    .locals 0
-
-    return-void
-.end method
-
-.method public final synthetic i()V
-    .locals 0
-
-    return-void
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

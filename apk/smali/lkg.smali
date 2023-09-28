@@ -1,182 +1,69 @@
-.class public final Llkg;
-.super Ljava/lang/Object;
-
-
-# static fields
-.field public static final a:[I
-
-.field public static final b:[I
+.class final Llkg;
+.super Landroid/hardware/camera2/CameraManager$AvailabilityCallback;
 
 
 # instance fields
-.field public final c:Lkrn;
-
-.field public final d:J
-
-.field public final e:[I
-
-.field public final f:[I
-
-.field public g:I
-
-.field public h:I
-
-.field public i:I
-
-.field public j:I
-
-.field public k:I
-
-.field public l:I
-
-.field public m:I
-
-.field public n:I
-
-.field public o:I
+.field final synthetic a:Llkj;
 
 
 # direct methods
-.method static constructor <clinit>()V
+.method public constructor <init>(Llkj;)V
+    .locals 0
+
+    iput-object p1, p0, Llkg;->a:Llkj;
+
+    invoke-direct {p0}, Landroid/hardware/camera2/CameraManager$AvailabilityCallback;-><init>()V
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public final onCameraAvailable(Ljava/lang/String;)V
     .locals 1
 
-    const/16 v0, 0x1c
+    iget-object v0, p0, Llkg;->a:Llkj;
 
-    new-array v0, v0, [I
+    iget-object v0, v0, Llkj;->a:Ljava/lang/String;
 
-    fill-array-data v0, :array_0
+    invoke-virtual {v0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    sput-object v0, Llkg;->a:[I
+    move-result p1
 
-    const/16 v0, 0x34
+    if-eqz p1, :cond_0
 
-    new-array v0, v0, [I
+    iget-object p1, p0, Llkg;->a:Llkj;
 
-    fill-array-data v0, :array_1
+    iget-object p1, p1, Llkj;->h:Ljava/lang/Object;
 
-    sput-object v0, Llkg;->b:[I
+    monitor-enter p1
+
+    :try_start_0
+    iget-object v0, p0, Llkg;->a:Llkj;
+
+    iget-object v0, v0, Llkj;->h:Ljava/lang/Object;
+
+    invoke-virtual {v0}, Ljava/lang/Object;->notify()V
+
+    monitor-exit p1
 
     return-void
 
-    nop
+    :catchall_0
+    move-exception v0
 
-    :array_0
-    .array-data 4
-        0x0
-        0x4
-        0x8
-        0xa
-        0xc
-        0xe
-        0x10
-        0x12
-        0x14
-        0x19
-        0x1e
-        0x28
-        0x32
-        0x3c
-        0x46
-        0x50
-        0x5a
-        0x64
-        0x96
-        0xc8
-        0x12c
-        0x190
-        0x1f4
-        0x258
-        0x2bc
-        0x320
-        0x384
-        0x3e8
-    .end array-data
+    monitor-exit p1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    :array_1
-    .array-data 4
-        -0x80000000
-        -0xc8
-        -0x96
-        -0x64
-        -0x5a
-        -0x50
-        -0x46
-        -0x3c
-        -0x32
-        -0x28
-        -0x1e
-        -0x19
-        -0x14
-        -0x12
-        -0x10
-        -0xe
-        -0xc
-        -0xa
-        -0x8
-        -0x6
-        -0x4
-        -0x2
-        0x0
-        0x2
-        0x4
-        0x6
-        0x8
-        0xa
-        0xc
-        0xe
-        0x10
-        0x12
-        0x14
-        0x19
-        0x1e
-        0x28
-        0x32
-        0x3c
-        0x46
-        0x50
-        0x5a
-        0x64
-        0x96
-        0xc8
-        0x12c
-        0x190
-        0x1f4
-        0x258
-        0x2bc
-        0x320
-        0x384
-        0x3e8
-    .end array-data
+    throw v0
+
+    :cond_0
+    return-void
 .end method
 
-.method public constructor <init>(Lkrn;)V
-    .locals 2
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    const/16 v0, 0x1c
-
-    new-array v0, v0, [I
-
-    iput-object v0, p0, Llkg;->e:[I
-
-    const/16 v0, 0x34
-
-    new-array v0, v0, [I
-
-    iput-object v0, p0, Llkg;->f:[I
-
-    const/high16 v0, -0x80000000
-
-    iput v0, p0, Llkg;->o:I
-
-    iput-object p1, p0, Llkg;->c:Lkrn;
-
-    invoke-interface {p1}, Lkrn;->b()J
-
-    move-result-wide v0
-
-    iput-wide v0, p0, Llkg;->d:J
+.method public final onCameraUnavailable(Ljava/lang/String;)V
+    .locals 0
 
     return-void
 .end method

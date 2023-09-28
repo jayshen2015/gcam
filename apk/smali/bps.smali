@@ -1,74 +1,113 @@
-.class public final enum Lbps;
-.super Ljava/lang/Enum;
+.class public final Lbps;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Lpys;
 
 
-# static fields
-.field public static final enum a:Lbps;
+# instance fields
+.field private final a:Lqkg;
 
-.field public static final enum b:Lbps;
+.field private final b:Lqkg;
 
-.field public static final c:Lbps;
+.field private final c:Lqkg;
 
-.field private static final synthetic d:[Lbps;
+.field private final d:Lqkg;
+
+.field private final e:Lqkg;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 5
-
-    new-instance v0, Lbps;
-
-    const-string v1, "PREFER_ARGB_8888"
-
-    const/4 v2, 0x0
-
-    invoke-direct {v0, v1, v2}, Lbps;-><init>(Ljava/lang/String;I)V
-
-    sput-object v0, Lbps;->a:Lbps;
-
-    new-instance v1, Lbps;
-
-    const-string v3, "PREFER_RGB_565"
-
-    const/4 v4, 0x1
-
-    invoke-direct {v1, v3, v4}, Lbps;-><init>(Ljava/lang/String;I)V
-
-    sput-object v1, Lbps;->b:Lbps;
-
-    const/4 v3, 0x2
-
-    new-array v3, v3, [Lbps;
-
-    aput-object v0, v3, v2
-
-    aput-object v1, v3, v4
-
-    sput-object v3, Lbps;->d:[Lbps;
-
-    sput-object v0, Lbps;->c:Lbps;
-
-    return-void
-.end method
-
-.method private constructor <init>(Ljava/lang/String;I)V
+.method public constructor <init>(Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;)V
     .locals 0
 
-    invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lbps;->a:Lqkg;
+
+    iput-object p2, p0, Lbps;->b:Lqkg;
+
+    iput-object p3, p0, Lbps;->c:Lqkg;
+
+    iput-object p4, p0, Lbps;->d:Lqkg;
+
+    iput-object p5, p0, Lbps;->e:Lqkg;
 
     return-void
 .end method
 
-.method public static values()[Lbps;
-    .locals 1
 
-    sget-object v0, Lbps;->d:[Lbps;
+# virtual methods
+.method public final a()Lbpr;
+    .locals 8
 
-    invoke-virtual {v0}, [Lbps;->clone()Ljava/lang/Object;
+    iget-object v0, p0, Lbps;->a:Lqkg;
+
+    invoke-interface {v0}, Lqkg;->get()Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, [Lbps;
+    move-object v2, v0
+
+    check-cast v2, Ldmh;
+
+    iget-object v0, p0, Lbps;->b:Lqkg;
+
+    invoke-interface {v0}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    move-object v3, v0
+
+    check-cast v3, Lgfy;
+
+    iget-object v0, p0, Lbps;->c:Lqkg;
+
+    invoke-interface {v0}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    move-object v4, v0
+
+    check-cast v4, Limy;
+
+    iget-object v0, p0, Lbps;->d:Lqkg;
+
+    invoke-interface {v0}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    move-object v5, v0
+
+    check-cast v5, Lhuq;
+
+    iget-object v0, p0, Lbps;->e:Lqkg;
+
+    invoke-interface {v0}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    move-object v6, v0
+
+    check-cast v6, Lddf;
+
+    new-instance v0, Lbpr;
+
+    const/4 v7, 0x0
+
+    move-object v1, v0
+
+    invoke-direct/range {v1 .. v7}, Lbpr;-><init>(Ldmh;Lgfy;Limy;Lhuq;Lddf;[B)V
+
+    return-object v0
+.end method
+
+.method public final bridge synthetic get()Ljava/lang/Object;
+    .locals 1
+
+    invoke-virtual {p0}, Lbps;->a()Lbpr;
+
+    move-result-object v0
 
     return-object v0
 .end method

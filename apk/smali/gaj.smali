@@ -1,109 +1,221 @@
-.class public final Lgaj;
+.class final Lgaj;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lgam;
-
-
-# static fields
-.field private static final a:Lnak;
+.implements Lgex;
 
 
 # instance fields
-.field private final b:Lgam;
+.field final synthetic a:J
+
+.field final synthetic b:Lgex;
+
+.field final synthetic c:Lgal;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
-
-    const-string v0, "com/google/android/apps/camera/one/photo/commands/ZslFallbackImageCaptureCommand"
-
-    invoke-static {v0}, Lnak;->h(Ljava/lang/String;)Lnak;
-
-    move-result-object v0
-
-    sput-object v0, Lgaj;->a:Lnak;
-
-    return-void
-.end method
-
-.method public constructor <init>(Lgam;)V
+.method public constructor <init>(Lgal;JLgex;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lgaj;->c:Lgal;
 
-    iput-object p1, p0, Lgaj;->b:Lgam;
+    iput-wide p2, p0, Lgaj;->a:J
+
+    iput-object p4, p0, Lgaj;->b:Lgex;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Ljvs;
-    .locals 1
+.method public final a()V
+    .locals 9
 
-    iget-object v0, p0, Lgaj;->b:Lgam;
+    iget-object v0, p0, Lgaj;->c:Lgal;
 
-    invoke-interface {v0}, Lgam;->a()Ljvs;
+    iget-object v0, v0, Lgal;->a:Llyb;
 
-    move-result-object v0
+    const/4 v1, 0x1
 
-    return-object v0
+    new-array v2, v1, [Ljava/lang/Object;
+
+    const/4 v3, 0x0
+
+    const-string v4, "cancelled"
+
+    aput-object v4, v2, v3
+
+    invoke-interface {v0, v2}, Llyb;->a([Ljava/lang/Object;)V
+
+    iget-object v0, p0, Lgaj;->c:Lgal;
+
+    iget-object v0, v0, Lgal;->c:Llyg;
+
+    invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
+
+    move-result-wide v5
+
+    iget-wide v7, p0, Lgaj;->a:J
+
+    new-array v1, v1, [Ljava/lang/Object;
+
+    aput-object v4, v1, v3
+
+    sub-long/2addr v5, v7
+
+    long-to-double v2, v5
+
+    invoke-interface {v0, v2, v3, v1}, Llyg;->b(D[Ljava/lang/Object;)V
+
+    iget-object v0, p0, Lgaj;->b:Lgex;
+
+    invoke-interface {v0}, Lgex;->a()V
+
+    return-void
 .end method
 
-.method public final b()Ljvs;
-    .locals 1
+.method public final b(Ljava/lang/Throwable;)V
+    .locals 9
 
-    iget-object v0, p0, Lgaj;->b:Lgam;
+    instance-of v0, p1, Ljava/util/concurrent/TimeoutException;
 
-    invoke-interface {v0}, Lgam;->b()Ljvs;
+    const/4 v1, 0x0
 
-    move-result-object v0
+    const/4 v2, 0x1
 
-    return-object v0
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lgaj;->c:Lgal;
+
+    iget-object v0, v0, Lgal;->a:Llyb;
+
+    new-array v3, v2, [Ljava/lang/Object;
+
+    const-string v4, "timeout"
+
+    aput-object v4, v3, v1
+
+    invoke-interface {v0, v3}, Llyb;->a([Ljava/lang/Object;)V
+
+    iget-object v0, p0, Lgaj;->c:Lgal;
+
+    iget-object v0, v0, Lgal;->c:Llyg;
+
+    invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
+
+    move-result-wide v5
+
+    iget-wide v7, p0, Lgaj;->a:J
+
+    new-array v2, v2, [Ljava/lang/Object;
+
+    aput-object v4, v2, v1
+
+    sub-long/2addr v5, v7
+
+    long-to-double v3, v5
+
+    invoke-interface {v0, v3, v4, v2}, Llyg;->b(D[Ljava/lang/Object;)V
+
+    goto :goto_0
+
+    :cond_0
+    iget-object v0, p0, Lgaj;->c:Lgal;
+
+    iget-object v0, v0, Lgal;->a:Llyb;
+
+    new-array v3, v2, [Ljava/lang/Object;
+
+    const-string v4, "failed"
+
+    aput-object v4, v3, v1
+
+    invoke-interface {v0, v3}, Llyb;->a([Ljava/lang/Object;)V
+
+    iget-object v0, p0, Lgaj;->c:Lgal;
+
+    iget-object v0, v0, Lgal;->c:Llyg;
+
+    invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
+
+    move-result-wide v5
+
+    iget-wide v7, p0, Lgaj;->a:J
+
+    new-array v2, v2, [Ljava/lang/Object;
+
+    aput-object v4, v2, v1
+
+    sub-long/2addr v5, v7
+
+    long-to-double v3, v5
+
+    invoke-interface {v0, v3, v4, v2}, Llyg;->b(D[Ljava/lang/Object;)V
+
+    :goto_0
+    iget-object v0, p0, Lgaj;->b:Lgex;
+
+    invoke-interface {v0, p1}, Lgex;->b(Ljava/lang/Throwable;)V
+
+    return-void
 .end method
 
-.method public final c(Lgal;Lgkr;)V
-    .locals 3
+.method public final c(Lmad;)V
+    .locals 11
 
-    sget-object v0, Lgaj;->a:Lnak;
+    iget-object v0, p0, Lgaj;->c:Lgal;
 
-    invoke-virtual {v0}, Lnaf;->c()Lnaz;
+    iget-object v0, v0, Lgal;->a:Llyb;
 
-    move-result-object v0
+    const/4 v1, 0x1
 
-    check-cast v0, Lnah;
+    new-array v2, v1, [Ljava/lang/Object;
 
-    const/16 v1, 0x9e8
+    const/4 v3, 0x0
 
-    invoke-interface {v0, v1}, Lnah;->G(I)Lnaz;
+    const-string v4, "success"
 
-    move-result-object v0
+    aput-object v4, v2, v3
 
-    check-cast v0, Lnah;
+    invoke-interface {v0, v2}, Llyb;->a([Ljava/lang/Object;)V
 
-    const-string v1, "Running fallback command: %s"
+    invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
-    iget-object v2, p0, Lgaj;->b:Lgam;
+    move-result-wide v8
 
-    invoke-interface {v0, v1, v2}, Lnah;->r(Ljava/lang/String;Ljava/lang/Object;)V
+    iget-object v0, p0, Lgaj;->c:Lgal;
 
-    iget-object v0, p2, Lgkr;->c:Ljava/lang/Object;
+    iget-object v0, v0, Lgal;->c:Llyg;
 
-    invoke-interface {v0}, Lgxl;->k()Lhjc;
+    iget-wide v5, p0, Lgaj;->a:J
 
-    move-result-object v0
+    new-array v1, v1, [Ljava/lang/Object;
 
-    invoke-interface {v0}, Lhjc;->f()V
+    aput-object v4, v1, v3
 
-    iget-object v0, p2, Lgkr;->b:Ljava/lang/Object;
+    sub-long v2, v8, v5
 
-    invoke-interface {v0}, Lfzz;->h()V
+    long-to-double v2, v2
 
-    iget-object v0, p0, Lgaj;->b:Lgam;
+    invoke-interface {v0, v2, v3, v1}, Llyg;->b(D[Ljava/lang/Object;)V
 
-    invoke-interface {v0, p1, p2}, Lgam;->c(Lgal;Lgkr;)V
+    iget-object v0, p0, Lgaj;->b:Lgex;
+
+    new-instance v1, Lgai;
+
+    move-object v5, v1
+
+    move-object v6, p0
+
+    move-object v7, p1
+
+    move-object v10, p1
+
+    invoke-direct/range {v5 .. v10}, Lgai;-><init>(Lgaj;Lmad;JLmad;)V
+
+    invoke-interface {v0, v1}, Lgex;->c(Lmad;)V
 
     return-void
 .end method

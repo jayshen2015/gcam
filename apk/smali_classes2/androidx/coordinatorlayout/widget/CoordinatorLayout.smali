@@ -2,30 +2,30 @@
 .super Landroid/view/ViewGroup;
 
 # interfaces
-.implements Laet;
-.implements Laeu;
+.implements Lfr;
+.implements Lfs;
 
 
 # static fields
-.field public static final a:Ljava/lang/String;
+.field static final a:Ljava/lang/String;
 
-.field public static final b:[Ljava/lang/Class;
+.field static final b:[Ljava/lang/Class;
 
-.field public static final c:Ljava/lang/ThreadLocal;
+.field static final c:Ljava/lang/ThreadLocal;
 
 .field static final d:Ljava/util/Comparator;
 
-.field private static final i:Laed;
+.field private static final i:Lfc;
 
 
 # instance fields
-.field public e:Lago;
+.field public final e:Laak;
 
-.field public f:Z
+.field public f:Lgy;
 
-.field public g:Landroid/view/ViewGroup$OnHierarchyChangeListener;
+.field public g:Z
 
-.field public final h:Lbbc;
+.field public h:Landroid/view/ViewGroup$OnHierarchyChangeListener;
 
 .field private final j:Ljava/util/List;
 
@@ -45,15 +45,15 @@
 
 .field private r:Landroid/view/View;
 
-.field private s:Z
+.field private s:Laai;
 
-.field private t:Landroid/graphics/drawable/Drawable;
+.field private t:Z
 
-.field private u:Laew;
+.field private u:Landroid/graphics/drawable/Drawable;
 
-.field private final v:Laev;
+.field private v:Lft;
 
-.field private w:Livn;
+.field private final w:Lpx;
 
 
 # direct methods
@@ -80,29 +80,29 @@
     :goto_0
     sput-object v0, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->a:Ljava/lang/String;
 
-    new-instance v0, Lye;
+    new-instance v0, Lyc;
 
     const/4 v1, 0x2
 
-    invoke-direct {v0, v1}, Lye;-><init>(I)V
+    invoke-direct {v0, v1}, Lyc;-><init>(I)V
 
     sput-object v0, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->d:Ljava/util/Comparator;
 
-    const-class v0, Landroid/content/Context;
+    new-array v0, v1, [Ljava/lang/Class;
 
-    new-array v1, v1, [Ljava/lang/Class;
+    const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    const-class v2, Landroid/content/Context;
 
-    aput-object v0, v1, v2
+    aput-object v2, v0, v1
 
-    const/4 v0, 0x1
+    const/4 v1, 0x1
 
     const-class v2, Landroid/util/AttributeSet;
 
-    aput-object v2, v1, v0
+    aput-object v2, v0, v1
 
-    sput-object v1, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->b:[Ljava/lang/Class;
+    sput-object v0, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->b:[Ljava/lang/Class;
 
     new-instance v0, Ljava/lang/ThreadLocal;
 
@@ -110,13 +110,13 @@
 
     sput-object v0, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->c:Ljava/lang/ThreadLocal;
 
-    new-instance v0, Laef;
+    new-instance v0, Lfe;
 
     const/16 v1, 0xc
 
-    invoke-direct {v0, v1}, Laef;-><init>(I)V
+    invoke-direct {v0, v1}, Lfe;-><init>(I)V
 
-    sput-object v0, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->i:Laed;
+    sput-object v0, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->i:Lfc;
 
     return-void
 .end method
@@ -134,7 +134,7 @@
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
     .locals 1
 
-    const v0, 0x7f0401e9
+    const v0, 0x7f040177
 
     invoke-direct {p0, p1, p2, v0}, Landroidx/coordinatorlayout/widget/CoordinatorLayout;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
@@ -152,13 +152,11 @@
 
     iput-object v0, p0, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->j:Ljava/util/List;
 
-    new-instance v0, Lbbc;
+    new-instance v0, Laak;
 
-    const/4 v1, 0x0
+    invoke-direct {v0}, Laak;-><init>()V
 
-    invoke-direct {v0, v1}, Lbbc;-><init>([B)V
-
-    iput-object v0, p0, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->h:Lbbc;
+    iput-object v0, p0, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->e:Laak;
 
     new-instance v0, Ljava/util/ArrayList;
 
@@ -176,19 +174,19 @@
 
     iput-object v0, p0, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->m:[I
 
-    new-instance v0, Laev;
+    new-instance v0, Lpx;
 
-    invoke-direct {v0}, Laev;-><init>()V
+    invoke-direct {v0}, Lpx;-><init>()V
 
-    iput-object v0, p0, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->v:Laev;
+    iput-object v0, p0, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->w:Lpx;
 
     const/4 v0, 0x0
 
     if-nez p3, :cond_0
 
-    sget-object v1, Laag;->a:[I
+    sget-object v1, Laab;->a:[I
 
-    const v2, 0x7f15081b
+    const v2, 0x7f15071b
 
     invoke-virtual {p1, p2, v1, v0, v2}, Landroid/content/Context;->obtainStyledAttributes(Landroid/util/AttributeSet;[III)Landroid/content/res/TypedArray;
 
@@ -197,7 +195,7 @@
     goto :goto_0
 
     :cond_0
-    sget-object v1, Laag;->a:[I
+    sget-object v1, Laab;->a:[I
 
     invoke-virtual {p1, p2, v1, p3, v0}, Landroid/content/Context;->obtainStyledAttributes(Landroid/util/AttributeSet;[III)Landroid/content/res/TypedArray;
 
@@ -206,11 +204,11 @@
     :goto_0
     if-nez p3, :cond_1
 
-    sget-object v4, Laag;->a:[I
+    sget-object v4, Laab;->a:[I
 
     const/4 v7, 0x0
 
-    const v8, 0x7f15081b
+    const v8, 0x7f15071b
 
     move-object v2, p0
 
@@ -220,12 +218,12 @@
 
     move-object v6, v1
 
-    invoke-static/range {v2 .. v8}, Lafn;->c(Landroid/view/View;Landroid/content/Context;[ILandroid/util/AttributeSet;Landroid/content/res/TypedArray;II)V
+    invoke-static/range {v2 .. v8}, Lgl;->E(Landroid/view/View;Landroid/content/Context;[ILandroid/util/AttributeSet;Landroid/content/res/TypedArray;II)V
 
     goto :goto_1
 
     :cond_1
-    sget-object v4, Laag;->a:[I
+    sget-object v4, Laab;->a:[I
 
     const/4 v8, 0x0
 
@@ -239,7 +237,7 @@
 
     move v7, p3
 
-    invoke-static/range {v2 .. v8}, Lafn;->c(Landroid/view/View;Landroid/content/Context;[ILandroid/util/AttributeSet;Landroid/content/res/TypedArray;II)V
+    invoke-static/range {v2 .. v8}, Lgl;->E(Landroid/view/View;Landroid/content/Context;[ILandroid/util/AttributeSet;Landroid/content/res/TypedArray;II)V
 
     :goto_1
     invoke-virtual {v1, v0, v0}, Landroid/content/res/TypedArray;->getResourceId(II)I
@@ -294,25 +292,25 @@
 
     move-result-object p2
 
-    iput-object p2, p0, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->t:Landroid/graphics/drawable/Drawable;
+    iput-object p2, p0, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->u:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v1}, Landroid/content/res/TypedArray;->recycle()V
 
     invoke-direct {p0}, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->w()V
 
-    new-instance p2, Laak;
+    new-instance p2, Laag;
 
-    invoke-direct {p2, p0}, Laak;-><init>(Landroidx/coordinatorlayout/widget/CoordinatorLayout;)V
+    invoke-direct {p2, p0}, Laag;-><init>(Landroidx/coordinatorlayout/widget/CoordinatorLayout;)V
 
     invoke-super {p0, p2}, Landroid/view/ViewGroup;->setOnHierarchyChangeListener(Landroid/view/ViewGroup$OnHierarchyChangeListener;)V
 
-    invoke-static {p0}, Lafb;->a(Landroid/view/View;)I
+    invoke-static {p0}, Lgl;->d(Landroid/view/View;)I
 
     move-result p2
 
     if-nez p2, :cond_3
 
-    invoke-static {p0, p1}, Lafb;->o(Landroid/view/View;I)V
+    invoke-static {p0, p1}, Lgl;->M(Landroid/view/View;I)V
 
     :cond_3
     return-void
@@ -333,96 +331,250 @@
 .end method
 
 .method private static final B(Landroid/view/View;I)V
-    .locals 3
+    .locals 2
 
     invoke-virtual {p0}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v0
 
-    check-cast v0, Laal;
+    check-cast v0, Laah;
 
-    iget v1, v0, Laal;->i:I
+    iget v1, v0, Laah;->i:I
 
     if-eq v1, p1, :cond_0
 
-    sget-object v2, Lafq;->a:[I
-
     sub-int v1, p1, v1
 
-    invoke-virtual {p0, v1}, Landroid/view/View;->offsetLeftAndRight(I)V
+    invoke-static {p0, v1}, Lgl;->x(Landroid/view/View;I)V
 
-    iput p1, v0, Laal;->i:I
+    iput p1, v0, Laah;->i:I
 
     :cond_0
     return-void
 .end method
 
 .method private static final C(Landroid/view/View;I)V
-    .locals 3
+    .locals 2
 
     invoke-virtual {p0}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v0
 
-    check-cast v0, Laal;
+    check-cast v0, Laah;
 
-    iget v1, v0, Laal;->j:I
+    iget v1, v0, Laah;->j:I
 
     if-eq v1, p1, :cond_0
 
-    sget-object v2, Lafq;->a:[I
-
     sub-int v1, p1, v1
 
-    invoke-virtual {p0, v1}, Landroid/view/View;->offsetTopAndBottom(I)V
+    invoke-static {p0, v1}, Lgl;->y(Landroid/view/View;I)V
 
-    iput p1, v0, Laal;->j:I
+    iput p1, v0, Laah;->j:I
 
     :cond_0
     return-void
 .end method
 
-.method static final l(Landroid/view/View;)Laal;
-    .locals 6
+.method public static g(Landroid/content/Context;Landroid/util/AttributeSet;Ljava/lang/String;)Laae;
+    .locals 5
+
+    invoke-static {p2}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    const/4 p0, 0x0
+
+    return-object p0
+
+    :cond_0
+    const-string v0, "."
+
+    invoke-virtual {p2, v0}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-virtual {p0}, Landroid/content/Context;->getPackageName()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p2
+
+    goto :goto_0
+
+    :cond_1
+    const/16 v0, 0x2e
+
+    invoke-virtual {p2, v0}, Ljava/lang/String;->indexOf(I)I
+
+    move-result v1
+
+    if-gez v1, :cond_2
+
+    sget-object v1, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->a:Ljava/lang/String;
+
+    invoke-static {v1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+
+    move-result v2
+
+    if-nez v2, :cond_2
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p2
+
+    :cond_2
+    :goto_0
+    :try_start_0
+    sget-object v0, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->c:Ljava/lang/ThreadLocal;
+
+    invoke-virtual {v0}, Ljava/lang/ThreadLocal;->get()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Ljava/util/Map;
+
+    if-nez v1, :cond_3
+
+    new-instance v1, Ljava/util/HashMap;
+
+    invoke-direct {v1}, Ljava/util/HashMap;-><init>()V
+
+    invoke-virtual {v0, v1}, Ljava/lang/ThreadLocal;->set(Ljava/lang/Object;)V
+
+    :cond_3
+    invoke-interface {v1, p2}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/reflect/Constructor;
+
+    const/4 v2, 0x1
+
+    const/4 v3, 0x0
+
+    if-nez v0, :cond_4
+
+    invoke-virtual {p0}, Landroid/content/Context;->getClassLoader()Ljava/lang/ClassLoader;
+
+    move-result-object v0
+
+    invoke-static {p2, v3, v0}, Ljava/lang/Class;->forName(Ljava/lang/String;ZLjava/lang/ClassLoader;)Ljava/lang/Class;
+
+    move-result-object v0
+
+    sget-object v4, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->b:[Ljava/lang/Class;
+
+    invoke-virtual {v0, v4}, Ljava/lang/Class;->getConstructor([Ljava/lang/Class;)Ljava/lang/reflect/Constructor;
+
+    move-result-object v0
+
+    invoke-virtual {v0, v2}, Ljava/lang/reflect/Constructor;->setAccessible(Z)V
+
+    invoke-interface {v1, p2, v0}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    goto :goto_1
+
+    :cond_4
+    :goto_1
+    const/4 v1, 0x2
+
+    new-array v1, v1, [Ljava/lang/Object;
+
+    aput-object p0, v1, v3
+
+    aput-object p1, v1, v2
+
+    invoke-virtual {v0, v1}, Ljava/lang/reflect/Constructor;->newInstance([Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p0
+
+    check-cast p0, Laae;
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+
+    return-object p0
+
+    :catch_0
+    move-exception p0
+
+    new-instance p1, Ljava/lang/RuntimeException;
+
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v1, "Could not inflate Behavior subclass "
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p2
+
+    invoke-direct {p1, p2, p0}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
+
+    throw p1
+.end method
+
+.method static final n(Landroid/view/View;)Laah;
+    .locals 5
 
     invoke-virtual {p0}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v0
 
-    check-cast v0, Laal;
+    check-cast v0, Laah;
 
-    iget-boolean v1, v0, Laal;->b:Z
+    iget-boolean v1, v0, Laah;->b:Z
 
     if-nez v1, :cond_4
 
-    instance-of v1, p0, Laah;
+    instance-of v1, p0, Laad;
 
-    const-string v2, "CoordinatorLayout"
+    const/4 v2, 0x1
 
-    const/4 v3, 0x1
+    if-eqz v1, :cond_0
 
-    if-eqz v1, :cond_1
+    check-cast p0, Laad;
 
-    check-cast p0, Laah;
-
-    invoke-interface {p0}, Laah;->a()Laai;
+    invoke-interface {p0}, Laad;->a()Laae;
 
     move-result-object p0
 
-    if-nez p0, :cond_0
+    invoke-virtual {v0, p0}, Laah;->b(Laae;)V
 
-    const-string v1, "Attached behavior class is null"
+    iput-boolean v2, v0, Laah;->b:Z
 
-    invoke-static {v2, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+    goto :goto_3
 
     :cond_0
-    invoke-virtual {v0, p0}, Laal;->b(Laai;)V
-
-    iput-boolean v3, v0, Laal;->b:Z
-
-    goto :goto_2
-
-    :cond_1
     invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     move-result-object p0
@@ -432,15 +584,15 @@
     :goto_0
     if-eqz p0, :cond_2
 
-    const-class v1, Laaj;
+    const-class v1, Laaf;
 
     invoke-virtual {p0, v1}, Ljava/lang/Class;->getAnnotation(Ljava/lang/Class;)Ljava/lang/annotation/Annotation;
 
     move-result-object v1
 
-    check-cast v1, Laaj;
+    check-cast v1, Laaf;
 
-    if-nez v1, :cond_2
+    if-nez v1, :cond_1
 
     invoke-virtual {p0}, Ljava/lang/Class;->getSuperclass()Ljava/lang/Class;
 
@@ -448,48 +600,52 @@
 
     goto :goto_0
 
+    :cond_1
+    goto :goto_1
+
     :cond_2
+    :goto_1
     if-eqz v1, :cond_3
 
     :try_start_0
-    invoke-interface {v1}, Laaj;->a()Ljava/lang/Class;
+    invoke-interface {v1}, Laaf;->a()Ljava/lang/Class;
 
     move-result-object p0
 
-    const/4 v4, 0x0
+    const/4 v3, 0x0
 
-    new-array v5, v4, [Ljava/lang/Class;
+    new-array v4, v3, [Ljava/lang/Class;
 
-    invoke-virtual {p0, v5}, Ljava/lang/Class;->getDeclaredConstructor([Ljava/lang/Class;)Ljava/lang/reflect/Constructor;
-
-    move-result-object p0
-
-    new-array v4, v4, [Ljava/lang/Object;
-
-    invoke-virtual {p0, v4}, Ljava/lang/reflect/Constructor;->newInstance([Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {p0, v4}, Ljava/lang/Class;->getDeclaredConstructor([Ljava/lang/Class;)Ljava/lang/reflect/Constructor;
 
     move-result-object p0
 
-    check-cast p0, Laai;
+    new-array v3, v3, [Ljava/lang/Object;
 
-    invoke-virtual {v0, p0}, Laal;->b(Laai;)V
+    invoke-virtual {p0, v3}, Ljava/lang/reflect/Constructor;->newInstance([Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p0
+
+    check-cast p0, Laae;
+
+    invoke-virtual {v0, p0}, Laah;->b(Laae;)V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_1
+    goto :goto_2
 
     :catch_0
     move-exception p0
 
-    new-instance v4, Ljava/lang/StringBuilder;
+    new-instance v3, Ljava/lang/StringBuilder;
 
-    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v5, "Default behavior class "
+    const-string v4, "Default behavior class "
 
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-interface {v1}, Laaj;->a()Ljava/lang/Class;
+    invoke-interface {v1}, Laaf;->a()Ljava/lang/Class;
 
     move-result-object v1
 
@@ -497,74 +653,30 @@
 
     move-result-object v1
 
-    invoke-virtual {v4, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     const-string v1, " could not be instantiated. Did you forget a default constructor?"
 
-    invoke-virtual {v4, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v1
 
-    invoke-static {v2, v1, p0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+    const-string v3, "CoordinatorLayout"
+
+    invoke-static {v3, v1, p0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
     :cond_3
-    :goto_1
-    iput-boolean v3, v0, Laal;->b:Z
+    :goto_2
+    iput-boolean v2, v0, Laah;->b:Z
 
     :cond_4
-    :goto_2
+    :goto_3
     return-object v0
 .end method
 
-.method private final n()I
-    .locals 5
-
-    const/4 v0, 0x0
-
-    const/4 v1, 0x0
-
-    :goto_0
-    invoke-virtual {p0}, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->getChildCount()I
-
-    move-result v2
-
-    if-ge v0, v2, :cond_0
-
-    invoke-virtual {p0, v0}, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->getChildAt(I)Landroid/view/View;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
-
-    move-result-object v3
-
-    check-cast v3, Laal;
-
-    invoke-virtual {v2}, Landroid/view/View;->getHeight()I
-
-    move-result v2
-
-    iget v4, v3, Laal;->topMargin:I
-
-    add-int/2addr v2, v4
-
-    iget v3, v3, Laal;->bottomMargin:I
-
-    add-int/2addr v2, v3
-
-    add-int/2addr v1, v2
-
-    add-int/lit8 v0, v0, 0x1
-
-    goto :goto_0
-
-    :cond_0
-    return v1
-.end method
-
-.method private final o(I)I
+.method private final p(I)I
     .locals 4
 
     iget-object v0, p0, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->p:[I
@@ -640,7 +752,7 @@
     return v1
 .end method
 
-.method private static p(I)I
+.method private static q(I)I
     .locals 1
 
     and-int/lit8 v0, p0, 0x7
@@ -662,7 +774,7 @@
     return p0
 .end method
 
-.method private static q(I)I
+.method private static r(I)I
     .locals 0
 
     if-nez p0, :cond_0
@@ -673,12 +785,12 @@
     return p0
 .end method
 
-.method private static r()Landroid/graphics/Rect;
+.method private static s()Landroid/graphics/Rect;
     .locals 1
 
-    sget-object v0, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->i:Laed;
+    sget-object v0, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->i:Lfc;
 
-    invoke-interface {v0}, Laed;->a()Ljava/lang/Object;
+    invoke-interface {v0}, Lfc;->a()Ljava/lang/Object;
 
     move-result-object v0
 
@@ -694,7 +806,7 @@
     return-object v0
 .end method
 
-.method private final s(Laal;Landroid/graphics/Rect;II)V
+.method private final t(Laah;Landroid/graphics/Rect;II)V
     .locals 5
 
     invoke-virtual {p0}, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->getWidth()I
@@ -709,7 +821,7 @@
 
     move-result v2
 
-    iget v3, p1, Laal;->leftMargin:I
+    iget v3, p1, Laah;->leftMargin:I
 
     add-int/2addr v2, v3
 
@@ -723,7 +835,7 @@
 
     sub-int/2addr v0, p3
 
-    iget v4, p1, Laal;->rightMargin:I
+    iget v4, p1, Laah;->rightMargin:I
 
     sub-int/2addr v0, v4
 
@@ -739,7 +851,7 @@
 
     move-result v2
 
-    iget v3, p1, Laal;->topMargin:I
+    iget v3, p1, Laah;->topMargin:I
 
     add-int/2addr v2, v3
 
@@ -753,7 +865,7 @@
 
     sub-int/2addr v1, p4
 
-    iget p1, p1, Laal;->bottomMargin:I
+    iget p1, p1, Laah;->bottomMargin:I
 
     sub-int/2addr v1, p1
 
@@ -779,9 +891,9 @@
 
     invoke-virtual {p0}, Landroid/graphics/Rect;->setEmpty()V
 
-    sget-object v0, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->i:Laed;
+    sget-object v0, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->i:Lfc;
 
-    invoke-interface {v0, p0}, Laed;->b(Ljava/lang/Object;)Z
+    invoke-interface {v0, p0}, Lfc;->b(Ljava/lang/Object;)Z
 
     return-void
 .end method
@@ -797,9 +909,9 @@
 
     move-result-object v0
 
-    check-cast v0, Laal;
+    check-cast v0, Laah;
 
-    iget-object v0, v0, Laal;->a:Laai;
+    iget-object v0, v0, Laah;->a:Laae;
 
     if-eqz v0, :cond_0
 
@@ -823,7 +935,7 @@
 
     iget-object v2, p0, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->q:Landroid/view/View;
 
-    invoke-virtual {v0, p0, v2, v1}, Laai;->g(Landroidx/coordinatorlayout/widget/CoordinatorLayout;Landroid/view/View;Landroid/view/MotionEvent;)Z
+    invoke-virtual {v0, p0, v2, v1}, Laae;->g(Landroidx/coordinatorlayout/widget/CoordinatorLayout;Landroid/view/View;Landroid/view/MotionEvent;)Z
 
     invoke-virtual {v1}, Landroid/view/MotionEvent;->recycle()V
 
@@ -852,9 +964,9 @@
 
     move-result-object v3
 
-    check-cast v3, Laal;
+    check-cast v3, Laah;
 
-    iput-boolean v1, v3, Laal;->m:Z
+    iput-boolean v1, v3, Laah;->m:Z
 
     add-int/lit8 v2, v2, 0x1
 
@@ -867,30 +979,28 @@
 .end method
 
 .method private final w()V
-    .locals 2
+    .locals 1
 
-    invoke-static {p0}, Lafb;->p(Landroid/view/View;)Z
+    invoke-static {p0}, Lgl;->R(Landroid/view/View;)Z
 
     move-result v0
 
     if-eqz v0, :cond_1
 
-    iget-object v0, p0, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->u:Laew;
+    iget-object v0, p0, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->v:Lft;
 
     if-nez v0, :cond_0
 
-    new-instance v0, Lmfa;
+    new-instance v0, Laac;
 
-    const/4 v1, 0x1
+    invoke-direct {v0, p0}, Laac;-><init>(Landroidx/coordinatorlayout/widget/CoordinatorLayout;)V
 
-    invoke-direct {v0, p0, v1}, Lmfa;-><init>(Landroidx/coordinatorlayout/widget/CoordinatorLayout;I)V
-
-    iput-object v0, p0, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->u:Laew;
+    iput-object v0, p0, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->v:Lft;
 
     :cond_0
-    iget-object v0, p0, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->u:Laew;
+    iget-object v0, p0, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->v:Lft;
 
-    invoke-static {p0, v0}, Lafh;->n(Landroid/view/View;Laew;)V
+    invoke-static {p0, v0}, Lgl;->N(Landroid/view/View;Lft;)V
 
     const/16 v0, 0x500
 
@@ -901,24 +1011,24 @@
     :cond_1
     const/4 v0, 0x0
 
-    invoke-static {p0, v0}, Lafh;->n(Landroid/view/View;Laew;)V
+    invoke-static {p0, v0}, Lgl;->N(Landroid/view/View;Lft;)V
 
     return-void
 .end method
 
-.method private final x(Laai;Landroid/view/View;Landroid/view/MotionEvent;I)Z
+.method private final x(Laae;Landroid/view/View;Landroid/view/MotionEvent;I)Z
     .locals 0
 
     packed-switch p4, :pswitch_data_0
 
-    invoke-virtual {p1, p0, p2, p3}, Laai;->g(Landroidx/coordinatorlayout/widget/CoordinatorLayout;Landroid/view/View;Landroid/view/MotionEvent;)Z
+    invoke-virtual {p1, p0, p2, p3}, Laae;->g(Landroidx/coordinatorlayout/widget/CoordinatorLayout;Landroid/view/View;Landroid/view/MotionEvent;)Z
 
     move-result p1
 
     return p1
 
     :pswitch_0
-    invoke-virtual {p1, p0, p2, p3}, Laai;->d(Landroidx/coordinatorlayout/widget/CoordinatorLayout;Landroid/view/View;Landroid/view/MotionEvent;)Z
+    invoke-virtual {p1, p0, p2, p3}, Laae;->d(Landroidx/coordinatorlayout/widget/CoordinatorLayout;Landroid/view/View;Landroid/view/MotionEvent;)Z
 
     move-result p1
 
@@ -1011,56 +1121,59 @@
 
     move-result-object v8
 
-    check-cast v8, Laal;
+    check-cast v8, Laah;
 
-    iget-object v9, v8, Laal;->a:Laai;
+    iget-object v9, v8, Laah;->a:Laae;
 
     if-nez v6, :cond_3
 
     goto :goto_3
 
     :cond_3
-    if-eqz v0, :cond_5
+    if-eqz v0, :cond_6
 
-    if-eqz v9, :cond_a
+    if-eqz v9, :cond_5
 
-    if-nez v4, :cond_4
+    if-nez v3, :cond_4
 
     invoke-static {p1}, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->A(Landroid/view/MotionEvent;)Landroid/view/MotionEvent;
 
-    move-result-object v4
+    move-result-object v3
 
     :cond_4
-    invoke-direct {p0, v9, v7, v4, p2}, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->x(Laai;Landroid/view/View;Landroid/view/MotionEvent;I)Z
+    invoke-direct {p0, v9, v7, v3, p2}, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->x(Laae;Landroid/view/View;Landroid/view/MotionEvent;I)Z
 
     goto :goto_5
 
     :cond_5
+    goto :goto_5
+
+    :cond_6
     :goto_3
-    if-nez v6, :cond_8
+    if-nez v6, :cond_9
 
-    if-eqz v9, :cond_8
+    if-eqz v9, :cond_9
 
-    invoke-direct {p0, v9, v7, p1, p2}, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->x(Laai;Landroid/view/View;Landroid/view/MotionEvent;I)Z
+    invoke-direct {p0, v9, v7, p1, p2}, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->x(Laae;Landroid/view/View;Landroid/view/MotionEvent;I)Z
 
     move-result v6
 
-    if-eqz v6, :cond_8
+    if-eqz v6, :cond_9
 
     iput-object v7, p0, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->q:Landroid/view/View;
 
     const/4 v7, 0x3
 
-    if-eq v0, v7, :cond_8
+    if-eq v0, v7, :cond_9
 
     const/4 v7, 0x1
 
-    if-eq v0, v7, :cond_8
+    if-eq v0, v7, :cond_9
 
     const/4 v7, 0x0
 
     :goto_4
-    if-ge v7, v5, :cond_8
+    if-ge v7, v5, :cond_9
 
     invoke-interface {v1, v7}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
@@ -1072,37 +1185,36 @@
 
     move-result-object v10
 
-    check-cast v10, Laal;
+    check-cast v10, Laah;
 
-    iget-object v10, v10, Laal;->a:Laai;
+    iget-object v10, v10, Laah;->a:Laae;
 
-    if-eqz v10, :cond_7
+    if-eqz v10, :cond_8
 
-    if-nez v4, :cond_6
+    if-nez v3, :cond_7
 
     invoke-static {p1}, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->A(Landroid/view/MotionEvent;)Landroid/view/MotionEvent;
 
-    move-result-object v4
-
-    :cond_6
-    invoke-direct {p0, v10, v9, v4, p2}, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->x(Laai;Landroid/view/View;Landroid/view/MotionEvent;I)Z
+    move-result-object v3
 
     :cond_7
+    invoke-direct {p0, v10, v9, v3, p2}, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->x(Laae;Landroid/view/View;Landroid/view/MotionEvent;I)Z
+
+    :cond_8
     add-int/lit8 v7, v7, 0x1
 
     goto :goto_4
 
-    :cond_8
-    iget-object v7, v8, Laal;->a:Laai;
-
-    if-nez v7, :cond_9
-
-    iput-boolean v3, v8, Laal;->m:Z
-
     :cond_9
-    iget-boolean v7, v8, Laal;->m:Z
+    iget-object v7, v8, Laah;->a:Laae;
+
+    if-nez v7, :cond_a
+
+    iput-boolean v4, v8, Laah;->m:Z
 
     :cond_a
+    iget-boolean v7, v8, Laah;->m:Z
+
     :goto_5
     add-int/lit8 v5, v5, 0x1
 
@@ -1111,18 +1223,18 @@
     :cond_b
     invoke-interface {v1}, Ljava/util/List;->clear()V
 
-    if-eqz v4, :cond_c
+    if-eqz v3, :cond_c
 
-    invoke-virtual {v4}, Landroid/view/MotionEvent;->recycle()V
+    invoke-virtual {v3}, Landroid/view/MotionEvent;->recycle()V
 
     :cond_c
     return v6
 .end method
 
-.method private static final z(ILandroid/graphics/Rect;Landroid/graphics/Rect;Laal;II)V
+.method private static final z(ILandroid/graphics/Rect;Landroid/graphics/Rect;Laah;II)V
     .locals 3
 
-    iget v0, p3, Laal;->c:I
+    iget v0, p3, Laah;->c:I
 
     if-nez v0, :cond_0
 
@@ -1133,37 +1245,37 @@
 
     move-result v0
 
-    iget p3, p3, Laal;->d:I
+    iget p3, p3, Laah;->d:I
 
-    invoke-static {p3}, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->p(I)I
+    invoke-static {p3}, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->q(I)I
 
     move-result p3
-
-    and-int/lit8 v1, v0, 0x7
-
-    and-int/lit8 v0, v0, 0x70
 
     invoke-static {p3, p0}, Landroid/view/Gravity;->getAbsoluteGravity(II)I
 
     move-result p0
 
-    and-int/lit8 p3, p0, 0x7
+    and-int/lit8 p3, v0, 0x7
 
-    and-int/lit8 p0, p0, 0x70
+    and-int/lit8 v0, v0, 0x70
 
-    sparse-switch p3, :sswitch_data_0
+    and-int/lit8 v1, p0, 0x70
 
-    iget p3, p1, Landroid/graphics/Rect;->left:I
+    and-int/lit8 p0, p0, 0x7
+
+    sparse-switch p0, :sswitch_data_0
+
+    iget p0, p1, Landroid/graphics/Rect;->left:I
 
     goto :goto_0
 
     :sswitch_0
-    iget p3, p1, Landroid/graphics/Rect;->right:I
+    iget p0, p1, Landroid/graphics/Rect;->right:I
 
     goto :goto_0
 
     :sswitch_1
-    iget p3, p1, Landroid/graphics/Rect;->left:I
+    iget p0, p1, Landroid/graphics/Rect;->left:I
 
     invoke-virtual {p1}, Landroid/graphics/Rect;->width()I
 
@@ -1171,22 +1283,22 @@
 
     div-int/lit8 v2, v2, 0x2
 
-    add-int/2addr p3, v2
+    add-int/2addr p0, v2
 
     :goto_0
-    sparse-switch p0, :sswitch_data_1
+    sparse-switch v1, :sswitch_data_1
 
-    iget p0, p1, Landroid/graphics/Rect;->top:I
+    iget p1, p1, Landroid/graphics/Rect;->top:I
 
     goto :goto_1
 
     :sswitch_2
-    iget p0, p1, Landroid/graphics/Rect;->bottom:I
+    iget p1, p1, Landroid/graphics/Rect;->bottom:I
 
     goto :goto_1
 
     :sswitch_3
-    iget p0, p1, Landroid/graphics/Rect;->top:I
+    iget v1, p1, Landroid/graphics/Rect;->top:I
 
     invoke-virtual {p1}, Landroid/graphics/Rect;->height()I
 
@@ -1194,40 +1306,40 @@
 
     div-int/lit8 p1, p1, 0x2
 
-    add-int/2addr p0, p1
+    add-int/2addr p1, v1
 
     :goto_1
-    sparse-switch v1, :sswitch_data_2
+    sparse-switch p3, :sswitch_data_2
 
-    sub-int/2addr p3, p4
+    sub-int/2addr p0, p4
 
     goto :goto_2
 
     :sswitch_4
-    div-int/lit8 p1, p4, 0x2
+    div-int/lit8 p3, p4, 0x2
 
-    sub-int/2addr p3, p1
+    sub-int/2addr p0, p3
 
     :goto_2
     :sswitch_5
     sparse-switch v0, :sswitch_data_3
 
-    sub-int/2addr p0, p5
+    sub-int/2addr p1, p5
 
     goto :goto_3
 
     :sswitch_6
-    div-int/lit8 p1, p5, 0x2
+    div-int/lit8 p3, p5, 0x2
 
-    sub-int/2addr p0, p1
+    sub-int/2addr p1, p3
 
     :goto_3
     :sswitch_7
-    add-int/2addr p4, p3
+    add-int/2addr p4, p0
 
-    add-int/2addr p5, p0
+    add-int/2addr p5, p1
 
-    invoke-virtual {p2, p3, p0, p4, p5}, Landroid/graphics/Rect;->set(IIII)V
+    invoke-virtual {p2, p0, p1, p4, p5}, Landroid/graphics/Rect;->set(IIII)V
 
     return-void
 
@@ -1258,208 +1370,7 @@
 
 
 # virtual methods
-.method public final a(Landroid/view/View;)Ljava/util/List;
-    .locals 5
-
-    iget-object v0, p0, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->h:Lbbc;
-
-    iget-object v1, v0, Lbbc;->a:Ljava/lang/Object;
-
-    check-cast v1, Lxf;
-
-    iget v1, v1, Lxf;->d:I
-
-    const/4 v2, 0x0
-
-    const/4 v3, 0x0
-
-    :goto_0
-    if-ge v2, v1, :cond_2
-
-    iget-object v4, v0, Lbbc;->a:Ljava/lang/Object;
-
-    check-cast v4, Lxf;
-
-    invoke-virtual {v4, v2}, Lxf;->g(I)Ljava/lang/Object;
-
-    move-result-object v4
-
-    check-cast v4, Ljava/util/ArrayList;
-
-    if-eqz v4, :cond_1
-
-    invoke-virtual {v4, p1}, Ljava/util/ArrayList;->contains(Ljava/lang/Object;)Z
-
-    move-result v4
-
-    if-eqz v4, :cond_1
-
-    if-nez v3, :cond_0
-
-    new-instance v3, Ljava/util/ArrayList;
-
-    invoke-direct {v3}, Ljava/util/ArrayList;-><init>()V
-
-    :cond_0
-    iget-object v4, v0, Lbbc;->a:Ljava/lang/Object;
-
-    check-cast v4, Lxf;
-
-    invoke-virtual {v4, v2}, Lxf;->d(I)Ljava/lang/Object;
-
-    move-result-object v4
-
-    invoke-virtual {v3, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    :cond_1
-    add-int/lit8 v2, v2, 0x1
-
-    goto :goto_0
-
-    :cond_2
-    if-nez v3, :cond_3
-
-    invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
-
-    move-result-object p1
-
-    return-object p1
-
-    :cond_3
-    return-object v3
-.end method
-
-.method public final b(Landroid/view/View;)V
-    .locals 4
-
-    iget-object v0, p0, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->h:Lbbc;
-
-    invoke-virtual {v0, p1}, Lbbc;->a(Ljava/lang/Object;)Ljava/util/ArrayList;
-
-    move-result-object v0
-
-    if-eqz v0, :cond_1
-
-    invoke-interface {v0}, Ljava/util/List;->isEmpty()Z
-
-    move-result v1
-
-    if-nez v1, :cond_1
-
-    const/4 v1, 0x0
-
-    :goto_0
-    invoke-interface {v0}, Ljava/util/List;->size()I
-
-    move-result v2
-
-    if-ge v1, v2, :cond_1
-
-    invoke-interface {v0, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Landroid/view/View;
-
-    invoke-virtual {v2}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
-
-    move-result-object v3
-
-    check-cast v3, Laal;
-
-    iget-object v3, v3, Laal;->a:Laai;
-
-    if-eqz v3, :cond_0
-
-    invoke-virtual {v3, p0, v2, p1}, Laai;->i(Landroidx/coordinatorlayout/widget/CoordinatorLayout;Landroid/view/View;Landroid/view/View;)V
-
-    :cond_0
-    add-int/lit8 v1, v1, 0x1
-
-    goto :goto_0
-
-    :cond_1
-    return-void
-.end method
-
-.method final c(Landroid/view/View;ZLandroid/graphics/Rect;)V
-    .locals 2
-
-    invoke-virtual {p1}, Landroid/view/View;->isLayoutRequested()Z
-
-    move-result v0
-
-    if-nez v0, :cond_2
-
-    invoke-virtual {p1}, Landroid/view/View;->getVisibility()I
-
-    move-result v0
-
-    const/16 v1, 0x8
-
-    if-ne v0, v1, :cond_0
-
-    goto :goto_0
-
-    :cond_0
-    if-eqz p2, :cond_1
-
-    invoke-static {p0, p1, p3}, Laan;->a(Landroid/view/ViewGroup;Landroid/view/View;Landroid/graphics/Rect;)V
-
-    return-void
-
-    :cond_1
-    invoke-virtual {p1}, Landroid/view/View;->getLeft()I
-
-    move-result p2
-
-    invoke-virtual {p1}, Landroid/view/View;->getTop()I
-
-    move-result v0
-
-    invoke-virtual {p1}, Landroid/view/View;->getRight()I
-
-    move-result v1
-
-    invoke-virtual {p1}, Landroid/view/View;->getBottom()I
-
-    move-result p1
-
-    invoke-virtual {p3, p2, v0, v1, p1}, Landroid/graphics/Rect;->set(IIII)V
-
-    return-void
-
-    :cond_2
-    :goto_0
-    invoke-virtual {p3}, Landroid/graphics/Rect;->setEmpty()V
-
-    return-void
-.end method
-
-.method protected final checkLayoutParams(Landroid/view/ViewGroup$LayoutParams;)Z
-    .locals 1
-
-    instance-of v0, p1, Laal;
-
-    if-eqz v0, :cond_0
-
-    invoke-super {p0, p1}, Landroid/view/ViewGroup;->checkLayoutParams(Landroid/view/ViewGroup$LayoutParams;)Z
-
-    move-result p1
-
-    if-eqz p1, :cond_0
-
-    const/4 p1, 0x1
-
-    return p1
-
-    :cond_0
-    const/4 p1, 0x0
-
-    return p1
-.end method
-
-.method public final d(Landroid/view/View;II[II)V
+.method public final a(Landroid/view/View;II[II)V
     .locals 15
 
     move-object v7, p0
@@ -1481,7 +1392,7 @@
     :goto_0
     const/4 v13, 0x1
 
-    if-ge v10, v8, :cond_4
+    if-ge v10, v8, :cond_5
 
     invoke-virtual {p0, v10}, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->getChildAt(I)Landroid/view/View;
 
@@ -1493,25 +1404,33 @@
 
     const/16 v3, 0x8
 
-    if-eq v1, v3, :cond_2
+    if-ne v1, v3, :cond_0
 
+    move/from16 v14, p5
+
+    goto :goto_3
+
+    :cond_0
     invoke-virtual {v2}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v1
 
-    check-cast v1, Laal;
+    check-cast v1, Laah;
 
     move/from16 v14, p5
 
-    invoke-virtual {v1, v14}, Laal;->d(I)Z
+    invoke-virtual {v1, v14}, Laah;->d(I)Z
 
     move-result v3
 
-    if-eqz v3, :cond_3
+    if-nez v3, :cond_1
 
-    iget-object v1, v1, Laal;->a:Laai;
+    goto :goto_3
 
-    if-eqz v1, :cond_3
+    :cond_1
+    iget-object v1, v1, Laah;->a:Laae;
+
+    if-eqz v1, :cond_4
 
     iget-object v5, v7, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->l:[I
 
@@ -1529,9 +1448,9 @@
 
     move/from16 v6, p5
 
-    invoke-virtual/range {v0 .. v6}, Laai;->m(Landroidx/coordinatorlayout/widget/CoordinatorLayout;Landroid/view/View;Landroid/view/View;I[II)V
+    invoke-virtual/range {v0 .. v6}, Laae;->m(Landroidx/coordinatorlayout/widget/CoordinatorLayout;Landroid/view/View;Landroid/view/View;I[II)V
 
-    if-lez p2, :cond_0
+    if-lez p2, :cond_2
 
     iget-object v0, v7, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->l:[I
 
@@ -1545,7 +1464,7 @@
 
     goto :goto_1
 
-    :cond_0
+    :cond_2
     iget-object v0, v7, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->l:[I
 
     aget v0, v0, v9
@@ -1557,7 +1476,7 @@
     move v11, v0
 
     :goto_1
-    if-lez p3, :cond_1
+    if-lez p3, :cond_3
 
     iget-object v0, v7, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->l:[I
 
@@ -1571,7 +1490,7 @@
 
     goto :goto_2
 
-    :cond_1
+    :cond_3
     iget-object v0, v7, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->l:[I
 
     aget v0, v0, v13
@@ -1587,208 +1506,176 @@
 
     goto :goto_3
 
-    :cond_2
-    move/from16 v14, p5
-
-    :cond_3
+    :cond_4
     :goto_3
     add-int/lit8 v10, v10, 0x1
 
     goto :goto_0
 
-    :cond_4
+    :cond_5
     aput v11, p4, v9
 
     aput v12, p4, v13
 
-    if-eqz v0, :cond_5
+    if-eqz v0, :cond_6
 
-    invoke-virtual {p0, v13}, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->i(I)V
+    invoke-virtual {p0, v13}, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->k(I)V
 
-    :cond_5
+    :cond_6
     return-void
 .end method
 
-.method public final dispatchKeyEvent(Landroid/view/KeyEvent;)Z
-    .locals 10
+.method public final b(Landroid/view/View;IIIII)V
+    .locals 8
 
-    invoke-super {p0, p1}, Landroid/view/ViewGroup;->dispatchKeyEvent(Landroid/view/KeyEvent;)Z
+    iget-object v7, p0, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->m:[I
 
-    move-result v0
+    const/4 v6, 0x0
 
-    if-nez v0, :cond_8
+    move-object v0, p0
 
-    invoke-virtual {p1}, Landroid/view/KeyEvent;->getAction()I
+    move-object v1, p1
 
-    move-result v1
+    move v2, p2
 
-    if-nez v1, :cond_8
+    move v3, p3
 
-    invoke-virtual {p1}, Landroid/view/KeyEvent;->getKeyCode()I
+    move v4, p4
 
-    move-result v1
+    move v5, p5
 
-    sparse-switch v1, :sswitch_data_0
+    invoke-virtual/range {v0 .. v7}, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->f(Landroid/view/View;IIIII[I)V
 
-    goto/16 :goto_2
+    return-void
+.end method
 
-    :sswitch_0
-    invoke-virtual {p1}, Landroid/view/KeyEvent;->getKeyCode()I
+.method public final c(Landroid/view/View;Landroid/view/View;II)V
+    .locals 1
 
-    move-result v0
+    iget-object p1, p0, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->w:Lpx;
 
-    const/16 v1, 0x3e
+    invoke-virtual {p1, p3, p4}, Lpx;->c(II)V
 
-    if-ne v0, v1, :cond_1
+    iput-object p2, p0, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->r:Landroid/view/View;
 
-    invoke-virtual {p1}, Landroid/view/KeyEvent;->isShiftPressed()Z
+    invoke-virtual {p0}, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->getChildCount()I
+
+    move-result p1
+
+    const/4 p2, 0x0
+
+    :goto_0
+    if-ge p2, p1, :cond_1
+
+    invoke-virtual {p0, p2}, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->getChildAt(I)Landroid/view/View;
+
+    move-result-object p3
+
+    invoke-virtual {p3}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
+
+    move-result-object p3
+
+    check-cast p3, Laah;
+
+    invoke-virtual {p3, p4}, Laah;->d(I)Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    invoke-direct {p0}, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->n()I
-
-    move-result v0
-
-    neg-int v0, v0
-
-    goto :goto_0
+    iget-object p3, p3, Laah;->a:Laae;
 
     :cond_0
-    invoke-direct {p0}, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->n()I
-
-    move-result v0
-
-    invoke-virtual {p0}, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->getHeight()I
-
-    move-result v1
-
-    sub-int/2addr v0, v1
+    add-int/lit8 p2, p2, 0x1
 
     goto :goto_0
 
     :cond_1
-    invoke-virtual {p1}, Landroid/view/KeyEvent;->isAltPressed()Z
+    return-void
+.end method
+
+.method protected final checkLayoutParams(Landroid/view/ViewGroup$LayoutParams;)Z
+    .locals 1
+
+    instance-of v0, p1, Laah;
+
+    if-eqz v0, :cond_0
+
+    invoke-super {p0, p1}, Landroid/view/ViewGroup;->checkLayoutParams(Landroid/view/ViewGroup$LayoutParams;)Z
+
+    move-result p1
+
+    if-eqz p1, :cond_0
+
+    const/4 p1, 0x1
+
+    return p1
+
+    :cond_0
+    const/4 p1, 0x0
+
+    return p1
+.end method
+
+.method public final d(Landroid/view/View;I)V
+    .locals 6
+
+    iget-object v0, p0, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->w:Lpx;
+
+    invoke-virtual {v0, p2}, Lpx;->d(I)V
+
+    invoke-virtual {p0}, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->getChildCount()I
 
     move-result v0
 
-    if-eqz v0, :cond_2
+    const/4 v1, 0x0
 
-    invoke-virtual {p0}, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->getHeight()I
+    const/4 v2, 0x0
 
-    move-result v0
+    :goto_0
+    if-ge v2, v0, :cond_2
+
+    invoke-virtual {p0, v2}, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->getChildAt(I)Landroid/view/View;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
+
+    move-result-object v4
+
+    check-cast v4, Laah;
+
+    invoke-virtual {v4, p2}, Laah;->d(I)Z
+
+    move-result v5
+
+    if-nez v5, :cond_0
+
+    goto :goto_1
+
+    :cond_0
+    iget-object v5, v4, Laah;->a:Laae;
+
+    if-eqz v5, :cond_1
+
+    invoke-virtual {v5, p0, v3, p1, p2}, Laae;->c(Landroidx/coordinatorlayout/widget/CoordinatorLayout;Landroid/view/View;Landroid/view/View;I)V
+
+    :cond_1
+    invoke-virtual {v4, p2, v1}, Laah;->c(IZ)V
+
+    invoke-virtual {v4}, Laah;->a()V
+
+    :goto_1
+    add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
     :cond_2
-    invoke-virtual {p0}, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->getHeight()I
+    const/4 p1, 0x0
 
-    move-result v0
+    iput-object p1, p0, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->r:Landroid/view/View;
 
-    int-to-float v0, v0
-
-    const v1, 0x3dcccccd    # 0.1f
-
-    mul-float v0, v0, v1
-
-    float-to-int v0, v0
-
-    :goto_0
-    move-object v1, p0
-
-    :goto_1
-    const/4 v2, 0x0
-
-    if-eqz v1, :cond_4
-
-    invoke-virtual {v1}, Landroid/view/View;->isFocused()Z
-
-    move-result v3
-
-    if-nez v3, :cond_5
-
-    instance-of v3, v1, Landroid/view/ViewGroup;
-
-    if-eqz v3, :cond_3
-
-    check-cast v1, Landroid/view/ViewGroup;
-
-    invoke-virtual {v1}, Landroid/view/ViewGroup;->getFocusedChild()Landroid/view/View;
-
-    move-result-object v1
-
-    goto :goto_1
-
-    :cond_3
-    move-object v1, v2
-
-    goto :goto_1
-
-    :cond_4
-    move-object v1, v2
-
-    :cond_5
-    invoke-virtual {p1}, Landroid/view/KeyEvent;->getKeyCode()I
-
-    move-result p1
-
-    const/16 v2, 0x13
-
-    if-ne p1, v2, :cond_6
-
-    neg-int v0, v0
-
-    :cond_6
-    move v7, v0
-
-    const/4 p1, 0x2
-
-    const/4 v0, 0x1
-
-    invoke-virtual {p0, p0, v1, p1, v0}, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->t(Landroid/view/View;Landroid/view/View;II)Z
-
-    const/4 v4, 0x0
-
-    const/4 v5, 0x0
-
-    const/4 v6, 0x0
-
-    const/4 v8, 0x1
-
-    iget-object v9, p0, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->l:[I
-
-    move-object v2, p0
-
-    move-object v3, v1
-
-    invoke-virtual/range {v2 .. v9}, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->f(Landroid/view/View;IIIII[I)V
-
-    invoke-virtual {p0, v1, v0}, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->h(Landroid/view/View;I)V
-
-    iget-object p1, p0, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->l:[I
-
-    aget p1, p1, v0
-
-    if-lez p1, :cond_7
-
-    goto :goto_2
-
-    :cond_7
-    const/4 v0, 0x0
-
-    goto :goto_2
-
-    :cond_8
-    :goto_2
-    return v0
-
-    :sswitch_data_0
-    .sparse-switch
-        0x13 -> :sswitch_0
-        0x14 -> :sswitch_0
-        0x3e -> :sswitch_0
-    .end sparse-switch
+    return-void
 .end method
 
 .method protected final drawChild(Landroid/graphics/Canvas;Landroid/view/View;J)Z
@@ -1798,9 +1685,9 @@
 
     move-result-object v0
 
-    check-cast v0, Laal;
+    check-cast v0, Laah;
 
-    iget-object v0, v0, Laal;->a:Laai;
+    iget-object v0, v0, Laah;->a:Laae;
 
     invoke-super {p0, p1, p2, p3, p4}, Landroid/view/ViewGroup;->drawChild(Landroid/graphics/Canvas;Landroid/view/View;J)Z
 
@@ -1818,7 +1705,7 @@
 
     move-result-object v0
 
-    iget-object v1, p0, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->t:Landroid/graphics/drawable/Drawable;
+    iget-object v1, p0, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->u:Landroid/graphics/drawable/Drawable;
 
     if-eqz v1, :cond_0
 
@@ -1840,28 +1727,75 @@
     return-void
 .end method
 
-.method public final e(Landroid/view/View;IIIII)V
-    .locals 8
+.method public final e(Landroid/view/View;Landroid/view/View;II)Z
+    .locals 10
 
-    const/4 v6, 0x0
+    invoke-virtual {p0}, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->getChildCount()I
 
-    iget-object v7, p0, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->m:[I
+    move-result p2
 
-    move-object v0, p0
+    const/4 v0, 0x0
 
-    move-object v1, p1
+    const/4 v1, 0x0
 
-    move v2, p2
+    const/4 v2, 0x0
 
-    move v3, p3
+    :goto_0
+    if-ge v1, p2, :cond_2
 
-    move v4, p4
+    invoke-virtual {p0, v1}, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->getChildAt(I)Landroid/view/View;
 
-    move v5, p5
+    move-result-object v5
 
-    invoke-virtual/range {v0 .. v7}, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->f(Landroid/view/View;IIIII[I)V
+    invoke-virtual {v5}, Landroid/view/View;->getVisibility()I
 
-    return-void
+    move-result v3
+
+    const/16 v4, 0x8
+
+    if-eq v3, v4, :cond_1
+
+    invoke-virtual {v5}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
+
+    move-result-object v3
+
+    move-object v9, v3
+
+    check-cast v9, Laah;
+
+    iget-object v3, v9, Laah;->a:Laae;
+
+    if-eqz v3, :cond_0
+
+    move-object v4, p0
+
+    move-object v6, p1
+
+    move v7, p3
+
+    move v8, p4
+
+    invoke-virtual/range {v3 .. v8}, Laae;->q(Landroidx/coordinatorlayout/widget/CoordinatorLayout;Landroid/view/View;Landroid/view/View;II)Z
+
+    move-result v3
+
+    or-int/2addr v2, v3
+
+    invoke-virtual {v9, p4, v3}, Laah;->c(IZ)V
+
+    goto :goto_1
+
+    :cond_0
+    invoke-virtual {v9, p4, v0}, Laah;->c(IZ)V
+
+    :cond_1
+    :goto_1
+    add-int/lit8 v1, v1, 0x1
+
+    goto :goto_0
+
+    :cond_2
+    return v2
 .end method
 
 .method public final f(Landroid/view/View;IIIII[I)V
@@ -1886,7 +1820,7 @@
     :goto_0
     const/4 v13, 0x1
 
-    if-ge v10, v8, :cond_4
+    if-ge v10, v8, :cond_5
 
     invoke-virtual {p0, v10}, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->getChildAt(I)Landroid/view/View;
 
@@ -1898,25 +1832,33 @@
 
     const/16 v3, 0x8
 
-    if-eq v1, v3, :cond_2
+    if-ne v1, v3, :cond_0
 
+    move/from16 v14, p6
+
+    goto :goto_3
+
+    :cond_0
     invoke-virtual {v2}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v1
 
-    check-cast v1, Laal;
+    check-cast v1, Laah;
 
     move/from16 v14, p6
 
-    invoke-virtual {v1, v14}, Laal;->d(I)Z
+    invoke-virtual {v1, v14}, Laah;->d(I)Z
 
     move-result v3
 
-    if-eqz v3, :cond_3
+    if-nez v3, :cond_1
 
-    iget-object v1, v1, Laal;->a:Laai;
+    goto :goto_3
 
-    if-eqz v1, :cond_3
+    :cond_1
+    iget-object v1, v1, Laah;->a:Laae;
+
+    if-eqz v1, :cond_4
 
     iget-object v6, v7, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->l:[I
 
@@ -1934,9 +1876,9 @@
 
     move/from16 v5, p5
 
-    invoke-virtual/range {v0 .. v6}, Laai;->n(Landroidx/coordinatorlayout/widget/CoordinatorLayout;Landroid/view/View;III[I)V
+    invoke-virtual/range {v0 .. v6}, Laae;->n(Landroidx/coordinatorlayout/widget/CoordinatorLayout;Landroid/view/View;III[I)V
 
-    if-lez p4, :cond_0
+    if-lez p4, :cond_2
 
     iget-object v0, v7, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->l:[I
 
@@ -1950,7 +1892,7 @@
 
     goto :goto_1
 
-    :cond_0
+    :cond_2
     iget-object v0, v7, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->l:[I
 
     aget v0, v0, v9
@@ -1962,7 +1904,7 @@
     move v11, v0
 
     :goto_1
-    if-lez p5, :cond_1
+    if-lez p5, :cond_3
 
     iget-object v0, v7, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->l:[I
 
@@ -1976,7 +1918,7 @@
 
     goto :goto_2
 
-    :cond_1
+    :cond_3
     iget-object v0, v7, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->l:[I
 
     aget v0, v0, v13
@@ -1992,16 +1934,13 @@
 
     goto :goto_3
 
-    :cond_2
-    move/from16 v14, p6
-
-    :cond_3
+    :cond_4
     :goto_3
     add-int/lit8 v10, v10, 0x1
 
     goto :goto_0
 
-    :cond_4
+    :cond_5
     aget v1, p7, v9
 
     add-int/2addr v1, v11
@@ -2014,65 +1953,20 @@
 
     aput v1, p7, v13
 
-    if-eqz v0, :cond_5
+    if-eqz v0, :cond_6
 
-    invoke-virtual {p0, v13}, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->i(I)V
+    invoke-virtual {p0, v13}, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->k(I)V
 
-    :cond_5
-    return-void
-.end method
-
-.method public final g(Landroid/view/View;Landroid/view/View;II)V
-    .locals 1
-
-    iget-object p1, p0, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->v:Laev;
-
-    invoke-virtual {p1, p3, p4}, Laev;->b(II)V
-
-    iput-object p2, p0, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->r:Landroid/view/View;
-
-    invoke-virtual {p0}, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->getChildCount()I
-
-    move-result p1
-
-    const/4 p2, 0x0
-
-    :goto_0
-    if-ge p2, p1, :cond_1
-
-    invoke-virtual {p0, p2}, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->getChildAt(I)Landroid/view/View;
-
-    move-result-object p3
-
-    invoke-virtual {p3}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
-
-    move-result-object p3
-
-    check-cast p3, Laal;
-
-    invoke-virtual {p3, p4}, Laal;->d(I)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    iget-object p3, p3, Laal;->a:Laai;
-
-    :cond_0
-    add-int/lit8 p2, p2, 0x1
-
-    goto :goto_0
-
-    :cond_1
+    :cond_6
     return-void
 .end method
 
 .method protected final bridge synthetic generateDefaultLayoutParams()Landroid/view/ViewGroup$LayoutParams;
     .locals 1
 
-    new-instance v0, Laal;
+    new-instance v0, Laah;
 
-    invoke-direct {v0}, Laal;-><init>()V
+    invoke-direct {v0}, Laah;-><init>()V
 
     return-object v0
 .end method
@@ -2080,13 +1974,13 @@
 .method public final bridge synthetic generateLayoutParams(Landroid/util/AttributeSet;)Landroid/view/ViewGroup$LayoutParams;
     .locals 2
 
-    new-instance v0, Laal;
+    new-instance v0, Laah;
 
     invoke-virtual {p0}, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->getContext()Landroid/content/Context;
 
     move-result-object v1
 
-    invoke-direct {v0, v1, p1}, Laal;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
+    invoke-direct {v0, v1, p1}, Laah;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
     return-object v0
 .end method
@@ -2094,15 +1988,15 @@
 .method protected final bridge synthetic generateLayoutParams(Landroid/view/ViewGroup$LayoutParams;)Landroid/view/ViewGroup$LayoutParams;
     .locals 1
 
-    instance-of v0, p1, Laal;
+    instance-of v0, p1, Laah;
 
     if-eqz v0, :cond_0
 
-    new-instance v0, Laal;
+    new-instance v0, Laah;
 
-    check-cast p1, Laal;
+    check-cast p1, Laah;
 
-    invoke-direct {v0, p1}, Laal;-><init>(Laal;)V
+    invoke-direct {v0, p1}, Laah;-><init>(Laah;)V
 
     goto :goto_0
 
@@ -2111,18 +2005,18 @@
 
     if-eqz v0, :cond_1
 
-    new-instance v0, Laal;
+    new-instance v0, Laah;
 
     check-cast p1, Landroid/view/ViewGroup$MarginLayoutParams;
 
-    invoke-direct {v0, p1}, Laal;-><init>(Landroid/view/ViewGroup$MarginLayoutParams;)V
+    invoke-direct {v0, p1}, Laah;-><init>(Landroid/view/ViewGroup$MarginLayoutParams;)V
 
     goto :goto_0
 
     :cond_1
-    new-instance v0, Laal;
+    new-instance v0, Laah;
 
-    invoke-direct {v0, p1}, Laal;-><init>(Landroid/view/ViewGroup$LayoutParams;)V
+    invoke-direct {v0, p1}, Laah;-><init>(Landroid/view/ViewGroup$LayoutParams;)V
 
     :goto_0
     return-object v0
@@ -2131,9 +2025,9 @@
 .method public final getNestedScrollAxes()I
     .locals 1
 
-    iget-object v0, p0, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->v:Laev;
+    iget-object v0, p0, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->w:Lpx;
 
-    invoke-virtual {v0}, Laev;->a()I
+    invoke-virtual {v0}, Lpx;->b()I
 
     move-result v0
 
@@ -2188,75 +2082,186 @@
     return v0
 .end method
 
-.method public final h(Landroid/view/View;I)V
-    .locals 6
+.method public final h(Landroid/view/View;)Ljava/util/List;
+    .locals 5
 
-    iget-object v0, p0, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->v:Laev;
+    iget-object v0, p0, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->e:Laak;
 
-    invoke-virtual {v0, p2}, Laev;->c(I)V
+    iget-object v1, v0, Laak;->b:Lxf;
 
-    invoke-virtual {p0}, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->getChildCount()I
-
-    move-result v0
-
-    const/4 v1, 0x0
+    iget v1, v1, Lxf;->j:I
 
     const/4 v2, 0x0
 
+    const/4 v3, 0x0
+
     :goto_0
-    if-ge v2, v0, :cond_2
+    if-ge v3, v1, :cond_2
 
-    invoke-virtual {p0, v2}, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->getChildAt(I)Landroid/view/View;
+    iget-object v4, v0, Laak;->b:Lxf;
 
-    move-result-object v3
-
-    invoke-virtual {v3}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
+    invoke-virtual {v4, v3}, Lxf;->i(I)Ljava/lang/Object;
 
     move-result-object v4
 
-    check-cast v4, Laal;
+    check-cast v4, Ljava/util/ArrayList;
 
-    invoke-virtual {v4, p2}, Laal;->d(I)Z
+    if-eqz v4, :cond_1
 
-    move-result v5
+    invoke-virtual {v4, p1}, Ljava/util/ArrayList;->contains(Ljava/lang/Object;)Z
 
-    if-nez v5, :cond_0
+    move-result v4
 
-    goto :goto_1
+    if-eqz v4, :cond_1
+
+    if-nez v2, :cond_0
+
+    new-instance v2, Ljava/util/ArrayList;
+
+    invoke-direct {v2}, Ljava/util/ArrayList;-><init>()V
 
     :cond_0
-    iget-object v5, v4, Laal;->a:Laai;
+    iget-object v4, v0, Laak;->b:Lxf;
 
-    if-eqz v5, :cond_1
+    invoke-virtual {v4, v3}, Lxf;->f(I)Ljava/lang/Object;
 
-    invoke-virtual {v5, p0, v3, p1, p2}, Laai;->c(Landroidx/coordinatorlayout/widget/CoordinatorLayout;Landroid/view/View;Landroid/view/View;I)V
+    move-result-object v4
+
+    invoke-virtual {v2, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     :cond_1
-    invoke-virtual {v4, p2, v1}, Laal;->c(IZ)V
-
-    invoke-virtual {v4}, Laal;->a()V
-
-    :goto_1
-    add-int/lit8 v2, v2, 0x1
+    add-int/lit8 v3, v3, 0x1
 
     goto :goto_0
 
     :cond_2
-    const/4 p1, 0x0
+    if-nez v2, :cond_3
 
-    iput-object p1, p0, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->r:Landroid/view/View;
+    invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
+
+    move-result-object p1
+
+    return-object p1
+
+    :cond_3
+    return-object v2
+.end method
+
+.method public final i(Landroid/view/View;)V
+    .locals 4
+
+    iget-object v0, p0, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->e:Laak;
+
+    invoke-virtual {v0, p1}, Laak;->a(Ljava/lang/Object;)Ljava/util/ArrayList;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_1
+
+    invoke-interface {v0}, Ljava/util/List;->isEmpty()Z
+
+    move-result v1
+
+    if-nez v1, :cond_1
+
+    const/4 v1, 0x0
+
+    :goto_0
+    invoke-interface {v0}, Ljava/util/List;->size()I
+
+    move-result v2
+
+    if-ge v1, v2, :cond_1
+
+    invoke-interface {v0, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Landroid/view/View;
+
+    invoke-virtual {v2}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
+
+    move-result-object v3
+
+    check-cast v3, Laah;
+
+    iget-object v3, v3, Laah;->a:Laae;
+
+    if-eqz v3, :cond_0
+
+    invoke-virtual {v3, p0, v2, p1}, Laae;->i(Landroidx/coordinatorlayout/widget/CoordinatorLayout;Landroid/view/View;Landroid/view/View;)V
+
+    :cond_0
+    add-int/lit8 v1, v1, 0x1
+
+    goto :goto_0
+
+    :cond_1
+    return-void
+.end method
+
+.method final j(Landroid/view/View;ZLandroid/graphics/Rect;)V
+    .locals 2
+
+    invoke-virtual {p1}, Landroid/view/View;->isLayoutRequested()Z
+
+    move-result v0
+
+    if-nez v0, :cond_2
+
+    invoke-virtual {p1}, Landroid/view/View;->getVisibility()I
+
+    move-result v0
+
+    const/16 v1, 0x8
+
+    if-ne v0, v1, :cond_0
+
+    goto :goto_0
+
+    :cond_0
+    if-eqz p2, :cond_1
+
+    invoke-static {p0, p1, p3}, Laal;->a(Landroid/view/ViewGroup;Landroid/view/View;Landroid/graphics/Rect;)V
+
+    return-void
+
+    :cond_1
+    invoke-virtual {p1}, Landroid/view/View;->getLeft()I
+
+    move-result p2
+
+    invoke-virtual {p1}, Landroid/view/View;->getTop()I
+
+    move-result v0
+
+    invoke-virtual {p1}, Landroid/view/View;->getRight()I
+
+    move-result v1
+
+    invoke-virtual {p1}, Landroid/view/View;->getBottom()I
+
+    move-result p1
+
+    invoke-virtual {p3, p2, v0, v1, p1}, Landroid/graphics/Rect;->set(IIII)V
+
+    return-void
+
+    :cond_2
+    :goto_0
+    invoke-virtual {p3}, Landroid/graphics/Rect;->setEmpty()V
 
     return-void
 .end method
 
-.method public final i(I)V
+.method public final k(I)V
     .locals 24
 
     move-object/from16 v0, p0
 
     move/from16 v1, p1
 
-    invoke-static/range {p0 .. p0}, Lafc;->c(Landroid/view/View;)I
+    invoke-static/range {p0 .. p0}, Lgl;->f(Landroid/view/View;)I
 
     move-result v8
 
@@ -2266,15 +2271,15 @@
 
     move-result v9
 
-    invoke-static {}, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->r()Landroid/graphics/Rect;
+    invoke-static {}, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->s()Landroid/graphics/Rect;
 
     move-result-object v10
 
-    invoke-static {}, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->r()Landroid/graphics/Rect;
+    invoke-static {}, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->s()Landroid/graphics/Rect;
 
     move-result-object v11
 
-    invoke-static {}, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->r()Landroid/graphics/Rect;
+    invoke-static {}, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->s()Landroid/graphics/Rect;
 
     move-result-object v12
 
@@ -2299,7 +2304,7 @@
 
     move-object v7, v2
 
-    check-cast v7, Laal;
+    check-cast v7, Laah;
 
     if-nez v1, :cond_1
 
@@ -2340,7 +2345,7 @@
 
     check-cast v2, Landroid/view/View;
 
-    iget-object v3, v7, Laal;->l:Landroid/view/View;
+    iget-object v3, v7, Laah;->l:Landroid/view/View;
 
     if-ne v3, v2, :cond_8
 
@@ -2350,31 +2355,31 @@
 
     move-object v4, v2
 
-    check-cast v4, Laal;
+    check-cast v4, Laah;
 
-    iget-object v2, v4, Laal;->k:Landroid/view/View;
+    iget-object v2, v4, Laah;->k:Landroid/view/View;
 
     if-eqz v2, :cond_7
 
-    invoke-static {}, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->r()Landroid/graphics/Rect;
+    invoke-static {}, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->s()Landroid/graphics/Rect;
 
     move-result-object v3
 
-    invoke-static {}, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->r()Landroid/graphics/Rect;
+    invoke-static {}, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->s()Landroid/graphics/Rect;
 
     move-result-object v2
 
-    invoke-static {}, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->r()Landroid/graphics/Rect;
+    invoke-static {}, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->s()Landroid/graphics/Rect;
 
     move-result-object v13
 
-    iget-object v5, v4, Laal;->k:Landroid/view/View;
+    iget-object v5, v4, Laah;->k:Landroid/view/View;
 
-    invoke-static {v0, v5, v3}, Laan;->a(Landroid/view/ViewGroup;Landroid/view/View;Landroid/graphics/Rect;)V
+    invoke-static {v0, v5, v3}, Laal;->a(Landroid/view/ViewGroup;Landroid/view/View;Landroid/graphics/Rect;)V
 
     const/4 v5, 0x0
 
-    invoke-virtual {v0, v15, v5, v2}, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->c(Landroid/view/View;ZLandroid/graphics/Rect;)V
+    invoke-virtual {v0, v15, v5, v2}, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->j(Landroid/view/View;ZLandroid/graphics/Rect;)V
 
     invoke-virtual {v15}, Landroid/view/View;->getMeasuredWidth()I
 
@@ -2414,7 +2419,7 @@
 
     move v7, v9
 
-    invoke-static/range {v2 .. v7}, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->z(ILandroid/graphics/Rect;Landroid/graphics/Rect;Laal;II)V
+    invoke-static/range {v2 .. v7}, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->z(ILandroid/graphics/Rect;Landroid/graphics/Rect;Laah;II)V
 
     iget v2, v13, Landroid/graphics/Rect;->left:I
 
@@ -2445,7 +2450,7 @@
 
     move-object/from16 v2, v20
 
-    invoke-direct {v0, v2, v13, v3, v9}, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->s(Laal;Landroid/graphics/Rect;II)V
+    invoke-direct {v0, v2, v13, v3, v9}, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->t(Laah;Landroid/graphics/Rect;II)V
 
     iget v3, v13, Landroid/graphics/Rect;->left:I
 
@@ -2461,23 +2466,23 @@
 
     if-eqz v3, :cond_4
 
-    invoke-virtual {v15, v3}, Landroid/view/View;->offsetLeftAndRight(I)V
+    invoke-static {v15, v3}, Lgl;->x(Landroid/view/View;I)V
 
     :cond_4
     if-eqz v4, :cond_5
 
-    invoke-virtual {v15, v4}, Landroid/view/View;->offsetTopAndBottom(I)V
+    invoke-static {v15, v4}, Lgl;->y(Landroid/view/View;I)V
 
     :cond_5
     if-eqz v5, :cond_6
 
-    iget-object v3, v2, Laal;->a:Laai;
+    iget-object v3, v2, Laah;->a:Laae;
 
     if-eqz v3, :cond_6
 
-    iget-object v2, v2, Laal;->k:Landroid/view/View;
+    iget-object v2, v2, Laah;->k:Landroid/view/View;
 
-    invoke-virtual {v3, v0, v15, v2}, Laai;->i(Landroidx/coordinatorlayout/widget/CoordinatorLayout;Landroid/view/View;Landroid/view/View;)V
+    invoke-virtual {v3, v0, v15, v2}, Laae;->i(Landroidx/coordinatorlayout/widget/CoordinatorLayout;Landroid/view/View;Landroid/view/View;)V
 
     :cond_6
     invoke-static/range {v19 .. v19}, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->u(Landroid/graphics/Rect;)V
@@ -2536,11 +2541,11 @@
 
     const/4 v12, 0x1
 
-    invoke-virtual {v0, v15, v12, v11}, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->c(Landroid/view/View;ZLandroid/graphics/Rect;)V
+    invoke-virtual {v0, v15, v12, v11}, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->j(Landroid/view/View;ZLandroid/graphics/Rect;)V
 
     move-object/from16 v2, v23
 
-    iget v3, v2, Laal;->g:I
+    iget v3, v2, Laah;->g:I
 
     if-eqz v3, :cond_a
 
@@ -2550,7 +2555,7 @@
 
     if-nez v3, :cond_a
 
-    iget v3, v2, Laal;->g:I
+    iget v3, v2, Laah;->g:I
 
     invoke-static {v3, v8}, Landroid/view/Gravity;->getAbsoluteGravity(II)I
 
@@ -2632,7 +2637,7 @@
 
     :cond_a
     :goto_5
-    iget v2, v2, Laal;->h:I
+    iget v2, v2, Laah;->h:I
 
     if-eqz v2, :cond_16
 
@@ -2642,7 +2647,7 @@
 
     if-nez v2, :cond_16
 
-    invoke-static {v15}, Lafe;->f(Landroid/view/View;)Z
+    invoke-static {v15}, Lgl;->V(Landroid/view/View;)Z
 
     move-result v2
 
@@ -2669,15 +2674,15 @@
 
     move-result-object v2
 
-    check-cast v2, Laal;
+    check-cast v2, Laah;
 
-    iget-object v3, v2, Laal;->a:Laai;
+    iget-object v3, v2, Laah;->a:Laae;
 
-    invoke-static {}, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->r()Landroid/graphics/Rect;
+    invoke-static {}, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->s()Landroid/graphics/Rect;
 
     move-result-object v4
 
-    invoke-static {}, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->r()Landroid/graphics/Rect;
+    invoke-static {}, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->s()Landroid/graphics/Rect;
 
     move-result-object v5
 
@@ -2701,7 +2706,7 @@
 
     if-eqz v3, :cond_d
 
-    invoke-virtual {v3, v15, v4}, Laai;->r(Landroid/view/View;Landroid/graphics/Rect;)Z
+    invoke-virtual {v3, v15, v4}, Laae;->r(Landroid/view/View;Landroid/graphics/Rect;)Z
 
     move-result v3
 
@@ -2769,7 +2774,7 @@
     goto/16 :goto_b
 
     :cond_e
-    iget v3, v2, Laal;->h:I
+    iget v3, v2, Laah;->h:I
 
     invoke-static {v3, v8}, Landroid/view/Gravity;->getAbsoluteGravity(II)I
 
@@ -2783,11 +2788,11 @@
 
     iget v5, v4, Landroid/graphics/Rect;->top:I
 
-    iget v6, v2, Laal;->topMargin:I
+    iget v6, v2, Laah;->topMargin:I
 
     sub-int/2addr v5, v6
 
-    iget v6, v2, Laal;->j:I
+    iget v6, v2, Laah;->j:I
 
     sub-int/2addr v5, v6
 
@@ -2823,11 +2828,11 @@
 
     sub-int/2addr v6, v7
 
-    iget v7, v2, Laal;->bottomMargin:I
+    iget v7, v2, Laah;->bottomMargin:I
 
     sub-int/2addr v6, v7
 
-    iget v7, v2, Laal;->j:I
+    iget v7, v2, Laah;->j:I
 
     add-int/2addr v6, v7
 
@@ -2860,11 +2865,11 @@
 
     iget v5, v4, Landroid/graphics/Rect;->left:I
 
-    iget v6, v2, Laal;->leftMargin:I
+    iget v6, v2, Laah;->leftMargin:I
 
     sub-int/2addr v5, v6
 
-    iget v6, v2, Laal;->i:I
+    iget v6, v2, Laah;->i:I
 
     sub-int/2addr v5, v6
 
@@ -2900,11 +2905,11 @@
 
     sub-int/2addr v3, v6
 
-    iget v6, v2, Laal;->rightMargin:I
+    iget v6, v2, Laah;->rightMargin:I
 
     sub-int/2addr v3, v6
 
-    iget v2, v2, Laal;->i:I
+    iget v2, v2, Laah;->i:I
 
     add-int/2addr v3, v2
 
@@ -2956,9 +2961,9 @@
 
     move-result-object v3
 
-    check-cast v3, Laal;
+    check-cast v3, Laah;
 
-    iget-object v3, v3, Laal;->p:Landroid/graphics/Rect;
+    iget-object v3, v3, Laah;->p:Landroid/graphics/Rect;
 
     move-object/from16 v4, v21
 
@@ -2974,9 +2979,9 @@
 
     move-result-object v3
 
-    check-cast v3, Laal;
+    check-cast v3, Laah;
 
-    iget-object v3, v3, Laal;->p:Landroid/graphics/Rect;
+    iget-object v3, v3, Laah;->p:Landroid/graphics/Rect;
 
     invoke-virtual {v3, v11}, Landroid/graphics/Rect;->set(Landroid/graphics/Rect;)V
 
@@ -3010,13 +3015,13 @@
 
     move-result-object v6
 
-    check-cast v6, Laal;
+    check-cast v6, Laah;
 
-    iget-object v7, v6, Laal;->a:Laai;
+    iget-object v7, v6, Laah;->a:Laae;
 
     if-eqz v7, :cond_1a
 
-    invoke-virtual {v7, v15}, Laai;->h(Landroid/view/View;)Z
+    invoke-virtual {v7, v15}, Laae;->h(Landroid/view/View;)Z
 
     move-result v9
 
@@ -3024,32 +3029,32 @@
 
     if-nez v1, :cond_19
 
-    iget-boolean v9, v6, Laal;->o:Z
+    iget-boolean v9, v6, Laah;->o:Z
 
     if-eqz v9, :cond_19
 
-    invoke-virtual {v6}, Laal;->a()V
+    invoke-virtual {v6}, Laah;->a()V
 
     goto :goto_f
 
     :cond_19
     packed-switch v1, :pswitch_data_1
 
-    invoke-virtual {v7, v0, v5, v15}, Laai;->i(Landroidx/coordinatorlayout/widget/CoordinatorLayout;Landroid/view/View;Landroid/view/View;)V
+    invoke-virtual {v7, v0, v5, v15}, Laae;->i(Landroidx/coordinatorlayout/widget/CoordinatorLayout;Landroid/view/View;Landroid/view/View;)V
 
     const/4 v5, 0x0
 
     goto :goto_e
 
     :pswitch_3
-    invoke-virtual {v7, v0, v15}, Laai;->j(Landroidx/coordinatorlayout/widget/CoordinatorLayout;Landroid/view/View;)V
+    invoke-virtual {v7, v0, v15}, Laae;->j(Landroidx/coordinatorlayout/widget/CoordinatorLayout;Landroid/view/View;)V
 
     const/4 v5, 0x1
 
     :goto_e
     if-ne v1, v12, :cond_1a
 
-    iput-boolean v5, v6, Laal;->o:Z
+    iput-boolean v5, v6, Laah;->o:Z
 
     :cond_1a
     :goto_f
@@ -3099,20 +3104,20 @@
     .end packed-switch
 .end method
 
-.method public final j(Landroid/view/View;I)V
+.method public final l(Landroid/view/View;I)V
     .locals 11
 
     invoke-virtual {p1}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v0
 
-    check-cast v0, Laal;
+    check-cast v0, Laah;
 
-    iget-object v1, v0, Laal;->k:Landroid/view/View;
+    iget-object v1, v0, Laah;->k:Landroid/view/View;
 
     if-nez v1, :cond_1
 
-    iget v2, v0, Laal;->f:I
+    iget v2, v0, Laah;->f:I
 
     const/4 v3, -0x1
 
@@ -3133,16 +3138,16 @@
     :goto_0
     if-eqz v1, :cond_2
 
-    invoke-static {}, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->r()Landroid/graphics/Rect;
+    invoke-static {}, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->s()Landroid/graphics/Rect;
 
     move-result-object v6
 
-    invoke-static {}, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->r()Landroid/graphics/Rect;
+    invoke-static {}, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->s()Landroid/graphics/Rect;
 
     move-result-object v7
 
     :try_start_0
-    invoke-static {p0, v1, v6}, Laan;->a(Landroid/view/ViewGroup;Landroid/view/View;Landroid/graphics/Rect;)V
+    invoke-static {p0, v1, v6}, Laal;->a(Landroid/view/ViewGroup;Landroid/view/View;Landroid/graphics/Rect;)V
 
     invoke-virtual {p1}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
@@ -3150,7 +3155,7 @@
 
     move-object v8, v0
 
-    check-cast v8, Laal;
+    check-cast v8, Laah;
 
     invoke-virtual {p1}, Landroid/view/View;->getMeasuredWidth()I
 
@@ -3172,9 +3177,9 @@
 
     move v5, v10
 
-    invoke-static/range {v0 .. v5}, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->z(ILandroid/graphics/Rect;Landroid/graphics/Rect;Laal;II)V
+    invoke-static/range {v0 .. v5}, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->z(ILandroid/graphics/Rect;Landroid/graphics/Rect;Laah;II)V
 
-    invoke-direct {p0, v8, v7, v9, v10}, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->s(Laal;Landroid/graphics/Rect;II)V
+    invoke-direct {p0, v8, v7, v9, v10}, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->t(Laah;Landroid/graphics/Rect;II)V
 
     iget p2, v7, Landroid/graphics/Rect;->left:I
 
@@ -3204,7 +3209,7 @@
     throw p1
 
     :cond_2
-    iget v0, v0, Laal;->e:I
+    iget v0, v0, Laah;->e:I
 
     if-ltz v0, :cond_4
 
@@ -3212,11 +3217,11 @@
 
     move-result-object v1
 
-    check-cast v1, Laal;
+    check-cast v1, Laah;
 
-    iget v2, v1, Laal;->c:I
+    iget v2, v1, Laah;->c:I
 
-    invoke-static {v2}, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->q(I)I
+    invoke-static {v2}, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->r(I)I
 
     move-result v2
 
@@ -3254,7 +3259,7 @@
 
     :cond_3
     :goto_1
-    invoke-direct {p0, v0}, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->o(I)I
+    invoke-direct {p0, v0}, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->p(I)I
 
     move-result p2
 
@@ -3294,7 +3299,7 @@
 
     move-result v2
 
-    iget v3, v1, Laal;->leftMargin:I
+    iget v3, v1, Laah;->leftMargin:I
 
     add-int/2addr v2, v3
 
@@ -3306,7 +3311,7 @@
 
     sub-int/2addr v4, v6
 
-    iget v3, v1, Laal;->rightMargin:I
+    iget v3, v1, Laah;->rightMargin:I
 
     sub-int/2addr v4, v3
 
@@ -3322,7 +3327,7 @@
 
     move-result v2
 
-    iget v3, v1, Laal;->topMargin:I
+    iget v3, v1, Laah;->topMargin:I
 
     add-int/2addr v2, v3
 
@@ -3334,7 +3339,7 @@
 
     sub-int/2addr v5, v7
 
-    iget v1, v1, Laal;->bottomMargin:I
+    iget v1, v1, Laah;->bottomMargin:I
 
     sub-int/2addr v5, v1
 
@@ -3359,9 +3364,9 @@
 
     move-result-object v0
 
-    check-cast v0, Laal;
+    check-cast v0, Laah;
 
-    invoke-static {}, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->r()Landroid/graphics/Rect;
+    invoke-static {}, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->s()Landroid/graphics/Rect;
 
     move-result-object v7
 
@@ -3369,7 +3374,7 @@
 
     move-result v1
 
-    iget v2, v0, Laal;->leftMargin:I
+    iget v2, v0, Laah;->leftMargin:I
 
     add-int/2addr v1, v2
 
@@ -3377,7 +3382,7 @@
 
     move-result v2
 
-    iget v3, v0, Laal;->topMargin:I
+    iget v3, v0, Laah;->topMargin:I
 
     add-int/2addr v2, v3
 
@@ -3391,7 +3396,7 @@
 
     sub-int/2addr v3, v4
 
-    iget v4, v0, Laal;->rightMargin:I
+    iget v4, v0, Laah;->rightMargin:I
 
     sub-int/2addr v3, v4
 
@@ -3405,23 +3410,23 @@
 
     sub-int/2addr v4, v5
 
-    iget v5, v0, Laal;->bottomMargin:I
+    iget v5, v0, Laah;->bottomMargin:I
 
     sub-int/2addr v4, v5
 
     invoke-virtual {v7, v1, v2, v3, v4}, Landroid/graphics/Rect;->set(IIII)V
 
-    iget-object v1, p0, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->e:Lago;
+    iget-object v1, p0, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->f:Lgy;
 
     if-eqz v1, :cond_5
 
-    invoke-static {p0}, Lafb;->p(Landroid/view/View;)Z
+    invoke-static {p0}, Lgl;->R(Landroid/view/View;)Z
 
     move-result v1
 
     if-eqz v1, :cond_5
 
-    invoke-static {p1}, Lafb;->p(Landroid/view/View;)Z
+    invoke-static {p1}, Lgl;->R(Landroid/view/View;)Z
 
     move-result v1
 
@@ -3429,9 +3434,9 @@
 
     iget v1, v7, Landroid/graphics/Rect;->left:I
 
-    iget-object v2, p0, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->e:Lago;
+    iget-object v2, p0, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->f:Lgy;
 
-    invoke-virtual {v2}, Lago;->b()I
+    invoke-virtual {v2}, Lgy;->b()I
 
     move-result v2
 
@@ -3441,9 +3446,9 @@
 
     iget v1, v7, Landroid/graphics/Rect;->top:I
 
-    iget-object v2, p0, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->e:Lago;
+    iget-object v2, p0, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->f:Lgy;
 
-    invoke-virtual {v2}, Lago;->d()I
+    invoke-virtual {v2}, Lgy;->d()I
 
     move-result v2
 
@@ -3453,9 +3458,9 @@
 
     iget v1, v7, Landroid/graphics/Rect;->right:I
 
-    iget-object v2, p0, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->e:Lago;
+    iget-object v2, p0, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->f:Lgy;
 
-    invoke-virtual {v2}, Lago;->c()I
+    invoke-virtual {v2}, Lgy;->c()I
 
     move-result v2
 
@@ -3465,9 +3470,9 @@
 
     iget v1, v7, Landroid/graphics/Rect;->bottom:I
 
-    iget-object v2, p0, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->e:Lago;
+    iget-object v2, p0, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->f:Lgy;
 
-    invoke-virtual {v2}, Lago;->a()I
+    invoke-virtual {v2}, Lgy;->a()I
 
     move-result v2
 
@@ -3476,13 +3481,13 @@
     iput v1, v7, Landroid/graphics/Rect;->bottom:I
 
     :cond_5
-    invoke-static {}, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->r()Landroid/graphics/Rect;
+    invoke-static {}, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->s()Landroid/graphics/Rect;
 
     move-result-object v8
 
-    iget v0, v0, Laal;->c:I
+    iget v0, v0, Laah;->c:I
 
-    invoke-static {v0}, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->p(I)I
+    invoke-static {v0}, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->q(I)I
 
     move-result v1
 
@@ -3500,7 +3505,7 @@
 
     move v6, p2
 
-    invoke-static/range {v1 .. v6}, Laem;->a(IIILandroid/graphics/Rect;Landroid/graphics/Rect;I)V
+    invoke-static/range {v1 .. v6}, Landroid/view/Gravity;->apply(IIILandroid/graphics/Rect;Landroid/graphics/Rect;I)V
 
     iget p2, v8, Landroid/graphics/Rect;->left:I
 
@@ -3531,14 +3536,14 @@
     .end sparse-switch
 .end method
 
-.method public final k(Landroid/view/View;II)Z
+.method public final m(Landroid/view/View;II)Z
     .locals 1
 
-    invoke-static {}, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->r()Landroid/graphics/Rect;
+    invoke-static {}, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->s()Landroid/graphics/Rect;
 
     move-result-object v0
 
-    invoke-static {p0, p1, v0}, Laan;->a(Landroid/view/ViewGroup;Landroid/view/View;Landroid/graphics/Rect;)V
+    invoke-static {p0, p1, v0}, Laal;->a(Landroid/view/ViewGroup;Landroid/view/View;Landroid/graphics/Rect;)V
 
     :try_start_0
     invoke-virtual {v0, p2, p3}, Landroid/graphics/Rect;->contains(II)Z
@@ -3559,7 +3564,7 @@
     throw p1
 .end method
 
-.method public final m(Landroid/view/View;III)V
+.method public final o(Landroid/view/View;III)V
     .locals 6
 
     const/4 v5, 0x0
@@ -3580,52 +3585,52 @@
 .end method
 
 .method public final onAttachedToWindow()V
-    .locals 3
+    .locals 2
 
     invoke-super {p0}, Landroid/view/ViewGroup;->onAttachedToWindow()V
 
     invoke-direct {p0}, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->v()V
 
-    iget-boolean v0, p0, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->s:Z
-
-    const/4 v1, 0x1
+    iget-boolean v0, p0, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->t:Z
 
     if-eqz v0, :cond_1
 
-    iget-object v0, p0, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->w:Livn;
+    iget-object v0, p0, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->s:Laai;
 
     if-nez v0, :cond_0
 
-    new-instance v0, Livn;
+    new-instance v0, Laai;
 
-    invoke-direct {v0, p0, v1}, Livn;-><init>(Landroidx/coordinatorlayout/widget/CoordinatorLayout;I)V
+    invoke-direct {v0, p0}, Laai;-><init>(Landroidx/coordinatorlayout/widget/CoordinatorLayout;)V
 
-    iput-object v0, p0, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->w:Livn;
+    iput-object v0, p0, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->s:Laai;
 
     :cond_0
     invoke-virtual {p0}, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->getViewTreeObserver()Landroid/view/ViewTreeObserver;
 
     move-result-object v0
 
-    iget-object v2, p0, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->w:Livn;
+    iget-object v1, p0, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->s:Laai;
 
-    invoke-virtual {v0, v2}, Landroid/view/ViewTreeObserver;->addOnPreDrawListener(Landroid/view/ViewTreeObserver$OnPreDrawListener;)V
+    invoke-virtual {v0, v1}, Landroid/view/ViewTreeObserver;->addOnPreDrawListener(Landroid/view/ViewTreeObserver$OnPreDrawListener;)V
 
     :cond_1
-    iget-object v0, p0, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->e:Lago;
+    iget-object v0, p0, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->f:Lgy;
 
     if-nez v0, :cond_2
 
-    invoke-static {p0}, Lafb;->p(Landroid/view/View;)Z
+    invoke-static {p0}, Lgl;->R(Landroid/view/View;)Z
 
     move-result v0
 
     if-eqz v0, :cond_2
 
-    invoke-static {p0}, Laff;->c(Landroid/view/View;)V
+    invoke-static {p0}, Lgl;->D(Landroid/view/View;)V
 
     :cond_2
-    iput-boolean v1, p0, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->o:Z
+    const/4 v0, 0x1
+
+    iput-boolean v0, p0, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->o:Z
 
     return-void
 .end method
@@ -3637,11 +3642,11 @@
 
     invoke-direct {p0}, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->v()V
 
-    iget-boolean v0, p0, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->s:Z
+    iget-boolean v0, p0, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->t:Z
 
     if-eqz v0, :cond_0
 
-    iget-object v0, p0, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->w:Livn;
+    iget-object v0, p0, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->s:Laai;
 
     if-eqz v0, :cond_0
 
@@ -3649,7 +3654,7 @@
 
     move-result-object v0
 
-    iget-object v1, p0, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->w:Livn;
+    iget-object v1, p0, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->s:Laai;
 
     invoke-virtual {v0, v1}, Landroid/view/ViewTreeObserver;->removeOnPreDrawListener(Landroid/view/ViewTreeObserver$OnPreDrawListener;)V
 
@@ -3673,21 +3678,21 @@
 
     invoke-super {p0, p1}, Landroid/view/ViewGroup;->onDraw(Landroid/graphics/Canvas;)V
 
-    iget-boolean v0, p0, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->f:Z
+    iget-boolean v0, p0, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->g:Z
 
     if-eqz v0, :cond_1
 
-    iget-object v0, p0, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->t:Landroid/graphics/drawable/Drawable;
+    iget-object v0, p0, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->u:Landroid/graphics/drawable/Drawable;
 
     if-eqz v0, :cond_1
 
-    iget-object v0, p0, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->e:Lago;
+    iget-object v0, p0, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->f:Lgy;
 
     const/4 v1, 0x0
 
     if-eqz v0, :cond_0
 
-    invoke-virtual {v0}, Lago;->d()I
+    invoke-virtual {v0}, Lgy;->d()I
 
     move-result v0
 
@@ -3699,7 +3704,7 @@
     :goto_0
     if-lez v0, :cond_1
 
-    iget-object v2, p0, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->t:Landroid/graphics/drawable/Drawable;
+    iget-object v2, p0, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->u:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {p0}, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->getWidth()I
 
@@ -3707,7 +3712,7 @@
 
     invoke-virtual {v2, v1, v1, v3, v0}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
 
-    iget-object v0, p0, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->t:Landroid/graphics/drawable/Drawable;
+    iget-object v0, p0, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->u:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v0, p1}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
 
@@ -3757,7 +3762,7 @@
 .method protected final onLayout(ZIIII)V
     .locals 1
 
-    invoke-static {p0}, Lafc;->c(Landroid/view/View;)I
+    invoke-static {p0}, Lgl;->f(Landroid/view/View;)I
 
     move-result p1
 
@@ -3795,20 +3800,20 @@
 
     move-result-object p5
 
-    check-cast p5, Laal;
+    check-cast p5, Laah;
 
-    iget-object p5, p5, Laal;->a:Laai;
+    iget-object p5, p5, Laah;->a:Laae;
 
     if-eqz p5, :cond_1
 
-    invoke-virtual {p5, p0, p4, p1}, Laai;->e(Landroidx/coordinatorlayout/widget/CoordinatorLayout;Landroid/view/View;I)Z
+    invoke-virtual {p5, p0, p4, p1}, Laae;->e(Landroidx/coordinatorlayout/widget/CoordinatorLayout;Landroid/view/View;I)Z
 
     move-result p5
 
     if-nez p5, :cond_2
 
     :cond_1
-    invoke-virtual {p0, p4, p1}, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->j(Landroid/view/View;I)V
+    invoke-virtual {p0, p4, p1}, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->l(Landroid/view/View;I)V
 
     :cond_2
     :goto_1
@@ -3821,7 +3826,7 @@
 .end method
 
 .method protected final onMeasure(II)V
-    .locals 29
+    .locals 30
 
     move-object/from16 v6, p0
 
@@ -3829,13 +3834,11 @@
 
     invoke-interface {v0}, Ljava/util/List;->clear()V
 
-    iget-object v0, v6, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->h:Lbbc;
+    iget-object v0, v6, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->e:Laak;
 
-    iget-object v1, v0, Lbbc;->a:Ljava/lang/Object;
+    iget-object v1, v0, Laak;->b:Lxf;
 
-    check-cast v1, Lxf;
-
-    iget v1, v1, Lxf;->d:I
+    iget v1, v1, Lxf;->j:I
 
     const/4 v7, 0x0
 
@@ -3844,11 +3847,9 @@
     :goto_0
     if-ge v2, v1, :cond_1
 
-    iget-object v3, v0, Lbbc;->a:Ljava/lang/Object;
+    iget-object v3, v0, Laak;->b:Lxf;
 
-    check-cast v3, Lxf;
-
-    invoke-virtual {v3, v2}, Lxf;->g(I)Ljava/lang/Object;
+    invoke-virtual {v3, v2}, Lxf;->i(I)Ljava/lang/Object;
 
     move-result-object v3
 
@@ -3858,9 +3859,9 @@
 
     invoke-virtual {v3}, Ljava/util/ArrayList;->clear()V
 
-    iget-object v4, v0, Lbbc;->b:Ljava/lang/Object;
+    iget-object v4, v0, Laak;->a:Lfc;
 
-    invoke-interface {v4, v3}, Laed;->b(Ljava/lang/Object;)Z
+    invoke-interface {v4, v3}, Lfc;->b(Ljava/lang/Object;)Z
 
     :cond_0
     add-int/lit8 v2, v2, 0x1
@@ -3868,9 +3869,7 @@
     goto :goto_0
 
     :cond_1
-    iget-object v0, v0, Lbbc;->a:Ljava/lang/Object;
-
-    check-cast v0, Lxf;
+    iget-object v0, v0, Laak;->b:Lxf;
 
     invoke-virtual {v0}, Lxf;->clear()V
 
@@ -3887,11 +3886,11 @@
 
     move-result-object v2
 
-    invoke-static {v2}, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->l(Landroid/view/View;)Laal;
+    invoke-static {v2}, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->n(Landroid/view/View;)Laah;
 
     move-result-object v3
 
-    iget v4, v3, Laal;->f:I
+    iget v4, v3, Laah;->f:I
 
     const/4 v5, -0x1
 
@@ -3899,14 +3898,14 @@
 
     if-ne v4, v5, :cond_2
 
-    iput-object v8, v3, Laal;->l:Landroid/view/View;
+    iput-object v8, v3, Laah;->l:Landroid/view/View;
 
-    iput-object v8, v3, Laal;->k:Landroid/view/View;
+    iput-object v8, v3, Laah;->k:Landroid/view/View;
 
     goto/16 :goto_7
 
     :cond_2
-    iget-object v4, v3, Laal;->k:Landroid/view/View;
+    iget-object v4, v3, Laah;->k:Landroid/view/View;
 
     if-eqz v4, :cond_8
 
@@ -3914,14 +3913,14 @@
 
     move-result v4
 
-    iget v5, v3, Laal;->f:I
+    iget v5, v3, Laah;->f:I
 
     if-eq v4, v5, :cond_3
 
     goto :goto_4
 
     :cond_3
-    iget-object v4, v3, Laal;->k:Landroid/view/View;
+    iget-object v4, v3, Laah;->k:Landroid/view/View;
 
     invoke-virtual {v4}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
 
@@ -3954,28 +3953,28 @@
 
     :cond_6
     :goto_3
-    iput-object v8, v3, Laal;->l:Landroid/view/View;
+    iput-object v8, v3, Laah;->l:Landroid/view/View;
 
-    iput-object v8, v3, Laal;->k:Landroid/view/View;
+    iput-object v8, v3, Laah;->k:Landroid/view/View;
 
     goto :goto_4
 
     :cond_7
-    iput-object v4, v3, Laal;->l:Landroid/view/View;
+    iput-object v4, v3, Laah;->l:Landroid/view/View;
 
     goto :goto_6
 
     :cond_8
     :goto_4
-    iget v4, v3, Laal;->f:I
+    iget v4, v3, Laah;->f:I
 
     invoke-virtual {v6, v4}, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->findViewById(I)Landroid/view/View;
 
     move-result-object v4
 
-    iput-object v4, v3, Laal;->k:Landroid/view/View;
+    iput-object v4, v3, Laah;->k:Landroid/view/View;
 
-    iget-object v4, v3, Laal;->k:Landroid/view/View;
+    iget-object v4, v3, Laah;->k:Landroid/view/View;
 
     if-eqz v4, :cond_f
 
@@ -3987,9 +3986,9 @@
 
     if-eqz v4, :cond_9
 
-    iput-object v8, v3, Laal;->l:Landroid/view/View;
+    iput-object v8, v3, Laah;->l:Landroid/view/View;
 
-    iput-object v8, v3, Laal;->k:Landroid/view/View;
+    iput-object v8, v3, Laah;->k:Landroid/view/View;
 
     goto :goto_6
 
@@ -4020,9 +4019,9 @@
 
     if-eqz v4, :cond_b
 
-    iput-object v8, v3, Laal;->l:Landroid/view/View;
+    iput-object v8, v3, Laah;->l:Landroid/view/View;
 
-    iput-object v8, v3, Laal;->k:Landroid/view/View;
+    iput-object v8, v3, Laah;->k:Landroid/view/View;
 
     goto :goto_6
 
@@ -4052,7 +4051,7 @@
     goto :goto_5
 
     :cond_e
-    iput-object v4, v3, Laal;->l:Landroid/view/View;
+    iput-object v4, v3, Laah;->l:Landroid/view/View;
 
     goto :goto_6
 
@@ -4063,17 +4062,17 @@
 
     if-eqz v4, :cond_19
 
-    iput-object v8, v3, Laal;->l:Landroid/view/View;
+    iput-object v8, v3, Laah;->l:Landroid/view/View;
 
-    iput-object v8, v3, Laal;->k:Landroid/view/View;
+    iput-object v8, v3, Laah;->k:Landroid/view/View;
 
     :goto_6
-    iget-object v4, v3, Laal;->k:Landroid/view/View;
+    iget-object v4, v3, Laah;->k:Landroid/view/View;
 
     :goto_7
-    iget-object v4, v6, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->h:Lbbc;
+    iget-object v4, v6, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->e:Laak;
 
-    invoke-virtual {v4, v2}, Lbbc;->b(Ljava/lang/Object;)V
+    invoke-virtual {v4, v2}, Laak;->b(Ljava/lang/Object;)V
 
     const/4 v4, 0x0
 
@@ -4082,18 +4081,18 @@
 
     if-ne v4, v1, :cond_10
 
-    goto/16 :goto_a
+    goto :goto_a
 
     :cond_10
     invoke-virtual {v6, v4}, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->getChildAt(I)Landroid/view/View;
 
     move-result-object v5
 
-    iget-object v8, v3, Laal;->l:Landroid/view/View;
+    iget-object v8, v3, Laah;->l:Landroid/view/View;
 
     if-eq v5, v8, :cond_12
 
-    invoke-static/range {p0 .. p0}, Lafc;->c(Landroid/view/View;)I
+    invoke-static/range {p0 .. p0}, Lgl;->f(Landroid/view/View;)I
 
     move-result v8
 
@@ -4101,9 +4100,9 @@
 
     move-result-object v9
 
-    check-cast v9, Laal;
+    check-cast v9, Laah;
 
-    iget v9, v9, Laal;->g:I
+    iget v9, v9, Laah;->g:I
 
     invoke-static {v9, v8}, Landroid/view/Gravity;->getAbsoluteGravity(II)I
 
@@ -4111,7 +4110,7 @@
 
     if-eqz v9, :cond_11
 
-    iget v10, v3, Laal;->h:I
+    iget v10, v3, Laah;->h:I
 
     invoke-static {v10, v8}, Landroid/view/Gravity;->getAbsoluteGravity(II)I
 
@@ -4124,11 +4123,11 @@
     goto :goto_9
 
     :cond_11
-    iget-object v8, v3, Laal;->a:Laai;
+    iget-object v8, v3, Laah;->a:Laae;
 
     if-eqz v8, :cond_16
 
-    invoke-virtual {v8, v5}, Laai;->h(Landroid/view/View;)Z
+    invoke-virtual {v8, v5}, Laae;->h(Landroid/view/View;)Z
 
     move-result v8
 
@@ -4136,11 +4135,9 @@
 
     :cond_12
     :goto_9
-    iget-object v8, v6, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->h:Lbbc;
+    iget-object v8, v6, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->e:Laak;
 
-    iget-object v8, v8, Lbbc;->a:Ljava/lang/Object;
-
-    check-cast v8, Lxf;
+    iget-object v8, v8, Laak;->b:Lxf;
 
     invoke-virtual {v8, v5}, Lxf;->containsKey(Ljava/lang/Object;)Z
 
@@ -4148,16 +4145,14 @@
 
     if-nez v8, :cond_13
 
-    iget-object v8, v6, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->h:Lbbc;
+    iget-object v8, v6, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->e:Laak;
 
-    invoke-virtual {v8, v5}, Lbbc;->b(Ljava/lang/Object;)V
+    invoke-virtual {v8, v5}, Laak;->b(Ljava/lang/Object;)V
 
     :cond_13
-    iget-object v8, v6, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->h:Lbbc;
+    iget-object v8, v6, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->e:Laak;
 
-    iget-object v9, v8, Lbbc;->a:Ljava/lang/Object;
-
-    check-cast v9, Lxf;
+    iget-object v9, v8, Laak;->b:Lxf;
 
     invoke-virtual {v9, v5}, Lxf;->containsKey(Ljava/lang/Object;)Z
 
@@ -4165,9 +4160,7 @@
 
     if-eqz v9, :cond_17
 
-    iget-object v9, v8, Lbbc;->a:Ljava/lang/Object;
-
-    check-cast v9, Lxf;
+    iget-object v9, v8, Laak;->b:Lxf;
 
     invoke-virtual {v9, v2}, Lxf;->containsKey(Ljava/lang/Object;)Z
 
@@ -4175,9 +4168,7 @@
 
     if-eqz v9, :cond_17
 
-    iget-object v9, v8, Lbbc;->a:Ljava/lang/Object;
-
-    check-cast v9, Lxf;
+    iget-object v9, v8, Laak;->b:Lxf;
 
     invoke-virtual {v9, v5}, Lxf;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -4187,9 +4178,9 @@
 
     if-nez v9, :cond_15
 
-    iget-object v9, v8, Lbbc;->b:Ljava/lang/Object;
+    iget-object v9, v8, Laak;->a:Lfc;
 
-    invoke-interface {v9}, Laed;->a()Ljava/lang/Object;
+    invoke-interface {v9}, Lfc;->a()Ljava/lang/Object;
 
     move-result-object v9
 
@@ -4202,9 +4193,7 @@
     invoke-direct {v9}, Ljava/util/ArrayList;-><init>()V
 
     :cond_14
-    iget-object v8, v8, Lbbc;->a:Ljava/lang/Object;
-
-    check-cast v8, Lxf;
+    iget-object v8, v8, Laak;->b:Lxf;
 
     invoke-virtual {v8, v5, v9}, Lxf;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -4215,7 +4204,7 @@
     :goto_a
     add-int/lit8 v4, v4, 0x1
 
-    goto/16 :goto_8
+    goto :goto_8
 
     :cond_17
     new-instance v0, Ljava/lang/IllegalArgumentException;
@@ -4246,7 +4235,7 @@
 
     move-result-object v4
 
-    iget v3, v3, Laal;->f:I
+    iget v3, v3, Laah;->f:I
 
     invoke-virtual {v4, v3}, Landroid/content/res/Resources;->getResourceName(I)Ljava/lang/String;
 
@@ -4271,55 +4260,43 @@
     :cond_1a
     iget-object v0, v6, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->j:Ljava/util/List;
 
-    iget-object v1, v6, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->h:Lbbc;
+    iget-object v1, v6, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->e:Laak;
 
-    iget-object v2, v1, Lbbc;->c:Ljava/lang/Object;
-
-    check-cast v2, Ljava/util/ArrayList;
+    iget-object v2, v1, Laak;->c:Ljava/util/ArrayList;
 
     invoke-virtual {v2}, Ljava/util/ArrayList;->clear()V
 
-    iget-object v2, v1, Lbbc;->d:Ljava/lang/Object;
-
-    check-cast v2, Ljava/util/HashSet;
+    iget-object v2, v1, Laak;->d:Ljava/util/HashSet;
 
     invoke-virtual {v2}, Ljava/util/HashSet;->clear()V
 
-    iget-object v2, v1, Lbbc;->a:Ljava/lang/Object;
+    iget-object v2, v1, Laak;->b:Lxf;
 
-    check-cast v2, Lxf;
-
-    iget v2, v2, Lxf;->d:I
+    iget v2, v2, Lxf;->j:I
 
     const/4 v3, 0x0
 
     :goto_b
     if-ge v3, v2, :cond_1b
 
-    iget-object v4, v1, Lbbc;->a:Ljava/lang/Object;
+    iget-object v4, v1, Laak;->b:Lxf;
 
-    check-cast v4, Lxf;
-
-    invoke-virtual {v4, v3}, Lxf;->d(I)Ljava/lang/Object;
+    invoke-virtual {v4, v3}, Lxf;->f(I)Ljava/lang/Object;
 
     move-result-object v4
 
-    iget-object v5, v1, Lbbc;->c:Ljava/lang/Object;
+    iget-object v5, v1, Laak;->c:Ljava/util/ArrayList;
 
-    iget-object v8, v1, Lbbc;->d:Ljava/lang/Object;
+    iget-object v8, v1, Laak;->d:Ljava/util/HashSet;
 
-    check-cast v8, Ljava/util/HashSet;
-
-    check-cast v5, Ljava/util/ArrayList;
-
-    invoke-virtual {v1, v4, v5, v8}, Lbbc;->c(Ljava/lang/Object;Ljava/util/ArrayList;Ljava/util/HashSet;)V
+    invoke-virtual {v1, v4, v5, v8}, Laak;->c(Ljava/lang/Object;Ljava/util/ArrayList;Ljava/util/HashSet;)V
 
     add-int/lit8 v3, v3, 0x1
 
     goto :goto_b
 
     :cond_1b
-    iget-object v1, v1, Lbbc;->c:Ljava/lang/Object;
+    iget-object v1, v1, Laak;->c:Ljava/util/ArrayList;
 
     invoke-interface {v0, v1}, Ljava/util/List;->addAll(Ljava/util/Collection;)Z
 
@@ -4342,24 +4319,20 @@
 
     move-result-object v2
 
-    iget-object v3, v6, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->h:Lbbc;
+    iget-object v3, v6, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->e:Laak;
 
-    iget-object v4, v3, Lbbc;->a:Ljava/lang/Object;
+    iget-object v4, v3, Laak;->b:Lxf;
 
-    check-cast v4, Lxf;
-
-    iget v4, v4, Lxf;->d:I
+    iget v4, v4, Lxf;->j:I
 
     const/4 v5, 0x0
 
     :goto_d
     if-ge v5, v4, :cond_1d
 
-    iget-object v9, v3, Lbbc;->a:Ljava/lang/Object;
+    iget-object v9, v3, Laak;->b:Lxf;
 
-    check-cast v9, Lxf;
-
-    invoke-virtual {v9, v5}, Lxf;->g(I)Ljava/lang/Object;
+    invoke-virtual {v9, v5}, Lxf;->i(I)Ljava/lang/Object;
 
     move-result-object v9
 
@@ -4391,7 +4364,7 @@
     const/4 v0, 0x0
 
     :goto_e
-    iget-boolean v1, v6, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->s:Z
+    iget-boolean v1, v6, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->t:Z
 
     if-eq v0, v1, :cond_23
 
@@ -4401,27 +4374,27 @@
 
     if-eqz v0, :cond_20
 
-    iget-object v0, v6, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->w:Livn;
+    iget-object v0, v6, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->s:Laai;
 
     if-nez v0, :cond_1f
 
-    new-instance v0, Livn;
+    new-instance v0, Laai;
 
-    invoke-direct {v0, v6, v8}, Livn;-><init>(Landroidx/coordinatorlayout/widget/CoordinatorLayout;I)V
+    invoke-direct {v0, v6}, Laai;-><init>(Landroidx/coordinatorlayout/widget/CoordinatorLayout;)V
 
-    iput-object v0, v6, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->w:Livn;
+    iput-object v0, v6, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->s:Laai;
 
     :cond_1f
     invoke-virtual/range {p0 .. p0}, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->getViewTreeObserver()Landroid/view/ViewTreeObserver;
 
     move-result-object v0
 
-    iget-object v1, v6, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->w:Livn;
+    iget-object v1, v6, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->s:Laai;
 
     invoke-virtual {v0, v1}, Landroid/view/ViewTreeObserver;->addOnPreDrawListener(Landroid/view/ViewTreeObserver$OnPreDrawListener;)V
 
     :cond_20
-    iput-boolean v8, v6, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->s:Z
+    iput-boolean v8, v6, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->t:Z
 
     goto :goto_f
 
@@ -4430,7 +4403,7 @@
 
     if-eqz v0, :cond_22
 
-    iget-object v0, v6, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->w:Livn;
+    iget-object v0, v6, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->s:Laai;
 
     if-eqz v0, :cond_22
 
@@ -4438,12 +4411,12 @@
 
     move-result-object v0
 
-    iget-object v1, v6, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->w:Livn;
+    iget-object v1, v6, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->s:Laai;
 
     invoke-virtual {v0, v1}, Landroid/view/ViewTreeObserver;->removeOnPreDrawListener(Landroid/view/ViewTreeObserver$OnPreDrawListener;)V
 
     :cond_22
-    iput-boolean v7, v6, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->s:Z
+    iput-boolean v7, v6, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->t:Z
 
     :cond_23
     :goto_f
@@ -4463,7 +4436,7 @@
 
     move-result v1
 
-    invoke-static/range {p0 .. p0}, Lafc;->c(Landroid/view/View;)I
+    invoke-static/range {p0 .. p0}, Lgl;->f(Landroid/view/View;)I
 
     move-result v11
 
@@ -4505,11 +4478,11 @@
 
     move-result v1
 
-    iget-object v2, v6, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->e:Lago;
+    iget-object v2, v6, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->f:Lgy;
 
     if-eqz v2, :cond_25
 
-    invoke-static/range {p0 .. p0}, Lafb;->p(Landroid/view/View;)Z
+    invoke-static/range {p0 .. p0}, Lgl;->R(Landroid/view/View;)Z
 
     move-result v2
 
@@ -4554,29 +4527,44 @@
 
     const/16 v7, 0x8
 
-    if-eq v8, v7, :cond_31
+    if-ne v8, v7, :cond_26
 
+    move/from16 v20, v2
+
+    move/from16 v28, v5
+
+    move/from16 v23, v9
+
+    move/from16 v26, v10
+
+    move/from16 v27, v11
+
+    const/16 v25, 0x0
+
+    goto/16 :goto_19
+
+    :cond_26
     invoke-virtual {v0}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v7
 
-    check-cast v7, Laal;
+    check-cast v7, Laah;
 
-    iget v8, v7, Laal;->e:I
+    iget v8, v7, Laah;->e:I
 
-    if-ltz v8, :cond_2c
+    if-ltz v8, :cond_2d
 
-    if-eqz v13, :cond_2c
+    if-eqz v13, :cond_2d
 
-    invoke-direct {v6, v8}, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->o(I)I
+    invoke-direct {v6, v8}, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->p(I)I
 
     move-result v8
 
     move/from16 v21, v1
 
-    iget v1, v7, Laal;->c:I
+    iget v1, v7, Laah;->c:I
 
-    invoke-static {v1}, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->q(I)I
+    invoke-static {v1}, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->r(I)I
 
     move-result v1
 
@@ -4590,9 +4578,9 @@
 
     const/4 v2, 0x3
 
-    if-ne v1, v2, :cond_26
+    if-ne v1, v2, :cond_27
 
-    if-eqz v12, :cond_27
+    if-eqz v12, :cond_28
 
     const/4 v1, 0x3
 
@@ -4600,17 +4588,17 @@
 
     goto :goto_13
 
-    :cond_26
+    :cond_27
     move/from16 v23, v12
 
     :goto_13
     const/4 v2, 0x5
 
-    if-ne v1, v2, :cond_29
+    if-ne v1, v2, :cond_2a
 
-    if-eqz v23, :cond_28
+    if-eqz v23, :cond_29
 
-    :cond_27
+    :cond_28
     sub-int v1, v14, v10
 
     sub-int/2addr v1, v8
@@ -4623,26 +4611,29 @@
 
     move v8, v1
 
-    goto :goto_14
+    goto :goto_15
 
-    :cond_28
+    :cond_29
     const/4 v1, 0x5
 
     const/16 v23, 0x0
 
-    :cond_29
-    if-ne v1, v2, :cond_2a
-
-    if-eqz v23, :cond_2b
+    goto :goto_14
 
     :cond_2a
-    const/4 v2, 0x3
+    :goto_14
+    if-ne v1, v2, :cond_2b
 
-    if-ne v1, v2, :cond_2d
-
-    if-eqz v23, :cond_2d
+    if-eqz v23, :cond_2c
 
     :cond_2b
+    const/4 v2, 0x3
+
+    if-ne v1, v2, :cond_2e
+
+    if-eqz v23, :cond_2e
+
+    :cond_2c
     sub-int/2addr v8, v9
 
     const/4 v2, 0x0
@@ -4653,92 +4644,98 @@
 
     move v8, v1
 
-    goto :goto_14
+    goto :goto_15
 
-    :cond_2c
+    :cond_2d
     move/from16 v21, v1
 
     move/from16 v22, v2
 
-    :cond_2d
+    :cond_2e
     const/4 v2, 0x0
 
     const/4 v8, 0x0
 
-    :goto_14
-    if-eqz v19, :cond_2e
+    :goto_15
+    if-eqz v19, :cond_2f
 
-    invoke-static {v0}, Lafb;->p(Landroid/view/View;)Z
-
-    move-result v1
-
-    if-nez v1, :cond_2e
-
-    iget-object v1, v6, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->e:Lago;
-
-    invoke-virtual {v1}, Lago;->b()I
+    invoke-static {v0}, Lgl;->R(Landroid/view/View;)Z
 
     move-result v1
 
-    iget-object v2, v6, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->e:Lago;
+    if-nez v1, :cond_2f
 
-    invoke-virtual {v2}, Lago;->c()I
+    iget-object v1, v6, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->f:Lgy;
+
+    invoke-virtual {v1}, Lgy;->b()I
+
+    move-result v1
+
+    iget-object v2, v6, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->f:Lgy;
+
+    invoke-virtual {v2}, Lgy;->c()I
 
     move-result v2
+
+    move-object/from16 v23, v0
+
+    iget-object v0, v6, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->f:Lgy;
+
+    invoke-virtual {v0}, Lgy;->d()I
+
+    move-result v0
+
+    move/from16 v24, v3
+
+    iget-object v3, v6, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->f:Lgy;
+
+    invoke-virtual {v3}, Lgy;->a()I
+
+    move-result v3
 
     add-int/2addr v1, v2
 
-    iget-object v2, v6, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->e:Lago;
+    sub-int v1, v14, v1
 
-    invoke-virtual {v2}, Lago;->d()I
-
-    move-result v2
-
-    move-object/from16 v23, v0
-
-    iget-object v0, v6, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->e:Lago;
-
-    invoke-virtual {v0}, Lago;->a()I
-
-    move-result v0
-
-    add-int/2addr v2, v0
-
-    sub-int v0, v14, v1
-
-    invoke-static {v0, v13}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
-
-    move-result v0
-
-    sub-int v1, v16, v2
-
-    invoke-static {v1, v15}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
+    invoke-static {v1, v13}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
 
     move-result v1
 
-    move v2, v0
+    add-int/2addr v0, v3
 
-    goto :goto_15
+    sub-int v0, v16, v0
 
-    :cond_2e
+    invoke-static {v0, v15}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
+
+    move-result v0
+
+    move v3, v0
+
+    move v2, v1
+
+    goto :goto_16
+
+    :cond_2f
     move-object/from16 v23, v0
+
+    move/from16 v24, v3
 
     move/from16 v2, p1
 
-    move/from16 v1, p2
+    move/from16 v3, p2
 
-    :goto_15
-    iget-object v0, v7, Laal;->a:Laai;
+    :goto_16
+    iget-object v0, v7, Laah;->a:Laae;
 
-    if-eqz v0, :cond_30
+    if-eqz v0, :cond_31
 
-    move-object/from16 v24, v23
+    move-object/from16 v1, v23
 
     move/from16 v23, v9
 
     move/from16 v9, v21
 
-    move/from16 v21, v1
+    move-object/from16 v21, v1
 
     move-object/from16 v1, p0
 
@@ -4748,11 +4745,13 @@
 
     move/from16 v22, v2
 
-    move-object/from16 v2, v24
+    move-object/from16 v2, v21
 
     move/from16 v26, v10
 
-    move v10, v3
+    move/from16 v10, v24
+
+    move/from16 v24, v3
 
     move/from16 v3, v22
 
@@ -4764,22 +4763,22 @@
 
     move/from16 v28, v5
 
-    move/from16 v5, v21
+    move/from16 v5, v24
 
-    invoke-virtual/range {v0 .. v5}, Laai;->k(Landroidx/coordinatorlayout/widget/CoordinatorLayout;Landroid/view/View;III)Z
+    invoke-virtual/range {v0 .. v5}, Laae;->k(Landroidx/coordinatorlayout/widget/CoordinatorLayout;Landroid/view/View;III)Z
 
     move-result v0
 
-    if-nez v0, :cond_2f
-
-    goto :goto_16
-
-    :cond_2f
-    move-object/from16 v0, v24
+    if-nez v0, :cond_30
 
     goto :goto_17
 
     :cond_30
+    move-object/from16 v0, v21
+
+    goto :goto_18
+
+    :cond_31
     move/from16 v28, v5
 
     move/from16 v26, v10
@@ -4788,43 +4787,45 @@
 
     move/from16 v20, v22
 
-    move-object/from16 v24, v23
+    move/from16 v10, v24
 
     const/16 v25, 0x0
 
     move/from16 v22, v2
 
-    move v10, v3
+    move/from16 v24, v3
 
     move v11, v4
+
+    move-object/from16 v29, v23
 
     move/from16 v23, v9
 
     move/from16 v9, v21
 
-    move/from16 v21, v1
+    move-object/from16 v21, v29
 
-    :goto_16
-    move/from16 v2, v21
+    :goto_17
+    move-object/from16 v0, v21
 
     move/from16 v1, v22
 
-    move-object/from16 v0, v24
+    move/from16 v2, v24
 
-    invoke-virtual {v6, v0, v1, v8, v2}, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->m(Landroid/view/View;III)V
+    invoke-virtual {v6, v0, v1, v8, v2}, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->o(Landroid/view/View;III)V
 
-    :goto_17
+    :goto_18
     invoke-virtual {v0}, Landroid/view/View;->getMeasuredWidth()I
 
     move-result v1
 
     add-int v1, v17, v1
 
-    iget v2, v7, Laal;->leftMargin:I
+    iget v2, v7, Laah;->leftMargin:I
 
     add-int/2addr v1, v2
 
-    iget v2, v7, Laal;->rightMargin:I
+    iget v2, v7, Laah;->rightMargin:I
 
     add-int/2addr v1, v2
 
@@ -4838,11 +4839,11 @@
 
     add-int v2, v18, v2
 
-    iget v3, v7, Laal;->topMargin:I
+    iget v3, v7, Laah;->topMargin:I
 
     add-int/2addr v2, v3
 
-    iget v3, v7, Laal;->bottomMargin:I
+    iget v3, v7, Laah;->bottomMargin:I
 
     add-int/2addr v2, v3
 
@@ -4864,28 +4865,7 @@
 
     move v1, v0
 
-    goto :goto_18
-
-    :cond_31
-    move/from16 v20, v2
-
-    move/from16 v28, v5
-
-    move/from16 v23, v9
-
-    move/from16 v26, v10
-
-    move/from16 v27, v11
-
-    const/16 v25, 0x0
-
-    move v9, v1
-
-    move v10, v3
-
-    move v11, v4
-
-    :goto_18
+    :goto_19
     add-int/lit8 v2, v20, 0x1
 
     move/from16 v9, v23
@@ -4965,13 +4945,13 @@
 
     move-result-object p4
 
-    check-cast p4, Laal;
+    check-cast p4, Laah;
 
-    iget-boolean v0, p4, Laal;->n:Z
+    iget-boolean v0, p4, Laah;->n:Z
 
     if-eqz v0, :cond_1
 
-    iget-object p4, p4, Laal;->a:Laai;
+    iget-object p4, p4, Laah;->a:Laae;
 
     :cond_1
     :goto_1
@@ -4995,7 +4975,7 @@
     const/4 v0, 0x0
 
     :goto_0
-    if-ge p3, p2, :cond_1
+    if-ge p3, p2, :cond_2
 
     invoke-virtual {p0, p3}, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->getChildAt(I)Landroid/view/View;
 
@@ -5007,34 +4987,38 @@
 
     const/16 v3, 0x8
 
-    if-eq v2, v3, :cond_0
+    if-ne v2, v3, :cond_0
 
+    goto :goto_1
+
+    :cond_0
     invoke-virtual {v1}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v1
 
-    check-cast v1, Laal;
+    check-cast v1, Laah;
 
-    iget-boolean v2, v1, Laal;->n:Z
+    iget-boolean v2, v1, Laah;->n:Z
 
-    if-eqz v2, :cond_0
+    if-eqz v2, :cond_1
 
-    iget-object v1, v1, Laal;->a:Laai;
+    iget-object v1, v1, Laah;->a:Laae;
 
-    if-eqz v1, :cond_0
+    if-eqz v1, :cond_1
 
-    invoke-virtual {v1, p1}, Laai;->l(Landroid/view/View;)Z
+    invoke-virtual {v1, p1}, Laae;->l(Landroid/view/View;)Z
 
     move-result v1
 
     or-int/2addr v0, v1
 
-    :cond_0
+    :cond_1
+    :goto_1
     add-int/lit8 p3, p3, 0x1
 
     goto :goto_0
 
-    :cond_1
+    :cond_2
     return v0
 .end method
 
@@ -5053,7 +5037,7 @@
 
     move-object v4, p4
 
-    invoke-virtual/range {v0 .. v5}, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->d(Landroid/view/View;II[II)V
+    invoke-virtual/range {v0 .. v5}, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->a(Landroid/view/View;II[II)V
 
     return-void
 .end method
@@ -5075,7 +5059,7 @@
 
     move v5, p5
 
-    invoke-virtual/range {v0 .. v6}, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->e(Landroid/view/View;IIIII)V
+    invoke-virtual/range {v0 .. v6}, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->b(Landroid/view/View;IIIII)V
 
     return-void
 .end method
@@ -5085,7 +5069,7 @@
 
     const/4 v0, 0x0
 
-    invoke-virtual {p0, p1, p2, p3, v0}, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->g(Landroid/view/View;Landroid/view/View;II)V
+    invoke-virtual {p0, p1, p2, p3, v0}, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->c(Landroid/view/View;Landroid/view/View;II)V
 
     return-void
 .end method
@@ -5093,7 +5077,7 @@
 .method protected final onRestoreInstanceState(Landroid/os/Parcelable;)V
     .locals 6
 
-    instance-of v0, p1, Laam;
+    instance-of v0, p1, Laaj;
 
     if-nez v0, :cond_0
 
@@ -5102,13 +5086,13 @@
     return-void
 
     :cond_0
-    check-cast p1, Laam;
+    check-cast p1, Laaj;
 
-    iget-object v0, p1, Lahx;->d:Landroid/os/Parcelable;
+    iget-object v0, p1, Labx;->d:Landroid/os/Parcelable;
 
     invoke-super {p0, v0}, Landroid/view/ViewGroup;->onRestoreInstanceState(Landroid/os/Parcelable;)V
 
-    iget-object p1, p1, Laam;->a:Landroid/util/SparseArray;
+    iget-object p1, p1, Laaj;->a:Landroid/util/SparseArray;
 
     invoke-virtual {p0}, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->getChildCount()I
 
@@ -5127,11 +5111,11 @@
 
     move-result v3
 
-    invoke-static {v2}, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->l(Landroid/view/View;)Laal;
+    invoke-static {v2}, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->n(Landroid/view/View;)Laah;
 
     move-result-object v4
 
-    iget-object v4, v4, Laal;->a:Laai;
+    iget-object v4, v4, Laah;->a:Laae;
 
     const/4 v5, -0x1
 
@@ -5147,7 +5131,7 @@
 
     if-eqz v3, :cond_1
 
-    invoke-virtual {v4, v2, v3}, Laai;->o(Landroid/view/View;Landroid/os/Parcelable;)V
+    invoke-virtual {v4, v2, v3}, Laae;->o(Landroid/view/View;Landroid/os/Parcelable;)V
 
     :cond_1
     add-int/lit8 v1, v1, 0x1
@@ -5161,13 +5145,13 @@
 .method protected final onSaveInstanceState()Landroid/os/Parcelable;
     .locals 8
 
-    new-instance v0, Laam;
+    new-instance v0, Laaj;
 
     invoke-super {p0}, Landroid/view/ViewGroup;->onSaveInstanceState()Landroid/os/Parcelable;
 
     move-result-object v1
 
-    invoke-direct {v0, v1}, Laam;-><init>(Landroid/os/Parcelable;)V
+    invoke-direct {v0, v1}, Laaj;-><init>(Landroid/os/Parcelable;)V
 
     new-instance v1, Landroid/util/SparseArray;
 
@@ -5194,9 +5178,9 @@
 
     move-result-object v6
 
-    check-cast v6, Laal;
+    check-cast v6, Laah;
 
-    iget-object v6, v6, Laal;->a:Laai;
+    iget-object v6, v6, Laah;->a:Laae;
 
     const/4 v7, -0x1
 
@@ -5204,7 +5188,7 @@
 
     if-eqz v6, :cond_0
 
-    invoke-virtual {v6, v4}, Laai;->p(Landroid/view/View;)Landroid/os/Parcelable;
+    invoke-virtual {v6, v4}, Laae;->p(Landroid/view/View;)Landroid/os/Parcelable;
 
     move-result-object v4
 
@@ -5218,7 +5202,7 @@
     goto :goto_0
 
     :cond_1
-    iput-object v1, v0, Laam;->a:Landroid/util/SparseArray;
+    iput-object v1, v0, Laaj;->a:Landroid/util/SparseArray;
 
     return-object v0
 .end method
@@ -5228,7 +5212,7 @@
 
     const/4 v0, 0x0
 
-    invoke-virtual {p0, p1, p2, p3, v0}, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->t(Landroid/view/View;Landroid/view/View;II)Z
+    invoke-virtual {p0, p1, p2, p3, v0}, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->e(Landroid/view/View;Landroid/view/View;II)Z
 
     move-result p1
 
@@ -5240,7 +5224,7 @@
 
     const/4 v0, 0x0
 
-    invoke-virtual {p0, p1, v0}, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->h(Landroid/view/View;I)V
+    invoke-virtual {p0, p1, v0}, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->d(Landroid/view/View;I)V
 
     return-void
 .end method
@@ -5264,15 +5248,15 @@
 
     move-result-object v1
 
-    check-cast v1, Laal;
+    check-cast v1, Laah;
 
-    iget-object v1, v1, Laal;->a:Laai;
+    iget-object v1, v1, Laah;->a:Laae;
 
     if-eqz v1, :cond_0
 
     iget-object v4, p0, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->q:Landroid/view/View;
 
-    invoke-virtual {v1, p0, v4, p1}, Laai;->g(Landroidx/coordinatorlayout/widget/CoordinatorLayout;Landroid/view/View;Landroid/view/MotionEvent;)Z
+    invoke-virtual {v1, p0, v4, p1}, Laae;->g(Landroidx/coordinatorlayout/widget/CoordinatorLayout;Landroid/view/View;Landroid/view/MotionEvent;)Z
 
     move-result v1
 
@@ -5301,14 +5285,14 @@
 
     const/4 v5, 0x3
 
-    if-eqz v4, :cond_4
+    if-eqz v4, :cond_5
 
     if-ne v0, v5, :cond_3
 
     goto :goto_2
 
     :cond_3
-    if-eqz v3, :cond_5
+    if-eqz v3, :cond_4
 
     invoke-static {p1}, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->A(Landroid/view/MotionEvent;)Landroid/view/MotionEvent;
 
@@ -5321,6 +5305,9 @@
     goto :goto_3
 
     :cond_4
+    goto :goto_3
+
+    :cond_5
     :goto_2
     invoke-super {p0, p1}, Landroid/view/ViewGroup;->onTouchEvent(Landroid/view/MotionEvent;)Z
 
@@ -5328,7 +5315,6 @@
 
     or-int/2addr v1, p1
 
-    :cond_5
     :goto_3
     if-eq v0, v2, :cond_6
 
@@ -5352,13 +5338,13 @@
 
     move-result-object v0
 
-    check-cast v0, Laal;
+    check-cast v0, Laah;
 
-    iget-object v0, v0, Laal;->a:Laai;
+    iget-object v0, v0, Laah;->a:Laae;
 
     if-eqz v0, :cond_0
 
-    invoke-virtual {v0, p0, p1, p2, p3}, Laai;->f(Landroidx/coordinatorlayout/widget/CoordinatorLayout;Landroid/view/View;Landroid/graphics/Rect;Z)Z
+    invoke-virtual {v0, p0, p1, p2, p3}, Laae;->f(Landroidx/coordinatorlayout/widget/CoordinatorLayout;Landroid/view/View;Landroid/graphics/Rect;Z)Z
 
     move-result v0
 
@@ -5400,9 +5386,9 @@
     const/4 v1, 0x0
 
     :goto_0
-    if-ge v0, p1, :cond_2
+    if-ge v1, p1, :cond_2
 
-    invoke-virtual {p0, v0}, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->getChildAt(I)Landroid/view/View;
+    invoke-virtual {p0, v1}, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->getChildAt(I)Landroid/view/View;
 
     move-result-object v2
 
@@ -5410,13 +5396,13 @@
 
     move-result-object v3
 
-    check-cast v3, Laal;
+    check-cast v3, Laah;
 
-    iget-object v3, v3, Laal;->a:Laai;
+    iget-object v3, v3, Laah;->a:Laae;
 
     if-eqz v3, :cond_1
 
-    if-nez v1, :cond_0
+    if-nez v0, :cond_0
 
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
 
@@ -5434,20 +5420,20 @@
 
     invoke-static/range {v4 .. v11}, Landroid/view/MotionEvent;->obtain(JJIFFI)Landroid/view/MotionEvent;
 
-    move-result-object v1
+    move-result-object v0
 
     :cond_0
-    invoke-virtual {v3, p0, v2, v1}, Laai;->d(Landroidx/coordinatorlayout/widget/CoordinatorLayout;Landroid/view/View;Landroid/view/MotionEvent;)Z
+    invoke-virtual {v3, p0, v2, v0}, Laae;->d(Landroidx/coordinatorlayout/widget/CoordinatorLayout;Landroid/view/View;Landroid/view/MotionEvent;)Z
 
     :cond_1
-    add-int/lit8 v0, v0, 0x1
+    add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
     :cond_2
-    if-eqz v1, :cond_3
+    if-eqz v0, :cond_3
 
-    invoke-virtual {v1}, Landroid/view/MotionEvent;->recycle()V
+    invoke-virtual {v0}, Landroid/view/MotionEvent;->recycle()V
 
     :cond_3
     invoke-direct {p0}, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->v()V
@@ -5473,7 +5459,7 @@
 .method public final setOnHierarchyChangeListener(Landroid/view/ViewGroup$OnHierarchyChangeListener;)V
     .locals 0
 
-    iput-object p1, p0, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->g:Landroid/view/ViewGroup$OnHierarchyChangeListener;
+    iput-object p1, p0, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->h:Landroid/view/ViewGroup$OnHierarchyChangeListener;
 
     return-void
 .end method
@@ -5483,11 +5469,7 @@
 
     invoke-super {p0, p1}, Landroid/view/ViewGroup;->setVisibility(I)V
 
-    iget-object v0, p0, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->t:Landroid/graphics/drawable/Drawable;
-
-    if-eqz v0, :cond_1
-
-    const/4 v1, 0x0
+    const/4 v0, 0x0
 
     if-nez p1, :cond_0
 
@@ -5499,89 +5481,22 @@
     const/4 p1, 0x0
 
     :goto_0
-    invoke-virtual {v0}, Landroid/graphics/drawable/Drawable;->isVisible()Z
+    iget-object v1, p0, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->u:Landroid/graphics/drawable/Drawable;
 
-    move-result v0
+    if-eqz v1, :cond_1
 
-    if-eq v0, p1, :cond_1
+    invoke-virtual {v1}, Landroid/graphics/drawable/Drawable;->isVisible()Z
 
-    iget-object v0, p0, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->t:Landroid/graphics/drawable/Drawable;
+    move-result v1
 
-    invoke-virtual {v0, p1, v1}, Landroid/graphics/drawable/Drawable;->setVisible(ZZ)Z
+    if-eq v1, p1, :cond_1
+
+    iget-object v1, p0, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->u:Landroid/graphics/drawable/Drawable;
+
+    invoke-virtual {v1, p1, v0}, Landroid/graphics/drawable/Drawable;->setVisible(ZZ)Z
 
     :cond_1
     return-void
-.end method
-
-.method public final t(Landroid/view/View;Landroid/view/View;II)Z
-    .locals 10
-
-    invoke-virtual {p0}, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->getChildCount()I
-
-    move-result p2
-
-    const/4 v0, 0x0
-
-    const/4 v1, 0x0
-
-    const/4 v2, 0x0
-
-    :goto_0
-    if-ge v1, p2, :cond_2
-
-    invoke-virtual {p0, v1}, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->getChildAt(I)Landroid/view/View;
-
-    move-result-object v5
-
-    invoke-virtual {v5}, Landroid/view/View;->getVisibility()I
-
-    move-result v3
-
-    const/16 v4, 0x8
-
-    if-eq v3, v4, :cond_1
-
-    invoke-virtual {v5}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
-
-    move-result-object v3
-
-    move-object v9, v3
-
-    check-cast v9, Laal;
-
-    iget-object v3, v9, Laal;->a:Laai;
-
-    if-eqz v3, :cond_0
-
-    move-object v4, p0
-
-    move-object v6, p1
-
-    move v7, p3
-
-    move v8, p4
-
-    invoke-virtual/range {v3 .. v8}, Laai;->q(Landroidx/coordinatorlayout/widget/CoordinatorLayout;Landroid/view/View;Landroid/view/View;II)Z
-
-    move-result v3
-
-    or-int/2addr v2, v3
-
-    invoke-virtual {v9, p4, v3}, Laal;->c(IZ)V
-
-    goto :goto_1
-
-    :cond_0
-    invoke-virtual {v9, p4, v0}, Laal;->c(IZ)V
-
-    :cond_1
-    :goto_1
-    add-int/lit8 v1, v1, 0x1
-
-    goto :goto_0
-
-    :cond_2
-    return v2
 .end method
 
 .method protected final verifyDrawable(Landroid/graphics/drawable/Drawable;)Z
@@ -5593,7 +5508,7 @@
 
     if-nez v0, :cond_1
 
-    iget-object v0, p0, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->t:Landroid/graphics/drawable/Drawable;
+    iget-object v0, p0, Landroidx/coordinatorlayout/widget/CoordinatorLayout;->u:Landroid/graphics/drawable/Drawable;
 
     if-ne p1, v0, :cond_0
 

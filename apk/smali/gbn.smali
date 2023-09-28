@@ -1,22 +1,28 @@
-.class public final Lgbn;
-.super Ljava/lang/Object;
+.class final Lgbn;
+.super Lmaa;
 
 
-# static fields
-.field public static final a:Lgaw;
+# instance fields
+.field public final a:J
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
+.method public constructor <init>(Lmad;J)V
+    .locals 0
 
-    new-instance v0, Lgaw;
+    invoke-direct {p0, p1}, Lmaa;-><init>(Lmad;)V
 
-    const/16 v1, 0xb
-
-    invoke-direct {v0, v1}, Lgaw;-><init>(I)V
-
-    sput-object v0, Lgbn;->a:Lgaw;
+    iput-wide p2, p0, Lgbn;->a:J
 
     return-void
+.end method
+
+
+# virtual methods
+.method public final d()J
+    .locals 2
+
+    iget-wide v0, p0, Lgbn;->a:J
+
+    return-wide v0
 .end method

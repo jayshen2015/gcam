@@ -1,61 +1,43 @@
-.class abstract Lmjb;
+.class public final Lmjb;
 .super Ljava/lang/Object;
+
+# interfaces
+.implements Lmjc;
 
 
 # instance fields
-.field protected j:Lmjc;
+.field final synthetic a:Last;
 
-.field protected final k:[F
-
-.field protected final l:[I
+.field final synthetic b:Last;
 
 
 # direct methods
-.method protected constructor <init>(I)V
-    .locals 1
+.method public constructor <init>(Last;Last;)V
+    .locals 0
+
+    iput-object p1, p0, Lmjb;->a:Last;
+
+    iput-object p2, p0, Lmjb;->b:Last;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    add-int v0, p1, p1
-
-    new-array v0, v0, [F
-
-    iput-object v0, p0, Lmjb;->k:[F
-
-    new-array p1, p1, [I
-
-    iput-object p1, p0, Lmjb;->l:[I
 
     return-void
 .end method
 
-.method protected static final f(III)F
-    .locals 0
-
-    sub-int/2addr p0, p1
-
-    int-to-float p0, p0
-
-    int-to-float p1, p2
-
-    div-float/2addr p0, p1
-
-    return p0
-.end method
-
 
 # virtual methods
-.method public abstract a()V
+.method public final a()Last;
+    .locals 1
+
+    iget-object v0, p0, Lmjb;->a:Last;
+
+    return-object v0
 .end method
 
-.method public abstract b(Latc;)V
-.end method
+.method public final b()Last;
+    .locals 1
 
-.method public abstract c()V
-.end method
+    iget-object v0, p0, Lmjb;->b:Last;
 
-.method public abstract d()V
-.end method
-
-.method public abstract e()V
+    return-object v0
 .end method

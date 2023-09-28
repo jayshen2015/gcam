@@ -1,114 +1,66 @@
 .class public final Lkxr;
-.super Ljava/lang/Object;
+.super Lkno;
+
+
+# static fields
+.field public static final CREATOR:Landroid/os/Parcelable$Creator;
 
 
 # instance fields
 .field public final a:I
 
-.field public final b:Ljava/lang/Object;
+.field public final b:I
 
 
 # direct methods
-.method public constructor <init>(I)V
+.method static constructor <clinit>()V
+    .locals 2
+
+    new-instance v0, Lkxn;
+
+    const/4 v1, 0x4
+
+    invoke-direct {v0, v1}, Lkxn;-><init>(I)V
+
+    sput-object v0, Lkxr;->CREATOR:Landroid/os/Parcelable$Creator;
+
+    return-void
+.end method
+
+.method public constructor <init>(II)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Lkno;-><init>()V
 
     iput p1, p0, Lkxr;->a:I
 
-    new-instance p1, Ljava/util/concurrent/ConcurrentLinkedQueue;
-
-    invoke-direct {p1}, Ljava/util/concurrent/ConcurrentLinkedQueue;-><init>()V
-
-    iput-object p1, p0, Lkxr;->b:Ljava/lang/Object;
+    iput p2, p0, Lkxr;->b:I
 
     return-void
 .end method
 
-.method public constructor <init>(I[B)V
-    .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+# virtual methods
+.method public final writeToParcel(Landroid/os/Parcel;I)V
+    .locals 2
 
-    const/4 p2, 0x0
+    invoke-static {p1}, Lmip;->ct(Landroid/os/Parcel;)I
 
-    iput-object p2, p0, Lkxr;->b:Ljava/lang/Object;
+    move-result p2
 
-    iput p1, p0, Lkxr;->a:I
+    iget v0, p0, Lkxr;->a:I
 
-    return-void
-.end method
+    const/4 v1, 0x2
 
-.method public constructor <init>(Landroid/graphics/Typeface;)V
-    .locals 0
+    invoke-static {p1, v1, v0}, Lmip;->cA(Landroid/os/Parcel;II)V
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iget v0, p0, Lkxr;->b:I
 
-    iput-object p1, p0, Lkxr;->b:Ljava/lang/Object;
+    const/4 v1, 0x3
 
-    const/4 p1, 0x0
+    invoke-static {p1, v1, v0}, Lmip;->cA(Landroid/os/Parcel;II)V
 
-    iput p1, p0, Lkxr;->a:I
-
-    return-void
-.end method
-
-.method public constructor <init>(Ljava/lang/Object;I)V
-    .locals 0
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lkxr;->b:Ljava/lang/Object;
-
-    iput p2, p0, Lkxr;->a:I
-
-    return-void
-.end method
-
-.method public constructor <init>(Ljava/lang/String;I)V
-    .locals 0
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lkxr;->b:Ljava/lang/Object;
-
-    iput p2, p0, Lkxr;->a:I
-
-    return-void
-.end method
-
-.method public constructor <init>(Ljby;I)V
-    .locals 0
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    invoke-static {p1}, Ljhp;->ab(Ljava/lang/Object;)V
-
-    iput-object p1, p0, Lkxr;->b:Ljava/lang/Object;
-
-    iput p2, p0, Lkxr;->a:I
-
-    return-void
-.end method
-
-.method public constructor <init>(Lmqp;)V
-    .locals 1
-
-    const/4 v0, 0x0
-
-    invoke-direct {p0, p1, v0}, Lkxr;-><init>(Lmqp;I)V
-
-    return-void
-.end method
-
-.method public constructor <init>(Lmqp;I)V
-    .locals 0
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lkxr;->b:Ljava/lang/Object;
-
-    iput p2, p0, Lkxr;->a:I
+    invoke-static {p1, p2}, Lmip;->cv(Landroid/os/Parcel;I)V
 
     return-void
 .end method

@@ -1,51 +1,62 @@
-.class public final Lcru;
-.super Ljava/lang/Object;
-
-# interfaces
-.implements Logk;
+.class Lcru;
+.super Lcsa;
 
 
 # instance fields
-.field private final a:Loiw;
+.field final synthetic b:Lcrw;
 
 
 # direct methods
-.method public constructor <init>(Loiw;)V
+.method public constructor <init>(Lcrw;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lcru;->b:Lcrw;
 
-    iput-object p1, p0, Lcru;->a:Loiw;
+    invoke-direct {p0}, Lcsa;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Lcrt;
+.method public b()V
     .locals 2
 
-    iget-object v0, p0, Lcru;->a:Loiw;
+    iget-object v0, p0, Lcru;->b:Lcrw;
 
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
+    iget-object v1, v0, Lcrw;->e:Lcom/google/android/apps/camera/bottombar/BottomBarController;
 
-    move-result-object v0
+    invoke-virtual {v1}, Lcom/google/android/apps/camera/bottombar/BottomBarController;->switchToVideoIntentReview()V
 
-    check-cast v0, Ldhi;
+    iget-object v0, v0, Lcrw;->f:Ljlb;
 
-    new-instance v1, Lcrt;
+    invoke-interface {v0}, Ljlb;->al()V
 
-    invoke-direct {v1, v0}, Lcrt;-><init>(Ldhi;)V
-
-    return-object v1
+    return-void
 .end method
 
-.method public final bridge synthetic get()Ljava/lang/Object;
+.method public final f()V
     .locals 1
 
-    invoke-virtual {p0}, Lcru;->a()Lcrt;
+    iget-object v0, p0, Lcru;->b:Lcrw;
 
-    move-result-object v0
+    iput-object p0, v0, Lcrw;->i:Lcsa;
 
-    return-object v0
+    return-void
+.end method
+
+.method public final fK()Z
+    .locals 1
+
+    const/4 v0, 0x1
+
+    return v0
+.end method
+
+.method public final j()I
+    .locals 1
+
+    const/4 v0, 0x2
+
+    return v0
 .end method

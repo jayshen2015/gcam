@@ -1,28 +1,47 @@
-.class final Lodb;
+.class public final Lodb;
 .super Ljava/lang/Object;
 
+# interfaces
+.implements Loct;
 
-# static fields
-.field static final a:Llzz;
+
+# instance fields
+.field private final a:Landroidx/viewpager/widget/ViewPager;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 4
+.method public constructor <init>(Landroidx/viewpager/widget/ViewPager;)V
+    .locals 0
 
-    sget-object v0, Lnzl;->i:Lnzl;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    sget-object v1, Lnzl;->k:Lnzl;
+    iput-object p1, p0, Lodb;->a:Landroidx/viewpager/widget/ViewPager;
 
-    sget-object v2, Locz;->a:Locz;
+    return-void
+.end method
 
-    const-string v3, ""
 
-    invoke-static {v0, v3, v1, v2}, Llzz;->B(Lnzl;Ljava/lang/Object;Lnzl;Ljava/lang/Object;)Llzz;
+# virtual methods
+.method public final a(Locx;)V
+    .locals 1
 
-    move-result-object v0
+    iget-object p1, p0, Lodb;->a:Landroidx/viewpager/widget/ViewPager;
 
-    sput-object v0, Lodb;->a:Llzz;
+    const/4 v0, 0x0
+
+    invoke-virtual {p1, v0}, Landroidx/viewpager/widget/ViewPager;->b(Z)V
+
+    return-void
+.end method
+
+.method public final b(Locx;)V
+    .locals 0
+
+    return-void
+.end method
+
+.method public final c()V
+    .locals 0
 
     return-void
 .end method

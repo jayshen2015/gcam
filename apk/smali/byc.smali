@@ -1,40 +1,33 @@
-.class public final Lbyc;
+.class public final synthetic Lbyc;
 .super Ljava/lang/Object;
 
+# interfaces
+.implements Lkar;
 
-# static fields
-.field public static final a:Lbqe;
 
-.field public static final b:Lbqe;
+# instance fields
+.field public final synthetic a:Lbyf;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
+.method public synthetic constructor <init>(Lbyf;)V
+    .locals 0
 
-    sget-object v0, Lbps;->c:Lbps;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const-string v1, "com.bumptech.glide.load.resource.gif.GifOptions.DecodeFormat"
+    iput-object p1, p0, Lbyc;->a:Lbyf;
 
-    invoke-static {v1, v0}, Lbqe;->c(Ljava/lang/String;Ljava/lang/Object;)Lbqe;
+    return-void
+.end method
 
-    move-result-object v0
 
-    sput-object v0, Lbyc;->a:Lbqe;
+# virtual methods
+.method public final a()V
+    .locals 1
 
-    const/4 v0, 0x0
+    iget-object v0, p0, Lbyc;->a:Lbyf;
 
-    invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
-
-    move-result-object v0
-
-    const-string v1, "com.bumptech.glide.load.resource.gif.GifOptions.DisableAnimation"
-
-    invoke-static {v1, v0}, Lbqe;->c(Ljava/lang/String;Ljava/lang/Object;)Lbqe;
-
-    move-result-object v0
-
-    sput-object v0, Lbyc;->b:Lbqe;
+    invoke-virtual {v0}, Lbyf;->e()V
 
     return-void
 .end method

@@ -1,139 +1,62 @@
-.class public abstract Lbzx;
-.super Lcab;
+.class final Lbzx;
+.super Landroid/animation/AnimatorListenerAdapter;
 
 
 # instance fields
-.field private c:Landroid/graphics/drawable/Animatable;
+.field final synthetic a:Lbzy;
 
 
 # direct methods
-.method public constructor <init>(Landroid/widget/ImageView;)V
+.method public constructor <init>(Lbzy;)V
     .locals 0
 
-    invoke-direct {p0, p1}, Lcab;-><init>(Landroid/view/View;)V
+    iput-object p1, p0, Lbzx;->a:Lbzy;
 
-    return-void
-.end method
-
-.method private final n(Ljava/lang/Object;)V
-    .locals 1
-
-    invoke-virtual {p0, p1}, Lbzx;->l(Ljava/lang/Object;)V
-
-    instance-of v0, p1, Landroid/graphics/drawable/Animatable;
-
-    if-eqz v0, :cond_0
-
-    check-cast p1, Landroid/graphics/drawable/Animatable;
-
-    iput-object p1, p0, Lbzx;->c:Landroid/graphics/drawable/Animatable;
-
-    invoke-interface {p1}, Landroid/graphics/drawable/Animatable;->start()V
-
-    return-void
-
-    :cond_0
-    const/4 p1, 0x0
-
-    iput-object p1, p0, Lbzx;->c:Landroid/graphics/drawable/Animatable;
+    invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Landroid/graphics/drawable/Drawable;)V
+.method public final onAnimationEnd(Landroid/animation/Animator;)V
     .locals 1
 
-    iget-object v0, p0, Lcab;->b:Landroidx/wear/ambient/AmbientDelegate;
+    iget-object p1, p0, Lbzx;->a:Lbzy;
 
-    invoke-virtual {v0}, Landroidx/wear/ambient/AmbientDelegate;->U()V
+    const/16 v0, 0x8
 
-    iget-object v0, p0, Lbzx;->c:Landroid/graphics/drawable/Animatable;
+    invoke-virtual {p1, v0}, Lbzy;->setVisibility(I)V
 
-    if-eqz v0, :cond_0
+    iget-object p1, p0, Lbzx;->a:Lbzy;
 
-    invoke-interface {v0}, Landroid/graphics/drawable/Animatable;->stop()V
-
-    :cond_0
-    const/4 v0, 0x0
-
-    invoke-direct {p0, v0}, Lbzx;->n(Ljava/lang/Object;)V
-
-    invoke-virtual {p0, p1}, Lbzx;->m(Landroid/graphics/drawable/Drawable;)V
+    invoke-static {p1}, Lbzy;->a(Lbzy;)V
 
     return-void
 .end method
 
-.method public final b(Ljava/lang/Object;)V
-    .locals 0
-
-    invoke-direct {p0, p1}, Lbzx;->n(Ljava/lang/Object;)V
-
-    return-void
-.end method
-
-.method public final e(Landroid/graphics/drawable/Drawable;)V
+.method public final onAnimationStart(Landroid/animation/Animator;)V
     .locals 1
+
+    iget-object p1, p0, Lbzx;->a:Lbzy;
 
     const/4 v0, 0x0
 
-    invoke-direct {p0, v0}, Lbzx;->n(Ljava/lang/Object;)V
+    invoke-virtual {p1, v0}, Lbzy;->setVisibility(I)V
 
-    invoke-virtual {p0, p1}, Lbzx;->m(Landroid/graphics/drawable/Drawable;)V
+    iget-object p1, p0, Lbzx;->a:Lbzy;
 
-    return-void
-.end method
+    iget-object p1, p1, Lbzy;->a:Landroid/widget/TextView;
 
-.method public final f(Landroid/graphics/drawable/Drawable;)V
-    .locals 1
+    const/high16 v0, 0x3f800000    # 1.0f
 
-    const/4 v0, 0x0
+    invoke-virtual {p1, v0}, Landroid/widget/TextView;->setAlpha(F)V
 
-    invoke-direct {p0, v0}, Lbzx;->n(Ljava/lang/Object;)V
+    iget-object p1, p0, Lbzx;->a:Lbzy;
 
-    invoke-virtual {p0, p1}, Lbzx;->m(Landroid/graphics/drawable/Drawable;)V
+    iget-object p1, p1, Lbzy;->b:Landroid/widget/TextView;
 
-    return-void
-.end method
-
-.method public final h()V
-    .locals 1
-
-    iget-object v0, p0, Lbzx;->c:Landroid/graphics/drawable/Animatable;
-
-    if-eqz v0, :cond_0
-
-    invoke-interface {v0}, Landroid/graphics/drawable/Animatable;->start()V
-
-    :cond_0
-    return-void
-.end method
-
-.method public final i()V
-    .locals 1
-
-    iget-object v0, p0, Lbzx;->c:Landroid/graphics/drawable/Animatable;
-
-    if-eqz v0, :cond_0
-
-    invoke-interface {v0}, Landroid/graphics/drawable/Animatable;->stop()V
-
-    :cond_0
-    return-void
-.end method
-
-.method protected abstract l(Ljava/lang/Object;)V
-.end method
-
-.method public final m(Landroid/graphics/drawable/Drawable;)V
-    .locals 1
-
-    iget-object v0, p0, Lbzx;->a:Landroid/view/View;
-
-    check-cast v0, Landroid/widget/ImageView;
-
-    invoke-virtual {v0, p1}, Landroid/widget/ImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
+    invoke-virtual {p1, v0}, Landroid/widget/TextView;->setAlpha(F)V
 
     return-void
 .end method

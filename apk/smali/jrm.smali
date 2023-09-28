@@ -1,66 +1,30 @@
 .class public final Ljrm;
-.super Ljhn;
-
-
-# static fields
-.field public static final CREATOR:Landroid/os/Parcelable$Creator;
+.super Landroid/animation/AnimatorListenerAdapter;
 
 
 # instance fields
-.field public final a:I
-
-.field public final b:Landroid/os/ParcelFileDescriptor;
+.field final synthetic a:Lj$/util/function/Consumer;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
-
-    new-instance v0, Ljqn;
-
-    const/16 v1, 0x14
-
-    invoke-direct {v0, v1}, Ljqn;-><init>(I)V
-
-    sput-object v0, Ljrm;->CREATOR:Landroid/os/Parcelable$Creator;
-
-    return-void
-.end method
-
-.method public constructor <init>(ILandroid/os/ParcelFileDescriptor;)V
+.method public constructor <init>(Lj$/util/function/Consumer;)V
     .locals 0
 
-    invoke-direct {p0}, Ljhn;-><init>()V
+    iput-object p1, p0, Ljrm;->a:Lj$/util/function/Consumer;
 
-    iput p1, p0, Ljrm;->a:I
-
-    iput-object p2, p0, Ljrm;->b:Landroid/os/ParcelFileDescriptor;
+    invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final writeToParcel(Landroid/os/Parcel;I)V
-    .locals 3
+.method public final onAnimationEnd(Landroid/animation/Animator;)V
+    .locals 1
 
-    invoke-static {p1}, Ljhp;->a(Landroid/os/Parcel;)I
+    iget-object v0, p0, Ljrm;->a:Lj$/util/function/Consumer;
 
-    move-result v0
-
-    iget v1, p0, Ljrm;->a:I
-
-    const/4 v2, 0x2
-
-    invoke-static {p1, v2, v1}, Ljhp;->g(Landroid/os/Parcel;II)V
-
-    iget-object v1, p0, Ljrm;->b:Landroid/os/ParcelFileDescriptor;
-
-    const/4 v2, 0x3
-
-    invoke-static {p1, v2, v1, p2}, Ljhp;->o(Landroid/os/Parcel;ILandroid/os/Parcelable;I)V
-
-    invoke-static {p1, v0}, Ljhp;->c(Landroid/os/Parcel;I)V
+    invoke-interface {v0, p1}, Lj$/util/function/Consumer;->accept(Ljava/lang/Object;)V
 
     return-void
 .end method

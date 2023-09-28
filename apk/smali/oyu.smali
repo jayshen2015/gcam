@@ -1,166 +1,215 @@
 .class public final Loyu;
-.super Lnws;
-
-# interfaces
-.implements Lnxz;
-
-
-# static fields
-.field public static final c:Loyu;
-
-.field private static volatile d:Lnyf;
+.super Loyw;
 
 
 # instance fields
-.field public a:I
+.field private final a:Loyw;
 
-.field public b:I
+.field private final b:Ljava/lang/String;
 
 
 # direct methods
-.method static constructor <clinit>()V
+.method public constructor <init>(Loyw;)V
     .locals 2
 
-    new-instance v0, Loyu;
+    invoke-direct {p0}, Loyw;-><init>()V
 
-    invoke-direct {v0}, Loyu;-><init>()V
+    iput-object p1, p0, Loyu;->a:Loyw;
 
-    sput-object v0, Loyu;->c:Loyu;
+    const-string p1, ":"
 
-    const-class v1, Loyu;
+    iput-object p1, p0, Loyu;->b:Ljava/lang/String;
 
-    invoke-static {v1, v0}, Lnws;->aa(Ljava/lang/Class;Lnws;)V
+    const/4 p1, 0x1
 
-    return-void
-.end method
+    const-string v0, "Cannot add a separator after every %s chars"
 
-.method private constructor <init>()V
-    .locals 0
+    const/4 v1, 0x2
 
-    invoke-direct {p0}, Lnws;-><init>()V
+    invoke-static {p1, v0, v1}, Lobr;->aI(ZLjava/lang/String;I)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method protected final a(ILjava/lang/Object;)Ljava/lang/Object;
-    .locals 3
+.method public final a([BLjava/lang/CharSequence;)I
+    .locals 4
 
-    add-int/lit8 p1, p1, -0x1
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    const/4 p2, 0x1
+    invoke-interface {p2}, Ljava/lang/CharSequence;->length()I
 
-    packed-switch p1, :pswitch_data_0
+    move-result v1
 
-    :pswitch_0
-    const/4 p1, 0x0
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(I)V
 
-    return-object p1
+    const/4 v1, 0x0
 
-    :pswitch_1
-    sget-object p1, Loyu;->d:Lnyf;
+    :goto_0
+    invoke-interface {p2}, Ljava/lang/CharSequence;->length()I
 
-    if-nez p1, :cond_1
+    move-result v2
 
-    const-class p2, Loyu;
+    if-ge v1, v2, :cond_1
 
-    monitor-enter p2
+    invoke-interface {p2, v1}, Ljava/lang/CharSequence;->charAt(I)C
 
-    :try_start_0
-    sget-object p1, Loyu;->d:Lnyf;
+    move-result v2
 
-    if-nez p1, :cond_0
+    iget-object v3, p0, Loyu;->b:Ljava/lang/String;
 
-    new-instance p1, Lnwo;
+    invoke-virtual {v3, v2}, Ljava/lang/String;->indexOf(I)I
 
-    sget-object v0, Loyu;->c:Loyu;
+    move-result v3
 
-    invoke-direct {p1, v0}, Lnwo;-><init>(Lnws;)V
+    if-gez v3, :cond_0
 
-    sput-object p1, Loyu;->d:Lnyf;
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
     :cond_0
-    monitor-exit p2
+    add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    :catchall_0
-    move-exception p1
-
-    monitor-exit p2
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw p1
-
     :cond_1
-    :goto_0
-    return-object p1
+    iget-object p2, p0, Loyu;->a:Loyw;
 
-    :pswitch_2
-    sget-object p1, Loyu;->c:Loyu;
+    invoke-virtual {p2, p1, v0}, Loyw;->a([BLjava/lang/CharSequence;)I
 
-    return-object p1
+    move-result p1
 
-    :pswitch_3
-    new-instance p1, Lnwn;
+    return p1
+.end method
 
-    sget-object p2, Loyu;->c:Loyu;
+.method public final b(Ljava/lang/Appendable;[BI)V
+    .locals 2
 
-    invoke-direct {p1, p2}, Lnwn;-><init>(Lnws;)V
+    iget-object v0, p0, Loyu;->a:Loyw;
 
-    return-object p1
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    :pswitch_4
-    new-instance p1, Loyu;
+    const/4 v1, 0x1
 
-    invoke-direct {p1}, Loyu;-><init>()V
+    invoke-static {v1}, Lobr;->aF(Z)V
 
-    return-object p1
+    new-instance v1, Loyq;
 
-    :pswitch_5
-    const-string p1, "a"
+    invoke-direct {v1, p1}, Loyq;-><init>(Ljava/lang/Appendable;)V
 
-    const-string v0, "\u0001\u0001\u0000\u0001\u0001\u0001\u0001\u0000\u0000\u0000\u0001\u1004\u0000"
+    invoke-virtual {v0, v1, p2, p3}, Loyw;->b(Ljava/lang/Appendable;[BI)V
 
-    const/4 v1, 0x2
+    return-void
+.end method
 
-    new-array v1, v1, [Ljava/lang/Object;
+.method public final c(I)I
+    .locals 1
+
+    iget-object v0, p0, Loyu;->a:Loyw;
+
+    invoke-virtual {v0, p1}, Loyw;->c(I)I
+
+    move-result p1
+
+    return p1
+.end method
+
+.method public final d(I)I
+    .locals 4
+
+    iget-object v0, p0, Loyu;->a:Loyw;
+
+    invoke-virtual {v0, p1}, Loyw;->d(I)I
+
+    move-result p1
+
+    iget-object v0, p0, Loyu;->b:Ljava/lang/String;
+
+    invoke-virtual {v0}, Ljava/lang/String;->length()I
+
+    move-result v0
+
+    add-int/lit8 v1, p1, -0x1
 
     const/4 v2, 0x0
 
-    aput-object p1, v1, v2
+    invoke-static {v2, v1}, Ljava/lang/Math;->max(II)I
 
-    const-string p1, "b"
+    move-result v1
 
-    aput-object p1, v1, p2
+    sget-object v2, Ljava/math/RoundingMode;->FLOOR:Ljava/math/RoundingMode;
 
-    sget-object p1, Loyu;->c:Loyu;
+    const/4 v3, 0x2
 
-    invoke-static {p1, v0, v1}, Loyu;->X(Lnxy;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {v1, v3, v2}, Loxh;->R(IILjava/math/RoundingMode;)I
+
+    move-result v1
+
+    mul-int v0, v0, v1
+
+    add-int/2addr p1, v0
+
+    return p1
+.end method
+
+.method public final e(Ljava/lang/CharSequence;)Ljava/lang/CharSequence;
+    .locals 1
+
+    iget-object v0, p0, Loyu;->a:Loyw;
+
+    invoke-virtual {v0, p1}, Loyw;->e(Ljava/lang/CharSequence;)Ljava/lang/CharSequence;
 
     move-result-object p1
 
     return-object p1
+.end method
 
-    :pswitch_6
-    invoke-static {p2}, Ljava/lang/Byte;->valueOf(B)Ljava/lang/Byte;
+.method public final toString()Ljava/lang/String;
+    .locals 5
 
-    move-result-object p1
+    iget-object v0, p0, Loyu;->a:Loyw;
 
-    return-object p1
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
-    nop
+    move-result-object v0
 
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_6
-        :pswitch_0
-        :pswitch_5
-        :pswitch_4
-        :pswitch_3
-        :pswitch_2
-        :pswitch_1
-    .end packed-switch
+    iget-object v1, p0, Loyu;->b:Ljava/lang/String;
+
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/String;->length()I
+
+    move-result v2
+
+    invoke-virtual {v1}, Ljava/lang/String;->length()I
+
+    move-result v3
+
+    new-instance v4, Ljava/lang/StringBuilder;
+
+    add-int/lit8 v2, v2, 0x1f
+
+    add-int/2addr v2, v3
+
+    invoke-direct {v4, v2}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v0, ".withSeparator(\""
+
+    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v4, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v0, "\", 2)"
+
+    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
 .end method

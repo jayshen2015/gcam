@@ -1,48 +1,51 @@
-.class final Llcq;
-.super Llch;
+.class public final synthetic Llcq;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Loiu;
 
 
 # instance fields
-.field final synthetic g:Llcn;
-
-.field final synthetic h:I
-
-.field final synthetic i:I
+.field public final synthetic a:Ljava/lang/Comparable;
 
 
 # direct methods
-.method public constructor <init>(Lldg;Landroid/opengl/EGLDisplay;Landroid/opengl/EGLSurface;Landroid/opengl/EGLContext;Landroid/opengl/EGLConfig;ILlar;Llcn;II)V
+.method public synthetic constructor <init>(Ljava/lang/Comparable;)V
     .locals 0
 
-    iput-object p8, p0, Llcq;->g:Llcn;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput p9, p0, Llcq;->h:I
-
-    iput p10, p0, Llcq;->i:I
-
-    invoke-direct/range {p0 .. p7}, Llch;-><init>(Lldg;Landroid/opengl/EGLDisplay;Landroid/opengl/EGLSurface;Landroid/opengl/EGLContext;Landroid/opengl/EGLConfig;ILlaq;)V
+    iput-object p1, p0, Llcq;->a:Ljava/lang/Comparable;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final b()Lkzf;
+.method public final a(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 1
 
-    iget-object v0, p0, Llcq;->g:Llcn;
+    iget-object v0, p0, Llcq;->a:Ljava/lang/Comparable;
 
-    invoke-interface {v0}, Llcn;->k()V
+    check-cast p1, Ljava/lang/Comparable;
 
-    iget v0, p0, Llcq;->h:I
+    invoke-interface {p1, v0}, Ljava/lang/Comparable;->compareTo(Ljava/lang/Object;)I
 
-    invoke-static {v0}, Llcu;->f(I)V
+    move-result p1
 
-    iget v0, p0, Llcq;->i:I
+    if-ltz p1, :cond_0
 
-    invoke-static {v0}, Llcu;->e(I)V
+    const/4 p1, 0x1
 
-    sget-object v0, Lkze;->a:Lkzf;
+    goto :goto_0
 
-    return-object v0
+    :cond_0
+    const/4 p1, 0x0
+
+    :goto_0
+    invoke-static {p1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    move-result-object p1
+
+    return-object p1
 .end method

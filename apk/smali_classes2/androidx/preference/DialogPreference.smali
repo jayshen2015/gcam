@@ -30,11 +30,11 @@
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
     .locals 2
 
-    const v0, 0x7f04021e
+    const v0, 0x7f0401a9
 
     const v1, 0x1010091
 
-    invoke-static {p1, v0, v1}, Laar;->c(Landroid/content/Context;II)I
+    invoke-static {p1, v0, v1}, Let;->u(Landroid/content/Context;II)I
 
     move-result v0
 
@@ -58,7 +58,7 @@
 
     invoke-direct {p0, p1, p2, p3, p4}, Landroidx/preference/Preference;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;II)V
 
-    sget-object v0, Laos;->c:[I
+    sget-object v0, Lahn;->c:[I
 
     invoke-virtual {p1, p2, v0, p3, p4}, Landroid/content/Context;->obtainStyledAttributes(Landroid/util/AttributeSet;[III)Landroid/content/res/TypedArray;
 
@@ -68,7 +68,7 @@
 
     const/4 p3, 0x0
 
-    invoke-static {p1, p2, p3}, Laar;->h(Landroid/content/res/TypedArray;II)Ljava/lang/String;
+    invoke-static {p1, p2, p3}, Let;->z(Landroid/content/res/TypedArray;II)Ljava/lang/String;
 
     move-result-object p2
 
@@ -85,7 +85,7 @@
 
     const/4 p4, 0x1
 
-    invoke-static {p1, p2, p4}, Laar;->h(Landroid/content/res/TypedArray;II)Ljava/lang/String;
+    invoke-static {p1, p2, p4}, Let;->z(Landroid/content/res/TypedArray;II)Ljava/lang/String;
 
     move-result-object p2
 
@@ -112,7 +112,7 @@
 
     const/4 p4, 0x3
 
-    invoke-static {p1, p2, p4}, Laar;->h(Landroid/content/res/TypedArray;II)Ljava/lang/String;
+    invoke-static {p1, p2, p4}, Let;->z(Landroid/content/res/TypedArray;II)Ljava/lang/String;
 
     move-result-object p2
 
@@ -122,7 +122,7 @@
 
     const/4 p4, 0x4
 
-    invoke-static {p1, p2, p4}, Laar;->h(Landroid/content/res/TypedArray;II)Ljava/lang/String;
+    invoke-static {p1, p2, p4}, Let;->z(Landroid/content/res/TypedArray;II)Ljava/lang/String;
 
     move-result-object p2
 
@@ -132,7 +132,7 @@
 
     const/4 p4, 0x5
 
-    invoke-static {p1, p2, p4, p3}, Laar;->e(Landroid/content/res/TypedArray;III)I
+    invoke-static {p1, p2, p4, p3}, Let;->w(Landroid/content/res/TypedArray;III)I
 
     move-result p2
 
@@ -148,13 +148,13 @@
 .method protected c()V
     .locals 1
 
-    iget-object v0, p0, Landroidx/preference/Preference;->k:Laoo;
+    iget-object v0, p0, Landroidx/preference/Preference;->k:Lahj;
 
-    iget-object v0, v0, Laoo;->d:Laol;
+    iget-object v0, v0, Lahj;->d:Lahg;
 
     if-eqz v0, :cond_0
 
-    invoke-interface {v0, p0}, Laol;->z(Landroidx/preference/Preference;)V
+    invoke-interface {v0, p0}, Lahg;->ah(Landroidx/preference/Preference;)V
 
     :cond_0
     return-void

@@ -2,160 +2,97 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Ljava/util/function/BinaryOperator;
-
-
-# static fields
-.field public static final synthetic a:Lmte;
-
-.field public static final synthetic b:Lmte;
-
-.field public static final synthetic c:Lmte;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field private final synthetic d:I
+.field public final synthetic a:Lmtf;
 
 
 # direct methods
-.method static synthetic constructor <clinit>()V
-    .locals 2
-
-    new-instance v0, Lmte;
-
-    const/4 v1, 0x2
-
-    invoke-direct {v0, v1}, Lmte;-><init>(I)V
-
-    sput-object v0, Lmte;->c:Lmte;
-
-    new-instance v0, Lmte;
-
-    const/4 v1, 0x1
-
-    invoke-direct {v0, v1}, Lmte;-><init>(I)V
-
-    sput-object v0, Lmte;->b:Lmte;
-
-    new-instance v0, Lmte;
-
-    const/4 v1, 0x0
-
-    invoke-direct {v0, v1}, Lmte;-><init>(I)V
-
-    sput-object v0, Lmte;->a:Lmte;
-
-    return-void
-.end method
-
-.method private synthetic constructor <init>(I)V
+.method public synthetic constructor <init>(Lmtf;)V
     .locals 0
 
-    iput p1, p0, Lmte;->d:I
-
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lmte;->a:Lmtf;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic andThen(Ljava/util/function/Function;)Ljava/util/function/BiFunction;
-    .locals 1
+.method public final run()V
+    .locals 4
 
-    iget v0, p0, Lmte;->d:I
+    iget-object v0, p0, Lmte;->a:Lmtf;
 
-    packed-switch v0, :pswitch_data_0
+    iget-object v1, v0, Lmtf;->a:Ljava/lang/Object;
 
-    invoke-static {p0, p1}, Lj$/util/function/BiFunction$-CC;->$default$andThen(Ljava/util/function/BiFunction;Ljava/util/function/Function;)Ljava/util/function/BiFunction;
+    monitor-enter v1
 
-    move-result-object p1
+    :try_start_0
+    iget-boolean v2, v0, Lmtf;->d:Z
 
-    return-object p1
+    invoke-static {v2}, Lobr;->aQ(Z)V
 
-    :pswitch_0
-    invoke-static {p0, p1}, Lj$/util/function/BiFunction$-CC;->$default$andThen(Ljava/util/function/BiFunction;Ljava/util/function/Function;)Ljava/util/function/BiFunction;
+    iget-object v2, v0, Lmtf;->c:Ljava/util/Deque;
 
-    move-result-object p1
+    invoke-interface {v2}, Ljava/util/Deque;->pollFirst()Ljava/lang/Object;
 
-    return-object p1
+    move-result-object v2
 
-    :pswitch_1
-    invoke-static {p0, p1}, Lj$/util/function/BiFunction$-CC;->$default$andThen(Ljava/util/function/BiFunction;Ljava/util/function/Function;)Ljava/util/function/BiFunction;
+    check-cast v2, Ljava/lang/Runnable;
 
-    move-result-object p1
+    if-nez v2, :cond_0
 
-    return-object p1
+    const/4 v2, 0x0
 
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
-.end method
+    iput-boolean v2, v0, Lmtf;->d:Z
 
-.method public final apply(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 1
+    monitor-exit v1
 
-    iget v0, p0, Lmte;->d:I
+    return-void
 
-    packed-switch v0, :pswitch_data_0
+    :cond_0
+    monitor-exit v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_1
 
-    check-cast p1, Lmwl;
-
-    check-cast p2, Lmwl;
-
-    invoke-virtual {p1, p2}, Lmwl;->i(Lmwl;)V
-
-    return-object p1
-
-    :pswitch_0
-    check-cast p1, Llhz;
-
-    check-cast p2, Llhz;
-
-    iget-object p2, p2, Llhz;->a:Ljava/lang/Object;
-
-    invoke-interface {p2}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
-
-    move-result-object p2
-
-    :goto_0
-    invoke-interface {p2}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    invoke-interface {p2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lmym;
-
-    invoke-virtual {p1, v0}, Llhz;->e(Lmym;)V
+    :try_start_1
+    invoke-interface {v2}, Ljava/lang/Runnable;->run()V
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     goto :goto_0
 
-    :cond_0
-    return-object p1
+    :catchall_0
+    move-exception v1
 
-    :pswitch_1
-    check-cast p1, Lmvq;
+    const-string v2, "SingleTaskExec"
 
-    check-cast p2, Lmvq;
+    const-string v3, "Exception occurred on single-threaded executor"
 
-    iget-object v0, p2, Lmvq;->a:[Ljava/lang/Object;
+    invoke-static {v2, v3, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    iget p2, p2, Lmvq;->b:I
+    :goto_0
+    iget-object v1, v0, Lmtf;->b:Ljava/util/concurrent/Executor;
 
-    invoke-virtual {p1, v0, p2}, Lmvl;->b([Ljava/lang/Object;I)V
+    new-instance v2, Lmte;
 
-    return-object p1
+    invoke-direct {v2, v0}, Lmte;-><init>(Lmtf;)V
 
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
+    invoke-interface {v1, v2}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
+
+    return-void
+
+    :catchall_1
+    move-exception v0
+
+    :try_start_2
+    monitor-exit v1
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_1
+
+    throw v0
 .end method

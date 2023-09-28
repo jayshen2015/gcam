@@ -1,106 +1,59 @@
-.class public final Lfmo;
+.class public final synthetic Lfmo;
 .super Ljava/lang/Object;
+
+# interfaces
+.implements Liho;
 
 
 # instance fields
-.field public final a:Lj$/util/Optional;
+.field public final synthetic a:Lqkg;
+
+.field public final synthetic b:Lbqg;
+
+.field public final synthetic c:Ljdy;
 
 
 # direct methods
-.method public constructor <init>()V
+.method public synthetic constructor <init>(Lbqg;Ljdy;Lqkg;[B[B[B)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    return-void
-.end method
+    iput-object p1, p0, Lfmo;->b:Lbqg;
 
-.method public constructor <init>(Lj$/util/Optional;)V
-    .locals 0
+    iput-object p2, p0, Lfmo;->c:Ljdy;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lfmo;->a:Lj$/util/Optional;
+    iput-object p3, p0, Lfmo;->a:Lqkg;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 1
-
-    if-ne p1, p0, :cond_0
-
-    const/4 p1, 0x1
-
-    return p1
-
-    :cond_0
-    instance-of v0, p1, Lfmo;
-
-    if-eqz v0, :cond_1
-
-    check-cast p1, Lfmo;
-
-    iget-object v0, p0, Lfmo;->a:Lj$/util/Optional;
-
-    iget-object p1, p1, Lfmo;->a:Lj$/util/Optional;
-
-    invoke-virtual {v0, p1}, Lj$/util/Optional;->equals(Ljava/lang/Object;)Z
-
-    move-result p1
-
-    return p1
-
-    :cond_1
-    const/4 p1, 0x0
-
-    return p1
-.end method
-
-.method public final hashCode()I
-    .locals 2
-
-    iget-object v0, p0, Lfmo;->a:Lj$/util/Optional;
-
-    invoke-virtual {v0}, Lj$/util/Optional;->hashCode()I
-
-    move-result v0
-
-    const v1, 0xf4243
-
-    xor-int/2addr v0, v1
-
-    return v0
-.end method
-
-.method public final toString()Ljava/lang/String;
+.method public final run()V
     .locals 3
 
-    iget-object v0, p0, Lfmo;->a:Lj$/util/Optional;
+    iget-object v0, p0, Lfmo;->b:Lbqg;
 
-    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+    iget-object v1, p0, Lfmo;->c:Ljdy;
 
-    move-result-object v0
+    iget-object v2, p0, Lfmo;->a:Lqkg;
 
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, "ActiveCameraExperimentalKeys{leadCameraIdKey="
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v0, "}"
-
-    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v0}, Lbqg;->i()Llap;
 
     move-result-object v0
 
-    return-object v0
+    check-cast v2, Lfmr;
+
+    invoke-virtual {v2}, Lfmr;->a()Lfmp;
+
+    move-result-object v2
+
+    invoke-virtual {v1, v2}, Ljdy;->f(Lfmp;)Llie;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Llap;->c(Llie;)V
+
+    return-void
 .end method

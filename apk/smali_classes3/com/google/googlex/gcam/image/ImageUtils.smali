@@ -16,47 +16,47 @@
 
     iget-wide v0, p0, Lcom/google/googlex/gcam/InterleavedReadViewU8;->a:J
 
-    const/4 p0, 0x1
-
-    const/4 v2, 0x0
-
-    const-wide/16 v3, 0x0
-
-    cmp-long v5, v0, v3
-
     invoke-static {p1}, Lcom/google/googlex/gcam/InterleavedWriteViewU8;->a(Lcom/google/googlex/gcam/InterleavedWriteViewU8;)J
 
-    move-result-wide v6
+    move-result-wide p0
 
-    if-eqz v5, :cond_0
+    const/4 v2, 0x1
 
-    const/4 p1, 0x1
+    const/4 v3, 0x0
+
+    const-wide/16 v4, 0x0
+
+    cmp-long v6, v0, v4
+
+    if-eqz v6, :cond_0
+
+    const/4 v6, 0x1
 
     goto :goto_0
 
     :cond_0
-    const/4 p1, 0x0
+    const/4 v6, 0x0
 
     :goto_0
-    const-string v5, "src is null"
+    const-string v7, "src is null"
 
-    invoke-static {p1, v5}, Lmoz;->f(ZLjava/lang/Object;)V
+    invoke-static {v6, v7}, Lobr;->aG(ZLjava/lang/Object;)V
 
-    cmp-long p1, v6, v3
+    cmp-long v6, p0, v4
 
-    if-eqz p1, :cond_1
+    if-eqz v6, :cond_1
 
     goto :goto_1
 
     :cond_1
-    const/4 p0, 0x0
+    const/4 v2, 0x0
 
     :goto_1
-    const-string p1, "dst is null"
+    const-string v3, "dst is null"
 
-    invoke-static {p0, p1}, Lmoz;->f(ZLjava/lang/Object;)V
+    invoke-static {v2, v3}, Lobr;->aG(ZLjava/lang/Object;)V
 
-    invoke-static {v0, v1, v6, v7}, Lcom/google/googlex/gcam/image/ImageUtils;->copyContentsImpl(JJ)V
+    invoke-static {v0, v1, p0, p1}, Lcom/google/googlex/gcam/image/ImageUtils;->copyContentsImpl(JJ)V
 
     return-void
 .end method

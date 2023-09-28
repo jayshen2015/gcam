@@ -1,13 +1,22 @@
-.class public interface abstract Lgpw;
+.class public final Lgpw;
 .super Ljava/lang/Object;
 
 
-# virtual methods
-.method public abstract a()Lkae;
-.end method
+# static fields
+.field public static final a:Lgnk;
 
-.method public abstract b(Lkae;)V
-.end method
 
-.method public abstract c(Lgpy;)V
+# direct methods
+.method static constructor <clinit>()V
+    .locals 2
+
+    new-instance v0, Lgnk;
+
+    const/16 v1, 0xb
+
+    invoke-direct {v0, v1}, Lgnk;-><init>(I)V
+
+    sput-object v0, Lgpw;->a:Lgnk;
+
+    return-void
 .end method

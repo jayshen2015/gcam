@@ -1,131 +1,123 @@
-.class public final Liws;
-.super Ljava/lang/Object;
-
-# interfaces
-.implements Liwt;
+.class Liws;
+.super Liwo;
 
 
 # instance fields
-.field private final a:F
+.field final synthetic a:Liwt;
 
-.field private final b:F
+.field private b:Llap;
 
 
 # direct methods
-.method public constructor <init>(FF)V
+.method public constructor <init>(Liwt;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Liws;->a:Liwt;
 
-    iput p1, p0, Liws;->a:F
-
-    iput p2, p0, Liws;->b:F
+    invoke-direct {p0}, Liwo;-><init>()V
 
     return-void
-.end method
-
-.method private final c(Landroid/graphics/Rect;)F
-    .locals 2
-
-    invoke-virtual {p1}, Landroid/graphics/Rect;->width()I
-
-    move-result v0
-
-    div-int/lit8 v0, v0, 0x2
-
-    invoke-virtual {p1}, Landroid/graphics/Rect;->height()I
-
-    move-result p1
-
-    div-int/lit8 p1, p1, 0x2
-
-    invoke-static {v0, p1}, Ljava/lang/Math;->min(II)I
-
-    move-result p1
-
-    int-to-float p1, p1
-
-    iget v0, p0, Liws;->b:F
-
-    sub-float/2addr p1, v0
-
-    iget v0, p0, Liws;->a:F
-
-    const/high16 v1, 0x40000000    # 2.0f
-
-    div-float/2addr v0, v1
-
-    sub-float/2addr p1, v0
-
-    return p1
 .end method
 
 
 # virtual methods
-.method public final a(Landroid/graphics/Rect;Landroid/graphics/Canvas;IF)V
-    .locals 3
-
-    invoke-direct {p0, p1}, Liws;->c(Landroid/graphics/Rect;)F
-
-    move-result v0
-
-    invoke-virtual {p1}, Landroid/graphics/Rect;->width()I
-
-    move-result v1
-
-    int-to-float v1, v1
-
-    invoke-virtual {p1}, Landroid/graphics/Rect;->height()I
-
-    move-result p1
-
-    int-to-float p1, p1
-
-    const/high16 v2, 0x40000000    # 2.0f
-
-    div-float/2addr v1, v2
-
-    div-float/2addr p1, v2
-
-    invoke-virtual {p2, v1, p1}, Landroid/graphics/Canvas;->translate(FF)V
-
-    int-to-float p1, p3
-
-    sub-float/2addr p1, p4
-
-    const p3, 0x40d33333    # 6.6f
-
-    mul-float p1, p1, p3
-
-    neg-float p1, p1
-
-    invoke-virtual {p2, p1}, Landroid/graphics/Canvas;->rotate(F)V
-
-    const/4 p1, 0x0
-
-    invoke-virtual {p2, p1, v0}, Landroid/graphics/Canvas;->translate(FF)V
+.method public a()V
+    .locals 0
 
     return-void
 .end method
 
-.method public final b(Landroid/graphics/Rect;Landroid/graphics/Canvas;)V
-    .locals 2
+.method public final f()V
+    .locals 4
 
-    invoke-direct {p0, p1}, Liws;->c(Landroid/graphics/Rect;)F
+    new-instance v0, Llap;
 
-    move-result p1
+    invoke-direct {v0}, Llap;-><init>()V
 
-    neg-float v0, p1
+    iput-object v0, p0, Liws;->b:Llap;
+
+    iget-object v0, p0, Liws;->a:Liwt;
+
+    iget-object v0, v0, Liwt;->b:Lgfy;
+
+    invoke-virtual {v0}, Lgfy;->a()V
+
+    iget-object v0, p0, Liws;->a:Liwt;
+
+    iget-object v0, v0, Liwt;->h:Limy;
+
+    iget-object v0, v0, Limy;->a:Llda;
 
     const/4 v1, 0x0
 
-    invoke-virtual {p2, v1, v0}, Landroid/graphics/Canvas;->translate(FF)V
+    invoke-static {v1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
-    const v0, -0x3f2ccccd    # -6.6f
+    move-result-object v1
 
-    invoke-virtual {p2, v0}, Landroid/graphics/Canvas;->rotate(F)V
+    invoke-interface {v0, v1}, Llda;->fB(Ljava/lang/Object;)V
 
-    invoke-virtual {p2, v1, p1}, Landroid/graphics/Canvas;->translate(FF)V
+    iget-object v0, p0, Liws;->a:Liwt;
+
+    iget-object v0, v0, Liwt;->g:Lghx;
+
+    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    invoke-virtual {v0}, Llwe;->G()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Liws;->a:Liwt;
+
+    iget-object v1, v0, Liwt;->c:Ldmh;
+
+    iget-object v0, v0, Liwt;->g:Lghx;
+
+    invoke-virtual {v0}, Llwe;->e()I
+
+    move-result v0
+
+    iget-object v2, p0, Liws;->a:Liwt;
+
+    iget-object v2, v2, Liwt;->g:Lghx;
+
+    invoke-virtual {v2}, Llwe;->d()I
+
+    move-result v2
+
+    iget-object v3, p0, Liws;->a:Liwt;
+
+    iget-object v3, v3, Liwt;->g:Lghx;
+
+    invoke-virtual {v3}, Llwe;->a()F
+
+    move-result v3
+
+    invoke-interface {v1, v0, v2, v3}, Ldmh;->g(IIF)V
+
+    :cond_0
+    return-void
+.end method
+
+.method public final g()V
+    .locals 2
+
+    iget-object v0, p0, Liws;->a:Liwt;
+
+    iget-object v0, v0, Liwt;->c:Ldmh;
+
+    invoke-interface {v0}, Ldmh;->d()V
+
+    iget-object v0, p0, Liws;->b:Llap;
+
+    invoke-virtual {v0}, Llap;->close()V
+
+    iget-object v0, p0, Liws;->a:Liwt;
+
+    const/4 v1, 0x0
+
+    iput-object v1, v0, Liwt;->g:Lghx;
 
     return-void
 .end method

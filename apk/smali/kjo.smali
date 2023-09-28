@@ -1,159 +1,126 @@
 .class public final Lkjo;
-.super Ljava/lang/Object;
-
-# interfaces
-.implements Lrw;
-
-
-# instance fields
-.field final synthetic a:Ljava/util/Map;
-
-.field final synthetic b:Looo;
-
-.field final synthetic c:Lkfg;
+.super Lksg;
 
 
 # direct methods
-.method public constructor <init>(Lkfg;Ljava/util/Map;Looo;[B[B)V
+.method public constructor <init>()V
+    .locals 1
+
+    invoke-static {}, Landroid/os/Looper;->getMainLooper()Landroid/os/Looper;
+
+    move-result-object v0
+
+    invoke-direct {p0, v0}, Lksg;-><init>(Landroid/os/Looper;)V
+
+    return-void
+.end method
+
+.method public constructor <init>(Landroid/os/Looper;)V
     .locals 0
 
-    iput-object p1, p0, Lkjo;->c:Lkfg;
-
-    iput-object p2, p0, Lkjo;->a:Ljava/util/Map;
-
-    iput-object p3, p0, Lkjo;->b:Looo;
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0, p1}, Lksg;-><init>(Landroid/os/Looper;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Lrx;)V
-    .locals 0
+.method public final a(Lkiw;Lkiv;)V
+    .locals 1
 
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    sget-object v0, Lcom/google/android/gms/common/api/internal/BasePendingResult;->c:Ljava/lang/ThreadLocal;
 
-    return-void
-.end method
+    new-instance v0, Landroid/util/Pair;
 
-.method public final b(Ltj;)V
-    .locals 0
+    invoke-direct {v0, p1, p2}, Landroid/util/Pair;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
 
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    const/4 p1, 0x1
 
-    return-void
-.end method
+    invoke-virtual {p0, p1, v0}, Lkjo;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
 
-.method public final c(Ltj;)V
-    .locals 0
+    move-result-object p1
 
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    invoke-virtual {p0, p1}, Lkjo;->sendMessage(Landroid/os/Message;)Z
 
     return-void
 .end method
 
-.method public final d(Ltj;)V
-    .locals 0
-
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    return-void
-.end method
-
-.method public final e(JI)V
+.method public final handleMessage(Landroid/os/Message;)V
     .locals 2
 
-    iget-object v0, p0, Lkjo;->c:Lkfg;
+    iget v0, p1, Landroid/os/Message;->what:I
 
-    iget-object v1, p0, Lkjo;->a:Ljava/util/Map;
+    packed-switch v0, :pswitch_data_0
 
-    invoke-static {p3}, Lsc;->a(I)Lsc;
+    iget p1, p1, Landroid/os/Message;->what:I
 
-    move-result-object p3
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    invoke-interface {v1, p3}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    const/16 v1, 0x2d
 
-    move-result-object p3
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(I)V
 
-    check-cast p3, Lkfj;
+    const-string v1, "Don\'t know how to handle message: "
 
-    invoke-virtual {v0, p3, p1, p2}, Lkfg;->bh(Lkfj;J)V
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    return-void
-.end method
+    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-.method public final f()V
-    .locals 0
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    return-void
-.end method
+    move-result-object p1
 
-.method public final g()V
-    .locals 0
+    new-instance v0, Ljava/lang/Exception;
 
-    return-void
-.end method
+    invoke-direct {v0}, Ljava/lang/Exception;-><init>()V
 
-.method public final h(Ltj;)V
-    .locals 0
+    const-string v1, "BasePendingResult"
 
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    invoke-static {v1, p1, v0}, Landroid/util/Log;->wtf(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
     return-void
-.end method
 
-.method public final i(JJ)V
-    .locals 9
+    :pswitch_0
+    iget-object p1, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
-    iget-object v0, p0, Lkjo;->c:Lkfg;
+    check-cast p1, Lcom/google/android/gms/common/api/internal/BasePendingResult;
 
-    new-instance v8, Lkeg;
+    sget-object v0, Lcom/google/android/gms/common/api/Status;->d:Lcom/google/android/gms/common/api/Status;
 
-    iget-object v1, p0, Lkjo;->b:Looo;
-
-    invoke-virtual {v1}, Looo;->c()J
-
-    move-result-wide v6
-
-    move-object v1, v8
-
-    move-wide v2, p3
-
-    move-wide v4, p1
-
-    invoke-direct/range {v1 .. v7}, Lkeg;-><init>(JJJ)V
-
-    invoke-virtual {v0, v8}, Lkfg;->bv(Lkeg;)V
+    invoke-virtual {p1, v0}, Lcom/google/android/gms/common/api/internal/BasePendingResult;->h(Lcom/google/android/gms/common/api/Status;)V
 
     return-void
-.end method
 
-.method public final j()V
-    .locals 0
+    :pswitch_1
+    iget-object p1, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
-    return-void
-.end method
+    check-cast p1, Landroid/util/Pair;
 
-.method public final k(Ltj;)V
-    .locals 3
+    iget-object v0, p1, Landroid/util/Pair;->first:Ljava/lang/Object;
 
-    iget-object v0, p0, Lkjo;->c:Lkfg;
+    check-cast v0, Lkiw;
 
-    new-instance v1, Lkle;
+    iget-object p1, p1, Landroid/util/Pair;->second:Ljava/lang/Object;
 
-    const-class v2, Landroid/hardware/camera2/TotalCaptureResult;
+    check-cast p1, Lkiv;
 
-    invoke-static {v2}, Lonl;->a(Ljava/lang/Class;)Lonx;
-
-    iget-object p1, p1, Ltj;->a:Ljava/lang/Object;
-
-    check-cast p1, Landroid/hardware/camera2/TotalCaptureResult;
-
-    invoke-direct {v1, p1}, Lkle;-><init>(Landroid/hardware/camera2/TotalCaptureResult;)V
-
-    invoke-virtual {v0, v1}, Lkfg;->bC(Lkou;)V
+    :try_start_0
+    invoke-interface {v0, p1}, Lkiw;->a(Lkiv;)V
+    :try_end_0
+    .catch Ljava/lang/RuntimeException; {:try_start_0 .. :try_end_0} :catch_0
 
     return-void
+
+    :catch_0
+    move-exception v0
+
+    invoke-static {p1}, Lcom/google/android/gms/common/api/internal/BasePendingResult;->i(Lkiv;)V
+
+    throw v0
+
+    :pswitch_data_0
+    .packed-switch 0x1
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method

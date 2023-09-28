@@ -1,161 +1,238 @@
 .class public final Lkle;
-.super Lkkt;
+.super Lkul;
 
 # interfaces
-.implements Lkou;
+.implements Lkik;
+.implements Lkil;
+
+
+# static fields
+.field private static final h:Lmip;
 
 
 # instance fields
-.field private final a:Landroid/hardware/camera2/TotalCaptureResult;
+.field public final a:Landroid/content/Context;
 
-.field private volatile b:Ljava/util/Map;
+.field public final b:Landroid/os/Handler;
+
+.field public final c:Ljava/util/Set;
+
+.field public final d:Lkmf;
+
+.field public e:Lkui;
+
+.field public f:Lkkf;
+
+.field public final g:Lmip;
 
 
 # direct methods
-.method public constructor <init>(Landroid/hardware/camera2/TotalCaptureResult;)V
+.method static constructor <clinit>()V
     .locals 1
 
-    invoke-direct {p0, p1}, Lkkt;-><init>(Landroid/hardware/camera2/CaptureResult;)V
+    sget-object v0, Lkuh;->a:Lmip;
 
-    const/4 v0, 0x0
+    sput-object v0, Lkle;->h:Lmip;
 
-    iput-object v0, p0, Lkle;->b:Ljava/util/Map;
+    return-void
+.end method
 
-    iput-object p1, p0, Lkle;->a:Landroid/hardware/camera2/TotalCaptureResult;
+.method public constructor <init>(Landroid/content/Context;Landroid/os/Handler;Lkmf;)V
+    .locals 1
+
+    sget-object v0, Lkle;->h:Lmip;
+
+    invoke-direct {p0}, Lkul;-><init>()V
+
+    iput-object p1, p0, Lkle;->a:Landroid/content/Context;
+
+    iput-object p2, p0, Lkle;->b:Landroid/os/Handler;
+
+    iput-object p3, p0, Lkle;->d:Lkmf;
+
+    iget-object p1, p3, Lkmf;->b:Ljava/util/Set;
+
+    iput-object p1, p0, Lkle;->c:Ljava/util/Set;
+
+    iput-object v0, p0, Lkle;->g:Lmip;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final g()Ljava/util/Map;
-    .locals 6
+.method public final a(I)V
+    .locals 0
 
-    iget-object v0, p0, Lkle;->b:Ljava/util/Map;
+    iget-object p1, p0, Lkle;->e:Lkui;
 
-    if-nez v0, :cond_3
+    invoke-interface {p1}, Lkui;->i()V
 
-    monitor-enter p0
+    return-void
+.end method
+
+.method public final b()V
+    .locals 8
+
+    iget-object v0, p0, Lkle;->e:Lkui;
+
+    const/4 v1, 0x1
+
+    const/4 v2, 0x0
 
     :try_start_0
-    iget-object v0, p0, Lkle;->b:Ljava/util/Map;
+    move-object v3, v0
 
-    if-nez v0, :cond_2
+    check-cast v3, Lkuo;
 
-    iget-object v0, p0, Lkle;->a:Landroid/hardware/camera2/TotalCaptureResult;
+    iget-object v3, v3, Lkuo;->a:Lkmf;
 
-    invoke-virtual {v0}, Landroid/hardware/camera2/TotalCaptureResult;->getPhysicalCameraResults()Ljava/util/Map;
+    iget-object v3, v3, Lkmf;->a:Landroid/accounts/Account;
+    :try_end_0
+    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    move-result-object v0
+    const-string v4, "<<default account>>"
 
-    invoke-static {}, Lmwa;->i()Lmvw;
+    if-nez v3, :cond_0
 
-    move-result-object v1
+    :try_start_1
+    new-instance v3, Landroid/accounts/Account;
 
-    invoke-interface {v0}, Ljava/util/Map;->keySet()Ljava/util/Set;
+    const-string v5, "com.google"
 
-    move-result-object v2
-
-    invoke-interface {v2}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
-
-    move-result-object v2
+    invoke-direct {v3, v4, v5}, Landroid/accounts/Account;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
     :cond_0
-    :goto_0
-    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
+    iget-object v5, v3, Landroid/accounts/Account;->name:Ljava/lang/String;
 
-    move-result v3
+    invoke-virtual {v4, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    if-eqz v3, :cond_1
+    move-result v4
 
-    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    if-eqz v4, :cond_1
 
-    move-result-object v3
+    move-object v4, v0
 
-    check-cast v3, Ljava/lang/String;
+    check-cast v4, Lkmb;
 
-    invoke-interface {v0, v3}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    iget-object v4, v4, Lkmb;->c:Landroid/content/Context;
+
+    invoke-static {v4}, Lkgk;->c(Landroid/content/Context;)Lkgk;
 
     move-result-object v4
 
-    check-cast v4, Landroid/hardware/camera2/CaptureResult;
+    invoke-virtual {v4}, Lkgk;->a()Lcom/google/android/gms/auth/api/signin/GoogleSignInAccount;
 
-    if-eqz v4, :cond_0
-
-    new-instance v5, Lkkt;
-
-    invoke-direct {v5, v4}, Lkkt;-><init>(Landroid/hardware/camera2/CaptureResult;)V
-
-    invoke-virtual {v1, v3, v5}, Lmvw;->e(Ljava/lang/Object;Ljava/lang/Object;)V
+    move-result-object v4
 
     goto :goto_0
 
     :cond_1
-    invoke-virtual {v1}, Lmvw;->b()Lmwa;
+    move-object v4, v2
+
+    :goto_0
+    new-instance v5, Lkni;
+
+    move-object v6, v0
+
+    check-cast v6, Lkuo;
+
+    iget-object v6, v6, Lkuo;->t:Ljava/lang/Integer;
+
+    invoke-static {v6}, Lmip;->dk(Ljava/lang/Object;)Ljava/lang/Object;
+
+    const/4 v7, 0x2
+
+    invoke-virtual {v6}, Ljava/lang/Integer;->intValue()I
+
+    move-result v6
+
+    invoke-direct {v5, v7, v3, v6, v4}, Lkni;-><init>(ILandroid/accounts/Account;ILcom/google/android/gms/auth/api/signin/GoogleSignInAccount;)V
+
+    check-cast v0, Lkmb;
+
+    invoke-virtual {v0}, Lkmb;->u()Landroid/os/IInterface;
 
     move-result-object v0
 
-    iput-object v0, p0, Lkle;->b:Ljava/util/Map;
+    check-cast v0, Lkum;
 
-    :cond_2
-    monitor-exit p0
+    new-instance v3, Lkup;
 
-    goto :goto_1
+    invoke-direct {v3, v1, v5}, Lkup;-><init>(ILkni;)V
 
-    :catchall_0
+    invoke-virtual {v0}, Lbmn;->a()Landroid/os/Parcel;
+
+    move-result-object v4
+
+    invoke-static {v4, v3}, Lbmp;->c(Landroid/os/Parcel;Landroid/os/Parcelable;)V
+
+    invoke-static {v4, p0}, Lbmp;->e(Landroid/os/Parcel;Landroid/os/IInterface;)V
+
+    const/16 v3, 0xc
+
+    invoke-virtual {v0, v3, v4}, Lbmn;->z(ILandroid/os/Parcel;)V
+    :try_end_1
+    .catch Landroid/os/RemoteException; {:try_start_1 .. :try_end_1} :catch_0
+
+    return-void
+
+    :catch_0
     move-exception v0
 
-    monitor-exit p0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    const-string v3, "SignInClientImpl"
 
-    throw v0
+    const-string v4, "Remote service probably died when signIn is called"
 
-    :cond_3
-    :goto_1
-    return-object v0
+    invoke-static {v3, v4}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
+
+    :try_start_2
+    new-instance v4, Lkuq;
+
+    new-instance v5, Lkhi;
+
+    const/16 v6, 0x8
+
+    invoke-direct {v5, v6, v2}, Lkhi;-><init>(ILandroid/app/PendingIntent;)V
+
+    invoke-direct {v4, v1, v5, v2}, Lkuq;-><init>(ILkhi;Lknj;)V
+
+    invoke-virtual {p0, v4}, Lkul;->c(Lkuq;)V
+    :try_end_2
+    .catch Landroid/os/RemoteException; {:try_start_2 .. :try_end_2} :catch_1
+
+    return-void
+
+    :catch_1
+    move-exception v1
+
+    const-string v1, "ISignInCallbacks#onSignInComplete should be executed from the same process, unexpected RemoteException."
+
+    invoke-static {v3, v1, v0}, Landroid/util/Log;->wtf(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+
+    return-void
 .end method
 
-.method public final j()Lkgd;
+.method public final c(Lkuq;)V
     .locals 2
 
-    new-instance v0, Lkgd;
+    iget-object v0, p0, Lkle;->b:Landroid/os/Handler;
 
-    iget-object v1, p0, Lkle;->a:Landroid/hardware/camera2/TotalCaptureResult;
+    new-instance v1, Lkld;
 
-    invoke-direct {v0, v1}, Lkgd;-><init>(Ljava/lang/Object;)V
+    invoke-direct {v1, p0, p1}, Lkld;-><init>(Lkle;Lkuq;)V
 
-    return-object v0
+    invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
+
+    return-void
 .end method
 
-.method public final toString()Ljava/lang/String;
-    .locals 4
+.method public final i(Lkhi;)V
+    .locals 1
 
-    const-string v0, "TotalCaptureResult"
+    iget-object v0, p0, Lkle;->f:Lkkf;
 
-    invoke-static {v0}, Lmoz;->z(Ljava/lang/String;)Lmqo;
+    invoke-virtual {v0, p1}, Lkkf;->b(Lkhi;)V
 
-    move-result-object v0
-
-    invoke-virtual {p0}, Lkkt;->b()J
-
-    move-result-wide v1
-
-    const-string v3, "FrameNumber"
-
-    invoke-virtual {v0, v3, v1, v2}, Lmqo;->f(Ljava/lang/String;J)V
-
-    invoke-virtual {p0}, Lkkt;->a()I
-
-    move-result v1
-
-    const-string v2, "SequenceNumber"
-
-    invoke-virtual {v0, v2, v1}, Lmqo;->e(Ljava/lang/String;I)V
-
-    invoke-virtual {v0}, Lmqo;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    return-object v0
+    return-void
 .end method

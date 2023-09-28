@@ -1,34 +1,20 @@
-.class public interface abstract Lkoo;
-.super Ljava/lang/Object;
-
-# interfaces
-.implements Lkad;
+.class public final Lkoo;
+.super Ljava/lang/Exception;
 
 
-# virtual methods
-.method public abstract a()I
+# direct methods
+.method public constructor <init>(Ljava/lang/String;)V
+    .locals 0
+
+    invoke-direct {p0, p1}, Ljava/lang/Exception;-><init>(Ljava/lang/String;)V
+
+    return-void
 .end method
 
-.method public abstract b()Ljava/lang/String;
-.end method
+.method public constructor <init>(Ljava/lang/String;Ljava/lang/Throwable;)V
+    .locals 0
 
-.method public abstract c(Lkox;)V
-.end method
+    invoke-direct {p0, p1, p2}, Ljava/lang/Exception;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
 
-.method public abstract close()V
-.end method
-
-.method public abstract d(Ljava/util/List;Lkom;Landroid/os/Handler;)V
-.end method
-
-.method public abstract e(Ljava/util/List;Lkom;Landroid/os/Handler;)V
-.end method
-
-.method public abstract f(Ljava/util/List;Lkom;Landroid/os/Handler;)V
-.end method
-
-.method public abstract g(I)V
-.end method
-
-.method public abstract h(I)Lkkr;
+    return-void
 .end method

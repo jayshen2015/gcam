@@ -1,83 +1,82 @@
 .class final Lbq;
-.super Ljava/lang/Object;
-
-# interfaces
-.implements Lqv;
+.super Lcb;
 
 
 # instance fields
-.field final synthetic a:Ljava/lang/Object;
-
-.field private final synthetic b:I
+.field final synthetic a:Lbu;
 
 
 # direct methods
-.method public constructor <init>(Lbw;I)V
+.method public constructor <init>(Lbu;)V
     .locals 0
 
-    iput p2, p0, Lbq;->b:I
+    iput-object p1, p0, Lbq;->a:Lbu;
 
-    iput-object p1, p0, Lbq;->a:Ljava/lang/Object;
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
-.end method
-
-.method public constructor <init>(Lqa;I)V
-    .locals 0
-
-    iput p2, p0, Lbq;->b:I
-
-    iput-object p1, p0, Lbq;->a:Ljava/lang/Object;
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Lcb;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a(Ljava/lang/Object;)Ljava/lang/Object;
+.method public final a(I)Landroid/view/View;
     .locals 2
 
-    iget p1, p0, Lbq;->b:I
+    iget-object v0, p0, Lbq;->a:Lbu;
 
-    packed-switch p1, :pswitch_data_0
+    iget-object v0, v0, Lbu;->M:Landroid/view/View;
 
-    iget-object p1, p0, Lbq;->a:Ljava/lang/Object;
+    if-eqz v0, :cond_0
 
-    check-cast p1, Lbw;
-
-    iget-object v0, p1, Lbw;->z:Lce;
-
-    instance-of v1, v0, Lqb;
-
-    if-eqz v1, :cond_0
-
-    invoke-interface {v0}, Lqb;->c()Lqa;
+    invoke-virtual {v0, p1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
     move-result-object p1
-
-    goto :goto_0
-
-    :pswitch_0
-    iget-object p1, p0, Lbq;->a:Ljava/lang/Object;
 
     return-object p1
 
     :cond_0
-    invoke-virtual {p1}, Lbw;->requireActivity()Lbz;
+    new-instance p1, Ljava/lang/IllegalStateException;
 
-    move-result-object p1
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    iget-object p1, p1, Lpl;->h:Lqa;
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    :goto_0
-    return-object p1
+    const-string v1, "Fragment "
 
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v1, p0, Lbq;->a:Lbu;
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string v1, " does not have a view"
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-direct {p1, v0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw p1
+.end method
+
+.method public final b()Z
+    .locals 1
+
+    iget-object v0, p0, Lbq;->a:Lbu;
+
+    iget-object v0, v0, Lbu;->M:Landroid/view/View;
+
+    if-eqz v0, :cond_0
+
+    const/4 v0, 0x1
+
+    return v0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    return v0
 .end method

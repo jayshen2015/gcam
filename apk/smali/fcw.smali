@@ -1,193 +1,116 @@
 .class public final Lfcw;
 .super Ljava/lang/Object;
 
-# interfaces
-.implements Logk;
-
 
 # instance fields
-.field private final a:Loiw;
+.field public a:Z
 
-.field private final b:Loiw;
+.field private b:J
 
-.field private final c:Loiw;
-
-.field private final d:Loiw;
+.field private c:D
 
 
 # direct methods
-.method public constructor <init>(Loiw;Loiw;Loiw;Loiw;)V
-    .locals 0
+.method public constructor <init>()V
+    .locals 1
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lfcw;->a:Loiw;
+    const/4 v0, 0x1
 
-    iput-object p2, p0, Lfcw;->b:Loiw;
-
-    iput-object p3, p0, Lfcw;->c:Loiw;
-
-    iput-object p4, p0, Lfcw;->d:Loiw;
+    iput-boolean v0, p0, Lfcw;->a:Z
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Lfcv;
-    .locals 6
+.method public final a()D
+    .locals 9
 
-    iget-object v0, p0, Lfcw;->a:Loiw;
+    iget-boolean v0, p0, Lfcw;->a:Z
 
-    check-cast v0, Ldwh;
+    const-wide/high16 v1, 0x3ff0000000000000L    # 1.0
 
-    invoke-virtual {v0}, Ldwh;->a()Landroid/content/Context;
+    if-eqz v0, :cond_0
 
-    move-result-object v0
+    return-wide v1
 
-    iget-object v1, p0, Lfcw;->b:Loiw;
+    :cond_0
+    invoke-static {}, Landroid/os/SystemClock;->elapsedRealtimeNanos()J
 
-    invoke-interface {v1}, Loiw;->get()Ljava/lang/Object;
+    move-result-wide v3
 
-    move-result-object v1
+    iget-wide v5, p0, Lfcw;->b:J
 
-    check-cast v1, Ljuh;
+    iget-wide v7, p0, Lfcw;->c:D
 
-    iget-object v2, p0, Lfcw;->c:Loiw;
+    sub-long/2addr v3, v5
 
-    invoke-interface {v2}, Loiw;->get()Ljava/lang/Object;
+    long-to-double v3, v3
 
-    move-result-object v2
+    const-wide v5, 0x41cdcd6500000000L    # 1.0E9
 
-    check-cast v2, Lnou;
+    invoke-static {v3, v4}, Ljava/lang/Double;->isNaN(D)Z
 
-    iget-object v3, p0, Lfcw;->d:Loiw;
+    div-double/2addr v3, v5
 
-    invoke-interface {v3}, Loiw;->get()Ljava/lang/Object;
+    invoke-static {v7, v8, v3, v4}, Ljava/lang/Math;->min(DD)D
 
-    move-result-object v3
+    move-result-wide v3
 
-    check-cast v3, Lhrq;
+    iget-wide v5, p0, Lfcw;->c:D
 
-    new-instance v4, Lfcv;
+    div-double/2addr v3, v5
 
-    invoke-direct {v4, v0, v1, v2, v3}, Lfcv;-><init>(Landroid/content/Context;Ljuh;Lnou;Lhrq;)V
+    const-wide/high16 v5, -0x4010000000000000L    # -1.0
 
-    iget-object v0, v4, Lfcv;->b:Ljava/util/List;
+    add-double/2addr v5, v3
 
-    iget-object v1, v4, Lfcv;->h:Landroid/content/Context;
+    invoke-static {v5, v6}, Ljava/lang/Math;->abs(D)D
 
-    const v2, 0x7f140130
+    move-result-wide v5
 
-    invoke-virtual {v1, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+    const-wide v7, 0x3f1a36e2eb1c432dL    # 1.0E-4
 
-    move-result-object v1
+    cmpg-double v0, v5, v7
 
-    const/16 v2, 0xfa0
+    if-gez v0, :cond_1
 
-    const/16 v3, 0xa
+    const/4 v0, 0x1
 
-    invoke-virtual {v4, v1, v2, v3}, Licd;->h(Ljava/lang/String;II)Licf;
+    iput-boolean v0, p0, Lfcw;->a:Z
 
-    move-result-object v1
+    :cond_1
+    const-wide/high16 v5, -0x3fe6000000000000L    # -6.5
 
-    invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+    mul-double v3, v3, v5
 
-    iget-object v0, v4, Lfcv;->b:Ljava/util/List;
+    invoke-static {v3, v4}, Ljava/lang/Math;->exp(D)D
 
-    iget-object v1, v4, Lfcv;->h:Landroid/content/Context;
+    move-result-wide v3
 
-    const v5, 0x7f140131
+    sub-double/2addr v1, v3
 
-    invoke-virtual {v1, v5}, Landroid/content/Context;->getString(I)Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {v4, v1, v2, v3}, Licd;->h(Ljava/lang/String;II)Licf;
-
-    move-result-object v1
-
-    invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-
-    iget-object v0, v4, Lfcv;->h:Landroid/content/Context;
-
-    const v1, 0x7f140132
-
-    invoke-virtual {v0, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-virtual {v4, v0, v2, v3}, Licd;->h(Ljava/lang/String;II)Licf;
-
-    move-result-object v0
-
-    iput-object v0, v4, Lfcv;->d:Licf;
-
-    iget-object v0, v4, Lfcv;->h:Landroid/content/Context;
-
-    const v1, 0x7f140136
-
-    invoke-virtual {v0, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
-
-    move-result-object v0
-
-    const/4 v1, -0x1
-
-    const/16 v2, 0x8
-
-    invoke-virtual {v4, v0, v1, v2}, Licd;->h(Ljava/lang/String;II)Licf;
-
-    iget-object v0, v4, Lfcv;->h:Landroid/content/Context;
-
-    const v5, 0x7f140133
-
-    invoke-virtual {v0, v5}, Landroid/content/Context;->getString(I)Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-virtual {v4, v0, v1, v3}, Licd;->h(Ljava/lang/String;II)Licf;
-
-    move-result-object v0
-
-    iput-object v0, v4, Lfcv;->e:Licf;
-
-    iget-object v0, v4, Lfcv;->h:Landroid/content/Context;
-
-    const v3, 0x7f14012f
-
-    invoke-virtual {v0, v3}, Landroid/content/Context;->getString(I)Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-virtual {v4, v0, v1, v2}, Licd;->h(Ljava/lang/String;II)Licf;
-
-    move-result-object v0
-
-    iput-object v0, v4, Lfcv;->c:Licf;
-
-    iget-object v0, v4, Lfcv;->h:Landroid/content/Context;
-
-    const v3, 0x7f140137
-
-    invoke-virtual {v0, v3}, Landroid/content/Context;->getString(I)Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-virtual {v4, v0, v1, v2}, Licd;->h(Ljava/lang/String;II)Licf;
-
-    move-result-object v0
-
-    iput-object v0, v4, Lfcv;->f:Licf;
-
-    return-object v4
+    return-wide v1
 .end method
 
-.method public final bridge synthetic get()Ljava/lang/Object;
-    .locals 1
+.method public final b()V
+    .locals 2
 
-    invoke-virtual {p0}, Lfcw;->a()Lfcv;
+    invoke-static {}, Landroid/os/SystemClock;->elapsedRealtimeNanos()J
 
-    move-result-object v0
+    move-result-wide v0
 
-    return-object v0
+    iput-wide v0, p0, Lfcw;->b:J
+
+    const-wide v0, 0x3fe6666666666666L    # 0.7
+
+    iput-wide v0, p0, Lfcw;->c:D
+
+    const/4 v0, 0x0
+
+    iput-boolean v0, p0, Lfcw;->a:Z
+
+    return-void
 .end method

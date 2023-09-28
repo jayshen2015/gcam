@@ -1,126 +1,170 @@
-.class public final enum Lfwl;
-.super Ljava/lang/Enum;
+.class public final Lfwl;
+.super Ljava/lang/Object;
 
 
-# static fields
-.field public static final enum a:Lfwl;
+# instance fields
+.field public a:Lcom/google/android/apps/camera/ui/wirers/PreviewOverlay;
 
-.field public static final enum b:Lfwl;
+.field public b:Ljom;
 
-.field public static final enum c:Lfwl;
-
-.field public static final enum d:Lfwl;
-
-.field public static final enum e:Lfwl;
-
-.field public static final enum f:Lfwl;
-
-.field private static final synthetic g:[Lfwl;
+.field private final c:Landroid/view/View;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 13
-
-    new-instance v0, Lfwl;
-
-    const-string v1, "NORMAL"
-
-    const/4 v2, 0x0
-
-    invoke-direct {v0, v1, v2}, Lfwl;-><init>(Ljava/lang/String;I)V
-
-    sput-object v0, Lfwl;->a:Lfwl;
-
-    new-instance v1, Lfwl;
-
-    const-string v3, "NORMAL_WITH_FLASH"
-
-    const/4 v4, 0x1
-
-    invoke-direct {v1, v3, v4}, Lfwl;-><init>(Ljava/lang/String;I)V
-
-    sput-object v1, Lfwl;->b:Lfwl;
-
-    new-instance v3, Lfwl;
-
-    const-string v5, "HDR_PLUS"
-
-    const/4 v6, 0x2
-
-    invoke-direct {v3, v5, v6}, Lfwl;-><init>(Ljava/lang/String;I)V
-
-    sput-object v3, Lfwl;->c:Lfwl;
-
-    new-instance v5, Lfwl;
-
-    const-string v7, "HDR_PLUS_WITH_TORCH"
-
-    const/4 v8, 0x3
-
-    invoke-direct {v5, v7, v8}, Lfwl;-><init>(Ljava/lang/String;I)V
-
-    sput-object v5, Lfwl;->d:Lfwl;
-
-    new-instance v7, Lfwl;
-
-    const-string v9, "HDR_PLUS_ZSL"
-
-    const/4 v10, 0x4
-
-    invoke-direct {v7, v9, v10}, Lfwl;-><init>(Ljava/lang/String;I)V
-
-    sput-object v7, Lfwl;->e:Lfwl;
-
-    new-instance v9, Lfwl;
-
-    const-string v11, "LONG_EXPOSURE"
-
-    const/4 v12, 0x5
-
-    invoke-direct {v9, v11, v12}, Lfwl;-><init>(Ljava/lang/String;I)V
-
-    sput-object v9, Lfwl;->f:Lfwl;
-
-    const/4 v11, 0x6
-
-    new-array v11, v11, [Lfwl;
-
-    aput-object v0, v11, v2
-
-    aput-object v1, v11, v4
-
-    aput-object v3, v11, v6
-
-    aput-object v5, v11, v8
-
-    aput-object v7, v11, v10
-
-    aput-object v9, v11, v12
-
-    sput-object v11, Lfwl;->g:[Lfwl;
-
-    return-void
-.end method
-
-.method private constructor <init>(Ljava/lang/String;I)V
+.method public constructor <init>(Landroid/view/View;)V
     .locals 0
 
-    invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lfwl;->c:Landroid/view/View;
+
+    invoke-virtual {p0}, Lfwl;->d()V
 
     return-void
 .end method
 
-.method public static values()[Lfwl;
-    .locals 1
 
-    sget-object v0, Lfwl;->g:[Lfwl;
+# virtual methods
+.method public final a()V
+    .locals 2
 
-    invoke-virtual {v0}, [Lfwl;->clone()Ljava/lang/Object;
+    iget-object v0, p0, Lfwl;->b:Ljom;
+
+    iget-object v1, v0, Ljom;->m:Landroid/animation/AnimatorSet;
+
+    if-eqz v1, :cond_0
+
+    invoke-virtual {v1}, Landroid/animation/AnimatorSet;->isRunning()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    iget-object v1, v0, Ljom;->m:Landroid/animation/AnimatorSet;
+
+    invoke-virtual {v1}, Landroid/animation/AnimatorSet;->cancel()V
+
+    :cond_0
+    invoke-virtual {v0}, Ljom;->a()V
+
+    iget-object v0, p0, Lfwl;->a:Lcom/google/android/apps/camera/ui/wirers/PreviewOverlay;
+
+    const/4 v1, 0x1
+
+    iput-boolean v1, v0, Lcom/google/android/apps/camera/ui/wirers/PreviewOverlay;->c:Z
+
+    return-void
+.end method
+
+.method public final b()V
+    .locals 2
+
+    iget-object v0, p0, Lfwl;->a:Lcom/google/android/apps/camera/ui/wirers/PreviewOverlay;
+
+    const/4 v1, 0x0
+
+    iput-boolean v1, v0, Lcom/google/android/apps/camera/ui/wirers/PreviewOverlay;->c:Z
+
+    return-void
+.end method
+
+.method public final c()V
+    .locals 2
+
+    iget-object v0, p0, Lfwl;->a:Lcom/google/android/apps/camera/ui/wirers/PreviewOverlay;
+
+    const/4 v1, 0x1
+
+    iput-boolean v1, v0, Lcom/google/android/apps/camera/ui/wirers/PreviewOverlay;->c:Z
+
+    return-void
+.end method
+
+.method public final d()V
+    .locals 3
+
+    iget-object v0, p0, Lfwl;->c:Landroid/view/View;
+
+    invoke-static {v0}, Ljus;->a(Landroid/view/View;)Ljus;
 
     move-result-object v0
 
-    check-cast v0, [Lfwl;
+    const v1, 0x7f0b034f
 
-    return-object v0
+    invoke-virtual {v0, v1}, Ljus;->c(I)Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Landroid/widget/FrameLayout;
+
+    iget-object v2, p0, Lfwl;->b:Ljom;
+
+    if-eqz v2, :cond_0
+
+    invoke-virtual {v1, v2}, Landroid/widget/FrameLayout;->removeView(Landroid/view/View;)V
+
+    :cond_0
+    const v2, 0x7f0b0246
+
+    invoke-virtual {v0, v2}, Ljus;->c(I)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/google/android/apps/camera/ui/wirers/PreviewOverlay;
+
+    iput-object v0, p0, Lfwl;->a:Lcom/google/android/apps/camera/ui/wirers/PreviewOverlay;
+
+    new-instance v0, Ljom;
+
+    invoke-virtual {v1}, Landroid/widget/FrameLayout;->getContext()Landroid/content/Context;
+
+    move-result-object v2
+
+    invoke-direct {v0, v2}, Ljom;-><init>(Landroid/content/Context;)V
+
+    invoke-static {v0}, Lmip;->ep(Landroid/view/View;)V
+
+    invoke-virtual {v1, v0}, Landroid/view/ViewGroup;->addView(Landroid/view/View;)V
+
+    iput-object v0, p0, Lfwl;->b:Ljom;
+
+    return-void
+.end method
+
+.method public final e(Z)V
+    .locals 1
+
+    iget-object v0, p0, Lfwl;->b:Ljom;
+
+    iput-boolean p1, v0, Ljom;->j:Z
+
+    return-void
+.end method
+
+.method public final f(I)V
+    .locals 1
+
+    iget-object v0, p0, Lfwl;->b:Ljom;
+
+    invoke-virtual {v0, p1}, Ljom;->b(I)V
+
+    const/16 v0, 0x64
+
+    if-lt p1, v0, :cond_0
+
+    iget-object p1, p0, Lfwl;->a:Lcom/google/android/apps/camera/ui/wirers/PreviewOverlay;
+
+    const/4 v0, 0x1
+
+    :goto_0
+    iput-boolean v0, p1, Lcom/google/android/apps/camera/ui/wirers/PreviewOverlay;->c:Z
+
+    return-void
+
+    :cond_0
+    iget-object p1, p0, Lfwl;->a:Lcom/google/android/apps/camera/ui/wirers/PreviewOverlay;
+
+    const/4 v0, 0x0
+
+    goto :goto_0
 .end method

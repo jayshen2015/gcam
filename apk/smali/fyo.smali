@@ -1,61 +1,72 @@
-.class public final Lfyo;
+.class final Lfyo;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Logk;
+.implements Lepi;
 
 
 # instance fields
-.field private final a:Loiw;
+.field final synthetic a:Lfyr;
 
 
 # direct methods
-.method public constructor <init>(Loiw;)V
+.method public constructor <init>(Lfyr;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lfyo;->a:Lfyr;
 
-    iput-object p1, p0, Lfyo;->a:Loiw;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
-.method public static a(Loiw;)Lfyo;
-    .locals 1
-
-    new-instance v0, Lfyo;
-
-    invoke-direct {v0, p0}, Lfyo;-><init>(Loiw;)V
-
-    return-object v0
-.end method
-
 
 # virtual methods
-.method public final b()Lbkb;
-    .locals 2
+.method public final synthetic a(Z)V
+    .locals 0
 
-    iget-object v0, p0, Lfyo;->a:Loiw;
-
-    check-cast v0, Lfwo;
-
-    invoke-virtual {v0}, Lfwo;->a()Lfuz;
-
-    move-result-object v0
-
-    new-instance v1, Lbkb;
-
-    invoke-direct {v1, v0}, Lbkb;-><init>(Lfuz;)V
-
-    return-object v1
+    return-void
 .end method
 
-.method public final bridge synthetic get()Ljava/lang/Object;
+.method public final synthetic b(Z)V
+    .locals 0
+
+    return-void
+.end method
+
+.method public final synthetic c()V
+    .locals 0
+
+    return-void
+.end method
+
+.method public final d(Z)V
     .locals 1
 
-    invoke-virtual {p0}, Lfyo;->b()Lbkb;
+    if-nez p1, :cond_0
 
-    move-result-object v0
+    iget-object p1, p0, Lfyo;->a:Lfyr;
 
-    return-object v0
+    iget-boolean v0, p1, Lfyr;->l:Z
+
+    if-nez v0, :cond_0
+
+    iget-object p1, p1, Lfyr;->g:Ljli;
+
+    invoke-interface {p1}, Ljli;->onShutterButtonClick()V
+
+    :cond_0
+    return-void
+.end method
+
+.method public final synthetic e(Z)V
+    .locals 0
+
+    return-void
+.end method
+
+.method public final synthetic f(Z)V
+    .locals 0
+
+    return-void
 .end method

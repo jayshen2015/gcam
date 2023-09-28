@@ -1,32 +1,43 @@
-.class final Lgiy;
-.super Lkfg;
+.class public final Lgiy;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Lpys;
 
 
 # instance fields
-.field final synthetic a:Lfzy;
+.field private final a:Lgiu;
 
 
 # direct methods
-.method public constructor <init>(Lfzy;)V
+.method public constructor <init>(Lgiu;)V
     .locals 0
 
-    iput-object p1, p0, Lgiy;->a:Lfzy;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0}, Lkfg;-><init>()V
+    iput-object p1, p0, Lgiy;->a:Lgiu;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final bv(Lkeg;)V
+.method public final a()Llco;
     .locals 1
 
-    iget-object p1, p0, Lgiy;->a:Lfzy;
+    iget-object v0, p0, Lgiy;->a:Lgiu;
 
-    const/4 v0, 0x0
+    iget-object v0, v0, Lgiu;->f:Llco;
 
-    invoke-interface {p1, v0}, Lfzy;->bn(Ljava/lang/Object;)V
+    return-object v0
+.end method
 
-    return-void
+.method public final bridge synthetic get()Ljava/lang/Object;
+    .locals 1
+
+    invoke-virtual {p0}, Lgiy;->a()Llco;
+
+    move-result-object v0
+
+    return-object v0
 .end method

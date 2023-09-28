@@ -1,74 +1,22 @@
 .class public final Lhwq;
-.super Landroid/animation/AnimatorListenerAdapter;
+.super Ljava/lang/Object;
 
 
-# instance fields
-.field final synthetic a:Z
-
-.field final synthetic b:Landroid/widget/ImageView;
-
-.field final synthetic c:Landroid/widget/ImageView;
+# static fields
+.field public static final a:Lhrf;
 
 
 # direct methods
-.method public constructor <init>(ZLandroid/widget/ImageView;Landroid/widget/ImageView;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 2
 
-    iput-boolean p1, p0, Lhwq;->a:Z
+    new-instance v0, Lhrf;
 
-    iput-object p2, p0, Lhwq;->b:Landroid/widget/ImageView;
+    const/16 v1, 0xd
 
-    iput-object p3, p0, Lhwq;->c:Landroid/widget/ImageView;
+    invoke-direct {v0, v1}, Lhrf;-><init>(I)V
 
-    invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
-
-    return-void
-.end method
-
-
-# virtual methods
-.method public final onAnimationEnd(Landroid/animation/Animator;)V
-    .locals 1
-
-    iget-boolean p1, p0, Lhwq;->a:Z
-
-    const/16 v0, 0x8
-
-    if-eqz p1, :cond_0
-
-    iget-object p1, p0, Lhwq;->c:Landroid/widget/ImageView;
-
-    invoke-virtual {p1, v0}, Landroid/widget/ImageView;->setVisibility(I)V
-
-    return-void
-
-    :cond_0
-    iget-object p1, p0, Lhwq;->b:Landroid/widget/ImageView;
-
-    invoke-virtual {p1, v0}, Landroid/widget/ImageView;->setVisibility(I)V
-
-    return-void
-.end method
-
-.method public final onAnimationStart(Landroid/animation/Animator;)V
-    .locals 1
-
-    iget-boolean p1, p0, Lhwq;->a:Z
-
-    const/4 v0, 0x0
-
-    if-eqz p1, :cond_0
-
-    iget-object p1, p0, Lhwq;->b:Landroid/widget/ImageView;
-
-    invoke-virtual {p1, v0}, Landroid/widget/ImageView;->setVisibility(I)V
-
-    return-void
-
-    :cond_0
-    iget-object p1, p0, Lhwq;->c:Landroid/widget/ImageView;
-
-    invoke-virtual {p1, v0}, Landroid/widget/ImageView;->setVisibility(I)V
+    sput-object v0, Lhwq;->a:Lhrf;
 
     return-void
 .end method

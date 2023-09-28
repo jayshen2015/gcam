@@ -1,70 +1,64 @@
 .class public final Lgdh;
-.super Ljava/lang/Object;
+.super Lgde;
+
+
+# instance fields
+.field final c:J
+
+.field d:Lojc;
+
+.field e:Lojc;
+
+.field final f:F
+
+.field final g:F
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 0
+.method public constructor <init>(JFF)V
+    .locals 1
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Lgde;-><init>()V
+
+    sget-object v0, Loih;->a:Loih;
+
+    iput-object v0, p0, Lgdh;->d:Lojc;
+
+    sget-object v0, Loih;->a:Loih;
+
+    iput-object v0, p0, Lgdh;->e:Lojc;
+
+    iput-wide p1, p0, Lgdh;->c:J
+
+    iput p3, p0, Lgdh;->f:F
+
+    iput p4, p0, Lgdh;->g:F
 
     return-void
 .end method
 
-.method public static a(Ljava/lang/String;)Landroid/os/Handler;
-    .locals 1
 
-    new-instance v0, Landroid/os/HandlerThread;
+# virtual methods
+.method public final c()Lorj;
+    .locals 2
 
-    invoke-direct {v0, p0}, Landroid/os/HandlerThread;-><init>(Ljava/lang/String;)V
+    iget-wide v0, p0, Lgdh;->c:J
 
-    invoke-virtual {v0}, Landroid/os/HandlerThread;->start()V
-
-    invoke-virtual {v0}, Landroid/os/HandlerThread;->getLooper()Landroid/os/Looper;
-
-    move-result-object p0
-
-    invoke-static {p0}, Ljvd;->o(Landroid/os/Looper;)Landroid/os/Handler;
-
-    move-result-object p0
-
-    return-object p0
-.end method
-
-.method public static synthetic b(Ljava/lang/Throwable;Ljava/lang/Throwable;)V
-    .locals 6
-
-    :try_start_0
-    const-class v0, Ljava/lang/Throwable;
-
-    const-string v1, "addSuppressed"
-
-    const/4 v2, 0x1
-
-    new-array v3, v2, [Ljava/lang/Class;
-
-    const-class v4, Ljava/lang/Throwable;
-
-    const/4 v5, 0x0
-
-    aput-object v4, v3, v5
-
-    invoke-virtual {v0, v1, v3}, Ljava/lang/Class;->getDeclaredMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
+    invoke-static {v0, v1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     move-result-object v0
 
-    new-array v1, v2, [Ljava/lang/Object;
+    invoke-static {v0, v0}, Lorj;->f(Ljava/lang/Comparable;Ljava/lang/Comparable;)Lorj;
 
-    aput-object p1, v1, v5
+    move-result-object v0
 
-    invoke-virtual {v0, p0, v1}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
-    :try_end_0
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+    return-object v0
+.end method
 
-    return-void
+.method public final e()Z
+    .locals 1
 
-    :catch_0
-    move-exception p0
+    const/4 v0, 0x1
 
-    return-void
+    return v0
 .end method

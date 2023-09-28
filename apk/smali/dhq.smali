@@ -1,1586 +1,595 @@
-.class public final Ldhq;
+.class Ldhq;
 .super Ljava/lang/Object;
 
 
-# static fields
-.field public static final A:Ldhj;
+# instance fields
+.field public final a:J
 
-.field public static final B:Ldhj;
+.field public b:Z
 
-.field public static final C:Ldhj;
+.field public c:Lj$/time/Instant;
 
-.field public static final D:Ldhj;
+.field final synthetic d:Ldhs;
 
-.field public static final E:Ldhj;
+.field private final e:Lhsq;
 
-.field public static final F:Ldhj;
+.field private final f:Lj$/time/Instant;
 
-.field public static final G:Ldhj;
+.field private final g:Lhsr;
 
-.field public static final H:Ldhj;
+.field private final h:Ljava/util/concurrent/atomic/AtomicBoolean;
 
-.field public static final I:Ldhj;
+.field private i:Lj$/time/Instant;
 
-.field public static final J:Ldhj;
+.field private j:I
 
-.field public static final K:Ldhj;
+.field private k:Llji;
 
-.field public static final L:Ldhj;
-
-.field public static final M:Ldhj;
-
-.field public static final N:Ldhj;
-
-.field public static final O:Ldhj;
-
-.field public static final P:Ldhj;
-
-.field public static final Q:Ldhj;
-
-.field public static final R:Ldhj;
-
-.field public static final RR:Ldhj;
-
-.field public static final S:Ldhj;
-
-.field public static final T:Ldhj;
-
-.field public static final U:Ldhj;
-
-.field public static final V:Ldhj;
-
-.field public static final W:Ldhj;
-
-.field public static final X:Ldhj;
-
-.field public static final Y:Ldhj;
-
-.field public static final Z:Ldhj;
-
-.field public static final a:Ldhk;
-
-.field public static final aA:Ldhj;
-
-.field public static final aB:Ldhj;
-
-.field public static final aC:Ldhj;
-
-.field public static final aD:Ldhj;
-
-.field public static final aa:Ldhj;
-
-.field public static final ab:Ldhj;
-
-.field public static final ac:Ldhj;
-
-.field public static final ad:Ldhj;
-
-.field public static final ae:Ldhj;
-
-.field public static final af:Ldhj;
-
-.field public static final ag:Ldhj;
-
-.field public static final ah:Ldhj;
-
-.field public static final ai:Ldhj;
-
-.field public static final aj:Ldhj;
-
-.field public static final ak:Ldhj;
-
-.field public static final al:Ldhj;
-
-.field public static final am:Ldhj;
-
-.field public static final an:Ldhj;
-
-.field public static final ao:Ldhj;
-
-.field public static final ap:Ldhj;
-
-.field public static final aq:Ldhj;
-
-.field public static final ar:Ldhj;
-
-.field public static final as:Ldhj;
-
-.field public static final at:Ldhj;
-
-.field public static final au:Ldhj;
-
-.field public static final av:Ldhj;
-
-.field public static final aw:Ldhj;
-
-.field public static final ax:Ldhj;
-
-.field public static final ay:Ldhj;
-
-.field public static final az:Ldhj;
-
-.field public static final b:Ldhk;
-
-.field public static final c:Ldhk;
-
-.field public static final d:Ldhk;
-
-.field public static final e:Ldhk;
-
-.field public static final f:Ldhk;
-
-.field public static final g:Ldhk;
-
-.field public static final h:Ldhk;
-
-.field public static final i:Ldhk;
-
-.field public static final j:Ldhk;
-
-.field public static final k:Ldhk;
-
-.field public static final l:Ldhk;
-
-.field public static final m:Ldhk;
-
-.field public static final n:Ldhk;
-
-.field public static final o:Ldhk;
-
-.field public static final p:Ldhk;
-
-.field public static final q:Ldhk;
-
-.field public static final r:Ldhk;
-
-.field public static final s:Ldhk;
-
-.field public static final t:Ldhk;
-
-.field public static final u:Ldhk;
-
-.field public static final v:Ldhk;
-
-.field public static final w:Ldhk;
-
-.field public static final x:Ldhj;
-
-.field public static final y:Ldhj;
-
-.field public static final z:Ldhj;
+.field private l:Lljk;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 5
+.method public constructor <init>(Ldhs;Lhsq;Lj$/time/Instant;)V
+    .locals 2
 
-    new-instance v0, Lnoc;
+    iput-object p1, p0, Ldhq;->d:Ldhs;
 
-    invoke-direct {v0}, Lnoc;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const-string v1, "camera.3a.debug_meta"
+    new-instance p1, Ljava/util/concurrent/atomic/AtomicBoolean;
 
-    iput-object v1, v0, Lnoc;->b:Ljava/lang/Object;
+    const/4 v0, 0x0
 
-    sget-object v1, Ldhp;->a:Ldhp;
+    invoke-direct {p1, v0}, Ljava/util/concurrent/atomic/AtomicBoolean;-><init>(Z)V
 
-    invoke-virtual {v1}, Ldhp;->ordinal()I
+    iput-object p1, p0, Ldhq;->h:Ljava/util/concurrent/atomic/AtomicBoolean;
+
+    iput-boolean v0, p0, Ldhq;->b:Z
+
+    sget-object p1, Lj$/time/Instant;->MIN:Lj$/time/Instant;
+
+    iput-object p1, p0, Ldhq;->i:Lj$/time/Instant;
+
+    iput v0, p0, Ldhq;->j:I
+
+    sget-object p1, Llji;->b:Llji;
+
+    iput-object p1, p0, Ldhq;->k:Llji;
+
+    sget-object p1, Lljk;->a:Lljk;
+
+    iput-object p1, p0, Ldhq;->l:Lljk;
+
+    iget-wide v0, p2, Lhsq;->b:J
+
+    iput-wide v0, p0, Ldhq;->a:J
+
+    iput-object p2, p0, Ldhq;->e:Lhsq;
+
+    iput-object p3, p0, Ldhq;->f:Lj$/time/Instant;
+
+    iget-object p1, p2, Lhsq;->d:Lhsr;
+
+    iput-object p1, p0, Ldhq;->g:Lhsr;
+
+    iput-object p3, p0, Ldhq;->c:Lj$/time/Instant;
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public a()V
+    .locals 4
+
+    iget-object v0, p0, Ldhq;->d:Ldhs;
+
+    iget-object v0, v0, Ldhs;->f:Lj$/time/Clock;
+
+    invoke-virtual {v0}, Lj$/time/Clock;->instant()Lj$/time/Instant;
+
+    move-result-object v0
+
+    const-string v1, "CANCELED"
+
+    invoke-virtual {p0, v0, v1}, Ldhq;->d(Lj$/time/Instant;Ljava/lang/String;)V
+
+    iget-object v1, p0, Ldhq;->h:Ljava/util/concurrent/atomic/AtomicBoolean;
+
+    const/4 v2, 0x0
+
+    const/4 v3, 0x1
+
+    invoke-virtual {v1, v2, v3}, Ljava/util/concurrent/atomic/AtomicBoolean;->compareAndSet(ZZ)Z
 
     move-result v1
 
-    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    if-eqz v1, :cond_0
 
-    move-result-object v1
+    iget-object v1, p0, Ldhq;->d:Ldhs;
 
-    sget-object v2, Ldhp;->b:Ldhp;
+    iget-object v1, v1, Ldhs;->h:Ldia;
 
-    invoke-virtual {v2}, Ldhp;->ordinal()I
+    iget-wide v2, p0, Ldhq;->a:J
 
-    move-result v2
+    invoke-interface {v1, v2, v3, v0}, Ldia;->b(JLj$/time/Instant;)V
 
-    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    return-void
 
-    move-result-object v2
+    :cond_0
+    const-string v0, "canceled"
 
-    sget-object v3, Ldhp;->c:Ldhp;
+    invoke-virtual {p0, v0}, Ldhq;->e(Ljava/lang/String;)V
 
-    invoke-virtual {v3}, Ldhp;->ordinal()I
+    return-void
+.end method
 
-    move-result v3
+.method public b()V
+    .locals 4
 
-    invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    iget-object v0, p0, Ldhq;->d:Ldhs;
 
-    move-result-object v3
+    iget-object v0, v0, Ldhs;->f:Lj$/time/Clock;
 
-    sget-object v4, Ldhp;->d:Ldhp;
-
-    invoke-virtual {v4}, Ldhp;->ordinal()I
-
-    move-result v4
-
-    invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v4
-
-    invoke-static {v1, v2, v3, v4}, Lmwn;->K(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Lmwn;
-
-    move-result-object v1
-
-    iput-object v1, v0, Lnoc;->a:Ljava/lang/Object;
-
-    invoke-virtual {v0}, Lnoc;->l()Ldhk;
+    invoke-virtual {v0}, Lj$/time/Clock;->instant()Lj$/time/Instant;
 
     move-result-object v0
 
-    sput-object v0, Ldhq;->a:Ldhk;
+    const-string v1, "DELETED"
 
-    new-instance v0, Lnoc;
+    invoke-virtual {p0, v0, v1}, Ldhq;->d(Lj$/time/Instant;Ljava/lang/String;)V
 
-    invoke-direct {v0}, Lnoc;-><init>()V
+    iget-object v1, p0, Ldhq;->h:Ljava/util/concurrent/atomic/AtomicBoolean;
 
-    const-string v1, "camera.3a.debug_meta_all"
+    const/4 v2, 0x0
 
-    iput-object v1, v0, Lnoc;->b:Ljava/lang/Object;
+    const/4 v3, 0x1
 
-    new-instance v0, Lnoc;
+    invoke-virtual {v1, v2, v3}, Ljava/util/concurrent/atomic/AtomicBoolean;->compareAndSet(ZZ)Z
 
-    invoke-direct {v0}, Lnoc;-><init>()V
+    move-result v1
 
-    const-string v1, "camera.cuttle.motion_ef"
+    if-eqz v1, :cond_0
 
-    iput-object v1, v0, Lnoc;->b:Ljava/lang/Object;
+    iget-object v1, p0, Ldhq;->d:Ldhs;
 
-    invoke-virtual {v0}, Lnoc;->q()Ldhj;
+    iget-object v1, v1, Ldhs;->h:Ldia;
 
-    move-result-object v0
+    iget-wide v2, p0, Ldhq;->a:J
 
-    sput-object v0, Ldhq;->x:Ldhj;
+    invoke-interface {v1, v2, v3, v0}, Ldia;->c(JLj$/time/Instant;)V
 
-    new-instance v0, Lnoc;
+    return-void
 
-    invoke-direct {v0}, Lnoc;-><init>()V
+    :cond_0
+    const-string v0, "deleted"
 
-    const-string v1, "camera.cuttle.motion_metadata"
+    invoke-virtual {p0, v0}, Ldhq;->e(Ljava/lang/String;)V
 
-    iput-object v1, v0, Lnoc;->b:Ljava/lang/Object;
+    return-void
+.end method
 
-    invoke-virtual {v0}, Lnoc;->t()Ldhj;
+.method public c(Ljava/lang/String;)V
+    .locals 1
 
-    move-result-object v0
+    iget-object v0, p0, Ldhq;->d:Ldhs;
 
-    sput-object v0, Ldhq;->y:Ldhj;
+    iget-object v0, v0, Ldhs;->f:Lj$/time/Clock;
 
-    new-instance v0, Lnoc;
-
-    invoke-direct {v0}, Lnoc;-><init>()V
-
-    const-string v1, "camera.cuttle.extended"
-
-    iput-object v1, v0, Lnoc;->b:Ljava/lang/Object;
-
-    invoke-virtual {v0}, Lnoc;->t()Ldhj;
+    invoke-virtual {v0}, Lj$/time/Clock;->instant()Lj$/time/Instant;
 
     move-result-object v0
 
-    sput-object v0, Ldhq;->z:Ldhj;
+    invoke-virtual {p0, v0, p1}, Ldhq;->d(Lj$/time/Instant;Ljava/lang/String;)V
 
-    new-instance v0, Lnoc;
+    return-void
+.end method
 
-    invoke-direct {v0}, Lnoc;-><init>()V
+.method public d(Lj$/time/Instant;Ljava/lang/String;)V
+    .locals 3
 
-    const-string v1, "camera.force_cuttle.extended"
+    iput-object p1, p0, Ldhq;->c:Lj$/time/Instant;
 
-    iput-object v1, v0, Lnoc;->b:Ljava/lang/Object;
+    iget-object v0, p0, Ldhq;->h:Ljava/util/concurrent/atomic/AtomicBoolean;
 
-    new-instance v0, Lnoc;
+    invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicBoolean;->get()Z
 
-    invoke-direct {v0}, Lnoc;-><init>()V
+    move-result v0
 
-    const-string v1, "camera.cuttle.extended.fz.RESTART"
+    if-nez v0, :cond_0
 
-    iput-object v1, v0, Lnoc;->b:Ljava/lang/Object;
+    iget-object v0, p0, Ldhq;->d:Ldhs;
 
-    new-instance v0, Lnoc;
+    iget-object v0, v0, Ldhs;->h:Ldia;
 
-    invoke-direct {v0}, Lnoc;-><init>()V
+    iget-wide v1, p0, Ldhq;->a:J
 
-    const-string v1, "camera.cuttle.extended.uwz.RESTART"
+    invoke-interface {v0, v1, v2, p1, p2}, Ldia;->d(JLj$/time/Instant;Ljava/lang/String;)V
 
-    iput-object v1, v0, Lnoc;->b:Ljava/lang/Object;
+    return-void
 
-    new-instance v0, Lnoc;
+    :cond_0
+    invoke-virtual {p0, p2}, Ldhq;->f(Ljava/lang/String;)V
 
-    invoke-direct {v0}, Lnoc;-><init>()V
+    return-void
+.end method
 
-    const-string v1, "camera.cuttle.sky"
+.method protected final e(Ljava/lang/String;)V
+    .locals 4
 
-    iput-object v1, v0, Lnoc;->b:Ljava/lang/Object;
+    iget-object v0, p0, Ldhq;->d:Ldhs;
 
-    invoke-virtual {v0}, Lnoc;->t()Ldhj;
+    iget-object v0, v0, Ldhs;->d:Llis;
 
-    move-result-object v0
+    const/4 v1, 0x3
 
-    sput-object v0, Ldhq;->A:Ldhj;
+    new-array v1, v1, [Ljava/lang/Object;
 
-    new-instance v0, Lnoc;
+    const/4 v2, 0x0
 
-    invoke-direct {v0}, Lnoc;-><init>()V
+    aput-object p1, v1, v2
 
-    const-string v1, "camera.cuttle.max_exp_ms"
+    iget-wide v2, p0, Ldhq;->a:J
 
-    iput-object v1, v0, Lnoc;->b:Ljava/lang/Object;
+    invoke-static {v2, v3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
-    invoke-virtual {v0}, Lnoc;->s()Ldhj;
-
-    move-result-object v0
-
-    sput-object v0, Ldhq;->B:Ldhj;
-
-    new-instance v0, Lnoc;
-
-    invoke-direct {v0}, Lnoc;-><init>()V
-
-    const-string v1, "camera.cuttle.rerun_fd"
-
-    iput-object v1, v0, Lnoc;->b:Ljava/lang/Object;
-
-    invoke-virtual {v0}, Lnoc;->t()Ldhj;
-
-    move-result-object v0
-
-    sput-object v0, Ldhq;->C:Ldhj;
-
-    new-instance v0, Lnoc;
-
-    invoke-direct {v0}, Lnoc;-><init>()V
-
-    const-string v1, "camera.3a_conv"
-
-    iput-object v1, v0, Lnoc;->b:Ljava/lang/Object;
-
-    invoke-virtual {v0}, Lnoc;->t()Ldhj;
-
-    move-result-object v0
-
-    sput-object v0, Ldhq;->D:Ldhj;
-
-    new-instance v0, Lnoc;
-
-    invoke-direct {v0}, Lnoc;-><init>()V
-
-    const-string v1, "camera.extburst.RESTART"
-
-    iput-object v1, v0, Lnoc;->b:Ljava/lang/Object;
-
-    new-instance v0, Lnoc;
-
-    invoke-direct {v0}, Lnoc;-><init>()V
-
-    const-string v1, "gcam.hdrplus_wb_source"
-
-    iput-object v1, v0, Lnoc;->b:Ljava/lang/Object;
-
-    const/4 v1, 0x0
-
-    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v1
+    move-result-object p1
 
     const/4 v2, 0x1
 
-    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    aput-object p1, v1, v2
+
+    iget-object p1, p0, Ldhq;->e:Lhsq;
+
+    const/4 v2, 0x2
+
+    aput-object p1, v1, v2
+
+    const-string p1, "%s() on shot %d (%s), but it was already finished."
+
+    invoke-static {p1, v1}, Lmip;->bp(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-interface {v0, p1}, Llis;->h(Ljava/lang/String;)V
+
+    return-void
+.end method
+
+.method protected final f(Ljava/lang/String;)V
+    .locals 4
+
+    iget-object v0, p0, Ldhq;->d:Ldhs;
+
+    iget-object v0, v0, Ldhs;->d:Llis;
+
+    const/4 v1, 0x3
+
+    new-array v1, v1, [Ljava/lang/Object;
+
+    iget-wide v2, p0, Ldhq;->a:J
+
+    invoke-static {v2, v3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     move-result-object v2
 
-    const/4 v3, 0x2
+    const/4 v3, 0x0
 
-    invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    aput-object v2, v1, v3
+
+    iget-object v2, p0, Ldhq;->e:Lhsq;
+
+    const/4 v3, 0x1
+
+    aput-object v2, v1, v3
+
+    const/4 v2, 0x2
+
+    aput-object p1, v1, v2
+
+    const-string p1, "On shot %d (%s) tried to log \'%s\', but shot was already finished."
+
+    invoke-static {p1, v1}, Lmip;->bp(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-interface {v0, p1}, Llis;->g(Ljava/lang/String;)V
+
+    return-void
+.end method
+
+.method public g(Ljava/lang/Integer;)V
+    .locals 5
+
+    iget v0, p0, Ldhq;->j:I
+
+    add-int/lit8 v0, v0, 0x1
+
+    iput v0, p0, Ldhq;->j:I
+
+    iget-object v0, p0, Ldhq;->d:Ldhs;
+
+    iget-object v0, v0, Ldhs;->f:Lj$/time/Clock;
+
+    invoke-virtual {v0}, Lj$/time/Clock;->instant()Lj$/time/Instant;
+
+    move-result-object v0
+
+    iput-object v0, p0, Ldhq;->c:Lj$/time/Instant;
+
+    if-eqz p1, :cond_0
+
+    iget-object v1, p0, Ldhq;->l:Lljk;
+
+    invoke-virtual {p1}, Ljava/lang/Integer;->intValue()I
+
+    move-result p1
+
+    invoke-interface {v1, p1}, Lljk;->c(I)V
+
+    :cond_0
+    iget-object p1, p0, Ldhq;->i:Lj$/time/Instant;
+
+    invoke-virtual {v0, p1}, Lj$/time/Instant;->isAfter(Lj$/time/Instant;)Z
+
+    move-result p1
+
+    if-eqz p1, :cond_2
+
+    iget-object p1, p0, Ldhq;->d:Ldhs;
+
+    iget-object p1, p1, Ldhs;->d:Llis;
+
+    iget-object v1, p0, Ldhq;->e:Lhsq;
+
+    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v1
+
+    iget v2, p0, Ldhq;->j:I
+
+    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v3
 
-    invoke-static {v1, v2, v3}, Lmwn;->J(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Lmwn;
+    invoke-virtual {v3}, Ljava/lang/String;->length()I
 
-    move-result-object v2
+    move-result v3
 
-    iput-object v2, v0, Lnoc;->a:Ljava/lang/Object;
+    new-instance v4, Ljava/lang/StringBuilder;
 
-    invoke-virtual {v0}, Lnoc;->l()Ldhk;
+    add-int/lit8 v3, v3, 0x1d
 
-    move-result-object v0
+    invoke-direct {v4, v3}, Ljava/lang/StringBuilder;-><init>(I)V
 
-    sput-object v0, Ldhq;->b:Ldhk;
+    const-string v3, "onShotProgress "
 
-    new-instance v0, Lnoc;
+    invoke-virtual {v4, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-direct {v0}, Lnoc;-><init>()V
+    invoke-virtual {v4, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string v2, "gcam.psaf_frame_count"
+    const-string v1, " ("
 
-    iput-object v2, v0, Lnoc;->b:Ljava/lang/Object;
+    invoke-virtual {v4, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const/16 v2, 0xa
+    invoke-virtual {v4, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    const-string v1, ")"
 
-    move-result-object v2
+    invoke-virtual {v4, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-static {v1, v2}, Lmym;->f(Ljava/lang/Comparable;Ljava/lang/Comparable;)Lmym;
-
-    move-result-object v1
-
-    sget-object v2, Lmug;->a:Lmug;
-
-    invoke-static {v1, v2}, Lmtx;->a(Lmym;Lmuh;)Lmtx;
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v1
 
-    iput-object v1, v0, Lnoc;->a:Ljava/lang/Object;
+    invoke-interface {p1, v1}, Llis;->b(Ljava/lang/String;)V
 
-    invoke-virtual {v0}, Lnoc;->l()Ldhk;
+    sget-object p1, Ldhs;->b:Lj$/time/Duration;
 
-    move-result-object v0
-
-    sput-object v0, Ldhq;->c:Ldhk;
-
-    new-instance v0, Lnoc;
-
-    invoke-direct {v0}, Lnoc;-><init>()V
-
-    const-string v1, "gcam.psaf_exp_time_ms"
-
-    iput-object v1, v0, Lnoc;->b:Ljava/lang/Object;
-
-    invoke-virtual {v0}, Lnoc;->s()Ldhj;
-
-    move-result-object v0
-
-    sput-object v0, Ldhq;->E:Ldhj;
-
-    new-instance v0, Lnoc;
-
-    invoke-direct {v0}, Lnoc;-><init>()V
-
-    const-string v1, "gcam.psaf_sb_thresh"
-
-    iput-object v1, v0, Lnoc;->b:Ljava/lang/Object;
-
-    invoke-virtual {v0}, Lnoc;->s()Ldhj;
-
-    move-result-object v0
-
-    sput-object v0, Ldhq;->F:Ldhj;
-
-    new-instance v0, Lnoc;
-
-    invoke-direct {v0}, Lnoc;-><init>()V
-
-    const-string v1, "gcam.zsl_buffer_size"
-
-    iput-object v1, v0, Lnoc;->b:Ljava/lang/Object;
-
-    invoke-virtual {v0}, Lnoc;->l()Ldhk;
-
-    move-result-object v0
-
-    sput-object v0, Ldhq;->d:Ldhk;
-
-    new-instance v0, Lnoc;
-
-    invoke-direct {v0}, Lnoc;-><init>()V
-
-    const-string v1, "camera.hdr_hvx.RESTART"
-
-    iput-object v1, v0, Lnoc;->b:Ljava/lang/Object;
-
-    invoke-virtual {v0}, Lnoc;->q()Ldhj;
-
-    move-result-object v0
-
-    sput-object v0, Ldhq;->G:Ldhj;
-
-    new-instance v0, Lnoc;
-
-    invoke-direct {v0}, Lnoc;-><init>()V
-
-    const-string v1, "camera.hdr_postview_hvx.RESTART"
-
-    iput-object v1, v0, Lnoc;->b:Ljava/lang/Object;
-
-    new-instance v0, Lnoc;
-
-    invoke-direct {v0}, Lnoc;-><init>()V
-
-    const-string v1, "HdrPlus"
-
-    iput-object v1, v0, Lnoc;->c:Ljava/lang/Object;
-
-    const-string v2, "camera_hdr_gxp_restart_remote"
-
-    iput-object v2, v0, Lnoc;->b:Ljava/lang/Object;
-
-    invoke-virtual {v0}, Lnoc;->t()Ldhj;
-
-    move-result-object v0
-
-    sput-object v0, Ldhq;->H:Ldhj;
-
-    new-instance v0, Lnoc;
-
-    invoke-direct {v0}, Lnoc;-><init>()V
-
-    const-string v2, "camera.hdr_gxp.RESTART"
-
-    iput-object v2, v0, Lnoc;->b:Ljava/lang/Object;
-
-    invoke-virtual {v0}, Lnoc;->t()Ldhj;
-
-    move-result-object v0
-
-    sput-object v0, Ldhq;->I:Ldhj;
-
-    new-instance v0, Lnoc;
-
-    invoke-direct {v0}, Lnoc;-><init>()V
-
-    const-string v2, "gcam.max_burst_size"
-
-    iput-object v2, v0, Lnoc;->b:Ljava/lang/Object;
-
-    invoke-virtual {v0}, Lnoc;->l()Ldhk;
-
-    move-result-object v0
-
-    sput-object v0, Ldhq;->e:Ldhk;
-
-    new-instance v0, Lnoc;
-
-    invoke-direct {v0}, Lnoc;-><init>()V
-
-    const-string v2, "camera.cuttle.max_burst_size"
-
-    iput-object v2, v0, Lnoc;->b:Ljava/lang/Object;
-
-    invoke-virtual {v0}, Lnoc;->l()Ldhk;
-
-    move-result-object v0
-
-    sput-object v0, Ldhq;->f:Ldhk;
-
-    new-instance v0, Lnoc;
-
-    invoke-direct {v0}, Lnoc;-><init>()V
-
-    const-string v2, "camera.p3_available"
-
-    iput-object v2, v0, Lnoc;->b:Ljava/lang/Object;
-
-    invoke-virtual {v0}, Lnoc;->q()Ldhj;
-
-    move-result-object v0
-
-    sput-object v0, Ldhq;->J:Ldhj;
-
-    new-instance v0, Lnoc;
-
-    invoke-direct {v0}, Lnoc;-><init>()V
-
-    const-string v2, "camera.p3_force"
-
-    iput-object v2, v0, Lnoc;->b:Ljava/lang/Object;
-
-    new-instance v0, Lnoc;
-
-    invoke-direct {v0}, Lnoc;-><init>()V
-
-    const-string v2, "camera.shasta_psl"
-
-    iput-object v2, v0, Lnoc;->b:Ljava/lang/Object;
-
-    invoke-virtual {v0}, Lnoc;->t()Ldhj;
-
-    move-result-object v0
-
-    sput-object v0, Ldhq;->K:Ldhj;
-
-    new-instance v0, Lnoc;
-
-    invoke-direct {v0}, Lnoc;-><init>()V
-
-    const-string v2, "camera.shasta_zsl"
-
-    iput-object v2, v0, Lnoc;->b:Ljava/lang/Object;
-
-    invoke-virtual {v0}, Lnoc;->t()Ldhj;
-
-    move-result-object v0
-
-    sput-object v0, Ldhq;->L:Ldhj;
-
-    new-instance v0, Lnoc;
-
-    invoke-direct {v0}, Lnoc;-><init>()V
-
-    const-string v2, "camera.shasta.frame_retention_ms"
-
-    iput-object v2, v0, Lnoc;->b:Ljava/lang/Object;
-
-    invoke-virtual {v0}, Lnoc;->l()Ldhk;
-
-    move-result-object v0
-
-    sput-object v0, Ldhq;->g:Ldhk;
-
-    new-instance v0, Lnoc;
-
-    invoke-direct {v0}, Lnoc;-><init>()V
-
-    const-string v2, "camera.shasta.force"
-
-    iput-object v2, v0, Lnoc;->b:Ljava/lang/Object;
-
-    new-instance v0, Lnoc;
-
-    invoke-direct {v0}, Lnoc;-><init>()V
-
-    const-string v2, "camera.shasta.factor"
-
-    iput-object v2, v0, Lnoc;->b:Ljava/lang/Object;
-
-    invoke-virtual {v0}, Lnoc;->s()Ldhj;
-
-    move-result-object v0
-
-    sput-object v0, Ldhq;->M:Ldhj;
-
-    new-instance v0, Lnoc;
-
-    invoke-direct {v0}, Lnoc;-><init>()V
-
-    const-string v2, "camera.shasta_zsl.burst_size"
-
-    iput-object v2, v0, Lnoc;->b:Ljava/lang/Object;
-
-    invoke-virtual {v0}, Lnoc;->l()Ldhk;
-
-    move-result-object v0
-
-    sput-object v0, Ldhq;->h:Ldhk;
-
-    new-instance v0, Lnoc;
-
-    invoke-direct {v0}, Lnoc;-><init>()V
-
-    const-string v2, "camera.shasta_zsl.max_exptime_ms"
-
-    iput-object v2, v0, Lnoc;->b:Ljava/lang/Object;
-
-    invoke-virtual {v0}, Lnoc;->s()Ldhj;
-
-    move-result-object v0
-
-    sput-object v0, Ldhq;->N:Ldhj;
-
-    new-instance v0, Lnoc;
-
-    invoke-direct {v0}, Lnoc;-><init>()V
-
-    const-string v2, "camera.lancet_enabled"
-
-    iput-object v2, v0, Lnoc;->b:Ljava/lang/Object;
-
-    invoke-virtual {v0}, Lnoc;->t()Ldhj;
-
-    move-result-object v0
-
-    sput-object v0, Ldhq;->O:Ldhj;
-
-    new-instance v0, Lnoc;
-
-    invoke-direct {v0}, Lnoc;-><init>()V
-
-    const-string v2, "camera.lancet_model_asset_name"
-
-    iput-object v2, v0, Lnoc;->b:Ljava/lang/Object;
-
-    invoke-virtual {v0}, Lnoc;->u()Ldhj;
-
-    move-result-object v0
-
-    sput-object v0, Ldhq;->P:Ldhj;
-
-    new-instance v0, Lnoc;
-
-    invoke-direct {v0}, Lnoc;-><init>()V
-
-    const-string v2, "SABRE_ALLOWED"
-
-    iput-object v2, v0, Lnoc;->b:Ljava/lang/Object;
-
-    invoke-virtual {v0}, Lnoc;->t()Ldhj;
-
-    move-result-object v0
-
-    sput-object v0, Ldhq;->Q:Ldhj;
-
-    new-instance v0, Lnoc;
-
-    invoke-direct {v0}, Lnoc;-><init>()V
-
-    const-string v2, "camera.sabre_force"
-
-    iput-object v2, v0, Lnoc;->b:Ljava/lang/Object;
-
-    new-instance v0, Lnoc;
-
-    invoke-direct {v0}, Lnoc;-><init>()V
-
-    const-string v2, "camera.spatial_rgb_enabled"
-
-    iput-object v2, v0, Lnoc;->b:Ljava/lang/Object;
-
-    invoke-virtual {v0}, Lnoc;->t()Ldhj;
-
-    move-result-object v0
-
-    sput-object v0, Ldhq;->R:Ldhj;
-
-    new-instance v0, Lnoc;
-
-    invoke-direct {v0}, Lnoc;-><init>()V
-
-    const-string v2, "camera.spatial_rgb_force"
-
-    iput-object v2, v0, Lnoc;->b:Ljava/lang/Object;
-
-    invoke-virtual {v0}, Lnoc;->t()Ldhj;
-
-    move-result-object v0
-
-    sput-object v0, Ldhq;->RR:Ldhj;
-
-    new-instance v0, Lnoc;
-
-    invoke-direct {v0}, Lnoc;-><init>()V
-
-    const-string v2, "camera.wiener_force"
-
-    iput-object v2, v0, Lnoc;->b:Ljava/lang/Object;
-
-    invoke-virtual {v0}, Lnoc;->t()Ldhj;
-
-    move-result-object v0
-
-    sput-object v0, Ldhq;->S:Ldhj;
-
-    new-instance v0, Lnoc;
-
-    invoke-direct {v0}, Lnoc;-><init>()V
-
-    const-string v2, "camera.sabre_unzoomed_tele"
-
-    iput-object v2, v0, Lnoc;->b:Ljava/lang/Object;
-
-    invoke-virtual {v0}, Lnoc;->t()Ldhj;
-
-    move-result-object v0
-
-    sput-object v0, Ldhq;->T:Ldhj;
-
-    new-instance v0, Lnoc;
-
-    invoke-direct {v0}, Lnoc;-><init>()V
-
-    const-string v2, "camera.slowraw"
-
-    iput-object v2, v0, Lnoc;->b:Ljava/lang/Object;
-
-    new-instance v0, Lnoc;
-
-    invoke-direct {v0}, Lnoc;-><init>()V
-
-    const-string v2, "camera.estrella_login_enabled"
-
-    iput-object v2, v0, Lnoc;->b:Ljava/lang/Object;
-
-    invoke-virtual {v0}, Lnoc;->q()Ldhj;
-
-    move-result-object v0
-
-    sput-object v0, Ldhq;->U:Ldhj;
-
-    new-instance v0, Lnoc;
-
-    invoke-direct {v0}, Lnoc;-><init>()V
-
-    const-string v2, "camera.catfish_enabled"
-
-    iput-object v2, v0, Lnoc;->b:Ljava/lang/Object;
-
-    invoke-virtual {v0}, Lnoc;->t()Ldhj;
-
-    move-result-object v0
-
-    sput-object v0, Ldhq;->V:Ldhj;
-
-    new-instance v0, Lnoc;
-
-    invoke-direct {v0}, Lnoc;-><init>()V
-
-    const-string v2, "camera.catfish.debug"
-
-    iput-object v2, v0, Lnoc;->b:Ljava/lang/Object;
-
-    new-instance v0, Lnoc;
-
-    invoke-direct {v0}, Lnoc;-><init>()V
-
-    const-string v2, "camera.catfish.max_frames"
-
-    iput-object v2, v0, Lnoc;->b:Ljava/lang/Object;
-
-    invoke-virtual {v0}, Lnoc;->l()Ldhk;
-
-    move-result-object v0
-
-    sput-object v0, Ldhq;->i:Ldhk;
-
-    new-instance v0, Lnoc;
-
-    invoke-direct {v0}, Lnoc;-><init>()V
-
-    const-string v2, "camera.catfish_flash_anim_capture_threshold_ms"
-
-    iput-object v2, v0, Lnoc;->b:Ljava/lang/Object;
-
-    invoke-virtual {v0}, Lnoc;->l()Ldhk;
-
-    move-result-object v0
-
-    sput-object v0, Ldhq;->j:Ldhk;
-
-    new-instance v0, Lnoc;
-
-    invoke-direct {v0}, Lnoc;-><init>()V
-
-    const-string v2, "camera.flash_animation_experiment"
-
-    iput-object v2, v0, Lnoc;->b:Ljava/lang/Object;
-
-    new-instance v0, Lnoc;
-
-    invoke-direct {v0}, Lnoc;-><init>()V
-
-    const-string v2, "camera.flash_anim_fade_in_ms"
-
-    iput-object v2, v0, Lnoc;->b:Ljava/lang/Object;
-
-    invoke-virtual {v0}, Lnoc;->l()Ldhk;
-
-    move-result-object v0
-
-    sput-object v0, Ldhq;->k:Ldhk;
-
-    new-instance v0, Lnoc;
-
-    invoke-direct {v0}, Lnoc;-><init>()V
-
-    const-string v2, "camera.flash_anim_fade_out_ms"
-
-    iput-object v2, v0, Lnoc;->b:Ljava/lang/Object;
-
-    invoke-virtual {v0}, Lnoc;->l()Ldhk;
-
-    move-result-object v0
-
-    sput-object v0, Ldhq;->l:Ldhk;
-
-    new-instance v0, Lnoc;
-
-    invoke-direct {v0}, Lnoc;-><init>()V
-
-    const-string v2, "camera.flash_anim_max_alpha"
-
-    iput-object v2, v0, Lnoc;->b:Ljava/lang/Object;
-
-    invoke-virtual {v0}, Lnoc;->s()Ldhj;
-
-    move-result-object v0
-
-    sput-object v0, Ldhq;->W:Ldhj;
-
-    new-instance v0, Lnoc;
-
-    invoke-direct {v0}, Lnoc;-><init>()V
-
-    const-string v2, "camera.force_low_light_fps"
-
-    iput-object v2, v0, Lnoc;->b:Ljava/lang/Object;
-
-    new-instance v0, Lnoc;
-
-    invoke-direct {v0}, Lnoc;-><init>()V
-
-    const-string v2, "gcam.live_tb"
-
-    iput-object v2, v0, Lnoc;->b:Ljava/lang/Object;
-
-    invoke-virtual {v0}, Lnoc;->t()Ldhj;
-
-    move-result-object v0
-
-    sput-object v0, Ldhq;->X:Ldhj;
-
-    new-instance v0, Lnoc;
-
-    invoke-direct {v0}, Lnoc;-><init>()V
-
-    const-string v2, "gcam.live_tb.forcedtbfactor"
-
-    iput-object v2, v0, Lnoc;->b:Ljava/lang/Object;
-
-    invoke-virtual {v0}, Lnoc;->l()Ldhk;
-
-    move-result-object v0
-
-    sput-object v0, Ldhq;->m:Ldhk;
-
-    new-instance v0, Lnoc;
-
-    invoke-direct {v0}, Lnoc;-><init>()V
-
-    const-string v2, "hdrnet_enabled"
-
-    iput-object v2, v0, Lnoc;->b:Ljava/lang/Object;
-
-    invoke-virtual {v0}, Lnoc;->t()Ldhj;
+    invoke-virtual {v0, p1}, Lj$/time/Instant;->plus(Lj$/time/temporal/TemporalAmount;)Lj$/time/Instant;
 
-    move-result-object v0
-
-    sput-object v0, Ldhq;->Y:Ldhj;
-
-    new-instance v0, Lnoc;
-
-    invoke-direct {v0}, Lnoc;-><init>()V
-
-    const-string v2, "camera.hdrnet.height"
-
-    iput-object v2, v0, Lnoc;->b:Ljava/lang/Object;
-
-    invoke-virtual {v0}, Lnoc;->l()Ldhk;
-
-    move-result-object v0
-
-    sput-object v0, Ldhq;->n:Ldhk;
-
-    new-instance v0, Lnoc;
-
-    invoke-direct {v0}, Lnoc;-><init>()V
-
-    const-string v2, "camera.hdrnet.hi-res"
-
-    iput-object v2, v0, Lnoc;->b:Ljava/lang/Object;
-
-    invoke-virtual {v0}, Lnoc;->t()Ldhj;
-
-    move-result-object v0
-
-    sput-object v0, Ldhq;->Z:Ldhj;
-
-    new-instance v0, Lnoc;
-
-    invoke-direct {v0}, Lnoc;-><init>()V
-
-    const-string v2, "camera.nonzsl_extended_base_frame_selection"
-
-    iput-object v2, v0, Lnoc;->b:Ljava/lang/Object;
-
-    invoke-virtual {v0}, Lnoc;->q()Ldhj;
-
-    move-result-object v0
-
-    sput-object v0, Ldhq;->aa:Ldhj;
-
-    new-instance v0, Lnoc;
-
-    invoke-direct {v0}, Lnoc;-><init>()V
-
-    const-string v2, "gcam.vf.verbose"
-
-    iput-object v2, v0, Lnoc;->b:Ljava/lang/Object;
-
-    new-instance v0, Lnoc;
-
-    invoke-direct {v0}, Lnoc;-><init>()V
-
-    const-string v2, "gcam.sabre_burst_size"
-
-    iput-object v2, v0, Lnoc;->b:Ljava/lang/Object;
-
-    invoke-virtual {v0}, Lnoc;->l()Ldhk;
-
-    move-result-object v0
-
-    sput-object v0, Ldhq;->o:Ldhk;
-
-    new-instance v0, Lnoc;
-
-    invoke-direct {v0}, Lnoc;-><init>()V
-
-    const-string v2, "camera.zsl.extended_buffer_factor"
-
-    iput-object v2, v0, Lnoc;->b:Ljava/lang/Object;
-
-    invoke-virtual {v0}, Lnoc;->s()Ldhj;
-
-    move-result-object v0
-
-    sput-object v0, Ldhq;->ab:Ldhj;
-
-    new-instance v0, Lnoc;
-
-    invoke-direct {v0}, Lnoc;-><init>()V
-
-    const-string v2, "camera.catshark_enabled.RESTART"
-
-    iput-object v2, v0, Lnoc;->b:Ljava/lang/Object;
-
-    invoke-virtual {v0}, Lnoc;->t()Ldhj;
-
-    move-result-object v0
-
-    sput-object v0, Ldhq;->ac:Ldhj;
-
-    new-instance v0, Lnoc;
-
-    invoke-direct {v0}, Lnoc;-><init>()V
-
-    const-string v2, "camera.catshark_cheese"
-
-    iput-object v2, v0, Lnoc;->b:Ljava/lang/Object;
-
-    invoke-virtual {v0}, Lnoc;->t()Ldhj;
-
-    move-result-object v0
-
-    sput-object v0, Ldhq;->ad:Ldhj;
-
-    new-instance v0, Lnoc;
-
-    invoke-direct {v0}, Lnoc;-><init>()V
-
-    const-string v2, "camera.catshark_in_threshold"
-
-    iput-object v2, v0, Lnoc;->b:Ljava/lang/Object;
-
-    invoke-virtual {v0}, Lnoc;->s()Ldhj;
-
-    move-result-object v0
-
-    sput-object v0, Ldhq;->ae:Ldhj;
-
-    new-instance v0, Lnoc;
-
-    invoke-direct {v0}, Lnoc;-><init>()V
-
-    const-string v2, "camera.catshark_out_threshold"
-
-    iput-object v2, v0, Lnoc;->b:Ljava/lang/Object;
-
-    invoke-virtual {v0}, Lnoc;->s()Ldhj;
-
-    move-result-object v0
-
-    sput-object v0, Ldhq;->af:Ldhj;
-
-    new-instance v0, Lnoc;
-
-    invoke-direct {v0}, Lnoc;-><init>()V
-
-    const-string v2, "camera.catshark_cheese_in_threshold"
-
-    iput-object v2, v0, Lnoc;->b:Ljava/lang/Object;
-
-    invoke-virtual {v0}, Lnoc;->s()Ldhj;
-
-    move-result-object v0
-
-    sput-object v0, Ldhq;->ag:Ldhj;
-
-    new-instance v0, Lnoc;
-
-    invoke-direct {v0}, Lnoc;-><init>()V
-
-    const-string v2, "camera.catshark_cheese_out_threshold"
-
-    iput-object v2, v0, Lnoc;->b:Ljava/lang/Object;
-
-    invoke-virtual {v0}, Lnoc;->s()Ldhj;
-
-    move-result-object v0
-
-    sput-object v0, Ldhq;->ah:Ldhj;
-
-    new-instance v0, Lnoc;
-
-    invoke-direct {v0}, Lnoc;-><init>()V
-
-    const-string v2, "camera.catshark_full_threshold"
-
-    iput-object v2, v0, Lnoc;->b:Ljava/lang/Object;
-
-    invoke-virtual {v0}, Lnoc;->s()Ldhj;
-
-    move-result-object v0
-
-    sput-object v0, Ldhq;->ai:Ldhj;
-
-    new-instance v0, Lnoc;
-
-    invoke-direct {v0}, Lnoc;-><init>()V
-
-    const-string v2, "camera.catshark_af"
-
-    iput-object v2, v0, Lnoc;->b:Ljava/lang/Object;
-
-    invoke-virtual {v0}, Lnoc;->t()Ldhj;
-
-    move-result-object v0
-
-    sput-object v0, Ldhq;->aj:Ldhj;
-
-    new-instance v0, Lnoc;
-
-    invoke-direct {v0}, Lnoc;-><init>()V
-
-    const-string v2, "camera.catshark_minibar_enabled"
-
-    iput-object v2, v0, Lnoc;->b:Ljava/lang/Object;
-
-    invoke-virtual {v0}, Lnoc;->t()Ldhj;
-
-    move-result-object v0
-
-    sput-object v0, Ldhq;->ak:Ldhj;
-
-    new-instance v0, Lnoc;
-
-    invoke-direct {v0}, Lnoc;-><init>()V
-
-    const-string v2, "camera.cuttle.fastaf"
-
-    iput-object v2, v0, Lnoc;->b:Ljava/lang/Object;
-
-    invoke-virtual {v0}, Lnoc;->t()Ldhj;
-
-    move-result-object v0
-
-    sput-object v0, Ldhq;->al:Ldhj;
-
-    new-instance v0, Lnoc;
-
-    invoke-direct {v0}, Lnoc;-><init>()V
+    move-result-object p1
 
-    const-string v2, "camera.kepler_enabled"
+    iput-object p1, p0, Ldhq;->i:Lj$/time/Instant;
 
-    iput-object v2, v0, Lnoc;->b:Ljava/lang/Object;
+    iget-object p1, p0, Ldhq;->h:Ljava/util/concurrent/atomic/AtomicBoolean;
 
-    invoke-virtual {v0}, Lnoc;->t()Ldhj;
+    invoke-virtual {p1}, Ljava/util/concurrent/atomic/AtomicBoolean;->get()Z
 
-    move-result-object v0
-
-    sput-object v0, Ldhq;->am:Ldhj;
-
-    new-instance v0, Lnoc;
-
-    invoke-direct {v0}, Lnoc;-><init>()V
-
-    const-string v2, "camera.kepler_min_frame_count"
-
-    iput-object v2, v0, Lnoc;->b:Ljava/lang/Object;
-
-    invoke-virtual {v0}, Lnoc;->l()Ldhk;
-
-    move-result-object v0
-
-    sput-object v0, Ldhq;->p:Ldhk;
-
-    new-instance v0, Lnoc;
-
-    invoke-direct {v0}, Lnoc;-><init>()V
-
-    const-string v2, "camera.kepler_merge_frame_count"
-
-    iput-object v2, v0, Lnoc;->b:Ljava/lang/Object;
-
-    invoke-virtual {v0}, Lnoc;->l()Ldhk;
-
-    move-result-object v0
-
-    sput-object v0, Ldhq;->q:Ldhk;
-
-    new-instance v0, Lnoc;
-
-    invoke-direct {v0}, Lnoc;-><init>()V
-
-    const-string v2, "camera.kepler_capture_threshold_ms"
-
-    iput-object v2, v0, Lnoc;->b:Ljava/lang/Object;
-
-    invoke-virtual {v0}, Lnoc;->l()Ldhk;
-
-    move-result-object v0
-
-    sput-object v0, Ldhq;->r:Ldhk;
-
-    new-instance v0, Lnoc;
-
-    invoke-direct {v0}, Lnoc;-><init>()V
-
-    const-string v2, "camera.kepler_stream_enabled"
-
-    iput-object v2, v0, Lnoc;->b:Ljava/lang/Object;
-
-    invoke-virtual {v0}, Lnoc;->t()Ldhj;
-
-    move-result-object v0
-
-    sput-object v0, Ldhq;->an:Ldhj;
-
-    new-instance v0, Lnoc;
-
-    invoke-direct {v0}, Lnoc;-><init>()V
-
-    const-string v2, "camera.kepler_hevc_enabled"
-
-    iput-object v2, v0, Lnoc;->b:Ljava/lang/Object;
-
-    new-instance v0, Lnoc;
-
-    invoke-direct {v0}, Lnoc;-><init>()V
-
-    const-string v2, "camera.kepler_frame_duration_ms"
-
-    iput-object v2, v0, Lnoc;->b:Ljava/lang/Object;
-
-    invoke-virtual {v0}, Lnoc;->l()Ldhk;
-
-    move-result-object v0
-
-    sput-object v0, Ldhq;->s:Ldhk;
-
-    new-instance v0, Lnoc;
-
-    invoke-direct {v0}, Lnoc;-><init>()V
-
-    const-string v2, "camera.kepler_micro"
-
-    iput-object v2, v0, Lnoc;->b:Ljava/lang/Object;
-
-    new-instance v0, Lnoc;
-
-    invoke-direct {v0}, Lnoc;-><init>()V
-
-    const-string v2, "camera.disable_hdrplus_postview"
-
-    iput-object v2, v0, Lnoc;->b:Ljava/lang/Object;
-
-    invoke-virtual {v0}, Lnoc;->t()Ldhj;
-
-    move-result-object v0
-
-    sput-object v0, Ldhq;->ao:Ldhj;
-
-    new-instance v0, Lnoc;
-
-    invoke-direct {v0}, Lnoc;-><init>()V
-
-    const-string v2, "camera.cuttle.enable_timeout"
-
-    iput-object v2, v0, Lnoc;->b:Ljava/lang/Object;
-
-    invoke-virtual {v0}, Lnoc;->t()Ldhj;
-
-    move-result-object v0
-
-    sput-object v0, Ldhq;->ap:Ldhj;
-
-    new-instance v0, Lnoc;
-
-    invoke-direct {v0}, Lnoc;-><init>()V
-
-    const-string v2, "camera.cuttle.custom_timeout_ms"
-
-    iput-object v2, v0, Lnoc;->b:Ljava/lang/Object;
-
-    invoke-virtual {v0}, Lnoc;->l()Ldhk;
-
-    move-result-object v0
-
-    sput-object v0, Ldhq;->t:Ldhk;
-
-    new-instance v0, Lnoc;
-
-    invoke-direct {v0}, Lnoc;-><init>()V
-
-    const-string v2, "camera.hdr_plus_torch_thermal_throttling"
-
-    iput-object v2, v0, Lnoc;->b:Ljava/lang/Object;
-
-    invoke-virtual {v0}, Lnoc;->t()Ldhj;
-
-    move-result-object v0
-
-    sput-object v0, Ldhq;->aq:Ldhj;
-
-    new-instance v0, Lnoc;
-
-    invoke-direct {v0}, Lnoc;-><init>()V
-
-    const-string v2, "camera.gpu_sampled_image"
-
-    iput-object v2, v0, Lnoc;->b:Ljava/lang/Object;
-
-    invoke-virtual {v0}, Lnoc;->t()Ldhj;
-
-    move-result-object v0
-
-    sput-object v0, Ldhq;->ar:Ldhj;
-
-    new-instance v0, Lnoc;
-
-    invoke-direct {v0}, Lnoc;-><init>()V
-
-    const-string v2, "camera.include_ultra_short_frame"
-
-    iput-object v2, v0, Lnoc;->b:Ljava/lang/Object;
-
-    invoke-virtual {v0}, Lnoc;->t()Ldhj;
-
-    move-result-object v0
-
-    sput-object v0, Ldhq;->as:Ldhj;
-
-    new-instance v0, Lnoc;
-
-    invoke-direct {v0}, Lnoc;-><init>()V
-
-    const-string v2, "gcam.metering.recompute_ae"
-
-    iput-object v2, v0, Lnoc;->b:Ljava/lang/Object;
-
-    invoke-virtual {v0}, Lnoc;->t()Ldhj;
-
-    move-result-object v0
-
-    sput-object v0, Ldhq;->at:Ldhj;
-
-    new-instance v0, Lnoc;
-
-    invoke-direct {v0}, Lnoc;-><init>()V
-
-    const-string v2, "gcam.pb_enabled"
-
-    iput-object v2, v0, Lnoc;->b:Ljava/lang/Object;
-
-    invoke-virtual {v0}, Lnoc;->t()Ldhj;
-
-    move-result-object v0
-
-    sput-object v0, Ldhq;->au:Ldhj;
-
-    new-instance v0, Lnoc;
-
-    invoke-direct {v0}, Lnoc;-><init>()V
+    move-result p1
 
-    const-string v2, "gcam.ts_base"
+    if-nez p1, :cond_1
 
-    iput-object v2, v0, Lnoc;->b:Ljava/lang/Object;
+    iget-object p1, p0, Ldhq;->d:Ldhs;
 
-    new-instance v0, Lnoc;
+    iget-object p1, p1, Ldhs;->h:Ldia;
 
-    invoke-direct {v0}, Lnoc;-><init>()V
+    iget-wide v1, p0, Ldhq;->a:J
 
-    const-string v2, "camera.pecan_enabled"
+    invoke-interface {p1, v1, v2, v0}, Ldia;->e(JLj$/time/Instant;)V
 
-    iput-object v2, v0, Lnoc;->b:Ljava/lang/Object;
+    return-void
 
-    invoke-virtual {v0}, Lnoc;->t()Ldhj;
+    :cond_1
+    const-string p1, "makingProgress"
 
-    move-result-object v0
+    invoke-virtual {p0, p1}, Ldhq;->e(Ljava/lang/String;)V
 
-    sput-object v0, Ldhq;->av:Ldhj;
+    :cond_2
+    return-void
+.end method
 
-    new-instance v0, Lnoc;
+.method public h(Lj$/time/Instant;)V
+    .locals 3
 
-    invoke-direct {v0}, Lnoc;-><init>()V
+    iget-object v0, p0, Ldhq;->h:Ljava/util/concurrent/atomic/AtomicBoolean;
 
-    const-string v2, "camera.pecan_model_asset_name"
+    invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicBoolean;->get()Z
 
-    iput-object v2, v0, Lnoc;->b:Ljava/lang/Object;
+    move-result v0
 
-    invoke-virtual {v0}, Lnoc;->u()Ldhj;
+    if-nez v0, :cond_0
 
-    move-result-object v0
+    const/4 v0, 0x1
 
-    sput-object v0, Ldhq;->aw:Ldhj;
+    iput-boolean v0, p0, Ldhq;->b:Z
 
-    new-instance v0, Lnoc;
+    iget-object v0, p0, Ldhq;->d:Ldhs;
 
-    invoke-direct {v0}, Lnoc;-><init>()V
+    iget-object v0, v0, Ldhs;->h:Ldia;
 
-    const-string v2, "camera.pecan_override"
+    iget-wide v1, p0, Ldhq;->a:J
 
-    iput-object v2, v0, Lnoc;->b:Ljava/lang/Object;
+    invoke-interface {v0, v1, v2, p1}, Ldia;->g(JLj$/time/Instant;)V
 
-    invoke-virtual {v0}, Lnoc;->l()Ldhk;
+    return-void
 
-    move-result-object v0
+    :cond_0
+    const-string p1, "markStuck"
 
-    sput-object v0, Ldhq;->u:Ldhk;
+    invoke-virtual {p0, p1}, Ldhq;->e(Ljava/lang/String;)V
 
-    new-instance v0, Lnoc;
+    return-void
+.end method
 
-    invoke-direct {v0}, Lnoc;-><init>()V
+.method public i()V
+    .locals 4
 
-    const-string v2, "camera.low_payload_threshold"
+    iget-object v0, p0, Ldhq;->d:Ldhs;
 
-    iput-object v2, v0, Lnoc;->b:Ljava/lang/Object;
+    iget-object v0, v0, Ldhs;->f:Lj$/time/Clock;
 
-    invoke-virtual {v0}, Lnoc;->l()Ldhk;
+    invoke-virtual {v0}, Lj$/time/Clock;->instant()Lj$/time/Instant;
 
     move-result-object v0
 
-    sput-object v0, Ldhq;->v:Ldhk;
+    const-string v1, "PERSISTED"
 
-    new-instance v0, Lnoc;
+    invoke-virtual {p0, v0, v1}, Ldhq;->d(Lj$/time/Instant;Ljava/lang/String;)V
 
-    invoke-direct {v0}, Lnoc;-><init>()V
+    iget-object v1, p0, Ldhq;->k:Llji;
 
-    const-string v2, "gcam.gpu_power_boost_enabled"
+    invoke-interface {v1}, Llji;->a()V
 
-    iput-object v2, v0, Lnoc;->b:Ljava/lang/Object;
+    sget-object v1, Llji;->b:Llji;
 
-    new-instance v0, Lnoc;
+    iput-object v1, p0, Ldhq;->k:Llji;
 
-    invoke-direct {v0}, Lnoc;-><init>()V
+    iget-object v1, p0, Ldhq;->h:Ljava/util/concurrent/atomic/AtomicBoolean;
 
-    iput-object v1, v0, Lnoc;->c:Ljava/lang/Object;
+    const/4 v2, 0x0
 
-    const-string v1, "thread_priority_boost_enabled"
+    const/4 v3, 0x1
 
-    iput-object v1, v0, Lnoc;->b:Ljava/lang/Object;
+    invoke-virtual {v1, v2, v3}, Ljava/util/concurrent/atomic/AtomicBoolean;->compareAndSet(ZZ)Z
 
-    new-instance v0, Lnoc;
+    move-result v1
 
-    invoke-direct {v0}, Lnoc;-><init>()V
+    if-eqz v1, :cond_0
 
-    const-string v1, "gcam.hawk_boost_big_option"
+    iget-object v1, p0, Ldhq;->d:Ldhs;
 
-    iput-object v1, v0, Lnoc;->b:Ljava/lang/Object;
+    iget-object v1, v1, Ldhs;->h:Ldia;
 
-    invoke-virtual {v0}, Lnoc;->s()Ldhj;
+    iget-wide v2, p0, Ldhq;->a:J
 
-    move-result-object v0
+    invoke-interface {v1, v2, v3, v0}, Ldia;->h(JLj$/time/Instant;)V
 
-    sput-object v0, Ldhq;->ax:Ldhj;
+    return-void
 
-    new-instance v0, Lnoc;
+    :cond_0
+    const-string v0, "persisted"
 
-    invoke-direct {v0}, Lnoc;-><init>()V
+    invoke-virtual {p0, v0}, Ldhq;->e(Ljava/lang/String;)V
 
-    const-string v1, "gcam.hawk_boost_mid_option"
+    return-void
+.end method
 
-    iput-object v1, v0, Lnoc;->b:Ljava/lang/Object;
+.method public j()V
+    .locals 5
 
-    invoke-virtual {v0}, Lnoc;->s()Ldhj;
+    iget-object v0, p0, Ldhq;->h:Ljava/util/concurrent/atomic/AtomicBoolean;
 
-    move-result-object v0
+    invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicBoolean;->get()Z
 
-    sput-object v0, Ldhq;->ay:Ldhj;
+    move-result v0
 
-    new-instance v0, Lnoc;
+    if-nez v0, :cond_0
 
-    invoke-direct {v0}, Lnoc;-><init>()V
+    iget-object v0, p0, Ldhq;->d:Ldhs;
 
-    const-string v1, "gcam.hawk_boost_little_option"
+    iget-object v0, v0, Ldhs;->h:Ldia;
 
-    iput-object v1, v0, Lnoc;->b:Ljava/lang/Object;
+    iget-object v1, p0, Ldhq;->e:Lhsq;
 
-    invoke-virtual {v0}, Lnoc;->s()Ldhj;
+    iget-object v2, p0, Ldhq;->f:Lj$/time/Instant;
 
-    move-result-object v0
+    iget-object v3, p0, Ldhq;->g:Lhsr;
 
-    sput-object v0, Ldhq;->az:Ldhj;
+    invoke-interface {v0, v1, v2, v3}, Ldia;->i(Lhsq;Lj$/time/Instant;Lhsr;)V
 
-    new-instance v0, Lnoc;
+    iget-object v0, p0, Ldhq;->d:Ldhs;
 
-    invoke-direct {v0}, Lnoc;-><init>()V
+    iget-object v0, v0, Ldhs;->e:Lljf;
 
-    const-string v1, "gcam.jpeg_compression_boost_big_option"
+    iget-wide v1, p0, Ldhq;->a:J
 
-    iput-object v1, v0, Lnoc;->b:Ljava/lang/Object;
+    new-instance v3, Ljava/lang/StringBuilder;
 
-    invoke-virtual {v0}, Lnoc;->s()Ldhj;
+    const/16 v4, 0x1a
 
-    move-result-object v0
+    invoke-direct {v3, v4}, Ljava/lang/StringBuilder;-><init>(I)V
 
-    sput-object v0, Ldhq;->aA:Ldhj;
+    const-string v4, "Shot #"
 
-    new-instance v0, Lnoc;
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-direct {v0}, Lnoc;-><init>()V
+    invoke-virtual {v3, v1, v2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
-    const-string v1, "gcam.jpeg_compression_boost_mid_option"
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    iput-object v1, v0, Lnoc;->b:Ljava/lang/Object;
+    move-result-object v1
 
-    invoke-virtual {v0}, Lnoc;->s()Ldhj;
+    invoke-interface {v0, v1}, Lljf;->a(Ljava/lang/String;)Llji;
 
     move-result-object v0
 
-    sput-object v0, Ldhq;->aB:Ldhj;
+    iput-object v0, p0, Ldhq;->k:Llji;
 
-    new-instance v0, Lnoc;
+    iget-object v0, p0, Ldhq;->d:Ldhs;
 
-    invoke-direct {v0}, Lnoc;-><init>()V
+    iget-object v0, v0, Ldhs;->e:Lljf;
 
-    const-string v1, "gcam.jpeg_compression_boost_little_option"
+    iget-wide v1, p0, Ldhq;->a:J
 
-    iput-object v1, v0, Lnoc;->b:Ljava/lang/Object;
+    new-instance v3, Ljava/lang/StringBuilder;
 
-    invoke-virtual {v0}, Lnoc;->s()Ldhj;
+    const/16 v4, 0x22
 
-    move-result-object v0
+    invoke-direct {v3, v4}, Ljava/lang/StringBuilder;-><init>(I)V
 
-    sput-object v0, Ldhq;->aC:Ldhj;
+    const-string v4, "ShotProgress #"
 
-    new-instance v0, Lnoc;
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-direct {v0}, Lnoc;-><init>()V
+    invoke-virtual {v3, v1, v2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
-    const-string v1, "gcam.jpeg_compression_cpu_affinity_mask"
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    iput-object v1, v0, Lnoc;->b:Ljava/lang/Object;
+    move-result-object v1
 
-    invoke-virtual {v0}, Lnoc;->l()Ldhk;
+    invoke-interface {v0, v1}, Lljf;->b(Ljava/lang/String;)Lljk;
 
     move-result-object v0
 
-    sput-object v0, Ldhq;->w:Ldhk;
+    iput-object v0, p0, Ldhq;->l:Lljk;
 
-    new-instance v0, Lnoc;
+    return-void
 
-    invoke-direct {v0}, Lnoc;-><init>()V
-
-    const-string v1, "gcam.walnut_enabled"
-
-    iput-object v1, v0, Lnoc;->b:Ljava/lang/Object;
-
-    invoke-virtual {v0}, Lnoc;->t()Ldhj;
-
-    move-result-object v0
+    :cond_0
+    const-string v0, "started"
 
-    sput-object v0, Ldhq;->aD:Ldhj;
+    invoke-virtual {p0, v0}, Ldhq;->e(Ljava/lang/String;)V
 
     return-void
 .end method

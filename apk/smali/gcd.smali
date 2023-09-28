@@ -1,44 +1,59 @@
-.class final Lgcd;
-.super Ljwi;
+.class public final Lgcd;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Lpys;
 
 
 # instance fields
-.field private final a:Lgcc;
+.field private final a:Lqkg;
 
 
 # direct methods
-.method public constructor <init>(Ljwb;Lgcc;)V
+.method public constructor <init>(Lqkg;)V
     .locals 0
 
-    invoke-direct {p0, p1}, Ljwi;-><init>(Ljwb;)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p2, p0, Lgcd;->a:Lgcc;
+    iput-object p1, p0, Lgcd;->a:Lqkg;
 
     return-void
 .end method
 
-
-# virtual methods
-.method public final bridge synthetic b(Ljava/lang/Object;)Ljava/lang/Object;
+.method public static a(Lqkg;)Lgcd;
     .locals 1
 
-    check-cast p1, Ljava/lang/String;
+    new-instance v0, Lgcd;
 
-    iget-object v0, p0, Lgcd;->a:Lgcc;
+    invoke-direct {v0, p0}, Lgcd;-><init>(Lqkg;)V
 
-    invoke-static {p1, v0}, Lgcc;->a(Ljava/lang/String;Lgcc;)Lgcc;
-
-    move-result-object p1
-
-    return-object p1
+    return-object v0
 .end method
 
-.method protected final synthetic c(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 0
 
-    check-cast p1, Lgcc;
+# virtual methods
+.method public final b()Lgff;
+    .locals 1
 
-    iget-object p1, p1, Lgcc;->d:Ljava/lang/String;
+    iget-object v0, p0, Lgcd;->a:Lqkg;
 
-    return-object p1
+    invoke-interface {v0}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lgff;
+
+    invoke-static {v0}, Lqmd;->ae(Ljava/lang/Object;)V
+
+    return-object v0
+.end method
+
+.method public final bridge synthetic get()Ljava/lang/Object;
+    .locals 1
+
+    invoke-virtual {p0}, Lgcd;->b()Lgff;
+
+    move-result-object v0
+
+    return-object v0
 .end method

@@ -1,63 +1,71 @@
-.class public final Lmht;
+.class public final synthetic Lmht;
 .super Ljava/lang/Object;
 
+# interfaces
+.implements Ljava/util/concurrent/Callable;
 
-# static fields
-.field public static final a:[I
 
-.field public static final b:[I
+# instance fields
+.field public final synthetic a:Lmhu;
 
-.field public static final c:[I
+.field private final synthetic b:I
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
+.method public synthetic constructor <init>(Lmhu;I)V
+    .locals 0
 
-    const v0, 0x7f0400a7
+    iput p2, p0, Lmht;->b:I
 
-    const v1, 0x7f0400a6
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    filled-new-array {v1, v0}, [I
-
-    move-result-object v0
-
-    sput-object v0, Lmht;->a:[I
-
-    const/16 v0, 0x11
-
-    new-array v0, v0, [I
-
-    fill-array-data v0, :array_0
-
-    sput-object v0, Lmht;->b:[I
-
-    filled-new-array {v1}, [I
-
-    move-result-object v0
-
-    sput-object v0, Lmht;->c:[I
+    iput-object p1, p0, Lmht;->a:Lmhu;
 
     return-void
+.end method
 
-    :array_0
-    .array-data 4
-        0x101000e
-        0x7f040061
-        0x7f040062
-        0x7f0400bd
-        0x7f040257
-        0x7f04026c
-        0x7f040295
-        0x7f040296
-        0x7f040306
-        0x7f040313
-        0x7f040470
-        0x7f040530
-        0x7f04055c
-        0x7f040589
-        0x7f040591
-        0x7f0405a0
-        0x7f040724
-    .end array-data
+
+# virtual methods
+.method public final call()Ljava/lang/Object;
+    .locals 1
+
+    iget v0, p0, Lmht;->b:I
+
+    packed-switch v0, :pswitch_data_0
+
+    iget-object v0, p0, Lmht;->a:Lmhu;
+
+    iget-object v0, v0, Lmhu;->a:Lmgr;
+
+    invoke-interface {v0}, Lmgr;->a()Lcom/google/android/libraries/lens/lenslite/api/LinkConfig;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/google/android/libraries/lens/lenslite/api/LinkConfig;->toByteArray()[B
+
+    move-result-object v0
+
+    return-object v0
+
+    :pswitch_0
+    iget-object v0, p0, Lmht;->a:Lmhu;
+
+    iget-object v0, v0, Lmhu;->a:Lmgr;
+
+    invoke-interface {v0}, Lmgr;->a()Lcom/google/android/libraries/lens/lenslite/api/LinkConfig;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/google/android/libraries/lens/lenslite/api/LinkConfig;->toByteArray()[B
+
+    move-result-object v0
+
+    return-object v0
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

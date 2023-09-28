@@ -1,61 +1,24 @@
-.class public final Lfyn;
-.super Ljava/lang/Object;
-
-# interfaces
-.implements Logk;
-
-
-# instance fields
-.field private final a:Loiw;
+.class final Lfyn;
+.super Lhvi;
 
 
 # direct methods
-.method public constructor <init>(Loiw;)V
-    .locals 0
+.method public constructor <init>()V
+    .locals 2
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const-string v0, "panorama_upgrade_version"
 
-    iput-object p1, p0, Lfyn;->a:Loiw;
+    const/4 v1, 0x1
+
+    invoke-direct {p0, v0, v1}, Lhvi;-><init>(Ljava/lang/String;I)V
 
     return-void
 .end method
 
-.method public static a(Loiw;)Lfyn;
-    .locals 1
-
-    new-instance v0, Lfyn;
-
-    invoke-direct {v0, p0}, Lfyn;-><init>(Loiw;)V
-
-    return-object v0
-.end method
-
 
 # virtual methods
-.method public final b()Lbkb;
-    .locals 2
+.method public final a(Lhub;I)V
+    .locals 0
 
-    iget-object v0, p0, Lfyn;->a:Loiw;
-
-    check-cast v0, Logo;
-
-    invoke-virtual {v0}, Logo;->a()Ljava/util/Set;
-
-    move-result-object v0
-
-    new-instance v1, Lbkb;
-
-    invoke-direct {v1, v0}, Lbkb;-><init>(Ljava/util/Set;)V
-
-    return-object v1
-.end method
-
-.method public final bridge synthetic get()Ljava/lang/Object;
-    .locals 1
-
-    invoke-virtual {p0}, Lfyn;->b()Lbkb;
-
-    move-result-object v0
-
-    return-object v0
+    return-void
 .end method

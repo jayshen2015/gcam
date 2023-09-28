@@ -1,166 +1,479 @@
-.class final Lirk;
-.super Lisx;
+.class public final Lirk;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Lpys;
 
 
 # instance fields
-.field final synthetic a:Lirn;
+.field private final a:Lqkg;
+
+.field private final synthetic b:I
 
 
 # direct methods
-.method public constructor <init>(Lirn;)V
+.method public constructor <init>(Lqkg;I)V
     .locals 0
 
-    iput-object p1, p0, Lirk;->a:Lirn;
+    iput p2, p0, Lirk;->b:I
 
-    invoke-direct {p0, p1}, Lisx;-><init>(Lita;)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lirk;->a:Lqkg;
 
     return-void
+.end method
+
+.method public static a(Lddf;)Ljtx;
+    .locals 1
+
+    new-instance v0, Ljtx;
+
+    invoke-direct {v0, p0}, Ljtx;-><init>(Lddf;)V
+
+    return-object v0
 .end method
 
 
 # virtual methods
-.method public final a()V
-    .locals 2
+.method public final synthetic get()Ljava/lang/Object;
+    .locals 10
 
-    iget-object v0, p0, Lirk;->a:Lirn;
+    iget v0, p0, Lirk;->b:I
 
-    iget-object v0, v0, Lirn;->a:Lhiu;
+    packed-switch v0, :pswitch_data_0
 
-    invoke-virtual {v0}, Lhiu;->e()V
+    iget-object v0, p0, Lirk;->a:Lqkg;
 
-    invoke-super {p0}, Lisx;->a()V
+    check-cast v0, Lpyw;
 
-    iget-object v0, p0, Lirk;->a:Lirn;
+    invoke-virtual {v0}, Lpyw;->a()Ljava/util/Set;
 
-    iget-object v1, v0, Lirn;->a:Lhiu;
+    move-result-object v0
 
-    iget-object v0, v0, Lirn;->e:Lhiw;
+    new-instance v1, Ljpf;
 
-    invoke-virtual {v1, v0}, Lhiu;->g(Lhiw;)V
+    invoke-direct {v1, v0}, Ljpf;-><init>(Ljava/util/Set;)V
 
-    return-void
-.end method
+    return-object v1
 
-.method public final c()V
-    .locals 2
+    :pswitch_0
+    iget-object v0, p0, Lirk;->a:Lqkg;
 
-    iget-object v0, p0, Lirk;->a:Lirn;
+    check-cast v0, Lpyw;
 
-    iget-object v0, v0, Lirn;->a:Lhiu;
+    invoke-virtual {v0}, Lpyw;->a()Ljava/util/Set;
 
-    invoke-virtual {v0}, Lhiu;->e()V
+    move-result-object v0
 
-    iget-object v0, p0, Lirk;->a:Lirn;
+    new-instance v1, Ljpf;
 
-    iget-object v1, v0, Lirn;->a:Lhiu;
+    invoke-direct {v1, v0}, Ljpf;-><init>(Ljava/util/Set;)V
 
-    iget-object v0, v0, Lirn;->h:Lhiw;
+    return-object v1
 
-    invoke-virtual {v1, v0}, Lhiu;->g(Lhiw;)V
+    :pswitch_1
+    iget-object v0, p0, Lirk;->a:Lqkg;
 
-    return-void
-.end method
+    invoke-interface {v0}, Lqkg;->get()Ljava/lang/Object;
 
-.method public final d(FI)V
-    .locals 1
+    move-result-object v0
 
-    iget-object v0, p0, Lirk;->a:Lirn;
+    check-cast v0, Llda;
 
-    iget-object v0, v0, Lirn;->a:Lhiu;
+    invoke-static {v0}, Lqmd;->ae(Ljava/lang/Object;)V
 
-    invoke-virtual {v0}, Lhiu;->e()V
+    return-object v0
 
-    invoke-super {p0, p1, p2}, Lisx;->d(FI)V
+    :pswitch_2
+    iget-object v0, p0, Lirk;->a:Lqkg;
 
-    iget-object p1, p0, Lirk;->a:Lirn;
+    check-cast v0, Ljnw;
 
-    iget-object p2, p1, Lirn;->a:Lhiu;
+    invoke-virtual {v0}, Ljnw;->a()Ljns;
 
-    iget-object p1, p1, Lirn;->h:Lhiw;
+    move-result-object v0
 
-    invoke-virtual {p2, p1}, Lhiu;->g(Lhiw;)V
+    iget-object v0, v0, Ljns;->e:Lcom/google/android/apps/camera/ui/views/ViewfinderCover;
 
-    return-void
-.end method
+    return-object v0
 
-.method public final j()V
-    .locals 2
+    :pswitch_3
+    iget-object v0, p0, Lirk;->a:Lqkg;
 
-    iget-object v0, p0, Lirk;->a:Lirn;
+    invoke-interface {v0}, Lqkg;->get()Ljava/lang/Object;
 
-    iget-object v0, v0, Lirn;->a:Lhiu;
+    move-result-object v0
 
-    invoke-virtual {v0}, Lhiu;->e()V
+    check-cast v0, Llda;
 
-    iget-object v0, p0, Lirk;->a:Lirn;
+    invoke-static {v0}, Lqmd;->ae(Ljava/lang/Object;)V
 
-    iget-object v1, v0, Lirn;->a:Lhiu;
+    return-object v0
 
-    iget-object v0, v0, Lirn;->d:Lhiw;
+    :pswitch_4
+    iget-object v0, p0, Lirk;->a:Lqkg;
 
-    invoke-virtual {v1, v0}, Lhiu;->g(Lhiw;)V
+    invoke-interface {v0}, Lqkg;->get()Ljava/lang/Object;
 
-    return-void
-.end method
+    move-result-object v0
 
-.method public final m()V
-    .locals 2
+    check-cast v0, Llda;
 
-    iget-object v0, p0, Lirk;->a:Lirn;
+    invoke-static {v0}, Lqmd;->ae(Ljava/lang/Object;)V
 
-    iget-object v0, v0, Lirn;->a:Lhiu;
+    return-object v0
 
-    invoke-virtual {v0}, Lhiu;->e()V
+    :pswitch_5
+    iget-object v0, p0, Lirk;->a:Lqkg;
 
-    iget-object v0, p0, Lirk;->a:Lirn;
+    invoke-interface {v0}, Lqkg;->get()Ljava/lang/Object;
 
-    iget-object v1, v0, Lirn;->a:Lhiu;
+    move-result-object v0
 
-    iget-object v0, v0, Lirn;->b:Lhiw;
+    check-cast v0, Llda;
 
-    invoke-virtual {v1, v0}, Lhiu;->g(Lhiw;)V
+    invoke-static {v0}, Lqmd;->ae(Ljava/lang/Object;)V
 
-    return-void
-.end method
+    return-object v0
 
-.method public final n()V
-    .locals 2
+    :pswitch_6
+    iget-object v0, p0, Lirk;->a:Lqkg;
 
-    iget-object v0, p0, Lirk;->a:Lirn;
+    invoke-interface {v0}, Lqkg;->get()Ljava/lang/Object;
 
-    iget-object v0, v0, Lirn;->a:Lhiu;
+    move-result-object v0
 
-    invoke-virtual {v0}, Lhiu;->e()V
+    check-cast v0, Llda;
 
-    iget-object v0, p0, Lirk;->a:Lirn;
+    invoke-static {v0}, Lqmd;->ae(Ljava/lang/Object;)V
 
-    iget-object v1, v0, Lirn;->a:Lhiu;
+    return-object v0
 
-    iget-object v0, v0, Lirn;->g:Lhiw;
+    :pswitch_7
+    iget-object v0, p0, Lirk;->a:Lqkg;
 
-    invoke-virtual {v1, v0}, Lhiu;->g(Lhiw;)V
+    invoke-interface {v0}, Lqkg;->get()Ljava/lang/Object;
 
-    return-void
-.end method
+    move-result-object v0
 
-.method public final o(Z)V
-    .locals 1
+    check-cast v0, Lcom/google/android/apps/camera/ui/views/ViewfinderCover;
 
-    iget-object v0, p0, Lirk;->a:Lirn;
+    invoke-static {v0}, Lqmd;->ae(Ljava/lang/Object;)V
 
-    iget-object v0, v0, Lirn;->a:Lhiu;
+    return-object v0
 
-    invoke-virtual {v0}, Lhiu;->e()V
+    :pswitch_8
+    iget-object v0, p0, Lirk;->a:Lqkg;
 
-    invoke-super {p0, p1}, Lisx;->o(Z)V
+    invoke-interface {v0}, Lqkg;->get()Ljava/lang/Object;
 
-    iget-object p1, p0, Lirk;->a:Lirn;
+    move-result-object v0
 
-    iget-object v0, p1, Lirn;->a:Lhiu;
+    check-cast v0, Lddf;
 
-    iget-object p1, p1, Lirn;->c:Lhiw;
+    new-instance v9, Ljnn;
 
-    invoke-virtual {v0, p1}, Lhiu;->g(Lhiw;)V
+    sget-object v1, Lddo;->a:Lddi;
 
-    return-void
+    invoke-interface {v0, v1}, Lddf;->a(Lddi;)Lojc;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Lojc;->c()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Ljava/lang/Integer;
+
+    invoke-virtual {v1}, Ljava/lang/Integer;->intValue()I
+
+    move-result v1
+
+    sget-object v2, Lddo;->b:Lddi;
+
+    invoke-interface {v0, v2}, Lddf;->a(Lddi;)Lojc;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Lojc;->c()Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Ljava/lang/Integer;
+
+    invoke-virtual {v2}, Ljava/lang/Integer;->intValue()I
+
+    move-result v4
+
+    sget-object v2, Lddo;->d:Lddg;
+
+    invoke-interface {v0, v2}, Lddf;->g(Lddg;)Lojc;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Lojc;->c()Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Ljava/lang/Float;
+
+    invoke-virtual {v2}, Ljava/lang/Float;->floatValue()F
+
+    move-result v5
+
+    sget-object v2, Lddo;->e:Lddg;
+
+    invoke-interface {v0, v2}, Lddf;->g(Lddg;)Lojc;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Lojc;->c()Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Ljava/lang/Float;
+
+    invoke-virtual {v2}, Ljava/lang/Float;->floatValue()F
+
+    move-result v6
+
+    sget-object v2, Lddo;->f:Lddg;
+
+    invoke-interface {v0, v2}, Lddf;->g(Lddg;)Lojc;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lojc;->c()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/Float;
+
+    invoke-virtual {v0}, Ljava/lang/Float;->floatValue()F
+
+    move-result v7
+
+    new-instance v8, Landroid/view/animation/DecelerateInterpolator;
+
+    const/high16 v0, 0x3f800000    # 1.0f
+
+    invoke-direct {v8, v0}, Landroid/view/animation/DecelerateInterpolator;-><init>(F)V
+
+    int-to-long v2, v1
+
+    move-object v1, v9
+
+    invoke-direct/range {v1 .. v8}, Ljnn;-><init>(JIFFFLandroid/view/animation/Interpolator;)V
+
+    return-object v9
+
+    :pswitch_9
+    iget-object v0, p0, Lirk;->a:Lqkg;
+
+    invoke-interface {v0}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lddf;
+
+    invoke-static {v0}, Lirk;->a(Lddf;)Ljtx;
+
+    move-result-object v0
+
+    return-object v0
+
+    :pswitch_a
+    iget-object v0, p0, Lirk;->a:Lqkg;
+
+    check-cast v0, Leme;
+
+    invoke-virtual {v0}, Leme;->a()Landroid/app/Activity;
+
+    move-result-object v0
+
+    new-instance v1, Ljcf;
+
+    invoke-direct {v1, v0}, Ljcf;-><init>(Landroid/app/Activity;)V
+
+    return-object v1
+
+    :pswitch_b
+    iget-object v0, p0, Lirk;->a:Lqkg;
+
+    invoke-interface {v0}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lddf;
+
+    new-instance v1, Ljbq;
+
+    invoke-direct {v1, v0}, Ljbq;-><init>(Lddf;)V
+
+    return-object v1
+
+    :pswitch_c
+    iget-object v0, p0, Lirk;->a:Lqkg;
+
+    invoke-interface {v0}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/util/concurrent/ScheduledExecutorService;
+
+    new-instance v1, Ljbe;
+
+    invoke-direct {v1, v0}, Ljbe;-><init>(Ljava/util/concurrent/ScheduledExecutorService;)V
+
+    return-object v1
+
+    :pswitch_d
+    iget-object v0, p0, Lirk;->a:Lqkg;
+
+    check-cast v0, Ljnw;
+
+    invoke-virtual {v0}, Ljnw;->a()Ljns;
+
+    move-result-object v0
+
+    new-instance v1, Ljrh;
+
+    iget-object v0, v0, Ljns;->p:Lcom/google/android/apps/camera/ui/zoomlock/ZoomLockView;
+
+    invoke-static {v0}, Lobr;->ao(Ljava/lang/Object;)Ljava/lang/Object;
+
+    invoke-direct {v1, v0}, Ljrh;-><init>(Lcom/google/android/apps/camera/ui/zoomlock/ZoomLockView;)V
+
+    return-object v1
+
+    :pswitch_e
+    iget-object v0, p0, Lirk;->a:Lqkg;
+
+    check-cast v0, Ljnw;
+
+    invoke-virtual {v0}, Ljnw;->a()Ljns;
+
+    move-result-object v0
+
+    new-instance v1, Ljjp;
+
+    iget-object v0, v0, Ljns;->j:Lcom/google/android/apps/camera/ui/breadcrumbs/BreadcrumbsView;
+
+    invoke-static {v0}, Lobr;->ao(Ljava/lang/Object;)Ljava/lang/Object;
+
+    invoke-direct {v1, v0}, Ljjp;-><init>(Ljjn;)V
+
+    return-object v1
+
+    :pswitch_f
+    iget-object v0, p0, Lirk;->a:Lqkg;
+
+    invoke-interface {v0}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Livj;
+
+    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    new-instance v1, Livv;
+
+    invoke-direct {v1, v0}, Livv;-><init>(Livj;)V
+
+    return-object v1
+
+    :pswitch_10
+    iget-object v0, p0, Lirk;->a:Lqkg;
+
+    invoke-interface {v0}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lddf;
+
+    sget-object v1, Ldec;->b:Lddg;
+
+    invoke-interface {v0, v1}, Lddf;->j(Lddg;)Z
+
+    move-result v0
+
+    invoke-static {v0}, Lcom/agc/AdvancedSettings;->getTrackFocus(Z)Z
+
+    move-result v0
+
+    invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    move-result-object v0
+
+    return-object v0
+
+    :pswitch_11
+    iget-object v0, p0, Lirk;->a:Lqkg;
+
+    invoke-interface {v0}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lisl;
+
+    new-instance v1, Lisr;
+
+    invoke-direct {v1, v0}, Lisr;-><init>(Lisl;)V
+
+    return-object v1
+
+    :pswitch_12
+    iget-object v0, p0, Lirk;->a:Lqkg;
+
+    invoke-interface {v0}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lddf;
+
+    new-instance v1, Lmip;
+
+    invoke-direct {v1, v0}, Lmip;-><init>(Lddf;)V
+
+    return-object v1
+
+    :pswitch_13
+    iget-object v0, p0, Lirk;->a:Lqkg;
+
+    check-cast v0, Lemd;
+
+    invoke-virtual {v0}, Lemd;->a()Landroid/content/Context;
+
+    move-result-object v0
+
+    new-instance v1, Lirj;
+
+    invoke-direct {v1, v0}, Lirj;-><init>(Landroid/content/Context;)V
+
+    return-object v1
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_13
+        :pswitch_12
+        :pswitch_11
+        :pswitch_10
+        :pswitch_f
+        :pswitch_e
+        :pswitch_d
+        :pswitch_c
+        :pswitch_b
+        :pswitch_a
+        :pswitch_9
+        :pswitch_8
+        :pswitch_7
+        :pswitch_6
+        :pswitch_5
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method

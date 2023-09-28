@@ -1,167 +1,139 @@
-.class public final Lgcu;
+.class public final synthetic Lgcu;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lgcs;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field private final a:Lkaq;
+.field public final synthetic a:Lgdj;
 
-.field private final b:Ldkp;
-
-.field private c:D
+.field public final synthetic b:Lhsp;
 
 
 # direct methods
-.method public constructor <init>(Lkap;Ldkp;)V
-    .locals 2
+.method public synthetic constructor <init>(Lgdj;Lhsp;)V
+    .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const-wide v0, 0x4040800000000000L    # 33.0
+    iput-object p1, p0, Lgcu;->a:Lgdj;
 
-    iput-wide v0, p0, Lgcu;->c:D
-
-    const-string v0, "FrameJank"
-
-    invoke-interface {p1, v0}, Lkap;->a(Ljava/lang/String;)Lkaq;
-
-    move-result-object p1
-
-    iput-object p1, p0, Lgcu;->a:Lkaq;
-
-    iput-object p2, p0, Lgcu;->b:Ldkp;
+    iput-object p2, p0, Lgcu;->b:Lhsp;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Lkou;DD)V
-    .locals 6
+.method public final run()V
+    .locals 5
 
-    sget-object p4, Landroid/hardware/camera2/CaptureResult;->SENSOR_TIMESTAMP:Landroid/hardware/camera2/CaptureResult$Key;
+    iget-object v0, p0, Lgcu;->a:Lgdj;
 
-    invoke-interface {p1, p4}, Lkou;->d(Landroid/hardware/camera2/CaptureResult$Key;)Ljava/lang/Object;
+    iget-object v1, p0, Lgcu;->b:Lhsp;
 
-    move-result-object p4
+    monitor-enter v0
 
-    check-cast p4, Ljava/lang/Long;
+    :try_start_0
+    iget-object v2, v0, Lgdj;->e:Ljava/util/Deque;
 
-    sget-object p5, Landroid/hardware/camera2/CaptureResult;->SENSOR_FRAME_DURATION:Landroid/hardware/camera2/CaptureResult$Key;
+    invoke-interface {v2}, Ljava/util/Deque;->iterator()Ljava/util/Iterator;
 
-    invoke-interface {p1, p5}, Lkou;->d(Landroid/hardware/camera2/CaptureResult$Key;)Ljava/lang/Object;
-
-    move-result-object p1
-
-    check-cast p1, Ljava/lang/Long;
-
-    if-eqz p4, :cond_0
-
-    if-eqz p1, :cond_0
-
-    iget-object p5, p0, Lgcu;->b:Ldkp;
-
-    invoke-virtual {p4}, Ljava/lang/Long;->longValue()J
-
-    move-result-wide v0
-
-    invoke-virtual {p1}, Ljava/lang/Long;->longValue()J
-
-    move-result-wide v2
-
-    invoke-interface {p5, v0, v1, v2, v3}, Ldkp;->b(JJ)V
+    move-result-object v2
 
     :cond_0
-    iget-wide p4, p0, Lgcu;->c:D
+    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
 
-    const-wide v0, 0x4040800000000000L    # 33.0
+    move-result v3
 
-    cmpl-double p1, p4, v0
+    if-eqz v3, :cond_1
 
-    if-lez p1, :cond_1
+    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    cmpl-double p1, p2, v0
+    move-result-object v3
 
-    if-lez p1, :cond_1
+    check-cast v3, Lgde;
 
-    sub-double v2, p2, p4
+    invoke-virtual {v3}, Lgde;->d()Z
 
-    div-double/2addr v2, p4
+    move-result v4
 
-    const-wide/high16 v4, 0x3ff8000000000000L    # 1.5
+    if-eqz v4, :cond_0
 
-    cmpl-double p1, v2, v4
+    invoke-virtual {v3}, Lgde;->a()Lgdg;
 
-    if-ltz p1, :cond_1
+    move-result-object v3
 
-    iget-object p1, p0, Lgcu;->a:Lkaq;
+    iget-object v3, v3, Lgdg;->c:Lhsp;
 
-    const-wide/high16 v4, 0x4059000000000000L    # 100.0
+    invoke-virtual {v3, v1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
 
-    mul-double v2, v2, v4
+    move-result v3
+
+    if-eqz v3, :cond_0
+
+    invoke-interface {v2}, Ljava/util/Iterator;->remove()V
+
+    invoke-virtual {v0}, Lgdj;->r()V
+
+    monitor-exit v0
+
+    return-void
+
+    :cond_1
+    invoke-virtual {v0}, Lgdj;->e()V
+
+    new-instance v2, Ljava/lang/RuntimeException;
+
+    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/lang/String;->length()I
+
+    move-result v3
+
+    add-int/lit8 v3, v3, 0x1c
 
     new-instance v4, Ljava/lang/StringBuilder;
 
-    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v4, v3}, Ljava/lang/StringBuilder;-><init>(I)V
 
-    const-string v5, "JANK! Time between frames ("
+    const-string v3, "Failed shot "
 
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v4, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v4, p2, p3}, Ljava/lang/StringBuilder;->append(D)Ljava/lang/StringBuilder;
+    invoke-virtual {v4, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string v5, "ms) increased by "
+    const-string v1, " was not present"
 
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v4, v2, v3}, Ljava/lang/StringBuilder;->append(D)Ljava/lang/StringBuilder;
-
-    const-string v2, "% over the expected delta ("
-
-    invoke-virtual {v4, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v4, p4, p5}, Ljava/lang/StringBuilder;->append(D)Ljava/lang/StringBuilder;
-
-    const-string p4, "ms)"
-
-    invoke-virtual {v4, p4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v4, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object p4
+    move-result-object v1
 
-    invoke-interface {p1, p4}, Lkaq;->f(Ljava/lang/String;)V
+    invoke-direct {v2, v1}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
 
-    :cond_1
-    cmpl-double p1, p2, v0
+    throw v2
 
-    if-lez p1, :cond_3
+    :catchall_0
+    move-exception v1
 
-    iget-wide p4, p0, Lgcu;->c:D
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    cmpl-double p1, p2, p4
+    goto :goto_1
 
-    if-lez p1, :cond_2
+    :goto_0
+    throw v1
 
-    const-wide/high16 v0, 0x4024000000000000L    # 10.0
-
-    mul-double p4, p4, v0
-
-    add-double/2addr p2, p4
-
-    const-wide/high16 p4, 0x4026000000000000L    # 11.0
-
-    div-double/2addr p2, p4
-
-    iput-wide p2, p0, Lgcu;->c:D
-
-    return-void
-
-    :cond_2
-    iput-wide p2, p0, Lgcu;->c:D
-
-    :cond_3
-    return-void
+    :goto_1
+    goto :goto_0
 .end method

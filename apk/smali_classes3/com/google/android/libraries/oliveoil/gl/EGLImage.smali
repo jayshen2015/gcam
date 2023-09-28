@@ -2,7 +2,7 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lkyk;
+.implements Lmmc;
 
 
 # instance fields
@@ -89,13 +89,13 @@
 
     aput-object p1, v2, v3
 
+    const/4 p1, 0x1
+
     invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object p1
+    move-result-object v0
 
-    const/4 v0, 0x1
-
-    aput-object p1, v2, v0
+    aput-object v0, v2, p1
 
     const-string p1, "Could not create EGLImage: %s (EGL error %d)."
 
@@ -137,7 +137,7 @@
     return v0
 .end method
 
-.method public final b()Lkym;
+.method public final b()Lmme;
     .locals 2
 
     iget-object v0, p0, Lcom/google/android/libraries/oliveoil/gl/EGLImage;->b:Landroid/hardware/HardwareBuffer;
@@ -152,7 +152,7 @@
 
     move-result v1
 
-    invoke-static {v0, v1}, Lkyn;->d(II)Lkym;
+    invoke-static {v0, v1}, Lmmf;->d(II)Lmme;
 
     move-result-object v0
 

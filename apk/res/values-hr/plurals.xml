@@ -1,14 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <plurals name="accessibility_timelapse_manual_record_speed_desc">
-        <item quantity="other">Ubrzani videozapis: brzina %d</item>
-        <item quantity="one">Ubrzani videozapis: brzina %d</item>
-        <item quantity="few">Ubrzani videozapis: brzina %d</item>
-    </plurals>
-    <plurals name="number_of_cropped_face">
-        <item quantity="other">%d je obrezano.</item>
-        <item quantity="one">%d je obrezano.</item>
-        <item quantity="few">%d su obrezana.</item>
+    <plurals name="number_of_faces_announcement">
+        <item quantity="other">%1$d lica.</item>
+        <item quantity="one">%1$d lice.</item>
+        <item quantity="few">%1$d lica.</item>
     </plurals>
     <plurals name="photos_remaining">
         <item quantity="other">Otprilike %s fotografija</item>
@@ -21,9 +16,9 @@
         <item quantity="few">(%1$d odabrane aplikacije)</item>
     </plurals>
     <plurals name="social_share_info">
-        <item quantity="other">Brzo dijelite fotografije i videozapise u društvenim aplikacijama iz Fotoaparata. Odaberite najviše %1$d aplikacija. Fotografije i videozapisi spremljeni u zaključanu mapu ne mogu se dijeliti.</item>
-        <item quantity="one">Brzo dijelite fotografije i videozapise u društvenim aplikacijama iz Fotoaparata. Odaberite najviše %1$d aplikaciju. Fotografije i videozapisi spremljeni u zaključanu mapu ne mogu se dijeliti.</item>
-        <item quantity="few">Brzo dijelite fotografije i videozapise u društvenim aplikacijama iz Fotoaparata. Odaberite najviše %1$d aplikacije. Fotografije i videozapisi spremljeni u zaključanu mapu ne mogu se dijeliti.</item>
+        <item quantity="other">Brzo dijelite fotografije i videozapise u društvenim aplikacijama izravno iz Fotoaparata. Odaberite do %1$d aplikacija. Fotografije i videozapisi spremljeni u zaključanu mapu ne mogu se dijeliti.</item>
+        <item quantity="one">Brzo dijelite fotografije i videozapise u društvenim aplikacijama izravno iz Fotoaparata. Odaberite do %1$d aplikaciju. Fotografije i videozapisi spremljeni u zaključanu mapu ne mogu se dijeliti.</item>
+        <item quantity="few">Brzo dijelite fotografije i videozapise u društvenim aplikacijama izravno iz Fotoaparata. Odaberite do %1$d aplikacije. Fotografije i videozapisi spremljeni u zaključanu mapu ne mogu se dijeliti.</item>
     </plurals>
     <plurals name="social_share_select_error">
         <item quantity="other">Odaberite do %1$d aplikacija</item>

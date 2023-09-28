@@ -1,134 +1,75 @@
-.class public final synthetic Ldvn;
+.class public final Ldvn;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Lpys;
 
 
 # instance fields
-.field public final synthetic a:Ldvr;
+.field private final a:Lqkg;
 
-.field public final synthetic b:Lnph;
+.field private final b:Lqkg;
 
 
 # direct methods
-.method public synthetic constructor <init>(Ldvr;Lnph;)V
+.method public constructor <init>(Lqkg;Lqkg;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Ldvn;->a:Ldvr;
+    iput-object p1, p0, Ldvn;->a:Lqkg;
 
-    iput-object p2, p0, Ldvn;->b:Lnph;
+    iput-object p2, p0, Ldvn;->b:Lqkg;
 
     return-void
 .end method
 
+.method public static b(Lqkg;Lqkg;)Ldvn;
+    .locals 1
+
+    new-instance v0, Ldvn;
+
+    invoke-direct {v0, p0, p1}, Ldvn;-><init>(Lqkg;Lqkg;)V
+
+    return-object v0
+.end method
+
 
 # virtual methods
-.method public final run()V
-    .locals 5
+.method public final a()Landroid/os/Handler;
+    .locals 2
 
-    iget-object v0, p0, Ldvn;->a:Ldvr;
+    iget-object v0, p0, Ldvn;->a:Lqkg;
 
-    iget-object v1, p0, Ldvn;->b:Lnph;
-
-    iget-object v2, v0, Ldvr;->h:Lnou;
-
-    invoke-interface {v2}, Lnou;->isDone()Z
-
-    move-result v2
-
-    const-string v3, "launchPhotos"
-
-    if-eqz v2, :cond_0
-
-    new-instance v0, Ljava/util/concurrent/CancellationException;
-
-    const-string v2, "Photos Launch was already cancelled."
-
-    invoke-direct {v0, v2}, Ljava/util/concurrent/CancellationException;-><init>(Ljava/lang/String;)V
-
-    sget-object v2, Ldvr;->a:Lnak;
-
-    invoke-virtual {v2}, Lnaf;->c()Lnaz;
-
-    move-result-object v2
-
-    const/16 v4, 0x483
-
-    invoke-static {v2, v3, v4, v0}, Ld;->h(Lnaz;Ljava/lang/String;CLjava/lang/Throwable;)V
-
-    invoke-virtual {v1, v0}, Lnph;->a(Ljava/lang/Throwable;)Z
-
-    return-void
-
-    :cond_0
-    iget-object v2, v0, Ldvr;->c:Logd;
-
-    invoke-interface {v2}, Logd;->get()Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Lchj;
-
-    invoke-virtual {v0, v2}, Ldvr;->f(Lchj;)Lchd;
-
-    move-result-object v2
-
-    if-eqz v2, :cond_1
-
-    invoke-virtual {v0, v2}, Ldvr;->g(Lchd;)Lnou;
+    invoke-interface {v0}, Lqkg;->get()Ljava/lang/Object;
 
     move-result-object v0
 
-    invoke-virtual {v1, v0}, Lnph;->f(Lnou;)Z
+    check-cast v0, Llap;
 
-    return-void
+    iget-object v1, p0, Ldvn;->b:Lqkg;
 
-    :cond_1
-    iget-object v2, v0, Ldvr;->g:Lgzm;
+    invoke-interface {v1}, Lqkg;->get()Ljava/lang/Object;
 
-    sget-object v4, Lgzd;->at:Lgzr;
+    move-result-object v1
 
-    invoke-interface {v2, v4}, Lgzm;->c(Lgzb;)Ljava/lang/Object;
+    check-cast v1, Lmip;
 
-    move-result-object v2
+    const-string v1, "MicrovideoQSharedStartup"
 
-    check-cast v2, Ljava/lang/Boolean;
-
-    invoke-virtual {v2}, Ljava/lang/Boolean;->booleanValue()Z
-
-    move-result v2
-
-    if-eqz v2, :cond_2
-
-    invoke-virtual {v0}, Ldvr;->a()Lnou;
+    invoke-static {v0, v1}, Lmip;->bW(Llap;Ljava/lang/String;)Landroid/os/Handler;
 
     move-result-object v0
 
-    invoke-virtual {v1, v0}, Lnph;->f(Lnou;)Z
+    return-object v0
+.end method
 
-    return-void
+.method public final bridge synthetic get()Ljava/lang/Object;
+    .locals 1
 
-    :cond_2
-    new-instance v0, Ljava/util/concurrent/CancellationException;
+    invoke-virtual {p0}, Ldvn;->a()Landroid/os/Handler;
 
-    const-string v2, "filmstrip item was null"
+    move-result-object v0
 
-    invoke-direct {v0, v2}, Ljava/util/concurrent/CancellationException;-><init>(Ljava/lang/String;)V
-
-    sget-object v2, Ldvr;->a:Lnak;
-
-    invoke-virtual {v2}, Lnaf;->b()Lnaz;
-
-    move-result-object v2
-
-    const/16 v4, 0x482
-
-    invoke-static {v2, v3, v4, v0}, Ld;->h(Lnaz;Ljava/lang/String;CLjava/lang/Throwable;)V
-
-    invoke-virtual {v1, v0}, Lnph;->a(Ljava/lang/Throwable;)Z
-
-    return-void
+    return-object v0
 .end method

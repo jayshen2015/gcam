@@ -1,191 +1,70 @@
 .class public final Ljll;
-.super Lcbe;
+.super Landroid/animation/AnimatorListenerAdapter;
 
-# interfaces
-.implements Ljlm;
+
+# instance fields
+.field final synthetic a:Lcom/google/android/apps/camera/ui/shutterbutton/ShutterButtonProgressOverlay;
 
 
 # direct methods
-.method public constructor <init>(Landroid/os/IBinder;)V
-    .locals 1
+.method public constructor <init>(Lcom/google/android/apps/camera/ui/shutterbutton/ShutterButtonProgressOverlay;)V
+    .locals 0
 
-    const-string v0, "com.google.android.gms.learning.internal.training.IInAppJobService"
+    iput-object p1, p0, Ljll;->a:Lcom/google/android/apps/camera/ui/shutterbutton/ShutterButtonProgressOverlay;
 
-    invoke-direct {p0, p1, v0}, Lcbe;-><init>(Landroid/os/IBinder;Ljava/lang/String;)V
+    invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final e(Landroid/content/Intent;II)I
+.method public final onAnimationCancel(Landroid/animation/Animator;)V
     .locals 1
 
-    invoke-virtual {p0}, Lcbe;->a()Landroid/os/Parcel;
+    iget-object p1, p0, Ljll;->a:Lcom/google/android/apps/camera/ui/shutterbutton/ShutterButtonProgressOverlay;
 
-    move-result-object v0
+    const/4 v0, 0x4
 
-    invoke-static {v0, p1}, Lcbg;->c(Landroid/os/Parcel;Landroid/os/Parcelable;)V
+    iput v0, p1, Lcom/google/android/apps/camera/ui/shutterbutton/ShutterButtonProgressOverlay;->k:I
 
-    invoke-virtual {v0, p2}, Landroid/os/Parcel;->writeInt(I)V
+    iget v0, p1, Lcom/google/android/apps/camera/ui/shutterbutton/ShutterButtonProgressOverlay;->e:I
 
-    invoke-virtual {v0, p3}, Landroid/os/Parcel;->writeInt(I)V
+    iput v0, p1, Lcom/google/android/apps/camera/ui/shutterbutton/ShutterButtonProgressOverlay;->b:I
 
-    const/4 p1, 0x4
+    iget v0, p1, Lcom/google/android/apps/camera/ui/shutterbutton/ShutterButtonProgressOverlay;->f:I
 
-    invoke-virtual {p0, p1, v0}, Lcbe;->y(ILandroid/os/Parcel;)Landroid/os/Parcel;
+    int-to-float v0, v0
 
-    move-result-object p1
-
-    invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
-
-    move-result p2
-
-    invoke-virtual {p1}, Landroid/os/Parcel;->recycle()V
-
-    return p2
-.end method
-
-.method public final f()V
-    .locals 2
-
-    invoke-virtual {p0}, Lcbe;->a()Landroid/os/Parcel;
-
-    move-result-object v0
-
-    const/4 v1, 0x2
-
-    invoke-virtual {p0, v1, v0}, Lcbe;->z(ILandroid/os/Parcel;)V
+    iput v0, p1, Lcom/google/android/apps/camera/ui/shutterbutton/ShutterButtonProgressOverlay;->c:F
 
     return-void
 .end method
 
-.method public final g(Landroid/content/Intent;)V
+.method public final onAnimationEnd(Landroid/animation/Animator;)V
     .locals 1
 
-    invoke-virtual {p0}, Lcbe;->a()Landroid/os/Parcel;
+    iget-object p1, p0, Ljll;->a:Lcom/google/android/apps/camera/ui/shutterbutton/ShutterButtonProgressOverlay;
 
-    move-result-object v0
+    const/4 v0, 0x4
 
-    invoke-static {v0, p1}, Lcbg;->c(Landroid/os/Parcel;Landroid/os/Parcelable;)V
-
-    const/4 p1, 0x6
-
-    invoke-virtual {p0, p1, v0}, Lcbe;->z(ILandroid/os/Parcel;)V
+    iput v0, p1, Lcom/google/android/apps/camera/ui/shutterbutton/ShutterButtonProgressOverlay;->k:I
 
     return-void
 .end method
 
-.method public final h(I)V
+.method public final onAnimationStart(Landroid/animation/Animator;)V
     .locals 1
 
-    invoke-virtual {p0}, Lcbe;->a()Landroid/os/Parcel;
+    iget-object p1, p0, Ljll;->a:Lcom/google/android/apps/camera/ui/shutterbutton/ShutterButtonProgressOverlay;
 
-    move-result-object v0
+    const/4 v0, 0x2
 
-    invoke-virtual {v0, p1}, Landroid/os/Parcel;->writeInt(I)V
+    iput v0, p1, Lcom/google/android/apps/camera/ui/shutterbutton/ShutterButtonProgressOverlay;->k:I
 
-    const/4 p1, 0x3
+    const/4 v0, 0x0
 
-    invoke-virtual {p0, p1, v0}, Lcbe;->z(ILandroid/os/Parcel;)V
+    invoke-virtual {p1, v0}, Lcom/google/android/apps/camera/ui/shutterbutton/ShutterButtonProgressOverlay;->setVisibility(I)V
 
     return-void
-.end method
-
-.method public final i(Ljig;Ljig;)Z
-    .locals 1
-
-    invoke-virtual {p0}, Lcbe;->a()Landroid/os/Parcel;
-
-    move-result-object v0
-
-    invoke-static {v0, p1}, Lcbg;->d(Landroid/os/Parcel;Landroid/os/IInterface;)V
-
-    invoke-static {v0, p2}, Lcbg;->d(Landroid/os/Parcel;Landroid/os/IInterface;)V
-
-    const/16 p1, 0x9
-
-    invoke-virtual {p0, p1, v0}, Lcbe;->y(ILandroid/os/Parcel;)Landroid/os/Parcel;
-
-    move-result-object p1
-
-    invoke-static {p1}, Lcbg;->e(Landroid/os/Parcel;)Z
-
-    move-result p2
-
-    invoke-virtual {p1}, Landroid/os/Parcel;->recycle()V
-
-    return p2
-.end method
-
-.method public final j(Landroid/app/job/JobParameters;)Z
-    .locals 1
-
-    invoke-virtual {p0}, Lcbe;->a()Landroid/os/Parcel;
-
-    move-result-object v0
-
-    invoke-static {v0, p1}, Lcbg;->c(Landroid/os/Parcel;Landroid/os/Parcelable;)V
-
-    const/4 p1, 0x7
-
-    invoke-virtual {p0, p1, v0}, Lcbe;->y(ILandroid/os/Parcel;)Landroid/os/Parcel;
-
-    move-result-object p1
-
-    invoke-static {p1}, Lcbg;->e(Landroid/os/Parcel;)Z
-
-    move-result v0
-
-    invoke-virtual {p1}, Landroid/os/Parcel;->recycle()V
-
-    return v0
-.end method
-
-.method public final k(Landroid/app/job/JobParameters;)Z
-    .locals 1
-
-    invoke-virtual {p0}, Lcbe;->a()Landroid/os/Parcel;
-
-    move-result-object v0
-
-    invoke-static {v0, p1}, Lcbg;->c(Landroid/os/Parcel;Landroid/os/Parcelable;)V
-
-    const/16 p1, 0x8
-
-    invoke-virtual {p0, p1, v0}, Lcbe;->y(ILandroid/os/Parcel;)Landroid/os/Parcel;
-
-    move-result-object p1
-
-    invoke-static {p1}, Lcbg;->e(Landroid/os/Parcel;)Z
-
-    move-result v0
-
-    invoke-virtual {p1}, Landroid/os/Parcel;->recycle()V
-
-    return v0
-.end method
-
-.method public final l(Landroid/content/Intent;)Z
-    .locals 1
-
-    invoke-virtual {p0}, Lcbe;->a()Landroid/os/Parcel;
-
-    move-result-object v0
-
-    invoke-static {v0, p1}, Lcbg;->c(Landroid/os/Parcel;Landroid/os/Parcelable;)V
-
-    const/4 p1, 0x5
-
-    invoke-virtual {p0, p1, v0}, Lcbe;->y(ILandroid/os/Parcel;)Landroid/os/Parcel;
-
-    move-result-object p1
-
-    invoke-static {p1}, Lcbg;->e(Landroid/os/Parcel;)Z
-
-    move-result v0
-
-    invoke-virtual {p1}, Landroid/os/Parcel;->recycle()V
-
-    return v0
 .end method

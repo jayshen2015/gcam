@@ -1,115 +1,288 @@
 .class public final Ljpm;
-.super Ljhn;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Ljqn;
 
 
-# static fields
-.field public static final CREATOR:Landroid/os/Parcelable$Creator;
+# annotations
+.annotation runtime Ljava/lang/Deprecated;
+.end annotation
 
 
 # instance fields
-.field public final a:I
+.field public final a:Lqkg;
 
-.field public final b:Z
+.field private final b:Lojc;
 
-.field public final c:Ljava/util/List;
+.field private final c:Lojc;
 
-.field public final d:I
+.field private final d:Lqkg;
 
-.field public final e:Ljava/lang/String;
+.field private final e:Lqkg;
 
-.field public final f:Z
+.field private final f:Lqkg;
+
+.field private final g:Lqkg;
+
+.field private final h:Lqkg;
+
+.field private final i:Lqkg;
+
+.field private final j:Lqkg;
+
+.field private final k:Llco;
+
+.field private final l:Lfhv;
+
+.field private final m:Lljf;
+
+.field private final n:Lhuf;
+
+.field private final o:Lbqg;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
+.method public constructor <init>(Lojc;Lojc;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lbqg;Llco;Lfhv;Lljf;Lhuf;)V
+    .locals 0
 
-    new-instance v0, Ljnd;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const/16 v1, 0x10
+    iput-object p1, p0, Ljpm;->b:Lojc;
 
-    invoke-direct {v0, v1}, Ljnd;-><init>(I)V
+    iput-object p2, p0, Ljpm;->c:Lojc;
 
-    sput-object v0, Ljpm;->CREATOR:Landroid/os/Parcelable$Creator;
+    iput-object p3, p0, Ljpm;->d:Lqkg;
 
-    return-void
-.end method
+    iput-object p6, p0, Ljpm;->f:Lqkg;
 
-.method public constructor <init>(IZLjava/util/List;ILjava/lang/String;Z)V
-    .locals 1
+    iput-object p9, p0, Ljpm;->i:Lqkg;
 
-    invoke-direct {p0}, Ljhn;-><init>()V
+    iput-object p10, p0, Ljpm;->j:Lqkg;
 
-    new-instance v0, Ljava/util/ArrayList;
+    iput-object p7, p0, Ljpm;->g:Lqkg;
 
-    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+    iput-object p4, p0, Ljpm;->e:Lqkg;
 
-    iput-object v0, p0, Ljpm;->c:Ljava/util/List;
+    iput-object p5, p0, Ljpm;->a:Lqkg;
 
-    iput p1, p0, Ljpm;->a:I
+    iput-object p8, p0, Ljpm;->h:Lqkg;
 
-    iput-boolean p2, p0, Ljpm;->b:Z
+    iput-object p12, p0, Ljpm;->k:Llco;
 
-    if-eqz p3, :cond_0
+    iput-object p13, p0, Ljpm;->l:Lfhv;
 
-    invoke-interface {v0, p3}, Ljava/util/List;->addAll(Ljava/util/Collection;)Z
+    iput-object p11, p0, Ljpm;->o:Lbqg;
 
-    :cond_0
-    iput p4, p0, Ljpm;->d:I
+    iput-object p14, p0, Ljpm;->m:Lljf;
 
-    iput-object p5, p0, Ljpm;->e:Ljava/lang/String;
-
-    iput-boolean p6, p0, Ljpm;->f:Z
+    iput-object p15, p0, Ljpm;->n:Lhuf;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final writeToParcel(Landroid/os/Parcel;I)V
-    .locals 2
+.method public final a()V
+    .locals 12
 
-    invoke-static {p1}, Ljhp;->a(Landroid/os/Parcel;)I
+    iget-object v0, p0, Ljpm;->e:Lqkg;
 
-    move-result p2
+    invoke-interface {v0}, Lqkg;->get()Ljava/lang/Object;
 
-    iget v0, p0, Ljpm;->a:I
+    move-result-object v0
 
-    const/4 v1, 0x2
+    check-cast v0, Ljnr;
 
-    invoke-static {p1, v1, v0}, Ljhp;->g(Landroid/os/Parcel;II)V
+    iget-object v0, v0, Ljnr;->c:Ljus;
 
-    iget-boolean v0, p0, Ljpm;->b:Z
+    iget-object v1, p0, Ljpm;->f:Lqkg;
 
-    const/4 v1, 0x3
+    invoke-interface {v1}, Lqkg;->get()Ljava/lang/Object;
 
-    invoke-static {p1, v1, v0}, Ljhp;->d(Landroid/os/Parcel;IZ)V
+    move-result-object v1
 
-    iget-object v0, p0, Ljpm;->c:Ljava/util/List;
+    move-object v2, v1
 
-    const/4 v1, 0x4
+    check-cast v2, Lhpb;
 
-    invoke-static {p1, v1, v0}, Ljhp;->r(Landroid/os/Parcel;ILjava/util/List;)V
+    iget-object v1, p0, Ljpm;->j:Lqkg;
 
-    iget v0, p0, Ljpm;->d:I
+    invoke-interface {v1}, Lqkg;->get()Ljava/lang/Object;
 
-    const/4 v1, 0x5
+    move-result-object v1
 
-    invoke-static {p1, v1, v0}, Ljhp;->g(Landroid/os/Parcel;II)V
+    move-object v3, v1
 
-    iget-object v0, p0, Ljpm;->e:Ljava/lang/String;
+    check-cast v3, Lhos;
 
-    const/4 v1, 0x6
+    iget-object v1, p0, Ljpm;->o:Lbqg;
 
-    invoke-static {p1, v1, v0}, Ljhp;->p(Landroid/os/Parcel;ILjava/lang/String;)V
+    invoke-virtual {v1}, Lbqg;->i()Llap;
 
-    iget-boolean v0, p0, Ljpm;->f:Z
+    move-result-object v4
 
-    const/4 v1, 0x7
+    const v1, 0x7f0b013d
 
-    invoke-static {p1, v1, v0}, Ljhp;->d(Landroid/os/Parcel;IZ)V
+    invoke-virtual {v0, v1}, Ljus;->c(I)Ljava/lang/Object;
 
-    invoke-static {p1, p2}, Ljhp;->c(Landroid/os/Parcel;I)V
+    move-result-object v1
 
+    move-object v5, v1
+
+    check-cast v5, Lcom/google/android/apps/camera/uiutils/ReplaceableView;
+
+    iget-object v1, p0, Ljpm;->i:Lqkg;
+
+    invoke-interface {v1}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v1
+
+    move-object v6, v1
+
+    check-cast v6, Lhpc;
+
+    iget-object v1, p0, Ljpm;->h:Lqkg;
+
+    invoke-interface {v1}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v1
+
+    move-object v7, v1
+
+    check-cast v7, Ljsc;
+
+    iget-object v1, p0, Ljpm;->n:Lhuf;
+
+    sget-object v8, Lhtu;->m:Lhun;
+
+    invoke-interface {v1, v8}, Lhuf;->a(Lhts;)Llco;
+
+    move-result-object v8
+
+    iget-object v1, p0, Ljpm;->n:Lhuf;
+
+    sget-object v9, Lhtu;->j:Lhun;
+
+    invoke-interface {v1, v9}, Lhuf;->a(Lhts;)Llco;
+
+    move-result-object v9
+
+    iget-object v1, p0, Ljpm;->n:Lhuf;
+
+    sget-object v10, Lhtu;->n:Lhun;
+
+    invoke-interface {v1, v10}, Lhuf;->a(Lhts;)Llco;
+
+    move-result-object v10
+
+    iget-object v11, p0, Ljpm;->k:Llco;
+
+    invoke-interface/range {v2 .. v11}, Lhpb;->e(Lhos;Llap;Lcom/google/android/apps/camera/uiutils/ReplaceableView;Lhpc;Ljsc;Llco;Llco;Llco;Llco;)V
+
+    iget-object v1, p0, Ljpm;->m:Lljf;
+
+    const-string v2, "WireMicro"
+
+    invoke-interface {v1, v2}, Lljf;->g(Ljava/lang/String;)V
+
+    iget-object v1, p0, Ljpm;->b:Lojc;
+
+    invoke-virtual {v1}, Lojc;->g()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    iget-object v1, p0, Ljpm;->l:Lfhv;
+
+    iget-object v2, p0, Ljpm;->b:Lojc;
+
+    invoke-virtual {v2}, Lojc;->c()Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Lfox;
+
+    invoke-virtual {v1, v2}, Lfhv;->e(Lfik;)V
+
+    :cond_0
+    const v1, 0x7f0b0092
+
+    invoke-virtual {v0, v1}, Ljus;->c(I)Ljava/lang/Object;
+
+    move-result-object v1
+
+    new-instance v2, Ljpl;
+
+    check-cast v1, Landroid/view/View;
+
+    invoke-direct {v2, p0, v1, v0}, Ljpl;-><init>(Ljpm;Landroid/view/View;Ljus;)V
+
+    invoke-virtual {v1, v2}, Landroid/view/View;->post(Ljava/lang/Runnable;)Z
+
+    iget-object v1, p0, Ljpm;->m:Lljf;
+
+    const-string v2, "WireBottomBar"
+
+    invoke-interface {v1, v2}, Lljf;->g(Ljava/lang/String;)V
+
+    iget-object v1, p0, Ljpm;->g:Lqkg;
+
+    invoke-interface {v1}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Lcom/google/android/apps/camera/bottombar/BottomBarController;
+
+    invoke-virtual {v1}, Lcom/google/android/apps/camera/bottombar/BottomBarController;->wireListeners()V
+
+    iget-object v1, p0, Ljpm;->m:Lljf;
+
+    invoke-interface {v1}, Lljf;->f()V
+
+    iget-object v1, p0, Ljpm;->c:Lojc;
+
+    invoke-virtual {v1}, Lojc;->g()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_1
+
+    const v1, 0x7f0b02c6
+
+    invoke-virtual {v0, v1}, Ljus;->c(I)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/view/ViewStub;
+
+    iget-object v1, p0, Ljpm;->c:Lojc;
+
+    invoke-virtual {v1}, Lojc;->c()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Lidc;
+
+    invoke-interface {v1, v0}, Lidc;->f(Landroid/view/ViewStub;)V
+
+    iget-object v0, p0, Ljpm;->d:Lqkg;
+
+    check-cast v0, Ljnw;
+
+    invoke-virtual {v0}, Ljnw;->a()Ljns;
+
+    move-result-object v0
+
+    iget-object v0, v0, Ljns;->c:Lcom/google/android/apps/camera/ui/views/MainActivityLayout;
+
+    iget-object v1, p0, Ljpm;->c:Lojc;
+
+    iput-object v1, v0, Lcom/google/android/apps/camera/ui/views/MainActivityLayout;->k:Lojc;
+
+    invoke-virtual {v0}, Lcom/google/android/apps/camera/ui/views/MainActivityLayout;->r()V
+
+    :cond_1
     return-void
 .end method

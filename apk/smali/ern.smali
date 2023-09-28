@@ -1,126 +1,102 @@
-.class final Lern;
+.class public final synthetic Lern;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lenz;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field final synthetic a:Lert;
+.field public final synthetic a:Lerp;
+
+.field public final synthetic b:J
+
+.field public final synthetic c:Lplj;
 
 
 # direct methods
-.method public constructor <init>(Lert;)V
+.method public synthetic constructor <init>(Lerp;JLplj;)V
     .locals 0
 
-    iput-object p1, p0, Lern;->a:Lert;
-
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lern;->a:Lerp;
+
+    iput-wide p2, p0, Lern;->b:J
+
+    iput-object p4, p0, Lern;->c:Lplj;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Z)V
-    .locals 1
+.method public final run()V
+    .locals 6
 
-    iget-object v0, p0, Lern;->a:Lert;
+    iget-object v0, p0, Lern;->a:Lerp;
 
-    iget-object v0, v0, Lert;->n:Lihg;
+    iget-wide v1, p0, Lern;->b:J
 
-    iget-object v0, v0, Lihg;->f:Ljava/lang/Object;
+    iget-object v3, p0, Lern;->c:Lplj;
 
-    check-cast v0, Lcom/google/android/apps/camera/bottombar/BottomBar;
+    iget-boolean v4, v0, Lerp;->o:Z
 
-    invoke-virtual {v0}, Lcom/google/android/apps/camera/bottombar/BottomBar;->getThumbnailButton()Lcom/google/android/apps/camera/bottombar/RoundedThumbnailView;
+    if-nez v4, :cond_0
 
-    move-result-object v0
+    new-instance v4, Ljava/lang/StringBuilder;
 
-    invoke-virtual {v0}, Lcom/google/android/apps/camera/bottombar/RoundedThumbnailView;->getVisibility()I
+    const/16 v5, 0x29
 
-    move-result v0
+    invoke-direct {v4, v5}, Ljava/lang/StringBuilder;-><init>(I)V
 
-    if-eqz v0, :cond_0
+    const-string v5, "Submitting PSL frame "
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v4, v1, v2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    sget-object v1, Lovl;->a:Lovd;
+
+    iget-object v1, v0, Lerp;->f:Lljf;
+
+    const-string v2, "processPslFrame"
+
+    invoke-interface {v1, v2}, Lljf;->e(Ljava/lang/String;)V
+
+    iget-object v1, v0, Lerp;->c:Lepm;
+
+    iget v2, v0, Lerp;->d:I
+
+    invoke-virtual {v1, v2, v3}, Lepm;->g(ILplj;)V
+
+    iget-object v0, v0, Lerp;->f:Lljf;
+
+    invoke-interface {v0}, Lljf;->f()V
 
     return-void
 
     :cond_0
-    if-eqz p1, :cond_1
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    iget-object p1, p0, Lern;->a:Lert;
+    const/16 v4, 0x27
 
-    iget-object p1, p1, Lert;->l:Loiw;
+    invoke-direct {v0, v4}, Ljava/lang/StringBuilder;-><init>(I)V
 
-    invoke-interface {p1}, Loiw;->get()Ljava/lang/Object;
+    const-string v4, "Ignoring PSL frame "
 
-    move-result-object p1
+    invoke-virtual {v0, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    check-cast p1, Lhsl;
+    invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
-    const/4 v0, 0x0
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    invoke-interface {p1, v0}, Lhsl;->e(Z)V
+    sget-object v0, Lovl;->a:Lovd;
 
-    :cond_1
-    return-void
-.end method
+    iget-object v0, v3, Lplj;->d:Ljava/lang/Runnable;
 
-.method public final b(Z)V
-    .locals 2
-
-    if-eqz p1, :cond_0
-
-    iget-object p1, p0, Lern;->a:Lert;
-
-    iget-object p1, p1, Lert;->H:Libj;
-
-    invoke-interface {p1}, Libj;->q()Z
-
-    move-result p1
-
-    if-eqz p1, :cond_0
-
-    iget-object p1, p0, Lern;->a:Lert;
-
-    iget-object p1, p1, Lert;->H:Libj;
-
-    const/4 v0, 0x2
-
-    const/4 v1, 0x1
-
-    invoke-interface {p1, v0, v1}, Libj;->u(IZ)V
-
-    :cond_0
-    return-void
-.end method
-
-.method public final synthetic c()V
-    .locals 0
-
-    return-void
-.end method
-
-.method public final d(Z)V
-    .locals 0
-
-    iget-object p1, p0, Lern;->a:Lert;
-
-    iget-object p1, p1, Lert;->u:Lgeh;
-
-    invoke-interface {p1}, Lgeh;->M()V
-
-    return-void
-.end method
-
-.method public final synthetic e(Z)V
-    .locals 0
-
-    return-void
-.end method
-
-.method public final synthetic f(Z)V
-    .locals 0
+    invoke-interface {v0}, Ljava/lang/Runnable;->run()V
 
     return-void
 .end method

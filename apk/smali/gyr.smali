@@ -1,112 +1,603 @@
-.class public final enum Lgyr;
-.super Ljava/lang/Enum;
+.class public final Lgyr;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Llmv;
 
 
-# static fields
-.field public static final enum a:Lgyr;
+# instance fields
+.field public final a:Ljava/util/List;
 
-.field public static final enum b:Lgyr;
+.field public final b:I
 
-.field public static final enum c:Lgyr;
+.field public final c:Llmv;
 
-.field public static final enum d:Lgyr;
+.field public final d:Ljava/util/concurrent/Executor;
 
-.field private static final synthetic e:[Lgyr;
+.field public e:Llmv;
+
+.field public f:Z
+
+.field public final g:Llmu;
+
+.field public final h:Llqd;
+
+.field private final i:Llnc;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 9
+.method public constructor <init>(Llnc;Llap;Ljava/util/concurrent/Executor;Llqd;Llco;)V
+    .locals 2
 
-    new-instance v0, Lgyr;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const-string v1, "FPS_AUTO"
+    new-instance v0, Ljava/util/ArrayList;
 
-    const/4 v2, 0x0
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    invoke-direct {v0, v1, v2}, Lgyr;-><init>(Ljava/lang/String;I)V
+    iput-object v0, p0, Lgyr;->a:Ljava/util/List;
 
-    sput-object v0, Lgyr;->a:Lgyr;
+    new-instance v0, Lgyq;
 
-    new-instance v1, Lgyr;
+    invoke-direct {v0, p0}, Lgyq;-><init>(Lgyr;)V
 
-    const-string v3, "FPS_24"
+    iput-object v0, p0, Lgyr;->c:Llmv;
 
-    const/4 v4, 0x1
+    new-instance v1, Lgyo;
 
-    invoke-direct {v1, v3, v4}, Lgyr;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v1, p0}, Lgyo;-><init>(Lgyr;)V
 
-    sput-object v1, Lgyr;->b:Lgyr;
+    iput-object v1, p0, Lgyr;->g:Llmu;
 
-    new-instance v3, Lgyr;
+    iput-object p1, p0, Lgyr;->i:Llnc;
 
-    const-string v5, "FPS_30"
+    iput-object p3, p0, Lgyr;->d:Ljava/util/concurrent/Executor;
 
-    const/4 v6, 0x2
+    iput-object p4, p0, Lgyr;->h:Llqd;
 
-    invoke-direct {v3, v5, v6}, Lgyr;-><init>(Ljava/lang/String;I)V
+    const/4 p3, 0x3
 
-    sput-object v3, Lgyr;->c:Lgyr;
+    iput p3, p0, Lgyr;->b:I
 
-    new-instance v5, Lgyr;
+    invoke-interface {p5}, Llco;->fA()Ljava/lang/Object;
 
-    const-string v7, "FPS_60"
+    move-result-object p3
 
-    const/4 v8, 0x3
+    check-cast p3, Ljava/lang/Boolean;
 
-    invoke-direct {v5, v7, v8}, Lgyr;-><init>(Ljava/lang/String;I)V
+    invoke-virtual {p3}, Ljava/lang/Boolean;->booleanValue()Z
 
-    sput-object v5, Lgyr;->d:Lgyr;
+    move-result p3
 
-    const/4 v7, 0x4
+    if-eqz p3, :cond_0
 
-    new-array v7, v7, [Lgyr;
+    invoke-virtual {p0}, Lgyr;->r()Llmv;
 
-    aput-object v0, v7, v2
+    move-result-object p3
 
-    aput-object v1, v7, v4
+    iput-object p3, p0, Lgyr;->e:Llmv;
 
-    aput-object v3, v7, v6
+    goto :goto_0
 
-    aput-object v5, v7, v8
+    :cond_0
+    iput-object v0, p0, Lgyr;->e:Llmv;
 
-    sput-object v7, Lgyr;->e:[Lgyr;
+    :goto_0
+    new-instance p3, Lgyn;
+
+    invoke-direct {p3, p0, p1}, Lgyn;-><init>(Lgyr;Llnc;)V
+
+    sget-object p1, Lpgr;->a:Lpgr;
+
+    invoke-interface {p5, p3, p1}, Llco;->a(Llij;Ljava/util/concurrent/Executor;)Llie;
+
+    move-result-object p1
+
+    invoke-virtual {p2, p1}, Llap;->c(Llie;)V
 
     return-void
 .end method
 
-.method private constructor <init>(Ljava/lang/String;I)V
-    .locals 0
 
-    invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+# virtual methods
+.method public final declared-synchronized a()I
+    .locals 1
+
+    monitor-enter p0
+
+    :try_start_0
+    iget-object v0, p0, Lgyr;->e:Llmv;
+
+    invoke-interface {v0}, Llmv;->a()I
+
+    move-result v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    monitor-exit p0
+
+    return v0
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit p0
+
+    throw v0
+.end method
+
+.method public final declared-synchronized b()I
+    .locals 1
+
+    monitor-enter p0
+
+    :try_start_0
+    iget-object v0, p0, Lgyr;->e:Llmv;
+
+    invoke-interface {v0}, Llmv;->b()I
+
+    move-result v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    monitor-exit p0
+
+    return v0
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit p0
+
+    throw v0
+.end method
+
+.method public final declared-synchronized c()Llmr;
+    .locals 1
+
+    monitor-enter p0
+
+    :try_start_0
+    iget-object v0, p0, Lgyr;->e:Llmv;
+
+    invoke-interface {v0}, Llmv;->c()Llmr;
+
+    move-result-object v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    monitor-exit p0
+
+    return-object v0
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit p0
+
+    throw v0
+.end method
+
+.method public final declared-synchronized close()V
+    .locals 2
+
+    monitor-enter p0
+
+    const/4 v0, 0x1
+
+    :try_start_0
+    iput-boolean v0, p0, Lgyr;->f:Z
+
+    iget-object v0, p0, Lgyr;->a:Ljava/util/List;
+
+    invoke-interface {v0}, Ljava/util/List;->clear()V
+
+    iget-object v0, p0, Lgyr;->e:Llmv;
+
+    iget-object v1, p0, Lgyr;->g:Llmu;
+
+    invoke-interface {v0, v1}, Llmv;->l(Llmu;)V
+
+    iget-object v0, p0, Lgyr;->i:Llnc;
+
+    iget-object v1, p0, Lgyr;->e:Llmv;
+
+    invoke-static {v0, v1}, Lfvq;->x(Llnc;Llmv;)V
+
+    iget-object v0, p0, Lgyr;->e:Llmv;
+
+    invoke-interface {v0}, Llmv;->close()V
+
+    iget-object v0, p0, Lgyr;->c:Llmv;
+
+    iput-object v0, p0, Lgyr;->e:Llmv;
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    monitor-exit p0
 
     return-void
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit p0
+
+    throw v0
 .end method
 
-.method public static a(Ljava/lang/String;)Lgyr;
+.method public final declared-synchronized d(Lojf;)Llmr;
     .locals 1
 
-    const-class v0, Lgyr;
+    monitor-enter p0
 
-    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
+    :try_start_0
+    iget-object v0, p0, Lgyr;->e:Llmv;
 
-    move-result-object p0
+    invoke-interface {v0, p1}, Llmv;->d(Lojf;)Llmr;
 
-    check-cast p0, Lgyr;
+    move-result-object p1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    return-object p0
+    monitor-exit p0
+
+    return-object p1
+
+    :catchall_0
+    move-exception p1
+
+    monitor-exit p0
+
+    throw p1
 .end method
 
-.method public static values()[Lgyr;
+.method public final declared-synchronized e()Llmr;
     .locals 1
 
-    sget-object v0, Lgyr;->e:[Lgyr;
+    monitor-enter p0
 
-    invoke-virtual {v0}, [Lgyr;->clone()Ljava/lang/Object;
+    :try_start_0
+    iget-object v0, p0, Lgyr;->e:Llmv;
+
+    invoke-interface {v0}, Llmv;->e()Llmr;
+
+    move-result-object v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    monitor-exit p0
+
+    return-object v0
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit p0
+
+    throw v0
+.end method
+
+.method public final declared-synchronized f(Lojf;)Llmr;
+    .locals 1
+
+    monitor-enter p0
+
+    :try_start_0
+    iget-object v0, p0, Lgyr;->e:Llmv;
+
+    invoke-interface {v0, p1}, Llmv;->f(Lojf;)Llmr;
+
+    move-result-object p1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    monitor-exit p0
+
+    return-object p1
+
+    :catchall_0
+    move-exception p1
+
+    monitor-exit p0
+
+    throw p1
+.end method
+
+.method public final declared-synchronized g()Llmr;
+    .locals 1
+
+    monitor-enter p0
+
+    :try_start_0
+    iget-object v0, p0, Lgyr;->e:Llmv;
+
+    invoke-interface {v0}, Llmv;->g()Llmr;
+
+    move-result-object v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    monitor-exit p0
+
+    return-object v0
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit p0
+
+    throw v0
+.end method
+
+.method public final declared-synchronized h()Llmr;
+    .locals 1
+
+    monitor-enter p0
+
+    :try_start_0
+    iget-object v0, p0, Lgyr;->e:Llmv;
+
+    invoke-interface {v0}, Llmv;->h()Llmr;
+
+    move-result-object v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    monitor-exit p0
+
+    return-object v0
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit p0
+
+    throw v0
+.end method
+
+.method public final declared-synchronized i()Ljava/util/List;
+    .locals 1
+
+    monitor-enter p0
+
+    :try_start_0
+    iget-object v0, p0, Lgyr;->e:Llmv;
+
+    invoke-interface {v0}, Llmv;->i()Ljava/util/List;
+
+    move-result-object v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    monitor-exit p0
+
+    return-object v0
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit p0
+
+    throw v0
+.end method
+
+.method public final declared-synchronized j()Ljava/util/List;
+    .locals 1
+
+    monitor-enter p0
+
+    :try_start_0
+    iget-object v0, p0, Lgyr;->e:Llmv;
+
+    invoke-interface {v0}, Llmv;->j()Ljava/util/List;
+
+    move-result-object v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    monitor-exit p0
+
+    return-object v0
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit p0
+
+    throw v0
+.end method
+
+.method public final declared-synchronized k(Llmu;)V
+    .locals 1
+
+    monitor-enter p0
+
+    :try_start_0
+    iget-object v0, p0, Lgyr;->a:Ljava/util/List;
+
+    invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    monitor-exit p0
+
+    return-void
+
+    :catchall_0
+    move-exception p1
+
+    monitor-exit p0
+
+    throw p1
+.end method
+
+.method public final declared-synchronized l(Llmu;)V
+    .locals 1
+
+    monitor-enter p0
+
+    :try_start_0
+    iget-object v0, p0, Lgyr;->a:Ljava/util/List;
+
+    invoke-interface {v0, p1}, Ljava/util/List;->remove(Ljava/lang/Object;)Z
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    monitor-exit p0
+
+    return-void
+
+    :catchall_0
+    move-exception p1
+
+    monitor-exit p0
+
+    throw p1
+.end method
+
+.method public final declared-synchronized m(I)V
+    .locals 1
+
+    monitor-enter p0
+
+    :try_start_0
+    iget-object v0, p0, Lgyr;->e:Llmv;
+
+    invoke-interface {v0, p1}, Llmv;->m(I)V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    monitor-exit p0
+
+    return-void
+
+    :catchall_0
+    move-exception p1
+
+    monitor-exit p0
+
+    throw p1
+.end method
+
+.method public final declared-synchronized n(Llmt;)V
+    .locals 1
+
+    monitor-enter p0
+
+    :try_start_0
+    iget-object v0, p0, Lgyr;->e:Llmv;
+
+    invoke-interface {v0, p1}, Llmv;->n(Llmt;)V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    monitor-exit p0
+
+    return-void
+
+    :catchall_0
+    move-exception p1
+
+    monitor-exit p0
+
+    throw p1
+.end method
+
+.method public final declared-synchronized o(Llmw;)Z
+    .locals 1
+
+    monitor-enter p0
+
+    :try_start_0
+    iget-object v0, p0, Lgyr;->e:Llmv;
+
+    invoke-interface {v0, p1}, Llmv;->o(Llmw;)Z
+
+    move-result p1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    monitor-exit p0
+
+    return p1
+
+    :catchall_0
+    move-exception p1
+
+    monitor-exit p0
+
+    throw p1
+.end method
+
+.method public final declared-synchronized p()Z
+    .locals 1
+
+    monitor-enter p0
+
+    :try_start_0
+    iget-object v0, p0, Lgyr;->e:Llmv;
+
+    invoke-interface {v0}, Llmv;->p()Z
+
+    move-result v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    monitor-exit p0
+
+    return v0
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit p0
+
+    throw v0
+.end method
+
+.method public final declared-synchronized q()Llqd;
+    .locals 1
+
+    monitor-enter p0
+
+    :try_start_0
+    iget-object v0, p0, Lgyr;->h:Llqd;
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    monitor-exit p0
+
+    return-object v0
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit p0
+
+    throw v0
+.end method
+
+.method public final r()Llmv;
+    .locals 3
+
+    iget-object v0, p0, Lgyr;->i:Llnc;
+
+    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    iget-object v1, p0, Lgyr;->h:Llqd;
+
+    invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    iget v2, p0, Lgyr;->b:I
+
+    invoke-interface {v0, v1, v2}, Llnc;->r(Llqd;I)Llmv;
 
     move-result-object v0
 
-    check-cast v0, [Lgyr;
+    iget-object v1, p0, Lgyr;->g:Llmu;
+
+    invoke-interface {v0, v1}, Llmv;->k(Llmu;)V
 
     return-object v0
 .end method

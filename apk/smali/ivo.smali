@@ -1,74 +1,64 @@
-.class public final Livo;
-.super Livs;
+.class public final synthetic Livo;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Ljava/util/concurrent/Callable;
 
 
 # instance fields
-.field final synthetic a:Lcom/google/android/clockwork/common/wearable/wearmaterial/button/WearChipButton;
+.field public final synthetic a:Livp;
+
+.field public final synthetic b:Lj$/util/function/Supplier;
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/clockwork/common/wearable/wearmaterial/button/WearChipButton;Lcom/google/android/clockwork/common/wearable/wearmaterial/button/WearChipButton;)V
+.method public synthetic constructor <init>(Livp;Lj$/util/function/Supplier;)V
     .locals 0
 
-    iput-object p1, p0, Livo;->a:Lcom/google/android/clockwork/common/wearable/wearmaterial/button/WearChipButton;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0, p2}, Livs;-><init>(Lcom/google/android/clockwork/common/wearable/wearmaterial/button/WearChipButton;)V
+    iput-object p1, p0, Livo;->a:Livp;
+
+    iput-object p2, p0, Livo;->b:Lj$/util/function/Supplier;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final j()Livr;
-    .locals 5
+.method public final call()Ljava/lang/Object;
+    .locals 3
 
-    iget-object v0, p0, Livo;->a:Lcom/google/android/clockwork/common/wearable/wearmaterial/button/WearChipButton;
+    iget-object v0, p0, Livo;->a:Livp;
 
-    iget-object v0, v0, Lcom/google/android/clockwork/common/wearable/wearmaterial/button/WearChipButton;->k:Landroid/widget/CompoundButton;
+    iget-object v1, p0, Livo;->b:Lj$/util/function/Supplier;
 
-    new-instance v1, Livr;
+    iget-object v2, v0, Livp;->c:Ljava/util/concurrent/atomic/AtomicInteger;
 
-    if-eqz v0, :cond_0
+    invoke-virtual {v2}, Ljava/util/concurrent/atomic/AtomicInteger;->decrementAndGet()I
 
-    invoke-virtual {v0}, Landroid/view/View;->getAccessibilityClassName()Ljava/lang/CharSequence;
+    move-result v2
 
-    move-result-object v0
+    if-gtz v2, :cond_0
 
-    goto :goto_0
+    invoke-interface {v1}, Lj$/util/function/Supplier;->get()Ljava/lang/Object;
 
-    :cond_0
-    const/4 v0, 0x0
+    move-result-object v1
 
-    :goto_0
-    iget-object v2, p0, Livo;->a:Lcom/google/android/clockwork/common/wearable/wearmaterial/button/WearChipButton;
+    check-cast v1, Livt;
 
-    invoke-virtual {v2}, Lcom/google/android/clockwork/common/wearable/wearmaterial/button/WearChipButton;->g()Ljava/lang/CharSequence;
+    iget-object v0, v0, Livp;->d:Ljava/util/concurrent/atomic/AtomicInteger;
 
-    move-result-object v2
-
-    iget-object v3, p0, Livo;->a:Lcom/google/android/clockwork/common/wearable/wearmaterial/button/WearChipButton;
-
-    iget-object v4, v3, Lcom/google/android/clockwork/common/wearable/wearmaterial/button/WearChipButton;->j:Landroid/widget/TextView;
-
-    invoke-virtual {v4}, Landroid/widget/TextView;->getVisibility()I
-
-    move-result v4
-
-    if-nez v4, :cond_1
-
-    iget-object v3, v3, Lcom/google/android/clockwork/common/wearable/wearmaterial/button/WearChipButton;->j:Landroid/widget/TextView;
-
-    invoke-virtual {v3}, Landroid/widget/TextView;->getText()Ljava/lang/CharSequence;
-
-    move-result-object v3
-
-    goto :goto_1
-
-    :cond_1
-    const-string v3, ""
-
-    :goto_1
-    invoke-direct {v1, v0, v2, v3}, Livr;-><init>(Ljava/lang/CharSequence;Ljava/lang/CharSequence;Ljava/lang/CharSequence;)V
+    invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicInteger;->incrementAndGet()I
 
     return-object v1
+
+    :cond_0
+    new-instance v0, Ljava/util/concurrent/CancellationException;
+
+    const-string v1, "Found another update in flight."
+
+    invoke-direct {v0, v1}, Ljava/util/concurrent/CancellationException;-><init>(Ljava/lang/String;)V
+
+    throw v0
 .end method

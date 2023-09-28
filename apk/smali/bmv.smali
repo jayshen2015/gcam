@@ -1,150 +1,103 @@
 .class public final Lbmv;
-.super Lbni;
-
-
-# static fields
-.field public static final a:Lboc;
-
-.field private static final h:Lbnv;
+.super Ljava/lang/Object;
 
 
 # instance fields
-.field public b:Lbnq;
+.field public a:J
 
-.field public c:Lbmw;
+.field public b:Z
 
-.field public final d:Lbmq;
-
-.field public final e:Lbnx;
-
-.field public final f:Lbny;
-
-.field public g:Lbnv;
-
-.field private final j:Landroid/os/HandlerThread;
+.field private final c:Llco;
 
 
 # direct methods
-.method static constructor <clinit>()V
+.method public constructor <init>(Lhuq;Lbui;[B)V
     .locals 2
 
-    new-instance v0, Lboc;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const-string v1, "AndCamAgntImp"
+    const-wide/16 v0, 0x0
 
-    invoke-direct {v0, v1}, Lboc;-><init>(Ljava/lang/String;)V
+    iput-wide v0, p0, Lbmv;->a:J
 
-    sput-object v0, Lbmv;->a:Lboc;
+    iget-object p1, p1, Lhuq;->c:Llda;
 
-    new-instance v0, Lbmk;
+    iput-object p1, p0, Lbmv;->c:Llco;
 
-    invoke-direct {v0}, Lbmk;-><init>()V
+    move-object p3, p1
 
-    sput-object v0, Lbmv;->h:Lbnv;
+    check-cast p3, Llce;
 
-    return-void
-.end method
+    iget-object p3, p3, Llce;->d:Ljava/lang/Object;
 
-.method public constructor <init>()V
-    .locals 3
+    check-cast p3, Ljava/lang/Boolean;
 
-    invoke-direct {p0}, Lbni;-><init>()V
+    invoke-virtual {p3}, Ljava/lang/Boolean;->booleanValue()Z
 
-    sget-object v0, Lbmv;->h:Lbnv;
+    move-result p3
 
-    iput-object v0, p0, Lbmv;->g:Lbnv;
+    iput-boolean p3, p0, Lbmv;->b:Z
 
-    new-instance v0, Landroid/os/HandlerThread;
+    iget-object p2, p2, Lbui;->b:Llap;
 
-    const-string v1, "Camera Handler Thread"
+    new-instance p3, Lbmu;
 
-    invoke-direct {v0, v1}, Landroid/os/HandlerThread;-><init>(Ljava/lang/String;)V
+    invoke-direct {p3, p0}, Lbmu;-><init>(Lbmv;)V
 
-    iput-object v0, p0, Lbmv;->j:Landroid/os/HandlerThread;
+    sget-object v0, Lpgr;->a:Lpgr;
 
-    invoke-virtual {v0}, Landroid/os/HandlerThread;->start()V
+    invoke-interface {p1, p3, v0}, Llco;->a(Llij;Ljava/util/concurrent/Executor;)Llie;
 
-    new-instance v1, Lbmq;
+    move-result-object p1
 
-    invoke-virtual {v0}, Landroid/os/HandlerThread;->getLooper()Landroid/os/Looper;
-
-    move-result-object v2
-
-    invoke-direct {v1, p0, p0, v2}, Lbmq;-><init>(Lbmv;Lbni;Landroid/os/Looper;)V
-
-    iput-object v1, p0, Lbmv;->d:Lbmq;
-
-    new-instance v2, Lbnv;
-
-    invoke-direct {v2, v1}, Lbnv;-><init>(Landroid/os/Handler;)V
-
-    iput-object v2, p0, Lbmv;->g:Lbnv;
-
-    new-instance v2, Lbnx;
-
-    invoke-direct {v2}, Lbnx;-><init>()V
-
-    iput-object v2, p0, Lbmv;->e:Lbnx;
-
-    new-instance v2, Lbny;
-
-    invoke-direct {v2, v1, v0}, Lbny;-><init>(Landroid/os/Handler;Landroid/os/HandlerThread;)V
-
-    iput-object v2, p0, Lbmv;->f:Lbny;
-
-    invoke-virtual {v2}, Lbny;->start()V
+    invoke-virtual {p2, p1}, Llap;->c(Llie;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Landroid/os/Handler;
-    .locals 1
+.method public final a()Z
+    .locals 5
 
-    iget-object v0, p0, Lbmv;->d:Lbmq;
+    iget-object v0, p0, Lbmv;->c:Llco;
 
-    return-object v0
-.end method
+    check-cast v0, Llce;
 
-.method public final b()Lbnr;
-    .locals 1
+    iget-object v0, v0, Llce;->d:Ljava/lang/Object;
 
-    invoke-static {}, Lbmm;->c()Lbmm;
+    check-cast v0, Ljava/lang/Boolean;
 
-    move-result-object v0
+    invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
 
-    return-object v0
-.end method
+    move-result v0
 
-.method public final c()Lbnv;
-    .locals 1
+    if-nez v0, :cond_1
 
-    iget-object v0, p0, Lbmv;->g:Lbnv;
+    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
-    return-object v0
-.end method
+    move-result-wide v0
 
-.method protected final d()Lbnx;
-    .locals 1
+    iget-wide v2, p0, Lbmv;->a:J
 
-    iget-object v0, p0, Lbmv;->e:Lbnx;
+    sub-long/2addr v0, v2
 
-    return-object v0
-.end method
+    const-wide/16 v2, 0xbb8
 
-.method public final e()Lbny;
-    .locals 1
+    cmp-long v4, v0, v2
 
-    iget-object v0, p0, Lbmv;->f:Lbny;
+    if-gez v4, :cond_0
 
-    return-object v0
-.end method
+    goto :goto_0
 
-.method public final f(Lbnv;)V
-    .locals 0
+    :cond_0
+    const/4 v0, 0x0
 
-    iput-object p1, p0, Lbmv;->g:Lbnv;
+    return v0
 
-    return-void
+    :cond_1
+    :goto_0
+    const/4 v0, 0x1
+
+    return v0
 .end method

@@ -1,46 +1,37 @@
-.class public Lkws;
+.class final Lkws;
 .super Ljava/lang/Object;
+
+# interfaces
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field public final c:J
-
-.field public final d:J
-
-.field public final e:J
+.field final synthetic a:Lcom/google/android/gms/common/data/DataHolder;
 
 
 # direct methods
-.method static constructor <clinit>()V
+.method public constructor <init>(Lcom/google/android/gms/common/data/DataHolder;)V
     .locals 0
 
-    invoke-static {}, Ljava/lang/Runtime;->getRuntime()Ljava/lang/Runtime;
-
-    return-void
-.end method
-
-.method public constructor <init>()V
-    .locals 2
+    iput-object p1, p0, Lkws;->a:Lcom/google/android/gms/common/data/DataHolder;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    const-wide/16 v0, 0x0
-
-    iput-wide v0, p0, Lkws;->c:J
-
-    iput-wide v0, p0, Lkws;->d:J
-
-    iput-wide v0, p0, Lkws;->e:J
 
     return-void
 .end method
 
 
 # virtual methods
-.method public toString()Ljava/lang/String;
-    .locals 1
+.method public final run()V
+    .locals 2
 
-    const-string v0, "dalvikHeapAllocatedB: 0, dalvikHeapSizeB: 0, dalvikMaxHeapSizeB: 0"
+    new-instance v0, Lkls;
 
-    return-object v0
+    iget-object v1, p0, Lkws;->a:Lcom/google/android/gms/common/data/DataHolder;
+
+    invoke-direct {v0, v1}, Lkls;-><init>(Lcom/google/android/gms/common/data/DataHolder;)V
+
+    invoke-virtual {v0}, Lklo;->b()V
+
+    return-void
 .end method

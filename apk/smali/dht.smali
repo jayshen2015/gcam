@@ -1,662 +1,171 @@
 .class public final Ldht;
 .super Ljava/lang/Object;
 
+# interfaces
+.implements Lpys;
 
-# static fields
-.field public static final A:Ldhj;
 
-.field public static final B:Ldhj;
+# instance fields
+.field private final a:Lqkg;
 
-.field public static final C:Ldhj;
+.field private final b:Lqkg;
 
-.field public static final D:Ldhj;
+.field private final c:Lqkg;
 
-.field public static final a:[Ljava/lang/String;
+.field private final d:Lqkg;
 
-.field public static final b:Ldhk;
+.field private final e:Lqkg;
 
-.field public static final c:Ldhk;
+.field private final f:Lqkg;
 
-.field public static final d:Ldhk;
+.field private final g:Lqkg;
 
-.field public static final e:Ldhj;
+.field private final h:Lqkg;
 
-.field public static final f:Ldhj;
-
-.field public static final g:Ldhj;
-
-.field public static final h:Ldhj;
-
-.field public static final i:Ldhj;
-
-.field public static final j:Ldhj;
-
-.field public static final k:Ldhj;
-
-.field public static final l:Ldhj;
-
-.field public static final m:Ldhj;
-
-.field public static final n:Ldhj;
-
-.field public static final o:Ldhj;
-
-.field public static final p:Ldhj;
-
-.field public static final q:Ldhj;
-
-.field public static final r:Ldhj;
-
-.field public static final s:Ldhj;
-
-.field public static final t:Ldhj;
-
-.field public static final u:Ldhj;
-
-.field public static final v:Ldhj;
-
-.field public static final w:Ldhj;
-
-.field public static final x:Ldhj;
-
-.field public static final y:Ldhj;
-
-.field public static final z:Ldhj;
+.field private final i:Lqkg;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 18
+.method public constructor <init>(Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;)V
+    .locals 0
 
-    const/4 v0, 0x4
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    new-array v1, v0, [Ljava/lang/String;
+    iput-object p1, p0, Ldht;->a:Lqkg;
 
-    const/4 v2, 0x0
+    iput-object p2, p0, Ldht;->b:Lqkg;
 
-    const-string v3, "shc:"
+    iput-object p3, p0, Ldht;->c:Lqkg;
 
-    aput-object v3, v1, v2
+    iput-object p4, p0, Ldht;->d:Lqkg;
 
-    const-string v3, "fido:"
+    iput-object p5, p0, Ldht;->e:Lqkg;
 
-    const/4 v4, 0x1
+    iput-object p6, p0, Ldht;->f:Lqkg;
 
-    aput-object v3, v1, v4
+    iput-object p7, p0, Ldht;->g:Lqkg;
 
-    const-string v3, "lpa:"
+    iput-object p8, p0, Ldht;->h:Lqkg;
 
-    const/4 v5, 0x2
+    iput-object p9, p0, Ldht;->i:Lqkg;
 
-    aput-object v3, v1, v5
+    return-void
+.end method
 
-    const-string v3, "mobiledataplan:"
 
-    const/4 v6, 0x3
+# virtual methods
+.method public final a()Ldhs;
+    .locals 10
 
-    aput-object v3, v1, v6
+    iget-object v0, p0, Ldht;->a:Lqkg;
 
-    sput-object v1, Ldht;->a:[Ljava/lang/String;
-
-    new-instance v1, Lnoc;
-
-    invoke-direct {v1}, Lnoc;-><init>()V
-
-    const-string v3, "camera.enable_lenslite"
-
-    iput-object v3, v1, Lnoc;->b:Ljava/lang/Object;
-
-    invoke-virtual {v1}, Lnoc;->t()Ldhj;
-
-    move-result-object v1
-
-    sput-object v1, Ldht;->e:Ldhj;
-
-    new-instance v1, Lnoc;
-
-    invoke-direct {v1}, Lnoc;-><init>()V
-
-    const-string v3, "Lens"
-
-    iput-object v3, v1, Lnoc;->c:Ljava/lang/Object;
-
-    const-string v7, "enable_lenslite"
-
-    iput-object v7, v1, Lnoc;->b:Ljava/lang/Object;
-
-    invoke-virtual {v1}, Lnoc;->t()Ldhj;
-
-    move-result-object v1
-
-    sput-object v1, Ldht;->f:Ldhj;
-
-    new-instance v1, Lnoc;
-
-    invoke-direct {v1}, Lnoc;-><init>()V
-
-    iput-object v3, v1, Lnoc;->c:Ljava/lang/Object;
-
-    const-string v7, "force_cpu_processing"
-
-    iput-object v7, v1, Lnoc;->b:Ljava/lang/Object;
-
-    invoke-virtual {v1}, Lnoc;->t()Ldhj;
-
-    move-result-object v1
-
-    sput-object v1, Ldht;->g:Ldhj;
-
-    new-instance v1, Lnoc;
-
-    invoke-direct {v1}, Lnoc;-><init>()V
-
-    const-string v7, "camera.lenslite.force_cpu_processing"
-
-    iput-object v7, v1, Lnoc;->b:Ljava/lang/Object;
-
-    new-instance v1, Lnoc;
-
-    invoke-direct {v1}, Lnoc;-><init>()V
-
-    const-string v7, "camera.lenslite.enable_text_wifi_credentials"
-
-    iput-object v7, v1, Lnoc;->b:Ljava/lang/Object;
-
-    invoke-virtual {v1}, Lnoc;->t()Ldhj;
-
-    move-result-object v1
-
-    sput-object v1, Ldht;->h:Ldhj;
-
-    new-instance v1, Lnoc;
-
-    invoke-direct {v1}, Lnoc;-><init>()V
-
-    const-string v7, "camera.lenslite.enable_document_scanning"
-
-    iput-object v7, v1, Lnoc;->b:Ljava/lang/Object;
-
-    invoke-virtual {v1}, Lnoc;->t()Ldhj;
-
-    move-result-object v1
-
-    sput-object v1, Ldht;->i:Ldhj;
-
-    new-instance v1, Lnoc;
-
-    invoke-direct {v1}, Lnoc;-><init>()V
-
-    const-string v7, "camera.lenslite.enable_lightweight_suggestions"
-
-    iput-object v7, v1, Lnoc;->b:Ljava/lang/Object;
-
-    invoke-virtual {v1}, Lnoc;->t()Ldhj;
-
-    move-result-object v1
-
-    sput-object v1, Ldht;->j:Ldhj;
-
-    new-instance v1, Lnoc;
-
-    invoke-direct {v1}, Lnoc;-><init>()V
-
-    const-string v7, "camera.lenslite.enable_foreign_contact_recognition"
-
-    iput-object v7, v1, Lnoc;->b:Ljava/lang/Object;
-
-    invoke-virtual {v1}, Lnoc;->t()Ldhj;
-
-    move-result-object v1
-
-    sput-object v1, Ldht;->k:Ldhj;
-
-    new-instance v1, Lnoc;
-
-    invoke-direct {v1}, Lnoc;-><init>()V
-
-    const-string v7, "camera.lenslite.force_enable_capabilities"
-
-    iput-object v7, v1, Lnoc;->b:Ljava/lang/Object;
-
-    new-instance v1, Lnoc;
-
-    invoke-direct {v1}, Lnoc;-><init>()V
-
-    const-string v7, "camera.lenslite.enable_dynamic_loading"
-
-    iput-object v7, v1, Lnoc;->b:Ljava/lang/Object;
-
-    invoke-virtual {v1}, Lnoc;->t()Ldhj;
-
-    move-result-object v1
-
-    sput-object v1, Ldht;->l:Ldhj;
-
-    new-instance v1, Lnoc;
-
-    invoke-direct {v1}, Lnoc;-><init>()V
-
-    const-string v7, "dynamic_loading_from_playground"
-
-    iput-object v7, v1, Lnoc;->b:Ljava/lang/Object;
-
-    invoke-virtual {v1}, Lnoc;->t()Ldhj;
-
-    move-result-object v1
-
-    sput-object v1, Ldht;->m:Ldhj;
-
-    new-instance v1, Lnoc;
-
-    invoke-direct {v1}, Lnoc;-><init>()V
-
-    const-string v7, "stop_pipeline_on_pause"
-
-    iput-object v7, v1, Lnoc;->b:Ljava/lang/Object;
-
-    iput-object v3, v1, Lnoc;->c:Ljava/lang/Object;
-
-    invoke-virtual {v1}, Lnoc;->t()Ldhj;
-
-    move-result-object v1
-
-    sput-object v1, Ldht;->n:Ldhj;
-
-    new-instance v1, Lnoc;
-
-    invoke-direct {v1}, Lnoc;-><init>()V
-
-    const-string v7, "camera.lenslite.trivial_feature_enabled_bits"
-
-    iput-object v7, v1, Lnoc;->b:Ljava/lang/Object;
-
-    invoke-virtual {v1}, Lnoc;->l()Ldhk;
-
-    move-result-object v1
-
-    sput-object v1, Ldht;->b:Ldhk;
-
-    new-instance v1, Lnoc;
-
-    invoke-direct {v1}, Lnoc;-><init>()V
-
-    const-string v7, "camera.lenslite.enable_logging"
-
-    iput-object v7, v1, Lnoc;->b:Ljava/lang/Object;
-
-    invoke-virtual {v1}, Lnoc;->t()Ldhj;
-
-    move-result-object v1
-
-    sput-object v1, Ldht;->o:Ldhj;
-
-    new-instance v1, Lnoc;
-
-    invoke-direct {v1}, Lnoc;-><init>()V
-
-    const-string v7, "camera.lenslite.ornament_vr"
-
-    iput-object v7, v1, Lnoc;->b:Ljava/lang/Object;
-
-    invoke-virtual {v1}, Lnoc;->t()Ldhj;
-
-    move-result-object v1
-
-    sput-object v1, Ldht;->p:Ldhj;
-
-    new-instance v1, Lnoc;
-
-    invoke-direct {v1}, Lnoc;-><init>()V
-
-    const-string v7, "fast_scan_enabled"
-
-    iput-object v7, v1, Lnoc;->b:Ljava/lang/Object;
-
-    invoke-virtual {v1}, Lnoc;->t()Ldhj;
-
-    move-result-object v1
-
-    sput-object v1, Ldht;->q:Ldhj;
-
-    new-instance v1, Lnoc;
-
-    invoke-direct {v1}, Lnoc;-><init>()V
-
-    const-string v7, "camera_vision_kit_enabled"
-
-    iput-object v7, v1, Lnoc;->b:Ljava/lang/Object;
-
-    invoke-virtual {v1}, Lnoc;->t()Ldhj;
-
-    move-result-object v1
-
-    sput-object v1, Ldht;->r:Ldhj;
-
-    new-instance v1, Lnoc;
-
-    invoke-direct {v1}, Lnoc;-><init>()V
-
-    iput-object v3, v1, Lnoc;->c:Ljava/lang/Object;
-
-    const-string v7, "camera_vision_kit"
-
-    iput-object v7, v1, Lnoc;->b:Ljava/lang/Object;
-
-    invoke-virtual {v1}, Lnoc;->t()Ldhj;
-
-    move-result-object v1
-
-    sput-object v1, Ldht;->s:Ldhj;
-
-    new-instance v1, Lnoc;
-
-    invoke-direct {v1}, Lnoc;-><init>()V
-
-    const-string v7, "translate_edu"
-
-    iput-object v7, v1, Lnoc;->b:Ljava/lang/Object;
-
-    invoke-virtual {v1}, Lnoc;->t()Ldhj;
-
-    move-result-object v1
-
-    sput-object v1, Ldht;->t:Ldhj;
-
-    new-instance v1, Lnoc;
-
-    invoke-direct {v1}, Lnoc;-><init>()V
-
-    const-string v7, "fast_scan_fps"
-
-    iput-object v7, v1, Lnoc;->b:Ljava/lang/Object;
-
-    invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v8
-
-    invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v9
-
-    invoke-static {v6}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v10
-
-    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-interface {v0}, Lqkg;->get()Ljava/lang/Object;
 
     move-result-object v0
 
-    const/16 v6, 0x8
+    check-cast v0, Lfw;
 
-    invoke-static {v6}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    iget-object v0, p0, Ldht;->b:Lqkg;
+
+    invoke-interface {v0}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    move-object v2, v0
+
+    check-cast v2, Llar;
+
+    iget-object v0, p0, Ldht;->c:Lqkg;
+
+    check-cast v0, Lliq;
+
+    invoke-virtual {v0}, Lliq;->a()Llis;
+
+    move-result-object v3
+
+    iget-object v0, p0, Ldht;->d:Lqkg;
+
+    invoke-interface {v0}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    move-object v4, v0
+
+    check-cast v4, Lljf;
+
+    invoke-static {}, Lcsm;->d()Lj$/time/Clock;
+
+    move-result-object v5
+
+    iget-object v0, p0, Ldht;->e:Lqkg;
+
+    check-cast v0, Ldhw;
+
+    invoke-virtual {v0}, Ldhw;->a()Lj$/time/Duration;
 
     move-result-object v6
 
-    const/16 v7, 0xa
+    iget-object v0, p0, Ldht;->f:Lqkg;
 
-    invoke-static {v7}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    check-cast v0, Lbpk;
 
-    move-result-object v7
+    invoke-virtual {v0}, Lbpk;->a()Ljava/lang/Boolean;
 
-    new-array v14, v5, [Ljava/lang/Integer;
+    move-result-object v0
 
-    const/16 v5, 0xf
+    invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
 
-    invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    move-result v7
 
-    move-result-object v15
+    iget-object v0, p0, Ldht;->g:Lqkg;
 
-    aput-object v15, v14, v2
+    invoke-interface {v0}, Lqkg;->get()Ljava/lang/Object;
 
-    const/16 v5, 0x1e
+    move-result-object v0
 
-    invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    move-object v8, v0
 
-    move-result-object v16
+    check-cast v8, Ljava/util/concurrent/ScheduledExecutorService;
 
-    aput-object v16, v14, v4
+    iget-object v0, p0, Ldht;->h:Lqkg;
 
-    move-object v11, v0
+    invoke-interface {v0}, Lqkg;->get()Ljava/lang/Object;
 
-    move-object v12, v6
+    move-result-object v0
 
-    move-object v13, v7
+    move-object v9, v0
 
-    invoke-static/range {v8 .. v14}, Lmwn;->M(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;[Ljava/lang/Object;)Lmwn;
+    check-cast v9, Ldia;
 
-    move-result-object v5
+    new-instance v0, Ldhs;
 
-    iput-object v5, v1, Lnoc;->a:Ljava/lang/Object;
+    move-object v1, v0
 
-    invoke-virtual {v1}, Lnoc;->l()Ldhk;
+    invoke-direct/range {v1 .. v9}, Ldhs;-><init>(Llar;Llis;Lljf;Lj$/time/Clock;Lj$/time/Duration;ZLjava/util/concurrent/ScheduledExecutorService;Ldia;)V
+
+    iget-object v1, p0, Ldht;->i:Lqkg;
+
+    invoke-interface {v1}, Lqkg;->get()Ljava/lang/Object;
 
     move-result-object v1
 
-    sput-object v1, Ldht;->c:Ldhk;
+    check-cast v1, Lbus;
 
-    new-instance v1, Lnoc;
+    new-instance v2, Ldhl;
 
-    invoke-direct {v1}, Lnoc;-><init>()V
+    invoke-direct {v2, v0}, Ldhl;-><init>(Ldhs;)V
 
-    const-string v5, "fast_scan_pass_through"
+    invoke-virtual {v1, v2}, Lbus;->a(Lbur;)Llie;
 
-    iput-object v5, v1, Lnoc;->b:Ljava/lang/Object;
+    return-object v0
+.end method
 
-    invoke-virtual {v1}, Lnoc;->t()Ldhj;
+.method public final bridge synthetic get()Ljava/lang/Object;
+    .locals 1
 
-    move-result-object v1
-
-    sput-object v1, Ldht;->u:Ldhj;
-
-    new-instance v1, Lnoc;
-
-    invoke-direct {v1}, Lnoc;-><init>()V
-
-    iput-object v3, v1, Lnoc;->c:Ljava/lang/Object;
-
-    const-string v5, "fast_scan_pass_through_interval"
-
-    iput-object v5, v1, Lnoc;->b:Ljava/lang/Object;
-
-    invoke-virtual {v1}, Lnoc;->s()Ldhj;
-
-    move-result-object v1
-
-    sput-object v1, Ldht;->v:Ldhj;
-
-    new-instance v1, Lnoc;
-
-    invoke-direct {v1}, Lnoc;-><init>()V
-
-    const-string v5, "cvk_frame_supply_fps"
-
-    iput-object v5, v1, Lnoc;->b:Ljava/lang/Object;
-
-    const/4 v5, 0x6
-
-    invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v12
-
-    new-array v4, v4, [Ljava/lang/Integer;
-
-    const/16 v5, 0x3c
-
-    invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v5
-
-    aput-object v5, v4, v2
-
-    move-object v13, v6
-
-    move-object v14, v7
-
-    move-object/from16 v17, v4
-
-    invoke-static/range {v11 .. v17}, Lmwn;->M(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;[Ljava/lang/Object;)Lmwn;
+    invoke-virtual {p0}, Ldht;->a()Ldhs;
 
     move-result-object v0
 
-    iput-object v0, v1, Lnoc;->a:Ljava/lang/Object;
-
-    invoke-virtual {v1}, Lnoc;->l()Ldhk;
-
-    move-result-object v0
-
-    sput-object v0, Ldht;->d:Ldhk;
-
-    new-instance v0, Lnoc;
-
-    invoke-direct {v0}, Lnoc;-><init>()V
-
-    const-string v1, "scene_detection_enabled"
-
-    iput-object v1, v0, Lnoc;->b:Ljava/lang/Object;
-
-    invoke-virtual {v0}, Lnoc;->t()Ldhj;
-
-    move-result-object v0
-
-    sput-object v0, Ldht;->w:Ldhj;
-
-    new-instance v0, Lnoc;
-
-    invoke-direct {v0}, Lnoc;-><init>()V
-
-    const-string v1, "content_detection_enabled"
-
-    iput-object v1, v0, Lnoc;->b:Ljava/lang/Object;
-
-    invoke-virtual {v0}, Lnoc;->t()Ldhj;
-
-    move-result-object v0
-
-    sput-object v0, Ldht;->x:Ldhj;
-
-    new-instance v0, Lnoc;
-
-    invoke-direct {v0}, Lnoc;-><init>()V
-
-    const-string v1, "scan_document_enabled"
-
-    iput-object v1, v0, Lnoc;->b:Ljava/lang/Object;
-
-    invoke-virtual {v0}, Lnoc;->t()Ldhj;
-
-    move-result-object v0
-
-    sput-object v0, Ldht;->y:Ldhj;
-
-    new-instance v0, Lnoc;
-
-    invoke-direct {v0}, Lnoc;-><init>()V
-
-    const-string v1, "camera_vision_kit_acceleration_enabled"
-
-    iput-object v1, v0, Lnoc;->b:Ljava/lang/Object;
-
-    invoke-virtual {v0}, Lnoc;->t()Ldhj;
-
-    move-result-object v0
-
-    sput-object v0, Ldht;->z:Ldhj;
-
-    new-instance v0, Lnoc;
-
-    invoke-direct {v0}, Lnoc;-><init>()V
-
-    iput-object v3, v0, Lnoc;->c:Ljava/lang/Object;
-
-    const-string v1, "arcore_fast_scan_compatible"
-
-    iput-object v1, v0, Lnoc;->b:Ljava/lang/Object;
-
-    invoke-virtual {v0}, Lnoc;->t()Ldhj;
-
-    move-result-object v0
-
-    sput-object v0, Ldht;->A:Ldhj;
-
-    new-instance v0, Lnoc;
-
-    invoke-direct {v0}, Lnoc;-><init>()V
-
-    const-string v1, "test_only_arcore_fast_scan_compatible"
-
-    iput-object v1, v0, Lnoc;->b:Ljava/lang/Object;
-
-    new-instance v0, Lnoc;
-
-    invoke-direct {v0}, Lnoc;-><init>()V
-
-    const-string v1, "vkp_low_energy_enabled"
-
-    iput-object v1, v0, Lnoc;->b:Ljava/lang/Object;
-
-    new-instance v0, Lnoc;
-
-    invoke-direct {v0}, Lnoc;-><init>()V
-
-    const-string v1, "cvk_debug_mode"
-
-    iput-object v1, v0, Lnoc;->b:Ljava/lang/Object;
-
-    new-instance v0, Lnoc;
-
-    invoke-direct {v0}, Lnoc;-><init>()V
-
-    const-string v1, "camera.apollo"
-
-    iput-object v1, v0, Lnoc;->b:Ljava/lang/Object;
-
-    new-instance v0, Lnoc;
-
-    invoke-direct {v0}, Lnoc;-><init>()V
-
-    iput-object v3, v0, Lnoc;->c:Ljava/lang/Object;
-
-    const-string v1, "drive_for_scan_doc"
-
-    iput-object v1, v0, Lnoc;->b:Ljava/lang/Object;
-
-    invoke-virtual {v0}, Lnoc;->t()Ldhj;
-
-    move-result-object v0
-
-    sput-object v0, Ldht;->B:Ldhj;
-
-    new-instance v0, Lnoc;
-
-    invoke-direct {v0}, Lnoc;-><init>()V
-
-    iput-object v3, v0, Lnoc;->c:Ljava/lang/Object;
-
-    const-string v1, "compatible_drive_version"
-
-    iput-object v1, v0, Lnoc;->b:Ljava/lang/Object;
-
-    invoke-virtual {v0}, Lnoc;->u()Ldhj;
-
-    move-result-object v0
-
-    sput-object v0, Ldht;->C:Ldhj;
-
-    new-instance v0, Lnoc;
-
-    invoke-direct {v0}, Lnoc;-><init>()V
-
-    iput-object v3, v0, Lnoc;->c:Ljava/lang/Object;
-
-    const-string v1, "schemes_requiring_not_found_toast"
-
-    iput-object v1, v0, Lnoc;->b:Ljava/lang/Object;
-
-    invoke-virtual {v0}, Lnoc;->u()Ldhj;
-
-    move-result-object v0
-
-    sput-object v0, Ldht;->D:Ldhj;
-
-    return-void
+    return-object v0
 .end method

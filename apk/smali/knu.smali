@@ -1,36 +1,92 @@
 .class public final Lknu;
-.super Lknw;
+.super Lkij;
 
 
-# instance fields
-.field public a:J
+# static fields
+.field private static final a:Lkif;
+
+.field private static final b:Lmip;
 
 
 # direct methods
-.method public constructor <init>()V
+.method static constructor <clinit>()V
+    .locals 9
+
+    new-instance v2, Lknt;
+
+    invoke-direct {v2}, Lknt;-><init>()V
+
+    sput-object v2, Lknu;->b:Lmip;
+
+    new-instance v8, Lkif;
+
+    const-string v1, "ClientTelemetry.API"
+
+    const/4 v3, 0x0
+
+    const/4 v4, 0x0
+
+    const/4 v5, 0x0
+
+    const/4 v6, 0x0
+
+    const/4 v7, 0x0
+
+    move-object v0, v8
+
+    invoke-direct/range {v0 .. v7}, Lkif;-><init>(Ljava/lang/String;Lmip;[B[B[B[B[B)V
+
+    sput-object v8, Lknu;->a:Lkif;
+
+    return-void
+.end method
+
+.method public constructor <init>(Landroid/content/Context;Lknn;)V
     .locals 2
 
-    invoke-direct {p0}, Lknw;-><init>()V
+    sget-object v0, Lknu;->a:Lkif;
 
-    const-wide/16 v0, 0x0
+    sget-object v1, Lkii;->a:Lkii;
 
-    iput-wide v0, p0, Lknu;->a:J
+    invoke-direct {p0, p1, v0, p2, v1}, Lkij;-><init>(Landroid/content/Context;Lkif;Lkid;Lkii;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Lknw;
-    .locals 3
+.method public final a(Lknm;)V
+    .locals 4
 
-    new-instance v0, Lknu;
+    invoke-static {}, Lklj;->a()Lkli;
 
-    invoke-direct {v0}, Lknu;-><init>()V
+    move-result-object v0
 
-    iget-wide v1, p0, Lknu;->a:J
+    const/4 v1, 0x1
 
-    iput-wide v1, v0, Lknu;->a:J
+    new-array v1, v1, [Lkhk;
 
-    return-object v0
+    sget-object v2, Lkhh;->a:Lkhk;
+
+    const/4 v3, 0x0
+
+    aput-object v2, v1, v3
+
+    iput-object v1, v0, Lkli;->b:[Lkhk;
+
+    invoke-virtual {v0}, Lkli;->b()V
+
+    new-instance v1, Lkns;
+
+    invoke-direct {v1, p1}, Lkns;-><init>(Lknm;)V
+
+    iput-object v1, v0, Lkli;->a:Lklb;
+
+    invoke-virtual {v0}, Lkli;->a()Lklj;
+
+    move-result-object p1
+
+    invoke-virtual {p0, p1}, Lkij;->m(Lklj;)V
+
+    return-void
 .end method

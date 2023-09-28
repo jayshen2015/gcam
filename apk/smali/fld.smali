@@ -1,206 +1,147 @@
-.class public final Lfld;
+.class final Lfld;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lflf;
-.implements Lflh;
-
-
-# static fields
-.field private static final a:Lnak;
-
-.field private static final b:Ljava/util/EnumSet;
+.implements Lhsb;
 
 
 # instance fields
-.field private c:Ljava/lang/ref/WeakReference;
+.field final synthetic a:Lfle;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 4
+.method public constructor <init>(Lfle;)V
+    .locals 0
 
-    const-string v0, "com/google/android/apps/camera/modemanager/ModeManagerImpl"
-
-    invoke-static {v0}, Lnak;->h(Ljava/lang/String;)Lnak;
-
-    move-result-object v0
-
-    sput-object v0, Lfld;->a:Lnak;
-
-    sget-object v0, Lika;->d:Lika;
-
-    const/16 v1, 0x9
-
-    new-array v1, v1, [Lika;
-
-    const/4 v2, 0x0
-
-    sget-object v3, Lika;->k:Lika;
-
-    aput-object v3, v1, v2
-
-    const/4 v2, 0x1
-
-    sget-object v3, Lika;->m:Lika;
-
-    aput-object v3, v1, v2
-
-    const/4 v2, 0x2
-
-    sget-object v3, Lika;->g:Lika;
-
-    aput-object v3, v1, v2
-
-    const/4 v2, 0x3
-
-    sget-object v3, Lika;->r:Lika;
-
-    aput-object v3, v1, v2
-
-    const/4 v2, 0x4
-
-    sget-object v3, Lika;->l:Lika;
-
-    aput-object v3, v1, v2
-
-    const/4 v2, 0x5
-
-    sget-object v3, Lika;->f:Lika;
-
-    aput-object v3, v1, v2
-
-    const/4 v2, 0x6
-
-    sget-object v3, Lika;->n:Lika;
-
-    aput-object v3, v1, v2
-
-    const/4 v2, 0x7
-
-    sget-object v3, Lika;->c:Lika;
-
-    aput-object v3, v1, v2
-
-    const/16 v2, 0x8
-
-    sget-object v3, Lika;->t:Lika;
-
-    aput-object v3, v1, v2
-
-    invoke-static {v0, v1}, Ljava/util/EnumSet;->of(Ljava/lang/Enum;[Ljava/lang/Enum;)Ljava/util/EnumSet;
-
-    move-result-object v0
-
-    sput-object v0, Lfld;->b:Ljava/util/EnumSet;
-
-    return-void
-.end method
-
-.method public constructor <init>()V
-    .locals 2
+    iput-object p1, p0, Lfld;->a:Lfle;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    new-instance v0, Ljava/lang/ref/WeakReference;
-
-    const/4 v1, 0x0
-
-    invoke-direct {v0, v1}, Ljava/lang/ref/WeakReference;-><init>(Ljava/lang/Object;)V
-
-    iput-object v0, p0, Lfld;->c:Ljava/lang/ref/WeakReference;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Libj;)V
-    .locals 1
-
-    monitor-enter p0
-
-    :try_start_0
-    new-instance v0, Ljava/lang/ref/WeakReference;
-
-    invoke-direct {v0, p1}, Ljava/lang/ref/WeakReference;-><init>(Ljava/lang/Object;)V
-
-    iput-object v0, p0, Lfld;->c:Ljava/lang/ref/WeakReference;
-
-    monitor-exit p0
+.method public final synthetic j(Lhsp;)V
+    .locals 0
 
     return-void
-
-    :catchall_0
-    move-exception p1
-
-    monitor-exit p0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw p1
 .end method
 
-.method public final b(Lika;)Z
-    .locals 3
+.method public final synthetic k(Lhsp;Landroid/graphics/Bitmap;I)V
+    .locals 0
 
-    sget-object v0, Lfld;->b:Ljava/util/EnumSet;
+    return-void
+.end method
 
-    invoke-virtual {v0, p1}, Ljava/util/EnumSet;->contains(Ljava/lang/Object;)Z
+.method public final synthetic l(Lhsp;)V
+    .locals 0
 
-    move-result v0
+    return-void
+.end method
 
-    const-string v1, "switchToMode %s is not supported; see JavaDoc comments"
+.method public final m(J)V
+    .locals 4
 
-    invoke-static {v0, v1}, Lmoz;->f(ZLjava/lang/Object;)V
+    iget-object v0, p0, Lfld;->a:Lfle;
 
-    monitor-enter p0
+    iget-boolean v1, v0, Lfle;->c:Z
 
-    :try_start_0
-    iget-object v0, p0, Lfld;->c:Ljava/lang/ref/WeakReference;
+    if-nez v1, :cond_0
 
-    invoke-virtual {v0}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
+    iget-boolean v1, v0, Lfle;->d:Z
 
-    move-result-object v0
+    if-eqz v1, :cond_0
 
-    check-cast v0, Libj;
+    invoke-static {v0}, Lfle;->g(Lfle;)V
 
-    monitor-exit p0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    iget-object v0, p0, Lfld;->a:Lfle;
 
-    if-nez v0, :cond_0
+    const/4 v1, 0x2
 
-    sget-object v0, Lfld;->a:Lnak;
+    new-array v1, v1, [I
 
-    invoke-virtual {v0}, Lnaf;->c()Lnaz;
+    iget v2, v0, Lfle;->f:I
 
-    move-result-object v0
+    const/4 v3, 0x0
 
-    const-string v1, "switchToMode has no ModeSwitchController, so NOT switching to %s"
+    aput v2, v1, v3
 
-    const/16 v2, 0x936
+    const/4 v2, 0x1
 
-    invoke-static {v0, v1, p1, v2}, Ld;->j(Lnaz;Ljava/lang/String;Ljava/lang/Object;C)V
+    aput v3, v1, v2
 
-    const/4 p1, 0x0
+    invoke-static {v1}, Landroid/animation/ValueAnimator;->ofInt([I)Landroid/animation/ValueAnimator;
 
-    return p1
+    move-result-object v1
+
+    new-instance v2, Lflc;
+
+    invoke-direct {v2, v0}, Lflc;-><init>(Lfle;)V
+
+    invoke-virtual {v1, v2}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
+
+    new-instance v0, Landroid/view/animation/AccelerateInterpolator;
+
+    invoke-direct {v0}, Landroid/view/animation/AccelerateInterpolator;-><init>()V
+
+    invoke-virtual {v1, v0}, Landroid/animation/ValueAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
+
+    invoke-virtual {v1, p1, p2}, Landroid/animation/ValueAnimator;->setDuration(J)Landroid/animation/ValueAnimator;
+
+    invoke-virtual {v1}, Landroid/animation/ValueAnimator;->start()V
 
     :cond_0
-    invoke-interface {v0, p1}, Libj;->t(Lika;)Z
+    return-void
+.end method
 
-    move-result p1
+.method public final n(Landroid/graphics/Bitmap;)V
+    .locals 2
 
-    return p1
+    iget-object v0, p0, Lfld;->a:Lfle;
 
-    :catchall_0
-    move-exception p1
+    iget-boolean v1, v0, Lfle;->d:Z
 
-    :try_start_1
-    monitor-exit p0
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+    if-eqz v1, :cond_0
 
-    throw p1
+    invoke-static {v0}, Lfle;->g(Lfle;)V
+
+    iget-object v0, p0, Lfld;->a:Lfle;
+
+    iget-object v1, v0, Lfle;->a:Lcom/google/android/apps/camera/ui/widget/ReviewImageView;
+
+    iget v0, v0, Lfle;->e:I
+
+    invoke-static {p1, v0}, Ljte;->b(Landroid/graphics/Bitmap;I)Landroid/graphics/Bitmap;
+
+    move-result-object p1
+
+    invoke-virtual {v1, p1}, Lcom/google/android/apps/camera/ui/widget/ReviewImageView;->b(Landroid/graphics/Bitmap;)V
+
+    :cond_0
+    return-void
+.end method
+
+.method public final synthetic o(Lhsp;Llif;)V
+    .locals 0
+
+    return-void
+.end method
+
+.method public final synthetic p(Lhsp;Lhsj;Lhss;)V
+    .locals 0
+
+    return-void
+.end method
+
+.method public final synthetic q(Lhsp;)V
+    .locals 0
+
+    return-void
+.end method
+
+.method public final synthetic w(Lhsp;)V
+    .locals 0
+
+    return-void
 .end method

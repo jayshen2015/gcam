@@ -1,22 +1,20 @@
 .class public final Lozs;
-.super Lnws;
+.super Lppd;
 
 # interfaces
-.implements Lnxz;
+.implements Lpqn;
 
 
 # static fields
-.field public static final a:Lozs;
+.field public static final c:Lozs;
 
-.field private static volatile e:Lnyf;
+.field private static volatile d:Lpqs;
 
 
 # instance fields
-.field private b:I
+.field public a:I
 
-.field private c:Lozh;
-
-.field private d:B
+.field public b:J
 
 
 # direct methods
@@ -27,23 +25,19 @@
 
     invoke-direct {v0}, Lozs;-><init>()V
 
-    sput-object v0, Lozs;->a:Lozs;
+    sput-object v0, Lozs;->c:Lozs;
 
     const-class v1, Lozs;
 
-    invoke-static {v1, v0}, Lnws;->aa(Ljava/lang/Class;Lnws;)V
+    invoke-static {v1, v0}, Lppd;->F(Ljava/lang/Class;Lppd;)V
 
     return-void
 .end method
 
 .method private constructor <init>()V
-    .locals 1
+    .locals 0
 
-    invoke-direct {p0}, Lnws;-><init>()V
-
-    const/4 v0, 0x2
-
-    iput-byte v0, p0, Lozs;->d:B
+    invoke-direct {p0}, Lppd;-><init>()V
 
     return-void
 .end method
@@ -51,25 +45,21 @@
 
 # virtual methods
 .method protected final a(ILjava/lang/Object;)Ljava/lang/Object;
-    .locals 3
+    .locals 2
 
     add-int/lit8 p1, p1, -0x1
 
-    const/4 v0, 0x1
-
-    const/4 v1, 0x0
+    const/4 p2, 0x1
 
     packed-switch p1, :pswitch_data_0
 
     :pswitch_0
-    if-nez p2, :cond_2
+    const/4 p1, 0x0
 
-    const/4 v0, 0x0
-
-    goto :goto_1
+    return-object p1
 
     :pswitch_1
-    sget-object p1, Lozs;->e:Lnyf;
+    sget-object p1, Lozs;->d:Lpqs;
 
     if-nez p1, :cond_1
 
@@ -78,17 +68,17 @@
     monitor-enter p2
 
     :try_start_0
-    sget-object p1, Lozs;->e:Lnyf;
+    sget-object p1, Lozs;->d:Lpqs;
 
     if-nez p1, :cond_0
 
-    new-instance p1, Lnwo;
+    new-instance p1, Lpoz;
 
-    sget-object v0, Lozs;->a:Lozs;
+    sget-object v0, Lozs;->c:Lozs;
 
-    invoke-direct {p1, v0}, Lnwo;-><init>(Lnws;)V
+    invoke-direct {p1, v0}, Lpoz;-><init>(Lppd;)V
 
-    sput-object p1, Lozs;->e:Lnyf;
+    sput-object p1, Lozs;->d:Lpqs;
 
     :cond_0
     monitor-exit p2
@@ -109,16 +99,16 @@
     return-object p1
 
     :pswitch_2
-    sget-object p1, Lozs;->a:Lozs;
+    sget-object p1, Lozs;->c:Lozs;
 
     return-object p1
 
     :pswitch_3
-    new-instance p1, Lnwn;
+    new-instance p1, Lpoy;
 
-    sget-object p2, Lozs;->a:Lozs;
+    sget-object p2, Lozs;->c:Lozs;
 
-    invoke-direct {p1, p2}, Lnwn;-><init>(Lnws;)V
+    invoke-direct {p1, p2}, Lpoy;-><init>(Lppd;)V
 
     return-object p1
 
@@ -130,42 +120,34 @@
     return-object p1
 
     :pswitch_5
-    const-string p1, "b"
+    const/4 p1, 0x2
 
-    const-string p2, "\u0001\u0001\u0000\u0001\u0001\u0001\u0001\u0000\u0000\u0001\u0001\u1409\u0000"
+    new-array p1, p1, [Ljava/lang/Object;
 
-    const/4 v2, 0x2
+    const/4 v0, 0x0
 
-    new-array v2, v2, [Ljava/lang/Object;
+    const-string v1, "a"
 
-    aput-object p1, v2, v1
+    aput-object v1, p1, v0
 
-    const-string p1, "c"
+    const-string v0, "b"
 
-    aput-object p1, v2, v0
+    aput-object v0, p1, p2
 
-    sget-object p1, Lozs;->a:Lozs;
+    sget-object p2, Lozs;->c:Lozs;
 
-    invoke-static {p1, p2, v2}, Lozs;->X(Lnxy;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/Object;
+    const-string v0, "\u0001\u0001\u0000\u0001\u0001\u0001\u0001\u0000\u0000\u0000\u0001\u1002\u0000"
+
+    invoke-static {p2, v0, p1}, Lozs;->E(Lpqm;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p1
 
     return-object p1
 
     :pswitch_6
-    iget-byte p1, p0, Lozs;->d:B
-
-    invoke-static {p1}, Ljava/lang/Byte;->valueOf(B)Ljava/lang/Byte;
+    invoke-static {p2}, Ljava/lang/Byte;->valueOf(B)Ljava/lang/Byte;
 
     move-result-object p1
-
-    return-object p1
-
-    :cond_2
-    :goto_1
-    iput-byte v0, p0, Lozs;->d:B
-
-    const/4 p1, 0x0
 
     return-object p1
 

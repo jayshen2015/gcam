@@ -1,52 +1,60 @@
-.class public final Ljga;
-.super Ljft;
+.class public final synthetic Ljga;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Llij;
 
 
 # instance fields
-.field final synthetic g:Ljgb;
+.field public final synthetic a:Ljgk;
+
+.field public final synthetic b:Ljrl;
 
 
 # direct methods
-.method public constructor <init>(Ljgb;I)V
-    .locals 1
+.method public synthetic constructor <init>(Ljgk;Ljrl;)V
+    .locals 0
 
-    iput-object p1, p0, Ljga;->g:Ljgb;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const/4 v0, 0x0
+    iput-object p1, p0, Ljga;->a:Ljgk;
 
-    invoke-direct {p0, p1, p2, v0}, Ljft;-><init>(Ljgb;ILandroid/os/Bundle;)V
+    iput-object p2, p0, Ljga;->b:Ljrl;
 
     return-void
 .end method
 
 
 # virtual methods
-.method protected final a(Ljby;)V
-    .locals 1
-
-    iget-object v0, p0, Ljga;->g:Ljgb;
-
-    iget-object v0, v0, Ljgb;->g:Ljfw;
-
-    invoke-interface {v0, p1}, Ljfw;->a(Ljby;)V
-
-    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
-
-    return-void
-.end method
-
-.method protected final c()Z
+.method public final fB(Ljava/lang/Object;)V
     .locals 2
 
-    iget-object v0, p0, Ljga;->g:Ljgb;
+    iget-object v0, p0, Ljga;->a:Ljgk;
 
-    iget-object v0, v0, Ljgb;->g:Ljfw;
+    iget-object v1, p0, Ljga;->b:Ljrl;
 
-    sget-object v1, Ljby;->a:Ljby;
+    check-cast p1, Ljava/lang/Boolean;
 
-    invoke-interface {v0, v1}, Ljfw;->a(Ljby;)V
+    invoke-virtual {p1}, Ljava/lang/Boolean;->booleanValue()Z
 
-    const/4 v0, 0x1
+    move-result p1
 
-    return v0
+    if-eqz p1, :cond_0
+
+    iget-object p1, v0, Ljgk;->c:Ljava/util/EnumMap;
+
+    invoke-virtual {p1, v1}, Ljava/util/EnumMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p1
+
+    check-cast p1, Ljgm;
+
+    if-eqz p1, :cond_0
+
+    const/4 v0, 0x0
+
+    invoke-interface {p1, v1, v0}, Ljgm;->i(Ljrl;Z)V
+
+    :cond_0
+    return-void
 .end method

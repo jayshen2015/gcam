@@ -1,78 +1,64 @@
 .class public final Llat;
-.super Ljava/lang/Object;
+.super Lpfy;
 
 
-# static fields
-.field public static volatile a:Z
+# instance fields
+.field private final a:Ljava/util/concurrent/Executor;
 
-.field public static final b:Ljava/util/Map;
+.field private final b:Ljava/lang/Object;
 
-.field private static volatile c:Z
+.field private c:I
+
+.field private d:Z
 
 
 # direct methods
-.method static constructor <clinit>()V
+.method public constructor <init>(Ljava/util/concurrent/Executor;)V
     .locals 1
+
+    invoke-direct {p0}, Lpfy;-><init>()V
+
+    new-instance v0, Ljava/lang/Object;
+
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+
+    iput-object v0, p0, Llat;->b:Ljava/lang/Object;
 
     const/4 v0, 0x0
 
-    sput-boolean v0, Llat;->a:Z
+    iput v0, p0, Llat;->c:I
 
-    sput-boolean v0, Llat;->c:Z
+    iput-boolean v0, p0, Llat;->d:Z
 
-    new-instance v0, Ljava/util/WeakHashMap;
-
-    invoke-direct {v0}, Ljava/util/WeakHashMap;-><init>()V
-
-    invoke-static {v0}, Lj$/util/DesugarCollections;->synchronizedMap(Ljava/util/Map;)Ljava/util/Map;
-
-    move-result-object v0
-
-    sput-object v0, Llat;->b:Ljava/util/Map;
+    iput-object p1, p0, Llat;->a:Ljava/util/concurrent/Executor;
 
     return-void
 .end method
 
-.method public static a()I
-    .locals 3
+.method private final d()V
+    .locals 2
 
-    sget-object v0, Llat;->b:Ljava/util/Map;
+    iget-object v0, p0, Llat;->b:Ljava/lang/Object;
 
     monitor-enter v0
 
     :try_start_0
-    invoke-interface {v0}, Ljava/util/Map;->values()Ljava/util/Collection;
+    iget v1, p0, Llat;->c:I
 
-    move-result-object v1
+    add-int/lit8 v1, v1, -0x1
 
-    invoke-interface {v1}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
+    iput v1, p0, Llat;->c:I
 
-    move-result-object v1
+    if-nez v1, :cond_0
 
-    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
+    iget-object v1, p0, Llat;->b:Ljava/lang/Object;
 
-    move-result v2
-
-    if-nez v2, :cond_0
-
-    monitor-exit v0
-
-    const/4 v0, 0x0
-
-    return v0
+    invoke-virtual {v1}, Ljava/lang/Object;->notifyAll()V
 
     :cond_0
-    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    monitor-exit v0
 
-    move-result-object v1
-
-    check-cast v1, Llas;
-
-    iget-wide v1, v1, Llas;->a:J
-
-    const/4 v1, 0x0
-
-    throw v1
+    return-void
 
     :catchall_0
     move-exception v1
@@ -82,4 +68,252 @@
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw v1
+.end method
+
+
+# virtual methods
+.method public final awaitTermination(JLjava/util/concurrent/TimeUnit;)Z
+    .locals 4
+
+    invoke-virtual {p3, p1, p2}, Ljava/util/concurrent/TimeUnit;->toNanos(J)J
+
+    move-result-wide p1
+
+    iget-object p3, p0, Llat;->b:Ljava/lang/Object;
+
+    monitor-enter p3
+
+    :goto_0
+    :try_start_0
+    iget-boolean v0, p0, Llat;->d:Z
+
+    if-eqz v0, :cond_0
+
+    iget v0, p0, Llat;->c:I
+
+    if-nez v0, :cond_0
+
+    monitor-exit p3
+
+    const/4 p1, 0x1
+
+    return p1
+
+    :cond_0
+    const-wide/16 v0, 0x0
+
+    cmp-long v2, p1, v0
+
+    if-gtz v2, :cond_1
+
+    monitor-exit p3
+
+    const/4 p1, 0x0
+
+    return p1
+
+    :cond_1
+    invoke-static {}, Ljava/lang/System;->nanoTime()J
+
+    move-result-wide v0
+
+    sget-object v2, Ljava/util/concurrent/TimeUnit;->NANOSECONDS:Ljava/util/concurrent/TimeUnit;
+
+    iget-object v3, p0, Llat;->b:Ljava/lang/Object;
+
+    invoke-virtual {v2, v3, p1, p2}, Ljava/util/concurrent/TimeUnit;->timedWait(Ljava/lang/Object;J)V
+
+    invoke-static {}, Ljava/lang/System;->nanoTime()J
+
+    move-result-wide v2
+
+    sub-long/2addr v2, v0
+
+    sub-long/2addr p1, v2
+
+    goto :goto_0
+
+    :catchall_0
+    move-exception p1
+
+    monitor-exit p3
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    goto :goto_2
+
+    :goto_1
+    throw p1
+
+    :goto_2
+    goto :goto_1
+.end method
+
+.method public final execute(Ljava/lang/Runnable;)V
+    .locals 2
+
+    iget-object v0, p0, Llat;->b:Ljava/lang/Object;
+
+    monitor-enter v0
+
+    :try_start_0
+    iget-boolean v1, p0, Llat;->d:Z
+
+    if-nez v1, :cond_0
+
+    iget v1, p0, Llat;->c:I
+
+    add-int/lit8 v1, v1, 0x1
+
+    iput v1, p0, Llat;->c:I
+
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_1
+
+    :try_start_1
+    iget-object v0, p0, Llat;->a:Ljava/util/concurrent/Executor;
+
+    invoke-interface {v0, p1}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    invoke-direct {p0}, Llat;->d()V
+
+    return-void
+
+    :catchall_0
+    move-exception p1
+
+    invoke-direct {p0}, Llat;->d()V
+
+    throw p1
+
+    :cond_0
+    :try_start_2
+    new-instance p1, Ljava/util/concurrent/RejectedExecutionException;
+
+    const-string v1, "Executor already shutdown"
+
+    invoke-direct {p1, v1}, Ljava/util/concurrent/RejectedExecutionException;-><init>(Ljava/lang/String;)V
+
+    throw p1
+
+    :catchall_1
+    move-exception p1
+
+    monitor-exit v0
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_1
+
+    throw p1
+.end method
+
+.method public final isShutdown()Z
+    .locals 2
+
+    iget-object v0, p0, Llat;->b:Ljava/lang/Object;
+
+    monitor-enter v0
+
+    :try_start_0
+    iget-boolean v1, p0, Llat;->d:Z
+
+    monitor-exit v0
+
+    return v1
+
+    :catchall_0
+    move-exception v1
+
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw v1
+.end method
+
+.method public final isTerminated()Z
+    .locals 3
+
+    iget-object v0, p0, Llat;->b:Ljava/lang/Object;
+
+    monitor-enter v0
+
+    :try_start_0
+    iget-boolean v1, p0, Llat;->d:Z
+
+    const/4 v2, 0x0
+
+    if-eqz v1, :cond_0
+
+    iget v1, p0, Llat;->c:I
+
+    if-nez v1, :cond_0
+
+    const/4 v2, 0x1
+
+    goto :goto_0
+
+    :cond_0
+    :goto_0
+    monitor-exit v0
+
+    return v2
+
+    :catchall_0
+    move-exception v1
+
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw v1
+.end method
+
+.method public final shutdown()V
+    .locals 2
+
+    iget-object v0, p0, Llat;->b:Ljava/lang/Object;
+
+    monitor-enter v0
+
+    const/4 v1, 0x1
+
+    :try_start_0
+    iput-boolean v1, p0, Llat;->d:Z
+
+    iget v1, p0, Llat;->c:I
+
+    if-nez v1, :cond_0
+
+    iget-object v1, p0, Llat;->b:Ljava/lang/Object;
+
+    invoke-virtual {v1}, Ljava/lang/Object;->notifyAll()V
+
+    :cond_0
+    monitor-exit v0
+
+    return-void
+
+    :catchall_0
+    move-exception v1
+
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw v1
+.end method
+
+.method public final shutdownNow()Ljava/util/List;
+    .locals 1
+
+    invoke-virtual {p0}, Llat;->shutdown()V
+
+    invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
+
+    move-result-object v0
+
+    return-object v0
 .end method

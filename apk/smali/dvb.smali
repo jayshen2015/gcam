@@ -1,169 +1,66 @@
 .class public final Ldvb;
-.super Ljava/lang/Object;
-
-# interfaces
-.implements Ldti;
+.super Landroid/animation/AnimatorListenerAdapter;
 
 
 # instance fields
-.field public a:J
+.field final synthetic a:Landroid/content/res/Resources;
 
-.field final synthetic b:J
+.field final synthetic b:Lduj;
 
-.field final synthetic c:Ldvc;
+.field final synthetic c:Lcom/google/android/apps/camera/focusindicator/FocusIndicatorView;
 
 
 # direct methods
-.method public constructor <init>(Ldvc;J)V
+.method public constructor <init>(Landroid/content/res/Resources;Lduj;Lcom/google/android/apps/camera/focusindicator/FocusIndicatorView;)V
     .locals 0
 
-    iput-object p1, p0, Ldvb;->c:Ldvc;
+    iput-object p1, p0, Ldvb;->a:Landroid/content/res/Resources;
 
-    iput-wide p2, p0, Ldvb;->b:J
+    iput-object p2, p0, Ldvb;->b:Lduj;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p3, p0, Ldvb;->c:Lcom/google/android/apps/camera/focusindicator/FocusIndicatorView;
 
-    iput-wide p2, p0, Ldvb;->a:J
+    invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()J
+.method public final onAnimationStart(Landroid/animation/Animator;)V
     .locals 2
 
-    iget-wide v0, p0, Ldvb;->a:J
+    iget-object p1, p0, Ldvb;->a:Landroid/content/res/Resources;
 
-    return-wide v0
-.end method
+    const v0, 0x7f07006c
 
-.method public final b()Z
-    .locals 7
+    invoke-virtual {p1, v0}, Landroid/content/res/Resources;->getDimension(I)F
 
-    iget-object v0, p0, Ldvb;->c:Ldvc;
+    move-result p1
 
-    iget-object v0, v0, Ldvc;->a:Ljava/lang/Object;
+    iget-object v0, p0, Ldvb;->b:Lduj;
 
-    monitor-enter v0
+    invoke-interface {v0, p1}, Lduj;->f(F)V
 
-    :try_start_0
-    iget-object v1, p0, Ldvb;->c:Ldvc;
+    iget-object p1, p0, Ldvb;->a:Landroid/content/res/Resources;
 
-    iget-wide v2, p0, Ldvb;->a:J
+    const v0, 0x7f07013b
 
-    const-wide v4, 0x7fffffffffffffffL
+    invoke-virtual {p1, v0}, Landroid/content/res/Resources;->getDimension(I)F
 
-    cmp-long v6, v2, v4
+    move-result p1
 
-    if-nez v6, :cond_0
+    iget-object v0, p0, Ldvb;->b:Lduj;
 
-    goto :goto_0
+    const/high16 v1, 0x40000000    # 2.0f
 
-    :cond_0
-    const-wide/16 v4, 0x1
+    div-float/2addr p1, v1
 
-    add-long/2addr v4, v2
+    invoke-interface {v0, p1}, Lduj;->c(F)V
 
-    :goto_0
-    invoke-virtual {v1, v4, v5}, Ldvc;->d(J)I
+    iget-object p1, p0, Ldvb;->c:Lcom/google/android/apps/camera/focusindicator/FocusIndicatorView;
 
-    move-result v1
+    invoke-virtual {p1}, Lcom/google/android/apps/camera/focusindicator/FocusIndicatorView;->invalidate()V
 
-    if-ltz v1, :cond_1
-
-    iget-object v2, p0, Ldvb;->c:Ldvc;
-
-    invoke-virtual {v2, v1}, Ldvc;->h(I)J
-
-    move-result-wide v1
-
-    iput-wide v1, p0, Ldvb;->a:J
-
-    monitor-exit v0
-
-    const/4 v0, 0x1
-
-    return v0
-
-    :cond_1
-    monitor-exit v0
-
-    const/4 v0, 0x0
-
-    return v0
-
-    :catchall_0
-    move-exception v1
-
-    monitor-exit v0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw v1
-.end method
-
-.method public final c()Z
-    .locals 7
-
-    iget-object v0, p0, Ldvb;->c:Ldvc;
-
-    iget-object v0, v0, Ldvc;->a:Ljava/lang/Object;
-
-    monitor-enter v0
-
-    :try_start_0
-    iget-object v1, p0, Ldvb;->c:Ldvc;
-
-    iget-wide v2, p0, Ldvb;->a:J
-
-    const-wide/high16 v4, -0x8000000000000000L
-
-    cmp-long v6, v2, v4
-
-    if-nez v6, :cond_0
-
-    goto :goto_0
-
-    :cond_0
-    const-wide/16 v4, -0x1
-
-    add-long/2addr v4, v2
-
-    :goto_0
-    invoke-virtual {v1, v4, v5}, Ldvc;->c(J)I
-
-    move-result v1
-
-    if-ltz v1, :cond_1
-
-    iget-object v2, p0, Ldvb;->c:Ldvc;
-
-    invoke-virtual {v2, v1}, Ldvc;->h(I)J
-
-    move-result-wide v1
-
-    iput-wide v1, p0, Ldvb;->a:J
-
-    monitor-exit v0
-
-    const/4 v0, 0x1
-
-    return v0
-
-    :cond_1
-    monitor-exit v0
-
-    const/4 v0, 0x0
-
-    return v0
-
-    :catchall_0
-    move-exception v1
-
-    monitor-exit v0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw v1
+    return-void
 .end method

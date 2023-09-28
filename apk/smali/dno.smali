@@ -2,82 +2,110 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Logk;
+.implements Lpys;
 
 
 # instance fields
-.field private final a:Loiw;
+.field private final a:Lqkg;
 
-.field private final b:Loiw;
+.field private final b:Lqkg;
 
-.field private final c:Loiw;
+.field private final c:Lqkg;
 
-.field private final d:Loiw;
+.field private final d:Lqkg;
 
 
 # direct methods
-.method public constructor <init>(Loiw;Loiw;Loiw;Loiw;)V
+.method public constructor <init>(Lqkg;Lqkg;Lqkg;Lqkg;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Ldno;->a:Loiw;
+    iput-object p1, p0, Ldno;->a:Lqkg;
 
-    iput-object p2, p0, Ldno;->b:Loiw;
+    iput-object p2, p0, Ldno;->b:Lqkg;
 
-    iput-object p3, p0, Ldno;->c:Loiw;
+    iput-object p3, p0, Ldno;->c:Lqkg;
 
-    iput-object p4, p0, Ldno;->d:Loiw;
+    iput-object p4, p0, Ldno;->d:Lqkg;
 
     return-void
 .end method
 
+.method public static b(Lqkg;Lqkg;Lqkg;Lqkg;)Ldno;
+    .locals 1
+
+    new-instance v0, Ldno;
+
+    invoke-direct {v0, p0, p1, p2, p3}, Ldno;-><init>(Lqkg;Lqkg;Lqkg;Lqkg;)V
+
+    return-object v0
+.end method
+
 
 # virtual methods
-.method public final a()Ldja;
-    .locals 4
+.method public final a()Ldnn;
+    .locals 7
 
-    iget-object v0, p0, Ldno;->a:Loiw;
+    iget-object v0, p0, Ldno;->a:Lqkg;
 
-    check-cast v0, Ldwh;
-
-    invoke-virtual {v0}, Ldwh;->a()Landroid/content/Context;
+    invoke-interface {v0}, Lqkg;->get()Ljava/lang/Object;
 
     move-result-object v0
 
-    iget-object v1, p0, Ldno;->b:Loiw;
+    move-object v2, v0
 
-    invoke-interface {v1}, Loiw;->get()Ljava/lang/Object;
+    check-cast v2, Llzi;
 
-    move-result-object v1
+    invoke-static {}, Ldln;->a()Lgjw;
 
-    check-cast v1, Ldhi;
+    move-result-object v3
 
-    iget-object v2, p0, Ldno;->c:Loiw;
+    iget-object v0, p0, Ldno;->b:Lqkg;
 
-    check-cast v2, Ldmn;
+    invoke-interface {v0}, Lqkg;->get()Ljava/lang/Object;
 
-    invoke-virtual {v2}, Ldmn;->a()Ldne;
+    move-result-object v0
 
-    iget-object v2, p0, Ldno;->d:Loiw;
+    move-object v4, v0
 
-    check-cast v2, Ldjw;
+    check-cast v4, Ljava/util/concurrent/Executor;
 
-    invoke-virtual {v2}, Ldjw;->a()Lkap;
+    iget-object v0, p0, Ldno;->c:Lqkg;
 
-    move-result-object v2
+    invoke-interface {v0}, Lqkg;->get()Ljava/lang/Object;
 
-    new-instance v3, Ldja;
+    move-result-object v0
 
-    invoke-direct {v3, v0, v1, v2}, Ldja;-><init>(Landroid/content/Context;Ldhi;Lkap;)V
+    check-cast v0, Ljava/lang/Integer;
 
-    return-object v3
+    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
+
+    move-result v5
+
+    iget-object v0, p0, Ldno;->d:Lqkg;
+
+    invoke-interface {v0}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    move-object v6, v0
+
+    check-cast v6, Lddf;
+
+    new-instance v0, Ldnn;
+
+    move-object v1, v0
+
+    invoke-direct/range {v1 .. v6}, Ldnn;-><init>(Llzi;Lgjw;Ljava/util/concurrent/Executor;ILddf;)V
+
+    return-object v0
 .end method
 
 .method public final bridge synthetic get()Ljava/lang/Object;
     .locals 1
 
-    invoke-virtual {p0}, Ldno;->a()Ldja;
+    invoke-virtual {p0}, Ldno;->a()Ldnn;
 
     move-result-object v0
 

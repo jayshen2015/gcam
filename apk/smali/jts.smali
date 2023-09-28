@@ -1,159 +1,72 @@
-.class final Ljts;
-.super Ljtu;
+.class public final Ljts;
+.super Ljava/lang/Object;
+
+
+# instance fields
+.field public final a:Ljtt;
+
+.field private final b:Ljava/util/concurrent/Executor;
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/String;Ljava/lang/Boolean;)V
+.method public constructor <init>(Ljtt;Ljava/util/concurrent/Executor;)V
     .locals 0
 
-    invoke-direct {p0, p1, p2}, Ljtu;-><init>(Ljava/lang/String;Ljava/lang/Object;)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Ljts;->a:Ljtt;
+
+    iput-object p2, p0, Ljts;->b:Ljava/util/concurrent/Executor;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a()Ljava/lang/Object;
-    .locals 7
+.method public final a(Landroid/net/Uri;)Lpht;
+    .locals 1
 
-    sget-object v0, Ljtu;->a:Landroid/content/ContentResolver;
+    new-instance v0, Ljtr;
 
-    iget-object v1, p0, Ljts;->b:Ljava/lang/String;
+    invoke-direct {v0, p0, p1}, Ljtr;-><init>(Ljts;Landroid/net/Uri;)V
 
-    iget-object v2, p0, Ljts;->c:Ljava/lang/Object;
+    iget-object p1, p0, Ljts;->b:Ljava/util/concurrent/Executor;
 
-    check-cast v2, Ljava/lang/Boolean;
+    invoke-static {v0, p1}, Lplk;->Z(Ljava/util/concurrent/Callable;Ljava/util/concurrent/Executor;)Lpht;
 
-    invoke-virtual {v2}, Ljava/lang/Boolean;->booleanValue()Z
+    move-result-object p1
 
-    move-result v2
+    return-object p1
+.end method
 
-    invoke-static {v0}, Ljtr;->c(Landroid/content/ContentResolver;)Ljava/lang/Object;
+.method public final b(Landroid/net/Uri;)V
+    .locals 3
 
-    move-result-object v3
+    iget-object v0, p0, Ljts;->b:Ljava/util/concurrent/Executor;
 
-    sget-object v4, Ljtr;->g:Ljava/util/HashMap;
-
-    invoke-static {v2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
-
-    move-result-object v5
-
-    invoke-static {v4, v1, v5}, Ljtr;->b(Ljava/util/HashMap;Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v4
-
-    check-cast v4, Ljava/lang/Boolean;
-
-    if-eqz v4, :cond_0
-
-    invoke-virtual {v4}, Ljava/lang/Boolean;->booleanValue()Z
-
-    move-result v0
-
-    goto :goto_1
-
-    :cond_0
-    invoke-static {v0, v1}, Ljtr;->f(Landroid/content/ContentResolver;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v0
-
-    if-eqz v0, :cond_4
-
-    const-string v5, ""
-
-    invoke-virtual {v0, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v5
-
-    if-eqz v5, :cond_1
-
-    goto :goto_0
-
-    :cond_1
-    sget-object v5, Ljtr;->c:Ljava/util/regex/Pattern;
-
-    invoke-virtual {v5, v0}, Ljava/util/regex/Pattern;->matcher(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;
-
-    move-result-object v5
-
-    invoke-virtual {v5}, Ljava/util/regex/Matcher;->matches()Z
-
-    move-result v5
-
-    if-eqz v5, :cond_2
+    new-instance v1, Ljtq;
 
     const/4 v2, 0x1
 
-    invoke-static {v2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+    invoke-direct {v1, p0, p1, v2}, Ljtq;-><init>(Ljts;Landroid/net/Uri;I)V
 
-    move-result-object v4
+    invoke-interface {v0, v1}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
 
-    goto :goto_0
+    return-void
+.end method
 
-    :cond_2
-    sget-object v5, Ljtr;->d:Ljava/util/regex/Pattern;
+.method public final c(Landroid/net/Uri;)V
+    .locals 3
 
-    invoke-virtual {v5, v0}, Ljava/util/regex/Pattern;->matcher(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;
+    iget-object v0, p0, Ljts;->b:Ljava/util/concurrent/Executor;
 
-    move-result-object v5
-
-    invoke-virtual {v5}, Ljava/util/regex/Matcher;->matches()Z
-
-    move-result v5
-
-    if-eqz v5, :cond_3
+    new-instance v1, Ljtq;
 
     const/4 v2, 0x0
 
-    invoke-static {v2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+    invoke-direct {v1, p0, p1, v2}, Ljtq;-><init>(Ljts;Landroid/net/Uri;I)V
 
-    move-result-object v4
+    invoke-interface {v0, v1}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
 
-    goto :goto_0
-
-    :cond_3
-    new-instance v5, Ljava/lang/StringBuilder;
-
-    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v6, "attempt to read gservices key "
-
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v5, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v6, " (value \""
-
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v5, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v0, "\") as boolean"
-
-    invoke-virtual {v5, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    const-string v5, "Gservices"
-
-    invoke-static {v5, v0}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
-
-    goto :goto_0
-
-    :cond_4
-    :goto_0
-    sget-object v0, Ljtr;->g:Ljava/util/HashMap;
-
-    invoke-static {v3, v0, v1, v4}, Ljtr;->e(Ljava/lang/Object;Ljava/util/HashMap;Ljava/lang/String;Ljava/lang/Object;)V
-
-    move v0, v2
-
-    :goto_1
-    invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
-
-    move-result-object v0
-
-    return-object v0
+    return-void
 .end method

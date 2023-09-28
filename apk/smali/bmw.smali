@@ -1,1144 +1,1028 @@
-.class final Lbmw;
-.super Lbnp;
+.class public final Lbmw;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Lpys;
 
 
 # instance fields
-.field private x:Lye;
+.field private final a:Lqkg;
 
-.field private y:Lye;
+.field private final b:Lqkg;
+
+.field private final synthetic c:I
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
+.method public constructor <init>(Lqkg;Lqkg;I)V
+    .locals 0
 
-    new-instance v0, Lboc;
+    iput p3, p0, Lbmw;->c:I
 
-    const-string v1, "AndCamCapabs"
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {v0, v1}, Lboc;-><init>(Ljava/lang/String;)V
+    iput-object p1, p0, Lbmw;->a:Lqkg;
+
+    iput-object p2, p0, Lbmw;->b:Lqkg;
 
     return-void
 .end method
 
-.method public constructor <init>(Landroid/hardware/Camera$Parameters;)V
-    .locals 6
+.method public constructor <init>(Lqkg;Lqkg;I[B)V
+    .locals 0
 
-    new-instance v1, Lbze;
+    iput p3, p0, Lbmw;->c:I
 
-    const/4 v0, 0x0
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {v1, v0}, Lbze;-><init>([Z)V
+    iput-object p1, p0, Lbmw;->b:Lqkg;
+
+    iput-object p2, p0, Lbmw;->a:Lqkg;
+
+    return-void
+.end method
+
+.method public constructor <init>(Lqkg;Lqkg;I[C)V
+    .locals 0
+
+    iput p3, p0, Lbmw;->c:I
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lbmw;->b:Lqkg;
+
+    iput-object p2, p0, Lbmw;->a:Lqkg;
+
+    return-void
+.end method
+
+.method public constructor <init>(Lqkg;Lqkg;I[F)V
+    .locals 0
+
+    iput p3, p0, Lbmw;->c:I
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lbmw;->b:Lqkg;
+
+    iput-object p2, p0, Lbmw;->a:Lqkg;
+
+    return-void
+.end method
+
+.method public constructor <init>(Lqkg;Lqkg;I[I)V
+    .locals 0
+
+    iput p3, p0, Lbmw;->c:I
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lbmw;->b:Lqkg;
+
+    iput-object p2, p0, Lbmw;->a:Lqkg;
+
+    return-void
+.end method
+
+.method public constructor <init>(Lqkg;Lqkg;I[S)V
+    .locals 0
+
+    iput p3, p0, Lbmw;->c:I
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lbmw;->b:Lqkg;
+
+    iput-object p2, p0, Lbmw;->a:Lqkg;
+
+    return-void
+.end method
+
+.method public constructor <init>(Lqkg;Lqkg;I[Z)V
+    .locals 0
+
+    iput p3, p0, Lbmw;->c:I
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lbmw;->b:Lqkg;
+
+    iput-object p2, p0, Lbmw;->a:Lqkg;
+
+    return-void
+.end method
+
+.method public constructor <init>(Lqkg;Lqkg;I[[B)V
+    .locals 0
+
+    iput p3, p0, Lbmw;->c:I
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lbmw;->b:Lqkg;
+
+    iput-object p2, p0, Lbmw;->a:Lqkg;
+
+    return-void
+.end method
+
+.method public constructor <init>(Lqkg;Lqkg;I[[C)V
+    .locals 0
+
+    iput p3, p0, Lbmw;->c:I
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lbmw;->b:Lqkg;
+
+    iput-object p2, p0, Lbmw;->a:Lqkg;
+
+    return-void
+.end method
+
+.method public constructor <init>(Lqkg;Lqkg;I[[F)V
+    .locals 0
+
+    iput p3, p0, Lbmw;->c:I
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lbmw;->b:Lqkg;
+
+    iput-object p2, p0, Lbmw;->a:Lqkg;
+
+    return-void
+.end method
+
+.method public constructor <init>(Lqkg;Lqkg;I[[I)V
+    .locals 0
+
+    iput p3, p0, Lbmw;->c:I
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lbmw;->b:Lqkg;
+
+    iput-object p2, p0, Lbmw;->a:Lqkg;
+
+    return-void
+.end method
+
+.method public constructor <init>(Lqkg;Lqkg;I[[S)V
+    .locals 0
+
+    iput p3, p0, Lbmw;->c:I
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lbmw;->b:Lqkg;
+
+    iput-object p2, p0, Lbmw;->a:Lqkg;
+
+    return-void
+.end method
+
+.method public constructor <init>(Lqkg;Lqkg;I[[Z)V
+    .locals 0
+
+    iput p3, p0, Lbmw;->c:I
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lbmw;->b:Lqkg;
+
+    iput-object p2, p0, Lbmw;->a:Lqkg;
+
+    return-void
+.end method
+
+.method public constructor <init>(Lqkg;Lqkg;I[[[B)V
+    .locals 0
+
+    iput p3, p0, Lbmw;->c:I
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lbmw;->b:Lqkg;
+
+    iput-object p2, p0, Lbmw;->a:Lqkg;
+
+    return-void
+.end method
+
+.method public constructor <init>(Lqkg;Lqkg;I[[[C)V
+    .locals 0
+
+    iput p3, p0, Lbmw;->c:I
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lbmw;->b:Lqkg;
+
+    iput-object p2, p0, Lbmw;->a:Lqkg;
+
+    return-void
+.end method
+
+.method public static a(Lqkg;Lqkg;)Lbmw;
+    .locals 2
+
+    new-instance v0, Lbmw;
+
+    const/4 v1, 0x1
+
+    invoke-direct {v0, p0, p1, v1}, Lbmw;-><init>(Lqkg;Lqkg;I)V
+
+    return-object v0
+.end method
+
+.method public static b(Lqkg;Lqkg;)Lbmw;
+    .locals 3
+
+    new-instance v0, Lbmw;
+
+    const/4 v1, 0x6
 
     const/4 v2, 0x0
 
-    const/4 v3, 0x0
+    invoke-direct {v0, p0, p1, v1, v2}, Lbmw;-><init>(Lqkg;Lqkg;I[I)V
+
+    return-object v0
+.end method
+
+.method public static c(Lqkg;Lqkg;)Lbmw;
+    .locals 3
+
+    new-instance v0, Lbmw;
+
+    const/16 v1, 0xb
+
+    const/4 v2, 0x0
+
+    invoke-direct {v0, p0, p1, v1, v2}, Lbmw;-><init>(Lqkg;Lqkg;I[[B)V
+
+    return-object v0
+.end method
+
+.method public static d(Lqkg;Lqkg;)Lbmw;
+    .locals 3
+
+    new-instance v0, Lbmw;
+
+    const/16 v1, 0xc
+
+    const/4 v2, 0x0
+
+    invoke-direct {v0, p0, p1, v1, v2}, Lbmw;-><init>(Lqkg;Lqkg;I[[C)V
+
+    return-object v0
+.end method
+
+.method public static e(Lqkg;Lqkg;)Lbmw;
+    .locals 2
+
+    new-instance v0, Lbmw;
+
+    const/16 v1, 0x13
+
+    invoke-direct {v0, p0, p1, v1}, Lbmw;-><init>(Lqkg;Lqkg;I)V
+
+    return-object v0
+.end method
+
+.method public static f(Lqkg;Lqkg;)Lbmw;
+    .locals 3
+
+    new-instance v0, Lbmw;
+
+    const/16 v1, 0x14
+
+    const/4 v2, 0x0
+
+    invoke-direct {v0, p0, p1, v1, v2}, Lbmw;-><init>(Lqkg;Lqkg;I[[[C)V
+
+    return-object v0
+.end method
+
+
+# virtual methods
+.method public final synthetic get()Ljava/lang/Object;
+    .locals 7
+
+    iget v0, p0, Lbmw;->c:I
+
+    const/4 v1, 0x1
+
+    packed-switch v0, :pswitch_data_0
+
+    iget-object v0, p0, Lbmw;->b:Lqkg;
+
+    invoke-interface {v0}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lddf;
+
+    iget-object v2, p0, Lbmw;->a:Lqkg;
+
+    check-cast v2, Lemp;
+
+    invoke-virtual {v2}, Lemp;->a()Landroid/content/Context;
+
+    move-result-object v2
+
+    sget v3, Ldct;->a:I
+
+    invoke-interface {v0}, Lddf;->d()V
+
+    sget-object v0, Lpum;->r:Lpum;
+
+    invoke-virtual {v0}, Lppd;->m()Lpoy;
+
+    move-result-object v0
+
+    invoke-virtual {v2}, Landroid/content/Context;->getCacheDir()Ljava/io/File;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/io/File;->getAbsolutePath()Ljava/lang/String;
+
+    move-result-object v2
+
+    iget-boolean v3, v0, Lpoy;->c:Z
 
     const/4 v4, 0x0
 
-    const/4 v5, 0x0
+    if-eqz v3, :cond_8
 
-    move-object v0, p0
+    invoke-virtual {v0}, Lpoy;->m()V
 
-    invoke-direct/range {v0 .. v5}, Lbnp;-><init>(Lbze;[B[B[B[B)V
+    iput-boolean v4, v0, Lpoy;->c:Z
 
-    new-instance v0, Lye;
+    goto/16 :goto_7
 
-    const/4 v1, 0x4
+    :pswitch_0
+    iget-object v0, p0, Lbmw;->a:Lqkg;
 
-    invoke-direct {v0, v1}, Lye;-><init>(I)V
+    invoke-interface {v0}, Lqkg;->get()Ljava/lang/Object;
 
-    iput-object v0, p0, Lbmw;->x:Lye;
+    move-result-object v0
 
-    new-instance v0, Lye;
+    check-cast v0, Lojc;
 
-    const/4 v1, 0x5
+    iget-object v1, p0, Lbmw;->b:Lqkg;
 
-    invoke-direct {v0, v1}, Lye;-><init>(I)V
-
-    iput-object v0, p0, Lbmw;->y:Lye;
-
-    invoke-virtual {p1}, Landroid/hardware/Camera$Parameters;->getMaxExposureCompensation()I
-
-    move-result v0
-
-    iput v0, p0, Lbmw;->o:I
-
-    invoke-virtual {p1}, Landroid/hardware/Camera$Parameters;->getMinExposureCompensation()I
-
-    move-result v0
-
-    iput v0, p0, Lbmw;->n:I
-
-    invoke-virtual {p1}, Landroid/hardware/Camera$Parameters;->getExposureCompensationStep()F
-
-    move-result v0
-
-    iput v0, p0, Lbmw;->p:F
-
-    invoke-virtual {p1}, Landroid/hardware/Camera$Parameters;->getMaxNumDetectedFaces()I
-
-    move-result v0
-
-    iput v0, p0, Lbmw;->q:I
-
-    invoke-virtual {p1}, Landroid/hardware/Camera$Parameters;->getMaxNumMeteringAreas()I
-
-    move-result v0
-
-    iput v0, p0, Lbmw;->s:I
-
-    new-instance v0, Lbob;
-
-    invoke-virtual {p1}, Landroid/hardware/Camera$Parameters;->getPreferredPreviewSizeForVideo()Landroid/hardware/Camera$Size;
+    invoke-interface {v1}, Lqkg;->get()Ljava/lang/Object;
 
     move-result-object v1
 
-    invoke-direct {v0, v1}, Lbob;-><init>(Landroid/hardware/Camera$Size;)V
+    check-cast v1, Llap;
 
-    iput-object v0, p0, Lbmw;->m:Lbob;
+    invoke-virtual {v0}, Lojc;->g()Z
 
-    iget-object v0, p0, Lbmw;->d:Ljava/util/TreeSet;
+    move-result v2
 
-    invoke-virtual {p1}, Landroid/hardware/Camera$Parameters;->getSupportedPreviewFormats()Ljava/util/List;
+    if-eqz v2, :cond_0
 
-    move-result-object v1
+    invoke-virtual {v0}, Lojc;->c()Ljava/lang/Object;
 
-    invoke-virtual {v0, v1}, Ljava/util/TreeSet;->addAll(Ljava/util/Collection;)Z
+    move-result-object v0
 
-    iget-object v0, p0, Lbmw;->g:Ljava/util/TreeSet;
+    check-cast v0, Llxb;
 
-    invoke-virtual {p1}, Landroid/hardware/Camera$Parameters;->getSupportedPictureFormats()Ljava/util/List;
+    const-string v2, "AutoTimerSession"
 
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Ljava/util/TreeSet;->addAll(Ljava/util/Collection;)Z
-
-    invoke-virtual {p1}, Landroid/hardware/Camera$Parameters;->getHorizontalViewAngle()F
-
-    move-result v0
-
-    iput v0, p0, Lbmw;->u:F
-
-    invoke-virtual {p1}, Landroid/hardware/Camera$Parameters;->getVerticalViewAngle()F
-
-    move-result v0
-
-    iput v0, p0, Lbmw;->v:F
-
-    invoke-virtual {p1}, Landroid/hardware/Camera$Parameters;->getSupportedPreviewFpsRange()Ljava/util/List;
+    invoke-interface {v0, v2}, Llxb;->a(Ljava/lang/String;)Llxa;
 
     move-result-object v0
 
     if-eqz v0, :cond_0
 
-    iget-object v1, p0, Lbmw;->b:Ljava/util/ArrayList;
+    invoke-virtual {v1, v0}, Llap;->c(Llie;)V
 
-    invoke-virtual {v1, v0}, Ljava/util/ArrayList;->addAll(Ljava/util/Collection;)Z
+    invoke-static {v0}, Lojc;->i(Ljava/lang/Object;)Lojc;
+
+    move-result-object v0
+
+    goto :goto_0
 
     :cond_0
-    iget-object v0, p0, Lbmw;->b:Ljava/util/ArrayList;
-
-    iget-object v1, p0, Lbmw;->x:Lye;
-
-    invoke-static {v0, v1}, Ljava/util/Collections;->sort(Ljava/util/List;Ljava/util/Comparator;)V
-
-    invoke-virtual {p1}, Landroid/hardware/Camera$Parameters;->getSupportedPreviewSizes()Ljava/util/List;
-
-    move-result-object v0
-
-    if-eqz v0, :cond_1
-
-    invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
-
-    move-result-object v0
+    sget-object v0, Loih;->a:Loih;
 
     :goto_0
-    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
+    return-object v0
+
+    :pswitch_1
+    iget-object v0, p0, Lbmw;->b:Lqkg;
+
+    iget-object v1, p0, Lbmw;->a:Lqkg;
+
+    invoke-interface {v1}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Lddf;
+
+    sget-object v2, Lddm;->aa:Lddg;
+
+    invoke-interface {v1, v2}, Lddf;->k(Lddg;)Z
 
     move-result v1
 
     if-eqz v1, :cond_1
 
-    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    check-cast v0, Levv;
 
-    move-result-object v1
-
-    check-cast v1, Landroid/hardware/Camera$Size;
-
-    iget-object v2, p0, Lbmw;->c:Ljava/util/ArrayList;
-
-    new-instance v3, Lbob;
-
-    iget v4, v1, Landroid/hardware/Camera$Size;->width:I
-
-    iget v1, v1, Landroid/hardware/Camera$Size;->height:I
-
-    invoke-direct {v3, v4, v1}, Lbob;-><init>(II)V
-
-    invoke-virtual {v2, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    goto :goto_0
-
-    :cond_1
-    iget-object v0, p0, Lbmw;->c:Ljava/util/ArrayList;
-
-    iget-object v1, p0, Lbmw;->y:Lye;
-
-    invoke-static {v0, v1}, Ljava/util/Collections;->sort(Ljava/util/List;Ljava/util/Comparator;)V
-
-    invoke-virtual {p1}, Landroid/hardware/Camera$Parameters;->getSupportedVideoSizes()Ljava/util/List;
+    invoke-virtual {v0}, Levv;->a()Lojc;
 
     move-result-object v0
-
-    if-eqz v0, :cond_2
-
-    invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
-
-    move-result-object v0
-
-    :goto_1
-    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_2
-
-    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Landroid/hardware/Camera$Size;
-
-    iget-object v2, p0, Lbmw;->e:Ljava/util/ArrayList;
-
-    new-instance v3, Lbob;
-
-    iget v4, v1, Landroid/hardware/Camera$Size;->width:I
-
-    iget v1, v1, Landroid/hardware/Camera$Size;->height:I
-
-    invoke-direct {v3, v4, v1}, Lbob;-><init>(II)V
-
-    invoke-virtual {v2, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     goto :goto_1
 
+    :cond_1
+    sget-object v0, Loih;->a:Loih;
+
+    :goto_1
+    return-object v0
+
+    :pswitch_2
+    iget-object v0, p0, Lbmw;->b:Lqkg;
+
+    invoke-interface {v0}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/util/concurrent/Executor;
+
+    iget-object v1, p0, Lbmw;->a:Lqkg;
+
+    invoke-interface {v1}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Ljava/util/concurrent/ScheduledExecutorService;
+
+    new-instance v2, Lbxn;
+
+    invoke-direct {v2, v0, v1}, Lbxn;-><init>(Ljava/util/concurrent/Executor;Ljava/util/concurrent/ScheduledExecutorService;)V
+
+    return-object v2
+
+    :pswitch_3
+    iget-object v0, p0, Lbmw;->b:Lqkg;
+
+    invoke-interface {v0}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/util/concurrent/Executor;
+
+    iget-object v1, p0, Lbmw;->a:Lqkg;
+
+    invoke-interface {v1}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Lbxj;
+
+    invoke-virtual {v1, v0}, Lbxj;->a(Ljava/util/concurrent/Executor;)Lbxo;
+
+    move-result-object v0
+
+    return-object v0
+
+    :pswitch_4
+    iget-object v0, p0, Lbmw;->a:Lqkg;
+
+    invoke-interface {v0}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lljf;
+
+    iget-object v1, p0, Lbmw;->b:Lqkg;
+
+    invoke-interface {v1}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Ljava/util/concurrent/ScheduledExecutorService;
+
+    new-instance v2, Lbxj;
+
+    invoke-direct {v2, v0, v1}, Lbxj;-><init>(Lljf;Ljava/util/concurrent/ScheduledExecutorService;)V
+
+    return-object v2
+
+    :pswitch_5
+    iget-object v0, p0, Lbmw;->b:Lqkg;
+
+    check-cast v0, Lbxs;
+
+    invoke-virtual {v0}, Lbxs;->a()Ljava/util/concurrent/Executor;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lbmw;->a:Lqkg;
+
+    invoke-interface {v1}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Lljf;
+
+    new-instance v2, Lljl;
+
+    const-string v3, "IOTask"
+
+    invoke-direct {v2, v0, v1, v3}, Lljl;-><init>(Ljava/util/concurrent/Executor;Lljf;Ljava/lang/String;)V
+
+    return-object v2
+
+    :pswitch_6
+    iget-object v0, p0, Lbmw;->b:Lqkg;
+
+    invoke-interface {v0}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/util/concurrent/Executor;
+
+    iget-object v1, p0, Lbmw;->a:Lqkg;
+
+    invoke-interface {v1}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Lpht;
+
+    new-instance v2, Lbxl;
+
+    invoke-direct {v2, v0, v1}, Lbxl;-><init>(Ljava/util/concurrent/Executor;Lpht;)V
+
+    return-object v2
+
+    :pswitch_7
+    iget-object v0, p0, Lbmw;->b:Lqkg;
+
+    invoke-interface {v0}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    iget-object v2, p0, Lbmw;->a:Lqkg;
+
+    invoke-interface {v2}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Lbxj;
+
+    check-cast v0, Lbxf;
+
+    iget-object v0, v0, Lbxf;->d:Lpht;
+
+    invoke-virtual {v2}, Lbxj;->b()Llie;
+
+    move-result-object v2
+
+    new-instance v3, Lgng;
+
+    invoke-direct {v3, v2, v1}, Lgng;-><init>(Llie;I)V
+
+    sget-object v1, Lpgr;->a:Lpgr;
+
+    invoke-interface {v0, v3, v1}, Lpht;->d(Ljava/lang/Runnable;Ljava/util/concurrent/Executor;)V
+
+    return-object v0
+
+    :pswitch_8
+    iget-object v0, p0, Lbmw;->b:Lqkg;
+
+    check-cast v0, Lbwq;
+
+    invoke-virtual {v0}, Lbwq;->a()Ljava/util/concurrent/Executor;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lbmw;->a:Lqkg;
+
+    invoke-interface {v1}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Lpht;
+
+    new-instance v2, Lbxl;
+
+    invoke-direct {v2, v0, v1}, Lbxl;-><init>(Ljava/util/concurrent/Executor;Lpht;)V
+
+    return-object v2
+
+    :pswitch_9
+    iget-object v0, p0, Lbmw;->b:Lqkg;
+
+    invoke-interface {v0}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/util/concurrent/Executor;
+
+    iget-object v1, p0, Lbmw;->a:Lqkg;
+
+    invoke-interface {v1}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Lpht;
+
+    new-instance v2, Lbxl;
+
+    invoke-direct {v2, v0, v1}, Lbxl;-><init>(Ljava/util/concurrent/Executor;Lpht;)V
+
+    return-object v2
+
+    :pswitch_a
+    iget-object v0, p0, Lbmw;->a:Lqkg;
+
+    check-cast v0, Lbte;
+
+    invoke-virtual {v0}, Lbte;->a()Lbtd;
+
+    new-instance v0, Lbtf;
+
+    invoke-direct {v0}, Lbtf;-><init>()V
+
+    iget-object v1, p0, Lbmw;->b:Lqkg;
+
+    invoke-interface {v1}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Lddf;
+
+    sget-object v2, Lddl;->aK:Lddg;
+
+    invoke-interface {v1, v2}, Lddf;->k(Lddg;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_2
+
+    invoke-interface {v1}, Lddf;->b()V
+
     :cond_2
-    iget-object v0, p0, Lbmw;->e:Ljava/util/ArrayList;
+    return-object v0
 
-    iget-object v1, p0, Lbmw;->y:Lye;
+    :pswitch_b
+    iget-object v0, p0, Lbmw;->b:Lqkg;
 
-    invoke-static {v0, v1}, Ljava/util/Collections;->sort(Ljava/util/List;Ljava/util/Comparator;)V
-
-    invoke-virtual {p1}, Landroid/hardware/Camera$Parameters;->getSupportedPictureSizes()Ljava/util/List;
-
-    move-result-object v0
-
-    if-eqz v0, :cond_3
-
-    invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+    invoke-interface {v0}, Lqkg;->get()Ljava/lang/Object;
 
     move-result-object v0
 
-    :goto_2
-    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
+    check-cast v0, Lddf;
+
+    iget-object v1, p0, Lbmw;->a:Lqkg;
+
+    sget-object v2, Ldcs;->a:Lddi;
+
+    invoke-interface {v0}, Lddf;->c()V
+
+    invoke-interface {v1}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lbta;
+
+    iget-object v1, v0, Lbta;->a:Lbtb;
+
+    invoke-interface {v1}, Lbrx;->c()Z
 
     move-result v1
 
     if-eqz v1, :cond_3
 
-    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-static {v0}, Lope;->H(Ljava/lang/Object;)Lope;
 
-    move-result-object v1
-
-    check-cast v1, Landroid/hardware/Camera$Size;
-
-    iget-object v2, p0, Lbmw;->f:Ljava/util/ArrayList;
-
-    new-instance v3, Lbob;
-
-    iget v4, v1, Landroid/hardware/Camera$Size;->width:I
-
-    iget v1, v1, Landroid/hardware/Camera$Size;->height:I
-
-    invoke-direct {v3, v4, v1}, Lbob;-><init>(II)V
-
-    invoke-virtual {v2, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    move-result-object v0
 
     goto :goto_2
 
     :cond_3
-    iget-object v0, p0, Lbmw;->f:Ljava/util/ArrayList;
+    sget-object v0, Lorx;->a:Lorx;
 
-    iget-object v1, p0, Lbmw;->y:Lye;
+    :goto_2
+    invoke-static {v0}, Lqmd;->ae(Ljava/lang/Object;)V
 
-    invoke-static {v0, v1}, Ljava/util/Collections;->sort(Ljava/util/List;Ljava/util/Comparator;)V
+    return-object v0
 
-    invoke-virtual {p1}, Landroid/hardware/Camera$Parameters;->getSupportedSceneModes()Ljava/util/List;
+    :pswitch_c
+    iget-object v0, p0, Lbmw;->a:Lqkg;
+
+    invoke-interface {v0}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lddf;
+
+    iget-object v1, p0, Lbmw;->b:Lqkg;
+
+    sget-object v2, Ldcs;->c:Lddg;
+
+    invoke-interface {v0, v2}, Lddf;->k(Lddg;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_4
+
+    invoke-interface {v1}, Lqkg;->get()Ljava/lang/Object;
 
     move-result-object v0
 
-    const-string v1, "auto"
+    check-cast v0, Lbsq;
 
-    if-eqz v0, :cond_15
+    iget-object v1, v0, Lbsq;->a:Lbst;
 
-    invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+    invoke-virtual {v0}, Lbsq;->h()V
+
+    invoke-static {v0}, Lope;->H(Ljava/lang/Object;)Lope;
 
     move-result-object v0
+
+    goto :goto_3
 
     :cond_4
+    sget-object v0, Lorx;->a:Lorx;
+
     :goto_3
-    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
+    invoke-static {v0}, Lqmd;->ae(Ljava/lang/Object;)V
 
-    move-result v2
+    return-object v0
 
-    if-eqz v2, :cond_15
+    :pswitch_d
+    iget-object v0, p0, Lbmw;->b:Lqkg;
 
-    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    check-cast v0, Lemk;
 
-    move-result-object v2
-
-    check-cast v2, Ljava/lang/String;
-
-    invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v3
-
-    if-eqz v3, :cond_5
-
-    iget-object v2, p0, Lbmw;->h:Ljava/util/EnumSet;
-
-    sget-object v3, Lbnn;->b:Lbnn;
-
-    invoke-virtual {v2, v3}, Ljava/util/EnumSet;->add(Ljava/lang/Object;)Z
-
-    goto :goto_3
-
-    :cond_5
-    const-string v3, "action"
-
-    invoke-virtual {v3, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v3
-
-    if-eqz v3, :cond_6
-
-    iget-object v2, p0, Lbmw;->h:Ljava/util/EnumSet;
-
-    sget-object v3, Lbnn;->c:Lbnn;
-
-    invoke-virtual {v2, v3}, Ljava/util/EnumSet;->add(Ljava/lang/Object;)Z
-
-    goto :goto_3
-
-    :cond_6
-    const-string v3, "barcode"
-
-    invoke-virtual {v3, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v3
-
-    if-eqz v3, :cond_7
-
-    iget-object v2, p0, Lbmw;->h:Ljava/util/EnumSet;
-
-    sget-object v3, Lbnn;->d:Lbnn;
-
-    invoke-virtual {v2, v3}, Ljava/util/EnumSet;->add(Ljava/lang/Object;)Z
-
-    goto :goto_3
-
-    :cond_7
-    const-string v3, "beach"
-
-    invoke-virtual {v3, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v3
-
-    if-eqz v3, :cond_8
-
-    iget-object v2, p0, Lbmw;->h:Ljava/util/EnumSet;
-
-    sget-object v3, Lbnn;->e:Lbnn;
-
-    invoke-virtual {v2, v3}, Ljava/util/EnumSet;->add(Ljava/lang/Object;)Z
-
-    goto :goto_3
-
-    :cond_8
-    const-string v3, "candlelight"
-
-    invoke-virtual {v3, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v3
-
-    if-eqz v3, :cond_9
-
-    iget-object v2, p0, Lbmw;->h:Ljava/util/EnumSet;
-
-    sget-object v3, Lbnn;->f:Lbnn;
-
-    invoke-virtual {v2, v3}, Ljava/util/EnumSet;->add(Ljava/lang/Object;)Z
-
-    goto :goto_3
-
-    :cond_9
-    const-string v3, "fireworks"
-
-    invoke-virtual {v3, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v3
-
-    if-eqz v3, :cond_a
-
-    iget-object v2, p0, Lbmw;->h:Ljava/util/EnumSet;
-
-    sget-object v3, Lbnn;->g:Lbnn;
-
-    invoke-virtual {v2, v3}, Ljava/util/EnumSet;->add(Ljava/lang/Object;)Z
-
-    goto :goto_3
-
-    :cond_a
-    const-string v3, "hdr"
-
-    invoke-virtual {v3, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v3
-
-    if-eqz v3, :cond_b
-
-    iget-object v2, p0, Lbmw;->h:Ljava/util/EnumSet;
-
-    sget-object v3, Lbnn;->h:Lbnn;
-
-    invoke-virtual {v2, v3}, Ljava/util/EnumSet;->add(Ljava/lang/Object;)Z
-
-    goto :goto_3
-
-    :cond_b
-    const-string v3, "landscape"
-
-    invoke-virtual {v3, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v3
-
-    if-eqz v3, :cond_c
-
-    iget-object v2, p0, Lbmw;->h:Ljava/util/EnumSet;
-
-    sget-object v3, Lbnn;->i:Lbnn;
-
-    invoke-virtual {v2, v3}, Ljava/util/EnumSet;->add(Ljava/lang/Object;)Z
-
-    goto/16 :goto_3
-
-    :cond_c
-    const-string v3, "night"
-
-    invoke-virtual {v3, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v3
-
-    if-eqz v3, :cond_d
-
-    iget-object v2, p0, Lbmw;->h:Ljava/util/EnumSet;
-
-    sget-object v3, Lbnn;->j:Lbnn;
-
-    invoke-virtual {v2, v3}, Ljava/util/EnumSet;->add(Ljava/lang/Object;)Z
-
-    goto/16 :goto_3
-
-    :cond_d
-    const-string v3, "night-portrait"
-
-    invoke-virtual {v3, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v3
-
-    if-eqz v3, :cond_e
-
-    iget-object v2, p0, Lbmw;->h:Ljava/util/EnumSet;
-
-    sget-object v3, Lbnn;->k:Lbnn;
-
-    invoke-virtual {v2, v3}, Ljava/util/EnumSet;->add(Ljava/lang/Object;)Z
-
-    goto/16 :goto_3
-
-    :cond_e
-    const-string v3, "party"
-
-    invoke-virtual {v3, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v3
-
-    if-eqz v3, :cond_f
-
-    iget-object v2, p0, Lbmw;->h:Ljava/util/EnumSet;
-
-    sget-object v3, Lbnn;->l:Lbnn;
-
-    invoke-virtual {v2, v3}, Ljava/util/EnumSet;->add(Ljava/lang/Object;)Z
-
-    goto/16 :goto_3
-
-    :cond_f
-    const-string v3, "portrait"
-
-    invoke-virtual {v3, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v3
-
-    if-eqz v3, :cond_10
-
-    iget-object v2, p0, Lbmw;->h:Ljava/util/EnumSet;
-
-    sget-object v3, Lbnn;->m:Lbnn;
-
-    invoke-virtual {v2, v3}, Ljava/util/EnumSet;->add(Ljava/lang/Object;)Z
-
-    goto/16 :goto_3
-
-    :cond_10
-    const-string v3, "snow"
-
-    invoke-virtual {v3, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v3
-
-    if-eqz v3, :cond_11
-
-    iget-object v2, p0, Lbmw;->h:Ljava/util/EnumSet;
-
-    sget-object v3, Lbnn;->n:Lbnn;
-
-    invoke-virtual {v2, v3}, Ljava/util/EnumSet;->add(Ljava/lang/Object;)Z
-
-    goto/16 :goto_3
-
-    :cond_11
-    const-string v3, "sports"
-
-    invoke-virtual {v3, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v3
-
-    if-eqz v3, :cond_12
-
-    iget-object v2, p0, Lbmw;->h:Ljava/util/EnumSet;
-
-    sget-object v3, Lbnn;->o:Lbnn;
-
-    invoke-virtual {v2, v3}, Ljava/util/EnumSet;->add(Ljava/lang/Object;)Z
-
-    goto/16 :goto_3
-
-    :cond_12
-    const-string v3, "steadyphoto"
-
-    invoke-virtual {v3, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v3
-
-    if-eqz v3, :cond_13
-
-    iget-object v2, p0, Lbmw;->h:Ljava/util/EnumSet;
-
-    sget-object v3, Lbnn;->p:Lbnn;
-
-    invoke-virtual {v2, v3}, Ljava/util/EnumSet;->add(Ljava/lang/Object;)Z
-
-    goto/16 :goto_3
-
-    :cond_13
-    const-string v3, "sunset"
-
-    invoke-virtual {v3, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v3
-
-    if-eqz v3, :cond_14
-
-    iget-object v2, p0, Lbmw;->h:Ljava/util/EnumSet;
-
-    sget-object v3, Lbnn;->q:Lbnn;
-
-    invoke-virtual {v2, v3}, Ljava/util/EnumSet;->add(Ljava/lang/Object;)Z
-
-    goto/16 :goto_3
-
-    :cond_14
-    const-string v3, "theatre"
-
-    invoke-virtual {v3, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_4
-
-    iget-object v2, p0, Lbmw;->h:Ljava/util/EnumSet;
-
-    sget-object v3, Lbnn;->r:Lbnn;
-
-    invoke-virtual {v2, v3}, Ljava/util/EnumSet;->add(Ljava/lang/Object;)Z
-
-    goto/16 :goto_3
-
-    :cond_15
-    invoke-virtual {p1}, Landroid/hardware/Camera$Parameters;->getSupportedFlashModes()Ljava/util/List;
+    invoke-virtual {v0}, Lemk;->b()Ljava/lang/ref/WeakReference;
 
     move-result-object v0
 
-    if-nez v0, :cond_16
+    iget-object v1, p0, Lbmw;->a:Lqkg;
 
-    iget-object v0, p0, Lbmw;->i:Ljava/util/EnumSet;
+    invoke-interface {v1}, Lqkg;->get()Ljava/lang/Object;
 
-    sget-object v2, Lbnl;->a:Lbnl;
+    move-result-object v1
 
-    invoke-virtual {v0, v2}, Ljava/util/EnumSet;->add(Ljava/lang/Object;)Z
+    check-cast v1, Llar;
+
+    new-instance v2, Lbrc;
+
+    invoke-direct {v2, v0, v1}, Lbrc;-><init>(Ljava/lang/ref/WeakReference;Llar;)V
+
+    return-object v2
+
+    :pswitch_e
+    iget-object v0, p0, Lbmw;->a:Lqkg;
+
+    invoke-interface {v0}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lbqs;
+
+    iget-object v1, p0, Lbmw;->b:Lqkg;
+
+    invoke-interface {v1}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Lcom/google/android/apps/camera/stats/timing/CameraActivityTiming;
+
+    new-instance v2, Lbrb;
+
+    invoke-direct {v2, v0, v1}, Lbrb;-><init>(Lbqs;Lcom/google/android/apps/camera/stats/timing/CameraActivityTiming;)V
+
+    return-object v2
+
+    :pswitch_f
+    iget-object v0, p0, Lbmw;->b:Lqkg;
+
+    check-cast v0, Lemp;
+
+    invoke-virtual {v0}, Lemp;->a()Landroid/content/Context;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lbmw;->a:Lqkg;
+
+    invoke-interface {v1}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Lhug;
+
+    new-instance v2, Lbqt;
+
+    invoke-direct {v2, v0, v1}, Lbqt;-><init>(Landroid/content/Context;Lhug;)V
+
+    return-object v2
+
+    :pswitch_10
+    iget-object v0, p0, Lbmw;->b:Lqkg;
+
+    iget-object v1, p0, Lbmw;->a:Lqkg;
+
+    check-cast v1, Ljrj;
+
+    invoke-virtual {v1}, Ljrj;->a()Ljrl;
+
+    move-result-object v1
+
+    sget-object v2, Ljrl;->b:Ljrl;
+
+    if-eq v1, v2, :cond_5
+
+    sget-object v0, Lbqi;->a:Lbqi;
+
+    goto :goto_4
+
+    :cond_5
+    invoke-interface {v0}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Liho;
+
+    :goto_4
+    invoke-static {v0}, Lqmd;->ae(Ljava/lang/Object;)V
+
+    return-object v0
+
+    :pswitch_11
+    iget-object v0, p0, Lbmw;->b:Lqkg;
+
+    iget-object v1, p0, Lbmw;->a:Lqkg;
+
+    check-cast v1, Ljrj;
+
+    invoke-virtual {v1}, Ljrj;->a()Ljrl;
+
+    move-result-object v1
+
+    sget-object v2, Ljrl;->b:Ljrl;
+
+    if-ne v1, v2, :cond_6
+
+    sget-object v0, Lbqi;->b:Lbqi;
 
     goto :goto_5
 
-    :cond_16
-    invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+    :cond_6
+    invoke-interface {v0}, Lqkg;->get()Ljava/lang/Object;
 
     move-result-object v0
 
-    :cond_17
-    :goto_4
-    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
+    check-cast v0, Liho;
 
-    move-result v2
-
-    if-eqz v2, :cond_1c
-
-    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Ljava/lang/String;
-
-    invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v3
-
-    if-eqz v3, :cond_18
-
-    iget-object v2, p0, Lbmw;->i:Ljava/util/EnumSet;
-
-    sget-object v3, Lbnl;->b:Lbnl;
-
-    invoke-virtual {v2, v3}, Ljava/util/EnumSet;->add(Ljava/lang/Object;)Z
-
-    goto :goto_4
-
-    :cond_18
-    const-string v3, "off"
-
-    invoke-virtual {v3, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v3
-
-    if-eqz v3, :cond_19
-
-    iget-object v2, p0, Lbmw;->i:Ljava/util/EnumSet;
-
-    sget-object v3, Lbnl;->c:Lbnl;
-
-    invoke-virtual {v2, v3}, Ljava/util/EnumSet;->add(Ljava/lang/Object;)Z
-
-    goto :goto_4
-
-    :cond_19
-    const-string v3, "on"
-
-    invoke-virtual {v3, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v3
-
-    if-eqz v3, :cond_1a
-
-    iget-object v2, p0, Lbmw;->i:Ljava/util/EnumSet;
-
-    sget-object v3, Lbnl;->d:Lbnl;
-
-    invoke-virtual {v2, v3}, Ljava/util/EnumSet;->add(Ljava/lang/Object;)Z
-
-    goto :goto_4
-
-    :cond_1a
-    const-string v3, "red-eye"
-
-    invoke-virtual {v3, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v3
-
-    if-eqz v3, :cond_1b
-
-    iget-object v2, p0, Lbmw;->i:Ljava/util/EnumSet;
-
-    sget-object v3, Lbnl;->f:Lbnl;
-
-    invoke-virtual {v2, v3}, Ljava/util/EnumSet;->add(Ljava/lang/Object;)Z
-
-    goto :goto_4
-
-    :cond_1b
-    const-string v3, "torch"
-
-    invoke-virtual {v3, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_17
-
-    iget-object v2, p0, Lbmw;->i:Ljava/util/EnumSet;
-
-    sget-object v3, Lbnl;->e:Lbnl;
-
-    invoke-virtual {v2, v3}, Ljava/util/EnumSet;->add(Ljava/lang/Object;)Z
-
-    goto :goto_4
-
-    :cond_1c
     :goto_5
-    invoke-virtual {p1}, Landroid/hardware/Camera$Parameters;->getSupportedFocusModes()Ljava/util/List;
+    invoke-static {v0}, Lqmd;->ae(Ljava/lang/Object;)V
+
+    return-object v0
+
+    :pswitch_12
+    iget-object v0, p0, Lbmw;->a:Lqkg;
+
+    check-cast v0, Lgjo;
+
+    invoke-virtual {v0}, Lgjo;->a()Lghx;
 
     move-result-object v0
 
-    if-eqz v0, :cond_24
+    iget-object v1, p0, Lbmw;->b:Lqkg;
 
-    invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+    check-cast v1, Lggk;
+
+    invoke-virtual {v1}, Lggk;->a()Lggj;
+
+    move-result-object v1
+
+    invoke-virtual {v0}, Llwe;->E()Z
+
+    move-result v0
+
+    if-nez v0, :cond_7
+
+    sget-object v0, Lorx;->a:Lorx;
+
+    goto :goto_6
+
+    :cond_7
+    sget-object v0, Landroid/hardware/camera2/CaptureRequest;->CONTROL_AF_REGIONS:Landroid/hardware/camera2/CaptureRequest$Key;
+
+    invoke-static {v0, v1}, Lfcy;->m(Landroid/hardware/camera2/CaptureRequest$Key;Llco;)Llco;
 
     move-result-object v0
 
-    :cond_1d
+    invoke-static {v0}, Lope;->H(Ljava/lang/Object;)Lope;
+
+    move-result-object v0
+
     :goto_6
-    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
+    invoke-static {v0}, Lqmd;->ae(Ljava/lang/Object;)V
 
-    move-result v2
+    return-object v0
 
-    if-eqz v2, :cond_24
+    :pswitch_13
+    iget-object v0, p0, Lbmw;->a:Lqkg;
 
-    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Ljava/lang/String;
-
-    invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v3
-
-    if-eqz v3, :cond_1e
-
-    iget-object v2, p0, Lbmw;->j:Ljava/util/EnumSet;
-
-    sget-object v3, Lbnm;->a:Lbnm;
-
-    invoke-virtual {v2, v3}, Ljava/util/EnumSet;->add(Ljava/lang/Object;)Z
-
-    goto :goto_6
-
-    :cond_1e
-    const-string v3, "continuous-picture"
-
-    invoke-virtual {v3, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v3
-
-    if-eqz v3, :cond_1f
-
-    iget-object v2, p0, Lbmw;->j:Ljava/util/EnumSet;
-
-    sget-object v3, Lbnm;->b:Lbnm;
-
-    invoke-virtual {v2, v3}, Ljava/util/EnumSet;->add(Ljava/lang/Object;)Z
-
-    goto :goto_6
-
-    :cond_1f
-    const-string v3, "continuous-video"
-
-    invoke-virtual {v3, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v3
-
-    if-eqz v3, :cond_20
-
-    iget-object v2, p0, Lbmw;->j:Ljava/util/EnumSet;
-
-    sget-object v3, Lbnm;->c:Lbnm;
-
-    invoke-virtual {v2, v3}, Ljava/util/EnumSet;->add(Ljava/lang/Object;)Z
-
-    goto :goto_6
-
-    :cond_20
-    const-string v3, "edof"
-
-    invoke-virtual {v3, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v3
-
-    if-eqz v3, :cond_21
-
-    iget-object v2, p0, Lbmw;->j:Ljava/util/EnumSet;
-
-    sget-object v3, Lbnm;->d:Lbnm;
-
-    invoke-virtual {v2, v3}, Ljava/util/EnumSet;->add(Ljava/lang/Object;)Z
-
-    goto :goto_6
-
-    :cond_21
-    const-string v3, "fixed"
-
-    invoke-virtual {v3, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v3
-
-    if-eqz v3, :cond_22
-
-    iget-object v2, p0, Lbmw;->j:Ljava/util/EnumSet;
-
-    sget-object v3, Lbnm;->e:Lbnm;
-
-    invoke-virtual {v2, v3}, Ljava/util/EnumSet;->add(Ljava/lang/Object;)Z
-
-    goto :goto_6
-
-    :cond_22
-    const-string v3, "infinity"
-
-    invoke-virtual {v3, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v3
-
-    if-eqz v3, :cond_23
-
-    iget-object v2, p0, Lbmw;->j:Ljava/util/EnumSet;
-
-    sget-object v3, Lbnm;->f:Lbnm;
-
-    invoke-virtual {v2, v3}, Ljava/util/EnumSet;->add(Ljava/lang/Object;)Z
-
-    goto :goto_6
-
-    :cond_23
-    const-string v3, "macro"
-
-    invoke-virtual {v3, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_1d
-
-    iget-object v2, p0, Lbmw;->j:Ljava/util/EnumSet;
-
-    sget-object v3, Lbnm;->g:Lbnm;
-
-    invoke-virtual {v2, v3}, Ljava/util/EnumSet;->add(Ljava/lang/Object;)Z
-
-    goto :goto_6
-
-    :cond_24
-    invoke-virtual {p1}, Landroid/hardware/Camera$Parameters;->getSupportedFocusModes()Ljava/util/List;
+    invoke-interface {v0}, Lqkg;->get()Ljava/lang/Object;
 
     move-result-object v0
 
-    if-eqz v0, :cond_2d
+    check-cast v0, Lhuq;
 
-    invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+    iget-object v1, p0, Lbmw;->b:Lqkg;
 
-    move-result-object v0
+    invoke-interface {v1}, Lqkg;->get()Ljava/lang/Object;
 
-    :cond_25
+    move-result-object v1
+
+    check-cast v1, Lbui;
+
+    new-instance v2, Lbmv;
+
+    const/4 v3, 0x0
+
+    invoke-direct {v2, v0, v1, v3}, Lbmv;-><init>(Lhuq;Lbui;[B)V
+
+    return-object v2
+
+    :cond_8
     :goto_7
-    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
+    iget-object v3, v0, Lpoy;->b:Lppd;
 
-    move-result v2
+    check-cast v3, Lpum;
 
-    if-eqz v2, :cond_2d
+    invoke-virtual {v2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    iget v5, v3, Lpum;->a:I
 
-    move-result-object v2
+    const/high16 v6, 0x1000000
 
-    check-cast v2, Ljava/lang/String;
+    or-int/2addr v5, v6
 
-    invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    iput v5, v3, Lpum;->a:I
 
-    move-result v3
+    iput-object v2, v3, Lpum;->n:Ljava/lang/String;
 
-    if-eqz v3, :cond_26
+    or-int/lit8 v2, v5, 0x2
 
-    iget-object v2, p0, Lbmw;->k:Ljava/util/EnumSet;
+    iput v2, v3, Lpum;->a:I
 
-    sget-object v3, Lbno;->a:Lbno;
+    iput-boolean v4, v3, Lpum;->d:Z
 
-    invoke-virtual {v2, v3}, Ljava/util/EnumSet;->add(Ljava/lang/Object;)Z
+    iput v1, v3, Lpum;->c:I
 
-    goto :goto_7
+    or-int/2addr v2, v1
 
-    :cond_26
-    const-string v3, "cloudy-daylight"
+    iput v2, v3, Lpum;->a:I
 
-    invoke-virtual {v3, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v3
-
-    if-eqz v3, :cond_27
-
-    iget-object v2, p0, Lbmw;->k:Ljava/util/EnumSet;
-
-    sget-object v3, Lbno;->b:Lbno;
-
-    invoke-virtual {v2, v3}, Ljava/util/EnumSet;->add(Ljava/lang/Object;)Z
-
-    goto :goto_7
-
-    :cond_27
-    const-string v3, "daylight"
-
-    invoke-virtual {v3, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v3
-
-    if-eqz v3, :cond_28
-
-    iget-object v2, p0, Lbmw;->k:Ljava/util/EnumSet;
-
-    sget-object v3, Lbno;->c:Lbno;
-
-    invoke-virtual {v2, v3}, Ljava/util/EnumSet;->add(Ljava/lang/Object;)Z
-
-    goto :goto_7
-
-    :cond_28
-    const-string v3, "fluorescent"
-
-    invoke-virtual {v3, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v3
-
-    if-eqz v3, :cond_29
-
-    iget-object v2, p0, Lbmw;->k:Ljava/util/EnumSet;
-
-    sget-object v3, Lbno;->d:Lbno;
-
-    invoke-virtual {v2, v3}, Ljava/util/EnumSet;->add(Ljava/lang/Object;)Z
-
-    goto :goto_7
-
-    :cond_29
-    const-string v3, "incandescent"
-
-    invoke-virtual {v3, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v3
-
-    if-eqz v3, :cond_2a
-
-    iget-object v2, p0, Lbmw;->k:Ljava/util/EnumSet;
-
-    sget-object v3, Lbno;->e:Lbno;
-
-    invoke-virtual {v2, v3}, Ljava/util/EnumSet;->add(Ljava/lang/Object;)Z
-
-    goto :goto_7
-
-    :cond_2a
-    const-string v3, "shade"
-
-    invoke-virtual {v3, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v3
-
-    if-eqz v3, :cond_2b
-
-    iget-object v2, p0, Lbmw;->k:Ljava/util/EnumSet;
-
-    sget-object v3, Lbno;->f:Lbno;
-
-    invoke-virtual {v2, v3}, Ljava/util/EnumSet;->add(Ljava/lang/Object;)Z
-
-    goto :goto_7
-
-    :cond_2b
-    const-string v3, "twilight"
-
-    invoke-virtual {v3, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v3
-
-    if-eqz v3, :cond_2c
-
-    iget-object v2, p0, Lbmw;->k:Ljava/util/EnumSet;
-
-    sget-object v3, Lbno;->g:Lbno;
-
-    invoke-virtual {v2, v3}, Ljava/util/EnumSet;->add(Ljava/lang/Object;)Z
-
-    goto/16 :goto_7
-
-    :cond_2c
-    const-string v3, "warm-fluorescent"
-
-    invoke-virtual {v3, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_25
-
-    iget-object v2, p0, Lbmw;->k:Ljava/util/EnumSet;
-
-    sget-object v3, Lbno;->h:Lbno;
-
-    invoke-virtual {v2, v3}, Ljava/util/EnumSet;->add(Ljava/lang/Object;)Z
-
-    goto/16 :goto_7
-
-    :cond_2d
-    invoke-virtual {p1}, Landroid/hardware/Camera$Parameters;->isZoomSupported()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_2e
-
-    invoke-virtual {p1}, Landroid/hardware/Camera$Parameters;->getZoomRatios()Ljava/util/List;
+    invoke-virtual {v0}, Lpoy;->h()Lppd;
 
     move-result-object v0
 
-    invoke-virtual {p1}, Landroid/hardware/Camera$Parameters;->getMaxZoom()I
+    check-cast v0, Lpum;
 
-    move-result v1
+    new-instance v2, Lcom/google/android/apps/camera/autotimer/analysis/jni/Curator;
 
-    invoke-interface {v0, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
+    invoke-direct {v2, v0}, Lcom/google/android/apps/camera/autotimer/analysis/jni/Curator;-><init>(Lpum;)V
 
-    move-result-object v0
+    invoke-virtual {v2, v1}, Lcom/google/android/apps/camera/autotimer/analysis/jni/Curator;->nativeSetCaptureEnabled(Z)V
 
-    check-cast v0, Ljava/lang/Integer;
+    return-object v2
 
-    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
-
-    move-result v0
-
-    int-to-float v0, v0
-
-    const/high16 v1, 0x42c80000    # 100.0f
-
-    div-float/2addr v0, v1
-
-    iput v0, p0, Lbmw;->t:F
-
-    iget-object v0, p0, Lbmw;->l:Ljava/util/EnumSet;
-
-    sget-object v1, Lbnk;->a:Lbnk;
-
-    invoke-virtual {v0, v1}, Ljava/util/EnumSet;->add(Ljava/lang/Object;)Z
-
-    :cond_2e
-    invoke-virtual {p1}, Landroid/hardware/Camera$Parameters;->isVideoSnapshotSupported()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_2f
-
-    iget-object v0, p0, Lbmw;->l:Ljava/util/EnumSet;
-
-    sget-object v1, Lbnk;->b:Lbnk;
-
-    invoke-virtual {v0, v1}, Ljava/util/EnumSet;->add(Ljava/lang/Object;)Z
-
-    :cond_2f
-    invoke-virtual {p1}, Landroid/hardware/Camera$Parameters;->isAutoExposureLockSupported()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_30
-
-    iget-object v0, p0, Lbmw;->l:Ljava/util/EnumSet;
-
-    sget-object v1, Lbnk;->e:Lbnk;
-
-    invoke-virtual {v0, v1}, Ljava/util/EnumSet;->add(Ljava/lang/Object;)Z
-
-    :cond_30
-    invoke-virtual {p1}, Landroid/hardware/Camera$Parameters;->isAutoWhiteBalanceLockSupported()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_31
-
-    iget-object v0, p0, Lbmw;->l:Ljava/util/EnumSet;
-
-    sget-object v1, Lbnk;->f:Lbnk;
-
-    invoke-virtual {v0, v1}, Ljava/util/EnumSet;->add(Ljava/lang/Object;)Z
-
-    :cond_31
-    sget-object v0, Lbnm;->a:Lbnm;
-
-    invoke-virtual {p0, v0}, Lbnp;->f(Lbnm;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_32
-
-    invoke-virtual {p1}, Landroid/hardware/Camera$Parameters;->getMaxNumFocusAreas()I
-
-    move-result p1
-
-    iput p1, p0, Lbmw;->r:I
-
-    if-lez p1, :cond_32
-
-    iget-object p1, p0, Lbmw;->l:Ljava/util/EnumSet;
-
-    sget-object v0, Lbnk;->c:Lbnk;
-
-    invoke-virtual {p1, v0}, Ljava/util/EnumSet;->add(Ljava/lang/Object;)Z
-
-    :cond_32
-    iget p1, p0, Lbmw;->s:I
-
-    if-lez p1, :cond_33
-
-    iget-object p1, p0, Lbmw;->l:Ljava/util/EnumSet;
-
-    sget-object v0, Lbnk;->d:Lbnk;
-
-    invoke-virtual {p1, v0}, Ljava/util/EnumSet;->add(Ljava/lang/Object;)Z
-
-    :cond_33
-    return-void
-.end method
-
-.method public constructor <init>(Lbmw;)V
-    .locals 1
-
-    invoke-direct {p0, p1}, Lbnp;-><init>(Lbnp;)V
-
-    new-instance p1, Lye;
-
-    const/4 v0, 0x4
-
-    invoke-direct {p1, v0}, Lye;-><init>(I)V
-
-    iput-object p1, p0, Lbmw;->x:Lye;
-
-    new-instance p1, Lye;
-
-    const/4 v0, 0x5
-
-    invoke-direct {p1, v0}, Lye;-><init>(I)V
-
-    iput-object p1, p0, Lbmw;->y:Lye;
-
-    return-void
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_13
+        :pswitch_12
+        :pswitch_11
+        :pswitch_10
+        :pswitch_f
+        :pswitch_e
+        :pswitch_d
+        :pswitch_c
+        :pswitch_b
+        :pswitch_a
+        :pswitch_9
+        :pswitch_8
+        :pswitch_7
+        :pswitch_6
+        :pswitch_5
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method

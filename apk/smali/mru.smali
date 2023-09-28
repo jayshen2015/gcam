@@ -1,210 +1,150 @@
-.class final Lmru;
-.super Lmuv;
+.class public final Lmru;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Ljava/lang/AutoCloseable;
 
 
 # instance fields
-.field final a:Ljava/util/Set;
+.field public a:J
 
-.field final synthetic b:Lmry;
+.field public final synthetic b:Ljava/nio/ByteBuffer;
+
+.field final synthetic c:I
+
+.field final synthetic d:Lmrx;
 
 
 # direct methods
-.method public constructor <init>(Lmry;)V
+.method public constructor <init>(Lmrx;Ljava/nio/ByteBuffer;I)V
     .locals 0
 
-    iput-object p1, p0, Lmru;->b:Lmry;
+    iput-object p1, p0, Lmru;->d:Lmrx;
 
-    invoke-direct {p0}, Lmuv;-><init>()V
+    iput-object p2, p0, Lmru;->b:Ljava/nio/ByteBuffer;
 
-    iget-object p1, p1, Lmry;->a:Ljava/util/Map;
+    iput p3, p0, Lmru;->c:I
 
-    invoke-interface {p1}, Ljava/util/Map;->entrySet()Ljava/util/Set;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    move-result-object p1
+    const-wide/16 p1, 0x0
 
-    iput-object p1, p0, Lmru;->a:Ljava/util/Set;
+    iput-wide p1, p0, Lmru;->a:J
 
     return-void
 .end method
 
 
 # virtual methods
-.method protected final synthetic a()Ljava/lang/Object;
-    .locals 1
+.method public final close()V
+    .locals 9
 
-    iget-object v0, p0, Lmru;->a:Ljava/util/Set;
+    iget-object v0, p0, Lmru;->d:Lmrx;
 
-    return-object v0
-.end method
+    monitor-enter v0
 
-.method protected final synthetic b()Ljava/util/Collection;
-    .locals 1
+    :try_start_0
+    iget-object v1, p0, Lmru;->d:Lmrx;
 
-    iget-object v0, p0, Lmru;->a:Ljava/util/Set;
+    iget-object v1, v1, Lmrx;->k:Ljava/util/Set;
 
-    return-object v0
-.end method
+    invoke-interface {v1, p0}, Ljava/util/Set;->remove(Ljava/lang/Object;)Z
 
-.method protected final c()Ljava/util/Set;
-    .locals 1
+    move-result v1
 
-    iget-object v0, p0, Lmru;->a:Ljava/util/Set;
+    if-eqz v1, :cond_0
 
-    return-object v0
-.end method
+    iget-object v1, p0, Lmru;->b:Ljava/nio/ByteBuffer;
 
-.method public final clear()V
-    .locals 1
+    invoke-virtual {v1}, Ljava/nio/ByteBuffer;->position()I
 
-    iget-object v0, p0, Lmru;->b:Lmry;
+    move-result v5
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_1
 
-    invoke-virtual {v0}, Lmuq;->clear()V
+    :try_start_1
+    iget-object v1, p0, Lmru;->d:Lmrx;
 
-    return-void
-.end method
+    iget-object v2, v1, Lmrx;->a:Landroid/media/MediaCodec;
 
-.method public final contains(Ljava/lang/Object;)Z
-    .locals 2
+    iget v3, p0, Lmru;->c:I
 
-    iget-object v0, p0, Lmru;->a:Ljava/util/Set;
+    const/4 v4, 0x0
 
-    instance-of v1, p1, Ljava/util/Map$Entry;
+    iget-wide v6, p0, Lmru;->a:J
 
-    if-nez v1, :cond_0
+    const/4 v8, 0x0
 
-    const/4 p1, 0x0
+    invoke-virtual/range {v2 .. v8}, Landroid/media/MediaCodec;->queueInputBuffer(IIIJI)V
+    :try_end_1
+    .catch Landroid/media/MediaCodec$CodecException; {:try_start_1 .. :try_end_1} :catch_0
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    return p1
+    goto :goto_0
 
-    :cond_0
-    check-cast p1, Ljava/util/Map$Entry;
+    :catchall_0
+    move-exception v1
 
-    invoke-static {p1}, Llyh;->A(Ljava/util/Map$Entry;)Ljava/util/Map$Entry;
+    :try_start_2
+    const-string v2, "AsynchMediaCodec"
 
-    move-result-object p1
+    const-string v3, "Exception caught while attempting to queue input buffer."
 
-    invoke-interface {v0, p1}, Ljava/util/Collection;->contains(Ljava/lang/Object;)Z
+    invoke-static {v2, v3, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    move-result p1
+    goto :goto_0
 
-    return p1
-.end method
+    :catch_0
+    move-exception v1
 
-.method public final containsAll(Ljava/util/Collection;)Z
-    .locals 0
+    iget-object v2, p0, Lmru;->d:Lmrx;
 
-    invoke-static {p0, p1}, Llkj;->r(Ljava/util/Collection;Ljava/util/Collection;)Z
+    iget-object v3, v2, Lmrx;->j:Lmrw;
 
-    move-result p1
+    iget-object v2, v2, Lmrx;->a:Landroid/media/MediaCodec;
 
-    return p1
-.end method
-
-.method public final iterator()Ljava/util/Iterator;
-    .locals 3
-
-    iget-object v0, p0, Lmru;->b:Lmry;
-
-    iget-object v1, v0, Lmry;->a:Ljava/util/Map;
-
-    invoke-interface {v1}, Ljava/util/Map;->entrySet()Ljava/util/Set;
-
-    move-result-object v1
-
-    invoke-interface {v1}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
-
-    move-result-object v1
-
-    new-instance v2, Lmrs;
-
-    invoke-direct {v2, v0, v1}, Lmrs;-><init>(Lmry;Ljava/util/Iterator;)V
-
-    return-object v2
-.end method
-
-.method public final remove(Ljava/lang/Object;)Z
-    .locals 2
-
-    iget-object v0, p0, Lmru;->a:Ljava/util/Set;
-
-    invoke-interface {v0, p1}, Ljava/util/Set;->contains(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_1
-
-    instance-of v0, p1, Ljava/util/Map$Entry;
-
-    if-nez v0, :cond_0
+    invoke-virtual {v3, v2, v1}, Lmrw;->onError(Landroid/media/MediaCodec;Landroid/media/MediaCodec$CodecException;)V
 
     goto :goto_0
 
     :cond_0
-    check-cast p1, Ljava/util/Map$Entry;
+    iget-wide v1, p0, Lmru;->a:J
 
-    iget-object v0, p0, Lmru;->b:Lmry;
+    new-instance v3, Ljava/lang/StringBuilder;
 
-    iget-object v0, v0, Lmry;->b:Lmry;
+    const/16 v4, 0x7e
 
-    iget-object v0, v0, Lmry;->a:Ljava/util/Map;
+    invoke-direct {v3, v4}, Ljava/lang/StringBuilder;-><init>(I)V
 
-    invoke-interface {p1}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
+    const-string v4, "Trying to submit input buffer for timestamp "
 
-    move-result-object v1
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-interface {v0, v1}, Ljava/util/Map;->remove(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v3, v1, v2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
-    iget-object v0, p0, Lmru;->a:Ljava/util/Set;
+    const-string v1, " but it has been closed already (... or the codec was stopped)"
 
-    invoke-interface {v0, p1}, Ljava/util/Set;->remove(Ljava/lang/Object;)Z
+    invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const/4 p1, 0x1
+    const-string v1, "AsynchMediaCodec"
 
-    return p1
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    :cond_1
+    move-result-object v2
+
+    invoke-static {v1, v2}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
+
     :goto_0
-    const/4 p1, 0x0
+    monitor-exit v0
 
-    return p1
-.end method
+    return-void
 
-.method public final removeAll(Ljava/util/Collection;)Z
-    .locals 0
+    :catchall_1
+    move-exception v1
 
-    invoke-virtual {p0, p1}, Lmuv;->d(Ljava/util/Collection;)Z
+    monitor-exit v0
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_1
 
-    move-result p1
-
-    return p1
-.end method
-
-.method public final retainAll(Ljava/util/Collection;)Z
-    .locals 0
-
-    invoke-virtual {p0, p1}, Lmuo;->t(Ljava/util/Collection;)Z
-
-    move-result p1
-
-    return p1
-.end method
-
-.method public final toArray()[Ljava/lang/Object;
-    .locals 1
-
-    invoke-virtual {p0}, Lmuo;->u()[Ljava/lang/Object;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public final toArray([Ljava/lang/Object;)[Ljava/lang/Object;
-    .locals 0
-
-    invoke-static {p0, p1}, Llyh;->k(Ljava/util/Collection;[Ljava/lang/Object;)[Ljava/lang/Object;
-
-    move-result-object p1
-
-    return-object p1
+    throw v1
 .end method

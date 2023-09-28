@@ -1,74 +1,34 @@
 .class public final Liwf;
-.super Ljava/lang/Object;
+.super Landroid/view/GestureDetector$SimpleOnGestureListener;
 
 
 # instance fields
-.field public final a:F
-
-.field public final b:F
-
-.field public final c:Z
-
-.field public d:I
-
-.field public final e:Landroid/view/View$OnGenericMotionListener;
-
-.field public final f:Les;
+.field final synthetic a:Lcom/google/android/apps/camera/ui/compositevideoview/CompositeVideoView;
 
 
 # direct methods
-.method public constructor <init>(Landroid/content/Context;)V
-    .locals 2
+.method public constructor <init>(Lcom/google/android/apps/camera/ui/compositevideoview/CompositeVideoView;)V
+    .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Liwf;->a:Lcom/google/android/apps/camera/ui/compositevideoview/CompositeVideoView;
 
-    const/4 v0, 0x0
-
-    iput v0, p0, Liwf;->d:I
-
-    new-instance v0, Liwe;
-
-    invoke-direct {v0, p0}, Liwe;-><init>(Liwf;)V
-
-    iput-object v0, p0, Liwf;->f:Les;
-
-    invoke-virtual {p1}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
-
-    move-result-object v0
-
-    const-string v1, "android.hardware.rotaryencoder.lowres"
-
-    invoke-virtual {v0, v1}, Landroid/content/pm/PackageManager;->hasSystemFeature(Ljava/lang/String;)Z
-
-    move-result v0
-
-    iput-boolean v0, p0, Liwf;->c:Z
-
-    invoke-static {p1}, Landroid/view/ViewConfiguration;->get(Landroid/content/Context;)Landroid/view/ViewConfiguration;
-
-    move-result-object v0
-
-    invoke-static {v0}, Lafr;->a(Landroid/view/ViewConfiguration;)F
-
-    move-result v0
-
-    iput v0, p0, Liwf;->a:F
-
-    invoke-static {p1}, Landroid/view/ViewConfiguration;->get(Landroid/content/Context;)Landroid/view/ViewConfiguration;
-
-    move-result-object p1
-
-    invoke-static {p1}, Lafr;->b(Landroid/view/ViewConfiguration;)F
-
-    move-result p1
-
-    iput p1, p0, Liwf;->b:F
-
-    new-instance p1, Liwd;
-
-    invoke-direct {p1, p0}, Liwd;-><init>(Liwf;)V
-
-    iput-object p1, p0, Liwf;->e:Landroid/view/View$OnGenericMotionListener;
+    invoke-direct {p0}, Landroid/view/GestureDetector$SimpleOnGestureListener;-><init>()V
 
     return-void
+.end method
+
+
+# virtual methods
+.method public final onSingleTapConfirmed(Landroid/view/MotionEvent;)Z
+    .locals 0
+
+    iget-object p1, p0, Liwf;->a:Lcom/google/android/apps/camera/ui/compositevideoview/CompositeVideoView;
+
+    iget-object p1, p1, Lcom/google/android/apps/camera/ui/compositevideoview/CompositeVideoView;->a:Landroid/widget/VideoView;
+
+    invoke-virtual {p1}, Landroid/widget/VideoView;->performClick()Z
+
+    const/4 p1, 0x1
+
+    return p1
 .end method

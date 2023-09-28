@@ -1,63 +1,64 @@
-.class public final Lkao;
-.super Ljava/lang/Object;
-
-# interfaces
-.implements Logk;
+.class final Lkao;
+.super Landroid/animation/AnimatorListenerAdapter;
 
 
 # instance fields
-.field private final a:Loiw;
+.field final synthetic a:Lcom/google/android/apps/camera/zoomui/ZoomUi;
 
 
 # direct methods
-.method public constructor <init>(Loiw;)V
+.method public constructor <init>(Lcom/google/android/apps/camera/zoomui/ZoomUi;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lkao;->a:Lcom/google/android/apps/camera/zoomui/ZoomUi;
 
-    iput-object p1, p0, Lkao;->a:Loiw;
+    invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
 
     return-void
 .end method
 
-.method public static b(Lmqp;)Lkaq;
-    .locals 0
-
-    check-cast p0, Lmqt;
-
-    iget-object p0, p0, Lmqt;->a:Ljava/lang/Object;
-
-    check-cast p0, Lkaq;
-
-    return-object p0
-.end method
-
 
 # virtual methods
-.method public final a()Lkaq;
+.method public final onAnimationEnd(Landroid/animation/Animator;)V
     .locals 1
 
-    iget-object v0, p0, Lkao;->a:Loiw;
+    invoke-super {p0, p1}, Landroid/animation/AnimatorListenerAdapter;->onAnimationEnd(Landroid/animation/Animator;)V
 
-    check-cast v0, Lest;
+    iget-object p1, p0, Lkao;->a:Lcom/google/android/apps/camera/zoomui/ZoomUi;
 
-    invoke-virtual {v0}, Lest;->a()Lmqp;
+    invoke-virtual {p1}, Lcom/google/android/apps/camera/zoomui/ZoomUi;->b()Landroid/view/ViewGroup;
 
-    move-result-object v0
+    move-result-object p1
 
-    invoke-static {v0}, Lkao;->b(Lmqp;)Lkaq;
+    const/4 v0, 0x4
 
-    move-result-object v0
+    invoke-virtual {p1, v0}, Landroid/view/ViewGroup;->setVisibility(I)V
 
-    return-object v0
-.end method
+    iget-object p1, p0, Lkao;->a:Lcom/google/android/apps/camera/zoomui/ZoomUi;
 
-.method public final bridge synthetic get()Ljava/lang/Object;
-    .locals 1
+    invoke-virtual {p1}, Lcom/google/android/apps/camera/zoomui/ZoomUi;->f()Landroid/widget/ImageView;
 
-    invoke-virtual {p0}, Lkao;->a()Lkaq;
+    move-result-object p1
 
-    move-result-object v0
+    invoke-virtual {p1, v0}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    return-object v0
+    iget-object p1, p0, Lkao;->a:Lcom/google/android/apps/camera/zoomui/ZoomUi;
+
+    invoke-virtual {p1}, Lcom/google/android/apps/camera/zoomui/ZoomUi;->b()Landroid/view/ViewGroup;
+
+    move-result-object p1
+
+    const/high16 v0, 0x3f800000    # 1.0f
+
+    invoke-virtual {p1, v0}, Landroid/view/ViewGroup;->setAlpha(F)V
+
+    iget-object p1, p0, Lkao;->a:Lcom/google/android/apps/camera/zoomui/ZoomUi;
+
+    invoke-virtual {p1}, Lcom/google/android/apps/camera/zoomui/ZoomUi;->f()Landroid/widget/ImageView;
+
+    move-result-object p1
+
+    invoke-virtual {p1, v0}, Landroid/widget/ImageView;->setAlpha(F)V
+
+    return-void
 .end method

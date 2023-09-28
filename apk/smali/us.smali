@@ -1,86 +1,277 @@
-.class final Lus;
-.super Loln;
-
-# interfaces
-.implements Lomo;
-
-
-# annotations
-.annotation runtime Lolj;
-    b = "androidx.camera.camera2.pipe.compat.VirtualCameraManager$requestLoop$2$1"
-    c = "VirtualCameraManager.kt"
-    d = "invokeSuspend"
-    e = {}
-.end annotation
+.class public final Lus;
+.super Landroid/content/ContextWrapper;
 
 
 # instance fields
-.field final synthetic a:Lue;
+.field public a:I
+
+.field private b:Landroid/content/res/Resources$Theme;
+
+.field private c:Landroid/view/LayoutInflater;
+
+.field private d:Landroid/content/res/Configuration;
+
+.field private e:Landroid/content/res/Resources;
 
 
 # direct methods
-.method public constructor <init>(Lue;Loku;)V
+.method public constructor <init>()V
+    .locals 1
+
+    const/4 v0, 0x0
+
+    invoke-direct {p0, v0}, Landroid/content/ContextWrapper;-><init>(Landroid/content/Context;)V
+
+    return-void
+.end method
+
+.method public constructor <init>(Landroid/content/Context;I)V
     .locals 0
 
-    iput-object p1, p0, Lus;->a:Lue;
+    invoke-direct {p0, p1}, Landroid/content/ContextWrapper;-><init>(Landroid/content/Context;)V
 
-    const/4 p1, 0x2
+    iput p2, p0, Lus;->a:I
 
-    invoke-direct {p0, p1, p2}, Loln;-><init>(ILoku;)V
+    return-void
+.end method
+
+.method public constructor <init>(Landroid/content/Context;Landroid/content/res/Resources$Theme;)V
+    .locals 0
+
+    invoke-direct {p0, p1}, Landroid/content/ContextWrapper;-><init>(Landroid/content/Context;)V
+
+    iput-object p2, p0, Lus;->b:Landroid/content/res/Resources$Theme;
+
+    return-void
+.end method
+
+.method private final b()Landroid/content/res/Resources;
+    .locals 1
+
+    iget-object v0, p0, Lus;->e:Landroid/content/res/Resources;
+
+    if-nez v0, :cond_1
+
+    iget-object v0, p0, Lus;->d:Landroid/content/res/Configuration;
+
+    if-nez v0, :cond_0
+
+    invoke-super {p0}, Landroid/content/ContextWrapper;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lus;->e:Landroid/content/res/Resources;
+
+    goto :goto_0
+
+    :cond_0
+    invoke-virtual {p0, v0}, Lus;->createConfigurationContext(Landroid/content/res/Configuration;)Landroid/content/Context;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lus;->e:Landroid/content/res/Resources;
+
+    :cond_1
+    :goto_0
+    iget-object v0, p0, Lus;->e:Landroid/content/res/Resources;
+
+    return-object v0
+.end method
+
+.method private final c()V
+    .locals 3
+
+    iget-object v0, p0, Lus;->b:Landroid/content/res/Resources$Theme;
+
+    if-nez v0, :cond_0
+
+    invoke-direct {p0}, Lus;->b()Landroid/content/res/Resources;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroid/content/res/Resources;->newTheme()Landroid/content/res/Resources$Theme;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lus;->b:Landroid/content/res/Resources$Theme;
+
+    invoke-virtual {p0}, Lus;->getBaseContext()Landroid/content/Context;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroid/content/Context;->getTheme()Landroid/content/res/Resources$Theme;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_0
+
+    iget-object v1, p0, Lus;->b:Landroid/content/res/Resources$Theme;
+
+    invoke-virtual {v1, v0}, Landroid/content/res/Resources$Theme;->setTo(Landroid/content/res/Resources$Theme;)V
+
+    :cond_0
+    iget-object v0, p0, Lus;->b:Landroid/content/res/Resources$Theme;
+
+    iget v1, p0, Lus;->a:I
+
+    const/4 v2, 0x1
+
+    invoke-virtual {v0, v1, v2}, Landroid/content/res/Resources$Theme;->applyStyle(IZ)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final bridge synthetic a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 0
+.method public final a(Landroid/content/res/Configuration;)V
+    .locals 1
 
-    check-cast p1, Lopu;
+    iget-object v0, p0, Lus;->e:Landroid/content/res/Resources;
 
-    check-cast p2, Loku;
+    if-nez v0, :cond_1
 
-    invoke-virtual {p0, p1, p2}, Lolf;->c(Ljava/lang/Object;Loku;)Loku;
+    iget-object v0, p0, Lus;->d:Landroid/content/res/Configuration;
+
+    if-nez v0, :cond_0
+
+    new-instance v0, Landroid/content/res/Configuration;
+
+    invoke-direct {v0, p1}, Landroid/content/res/Configuration;-><init>(Landroid/content/res/Configuration;)V
+
+    iput-object v0, p0, Lus;->d:Landroid/content/res/Configuration;
+
+    return-void
+
+    :cond_0
+    new-instance p1, Ljava/lang/IllegalStateException;
+
+    const-string v0, "Override configuration has already been set"
+
+    invoke-direct {p1, v0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw p1
+
+    :cond_1
+    new-instance p1, Ljava/lang/IllegalStateException;
+
+    const-string v0, "getResources() or getAssets() has already been called"
+
+    invoke-direct {p1, v0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw p1
+.end method
+
+.method public final getAssets()Landroid/content/res/AssetManager;
+    .locals 1
+
+    invoke-direct {p0}, Lus;->b()Landroid/content/res/Resources;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroid/content/res/Resources;->getAssets()Landroid/content/res/AssetManager;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public final getResources()Landroid/content/res/Resources;
+    .locals 1
+
+    invoke-direct {p0}, Lus;->b()Landroid/content/res/Resources;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public final getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+    .locals 1
+
+    const-string v0, "layout_inflater"
+
+    invoke-virtual {v0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    iget-object p1, p0, Lus;->c:Landroid/view/LayoutInflater;
+
+    if-nez p1, :cond_0
+
+    invoke-virtual {p0}, Lus;->getBaseContext()Landroid/content/Context;
 
     move-result-object p1
 
-    sget-object p2, Lojk;->a:Lojk;
+    invoke-static {p1}, Landroid/view/LayoutInflater;->from(Landroid/content/Context;)Landroid/view/LayoutInflater;
 
-    check-cast p1, Lus;
+    move-result-object p1
 
-    invoke-virtual {p1, p2}, Lus;->b(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {p1, p0}, Landroid/view/LayoutInflater;->cloneInContext(Landroid/content/Context;)Landroid/view/LayoutInflater;
+
+    move-result-object p1
+
+    iput-object p1, p0, Lus;->c:Landroid/view/LayoutInflater;
+
+    :cond_0
+    iget-object p1, p0, Lus;->c:Landroid/view/LayoutInflater;
+
+    return-object p1
+
+    :cond_1
+    invoke-virtual {p0}, Lus;->getBaseContext()Landroid/content/Context;
+
+    move-result-object v0
+
+    invoke-virtual {v0, p1}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 
     move-result-object p1
 
     return-object p1
 .end method
 
-.method public final b(Ljava/lang/Object;)Ljava/lang/Object;
+.method public final getTheme()Landroid/content/res/Resources$Theme;
     .locals 1
 
-    sget-object v0, Lolc;->a:Lolc;
+    iget-object v0, p0, Lus;->b:Landroid/content/res/Resources$Theme;
 
-    invoke-static {p1}, Lljr;->aO(Ljava/lang/Object;)V
+    if-eqz v0, :cond_0
 
-    iget-object p1, p0, Lus;->a:Lue;
+    return-object v0
 
-    iget-object p1, p1, Lue;->a:Landroidx/wear/ambient/AmbientDelegate;
+    :cond_0
+    iget v0, p0, Lus;->a:I
 
-    invoke-virtual {p1}, Landroidx/wear/ambient/AmbientDelegate;->k()V
+    if-nez v0, :cond_1
 
-    sget-object p1, Lojk;->a:Lojk;
+    const v0, 0x7f150358
 
-    return-object p1
+    iput v0, p0, Lus;->a:I
+
+    :cond_1
+    invoke-direct {p0}, Lus;->c()V
+
+    iget-object v0, p0, Lus;->b:Landroid/content/res/Resources$Theme;
+
+    return-object v0
 .end method
 
-.method public final c(Ljava/lang/Object;Loku;)Loku;
+.method public final setTheme(I)V
     .locals 1
 
-    new-instance p1, Lus;
+    iget v0, p0, Lus;->a:I
 
-    iget-object v0, p0, Lus;->a:Lue;
+    if-eq v0, p1, :cond_0
 
-    invoke-direct {p1, v0, p2}, Lus;-><init>(Lue;Loku;)V
+    iput p1, p0, Lus;->a:I
 
-    return-object p1
+    invoke-direct {p0}, Lus;->c()V
+
+    :cond_0
+    return-void
 .end method

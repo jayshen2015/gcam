@@ -1,118 +1,80 @@
-.class public final Lbvi;
+.class final Lbvi;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lbva;
-.implements Lbvj;
+.implements Landroid/hardware/display/DisplayManager$DisplayListener;
 
 
 # instance fields
-.field private final a:Landroid/content/ContentResolver;
-
-.field private final synthetic b:I
-
-.field private final c:Lbkc;
+.field final synthetic a:Lbvk;
 
 
 # direct methods
-.method public constructor <init>(Landroid/content/ContentResolver;Lbkc;I[B)V
+.method public constructor <init>(Lbvk;)V
     .locals 0
-    .annotation runtime Ljava/lang/Deprecated;
-    .end annotation
 
-    iput p3, p0, Lbvi;->b:I
+    iput-object p1, p0, Lbvi;->a:Lbvk;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lbvi;->a:Landroid/content/ContentResolver;
-
-    iput-object p2, p0, Lbvi;->c:Lbkc;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Landroid/net/Uri;)Lbqo;
-    .locals 2
+.method public final onDisplayAdded(I)V
+    .locals 0
 
-    iget v0, p0, Lbvi;->b:I
-
-    packed-switch v0, :pswitch_data_0
-
-    new-instance v0, Lbre;
-
-    iget-object v1, p0, Lbvi;->a:Landroid/content/ContentResolver;
-
-    invoke-direct {v0, v1, p1}, Lbre;-><init>(Landroid/content/ContentResolver;Landroid/net/Uri;)V
-
-    return-object v0
-
-    :pswitch_0
-    new-instance v0, Lbqk;
-
-    iget-object v1, p0, Lbvi;->a:Landroid/content/ContentResolver;
-
-    invoke-direct {v0, v1, p1}, Lbqk;-><init>(Landroid/content/ContentResolver;Landroid/net/Uri;)V
-
-    return-object v0
-
-    :pswitch_1
-    new-instance v0, Lbqw;
-
-    iget-object v1, p0, Lbvi;->a:Landroid/content/ContentResolver;
-
-    invoke-direct {v0, v1, p1}, Lbqw;-><init>(Landroid/content/ContentResolver;Landroid/net/Uri;)V
-
-    return-object v0
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
+    return-void
 .end method
 
-.method public final b(Lbve;)Lbuz;
-    .locals 2
+.method public final onDisplayChanged(I)V
+    .locals 3
 
-    iget p1, p0, Lbvi;->b:I
+    iget-object p1, p0, Lbvi;->a:Lbvk;
 
-    const/4 v0, 0x0
+    iget-object p1, p1, Lbvk;->w:Landroid/view/WindowManager;
 
-    packed-switch p1, :pswitch_data_0
+    invoke-static {p1}, Lfcy;->d(Landroid/view/WindowManager;)I
 
-    new-instance p1, Lbvk;
+    move-result p1
 
-    iget-object v1, p0, Lbvi;->c:Lbkc;
+    iget-object v0, p0, Lbvi;->a:Lbvk;
 
-    invoke-direct {p1, p0, v1, v0}, Lbvk;-><init>(Lbvj;Lbkc;[B)V
+    iget v1, v0, Lbvk;->l:I
 
-    return-object p1
+    sub-int v1, p1, v1
 
-    :pswitch_0
-    new-instance p1, Lbvk;
+    add-int/lit16 v1, v1, 0x168
 
-    iget-object v1, p0, Lbvi;->c:Lbkc;
+    rem-int/lit16 v1, v1, 0x168
 
-    invoke-direct {p1, p0, v1, v0}, Lbvk;-><init>(Lbvj;Lbkc;[B)V
+    const/16 v2, 0xb4
 
-    return-object p1
+    if-ne v1, v2, :cond_0
 
-    :pswitch_1
-    new-instance p1, Lbvk;
+    iget-object v0, v0, Lbvk;->n:Ljio;
 
-    iget-object v1, p0, Lbvi;->c:Lbkc;
+    if-eqz v0, :cond_0
 
-    invoke-direct {p1, p0, v1, v0}, Lbvk;-><init>(Lbvj;Lbkc;[B)V
+    invoke-interface {v0}, Ljio;->c()V
 
-    return-object p1
+    iget-object v0, p0, Lbvi;->a:Lbvk;
 
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
+    iget-object v0, v0, Lbvk;->q:Ljil;
+
+    invoke-interface {v0}, Ljil;->g()V
+
+    :cond_0
+    iget-object v0, p0, Lbvi;->a:Lbvk;
+
+    iput p1, v0, Lbvk;->l:I
+
+    return-void
+.end method
+
+.method public final onDisplayRemoved(I)V
+    .locals 0
+
+    return-void
 .end method

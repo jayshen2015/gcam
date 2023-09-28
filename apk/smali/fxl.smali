@@ -1,131 +1,148 @@
 .class public final Lfxl;
 .super Ljava/lang/Object;
 
-# interfaces
-.implements Lfyz;
+
+# static fields
+.field public static final a:Lfxl;
+
+.field public static final b:Lfxl;
 
 
 # instance fields
-.field public final a:Lkaq;
-
-.field public final b:Lfxw;
-
-.field public final c:Lcea;
-
-.field public final d:Logd;
-
-.field public final e:Ljava/lang/Object;
-
-.field public final f:Ljvs;
-
-.field public final g:Lgsp;
-
-.field public h:I
-
-.field public final i:Ljew;
-
-.field public final j:Lbkb;
-
-.field private final k:Lfxy;
-
-.field private final l:Lgvb;
+.field public final c:Z
 
 
 # direct methods
-.method public constructor <init>(Lkap;Lfxw;Lfxy;Lcea;Lbkb;Ljew;Logd;Ljvs;Lgvb;Lgsp;[B[B[B[B[B)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 1
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const/4 v0, 0x0
 
-    iput-object p2, p0, Lfxl;->b:Lfxw;
+    invoke-static {v0}, Lfxl;->a(Z)Lfxl;
 
-    iput-object p3, p0, Lfxl;->k:Lfxy;
+    move-result-object v0
 
-    iput-object p4, p0, Lfxl;->c:Lcea;
+    sput-object v0, Lfxl;->a:Lfxl;
 
-    iput-object p5, p0, Lfxl;->j:Lbkb;
+    const/4 v0, 0x1
 
-    iput-object p6, p0, Lfxl;->i:Ljew;
+    invoke-static {v0}, Lfxl;->a(Z)Lfxl;
 
-    const-string p2, "FsnRprcssngIS"
+    move-result-object v0
 
-    invoke-interface {p1, p2}, Lkap;->a(Ljava/lang/String;)Lkaq;
-
-    move-result-object p1
-
-    iput-object p1, p0, Lfxl;->a:Lkaq;
-
-    iput-object p7, p0, Lfxl;->d:Logd;
-
-    iput-object p8, p0, Lfxl;->f:Ljvs;
-
-    iput-object p9, p0, Lfxl;->l:Lgvb;
-
-    const/4 p1, 0x1
-
-    iput p1, p0, Lfxl;->h:I
-
-    new-instance p1, Ljava/lang/Object;
-
-    invoke-direct {p1}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lfxl;->e:Ljava/lang/Object;
-
-    iput-object p10, p0, Lfxl;->g:Lgsp;
+    sput-object v0, Lfxl;->b:Lfxl;
 
     return-void
 .end method
 
+.method public constructor <init>()V
+    .locals 0
 
-# virtual methods
-.method public final a(Lgkr;)Lfyy;
-    .locals 7
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    new-instance v6, Lfxk;
-
-    iget-object v2, p0, Lfxl;->k:Lfxy;
-
-    iget-object v3, p1, Lgkr;->c:Ljava/lang/Object;
-
-    iget-object p1, p1, Lgkr;->d:Ljava/lang/Object;
-
-    iget-object v5, p0, Lfxl;->l:Lgvb;
-
-    move-object v4, p1
-
-    check-cast v4, Lfte;
-
-    move-object v0, v6
-
-    move-object v1, p0
-
-    invoke-direct/range {v0 .. v5}, Lfxk;-><init>(Lfxl;Lfxy;Lgxl;Lfte;Lgvb;)V
-
-    return-object v6
+    return-void
 .end method
 
-.method public final b(Lgkr;)Lfyy;
-    .locals 7
+.method public constructor <init>(Z)V
+    .locals 0
 
-    new-instance v6, Lfxk;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iget-object v2, p0, Lfxl;->k:Lfxy;
+    iput-boolean p1, p0, Lfxl;->c:Z
 
-    iget-object v3, p1, Lgkr;->c:Ljava/lang/Object;
+    return-void
+.end method
 
-    iget-object p1, p1, Lgkr;->d:Ljava/lang/Object;
+.method private static a(Z)Lfxl;
+    .locals 1
 
-    iget-object v5, p0, Lfxl;->l:Lgvb;
+    new-instance v0, Lfxl;
 
-    move-object v4, p1
+    invoke-direct {v0, p0}, Lfxl;-><init>(Z)V
 
-    check-cast v4, Lfte;
+    return-object v0
+.end method
 
-    move-object v0, v6
 
-    move-object v1, p0
+# virtual methods
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 3
 
-    invoke-direct/range {v0 .. v5}, Lfxk;-><init>(Lfxl;Lfxy;Lgxl;Lfte;Lgvb;)V
+    const/4 v0, 0x1
 
-    return-object v6
+    if-ne p1, p0, :cond_0
+
+    return v0
+
+    :cond_0
+    instance-of v1, p1, Lfxl;
+
+    const/4 v2, 0x0
+
+    if-eqz v1, :cond_1
+
+    check-cast p1, Lfxl;
+
+    iget-boolean v1, p0, Lfxl;->c:Z
+
+    iget-boolean p1, p1, Lfxl;->c:Z
+
+    if-ne v1, p1, :cond_1
+
+    return v0
+
+    :cond_1
+    return v2
+.end method
+
+.method public final hashCode()I
+    .locals 2
+
+    iget-boolean v0, p0, Lfxl;->c:Z
+
+    const/4 v1, 0x1
+
+    if-eq v1, v0, :cond_0
+
+    const/16 v0, 0x4d5
+
+    goto :goto_0
+
+    :cond_0
+    const/16 v0, 0x4cf
+
+    :goto_0
+    const v1, 0xf4243
+
+    xor-int/2addr v0, v1
+
+    return v0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .locals 3
+
+    iget-boolean v0, p0, Lfxl;->c:Z
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    const/16 v2, 0x27
+
+    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string v2, "FirstPreviewFrameState{delivered="
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    const-string v0, "}"
+
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
 .end method

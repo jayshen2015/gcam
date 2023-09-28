@@ -1,41 +1,100 @@
-.class final Lmgd;
-.super Lmfy;
+.class public final Lmgd;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Lmgk;
 
 
 # instance fields
-.field final synthetic a:Lmgf;
+.field private final a:Landroid/content/Context;
+
+.field private final b:Ljava/lang/String;
 
 
 # direct methods
-.method public constructor <init>(Lmgf;)V
+.method public constructor <init>(Landroid/content/Context;Ljava/lang/String;)V
     .locals 0
 
-    iput-object p1, p0, Lmgd;->a:Lmgf;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0}, Lmfy;-><init>()V
+    iput-object p1, p0, Lmgd;->a:Landroid/content/Context;
+
+    iput-object p2, p0, Lmgd;->b:Ljava/lang/String;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final b(Landroid/view/View;I)V
-    .locals 0
+.method public final b()V
+    .locals 3
 
-    const/4 p1, 0x5
+    iget-object v0, p0, Lmgd;->a:Landroid/content/Context;
 
-    if-ne p2, p1, :cond_0
+    const-string v1, "clipboard"
 
-    iget-object p1, p0, Lmgd;->a:Lmgf;
+    invoke-virtual {v0, v1}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 
-    invoke-virtual {p1}, Lmgf;->cancel()V
+    move-result-object v0
+
+    check-cast v0, Landroid/content/ClipboardManager;
+
+    iget-object v1, p0, Lmgd;->b:Ljava/lang/String;
+
+    const-string v2, "simple text"
+
+    invoke-static {v2, v1}, Landroid/content/ClipData;->newPlainText(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Landroid/content/ClipData;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Landroid/content/ClipboardManager;->setPrimaryClip(Landroid/content/ClipData;)V
+
+    iget-object v0, p0, Lmgd;->b:Ljava/lang/String;
+
+    invoke-virtual {v0}, Ljava/lang/String;->length()I
+
+    move-result v1
+
+    const/16 v2, 0x32
+
+    if-le v1, v2, :cond_0
+
+    const/4 v1, 0x0
+
+    invoke-virtual {v0, v1, v2}, Ljava/lang/String;->substring(II)Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v0
+
+    const-string v1, "..."
+
+    invoke-virtual {v0, v1}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v0
 
     :cond_0
-    return-void
-.end method
+    iget-object v1, p0, Lmgd;->a:Landroid/content/Context;
 
-.method public final c(Landroid/view/View;)V
-    .locals 0
+    const v2, 0x7f14049f
+
+    invoke-virtual {v1, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/String;->length()I
+
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/String;->length()I
 
     return-void
 .end method

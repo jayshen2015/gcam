@@ -1,20 +1,10 @@
-.class Lgrp;
-.super Lgrn;
-
-
-# direct methods
-.method public constructor <init>()V
-    .locals 0
-
-    invoke-direct {p0}, Lgrn;-><init>()V
-
-    return-void
-.end method
+.class public interface abstract Lgrp;
+.super Ljava/lang/Object;
 
 
 # virtual methods
-.method public a()V
-    .locals 0
+.method public abstract a()Lojc;
+.end method
 
-    return-void
+.method public abstract c(J)Lgrh;
 .end method

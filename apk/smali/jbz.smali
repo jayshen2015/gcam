@@ -1,73 +1,61 @@
 .class public final Ljbz;
-.super Landroid/app/DialogFragment;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Lpys;
 
 
 # instance fields
-.field public a:Landroid/app/Dialog;
-
-.field public b:Landroid/content/DialogInterface$OnCancelListener;
-
-.field private c:Landroid/app/Dialog;
+.field private final a:Lqkg;
 
 
 # direct methods
-.method public constructor <init>()V
+.method public constructor <init>(Lqkg;)V
     .locals 0
 
-    invoke-direct {p0}, Landroid/app/DialogFragment;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Ljbz;->a:Lqkg;
 
     return-void
+.end method
+
+.method public static b(Ljava/util/concurrent/atomic/AtomicReference;)Lojz;
+    .locals 1
+
+    new-instance v0, Ljbx;
+
+    invoke-direct {v0, p0}, Ljbx;-><init>(Ljava/util/concurrent/atomic/AtomicReference;)V
+
+    return-object v0
 .end method
 
 
 # virtual methods
-.method public final onCancel(Landroid/content/DialogInterface;)V
+.method public final a()Lojz;
     .locals 1
 
-    iget-object v0, p0, Ljbz;->b:Landroid/content/DialogInterface$OnCancelListener;
+    iget-object v0, p0, Ljbz;->a:Lqkg;
 
-    if-eqz v0, :cond_0
-
-    invoke-interface {v0, p1}, Landroid/content/DialogInterface$OnCancelListener;->onCancel(Landroid/content/DialogInterface;)V
-
-    :cond_0
-    return-void
-.end method
-
-.method public final onCreateDialog(Landroid/os/Bundle;)Landroid/app/Dialog;
-    .locals 1
-
-    iget-object p1, p0, Ljbz;->a:Landroid/app/Dialog;
-
-    if-nez p1, :cond_1
-
-    const/4 p1, 0x0
-
-    invoke-virtual {p0, p1}, Ljbz;->setShowsDialog(Z)V
-
-    iget-object p1, p0, Ljbz;->c:Landroid/app/Dialog;
-
-    if-nez p1, :cond_0
-
-    new-instance p1, Landroid/app/AlertDialog$Builder;
-
-    invoke-virtual {p0}, Ljbz;->getActivity()Landroid/app/Activity;
+    invoke-interface {v0}, Lqkg;->get()Ljava/lang/Object;
 
     move-result-object v0
 
-    invoke-static {v0}, Ljhp;->ab(Ljava/lang/Object;)V
+    check-cast v0, Ljava/util/concurrent/atomic/AtomicReference;
 
-    invoke-direct {p1, v0}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
+    invoke-static {v0}, Ljbz;->b(Ljava/util/concurrent/atomic/AtomicReference;)Lojz;
 
-    invoke-virtual {p1}, Landroid/app/AlertDialog$Builder;->create()Landroid/app/AlertDialog;
+    move-result-object v0
 
-    move-result-object p1
+    return-object v0
+.end method
 
-    iput-object p1, p0, Ljbz;->c:Landroid/app/Dialog;
+.method public final bridge synthetic get()Ljava/lang/Object;
+    .locals 1
 
-    :cond_0
-    iget-object p1, p0, Ljbz;->c:Landroid/app/Dialog;
+    invoke-virtual {p0}, Ljbz;->a()Lojz;
 
-    :cond_1
-    return-object p1
+    move-result-object v0
+
+    return-object v0
 .end method

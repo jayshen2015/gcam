@@ -2,23 +2,12 @@
 .super Ljava/lang/Object;
 
 
-# annotations
-.annotation system Ldalvik/annotation/Signature;
-    value = {
-        "<T:",
-        "Ljava/lang/Object;",
-        ">",
-        "Ljava/lang/Object;"
-    }
-.end annotation
-
-
 # static fields
-.field private static final b:Lj$/util/Optional;
+.field private static final EMPTY:Lj$/util/Optional;
 
 
 # instance fields
-.field private final a:Ljava/lang/Object;
+.field private final value:Ljava/lang/Object;
 
 
 # direct methods
@@ -29,7 +18,7 @@
 
     invoke-direct {v0}, Lj$/util/Optional;-><init>()V
 
-    sput-object v0, Lj$/util/Optional;->b:Lj$/util/Optional;
+    sput-object v0, Lj$/util/Optional;->EMPTY:Lj$/util/Optional;
 
     return-void
 .end method
@@ -41,7 +30,7 @@
 
     const/4 v0, 0x0
 
-    iput-object v0, p0, Lj$/util/Optional;->a:Ljava/lang/Object;
+    iput-object v0, p0, Lj$/util/Optional;->value:Ljava/lang/Object;
 
     return-void
 .end method
@@ -53,39 +42,21 @@
 
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    iput-object p1, p0, Lj$/util/Optional;->a:Ljava/lang/Object;
+    iput-object p1, p0, Lj$/util/Optional;->value:Ljava/lang/Object;
 
     return-void
 .end method
 
 .method public static empty()Lj$/util/Optional;
     .locals 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "<T:",
-            "Ljava/lang/Object;",
-            ">()",
-            "Lj$/util/Optional<",
-            "TT;>;"
-        }
-    .end annotation
 
-    sget-object v0, Lj$/util/Optional;->b:Lj$/util/Optional;
+    sget-object v0, Lj$/util/Optional;->EMPTY:Lj$/util/Optional;
 
     return-object v0
 .end method
 
 .method public static of(Ljava/lang/Object;)Lj$/util/Optional;
     .locals 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "<T:",
-            "Ljava/lang/Object;",
-            ">(TT;)",
-            "Lj$/util/Optional<",
-            "TT;>;"
-        }
-    .end annotation
 
     new-instance v0, Lj$/util/Optional;
 
@@ -96,15 +67,6 @@
 
 .method public static ofNullable(Ljava/lang/Object;)Lj$/util/Optional;
     .locals 0
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "<T:",
-            "Ljava/lang/Object;",
-            ">(TT;)",
-            "Lj$/util/Optional<",
-            "TT;>;"
-        }
-    .end annotation
 
     if-nez p0, :cond_0
 
@@ -146,9 +108,9 @@
     :cond_1
     check-cast p1, Lj$/util/Optional;
 
-    iget-object v0, p0, Lj$/util/Optional;->a:Ljava/lang/Object;
+    iget-object v0, p0, Lj$/util/Optional;->value:Ljava/lang/Object;
 
-    iget-object p1, p1, Lj$/util/Optional;->a:Ljava/lang/Object;
+    iget-object p1, p1, Lj$/util/Optional;->value:Ljava/lang/Object;
 
     invoke-static {v0, p1}, Lj$/util/Objects;->equals(Ljava/lang/Object;Ljava/lang/Object;)Z
 
@@ -157,59 +119,10 @@
     return p1
 .end method
 
-.method public filter(Ljava/util/function/Predicate;)Lj$/util/Optional;
-    .locals 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Ljava/util/function/Predicate<",
-            "-TT;>;)",
-            "Lj$/util/Optional<",
-            "TT;>;"
-        }
-    .end annotation
-
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    invoke-virtual {p0}, Lj$/util/Optional;->isPresent()Z
-
-    move-result v0
-
-    if-nez v0, :cond_0
-
-    return-object p0
-
-    :cond_0
-    iget-object v0, p0, Lj$/util/Optional;->a:Ljava/lang/Object;
-
-    invoke-interface {p1, v0}, Ljava/util/function/Predicate;->test(Ljava/lang/Object;)Z
-
-    move-result p1
-
-    if-eqz p1, :cond_1
-
-    move-object p1, p0
-
-    goto :goto_0
-
-    :cond_1
-    invoke-static {}, Lj$/util/Optional;->empty()Lj$/util/Optional;
-
-    move-result-object p1
-
-    :goto_0
-    return-object p1
-.end method
-
 .method public get()Ljava/lang/Object;
     .locals 2
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "()TT;"
-        }
-    .end annotation
 
-    iget-object v0, p0, Lj$/util/Optional;->a:Ljava/lang/Object;
+    iget-object v0, p0, Lj$/util/Optional;->value:Ljava/lang/Object;
 
     if-eqz v0, :cond_0
 
@@ -228,7 +141,7 @@
 .method public hashCode()I
     .locals 1
 
-    iget-object v0, p0, Lj$/util/Optional;->a:Ljava/lang/Object;
+    iget-object v0, p0, Lj$/util/Optional;->value:Ljava/lang/Object;
 
     invoke-static {v0}, Lj$/util/Objects;->hashCode(Ljava/lang/Object;)I
 
@@ -237,75 +150,23 @@
     return v0
 .end method
 
-.method public ifPresent(Ljava/util/function/Consumer;)V
+.method public ifPresent(Lj$/util/function/Consumer;)V
     .locals 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Ljava/util/function/Consumer<",
-            "-TT;>;)V"
-        }
-    .end annotation
 
-    iget-object v0, p0, Lj$/util/Optional;->a:Ljava/lang/Object;
+    iget-object v0, p0, Lj$/util/Optional;->value:Ljava/lang/Object;
 
     if-eqz v0, :cond_0
 
-    invoke-interface {p1, v0}, Ljava/util/function/Consumer;->accept(Ljava/lang/Object;)V
+    invoke-interface {p1, v0}, Lj$/util/function/Consumer;->accept(Ljava/lang/Object;)V
 
     :cond_0
     return-void
-.end method
-
-.method public ifPresentOrElse(Ljava/util/function/Consumer;Ljava/lang/Runnable;)V
-    .locals 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Ljava/util/function/Consumer<",
-            "-TT;>;",
-            "Ljava/lang/Runnable;",
-            ")V"
-        }
-    .end annotation
-
-    iget-object v0, p0, Lj$/util/Optional;->a:Ljava/lang/Object;
-
-    if-eqz v0, :cond_0
-
-    invoke-interface {p1, v0}, Ljava/util/function/Consumer;->accept(Ljava/lang/Object;)V
-
-    goto :goto_0
-
-    :cond_0
-    invoke-interface {p2}, Ljava/lang/Runnable;->run()V
-
-    :goto_0
-    return-void
-.end method
-
-.method public isEmpty()Z
-    .locals 1
-
-    iget-object v0, p0, Lj$/util/Optional;->a:Ljava/lang/Object;
-
-    if-nez v0, :cond_0
-
-    const/4 v0, 0x1
-
-    goto :goto_0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    :goto_0
-    return v0
 .end method
 
 .method public isPresent()Z
     .locals 1
 
-    iget-object v0, p0, Lj$/util/Optional;->a:Ljava/lang/Object;
+    iget-object v0, p0, Lj$/util/Optional;->value:Ljava/lang/Object;
 
     if-eqz v0, :cond_0
 
@@ -320,19 +181,8 @@
     return v0
 .end method
 
-.method public map(Ljava/util/function/Function;)Lj$/util/Optional;
+.method public map(Lj$/util/function/Function;)Lj$/util/Optional;
     .locals 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "<U:",
-            "Ljava/lang/Object;",
-            ">(",
-            "Ljava/util/function/Function<",
-            "-TT;+TU;>;)",
-            "Lj$/util/Optional<",
-            "TU;>;"
-        }
-    .end annotation
 
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
@@ -349,9 +199,9 @@
     return-object p1
 
     :cond_0
-    iget-object v0, p0, Lj$/util/Optional;->a:Ljava/lang/Object;
+    iget-object v0, p0, Lj$/util/Optional;->value:Ljava/lang/Object;
 
-    invoke-interface {p1, v0}, Ljava/util/function/Function;->apply(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {p1, v0}, Lj$/util/function/Function;->apply(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p1
 
@@ -364,13 +214,8 @@
 
 .method public orElse(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(TT;)TT;"
-        }
-    .end annotation
 
-    iget-object v0, p0, Lj$/util/Optional;->a:Ljava/lang/Object;
+    iget-object v0, p0, Lj$/util/Optional;->value:Ljava/lang/Object;
 
     if-eqz v0, :cond_0
 
@@ -380,59 +225,10 @@
     return-object p1
 .end method
 
-.method public orElseGet(Ljava/util/function/Supplier;)Ljava/lang/Object;
-    .locals 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Ljava/util/function/Supplier<",
-            "+TT;>;)TT;"
-        }
-    .end annotation
-
-    iget-object v0, p0, Lj$/util/Optional;->a:Ljava/lang/Object;
-
-    if-eqz v0, :cond_0
-
-    goto :goto_0
-
-    :cond_0
-    invoke-interface {p1}, Ljava/util/function/Supplier;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    :goto_0
-    return-object v0
-.end method
-
-.method public orElseThrow()Ljava/lang/Object;
-    .locals 2
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "()TT;"
-        }
-    .end annotation
-
-    iget-object v0, p0, Lj$/util/Optional;->a:Ljava/lang/Object;
-
-    if-eqz v0, :cond_0
-
-    return-object v0
-
-    :cond_0
-    new-instance v0, Ljava/util/NoSuchElementException;
-
-    const-string v1, "No value present"
-
-    invoke-direct {v0, v1}, Ljava/util/NoSuchElementException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-.end method
-
-.method public final toString()Ljava/lang/String;
+.method public toString()Ljava/lang/String;
     .locals 3
 
-    iget-object v0, p0, Lj$/util/Optional;->a:Ljava/lang/Object;
+    iget-object v0, p0, Lj$/util/Optional;->value:Ljava/lang/Object;
 
     if-eqz v0, :cond_0
 

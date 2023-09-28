@@ -1,22 +1,43 @@
 .class public final Ldex;
 .super Ljava/lang/Object;
 
+# interfaces
+.implements Lpys;
 
-# static fields
-.field public static final a:Lday;
+
+# instance fields
+.field private final a:Ldev;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
+.method public constructor <init>(Ldev;)V
+    .locals 0
 
-    new-instance v0, Lday;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const/4 v1, 0x5
-
-    invoke-direct {v0, v1}, Lday;-><init>(I)V
-
-    sput-object v0, Ldex;->a:Lday;
+    iput-object p1, p0, Ldex;->a:Ldev;
 
     return-void
+.end method
+
+
+# virtual methods
+.method public final a()Landroid/content/ContentProvider;
+    .locals 1
+
+    iget-object v0, p0, Ldex;->a:Ldev;
+
+    iget-object v0, v0, Ldev;->a:Landroid/content/ContentProvider;
+
+    return-object v0
+.end method
+
+.method public final bridge synthetic get()Ljava/lang/Object;
+    .locals 1
+
+    invoke-virtual {p0}, Ldex;->a()Landroid/content/ContentProvider;
+
+    move-result-object v0
+
+    return-object v0
 .end method

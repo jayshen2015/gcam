@@ -1,172 +1,117 @@
 .class public final Lodg;
-.super Lnws;
-
-# interfaces
-.implements Lnxz;
-
-
-# static fields
-.field public static final a:Lodg;
-
-.field private static volatile e:Lnyf;
+.super Ljava/lang/Object;
 
 
 # instance fields
-.field private b:I
+.field public final a:Lcom/google/android/material/tabs/TabLayout;
 
-.field private c:Lode;
+.field public final b:Landroidx/viewpager2/widget/ViewPager2;
 
-.field private d:Lode;
+.field public c:Lpu;
+
+.field public d:Z
+
+.field public e:Lode;
+
+.field public f:Loct;
+
+.field public g:Lgd;
+
+.field private final h:Lodd;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
-
-    new-instance v0, Lodg;
-
-    invoke-direct {v0}, Lodg;-><init>()V
-
-    sput-object v0, Lodg;->a:Lodg;
-
-    const-class v1, Lodg;
-
-    invoke-static {v1, v0}, Lnws;->aa(Ljava/lang/Class;Lnws;)V
-
-    return-void
-.end method
-
-.method private constructor <init>()V
+.method public constructor <init>(Lcom/google/android/material/tabs/TabLayout;Landroidx/viewpager2/widget/ViewPager2;Lodd;)V
     .locals 0
 
-    invoke-direct {p0}, Lnws;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lodg;->a:Lcom/google/android/material/tabs/TabLayout;
+
+    iput-object p2, p0, Lodg;->b:Landroidx/viewpager2/widget/ViewPager2;
+
+    iput-object p3, p0, Lodg;->h:Lodd;
 
     return-void
 .end method
 
 
 # virtual methods
-.method protected final a(ILjava/lang/Object;)Ljava/lang/Object;
-    .locals 3
+.method public final a()V
+    .locals 5
 
-    add-int/lit8 p1, p1, -0x1
+    iget-object v0, p0, Lodg;->a:Lcom/google/android/material/tabs/TabLayout;
 
-    const/4 p2, 0x1
+    invoke-virtual {v0}, Lcom/google/android/material/tabs/TabLayout;->g()V
 
-    packed-switch p1, :pswitch_data_0
+    iget-object v0, p0, Lodg;->c:Lpu;
 
-    :pswitch_0
-    const/4 p1, 0x0
+    if-eqz v0, :cond_1
 
-    return-object p1
+    invoke-virtual {v0}, Lpu;->a()I
 
-    :pswitch_1
-    sget-object p1, Lodg;->e:Lnyf;
+    move-result v0
 
-    if-nez p1, :cond_1
-
-    const-class p2, Lodg;
-
-    monitor-enter p2
-
-    :try_start_0
-    sget-object p1, Lodg;->e:Lnyf;
-
-    if-nez p1, :cond_0
-
-    new-instance p1, Lnwo;
-
-    sget-object v0, Lodg;->a:Lodg;
-
-    invoke-direct {p1, v0}, Lnwo;-><init>(Lnws;)V
-
-    sput-object p1, Lodg;->e:Lnyf;
-
-    :cond_0
-    monitor-exit p2
-
-    goto :goto_0
-
-    :catchall_0
-    move-exception p1
-
-    monitor-exit p2
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw p1
-
-    :cond_1
-    :goto_0
-    return-object p1
-
-    :pswitch_2
-    sget-object p1, Lodg;->a:Lodg;
-
-    return-object p1
-
-    :pswitch_3
-    new-instance p1, Lnwn;
-
-    sget-object p2, Lodg;->a:Lodg;
-
-    invoke-direct {p1, p2}, Lnwn;-><init>(Lnws;)V
-
-    return-object p1
-
-    :pswitch_4
-    new-instance p1, Lodg;
-
-    invoke-direct {p1}, Lodg;-><init>()V
-
-    return-object p1
-
-    :pswitch_5
-    const-string p1, "b"
-
-    const-string v0, "\u0001\u0002\u0000\u0001\u0001\u0002\u0002\u0000\u0000\u0000\u0001\u1009\u0001\u0002\u1009\u0002"
-
-    const/4 v1, 0x3
-
-    new-array v1, v1, [Ljava/lang/Object;
+    const/4 v1, 0x0
 
     const/4 v2, 0x0
 
-    aput-object p1, v1, v2
+    :goto_0
+    if-ge v2, v0, :cond_0
 
-    const-string p1, "c"
+    iget-object v3, p0, Lodg;->a:Lcom/google/android/material/tabs/TabLayout;
 
-    aput-object p1, v1, p2
+    invoke-virtual {v3}, Lcom/google/android/material/tabs/TabLayout;->d()Locx;
 
-    const/4 p1, 0x2
+    move-result-object v3
 
-    const-string p2, "d"
+    iget-object v4, p0, Lodg;->h:Lodd;
 
-    aput-object p2, v1, p1
+    invoke-interface {v4, v3, v2}, Lodd;->a(Locx;I)V
 
-    sget-object p1, Lodg;->a:Lodg;
+    iget-object v4, p0, Lodg;->a:Lcom/google/android/material/tabs/TabLayout;
 
-    invoke-static {p1, v0, v1}, Lodg;->X(Lnxy;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v4, v3, v1}, Lcom/google/android/material/tabs/TabLayout;->f(Locx;Z)V
 
-    move-result-object p1
+    add-int/lit8 v2, v2, 0x1
 
-    return-object p1
+    goto :goto_0
 
-    :pswitch_6
-    invoke-static {p2}, Ljava/lang/Byte;->valueOf(B)Ljava/lang/Byte;
+    :cond_0
+    if-lez v0, :cond_1
 
-    move-result-object p1
+    iget-object v0, p0, Lodg;->a:Lcom/google/android/material/tabs/TabLayout;
 
-    return-object p1
+    invoke-virtual {v0}, Lcom/google/android/material/tabs/TabLayout;->b()I
 
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_6
-        :pswitch_0
-        :pswitch_5
-        :pswitch_4
-        :pswitch_3
-        :pswitch_2
-        :pswitch_1
-    .end packed-switch
+    move-result v0
+
+    iget-object v1, p0, Lodg;->b:Landroidx/viewpager2/widget/ViewPager2;
+
+    iget v1, v1, Landroidx/viewpager2/widget/ViewPager2;->c:I
+
+    add-int/lit8 v0, v0, -0x1
+
+    invoke-static {v1, v0}, Ljava/lang/Math;->min(II)I
+
+    move-result v0
+
+    iget-object v1, p0, Lodg;->a:Lcom/google/android/material/tabs/TabLayout;
+
+    invoke-virtual {v1}, Lcom/google/android/material/tabs/TabLayout;->a()I
+
+    move-result v1
+
+    if-eq v0, v1, :cond_1
+
+    iget-object v1, p0, Lodg;->a:Lcom/google/android/material/tabs/TabLayout;
+
+    invoke-virtual {v1, v0}, Lcom/google/android/material/tabs/TabLayout;->c(I)Locx;
+
+    move-result-object v0
+
+    invoke-virtual {v1, v0}, Lcom/google/android/material/tabs/TabLayout;->h(Locx;)V
+
+    :cond_1
+    return-void
 .end method

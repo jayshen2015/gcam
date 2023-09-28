@@ -1,154 +1,118 @@
-.class public final Lbkt;
-.super Ljava/lang/Object;
+.class public final enum Lbkt;
+.super Ljava/lang/Enum;
 
 
 # static fields
-.field public static final a:Ldne;
+.field public static final enum a:Lbkt;
 
-.field public static final b:Ldne;
+.field public static final enum b:Lbkt;
 
-.field public static final c:Ldne;
+.field public static final enum c:Lbkt;
 
-.field public static final d:Ldne;
+.field public static final enum d:Lbkt;
+
+.field public static final enum e:Lbkt;
+
+.field private static final synthetic g:[Lbkt;
+
+
+# instance fields
+.field public final f:Z
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 13
+    .locals 11
 
-    const/16 v0, 0xb
+    new-instance v0, Lbkt;
 
-    new-array v0, v0, [Ljava/lang/String;
+    const-string v1, "RUNNING"
 
-    const/4 v1, 0x0
+    const/4 v2, 0x0
 
-    const-string v2, "w"
+    invoke-direct {v0, v1, v2, v2}, Lbkt;-><init>(Ljava/lang/String;IZ)V
 
-    aput-object v2, v0, v1
+    sput-object v0, Lbkt;->a:Lbkt;
 
-    const/4 v3, 0x1
+    new-instance v1, Lbkt;
 
-    const-string v4, "h"
+    const-string v3, "PAUSED"
 
-    aput-object v4, v0, v3
+    const/4 v4, 0x1
 
-    const-string v5, "ip"
+    invoke-direct {v1, v3, v4, v2}, Lbkt;-><init>(Ljava/lang/String;IZ)V
+
+    sput-object v1, Lbkt;->b:Lbkt;
+
+    new-instance v3, Lbkt;
+
+    const-string v5, "CLEARED"
 
     const/4 v6, 0x2
 
-    aput-object v5, v0, v6
+    invoke-direct {v3, v5, v6, v2}, Lbkt;-><init>(Ljava/lang/String;IZ)V
 
-    const-string v5, "op"
+    sput-object v3, Lbkt;->c:Lbkt;
 
-    const/4 v7, 0x3
+    new-instance v5, Lbkt;
 
-    aput-object v5, v0, v7
+    const-string v7, "SUCCESS"
 
-    const-string v5, "fr"
+    const/4 v8, 0x3
 
-    const/4 v8, 0x4
+    invoke-direct {v5, v7, v8, v4}, Lbkt;-><init>(Ljava/lang/String;IZ)V
 
-    aput-object v5, v0, v8
+    sput-object v5, Lbkt;->d:Lbkt;
 
-    const-string v5, "v"
+    new-instance v7, Lbkt;
+
+    const-string v9, "FAILED"
+
+    const/4 v10, 0x4
+
+    invoke-direct {v7, v9, v10, v4}, Lbkt;-><init>(Ljava/lang/String;IZ)V
+
+    sput-object v7, Lbkt;->e:Lbkt;
 
     const/4 v9, 0x5
 
-    aput-object v5, v0, v9
+    new-array v9, v9, [Lbkt;
 
-    const/4 v5, 0x6
+    aput-object v0, v9, v2
 
-    const-string v10, "layers"
+    aput-object v1, v9, v4
 
-    aput-object v10, v0, v5
+    aput-object v3, v9, v6
 
-    const/4 v11, 0x7
+    aput-object v5, v9, v8
 
-    const-string v12, "assets"
+    aput-object v7, v9, v10
 
-    aput-object v12, v0, v11
-
-    const/16 v11, 0x8
-
-    const-string v12, "fonts"
-
-    aput-object v12, v0, v11
-
-    const/16 v11, 0x9
-
-    const-string v12, "chars"
-
-    aput-object v12, v0, v11
-
-    const/16 v11, 0xa
-
-    const-string v12, "markers"
-
-    aput-object v12, v0, v11
-
-    invoke-static {v0}, Ldne;->J([Ljava/lang/String;)Ldne;
-
-    move-result-object v0
-
-    sput-object v0, Lbkt;->a:Ldne;
-
-    new-array v0, v5, [Ljava/lang/String;
-
-    const-string v5, "id"
-
-    aput-object v5, v0, v1
-
-    aput-object v10, v0, v3
-
-    aput-object v2, v0, v6
-
-    aput-object v4, v0, v7
-
-    const-string v2, "p"
-
-    aput-object v2, v0, v8
-
-    const-string v2, "u"
-
-    aput-object v2, v0, v9
-
-    invoke-static {v0}, Ldne;->J([Ljava/lang/String;)Ldne;
-
-    move-result-object v0
-
-    sput-object v0, Lbkt;->b:Ldne;
-
-    new-array v0, v3, [Ljava/lang/String;
-
-    const-string v2, "list"
-
-    aput-object v2, v0, v1
-
-    invoke-static {v0}, Ldne;->J([Ljava/lang/String;)Ldne;
-
-    move-result-object v0
-
-    sput-object v0, Lbkt;->c:Ldne;
-
-    new-array v0, v7, [Ljava/lang/String;
-
-    const-string v2, "cm"
-
-    aput-object v2, v0, v1
-
-    const-string v1, "tm"
-
-    aput-object v1, v0, v3
-
-    const-string v1, "dr"
-
-    aput-object v1, v0, v6
-
-    invoke-static {v0}, Ldne;->J([Ljava/lang/String;)Ldne;
-
-    move-result-object v0
-
-    sput-object v0, Lbkt;->d:Ldne;
+    sput-object v9, Lbkt;->g:[Lbkt;
 
     return-void
+.end method
+
+.method private constructor <init>(Ljava/lang/String;IZ)V
+    .locals 0
+
+    invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    iput-boolean p3, p0, Lbkt;->f:Z
+
+    return-void
+.end method
+
+.method public static values()[Lbkt;
+    .locals 1
+
+    sget-object v0, Lbkt;->g:[Lbkt;
+
+    invoke-virtual {v0}, [Lbkt;->clone()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, [Lbkt;
+
+    return-object v0
 .end method

@@ -1,72 +1,60 @@
-.class public final synthetic Lezr;
+.class public final Lezr;
 .super Ljava/lang/Object;
 
-# interfaces
-.implements Ljava/util/function/BiFunction;
+
+# static fields
+.field public static final a:Louj;
 
 
 # instance fields
-.field public final synthetic a:Landroid/view/MotionEvent;
+.field public final b:Ljava/lang/ref/WeakReference;
+
+.field public final c:Llar;
+
+.field public final d:Lojc;
+
+.field public final e:Lbts;
+
+.field public final f:Ljava/util/concurrent/Executor;
 
 
 # direct methods
-.method public synthetic constructor <init>(Landroid/view/MotionEvent;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 1
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const-string v0, "com/google/android/apps/camera/legacy/app/module/pckimageintent/ImageIntentResultHandler"
 
-    iput-object p1, p0, Lezr;->a:Landroid/view/MotionEvent;
+    invoke-static {v0}, Louj;->h(Ljava/lang/String;)Louj;
+
+    move-result-object v0
+
+    sput-object v0, Lezr;->a:Louj;
 
     return-void
 .end method
 
-
-# virtual methods
-.method public final synthetic andThen(Ljava/util/function/Function;)Ljava/util/function/BiFunction;
+.method public constructor <init>(Ljava/lang/ref/WeakReference;Llar;Lemb;Lbtt;Ljava/util/concurrent/Executor;[B[B)V
     .locals 0
 
-    invoke-static {p0, p1}, Lj$/util/function/BiFunction$-CC;->$default$andThen(Ljava/util/function/BiFunction;Ljava/util/function/Function;)Ljava/util/function/BiFunction;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lezr;->b:Ljava/lang/ref/WeakReference;
+
+    iput-object p2, p0, Lezr;->c:Llar;
+
+    iput-object p4, p0, Lezr;->e:Lbts;
+
+    iput-object p5, p0, Lezr;->f:Ljava/util/concurrent/Executor;
+
+    invoke-virtual {p3}, Lemb;->a()Landroid/content/Intent;
 
     move-result-object p1
 
-    return-object p1
-.end method
-
-.method public final apply(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 1
-
-    check-cast p1, Lfaz;
-
-    check-cast p2, Ljava/lang/Boolean;
-
-    sget v0, Lezx;->e:I
-
-    invoke-virtual {p2}, Ljava/lang/Boolean;->booleanValue()Z
-
-    move-result v0
-
-    if-nez v0, :cond_0
-
-    instance-of v0, p1, Leyy;
-
-    if-eqz v0, :cond_0
-
-    check-cast p1, Leyy;
-
-    invoke-interface {p1}, Leyy;->a()Z
-
-    move-result p1
-
-    if-eqz p1, :cond_0
-
-    const/4 p1, 0x1
-
-    invoke-static {p1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+    invoke-static {p1}, Lbqe;->e(Landroid/content/Intent;)Lojc;
 
     move-result-object p1
 
-    return-object p1
+    iput-object p1, p0, Lezr;->d:Lojc;
 
-    :cond_0
-    return-object p2
+    return-void
 .end method

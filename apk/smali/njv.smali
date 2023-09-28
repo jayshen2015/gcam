@@ -1,670 +1,402 @@
-.class final Lnjv;
+.class public final Lnjv;
 .super Ljava/lang/Object;
-
-# interfaces
-.implements Lnww;
-
-
-# static fields
-.field static final a:Lnww;
-
-.field static final b:Lnww;
-
-.field static final c:Lnww;
-
-.field static final d:Lnww;
-
-.field static final e:Lnww;
-
-.field static final f:Lnww;
-
-.field static final g:Lnww;
-
-.field static final h:Lnww;
-
-.field static final i:Lnww;
-
-.field static final j:Lnww;
-
-.field static final k:Lnww;
-
-.field static final l:Lnww;
-
-.field static final m:Lnww;
-
-.field static final n:Lnww;
-
-.field static final o:Lnww;
-
-.field static final p:Lnww;
-
-.field static final q:Lnww;
-
-.field static final r:Lnww;
-
-.field static final s:Lnww;
-
-.field static final t:Lnww;
-
-.field static final u:Lnww;
 
 
 # instance fields
-.field private final synthetic v:I
+.field public final a:Landroid/net/Uri;
+
+.field public final b:Lpqm;
+
+.field public final c:Lnjo;
+
+.field public final d:Loom;
+
+.field public final e:Z
+
+.field public final f:Z
+
+.field private final g:Lnjy;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
-
-    new-instance v0, Lnjv;
-
-    const/16 v1, 0x14
-
-    invoke-direct {v0, v1}, Lnjv;-><init>(I)V
-
-    sput-object v0, Lnjv;->u:Lnww;
-
-    new-instance v0, Lnjv;
-
-    const/16 v1, 0x13
-
-    invoke-direct {v0, v1}, Lnjv;-><init>(I)V
-
-    sput-object v0, Lnjv;->t:Lnww;
-
-    new-instance v0, Lnjv;
-
-    const/16 v1, 0x12
-
-    invoke-direct {v0, v1}, Lnjv;-><init>(I)V
-
-    sput-object v0, Lnjv;->s:Lnww;
-
-    new-instance v0, Lnjv;
-
-    const/16 v1, 0x11
-
-    invoke-direct {v0, v1}, Lnjv;-><init>(I)V
-
-    sput-object v0, Lnjv;->r:Lnww;
-
-    new-instance v0, Lnjv;
-
-    const/16 v1, 0x10
-
-    invoke-direct {v0, v1}, Lnjv;-><init>(I)V
-
-    sput-object v0, Lnjv;->q:Lnww;
-
-    new-instance v0, Lnjv;
-
-    const/16 v1, 0xf
-
-    invoke-direct {v0, v1}, Lnjv;-><init>(I)V
-
-    sput-object v0, Lnjv;->p:Lnww;
-
-    new-instance v0, Lnjv;
-
-    const/16 v1, 0xe
-
-    invoke-direct {v0, v1}, Lnjv;-><init>(I)V
-
-    sput-object v0, Lnjv;->o:Lnww;
-
-    new-instance v0, Lnjv;
-
-    const/16 v1, 0xd
-
-    invoke-direct {v0, v1}, Lnjv;-><init>(I)V
-
-    sput-object v0, Lnjv;->n:Lnww;
-
-    new-instance v0, Lnjv;
-
-    const/16 v1, 0xc
-
-    invoke-direct {v0, v1}, Lnjv;-><init>(I)V
-
-    sput-object v0, Lnjv;->m:Lnww;
-
-    new-instance v0, Lnjv;
-
-    const/16 v1, 0xb
-
-    invoke-direct {v0, v1}, Lnjv;-><init>(I)V
-
-    sput-object v0, Lnjv;->l:Lnww;
-
-    new-instance v0, Lnjv;
-
-    const/16 v1, 0xa
-
-    invoke-direct {v0, v1}, Lnjv;-><init>(I)V
-
-    sput-object v0, Lnjv;->k:Lnww;
-
-    new-instance v0, Lnjv;
-
-    const/16 v1, 0x9
-
-    invoke-direct {v0, v1}, Lnjv;-><init>(I)V
-
-    sput-object v0, Lnjv;->j:Lnww;
-
-    new-instance v0, Lnjv;
-
-    const/16 v1, 0x8
-
-    invoke-direct {v0, v1}, Lnjv;-><init>(I)V
-
-    sput-object v0, Lnjv;->i:Lnww;
-
-    new-instance v0, Lnjv;
-
-    const/4 v1, 0x7
-
-    invoke-direct {v0, v1}, Lnjv;-><init>(I)V
-
-    sput-object v0, Lnjv;->h:Lnww;
-
-    new-instance v0, Lnjv;
-
-    const/4 v1, 0x6
-
-    invoke-direct {v0, v1}, Lnjv;-><init>(I)V
-
-    sput-object v0, Lnjv;->g:Lnww;
-
-    new-instance v0, Lnjv;
-
-    const/4 v1, 0x5
-
-    invoke-direct {v0, v1}, Lnjv;-><init>(I)V
-
-    sput-object v0, Lnjv;->f:Lnww;
-
-    new-instance v0, Lnjv;
-
-    const/4 v1, 0x4
-
-    invoke-direct {v0, v1}, Lnjv;-><init>(I)V
-
-    sput-object v0, Lnjv;->e:Lnww;
-
-    new-instance v0, Lnjv;
-
-    const/4 v1, 0x3
-
-    invoke-direct {v0, v1}, Lnjv;-><init>(I)V
-
-    sput-object v0, Lnjv;->d:Lnww;
-
-    new-instance v0, Lnjv;
-
-    const/4 v1, 0x2
-
-    invoke-direct {v0, v1}, Lnjv;-><init>(I)V
-
-    sput-object v0, Lnjv;->c:Lnww;
-
-    new-instance v0, Lnjv;
-
-    const/4 v1, 0x1
-
-    invoke-direct {v0, v1}, Lnjv;-><init>(I)V
-
-    sput-object v0, Lnjv;->b:Lnww;
-
-    new-instance v0, Lnjv;
-
-    const/4 v1, 0x0
-
-    invoke-direct {v0, v1}, Lnjv;-><init>(I)V
-
-    sput-object v0, Lnjv;->a:Lnww;
-
-    return-void
-.end method
-
-.method private constructor <init>(I)V
+.method public constructor <init>()V
     .locals 0
-
-    iput p1, p0, Lnjv;->v:I
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
+.method public constructor <init>(Landroid/net/Uri;Lpqm;Lnjo;Loom;Lnjy;ZZ)V
+    .locals 0
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lnjv;->a:Landroid/net/Uri;
+
+    iput-object p2, p0, Lnjv;->b:Lpqm;
+
+    iput-object p3, p0, Lnjv;->c:Lnjo;
+
+    iput-object p4, p0, Lnjv;->d:Loom;
+
+    iput-object p5, p0, Lnjv;->g:Lnjy;
+
+    iput-boolean p6, p0, Lnjv;->e:Z
+
+    iput-boolean p7, p0, Lnjv;->f:Z
+
+    return-void
+.end method
+
+.method public static a()Lnju;
+    .locals 2
+
+    new-instance v0, Lnju;
+
+    invoke-direct {v0}, Lnju;-><init>()V
+
+    sget-object v1, Lnjy;->a:Lnjy;
+
+    iput-object v1, v0, Lnju;->b:Lnjy;
+
+    sget-object v1, Lnkt;->a:Lnkt;
+
+    invoke-virtual {v0, v1}, Lnju;->c(Lnjo;)V
+
+    invoke-virtual {v0}, Lnju;->b()V
+
+    const/4 v1, 0x1
+
+    invoke-static {v1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    move-result-object v1
+
+    iput-object v1, v0, Lnju;->a:Ljava/lang/Boolean;
+
+    return-object v0
+.end method
+
 
 # virtual methods
-.method public final a(I)Z
-    .locals 3
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 4
 
-    iget v0, p0, Lnjv;->v:I
+    const/4 v0, 0x1
 
-    const/4 v1, 0x0
+    if-ne p1, p0, :cond_0
 
-    const/4 v2, 0x1
-
-    packed-switch v0, :pswitch_data_0
-
-    packed-switch p1, :pswitch_data_1
-
-    return v1
-
-    :pswitch_0
-    packed-switch p1, :pswitch_data_2
-
-    return v1
-
-    :pswitch_1
-    return v2
-
-    :pswitch_2
-    packed-switch p1, :pswitch_data_3
-
-    return v1
-
-    :pswitch_3
-    return v2
-
-    :pswitch_4
-    invoke-static {p1}, Lndd;->q(I)I
-
-    move-result p1
-
-    if-eqz p1, :cond_0
-
-    return v2
+    return v0
 
     :cond_0
-    return v1
+    instance-of v1, p1, Lnjv;
 
-    :pswitch_5
-    invoke-static {p1}, Lndd;->r(I)I
+    const/4 v2, 0x0
 
-    move-result p1
+    if-eqz v1, :cond_1
 
-    if-eqz p1, :cond_1
+    check-cast p1, Lnjv;
 
-    return v2
+    iget-object v1, p0, Lnjv;->a:Landroid/net/Uri;
+
+    iget-object v3, p1, Lnjv;->a:Landroid/net/Uri;
+
+    invoke-virtual {v1, v3}, Landroid/net/Uri;->equals(Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_1
+
+    iget-object v1, p0, Lnjv;->b:Lpqm;
+
+    iget-object v3, p1, Lnjv;->b:Lpqm;
+
+    invoke-virtual {v1, v3}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_1
+
+    iget-object v1, p0, Lnjv;->c:Lnjo;
+
+    iget-object v3, p1, Lnjv;->c:Lnjo;
+
+    invoke-virtual {v1, v3}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_1
+
+    iget-object v1, p0, Lnjv;->d:Loom;
+
+    iget-object v3, p1, Lnjv;->d:Loom;
+
+    invoke-static {v1, v3}, Lobr;->an(Ljava/util/List;Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_1
+
+    iget-object v1, p0, Lnjv;->g:Lnjy;
+
+    iget-object v3, p1, Lnjv;->g:Lnjy;
+
+    invoke-virtual {v1, v3}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_1
+
+    iget-boolean v1, p0, Lnjv;->e:Z
+
+    iget-boolean v3, p1, Lnjv;->e:Z
+
+    if-ne v1, v3, :cond_1
+
+    iget-boolean v1, p0, Lnjv;->f:Z
+
+    iget-boolean p1, p1, Lnjv;->f:Z
+
+    if-ne v1, p1, :cond_1
+
+    return v0
 
     :cond_1
-    return v1
-
-    :pswitch_6
-    packed-switch p1, :pswitch_data_4
-
-    return v1
-
-    :pswitch_7
     return v2
+.end method
 
-    :pswitch_8
-    packed-switch p1, :pswitch_data_5
+.method public final hashCode()I
+    .locals 6
 
-    return v1
+    iget-object v0, p0, Lnjv;->a:Landroid/net/Uri;
 
-    :pswitch_9
-    return v2
+    invoke-virtual {v0}, Landroid/net/Uri;->hashCode()I
 
-    :pswitch_a
-    packed-switch p1, :pswitch_data_6
+    move-result v0
 
-    return v1
+    const v1, 0xf4243
 
-    :pswitch_b
-    return v2
+    xor-int/2addr v0, v1
 
-    :pswitch_c
-    packed-switch p1, :pswitch_data_7
+    mul-int v0, v0, v1
 
-    return v1
+    iget-object v2, p0, Lnjv;->b:Lpqm;
 
-    :pswitch_d
-    return v2
+    invoke-virtual {v2}, Ljava/lang/Object;->hashCode()I
 
-    :pswitch_e
-    packed-switch p1, :pswitch_data_8
+    move-result v2
 
-    return v1
+    xor-int/2addr v0, v2
 
-    :pswitch_f
-    return v2
+    mul-int v0, v0, v1
 
-    :pswitch_10
-    packed-switch p1, :pswitch_data_9
+    iget-object v2, p0, Lnjv;->c:Lnjo;
 
-    return v1
+    invoke-virtual {v2}, Ljava/lang/Object;->hashCode()I
 
-    :pswitch_11
-    return v2
+    move-result v2
 
-    :pswitch_12
-    packed-switch p1, :pswitch_data_a
+    xor-int/2addr v0, v2
 
-    return v1
+    mul-int v0, v0, v1
 
-    :pswitch_13
-    return v2
+    iget-object v2, p0, Lnjv;->d:Loom;
 
-    :pswitch_14
-    packed-switch p1, :pswitch_data_b
+    invoke-virtual {v2}, Loom;->hashCode()I
 
-    return v1
+    move-result v2
 
-    :pswitch_15
-    return v2
+    xor-int/2addr v0, v2
 
-    :pswitch_16
-    packed-switch p1, :pswitch_data_c
+    mul-int v0, v0, v1
 
-    return v1
+    iget-object v2, p0, Lnjv;->g:Lnjy;
 
-    :pswitch_17
-    return v2
+    invoke-virtual {v2}, Ljava/lang/Object;->hashCode()I
 
-    :pswitch_18
-    packed-switch p1, :pswitch_data_d
+    move-result v2
 
-    return v1
+    xor-int/2addr v0, v2
 
-    :pswitch_19
-    return v2
+    mul-int v0, v0, v1
 
-    :pswitch_1a
-    packed-switch p1, :pswitch_data_e
+    iget-boolean v2, p0, Lnjv;->e:Z
 
-    return v1
+    const/16 v3, 0x4d5
 
-    :pswitch_1b
-    return v2
+    const/16 v4, 0x4cf
 
-    :pswitch_1c
-    packed-switch p1, :pswitch_data_f
+    const/4 v5, 0x1
 
-    return v1
+    if-eq v5, v2, :cond_0
 
-    :pswitch_1d
-    return v2
+    const/16 v2, 0x4d5
 
-    :pswitch_1e
-    invoke-static {p1}, Lndd;->s(I)I
+    goto :goto_0
 
-    move-result p1
+    :cond_0
+    const/16 v2, 0x4cf
 
-    if-eqz p1, :cond_2
+    :goto_0
+    xor-int/2addr v0, v2
 
-    return v2
+    mul-int v0, v0, v1
 
-    :cond_2
-    return v1
+    iget-boolean v1, p0, Lnjv;->f:Z
 
-    :pswitch_1f
-    invoke-static {p1}, Lndd;->t(I)I
-
-    move-result p1
-
-    if-eqz p1, :cond_3
-
-    return v2
-
-    :cond_3
-    return v1
-
-    :pswitch_20
-    packed-switch p1, :pswitch_data_10
-
-    :pswitch_21
-    return v1
-
-    :pswitch_22
-    return v2
-
-    :pswitch_23
-    packed-switch p1, :pswitch_data_11
-
-    return v1
-
-    :pswitch_24
-    return v2
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_23
-        :pswitch_20
-        :pswitch_1f
-        :pswitch_1e
-        :pswitch_1c
-        :pswitch_1a
-        :pswitch_18
-        :pswitch_16
-        :pswitch_14
-        :pswitch_12
-        :pswitch_10
-        :pswitch_e
-        :pswitch_c
-        :pswitch_a
-        :pswitch_8
-        :pswitch_6
-        :pswitch_5
-        :pswitch_4
-        :pswitch_2
-        :pswitch_0
-    .end packed-switch
-
-    :pswitch_data_1
-    .packed-switch 0x0
-        :pswitch_24
-        :pswitch_24
-        :pswitch_24
-        :pswitch_24
-        :pswitch_24
-        :pswitch_24
-    .end packed-switch
-
-    :pswitch_data_2
-    .packed-switch 0x0
-        :pswitch_1
-        :pswitch_1
-        :pswitch_1
-        :pswitch_1
-        :pswitch_1
-        :pswitch_1
-        :pswitch_1
-        :pswitch_1
-        :pswitch_1
-        :pswitch_1
-        :pswitch_1
-        :pswitch_1
-    .end packed-switch
-
-    :pswitch_data_3
-    .packed-switch 0x0
-        :pswitch_3
-        :pswitch_3
-        :pswitch_3
-        :pswitch_3
-        :pswitch_3
-        :pswitch_3
-    .end packed-switch
-
-    :pswitch_data_4
-    .packed-switch 0x0
-        :pswitch_7
-        :pswitch_7
-        :pswitch_7
-    .end packed-switch
-
-    :pswitch_data_5
-    .packed-switch 0x0
-        :pswitch_9
-        :pswitch_9
-        :pswitch_9
-        :pswitch_9
-        :pswitch_9
-        :pswitch_9
-    .end packed-switch
-
-    :pswitch_data_6
-    .packed-switch 0x0
-        :pswitch_b
-        :pswitch_b
-        :pswitch_b
-    .end packed-switch
-
-    :pswitch_data_7
-    .packed-switch 0x0
-        :pswitch_d
-        :pswitch_d
-        :pswitch_d
-    .end packed-switch
-
-    :pswitch_data_8
-    .packed-switch 0x0
-        :pswitch_f
-        :pswitch_f
-        :pswitch_f
-    .end packed-switch
-
-    :pswitch_data_9
-    .packed-switch 0x0
-        :pswitch_11
-        :pswitch_11
-        :pswitch_11
-        :pswitch_11
-        :pswitch_11
-    .end packed-switch
-
-    :pswitch_data_a
-    .packed-switch 0x0
-        :pswitch_13
-        :pswitch_13
-        :pswitch_13
-        :pswitch_13
-        :pswitch_13
-    .end packed-switch
-
-    :pswitch_data_b
-    .packed-switch 0x0
-        :pswitch_15
-        :pswitch_15
-        :pswitch_15
-        :pswitch_15
-    .end packed-switch
-
-    :pswitch_data_c
-    .packed-switch 0x0
-        :pswitch_17
-        :pswitch_17
-        :pswitch_17
-        :pswitch_17
-    .end packed-switch
-
-    :pswitch_data_d
-    .packed-switch 0x0
-        :pswitch_19
-        :pswitch_19
-        :pswitch_19
-        :pswitch_19
-        :pswitch_19
-    .end packed-switch
-
-    :pswitch_data_e
-    .packed-switch 0x0
-        :pswitch_1b
-        :pswitch_1b
-        :pswitch_1b
-    .end packed-switch
-
-    :pswitch_data_f
-    .packed-switch 0x0
-        :pswitch_1d
-        :pswitch_1d
-        :pswitch_1d
-        :pswitch_1d
-        :pswitch_1d
-        :pswitch_1d
-        :pswitch_1d
-        :pswitch_1d
-        :pswitch_1d
-        :pswitch_1d
-        :pswitch_1d
-        :pswitch_1d
-        :pswitch_1d
-        :pswitch_1d
-        :pswitch_1d
-        :pswitch_1d
-        :pswitch_1d
-        :pswitch_1d
-        :pswitch_1d
-        :pswitch_1d
-        :pswitch_1d
-        :pswitch_1d
-        :pswitch_1d
-        :pswitch_1d
-        :pswitch_1d
-        :pswitch_1d
-        :pswitch_1d
-        :pswitch_1d
-        :pswitch_1d
-        :pswitch_1d
-        :pswitch_1d
-    .end packed-switch
-
-    :pswitch_data_10
-    .packed-switch 0x0
-        :pswitch_22
-        :pswitch_22
-        :pswitch_22
-        :pswitch_21
-        :pswitch_21
-        :pswitch_22
-        :pswitch_22
-        :pswitch_22
-        :pswitch_22
-        :pswitch_22
-        :pswitch_22
-        :pswitch_22
-        :pswitch_22
-        :pswitch_22
-        :pswitch_22
-        :pswitch_22
-        :pswitch_21
-        :pswitch_22
-        :pswitch_22
-        :pswitch_22
-        :pswitch_22
-        :pswitch_22
-        :pswitch_22
-        :pswitch_22
-        :pswitch_22
-        :pswitch_22
-        :pswitch_22
-        :pswitch_22
-        :pswitch_22
-        :pswitch_22
-        :pswitch_22
-        :pswitch_22
-        :pswitch_22
-        :pswitch_22
-        :pswitch_22
-        :pswitch_22
-        :pswitch_22
-        :pswitch_22
-        :pswitch_22
-    .end packed-switch
-
-    :pswitch_data_11
-    .packed-switch 0x0
-        :pswitch_24
-        :pswitch_24
-        :pswitch_24
-        :pswitch_24
-    .end packed-switch
+    if-eq v5, v1, :cond_1
+
+    goto :goto_1
+
+    :cond_1
+    const/16 v3, 0x4cf
+
+    :goto_1
+    xor-int/2addr v0, v3
+
+    return v0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .locals 13
+
+    iget-object v0, p0, Lnjv;->a:Landroid/net/Uri;
+
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lnjv;->b:Lpqm;
+
+    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v1
+
+    iget-object v2, p0, Lnjv;->c:Lnjo;
+
+    invoke-static {v2}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v2
+
+    iget-object v3, p0, Lnjv;->d:Loom;
+
+    invoke-static {v3}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v3
+
+    iget-object v4, p0, Lnjv;->g:Lnjy;
+
+    invoke-static {v4}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v4
+
+    iget-boolean v5, p0, Lnjv;->e:Z
+
+    iget-boolean v6, p0, Lnjv;->f:Z
+
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v7
+
+    invoke-virtual {v7}, Ljava/lang/String;->length()I
+
+    move-result v7
+
+    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v8
+
+    invoke-virtual {v8}, Ljava/lang/String;->length()I
+
+    move-result v8
+
+    invoke-static {v2}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v9
+
+    invoke-virtual {v9}, Ljava/lang/String;->length()I
+
+    move-result v9
+
+    invoke-static {v3}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v10
+
+    invoke-virtual {v10}, Ljava/lang/String;->length()I
+
+    move-result v10
+
+    invoke-static {v4}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v11
+
+    invoke-virtual {v11}, Ljava/lang/String;->length()I
+
+    move-result v11
+
+    new-instance v12, Ljava/lang/StringBuilder;
+
+    add-int/lit16 v7, v7, 0x84
+
+    add-int/2addr v7, v8
+
+    add-int/2addr v7, v9
+
+    add-int/2addr v7, v10
+
+    add-int/2addr v7, v11
+
+    invoke-direct {v12, v7}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string v7, "ProtoDataStoreConfig{uri="
+
+    invoke-virtual {v12, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v12, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v0, ", schema="
+
+    invoke-virtual {v12, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v12, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v0, ", handler="
+
+    invoke-virtual {v12, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v12, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v0, ", migrations="
+
+    invoke-virtual {v12, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v12, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v0, ", variantConfig="
+
+    invoke-virtual {v12, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v12, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v0, ", useGeneratedExtensionRegistry="
+
+    invoke-virtual {v12, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v12, v5}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    const-string v0, ", enableTracing="
+
+    invoke-virtual {v12, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v12, v6}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    const-string v0, "}"
+
+    invoke-virtual {v12, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v12}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
 .end method

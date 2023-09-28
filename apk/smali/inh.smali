@@ -1,48 +1,18 @@
-.class Linh;
-.super Linf;
+.class public final synthetic Linh;
+.super Ljava/lang/Object;
 
 
 # instance fields
-.field final synthetic a:Lini;
+.field public final synthetic a:Link;
 
 
 # direct methods
-.method public constructor <init>(Lini;)V
+.method public synthetic constructor <init>(Link;)V
     .locals 0
 
-    iput-object p1, p0, Linh;->a:Lini;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0}, Linf;-><init>()V
-
-    return-void
-.end method
-
-
-# virtual methods
-.method public b()V
-    .locals 0
-
-    return-void
-.end method
-
-.method public c()V
-    .locals 0
-
-    return-void
-.end method
-
-.method public final f()V
-    .locals 1
-
-    iget-object v0, p0, Linh;->a:Lini;
-
-    iget-object v0, v0, Lini;->a:Loiw;
-
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    invoke-interface {v0}, Lioe;->c()V
+    iput-object p1, p0, Linh;->a:Link;
 
     return-void
 .end method

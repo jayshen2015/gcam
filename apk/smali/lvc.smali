@@ -1,121 +1,121 @@
 .class public final Llvc;
-.super Ljava/lang/Object;
+.super Landroid/hardware/camera2/CameraCaptureSession$StateCallback;
 
 
 # instance fields
-.field private final a:Lnty;
+.field private final a:Llzn;
 
 
 # direct methods
-.method public constructor <init>(Lnty;)V
+.method public constructor <init>(Llzn;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Landroid/hardware/camera2/CameraCaptureSession$StateCallback;-><init>()V
 
-    iput-object p1, p0, Llvc;->a:Lnty;
+    iput-object p1, p0, Llvc;->a:Llzn;
 
     return-void
 .end method
 
+.method private static final a(Landroid/hardware/camera2/CameraCaptureSession;)Llzo;
+    .locals 1
 
-# virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 3
+    instance-of v0, p0, Landroid/hardware/camera2/CameraConstrainedHighSpeedCaptureSession;
 
-    const/4 v0, 0x1
+    if-eqz v0, :cond_0
 
-    if-ne p0, p1, :cond_0
+    new-instance v0, Lluv;
 
-    return v0
+    check-cast p0, Landroid/hardware/camera2/CameraConstrainedHighSpeedCaptureSession;
 
-    :cond_0
-    instance-of v1, p1, Llvc;
-
-    const/4 v2, 0x0
-
-    if-nez v1, :cond_1
-
-    return v2
-
-    :cond_1
-    check-cast p1, Llvc;
-
-    iget-object v1, p0, Llvc;->a:Lnty;
-
-    iget-object p1, p1, Llvc;->a:Lnty;
-
-    invoke-static {v1, p1}, Lone;->c(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result p1
-
-    if-nez p1, :cond_2
-
-    return v2
-
-    :cond_2
-    return v0
-.end method
-
-.method public final hashCode()I
-    .locals 2
-
-    iget-object v0, p0, Llvc;->a:Lnty;
-
-    invoke-virtual {v0}, Lnws;->ac()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_0
-
-    invoke-virtual {v0}, Lnws;->L()I
-
-    move-result v0
-
-    goto :goto_1
-
-    :cond_0
-    iget v1, v0, Lnws;->aG:I
-
-    if-nez v1, :cond_1
-
-    invoke-virtual {v0}, Lnws;->L()I
-
-    move-result v1
-
-    iput v1, v0, Lnws;->aG:I
-
-    goto :goto_0
-
-    :cond_1
-    :goto_0
-    move v0, v1
-
-    :goto_1
-    return v0
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .locals 3
-
-    iget-object v0, p0, Llvc;->a:Lnty;
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, "UserId(wipeout="
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const-string v0, ")"
-
-    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
+    invoke-direct {v0, p0}, Lluv;-><init>(Landroid/hardware/camera2/CameraConstrainedHighSpeedCaptureSession;)V
 
     return-object v0
+
+    :cond_0
+    new-instance v0, Lluu;
+
+    invoke-direct {v0, p0}, Lluu;-><init>(Landroid/hardware/camera2/CameraCaptureSession;)V
+
+    return-object v0
+.end method
+
+
+# virtual methods
+.method public final onActive(Landroid/hardware/camera2/CameraCaptureSession;)V
+    .locals 1
+
+    iget-object v0, p0, Llvc;->a:Llzn;
+
+    invoke-static {p1}, Llvc;->a(Landroid/hardware/camera2/CameraCaptureSession;)Llzo;
+
+    invoke-interface {v0}, Llzn;->i()V
+
+    return-void
+.end method
+
+.method public final onClosed(Landroid/hardware/camera2/CameraCaptureSession;)V
+    .locals 1
+
+    iget-object v0, p0, Llvc;->a:Llzn;
+
+    invoke-static {p1}, Llvc;->a(Landroid/hardware/camera2/CameraCaptureSession;)Llzo;
+
+    move-result-object p1
+
+    invoke-interface {v0, p1}, Llzn;->d(Llzo;)V
+
+    return-void
+.end method
+
+.method public final onConfigureFailed(Landroid/hardware/camera2/CameraCaptureSession;)V
+    .locals 1
+
+    iget-object v0, p0, Llvc;->a:Llzn;
+
+    invoke-static {p1}, Llvc;->a(Landroid/hardware/camera2/CameraCaptureSession;)Llzo;
+
+    move-result-object p1
+
+    invoke-interface {v0, p1}, Llzn;->e(Llzo;)V
+
+    return-void
+.end method
+
+.method public final onConfigured(Landroid/hardware/camera2/CameraCaptureSession;)V
+    .locals 1
+
+    iget-object v0, p0, Llvc;->a:Llzn;
+
+    invoke-static {p1}, Llvc;->a(Landroid/hardware/camera2/CameraCaptureSession;)Llzo;
+
+    move-result-object p1
+
+    invoke-interface {v0, p1}, Llzn;->f(Llzo;)V
+
+    return-void
+.end method
+
+.method public final onReady(Landroid/hardware/camera2/CameraCaptureSession;)V
+    .locals 1
+
+    iget-object v0, p0, Llvc;->a:Llzn;
+
+    invoke-static {p1}, Llvc;->a(Landroid/hardware/camera2/CameraCaptureSession;)Llzo;
+
+    invoke-interface {v0}, Llzn;->j()V
+
+    return-void
+.end method
+
+.method public final onSurfacePrepared(Landroid/hardware/camera2/CameraCaptureSession;Landroid/view/Surface;)V
+    .locals 0
+
+    iget-object p2, p0, Llvc;->a:Llzn;
+
+    invoke-static {p1}, Llvc;->a(Landroid/hardware/camera2/CameraCaptureSession;)Llzo;
+
+    invoke-interface {p2}, Llzn;->k()V
+
+    return-void
 .end method

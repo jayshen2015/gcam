@@ -1,22 +1,37 @@
-.class public final Legq;
+.class public final synthetic Legq;
 .super Ljava/lang/Object;
 
+# interfaces
+.implements Ljava/lang/Runnable;
 
-# static fields
-.field public static final a:Ledu;
+
+# instance fields
+.field public final synthetic a:Legr;
 
 
 # direct methods
-.method static constructor <clinit>()V
+.method public synthetic constructor <init>(Legr;)V
+    .locals 0
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Legq;->a:Legr;
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public final run()V
     .locals 2
 
-    new-instance v0, Ledu;
+    iget-object v0, p0, Legq;->a:Legr;
 
-    const/16 v1, 0xb
+    iget-object v0, v0, Legr;->a:Lfvv;
 
-    invoke-direct {v0, v1}, Ledu;-><init>(I)V
+    sget-object v1, Ljrl;->d:Ljrl;
 
-    sput-object v0, Legq;->a:Ledu;
+    invoke-interface {v0, v1}, Lfvv;->b(Ljrl;)Z
 
     return-void
 .end method

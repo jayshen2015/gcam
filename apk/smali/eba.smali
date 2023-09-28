@@ -1,339 +1,166 @@
-.class public final Leba;
+.class public final synthetic Leba;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Logk;
+.implements Llht;
 
 
 # instance fields
-.field private final a:Loiw;
-
-.field private final b:Loiw;
-
-.field private final c:Loiw;
-
-.field private final d:Loiw;
-
-.field private final e:Loiw;
-
-.field private final f:Loiw;
-
-.field private final g:Loiw;
-
-.field private final h:Loiw;
-
-.field private final i:Loiw;
-
-.field private final j:Loiw;
-
-.field private final k:Loiw;
-
-.field private final l:Loiw;
-
-.field private final m:Loiw;
-
-.field private final n:Loiw;
-
-.field private final o:Loiw;
-
-.field private final p:Loiw;
-
-.field private final q:Loiw;
+.field public final synthetic a:Lebb;
 
 
 # direct methods
-.method public constructor <init>(Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;)V
-    .locals 2
-
-    move-object v0, p0
+.method public synthetic constructor <init>(Lebb;)V
+    .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    move-object v1, p1
-
-    iput-object v1, v0, Leba;->a:Loiw;
-
-    move-object v1, p2
-
-    iput-object v1, v0, Leba;->b:Loiw;
-
-    move-object v1, p3
-
-    iput-object v1, v0, Leba;->c:Loiw;
-
-    move-object v1, p4
-
-    iput-object v1, v0, Leba;->d:Loiw;
-
-    move-object v1, p5
-
-    iput-object v1, v0, Leba;->e:Loiw;
-
-    move-object v1, p6
-
-    iput-object v1, v0, Leba;->f:Loiw;
-
-    move-object v1, p7
-
-    iput-object v1, v0, Leba;->g:Loiw;
-
-    move-object v1, p8
-
-    iput-object v1, v0, Leba;->h:Loiw;
-
-    move-object v1, p9
-
-    iput-object v1, v0, Leba;->i:Loiw;
-
-    move-object v1, p10
-
-    iput-object v1, v0, Leba;->j:Loiw;
-
-    move-object v1, p11
-
-    iput-object v1, v0, Leba;->k:Loiw;
-
-    move-object v1, p12
-
-    iput-object v1, v0, Leba;->l:Loiw;
-
-    move-object v1, p13
-
-    iput-object v1, v0, Leba;->m:Loiw;
-
-    move-object/from16 v1, p14
-
-    iput-object v1, v0, Leba;->n:Loiw;
-
-    move-object/from16 v1, p15
-
-    iput-object v1, v0, Leba;->o:Loiw;
-
-    move-object/from16 v1, p16
-
-    iput-object v1, v0, Leba;->p:Loiw;
-
-    move-object/from16 v1, p17
-
-    iput-object v1, v0, Leba;->q:Loiw;
+    iput-object p1, p0, Leba;->a:Lebb;
 
     return-void
 .end method
 
-.method public static a(Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;)Leba;
-    .locals 19
-
-    move-object/from16 v1, p0
-
-    move-object/from16 v2, p1
-
-    move-object/from16 v3, p2
-
-    move-object/from16 v4, p3
-
-    move-object/from16 v5, p4
-
-    move-object/from16 v6, p5
-
-    move-object/from16 v7, p6
-
-    move-object/from16 v8, p7
-
-    move-object/from16 v9, p8
-
-    move-object/from16 v10, p9
-
-    move-object/from16 v11, p10
-
-    move-object/from16 v12, p11
-
-    move-object/from16 v13, p12
-
-    move-object/from16 v14, p13
-
-    move-object/from16 v15, p14
-
-    move-object/from16 v16, p15
-
-    move-object/from16 v17, p16
-
-    new-instance v18, Leba;
-
-    move-object/from16 v0, v18
-
-    invoke-direct/range {v0 .. v17}, Leba;-><init>(Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;)V
-
-    return-object v18
-.end method
-
 
 # virtual methods
-.method public final b()Lewa;
-    .locals 25
+.method public final a(Ljava/lang/Object;)V
+    .locals 3
 
-    move-object/from16 v0, p0
+    iget-object v0, p0, Leba;->a:Lebb;
 
-    iget-object v1, v0, Leba;->a:Loiw;
+    check-cast p1, Lbxg;
 
-    check-cast v1, Lfwo;
+    iget-object p1, v0, Lebb;->d:Lljf;
 
-    invoke-virtual {v1}, Lfwo;->a()Lfuz;
+    const-string v1, "HdrPlusPrewarm"
 
-    move-result-object v3
+    invoke-interface {p1, v1}, Lljf;->e(Ljava/lang/String;)V
 
-    iget-object v1, v0, Leba;->b:Loiw;
+    iget-object p1, v0, Lebb;->c:Lddf;
 
-    invoke-static {v1}, Logj;->a(Loiw;)Logd;
+    sget-object v1, Lddl;->I:Lddg;
 
-    move-result-object v4
+    invoke-interface {p1, v1}, Lddf;->k(Lddg;)Z
 
-    iget-object v1, v0, Leba;->c:Loiw;
+    move-result p1
 
-    invoke-static {v1}, Logj;->a(Loiw;)Logd;
+    if-eqz p1, :cond_0
 
-    move-result-object v5
+    const/16 p1, 0x100
 
-    iget-object v1, v0, Leba;->d:Loiw;
+    const/high16 v1, 0x2000000
 
-    invoke-static {v1}, Logj;->a(Loiw;)Logd;
+    invoke-static {p1, v1}, Lcom/google/android/apps/camera/jni/mallopt/Mallopt;->setOptions(II)Z
 
-    move-result-object v6
+    move-result p1
 
-    iget-object v1, v0, Leba;->e:Loiw;
+    if-nez p1, :cond_0
 
-    invoke-static {v1}, Logj;->a(Loiw;)Logd;
+    sget-object p1, Lebb;->a:Louj;
 
-    move-result-object v7
+    invoke-virtual {p1}, Loue;->c()Lova;
 
-    iget-object v1, v0, Leba;->f:Loiw;
+    move-result-object p1
 
-    invoke-static {v1}, Logj;->a(Loiw;)Logd;
+    const/16 v1, 0x413
 
-    move-result-object v8
+    const-string v2, "Failed to set mallopt options."
 
-    iget-object v1, v0, Leba;->g:Loiw;
+    invoke-static {p1, v2, v1}, Ld;->v(Lova;Ljava/lang/String;C)V
 
-    invoke-static {v1}, Logj;->a(Loiw;)Logd;
+    :cond_0
+    iget-object p1, v0, Lebb;->d:Lljf;
 
-    move-result-object v9
+    const-string v1, "gcamdeps"
 
-    iget-object v1, v0, Leba;->h:Loiw;
+    invoke-interface {p1, v1}, Lljf;->e(Ljava/lang/String;)V
 
-    invoke-interface {v1}, Loiw;->get()Ljava/lang/Object;
+    invoke-static {}, Lenl;->b()V
 
-    move-result-object v1
+    iget-object p1, v0, Lebb;->d:Lljf;
 
-    move-object v10, v1
+    invoke-interface {p1}, Lljf;->f()V
 
-    check-cast v10, Lbkb;
+    iget-object p1, v0, Lebb;->d:Lljf;
 
-    iget-object v1, v0, Leba;->i:Loiw;
+    const-string v1, "gcam"
 
-    invoke-interface {v1}, Loiw;->get()Ljava/lang/Object;
+    invoke-interface {p1, v1}, Lljf;->e(Ljava/lang/String;)V
 
-    move-result-object v1
+    iget-object p1, v0, Lebb;->b:Lqkg;
 
-    move-object v11, v1
+    invoke-interface {p1}, Lqkg;->get()Ljava/lang/Object;
 
-    check-cast v11, Lgvb;
+    iget-object p1, v0, Lebb;->d:Lljf;
 
-    iget-object v1, v0, Leba;->j:Loiw;
+    invoke-interface {p1}, Lljf;->f()V
 
-    invoke-interface {v1}, Loiw;->get()Ljava/lang/Object;
+    iget-object p1, v0, Lebb;->e:Lojc;
 
-    move-result-object v1
+    invoke-virtual {p1}, Lojc;->g()Z
 
-    move-object v12, v1
+    move-result p1
 
-    check-cast v12, Ldhi;
+    if-eqz p1, :cond_2
 
-    iget-object v1, v0, Leba;->k:Loiw;
+    iget-object p1, v0, Lebb;->e:Lojc;
 
-    check-cast v1, Lkao;
+    invoke-virtual {p1}, Lojc;->c()Ljava/lang/Object;
 
-    invoke-virtual {v1}, Lkao;->a()Lkaq;
+    move-result-object p1
 
-    move-result-object v13
+    check-cast p1, Lhli;
 
-    iget-object v1, v0, Leba;->l:Loiw;
+    invoke-interface {p1}, Lhli;->f()Z
 
-    invoke-interface {v1}, Loiw;->get()Ljava/lang/Object;
+    move-result p1
 
-    move-result-object v1
+    if-eqz p1, :cond_1
 
-    move-object v14, v1
+    iget-object p1, v0, Lebb;->d:Lljf;
 
-    check-cast v14, Lkbc;
+    const-string v1, "segmenter"
 
-    iget-object v1, v0, Leba;->m:Loiw;
+    invoke-interface {p1, v1}, Lljf;->e(Ljava/lang/String;)V
 
-    invoke-interface {v1}, Loiw;->get()Ljava/lang/Object;
+    iget-object p1, v0, Lebb;->f:Lojc;
 
-    move-result-object v1
+    check-cast p1, Lojj;
 
-    move-object v15, v1
+    iget-object p1, p1, Lojj;->a:Ljava/lang/Object;
 
-    check-cast v15, Lcvr;
+    check-cast p1, Lhgm;
 
-    iget-object v1, v0, Leba;->n:Loiw;
+    invoke-interface {p1}, Lhgm;->b()V
 
-    check-cast v1, Ledr;
+    iget-object p1, v0, Lebb;->d:Lljf;
 
-    invoke-virtual {v1}, Ledr;->a()Ledq;
+    invoke-interface {p1}, Lljf;->f()V
 
-    iget-object v1, v0, Leba;->o:Loiw;
+    :cond_1
+    iget-object p1, v0, Lebb;->d:Lljf;
 
-    check-cast v1, Lebz;
+    const-string v1, "rectiface"
 
-    invoke-virtual {v1}, Lebz;->a()Leby;
+    invoke-interface {p1, v1}, Lljf;->e(Ljava/lang/String;)V
 
-    move-result-object v16
+    iget-object p1, v0, Lebb;->e:Lojc;
 
-    iget-object v1, v0, Leba;->p:Loiw;
+    invoke-virtual {p1}, Lojc;->c()Ljava/lang/Object;
 
-    invoke-interface {v1}, Loiw;->get()Ljava/lang/Object;
+    move-result-object p1
 
-    move-result-object v1
+    check-cast p1, Lhli;
 
-    move-object/from16 v17, v1
+    invoke-interface {p1}, Lhli;->d()V
 
-    check-cast v17, Lbkc;
+    iget-object p1, v0, Lebb;->d:Lljf;
 
-    iget-object v1, v0, Leba;->q:Loiw;
+    invoke-interface {p1}, Lljf;->f()V
 
-    check-cast v1, Lean;
+    :cond_2
+    iget-object p1, v0, Lebb;->d:Lljf;
 
-    invoke-virtual {v1}, Lean;->b()Lbkc;
+    invoke-interface {p1}, Lljf;->f()V
 
-    move-result-object v18
-
-    new-instance v1, Lewa;
-
-    move-object v2, v1
-
-    const/16 v19, 0x0
-
-    const/16 v20, 0x0
-
-    const/16 v21, 0x0
-
-    const/16 v22, 0x0
-
-    const/16 v23, 0x0
-
-    const/16 v24, 0x0
-
-    invoke-direct/range {v2 .. v24}, Lewa;-><init>(Lfuz;Logd;Logd;Logd;Logd;Logd;Logd;Lbkb;Lgvb;Ldhi;Lkaq;Lkbc;Lcvr;Lebx;Lbkc;Lbkc;[B[B[B[B[B[B)V
-
-    return-object v1
-.end method
-
-.method public final bridge synthetic get()Ljava/lang/Object;
-    .locals 1
-
-    invoke-virtual {p0}, Leba;->b()Lewa;
-
-    move-result-object v0
-
-    return-object v0
+    return-void
 .end method

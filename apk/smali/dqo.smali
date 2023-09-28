@@ -1,612 +1,204 @@
 .class public final Ldqo;
 .super Ljava/lang/Object;
 
-# interfaces
-.implements Logk;
+
+# static fields
+.field public static final a:Louj;
 
 
 # instance fields
-.field private final a:Loiw;
+.field public final b:Ljava/util/List;
 
-.field private final b:Loiw;
+.field public final c:Lojc;
 
-.field private final c:Loiw;
+.field public final d:Llbs;
 
-.field private final synthetic d:I
+.field private final e:Lojc;
+
+.field private final f:Ldql;
 
 
 # direct methods
-.method public constructor <init>(Loiw;Loiw;Loiw;I)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 1
 
-    iput p4, p0, Ldqo;->d:I
+    const-string v0, "com/google/android/apps/camera/featurecentral/camera/FeatureCentralFrameConsumer"
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-static {v0}, Louj;->h(Ljava/lang/String;)Louj;
 
-    iput-object p1, p0, Ldqo;->a:Loiw;
+    move-result-object v0
 
-    iput-object p2, p0, Ldqo;->b:Loiw;
-
-    iput-object p3, p0, Ldqo;->c:Loiw;
+    sput-object v0, Ldqo;->a:Louj;
 
     return-void
 .end method
 
-.method public constructor <init>(Loiw;Loiw;Loiw;I[B)V
+.method public constructor <init>(Ljava/util/concurrent/Executor;Lojc;Lojc;Ljava/util/Set;Ldql;)V
     .locals 0
-
-    iput p4, p0, Ldqo;->d:I
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Ldqo;->a:Loiw;
+    invoke-static {p1}, Lmip;->bI(Ljava/util/concurrent/Executor;)Llbs;
 
-    iput-object p2, p0, Ldqo;->c:Loiw;
+    move-result-object p1
 
-    iput-object p3, p0, Ldqo;->b:Loiw;
+    iput-object p1, p0, Ldqo;->d:Llbs;
 
-    return-void
-.end method
+    iput-object p2, p0, Ldqo;->e:Lojc;
 
-.method public constructor <init>(Loiw;Loiw;Loiw;I[C)V
-    .locals 0
+    iput-object p3, p0, Ldqo;->c:Lojc;
 
-    iput p4, p0, Ldqo;->d:I
+    invoke-static {p4}, Ldru;->a(Ljava/util/Collection;)Ljava/util/List;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    move-result-object p1
 
-    iput-object p1, p0, Ldqo;->a:Loiw;
+    iput-object p1, p0, Ldqo;->b:Ljava/util/List;
 
-    iput-object p2, p0, Ldqo;->c:Loiw;
+    invoke-interface {p1, p4}, Ljava/util/List;->addAll(Ljava/util/Collection;)Z
 
-    iput-object p3, p0, Ldqo;->b:Loiw;
-
-    return-void
-.end method
-
-.method public constructor <init>(Loiw;Loiw;Loiw;I[I)V
-    .locals 0
-
-    iput p4, p0, Ldqo;->d:I
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Ldqo;->b:Loiw;
-
-    iput-object p2, p0, Ldqo;->c:Loiw;
-
-    iput-object p3, p0, Ldqo;->a:Loiw;
-
-    return-void
-.end method
-
-.method public constructor <init>(Loiw;Loiw;Loiw;I[S)V
-    .locals 0
-
-    iput p4, p0, Ldqo;->d:I
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Ldqo;->c:Loiw;
-
-    iput-object p2, p0, Ldqo;->b:Loiw;
-
-    iput-object p3, p0, Ldqo;->a:Loiw;
+    iput-object p5, p0, Ldqo;->f:Ldql;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Lmqp;
-    .locals 4
+.method final declared-synchronized a(Llvp;Lbrg;)V
+    .locals 2
 
-    iget v0, p0, Ldqo;->d:I
+    monitor-enter p0
 
-    packed-switch v0, :pswitch_data_0
+    :try_start_0
+    iget-object v0, p0, Ldqo;->c:Lojc;
 
-    iget-object v0, p0, Ldqo;->b:Loiw;
-
-    check-cast v0, Logl;
-
-    iget-object v0, v0, Logl;->a:Ljava/lang/Object;
-
-    check-cast v0, Lmqp;
-
-    iget-object v1, p0, Ldqo;->c:Loiw;
-
-    check-cast v1, Logl;
-
-    iget-object v1, v1, Logl;->a:Ljava/lang/Object;
-
-    check-cast v1, Lmqp;
-
-    invoke-virtual {v0}, Lmqp;->g()Z
+    invoke-virtual {v0}, Lojc;->g()Z
 
     move-result v0
 
-    iget-object v2, p0, Ldqo;->a:Loiw;
+    invoke-static {v0}, Lobr;->aQ(Z)V
 
-    if-nez v0, :cond_c
+    iget-object v0, p0, Ldqo;->e:Lojc;
 
-    invoke-virtual {v1}, Lmqp;->g()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_b
-
-    goto/16 :goto_8
-
-    :pswitch_0
-    iget-object v0, p0, Ldqo;->a:Loiw;
-
-    check-cast v0, Logo;
-
-    invoke-virtual {v0}, Logo;->a()Ljava/util/Set;
-
-    move-result-object v0
-
-    iget-object v1, p0, Ldqo;->b:Loiw;
-
-    invoke-interface {v1}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Lkpo;
-
-    iget-object v1, p0, Ldqo;->c:Loiw;
-
-    invoke-interface {v1}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Ldhi;
-
-    sget-object v2, Ldgu;->a:Ldhk;
-
-    invoke-interface {v1}, Ldhi;->c()V
-
-    invoke-interface {v1}, Ldhi;->c()V
-
-    invoke-interface {v0}, Ljava/util/Set;->isEmpty()Z
+    invoke-virtual {v0}, Lojc;->g()Z
 
     move-result v0
 
-    if-nez v0, :cond_0
+    invoke-static {v0}, Lobr;->aQ(Z)V
 
-    invoke-interface {v1}, Ldhi;->c()V
+    const-string v0, "frame"
 
-    sget-object v0, Ldho;->a:Ldhk;
+    iget-object v1, p0, Ldqo;->b:Ljava/util/List;
 
-    invoke-interface {v1}, Ldhi;->e()V
+    invoke-static {v0, v1}, Ldru;->c(Ljava/lang/String;Ljava/util/Collection;)V
 
-    :cond_0
-    sget-object v0, Lmpx;->a:Lmpx;
+    iget-object v0, p0, Ldqo;->f:Ldql;
 
-    return-object v0
+    iput-object p1, v0, Ldql;->a:Llvp;
 
-    :pswitch_1
-    iget-object v0, p0, Ldqo;->a:Loiw;
+    iget-object v0, p0, Ldqo;->b:Ljava/util/List;
 
-    check-cast v0, Logo;
-
-    invoke-virtual {v0}, Logo;->a()Ljava/util/Set;
+    invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object v0
 
-    iget-object v1, p0, Ldqo;->b:Loiw;
+    :goto_0
+    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
-    invoke-interface {v1}, Loiw;->get()Ljava/lang/Object;
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v1
 
-    check-cast v1, Lkpo;
+    check-cast v1, Ldrt;
 
-    iget-object v2, p0, Ldqo;->c:Loiw;
-
-    invoke-interface {v2}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Ldhi;
-
-    invoke-interface {v0}, Ljava/util/Set;->isEmpty()Z
-
-    move-result v3
-
-    if-nez v3, :cond_1
-
-    sget-object v3, Ldho;->a:Ldhk;
-
-    invoke-interface {v2}, Ldhi;->e()V
-
-    invoke-virtual {v1, v0}, Lkpo;->e(Ljava/util/Set;)Liom;
-
-    move-result-object v0
-
-    invoke-static {v0}, Lmqp;->i(Ljava/lang/Object;)Lmqp;
-
-    move-result-object v0
+    invoke-virtual {v1, p1, p2}, Ldrt;->d(Llvp;Lbrg;)V
 
     goto :goto_0
 
-    :cond_1
-    sget-object v0, Lmpx;->a:Lmpx;
+    :cond_0
+    iget-object p1, p0, Ldqo;->e:Lojc;
 
-    :goto_0
-    return-object v0
+    invoke-virtual {p1}, Lojc;->c()Ljava/lang/Object;
 
-    :pswitch_2
-    iget-object v0, p0, Ldqo;->a:Loiw;
+    move-result-object p1
 
-    check-cast v0, Logo;
+    check-cast p1, Llmv;
 
-    invoke-virtual {v0}, Logo;->a()Ljava/util/Set;
+    new-instance p2, Ldqm;
 
-    move-result-object v0
+    invoke-direct {p2, p0}, Ldqm;-><init>(Ldqo;)V
 
-    iget-object v1, p0, Ldqo;->b:Loiw;
+    invoke-interface {p1, p2}, Llmv;->k(Llmu;)V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    invoke-interface {v1}, Loiw;->get()Ljava/lang/Object;
+    monitor-exit p0
 
-    move-result-object v1
+    return-void
 
-    check-cast v1, Lkpo;
+    :catchall_0
+    move-exception p1
 
-    iget-object v2, p0, Ldqo;->c:Loiw;
-
-    invoke-interface {v2}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Ldhi;
-
-    sget-object v3, Ldho;->a:Ldhk;
-
-    invoke-interface {v2}, Ldhi;->e()V
-
-    invoke-interface {v0}, Ljava/util/Set;->isEmpty()Z
-
-    move-result v3
-
-    if-eqz v3, :cond_2
-
-    invoke-interface {v2}, Ldhi;->e()V
-
-    invoke-interface {v2}, Ldhi;->e()V
-
-    sget-object v0, Lmpx;->a:Lmpx;
-
-    goto :goto_1
-
-    :cond_2
-    invoke-virtual {v1, v0}, Lkpo;->e(Ljava/util/Set;)Liom;
-
-    move-result-object v0
-
-    invoke-static {v0}, Lmqp;->i(Ljava/lang/Object;)Lmqp;
-
-    move-result-object v0
-
-    :goto_1
-    return-object v0
-
-    :pswitch_3
-    iget-object v0, p0, Ldqo;->c:Loiw;
-
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljwb;
-
-    iget-object v1, p0, Ldqo;->b:Loiw;
-
-    invoke-interface {v1}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Ldhi;
-
-    iget-object v2, p0, Ldqo;->a:Loiw;
-
-    invoke-interface {v0}, Ljwb;->bm()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/lang/Boolean;
-
-    invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
-
-    move-result v0
-
-    if-nez v0, :cond_3
-
-    sget-object v0, Ldhf;->a:Ldhk;
-
-    invoke-interface {v1}, Ldhi;->e()V
+    monitor-exit p0
 
     goto :goto_2
 
-    :cond_3
-    sget-object v0, Ldhf;->e:Ldhj;
+    :goto_1
+    throw p1
 
-    invoke-interface {v1, v0}, Ldhi;->l(Ldhj;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_4
-
-    check-cast v2, Lest;
-
-    invoke-virtual {v2}, Lest;->a()Lmqp;
-
-    move-result-object v0
-
-    goto :goto_3
-
-    :cond_4
     :goto_2
-    sget-object v0, Lmpx;->a:Lmpx;
-
-    :goto_3
-    return-object v0
-
-    :pswitch_4
-    iget-object v0, p0, Ldqo;->a:Loiw;
-
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/lang/Boolean;
-
-    invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
-
-    move-result v0
-
-    iget-object v1, p0, Ldqo;->c:Loiw;
-
-    invoke-interface {v1}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Ljava/lang/Boolean;
-
-    invoke-virtual {v1}, Ljava/lang/Boolean;->booleanValue()Z
-
-    move-result v1
-
-    iget-object v2, p0, Ldqo;->b:Loiw;
-
-    check-cast v2, Logl;
-
-    iget-object v2, v2, Logl;->a:Ljava/lang/Object;
-
-    check-cast v2, Lmqp;
-
-    if-eqz v0, :cond_6
-
-    if-nez v1, :cond_5
-
-    goto :goto_4
-
-    :cond_5
-    return-object v2
-
-    :cond_6
-    :goto_4
-    sget-object v0, Lmpx;->a:Lmpx;
-
-    return-object v0
-
-    :pswitch_5
-    iget-object v0, p0, Ldqo;->a:Loiw;
-
-    iget-object v1, p0, Ldqo;->c:Loiw;
-
-    check-cast v1, Lfwa;
-
-    invoke-virtual {v1}, Lfwa;->a()Ldbf;
-
-    move-result-object v1
-
-    iget-object v2, p0, Ldqo;->b:Loiw;
-
-    invoke-interface {v2}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Ldhi;
-
-    invoke-virtual {v1}, Ldbf;->j()Z
-
-    move-result v1
-
-    if-nez v1, :cond_8
-
-    sget-object v1, Ldho;->bX:Ldhj;
-
-    invoke-interface {v2, v1}, Ldhi;->l(Ldhj;)Z
-
-    move-result v1
-
-    if-nez v1, :cond_7
-
-    goto :goto_5
-
-    :cond_7
-    check-cast v0, Lest;
-
-    invoke-virtual {v0}, Lest;->a()Lmqp;
-
-    move-result-object v0
-
-    goto :goto_6
-
-    :cond_8
-    :goto_5
-    sget-object v0, Lmpx;->a:Lmpx;
-
-    :goto_6
-    return-object v0
-
-    :pswitch_6
-    iget-object v0, p0, Ldqo;->a:Loiw;
-
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/lang/Boolean;
-
-    invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
-
-    move-result v0
-
-    iget-object v1, p0, Ldqo;->b:Loiw;
-
-    invoke-interface {v1}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Ljava/lang/Boolean;
-
-    invoke-virtual {v1}, Ljava/lang/Boolean;->booleanValue()Z
-
-    move-result v1
-
-    iget-object v2, p0, Ldqo;->c:Loiw;
-
-    check-cast v2, Logl;
-
-    iget-object v2, v2, Logl;->a:Ljava/lang/Object;
-
-    check-cast v2, Lmqp;
-
-    if-eqz v0, :cond_a
-
-    if-nez v1, :cond_9
-
-    goto :goto_7
-
-    :cond_9
-    return-object v2
-
-    :cond_a
-    :goto_7
-    sget-object v0, Lmpx;->a:Lmpx;
-
-    return-object v0
-
-    :cond_b
-    sget-object v0, Lmpx;->a:Lmpx;
-
-    goto :goto_9
-
-    :cond_c
-    :goto_8
-    invoke-virtual {v2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    new-instance v0, Ldom;
-
-    const/16 v1, 0x8
-
-    invoke-direct {v0, v2, v1}, Ldom;-><init>(Loiw;I)V
-
-    invoke-static {v0}, Lmqp;->i(Ljava/lang/Object;)Lmqp;
-
-    move-result-object v0
-
-    :goto_9
-    return-object v0
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_6
-        :pswitch_5
-        :pswitch_4
-        :pswitch_3
-        :pswitch_2
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
+    goto :goto_1
 .end method
 
-.method public final synthetic get()Ljava/lang/Object;
-    .locals 1
+.method final declared-synchronized b()V
+    .locals 2
 
-    iget v0, p0, Ldqo;->d:I
+    monitor-enter p0
 
-    packed-switch v0, :pswitch_data_0
+    :try_start_0
+    iget-object v0, p0, Ldqo;->b:Ljava/util/List;
 
-    invoke-virtual {p0}, Ldqo;->a()Lmqp;
-
-    move-result-object v0
-
-    return-object v0
-
-    :pswitch_0
-    invoke-virtual {p0}, Ldqo;->a()Lmqp;
+    invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object v0
 
-    return-object v0
+    :goto_0
+    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
-    :pswitch_1
-    invoke-virtual {p0}, Ldqo;->a()Lmqp;
+    move-result v1
 
-    move-result-object v0
+    if-eqz v1, :cond_0
 
-    return-object v0
+    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    :pswitch_2
-    invoke-virtual {p0}, Ldqo;->a()Lmqp;
+    move-result-object v1
 
-    move-result-object v0
+    check-cast v1, Ldrt;
 
-    return-object v0
+    invoke-virtual {v1}, Ldrt;->a()V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    :pswitch_3
-    invoke-virtual {p0}, Ldqo;->a()Lmqp;
+    goto :goto_0
 
-    move-result-object v0
+    :cond_0
+    monitor-exit p0
 
-    return-object v0
+    return-void
 
-    :pswitch_4
-    invoke-virtual {p0}, Ldqo;->a()Lmqp;
+    :catchall_0
+    move-exception v0
 
-    move-result-object v0
+    monitor-exit p0
 
-    return-object v0
+    goto :goto_2
 
-    :pswitch_5
-    invoke-virtual {p0}, Ldqo;->a()Lmqp;
+    :goto_1
+    throw v0
 
-    move-result-object v0
-
-    return-object v0
-
-    :pswitch_6
-    invoke-virtual {p0}, Ldqo;->a()Lmqp;
-
-    move-result-object v0
-
-    return-object v0
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_6
-        :pswitch_5
-        :pswitch_4
-        :pswitch_3
-        :pswitch_2
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
+    :goto_2
+    goto :goto_1
 .end method

@@ -1,75 +1,127 @@
-.class public final synthetic Lhak;
+.class public final Lhak;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Ljava/util/function/Predicate;
+.implements Llie;
 
 
 # instance fields
-.field public final synthetic a:I
+.field public final a:Lpih;
+
+.field public final b:Lhen;
+
+.field public c:Ljava/util/List;
+
+.field public d:Lhem;
 
 
 # direct methods
-.method public synthetic constructor <init>(I)V
-    .locals 0
+.method public constructor <init>(Lhen;)V
+    .locals 1
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput p1, p0, Lhak;->a:I
+    invoke-static {}, Lpih;->f()Lpih;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lhak;->a:Lpih;
+
+    new-instance v0, Ljava/util/ArrayList;
+
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+
+    iput-object v0, p0, Lhak;->c:Ljava/util/List;
+
+    iput-object p1, p0, Lhak;->b:Lhen;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic and(Ljava/util/function/Predicate;)Ljava/util/function/Predicate;
-    .locals 0
-
-    invoke-static {p0, p1}, Lj$/util/function/Predicate$-CC;->$default$and(Ljava/util/function/Predicate;Ljava/util/function/Predicate;)Ljava/util/function/Predicate;
-
-    move-result-object p1
-
-    return-object p1
-.end method
-
-.method public final synthetic negate()Ljava/util/function/Predicate;
+.method public final a()I
     .locals 1
 
-    invoke-static {p0}, Lj$/util/function/Predicate$-CC;->$default$negate(Ljava/util/function/Predicate;)Ljava/util/function/Predicate;
+    iget-object v0, p0, Lhak;->c:Ljava/util/List;
+
+    invoke-interface {v0}, Ljava/util/List;->size()I
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public final b()V
+    .locals 2
+
+    invoke-virtual {p0}, Lhak;->close()V
+
+    iget-object v0, p0, Lhak;->a:Lpih;
+
+    invoke-virtual {v0}, Lpih;->isDone()Z
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    iget-object v0, p0, Lhak;->a:Lpih;
+
+    const/4 v1, 0x1
+
+    invoke-virtual {v0, v1}, Lpih;->cancel(Z)Z
+
+    :cond_0
+    iget-object v0, p0, Lhak;->c:Ljava/util/List;
+
+    invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object v0
 
-    return-object v0
+    :goto_0
+    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_1
+
+    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Llmr;
+
+    invoke-interface {v1}, Llmr;->close()V
+
+    goto :goto_0
+
+    :cond_1
+    return-void
 .end method
 
-.method public final synthetic or(Ljava/util/function/Predicate;)Ljava/util/function/Predicate;
-    .locals 0
-
-    invoke-static {p0, p1}, Lj$/util/function/Predicate$-CC;->$default$or(Ljava/util/function/Predicate;Ljava/util/function/Predicate;)Ljava/util/function/Predicate;
-
-    move-result-object p1
-
-    return-object p1
-.end method
-
-.method public final test(Ljava/lang/Object;)Z
+.method public final declared-synchronized close()V
     .locals 1
 
-    iget v0, p0, Lhak;->a:I
+    monitor-enter p0
 
-    check-cast p1, Lkaf;
+    :try_start_0
+    iget-object v0, p0, Lhak;->d:Lhem;
 
-    invoke-static {p1}, Ljzr;->j(Lkaf;)Ljzr;
+    if-eqz v0, :cond_0
 
-    move-result-object p1
+    invoke-interface {v0}, Lhem;->a()V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    invoke-static {v0}, Linb;->F(I)Ljzr;
+    :cond_0
+    monitor-exit p0
 
-    move-result-object v0
+    return-void
 
-    invoke-virtual {p1, v0}, Ljzr;->m(Ljzr;)Z
+    :catchall_0
+    move-exception v0
 
-    move-result p1
+    monitor-exit p0
 
-    return p1
+    throw v0
 .end method

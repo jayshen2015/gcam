@@ -3,7 +3,7 @@
 
 
 # static fields
-.field private static final a:Lnak;
+.field private static final a:Louj;
 
 
 # instance fields
@@ -16,11 +16,11 @@
 
     const-string v0, "com/google/android/apps/camera/legacy/app/activity/CameraDeepLinkActivity"
 
-    invoke-static {v0}, Lnak;->h(Ljava/lang/String;)Lnak;
+    invoke-static {v0}, Louj;->h(Ljava/lang/String;)Louj;
 
     move-result-object v0
 
-    sput-object v0, Lcom/google/android/apps/camera/legacy/app/activity/CameraDeepLinkActivity;->a:Lnak;
+    sput-object v0, Lcom/google/android/apps/camera/legacy/app/activity/CameraDeepLinkActivity;->a:Louj;
 
     return-void
 .end method
@@ -38,15 +38,15 @@
 
     new-instance v0, Landroid/content/Intent;
 
-    const-string v1, "android.intent.action.VIEW"
+    const-string v1, "https://play.google.com/store/apps/details?id=com.google.android.GoogleCamera"
 
-    const-string v2, "https://play.google.com/store/apps/details?id=com.google.android.GoogleCamera"
+    invoke-static {v1}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
 
-    invoke-static {v2}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
+    move-result-object v1
 
-    move-result-object v2
+    const-string v2, "android.intent.action.VIEW"
 
-    invoke-direct {v0, v1, v2}, Landroid/content/Intent;-><init>(Ljava/lang/String;Landroid/net/Uri;)V
+    invoke-direct {v0, v2, v1}, Landroid/content/Intent;-><init>(Ljava/lang/String;Landroid/net/Uri;)V
 
     const-string v1, "com.android.vending"
 
@@ -64,7 +64,7 @@
 
 # virtual methods
 .method protected final onCreate(Landroid/os/Bundle;)V
-    .locals 9
+    .locals 7
 
     invoke-super {p0, p1}, Landroid/app/Activity;->onCreate(Landroid/os/Bundle;)V
 
@@ -72,19 +72,19 @@
 
     iput-boolean p1, p0, Lcom/google/android/apps/camera/legacy/app/activity/CameraDeepLinkActivity;->b:Z
 
-    const-class p1, Lcom/google/android/apps/camera/legacy/app/activity/main/CameraActivity;
+    new-instance p1, Landroid/content/Intent;
 
-    new-instance v0, Landroid/content/Intent;
+    const-class v0, Lcom/google/android/apps/camera/legacy/app/activity/main/CameraActivity;
 
-    invoke-direct {v0, p0, p1}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
+    invoke-direct {p1, p0, v0}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
 
-    const-string p1, "android.media.action.STILL_IMAGE_CAMERA"
+    const-string v0, "android.media.action.STILL_IMAGE_CAMERA"
 
-    invoke-virtual {v0, p1}, Landroid/content/Intent;->setAction(Ljava/lang/String;)Landroid/content/Intent;
+    invoke-virtual {p1, v0}, Landroid/content/Intent;->setAction(Ljava/lang/String;)Landroid/content/Intent;
 
     const/high16 v1, 0x10000000
 
-    invoke-virtual {v0, v1}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
+    invoke-virtual {p1, v1}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
 
     invoke-virtual {p0}, Lcom/google/android/apps/camera/legacy/app/activity/CameraDeepLinkActivity;->getIntent()Landroid/content/Intent;
 
@@ -98,19 +98,19 @@
 
     if-nez v1, :cond_0
 
-    sget-object p1, Lcom/google/android/apps/camera/legacy/app/activity/CameraDeepLinkActivity;->a:Lnak;
+    sget-object v0, Lcom/google/android/apps/camera/legacy/app/activity/CameraDeepLinkActivity;->a:Louj;
 
-    invoke-virtual {p1}, Lnaf;->c()Lnaz;
+    invoke-virtual {v0}, Loue;->c()Lova;
 
-    move-result-object p1
+    move-result-object v0
 
-    const-string v1, "Received intent to launch DeepLinkActivity with null intentUri"
+    const/16 v1, 0x5d8
 
-    const/16 v3, 0x739
+    const-string v3, "Received intent to launch DeepLinkActivity with null intentUri"
 
-    invoke-static {p1, v1, v3}, Ld;->g(Lnaz;Ljava/lang/String;C)V
+    invoke-static {v0, v3, v1}, Ld;->v(Lova;Ljava/lang/String;C)V
 
-    invoke-virtual {p0, v0}, Lcom/google/android/apps/camera/legacy/app/activity/CameraDeepLinkActivity;->startActivity(Landroid/content/Intent;)V
+    invoke-virtual {p0, p1}, Lcom/google/android/apps/camera/legacy/app/activity/CameraDeepLinkActivity;->startActivity(Landroid/content/Intent;)V
 
     iput-boolean v2, p0, Lcom/google/android/apps/camera/legacy/app/activity/CameraDeepLinkActivity;->b:Z
 
@@ -152,69 +152,59 @@
 
     invoke-virtual {v4}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    sget-object v5, Ljava/util/Locale;->ROOT:Ljava/util/Locale;
+    const-class v5, Ljrl;
 
-    invoke-virtual {v4, v5}, Ljava/lang/String;->toUpperCase(Ljava/util/Locale;)Ljava/lang/String;
+    sget-object v6, Ljava/util/Locale;->ROOT:Ljava/util/Locale;
 
-    move-result-object v5
-
-    const-class v6, Lika;
-
-    invoke-static {v6, v5}, Lmqh;->a(Ljava/lang/Class;Ljava/lang/String;)Lmqp;
-
-    move-result-object v5
-
-    invoke-virtual {v5}, Lmqp;->g()Z
-
-    move-result v6
-
-    if-eqz v6, :cond_2
-
-    invoke-virtual {v5}, Lmqp;->c()Ljava/lang/Object;
+    invoke-virtual {v4, v6}, Ljava/lang/String;->toUpperCase(Ljava/util/Locale;)Ljava/lang/String;
 
     move-result-object v6
 
-    check-cast v6, Lika;
+    invoke-static {v5, v6}, Loit;->a(Ljava/lang/Class;Ljava/lang/String;)Lojc;
 
-    sget v7, Lijy;->a:I
+    move-result-object v5
 
-    sget-object v7, Lika;->g:Lika;
-
-    sget-object v8, Lika;->b:Lika;
-
-    invoke-static {v7, v8}, Lmwn;->I(Ljava/lang/Object;Ljava/lang/Object;)Lmwn;
-
-    move-result-object v7
-
-    invoke-virtual {v7, v6}, Lmwn;->contains(Ljava/lang/Object;)Z
+    invoke-virtual {v5}, Lojc;->g()Z
 
     move-result v6
 
     if-eqz v6, :cond_2
 
-    invoke-virtual {v0}, Landroid/content/Intent;->getAction()Ljava/lang/String;
+    invoke-virtual {v5}, Lojc;->c()Ljava/lang/Object;
+
+    move-result-object v6
+
+    check-cast v6, Ljrl;
+
+    invoke-static {v6}, Ljri;->e(Ljrl;)Z
+
+    move-result v6
+
+    if-eqz v6, :cond_2
+
+    invoke-virtual {p1}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v4
 
-    invoke-virtual {p1, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v0, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v4
 
     if-eqz v4, :cond_1
 
-    invoke-virtual {v5}, Lmqp;->c()Ljava/lang/Object;
+    invoke-virtual {v5}, Lojc;->c()Ljava/lang/Object;
 
     move-result-object v4
 
-    check-cast v4, Lika;
+    check-cast v4, Ljrl;
 
-    invoke-virtual {v4}, Lika;->toString()Ljava/lang/String;
+    invoke-virtual {v4}, Ljrl;->toString()Ljava/lang/String;
 
     move-result-object v4
 
     const-string v5, "android.intent.extra.STILL_IMAGE_MODE"
 
-    invoke-virtual {v0, v5, v4}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
+    invoke-virtual {p1, v5, v4}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
     goto :goto_0
 
@@ -228,17 +218,17 @@
     throw p1
 
     :cond_2
-    sget-object p1, Lcom/google/android/apps/camera/legacy/app/activity/CameraDeepLinkActivity;->a:Lnak;
+    sget-object p1, Lcom/google/android/apps/camera/legacy/app/activity/CameraDeepLinkActivity;->a:Louj;
 
-    invoke-virtual {p1}, Lnaf;->c()Lnaz;
+    invoke-virtual {p1}, Loue;->c()Lova;
 
     move-result-object p1
 
-    const-string v0, "Unsupported mode \'%s\', perhaps you need to upgrade"
+    const/16 v0, 0x5d9
 
-    const/16 v1, 0x73a
+    const-string v1, "Unsupported mode \'%s\', perhaps you need to upgrade"
 
-    invoke-static {p1, v0, v4, v1}, Ld;->j(Lnaz;Ljava/lang/String;Ljava/lang/Object;C)V
+    invoke-static {p1, v1, v4, v0}, Ld;->u(Lova;Ljava/lang/String;Ljava/lang/Object;C)V
 
     invoke-direct {p0}, Lcom/google/android/apps/camera/legacy/app/activity/CameraDeepLinkActivity;->a()V
 
@@ -265,7 +255,7 @@
 
     const-string v5, "android.intent.extra.TIMER_DURATION_SECONDS"
 
-    invoke-virtual {v0, v5, v4}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
+    invoke-virtual {p1, v5, v4}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 
     goto/16 :goto_0
 
@@ -290,26 +280,26 @@
 
     const-string v5, "android.intent.extra.USE_FRONT_CAMERA"
 
-    invoke-virtual {v0, v5, v4}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Z)Landroid/content/Intent;
+    invoke-virtual {p1, v5, v4}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Z)Landroid/content/Intent;
 
     goto/16 :goto_0
 
     :cond_5
-    sget-object p1, Lcom/google/android/apps/camera/legacy/app/activity/CameraDeepLinkActivity;->a:Lnak;
+    sget-object p1, Lcom/google/android/apps/camera/legacy/app/activity/CameraDeepLinkActivity;->a:Louj;
 
-    invoke-virtual {p1}, Lnaf;->c()Lnaz;
-
-    move-result-object p1
-
-    check-cast p1, Lnah;
-
-    const/16 v0, 0x738
-
-    invoke-interface {p1, v0}, Lnah;->G(I)Lnaz;
+    invoke-virtual {p1}, Loue;->c()Lova;
 
     move-result-object p1
 
-    check-cast p1, Lnah;
+    check-cast p1, Loug;
+
+    const/16 v0, 0x5d7
+
+    invoke-interface {p1, v0}, Loug;->G(I)Lova;
+
+    move-result-object p1
+
+    check-cast p1, Loug;
 
     invoke-virtual {v1, v4}, Landroid/net/Uri;->getQueryParameter(Ljava/lang/String;)Ljava/lang/String;
 
@@ -317,14 +307,14 @@
 
     const-string v1, "Unknown query parameter %s, with value %s"
 
-    invoke-interface {p1, v1, v4, v0}, Lnah;->z(Ljava/lang/String;Ljava/lang/Object;Ljava/lang/Object;)V
+    invoke-interface {p1, v1, v4, v0}, Loug;->y(Ljava/lang/String;Ljava/lang/Object;Ljava/lang/Object;)V
 
     invoke-direct {p0}, Lcom/google/android/apps/camera/legacy/app/activity/CameraDeepLinkActivity;->a()V
 
     return-void
 
     :cond_6
-    invoke-virtual {p0, v0}, Lcom/google/android/apps/camera/legacy/app/activity/CameraDeepLinkActivity;->startActivity(Landroid/content/Intent;)V
+    invoke-virtual {p0, p1}, Lcom/google/android/apps/camera/legacy/app/activity/CameraDeepLinkActivity;->startActivity(Landroid/content/Intent;)V
 
     iput-boolean v2, p0, Lcom/google/android/apps/camera/legacy/app/activity/CameraDeepLinkActivity;->b:Z
 

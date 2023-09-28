@@ -12,25 +12,17 @@
 .method public constructor <init>()V
     .locals 3
 
-    invoke-static {}, Lcom/google/googlex/gcam/GcamModuleJNI;->new_FaceInfo__SWIG_0()J
+    invoke-static {}, Lcom/google/googlex/gcam/GcamModuleJNI;->new_FaceInfo()J
 
     move-result-wide v0
 
-    const/4 v2, 0x1
-
-    invoke-direct {p0, v0, v1, v2}, Lcom/google/googlex/gcam/FaceInfo;-><init>(JZ)V
-
-    return-void
-.end method
-
-.method public constructor <init>(JZ)V
-    .locals 0
-
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-boolean p3, p0, Lcom/google/googlex/gcam/FaceInfo;->b:Z
+    const/4 v2, 0x1
 
-    iput-wide p1, p0, Lcom/google/googlex/gcam/FaceInfo;->a:J
+    iput-boolean v2, p0, Lcom/google/googlex/gcam/FaceInfo;->b:Z
+
+    iput-wide v0, p0, Lcom/google/googlex/gcam/FaceInfo;->a:J
 
     return-void
 .end method
@@ -104,36 +96,6 @@
     monitor-exit p0
 
     throw v0
-.end method
-
-.method public final c(F)V
-    .locals 2
-
-    iget-wide v0, p0, Lcom/google/googlex/gcam/FaceInfo;->a:J
-
-    invoke-static {v0, v1, p0, p1}, Lcom/google/googlex/gcam/GcamModuleJNI;->FaceInfo_pos_x_set(JLcom/google/googlex/gcam/FaceInfo;F)V
-
-    return-void
-.end method
-
-.method public final d(F)V
-    .locals 2
-
-    iget-wide v0, p0, Lcom/google/googlex/gcam/FaceInfo;->a:J
-
-    invoke-static {v0, v1, p0, p1}, Lcom/google/googlex/gcam/GcamModuleJNI;->FaceInfo_pos_y_set(JLcom/google/googlex/gcam/FaceInfo;F)V
-
-    return-void
-.end method
-
-.method public final e(F)V
-    .locals 2
-
-    iget-wide v0, p0, Lcom/google/googlex/gcam/FaceInfo;->a:J
-
-    invoke-static {v0, v1, p0, p1}, Lcom/google/googlex/gcam/GcamModuleJNI;->FaceInfo_size_set(JLcom/google/googlex/gcam/FaceInfo;F)V
-
-    return-void
 .end method
 
 .method protected final finalize()V

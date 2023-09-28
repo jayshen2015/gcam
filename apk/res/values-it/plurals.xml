@@ -1,12 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <plurals name="accessibility_timelapse_manual_record_speed_desc">
-        <item quantity="other">Velocità time-lapse: %dx</item>
-        <item quantity="one">Velocità time-lapse: %dx</item>
-    </plurals>
-    <plurals name="number_of_cropped_face">
-        <item quantity="other">%d tagliati.</item>
-        <item quantity="one">Uno tagliato.</item>
+    <plurals name="number_of_faces_announcement">
+        <item quantity="other">%1$d volti.</item>
+        <item quantity="one">%1$d faces.</item>
     </plurals>
     <plurals name="photos_remaining">
         <item quantity="other">Circa %s foto</item>
@@ -14,15 +10,15 @@
     </plurals>
     <plurals name="social_apps_selected">
         <item quantity="other">(%1$d app selezionate)</item>
-        <item quantity="one">(%1$d app selezionata)</item>
+        <item quantity="one">(%1$d app selezionate)</item>
     </plurals>
     <plurals name="social_share_info">
-        <item quantity="other">"Condividi rapidamente foto e video su app social dall'app Fotocamera. Puoi scegliere fino a %1$d app. Non è possibile condividere foto e video salvati nella Cartella protetta."</item>
-        <item quantity="one">"Condividi rapidamente foto e video su app social dall'app Fotocamera. Puoi scegliere %1$d app. Non è possibile condividere foto e video salvati nella Cartella protetta."</item>
+        <item quantity="other">"Condividi rapidamente foto e video su app social direttamente dall'app Fotocamera. Puoi scegliere fino a %1$d app. Non è possibile condividere foto e video salvati nella Cartella bloccata."</item>
+        <item quantity="one">"Condividi rapidamente foto e video su app social direttamente dall'app Fotocamera. Puoi scegliere soltanto %1$d app. Non è possibile condividere foto e video salvati nella Cartella bloccata."</item>
     </plurals>
     <plurals name="social_share_select_error">
         <item quantity="other">Puoi scegliere fino a %1$d app</item>
-        <item quantity="one">Puoi scegliere %1$d app</item>
+        <item quantity="one">Puoi scegliere fino a %1$d app</item>
     </plurals>
     <plurals name="time_difference_short_days">
         <item quantity="other">%d g</item>
@@ -50,6 +46,6 @@
     </plurals>
     <plurals name="videos_remaining">
         <item quantity="other">%s minuti di video</item>
-        <item quantity="one">%s minuto di video</item>
+        <item quantity="one">%s minuti di video</item>
     </plurals>
 </resources>

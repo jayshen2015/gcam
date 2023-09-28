@@ -1,37 +1,36 @@
-.class public final Looi;
-.super Ljava/lang/Object;
-
-# interfaces
-.implements Looc;
+.class final Looi;
+.super Lotj;
 
 
 # instance fields
-.field public final a:Looc;
-
-.field public final b:Lomk;
+.field private final a:Loom;
 
 
 # direct methods
-.method public constructor <init>(Looc;Lomk;)V
-    .locals 0
+.method public constructor <init>(Loom;I)V
+    .locals 1
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-virtual {p1}, Loom;->size()I
 
-    iput-object p1, p0, Looi;->a:Looc;
+    move-result v0
 
-    iput-object p2, p0, Looi;->b:Lomk;
+    invoke-direct {p0, v0, p2}, Lotj;-><init>(II)V
+
+    iput-object p1, p0, Looi;->a:Loom;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Ljava/util/Iterator;
+.method protected final a(I)Ljava/lang/Object;
     .locals 1
 
-    new-instance v0, Looh;
+    iget-object v0, p0, Looi;->a:Loom;
 
-    invoke-direct {v0, p0}, Looh;-><init>(Looi;)V
+    invoke-virtual {v0, p1}, Loom;->get(I)Ljava/lang/Object;
 
-    return-object v0
+    move-result-object p1
+
+    return-object p1
 .end method

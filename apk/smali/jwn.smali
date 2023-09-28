@@ -1,98 +1,39 @@
-.class public final enum Ljwn;
-.super Ljava/lang/Enum;
+.class public final synthetic Ljwn;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Llht;
 
 
-# static fields
-.field public static final enum a:Ljwn;
-
-.field public static final enum b:Ljwn;
-
-.field public static final enum c:Ljwn;
-
-.field public static final enum d:Ljwn;
-
-.field private static final synthetic e:[Ljwn;
+# instance fields
+.field public final synthetic a:Ljwq;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 9
-
-    new-instance v0, Ljwn;
-
-    const-string v1, "READY"
-
-    const/4 v2, 0x0
-
-    invoke-direct {v0, v1, v2}, Ljwn;-><init>(Ljava/lang/String;I)V
-
-    sput-object v0, Ljwn;->a:Ljwn;
-
-    new-instance v1, Ljwn;
-
-    const-string v3, "STARTED"
-
-    const/4 v4, 0x1
-
-    invoke-direct {v1, v3, v4}, Ljwn;-><init>(Ljava/lang/String;I)V
-
-    sput-object v1, Ljwn;->b:Ljwn;
-
-    new-instance v3, Ljwn;
-
-    const-string v5, "PAUSED"
-
-    const/4 v6, 0x2
-
-    invoke-direct {v3, v5, v6}, Ljwn;-><init>(Ljava/lang/String;I)V
-
-    sput-object v3, Ljwn;->c:Ljwn;
-
-    new-instance v5, Ljwn;
-
-    const-string v7, "STOPPED"
-
-    const/4 v8, 0x3
-
-    invoke-direct {v5, v7, v8}, Ljwn;-><init>(Ljava/lang/String;I)V
-
-    sput-object v5, Ljwn;->d:Ljwn;
-
-    const/4 v7, 0x4
-
-    new-array v7, v7, [Ljwn;
-
-    aput-object v0, v7, v2
-
-    aput-object v1, v7, v4
-
-    aput-object v3, v7, v6
-
-    aput-object v5, v7, v8
-
-    sput-object v7, Ljwn;->e:[Ljwn;
-
-    return-void
-.end method
-
-.method private constructor <init>(Ljava/lang/String;I)V
+.method public synthetic constructor <init>(Ljwq;)V
     .locals 0
 
-    invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Ljwn;->a:Ljwq;
 
     return-void
 .end method
 
-.method public static values()[Ljwn;
-    .locals 1
 
-    sget-object v0, Ljwn;->e:[Ljwn;
+# virtual methods
+.method public final a(Ljava/lang/Object;)V
+    .locals 2
 
-    invoke-virtual {v0}, [Ljwn;->clone()Ljava/lang/Object;
+    iget-object p1, p0, Ljwn;->a:Ljwq;
 
-    move-result-object v0
+    iget-object p1, p1, Ljwq;->b:Lcom/google/android/apps/camera/stats/timing/CameraActivityTiming;
 
-    check-cast v0, [Ljwn;
+    sget-object v0, Lijf;->n:Lijf;
 
-    return-object v0
+    sget-object v1, Lcom/google/android/apps/camera/stats/timing/CameraActivityTiming;->a:Lijr;
+
+    invoke-virtual {p1, v0, v1}, Lijs;->j(Ljava/lang/Enum;Lijr;)V
+
+    return-void
 .end method

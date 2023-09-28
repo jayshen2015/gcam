@@ -1,97 +1,85 @@
 .class public final Ljnv;
-.super Ljgm;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Lpys;
+
+
+# instance fields
+.field private final a:Ljnu;
+
+.field private final b:Lqkg;
+
+.field private final c:Lqkg;
+
+.field private final d:Lqkg;
 
 
 # direct methods
-.method public constructor <init>(Landroid/content/Context;Landroid/os/Looper;Ljge;Ljdf;Ljdg;)V
-    .locals 7
+.method public constructor <init>(Ljnu;Lqkg;Lqkg;Lqkg;)V
+    .locals 0
 
-    const/16 v3, 0x33
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    move-object v0, p0
+    iput-object p1, p0, Ljnv;->a:Ljnu;
 
-    move-object v1, p1
+    iput-object p2, p0, Ljnv;->b:Lqkg;
 
-    move-object v2, p2
+    iput-object p3, p0, Ljnv;->c:Lqkg;
 
-    move-object v4, p3
-
-    move-object v5, p4
-
-    move-object v6, p5
-
-    invoke-direct/range {v0 .. v6}, Ljgm;-><init>(Landroid/content/Context;Landroid/os/Looper;ILjge;Ljei;Ljff;)V
+    iput-object p4, p0, Ljnv;->d:Lqkg;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()I
-    .locals 1
+.method public final bridge synthetic get()Ljava/lang/Object;
+    .locals 6
 
-    const v0, 0x8f95d0
+    iget-object v0, p0, Ljnv;->a:Ljnu;
 
-    return v0
-.end method
+    iget-object v1, p0, Ljnv;->b:Lqkg;
 
-.method protected final synthetic b(Landroid/os/IBinder;)Landroid/os/IInterface;
-    .locals 2
+    check-cast v1, Lemi;
 
-    if-nez p1, :cond_0
+    invoke-virtual {v1}, Lemi;->a()Lih;
 
-    const/4 p1, 0x0
+    move-result-object v1
 
-    goto :goto_0
+    iget-object v2, p0, Ljnv;->c:Lqkg;
 
-    :cond_0
-    const-string v0, "com.google.android.gms.phenotype.internal.IPhenotypeService"
+    invoke-interface {v2}, Lqkg;->get()Ljava/lang/Object;
 
-    invoke-interface {p1, v0}, Landroid/os/IBinder;->queryLocalInterface(Ljava/lang/String;)Landroid/os/IInterface;
+    move-result-object v2
+
+    check-cast v2, Llar;
+
+    iget-object v3, p0, Ljnv;->d:Lqkg;
+
+    invoke-interface {v3}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v3
+
+    check-cast v3, Lljf;
+
+    invoke-static {}, Lpih;->f()Lpih;
+
+    move-result-object v4
+
+    new-instance v5, Ljnt;
+
+    invoke-direct {v5, v0, v1, v3, v4}, Ljnt;-><init>(Ljnu;Lih;Lljf;Lpih;)V
+
+    invoke-virtual {v2, v5}, Llar;->c(Ljava/lang/Runnable;)V
+
+    invoke-static {v4}, Lplk;->ae(Ljava/util/concurrent/Future;)Ljava/lang/Object;
 
     move-result-object v0
 
-    instance-of v1, v0, Ljnu;
+    check-cast v0, Ljnr;
 
-    if-eqz v1, :cond_1
-
-    move-object p1, v0
-
-    check-cast p1, Ljnu;
-
-    goto :goto_0
-
-    :cond_1
-    new-instance v0, Ljnu;
-
-    invoke-direct {v0, p1}, Ljnu;-><init>(Landroid/os/IBinder;)V
-
-    move-object p1, v0
-
-    :goto_0
-    return-object p1
-.end method
-
-.method protected final c()Ljava/lang/String;
-    .locals 1
-
-    const-string v0, "com.google.android.gms.phenotype.internal.IPhenotypeService"
-
-    return-object v0
-.end method
-
-.method protected final d()Ljava/lang/String;
-    .locals 1
-
-    const-string v0, "com.google.android.gms.phenotype.service.START"
-
-    return-object v0
-.end method
-
-.method public final e()[Ljca;
-    .locals 1
-
-    sget-object v0, Ljnj;->g:[Ljca;
+    invoke-static {v0}, Lqmd;->ae(Ljava/lang/Object;)V
 
     return-object v0
 .end method

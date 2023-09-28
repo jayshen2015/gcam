@@ -1,175 +1,177 @@
 .class public final Lgrv;
-.super Lgrs;
+.super Ljava/lang/Object;
 
 # interfaces
-.implements Lhiv;
+.implements Lgrs;
 
 
 # instance fields
-.field public final a:Lcom/google/android/apps/camera/progressoverlay/ProgressOverlay;
+.field private final a:Lcom/google/android/apps/camera/stats/ViewfinderJankSession;
 
-.field public b:Z
-
-.field public final c:Lhiu;
-
-.field public final d:Lhiw;
-
-.field public final e:Lhiw;
+.field private b:D
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/apps/camera/progressoverlay/ProgressOverlay;Lgrn;)V
-    .locals 4
+.method public constructor <init>(Lcom/google/android/apps/camera/stats/ViewfinderJankSession;)V
+    .locals 2
 
-    invoke-direct {p0}, Lgrs;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-static {}, Ljuh;->a()V
+    const-wide v0, 0x4040800000000000L    # 33.0
 
-    iput-object p1, p0, Lgrv;->a:Lcom/google/android/apps/camera/progressoverlay/ProgressOverlay;
+    iput-wide v0, p0, Lgrv;->b:D
 
-    new-instance p1, Lgrk;
-
-    invoke-direct {p1, p0}, Lgrk;-><init>(Lgrv;)V
-
-    new-instance v0, Lhiw;
-
-    const/4 v1, 0x0
-
-    new-array v2, v1, [Lhis;
-
-    invoke-direct {v0, p1, v2}, Lhiw;-><init>(Lhis;[Lhis;)V
-
-    iput-object v0, p0, Lgrv;->d:Lhiw;
-
-    new-instance p1, Lgrl;
-
-    invoke-direct {p1, p0}, Lgrl;-><init>(Lgrv;)V
-
-    new-instance v2, Lhiw;
-
-    const/4 v3, 0x1
-
-    new-array v3, v3, [Lhis;
-
-    aput-object p2, v3, v1
-
-    invoke-direct {v2, p1, v3}, Lhiw;-><init>(Lhis;[Lhis;)V
-
-    iput-object v2, p0, Lgrv;->e:Lhiw;
-
-    new-instance p1, Lhiu;
-
-    invoke-direct {p1, v0, v1}, Lhiu;-><init>(Lhiw;Z)V
-
-    iput-object p1, p0, Lgrv;->c:Lhiu;
-
-    invoke-virtual {p1}, Lhiu;->f()V
+    iput-object p1, p0, Lgrv;->a:Lcom/google/android/apps/camera/stats/ViewfinderJankSession;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()V
-    .locals 1
+.method public final a(Llzv;DD)V
+    .locals 16
 
-    iget-object v0, p0, Lgrv;->c:Lhiu;
+    move-object/from16 v1, p0
 
-    invoke-virtual {v0}, Lhiu;->a()Lhiw;
+    move-wide/from16 v2, p2
 
-    move-result-object v0
+    iget-object v0, v1, Lgrv;->a:Lcom/google/android/apps/camera/stats/ViewfinderJankSession;
 
-    if-nez v0, :cond_0
+    iget v4, v0, Lcom/google/android/apps/camera/stats/ViewfinderJankSession;->d:I
 
-    return-void
+    add-int/lit8 v4, v4, 0x1
+
+    iput v4, v0, Lcom/google/android/apps/camera/stats/ViewfinderJankSession;->d:I
+
+    iget-wide v4, v1, Lgrv;->b:D
+
+    const-wide v6, 0x4040800000000000L    # 33.0
+
+    cmpl-double v8, v4, v6
+
+    if-lez v8, :cond_4
+
+    cmpl-double v8, v2, v6
+
+    if-lez v8, :cond_4
+
+    sub-double v8, v2, v4
+
+    div-double/2addr v8, v4
+
+    const-wide/high16 v10, 0x3fe0000000000000L    # 0.5
+
+    cmpl-double v12, v8, v10
+
+    if-ltz v12, :cond_4
+
+    iget-object v12, v0, Lcom/google/android/apps/camera/stats/ViewfinderJankSession;->a:Ljava/lang/Object;
+
+    monitor-enter v12
+
+    cmpl-double v13, v8, v10
+
+    if-ltz v13, :cond_0
+
+    :try_start_0
+    iget v10, v0, Lcom/google/android/apps/camera/stats/ViewfinderJankSession;->e:I
+
+    add-int/lit8 v10, v10, 0x1
+
+    iput v10, v0, Lcom/google/android/apps/camera/stats/ViewfinderJankSession;->e:I
+
+    goto :goto_0
+
+    :catchall_0
+    move-exception v0
+
+    goto :goto_1
 
     :cond_0
-    iget-object v0, p0, Lgrv;->c:Lhiu;
+    :goto_0
+    const-wide/high16 v10, 0x3ff8000000000000L    # 1.5
 
-    invoke-virtual {v0}, Lhiu;->a()Lhiw;
+    cmpl-double v13, v8, v10
 
-    move-result-object v0
+    if-ltz v13, :cond_1
 
-    iget-object v0, v0, Lhiw;->a:Lhis;
+    iget v13, v0, Lcom/google/android/apps/camera/stats/ViewfinderJankSession;->f:I
 
-    check-cast v0, Lgrs;
+    add-int/lit8 v13, v13, 0x1
 
-    invoke-virtual {v0}, Lgrs;->a()V
+    iput v13, v0, Lcom/google/android/apps/camera/stats/ViewfinderJankSession;->f:I
+
+    :cond_1
+    const-wide/high16 v13, 0x4014000000000000L    # 5.0
+
+    cmpl-double v15, v8, v13
+
+    if-ltz v15, :cond_2
+
+    iget v13, v0, Lcom/google/android/apps/camera/stats/ViewfinderJankSession;->g:I
+
+    add-int/lit8 v13, v13, 0x1
+
+    iput v13, v0, Lcom/google/android/apps/camera/stats/ViewfinderJankSession;->g:I
+
+    :cond_2
+    cmpl-double v13, v8, v10
+
+    if-ltz v13, :cond_3
+
+    move-object/from16 v8, p1
+
+    invoke-static {v8, v2, v3, v4, v5}, Lcom/google/android/apps/camera/stats/ViewfinderJankSession;->c(Llzv;DD)Lpbo;
+
+    move-result-object v4
+
+    iget-object v5, v0, Lcom/google/android/apps/camera/stats/ViewfinderJankSession;->c:Ljava/util/List;
+
+    invoke-interface {v5, v4}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    invoke-virtual {v0, v4}, Lcom/google/android/apps/camera/stats/ViewfinderJankSession;->a(Lpbo;)V
+
+    :cond_3
+    monitor-exit v12
+
+    goto :goto_2
+
+    :goto_1
+    monitor-exit v12
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw v0
+
+    :cond_4
+    :goto_2
+    cmpl-double v0, v2, v6
+
+    if-lez v0, :cond_6
+
+    iget-wide v4, v1, Lgrv;->b:D
+
+    cmpl-double v0, v2, v4
+
+    if-lez v0, :cond_5
+
+    const-wide/high16 v6, 0x4024000000000000L    # 10.0
+
+    mul-double v4, v4, v6
+
+    add-double/2addr v2, v4
+
+    const-wide/high16 v4, 0x4026000000000000L    # 11.0
+
+    div-double/2addr v2, v4
+
+    iput-wide v2, v1, Lgrv;->b:D
 
     return-void
-.end method
 
-.method public final b()V
-    .locals 1
+    :cond_5
+    iput-wide v2, v1, Lgrv;->b:D
 
-    iget-object v0, p0, Lgrv;->c:Lhiu;
-
-    invoke-virtual {v0}, Lhiu;->a()Lhiw;
-
-    move-result-object v0
-
-    if-nez v0, :cond_0
-
-    return-void
-
-    :cond_0
-    iget-object v0, p0, Lgrv;->c:Lhiu;
-
-    invoke-virtual {v0}, Lhiu;->a()Lhiw;
-
-    move-result-object v0
-
-    iget-object v0, v0, Lhiw;->a:Lhis;
-
-    check-cast v0, Lgrs;
-
-    invoke-virtual {v0}, Lgrs;->b()V
-
-    return-void
-.end method
-
-.method public final e()V
-    .locals 1
-
-    iget-object v0, p0, Lgrv;->c:Lhiu;
-
-    invoke-virtual {v0}, Lhiu;->b()V
-
-    iget-object v0, p0, Lgrv;->d:Lhiw;
-
-    invoke-virtual {v0}, Lhiw;->e()V
-
-    iget-object v0, p0, Lgrv;->e:Lhiw;
-
-    invoke-virtual {v0}, Lhiw;->e()V
-
-    return-void
-.end method
-
-.method public final f()V
-    .locals 1
-
-    iget-object v0, p0, Lgrv;->c:Lhiu;
-
-    invoke-virtual {v0}, Lhiu;->c()V
-
-    return-void
-.end method
-
-.method public final g()V
-    .locals 1
-
-    iget-object v0, p0, Lgrv;->c:Lhiu;
-
-    invoke-virtual {v0}, Lhiu;->d()V
-
-    return-void
-.end method
-
-.method public final h()V
-    .locals 0
-
-    invoke-static {p0}, Ljcb;->l(Lhiv;)V
-
+    :cond_6
     return-void
 .end method

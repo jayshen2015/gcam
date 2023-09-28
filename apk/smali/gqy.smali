@@ -1,40 +1,86 @@
 .class public final Lgqy;
-.super Ljava/lang/Object;
+.super Lldn;
 
 
 # instance fields
-.field public final a:I
-
-.field public final b:I
-
-.field public final c:Ljava/lang/Object;
+.field private final a:Lgqx;
 
 
 # direct methods
-.method public constructor <init>(Lkab;II)V
+.method public constructor <init>(Llda;Lgqx;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0, p1}, Lldn;-><init>(Llda;)V
 
-    iput-object p1, p0, Lgqy;->c:Ljava/lang/Object;
-
-    iput p3, p0, Lgqy;->a:I
-
-    iput p2, p0, Lgqy;->b:I
+    iput-object p2, p0, Lgqy;->a:Lgqx;
 
     return-void
 .end method
 
-.method public constructor <init>([BII)V
+
+# virtual methods
+.method protected final bridge synthetic b(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 2
+
+    check-cast p1, Ljava/lang/String;
+
+    iget-object v0, p0, Lgqy;->a:Lgqx;
+
+    sget-object v1, Lgqx;->b:Lgqx;
+
+    iget-object v1, v1, Lgqx;->d:Ljava/lang/String;
+
+    invoke-virtual {v1, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    sget-object v0, Lgqx;->b:Lgqx;
+
+    goto :goto_0
+
+    :cond_0
+    sget-object v1, Lgqx;->c:Lgqx;
+
+    iget-object v1, v1, Lgqx;->d:Ljava/lang/String;
+
+    invoke-virtual {v1, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_1
+
+    sget-object v0, Lgqx;->c:Lgqx;
+
+    goto :goto_0
+
+    :cond_1
+    sget-object v1, Lgqx;->a:Lgqx;
+
+    iget-object v1, v1, Lgqx;->d:Ljava/lang/String;
+
+    invoke-virtual {v1, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result p1
+
+    if-eqz p1, :cond_2
+
+    sget-object p1, Lgqx;->a:Lgqx;
+
+    return-object p1
+
+    :cond_2
+    :goto_0
+    return-object v0
+.end method
+
+.method protected final synthetic c(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    check-cast p1, Lgqx;
 
-    iput-object p1, p0, Lgqy;->c:Ljava/lang/Object;
+    iget-object p1, p1, Lgqx;->d:Ljava/lang/String;
 
-    iput p2, p0, Lgqy;->b:I
-
-    iput p3, p0, Lgqy;->a:I
-
-    return-void
+    return-object p1
 .end method

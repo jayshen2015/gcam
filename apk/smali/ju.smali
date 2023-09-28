@@ -1,177 +1,62 @@
 .class public final Lju;
-.super Landroid/widget/ToggleButton;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Landroid/text/method/TransformationMethod;
 
 
 # instance fields
-.field private final a:Lij;
-
-.field private final b:Ljp;
-
-.field private c:Laie;
+.field private final a:Ljava/util/Locale;
 
 
 # direct methods
-.method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
-    .locals 1
+.method public constructor <init>(Landroid/content/Context;)V
+    .locals 0
 
-    const v0, 0x101004b
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0, p1, p2, v0}, Landroid/widget/ToggleButton;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
-
-    invoke-virtual {p0}, Lju;->getContext()Landroid/content/Context;
+    invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object p1
 
-    invoke-static {p0, p1}, Lnf;->d(Landroid/view/View;Landroid/content/Context;)V
-
-    new-instance p1, Lij;
-
-    invoke-direct {p1, p0}, Lij;-><init>(Landroid/view/View;)V
-
-    iput-object p1, p0, Lju;->a:Lij;
-
-    invoke-virtual {p1, p2, v0}, Lij;->d(Landroid/util/AttributeSet;I)V
-
-    new-instance p1, Ljp;
-
-    invoke-direct {p1, p0}, Ljp;-><init>(Landroid/widget/TextView;)V
-
-    iput-object p1, p0, Lju;->b:Ljp;
-
-    invoke-virtual {p1, p2, v0}, Ljp;->b(Landroid/util/AttributeSet;I)V
-
-    invoke-direct {p0}, Lju;->a()Laie;
+    invoke-virtual {p1}, Landroid/content/res/Resources;->getConfiguration()Landroid/content/res/Configuration;
 
     move-result-object p1
 
-    invoke-virtual {p1, p2, v0}, Laie;->n(Landroid/util/AttributeSet;I)V
+    iget-object p1, p1, Landroid/content/res/Configuration;->locale:Ljava/util/Locale;
+
+    iput-object p1, p0, Lju;->a:Ljava/util/Locale;
 
     return-void
-.end method
-
-.method private final a()Laie;
-    .locals 1
-
-    iget-object v0, p0, Lju;->c:Laie;
-
-    if-nez v0, :cond_0
-
-    new-instance v0, Laie;
-
-    invoke-direct {v0, p0}, Laie;-><init>(Landroid/widget/TextView;)V
-
-    iput-object v0, p0, Lju;->c:Laie;
-
-    :cond_0
-    iget-object v0, p0, Lju;->c:Laie;
-
-    return-object v0
 .end method
 
 
 # virtual methods
-.method protected final drawableStateChanged()V
-    .locals 1
-
-    invoke-super {p0}, Landroid/widget/ToggleButton;->drawableStateChanged()V
-
-    iget-object v0, p0, Lju;->a:Lij;
-
-    if-eqz v0, :cond_0
-
-    invoke-virtual {v0}, Lij;->c()V
-
-    :cond_0
-    iget-object v0, p0, Lju;->b:Ljp;
-
-    if-eqz v0, :cond_1
-
-    invoke-virtual {v0}, Ljp;->a()V
-
-    :cond_1
-    return-void
-.end method
-
-.method public final setAllCaps(Z)V
+.method public final getTransformation(Ljava/lang/CharSequence;Landroid/view/View;)Ljava/lang/CharSequence;
     .locals 0
-
-    invoke-super {p0, p1}, Landroid/widget/ToggleButton;->setAllCaps(Z)V
-
-    invoke-direct {p0}, Lju;->a()Laie;
-
-    invoke-static {}, Lajf;->d()V
-
-    return-void
-.end method
-
-.method public final setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
-    .locals 0
-
-    invoke-super {p0, p1}, Landroid/widget/ToggleButton;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
-
-    iget-object p1, p0, Lju;->a:Lij;
 
     if-eqz p1, :cond_0
 
-    invoke-virtual {p1}, Lij;->i()V
+    invoke-interface {p1}, Ljava/lang/CharSequence;->toString()Ljava/lang/String;
+
+    move-result-object p1
+
+    iget-object p2, p0, Lju;->a:Ljava/util/Locale;
+
+    invoke-virtual {p1, p2}, Ljava/lang/String;->toUpperCase(Ljava/util/Locale;)Ljava/lang/String;
+
+    move-result-object p1
+
+    return-object p1
 
     :cond_0
-    return-void
+    const/4 p1, 0x0
+
+    return-object p1
 .end method
 
-.method public final setBackgroundResource(I)V
-    .locals 1
-
-    invoke-super {p0, p1}, Landroid/widget/ToggleButton;->setBackgroundResource(I)V
-
-    iget-object v0, p0, Lju;->a:Lij;
-
-    if-eqz v0, :cond_0
-
-    invoke-virtual {v0, p1}, Lij;->e(I)V
-
-    :cond_0
-    return-void
-.end method
-
-.method public final setCompoundDrawables(Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;)V
+.method public final onFocusChanged(Landroid/view/View;Ljava/lang/CharSequence;ZILandroid/graphics/Rect;)V
     .locals 0
-
-    invoke-super {p0, p1, p2, p3, p4}, Landroid/widget/ToggleButton;->setCompoundDrawables(Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;)V
-
-    iget-object p1, p0, Lju;->b:Ljp;
-
-    if-eqz p1, :cond_0
-
-    invoke-virtual {p1}, Ljp;->a()V
-
-    :cond_0
-    return-void
-.end method
-
-.method public final setCompoundDrawablesRelative(Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;)V
-    .locals 0
-
-    invoke-super {p0, p1, p2, p3, p4}, Landroid/widget/ToggleButton;->setCompoundDrawablesRelative(Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;)V
-
-    iget-object p1, p0, Lju;->b:Ljp;
-
-    if-eqz p1, :cond_0
-
-    invoke-virtual {p1}, Ljp;->a()V
-
-    :cond_0
-    return-void
-.end method
-
-.method public final setFilters([Landroid/text/InputFilter;)V
-    .locals 0
-
-    invoke-direct {p0}, Lju;->a()Laie;
-
-    invoke-static {}, Lajf;->d()V
-
-    invoke-super {p0, p1}, Landroid/widget/ToggleButton;->setFilters([Landroid/text/InputFilter;)V
 
     return-void
 .end method

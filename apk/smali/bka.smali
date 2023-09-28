@@ -1,90 +1,52 @@
-.class public final enum Lbka;
-.super Ljava/lang/Enum;
-
-
-# static fields
-.field public static final enum a:Lbka;
-
-.field public static final enum b:Lbka;
-
-.field private static final synthetic d:[Lbka;
+.class final Lbka;
+.super Landroid/net/ConnectivityManager$NetworkCallback;
 
 
 # instance fields
-.field public final c:Ljava/lang/String;
+.field final synthetic a:Lbkb;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 6
-
-    new-instance v0, Lbka;
-
-    const-string v1, "JSON"
-
-    const/4 v2, 0x0
-
-    const-string v3, ".json"
-
-    invoke-direct {v0, v1, v2, v3}, Lbka;-><init>(Ljava/lang/String;ILjava/lang/String;)V
-
-    sput-object v0, Lbka;->a:Lbka;
-
-    new-instance v1, Lbka;
-
-    const-string v3, "ZIP"
-
-    const/4 v4, 0x1
-
-    const-string v5, ".zip"
-
-    invoke-direct {v1, v3, v4, v5}, Lbka;-><init>(Ljava/lang/String;ILjava/lang/String;)V
-
-    sput-object v1, Lbka;->b:Lbka;
-
-    const/4 v3, 0x2
-
-    new-array v3, v3, [Lbka;
-
-    aput-object v0, v3, v2
-
-    aput-object v1, v3, v4
-
-    sput-object v3, Lbka;->d:[Lbka;
-
-    return-void
-.end method
-
-.method private constructor <init>(Ljava/lang/String;ILjava/lang/String;)V
+.method public constructor <init>(Lbkb;)V
     .locals 0
 
-    invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+    iput-object p1, p0, Lbka;->a:Lbkb;
 
-    iput-object p3, p0, Lbka;->c:Ljava/lang/String;
+    invoke-direct {p0}, Landroid/net/ConnectivityManager$NetworkCallback;-><init>()V
 
     return-void
 .end method
 
-.method public static values()[Lbka;
+.method private final a(Z)V
     .locals 1
 
-    sget-object v0, Lbka;->d:[Lbka;
+    new-instance v0, Lbjz;
 
-    invoke-virtual {v0}, [Lbka;->clone()Ljava/lang/Object;
+    invoke-direct {v0, p0, p1}, Lbjz;-><init>(Lbka;Z)V
 
-    move-result-object v0
+    invoke-static {v0}, Lbmf;->j(Ljava/lang/Runnable;)V
 
-    check-cast v0, [Lbka;
-
-    return-object v0
+    return-void
 .end method
 
 
 # virtual methods
-.method public final toString()Ljava/lang/String;
-    .locals 1
+.method public final onAvailable(Landroid/net/Network;)V
+    .locals 0
 
-    iget-object v0, p0, Lbka;->c:Ljava/lang/String;
+    const/4 p1, 0x1
 
-    return-object v0
+    invoke-direct {p0, p1}, Lbka;->a(Z)V
+
+    return-void
+.end method
+
+.method public final onLost(Landroid/net/Network;)V
+    .locals 0
+
+    const/4 p1, 0x0
+
+    invoke-direct {p0, p1}, Lbka;->a(Z)V
+
+    return-void
 .end method

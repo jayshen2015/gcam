@@ -100,19 +100,7 @@
     throw v0
 .end method
 
-.method public final c(Lnqi;)V
-    .locals 2
-
-    iget-wide v0, p0, Lcom/google/googlex/gcam/PortraitRequest;->a:J
-
-    iget p1, p1, Lnqi;->d:I
-
-    invoke-static {v0, v1, p0, p1}, Lcom/google/googlex/gcam/GcamModuleJNI;->PortraitRequest_depth_processing_set(JLcom/google/googlex/gcam/PortraitRequest;I)V
-
-    return-void
-.end method
-
-.method public final d()Z
+.method public final c()Z
     .locals 2
 
     iget-wide v0, p0, Lcom/google/googlex/gcam/PortraitRequest;->a:J
@@ -124,7 +112,7 @@
     return v0
 .end method
 
-.method public final e()Z
+.method public final d()Z
     .locals 2
 
     iget-wide v0, p0, Lcom/google/googlex/gcam/PortraitRequest;->a:J

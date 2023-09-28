@@ -1,231 +1,185 @@
-.class Lhtt;
-.super Lhtm;
+.class public final synthetic Lhtt;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Lhtr;
+
+
+# static fields
+.field public static final synthetic a:Lhtt;
+
+.field public static final synthetic b:Lhtt;
+
+.field public static final synthetic c:Lhtt;
+
+.field public static final synthetic d:Lhtt;
+
+.field public static final synthetic e:Lhtt;
 
 
 # instance fields
-.field final synthetic a:Lhtz;
+.field private final synthetic f:I
 
 
 # direct methods
-.method public constructor <init>(Lhtz;)V
+.method static synthetic constructor <clinit>()V
+    .locals 2
+
+    new-instance v0, Lhtt;
+
+    const/4 v1, 0x4
+
+    invoke-direct {v0, v1}, Lhtt;-><init>(I)V
+
+    sput-object v0, Lhtt;->e:Lhtt;
+
+    new-instance v0, Lhtt;
+
+    const/4 v1, 0x3
+
+    invoke-direct {v0, v1}, Lhtt;-><init>(I)V
+
+    sput-object v0, Lhtt;->d:Lhtt;
+
+    new-instance v0, Lhtt;
+
+    const/4 v1, 0x2
+
+    invoke-direct {v0, v1}, Lhtt;-><init>(I)V
+
+    sput-object v0, Lhtt;->c:Lhtt;
+
+    new-instance v0, Lhtt;
+
+    const/4 v1, 0x1
+
+    invoke-direct {v0, v1}, Lhtt;-><init>(I)V
+
+    sput-object v0, Lhtt;->b:Lhtt;
+
+    new-instance v0, Lhtt;
+
+    const/4 v1, 0x0
+
+    invoke-direct {v0, v1}, Lhtt;-><init>(I)V
+
+    sput-object v0, Lhtt;->a:Lhtt;
+
+    return-void
+.end method
+
+.method private synthetic constructor <init>(I)V
     .locals 0
 
-    iput-object p1, p0, Lhtt;->a:Lhtz;
+    iput p1, p0, Lhtt;->f:I
 
-    invoke-direct {p0}, Lhtm;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public c()V
-    .locals 0
+.method public final a(Lddf;)Ljava/lang/Object;
+    .locals 4
 
-    return-void
-.end method
+    iget v0, p0, Lhtt;->f:I
 
-.method public d()V
-    .locals 0
+    const-string v1, "off"
 
-    return-void
-.end method
+    const-string v2, "ns"
 
-.method public final f()V
-    .locals 3
+    const/4 v3, 0x1
 
-    iget-object v0, p0, Lhtt;->a:Lhtz;
+    packed-switch v0, :pswitch_data_0
 
-    invoke-virtual {v0}, Lhtz;->w()V
+    invoke-static {v3}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
-    iget-object v0, p0, Lhtt;->a:Lhtz;
+    move-result-object p1
 
-    invoke-virtual {v0}, Lhtz;->x()V
+    return-object p1
 
-    iget-object v0, p0, Lhtt;->a:Lhtz;
+    :pswitch_0
+    sget-object v0, Lhtu;->a:Lhuk;
 
-    iget-object v0, v0, Lhtz;->c:Libj;
+    sget-object v0, Lddm;->aa:Lddg;
 
-    invoke-interface {v0}, Libj;->m()V
+    invoke-interface {p1, v0}, Lddf;->k(Lddg;)Z
 
-    iget-object v0, p0, Lhtt;->a:Lhtz;
+    move-result p1
 
-    invoke-virtual {v0}, Lhtz;->t()Lcom/google/android/apps/camera/ui/wirers/PreviewOverlay;
+    if-eq v3, p1, :cond_0
 
-    move-result-object v0
-
-    const/4 v1, 0x1
-
-    iput-boolean v1, v0, Lcom/google/android/apps/camera/ui/wirers/PreviewOverlay;->d:Z
-
-    iget-object v0, p0, Lhtt;->a:Lhtz;
-
-    iget-object v0, v0, Lhtz;->c:Libj;
-
-    sget-object v2, Lika;->g:Lika;
-
-    invoke-interface {v0, v2, v1}, Libj;->j(Lika;Z)V
-
-    iget-object v0, p0, Lhtt;->a:Lhtz;
-
-    sget-object v2, Lika;->g:Lika;
-
-    invoke-virtual {v0, v2}, Lhtz;->B(Lika;)V
-
-    iget-object v0, p0, Lhtt;->a:Lhtz;
-
-    iget-object v0, v0, Lhtz;->k:Ldhi;
-
-    sget-object v2, Ldib;->j:Ldhj;
-
-    invoke-interface {v0, v2}, Ldhi;->l(Ldhj;)Z
-
-    move-result v0
-
-    if-nez v0, :cond_0
-
-    iget-object v0, p0, Lhtt;->a:Lhtz;
-
-    iget-object v2, v0, Lhtz;->i:Ldbf;
-
-    invoke-virtual {v2}, Ldbf;->d()Lklv;
-
-    move-result-object v2
-
-    iput-object v2, v0, Lhtz;->n:Lklv;
-
-    iget-object v0, p0, Lhtt;->a:Lhtz;
-
-    iget-object v0, v0, Lhtz;->i:Ldbf;
-
-    sget-object v2, Lklv;->a:Lklv;
-
-    invoke-virtual {v0, v2}, Ldbf;->g(Lklv;)V
-
-    iget-object v0, p0, Lhtt;->a:Lhtz;
-
-    iget-object v0, v0, Lhtz;->a:Lcom/google/android/apps/camera/bottombar/BottomBarController;
-
-    invoke-virtual {v0}, Lcom/google/android/apps/camera/bottombar/BottomBarController;->startNoPDPortraitCapture()V
+    return-object v1
 
     :cond_0
-    iget-object v0, p0, Lhtt;->a:Lhtz;
+    return-object v2
 
-    iget-object v0, v0, Lhtz;->b:Litm;
+    :pswitch_1
+    sget-object v0, Lhtu;->a:Lhuk;
 
-    invoke-interface {v0}, Litm;->G()V
+    sget-object v0, Lddm;->aa:Lddg;
 
-    iget-object v0, p0, Lhtt;->a:Lhtz;
+    invoke-interface {p1, v0}, Lddf;->k(Lddg;)Z
 
-    iget-object v0, v0, Lhtz;->b:Litm;
+    move-result p1
 
-    invoke-interface {v0, v1}, Litm;->I(Z)V
+    if-eq v3, p1, :cond_1
 
-    iget-object v0, p0, Lhtt;->a:Lhtz;
-
-    iget-object v0, v0, Lhtz;->b:Litm;
-
-    move-object v1, v0
-
-    check-cast v1, Lisi;
-
-    iget-boolean v1, v1, Lisi;->S:Z
-
-    if-eqz v1, :cond_1
-
-    invoke-interface {v0}, Litm;->p()V
+    return-object v1
 
     :cond_1
-    iget-object v0, p0, Lhtt;->a:Lhtz;
+    return-object v2
 
-    iget-object v0, v0, Lhtz;->g:Lcfp;
+    :pswitch_2
+    sget-object v0, Lhtu;->a:Lhuk;
 
-    invoke-virtual {v0}, Lcfp;->c()V
+    sget-object v0, Lddl;->aN:Lddg;
 
-    return-void
-.end method
+    invoke-interface {p1, v0}, Lddf;->k(Lddg;)Z
 
-.method public final g()V
-    .locals 3
+    move-result p1
 
-    iget-object v0, p0, Lhtt;->a:Lhtz;
+    invoke-static {p1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
-    invoke-virtual {v0}, Lhtz;->t()Lcom/google/android/apps/camera/ui/wirers/PreviewOverlay;
+    move-result-object p1
 
-    move-result-object v0
+    return-object p1
 
-    const/4 v1, 0x0
+    :pswitch_3
+    sget-object v0, Lhtu;->a:Lhuk;
 
-    iput-boolean v1, v0, Lcom/google/android/apps/camera/ui/wirers/PreviewOverlay;->d:Z
+    sget-object v0, Lddv;->a:Lddg;
 
-    iget-object v0, p0, Lhtt;->a:Lhtz;
+    invoke-interface {p1, v0}, Lddf;->k(Lddg;)Z
 
-    iget-object v0, v0, Lhtz;->k:Ldhi;
+    move-result p1
 
-    sget-object v2, Ldib;->j:Ldhj;
+    if-eqz p1, :cond_2
 
-    invoke-interface {v0, v2}, Ldhi;->l(Ldhj;)Z
+    const/4 p1, 0x0
 
-    move-result v0
+    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    if-nez v0, :cond_0
+    move-result-object p1
 
-    iget-object v0, p0, Lhtt;->a:Lhtz;
+    goto :goto_0
 
-    iget-object v0, v0, Lhtz;->a:Lcom/google/android/apps/camera/bottombar/BottomBarController;
+    :cond_2
+    invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    invoke-virtual {v0}, Lcom/google/android/apps/camera/bottombar/BottomBarController;->stopNoPDPortraitCapture()V
+    move-result-object p1
 
-    iget-object v0, p0, Lhtt;->a:Lhtz;
+    :goto_0
+    return-object p1
 
-    iget-object v2, v0, Lhtz;->i:Ldbf;
+    nop
 
-    iget-object v0, v0, Lhtz;->n:Lklv;
-
-    invoke-virtual {v2, v0}, Ldbf;->g(Lklv;)V
-
-    :cond_0
-    iget-object v0, p0, Lhtt;->a:Lhtz;
-
-    iget-object v0, v0, Lhtz;->b:Litm;
-
-    invoke-interface {v0}, Litm;->z()V
-
-    iget-object v0, p0, Lhtt;->a:Lhtz;
-
-    iget-object v0, v0, Lhtz;->b:Litm;
-
-    invoke-interface {v0, v1}, Litm;->I(Z)V
-
-    iget-object v0, p0, Lhtt;->a:Lhtz;
-
-    iget-object v0, v0, Lhtz;->f:Lgvs;
-
-    invoke-virtual {v0}, Lgvl;->c()V
-
-    return-void
-.end method
-
-.method public i()V
-    .locals 0
-
-    return-void
-.end method
-
-.method public k()V
-    .locals 0
-
-    return-void
-.end method
-
-.method public p()V
-    .locals 0
-
-    return-void
-.end method
-
-.method public q()V
-    .locals 0
-
-    return-void
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method

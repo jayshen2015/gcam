@@ -1,23 +1,32 @@
-.class public abstract Lolx;
-.super Ljava/lang/Object;
+.class final Lolx;
+.super Lomb;
 
 
 # instance fields
-.field public final a:Ljava/io/File;
+.field final synthetic a:Lomf;
 
 
 # direct methods
-.method public constructor <init>(Ljava/io/File;)V
+.method public constructor <init>(Lomf;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lolx;->a:Lomf;
 
-    iput-object p1, p0, Lolx;->a:Ljava/io/File;
+    invoke-direct {p0, p1}, Lomb;-><init>(Lomf;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public abstract a()Ljava/io/File;
+.method public final a(I)Ljava/lang/Object;
+    .locals 1
+
+    iget-object v0, p0, Lolx;->a:Lomf;
+
+    invoke-virtual {v0, p1}, Lomf;->f(I)Ljava/lang/Object;
+
+    move-result-object p1
+
+    return-object p1
 .end method

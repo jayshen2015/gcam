@@ -109,11 +109,11 @@
 .method static constructor <clinit>()V
     .locals 2
 
-    new-instance v0, Ljsy;
+    new-instance v0, Lkza;
 
-    const/4 v1, 0x7
+    const/16 v1, 0xb
 
-    invoke-direct {v0, v1}, Ljsy;-><init>(I)V
+    invoke-direct {v0, v1}, Lkza;-><init>(I)V
 
     sput-object v0, Lcom/google/android/libraries/barhopper/Barcode;->CREATOR:Landroid/os/Parcelable$Creator;
 
@@ -331,61 +331,63 @@
 .method public getBoundingBox()Landroid/graphics/Rect;
     .locals 7
 
-    const/4 v0, 0x0
+    const/high16 v0, -0x80000000
+
+    const v1, 0x7fffffff
+
+    const/4 v2, 0x0
 
     const/high16 v1, -0x80000000
 
     const v2, 0x7fffffff
 
-    const/high16 v2, -0x80000000
-
     const v3, 0x7fffffff
 
-    const v4, 0x7fffffff
+    const/4 v4, 0x0
 
     :goto_0
     iget-object v5, p0, Lcom/google/android/libraries/barhopper/Barcode;->cornerPoints:[Landroid/graphics/Point;
 
     array-length v6, v5
 
-    if-ge v0, v6, :cond_0
+    if-ge v4, v6, :cond_0
 
-    aget-object v5, v5, v0
+    aget-object v5, v5, v4
 
     iget v6, v5, Landroid/graphics/Point;->x:I
+
+    invoke-static {v2, v6}, Ljava/lang/Math;->min(II)I
+
+    move-result v2
+
+    iget v6, v5, Landroid/graphics/Point;->x:I
+
+    invoke-static {v0, v6}, Ljava/lang/Math;->max(II)I
+
+    move-result v0
+
+    iget v6, v5, Landroid/graphics/Point;->y:I
 
     invoke-static {v3, v6}, Ljava/lang/Math;->min(II)I
 
     move-result v3
 
-    iget v6, v5, Landroid/graphics/Point;->x:I
+    iget v5, v5, Landroid/graphics/Point;->y:I
 
-    invoke-static {v1, v6}, Ljava/lang/Math;->max(II)I
+    invoke-static {v1, v5}, Ljava/lang/Math;->max(II)I
 
     move-result v1
 
-    iget v6, v5, Landroid/graphics/Point;->y:I
-
-    invoke-static {v4, v6}, Ljava/lang/Math;->min(II)I
-
-    move-result v4
-
-    iget v5, v5, Landroid/graphics/Point;->y:I
-
-    invoke-static {v2, v5}, Ljava/lang/Math;->max(II)I
-
-    move-result v2
-
-    add-int/lit8 v0, v0, 0x1
+    add-int/lit8 v4, v4, 0x1
 
     goto :goto_0
 
     :cond_0
-    new-instance v0, Landroid/graphics/Rect;
+    new-instance v4, Landroid/graphics/Rect;
 
-    invoke-direct {v0, v3, v4, v1, v2}, Landroid/graphics/Rect;-><init>(IIII)V
+    invoke-direct {v4, v2, v3, v0, v1}, Landroid/graphics/Rect;-><init>(IIII)V
 
-    return-object v0
+    return-object v4
 .end method
 
 .method public writeToParcel(Landroid/os/Parcel;I)V

@@ -1,33 +1,34 @@
-.class final Llbf;
-.super Ljava/lang/Object;
-
-# interfaces
-.implements Ljava/lang/Runnable;
+.class public final Llbf;
+.super Ljava/util/concurrent/ScheduledThreadPoolExecutor;
 
 
 # direct methods
-.method public constructor <init>()V
+.method public constructor <init>(ILjava/util/concurrent/ThreadFactory;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0, p1, p2}, Ljava/util/concurrent/ScheduledThreadPoolExecutor;-><init>(ILjava/util/concurrent/ThreadFactory;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final run()V
+.method protected final decorateTask(Ljava/lang/Runnable;Ljava/util/concurrent/RunnableScheduledFuture;)Ljava/util/concurrent/RunnableScheduledFuture;
     .locals 0
 
-    invoke-static {}, Landroid/opengl/GLES20;->glFlush()V
+    invoke-static {p2}, Lmip;->bN(Ljava/util/concurrent/RunnableScheduledFuture;)Ljava/util/concurrent/RunnableScheduledFuture;
 
-    return-void
+    move-result-object p1
+
+    return-object p1
 .end method
 
-.method public final toString()Ljava/lang/String;
-    .locals 1
+.method protected final decorateTask(Ljava/util/concurrent/Callable;Ljava/util/concurrent/RunnableScheduledFuture;)Ljava/util/concurrent/RunnableScheduledFuture;
+    .locals 0
 
-    const-string v0, "glFlush"
+    invoke-static {p2}, Lmip;->bN(Ljava/util/concurrent/RunnableScheduledFuture;)Ljava/util/concurrent/RunnableScheduledFuture;
 
-    return-object v0
+    move-result-object p1
+
+    return-object p1
 .end method

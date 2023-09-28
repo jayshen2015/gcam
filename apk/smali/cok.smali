@@ -1,186 +1,216 @@
 .class public final Lcok;
 .super Ljava/lang/Object;
 
+# interfaces
+.implements Lcib;
+
 
 # instance fields
-.field public final a:Ljava/lang/String;
+.field private final a:Lddf;
 
-.field public final b:Z
-
-.field private final c:Landroid/net/Uri;
+.field private final b:Lemb;
 
 
 # direct methods
-.method public constructor <init>()V
+.method public constructor <init>(Lemb;Lddf;[B[B)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    return-void
-.end method
+    iput-object p1, p0, Lcok;->b:Lemb;
 
-.method public constructor <init>(Landroid/net/Uri;Ljava/lang/String;Z)V
-    .locals 0
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lcok;->c:Landroid/net/Uri;
-
-    iput-object p2, p0, Lcok;->a:Ljava/lang/String;
-
-    iput-boolean p3, p0, Lcok;->b:Z
+    iput-object p2, p0, Lcok;->a:Lddf;
 
     return-void
-.end method
-
-.method public static a()Lgxs;
-    .locals 1
-
-    new-instance v0, Lgxs;
-
-    invoke-direct {v0}, Lgxs;-><init>()V
-
-    return-object v0
 .end method
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 4
+.method public final a()Ljrl;
+    .locals 1
 
-    const/4 v0, 0x1
+    sget-object v0, Ljrl;->i:Ljrl;
 
-    if-ne p1, p0, :cond_0
-
-    return v0
-
-    :cond_0
-    instance-of v1, p1, Lcok;
-
-    const/4 v2, 0x0
-
-    if-eqz v1, :cond_1
-
-    check-cast p1, Lcok;
-
-    iget-object v1, p0, Lcok;->c:Landroid/net/Uri;
-
-    iget-object v3, p1, Lcok;->c:Landroid/net/Uri;
-
-    invoke-virtual {v1, v3}, Landroid/net/Uri;->equals(Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_1
-
-    iget-object v1, p0, Lcok;->a:Ljava/lang/String;
-
-    iget-object v3, p1, Lcok;->a:Ljava/lang/String;
-
-    invoke-virtual {v1, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_1
-
-    iget-boolean v1, p0, Lcok;->b:Z
-
-    iget-boolean p1, p1, Lcok;->b:Z
-
-    if-ne v1, p1, :cond_1
-
-    return v0
-
-    :cond_1
-    return v2
+    return-object v0
 .end method
 
-.method public final hashCode()I
-    .locals 4
+.method public final b()Lojc;
+    .locals 2
 
-    iget-object v0, p0, Lcok;->c:Landroid/net/Uri;
+    iget-object v0, p0, Lcok;->b:Lemb;
 
-    invoke-virtual {v0}, Landroid/net/Uri;->hashCode()I
-
-    move-result v0
-
-    const v1, 0xf4243
-
-    xor-int/2addr v0, v1
-
-    iget-object v2, p0, Lcok;->a:Ljava/lang/String;
-
-    invoke-virtual {v2}, Ljava/lang/String;->hashCode()I
-
-    move-result v2
-
-    mul-int v0, v0, v1
-
-    xor-int/2addr v0, v2
-
-    const/4 v2, 0x1
-
-    iget-boolean v3, p0, Lcok;->b:Z
-
-    if-eq v2, v3, :cond_0
-
-    const/16 v2, 0x4d5
-
-    goto :goto_0
-
-    :cond_0
-    const/16 v2, 0x4cf
-
-    :goto_0
-    mul-int v0, v0, v1
-
-    xor-int/2addr v0, v2
-
-    return v0
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .locals 5
-
-    iget-object v0, p0, Lcok;->c:Landroid/net/Uri;
-
-    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+    invoke-virtual {v0}, Lemb;->a()Landroid/content/Intent;
 
     move-result-object v0
 
-    iget-object v1, p0, Lcok;->a:Ljava/lang/String;
+    if-nez v0, :cond_0
 
-    iget-boolean v2, p0, Lcok;->b:Z
+    sget-object v0, Loih;->a:Loih;
 
-    new-instance v3, Ljava/lang/StringBuilder;
+    return-object v0
 
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+    :cond_0
+    invoke-static {v0}, Lbqe;->i(Landroid/content/Intent;)Z
 
-    const-string v4, "MediaRecordInfo{uri="
+    move-result v1
 
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    if-eqz v1, :cond_1
 
-    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v0}, Lbqe;->m(Landroid/content/Intent;)Z
 
-    const-string v0, ", mediaId="
+    move-result v0
 
-    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    if-eqz v0, :cond_1
 
-    invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    sget-object v0, Llwd;->a:Llwd;
 
-    const-string v0, ", isDeleted="
-
-    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    const-string v0, "}"
-
-    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-static {v0}, Lojc;->i(Ljava/lang/Object;)Lojc;
 
     move-result-object v0
 
     return-object v0
+
+    :cond_1
+    sget-object v0, Loih;->a:Loih;
+
+    return-object v0
+.end method
+
+.method public final c()Z
+    .locals 2
+
+    iget-object v0, p0, Lcok;->a:Lddf;
+
+    sget-object v1, Lddl;->K:Lddg;
+
+    invoke-interface {v0, v1}, Lddf;->k(Lddg;)Z
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public final d()Z
+    .locals 1
+
+    const/4 v0, 0x0
+
+    return v0
+.end method
+
+.method public final e()Z
+    .locals 1
+
+    const/4 v0, 0x1
+
+    return v0
+.end method
+
+.method public final f()Z
+    .locals 1
+
+    const/4 v0, 0x1
+
+    return v0
+.end method
+
+.method public final g()Z
+    .locals 1
+
+    const/4 v0, 0x0
+
+    return v0
+.end method
+
+.method public final h()Z
+    .locals 1
+
+    const/4 v0, 0x1
+
+    return v0
+.end method
+
+.method public final i()Z
+    .locals 1
+
+    const/4 v0, 0x0
+
+    return v0
+.end method
+
+.method public final j()Z
+    .locals 1
+
+    const/4 v0, 0x0
+
+    return v0
+.end method
+
+.method public final k()Z
+    .locals 2
+
+    iget-object v0, p0, Lcok;->a:Lddf;
+
+    sget-object v1, Ldcu;->R:Lddg;
+
+    invoke-interface {v0, v1}, Lddf;->k(Lddg;)Z
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public final l()Z
+    .locals 1
+
+    const/4 v0, 0x1
+
+    return v0
+.end method
+
+.method public final m()Z
+    .locals 3
+
+    iget-object v0, p0, Lcok;->b:Lemb;
+
+    invoke-virtual {v0}, Lemb;->a()Landroid/content/Intent;
+
+    move-result-object v0
+
+    const/4 v1, 0x0
+
+    if-nez v0, :cond_0
+
+    return v1
+
+    :cond_0
+    const-string v2, "include_location_in_exif"
+
+    invoke-virtual {v0, v2, v1}, Landroid/content/Intent;->getBooleanExtra(Ljava/lang/String;Z)Z
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public final n()Z
+    .locals 1
+
+    const/4 v0, 0x0
+
+    return v0
+.end method
+
+.method public final o()Z
+    .locals 1
+
+    const/4 v0, 0x0
+
+    return v0
+.end method
+
+.method public final p()V
+    .locals 0
+
+    return-void
 .end method

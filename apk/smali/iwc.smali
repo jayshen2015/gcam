@@ -1,36 +1,38 @@
-.class public final Liwc;
+.class public final synthetic Liwc;
 .super Ljava/lang/Object;
 
+# interfaces
+.implements Landroid/media/MediaPlayer$OnPreparedListener;
 
-# static fields
-.field public static final a:[I
+
+# instance fields
+.field public final synthetic a:Lcom/google/android/apps/camera/ui/compositevideoview/CompositeVideoView;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
+.method public synthetic constructor <init>(Lcom/google/android/apps/camera/ui/compositevideoview/CompositeVideoView;)V
+    .locals 0
 
-    const/16 v0, 0xa
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    new-array v0, v0, [I
-
-    fill-array-data v0, :array_0
-
-    sput-object v0, Liwc;->a:[I
+    iput-object p1, p0, Liwc;->a:Lcom/google/android/apps/camera/ui/compositevideoview/CompositeVideoView;
 
     return-void
+.end method
 
-    :array_0
-    .array-data 4
-        0x7f0400c3
-        0x7f0400ff
-        0x7f040269
-        0x7f040438
-        0x7f04055d
-        0x7f0405a7
-        0x7f0405b8
-        0x7f0405ce
-        0x7f0405f4
-        0x7f040706
-    .end array-data
+
+# virtual methods
+.method public final onPrepared(Landroid/media/MediaPlayer;)V
+    .locals 1
+
+    iget-object v0, p0, Liwc;->a:Lcom/google/android/apps/camera/ui/compositevideoview/CompositeVideoView;
+
+    iget-object v0, v0, Lcom/google/android/apps/camera/ui/compositevideoview/CompositeVideoView;->b:Liwg;
+
+    if-eqz v0, :cond_0
+
+    invoke-interface {v0, p1}, Liwg;->onPrepared(Landroid/media/MediaPlayer;)V
+
+    :cond_0
+    return-void
 .end method

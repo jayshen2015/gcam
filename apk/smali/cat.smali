@@ -1,253 +1,423 @@
 .class public final Lcat;
-.super Ljava/io/FilterInputStream;
+.super Ljava/lang/Object;
 
 # interfaces
-.implements Lj$/io/InputStreamRetargetInterface;
+.implements Lpys;
 
 
 # instance fields
-.field private a:I
+.field private final a:Lqkg;
+
+.field private final b:Lqkg;
+
+.field private final c:Lqkg;
+
+.field private final d:Lqkg;
+
+.field private final e:Lqkg;
+
+.field private final f:Lqkg;
+
+.field private final g:Lqkg;
+
+.field private final h:Lqkg;
+
+.field private final i:Lqkg;
+
+.field private final j:Lqkg;
+
+.field private final k:Lqkg;
+
+.field private final l:Lqkg;
+
+.field private final m:Lqkg;
+
+.field private final n:Lqkg;
+
+.field private final o:Lqkg;
+
+.field private final p:Lqkg;
+
+.field private final q:Lqkg;
+
+.field private final r:Lqkg;
+
+.field private final s:Lqkg;
+
+.field private final t:Lqkg;
+
+.field private final u:Lqkg;
+
+.field private final v:Lqkg;
+
+.field private final w:Lqkg;
+
+.field private final x:Lqkg;
+
+.field private final y:Lqkg;
 
 
 # direct methods
-.method public constructor <init>(Ljava/io/InputStream;)V
-    .locals 0
+.method public constructor <init>(Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;)V
+    .locals 2
 
-    invoke-direct {p0, p1}, Ljava/io/FilterInputStream;-><init>(Ljava/io/InputStream;)V
+    move-object v0, p0
 
-    const/high16 p1, -0x80000000
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput p1, p0, Lcat;->a:I
+    move-object v1, p1
 
-    return-void
-.end method
+    iput-object v1, v0, Lcat;->a:Lqkg;
 
-.method private final a(J)J
-    .locals 3
+    move-object v1, p2
 
-    iget v0, p0, Lcat;->a:I
+    iput-object v1, v0, Lcat;->b:Lqkg;
 
-    if-nez v0, :cond_0
+    move-object v1, p3
 
-    const-wide/16 p1, -0x1
+    iput-object v1, v0, Lcat;->c:Lqkg;
 
-    return-wide p1
+    move-object v1, p4
 
-    :cond_0
-    const/high16 v1, -0x80000000
+    iput-object v1, v0, Lcat;->d:Lqkg;
 
-    if-eq v0, v1, :cond_1
+    move-object v1, p5
 
-    int-to-long v0, v0
+    iput-object v1, v0, Lcat;->e:Lqkg;
 
-    cmp-long v2, p1, v0
+    move-object v1, p6
 
-    if-lez v2, :cond_1
+    iput-object v1, v0, Lcat;->f:Lqkg;
 
-    return-wide v0
+    move-object v1, p7
 
-    :cond_1
-    return-wide p1
-.end method
+    iput-object v1, v0, Lcat;->g:Lqkg;
 
-.method private final b(J)V
-    .locals 4
+    move-object v1, p8
 
-    iget v0, p0, Lcat;->a:I
+    iput-object v1, v0, Lcat;->h:Lqkg;
 
-    const/high16 v1, -0x80000000
+    move-object v1, p9
 
-    if-eq v0, v1, :cond_0
+    iput-object v1, v0, Lcat;->i:Lqkg;
 
-    const-wide/16 v1, -0x1
+    move-object v1, p10
 
-    cmp-long v3, p1, v1
+    iput-object v1, v0, Lcat;->j:Lqkg;
 
-    if-eqz v3, :cond_0
+    move-object v1, p11
 
-    int-to-long v0, v0
+    iput-object v1, v0, Lcat;->k:Lqkg;
 
-    sub-long/2addr v0, p1
+    move-object v1, p12
 
-    long-to-int p1, v0
+    iput-object v1, v0, Lcat;->l:Lqkg;
 
-    iput p1, p0, Lcat;->a:I
+    move-object v1, p13
 
-    :cond_0
+    iput-object v1, v0, Lcat;->m:Lqkg;
+
+    move-object/from16 v1, p14
+
+    iput-object v1, v0, Lcat;->n:Lqkg;
+
+    move-object/from16 v1, p15
+
+    iput-object v1, v0, Lcat;->o:Lqkg;
+
+    move-object/from16 v1, p16
+
+    iput-object v1, v0, Lcat;->p:Lqkg;
+
+    move-object/from16 v1, p17
+
+    iput-object v1, v0, Lcat;->q:Lqkg;
+
+    move-object/from16 v1, p18
+
+    iput-object v1, v0, Lcat;->r:Lqkg;
+
+    move-object/from16 v1, p19
+
+    iput-object v1, v0, Lcat;->s:Lqkg;
+
+    move-object/from16 v1, p20
+
+    iput-object v1, v0, Lcat;->t:Lqkg;
+
+    move-object/from16 v1, p21
+
+    iput-object v1, v0, Lcat;->u:Lqkg;
+
+    move-object/from16 v1, p22
+
+    iput-object v1, v0, Lcat;->v:Lqkg;
+
+    move-object/from16 v1, p23
+
+    iput-object v1, v0, Lcat;->w:Lqkg;
+
+    move-object/from16 v1, p24
+
+    iput-object v1, v0, Lcat;->x:Lqkg;
+
+    move-object/from16 v1, p25
+
+    iput-object v1, v0, Lcat;->y:Lqkg;
+
     return-void
 .end method
 
 
 # virtual methods
-.method public final available()I
-    .locals 2
+.method public final bridge synthetic get()Ljava/lang/Object;
+    .locals 27
 
-    iget v0, p0, Lcat;->a:I
+    move-object/from16 v0, p0
 
-    const/high16 v1, -0x80000000
+    iget-object v1, v0, Lcat;->a:Lqkg;
 
-    if-ne v0, v1, :cond_0
+    invoke-interface {v1}, Lqkg;->get()Ljava/lang/Object;
 
-    invoke-super {p0}, Ljava/io/FilterInputStream;->available()I
+    move-result-object v1
 
-    move-result v0
+    move-object v3, v1
 
-    goto :goto_0
+    check-cast v3, Lddf;
 
-    :cond_0
-    invoke-super {p0}, Ljava/io/FilterInputStream;->available()I
+    iget-object v1, v0, Lcat;->b:Lqkg;
 
-    move-result v1
+    invoke-interface {v1}, Lqkg;->get()Ljava/lang/Object;
 
-    invoke-static {v0, v1}, Ljava/lang/Math;->min(II)I
+    move-result-object v1
 
-    move-result v0
+    move-object v4, v1
 
-    :goto_0
-    return v0
-.end method
+    check-cast v4, Llar;
 
-.method public final declared-synchronized mark(I)V
-    .locals 0
+    iget-object v1, v0, Lcat;->c:Lqkg;
 
-    monitor-enter p0
+    check-cast v1, Letf;
 
-    :try_start_0
-    invoke-super {p0, p1}, Ljava/io/FilterInputStream;->mark(I)V
+    invoke-virtual {v1}, Letf;->b()Lfhv;
 
-    iput p1, p0, Lcat;->a:I
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    move-result-object v5
 
-    monitor-exit p0
+    iget-object v1, v0, Lcat;->d:Lqkg;
 
-    return-void
+    invoke-interface {v1}, Lqkg;->get()Ljava/lang/Object;
 
-    :catchall_0
-    move-exception p1
+    move-result-object v1
 
-    monitor-exit p0
+    move-object v6, v1
 
-    throw p1
-.end method
+    check-cast v6, Lhrx;
 
-.method public final read()I
-    .locals 7
+    iget-object v1, v0, Lcat;->e:Lqkg;
 
-    const-wide/16 v0, 0x1
+    invoke-interface {v1}, Lqkg;->get()Ljava/lang/Object;
 
-    invoke-direct {p0, v0, v1}, Lcat;->a(J)J
+    move-result-object v1
 
-    move-result-wide v2
+    move-object v7, v1
 
-    const-wide/16 v4, -0x1
+    check-cast v7, Lcdf;
 
-    cmp-long v6, v2, v4
+    iget-object v1, v0, Lcat;->f:Lqkg;
 
-    if-nez v6, :cond_0
+    check-cast v1, Lcbj;
 
-    const/4 v0, -0x1
+    invoke-virtual {v1}, Lcbj;->a()Lkij;
 
-    return v0
+    move-result-object v8
 
-    :cond_0
-    invoke-super {p0}, Ljava/io/FilterInputStream;->read()I
+    iget-object v1, v0, Lcat;->g:Lqkg;
 
-    move-result v2
+    invoke-interface {v1}, Lqkg;->get()Ljava/lang/Object;
 
-    invoke-direct {p0, v0, v1}, Lcat;->b(J)V
+    move-result-object v1
 
-    return v2
-.end method
+    move-object v9, v1
 
-.method public final read([BII)I
-    .locals 2
+    check-cast v9, Lhuf;
 
-    int-to-long v0, p3
+    iget-object v1, v0, Lcat;->h:Lqkg;
 
-    invoke-direct {p0, v0, v1}, Lcat;->a(J)J
+    invoke-interface {v1}, Lqkg;->get()Ljava/lang/Object;
 
-    move-result-wide v0
+    move-result-object v1
 
-    long-to-int p3, v0
+    move-object v10, v1
 
-    const/4 v0, -0x1
+    check-cast v10, Lmdf;
 
-    if-ne p3, v0, :cond_0
+    iget-object v1, v0, Lcat;->i:Lqkg;
 
-    return v0
+    invoke-interface {v1}, Lqkg;->get()Ljava/lang/Object;
 
-    :cond_0
-    invoke-super {p0, p1, p2, p3}, Ljava/io/FilterInputStream;->read([BII)I
+    move-result-object v1
 
-    move-result p1
+    move-object v11, v1
 
-    int-to-long p2, p1
+    check-cast v11, Lcom/google/android/apps/camera/stats/timing/CameraActivityTiming;
 
-    invoke-direct {p0, p2, p3}, Lcat;->b(J)V
+    iget-object v1, v0, Lcat;->j:Lqkg;
 
-    return p1
-.end method
+    check-cast v1, Lhlj;
 
-.method public final declared-synchronized reset()V
-    .locals 1
+    invoke-virtual {v1}, Lhlj;->a()Lojc;
 
-    monitor-enter p0
+    move-result-object v12
 
-    :try_start_0
-    invoke-super {p0}, Ljava/io/FilterInputStream;->reset()V
+    iget-object v1, v0, Lcat;->k:Lqkg;
 
-    const/high16 v0, -0x80000000
+    invoke-interface {v1}, Lqkg;->get()Ljava/lang/Object;
 
-    iput v0, p0, Lcat;->a:I
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    move-result-object v1
 
-    monitor-exit p0
+    move-object v13, v1
 
-    return-void
+    check-cast v13, Lcaw;
 
-    :catchall_0
-    move-exception v0
+    iget-object v1, v0, Lcat;->l:Lqkg;
 
-    monitor-exit p0
+    invoke-interface {v1}, Lqkg;->get()Ljava/lang/Object;
 
-    throw v0
-.end method
+    move-result-object v1
 
-.method public final skip(J)J
-    .locals 3
+    move-object v14, v1
 
-    invoke-direct {p0, p1, p2}, Lcat;->a(J)J
+    check-cast v14, Lcef;
 
-    move-result-wide p1
+    iget-object v1, v0, Lcat;->m:Lqkg;
 
-    const-wide/16 v0, -0x1
+    invoke-interface {v1}, Lqkg;->get()Ljava/lang/Object;
 
-    cmp-long v2, p1, v0
+    move-result-object v1
 
-    if-nez v2, :cond_0
+    move-object v15, v1
 
-    const-wide/16 p1, 0x0
+    check-cast v15, Lcdp;
 
-    return-wide p1
+    iget-object v1, v0, Lcat;->n:Lqkg;
 
-    :cond_0
-    invoke-super {p0, p1, p2}, Ljava/io/FilterInputStream;->skip(J)J
+    invoke-interface {v1}, Lqkg;->get()Ljava/lang/Object;
 
-    move-result-wide p1
+    move-result-object v1
 
-    invoke-direct {p0, p1, p2}, Lcat;->b(J)V
+    move-object/from16 v16, v1
 
-    return-wide p1
-.end method
+    check-cast v16, Lgvb;
 
-.method public final synthetic transferTo(Ljava/io/OutputStream;)J
-    .locals 2
+    iget-object v1, v0, Lcat;->o:Lqkg;
 
-    invoke-static {p0, p1}, Lj$/io/DesugarInputStream;->transferTo(Ljava/io/InputStream;Ljava/io/OutputStream;)J
+    invoke-interface {v1}, Lqkg;->get()Ljava/lang/Object;
 
-    move-result-wide v0
+    move-result-object v1
 
-    return-wide v0
+    move-object/from16 v17, v1
+
+    check-cast v17, Llco;
+
+    iget-object v1, v0, Lcat;->p:Lqkg;
+
+    invoke-interface {v1}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v1
+
+    move-object/from16 v18, v1
+
+    check-cast v18, Llda;
+
+    iget-object v1, v0, Lcat;->q:Lqkg;
+
+    check-cast v1, Levv;
+
+    invoke-virtual {v1}, Levv;->a()Lojc;
+
+    move-result-object v19
+
+    iget-object v1, v0, Lcat;->r:Lqkg;
+
+    check-cast v1, Levv;
+
+    invoke-virtual {v1}, Levv;->a()Lojc;
+
+    move-result-object v20
+
+    iget-object v1, v0, Lcat;->s:Lqkg;
+
+    invoke-interface {v1}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v1
+
+    move-object/from16 v21, v1
+
+    check-cast v21, Ldqx;
+
+    iget-object v1, v0, Lcat;->t:Lqkg;
+
+    invoke-interface {v1}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v1
+
+    move-object/from16 v22, v1
+
+    check-cast v22, Ldqx;
+
+    iget-object v1, v0, Lcat;->u:Lqkg;
+
+    invoke-interface {v1}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v1
+
+    move-object/from16 v23, v1
+
+    check-cast v23, Ldqx;
+
+    iget-object v1, v0, Lcat;->v:Lqkg;
+
+    invoke-interface {v1}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v1
+
+    move-object/from16 v24, v1
+
+    check-cast v24, Ldqx;
+
+    iget-object v1, v0, Lcat;->w:Lqkg;
+
+    check-cast v1, Lcbe;
+
+    invoke-virtual {v1}, Lcbe;->a()Ljava/lang/Integer;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/Integer;->intValue()I
+
+    move-result v25
+
+    iget-object v1, v0, Lcat;->x:Lqkg;
+
+    check-cast v1, Lbwn;
+
+    invoke-virtual {v1}, Lbwn;->a()Ljava/util/concurrent/ExecutorService;
+
+    move-result-object v26
+
+    iget-object v1, v0, Lcat;->y:Lqkg;
+
+    invoke-interface {v1}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Ljug;
+
+    new-instance v1, Lcas;
+
+    move-object v2, v1
+
+    invoke-direct/range {v2 .. v26}, Lcas;-><init>(Lddf;Llar;Lfhv;Lhrx;Lcdf;Lkij;Lhuf;Lmdf;Lcom/google/android/apps/camera/stats/timing/CameraActivityTiming;Lojc;Lcaw;Lcef;Lcdp;Lgvb;Llco;Llda;Lojc;Lojc;Ldqx;Ldqx;Ldqx;Ldqx;ILjava/util/concurrent/ExecutorService;)V
+
+    return-object v1
 .end method

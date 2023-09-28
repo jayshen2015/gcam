@@ -1,82 +1,75 @@
-.class public final Lgpf;
-.super Landroid/os/Handler;
+.class public final synthetic Lgpf;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field public final synthetic a:Lcom/google/android/apps/camera/prewarm/ProcessingBoostService;
+.field public final synthetic a:Lpih;
+
+.field public final synthetic b:Lqkg;
+
+.field private final synthetic c:I
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/apps/camera/prewarm/ProcessingBoostService;)V
+.method public synthetic constructor <init>(Lpih;Lqkg;I)V
     .locals 0
 
-    iput-object p1, p0, Lgpf;->a:Lcom/google/android/apps/camera/prewarm/ProcessingBoostService;
+    iput p3, p0, Lgpf;->c:I
 
-    invoke-direct {p0}, Landroid/os/Handler;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lgpf;->a:Lpih;
+
+    iput-object p2, p0, Lgpf;->b:Lqkg;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final handleMessage(Landroid/os/Message;)V
-    .locals 3
+.method public final run()V
+    .locals 2
 
-    iget v0, p1, Landroid/os/Message;->what:I
+    iget v0, p0, Lgpf;->c:I
 
     packed-switch v0, :pswitch_data_0
 
-    goto :goto_0
+    iget-object v0, p0, Lgpf;->a:Lpih;
 
-    :pswitch_0
-    iget-object v0, p0, Lgpf;->a:Lcom/google/android/apps/camera/prewarm/ProcessingBoostService;
+    iget-object v1, p0, Lgpf;->b:Lqkg;
 
-    iget-object v1, v0, Lcom/google/android/apps/camera/prewarm/ProcessingBoostService;->b:Ljava/util/concurrent/Executor;
-
-    if-nez v1, :cond_0
-
-    const-string v1, "PBS#ensureInjection"
-
-    invoke-static {v1}, Landroid/os/Trace;->beginSection(Ljava/lang/String;)V
-
-    invoke-virtual {v0}, Lcom/google/android/apps/camera/prewarm/ProcessingBoostService;->getApplication()Landroid/app/Application;
+    invoke-interface {v1}, Lqkg;->get()Ljava/lang/Object;
 
     move-result-object v1
 
-    check-cast v1, Lemj;
+    check-cast v1, Llco;
 
-    const-class v2, Lgpg;
-
-    invoke-interface {v1, v2}, Lemj;->e(Ljava/lang/Class;)Leml;
-
-    move-result-object v1
-
-    check-cast v1, Lgpg;
-
-    invoke-interface {v1, v0}, Lgpg;->p(Lcom/google/android/apps/camera/prewarm/ProcessingBoostService;)V
-
-    invoke-static {}, Landroid/os/Trace;->endSection()V
-
-    :cond_0
-    iget-object v0, p0, Lgpf;->a:Lcom/google/android/apps/camera/prewarm/ProcessingBoostService;
-
-    iget-object v0, v0, Lcom/google/android/apps/camera/prewarm/ProcessingBoostService;->b:Ljava/util/concurrent/Executor;
-
-    new-instance v1, Lgot;
-
-    const/4 v2, 0x5
-
-    invoke-direct {v1, p0, v2}, Lgot;-><init>(Lgpf;I)V
-
-    invoke-interface {v0, v1}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
-
-    :goto_0
-    invoke-super {p0, p1}, Landroid/os/Handler;->handleMessage(Landroid/os/Message;)V
+    invoke-virtual {v0, v1}, Lpih;->o(Ljava/lang/Object;)Z
 
     return-void
 
+    :pswitch_0
+    iget-object v0, p0, Lgpf;->a:Lpih;
+
+    iget-object v1, p0, Lgpf;->b:Lqkg;
+
+    check-cast v1, Lgph;
+
+    invoke-virtual {v1}, Lgph;->a()Lgoy;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Lpih;->o(Ljava/lang/Object;)Z
+
+    return-void
+
+    nop
+
     :pswitch_data_0
-    .packed-switch 0x1
+    .packed-switch 0x0
         :pswitch_0
     .end packed-switch
 .end method

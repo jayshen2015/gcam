@@ -1,32 +1,83 @@
-.class public final Llxs;
-.super Laqc;
+.class public final synthetic Llxs;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Llij;
+
+
+# instance fields
+.field public final synthetic a:Llxv;
+
+.field public final synthetic b:Llce;
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 2
+.method public synthetic constructor <init>(Llxv;Llce;)V
+    .locals 0
 
-    const/4 v0, 0x3
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const/4 v1, 0x6
+    iput-object p1, p0, Llxs;->a:Llxv;
 
-    invoke-direct {p0, v0, v1}, Laqc;-><init>(II)V
+    iput-object p2, p0, Llxs;->b:Llce;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Laqp;)V
-    .locals 1
+.method public final fB(Ljava/lang/Object;)V
+    .locals 8
 
-    sget-object v0, Llya;->j:Laqc;
+    iget-object v0, p0, Llxs;->a:Llxv;
 
-    invoke-virtual {v0, p1}, Laqc;->a(Laqp;)V
+    iget-object v1, p0, Llxs;->b:Llce;
 
-    sget-object v0, Llya;->k:Laqc;
+    check-cast p1, Ljava/lang/Long;
 
-    invoke-virtual {v0, p1}, Laqc;->a(Laqp;)V
+    iget-object p1, v0, Llxv;->a:Llxx;
+
+    iget-wide v2, p1, Llxq;->b:J
+
+    iget-object p1, p1, Llxx;->f:Lldi;
+
+    iget-object p1, p1, Llce;->d:Ljava/lang/Object;
+
+    check-cast p1, Ljava/lang/Long;
+
+    invoke-virtual {p1}, Ljava/lang/Long;->longValue()J
+
+    move-result-wide v4
+
+    iget-object p1, v0, Llxv;->b:Lldi;
+
+    iget-object p1, p1, Llce;->d:Ljava/lang/Object;
+
+    check-cast p1, Ljava/lang/Long;
+
+    invoke-virtual {p1}, Ljava/lang/Long;->longValue()J
+
+    move-result-wide v6
+
+    sub-long/2addr v4, v6
+
+    sub-long v4, v2, v4
+
+    const-wide/16 v6, 0x0
+
+    invoke-static {v6, v7, v4, v5}, Ljava/lang/Math;->max(JJ)J
+
+    move-result-wide v4
+
+    invoke-static {v2, v3, v4, v5}, Ljava/lang/Math;->min(JJ)J
+
+    move-result-wide v2
+
+    invoke-static {v2, v3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object p1
+
+    invoke-virtual {v1, p1}, Llce;->fB(Ljava/lang/Object;)V
 
     return-void
 .end method

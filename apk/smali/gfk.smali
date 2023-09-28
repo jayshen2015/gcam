@@ -1,34 +1,39 @@
 .class public final Lgfk;
-.super Landroid/animation/AnimatorListenerAdapter;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Lgfg;
 
 
 # instance fields
-.field final synthetic a:Lcom/google/android/apps/camera/optionsbar/view/OptionsMenuContainer;
+.field private final synthetic a:I
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/apps/camera/optionsbar/view/OptionsMenuContainer;)V
+.method public constructor <init>(I)V
     .locals 0
 
-    iput-object p1, p0, Lgfk;->a:Lcom/google/android/apps/camera/optionsbar/view/OptionsMenuContainer;
+    iput p1, p0, Lgfk;->a:I
 
-    invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onAnimationEnd(Landroid/animation/Animator;)V
+.method public final a()V
     .locals 1
 
-    iget-object p1, p0, Lgfk;->a:Lcom/google/android/apps/camera/optionsbar/view/OptionsMenuContainer;
+    iget v0, p0, Lgfk;->a:I
 
-    iget-object p1, p1, Lcom/google/android/apps/camera/optionsbar/view/OptionsMenuContainer;->h:Ljava/util/Set;
+    return-void
+.end method
 
-    sget-object v0, Lfah;->j:Lfah;
+.method public final b(J)V
+    .locals 0
 
-    invoke-static {p1, v0}, Lj$/util/Collection$-EL;->forEach(Ljava/util/Collection;Ljava/util/function/Consumer;)V
+    iget p1, p0, Lgfk;->a:I
 
     return-void
 .end method

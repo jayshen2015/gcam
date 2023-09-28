@@ -1,28 +1,34 @@
-.class final Locl;
+.class public final Locl;
 .super Ljava/lang/Object;
 
 
 # static fields
-.field static final a:Llzz;
+.field public static final a:[I
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 4
+    .locals 1
 
-    sget-object v0, Lnzl;->i:Lnzl;
+    const/16 v0, 0x8
 
-    sget-object v1, Lnzl;->k:Lnzl;
+    new-array v0, v0, [I
 
-    sget-object v2, Loco;->a:Loco;
+    fill-array-data v0, :array_0
 
-    const-string v3, ""
-
-    invoke-static {v0, v3, v1, v2}, Llzz;->B(Lnzl;Ljava/lang/Object;Lnzl;Ljava/lang/Object;)Llzz;
-
-    move-result-object v0
-
-    sput-object v0, Locl;->a:Llzz;
+    sput-object v0, Locl;->a:[I
 
     return-void
+
+    :array_0
+    .array-data 4
+        0x101011f
+        0x7f040026
+        0x7f04003c
+        0x7f040053
+        0x7f040056
+        0x7f040057
+        0x7f0401e2
+        0x7f04035f
+    .end array-data
 .end method

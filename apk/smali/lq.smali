@@ -1,5 +1,8 @@
 .class final Llq;
-.super Lmk;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Landroid/view/View$OnAttachStateChangeListener;
 
 
 # instance fields
@@ -7,91 +10,58 @@
 
 
 # direct methods
-.method public constructor <init>(Llr;Landroid/content/Context;)V
+.method public constructor <init>(Llr;)V
     .locals 0
 
     iput-object p1, p0, Llq;->a:Llr;
 
-    invoke-direct {p0, p2}, Lmk;-><init>(Landroid/content/Context;)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method protected final a(Landroid/util/DisplayMetrics;)F
-    .locals 1
+.method public final onViewAttachedToWindow(Landroid/view/View;)V
+    .locals 0
 
-    iget p1, p1, Landroid/util/DisplayMetrics;->densityDpi:I
-
-    int-to-float p1, p1
-
-    const/high16 v0, 0x42c80000    # 100.0f
-
-    div-float/2addr v0, p1
-
-    return v0
+    return-void
 .end method
 
-.method protected final b(I)I
-    .locals 1
-
-    const/16 v0, 0x64
-
-    invoke-super {p0, p1}, Lmk;->b(I)I
-
-    move-result p1
-
-    invoke-static {v0, p1}, Ljava/lang/Math;->min(II)I
-
-    move-result p1
-
-    return p1
-.end method
-
-.method protected final c(Landroid/view/View;Lmi;)V
-    .locals 3
+.method public final onViewDetachedFromWindow(Landroid/view/View;)V
+    .locals 2
 
     iget-object v0, p0, Llq;->a:Llr;
 
-    iget-object v1, v0, Llr;->a:Landroid/support/v7/widget/RecyclerView;
+    iget-object v0, v0, Llr;->d:Landroid/view/ViewTreeObserver;
 
-    iget-object v1, v1, Landroid/support/v7/widget/RecyclerView;->n:Lly;
+    if-eqz v0, :cond_1
 
-    invoke-virtual {v0, v1, p1}, Llr;->c(Lly;Landroid/view/View;)[I
+    invoke-virtual {v0}, Landroid/view/ViewTreeObserver;->isAlive()Z
 
-    move-result-object p1
+    move-result v0
 
-    const/4 v0, 0x0
+    if-nez v0, :cond_0
 
-    aget v0, p1, v0
+    iget-object v0, p0, Llq;->a:Llr;
 
-    const/4 v1, 0x1
+    invoke-virtual {p1}, Landroid/view/View;->getViewTreeObserver()Landroid/view/ViewTreeObserver;
 
-    aget p1, p1, v1
+    move-result-object v1
 
-    invoke-static {v0}, Ljava/lang/Math;->abs(I)I
-
-    move-result v1
-
-    invoke-static {p1}, Ljava/lang/Math;->abs(I)I
-
-    move-result v2
-
-    invoke-static {v1, v2}, Ljava/lang/Math;->max(II)I
-
-    move-result v1
-
-    invoke-virtual {p0, v1}, Lmk;->j(I)I
-
-    move-result v1
-
-    if-lez v1, :cond_0
-
-    iget-object v2, p0, Llq;->j:Landroid/view/animation/DecelerateInterpolator;
-
-    invoke-virtual {p2, v0, p1, v1, v2}, Lmi;->b(IIILandroid/view/animation/Interpolator;)V
+    iput-object v1, v0, Llr;->d:Landroid/view/ViewTreeObserver;
 
     :cond_0
+    iget-object v0, p0, Llq;->a:Llr;
+
+    iget-object v1, v0, Llr;->d:Landroid/view/ViewTreeObserver;
+
+    iget-object v0, v0, Llr;->b:Landroid/view/ViewTreeObserver$OnGlobalLayoutListener;
+
+    invoke-virtual {v1, v0}, Landroid/view/ViewTreeObserver;->removeGlobalOnLayoutListener(Landroid/view/ViewTreeObserver$OnGlobalLayoutListener;)V
+
+    :cond_1
+    invoke-virtual {p1, p0}, Landroid/view/View;->removeOnAttachStateChangeListener(Landroid/view/View$OnAttachStateChangeListener;)V
+
     return-void
 .end method

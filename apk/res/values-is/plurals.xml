@@ -1,12 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <plurals name="accessibility_timelapse_manual_record_speed_desc">
-        <item quantity="other">Hraði hraðmyndar: %dx</item>
-        <item quantity="one">Hraði hraðmyndar: %dx</item>
-    </plurals>
-    <plurals name="number_of_cropped_face">
-        <item quantity="other">%d skorin.</item>
-        <item quantity="one">%d skorið.</item>
+    <plurals name="number_of_faces_announcement">
+        <item quantity="other">%1$d andlit.</item>
+        <item quantity="one">%1$d andlit.</item>
     </plurals>
     <plurals name="photos_remaining">
         <item quantity="other">Um það bil %s myndir</item>
@@ -17,8 +13,8 @@
         <item quantity="one">(%1$d forrit valið)</item>
     </plurals>
     <plurals name="social_share_info">
-        <item quantity="other">Deildu myndum og myndskeiðum á fljótlegan hátt í samfélagsforritum úr myndavélinni. Veldu allt að %1$d forrit. Ekki er hægt að deila myndum og myndskeiðum sem eru vistuð í læstri möppu.</item>
-        <item quantity="one">Deildu myndum og myndskeiðum á fljótlegan hátt í samfélagsforritum úr myndavélinni. Veldu allt að %1$d forrit. Ekki er hægt að deila myndum og myndskeiðum sem eru vistuð í læstri möppu.</item>
+        <item quantity="other">Deildu myndum og myndskeiðum á fljótlegan hátt í samfélagsforritum beint úr myndavélinni. Veldu allt að %1$d forrit. Ekki er hægt að deila myndum og myndskeiðum sem eru vistuð í læstri möppu.</item>
+        <item quantity="one">Deildu myndum og myndskeiðum á fljótlegan hátt í samfélagsforritum beint úr myndavélinni. Veldu allt að %1$d forrit. Ekki er hægt að deila myndum og myndskeiðum sem eru vistuð í læstri möppu.</item>
     </plurals>
     <plurals name="social_share_select_error">
         <item quantity="other">Veldu allt að %1$d forrit</item>

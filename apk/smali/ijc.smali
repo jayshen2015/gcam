@@ -1,67 +1,30 @@
-.class final Lijc;
-.super Lifk;
+.class public final synthetic Lijc;
+.super Ljava/lang/Object;
 
 
 # instance fields
-.field final synthetic a:Lije;
+.field public final synthetic a:Lmcu;
+
+.field public final synthetic b:Lljf;
+
+.field public final synthetic c:Lcom/google/android/apps/camera/stats/Instrumentation;
+
+.field public final synthetic d:Lqiz;
 
 
 # direct methods
-.method public constructor <init>(Lije;)V
+.method public synthetic constructor <init>(Lqiz;Lcom/google/android/apps/camera/stats/Instrumentation;Lmcu;Lljf;[B)V
     .locals 0
 
-    iput-object p1, p0, Lijc;->a:Lije;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0}, Lifk;-><init>()V
+    iput-object p1, p0, Lijc;->d:Lqiz;
 
-    return-void
-.end method
+    iput-object p2, p0, Lijc;->c:Lcom/google/android/apps/camera/stats/Instrumentation;
 
+    iput-object p3, p0, Lijc;->a:Lmcu;
 
-# virtual methods
-.method public final onShutterButtonClick()V
-    .locals 1
+    iput-object p4, p0, Lijc;->b:Lljf;
 
-    iget-object v0, p0, Lijc;->a:Lije;
-
-    iget-object v0, v0, Lije;->j:Logd;
-
-    invoke-interface {v0}, Logd;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lclc;
-
-    invoke-virtual {v0}, Lclc;->g()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    iget-object v0, p0, Lijc;->a:Lije;
-
-    iget-object v0, v0, Lije;->j:Logd;
-
-    invoke-interface {v0}, Logd;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lclc;
-
-    invoke-virtual {v0}, Lclc;->b()V
-
-    iget-object v0, p0, Lijc;->a:Lije;
-
-    iget-object v0, v0, Lije;->j:Logd;
-
-    invoke-interface {v0}, Logd;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lclc;
-
-    invoke-virtual {v0}, Lclc;->a()V
-
-    :cond_0
     return-void
 .end method

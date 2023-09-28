@@ -1,185 +1,112 @@
-.class public interface abstract Lelx;
-.super Ljava/lang/Object;
+.class public final enum Lelx;
+.super Ljava/lang/Enum;
 
 
 # static fields
-.field public static final b:Llpu;
+.field public static final enum a:Lelx;
 
-.field public static final c:Llpu;
+.field public static final enum b:Lelx;
 
-.field public static final d:Llpu;
+.field public static final enum c:Lelx;
 
-.field public static final e:Llpu;
+.field public static final enum d:Lelx;
 
-.field public static final f:Llpu;
+.field public static final enum e:Lelx;
 
-.field public static final g:Llpu;
-
-.field public static final h:Llpu;
-
-.field public static final i:Llpu;
-
-.field public static final j:Llpu;
-
-.field public static final k:Llpu;
-
-.field public static final l:Llpu;
-
-.field public static final m:Llpu;
+.field private static final synthetic f:[Lelx;
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 4
+    .locals 11
 
-    new-instance v0, Llpu;
+    new-instance v0, Lelx;
 
-    const-class v1, Landroid/media/AudioManager;
+    const-string v1, "NOTIFICATION_CHIP"
 
-    const-string v2, "audio"
+    const/4 v2, 0x0
 
-    const/4 v3, 0x2
+    invoke-direct {v0, v1, v2}, Lelx;-><init>(Ljava/lang/String;I)V
 
-    invoke-direct {v0, v1, v2, v3}, Llpu;-><init>(Ljava/lang/Class;Ljava/lang/String;I)V
+    sput-object v0, Lelx;->a:Lelx;
 
-    sput-object v0, Lelx;->b:Llpu;
+    new-instance v1, Lelx;
 
-    new-instance v0, Llpu;
+    const-string v3, "TOOLTIP"
 
-    const-class v1, Landroid/view/accessibility/AccessibilityManager;
+    const/4 v4, 0x1
 
-    const-string v2, "accessibility"
+    invoke-direct {v1, v3, v4}, Lelx;-><init>(Ljava/lang/String;I)V
 
-    const/4 v3, 0x3
+    sput-object v1, Lelx;->b:Lelx;
 
-    invoke-direct {v0, v1, v2, v3}, Llpu;-><init>(Ljava/lang/Class;Ljava/lang/String;I)V
+    new-instance v3, Lelx;
 
-    sput-object v0, Lelx;->c:Llpu;
+    const-string v5, "SMARTS"
 
-    new-instance v0, Llpu;
+    const/4 v6, 0x2
 
-    const-class v1, Landroid/hardware/camera2/CameraManager;
+    invoke-direct {v3, v5, v6}, Lelx;-><init>(Ljava/lang/String;I)V
 
-    const-string v2, "camera"
+    sput-object v3, Lelx;->c:Lelx;
 
-    const/4 v3, 0x4
+    new-instance v5, Lelx;
 
-    invoke-direct {v0, v1, v2, v3}, Llpu;-><init>(Ljava/lang/Class;Ljava/lang/String;I)V
+    const-string v7, "FIRST_RUN_TOAST"
 
-    sput-object v0, Lelx;->d:Llpu;
+    const/4 v8, 0x3
 
-    new-instance v0, Llpu;
+    invoke-direct {v5, v7, v8}, Lelx;-><init>(Ljava/lang/String;I)V
 
-    const-class v1, Landroid/app/admin/DevicePolicyManager;
+    sput-object v5, Lelx;->d:Lelx;
 
-    const-string v2, "device_policy"
+    new-instance v7, Lelx;
 
-    const/4 v3, 0x5
+    const-string v9, "SECOND_RUN_TOAST"
 
-    invoke-direct {v0, v1, v2, v3}, Llpu;-><init>(Ljava/lang/Class;Ljava/lang/String;I)V
+    const/4 v10, 0x4
 
-    sput-object v0, Lelx;->e:Llpu;
+    invoke-direct {v7, v9, v10}, Lelx;-><init>(Ljava/lang/String;I)V
 
-    new-instance v0, Llpu;
+    sput-object v7, Lelx;->e:Lelx;
 
-    const-class v1, Landroid/hardware/display/DisplayManager;
+    const/4 v9, 0x5
 
-    const-string v2, "display"
+    new-array v9, v9, [Lelx;
 
-    const/4 v3, 0x6
+    aput-object v0, v9, v2
 
-    invoke-direct {v0, v1, v2, v3}, Llpu;-><init>(Ljava/lang/Class;Ljava/lang/String;I)V
+    aput-object v1, v9, v4
 
-    sput-object v0, Lelx;->f:Llpu;
+    aput-object v3, v9, v6
 
-    new-instance v0, Llpu;
+    aput-object v5, v9, v8
 
-    const-class v1, Landroid/app/KeyguardManager;
+    aput-object v7, v9, v10
 
-    const-string v2, "keyguard"
-
-    const/4 v3, 0x7
-
-    invoke-direct {v0, v1, v2, v3}, Llpu;-><init>(Ljava/lang/Class;Ljava/lang/String;I)V
-
-    sput-object v0, Lelx;->g:Llpu;
-
-    new-instance v0, Llpu;
-
-    const-class v1, Landroid/location/LocationManager;
-
-    const-string v2, "location"
-
-    const/16 v3, 0x8
-
-    invoke-direct {v0, v1, v2, v3}, Llpu;-><init>(Ljava/lang/Class;Ljava/lang/String;I)V
-
-    sput-object v0, Lelx;->h:Llpu;
-
-    new-instance v0, Llpu;
-
-    const-class v1, Landroid/app/NotificationManager;
-
-    const-string v2, "notification"
-
-    const/16 v3, 0x9
-
-    invoke-direct {v0, v1, v2, v3}, Llpu;-><init>(Ljava/lang/Class;Ljava/lang/String;I)V
-
-    sput-object v0, Lelx;->i:Llpu;
-
-    new-instance v0, Llpu;
-
-    const-class v1, Landroid/os/PowerManager;
-
-    const-string v2, "power"
-
-    const/16 v3, 0xa
-
-    invoke-direct {v0, v1, v2, v3}, Llpu;-><init>(Ljava/lang/Class;Ljava/lang/String;I)V
-
-    sput-object v0, Lelx;->j:Llpu;
-
-    new-instance v0, Llpu;
-
-    const-class v1, Landroid/hardware/SensorManager;
-
-    const-string v2, "sensor"
-
-    const/16 v3, 0xb
-
-    invoke-direct {v0, v1, v2, v3}, Llpu;-><init>(Ljava/lang/Class;Ljava/lang/String;I)V
-
-    sput-object v0, Lelx;->k:Llpu;
-
-    new-instance v0, Llpu;
-
-    const-class v1, Landroid/app/job/JobScheduler;
-
-    const-string v2, "jobscheduler"
-
-    const/16 v3, 0xf
-
-    invoke-direct {v0, v1, v2, v3}, Llpu;-><init>(Ljava/lang/Class;Ljava/lang/String;I)V
-
-    sput-object v0, Lelx;->l:Llpu;
-
-    new-instance v0, Llpu;
-
-    const-class v1, Landroid/os/UserManager;
-
-    const-string v2, "user"
-
-    const/16 v3, 0x10
-
-    invoke-direct {v0, v1, v2, v3}, Llpu;-><init>(Ljava/lang/Class;Ljava/lang/String;I)V
-
-    sput-object v0, Lelx;->m:Llpu;
+    sput-object v9, Lelx;->f:[Lelx;
 
     return-void
 .end method
 
+.method private constructor <init>(Ljava/lang/String;I)V
+    .locals 0
 
-# virtual methods
-.method public abstract a(Llpu;)Ljava/lang/Object;
+    invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    return-void
+.end method
+
+.method public static values()[Lelx;
+    .locals 1
+
+    sget-object v0, Lelx;->f:[Lelx;
+
+    invoke-virtual {v0}, [Lelx;->clone()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, [Lelx;
+
+    return-object v0
 .end method

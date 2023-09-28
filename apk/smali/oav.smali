@@ -1,172 +1,191 @@
 .class public final Loav;
-.super Lnws;
-
-# interfaces
-.implements Lnxz;
-
-
-# static fields
-.field public static final d:Loav;
-
-.field private static volatile e:Lnyf;
+.super Loas;
 
 
 # instance fields
-.field public a:I
+.field public final a:Loat;
 
-.field public b:F
-
-.field public c:F
+.field public final b:Loau;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
-
-    new-instance v0, Loav;
-
-    invoke-direct {v0}, Loav;-><init>()V
-
-    sput-object v0, Loav;->d:Loav;
-
-    const-class v1, Loav;
-
-    invoke-static {v1, v0}, Lnws;->aa(Ljava/lang/Class;Lnws;)V
-
-    return-void
-.end method
-
-.method private constructor <init>()V
+.method public constructor <init>(Landroid/content/Context;Loaf;Loat;Loau;)V
     .locals 0
 
-    invoke-direct {p0}, Lnws;-><init>()V
+    invoke-direct {p0, p1, p2}, Loas;-><init>(Landroid/content/Context;Loaf;)V
+
+    iput-object p3, p0, Loav;->a:Loat;
+
+    iput-object p0, p3, Loat;->b:Loas;
+
+    iput-object p4, p0, Loav;->b:Loau;
+
+    iput-object p0, p4, Loau;->j:Loav;
 
     return-void
 .end method
 
 
 # virtual methods
-.method protected final a(ILjava/lang/Object;)Ljava/lang/Object;
-    .locals 3
+.method public final b(ZZZ)Z
+    .locals 1
 
-    add-int/lit8 p1, p1, -0x1
+    invoke-super {p0, p1, p2, p3}, Loas;->b(ZZZ)Z
 
-    const/4 p2, 0x1
+    move-result p2
 
-    packed-switch p1, :pswitch_data_0
+    invoke-virtual {p0}, Loas;->isRunning()Z
 
-    :pswitch_0
-    const/4 p1, 0x0
+    move-result v0
 
-    return-object p1
+    if-nez v0, :cond_0
 
-    :pswitch_1
-    sget-object p1, Loav;->e:Lnyf;
+    iget-object v0, p0, Loav;->b:Loau;
 
-    if-nez p1, :cond_1
-
-    const-class p2, Loav;
-
-    monitor-enter p2
-
-    :try_start_0
-    sget-object p1, Loav;->e:Lnyf;
-
-    if-nez p1, :cond_0
-
-    new-instance p1, Lnwo;
-
-    sget-object v0, Loav;->d:Loav;
-
-    invoke-direct {p1, v0}, Lnwo;-><init>(Lnws;)V
-
-    sput-object p1, Loav;->e:Lnyf;
+    invoke-virtual {v0}, Loau;->a()V
 
     :cond_0
-    monitor-exit p2
+    iget-object v0, p0, Loav;->d:Landroid/content/Context;
+
+    invoke-virtual {v0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lobr;->r(Landroid/content/ContentResolver;)F
+
+    if-eqz p1, :cond_1
+
+    if-eqz p3, :cond_1
+
+    iget-object p1, p0, Loav;->b:Loau;
+
+    invoke-virtual {p1}, Loau;->c()V
+
+    :cond_1
+    return p2
+.end method
+
+.method public final draw(Landroid/graphics/Canvas;)V
+    .locals 10
+
+    new-instance v0, Landroid/graphics/Rect;
+
+    invoke-direct {v0}, Landroid/graphics/Rect;-><init>()V
+
+    invoke-virtual {p0}, Loav;->getBounds()Landroid/graphics/Rect;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Landroid/graphics/Rect;->isEmpty()Z
+
+    move-result v1
+
+    if-nez v1, :cond_2
+
+    invoke-virtual {p0}, Loav;->isVisible()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_2
+
+    invoke-virtual {p1, v0}, Landroid/graphics/Canvas;->getClipBounds(Landroid/graphics/Rect;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    goto :goto_1
+
+    :cond_0
+    invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
+
+    iget-object v0, p0, Loav;->a:Loat;
+
+    invoke-virtual {p0}, Loas;->c()F
+
+    move-result v1
+
+    invoke-virtual {v0, p1, v1}, Loat;->f(Landroid/graphics/Canvas;F)V
+
+    iget-object v0, p0, Loav;->a:Loat;
+
+    iget-object v1, p0, Loav;->h:Landroid/graphics/Paint;
+
+    invoke-virtual {v0, p1, v1}, Loat;->e(Landroid/graphics/Canvas;Landroid/graphics/Paint;)V
+
+    const/4 v0, 0x0
+
+    :goto_0
+    iget-object v1, p0, Loav;->b:Loau;
+
+    iget-object v2, v1, Loau;->l:[I
+
+    array-length v3, v2
+
+    if-ge v0, v3, :cond_1
+
+    iget-object v4, p0, Loav;->a:Loat;
+
+    iget-object v6, p0, Loav;->h:Landroid/graphics/Paint;
+
+    iget-object v1, v1, Loau;->k:[F
+
+    add-int v3, v0, v0
+
+    aget v7, v1, v3
+
+    add-int/lit8 v3, v3, 0x1
+
+    aget v8, v1, v3
+
+    aget v9, v2, v0
+
+    move-object v5, p1
+
+    invoke-virtual/range {v4 .. v9}, Loat;->d(Landroid/graphics/Canvas;Landroid/graphics/Paint;FFI)V
+
+    add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    :catchall_0
-    move-exception p1
-
-    monitor-exit p2
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw p1
-
     :cond_1
-    :goto_0
-    return-object p1
+    invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
 
-    :pswitch_2
-    sget-object p1, Loav;->d:Loav;
+    return-void
 
-    return-object p1
+    :cond_2
+    :goto_1
+    return-void
+.end method
 
-    :pswitch_3
-    new-instance p1, Lnwn;
+.method public final getIntrinsicHeight()I
+    .locals 1
 
-    sget-object p2, Loav;->d:Loav;
+    iget-object v0, p0, Loav;->a:Loat;
 
-    invoke-direct {p1, p2}, Lnwn;-><init>(Lnws;)V
+    invoke-virtual {v0}, Loat;->a()I
 
-    return-object p1
+    move-result v0
 
-    :pswitch_4
-    new-instance p1, Loav;
+    return v0
+.end method
 
-    invoke-direct {p1}, Loav;-><init>()V
+.method public final getIntrinsicWidth()I
+    .locals 1
 
-    return-object p1
+    iget-object v0, p0, Loav;->a:Loat;
 
-    :pswitch_5
-    const-string p1, "a"
+    invoke-virtual {v0}, Loat;->b()I
 
-    const-string v0, "\u0001\u0002\u0000\u0001\u0001\u0002\u0002\u0000\u0000\u0000\u0001\u1001\u0000\u0002\u1001\u0001"
+    move-result v0
 
-    const/4 v1, 0x3
+    return v0
+.end method
 
-    new-array v1, v1, [Ljava/lang/Object;
+.method public final bridge synthetic getOpacity()I
+    .locals 1
 
-    const/4 v2, 0x0
+    const/4 v0, -0x3
 
-    aput-object p1, v1, v2
-
-    const-string p1, "b"
-
-    aput-object p1, v1, p2
-
-    const/4 p1, 0x2
-
-    const-string p2, "c"
-
-    aput-object p2, v1, p1
-
-    sget-object p1, Loav;->d:Loav;
-
-    invoke-static {p1, v0, v1}, Loav;->X(Lnxy;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object p1
-
-    return-object p1
-
-    :pswitch_6
-    invoke-static {p2}, Ljava/lang/Byte;->valueOf(B)Ljava/lang/Byte;
-
-    move-result-object p1
-
-    return-object p1
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_6
-        :pswitch_0
-        :pswitch_5
-        :pswitch_4
-        :pswitch_3
-        :pswitch_2
-        :pswitch_1
-    .end packed-switch
+    return v0
 .end method

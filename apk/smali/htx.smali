@@ -1,193 +1,89 @@
-.class Lhtx;
-.super Lhtm;
+.class public final synthetic Lhtx;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Landroid/content/SharedPreferences$OnSharedPreferenceChangeListener;
 
 
 # instance fields
-.field final synthetic a:Lhtz;
+.field public final synthetic a:Lhua;
+
+.field public final synthetic b:Landroid/content/SharedPreferences;
+
+.field public final synthetic c:Lddf;
 
 
 # direct methods
-.method public constructor <init>(Lhtz;)V
+.method public synthetic constructor <init>(Lhua;Landroid/content/SharedPreferences;Lddf;)V
     .locals 0
 
-    iput-object p1, p0, Lhtx;->a:Lhtz;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0}, Lhtm;-><init>()V
+    iput-object p1, p0, Lhtx;->a:Lhua;
+
+    iput-object p2, p0, Lhtx;->b:Landroid/content/SharedPreferences;
+
+    iput-object p3, p0, Lhtx;->c:Lddf;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public a()V
-    .locals 2
-
-    iget-object v0, p0, Lhtx;->a:Lhtz;
-
-    const/4 v1, 0x1
-
-    iput-boolean v1, v0, Lhtz;->m:Z
-
-    return-void
-.end method
-
-.method public c()V
-    .locals 0
-
-    return-void
-.end method
-
-.method public d()V
-    .locals 0
-
-    return-void
-.end method
-
-.method public final f()V
+.method public final onSharedPreferenceChanged(Landroid/content/SharedPreferences;Ljava/lang/String;)V
     .locals 3
 
-    iget-object v0, p0, Lhtx;->a:Lhtz;
+    iget-object p1, p0, Lhtx;->a:Lhua;
 
-    iget-object v1, v0, Lhtz;->i:Ldbf;
+    iget-object v0, p0, Lhtx;->b:Landroid/content/SharedPreferences;
 
-    invoke-virtual {v1}, Ldbf;->d()Lklv;
+    iget-object v1, p0, Lhtx;->c:Lddf;
 
-    move-result-object v1
+    iget-object p1, p1, Lhua;->a:Ljava/util/Map;
 
-    iput-object v1, v0, Lhtz;->o:Lklv;
+    invoke-interface {p1, p2}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
-    iget-object v0, p0, Lhtx;->a:Lhtz;
+    move-result-object p1
 
-    invoke-virtual {v0}, Lhtz;->t()Lcom/google/android/apps/camera/ui/wirers/PreviewOverlay;
+    check-cast p1, Lhtz;
 
-    move-result-object v0
-
-    const/4 v1, 0x1
-
-    iput-boolean v1, v0, Lcom/google/android/apps/camera/ui/wirers/PreviewOverlay;->d:Z
-
-    iget-object v0, p0, Lhtx;->a:Lhtz;
-
-    invoke-virtual {v0}, Lhtz;->x()V
-
-    iget-object v0, p0, Lhtx;->a:Lhtz;
-
-    sget-object v2, Lika;->t:Lika;
-
-    invoke-virtual {v0, v2}, Lhtz;->B(Lika;)V
-
-    iget-object v0, p0, Lhtx;->a:Lhtz;
-
-    iget-object v0, v0, Lhtz;->b:Litm;
-
-    const/4 v2, 0x0
-
-    invoke-interface {v0, v2}, Litm;->I(Z)V
-
-    iget-object v0, p0, Lhtx;->a:Lhtz;
-
-    iget-object v0, v0, Lhtz;->b:Litm;
-
-    invoke-interface {v0}, Litm;->n()V
-
-    iget-object v0, p0, Lhtx;->a:Lhtz;
-
-    iget-object v0, v0, Lhtz;->d:Lebj;
-
-    invoke-virtual {v0}, Lebj;->b()V
-
-    iget-object v0, p0, Lhtx;->a:Lhtz;
-
-    invoke-virtual {v0}, Lhtz;->u()V
-
-    iget-object v0, p0, Lhtx;->a:Lhtz;
-
-    iget-object v0, v0, Lhtz;->c:Libj;
-
-    sget-object v2, Lika;->t:Lika;
-
-    invoke-interface {v0, v2, v1}, Libj;->j(Lika;Z)V
-
-    iget-object v0, p0, Lhtx;->a:Lhtz;
-
-    iget-object v0, v0, Lhtz;->c:Libj;
-
-    invoke-interface {v0}, Libj;->m()V
+    if-nez p1, :cond_0
 
     return-void
-.end method
-
-.method public final g()V
-    .locals 2
-
-    iget-object v0, p0, Lhtx;->a:Lhtz;
-
-    iget-object v1, v0, Lhtz;->o:Lklv;
-
-    if-eqz v1, :cond_0
-
-    iget-object v0, v0, Lhtz;->i:Ldbf;
-
-    invoke-virtual {v0, v1}, Ldbf;->g(Lklv;)V
 
     :cond_0
-    iget-object v0, p0, Lhtx;->a:Lhtz;
+    const/4 v2, 0x0
 
-    invoke-virtual {v0}, Lhtz;->t()Lcom/google/android/apps/camera/ui/wirers/PreviewOverlay;
+    invoke-interface {v0, p2, v2}, Landroid/content/SharedPreferences;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object p2
 
-    const/4 v1, 0x0
+    if-eqz p2, :cond_1
 
-    iput-boolean v1, v0, Lcom/google/android/apps/camera/ui/wirers/PreviewOverlay;->d:Z
+    iget-object v0, p1, Lhtz;->b:Llda;
 
-    iget-object v0, p0, Lhtx;->a:Lhtz;
+    iget-object p1, p1, Lhtz;->a:Lhts;
 
-    iget-object v0, v0, Lhtz;->b:Litm;
+    invoke-virtual {p1, p2}, Lhts;->b(Ljava/lang/String;)Ljava/lang/Object;
 
-    invoke-interface {v0, v1}, Litm;->I(Z)V
+    move-result-object p1
 
-    iget-object v0, p0, Lhtx;->a:Lhtz;
-
-    iget-object v0, v0, Lhtz;->d:Lebj;
-
-    invoke-virtual {v0}, Lebj;->a()V
-
-    iget-object v0, p0, Lhtx;->a:Lhtz;
-
-    iget-object v0, v0, Lhtz;->g:Lcfp;
-
-    invoke-virtual {v0}, Lcfp;->c()V
-
-    iget-object v0, p0, Lhtx;->a:Lhtz;
-
-    iget-object v0, v0, Lhtz;->f:Lgvs;
-
-    invoke-virtual {v0}, Lgvl;->c()V
+    invoke-interface {v0, p1}, Llda;->fB(Ljava/lang/Object;)V
 
     return-void
-.end method
 
-.method public i()V
-    .locals 0
+    :cond_1
+    iget-object p2, p1, Lhtz;->b:Llda;
 
-    return-void
-.end method
+    iget-object p1, p1, Lhtz;->a:Lhts;
 
-.method public k()V
-    .locals 0
+    iget-object p1, p1, Lhts;->b:Lhtr;
 
-    return-void
-.end method
+    invoke-interface {p1, v1}, Lhtr;->a(Lddf;)Ljava/lang/Object;
 
-.method public l()V
-    .locals 0
+    move-result-object p1
 
-    return-void
-.end method
-
-.method public p()V
-    .locals 0
+    invoke-interface {p2, p1}, Llda;->fB(Ljava/lang/Object;)V
 
     return-void
 .end method

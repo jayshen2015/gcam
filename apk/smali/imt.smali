@@ -1,63 +1,102 @@
-.class public final Limt;
+.class public interface abstract Limt;
 .super Ljava/lang/Object;
 
-# interfaces
-.implements Logk;
 
-
-# instance fields
-.field private final a:Loiw;
+# static fields
+.field public static final b:Ljava/util/Map;
 
 
 # direct methods
-.method public constructor <init>(Loiw;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 3
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-static {}, Loor;->m()Loon;
 
-    iput-object p1, p0, Limt;->a:Loiw;
+    move-result-object v0
+
+    const/4 v1, 0x0
+
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v1
+
+    sget-object v2, Lims;->b:Lims;
+
+    invoke-virtual {v0, v1, v2}, Loon;->e(Ljava/lang/Object;Ljava/lang/Object;)V
+
+    const/4 v1, 0x1
+
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v1
+
+    sget-object v2, Lims;->c:Lims;
+
+    invoke-virtual {v0, v1, v2}, Loon;->e(Ljava/lang/Object;Ljava/lang/Object;)V
+
+    const/4 v1, 0x2
+
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v1
+
+    sget-object v2, Lims;->d:Lims;
+
+    invoke-virtual {v0, v1, v2}, Loon;->e(Ljava/lang/Object;Ljava/lang/Object;)V
+
+    const/4 v1, 0x3
+
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v1
+
+    sget-object v2, Lims;->e:Lims;
+
+    invoke-virtual {v0, v1, v2}, Loon;->e(Ljava/lang/Object;Ljava/lang/Object;)V
+
+    const/4 v1, 0x4
+
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v1
+
+    sget-object v2, Lims;->f:Lims;
+
+    invoke-virtual {v0, v1, v2}, Loon;->e(Ljava/lang/Object;Ljava/lang/Object;)V
+
+    const/4 v1, 0x5
+
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v1
+
+    sget-object v2, Lims;->g:Lims;
+
+    invoke-virtual {v0, v1, v2}, Loon;->e(Ljava/lang/Object;Ljava/lang/Object;)V
+
+    const/4 v1, 0x6
+
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v1
+
+    sget-object v2, Lims;->h:Lims;
+
+    invoke-virtual {v0, v1, v2}, Loon;->e(Ljava/lang/Object;Ljava/lang/Object;)V
+
+    invoke-virtual {v0}, Loon;->c()Loor;
+
+    move-result-object v0
+
+    sput-object v0, Limt;->b:Ljava/util/Map;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Ljava/lang/Boolean;
-    .locals 2
-
-    iget-object v0, p0, Limt;->a:Loiw;
-
-    check-cast v0, Ldwh;
-
-    invoke-virtual {v0}, Ldwh;->a()Landroid/content/Context;
-
-    move-result-object v0
-
-    const-string v1, "user"
-
-    invoke-virtual {v0, v1}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/os/UserManager;
-
-    invoke-virtual {v0}, Landroid/os/UserManager;->isDemoUser()Z
-
-    move-result v0
-
-    invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
-
-    move-result-object v0
-
-    return-object v0
+.method public abstract c()Lims;
 .end method
 
-.method public final bridge synthetic get()Ljava/lang/Object;
-    .locals 1
-
-    invoke-virtual {p0}, Limt;->a()Ljava/lang/Boolean;
-
-    move-result-object v0
-
-    return-object v0
+.method public abstract d(Limr;)Llie;
 .end method

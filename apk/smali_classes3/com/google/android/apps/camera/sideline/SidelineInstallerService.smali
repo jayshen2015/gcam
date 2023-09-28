@@ -3,9 +3,9 @@
 
 
 # instance fields
-.field public a:Lhba;
+.field public a:Lhwh;
 
-.field public b:Ldja;
+.field public b:Lhwl;
 
 
 # direct methods
@@ -34,17 +34,17 @@
 
     move-result-object v0
 
-    check-cast v0, Lemj;
+    check-cast v0, Lenc;
 
-    const-class v1, Lhbb;
+    const-class v1, Lhwi;
 
-    invoke-interface {v0, v1}, Lemj;->e(Ljava/lang/Class;)Leml;
+    invoke-interface {v0, v1}, Lenc;->c(Ljava/lang/Class;)Lene;
 
     move-result-object v0
 
-    check-cast v0, Lhbb;
+    check-cast v0, Lhwi;
 
-    invoke-interface {v0, p0}, Lhbb;->t(Lcom/google/android/apps/camera/sideline/SidelineInstallerService;)V
+    invoke-interface {v0, p0}, Lhwi;->t(Lcom/google/android/apps/camera/sideline/SidelineInstallerService;)V
 
     return-void
 .end method
@@ -104,7 +104,7 @@
     goto/16 :goto_4
 
     :pswitch_0
-    iget-object p2, p0, Lcom/google/android/apps/camera/sideline/SidelineInstallerService;->a:Lhba;
+    iget-object p2, p0, Lcom/google/android/apps/camera/sideline/SidelineInstallerService;->a:Lhwh;
 
     invoke-virtual {p1}, Landroid/content/Intent;->getExtras()Landroid/os/Bundle;
 
@@ -112,17 +112,17 @@
 
     if-nez p1, :cond_1
 
-    sget-object p1, Lhba;->a:Lnak;
+    sget-object p1, Lhwh;->a:Louj;
 
-    invoke-virtual {p1}, Lnaf;->c()Lnaz;
+    invoke-virtual {p1}, Loue;->c()Lova;
 
     move-result-object p1
 
-    const-string p2, "extras is null from PackageInstaller."
+    const/16 p2, 0xa80
 
-    const/16 p3, 0xd65
+    const-string p3, "extras is null from PackageInstaller."
 
-    invoke-static {p1, p2, p3}, Ld;->g(Lnaz;Ljava/lang/String;C)V
+    invoke-static {p1, p3, p2}, Ld;->v(Lova;Ljava/lang/String;C)V
 
     goto/16 :goto_4
 
@@ -149,32 +149,32 @@
 
     packed-switch p3, :pswitch_data_1
 
-    sget-object p1, Lhba;->a:Lnak;
+    sget-object p1, Lhwh;->a:Louj;
 
-    invoke-virtual {p1}, Lnaf;->b()Lnaz;
-
-    move-result-object p1
-
-    check-cast p1, Lnah;
-
-    const/16 p2, 0xd63
-
-    invoke-interface {p1, p2}, Lnah;->G(I)Lnaz;
+    invoke-virtual {p1}, Loue;->b()Lova;
 
     move-result-object p1
 
-    check-cast p1, Lnah;
+    check-cast p1, Loug;
+
+    const/16 p2, 0xa7e
+
+    invoke-interface {p1, p2}, Loug;->G(I)Lova;
+
+    move-result-object p1
+
+    check-cast p1, Loug;
 
     const-string p2, "Unrecognized status received from installer: %d"
 
-    invoke-interface {p1, p2, p3}, Lnah;->p(Ljava/lang/String;I)V
+    invoke-interface {p1, p2, p3}, Loug;->p(Ljava/lang/String;I)V
 
     goto/16 :goto_4
 
     :pswitch_1
     new-instance v1, Landroid/content/ComponentName;
 
-    iget-object v2, p2, Lhba;->b:Landroid/content/Context;
+    iget-object v2, p2, Lhwh;->b:Landroid/content/Context;
 
     const-class v3, Lcom/google/android/apps/camera/sideline/SidelineJobService;
 
@@ -198,11 +198,11 @@
 
     move-result-object v1
 
-    iget-object v2, p2, Lhba;->o:Loiw;
+    iget-object v2, p2, Lhwh;->q:Lqkg;
 
-    check-cast v2, Lemd;
+    check-cast v2, Lemv;
 
-    invoke-virtual {v2}, Lemd;->a()Landroid/app/job/JobScheduler;
+    invoke-virtual {v2}, Lemv;->a()Landroid/app/job/JobScheduler;
 
     move-result-object v2
 
@@ -212,136 +212,132 @@
 
     if-eq v1, v0, :cond_2
 
-    sget-object v0, Lhba;->a:Lnak;
+    sget-object v0, Lhwh;->a:Louj;
 
-    invoke-virtual {v0}, Lnaf;->c()Lnaz;
+    invoke-virtual {v0}, Loue;->c()Lova;
 
     move-result-object v0
 
-    const-string v1, "Failed to schedule retry!"
+    const/16 v1, 0xa84
 
-    const/16 v2, 0xd69
+    const-string v2, "Failed to schedule retry!"
 
-    invoke-static {v0, v1, v2}, Ld;->g(Lnaz;Ljava/lang/String;C)V
+    invoke-static {v0, v2, v1}, Ld;->v(Lova;Ljava/lang/String;C)V
 
     goto :goto_2
 
     :pswitch_2
-    invoke-virtual {p2}, Lhba;->b()V
+    invoke-virtual {p2}, Lhwh;->b()V
 
     goto :goto_2
 
     :pswitch_3
-    invoke-virtual {p2}, Lhba;->c()V
+    invoke-virtual {p2}, Lhwh;->c()V
 
-    iget-object p1, p2, Lhba;->k:Lhbf;
+    iget-object p1, p2, Lhwh;->m:Lhwn;
 
-    iget-object p3, p1, Lhbf;->a:Lkrf;
+    iget-object p3, p1, Lhwn;->a:Lmcu;
 
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
     move-result-wide v0
 
-    iput-wide v0, p1, Lhbf;->e:J
+    iput-wide v0, p1, Lhwn;->e:J
 
-    iget-object p1, p2, Lhba;->p:Lkbc;
+    iget-object p1, p2, Lhwh;->r:Lljf;
 
     const-string p3, "SidelineInstaller#waitForHalRestart"
 
-    invoke-interface {p1, p3}, Lkbc;->a(Ljava/lang/String;)Lkbf;
+    invoke-interface {p1, p3}, Lljf;->a(Ljava/lang/String;)Llji;
 
     move-result-object p1
 
-    iput-object p1, p2, Lhba;->s:Lkbf;
+    iput-object p1, p2, Lhwh;->u:Llji;
 
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
 
     move-result-wide v0
 
-    new-instance p1, Lhaz;
+    new-instance p1, Lhwb;
 
-    invoke-direct {p1, p2, v0, v1}, Lhaz;-><init>(Lhba;J)V
-
-    sget-object p3, Ljava/util/concurrent/TimeUnit;->SECONDS:Ljava/util/concurrent/TimeUnit;
-
-    iget-object p2, p2, Lhba;->g:Ljava/util/concurrent/ScheduledExecutorService;
+    invoke-direct {p1, p2, v0, v1}, Lhwb;-><init>(Lhwh;J)V
 
     const-wide/16 v0, 0x3
 
-    invoke-static {p1, v0, v1, p3, p2}, Lnsy;->D(Lnnn;JLjava/util/concurrent/TimeUnit;Ljava/util/concurrent/ScheduledExecutorService;)Lnou;
+    sget-object p3, Ljava/util/concurrent/TimeUnit;->SECONDS:Ljava/util/concurrent/TimeUnit;
+
+    iget-object p2, p2, Lhwh;->g:Ljava/util/concurrent/ScheduledExecutorService;
+
+    invoke-static {p1, v0, v1, p3, p2}, Lplk;->X(Lpgj;JLjava/util/concurrent/TimeUnit;Ljava/util/concurrent/ScheduledExecutorService;)Lpht;
 
     goto/16 :goto_4
 
     :pswitch_4
-    sget-object v0, Lhba;->a:Lnak;
+    sget-object v0, Lhwh;->a:Louj;
 
-    invoke-virtual {v0}, Lnaf;->b()Lnaz;
+    invoke-virtual {v0}, Loue;->b()Lova;
 
     move-result-object v0
 
-    const-string v1, "Package installer is asking user for permission. This should not happen in HAL update!"
+    const/16 v1, 0xa7f
 
-    const/16 v2, 0xd64
+    const-string v2, "Package installer is asking user for permission. This should not happen in HAL update!"
 
-    invoke-static {v0, v1, v2}, Ld;->g(Lnaz;Ljava/lang/String;C)V
+    invoke-static {v0, v2, v1}, Ld;->v(Lova;Ljava/lang/String;C)V
 
     :cond_2
     :goto_2
     :pswitch_5
-    invoke-virtual {p2, p3, p1}, Lhba;->a(ILj$/util/Optional;)V
+    invoke-virtual {p2, p3, p1}, Lhwh;->a(ILj$/util/Optional;)V
 
     goto/16 :goto_4
 
     :pswitch_6
-    iget-object p1, p0, Lcom/google/android/apps/camera/sideline/SidelineInstallerService;->b:Ldja;
+    iget-object p1, p0, Lcom/google/android/apps/camera/sideline/SidelineInstallerService;->b:Lhwl;
 
-    invoke-virtual {p1}, Ldja;->z()Landroid/app/NotificationChannel;
+    invoke-virtual {p1}, Lhwl;->a()Landroid/app/NotificationChannel;
 
     move-result-object p2
 
     new-instance p3, Landroid/app/Notification$Builder;
 
-    iget-object v1, p1, Ldja;->c:Ljava/lang/Object;
+    iget-object v1, p1, Lhwl;->a:Landroid/content/Context;
 
     invoke-virtual {p2}, Landroid/app/NotificationChannel;->getId()Ljava/lang/String;
 
     move-result-object p2
 
-    check-cast v1, Landroid/content/Context;
-
     invoke-direct {p3, v1, p2}, Landroid/app/Notification$Builder;-><init>(Landroid/content/Context;Ljava/lang/String;)V
 
-    const p2, 0x1080081
+    const p2, 0xa41e
 
-    invoke-virtual {p3, p2}, Landroid/app/Notification$Builder;->setSmallIcon(I)Landroid/app/Notification$Builder;
+    const v1, 0x1080081
 
-    move-result-object p2
-
-    iget-object p3, p1, Ldja;->c:Ljava/lang/Object;
-
-    check-cast p3, Landroid/content/Context;
-
-    const v1, 0x7f14023c
-
-    invoke-virtual {p3, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+    invoke-virtual {p3, v1}, Landroid/app/Notification$Builder;->setSmallIcon(I)Landroid/app/Notification$Builder;
 
     move-result-object p3
 
-    invoke-virtual {p2, p3}, Landroid/app/Notification$Builder;->setContentTitle(Ljava/lang/CharSequence;)Landroid/app/Notification$Builder;
+    iget-object v1, p1, Lhwl;->a:Landroid/content/Context;
 
-    move-result-object p2
+    const v2, 0x7f140214
 
-    iget-object p1, p1, Ldja;->c:Ljava/lang/Object;
+    invoke-virtual {v1, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
-    check-cast p1, Landroid/content/Context;
+    move-result-object v1
 
-    const p3, 0x7f14023b
+    invoke-virtual {p3, v1}, Landroid/app/Notification$Builder;->setContentTitle(Ljava/lang/CharSequence;)Landroid/app/Notification$Builder;
 
-    invoke-virtual {p1, p3}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+    move-result-object p3
+
+    iget-object p1, p1, Lhwl;->a:Landroid/content/Context;
+
+    const v1, 0x7f140213
+
+    invoke-virtual {p1, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
     move-result-object p1
 
-    invoke-virtual {p2, p1}, Landroid/app/Notification$Builder;->setContentText(Ljava/lang/CharSequence;)Landroid/app/Notification$Builder;
+    invoke-virtual {p3, p1}, Landroid/app/Notification$Builder;->setContentText(Ljava/lang/CharSequence;)Landroid/app/Notification$Builder;
 
     move-result-object p1
 
@@ -351,9 +347,9 @@
 
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
-    move-result-wide p2
+    move-result-wide v1
 
-    invoke-virtual {p1, p2, p3}, Landroid/app/Notification$Builder;->setWhen(J)Landroid/app/Notification$Builder;
+    invoke-virtual {p1, v1, v2}, Landroid/app/Notification$Builder;->setWhen(J)Landroid/app/Notification$Builder;
 
     move-result-object p1
 
@@ -369,17 +365,15 @@
 
     move-result-object p1
 
-    const p2, 0xa41e
-
     invoke-virtual {p0, p2, p1}, Lcom/google/android/apps/camera/sideline/SidelineInstallerService;->startForeground(ILandroid/app/Notification;)V
 
-    iget-object p1, p0, Lcom/google/android/apps/camera/sideline/SidelineInstallerService;->a:Lhba;
+    iget-object p1, p0, Lcom/google/android/apps/camera/sideline/SidelineInstallerService;->a:Lhwh;
 
-    iget-object p2, p1, Lhba;->q:Lnph;
+    iget-object p2, p1, Lhwh;->s:Lpih;
 
     if-eqz p2, :cond_4
 
-    invoke-virtual {p2}, Lnph;->isDone()Z
+    invoke-virtual {p2}, Lpih;->isDone()Z
 
     move-result p2
 
@@ -388,33 +382,33 @@
     goto :goto_3
 
     :cond_3
-    sget-object p1, Lhba;->a:Lnak;
+    sget-object p1, Lhwh;->a:Louj;
 
-    invoke-virtual {p1}, Lnaf;->b()Lnaz;
+    invoke-virtual {p1}, Loue;->b()Lova;
 
     move-result-object p1
 
-    const-string p2, "startHalUpdate called when HAL is still updating!"
+    const/16 p2, 0xa86
 
-    const/16 p3, 0xd6b
+    const-string p3, "startHalUpdate called when HAL is still updating!"
 
-    invoke-static {p1, p2, p3}, Ld;->g(Lnaz;Ljava/lang/String;C)V
+    invoke-static {p1, p3, p2}, Ld;->v(Lova;Ljava/lang/String;C)V
 
     goto :goto_4
 
     :cond_4
     :goto_3
-    invoke-static {}, Lnph;->g()Lnph;
+    invoke-static {}, Lpih;->f()Lpih;
 
     move-result-object p2
 
-    iput-object p2, p1, Lhba;->q:Lnph;
+    iput-object p2, p1, Lhwh;->s:Lpih;
 
-    iget-object p2, p1, Lhba;->l:Lgzm;
+    iget-object p2, p1, Lhwh;->n:Lhuf;
 
-    sget-object p3, Lgzd;->ak:Lgzs;
+    sget-object p3, Lhtu;->U:Lhul;
 
-    invoke-interface {p2, p3}, Lgzm;->c(Lgzb;)Ljava/lang/Object;
+    invoke-interface {p2, p3}, Lhuf;->c(Lhts;)Ljava/lang/Object;
 
     move-result-object p2
 
@@ -424,82 +418,84 @@
 
     move-result p2
 
-    iget-object p3, p1, Lhba;->m:Lgzn;
+    iget-object p3, p1, Lhwh;->o:Lhug;
+
+    sget-object v1, Lhtu;->U:Lhul;
 
     add-int/2addr p2, v0
-
-    sget-object v1, Lgzd;->ak:Lgzs;
 
     invoke-static {p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object p2
 
-    invoke-interface {p3, v1, p2}, Lgzn;->e(Lgzb;Ljava/lang/Object;)V
+    invoke-interface {p3, v1, p2}, Lhug;->e(Lhts;Ljava/lang/Object;)V
 
-    iget-object p2, p1, Lhba;->k:Lhbf;
+    iget-object p2, p1, Lhwh;->m:Lhwn;
 
-    iget-wide v1, p2, Lhbf;->b:J
+    iget-wide v0, p2, Lhwn;->b:J
 
-    iget-wide v1, p2, Lhbf;->c:J
+    iget-wide v0, p2, Lhwn;->c:J
 
-    iget-object p3, p2, Lhbf;->a:Lkrf;
+    iget-object p3, p2, Lhwn;->a:Lmcu;
 
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
-    move-result-wide v1
+    move-result-wide v0
 
-    iput-wide v1, p2, Lhbf;->d:J
+    iput-wide v0, p2, Lhwn;->d:J
 
-    iget-object p2, p1, Lhba;->t:Llhm;
+    iget-object p2, p1, Lhwh;->k:Lhwp;
 
     const/4 p3, 0x3
 
-    invoke-virtual {p2, p3}, Llhm;->c(I)V
+    invoke-virtual {p2, p3}, Lhwp;->a(I)V
 
-    iget-object p2, p1, Lhba;->f:Ljava/util/concurrent/Executor;
+    iget-object p2, p1, Lhwh;->d:Ljava/lang/String;
 
-    new-instance p3, Lhay;
+    invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    invoke-direct {p3, p1}, Lhay;-><init>(Lhba;)V
+    iget-object p3, p1, Lhwh;->f:Ljava/util/concurrent/Executor;
 
-    invoke-interface {p2, p3}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
+    new-instance v0, Lhwd;
 
-    iget-object p2, p1, Lhba;->q:Lnph;
+    invoke-direct {v0, p1, p2}, Lhwd;-><init>(Lhwh;Ljava/lang/String;)V
 
-    new-instance p3, Lhbi;
+    invoke-interface {p3, v0}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
 
-    invoke-direct {p3, p1, v0}, Lhbi;-><init>(Lhba;I)V
+    iget-object p2, p1, Lhwh;->s:Lpih;
 
-    iget-object v0, p1, Lhba;->h:Ljuh;
+    new-instance p3, Lhwc;
 
-    invoke-virtual {p2, p3, v0}, Lnph;->d(Ljava/lang/Runnable;Ljava/util/concurrent/Executor;)V
+    invoke-direct {p3, p1}, Lhwc;-><init>(Lhwh;)V
 
-    iget-object p2, p1, Lhba;->q:Lnph;
+    iget-object v0, p1, Lhwh;->h:Llar;
 
-    sget-object p3, Ljava/util/concurrent/TimeUnit;->SECONDS:Ljava/util/concurrent/TimeUnit;
+    invoke-virtual {p2, p3, v0}, Lpih;->d(Ljava/lang/Runnable;Ljava/util/concurrent/Executor;)V
 
-    iget-object p1, p1, Lhba;->g:Ljava/util/concurrent/ScheduledExecutorService;
+    iget-object p2, p1, Lhwh;->s:Lpih;
 
     const-wide/16 v0, 0x46
 
-    invoke-static {p2, v0, v1, p3, p1}, Lnsy;->I(Lnou;JLjava/util/concurrent/TimeUnit;Ljava/util/concurrent/ScheduledExecutorService;)Lnou;
+    sget-object p3, Ljava/util/concurrent/TimeUnit;->SECONDS:Ljava/util/concurrent/TimeUnit;
+
+    iget-object p1, p1, Lhwh;->g:Ljava/util/concurrent/ScheduledExecutorService;
+
+    invoke-static {p2, v0, v1, p3, p1}, Lplk;->ac(Lpht;JLjava/util/concurrent/TimeUnit;Ljava/util/concurrent/ScheduledExecutorService;)Lpht;
 
     move-result-object p1
 
     const-class p2, Ljava/util/concurrent/TimeoutException;
 
-    sget-object p3, Lfnq;->q:Lfnq;
+    sget-object p3, Leto;->s:Leto;
 
-    sget-object v0, Lnnv;->a:Lnnv;
+    sget-object v0, Lpgr;->a:Lpgr;
 
-    invoke-static {p1, p2, p3, v0}, Lnml;->i(Lnou;Ljava/lang/Class;Lmqi;Ljava/util/concurrent/Executor;)Lnou;
+    invoke-static {p1, p2, p3, v0}, Lpfj;->h(Lpht;Ljava/lang/Class;Loiu;Ljava/util/concurrent/Executor;)Lpht;
 
     :goto_4
     const/4 p1, 0x2
 
     return p1
-
-    nop
 
     :sswitch_data_0
     .sparse-switch

@@ -1,12 +1,7 @@
-.class public Lbzd;
-.super Lbze;
+.class public interface abstract Lbzd;
+.super Ljava/lang/Object;
 
 
-# direct methods
-.method public constructor <init>()V
-    .locals 0
-
-    invoke-direct {p0}, Lbze;-><init>()V
-
-    return-void
+# virtual methods
+.method public abstract a(JLbzs;)V
 .end method

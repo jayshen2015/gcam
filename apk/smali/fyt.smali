@@ -1,58 +1,190 @@
-.class public final Lfyt;
+.class final Lfyt;
 .super Ljava/lang/Object;
+
+# interfaces
+.implements Landroid/view/SurfaceHolder$Callback;
 
 
 # instance fields
-.field public final a:Ljava/lang/String;
-
-.field public final b:Ljava/util/List;
+.field final synthetic a:Lfyx;
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/String;Ljava/util/List;)V
+.method public constructor <init>(Lfyx;)V
     .locals 0
 
+    iput-object p1, p0, Lfyt;->a:Lfyx;
+
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lfyt;->a:Ljava/lang/String;
-
-    iput-object p2, p0, Lfyt;->b:Ljava/util/List;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final toString()Ljava/lang/String;
-    .locals 3
+.method public final surfaceChanged(Landroid/view/SurfaceHolder;III)V
+    .locals 4
 
-    const-string v0, "ValidationResult"
+    iget-object p2, p0, Lfyt;->a:Lfyx;
 
-    invoke-static {v0}, Lmoz;->z(Ljava/lang/String;)Lmqo;
+    iget-object p2, p2, Lfyx;->g:Llnx;
+
+    invoke-interface {p1}, Landroid/view/SurfaceHolder;->getSurface()Landroid/view/Surface;
+
+    move-result-object p1
+
+    invoke-static {p3, p4}, Llig;->h(II)Llig;
+
+    move-result-object p3
+
+    iget-object p4, p0, Lfyt;->a:Lfyx;
+
+    iput-object p3, p4, Lfyx;->f:Llig;
+
+    if-eqz p2, :cond_1
+
+    invoke-interface {p2}, Llnx;->b()Llig;
+
+    move-result-object p4
+
+    invoke-virtual {p4}, Llig;->e()Llig;
+
+    move-result-object p4
+
+    invoke-virtual {p3}, Llig;->e()Llig;
 
     move-result-object v0
 
-    iget-object v1, p0, Lfyt;->a:Ljava/lang/String;
+    invoke-virtual {p4, v0}, Llig;->equals(Ljava/lang/Object;)Z
 
-    const-string v2, "strategy"
+    move-result p4
 
-    invoke-virtual {v0, v2, v1}, Lmqo;->b(Ljava/lang/String;Ljava/lang/Object;)V
+    if-eqz p4, :cond_0
 
-    const-string v1, "valid"
+    :try_start_0
+    invoke-interface {p2, p1}, Llnx;->d(Landroid/view/Surface;)V
+    :try_end_0
+    .catch Ljava/lang/IllegalArgumentException; {:try_start_0 .. :try_end_0} :catch_0
 
-    const-string v2, "false"
+    return-void
 
-    invoke-virtual {v0, v1, v2}, Lmqo;->c(Ljava/lang/String;Ljava/lang/Object;)V
+    :catch_0
+    move-exception p1
 
-    iget-object v1, p0, Lfyt;->b:Ljava/util/List;
+    iget-object p2, p0, Lfyt;->a:Lfyx;
 
-    const-string v2, "failed constraints"
+    iget-object p2, p2, Lfyx;->b:Llis;
 
-    invoke-virtual {v0, v2, v1}, Lmqo;->b(Ljava/lang/String;Ljava/lang/Object;)V
+    const-string p3, "Surface change failed!"
 
-    invoke-virtual {v0}, Lmqo;->toString()Ljava/lang/String;
+    invoke-interface {p2, p3, p1}, Llis;->e(Ljava/lang/String;Ljava/lang/Throwable;)V
+
+    return-void
+
+    :cond_0
+    iget-object p1, p0, Lfyt;->a:Lfyx;
+
+    iget-object p1, p1, Lfyx;->b:Llis;
+
+    invoke-static {p2}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object p4
+
+    invoke-interface {p2}, Llnx;->b()Llig;
+
+    move-result-object p2
+
+    invoke-static {p2}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object p2
+
+    invoke-static {p3}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object p3
+
+    invoke-static {p4}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v0
 
-    return-object v0
+    invoke-virtual {v0}, Ljava/lang/String;->length()I
+
+    move-result v0
+
+    invoke-static {p2}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/String;->length()I
+
+    move-result v1
+
+    invoke-static {p3}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/String;->length()I
+
+    move-result v2
+
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    add-int/lit8 v0, v0, 0x32
+
+    add-int/2addr v0, v1
+
+    add-int/2addr v0, v2
+
+    invoke-direct {v3, v0}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string v0, "Ignoring surface changed: "
+
+    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v3, p4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string p4, " is "
+
+    invoke-virtual {v3, p4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v3, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string p2, " and the surface is "
+
+    invoke-virtual {v3, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v3, p3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p2
+
+    invoke-interface {p1, p2}, Llis;->h(Ljava/lang/String;)V
+
+    :cond_1
+    return-void
+.end method
+
+.method public final surfaceCreated(Landroid/view/SurfaceHolder;)V
+    .locals 0
+
+    return-void
+.end method
+
+.method public final surfaceDestroyed(Landroid/view/SurfaceHolder;)V
+    .locals 1
+
+    iget-object p1, p0, Lfyt;->a:Lfyx;
+
+    const/4 v0, 0x0
+
+    iput-object v0, p1, Lfyx;->f:Llig;
+
+    iget-object p1, p1, Lfyx;->g:Llnx;
+
+    if-eqz p1, :cond_0
+
+    invoke-interface {p1, v0}, Llnx;->d(Landroid/view/Surface;)V
+
+    :cond_0
+    return-void
 .end method

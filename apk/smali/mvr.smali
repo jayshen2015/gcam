@@ -1,36 +1,22 @@
-.class final Lmvr;
-.super Lnad;
+.class public final Lmvr;
+.super Ljava/lang/Object;
 
 
-# instance fields
-.field private final a:Lmvv;
+# static fields
+.field public static final a:Llzg;
 
 
 # direct methods
-.method public constructor <init>(Lmvv;I)V
-    .locals 1
+.method static constructor <clinit>()V
+    .locals 2
 
-    invoke-virtual {p1}, Lmvv;->size()I
+    new-instance v0, Llzg;
 
-    move-result v0
+    const/16 v1, 0x8
 
-    invoke-direct {p0, v0, p2}, Lnad;-><init>(II)V
+    invoke-direct {v0, v1}, Llzg;-><init>(I)V
 
-    iput-object p1, p0, Lmvr;->a:Lmvv;
+    sput-object v0, Lmvr;->a:Llzg;
 
     return-void
-.end method
-
-
-# virtual methods
-.method protected final a(I)Ljava/lang/Object;
-    .locals 1
-
-    iget-object v0, p0, Lmvr;->a:Lmvv;
-
-    invoke-virtual {v0, p1}, Lmvv;->get(I)Ljava/lang/Object;
-
-    move-result-object p1
-
-    return-object p1
 .end method

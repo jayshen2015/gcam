@@ -1,102 +1,175 @@
 .class public final Ldcp;
-.super Ldck;
+.super Ljava/lang/Object;
 
 
 # instance fields
-.field public final a:Lapt;
+.field public final a:J
 
-.field public final b:Lapo;
+.field private b:J
 
-.field public final c:Lapo;
+.field private c:I
 
-.field public final d:Laqa;
-
-.field private final e:Laqa;
+.field private final d:I
 
 
 # direct methods
-.method public constructor <init>(Lapt;)V
-    .locals 1
+.method public constructor <init>(IJ)V
+    .locals 2
 
-    invoke-direct {p0}, Ldck;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Ldcp;->a:Lapt;
+    const-wide/16 v0, 0x0
 
-    new-instance v0, Ldcl;
+    iput-wide v0, p0, Ldcp;->b:J
 
-    invoke-direct {v0, p1}, Ldcl;-><init>(Lapt;)V
+    const/4 v0, 0x0
 
-    iput-object v0, p0, Ldcp;->b:Lapo;
+    iput v0, p0, Ldcp;->c:I
 
-    new-instance v0, Ldcm;
+    iput p1, p0, Ldcp;->d:I
 
-    invoke-direct {v0, p1}, Ldcm;-><init>(Lapt;)V
-
-    iput-object v0, p0, Ldcp;->c:Lapo;
-
-    new-instance v0, Ldcn;
-
-    invoke-direct {v0, p1}, Ldcn;-><init>(Lapt;)V
-
-    iput-object v0, p0, Ldcp;->d:Laqa;
-
-    new-instance v0, Ldco;
-
-    invoke-direct {v0, p1}, Ldco;-><init>(Lapt;)V
-
-    iput-object v0, p0, Ldcp;->e:Laqa;
+    iput-wide p2, p0, Ldcp;->a:J
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()V
+.method final declared-synchronized a(J)Lpbs;
     .locals 3
 
-    iget-object v0, p0, Ldcp;->a:Lapt;
+    monitor-enter p0
 
-    invoke-virtual {v0}, Lapt;->l()V
+    :try_start_0
+    iget-wide v0, p0, Ldcp;->a:J
 
-    iget-object v0, p0, Ldcp;->e:Laqa;
+    sub-long/2addr p1, v0
 
-    invoke-virtual {v0}, Laqa;->e()Larf;
+    sget-object v0, Lpbs;->f:Lpbs;
+
+    invoke-virtual {v0}, Lppd;->m()Lpoy;
 
     move-result-object v0
 
-    iget-object v1, p0, Ldcp;->a:Lapt;
+    iget v1, p0, Ldcp;->d:I
 
-    invoke-virtual {v1}, Lapt;->m()V
+    iget-boolean v2, v0, Lpoy;->c:Z
 
-    :try_start_0
-    invoke-virtual {v0}, Larf;->a()I
+    if-eqz v2, :cond_0
 
-    iget-object v1, p0, Ldcp;->a:Lapt;
+    invoke-virtual {v0}, Lpoy;->m()V
 
-    invoke-virtual {v1}, Lapt;->q()V
+    const/4 v2, 0x0
+
+    iput-boolean v2, v0, Lpoy;->c:Z
+
+    :cond_0
+    iget-object v2, v0, Lpoy;->b:Lppd;
+
+    check-cast v2, Lpbs;
+
+    add-int/lit8 v1, v1, -0x1
+
+    iput v1, v2, Lpbs;->b:I
+
+    iget v1, v2, Lpbs;->a:I
+
+    or-int/lit8 v1, v1, 0x1
+
+    iput v1, v2, Lpbs;->a:I
+
+    or-int/lit8 v1, v1, 0x2
+
+    iput v1, v2, Lpbs;->a:I
+
+    iput-wide p1, v2, Lpbs;->c:J
+
+    iget-wide p1, p0, Ldcp;->b:J
+
+    or-int/lit8 v1, v1, 0x4
+
+    iput v1, v2, Lpbs;->a:I
+
+    iput-wide p1, v2, Lpbs;->d:J
+
+    iget p1, p0, Ldcp;->c:I
+
+    or-int/lit8 p2, v1, 0x8
+
+    iput p2, v2, Lpbs;->a:I
+
+    iput p1, v2, Lpbs;->e:I
+
+    invoke-virtual {v0}, Lpoy;->h()Lppd;
+
+    move-result-object p1
+
+    check-cast p1, Lpbs;
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    iget-object v1, p0, Ldcp;->a:Lapt;
+    monitor-exit p0
 
-    invoke-virtual {v1}, Lapt;->o()V
+    return-object p1
 
-    iget-object v1, p0, Ldcp;->e:Laqa;
+    :catchall_0
+    move-exception p1
 
-    invoke-virtual {v1, v0}, Laqa;->g(Larf;)V
+    monitor-exit p0
+
+    throw p1
+.end method
+
+.method final declared-synchronized b()V
+    .locals 1
+
+    monitor-enter p0
+
+    :try_start_0
+    iget v0, p0, Ldcp;->c:I
+
+    add-int/lit8 v0, v0, 0x1
+
+    iput v0, p0, Ldcp;->c:I
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    monitor-exit p0
 
     return-void
 
     :catchall_0
-    move-exception v1
+    move-exception v0
 
-    iget-object v2, p0, Ldcp;->a:Lapt;
+    monitor-exit p0
 
-    invoke-virtual {v2}, Lapt;->o()V
+    throw v0
+.end method
 
-    iget-object v2, p0, Ldcp;->e:Laqa;
+.method final declared-synchronized c()V
+    .locals 4
 
-    invoke-virtual {v2, v0}, Laqa;->g(Larf;)V
+    monitor-enter p0
 
-    throw v1
+    :try_start_0
+    iget-wide v0, p0, Ldcp;->b:J
+
+    const-wide/16 v2, 0x1
+
+    add-long/2addr v0, v2
+
+    iput-wide v0, p0, Ldcp;->b:J
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    monitor-exit p0
+
+    return-void
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit p0
+
+    throw v0
 .end method

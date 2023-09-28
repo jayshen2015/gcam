@@ -1,28 +1,56 @@
-.class public final Lbzw;
-.super Lbzx;
+.class final Lbzw;
+.super Landroid/animation/AnimatorListenerAdapter;
+
+
+# instance fields
+.field final synthetic a:Lbzy;
 
 
 # direct methods
-.method public constructor <init>(Landroid/widget/ImageView;)V
+.method public constructor <init>(Lbzy;)V
     .locals 0
 
-    invoke-direct {p0, p1}, Lbzx;-><init>(Landroid/widget/ImageView;)V
+    iput-object p1, p0, Lbzw;->a:Lbzy;
+
+    invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method protected final bridge synthetic l(Ljava/lang/Object;)V
+.method public final onAnimationEnd(Landroid/animation/Animator;)V
+    .locals 0
+
+    iget-object p1, p0, Lbzw;->a:Lbzy;
+
+    invoke-static {p1}, Lbzy;->a(Lbzy;)V
+
+    return-void
+.end method
+
+.method public final onAnimationStart(Landroid/animation/Animator;)V
     .locals 1
 
-    check-cast p1, Landroid/graphics/drawable/Drawable;
+    iget-object p1, p0, Lbzw;->a:Lbzy;
 
-    iget-object v0, p0, Lbzw;->a:Landroid/view/View;
+    const/4 v0, 0x0
 
-    check-cast v0, Landroid/widget/ImageView;
+    invoke-virtual {p1, v0}, Lbzy;->setVisibility(I)V
 
-    invoke-virtual {v0, p1}, Landroid/widget/ImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
+    iget-object p1, p0, Lbzw;->a:Lbzy;
+
+    iget-object p1, p1, Lbzy;->a:Landroid/widget/TextView;
+
+    const/4 v0, 0x0
+
+    invoke-virtual {p1, v0}, Landroid/widget/TextView;->setAlpha(F)V
+
+    iget-object p1, p0, Lbzw;->a:Lbzy;
+
+    iget-object p1, p1, Lbzy;->b:Landroid/widget/TextView;
+
+    invoke-virtual {p1, v0}, Landroid/widget/TextView;->setAlpha(F)V
 
     return-void
 .end method

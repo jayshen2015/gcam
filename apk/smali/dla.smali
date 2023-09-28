@@ -1,106 +1,121 @@
-.class final Ldla;
-.super Ldkz;
+.class public final Ldla;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Lpys;
+
+
+# instance fields
+.field private final a:Lqkg;
+
+.field private final b:Lqkg;
+
+.field private final c:Lqkg;
+
+.field private final d:Lqkg;
+
+.field private final e:Lqkg;
+
+.field private final f:Lqkg;
+
+.field private final g:Lqkg;
 
 
 # direct methods
-.method public constructor <init>(Ldlb;J)V
-    .locals 3
+.method public constructor <init>(Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;)V
+    .locals 0
 
-    const-string v0, "STUB"
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    sget-object v1, Lgya;->a:Lgya;
+    iput-object p1, p0, Ldla;->a:Lqkg;
 
-    const/4 v2, 0x0
+    iput-object p2, p0, Ldla;->b:Lqkg;
 
-    invoke-static {v2, p2, p3, v0, v1}, Lgxz;->a(Lgxy;JLjava/lang/String;Lgya;)Lgxz;
+    iput-object p3, p0, Ldla;->c:Lqkg;
 
-    move-result-object p2
+    iput-object p4, p0, Ldla;->d:Lqkg;
 
-    iget-object p3, p1, Ldlb;->f:Lj$/time/Clock;
+    iput-object p5, p0, Ldla;->e:Lqkg;
 
-    invoke-virtual {p3}, Lj$/time/Clock;->instant()Lj$/time/Instant;
+    iput-object p6, p0, Ldla;->f:Lqkg;
 
-    move-result-object p3
-
-    invoke-direct {p0, p1, p2, p3}, Ldkz;-><init>(Ldlb;Lgxz;Lj$/time/Instant;)V
+    iput-object p7, p0, Ldla;->g:Lqkg;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Z)V
-    .locals 0
+.method public final a()Ldkz;
+    .locals 5
 
-    const-string p1, "ShotStub: canceled"
+    iget-object v0, p0, Ldla;->a:Lqkg;
 
-    invoke-virtual {p0, p1}, Ldkz;->e(Ljava/lang/String;)V
+    check-cast v0, Lemd;
 
-    return-void
+    invoke-virtual {v0}, Lemd;->a()Landroid/content/Context;
+
+    iget-object v0, p0, Ldla;->b:Lqkg;
+
+    invoke-interface {v0}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Llda;
+
+    iget-object v0, p0, Ldla;->c:Lqkg;
+
+    invoke-interface {v0}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Llda;
+
+    iget-object v1, p0, Ldla;->d:Lqkg;
+
+    invoke-interface {v1}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Ljcw;
+
+    iget-object v2, p0, Ldla;->e:Lqkg;
+
+    invoke-interface {v2}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Lfjs;
+
+    iget-object v2, p0, Ldla;->f:Lqkg;
+
+    check-cast v2, Ldgb;
+
+    invoke-virtual {v2}, Ldgb;->a()Llir;
+
+    move-result-object v2
+
+    iget-object v3, p0, Ldla;->g:Lqkg;
+
+    invoke-interface {v3}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v3
+
+    check-cast v3, Lddf;
+
+    new-instance v4, Ldkz;
+
+    invoke-direct {v4, v0, v1, v2, v3}, Ldkz;-><init>(Llda;Ljcw;Llir;Lddf;)V
+
+    return-object v4
 .end method
 
-.method public final b()V
+.method public final bridge synthetic get()Ljava/lang/Object;
     .locals 1
 
-    const-string v0, "ShotStub: deleted"
+    invoke-virtual {p0}, Ldla;->a()Ldkz;
 
-    invoke-virtual {p0, v0}, Ldkz;->e(Ljava/lang/String;)V
+    move-result-object v0
 
-    return-void
-.end method
-
-.method public final c(Ljava/lang/String;)V
-    .locals 0
-
-    invoke-virtual {p0, p1}, Ldkz;->f(Ljava/lang/String;)V
-
-    return-void
-.end method
-
-.method public final d(Lj$/time/Instant;Ljava/lang/String;)V
-    .locals 0
-
-    invoke-virtual {p0, p2}, Ldkz;->f(Ljava/lang/String;)V
-
-    return-void
-.end method
-
-.method public final g(Ljava/lang/Integer;)V
-    .locals 0
-
-    const-string p1, "ShotStub: makingProgress"
-
-    invoke-virtual {p0, p1}, Ldkz;->f(Ljava/lang/String;)V
-
-    return-void
-.end method
-
-.method public final h(Lj$/time/Instant;)V
-    .locals 0
-
-    const-string p1, "ShotStub: markStuck"
-
-    invoke-virtual {p0, p1}, Ldkz;->e(Ljava/lang/String;)V
-
-    return-void
-.end method
-
-.method public final i()V
-    .locals 1
-
-    const-string v0, "ShotStub: persisted"
-
-    invoke-virtual {p0, v0}, Ldkz;->e(Ljava/lang/String;)V
-
-    return-void
-.end method
-
-.method public final j()V
-    .locals 1
-
-    const-string v0, "ShotStub: started"
-
-    invoke-virtual {p0, v0}, Ldkz;->e(Ljava/lang/String;)V
-
-    return-void
+    return-object v0
 .end method

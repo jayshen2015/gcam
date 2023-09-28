@@ -28,7 +28,7 @@
 
     move-result-object p1
 
-    invoke-static {p1}, Lcdg;->f(Landroid/content/Intent;)V
+    invoke-static {p1}, Lbqe;->f(Landroid/content/Intent;)V
 
     :cond_0
     return-void

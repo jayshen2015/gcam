@@ -1,199 +1,87 @@
-.class public final Lcgt;
+.class public final synthetic Lcgt;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lkad;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field private a:Lbni;
+.field public final synthetic a:Lcgx;
+
+.field private final synthetic b:I
 
 
 # direct methods
-.method public constructor <init>(Landroid/content/Context;)V
+.method public synthetic constructor <init>(Lcgx;I)V
     .locals 0
+
+    iput p2, p0, Lcgt;->b:I
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-static {p1}, Lbnj;->a(Landroid/content/Context;)Lbni;
-
-    move-result-object p1
-
-    iput-object p1, p0, Lcgt;->a:Lbni;
+    iput-object p1, p0, Lcgt;->a:Lcgx;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final declared-synchronized a()Lbnr;
-    .locals 1
+.method public final run()V
+    .locals 4
 
-    monitor-enter p0
+    iget v0, p0, Lcgt;->b:I
 
-    :try_start_0
-    iget-object v0, p0, Lcgt;->a:Lbni;
+    packed-switch v0, :pswitch_data_0
 
-    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    iget-object v0, p0, Lcgt;->a:Lcgx;
 
-    invoke-virtual {v0}, Lbni;->b()Lbnr;
+    iget-object v0, v0, Lcgx;->v:Lcrx;
 
-    move-result-object v0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    monitor-exit p0
-
-    return-object v0
-
-    :catchall_0
-    move-exception v0
-
-    monitor-exit p0
-
-    throw v0
-.end method
-
-.method public final declared-synchronized b(Landroid/os/Handler;ILbna;)V
-    .locals 9
-
-    monitor-enter p0
-
-    :try_start_0
-    iget-object v6, p0, Lcgt;->a:Lbni;
-
-    invoke-virtual {v6}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    :try_start_1
-    invoke-virtual {v6}, Lbni;->e()Lbny;
-
-    move-result-object v7
-
-    new-instance v8, Lepj;
-
-    const/4 v5, 0x1
-
-    move-object v0, v8
-
-    move-object v1, v6
-
-    move v2, p2
-
-    move-object v3, p1
-
-    move-object v4, p3
-
-    invoke-direct/range {v0 .. v5}, Lepj;-><init>(Lbni;ILandroid/os/Handler;Lbna;I)V
-
-    invoke-virtual {v7, v8}, Lbny;->a(Ljava/lang/Runnable;)V
-    :try_end_1
-    .catch Ljava/lang/RuntimeException; {:try_start_1 .. :try_end_1} :catch_0
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    monitor-exit p0
+    invoke-interface {v0}, Lcrx;->i()V
 
     return-void
 
-    :catch_0
-    move-exception p1
+    :pswitch_0
+    iget-object v0, p0, Lcgt;->a:Lcgx;
 
-    :try_start_2
-    invoke-virtual {v6}, Lbni;->c()Lbnv;
+    iget-object v0, v0, Lcgx;->v:Lcrx;
 
-    move-result-object p2
-
-    invoke-virtual {p2, p1}, Lbnv;->c(Ljava/lang/RuntimeException;)V
-    :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_0
-
-    monitor-exit p0
+    invoke-interface {v0}, Lcrx;->a()V
 
     return-void
 
-    :catchall_0
-    move-exception p1
+    :pswitch_1
+    iget-object v0, p0, Lcgt;->a:Lcgx;
 
-    monitor-exit p0
+    iget-object v0, v0, Lcgx;->g:Lckn;
 
-    throw p1
-.end method
+    iget-object v1, v0, Lckn;->c:Llar;
 
-.method public final declared-synchronized c(Lbnv;)V
-    .locals 1
+    new-instance v2, Lckm;
 
-    monitor-enter p0
+    const/4 v3, 0x2
 
-    :try_start_0
-    iget-object v0, p0, Lcgt;->a:Lbni;
+    invoke-direct {v2, v0, v3}, Lckm;-><init>(Lckn;I)V
 
-    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    invoke-virtual {v0, p1}, Lbni;->f(Lbnv;)V
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    monitor-exit p0
+    invoke-virtual {v1, v2}, Llar;->execute(Ljava/lang/Runnable;)V
 
     return-void
 
-    :catchall_0
-    move-exception p1
+    :pswitch_2
+    iget-object v0, p0, Lcgt;->a:Lcgx;
 
-    monitor-exit p0
+    iget-object v0, v0, Lcgx;->v:Lcrx;
 
-    throw p1
-.end method
-
-.method public final declared-synchronized close()V
-    .locals 1
-
-    monitor-enter p0
-
-    const/4 v0, 0x0
-
-    :try_start_0
-    iput-object v0, p0, Lcgt;->a:Lbni;
-
-    invoke-static {}, Lbnj;->b()V
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    monitor-exit p0
+    invoke-interface {v0}, Lcrx;->d()V
 
     return-void
 
-    :catchall_0
-    move-exception v0
+    nop
 
-    monitor-exit p0
-
-    throw v0
-.end method
-
-.method public final declared-synchronized d(Z)V
-    .locals 1
-
-    monitor-enter p0
-
-    :try_start_0
-    iget-object v0, p0, Lcgt;->a:Lbni;
-
-    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    invoke-virtual {v0, p1}, Lbni;->g(Z)V
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    monitor-exit p0
-
-    return-void
-
-    :catchall_0
-    move-exception p1
-
-    monitor-exit p0
-
-    throw p1
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method

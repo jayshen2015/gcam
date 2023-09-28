@@ -1,71 +1,116 @@
 .class final Lmnq;
 .super Ljava/lang/Object;
 
+# interfaces
+.implements Ljava/lang/Runnable;
+
 
 # instance fields
-.field a:I
+.field final synthetic a:Lmlu;
 
-.field final b:I
+.field final synthetic b:Lmoa;
 
-.field c:Lmnq;
-
-.field final d:Ljava/util/Map;
+.field final synthetic c:Lmoa;
 
 
 # direct methods
-.method public constructor <init>(II)V
-    .locals 2
+.method public constructor <init>(Lmoa;Lmlu;Lmoa;)V
+    .locals 0
+
+    iput-object p1, p0, Lmnq;->c:Lmoa;
+
+    iput-object p2, p0, Lmnq;->a:Lmlu;
+
+    iput-object p3, p0, Lmnq;->b:Lmoa;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    new-instance v0, Ljava/util/HashMap;
-
-    const/4 v1, 0x0
-
-    invoke-direct {v0, v1}, Ljava/util/HashMap;-><init>(I)V
-
-    iput-object v0, p0, Lmnq;->d:Ljava/util/Map;
-
-    if-gt p1, p2, :cond_0
-
-    iput p1, p0, Lmnq;->a:I
-
-    iput p2, p0, Lmnq;->b:I
-
-    const/4 p1, 0x0
-
-    iput-object p1, p0, Lmnq;->c:Lmnq;
-
     return-void
-
-    :cond_0
-    new-instance p1, Ljava/lang/IllegalArgumentException;
-
-    invoke-direct {p1}, Ljava/lang/IllegalArgumentException;-><init>()V
-
-    throw p1
 .end method
 
 
 # virtual methods
-.method public final toString()Ljava/lang/String;
+.method public final run()V
     .locals 3
 
-    invoke-static {p0}, Ljava/lang/System;->identityHashCode(Ljava/lang/Object;)I
+    iget-object v0, p0, Lmnq;->c:Lmoa;
 
-    move-result v0
+    iget-object v0, v0, Lmoa;->a:Ljava/lang/Object;
 
-    new-instance v1, Ljava/lang/StringBuilder;
+    if-eqz v0, :cond_0
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+    iget-object v1, p0, Lmnq;->a:Lmlu;
 
-    const-string v2, "Node"
+    iget-object v2, p0, Lmnq;->b:Lmoa;
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v0, v1, v2}, Lmoa;->j(Ljava/lang/Object;Lmlu;Lmoa;)V
 
-    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    return-void
 
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    :cond_0
+    iget-object v0, p0, Lmnq;->b:Lmoa;
+
+    iget-object v1, p0, Lmnq;->c:Lmoa;
+
+    iget-object v1, v1, Lmoa;->b:Lmnc;
+
+    invoke-virtual {v0, v1}, Lmoa;->l(Lmnc;)V
+
+    return-void
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .locals 5
+
+    iget-object v0, p0, Lmnq;->c:Lmoa;
+
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lmnq;->a:Lmlu;
+
+    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/String;->length()I
+
+    move-result v2
+
+    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/lang/String;->length()I
+
+    move-result v3
+
+    new-instance v4, Ljava/lang/StringBuilder;
+
+    add-int/lit8 v2, v2, 0x6
+
+    add-int/2addr v2, v3
+
+    invoke-direct {v4, v2}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v0, "then["
+
+    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v4, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v0, "]"
+
+    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v0
 

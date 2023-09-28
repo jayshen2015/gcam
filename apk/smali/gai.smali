@@ -1,105 +1,91 @@
-.class public final Lgai;
-.super Ljava/lang/Object;
-
-# interfaces
-.implements Lgam;
+.class final Lgai;
+.super Lmaa;
 
 
 # instance fields
-.field private final a:Lgam;
+.field final a:Ljava/util/concurrent/atomic/AtomicBoolean;
 
-.field private final b:Z
+.field final synthetic b:J
 
-.field private final c:I
+.field final synthetic c:Lmad;
+
+.field final synthetic d:Lgaj;
 
 
 # direct methods
-.method public constructor <init>(Lgam;IZ)V
+.method public constructor <init>(Lgaj;Lmad;JLmad;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lgai;->d:Lgaj;
 
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    iput-wide p3, p0, Lgai;->b:J
 
-    iput-object p1, p0, Lgai;->a:Lgam;
+    iput-object p5, p0, Lgai;->c:Lmad;
 
-    iput p2, p0, Lgai;->c:I
+    invoke-direct {p0, p2}, Lmaa;-><init>(Lmad;)V
 
-    iput-boolean p3, p0, Lgai;->b:Z
+    new-instance p1, Ljava/util/concurrent/atomic/AtomicBoolean;
+
+    const/4 p2, 0x0
+
+    invoke-direct {p1, p2}, Ljava/util/concurrent/atomic/AtomicBoolean;-><init>(Z)V
+
+    iput-object p1, p0, Lgai;->a:Ljava/util/concurrent/atomic/AtomicBoolean;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Ljvs;
-    .locals 1
+.method public final close()V
+    .locals 6
 
-    iget-object v0, p0, Lgai;->a:Lgam;
+    iget-object v0, p0, Lgai;->a:Ljava/util/concurrent/atomic/AtomicBoolean;
 
-    invoke-interface {v0}, Lgam;->a()Ljvs;
+    const/4 v1, 0x1
 
-    move-result-object v0
+    invoke-virtual {v0, v1}, Ljava/util/concurrent/atomic/AtomicBoolean;->getAndSet(Z)Z
 
-    return-object v0
-.end method
+    move-result v0
 
-.method public final b()Ljvs;
-    .locals 1
+    if-nez v0, :cond_0
 
-    iget-object v0, p0, Lgai;->a:Lgam;
+    iget-object v0, p0, Lgai;->d:Lgaj;
 
-    invoke-interface {v0}, Lgam;->b()Ljvs;
+    iget-object v0, v0, Lgaj;->c:Lgal;
 
-    move-result-object v0
+    iget-object v0, v0, Lgal;->b:Llyb;
 
-    return-object v0
-.end method
+    const/4 v1, 0x0
 
-.method public final c(Lgal;Lgkr;)V
-    .locals 2
+    new-array v2, v1, [Ljava/lang/Object;
 
-    iget-object v0, p2, Lgkr;->c:Ljava/lang/Object;
+    invoke-interface {v0, v2}, Llyb;->a([Ljava/lang/Object;)V
 
-    invoke-interface {v0}, Lgxl;->k()Lhjc;
+    iget-object v0, p0, Lgai;->d:Lgaj;
 
-    move-result-object v0
+    iget-object v0, v0, Lgaj;->c:Lgal;
 
-    iget-boolean v1, p0, Lgai;->b:Z
+    iget-object v0, v0, Lgal;->d:Llyg;
 
-    check-cast v0, Lhjd;
+    invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
-    iput-boolean v1, v0, Lhjd;->c:Z
+    move-result-wide v2
 
-    iget-object v0, p2, Lgkr;->c:Ljava/lang/Object;
+    iget-wide v4, p0, Lgai;->b:J
 
-    iget v1, p0, Lgai;->c:I
+    sub-long/2addr v2, v4
 
-    invoke-interface {v0, v1}, Lgxl;->ab(I)V
+    long-to-double v2, v2
 
-    iget-object v0, p0, Lgai;->a:Lgam;
+    new-array v1, v1, [Ljava/lang/Object;
 
-    invoke-interface {v0, p1, p2}, Lgam;->c(Lgal;Lgkr;)V
+    invoke-interface {v0, v2, v3, v1}, Llyg;->b(D[Ljava/lang/Object;)V
+
+    :cond_0
+    iget-object v0, p0, Lgai;->c:Lmad;
+
+    invoke-interface {v0}, Lmad;->close()V
 
     return-void
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .locals 3
-
-    invoke-static {p0}, Lmoz;->y(Ljava/lang/Object;)Lmqo;
-
-    move-result-object v0
-
-    iget-object v1, p0, Lgai;->a:Lgam;
-
-    const-string v2, "delegate"
-
-    invoke-virtual {v0, v2, v1}, Lmqo;->b(Ljava/lang/String;Ljava/lang/Object;)V
-
-    invoke-virtual {v0}, Lmqo;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    return-object v0
 .end method

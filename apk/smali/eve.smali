@@ -1,44 +1,51 @@
-.class final Leve;
-.super Lcom/google/android/apps/camera/bottombar/BottomBarListener;
+.class public final Leve;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Lqkg;
 
 
 # instance fields
-.field final synthetic a:Levk;
+.field final synthetic a:Levh;
 
 
 # direct methods
-.method public constructor <init>(Levk;)V
+.method public constructor <init>(Levh;)V
     .locals 0
 
-    iput-object p1, p0, Leve;->a:Levk;
+    iput-object p1, p0, Leve;->a:Levh;
 
-    invoke-direct {p0}, Lcom/google/android/apps/camera/bottombar/BottomBarListener;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onCameraSwitchButtonClicked()V
-    .locals 3
+.method public final a()Levl;
+    .locals 4
 
-    iget-object v0, p0, Leve;->a:Levk;
+    new-instance v0, Levl;
 
-    iget-object v0, v0, Levk;->d:Ldbf;
+    iget-object v1, p0, Leve;->a:Levh;
 
-    new-instance v1, Levi;
+    iget-object v2, v1, Levh;->a:Lewb;
 
-    const/4 v2, 0x1
+    iget-object v3, v1, Levh;->b:Levc;
 
-    invoke-direct {v1, p0, v2}, Levi;-><init>(Leve;I)V
+    iget-object v1, v1, Levh;->c:Levh;
 
-    invoke-virtual {v0, v1}, Ldbf;->h(Ljava/lang/Runnable;)V
+    invoke-direct {v0, v2, v3, v1}, Levl;-><init>(Lewb;Levc;Levh;)V
 
-    return-void
+    return-object v0
 .end method
 
-.method public final onThumbnailButtonClicked()V
-    .locals 0
+.method public final bridge synthetic get()Ljava/lang/Object;
+    .locals 1
 
-    return-void
+    invoke-virtual {p0}, Leve;->a()Levl;
+
+    move-result-object v0
+
+    return-object v0
 .end method

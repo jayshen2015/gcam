@@ -1,63 +1,93 @@
 .class public final Ldmf;
-.super Ljava/lang/Object;
-
-# interfaces
-.implements Logk;
+.super Landroid/widget/ImageView;
 
 
 # instance fields
-.field private final a:Loiw;
+.field public final a:I
 
-.field private final b:Loiw;
+.field public final b:I
+
+.field public c:F
+
+.field public d:F
+
+.field public e:F
 
 
 # direct methods
-.method public constructor <init>(Loiw;Loiw;)V
-    .locals 0
+.method public constructor <init>(Landroid/content/Context;)V
+    .locals 1
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0, p1}, Landroid/widget/ImageView;-><init>(Landroid/content/Context;)V
 
-    iput-object p1, p0, Ldmf;->a:Loiw;
+    invoke-virtual {p0}, Ldmf;->getResources()Landroid/content/res/Resources;
 
-    iput-object p2, p0, Ldmf;->b:Loiw;
+    move-result-object p1
+
+    const v0, 0x7f070123
+
+    invoke-virtual {p1, v0}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
+
+    move-result p1
+
+    iput p1, p0, Ldmf;->a:I
+
+    invoke-virtual {p0}, Ldmf;->getResources()Landroid/content/res/Resources;
+
+    move-result-object p1
+
+    const v0, 0x7f070125
+
+    invoke-virtual {p1, v0}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
+
+    move-result p1
+
+    iput p1, p0, Ldmf;->b:I
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Ldne;
+.method public final a(F)V
     .locals 3
 
-    iget-object v0, p0, Ldmf;->a:Loiw;
+    const/high16 v0, 0x3f800000    # 1.0f
 
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
+    cmpl-float v0, p1, v0
 
-    move-result-object v0
+    if-gtz v0, :cond_0
 
-    check-cast v0, Ldhi;
+    const/4 v0, 0x0
 
-    iget-object v1, p0, Ldmf;->b:Loiw;
+    cmpg-float v0, p1, v0
 
-    invoke-interface {v1}, Loiw;->get()Ljava/lang/Object;
+    if-ltz v0, :cond_0
 
-    move-result-object v1
+    iput p1, p0, Ldmf;->c:F
 
-    check-cast v1, Lkog;
+    return-void
 
-    new-instance v2, Ldne;
+    :cond_0
+    new-instance v0, Ljava/lang/IllegalArgumentException;
 
-    invoke-direct {v2, v0, v1}, Ldne;-><init>(Ldhi;Lkog;)V
+    new-instance v1, Ljava/lang/StringBuilder;
 
-    return-object v2
-.end method
+    const/16 v2, 0x21
 
-.method public final bridge synthetic get()Ljava/lang/Object;
-    .locals 1
+    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(I)V
 
-    invoke-virtual {p0}, Ldmf;->a()Ldne;
+    const-string v2, "Illegal fraction: "
 
-    move-result-object v0
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    return-object v0
+    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-direct {v0, p1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw v0
 .end method

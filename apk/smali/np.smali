@@ -1,84 +1,43 @@
-.class public final Lnp;
-.super Lahx;
-
-
-# static fields
-.field public static final CREATOR:Landroid/os/Parcelable$Creator;
-
-
-# instance fields
-.field public a:I
-
-.field public b:Z
-
-
-# direct methods
-.method static constructor <clinit>()V
-    .locals 2
-
-    new-instance v0, Lmg;
-
-    const/4 v1, 0x2
-
-    invoke-direct {v0, v1}, Lmg;-><init>(I)V
-
-    sput-object v0, Lnp;->CREATOR:Landroid/os/Parcelable$Creator;
-
-    return-void
-.end method
-
-.method public constructor <init>(Landroid/os/Parcel;Ljava/lang/ClassLoader;)V
-    .locals 0
-
-    invoke-direct {p0, p1, p2}, Lahx;-><init>(Landroid/os/Parcel;Ljava/lang/ClassLoader;)V
-
-    invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
-
-    move-result p2
-
-    iput p2, p0, Lnp;->a:I
-
-    invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
-
-    move-result p1
-
-    if-eqz p1, :cond_0
-
-    const/4 p1, 0x1
-
-    goto :goto_0
-
-    :cond_0
-    const/4 p1, 0x0
-
-    :goto_0
-    iput-boolean p1, p0, Lnp;->b:Z
-
-    return-void
-.end method
-
-.method public constructor <init>(Landroid/os/Parcelable;)V
-    .locals 0
-
-    invoke-direct {p0, p1}, Lahx;-><init>(Landroid/os/Parcelable;)V
-
-    return-void
-.end method
+.class interface abstract Lnp;
+.super Ljava/lang/Object;
 
 
 # virtual methods
-.method public final writeToParcel(Landroid/os/Parcel;I)V
-    .locals 0
+.method public abstract a()I
+.end method
 
-    invoke-super {p0, p1, p2}, Lahx;->writeToParcel(Landroid/os/Parcel;I)V
+.method public abstract b()I
+.end method
 
-    iget p2, p0, Lnp;->a:I
+.method public abstract c()Landroid/graphics/drawable/Drawable;
+.end method
 
-    invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeInt(I)V
+.method public abstract d()Ljava/lang/CharSequence;
+.end method
 
-    iget-boolean p2, p0, Lnp;->b:Z
+.method public abstract e(Landroid/widget/ListAdapter;)V
+.end method
 
-    invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeInt(I)V
+.method public abstract f(Landroid/graphics/drawable/Drawable;)V
+.end method
 
-    return-void
+.method public abstract g(I)V
+.end method
+
+.method public abstract h(I)V
+.end method
+
+.method public abstract i(Ljava/lang/CharSequence;)V
+.end method
+
+.method public abstract j(I)V
+.end method
+
+.method public abstract k()V
+.end method
+
+.method public abstract l(II)V
+.end method
+
+.method public abstract u()Z
 .end method

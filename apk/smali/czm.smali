@@ -2,305 +2,338 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Landroid/content/DialogInterface$OnDismissListener;
-
-
-# static fields
-.field private static final f:Landroid/net/Uri;
-
-.field private static final g:Landroid/net/Uri;
+.implements Lpys;
 
 
 # instance fields
-.field public final a:Ljava/util/concurrent/Executor;
+.field private final a:Lqkg;
 
-.field public b:Lczj;
+.field private final b:Lqkg;
 
-.field public c:Lczj;
+.field private final c:Lqkg;
 
-.field public d:Z
+.field private final d:Lqkg;
 
-.field public e:Z
+.field private final e:Lqkg;
 
-.field private final h:Lhrz;
+.field private final f:Lqkg;
 
-.field private final i:Landroid/content/Context;
+.field private final g:Lqkg;
 
-.field private final j:Ljava/util/concurrent/ScheduledExecutorService;
+.field private final h:Lqkg;
 
-.field private k:Lcom/google/android/apps/camera/ui/compositevideoview/CompositeVideoView;
+.field private final i:Lqkg;
 
-.field private l:Lcom/google/android/apps/camera/ui/compositevideoview/CompositeVideoView;
+.field private final j:Lqkg;
 
-.field private m:Landroid/view/View;
+.field private final k:Lqkg;
 
-.field private final n:Ligo;
+.field private final l:Lqkg;
+
+.field private final m:Lqkg;
+
+.field private final n:Lqkg;
+
+.field private final o:Lqkg;
+
+.field private final p:Lqkg;
+
+.field private final q:Lqkg;
+
+.field private final r:Lqkg;
+
+.field private final s:Lqkg;
+
+.field private final t:Lqkg;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
+.method public constructor <init>(Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;)V
+    .locals 2
 
-    const-string v0, "https://www.gstatic.com/aiux/gca/experimental/sdr_peppers.mp4"
-
-    invoke-static {v0}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
-
-    move-result-object v0
-
-    sput-object v0, Lczm;->f:Landroid/net/Uri;
-
-    const-string v0, "https://www.gstatic.com/aiux/gca/experimental/hdr_peppers.mp4"
-
-    invoke-static {v0}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
-
-    move-result-object v0
-
-    sput-object v0, Lczm;->g:Landroid/net/Uri;
-
-    return-void
-.end method
-
-.method public constructor <init>(Lhrz;Ligo;Landroid/content/Context;Ljava/util/concurrent/Executor;Ljava/util/concurrent/ScheduledExecutorService;[B[B)V
-    .locals 0
+    move-object v0, p0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const/4 p6, 0x0
+    move-object v1, p1
 
-    iput-boolean p6, p0, Lczm;->d:Z
+    iput-object v1, v0, Lczm;->a:Lqkg;
 
-    iput-boolean p6, p0, Lczm;->e:Z
+    move-object v1, p2
 
-    iput-object p1, p0, Lczm;->h:Lhrz;
+    iput-object v1, v0, Lczm;->b:Lqkg;
 
-    iput-object p2, p0, Lczm;->n:Ligo;
+    move-object v1, p3
 
-    iput-object p3, p0, Lczm;->i:Landroid/content/Context;
+    iput-object v1, v0, Lczm;->c:Lqkg;
 
-    iput-object p4, p0, Lczm;->a:Ljava/util/concurrent/Executor;
+    move-object v1, p4
 
-    iput-object p5, p0, Lczm;->j:Ljava/util/concurrent/ScheduledExecutorService;
+    iput-object v1, v0, Lczm;->d:Lqkg;
+
+    move-object v1, p5
+
+    iput-object v1, v0, Lczm;->e:Lqkg;
+
+    move-object v1, p6
+
+    iput-object v1, v0, Lczm;->f:Lqkg;
+
+    move-object v1, p7
+
+    iput-object v1, v0, Lczm;->g:Lqkg;
+
+    move-object v1, p8
+
+    iput-object v1, v0, Lczm;->h:Lqkg;
+
+    move-object v1, p9
+
+    iput-object v1, v0, Lczm;->i:Lqkg;
+
+    move-object v1, p10
+
+    iput-object v1, v0, Lczm;->j:Lqkg;
+
+    move-object v1, p11
+
+    iput-object v1, v0, Lczm;->k:Lqkg;
+
+    move-object v1, p12
+
+    iput-object v1, v0, Lczm;->l:Lqkg;
+
+    move-object v1, p13
+
+    iput-object v1, v0, Lczm;->m:Lqkg;
+
+    move-object/from16 v1, p14
+
+    iput-object v1, v0, Lczm;->n:Lqkg;
+
+    move-object/from16 v1, p15
+
+    iput-object v1, v0, Lczm;->o:Lqkg;
+
+    move-object/from16 v1, p16
+
+    iput-object v1, v0, Lczm;->p:Lqkg;
+
+    move-object/from16 v1, p17
+
+    iput-object v1, v0, Lczm;->q:Lqkg;
+
+    move-object/from16 v1, p18
+
+    iput-object v1, v0, Lczm;->r:Lqkg;
+
+    move-object/from16 v1, p19
+
+    iput-object v1, v0, Lczm;->s:Lqkg;
+
+    move-object/from16 v1, p20
+
+    iput-object v1, v0, Lczm;->t:Lqkg;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()V
-    .locals 19
+.method public final bridge synthetic get()Ljava/lang/Object;
+    .locals 22
 
     move-object/from16 v0, p0
 
-    iget-object v1, v0, Lczm;->m:Landroid/view/View;
+    iget-object v1, v0, Lczm;->a:Lqkg;
 
-    if-nez v1, :cond_0
-
-    iget-object v1, v0, Lczm;->i:Landroid/content/Context;
-
-    const v2, 0x7f0e005c
-
-    const/4 v3, 0x0
-
-    invoke-static {v1, v2, v3}, Landroid/view/View;->inflate(Landroid/content/Context;ILandroid/view/ViewGroup;)Landroid/view/View;
+    invoke-interface {v1}, Lqkg;->get()Ljava/lang/Object;
 
     move-result-object v1
 
-    iput-object v1, v0, Lczm;->m:Landroid/view/View;
+    move-object v3, v1
 
-    :cond_0
-    iget-object v1, v0, Lczm;->m:Landroid/view/View;
+    check-cast v3, Lcyw;
 
-    const v2, 0x7f0b0186
+    iget-object v1, v0, Lczm;->b:Lqkg;
 
-    invoke-virtual {v1, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
-
-    move-result-object v1
-
-    check-cast v1, Lcom/google/android/apps/camera/ui/compositevideoview/CompositeVideoView;
-
-    iput-object v1, v0, Lczm;->k:Lcom/google/android/apps/camera/ui/compositevideoview/CompositeVideoView;
-
-    iget-object v1, v0, Lczm;->m:Landroid/view/View;
-
-    const v2, 0x7f0b0183
-
-    invoke-virtual {v1, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+    invoke-interface {v1}, Lqkg;->get()Ljava/lang/Object;
 
     move-result-object v1
 
-    check-cast v1, Lcom/google/android/apps/camera/ui/compositevideoview/CompositeVideoView;
+    move-object v4, v1
 
-    iput-object v1, v0, Lczm;->l:Lcom/google/android/apps/camera/ui/compositevideoview/CompositeVideoView;
+    check-cast v4, Lljl;
 
-    iget-object v1, v0, Lczm;->b:Lczj;
+    iget-object v1, v0, Lczm;->c:Lqkg;
 
-    if-eqz v1, :cond_1
+    invoke-interface {v1}, Lqkg;->get()Ljava/lang/Object;
 
-    iget-object v1, v0, Lczm;->c:Lczj;
+    move-result-object v1
 
-    if-nez v1, :cond_2
+    move-object v5, v1
 
-    :cond_1
-    new-instance v1, Lczj;
+    check-cast v5, Llar;
 
-    iget-object v12, v0, Lczm;->k:Lcom/google/android/apps/camera/ui/compositevideoview/CompositeVideoView;
+    iget-object v1, v0, Lczm;->d:Lqkg;
 
-    iget-object v13, v0, Lczm;->l:Lcom/google/android/apps/camera/ui/compositevideoview/CompositeVideoView;
+    invoke-interface {v1}, Lqkg;->get()Ljava/lang/Object;
 
-    iget-object v14, v0, Lczm;->n:Ligo;
+    move-result-object v1
 
-    iget-object v15, v0, Lczm;->i:Landroid/content/Context;
+    move-object v6, v1
 
-    iget-object v11, v0, Lczm;->a:Ljava/util/concurrent/Executor;
+    check-cast v6, Lfvv;
 
-    sget-object v8, Lczm;->f:Landroid/net/Uri;
+    iget-object v1, v0, Lczm;->e:Lqkg;
 
-    iget-object v10, v0, Lczm;->j:Ljava/util/concurrent/ScheduledExecutorService;
+    invoke-interface {v1}, Lqkg;->get()Ljava/lang/Object;
 
-    const/16 v16, 0x0
+    move-result-object v1
 
-    const/16 v17, 0x0
+    move-object v7, v1
+
+    check-cast v7, Ljcw;
+
+    iget-object v8, v0, Lczm;->f:Lqkg;
+
+    iget-object v1, v0, Lczm;->g:Lqkg;
+
+    invoke-interface {v1}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v1
+
+    move-object v9, v1
+
+    check-cast v9, Lhzi;
+
+    iget-object v1, v0, Lczm;->h:Lqkg;
+
+    invoke-interface {v1}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v1
+
+    move-object v10, v1
+
+    check-cast v10, Lgvb;
+
+    iget-object v1, v0, Lczm;->i:Lqkg;
+
+    invoke-interface {v1}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v1
+
+    move-object v11, v1
+
+    check-cast v11, Llco;
+
+    iget-object v1, v0, Lczm;->j:Lqkg;
+
+    check-cast v1, Ldat;
+
+    invoke-virtual {v1}, Ldat;->a()Ldbr;
+
+    move-result-object v12
+
+    iget-object v1, v0, Lczm;->k:Lqkg;
+
+    check-cast v1, Ldas;
+
+    invoke-virtual {v1}, Ldas;->a()Ldbg;
+
+    move-result-object v13
+
+    iget-object v1, v0, Lczm;->l:Lqkg;
+
+    invoke-interface {v1}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v1
+
+    move-object v14, v1
+
+    check-cast v14, Lddf;
+
+    iget-object v1, v0, Lczm;->m:Lqkg;
+
+    invoke-interface {v1}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Lcom/google/android/apps/camera/stats/timing/CameraActivityTiming;
+
+    iget-object v1, v0, Lczm;->n:Lqkg;
+
+    invoke-interface {v1}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v1
+
+    move-object v15, v1
+
+    check-cast v15, Ljava/util/concurrent/ScheduledExecutorService;
+
+    iget-object v1, v0, Lczm;->o:Lqkg;
+
+    invoke-interface {v1}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v1
+
+    move-object/from16 v16, v1
+
+    check-cast v16, Ljava/util/concurrent/Executor;
+
+    iget-object v1, v0, Lczm;->p:Lqkg;
+
+    invoke-interface {v1}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v1
+
+    move-object/from16 v17, v1
+
+    check-cast v17, Lcyp;
+
+    iget-object v1, v0, Lczm;->q:Lqkg;
+
+    invoke-interface {v1}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v1
+
+    move-object/from16 v18, v1
+
+    check-cast v18, Lbxy;
+
+    iget-object v1, v0, Lczm;->r:Lqkg;
+
+    invoke-interface {v1}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v1
+
+    move-object/from16 v19, v1
+
+    check-cast v19, Lcyl;
+
+    iget-object v1, v0, Lczm;->s:Lqkg;
+
+    invoke-interface {v1}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v1
+
+    move-object/from16 v20, v1
+
+    check-cast v20, Limt;
+
+    iget-object v1, v0, Lczm;->t:Lqkg;
+
+    check-cast v1, Ling;
+
+    invoke-virtual {v1}, Ling;->a()Lims;
+
+    move-result-object v21
+
+    new-instance v1, Lczl;
 
     move-object v2, v1
 
-    move-object v3, v12
+    invoke-direct/range {v2 .. v21}, Lczl;-><init>(Lcyw;Lljl;Llar;Lfvv;Ljcw;Lqkg;Lhzi;Lgvb;Llco;Ldbr;Ldbg;Lddf;Ljava/util/concurrent/ScheduledExecutorService;Ljava/util/concurrent/Executor;Lcyp;Lbxy;Lcyl;Limt;Lims;)V
 
-    move-object v4, v13
-
-    move-object v5, v14
-
-    move-object v6, v15
-
-    move-object v7, v11
-
-    move-object v9, v10
-
-    move-object/from16 v18, v10
-
-    move-object/from16 v10, v16
-
-    move-object/from16 v16, v11
-
-    move-object/from16 v11, v17
-
-    invoke-direct/range {v2 .. v11}, Lczj;-><init>(Lcom/google/android/apps/camera/ui/compositevideoview/CompositeVideoView;Lcom/google/android/apps/camera/ui/compositevideoview/CompositeVideoView;Ligo;Landroid/content/Context;Ljava/util/concurrent/Executor;Landroid/net/Uri;Ljava/util/concurrent/ScheduledExecutorService;[B[B)V
-
-    iput-object v1, v0, Lczm;->b:Lczj;
-
-    new-instance v1, Lczj;
-
-    sget-object v8, Lczm;->g:Landroid/net/Uri;
-
-    const/4 v10, 0x0
-
-    const/4 v11, 0x0
-
-    move-object v2, v1
-
-    move-object v3, v13
-
-    move-object v4, v12
-
-    move-object/from16 v7, v16
-
-    move-object/from16 v9, v18
-
-    invoke-direct/range {v2 .. v11}, Lczj;-><init>(Lcom/google/android/apps/camera/ui/compositevideoview/CompositeVideoView;Lcom/google/android/apps/camera/ui/compositevideoview/CompositeVideoView;Ligo;Landroid/content/Context;Ljava/util/concurrent/Executor;Landroid/net/Uri;Ljava/util/concurrent/ScheduledExecutorService;[B[B)V
-
-    iput-object v1, v0, Lczm;->c:Lczj;
-
-    :cond_2
-    iget-object v1, v0, Lczm;->b:Lczj;
-
-    invoke-virtual {v1}, Lczj;->f()V
-
-    iget-object v1, v0, Lczm;->b:Lczj;
-
-    new-instance v2, Lctw;
-
-    const/16 v3, 0x14
-
-    invoke-direct {v2, v0, v3}, Lctw;-><init>(Lczm;I)V
-
-    iput-object v2, v1, Lczj;->f:Ljava/lang/Runnable;
-
-    invoke-virtual {v1}, Lczj;->b()V
-
-    iget-object v1, v0, Lczm;->c:Lczj;
-
-    invoke-virtual {v1}, Lczj;->f()V
-
-    iget-object v1, v0, Lczm;->c:Lczj;
-
-    new-instance v2, Lczl;
-
-    const/4 v3, 0x1
-
-    invoke-direct {v2, v0, v3}, Lczl;-><init>(Lczm;I)V
-
-    iput-object v2, v1, Lczj;->f:Ljava/lang/Runnable;
-
-    invoke-virtual {v1}, Lczj;->b()V
-
-    iget-object v1, v0, Lczm;->k:Lcom/google/android/apps/camera/ui/compositevideoview/CompositeVideoView;
-
-    invoke-virtual {v1}, Lcom/google/android/apps/camera/ui/compositevideoview/CompositeVideoView;->g()V
-
-    iget-object v1, v0, Lczm;->l:Lcom/google/android/apps/camera/ui/compositevideoview/CompositeVideoView;
-
-    invoke-virtual {v1}, Lcom/google/android/apps/camera/ui/compositevideoview/CompositeVideoView;->h()V
-
-    iget-object v1, v0, Lczm;->h:Lhrz;
-
-    iget-object v2, v0, Lczm;->m:Landroid/view/View;
-
-    const/16 v3, 0xd
-
-    const v4, 0x7f1401fd
-
-    invoke-virtual {v1, v3, v4, v2, v0}, Lhrz;->m(IILandroid/view/View;Landroid/content/DialogInterface$OnDismissListener;)V
-
-    return-void
-.end method
-
-.method public final b()V
-    .locals 3
-
-    iget-object v0, p0, Lczm;->m:Landroid/view/View;
-
-    const v1, 0x7f0b0182
-
-    invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
-
-    move-result-object v0
-
-    const/4 v1, 0x0
-
-    invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
-
-    iget-object v0, p0, Lczm;->m:Landroid/view/View;
-
-    const v2, 0x7f0b0185
-
-    invoke-virtual {v0, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
-
-    move-result-object v0
-
-    invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
-
-    return-void
-.end method
-
-.method public final onDismiss(Landroid/content/DialogInterface;)V
-    .locals 0
-
-    iget-object p1, p0, Lczm;->b:Lczj;
-
-    invoke-virtual {p1}, Lczj;->a()V
-
-    iget-object p1, p0, Lczm;->c:Lczj;
-
-    invoke-virtual {p1}, Lczj;->a()V
-
-    return-void
+    return-object v1
 .end method

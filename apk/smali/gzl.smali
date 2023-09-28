@@ -1,915 +1,224 @@
 .class public final Lgzl;
-.super Lgzi;
-
-
-# static fields
-.field private static final a:Lnak;
+.super Ljava/lang/Object;
 
 
 # instance fields
-.field private final b:Ljava/lang/Object;
+.field private final a:Lqkg;
 
-.field private final c:Landroid/content/Context;
+.field private final b:Lqkg;
 
-.field private final d:Ljava/lang/String;
+.field private final c:Lqkg;
 
-.field private final e:Landroid/content/SharedPreferences;
+.field private final d:Lqkg;
 
-.field private final f:Ljava/util/List;
+.field private final e:Lqkg;
 
-.field private final g:Ljava/util/List;
+.field private final f:Lqkg;
+
+.field private final g:Lqkg;
+
+.field private final h:Lqkg;
+
+.field private final i:Lqkg;
+
+.field private final j:Lqkg;
+
+.field private final k:Lqkg;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
+.method public constructor <init>(Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;)V
+    .locals 0
 
-    const-string v0, "com/google/android/apps/camera/settings/SettingsManagerConcrete"
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-static {v0}, Lnak;->h(Ljava/lang/String;)Lnak;
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    move-result-object v0
+    iput-object p1, p0, Lgzl;->a:Lqkg;
 
-    sput-object v0, Lgzl;->a:Lnak;
+    invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    return-void
-.end method
+    iput-object p2, p0, Lgzl;->b:Lqkg;
 
-.method public constructor <init>(Landroid/content/Context;Landroid/content/SharedPreferences;)V
-    .locals 1
+    invoke-virtual {p3}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    invoke-direct {p0}, Lgzi;-><init>()V
+    iput-object p3, p0, Lgzl;->c:Lqkg;
 
-    new-instance v0, Ljava/util/ArrayList;
+    invoke-virtual {p4}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+    iput-object p4, p0, Lgzl;->d:Lqkg;
 
-    iput-object v0, p0, Lgzl;->f:Ljava/util/List;
+    invoke-virtual {p5}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    new-instance v0, Ljava/util/ArrayList;
+    iput-object p5, p0, Lgzl;->e:Lqkg;
 
-    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+    invoke-virtual {p6}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    iput-object v0, p0, Lgzl;->g:Ljava/util/List;
+    iput-object p6, p0, Lgzl;->f:Lqkg;
 
-    new-instance v0, Ljava/lang/Object;
+    invoke-virtual {p7}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+    iput-object p7, p0, Lgzl;->g:Lqkg;
 
-    iput-object v0, p0, Lgzl;->b:Ljava/lang/Object;
+    invoke-virtual {p8}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    iput-object p1, p0, Lgzl;->c:Landroid/content/Context;
+    iput-object p8, p0, Lgzl;->h:Lqkg;
 
-    invoke-virtual {p1}, Landroid/content/Context;->getPackageName()Ljava/lang/String;
+    invoke-virtual {p9}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    move-result-object v0
+    iput-object p9, p0, Lgzl;->i:Lqkg;
 
-    iput-object v0, p0, Lgzl;->d:Ljava/lang/String;
+    invoke-virtual {p10}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    iput-object p2, p0, Lgzl;->e:Landroid/content/SharedPreferences;
+    iput-object p10, p0, Lgzl;->j:Lqkg;
 
-    new-instance p2, Lgzk;
+    invoke-virtual {p11}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    invoke-direct {p2, p1}, Lgzk;-><init>(Landroid/content/Context;)V
-
-    invoke-virtual {p0, p2}, Lgzl;->f(Lgyo;)V
+    iput-object p11, p0, Lgzl;->k:Lqkg;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Ljava/lang/String;)I
-    .locals 2
+.method public final a(Llng;Lgog;)Lgzk;
+    .locals 16
 
-    iget-object v0, p0, Lgzl;->b:Ljava/lang/Object;
+    move-object/from16 v0, p0
 
-    monitor-enter v0
+    new-instance v15, Lgzk;
 
-    const/4 v1, 0x0
+    iget-object v1, v0, Lgzl;->a:Lqkg;
 
-    :try_start_0
-    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v1
-
-    invoke-virtual {p0, p1, v1}, Lgzl;->b(Ljava/lang/String;Ljava/lang/Integer;)I
-
-    move-result p1
-
-    monitor-exit v0
-
-    return p1
-
-    :catchall_0
-    move-exception p1
-
-    monitor-exit v0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw p1
-.end method
-
-.method public final b(Ljava/lang/String;Ljava/lang/Integer;)I
-    .locals 2
-
-    iget-object v0, p0, Lgzl;->b:Ljava/lang/Object;
-
-    monitor-enter v0
-
-    :try_start_0
-    invoke-virtual {p2}, Ljava/lang/Integer;->intValue()I
-
-    move-result v1
-
-    invoke-static {v1}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
+    invoke-interface {v1}, Lqkg;->get()Ljava/lang/Object;
 
     move-result-object v1
 
-    invoke-virtual {p0, p1, v1}, Lgzl;->q(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    move-object v2, v1
 
-    move-result-object p1
+    check-cast v2, Lljf;
 
-    if-nez p1, :cond_0
+    invoke-virtual {v2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    invoke-virtual {p2}, Ljava/lang/Integer;->intValue()I
+    iget-object v1, v0, Lgzl;->b:Lqkg;
 
-    move-result p1
+    check-cast v1, Ldgb;
 
-    monitor-exit v0
-
-    return p1
-
-    :cond_0
-    invoke-static {p1}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
-
-    move-result p1
-
-    monitor-exit v0
-
-    return p1
-
-    :catchall_0
-    move-exception p1
-
-    monitor-exit v0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw p1
-.end method
-
-.method public final c(Ljava/lang/String;)J
-    .locals 6
-
-    iget-object v0, p0, Lgzl;->b:Ljava/lang/Object;
-
-    monitor-enter v0
-
-    const-wide/16 v1, 0x0
-
-    :try_start_0
-    invoke-static {v1, v2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+    invoke-virtual {v1}, Ldgb;->a()Llir;
 
     move-result-object v3
 
-    iget-object v4, p0, Lgzl;->b:Ljava/lang/Object;
+    iget-object v1, v0, Lgzl;->c:Lqkg;
 
-    monitor-enter v4
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_1
-
-    :try_start_1
-    invoke-virtual {v3}, Ljava/lang/Long;->longValue()J
-
-    invoke-static {v1, v2}, Ljava/lang/Long;->toString(J)Ljava/lang/String;
-
-    move-result-object v5
-
-    invoke-virtual {p0, p1, v5}, Lgzl;->q(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object p1
-
-    if-nez p1, :cond_0
-
-    invoke-virtual {v3}, Ljava/lang/Long;->longValue()J
-
-    monitor-exit v4
-
-    goto :goto_0
-
-    :cond_0
-    invoke-static {p1}, Ljava/lang/Long;->parseLong(Ljava/lang/String;)J
-
-    move-result-wide v1
-
-    monitor-exit v4
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    :goto_0
-    :try_start_2
-    monitor-exit v0
-    :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_1
-
-    return-wide v1
-
-    :catchall_0
-    move-exception p1
-
-    :try_start_3
-    monitor-exit v4
-    :try_end_3
-    .catchall {:try_start_3 .. :try_end_3} :catchall_0
-
-    :try_start_4
-    throw p1
-
-    :catchall_1
-    move-exception p1
-
-    monitor-exit v0
-    :try_end_4
-    .catchall {:try_start_4 .. :try_end_4} :catchall_1
-
-    throw p1
-.end method
-
-.method public final d()Landroid/content/SharedPreferences;
-    .locals 2
-
-    iget-object v0, p0, Lgzl;->b:Ljava/lang/Object;
-
-    monitor-enter v0
-
-    :try_start_0
-    iget-object v1, p0, Lgzl;->e:Landroid/content/SharedPreferences;
-
-    monitor-exit v0
-
-    return-object v1
-
-    :catchall_0
-    move-exception v1
-
-    monitor-exit v0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw v1
-.end method
-
-.method public final e(Ljava/lang/String;)Ljava/lang/String;
-    .locals 4
-
-    iget-object v0, p0, Lgzl;->b:Ljava/lang/Object;
-
-    monitor-enter v0
-
-    const/4 v1, 0x0
-
-    :try_start_0
-    iget-object v2, p0, Lgzl;->e:Landroid/content/SharedPreferences;
-
-    invoke-interface {v2, p1, v1}, Landroid/content/SharedPreferences;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object p1
-    :try_end_0
-    .catch Ljava/lang/ClassCastException; {:try_start_0 .. :try_end_0} :catch_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    :try_start_1
-    monitor-exit v0
-
-    return-object p1
-
-    :catchall_0
-    move-exception p1
-
-    goto :goto_0
-
-    :catch_0
-    move-exception v2
-
-    sget-object v3, Lgzl;->a:Lnak;
-
-    invoke-virtual {v3}, Lnaf;->c()Lnaz;
-
-    move-result-object v3
-
-    check-cast v3, Lnah;
-
-    invoke-interface {v3, v2}, Lnah;->h(Ljava/lang/Throwable;)Lnaz;
-
-    move-result-object v2
-
-    check-cast v2, Lnah;
-
-    const/16 v3, 0xd38
-
-    invoke-interface {v2, v3}, Lnah;->G(I)Lnaz;
-
-    move-result-object v2
-
-    check-cast v2, Lnah;
-
-    const-string v3, "existing preference with invalid type, removing and returning default"
-
-    invoke-interface {v2, v3}, Lnah;->o(Ljava/lang/String;)V
-
-    iget-object v2, p0, Lgzl;->e:Landroid/content/SharedPreferences;
-
-    invoke-interface {v2}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
-
-    move-result-object v2
-
-    invoke-interface {v2, p1}, Landroid/content/SharedPreferences$Editor;->remove(Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
-
-    move-result-object p1
-
-    invoke-interface {p1}, Landroid/content/SharedPreferences$Editor;->apply()V
-
-    monitor-exit v0
-
-    return-object v1
-
-    :goto_0
-    monitor-exit v0
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    throw p1
-.end method
-
-.method public final f(Lgyo;)V
-    .locals 2
-
-    iget-object v0, p0, Lgzl;->b:Ljava/lang/Object;
-
-    invoke-static {v0}, Llkj;->C(Ljava/lang/Object;)V
-
-    iget-object v0, p0, Lgzl;->g:Ljava/util/List;
-
-    invoke-static {v0}, Llkj;->C(Ljava/lang/Object;)V
-
-    iget-object v0, p0, Lgzl;->e:Landroid/content/SharedPreferences;
-
-    invoke-static {v0}, Llkj;->C(Ljava/lang/Object;)V
-
-    iget-object v0, p0, Lgzl;->b:Ljava/lang/Object;
-
-    monitor-enter v0
-
-    if-eqz p1, :cond_1
-
-    :try_start_0
-    iget-object v1, p0, Lgzl;->f:Ljava/util/List;
-
-    invoke-interface {v1, p1}, Ljava/util/List;->contains(Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_0
-
-    monitor-exit v0
-
-    return-void
-
-    :cond_0
-    iget-object v1, p0, Lgzl;->f:Ljava/util/List;
-
-    invoke-interface {v1, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-
-    new-instance v1, Lgzj;
-
-    invoke-direct {v1, p1}, Lgzj;-><init>(Lgyo;)V
-
-    iget-object p1, p0, Lgzl;->g:Ljava/util/List;
-
-    invoke-interface {p1, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-
-    iget-object p1, p0, Lgzl;->e:Landroid/content/SharedPreferences;
-
-    invoke-interface {p1, v1}, Landroid/content/SharedPreferences;->registerOnSharedPreferenceChangeListener(Landroid/content/SharedPreferences$OnSharedPreferenceChangeListener;)V
-
-    monitor-exit v0
-
-    return-void
-
-    :catchall_0
-    move-exception p1
-
-    goto :goto_0
-
-    :cond_1
-    new-instance p1, Ljava/lang/IllegalArgumentException;
-
-    const-string v1, "OnSettingChangedListener cannot be null."
-
-    invoke-direct {p1, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw p1
-
-    :goto_0
-    monitor-exit v0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw p1
-.end method
-
-.method public final g(Ljava/lang/String;)V
-    .locals 2
-
-    iget-object v0, p0, Lgzl;->b:Ljava/lang/Object;
-
-    monitor-enter v0
-
-    :try_start_0
-    iget-object v1, p0, Lgzl;->e:Landroid/content/SharedPreferences;
-
-    invoke-interface {v1}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
+    invoke-interface {v1}, Lqkg;->get()Ljava/lang/Object;
 
     move-result-object v1
 
-    invoke-interface {v1, p1}, Landroid/content/SharedPreferences$Editor;->remove(Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
+    move-object v4, v1
 
-    move-result-object p1
+    check-cast v4, Lebe;
 
-    invoke-interface {p1}, Landroid/content/SharedPreferences$Editor;->apply()V
+    invoke-virtual {v4}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    monitor-exit v0
+    iget-object v1, v0, Lgzl;->d:Lqkg;
 
-    return-void
-
-    :catchall_0
-    move-exception p1
-
-    monitor-exit v0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw p1
-.end method
-
-.method public final h(Lgyo;)V
-    .locals 3
-
-    iget-object v0, p0, Lgzl;->b:Ljava/lang/Object;
-
-    invoke-static {v0}, Llkj;->C(Ljava/lang/Object;)V
-
-    iget-object v0, p0, Lgzl;->g:Ljava/util/List;
-
-    invoke-static {v0}, Llkj;->C(Ljava/lang/Object;)V
-
-    iget-object v0, p0, Lgzl;->e:Landroid/content/SharedPreferences;
-
-    invoke-static {v0}, Llkj;->C(Ljava/lang/Object;)V
-
-    iget-object v0, p0, Lgzl;->b:Ljava/lang/Object;
-
-    monitor-enter v0
-
-    :try_start_0
-    iget-object v1, p0, Lgzl;->f:Ljava/util/List;
-
-    invoke-interface {v1, p1}, Ljava/util/List;->contains(Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-nez v1, :cond_0
-
-    monitor-exit v0
-
-    return-void
-
-    :cond_0
-    iget-object v1, p0, Lgzl;->f:Ljava/util/List;
-
-    invoke-interface {v1, p1}, Ljava/util/List;->indexOf(Ljava/lang/Object;)I
-
-    move-result v1
-
-    iget-object v2, p0, Lgzl;->f:Ljava/util/List;
-
-    invoke-interface {v2, p1}, Ljava/util/List;->remove(Ljava/lang/Object;)Z
-
-    iget-object p1, p0, Lgzl;->g:Ljava/util/List;
-
-    invoke-interface {p1, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
-
-    move-result-object p1
-
-    check-cast p1, Landroid/content/SharedPreferences$OnSharedPreferenceChangeListener;
-
-    iget-object v2, p0, Lgzl;->g:Ljava/util/List;
-
-    invoke-interface {v2, v1}, Ljava/util/List;->remove(I)Ljava/lang/Object;
-
-    iget-object v1, p0, Lgzl;->e:Landroid/content/SharedPreferences;
-
-    invoke-interface {v1, p1}, Landroid/content/SharedPreferences;->unregisterOnSharedPreferenceChangeListener(Landroid/content/SharedPreferences$OnSharedPreferenceChangeListener;)V
-
-    monitor-exit v0
-
-    return-void
-
-    :catchall_0
-    move-exception p1
-
-    monitor-exit v0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw p1
-.end method
-
-.method public final i(Ljava/lang/String;I)V
-    .locals 1
-
-    iget-object v0, p0, Lgzl;->b:Ljava/lang/Object;
-
-    monitor-enter v0
-
-    :try_start_0
-    invoke-static {p2}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
-
-    move-result-object p2
-
-    invoke-virtual {p0, p1, p2}, Lgzl;->k(Ljava/lang/String;Ljava/lang/String;)V
-
-    monitor-exit v0
-
-    return-void
-
-    :catchall_0
-    move-exception p1
-
-    monitor-exit v0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw p1
-.end method
-
-.method public final j(Ljava/lang/String;J)V
-    .locals 1
-
-    iget-object v0, p0, Lgzl;->b:Ljava/lang/Object;
-
-    monitor-enter v0
-
-    :try_start_0
-    invoke-static {p2, p3}, Ljava/lang/Long;->toString(J)Ljava/lang/String;
-
-    move-result-object p2
-
-    invoke-virtual {p0, p1, p2}, Lgzl;->k(Ljava/lang/String;Ljava/lang/String;)V
-
-    monitor-exit v0
-
-    return-void
-
-    :catchall_0
-    move-exception p1
-
-    monitor-exit v0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw p1
-.end method
-
-.method public final k(Ljava/lang/String;Ljava/lang/String;)V
-    .locals 2
-
-    iget-object v0, p0, Lgzl;->b:Ljava/lang/Object;
-
-    monitor-enter v0
-
-    :try_start_0
-    iget-object v1, p0, Lgzl;->e:Landroid/content/SharedPreferences;
-
-    invoke-interface {v1}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
+    invoke-interface {v1}, Lqkg;->get()Ljava/lang/Object;
 
     move-result-object v1
 
-    invoke-interface {v1, p1, p2}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
+    move-object v5, v1
 
-    move-result-object p1
+    check-cast v5, Leam;
 
-    invoke-interface {p1}, Landroid/content/SharedPreferences$Editor;->apply()V
+    invoke-virtual {v5}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    monitor-exit v0
+    iget-object v1, v0, Lgzl;->e:Lqkg;
 
-    return-void
-
-    :catchall_0
-    move-exception p1
-
-    monitor-exit v0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw p1
-.end method
-
-.method public final l(Ljava/lang/String;Z)V
-    .locals 4
-
-    iget-object v0, p0, Lgzl;->b:Ljava/lang/Object;
-
-    monitor-enter v0
-
-    :try_start_0
-    const-string v1, "1"
-
-    const-string v2, "0"
-
-    const/4 v3, 0x1
-
-    if-eq v3, p2, :cond_0
-
-    move-object v1, v2
-
-    goto :goto_0
-
-    :cond_0
-    :goto_0
-    invoke-virtual {p0, p1, v1}, Lgzl;->k(Ljava/lang/String;Ljava/lang/String;)V
-
-    monitor-exit v0
-
-    return-void
-
-    :catchall_0
-    move-exception p1
-
-    monitor-exit v0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw p1
-.end method
-
-.method public final m(Ljava/lang/String;)Z
-    .locals 1
-
-    iget-object v0, p0, Lgzl;->b:Ljava/lang/Object;
-
-    monitor-enter v0
-
-    :try_start_0
-    invoke-virtual {p0, p1}, Lgzl;->o(Ljava/lang/String;)Z
-
-    move-result p1
-
-    monitor-exit v0
-
-    return p1
-
-    :catchall_0
-    move-exception p1
-
-    monitor-exit v0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw p1
-.end method
-
-.method public final n(Ljava/lang/String;)Z
-    .locals 2
-
-    iget-object v0, p0, Lgzl;->b:Ljava/lang/Object;
-
-    monitor-enter v0
-
-    :try_start_0
-    iget-object v1, p0, Lgzl;->e:Landroid/content/SharedPreferences;
-
-    invoke-interface {v1, p1}, Landroid/content/SharedPreferences;->contains(Ljava/lang/String;)Z
-
-    move-result p1
-
-    monitor-exit v0
-
-    return p1
-
-    :catchall_0
-    move-exception p1
-
-    monitor-exit v0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw p1
-.end method
-
-.method public final o(Ljava/lang/String;)Z
-    .locals 2
-
-    iget-object v0, p0, Lgzl;->b:Ljava/lang/Object;
-
-    monitor-enter v0
-
-    :try_start_0
-    const-string v1, "0"
-
-    invoke-virtual {p0, p1, v1}, Lgzl;->q(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object p1
-
-    const/4 v1, 0x0
-
-    if-nez p1, :cond_0
-
-    monitor-exit v0
-
-    return v1
-
-    :cond_0
-    invoke-static {p1}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
-
-    move-result p1
-
-    if-eqz p1, :cond_1
-
-    const/4 v1, 0x1
-
-    goto :goto_0
-
-    :cond_1
-    :goto_0
-    monitor-exit v0
-
-    return v1
-
-    :catchall_0
-    move-exception p1
-
-    monitor-exit v0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw p1
-.end method
-
-.method public final p()Landroid/content/SharedPreferences;
-    .locals 5
-
-    iget-object v0, p0, Lgzl;->b:Ljava/lang/Object;
-
-    const-string v1, "_preferences_camera"
-
-    monitor-enter v0
-
-    :try_start_0
-    iget-object v2, p0, Lgzl;->c:Landroid/content/Context;
-
-    iget-object v3, p0, Lgzl;->d:Ljava/lang/String;
-
-    new-instance v4, Ljava/lang/StringBuilder;
-
-    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
-
-    invoke-virtual {v4, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v4, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-interface {v1}, Lqkg;->get()Ljava/lang/Object;
 
     move-result-object v1
 
-    const/4 v3, 0x0
+    move-object v6, v1
 
-    invoke-virtual {v2, v1, v3}, Landroid/content/Context;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
+    check-cast v6, Lgzu;
 
-    move-result-object v1
+    invoke-virtual {v6}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    iget-object v2, p0, Lgzl;->g:Ljava/util/List;
+    iget-object v1, v0, Lgzl;->f:Lqkg;
 
-    invoke-interface {v2}, Ljava/util/List;->iterator()Ljava/util/Iterator;
-
-    move-result-object v2
-
-    :goto_0
-    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v3
-
-    if-eqz v3, :cond_0
-
-    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v3
-
-    check-cast v3, Landroid/content/SharedPreferences$OnSharedPreferenceChangeListener;
-
-    invoke-interface {v1, v3}, Landroid/content/SharedPreferences;->registerOnSharedPreferenceChangeListener(Landroid/content/SharedPreferences$OnSharedPreferenceChangeListener;)V
-
-    goto :goto_0
-
-    :cond_0
-    monitor-exit v0
-
-    return-object v1
-
-    :catchall_0
-    move-exception v1
-
-    monitor-exit v0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    goto :goto_2
-
-    :goto_1
-    throw v1
-
-    :goto_2
-    goto :goto_1
-.end method
-
-.method public final q(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-    .locals 3
-
-    iget-object v0, p0, Lgzl;->b:Ljava/lang/Object;
-
-    monitor-enter v0
-
-    :try_start_0
-    iget-object v1, p0, Lgzl;->e:Landroid/content/SharedPreferences;
-
-    invoke-interface {v1, p1, p2}, Landroid/content/SharedPreferences;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object p1
-    :try_end_0
-    .catch Ljava/lang/ClassCastException; {:try_start_0 .. :try_end_0} :catch_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    :try_start_1
-    monitor-exit v0
-
-    return-object p1
-
-    :catchall_0
-    move-exception p1
-
-    goto :goto_0
-
-    :catch_0
-    move-exception v1
-
-    sget-object v2, Lgzl;->a:Lnak;
-
-    invoke-virtual {v2}, Lnaf;->c()Lnaz;
-
-    move-result-object v2
-
-    check-cast v2, Lnah;
-
-    invoke-interface {v2, v1}, Lnah;->h(Ljava/lang/Throwable;)Lnaz;
+    invoke-interface {v1}, Lqkg;->get()Ljava/lang/Object;
 
     move-result-object v1
 
-    check-cast v1, Lnah;
+    move-object v7, v1
 
-    const/16 v2, 0xd39
+    check-cast v7, Leaw;
 
-    invoke-interface {v1, v2}, Lnah;->G(I)Lnaz;
+    invoke-virtual {v7}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    move-result-object v1
+    iget-object v1, v0, Lgzl;->g:Lqkg;
 
-    check-cast v1, Lnah;
-
-    const-string v2, "existing preference with invalid type, removing and returning default"
-
-    invoke-interface {v1, v2}, Lnah;->o(Ljava/lang/String;)V
-
-    iget-object v1, p0, Lgzl;->e:Landroid/content/SharedPreferences;
-
-    invoke-interface {v1}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
+    invoke-interface {v1}, Lqkg;->get()Ljava/lang/Object;
 
     move-result-object v1
 
-    invoke-interface {v1, p1}, Landroid/content/SharedPreferences$Editor;->remove(Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
+    move-object v8, v1
 
-    move-result-object p1
+    check-cast v8, Lhcg;
 
-    invoke-interface {p1}, Landroid/content/SharedPreferences$Editor;->apply()V
+    invoke-virtual {v8}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    monitor-exit v0
+    sget-object v9, Lfnl;->b:Lfnl;
 
-    return-object p2
+    iget-object v1, v0, Lgzl;->h:Lqkg;
 
-    :goto_0
-    monitor-exit v0
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+    invoke-interface {v1}, Lqkg;->get()Ljava/lang/Object;
 
-    throw p1
+    move-result-object v1
+
+    move-object v10, v1
+
+    check-cast v10, Lddf;
+
+    invoke-virtual {v10}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    iget-object v1, v0, Lgzl;->i:Lqkg;
+
+    invoke-interface {v1}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v1
+
+    move-object v11, v1
+
+    check-cast v11, Liio;
+
+    invoke-virtual {v11}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    iget-object v1, v0, Lgzl;->j:Lqkg;
+
+    invoke-interface {v1}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v1
+
+    move-object v12, v1
+
+    check-cast v12, Lojc;
+
+    invoke-virtual {v12}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    iget-object v1, v0, Lgzl;->k:Lqkg;
+
+    check-cast v1, Lhet;
+
+    invoke-virtual {v1}, Lhet;->a()Lhes;
+
+    move-object v1, v15
+
+    move-object/from16 v13, p1
+
+    move-object/from16 v14, p2
+
+    invoke-direct/range {v1 .. v14}, Lgzk;-><init>(Lljf;Llir;Lebe;Leam;Lgzu;Leaw;Lhcg;Lmcx;Lddf;Liio;Lojc;Llng;Lgog;)V
+
+    return-object v15
 .end method

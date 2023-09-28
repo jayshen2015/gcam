@@ -1,228 +1,216 @@
-.class public final Lmpo;
-.super Lnws;
+.class public Lmpo;
+.super Ljava/lang/Object;
 
 # interfaces
-.implements Lnxz;
-
-
-# static fields
-.field public static final k:Lmpo;
-
-.field private static volatile l:Lnyf;
+.implements Lmpm;
 
 
 # instance fields
-.field public a:I
+.field private final a:Lmnb;
 
-.field public b:I
-
-.field public c:I
-
-.field public d:I
-
-.field public e:I
-
-.field public f:I
-
-.field public g:I
-
-.field public h:I
-
-.field public i:I
-
-.field public j:I
+.field public final b:Lmpi;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
+.method protected constructor <init>(Lmpi;Lmnb;)V
+    .locals 0
 
-    new-instance v0, Lmpo;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {v0}, Lmpo;-><init>()V
+    iput-object p1, p0, Lmpo;->b:Lmpi;
 
-    sput-object v0, Lmpo;->k:Lmpo;
+    iput-object p2, p0, Lmpo;->a:Lmnb;
 
-    const-class v1, Lmpo;
+    invoke-interface {p1}, Lmpi;->f()Z
 
-    invoke-static {v1, v0}, Lnws;->aa(Ljava/lang/Class;Lnws;)V
+    move-result p1
+
+    if-eqz p1, :cond_0
+
+    invoke-static {p2}, Lmip;->ab(Lmnb;)Ljava/lang/Object;
+
+    move-result-object p1
+
+    if-nez p1, :cond_0
+
+    const-string p1, "GLContextObject"
+
+    const-string p2, "Creating non-ready GL object on GL thread. This will likely cause a deadlock."
+
+    invoke-static {p1, p2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+
+    :cond_0
+    sget-boolean p1, Lmot;->a:Z
 
     return-void
 .end method
 
-.method private constructor <init>()V
-    .locals 0
+.method public static d(Lmpi;Ljava/util/concurrent/Callable;)Lmnb;
+    .locals 1
 
-    invoke-direct {p0}, Lnws;-><init>()V
+    invoke-interface {p0}, Lmpi;->f()Z
 
-    return-void
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    :try_start_0
+    invoke-interface {p1}, Ljava/util/concurrent/Callable;->call()Ljava/lang/Object;
+
+    move-result-object p0
+
+    invoke-static {p0}, Lmip;->Y(Ljava/lang/Object;)Lmnb;
+
+    move-result-object p0
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+
+    return-object p0
+
+    :catch_0
+    move-exception p0
+
+    invoke-static {p0}, Lmnc;->a(Ljava/lang/Throwable;)Lmnc;
+
+    move-result-object p0
+
+    invoke-static {p0}, Lplk;->U(Ljava/lang/Throwable;)Lpht;
+
+    move-result-object p0
+
+    invoke-static {p0}, Lmip;->W(Lpht;)Lmnb;
+
+    move-result-object p0
+
+    return-object p0
+
+    :cond_0
+    invoke-static {p0, p1}, Lmip;->X(Ljava/util/concurrent/Executor;Ljava/util/concurrent/Callable;)Lmnb;
+
+    move-result-object p0
+
+    return-object p0
 .end method
 
 
 # virtual methods
-.method protected final a(ILjava/lang/Object;)Ljava/lang/Object;
-    .locals 3
+.method public a()Lmne;
+    .locals 2
 
-    add-int/lit8 p1, p1, -0x1
+    sget-boolean v0, Lmot;->a:Z
 
-    const/4 p2, 0x1
+    sget-object v0, Lgdr;->d:Lgdr;
 
-    packed-switch p1, :pswitch_data_0
+    new-instance v1, Lmlv;
 
-    :pswitch_0
-    const/4 p1, 0x0
+    invoke-direct {v1}, Lmlv;-><init>()V
 
-    return-object p1
+    invoke-virtual {p0, v0, v1}, Lmpo;->e(Lmqj;Lmlu;)Lmnb;
 
-    :pswitch_1
-    sget-object p1, Lmpo;->l:Lnyf;
+    move-result-object v0
 
-    if-nez p1, :cond_1
+    invoke-static {v0}, Lmne;->i(Lmnb;)Lmne;
 
-    const-class p2, Lmpo;
+    move-result-object v0
 
-    monitor-enter p2
+    return-object v0
+.end method
 
-    :try_start_0
-    sget-object p1, Lmpo;->l:Lnyf;
+.method public final c()Lmqw;
+    .locals 2
 
-    if-nez p1, :cond_0
+    iget-object v0, p0, Lmpo;->b:Lmpi;
 
-    new-instance p1, Lnwo;
+    invoke-interface {v0}, Lmpi;->f()Z
 
-    sget-object v0, Lmpo;->k:Lmpo;
+    move-result v0
 
-    invoke-direct {p1, v0}, Lnwo;-><init>(Lnws;)V
+    if-eqz v0, :cond_0
 
-    sput-object p1, Lmpo;->l:Lnyf;
+    invoke-virtual {p0}, Lmpo;->f()Lmqw;
+
+    move-result-object v0
+
+    return-object v0
 
     :cond_0
-    monitor-exit p2
+    new-instance v0, Ljava/lang/IllegalStateException;
 
-    goto :goto_0
+    const-string v1, "raw should only be called from the GLContext thread"
 
-    :catchall_0
-    move-exception p1
+    invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 
-    monitor-exit p2
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    throw v0
+.end method
 
-    throw p1
+.method public final close()V
+    .locals 1
+
+    invoke-virtual {p0}, Lmpo;->a()Lmne;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lmip;->ac(Lmnb;)Ljava/lang/Object;
+
+    return-void
+.end method
+
+.method public final e(Lmqj;Lmlu;)Lmnb;
+    .locals 2
+
+    iget-object v0, p0, Lmpo;->b:Lmpi;
+
+    new-instance v1, Lmpn;
+
+    invoke-direct {v1, p0, p2, p1}, Lmpn;-><init>(Lmpo;Lmlu;Lmqj;)V
+
+    invoke-static {v0, v1}, Lmpo;->d(Lmpi;Ljava/util/concurrent/Callable;)Lmnb;
+
+    move-result-object p1
+
+    return-object p1
+.end method
+
+.method public final f()Lmqw;
+    .locals 2
+
+    iget-object v0, p0, Lmpo;->b:Lmpi;
+
+    invoke-interface {v0}, Lmpi;->f()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    iget-object v0, p0, Lmpo;->a:Lmnb;
+
+    invoke-static {v0}, Lmip;->ab(Lmnb;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lmqw;
+
+    if-eqz v0, :cond_0
+
+    return-object v0
+
+    :cond_0
+    new-instance v0, Ljava/lang/RuntimeException;
+
+    const-string v1, "Waiting for incomplete GL object while on GL thread. This deadlocks the process."
+
+    invoke-direct {v0, v1}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
+
+    throw v0
 
     :cond_1
-    :goto_0
-    return-object p1
+    iget-object v0, p0, Lmpo;->a:Lmnb;
 
-    :pswitch_2
-    sget-object p1, Lmpo;->k:Lmpo;
+    invoke-static {v0}, Lmip;->ac(Lmnb;)Ljava/lang/Object;
 
-    return-object p1
+    move-result-object v0
 
-    :pswitch_3
-    new-instance p1, Lnwn;
+    check-cast v0, Lmqw;
 
-    sget-object p2, Lmpo;->k:Lmpo;
-
-    invoke-direct {p1, p2}, Lnwn;-><init>(Lnws;)V
-
-    return-object p1
-
-    :pswitch_4
-    new-instance p1, Lmpo;
-
-    invoke-direct {p1}, Lmpo;-><init>()V
-
-    return-object p1
-
-    :pswitch_5
-    const-string p1, "a"
-
-    const-string v0, "\u0000\n\u0000\u0000\u0002\r\n\u0000\u0000\u0000\u0002\u000b\u0004\u000b\u0005\u000b\u0006\u000f\u0008\u000f\t\u000f\n\u000b\u000b\u000b\u000c\u000b\r\u000b"
-
-    const/16 v1, 0xa
-
-    new-array v1, v1, [Ljava/lang/Object;
-
-    const/4 v2, 0x0
-
-    aput-object p1, v1, v2
-
-    const-string p1, "b"
-
-    aput-object p1, v1, p2
-
-    const/4 p1, 0x2
-
-    const-string p2, "c"
-
-    aput-object p2, v1, p1
-
-    const/4 p1, 0x3
-
-    const-string p2, "d"
-
-    aput-object p2, v1, p1
-
-    const/4 p1, 0x4
-
-    const-string p2, "e"
-
-    aput-object p2, v1, p1
-
-    const/4 p1, 0x5
-
-    const-string p2, "f"
-
-    aput-object p2, v1, p1
-
-    const/4 p1, 0x6
-
-    const-string p2, "g"
-
-    aput-object p2, v1, p1
-
-    const/4 p1, 0x7
-
-    const-string p2, "h"
-
-    aput-object p2, v1, p1
-
-    const/16 p1, 0x8
-
-    const-string p2, "i"
-
-    aput-object p2, v1, p1
-
-    const/16 p1, 0x9
-
-    const-string p2, "j"
-
-    aput-object p2, v1, p1
-
-    sget-object p1, Lmpo;->k:Lmpo;
-
-    invoke-static {p1, v0, v1}, Lmpo;->X(Lnxy;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object p1
-
-    return-object p1
-
-    :pswitch_6
-    invoke-static {p2}, Ljava/lang/Byte;->valueOf(B)Ljava/lang/Byte;
-
-    move-result-object p1
-
-    return-object p1
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_6
-        :pswitch_0
-        :pswitch_5
-        :pswitch_4
-        :pswitch_3
-        :pswitch_2
-        :pswitch_1
-    .end packed-switch
+    return-object v0
 .end method

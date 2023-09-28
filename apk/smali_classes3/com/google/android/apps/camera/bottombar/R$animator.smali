@@ -15,11 +15,11 @@
 
 .field public static final fragment_open_exit:I = 0x7f02001b
 
-.field public static final layout_change_fade_in:I = 0x7f020026
+.field public static final layout_change_fade_in:I = 0x7f020027
 
-.field public static final return_to_zero_rotation_ccw:I = 0x7f020048
+.field public static final return_to_zero_rotation_ccw:I = 0x7f02003e
 
-.field public static final return_to_zero_rotation_clockwise:I = 0x7f020049
+.field public static final return_to_zero_rotation_clockwise:I = 0x7f02003f
 
 
 # direct methods

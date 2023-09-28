@@ -1,22 +1,28 @@
 .class public final Lvu;
-.super Ljava/lang/Object;
+.super Lhq;
 
 
-# static fields
-.field public static final a:Loon;
+# virtual methods
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 0
 
+    const/4 p1, 0x0
 
-# direct methods
-.method static constructor <clinit>()V
+    throw p1
+.end method
+
+.method public final hashCode()I
     .locals 1
 
     const/4 v0, 0x0
 
-    invoke-static {v0}, Lolp;->i(I)Loon;
+    throw v0
+.end method
 
-    move-result-object v0
+.method public final toString()Ljava/lang/String;
+    .locals 1
 
-    sput-object v0, Lvu;->a:Loon;
+    const/4 v0, 0x0
 
-    return-void
+    throw v0
 .end method

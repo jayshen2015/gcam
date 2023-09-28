@@ -1,53 +1,58 @@
 .class public final Lgag;
 .super Ljava/lang/Object;
 
-# interfaces
-.implements Logk;
-
 
 # instance fields
-.field private final a:Loiw;
+.field private final a:Lqkg;
 
-.field private final b:Loiw;
+.field private final b:Lqkg;
 
 
 # direct methods
-.method public constructor <init>(Loiw;Loiw;)V
+.method public constructor <init>(Lqkg;Lqkg;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lgag;->a:Loiw;
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    iput-object p2, p0, Lgag;->b:Loiw;
+    iput-object p1, p0, Lgag;->a:Lqkg;
+
+    invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    iput-object p2, p0, Lgag;->b:Lqkg;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Lgxb;
-    .locals 4
+.method public final a(Lpyn;Lgff;Lgbb;)Lgaf;
+    .locals 3
 
-    iget-object v0, p0, Lgag;->a:Loiw;
+    new-instance v0, Lgaf;
 
-    iget-object v1, p0, Lgag;->b:Loiw;
+    iget-object v1, p0, Lgag;->a:Lqkg;
 
-    new-instance v2, Lgxb;
+    invoke-interface {v1}, Lqkg;->get()Ljava/lang/Object;
 
-    const/4 v3, 0x0
+    move-result-object v1
 
-    invoke-direct {v2, v0, v1, v3}, Lgxb;-><init>(Loiw;Loiw;[B)V
+    check-cast v1, Lhko;
 
-    return-object v2
-.end method
+    invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-.method public final bridge synthetic get()Ljava/lang/Object;
-    .locals 1
+    iget-object v2, p0, Lgag;->b:Lqkg;
 
-    invoke-virtual {p0}, Lgag;->a()Lgxb;
+    check-cast v2, Lhkh;
 
-    move-result-object v0
+    invoke-virtual {v2}, Lhkh;->a()Lhkg;
+
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    invoke-virtual {p3}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    invoke-direct {v0, v1, p1, p2, p3}, Lgaf;-><init>(Lhko;Lpyn;Lgff;Lgbb;)V
 
     return-object v0
 .end method

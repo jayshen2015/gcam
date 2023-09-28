@@ -1,50 +1,38 @@
 .class public final Lokf;
-.super Lokh;
-
-# interfaces
-.implements Ljava/util/Iterator;
+.super Ljava/lang/RuntimeException;
 
 
 # direct methods
-.method public constructor <init>(Lokj;)V
+.method public constructor <init>()V
     .locals 0
 
-    invoke-direct {p0, p1}, Lokh;-><init>(Lokj;)V
+    invoke-direct {p0}, Ljava/lang/RuntimeException;-><init>()V
 
     return-void
 .end method
 
+.method public constructor <init>(Ljava/lang/String;)V
+    .locals 0
 
-# virtual methods
-.method public final bridge synthetic next()Ljava/lang/Object;
-    .locals 3
+    invoke-direct {p0, p1}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
 
-    iget v0, p0, Lokh;->b:I
+    return-void
+.end method
 
-    iget-object v1, p0, Lokh;->a:Lokj;
+.method public constructor <init>(Ljava/lang/Throwable;)V
+    .locals 0
 
-    iget v2, v1, Lokj;->d:I
+    invoke-direct {p0, p1}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/Throwable;)V
 
-    if-ge v0, v2, :cond_0
+    return-void
+.end method
 
-    add-int/lit8 v2, v0, 0x1
+.method public constructor <init>(Ljava/lang/Throwable;[B)V
+    .locals 0
 
-    iput v2, p0, Lokh;->b:I
+    const-string p2, "Initialize library failed."
 
-    iput v0, p0, Lokh;->c:I
+    invoke-direct {p0, p2, p1}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
 
-    new-instance v2, Lokg;
-
-    invoke-direct {v2, v1, v0}, Lokg;-><init>(Lokj;I)V
-
-    invoke-virtual {p0}, Lokh;->a()V
-
-    return-object v2
-
-    :cond_0
-    new-instance v0, Ljava/util/NoSuchElementException;
-
-    invoke-direct {v0}, Ljava/util/NoSuchElementException;-><init>()V
-
-    throw v0
+    return-void
 .end method

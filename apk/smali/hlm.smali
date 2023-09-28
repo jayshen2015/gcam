@@ -1,62 +1,87 @@
 .class public final Lhlm;
-.super Landroid/support/v7/widget/RecyclerView;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Lpys;
+
+
+# instance fields
+.field private final a:Lqkg;
+
+.field private final b:Lqkg;
+
+.field private final c:Lqkg;
+
+.field private final d:Lqkg;
 
 
 # direct methods
-.method public constructor <init>(Landroid/content/Context;)V
-    .locals 2
+.method public constructor <init>(Lqkg;Lqkg;Lqkg;Lqkg;)V
+    .locals 0
 
-    invoke-direct {p0, p1}, Landroid/support/v7/widget/RecyclerView;-><init>(Landroid/content/Context;)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const/4 p1, 0x0
+    iput-object p1, p0, Lhlm;->a:Lqkg;
 
-    invoke-virtual {p0, p1}, Lhlm;->setFocusable(Z)V
+    iput-object p2, p0, Lhlm;->b:Lqkg;
 
-    const/4 v0, 0x2
+    iput-object p3, p0, Lhlm;->c:Lqkg;
 
-    invoke-virtual {p0, v0}, Lhlm;->setOverScrollMode(I)V
-
-    invoke-virtual {p0}, Landroid/support/v7/widget/RecyclerView;->as()V
-
-    invoke-virtual {p0}, Lhlm;->getResources()Landroid/content/res/Resources;
-
-    move-result-object v0
-
-    const v1, 0x7f070615
-
-    invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
-
-    move-result v0
-
-    invoke-virtual {p0, v0, p1, p1, p1}, Lhlm;->setPaddingRelative(IIII)V
-
-    new-instance p1, Landroid/support/v7/widget/LinearLayoutManager;
-
-    invoke-virtual {p0}, Lhlm;->getContext()Landroid/content/Context;
-
-    invoke-direct {p1}, Landroid/support/v7/widget/LinearLayoutManager;-><init>()V
-
-    invoke-virtual {p0, p1}, Landroid/support/v7/widget/RecyclerView;->aa(Lly;)V
-
-    new-instance p1, Lhlj;
-
-    invoke-virtual {p0}, Lhlm;->getResources()Landroid/content/res/Resources;
-
-    move-result-object v0
-
-    invoke-direct {p1, v0}, Lhlj;-><init>(Landroid/content/res/Resources;)V
-
-    invoke-virtual {p0, p1}, Landroid/support/v7/widget/RecyclerView;->av(Ler;)V
-
-    new-instance p1, Lhll;
-
-    invoke-virtual {p0}, Lhlm;->getResources()Landroid/content/res/Resources;
-
-    move-result-object v0
-
-    invoke-direct {p1, v0}, Lhll;-><init>(Landroid/content/res/Resources;)V
-
-    invoke-virtual {p0, p1}, Landroid/support/v7/widget/RecyclerView;->Y(Lls;)V
+    iput-object p4, p0, Lhlm;->d:Lqkg;
 
     return-void
+.end method
+
+
+# virtual methods
+.method public final a()Lhll;
+    .locals 5
+
+    iget-object v0, p0, Lhlm;->a:Lqkg;
+
+    invoke-interface {v0}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/util/concurrent/Executor;
+
+    iget-object v1, p0, Lhlm;->b:Lqkg;
+
+    invoke-interface {v1}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Llda;
+
+    iget-object v2, p0, Lhlm;->c:Lqkg;
+
+    invoke-interface {v2}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Llda;
+
+    iget-object v3, p0, Lhlm;->d:Lqkg;
+
+    check-cast v3, Ling;
+
+    invoke-virtual {v3}, Ling;->a()Lims;
+
+    move-result-object v3
+
+    new-instance v4, Lhll;
+
+    invoke-direct {v4, v0, v1, v2, v3}, Lhll;-><init>(Ljava/util/concurrent/Executor;Llda;Llda;Lims;)V
+
+    return-object v4
+.end method
+
+.method public final bridge synthetic get()Ljava/lang/Object;
+    .locals 1
+
+    invoke-virtual {p0}, Lhlm;->a()Lhll;
+
+    move-result-object v0
+
+    return-object v0
 .end method

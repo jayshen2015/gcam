@@ -1,60 +1,79 @@
-.class Lcya;
-.super Lcys;
+.class public final synthetic Lcya;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field final synthetic b:Lcyd;
+.field public final synthetic a:Lcye;
+
+.field public final synthetic b:Lcxy;
 
 
 # direct methods
-.method public constructor <init>(Lcyd;)V
+.method public synthetic constructor <init>(Lcye;Lcxy;)V
     .locals 0
 
-    iput-object p1, p0, Lcya;->b:Lcyd;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0}, Lcys;-><init>()V
+    iput-object p1, p0, Lcya;->a:Lcye;
+
+    iput-object p2, p0, Lcya;->b:Lcxy;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public a()V
-    .locals 1
+.method public final run()V
+    .locals 3
 
-    iget-object v0, p0, Lcya;->b:Lcyd;
+    iget-object v0, p0, Lcya;->a:Lcye;
 
-    iget-object v0, v0, Lcyd;->k:Ldfa;
+    iget-object v1, p0, Lcya;->b:Lcxy;
 
-    invoke-virtual {v0}, Ldfa;->e()V
+    iget-object v2, v0, Lcye;->a:Lcwt;
 
-    return-void
-.end method
+    invoke-virtual {v2}, Lcwt;->a()V
 
-.method public b()V
-    .locals 1
+    iget-object v2, v0, Lcye;->b:Lcom/google/android/apps/camera/camerafatalerror/CameraFatalErrorTrackerDatabase;
 
-    iget-object v0, p0, Lcya;->b:Lcyd;
+    invoke-virtual {v2}, Lcom/google/android/apps/camera/camerafatalerror/CameraFatalErrorTrackerDatabase;->t()Lcxt;
 
-    invoke-virtual {v0}, Lcyd;->k()V
+    move-result-object v2
 
-    return-void
-.end method
+    invoke-virtual {v2, v1}, Lcxt;->a(Lcxy;)Lcxs;
 
-.method public final bx()I
-    .locals 1
+    move-result-object v1
 
-    const/4 v0, 0x3
+    iget v2, v1, Lcxs;->d:I
 
-    return v0
-.end method
+    if-nez v2, :cond_0
 
-.method public final f()V
-    .locals 1
+    iget v2, v1, Lcxs;->b:I
 
-    iget-object v0, p0, Lcya;->b:Lcyd;
+    add-int/lit8 v2, v2, 0x1
 
-    iput-object p0, v0, Lcyd;->j:Lcys;
+    iput v2, v1, Lcxs;->b:I
+
+    goto :goto_0
+
+    :cond_0
+    iget v2, v1, Lcxs;->c:I
+
+    add-int/lit8 v2, v2, 0x1
+
+    iput v2, v1, Lcxs;->c:I
+
+    :goto_0
+    iget-object v0, v0, Lcye;->b:Lcom/google/android/apps/camera/camerafatalerror/CameraFatalErrorTrackerDatabase;
+
+    invoke-virtual {v0}, Lcom/google/android/apps/camera/camerafatalerror/CameraFatalErrorTrackerDatabase;->t()Lcxt;
+
+    move-result-object v0
+
+    invoke-virtual {v0, v1}, Lcxt;->b(Lcxs;)V
 
     return-void
 .end method

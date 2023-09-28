@@ -1,49 +1,56 @@
 .class public final Lcsq;
 .super Ljava/lang/Object;
 
-# interfaces
-.implements Lcsm;
+
+# instance fields
+.field public final a:Limt;
+
+.field public final b:Lims;
+
+.field public final c:Llar;
+
+.field public final d:Ljava/util/concurrent/atomic/AtomicBoolean;
+
+.field public final e:Llda;
+
+.field public final f:Llco;
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 0
+.method public constructor <init>(Limt;Lims;Llar;)V
+    .locals 2
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    return-void
-.end method
+    new-instance v0, Ljava/util/concurrent/atomic/AtomicBoolean;
 
+    const/4 v1, 0x0
 
-# virtual methods
-.method public final a()Lmqp;
-    .locals 1
+    invoke-direct {v0, v1}, Ljava/util/concurrent/atomic/AtomicBoolean;-><init>(Z)V
 
-    sget-object v0, Lmpx;->a:Lmpx;
+    iput-object v0, p0, Lcsq;->d:Ljava/util/concurrent/atomic/AtomicBoolean;
 
-    return-object v0
-.end method
+    new-instance v0, Llce;
 
-.method public final b(Lcsc;)V
-    .locals 0
+    invoke-static {v1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
-    return-void
-.end method
+    move-result-object v1
 
-.method public final c(Z)V
-    .locals 0
+    invoke-direct {v0, v1}, Llce;-><init>(Ljava/lang/Object;)V
 
-    return-void
-.end method
+    iput-object v0, p0, Lcsq;->e:Llda;
 
-.method public final d()V
-    .locals 0
+    invoke-static {v0}, Llci;->c(Llco;)Llco;
 
-    return-void
-.end method
+    move-result-object v0
 
-.method public final f()V
-    .locals 0
+    iput-object v0, p0, Lcsq;->f:Llco;
+
+    iput-object p1, p0, Lcsq;->a:Limt;
+
+    iput-object p2, p0, Lcsq;->b:Lims;
+
+    iput-object p3, p0, Lcsq;->c:Llar;
 
     return-void
 .end method

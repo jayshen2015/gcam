@@ -1,25 +1,35 @@
-.class public interface abstract Lkpl;
+.class public final synthetic Lkpl;
 .super Ljava/lang/Object;
+
+# interfaces
+.implements Lojz;
+
+
+# instance fields
+.field public final synthetic a:Landroid/app/Activity;
+
+
+# direct methods
+.method public synthetic constructor <init>(Landroid/app/Activity;)V
+    .locals 0
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lkpl;->a:Landroid/app/Activity;
+
+    return-void
+.end method
 
 
 # virtual methods
-.method public abstract a(Ljava/lang/String;)Lkph;
-.end method
+.method public final a()Ljava/lang/Object;
+    .locals 2
 
-.method public abstract b()V
-.end method
+    iget-object v0, p0, Lkpl;->a:Landroid/app/Activity;
 
-.method public abstract c(Lkpk;)V
-.end method
+    new-instance v1, Lkpw;
 
-.method public abstract d()V
-.end method
+    invoke-direct {v1, v0}, Lkpw;-><init>(Landroid/app/Activity;)V
 
-.method public abstract e(Lkph;)V
-.end method
-
-.method public abstract f(ILkqr;Ljava/lang/String;Ljava/lang/String;)Lkph;
-.end method
-
-.method public abstract g()Lkph;
+    return-object v1
 .end method

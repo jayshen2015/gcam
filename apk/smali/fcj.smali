@@ -1,35 +1,78 @@
 .class public final Lfcj;
 .super Ljava/lang/Object;
 
-# interfaces
-.implements Lfdd;
+
+# static fields
+.field public static final a:[F
+
+.field public static final b:[F
+
+.field public static final c:[F
+
+.field public static final d:[F
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 2
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const/4 v0, 0x4
+
+    new-array v1, v0, [F
+
+    fill-array-data v1, :array_0
+
+    sput-object v1, Lfcj;->a:[F
+
+    new-array v1, v0, [F
+
+    fill-array-data v1, :array_1
+
+    sput-object v1, Lfcj;->b:[F
+
+    new-array v1, v0, [F
+
+    fill-array-data v1, :array_2
+
+    sput-object v1, Lfcj;->c:[F
+
+    new-array v0, v0, [F
+
+    fill-array-data v0, :array_3
+
+    sput-object v0, Lfcj;->d:[F
 
     return-void
-.end method
 
+    :array_0
+    .array-data 4
+        0x3e4ccccd    # 0.2f
+        0x3f35c28f    # 0.71f
+        0x3f65e354    # 0.898f
+        0x3f800000    # 1.0f
+    .end array-data
 
-# virtual methods
-.method public final a(ZZLklv;Z)V
-    .locals 0
+    :array_1
+    .array-data 4
+        0x3df5c28f    # 0.12f
+        0x3df5c28f    # 0.12f
+        0x3df5c28f    # 0.12f
+        0x3f800000    # 1.0f
+    .end array-data
 
-    return-void
-.end method
+    :array_2
+    .array-data 4
+        0x3f800000    # 1.0f
+        0x3f800000    # 1.0f
+        0x3f800000    # 1.0f
+        0x3f800000    # 1.0f
+    .end array-data
 
-.method public final b(ZLklv;Z)V
-    .locals 0
-
-    return-void
-.end method
-
-.method public final close()V
-    .locals 0
-
-    return-void
+    :array_3
+    .array-data 4
+        0x3f800000    # 1.0f
+        0x3f800000    # 1.0f
+        0x3f800000    # 1.0f
+        0x3dcccccd    # 0.1f
+    .end array-data
 .end method

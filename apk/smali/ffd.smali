@@ -1,41 +1,65 @@
-.class public final synthetic Lffd;
+.class public final Lffd;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Lpys;
 
 
 # instance fields
-.field public final synthetic a:Lnph;
+.field private final a:Lqkg;
 
-.field public final synthetic b:Lnou;
+.field private final b:Lqkg;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lnph;Lnou;)V
+.method public constructor <init>(Lqkg;Lqkg;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lffd;->a:Lnph;
+    iput-object p1, p0, Lffd;->a:Lqkg;
 
-    iput-object p2, p0, Lffd;->b:Lnou;
+    iput-object p2, p0, Lffd;->b:Lqkg;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final run()V
-    .locals 3
+.method public final a()Lffc;
+    .locals 4
 
-    iget-object v0, p0, Lffd;->a:Lnph;
+    iget-object v0, p0, Lffd;->a:Lqkg;
 
-    iget-object v1, p0, Lffd;->b:Lnou;
+    check-cast v0, Lffb;
 
-    sget-object v2, Lffp;->a:Lnak;
+    invoke-virtual {v0}, Lffb;->a()Limy;
 
-    invoke-virtual {v0, v1}, Lnph;->f(Lnou;)Z
+    move-result-object v0
 
-    return-void
+    iget-object v1, p0, Lffd;->b:Lqkg;
+
+    invoke-interface {v1}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Lfjs;
+
+    new-instance v2, Lffc;
+
+    const/4 v3, 0x0
+
+    invoke-direct {v2, v0, v1, v3}, Lffc;-><init>(Limy;Lfjs;[B)V
+
+    return-object v2
+.end method
+
+.method public final bridge synthetic get()Ljava/lang/Object;
+    .locals 1
+
+    invoke-virtual {p0}, Lffd;->a()Lffc;
+
+    move-result-object v0
+
+    return-object v0
 .end method

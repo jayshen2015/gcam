@@ -2,168 +2,128 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lort;
+.implements Lowu;
 
 
 # instance fields
-.field private final a:Ljava/lang/Object;
+.field public final a:Ljava/lang/String;
 
-.field private final b:Ljava/lang/ThreadLocal;
+.field public final b:Z
 
-.field private final c:Loky;
+.field public final c:Ljava/util/logging/Level;
+
+.field public final d:Z
+
+.field private volatile e:Loxf;
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/Object;Ljava/lang/ThreadLocal;)V
+.method public constructor <init>()V
+    .locals 4
+
+    sget-object v0, Ljava/util/logging/Level;->ALL:Ljava/util/logging/Level;
+
+    const-string v1, ""
+
+    const/4 v2, 0x1
+
+    const/4 v3, 0x0
+
+    invoke-direct {p0, v1, v2, v0, v3}, Loxe;-><init>(Ljava/lang/String;ZLjava/util/logging/Level;Z)V
+
+    return-void
+.end method
+
+.method public constructor <init>(Ljava/lang/String;ZLjava/util/logging/Level;Z)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Loxe;->a:Ljava/lang/Object;
+    iput-object p1, p0, Loxe;->a:Ljava/lang/String;
 
-    iput-object p2, p0, Loxe;->b:Ljava/lang/ThreadLocal;
+    iput-boolean p2, p0, Loxe;->b:Z
 
-    new-instance p1, Loxf;
+    iput-object p3, p0, Loxe;->c:Ljava/util/logging/Level;
 
-    invoke-direct {p1, p2}, Loxf;-><init>(Ljava/lang/ThreadLocal;)V
-
-    iput-object p1, p0, Loxe;->c:Loky;
+    iput-boolean p4, p0, Loxe;->d:Z
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final cS(Lola;)Ljava/lang/Object;
-    .locals 2
+.method public final a(Ljava/lang/String;)Lovr;
+    .locals 6
 
-    iget-object p1, p0, Loxe;->b:Ljava/lang/ThreadLocal;
+    iget-boolean v0, p0, Loxe;->d:Z
 
-    invoke-virtual {p1}, Ljava/lang/ThreadLocal;->get()Ljava/lang/Object;
+    if-eqz v0, :cond_2
 
-    move-result-object p1
+    const-string v0, "."
 
-    iget-object v0, p0, Loxe;->b:Ljava/lang/ThreadLocal;
+    invoke-virtual {p1, v0}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
 
-    iget-object v1, p0, Loxe;->a:Ljava/lang/Object;
+    move-result v0
 
-    invoke-virtual {v0, v1}, Ljava/lang/ThreadLocal;->set(Ljava/lang/Object;)V
+    if-eqz v0, :cond_2
 
-    return-object p1
-.end method
+    iget-object p1, p0, Loxe;->e:Loxf;
 
-.method public final cT(Ljava/lang/Object;)V
-    .locals 1
+    if-nez p1, :cond_1
 
-    iget-object v0, p0, Loxe;->b:Ljava/lang/ThreadLocal;
+    monitor-enter p0
 
-    invoke-virtual {v0, p1}, Ljava/lang/ThreadLocal;->set(Ljava/lang/Object;)V
+    :try_start_0
+    iget-object p1, p0, Loxe;->e:Loxf;
 
-    return-void
-.end method
+    if-nez p1, :cond_0
 
-.method public final fold(Ljava/lang/Object;Lomo;)Ljava/lang/Object;
-    .locals 0
+    new-instance p1, Loxf;
 
-    invoke-static {p0, p1, p2}, Lljr;->G(Lokx;Ljava/lang/Object;Lomo;)Ljava/lang/Object;
+    iget-object v1, p0, Loxe;->a:Ljava/lang/String;
 
-    move-result-object p1
+    iget-boolean v3, p0, Loxe;->b:Z
 
-    return-object p1
-.end method
+    iget-object v4, p0, Loxe;->c:Ljava/util/logging/Level;
 
-.method public final get(Loky;)Lokx;
-    .locals 1
+    const/4 v2, 0x0
 
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    const/4 v5, 0x0
 
-    iget-object v0, p0, Loxe;->c:Loky;
+    move-object v0, p1
 
-    invoke-static {v0, p1}, Lone;->c(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-direct/range {v0 .. v5}, Loxf;-><init>(Ljava/lang/String;Ljava/lang/String;ZLjava/util/logging/Level;Z)V
 
-    move-result p1
-
-    if-eqz p1, :cond_0
-
-    return-object p0
+    iput-object p1, p0, Loxe;->e:Loxf;
 
     :cond_0
-    const/4 p1, 0x0
+    monitor-exit p0
 
-    return-object p1
-.end method
+    goto :goto_0
 
-.method public final getKey()Loky;
-    .locals 1
+    :catchall_0
+    move-exception p1
 
-    iget-object v0, p0, Loxe;->c:Loky;
+    monitor-exit p0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    return-object v0
-.end method
+    throw p1
 
-.method public final minusKey(Loky;)Lola;
-    .locals 1
-
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    iget-object v0, p0, Loxe;->c:Loky;
-
-    invoke-static {v0, p1}, Lone;->c(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result p1
-
-    if-eqz p1, :cond_0
-
-    sget-object p1, Lolb;->a:Lolb;
-
+    :cond_1
+    :goto_0
     return-object p1
 
-    :cond_0
-    return-object p0
-.end method
+    :cond_2
+    new-instance v0, Loxg;
 
-.method public final plus(Lola;)Lola;
-    .locals 0
+    iget-object v1, p0, Loxe;->a:Ljava/lang/String;
 
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    iget-boolean v2, p0, Loxe;->b:Z
 
-    invoke-static {p0, p1}, Lljr;->J(Lokx;Lola;)Lola;
+    iget-object v3, p0, Loxe;->c:Ljava/util/logging/Level;
 
-    move-result-object p1
-
-    return-object p1
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .locals 4
-
-    iget-object v0, p0, Loxe;->a:Ljava/lang/Object;
-
-    iget-object v1, p0, Loxe;->b:Ljava/lang/ThreadLocal;
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v3, "ThreadLocal(value="
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const-string v0, ", threadLocal = "
-
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const-string v0, ")"
-
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
+    invoke-direct {v0, v1, p1, v2, v3}, Loxg;-><init>(Ljava/lang/String;Ljava/lang/String;ZLjava/util/logging/Level;)V
 
     return-object v0
 .end method

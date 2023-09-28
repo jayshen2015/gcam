@@ -1,17 +1,12 @@
 .class public final Lofe;
-.super Lcbe;
-
-# interfaces
-.implements Landroid/os/IInterface;
+.super Lofj;
 
 
 # direct methods
-.method public constructor <init>(Landroid/os/IBinder;)V
-    .locals 1
+.method public constructor <init>(Ljava/lang/Throwable;)V
+    .locals 0
 
-    const-string v0, "com.google.vr.vrcore.common.api.IVrCoreSdkService"
-
-    invoke-direct {p0, p1, v0}, Lcbe;-><init>(Landroid/os/IBinder;Ljava/lang/String;)V
+    invoke-direct {p0, p1}, Lofj;-><init>(Ljava/lang/Throwable;)V
 
     return-void
 .end method

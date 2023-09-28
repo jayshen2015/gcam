@@ -1,8 +1,5 @@
 .class final Lhmc;
-.super Ljava/lang/Object;
-
-# interfaces
-.implements Landroid/view/View$OnSystemUiVisibilityChangeListener;
+.super Lhnh;
 
 
 # instance fields
@@ -15,45 +12,29 @@
 
     iput-object p1, p0, Lhmc;->a:Lhmd;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0, p1}, Lhnh;-><init>(Lhni;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onSystemUiVisibilityChange(I)V
+.method public final b()V
     .locals 2
-
-    iget-object p1, p0, Lhmc;->a:Lhmd;
-
-    iget-object p1, p1, Lhmd;->a:Landroid/view/Window;
-
-    invoke-virtual {p1}, Landroid/view/Window;->getDecorView()Landroid/view/View;
-
-    move-result-object p1
-
-    invoke-virtual {p1}, Landroid/view/View;->getSystemUiVisibility()I
-
-    move-result p1
 
     iget-object v0, p0, Lhmc;->a:Lhmd;
 
-    iget v1, v0, Lhmd;->c:I
+    iget-object v0, v0, Lhmd;->a:Lihu;
 
-    xor-int/2addr p1, v1
+    invoke-virtual {v0}, Lihu;->e()V
 
-    if-nez p1, :cond_0
+    iget-object v0, p0, Lhmc;->a:Lhmd;
 
-    return-void
+    iget-object v1, v0, Lhmd;->a:Lihu;
 
-    :cond_0
-    iget-boolean p1, v0, Lhmd;->b:Z
+    iget-object v0, v0, Lhmd;->b:Lihw;
 
-    if-nez p1, :cond_1
+    invoke-virtual {v1, v0}, Lihu;->g(Lihw;)V
 
-    invoke-virtual {v0}, Lhmd;->e()V
-
-    :cond_1
     return-void
 .end method

@@ -1,55 +1,35 @@
 .class final Liz;
-.super Lkq;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Lfm;
 
 
 # instance fields
-.field final synthetic a:Ljg;
-
-.field final synthetic b:Ljj;
+.field final synthetic a:Lja;
 
 
 # direct methods
-.method public constructor <init>(Ljj;Landroid/view/View;Ljg;)V
+.method public constructor <init>(Lja;)V
     .locals 0
 
-    iput-object p1, p0, Liz;->b:Ljj;
+    iput-object p1, p0, Liz;->a:Lja;
 
-    iput-object p3, p0, Liz;->a:Ljg;
-
-    invoke-direct {p0, p2}, Lkq;-><init>(Landroid/view/View;)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Lhn;
+.method public final e(Landroid/view/KeyEvent;)Z
     .locals 1
 
-    iget-object v0, p0, Liz;->a:Ljg;
+    iget-object v0, p0, Liz;->a:Lja;
 
-    return-object v0
-.end method
+    invoke-virtual {v0, p1}, Lja;->c(Landroid/view/KeyEvent;)Z
 
-.method public final b()Z
-    .locals 1
+    move-result p1
 
-    iget-object v0, p0, Liz;->b:Ljj;
-
-    iget-object v0, v0, Ljj;->b:Lji;
-
-    invoke-interface {v0}, Lji;->u()Z
-
-    move-result v0
-
-    if-nez v0, :cond_0
-
-    iget-object v0, p0, Liz;->b:Ljj;
-
-    invoke-virtual {v0}, Ljj;->b()V
-
-    :cond_0
-    const/4 v0, 0x1
-
-    return v0
+    return p1
 .end method

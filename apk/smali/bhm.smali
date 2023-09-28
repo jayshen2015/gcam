@@ -2,137 +2,108 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lbgw;
-.implements Lbhn;
+.implements Lbho;
 
 
 # instance fields
-.field public final a:Z
+.field private final a:Lban;
 
-.field public final b:Lbhs;
+.field private final b:Lbct;
 
-.field public final c:Lbhs;
-
-.field public final d:Lbhs;
-
-.field public final e:I
-
-.field private final f:Ljava/util/List;
+.field private final c:Ljava/util/List;
 
 
 # direct methods
-.method public constructor <init>(Lbjq;Lbjo;)V
-    .locals 2
+.method public constructor <init>(Ljava/io/InputStream;Ljava/util/List;Lbct;)V
+    .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    new-instance v0, Ljava/util/ArrayList;
+    invoke-static {p3}, Laae;->s(Ljava/lang/Object;)Ljava/lang/Object;
 
-    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+    iput-object p3, p0, Lbhm;->b:Lbct;
 
-    iput-object v0, p0, Lbhm;->f:Ljava/util/List;
+    invoke-static {p2}, Laae;->s(Ljava/lang/Object;)Ljava/lang/Object;
 
-    iget-boolean v0, p2, Lbjo;->d:Z
+    iput-object p2, p0, Lbhm;->c:Ljava/util/List;
 
-    iput-boolean v0, p0, Lbhm;->a:Z
+    new-instance p2, Lban;
 
-    iget v0, p2, Lbjo;->e:I
+    invoke-direct {p2, p1, p3}, Lban;-><init>(Ljava/io/InputStream;Lbct;)V
 
-    iput v0, p0, Lbhm;->e:I
-
-    iget-object v0, p2, Lbjo;->a:Lbip;
-
-    invoke-virtual {v0}, Lbip;->a()Lbhs;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lbhm;->b:Lbhs;
-
-    iget-object v1, p2, Lbjo;->b:Lbip;
-
-    invoke-virtual {v1}, Lbip;->a()Lbhs;
-
-    move-result-object v1
-
-    iput-object v1, p0, Lbhm;->c:Lbhs;
-
-    iget-object p2, p2, Lbjo;->c:Lbip;
-
-    invoke-virtual {p2}, Lbip;->a()Lbhs;
-
-    move-result-object p2
-
-    iput-object p2, p0, Lbhm;->d:Lbhs;
-
-    invoke-virtual {p1, v0}, Lbjq;->h(Lbhs;)V
-
-    invoke-virtual {p1, v1}, Lbjq;->h(Lbhs;)V
-
-    invoke-virtual {p1, p2}, Lbjq;->h(Lbhs;)V
-
-    invoke-virtual {v0, p0}, Lbhs;->g(Lbhn;)V
-
-    invoke-virtual {v1, p0}, Lbhs;->g(Lbhn;)V
-
-    invoke-virtual {p2, p0}, Lbhs;->g(Lbhn;)V
+    iput-object p2, p0, Lbhm;->a:Lban;
 
     return-void
 .end method
 
 
 # virtual methods
-.method final a(Lbhn;)V
-    .locals 1
+.method public final a()I
+    .locals 3
 
-    iget-object v0, p0, Lbhm;->f:Ljava/util/List;
+    iget-object v0, p0, Lbhm;->c:Ljava/util/List;
 
-    invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+    iget-object v1, p0, Lbhm;->a:Lban;
 
-    return-void
-.end method
-
-.method public final c()V
-    .locals 2
-
-    const/4 v0, 0x0
-
-    :goto_0
-    iget-object v1, p0, Lbhm;->f:Ljava/util/List;
-
-    invoke-interface {v1}, Ljava/util/List;->size()I
-
-    move-result v1
-
-    if-ge v0, v1, :cond_0
-
-    iget-object v1, p0, Lbhm;->f:Ljava/util/List;
-
-    invoke-interface {v1, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
+    invoke-virtual {v1}, Lban;->c()Ljava/io/InputStream;
 
     move-result-object v1
 
-    check-cast v1, Lbhn;
+    iget-object v2, p0, Lbhm;->b:Lbct;
 
-    invoke-interface {v1}, Lbhn;->c()V
+    invoke-static {v0, v1, v2}, Lvj;->f(Ljava/util/List;Ljava/io/InputStream;Lbct;)I
 
-    add-int/lit8 v0, v0, 0x1
+    move-result v0
 
-    goto :goto_0
-
-    :cond_0
-    return-void
+    return v0
 .end method
 
-.method public final e(Ljava/util/List;Ljava/util/List;)V
-    .locals 0
+.method public final b(Landroid/graphics/BitmapFactory$Options;)Landroid/graphics/Bitmap;
+    .locals 2
 
-    return-void
+    iget-object v0, p0, Lbhm;->a:Lban;
+
+    invoke-virtual {v0}, Lban;->c()Ljava/io/InputStream;
+
+    move-result-object v0
+
+    const/4 v1, 0x0
+
+    invoke-static {v0, v1, p1}, Landroid/graphics/BitmapFactory;->decodeStream(Ljava/io/InputStream;Landroid/graphics/Rect;Landroid/graphics/BitmapFactory$Options;)Landroid/graphics/Bitmap;
+
+    move-result-object p1
+
+    return-object p1
 .end method
 
-.method public final g()Ljava/lang/String;
+.method public final c()Lcom/bumptech/glide/load/ImageHeaderParser$ImageType;
+    .locals 3
+
+    iget-object v0, p0, Lbhm;->c:Ljava/util/List;
+
+    iget-object v1, p0, Lbhm;->a:Lban;
+
+    invoke-virtual {v1}, Lban;->c()Ljava/io/InputStream;
+
+    move-result-object v1
+
+    iget-object v2, p0, Lbhm;->b:Lbct;
+
+    invoke-static {v0, v1, v2}, Lvj;->i(Ljava/util/List;Ljava/io/InputStream;Lbct;)Lcom/bumptech/glide/load/ImageHeaderParser$ImageType;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public final d()V
     .locals 1
 
-    const/4 v0, 0x0
+    iget-object v0, p0, Lbhm;->a:Lban;
 
-    throw v0
+    iget-object v0, v0, Lban;->a:Lbht;
+
+    invoke-virtual {v0}, Lbht;->a()V
+
+    return-void
 .end method

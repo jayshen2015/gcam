@@ -1,74 +1,64 @@
 .class public final Ltq;
-.super Lolh;
-
-
-# annotations
-.annotation runtime Lolj;
-    b = "androidx.camera.camera2.pipe.compat.CameraStateOpener"
-    c = "RetryingCameraStateOpener.kt"
-    d = "tryOpenCamera-DM9J0w8$camera_camera2_pipe_release"
-    e = {
-        0xa2,
-        0xb2
-    }
-.end annotation
-
-
-# instance fields
-.field public a:Ljava/lang/Object;
-
-.field public b:Ljava/lang/Object;
-
-.field public c:I
-
-.field public d:J
-
-.field public synthetic e:Ljava/lang/Object;
-
-.field public f:I
-
-.field final synthetic g:Lbbc;
-
-
-# direct methods
-.method public constructor <init>(Lbbc;Loku;[B[B[B)V
-    .locals 0
-
-    iput-object p1, p0, Ltq;->g:Lbbc;
-
-    invoke-direct {p0, p2}, Lolh;-><init>(Loku;)V
-
-    return-void
-.end method
+.super Landroid/service/wallpaper/WallpaperService$Engine;
 
 
 # virtual methods
-.method public final b(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 6
+.method public final isInAmbientMode()Z
+    .locals 1
 
-    iput-object p1, p0, Ltq;->e:Ljava/lang/Object;
+    const/4 v0, 0x0
 
-    iget p1, p0, Ltq;->f:I
+    throw v0
+.end method
 
-    const/high16 v0, -0x80000000
+.method public final onCommand(Ljava/lang/String;IIILandroid/os/Bundle;Z)Landroid/os/Bundle;
+    .locals 0
 
-    or-int/2addr p1, v0
+    const/4 p1, 0x0
 
-    iput p1, p0, Ltq;->f:I
+    throw p1
+.end method
 
-    iget-object v0, p0, Ltq;->g:Lbbc;
+.method public final onCreate(Landroid/view/SurfaceHolder;)V
+    .locals 0
 
-    const/4 v1, 0x0
+    const/4 p1, 0x0
 
-    const/4 v2, 0x0
+    throw p1
+.end method
 
-    const-wide/16 v3, 0x0
+.method public final onDestroy()V
+    .locals 1
 
-    move-object v5, p0
+    const/4 v0, 0x0
 
-    invoke-virtual/range {v0 .. v5}, Lbbc;->d(Ljava/lang/String;IJLoku;)Ljava/lang/Object;
+    throw v0
+.end method
 
-    move-result-object p1
+.method public final onTouchEvent(Landroid/view/MotionEvent;)V
+    .locals 0
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
 
-    return-object p1
+    const/4 p1, 0x0
+
+    throw p1
+.end method
+
+.method public final onVisibilityChanged(Z)V
+    .locals 0
+
+    const/4 p1, 0x0
+
+    throw p1
+.end method
+
+.method public final setTouchEventsEnabled(Z)V
+    .locals 0
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
+
+    const/4 p1, 0x0
+
+    throw p1
 .end method

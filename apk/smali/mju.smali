@@ -1,90 +1,103 @@
-.class public final Lmju;
+.class public final synthetic Lmju;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lmjw;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field private final a:F
+.field public final synthetic a:Lmkb;
+
+.field public final synthetic b:Lpht;
 
 
 # direct methods
-.method public constructor <init>(F)V
+.method public synthetic constructor <init>(Lmkb;Lpht;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput p1, p0, Lmju;->a:F
+    iput-object p1, p0, Lmju;->a:Lmkb;
+
+    iput-object p2, p0, Lmju;->b:Lpht;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Landroid/graphics/RectF;)F
-    .locals 0
+.method public final run()V
+    .locals 5
 
-    iget p1, p0, Lmju;->a:F
+    const-string v0, "ConfigurableMux"
 
-    return p1
-.end method
+    iget-object v1, p0, Lmju;->a:Lmkb;
 
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 3
+    iget-object v2, p0, Lmju;->b:Lpht;
 
-    const/4 v0, 0x1
+    :try_start_0
+    invoke-static {v2}, Lplk;->ad(Ljava/util/concurrent/Future;)Ljava/lang/Object;
 
-    if-ne p0, p1, :cond_0
+    move-result-object v2
 
-    return v0
+    check-cast v2, Lojc;
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    :cond_0
-    instance-of v1, p1, Lmju;
+    invoke-virtual {v2}, Lojc;->g()Z
 
-    const/4 v2, 0x0
+    move-result v3
 
-    if-nez v1, :cond_1
+    if-eqz v3, :cond_1
 
-    return v2
+    iget-boolean v3, v1, Lmkb;->b:Z
 
-    :cond_1
-    check-cast p1, Lmju;
+    if-nez v3, :cond_0
 
-    iget v1, p0, Lmju;->a:F
+    iget-object v0, v1, Lmkb;->f:Lmkd;
 
-    iget p1, p1, Lmju;->a:F
-
-    cmpl-float p1, v1, p1
-
-    if-nez p1, :cond_2
-
-    return v0
-
-    :cond_2
-    return v2
-.end method
-
-.method public final hashCode()I
-    .locals 3
-
-    const/4 v0, 0x1
-
-    new-array v0, v0, [Ljava/lang/Object;
-
-    iget v1, p0, Lmju;->a:F
-
-    invoke-static {v1}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
+    invoke-virtual {v2}, Lojc;->c()Ljava/lang/Object;
 
     move-result-object v1
 
-    const/4 v2, 0x0
+    check-cast v1, Landroid/location/Location;
 
-    aput-object v1, v0, v2
+    invoke-virtual {v1}, Landroid/location/Location;->getLatitude()D
 
-    invoke-static {v0}, Ljava/util/Arrays;->hashCode([Ljava/lang/Object;)I
+    move-result-wide v3
 
-    move-result v0
+    double-to-float v1, v3
 
-    return v0
+    invoke-virtual {v2}, Lojc;->c()Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Landroid/location/Location;
+
+    invoke-virtual {v2}, Landroid/location/Location;->getLongitude()D
+
+    move-result-wide v2
+
+    double-to-float v2, v2
+
+    invoke-interface {v0, v1, v2}, Lmkd;->d(FF)V
+
+    return-void
+
+    :cond_0
+    const-string v1, "Setting video location too late; it will be ignored."
+
+    invoke-static {v0, v1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
+
+    :cond_1
+    return-void
+
+    :catchall_0
+    move-exception v1
+
+    const-string v2, "Couldn\'t set location"
+
+    invoke-static {v0, v2, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+
+    return-void
 .end method

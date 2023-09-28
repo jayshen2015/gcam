@@ -1,150 +1,307 @@
-.class public final Limc;
+.class public final synthetic Limc;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Landroid/view/PixelCopy$OnPixelCopyFinishedListener;
-
-
-# static fields
-.field private static final b:Lnak;
+.implements Loiu;
 
 
 # instance fields
-.field public final a:Landroid/os/Handler;
+.field public final synthetic a:Lddf;
+
+.field private final synthetic b:I
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
+.method public synthetic constructor <init>(Lddf;I)V
+    .locals 0
 
-    const-string v0, "com/google/android/apps/camera/util/SynchronousPixelCopy"
-
-    invoke-static {v0}, Lnak;->h(Ljava/lang/String;)Lnak;
-
-    move-result-object v0
-
-    sput-object v0, Limc;->b:Lnak;
-
-    return-void
-.end method
-
-.method public constructor <init>(Landroid/os/HandlerThread;)V
-    .locals 1
+    iput p2, p0, Limc;->b:I
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-virtual {p1}, Landroid/os/HandlerThread;->start()V
-
-    new-instance v0, Landroid/os/Handler;
-
-    invoke-virtual {p1}, Landroid/os/HandlerThread;->getLooper()Landroid/os/Looper;
-
-    move-result-object p1
-
-    invoke-direct {v0, p1}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
-
-    iput-object v0, p0, Limc;->a:Landroid/os/Handler;
+    iput-object p1, p0, Limc;->a:Lddf;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Landroid/view/SurfaceView;Landroid/graphics/Bitmap;)V
-    .locals 1
+.method public final a(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 5
 
-    monitor-enter p0
+    iget v0, p0, Limc;->b:I
 
-    :try_start_0
-    iget-object v0, p0, Limc;->a:Landroid/os/Handler;
+    const/4 v1, 0x1
 
-    invoke-static {p1, p2, p0, v0}, Landroid/view/PixelCopy;->request(Landroid/view/SurfaceView;Landroid/graphics/Bitmap;Landroid/view/PixelCopy$OnPixelCopyFinishedListener;Landroid/os/Handler;)V
+    const/4 v2, 0x0
 
-    invoke-virtual {p0}, Limc;->b()V
+    packed-switch v0, :pswitch_data_0
 
-    monitor-exit p0
+    iget-object v0, p0, Limc;->a:Lddf;
 
-    return-void
+    check-cast p1, Ljava/util/List;
 
-    :catchall_0
-    move-exception p1
+    sget-object v3, Lddm;->X:Lddg;
 
-    monitor-exit p0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    invoke-interface {v0, v3}, Lddf;->k(Lddg;)Z
 
-    throw p1
-.end method
+    move-result v3
 
-.method public final b()V
-    .locals 4
-
-    :try_start_0
-    invoke-virtual {p0}, Ljava/lang/Object;->wait()V
-    :try_end_0
-    .catch Ljava/lang/InterruptedException; {:try_start_0 .. :try_end_0} :catch_0
-
-    return-void
-
-    :catch_0
-    move-exception v0
-
-    sget-object v1, Limc;->b:Lnak;
-
-    invoke-virtual {v1}, Lnaf;->c()Lnaz;
-
-    move-result-object v1
-
-    const-string v2, "SynchronousPixelCopy: Wait interrupted"
-
-    const/16 v3, 0x10ea
-
-    invoke-static {v1, v2, v3, v0}, Ld;->h(Lnaz;Ljava/lang/String;CLjava/lang/Throwable;)V
-
-    return-void
-.end method
-
-.method public final onPixelCopyFinished(I)V
-    .locals 2
-
-    monitor-enter p0
+    if-eqz v3, :cond_0
 
     if-eqz p1, :cond_0
 
-    :try_start_0
-    sget-object v0, Limc;->b:Lnak;
+    invoke-interface {p1, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
-    invoke-virtual {v0}, Lnaf;->c()Lnaz;
+    move-result-object v3
 
-    move-result-object v0
+    sget-object v4, Lgqx;->c:Lgqx;
 
-    check-cast v0, Lnah;
+    if-eq v3, v4, :cond_0
 
-    const/16 v1, 0x10e9
+    const/4 v3, 0x2
 
-    invoke-interface {v0, v1}, Lnah;->G(I)Lnaz;
+    invoke-interface {p1, v3}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
-    move-result-object v0
+    move-result-object v3
 
-    check-cast v0, Lnah;
+    check-cast v3, Ljava/lang/Integer;
 
-    const-string v1, "SynchronousPixelCopy: PixelCopy failed with %s"
+    invoke-virtual {v3}, Ljava/lang/Integer;->intValue()I
 
-    invoke-interface {v0, v1, p1}, Lnah;->p(Ljava/lang/String;I)V
+    move-result v3
+
+    if-ne v3, v1, :cond_0
+
+    const/4 v3, 0x1
+
+    goto :goto_0
+
+    :pswitch_0
+    iget-object v0, p0, Limc;->a:Lddf;
+
+    check-cast p1, Ljava/lang/Integer;
+
+    sget-object p1, Leqx;->a:Louj;
+
+    sget-object p1, Lddt;->a:Lddi;
+
+    invoke-interface {v0}, Lddf;->f()V
+
+    sget-object p1, Lhtj;->b:Lhtj;
+
+    return-object p1
+
+    :pswitch_1
+    iget-object v0, p0, Limc;->a:Lddf;
+
+    check-cast p1, Ljava/util/List;
+
+    invoke-interface {p1, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v3
+
+    check-cast v3, Ljava/lang/Boolean;
+
+    invoke-virtual {v3}, Ljava/lang/Boolean;->booleanValue()Z
+
+    invoke-interface {p1, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object p1
+
+    check-cast p1, Ljava/lang/Boolean;
+
+    invoke-virtual {p1}, Ljava/lang/Boolean;->booleanValue()Z
+
+    sget-object p1, Ldee;->a:Lddi;
+
+    invoke-interface {v0}, Lddf;->d()V
+
+    invoke-static {v2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    move-result-object p1
+
+    return-object p1
 
     :cond_0
-    invoke-virtual {p0}, Ljava/lang/Object;->notify()V
+    const/4 v3, 0x0
 
-    monitor-exit p0
+    :goto_0
+    invoke-static {v3}, Lagc/Agc;->forceSingleExposure(Z)Z
 
-    return-void
+    move-result v3
 
-    :catchall_0
-    move-exception p1
+    invoke-interface {p1, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
-    monitor-exit p0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    move-result-object p1
+
+    check-cast p1, Ljrl;
+
+    sget-object v4, Ljrl;->m:Ljrl;
+
+    invoke-virtual {p1, v4}, Ljrl;->equals(Ljava/lang/Object;)Z
+
+    move-result v4
+
+    if-eqz v4, :cond_1
+
+    sget-object v4, Lddq;->e:Lddg;
+
+    invoke-interface {v0, v4}, Lddf;->k(Lddg;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_1
+
+    const/4 v0, 0x1
+
+    goto :goto_1
+
+    :cond_1
+    const/4 v0, 0x0
+
+    :goto_1
+    sget-object v4, Ljrl;->b:Ljrl;
+
+    invoke-virtual {p1, v4}, Ljrl;->equals(Ljava/lang/Object;)Z
+
+    move-result v4
+
+    if-nez v4, :cond_3
+
+    sget-object v4, Ljrl;->g:Ljrl;
+
+    invoke-virtual {p1, v4}, Ljrl;->equals(Ljava/lang/Object;)Z
+
+    move-result v4
+
+    if-nez v4, :cond_3
+
+    sget-object v4, Ljrl;->l:Ljrl;
+
+    invoke-virtual {p1, v4}, Ljrl;->equals(Ljava/lang/Object;)Z
+
+    move-result p1
+
+    if-nez p1, :cond_3
+
+    if-eqz v0, :cond_2
+
+    goto :goto_2
+
+    :cond_2
+    const/4 v1, 0x0
+
+    goto :goto_2
+
+    :cond_3
+    :goto_2
+    new-instance p1, Lijq;
+
+    invoke-direct {p1}, Lijq;-><init>()V
+
+    invoke-static {v3}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    move-result-object v0
+
+    iput-object v0, p1, Lijq;->b:Ljava/lang/Boolean;
+
+    invoke-static {v1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    move-result-object v0
+
+    iput-object v0, p1, Lijq;->a:Ljava/lang/Boolean;
+
+    iget-object v0, p1, Lijq;->b:Ljava/lang/Boolean;
+
+    if-eqz v0, :cond_5
+
+    iget-object v1, p1, Lijq;->a:Ljava/lang/Boolean;
+
+    if-nez v1, :cond_4
+
+    goto :goto_3
+
+    :cond_4
+    new-instance v1, Lhbt;
+
+    invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
+
+    move-result v0
+
+    iget-object p1, p1, Lijq;->a:Ljava/lang/Boolean;
+
+    invoke-virtual {p1}, Ljava/lang/Boolean;->booleanValue()Z
+
+    move-result p1
+
+    invoke-direct {v1, v0, p1}, Lhbt;-><init>(ZZ)V
+
+    return-object v1
+
+    :cond_5
+    :goto_3
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
+    iget-object v1, p1, Lijq;->b:Ljava/lang/Boolean;
+
+    if-nez v1, :cond_6
+
+    const-string v1, " hdrNetEnabled"
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    :cond_6
+    iget-object p1, p1, Lijq;->a:Ljava/lang/Boolean;
+
+    if-nez p1, :cond_7
+
+    const-string p1, " modeSupported"
+
+    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    :cond_7
+    new-instance p1, Ljava/lang/IllegalStateException;
+
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/String;->length()I
+
+    move-result v1
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    add-int/lit8 v1, v1, 0x1c
+
+    invoke-direct {v2, v1}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string v1, "Missing required properties:"
+
+    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-direct {p1, v0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 
     throw p1
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method

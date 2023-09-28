@@ -1,279 +1,199 @@
-.class Lhpe;
+.class public final Lhpe;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lhou;
+.implements Landroid/hardware/SensorEventListener;
+
+
+# static fields
+.field private static final f:Louj;
 
 
 # instance fields
-.field final synthetic b:Lhpg;
+.field public a:I
+
+.field public final b:Landroid/hardware/SensorManager;
+
+.field public final c:Landroid/hardware/Sensor;
+
+.field public final d:Landroid/hardware/Sensor;
+
+.field public final e:Ljava/util/concurrent/Executor;
+
+.field private final g:[F
+
+.field private final h:[F
+
+.field private final i:[F
 
 
 # direct methods
-.method public constructor <init>(Lhpg;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 1
 
-    iput-object p1, p0, Lhpe;->b:Lhpg;
+    const-string v0, "com/google/android/apps/camera/sensor/HeadingSensor"
+
+    invoke-static {v0}, Louj;->h(Ljava/lang/String;)Louj;
+
+    move-result-object v0
+
+    sput-object v0, Lhpe;->f:Louj;
+
+    return-void
+.end method
+
+.method public constructor <init>(Landroid/hardware/SensorManager;Ljava/util/concurrent/Executor;)V
+    .locals 2
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    const/4 v0, -0x1
+
+    iput v0, p0, Lhpe;->a:I
+
+    const/4 v0, 0x3
+
+    new-array v1, v0, [F
+
+    iput-object v1, p0, Lhpe;->g:[F
+
+    new-array v0, v0, [F
+
+    iput-object v0, p0, Lhpe;->h:[F
+
+    const/16 v0, 0x10
+
+    new-array v0, v0, [F
+
+    iput-object v0, p0, Lhpe;->i:[F
+
+    iput-object p1, p0, Lhpe;->b:Landroid/hardware/SensorManager;
+
+    iput-object p2, p0, Lhpe;->e:Ljava/util/concurrent/Executor;
+
+    const/4 p2, 0x1
+
+    invoke-virtual {p1, p2}, Landroid/hardware/SensorManager;->getDefaultSensor(I)Landroid/hardware/Sensor;
+
+    move-result-object p2
+
+    iput-object p2, p0, Lhpe;->c:Landroid/hardware/Sensor;
+
+    const/4 p2, 0x2
+
+    invoke-virtual {p1, p2}, Landroid/hardware/SensorManager;->getDefaultSensor(I)Landroid/hardware/Sensor;
+
+    move-result-object p1
+
+    iput-object p1, p0, Lhpe;->d:Landroid/hardware/Sensor;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a()V
+.method public final onAccuracyChanged(Landroid/hardware/Sensor;I)V
     .locals 0
 
     return-void
 .end method
 
-.method public final synthetic b()V
-    .locals 0
+.method public final onSensorChanged(Landroid/hardware/SensorEvent;)V
+    .locals 5
 
-    return-void
-.end method
+    iget-object v0, p1, Landroid/hardware/SensorEvent;->sensor:Landroid/hardware/Sensor;
 
-.method public final synthetic c()V
-    .locals 0
-
-    return-void
-.end method
-
-.method public ck()V
-    .locals 8
-
-    iget-object v0, p0, Lhpe;->b:Lhpg;
-
-    iget-object v0, v0, Lhpg;->p:Lmqp;
-
-    invoke-virtual {v0}, Lmqp;->g()Z
+    invoke-virtual {v0}, Landroid/hardware/Sensor;->getType()I
 
     move-result v0
 
     const/4 v1, 0x1
 
-    if-eqz v0, :cond_0
+    if-ne v0, v1, :cond_0
 
-    iget-object v0, p0, Lhpe;->b:Lhpg;
-
-    iget-object v0, v0, Lhpg;->p:Lmqp;
-
-    invoke-virtual {v0}, Lmqp;->c()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lhms;
-
-    invoke-interface {v0, v1}, Lhms;->o(Z)V
-
-    iget-object v0, p0, Lhpe;->b:Lhpg;
-
-    iget-object v0, v0, Lhpg;->p:Lmqp;
-
-    invoke-virtual {v0}, Lmqp;->c()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lhms;
-
-    invoke-interface {v0}, Lhms;->l()V
-
-    iget-object v0, p0, Lhpe;->b:Lhpg;
-
-    iget-object v0, v0, Lhpg;->p:Lmqp;
-
-    invoke-virtual {v0}, Lmqp;->c()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lhms;
-
-    invoke-interface {v0}, Lhms;->f()V
-
-    :cond_0
-    iget-object v0, p0, Lhpe;->b:Lhpg;
-
-    iget-object v0, v0, Lhpg;->i:Libj;
-
-    const/4 v2, 0x0
-
-    invoke-interface {v0, v2}, Libj;->v(Z)V
-
-    iget-object v0, p0, Lhpe;->b:Lhpg;
-
-    iget-object v0, v0, Lhpg;->i:Libj;
-
-    invoke-interface {v0, v2}, Libj;->l(Z)V
-
-    invoke-static {}, Lipj;->c()V
-
-    iget-object v0, p0, Lhpe;->b:Lhpg;
-
-    iget-object v0, v0, Lhpg;->h:Lhwu;
-
-    invoke-virtual {v0, v2}, Lhwu;->d(Z)V
-
-    iget-object v0, p0, Lhpe;->b:Lhpg;
-
-    iget-object v3, v0, Lhpg;->g:Lcom/google/android/apps/camera/bottombar/BottomBarController;
-
-    iget-object v0, v0, Lhpg;->q:Ldhi;
-
-    sget-object v4, Ldil;->e:Ldhj;
-
-    invoke-interface {v0, v4}, Ldhi;->l(Ldhj;)Z
-
-    move-result v0
-
-    invoke-virtual {v3, v1, v0}, Lcom/google/android/apps/camera/bottombar/BottomBarController;->startRecording(ZZ)V
-
-    iget-object v0, p0, Lhpe;->b:Lhpg;
-
-    iget-object v0, v0, Lhpg;->k:Liff;
-
-    invoke-interface {v0}, Liff;->W()V
-
-    iget-object v0, p0, Lhpe;->b:Lhpg;
-
-    iget-object v0, v0, Lhpg;->l:Lhpq;
-
-    invoke-virtual {v0}, Lhpq;->i()V
-
-    iget-object v0, p0, Lhpe;->b:Lhpg;
-
-    iget-object v0, v0, Lhpg;->j:Lgeh;
-
-    invoke-interface {v0}, Lgeh;->m()V
-
-    iget-object v0, p0, Lhpe;->b:Lhpg;
-
-    iget-object v0, v0, Lhpg;->l:Lhpq;
-
-    iget-object v3, v0, Lhpq;->N:Lhpu;
-
-    iget-object v4, v0, Lhpq;->s:Ljwb;
-
-    invoke-interface {v4}, Ljwb;->bm()Ljava/lang/Object;
-
-    move-result-object v4
-
-    check-cast v4, Ljava/lang/Double;
-
-    invoke-virtual {v4}, Ljava/lang/Double;->doubleValue()D
-
-    move-result-wide v4
-
-    invoke-virtual {v3, v4, v5}, Lhpu;->a(D)D
-
-    move-result-wide v3
-
-    const-wide/high16 v5, 0x3ff0000000000000L    # 1.0
-
-    cmpl-double v7, v3, v5
-
-    if-nez v7, :cond_1
+    iget-object v0, p0, Lhpe;->g:[F
 
     goto :goto_0
 
-    :cond_1
-    const/4 v2, 0x1
+    :cond_0
+    const/4 v1, 0x2
+
+    if-ne v0, v1, :cond_2
+
+    iget-object v0, p0, Lhpe;->h:[F
 
     :goto_0
-    invoke-static {}, Lhxa;->a()Lhwz;
+    iget-object p1, p1, Landroid/hardware/SensorEvent;->values:[F
 
-    move-result-object v3
+    const/4 v1, 0x0
 
-    invoke-virtual {v3, v2}, Lhwz;->e(Z)V
+    const/4 v2, 0x3
 
-    invoke-virtual {v3, v1}, Lhwz;->d(Z)V
+    invoke-static {p1, v1, v0, v1, v2}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
-    invoke-virtual {v3}, Lhwz;->a()Lhxa;
+    new-array p1, v2, [F
 
-    move-result-object v1
+    iget-object v0, p0, Lhpe;->i:[F
 
-    iget-object v2, v0, Lhpq;->h:Lhxb;
+    new-array v2, v2, [F
 
-    invoke-interface {v2, v1}, Lhxb;->d(Lhxa;)V
+    iget-object v3, p0, Lhpe;->g:[F
 
-    iget-object v1, v0, Lhpq;->h:Lhxb;
+    iget-object v4, p0, Lhpe;->h:[F
 
-    invoke-interface {v1}, Lhxb;->f()V
+    invoke-static {v0, v2, v3, v4}, Landroid/hardware/SensorManager;->getRotationMatrix([F[F[F[F)Z
 
-    iget-object v1, v0, Lhpq;->u:Loiw;
+    iget-object v0, p0, Lhpe;->i:[F
 
-    check-cast v1, Lctz;
+    invoke-static {v0, p1}, Landroid/hardware/SensorManager;->getOrientation([F[F)[F
 
-    invoke-virtual {v1}, Lctz;->a()Lcty;
+    aget p1, p1, v1
 
-    move-result-object v1
+    const/high16 v0, 0x43340000    # 180.0f
 
-    iput-object v1, v0, Lhpq;->K:Lcty;
+    mul-float p1, p1, v0
 
-    iget-object v0, v0, Lhpq;->K:Lcty;
+    float-to-double v0, p1
 
-    invoke-virtual {v0}, Lcty;->e()V
+    const-wide v2, 0x400921fb54442d18L    # Math.PI
 
+    invoke-static {v0, v1}, Ljava/lang/Double;->isNaN(D)Z
+
+    div-double/2addr v0, v2
+
+    double-to-int p1, v0
+
+    rem-int/lit16 p1, p1, 0x168
+
+    iput p1, p0, Lhpe;->a:I
+
+    if-gez p1, :cond_1
+
+    add-int/lit16 p1, p1, 0x168
+
+    iput p1, p0, Lhpe;->a:I
+
+    :cond_1
     return-void
-.end method
 
-.method public final synthetic d()V
-    .locals 0
+    :cond_2
+    sget-object v0, Lhpe;->f:Louj;
 
-    return-void
-.end method
-
-.method public final f()V
-    .locals 2
-
-    iget-object v0, p0, Lhpe;->b:Lhpg;
-
-    iget-object v0, v0, Lhpg;->k:Liff;
-
-    invoke-interface {v0}, Liff;->ah()V
-
-    iget-object v0, p0, Lhpe;->b:Lhpg;
-
-    iget-object v0, v0, Lhpg;->m:Lhoz;
-
-    iget-object v0, v0, Lhoz;->i:Lhnb;
-
-    invoke-interface {v0}, Lhnb;->e()Lhna;
+    invoke-virtual {v0}, Loue;->c()Lova;
 
     move-result-object v0
 
-    sget-object v1, Lhna;->g:Lhna;
+    iget-object p1, p1, Landroid/hardware/SensorEvent;->sensor:Landroid/hardware/Sensor;
 
-    invoke-virtual {v0, v1}, Lhna;->a(Lhna;)Z
+    invoke-virtual {p1}, Landroid/hardware/Sensor;->getName()Ljava/lang/String;
 
-    move-result v0
+    move-result-object p1
 
-    if-nez v0, :cond_0
+    const/16 v1, 0xa18
 
-    iget-object v0, p0, Lhpe;->b:Lhpg;
+    const-string v2, "Unexpected sensor type %s"
 
-    iget-object v0, v0, Lhpg;->l:Lhpq;
-
-    invoke-virtual {v0}, Lhpq;->b()V
-
-    :cond_0
-    return-void
-.end method
-
-.method public final synthetic g()V
-    .locals 0
-
-    return-void
-.end method
-
-.method public final synthetic h()V
-    .locals 0
-
-    return-void
-.end method
-
-.method public final synthetic i()V
-    .locals 0
+    invoke-static {v0, v2, p1, v1}, Ld;->u(Lova;Ljava/lang/String;Ljava/lang/Object;C)V
 
     return-void
 .end method

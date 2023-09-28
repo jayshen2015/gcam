@@ -96,7 +96,7 @@
 .end method
 
 .method public final onStartCommand(Landroid/content/Intent;II)I
-    .locals 5
+    .locals 4
 
     iget-object p2, p0, Lcom/google/android/apps/camera/app/silentfeedback/SilentFeedbackService;->a:Ljava/lang/Object;
 
@@ -140,25 +140,25 @@
 
     if-lt p3, v0, :cond_8
 
-    new-instance p3, Ljde;
+    new-instance p3, Lkij;
 
     invoke-virtual {p0}, Lcom/google/android/apps/camera/app/silentfeedback/SilentFeedbackService;->getApplicationContext()Landroid/content/Context;
 
     move-result-object v0
 
-    invoke-direct {p3, v0}, Ljde;-><init>(Landroid/content/Context;)V
+    invoke-direct {p3, v0}, Lkij;-><init>(Landroid/content/Context;)V
 
-    new-instance v0, Ljja;
+    new-instance v0, Lkpa;
 
-    invoke-direct {v0}, Ljja;-><init>()V
+    invoke-direct {v0}, Lkpa;-><init>()V
 
     new-instance v2, Landroid/app/ApplicationErrorReport;
 
     invoke-direct {v2}, Landroid/app/ApplicationErrorReport;-><init>()V
 
-    iput-object v2, v0, Ljja;->d:Landroid/app/ApplicationErrorReport;
+    iput-object v2, v0, Lkpa;->d:Landroid/app/ApplicationErrorReport;
 
-    iget-object v2, v0, Ljja;->d:Landroid/app/ApplicationErrorReport;
+    iget-object v2, v0, Lkpa;->d:Landroid/app/ApplicationErrorReport;
 
     new-instance v3, Landroid/app/ApplicationErrorReport$CrashInfo;
 
@@ -166,7 +166,7 @@
 
     iput-object v3, v2, Landroid/app/ApplicationErrorReport;->crashInfo:Landroid/app/ApplicationErrorReport$CrashInfo;
 
-    iget-object v2, v0, Ljja;->d:Landroid/app/ApplicationErrorReport;
+    iget-object v2, v0, Lkpa;->d:Landroid/app/ApplicationErrorReport;
 
     iget-object v2, v2, Landroid/app/ApplicationErrorReport;->crashInfo:Landroid/app/ApplicationErrorReport$CrashInfo;
 
@@ -176,7 +176,7 @@
 
     if-nez p1, :cond_0
 
-    invoke-static {v0}, Ljji;->b(Ljja;)Ljjb;
+    invoke-static {v0}, Lmip;->ci(Lkpa;)Lkpb;
 
     move-result-object p1
 
@@ -185,177 +185,177 @@
     :cond_0
     const-string v2, " "
 
-    iput-object v2, v0, Ljja;->a:Ljava/lang/String;
+    iput-object v2, v0, Lkpa;->a:Ljava/lang/String;
 
-    iput-boolean v1, v0, Ljja;->c:Z
+    iput-boolean v1, v0, Lkpa;->c:Z
 
-    const-string v2, "com.google.android.apps.camera.app.silentfeedback.SilentFeedbackService.exceptionClass"
+    const-string v1, "com.google.android.apps.camera.app.silentfeedback.SilentFeedbackService.exceptionClass"
 
-    invoke-virtual {p1, v2}, Landroid/content/Intent;->hasExtra(Ljava/lang/String;)Z
+    invoke-virtual {p1, v1}, Landroid/content/Intent;->hasExtra(Ljava/lang/String;)Z
 
-    move-result v2
+    move-result v1
 
-    if-eqz v2, :cond_1
+    if-eqz v1, :cond_1
 
-    const-string v2, "com.google.android.apps.camera.app.silentfeedback.SilentFeedbackService.exceptionClass"
+    const-string v1, "com.google.android.apps.camera.app.silentfeedback.SilentFeedbackService.exceptionClass"
 
-    invoke-virtual {p1, v2}, Landroid/content/Intent;->getStringExtra(Ljava/lang/String;)Ljava/lang/String;
+    invoke-virtual {p1, v1}, Landroid/content/Intent;->getStringExtra(Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v1
 
-    iget-object v4, v0, Ljja;->d:Landroid/app/ApplicationErrorReport;
+    iget-object v2, v0, Lkpa;->d:Landroid/app/ApplicationErrorReport;
 
-    iget-object v4, v4, Landroid/app/ApplicationErrorReport;->crashInfo:Landroid/app/ApplicationErrorReport$CrashInfo;
+    iget-object v2, v2, Landroid/app/ApplicationErrorReport;->crashInfo:Landroid/app/ApplicationErrorReport$CrashInfo;
 
-    iput-object v2, v4, Landroid/app/ApplicationErrorReport$CrashInfo;->exceptionClassName:Ljava/lang/String;
+    iput-object v1, v2, Landroid/app/ApplicationErrorReport$CrashInfo;->exceptionClassName:Ljava/lang/String;
 
     :cond_1
-    const-string v2, "com.google.android.apps.camera.app.silentfeedback.SilentFeedbackService.stackTrace"
+    const-string v1, "com.google.android.apps.camera.app.silentfeedback.SilentFeedbackService.stackTrace"
 
-    invoke-virtual {p1, v2}, Landroid/content/Intent;->hasExtra(Ljava/lang/String;)Z
+    invoke-virtual {p1, v1}, Landroid/content/Intent;->hasExtra(Ljava/lang/String;)Z
 
-    move-result v2
+    move-result v1
 
-    if-eqz v2, :cond_2
+    if-eqz v1, :cond_2
 
-    const-string v2, "com.google.android.apps.camera.app.silentfeedback.SilentFeedbackService.stackTrace"
+    const-string v1, "com.google.android.apps.camera.app.silentfeedback.SilentFeedbackService.stackTrace"
 
-    invoke-virtual {p1, v2}, Landroid/content/Intent;->getStringExtra(Ljava/lang/String;)Ljava/lang/String;
+    invoke-virtual {p1, v1}, Landroid/content/Intent;->getStringExtra(Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v1
 
-    iget-object v4, v0, Ljja;->d:Landroid/app/ApplicationErrorReport;
+    iget-object v2, v0, Lkpa;->d:Landroid/app/ApplicationErrorReport;
 
-    iget-object v4, v4, Landroid/app/ApplicationErrorReport;->crashInfo:Landroid/app/ApplicationErrorReport$CrashInfo;
+    iget-object v2, v2, Landroid/app/ApplicationErrorReport;->crashInfo:Landroid/app/ApplicationErrorReport$CrashInfo;
 
-    iput-object v2, v4, Landroid/app/ApplicationErrorReport$CrashInfo;->stackTrace:Ljava/lang/String;
+    iput-object v1, v2, Landroid/app/ApplicationErrorReport$CrashInfo;->stackTrace:Ljava/lang/String;
 
     :cond_2
-    const-string v2, "com.google.android.apps.camera.app.silentfeedback.SilentFeedbackService.throwingClass"
+    const-string v1, "com.google.android.apps.camera.app.silentfeedback.SilentFeedbackService.throwingClass"
 
-    invoke-virtual {p1, v2}, Landroid/content/Intent;->hasExtra(Ljava/lang/String;)Z
+    invoke-virtual {p1, v1}, Landroid/content/Intent;->hasExtra(Ljava/lang/String;)Z
 
-    move-result v2
+    move-result v1
 
-    if-eqz v2, :cond_3
+    if-eqz v1, :cond_3
 
-    const-string v2, "com.google.android.apps.camera.app.silentfeedback.SilentFeedbackService.throwingClass"
+    const-string v1, "com.google.android.apps.camera.app.silentfeedback.SilentFeedbackService.throwingClass"
 
-    invoke-virtual {p1, v2}, Landroid/content/Intent;->getStringExtra(Ljava/lang/String;)Ljava/lang/String;
+    invoke-virtual {p1, v1}, Landroid/content/Intent;->getStringExtra(Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v1
 
-    iget-object v4, v0, Ljja;->d:Landroid/app/ApplicationErrorReport;
+    iget-object v2, v0, Lkpa;->d:Landroid/app/ApplicationErrorReport;
 
-    iget-object v4, v4, Landroid/app/ApplicationErrorReport;->crashInfo:Landroid/app/ApplicationErrorReport$CrashInfo;
+    iget-object v2, v2, Landroid/app/ApplicationErrorReport;->crashInfo:Landroid/app/ApplicationErrorReport$CrashInfo;
 
-    iput-object v2, v4, Landroid/app/ApplicationErrorReport$CrashInfo;->throwClassName:Ljava/lang/String;
+    iput-object v1, v2, Landroid/app/ApplicationErrorReport$CrashInfo;->throwClassName:Ljava/lang/String;
 
     :cond_3
-    const-string v2, "com.google.android.apps.camera.app.silentfeedback.SilentFeedbackService.throwingFile"
+    const-string v1, "com.google.android.apps.camera.app.silentfeedback.SilentFeedbackService.throwingFile"
 
-    invoke-virtual {p1, v2}, Landroid/content/Intent;->hasExtra(Ljava/lang/String;)Z
+    invoke-virtual {p1, v1}, Landroid/content/Intent;->hasExtra(Ljava/lang/String;)Z
 
-    move-result v2
+    move-result v1
 
-    if-eqz v2, :cond_4
+    if-eqz v1, :cond_4
 
-    const-string v2, "com.google.android.apps.camera.app.silentfeedback.SilentFeedbackService.throwingFile"
+    const-string v1, "com.google.android.apps.camera.app.silentfeedback.SilentFeedbackService.throwingFile"
 
-    invoke-virtual {p1, v2}, Landroid/content/Intent;->getStringExtra(Ljava/lang/String;)Ljava/lang/String;
+    invoke-virtual {p1, v1}, Landroid/content/Intent;->getStringExtra(Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v1
 
-    iget-object v4, v0, Ljja;->d:Landroid/app/ApplicationErrorReport;
+    iget-object v2, v0, Lkpa;->d:Landroid/app/ApplicationErrorReport;
 
-    iget-object v4, v4, Landroid/app/ApplicationErrorReport;->crashInfo:Landroid/app/ApplicationErrorReport$CrashInfo;
+    iget-object v2, v2, Landroid/app/ApplicationErrorReport;->crashInfo:Landroid/app/ApplicationErrorReport$CrashInfo;
 
-    iput-object v2, v4, Landroid/app/ApplicationErrorReport$CrashInfo;->throwFileName:Ljava/lang/String;
+    iput-object v1, v2, Landroid/app/ApplicationErrorReport$CrashInfo;->throwFileName:Ljava/lang/String;
 
     :cond_4
-    const-string v2, "com.google.android.apps.camera.app.silentfeedback.SilentFeedbackService.throwingLine"
+    const-string v1, "com.google.android.apps.camera.app.silentfeedback.SilentFeedbackService.throwingLine"
 
-    invoke-virtual {p1, v2}, Landroid/content/Intent;->hasExtra(Ljava/lang/String;)Z
+    invoke-virtual {p1, v1}, Landroid/content/Intent;->hasExtra(Ljava/lang/String;)Z
 
-    move-result v2
+    move-result v1
 
-    if-eqz v2, :cond_5
+    if-eqz v1, :cond_5
 
-    const-string v2, "com.google.android.apps.camera.app.silentfeedback.SilentFeedbackService.throwingLine"
+    const-string v1, "com.google.android.apps.camera.app.silentfeedback.SilentFeedbackService.throwingLine"
 
-    invoke-virtual {p1, v2, v3}, Landroid/content/Intent;->getIntExtra(Ljava/lang/String;I)I
+    invoke-virtual {p1, v1, v3}, Landroid/content/Intent;->getIntExtra(Ljava/lang/String;I)I
 
-    move-result v2
+    move-result v1
 
-    iget-object v3, v0, Ljja;->d:Landroid/app/ApplicationErrorReport;
+    iget-object v2, v0, Lkpa;->d:Landroid/app/ApplicationErrorReport;
 
-    iget-object v3, v3, Landroid/app/ApplicationErrorReport;->crashInfo:Landroid/app/ApplicationErrorReport$CrashInfo;
+    iget-object v2, v2, Landroid/app/ApplicationErrorReport;->crashInfo:Landroid/app/ApplicationErrorReport$CrashInfo;
 
-    iput v2, v3, Landroid/app/ApplicationErrorReport$CrashInfo;->throwLineNumber:I
+    iput v1, v2, Landroid/app/ApplicationErrorReport$CrashInfo;->throwLineNumber:I
 
     :cond_5
-    const-string v2, "com.google.android.apps.camera.app.silentfeedback.SilentFeedbackService.throwingMethod"
+    const-string v1, "com.google.android.apps.camera.app.silentfeedback.SilentFeedbackService.throwingMethod"
 
-    invoke-virtual {p1, v2}, Landroid/content/Intent;->hasExtra(Ljava/lang/String;)Z
+    invoke-virtual {p1, v1}, Landroid/content/Intent;->hasExtra(Ljava/lang/String;)Z
 
-    move-result v2
+    move-result v1
 
-    if-eqz v2, :cond_6
+    if-eqz v1, :cond_6
 
-    const-string v2, "com.google.android.apps.camera.app.silentfeedback.SilentFeedbackService.throwingMethod"
+    const-string v1, "com.google.android.apps.camera.app.silentfeedback.SilentFeedbackService.throwingMethod"
 
-    invoke-virtual {p1, v2}, Landroid/content/Intent;->getStringExtra(Ljava/lang/String;)Ljava/lang/String;
+    invoke-virtual {p1, v1}, Landroid/content/Intent;->getStringExtra(Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v1
 
-    iget-object v3, v0, Ljja;->d:Landroid/app/ApplicationErrorReport;
+    iget-object v2, v0, Lkpa;->d:Landroid/app/ApplicationErrorReport;
 
-    iget-object v3, v3, Landroid/app/ApplicationErrorReport;->crashInfo:Landroid/app/ApplicationErrorReport$CrashInfo;
+    iget-object v2, v2, Landroid/app/ApplicationErrorReport;->crashInfo:Landroid/app/ApplicationErrorReport$CrashInfo;
 
-    iput-object v2, v3, Landroid/app/ApplicationErrorReport$CrashInfo;->throwMethodName:Ljava/lang/String;
+    iput-object v1, v2, Landroid/app/ApplicationErrorReport$CrashInfo;->throwMethodName:Ljava/lang/String;
 
     :cond_6
-    const-string v2, "com.google.android.apps.camera.app.silentfeedback.SilentFeedbackService.categoryTag"
+    const-string v1, "com.google.android.apps.camera.app.silentfeedback.SilentFeedbackService.categoryTag"
 
-    invoke-virtual {p1, v2}, Landroid/content/Intent;->hasExtra(Ljava/lang/String;)Z
+    invoke-virtual {p1, v1}, Landroid/content/Intent;->hasExtra(Ljava/lang/String;)Z
 
-    move-result v2
+    move-result v1
 
-    if-eqz v2, :cond_7
+    if-eqz v1, :cond_7
 
-    const-string v2, "com.google.android.apps.camera.app.silentfeedback.SilentFeedbackService.categoryTag"
+    const-string v1, "com.google.android.apps.camera.app.silentfeedback.SilentFeedbackService.categoryTag"
 
-    invoke-virtual {p1, v2}, Landroid/content/Intent;->getStringExtra(Ljava/lang/String;)Ljava/lang/String;
+    invoke-virtual {p1, v1}, Landroid/content/Intent;->getStringExtra(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p1
 
-    iput-object p1, v0, Ljja;->b:Ljava/lang/String;
+    iput-object p1, v0, Lkpa;->b:Ljava/lang/String;
 
     :cond_7
-    invoke-static {v0}, Ljji;->b(Ljja;)Ljjb;
+    invoke-static {v0}, Lmip;->ci(Lkpa;)Lkpb;
 
     move-result-object p1
 
     :goto_0
-    iget-object p3, p3, Ljde;->i:Ljdh;
+    iget-object p3, p3, Lkij;->j:Lkim;
 
-    new-instance v0, Ljix;
+    new-instance v0, Lkox;
 
-    invoke-direct {v0, p3, p1}, Ljix;-><init>(Ljdh;Ljjb;)V
+    invoke-direct {v0, p3, p1}, Lkox;-><init>(Lkim;Lkpb;)V
 
-    invoke-virtual {p3, v0}, Ljdh;->b(Ljec;)V
+    invoke-virtual {p3, v0}, Lkim;->b(Lkji;)V
 
-    invoke-static {v0}, Ljhp;->ae(Ljdl;)Ljot;
+    invoke-static {v0}, Lmip;->dw(Lkip;)Lkvk;
 
     move-result-object p1
 
-    sget-object p3, Lnnv;->a:Lnnv;
+    sget-object p3, Lpgr;->a:Lpgr;
 
-    new-instance v0, Lfbe;
+    new-instance v0, Lbul;
 
-    invoke-direct {v0, p0, v1}, Lfbe;-><init>(Lcom/google/android/apps/camera/app/silentfeedback/SilentFeedbackService;I)V
+    invoke-direct {v0, p0}, Lbul;-><init>(Lcom/google/android/apps/camera/app/silentfeedback/SilentFeedbackService;)V
 
-    invoke-virtual {p1, p3, v0}, Ljot;->h(Ljava/util/concurrent/Executor;Ljon;)V
+    invoke-virtual {p1, p3, v0}, Lkvk;->g(Ljava/util/concurrent/Executor;Lkvc;)V
 
     return p2
 

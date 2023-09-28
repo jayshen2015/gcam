@@ -25,7 +25,7 @@
 
 .field public k:Z
 
-.field public l:Ljuf;
+.field public l:Llap;
 
 .field public m:I
 
@@ -68,11 +68,11 @@
 
     iput-boolean p1, p0, Lcom/google/android/apps/camera/smarts/SmartsChipView;->j:Z
 
-    new-instance p1, Ljuf;
+    new-instance p1, Llap;
 
-    invoke-direct {p1}, Ljuf;-><init>()V
+    invoke-direct {p1}, Llap;-><init>()V
 
-    iput-object p1, p0, Lcom/google/android/apps/camera/smarts/SmartsChipView;->l:Ljuf;
+    iput-object p1, p0, Lcom/google/android/apps/camera/smarts/SmartsChipView;->l:Llap;
 
     return-void
 .end method
@@ -108,9 +108,9 @@
 
     move-result-object v0
 
-    new-instance v1, Lhcg;
+    new-instance v1, Lhya;
 
-    invoke-direct {v1, p0, p1}, Lhcg;-><init>(Lcom/google/android/apps/camera/smarts/SmartsChipView;I)V
+    invoke-direct {v1, p0, p1}, Lhya;-><init>(Lcom/google/android/apps/camera/smarts/SmartsChipView;I)V
 
     invoke-virtual {v0, v1}, Landroid/view/ViewPropertyAnimator;->setListener(Landroid/animation/Animator$AnimatorListener;)Landroid/view/ViewPropertyAnimator;
 
@@ -152,9 +152,9 @@
     invoke-interface {v0}, Ljava/lang/Runnable;->run()V
 
     :cond_1
-    iget-object v0, p0, Lcom/google/android/apps/camera/smarts/SmartsChipView;->l:Ljuf;
+    iget-object v0, p0, Lcom/google/android/apps/camera/smarts/SmartsChipView;->l:Llap;
 
-    invoke-virtual {v0}, Ljuf;->close()V
+    invoke-virtual {v0}, Llap;->close()V
 
     const/4 v0, 0x0
 
@@ -163,38 +163,10 @@
     return-void
 .end method
 
-.method public final c(Ljwb;Lhdu;)V
-    .locals 3
-
-    iget-object v0, p0, Lcom/google/android/apps/camera/smarts/SmartsChipView;->l:Ljuf;
-
-    new-instance v1, Lglh;
-
-    const/4 v2, 0x4
-
-    invoke-direct {v1, p0, p2, v2}, Lglh;-><init>(Lcom/google/android/apps/camera/smarts/SmartsChipView;Lhdu;I)V
-
-    invoke-virtual {p0}, Lcom/google/android/apps/camera/smarts/SmartsChipView;->getContext()Landroid/content/Context;
-
-    move-result-object p2
-
-    invoke-static {p2}, Labw;->a(Landroid/content/Context;)Ljava/util/concurrent/Executor;
-
-    move-result-object p2
-
-    invoke-interface {p1, v1, p2}, Ljwb;->a(Lkai;Ljava/util/concurrent/Executor;)Lkad;
-
-    move-result-object p1
-
-    invoke-virtual {v0, p1}, Ljuf;->d(Lkad;)V
-
-    return-void
-.end method
-
-.method public final d(Lhdu;)V
+.method public final c(Liap;)V
     .locals 9
 
-    invoke-interface {p1}, Lhdu;->s()Z
+    invoke-interface {p1}, Liap;->s()Z
 
     move-result v0
 
@@ -206,17 +178,17 @@
 
     move-object v0, p1
 
-    check-cast v0, Lhcr;
+    check-cast v0, Lhzb;
 
-    iget-object v0, v0, Lhcr;->b:Lheb;
+    iget-object v0, v0, Lhzb;->b:Liax;
 
-    iget-object v3, v0, Lheb;->c:Ljava/lang/String;
+    iget-object v3, v0, Liax;->c:Ljava/lang/String;
 
-    iget-object v4, v0, Lheb;->d:Landroid/graphics/drawable/Drawable;
+    iget-object v4, v0, Liax;->d:Landroid/graphics/drawable/Drawable;
 
-    iget-object v5, v0, Lheb;->e:Ljava/lang/Runnable;
+    iget-object v5, v0, Liax;->e:Ljava/lang/Runnable;
 
-    iget-object v6, v0, Lheb;->h:Ljava/lang/Runnable;
+    iget-object v6, v0, Liax;->h:Ljava/lang/Runnable;
 
     const/4 v7, 0x0
 
@@ -264,17 +236,13 @@
 
     invoke-virtual {v4, v3}, Landroid/widget/FrameLayout;->setClickable(Z)V
 
-    new-instance v4, Lgfm;
+    new-instance v4, Lhxt;
 
-    const/4 v8, 0x3
+    invoke-direct {v4, p1, v5}, Lhxt;-><init>(Liap;Ljava/lang/Runnable;)V
 
-    invoke-direct {v4, p1, v5, v8}, Lgfm;-><init>(Lhdu;Ljava/lang/Runnable;I)V
+    new-instance v5, Lhxv;
 
-    new-instance v5, Lclb;
-
-    const/4 v8, 0x7
-
-    invoke-direct {v5, p0, v8}, Lclb;-><init>(Lcom/google/android/apps/camera/smarts/SmartsChipView;I)V
+    invoke-direct {v5, p0}, Lhxv;-><init>(Lcom/google/android/apps/camera/smarts/SmartsChipView;)V
 
     iget-object v8, p0, Lcom/google/android/apps/camera/smarts/SmartsChipView;->a:Landroid/widget/FrameLayout;
 
@@ -310,13 +278,13 @@
 
     invoke-virtual {v4, v3}, Landroid/widget/ImageView;->setClickable(Z)V
 
-    iget-object v4, p0, Lcom/google/android/apps/camera/smarts/SmartsChipView;->o:Landroid/widget/ImageView;
+    iget-object v3, p0, Lcom/google/android/apps/camera/smarts/SmartsChipView;->o:Landroid/widget/ImageView;
 
-    new-instance v5, Lhzi;
+    new-instance v4, Lhxs;
 
-    invoke-direct {v5, p0, p1, v6, v3}, Lhzi;-><init>(Lcom/google/android/apps/camera/smarts/SmartsChipView;Lhdu;Ljava/lang/Runnable;I)V
+    invoke-direct {v4, p0, p1, v6}, Lhxs;-><init>(Lcom/google/android/apps/camera/smarts/SmartsChipView;Liap;Ljava/lang/Runnable;)V
 
-    invoke-virtual {v4, v5}, Landroid/widget/ImageView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+    invoke-virtual {v3, v4}, Landroid/widget/ImageView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     iget-object p1, p0, Lcom/google/android/apps/camera/smarts/SmartsChipView;->o:Landroid/widget/ImageView;
 
@@ -324,7 +292,7 @@
 
     move-result-object v3
 
-    const v4, 0x7f14014b
+    const v4, 0x7f14012e
 
     invoke-virtual {v3, v4}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -392,7 +360,7 @@
 
     iget-object p1, p0, Lcom/google/android/apps/camera/smarts/SmartsChipView;->a:Landroid/widget/FrameLayout;
 
-    iget-object v0, v0, Lheb;->g:Ljava/lang/String;
+    iget-object v0, v0, Liax;->g:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Landroid/widget/FrameLayout;->setContentDescription(Ljava/lang/CharSequence;)V
 
@@ -425,301 +393,230 @@
     return-void
 .end method
 
-.method public final e(Lhbp;)V
-    .locals 11
+.method public final d(Lhxa;)V
+    .locals 10
 
-    iget-object v0, p1, Lhbp;->a:Lhdu;
+    iget-object v0, p1, Lhxa;->a:Liap;
 
-    iget-boolean v1, p1, Lhbp;->b:Z
+    iget-boolean v1, p1, Lhxa;->b:Z
 
-    iget-boolean v2, p1, Lhbp;->d:Z
+    iget-boolean v2, p1, Lhxa;->d:Z
 
     iput-boolean v2, p0, Lcom/google/android/apps/camera/smarts/SmartsChipView;->j:Z
 
-    iget-boolean v2, p1, Lhbp;->e:Z
+    iget-boolean v2, p1, Lhxa;->e:Z
 
     iput-boolean v2, p0, Lcom/google/android/apps/camera/smarts/SmartsChipView;->k:Z
 
-    iget v2, p1, Lhbp;->f:I
+    iget v2, p1, Lhxa;->f:I
 
     iput v2, p0, Lcom/google/android/apps/camera/smarts/SmartsChipView;->m:I
 
-    iget-boolean p1, p1, Lhbp;->c:Z
+    iget-boolean p1, p1, Lhxa;->c:Z
 
     iput-boolean p1, p0, Lcom/google/android/apps/camera/smarts/SmartsChipView;->i:Z
 
-    check-cast v0, Lhcr;
+    check-cast v0, Lhzb;
 
-    iget-object p1, v0, Lhcr;->e:Lgft;
+    iget-object p1, v0, Lhzb;->f:Lgvb;
 
-    invoke-interface {p1}, Lgft;->f()Lkab;
-
-    move-result-object p1
-
-    iget p1, p1, Lkab;->e:I
-
-    invoke-static {p1}, Liko;->a(I)Liko;
+    invoke-interface {p1}, Lgvb;->f()Llic;
 
     move-result-object p1
 
-    invoke-static {p1}, Liko;->e(Liko;)Z
+    iget p1, p1, Llic;->e:I
 
-    move-result p1
+    rem-int/lit16 p1, p1, 0xb4
 
-    iget-object v2, v0, Lhcr;->e:Lgft;
+    iget-object v2, v0, Lhzb;->f:Lgvb;
 
-    invoke-interface {v2}, Lgft;->f()Lkab;
-
-    move-result-object v2
-
-    iget v2, v2, Lkab;->e:I
-
-    invoke-static {v2}, Liko;->a(I)Liko;
+    invoke-interface {v2}, Lgvb;->f()Llic;
 
     move-result-object v2
 
-    sget-object v3, Liko;->c:Liko;
+    iget v2, v2, Llic;->e:I
 
-    invoke-virtual {v2, v3}, Liko;->equals(Ljava/lang/Object;)Z
+    iget-boolean v3, p0, Lcom/google/android/apps/camera/smarts/SmartsChipView;->k:Z
 
-    move-result v2
-
-    iget-object v3, v0, Lhcr;->e:Lgft;
-
-    invoke-interface {v3}, Lgft;->f()Lkab;
-
-    move-result-object v3
-
-    iget v3, v3, Lkab;->e:I
-
-    invoke-static {v3}, Liko;->a(I)Liko;
-
-    move-result-object v3
-
-    sget-object v4, Liko;->b:Liko;
-
-    invoke-virtual {v3, v4}, Liko;->equals(Ljava/lang/Object;)Z
-
-    move-result v3
-
-    iget-boolean v4, p0, Lcom/google/android/apps/camera/smarts/SmartsChipView;->k:Z
+    const/4 v4, 0x0
 
     const/4 v5, 0x0
 
-    const/4 v6, 0x0
+    const/4 v6, 0x1
 
-    const/4 v7, 0x1
+    if-nez v3, :cond_2
 
-    if-nez v4, :cond_2
+    iget v3, p0, Lcom/google/android/apps/camera/smarts/SmartsChipView;->m:I
 
-    iget v4, p0, Lcom/google/android/apps/camera/smarts/SmartsChipView;->m:I
+    if-eqz v3, :cond_1
 
-    if-eqz v4, :cond_1
+    if-eq v3, v6, :cond_0
 
-    if-eq v4, v7, :cond_0
-
-    const/4 v4, 0x1
+    const/4 v3, 0x1
 
     goto :goto_0
 
     :cond_0
-    const/4 v4, 0x0
+    const/4 v3, 0x0
 
     goto :goto_0
 
     :cond_1
-    throw v5
+    throw v4
 
     :cond_2
-    const/4 v4, 0x1
+    const/4 v3, 0x1
 
     :goto_0
-    iget-object v8, v0, Lhcr;->g:Ldja;
+    iget-object v7, v0, Lhzb;->h:Lhuq;
 
-    iget-object v9, v0, Lhcr;->i:Ligo;
+    const/16 v8, 0x5a
 
-    if-eqz v2, :cond_4
+    if-ne v2, v8, :cond_4
 
-    iget-object v10, v8, Ldja;->b:Ljava/lang/Object;
+    iget-object v9, v7, Lhuq;->c:Llda;
 
-    check-cast v10, Ljvk;
+    check-cast v9, Llce;
 
-    iget-object v10, v10, Ljvk;->d:Ljava/lang/Object;
+    iget-object v9, v9, Llce;->d:Ljava/lang/Object;
 
-    check-cast v10, Ljava/lang/Boolean;
+    check-cast v9, Ljava/lang/Boolean;
 
-    invoke-virtual {v10}, Ljava/lang/Boolean;->booleanValue()Z
+    invoke-virtual {v9}, Ljava/lang/Boolean;->booleanValue()Z
 
-    move-result v10
+    move-result v9
 
-    if-nez v10, :cond_3
+    if-nez v9, :cond_3
 
     goto :goto_1
 
     :cond_3
-    const/4 v5, 0x1
+    const/4 v4, 0x1
 
-    goto :goto_3
+    goto :goto_2
 
     :cond_4
     :goto_1
-    if-eqz p1, :cond_6
+    if-nez p1, :cond_6
 
-    iget v10, p0, Lcom/google/android/apps/camera/smarts/SmartsChipView;->m:I
+    iget v9, p0, Lcom/google/android/apps/camera/smarts/SmartsChipView;->m:I
 
-    if-eqz v10, :cond_5
+    if-eqz v9, :cond_5
 
-    const/4 v5, 0x4
+    const/4 v4, 0x4
 
-    if-eq v10, v5, :cond_3
+    if-ne v9, v4, :cond_6
+
+    const/4 v4, 0x1
 
     goto :goto_2
 
     :cond_5
-    throw v5
+    throw v4
 
     :cond_6
+    const/4 v4, 0x0
+
     :goto_2
-    if-eqz v3, :cond_7
+    if-ne v2, v8, :cond_8
 
-    iget-object v5, v9, Ligo;->b:Ljava/lang/Object;
+    iget-object v2, v7, Lhuq;->b:Llda;
 
-    check-cast v5, Ljvk;
+    check-cast v2, Llce;
 
-    iget-object v5, v5, Ljvk;->d:Ljava/lang/Object;
+    iget-object v2, v2, Llce;->d:Ljava/lang/Object;
 
-    check-cast v5, Ljava/lang/Boolean;
+    check-cast v2, Ljava/lang/Boolean;
 
-    invoke-virtual {v5}, Ljava/lang/Boolean;->booleanValue()Z
+    invoke-virtual {v2}, Ljava/lang/Boolean;->booleanValue()Z
 
-    move-result v5
+    move-result v2
 
-    if-eqz v5, :cond_7
-
-    const/4 v5, 0x1
+    if-nez v2, :cond_7
 
     goto :goto_3
 
     :cond_7
-    const/4 v5, 0x0
-
-    :goto_3
-    if-eqz v2, :cond_9
-
-    iget-object v2, v8, Ldja;->a:Ljava/lang/Object;
-
-    check-cast v2, Ljvk;
-
-    iget-object v2, v2, Ljvk;->d:Ljava/lang/Object;
-
-    check-cast v2, Ljava/lang/Boolean;
-
-    invoke-virtual {v2}, Ljava/lang/Boolean;->booleanValue()Z
-
-    move-result v2
-
-    if-nez v2, :cond_8
+    const/4 v2, 0x1
 
     goto :goto_4
 
     :cond_8
-    const/4 v2, 0x1
+    :goto_3
+    if-nez p1, :cond_9
 
-    goto :goto_5
-
-    :cond_9
-    :goto_4
-    if-eqz p1, :cond_a
-
-    if-eqz v4, :cond_a
+    if-eqz v3, :cond_9
 
     iget-boolean v2, p0, Lcom/google/android/apps/camera/smarts/SmartsChipView;->i:Z
 
-    if-nez v2, :cond_8
+    if-nez v2, :cond_7
 
-    :cond_a
-    if-eqz p1, :cond_b
+    :cond_9
+    if-nez p1, :cond_a
 
     iget-boolean v2, p0, Lcom/google/android/apps/camera/smarts/SmartsChipView;->j:Z
 
-    if-nez v2, :cond_8
-
-    :cond_b
-    if-eqz v3, :cond_c
-
-    iget-object v2, v9, Ligo;->a:Ljava/lang/Object;
-
-    check-cast v2, Ljvk;
-
-    iget-object v2, v2, Ljvk;->d:Ljava/lang/Object;
-
-    check-cast v2, Ljava/lang/Boolean;
-
-    invoke-virtual {v2}, Ljava/lang/Boolean;->booleanValue()Z
-
-    move-result v2
-
-    if-eqz v2, :cond_c
+    if-eqz v2, :cond_a
 
     const/4 v2, 0x1
 
-    goto :goto_5
+    goto :goto_4
 
-    :cond_c
+    :cond_a
     const/4 v2, 0x0
 
-    :goto_5
-    iget v3, p0, Lcom/google/android/apps/camera/smarts/SmartsChipView;->q:I
+    :goto_4
+    iget v7, p0, Lcom/google/android/apps/camera/smarts/SmartsChipView;->q:I
 
-    if-eqz p1, :cond_d
+    if-nez p1, :cond_b
 
-    if-eqz v4, :cond_d
+    if-eqz v3, :cond_b
 
-    iget-boolean v4, p0, Lcom/google/android/apps/camera/smarts/SmartsChipView;->i:Z
+    iget-boolean v3, p0, Lcom/google/android/apps/camera/smarts/SmartsChipView;->i:Z
 
-    if-eqz v4, :cond_d
+    if-eqz v3, :cond_b
 
-    iget-boolean v4, p0, Lcom/google/android/apps/camera/smarts/SmartsChipView;->j:Z
+    iget-boolean v3, p0, Lcom/google/android/apps/camera/smarts/SmartsChipView;->j:Z
 
-    if-eqz v4, :cond_d
+    if-eqz v3, :cond_b
 
     iget p1, p0, Lcom/google/android/apps/camera/smarts/SmartsChipView;->r:I
 
-    add-int/2addr v3, p1
+    add-int/2addr v7, p1
 
-    goto :goto_6
+    goto :goto_5
 
-    :cond_d
-    if-eqz p1, :cond_e
+    :cond_b
+    if-nez p1, :cond_c
 
     iget-boolean p1, p0, Lcom/google/android/apps/camera/smarts/SmartsChipView;->j:Z
 
-    if-eqz p1, :cond_e
+    if-eqz p1, :cond_c
 
-    iget v3, p0, Lcom/google/android/apps/camera/smarts/SmartsChipView;->r:I
+    iget v7, p0, Lcom/google/android/apps/camera/smarts/SmartsChipView;->r:I
 
-    :cond_e
-    :goto_6
-    if-nez v5, :cond_f
+    :cond_c
+    :goto_5
+    if-nez v4, :cond_d
 
-    if-nez v2, :cond_f
+    if-nez v2, :cond_d
 
-    const/4 v3, 0x0
-
-    :cond_f
-    if-nez v1, :cond_10
-
-    iget-boolean p1, v0, Lhcr;->f:Z
-
-    if-eqz p1, :cond_10
-
-    goto :goto_7
-
-    :cond_10
     const/4 v7, 0x0
 
-    :goto_7
-    int-to-float p1, v3
+    :cond_d
+    if-nez v1, :cond_e
+
+    iget-boolean p1, v0, Lhzb;->g:Z
+
+    if-eqz p1, :cond_e
+
+    goto :goto_6
+
+    :cond_e
+    const/4 v6, 0x0
+
+    :goto_6
+    int-to-float p1, v7
 
     invoke-virtual {p0}, Lcom/google/android/apps/camera/smarts/SmartsChipView;->getTranslationY()F
 
@@ -727,12 +624,12 @@
 
     cmpl-float v1, p1, v1
 
-    if-nez v1, :cond_11
+    if-nez v1, :cond_f
 
-    goto :goto_8
+    goto :goto_7
 
-    :cond_11
-    if-eqz v7, :cond_12
+    :cond_f
+    if-eqz v6, :cond_10
 
     invoke-virtual {p0}, Lcom/google/android/apps/camera/smarts/SmartsChipView;->animate()Landroid/view/ViewPropertyAnimator;
 
@@ -752,48 +649,48 @@
 
     invoke-virtual {p1}, Landroid/view/ViewPropertyAnimator;->start()V
 
-    goto :goto_8
+    goto :goto_7
 
-    :cond_12
+    :cond_10
     invoke-virtual {p0, p1}, Lcom/google/android/apps/camera/smarts/SmartsChipView;->setTranslationY(F)V
 
-    :goto_8
-    iget-boolean p1, v0, Lhcr;->f:Z
+    :goto_7
+    iget-boolean p1, v0, Lhzb;->g:Z
 
-    if-eqz p1, :cond_15
+    if-eqz p1, :cond_13
 
     const/16 p1, 0x8
 
-    if-eqz v5, :cond_14
+    if-eqz v4, :cond_12
 
     invoke-virtual {p0}, Lcom/google/android/apps/camera/smarts/SmartsChipView;->getVisibility()I
 
     move-result v0
 
-    if-eqz v0, :cond_13
+    if-eqz v0, :cond_11
 
-    goto :goto_9
+    goto :goto_8
 
-    :cond_13
+    :cond_11
     invoke-virtual {p0, p1}, Lcom/google/android/apps/camera/smarts/SmartsChipView;->a(I)V
 
     return-void
 
-    :cond_14
-    :goto_9
-    if-nez v5, :cond_15
+    :cond_12
+    :goto_8
+    if-nez v4, :cond_13
 
     invoke-virtual {p0}, Lcom/google/android/apps/camera/smarts/SmartsChipView;->getVisibility()I
 
     move-result v0
 
-    if-ne v0, p1, :cond_15
+    if-ne v0, p1, :cond_13
 
-    invoke-virtual {p0, v6}, Lcom/google/android/apps/camera/smarts/SmartsChipView;->a(I)V
+    invoke-virtual {p0, v5}, Lcom/google/android/apps/camera/smarts/SmartsChipView;->a(I)V
 
     return-void
 
-    :cond_15
+    :cond_13
     return-void
 .end method
 
@@ -802,7 +699,7 @@
 
     invoke-super {p0}, Landroid/widget/LinearLayout;->onFinishInflate()V
 
-    const v0, 0x7f0b0326
+    const v0, 0x7f0b02ad
 
     invoke-virtual {p0, v0}, Lcom/google/android/apps/camera/smarts/SmartsChipView;->findViewById(I)Landroid/view/View;
 
@@ -812,7 +709,7 @@
 
     iput-object v0, p0, Lcom/google/android/apps/camera/smarts/SmartsChipView;->a:Landroid/widget/FrameLayout;
 
-    const v0, 0x7f0b0328
+    const v0, 0x7f0b02af
 
     invoke-virtual {p0, v0}, Lcom/google/android/apps/camera/smarts/SmartsChipView;->findViewById(I)Landroid/view/View;
 
@@ -822,7 +719,7 @@
 
     iput-object v0, p0, Lcom/google/android/apps/camera/smarts/SmartsChipView;->n:Landroid/widget/ImageView;
 
-    const v0, 0x7f0b0329
+    const v0, 0x7f0b02b0
 
     invoke-virtual {p0, v0}, Lcom/google/android/apps/camera/smarts/SmartsChipView;->findViewById(I)Landroid/view/View;
 
@@ -832,7 +729,7 @@
 
     iput-object v0, p0, Lcom/google/android/apps/camera/smarts/SmartsChipView;->b:Landroid/widget/TextView;
 
-    const v0, 0x7f0b0327
+    const v0, 0x7f0b02ae
 
     invoke-virtual {p0, v0}, Lcom/google/android/apps/camera/smarts/SmartsChipView;->findViewById(I)Landroid/view/View;
 
@@ -842,7 +739,7 @@
 
     iput-object v0, p0, Lcom/google/android/apps/camera/smarts/SmartsChipView;->o:Landroid/widget/ImageView;
 
-    const v0, 0x7f0b0324
+    const v0, 0x7f0b02ab
 
     invoke-virtual {p0, v0}, Lcom/google/android/apps/camera/smarts/SmartsChipView;->findViewById(I)Landroid/view/View;
 
@@ -852,7 +749,7 @@
 
     iput-object v0, p0, Lcom/google/android/apps/camera/smarts/SmartsChipView;->c:Landroid/widget/FrameLayout;
 
-    const v0, 0x7f0b0325
+    const v0, 0x7f0b02ac
 
     invoke-virtual {p0, v0}, Lcom/google/android/apps/camera/smarts/SmartsChipView;->findViewById(I)Landroid/view/View;
 
@@ -868,7 +765,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f070662
+    const v1, 0x7f07053a
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -878,7 +775,7 @@
 
     const/high16 v0, 0x42600000    # 56.0f
 
-    invoke-static {v0}, Likp;->b(F)I
+    invoke-static {v0}, Ljsa;->b(F)I
 
     move-result v0
 
@@ -890,7 +787,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0c00a5
+    const v1, 0x7f0c005b
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -902,7 +799,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f070651
+    const v1, 0x7f070529
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -910,7 +807,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f070652
+    const v1, 0x7f07052a
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -922,7 +819,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f070655
+    const v1, 0x7f07052d
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -930,15 +827,15 @@
 
     iput v0, p0, Lcom/google/android/apps/camera/smarts/SmartsChipView;->s:I
 
-    new-instance v0, Lhce;
+    new-instance v0, Lhxy;
 
-    invoke-direct {v0, p0}, Lhce;-><init>(Lcom/google/android/apps/camera/smarts/SmartsChipView;)V
+    invoke-direct {v0, p0}, Lhxy;-><init>(Lcom/google/android/apps/camera/smarts/SmartsChipView;)V
 
     iget-object v1, p0, Lcom/google/android/apps/camera/smarts/SmartsChipView;->a:Landroid/widget/FrameLayout;
 
-    new-instance v2, Lhcf;
+    new-instance v2, Lhxz;
 
-    invoke-direct {v2, p0, v0}, Lhcf;-><init>(Lcom/google/android/apps/camera/smarts/SmartsChipView;Landroid/view/View$AccessibilityDelegate;)V
+    invoke-direct {v2, p0, v0}, Lhxz;-><init>(Lcom/google/android/apps/camera/smarts/SmartsChipView;Landroid/view/View$AccessibilityDelegate;)V
 
     invoke-virtual {v1, v2}, Landroid/widget/FrameLayout;->setAccessibilityDelegate(Landroid/view/View$AccessibilityDelegate;)V
 

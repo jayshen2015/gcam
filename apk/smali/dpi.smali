@@ -1,62 +1,55 @@
-.class final Ldpi;
-.super Ldpa;
+.class public final synthetic Ldpi;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field final synthetic b:Ldpk;
+.field public final synthetic a:Ldpj;
 
 
 # direct methods
-.method public constructor <init>(Ldpk;)V
+.method public synthetic constructor <init>(Ldpj;)V
     .locals 0
 
-    iput-object p1, p0, Ldpi;->b:Ldpk;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0, p1}, Ldpa;-><init>(Ldpc;)V
+    iput-object p1, p0, Ldpi;->a:Ldpj;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()V
-    .locals 2
+.method public final run()V
+    .locals 4
 
-    iget-object v0, p0, Ldpi;->b:Ldpk;
+    iget-object v0, p0, Ldpi;->a:Ldpj;
 
-    iget-object v0, v0, Ldpk;->n:Lhiu;
+    iget-object v1, v0, Ldpj;->a:Ljava/lang/Object;
 
-    invoke-virtual {v0}, Lhiu;->e()V
+    monitor-enter v1
 
-    iget-object v0, p0, Ldpi;->b:Ldpk;
+    const/4 v2, 0x1
 
-    iget-object v1, v0, Ldpk;->n:Lhiu;
+    :try_start_0
+    invoke-static {v2}, Lcom/google/android/apps/camera/jni/faceobfuscation/GpuRedactorNative;->createRedactor(Z)J
 
-    iget-object v0, v0, Ldpk;->o:Lhiw;
+    move-result-wide v2
 
-    invoke-virtual {v1, v0}, Lhiu;->g(Lhiw;)V
+    iput-wide v2, v0, Ldpj;->b:J
 
-    return-void
-.end method
-
-.method public final d(FLdok;)V
-    .locals 1
-
-    iget-object v0, p0, Ldpi;->b:Ldpk;
-
-    iget-object v0, v0, Ldpk;->n:Lhiu;
-
-    invoke-virtual {v0}, Lhiu;->e()V
-
-    invoke-super {p0, p1, p2}, Ldpa;->d(FLdok;)V
-
-    iget-object p1, p0, Ldpi;->b:Ldpk;
-
-    iget-object p2, p1, Ldpk;->n:Lhiu;
-
-    iget-object p1, p1, Ldpk;->q:Lhiw;
-
-    invoke-virtual {p2, p1}, Lhiu;->g(Lhiw;)V
+    monitor-exit v1
 
     return-void
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw v0
 .end method

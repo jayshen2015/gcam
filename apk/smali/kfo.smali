@@ -1,75 +1,40 @@
-.class public final synthetic Lkfo;
-.super Ljava/lang/Object;
-
-# interfaces
-.implements Ljava/lang/Runnable;
-
-
-# instance fields
-.field public final synthetic a:Lkfp;
-
-.field public final synthetic b:J
-
-.field public final synthetic c:I
-
-.field private final synthetic d:I
+.class final Lkfo;
+.super Lmip;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lkfp;JII)V
+.method public constructor <init>()V
     .locals 0
 
-    iput p5, p0, Lkfo;->d:I
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lkfo;->a:Lkfp;
-
-    iput-wide p2, p0, Lkfo;->b:J
-
-    iput p4, p0, Lkfo;->c:I
+    invoke-direct {p0}, Lmip;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final run()V
-    .locals 4
+.method public final bridge synthetic u(Landroid/content/Context;Landroid/os/Looper;Lkmf;Ljava/lang/Object;Lkik;Lkil;)Lkie;
+    .locals 7
 
-    iget v0, p0, Lkfo;->d:I
+    move-object v4, p4
 
-    packed-switch v0, :pswitch_data_0
+    check-cast v4, Lcom/google/android/gms/auth/api/signin/GoogleSignInOptions;
 
-    iget-object v0, p0, Lkfo;->a:Lkfp;
+    new-instance p4, Lkfv;
 
-    iget-wide v1, p0, Lkfo;->b:J
+    move-object v0, p4
 
-    iget v3, p0, Lkfo;->c:I
+    move-object v1, p1
 
-    iget-object v0, v0, Lkfp;->a:Lkfg;
+    move-object v2, p2
 
-    invoke-virtual {v0, v1, v2, v3}, Lkfg;->bD(JI)V
+    move-object v3, p3
 
-    return-void
+    move-object v5, p5
 
-    :pswitch_0
-    iget-object v0, p0, Lkfo;->a:Lkfp;
+    move-object v6, p6
 
-    iget-wide v1, p0, Lkfo;->b:J
+    invoke-direct/range {v0 .. v6}, Lkfv;-><init>(Landroid/content/Context;Landroid/os/Looper;Lkmf;Lcom/google/android/gms/auth/api/signin/GoogleSignInOptions;Lkik;Lkil;)V
 
-    iget v3, p0, Lkfo;->c:I
-
-    iget-object v0, v0, Lkfp;->a:Lkfg;
-
-    invoke-virtual {v0, v1, v2, v3}, Lkfg;->bs(JI)V
-
-    return-void
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+    return-object p4
 .end method

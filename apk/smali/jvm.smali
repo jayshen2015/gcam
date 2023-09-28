@@ -1,101 +1,69 @@
-.class public final Ljvm;
-.super Ljava/lang/Object;
-
-# interfaces
-.implements Ljvs;
+.class Ljvm;
+.super Ljvl;
 
 
 # instance fields
-.field private final a:Ljvs;
+.field final synthetic b:Ljvo;
 
 
 # direct methods
-.method private constructor <init>(Ljvs;)V
+.method public constructor <init>(Ljvo;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Ljvm;->b:Ljvo;
 
-    iput-object p1, p0, Ljvm;->a:Ljvs;
+    invoke-direct {p0}, Ljvl;-><init>()V
 
     return-void
 .end method
 
-.method public static c(Ljvs;)Ljvs;
-    .locals 1
-
-    new-instance v0, Ljvm;
-
-    invoke-direct {v0, p0}, Ljvm;-><init>(Ljvs;)V
-
-    invoke-static {v0}, Ljvo;->c(Ljvs;)Ljvs;
-
-    move-result-object p0
-
-    return-object p0
-.end method
-
 
 # virtual methods
-.method public final a(Lkai;Ljava/util/concurrent/Executor;)Lkad;
+.method public a()V
+    .locals 0
+
+    return-void
+.end method
+
+.method public final f()V
     .locals 4
 
-    new-instance v0, Ljuf;
+    iget-object v0, p0, Ljvm;->b:Ljvo;
 
-    invoke-direct {v0}, Ljuf;-><init>()V
+    iget-object v0, v0, Ljvo;->e:Ljvq;
 
-    new-instance v1, Ljwc;
+    iget-boolean v1, v0, Ljvq;->d:Z
 
-    invoke-direct {v1}, Ljwc;-><init>()V
+    if-eqz v1, :cond_0
 
-    iget-object v2, p0, Ljvm;->a:Ljvs;
+    return-void
 
-    new-instance v3, Ljvl;
+    :cond_0
+    const/4 v1, 0x1
 
-    invoke-direct {v3, p1, p2, v0}, Ljvl;-><init>(Lkai;Ljava/util/concurrent/Executor;Ljuf;)V
+    iput-boolean v1, v0, Ljvq;->d:Z
 
-    invoke-interface {v2, v3, v1}, Ljvs;->a(Lkai;Ljava/util/concurrent/Executor;)Lkad;
+    iget-object v1, v0, Ljvq;->b:Landroid/widget/VideoView;
 
-    move-result-object p1
+    iget-object v0, v0, Ljvq;->c:Ljava/lang/Runnable;
 
-    invoke-virtual {v0, p1}, Ljuf;->d(Lkad;)V
+    const-wide/16 v2, 0xa
 
-    return-object v0
+    invoke-virtual {v1, v0, v2, v3}, Landroid/widget/VideoView;->postDelayed(Ljava/lang/Runnable;J)Z
+
+    return-void
 .end method
 
-.method public final bm()Ljava/lang/Object;
-    .locals 1
-
-    iget-object v0, p0, Ljvm;->a:Ljvs;
-
-    invoke-interface {v0}, Ljvs;->bm()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljvs;
-
-    invoke-interface {v0}, Ljvs;->bm()Ljava/lang/Object;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public final toString()Ljava/lang/String;
+.method public final g()V
     .locals 2
 
-    const-string v0, "DerefObs"
+    iget-object v0, p0, Ljvm;->b:Ljvo;
 
-    invoke-static {v0}, Lmoz;->z(Ljava/lang/String;)Lmqo;
+    iget-object v0, v0, Ljvo;->e:Ljvq;
 
-    move-result-object v0
+    const/4 v1, 0x0
 
-    iget-object v1, p0, Ljvm;->a:Ljvs;
+    iput-boolean v1, v0, Ljvq;->d:Z
 
-    invoke-virtual {v0, v1}, Lmqo;->a(Ljava/lang/Object;)V
-
-    invoke-virtual {v0}, Lmqo;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    return-object v0
+    return-void
 .end method

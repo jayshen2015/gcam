@@ -2,334 +2,180 @@
 .super Ljava/lang/Object;
 
 
+# static fields
+.field public static final a:F
+
+.field public static final b:F
+
+.field public static final c:F
+
+
 # instance fields
-.field public final a:I
+.field public final d:Lcom/google/android/apps/camera/coach/CameraCoachHudView;
 
-.field public final b:I
+.field public final e:Landroid/graphics/Paint;
 
-.field public final c:I
+.field public final f:Landroid/graphics/Paint;
 
-.field public final d:Lklv;
+.field public final g:Landroid/graphics/Paint;
 
-.field public final e:Lika;
+.field public h:Z
 
-.field public final f:Z
+.field public i:F
 
-.field public final g:I
+.field public j:F
 
-.field public final h:I
+.field public k:F
+
+.field public l:F
+
+.field public m:F
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 1
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const/high16 v0, 0x41900000    # 18.0f
+
+    invoke-static {v0}, Ljsa;->b(F)I
+
+    move-result v0
+
+    int-to-float v0, v0
+
+    sput v0, Ldbc;->a:F
+
+    const/high16 v0, 0x40000000    # 2.0f
+
+    invoke-static {v0}, Ljsa;->b(F)I
+
+    move-result v0
+
+    int-to-float v0, v0
+
+    sput v0, Ldbc;->b:F
+
+    const/high16 v0, 0x41400000    # 12.0f
+
+    invoke-static {v0}, Ljsa;->b(F)I
+
+    move-result v0
+
+    int-to-float v0, v0
+
+    sput v0, Ldbc;->c:F
+
+    const/high16 v0, 0x40e00000    # 7.0f
+
+    invoke-static {v0}, Ljsa;->b(F)I
 
     return-void
 .end method
 
-.method public constructor <init>(IIILklv;IILika;Z)V
-    .locals 0
+.method public constructor <init>(Lcom/google/android/apps/camera/coach/CameraCoachHudView;)V
+    .locals 4
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput p1, p0, Ldbc;->a:I
+    const v0, 0x4116cbe4
 
-    iput p2, p0, Ldbc;->b:I
+    iput v0, p0, Ldbc;->k:F
 
-    iput p3, p0, Ldbc;->c:I
+    iput v0, p0, Ldbc;->l:F
 
-    iput-object p4, p0, Ldbc;->d:Lklv;
+    const/high16 v0, 0x40800000    # 4.0f
 
-    iput p5, p0, Ldbc;->g:I
+    iput v0, p0, Ldbc;->m:F
 
-    iput p6, p0, Ldbc;->h:I
+    iput-object p1, p0, Ldbc;->d:Lcom/google/android/apps/camera/coach/CameraCoachHudView;
 
-    iput-object p7, p0, Ldbc;->e:Lika;
+    new-instance p1, Landroid/graphics/Paint;
 
-    iput-boolean p8, p0, Ldbc;->f:Z
+    invoke-direct {p1}, Landroid/graphics/Paint;-><init>()V
+
+    iput-object p1, p0, Ldbc;->e:Landroid/graphics/Paint;
+
+    const/4 v0, -0x1
+
+    invoke-virtual {p1, v0}, Landroid/graphics/Paint;->setColor(I)V
+
+    const/high16 v1, 0x3f800000    # 1.0f
+
+    invoke-static {v1}, Ljsa;->b(F)I
+
+    move-result v1
+
+    int-to-float v1, v1
+
+    invoke-virtual {p1, v1}, Landroid/graphics/Paint;->setStrokeWidth(F)V
+
+    const/4 v1, 0x1
+
+    invoke-virtual {p1, v1}, Landroid/graphics/Paint;->setAntiAlias(Z)V
+
+    const/16 v2, 0x99
+
+    invoke-virtual {p1, v2}, Landroid/graphics/Paint;->setAlpha(I)V
+
+    sget-object v3, Landroid/graphics/Paint$Style;->STROKE:Landroid/graphics/Paint$Style;
+
+    invoke-virtual {p1, v3}, Landroid/graphics/Paint;->setStyle(Landroid/graphics/Paint$Style;)V
+
+    sget-object v3, Landroid/graphics/Paint$Cap;->SQUARE:Landroid/graphics/Paint$Cap;
+
+    invoke-virtual {p1, v3}, Landroid/graphics/Paint;->setStrokeCap(Landroid/graphics/Paint$Cap;)V
+
+    new-instance p1, Landroid/graphics/Paint;
+
+    invoke-direct {p1}, Landroid/graphics/Paint;-><init>()V
+
+    iput-object p1, p0, Ldbc;->f:Landroid/graphics/Paint;
+
+    invoke-virtual {p1, v0}, Landroid/graphics/Paint;->setColor(I)V
+
+    invoke-virtual {p1, v1}, Landroid/graphics/Paint;->setAntiAlias(Z)V
+
+    invoke-virtual {p1, v2}, Landroid/graphics/Paint;->setAlpha(I)V
+
+    new-instance p1, Landroid/graphics/Paint;
+
+    invoke-direct {p1}, Landroid/graphics/Paint;-><init>()V
+
+    iput-object p1, p0, Ldbc;->g:Landroid/graphics/Paint;
+
+    invoke-virtual {p1, v0}, Landroid/graphics/Paint;->setColor(I)V
+
+    invoke-virtual {p1, v1}, Landroid/graphics/Paint;->setAntiAlias(Z)V
+
+    invoke-virtual {p1, v2}, Landroid/graphics/Paint;->setAlpha(I)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 5
+.method public final a()V
+    .locals 2
 
-    const/4 v0, 0x1
+    iget-boolean v0, p0, Ldbc;->h:Z
 
-    if-ne p1, p0, :cond_0
+    const/4 v1, 0x0
 
-    return v0
+    iput-boolean v1, p0, Ldbc;->h:Z
+
+    if-eqz v0, :cond_0
+
+    const v0, 0x4116cbe4
+
+    iput v0, p0, Ldbc;->k:F
+
+    iput v0, p0, Ldbc;->l:F
+
+    iget-object v0, p0, Ldbc;->d:Lcom/google/android/apps/camera/coach/CameraCoachHudView;
+
+    invoke-virtual {v0}, Lcom/google/android/apps/camera/coach/CameraCoachHudView;->invalidate()V
 
     :cond_0
-    instance-of v1, p1, Ldbc;
-
-    const/4 v2, 0x0
-
-    if-eqz v1, :cond_4
-
-    check-cast p1, Ldbc;
-
-    iget v1, p0, Ldbc;->a:I
-
-    iget v3, p1, Ldbc;->a:I
-
-    if-ne v1, v3, :cond_3
-
-    iget v1, p0, Ldbc;->b:I
-
-    iget v3, p1, Ldbc;->b:I
-
-    if-ne v1, v3, :cond_3
-
-    iget v1, p0, Ldbc;->c:I
-
-    iget v3, p1, Ldbc;->c:I
-
-    if-ne v1, v3, :cond_3
-
-    iget-object v1, p0, Ldbc;->d:Lklv;
-
-    iget-object v3, p1, Ldbc;->d:Lklv;
-
-    invoke-virtual {v1, v3}, Lklv;->equals(Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_3
-
-    iget v1, p0, Ldbc;->g:I
-
-    iget v3, p1, Ldbc;->g:I
-
-    const/4 v4, 0x0
-
-    if-eqz v1, :cond_2
-
-    if-ne v1, v3, :cond_3
-
-    iget v1, p0, Ldbc;->h:I
-
-    iget v3, p1, Ldbc;->h:I
-
-    if-eqz v1, :cond_1
-
-    if-ne v1, v3, :cond_3
-
-    iget-object v1, p0, Ldbc;->e:Lika;
-
-    iget-object v3, p1, Ldbc;->e:Lika;
-
-    invoke-virtual {v1, v3}, Lika;->equals(Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_3
-
-    iget-boolean v1, p0, Ldbc;->f:Z
-
-    iget-boolean p1, p1, Ldbc;->f:Z
-
-    if-ne v1, p1, :cond_3
-
-    return v0
-
-    :cond_1
-    throw v4
-
-    :cond_2
-    throw v4
-
-    :cond_3
-    return v2
-
-    :cond_4
-    return v2
-.end method
-
-.method public final hashCode()I
-    .locals 4
-
-    iget v0, p0, Ldbc;->a:I
-
-    const v1, 0xf4243
-
-    xor-int/2addr v0, v1
-
-    mul-int v0, v0, v1
-
-    iget v2, p0, Ldbc;->b:I
-
-    xor-int/2addr v0, v2
-
-    mul-int v0, v0, v1
-
-    iget v2, p0, Ldbc;->c:I
-
-    xor-int/2addr v0, v2
-
-    iget-object v2, p0, Ldbc;->d:Lklv;
-
-    invoke-virtual {v2}, Lklv;->hashCode()I
-
-    move-result v2
-
-    mul-int v0, v0, v1
-
-    xor-int/2addr v0, v2
-
-    iget v2, p0, Ldbc;->g:I
-
-    const/4 v3, 0x0
-
-    if-eqz v2, :cond_2
-
-    mul-int v0, v0, v1
-
-    xor-int/2addr v0, v2
-
-    mul-int v0, v0, v1
-
-    iget v2, p0, Ldbc;->h:I
-
-    if-eqz v2, :cond_1
-
-    xor-int/2addr v0, v2
-
-    mul-int v0, v0, v1
-
-    iget-object v2, p0, Ldbc;->e:Lika;
-
-    invoke-virtual {v2}, Lika;->hashCode()I
-
-    move-result v2
-
-    xor-int/2addr v0, v2
-
-    mul-int v0, v0, v1
-
-    const/4 v1, 0x1
-
-    iget-boolean v2, p0, Ldbc;->f:Z
-
-    if-eq v1, v2, :cond_0
-
-    const/16 v1, 0x4d5
-
-    goto :goto_0
-
-    :cond_0
-    const/16 v1, 0x4cf
-
-    :goto_0
-    xor-int/2addr v0, v1
-
-    return v0
-
-    :cond_1
-    throw v3
-
-    :cond_2
-    throw v3
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .locals 10
-
-    iget v0, p0, Ldbc;->a:I
-
-    iget v1, p0, Ldbc;->b:I
-
-    iget v2, p0, Ldbc;->c:I
-
-    iget-object v3, p0, Ldbc;->d:Lklv;
-
-    invoke-static {v3}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v3
-
-    iget v4, p0, Ldbc;->g:I
-
-    invoke-static {v4}, Ldiu;->d(I)Ljava/lang/String;
-
-    move-result-object v4
-
-    iget v5, p0, Ldbc;->h:I
-
-    invoke-static {v5}, Ldiu;->e(I)Ljava/lang/String;
-
-    move-result-object v5
-
-    iget-object v6, p0, Ldbc;->e:Lika;
-
-    invoke-static {v6}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v6
-
-    iget-boolean v7, p0, Ldbc;->f:Z
-
-    new-instance v8, Ljava/lang/StringBuilder;
-
-    invoke-direct {v8}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v9, "VideoCaptureSessionMetadata{creationLatencyMs="
-
-    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v8, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    const-string v0, ", sessionDurationMs="
-
-    invoke-virtual {v8, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v8, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    const-string v0, ", numRecordedSessions="
-
-    invoke-virtual {v8, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v8, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    const-string v0, ", cameraFacing="
-
-    invoke-virtual {v8, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v8, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v0, ", sessionState="
-
-    invoke-virtual {v8, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v8, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v0, ", sessionSource="
-
-    invoke-virtual {v8, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v8, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v0, ", mode="
-
-    invoke-virtual {v8, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v8, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v0, ", actionOnUserEdu="
-
-    invoke-virtual {v8, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v8, v7}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    const-string v0, "}"
-
-    invoke-virtual {v8, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v8}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    return-object v0
+    return-void
 .end method

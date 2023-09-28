@@ -3,8 +3,5 @@
 
 
 # virtual methods
-.method public abstract onClickAnimationEnd()V
-.end method
-
-.method public abstract onLongPress()Z
+.method public abstract onHitStateFinished()V
 .end method

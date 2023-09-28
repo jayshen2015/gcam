@@ -1,88 +1,64 @@
-.class abstract Ldmq;
-.super Lkfg;
-
-# interfaces
-.implements Lfax;
+.class Ldmq;
+.super Ldmo;
 
 
 # instance fields
-.field private a:J
+.field final synthetic a:Ldmt;
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 2
+.method public constructor <init>(Ldmt;)V
+    .locals 0
 
-    invoke-direct {p0}, Lkfg;-><init>()V
+    iput-object p1, p0, Ldmq;->a:Ldmt;
 
-    const-wide/16 v0, -0x1
-
-    iput-wide v0, p0, Ldmq;->a:J
+    invoke-direct {p0}, Ldmo;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final bC(Lkou;)V
-    .locals 6
+.method public b(IIF)V
+    .locals 1
 
-    sget-object v0, Landroid/hardware/camera2/CaptureResult;->SENSOR_TIMESTAMP:Landroid/hardware/camera2/CaptureResult$Key;
+    iget-object v0, p0, Ldmq;->a:Ldmt;
 
-    invoke-interface {p1, v0}, Lkou;->d(Landroid/hardware/camera2/CaptureResult$Key;)Ljava/lang/Object;
+    iget-object v0, v0, Ldmt;->d:Ldna;
 
-    move-result-object p1
+    iput p1, v0, Ldna;->g:I
 
-    check-cast p1, Ljava/lang/Long;
+    sub-int/2addr p2, p1
 
-    if-nez p1, :cond_0
+    iput p2, v0, Ldna;->h:I
 
-    const-wide/16 v0, -0x1
-
-    goto :goto_0
-
-    :cond_0
-    invoke-virtual {p1}, Ljava/lang/Long;->longValue()J
-
-    move-result-wide v0
-
-    :goto_0
-    iget-wide v2, p0, Ldmq;->a:J
-
-    const-wide/16 v4, 0x0
-
-    cmp-long p1, v2, v4
-
-    if-ltz p1, :cond_1
-
-    sub-long v2, v0, v2
-
-    invoke-static {v2, v3}, Linb;->n(J)D
-
-    move-result-wide v2
-
-    goto :goto_1
-
-    :cond_1
-    const-wide/high16 v2, -0x4010000000000000L    # -1.0
-
-    :goto_1
-    iput-wide v0, p0, Ldmq;->a:J
-
-    invoke-virtual {p0, v2, v3}, Ldmq;->g(D)V
+    iput p3, v0, Ldna;->i:F
 
     return-void
 .end method
 
-.method public final bO()V
+.method public final f()V
     .locals 2
 
-    const-wide/16 v0, -0x1
+    iget-object v0, p0, Ldmq;->a:Ldmt;
 
-    iput-wide v0, p0, Ldmq;->a:J
+    iget-object v0, v0, Ldmt;->a:Lcom/google/android/apps/camera/evcomp/EvCompView;
+
+    const/16 v1, 0x8
+
+    invoke-virtual {v0, v1}, Lcom/google/android/apps/camera/evcomp/EvCompView;->setVisibility(I)V
+
+    iget-object v0, p0, Ldmq;->a:Ldmt;
+
+    iget-object v0, v0, Ldmt;->d:Ldna;
+
+    invoke-virtual {v0}, Ldna;->l()V
 
     return-void
 .end method
 
-.method public abstract g(D)V
+.method public final g()V
+    .locals 0
+
+    return-void
 .end method

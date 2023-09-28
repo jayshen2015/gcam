@@ -1,59 +1,87 @@
-.class public final Loul;
-.super Lolh;
-
-
-# annotations
-.annotation runtime Lolj;
-    b = "kotlinx.coroutines.flow.FlowKt__ReduceKt"
-    c = "Reduce.kt"
-    d = "first"
-    e = {
-        0xb7
-    }
-.end annotation
-
-
-# instance fields
-.field public synthetic a:Ljava/lang/Object;
-
-.field public b:I
-
-.field public c:Lomo;
-
-.field public d:Lonk;
-
-.field public e:Lmcc;
+.class final Loul;
+.super Lovd;
 
 
 # direct methods
-.method public constructor <init>(Loku;)V
-    .locals 0
+.method public constructor <init>(Ljava/lang/Class;)V
+    .locals 2
 
-    invoke-direct {p0, p1}, Lolh;-><init>(Loku;)V
+    const-string v0, "group_by"
+
+    const/4 v1, 0x1
+
+    invoke-direct {p0, v0, p1, v1}, Lovd;-><init>(Ljava/lang/String;Ljava/lang/Class;Z)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final b(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 1
+.method public final a(Ljava/util/Iterator;Lovc;)V
+    .locals 3
 
-    iput-object p1, p0, Loul;->a:Ljava/lang/Object;
+    invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
 
-    iget p1, p0, Loul;->b:I
+    move-result v0
 
-    const/high16 v0, -0x80000000
+    if-eqz v0, :cond_2
 
-    or-int/2addr p1, v0
+    invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    iput p1, p0, Loul;->b:I
+    move-result-object v0
 
-    const/4 p1, 0x0
+    invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
 
-    invoke-static {p1, p1, p0}, Lone;->m(Lott;Lomo;Loku;)Ljava/lang/Object;
+    move-result v1
 
-    move-result-object p1
+    if-nez v1, :cond_0
 
-    return-object p1
+    iget-object p1, p0, Lovd;->a:Ljava/lang/String;
+
+    invoke-interface {p2, p1, v0}, Lovc;->a(Ljava/lang/String;Ljava/lang/Object;)V
+
+    return-void
+
+    :cond_0
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const/16 v2, 0x5b
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    :cond_1
+    const/16 v0, 0x2c
+
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v0
+
+    if-nez v0, :cond_1
+
+    iget-object p1, p0, Lovd;->a:Ljava/lang/String;
+
+    const/16 v0, 0x5d
+
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-interface {p2, p1, v0}, Lovc;->a(Ljava/lang/String;Ljava/lang/Object;)V
+
+    :cond_2
+    return-void
 .end method

@@ -1,47 +1,71 @@
-.class final Lbpg;
+.class public final synthetic Lbpg;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Ljava/util/concurrent/ThreadFactory;
+.implements Llij;
+
+
+# instance fields
+.field public final synthetic a:Lbnl;
+
+.field private final synthetic b:I
 
 
 # direct methods
-.method public constructor <init>()V
+.method public synthetic constructor <init>(Lbnl;I)V
     .locals 0
 
+    iput p2, p0, Lbpg;->b:I
+
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lbpg;->a:Lbnl;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final declared-synchronized newThread(Ljava/lang/Runnable;)Ljava/lang/Thread;
-    .locals 2
+.method public final fB(Ljava/lang/Object;)V
+    .locals 1
 
-    monitor-enter p0
+    iget v0, p0, Lbpg;->b:I
 
-    :try_start_0
-    const-string v0, "glide-disk-lru-cache-thread"
+    packed-switch v0, :pswitch_data_0
 
-    new-instance v1, Ljava/lang/Thread;
+    iget-object v0, p0, Lbpg;->a:Lbnl;
 
-    invoke-direct {v1, p1, v0}, Ljava/lang/Thread;-><init>(Ljava/lang/Runnable;Ljava/lang/String;)V
+    check-cast p1, Ljava/lang/Boolean;
 
-    const/4 p1, 0x1
+    invoke-virtual {p1}, Ljava/lang/Boolean;->booleanValue()Z
 
-    invoke-virtual {v1, p1}, Ljava/lang/Thread;->setPriority(I)V
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    move-result p1
 
-    monitor-exit p0
+    xor-int/lit8 p1, p1, 0x1
 
-    return-object v1
+    invoke-interface {v0, p1}, Lbnl;->j(Z)V
 
-    :catchall_0
-    move-exception p1
+    return-void
 
-    monitor-exit p0
+    :pswitch_0
+    iget-object v0, p0, Lbpg;->a:Lbnl;
 
-    throw p1
+    check-cast p1, Ljava/lang/Boolean;
+
+    invoke-virtual {p1}, Ljava/lang/Boolean;->booleanValue()Z
+
+    move-result p1
+
+    xor-int/lit8 p1, p1, 0x1
+
+    invoke-interface {v0, p1}, Lbnl;->j(Z)V
+
+    return-void
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

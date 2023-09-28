@@ -1,107 +1,134 @@
-.class public final Lfxt;
-.super Ljava/lang/Object;
-
-# interfaces
-.implements Logk;
+.class final Lfxt;
+.super Lcom/google/android/apps/camera/bottombar/BottomBarListener;
 
 
 # instance fields
-.field private final a:Loiw;
-
-.field private final b:Loiw;
-
-.field private final c:Loiw;
-
-.field private final d:Loiw;
+.field final synthetic a:Lfyr;
 
 
 # direct methods
-.method public constructor <init>(Loiw;Loiw;Loiw;Loiw;)V
+.method public constructor <init>(Lfyr;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lfxt;->a:Lfyr;
 
-    iput-object p1, p0, Lfxt;->a:Loiw;
-
-    iput-object p2, p0, Lfxt;->b:Loiw;
-
-    iput-object p3, p0, Lfxt;->c:Loiw;
-
-    iput-object p4, p0, Lfxt;->d:Loiw;
+    invoke-direct {p0}, Lcom/google/android/apps/camera/bottombar/BottomBarListener;-><init>()V
 
     return-void
 .end method
 
-.method public static b(Loiw;Loiw;Loiw;Loiw;)Lfxt;
-    .locals 1
-
-    new-instance v0, Lfxt;
-
-    invoke-direct {v0, p0, p1, p2, p3}, Lfxt;-><init>(Loiw;Loiw;Loiw;Loiw;)V
-
-    return-object v0
-.end method
-
 
 # virtual methods
-.method public final a()Lfxs;
-    .locals 9
-
-    iget-object v0, p0, Lfxt;->a:Loiw;
-
-    check-cast v0, Lceb;
-
-    invoke-virtual {v0}, Lceb;->a()Lcea;
-
-    move-result-object v2
-
-    iget-object v0, p0, Lfxt;->b:Loiw;
-
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    move-object v3, v0
-
-    check-cast v3, Lgqh;
-
-    iget-object v0, p0, Lfxt;->c:Loiw;
-
-    check-cast v0, Lgdf;
-
-    invoke-virtual {v0}, Lgdf;->a()Lgdd;
-
-    move-result-object v4
-
-    iget-object v0, p0, Lfxt;->d:Loiw;
-
-    check-cast v0, Lfyp;
-
-    invoke-virtual {v0}, Lfyp;->b()Lbkb;
-
-    move-result-object v5
-
-    new-instance v0, Lfxs;
-
-    const/4 v6, 0x0
-
-    const/4 v7, 0x0
-
-    const/4 v8, 0x0
-
-    move-object v1, v0
-
-    invoke-direct/range {v1 .. v8}, Lfxs;-><init>(Lcea;Lgqh;Lgdd;Lbkb;[B[B[B)V
-
-    return-object v0
-.end method
-
-.method public final bridge synthetic get()Ljava/lang/Object;
+.method public final onCancelButtonPressed()V
     .locals 1
 
-    invoke-virtual {p0}, Lfxt;->a()Lfxs;
+    iget-object v0, p0, Lfxt;->a:Lfyr;
+
+    invoke-virtual {v0}, Lfyr;->y()V
+
+    return-void
+.end method
+
+.method public final onRetakeButtonPressed()V
+    .locals 3
+
+    iget-object v0, p0, Lfxt;->a:Lfyr;
+
+    iget v1, v0, Lfyr;->N:I
+
+    add-int/lit8 v1, v1, 0x1
+
+    iput v1, v0, Lfyr;->N:I
+
+    iget v0, v0, Lfyr;->p:I
+
+    if-nez v0, :cond_0
+
+    sget-object v0, Lfyr;->b:Louj;
+
+    invoke-virtual {v0}, Loue;->b()Lova;
 
     move-result-object v0
 
-    return-object v0
+    const/16 v1, 0x7b6
+
+    const-string v2, "Can\'t undo capture, no images captured."
+
+    invoke-static {v0, v2, v1}, Ld;->v(Lova;Ljava/lang/String;C)V
+
+    return-void
+
+    :cond_0
+    invoke-static {}, Lfcz;->r()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_3
+
+    iget-object v0, p0, Lfxt;->a:Lfyr;
+
+    iget-object v0, v0, Lfyr;->i:Lfck;
+
+    iget-object v0, v0, Lfck;->b:Lawl;
+
+    invoke-virtual {v0}, Lawl;->g()Laxi;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Laxi;->a()I
+
+    move-result v0
+
+    const/16 v1, 0x8
+
+    if-eq v0, v1, :cond_3
+
+    iget-object v0, p0, Lfxt;->a:Lfyr;
+
+    iget v1, v0, Lfyr;->p:I
+
+    if-lez v1, :cond_1
+
+    add-int/lit8 v1, v1, -0x1
+
+    iput v1, v0, Lfyr;->p:I
+
+    iget-object v0, v0, Lfyr;->q:Lfdm;
+
+    invoke-virtual {v0}, Lfdm;->d()V
+
+    iget-object v0, p0, Lfxt;->a:Lfyr;
+
+    iget-object v0, v0, Lfyr;->B:Landroid/os/Handler;
+
+    const/16 v1, 0x65
+
+    invoke-virtual {v0, v1}, Landroid/os/Handler;->sendEmptyMessage(I)Z
+
+    :cond_1
+    iget-object v0, p0, Lfxt;->a:Lfyr;
+
+    iget v1, v0, Lfyr;->p:I
+
+    if-nez v1, :cond_2
+
+    invoke-virtual {v0}, Lfyr;->v()V
+
+    :cond_2
+    return-void
+
+    :cond_3
+    sget-object v0, Lfyr;->b:Louj;
+
+    invoke-virtual {v0}, Loue;->b()Lova;
+
+    move-result-object v0
+
+    const/16 v1, 0x7b5
+
+    const-string v2, "Can\'t undo capture, LightCycle not ready to undo."
+
+    invoke-static {v0, v2, v1}, Ld;->v(Lova;Ljava/lang/String;C)V
+
+    return-void
 .end method

@@ -1,230 +1,265 @@
-.class public final Lgsw;
+.class public final synthetic Lgsw;
 .super Ljava/lang/Object;
+
+# interfaces
+.implements Llij;
 
 
 # instance fields
-.field public final a:J
+.field public final synthetic a:Lgtg;
 
-.field public final b:Lmqp;
+.field public final synthetic b:Lolt;
 
-.field public final c:F
+.field public final synthetic c:Llda;
 
-.field public final d:Lmqp;
-
-.field public final e:F
-
-.field public final f:Lmqp;
-
-.field public final g:Lmqp;
+.field public final synthetic d:Lgtk;
 
 
 # direct methods
-.method public constructor <init>(Lobe;Z)V
-    .locals 6
+.method public synthetic constructor <init>(Lgtg;Lolt;Llda;Lgtk;)V
+    .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    sget-object v0, Locp;->j:Llhj;
+    iput-object p1, p0, Lgsw;->a:Lgtg;
 
-    invoke-virtual {p1, v0}, Lnwq;->e(Llhj;)V
+    iput-object p2, p0, Lgsw;->b:Lolt;
 
-    iget-object v1, p1, Lnwq;->l:Lnwj;
+    iput-object p3, p0, Lgsw;->c:Llda;
 
-    iget-object v2, v0, Llhj;->b:Ljava/lang/Object;
+    iput-object p4, p0, Lgsw;->d:Lgtk;
 
-    check-cast v2, Lnwr;
+    return-void
+.end method
 
-    invoke-virtual {v1, v2}, Lnwj;->k(Lnwr;)Ljava/lang/Object;
+
+# virtual methods
+.method public final fB(Ljava/lang/Object;)V
+    .locals 6
+
+    iget-object v0, p0, Lgsw;->a:Lgtg;
+
+    iget-object v1, p0, Lgsw;->b:Lolt;
+
+    iget-object v2, p0, Lgsw;->c:Llda;
+
+    iget-object v3, p0, Lgsw;->d:Lgtk;
+
+    sget-object v4, Lgtv;->a:Lgtv;
+
+    invoke-static {v1, v2, v4}, Lgtg;->b(Lolt;Llda;Lgtv;)Lgtv;
 
     move-result-object v1
 
-    if-nez v1, :cond_0
+    sget-object v2, Lgtv;->Y:Lgtv;
 
-    iget-object v1, v0, Llhj;->d:Ljava/lang/Object;
+    if-ne v1, v2, :cond_0
+
+    sget-object v1, Lgtv;->X:Lgtv;
+
+    :cond_0
+    sget-object v2, Lgtv;->a:Lgtv;
+
+    if-ne v1, v2, :cond_1
+
+    sget-object v0, Lgtg;->a:Louj;
+
+    invoke-virtual {v0}, Loue;->c()Lova;
+
+    move-result-object v0
+
+    const-string v1, "Property value %s is not associated with a MenuOption."
+
+    const/16 v2, 0x84e
+
+    invoke-static {v0, v1, p1, v2}, Ld;->u(Lova;Ljava/lang/String;Ljava/lang/Object;C)V
+
+    return-void
+
+    :cond_1
+    iget-object p1, v0, Lgtg;->aT:Lcom/google/android/apps/camera/optionsbar/view/OptionsMenuView;
+
+    iget-object p1, p1, Lcom/google/android/apps/camera/optionsbar/view/OptionsMenuView;->f:Ljava/util/Map;
+
+    iget-object v2, v3, Lgtk;->a:Lgtm;
+
+    invoke-interface {p1, v2}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p1
+
+    check-cast p1, Lguq;
+
+    const/4 v2, 0x0
+
+    if-nez p1, :cond_2
+
+    move-object p1, v2
 
     goto :goto_0
 
-    :cond_0
-    invoke-virtual {v0, v1}, Llhj;->b(Ljava/lang/Object;)V
+    :cond_2
+    iget-object p1, p1, Lguq;->n:Lgtv;
 
     :goto_0
-    check-cast v1, Locp;
+    invoke-virtual {v1, p1}, Lgtv;->equals(Ljava/lang/Object;)Z
 
-    iget v0, p1, Lobe;->a:I
-
-    and-int/lit16 v0, v0, 0x80
-
-    const/4 v2, 0x1
-
-    const/4 v3, 0x0
-
-    if-eqz v0, :cond_1
-
-    if-nez p2, :cond_1
-
-    const/4 p2, 0x1
-
-    goto :goto_1
-
-    :cond_1
-    const/4 p2, 0x0
-
-    :goto_1
-    iget-wide v4, p1, Lobe;->i:J
-
-    long-to-int v0, v4
-
-    int-to-long v4, v0
-
-    iput-wide v4, p0, Lgsw;->a:J
-
-    if-eqz p2, :cond_2
-
-    iget-wide p1, p1, Lobe;->j:J
-
-    invoke-static {p1, p2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    move-result-object p1
-
-    invoke-static {p1}, Lmqp;->i(Ljava/lang/Object;)Lmqp;
-
-    move-result-object p1
-
-    goto :goto_2
-
-    :cond_2
-    sget-object p1, Lmpx;->a:Lmpx;
-
-    :goto_2
-    iput-object p1, p0, Lgsw;->b:Lmqp;
-
-    iget p1, v1, Locp;->d:F
-
-    iput p1, p0, Lgsw;->c:F
-
-    iget p1, v1, Locp;->e:F
-
-    iget p1, v1, Locp;->f:F
-
-    iget p1, v1, Locp;->a:I
-
-    and-int/2addr p1, v2
+    move-result p1
 
     if-eqz p1, :cond_4
 
-    iget-object p1, v1, Locp;->b:Locm;
-
-    if-nez p1, :cond_3
-
-    sget-object p1, Locm;->b:Locm;
-
     :cond_3
-    iget-object p1, p1, Locm;->a:Lnwx;
+    goto/16 :goto_4
 
-    invoke-static {p1}, Lmvv;->j(Ljava/util/Collection;)Lmvv;
+    :cond_4
+    if-eqz v3, :cond_3
 
-    move-result-object p1
+    iget-object p1, v0, Lgtg;->aV:Lcom/google/android/apps/camera/optionsbar/view/OptionsMenuContainer;
 
-    invoke-static {p1}, Lmqp;->i(Ljava/lang/Object;)Lmqp;
+    monitor-enter p1
 
-    move-result-object p1
+    :try_start_0
+    invoke-virtual {p1}, Lcom/google/android/apps/camera/optionsbar/view/OptionsMenuContainer;->n()Lcom/google/android/apps/camera/optionsbar/view/OptionsMenuView;
+
+    move-result-object v0
+
+    if-nez v1, :cond_5
+
+    sget-object v0, Lcom/google/android/apps/camera/optionsbar/view/OptionsMenuView;->a:Louj;
+
+    invoke-virtual {v0}, Loue;->b()Lova;
+
+    move-result-object v0
+
+    check-cast v0, Loug;
+
+    const/16 v4, 0x86a
+
+    invoke-interface {v0, v4}, Loug;->G(I)Lova;
+
+    move-result-object v0
+
+    check-cast v0, Loug;
+
+    const-string v4, "Attempted to set invalid value. %s is not a valid option for category: %s"
+
+    iget-object v5, v3, Lgtk;->a:Lgtm;
+
+    invoke-interface {v0, v4, v2, v5}, Loug;->y(Ljava/lang/String;Ljava/lang/Object;Ljava/lang/Object;)V
+
+    goto :goto_1
+
+    :cond_5
+    monitor-enter v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_1
+
+    :try_start_1
+    iget-object v2, v0, Lcom/google/android/apps/camera/optionsbar/view/OptionsMenuView;->f:Ljava/util/Map;
+
+    iget-object v4, v3, Lgtk;->a:Lgtm;
+
+    invoke-interface {v2, v4}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Lguq;
+
+    if-eqz v2, :cond_6
+
+    invoke-virtual {v2, v1}, Lguq;->d(Lgtv;)V
+
+    :cond_6
+    monitor-exit v0
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    :goto_1
+    :try_start_2
+    iget-boolean v0, p1, Lcom/google/android/apps/camera/optionsbar/view/OptionsMenuContainer;->g:Z
+
+    if-nez v0, :cond_9
+
+    sget-object v0, Lgtm;->i:Lgtm;
+
+    iget-object v2, v3, Lgtk;->a:Lgtm;
+
+    invoke-virtual {v0, v2}, Lgtm;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_9
+
+    sget-object v0, Lgtv;->r:Lgtv;
+
+    invoke-virtual {v0, v1}, Lgtv;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_8
+
+    sget-object v0, Lgtv;->s:Lgtv;
+
+    invoke-virtual {v0, v1}, Lgtv;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_7
+
+    goto :goto_2
+
+    :cond_7
+    invoke-virtual {p1}, Lcom/google/android/apps/camera/optionsbar/view/OptionsMenuContainer;->r()V
 
     goto :goto_3
 
-    :cond_4
-    sget-object p1, Lmpx;->a:Lmpx;
-
-    :goto_3
-    iput-object p1, p0, Lgsw;->g:Lmqp;
-
-    iget p1, v1, Locp;->a:I
-
-    and-int/lit8 p1, p1, 0x2
-
-    if-eqz p1, :cond_6
-
-    iget-object p1, v1, Locp;->c:Locm;
-
-    if-nez p1, :cond_5
-
-    sget-object p1, Locm;->b:Locm;
-
-    :cond_5
-    iget-object p1, p1, Locm;->a:Lnwx;
-
-    invoke-static {p1}, Lmvv;->j(Ljava/util/Collection;)Lmvv;
-
-    move-result-object p1
-
-    invoke-static {p1}, Lmqp;->i(Ljava/lang/Object;)Lmqp;
-
-    move-result-object p1
-
-    goto :goto_4
-
-    :cond_6
-    sget-object p1, Lmpx;->a:Lmpx;
-
-    :goto_4
-    iput-object p1, p0, Lgsw;->f:Lmqp;
-
-    iget p1, v1, Locp;->a:I
-
-    and-int/lit8 p1, p1, 0x40
-
-    if-eqz p1, :cond_7
-
-    goto :goto_5
-
-    :cond_7
-    const/4 v2, 0x0
-
-    :goto_5
-    if-eqz v2, :cond_9
-
-    iget-object p1, v1, Locp;->h:Locq;
-
-    if-nez p1, :cond_8
-
-    sget-object p1, Locq;->d:Locq;
-
     :cond_8
-    iget p1, p1, Locq;->c:F
+    :goto_2
+    invoke-virtual {p1}, Lcom/google/android/apps/camera/optionsbar/view/OptionsMenuContainer;->g()Landroid/widget/ImageButton;
 
-    goto :goto_6
+    move-result-object v0
+
+    invoke-virtual {p1, v0}, Lcom/google/android/apps/camera/optionsbar/view/OptionsMenuContainer;->x(Landroid/widget/ImageButton;)V
+
+    iget-boolean v0, p1, Lcom/google/android/apps/camera/optionsbar/view/OptionsMenuContainer;->s:Z
+
+    if-eqz v0, :cond_9
+
+    iget-object v0, p1, Lcom/google/android/apps/camera/optionsbar/view/OptionsMenuContainer;->r:Landroid/graphics/drawable/VectorDrawable;
+
+    if-eqz v0, :cond_9
+
+    const/16 v1, 0xff
+
+    invoke-virtual {v0, v1}, Landroid/graphics/drawable/VectorDrawable;->setAlpha(I)V
 
     :cond_9
-    const/4 p1, 0x0
+    :goto_3
+    monitor-exit p1
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_1
 
-    :goto_6
-    iput p1, p0, Lgsw;->e:F
+    return-void
 
-    if-eqz v2, :cond_b
+    :catchall_0
+    move-exception v1
 
-    iget-object p1, v1, Locp;->h:Locq;
+    :try_start_3
+    monitor-exit v0
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_0
 
-    if-nez p1, :cond_a
+    :try_start_4
+    throw v1
 
-    sget-object p1, Locq;->d:Locq;
+    :catchall_1
+    move-exception v0
 
-    :cond_a
-    iget-object p1, p1, Locq;->b:Lnwx;
+    monitor-exit p1
+    :try_end_4
+    .catchall {:try_start_4 .. :try_end_4} :catchall_1
 
-    invoke-static {p1}, Lmvv;->j(Ljava/util/Collection;)Lmvv;
+    throw v0
 
-    move-result-object p1
-
-    invoke-static {p1}, Lmqp;->i(Ljava/lang/Object;)Lmqp;
-
-    move-result-object p1
-
-    goto :goto_7
-
-    :cond_b
-    sget-object p1, Lmpx;->a:Lmpx;
-
-    :goto_7
-    iput-object p1, p0, Lgsw;->d:Lmqp;
-
+    :goto_4
     return-void
 .end method

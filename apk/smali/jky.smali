@@ -1,261 +1,170 @@
-.class public final Ljky;
-.super Lcbf;
-
-# interfaces
-.implements Landroid/os/IInterface;
+.class final Ljky;
+.super Ljava/lang/Object;
 
 
 # instance fields
-.field private final a:Ljkd;
+.field final synthetic a:Ljkz;
 
-.field private final b:Lmrq;
-
-.field private final c:Ljava/lang/Object;
-
-.field private d:Z
+.field private final b:Landroid/animation/Animator;
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 1
+.method public constructor <init>(Ljkz;Landroid/animation/Animator;)V
+    .locals 0
 
-    const-string v0, "com.google.android.gms.learning.internal.IExampleStoreIteratorV2"
+    iput-object p1, p0, Ljky;->a:Ljkz;
 
-    invoke-direct {p0, v0}, Lcbf;-><init>(Ljava/lang/String;)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    return-void
-.end method
-
-.method public constructor <init>(Ljkd;Lmrq;)V
-    .locals 1
-
-    const-string v0, "com.google.android.gms.learning.internal.IExampleStoreIteratorV2"
-
-    invoke-direct {p0, v0}, Lcbf;-><init>(Ljava/lang/String;)V
-
-    new-instance v0, Ljava/lang/Object;
-
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
-
-    iput-object v0, p0, Ljky;->c:Ljava/lang/Object;
-
-    const/4 v0, 0x0
-
-    iput-boolean v0, p0, Ljky;->d:Z
-
-    iput-object p1, p0, Ljky;->a:Ljkd;
-
-    iput-object p2, p0, Ljky;->b:Lmrq;
+    iput-object p2, p0, Ljky;->b:Landroid/animation/Animator;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final b()V
+.method final a()V
     .locals 3
 
-    iget-object v0, p0, Ljky;->c:Ljava/lang/Object;
+    iget-object v0, p0, Ljky;->b:Landroid/animation/Animator;
 
-    monitor-enter v0
+    const-wide/16 v1, 0x96
 
-    :try_start_0
-    iget-boolean v1, p0, Ljky;->d:Z
-
-    if-eqz v1, :cond_0
-
-    const-string v1, "brella.ExampleStoreSvc"
-
-    const-string v2, "IExampleStoreIterator.close called more than once"
-
-    invoke-static {v1, v2}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
-
-    monitor-exit v0
+    invoke-virtual {v0, v1, v2}, Landroid/animation/Animator;->setStartDelay(J)V
 
     return-void
-
-    :cond_0
-    const/4 v1, 0x1
-
-    iput-boolean v1, p0, Ljky;->d:Z
-
-    iget-object v1, p0, Ljky;->a:Ljkd;
-
-    invoke-interface {v1}, Ljkd;->close()V
-
-    monitor-exit v0
-
-    return-void
-
-    :catchall_0
-    move-exception v1
-
-    monitor-exit v0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw v1
 .end method
 
-.method protected final x(ILandroid/os/Parcel;Landroid/os/Parcel;)Z
-    .locals 4
+.method final b()V
+    .locals 2
 
-    const/4 v0, 0x1
+    iget-object v0, p0, Ljky;->b:Landroid/animation/Animator;
 
-    const/4 v1, 0x0
+    new-instance v1, Ljkx;
 
-    packed-switch p1, :pswitch_data_0
+    invoke-direct {v1, p0}, Ljkx;-><init>(Ljky;)V
 
-    return v1
+    invoke-virtual {v0, v1}, Landroid/animation/Animator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    :pswitch_0
-    invoke-virtual {p0}, Ljky;->b()V
+    return-void
+.end method
 
-    goto :goto_2
+.method final c(Lojc;)V
+    .locals 3
 
-    :pswitch_1
-    invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
+    invoke-virtual {p1}, Lojc;->g()Z
 
-    invoke-static {p2}, Lcbg;->b(Landroid/os/Parcel;)V
+    move-result v0
 
-    iget-object p1, p0, Ljky;->c:Ljava/lang/Object;
+    if-eqz v0, :cond_0
 
-    monitor-enter p1
+    iget-object v0, p0, Ljky;->b:Landroid/animation/Animator;
 
-    :try_start_0
-    iget-boolean p2, p0, Ljky;->d:Z
+    new-instance v1, Ljkv;
 
-    if-eqz p2, :cond_0
+    const/4 v2, 0x1
 
-    const-string p2, "brella.ExampleStoreSvc"
+    invoke-direct {v1, p0, p1, v2}, Ljkv;-><init>(Ljky;Lojc;I)V
 
-    const-string v1, "IExampleStoreIterator.request called after close"
-
-    invoke-static {p2, v1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
-
-    monitor-exit p1
-
-    goto :goto_2
-
-    :cond_0
-    iget-object p2, p0, Ljky;->a:Ljkd;
-
-    invoke-interface {p2}, Ljkd;->b()V
-
-    monitor-exit p1
-
-    goto :goto_2
-
-    :catchall_0
-    move-exception p2
-
-    monitor-exit p1
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw p2
-
-    :pswitch_2
-    invoke-virtual {p2}, Landroid/os/Parcel;->readStrongBinder()Landroid/os/IBinder;
+    invoke-static {v1}, Lmip;->ev(Lj$/util/function/Consumer;)Landroid/animation/Animator$AnimatorListener;
 
     move-result-object p1
 
-    if-nez p1, :cond_1
+    invoke-virtual {v0, p1}, Landroid/animation/Animator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    const/4 p1, 0x0
+    :cond_0
+    return-void
+.end method
 
-    goto :goto_0
+.method final d(I)V
+    .locals 3
 
-    :cond_1
-    const-string v2, "com.google.android.gms.learning.internal.IExampleStoreIteratorCallbackV2"
+    iget-object v0, p0, Ljky;->b:Landroid/animation/Animator;
 
-    invoke-interface {p1, v2}, Landroid/os/IBinder;->queryLocalInterface(Ljava/lang/String;)Landroid/os/IInterface;
+    int-to-long v1, p1
 
-    move-result-object v2
+    invoke-virtual {v0, v1, v2}, Landroid/animation/Animator;->setDuration(J)Landroid/animation/Animator;
 
-    instance-of v3, v2, Ljkx;
+    return-void
+.end method
 
-    if-eqz v3, :cond_2
+.method final e()V
+    .locals 2
 
-    move-object p1, v2
+    iget-object v0, p0, Ljky;->b:Landroid/animation/Animator;
 
-    check-cast p1, Ljkx;
+    sget-object v1, Ljkz;->a:Landroid/view/animation/Interpolator;
 
-    goto :goto_0
+    invoke-virtual {v0, v1}, Landroid/animation/Animator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    :cond_2
-    new-instance v2, Ljkx;
+    return-void
+.end method
 
-    invoke-direct {v2, p1}, Ljkx;-><init>(Landroid/os/IBinder;)V
+.method final f()V
+    .locals 2
 
-    move-object p1, v2
+    iget-object v0, p0, Ljky;->b:Landroid/animation/Animator;
 
-    :goto_0
-    invoke-static {p2}, Lcbg;->b(Landroid/os/Parcel;)V
+    iget-object v1, p0, Ljky;->a:Ljkz;
 
-    if-eqz p1, :cond_3
+    iget-object v1, v1, Ljkz;->s:Landroid/view/animation/Interpolator;
 
-    const/4 v1, 0x1
+    invoke-virtual {v0, v1}, Landroid/animation/Animator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    goto :goto_1
+    return-void
+.end method
 
-    :cond_3
-    :goto_1
-    invoke-static {v1}, Lmoz;->e(Z)V
+.method final g()V
+    .locals 2
 
-    iget-object p2, p0, Ljky;->c:Ljava/lang/Object;
+    iget-object v0, p0, Ljky;->b:Landroid/animation/Animator;
 
-    monitor-enter p2
+    iget-object v1, p0, Ljky;->a:Ljkz;
 
-    :try_start_1
-    iget-boolean v1, p0, Ljky;->d:Z
+    iget-object v1, v1, Ljkz;->t:Landroid/view/animation/Interpolator;
 
-    if-eqz v1, :cond_4
+    invoke-virtual {v0, v1}, Landroid/animation/Animator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    const-string p1, "brella.ExampleStoreSvc"
+    return-void
+.end method
 
-    const-string p1, "brella.ExampleStoreSvc"
+.method final h(Lojc;)V
+    .locals 3
 
-    invoke-static {p1, v1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-virtual {p1}, Lojc;->g()Z
 
-    monitor-exit p2
+    move-result v0
 
-    goto :goto_2
+    if-eqz v0, :cond_0
 
-    :cond_4
+    iget-object v0, p0, Ljky;->b:Landroid/animation/Animator;
+
     new-instance v1, Ljkv;
 
-    iget-object v2, p0, Ljky;->b:Lmrq;
+    const/4 v2, 0x0
 
-    invoke-direct {v1, p0, p1, v2}, Ljkv;-><init>(Ljky;Ljkx;Lmrq;)V
+    invoke-direct {v1, p0, p1, v2}, Ljkv;-><init>(Ljky;Lojc;I)V
 
-    iget-object p1, p0, Ljky;->a:Ljkd;
+    invoke-static {v1}, Lmip;->ew(Lj$/util/function/Consumer;)Landroid/animation/Animator$AnimatorListener;
 
-    invoke-interface {p1, v1}, Ljkd;->a(Ljkc;)V
+    move-result-object p1
 
-    monitor-exit p2
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_1
+    invoke-virtual {v0, p1}, Landroid/animation/Animator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    :goto_2
-    invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
+    :cond_0
+    return-void
+.end method
 
-    return v0
+.method final i()V
+    .locals 2
 
-    :catchall_1
-    move-exception p1
+    iget-object v0, p0, Ljky;->b:Landroid/animation/Animator;
 
-    :try_start_2
-    monitor-exit p2
-    :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_1
+    new-instance v1, Ljkw;
 
-    throw p1
+    invoke-direct {v1, p0}, Ljkw;-><init>(Ljky;)V
 
-    :pswitch_data_0
-    .packed-switch 0x2
-        :pswitch_2
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
+    invoke-virtual {v0, v1}, Landroid/animation/Animator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
+
+    return-void
 .end method

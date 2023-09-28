@@ -1,343 +1,222 @@
-.class public final Lkx;
+.class final Lkx;
 .super Ljava/lang/Object;
+
+# interfaces
+.implements Landroid/content/DialogInterface$OnKeyListener;
+.implements Landroid/content/DialogInterface$OnClickListener;
+.implements Landroid/content/DialogInterface$OnDismissListener;
+.implements Llj;
 
 
 # instance fields
-.field public a:Llp;
+.field public final a:Lkw;
 
-.field public b:I
+.field public b:Lie;
 
-.field public c:I
-
-.field public d:Z
-
-.field public e:Z
+.field c:Lks;
 
 
 # direct methods
-.method public constructor <init>()V
+.method public constructor <init>(Lkw;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-virtual {p0}, Lkx;->d()V
+    iput-object p1, p0, Lkx;->a:Lkw;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()V
-    .locals 1
+.method public final a(Lkw;Z)V
+    .locals 0
 
-    iget-boolean v0, p0, Lkx;->d:Z
+    if-nez p2, :cond_0
 
-    if-eqz v0, :cond_0
+    iget-object p2, p0, Lkx;->a:Lkw;
 
-    iget-object v0, p0, Lkx;->a:Llp;
-
-    invoke-virtual {v0}, Llp;->f()I
-
-    move-result v0
-
-    goto :goto_0
+    if-ne p1, p2, :cond_1
 
     :cond_0
-    iget-object v0, p0, Lkx;->a:Llp;
+    iget-object p1, p0, Lkx;->b:Lie;
 
-    invoke-virtual {v0}, Llp;->j()I
+    if-eqz p1, :cond_1
 
-    move-result v0
-
-    :goto_0
-    iput v0, p0, Lkx;->c:I
-
-    return-void
-.end method
-
-.method public final b(Landroid/view/View;I)V
-    .locals 1
-
-    iget-boolean v0, p0, Lkx;->d:Z
-
-    if-eqz v0, :cond_0
-
-    iget-object v0, p0, Lkx;->a:Llp;
-
-    invoke-virtual {v0, p1}, Llp;->a(Landroid/view/View;)I
-
-    move-result p1
-
-    iget-object v0, p0, Lkx;->a:Llp;
-
-    invoke-virtual {v0}, Llp;->o()I
-
-    move-result v0
-
-    add-int/2addr p1, v0
-
-    iput p1, p0, Lkx;->c:I
-
-    goto :goto_0
-
-    :cond_0
-    iget-object v0, p0, Lkx;->a:Llp;
-
-    invoke-virtual {v0, p1}, Llp;->d(Landroid/view/View;)I
-
-    move-result p1
-
-    iput p1, p0, Lkx;->c:I
-
-    :goto_0
-    iput p2, p0, Lkx;->b:I
-
-    return-void
-.end method
-
-.method public final c(Landroid/view/View;I)V
-    .locals 4
-
-    iget-object v0, p0, Lkx;->a:Llp;
-
-    invoke-virtual {v0}, Llp;->o()I
-
-    move-result v0
-
-    if-ltz v0, :cond_0
-
-    invoke-virtual {p0, p1, p2}, Lkx;->b(Landroid/view/View;I)V
-
-    return-void
-
-    :cond_0
-    iput p2, p0, Lkx;->b:I
-
-    iget-boolean p2, p0, Lkx;->d:Z
-
-    const/4 v1, 0x0
-
-    if-eqz p2, :cond_1
-
-    iget-object p2, p0, Lkx;->a:Llp;
-
-    invoke-virtual {p2}, Llp;->f()I
-
-    move-result p2
-
-    sub-int/2addr p2, v0
-
-    iget-object v0, p0, Lkx;->a:Llp;
-
-    invoke-virtual {v0, p1}, Llp;->a(Landroid/view/View;)I
-
-    move-result v0
-
-    sub-int/2addr p2, v0
-
-    iget-object v0, p0, Lkx;->a:Llp;
-
-    invoke-virtual {v0}, Llp;->f()I
-
-    move-result v0
-
-    sub-int/2addr v0, p2
-
-    iput v0, p0, Lkx;->c:I
-
-    if-lez p2, :cond_2
-
-    iget-object v0, p0, Lkx;->a:Llp;
-
-    invoke-virtual {v0, p1}, Llp;->b(Landroid/view/View;)I
-
-    move-result v0
-
-    iget v2, p0, Lkx;->c:I
-
-    sub-int/2addr v2, v0
-
-    iget-object v0, p0, Lkx;->a:Llp;
-
-    invoke-virtual {v0}, Llp;->j()I
-
-    move-result v0
-
-    iget-object v3, p0, Lkx;->a:Llp;
-
-    invoke-virtual {v3, p1}, Llp;->d(Landroid/view/View;)I
-
-    move-result p1
-
-    sub-int/2addr p1, v0
-
-    invoke-static {p1, v1}, Ljava/lang/Math;->min(II)I
-
-    move-result p1
-
-    add-int/2addr v0, p1
-
-    sub-int/2addr v2, v0
-
-    if-gez v2, :cond_2
-
-    iget p1, p0, Lkx;->c:I
-
-    neg-int v0, v2
-
-    invoke-static {p2, v0}, Ljava/lang/Math;->min(II)I
-
-    move-result p2
-
-    add-int/2addr p1, p2
-
-    iput p1, p0, Lkx;->c:I
-
-    return-void
+    invoke-virtual {p1}, Lja;->dismiss()V
 
     :cond_1
-    iget-object p2, p0, Lkx;->a:Llp;
-
-    invoke-virtual {p2, p1}, Llp;->d(Landroid/view/View;)I
-
-    move-result p2
-
-    iget-object v2, p0, Lkx;->a:Llp;
-
-    invoke-virtual {v2}, Llp;->j()I
-
-    move-result v2
-
-    sub-int v2, p2, v2
-
-    iput p2, p0, Lkx;->c:I
-
-    if-lez v2, :cond_2
-
-    iget-object v3, p0, Lkx;->a:Llp;
-
-    invoke-virtual {v3, p1}, Llp;->b(Landroid/view/View;)I
-
-    move-result v3
-
-    add-int/2addr p2, v3
-
-    iget-object v3, p0, Lkx;->a:Llp;
-
-    invoke-virtual {v3}, Llp;->f()I
-
-    move-result v3
-
-    sub-int/2addr v3, v0
-
-    iget-object v0, p0, Lkx;->a:Llp;
-
-    invoke-virtual {v0, p1}, Llp;->a(Landroid/view/View;)I
-
-    move-result p1
-
-    sub-int/2addr v3, p1
-
-    iget-object p1, p0, Lkx;->a:Llp;
-
-    invoke-virtual {p1}, Llp;->f()I
-
-    move-result p1
-
-    invoke-static {v1, v3}, Ljava/lang/Math;->min(II)I
-
-    move-result v0
-
-    sub-int/2addr p1, v0
-
-    sub-int/2addr p1, p2
-
-    if-gez p1, :cond_2
-
-    iget p2, p0, Lkx;->c:I
-
-    neg-int p1, p1
-
-    invoke-static {v2, p1}, Ljava/lang/Math;->min(II)I
-
-    move-result p1
-
-    sub-int/2addr p2, p1
-
-    iput p2, p0, Lkx;->c:I
-
-    return-void
-
-    :cond_2
     return-void
 .end method
 
-.method public final d()V
+.method public final b(Lkw;)Z
+    .locals 0
+
+    const/4 p1, 0x0
+
+    return p1
+.end method
+
+.method public final onClick(Landroid/content/DialogInterface;I)V
     .locals 1
 
-    const/4 v0, -0x1
+    iget-object p1, p0, Lkx;->a:Lkw;
 
-    iput v0, p0, Lkx;->b:I
+    iget-object v0, p0, Lkx;->c:Lks;
 
-    const/high16 v0, -0x80000000
-
-    iput v0, p0, Lkx;->c:I
-
-    const/4 v0, 0x0
-
-    iput-boolean v0, p0, Lkx;->d:Z
-
-    iput-boolean v0, p0, Lkx;->e:Z
-
-    return-void
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .locals 2
-
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v1, "AnchorInfo{mPosition="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget v1, p0, Lkx;->b:I
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    const-string v1, ", mCoordinate="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget v1, p0, Lkx;->c:I
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    const-string v1, ", mLayoutFromEnd="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-boolean v1, p0, Lkx;->d:Z
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    const-string v1, ", mValid="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-boolean v1, p0, Lkx;->e:Z
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    const/16 v1, 0x7d
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v0}, Lks;->a()Landroid/widget/ListAdapter;
 
     move-result-object v0
 
-    return-object v0
+    check-cast v0, Lkr;
+
+    invoke-virtual {v0, p2}, Lkr;->a(I)Lkz;
+
+    move-result-object p2
+
+    const/4 v0, 0x0
+
+    invoke-virtual {p1, p2, v0}, Lkw;->z(Landroid/view/MenuItem;I)Z
+
+    return-void
+.end method
+
+.method public final onDismiss(Landroid/content/DialogInterface;)V
+    .locals 2
+
+    iget-object p1, p0, Lkx;->c:Lks;
+
+    iget-object v0, p0, Lkx;->a:Lkw;
+
+    const/4 v1, 0x1
+
+    invoke-virtual {p1, v0, v1}, Lks;->c(Lkw;Z)V
+
+    return-void
+.end method
+
+.method public final onKey(Landroid/content/DialogInterface;ILandroid/view/KeyEvent;)Z
+    .locals 2
+
+    const/4 v0, 0x4
+
+    const/16 v1, 0x52
+
+    if-eq p2, v1, :cond_1
+
+    if-ne p2, v0, :cond_0
+
+    const/4 p2, 0x4
+
+    goto :goto_0
+
+    :cond_0
+    goto :goto_1
+
+    :cond_1
+    :goto_0
+    invoke-virtual {p3}, Landroid/view/KeyEvent;->getAction()I
+
+    move-result v0
+
+    const/4 v1, 0x1
+
+    if-nez v0, :cond_4
+
+    invoke-virtual {p3}, Landroid/view/KeyEvent;->getRepeatCount()I
+
+    move-result v0
+
+    if-nez v0, :cond_4
+
+    iget-object p1, p0, Lkx;->b:Lie;
+
+    invoke-virtual {p1}, Lie;->getWindow()Landroid/view/Window;
+
+    move-result-object p1
+
+    if-eqz p1, :cond_3
+
+    invoke-virtual {p1}, Landroid/view/Window;->getDecorView()Landroid/view/View;
+
+    move-result-object p1
+
+    if-eqz p1, :cond_3
+
+    invoke-virtual {p1}, Landroid/view/View;->getKeyDispatcherState()Landroid/view/KeyEvent$DispatcherState;
+
+    move-result-object p1
+
+    if-nez p1, :cond_2
+
+    goto :goto_1
+
+    :cond_2
+    invoke-virtual {p1, p3, p0}, Landroid/view/KeyEvent$DispatcherState;->startTracking(Landroid/view/KeyEvent;Ljava/lang/Object;)V
+
+    return v1
+
+    :cond_3
+    goto :goto_1
+
+    :cond_4
+    invoke-virtual {p3}, Landroid/view/KeyEvent;->getAction()I
+
+    move-result v0
+
+    if-ne v0, v1, :cond_0
+
+    invoke-virtual {p3}, Landroid/view/KeyEvent;->isCanceled()Z
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    iget-object v0, p0, Lkx;->b:Lie;
+
+    invoke-virtual {v0}, Lie;->getWindow()Landroid/view/Window;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_0
+
+    invoke-virtual {v0}, Landroid/view/Window;->getDecorView()Landroid/view/View;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_0
+
+    invoke-virtual {v0}, Landroid/view/View;->getKeyDispatcherState()Landroid/view/KeyEvent$DispatcherState;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_0
+
+    invoke-virtual {v0, p3}, Landroid/view/KeyEvent$DispatcherState;->isTracking(Landroid/view/KeyEvent;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_5
+
+    goto :goto_1
+
+    :cond_5
+    iget-object p2, p0, Lkx;->a:Lkw;
+
+    invoke-virtual {p2, v1}, Lkw;->i(Z)V
+
+    invoke-interface {p1}, Landroid/content/DialogInterface;->dismiss()V
+
+    return v1
+
+    :goto_1
+    iget-object p1, p0, Lkx;->a:Lkw;
+
+    const/4 v0, 0x0
+
+    invoke-virtual {p1, p2, p3, v0}, Lkw;->performShortcut(ILandroid/view/KeyEvent;I)Z
+
+    move-result p1
+
+    return p1
 .end method

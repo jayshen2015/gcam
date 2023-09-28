@@ -61,9 +61,7 @@
 
 .field public static final activity_main:I = 0x7f0e0020
 
-.field public static final autonightsight_toggle_layout:I = 0x7f0e0024
-
-.field public static final bottom_bar_layout:I = 0x7f0e0028
+.field public static final bottom_bar_layout:I = 0x7f0e0026
 
 .field public static final camera:I = 0x7f0e002c
 
@@ -71,131 +69,133 @@
 
 .field public static final cancel_button:I = 0x7f0e002e
 
-.field public static final chameleon_ui:I = 0x7f0e0032
+.field public static final chameleon_ui:I = 0x7f0e0031
 
-.field public static final cinematic_help_button_layout:I = 0x7f0e0034
+.field public static final custom_dialog:I = 0x7f0e0033
 
-.field public static final custom_dialog:I = 0x7f0e0039
+.field public static final cuttlefish_capture_overlay:I = 0x7f0e0034
 
-.field public static final cuttlefish_capture_overlay:I = 0x7f0e003a
+.field public static final details:I = 0x7f0e0046
 
-.field public static final details:I = 0x7f0e004c
+.field public static final dumpling_layout:I = 0x7f0e004a
 
-.field public static final dumpling_layout:I = 0x7f0e004f
+.field public static final faceview_layout:I = 0x7f0e0052
 
-.field public static final faceview_layout:I = 0x7f0e0056
+.field public static final filmstrip_view:I = 0x7f0e0053
 
-.field public static final filmstrip_view:I = 0x7f0e0057
+.field public static final intent:I = 0x7f0e005e
 
-.field public static final hotshotview_layout:I = 0x7f0e005e
+.field public static final keyguard_widget:I = 0x7f0e0060
 
-.field public static final intent:I = 0x7f0e0063
+.field public static final lasagna_layout:I = 0x7f0e0062
 
-.field public static final keyguard_widget:I = 0x7f0e0065
+.field public static final left_side_cancel_button:I = 0x7f0e006c
 
-.field public static final lasagna_layout:I = 0x7f0e0067
+.field public static final material_preference_category_layout:I = 0x7f0e0079
 
-.field public static final left_side_cancel_button:I = 0x7f0e0071
+.field public static final material_preference_storage_status:I = 0x7f0e007a
 
-.field public static final macro_focus_toggle_layout:I = 0x7f0e007e
+.field public static final material_preference_with_social_app_margin:I = 0x7f0e007b
 
-.field public static final macro_focus_video_toggle_layout:I = 0x7f0e007f
+.field public static final mcfly_layout:I = 0x7f0e007d
 
-.field public static final material_preference_category_layout:I = 0x7f0e0082
+.field public static final memory_monitor_container:I = 0x7f0e0081
 
-.field public static final material_preference_storage_status:I = 0x7f0e0083
+.field public static final notification_action:I = 0x7f0e009a
 
-.field public static final material_preference_with_social_app_margin:I = 0x7f0e0084
+.field public static final notification_action_tombstone:I = 0x7f0e009b
 
-.field public static final mcfly_layout:I = 0x7f0e0086
+.field public static final notification_media_action:I = 0x7f0e009c
 
-.field public static final memory_monitor_container:I = 0x7f0e008a
+.field public static final notification_media_cancel_action:I = 0x7f0e009d
 
-.field public static final notification_action:I = 0x7f0e00a2
+.field public static final notification_template_big_media:I = 0x7f0e009e
 
-.field public static final notification_action_tombstone:I = 0x7f0e00a3
+.field public static final notification_template_big_media_custom:I = 0x7f0e009f
 
-.field public static final notification_media_action:I = 0x7f0e00a4
+.field public static final notification_template_big_media_narrow:I = 0x7f0e00a0
 
-.field public static final notification_media_cancel_action:I = 0x7f0e00a5
+.field public static final notification_template_big_media_narrow_custom:I = 0x7f0e00a1
 
-.field public static final notification_template_big_media:I = 0x7f0e00a6
+.field public static final notification_template_custom_big:I = 0x7f0e00a2
 
-.field public static final notification_template_big_media_custom:I = 0x7f0e00a7
+.field public static final notification_template_icon_group:I = 0x7f0e00a3
 
-.field public static final notification_template_big_media_narrow:I = 0x7f0e00a8
+.field public static final notification_template_lines_media:I = 0x7f0e00a4
 
-.field public static final notification_template_big_media_narrow_custom:I = 0x7f0e00a9
+.field public static final notification_template_media:I = 0x7f0e00a5
 
-.field public static final notification_template_custom_big:I = 0x7f0e00aa
+.field public static final notification_template_media_custom:I = 0x7f0e00a6
 
-.field public static final notification_template_icon_group:I = 0x7f0e00ab
+.field public static final notification_template_part_chronometer:I = 0x7f0e00a7
 
-.field public static final notification_template_lines_media:I = 0x7f0e00ac
+.field public static final notification_template_part_time:I = 0x7f0e00a8
 
-.field public static final notification_template_media:I = 0x7f0e00ad
+.field public static final pause_resume_button:I = 0x7f0e00af
 
-.field public static final notification_template_media_custom:I = 0x7f0e00ae
+.field public static final preference_category_first_layout:I = 0x7f0e00b3
 
-.field public static final notification_template_part_chronometer:I = 0x7f0e00af
+.field public static final preference_category_layout:I = 0x7f0e00b4
 
-.field public static final notification_template_part_time:I = 0x7f0e00b0
+.field public static final preference_category_layout_legacy:I = 0x7f0e00b5
 
-.field public static final pause_resume_button:I = 0x7f0e00b5
+.field public static final preference_frequent_faces:I = 0x7f0e00ba
 
-.field public static final preference_category_layout:I = 0x7f0e00bc
+.field public static final preference_social_share:I = 0x7f0e00c0
 
-.field public static final preference_category_layout_legacy:I = 0x7f0e00bd
+.field public static final preference_storage_status:I = 0x7f0e00c1
 
-.field public static final preference_frequent_faces:I = 0x7f0e00c2
+.field public static final preference_storage_status_legacy:I = 0x7f0e00c2
 
-.field public static final preference_social_share:I = 0x7f0e00c8
+.field public static final preference_with_action_button:I = 0x7f0e00c8
 
-.field public static final preference_storage_status:I = 0x7f0e00c9
+.field public static final preference_with_expand_button:I = 0x7f0e00c9
 
-.field public static final preference_with_action_button:I = 0x7f0e00cf
+.field public static final preference_with_helper_button:I = 0x7f0e00ca
 
-.field public static final preference_with_expand_button:I = 0x7f0e00d0
+.field public static final preference_with_margin:I = 0x7f0e00cb
 
-.field public static final preference_with_helper_button:I = 0x7f0e00d1
+.field public static final preference_with_no_icon:I = 0x7f0e00cc
 
-.field public static final preference_with_margin:I = 0x7f0e00d2
+.field public static final preference_with_social_app_margin:I = 0x7f0e00cd
 
-.field public static final preference_with_no_icon:I = 0x7f0e00d3
+.field public static final preference_with_social_app_margin_legacy:I = 0x7f0e00ce
 
-.field public static final preference_with_social_app_margin:I = 0x7f0e00d4
+.field public static final remote_control:I = 0x7f0e00d0
 
-.field public static final remote_control:I = 0x7f0e00d7
+.field public static final retake_button:I = 0x7f0e00d2
 
-.field public static final retake_button:I = 0x7f0e00d9
+.field public static final review_play_button:I = 0x7f0e00db
 
-.field public static final review_play_button:I = 0x7f0e00de
+.field public static final search_view_preference:I = 0x7f0e00dc
 
-.field public static final search_view_preference:I = 0x7f0e00df
+.field public static final secure_album_placeholder:I = 0x7f0e00dd
 
-.field public static final secure_album_placeholder:I = 0x7f0e00e0
+.field public static final select_dialog_item_material:I = 0x7f0e00de
 
-.field public static final select_dialog_item_material:I = 0x7f0e00e1
+.field public static final select_dialog_multichoice_material:I = 0x7f0e00df
 
-.field public static final select_dialog_multichoice_material:I = 0x7f0e00e2
+.field public static final select_dialog_singlechoice_material:I = 0x7f0e00e0
 
-.field public static final select_dialog_singlechoice_material:I = 0x7f0e00e3
+.field public static final settings_action_bar_layout:I = 0x7f0e00e3
 
-.field public static final settings_action_bar_layout:I = 0x7f0e00e5
+.field public static final settings_activity_layout:I = 0x7f0e00e4
 
-.field public static final settings_activity_layout:I = 0x7f0e00e6
+.field public static final settings_activity_layout_legacy:I = 0x7f0e00e5
 
-.field public static final snapshot_button:I = 0x7f0e00f8
+.field public static final snapshot_button:I = 0x7f0e00f5
 
-.field public static final support_simple_spinner_dropdown_item:I = 0x7f0e0101
+.field public static final support_simple_spinner_dropdown_item:I = 0x7f0e00fc
 
-.field public static final toggle_view_contents:I = 0x7f0e0107
+.field public static final toggle_layout:I = 0x7f0e0102
 
-.field public static final washington_layout:I = 0x7f0e010f
+.field public static final toggle_view_contents:I = 0x7f0e0103
 
-.field public static final washington_menu_layout:I = 0x7f0e0110
+.field public static final washington_layout:I = 0x7f0e010a
 
-.field public static final zoom_lock_layout:I = 0x7f0e0146
+.field public static final washington_menu_layout:I = 0x7f0e010b
+
+.field public static final zoom_lock_layout:I = 0x7f0e011f
 
 
 # direct methods

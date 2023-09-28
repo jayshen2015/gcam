@@ -1,110 +1,103 @@
 .class public final Lbet;
 .super Ljava/lang/Object;
 
+# interfaces
+.implements Lbes;
 
-# static fields
-.field public static final a:Lcvm;
 
-.field private static b:Lbes;
+# instance fields
+.field private final synthetic a:I
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
+.method public constructor <init>(I)V
+    .locals 0
 
-    new-instance v0, Lcvm;
+    iput p1, p0, Lbet;->a:I
 
-    invoke-direct {v0}, Lcvm;-><init>()V
-
-    sput-object v0, Lbet;->a:Lcvm;
-
-    const/4 v0, 0x0
-
-    sput-object v0, Lbet;->b:Lbes;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
-.method public static a()Lber;
+
+# virtual methods
+.method public final a()Ljava/lang/Class;
     .locals 1
 
-    new-instance v0, Lbff;
+    iget v0, p0, Lbet;->a:I
 
-    invoke-direct {v0}, Lbff;-><init>()V
+    packed-switch v0, :pswitch_data_0
+
+    const-class v0, Landroid/os/ParcelFileDescriptor;
 
     return-object v0
+
+    :pswitch_0
+    const-class v0, Ljava/io/InputStream;
+
+    return-object v0
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method
 
-.method public static b(Lber;)V
+.method public final synthetic b(Ljava/io/File;)Ljava/lang/Object;
     .locals 1
 
-    instance-of p0, p0, Lbff;
+    iget v0, p0, Lbet;->a:I
 
-    if-eqz p0, :cond_0
+    packed-switch v0, :pswitch_data_0
 
-    return-void
+    const/high16 v0, 0x10000000
 
-    :cond_0
-    new-instance p0, Ljava/lang/UnsupportedOperationException;
+    invoke-static {p1, v0}, Landroid/os/ParcelFileDescriptor;->open(Ljava/io/File;I)Landroid/os/ParcelFileDescriptor;
 
-    const-string v0, "The serializing service works onlywith the XMPMeta implementation of this library"
+    move-result-object p1
 
-    invoke-direct {p0, v0}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
+    return-object p1
 
-    throw p0
+    :pswitch_0
+    new-instance v0, Ljava/io/FileInputStream;
+
+    invoke-direct {v0, p1}, Ljava/io/FileInputStream;-><init>(Ljava/io/File;)V
+
+    return-object v0
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method
 
-.method public static declared-synchronized c()V
-    .locals 3
+.method public final synthetic c(Ljava/lang/Object;)V
+    .locals 1
 
-    const-class v0, Lbet;
+    iget v0, p0, Lbet;->a:I
 
-    monitor-enter v0
+    packed-switch v0, :pswitch_data_0
 
-    :try_start_0
-    sget-object v1, Lbet;->b:Lbes;
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_1
+    check-cast p1, Landroid/os/ParcelFileDescriptor;
 
-    if-nez v1, :cond_0
-
-    :try_start_1
-    new-instance v1, Lbes;
-
-    invoke-direct {v1}, Lbes;-><init>()V
-
-    sput-object v1, Lbet;->b:Lbes;
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    :cond_0
-    :goto_0
-    monitor-exit v0
+    invoke-virtual {p1}, Landroid/os/ParcelFileDescriptor;->close()V
 
     return-void
 
-    :catchall_0
-    move-exception v1
+    :pswitch_0
+    check-cast p1, Ljava/io/InputStream;
 
-    :try_start_2
-    sget-object v2, Ljava/lang/System;->out:Ljava/io/PrintStream;
+    invoke-virtual {p1}, Ljava/io/InputStream;->close()V
 
-    invoke-virtual {v2, v1}, Ljava/io/PrintStream;->println(Ljava/lang/Object;)V
-    :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_1
+    return-void
 
-    goto :goto_0
+    nop
 
-    :catchall_1
-    move-exception v1
-
-    monitor-exit v0
-
-    goto :goto_2
-
-    :goto_1
-    throw v1
-
-    :goto_2
-    goto :goto_1
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

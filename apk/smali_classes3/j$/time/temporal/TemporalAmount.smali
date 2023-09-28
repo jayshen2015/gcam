@@ -3,8 +3,8 @@
 
 
 # virtual methods
-.method public abstract a(Lj$/time/temporal/Temporal;)Lj$/time/temporal/Temporal;
+.method public abstract addTo(Lj$/time/temporal/Temporal;)Lj$/time/temporal/Temporal;
 .end method
 
-.method public abstract c(Lj$/time/temporal/Temporal;)Lj$/time/temporal/Temporal;
+.method public abstract subtractFrom(Lj$/time/temporal/Temporal;)Lj$/time/temporal/Temporal;
 .end method

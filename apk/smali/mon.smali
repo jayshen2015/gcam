@@ -1,28 +1,30 @@
-.class public interface abstract Lmon;
-.super Ljava/lang/Object;
+.class public final Lmon;
+.super Lmok;
+
+
+# direct methods
+.method public constructor <init>()V
+    .locals 0
+
+    invoke-direct {p0}, Lmok;-><init>()V
+
+    return-void
+.end method
 
 
 # virtual methods
-.method public abstract a()V
+.method public final a()I
+    .locals 1
+
+    const/16 v0, 0x20
+
+    return v0
 .end method
 
-.method public abstract b()V
-.end method
+.method public final b()Ljava/lang/String;
+    .locals 1
 
-.method public abstract c(Ljava/nio/ByteBuffer;)V
-.end method
+    const-string v0, "UInt32"
 
-.method public abstract d(Lmpl;)V
-.end method
-
-.method public abstract e(D)V
-.end method
-
-.method public abstract f()V
-.end method
-
-.method public abstract g()V
-.end method
-
-.method public abstract h()V
+    return-object v0
 .end method

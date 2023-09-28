@@ -3,14 +3,8 @@
 
 
 # virtual methods
-.method public abstract a(I)V
+.method public abstract C()Z
 .end method
 
-.method public abstract b(Z)V
-.end method
-
-.method public abstract c(F)V
-.end method
-
-.method public abstract d(F)V
+.method public abstract c()Lhtg;
 .end method

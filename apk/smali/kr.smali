@@ -1,244 +1,195 @@
 .class public final Lkr;
-.super Ljava/lang/Object;
+.super Landroid/widget/BaseAdapter;
 
 
 # instance fields
-.field a:I
+.field final synthetic a:Lks;
 
-.field b:I
-
-.field c:[I
-
-.field d:I
+.field private b:I
 
 
 # direct methods
-.method public constructor <init>()V
+.method public constructor <init>(Lks;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lkr;->a:Lks;
+
+    invoke-direct {p0}, Landroid/widget/BaseAdapter;-><init>()V
+
+    const/4 p1, -0x1
+
+    iput p1, p0, Lkr;->b:I
+
+    invoke-virtual {p0}, Lkr;->b()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(II)V
-    .locals 5
+.method public final a(I)Lkz;
+    .locals 2
 
-    if-ltz p1, :cond_3
+    iget-object v0, p0, Lkr;->a:Lks;
 
-    if-ltz p2, :cond_2
+    iget-object v0, v0, Lks;->c:Lkw;
 
-    iget v0, p0, Lkr;->d:I
+    invoke-virtual {v0}, Lkw;->e()Ljava/util/ArrayList;
 
-    add-int/2addr v0, v0
+    move-result-object v0
 
-    iget-object v1, p0, Lkr;->c:[I
+    iget v1, p0, Lkr;->b:I
 
-    if-nez v1, :cond_0
+    if-ltz v1, :cond_0
 
-    const/4 v1, 0x4
-
-    new-array v1, v1, [I
-
-    iput-object v1, p0, Lkr;->c:[I
-
-    const/4 v2, -0x1
-
-    invoke-static {v1, v2}, Ljava/util/Arrays;->fill([II)V
-
-    goto :goto_0
-
-    :cond_0
-    array-length v2, v1
-
-    if-lt v0, v2, :cond_1
-
-    add-int v3, v0, v0
-
-    new-array v3, v3, [I
-
-    iput-object v3, p0, Lkr;->c:[I
-
-    const/4 v4, 0x0
-
-    invoke-static {v1, v4, v3, v4, v2}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
-
-    :cond_1
-    :goto_0
-    iget-object v1, p0, Lkr;->c:[I
-
-    aput p1, v1, v0
-
-    add-int/lit8 v0, v0, 0x1
-
-    aput p2, v1, v0
-
-    iget p1, p0, Lkr;->d:I
+    if-lt p1, v1, :cond_0
 
     add-int/lit8 p1, p1, 0x1
 
-    iput p1, p0, Lkr;->d:I
+    goto :goto_0
 
-    return-void
+    :cond_0
+    :goto_0
+    invoke-virtual {v0, p1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
-    :cond_2
-    new-instance p1, Ljava/lang/IllegalArgumentException;
+    move-result-object p1
 
-    const-string p2, "Pixel distance must be non-negative"
+    check-cast p1, Lkz;
 
-    invoke-direct {p1, p2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw p1
-
-    :cond_3
-    new-instance p1, Ljava/lang/IllegalArgumentException;
-
-    const-string p2, "Layout positions must be non-negative"
-
-    invoke-direct {p1, p2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw p1
+    return-object p1
 .end method
 
 .method final b()V
-    .locals 2
+    .locals 5
 
-    iget-object v0, p0, Lkr;->c:[I
+    iget-object v0, p0, Lkr;->a:Lks;
 
-    if-eqz v0, :cond_0
+    iget-object v0, v0, Lks;->c:Lkw;
 
-    const/4 v1, -0x1
+    iget-object v1, v0, Lkw;->h:Lkz;
 
-    invoke-static {v0, v1}, Ljava/util/Arrays;->fill([II)V
+    if-eqz v1, :cond_1
 
-    :cond_0
-    const/4 v0, 0x0
+    invoke-virtual {v0}, Lkw;->e()Ljava/util/ArrayList;
 
-    iput v0, p0, Lkr;->d:I
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
+
+    move-result v2
+
+    const/4 v3, 0x0
+
+    :goto_0
+    if-ge v3, v2, :cond_1
+
+    invoke-virtual {v0, v3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+
+    move-result-object v4
+
+    check-cast v4, Lkz;
+
+    if-ne v4, v1, :cond_0
+
+    iput v3, p0, Lkr;->b:I
 
     return-void
-.end method
-
-.method final c(Landroid/support/v7/widget/RecyclerView;Z)V
-    .locals 4
-
-    const/4 v0, 0x0
-
-    iput v0, p0, Lkr;->d:I
-
-    iget-object v0, p0, Lkr;->c:[I
-
-    if-eqz v0, :cond_0
-
-    const/4 v1, -0x1
-
-    invoke-static {v0, v1}, Ljava/util/Arrays;->fill([II)V
 
     :cond_0
-    iget-object v0, p1, Landroid/support/v7/widget/RecyclerView;->n:Lly;
-
-    iget-object v1, p1, Landroid/support/v7/widget/RecyclerView;->m:Lls;
-
-    if-eqz v1, :cond_3
-
-    if-eqz v0, :cond_3
-
-    iget-boolean v1, v0, Lly;->v:Z
-
-    if-eqz v1, :cond_3
-
-    if-eqz p2, :cond_1
-
-    iget-object v1, p1, Landroid/support/v7/widget/RecyclerView;->T:Ljvb;
-
-    invoke-virtual {v1}, Ljvb;->m()Z
-
-    move-result v1
-
-    if-nez v1, :cond_2
-
-    iget-object v1, p1, Landroid/support/v7/widget/RecyclerView;->m:Lls;
-
-    invoke-virtual {v1}, Lls;->a()I
-
-    move-result v1
-
-    invoke-virtual {v0, v1, p0}, Lly;->ac(ILkr;)V
+    add-int/lit8 v3, v3, 0x1
 
     goto :goto_0
 
     :cond_1
-    invoke-virtual {p1}, Landroid/support/v7/widget/RecyclerView;->al()Z
+    const/4 v0, -0x1
 
-    move-result v1
+    iput v0, p0, Lkr;->b:I
 
-    if-nez v1, :cond_2
-
-    iget v1, p0, Lkr;->a:I
-
-    iget v2, p0, Lkr;->b:I
-
-    iget-object v3, p1, Landroid/support/v7/widget/RecyclerView;->M:Lml;
-
-    invoke-virtual {v0, v1, v2, v3, p0}, Lly;->ab(IILml;Lkr;)V
-
-    :cond_2
-    :goto_0
-    iget v1, p0, Lkr;->d:I
-
-    iget v2, v0, Lly;->w:I
-
-    if-le v1, v2, :cond_3
-
-    iput v1, v0, Lly;->w:I
-
-    iput-boolean p2, v0, Lly;->x:Z
-
-    iget-object p1, p1, Landroid/support/v7/widget/RecyclerView;->f:Lmd;
-
-    invoke-virtual {p1}, Lmd;->n()V
-
-    return-void
-
-    :cond_3
     return-void
 .end method
 
-.method final d(I)Z
-    .locals 4
+.method public final getCount()I
+    .locals 2
 
-    iget-object v0, p0, Lkr;->c:[I
+    iget-object v0, p0, Lkr;->a:Lks;
+
+    iget-object v0, v0, Lks;->c:Lkw;
+
+    invoke-virtual {v0}, Lkw;->e()Ljava/util/ArrayList;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
+
+    move-result v0
+
+    iget v1, p0, Lkr;->b:I
+
+    if-gez v1, :cond_0
+
+    return v0
+
+    :cond_0
+    add-int/lit8 v0, v0, -0x1
+
+    return v0
+.end method
+
+.method public final bridge synthetic getItem(I)Ljava/lang/Object;
+    .locals 0
+
+    invoke-virtual {p0, p1}, Lkr;->a(I)Lkz;
+
+    move-result-object p1
+
+    return-object p1
+.end method
+
+.method public final getItemId(I)J
+    .locals 2
+
+    int-to-long v0, p1
+
+    return-wide v0
+.end method
+
+.method public final getView(ILandroid/view/View;Landroid/view/ViewGroup;)Landroid/view/View;
+    .locals 2
+
+    if-nez p2, :cond_0
+
+    iget-object p2, p0, Lkr;->a:Lks;
+
+    iget-object p2, p2, Lks;->b:Landroid/view/LayoutInflater;
+
+    const v0, 0x7f0e0010
 
     const/4 v1, 0x0
 
-    if-eqz v0, :cond_1
+    invoke-virtual {p2, v0, p3, v1}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 
-    iget v0, p0, Lkr;->d:I
-
-    add-int/2addr v0, v0
-
-    const/4 v2, 0x0
-
-    :goto_0
-    if-ge v2, v0, :cond_1
-
-    iget-object v3, p0, Lkr;->c:[I
-
-    aget v3, v3, v2
-
-    if-ne v3, p1, :cond_0
-
-    const/4 p1, 0x1
-
-    return p1
+    move-result-object p2
 
     :cond_0
-    add-int/lit8 v2, v2, 0x2
+    move-object p3, p2
 
-    goto :goto_0
+    check-cast p3, Lll;
 
-    :cond_1
-    return v1
+    invoke-virtual {p0, p1}, Lkr;->a(I)Lkz;
+
+    move-result-object p1
+
+    invoke-interface {p3, p1}, Lll;->f(Lkz;)V
+
+    return-object p2
+.end method
+
+.method public final notifyDataSetChanged()V
+    .locals 0
+
+    invoke-virtual {p0}, Lkr;->b()V
+
+    invoke-super {p0}, Landroid/widget/BaseAdapter;->notifyDataSetChanged()V
+
+    return-void
 .end method

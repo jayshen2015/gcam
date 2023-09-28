@@ -1,63 +1,61 @@
-.class public Lmsy;
-.super Lmsp;
+.class public final synthetic Lmsy;
+.super Ljava/lang/Object;
 
 # interfaces
-.implements Lmxy;
+.implements Ljava/lang/Runnable;
 
 
-# static fields
-.field private static final serialVersionUID:J = 0x67226fd4cd0928d8L
+# instance fields
+.field public final synthetic a:Lmta;
+
+.field private final synthetic b:I
 
 
 # direct methods
-.method protected constructor <init>(Ljava/util/Map;)V
+.method public synthetic constructor <init>(Lmta;I)V
     .locals 0
 
-    invoke-direct {p0, p1}, Lmsp;-><init>(Ljava/util/Map;)V
+    iput p2, p0, Lmsy;->b:I
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lmsy;->a:Lmta;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public bridge synthetic a()Ljava/util/Collection;
-    .locals 1
+.method public final run()V
+    .locals 3
 
-    const/4 v0, 0x0
+    iget v0, p0, Lmsy;->b:I
 
-    throw v0
-.end method
+    packed-switch v0, :pswitch_data_0
 
-.method public final bridge synthetic b(Ljava/lang/Object;)Ljava/util/Collection;
-    .locals 0
+    iget-object v0, p0, Lmsy;->a:Lmta;
 
-    invoke-virtual {p0, p1}, Lmsy;->d(Ljava/lang/Object;)Ljava/util/Set;
+    iget-object v1, v0, Lmta;->d:Lpih;
 
-    move-result-object p1
+    const/4 v2, 0x0
 
-    return-object p1
-.end method
+    invoke-virtual {v1, v2}, Lpih;->o(Ljava/lang/Object;)Z
 
-.method public final c(Ljava/lang/Object;Ljava/util/Collection;)Ljava/util/Collection;
-    .locals 1
+    invoke-virtual {v0}, Lmta;->a()V
 
-    new-instance v0, Lmso;
+    return-void
 
-    check-cast p2, Ljava/util/Set;
+    :pswitch_0
+    iget-object v0, p0, Lmsy;->a:Lmta;
 
-    invoke-direct {v0, p0, p1, p2}, Lmso;-><init>(Lmsp;Ljava/lang/Object;Ljava/util/Set;)V
+    invoke-virtual {v0}, Lmta;->a()V
 
-    return-object v0
-.end method
+    return-void
 
-.method public final d(Ljava/lang/Object;)Ljava/util/Set;
-    .locals 0
+    nop
 
-    invoke-super {p0, p1}, Lmsp;->b(Ljava/lang/Object;)Ljava/util/Collection;
-
-    move-result-object p1
-
-    check-cast p1, Ljava/util/Set;
-
-    return-object p1
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

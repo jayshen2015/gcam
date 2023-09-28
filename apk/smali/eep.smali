@@ -1,171 +1,137 @@
-.class public final Leep;
+.class final Leep;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Logk;
+.implements Lphh;
 
 
 # instance fields
-.field private final a:Loiw;
+.field final synthetic a:J
 
-.field private final b:Loiw;
-
-.field private final c:Loiw;
-
-.field private final d:Loiw;
-
-.field private final e:Loiw;
-
-.field private final f:Loiw;
-
-.field private final g:Loiw;
+.field final synthetic b:Leer;
 
 
 # direct methods
-.method public constructor <init>(Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;)V
+.method public constructor <init>(Leer;J)V
     .locals 0
 
+    iput-object p1, p0, Leep;->b:Leer;
+
+    iput-wide p2, p0, Leep;->a:J
+
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Leep;->a:Loiw;
-
-    iput-object p2, p0, Leep;->b:Loiw;
-
-    iput-object p3, p0, Leep;->c:Loiw;
-
-    iput-object p4, p0, Leep;->d:Loiw;
-
-    iput-object p5, p0, Leep;->e:Loiw;
-
-    iput-object p6, p0, Leep;->f:Loiw;
-
-    iput-object p7, p0, Leep;->g:Loiw;
 
     return-void
 .end method
 
-.method public static b(Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;)Leep;
-    .locals 9
-
-    new-instance v8, Leep;
-
-    move-object v0, v8
-
-    move-object v1, p0
-
-    move-object v2, p1
-
-    move-object v3, p2
-
-    move-object v4, p3
-
-    move-object v5, p4
-
-    move-object v6, p5
-
-    move-object v7, p6
-
-    invoke-direct/range {v0 .. v7}, Leep;-><init>(Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;)V
-
-    return-object v8
-.end method
-
 
 # virtual methods
-.method public final a()Leeo;
-    .locals 13
+.method public final a(Ljava/lang/Throwable;)V
+    .locals 3
 
-    iget-object v0, p0, Leep;->a:Loiw;
+    sget-object v0, Lees;->a:Louj;
 
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    move-object v2, v0
-
-    check-cast v2, Ljew;
-
-    iget-object v0, p0, Leep;->b:Loiw;
-
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
+    invoke-virtual {v0}, Loue;->c()Lova;
 
     move-result-object v0
 
-    move-object v3, v0
+    sget-object v1, Lovl;->a:Lovd;
 
-    check-cast v3, Lfbk;
+    const-string v2, "FalconPostProcImgSaver"
 
-    iget-object v0, p0, Leep;->c:Loiw;
-
-    check-cast v0, Lfwo;
-
-    invoke-virtual {v0}, Lfwo;->a()Lfuz;
-
-    move-result-object v4
-
-    iget-object v0, p0, Leep;->d:Loiw;
-
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
+    invoke-interface {v0, v1, v2}, Lova;->g(Lovd;Ljava/lang/Object;)Lova;
 
     move-result-object v0
 
-    move-object v5, v0
+    check-cast v0, Loug;
 
-    check-cast v5, Lbkb;
+    invoke-interface {v0, p1}, Loug;->h(Ljava/lang/Throwable;)Lova;
 
-    iget-object v0, p0, Leep;->e:Loiw;
+    move-result-object p1
 
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
+    check-cast p1, Loug;
 
-    move-result-object v0
+    const/16 v0, 0x452
 
-    move-object v6, v0
+    invoke-interface {p1, v0}, Loug;->G(I)Lova;
 
-    check-cast v6, Lgvb;
+    move-result-object p1
 
-    iget-object v0, p0, Leep;->f:Loiw;
+    check-cast p1, Loug;
 
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
+    iget-wide v0, p0, Leep;->a:J
 
-    move-result-object v0
+    const-string v2, "FD effect failed for shot %d"
 
-    move-object v7, v0
+    invoke-interface {p1, v2, v0, v1}, Loug;->q(Ljava/lang/String;J)V
 
-    check-cast v7, Lefq;
+    iget-object p1, p0, Leep;->b:Leer;
 
-    iget-object v0, p0, Leep;->g:Loiw;
+    iget-object p1, p1, Leer;->i:Lpoy;
 
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
+    iget-boolean v0, p1, Lpoy;->c:Z
 
-    move-result-object v0
+    if-eqz v0, :cond_0
 
-    move-object v8, v0
+    invoke-virtual {p1}, Lpoy;->m()V
 
-    check-cast v8, Ldhi;
+    const/4 v0, 0x0
 
-    new-instance v0, Leeo;
+    iput-boolean v0, p1, Lpoy;->c:Z
 
-    const/4 v9, 0x0
+    :cond_0
+    iget-object p1, p1, Lpoy;->b:Lppd;
 
-    const/4 v10, 0x0
+    check-cast p1, Lpbj;
 
-    const/4 v11, 0x0
+    sget-object v0, Lpbj;->d:Lpbj;
 
-    const/4 v12, 0x0
+    const/4 v0, 0x3
 
-    move-object v1, v0
+    iput v0, p1, Lpbj;->c:I
 
-    invoke-direct/range {v1 .. v12}, Leeo;-><init>(Ljew;Lfbk;Lfuz;Lbkb;Lgvb;Lefq;Ldhi;[B[B[B[B)V
+    iget v0, p1, Lpbj;->a:I
 
-    return-object v0
+    or-int/lit8 v0, v0, 0x2
+
+    iput v0, p1, Lpbj;->a:I
+
+    iget-object p1, p0, Leep;->b:Leer;
+
+    invoke-static {p1}, Leer;->f(Leer;)V
+
+    iget-object p1, p0, Leep;->b:Leer;
+
+    iget-wide v0, p0, Leep;->a:J
+
+    invoke-virtual {p1, v0, v1}, Leer;->e(J)V
+
+    return-void
 .end method
 
-.method public final bridge synthetic get()Ljava/lang/Object;
-    .locals 1
+.method public final synthetic b(Ljava/lang/Object;)V
+    .locals 0
 
-    invoke-virtual {p0}, Leep;->a()Leeo;
+    check-cast p1, Ljava/lang/Boolean;
 
-    move-result-object v0
+    if-eqz p1, :cond_0
 
-    return-object v0
+    invoke-virtual {p1}, Ljava/lang/Boolean;->booleanValue()Z
+
+    move-result p1
+
+    if-eqz p1, :cond_0
+
+    sget-object p1, Lees;->a:Louj;
+
+    sget-object p1, Lovl;->a:Lovd;
+
+    return-void
+
+    :cond_0
+    sget-object p1, Lees;->a:Louj;
+
+    sget-object p1, Lovl;->a:Lovd;
+
+    return-void
 .end method

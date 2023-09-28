@@ -1,66 +1,70 @@
-.class final Llyu;
-.super Lolh;
-
-
-# annotations
-.annotation runtime Lolj;
-    b = "com.google.android.libraries.vision.visionkit.f250.internal.airlock.room.UploadUpdateDao"
-    c = "UploadUpdateDao.kt"
-    d = "failPermanently$suspendImpl"
-    e = {
-        0x3e,
-        0x3f
-    }
-.end annotation
+.class public final Llyu;
+.super Llyw;
 
 
 # instance fields
-.field synthetic a:Ljava/lang/Object;
+.field public a:D
 
-.field b:I
+.field public b:D
 
-.field c:Llyf;
+.field public c:D
 
-.field final synthetic d:Llzn;
+.field public d:D
 
-.field e:Llzn;
+.field public e:D
 
 
 # direct methods
-.method public constructor <init>(Llyz;Loku;)V
-    .locals 0
+.method public constructor <init>(D)V
+    .locals 2
 
-    check-cast p1, Llzn;
+    invoke-direct {p0}, Llyw;-><init>()V
 
-    iput-object p1, p0, Llyu;->d:Llzn;
+    const-wide/high16 v0, 0x3ff0000000000000L    # 1.0
 
-    invoke-direct {p0, p2}, Lolh;-><init>(Loku;)V
+    iput-wide v0, p0, Llyu;->a:D
+
+    iput-wide p1, p0, Llyu;->b:D
+
+    iput-wide p1, p0, Llyu;->c:D
+
+    iput-wide p1, p0, Llyu;->d:D
+
+    iput-wide p1, p0, Llyu;->e:D
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final b(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 1
+.method public final a()Llyw;
+    .locals 3
 
-    iput-object p1, p0, Llyu;->a:Ljava/lang/Object;
+    new-instance v0, Llyu;
 
-    iget p1, p0, Llyu;->b:I
+    iget-wide v1, p0, Llyu;->e:D
 
-    const/high16 v0, -0x80000000
+    invoke-direct {v0, v1, v2}, Llyu;-><init>(D)V
 
-    or-int/2addr p1, v0
+    iget-wide v1, p0, Llyu;->a:D
 
-    iput p1, p0, Llyu;->b:I
+    iput-wide v1, v0, Llyu;->a:D
 
-    iget-object p1, p0, Llyu;->d:Llzn;
+    iget-wide v1, p0, Llyu;->b:D
 
-    const/4 v0, 0x0
+    iput-wide v1, v0, Llyu;->b:D
 
-    invoke-static {p1, v0, p0}, Llyz;->b(Llyz;Llyf;Loku;)Ljava/lang/Object;
+    iget-wide v1, p0, Llyu;->c:D
 
-    move-result-object p1
+    iput-wide v1, v0, Llyu;->c:D
 
-    return-object p1
+    iget-wide v1, p0, Llyu;->d:D
+
+    iput-wide v1, v0, Llyu;->d:D
+
+    iget-wide v1, p0, Llyu;->e:D
+
+    iput-wide v1, v0, Llyu;->e:D
+
+    return-object v0
 .end method

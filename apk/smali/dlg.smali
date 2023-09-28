@@ -1,80 +1,93 @@
 .class public final Ldlg;
 .super Ljava/lang/Object;
 
+# interfaces
+.implements Lbvv;
 
-# static fields
-.field public static final a:Lj$/time/Duration;
 
-.field private static final b:Lmwa;
+# instance fields
+.field private final a:Ldll;
+
+.field private final b:Ldli;
+
+.field private final c:Llar;
+
+.field private final d:Lbqg;
+
+.field private final e:Lfhv;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 7
+.method public constructor <init>(Ldll;Lbqg;Lfhv;Ldli;Llar;)V
+    .locals 0
 
-    const-wide/16 v0, 0x2
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-static {v0, v1}, Lj$/time/Duration;->ofSeconds(J)Lj$/time/Duration;
+    iput-object p1, p0, Ldlg;->a:Ldll;
 
-    move-result-object v0
+    iput-object p2, p0, Ldlg;->d:Lbqg;
 
-    sput-object v0, Ldlg;->a:Lj$/time/Duration;
+    iput-object p3, p0, Ldlg;->e:Lfhv;
 
-    sget-object v1, Lgya;->j:Lgya;
+    iput-object p4, p0, Ldlg;->b:Ldli;
 
-    const-string v2, "\'VID\'_yyyyMMdd_HHmmss"
-
-    sget-object v3, Lgya;->p:Lgya;
-
-    const-string v4, "\'VID_SNAP\'_yyyyMMdd_HHmmss"
-
-    sget-object v5, Lgya;->n:Lgya;
-
-    const-string v6, "\'TIMELAPSE\'_yyyyMMdd_HHmmss"
-
-    invoke-static/range {v1 .. v6}, Lmwa;->p(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Lmwa;
-
-    move-result-object v0
-
-    sput-object v0, Ldlg;->b:Lmwa;
+    iput-object p5, p0, Ldlg;->c:Llar;
 
     return-void
 .end method
 
-.method public static a(Lgya;J)Ljava/lang/String;
+
+# virtual methods
+.method public final synthetic c()Ljava/lang/String;
     .locals 1
 
-    new-instance v0, Ljava/util/GregorianCalendar;
+    invoke-static {p0}, Laas;->g(Lbvv;)Ljava/lang/String;
 
-    invoke-direct {v0}, Ljava/util/GregorianCalendar;-><init>()V
+    move-result-object v0
 
-    invoke-virtual {v0, p1, p2}, Ljava/util/Calendar;->setTimeInMillis(J)V
+    return-object v0
+.end method
 
-    new-instance p1, Ljava/text/SimpleDateFormat;
+.method public final fz()Lpht;
+    .locals 4
 
-    sget-object p2, Ldlg;->b:Lmwa;
+    iget-object v0, p0, Ldlg;->c:Llar;
 
-    invoke-virtual {p2, p0}, Lmwa;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    iget-object v1, p0, Ldlg;->e:Lfhv;
 
-    move-result-object p0
+    iget-object v2, p0, Ldlg;->b:Ldli;
 
-    check-cast p0, Ljava/lang/String;
+    invoke-static {v0, v1, v2}, Lenl;->f(Llar;Lfhv;Lfik;)V
 
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    iget-object v0, p0, Ldlg;->d:Lbqg;
 
-    sget-object p2, Ljava/util/Locale;->US:Ljava/util/Locale;
+    invoke-virtual {v0}, Lbqg;->i()Llap;
 
-    invoke-direct {p1, p0, p2}, Ljava/text/SimpleDateFormat;-><init>(Ljava/lang/String;Ljava/util/Locale;)V
+    move-result-object v0
 
-    invoke-virtual {p1, v0}, Ljava/text/DateFormat;->setCalendar(Ljava/util/Calendar;)V
+    iget-object v1, p0, Ldlg;->a:Ldll;
 
-    invoke-virtual {v0}, Ljava/util/Calendar;->getTime()Ljava/util/Date;
+    iget-object v2, p0, Ldlg;->b:Ldli;
 
-    move-result-object p0
+    iget-object v3, v1, Ldll;->a:Ljava/util/List;
 
-    invoke-virtual {p1, p0}, Ljava/text/DateFormat;->format(Ljava/util/Date;)Ljava/lang/String;
+    invoke-interface {v3, v2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    move-result-object p0
+    new-instance v3, Ldlk;
 
-    return-object p0
+    invoke-direct {v3, v1, v2}, Ldlk;-><init>(Ldll;Ldlt;)V
+
+    invoke-virtual {v0, v3}, Llap;->c(Llie;)V
+
+    const/4 v0, 0x1
+
+    invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lplk;->V(Ljava/lang/Object;)Lpht;
+
+    move-result-object v0
+
+    return-object v0
 .end method

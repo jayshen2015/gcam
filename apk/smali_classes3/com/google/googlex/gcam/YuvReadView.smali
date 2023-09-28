@@ -12,7 +12,7 @@
 .method public constructor <init>()V
     .locals 2
 
-    invoke-static {}, Lcom/google/googlex/gcam/GcamModuleJNI;->new_YuvReadView__SWIG_0()J
+    invoke-static {}, Lcom/google/googlex/gcam/GcamModuleJNI;->new_YuvReadView__SWIG_3()J
 
     move-result-wide v0
 
@@ -35,39 +35,9 @@
     return-void
 .end method
 
-.method public constructor <init>(Lcom/google/googlex/gcam/YuvReadView;)V
-    .locals 2
-
-    iget-wide v0, p1, Lcom/google/googlex/gcam/YuvReadView;->a:J
-
-    invoke-static {v0, v1, p1}, Lcom/google/googlex/gcam/GcamModuleJNI;->new_YuvReadView__SWIG_1(JLcom/google/googlex/gcam/YuvReadView;)J
-
-    move-result-wide v0
-
-    invoke-direct {p0, v0, v1}, Lcom/google/googlex/gcam/YuvReadView;-><init>(J)V
-
-    return-void
-.end method
-
 
 # virtual methods
-.method public final a()Lnrj;
-    .locals 2
-
-    iget-wide v0, p0, Lcom/google/googlex/gcam/YuvReadView;->a:J
-
-    invoke-static {v0, v1, p0}, Lcom/google/googlex/gcam/GcamModuleJNI;->YuvReadView_yuv_format(JLcom/google/googlex/gcam/YuvReadView;)I
-
-    move-result v0
-
-    invoke-static {v0}, Lnrj;->a(I)Lnrj;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public final declared-synchronized b()V
+.method public declared-synchronized a()V
     .locals 5
 
     monitor-enter p0
@@ -109,10 +79,46 @@
     throw v0
 .end method
 
-.method protected final finalize()V
+.method public final b()I
+    .locals 2
+
+    iget-wide v0, p0, Lcom/google/googlex/gcam/YuvReadView;->a:J
+
+    invoke-static {v0, v1, p0}, Lcom/google/googlex/gcam/GcamModuleJNI;->YuvReadView_height(JLcom/google/googlex/gcam/YuvReadView;)I
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public final c()I
+    .locals 2
+
+    iget-wide v0, p0, Lcom/google/googlex/gcam/YuvReadView;->a:J
+
+    invoke-static {v0, v1, p0}, Lcom/google/googlex/gcam/GcamModuleJNI;->YuvReadView_width(JLcom/google/googlex/gcam/YuvReadView;)I
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public final d()I
+    .locals 2
+
+    iget-wide v0, p0, Lcom/google/googlex/gcam/YuvReadView;->a:J
+
+    invoke-static {v0, v1, p0}, Lcom/google/googlex/gcam/GcamModuleJNI;->YuvReadView_yuv_format(JLcom/google/googlex/gcam/YuvReadView;)I
+
+    move-result v0
+
+    return v0
+.end method
+
+.method protected finalize()V
     .locals 0
 
-    invoke-virtual {p0}, Lcom/google/googlex/gcam/YuvReadView;->b()V
+    invoke-virtual {p0}, Lcom/google/googlex/gcam/YuvReadView;->a()V
 
     return-void
 .end method

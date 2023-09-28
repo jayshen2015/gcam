@@ -2,152 +2,156 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Logk;
+.implements Lcle;
+
+
+# static fields
+.field private static final a:Louj;
 
 
 # instance fields
-.field private final a:Loiw;
+.field private final b:Landroid/os/ParcelFileDescriptor;
 
-.field private final b:Loiw;
-
-.field private final c:Loiw;
-
-.field private final d:Loiw;
-
-.field private final e:Loiw;
-
-.field private final f:Loiw;
-
-.field private final g:Loiw;
-
-.field private final h:Loiw;
-
-.field private final i:Loiw;
-
-.field private final j:Loiw;
-
-.field private final k:Loiw;
-
-.field private final l:Loiw;
+.field private final c:Ljava/io/FileDescriptor;
 
 
 # direct methods
-.method public constructor <init>(Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 1
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const-string v0, "com/google/android/apps/camera/camcorder/file/FileDescriptorOutputVideo"
 
-    iput-object p1, p0, Lckx;->a:Loiw;
+    invoke-static {v0}, Louj;->h(Ljava/lang/String;)Louj;
 
-    iput-object p2, p0, Lckx;->b:Loiw;
+    move-result-object v0
 
-    iput-object p3, p0, Lckx;->c:Loiw;
-
-    iput-object p4, p0, Lckx;->d:Loiw;
-
-    iput-object p5, p0, Lckx;->e:Loiw;
-
-    iput-object p6, p0, Lckx;->f:Loiw;
-
-    iput-object p7, p0, Lckx;->g:Loiw;
-
-    iput-object p8, p0, Lckx;->h:Loiw;
-
-    iput-object p9, p0, Lckx;->i:Loiw;
-
-    iput-object p10, p0, Lckx;->j:Loiw;
-
-    iput-object p11, p0, Lckx;->k:Loiw;
-
-    iput-object p12, p0, Lckx;->l:Loiw;
+    sput-object v0, Lckx;->a:Louj;
 
     return-void
 .end method
 
-.method public static b(Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;)Lckx;
-    .locals 14
+.method public constructor <init>(Landroid/os/ParcelFileDescriptor;)V
+    .locals 0
 
-    new-instance v13, Lckx;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    move-object v0, v13
+    iput-object p1, p0, Lckx;->b:Landroid/os/ParcelFileDescriptor;
 
-    move-object v1, p0
+    invoke-virtual {p1}, Landroid/os/ParcelFileDescriptor;->getFileDescriptor()Ljava/io/FileDescriptor;
 
-    move-object v2, p1
+    move-result-object p1
 
-    move-object/from16 v3, p2
+    iput-object p1, p0, Lckx;->c:Ljava/io/FileDescriptor;
 
-    move-object/from16 v4, p3
-
-    move-object/from16 v5, p4
-
-    move-object/from16 v6, p5
-
-    move-object/from16 v7, p6
-
-    move-object/from16 v8, p7
-
-    move-object/from16 v9, p8
-
-    move-object/from16 v10, p9
-
-    move-object/from16 v11, p10
-
-    move-object/from16 v12, p11
-
-    invoke-direct/range {v0 .. v12}, Lckx;-><init>(Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;)V
-
-    return-object v13
+    return-void
 .end method
 
 
 # virtual methods
-.method public final a()Lckw;
-    .locals 14
+.method public final a()J
+    .locals 2
 
-    iget-object v1, p0, Lckx;->a:Loiw;
+    iget-object v0, p0, Lckx;->b:Landroid/os/ParcelFileDescriptor;
 
-    iget-object v2, p0, Lckx;->b:Loiw;
+    invoke-virtual {v0}, Landroid/os/ParcelFileDescriptor;->getStatSize()J
 
-    iget-object v3, p0, Lckx;->c:Loiw;
+    move-result-wide v0
 
-    iget-object v4, p0, Lckx;->d:Loiw;
-
-    iget-object v5, p0, Lckx;->e:Loiw;
-
-    iget-object v6, p0, Lckx;->f:Loiw;
-
-    iget-object v7, p0, Lckx;->g:Loiw;
-
-    iget-object v8, p0, Lckx;->h:Loiw;
-
-    iget-object v9, p0, Lckx;->i:Loiw;
-
-    iget-object v10, p0, Lckx;->j:Loiw;
-
-    iget-object v0, p0, Lckx;->k:Loiw;
-
-    invoke-static {v0}, Logn;->b(Loiw;)Loiw;
-
-    move-result-object v11
-
-    iget-object v12, p0, Lckx;->l:Loiw;
-
-    new-instance v13, Lckw;
-
-    move-object v0, v13
-
-    invoke-direct/range {v0 .. v12}, Lckw;-><init>(Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;)V
-
-    return-object v13
+    return-wide v0
 .end method
 
-.method public final bridge synthetic get()Ljava/lang/Object;
+.method public final synthetic b()Lhss;
     .locals 1
 
-    invoke-virtual {p0}, Lckx;->a()Lckw;
+    invoke-static {p0}, Ladg;->d(Lcle;)Lhss;
 
     move-result-object v0
 
     return-object v0
+.end method
+
+.method public final c()Lojc;
+    .locals 1
+
+    sget-object v0, Loih;->a:Loih;
+
+    return-object v0
+.end method
+
+.method public final close()V
+    .locals 4
+
+    :try_start_0
+    iget-object v0, p0, Lckx;->b:Landroid/os/ParcelFileDescriptor;
+
+    invoke-virtual {v0}, Landroid/os/ParcelFileDescriptor;->close()V
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
+
+    return-void
+
+    :catch_0
+    move-exception v0
+
+    sget-object v1, Lckx;->a:Louj;
+
+    invoke-virtual {v1}, Loue;->b()Lova;
+
+    move-result-object v1
+
+    const/16 v2, 0x1ca
+
+    const-string v3, "Error closing parcelFileDescriptor."
+
+    invoke-static {v1, v3, v2, v0}, Ld;->w(Lova;Ljava/lang/String;CLjava/lang/Throwable;)V
+
+    return-void
+.end method
+
+.method public final d()Lojc;
+    .locals 1
+
+    sget-object v0, Loih;->a:Loih;
+
+    return-object v0
+.end method
+
+.method public final e()Lpht;
+    .locals 1
+
+    iget-object v0, p0, Lckx;->c:Ljava/io/FileDescriptor;
+
+    invoke-static {v0}, Lplk;->V(Ljava/lang/Object;)Lpht;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public final f()Ljava/io/FileDescriptor;
+    .locals 1
+
+    const/4 v0, 0x0
+
+    throw v0
+.end method
+
+.method public final g()V
+    .locals 0
+
+    return-void
+.end method
+
+.method public final h()Z
+    .locals 1
+
+    const/4 v0, 0x1
+
+    return v0
+.end method
+
+.method public final i()V
+    .locals 0
+
+    return-void
 .end method

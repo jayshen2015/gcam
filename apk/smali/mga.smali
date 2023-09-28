@@ -1,159 +1,98 @@
-.class public final Lmga;
-.super Lahx;
+.class public final enum Lmga;
+.super Ljava/lang/Enum;
 
 
 # static fields
-.field public static final CREATOR:Landroid/os/Parcelable$Creator;
+.field public static final enum a:Lmga;
 
+.field public static final enum b:Lmga;
 
-# instance fields
-.field public final a:I
+.field public static final enum c:Lmga;
 
-.field public final b:I
+.field public static final enum d:Lmga;
 
-.field public final e:Z
-
-.field public final f:Z
-
-.field public final g:Z
+.field private static final synthetic e:[Lmga;
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 2
+    .locals 9
 
-    new-instance v0, Lmfz;
+    new-instance v0, Lmga;
 
-    const/4 v1, 0x0
+    const-string v1, "PHOTO_OCR"
 
-    invoke-direct {v0, v1}, Lmfz;-><init>(I)V
+    const/4 v2, 0x0
 
-    sput-object v0, Lmga;->CREATOR:Landroid/os/Parcelable$Creator;
+    invoke-direct {v0, v1, v2}, Lmga;-><init>(Ljava/lang/String;I)V
 
-    return-void
-.end method
+    sput-object v0, Lmga;->a:Lmga;
 
-.method public constructor <init>(Landroid/os/Parcel;Ljava/lang/ClassLoader;)V
-    .locals 2
+    new-instance v1, Lmga;
 
-    invoke-direct {p0, p1, p2}, Lahx;-><init>(Landroid/os/Parcel;Ljava/lang/ClassLoader;)V
+    const-string v3, "BARHOPPER"
 
-    invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
+    const/4 v4, 0x1
 
-    move-result p2
+    invoke-direct {v1, v3, v4}, Lmga;-><init>(Ljava/lang/String;I)V
 
-    iput p2, p0, Lmga;->a:I
+    sput-object v1, Lmga;->b:Lmga;
 
-    invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
+    new-instance v3, Lmga;
 
-    move-result p2
+    const-string v5, "PHILEASSTORM"
 
-    iput p2, p0, Lmga;->b:I
+    const/4 v6, 0x2
 
-    invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
+    invoke-direct {v3, v5, v6}, Lmga;-><init>(Ljava/lang/String;I)V
 
-    move-result p2
+    sput-object v3, Lmga;->c:Lmga;
 
-    const/4 v0, 0x0
+    new-instance v5, Lmga;
 
-    const/4 v1, 0x1
+    const-string v7, "NONE"
 
-    if-ne p2, v1, :cond_0
+    const/4 v8, 0x3
 
-    const/4 p2, 0x1
+    invoke-direct {v5, v7, v8}, Lmga;-><init>(Ljava/lang/String;I)V
 
-    goto :goto_0
+    sput-object v5, Lmga;->d:Lmga;
 
-    :cond_0
-    const/4 p2, 0x0
+    const/4 v7, 0x4
 
-    :goto_0
-    iput-boolean p2, p0, Lmga;->e:Z
+    new-array v7, v7, [Lmga;
 
-    invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
+    aput-object v0, v7, v2
 
-    move-result p2
+    aput-object v1, v7, v4
 
-    if-ne p2, v1, :cond_1
+    aput-object v3, v7, v6
 
-    const/4 p2, 0x1
+    aput-object v5, v7, v8
 
-    goto :goto_1
-
-    :cond_1
-    const/4 p2, 0x0
-
-    :goto_1
-    iput-boolean p2, p0, Lmga;->f:Z
-
-    invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
-
-    move-result p1
-
-    if-ne p1, v1, :cond_2
-
-    const/4 v0, 0x1
-
-    :cond_2
-    iput-boolean v0, p0, Lmga;->g:Z
+    sput-object v7, Lmga;->e:[Lmga;
 
     return-void
 .end method
 
-.method public constructor <init>(Landroid/os/Parcelable;Lcom/google/android/material/bottomsheet/BottomSheetBehavior;)V
+.method private constructor <init>(Ljava/lang/String;I)V
     .locals 0
 
-    invoke-direct {p0, p1}, Lahx;-><init>(Landroid/os/Parcelable;)V
-
-    iget p1, p2, Lcom/google/android/material/bottomsheet/BottomSheetBehavior;->x:I
-
-    iput p1, p0, Lmga;->a:I
-
-    iget p1, p2, Lcom/google/android/material/bottomsheet/BottomSheetBehavior;->c:I
-
-    iput p1, p0, Lmga;->b:I
-
-    iget-boolean p1, p2, Lcom/google/android/material/bottomsheet/BottomSheetBehavior;->a:Z
-
-    iput-boolean p1, p0, Lmga;->e:Z
-
-    iget-boolean p1, p2, Lcom/google/android/material/bottomsheet/BottomSheetBehavior;->u:Z
-
-    iput-boolean p1, p0, Lmga;->f:Z
-
-    iget-boolean p1, p2, Lcom/google/android/material/bottomsheet/BottomSheetBehavior;->v:Z
-
-    iput-boolean p1, p0, Lmga;->g:Z
+    invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
 .end method
 
+.method public static values()[Lmga;
+    .locals 1
 
-# virtual methods
-.method public final writeToParcel(Landroid/os/Parcel;I)V
-    .locals 0
+    sget-object v0, Lmga;->e:[Lmga;
 
-    invoke-super {p0, p1, p2}, Lahx;->writeToParcel(Landroid/os/Parcel;I)V
+    invoke-virtual {v0}, [Lmga;->clone()Ljava/lang/Object;
 
-    iget p2, p0, Lmga;->a:I
+    move-result-object v0
 
-    invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeInt(I)V
+    check-cast v0, [Lmga;
 
-    iget p2, p0, Lmga;->b:I
-
-    invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeInt(I)V
-
-    iget-boolean p2, p0, Lmga;->e:Z
-
-    invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeInt(I)V
-
-    iget-boolean p2, p0, Lmga;->f:Z
-
-    invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeInt(I)V
-
-    iget-boolean p2, p0, Lmga;->g:Z
-
-    invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeInt(I)V
-
-    return-void
+    return-object v0
 .end method

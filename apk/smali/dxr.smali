@@ -3,24 +3,50 @@
 
 
 # static fields
-.field public static final a:I
+.field public static final a:Louj;
+
+
+# instance fields
+.field public final b:Landroid/content/ContentResolver;
+
+.field public final c:Lljf;
+
+.field public final d:Liki;
+
+.field public final e:Liki;
+
+.field public final f:Lnez;
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 3
+    .locals 1
 
-    const/16 v0, 0xc
+    const-string v0, "com/google/android/apps/camera/gallery/specialtype/SpecialTypeMetadataHandler"
 
-    const/4 v1, 0x2
+    invoke-static {v0}, Louj;->h(Ljava/lang/String;)Louj;
 
-    const v2, 0xbb80
+    move-result-object v0
 
-    invoke-static {v2, v0, v1}, Landroid/media/AudioRecord;->getMinBufferSize(III)I
+    sput-object v0, Ldxr;->a:Louj;
 
-    move-result v0
+    return-void
+.end method
 
-    sput v0, Ldxr;->a:I
+.method public constructor <init>(Landroid/content/ContentResolver;Liki;Liki;Lljf;Lnez;[B)V
+    .locals 0
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Ldxr;->b:Landroid/content/ContentResolver;
+
+    iput-object p2, p0, Ldxr;->d:Liki;
+
+    iput-object p3, p0, Ldxr;->e:Liki;
+
+    iput-object p4, p0, Ldxr;->c:Lljf;
+
+    iput-object p5, p0, Ldxr;->f:Lnez;
 
     return-void
 .end method

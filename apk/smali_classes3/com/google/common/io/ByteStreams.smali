@@ -18,9 +18,9 @@
 .method static constructor <clinit>()V
     .locals 1
 
-    new-instance v0, Lnew;
+    new-instance v0, Loza;
 
-    invoke-direct {v0}, Lnew;-><init>()V
+    invoke-direct {v0}, Loza;-><init>()V
 
     sput-object v0, Lcom/google/common/io/ByteStreams;->NULL_OUTPUT_STREAM:Ljava/io/OutputStream;
 
@@ -38,62 +38,36 @@
 .method private static combineBuffers(Ljava/util/Queue;I)[B
     .locals 6
 
-    invoke-interface {p0}, Ljava/util/Queue;->isEmpty()Z
+    new-array v0, p1, [B
 
-    move-result v0
-
-    const/4 v1, 0x0
-
-    if-eqz v0, :cond_0
-
-    new-array p0, v1, [B
-
-    return-object p0
-
-    :cond_0
-    invoke-interface {p0}, Ljava/util/Queue;->remove()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, [B
-
-    array-length v2, v0
-
-    if-ne v2, p1, :cond_1
-
-    return-object v0
-
-    :cond_1
-    invoke-static {v0, p1}, Ljava/util/Arrays;->copyOf([BI)[B
-
-    move-result-object v0
-
-    sub-int v2, p1, v2
+    move v1, p1
 
     :goto_0
-    if-lez v2, :cond_2
+    if-lez v1, :cond_0
 
     invoke-interface {p0}, Ljava/util/Queue;->remove()Ljava/lang/Object;
 
-    move-result-object v3
+    move-result-object v2
 
-    check-cast v3, [B
+    check-cast v2, [B
 
-    array-length v4, v3
+    array-length v3, v2
 
-    invoke-static {v2, v4}, Ljava/lang/Math;->min(II)I
+    invoke-static {v1, v3}, Ljava/lang/Math;->min(II)I
 
-    move-result v4
+    move-result v3
 
-    sub-int v5, p1, v2
+    const/4 v4, 0x0
 
-    invoke-static {v3, v1, v0, v5, v4}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
+    sub-int v5, p1, v1
 
-    sub-int/2addr v2, v4
+    invoke-static {v2, v4, v0, v5, v3}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
+
+    sub-int/2addr v1, v3
 
     goto :goto_0
 
-    :cond_2
+    :cond_0
     return-object v0
 .end method
 
@@ -285,74 +259,74 @@
 .method public static limit(Ljava/io/InputStream;J)Ljava/io/InputStream;
     .locals 1
 
-    new-instance v0, Lnez;
+    new-instance v0, Lozd;
 
-    invoke-direct {v0, p0, p1, p2}, Lnez;-><init>(Ljava/io/InputStream;J)V
+    invoke-direct {v0, p0, p1, p2}, Lozd;-><init>(Ljava/io/InputStream;J)V
 
     return-object v0
 .end method
 
-.method public static newDataInput(Ljava/io/ByteArrayInputStream;)Lnet;
+.method public static newDataInput(Ljava/io/ByteArrayInputStream;)Loyx;
     .locals 1
 
-    new-instance v0, Lnex;
+    new-instance v0, Lozb;
 
     invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    invoke-direct {v0, p0}, Lnex;-><init>(Ljava/io/ByteArrayInputStream;)V
+    invoke-direct {v0, p0}, Lozb;-><init>(Ljava/io/ByteArrayInputStream;)V
 
     return-object v0
 .end method
 
-.method public static newDataInput([B)Lnet;
+.method public static newDataInput([B)Loyx;
     .locals 1
 
     new-instance v0, Ljava/io/ByteArrayInputStream;
 
     invoke-direct {v0, p0}, Ljava/io/ByteArrayInputStream;-><init>([B)V
 
-    invoke-static {v0}, Lcom/google/common/io/ByteStreams;->newDataInput(Ljava/io/ByteArrayInputStream;)Lnet;
+    invoke-static {v0}, Lcom/google/common/io/ByteStreams;->newDataInput(Ljava/io/ByteArrayInputStream;)Loyx;
 
     move-result-object p0
 
     return-object p0
 .end method
 
-.method public static newDataInput([BI)Lnet;
+.method public static newDataInput([BI)Loyx;
     .locals 2
 
     array-length v0, p0
 
-    invoke-static {p1, v0}, Lmoz;->x(II)V
-
-    sub-int/2addr v0, p1
+    invoke-static {p1, v0}, Lobr;->aY(II)V
 
     new-instance v1, Ljava/io/ByteArrayInputStream;
 
+    sub-int/2addr v0, p1
+
     invoke-direct {v1, p0, p1, v0}, Ljava/io/ByteArrayInputStream;-><init>([BII)V
 
-    invoke-static {v1}, Lcom/google/common/io/ByteStreams;->newDataInput(Ljava/io/ByteArrayInputStream;)Lnet;
+    invoke-static {v1}, Lcom/google/common/io/ByteStreams;->newDataInput(Ljava/io/ByteArrayInputStream;)Loyx;
 
     move-result-object p0
 
     return-object p0
 .end method
 
-.method public static newDataOutput()Lneu;
+.method public static newDataOutput()Loyy;
     .locals 1
 
     new-instance v0, Ljava/io/ByteArrayOutputStream;
 
     invoke-direct {v0}, Ljava/io/ByteArrayOutputStream;-><init>()V
 
-    invoke-static {v0}, Lcom/google/common/io/ByteStreams;->newDataOutput(Ljava/io/ByteArrayOutputStream;)Lneu;
+    invoke-static {v0}, Lcom/google/common/io/ByteStreams;->newDataOutput(Ljava/io/ByteArrayOutputStream;)Loyy;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method public static newDataOutput(I)Lneu;
+.method public static newDataOutput(I)Loyy;
     .locals 3
 
     if-ltz p0, :cond_0
@@ -361,7 +335,7 @@
 
     invoke-direct {v0, p0}, Ljava/io/ByteArrayOutputStream;-><init>(I)V
 
-    invoke-static {v0}, Lcom/google/common/io/ByteStreams;->newDataOutput(Ljava/io/ByteArrayOutputStream;)Lneu;
+    invoke-static {v0}, Lcom/google/common/io/ByteStreams;->newDataOutput(Ljava/io/ByteArrayOutputStream;)Loyy;
 
     move-result-object p0
 
@@ -393,14 +367,14 @@
     throw v0
 .end method
 
-.method public static newDataOutput(Ljava/io/ByteArrayOutputStream;)Lneu;
+.method public static newDataOutput(Ljava/io/ByteArrayOutputStream;)Loyy;
     .locals 1
 
-    new-instance v0, Lney;
+    new-instance v0, Lozc;
 
     invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    invoke-direct {v0, p0}, Lney;-><init>(Ljava/io/ByteArrayOutputStream;)V
+    invoke-direct {v0, p0}, Lozc;-><init>(Ljava/io/ByteArrayOutputStream;)V
 
     return-object v0
 .end method
@@ -428,7 +402,7 @@
 
     array-length v2, p1
 
-    invoke-static {p2, v1, v2}, Lmoz;->o(III)V
+    invoke-static {p2, v1, v2}, Lobr;->aP(III)V
 
     :goto_0
     if-ge v0, p3, :cond_1
@@ -486,7 +460,7 @@
     goto :goto_2
 .end method
 
-.method public static readBytes(Ljava/io/InputStream;Lnev;)Ljava/lang/Object;
+.method public static readBytes(Ljava/io/InputStream;Loyz;)Ljava/lang/Object;
     .locals 3
 
     invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
@@ -506,14 +480,14 @@
 
     if-eq v1, v2, :cond_1
 
-    invoke-interface {p1}, Lnev;->b()Z
+    invoke-interface {p1}, Loyz;->b()Z
 
     move-result v1
 
     if-nez v1, :cond_0
 
     :cond_1
-    invoke-interface {p1}, Lnev;->a()Ljava/lang/Object;
+    invoke-interface {p1}, Loyz;->a()Ljava/lang/Object;
 
     move-result-object p0
 
@@ -523,11 +497,11 @@
 .method public static readFully(Ljava/io/InputStream;[B)V
     .locals 2
 
-    const/4 v0, 0x0
+    array-length v0, p1
 
-    array-length v1, p1
+    const/4 v1, 0x0
 
-    invoke-static {p0, p1, v0, v1}, Lcom/google/common/io/ByteStreams;->readFully(Ljava/io/InputStream;[BII)V
+    invoke-static {p0, p1, v1, v0}, Lcom/google/common/io/ByteStreams;->readFully(Ljava/io/InputStream;[BII)V
 
     return-void
 .end method
@@ -548,7 +522,9 @@
 
     new-instance p2, Ljava/lang/StringBuilder;
 
-    invoke-direct {p2}, Ljava/lang/StringBuilder;-><init>()V
+    const/16 v0, 0x51
+
+    invoke-direct {p2, v0}, Ljava/lang/StringBuilder;-><init>(I)V
 
     const-string v0, "reached end of stream after reading "
 
@@ -593,7 +569,9 @@
 
     new-instance v2, Ljava/lang/StringBuilder;
 
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+    const/16 v3, 0x64
+
+    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(I)V
 
     const-string v3, "reached end of stream after skipping "
 
@@ -650,11 +628,11 @@
 .method static skipUpTo(Ljava/io/InputStream;J)J
     .locals 10
 
-    const/4 v0, 0x0
+    const-wide/16 v0, 0x0
 
-    const-wide/16 v1, 0x0
+    const/4 v2, 0x0
 
-    move-wide v3, v1
+    move-wide v3, v0
 
     :goto_0
     cmp-long v5, v3, p1
@@ -667,7 +645,7 @@
 
     move-result-wide v7
 
-    cmp-long v9, v7, v1
+    cmp-long v9, v7, v0
 
     if-nez v9, :cond_1
 
@@ -679,14 +657,14 @@
 
     long-to-int v6, v5
 
-    if-nez v0, :cond_0
+    if-nez v2, :cond_0
 
-    new-array v0, v6, [B
+    new-array v2, v6, [B
 
     :cond_0
     const/4 v5, 0x0
 
-    invoke-virtual {p0, v0, v5, v6}, Ljava/io/InputStream;->read([BII)I
+    invoke-virtual {p0, v2, v5, v6}, Ljava/io/InputStream;->read([BII)I
 
     move-result v5
 
@@ -730,31 +708,31 @@
 .method public static toByteArray(Ljava/io/InputStream;J)[B
     .locals 6
 
-    const-wide/16 v0, 0x0
+    const/4 v0, 0x0
 
-    const/4 v2, 0x0
+    const/4 v1, 0x1
 
-    const/4 v3, 0x1
+    const-wide/16 v2, 0x0
 
-    cmp-long v4, p1, v0
+    cmp-long v4, p1, v2
 
     if-ltz v4, :cond_0
 
-    const/4 v0, 0x1
+    const/4 v2, 0x1
 
     goto :goto_0
 
     :cond_0
-    const/4 v0, 0x0
+    const/4 v2, 0x0
 
     :goto_0
-    const-string v1, "expectedSize (%s) must be non-negative"
+    const-string v3, "expectedSize (%s) must be non-negative"
 
-    invoke-static {v0, v1, p1, p2}, Lmoz;->i(ZLjava/lang/String;J)V
+    invoke-static {v2, v3, p1, p2}, Lobr;->aJ(ZLjava/lang/String;J)V
 
-    const-wide/32 v0, 0x7ffffff7
+    const-wide/32 v2, 0x7ffffff7
 
-    cmp-long v4, p1, v0
+    cmp-long v4, p1, v2
 
     if-gtz v4, :cond_4
 
@@ -762,20 +740,20 @@
 
     new-array p1, p2, [B
 
-    move v0, p2
+    move v2, p2
 
     :goto_1
-    const/4 v1, -0x1
+    const/4 v3, -0x1
 
-    if-lez v0, :cond_2
+    if-lez v2, :cond_2
 
-    sub-int v4, p2, v0
+    sub-int v4, p2, v2
 
-    invoke-virtual {p0, p1, v4, v0}, Ljava/io/InputStream;->read([BII)I
+    invoke-virtual {p0, p1, v4, v2}, Ljava/io/InputStream;->read([BII)I
 
     move-result v5
 
-    if-ne v5, v1, :cond_1
+    if-ne v5, v3, :cond_1
 
     invoke-static {p1, v4}, Ljava/util/Arrays;->copyOf([BI)[B
 
@@ -784,39 +762,39 @@
     return-object p0
 
     :cond_1
-    sub-int/2addr v0, v5
+    sub-int/2addr v2, v5
 
     goto :goto_1
 
     :cond_2
     invoke-virtual {p0}, Ljava/io/InputStream;->read()I
 
-    move-result v0
+    move-result v2
 
-    if-ne v0, v1, :cond_3
+    if-ne v2, v3, :cond_3
 
     return-object p1
 
     :cond_3
-    new-instance v1, Ljava/util/ArrayDeque;
+    new-instance v3, Ljava/util/ArrayDeque;
 
     const/16 v4, 0x16
 
-    invoke-direct {v1, v4}, Ljava/util/ArrayDeque;-><init>(I)V
+    invoke-direct {v3, v4}, Ljava/util/ArrayDeque;-><init>(I)V
 
-    invoke-interface {v1, p1}, Ljava/util/Queue;->add(Ljava/lang/Object;)Z
+    invoke-interface {v3, p1}, Ljava/util/Queue;->add(Ljava/lang/Object;)Z
 
-    new-array p1, v3, [B
+    new-array p1, v1, [B
 
-    int-to-byte v0, v0
+    int-to-byte v2, v2
 
-    aput-byte v0, p1, v2
+    aput-byte v2, p1, v0
 
-    invoke-interface {v1, p1}, Ljava/util/Queue;->add(Ljava/lang/Object;)Z
+    invoke-interface {v3, p1}, Ljava/util/Queue;->add(Ljava/lang/Object;)Z
 
-    add-int/2addr p2, v3
+    add-int/2addr p2, v1
 
-    invoke-static {p0, v1, p2}, Lcom/google/common/io/ByteStreams;->toByteArrayInternal(Ljava/io/InputStream;Ljava/util/Queue;I)[B
+    invoke-static {p0, v3, p2}, Lcom/google/common/io/ByteStreams;->toByteArrayInternal(Ljava/io/InputStream;Ljava/util/Queue;I)[B
 
     move-result-object p0
 
@@ -827,7 +805,9 @@
 
     new-instance v0, Ljava/lang/StringBuilder;
 
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+    const/16 v1, 0x3e
+
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(I)V
 
     invoke-virtual {v0, p1, p2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
@@ -853,30 +833,14 @@
 .method private static toByteArrayInternal(Ljava/io/InputStream;Ljava/util/Queue;I)[B
     .locals 6
 
-    invoke-static {p2}, Ljava/lang/Integer;->highestOneBit(I)I
-
-    move-result v0
-
-    add-int/2addr v0, v0
-
-    const/16 v1, 0x80
-
-    invoke-static {v1, v0}, Ljava/lang/Math;->max(II)I
-
-    move-result v0
-
-    const/16 v1, 0x2000
-
-    invoke-static {v1, v0}, Ljava/lang/Math;->min(II)I
-
-    move-result v0
+    const/16 v0, 0x2000
 
     :goto_0
     const/4 v1, -0x1
 
     const v2, 0x7ffffff7
 
-    if-ge p2, v2, :cond_3
+    if-ge p2, v2, :cond_2
 
     sub-int/2addr v2, p2
 
@@ -915,36 +879,22 @@
     goto :goto_1
 
     :cond_1
-    const/16 v1, 0x1000
+    int-to-long v0, v0
 
-    if-ge v0, v1, :cond_2
+    add-long/2addr v0, v0
 
-    const/4 v1, 0x4
-
-    goto :goto_2
-
-    :cond_2
-    const/4 v1, 0x2
-
-    :goto_2
-    int-to-long v2, v0
-
-    int-to-long v0, v1
-
-    mul-long v2, v2, v0
-
-    invoke-static {v2, v3}, Lnsy;->S(J)I
+    invoke-static {v0, v1}, Loxh;->F(J)I
 
     move-result v0
 
     goto :goto_0
 
-    :cond_3
+    :cond_2
     invoke-virtual {p0}, Ljava/io/InputStream;->read()I
 
     move-result p0
 
-    if-ne p0, v1, :cond_4
+    if-ne p0, v1, :cond_3
 
     invoke-static {p1, v2}, Lcom/google/common/io/ByteStreams;->combineBuffers(Ljava/util/Queue;I)[B
 
@@ -952,18 +902,18 @@
 
     return-object p0
 
-    :cond_4
+    :cond_3
     new-instance p0, Ljava/lang/OutOfMemoryError;
 
     const-string p1, "input is too large to fit in a byte array"
 
     invoke-direct {p0, p1}, Ljava/lang/OutOfMemoryError;-><init>(Ljava/lang/String;)V
 
-    goto :goto_4
+    goto :goto_3
 
-    :goto_3
+    :goto_2
     throw p0
 
-    :goto_4
-    goto :goto_3
+    :goto_3
+    goto :goto_2
 .end method

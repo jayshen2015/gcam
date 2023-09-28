@@ -1,65 +1,137 @@
-.class public final Lmfd;
+.class public final synthetic Lmfd;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lahc;
+.implements Lmff;
 
 
 # instance fields
-.field final synthetic a:Landroidx/coordinatorlayout/widget/CoordinatorLayout;
+.field public final synthetic a:Ldhd;
 
-.field final synthetic b:Lcom/google/android/material/appbar/AppBarLayout;
-
-.field final synthetic c:Landroid/view/View;
-
-.field final synthetic d:I
-
-.field final synthetic e:Lcom/google/android/material/appbar/AppBarLayout$BaseBehavior;
+.field private final synthetic b:I
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/material/appbar/AppBarLayout$BaseBehavior;Landroidx/coordinatorlayout/widget/CoordinatorLayout;Lcom/google/android/material/appbar/AppBarLayout;Landroid/view/View;I)V
+.method public synthetic constructor <init>(Ldhd;I)V
     .locals 0
 
-    iput-object p1, p0, Lmfd;->e:Lcom/google/android/material/appbar/AppBarLayout$BaseBehavior;
-
-    iput-object p2, p0, Lmfd;->a:Landroidx/coordinatorlayout/widget/CoordinatorLayout;
-
-    iput-object p3, p0, Lmfd;->b:Lcom/google/android/material/appbar/AppBarLayout;
-
-    iput-object p4, p0, Lmfd;->c:Landroid/view/View;
-
-    iput p5, p0, Lmfd;->d:I
+    iput p2, p0, Lmfd;->b:I
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lmfd;->a:Ldhd;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Landroid/view/View;)Z
-    .locals 6
+.method public final a(D)V
+    .locals 13
 
-    iget-object v0, p0, Lmfd;->e:Lcom/google/android/material/appbar/AppBarLayout$BaseBehavior;
+    iget v0, p0, Lmfd;->b:I
 
-    iget-object v1, p0, Lmfd;->a:Landroidx/coordinatorlayout/widget/CoordinatorLayout;
+    packed-switch v0, :pswitch_data_0
 
-    iget-object v2, p0, Lmfd;->b:Lcom/google/android/material/appbar/AppBarLayout;
+    iget-object v0, p0, Lmfd;->a:Ldhd;
 
-    iget-object v3, p0, Lmfd;->c:Landroid/view/View;
+    const/4 v1, 0x6
 
-    iget v4, p0, Lmfd;->d:I
+    const-wide/high16 v4, 0x3fd0000000000000L    # 0.25
 
-    const/4 p1, 0x0
+    move-wide v2, p1
 
-    filled-new-array {p1, p1}, [I
+    invoke-virtual/range {v0 .. v5}, Ldhd;->a(IDD)V
 
-    move-result-object v5
+    return-void
 
-    invoke-virtual/range {v0 .. v5}, Lcom/google/android/material/appbar/AppBarLayout$BaseBehavior;->C(Landroidx/coordinatorlayout/widget/CoordinatorLayout;Lcom/google/android/material/appbar/AppBarLayout;Landroid/view/View;I[I)V
+    :pswitch_0
+    iget-object v1, p0, Lmfd;->a:Ldhd;
 
-    const/4 p1, 0x1
+    const/4 v2, 0x5
 
-    return p1
+    const-wide v5, 0x405f400000000000L    # 125.0
+
+    move-wide v3, p1
+
+    invoke-virtual/range {v1 .. v6}, Ldhd;->a(IDD)V
+
+    return-void
+
+    :pswitch_1
+    iget-object v7, p0, Lmfd;->a:Ldhd;
+
+    const/4 v8, 0x4
+
+    const-wide/high16 v11, 0x3fd0000000000000L    # 0.25
+
+    move-wide v9, p1
+
+    invoke-virtual/range {v7 .. v12}, Ldhd;->a(IDD)V
+
+    return-void
+
+    :pswitch_2
+    iget-object v0, p0, Lmfd;->a:Ldhd;
+
+    const/4 v1, 0x3
+
+    const-wide v4, 0x4051800000000000L    # 70.0
+
+    move-wide v2, p1
+
+    invoke-virtual/range {v0 .. v5}, Ldhd;->a(IDD)V
+
+    return-void
+
+    :pswitch_3
+    iget-object v6, p0, Lmfd;->a:Ldhd;
+
+    const/4 v7, 0x2
+
+    const-wide v10, 0x3ff199999999999aL    # 1.1
+
+    move-wide v8, p1
+
+    invoke-virtual/range {v6 .. v11}, Ldhd;->a(IDD)V
+
+    return-void
+
+    :pswitch_4
+    iget-object v0, p0, Lmfd;->a:Ldhd;
+
+    const/4 v1, 0x0
+
+    const-wide v4, 0x4051800000000000L    # 70.0
+
+    move-wide v2, p1
+
+    invoke-virtual/range {v0 .. v5}, Ldhd;->a(IDD)V
+
+    return-void
+
+    :pswitch_5
+    iget-object v6, p0, Lmfd;->a:Ldhd;
+
+    const/4 v7, 0x1
+
+    const-wide/high16 v10, 0x3fd0000000000000L    # 0.25
+
+    move-wide v8, p1
+
+    invoke-virtual/range {v6 .. v11}, Ldhd;->a(IDD)V
+
+    return-void
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_5
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method

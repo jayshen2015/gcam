@@ -1,40 +1,40 @@
-.class final Lhen;
-.super Lhfl;
-
-
-# instance fields
-.field final synthetic a:Lhes;
-
-
-# direct methods
-.method public constructor <init>(Lhes;)V
-    .locals 0
-
-    iput-object p1, p0, Lhen;->a:Lhes;
-
-    invoke-direct {p0}, Lhfl;-><init>()V
-
-    return-void
-.end method
+.class public interface abstract Lhen;
+.super Ljava/lang/Object;
 
 
 # virtual methods
-.method public final i()V
-    .locals 2
+.method public abstract a()Lhem;
+.end method
 
-    iget-object v0, p0, Lhen;->a:Lhes;
+.method public abstract b(J)Llmr;
+.end method
 
-    iget-object v0, v0, Lhes;->a:Lhiu;
+.method public abstract c()Llmr;
+.end method
 
-    invoke-virtual {v0}, Lhiu;->e()V
+.method public abstract d()Llmr;
+.end method
 
-    iget-object v0, p0, Lhen;->a:Lhes;
+.method public abstract e()Llmr;
+.end method
 
-    iget-object v1, v0, Lhes;->a:Lhiu;
+.method public abstract f()Llmv;
+.end method
 
-    iget-object v0, v0, Lhes;->b:Lhiw;
+.method public abstract g(Ljava/util/List;)Loom;
+.end method
 
-    invoke-virtual {v1, v0}, Lhiu;->g(Lhiw;)V
+.method public abstract h(Ljava/util/List;)Loom;
+.end method
 
-    return-void
+.method public abstract i()Ljava/util/List;
+.end method
+
+.method public abstract j()Ljava/util/List;
+.end method
+
+.method public abstract k(I)V
+.end method
+
+.method public abstract l()Llqd;
 .end method

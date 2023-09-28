@@ -1,247 +1,97 @@
-.class public final synthetic Lgna;
+.class public final Lgna;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Ljava/util/function/BiConsumer;
-
-
-# static fields
-.field public static final synthetic a:Lgna;
-
-.field public static final synthetic b:Lgna;
-
-.field public static final synthetic c:Lgna;
-
-.field public static final synthetic d:Lgna;
-
-.field public static final synthetic e:Lgna;
-
-.field public static final synthetic f:Lgna;
-
-.field public static final synthetic g:Lgna;
+.implements Lpys;
 
 
 # instance fields
-.field private final synthetic h:I
+.field private final a:Lqkg;
+
+.field private final b:Lqkg;
+
+.field private final c:Lqkg;
+
+.field private final d:Lqkg;
 
 
 # direct methods
-.method static synthetic constructor <clinit>()V
-    .locals 2
+.method public constructor <init>(Lqkg;Lqkg;Lqkg;Lqkg;)V
+    .locals 0
 
-    new-instance v0, Lgna;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const/4 v1, 0x6
+    iput-object p1, p0, Lgna;->a:Lqkg;
 
-    invoke-direct {v0, v1}, Lgna;-><init>(I)V
+    iput-object p2, p0, Lgna;->b:Lqkg;
 
-    sput-object v0, Lgna;->g:Lgna;
+    iput-object p3, p0, Lgna;->c:Lqkg;
 
-    new-instance v0, Lgna;
-
-    const/4 v1, 0x5
-
-    invoke-direct {v0, v1}, Lgna;-><init>(I)V
-
-    sput-object v0, Lgna;->f:Lgna;
-
-    new-instance v0, Lgna;
-
-    const/4 v1, 0x4
-
-    invoke-direct {v0, v1}, Lgna;-><init>(I)V
-
-    sput-object v0, Lgna;->e:Lgna;
-
-    new-instance v0, Lgna;
-
-    const/4 v1, 0x3
-
-    invoke-direct {v0, v1}, Lgna;-><init>(I)V
-
-    sput-object v0, Lgna;->d:Lgna;
-
-    new-instance v0, Lgna;
-
-    const/4 v1, 0x2
-
-    invoke-direct {v0, v1}, Lgna;-><init>(I)V
-
-    sput-object v0, Lgna;->c:Lgna;
-
-    new-instance v0, Lgna;
-
-    const/4 v1, 0x1
-
-    invoke-direct {v0, v1}, Lgna;-><init>(I)V
-
-    sput-object v0, Lgna;->b:Lgna;
-
-    new-instance v0, Lgna;
-
-    const/4 v1, 0x0
-
-    invoke-direct {v0, v1}, Lgna;-><init>(I)V
-
-    sput-object v0, Lgna;->a:Lgna;
+    iput-object p4, p0, Lgna;->d:Lqkg;
 
     return-void
 .end method
 
-.method private synthetic constructor <init>(I)V
-    .locals 0
+.method public static a(Lqkg;Lqkg;Lqkg;Lqkg;)Lgna;
+    .locals 1
 
-    iput p1, p0, Lgna;->h:I
+    new-instance v0, Lgna;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {v0, p0, p1, p2, p3}, Lgna;-><init>(Lqkg;Lqkg;Lqkg;Lqkg;)V
 
-    return-void
+    return-object v0
 .end method
 
 
 # virtual methods
-.method public final accept(Ljava/lang/Object;Ljava/lang/Object;)V
-    .locals 1
+.method public final b()Lgmy;
+    .locals 5
 
-    iget v0, p0, Lgna;->h:I
+    iget-object v0, p0, Lgna;->a:Lqkg;
 
-    packed-switch v0, :pswitch_data_0
+    check-cast v0, Lpyw;
 
-    check-cast p1, Llhz;
+    invoke-virtual {v0}, Lpyw;->a()Ljava/util/Set;
 
-    check-cast p2, Lmym;
+    move-result-object v0
 
-    invoke-virtual {p1, p2}, Llhz;->e(Lmym;)V
+    iget-object v1, p0, Lgna;->b:Lqkg;
 
-    return-void
+    invoke-interface {v1}, Lqkg;->get()Ljava/lang/Object;
 
-    :pswitch_0
-    check-cast p1, Lmwl;
+    move-result-object v1
 
-    invoke-virtual {p1, p2}, Lmwl;->g(Ljava/lang/Object;)V
+    check-cast v1, Lpih;
 
-    return-void
+    iget-object v2, p0, Lgna;->c:Lqkg;
 
-    :pswitch_1
-    check-cast p1, Lmvq;
+    invoke-interface {v2}, Lqkg;->get()Ljava/lang/Object;
 
-    invoke-virtual {p1, p2}, Lmvq;->g(Ljava/lang/Object;)V
+    move-result-object v2
 
-    return-void
+    check-cast v2, Ljava/util/concurrent/Executor;
 
-    :pswitch_2
-    check-cast p1, Lhrc;
+    iget-object v3, p0, Lgna;->d:Lqkg;
 
-    check-cast p2, Lhrb;
+    invoke-interface {v3}, Lqkg;->get()Ljava/lang/Object;
 
-    invoke-interface {p2}, Lhrb;->b()V
+    move-result-object v3
 
-    return-void
+    check-cast v3, Lljf;
 
-    :pswitch_3
-    check-cast p1, Ljava/lang/Long;
+    new-instance v4, Lgmy;
 
-    check-cast p2, Lkpb;
+    invoke-direct {v4, v0, v1, v2, v3}, Lgmy;-><init>(Ljava/util/Set;Lpih;Ljava/util/concurrent/Executor;Lljf;)V
 
-    if-eqz p2, :cond_0
-
-    invoke-interface {p2}, Lkpb;->close()V
-
-    :cond_0
-    return-void
-
-    :pswitch_4
-    check-cast p1, Lgeh;
-
-    check-cast p2, Ljava/lang/Boolean;
-
-    return-void
-
-    :pswitch_5
-    check-cast p1, Ljava/lang/Long;
-
-    check-cast p2, Lkpb;
-
-    if-eqz p2, :cond_1
-
-    invoke-interface {p2}, Lkpb;->close()V
-
-    :cond_1
-    return-void
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_5
-        :pswitch_4
-        :pswitch_3
-        :pswitch_2
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
+    return-object v4
 .end method
 
-.method public final synthetic andThen(Ljava/util/function/BiConsumer;)Ljava/util/function/BiConsumer;
+.method public final bridge synthetic get()Ljava/lang/Object;
     .locals 1
 
-    iget v0, p0, Lgna;->h:I
+    invoke-virtual {p0}, Lgna;->b()Lgmy;
 
-    packed-switch v0, :pswitch_data_0
+    move-result-object v0
 
-    invoke-static {p0, p1}, Lj$/util/function/BiConsumer$-CC;->$default$andThen(Ljava/util/function/BiConsumer;Ljava/util/function/BiConsumer;)Ljava/util/function/BiConsumer;
-
-    move-result-object p1
-
-    return-object p1
-
-    :pswitch_0
-    invoke-static {p0, p1}, Lj$/util/function/BiConsumer$-CC;->$default$andThen(Ljava/util/function/BiConsumer;Ljava/util/function/BiConsumer;)Ljava/util/function/BiConsumer;
-
-    move-result-object p1
-
-    return-object p1
-
-    :pswitch_1
-    invoke-static {p0, p1}, Lj$/util/function/BiConsumer$-CC;->$default$andThen(Ljava/util/function/BiConsumer;Ljava/util/function/BiConsumer;)Ljava/util/function/BiConsumer;
-
-    move-result-object p1
-
-    return-object p1
-
-    :pswitch_2
-    invoke-static {p0, p1}, Lj$/util/function/BiConsumer$-CC;->$default$andThen(Ljava/util/function/BiConsumer;Ljava/util/function/BiConsumer;)Ljava/util/function/BiConsumer;
-
-    move-result-object p1
-
-    return-object p1
-
-    :pswitch_3
-    invoke-static {p0, p1}, Lj$/util/function/BiConsumer$-CC;->$default$andThen(Ljava/util/function/BiConsumer;Ljava/util/function/BiConsumer;)Ljava/util/function/BiConsumer;
-
-    move-result-object p1
-
-    return-object p1
-
-    :pswitch_4
-    invoke-static {p0, p1}, Lj$/util/function/BiConsumer$-CC;->$default$andThen(Ljava/util/function/BiConsumer;Ljava/util/function/BiConsumer;)Ljava/util/function/BiConsumer;
-
-    move-result-object p1
-
-    return-object p1
-
-    :pswitch_5
-    invoke-static {p0, p1}, Lj$/util/function/BiConsumer$-CC;->$default$andThen(Ljava/util/function/BiConsumer;Ljava/util/function/BiConsumer;)Ljava/util/function/BiConsumer;
-
-    move-result-object p1
-
-    return-object p1
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_5
-        :pswitch_4
-        :pswitch_3
-        :pswitch_2
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
+    return-object v0
 .end method

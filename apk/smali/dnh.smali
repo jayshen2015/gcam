@@ -1,22 +1,42 @@
-.class public final Ldnh;
-.super Ljava/lang/Object;
+.class final Ldnh;
+.super Ldmz;
 
 
-# static fields
-.field public static final a:Lday;
+# instance fields
+.field final synthetic b:Ldni;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
+.method public constructor <init>(Ldni;)V
+    .locals 0
 
-    new-instance v0, Lday;
+    iput-object p1, p0, Ldnh;->b:Ldni;
 
-    const/16 v1, 0x13
+    invoke-direct {p0, p1}, Ldmz;-><init>(Ldna;)V
 
-    invoke-direct {v0, v1}, Lday;-><init>(I)V
+    return-void
+.end method
 
-    sput-object v0, Ldnh;->a:Lday;
+
+# virtual methods
+.method public final b(Ldmg;)V
+    .locals 1
+
+    iget-object v0, p0, Ldnh;->b:Ldni;
+
+    iget-object v0, v0, Ldni;->o:Lihu;
+
+    invoke-virtual {v0}, Lihu;->e()V
+
+    invoke-super {p0, p1}, Ldmz;->b(Ldmg;)V
+
+    iget-object p1, p0, Ldnh;->b:Ldni;
+
+    iget-object v0, p1, Ldni;->o:Lihu;
+
+    iget-object p1, p1, Ldni;->q:Lihw;
+
+    invoke-virtual {v0, p1}, Lihu;->g(Lihw;)V
 
     return-void
 .end method

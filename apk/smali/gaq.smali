@@ -1,45 +1,69 @@
-.class public final synthetic Lgaq;
+.class final Lgaq;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Lgex;
 
 
 # instance fields
-.field public final synthetic a:Lnph;
+.field final synthetic a:Lpih;
 
-.field public final synthetic b:Loiw;
+.field final synthetic b:Lgar;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lnph;Loiw;)V
+.method public constructor <init>(Lgar;Lpih;)V
     .locals 0
 
+    iput-object p1, p0, Lgaq;->b:Lgar;
+
+    iput-object p2, p0, Lgaq;->a:Lpih;
+
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lgaq;->a:Lnph;
-
-    iput-object p2, p0, Lgaq;->b:Loiw;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final run()V
+.method public final a()V
     .locals 2
 
-    iget-object v0, p0, Lgaq;->a:Lnph;
+    iget-object v0, p0, Lgaq;->a:Lpih;
 
-    iget-object v1, p0, Lgaq;->b:Loiw;
+    const/4 v1, 0x0
 
-    check-cast v1, Lgat;
+    invoke-virtual {v0, v1}, Lpih;->o(Ljava/lang/Object;)Z
 
-    invoke-virtual {v1}, Lgat;->a()Lgam;
+    return-void
+.end method
 
-    move-result-object v1
+.method public final b(Ljava/lang/Throwable;)V
+    .locals 1
 
-    invoke-virtual {v0, v1}, Lnph;->e(Ljava/lang/Object;)Z
+    iget-object p1, p0, Lgaq;->a:Lpih;
+
+    const/4 v0, 0x0
+
+    invoke-virtual {p1, v0}, Lpih;->o(Ljava/lang/Object;)Z
+
+    return-void
+.end method
+
+.method public final c(Lmad;)V
+    .locals 1
+
+    iget-object v0, p0, Lgaq;->a:Lpih;
+
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    invoke-virtual {v0, p1}, Lpih;->o(Ljava/lang/Object;)Z
+
+    iget-object p1, p0, Lgaq;->b:Lgar;
+
+    iget-object p1, p1, Lgar;->a:Llmr;
+
+    invoke-interface {p1}, Llmr;->close()V
 
     return-void
 .end method

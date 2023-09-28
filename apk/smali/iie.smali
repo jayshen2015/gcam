@@ -1,30 +1,35 @@
 .class public final Liie;
-.super Laei;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Lpys;
+
+
+# instance fields
+.field private final a:Liid;
 
 
 # direct methods
-.method public constructor <init>()V
+.method public constructor <init>(Liid;)V
     .locals 0
 
-    invoke-direct {p0}, Laei;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Liie;->a:Liid;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final b(Landroid/view/View;Lagt;)V
-    .locals 0
+.method public final bridge synthetic get()Ljava/lang/Object;
+    .locals 1
 
-    invoke-super {p0, p1, p2}, Laei;->b(Landroid/view/View;Lagt;)V
+    iget-object v0, p0, Liie;->a:Liid;
 
-    const-class p1, Landroid/widget/Button;
+    iget-object v0, v0, Liid;->a:Lcom/google/android/apps/camera/stats/timing/CameraActivityTiming;
 
-    invoke-virtual {p1}, Ljava/lang/Class;->getName()Ljava/lang/String;
+    invoke-static {v0}, Lqmd;->ae(Ljava/lang/Object;)V
 
-    move-result-object p1
-
-    invoke-virtual {p2, p1}, Lagt;->i(Ljava/lang/CharSequence;)V
-
-    return-void
+    return-object v0
 .end method

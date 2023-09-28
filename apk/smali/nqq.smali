@@ -1,104 +1,115 @@
-.class public final Lnqq;
+.class final Lnqq;
 .super Ljava/lang/Object;
 
-
-# static fields
-.field public static final a:Lnqq;
-
-.field public static final b:Lnqq;
-
-.field public static final c:Lnqq;
-
-.field private static e:I
+# interfaces
+.implements Ljava/util/concurrent/Callable;
 
 
 # instance fields
-.field public final d:Ljava/lang/String;
+.field final synthetic a:Lnnr;
+
+.field final synthetic b:J
+
+.field final synthetic c:Lnqu;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
-
-    new-instance v0, Lnqq;
-
-    invoke-direct {v0}, Lnqq;-><init>()V
-
-    sput-object v0, Lnqq;->a:Lnqq;
-
-    new-instance v0, Lnqq;
-
-    const-string v1, "kMeteringFrame"
-
-    invoke-direct {v0, v1}, Lnqq;-><init>(Ljava/lang/String;)V
-
-    new-instance v0, Lnqq;
-
-    const-string v1, "kPayloadFrame"
-
-    invoke-direct {v0, v1}, Lnqq;-><init>(Ljava/lang/String;)V
-
-    sput-object v0, Lnqq;->b:Lnqq;
-
-    new-instance v0, Lnqq;
-
-    const-string v1, "kPayloadAuxFrame"
-
-    invoke-direct {v0, v1}, Lnqq;-><init>(Ljava/lang/String;)V
-
-    new-instance v0, Lnqq;
-
-    const-string v1, "kViewfinderFrame"
-
-    invoke-direct {v0, v1}, Lnqq;-><init>(Ljava/lang/String;)V
-
-    sput-object v0, Lnqq;->c:Lnqq;
-
-    const/4 v0, 0x0
-
-    sput v0, Lnqq;->e:I
-
-    return-void
-.end method
-
-.method private constructor <init>()V
-    .locals 1
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    const-string v0, "kUnknownFrameType"
-
-    iput-object v0, p0, Lnqq;->d:Ljava/lang/String;
-
-    const/4 v0, 0x1
-
-    sput v0, Lnqq;->e:I
-
-    return-void
-.end method
-
-.method private constructor <init>(Ljava/lang/String;)V
+.method public constructor <init>(Lnqu;Lnnr;J)V
     .locals 0
 
+    iput-object p1, p0, Lnqq;->c:Lnqu;
+
+    iput-object p2, p0, Lnqq;->a:Lnnr;
+
+    iput-wide p3, p0, Lnqq;->b:J
+
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lnqq;->d:Ljava/lang/String;
-
-    sget p1, Lnqq;->e:I
-
-    add-int/lit8 p1, p1, 0x1
-
-    sput p1, Lnqq;->e:I
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final toString()Ljava/lang/String;
-    .locals 1
+.method public final bridge synthetic call()Ljava/lang/Object;
+    .locals 4
 
-    iget-object v0, p0, Lnqq;->d:Ljava/lang/String;
+    iget-object v0, p0, Lnqq;->c:Lnqu;
 
-    return-object v0
+    iget-object v0, v0, Lnqu;->b:Laiy;
+
+    invoke-virtual {v0}, Laiy;->e()Lake;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lnqq;->a:Lnnr;
+
+    invoke-static {v1}, Lnpy;->r(Lnnr;)I
+
+    move-result v1
+
+    int-to-long v1, v1
+
+    const/4 v3, 0x1
+
+    invoke-virtual {v0, v3, v1, v2}, Lake;->e(IJ)V
+
+    iget-wide v1, p0, Lnqq;->b:J
+
+    const/4 v3, 0x2
+
+    invoke-virtual {v0, v3, v1, v2}, Lake;->e(IJ)V
+
+    iget-object v1, p0, Lnqq;->c:Lnqu;
+
+    iget-object v1, v1, Lnqu;->a:Laii;
+
+    invoke-virtual {v1}, Laii;->h()V
+
+    :try_start_0
+    invoke-virtual {v0}, Lake;->a()I
+
+    move-result v1
+
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v1
+
+    iget-object v2, p0, Lnqq;->c:Lnqu;
+
+    iget-object v2, v2, Lnqu;->a:Laii;
+
+    invoke-virtual {v2}, Laii;->j()V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    iget-object v2, p0, Lnqq;->c:Lnqu;
+
+    iget-object v2, v2, Lnqu;->a:Laii;
+
+    invoke-virtual {v2}, Laii;->i()V
+
+    iget-object v2, p0, Lnqq;->c:Lnqu;
+
+    iget-object v2, v2, Lnqu;->b:Laiy;
+
+    invoke-virtual {v2, v0}, Laiy;->f(Lake;)V
+
+    return-object v1
+
+    :catchall_0
+    move-exception v1
+
+    iget-object v2, p0, Lnqq;->c:Lnqu;
+
+    iget-object v2, v2, Lnqu;->a:Laii;
+
+    invoke-virtual {v2}, Laii;->i()V
+
+    iget-object v2, p0, Lnqq;->c:Lnqu;
+
+    iget-object v2, v2, Lnqu;->b:Laiy;
+
+    invoke-virtual {v2, v0}, Laiy;->f(Lake;)V
+
+    throw v1
 .end method

@@ -1,34 +1,36 @@
-.class public interface abstract Lnyo;
-.super Ljava/lang/Object;
+.class final Lnyo;
+.super Landroid/graphics/drawable/Drawable$ConstantState;
+
+
+# instance fields
+.field final synthetic a:Lnyp;
+
+
+# direct methods
+.method public constructor <init>(Lnyp;)V
+    .locals 0
+
+    iput-object p1, p0, Lnyo;->a:Lnyp;
+
+    invoke-direct {p0}, Landroid/graphics/drawable/Drawable$ConstantState;-><init>()V
+
+    return-void
+.end method
 
 
 # virtual methods
-.method public abstract a(Ljava/lang/Object;)I
+.method public final getChangingConfigurations()I
+    .locals 1
+
+    const/4 v0, 0x0
+
+    return v0
 .end method
 
-.method public abstract b(Ljava/lang/Object;)I
-.end method
+.method public final newDrawable()Landroid/graphics/drawable/Drawable;
+    .locals 1
 
-.method public abstract e()Ljava/lang/Object;
-.end method
+    iget-object v0, p0, Lnyo;->a:Lnyp;
 
-.method public abstract f(Ljava/lang/Object;)V
-.end method
-
-.method public abstract g(Ljava/lang/Object;Ljava/lang/Object;)V
-.end method
-
-.method public abstract h(Ljava/lang/Object;Lnyk;Lnwh;)V
-.end method
-
-.method public abstract i(Ljava/lang/Object;[BIILnvj;)V
-.end method
-
-.method public abstract j(Ljava/lang/Object;Ljava/lang/Object;)Z
-.end method
-
-.method public abstract k(Ljava/lang/Object;)Z
-.end method
-
-.method public abstract l(Ljava/lang/Object;Llzz;)V
+    return-object v0
 .end method

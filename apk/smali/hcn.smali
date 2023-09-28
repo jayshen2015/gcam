@@ -1,72 +1,87 @@
 .class public final Lhcn;
-.super Lkoy;
+.super Ljava/lang/Object;
 
-
-# instance fields
-.field private final a:Ljava/lang/Runnable;
-
-.field private b:Z
+# interfaces
+.implements Llzv;
 
 
 # direct methods
-.method public constructor <init>(Lkpb;Ljava/lang/Runnable;)V
+.method public constructor <init>()V
     .locals 0
 
-    invoke-direct {p0, p1}, Lkoy;-><init>(Lkpb;)V
-
-    const/4 p1, 0x0
-
-    iput-boolean p1, p0, Lhcn;->b:Z
-
-    iput-object p2, p0, Lhcn;->a:Ljava/lang/Runnable;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final close()V
+.method public final a()I
     .locals 1
 
-    monitor-enter p0
-
-    :try_start_0
-    iget-boolean v0, p0, Lhcn;->b:Z
-
-    if-nez v0, :cond_0
-
-    const/4 v0, 0x1
-
-    iput-boolean v0, p0, Lhcn;->b:Z
-
-    goto :goto_0
-
-    :cond_0
     const/4 v0, 0x0
 
-    :goto_0
-    monitor-exit p0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    return v0
+.end method
 
-    if-eqz v0, :cond_1
+.method public final b()J
+    .locals 2
 
-    invoke-super {p0}, Lkoy;->close()V
+    const-wide/16 v0, 0x0
 
-    iget-object v0, p0, Lhcn;->a:Ljava/lang/Runnable;
+    return-wide v0
+.end method
 
-    invoke-interface {v0}, Ljava/lang/Runnable;->run()V
+.method public final c()Llzq;
+    .locals 1
 
-    :cond_1
-    return-void
+    new-instance v0, Lhcm;
 
-    :catchall_0
-    move-exception v0
+    invoke-direct {v0}, Lhcm;-><init>()V
 
-    :try_start_1
-    monitor-exit p0
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+    return-object v0
+.end method
 
-    throw v0
+.method public final d(Landroid/hardware/camera2/CaptureResult$Key;)Ljava/lang/Object;
+    .locals 0
+
+    const/4 p1, 0x0
+
+    return-object p1
+.end method
+
+.method public final e()Ljava/lang/String;
+    .locals 1
+
+    const-string v0, "none"
+
+    return-object v0
+.end method
+
+.method public final f()Ljava/util/List;
+    .locals 1
+
+    invoke-static {}, Loom;->l()Loom;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public final g()Ljava/util/Map;
+    .locals 1
+
+    sget-object v0, Lorw;->a:Loor;
+
+    return-object v0
+.end method
+
+.method public final j()Lkkm;
+    .locals 1
+
+    invoke-static {}, Lkkm;->b()Lkkm;
+
+    move-result-object v0
+
+    return-object v0
 .end method

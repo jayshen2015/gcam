@@ -2,42 +2,34 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Ljava/util/concurrent/Executor;
+.implements Lkwg;
 
 
 # instance fields
-.field public final synthetic a:Lkxe;
-
-.field private final b:Ljava/util/concurrent/Executor;
+.field private final a:Ljava/util/Set;
 
 
 # direct methods
-.method public constructor <init>(Lkxe;Ljava/util/concurrent/Executor;)V
+.method public constructor <init>(Lkwg;)V
     .locals 0
 
-    iput-object p1, p0, Lkxd;->a:Lkxe;
+    invoke-interface {p1}, Lkwg;->a()Ljava/util/Set;
+
+    move-result-object p1
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p2, p0, Lkxd;->b:Ljava/util/concurrent/Executor;
+    iput-object p1, p0, Lkxd;->a:Ljava/util/Set;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final execute(Ljava/lang/Runnable;)V
-    .locals 3
+.method public final a()Ljava/util/Set;
+    .locals 1
 
-    iget-object v0, p0, Lkxd;->b:Ljava/util/concurrent/Executor;
+    iget-object v0, p0, Lkxd;->a:Ljava/util/Set;
 
-    new-instance v1, Lkcw;
-
-    const/16 v2, 0xd
-
-    invoke-direct {v1, p0, p1, v2}, Lkcw;-><init>(Lkxd;Ljava/lang/Runnable;I)V
-
-    invoke-interface {v0, v1}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
-
-    return-void
+    return-object v0
 .end method

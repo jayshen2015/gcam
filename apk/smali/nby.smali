@@ -1,126 +1,91 @@
-.class final Lnby;
-.super Lncb;
+.class public final synthetic Lnby;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field private final a:Ljava/util/Map;
-
-.field private final b:Ljava/util/Map;
-
-.field private final c:Lnbz;
+.field public final synthetic a:Lnbz;
 
 
 # direct methods
-.method public constructor <init>(Lnbx;)V
-    .locals 3
+.method public synthetic constructor <init>(Lnbz;)V
+    .locals 0
 
-    invoke-direct {p0}, Lncb;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    new-instance v0, Ljava/util/HashMap;
-
-    invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
-
-    iput-object v0, p0, Lnby;->a:Ljava/util/Map;
-
-    new-instance v1, Ljava/util/HashMap;
-
-    invoke-direct {v1}, Ljava/util/HashMap;-><init>()V
-
-    iput-object v1, p0, Lnby;->b:Ljava/util/Map;
-
-    iget-object v2, p1, Lnbx;->c:Ljava/util/Map;
-
-    invoke-interface {v0, v2}, Ljava/util/Map;->putAll(Ljava/util/Map;)V
-
-    iget-object v0, p1, Lnbx;->d:Ljava/util/Map;
-
-    invoke-interface {v1, v0}, Ljava/util/Map;->putAll(Ljava/util/Map;)V
-
-    iget-object p1, p1, Lnbx;->f:Lnbz;
-
-    iput-object p1, p0, Lnby;->c:Lnbz;
+    iput-object p1, p0, Lnby;->a:Lnbz;
 
     return-void
 .end method
 
 
 # virtual methods
-.method protected final a(Lnbc;Ljava/lang/Object;Ljava/lang/Object;)V
-    .locals 1
+.method public final run()V
+    .locals 5
 
-    iget-object v0, p0, Lnby;->a:Ljava/util/Map;
+    iget-object v0, p0, Lnby;->a:Lnbz;
 
-    invoke-interface {v0, p1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    const/4 v1, 0x0
 
-    move-result-object v0
+    :try_start_0
+    iget-object v2, v0, Lnbz;->c:Ljava/util/concurrent/atomic/AtomicReference;
 
-    check-cast v0, Lnca;
+    iget-object v3, v0, Lnbz;->d:Lnox;
 
-    if-eqz v0, :cond_0
+    iget-object v4, v0, Lnbz;->b:Lpyn;
 
-    invoke-interface {v0, p1, p2, p3}, Lnca;->a(Lnbc;Ljava/lang/Object;Ljava/lang/Object;)V
+    invoke-interface {v4}, Lpyn;->get()Ljava/lang/Object;
 
-    return-void
+    move-result-object v4
 
-    :cond_0
-    invoke-virtual {p1, p2, p3}, Lnbc;->e(Ljava/lang/Object;Lnbb;)V
+    check-cast v4, Lnbw;
 
-    return-void
-.end method
+    invoke-virtual {v4}, Lnbw;->b()Z
 
-.method protected final b(Lnbc;Ljava/util/Iterator;Ljava/lang/Object;)V
-    .locals 1
+    move-result v4
 
-    iget-object v0, p0, Lnby;->b:Ljava/util/Map;
+    if-eqz v4, :cond_0
 
-    invoke-interface {v0, p1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    iget-object v4, v0, Lnbz;->b:Lpyn;
 
-    move-result-object v0
+    invoke-interface {v4}, Lpyn;->get()Ljava/lang/Object;
 
-    check-cast v0, Lnbz;
+    move-result-object v4
 
-    if-eqz v0, :cond_0
+    check-cast v4, Lnbw;
 
-    invoke-interface {v0, p1, p2, p3}, Lnbz;->a(Lnbc;Ljava/util/Iterator;Ljava/lang/Object;)V
-
-    return-void
-
-    :cond_0
-    iget-object v0, p0, Lnby;->c:Lnbz;
-
-    if-eqz v0, :cond_2
-
-    iget-object v0, p0, Lnby;->a:Ljava/util/Map;
-
-    invoke-interface {v0, p1}, Ljava/util/Map;->containsKey(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_1
+    iget v4, v4, Lnbw;->a:F
 
     goto :goto_0
 
-    :cond_1
-    invoke-virtual {p1, p2, p3}, Lnbc;->f(Ljava/util/Iterator;Lnbb;)V
+    :cond_0
+    const/4 v4, 0x0
 
-    return-void
-
-    :cond_2
     :goto_0
-    invoke-interface {p2}, Ljava/util/Iterator;->hasNext()Z
+    invoke-virtual {v3, v4}, Lnox;->a(F)Lncg;
 
-    move-result v0
+    move-result-object v3
 
-    if-eqz v0, :cond_3
+    invoke-virtual {v2, v3}, Ljava/util/concurrent/atomic/AtomicReference;->set(Ljava/lang/Object;)V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    invoke-interface {p2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    return-void
+
+    :catchall_0
+    move-exception v2
+
+    iget-object v2, v0, Lnbz;->c:Ljava/util/concurrent/atomic/AtomicReference;
+
+    iget-object v0, v0, Lnbz;->d:Lnox;
+
+    invoke-virtual {v0, v1}, Lnox;->a(F)Lncg;
 
     move-result-object v0
 
-    invoke-virtual {p0, p1, v0, p3}, Lncb;->a(Lnbc;Ljava/lang/Object;Ljava/lang/Object;)V
+    invoke-virtual {v2, v0}, Ljava/util/concurrent/atomic/AtomicReference;->set(Ljava/lang/Object;)V
 
-    goto :goto_0
-
-    :cond_3
     return-void
 .end method

@@ -1,256 +1,171 @@
 .class public final Lcnm;
-.super Lnws;
-
-# interfaces
-.implements Lnxz;
-
-
-# static fields
-.field public static final j:Lcnm;
-
-.field private static volatile m:Lnyf;
+.super Ljava/lang/Object;
 
 
 # instance fields
-.field public a:I
-
-.field public b:I
-
-.field public c:I
-
-.field public d:I
-
-.field public e:Lnyy;
-
-.field public f:Lnyy;
-
-.field public g:I
-
-.field public h:Lnxa;
-
-.field public i:Z
-
-.field private k:I
-
-.field private l:Lnxt;
+.field private final a:Landroid/media/AudioManager;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
+.method public constructor <init>(Landroid/media/AudioManager;)V
+    .locals 0
 
-    new-instance v0, Lcnm;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {v0}, Lcnm;-><init>()V
-
-    sput-object v0, Lcnm;->j:Lcnm;
-
-    const-class v1, Lcnm;
-
-    invoke-static {v1, v0}, Lnws;->aa(Ljava/lang/Class;Lnws;)V
+    iput-object p1, p0, Lcnm;->a:Landroid/media/AudioManager;
 
     return-void
 .end method
 
-.method private constructor <init>()V
+.method public static c(Landroid/media/AudioDeviceInfo;)V
     .locals 1
 
-    invoke-direct {p0}, Lnws;-><init>()V
+    if-eqz p0, :cond_0
 
-    sget-object v0, Lnxt;->a:Lnxt;
+    invoke-virtual {p0}, Landroid/media/AudioDeviceInfo;->getProductName()Ljava/lang/CharSequence;
 
-    iput-object v0, p0, Lcnm;->l:Lnxt;
+    move-result-object v0
 
-    sget-object v0, Lnyi;->b:Lnyi;
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
-    iput-object v0, p0, Lcnm;->h:Lnxa;
+    move-result-object v0
 
+    invoke-virtual {p0}, Landroid/media/AudioDeviceInfo;->getType()I
+
+    invoke-virtual {p0}, Landroid/media/AudioDeviceInfo;->getId()I
+
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object p0
+
+    invoke-virtual {p0}, Ljava/lang/String;->length()I
+
+    :cond_0
     return-void
 .end method
 
 
 # virtual methods
-.method protected final a(ILjava/lang/Object;)Ljava/lang/Object;
-    .locals 3
+.method public final a()Landroid/media/AudioDeviceInfo;
+    .locals 6
 
-    add-int/lit8 p1, p1, -0x1
+    iget-object v0, p0, Lcnm;->a:Landroid/media/AudioManager;
 
-    const/4 p2, 0x1
+    const/4 v1, 0x1
 
-    packed-switch p1, :pswitch_data_0
+    invoke-virtual {v0, v1}, Landroid/media/AudioManager;->getDevices(I)[Landroid/media/AudioDeviceInfo;
 
-    :pswitch_0
-    const/4 p1, 0x0
+    move-result-object v0
 
-    return-object p1
-
-    :pswitch_1
-    sget-object p1, Lcnm;->m:Lnyf;
-
-    if-nez p1, :cond_1
-
-    const-class p2, Lcnm;
-
-    monitor-enter p2
-
-    :try_start_0
-    sget-object p1, Lcnm;->m:Lnyf;
-
-    if-nez p1, :cond_0
-
-    new-instance p1, Lnwo;
-
-    sget-object v0, Lcnm;->j:Lcnm;
-
-    invoke-direct {p1, v0}, Lnwo;-><init>(Lnws;)V
-
-    sput-object p1, Lcnm;->m:Lnyf;
-
-    :cond_0
-    monitor-exit p2
-
-    goto :goto_0
-
-    :catchall_0
-    move-exception p1
-
-    monitor-exit p2
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw p1
-
-    :cond_1
-    :goto_0
-    return-object p1
-
-    :pswitch_2
-    sget-object p1, Lcnm;->j:Lcnm;
-
-    return-object p1
-
-    :pswitch_3
-    new-instance p1, Lnwn;
-
-    sget-object p2, Lcnm;->j:Lcnm;
-
-    invoke-direct {p1, p2}, Lnwn;-><init>(Lnws;)V
-
-    return-object p1
-
-    :pswitch_4
-    new-instance p1, Lcnm;
-
-    invoke-direct {p1}, Lcnm;-><init>()V
-
-    return-object p1
-
-    :pswitch_5
-    const-string p1, "k"
-
-    const-string v0, "\u0000\n\u0000\u0001\u0001\n\n\u0001\u0001\u0000\u0001\u0004\u0002\u0004\u0003\u0004\u0004\u000c\u0005\t\u0006\t\u0007\u0004\u00082\t\u001b\n\u1007\u0000"
-
-    const/16 v1, 0xd
-
-    new-array v1, v1, [Ljava/lang/Object;
+    array-length v1, v0
 
     const/4 v2, 0x0
 
-    aput-object p1, v1, v2
+    :goto_0
+    if-ge v2, v1, :cond_1
 
-    const-string p1, "a"
+    aget-object v3, v0, v2
 
-    aput-object p1, v1, p2
+    invoke-virtual {v3}, Landroid/media/AudioDeviceInfo;->getType()I
 
-    const/4 p1, 0x2
+    move-result v4
 
-    const-string p2, "b"
+    const/4 v5, 0x7
 
-    aput-object p2, v1, p1
+    if-ne v4, v5, :cond_0
 
-    const/4 p1, 0x3
+    invoke-static {v3}, Lcnm;->c(Landroid/media/AudioDeviceInfo;)V
 
-    const-string p2, "c"
+    goto :goto_1
 
-    aput-object p2, v1, p1
+    :cond_0
+    add-int/lit8 v2, v2, 0x1
 
-    const/4 p1, 0x4
+    goto :goto_0
 
-    const-string p2, "d"
+    :cond_1
+    const/4 v3, 0x0
 
-    aput-object p2, v1, p1
+    :goto_1
+    return-object v3
+.end method
 
-    const/4 p1, 0x5
+.method public final b()Landroid/media/AudioDeviceInfo;
+    .locals 8
 
-    const-string p2, "e"
+    iget-object v0, p0, Lcnm;->a:Landroid/media/AudioManager;
 
-    aput-object p2, v1, p1
+    const/4 v1, 0x1
 
-    const/4 p1, 0x6
+    invoke-virtual {v0, v1}, Landroid/media/AudioManager;->getDevices(I)[Landroid/media/AudioDeviceInfo;
 
-    const-string p2, "f"
+    move-result-object v0
 
-    aput-object p2, v1, p1
+    array-length v1, v0
 
-    const/4 p1, 0x7
+    const/4 v2, 0x0
 
-    const-string p2, "g"
+    const/4 v3, 0x0
 
-    aput-object p2, v1, p1
+    move-object v3, v2
 
-    const/16 p1, 0x8
+    const/4 v4, 0x0
 
-    const-string p2, "l"
+    :goto_0
+    if-ge v4, v1, :cond_3
 
-    aput-object p2, v1, p1
+    aget-object v5, v0, v4
 
-    sget-object p1, Lcnl;->a:Llzz;
+    invoke-static {v5}, Lcnm;->c(Landroid/media/AudioDeviceInfo;)V
 
-    const/16 p2, 0x9
+    invoke-virtual {v5}, Landroid/media/AudioDeviceInfo;->getType()I
 
-    aput-object p1, v1, p2
+    move-result v6
 
-    const/16 p1, 0xa
+    const/16 v7, 0xb
 
-    const-string p2, "h"
+    if-eq v6, v7, :cond_0
 
-    aput-object p2, v1, p1
+    invoke-virtual {v5}, Landroid/media/AudioDeviceInfo;->getType()I
 
-    const/16 p1, 0xb
+    move-result v6
 
-    const-class p2, Lcno;
+    const/16 v7, 0x16
 
-    aput-object p2, v1, p1
+    if-ne v6, v7, :cond_1
 
-    const/16 p1, 0xc
+    :cond_0
+    invoke-static {v5}, Lcnm;->c(Landroid/media/AudioDeviceInfo;)V
 
-    const-string p2, "i"
+    if-nez v2, :cond_1
 
-    aput-object p2, v1, p1
+    move-object v2, v5
 
-    sget-object p1, Lcnm;->j:Lcnm;
+    :cond_1
+    invoke-virtual {v5}, Landroid/media/AudioDeviceInfo;->getType()I
 
-    invoke-static {p1, v0, v1}, Lcnm;->X(Lnxy;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/Object;
+    move-result v6
 
-    move-result-object p1
+    const/4 v7, 0x3
 
-    return-object p1
+    if-ne v6, v7, :cond_2
 
-    :pswitch_6
-    invoke-static {p2}, Ljava/lang/Byte;->valueOf(B)Ljava/lang/Byte;
+    invoke-static {v5}, Lcnm;->c(Landroid/media/AudioDeviceInfo;)V
 
-    move-result-object p1
+    if-nez v3, :cond_2
 
-    return-object p1
+    move-object v3, v5
 
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_6
-        :pswitch_0
-        :pswitch_5
-        :pswitch_4
-        :pswitch_3
-        :pswitch_2
-        :pswitch_1
-    .end packed-switch
+    :cond_2
+    add-int/lit8 v4, v4, 0x1
+
+    goto :goto_0
+
+    :cond_3
+    if-eqz v2, :cond_4
+
+    return-object v2
+
+    :cond_4
+    return-object v3
 .end method

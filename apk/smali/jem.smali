@@ -1,12 +1,13 @@
-.class public Ljem;
-.super Ljdh;
+.class public interface abstract Ljem;
+.super Ljava/lang/Object;
 
 
-# direct methods
-.method public constructor <init>()V
-    .locals 0
+# virtual methods
+.method public abstract a(Landroid/view/View;IZ)V
+.end method
 
-    invoke-direct {p0}, Ljdh;-><init>()V
+.method public abstract b(Landroid/view/View;Z)V
+.end method
 
-    return-void
+.method public abstract c(Z)V
 .end method

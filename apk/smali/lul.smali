@@ -1,140 +1,131 @@
-.class public final enum Llul;
-.super Ljava/lang/Enum;
+.class public final Llul;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Lpys;
 
 
-# static fields
-.field public static final enum a:Llul;
+# instance fields
+.field private final a:Lqkg;
 
-.field public static final enum b:Llul;
+.field private final b:Lqkg;
 
-.field public static final enum c:Llul;
+.field private final c:Lqkg;
 
-.field public static final enum d:Llul;
+.field private final d:Lqkg;
 
-.field public static final enum e:Llul;
+.field private final e:Lqkg;
 
-.field public static final enum f:Llul;
+.field private final f:Lqkg;
 
-.field public static final enum g:Llul;
-
-.field private static final synthetic h:[Llul;
+.field private final g:Lqkg;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 15
-
-    new-instance v0, Llul;
-
-    const-string v1, "UNKNOWN_AIRLOCK_FILE_STATE"
-
-    const/4 v2, 0x0
-
-    invoke-direct {v0, v1, v2}, Llul;-><init>(Ljava/lang/String;I)V
-
-    sput-object v0, Llul;->a:Llul;
-
-    new-instance v1, Llul;
-
-    const-string v3, "ENTERING_AIRLOCK"
-
-    const/4 v4, 0x1
-
-    invoke-direct {v1, v3, v4}, Llul;-><init>(Ljava/lang/String;I)V
-
-    sput-object v1, Llul;->b:Llul;
-
-    new-instance v3, Llul;
-
-    const-string v5, "IN_AIRLOCK"
-
-    const/4 v6, 0x2
-
-    invoke-direct {v3, v5, v6}, Llul;-><init>(Ljava/lang/String;I)V
-
-    sput-object v3, Llul;->c:Llul;
-
-    new-instance v5, Llul;
-
-    const-string v7, "FAILED_TO_ENTER_AIRLOCK"
-
-    const/4 v8, 0x3
-
-    invoke-direct {v5, v7, v8}, Llul;-><init>(Ljava/lang/String;I)V
-
-    sput-object v5, Llul;->d:Llul;
-
-    new-instance v7, Llul;
-
-    const-string v9, "FILES_DELETION_IN_PROGRESS"
-
-    const/4 v10, 0x4
-
-    invoke-direct {v7, v9, v10}, Llul;-><init>(Ljava/lang/String;I)V
-
-    sput-object v7, Llul;->e:Llul;
-
-    new-instance v9, Llul;
-
-    const-string v11, "FILES_DELETED_FROM_AIRLOCK"
-
-    const/4 v12, 0x5
-
-    invoke-direct {v9, v11, v12}, Llul;-><init>(Ljava/lang/String;I)V
-
-    sput-object v9, Llul;->f:Llul;
-
-    new-instance v11, Llul;
-
-    const-string v13, "FAILED_TO_DELETE_FROM_AIRLOCK"
-
-    const/4 v14, 0x6
-
-    invoke-direct {v11, v13, v14}, Llul;-><init>(Ljava/lang/String;I)V
-
-    sput-object v11, Llul;->g:Llul;
-
-    const/4 v13, 0x7
-
-    new-array v13, v13, [Llul;
-
-    aput-object v0, v13, v2
-
-    aput-object v1, v13, v4
-
-    aput-object v3, v13, v6
-
-    aput-object v5, v13, v8
-
-    aput-object v7, v13, v10
-
-    aput-object v9, v13, v12
-
-    aput-object v11, v13, v14
-
-    sput-object v13, Llul;->h:[Llul;
-
-    return-void
-.end method
-
-.method private constructor <init>(Ljava/lang/String;I)V
+.method public constructor <init>(Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;)V
     .locals 0
 
-    invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Llul;->a:Lqkg;
+
+    iput-object p2, p0, Llul;->b:Lqkg;
+
+    iput-object p3, p0, Llul;->c:Lqkg;
+
+    iput-object p4, p0, Llul;->d:Lqkg;
+
+    iput-object p5, p0, Llul;->e:Lqkg;
+
+    iput-object p6, p0, Llul;->f:Lqkg;
+
+    iput-object p7, p0, Llul;->g:Lqkg;
 
     return-void
 .end method
 
-.method public static values()[Llul;
-    .locals 1
 
-    sget-object v0, Llul;->h:[Llul;
+# virtual methods
+.method public final a()Lluj;
+    .locals 9
 
-    invoke-virtual {v0}, [Ljava/lang/Object;->clone()Ljava/lang/Object;
+    iget-object v0, p0, Llul;->a:Lqkg;
+
+    check-cast v0, Llpn;
+
+    invoke-virtual {v0}, Llpn;->a()Llnf;
+
+    move-result-object v2
+
+    iget-object v0, p0, Llul;->b:Lqkg;
+
+    invoke-interface {v0}, Lqkg;->get()Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, [Llul;
+    move-object v3, v0
+
+    check-cast v3, Llue;
+
+    iget-object v0, p0, Llul;->c:Lqkg;
+
+    invoke-interface {v0}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    move-object v4, v0
+
+    check-cast v4, Llap;
+
+    iget-object v0, p0, Llul;->d:Lqkg;
+
+    check-cast v0, Lliq;
+
+    invoke-virtual {v0}, Lliq;->a()Llis;
+
+    move-result-object v5
+
+    iget-object v0, p0, Llul;->e:Lqkg;
+
+    invoke-interface {v0}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    move-object v6, v0
+
+    check-cast v6, Lljf;
+
+    iget-object v0, p0, Llul;->f:Lqkg;
+
+    check-cast v0, Llry;
+
+    invoke-virtual {v0}, Llry;->a()Llrx;
+
+    move-result-object v7
+
+    iget-object v0, p0, Llul;->g:Lqkg;
+
+    check-cast v0, Llhr;
+
+    invoke-virtual {v0}, Llhr;->a()Llvq;
+
+    move-result-object v8
+
+    new-instance v0, Lluj;
+
+    move-object v1, v0
+
+    invoke-direct/range {v1 .. v8}, Lluj;-><init>(Llnf;Llue;Llap;Llis;Lljf;Llrx;Llvq;)V
+
+    return-object v0
+.end method
+
+.method public final bridge synthetic get()Ljava/lang/Object;
+    .locals 1
+
+    invoke-virtual {p0}, Llul;->a()Lluj;
+
+    move-result-object v0
 
     return-object v0
 .end method

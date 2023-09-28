@@ -1,50 +1,39 @@
-.class final Liso;
-.super Landroid/animation/AnimatorListenerAdapter;
+.class public final synthetic Liso;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field final synthetic a:Landroid/view/View;
+.field public final synthetic a:Lisq;
+
+.field public final synthetic b:Lfhv;
 
 
 # direct methods
-.method public constructor <init>(Landroid/view/View;)V
+.method public synthetic constructor <init>(Lisq;Lfhv;)V
     .locals 0
 
-    iput-object p1, p0, Liso;->a:Landroid/view/View;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
+    iput-object p1, p0, Liso;->a:Lisq;
+
+    iput-object p2, p0, Liso;->b:Lfhv;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onAnimationEnd(Landroid/animation/Animator;Z)V
-    .locals 0
+.method public final run()V
+    .locals 2
 
-    if-eqz p2, :cond_0
+    iget-object v0, p0, Liso;->a:Lisq;
 
-    iget-object p1, p0, Liso;->a:Landroid/view/View;
+    iget-object v1, p0, Liso;->b:Lfhv;
 
-    const/16 p2, 0x8
+    invoke-virtual {v1, v0}, Lfhv;->e(Lfik;)V
 
-    invoke-virtual {p1, p2}, Landroid/view/View;->setVisibility(I)V
-
-    :cond_0
-    return-void
-.end method
-
-.method public final onAnimationStart(Landroid/animation/Animator;Z)V
-    .locals 0
-
-    if-nez p2, :cond_0
-
-    iget-object p1, p0, Liso;->a:Landroid/view/View;
-
-    const/4 p2, 0x0
-
-    invoke-virtual {p1, p2}, Landroid/view/View;->setVisibility(I)V
-
-    :cond_0
     return-void
 .end method

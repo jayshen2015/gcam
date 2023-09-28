@@ -1,14 +1,10 @@
-.class public final Llfi;
-.super Ljava/lang/NullPointerException;
+.class public interface abstract Llfi;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Llie;
 
 
-# direct methods
-.method public constructor <init>()V
-    .locals 1
-
-    const-string v0, "Attempting to interact with an invalid handle"
-
-    invoke-direct {p0, v0}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
-
-    return-void
+# virtual methods
+.method public abstract a(J)V
 .end method

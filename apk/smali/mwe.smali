@@ -1,112 +1,66 @@
-.class final Lmwe;
-.super Lmwz;
+.class public final Lmwe;
+.super Ljava/lang/Object;
 
 
 # instance fields
-.field private final a:Lmwa;
+.field public final a:Lmwg;
 
 
 # direct methods
-.method public constructor <init>(Lmwa;)V
-    .locals 0
+.method public constructor <init>(Landroid/content/Context;Lmwg;)V
+    .locals 1
 
-    invoke-direct {p0}, Lmwz;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lmwe;->a:Lmwa;
+    iput-object p2, p0, Lmwe;->a:Lmwg;
+
+    check-cast p1, Landroid/app/Application;
+
+    iget-object v0, p2, Lmwg;->a:Lmwf;
+
+    invoke-virtual {p1, v0}, Landroid/app/Application;->registerActivityLifecycleCallbacks(Landroid/app/Application$ActivityLifecycleCallbacks;)V
+
+    iget-object p2, p2, Lmwg;->a:Lmwf;
+
+    invoke-virtual {p1, p2}, Landroid/app/Application;->registerComponentCallbacks(Landroid/content/ComponentCallbacks;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(I)Ljava/lang/Object;
-    .locals 1
-
-    iget-object v0, p0, Lmwe;->a:Lmwa;
-
-    invoke-virtual {v0}, Lmwa;->r()Lmwn;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lmvm;->v()Lmvv;
-
-    move-result-object v0
-
-    invoke-virtual {v0, p1}, Lmvv;->get(I)Ljava/lang/Object;
-
-    move-result-object p1
-
-    check-cast p1, Ljava/util/Map$Entry;
-
-    invoke-interface {p1}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
-
-    move-result-object p1
-
-    return-object p1
-.end method
-
-.method public final cA()Z
-    .locals 1
-
-    const/4 v0, 0x1
-
-    return v0
-.end method
-
-.method public final contains(Ljava/lang/Object;)Z
-    .locals 1
-
-    iget-object v0, p0, Lmwe;->a:Lmwa;
-
-    invoke-virtual {v0, p1}, Lmwa;->containsKey(Ljava/lang/Object;)Z
-
-    move-result p1
-
-    return p1
-.end method
-
-.method public final cz()Lnac;
-    .locals 1
-
-    iget-object v0, p0, Lmwe;->a:Lmwa;
-
-    invoke-virtual {v0}, Lmwa;->cD()Lnac;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public final bridge synthetic iterator()Ljava/util/Iterator;
-    .locals 1
-
-    invoke-virtual {p0}, Lmwz;->cz()Lnac;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public final size()I
-    .locals 1
-
-    iget-object v0, p0, Lmwe;->a:Lmwa;
-
-    invoke-virtual {v0}, Lmwa;->size()I
-
-    move-result v0
-
-    return v0
-.end method
-
-.method writeReplace()Ljava/lang/Object;
+.method public final a(Lmwd;)V
     .locals 2
 
-    new-instance v0, Lmwd;
+    iget-object v0, p0, Lmwe;->a:Lmwg;
 
-    iget-object v1, p0, Lmwe;->a:Lmwa;
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    invoke-direct {v0, v1}, Lmwd;-><init>(Lmwa;)V
+    iget-object v0, v0, Lmwg;->a:Lmwf;
 
-    return-object v0
+    sget v1, Lmwf;->c:I
+
+    iget-object v0, v0, Lmwf;->a:Ljava/util/List;
+
+    invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    return-void
+.end method
+
+.method public final b(Lmwd;)V
+    .locals 2
+
+    iget-object v0, p0, Lmwe;->a:Lmwg;
+
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    iget-object v0, v0, Lmwg;->a:Lmwf;
+
+    sget v1, Lmwf;->c:I
+
+    iget-object v0, v0, Lmwf;->a:Ljava/util/List;
+
+    invoke-interface {v0, p1}, Ljava/util/List;->remove(Ljava/lang/Object;)Z
+
+    return-void
 .end method

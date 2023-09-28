@@ -1,104 +1,61 @@
-.class public final Lnqw;
-.super Ljava/lang/Object;
+.class final Lnqw;
+.super Lqnp;
 
-
-# static fields
-.field public static final a:Lnqw;
-
-.field private static c:I
+# interfaces
+.implements Lqmj;
 
 
 # instance fields
-.field public final b:I
+.field final synthetic a:Lnre;
 
-.field private final d:Ljava/lang/String;
+.field final synthetic b:Lnrl;
+
+.field final synthetic c:Lqfg;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
+.method public constructor <init>(Lnre;Lnrl;Lqfg;)V
+    .locals 0
 
-    new-instance v0, Lnqw;
+    iput-object p1, p0, Lnqw;->a:Lnre;
 
-    invoke-direct {v0}, Lnqw;-><init>()V
+    iput-object p2, p0, Lnqw;->b:Lnrl;
 
-    sput-object v0, Lnqw;->a:Lnqw;
+    iput-object p3, p0, Lnqw;->c:Lqfg;
 
-    new-instance v0, Lnqw;
+    const/4 p1, 0x0
 
-    const-string v1, "kSabre"
-
-    invoke-direct {v0, v1}, Lnqw;-><init>(Ljava/lang/String;)V
-
-    new-instance v0, Lnqw;
-
-    const-string v1, "kSpatialBayer"
-
-    invoke-direct {v0, v1}, Lnqw;-><init>(Ljava/lang/String;)V
-
-    new-instance v0, Lnqw;
-
-    const-string v1, "kSpatialRgb"
-
-    invoke-direct {v0, v1}, Lnqw;-><init>(Ljava/lang/String;)V
-
-    new-instance v0, Lnqw;
-
-    const-string v1, "kInvalid"
-
-    invoke-direct {v0, v1}, Lnqw;-><init>(Ljava/lang/String;)V
-
-    const/4 v0, 0x0
-
-    sput v0, Lnqw;->c:I
-
-    return-void
-.end method
-
-.method private constructor <init>()V
-    .locals 1
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    const-string v0, "kWienerFilter"
-
-    iput-object v0, p0, Lnqw;->d:Ljava/lang/String;
-
-    const/4 v0, 0x0
-
-    iput v0, p0, Lnqw;->b:I
-
-    const/4 v0, 0x1
-
-    sput v0, Lnqw;->c:I
-
-    return-void
-.end method
-
-.method private constructor <init>(Ljava/lang/String;)V
-    .locals 1
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lnqw;->d:Ljava/lang/String;
-
-    sget p1, Lnqw;->c:I
-
-    add-int/lit8 v0, p1, 0x1
-
-    sput v0, Lnqw;->c:I
-
-    iput p1, p0, Lnqw;->b:I
+    invoke-direct {p0, p1}, Lqnp;-><init>(I)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final toString()Ljava/lang/String;
-    .locals 1
+.method public final bridge synthetic invoke()Ljava/lang/Object;
+    .locals 4
 
-    iget-object v0, p0, Lnqw;->d:Ljava/lang/String;
+    iget-object v0, p0, Lnqw;->a:Lnre;
+
+    iget-object v0, v0, Lnre;->b:Lnrm;
+
+    iget-object v1, p0, Lnqw;->b:Lnrl;
+
+    const/16 v2, 0x10
+
+    const/4 v3, 0x0
+
+    invoke-static {v1, v2, v3}, Lnrl;->d(Lnrl;ILjava/lang/Throwable;)Lnna;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Lnrm;->a(Lnna;)V
+
+    iget-object v0, p0, Lnqw;->c:Lqfg;
+
+    invoke-virtual {v0}, Lqfg;->b()V
+
+    sget-object v0, Lqks;->a:Lqks;
 
     return-object v0
 .end method

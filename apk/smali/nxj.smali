@@ -1,267 +1,434 @@
-.class public Lnxj;
-.super Ljava/lang/Object;
+.class public final Lnxj;
+.super Laca;
 
 
 # instance fields
-.field protected volatile a:Lnxy;
+.field final synthetic a:Lcom/google/android/material/behavior/SwipeDismissBehavior;
 
-.field public volatile b:Lnvt;
+.field private b:I
+
+.field private c:I
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
-
-    sget-object v0, Lnwh;->a:Lnwh;
-
-    return-void
-.end method
-
-.method public constructor <init>()V
+.method public constructor <init>(Lcom/google/android/material/behavior/SwipeDismissBehavior;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lnxj;->a:Lcom/google/android/material/behavior/SwipeDismissBehavior;
+
+    invoke-direct {p0}, Laca;-><init>()V
+
+    const/4 p1, -0x1
+
+    iput p1, p0, Lnxj;->c:I
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Lnvt;
-    .locals 1
+.method public final a(Landroid/view/View;)I
+    .locals 0
 
-    iget-object v0, p0, Lnxj;->b:Lnvt;
+    invoke-virtual {p1}, Landroid/view/View;->getWidth()I
 
-    if-eqz v0, :cond_0
+    move-result p1
 
-    iget-object v0, p0, Lnxj;->b:Lnvt;
+    return p1
+.end method
 
-    return-object v0
+.method public final b(Landroid/view/View;I)V
+    .locals 0
+
+    iput p2, p0, Lnxj;->c:I
+
+    invoke-virtual {p1}, Landroid/view/View;->getLeft()I
+
+    move-result p2
+
+    iput p2, p0, Lnxj;->b:I
+
+    invoke-virtual {p1}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
+
+    move-result-object p1
+
+    if-eqz p1, :cond_0
+
+    const/4 p2, 0x1
+
+    invoke-interface {p1, p2}, Landroid/view/ViewParent;->requestDisallowInterceptTouchEvent(Z)V
 
     :cond_0
-    monitor-enter p0
+    return-void
+.end method
 
-    :try_start_0
-    iget-object v0, p0, Lnxj;->b:Lnvt;
+.method public final c(I)V
+    .locals 0
 
-    if-eqz v0, :cond_1
+    return-void
+.end method
 
-    iget-object v0, p0, Lnxj;->b:Lnvt;
+.method public final d(Landroid/view/View;FF)V
+    .locals 4
 
-    monitor-exit p0
+    const/4 p3, -0x1
 
-    return-object v0
+    iput p3, p0, Lnxj;->c:I
+
+    invoke-virtual {p1}, Landroid/view/View;->getWidth()I
+
+    move-result p3
+
+    const/4 v0, 0x0
+
+    cmpl-float v1, p2, v0
+
+    if-eqz v1, :cond_4
+
+    invoke-static {p1}, Lgl;->f(Landroid/view/View;)I
+
+    move-result v1
+
+    iget-object v2, p0, Lnxj;->a:Lcom/google/android/material/behavior/SwipeDismissBehavior;
+
+    iget v2, v2, Lcom/google/android/material/behavior/SwipeDismissBehavior;->b:I
+
+    const/4 v3, 0x2
+
+    if-ne v2, v3, :cond_0
+
+    goto :goto_0
+
+    :cond_0
+    const/4 v3, 0x1
+
+    if-nez v2, :cond_2
+
+    if-ne v1, v3, :cond_1
+
+    cmpg-float p2, p2, v0
+
+    if-ltz p2, :cond_5
+
+    goto :goto_1
 
     :cond_1
-    iget-object v0, p0, Lnxj;->a:Lnxy;
+    cmpl-float p2, p2, v0
 
-    if-nez v0, :cond_2
-
-    sget-object v0, Lnvt;->b:Lnvt;
-
-    iput-object v0, p0, Lnxj;->b:Lnvt;
+    if-lez p2, :cond_7
 
     goto :goto_0
 
     :cond_2
-    iget-object v0, p0, Lnxj;->a:Lnxy;
+    if-ne v1, v3, :cond_3
 
-    invoke-interface {v0}, Lnxy;->H()Lnvt;
+    cmpl-float p2, p2, v0
 
-    move-result-object v0
-
-    iput-object v0, p0, Lnxj;->b:Lnvt;
-
-    :goto_0
-    iget-object v0, p0, Lnxj;->b:Lnvt;
-
-    monitor-exit p0
-
-    return-object v0
-
-    :catchall_0
-    move-exception v0
-
-    monitor-exit p0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw v0
-.end method
-
-.method public final b(Lnxy;)Lnxy;
-    .locals 1
-
-    iget-object v0, p0, Lnxj;->a:Lnxy;
-
-    if-eqz v0, :cond_0
-
-    :goto_0
-    goto :goto_2
-
-    :cond_0
-    monitor-enter p0
-
-    :try_start_0
-    iget-object v0, p0, Lnxj;->a:Lnxy;
-
-    if-eqz v0, :cond_1
-
-    monitor-exit p0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    if-lez p2, :cond_7
 
     goto :goto_0
 
-    :cond_1
-    :try_start_1
-    iput-object p1, p0, Lnxj;->a:Lnxy;
+    :cond_3
+    cmpg-float p2, p2, v0
 
-    sget-object v0, Lnvt;->b:Lnvt;
+    if-gez p2, :cond_7
 
-    iput-object v0, p0, Lnxj;->b:Lnvt;
-    :try_end_1
-    .catch Lnxd; {:try_start_1 .. :try_end_1} :catch_0
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+    goto :goto_0
 
-    goto :goto_1
+    :cond_4
+    invoke-virtual {p1}, Landroid/view/View;->getLeft()I
 
-    :catch_0
-    move-exception v0
+    move-result p2
 
-    :try_start_2
-    iput-object p1, p0, Lnxj;->a:Lnxy;
+    iget v0, p0, Lnxj;->b:I
 
-    sget-object p1, Lnvt;->b:Lnvt;
+    invoke-virtual {p1}, Landroid/view/View;->getWidth()I
 
-    iput-object p1, p0, Lnxj;->b:Lnvt;
+    move-result v1
 
+    iget-object v2, p0, Lnxj;->a:Lcom/google/android/material/behavior/SwipeDismissBehavior;
+
+    iget v2, v2, Lcom/google/android/material/behavior/SwipeDismissBehavior;->c:F
+
+    int-to-float v1, v1
+
+    mul-float v1, v1, v2
+
+    invoke-static {v1}, Ljava/lang/Math;->round(F)I
+
+    move-result v1
+
+    sub-int/2addr p2, v0
+
+    invoke-static {p2}, Ljava/lang/Math;->abs(I)I
+
+    move-result p2
+
+    if-lt p2, v1, :cond_7
+
+    :cond_5
+    :goto_0
+    invoke-virtual {p1}, Landroid/view/View;->getLeft()I
+
+    move-result p2
+
+    iget v0, p0, Lnxj;->b:I
+
+    if-ge p2, v0, :cond_6
+
+    sub-int/2addr v0, p3
+
+    goto :goto_2
+
+    :cond_6
+    add-int/2addr v0, p3
+
+    goto :goto_2
+
+    :cond_7
     :goto_1
-    monitor-exit p0
-    :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_0
+    iget v0, p0, Lnxj;->b:I
 
     :goto_2
-    iget-object p1, p0, Lnxj;->a:Lnxy;
+    iget-object p2, p0, Lnxj;->a:Lcom/google/android/material/behavior/SwipeDismissBehavior;
 
-    return-object p1
+    iget-object p2, p2, Lcom/google/android/material/behavior/SwipeDismissBehavior;->a:Lacb;
 
-    :catchall_0
-    move-exception p1
+    invoke-virtual {p1}, Landroid/view/View;->getTop()I
 
-    :try_start_3
-    monitor-exit p0
-    :try_end_3
-    .catchall {:try_start_3 .. :try_end_3} :catchall_0
+    move-result p3
 
-    goto :goto_4
+    invoke-virtual {p2, v0, p3}, Lacb;->i(II)Z
 
-    :goto_3
-    throw p1
+    move-result p2
 
-    :goto_4
-    goto :goto_3
+    if-eqz p2, :cond_8
+
+    new-instance p2, Lnxl;
+
+    iget-object p3, p0, Lnxj;->a:Lcom/google/android/material/behavior/SwipeDismissBehavior;
+
+    invoke-direct {p2, p3, p1}, Lnxl;-><init>(Lcom/google/android/material/behavior/SwipeDismissBehavior;Landroid/view/View;)V
+
+    invoke-static {p1, p2}, Lgl;->A(Landroid/view/View;Ljava/lang/Runnable;)V
+
+    :cond_8
+    return-void
 .end method
 
-.method public equals(Ljava/lang/Object;)Z
+.method public final e(Landroid/view/View;I)Z
     .locals 2
 
-    if-ne p0, p1, :cond_0
+    iget v0, p0, Lnxj;->c:I
+
+    const/4 v1, -0x1
+
+    if-eq v0, v1, :cond_0
+
+    if-ne v0, p2, :cond_1
+
+    :cond_0
+    iget-object p2, p0, Lnxj;->a:Lcom/google/android/material/behavior/SwipeDismissBehavior;
+
+    invoke-virtual {p2, p1}, Lcom/google/android/material/behavior/SwipeDismissBehavior;->x(Landroid/view/View;)Z
+
+    move-result p1
+
+    if-eqz p1, :cond_1
 
     const/4 p1, 0x1
 
     return p1
 
-    :cond_0
-    instance-of v0, p1, Lnxj;
-
-    if-nez v0, :cond_1
-
+    :cond_1
     const/4 p1, 0x0
 
     return p1
+.end method
+
+.method public final f(Landroid/view/View;I)I
+    .locals 3
+
+    invoke-static {p1}, Lgl;->f(Landroid/view/View;)I
+
+    move-result v0
+
+    iget-object v1, p0, Lnxj;->a:Lcom/google/android/material/behavior/SwipeDismissBehavior;
+
+    iget v1, v1, Lcom/google/android/material/behavior/SwipeDismissBehavior;->b:I
+
+    const/4 v2, 0x1
+
+    if-nez v1, :cond_1
+
+    if-ne v0, v2, :cond_0
+
+    iget v0, p0, Lnxj;->b:I
+
+    invoke-virtual {p1}, Landroid/view/View;->getWidth()I
+
+    move-result p1
+
+    sub-int/2addr v0, p1
+
+    iget p1, p0, Lnxj;->b:I
+
+    goto :goto_0
+
+    :cond_0
+    iget v0, p0, Lnxj;->b:I
+
+    invoke-virtual {p1}, Landroid/view/View;->getWidth()I
+
+    move-result p1
+
+    add-int/2addr p1, v0
+
+    goto :goto_0
 
     :cond_1
-    check-cast p1, Lnxj;
+    if-ne v1, v2, :cond_3
 
-    iget-object v0, p0, Lnxj;->a:Lnxy;
+    if-ne v0, v2, :cond_2
 
-    iget-object v1, p1, Lnxj;->a:Lnxy;
+    iget v0, p0, Lnxj;->b:I
 
-    if-nez v0, :cond_3
+    invoke-virtual {p1}, Landroid/view/View;->getWidth()I
 
-    if-eqz v1, :cond_2
+    move-result p1
+
+    add-int/2addr p1, v0
 
     goto :goto_0
 
     :cond_2
-    invoke-virtual {p0}, Lnxj;->a()Lnvt;
+    iget v0, p0, Lnxj;->b:I
 
-    move-result-object v0
-
-    invoke-virtual {p1}, Lnxj;->a()Lnvt;
-
-    move-result-object p1
-
-    invoke-virtual {v0, p1}, Lnvt;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {p1}, Landroid/view/View;->getWidth()I
 
     move-result p1
 
-    return p1
+    sub-int/2addr v0, p1
+
+    iget p1, p0, Lnxj;->b:I
+
+    goto :goto_0
 
     :cond_3
+    iget v0, p0, Lnxj;->b:I
+
+    invoke-virtual {p1}, Landroid/view/View;->getWidth()I
+
+    move-result v1
+
+    sub-int/2addr v0, v1
+
+    iget v1, p0, Lnxj;->b:I
+
+    invoke-virtual {p1}, Landroid/view/View;->getWidth()I
+
+    move-result p1
+
+    add-int/2addr p1, v1
+
     :goto_0
-    if-eqz v0, :cond_5
+    invoke-static {v0, p2}, Ljava/lang/Math;->max(II)I
 
-    if-nez v1, :cond_4
+    move-result p2
 
-    goto :goto_1
-
-    :cond_4
-    invoke-virtual {v0, v1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
-
-    move-result p1
-
-    return p1
-
-    :cond_5
-    :goto_1
-    if-eqz v0, :cond_6
-
-    invoke-interface {v0}, Lnxy;->cF()Lnxy;
-
-    move-result-object v1
-
-    invoke-virtual {p1, v1}, Lnxj;->b(Lnxy;)Lnxy;
-
-    move-result-object p1
-
-    invoke-virtual {v0, p1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
-
-    move-result p1
-
-    return p1
-
-    :cond_6
-    invoke-interface {v1}, Lnxy;->cF()Lnxy;
-
-    move-result-object p1
-
-    invoke-virtual {p0, p1}, Lnxj;->b(Lnxy;)Lnxy;
-
-    move-result-object p1
-
-    invoke-virtual {p1, v1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+    invoke-static {p2, p1}, Ljava/lang/Math;->min(II)I
 
     move-result p1
 
     return p1
 .end method
 
-.method public hashCode()I
-    .locals 1
+.method public final g(Landroid/view/View;I)I
+    .locals 0
 
-    const/4 v0, 0x1
+    invoke-virtual {p1}, Landroid/view/View;->getTop()I
 
-    return v0
+    move-result p1
+
+    return p1
+.end method
+
+.method public final i(Landroid/view/View;II)V
+    .locals 3
+
+    iget p3, p0, Lnxj;->b:I
+
+    int-to-float p3, p3
+
+    invoke-virtual {p1}, Landroid/view/View;->getWidth()I
+
+    move-result v0
+
+    int-to-float v0, v0
+
+    iget-object v1, p0, Lnxj;->a:Lcom/google/android/material/behavior/SwipeDismissBehavior;
+
+    iget v1, v1, Lcom/google/android/material/behavior/SwipeDismissBehavior;->d:F
+
+    mul-float v0, v0, v1
+
+    add-float/2addr p3, v0
+
+    iget v0, p0, Lnxj;->b:I
+
+    int-to-float v0, v0
+
+    invoke-virtual {p1}, Landroid/view/View;->getWidth()I
+
+    move-result v1
+
+    int-to-float v1, v1
+
+    iget-object v2, p0, Lnxj;->a:Lcom/google/android/material/behavior/SwipeDismissBehavior;
+
+    iget v2, v2, Lcom/google/android/material/behavior/SwipeDismissBehavior;->e:F
+
+    mul-float v1, v1, v2
+
+    add-float/2addr v0, v1
+
+    int-to-float p2, p2
+
+    const/high16 v1, 0x3f800000    # 1.0f
+
+    cmpg-float v2, p2, p3
+
+    if-gtz v2, :cond_0
+
+    invoke-virtual {p1, v1}, Landroid/view/View;->setAlpha(F)V
+
+    return-void
+
+    :cond_0
+    cmpl-float v2, p2, v0
+
+    if-ltz v2, :cond_1
+
+    const/4 p2, 0x0
+
+    invoke-virtual {p1, p2}, Landroid/view/View;->setAlpha(F)V
+
+    return-void
+
+    :cond_1
+    sub-float/2addr p2, p3
+
+    sub-float/2addr v0, p3
+
+    div-float/2addr p2, v0
+
+    sub-float/2addr v1, p2
+
+    invoke-static {v1}, Lcom/google/android/material/behavior/SwipeDismissBehavior;->y(F)F
+
+    move-result p2
+
+    invoke-virtual {p1, p2}, Landroid/view/View;->setAlpha(F)V
+
+    return-void
 .end method

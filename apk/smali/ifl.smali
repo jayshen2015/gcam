@@ -1,70 +1,167 @@
 .class public final Lifl;
-.super Landroid/animation/AnimatorListenerAdapter;
+.super Ljava/lang/Object;
 
 
 # instance fields
-.field final synthetic a:Lcom/google/android/apps/camera/ui/shutterbutton/ShutterButtonProgressOverlay;
+.field private a:Landroid/content/pm/ResolveInfo;
+
+.field private b:Ljava/lang/Boolean;
+
+.field private c:Ljava/lang/Boolean;
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/apps/camera/ui/shutterbutton/ShutterButtonProgressOverlay;)V
+.method public constructor <init>()V
     .locals 0
 
-    iput-object p1, p0, Lifl;->a:Lcom/google/android/apps/camera/ui/shutterbutton/ShutterButtonProgressOverlay;
-
-    invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onAnimationCancel(Landroid/animation/Animator;)V
+.method public final a()Lifm;
+    .locals 4
+
+    iget-object v0, p0, Lifl;->a:Landroid/content/pm/ResolveInfo;
+
+    if-eqz v0, :cond_1
+
+    iget-object v1, p0, Lifl;->b:Ljava/lang/Boolean;
+
+    if-eqz v1, :cond_1
+
+    iget-object v2, p0, Lifl;->c:Ljava/lang/Boolean;
+
+    if-nez v2, :cond_0
+
+    goto :goto_0
+
+    :cond_0
+    new-instance v2, Lifm;
+
+    invoke-virtual {v1}, Ljava/lang/Boolean;->booleanValue()Z
+
+    move-result v1
+
+    iget-object v3, p0, Lifl;->c:Ljava/lang/Boolean;
+
+    invoke-virtual {v3}, Ljava/lang/Boolean;->booleanValue()Z
+
+    move-result v3
+
+    invoke-direct {v2, v0, v1, v3}, Lifm;-><init>(Landroid/content/pm/ResolveInfo;ZZ)V
+
+    return-object v2
+
+    :cond_1
+    :goto_0
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
+    iget-object v1, p0, Lifl;->a:Landroid/content/pm/ResolveInfo;
+
+    if-nez v1, :cond_2
+
+    const-string v1, " resolveInfo"
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    :cond_2
+    iget-object v1, p0, Lifl;->b:Ljava/lang/Boolean;
+
+    if-nez v1, :cond_3
+
+    const-string v1, " selected"
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    :cond_3
+    iget-object v1, p0, Lifl;->c:Ljava/lang/Boolean;
+
+    if-nez v1, :cond_4
+
+    const-string v1, " supported"
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    :cond_4
+    new-instance v1, Ljava/lang/IllegalStateException;
+
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/String;->length()I
+
+    move-result v2
+
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    add-int/lit8 v2, v2, 0x1c
+
+    invoke-direct {v3, v2}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string v2, "Missing required properties:"
+
+    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-direct {v1, v0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw v1
+.end method
+
+.method public final b(Landroid/content/pm/ResolveInfo;)V
     .locals 1
 
-    iget-object p1, p0, Lifl;->a:Lcom/google/android/apps/camera/ui/shutterbutton/ShutterButtonProgressOverlay;
+    if-eqz p1, :cond_0
 
-    const/4 v0, 0x4
+    iput-object p1, p0, Lifl;->a:Landroid/content/pm/ResolveInfo;
 
-    iput v0, p1, Lcom/google/android/apps/camera/ui/shutterbutton/ShutterButtonProgressOverlay;->k:I
+    return-void
 
-    iget v0, p1, Lcom/google/android/apps/camera/ui/shutterbutton/ShutterButtonProgressOverlay;->e:I
+    :cond_0
+    new-instance p1, Ljava/lang/NullPointerException;
 
-    iput v0, p1, Lcom/google/android/apps/camera/ui/shutterbutton/ShutterButtonProgressOverlay;->b:I
+    const-string v0, "Null resolveInfo"
 
-    iget v0, p1, Lcom/google/android/apps/camera/ui/shutterbutton/ShutterButtonProgressOverlay;->f:I
+    invoke-direct {p1, v0}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
 
-    int-to-float v0, v0
+    throw p1
+.end method
 
-    iput v0, p1, Lcom/google/android/apps/camera/ui/shutterbutton/ShutterButtonProgressOverlay;->c:F
+.method public final c(Z)V
+    .locals 0
+
+    invoke-static {p1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    move-result-object p1
+
+    iput-object p1, p0, Lifl;->b:Ljava/lang/Boolean;
 
     return-void
 .end method
 
-.method public final onAnimationEnd(Landroid/animation/Animator;)V
-    .locals 1
+.method public final d(Z)V
+    .locals 0
 
-    iget-object p1, p0, Lifl;->a:Lcom/google/android/apps/camera/ui/shutterbutton/ShutterButtonProgressOverlay;
+    invoke-static {p1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
-    const/4 v0, 0x4
+    move-result-object p1
 
-    iput v0, p1, Lcom/google/android/apps/camera/ui/shutterbutton/ShutterButtonProgressOverlay;->k:I
-
-    return-void
-.end method
-
-.method public final onAnimationStart(Landroid/animation/Animator;)V
-    .locals 1
-
-    iget-object p1, p0, Lifl;->a:Lcom/google/android/apps/camera/ui/shutterbutton/ShutterButtonProgressOverlay;
-
-    const/4 v0, 0x2
-
-    iput v0, p1, Lcom/google/android/apps/camera/ui/shutterbutton/ShutterButtonProgressOverlay;->k:I
-
-    const/4 v0, 0x0
-
-    invoke-virtual {p1, v0}, Lcom/google/android/apps/camera/ui/shutterbutton/ShutterButtonProgressOverlay;->setVisibility(I)V
+    iput-object p1, p0, Lifl;->c:Ljava/lang/Boolean;
 
     return-void
 .end method

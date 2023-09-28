@@ -1,140 +1,83 @@
 .class public final Lcev;
-.super Lkfg;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Llie;
 
 
 # instance fields
-.field private final a:Loiw;
+.field public final a:Lphv;
 
-.field private final b:Lnou;
+.field public final b:Llar;
 
-.field private final c:Lfvd;
+.field public final c:Lljf;
 
-.field private d:J
+.field public final d:Lcgx;
+
+.field public final e:Lcvi;
+
+.field public final f:Lckh;
+
+.field public final g:Lcfw;
+
+.field public final h:Lcgs;
+
+.field public final i:Lcsh;
+
+.field public final j:Llij;
+
+.field public final k:Lcfk;
+
+.field public final l:Lddf;
+
+.field public final m:Lnvb;
 
 
 # direct methods
-.method public constructor <init>(Lnou;Lfvd;Loiw;)V
+.method public constructor <init>(Lphv;Llar;Lljf;Lcgx;Lnvb;Lcgs;Lcvi;Lcfw;Lckh;Lcsh;Llij;Lcfk;Lddf;[B[B)V
     .locals 0
 
-    invoke-direct {p0}, Lkfg;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p2, p0, Lcev;->c:Lfvd;
+    iput-object p1, p0, Lcev;->a:Lphv;
 
-    iput-object p1, p0, Lcev;->b:Lnou;
+    iput-object p2, p0, Lcev;->b:Llar;
 
-    iput-object p3, p0, Lcev;->a:Loiw;
+    iput-object p3, p0, Lcev;->c:Lljf;
 
-    const-wide/16 p1, 0x0
+    iput-object p4, p0, Lcev;->d:Lcgx;
 
-    iput-wide p1, p0, Lcev;->d:J
+    iput-object p5, p0, Lcev;->m:Lnvb;
+
+    iput-object p6, p0, Lcev;->h:Lcgs;
+
+    iput-object p7, p0, Lcev;->e:Lcvi;
+
+    iput-object p8, p0, Lcev;->g:Lcfw;
+
+    iput-object p9, p0, Lcev;->f:Lckh;
+
+    iput-object p10, p0, Lcev;->i:Lcsh;
+
+    iput-object p11, p0, Lcev;->j:Llij;
+
+    iput-object p12, p0, Lcev;->k:Lcfk;
+
+    iput-object p13, p0, Lcev;->l:Lddf;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final bC(Lkou;)V
-    .locals 7
+.method public final close()V
+    .locals 1
 
-    iget-object v0, p0, Lcev;->b:Lnou;
+    iget-object v0, p0, Lcev;->d:Lcgx;
 
-    invoke-static {v0}, Ljvd;->r(Lnou;)Ljava/lang/Object;
+    iget-object v0, v0, Lcgx;->c:Lcrs;
 
-    move-result-object v0
+    invoke-virtual {v0}, Lcrp;->b()V
 
-    check-cast v0, Lceh;
-
-    if-eqz v0, :cond_2
-
-    invoke-interface {v0}, Lceh;->i()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_2
-
-    invoke-interface {p1}, Lkou;->b()J
-
-    move-result-wide v1
-
-    iget-wide v3, p0, Lcev;->d:J
-
-    invoke-interface {v0}, Lceh;->a()I
-
-    move-result v0
-
-    if-eqz v0, :cond_2
-
-    int-to-long v5, v0
-
-    add-long/2addr v3, v5
-
-    cmp-long v0, v1, v3
-
-    if-lez v0, :cond_2
-
-    sget-object v0, Landroid/hardware/camera2/CaptureResult;->CONTROL_AF_MODE:Landroid/hardware/camera2/CaptureResult$Key;
-
-    invoke-interface {p1, v0}, Lkou;->d(Landroid/hardware/camera2/CaptureResult$Key;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/lang/Integer;
-
-    if-nez v0, :cond_0
-
-    goto :goto_0
-
-    :cond_0
-    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
-
-    move-result v0
-
-    sget-object v1, Landroid/hardware/camera2/CaptureResult;->CONTROL_AF_STATE:Landroid/hardware/camera2/CaptureResult$Key;
-
-    invoke-interface {p1, v1}, Lkou;->d(Landroid/hardware/camera2/CaptureResult$Key;)Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Ljava/lang/Integer;
-
-    invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    invoke-virtual {v1}, Ljava/lang/Integer;->intValue()I
-
-    move-result v1
-
-    if-eqz v0, :cond_1
-
-    const/4 v0, 0x2
-
-    if-eq v1, v0, :cond_1
-
-    const/4 v0, 0x4
-
-    if-ne v1, v0, :cond_2
-
-    :cond_1
-    invoke-interface {p1}, Lkou;->b()J
-
-    move-result-wide v0
-
-    iput-wide v0, p0, Lcev;->d:J
-
-    iget-object p1, p0, Lcev;->c:Lfvd;
-
-    iget-object v0, p0, Lcev;->a:Loiw;
-
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lfvb;
-
-    invoke-virtual {p1, v0}, Lfvd;->b(Lfvb;)V
-
-    return-void
-
-    :cond_2
-    :goto_0
     return-void
 .end method

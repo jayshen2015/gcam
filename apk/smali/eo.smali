@@ -1,85 +1,48 @@
-.class final Leo;
-.super Lagb;
-
-
-# instance fields
-.field final synthetic a:Lfd;
+.class public final Leo;
+.super Lep;
 
 
 # direct methods
-.method public constructor <init>(Lfd;)V
+.method public constructor <init>(Landroid/content/res/Resources;Landroid/graphics/Bitmap;)V
     .locals 0
 
-    iput-object p1, p0, Leo;->a:Lfd;
-
-    invoke-direct {p0}, Lagb;-><init>()V
+    invoke-direct {p0, p1, p2}, Lep;-><init>(Landroid/content/res/Resources;Landroid/graphics/Bitmap;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()V
-    .locals 2
+.method public final a(IIILandroid/graphics/Rect;Landroid/graphics/Rect;)V
+    .locals 6
 
-    iget-object v0, p0, Leo;->a:Lfd;
+    const/4 v5, 0x0
 
-    iget-object v0, v0, Lfd;->p:Landroid/support/v7/widget/ActionBarContextView;
+    move v0, p1
 
-    const/high16 v1, 0x3f800000    # 1.0f
+    move v1, p2
 
-    invoke-virtual {v0, v1}, Landroid/support/v7/widget/ActionBarContextView;->setAlpha(F)V
+    move v2, p3
 
-    iget-object v0, p0, Leo;->a:Lfd;
+    move-object v3, p4
 
-    iget-object v0, v0, Lfd;->K:Lbkb;
+    move-object v4, p5
 
-    const/4 v1, 0x0
-
-    invoke-virtual {v0, v1}, Lbkb;->q(Laga;)V
-
-    iget-object v0, p0, Leo;->a:Lfd;
-
-    iput-object v1, v0, Lfd;->K:Lbkb;
+    invoke-static/range {v0 .. v5}, Landroid/view/Gravity;->apply(IIILandroid/graphics/Rect;Landroid/graphics/Rect;I)V
 
     return-void
 .end method
 
-.method public final b()V
+.method public final getOutline(Landroid/graphics/Outline;)V
     .locals 2
 
-    iget-object v0, p0, Leo;->a:Lfd;
+    invoke-virtual {p0}, Lep;->b()V
 
-    iget-object v0, v0, Lfd;->p:Landroid/support/v7/widget/ActionBarContextView;
+    iget-object v0, p0, Leo;->e:Landroid/graphics/Rect;
 
-    const/4 v1, 0x0
+    iget v1, p0, Lep;->d:F
 
-    invoke-virtual {v0, v1}, Landroid/support/v7/widget/ActionBarContextView;->setVisibility(I)V
+    invoke-virtual {p1, v0, v1}, Landroid/graphics/Outline;->setRoundRect(Landroid/graphics/Rect;F)V
 
-    iget-object v0, p0, Leo;->a:Lfd;
-
-    iget-object v0, v0, Lfd;->p:Landroid/support/v7/widget/ActionBarContextView;
-
-    invoke-virtual {v0}, Landroid/support/v7/widget/ActionBarContextView;->getParent()Landroid/view/ViewParent;
-
-    move-result-object v0
-
-    instance-of v0, v0, Landroid/view/View;
-
-    if-eqz v0, :cond_0
-
-    iget-object v0, p0, Leo;->a:Lfd;
-
-    iget-object v0, v0, Lfd;->p:Landroid/support/v7/widget/ActionBarContextView;
-
-    invoke-virtual {v0}, Landroid/support/v7/widget/ActionBarContextView;->getParent()Landroid/view/ViewParent;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/view/View;
-
-    invoke-static {v0}, Laff;->c(Landroid/view/View;)V
-
-    :cond_0
     return-void
 .end method

@@ -1,341 +1,169 @@
 .class public final Lmiv;
-.super Lmiz;
+.super Landroid/view/GestureDetector$SimpleOnGestureListener;
 
 
 # static fields
-.field public static final synthetic c:I
-
-.field private static final j:Laiu;
+.field public static final synthetic d:I
 
 
 # instance fields
-.field public final a:Lmja;
+.field public a:F
 
 .field public b:F
 
-.field private final k:Laiw;
+.field public final synthetic c:Lcom/google/android/libraries/memorymonitor/MemoryMonitorView;
 
-.field private final l:Laiv;
+.field private e:Landroid/widget/Toast;
 
-.field private m:Z
+.field private f:F
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
+.method public constructor <init>(Lcom/google/android/libraries/memorymonitor/MemoryMonitorView;)V
+    .locals 0
 
-    new-instance v0, Lmiu;
+    iput-object p1, p0, Lmiv;->c:Lcom/google/android/libraries/memorymonitor/MemoryMonitorView;
 
-    invoke-direct {v0}, Lmiu;-><init>()V
-
-    sput-object v0, Lmiv;->j:Laiu;
-
-    return-void
-.end method
-
-.method public constructor <init>(Landroid/content/Context;Lmim;Lmja;)V
-    .locals 1
-
-    invoke-direct {p0, p1, p2}, Lmiz;-><init>(Landroid/content/Context;Lmim;)V
-
-    const/4 p1, 0x0
-
-    iput-boolean p1, p0, Lmiv;->m:Z
-
-    iput-object p3, p0, Lmiv;->a:Lmja;
-
-    iput-object p0, p3, Lmja;->b:Lmiz;
-
-    new-instance p1, Laiw;
-
-    invoke-direct {p1}, Laiw;-><init>()V
-
-    iput-object p1, p0, Lmiv;->k:Laiw;
-
-    const/high16 p2, 0x3f800000    # 1.0f
-
-    invoke-virtual {p1, p2}, Laiw;->c(F)V
-
-    const/high16 p3, 0x42480000    # 50.0f
-
-    invoke-virtual {p1, p3}, Laiw;->e(F)V
-
-    new-instance p3, Laiv;
-
-    sget-object v0, Lmiv;->j:Laiu;
-
-    invoke-direct {p3, p0, v0}, Laiv;-><init>(Ljava/lang/Object;Laiu;)V
-
-    iput-object p3, p0, Lmiv;->l:Laiv;
-
-    iput-object p1, p3, Laiv;->q:Laiw;
-
-    invoke-virtual {p0, p2}, Lmiz;->e(F)V
+    invoke-direct {p0}, Landroid/view/GestureDetector$SimpleOnGestureListener;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(F)V
-    .locals 0
-
-    iput p1, p0, Lmiv;->b:F
-
-    invoke-virtual {p0}, Lmiv;->invalidateSelf()V
-
-    return-void
-.end method
-
-.method public final b(ZZZ)Z
+.method public final varargs a(Ljava/lang/String;[Ljava/lang/Object;)V
     .locals 1
 
-    invoke-super {p0, p1, p2, p3}, Lmiz;->b(ZZZ)Z
-
-    move-result p1
-
-    iget-object p2, p0, Lmiv;->d:Landroid/content/Context;
-
-    invoke-virtual {p2}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
-
-    move-result-object p2
-
-    invoke-static {p2}, Lljr;->y(Landroid/content/ContentResolver;)F
-
-    move-result p2
-
-    const/4 p3, 0x0
-
-    cmpl-float p3, p2, p3
-
-    if-nez p3, :cond_0
-
-    const/4 p2, 0x1
-
-    iput-boolean p2, p0, Lmiv;->m:Z
-
-    goto :goto_0
-
-    :cond_0
-    const/4 p3, 0x0
-
-    iput-boolean p3, p0, Lmiv;->m:Z
-
-    iget-object p3, p0, Lmiv;->k:Laiw;
-
-    const/high16 v0, 0x42480000    # 50.0f
-
-    div-float/2addr v0, p2
-
-    invoke-virtual {p3, v0}, Laiw;->e(F)V
-
-    :goto_0
-    return p1
-.end method
-
-.method public final draw(Landroid/graphics/Canvas;)V
-    .locals 8
-
-    new-instance v0, Landroid/graphics/Rect;
-
-    invoke-direct {v0}, Landroid/graphics/Rect;-><init>()V
-
-    invoke-virtual {p0}, Lmiv;->getBounds()Landroid/graphics/Rect;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Landroid/graphics/Rect;->isEmpty()Z
-
-    move-result v1
-
-    if-nez v1, :cond_1
-
-    invoke-virtual {p0}, Lmiv;->isVisible()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_1
-
-    invoke-virtual {p1, v0}, Landroid/graphics/Canvas;->getClipBounds(Landroid/graphics/Rect;)Z
-
-    move-result v0
-
-    if-nez v0, :cond_0
-
-    goto :goto_0
-
-    :cond_0
-    invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
-
-    iget-object v0, p0, Lmiv;->a:Lmja;
-
-    invoke-virtual {p0}, Lmiv;->getBounds()Landroid/graphics/Rect;
-
-    move-result-object v1
-
-    invoke-virtual {p0}, Lmiz;->c()F
-
-    move-result v2
-
-    invoke-virtual {v0, p1, v1, v2}, Lmja;->f(Landroid/graphics/Canvas;Landroid/graphics/Rect;F)V
-
-    iget-object v0, p0, Lmiv;->a:Lmja;
-
-    iget-object v1, p0, Lmiv;->h:Landroid/graphics/Paint;
-
-    invoke-virtual {v0, p1, v1}, Lmja;->e(Landroid/graphics/Canvas;Landroid/graphics/Paint;)V
-
-    iget-object v0, p0, Lmiv;->e:Lmim;
-
-    iget-object v0, v0, Lmim;->c:[I
-
-    const/4 v1, 0x0
-
-    aget v0, v0, v1
-
-    iget v1, p0, Lmiz;->i:I
-
-    invoke-static {v0, v1}, Lkwp;->k(II)I
-
-    move-result v7
-
-    iget-object v2, p0, Lmiv;->a:Lmja;
-
-    iget-object v4, p0, Lmiv;->h:Landroid/graphics/Paint;
-
-    const/4 v5, 0x0
-
-    iget v6, p0, Lmiv;->b:F
-
-    move-object v3, p1
-
-    invoke-virtual/range {v2 .. v7}, Lmja;->d(Landroid/graphics/Canvas;Landroid/graphics/Paint;FFI)V
-
-    invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
-
-    return-void
-
-    :cond_1
-    :goto_0
-    return-void
-.end method
-
-.method public final getIntrinsicHeight()I
-    .locals 1
-
-    iget-object v0, p0, Lmiv;->a:Lmja;
-
-    invoke-virtual {v0}, Lmja;->a()I
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public final getIntrinsicWidth()I
-    .locals 1
-
-    iget-object v0, p0, Lmiv;->a:Lmja;
-
-    invoke-virtual {v0}, Lmja;->b()I
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public final bridge synthetic getOpacity()I
-    .locals 1
-
-    const/4 v0, -0x3
-
-    return v0
-.end method
-
-.method public final jumpToCurrentState()V
-    .locals 2
-
-    iget-object v0, p0, Lmiv;->l:Laiv;
-
-    invoke-virtual {v0}, Laiv;->k()V
-
-    invoke-virtual {p0}, Lmiv;->getLevel()I
-
-    move-result v0
-
-    int-to-float v0, v0
-
-    const v1, 0x461c4000    # 10000.0f
-
-    div-float/2addr v0, v1
-
-    invoke-virtual {p0, v0}, Lmiv;->a(F)V
-
-    return-void
-.end method
-
-.method protected final onLevelChange(I)Z
-    .locals 3
-
-    iget-boolean v0, p0, Lmiv;->m:Z
-
-    const v1, 0x461c4000    # 10000.0f
+    iget-object v0, p0, Lmiv;->e:Landroid/widget/Toast;
 
     if-eqz v0, :cond_0
 
-    iget-object v0, p0, Lmiv;->l:Laiv;
-
-    invoke-virtual {v0}, Laiv;->k()V
-
-    int-to-float p1, p1
-
-    div-float/2addr p1, v1
-
-    invoke-virtual {p0, p1}, Lmiv;->a(F)V
-
-    goto :goto_0
+    invoke-virtual {v0}, Landroid/widget/Toast;->cancel()V
 
     :cond_0
-    iget-object v0, p0, Lmiv;->l:Laiv;
+    iget-object v0, p0, Lmiv;->c:Lcom/google/android/libraries/memorymonitor/MemoryMonitorView;
 
-    iget v2, p0, Lmiv;->b:F
+    invoke-virtual {v0}, Lcom/google/android/libraries/memorymonitor/MemoryMonitorView;->getContext()Landroid/content/Context;
 
-    mul-float v2, v2, v1
+    move-result-object v0
 
-    invoke-virtual {v0, v2}, Lais;->i(F)V
+    invoke-static {p1, p2}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
-    iget-object v0, p0, Lmiv;->l:Laiv;
+    move-result-object p1
 
-    int-to-float p1, p1
+    const/4 p2, 0x1
 
-    iget-boolean v1, v0, Lais;->m:Z
+    invoke-static {v0, p1, p2}, Landroid/widget/Toast;->makeText(Landroid/content/Context;Ljava/lang/CharSequence;I)Landroid/widget/Toast;
 
-    if-eqz v1, :cond_1
+    move-result-object p1
 
-    iput p1, v0, Laiv;->r:F
+    iput-object p1, p0, Lmiv;->e:Landroid/widget/Toast;
 
-    goto :goto_0
+    invoke-virtual {p1}, Landroid/widget/Toast;->show()V
 
-    :cond_1
-    iget-object v1, v0, Laiv;->q:Laiw;
+    return-void
+.end method
 
-    if-nez v1, :cond_2
+.method public final onDown(Landroid/view/MotionEvent;)Z
+    .locals 2
 
-    new-instance v1, Laiw;
+    invoke-static {}, Lmit;->a()F
 
-    invoke-direct {v1, p1}, Laiw;-><init>(F)V
+    move-result p1
 
-    iput-object v1, v0, Laiv;->q:Laiw;
+    iput p1, p0, Lmiv;->a:F
 
-    :cond_2
-    iget-object v1, v0, Laiv;->q:Laiw;
+    iput p1, p0, Lmiv;->b:F
 
-    invoke-virtual {v1, p1}, Laiw;->d(F)V
+    iget-object v0, p0, Lmiv;->c:Lcom/google/android/libraries/memorymonitor/MemoryMonitorView;
 
-    invoke-virtual {v0}, Lais;->d()V
+    iget-object v0, v0, Lcom/google/android/libraries/memorymonitor/MemoryMonitorView;->f:Lmit;
 
-    :goto_0
+    iget-wide v0, v0, Lmit;->c:J
+
+    long-to-double v0, v0
+
+    invoke-static {v0, v1}, Lcom/google/android/libraries/memorymonitor/MemoryMonitorView;->b(D)J
+
+    move-result-wide v0
+
+    long-to-float v0, v0
+
+    sget v1, Lcom/google/android/libraries/memorymonitor/MemoryMonitorView;->a:F
+
+    div-float/2addr v0, v1
+
+    sub-float/2addr p1, v0
+
+    iput p1, p0, Lmiv;->f:F
+
     const/4 p1, 0x1
 
     return p1
+.end method
+
+.method public final onScroll(Landroid/view/MotionEvent;Landroid/view/MotionEvent;FF)Z
+    .locals 0
+
+    iget p1, p0, Lmiv;->b:F
+
+    iget-object p2, p0, Lmiv;->c:Lcom/google/android/libraries/memorymonitor/MemoryMonitorView;
+
+    iget p2, p2, Lcom/google/android/libraries/memorymonitor/MemoryMonitorView;->e:F
+
+    div-float/2addr p4, p2
+
+    add-float/2addr p1, p4
+
+    iput p1, p0, Lmiv;->b:F
+
+    iget p2, p0, Lmiv;->f:F
+
+    const/high16 p3, 0x3f800000    # 1.0f
+
+    invoke-static {p1, p3}, Ljava/lang/Math;->min(FF)F
+
+    move-result p1
+
+    invoke-static {p2, p1}, Ljava/lang/Math;->max(FF)F
+
+    move-result p1
+
+    iput p1, p0, Lmiv;->b:F
+
+    const/4 p2, 0x2
+
+    new-array p2, p2, [Ljava/lang/Object;
+
+    const/high16 p3, 0x42c80000    # 100.0f
+
+    mul-float p1, p1, p3
+
+    invoke-static {p1}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
+
+    move-result-object p1
+
+    const/4 p3, 0x0
+
+    aput-object p1, p2, p3
+
+    iget p1, p0, Lmiv;->b:F
+
+    sget p3, Lcom/google/android/libraries/memorymonitor/MemoryMonitorView;->a:F
+
+    mul-float p1, p1, p3
+
+    invoke-static {p1}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
+
+    move-result-object p1
+
+    const/4 p3, 0x1
+
+    aput-object p1, p2, p3
+
+    const-string p1, "Target heap usage: %.2f%% (%.2f MB)"
+
+    invoke-virtual {p0, p1, p2}, Lmiv;->a(Ljava/lang/String;[Ljava/lang/Object;)V
+
+    return p3
 .end method

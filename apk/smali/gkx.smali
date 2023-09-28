@@ -1,22 +1,34 @@
-.class public final Lgkx;
+.class final Lgkx;
 .super Ljava/lang/Object;
 
 
-# static fields
-.field public static final a:Lnak;
+# instance fields
+.field public final a:Lhsa;
+
+.field public final b:Llic;
+
+.field public final c:Lhih;
+
+.field final synthetic d:Lgky;
+
+.field public final e:Lglz;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
+.method public constructor <init>(Lgky;Lhsa;Llic;Lhih;Lglz;)V
+    .locals 0
 
-    const-string v0, "com/google/android/apps/camera/pixelcamerakit/common/ActiveCameraMonitorModule"
+    iput-object p1, p0, Lgkx;->d:Lgky;
 
-    invoke-static {v0}, Lnak;->h(Ljava/lang/String;)Lnak;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    move-result-object v0
+    iput-object p2, p0, Lgkx;->a:Lhsa;
 
-    sput-object v0, Lgkx;->a:Lnak;
+    iput-object p3, p0, Lgkx;->b:Llic;
+
+    iput-object p4, p0, Lgkx;->c:Lhih;
+
+    iput-object p5, p0, Lgkx;->e:Lglz;
 
     return-void
 .end method

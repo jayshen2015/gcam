@@ -1,98 +1,101 @@
-.class final Lcql;
+.class public final synthetic Lcql;
 .super Ljava/lang/Object;
-
-# interfaces
-.implements Lkai;
 
 
 # instance fields
-.field final synthetic a:Lcqo;
-
-.field private final b:Ljava/util/concurrent/atomic/AtomicBoolean;
+.field public final synthetic a:Lcqq;
 
 
 # direct methods
-.method public constructor <init>(Lcqo;)V
-    .locals 1
-
-    iput-object p1, p0, Lcql;->a:Lcqo;
+.method public synthetic constructor <init>(Lcqq;)V
+    .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    new-instance p1, Ljava/util/concurrent/atomic/AtomicBoolean;
-
-    const/4 v0, 0x1
-
-    invoke-direct {p1, v0}, Ljava/util/concurrent/atomic/AtomicBoolean;-><init>(Z)V
-
-    iput-object p1, p0, Lcql;->b:Ljava/util/concurrent/atomic/AtomicBoolean;
+    iput-object p1, p0, Lcql;->a:Lcqq;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final bridge synthetic bn(Ljava/lang/Object;)V
-    .locals 3
+.method public final a(Lcuv;Z)V
+    .locals 2
 
-    check-cast p1, Landroid/graphics/PointF;
+    iget-object v0, p0, Lcql;->a:Lcqq;
 
-    iget-object v0, p0, Lcql;->b:Ljava/util/concurrent/atomic/AtomicBoolean;
+    sget-object v1, Lcuv;->a:Lcuv;
 
-    const/4 v1, 0x1
+    invoke-virtual {p1}, Lcuv;->ordinal()I
 
-    const/4 v2, 0x0
+    move-result v1
 
-    invoke-virtual {v0, v1, v2}, Ljava/util/concurrent/atomic/AtomicBoolean;->compareAndSet(ZZ)Z
+    packed-switch v1, :pswitch_data_0
+
+    new-instance p2, Ljava/lang/UnsupportedOperationException;
+
+    invoke-static {p1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-static {p1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/String;->length()I
 
     move-result v0
 
-    if-eqz v0, :cond_0
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    add-int/lit8 v0, v0, 0x14
+
+    invoke-direct {v1, v0}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string v0, "Unsupported option: "
+
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-direct {p2, p1}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
+
+    throw p2
+
+    :pswitch_0
+    sget-object p1, Lcqj;->c:Lcqj;
 
     goto :goto_0
 
-    :cond_0
-    iget-object v0, p0, Lcql;->a:Lcqo;
+    :pswitch_1
+    sget-object p1, Lcqj;->e:Lcqj;
 
-    iget-object v0, v0, Lcqo;->h:Ldhi;
+    goto :goto_0
 
-    sget-object v1, Ldhh;->k:Ldhj;
+    :pswitch_2
+    sget-object p1, Lcqj;->d:Lcqj;
 
-    invoke-interface {v0, v1}, Ldhi;->l(Ldhj;)Z
+    goto :goto_0
 
-    move-result v0
+    :pswitch_3
+    sget-object p1, Lcqj;->b:Lcqj;
 
-    if-eqz v0, :cond_2
-
-    iget-object v0, p0, Lcql;->a:Lcqo;
-
-    iget-object v0, v0, Lcqo;->q:Lbkb;
-
-    iget-object v0, v0, Lbkb;->a:Ljava/lang/Object;
-
-    check-cast v0, Ljvk;
-
-    iget-object v0, v0, Ljvk;->d:Ljava/lang/Object;
-
-    check-cast v0, Ljava/lang/Boolean;
-
-    invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
-
-    move-result v0
-
-    if-nez v0, :cond_1
-
-    goto :goto_1
-
-    :cond_1
     :goto_0
-    return-void
-
-    :cond_2
-    :goto_1
-    iget-object v0, p0, Lcql;->a:Lcqo;
-
-    invoke-virtual {v0, p1, v2}, Lcqo;->f(Landroid/graphics/PointF;Z)V
+    invoke-virtual {v0, p1, p2}, Lcqq;->d(Lcqj;Z)V
 
     return-void
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method

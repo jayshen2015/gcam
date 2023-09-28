@@ -1,22 +1,43 @@
-.class public final Lcvu;
+.class public final synthetic Lcvu;
 .super Ljava/lang/Object;
 
+# interfaces
+.implements Ljava/lang/Runnable;
 
-# static fields
-.field public static final a:Lcla;
+
+# instance fields
+.field public final synthetic a:Lcvv;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
+.method public synthetic constructor <init>(Lcvv;)V
+    .locals 0
 
-    new-instance v0, Lcla;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const/16 v1, 0x13
+    iput-object p1, p0, Lcvu;->a:Lcvv;
 
-    invoke-direct {v0, v1}, Lcla;-><init>(I)V
+    return-void
+.end method
 
-    sput-object v0, Lcvu;->a:Lcla;
+
+# virtual methods
+.method public final run()V
+    .locals 3
+
+    iget-object v0, p0, Lcvu;->a:Lcvv;
+
+    iget-object v1, v0, Lcvv;->a:Lcvo;
+
+    iget-object v2, v0, Lcvv;->c:Llwd;
+
+    invoke-virtual {v1, v2}, Lcvo;->f(Llwd;)V
+
+    iget-object v1, v0, Lcvv;->a:Lcvo;
+
+    iget-object v0, v0, Lcvv;->b:Ljava/lang/Runnable;
+
+    invoke-virtual {v1, v0}, Lcvo;->h(Ljava/lang/Runnable;)V
 
     return-void
 .end method

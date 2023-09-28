@@ -2,80 +2,92 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lnno;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field public final synthetic a:Lffl;
+.field public final synthetic a:Lfgb;
 
-.field public final synthetic b:Lhkt;
-
-.field public final synthetic c:Ljava/io/InputStream;
-
-.field public final synthetic d:Lgxn;
-
-.field public final synthetic e:Lmqp;
-
-.field public final synthetic f:J
-
-.field public final synthetic g:Ljava/lang/String;
-
-.field public final synthetic h:Lhjc;
+.field private final synthetic b:I
 
 
 # direct methods
-.method public synthetic constructor <init>(Lffl;Lhkt;Ljava/io/InputStream;Lgxn;Lmqp;JLjava/lang/String;Lhjc;)V
+.method public synthetic constructor <init>(Lfgb;I)V
     .locals 0
+
+    iput p2, p0, Lffi;->b:I
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lffi;->a:Lffl;
-
-    iput-object p2, p0, Lffi;->b:Lhkt;
-
-    iput-object p3, p0, Lffi;->c:Ljava/io/InputStream;
-
-    iput-object p4, p0, Lffi;->d:Lgxn;
-
-    iput-object p5, p0, Lffi;->e:Lmqp;
-
-    iput-wide p6, p0, Lffi;->f:J
-
-    iput-object p8, p0, Lffi;->g:Ljava/lang/String;
-
-    iput-object p9, p0, Lffi;->h:Lhjc;
+    iput-object p1, p0, Lffi;->a:Lfgb;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Ljava/lang/Object;)Lnou;
-    .locals 10
+.method public final run()V
+    .locals 3
 
-    iget-object v0, p0, Lffi;->a:Lffl;
+    iget v0, p0, Lffi;->b:I
 
-    iget-object v2, p0, Lffi;->b:Lhkt;
+    const/4 v1, 0x1
 
-    iget-object v3, p0, Lffi;->c:Ljava/io/InputStream;
+    const/4 v2, 0x0
 
-    iget-object v4, p0, Lffi;->d:Lgxn;
+    packed-switch v0, :pswitch_data_0
 
-    iget-object v5, p0, Lffi;->e:Lmqp;
+    iget-object v0, p0, Lffi;->a:Lfgb;
 
-    iget-wide v6, p0, Lffi;->f:J
+    iput-boolean v2, v0, Lfgb;->p:Z
 
-    iget-object v8, p0, Lffi;->g:Ljava/lang/String;
+    invoke-virtual {v0}, Lfgb;->e()V
 
-    iget-object v9, p0, Lffi;->h:Lhjc;
+    return-void
 
-    check-cast p1, Ljava/lang/RuntimeException;
+    :pswitch_0
+    iget-object v0, p0, Lffi;->a:Lfgb;
 
-    iget-object v1, v0, Lffl;->b:Lfgd;
+    iput-boolean v1, v0, Lfgb;->p:Z
 
-    invoke-interface/range {v1 .. v9}, Lfgd;->b(Lhkt;Ljava/io/InputStream;Lgxn;Lmqp;JLjava/lang/String;Lhjc;)Lnou;
+    invoke-virtual {v0}, Lfgb;->d()V
 
-    move-result-object p1
+    return-void
 
-    return-object p1
+    :pswitch_1
+    iget-object v0, p0, Lffi;->a:Lfgb;
+
+    iput-boolean v1, v0, Lfgb;->q:Z
+
+    invoke-virtual {v0}, Lfgb;->e()V
+
+    return-void
+
+    :pswitch_2
+    iget-object v0, p0, Lffi;->a:Lfgb;
+
+    iget-object v0, v0, Lfgb;->e:Llap;
+
+    invoke-virtual {v0}, Llap;->close()V
+
+    return-void
+
+    :pswitch_3
+    iget-object v0, p0, Lffi;->a:Lfgb;
+
+    iput-boolean v2, v0, Lfgb;->q:Z
+
+    invoke-virtual {v0}, Lfgb;->d()V
+
+    return-void
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method

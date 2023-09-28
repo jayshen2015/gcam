@@ -1,220 +1,47 @@
-.class public final Lnhk;
-.super Lnws;
-
-# interfaces
-.implements Lnxz;
-
-
-# static fields
-.field public static final h:Lnhk;
-
-.field private static volatile i:Lnyf;
+.class final Lnhk;
+.super Ljava/util/LinkedHashMap;
 
 
 # instance fields
-.field public a:I
-
-.field public b:I
-
-.field public c:I
-
-.field public d:J
-
-.field public e:J
-
-.field public f:I
-
-.field public g:Z
+.field final synthetic a:Lnhl;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
+.method public constructor <init>(Lnhl;I)V
+    .locals 1
 
-    new-instance v0, Lnhk;
+    iput-object p1, p0, Lnhk;->a:Lnhl;
 
-    invoke-direct {v0}, Lnhk;-><init>()V
+    const/high16 p1, 0x3f400000    # 0.75f
 
-    sput-object v0, Lnhk;->h:Lnhk;
+    const/4 v0, 0x1
 
-    const-class v1, Lnhk;
-
-    invoke-static {v1, v0}, Lnws;->aa(Ljava/lang/Class;Lnws;)V
-
-    return-void
-.end method
-
-.method private constructor <init>()V
-    .locals 0
-
-    invoke-direct {p0}, Lnws;-><init>()V
+    invoke-direct {p0, p2, p1, v0}, Ljava/util/LinkedHashMap;-><init>(IFZ)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method protected final a(ILjava/lang/Object;)Ljava/lang/Object;
-    .locals 3
+.method protected final removeEldestEntry(Ljava/util/Map$Entry;)Z
+    .locals 1
 
-    add-int/lit8 p1, p1, -0x1
+    invoke-virtual {p0}, Lnhk;->size()I
 
-    const/4 p2, 0x1
+    move-result p1
 
-    packed-switch p1, :pswitch_data_0
+    iget-object v0, p0, Lnhk;->a:Lnhl;
 
-    :pswitch_0
-    const/4 p1, 0x0
+    iget v0, v0, Lnhl;->a:I
 
-    return-object p1
+    if-le p1, v0, :cond_0
 
-    :pswitch_1
-    sget-object p1, Lnhk;->i:Lnyf;
+    const/4 p1, 0x1
 
-    if-nez p1, :cond_1
-
-    const-class p2, Lnhk;
-
-    monitor-enter p2
-
-    :try_start_0
-    sget-object p1, Lnhk;->i:Lnyf;
-
-    if-nez p1, :cond_0
-
-    new-instance p1, Lnwo;
-
-    sget-object v0, Lnhk;->h:Lnhk;
-
-    invoke-direct {p1, v0}, Lnwo;-><init>(Lnws;)V
-
-    sput-object p1, Lnhk;->i:Lnyf;
+    return p1
 
     :cond_0
-    monitor-exit p2
+    const/4 p1, 0x0
 
-    goto :goto_0
-
-    :catchall_0
-    move-exception p1
-
-    monitor-exit p2
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw p1
-
-    :cond_1
-    :goto_0
-    return-object p1
-
-    :pswitch_2
-    sget-object p1, Lnhk;->h:Lnhk;
-
-    return-object p1
-
-    :pswitch_3
-    new-instance p1, Lnwn;
-
-    sget-object p2, Lnhk;->h:Lnhk;
-
-    invoke-direct {p1, p2}, Lnwn;-><init>(Lnws;)V
-
-    return-object p1
-
-    :pswitch_4
-    new-instance p1, Lnhk;
-
-    invoke-direct {p1}, Lnhk;-><init>()V
-
-    return-object p1
-
-    :pswitch_5
-    const-string p1, "a"
-
-    const-string v0, "\u0001\u0006\u0000\u0001\u0001\u0006\u0006\u0000\u0000\u0000\u0001\u100c\u0000\u0002\u100c\u0001\u0003\u1002\u0002\u0004\u1002\u0003\u0005\u100c\u0004\u0006\u1007\u0005"
-
-    const/16 v1, 0xa
-
-    new-array v1, v1, [Ljava/lang/Object;
-
-    const/4 v2, 0x0
-
-    aput-object p1, v1, v2
-
-    const-string p1, "b"
-
-    aput-object p1, v1, p2
-
-    sget-object p1, Lngu;->l:Lnww;
-
-    const/4 p2, 0x4
-
-    aput-object p1, v1, p2
-
-    const/4 p2, 0x2
-
-    aput-object p1, v1, p2
-
-    const/4 p1, 0x3
-
-    const-string p2, "c"
-
-    aput-object p2, v1, p1
-
-    const/4 p1, 0x5
-
-    const-string p2, "d"
-
-    aput-object p2, v1, p1
-
-    const/4 p1, 0x6
-
-    const-string p2, "e"
-
-    aput-object p2, v1, p1
-
-    const/4 p1, 0x7
-
-    const-string p2, "f"
-
-    aput-object p2, v1, p1
-
-    const/16 p1, 0x8
-
-    sget-object p2, Lngu;->m:Lnww;
-
-    aput-object p2, v1, p1
-
-    const/16 p1, 0x9
-
-    const-string p2, "g"
-
-    aput-object p2, v1, p1
-
-    sget-object p1, Lnhk;->h:Lnhk;
-
-    invoke-static {p1, v0, v1}, Lnhk;->X(Lnxy;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object p1
-
-    return-object p1
-
-    :pswitch_6
-    invoke-static {p2}, Ljava/lang/Byte;->valueOf(B)Ljava/lang/Byte;
-
-    move-result-object p1
-
-    return-object p1
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_6
-        :pswitch_0
-        :pswitch_5
-        :pswitch_4
-        :pswitch_3
-        :pswitch_2
-        :pswitch_1
-    .end packed-switch
+    return p1
 .end method

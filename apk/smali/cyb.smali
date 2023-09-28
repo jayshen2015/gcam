@@ -1,106 +1,47 @@
-.class Lcyb;
-.super Lcys;
+.class public final synthetic Lcyb;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field final synthetic b:Lcyd;
+.field public final synthetic a:Lcye;
+
+.field public final synthetic b:[Lcxy;
 
 
 # direct methods
-.method public constructor <init>(Lcyd;)V
+.method public synthetic constructor <init>(Lcye;[Lcxy;)V
     .locals 0
 
-    iput-object p1, p0, Lcyb;->b:Lcyd;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0}, Lcys;-><init>()V
+    iput-object p1, p0, Lcyb;->a:Lcye;
+
+    iput-object p2, p0, Lcyb;->b:[Lcxy;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final bx()I
-    .locals 1
+.method public final run()V
+    .locals 3
 
-    const/4 v0, 0x1
+    iget-object v0, p0, Lcyb;->a:Lcye;
 
-    return v0
-.end method
+    iget-object v1, p0, Lcyb;->b:[Lcxy;
 
-.method public c()V
-    .locals 5
+    invoke-static {v1}, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
 
-    iget-object v0, p0, Lcyb;->b:Lcyd;
+    move-result-object v1
 
-    iget-object v1, v0, Lcyd;->h:Lczx;
+    new-instance v2, Lcyd;
 
-    const/4 v2, 0x0
+    invoke-direct {v2, v0}, Lcyd;-><init>(Lcye;)V
 
-    invoke-interface {v1, v2}, Lczx;->i(Z)V
-
-    iget-object v1, v0, Lcyd;->g:Libj;
-
-    invoke-interface {v1, v2}, Libj;->v(Z)V
-
-    iget-object v1, v0, Lcyd;->g:Libj;
-
-    invoke-interface {v1, v2}, Libj;->l(Z)V
-
-    iget-object v1, v0, Lcyd;->k:Ldfa;
-
-    invoke-virtual {v1}, Ldfa;->f()V
-
-    iget-object v1, v0, Lcyd;->e:Lcom/google/android/apps/camera/bottombar/BottomBarController;
-
-    iget-object v3, v0, Lcyd;->i:Ldhi;
-
-    sget-object v4, Ldgu;->Y:Ldhj;
-
-    invoke-interface {v3, v4}, Ldhi;->l(Ldhj;)Z
-
-    move-result v3
-
-    if-eqz v3, :cond_0
-
-    iget-object v3, v0, Lcyd;->i:Ldhi;
-
-    sget-object v4, Ldgu;->p:Ldhj;
-
-    invoke-interface {v3, v4}, Ldhi;->l(Ldhj;)Z
-
-    move-result v3
-
-    if-eqz v3, :cond_0
-
-    const/4 v2, 0x1
-
-    goto :goto_0
-
-    :cond_0
-    :goto_0
-    iget-object v3, v0, Lcyd;->i:Ldhi;
-
-    sget-object v4, Ldgu;->M:Ldhj;
-
-    invoke-interface {v3, v4}, Ldhi;->l(Ldhj;)Z
-
-    move-result v3
-
-    invoke-virtual {v1, v2, v3}, Lcom/google/android/apps/camera/bottombar/BottomBarController;->startRecording(ZZ)V
-
-    iget-object v0, v0, Lcyd;->f:Liff;
-
-    invoke-interface {v0}, Liff;->J()V
-
-    return-void
-.end method
-
-.method public final f()V
-    .locals 1
-
-    iget-object v0, p0, Lcyb;->b:Lcyd;
-
-    iput-object p0, v0, Lcyd;->j:Lcys;
+    invoke-static {v1, v2}, Lj$/util/Collection$-EL;->forEach(Ljava/util/Collection;Lj$/util/function/Consumer;)V
 
     return-void
 .end method

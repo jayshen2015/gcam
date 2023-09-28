@@ -1,666 +1,766 @@
-.class public abstract Losm;
-.super Losp;
+.class public final Losm;
+.super Losr;
 
 # interfaces
-.implements Loss;
+.implements Ljava/util/NavigableMap;
+
+
+# static fields
+.field private static final serialVersionUID:J
+
+
+# instance fields
+.field transient d:Ljava/util/NavigableSet;
+
+.field transient e:Ljava/util/NavigableMap;
+
+.field transient f:Ljava/util/NavigableSet;
 
 
 # direct methods
-.method public constructor <init>()V
+.method public constructor <init>(Ljava/util/NavigableMap;Ljava/lang/Object;)V
     .locals 0
 
-    invoke-direct {p0}, Losp;-><init>()V
-
-    return-void
-.end method
-
-.method private final C(ILoku;)Ljava/lang/Object;
-    .locals 2
-
-    invoke-static {p2}, Lolp;->g(Loku;)Loku;
-
-    move-result-object p2
-
-    invoke-static {p2}, Lonm;->n(Loku;)Lopa;
-
-    move-result-object p2
-
-    new-instance v0, Losh;
-
-    invoke-direct {v0, p2, p1}, Losh;-><init>(Looz;I)V
-
-    :cond_0
-    invoke-virtual {p0, v0}, Losm;->f(Lote;)Z
-
-    move-result p1
-
-    if-eqz p1, :cond_1
-
-    invoke-static {p2, v0}, Losm;->n(Looz;Lote;)V
-
-    goto :goto_0
-
-    :cond_1
-    invoke-virtual {p0}, Losm;->a()Ljava/lang/Object;
-
-    move-result-object p1
-
-    instance-of v1, p1, Losy;
-
-    if-eqz v1, :cond_2
-
-    check-cast p1, Losy;
-
-    invoke-virtual {v0, p1}, Losh;->c(Losy;)V
-
-    goto :goto_0
-
-    :cond_2
-    sget-object v1, Losn;->d:Loxb;
-
-    if-eq p1, v1, :cond_0
-
-    invoke-virtual {v0, p1}, Losh;->a(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object p1
-
-    const/4 v0, 0x0
-
-    invoke-interface {p2, p1, v0}, Looz;->b(Ljava/lang/Object;Lomk;)V
-
-    :goto_0
-    invoke-virtual {p2}, Lopa;->m()Ljava/lang/Object;
-
-    move-result-object p1
-
-    sget-object p2, Lolc;->a:Lolc;
-
-    return-object p1
-.end method
-
-.method public static final n(Looz;Lote;)V
-    .locals 1
-
-    new-instance v0, Losj;
-
-    invoke-direct {v0, p1}, Losj;-><init>(Lote;)V
-
-    invoke-interface {p0, v0}, Looz;->a(Lomk;)V
+    invoke-direct {p0, p1, p2}, Losr;-><init>(Ljava/util/SortedMap;Ljava/lang/Object;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public a()Ljava/lang/Object;
-    .locals 2
+.method public final bridge synthetic a()Ljava/util/Map;
+    .locals 1
 
-    :cond_0
-    invoke-virtual {p0}, Losp;->v()Loti;
-
-    move-result-object v0
-
-    if-nez v0, :cond_1
-
-    sget-object v0, Losn;->d:Loxb;
-
-    return-object v0
-
-    :cond_1
-    invoke-virtual {v0}, Loti;->i()Loxb;
-
-    move-result-object v1
-
-    if-eqz v1, :cond_0
-
-    sget-boolean v1, Lopw;->a:Z
-
-    invoke-virtual {v0}, Loti;->g()V
-
-    invoke-virtual {v0}, Loti;->c()Ljava/lang/Object;
+    invoke-virtual {p0}, Losm;->b()Ljava/util/NavigableMap;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method public final b(Loku;)Ljava/lang/Object;
-    .locals 2
+.method final b()Ljava/util/NavigableMap;
+    .locals 1
 
-    invoke-virtual {p0}, Losm;->a()Ljava/lang/Object;
+    invoke-super {p0}, Losr;->c()Ljava/util/SortedMap;
 
     move-result-object v0
 
-    sget-object v1, Losn;->d:Loxb;
+    check-cast v0, Ljava/util/NavigableMap;
 
-    if-eq v0, v1, :cond_0
+    return-object v0
+.end method
 
-    instance-of v1, v0, Losy;
+.method public final bridge synthetic c()Ljava/util/SortedMap;
+    .locals 1
+
+    invoke-virtual {p0}, Losm;->b()Ljava/util/NavigableMap;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public final ceilingEntry(Ljava/lang/Object;)Ljava/util/Map$Entry;
+    .locals 2
+
+    iget-object v0, p0, Losm;->h:Ljava/lang/Object;
+
+    monitor-enter v0
+
+    :try_start_0
+    invoke-virtual {p0}, Losm;->b()Ljava/util/NavigableMap;
+
+    move-result-object v1
+
+    invoke-interface {v1, p1}, Ljava/util/NavigableMap;->ceilingEntry(Ljava/lang/Object;)Ljava/util/Map$Entry;
+
+    move-result-object p1
+
+    iget-object v1, p0, Losm;->h:Ljava/lang/Object;
+
+    invoke-static {p1, v1}, Loxh;->j(Ljava/util/Map$Entry;Ljava/lang/Object;)Ljava/util/Map$Entry;
+
+    move-result-object p1
+
+    monitor-exit v0
+
+    return-object p1
+
+    :catchall_0
+    move-exception p1
+
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw p1
+.end method
+
+.method public final ceilingKey(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 2
+
+    iget-object v0, p0, Losm;->h:Ljava/lang/Object;
+
+    monitor-enter v0
+
+    :try_start_0
+    invoke-virtual {p0}, Losm;->b()Ljava/util/NavigableMap;
+
+    move-result-object v1
+
+    invoke-interface {v1, p1}, Ljava/util/NavigableMap;->ceilingKey(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p1
+
+    monitor-exit v0
+
+    return-object p1
+
+    :catchall_0
+    move-exception p1
+
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw p1
+.end method
+
+.method public final descendingKeySet()Ljava/util/NavigableSet;
+    .locals 3
+
+    iget-object v0, p0, Losm;->h:Ljava/lang/Object;
+
+    monitor-enter v0
+
+    :try_start_0
+    iget-object v1, p0, Losm;->d:Ljava/util/NavigableSet;
 
     if-nez v1, :cond_0
 
-    return-object v0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    invoke-direct {p0, v0, p1}, Losm;->C(ILoku;)Ljava/lang/Object;
-
-    move-result-object p1
-
-    return-object p1
-.end method
-
-.method public final c(Loku;)Ljava/lang/Object;
-    .locals 4
-
-    instance-of v0, p1, Losl;
-
-    if-eqz v0, :cond_0
-
-    move-object v0, p1
-
-    check-cast v0, Losl;
-
-    iget v1, v0, Losl;->c:I
-
-    const/high16 v2, -0x80000000
-
-    and-int v3, v1, v2
-
-    if-eqz v3, :cond_0
-
-    sub-int/2addr v1, v2
-
-    iput v1, v0, Losl;->c:I
-
-    goto :goto_0
-
-    :cond_0
-    new-instance v0, Losl;
-
-    invoke-direct {v0, p0, p1}, Losl;-><init>(Losm;Loku;)V
-
-    :goto_0
-    iget-object p1, v0, Losl;->a:Ljava/lang/Object;
-
-    sget-object v1, Lolc;->a:Lolc;
-
-    iget v2, v0, Losl;->c:I
-
-    packed-switch v2, :pswitch_data_0
-
-    new-instance p1, Ljava/lang/IllegalStateException;
-
-    const-string v0, "call to \'resume\' before \'invoke\' with coroutine"
-
-    invoke-direct {p1, v0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw p1
-
-    :pswitch_0
-    invoke-static {p1}, Lljr;->aO(Ljava/lang/Object;)V
-
-    goto :goto_1
-
-    :pswitch_1
-    invoke-static {p1}, Lljr;->aO(Ljava/lang/Object;)V
-
-    invoke-virtual {p0}, Losm;->a()Ljava/lang/Object;
-
-    move-result-object p1
-
-    sget-object v2, Losn;->d:Loxb;
-
-    if-eq p1, v2, :cond_2
-
-    instance-of v0, p1, Losy;
-
-    if-eqz v0, :cond_1
-
-    check-cast p1, Losy;
-
-    iget-object p1, p1, Losy;->a:Ljava/lang/Throwable;
-
-    invoke-static {p1}, Lolp;->O(Ljava/lang/Throwable;)Ljava/lang/Object;
-
-    move-result-object p1
-
-    :cond_1
-    return-object p1
-
-    :cond_2
-    const/4 p1, 0x1
-
-    iput p1, v0, Losl;->c:I
-
-    invoke-direct {p0, p1, v0}, Losm;->C(ILoku;)Ljava/lang/Object;
-
-    move-result-object p1
-
-    if-ne p1, v1, :cond_3
-
-    return-object v1
-
-    :cond_3
-    :goto_1
-    check-cast p1, Losw;
-
-    iget-object p1, p1, Losw;->b:Ljava/lang/Object;
-
-    return-object p1
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
-.end method
-
-.method protected final d()Lotg;
-    .locals 4
-
-    iget-object v0, p0, Losp;->a:Lown;
-
-    :goto_0
-    invoke-virtual {v0}, Lowr;->k()Ljava/lang/Object;
+    invoke-virtual {p0}, Losm;->b()Ljava/util/NavigableMap;
 
     move-result-object v1
 
-    invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    invoke-interface {v1}, Ljava/util/NavigableMap;->descendingKeySet()Ljava/util/NavigableSet;
 
-    check-cast v1, Lowr;
+    move-result-object v1
 
-    const/4 v2, 0x0
+    iget-object v2, p0, Losm;->h:Ljava/lang/Object;
 
-    if-ne v1, v0, :cond_0
+    invoke-static {v1, v2}, Loxh;->l(Ljava/util/NavigableSet;Ljava/lang/Object;)Ljava/util/NavigableSet;
 
-    move-object v1, v2
+    move-result-object v1
 
-    goto :goto_1
+    iput-object v1, p0, Losm;->d:Ljava/util/NavigableSet;
 
-    :cond_0
-    instance-of v3, v1, Lotg;
+    monitor-exit v0
 
-    if-nez v3, :cond_1
-
-    move-object v1, v2
-
-    goto :goto_1
-
-    :cond_1
-    move-object v2, v1
-
-    check-cast v2, Lotg;
-
-    instance-of v2, v2, Losy;
-
-    if-eqz v2, :cond_2
-
-    invoke-virtual {v1}, Lowr;->cQ()Z
-
-    move-result v2
-
-    if-nez v2, :cond_2
-
-    goto :goto_1
-
-    :cond_2
-    invoke-virtual {v1}, Lowr;->n()Lowr;
-
-    move-result-object v2
-
-    if-nez v2, :cond_4
-
-    :goto_1
-    check-cast v1, Lotg;
-
-    if-eqz v1, :cond_3
-
-    instance-of v0, v1, Losy;
-
-    :cond_3
     return-object v1
 
-    :cond_4
-    invoke-virtual {v2}, Lowr;->q()V
+    :cond_0
+    monitor-exit v0
 
-    goto :goto_0
+    return-object v1
+
+    :catchall_0
+    move-exception v1
+
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw v1
 .end method
 
-.method protected e(Z)V
+.method public final descendingMap()Ljava/util/NavigableMap;
     .locals 3
 
-    invoke-virtual {p0}, Losp;->u()Losy;
+    iget-object v0, p0, Losm;->h:Ljava/lang/Object;
 
-    move-result-object p1
+    monitor-enter v0
 
-    if-eqz p1, :cond_4
-
-    const/4 v0, 0x0
-
-    :goto_0
-    invoke-virtual {p1}, Lowr;->m()Lowr;
-
-    move-result-object v1
-
-    instance-of v2, v1, Lown;
-
-    if-eqz v2, :cond_2
-
-    if-eqz v0, :cond_1
-
-    instance-of v1, v0, Ljava/util/ArrayList;
+    :try_start_0
+    iget-object v1, p0, Losm;->e:Ljava/util/NavigableMap;
 
     if-nez v1, :cond_0
 
-    check-cast v0, Loti;
+    invoke-virtual {p0}, Losm;->b()Ljava/util/NavigableMap;
 
-    invoke-virtual {v0, p1}, Loti;->h(Losy;)V
+    move-result-object v1
 
-    return-void
+    invoke-interface {v1}, Ljava/util/NavigableMap;->descendingMap()Ljava/util/NavigableMap;
 
-    :cond_0
-    check-cast v0, Ljava/util/ArrayList;
+    move-result-object v1
 
-    invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
+    iget-object v2, p0, Losm;->h:Ljava/lang/Object;
 
-    move-result v1
+    invoke-static {v1, v2}, Loxh;->k(Ljava/util/NavigableMap;Ljava/lang/Object;)Ljava/util/NavigableMap;
 
-    add-int/lit8 v1, v1, -0x1
+    move-result-object v1
 
-    :goto_1
-    if-ltz v1, :cond_1
+    iput-object v1, p0, Losm;->e:Ljava/util/NavigableMap;
 
-    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+    monitor-exit v0
 
-    move-result-object v2
-
-    check-cast v2, Loti;
-
-    invoke-virtual {v2, p1}, Loti;->h(Losy;)V
-
-    add-int/lit8 v1, v1, -0x1
-
-    goto :goto_1
-
-    :cond_1
-    return-void
-
-    :cond_2
-    sget-boolean v2, Lopw;->a:Z
-
-    invoke-virtual {v1}, Lowr;->cP()Z
-
-    move-result v2
-
-    if-nez v2, :cond_3
-
-    invoke-virtual {v1}, Lowr;->p()V
-
-    goto :goto_0
-
-    :cond_3
-    invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    check-cast v1, Loti;
-
-    invoke-static {v0, v1}, Lowl;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    goto :goto_0
-
-    :cond_4
-    new-instance p1, Ljava/lang/IllegalStateException;
-
-    const-string v0, "Cannot happen"
-
-    invoke-direct {p1, v0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    goto :goto_3
-
-    :goto_2
-    throw p1
-
-    :goto_3
-    goto :goto_2
-.end method
-
-.method public final f(Lote;)Z
-    .locals 0
-
-    invoke-virtual {p0, p1}, Losm;->g(Lote;)Z
-
-    move-result p1
-
-    return p1
-.end method
-
-.method protected g(Lote;)Z
-    .locals 6
-
-    invoke-virtual {p0}, Losm;->h()Z
-
-    move-result v0
-
-    const/4 v1, 0x1
-
-    const/4 v2, 0x0
-
-    if-eqz v0, :cond_2
-
-    iget-object v0, p0, Losp;->a:Lown;
+    return-object v1
 
     :cond_0
-    invoke-virtual {v0}, Lowr;->m()Lowr;
+    monitor-exit v0
 
-    move-result-object v3
+    return-object v1
 
-    instance-of v4, v3, Loti;
+    :catchall_0
+    move-exception v1
 
-    if-nez v4, :cond_1
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    invoke-virtual {v3, p1, v0}, Lowr;->r(Lowr;Lowr;)Z
-
-    move-result v3
-
-    if-eqz v3, :cond_0
-
-    goto :goto_1
-
-    :cond_1
-    const/4 v1, 0x0
-
-    goto :goto_1
-
-    :cond_2
-    iget-object v0, p0, Losp;->a:Lown;
-
-    new-instance v3, Losk;
-
-    invoke-direct {v3, p1, p0}, Losk;-><init>(Lowr;Losm;)V
-
-    :goto_0
-    invoke-virtual {v0}, Lowr;->m()Lowr;
-
-    move-result-object v4
-
-    instance-of v5, v4, Loti;
-
-    if-nez v5, :cond_3
-
-    invoke-virtual {v4, p1, v0, v3}, Lowr;->j(Lowr;Lowr;Lowp;)I
-
-    move-result v4
-
-    packed-switch v4, :pswitch_data_0
-
-    goto :goto_0
-
-    :pswitch_0
-    return v2
-
-    :cond_3
-    const/4 v1, 0x0
-
-    :goto_1
-    :pswitch_1
-    return v1
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x1
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
+    throw v1
 .end method
 
-.method protected abstract h()Z
-.end method
-
-.method protected abstract i()Z
-.end method
-
-.method public j()Z
+.method public final firstEntry()Ljava/util/Map$Entry;
     .locals 3
 
-    iget-object v0, p0, Losp;->a:Lown;
+    iget-object v0, p0, Losm;->h:Ljava/lang/Object;
 
-    invoke-virtual {v0}, Lowr;->l()Lowr;
+    monitor-enter v0
 
-    move-result-object v0
+    :try_start_0
+    invoke-virtual {p0}, Losm;->b()Ljava/util/NavigableMap;
 
-    instance-of v1, v0, Losy;
+    move-result-object v1
 
-    const/4 v2, 0x0
+    invoke-interface {v1}, Ljava/util/NavigableMap;->firstEntry()Ljava/util/Map$Entry;
 
-    if-eqz v1, :cond_0
+    move-result-object v1
 
-    check-cast v0, Losy;
+    iget-object v2, p0, Losm;->h:Ljava/lang/Object;
 
-    goto :goto_0
+    invoke-static {v1, v2}, Loxh;->j(Ljava/util/Map$Entry;Ljava/lang/Object;)Ljava/util/Map$Entry;
 
-    :cond_0
-    move-object v0, v2
+    move-result-object v1
 
-    :goto_0
-    if-eqz v0, :cond_1
+    monitor-exit v0
 
-    invoke-static {v0}, Losp;->B(Losy;)V
+    return-object v1
 
-    move-object v2, v0
+    :catchall_0
+    move-exception v1
 
-    goto :goto_1
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    :cond_1
-    :goto_1
-    if-eqz v2, :cond_2
+    throw v1
+.end method
 
-    invoke-virtual {p0}, Losm;->i()Z
+.method public final floorEntry(Ljava/lang/Object;)Ljava/util/Map$Entry;
+    .locals 2
 
-    move-result v0
+    iget-object v0, p0, Losm;->h:Ljava/lang/Object;
 
-    if-eqz v0, :cond_2
+    monitor-enter v0
 
-    const/4 v0, 0x1
+    :try_start_0
+    invoke-virtual {p0}, Losm;->b()Ljava/util/NavigableMap;
 
-    return v0
+    move-result-object v1
 
-    :cond_2
+    invoke-interface {v1, p1}, Ljava/util/NavigableMap;->floorEntry(Ljava/lang/Object;)Ljava/util/Map$Entry;
+
+    move-result-object p1
+
+    iget-object v1, p0, Losm;->h:Ljava/lang/Object;
+
+    invoke-static {p1, v1}, Loxh;->j(Ljava/util/Map$Entry;Ljava/lang/Object;)Ljava/util/Map$Entry;
+
+    move-result-object p1
+
+    monitor-exit v0
+
+    return-object p1
+
+    :catchall_0
+    move-exception p1
+
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw p1
+.end method
+
+.method public final floorKey(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 2
+
+    iget-object v0, p0, Losm;->h:Ljava/lang/Object;
+
+    monitor-enter v0
+
+    :try_start_0
+    invoke-virtual {p0}, Losm;->b()Ljava/util/NavigableMap;
+
+    move-result-object v1
+
+    invoke-interface {v1, p1}, Ljava/util/NavigableMap;->floorKey(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p1
+
+    monitor-exit v0
+
+    return-object p1
+
+    :catchall_0
+    move-exception p1
+
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw p1
+.end method
+
+.method public final headMap(Ljava/lang/Object;Z)Ljava/util/NavigableMap;
+    .locals 2
+
+    iget-object v0, p0, Losm;->h:Ljava/lang/Object;
+
+    monitor-enter v0
+
+    :try_start_0
+    invoke-virtual {p0}, Losm;->b()Ljava/util/NavigableMap;
+
+    move-result-object v1
+
+    invoke-interface {v1, p1, p2}, Ljava/util/NavigableMap;->headMap(Ljava/lang/Object;Z)Ljava/util/NavigableMap;
+
+    move-result-object p1
+
+    iget-object p2, p0, Losm;->h:Ljava/lang/Object;
+
+    invoke-static {p1, p2}, Loxh;->k(Ljava/util/NavigableMap;Ljava/lang/Object;)Ljava/util/NavigableMap;
+
+    move-result-object p1
+
+    monitor-exit v0
+
+    return-object p1
+
+    :catchall_0
+    move-exception p1
+
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw p1
+.end method
+
+.method public final headMap(Ljava/lang/Object;)Ljava/util/SortedMap;
+    .locals 1
+
     const/4 v0, 0x0
 
-    return v0
+    invoke-virtual {p0, p1, v0}, Losm;->headMap(Ljava/lang/Object;Z)Ljava/util/NavigableMap;
+
+    move-result-object p1
+
+    return-object p1
 .end method
 
-.method public k()Z
-    .locals 1
+.method public final higherEntry(Ljava/lang/Object;)Ljava/util/Map$Entry;
+    .locals 2
 
-    invoke-virtual {p0}, Losm;->l()Z
+    iget-object v0, p0, Losm;->h:Ljava/lang/Object;
 
-    move-result v0
+    monitor-enter v0
 
-    return v0
+    :try_start_0
+    invoke-virtual {p0}, Losm;->b()Ljava/util/NavigableMap;
+
+    move-result-object v1
+
+    invoke-interface {v1, p1}, Ljava/util/NavigableMap;->higherEntry(Ljava/lang/Object;)Ljava/util/Map$Entry;
+
+    move-result-object p1
+
+    iget-object v1, p0, Losm;->h:Ljava/lang/Object;
+
+    invoke-static {p1, v1}, Loxh;->j(Ljava/util/Map$Entry;Ljava/lang/Object;)Ljava/util/Map$Entry;
+
+    move-result-object p1
+
+    monitor-exit v0
+
+    return-object p1
+
+    :catchall_0
+    move-exception p1
+
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw p1
 .end method
 
-.method protected final l()Z
+.method public final higherKey(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 2
+
+    iget-object v0, p0, Losm;->h:Ljava/lang/Object;
+
+    monitor-enter v0
+
+    :try_start_0
+    invoke-virtual {p0}, Losm;->b()Ljava/util/NavigableMap;
+
+    move-result-object v1
+
+    invoke-interface {v1, p1}, Ljava/util/NavigableMap;->higherKey(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p1
+
+    monitor-exit v0
+
+    return-object p1
+
+    :catchall_0
+    move-exception p1
+
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw p1
+.end method
+
+.method public final keySet()Ljava/util/Set;
     .locals 1
 
-    iget-object v0, p0, Losp;->a:Lown;
-
-    invoke-virtual {v0}, Lowr;->l()Lowr;
+    invoke-virtual {p0}, Losm;->navigableKeySet()Ljava/util/NavigableSet;
 
     move-result-object v0
-
-    instance-of v0, v0, Loti;
-
-    if-nez v0, :cond_0
-
-    invoke-virtual {p0}, Losm;->i()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    const/4 v0, 0x1
-
-    return v0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    return v0
-.end method
-
-.method public final m()Losg;
-    .locals 1
-
-    new-instance v0, Losg;
-
-    invoke-direct {v0, p0}, Losg;-><init>(Losm;)V
 
     return-object v0
 .end method
 
-.method public final r(Ljava/util/concurrent/CancellationException;)V
+.method public final lastEntry()Ljava/util/Map$Entry;
+    .locals 3
+
+    iget-object v0, p0, Losm;->h:Ljava/lang/Object;
+
+    monitor-enter v0
+
+    :try_start_0
+    invoke-virtual {p0}, Losm;->b()Ljava/util/NavigableMap;
+
+    move-result-object v1
+
+    invoke-interface {v1}, Ljava/util/NavigableMap;->lastEntry()Ljava/util/Map$Entry;
+
+    move-result-object v1
+
+    iget-object v2, p0, Losm;->h:Ljava/lang/Object;
+
+    invoke-static {v1, v2}, Loxh;->j(Ljava/util/Map$Entry;Ljava/lang/Object;)Ljava/util/Map$Entry;
+
+    move-result-object v1
+
+    monitor-exit v0
+
+    return-object v1
+
+    :catchall_0
+    move-exception v1
+
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw v1
+.end method
+
+.method public final lowerEntry(Ljava/lang/Object;)Ljava/util/Map$Entry;
     .locals 2
 
-    invoke-virtual {p0}, Losm;->j()Z
+    iget-object v0, p0, Losm;->h:Ljava/lang/Object;
 
-    move-result v0
+    monitor-enter v0
 
-    if-eqz v0, :cond_0
+    :try_start_0
+    invoke-virtual {p0}, Losm;->b()Ljava/util/NavigableMap;
 
-    return-void
+    move-result-object v1
+
+    invoke-interface {v1, p1}, Ljava/util/NavigableMap;->lowerEntry(Ljava/lang/Object;)Ljava/util/Map$Entry;
+
+    move-result-object p1
+
+    iget-object v1, p0, Losm;->h:Ljava/lang/Object;
+
+    invoke-static {p1, v1}, Loxh;->j(Ljava/util/Map$Entry;Ljava/lang/Object;)Ljava/util/Map$Entry;
+
+    move-result-object p1
+
+    monitor-exit v0
+
+    return-object p1
+
+    :catchall_0
+    move-exception p1
+
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw p1
+.end method
+
+.method public final lowerKey(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 2
+
+    iget-object v0, p0, Losm;->h:Ljava/lang/Object;
+
+    monitor-enter v0
+
+    :try_start_0
+    invoke-virtual {p0}, Losm;->b()Ljava/util/NavigableMap;
+
+    move-result-object v1
+
+    invoke-interface {v1, p1}, Ljava/util/NavigableMap;->lowerKey(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p1
+
+    monitor-exit v0
+
+    return-object p1
+
+    :catchall_0
+    move-exception p1
+
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw p1
+.end method
+
+.method public final navigableKeySet()Ljava/util/NavigableSet;
+    .locals 3
+
+    iget-object v0, p0, Losm;->h:Ljava/lang/Object;
+
+    monitor-enter v0
+
+    :try_start_0
+    iget-object v1, p0, Losm;->f:Ljava/util/NavigableSet;
+
+    if-nez v1, :cond_0
+
+    invoke-virtual {p0}, Losm;->b()Ljava/util/NavigableMap;
+
+    move-result-object v1
+
+    invoke-interface {v1}, Ljava/util/NavigableMap;->navigableKeySet()Ljava/util/NavigableSet;
+
+    move-result-object v1
+
+    iget-object v2, p0, Losm;->h:Ljava/lang/Object;
+
+    invoke-static {v1, v2}, Loxh;->l(Ljava/util/NavigableSet;Ljava/lang/Object;)Ljava/util/NavigableSet;
+
+    move-result-object v1
+
+    iput-object v1, p0, Losm;->f:Ljava/util/NavigableSet;
+
+    monitor-exit v0
+
+    return-object v1
 
     :cond_0
-    if-nez p1, :cond_1
+    monitor-exit v0
 
-    new-instance p1, Ljava/util/concurrent/CancellationException;
+    return-object v1
 
-    invoke-static {p0}, Lopx;->a(Ljava/lang/Object;)Ljava/lang/String;
+    :catchall_0
+    move-exception v1
 
-    move-result-object v0
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+    throw v1
+.end method
 
-    move-result-object v0
+.method public final pollFirstEntry()Ljava/util/Map$Entry;
+    .locals 3
 
-    const-string v1, " was cancelled"
+    iget-object v0, p0, Losm;->h:Ljava/lang/Object;
 
-    invoke-virtual {v0, v1}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
+    monitor-enter v0
 
-    move-result-object v0
+    :try_start_0
+    invoke-virtual {p0}, Losm;->b()Ljava/util/NavigableMap;
 
-    invoke-direct {p1, v0}, Ljava/util/concurrent/CancellationException;-><init>(Ljava/lang/String;)V
+    move-result-object v1
 
-    :cond_1
-    invoke-virtual {p0, p1}, Losp;->x(Ljava/lang/Throwable;)Z
+    invoke-interface {v1}, Ljava/util/NavigableMap;->pollFirstEntry()Ljava/util/Map$Entry;
 
-    move-result p1
+    move-result-object v1
 
-    invoke-virtual {p0, p1}, Losm;->e(Z)V
+    iget-object v2, p0, Losm;->h:Ljava/lang/Object;
 
-    return-void
+    invoke-static {v1, v2}, Loxh;->j(Ljava/util/Map$Entry;Ljava/lang/Object;)Ljava/util/Map$Entry;
+
+    move-result-object v1
+
+    monitor-exit v0
+
+    return-object v1
+
+    :catchall_0
+    move-exception v1
+
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw v1
+.end method
+
+.method public final pollLastEntry()Ljava/util/Map$Entry;
+    .locals 3
+
+    iget-object v0, p0, Losm;->h:Ljava/lang/Object;
+
+    monitor-enter v0
+
+    :try_start_0
+    invoke-virtual {p0}, Losm;->b()Ljava/util/NavigableMap;
+
+    move-result-object v1
+
+    invoke-interface {v1}, Ljava/util/NavigableMap;->pollLastEntry()Ljava/util/Map$Entry;
+
+    move-result-object v1
+
+    iget-object v2, p0, Losm;->h:Ljava/lang/Object;
+
+    invoke-static {v1, v2}, Loxh;->j(Ljava/util/Map$Entry;Ljava/lang/Object;)Ljava/util/Map$Entry;
+
+    move-result-object v1
+
+    monitor-exit v0
+
+    return-object v1
+
+    :catchall_0
+    move-exception v1
+
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw v1
+.end method
+
+.method public final subMap(Ljava/lang/Object;ZLjava/lang/Object;Z)Ljava/util/NavigableMap;
+    .locals 2
+
+    iget-object v0, p0, Losm;->h:Ljava/lang/Object;
+
+    monitor-enter v0
+
+    :try_start_0
+    invoke-virtual {p0}, Losm;->b()Ljava/util/NavigableMap;
+
+    move-result-object v1
+
+    invoke-interface {v1, p1, p2, p3, p4}, Ljava/util/NavigableMap;->subMap(Ljava/lang/Object;ZLjava/lang/Object;Z)Ljava/util/NavigableMap;
+
+    move-result-object p1
+
+    iget-object p2, p0, Losm;->h:Ljava/lang/Object;
+
+    invoke-static {p1, p2}, Loxh;->k(Ljava/util/NavigableMap;Ljava/lang/Object;)Ljava/util/NavigableMap;
+
+    move-result-object p1
+
+    monitor-exit v0
+
+    return-object p1
+
+    :catchall_0
+    move-exception p1
+
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw p1
+.end method
+
+.method public final subMap(Ljava/lang/Object;Ljava/lang/Object;)Ljava/util/SortedMap;
+    .locals 2
+
+    const/4 v0, 0x1
+
+    const/4 v1, 0x0
+
+    invoke-virtual {p0, p1, v0, p2, v1}, Losm;->subMap(Ljava/lang/Object;ZLjava/lang/Object;Z)Ljava/util/NavigableMap;
+
+    move-result-object p1
+
+    return-object p1
+.end method
+
+.method public final tailMap(Ljava/lang/Object;Z)Ljava/util/NavigableMap;
+    .locals 2
+
+    iget-object v0, p0, Losm;->h:Ljava/lang/Object;
+
+    monitor-enter v0
+
+    :try_start_0
+    invoke-virtual {p0}, Losm;->b()Ljava/util/NavigableMap;
+
+    move-result-object v1
+
+    invoke-interface {v1, p1, p2}, Ljava/util/NavigableMap;->tailMap(Ljava/lang/Object;Z)Ljava/util/NavigableMap;
+
+    move-result-object p1
+
+    iget-object p2, p0, Losm;->h:Ljava/lang/Object;
+
+    invoke-static {p1, p2}, Loxh;->k(Ljava/util/NavigableMap;Ljava/lang/Object;)Ljava/util/NavigableMap;
+
+    move-result-object p1
+
+    monitor-exit v0
+
+    return-object p1
+
+    :catchall_0
+    move-exception p1
+
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw p1
+.end method
+
+.method public final tailMap(Ljava/lang/Object;)Ljava/util/SortedMap;
+    .locals 1
+
+    const/4 v0, 0x1
+
+    invoke-virtual {p0, p1, v0}, Losm;->tailMap(Ljava/lang/Object;Z)Ljava/util/NavigableMap;
+
+    move-result-object p1
+
+    return-object p1
 .end method

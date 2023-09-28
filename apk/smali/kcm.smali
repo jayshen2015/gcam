@@ -1,69 +1,30 @@
-.class final Lkcm;
+.class public final Lkcm;
 .super Ljava/lang/Object;
 
-# interfaces
-.implements Lkcn;
 
-
-# instance fields
-.field private final synthetic a:I
-
-.field private final b:Ljava/lang/Object;
+# static fields
+.field public static final a:Lpoq;
 
 
 # direct methods
-.method public constructor <init>(Lkbo;I)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 5
 
-    iput p2, p0, Lkcm;->a:I
+    sget-object v0, Lkcv;->b:Lkcv;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    sget-object v1, Lkcs;->e:Lkcs;
 
-    iput-object p1, p0, Lkcm;->b:Ljava/lang/Object;
+    sget-object v2, Lkcs;->e:Lkcs;
 
-    return-void
-.end method
+    sget-object v3, Lpry;->k:Lpry;
 
-.method public constructor <init>(Lkoo;I)V
-    .locals 0
+    const v4, 0x9198308
 
-    iput p2, p0, Lkcm;->a:I
+    invoke-static {v0, v1, v2, v4, v3}, Lppd;->I(Lpqm;Ljava/lang/Object;Lpqm;ILpry;)Lpoq;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    move-result-object v0
 
-    iput-object p1, p0, Lkcm;->b:Ljava/lang/Object;
+    sput-object v0, Lkcm;->a:Lpoq;
 
     return-void
-.end method
-
-
-# virtual methods
-.method public final a(Lkbw;)V
-    .locals 1
-
-    iget v0, p0, Lkcm;->a:I
-
-    packed-switch v0, :pswitch_data_0
-
-    iget-object v0, p0, Lkcm;->b:Ljava/lang/Object;
-
-    check-cast v0, Lkbo;
-
-    invoke-interface {p1, v0}, Lkbw;->c(Lkbo;)V
-
-    return-void
-
-    :pswitch_0
-    iget-object v0, p0, Lkcm;->b:Ljava/lang/Object;
-
-    invoke-interface {p1, v0}, Lkbw;->d(Lkoo;)V
-
-    return-void
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
 .end method

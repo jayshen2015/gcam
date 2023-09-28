@@ -1,16 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <plurals name="accessibility_timelapse_manual_record_speed_desc">
-        <item quantity="other">Časozber, %d rýchlosť</item>
-        <item quantity="one">Časozber, %d rýchlosť</item>
-        <item quantity="few">Časozber, %d rýchlosť</item>
-        <item quantity="many">Časozber, %d rýchlosť</item>
-    </plurals>
-    <plurals name="number_of_cropped_face">
-        <item quantity="other">%d orezaných.</item>
-        <item quantity="one">Jedna orezaná.</item>
-        <item quantity="few">%d orezané.</item>
-        <item quantity="many">%d cropped.</item>
+    <plurals name="number_of_faces_announcement">
+        <item quantity="other">%1$d tvárí.</item>
+        <item quantity="one">%1$d tvár.</item>
+        <item quantity="few">%1$d tváre.</item>
+        <item quantity="many">%1$d tváre.</item>
     </plurals>
     <plurals name="photos_remaining">
         <item quantity="other">Približne %s fotiek</item>
@@ -25,10 +19,10 @@
         <item quantity="many">(%1$d apps selected)</item>
     </plurals>
     <plurals name="social_share_info">
-        <item quantity="other">Rýchlo zdieľajte fotky a videá v spoločenských aplikáciách priamo z Fotoaparátu. Vyberte až %1$d aplikácií. Fotky a videá uložené v uzamknutom priečinku sa nedajú zdieľať.</item>
-        <item quantity="one">Rýchlo zdieľajte fotky a videá v spoločenských aplikáciách priamo z Fotoaparátu. Vyberte %1$d aplikáciu. Fotky a videá uložené v uzamknutom priečinku sa nedajú zdieľať.</item>
-        <item quantity="few">Rýchlo zdieľajte fotky a videá v spoločenských aplikáciách priamo z Fotoaparátu. Vyberte až %1$d aplikácie. Fotky a videá uložené v uzamknutom priečinku sa nedajú zdieľať.</item>
-        <item quantity="many">"Quickly share photos and videos on social apps from Camera. Choose up to %1$d apps. Photos and videos saved to Locked Folder can't be shared."</item>
+        <item quantity="other">Rýchlo zdieľajte fotky a videá v spoločenských aplikáciách priamo z Fotoaparátu. Vyberte až %1$d aplikácií. Fotky a videá uložené v uzamknutom priečinku nie je možné zdieľať.</item>
+        <item quantity="one">Rýchlo zdieľajte fotky a videá v spoločenských aplikáciách priamo z Fotoaparátu. Vyberte %1$d aplikáciu. Fotky a videá uložené v uzamknutom priečinku nie je možné zdieľať.</item>
+        <item quantity="few">Rýchlo zdieľajte fotky a videá v spoločenských aplikáciách priamo z Fotoaparátu. Vyberte až %1$d aplikácie. Fotky a videá uložené v uzamknutom priečinku nie je možné zdieľať.</item>
+        <item quantity="many">"Quickly share photos and videos on social apps right from Camera. Choose up to %1$d apps. Photos and videos saved to Locked Folder can't be shared."</item>
     </plurals>
     <plurals name="social_share_select_error">
         <item quantity="other">Môžete vybrať maximálne %1$d aplikácií</item>

@@ -1,22 +1,26 @@
-.class public final Lfpy;
+.class final Lfpy;
 .super Ljava/lang/Object;
 
 
-# static fields
-.field public static final a:Lnak;
+# instance fields
+.field public final a:Lmsd;
+
+.field public final b:Lmsc;
+
+.field public final c:Lfqn;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
+.method public constructor <init>(Lmsd;Lmsc;Lfqn;)V
+    .locals 0
 
-    const-string v0, "com/google/android/apps/camera/moments/ImageEncoders"
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-static {v0}, Lnak;->h(Ljava/lang/String;)Lnak;
+    iput-object p1, p0, Lfpy;->a:Lmsd;
 
-    move-result-object v0
+    iput-object p2, p0, Lfpy;->b:Lmsc;
 
-    sput-object v0, Lfpy;->a:Lnak;
+    iput-object p3, p0, Lfpy;->c:Lfqn;
 
     return-void
 .end method

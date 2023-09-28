@@ -1,99 +1,53 @@
 .class public final Lehl;
-.super Ljava/lang/Object;
-
-# interfaces
-.implements Logk;
+.super Landroid/opengl/GLSurfaceView;
 
 
 # instance fields
-.field private final a:Loiw;
-
-.field private final b:Loiw;
-
-.field private final c:Loiw;
+.field public a:Lehk;
 
 
 # direct methods
-.method public constructor <init>(Loiw;Loiw;Loiw;)V
+.method public constructor <init>(Landroid/content/Context;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0, p1}, Landroid/opengl/GLSurfaceView;-><init>(Landroid/content/Context;)V
 
-    iput-object p1, p0, Lehl;->a:Loiw;
+    const/4 p1, 0x0
 
-    iput-object p2, p0, Lehl;->b:Loiw;
-
-    iput-object p3, p0, Lehl;->c:Loiw;
+    iput-object p1, p0, Lehl;->a:Lehk;
 
     return-void
 .end method
 
-.method public static b(Loiw;Loiw;Loiw;)Lehl;
-    .locals 1
-
-    new-instance v0, Lehl;
-
-    invoke-direct {v0, p0, p1, p2}, Lehl;-><init>(Loiw;Loiw;Loiw;)V
-
-    return-object v0
-.end method
-
 
 # virtual methods
-.method public final a()Lehk;
-    .locals 9
+.method protected final onMeasure(II)V
+    .locals 2
 
-    iget-object v0, p0, Lehl;->a:Loiw;
+    invoke-super {p0, p1, p2}, Landroid/opengl/GLSurfaceView;->onMeasure(II)V
 
-    check-cast v0, Lehm;
+    invoke-virtual {p0}, Lehl;->getHolder()Landroid/view/SurfaceHolder;
 
-    invoke-virtual {v0}, Lehm;->b()Lva;
+    move-result-object p1
 
-    move-result-object v2
+    invoke-virtual {p0}, Lehl;->getWidth()I
 
-    iget-object v0, p0, Lehl;->b:Loiw;
+    move-result p2
 
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
+    invoke-virtual {p0}, Lehl;->getHeight()I
 
-    move-result-object v0
+    move-result v0
 
-    move-object v3, v0
+    const/4 v1, 0x3
 
-    check-cast v3, Lgxi;
+    invoke-virtual {p0, p1, v1, p2, v0}, Lehl;->surfaceChanged(Landroid/view/SurfaceHolder;III)V
 
-    iget-object v0, p0, Lehl;->c:Loiw;
+    iget-object p1, p0, Lehl;->a:Lehk;
 
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
+    if-eqz p1, :cond_0
 
-    move-result-object v0
+    invoke-interface {p1}, Lehk;->a()V
 
-    move-object v4, v0
-
-    check-cast v4, Ljava/util/concurrent/Executor;
-
-    new-instance v0, Lehk;
-
-    const/4 v5, 0x0
-
-    const/4 v6, 0x0
-
-    const/4 v7, 0x0
-
-    const/4 v8, 0x0
-
-    move-object v1, v0
-
-    invoke-direct/range {v1 .. v8}, Lehk;-><init>(Lva;Lgxi;Ljava/util/concurrent/Executor;[B[B[B[B)V
-
-    return-object v0
-.end method
-
-.method public final bridge synthetic get()Ljava/lang/Object;
-    .locals 1
-
-    invoke-virtual {p0}, Lehl;->a()Lehk;
-
-    move-result-object v0
-
-    return-object v0
+    :cond_0
+    return-void
 .end method

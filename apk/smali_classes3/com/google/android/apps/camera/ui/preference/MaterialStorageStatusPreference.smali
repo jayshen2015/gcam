@@ -83,14 +83,14 @@
 
 
 # virtual methods
-.method public final a(Laor;)V
+.method public final a(Lahm;)V
     .locals 2
 
-    invoke-super {p0, p1}, Landroidx/preference/Preference;->a(Laor;)V
+    invoke-super {p0, p1}, Landroidx/preference/Preference;->a(Lahm;)V
 
-    iget-object v0, p1, Laor;->a:Landroid/view/View;
+    iget-object v0, p1, Lahm;->a:Landroid/view/View;
 
-    const v1, 0x7f0b0367
+    const v1, 0x7f0b02f2
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -100,9 +100,9 @@
 
     iput-object v0, p0, Lcom/google/android/apps/camera/ui/preference/MaterialStorageStatusPreference;->f:Landroid/widget/TextView;
 
-    iget-object v0, p1, Laor;->a:Landroid/view/View;
+    iget-object v0, p1, Lahm;->a:Landroid/view/View;
 
-    const v1, 0x7f0b0366
+    const v1, 0x7f0b02f1
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -112,9 +112,9 @@
 
     iput-object v0, p0, Lcom/google/android/apps/camera/ui/preference/MaterialStorageStatusPreference;->g:Landroid/widget/TextView;
 
-    iget-object p1, p1, Laor;->a:Landroid/view/View;
+    iget-object p1, p1, Lahm;->a:Landroid/view/View;
 
-    const v0, 0x7f0b0365
+    const v0, 0x7f0b02f0
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -202,7 +202,7 @@
 
     aput-object v4, v3, v5
 
-    const v4, 0x7f1404fa
+    const v4, 0x7f140488
 
     invoke-virtual {v0, v4, v3}, Landroid/content/res/Resources;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
 
@@ -240,7 +240,7 @@
 
     aput-object v3, v7, v5
 
-    const v8, 0x7f120005
+    const v8, 0x7f120004
 
     invoke-virtual {v0, v8, v6, v7}, Landroid/content/res/Resources;->getQuantityString(II[Ljava/lang/Object;)Ljava/lang/String;
 
@@ -254,7 +254,7 @@
 
     aput-object v1, v7, v5
 
-    const v5, 0x7f12000f
+    const v5, 0x7f12000e
 
     invoke-virtual {v0, v5, v6, v7}, Landroid/content/res/Resources;->getQuantityString(II[Ljava/lang/Object;)Ljava/lang/String;
 
@@ -262,7 +262,7 @@
 
     aput-object v5, v4, v2
 
-    const v2, 0x7f1404f8
+    const v2, 0x7f140486
 
     invoke-virtual {v0, v2, v4}, Landroid/content/res/Resources;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
 

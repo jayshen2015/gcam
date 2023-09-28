@@ -1,27 +1,33 @@
-.class final Lnde;
-.super Lndd;
+.class public final synthetic Lnde;
+.super Ljava/lang/Object;
 
 # interfaces
-.implements Ljava/io/Closeable;
+.implements Ljava/lang/Runnable;
+
+
+# instance fields
+.field public final synthetic a:Landroid/content/BroadcastReceiver$PendingResult;
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 1
+.method public synthetic constructor <init>(Landroid/content/BroadcastReceiver$PendingResult;)V
+    .locals 0
 
-    invoke-direct {p0}, Lndd;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    new-instance v0, Ljava/util/concurrent/atomic/AtomicBoolean;
-
-    invoke-direct {v0}, Ljava/util/concurrent/atomic/AtomicBoolean;-><init>()V
+    iput-object p1, p0, Lnde;->a:Landroid/content/BroadcastReceiver$PendingResult;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final close()V
-    .locals 0
+.method public final run()V
+    .locals 1
+
+    iget-object v0, p0, Lnde;->a:Landroid/content/BroadcastReceiver$PendingResult;
+
+    invoke-virtual {v0}, Landroid/content/BroadcastReceiver$PendingResult;->finish()V
 
     return-void
 .end method

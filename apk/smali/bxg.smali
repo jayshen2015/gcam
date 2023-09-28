@@ -1,83 +1,87 @@
-.class final Lbxg;
-.super Landroid/media/MediaDataSource;
+.class public final Lbxg;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Lbxp;
 
 
-# instance fields
-.field final synthetic a:Ljava/nio/ByteBuffer;
+# static fields
+.field public static final a:Lbxg;
+
+.field public static final b:Lbxg;
+
+.field public static final c:Lbxg;
+
+.field public static final d:Lbxg;
+
+.field public static final e:Lbxg;
+
+.field public static final f:Lbxg;
+
+.field public static final g:Lbxg;
+
+.field public static final h:Lbxg;
 
 
 # direct methods
-.method public constructor <init>(Ljava/nio/ByteBuffer;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 1
 
-    iput-object p1, p0, Lbxg;->a:Ljava/nio/ByteBuffer;
+    new-instance v0, Lbxg;
 
-    invoke-direct {p0}, Landroid/media/MediaDataSource;-><init>()V
+    invoke-direct {v0}, Lbxg;-><init>()V
+
+    sput-object v0, Lbxg;->h:Lbxg;
+
+    new-instance v0, Lbxg;
+
+    invoke-direct {v0}, Lbxg;-><init>()V
+
+    sput-object v0, Lbxg;->g:Lbxg;
+
+    new-instance v0, Lbxg;
+
+    invoke-direct {v0}, Lbxg;-><init>()V
+
+    sput-object v0, Lbxg;->f:Lbxg;
+
+    new-instance v0, Lbxg;
+
+    invoke-direct {v0}, Lbxg;-><init>()V
+
+    sput-object v0, Lbxg;->e:Lbxg;
+
+    new-instance v0, Lbxg;
+
+    invoke-direct {v0}, Lbxg;-><init>()V
+
+    sput-object v0, Lbxg;->d:Lbxg;
+
+    new-instance v0, Lbxg;
+
+    invoke-direct {v0}, Lbxg;-><init>()V
+
+    sput-object v0, Lbxg;->c:Lbxg;
+
+    new-instance v0, Lbxg;
+
+    invoke-direct {v0}, Lbxg;-><init>()V
+
+    sput-object v0, Lbxg;->b:Lbxg;
+
+    new-instance v0, Lbxg;
+
+    invoke-direct {v0}, Lbxg;-><init>()V
+
+    sput-object v0, Lbxg;->a:Lbxg;
 
     return-void
 .end method
 
-
-# virtual methods
-.method public final close()V
+.method public constructor <init>()V
     .locals 0
 
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
     return-void
-.end method
-
-.method public final getSize()J
-    .locals 2
-
-    iget-object v0, p0, Lbxg;->a:Ljava/nio/ByteBuffer;
-
-    invoke-virtual {v0}, Ljava/nio/ByteBuffer;->limit()I
-
-    move-result v0
-
-    int-to-long v0, v0
-
-    return-wide v0
-.end method
-
-.method public final readAt(J[BII)I
-    .locals 3
-
-    iget-object v0, p0, Lbxg;->a:Ljava/nio/ByteBuffer;
-
-    invoke-virtual {v0}, Ljava/nio/ByteBuffer;->limit()I
-
-    move-result v0
-
-    int-to-long v0, v0
-
-    cmp-long v2, p1, v0
-
-    if-ltz v2, :cond_0
-
-    const/4 p1, -0x1
-
-    return p1
-
-    :cond_0
-    iget-object v0, p0, Lbxg;->a:Ljava/nio/ByteBuffer;
-
-    long-to-int p2, p1
-
-    invoke-virtual {v0, p2}, Ljava/nio/ByteBuffer;->position(I)Ljava/nio/Buffer;
-
-    iget-object p1, p0, Lbxg;->a:Ljava/nio/ByteBuffer;
-
-    invoke-virtual {p1}, Ljava/nio/ByteBuffer;->remaining()I
-
-    move-result p1
-
-    invoke-static {p5, p1}, Ljava/lang/Math;->min(II)I
-
-    move-result p1
-
-    iget-object p2, p0, Lbxg;->a:Ljava/nio/ByteBuffer;
-
-    invoke-virtual {p2, p3, p4, p1}, Ljava/nio/ByteBuffer;->get([BII)Ljava/nio/ByteBuffer;
-
-    return p1
 .end method

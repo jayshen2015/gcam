@@ -1,211 +1,73 @@
-.class public abstract Llnc;
+.class public interface abstract Llnc;
 .super Ljava/lang/Object;
 
-
-# instance fields
-.field private final a:Lozu;
-
-
-# direct methods
-.method public constructor <init>(Lozu;)V
-    .locals 0
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Llnc;->a:Lozu;
-
-    return-void
-.end method
+# interfaces
+.implements Llie;
 
 
 # virtual methods
-.method public abstract a(Ljava/lang/String;)J
+.method public abstract a()Llmp;
 .end method
 
-.method public abstract b(Ljava/lang/Long;)Lozu;
+.method public abstract b()Llnd;
 .end method
 
-.method public abstract c()Z
+.method public abstract c()Llng;
 .end method
 
-.method public final d()Lozu;
-    .locals 4
-
-    const/4 v0, 0x0
-
-    invoke-virtual {p0, v0}, Llnc;->e(Ljava/lang/Long;)Lozu;
-
-    move-result-object v0
-
-    const/4 v1, 0x5
-
-    invoke-virtual {v0, v1}, Lnws;->ad(I)Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Lnwn;
-
-    invoke-virtual {v1, v0}, Lnwn;->s(Lnws;)V
-
-    iget-object v0, v1, Lnwn;->b:Lnws;
-
-    invoke-virtual {v0}, Lnws;->ac()Z
-
-    move-result v0
-
-    if-nez v0, :cond_0
-
-    invoke-virtual {v1}, Lnwn;->p()V
-
-    :cond_0
-    iget-object v0, v1, Lnwn;->b:Lnws;
-
-    check-cast v0, Lozu;
-
-    sget-object v2, Lozu;->d:Lozu;
-
-    iget v2, v0, Lozu;->a:I
-
-    or-int/lit8 v2, v2, 0x2
-
-    iput v2, v0, Lozu;->a:I
-
-    const-wide/16 v2, -0x1
-
-    iput-wide v2, v0, Lozu;->b:J
-
-    invoke-virtual {v1}, Lnwn;->i()Lnws;
-
-    move-result-object v0
-
-    check-cast v0, Lozu;
-
-    return-object v0
+.method public abstract d(Llnx;)V
 .end method
 
-.method public final e(Ljava/lang/Long;)Lozu;
-    .locals 5
+.method public abstract e(Llnx;Z)V
+.end method
 
-    iget-object v0, p0, Llnc;->a:Lozu;
+.method public abstract f()V
+.end method
 
-    iget v1, v0, Lozu;->c:I
+.method public abstract g(Llnq;)V
+.end method
 
-    invoke-static {v1}, Lljz;->u(I)I
+.method public abstract h(Landroid/hardware/camera2/CaptureRequest$Key;Ljava/lang/Object;)V
+.end method
 
-    move-result v1
+.method public abstract i(Ljava/util/Set;)V
+.end method
 
-    if-nez v1, :cond_1
+.method public abstract j(Llnv;)V
+.end method
 
-    :cond_0
-    goto :goto_1
+.method public abstract k(Llmq;Llnv;)V
+.end method
 
-    :cond_1
-    const/4 v2, 0x5
+.method public abstract l(ZZZ)V
+.end method
 
-    if-ne v1, v2, :cond_0
+.method public abstract m(Llmq;)V
+.end method
 
-    if-eqz p1, :cond_6
+.method public abstract n(Llmq;)V
+.end method
 
-    invoke-virtual {p1}, Ljava/lang/Long;->longValue()J
+.method public abstract o(Z)V
+.end method
 
-    move-result-wide v0
+.method public abstract p(Llqd;)Llie;
+.end method
 
-    iget-object v2, p0, Llnc;->a:Lozu;
+.method public abstract q(Llqd;)Llmr;
+.end method
 
-    iget-wide v2, v2, Lozu;->b:J
+.method public abstract r(Llqd;I)Llmv;
+.end method
 
-    cmp-long v4, v0, v2
+.method public abstract s(Llnx;)Llqd;
+.end method
 
-    if-nez v4, :cond_2
+.method public abstract t(Ljava/util/Set;)Llqd;
+.end method
 
-    goto :goto_0
+.method public abstract u(Llnx;Ljava/util/Set;)Llqd;
+.end method
 
-    :cond_2
-    sget-object v0, Lozu;->d:Lozu;
-
-    invoke-virtual {v0}, Lnws;->O()Lnwn;
-
-    move-result-object v0
-
-    iget-object v1, p0, Llnc;->a:Lozu;
-
-    iget v1, v1, Lozu;->c:I
-
-    invoke-static {v1}, Lljz;->u(I)I
-
-    move-result v1
-
-    if-nez v1, :cond_3
-
-    const/4 v1, 0x1
-
-    :cond_3
-    iget-object v2, v0, Lnwn;->b:Lnws;
-
-    invoke-virtual {v2}, Lnws;->ac()Z
-
-    move-result v2
-
-    if-nez v2, :cond_4
-
-    invoke-virtual {v0}, Lnwn;->p()V
-
-    :cond_4
-    iget-object v2, v0, Lnwn;->b:Lnws;
-
-    check-cast v2, Lozu;
-
-    add-int/lit8 v1, v1, -0x1
-
-    iput v1, v2, Lozu;->c:I
-
-    iget v1, v2, Lozu;->a:I
-
-    or-int/lit8 v1, v1, 0x4
-
-    iput v1, v2, Lozu;->a:I
-
-    invoke-virtual {p1}, Ljava/lang/Long;->longValue()J
-
-    move-result-wide v1
-
-    iget-object p1, v0, Lnwn;->b:Lnws;
-
-    invoke-virtual {p1}, Lnws;->ac()Z
-
-    move-result p1
-
-    if-nez p1, :cond_5
-
-    invoke-virtual {v0}, Lnwn;->p()V
-
-    :cond_5
-    iget-object p1, v0, Lnwn;->b:Lnws;
-
-    check-cast p1, Lozu;
-
-    iget v3, p1, Lozu;->a:I
-
-    or-int/lit8 v3, v3, 0x2
-
-    iput v3, p1, Lozu;->a:I
-
-    iput-wide v1, p1, Lozu;->b:J
-
-    invoke-virtual {v0}, Lnwn;->i()Lnws;
-
-    move-result-object p1
-
-    check-cast p1, Lozu;
-
-    return-object p1
-
-    :cond_6
-    :goto_0
-    iget-object p1, p0, Llnc;->a:Lozu;
-
-    return-object p1
-
-    :goto_1
-    return-object v0
+.method public abstract v(Ljava/util/Set;Ljava/util/Set;)Llqd;
 .end method

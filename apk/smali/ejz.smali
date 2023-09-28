@@ -1,22 +1,33 @@
-.class public final Lejz;
+.class final Lejz;
 .super Ljava/lang/Object;
 
+# interfaces
+.implements Ljava/lang/Runnable;
 
-# static fields
-.field public static final a:Lnak;
+
+# instance fields
+.field final synthetic a:Lekb;
 
 
 # direct methods
-.method static constructor <clinit>()V
+.method public constructor <init>(Lekb;)V
+    .locals 0
+
+    iput-object p1, p0, Lejz;->a:Lekb;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public final run()V
     .locals 1
 
-    const-string v0, "com/google/android/apps/camera/imax/cyclops/audio/AudioExtractor"
+    iget-object v0, p0, Lejz;->a:Lekb;
 
-    invoke-static {v0}, Lnak;->h(Ljava/lang/String;)Lnak;
-
-    move-result-object v0
-
-    sput-object v0, Lejz;->a:Lnak;
+    invoke-virtual {v0}, Lekb;->f()V
 
     return-void
 .end method

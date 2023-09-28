@@ -1,26 +1,19 @@
-.class public final Lbsb;
+.class public interface abstract Lbsb;
 .super Ljava/lang/Object;
 
 
-# instance fields
-.field public final a:Lbsf;
+# virtual methods
+.method public abstract b()Lbrx;
+.end method
 
-.field public final b:Lbzq;
+.method public abstract c()V
+.end method
 
-.field public final synthetic c:Llij;
+.method public abstract d(Llvs;)V
+.end method
 
+.method public abstract e(Llvp;)V
+.end method
 
-# direct methods
-.method public constructor <init>(Llij;Lbzq;Lbsf;[B[B[B[B)V
-    .locals 0
-
-    iput-object p1, p0, Lbsb;->c:Llij;
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p2, p0, Lbsb;->b:Lbzq;
-
-    iput-object p3, p0, Lbsb;->a:Lbsf;
-
-    return-void
+.method public abstract f(Lbsg;)V
 .end method

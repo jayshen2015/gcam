@@ -2,18 +2,18 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Ljzv;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field final synthetic a:Lfym;
+.field final synthetic a:Lfyd;
 
 
 # direct methods
-.method public constructor <init>(Lfym;)V
+.method public constructor <init>(Lfyd;[B)V
     .locals 0
 
-    iput-object p1, p0, Lfyl;->a:Lfym;
+    iput-object p1, p0, Lfyl;->a:Lfyd;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -22,20 +22,14 @@
 
 
 # virtual methods
-.method public final bridge synthetic a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 2
+.method public final run()V
+    .locals 1
 
-    check-cast p1, Ljava/util/List;
+    iget-object v0, p0, Lfyl;->a:Lfyd;
 
-    check-cast p2, Ljava/util/List;
+    iget-object v0, v0, Lfyd;->a:Lfyr;
 
-    new-instance v0, Lfyi;
+    invoke-virtual {v0}, Lfyr;->z()V
 
-    iget-object v1, p0, Lfyl;->a:Lfym;
-
-    iget-object v1, v1, Lfym;->c:Lfyk;
-
-    invoke-direct {v0, v1, p1, p2}, Lfyi;-><init>(Lfyk;Ljava/util/List;Ljava/util/List;)V
-
-    return-object v0
+    return-void
 .end method

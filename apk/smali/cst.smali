@@ -1,53 +1,43 @@
-.class public final Lcst;
+.class public final synthetic Lcst;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Logk;
+.implements Llmu;
 
 
 # instance fields
-.field private final a:Loiw;
+.field public final synthetic a:Lcsw;
+
+.field public final synthetic b:Llnx;
 
 
 # direct methods
-.method public constructor <init>(Loiw;)V
+.method public synthetic constructor <init>(Lcsw;Llnx;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lcst;->a:Loiw;
+    iput-object p1, p0, Lcst;->a:Lcsw;
+
+    iput-object p2, p0, Lcst;->b:Llnx;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Ldiu;
-    .locals 1
+.method public final a(Llrr;)V
+    .locals 3
 
-    sget v0, Lmvv;->d:I
+    iget-object v0, p0, Lcst;->a:Lcsw;
 
-    sget-object v0, Lmyu;->a:Lmvv;
+    iget-object v1, p0, Lcst;->b:Llnx;
 
-    iget-object v0, p0, Lcst;->a:Loiw;
+    new-instance v2, Lcsu;
 
-    check-cast v0, Lcss;
+    invoke-direct {v2, v0, v1}, Lcsu;-><init>(Lcsw;Llnx;)V
 
-    invoke-virtual {v0}, Lcss;->a()Ljava/util/List;
+    invoke-static {p1, v2}, Lmip;->bj(Llrr;Llnn;)V
 
-    new-instance v0, Ldiu;
-
-    invoke-direct {v0}, Ldiu;-><init>()V
-
-    return-object v0
-.end method
-
-.method public final bridge synthetic get()Ljava/lang/Object;
-    .locals 1
-
-    invoke-virtual {p0}, Lcst;->a()Ldiu;
-
-    move-result-object v0
-
-    return-object v0
+    return-void
 .end method

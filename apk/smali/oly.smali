@@ -1,14 +1,32 @@
-.class public final Loly;
-.super Ljava/lang/Error;
+.class final Loly;
+.super Lomb;
+
+
+# instance fields
+.field final synthetic a:Lomf;
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 1
+.method public constructor <init>(Lomf;)V
+    .locals 0
 
-    const-string v0, "Kotlin reflection implementation is not found at runtime. Make sure you have kotlin-reflect.jar in the classpath"
+    iput-object p1, p0, Loly;->a:Lomf;
 
-    invoke-direct {p0, v0}, Ljava/lang/Error;-><init>(Ljava/lang/String;)V
+    invoke-direct {p0, p1}, Lomb;-><init>(Lomf;)V
 
     return-void
+.end method
+
+
+# virtual methods
+.method public final bridge synthetic a(I)Ljava/lang/Object;
+    .locals 2
+
+    new-instance v0, Lomd;
+
+    iget-object v1, p0, Loly;->a:Lomf;
+
+    invoke-direct {v0, v1, p1}, Lomd;-><init>(Lomf;I)V
+
+    return-object v0
 .end method

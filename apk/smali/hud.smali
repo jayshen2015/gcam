@@ -1,56 +1,37 @@
-.class public Lhud;
-.super Lhua;
+.class public final synthetic Lhud;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Lhtd;
 
 
 # instance fields
-.field public final a:Libj;
-
-.field public final b:Ljwb;
-
-.field public final c:Lcom/google/android/apps/camera/bottombar/BottomBarController;
-
-.field public final d:Liff;
-
-.field public final e:Lhwu;
-
-.field public final f:Lgeh;
-
-.field public final g:Ljvs;
-
-.field public final h:Litm;
-
-.field public final i:Lhrq;
-
-.field public j:Z
-
-.field public final k:Lbkb;
+.field public final synthetic a:Landroid/content/Context;
 
 
 # direct methods
-.method public constructor <init>(Ljwb;Lcom/google/android/apps/camera/bottombar/BottomBarController;Liff;Lhwu;Libj;Lgeh;Lbkb;Ljwb;Litm;Lhrq;[B[B[B[B)V
+.method public synthetic constructor <init>(Landroid/content/Context;)V
     .locals 0
 
-    invoke-direct {p0}, Lhua;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p5, p0, Lhud;->a:Libj;
+    iput-object p1, p0, Lhud;->a:Landroid/content/Context;
 
-    iput-object p1, p0, Lhud;->b:Ljwb;
+    return-void
+.end method
 
-    iput-object p2, p0, Lhud;->c:Lcom/google/android/apps/camera/bottombar/BottomBarController;
 
-    iput-object p3, p0, Lhud;->d:Liff;
+# virtual methods
+.method public final a(Ljava/lang/String;)V
+    .locals 0
 
-    iput-object p4, p0, Lhud;->e:Lhwu;
+    iget-object p1, p0, Lhud;->a:Landroid/content/Context;
 
-    iput-object p6, p0, Lhud;->f:Lgeh;
+    invoke-virtual {p1}, Landroid/content/Context;->getPackageName()Ljava/lang/String;
 
-    iput-object p7, p0, Lhud;->k:Lbkb;
+    move-result-object p1
 
-    iput-object p8, p0, Lhud;->g:Ljvs;
-
-    iput-object p9, p0, Lhud;->h:Litm;
-
-    iput-object p10, p0, Lhud;->i:Lhrq;
+    invoke-static {p1}, Landroid/app/backup/BackupManager;->dataChanged(Ljava/lang/String;)V
 
     return-void
 .end method

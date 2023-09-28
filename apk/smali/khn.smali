@@ -1,389 +1,194 @@
-.class public final Lkhn;
+.class public Lkhn;
 .super Ljava/lang/Object;
 
-# interfaces
-.implements Lkeb;
 
-
-# instance fields
-.field private final a:Lkgs;
-
-.field private final b:Lkad;
-
-.field private c:Z
+# static fields
+.field public static final c:I
 
 
 # direct methods
-.method public constructor <init>(Lkgs;Lkad;)V
+.method static constructor <clinit>()V
     .locals 1
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    sget v0, Lkhw;->c:I
 
-    const/4 v0, 0x0
+    const v0, 0xcc178f0
 
-    iput-boolean v0, p0, Lkhn;->c:Z
-
-    iput-object p1, p0, Lkhn;->a:Lkgs;
-
-    iput-object p2, p0, Lkhn;->b:Lkad;
+    sput v0, Lkhn;->c:I
 
     return-void
 .end method
 
-.method public static l(Lkgs;)Lkeb;
-    .locals 2
+.method public constructor <init>()V
+    .locals 0
 
-    invoke-virtual {p0}, Lkgs;->b()Lkad;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    move-result-object v0
-
-    if-nez v0, :cond_0
-
-    const/4 p0, 0x0
-
-    return-object p0
-
-    :cond_0
-    new-instance v1, Lkhn;
-
-    invoke-direct {v1, p0, v0}, Lkhn;-><init>(Lkgs;Lkad;)V
-
-    return-object v1
+    return-void
 .end method
 
 
 # virtual methods
-.method public final declared-synchronized a()Lkeb;
+.method public final e(Landroid/content/Context;)I
     .locals 1
 
-    monitor-enter p0
+    sget v0, Lkhn;->c:I
+
+    invoke-virtual {p0, p1, v0}, Lkhn;->f(Landroid/content/Context;I)I
+
+    move-result p1
+
+    return p1
+.end method
+
+.method public final f(Landroid/content/Context;I)I
+    .locals 0
+
+    invoke-static {p1, p2}, Lkhw;->a(Landroid/content/Context;I)I
+
+    move-result p2
+
+    invoke-static {p1, p2}, Lkhw;->c(Landroid/content/Context;I)Z
+
+    move-result p1
+
+    if-eqz p1, :cond_0
+
+    const/16 p1, 0x12
+
+    return p1
+
+    :cond_0
+    return p2
+.end method
+
+.method public final g(Landroid/content/Context;ILjava/lang/String;)Landroid/content/Intent;
+    .locals 2
+
+    packed-switch p2, :pswitch_data_0
+
+    const/4 p1, 0x0
+
+    return-object p1
+
+    :pswitch_0
+    invoke-static {}, Lkmv;->b()Landroid/content/Intent;
+
+    move-result-object p1
+
+    return-object p1
+
+    :pswitch_1
+    if-eqz p1, :cond_0
+
+    invoke-static {p1}, Lmip;->cq(Landroid/content/Context;)V
+
+    :cond_0
+    new-instance p2, Ljava/lang/StringBuilder;
+
+    invoke-direct {p2}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v0, "gcore_"
+
+    invoke-virtual {p2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    sget v0, Lkhn;->c:I
+
+    invoke-virtual {p2, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    const-string v0, "-"
+
+    invoke-virtual {p2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-static {p3}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+
+    move-result v1
+
+    if-nez v1, :cond_1
+
+    invoke-virtual {p2, p3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    :cond_1
+    invoke-virtual {p2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    if-eqz p1, :cond_2
+
+    invoke-virtual {p1}, Landroid/content/Context;->getPackageName()Ljava/lang/String;
+
+    move-result-object p3
+
+    invoke-virtual {p2, p3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    :cond_2
+    invoke-virtual {p2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    if-eqz p1, :cond_3
 
     :try_start_0
-    iget-boolean v0, p0, Lkhn;->c:Z
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    invoke-static {p1}, Lkoe;->b(Landroid/content/Context;)Lkhx;
 
-    if-eqz v0, :cond_0
+    move-result-object p3
 
-    monitor-exit p0
+    invoke-virtual {p1}, Landroid/content/Context;->getPackageName()Ljava/lang/String;
+
+    move-result-object p1
 
     const/4 v0, 0x0
 
-    return-object v0
+    invoke-virtual {p3, p1, v0}, Lkhx;->g(Ljava/lang/String;I)Landroid/content/pm/PackageInfo;
 
-    :cond_0
-    :try_start_1
-    iget-object v0, p0, Lkhn;->a:Lkgs;
+    move-result-object p1
 
-    invoke-static {v0}, Lkhn;->l(Lkgs;)Lkeb;
+    iget p1, p1, Landroid/content/pm/PackageInfo;->versionCode:I
 
-    move-result-object v0
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+    invoke-virtual {p2, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    :try_end_0
+    .catch Landroid/content/pm/PackageManager$NameNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
 
-    monitor-exit p0
+    goto :goto_0
 
-    return-object v0
+    :catch_0
+    move-exception p1
 
-    :catchall_0
-    move-exception v0
+    :cond_3
+    :goto_0
+    invoke-virtual {p2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    monitor-exit p0
+    move-result-object p1
 
-    throw v0
+    invoke-static {p1}, Lkmv;->a(Ljava/lang/String;)Landroid/content/Intent;
+
+    move-result-object p1
+
+    return-object p1
+
+    :pswitch_data_0
+    .packed-switch 0x1
+        :pswitch_1
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method
 
-.method public final declared-synchronized b()Lkeg;
-    .locals 1
+.method public final h(Landroid/content/Context;ILjava/lang/String;)Landroid/app/PendingIntent;
+    .locals 0
 
-    monitor-enter p0
+    invoke-virtual {p0, p1, p2, p3}, Lkhn;->g(Landroid/content/Context;ILjava/lang/String;)Landroid/content/Intent;
 
-    :try_start_0
-    iget-object v0, p0, Lkhn;->a:Lkgs;
+    move-result-object p2
 
-    iget-object v0, v0, Lkgs;->b:Lkeg;
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    monitor-exit p0
-
-    return-object v0
-
-    :catchall_0
-    move-exception v0
-
-    monitor-exit p0
-
-    throw v0
-.end method
-
-.method public final declared-synchronized c()Lkou;
-    .locals 1
-
-    monitor-enter p0
-
-    :try_start_0
-    iget-object v0, p0, Lkhn;->a:Lkgs;
-
-    invoke-virtual {v0}, Lkgs;->d()Lkou;
-
-    move-result-object v0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    monitor-exit p0
-
-    return-object v0
-
-    :catchall_0
-    move-exception v0
-
-    monitor-exit p0
-
-    throw v0
-.end method
-
-.method public final declared-synchronized close()V
-    .locals 1
-
-    monitor-enter p0
-
-    :try_start_0
-    iget-boolean v0, p0, Lkhn;->c:Z
-
-    if-nez v0, :cond_0
-
-    const/4 v0, 0x1
-
-    iput-boolean v0, p0, Lkhn;->c:Z
-
-    iget-object v0, p0, Lkhn;->b:Lkad;
-
-    invoke-interface {v0}, Lkad;->close()V
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    :cond_0
-    monitor-exit p0
-
-    return-void
-
-    :catchall_0
-    move-exception v0
-
-    monitor-exit p0
-
-    throw v0
-.end method
-
-.method public final declared-synchronized d(Lkfj;)Lkpb;
-    .locals 1
-
-    monitor-enter p0
-
-    :try_start_0
-    iget-boolean v0, p0, Lkhn;->c:Z
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    if-eqz v0, :cond_0
-
-    monitor-exit p0
+    if-nez p2, :cond_0
 
     const/4 p1, 0x0
 
     return-object p1
 
     :cond_0
-    :try_start_1
-    iget-object v0, p0, Lkhn;->a:Lkgs;
+    const/high16 p3, 0xa000000
 
-    invoke-virtual {v0, p1}, Lkgs;->e(Lkfj;)Lkpb;
+    invoke-static {p1, p2, p3}, Lmip;->cf(Landroid/content/Context;Landroid/content/Intent;I)Landroid/app/PendingIntent;
 
     move-result-object p1
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    monitor-exit p0
 
     return-object p1
-
-    :catchall_0
-    move-exception p1
-
-    monitor-exit p0
-
-    throw p1
-.end method
-
-.method public final declared-synchronized e()Z
-    .locals 1
-
-    monitor-enter p0
-
-    :try_start_0
-    iget-boolean v0, p0, Lkhn;->c:Z
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    monitor-exit p0
-
-    return v0
-
-    :catchall_0
-    move-exception v0
-
-    monitor-exit p0
-
-    throw v0
-.end method
-
-.method public final declared-synchronized f()Z
-    .locals 1
-
-    monitor-enter p0
-
-    :try_start_0
-    iget-object v0, p0, Lkhn;->a:Lkgs;
-
-    invoke-virtual {v0}, Lkgs;->k()Z
-
-    move-result v0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    monitor-exit p0
-
-    return v0
-
-    :catchall_0
-    move-exception v0
-
-    monitor-exit p0
-
-    throw v0
-.end method
-
-.method public final g()Z
-    .locals 1
-
-    iget-object v0, p0, Lkhn;->a:Lkgs;
-
-    invoke-virtual {v0}, Lkgs;->l()Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public final declared-synchronized h()Z
-    .locals 1
-
-    monitor-enter p0
-
-    :try_start_0
-    iget-object v0, p0, Lkhn;->a:Lkgs;
-
-    invoke-virtual {v0}, Lkgs;->m()Z
-
-    move-result v0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    monitor-exit p0
-
-    return v0
-
-    :catchall_0
-    move-exception v0
-
-    monitor-exit p0
-
-    throw v0
-.end method
-
-.method public final declared-synchronized i()Z
-    .locals 1
-
-    monitor-enter p0
-
-    :try_start_0
-    iget-object v0, p0, Lkhn;->a:Lkgs;
-
-    invoke-virtual {v0}, Lkgs;->n()Z
-
-    move-result v0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    monitor-exit p0
-
-    return v0
-
-    :catchall_0
-    move-exception v0
-
-    monitor-exit p0
-
-    throw v0
-.end method
-
-.method public final declared-synchronized j()Lkgq;
-    .locals 1
-
-    monitor-enter p0
-
-    :try_start_0
-    iget-object v0, p0, Lkhn;->a:Lkgs;
-
-    iget-object v0, v0, Lkgs;->c:Lkgq;
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    monitor-exit p0
-
-    return-object v0
-
-    :catchall_0
-    move-exception v0
-
-    monitor-exit p0
-
-    throw v0
-.end method
-
-.method public final declared-synchronized k(Lkfg;)V
-    .locals 1
-
-    monitor-enter p0
-
-    :try_start_0
-    iget-object v0, p0, Lkhn;->a:Lkgs;
-
-    invoke-virtual {v0, p1}, Lkgs;->o(Lkfg;)V
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    monitor-exit p0
-
-    return-void
-
-    :catchall_0
-    move-exception p1
-
-    monitor-exit p0
-
-    throw p1
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .locals 1
-
-    iget-object v0, p0, Lkhn;->a:Lkgs;
-
-    invoke-virtual {v0}, Lkgs;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    return-object v0
 .end method

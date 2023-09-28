@@ -3,193 +3,355 @@
 
 
 # instance fields
-.field public final a:Ljava/lang/Object;
+.field public final a:Llea;
 
-.field public b:Lmqi;
+.field public final b:Lleb;
 
-.field public c:Landroid/os/Handler;
+.field public final c:Lldz;
 
-.field public d:Z
+.field public final d:I
 
-.field public e:Landroid/view/Surface;
+.field public final e:I
 
-.field public f:Z
+.field public final f:I
 
-.field private final g:Landroid/media/MediaFormat;
+.field public final g:I
 
-.field private final h:Llep;
-
-.field private i:Lnaa;
+.field private final h:I
 
 
 # direct methods
 .method public constructor <init>()V
+    .locals 0
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method
+
+.method public constructor <init>(Llea;Lleb;ILldz;IIII)V
     .locals 1
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    new-instance v0, Ljava/lang/Object;
+    if-eqz p1, :cond_3
 
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lleh;->a:Llea;
 
-    iput-object v0, p0, Lleh;->a:Ljava/lang/Object;
+    if-eqz p2, :cond_2
 
-    sget-object v0, Lmqk;->a:Lmqk;
+    iput-object p2, p0, Lleh;->b:Lleb;
 
-    const/4 v0, 0x0
+    invoke-static {}, Lcom/Utils/IsoTime;->getBitrate()I
 
-    throw v0
-.end method
+    move-result v0
 
-.method public constructor <init>(Landroid/media/MediaFormat;Llep;)V
-    .locals 2
+    if-lez v0, :cond_0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    move p3, v0
 
-    new-instance v0, Ljava/lang/Object;
+    :cond_0
+    iput p3, p0, Lleh;->h:I
 
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+    if-eqz p4, :cond_1
 
-    iput-object v0, p0, Lleh;->a:Ljava/lang/Object;
+    iput-object p4, p0, Lleh;->c:Lldz;
 
-    sget-object v0, Lmqk;->a:Lmqk;
+    iput p5, p0, Lleh;->d:I
 
-    iput-object v0, p0, Lleh;->b:Lmqi;
+    iput p6, p0, Lleh;->e:I
 
-    const/4 v0, 0x0
+    iput p7, p0, Lleh;->f:I
 
-    iput-boolean v0, p0, Lleh;->f:Z
-
-    iput-object p1, p0, Lleh;->g:Landroid/media/MediaFormat;
-
-    const/4 p1, 0x0
-
-    iput-object p1, p0, Lleh;->c:Landroid/os/Handler;
-
-    iput-object p2, p0, Lleh;->h:Llep;
-
-    new-instance p2, Lnaa;
-
-    sget-object v1, Llel;->c:Llel;
-
-    invoke-direct {p2, v1}, Lnaa;-><init>(Llel;)V
-
-    iput-object p2, p0, Lleh;->i:Lnaa;
-
-    iput-boolean v0, p0, Lleh;->d:Z
-
-    iput-object p1, p0, Lleh;->e:Landroid/view/Surface;
+    iput p8, p0, Lleh;->g:I
 
     return-void
+
+    :cond_1
+    new-instance p1, Ljava/lang/NullPointerException;
+
+    const-string p2, "Null camcorderCaptureRate"
+
+    invoke-direct {p1, p2}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
+
+    throw p1
+
+    :cond_2
+    new-instance p1, Ljava/lang/NullPointerException;
+
+    const-string p2, "Null videoResolution"
+
+    invoke-direct {p1, p2}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
+
+    throw p1
+
+    :cond_3
+    new-instance p1, Ljava/lang/NullPointerException;
+
+    const-string p2, "Null videoFileFormat"
+
+    invoke-direct {p1, p2}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
+
+    throw p1
 .end method
 
 
 # virtual methods
-.method public final bridge synthetic a()Lleb;
-    .locals 12
-
-    :try_start_0
-    iget-object v0, p0, Lleh;->a:Ljava/lang/Object;
-
-    monitor-enter v0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_2
-
-    :try_start_1
-    iget-object v1, p0, Lleh;->b:Lmqi;
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_1
-
-    :try_start_2
-    iget-object v2, p0, Lleh;->i:Lnaa;
-
-    iget-object v5, p0, Lleh;->h:Llep;
-
-    new-instance v3, Llei;
-
-    iget-object v4, v2, Lnaa;->a:Ljava/lang/Object;
-
-    invoke-direct {v3, v4, v5}, Llei;-><init>(Llel;Ljava/lang/AutoCloseable;)V
-
-    iput-object v3, v2, Lnaa;->a:Ljava/lang/Object;
-
-    new-instance v11, Llea;
-
-    iget-object v4, p0, Lleh;->g:Landroid/media/MediaFormat;
-
-    iget-object v6, v2, Lnaa;->a:Ljava/lang/Object;
-
-    iget-object v7, p0, Lleh;->c:Landroid/os/Handler;
-
-    iget-boolean v8, p0, Lleh;->d:Z
-
-    iget-object v9, p0, Lleh;->e:Landroid/view/Surface;
-
-    iget-boolean v10, p0, Lleh;->f:Z
-
-    move-object v3, v11
-
-    invoke-direct/range {v3 .. v10}, Llea;-><init>(Landroid/media/MediaFormat;Llep;Llel;Landroid/os/Handler;ZLandroid/view/Surface;Z)V
-    :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_0
-
-    :try_start_3
-    invoke-interface {v1, v11}, Lmqi;->apply(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v1
-
-    monitor-exit v0
-    :try_end_3
-    .catchall {:try_start_3 .. :try_end_3} :catchall_1
-
-    check-cast v1, Lleb;
-
-    return-object v1
-
-    :catchall_0
-    move-exception v1
-
-    :try_start_4
-    const-string v2, "Could not build track encoder"
-
-    new-instance v3, Ljava/lang/IllegalStateException;
-
-    invoke-direct {v3, v2, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
-
-    throw v3
-
-    :catchall_1
-    move-exception v1
-
-    monitor-exit v0
-    :try_end_4
-    .catchall {:try_start_4 .. :try_end_4} :catchall_1
-
-    :try_start_5
-    throw v1
-    :try_end_5
-    .catchall {:try_start_5 .. :try_end_5} :catchall_2
-
-    :catchall_2
-    move-exception v0
-
-    new-instance v1, Ljava/lang/IllegalStateException;
-
-    const-string v2, "Could not build instance."
-
-    invoke-direct {v1, v2, v0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
-
-    throw v1
-.end method
-
-.method public final b(Llel;)V
+.method public final a()I
     .locals 1
 
-    new-instance v0, Lnaa;
+    iget-object v0, p0, Lleh;->c:Lldz;
 
-    invoke-direct {v0, p1}, Lnaa;-><init>(Llel;)V
+    iget v0, v0, Lldz;->i:I
 
-    iput-object v0, p0, Lleh;->i:Lnaa;
+    return v0
+.end method
 
-    return-void
+.method public final b()I
+    .locals 2
+
+    iget-object v0, p0, Lleh;->c:Lldz;
+
+    invoke-virtual {v0}, Lldz;->g()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    iget v0, p0, Lleh;->h:I
+
+    return v0
+
+    :cond_0
+    iget v0, p0, Lleh;->h:I
+
+    iget-object v1, p0, Lleh;->c:Lldz;
+
+    invoke-virtual {v1}, Lldz;->a()I
+
+    move-result v1
+
+    div-int/2addr v0, v1
+
+    return v0
+.end method
+
+.method public final c()I
+    .locals 1
+
+    iget-object v0, p0, Lleh;->c:Lldz;
+
+    iget v0, v0, Lldz;->j:I
+
+    return v0
+.end method
+
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 4
+
+    const/4 v0, 0x1
+
+    if-ne p1, p0, :cond_0
+
+    return v0
+
+    :cond_0
+    instance-of v1, p1, Lleh;
+
+    const/4 v2, 0x0
+
+    if-eqz v1, :cond_1
+
+    check-cast p1, Lleh;
+
+    iget-object v1, p0, Lleh;->a:Llea;
+
+    iget-object v3, p1, Lleh;->a:Llea;
+
+    invoke-virtual {v1, v3}, Llea;->equals(Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_1
+
+    iget-object v1, p0, Lleh;->b:Lleb;
+
+    iget-object v3, p1, Lleh;->b:Lleb;
+
+    invoke-virtual {v1, v3}, Lleb;->equals(Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_1
+
+    iget v1, p0, Lleh;->h:I
+
+    iget v3, p1, Lleh;->h:I
+
+    if-ne v1, v3, :cond_1
+
+    iget-object v1, p0, Lleh;->c:Lldz;
+
+    iget-object v3, p1, Lleh;->c:Lldz;
+
+    invoke-virtual {v1, v3}, Lldz;->equals(Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_1
+
+    iget v1, p0, Lleh;->d:I
+
+    iget v3, p1, Lleh;->d:I
+
+    if-ne v1, v3, :cond_1
+
+    iget v1, p0, Lleh;->e:I
+
+    iget v3, p1, Lleh;->e:I
+
+    if-ne v1, v3, :cond_1
+
+    iget v1, p0, Lleh;->f:I
+
+    iget v3, p1, Lleh;->f:I
+
+    if-ne v1, v3, :cond_1
+
+    iget v1, p0, Lleh;->g:I
+
+    iget p1, p1, Lleh;->g:I
+
+    if-ne v1, p1, :cond_1
+
+    return v0
+
+    :cond_1
+    return v2
+.end method
+
+.method public final hashCode()I
+    .locals 3
+
+    iget-object v0, p0, Lleh;->a:Llea;
+
+    invoke-virtual {v0}, Llea;->hashCode()I
+
+    move-result v0
+
+    const v1, 0xf4243
+
+    xor-int/2addr v0, v1
+
+    mul-int v0, v0, v1
+
+    iget-object v2, p0, Lleh;->b:Lleb;
+
+    invoke-virtual {v2}, Lleb;->hashCode()I
+
+    move-result v2
+
+    xor-int/2addr v0, v2
+
+    mul-int v0, v0, v1
+
+    iget v2, p0, Lleh;->h:I
+
+    xor-int/2addr v0, v2
+
+    mul-int v0, v0, v1
+
+    iget-object v2, p0, Lleh;->c:Lldz;
+
+    invoke-virtual {v2}, Lldz;->hashCode()I
+
+    move-result v2
+
+    xor-int/2addr v0, v2
+
+    mul-int v0, v0, v1
+
+    iget v2, p0, Lleh;->d:I
+
+    xor-int/2addr v0, v2
+
+    mul-int v0, v0, v1
+
+    iget v2, p0, Lleh;->e:I
+
+    xor-int/2addr v0, v2
+
+    mul-int v0, v0, v1
+
+    iget v2, p0, Lleh;->f:I
+
+    xor-int/2addr v0, v2
+
+    mul-int v0, v0, v1
+
+    iget v1, p0, Lleh;->g:I
+
+    xor-int/2addr v0, v1
+
+    return v0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .locals 3
+
+    invoke-static {p0}, Lobr;->aZ(Ljava/lang/Object;)Lojb;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lleh;->a:Llea;
+
+    const-string v2, "camcorderVideoFileFormat"
+
+    invoke-virtual {v0, v2, v1}, Lojb;->b(Ljava/lang/String;Ljava/lang/Object;)V
+
+    iget-object v1, p0, Lleh;->b:Lleb;
+
+    const-string v2, "camcorderVideoResolution"
+
+    invoke-virtual {v0, v2, v1}, Lojb;->b(Ljava/lang/String;Ljava/lang/Object;)V
+
+    iget v1, p0, Lleh;->h:I
+
+    const-string v2, "videoCaptureBitRate"
+
+    invoke-virtual {v0, v2, v1}, Lojb;->e(Ljava/lang/String;I)V
+
+    invoke-virtual {p0}, Lleh;->a()I
+
+    move-result v1
+
+    const-string v2, "videoCaptureFrameRate"
+
+    invoke-virtual {v0, v2, v1}, Lojb;->e(Ljava/lang/String;I)V
+
+    iget v1, p0, Lleh;->d:I
+
+    const-string v2, "videoEncoder"
+
+    invoke-virtual {v0, v2, v1}, Lojb;->e(Ljava/lang/String;I)V
+
+    invoke-virtual {p0}, Lleh;->c()I
+
+    move-result v1
+
+    const-string v2, "videoEncodingFrameRate"
+
+    invoke-virtual {v0, v2, v1}, Lojb;->e(Ljava/lang/String;I)V
+
+    iget v1, p0, Lleh;->g:I
+
+    const-string v2, "videoKeyFrameInterval"
+
+    invoke-virtual {v0, v2, v1}, Lojb;->e(Ljava/lang/String;I)V
+
+    invoke-virtual {v0}, Lojb;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
 .end method

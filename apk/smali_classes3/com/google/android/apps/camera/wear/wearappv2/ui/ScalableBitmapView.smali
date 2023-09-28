@@ -4,13 +4,9 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 2
+    .locals 0
 
-    const/4 v0, 0x2
-
-    const/4 v1, 0x3
-
-    invoke-static {v0, v1}, Ljava/text/DateFormat;->getDateTimeInstance(II)Ljava/text/DateFormat;
+    invoke-static {}, Ljava/text/DateFormat;->getDateTimeInstance()Ljava/text/DateFormat;
 
     return-void
 .end method

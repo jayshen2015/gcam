@@ -1,21 +1,16 @@
-.class public final Lkkn;
-.super Lkkm;
-
-# interfaces
-.implements Lkon;
+.class public interface abstract Lkkn;
+.super Ljava/lang/Object;
 
 
-# instance fields
-.field public final b:Landroid/hardware/camera2/CameraConstrainedHighSpeedCaptureSession;
+# virtual methods
+.method public abstract a()Landroid/app/Activity;
+.end method
 
+.method public abstract b(Lcom/google/android/gms/common/api/internal/LifecycleCallback;)V
+.end method
 
-# direct methods
-.method public constructor <init>(Landroid/hardware/camera2/CameraConstrainedHighSpeedCaptureSession;)V
-    .locals 0
+.method public abstract d(Ljava/lang/Class;)Lcom/google/android/gms/common/api/internal/LifecycleCallback;
+.end method
 
-    invoke-direct {p0, p1}, Lkkm;-><init>(Landroid/hardware/camera2/CameraCaptureSession;)V
-
-    iput-object p1, p0, Lkkn;->b:Landroid/hardware/camera2/CameraConstrainedHighSpeedCaptureSession;
-
-    return-void
+.method public abstract startActivityForResult(Landroid/content/Intent;I)V
 .end method

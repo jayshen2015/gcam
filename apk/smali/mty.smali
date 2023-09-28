@@ -1,169 +1,93 @@
-.class final Lmty;
-.super Lmuc;
+.class public final Lmty;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Lmtu;
 
 
-# static fields
-.field public static final a:Lmty;
-
-.field private static final serialVersionUID:J
+# instance fields
+.field private final a:Ljava/lang/Object;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
+.method public constructor <init>(Ljava/lang/Object;)V
+    .locals 0
 
-    new-instance v0, Lmty;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {v0}, Lmty;-><init>()V
-
-    sput-object v0, Lmty;->a:Lmty;
+    iput-object p1, p0, Lmty;->a:Ljava/lang/Object;
 
     return-void
-.end method
-
-.method private constructor <init>()V
-    .locals 1
-
-    const-string v0, ""
-
-    invoke-direct {p0, v0}, Lmuc;-><init>(Ljava/lang/Comparable;)V
-
-    return-void
-.end method
-
-.method private readResolve()Ljava/lang/Object;
-    .locals 1
-
-    sget-object v0, Lmty;->a:Lmty;
-
-    return-object v0
 .end method
 
 
 # virtual methods
-.method public final a(Lmuc;)I
-    .locals 0
-
-    if-ne p1, p0, :cond_0
-
-    const/4 p1, 0x0
-
-    return p1
-
-    :cond_0
-    const/4 p1, 0x1
-
-    return p1
-.end method
-
-.method public final b()Ljava/lang/Comparable;
-    .locals 2
-
-    new-instance v0, Ljava/lang/IllegalStateException;
-
-    const-string v1, "range unbounded on this side"
-
-    invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-.end method
-
-.method public final c(Lmuh;)Ljava/lang/Comparable;
-    .locals 0
-
-    invoke-virtual {p1}, Lmuh;->b()Ljava/lang/Comparable;
-
-    move-result-object p1
-
-    return-object p1
-.end method
-
-.method public final bridge synthetic compareTo(Ljava/lang/Object;)I
-    .locals 0
-
-    check-cast p1, Lmuc;
-
-    invoke-virtual {p0, p1}, Lmuc;->a(Lmuc;)I
-
-    move-result p1
-
-    return p1
-.end method
-
-.method public final d(Lmuh;)Ljava/lang/Comparable;
-    .locals 0
-
-    new-instance p1, Ljava/lang/AssertionError;
-
-    invoke-direct {p1}, Ljava/lang/AssertionError;-><init>()V
-
-    throw p1
-.end method
-
-.method public final e(Ljava/lang/StringBuilder;)V
-    .locals 0
-
-    new-instance p1, Ljava/lang/AssertionError;
-
-    invoke-direct {p1}, Ljava/lang/AssertionError;-><init>()V
-
-    throw p1
-.end method
-
-.method public final f(Ljava/lang/StringBuilder;)V
+.method public final a()Lmne;
     .locals 1
 
-    const-string v0, "+\u221e)"
+    sget-object v0, Lmnd;->a:Lmne;
 
-    invoke-virtual {p1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    return-object v0
+.end method
+
+.method public final c()Ljava/lang/Object;
+    .locals 1
+
+    iget-object v0, p0, Lmty;->a:Ljava/lang/Object;
+
+    return-object v0
+.end method
+
+.method public final close()V
+    .locals 0
 
     return-void
 .end method
 
-.method public final g(Ljava/lang/Comparable;)Z
-    .locals 0
-
-    const/4 p1, 0x0
-
-    return p1
-.end method
-
-.method public final h(Lmuh;)Lmuc;
+.method public final gx()Ljava/lang/Object;
     .locals 1
 
-    new-instance p1, Ljava/lang/AssertionError;
+    const/4 v0, 0x0
 
-    const-string v0, "this statement should be unreachable"
-
-    invoke-direct {p1, v0}, Ljava/lang/AssertionError;-><init>(Ljava/lang/Object;)V
-
-    throw p1
-.end method
-
-.method public final hashCode()I
-    .locals 1
-
-    invoke-static {p0}, Ljava/lang/System;->identityHashCode(Ljava/lang/Object;)I
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public final i(Lmuh;)Lmuc;
-    .locals 0
-
-    new-instance p1, Ljava/lang/IllegalStateException;
-
-    invoke-direct {p1}, Ljava/lang/IllegalStateException;-><init>()V
-
-    throw p1
+    throw v0
 .end method
 
 .method public final toString()Ljava/lang/String;
-    .locals 1
+    .locals 3
 
-    const-string v0, "+\u221e"
+    iget-object v0, p0, Lmty;->a:Ljava/lang/Object;
+
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/String;->length()I
+
+    move-result v1
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    add-int/lit8 v1, v1, 0xc
+
+    invoke-direct {v2, v1}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string v1, "non-owning["
+
+    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v0, "]"
+
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
 
     return-object v0
 .end method

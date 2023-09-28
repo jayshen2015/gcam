@@ -1,196 +1,190 @@
 .class public final Lnij;
-.super Lnws;
-
-# interfaces
-.implements Lnxz;
-
-
-# static fields
-.field public static final f:Lnij;
-
-.field private static volatile g:Lnyf;
+.super Lnjc;
 
 
 # instance fields
-.field public a:I
-
-.field public b:I
-
-.field public c:J
-
-.field public d:J
-
-.field public e:I
+.field private final a:Ljava/util/List;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
+.method public constructor <init>(Ljava/io/InputStream;Ljava/util/List;)V
+    .locals 1
 
-    new-instance v0, Lnij;
+    invoke-direct {p0, p1}, Lnjc;-><init>(Ljava/io/InputStream;)V
 
-    invoke-direct {v0}, Lnij;-><init>()V
+    iput-object p2, p0, Lnij;->a:Ljava/util/List;
 
-    sput-object v0, Lnij;->f:Lnij;
+    const/4 p1, 0x0
 
-    const-class v1, Lnij;
+    new-array p1, p1, [Ljava/lang/Object;
 
-    invoke-static {v1, v0}, Lnws;->aa(Ljava/lang/Class;Lnws;)V
+    const/4 p2, 0x1
 
-    return-void
-.end method
+    const-string v0, "Input was null"
 
-.method private constructor <init>()V
-    .locals 0
-
-    invoke-direct {p0}, Lnws;-><init>()V
+    invoke-static {p2, v0, p1}, Lmyw;->b(ZLjava/lang/String;[Ljava/lang/Object;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method protected final a(ILjava/lang/Object;)Ljava/lang/Object;
-    .locals 3
+.method public final close()V
+    .locals 2
 
-    add-int/lit8 p1, p1, -0x1
+    iget-object v0, p0, Lnij;->a:Ljava/util/List;
 
-    const/4 p2, 0x1
+    invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
-    packed-switch p1, :pswitch_data_0
+    move-result-object v0
 
-    :pswitch_0
-    const/4 p1, 0x0
+    :goto_0
+    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
-    return-object p1
+    move-result v1
 
-    :pswitch_1
-    sget-object p1, Lnij;->g:Lnyf;
+    if-eqz v1, :cond_0
 
-    if-nez p1, :cond_1
+    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    const-class p2, Lnij;
+    move-result-object v1
 
-    monitor-enter p2
+    check-cast v1, Lnjk;
 
     :try_start_0
-    sget-object p1, Lnij;->g:Lnyf;
-
-    if-nez p1, :cond_0
-
-    new-instance p1, Lnwo;
-
-    sget-object v0, Lnij;->f:Lnij;
-
-    invoke-direct {p1, v0}, Lnwo;-><init>(Lnws;)V
-
-    sput-object p1, Lnij;->g:Lnyf;
-
-    :cond_0
-    monitor-exit p2
+    invoke-interface {v1}, Lnjk;->close()V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     goto :goto_0
 
     :catchall_0
-    move-exception p1
+    move-exception v1
 
-    monitor-exit p2
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    goto :goto_0
 
-    throw p1
+    :cond_0
+    invoke-super {p0}, Lnjc;->close()V
 
-    :cond_1
+    return-void
+.end method
+
+.method public final read()I
+    .locals 3
+
+    iget-object v0, p0, Lnij;->in:Ljava/io/InputStream;
+
+    invoke-virtual {v0}, Ljava/io/InputStream;->read()I
+
+    move-result v0
+
+    const/4 v1, -0x1
+
+    if-eq v0, v1, :cond_0
+
+    iget-object v1, p0, Lnij;->a:Ljava/util/List;
+
+    invoke-interface {v1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+
+    move-result-object v1
+
     :goto_0
-    return-object p1
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
-    :pswitch_2
-    sget-object p1, Lnij;->f:Lnij;
+    move-result v2
 
-    return-object p1
+    if-eqz v2, :cond_0
 
-    :pswitch_3
-    new-instance p1, Lnwn;
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    sget-object p2, Lnij;->f:Lnij;
+    move-result-object v2
 
-    invoke-direct {p1, p2}, Lnwn;-><init>(Lnws;)V
+    check-cast v2, Lnjk;
 
-    return-object p1
+    invoke-interface {v2}, Lnjk;->a()V
 
-    :pswitch_4
-    new-instance p1, Lnij;
+    goto :goto_0
 
-    invoke-direct {p1}, Lnij;-><init>()V
+    :cond_0
+    return v0
+.end method
 
-    return-object p1
+.method public final read([B)I
+    .locals 2
 
-    :pswitch_5
-    const-string p1, "a"
+    iget-object v0, p0, Lnij;->in:Ljava/io/InputStream;
 
-    const-string v0, "\u0001\u0004\u0000\u0001\u0001\u0004\u0004\u0000\u0000\u0000\u0001\u100c\u0000\u0002\u1002\u0001\u0003\u1002\u0002\u0004\u1004\u0003"
+    invoke-virtual {v0, p1}, Ljava/io/InputStream;->read([B)I
 
-    const/4 v1, 0x6
+    move-result p1
 
-    new-array v1, v1, [Ljava/lang/Object;
+    const/4 v0, -0x1
 
-    const/4 v2, 0x0
+    if-eq p1, v0, :cond_0
 
-    aput-object p1, v1, v2
+    iget-object v0, p0, Lnij;->a:Ljava/util/List;
 
-    const-string p1, "b"
+    invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
-    aput-object p1, v1, p2
+    move-result-object v0
 
-    const/4 p1, 0x2
+    :goto_0
+    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
-    sget-object p2, Lnia;->i:Lnww;
+    move-result v1
 
-    aput-object p2, v1, p1
+    if-eqz v1, :cond_0
 
-    const/4 p1, 0x3
+    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    const-string p2, "c"
+    move-result-object v1
 
-    aput-object p2, v1, p1
+    check-cast v1, Lnjk;
 
-    const/4 p1, 0x4
+    invoke-interface {v1}, Lnjk;->a()V
 
-    const-string p2, "d"
+    goto :goto_0
 
-    aput-object p2, v1, p1
+    :cond_0
+    return p1
+.end method
 
-    const/4 p1, 0x5
+.method public final read([BII)I
+    .locals 1
 
-    const-string p2, "e"
+    iget-object v0, p0, Lnij;->in:Ljava/io/InputStream;
 
-    aput-object p2, v1, p1
+    invoke-virtual {v0, p1, p2, p3}, Ljava/io/InputStream;->read([BII)I
 
-    sget-object p1, Lnij;->f:Lnij;
+    move-result p1
 
-    invoke-static {p1, v0, v1}, Lnij;->X(Lnxy;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/Object;
+    const/4 p2, -0x1
 
-    move-result-object p1
+    if-eq p1, p2, :cond_0
 
-    return-object p1
+    iget-object p2, p0, Lnij;->a:Ljava/util/List;
 
-    :pswitch_6
-    invoke-static {p2}, Ljava/lang/Byte;->valueOf(B)Ljava/lang/Byte;
+    invoke-interface {p2}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
-    move-result-object p1
+    move-result-object p2
 
-    return-object p1
+    :goto_0
+    invoke-interface {p2}, Ljava/util/Iterator;->hasNext()Z
 
-    nop
+    move-result p3
 
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_6
-        :pswitch_0
-        :pswitch_5
-        :pswitch_4
-        :pswitch_3
-        :pswitch_2
-        :pswitch_1
-    .end packed-switch
+    if-eqz p3, :cond_0
+
+    invoke-interface {p2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object p3
+
+    check-cast p3, Lnjk;
+
+    invoke-interface {p3}, Lnjk;->a()V
+
+    goto :goto_0
+
+    :cond_0
+    return p1
 .end method

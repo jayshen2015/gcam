@@ -1,429 +1,344 @@
-.class abstract Lmsv;
-.super Ljava/util/AbstractCollection;
+.class public final Lmsv;
+.super Ljava/lang/Object;
 
 # interfaces
-.implements Lmyb;
+.implements Lmsr;
 
 
 # instance fields
-.field public transient a:Ljava/util/Set;
+.field public final a:Lpht;
 
-.field private transient b:Ljava/util/Set;
+.field public final b:Lpht;
+
+.field public final c:Lpht;
+
+.field public final d:Lpht;
+
+.field public final e:Lpih;
+
+.field public final f:Lpih;
+
+.field public final g:Lpih;
+
+.field public final h:Ljava/util/List;
+
+.field public i:Z
+
+.field private final j:Lmtf;
+
+.field private final k:Z
+
+.field private l:Z
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 0
+.method public constructor <init>(Lpht;Lpht;Lpht;Lpht;ZLjava/util/concurrent/Executor;)V
+    .locals 1
 
-    invoke-direct {p0}, Ljava/util/AbstractCollection;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    new-instance v0, Ljava/util/ArrayList;
+
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+
+    iput-object v0, p0, Lmsv;->h:Ljava/util/List;
+
+    iput-object p1, p0, Lmsv;->a:Lpht;
+
+    iput-object p2, p0, Lmsv;->b:Lpht;
+
+    iput-object p3, p0, Lmsv;->c:Lpht;
+
+    iput-object p4, p0, Lmsv;->d:Lpht;
+
+    iput-boolean p5, p0, Lmsv;->k:Z
+
+    new-instance p1, Lmtf;
+
+    invoke-direct {p1, p6}, Lmtf;-><init>(Ljava/util/concurrent/Executor;)V
+
+    iput-object p1, p0, Lmsv;->j:Lmtf;
+
+    invoke-static {}, Lpih;->f()Lpih;
+
+    move-result-object p1
+
+    iput-object p1, p0, Lmsv;->e:Lpih;
+
+    invoke-static {}, Lpih;->f()Lpih;
+
+    move-result-object p1
+
+    iput-object p1, p0, Lmsv;->f:Lpih;
+
+    invoke-static {}, Lpih;->f()Lpih;
+
+    move-result-object p1
+
+    iput-object p1, p0, Lmsv;->g:Lpih;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final add(Ljava/lang/Object;)Z
-    .locals 1
+.method public final declared-synchronized a(Lmsw;)Lmsx;
+    .locals 3
 
-    const/4 v0, 0x1
+    monitor-enter p0
 
-    invoke-virtual {p0, p1, v0}, Lmsv;->h(Ljava/lang/Object;I)V
+    :try_start_0
+    iget-boolean v0, p0, Lmsv;->l:Z
 
-    return v0
-.end method
+    if-nez v0, :cond_1
 
-.method public final addAll(Ljava/util/Collection;)Z
-    .locals 2
+    iget-object v0, p0, Lmsv;->j:Lmtf;
 
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    new-instance v1, Lmta;
 
-    instance-of v0, p1, Lmyb;
+    iget-object p1, p1, Lmsw;->a:Lpht;
 
-    const/4 v1, 0x0
+    new-instance v2, Lmtf;
 
-    if-eqz v0, :cond_4
+    invoke-direct {v2, v0}, Lmtf;-><init>(Ljava/util/concurrent/Executor;)V
 
-    check-cast p1, Lmyb;
+    invoke-direct {v1, p1, v2}, Lmta;-><init>(Lpht;Lmtf;)V
 
-    instance-of v0, p1, Lmsq;
+    iget-object p1, p0, Lmsv;->h:Ljava/util/List;
 
-    if-eqz v0, :cond_1
+    invoke-interface {p1, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    check-cast p1, Lmsq;
-
-    invoke-virtual {p1}, Lmsv;->isEmpty()Z
-
-    move-result p1
+    iget-boolean p1, p0, Lmsv;->k:Z
 
     if-eqz p1, :cond_0
 
-    goto :goto_1
+    new-instance p1, Lmsp;
+
+    invoke-direct {p1, v1}, Lmsp;-><init>(Lmsx;)V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    monitor-exit p0
+
+    return-object p1
 
     :cond_0
-    const/4 p1, 0x0
+    monitor-exit p0
 
-    throw p1
+    return-object v1
 
     :cond_1
-    invoke-interface {p1}, Lmyb;->isEmpty()Z
+    :try_start_1
+    new-instance p1, Ljava/lang/IllegalStateException;
 
-    move-result v0
+    const-string v0, "Muxer already started. No tracks can be added now."
 
-    if-eqz v0, :cond_2
+    invoke-direct {p1, v0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 
-    goto :goto_1
+    throw p1
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    :cond_2
-    invoke-interface {p1}, Lmyb;->g()Ljava/util/Set;
+    :catchall_0
+    move-exception p1
 
-    move-result-object p1
-
-    invoke-interface {p1}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
-
-    move-result-object p1
-
-    :goto_0
-    invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_3
-
-    invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lmya;
-
-    invoke-interface {v0}, Lmya;->b()Ljava/lang/Object;
-
-    move-result-object v1
-
-    invoke-interface {v0}, Lmya;->a()I
-
-    move-result v0
-
-    invoke-interface {p0, v1, v0}, Lmyb;->h(Ljava/lang/Object;I)V
-
-    goto :goto_0
-
-    :cond_3
-    const/4 v1, 0x1
-
-    goto :goto_1
-
-    :cond_4
-    invoke-interface {p1}, Ljava/util/Collection;->isEmpty()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_5
-
-    :goto_1
-    return v1
-
-    :cond_5
-    invoke-interface {p1}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
-
-    move-result-object p1
-
-    invoke-static {p0, p1}, Llyh;->P(Ljava/util/Collection;Ljava/util/Iterator;)Z
-
-    move-result p1
-
-    return p1
-.end method
-
-.method public abstract b()I
-.end method
-
-.method public abstract c()Ljava/util/Iterator;
-.end method
-
-.method public final contains(Ljava/lang/Object;)Z
-    .locals 0
-
-    invoke-virtual {p0, p1}, Lmsv;->cw(Ljava/lang/Object;)I
-
-    move-result p1
-
-    if-lez p1, :cond_0
-
-    const/4 p1, 0x1
-
-    return p1
-
-    :cond_0
-    const/4 p1, 0x0
-
-    return p1
-.end method
-
-.method public d(Ljava/lang/Object;I)I
-    .locals 0
-
-    const/4 p1, 0x0
+    monitor-exit p0
 
     throw p1
 .end method
 
-.method public e()Ljava/util/Set;
+.method public final b()Lpht;
     .locals 1
 
-    const/4 v0, 0x0
+    iget-object v0, p0, Lmsv;->g:Lpih;
 
-    throw v0
-.end method
-
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 4
-
-    const/4 v0, 0x1
-
-    if-ne p1, p0, :cond_0
-
-    goto :goto_1
-
-    :cond_0
-    instance-of v1, p1, Lmyb;
-
-    const/4 v2, 0x0
-
-    if-eqz v1, :cond_4
-
-    check-cast p1, Lmyb;
-
-    invoke-interface {p0}, Lmyb;->size()I
-
-    move-result v1
-
-    invoke-interface {p1}, Lmyb;->size()I
-
-    move-result v3
-
-    if-ne v1, v3, :cond_4
-
-    invoke-interface {p0}, Lmyb;->g()Ljava/util/Set;
-
-    move-result-object v1
-
-    invoke-interface {v1}, Ljava/util/Set;->size()I
-
-    move-result v1
-
-    invoke-interface {p1}, Lmyb;->g()Ljava/util/Set;
-
-    move-result-object v3
-
-    invoke-interface {v3}, Ljava/util/Set;->size()I
-
-    move-result v3
-
-    if-eq v1, v3, :cond_1
-
-    const/4 v0, 0x0
-
-    goto :goto_1
-
-    :cond_1
-    invoke-interface {p1}, Lmyb;->g()Ljava/util/Set;
-
-    move-result-object p1
-
-    invoke-interface {p1}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
-
-    move-result-object p1
-
-    :cond_2
-    invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_3
-
-    invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Lmya;
-
-    invoke-interface {v1}, Lmya;->b()Ljava/lang/Object;
-
-    move-result-object v3
-
-    invoke-interface {p0, v3}, Lmyb;->cw(Ljava/lang/Object;)I
-
-    move-result v3
-
-    invoke-interface {v1}, Lmya;->a()I
-
-    move-result v1
-
-    if-eq v3, v1, :cond_2
-
-    goto :goto_0
-
-    :cond_3
-    goto :goto_1
-
-    :cond_4
-    :goto_0
-    const/4 v0, 0x0
-
-    :goto_1
-    return v0
-.end method
-
-.method public f()Ljava/util/Set;
-    .locals 1
-
-    const/4 v0, 0x0
-
-    throw v0
-.end method
-
-.method public final g()Ljava/util/Set;
-    .locals 1
-
-    iget-object v0, p0, Lmsv;->b:Ljava/util/Set;
-
-    if-nez v0, :cond_0
-
-    new-instance v0, Lmsu;
-
-    invoke-direct {v0, p0}, Lmsu;-><init>(Lmsv;)V
-
-    iput-object v0, p0, Lmsv;->b:Ljava/util/Set;
-
-    :cond_0
     return-object v0
 .end method
 
-.method public h(Ljava/lang/Object;I)V
-    .locals 0
+.method public final declared-synchronized c()V
+    .locals 6
 
-    const/4 p1, 0x0
+    monitor-enter p0
 
-    throw p1
-.end method
+    :try_start_0
+    iget-boolean v0, p0, Lmsv;->l:Z
 
-.method public final hashCode()I
-    .locals 1
-
-    invoke-virtual {p0}, Lmsv;->g()Ljava/util/Set;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/Object;->hashCode()I
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public i(Ljava/lang/Object;I)Z
-    .locals 0
-
-    const/4 p1, 0x0
-
-    throw p1
-.end method
-
-.method public final isEmpty()Z
-    .locals 1
-
-    invoke-virtual {p0}, Lmsv;->g()Ljava/util/Set;
-
-    move-result-object v0
-
-    invoke-interface {v0}, Ljava/util/Set;->isEmpty()Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public final remove(Ljava/lang/Object;)Z
-    .locals 1
+    if-nez v0, :cond_2
 
     const/4 v0, 0x1
 
-    invoke-virtual {p0, p1, v0}, Lmsv;->d(Ljava/lang/Object;I)I
+    iput-boolean v0, p0, Lmsv;->l:Z
 
-    move-result p1
+    iget-object v1, p0, Lmsv;->g:Lpih;
 
-    if-lez p1, :cond_0
+    new-instance v2, Lmsu;
 
-    return v0
+    invoke-direct {v2, p0, v0}, Lmsu;-><init>(Lmsv;I)V
+
+    iget-object v3, p0, Lmsv;->j:Lmtf;
+
+    invoke-virtual {v1, v2, v3}, Lpih;->d(Ljava/lang/Runnable;Ljava/util/concurrent/Executor;)V
+
+    iget-object v1, p0, Lmsv;->e:Lpih;
+
+    const/4 v2, 0x4
+
+    new-array v2, v2, [Lpht;
+
+    iget-object v3, p0, Lmsv;->a:Lpht;
+
+    const/4 v4, 0x0
+
+    aput-object v3, v2, v4
+
+    iget-object v3, p0, Lmsv;->b:Lpht;
+
+    aput-object v3, v2, v0
+
+    iget-object v0, p0, Lmsv;->c:Lpht;
+
+    const/4 v3, 0x2
+
+    aput-object v0, v2, v3
+
+    const/4 v0, 0x3
+
+    iget-object v5, p0, Lmsv;->d:Lpht;
+
+    aput-object v5, v2, v0
+
+    invoke-static {v2}, Lplk;->S([Lpht;)Lpht;
+
+    move-result-object v0
+
+    new-instance v2, Lmst;
+
+    invoke-direct {v2, p0}, Lmst;-><init>(Lmsv;)V
+
+    iget-object v5, p0, Lmsv;->j:Lmtf;
+
+    invoke-static {v0, v2, v5}, Lpgb;->i(Lpht;Lpgk;Ljava/util/concurrent/Executor;)Lpht;
+
+    move-result-object v0
+
+    invoke-virtual {v1, v0}, Lpih;->e(Lpht;)Z
+
+    invoke-static {}, Lobr;->ag()Ljava/util/ArrayList;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lmsv;->e:Lpih;
+
+    invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    iget-object v1, p0, Lmsv;->h:Ljava/util/List;
+
+    invoke-interface {v1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+
+    move-result-object v1
+
+    :goto_0
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_0
+
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Lmta;
+
+    iget-object v2, v2, Lmta;->b:Lpih;
+
+    invoke-interface {v0, v2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    goto :goto_0
 
     :cond_0
-    const/4 p1, 0x0
-
-    return p1
-.end method
-
-.method public final removeAll(Ljava/util/Collection;)Z
-    .locals 1
-
-    instance-of v0, p1, Lmyb;
-
-    if-eqz v0, :cond_0
-
-    check-cast p1, Lmyb;
-
-    invoke-interface {p1}, Lmyb;->f()Ljava/util/Set;
-
-    move-result-object p1
-
-    :cond_0
-    invoke-interface {p0}, Lmyb;->f()Ljava/util/Set;
+    invoke-static {v0}, Lplk;->R(Ljava/lang/Iterable;)Lpht;
 
     move-result-object v0
 
-    invoke-interface {v0, p1}, Ljava/util/Set;->removeAll(Ljava/util/Collection;)Z
+    new-instance v1, Lmsu;
 
-    move-result p1
+    invoke-direct {v1, p0, v4}, Lmsu;-><init>(Lmsv;I)V
 
-    return p1
-.end method
+    iget-object v2, p0, Lmsv;->j:Lmtf;
 
-.method public final retainAll(Ljava/util/Collection;)Z
-    .locals 1
+    invoke-interface {v0, v1, v2}, Lpht;->d(Ljava/lang/Runnable;Ljava/util/concurrent/Executor;)V
 
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    instance-of v0, p1, Lmyb;
-
-    if-eqz v0, :cond_0
-
-    check-cast p1, Lmyb;
-
-    invoke-interface {p1}, Lmyb;->f()Ljava/util/Set;
-
-    move-result-object p1
-
-    :cond_0
-    invoke-interface {p0}, Lmyb;->f()Ljava/util/Set;
+    invoke-static {}, Lobr;->ag()Ljava/util/ArrayList;
 
     move-result-object v0
 
-    invoke-interface {v0, p1}, Ljava/util/Set;->retainAll(Ljava/util/Collection;)Z
+    iget-object v1, p0, Lmsv;->h:Ljava/util/List;
 
-    move-result p1
+    invoke-interface {v1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
-    return p1
-.end method
+    move-result-object v1
 
-.method public final toString()Ljava/lang/String;
-    .locals 1
+    :goto_1
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
-    invoke-virtual {p0}, Lmsv;->g()Ljava/util/Set;
+    move-result v2
+
+    if-eqz v2, :cond_1
+
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Lmta;
+
+    iget-object v2, v2, Lmta;->e:Lpih;
+
+    invoke-interface {v0, v2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    goto :goto_1
+
+    :cond_1
+    invoke-static {v0}, Lplk;->R(Ljava/lang/Iterable;)Lpht;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Ljava/lang/Object;->toString()Ljava/lang/String;
+    new-instance v1, Lmsu;
 
-    move-result-object v0
+    invoke-direct {v1, p0, v3}, Lmsu;-><init>(Lmsv;I)V
 
-    return-object v0
+    iget-object v2, p0, Lmsv;->j:Lmtf;
+
+    invoke-interface {v0, v1, v2}, Lpht;->d(Ljava/lang/Runnable;Ljava/util/concurrent/Executor;)V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    monitor-exit p0
+
+    return-void
+
+    :cond_2
+    :try_start_1
+    new-instance v0, Ljava/lang/IllegalStateException;
+
+    const-string v1, "Muxer already started. Cannot call start twice."
+
+    invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit p0
+
+    goto :goto_3
+
+    :goto_2
+    throw v0
+
+    :goto_3
+    goto :goto_2
 .end method

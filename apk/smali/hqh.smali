@@ -1,147 +1,229 @@
 .class public final Lhqh;
-.super Ljava/lang/Object;
-
-# interfaces
-.implements Landroid/opengl/GLSurfaceView$Renderer;
-
-
-# instance fields
-.field public a:Ljava/nio/ByteBuffer;
-
-.field public b:[F
-
-.field public c:Lhqg;
-
-.field private final d:Ljpw;
+.super Lhqd;
 
 
 # direct methods
-.method public constructor <init>(Ljpw;[B[B[B)V
-    .locals 0
+.method public constructor <init>(Lhpr;Ljava/lang/String;Lbww;Lhsg;)V
+    .locals 7
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    sget-object v1, Lhsr;->l:Lhsr;
 
-    iput-object p1, p0, Lhqh;->d:Ljpw;
+    sget-object v6, Loih;->a:Loih;
+
+    const/4 v5, 0x0
+
+    move-object v0, p1
+
+    move-object v2, p2
+
+    move-object v3, p3
+
+    move-object v4, p4
+
+    invoke-interface/range {v0 .. v6}, Lhpr;->a(Lhsr;Ljava/lang/String;Lbww;Lhsg;Lhhl;Lojc;)Lhps;
+
+    move-result-object p1
+
+    invoke-direct {p0, p1}, Lhqd;-><init>(Lhps;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onDrawFrame(Ljavax/microedition/khronos/opengles/GL10;)V
-    .locals 11
+.method public final declared-synchronized P(Llig;)V
+    .locals 3
 
-    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
+    monitor-enter p0
 
-    iget-object p1, p0, Lhqh;->c:Lhqg;
+    :try_start_0
+    invoke-super {p0, p1}, Lhqd;->P(Llig;)V
 
-    iget-object v8, p0, Lhqh;->a:Ljava/nio/ByteBuffer;
+    invoke-virtual {p0}, Lhqd;->J()Ljtl;
 
-    iget-object v9, p0, Lhqh;->b:[F
+    move-result-object v0
 
-    const/4 v10, 0x0
+    const/4 v1, 0x1
 
-    invoke-virtual {v8, v10}, Ljava/nio/ByteBuffer;->position(I)Ljava/nio/Buffer;
+    const/4 v2, 0x2
 
-    const/16 v0, 0xde1
+    invoke-virtual {v0, v1, v2}, Ljtl;->h(II)V
 
-    const/4 v1, 0x0
+    invoke-virtual {p0}, Lhqd;->t()Lhrc;
 
-    const/16 v2, 0x1907
+    move-result-object v0
 
-    iget v3, p1, Lhqg;->c:I
+    invoke-virtual {p0}, Lhqd;->h()Lhsp;
 
-    iget v4, p1, Lhqg;->b:I
+    move-result-object v1
 
-    const/4 v5, 0x0
+    invoke-virtual {v0, p1, v1}, Lhrc;->b(Llig;Lhsp;)Lhrb;
 
-    const/16 v6, 0x1907
+    move-result-object p1
 
-    const/16 v7, 0x1401
+    invoke-virtual {p0, p1}, Lhqd;->I(Lhrb;)V
 
-    invoke-static/range {v0 .. v8}, Landroid/opengl/GLES30;->glTexImage2D(IIIIIIIILjava/nio/Buffer;)V
+    iget-object p1, p0, Lhqd;->b:Lhps;
 
-    iget-object v0, p1, Lhqg;->a:Ljava/nio/FloatBuffer;
+    invoke-virtual {p0}, Lhqd;->h()Lhsp;
 
-    invoke-virtual {v0, v9}, Ljava/nio/FloatBuffer;->put([F)Ljava/nio/FloatBuffer;
+    move-result-object v0
 
-    iget-object v0, p1, Lhqg;->a:Ljava/nio/FloatBuffer;
+    invoke-virtual {p1, v0}, Lhps;->G(Lhsp;)V
 
-    invoke-virtual {v0, v10}, Ljava/nio/FloatBuffer;->position(I)Ljava/nio/Buffer;
+    invoke-virtual {p0}, Lhqd;->o()Lhqb;
 
-    iget v1, p1, Lhqg;->d:I
+    move-result-object p1
 
-    const/4 v2, 0x4
+    invoke-static {}, Lfjz;->a()Lfjy;
 
-    const/16 v3, 0x1406
+    move-result-object v0
 
-    const/4 v4, 0x0
+    invoke-virtual {p0}, Lhqd;->i()Lhsr;
 
-    const/16 v5, 0x10
+    move-result-object v1
 
-    iget-object v6, p1, Lhqg;->a:Ljava/nio/FloatBuffer;
+    iput-object v1, v0, Lfjy;->a:Lhsr;
 
-    invoke-static/range {v1 .. v6}, Landroid/opengl/GLES30;->glVertexAttribPointer(IIIZILjava/nio/Buffer;)V
+    invoke-virtual {v0}, Lfjy;->a()Lfjz;
 
-    iget v0, p1, Lhqg;->d:I
+    move-result-object v0
 
-    invoke-static {v0}, Landroid/opengl/GLES30;->glEnableVertexAttribArray(I)V
+    invoke-virtual {p1, v0}, Lhqb;->c(Lfjz;)V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    iget-object v0, p1, Lhqg;->e:Ljava/nio/ShortBuffer;
+    monitor-exit p0
 
-    invoke-virtual {v0, v10}, Ljava/nio/ShortBuffer;->position(I)Ljava/nio/Buffer;
+    return-void
 
-    iget-object v0, p1, Lhqg;->e:Ljava/nio/ShortBuffer;
+    :catchall_0
+    move-exception p1
 
-    invoke-virtual {v0}, Ljava/nio/ShortBuffer;->capacity()I
+    monitor-exit p0
+
+    throw p1
+.end method
+
+.method public final declared-synchronized r([BLikc;)Lpht;
+    .locals 4
+
+    monitor-enter p0
+
+    :try_start_0
+    const-string v0, "saveAndFinish"
+
+    invoke-virtual {p0, v0}, Lhqd;->G(Ljava/lang/String;)V
+
+    invoke-virtual {p0}, Lhqd;->J()Ljtl;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljtl;->c()Z
 
     move-result v0
 
-    iget-object p1, p1, Lhqg;->e:Ljava/nio/ShortBuffer;
+    if-eqz v0, :cond_0
 
-    const/4 v1, 0x4
+    const-string p1, "Ignoring saveAndFinish. CaptureSession has been deleted or canceled."
 
-    const/16 v2, 0x1403
+    invoke-virtual {p0, p1}, Lhqd;->H(Ljava/lang/String;)V
 
-    invoke-static {v1, v0, v2, p1}, Landroid/opengl/GLES30;->glDrawElements(IIILjava/nio/Buffer;)V
+    invoke-virtual {p0}, Lhqd;->p()Lpht;
 
-    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
+    move-result-object p1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    return-void
-.end method
+    monitor-exit p0
 
-.method public final onSurfaceChanged(Ljavax/microedition/khronos/opengles/GL10;II)V
-    .locals 8
+    return-object p1
 
-    new-instance v7, Lhqg;
+    :cond_0
+    :try_start_1
+    invoke-virtual {p0}, Lhqd;->J()Ljtl;
 
-    iget-object v1, p0, Lhqh;->d:Ljpw;
+    move-result-object v0
 
-    const/4 v4, 0x0
+    const/4 v1, 0x2
 
-    const/4 v5, 0x0
+    new-array v2, v1, [I
 
-    const/4 v6, 0x0
+    const/4 v3, 0x0
 
-    move-object v0, v7
+    aput v1, v2, v3
 
-    move v2, p2
+    const/4 v1, 0x1
 
-    move v3, p3
+    const/4 v3, 0x3
 
-    invoke-direct/range {v0 .. v6}, Lhqg;-><init>(Ljpw;II[B[B[B)V
+    aput v3, v2, v1
 
-    iput-object v7, p0, Lhqh;->c:Lhqg;
+    invoke-virtual {v0, v2}, Ljtl;->f([I)V
 
-    const/4 v0, 0x0
+    invoke-virtual {p0}, Lhqd;->e()Lbww;
 
-    invoke-interface {p1, v0, v0, p2, p3}, Ljavax/microedition/khronos/opengles/GL10;->glViewport(IIII)V
+    move-result-object v0
 
-    return-void
-.end method
+    invoke-virtual {v0}, Lbww;->b()Lojc;
 
-.method public final onSurfaceCreated(Ljavax/microedition/khronos/opengles/GL10;Ljavax/microedition/khronos/egl/EGLConfig;)V
-    .locals 0
+    move-result-object v0
 
-    return-void
+    iput-object v0, p2, Likc;->d:Lojc;
+
+    invoke-virtual {p0}, Lhqd;->J()Ljtl;
+
+    move-result-object v0
+
+    invoke-virtual {v0, v3}, Ljtl;->g(I)V
+
+    iget-object p2, p2, Likc;->c:Lojc;
+
+    invoke-virtual {p2}, Lojc;->f()Ljava/lang/Object;
+
+    move-result-object p2
+
+    check-cast p2, Lcom/google/android/libraries/camera/exif/ExifInterface;
+
+    if-eqz p2, :cond_1
+
+    invoke-virtual {p0}, Lhqd;->k()Liij;
+
+    move-result-object v0
+
+    check-cast v0, Liik;
+
+    iput-object p2, v0, Liik;->g:Lcom/google/android/libraries/camera/exif/ExifInterface;
+
+    :cond_1
+    invoke-virtual {p0}, Lhqd;->f()Lhsc;
+
+    move-result-object p2
+
+    invoke-virtual {p0}, Lhqd;->E()Ljava/util/concurrent/Executor;
+
+    move-result-object v0
+
+    new-instance v1, Lhqg;
+
+    invoke-direct {v1, p0, p1, p2}, Lhqg;-><init>(Lhqh;[BLhsc;)V
+
+    invoke-interface {v0, v1}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
+
+    invoke-virtual {p0}, Lhqd;->p()Lpht;
+
+    move-result-object p1
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    monitor-exit p0
+
+    return-object p1
+
+    :catchall_0
+    move-exception p1
+
+    monitor-exit p0
+
+    throw p1
 .end method

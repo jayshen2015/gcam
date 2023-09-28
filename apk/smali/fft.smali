@@ -1,85 +1,74 @@
-.class public final Lfft;
+.class public final synthetic Lfft;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lfgg;
+.implements Llie;
+
+
+# instance fields
+.field public final synthetic a:Lmgs;
+
+.field private final synthetic b:I
 
 
 # direct methods
-.method public constructor <init>()V
+.method public synthetic constructor <init>(Lmgs;I)V
     .locals 0
 
+    iput p2, p0, Lfft;->b:I
+
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lfft;->a:Lmgs;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()J
-    .locals 2
+.method public final close()V
+    .locals 6
 
-    const-wide/16 v0, 0x0
+    iget v0, p0, Lfft;->b:I
 
-    return-wide v0
-.end method
+    packed-switch v0, :pswitch_data_0
 
-.method public final b(J)Lkpb;
-    .locals 0
+    iget-object v0, p0, Lfft;->a:Lmgs;
 
-    const/4 p1, 0x0
+    iget-object v0, v0, Lmgs;->a:Lcom/google/android/libraries/lens/lenslite/dynamicloading/DLEngineApi;
 
-    return-object p1
-.end method
-
-.method public final c(J)Lkpb;
-    .locals 0
-
-    const/4 p1, 0x0
-
-    return-object p1
-.end method
-
-.method public final d()Lkpb;
-    .locals 1
-
-    const/4 v0, 0x0
-
-    return-object v0
-.end method
-
-.method public final e(J)Lmqp;
-    .locals 0
-
-    sget-object p1, Lmpx;->a:Lmpx;
-
-    return-object p1
-.end method
-
-.method public final f(J)Ljava/util/List;
-    .locals 0
-
-    new-instance p1, Ljava/util/ArrayList;
-
-    invoke-direct {p1}, Ljava/util/ArrayList;-><init>()V
-
-    return-object p1
-.end method
-
-.method public final g(Lfgf;Ljava/util/concurrent/Executor;)V
-    .locals 0
+    invoke-interface {v0}, Lcom/google/android/libraries/lens/lenslite/dynamicloading/DLEngineApi;->shutdown()V
 
     return-void
-.end method
 
-.method public final h()V
-    .locals 0
+    :pswitch_0
+    iget-object v0, p0, Lfft;->a:Lmgs;
 
+    invoke-virtual {v0}, Lmgs;->a()J
+
+    move-result-wide v1
+
+    sget-object v3, Lcom/google/android/libraries/lens/lenslite/dynamicloading/ApiVersion;->VERSION_8:Lcom/google/android/libraries/lens/lenslite/dynamicloading/ApiVersion;
+
+    invoke-virtual {v3}, Lcom/google/android/libraries/lens/lenslite/dynamicloading/ApiVersion;->getVersionCode()I
+
+    move-result v3
+
+    int-to-long v3, v3
+
+    cmp-long v5, v1, v3
+
+    if-ltz v5, :cond_0
+
+    iget-object v0, v0, Lmgs;->a:Lcom/google/android/libraries/lens/lenslite/dynamicloading/DLEngineApi;
+
+    invoke-interface {v0}, Lcom/google/android/libraries/lens/lenslite/dynamicloading/DLEngineApi;->stopLinkLogging()V
+
+    :cond_0
     return-void
-.end method
 
-.method public final i()V
-    .locals 0
-
-    return-void
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

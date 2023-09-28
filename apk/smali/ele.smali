@@ -2,315 +2,285 @@
 .super Ljava/lang/Object;
 
 
-# static fields
-.field private static final b:Lnak;
-
-
 # instance fields
-.field public final a:[F
+.field public a:F
 
-.field private c:Ljava/nio/FloatBuffer;
+.field public b:Ljava/lang/Object;
 
-.field private final d:[F
+.field public c:Ljava/lang/Object;
 
-.field private final e:[F
+.field private final d:Ljava/lang/Object;
 
-.field private f:Lltt;
+.field private e:J
 
-.field private g:F
-
-.field private h:Loxq;
-
-.field private i:Loxq;
-
-.field private j:Loxq;
-
-.field private k:Loxq;
+.field private f:I
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
-
-    const-string v0, "com/google/android/apps/camera/imax/rendering/shaders/LineShader"
-
-    invoke-static {v0}, Lnak;->h(Ljava/lang/String;)Lnak;
-
-    move-result-object v0
-
-    sput-object v0, Lele;->b:Lnak;
-
-    return-void
-.end method
-
-.method public constructor <init>()V
+.method public constructor <init>(Ljava/lang/Object;)V
     .locals 2
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     const/4 v0, 0x0
 
-    iput-object v0, p0, Lele;->c:Ljava/nio/FloatBuffer;
-
-    const/16 v0, 0x10
-
-    new-array v1, v0, [F
-
-    iput-object v1, p0, Lele;->d:[F
-
-    new-array v0, v0, [F
-
-    iput-object v0, p0, Lele;->e:[F
+    iput v0, p0, Lele;->a:F
 
     const/4 v0, 0x4
 
-    new-array v0, v0, [F
+    iput v0, p0, Lele;->f:I
 
-    fill-array-data v0, :array_0
+    iput-object p1, p0, Lele;->d:Ljava/lang/Object;
 
-    iput-object v0, p0, Lele;->a:[F
+    iput-object p1, p0, Lele;->b:Ljava/lang/Object;
 
-    const/high16 v0, 0x3f800000    # 1.0f
+    iput-object p1, p0, Lele;->c:Ljava/lang/Object;
 
-    iput v0, p0, Lele;->g:F
+    invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
-    const/4 v0, 0x0
+    move-result-wide v0
 
-    invoke-static {v1, v0}, Landroid/opengl/Matrix;->setIdentityM([FI)V
+    iput-wide v0, p0, Lele;->e:J
 
     return-void
-
-    nop
-
-    :array_0
-    .array-data 4
-        0x3f800000    # 1.0f
-        0x3f800000    # 1.0f
-        0x3f800000    # 1.0f
-        0x3f800000    # 1.0f
-    .end array-data
 .end method
 
 
 # virtual methods
 .method public final a()V
-    .locals 1
-
-    iget-object v0, p0, Lele;->f:Lltt;
-
-    if-eqz v0, :cond_0
-
-    invoke-virtual {v0}, Lltt;->b()V
+    .locals 2
 
     const/4 v0, 0x0
 
-    iput-object v0, p0, Lele;->f:Lltt;
+    iput v0, p0, Lele;->a:F
 
-    :cond_0
+    const/4 v0, 0x4
+
+    iput v0, p0, Lele;->f:I
+
+    iget-object v0, p0, Lele;->d:Ljava/lang/Object;
+
+    iput-object v0, p0, Lele;->b:Ljava/lang/Object;
+
+    iput-object v0, p0, Lele;->c:Ljava/lang/Object;
+
+    invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
+
+    move-result-wide v0
+
+    iput-wide v0, p0, Lele;->e:J
+
     return-void
 .end method
 
 .method public final b()V
-    .locals 4
-
-    iget-object v0, p0, Lele;->f:Lltt;
-
-    if-nez v0, :cond_0
-
-    new-instance v0, Lltt;
-
-    const-string v1, "attribute vec2 vertexAttrib;uniform mat4 projectionMatrix;uniform mat4 vertexTransform;void main() {  gl_Position = projectionMatrix * vertexTransform * vec4(vertexAttrib, 0., 1.);}"
-
-    const-string v2, "precision mediump float;uniform vec4 fillColor;void main() {  gl_FragColor = fillColor;}"
-
-    invoke-direct {v0, v1, v2}, Lltt;-><init>(Ljava/lang/String;Ljava/lang/String;)V
-
-    iput-object v0, p0, Lele;->f:Lltt;
-
-    const-string v1, "vertexTransform"
-
-    invoke-virtual {v0, v1}, Lltt;->d(Ljava/lang/String;)Loxq;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lele;->h:Loxq;
-
-    iget-object v0, p0, Lele;->f:Lltt;
-
-    const-string v1, "projectionMatrix"
-
-    invoke-virtual {v0, v1}, Lltt;->d(Ljava/lang/String;)Loxq;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lele;->i:Loxq;
-
-    iget-object v0, p0, Lele;->f:Lltt;
-
-    const-string v1, "fillColor"
-
-    invoke-virtual {v0, v1}, Lltt;->d(Ljava/lang/String;)Loxq;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lele;->j:Loxq;
-
-    iget-object v0, p0, Lele;->f:Lltt;
-
-    const-string v1, "vertexAttrib"
-
-    invoke-virtual {v0, v1}, Lltt;->e(Ljava/lang/String;)Loxq;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lele;->k:Loxq;
-
-    :cond_0
-    iget-object v0, p0, Lele;->c:Ljava/nio/FloatBuffer;
-
-    if-nez v0, :cond_1
-
-    return-void
-
-    :cond_1
-    iget-object v0, p0, Lele;->f:Lltt;
-
-    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    invoke-virtual {v0}, Lltt;->a()V
-
-    iget-object v1, p0, Lele;->k:Loxq;
-
-    invoke-virtual {v1}, Loxq;->e()V
-
-    iget-object v1, p0, Lele;->k:Loxq;
-
-    iget-object v2, p0, Lele;->c:Ljava/nio/FloatBuffer;
-
-    const/4 v3, 0x2
-
-    invoke-virtual {v1, v2, v3}, Loxq;->f(Ljava/nio/FloatBuffer;I)V
-
-    iget-object v1, p0, Lele;->h:Loxq;
-
-    iget-object v2, p0, Lele;->d:[F
-
-    invoke-virtual {v1, v2}, Loxq;->a([F)V
-
-    iget-object v1, p0, Lele;->i:Loxq;
-
-    iget-object v2, p0, Lele;->e:[F
-
-    invoke-virtual {v1, v2}, Loxq;->a([F)V
-
-    iget-object v1, p0, Lele;->j:Loxq;
-
-    iget-object v2, p0, Lele;->a:[F
-
-    invoke-virtual {v1, v2}, Loxq;->b([F)V
-
-    iget v1, p0, Lele;->g:F
-
-    invoke-static {v1}, Landroid/opengl/GLES20;->glLineWidth(F)V
-
-    iget-object v1, p0, Lele;->c:Ljava/nio/FloatBuffer;
-
-    invoke-virtual {v1}, Ljava/nio/FloatBuffer;->capacity()I
-
-    move-result v1
-
-    div-int/2addr v1, v3
-
-    const/4 v2, 0x1
-
-    const/4 v3, 0x0
-
-    invoke-static {v2, v3, v1}, Landroid/opengl/GLES20;->glDrawArrays(III)V
-
-    iget-object v1, p0, Lele;->k:Loxq;
-
-    invoke-virtual {v1}, Loxq;->d()V
-
-    invoke-virtual {v0}, Lltt;->c()V
-
-    return-void
-.end method
-
-.method public final c([FF)V
-    .locals 1
-
-    if-eqz p1, :cond_1
-
-    array-length v0, p1
-
-    and-int/lit8 v0, v0, 0x3
-
-    if-eqz v0, :cond_0
-
-    goto :goto_0
-
-    :cond_0
-    iput p2, p0, Lele;->g:F
-
-    invoke-static {p1}, Lljr;->p([F)Ljava/nio/FloatBuffer;
-
-    move-result-object p1
-
-    iput-object p1, p0, Lele;->c:Ljava/nio/FloatBuffer;
-
-    return-void
-
-    :cond_1
-    :goto_0
-    sget-object p2, Lele;->b:Lnak;
-
-    invoke-virtual {p2}, Lnaf;->b()Lnaz;
-
-    move-result-object p2
-
-    check-cast p2, Lnah;
-
-    const/16 v0, 0x63a
-
-    invoke-interface {p2, v0}, Lnah;->G(I)Lnaz;
-
-    move-result-object p2
-
-    check-cast p2, Lnah;
-
-    const-string v0, "Tried to draw a set of lines with %d floats"
-
-    array-length p1, p1
-
-    invoke-interface {p2, v0, p1}, Lnah;->p(Ljava/lang/String;I)V
-
-    const/4 p1, 0x0
-
-    iput-object p1, p0, Lele;->c:Ljava/nio/FloatBuffer;
-
-    return-void
-.end method
-
-.method public final d(FF)V
     .locals 8
 
-    div-float v3, p1, p2
+    invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
-    neg-float v2, v3
+    move-result-wide v0
 
-    iget-object v0, p0, Lele;->e:[F
+    iget-wide v2, p0, Lele;->e:J
 
-    const/4 v1, 0x0
+    sub-long v2, v0, v2
 
-    const/high16 v5, 0x3f800000    # 1.0f
+    iput-wide v0, p0, Lele;->e:J
 
-    const/high16 v6, -0x40800000    # -1.0f
+    iget v0, p0, Lele;->f:I
+
+    add-int/lit8 v1, v0, -0x1
+
+    if-eqz v0, :cond_6
+
+    const/4 v4, 0x1
+
+    const/4 v5, 0x3
+
+    const/high16 v6, 0x43480000    # 200.0f
 
     const/high16 v7, 0x3f800000    # 1.0f
 
-    move v4, v6
+    packed-switch v1, :pswitch_data_0
 
-    invoke-static/range {v0 .. v7}, Landroid/opengl/Matrix;->orthoM([FIFFFFFF)V
+    new-instance v1, Ljava/lang/RuntimeException;
+
+    packed-switch v0, :pswitch_data_1
+
+    const-string v0, "FADED_OUT"
+
+    goto :goto_0
+
+    :pswitch_0
+    iget-object v0, p0, Lele;->c:Ljava/lang/Object;
+
+    iget-object v1, p0, Lele;->d:Ljava/lang/Object;
+
+    if-eq v0, v1, :cond_0
+
+    iput-object v0, p0, Lele;->b:Ljava/lang/Object;
+
+    iput v4, p0, Lele;->f:I
+
+    iget v0, p0, Lele;->a:F
+
+    long-to-float v1, v2
+
+    div-float/2addr v1, v6
+
+    add-float/2addr v0, v1
+
+    iput v0, p0, Lele;->a:F
+
+    cmpl-float v0, v0, v7
+
+    if-ltz v0, :cond_0
+
+    iput v7, p0, Lele;->a:F
+
+    :cond_0
+    return-void
+
+    :pswitch_1
+    iget v0, p0, Lele;->a:F
+
+    long-to-float v1, v2
+
+    div-float/2addr v1, v6
+
+    sub-float/2addr v0, v1
+
+    iput v0, p0, Lele;->a:F
+
+    iget-object v1, p0, Lele;->c:Ljava/lang/Object;
+
+    iget-object v2, p0, Lele;->b:Ljava/lang/Object;
+
+    if-ne v1, v2, :cond_1
+
+    iput v4, p0, Lele;->f:I
 
     return-void
+
+    :cond_1
+    const/4 v2, 0x0
+
+    cmpg-float v0, v0, v2
+
+    if-gtz v0, :cond_2
+
+    iput v2, p0, Lele;->a:F
+
+    const/4 v0, 0x4
+
+    iput v0, p0, Lele;->f:I
+
+    iput-object v1, p0, Lele;->b:Ljava/lang/Object;
+
+    :cond_2
+    return-void
+
+    :pswitch_2
+    iget-object v0, p0, Lele;->c:Ljava/lang/Object;
+
+    iget-object v1, p0, Lele;->b:Ljava/lang/Object;
+
+    if-eq v0, v1, :cond_3
+
+    iput v5, p0, Lele;->f:I
+
+    :cond_3
+    return-void
+
+    :pswitch_3
+    iget v0, p0, Lele;->a:F
+
+    long-to-float v1, v2
+
+    div-float/2addr v1, v6
+
+    add-float/2addr v0, v1
+
+    iput v0, p0, Lele;->a:F
+
+    cmpl-float v0, v0, v7
+
+    if-ltz v0, :cond_5
+
+    iput v7, p0, Lele;->a:F
+
+    iget-object v0, p0, Lele;->c:Ljava/lang/Object;
+
+    iget-object v1, p0, Lele;->b:Ljava/lang/Object;
+
+    if-eq v0, v1, :cond_4
+
+    iput v5, p0, Lele;->f:I
+
+    return-void
+
+    :cond_4
+    const/4 v0, 0x2
+
+    iput v0, p0, Lele;->f:I
+
+    :cond_5
+    return-void
+
+    :pswitch_4
+    const-string v0, "FADING_OUT"
+
+    goto :goto_0
+
+    :pswitch_5
+    const-string v0, "FADED_IN"
+
+    goto :goto_0
+
+    :pswitch_6
+    const-string v0, "FADING_IN"
+
+    :goto_0
+    invoke-virtual {v0}, Ljava/lang/String;->length()I
+
+    move-result v2
+
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    add-int/lit8 v2, v2, 0x15
+
+    invoke-direct {v3, v2}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string v2, "Unhandled FadeState: "
+
+    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-direct {v1, v0}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
+
+    throw v1
+
+    :cond_6
+    const/4 v0, 0x0
+
+    throw v0
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
+
+    :pswitch_data_1
+    .packed-switch 0x1
+        :pswitch_6
+        :pswitch_5
+        :pswitch_4
+    .end packed-switch
 .end method

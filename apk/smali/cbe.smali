@@ -1,153 +1,331 @@
-.class public Lcbe;
+.class public final Lcbe;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Landroid/os/IInterface;
+.implements Lpys;
 
 
 # instance fields
-.field public final a:Landroid/os/IBinder;
+.field private final a:Lqkg;
 
-.field private final b:Ljava/lang/String;
+.field private final synthetic b:I
 
 
 # direct methods
-.method protected constructor <init>(Landroid/os/IBinder;Ljava/lang/String;)V
+.method public constructor <init>(Lqkg;I)V
     .locals 0
+
+    iput p2, p0, Lcbe;->b:I
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lcbe;->a:Landroid/os/IBinder;
-
-    iput-object p2, p0, Lcbe;->b:Ljava/lang/String;
+    iput-object p1, p0, Lcbe;->a:Lqkg;
 
     return-void
+.end method
+
+.method public static b(Lqkg;)Lcbe;
+    .locals 2
+
+    new-instance v0, Lcbe;
+
+    const/4 v1, 0x1
+
+    invoke-direct {v0, p0, v1}, Lcbe;-><init>(Lqkg;I)V
+
+    return-object v0
+.end method
+
+.method public static c(Lqkg;)Lcbe;
+    .locals 2
+
+    new-instance v0, Lcbe;
+
+    const/4 v1, 0x6
+
+    invoke-direct {v0, p0, v1}, Lcbe;-><init>(Lqkg;I)V
+
+    return-object v0
 .end method
 
 
 # virtual methods
-.method public final A(ILandroid/os/Parcel;)V
-    .locals 3
+.method public final a()Ljava/lang/Integer;
+    .locals 4
 
-    :try_start_0
-    iget-object v0, p0, Lcbe;->a:Landroid/os/IBinder;
+    iget v0, p0, Lcbe;->b:I
 
-    const/4 v1, 0x0
+    const/4 v1, 0x2
 
     const/4 v2, 0x1
 
-    invoke-interface {v0, p1, p2, v1, v2}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    packed-switch v0, :pswitch_data_0
 
-    invoke-virtual {p2}, Landroid/os/Parcel;->recycle()V
+    iget-object v0, p0, Lcbe;->a:Lqkg;
 
-    return-void
-
-    :catchall_0
-    move-exception p1
-
-    invoke-virtual {p2}, Landroid/os/Parcel;->recycle()V
-
-    throw p1
-.end method
-
-.method public final a()Landroid/os/Parcel;
-    .locals 2
-
-    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
+    invoke-interface {v0}, Lqkg;->get()Ljava/lang/Object;
 
     move-result-object v0
 
-    iget-object v1, p0, Lcbe;->b:Ljava/lang/String;
+    check-cast v0, Lddf;
 
-    invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
+    sget-object v3, Lddm;->z:Lddg;
 
-    return-object v0
-.end method
+    invoke-interface {v0, v3}, Lddf;->k(Lddg;)Z
 
-.method public final asBinder()Landroid/os/IBinder;
-    .locals 1
+    move-result v0
 
-    iget-object v0, p0, Lcbe;->a:Landroid/os/IBinder;
+    if-eq v2, v0, :cond_2
 
-    return-object v0
-.end method
+    const/4 v1, 0x1
 
-.method public final y(ILandroid/os/Parcel;)Landroid/os/Parcel;
-    .locals 3
+    goto/16 :goto_2
 
-    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
+    :pswitch_0
+    iget-object v0, p0, Lcbe;->a:Lqkg;
+
+    invoke-interface {v0}, Lqkg;->get()Ljava/lang/Object;
 
     move-result-object v0
 
-    :try_start_0
-    iget-object v1, p0, Lcbe;->a:Landroid/os/IBinder;
+    check-cast v0, Lead;
 
-    const/4 v2, 0x0
+    iget v0, v0, Lead;->c:I
 
-    invoke-interface {v1, p1, p2, v0, v2}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
+    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    invoke-virtual {v0}, Landroid/os/Parcel;->readException()V
-    :try_end_0
-    .catch Ljava/lang/RuntimeException; {:try_start_0 .. :try_end_0} :catch_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    invoke-virtual {p2}, Landroid/os/Parcel;->recycle()V
+    move-result-object v0
 
     return-object v0
 
-    :catchall_0
-    move-exception p1
+    :pswitch_1
+    iget-object v0, p0, Lcbe;->a:Lqkg;
+
+    invoke-interface {v0}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lead;
+
+    iget v0, v0, Lead;->f:I
+
+    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v0
+
+    return-object v0
+
+    :pswitch_2
+    iget-object v0, p0, Lcbe;->a:Lqkg;
+
+    invoke-interface {v0}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lead;
+
+    iget v0, v0, Lead;->e:I
+
+    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v0
+
+    return-object v0
+
+    :pswitch_3
+    iget-object v0, p0, Lcbe;->a:Lqkg;
+
+    invoke-interface {v0}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lddf;
+
+    sget-object v1, Ldda;->b:Lddi;
+
+    invoke-interface {v0, v1}, Lddf;->a(Lddi;)Lojc;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lojc;->c()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/Integer;
+
+    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
+
+    move-result v0
+
+    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v0
+
+    return-object v0
+
+    :pswitch_4
+    invoke-static {}, Lcom/agc/AdvancedSettings;->getFocusLockTime()I
+
+    move-result v1
+
+    if-gtz v1, :cond_0
+
+    iget-object v0, p0, Lcbe;->a:Lqkg;
+
+    check-cast v0, Lgjo;
+
+    invoke-virtual {v0}, Lgjo;->a()Lghx;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Llwe;->E()Z
+
+    move-result v0
+
+    if-eq v2, v0, :cond_0
+
+    const/4 v1, 0x4
 
     goto :goto_0
 
-    :catch_0
-    move-exception p1
-
-    :try_start_1
-    invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
-
-    throw p1
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
+    :cond_0
     :goto_0
-    invoke-virtual {p2}, Landroid/os/Parcel;->recycle()V
-
-    throw p1
-.end method
-
-.method public final z(ILandroid/os/Parcel;)V
-    .locals 3
-
-    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v0
 
-    :try_start_0
-    iget-object v1, p0, Lcbe;->a:Landroid/os/IBinder;
+    return-object v0
 
-    const/4 v2, 0x0
+    :pswitch_5
+    iget-object v0, p0, Lcbe;->a:Lqkg;
 
-    invoke-interface {v1, p1, p2, v0, v2}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
+    invoke-interface {v0}, Lqkg;->get()Ljava/lang/Object;
 
-    invoke-virtual {v0}, Landroid/os/Parcel;->readException()V
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    move-result-object v0
 
-    invoke-virtual {p2}, Landroid/os/Parcel;->recycle()V
+    check-cast v0, Lddf;
 
-    invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
+    sget-object v1, Lddl;->t:Lddi;
 
-    return-void
+    invoke-interface {v0, v1}, Lddf;->a(Lddi;)Lojc;
 
-    :catchall_0
-    move-exception p1
+    move-result-object v1
 
-    invoke-virtual {p2}, Landroid/os/Parcel;->recycle()V
+    invoke-virtual {v1}, Lojc;->g()Z
 
-    invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
+    move-result v1
 
-    throw p1
+    if-eqz v1, :cond_1
+
+    sget-object v1, Lddl;->t:Lddi;
+
+    invoke-interface {v0, v1}, Lddf;->a(Lddi;)Lojc;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lojc;->c()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/Integer;
+
+    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
+
+    move-result v0
+
+    goto :goto_1
+
+    :cond_1
+    const/16 v0, 0x3c
+
+    :goto_1
+    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v0
+
+    return-object v0
+
+    :cond_2
+    :goto_2
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v0
+
+    return-object v0
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_5
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
+.end method
+
+.method public final synthetic get()Ljava/lang/Object;
+    .locals 1
+
+    iget v0, p0, Lcbe;->b:I
+
+    packed-switch v0, :pswitch_data_0
+
+    invoke-virtual {p0}, Lcbe;->a()Ljava/lang/Integer;
+
+    move-result-object v0
+
+    return-object v0
+
+    :pswitch_0
+    invoke-virtual {p0}, Lcbe;->a()Ljava/lang/Integer;
+
+    move-result-object v0
+
+    return-object v0
+
+    :pswitch_1
+    invoke-virtual {p0}, Lcbe;->a()Ljava/lang/Integer;
+
+    move-result-object v0
+
+    return-object v0
+
+    :pswitch_2
+    invoke-virtual {p0}, Lcbe;->a()Ljava/lang/Integer;
+
+    move-result-object v0
+
+    return-object v0
+
+    :pswitch_3
+    invoke-virtual {p0}, Lcbe;->a()Ljava/lang/Integer;
+
+    move-result-object v0
+
+    return-object v0
+
+    :pswitch_4
+    invoke-virtual {p0}, Lcbe;->a()Ljava/lang/Integer;
+
+    move-result-object v0
+
+    return-object v0
+
+    :pswitch_5
+    invoke-virtual {p0}, Lcbe;->a()Ljava/lang/Integer;
+
+    move-result-object v0
+
+    return-object v0
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_5
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method

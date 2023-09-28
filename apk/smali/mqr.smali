@@ -1,66 +1,66 @@
-.class public final Lmqr;
-.super Ljava/lang/Object;
+.class final Lmqr;
+.super Lmqh;
 
 
-# static fields
-.field public static final synthetic a:I
+# instance fields
+.field final synthetic e:Landroid/opengl/EGLDisplay;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
+.method public constructor <init>(Lmrh;Landroid/opengl/EGLDisplay;Landroid/opengl/EGLSurface;Landroid/opengl/EGLContext;Landroid/opengl/EGLConfig;Lmoq;Landroid/opengl/EGLDisplay;)V
+    .locals 8
 
-    const-class v0, Lmqr;
+    iput-object p7, p0, Lmqr;->e:Landroid/opengl/EGLDisplay;
 
-    invoke-virtual {v0}, Ljava/lang/Class;->getName()Ljava/lang/String;
+    const/4 v6, 0x0
 
-    move-result-object v0
+    move-object v0, p0
 
-    invoke-static {v0}, Ljava/util/logging/Logger;->getLogger(Ljava/lang/String;)Ljava/util/logging/Logger;
+    move-object v1, p1
+
+    move-object v2, p2
+
+    move-object v3, p3
+
+    move-object v4, p4
+
+    move-object v5, p5
+
+    move-object v7, p6
+
+    invoke-direct/range {v0 .. v7}, Lmqh;-><init>(Lmrh;Landroid/opengl/EGLDisplay;Landroid/opengl/EGLSurface;Landroid/opengl/EGLContext;Landroid/opengl/EGLConfig;ILmoq;)V
 
     return-void
 .end method
 
-.method private constructor <init>()V
-    .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+# virtual methods
+.method public final b()Lmne;
+    .locals 4
 
-    return-void
-.end method
+    iget-object v0, p0, Lmqr;->e:Landroid/opengl/EGLDisplay;
 
-.method public static a(Ljava/lang/String;)Ljava/lang/String;
-    .locals 0
+    sget-object v1, Landroid/opengl/EGL14;->EGL_NO_SURFACE:Landroid/opengl/EGLSurface;
 
-    if-nez p0, :cond_0
+    sget-object v2, Landroid/opengl/EGL14;->EGL_NO_SURFACE:Landroid/opengl/EGLSurface;
 
-    const-string p0, ""
+    sget-object v3, Landroid/opengl/EGL14;->EGL_NO_CONTEXT:Landroid/opengl/EGLContext;
 
-    :cond_0
-    return-object p0
-.end method
+    invoke-static {v0, v1, v2, v3}, Landroid/opengl/EGL14;->eglMakeCurrent(Landroid/opengl/EGLDisplay;Landroid/opengl/EGLSurface;Landroid/opengl/EGLSurface;Landroid/opengl/EGLContext;)Z
 
-.method public static b(Ljava/lang/String;)Z
-    .locals 0
+    iget-object v0, p0, Lmqh;->b:Landroid/opengl/EGLDisplay;
 
-    if-eqz p0, :cond_1
+    iget-object v1, p0, Lmqh;->d:Landroid/opengl/EGLContext;
 
-    invoke-virtual {p0}, Ljava/lang/String;->isEmpty()Z
+    invoke-static {v0, v1}, Landroid/opengl/EGL14;->eglDestroyContext(Landroid/opengl/EGLDisplay;Landroid/opengl/EGLContext;)Z
 
-    move-result p0
+    iget-object v0, p0, Lmqh;->b:Landroid/opengl/EGLDisplay;
 
-    if-eqz p0, :cond_0
+    iget-object v1, p0, Lmqh;->c:Landroid/opengl/EGLSurface;
 
-    goto :goto_0
+    invoke-static {v0, v1}, Landroid/opengl/EGL14;->eglDestroySurface(Landroid/opengl/EGLDisplay;Landroid/opengl/EGLSurface;)Z
 
-    :cond_0
-    const/4 p0, 0x0
+    sget-object v0, Lmnd;->a:Lmne;
 
-    return p0
-
-    :cond_1
-    :goto_0
-    const/4 p0, 0x1
-
-    return p0
+    return-object v0
 .end method

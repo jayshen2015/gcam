@@ -1,311 +1,328 @@
 .class public final Lhzo;
-.super Ljava/lang/Object;
-
-# interfaces
-.implements Lfaz;
-.implements Lfav;
+.super Ljxh;
 
 
 # static fields
-.field public static final a:Lnak;
+.field public static final a:Louj;
 
 
 # instance fields
-.field public final b:Landroid/content/Context;
+.field public final b:Lfjs;
 
-.field public final c:Ldhi;
+.field public final c:Lhzz;
 
-.field public final d:Ljuh;
+.field public final d:Ljcw;
 
-.field public final e:Lgzm;
+.field public final e:Lfvv;
 
-.field public final f:Lgzn;
+.field public final f:Ljty;
 
-.field public final g:Lell;
+.field public volatile g:Z
 
-.field public final h:Liff;
+.field public h:Lcvo;
 
-.field public final i:Lgeh;
+.field public i:Ljava/util/concurrent/Callable;
 
 .field public j:Z
 
-.field public k:Lcom/google/android/apps/camera/ui/mars/MarsSwitch;
+.field public k:Landroid/os/CountDownTimer;
 
-.field public l:Lcom/google/android/apps/camera/ui/popupmenu/PopupMenuView;
+.field public l:Z
 
-.field public m:Licy;
+.field private n:J
 
-.field public n:Lkad;
+.field private o:Z
 
-.field public final o:Ljuf;
-
-.field public p:Lict;
-
-.field public final q:Llqh;
-
-.field private final r:Ljava/util/concurrent/Executor;
+.field private final p:Lhuq;
 
 
 # direct methods
 .method static constructor <clinit>()V
     .locals 1
 
-    const-string v0, "com/google/android/apps/camera/ui/mars/MarsSwitchController"
+    const-string v0, "com/google/android/apps/camera/smarts/SmartsGestureListener"
 
-    invoke-static {v0}, Lnak;->h(Ljava/lang/String;)Lnak;
+    invoke-static {v0}, Louj;->h(Ljava/lang/String;)Louj;
 
     move-result-object v0
 
-    sput-object v0, Lhzo;->a:Lnak;
+    sput-object v0, Lhzo;->a:Louj;
 
     return-void
 .end method
 
-.method public constructor <init>(Landroid/content/Context;Ldhi;Lgzm;Lgzn;Llqh;Ljuh;Ljava/util/concurrent/Executor;Lell;Liff;Lgeh;Lcdi;[B)V
+.method public constructor <init>(Ljava/util/concurrent/Executor;Lfjs;Lhzz;Lhuq;Ljcw;Lfvv;Ljty;[B)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljxh;-><init>()V
 
-    const/4 p12, 0x0
+    const/4 p8, 0x0
 
-    iput-boolean p12, p0, Lhzo;->j:Z
+    iput-boolean p8, p0, Lhzo;->g:Z
 
-    sget-object p12, Lgnl;->g:Lgnl;
+    iput-boolean p8, p0, Lhzo;->l:Z
 
-    iput-object p12, p0, Lhzo;->n:Lkad;
+    iput-object p2, p0, Lhzo;->b:Lfjs;
 
-    iput-object p1, p0, Lhzo;->b:Landroid/content/Context;
+    iput-object p3, p0, Lhzo;->c:Lhzz;
 
-    iput-object p2, p0, Lhzo;->c:Ldhi;
+    iput-object p4, p0, Lhzo;->p:Lhuq;
 
-    iput-object p6, p0, Lhzo;->d:Ljuh;
+    iput-object p5, p0, Lhzo;->d:Ljcw;
 
-    iput-object p7, p0, Lhzo;->r:Ljava/util/concurrent/Executor;
+    iput-object p6, p0, Lhzo;->e:Lfvv;
 
-    iput-object p3, p0, Lhzo;->e:Lgzm;
+    iput-object p7, p0, Lhzo;->f:Ljty;
 
-    iput-object p4, p0, Lhzo;->f:Lgzn;
+    invoke-virtual {p5}, Ljcw;->a()Lpht;
 
-    iput-object p5, p0, Lhzo;->q:Llqh;
+    move-result-object p2
 
-    iput-object p8, p0, Lhzo;->g:Lell;
+    new-instance p3, Lhzl;
 
-    iput-object p9, p0, Lhzo;->h:Liff;
+    invoke-direct {p3, p0}, Lhzl;-><init>(Lhzo;)V
 
-    iput-object p10, p0, Lhzo;->i:Lgeh;
-
-    invoke-virtual {p11}, Lcdi;->i()Ljuf;
-
-    move-result-object p1
-
-    iput-object p1, p0, Lhzo;->o:Ljuf;
+    invoke-static {p2, p3, p1}, Lplk;->af(Lpht;Lphh;Ljava/util/concurrent/Executor;)V
 
     return-void
-.end method
-
-.method public static a(Ljava/util/concurrent/Executor;Landroid/content/Context;)Lnou;
-    .locals 2
-
-    new-instance v0, Lbdj;
-
-    const/16 v1, 0xe
-
-    invoke-direct {v0, p1, v1}, Lbdj;-><init>(Landroid/content/Context;I)V
-
-    invoke-static {v0, p0}, Lnsy;->F(Ljava/util/concurrent/Callable;Ljava/util/concurrent/Executor;)Lnou;
-
-    move-result-object p0
-
-    return-object p0
 .end method
 
 
 # virtual methods
-.method public final b()V
-    .locals 3
+.method public final a(Landroid/graphics/PointF;)V
+    .locals 7
 
-    iget-object v0, p0, Lhzo;->d:Ljuh;
+    iget-boolean p1, p0, Lhzo;->j:Z
 
-    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    const/4 v0, 0x1
 
-    new-instance v1, Lhxc;
+    if-eqz p1, :cond_0
 
-    const/16 v2, 0x10
+    iput-boolean v0, p0, Lhzo;->o:Z
 
-    invoke-direct {v1, p0, v2}, Lhxc;-><init>(Lhzo;I)V
+    return-void
 
-    invoke-virtual {v0, v1}, Ljuh;->c(Ljava/lang/Runnable;)V
+    :cond_0
+    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
+
+    move-result-wide v1
+
+    iget-wide v3, p0, Lhzo;->n:J
+
+    sub-long v3, v1, v3
+
+    const-wide/16 v5, 0x1f4
+
+    cmp-long p1, v3, v5
+
+    if-gez p1, :cond_1
+
+    iput-boolean v0, p0, Lhzo;->o:Z
+
+    goto :goto_0
+
+    :cond_1
+    const/4 p1, 0x0
+
+    iput-boolean p1, p0, Lhzo;->o:Z
+
+    :goto_0
+    iput-wide v1, p0, Lhzo;->n:J
 
     return-void
 .end method
 
-.method public final bN()V
-    .locals 3
+.method public final b()V
+    .locals 0
 
-    iget-object v0, p0, Lhzo;->r:Ljava/util/concurrent/Executor;
+    invoke-static {}, Llar;->a()V
 
-    iget-object v1, p0, Lhzo;->b:Landroid/content/Context;
+    invoke-virtual {p0}, Lhzo;->d()V
 
-    invoke-static {v0, v1}, Lhzo;->a(Ljava/util/concurrent/Executor;Landroid/content/Context;)Lnou;
+    return-void
+.end method
 
-    move-result-object v0
+.method public final c(Landroid/graphics/PointF;)V
+    .locals 13
 
-    new-instance v1, Ldje;
+    invoke-static {}, Llar;->a()V
 
-    const/16 v2, 0x10
+    iget-boolean v0, p0, Lhzo;->l:Z
 
-    invoke-direct {v1, p0, v2}, Ldje;-><init>(Lhzo;I)V
+    if-nez v0, :cond_0
 
-    iget-object v2, p0, Lhzo;->r:Ljava/util/concurrent/Executor;
+    return-void
 
-    invoke-static {v0, v1, v2}, Lnsy;->L(Lnou;Lnoj;Ljava/util/concurrent/Executor;)V
+    :cond_0
+    iget-object v0, p0, Lhzo;->i:Ljava/util/concurrent/Callable;
 
+    const/4 v1, 0x1
+
+    const/4 v2, 0x0
+
+    if-eqz v0, :cond_1
+
+    const/4 v0, 0x1
+
+    goto :goto_0
+
+    :cond_1
+    const/4 v0, 0x0
+
+    :goto_0
+    invoke-static {v0}, Lobr;->aQ(Z)V
+
+    iget-object v0, p0, Lhzo;->h:Lcvo;
+
+    if-eqz v0, :cond_2
+
+    const/4 v0, 0x1
+
+    goto :goto_1
+
+    :cond_2
+    const/4 v0, 0x0
+
+    :goto_1
+    invoke-static {v0}, Lobr;->aQ(Z)V
+
+    iget-object v0, p0, Lhzo;->k:Landroid/os/CountDownTimer;
+
+    if-nez v0, :cond_3
+
+    goto :goto_2
+
+    :cond_3
+    const/4 v1, 0x0
+
+    :goto_2
+    invoke-static {v1}, Lobr;->aQ(Z)V
+
+    iget-boolean v0, p0, Lhzo;->g:Z
+
+    if-eqz v0, :cond_4
+
+    iget-object v0, p0, Lhzo;->h:Lcvo;
+
+    invoke-virtual {v0}, Lcvo;->i()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_4
+
+    iget-object v0, p0, Lhzo;->p:Lhuq;
+
+    iget-object v0, v0, Lhuq;->b:Llda;
+
+    check-cast v0, Llce;
+
+    iget-object v0, v0, Llce;->d:Ljava/lang/Object;
+
+    check-cast v0, Ljava/lang/Boolean;
+
+    invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
+
+    move-result v0
+
+    if-nez v0, :cond_4
+
+    iget-boolean v0, p0, Lhzo;->o:Z
+
+    if-nez v0, :cond_4
+
+    iget-boolean v0, p0, Lhzo;->j:Z
+
+    if-nez v0, :cond_4
+
+    const-wide/16 v0, 0x44c
+
+    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
+
+    move-result-wide v3
+
+    iget-wide v5, p0, Lhzo;->n:J
+
+    sub-long/2addr v3, v5
+
+    sub-long/2addr v0, v3
+
+    const-wide/16 v3, 0x0
+
+    invoke-static {v3, v4, v0, v1}, Ljava/lang/Math;->max(JJ)J
+
+    move-result-wide v0
+
+    new-instance v12, Lhzm;
+
+    move-object v5, v12
+
+    move-object v6, p0
+
+    move-wide v7, v0
+
+    move-wide v9, v0
+
+    move-object v11, p1
+
+    invoke-direct/range {v5 .. v11}, Lhzm;-><init>(Lhzo;JJLandroid/graphics/PointF;)V
+
+    iput-object v12, p0, Lhzo;->k:Landroid/os/CountDownTimer;
+
+    invoke-virtual {v12}, Landroid/os/CountDownTimer;->start()Landroid/os/CountDownTimer;
+
+    cmp-long v5, v0, v3
+
+    if-lez v5, :cond_4
+
+    iget-object v0, p0, Lhzo;->f:Ljty;
+
+    invoke-virtual {v0, v2}, Ljty;->c(I)V
+
+    iget-object v0, p0, Lhzo;->c:Lhzz;
+
+    new-instance v1, Landroid/graphics/Point;
+
+    iget v2, p1, Landroid/graphics/PointF;->x:F
+
+    float-to-int v2, v2
+
+    iget p1, p1, Landroid/graphics/PointF;->y:F
+
+    float-to-int p1, p1
+
+    invoke-direct {v1, v2, p1}, Landroid/graphics/Point;-><init>(II)V
+
+    iget-object p1, v0, Lhzz;->f:Llar;
+
+    new-instance v2, Lhzw;
+
+    invoke-direct {v2, v0, v1}, Lhzw;-><init>(Lhzz;Landroid/graphics/Point;)V
+
+    invoke-virtual {p1, v2}, Llar;->c(Ljava/lang/Runnable;)V
+
+    :cond_4
     return-void
 .end method
 
 .method public final d()V
-    .locals 2
+    .locals 1
 
-    iget-object v0, p0, Lhzo;->c:Ldhi;
+    invoke-static {}, Llar;->a()V
 
-    sget-object v1, Ldho;->cm:Ldhj;
-
-    invoke-interface {v0, v1}, Ldhi;->l(Ldhj;)Z
-
-    move-result v0
+    iget-object v0, p0, Lhzo;->k:Landroid/os/CountDownTimer;
 
     if-eqz v0, :cond_0
 
-    iget-object v0, p0, Lhzo;->m:Licy;
+    invoke-virtual {v0}, Landroid/os/CountDownTimer;->cancel()V
 
-    if-eqz v0, :cond_1
+    const/4 v0, 0x0
 
-    invoke-virtual {v0}, Licy;->dismiss()V
+    iput-object v0, p0, Lhzo;->k:Landroid/os/CountDownTimer;
 
-    return-void
+    iget-object v0, p0, Lhzo;->c:Lhzz;
 
-    :cond_0
-    iget-object v0, p0, Lhzo;->l:Lcom/google/android/apps/camera/ui/popupmenu/PopupMenuView;
-
-    if-eqz v0, :cond_1
-
-    invoke-virtual {v0}, Lcom/google/android/apps/camera/ui/popupmenu/PopupMenuView;->b()V
-
-    return-void
-
-    :cond_1
-    return-void
-.end method
-
-.method public final e()V
-    .locals 1
-
-    iget-object v0, p0, Lhzo;->n:Lkad;
-
-    invoke-interface {v0}, Lkad;->close()V
-
-    return-void
-.end method
-
-.method public final f(Z)V
-    .locals 2
-
-    iget-object v0, p0, Lhzo;->c:Ldhi;
-
-    sget-object v1, Ldho;->cm:Ldhj;
-
-    invoke-interface {v0, v1}, Ldhi;->l(Ldhj;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_2
-
-    iget-object v0, p0, Lhzo;->m:Licy;
-
-    if-eqz v0, :cond_1
-
-    if-eqz p1, :cond_0
-
-    sget-object p1, Lgyb;->b:Lgyb;
-
-    goto :goto_0
+    invoke-virtual {v0}, Lhzz;->a()V
 
     :cond_0
-    sget-object p1, Lgyb;->a:Lgyb;
-
-    :goto_0
-    invoke-virtual {v0, p1}, Licy;->e(Ljava/lang/Object;)V
-
-    return-void
-
-    :cond_1
-    iput-boolean p1, p0, Lhzo;->j:Z
-
-    return-void
-
-    :cond_2
-    iget-object v0, p0, Lhzo;->p:Lict;
-
-    if-eqz v0, :cond_4
-
-    if-eqz p1, :cond_3
-
-    sget-object p1, Lgyb;->b:Lgyb;
-
-    goto :goto_1
-
-    :cond_3
-    sget-object p1, Lgyb;->a:Lgyb;
-
-    :goto_1
-    invoke-virtual {v0, p1}, Lict;->c(Ljava/lang/Object;)V
-
-    return-void
-
-    :cond_4
-    iput-boolean p1, p0, Lhzo;->j:Z
-
-    return-void
-.end method
-
-.method public final g(Lhsl;)V
-    .locals 2
-
-    iget-object v0, p0, Lhzo;->o:Ljuf;
-
-    new-instance v1, Lhzm;
-
-    invoke-direct {v1, p0}, Lhzm;-><init>(Lhzo;)V
-
-    invoke-interface {p1, v1}, Lhsl;->a(Lhsk;)Lkad;
-
-    move-result-object p1
-
-    invoke-virtual {v0, p1}, Ljuf;->d(Lkad;)V
-
-    return-void
-.end method
-
-.method public final h()V
-    .locals 3
-
-    iget-object v0, p0, Lhzo;->r:Ljava/util/concurrent/Executor;
-
-    iget-object v1, p0, Lhzo;->b:Landroid/content/Context;
-
-    invoke-static {v0, v1}, Lhzo;->a(Ljava/util/concurrent/Executor;Landroid/content/Context;)Lnou;
-
-    move-result-object v0
-
-    new-instance v1, Ldje;
-
-    const/16 v2, 0x11
-
-    invoke-direct {v1, p0, v2}, Ldje;-><init>(Lhzo;I)V
-
-    iget-object v2, p0, Lhzo;->r:Ljava/util/concurrent/Executor;
-
-    invoke-static {v0, v1, v2}, Lnsy;->L(Lnou;Lnoj;Ljava/util/concurrent/Executor;)V
-
     return-void
 .end method

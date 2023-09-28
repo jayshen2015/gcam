@@ -1,131 +1,84 @@
 .class public final Lfcs;
-.super Ljava/lang/Object;
-
-# interfaces
-.implements Landroid/view/View$OnAttachStateChangeListener;
+.super Lfcr;
 
 
 # instance fields
-.field final synthetic a:Ljava/lang/Object;
-
-.field final synthetic b:Ljava/lang/Object;
-
-.field private final synthetic c:I
+.field private final e:I
 
 
 # direct methods
-.method public constructor <init>(Lbgj;Landroid/widget/FrameLayout;I)V
-    .locals 0
+.method public constructor <init>()V
+    .locals 2
 
-    iput p3, p0, Lfcs;->c:I
+    invoke-direct {p0}, Lfcr;-><init>()V
 
-    iput-object p1, p0, Lfcs;->a:Ljava/lang/Object;
+    const-string v0, "uniform mat4 uMvpMatrix;                   \nattribute vec4 aPosition;                   \nvoid main()                                 \n{                                           \n   gl_Position = uMvpMatrix * aPosition;    \n   gl_PointSize = 5.5;                      \n}                                           \n"
 
-    iput-object p2, p0, Lfcs;->b:Ljava/lang/Object;
+    const-string v1, "precision mediump float;                       \nuniform vec4 uDrawColor;                       \nvoid main()                                    \n{                                              \n  gl_FragColor = uDrawColor;                   \n}                                              \n"
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-static {v0, v1}, Lfcs;->a(Ljava/lang/String;Ljava/lang/String;)I
 
-    return-void
-.end method
+    move-result v0
 
-.method public constructor <init>(Lcf;Ljea;I[B)V
-    .locals 0
+    iput v0, p0, Lfcs;->d:I
 
-    iput p3, p0, Lfcs;->c:I
+    const-string v1, "aPosition"
 
-    iput-object p1, p0, Lfcs;->b:Ljava/lang/Object;
+    invoke-static {v0, v1}, Lfcs;->h(ILjava/lang/String;)I
 
-    iput-object p2, p0, Lfcs;->a:Ljava/lang/Object;
+    move-result v0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput v0, p0, Lfcs;->a:I
+
+    iget v0, p0, Lfcs;->d:I
+
+    const-string v1, "uMvpMatrix"
+
+    invoke-static {v0, v1}, Lfcs;->i(ILjava/lang/String;)I
+
+    move-result v0
+
+    iput v0, p0, Lfcs;->c:I
+
+    iget v0, p0, Lfcs;->d:I
+
+    const-string v1, "uDrawColor"
+
+    invoke-static {v0, v1}, Lfcs;->i(ILjava/lang/String;)I
+
+    move-result v0
+
+    iput v0, p0, Lfcs;->e:I
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onViewAttachedToWindow(Landroid/view/View;)V
-    .locals 1
+.method public final j([F)V
+    .locals 5
 
-    iget p1, p0, Lfcs;->c:I
+    invoke-virtual {p0}, Lfcr;->c()V
 
-    packed-switch p1, :pswitch_data_0
+    iget v0, p0, Lfcs;->e:I
 
-    iget-object p1, p0, Lfcs;->a:Ljava/lang/Object;
+    const/4 v1, 0x0
 
-    check-cast p1, Ljea;
+    aget v1, p1, v1
 
-    iget-object v0, p1, Ljea;->c:Ljava/lang/Object;
+    const/4 v2, 0x1
 
-    invoke-virtual {p1}, Ljea;->e()V
+    aget v2, p1, v2
 
-    check-cast v0, Lbw;
+    const/4 v3, 0x2
 
-    iget-object p1, v0, Lbw;->N:Landroid/view/View;
+    aget v3, p1, v3
 
-    invoke-virtual {p1}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
+    const/4 v4, 0x3
 
-    move-result-object p1
+    aget p1, p1, v4
 
-    check-cast p1, Landroid/view/ViewGroup;
-
-    iget-object v0, p0, Lfcs;->b:Ljava/lang/Object;
-
-    check-cast v0, Lcf;
-
-    iget-object v0, v0, Lcf;->a:Lcq;
-
-    invoke-static {p1, v0}, Ldm;->b(Landroid/view/ViewGroup;Lcq;)Ldm;
-
-    move-result-object p1
-
-    invoke-virtual {p1}, Ldm;->d()V
+    invoke-static {v0, v1, v2, v3, p1}, Landroid/opengl/GLES20;->glUniform4f(IFFFF)V
 
     return-void
-
-    :pswitch_0
-    iget-object p1, p0, Lfcs;->a:Ljava/lang/Object;
-
-    check-cast p1, Lbgj;
-
-    invoke-virtual {p1}, Lbgj;->k()V
-
-    return-void
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
-.end method
-
-.method public final onViewDetachedFromWindow(Landroid/view/View;)V
-    .locals 0
-
-    iget p1, p0, Lfcs;->c:I
-
-    packed-switch p1, :pswitch_data_0
-
-    return-void
-
-    :pswitch_0
-    iget-object p1, p0, Lfcs;->a:Ljava/lang/Object;
-
-    check-cast p1, Lbgj;
-
-    invoke-virtual {p1}, Lbgj;->g()V
-
-    iget-object p1, p0, Lfcs;->b:Ljava/lang/Object;
-
-    check-cast p1, Landroid/widget/FrameLayout;
-
-    invoke-virtual {p1, p0}, Landroid/widget/FrameLayout;->removeOnAttachStateChangeListener(Landroid/view/View$OnAttachStateChangeListener;)V
-
-    return-void
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
 .end method

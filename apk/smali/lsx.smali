@@ -1,106 +1,140 @@
-.class public final synthetic Llsx;
+.class public final Llsx;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lnno;
+.implements Ljava/util/Comparator;
+
+
+# static fields
+.field public static final a:Ljava/util/Comparator;
 
 
 # instance fields
-.field public final synthetic a:Ljava/lang/Object;
+.field private final b:Lorh;
 
-.field private final synthetic b:I
+.field private final c:Lorh;
 
 
 # direct methods
-.method public synthetic constructor <init>(Ljava/io/IOException;I)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 1
 
-    iput p2, p0, Llsx;->b:I
+    new-instance v0, Llsx;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {v0}, Llsx;-><init>()V
 
-    iput-object p1, p0, Llsx;->a:Ljava/lang/Object;
+    sput-object v0, Llsx;->a:Ljava/util/Comparator;
 
     return-void
 .end method
 
-.method public synthetic constructor <init>(Lmqi;I)V
-    .locals 0
-
-    iput p2, p0, Llsx;->b:I
+.method private constructor <init>()V
+    .locals 4
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Llsx;->a:Ljava/lang/Object;
+    new-instance v0, Llsy;
+
+    sget-object v1, Lloa;->c:Lloa;
+
+    sget-object v2, Lloa;->b:Lloa;
+
+    sget-object v3, Lloa;->e:Lloa;
+
+    invoke-static {v1, v2, v3}, Loom;->o(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Loom;
+
+    move-result-object v1
+
+    invoke-direct {v0, v1}, Llsy;-><init>(Ljava/util/List;)V
+
+    iput-object v0, p0, Llsx;->b:Lorh;
+
+    new-instance v0, Llsy;
+
+    const/4 v1, 0x0
+
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v1
+
+    const/16 v2, 0x22
+
+    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v2
+
+    invoke-static {v1, v2}, Loom;->n(Ljava/lang/Object;Ljava/lang/Object;)Loom;
+
+    move-result-object v1
+
+    invoke-direct {v0, v1}, Llsy;-><init>(Ljava/util/List;)V
+
+    iput-object v0, p0, Llsx;->c:Lorh;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Ljava/lang/Object;)Lnou;
-    .locals 7
+.method public final bridge synthetic compare(Ljava/lang/Object;Ljava/lang/Object;)I
+    .locals 3
 
-    iget v0, p0, Llsx;->b:I
+    check-cast p1, Llui;
 
-    packed-switch v0, :pswitch_data_0
+    check-cast p2, Llui;
 
-    iget-object v0, p0, Llsx;->a:Ljava/lang/Object;
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    invoke-interface {v0, p1}, Lmqi;->apply(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    move-result-object p1
+    iget-object v0, p0, Llsx;->b:Lorh;
 
-    invoke-static {p1}, Lnsy;->B(Ljava/lang/Object;)Lnou;
-
-    move-result-object p1
-
-    return-object p1
-
-    :pswitch_0
-    iget-object v0, p0, Llsx;->a:Ljava/lang/Object;
-
-    check-cast p1, Ljava/io/IOException;
-
-    :try_start_0
-    const-class v1, Ljava/lang/Throwable;
-
-    const-string v2, "addSuppressed"
-
-    const/4 v3, 0x1
-
-    new-array v4, v3, [Ljava/lang/Class;
-
-    const-class v5, Ljava/lang/Throwable;
-
-    const/4 v6, 0x0
-
-    aput-object v5, v4, v6
-
-    invoke-virtual {v1, v2, v4}, Ljava/lang/Class;->getDeclaredMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
+    invoke-virtual {p1}, Llui;->h()Lloa;
 
     move-result-object v1
 
-    new-array v2, v3, [Ljava/lang/Object;
+    invoke-virtual {p2}, Llui;->h()Lloa;
 
-    aput-object p1, v2, v6
+    move-result-object v2
 
-    invoke-virtual {v1, v0, v2}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
-    :try_end_0
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+    invoke-virtual {v0, v1, v2}, Lorh;->compare(Ljava/lang/Object;Ljava/lang/Object;)I
+
+    move-result v0
+
+    if-eqz v0, :cond_0
 
     goto :goto_0
 
-    :catch_0
-    move-exception p1
+    :cond_0
+    iget-object v0, p0, Llsx;->c:Lorh;
 
+    invoke-virtual {p1}, Llui;->a()I
+
+    move-result p1
+
+    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object p1
+
+    invoke-virtual {p2}, Llui;->a()I
+
+    move-result p2
+
+    invoke-static {p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object p2
+
+    invoke-virtual {v0, p1, p2}, Lorh;->compare(Ljava/lang/Object;Ljava/lang/Object;)I
+
+    move-result v0
+
+    if-nez v0, :cond_1
+
+    const/4 p1, 0x0
+
+    return p1
+
+    :cond_1
     :goto_0
-    check-cast v0, Ljava/lang/Throwable;
-
-    throw v0
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+    return v0
 .end method

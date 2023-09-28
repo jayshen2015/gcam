@@ -1,70 +1,39 @@
-.class public final enum Ldok;
-.super Ljava/lang/Enum;
+.class public final Ldok;
+.super Ljava/lang/Object;
 
-
-# static fields
-.field public static final enum a:Ldok;
-
-.field public static final enum b:Ldok;
-
-.field private static final synthetic c:[Ldok;
+# interfaces
+.implements Ldot;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 5
-
-    new-instance v0, Ldok;
-
-    const-string v1, "BRIGHTNESS"
-
-    const/4 v2, 0x0
-
-    invoke-direct {v0, v1, v2}, Ldok;-><init>(Ljava/lang/String;I)V
-
-    sput-object v0, Ldok;->a:Ldok;
-
-    new-instance v1, Ldok;
-
-    const-string v3, "SHADOW"
-
-    const/4 v4, 0x1
-
-    invoke-direct {v1, v3, v4}, Ldok;-><init>(Ljava/lang/String;I)V
-
-    sput-object v1, Ldok;->b:Ldok;
-
-    const/4 v3, 0x2
-
-    new-array v3, v3, [Ldok;
-
-    aput-object v0, v3, v2
-
-    aput-object v1, v3, v4
-
-    sput-object v3, Ldok;->c:[Ldok;
-
-    return-void
-.end method
-
-.method private constructor <init>(Ljava/lang/String;I)V
+.method public constructor <init>()V
     .locals 0
 
-    invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
-.method public static values()[Ldok;
+
+# virtual methods
+.method public final a(Ldos;)Lpht;
     .locals 1
 
-    sget-object v0, Ldok;->c:[Ldok;
+    new-instance v0, Ldod;
 
-    invoke-virtual {v0}, [Ldok;->clone()Ljava/lang/Object;
+    iget-object p1, p1, Ldos;->a:Lmad;
 
-    move-result-object v0
+    invoke-direct {v0, p1}, Ldod;-><init>(Lmad;)V
 
-    check-cast v0, [Ldok;
+    invoke-static {v0}, Lplk;->V(Ljava/lang/Object;)Lpht;
 
-    return-object v0
+    move-result-object p1
+
+    return-object p1
+.end method
+
+.method public final close()V
+    .locals 0
+
+    return-void
 .end method

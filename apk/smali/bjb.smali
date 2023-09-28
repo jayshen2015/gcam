@@ -1,49 +1,40 @@
 .class public final Lbjb;
 .super Ljava/lang/Object;
 
-# interfaces
-.implements Lbjc;
 
+# static fields
+.field public static final a:Lazs;
 
-# instance fields
-.field public final a:Ljava/lang/String;
-
-.field public final b:Lbiz;
-
-.field public final c:Lbit;
-
-.field public final d:Z
-
-.field public final e:Z
+.field public static final b:Lazs;
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/String;Lbiz;Lbit;ZZ)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 2
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    sget-object v0, Lazd;->c:Lazd;
 
-    iput-object p1, p0, Lbjb;->a:Ljava/lang/String;
+    const-string v1, "com.bumptech.glide.load.resource.gif.GifOptions.DecodeFormat"
 
-    iput-object p2, p0, Lbjb;->b:Lbiz;
+    invoke-static {v1, v0}, Lazs;->c(Ljava/lang/String;Ljava/lang/Object;)Lazs;
 
-    iput-object p3, p0, Lbjb;->c:Lbit;
+    move-result-object v0
 
-    iput-boolean p4, p0, Lbjb;->d:Z
+    sput-object v0, Lbjb;->a:Lazs;
 
-    iput-boolean p5, p0, Lbjb;->e:Z
+    const/4 v0, 0x0
+
+    invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    move-result-object v0
+
+    const-string v1, "com.bumptech.glide.load.resource.gif.GifOptions.DisableAnimation"
+
+    invoke-static {v1, v0}, Lazs;->c(Ljava/lang/String;Ljava/lang/Object;)Lazs;
+
+    move-result-object v0
+
+    sput-object v0, Lbjb;->b:Lazs;
 
     return-void
-.end method
-
-
-# virtual methods
-.method public final a(Lbgj;Lbjq;)Lbgw;
-    .locals 1
-
-    new-instance v0, Lbgz;
-
-    invoke-direct {v0, p1, p2, p0}, Lbgz;-><init>(Lbgj;Lbjq;Lbjb;)V
-
-    return-object v0
 .end method

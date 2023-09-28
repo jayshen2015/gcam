@@ -1,42 +1,43 @@
-.class public abstract Lixb;
-.super Lls;
+.class public final synthetic Lixb;
+.super Ljava/lang/Object;
 
 # interfaces
-.implements Landroid/view/View$OnGenericMotionListener;
-.implements Landroid/view/View$OnTouchListener;
+.implements Llie;
+
+
+# instance fields
+.field public final synthetic a:Lixi;
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 1
+.method public synthetic constructor <init>(Lixi;)V
+    .locals 0
 
-    invoke-direct {p0}, Lls;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    new-instance v0, Les;
-
-    invoke-direct {v0}, Les;-><init>()V
+    iput-object p1, p0, Lixb;->a:Lixi;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onGenericMotion(Landroid/view/View;Landroid/view/MotionEvent;)Z
-    .locals 0
+.method public final close()V
+    .locals 1
 
-    const/16 p1, 0x1a
+    iget-object v0, p0, Lixb;->a:Lixi;
 
-    invoke-virtual {p2, p1}, Landroid/view/MotionEvent;->getAxisValue(I)F
+    iget-object v0, v0, Lixi;->b:Lixj;
 
-    const/4 p1, 0x1
+    iget-object v0, v0, Lixj;->g:Lqkg;
 
-    return p1
-.end method
+    invoke-interface {v0}, Lqkg;->get()Ljava/lang/Object;
 
-.method public final onTouch(Landroid/view/View;Landroid/view/MotionEvent;)Z
-    .locals 0
+    move-result-object v0
 
-    const/4 p1, 0x1
+    check-cast v0, Ldnj;
 
-    return p1
+    invoke-virtual {v0}, Ldnj;->b()V
+
+    return-void
 .end method

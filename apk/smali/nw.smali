@@ -1,78 +1,96 @@
 .class public final Lnw;
-.super Ljava/lang/Object;
+.super Landroid/widget/ToggleButton;
 
 
-# static fields
-.field public static a:Ljava/lang/reflect/Method;
+# instance fields
+.field private final a:Lmp;
+
+.field private final b:Lnt;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 5
+.method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
+    .locals 1
 
-    :try_start_0
-    const-class v0, Landroid/view/View;
+    const v0, 0x101004b
 
-    const-string v1, "computeFitSystemWindows"
+    invoke-direct {p0, p1, p2, v0}, Landroid/widget/ToggleButton;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
-    const/4 v2, 0x2
+    invoke-virtual {p0}, Lnw;->getContext()Landroid/content/Context;
 
-    new-array v2, v2, [Ljava/lang/Class;
+    move-result-object p1
 
-    const-class v3, Landroid/graphics/Rect;
+    invoke-static {p0, p1}, Lri;->d(Landroid/view/View;Landroid/content/Context;)V
 
-    const/4 v4, 0x0
+    new-instance p1, Lmp;
 
-    aput-object v3, v2, v4
+    invoke-direct {p1, p0}, Lmp;-><init>(Landroid/view/View;)V
 
-    const-class v3, Landroid/graphics/Rect;
+    iput-object p1, p0, Lnw;->a:Lmp;
 
-    const/4 v4, 0x1
+    invoke-virtual {p1, p2, v0}, Lmp;->d(Landroid/util/AttributeSet;I)V
 
-    aput-object v3, v2, v4
+    new-instance p1, Lnt;
 
-    invoke-virtual {v0, v1, v2}, Ljava/lang/Class;->getDeclaredMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
+    invoke-direct {p1, p0}, Lnt;-><init>(Landroid/widget/TextView;)V
 
-    move-result-object v0
+    iput-object p1, p0, Lnw;->b:Lnt;
 
-    sput-object v0, Lnw;->a:Ljava/lang/reflect/Method;
-
-    invoke-virtual {v0}, Ljava/lang/reflect/Method;->isAccessible()Z
-
-    move-result v0
-
-    if-nez v0, :cond_0
-
-    sget-object v0, Lnw;->a:Ljava/lang/reflect/Method;
-
-    invoke-virtual {v0, v4}, Ljava/lang/reflect/Method;->setAccessible(Z)V
-    :try_end_0
-    .catch Ljava/lang/NoSuchMethodException; {:try_start_0 .. :try_end_0} :catch_0
-
-    :cond_0
-    return-void
-
-    :catch_0
-    move-exception v0
+    invoke-virtual {p1, p2, v0}, Lnt;->b(Landroid/util/AttributeSet;I)V
 
     return-void
 .end method
 
-.method public static a(Landroid/view/View;)Z
+
+# virtual methods
+.method protected final drawableStateChanged()V
     .locals 1
 
-    invoke-static {p0}, Lafc;->c(Landroid/view/View;)I
+    invoke-super {p0}, Landroid/widget/ToggleButton;->drawableStateChanged()V
 
-    move-result p0
+    iget-object v0, p0, Lnw;->a:Lmp;
 
-    const/4 v0, 0x1
+    if-eqz v0, :cond_0
 
-    if-ne p0, v0, :cond_0
-
-    return v0
+    invoke-virtual {v0}, Lmp;->c()V
 
     :cond_0
-    const/4 p0, 0x0
+    iget-object v0, p0, Lnw;->b:Lnt;
 
-    return p0
+    if-eqz v0, :cond_1
+
+    invoke-virtual {v0}, Lnt;->a()V
+
+    :cond_1
+    return-void
+.end method
+
+.method public final setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
+    .locals 0
+
+    invoke-super {p0, p1}, Landroid/widget/ToggleButton;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
+
+    iget-object p1, p0, Lnw;->a:Lmp;
+
+    if-eqz p1, :cond_0
+
+    invoke-virtual {p1}, Lmp;->i()V
+
+    :cond_0
+    return-void
+.end method
+
+.method public final setBackgroundResource(I)V
+    .locals 1
+
+    invoke-super {p0, p1}, Landroid/widget/ToggleButton;->setBackgroundResource(I)V
+
+    iget-object v0, p0, Lnw;->a:Lmp;
+
+    if-eqz v0, :cond_0
+
+    invoke-virtual {v0, p1}, Lmp;->e(I)V
+
+    :cond_0
+    return-void
 .end method

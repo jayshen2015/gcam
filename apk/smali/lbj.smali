@@ -2,26 +2,18 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Ljava/util/concurrent/Callable;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field final synthetic a:Lkye;
-
-.field final synthetic b:Llcj;
-
-.field final synthetic c:Llbk;
+.field final synthetic a:Llbk;
 
 
 # direct methods
-.method public constructor <init>(Llbk;Lkye;Llcj;)V
+.method public constructor <init>(Llbk;)V
     .locals 0
 
-    iput-object p1, p0, Llbj;->c:Llbk;
-
-    iput-object p2, p0, Llbj;->a:Lkye;
-
-    iput-object p3, p0, Llbj;->b:Llcj;
+    iput-object p1, p0, Llbj;->a:Llbk;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -30,80 +22,46 @@
 
 
 # virtual methods
-.method public final call()Ljava/lang/Object;
-    .locals 2
-
-    :try_start_0
-    iget-object v0, p0, Llbj;->a:Lkye;
-
-    iget-object v1, p0, Llbj;->c:Llbk;
-
-    invoke-virtual {v1}, Llbk;->c()Llcv;
-
-    move-result-object v1
-
-    invoke-interface {v0, v1}, Lkye;->a(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v0
-    :try_end_0
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    return-object v0
-
-    :catchall_0
-    move-exception v0
-
-    new-instance v1, Ljava/lang/Error;
-
-    invoke-direct {v1, v0}, Ljava/lang/Error;-><init>(Ljava/lang/Throwable;)V
-
-    throw v1
-
-    :catch_0
-    move-exception v0
-
-    throw v0
-.end method
-
-.method public final toString()Ljava/lang/String;
+.method public final run()V
     .locals 4
 
-    iget-object v0, p0, Llbj;->c:Llbk;
+    iget-object v0, p0, Llbj;->a:Llbk;
 
-    invoke-virtual {v0}, Ljava/lang/Object;->toString()Ljava/lang/String;
+    iget-object v0, v0, Llbk;->a:Ljava/lang/Object;
 
-    move-result-object v0
+    monitor-enter v0
 
-    iget-object v1, p0, Llbj;->b:Llcj;
+    :try_start_0
+    iget-object v1, p0, Llbj;->a:Llbk;
 
-    invoke-interface {v1}, Llcj;->a()Ljava/lang/String;
+    iget-object v2, v1, Llbk;->b:Ljava/lang/Runnable;
 
-    move-result-object v1
+    if-eqz v2, :cond_0
 
-    new-instance v2, Ljava/lang/StringBuilder;
+    const/4 v3, 0x0
 
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+    iput-object v3, v1, Llbk;->b:Ljava/lang/Runnable;
 
-    const-string v3, "withRawGLObject("
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-interface {v2}, Ljava/lang/Runnable;->run()V
 
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    return-void
 
-    const-string v0, ", fn="
+    :cond_0
+    :try_start_1
+    monitor-exit v0
 
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    return-void
 
-    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    :catchall_0
+    move-exception v1
 
-    const-string v0, ")"
+    monitor-exit v0
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    return-object v0
+    throw v1
 .end method

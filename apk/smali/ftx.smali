@@ -1,44 +1,47 @@
-.class public final Lftx;
-.super Lkfg;
+.class public final synthetic Lftx;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Loiu;
 
 
 # instance fields
-.field final synthetic a:Lgxb;
+.field public final synthetic a:Llap;
+
+.field public final synthetic b:Llnc;
 
 
 # direct methods
-.method public constructor <init>(Lgxb;[B[B[B)V
+.method public synthetic constructor <init>(Llap;Llnc;)V
     .locals 0
 
-    iput-object p1, p0, Lftx;->a:Lgxb;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0}, Lkfg;-><init>()V
+    iput-object p1, p0, Lftx;->a:Llap;
+
+    iput-object p2, p0, Lftx;->b:Llnc;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final bC(Lkou;)V
-    .locals 1
+.method public final a(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 3
 
-    iget-object p1, p0, Lftx;->a:Lgxb;
+    iget-object v0, p0, Lftx;->a:Llap;
 
-    iget-object p1, p1, Lgxb;->b:Ljava/lang/Object;
+    iget-object v1, p0, Lftx;->b:Llnc;
 
-    monitor-enter p1
+    check-cast p1, Llqd;
 
-    :try_start_0
-    monitor-exit p1
+    const/16 v2, 0x2d
 
-    return-void
+    invoke-interface {v1, p1, v2}, Llnc;->r(Llqd;I)Llmv;
 
-    :catchall_0
-    move-exception v0
+    move-result-object p1
 
-    monitor-exit p1
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    invoke-virtual {v0, p1}, Llap;->c(Llie;)V
 
-    throw v0
+    return-object p1
 .end method

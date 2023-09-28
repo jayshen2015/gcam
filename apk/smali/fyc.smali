@@ -1,135 +1,228 @@
-.class public final Lfyc;
-.super Ljava/lang/Object;
-
-# interfaces
-.implements Lgqm;
+.class final Lfyc;
+.super Ljava/lang/Thread;
 
 
 # instance fields
-.field final synthetic a:Lnph;
-
-.field final synthetic b:Lkab;
-
-.field final synthetic c:Lnph;
+.field final synthetic a:Lfyr;
 
 
 # direct methods
-.method public constructor <init>(Lnph;Lkab;Lnph;)V
+.method public constructor <init>(Lfyr;)V
     .locals 0
 
-    iput-object p1, p0, Lfyc;->a:Lnph;
+    iput-object p1, p0, Lfyc;->a:Lfyr;
 
-    iput-object p2, p0, Lfyc;->b:Lkab;
-
-    iput-object p3, p0, Lfyc;->c:Lnph;
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Thread;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Lgqz;Lgxy;)V
-    .locals 0
+.method public final run()V
+    .locals 6
 
-    new-instance p1, Ljava/lang/IllegalStateException;
+    iget-object v0, p0, Lfyc;->a:Lfyr;
 
-    const-string p2, "No URI expected for thumbnail generation"
+    iget v1, v0, Lfyr;->Q:I
 
-    invoke-direct {p1, p2}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+    const/4 v2, 0x1
 
-    throw p1
-.end method
+    if-ne v1, v2, :cond_0
 
-.method public final b(Lgqz;)V
-    .locals 0
+    const v1, 0x7f08053f
 
-    return-void
-.end method
+    goto :goto_0
 
-.method public final c(Lgqz;Lgsa;)V
-    .locals 0
+    :cond_0
+    const v1, 0x7f080538
 
-    new-instance p1, Ljava/lang/IllegalStateException;
+    :goto_0
+    iget-object v0, v0, Lfyr;->s:Lbtt;
 
-    const-string p2, "No compressed result expected for thumbnail generation"
+    invoke-interface {v0}, Lbtt;->f()Landroid/content/Context;
 
-    invoke-direct {p1, p2}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+    move-result-object v0
 
-    throw p1
-.end method
+    invoke-virtual {v0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
-.method public final d(Lgqz;Lbkb;)V
-    .locals 10
+    move-result-object v0
 
-    iget-object p2, p2, Lbkb;->a:Ljava/lang/Object;
+    invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
-    iget-object v0, p1, Lgqz;->b:Lgqy;
+    move-result-object v0
 
-    iget v1, v0, Lgqy;->b:I
+    check-cast v0, Landroid/graphics/drawable/BitmapDrawable;
 
-    iget v0, v0, Lgqy;->a:I
+    invoke-virtual {v0}, Landroid/graphics/drawable/BitmapDrawable;->getBitmap()Landroid/graphics/Bitmap;
 
-    sget-object v2, Landroid/graphics/Bitmap$Config;->ARGB_8888:Landroid/graphics/Bitmap$Config;
+    move-result-object v0
 
-    check-cast p2, [I
+    :try_start_0
+    new-instance v1, Ljava/io/ByteArrayOutputStream;
 
-    invoke-static {p2, v1, v0, v2}, Landroid/graphics/Bitmap;->createBitmap([IIILandroid/graphics/Bitmap$Config;)Landroid/graphics/Bitmap;
+    invoke-direct {v1}, Ljava/io/ByteArrayOutputStream;-><init>()V
+
+    sget-object v2, Landroid/graphics/Bitmap$CompressFormat;->JPEG:Landroid/graphics/Bitmap$CompressFormat;
+
+    const/16 v3, 0x64
+
+    invoke-virtual {v0, v2, v3, v1}, Landroid/graphics/Bitmap;->compress(Landroid/graphics/Bitmap$CompressFormat;ILjava/io/OutputStream;)Z
+
+    invoke-virtual {v1}, Ljava/io/ByteArrayOutputStream;->close()V
+
+    iget-object v0, p0, Lfyc;->a:Lfyr;
+
+    iget-object v0, v0, Lfyr;->m:Lcom/google/android/apps/camera/legacy/lightcycle/storage/LocalSessionStorage;
+
+    iget-object v0, v0, Lcom/google/android/apps/camera/legacy/lightcycle/storage/LocalSessionStorage;->b:Lhqz;
+
+    const/4 v2, 0x0
+
+    invoke-static {v2, v2}, Llig;->h(II)Llig;
 
     move-result-object v3
 
-    iget p1, p1, Lgqz;->c:I
+    invoke-virtual {v0, v3}, Lhqd;->P(Llig;)V
 
-    const/4 p2, 0x1
+    const v3, 0x7f1403f0
 
-    if-ne p1, p2, :cond_0
+    new-array v4, v2, [Ljava/lang/Object;
 
-    iget-object p1, p0, Lfyc;->a:Lnph;
+    invoke-static {v3, v4}, Lmip;->ex(I[Ljava/lang/Object;)Ljmo;
 
-    invoke-virtual {p1, v3}, Lnph;->e(Ljava/lang/Object;)Z
+    move-result-object v3
+
+    invoke-virtual {v0, v3}, Lhqd;->O(Ljmo;)V
+
+    invoke-virtual {v1}, Ljava/io/ByteArrayOutputStream;->toByteArray()[B
+
+    move-result-object v3
+
+    array-length v4, v3
+
+    new-instance v5, Landroid/graphics/BitmapFactory$Options;
+
+    invoke-direct {v5}, Landroid/graphics/BitmapFactory$Options;-><init>()V
+
+    invoke-static {v3, v2, v4, v5}, Landroid/graphics/BitmapFactory;->decodeByteArray([BIILandroid/graphics/BitmapFactory$Options;)Landroid/graphics/Bitmap;
+
+    move-result-object v3
+
+    invoke-virtual {v0, v3, v2}, Lhqd;->U(Landroid/graphics/Bitmap;I)V
+
+    iget-object v2, p0, Lfyc;->a:Lfyr;
+
+    iget-object v2, v2, Lfyr;->z:Lhpu;
+
+    invoke-interface {v2, v0}, Lhpu;->e(Lhsa;)V
+
+    invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
+
+    move-result-wide v2
+
+    iget-object v4, p0, Lfyc;->a:Lfyr;
+
+    iget-wide v4, v4, Lfyr;->O:J
+
+    sub-long/2addr v2, v4
+
+    iget-object v0, v0, Lhqz;->d:Lhsm;
+
+    invoke-virtual {v0}, Lhsm;->b()Z
+
+    move-result v4
+
+    if-eqz v4, :cond_1
+
+    new-instance v4, Ljava/io/FileOutputStream;
+
+    invoke-virtual {v0}, Lhsm;->a()Ljava/io/File;
+
+    move-result-object v0
+
+    invoke-direct {v4, v0}, Ljava/io/FileOutputStream;-><init>(Ljava/io/File;)V
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
+
+    :try_start_1
+    invoke-virtual {v1, v4}, Ljava/io/ByteArrayOutputStream;->writeTo(Ljava/io/OutputStream;)V
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    :try_start_2
+    invoke-virtual {v4}, Ljava/io/FileOutputStream;->close()V
+
+    iget-object v0, p0, Lfyc;->a:Lfyr;
+
+    iget-object v0, v0, Lfyr;->m:Lcom/google/android/apps/camera/legacy/lightcycle/storage/LocalSessionStorage;
+
+    iget-object v0, v0, Lcom/google/android/apps/camera/legacy/lightcycle/storage/LocalSessionStorage;->b:Lhqz;
+
+    invoke-virtual {v0}, Lhqz;->K()V
+
+    iget-object v0, p0, Lfyc;->a:Lfyr;
+
+    iget-object v1, v0, Lfyr;->u:Lfjs;
+
+    iget v4, v0, Lfyr;->p:I
+
+    iget v0, v0, Lfyr;->N:I
+
+    long-to-float v2, v2
+
+    const v3, 0x3a83126f    # 0.001f
+
+    mul-float v2, v2, v3
+
+    invoke-interface {v1, v4, v0, v2}, Lfjs;->av(IIF)V
+    :try_end_2
+    .catch Ljava/io/IOException; {:try_start_2 .. :try_end_2} :catch_0
 
     return-void
 
-    :cond_0
-    const/4 p2, 0x2
+    :catchall_0
+    move-exception v0
 
-    if-ne p1, p2, :cond_1
+    :try_start_3
+    invoke-virtual {v4}, Ljava/io/FileOutputStream;->close()V
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_1
 
-    new-instance v8, Landroid/graphics/Matrix;
+    goto :goto_1
 
-    invoke-direct {v8}, Landroid/graphics/Matrix;-><init>()V
+    :catchall_1
+    move-exception v1
 
-    iget-object p1, p0, Lfyc;->b:Lkab;
-
-    iget p1, p1, Lkab;->e:I
-
-    int-to-float p1, p1
-
-    invoke-virtual {v8, p1}, Landroid/graphics/Matrix;->postRotate(F)Z
-
-    const/4 v4, 0x0
-
-    const/4 v5, 0x0
-
-    invoke-virtual {v3}, Landroid/graphics/Bitmap;->getWidth()I
-
-    move-result v6
-
-    invoke-virtual {v3}, Landroid/graphics/Bitmap;->getHeight()I
-
-    move-result v7
-
-    const/4 v9, 0x1
-
-    invoke-static/range {v3 .. v9}, Landroid/graphics/Bitmap;->createBitmap(Landroid/graphics/Bitmap;IIIILandroid/graphics/Matrix;Z)Landroid/graphics/Bitmap;
-
-    move-result-object p1
-
-    iget-object p2, p0, Lfyc;->c:Lnph;
-
-    invoke-virtual {p2, p1}, Lnph;->e(Ljava/lang/Object;)Z
+    :goto_1
+    :try_start_4
+    throw v0
 
     :cond_1
+    new-instance v0, Ljava/io/IOException;
+
+    const-string v1, "Temporary session file not usable."
+
+    invoke-direct {v0, v1}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+    :try_end_4
+    .catch Ljava/io/IOException; {:try_start_4 .. :try_end_4} :catch_0
+
+    :catch_0
+    move-exception v0
+
+    sget-object v0, Lfyr;->b:Louj;
+
+    invoke-virtual {v0}, Loue;->b()Lova;
+
+    move-result-object v0
+
+    const/16 v1, 0x7bb
+
+    const-string v2, "Could not write temporary panorama image."
+
+    invoke-static {v0, v2, v1}, Ld;->v(Lova;Ljava/lang/String;C)V
+
     return-void
 .end method

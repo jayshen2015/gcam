@@ -1,464 +1,439 @@
-.class public final Lij;
+.class final Lij;
 .super Ljava/lang/Object;
+
+# interfaces
+.implements Lft;
 
 
 # instance fields
-.field private final a:Landroid/view/View;
-
-.field private final b:Lio;
-
-.field private c:I
-
-.field private d:Lni;
-
-.field private e:Lni;
-
-.field private f:Lni;
+.field final synthetic a:Liy;
 
 
 # direct methods
-.method public constructor <init>(Landroid/view/View;)V
-    .locals 1
+.method public constructor <init>(Liy;)V
+    .locals 0
+
+    iput-object p1, p0, Lij;->a:Liy;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    const/4 v0, -0x1
-
-    iput v0, p0, Lij;->c:I
-
-    iput-object p1, p0, Lij;->a:Landroid/view/View;
-
-    invoke-static {}, Lio;->d()Lio;
-
-    move-result-object p1
-
-    iput-object p1, p0, Lij;->b:Lio;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Landroid/content/res/ColorStateList;
-    .locals 1
+.method public final a(Landroid/view/View;Lgy;)Lgy;
+    .locals 15
 
-    iget-object v0, p0, Lij;->e:Lni;
+    invoke-virtual/range {p2 .. p2}, Lgy;->d()I
 
-    if-eqz v0, :cond_0
+    move-result v1
 
-    iget-object v0, v0, Lni;->a:Landroid/content/res/ColorStateList;
+    move-object v2, p0
 
-    return-object v0
+    iget-object v3, v2, Lij;->a:Liy;
 
-    :cond_0
-    const/4 v0, 0x0
+    invoke-virtual/range {p2 .. p2}, Lgy;->d()I
 
-    return-object v0
-.end method
+    move-result v4
 
-.method public final b()Landroid/graphics/PorterDuff$Mode;
-    .locals 1
+    iget-object v0, v3, Liy;->m:Landroid/support/v7/widget/ActionBarContextView;
 
-    iget-object v0, p0, Lij;->e:Lni;
+    const/16 v5, 0x8
 
-    if-eqz v0, :cond_0
+    const/4 v6, 0x1
 
-    iget-object v0, v0, Lni;->b:Landroid/graphics/PorterDuff$Mode;
+    const/4 v7, 0x0
 
-    return-object v0
+    if-eqz v0, :cond_10
 
-    :cond_0
-    const/4 v0, 0x0
-
-    return-object v0
-.end method
-
-.method public final c()V
-    .locals 4
-
-    iget-object v0, p0, Lij;->a:Landroid/view/View;
-
-    invoke-virtual {v0}, Landroid/view/View;->getBackground()Landroid/graphics/drawable/Drawable;
+    invoke-virtual {v0}, Landroid/support/v7/widget/ActionBarContextView;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v0
 
-    if-eqz v0, :cond_6
+    instance-of v0, v0, Landroid/view/ViewGroup$MarginLayoutParams;
 
-    iget-object v1, p0, Lij;->d:Lni;
+    if-eqz v0, :cond_10
 
-    if-eqz v1, :cond_4
+    iget-object v0, v3, Liy;->m:Landroid/support/v7/widget/ActionBarContextView;
 
-    iget-object v1, p0, Lij;->f:Lni;
+    invoke-virtual {v0}, Landroid/support/v7/widget/ActionBarContextView;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
-    if-nez v1, :cond_0
+    move-result-object v0
 
-    new-instance v1, Lni;
+    move-object v8, v0
 
-    invoke-direct {v1}, Lni;-><init>()V
+    check-cast v8, Landroid/view/ViewGroup$MarginLayoutParams;
 
-    iput-object v1, p0, Lij;->f:Lni;
+    iget-object v0, v3, Liy;->m:Landroid/support/v7/widget/ActionBarContextView;
+
+    invoke-virtual {v0}, Landroid/support/v7/widget/ActionBarContextView;->isShown()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_d
+
+    iget-object v0, v3, Liy;->G:Landroid/graphics/Rect;
+
+    if-nez v0, :cond_0
+
+    new-instance v0, Landroid/graphics/Rect;
+
+    invoke-direct {v0}, Landroid/graphics/Rect;-><init>()V
+
+    iput-object v0, v3, Liy;->G:Landroid/graphics/Rect;
+
+    new-instance v0, Landroid/graphics/Rect;
+
+    invoke-direct {v0}, Landroid/graphics/Rect;-><init>()V
+
+    iput-object v0, v3, Liy;->H:Landroid/graphics/Rect;
 
     :cond_0
-    iget-object v1, p0, Lij;->f:Lni;
+    iget-object v9, v3, Liy;->G:Landroid/graphics/Rect;
 
-    const/4 v2, 0x0
+    iget-object v0, v3, Liy;->H:Landroid/graphics/Rect;
 
-    iput-object v2, v1, Lni;->a:Landroid/content/res/ColorStateList;
+    invoke-virtual/range {p2 .. p2}, Lgy;->b()I
 
-    const/4 v3, 0x0
+    move-result v10
 
-    iput-boolean v3, v1, Lni;->d:Z
+    invoke-virtual/range {p2 .. p2}, Lgy;->d()I
 
-    iput-object v2, v1, Lni;->b:Landroid/graphics/PorterDuff$Mode;
+    move-result v11
 
-    iput-boolean v3, v1, Lni;->c:Z
+    invoke-virtual/range {p2 .. p2}, Lgy;->c()I
 
-    iget-object v2, p0, Lij;->a:Landroid/view/View;
+    move-result v12
 
-    invoke-static {v2}, Lafh;->d(Landroid/view/View;)Landroid/content/res/ColorStateList;
+    invoke-virtual/range {p2 .. p2}, Lgy;->a()I
 
-    move-result-object v2
+    move-result v13
 
-    const/4 v3, 0x1
+    invoke-virtual {v9, v10, v11, v12, v13}, Landroid/graphics/Rect;->set(IIII)V
 
-    if-eqz v2, :cond_1
+    iget-object v10, v3, Liy;->s:Landroid/view/ViewGroup;
 
-    iput-boolean v3, v1, Lni;->d:Z
+    sget-object v11, Lsd;->a:Ljava/lang/reflect/Method;
 
-    iput-object v2, v1, Lni;->a:Landroid/content/res/ColorStateList;
-
-    :cond_1
-    iget-object v2, p0, Lij;->a:Landroid/view/View;
-
-    invoke-static {v2}, Lafh;->e(Landroid/view/View;)Landroid/graphics/PorterDuff$Mode;
-
-    move-result-object v2
-
-    if-eqz v2, :cond_2
-
-    iput-boolean v3, v1, Lni;->c:Z
-
-    iput-object v2, v1, Lni;->b:Landroid/graphics/PorterDuff$Mode;
-
-    :cond_2
-    iget-boolean v2, v1, Lni;->d:Z
-
-    if-nez v2, :cond_3
-
-    iget-boolean v2, v1, Lni;->c:Z
-
-    if-nez v2, :cond_3
-
-    goto :goto_0
-
-    :cond_3
-    iget-object v2, p0, Lij;->a:Landroid/view/View;
-
-    invoke-virtual {v2}, Landroid/view/View;->getDrawableState()[I
-
-    move-result-object v2
-
-    invoke-static {v0, v1, v2}, Lms;->h(Landroid/graphics/drawable/Drawable;Lni;[I)V
-
-    return-void
-
-    :cond_4
-    :goto_0
-    iget-object v1, p0, Lij;->e:Lni;
-
-    if-eqz v1, :cond_5
-
-    iget-object v2, p0, Lij;->a:Landroid/view/View;
-
-    invoke-virtual {v2}, Landroid/view/View;->getDrawableState()[I
-
-    move-result-object v2
-
-    invoke-static {v0, v1, v2}, Lms;->h(Landroid/graphics/drawable/Drawable;Lni;[I)V
-
-    return-void
-
-    :cond_5
-    iget-object v1, p0, Lij;->d:Lni;
-
-    if-eqz v1, :cond_6
-
-    iget-object v2, p0, Lij;->a:Landroid/view/View;
-
-    invoke-virtual {v2}, Landroid/view/View;->getDrawableState()[I
-
-    move-result-object v2
-
-    invoke-static {v0, v1, v2}, Lms;->h(Landroid/graphics/drawable/Drawable;Lni;[I)V
-
-    return-void
-
-    :cond_6
-    return-void
-.end method
-
-.method public final d(Landroid/util/AttributeSet;I)V
-    .locals 10
-
-    iget-object v0, p0, Lij;->a:Landroid/view/View;
-
-    invoke-virtual {v0}, Landroid/view/View;->getContext()Landroid/content/Context;
-
-    move-result-object v0
-
-    sget-object v1, Lfr;->z:[I
-
-    const/4 v2, 0x0
-
-    invoke-static {v0, p1, v1, p2, v2}, Landroidx/wear/ambient/AmbientDelegate;->D(Landroid/content/Context;Landroid/util/AttributeSet;[III)Landroidx/wear/ambient/AmbientDelegate;
-
-    move-result-object v0
-
-    iget-object v3, p0, Lij;->a:Landroid/view/View;
-
-    invoke-virtual {v3}, Landroid/view/View;->getContext()Landroid/content/Context;
-
-    move-result-object v4
-
-    sget-object v5, Lfr;->z:[I
-
-    iget-object v1, v0, Landroidx/wear/ambient/AmbientDelegate;->b:Ljava/lang/Object;
-
-    move-object v7, v1
-
-    check-cast v7, Landroid/content/res/TypedArray;
-
-    const/4 v9, 0x0
-
-    move-object v6, p1
-
-    move v8, p2
-
-    invoke-static/range {v3 .. v9}, Lafn;->c(Landroid/view/View;Landroid/content/Context;[ILandroid/util/AttributeSet;Landroid/content/res/TypedArray;II)V
+    if-eqz v11, :cond_1
 
     :try_start_0
-    invoke-virtual {v0, v2}, Landroidx/wear/ambient/AmbientDelegate;->A(I)Z
+    sget-object v11, Lsd;->a:Ljava/lang/reflect/Method;
 
-    move-result p1
+    const/4 v12, 0x2
 
-    const/4 p2, -0x1
+    new-array v12, v12, [Ljava/lang/Object;
 
-    if-eqz p1, :cond_0
+    aput-object v9, v12, v7
 
-    invoke-virtual {v0, v2, p2}, Landroidx/wear/ambient/AmbientDelegate;->s(II)I
+    aput-object v0, v12, v6
 
-    move-result p1
+    invoke-virtual {v11, v10, v12}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    iput p1, p0, Lij;->c:I
+    goto :goto_0
 
-    iget-object p1, p0, Lij;->b:Lio;
-
-    iget-object v1, p0, Lij;->a:Landroid/view/View;
-
-    invoke-virtual {v1}, Landroid/view/View;->getContext()Landroid/content/Context;
-
-    move-result-object v1
-
-    iget v2, p0, Lij;->c:I
-
-    invoke-virtual {p1, v1, v2}, Lio;->a(Landroid/content/Context;I)Landroid/content/res/ColorStateList;
-
-    move-result-object p1
-
-    if-eqz p1, :cond_0
-
-    invoke-virtual {p0, p1}, Lij;->f(Landroid/content/res/ColorStateList;)V
-
-    :cond_0
-    const/4 p1, 0x1
-
-    invoke-virtual {v0, p1}, Landroidx/wear/ambient/AmbientDelegate;->A(I)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_1
-
-    iget-object v1, p0, Lij;->a:Landroid/view/View;
-
-    invoke-virtual {v0, p1}, Landroidx/wear/ambient/AmbientDelegate;->t(I)Landroid/content/res/ColorStateList;
-
-    move-result-object p1
-
-    invoke-static {v1, p1}, Lafh;->j(Landroid/view/View;Landroid/content/res/ColorStateList;)V
+    :catch_0
+    move-exception v0
 
     :cond_1
-    const/4 p1, 0x2
+    :goto_0
+    iget v0, v9, Landroid/graphics/Rect;->top:I
 
-    invoke-virtual {v0, p1}, Landroidx/wear/ambient/AmbientDelegate;->A(I)Z
+    iget v10, v9, Landroid/graphics/Rect;->left:I
 
-    move-result v1
+    iget v9, v9, Landroid/graphics/Rect;->right:I
 
-    if-eqz v1, :cond_2
+    iget-object v11, v3, Liy;->s:Landroid/view/ViewGroup;
 
-    iget-object v1, p0, Lij;->a:Landroid/view/View;
+    invoke-static {v11}, Lgl;->r(Landroid/view/View;)Lgy;
 
-    invoke-virtual {v0, p1, p2}, Landroidx/wear/ambient/AmbientDelegate;->p(II)I
+    move-result-object v11
 
-    move-result p1
+    if-nez v11, :cond_2
 
-    const/4 p2, 0x0
+    const/4 v12, 0x0
 
-    invoke-static {p1, p2}, Lkh;->a(ILandroid/graphics/PorterDuff$Mode;)Landroid/graphics/PorterDuff$Mode;
-
-    move-result-object p1
-
-    invoke-static {v1, p1}, Lafh;->k(Landroid/view/View;Landroid/graphics/PorterDuff$Mode;)V
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    goto :goto_1
 
     :cond_2
-    invoke-virtual {v0}, Landroidx/wear/ambient/AmbientDelegate;->y()V
+    invoke-virtual {v11}, Lgy;->b()I
 
-    return-void
+    move-result v12
 
-    :catchall_0
-    move-exception p1
+    :goto_1
+    if-nez v11, :cond_3
 
-    invoke-virtual {v0}, Landroidx/wear/ambient/AmbientDelegate;->y()V
+    const/4 v11, 0x0
 
-    throw p1
-.end method
+    goto :goto_2
 
-.method public final e(I)V
-    .locals 2
+    :cond_3
+    invoke-virtual {v11}, Lgy;->c()I
 
-    iput p1, p0, Lij;->c:I
+    move-result v11
 
-    iget-object v0, p0, Lij;->b:Lio;
+    :goto_2
+    iget v13, v8, Landroid/view/ViewGroup$MarginLayoutParams;->topMargin:I
 
-    if-eqz v0, :cond_0
+    if-ne v13, v0, :cond_5
 
-    iget-object v1, p0, Lij;->a:Landroid/view/View;
+    iget v13, v8, Landroid/view/ViewGroup$MarginLayoutParams;->leftMargin:I
 
-    invoke-virtual {v1}, Landroid/view/View;->getContext()Landroid/content/Context;
+    if-ne v13, v10, :cond_5
 
-    move-result-object v1
+    iget v13, v8, Landroid/view/ViewGroup$MarginLayoutParams;->rightMargin:I
 
-    invoke-virtual {v0, v1, p1}, Lio;->a(Landroid/content/Context;I)Landroid/content/res/ColorStateList;
+    if-eq v13, v9, :cond_4
 
-    move-result-object p1
+    goto :goto_3
 
-    goto :goto_0
+    :cond_4
+    const/4 v9, 0x0
 
-    :cond_0
-    const/4 p1, 0x0
+    goto :goto_4
 
-    :goto_0
-    invoke-virtual {p0, p1}, Lij;->f(Landroid/content/res/ColorStateList;)V
+    :cond_5
+    :goto_3
+    iput v0, v8, Landroid/view/ViewGroup$MarginLayoutParams;->topMargin:I
 
-    invoke-virtual {p0}, Lij;->c()V
+    iput v10, v8, Landroid/view/ViewGroup$MarginLayoutParams;->leftMargin:I
 
-    return-void
-.end method
+    iput v9, v8, Landroid/view/ViewGroup$MarginLayoutParams;->rightMargin:I
 
-.method final f(Landroid/content/res/ColorStateList;)V
-    .locals 1
+    const/4 v9, 0x1
 
-    if-eqz p1, :cond_1
+    :goto_4
+    if-lez v0, :cond_6
 
-    iget-object v0, p0, Lij;->d:Lni;
+    iget-object v0, v3, Liy;->t:Landroid/view/View;
 
-    if-nez v0, :cond_0
+    if-nez v0, :cond_6
 
-    new-instance v0, Lni;
+    new-instance v0, Landroid/view/View;
 
-    invoke-direct {v0}, Lni;-><init>()V
+    iget-object v10, v3, Liy;->f:Landroid/content/Context;
 
-    iput-object v0, p0, Lij;->d:Lni;
+    invoke-direct {v0, v10}, Landroid/view/View;-><init>(Landroid/content/Context;)V
 
-    :cond_0
-    iget-object v0, p0, Lij;->d:Lni;
+    iput-object v0, v3, Liy;->t:Landroid/view/View;
 
-    iput-object p1, v0, Lni;->a:Landroid/content/res/ColorStateList;
+    iget-object v0, v3, Liy;->t:Landroid/view/View;
 
-    const/4 p1, 0x1
+    invoke-virtual {v0, v5}, Landroid/view/View;->setVisibility(I)V
 
-    iput-boolean p1, v0, Lni;->d:Z
+    new-instance v0, Landroid/widget/FrameLayout$LayoutParams;
 
-    goto :goto_0
+    iget v10, v8, Landroid/view/ViewGroup$MarginLayoutParams;->topMargin:I
 
-    :cond_1
-    const/4 p1, 0x0
+    const/16 v13, 0x33
 
-    iput-object p1, p0, Lij;->d:Lni;
+    const/4 v14, -0x1
 
-    :goto_0
-    invoke-virtual {p0}, Lij;->c()V
+    invoke-direct {v0, v14, v10, v13}, Landroid/widget/FrameLayout$LayoutParams;-><init>(III)V
 
-    return-void
-.end method
+    iput v12, v0, Landroid/widget/FrameLayout$LayoutParams;->leftMargin:I
 
-.method public final g(Landroid/content/res/ColorStateList;)V
-    .locals 1
+    iput v11, v0, Landroid/widget/FrameLayout$LayoutParams;->rightMargin:I
 
-    iget-object v0, p0, Lij;->e:Lni;
+    iget-object v10, v3, Liy;->s:Landroid/view/ViewGroup;
 
-    if-nez v0, :cond_0
+    iget-object v11, v3, Liy;->t:Landroid/view/View;
 
-    new-instance v0, Lni;
+    invoke-virtual {v10, v11, v14, v0}, Landroid/view/ViewGroup;->addView(Landroid/view/View;ILandroid/view/ViewGroup$LayoutParams;)V
 
-    invoke-direct {v0}, Lni;-><init>()V
+    goto :goto_5
 
-    iput-object v0, p0, Lij;->e:Lni;
+    :cond_6
+    iget-object v0, v3, Liy;->t:Landroid/view/View;
 
-    :cond_0
-    iget-object v0, p0, Lij;->e:Lni;
+    if-eqz v0, :cond_8
 
-    iput-object p1, v0, Lni;->a:Landroid/content/res/ColorStateList;
+    invoke-virtual {v0}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
-    const/4 p1, 0x1
+    move-result-object v0
 
-    iput-boolean p1, v0, Lni;->d:Z
+    check-cast v0, Landroid/view/ViewGroup$MarginLayoutParams;
 
-    invoke-virtual {p0}, Lij;->c()V
+    iget v10, v0, Landroid/view/ViewGroup$MarginLayoutParams;->height:I
 
-    return-void
-.end method
+    iget v13, v8, Landroid/view/ViewGroup$MarginLayoutParams;->topMargin:I
 
-.method public final h(Landroid/graphics/PorterDuff$Mode;)V
-    .locals 1
+    if-ne v10, v13, :cond_7
 
-    iget-object v0, p0, Lij;->e:Lni;
+    iget v10, v0, Landroid/view/ViewGroup$MarginLayoutParams;->leftMargin:I
 
-    if-nez v0, :cond_0
+    if-ne v10, v12, :cond_7
 
-    new-instance v0, Lni;
+    iget v10, v0, Landroid/view/ViewGroup$MarginLayoutParams;->rightMargin:I
 
-    invoke-direct {v0}, Lni;-><init>()V
+    if-eq v10, v11, :cond_8
 
-    iput-object v0, p0, Lij;->e:Lni;
+    :cond_7
+    iget v10, v8, Landroid/view/ViewGroup$MarginLayoutParams;->topMargin:I
 
-    :cond_0
-    iget-object v0, p0, Lij;->e:Lni;
+    iput v10, v0, Landroid/view/ViewGroup$MarginLayoutParams;->height:I
 
-    iput-object p1, v0, Lni;->b:Landroid/graphics/PorterDuff$Mode;
+    iput v12, v0, Landroid/view/ViewGroup$MarginLayoutParams;->leftMargin:I
 
-    const/4 p1, 0x1
+    iput v11, v0, Landroid/view/ViewGroup$MarginLayoutParams;->rightMargin:I
 
-    iput-boolean p1, v0, Lni;->c:Z
+    iget-object v10, v3, Liy;->t:Landroid/view/View;
 
-    invoke-virtual {p0}, Lij;->c()V
+    invoke-virtual {v10, v0}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    return-void
-.end method
+    :cond_8
+    :goto_5
+    iget-object v0, v3, Liy;->t:Landroid/view/View;
 
-.method public final i()V
-    .locals 1
+    if-eqz v0, :cond_9
 
-    const/4 v0, -0x1
+    const/4 v10, 0x1
 
-    iput v0, p0, Lij;->c:I
+    goto :goto_6
 
-    const/4 v0, 0x0
+    :cond_9
+    const/4 v10, 0x0
 
-    invoke-virtual {p0, v0}, Lij;->f(Landroid/content/res/ColorStateList;)V
+    :goto_6
+    if-eqz v10, :cond_b
 
-    invoke-virtual {p0}, Lij;->c()V
+    invoke-virtual {v0}, Landroid/view/View;->getVisibility()I
 
-    return-void
+    move-result v0
+
+    if-eqz v0, :cond_b
+
+    iget-object v0, v3, Liy;->t:Landroid/view/View;
+
+    invoke-static {v0}, Lgl;->k(Landroid/view/View;)I
+
+    move-result v11
+
+    and-int/lit16 v11, v11, 0x2000
+
+    if-eqz v11, :cond_a
+
+    iget-object v11, v3, Liy;->f:Landroid/content/Context;
+
+    const v12, 0x7f060006
+
+    invoke-static {v11, v12}, Laas;->a(Landroid/content/Context;I)I
+
+    move-result v11
+
+    goto :goto_7
+
+    :cond_a
+    iget-object v11, v3, Liy;->f:Landroid/content/Context;
+
+    const v12, 0x7f060005
+
+    invoke-static {v11, v12}, Laas;->a(Landroid/content/Context;I)I
+
+    move-result v11
+
+    :goto_7
+    invoke-virtual {v0, v11}, Landroid/view/View;->setBackgroundColor(I)V
+
+    :cond_b
+    iget-boolean v0, v3, Liy;->w:Z
+
+    if-nez v0, :cond_c
+
+    if-eqz v10, :cond_c
+
+    const/4 v4, 0x0
+
+    goto :goto_8
+
+    :cond_c
+    :goto_8
+    goto :goto_a
+
+    :cond_d
+    iget v0, v8, Landroid/view/ViewGroup$MarginLayoutParams;->topMargin:I
+
+    if-eqz v0, :cond_e
+
+    iput v7, v8, Landroid/view/ViewGroup$MarginLayoutParams;->topMargin:I
+
+    const/4 v9, 0x1
+
+    goto :goto_9
+
+    :cond_e
+    const/4 v9, 0x0
+
+    :goto_9
+    const/4 v10, 0x0
+
+    :goto_a
+    if-eqz v9, :cond_f
+
+    iget-object v0, v3, Liy;->m:Landroid/support/v7/widget/ActionBarContextView;
+
+    invoke-virtual {v0, v8}, Landroid/support/v7/widget/ActionBarContextView;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
+
+    goto :goto_b
+
+    :cond_f
+    goto :goto_b
+
+    :cond_10
+    const/4 v10, 0x0
+
+    :goto_b
+    iget-object v0, v3, Liy;->t:Landroid/view/View;
+
+    if-eqz v0, :cond_12
+
+    if-eq v6, v10, :cond_11
+
+    goto :goto_c
+
+    :cond_11
+    const/4 v5, 0x0
+
+    :goto_c
+    invoke-virtual {v0, v5}, Landroid/view/View;->setVisibility(I)V
+
+    :cond_12
+    if-eq v1, v4, :cond_13
+
+    invoke-virtual/range {p2 .. p2}, Lgy;->b()I
+
+    move-result v0
+
+    invoke-virtual/range {p2 .. p2}, Lgy;->c()I
+
+    move-result v1
+
+    invoke-virtual/range {p2 .. p2}, Lgy;->a()I
+
+    move-result v3
+
+    move-object/from16 v5, p2
+
+    invoke-virtual {v5, v0, v4, v1, v3}, Lgy;->k(IIII)Lgy;
+
+    move-result-object v0
+
+    goto :goto_d
+
+    :cond_13
+    move-object/from16 v5, p2
+
+    move-object v0, v5
+
+    :goto_d
+    move-object/from16 v1, p1
+
+    invoke-static {v1, v0}, Lgl;->s(Landroid/view/View;Lgy;)Lgy;
+
+    move-result-object v0
+
+    return-object v0
 .end method

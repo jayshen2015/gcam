@@ -1,106 +1,59 @@
-.class public final synthetic Lnsh;
-.super Ljava/lang/Object;
+.class public final Lnsh;
+.super Lqlu;
 
-# interfaces
-.implements Lcom/google/googlex/gcam/base/function/IntStringConsumer;
+
+# annotations
+.annotation runtime Lqlw;
+    b = "com.google.android.libraries.vision.visionkit.f250.internal.uploader.work.F250Worker$uploadAllValidResources$$inlined$map$1$2"
+    c = "F250Worker.kt"
+    d = "emit"
+    e = {
+        0x89
+    }
+.end annotation
 
 
 # instance fields
-.field public final synthetic a:Ledz;
+.field synthetic a:Ljava/lang/Object;
+
+.field b:I
+
+.field final synthetic c:Lnsl;
 
 
 # direct methods
-.method public synthetic constructor <init>(Ledz;)V
+.method public constructor <init>(Lnsl;Lqlh;[B)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lnsh;->c:Lnsl;
 
-    iput-object p1, p0, Lnsh;->a:Ledz;
+    invoke-direct {p0, p2}, Lqlu;-><init>(Lqlh;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final accept(ILjava/lang/String;)V
-    .locals 3
+.method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 1
 
-    iget-object v0, p0, Lnsh;->a:Ledz;
+    iput-object p1, p0, Lnsh;->a:Ljava/lang/Object;
 
-    sget-object v1, Leea;->a:Lnak;
+    iget p1, p0, Lnsh;->b:I
 
-    invoke-virtual {v1}, Lnaf;->b()Lnaz;
+    const/high16 v0, -0x80000000
 
-    move-result-object v1
+    or-int/2addr p1, v0
 
-    check-cast v1, Lnah;
+    iput p1, p0, Lnsh;->b:I
 
-    const/16 v2, 0x533
+    iget-object p1, p0, Lnsh;->c:Lnsl;
 
-    invoke-interface {v1, v2}, Lnah;->G(I)Lnaz;
+    const/4 v0, 0x0
 
-    move-result-object v1
-
-    check-cast v1, Lnah;
-
-    const-string v2, "HDR+ pipeline reported error for shotId %d: %s"
-
-    invoke-interface {v1, v2, p1, p2}, Lnah;->u(Ljava/lang/String;ILjava/lang/Object;)V
-
-    iget-object p1, v0, Ledz;->c:Leea;
-
-    iget p1, p1, Leea;->s:I
-
-    const/4 v1, 0x1
-
-    if-ne p1, v1, :cond_0
-
-    goto :goto_0
-
-    :cond_0
-    const/4 v1, 0x0
-
-    :goto_0
-    invoke-static {v1}, Lmoz;->p(Z)V
-
-    iget-object p1, v0, Ledz;->c:Leea;
-
-    const/4 v1, 0x3
-
-    iput v1, p1, Leea;->s:I
-
-    iget-object p1, v0, Ledz;->a:Leec;
-
-    invoke-virtual {p1}, Leec;->m()Lmqp;
+    invoke-virtual {p1, v0, p0}, Lnsl;->emit(Ljava/lang/Object;Lqlh;)Ljava/lang/Object;
 
     move-result-object p1
 
-    invoke-virtual {p1}, Lmqp;->g()Z
-
-    move-result p1
-
-    if-eqz p1, :cond_1
-
-    iget-object p1, v0, Ledz;->a:Leec;
-
-    invoke-virtual {p1}, Leec;->m()Lmqp;
-
-    move-result-object p1
-
-    invoke-virtual {p1}, Lmqp;->c()Ljava/lang/Object;
-
-    move-result-object p1
-
-    check-cast p1, Lecw;
-
-    iget-object v0, v0, Ledz;->c:Leea;
-
-    new-instance v1, Lecq;
-
-    invoke-direct {v1, p2}, Lecq;-><init>(Ljava/lang/String;)V
-
-    invoke-interface {p1, v0, v1}, Lecw;->c(Leea;Lecq;)V
-
-    :cond_1
-    return-void
+    return-object p1
 .end method

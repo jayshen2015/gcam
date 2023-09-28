@@ -1,101 +1,86 @@
 .class public final Lmss;
-.super Ljava/util/AbstractCollection;
+.super Ljava/lang/Object;
 
 
 # instance fields
-.field final synthetic a:Lmst;
+.field public final a:Ljava/nio/ByteBuffer;
+
+.field public final b:Landroid/media/MediaCodec$BufferInfo;
 
 
 # direct methods
-.method public constructor <init>(Lmst;)V
+.method public constructor <init>(Ljava/nio/ByteBuffer;Landroid/media/MediaCodec$BufferInfo;)V
     .locals 0
 
-    iput-object p1, p0, Lmss;->a:Lmst;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0}, Ljava/util/AbstractCollection;-><init>()V
+    iput-object p1, p0, Lmss;->a:Ljava/nio/ByteBuffer;
 
-    return-void
-.end method
-
-
-# virtual methods
-.method public final clear()V
-    .locals 1
-
-    iget-object v0, p0, Lmss;->a:Lmst;
-
-    invoke-virtual {v0}, Lmst;->j()V
+    iput-object p2, p0, Lmss;->b:Landroid/media/MediaCodec$BufferInfo;
 
     return-void
 .end method
 
-.method public final contains(Ljava/lang/Object;)Z
-    .locals 2
+.method public static a(Ljava/nio/ByteBuffer;Landroid/media/MediaCodec$BufferInfo;)Lmss;
+    .locals 7
 
-    iget-object v0, p0, Lmss;->a:Lmst;
+    new-instance v6, Landroid/media/MediaCodec$BufferInfo;
 
-    invoke-virtual {v0}, Lmst;->q()Ljava/util/Map;
+    invoke-direct {v6}, Landroid/media/MediaCodec$BufferInfo;-><init>()V
 
-    move-result-object v0
+    iget v2, p1, Landroid/media/MediaCodec$BufferInfo;->size:I
 
-    invoke-interface {v0}, Ljava/util/Map;->values()Ljava/util/Collection;
+    iget-wide v3, p1, Landroid/media/MediaCodec$BufferInfo;->presentationTimeUs:J
 
-    move-result-object v0
+    iget v5, p1, Landroid/media/MediaCodec$BufferInfo;->flags:I
 
-    invoke-interface {v0}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
+    const/4 v1, 0x0
 
-    move-result-object v0
+    move-object v0, v6
 
-    :cond_0
-    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
+    invoke-virtual/range {v0 .. v5}, Landroid/media/MediaCodec$BufferInfo;->set(IIJI)V
 
-    move-result v1
+    invoke-virtual {p0}, Ljava/nio/ByteBuffer;->duplicate()Ljava/nio/ByteBuffer;
 
-    if-eqz v1, :cond_1
+    move-result-object p0
 
-    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    iget v0, p1, Landroid/media/MediaCodec$BufferInfo;->offset:I
 
-    move-result-object v1
-
-    check-cast v1, Ljava/util/Collection;
-
-    invoke-interface {v1, p1}, Ljava/util/Collection;->contains(Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_0
-
-    const/4 p1, 0x1
-
-    goto :goto_0
-
-    :cond_1
-    const/4 p1, 0x0
-
-    :goto_0
-    return p1
-.end method
-
-.method public final iterator()Ljava/util/Iterator;
-    .locals 1
-
-    iget-object v0, p0, Lmss;->a:Lmst;
-
-    invoke-virtual {v0}, Lmst;->f()Ljava/util/Iterator;
+    invoke-virtual {p0, v0}, Ljava/nio/ByteBuffer;->position(I)Ljava/nio/Buffer;
 
     move-result-object v0
 
-    return-object v0
-.end method
+    check-cast v0, Ljava/nio/ByteBuffer;
 
-.method public final size()I
-    .locals 1
+    iget v0, p1, Landroid/media/MediaCodec$BufferInfo;->size:I
 
-    iget-object v0, p0, Lmss;->a:Lmst;
+    iget v1, p1, Landroid/media/MediaCodec$BufferInfo;->offset:I
 
-    invoke-virtual {v0}, Lmst;->e()I
+    add-int/2addr v0, v1
 
-    move-result v0
+    invoke-virtual {p0, v0}, Ljava/nio/ByteBuffer;->limit(I)Ljava/nio/Buffer;
 
-    return v0
+    move-result-object v0
+
+    check-cast v0, Ljava/nio/ByteBuffer;
+
+    iget p1, p1, Landroid/media/MediaCodec$BufferInfo;->size:I
+
+    invoke-static {p1}, Ljava/nio/ByteBuffer;->allocateDirect(I)Ljava/nio/ByteBuffer;
+
+    move-result-object p1
+
+    invoke-virtual {p1, p0}, Ljava/nio/ByteBuffer;->put(Ljava/nio/ByteBuffer;)Ljava/nio/ByteBuffer;
+
+    invoke-virtual {p1}, Ljava/nio/ByteBuffer;->rewind()Ljava/nio/Buffer;
+
+    move-result-object p0
+
+    check-cast p0, Ljava/nio/ByteBuffer;
+
+    new-instance p0, Lmss;
+
+    invoke-direct {p0, p1, v6}, Lmss;-><init>(Ljava/nio/ByteBuffer;Landroid/media/MediaCodec$BufferInfo;)V
+
+    return-object p0
 .end method

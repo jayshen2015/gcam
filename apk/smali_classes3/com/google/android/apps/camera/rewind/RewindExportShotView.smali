@@ -1,4 +1,4 @@
-.class Lcom/google/android/apps/camera/rewind/RewindExportShotView;
+.class public Lcom/google/android/apps/camera/rewind/RewindExportShotView;
 .super Landroid/widget/TextSwitcher;
 
 
@@ -18,7 +18,7 @@
 
     move-result-object p1
 
-    const p2, 0x7f1402ac
+    const p2, 0x7f140284
 
     invoke-virtual {p1, p2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -30,7 +30,7 @@
 
     move-result-object p1
 
-    const p2, 0x7f1402ad
+    const p2, 0x7f140285
 
     invoke-virtual {p1, p2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 

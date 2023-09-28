@@ -1,139 +1,66 @@
 .class public final Lkzi;
-.super Ljava/lang/Object;
+.super Lkno;
 
-# interfaces
-.implements Lkzg;
+
+# static fields
+.field public static final CREATOR:Landroid/os/Parcelable$Creator;
 
 
 # instance fields
-.field final synthetic a:Ljava/lang/Object;
+.field public final a:I
 
-.field private final synthetic b:I
+.field public final b:I
 
 
 # direct methods
-.method public constructor <init>(Lkzc;I)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 2
 
-    iput p2, p0, Lkzi;->b:I
+    new-instance v0, Lkza;
 
-    iput-object p1, p0, Lkzi;->a:Ljava/lang/Object;
+    const/16 v1, 0x9
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {v0, v1}, Lkza;-><init>(I)V
 
-    return-void
-.end method
-
-.method public constructor <init>(Llbh;I)V
-    .locals 0
-
-    iput p2, p0, Lkzi;->b:I
-
-    iput-object p1, p0, Lkzi;->a:Ljava/lang/Object;
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    sput-object v0, Lkzi;->CREATOR:Landroid/os/Parcelable$Creator;
 
     return-void
 .end method
 
-.method public constructor <init>(Llhe;I[B)V
+.method public constructor <init>(II)V
     .locals 0
 
+    invoke-direct {p0}, Lkno;-><init>()V
+
+    iput p1, p0, Lkzi;->a:I
+
     iput p2, p0, Lkzi;->b:I
-
-    iput-object p1, p0, Lkzi;->a:Ljava/lang/Object;
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a(Ljava/lang/Object;Ljava/util/concurrent/Executor;)Lkzc;
-    .locals 4
+.method public final writeToParcel(Landroid/os/Parcel;I)V
+    .locals 2
+
+    invoke-static {p1}, Lmip;->ct(Landroid/os/Parcel;)I
+
+    move-result p2
+
+    iget v0, p0, Lkzi;->a:I
+
+    const/4 v1, 0x2
+
+    invoke-static {p1, v1, v0}, Lmip;->cA(Landroid/os/Parcel;II)V
 
     iget v0, p0, Lkzi;->b:I
 
-    const/4 v1, 0x0
+    const/4 v1, 0x3
 
-    packed-switch v0, :pswitch_data_0
+    invoke-static {p1, v1, v0}, Lmip;->cA(Landroid/os/Parcel;II)V
 
-    check-cast p1, Lkyd;
+    invoke-static {p1, p2}, Lmip;->cv(Landroid/os/Parcel;I)V
 
-    iget-object p1, p0, Lkzi;->a:Ljava/lang/Object;
-
-    check-cast p1, Llbh;
-
-    iput-boolean v1, p1, Llbh;->c:Z
-
-    iget-object p1, p0, Lkzi;->a:Ljava/lang/Object;
-
-    check-cast p1, Llbh;
-
-    invoke-virtual {p1}, Llbh;->l()V
-
-    iget-object p1, p0, Lkzi;->a:Ljava/lang/Object;
-
-    check-cast p1, Llbh;
-
-    invoke-virtual {p1}, Llbh;->k()Lkzf;
-
-    move-result-object p1
-
-    return-object p1
-
-    :pswitch_0
-    check-cast p1, Lkzd;
-
-    iget-object v0, p0, Lkzi;->a:Ljava/lang/Object;
-
-    check-cast v0, Llhe;
-
-    invoke-virtual {v0}, Llhe;->f()Lkzf;
-
-    move-result-object v0
-
-    invoke-static {p1}, Llpm;->p(Ljava/lang/Throwable;)Lkye;
-
-    move-result-object v1
-
-    invoke-static {p1}, Llpm;->n(Ljava/lang/Throwable;)Lkye;
-
-    move-result-object p1
-
-    invoke-virtual {v0, p2, v1, p1}, Lkzf;->c(Ljava/util/concurrent/Executor;Lkye;Lkye;)Lkzc;
-
-    move-result-object p1
-
-    return-object p1
-
-    :pswitch_1
-    check-cast p1, Lkzd;
-
-    iget-object v0, p0, Lkzi;->a:Ljava/lang/Object;
-
-    new-instance v2, Lkyh;
-
-    const/4 v3, 0x2
-
-    invoke-direct {v2, p1, v3}, Lkyh;-><init>(Lkzd;I)V
-
-    new-instance v3, Lkzh;
-
-    invoke-direct {v3, p1, v1}, Lkzh;-><init>(Lkzd;I)V
-
-    invoke-interface {v0, p2, v2, v3}, Lkzc;->c(Ljava/util/concurrent/Executor;Lkye;Lkye;)Lkzc;
-
-    move-result-object p1
-
-    return-object p1
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
+    return-void
 .end method

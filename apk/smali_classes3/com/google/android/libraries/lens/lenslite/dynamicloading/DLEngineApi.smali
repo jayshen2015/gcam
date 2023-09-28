@@ -42,6 +42,9 @@
 .method public abstract setLinkHighResBitmapRequester(Lcom/google/android/libraries/lens/lenslite/api/LinkHighResBitmapRequester;)V
 .end method
 
+.method public abstract setLoggingListener(Lcom/google/android/libraries/lens/lenslite/api/LoggingListener;)V
+.end method
+
 .method public abstract setPointOfInterest(Landroid/graphics/PointF;)V
 .end method
 

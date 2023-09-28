@@ -1,234 +1,128 @@
-.class public final Lhbo;
+.class public final synthetic Lhbo;
 .super Ljava/lang/Object;
+
+# interfaces
+.implements Ljava/util/concurrent/Callable;
 
 
 # instance fields
-.field public a:Lhdu;
-
-.field private b:Z
-
-.field private c:Z
-
-.field private d:Z
-
-.field private e:Z
-
-.field private f:B
-
-.field private g:I
+.field public final synthetic a:Lhbq;
 
 
 # direct methods
-.method public constructor <init>()V
+.method public synthetic constructor <init>(Lhbq;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lhbo;->a:Lhbq;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Lhbp;
-    .locals 9
+.method public final call()Ljava/lang/Object;
+    .locals 5
 
-    iget-byte v0, p0, Lhbo;->f:B
+    iget-object v0, p0, Lhbo;->a:Lhbq;
 
-    const/16 v1, 0xf
+    iget v1, v0, Lhbq;->b:I
 
-    if-ne v0, v1, :cond_1
+    if-lez v1, :cond_1
 
-    iget-object v3, p0, Lhbo;->a:Lhdu;
+    invoke-virtual {v0}, Lhbq;->g()V
 
-    if-eqz v3, :cond_1
+    monitor-enter v0
 
-    iget v4, p0, Lhbo;->g:I
+    :try_start_0
+    new-instance v1, Ljava/util/concurrent/CountDownLatch;
 
-    if-nez v4, :cond_0
+    const/16 v2, 0xc
+
+    invoke-direct {v1, v2}, Ljava/util/concurrent/CountDownLatch;-><init>(I)V
+
+    iput-object v1, v0, Lhbq;->c:Ljava/util/concurrent/CountDownLatch;
+
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_1
+
+    :try_start_1
+    iget-object v1, v0, Lhbq;->c:Ljava/util/concurrent/CountDownLatch;
+
+    const-wide/16 v2, 0x1f4
+
+    sget-object v4, Ljava/util/concurrent/TimeUnit;->MILLISECONDS:Ljava/util/concurrent/TimeUnit;
+
+    invoke-virtual {v1, v2, v3, v4}, Ljava/util/concurrent/CountDownLatch;->await(JLjava/util/concurrent/TimeUnit;)Z
+
+    move-result v1
+
+    if-nez v1, :cond_0
+
+    iget-object v1, v0, Lhbq;->a:Llis;
+
+    const-string v2, "CountDownLatch timed out before getting 12 Gcam AE results."
+
+    invoke-interface {v1, v2}, Llis;->b(Ljava/lang/String;)V
+    :try_end_1
+    .catch Ljava/lang/InterruptedException; {:try_start_1 .. :try_end_1} :catch_0
 
     goto :goto_0
 
+    :catch_0
+    move-exception v1
+
+    iget-object v1, v0, Lhbq;->a:Llis;
+
+    const-string v2, "CountDownLatch for Gcam AE results interrupted."
+
+    invoke-interface {v1, v2}, Llis;->h(Ljava/lang/String;)V
+
+    invoke-static {}, Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/Thread;->interrupt()V
+
     :cond_0
-    new-instance v0, Lhbp;
-
-    iget-boolean v5, p0, Lhbo;->b:Z
-
-    iget-boolean v6, p0, Lhbo;->c:Z
-
-    iget-boolean v7, p0, Lhbo;->d:Z
-
-    iget-boolean v8, p0, Lhbo;->e:Z
-
-    move-object v2, v0
-
-    invoke-direct/range {v2 .. v8}, Lhbp;-><init>(Lhdu;IZZZZ)V
-
-    return-object v0
-
-    :cond_1
     :goto_0
-    new-instance v0, Ljava/lang/StringBuilder;
+    monitor-enter v0
 
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+    const/4 v1, 0x0
 
-    iget-object v1, p0, Lhbo;->a:Lhdu;
+    :try_start_2
+    iput-object v1, v0, Lhbq;->c:Ljava/util/concurrent/CountDownLatch;
 
-    if-nez v1, :cond_2
+    monitor-exit v0
 
-    const-string v1, " entry"
+    goto :goto_1
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    :catchall_0
+    move-exception v1
 
-    :cond_2
-    iget v1, p0, Lhbo;->g:I
-
-    if-nez v1, :cond_3
-
-    const-string v1, " zoomUiMode"
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    :cond_3
-    iget-byte v1, p0, Lhbo;->f:B
-
-    and-int/lit8 v1, v1, 0x1
-
-    if-nez v1, :cond_4
-
-    const-string v1, " isLayoutUpdate"
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    :cond_4
-    iget-byte v1, p0, Lhbo;->f:B
-
-    and-int/lit8 v1, v1, 0x2
-
-    if-nez v1, :cond_5
-
-    const-string v1, " isZoomInViewfinder"
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    :cond_5
-    iget-byte v1, p0, Lhbo;->f:B
-
-    and-int/lit8 v1, v1, 0x4
-
-    if-nez v1, :cond_6
-
-    const-string v1, " isVideoControlUiVisible"
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    :cond_6
-    iget-byte v1, p0, Lhbo;->f:B
-
-    and-int/lit8 v1, v1, 0x8
-
-    if-nez v1, :cond_7
-
-    const-string v1, " isZoomToggleEnabled"
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    :cond_7
-    new-instance v1, Ljava/lang/IllegalStateException;
-
-    invoke-virtual {v0}, Ljava/lang/Object;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    const-string v2, "Missing required properties:"
-
-    invoke-virtual {v2, v0}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-direct {v1, v0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+    monitor-exit v0
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
     throw v1
-.end method
 
-.method public final b(Z)V
-    .locals 0
+    :catchall_1
+    move-exception v1
 
-    iput-boolean p1, p0, Lhbo;->b:Z
+    :try_start_3
+    monitor-exit v0
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_1
 
-    iget-byte p1, p0, Lhbo;->f:B
+    throw v1
 
-    or-int/lit8 p1, p1, 0x1
+    :cond_1
+    :goto_1
+    invoke-virtual {v0}, Lhbq;->b()Lhbs;
 
-    int-to-byte p1, p1
+    move-result-object v0
 
-    iput-byte p1, p0, Lhbo;->f:B
-
-    return-void
-.end method
-
-.method public final c(Z)V
-    .locals 0
-
-    iput-boolean p1, p0, Lhbo;->d:Z
-
-    iget-byte p1, p0, Lhbo;->f:B
-
-    or-int/lit8 p1, p1, 0x4
-
-    int-to-byte p1, p1
-
-    iput-byte p1, p0, Lhbo;->f:B
-
-    return-void
-.end method
-
-.method public final d(Z)V
-    .locals 0
-
-    iput-boolean p1, p0, Lhbo;->c:Z
-
-    iget-byte p1, p0, Lhbo;->f:B
-
-    or-int/lit8 p1, p1, 0x2
-
-    int-to-byte p1, p1
-
-    iput-byte p1, p0, Lhbo;->f:B
-
-    return-void
-.end method
-
-.method public final e(Z)V
-    .locals 0
-
-    iput-boolean p1, p0, Lhbo;->e:Z
-
-    iget-byte p1, p0, Lhbo;->f:B
-
-    or-int/lit8 p1, p1, 0x8
-
-    int-to-byte p1, p1
-
-    iput-byte p1, p0, Lhbo;->f:B
-
-    return-void
-.end method
-
-.method public final f(I)V
-    .locals 1
-
-    if-eqz p1, :cond_0
-
-    iput p1, p0, Lhbo;->g:I
-
-    return-void
-
-    :cond_0
-    new-instance p1, Ljava/lang/NullPointerException;
-
-    const-string v0, "Null zoomUiMode"
-
-    invoke-direct {p1, v0}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
-
-    throw p1
+    return-object v0
 .end method

@@ -1,234 +1,166 @@
 .class public final Lmza;
-.super Lmwn;
-
-
-# static fields
-.field public static final a:Lmza;
-
-.field private static final e:[Ljava/lang/Object;
+.super Ljava/lang/Object;
 
 
 # instance fields
-.field final transient b:[Ljava/lang/Object;
-
-.field public final transient c:I
-
-.field final transient d:[Ljava/lang/Object;
-
-.field private final transient f:I
-
-.field private final transient g:I
+.field private final a:Lmul;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 7
+.method public constructor <init>()V
+    .locals 0
 
-    const/4 v0, 0x0
-
-    new-array v4, v0, [Ljava/lang/Object;
-
-    sput-object v4, Lmza;->e:[Ljava/lang/Object;
-
-    new-instance v0, Lmza;
-
-    const/4 v3, 0x0
-
-    const/4 v5, 0x0
-
-    const/4 v6, 0x0
-
-    move-object v1, v0
-
-    move-object v2, v4
-
-    invoke-direct/range {v1 .. v6}, Lmza;-><init>([Ljava/lang/Object;I[Ljava/lang/Object;II)V
-
-    sput-object v0, Lmza;->a:Lmza;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
-.method public constructor <init>([Ljava/lang/Object;I[Ljava/lang/Object;II)V
+.method public constructor <init>(Lmul;)V
     .locals 0
 
-    invoke-direct {p0}, Lmwn;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lmza;->b:[Ljava/lang/Object;
-
-    iput p2, p0, Lmza;->c:I
-
-    iput-object p3, p0, Lmza;->d:[Ljava/lang/Object;
-
-    iput p4, p0, Lmza;->f:I
-
-    iput p5, p0, Lmza;->g:I
+    iput-object p1, p0, Lmza;->a:Lmul;
 
     return-void
+.end method
+
+.method public static a(Landroid/app/Activity;)Lmza;
+    .locals 2
+
+    new-instance v0, Lmza;
+
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    move-result-object p0
+
+    new-instance v1, Lmul;
+
+    invoke-virtual {p0}, Ljava/lang/Class;->getName()Ljava/lang/String;
+
+    move-result-object p0
+
+    invoke-direct {v1, p0}, Lmul;-><init>(Ljava/lang/String;)V
+
+    invoke-direct {v0, v1}, Lmza;-><init>(Lmul;)V
+
+    return-object v0
 .end method
 
 
 # virtual methods
-.method public final A()[Ljava/lang/Object;
+.method public final b()Ljava/lang/String;
     .locals 1
 
-    iget-object v0, p0, Lmza;->b:[Ljava/lang/Object;
+    iget-object v0, p0, Lmza;->a:Lmul;
+
+    iget-object v0, v0, Lmul;->a:Ljava/lang/String;
 
     return-object v0
 .end method
 
-.method public final C()Lmvv;
+.method public final equals(Ljava/lang/Object;)Z
     .locals 2
 
-    iget-object v0, p0, Lmza;->b:[Ljava/lang/Object;
-
-    iget v1, p0, Lmza;->g:I
-
-    invoke-static {v0, v1}, Lmvv;->h([Ljava/lang/Object;I)Lmvv;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public final cA()Z
-    .locals 1
-
-    const/4 v0, 0x0
-
-    return v0
-.end method
-
-.method public final contains(Ljava/lang/Object;)Z
-    .locals 4
-
-    iget-object v0, p0, Lmza;->d:[Ljava/lang/Object;
+    instance-of v0, p1, Lmza;
 
     const/4 v1, 0x0
 
-    if-eqz p1, :cond_3
-
-    array-length v2, v0
-
-    if-nez v2, :cond_0
-
-    goto :goto_1
-
-    :cond_0
-    invoke-static {p1}, Llyh;->aa(Ljava/lang/Object;)I
-
-    move-result v2
-
-    :goto_0
-    iget v3, p0, Lmza;->f:I
-
-    and-int/2addr v2, v3
-
-    aget-object v3, v0, v2
-
-    if-nez v3, :cond_1
+    if-nez v0, :cond_0
 
     return v1
 
-    :cond_1
-    invoke-virtual {v3, p1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+    :cond_0
+    check-cast p1, Lmza;
 
-    move-result v3
+    invoke-virtual {p0}, Lmza;->b()Ljava/lang/String;
 
-    if-eqz v3, :cond_2
+    move-result-object v0
+
+    invoke-virtual {p1}, Lmza;->b()Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-virtual {v0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result p1
+
+    if-eqz p1, :cond_1
 
     const/4 p1, 0x1
 
     return p1
 
-    :cond_2
-    add-int/lit8 v2, v2, 0x1
-
-    goto :goto_0
-
-    :cond_3
-    :goto_1
+    :cond_1
     return v1
-.end method
-
-.method public final cz()Lnac;
-    .locals 1
-
-    invoke-virtual {p0}, Lmvm;->v()Lmvv;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lmvv;->s()Lnad;
-
-    move-result-object v0
-
-    return-object v0
 .end method
 
 .method public final hashCode()I
     .locals 1
 
-    iget v0, p0, Lmza;->c:I
+    invoke-virtual {p0}, Lmza;->b()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/String;->hashCode()I
+
+    move-result v0
+
+    mul-int/lit8 v0, v0, 0x1f
+
+    xor-int/lit16 v0, v0, 0x4cf
 
     return v0
 .end method
 
-.method public final bridge synthetic iterator()Ljava/util/Iterator;
-    .locals 1
+.method public final toString()Ljava/lang/String;
+    .locals 4
 
-    invoke-virtual {p0}, Lmza;->cz()Lnac;
+    iget-object v0, p0, Lmza;->a:Lmul;
+
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v0
+
+    const/4 v1, 0x0
+
+    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/String;->length()I
+
+    move-result v1
+
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/String;->length()I
+
+    move-result v2
+
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    add-int/lit8 v1, v1, 0x46
+
+    add-int/2addr v1, v2
+
+    invoke-direct {v3, v1}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string v1, "MeasurementKey{rawStringEventName=null, noPiiEventName="
+
+    invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v0, ", isActivity=true}"
+
+    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v0
 
     return-object v0
-.end method
-
-.method public final size()I
-    .locals 1
-
-    iget v0, p0, Lmza;->g:I
-
-    return v0
-.end method
-
-.method public final w()Z
-    .locals 1
-
-    const/4 v0, 0x1
-
-    return v0
-.end method
-
-.method public final x([Ljava/lang/Object;I)I
-    .locals 3
-
-    iget-object v0, p0, Lmza;->b:[Ljava/lang/Object;
-
-    const/4 v1, 0x0
-
-    iget v2, p0, Lmza;->g:I
-
-    invoke-static {v0, v1, p1, p2, v2}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
-
-    iget p1, p0, Lmza;->g:I
-
-    add-int/2addr p2, p1
-
-    return p2
-.end method
-
-.method public final y()I
-    .locals 1
-
-    iget v0, p0, Lmza;->g:I
-
-    return v0
-.end method
-
-.method public final z()I
-    .locals 1
-
-    const/4 v0, 0x0
-
-    return v0
 .end method

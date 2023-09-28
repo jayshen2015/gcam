@@ -1,52 +1,101 @@
-.class final Lgvk;
-.super Lcom/google/android/apps/camera/ui/layout/GcaLayout;
+.class public final Lgvk;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Liho;
+.implements Lfik;
+.implements Lfhk;
+
+
+# instance fields
+.field public final a:Landroid/content/Context;
+
+.field public final b:Lfhi;
+
+.field public final c:Lbus;
+
+.field public final d:Llar;
+
+.field private final e:Ljava/util/concurrent/Executor;
+
+.field private final f:Lljf;
 
 
 # direct methods
-.method public constructor <init>(Landroid/content/Context;)V
+.method public constructor <init>(Landroid/content/Context;Ljava/util/concurrent/Executor;Lljf;Lfhi;Lbus;Llar;)V
     .locals 0
 
-    invoke-direct {p0, p1}, Lcom/google/android/apps/camera/ui/layout/GcaLayout;-><init>(Landroid/content/Context;)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-virtual {p0}, Lgvk;->toString()Ljava/lang/String;
+    iput-object p1, p0, Lgvk;->a:Landroid/content/Context;
 
-    move-result-object p1
+    iput-object p2, p0, Lgvk;->e:Ljava/util/concurrent/Executor;
 
-    invoke-virtual {p0, p1}, Lgvk;->setTag(Ljava/lang/Object;)V
+    iput-object p3, p0, Lgvk;->f:Lljf;
 
-    const/16 p1, 0x8
+    iput-object p4, p0, Lgvk;->b:Lfhi;
 
-    invoke-virtual {p0, p1}, Lgvk;->setVisibility(I)V
+    iput-object p5, p0, Lgvk;->c:Lbus;
+
+    iput-object p6, p0, Lgvk;->d:Llar;
 
     return-void
 .end method
 
-.method public static final a()Lnou;
-    .locals 3
 
-    invoke-static {}, Lnph;->g()Lnph;
+# virtual methods
+.method public final a()V
+    .locals 4
 
-    move-result-object v0
+    iget-object v0, p0, Lgvk;->e:Ljava/util/concurrent/Executor;
 
-    invoke-static {}, Landroid/view/Choreographer;->getInstance()Landroid/view/Choreographer;
-
-    move-result-object v1
+    iget-object v1, p0, Lgvk;->f:Lljf;
 
     new-instance v2, Lgvj;
 
-    invoke-direct {v2, v0}, Lgvj;-><init>(Lnph;)V
+    const/4 v3, 0x1
 
-    invoke-virtual {v1, v2}, Landroid/view/Choreographer;->postFrameCallback(Landroid/view/Choreographer$FrameCallback;)V
+    invoke-direct {v2, p0, v3}, Lgvj;-><init>(Lgvk;I)V
 
-    return-object v0
+    const-string v3, "PhenotypeHelper#commitFlags"
+
+    invoke-interface {v1, v3, v2}, Lljf;->c(Ljava/lang/String;Ljava/lang/Runnable;)Ljava/lang/Runnable;
+
+    move-result-object v1
+
+    invoke-interface {v0, v1}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
+
+    return-void
 .end method
 
-
-# virtual methods
-.method public final onTouchEvent(Landroid/view/MotionEvent;)Z
+.method public final b()V
     .locals 0
 
-    const/4 p1, 0x1
+    invoke-virtual {p0}, Lgvk;->a()V
 
-    return p1
+    return-void
+.end method
+
+.method public final run()V
+    .locals 4
+
+    iget-object v0, p0, Lgvk;->e:Ljava/util/concurrent/Executor;
+
+    iget-object v1, p0, Lgvk;->f:Lljf;
+
+    new-instance v2, Lgvj;
+
+    const/4 v3, 0x0
+
+    invoke-direct {v2, p0, v3}, Lgvj;-><init>(Lgvk;I)V
+
+    const-string v3, "PhenotypeHelper#retrieveFlags"
+
+    invoke-interface {v1, v3, v2}, Lljf;->c(Ljava/lang/String;Ljava/lang/Runnable;)Ljava/lang/Runnable;
+
+    move-result-object v1
+
+    invoke-interface {v0, v1}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
+
+    return-void
 .end method

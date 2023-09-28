@@ -1,120 +1,82 @@
-.class final Lfdh;
-.super Lfdp;
+.class public final Lfdh;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Lavu;
 
 
 # instance fields
-.field final synthetic a:Lfdm;
+.field final synthetic a:Lfet;
+
+.field final synthetic b:Lfdj;
 
 
 # direct methods
-.method public constructor <init>(Lfdm;)V
+.method public constructor <init>(Lfdj;Lfet;)V
     .locals 0
 
-    iput-object p1, p0, Lfdh;->a:Lfdm;
+    iput-object p1, p0, Lfdh;->b:Lfdj;
 
-    invoke-direct {p0, p1}, Lfdp;-><init>(Lfdu;)V
+    iput-object p2, p0, Lfdh;->a:Lfet;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final b()V
+.method public final a(ZLawl;)V
     .locals 2
 
-    iget-object v0, p0, Lfdh;->a:Lfdm;
+    iget-object p1, p0, Lfdh;->b:Lfdj;
 
-    iget-object v0, v0, Lfdm;->a:Lhiu;
+    iget-object p1, p1, Lfdj;->b:Lfdm;
 
-    invoke-virtual {v0}, Lhiu;->e()V
+    iget-object p2, p1, Lfdm;->E:Lfeg;
 
-    iget-object v0, p0, Lfdh;->a:Lfdm;
+    const-wide/16 v0, 0x0
 
-    iget-object v1, v0, Lfdm;->a:Lhiu;
+    invoke-virtual {p2, v0, v1}, Lfeg;->c(D)V
 
-    iget-object v0, v0, Lfdm;->e:Lhiw;
+    iget-object p2, p1, Lfdm;->d:Lfdv;
 
-    invoke-virtual {v1, v0}, Lhiu;->g(Lhiw;)V
+    iget-object v0, p1, Lfdm;->E:Lfeg;
 
-    return-void
-.end method
+    invoke-virtual {v0}, Lfeg;->f()[F
 
-.method public final bW()V
-    .locals 2
+    move-result-object v0
 
-    iget-object v0, p0, Lfdh;->a:Lfdm;
+    invoke-virtual {p2, v0}, Lfdv;->b([F)V
 
-    iget-object v0, v0, Lfdm;->a:Lhiu;
+    iget-boolean p2, p1, Lfdm;->n:Z
 
-    invoke-virtual {v0}, Lhiu;->e()V
+    const/4 v0, 0x1
 
-    iget-object v0, p0, Lfdh;->a:Lfdm;
+    if-eqz p2, :cond_0
 
-    iget-object v1, v0, Lfdm;->a:Lhiu;
+    iget p2, p1, Lfdm;->G:I
 
-    iget-object v0, v0, Lfdm;->f:Lhiw;
+    if-ne p2, v0, :cond_0
 
-    invoke-virtual {v1, v0}, Lhiu;->g(Lhiw;)V
+    iget-object p2, p1, Lfdm;->e:Lcom/google/android/apps/camera/legacy/lightcycle/ui/PhotoSphereMessageOverlay;
 
-    return-void
-.end method
+    iget v1, p1, Lfdm;->x:I
 
-.method public final c()V
-    .locals 2
+    invoke-virtual {p2, v1}, Lcom/google/android/apps/camera/legacy/lightcycle/ui/PhotoSphereMessageOverlay;->c(I)V
 
-    iget-object v0, p0, Lfdh;->a:Lfdm;
+    :cond_0
+    iput-boolean v0, p1, Lfdm;->u:Z
 
-    iget-object v0, v0, Lfdm;->a:Lhiu;
+    iget-object p1, p0, Lfdh;->b:Lfdj;
 
-    invoke-virtual {v0}, Lhiu;->e()V
+    iput-boolean v0, p1, Lfdj;->u:Z
 
-    iget-object v0, p0, Lfdh;->a:Lfdm;
+    iget-object p1, p0, Lfdh;->a:Lfet;
 
-    iget-object v1, v0, Lfdm;->a:Lhiu;
+    const/4 p2, 0x0
 
-    iget-object v0, v0, Lfdm;->d:Lhiw;
-
-    invoke-virtual {v1, v0}, Lhiu;->g(Lhiw;)V
-
-    return-void
-.end method
-
-.method public final d()V
-    .locals 2
-
-    iget-object v0, p0, Lfdh;->a:Lfdm;
-
-    iget-object v0, v0, Lfdm;->a:Lhiu;
-
-    invoke-virtual {v0}, Lhiu;->e()V
-
-    iget-object v0, p0, Lfdh;->a:Lfdm;
-
-    iget-object v1, v0, Lfdm;->a:Lhiu;
-
-    iget-object v0, v0, Lfdm;->b:Lhiw;
-
-    invoke-virtual {v1, v0}, Lhiu;->g(Lhiw;)V
-
-    return-void
-.end method
-
-.method public final i()V
-    .locals 2
-
-    iget-object v0, p0, Lfdh;->a:Lfdm;
-
-    iget-object v0, v0, Lfdm;->a:Lhiu;
-
-    invoke-virtual {v0}, Lhiu;->e()V
-
-    iget-object v0, p0, Lfdh;->a:Lfdm;
-
-    iget-object v1, v0, Lfdm;->a:Lhiu;
-
-    iget-object v0, v0, Lfdm;->g:Lhiw;
-
-    invoke-virtual {v1, v0}, Lhiu;->g(Lhiw;)V
+    invoke-interface {p1, p2}, Lfet;->a(Ljava/lang/Object;)V
 
     return-void
 .end method

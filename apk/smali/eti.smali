@@ -1,63 +1,57 @@
 .class public final Leti;
-.super Lcom/google/android/apps/camera/bottombar/BottomBarListener;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Lpys;
 
 
 # instance fields
-.field final synthetic a:Ldbf;
-
-.field public final synthetic b:Letp;
-
-.field final synthetic c:Lijx;
+.field private final a:Lete;
 
 
 # direct methods
-.method public constructor <init>(Letp;Lijx;Ldbf;)V
+.method public constructor <init>(Lete;)V
     .locals 0
 
-    iput-object p1, p0, Leti;->b:Letp;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p2, p0, Leti;->c:Lijx;
-
-    iput-object p3, p0, Leti;->a:Ldbf;
-
-    invoke-direct {p0}, Lcom/google/android/apps/camera/bottombar/BottomBarListener;-><init>()V
+    iput-object p1, p0, Leti;->a:Lete;
 
     return-void
+.end method
+
+.method public static a(Lete;)Leti;
+    .locals 1
+
+    new-instance v0, Leti;
+
+    invoke-direct {v0, p0}, Leti;-><init>(Lete;)V
+
+    return-object v0
 .end method
 
 
 # virtual methods
-.method public final onCameraSwitchButtonClicked()V
-    .locals 4
+.method public final b()Lemb;
+    .locals 2
 
-    iget-object v0, p0, Leti;->c:Lijx;
+    iget-object v0, p0, Leti;->a:Lete;
 
-    iget-boolean v0, v0, Lijx;->h:Z
+    new-instance v1, Lemb;
 
-    if-nez v0, :cond_0
+    iget-object v0, v0, Lete;->a:Letd;
 
-    iget-object v0, p0, Leti;->a:Ldbf;
+    invoke-direct {v1, v0}, Lemb;-><init>(Landroid/app/Activity;)V
 
-    invoke-virtual {v0}, Ldbf;->d()Lklv;
+    return-object v1
+.end method
+
+.method public final bridge synthetic get()Ljava/lang/Object;
+    .locals 1
+
+    invoke-virtual {p0}, Leti;->b()Lemb;
 
     move-result-object v0
 
-    iget-object v1, p0, Leti;->a:Ldbf;
-
-    new-instance v2, Lekf;
-
-    const/16 v3, 0x12
-
-    invoke-direct {v2, p0, v0, v3}, Lekf;-><init>(Leti;Lklv;I)V
-
-    invoke-virtual {v1, v2}, Ldbf;->h(Ljava/lang/Runnable;)V
-
-    :cond_0
-    return-void
-.end method
-
-.method public final onThumbnailButtonClicked()V
-    .locals 0
-
-    return-void
+    return-object v0
 .end method

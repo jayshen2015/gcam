@@ -1,56 +1,34 @@
 .class public final Ljra;
-.super Ljhn;
-
-
-# static fields
-.field public static final CREATOR:Landroid/os/Parcelable$Creator;
+.super Landroid/animation/AnimatorListenerAdapter;
 
 
 # instance fields
-.field public final a:I
+.field final synthetic a:Lcom/google/android/apps/camera/ui/zoomlock/ZoomLockView;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
-
-    new-instance v0, Ljqn;
-
-    const/16 v1, 0x9
-
-    invoke-direct {v0, v1}, Ljqn;-><init>(I)V
-
-    sput-object v0, Ljra;->CREATOR:Landroid/os/Parcelable$Creator;
-
-    return-void
-.end method
-
-.method public constructor <init>(I)V
+.method public constructor <init>(Lcom/google/android/apps/camera/ui/zoomlock/ZoomLockView;)V
     .locals 0
 
-    invoke-direct {p0}, Ljhn;-><init>()V
+    iput-object p1, p0, Ljra;->a:Lcom/google/android/apps/camera/ui/zoomlock/ZoomLockView;
 
-    iput p1, p0, Ljra;->a:I
+    invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final writeToParcel(Landroid/os/Parcel;I)V
+.method public final onAnimationStart(Landroid/animation/Animator;)V
     .locals 2
 
-    invoke-static {p1}, Ljhp;->a(Landroid/os/Parcel;)I
+    iget-object v0, p0, Ljra;->a:Lcom/google/android/apps/camera/ui/zoomlock/ZoomLockView;
 
-    move-result p2
+    const/4 v1, 0x0
 
-    iget v0, p0, Ljra;->a:I
+    invoke-virtual {v0, v1}, Lcom/google/android/apps/camera/ui/zoomlock/ZoomLockView;->setVisibility(I)V
 
-    const/4 v1, 0x2
-
-    invoke-static {p1, v1, v0}, Ljhp;->g(Landroid/os/Parcel;II)V
-
-    invoke-static {p1, p2}, Ljhp;->c(Landroid/os/Parcel;I)V
+    invoke-super {p0, p1}, Landroid/animation/AnimatorListenerAdapter;->onAnimationStart(Landroid/animation/Animator;)V
 
     return-void
 .end method

@@ -1,36 +1,48 @@
-.class public final Llcx;
-.super Llcw;
+.class final Llcx;
+.super Lldn;
+
+
+# instance fields
+.field final synthetic a:Loiu;
+
+.field final synthetic b:Loiu;
 
 
 # direct methods
-.method public constructor <init>(I)V
+.method public constructor <init>(Llda;Loiu;Loiu;)V
     .locals 0
 
-    invoke-direct {p0, p1}, Llcw;-><init>(I)V
+    iput-object p2, p0, Llcx;->a:Loiu;
+
+    iput-object p3, p0, Llcx;->b:Loiu;
+
+    invoke-direct {p0, p1}, Lldn;-><init>(Llda;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final b(Ljava/lang/String;)I
+.method protected final b(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 1
 
-    iget v0, p0, Llcx;->b:I
+    iget-object v0, p0, Llcx;->a:Loiu;
 
-    invoke-static {v0, p1}, Landroid/opengl/GLES20;->glGetUniformLocation(ILjava/lang/String;)I
+    invoke-interface {v0, p1}, Loiu;->a(Ljava/lang/Object;)Ljava/lang/Object;
 
-    move-result p1
+    move-result-object p1
 
-    return p1
+    return-object p1
 .end method
 
-.method protected final c()V
+.method protected final c(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 1
 
-    iget v0, p0, Llcx;->b:I
+    iget-object v0, p0, Llcx;->b:Loiu;
 
-    invoke-static {v0}, Landroid/opengl/GLES20;->glDeleteProgram(I)V
+    invoke-interface {v0, p1}, Loiu;->a(Ljava/lang/Object;)Ljava/lang/Object;
 
-    return-void
+    move-result-object p1
+
+    return-object p1
 .end method

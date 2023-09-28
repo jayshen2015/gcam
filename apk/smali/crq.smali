@@ -1,89 +1,30 @@
-.class public final Lcrq;
-.super Ljava/lang/Object;
-
-# interfaces
-.implements Lcro;
+.class public Lcrq;
+.super Lcrp;
 
 
 # instance fields
-.field private final a:Landroid/util/Range;
-
-.field private final b:Lmqp;
-
-.field private final c:Z
+.field final synthetic b:Lcrs;
 
 
 # direct methods
-.method public constructor <init>(Landroid/util/Range;Lmqp;Z)V
+.method public constructor <init>(Lcrs;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lcrq;->b:Lcrs;
 
-    iput-object p1, p0, Lcrq;->a:Landroid/util/Range;
-
-    iput-object p2, p0, Lcrq;->b:Lmqp;
-
-    iput-boolean p3, p0, Lcrq;->c:Z
+    invoke-direct {p0}, Lcrp;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Landroid/util/Range;
-    .locals 2
+.method public a(Lghx;)V
+    .locals 1
 
-    iget-boolean v0, p0, Lcrq;->c:Z
+    iget-object v0, p0, Lcrq;->b:Lcrs;
 
-    if-eqz v0, :cond_0
+    iput-object p1, v0, Lcrs;->f:Lghx;
 
-    iget-object v0, p0, Lcrq;->b:Lmqp;
-
-    invoke-virtual {v0}, Lmqp;->g()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_0
-
-    invoke-virtual {v0}, Lmqp;->c()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/util/Range;
-
-    return-object v0
-
-    :cond_0
-    iget-object v0, p0, Lcrq;->a:Landroid/util/Range;
-
-    return-object v0
-.end method
-
-.method public final b()Landroid/util/Range;
-    .locals 2
-
-    iget-boolean v0, p0, Lcrq;->c:Z
-
-    if-eqz v0, :cond_0
-
-    iget-object v0, p0, Lcrq;->b:Lmqp;
-
-    invoke-virtual {v0}, Lmqp;->g()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_0
-
-    invoke-virtual {v0}, Lmqp;->c()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/util/Range;
-
-    return-object v0
-
-    :cond_0
-    iget-object v0, p0, Lcrq;->a:Landroid/util/Range;
-
-    return-object v0
+    return-void
 .end method

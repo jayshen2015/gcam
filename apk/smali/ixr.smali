@@ -1,59 +1,128 @@
-.class public final Lixr;
-.super Ljava/lang/Object;
+.class Lixr;
+.super Lixk;
 
 
 # instance fields
-.field public final a:[I
-
-.field public final b:[I
-
-.field public c:Z
+.field final synthetic a:Lixx;
 
 
 # direct methods
-.method public constructor <init>([I)V
-    .locals 1
+.method public constructor <init>(Lixx;)V
+    .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lixr;->a:Lixx;
 
-    const/4 v0, 0x0
-
-    iput-boolean v0, p0, Lixr;->c:Z
-
-    iput-object p1, p0, Lixr;->a:[I
-
-    const/16 p1, 0xc
-
-    new-array p1, p1, [I
-
-    iput-object p1, p0, Lixr;->b:[I
+    invoke-direct {p0}, Lixk;-><init>()V
 
     return-void
 .end method
 
-.method public static final a(Landroid/content/res/TypedArray;I)Z
+
+# virtual methods
+.method public c()V
+    .locals 0
+
+    return-void
+.end method
+
+.method public d()V
+    .locals 0
+
+    return-void
+.end method
+
+.method public final f()V
+    .locals 3
+
+    iget-object v0, p0, Lixr;->a:Lixx;
+
+    invoke-virtual {v0}, Lixx;->x()V
+
+    iget-object v0, p0, Lixr;->a:Lixx;
+
+    iget-object v0, v0, Lixx;->e:Lgfy;
+
+    invoke-virtual {v0}, Lgfy;->a()V
+
+    iget-object v0, p0, Lixr;->a:Lixx;
+
+    iget-object v0, v0, Lixx;->b:Ljfn;
+
+    sget-object v1, Ljrl;->b:Ljrl;
+
+    iget-object v2, p0, Lixr;->a:Lixx;
+
+    iget-boolean v2, v2, Lixx;->m:Z
+
+    invoke-interface {v0, v1, v2}, Ljfn;->j(Ljrl;Z)V
+
+    iget-object v0, p0, Lixr;->a:Lixx;
+
+    const/4 v1, 0x1
+
+    iput-boolean v1, v0, Lixx;->m:Z
+
+    sget-object v1, Ljrl;->b:Ljrl;
+
+    invoke-virtual {v0, v1}, Lixx;->A(Ljrl;)V
+
+    return-void
+.end method
+
+.method public final g()V
     .locals 1
 
-    invoke-virtual {p0, p1}, Landroid/content/res/TypedArray;->hasValue(I)Z
+    iget-object v0, p0, Lixr;->a:Lixx;
 
-    move-result v0
+    invoke-virtual {v0}, Lixx;->y()V
 
-    if-eqz v0, :cond_0
+    iget-object v0, p0, Lixr;->a:Lixx;
 
-    invoke-virtual {p0, p1}, Landroid/content/res/TypedArray;->getType(I)I
+    iget-object v0, v0, Lixx;->j:Ljhh;
 
-    move-result p0
+    invoke-virtual {v0}, Ljhh;->a()V
 
-    const/4 p1, 0x2
+    return-void
+.end method
 
-    if-eq p0, p1, :cond_0
+.method public i()V
+    .locals 0
 
-    const/4 p0, 0x1
+    return-void
+.end method
 
-    return p0
+.method public j()V
+    .locals 0
 
-    :cond_0
-    const/4 p0, 0x0
+    return-void
+.end method
 
-    return p0
+.method public l()V
+    .locals 0
+
+    return-void
+.end method
+
+.method public m()V
+    .locals 0
+
+    return-void
+.end method
+
+.method public n()V
+    .locals 0
+
+    return-void
+.end method
+
+.method public o()V
+    .locals 0
+
+    return-void
+.end method
+
+.method public p()V
+    .locals 0
+
+    return-void
 .end method

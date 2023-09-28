@@ -2,39 +2,37 @@
 .super Ljava/lang/Object;
 
 
-# static fields
-.field public static final a:Loon;
+# instance fields
+.field public final a:Lqqj;
 
-.field public static final b:Loon;
-
-.field public static final c:Loon;
+.field public final b:Lqqf;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
+.method public constructor <init>(Lqqj;Lqqf;Lqmj;Lqmj;)V
+    .locals 0
 
-    const/4 v0, 0x0
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-static {v0}, Lolp;->i(I)Loon;
+    iput-object p1, p0, Lwn;->a:Lqqj;
 
-    move-result-object v1
+    iput-object p2, p0, Lwn;->b:Lqqf;
 
-    sput-object v1, Lwn;->a:Loon;
+    new-instance p1, Lwm;
 
-    invoke-static {v0}, Lolp;->i(I)Loon;
+    const/4 p2, 0x0
 
-    move-result-object v1
+    invoke-direct {p1, p3, p2}, Lwm;-><init>(Lqmj;I)V
 
-    sput-object v1, Lwn;->b:Loon;
+    invoke-static {p1}, Lqmd;->N(Lqmj;)Lqkj;
 
-    invoke-static {v0}, Lolp;->i(I)Loon;
+    new-instance p1, Lwm;
 
-    move-result-object v1
+    const/4 p2, 0x1
 
-    sput-object v1, Lwn;->c:Loon;
+    invoke-direct {p1, p4, p2}, Lwm;-><init>(Lqmj;I)V
 
-    invoke-static {v0}, Lolp;->i(I)Loon;
+    invoke-static {p1}, Lqmd;->N(Lqmj;)Lqkj;
 
     return-void
 .end method

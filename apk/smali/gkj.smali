@@ -1,351 +1,209 @@
-.class public final Lgkj;
+.class public final synthetic Lgkj;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Logk;
+.implements Loiu;
 
 
 # instance fields
-.field private final synthetic a:I
+.field public final synthetic a:Lgko;
+
+.field public final synthetic b:Ljava/util/List;
 
 
 # direct methods
-.method public constructor <init>(I)V
+.method public synthetic constructor <init>(Lgko;Ljava/util/List;)V
     .locals 0
 
-    iput p1, p0, Lgkj;->a:I
-
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lgkj;->a:Lgko;
+
+    iput-object p2, p0, Lgkj;->b:Ljava/util/List;
 
     return-void
 .end method
 
-.method public static a()Lghp;
-    .locals 1
-
-    new-instance v0, Lghp;
-
-    invoke-direct {v0}, Lghp;-><init>()V
-
-    return-object v0
-.end method
-
-.method public static b()Lgqv;
-    .locals 1
-
-    new-instance v0, Lgqv;
-
-    invoke-direct {v0}, Lgqv;-><init>()V
-
-    return-object v0
-.end method
-
-.method public static c()Lgkj;
-    .locals 2
-
-    new-instance v0, Lgkj;
-
-    const/16 v1, 0x10
-
-    invoke-direct {v0, v1}, Lgkj;-><init>(I)V
-
-    return-object v0
-.end method
-
 
 # virtual methods
-.method public final synthetic get()Ljava/lang/Object;
-    .locals 5
+.method public final a(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 11
 
-    iget v0, p0, Lgkj;->a:I
+    iget-object v0, p0, Lgkj;->a:Lgko;
 
-    packed-switch v0, :pswitch_data_0
+    iget-object v1, p0, Lgkj;->b:Ljava/util/List;
 
-    new-instance v0, Lgsj;
+    check-cast p1, Ljava/lang/Integer;
 
-    invoke-direct {v0}, Lgsj;-><init>()V
+    invoke-virtual {p1}, Ljava/lang/Integer;->intValue()I
 
-    return-object v0
+    move-result v2
 
-    :pswitch_0
-    new-instance v0, Lgsd;
+    invoke-interface {v1}, Ljava/util/List;->size()I
 
-    invoke-direct {v0}, Lgsd;-><init>()V
+    move-result v3
 
-    return-object v0
+    invoke-static {v2, v3}, Lobr;->aX(II)V
 
-    :pswitch_1
-    new-instance v0, Lgsd;
+    const/4 v2, 0x0
 
-    invoke-direct {v0}, Lgsd;-><init>()V
+    const/4 v3, 0x0
 
-    return-object v0
+    const/4 v4, 0x0
 
-    :pswitch_2
-    invoke-static {}, Lgkj;->b()Lgqv;
+    :goto_0
+    invoke-interface {v1}, Ljava/util/List;->size()I
 
-    move-result-object v0
+    move-result v5
 
-    return-object v0
+    if-ge v4, v5, :cond_1
 
-    :pswitch_3
-    invoke-static {}, Lgkj;->b()Lgqv;
+    invoke-virtual {p1}, Ljava/lang/Integer;->intValue()I
 
-    move-result-object v0
+    move-result v5
 
-    return-object v0
+    if-ne v4, v5, :cond_0
 
-    :pswitch_4
-    invoke-static {}, Llmf;->c()Llme;
+    invoke-interface {v1, v4}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
-    move-result-object v0
+    move-result-object v3
 
-    sget-object v1, Logx;->a:Logx;
+    check-cast v3, Lmad;
 
-    invoke-virtual {v1}, Logx;->b()Logy;
+    goto :goto_1
 
-    move-result-object v1
+    :cond_0
+    invoke-interface {v1, v4}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
-    invoke-interface {v1}, Logy;->e()Z
+    move-result-object v5
 
-    move-result v1
+    check-cast v5, Lgjs;
 
-    invoke-virtual {v0, v1}, Llme;->b(Z)V
+    invoke-virtual {v5}, Lmaa;->close()V
 
-    invoke-virtual {v0}, Llme;->a()Llmf;
-
-    move-result-object v0
-
-    return-object v0
-
-    :pswitch_5
-    invoke-static {}, Llma;->c()Lllz;
-
-    move-result-object v0
-
-    sget-object v1, Logx;->a:Logx;
-
-    invoke-virtual {v1}, Logx;->b()Logy;
-
-    move-result-object v1
-
-    invoke-interface {v1}, Logy;->d()Z
-
-    move-result v1
-
-    invoke-virtual {v0, v1}, Lllz;->b(Z)V
-
-    sget v1, Lmvv;->d:I
-
-    sget-object v1, Lmyu;->a:Lmvv;
-
-    new-instance v2, Lllv;
-
-    const/4 v3, 0x3
-
-    const/4 v4, 0x5
-
-    invoke-direct {v2, v3, v4, v1}, Lllv;-><init>(IILmvv;)V
-
-    invoke-static {v2}, Lmqp;->i(Ljava/lang/Object;)Lmqp;
-
-    move-result-object v1
-
-    iput-object v1, v0, Lllz;->c:Ljava/lang/Object;
-
-    invoke-virtual {v0}, Lllz;->a()Llma;
-
-    move-result-object v0
-
-    return-object v0
-
-    :pswitch_6
-    const/4 v0, 0x1
-
-    invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
-
-    move-result-object v0
-
-    return-object v0
-
-    :pswitch_7
-    invoke-static {}, Llhn;->c()Llhm;
-
-    move-result-object v0
-
-    sget-object v1, Logx;->a:Logx;
-
-    invoke-virtual {v1}, Logx;->b()Logy;
-
-    move-result-object v1
-
-    invoke-interface {v1}, Logy;->a()Z
-
-    move-result v1
-
-    invoke-virtual {v0, v1}, Llhm;->b(Z)V
-
-    invoke-virtual {v0}, Llhm;->a()Llhn;
-
-    move-result-object v0
-
-    return-object v0
-
-    :pswitch_8
-    invoke-static {}, Llkn;->c()Llkm;
-
-    move-result-object v0
-
-    sget-object v1, Logx;->a:Logx;
-
-    invoke-virtual {v1}, Logx;->b()Logy;
-
-    move-result-object v1
-
-    invoke-interface {v1}, Logy;->c()Z
-
-    move-result v1
-
-    invoke-virtual {v0, v1}, Llkm;->b(Z)V
-
-    invoke-virtual {v0}, Llkm;->a()Llkn;
-
-    move-result-object v0
-
-    return-object v0
-
-    :pswitch_9
-    invoke-static {}, Lliv;->c()Llme;
-
-    move-result-object v0
-
-    sget-object v1, Logx;->a:Logx;
-
-    invoke-virtual {v1}, Logx;->b()Logy;
-
-    move-result-object v1
-
-    invoke-interface {v1}, Logy;->b()Z
-
-    move-result v1
-
-    invoke-virtual {v0, v1}, Llme;->d(Z)V
-
-    invoke-virtual {v0}, Llme;->c()Lliv;
-
-    move-result-object v0
-
-    return-object v0
-
-    :pswitch_a
-    invoke-static {}, Lewq;->d()Lfwx;
-
-    move-result-object v0
-
-    return-object v0
-
-    :pswitch_b
-    invoke-static {}, Lewq;->c()Ljava/util/concurrent/Executor;
-
-    move-result-object v0
-
-    return-object v0
-
-    :pswitch_c
-    new-instance v0, Lewq;
-
-    invoke-direct {v0}, Lewq;-><init>()V
-
-    return-object v0
-
-    :pswitch_d
-    sget-object v0, Liuu;->a:Landroid/hardware/camera2/CaptureRequest$Key;
-
-    if-eqz v0, :cond_0
-
-    sget-object v0, Liuu;->a:Landroid/hardware/camera2/CaptureRequest$Key;
-
-    const/4 v1, 0x0
-
-    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v1
-
-    invoke-static {v0, v1}, Lkfg;->u(Landroid/hardware/camera2/CaptureRequest$Key;Ljava/lang/Object;)Lkfa;
-
-    move-result-object v0
-
-    invoke-static {v0}, Lmwn;->H(Ljava/lang/Object;)Lmwn;
-
-    move-result-object v0
+    :goto_1
+    add-int/lit8 v4, v4, 0x1
 
     goto :goto_0
 
-    :cond_0
-    sget-object v0, Lmza;->a:Lmza;
+    :cond_1
+    invoke-virtual {v3}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    :goto_0
+    iget-object p1, v0, Lgko;->e:Lgkp;
+
+    iget-object p1, p1, Lgkp;->j:Lgln;
+
+    iget-object v8, v0, Lgko;->a:Lhsa;
+
+    iget-object v0, v0, Lgko;->d:Llic;
+
     invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    return-object v0
+    invoke-static {}, Lpih;->f()Lpih;
 
-    :pswitch_e
-    sget-object v0, Lmpx;->a:Lmpx;
+    move-result-object v1
 
-    return-object v0
+    invoke-static {}, Lpih;->f()Lpih;
 
-    :pswitch_f
-    new-instance v0, Lglj;
+    move-result-object v10
 
-    invoke-direct {v0}, Lglj;-><init>()V
+    new-instance v4, Ljava/lang/IllegalStateException;
 
-    return-object v0
+    const-string v5, "Thumbnail generation should not require metadata"
 
-    :pswitch_10
-    sget-object v0, Lmpx;->a:Lmpx;
+    invoke-direct {v4, v5}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 
-    return-object v0
+    invoke-static {v4}, Lplk;->U(Ljava/lang/Throwable;)Lpht;
 
-    :pswitch_11
-    sget-object v0, Lmpx;->a:Lmpx;
+    move-result-object v4
 
-    return-object v0
+    new-instance v5, Lgmv;
 
-    :pswitch_12
-    invoke-static {}, Lgkj;->a()Lghp;
+    invoke-direct {v5, v3}, Lgmv;-><init>(Lmad;)V
+
+    new-instance v6, Landroid/graphics/Rect;
+
+    invoke-interface {v3}, Lmad;->c()I
+
+    move-result v7
+
+    invoke-interface {v3}, Lmad;->b()I
+
+    move-result v3
+
+    invoke-direct {v6, v2, v2, v7, v3}, Landroid/graphics/Rect;-><init>(IIII)V
+
+    invoke-static {v5}, Lhin;->a(Lmad;)Lhim;
+
+    move-result-object v2
+
+    iput-object v0, v2, Lhim;->c:Llic;
+
+    iput-object v4, v2, Lhim;->d:Lpht;
+
+    iput-object v6, v2, Lhim;->f:Landroid/graphics/Rect;
+
+    invoke-virtual {v2}, Lhim;->a()Lhin;
+
+    move-result-object v5
+
+    invoke-static {}, Lplk;->K()Lphv;
+
+    move-result-object v6
+
+    sget-object v2, Lhib;->e:Lhib;
+
+    sget-object v3, Lhib;->a:Lhib;
+
+    sget-object v4, Lhib;->c:Lhib;
+
+    invoke-static {v2, v3, v4}, Lope;->J(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Lope;
+
+    move-result-object v7
+
+    new-instance v2, Lglm;
+
+    invoke-direct {v2}, Lglm;-><init>()V
+
+    new-instance v3, Lglk;
+
+    invoke-direct {v3, v1, v0, v10}, Lglk;-><init>(Lpih;Llic;Lpih;)V
+
+    iput-object v3, v2, Lglm;->c:Lhih;
+
+    :try_start_0
+    iget-object v4, p1, Lgln;->a:Lhic;
+
+    iget-object v9, v2, Lglm;->d:Lojc;
+
+    invoke-interface/range {v4 .. v9}, Lhic;->e(Lhin;Ljava/util/concurrent/Executor;Ljava/util/Set;Lhsa;Lojc;)V
+    :try_end_0
+    .catch Ljava/lang/InterruptedException; {:try_start_0 .. :try_end_0} :catch_0
+
+    new-instance p1, Lglq;
+
+    invoke-direct {p1, v1, v10}, Lglq;-><init>(Lpht;Lpht;)V
+
+    return-object p1
+
+    :catch_0
+    move-exception p1
+
+    invoke-static {}, Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
 
     move-result-object v0
 
-    return-object v0
+    invoke-virtual {v0}, Ljava/lang/Thread;->interrupt()V
 
-    :pswitch_13
-    sget-object v0, Lgkh;->a:Lgkh;
+    new-instance v0, Ljava/lang/IllegalStateException;
 
-    return-object v0
+    invoke-direct {v0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/Throwable;)V
 
-    nop
+    goto :goto_3
 
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_13
-        :pswitch_12
-        :pswitch_11
-        :pswitch_10
-        :pswitch_f
-        :pswitch_e
-        :pswitch_d
-        :pswitch_c
-        :pswitch_b
-        :pswitch_a
-        :pswitch_9
-        :pswitch_8
-        :pswitch_7
-        :pswitch_6
-        :pswitch_5
-        :pswitch_4
-        :pswitch_3
-        :pswitch_2
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
+    :goto_2
+    throw v0
+
+    :goto_3
+    goto :goto_2
 .end method

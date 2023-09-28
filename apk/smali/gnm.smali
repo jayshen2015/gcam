@@ -1,131 +1,148 @@
 .class public final Lgnm;
-.super Ljava/lang/Object;
-
-# interfaces
-.implements Lkee;
-.implements Lkad;
+.super Llap;
 
 
 # static fields
-.field public static final a:Lnak;
+.field private static final a:Louj;
 
 
 # instance fields
-.field public final b:Lecd;
+.field private final b:Lqkg;
 
-.field public final c:Lkef;
-
-.field public final d:Ljava/util/HashSet;
-
-.field public final e:Ljvb;
-
-.field public final f:Lgue;
-
-.field private final g:Ljava/util/function/Supplier;
+.field private final c:Ljava/util/concurrent/atomic/AtomicBoolean;
 
 
 # direct methods
 .method static constructor <clinit>()V
     .locals 1
 
-    const-string v0, "com/google/android/apps/camera/pixelcamerakit/temporalbinning/PckTemporalBinningShunt"
+    const-string v0, "com/google/android/apps/camera/one/lifecycle/TwoStageShutdown"
 
-    invoke-static {v0}, Lnak;->h(Ljava/lang/String;)Lnak;
+    invoke-static {v0}, Louj;->h(Ljava/lang/String;)Louj;
 
     move-result-object v0
 
-    sput-object v0, Lgnm;->a:Lnak;
+    sput-object v0, Lgnm;->a:Louj;
 
     return-void
 .end method
 
-.method public constructor <init>(Lecd;Lgue;Ljvb;Ljava/util/function/Supplier;Lkef;[B)V
+.method public constructor <init>(Lqkg;Llbu;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0, p2}, Llap;-><init>(Llbu;)V
 
-    iput-object p1, p0, Lgnm;->b:Lecd;
+    iput-object p1, p0, Lgnm;->b:Lqkg;
 
-    iput-object p2, p0, Lgnm;->f:Lgue;
+    new-instance p1, Ljava/util/concurrent/atomic/AtomicBoolean;
 
-    iput-object p5, p0, Lgnm;->c:Lkef;
+    const/4 p2, 0x0
 
-    new-instance p1, Ljava/util/HashSet;
+    invoke-direct {p1, p2}, Ljava/util/concurrent/atomic/AtomicBoolean;-><init>(Z)V
 
-    invoke-direct {p1}, Ljava/util/HashSet;-><init>()V
-
-    iput-object p1, p0, Lgnm;->d:Ljava/util/HashSet;
-
-    iput-object p3, p0, Lgnm;->e:Ljvb;
-
-    iput-object p4, p0, Lgnm;->g:Ljava/util/function/Supplier;
+    iput-object p1, p0, Lgnm;->c:Ljava/util/concurrent/atomic/AtomicBoolean;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final c(Lkhr;)V
-    .locals 2
+.method public final a()Z
+    .locals 1
 
-    iget-object v0, p0, Lgnm;->g:Ljava/util/function/Supplier;
+    iget-object v0, p0, Lgnm;->c:Ljava/util/concurrent/atomic/AtomicBoolean;
 
-    invoke-interface {v0}, Ljava/util/function/Supplier;->get()Ljava/lang/Object;
+    invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicBoolean;->get()Z
 
-    move-result-object v0
+    move-result v0
 
-    check-cast v0, Ljava/lang/Boolean;
+    return v0
+.end method
 
-    invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
+.method public final close()V
+    .locals 5
+
+    iget-object v0, p0, Lgnm;->c:Ljava/util/concurrent/atomic/AtomicBoolean;
+
+    const/4 v1, 0x1
+
+    invoke-virtual {v0, v1}, Ljava/util/concurrent/atomic/AtomicBoolean;->getAndSet(Z)Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    new-instance v0, Lckt;
-
-    const/4 v1, 0x3
-
-    invoke-direct {v0, p0, v1}, Lckt;-><init>(Lgnm;I)V
-
-    invoke-static {p1, v0}, Lkfg;->B(Lkhr;Lkex;)V
+    return-void
 
     :cond_0
-    return-void
-.end method
+    iget-object v0, p0, Lgnm;->b:Lqkg;
 
-.method public final close()V
-    .locals 3
+    check-cast v0, Lpyw;
 
-    iget-object v0, p0, Lgnm;->d:Ljava/util/HashSet;
-
-    invoke-virtual {v0}, Ljava/util/HashSet;->iterator()Ljava/util/Iterator;
+    invoke-virtual {v0}, Lpyw;->a()Ljava/util/Set;
 
     move-result-object v0
+
+    invoke-interface {v0}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
+
+    move-result-object v0
+
+    const/4 v1, 0x0
 
     :goto_0
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
-    move-result v1
+    move-result v2
 
-    if-eqz v1, :cond_0
+    if-eqz v2, :cond_1
 
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    move-result-object v1
+    move-result-object v2
 
-    check-cast v1, Lkll;
+    check-cast v2, Lgnl;
 
-    iget-object v2, p0, Lgnm;->b:Lecd;
-
-    invoke-interface {v2, v1}, Lecd;->u(Lkll;)V
+    :try_start_0
+    invoke-interface {v2}, Lgnl;->run()V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     goto :goto_0
 
-    :cond_0
-    iget-object v0, p0, Lgnm;->d:Ljava/util/HashSet;
+    :catchall_0
+    move-exception v1
 
-    invoke-virtual {v0}, Ljava/util/HashSet;->clear()V
+    sget-object v2, Lgnm;->a:Louj;
+
+    invoke-virtual {v2}, Loue;->b()Lova;
+
+    move-result-object v2
+
+    const/16 v3, 0x82b
+
+    const-string v4, "Error thrown while running shutdown task"
+
+    invoke-static {v2, v4, v3, v1}, Ld;->w(Lova;Ljava/lang/String;CLjava/lang/Throwable;)V
+
+    goto :goto_0
+
+    :cond_1
+    invoke-super {p0}, Llap;->close()V
+
+    if-nez v1, :cond_2
 
     return-void
+
+    :cond_2
+    new-instance v0, Ljava/lang/RuntimeException;
+
+    invoke-direct {v0, v1}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/Throwable;)V
+
+    goto :goto_2
+
+    :goto_1
+    throw v0
+
+    :goto_2
+    goto :goto_1
 .end method

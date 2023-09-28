@@ -1,25 +1,32 @@
-.class public interface abstract Lglm;
+.class public final Lglm;
 .super Ljava/lang/Object;
 
 
-# virtual methods
-.method public abstract a()Ljwb;
-.end method
+# instance fields
+.field public a:Z
 
-.method public abstract b()Ljwb;
-.end method
+.field public b:Z
 
-.method public abstract c()Lnjm;
-.end method
+.field public c:Lhih;
 
-.method public abstract d(Lgll;)Ljava/util/Set;
-.end method
+.field public final d:Lojc;
 
-.method public abstract e(Z)V
-.end method
 
-.method public abstract g(F)V
-.end method
+# direct methods
+.method public constructor <init>()V
+    .locals 1
 
-.method public abstract h(Lcdi;)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    new-instance v0, Lgll;
+
+    invoke-direct {v0, p0}, Lgll;-><init>(Lglm;)V
+
+    invoke-static {v0}, Lojc;->i(Ljava/lang/Object;)Lojc;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lglm;->d:Lojc;
+
+    return-void
 .end method

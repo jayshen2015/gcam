@@ -1,461 +1,296 @@
-.class final Lcrg;
-.super Ljava/lang/Object;
+.class public final Lcrg;
+.super Lcrw;
 
 # interfaces
-.implements Lkmw;
-
-
-# static fields
-.field private static final a:Lnak;
+.implements Lihv;
 
 
 # instance fields
-.field private final b:Lkmw;
+.field public final a:Lihu;
 
-.field private final c:Lcrk;
+.field public final b:Lihw;
 
-.field private final d:Ljava/lang/Object;
+.field public final c:Lihw;
 
-.field private e:I
-
-.field private final f:Lcrd;
+.field public final d:Lihw;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
+.method public constructor <init>(Lcom/google/android/apps/camera/bottombar/BottomBarController;Ljlb;Lkas;Landroid/view/Window;Ljak;Ljdy;Ljfn;Lcsb;[B[B)V
+    .locals 12
 
-    const-string v0, "com/google/android/apps/camera/camcorder/audio/processor/AudioProcessingStream"
+    move-object v11, p0
 
-    invoke-static {v0}, Lnak;->h(Ljava/lang/String;)Lnak;
+    const/4 v9, 0x0
 
-    move-result-object v0
+    const/4 v10, 0x0
 
-    sput-object v0, Lcrg;->a:Lnak;
+    move-object v0, p0
 
-    return-void
-.end method
+    move-object v1, p1
 
-.method public constructor <init>(Lkmw;Lcrk;Lcrd;)V
-    .locals 1
+    move-object v2, p2
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    move-object v3, p3
 
-    new-instance v0, Ljava/lang/Object;
+    move-object/from16 v4, p4
 
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+    move-object/from16 v5, p5
 
-    iput-object v0, p0, Lcrg;->d:Ljava/lang/Object;
+    move-object/from16 v6, p6
 
-    const/4 v0, 0x1
+    move-object/from16 v7, p7
 
-    iput v0, p0, Lcrg;->e:I
+    move-object/from16 v8, p8
 
-    iput-object p1, p0, Lcrg;->b:Lkmw;
+    invoke-direct/range {v0 .. v10}, Lcrw;-><init>(Lcom/google/android/apps/camera/bottombar/BottomBarController;Ljlb;Lkas;Landroid/view/Window;Ljak;Ljdy;Ljfn;Lcsb;[B[B)V
 
-    iput-object p3, p0, Lcrg;->f:Lcrd;
+    new-instance v0, Lcrd;
 
-    iput-object p2, p0, Lcrg;->c:Lcrk;
+    invoke-direct {v0, p0}, Lcrd;-><init>(Lcrg;)V
+
+    new-instance v1, Lihw;
+
+    const/4 v2, 0x0
+
+    new-array v3, v2, [Lihs;
+
+    invoke-direct {v1, v0, v3}, Lihw;-><init>(Lihs;[Lihs;)V
+
+    iput-object v1, v11, Lcrg;->b:Lihw;
+
+    new-instance v0, Lcre;
+
+    invoke-direct {v0, p0}, Lcre;-><init>(Lcrg;)V
+
+    new-instance v3, Lihw;
+
+    new-array v4, v2, [Lihs;
+
+    invoke-direct {v3, v0, v4}, Lihw;-><init>(Lihs;[Lihs;)V
+
+    iput-object v3, v11, Lcrg;->c:Lihw;
+
+    new-instance v0, Lcrf;
+
+    invoke-direct {v0, p0}, Lcrf;-><init>(Lcrg;)V
+
+    new-instance v3, Lihw;
+
+    new-array v4, v2, [Lihs;
+
+    invoke-direct {v3, v0, v4}, Lihw;-><init>(Lihs;[Lihs;)V
+
+    iput-object v3, v11, Lcrg;->d:Lihw;
+
+    new-instance v0, Lihu;
+
+    invoke-direct {v0, v1, v2}, Lihu;-><init>(Lihw;Z)V
+
+    iput-object v0, v11, Lcrg;->a:Lihu;
+
+    invoke-virtual {v0}, Lihu;->f()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()I
+.method public final a()V
     .locals 1
 
-    iget-object v0, p0, Lcrg;->b:Lkmw;
+    iget-object v0, p0, Lcrg;->a:Lihu;
 
-    invoke-interface {v0}, Lkmw;->a()I
+    invoke-virtual {v0}, Lihu;->a()Lihw;
 
-    move-result v0
+    move-result-object v0
 
-    return v0
-.end method
+    if-nez v0, :cond_0
 
-.method public final addOnRoutingChangedListener(Landroid/media/AudioRouting$OnRoutingChangedListener;Landroid/os/Handler;)V
-    .locals 1
+    return-void
 
-    iget-object v0, p0, Lcrg;->b:Lkmw;
+    :cond_0
+    iget-object v0, p0, Lcrg;->a:Lihu;
 
-    invoke-interface {v0, p1, p2}, Lkmw;->addOnRoutingChangedListener(Landroid/media/AudioRouting$OnRoutingChangedListener;Landroid/os/Handler;)V
+    invoke-virtual {v0}, Lihu;->a()Lihw;
+
+    move-result-object v0
+
+    iget-object v0, v0, Lihw;->a:Lihs;
+
+    check-cast v0, Lcsa;
+
+    invoke-virtual {v0}, Lcsa;->a()V
 
     return-void
 .end method
 
-.method public final b()Landroid/media/AudioFormat;
+.method public final b()V
     .locals 1
 
-    iget-object v0, p0, Lcrg;->b:Lkmw;
+    iget-object v0, p0, Lcrg;->a:Lihu;
 
-    invoke-interface {v0}, Lkmw;->b()Landroid/media/AudioFormat;
+    invoke-virtual {v0}, Lihu;->a()Lihw;
 
     move-result-object v0
 
-    return-object v0
+    if-nez v0, :cond_0
+
+    return-void
+
+    :cond_0
+    iget-object v0, p0, Lcrg;->a:Lihu;
+
+    invoke-virtual {v0}, Lihu;->a()Lihw;
+
+    move-result-object v0
+
+    iget-object v0, v0, Lihw;->a:Lihs;
+
+    check-cast v0, Lcsa;
+
+    invoke-virtual {v0}, Lcsa;->b()V
+
+    return-void
 .end method
 
 .method public final c()V
-    .locals 9
+    .locals 1
 
-    iget-object v0, p0, Lcrg;->d:Ljava/lang/Object;
+    iget-object v0, p0, Lcrg;->a:Lihu;
 
-    monitor-enter v0
+    invoke-virtual {v0}, Lihu;->a()Lihw;
 
-    :try_start_0
-    iget-object v1, p0, Lcrg;->c:Lcrk;
+    move-result-object v0
 
-    move-object v2, v1
+    if-nez v0, :cond_0
 
-    check-cast v2, Lcri;
-
-    iget-object v2, v2, Lcri;->d:Ljava/lang/Object;
-
-    monitor-enter v2
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_2
-
-    :try_start_1
-    move-object v3, v1
-
-    check-cast v3, Lcri;
-
-    iget-object v3, v3, Lcri;->h:Lcrh;
-
-    sget-object v4, Lcrh;->b:Lcrh;
-
-    const/4 v5, 0x1
-
-    const/4 v6, 0x0
-
-    if-ne v3, v4, :cond_0
-
-    const/4 v3, 0x1
-
-    goto :goto_0
+    return-void
 
     :cond_0
-    const/4 v3, 0x0
+    iget-object v0, p0, Lcrg;->a:Lihu;
 
-    :goto_0
-    const-string v4, "Cannot start from %s"
+    invoke-virtual {v0}, Lihu;->a()Lihw;
 
-    move-object v7, v1
+    move-result-object v0
 
-    check-cast v7, Lcri;
+    iget-object v0, v0, Lihw;->a:Lihs;
 
-    iget-object v7, v7, Lcri;->h:Lcrh;
+    check-cast v0, Lcsa;
 
-    invoke-static {v3, v4, v7}, Lmoz;->s(ZLjava/lang/String;Ljava/lang/Object;)V
-
-    move-object v3, v1
-
-    check-cast v3, Lcri;
-
-    iget-object v3, v3, Lcri;->f:Lkmw;
-
-    invoke-interface {v3}, Lkmw;->c()V
-
-    move-object v3, v1
-
-    check-cast v3, Lcri;
-
-    iget-object v3, v3, Lcri;->i:Lcrb;
-
-    iget-object v4, v3, Lcrb;->c:Ljava/lang/Object;
-
-    monitor-enter v4
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_1
-
-    :try_start_2
-    iput v6, v3, Lcrb;->d:I
-
-    const-wide/16 v7, 0x0
-
-    iput-wide v7, v3, Lcrb;->f:J
-
-    iput v6, v3, Lcrb;->e:I
-
-    iput-wide v7, v3, Lcrb;->h:J
-
-    iget-object v3, v3, Lcrb;->b:Ljava/util/concurrent/atomic/AtomicBoolean;
-
-    invoke-virtual {v3, v5}, Ljava/util/concurrent/atomic/AtomicBoolean;->set(Z)V
-
-    monitor-exit v4
-    :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_0
-
-    :try_start_3
-    new-instance v3, Lcqf;
-
-    move-object v4, v1
-
-    check-cast v4, Lcri;
-
-    const/16 v5, 0x9
-
-    invoke-direct {v3, v4, v5}, Lcqf;-><init>(Lcri;I)V
-
-    move-object v4, v1
-
-    check-cast v4, Lcri;
-
-    iget-object v4, v4, Lcri;->b:Lnow;
-
-    invoke-static {v3, v4}, Lcri;->d(Ljava/lang/Runnable;Lnow;)V
-
-    sget-object v3, Lcrh;->c:Lcrh;
-
-    check-cast v1, Lcri;
-
-    iput-object v3, v1, Lcri;->h:Lcrh;
-
-    monitor-exit v2
-    :try_end_3
-    .catchall {:try_start_3 .. :try_end_3} :catchall_1
-
-    const/4 v1, 0x2
-
-    :try_start_4
-    iput v1, p0, Lcrg;->e:I
-
-    monitor-exit v0
-    :try_end_4
-    .catchall {:try_start_4 .. :try_end_4} :catchall_2
+    invoke-virtual {v0}, Lcsa;->c()V
 
     return-void
-
-    :catchall_0
-    move-exception v1
-
-    :try_start_5
-    monitor-exit v4
-    :try_end_5
-    .catchall {:try_start_5 .. :try_end_5} :catchall_0
-
-    :try_start_6
-    throw v1
-
-    :catchall_1
-    move-exception v1
-
-    monitor-exit v2
-    :try_end_6
-    .catchall {:try_start_6 .. :try_end_6} :catchall_1
-
-    :try_start_7
-    throw v1
-
-    :catchall_2
-    move-exception v1
-
-    monitor-exit v0
-    :try_end_7
-    .catchall {:try_start_7 .. :try_end_7} :catchall_2
-
-    throw v1
-.end method
-
-.method public final close()V
-    .locals 2
-
-    iget-object v0, p0, Lcrg;->d:Ljava/lang/Object;
-
-    monitor-enter v0
-
-    :try_start_0
-    iget-object v1, p0, Lcrg;->c:Lcrk;
-
-    invoke-interface {v1}, Lcrk;->close()V
-
-    const/4 v1, 0x4
-
-    iput v1, p0, Lcrg;->e:I
-
-    monitor-exit v0
-
-    return-void
-
-    :catchall_0
-    move-exception v1
-
-    monitor-exit v0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw v1
 .end method
 
 .method public final d()V
-    .locals 2
+    .locals 1
 
-    iget-object v0, p0, Lcrg;->d:Ljava/lang/Object;
+    iget-object v0, p0, Lcrg;->a:Lihu;
 
-    monitor-enter v0
+    invoke-virtual {v0}, Lihu;->a()Lihw;
 
-    :try_start_0
-    iget-object v1, p0, Lcrg;->c:Lcrk;
+    move-result-object v0
 
-    invoke-interface {v1}, Lcrk;->c()V
-
-    const/4 v1, 0x3
-
-    iput v1, p0, Lcrg;->e:I
-
-    monitor-exit v0
+    if-nez v0, :cond_0
 
     return-void
-
-    :catchall_0
-    move-exception v1
-
-    monitor-exit v0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw v1
-.end method
-
-.method public final e(Ljava/nio/ByteBuffer;I)Lkgd;
-    .locals 5
-
-    iget-object v0, p0, Lcrg;->d:Ljava/lang/Object;
-
-    monitor-enter v0
-
-    :try_start_0
-    iget v1, p0, Lcrg;->e:I
-
-    const/4 v2, 0x0
-
-    if-eqz v1, :cond_1
-
-    const/4 v3, 0x4
-
-    if-ne v1, v3, :cond_0
-
-    sget-object p1, Lcrg;->a:Lnak;
-
-    invoke-virtual {p1}, Lnaf;->c()Lnaz;
-
-    move-result-object p1
-
-    check-cast p1, Lnah;
-
-    const/16 p2, 0x220
-
-    invoke-interface {p1, p2}, Lnah;->G(I)Lnaz;
-
-    move-result-object p1
-
-    check-cast p1, Lnah;
-
-    const-string p2, "Ignore to read due to stream closed."
-
-    invoke-interface {p1, p2}, Lnah;->o(Ljava/lang/String;)V
-
-    monitor-exit v0
-
-    return-object v2
 
     :cond_0
-    iget-object v1, p0, Lcrg;->f:Lcrd;
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    iget-object v0, p0, Lcrg;->a:Lihu;
 
-    :try_start_1
-    iget-object v3, v1, Lcrd;->b:Lcre;
-
-    invoke-virtual {v3, p1, p2}, Lcre;->a(Ljava/nio/ByteBuffer;I)Lkgd;
-
-    move-result-object v2
-    :try_end_1
-    .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_0
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    goto :goto_0
-
-    :catch_0
-    move-exception p1
-
-    :try_start_2
-    sget-object p2, Lcrd;->a:Lnak;
-
-    invoke-virtual {p2}, Lnaf;->b()Lnaz;
-
-    move-result-object p2
-
-    const-string v3, "Failed to read audio packet from audio piped input stream."
-
-    const/16 v4, 0x21f
-
-    invoke-static {p2, v3, v4, p1}, Ld;->h(Lnaz;Ljava/lang/String;CLjava/lang/Throwable;)V
-
-    :goto_0
-    invoke-virtual {v1}, Lcrd;->a()V
-
-    monitor-exit v0
-
-    return-object v2
-
-    :cond_1
-    throw v2
-
-    :catchall_0
-    move-exception p1
-
-    monitor-exit v0
-    :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_0
-
-    throw p1
-.end method
-
-.method public final getPreferredDevice()Landroid/media/AudioDeviceInfo;
-    .locals 1
-
-    iget-object v0, p0, Lcrg;->b:Lkmw;
-
-    invoke-interface {v0}, Lkmw;->getPreferredDevice()Landroid/media/AudioDeviceInfo;
+    invoke-virtual {v0}, Lihu;->a()Lihw;
 
     move-result-object v0
 
-    return-object v0
-.end method
+    iget-object v0, v0, Lihw;->a:Lihs;
 
-.method public final getRoutedDevice()Landroid/media/AudioDeviceInfo;
-    .locals 1
+    check-cast v0, Lcsa;
 
-    iget-object v0, p0, Lcrg;->b:Lkmw;
-
-    invoke-interface {v0}, Lkmw;->getRoutedDevice()Landroid/media/AudioDeviceInfo;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public final removeOnRoutingChangedListener(Landroid/media/AudioRouting$OnRoutingChangedListener;)V
-    .locals 1
-
-    iget-object v0, p0, Lcrg;->b:Lkmw;
-
-    invoke-interface {v0, p1}, Lkmw;->removeOnRoutingChangedListener(Landroid/media/AudioRouting$OnRoutingChangedListener;)V
+    invoke-virtual {v0}, Lcsa;->d()V
 
     return-void
 .end method
 
-.method public final setPreferredDevice(Landroid/media/AudioDeviceInfo;)Z
+.method public final e()V
     .locals 1
 
-    iget-object v0, p0, Lcrg;->b:Lkmw;
+    iget-object v0, p0, Lcrg;->a:Lihu;
 
-    invoke-interface {v0, p1}, Lkmw;->setPreferredDevice(Landroid/media/AudioDeviceInfo;)Z
+    invoke-virtual {v0}, Lihu;->b()V
 
-    move-result p1
+    iget-object v0, p0, Lcrg;->b:Lihw;
 
-    return p1
+    invoke-virtual {v0}, Lihw;->e()V
+
+    iget-object v0, p0, Lcrg;->c:Lihw;
+
+    invoke-virtual {v0}, Lihw;->e()V
+
+    iget-object v0, p0, Lcrg;->d:Lihw;
+
+    invoke-virtual {v0}, Lihw;->e()V
+
+    return-void
+.end method
+
+.method public final f()V
+    .locals 1
+
+    invoke-super {p0}, Lcrw;->f()V
+
+    iget-object v0, p0, Lcrg;->a:Lihu;
+
+    invoke-virtual {v0}, Lihu;->c()V
+
+    return-void
+.end method
+
+.method public final g()V
+    .locals 1
+
+    invoke-super {p0}, Lcrw;->g()V
+
+    iget-object v0, p0, Lcrg;->a:Lihu;
+
+    invoke-virtual {v0}, Lihu;->d()V
+
+    return-void
+.end method
+
+.method public final h()V
+    .locals 0
+
+    invoke-static {p0}, Lmip;->eQ(Lihv;)V
+
+    return-void
+.end method
+
+.method public final i()V
+    .locals 1
+
+    iget-object v0, p0, Lcrg;->a:Lihu;
+
+    invoke-virtual {v0}, Lihu;->a()Lihw;
+
+    move-result-object v0
+
+    if-nez v0, :cond_0
+
+    return-void
+
+    :cond_0
+    iget-object v0, p0, Lcrg;->a:Lihu;
+
+    invoke-virtual {v0}, Lihu;->a()Lihw;
+
+    move-result-object v0
+
+    iget-object v0, v0, Lihw;->a:Lihs;
+
+    check-cast v0, Lcsa;
+
+    invoke-virtual {v0}, Lcsa;->i()V
+
+    return-void
 .end method

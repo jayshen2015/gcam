@@ -2,278 +2,84 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Logk;
+.implements Lpys;
 
 
 # instance fields
-.field private final a:Loiw;
+.field private final a:Lqkg;
 
-.field private final b:Loiw;
+.field private final b:Lqkg;
 
-.field private final c:Loiw;
-
-.field private final d:Loiw;
-
-.field private final e:Loiw;
-
-.field private final f:Loiw;
-
-.field private final synthetic g:I
+.field private final c:Lqkg;
 
 
 # direct methods
-.method public constructor <init>(Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;I)V
+.method public constructor <init>(Lqkg;Lqkg;Lqkg;)V
     .locals 0
-
-    iput p7, p0, Lfrz;->g:I
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lfrz;->a:Loiw;
+    iput-object p1, p0, Lfrz;->a:Lqkg;
 
-    iput-object p2, p0, Lfrz;->b:Loiw;
+    iput-object p2, p0, Lfrz;->b:Lqkg;
 
-    iput-object p3, p0, Lfrz;->c:Loiw;
-
-    iput-object p4, p0, Lfrz;->d:Loiw;
-
-    iput-object p5, p0, Lfrz;->e:Loiw;
-
-    iput-object p6, p0, Lfrz;->f:Loiw;
+    iput-object p3, p0, Lfrz;->c:Lqkg;
 
     return-void
 .end method
 
-.method public constructor <init>(Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;I[B)V
-    .locals 0
+.method public static b(Lqkg;Lqkg;Lqkg;)Lfrz;
+    .locals 1
 
-    iput p7, p0, Lfrz;->g:I
+    new-instance v0, Lfrz;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {v0, p0, p1, p2}, Lfrz;-><init>(Lqkg;Lqkg;Lqkg;)V
 
-    iput-object p1, p0, Lfrz;->a:Loiw;
-
-    iput-object p2, p0, Lfrz;->c:Loiw;
-
-    iput-object p3, p0, Lfrz;->f:Loiw;
-
-    iput-object p4, p0, Lfrz;->b:Loiw;
-
-    iput-object p5, p0, Lfrz;->d:Loiw;
-
-    iput-object p6, p0, Lfrz;->e:Loiw;
-
-    return-void
-.end method
-
-.method public static a(Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;)Lfrz;
-    .locals 9
-
-    new-instance v8, Lfrz;
-
-    const/4 v7, 0x0
-
-    move-object v0, v8
-
-    move-object v1, p0
-
-    move-object v2, p1
-
-    move-object v3, p2
-
-    move-object v4, p3
-
-    move-object v5, p4
-
-    move-object v6, p5
-
-    invoke-direct/range {v0 .. v7}, Lfrz;-><init>(Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;I)V
-
-    return-object v8
-.end method
-
-.method public static b(Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;)Lfrz;
-    .locals 10
-
-    new-instance v9, Lfrz;
-
-    const/4 v7, 0x1
-
-    const/4 v8, 0x0
-
-    move-object v0, v9
-
-    move-object v1, p0
-
-    move-object v2, p1
-
-    move-object v3, p2
-
-    move-object v4, p3
-
-    move-object v5, p4
-
-    move-object v6, p5
-
-    invoke-direct/range {v0 .. v8}, Lfrz;-><init>(Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;I[B)V
-
-    return-object v9
+    return-object v0
 .end method
 
 
 # virtual methods
-.method public final synthetic get()Ljava/lang/Object;
-    .locals 10
+.method public final a()Lfry;
+    .locals 4
 
-    iget v0, p0, Lfrz;->g:I
+    iget-object v0, p0, Lfrz;->a:Lqkg;
 
-    packed-switch v0, :pswitch_data_0
+    invoke-interface {v0}, Lqkg;->get()Ljava/lang/Object;
 
-    iget-object v0, p0, Lfrz;->a:Loiw;
+    move-result-object v0
 
-    check-cast v0, Lfqh;
+    check-cast v0, Llzb;
 
-    invoke-virtual {v0}, Lfqh;->b()Lfsr;
+    iget-object v1, p0, Lfrz;->b:Lqkg;
+
+    check-cast v1, Lgjp;
+
+    invoke-virtual {v1}, Lgjp;->a()Llvp;
+
+    move-result-object v1
+
+    iget-object v2, p0, Lfrz;->c:Lqkg;
+
+    check-cast v2, Lhoi;
+
+    invoke-virtual {v2}, Lhoi;->a()Lhoh;
 
     move-result-object v2
 
-    iget-object v0, p0, Lfrz;->c:Loiw;
+    new-instance v3, Lfry;
 
-    check-cast v0, Lcmj;
+    invoke-direct {v3, v0, v1, v2}, Lfry;-><init>(Llzb;Llvp;Lhoh;)V
 
-    invoke-virtual {v0}, Lcmj;->a()Ljava/lang/Integer;
+    return-object v3
+.end method
 
-    move-result-object v0
+.method public final bridge synthetic get()Ljava/lang/Object;
+    .locals 1
 
-    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
-
-    move-result v3
-
-    iget-object v0, p0, Lfrz;->f:Loiw;
-
-    check-cast v0, Lcmj;
-
-    invoke-virtual {v0}, Lcmj;->a()Ljava/lang/Integer;
+    invoke-virtual {p0}, Lfrz;->a()Lfry;
 
     move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
-
-    move-result v4
-
-    iget-object v0, p0, Lfrz;->b:Loiw;
-
-    check-cast v0, Lcmj;
-
-    invoke-virtual {v0}, Lcmj;->a()Ljava/lang/Integer;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
-
-    move-result v5
-
-    iget-object v0, p0, Lfrz;->d:Loiw;
-
-    check-cast v0, Lfso;
-
-    invoke-virtual {v0}, Lfso;->b()Ljava/lang/Integer;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
-
-    move-result v6
-
-    iget-object v0, p0, Lfrz;->e:Loiw;
-
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    move-object v7, v0
-
-    check-cast v7, Ljvs;
-
-    new-instance v0, Lfqk;
-
-    move-object v1, v0
-
-    invoke-direct/range {v1 .. v7}, Lfqk;-><init>(Lfsr;IIIILjvs;)V
 
     return-object v0
-
-    :pswitch_0
-    iget-object v0, p0, Lfrz;->a:Loiw;
-
-    check-cast v0, Lkao;
-
-    invoke-virtual {v0}, Lkao;->a()Lkaq;
-
-    move-result-object v2
-
-    iget-object v0, p0, Lfrz;->b:Loiw;
-
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    move-object v3, v0
-
-    check-cast v3, Ldhi;
-
-    iget-object v0, p0, Lfrz;->c:Loiw;
-
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    move-object v4, v0
-
-    check-cast v4, Lfqp;
-
-    iget-object v0, p0, Lfrz;->d:Loiw;
-
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    move-object v5, v0
-
-    check-cast v5, Lfpl;
-
-    iget-object v0, p0, Lfrz;->e:Loiw;
-
-    check-cast v0, Lfqg;
-
-    invoke-virtual {v0}, Lfqg;->a()Lfpg;
-
-    move-result-object v6
-
-    iget-object v0, p0, Lfrz;->f:Loiw;
-
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    move-object v7, v0
-
-    check-cast v7, Lgue;
-
-    new-instance v0, Lfry;
-
-    const/4 v8, 0x0
-
-    const/4 v9, 0x0
-
-    move-object v1, v0
-
-    invoke-direct/range {v1 .. v9}, Lfry;-><init>(Lkaq;Ldhi;Lfqp;Lfpl;Lfpg;Lgue;I[B)V
-
-    return-object v0
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
 .end method

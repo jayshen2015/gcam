@@ -1,61 +1,48 @@
-.class public final Lfzq;
+.class public final synthetic Lfzq;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Logk;
+.implements Lcqp;
 
 
 # instance fields
-.field private final a:Loiw;
+.field public final synthetic a:Lfzx;
 
 
 # direct methods
-.method public constructor <init>(Loiw;)V
+.method public synthetic constructor <init>(Lfzx;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lfzq;->a:Loiw;
+    iput-object p1, p0, Lfzq;->a:Lfzx;
 
     return-void
 .end method
 
-.method public static a(Loiw;)Lfzq;
-    .locals 1
-
-    new-instance v0, Lfzq;
-
-    invoke-direct {v0, p0}, Lfzq;-><init>(Loiw;)V
-
-    return-object v0
-.end method
-
 
 # virtual methods
-.method public final b()Lbkb;
-    .locals 2
-
-    iget-object v0, p0, Lfzq;->a:Loiw;
-
-    check-cast v0, Lknp;
-
-    invoke-virtual {v0}, Lknp;->a()Lknq;
-
-    move-result-object v0
-
-    new-instance v1, Lbkb;
-
-    invoke-direct {v1, v0}, Lbkb;-><init>(Lknq;)V
-
-    return-object v1
-.end method
-
-.method public final bridge synthetic get()Ljava/lang/Object;
+.method public final a(Lcqj;Lcqj;Z)V
     .locals 1
 
-    invoke-virtual {p0}, Lfzq;->b()Lbkb;
+    iget-object p3, p0, Lfzq;->a:Lfzx;
 
-    move-result-object v0
+    invoke-static {p1, p2}, Lcqq;->f(Lcqj;Lcqj;)Z
 
-    return-object v0
+    move-result p1
+
+    if-eqz p1, :cond_0
+
+    iget-object p1, p3, Lfzx;->d:Llar;
+
+    new-instance p2, Lfzr;
+
+    const/4 v0, 0x2
+
+    invoke-direct {p2, p3, v0}, Lfzr;-><init>(Lfzx;I)V
+
+    invoke-virtual {p1, p2}, Llar;->execute(Ljava/lang/Runnable;)V
+
+    :cond_0
+    return-void
 .end method

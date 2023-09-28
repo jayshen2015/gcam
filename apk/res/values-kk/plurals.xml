@@ -1,12 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <plurals name="accessibility_timelapse_manual_record_speed_desc">
-        <item quantity="other">Үдету жылдамдығы: %d</item>
-        <item quantity="one">Үдету жылдамдығы: %d</item>
-    </plurals>
-    <plurals name="number_of_cropped_face">
-        <item quantity="other">%d қиылған.</item>
-        <item quantity="one">Біреуі қиылған.</item>
+    <plurals name="number_of_faces_announcement">
+        <item quantity="other">%1$d адамның жүзі.</item>
+        <item quantity="one">%1$d адамның жүзі.</item>
     </plurals>
     <plurals name="photos_remaining">
         <item quantity="other">%s фотосурет туралы</item>

@@ -1,98 +1,84 @@
-.class public final Lhmx;
-.super Ljava/lang/Object;
-
-
-# static fields
-.field public static final a:Lnak;
+.class final Lhmx;
+.super Lmip;
 
 
 # instance fields
-.field public final b:Landroid/os/PowerManager;
+.field final synthetic a:Landroid/view/View$OnTouchListener;
 
-.field public c:Z
-
-.field public d:Z
-
-.field public final e:Ljava/util/concurrent/Executor;
+.field final synthetic b:Lhmy;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
+.method public constructor <init>(Lhmy;Landroid/view/View$OnTouchListener;)V
+    .locals 0
 
-    const-string v0, "com/google/android/apps/camera/temperature/PowerManagerProxy"
+    iput-object p1, p0, Lhmx;->b:Lhmy;
 
-    invoke-static {v0}, Lnak;->h(Ljava/lang/String;)Lnak;
+    iput-object p2, p0, Lhmx;->a:Landroid/view/View$OnTouchListener;
 
-    move-result-object v0
-
-    sput-object v0, Lhmx;->a:Lnak;
-
-    return-void
-.end method
-
-.method public constructor <init>(Landroid/os/PowerManager;Ljava/util/concurrent/Executor;)V
-    .locals 1
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    const/4 v0, 0x0
-
-    iput-boolean v0, p0, Lhmx;->c:Z
-
-    iput-boolean v0, p0, Lhmx;->d:Z
-
-    iput-object p1, p0, Lhmx;->b:Landroid/os/PowerManager;
-
-    iput-object p2, p0, Lhmx;->e:Ljava/util/concurrent/Executor;
+    invoke-direct {p0}, Lmip;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method final a()I
-    .locals 1
-
-    iget-object v0, p0, Lhmx;->b:Landroid/os/PowerManager;
-
-    invoke-virtual {v0}, Landroid/os/PowerManager;->getCurrentThermalStatus()I
-
-    move-result v0
-
-    return v0
-.end method
-
-.method final declared-synchronized b(Landroid/os/PowerManager$OnThermalStatusChangedListener;)V
+.method public final gj(Landroid/view/MotionEvent;)Z
     .locals 3
 
-    monitor-enter p0
+    const/4 v0, 0x0
 
-    const/4 v0, 0x1
+    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    :try_start_0
-    iput-boolean v0, p0, Lhmx;->c:Z
+    move-result-object v0
 
-    iget-object v0, p0, Lhmx;->e:Ljava/util/concurrent/Executor;
+    const/4 v1, 0x2
 
-    new-instance v1, Lhdg;
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    const/16 v2, 0x13
+    move-result-object v1
 
-    invoke-direct {v1, p0, p1, v2}, Lhdg;-><init>(Lhmx;Landroid/os/PowerManager$OnThermalStatusChangedListener;I)V
+    const/4 v2, 0x1
 
-    invoke-interface {v0, v1}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    monitor-exit p0
+    move-result-object v2
 
-    return-void
+    invoke-static {v0, v1, v2}, Loom;->o(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Loom;
 
-    :catchall_0
-    move-exception p1
+    move-result-object v0
 
-    monitor-exit p0
+    invoke-virtual {p1}, Landroid/view/MotionEvent;->getActionMasked()I
 
-    throw p1
+    move-result p1
+
+    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object p1
+
+    invoke-virtual {v0, p1}, Loom;->contains(Ljava/lang/Object;)Z
+
+    move-result p1
+
+    return p1
+.end method
+
+.method public final p(Ljtw;)Z
+    .locals 3
+
+    iget-object v0, p0, Lhmx;->b:Lhmy;
+
+    iget-object v0, v0, Lhmy;->m:Landroid/os/Handler;
+
+    iget-object v1, p0, Lhmx;->a:Landroid/view/View$OnTouchListener;
+
+    new-instance v2, Lhmw;
+
+    invoke-direct {v2, p0, v1, p1}, Lhmw;-><init>(Lhmx;Landroid/view/View$OnTouchListener;Ljtw;)V
+
+    invoke-virtual {v0, v2}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
+
+    const/4 p1, 0x0
+
+    return p1
 .end method

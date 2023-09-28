@@ -1,31 +1,41 @@
-.class public interface abstract Lnxy;
-.super Ljava/lang/Object;
+.class final Lnxy;
+.super Lnxr;
 
-# interfaces
-.implements Lnxz;
+
+# instance fields
+.field final synthetic a:Lnya;
+
+
+# direct methods
+.method public constructor <init>(Lnya;)V
+    .locals 0
+
+    iput-object p1, p0, Lnxy;->a:Lnya;
+
+    invoke-direct {p0}, Lnxr;-><init>()V
+
+    return-void
+.end method
 
 
 # virtual methods
-.method public abstract H()Lnvt;
+.method public final a(Landroid/view/View;I)V
+    .locals 0
+
+    const/4 p1, 0x5
+
+    if-ne p2, p1, :cond_0
+
+    iget-object p1, p0, Lnxy;->a:Lnya;
+
+    invoke-virtual {p1}, Lnya;->cancel()V
+
+    :cond_0
+    return-void
 .end method
 
-.method public abstract I(Ljava/io/OutputStream;)V
-.end method
+.method public final b(Landroid/view/View;)V
+    .locals 0
 
-.method public abstract J()[B
-.end method
-
-.method public abstract N()I
-.end method
-
-.method public abstract V()Lnyf;
-.end method
-
-.method public abstract bo()Lnxx;
-.end method
-
-.method public abstract cG(Lnwd;)V
-.end method
-
-.method public abstract ct()Lnxx;
+    return-void
 .end method

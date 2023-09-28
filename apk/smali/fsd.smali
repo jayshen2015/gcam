@@ -1,16 +1,37 @@
-.class public interface abstract Lfsd;
+.class public final synthetic Lfsd;
 .super Ljava/lang/Object;
+
+# interfaces
+.implements Lfvo;
+
+
+# instance fields
+.field public final synthetic a:Lhjz;
+
+
+# direct methods
+.method public synthetic constructor <init>(Lhjz;)V
+    .locals 0
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lfsd;->a:Lhjz;
+
+    return-void
+.end method
 
 
 # virtual methods
-.method public abstract a(Ljava/lang/RuntimeException;)V
-.end method
+.method public final a(Ljava/lang/Object;)V
+    .locals 1
 
-.method public abstract b(Landroid/hardware/HardwareBuffer;Lcom/google/googlex/gcam/ShotMetadata;)V
-.end method
+    iget-object v0, p0, Lfsd;->a:Lhjz;
 
-.method public abstract c(Lcom/google/googlex/gcam/YuvImage;Lcom/google/googlex/gcam/ShotMetadata;)V
-.end method
+    check-cast p1, Lfsb;
 
-.method public abstract d(Landroid/hardware/HardwareBuffer;Lcom/google/googlex/gcam/ShotMetadata;)V
+    iget-object p1, p1, Lfsb;->c:Lpih;
+
+    invoke-virtual {p1, v0}, Lpih;->o(Ljava/lang/Object;)Z
+
+    return-void
 .end method

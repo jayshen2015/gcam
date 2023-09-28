@@ -1,180 +1,189 @@
-.class public final enum Licm;
-.super Ljava/lang/Enum;
+.class Licm;
+.super Ljava/lang/Object;
 
-
-# static fields
-.field public static final enum a:Licm;
-
-.field public static final enum b:Licm;
-
-.field public static final enum c:Licm;
-
-.field public static final enum d:Licm;
-
-.field public static final enum e:Licm;
-
-.field public static final enum f:Licm;
-
-.field public static final enum g:Licm;
-
-.field public static final enum h:Licm;
-
-.field private static final synthetic j:[Licm;
+# interfaces
+.implements Licl;
 
 
 # instance fields
-.field public final i:I
+.field final synthetic b:Licw;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 16
-
-    new-instance v0, Licm;
-
-    const v1, 0x7f14057b
-
-    const-string v2, "MIC_BROKEN"
-
-    const/4 v3, 0x0
-
-    invoke-direct {v0, v2, v3, v1}, Licm;-><init>(Ljava/lang/String;II)V
-
-    sput-object v0, Licm;->a:Licm;
-
-    new-instance v1, Licm;
-
-    const-string v2, "AUDIO_MISSING_DURING_RECORDING"
-
-    const/4 v4, 0x1
-
-    const v5, 0x7f14057f
-
-    invoke-direct {v1, v2, v4, v5}, Licm;-><init>(Ljava/lang/String;II)V
-
-    sput-object v1, Licm;->b:Licm;
-
-    new-instance v2, Licm;
-
-    const-string v5, "VIDEO_MISSING_DURING_RECORDING"
-
-    const/4 v6, 0x2
-
-    const v7, 0x7f140580
-
-    invoke-direct {v2, v5, v6, v7}, Licm;-><init>(Ljava/lang/String;II)V
-
-    sput-object v2, Licm;->c:Licm;
-
-    new-instance v5, Licm;
-
-    const-string v7, "SNAPSHOT_FAILURE"
-
-    const/4 v8, 0x3
-
-    const v9, 0x7f14057a
-
-    invoke-direct {v5, v7, v8, v9}, Licm;-><init>(Ljava/lang/String;II)V
-
-    sput-object v5, Licm;->d:Licm;
-
-    new-instance v7, Licm;
-
-    const-string v9, "PARTIAL_VIDEO_MISSING_AFTER_RECORDING"
-
-    const/4 v10, 0x4
-
-    const v11, 0x7f140581
-
-    invoke-direct {v7, v9, v10, v11}, Licm;-><init>(Ljava/lang/String;II)V
-
-    sput-object v7, Licm;->e:Licm;
-
-    new-instance v9, Licm;
-
-    const-string v11, "NO_VIDEO_AFTER_RECORDING"
-
-    const/4 v12, 0x5
-
-    const v13, 0x7f14057c
-
-    invoke-direct {v9, v11, v12, v13}, Licm;-><init>(Ljava/lang/String;II)V
-
-    sput-object v9, Licm;->f:Licm;
-
-    new-instance v11, Licm;
-
-    const-string v13, "CAPTURE_SESSION_ERROR"
-
-    const/4 v14, 0x6
-
-    const v15, 0x7f140583
-
-    invoke-direct {v11, v13, v14, v15}, Licm;-><init>(Ljava/lang/String;II)V
-
-    sput-object v11, Licm;->g:Licm;
-
-    new-instance v13, Licm;
-
-    const-string v15, "RECORDING_TOO_SHORT"
-
-    const/4 v14, 0x7
-
-    const v12, 0x7f140582
-
-    invoke-direct {v13, v15, v14, v12}, Licm;-><init>(Ljava/lang/String;II)V
-
-    sput-object v13, Licm;->h:Licm;
-
-    const/16 v12, 0x8
-
-    new-array v12, v12, [Licm;
-
-    aput-object v0, v12, v3
-
-    aput-object v1, v12, v4
-
-    aput-object v2, v12, v6
-
-    aput-object v5, v12, v8
-
-    aput-object v7, v12, v10
-
-    const/4 v0, 0x5
-
-    aput-object v9, v12, v0
-
-    const/4 v0, 0x6
-
-    aput-object v11, v12, v0
-
-    aput-object v13, v12, v14
-
-    sput-object v12, Licm;->j:[Licm;
-
-    return-void
-.end method
-
-.method private constructor <init>(Ljava/lang/String;II)V
+.method public constructor <init>(Licw;)V
     .locals 0
 
-    invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+    iput-object p1, p0, Licm;->b:Licw;
 
-    iput p3, p0, Licm;->i:I
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
-.method public static values()[Licm;
+.method private final q(Lbty;)V
     .locals 1
 
-    sget-object v0, Licm;->j:[Licm;
+    iget-object v0, p0, Licm;->b:Licw;
 
-    invoke-virtual {v0}, [Licm;->clone()Ljava/lang/Object;
+    iput-object p1, v0, Licw;->t:Lbty;
 
-    move-result-object v0
+    iget-object p1, v0, Licw;->p:Lick;
 
-    check-cast v0, [Licm;
+    invoke-virtual {p1}, Lick;->b()V
 
-    return-object v0
+    iget-object p1, p0, Licm;->b:Licw;
+
+    iget-object p1, p1, Licw;->p:Lick;
+
+    const/4 v0, 0x4
+
+    invoke-virtual {p1, v0}, Lick;->e(I)V
+
+    iget-object p1, p0, Licm;->b:Licw;
+
+    iget-object p1, p1, Licw;->p:Lick;
+
+    sget-object v0, Licj;->b:Licj;
+
+    invoke-virtual {p1, v0}, Lick;->d(Licj;)V
+
+    iget-object p1, p0, Licm;->b:Licw;
+
+    iget-object p1, p1, Licw;->p:Lick;
+
+    const/4 v0, 0x3
+
+    invoke-virtual {p1, v0}, Lick;->f(I)V
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public a()V
+    .locals 0
+
+    return-void
+.end method
+
+.method public b(Lbty;Z)V
+    .locals 0
+
+    xor-int/lit8 p2, p2, 0x1
+
+    invoke-static {p2}, Lobr;->aF(Z)V
+
+    invoke-direct {p0, p1}, Licm;->q(Lbty;)V
+
+    return-void
+.end method
+
+.method public d(Lbty;Z)V
+    .locals 0
+
+    xor-int/lit8 p2, p2, 0x1
+
+    invoke-static {p2}, Lobr;->aF(Z)V
+
+    invoke-direct {p0, p1}, Licm;->q(Lbty;)V
+
+    return-void
+.end method
+
+.method public final f()V
+    .locals 2
+
+    iget-object v0, p0, Licm;->b:Licw;
+
+    const/4 v1, 0x1
+
+    invoke-virtual {v0, v1, v1}, Licw;->r(ZZ)V
+
+    return-void
+.end method
+
+.method public final synthetic fV()V
+    .locals 0
+
+    return-void
+.end method
+
+.method public final synthetic fX()Z
+    .locals 1
+
+    const/4 v0, 0x0
+
+    return v0
+.end method
+
+.method public final synthetic g()V
+    .locals 0
+
+    return-void
+.end method
+
+.method public gk()V
+    .locals 1
+
+    iget-object v0, p0, Licm;->b:Licw;
+
+    iget-object v0, v0, Licw;->p:Lick;
+
+    invoke-virtual {v0}, Lick;->a()V
+
+    return-void
+.end method
+
+.method public final synthetic h()V
+    .locals 0
+
+    return-void
+.end method
+
+.method public final synthetic i()V
+    .locals 0
+
+    return-void
+.end method
+
+.method public final synthetic j()V
+    .locals 0
+
+    return-void
+.end method
+
+.method public final synthetic k()V
+    .locals 0
+
+    return-void
+.end method
+
+.method public final synthetic l(Landroid/content/pm/ResolveInfo;)V
+    .locals 0
+
+    return-void
+.end method
+
+.method public final synthetic m()V
+    .locals 0
+
+    return-void
+.end method
+
+.method public final synthetic n()V
+    .locals 0
+
+    return-void
+.end method
+
+.method public final synthetic o()V
+    .locals 0
+
+    return-void
+.end method
+
+.method public final synthetic p(J)V
+    .locals 0
+
+    return-void
 .end method

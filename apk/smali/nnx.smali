@@ -1,94 +1,124 @@
 .class public final Lnnx;
-.super Ljava/lang/Object;
+.super Lqmb;
+
+# interfaces
+.implements Lqmu;
 
 
-# static fields
-.field private static final c:Ljava/util/logging/Logger;
+# annotations
+.annotation runtime Lqlw;
+    b = "com.google.android.libraries.vision.visionkit.f250.internal.airlock.AutoUploadExpireQueryer$snapshotItemsToAutoUpload$2"
+    c = "Queryer.kt"
+    d = "invokeSuspend"
+    e = {
+        0x4d
+    }
+.end annotation
 
 
 # instance fields
-.field public a:Z
+.field a:I
 
-.field public b:Landroidx/wear/ambient/AmbientDelegate;
+.field final synthetic b:Lnnz;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
-
-    const-class v0, Lnnx;
-
-    invoke-virtual {v0}, Ljava/lang/Class;->getName()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-static {v0}, Ljava/util/logging/Logger;->getLogger(Ljava/lang/String;)Ljava/util/logging/Logger;
-
-    move-result-object v0
-
-    sput-object v0, Lnnx;->c:Ljava/util/logging/Logger;
-
-    return-void
-.end method
-
-.method public constructor <init>()V
+.method public constructor <init>(Lnnz;Lqlh;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lnnx;->b:Lnnz;
+
+    const/4 p1, 0x1
+
+    invoke-direct {p0, p1, p2}, Lqmb;-><init>(ILqlh;)V
 
     return-void
 .end method
 
-.method public static a(Ljava/lang/Runnable;Ljava/util/concurrent/Executor;)V
-    .locals 6
 
-    :try_start_0
-    invoke-interface {p1, p0}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
-    :try_end_0
-    .catch Ljava/lang/RuntimeException; {:try_start_0 .. :try_end_0} :catch_0
+# virtual methods
+.method public final bridge synthetic a(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 2
 
-    return-void
+    check-cast p1, Lqlh;
 
-    :catch_0
-    move-exception v5
+    new-instance v0, Lnnx;
 
-    sget-object v0, Lnnx;->c:Ljava/util/logging/Logger;
+    iget-object v1, p0, Lnnx;->b:Lnnz;
 
-    sget-object v1, Ljava/util/logging/Level;->SEVERE:Ljava/util/logging/Level;
+    invoke-direct {v0, v1, p1}, Lnnx;-><init>(Lnnz;Lqlh;)V
 
-    invoke-virtual {p0}, Ljava/lang/Object;->toString()Ljava/lang/String;
+    sget-object p1, Lqks;->a:Lqks;
 
-    move-result-object p0
-
-    invoke-virtual {p1}, Ljava/lang/Object;->toString()Ljava/lang/String;
+    invoke-virtual {v0, p1}, Lnnx;->invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p1
 
-    new-instance v2, Ljava/lang/StringBuilder;
+    return-object p1
+.end method
 
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+.method public final create(Lqlh;)Lqlh;
+    .locals 2
 
-    const-string v3, "RuntimeException while executing runnable "
+    new-instance v0, Lnnx;
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    iget-object v1, p0, Lnnx;->b:Lnnz;
 
-    invoke-virtual {v2, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-direct {v0, v1, p1}, Lnnx;-><init>(Lnnz;Lqlh;)V
 
-    const-string p0, " with executor "
+    return-object v0
+.end method
 
-    invoke-virtual {v2, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+.method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 4
 
-    invoke-virtual {v2, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    sget-object v0, Lqlp;->a:Lqlp;
 
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    iget v1, p0, Lnnx;->a:I
 
-    move-result-object v4
+    packed-switch v1, :pswitch_data_0
 
-    const-string v2, "com.google.common.util.concurrent.ExecutionList"
+    invoke-static {p1}, Lqmd;->M(Ljava/lang/Object;)V
 
-    const-string v3, "executeListener"
+    goto :goto_0
 
-    invoke-virtual/range {v0 .. v5}, Ljava/util/logging/Logger;->logp(Ljava/util/logging/Level;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
+    :pswitch_0
+    invoke-static {p1}, Lqmd;->M(Ljava/lang/Object;)V
 
-    return-void
+    iget-object p1, p0, Lnnx;->b:Lnnz;
+
+    iget-object v1, p1, Lnnz;->a:Lnpf;
+
+    iget-object p1, p1, Lnnz;->b:Lmdf;
+
+    invoke-static {p1}, Lohh;->ag(Lmdf;)Lprl;
+
+    move-result-object p1
+
+    const/4 v2, 0x1
+
+    iput v2, p0, Lnnx;->a:I
+
+    sget-object v2, Lnnr;->b:Lnnr;
+
+    sget-object v3, Lnmr;->c:Lnmr;
+
+    invoke-interface {v1, p1, v2, v3, p0}, Lnpf;->c(Lprl;Lnnr;Lnmr;Lqlh;)Ljava/lang/Object;
+
+    move-result-object p1
+
+    if-ne p1, v0, :cond_0
+
+    return-object v0
+
+    :cond_0
+    :goto_0
+    return-object p1
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

@@ -1,22 +1,17 @@
 .class public final Lknr;
-.super Ljava/lang/Object;
+.super Lbmn;
 
-
-# static fields
-.field public static final a:Lkhz;
+# interfaces
+.implements Landroid/os/IInterface;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
+.method public constructor <init>(Landroid/os/IBinder;)V
+    .locals 1
 
-    new-instance v0, Lkhz;
+    const-string v0, "com.google.android.gms.common.internal.service.IClientTelemetryService"
 
-    const/4 v1, 0x3
-
-    invoke-direct {v0, v1}, Lkhz;-><init>(I)V
-
-    sput-object v0, Lknr;->a:Lkhz;
+    invoke-direct {p0, p1, v0}, Lbmn;-><init>(Landroid/os/IBinder;Ljava/lang/String;)V
 
     return-void
 .end method

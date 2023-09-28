@@ -1,46 +1,29 @@
-.class public final Lmum;
-.super Lmun;
+.class final Lmum;
+.super Ljava/lang/Object;
 
-
-# instance fields
-.field final synthetic a:Ljava/lang/Iterable;
+# interfaces
+.implements Lmuo;
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/Iterable;)V
+.method public constructor <init>()V
     .locals 0
 
-    iput-object p1, p0, Lmum;->a:Ljava/lang/Iterable;
-
-    invoke-direct {p0}, Lmun;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final iterator()Ljava/util/Iterator;
-    .locals 3
+.method public final a()V
+    .locals 0
 
-    iget-object v0, p0, Lmum;->a:Ljava/lang/Iterable;
+    return-void
+.end method
 
-    invoke-interface {v0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
+.method public final b()V
+    .locals 0
 
-    move-result-object v0
-
-    new-instance v1, Lcej;
-
-    const/16 v2, 0x9
-
-    invoke-direct {v1, v2}, Lcej;-><init>(I)V
-
-    invoke-static {v0, v1}, Llyh;->N(Ljava/util/Iterator;Lmqi;)Ljava/util/Iterator;
-
-    move-result-object v0
-
-    new-instance v1, Lmxg;
-
-    invoke-direct {v1, v0}, Lmxg;-><init>(Ljava/util/Iterator;)V
-
-    return-object v1
+    return-void
 .end method

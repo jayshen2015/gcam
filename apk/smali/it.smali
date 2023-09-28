@@ -1,43 +1,98 @@
-.class final Lit;
-.super Landroid/widget/PopupWindow;
+.class abstract Lit;
+.super Ljava/lang/Object;
+
+
+# instance fields
+.field private a:Landroid/content/BroadcastReceiver;
+
+.field final synthetic c:Liy;
 
 
 # direct methods
-.method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
+.method public constructor <init>(Liy;)V
+    .locals 0
+
+    iput-object p1, p0, Lit;->c:Liy;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public abstract a()Landroid/content/IntentFilter;
+.end method
+
+.method public abstract b()V
+.end method
+
+.method final c()V
     .locals 2
 
+    iget-object v0, p0, Lit;->a:Landroid/content/BroadcastReceiver;
+
+    if-eqz v0, :cond_0
+
+    :try_start_0
+    iget-object v1, p0, Lit;->c:Liy;
+
+    iget-object v1, v1, Liy;->f:Landroid/content/Context;
+
+    invoke-virtual {v1, v0}, Landroid/content/Context;->unregisterReceiver(Landroid/content/BroadcastReceiver;)V
+    :try_end_0
+    .catch Ljava/lang/IllegalArgumentException; {:try_start_0 .. :try_end_0} :catch_0
+
+    goto :goto_0
+
+    :catch_0
+    move-exception v0
+
+    :goto_0
     const/4 v0, 0x0
 
-    invoke-direct {p0, p1, p2, p3, v0}, Landroid/widget/PopupWindow;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;II)V
-
-    sget-object v1, Lfr;->s:[I
-
-    invoke-static {p1, p2, v1, p3, v0}, Landroidx/wear/ambient/AmbientDelegate;->D(Landroid/content/Context;Landroid/util/AttributeSet;[III)Landroidx/wear/ambient/AmbientDelegate;
-
-    move-result-object p1
-
-    const/4 p2, 0x2
-
-    invoke-virtual {p1, p2}, Landroidx/wear/ambient/AmbientDelegate;->A(I)Z
-
-    move-result p3
-
-    if-eqz p3, :cond_0
-
-    invoke-virtual {p1, p2, v0}, Landroidx/wear/ambient/AmbientDelegate;->z(IZ)Z
-
-    move-result p2
-
-    invoke-static {p0, p2}, Lahp;->b(Landroid/widget/PopupWindow;Z)V
+    iput-object v0, p0, Lit;->a:Landroid/content/BroadcastReceiver;
 
     :cond_0
-    invoke-virtual {p1, v0}, Landroidx/wear/ambient/AmbientDelegate;->u(I)Landroid/graphics/drawable/Drawable;
+    return-void
+.end method
 
-    move-result-object p2
+.method final d()V
+    .locals 3
 
-    invoke-virtual {p0, p2}, Lit;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
+    invoke-virtual {p0}, Lit;->c()V
 
-    invoke-virtual {p1}, Landroidx/wear/ambient/AmbientDelegate;->y()V
+    invoke-virtual {p0}, Lit;->a()Landroid/content/IntentFilter;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroid/content/IntentFilter;->countActions()I
+
+    move-result v1
+
+    if-nez v1, :cond_0
+
+    return-void
+
+    :cond_0
+    iget-object v1, p0, Lit;->a:Landroid/content/BroadcastReceiver;
+
+    if-nez v1, :cond_1
+
+    new-instance v1, Lis;
+
+    invoke-direct {v1, p0}, Lis;-><init>(Lit;)V
+
+    iput-object v1, p0, Lit;->a:Landroid/content/BroadcastReceiver;
+
+    :cond_1
+    iget-object v1, p0, Lit;->c:Liy;
+
+    iget-object v1, v1, Liy;->f:Landroid/content/Context;
+
+    iget-object v2, p0, Lit;->a:Landroid/content/BroadcastReceiver;
+
+    invoke-virtual {v1, v2, v0}, Landroid/content/Context;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;)Landroid/content/Intent;
 
     return-void
 .end method

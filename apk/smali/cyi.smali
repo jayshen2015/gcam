@@ -1,66 +1,53 @@
-.class Lcyi;
-.super Lcys;
+.class public final Lcyi;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Lpys;
 
 
 # instance fields
-.field final synthetic b:Lcyl;
+.field private final a:Lqkg;
 
 
 # direct methods
-.method public constructor <init>(Lcyl;)V
+.method public constructor <init>(Lqkg;)V
     .locals 0
 
-    iput-object p1, p0, Lcyi;->b:Lcyl;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0}, Lcys;-><init>()V
+    iput-object p1, p0, Lcyi;->a:Lqkg;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final bx()I
-    .locals 1
+.method public final a()Lkhx;
+    .locals 3
 
-    const/4 v0, 0x1
+    iget-object v0, p0, Lcyi;->a:Lqkg;
 
-    return v0
+    check-cast v0, Lemp;
+
+    invoke-virtual {v0}, Lemp;->a()Landroid/content/Context;
+
+    move-result-object v0
+
+    new-instance v1, Lkhx;
+
+    const/4 v2, 0x0
+
+    invoke-direct {v1, v0, v2}, Lkhx;-><init>(Landroid/content/Context;[S)V
+
+    return-object v1
 .end method
 
-.method public c()V
-    .locals 2
-
-    iget-object v0, p0, Lcyi;->b:Lcyl;
-
-    iget-object v1, v0, Lcyl;->i:Ldfa;
-
-    invoke-virtual {v1}, Ldfa;->f()V
-
-    iget-object v1, v0, Lcyl;->e:Lcom/google/android/apps/camera/bottombar/BottomBarController;
-
-    invoke-virtual {v1}, Lcom/google/android/apps/camera/bottombar/BottomBarController;->startVideoIntentRecording()V
-
-    iget-object v1, v0, Lcyl;->f:Liff;
-
-    invoke-interface {v1}, Liff;->X()V
-
-    iget-object v0, v0, Lcyl;->g:Lhwu;
-
-    const/4 v1, 0x0
-
-    invoke-virtual {v0, v1}, Lhwu;->d(Z)V
-
-    invoke-static {}, Lipj;->c()V
-
-    return-void
-.end method
-
-.method public final f()V
+.method public final bridge synthetic get()Ljava/lang/Object;
     .locals 1
 
-    iget-object v0, p0, Lcyi;->b:Lcyl;
+    invoke-virtual {p0}, Lcyi;->a()Lkhx;
 
-    iput-object p0, v0, Lcyl;->h:Lcys;
+    move-result-object v0
 
-    return-void
+    return-object v0
 .end method

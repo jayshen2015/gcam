@@ -1,68 +1,70 @@
-.class final Lbgq;
-.super Ljava/util/concurrent/FutureTask;
+.class public final Lbgq;
+.super Lbgo;
 
 
-# instance fields
-.field final synthetic a:Lbgr;
+# static fields
+.field private static final b:[B
 
 
 # direct methods
-.method public constructor <init>(Lbgr;Ljava/util/concurrent/Callable;)V
+.method static constructor <clinit>()V
+    .locals 2
+
+    sget-object v0, Lbgq;->a:Ljava/nio/charset/Charset;
+
+    const-string v1, "com.bumptech.glide.load.resource.bitmap.CenterInside"
+
+    invoke-virtual {v1, v0}, Ljava/lang/String;->getBytes(Ljava/nio/charset/Charset;)[B
+
+    move-result-object v0
+
+    sput-object v0, Lbgq;->b:[B
+
+    return-void
+.end method
+
+.method public constructor <init>()V
     .locals 0
 
-    iput-object p1, p0, Lbgq;->a:Lbgr;
-
-    invoke-direct {p0, p2}, Ljava/util/concurrent/FutureTask;-><init>(Ljava/util/concurrent/Callable;)V
+    invoke-direct {p0}, Lbgo;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method protected final done()V
-    .locals 3
+.method public final a(Ljava/security/MessageDigest;)V
+    .locals 1
 
-    invoke-virtual {p0}, Lbgq;->isCancelled()Z
+    sget-object v0, Lbgq;->b:[B
 
-    move-result v0
-
-    if-eqz v0, :cond_0
+    invoke-virtual {p1, v0}, Ljava/security/MessageDigest;->update([B)V
 
     return-void
+.end method
 
-    :cond_0
-    :try_start_0
-    iget-object v0, p0, Lbgq;->a:Lbgr;
+.method protected final c(Lbcv;Landroid/graphics/Bitmap;II)Landroid/graphics/Bitmap;
+    .locals 0
 
-    invoke-virtual {p0}, Lbgq;->get()Ljava/lang/Object;
+    invoke-static {p1, p2, p3, p4}, Lbhy;->d(Lbcv;Landroid/graphics/Bitmap;II)Landroid/graphics/Bitmap;
 
-    move-result-object v1
+    move-result-object p1
 
-    check-cast v1, Lbgp;
+    return-object p1
+.end method
 
-    invoke-virtual {v0, v1}, Lbgr;->c(Lbgp;)V
-    :try_end_0
-    .catch Ljava/lang/InterruptedException; {:try_start_0 .. :try_end_0} :catch_1
-    .catch Ljava/util/concurrent/ExecutionException; {:try_start_0 .. :try_end_0} :catch_0
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 0
 
-    return-void
+    instance-of p1, p1, Lbgq;
 
-    :catch_0
-    move-exception v0
+    return p1
+.end method
 
-    goto :goto_0
+.method public final hashCode()I
+    .locals 1
 
-    :catch_1
-    move-exception v0
+    const v0, -0x27f31906
 
-    :goto_0
-    iget-object v1, p0, Lbgq;->a:Lbgr;
-
-    new-instance v2, Lbgp;
-
-    invoke-direct {v2, v0}, Lbgp;-><init>(Ljava/lang/Throwable;)V
-
-    invoke-virtual {v1, v2}, Lbgr;->c(Lbgp;)V
-
-    return-void
+    return v0
 .end method

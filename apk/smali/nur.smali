@@ -1,150 +1,263 @@
-.class final Lnur;
+.class public final Lnur;
 .super Ljava/lang/Object;
-
-# interfaces
-.implements Lcom/google/mediapipe/framework/PacketCallback;
 
 
 # instance fields
-.field final synthetic a:Lnus;
+.field public a:F
+
+.field public b:F
+
+.field public c:F
+
+.field public d:F
+
+.field public e:F
 
 
 # direct methods
-.method public constructor <init>(Lnus;)V
+.method public constructor <init>()V
+    .locals 6
+
+    const/4 v1, 0x0
+
+    const/4 v2, 0x0
+
+    const/4 v3, 0x0
+
+    const/4 v4, 0x0
+
+    const/4 v5, 0x0
+
+    move-object v0, p0
+
+    invoke-direct/range {v0 .. v5}, Lnur;-><init>(FFFFF)V
+
+    return-void
+.end method
+
+.method public constructor <init>(FFFFF)V
     .locals 0
 
-    iput-object p1, p0, Lnur;->a:Lnus;
-
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput p1, p0, Lnur;->a:F
+
+    iput p2, p0, Lnur;->b:F
+
+    iput p3, p0, Lnur;->c:F
+
+    iput p4, p0, Lnur;->d:F
+
+    const/high16 p1, 0x43b40000    # 360.0f
+
+    rem-float/2addr p5, p1
+
+    add-float/2addr p5, p1
+
+    rem-float/2addr p5, p1
+
+    iput p5, p0, Lnur;->e:F
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final process(Lcom/google/mediapipe/framework/Packet;)V
-    .locals 8
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 3
 
-    monitor-enter p0
+    instance-of v0, p1, Lnur;
 
-    :try_start_0
-    iget-object v0, p0, Lnur;->a:Lnus;
-
-    iget-object v0, v0, Lnus;->e:Ljava/util/Queue;
-
-    invoke-interface {v0}, Ljava/util/Queue;->poll()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/lang/Long;
-
-    const/4 v1, 0x1
+    const/4 v1, 0x0
 
     if-eqz v0, :cond_0
 
-    invoke-virtual {v0}, Ljava/lang/Long;->longValue()J
+    check-cast p1, Lnur;
 
-    move-result-wide v2
+    iget v0, p0, Lnur;->a:F
 
-    invoke-virtual {p1}, Lcom/google/mediapipe/framework/Packet;->a()J
+    iget v2, p1, Lnur;->a:F
 
-    move-result-wide v4
+    invoke-static {v0, v2}, Lnaq;->i(FF)Z
 
-    cmp-long v6, v2, v4
+    move-result v0
 
-    if-eqz v6, :cond_1
+    if-eqz v0, :cond_0
+
+    iget v0, p0, Lnur;->b:F
+
+    iget v2, p1, Lnur;->b:F
+
+    invoke-static {v0, v2}, Lnaq;->i(FF)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    iget v0, p0, Lnur;->c:F
+
+    iget v2, p1, Lnur;->c:F
+
+    invoke-static {v0, v2}, Lnaq;->i(FF)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    iget v0, p0, Lnur;->d:F
+
+    iget v2, p1, Lnur;->d:F
+
+    invoke-static {v0, v2}, Lnaq;->i(FF)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    iget v0, p0, Lnur;->e:F
+
+    iget p1, p1, Lnur;->e:F
+
+    invoke-static {v0, p1}, Lnaq;->i(FF)Z
+
+    move-result p1
+
+    if-eqz p1, :cond_0
+
+    const/4 p1, 0x1
+
+    return p1
 
     :cond_0
-    const-string v2, "FrameProcessor"
+    return v1
+.end method
 
-    const-string v3, "WARNING: output timestamp was %d, but expected %d. if output frames are skipped, in-flight accounting will break"
+.method public final hashCode()I
+    .locals 3
 
-    const/4 v4, 0x2
+    const/4 v0, 0x5
 
-    new-array v4, v4, [Ljava/lang/Object;
+    new-array v0, v0, [Ljava/lang/Object;
 
-    invoke-virtual {p1}, Lcom/google/mediapipe/framework/Packet;->a()J
+    iget v1, p0, Lnur;->a:F
 
-    move-result-wide v5
+    invoke-static {v1}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
 
-    invoke-static {v5, v6}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+    move-result-object v1
 
-    move-result-object v5
+    const/4 v2, 0x0
 
-    const/4 v6, 0x0
+    aput-object v1, v0, v2
 
-    aput-object v5, v4, v6
+    iget v1, p0, Lnur;->b:F
 
-    aput-object v0, v4, v1
+    invoke-static {v1}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
 
-    invoke-static {v3, v4}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+    move-result-object v1
+
+    const/4 v2, 0x1
+
+    aput-object v1, v0, v2
+
+    iget v1, p0, Lnur;->c:F
+
+    invoke-static {v1}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
+
+    move-result-object v1
+
+    const/4 v2, 0x2
+
+    aput-object v1, v0, v2
+
+    iget v1, p0, Lnur;->d:F
+
+    invoke-static {v1}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
+
+    move-result-object v1
+
+    const/4 v2, 0x3
+
+    aput-object v1, v0, v2
+
+    iget v1, p0, Lnur;->e:F
+
+    invoke-static {v1}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
+
+    move-result-object v1
+
+    const/4 v2, 0x4
+
+    aput-object v1, v0, v2
+
+    invoke-static {v0}, Lj$/util/Objects;->hash([Ljava/lang/Object;)I
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .locals 3
+
+    const/4 v0, 0x5
+
+    new-array v0, v0, [Ljava/lang/Object;
+
+    iget v1, p0, Lnur;->a:F
+
+    invoke-static {v1}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
+
+    move-result-object v1
+
+    const/4 v2, 0x0
+
+    aput-object v1, v0, v2
+
+    iget v1, p0, Lnur;->b:F
+
+    invoke-static {v1}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
+
+    move-result-object v1
+
+    const/4 v2, 0x1
+
+    aput-object v1, v0, v2
+
+    iget v1, p0, Lnur;->c:F
+
+    invoke-static {v1}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
+
+    move-result-object v1
+
+    const/4 v2, 0x2
+
+    aput-object v1, v0, v2
+
+    iget v1, p0, Lnur;->d:F
+
+    invoke-static {v1}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
+
+    move-result-object v1
+
+    const/4 v2, 0x3
+
+    aput-object v1, v0, v2
+
+    iget v1, p0, Lnur;->e:F
+
+    invoke-static {v1}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
+
+    move-result-object v1
+
+    const/4 v2, 0x4
+
+    aput-object v1, v0, v2
+
+    const-string v1, "RotatedBox(x=%s, y=%s, width=%s, height=%s, cwRotationDegrees=%s)"
+
+    invoke-static {v1, v0}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v0
 
-    invoke-static {v2, v0}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
-
-    :cond_1
-    iget-object v0, p0, Lnur;->a:Lnus;
-
-    iget-object v0, v0, Lnus;->a:Ljava/util/List;
-
-    monitor-exit p0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
-
-    move-result-object v0
-
-    :goto_0
-    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v2
-
-    if-eqz v2, :cond_2
-
-    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Lnut;
-
-    new-instance v3, Lcom/google/mediapipe/framework/GraphTextureFrame;
-
-    invoke-virtual {p1}, Lcom/google/mediapipe/framework/Packet;->getNativeHandle()J
-
-    move-result-wide v4
-
-    invoke-static {v4, v5, v1}, Lcom/google/mediapipe/framework/PacketGetter;->nativeGetGpuBuffer(JZ)J
-
-    move-result-wide v4
-
-    invoke-virtual {p1}, Lcom/google/mediapipe/framework/Packet;->a()J
-
-    move-result-wide v6
-
-    invoke-direct {v3, v4, v5, v6, v7}, Lcom/google/mediapipe/framework/GraphTextureFrame;-><init>(JJ)V
-
-    invoke-interface {v2, v3}, Lnut;->a(Lcom/google/mediapipe/framework/TextureFrame;)V
-
-    goto :goto_0
-
-    :cond_2
-    return-void
-
-    :catchall_0
-    move-exception p1
-
-    :try_start_1
-    monitor-exit p0
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    goto :goto_2
-
-    :goto_1
-    throw p1
-
-    :goto_2
-    goto :goto_1
+    return-object v0
 .end method

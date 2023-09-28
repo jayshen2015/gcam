@@ -1,74 +1,133 @@
-.class public final Leif;
-.super Lifk;
+.class final Leif;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Llht;
 
 
 # instance fields
-.field final synthetic a:Leio;
+.field final synthetic a:Lhhn;
 
-.field final synthetic b:Ldhi;
+.field final synthetic b:Leig;
 
-.field final synthetic c:Ljew;
+.field final synthetic c:I
 
 
 # direct methods
-.method public constructor <init>(Ljew;Leio;Ldhi;[B)V
+.method public constructor <init>(Leig;Lhhn;I)V
     .locals 0
 
-    iput-object p1, p0, Leif;->c:Ljew;
+    iput-object p1, p0, Leif;->b:Leig;
 
-    iput-object p2, p0, Leif;->a:Leio;
+    iput-object p2, p0, Leif;->a:Lhhn;
 
-    iput-object p3, p0, Leif;->b:Ldhi;
+    iput p3, p0, Leif;->c:I
 
-    invoke-direct {p0}, Lifk;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onShutterButtonClick()V
-    .locals 2
+.method public final bridge synthetic a(Ljava/lang/Object;)V
+    .locals 8
 
-    iget-object v0, p0, Leif;->c:Ljew;
+    check-cast p1, Lhhn;
 
-    invoke-virtual {v0}, Ljew;->M()Z
+    iget-object p1, p0, Leif;->a:Lhhn;
 
-    move-result v0
+    invoke-interface {p1, p0}, Lhhn;->e(Llht;)V
 
-    if-nez v0, :cond_0
+    iget-object p1, p0, Leif;->b:Leig;
 
-    iget-object v0, p0, Leif;->b:Ldhi;
+    invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
 
-    sget-object v1, Ldho;->a:Ldhk;
+    move-result-wide v0
 
-    invoke-interface {v0}, Ldhi;->e()V
+    iput-wide v0, p1, Leig;->G:J
+
+    iget-object p1, p0, Leif;->b:Leig;
+
+    iget-object v0, p1, Leig;->i:Lfjs;
+
+    iget v1, p0, Leif;->c:I
+
+    iget-object p1, p1, Leig;->I:Lehc;
+
+    invoke-virtual {p1}, Lehc;->c()V
+
+    iget-object p1, p0, Leif;->b:Leig;
+
+    iget-wide v2, p1, Leig;->G:J
+
+    iget-wide v4, p1, Leig;->F:J
+
+    sub-long/2addr v2, v4
+
+    iget-wide v4, p1, Leig;->E:J
+
+    iget-wide v6, p1, Leig;->D:J
+
+    sub-long/2addr v4, v6
+
+    const-wide/16 v6, 0x0
+
+    invoke-static {v4, v5, v6, v7}, Ljava/lang/Math;->max(JJ)J
+
+    move-result-wide v4
+
+    iget-object p1, p0, Leif;->b:Leig;
+
+    invoke-virtual {p1}, Leig;->b()F
+
+    move-result v6
+
+    iget-object p1, p0, Leif;->b:Leig;
+
+    iget-object p1, p1, Leig;->h:Llda;
+
+    invoke-interface {p1}, Llda;->fA()Ljava/lang/Object;
+
+    move-result-object p1
+
+    check-cast p1, Ljava/lang/Boolean;
+
+    invoke-virtual {p1}, Ljava/lang/Boolean;->booleanValue()Z
+
+    move-result v7
+
+    invoke-interface/range {v0 .. v7}, Lfjs;->at(IJJFZ)V
+
+    iget-object p1, p0, Leif;->b:Leig;
+
+    iget-object p1, p1, Leig;->l:Ljava/util/Set;
+
+    monitor-enter p1
+
+    :try_start_0
+    iget-object v0, p0, Leif;->b:Leig;
+
+    iget-object v1, v0, Leig;->l:Ljava/util/Set;
+
+    iget-object v0, v0, Leig;->I:Lehc;
+
+    invoke-virtual {v0}, Lehc;->a()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-interface {v1, v0}, Ljava/util/Set;->remove(Ljava/lang/Object;)Z
+
+    monitor-exit p1
 
     return-void
 
-    :cond_0
-    iget-object v0, p0, Leif;->a:Leio;
+    :catchall_0
+    move-exception v0
 
-    invoke-virtual {v0}, Leio;->g()V
+    monitor-exit p1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    return-void
-.end method
-
-.method public final onShutterButtonDown()V
-    .locals 1
-
-    iget-object v0, p0, Leif;->c:Ljew;
-
-    invoke-virtual {v0}, Ljew;->M()Z
-
-    move-result v0
-
-    if-nez v0, :cond_0
-
-    iget-object v0, p0, Leif;->a:Leio;
-
-    invoke-virtual {v0}, Leio;->g()V
-
-    :cond_0
-    return-void
+    throw v0
 .end method

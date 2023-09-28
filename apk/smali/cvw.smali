@@ -2,54 +2,94 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lkad;
+.implements Lpys;
 
 
 # instance fields
-.field public final a:Ljyc;
+.field private final a:Lqkg;
 
-.field public b:Lcvv;
+.field private final b:Lqkg;
 
-.field private final c:Ljava/util/concurrent/atomic/AtomicLong;
+.field private final c:Lqkg;
+
+.field private final d:Lqkg;
+
+.field private final e:Lqkg;
+
+.field private final f:Lqkg;
+
+.field private final g:Lqkg;
+
+.field private final h:Lqkg;
 
 
 # direct methods
-.method public constructor <init>(Ljyc;)V
-    .locals 3
+.method public constructor <init>(Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;)V
+    .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    new-instance v0, Ljava/util/concurrent/atomic/AtomicLong;
+    iput-object p1, p0, Lcvw;->a:Lqkg;
 
-    const-wide/16 v1, 0x0
+    iput-object p2, p0, Lcvw;->b:Lqkg;
 
-    invoke-direct {v0, v1, v2}, Ljava/util/concurrent/atomic/AtomicLong;-><init>(J)V
+    iput-object p3, p0, Lcvw;->c:Lqkg;
 
-    iput-object v0, p0, Lcvw;->c:Ljava/util/concurrent/atomic/AtomicLong;
+    iput-object p4, p0, Lcvw;->d:Lqkg;
 
-    iput-object p1, p0, Lcvw;->a:Ljyc;
+    iput-object p5, p0, Lcvw;->e:Lqkg;
 
-    sget-object p1, Lcvv;->a:Lcvv;
+    iput-object p6, p0, Lcvw;->f:Lqkg;
 
-    iput-object p1, p0, Lcvw;->b:Lcvv;
+    iput-object p7, p0, Lcvw;->g:Lqkg;
+
+    iput-object p8, p0, Lcvw;->h:Lqkg;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final close()V
-    .locals 3
+.method public final a()Lgzf;
+    .locals 13
 
-    iget-object v0, p0, Lcvw;->c:Ljava/util/concurrent/atomic/AtomicLong;
+    iget-object v1, p0, Lcvw;->a:Lqkg;
 
-    const-wide/16 v1, 0x0
+    iget-object v2, p0, Lcvw;->b:Lqkg;
 
-    invoke-virtual {v0, v1, v2}, Ljava/util/concurrent/atomic/AtomicLong;->set(J)V
+    iget-object v3, p0, Lcvw;->c:Lqkg;
 
-    sget-object v0, Lcvv;->a:Lcvv;
+    iget-object v4, p0, Lcvw;->d:Lqkg;
 
-    iput-object v0, p0, Lcvw;->b:Lcvv;
+    iget-object v5, p0, Lcvw;->e:Lqkg;
 
-    return-void
+    iget-object v6, p0, Lcvw;->f:Lqkg;
+
+    iget-object v7, p0, Lcvw;->g:Lqkg;
+
+    iget-object v8, p0, Lcvw;->h:Lqkg;
+
+    new-instance v12, Lgzf;
+
+    const/4 v9, 0x0
+
+    const/4 v10, 0x0
+
+    const/4 v11, 0x0
+
+    move-object v0, v12
+
+    invoke-direct/range {v0 .. v11}, Lgzf;-><init>(Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;[B[B[B)V
+
+    return-object v12
+.end method
+
+.method public final bridge synthetic get()Ljava/lang/Object;
+    .locals 1
+
+    invoke-virtual {p0}, Lcvw;->a()Lgzf;
+
+    move-result-object v0
+
+    return-object v0
 .end method

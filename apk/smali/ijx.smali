@@ -1,424 +1,126 @@
-.class public final Lijx;
-.super Ljava/lang/Object;
+.class public final enum Lijx;
+.super Ljava/lang/Enum;
 
 
-# instance fields
-.field public final a:Lcom/google/android/apps/camera/ui/zoomlock/ZoomLockView;
+# static fields
+.field public static final enum a:Lijx;
 
-.field public final b:Landroid/widget/ImageView;
+.field public static final enum b:Lijx;
 
-.field public final c:Landroid/widget/ImageView;
+.field public static final enum c:Lijx;
 
-.field public final d:Landroid/content/res/Resources;
+.field public static final enum d:Lijx;
 
-.field public e:Landroid/view/MotionEvent;
+.field public static final enum e:Lijx;
 
-.field public f:F
+.field public static final enum f:Lijx;
 
-.field public g:F
-
-.field public h:Z
-
-.field public i:Z
-
-.field public final j:F
+.field private static final synthetic g:[Lijx;
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/apps/camera/ui/zoomlock/ZoomLockView;)V
-    .locals 2
+.method static constructor <clinit>()V
+    .locals 13
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance v0, Lijx;
 
-    const/4 v0, 0x1
+    const-string v1, "MEDIA_RECORDER_PREPARE_START"
 
-    iput-boolean v0, p0, Lijx;->i:Z
+    const/4 v2, 0x0
 
-    iput-object p1, p0, Lijx;->a:Lcom/google/android/apps/camera/ui/zoomlock/ZoomLockView;
+    invoke-direct {v0, v1, v2}, Lijx;-><init>(Ljava/lang/String;I)V
 
-    iget-object v0, p1, Lcom/google/android/apps/camera/ui/zoomlock/ZoomLockView;->b:Landroid/widget/ImageView;
+    sput-object v0, Lijx;->a:Lijx;
 
-    iput-object v0, p0, Lijx;->b:Landroid/widget/ImageView;
+    new-instance v1, Lijx;
 
-    iget-object v0, p1, Lcom/google/android/apps/camera/ui/zoomlock/ZoomLockView;->a:Landroid/widget/ImageView;
+    const-string v3, "MEDIA_RECORDER_PREPARE_END"
 
-    iput-object v0, p0, Lijx;->c:Landroid/widget/ImageView;
+    const/4 v4, 0x1
 
-    invoke-virtual {p1}, Lcom/google/android/apps/camera/ui/zoomlock/ZoomLockView;->getResources()Landroid/content/res/Resources;
+    invoke-direct {v1, v3, v4}, Lijx;-><init>(Ljava/lang/String;I)V
 
-    move-result-object p1
+    sput-object v1, Lijx;->b:Lijx;
 
-    iput-object p1, p0, Lijx;->d:Landroid/content/res/Resources;
+    new-instance v3, Lijx;
 
-    const v0, 0x7f0708bd
+    const-string v5, "VIDEO_RECORDER_STARTING"
 
-    invoke-virtual {p1, v0}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
+    const/4 v6, 0x2
 
-    move-result v0
+    invoke-direct {v3, v5, v6}, Lijx;-><init>(Ljava/lang/String;I)V
 
-    const v1, 0x7f0708b5
+    sput-object v3, Lijx;->c:Lijx;
 
-    invoke-virtual {p1, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
+    new-instance v5, Lijx;
 
-    move-result v1
+    const-string v7, "VIDEO_RECORDER_STARTED"
 
-    div-int/lit8 v1, v1, 0x2
+    const/4 v8, 0x3
 
-    sub-int/2addr v0, v1
+    invoke-direct {v5, v7, v8}, Lijx;-><init>(Ljava/lang/String;I)V
 
-    const v1, 0x7f0708a0
+    sput-object v5, Lijx;->d:Lijx;
 
-    invoke-virtual {p1, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
+    new-instance v7, Lijx;
 
-    move-result p1
+    const-string v9, "VIDEO_RECORDER_STOPPING"
 
-    add-int/2addr v0, p1
+    const/4 v10, 0x4
 
-    int-to-float p1, v0
+    invoke-direct {v7, v9, v10}, Lijx;-><init>(Ljava/lang/String;I)V
 
-    iput p1, p0, Lijx;->j:F
+    sput-object v7, Lijx;->e:Lijx;
+
+    new-instance v9, Lijx;
+
+    const-string v11, "VIDEO_RECORDER_STOPPED"
+
+    const/4 v12, 0x5
+
+    invoke-direct {v9, v11, v12}, Lijx;-><init>(Ljava/lang/String;I)V
+
+    sput-object v9, Lijx;->f:Lijx;
+
+    const/4 v11, 0x6
+
+    new-array v11, v11, [Lijx;
+
+    aput-object v0, v11, v2
+
+    aput-object v1, v11, v4
+
+    aput-object v3, v11, v6
+
+    aput-object v5, v11, v8
+
+    aput-object v7, v11, v10
+
+    aput-object v9, v11, v12
+
+    sput-object v11, Lijx;->g:[Lijx;
 
     return-void
 .end method
 
-.method public static final c(FFF)F
-    .locals 2
+.method private constructor <init>(Ljava/lang/String;I)V
+    .locals 0
 
-    invoke-static {p1, p2}, Ljava/lang/Math;->min(FF)F
+    invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
-    move-result v0
-
-    cmpg-float v1, p0, v0
-
-    if-gtz v1, :cond_0
-
-    move p0, v0
-
-    :cond_0
-    invoke-static {p1, p2}, Ljava/lang/Math;->max(FF)F
-
-    move-result p1
-
-    cmpl-float p2, p0, p1
-
-    if-ltz p2, :cond_1
-
-    return p1
-
-    :cond_1
-    return p0
-.end method
-
-
-# virtual methods
-.method public final a()V
-    .locals 3
-
-    const/4 v0, 0x0
-
-    iput-object v0, p0, Lijx;->e:Landroid/view/MotionEvent;
-
-    iget-object v0, p0, Lijx;->a:Lcom/google/android/apps/camera/ui/zoomlock/ZoomLockView;
-
-    iget-object v1, v0, Lcom/google/android/apps/camera/ui/zoomlock/ZoomLockView;->d:Landroid/animation/AnimatorSet;
-
-    invoke-virtual {v1}, Landroid/animation/AnimatorSet;->isRunning()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_0
-
-    iget-object v1, v0, Lcom/google/android/apps/camera/ui/zoomlock/ZoomLockView;->d:Landroid/animation/AnimatorSet;
-
-    invoke-virtual {v1}, Landroid/animation/AnimatorSet;->cancel()V
-
-    :cond_0
-    invoke-virtual {v0}, Lcom/google/android/apps/camera/ui/zoomlock/ZoomLockView;->getVisibility()I
-
-    move-result v1
-
-    const/16 v2, 0x8
-
-    if-eq v1, v2, :cond_1
-
-    iget-object v0, v0, Lcom/google/android/apps/camera/ui/zoomlock/ZoomLockView;->e:Landroid/animation/ObjectAnimator;
-
-    invoke-virtual {v0}, Landroid/animation/ObjectAnimator;->start()V
-
-    :cond_1
     return-void
 .end method
 
-.method public final b(Z)V
-    .locals 6
+.method public static values()[Lijx;
+    .locals 1
 
-    iget-object v0, p0, Lijx;->a:Lcom/google/android/apps/camera/ui/zoomlock/ZoomLockView;
+    sget-object v0, Lijx;->g:[Lijx;
 
-    iget-object v0, v0, Lcom/google/android/apps/camera/ui/zoomlock/ZoomLockView;->h:Liko;
-
-    iget-object v1, p0, Lijx;->b:Landroid/widget/ImageView;
-
-    invoke-static {v1}, Ljvd;->z(Landroid/view/View;)Landroid/graphics/Point;
-
-    move-result-object v1
-
-    iget v2, v1, Landroid/graphics/Point;->x:I
-
-    iget-object v3, p0, Lijx;->b:Landroid/widget/ImageView;
-
-    invoke-virtual {v3}, Landroid/widget/ImageView;->getWidth()I
-
-    move-result v3
-
-    div-int/lit8 v3, v3, 0x2
-
-    add-int/2addr v2, v3
-
-    iget v3, v1, Landroid/graphics/Point;->y:I
-
-    iget-object v4, p0, Lijx;->b:Landroid/widget/ImageView;
-
-    invoke-virtual {v4}, Landroid/widget/ImageView;->getHeight()I
-
-    move-result v4
-
-    div-int/lit8 v4, v4, 0x2
-
-    add-int/2addr v3, v4
-
-    sget-object v4, Liko;->a:Liko;
-
-    invoke-virtual {v0}, Liko;->ordinal()I
-
-    move-result v0
-
-    int-to-float v3, v3
-
-    const/4 v4, 0x0
-
-    packed-switch v0, :pswitch_data_0
-
-    int-to-float v0, v2
-
-    iget-object v1, p0, Lijx;->c:Landroid/widget/ImageView;
-
-    invoke-static {v1}, Ljvd;->z(Landroid/view/View;)Landroid/graphics/Point;
-
-    move-result-object v1
-
-    iget v2, v1, Landroid/graphics/Point;->x:I
-
-    int-to-float v2, v2
-
-    cmpg-float v2, v2, v0
-
-    if-gtz v2, :cond_1
-
-    iget v2, v1, Landroid/graphics/Point;->x:I
-
-    iget-object v5, p0, Lijx;->c:Landroid/widget/ImageView;
-
-    invoke-virtual {v5}, Landroid/widget/ImageView;->getWidth()I
-
-    move-result v5
-
-    add-int/2addr v2, v5
-
-    int-to-float v2, v2
-
-    cmpg-float v0, v0, v2
-
-    if-gtz v0, :cond_1
-
-    iget v0, v1, Landroid/graphics/Point;->y:I
-
-    int-to-float v0, v0
-
-    cmpg-float v0, v0, v3
-
-    if-gtz v0, :cond_1
-
-    iget v0, v1, Landroid/graphics/Point;->y:I
-
-    iget-object v1, p0, Lijx;->c:Landroid/widget/ImageView;
-
-    invoke-virtual {v1}, Landroid/widget/ImageView;->getHeight()I
-
-    move-result v1
-
-    add-int/2addr v0, v1
-
-    int-to-float v0, v0
-
-    cmpg-float v0, v3, v0
-
-    if-gtz v0, :cond_1
-
-    goto :goto_0
-
-    :pswitch_0
-    iget-object v0, p0, Lijx;->c:Landroid/widget/ImageView;
-
-    invoke-static {v0}, Ljvd;->z(Landroid/view/View;)Landroid/graphics/Point;
+    invoke-virtual {v0}, [Lijx;->clone()Ljava/lang/Object;
 
     move-result-object v0
 
-    iget v0, v0, Landroid/graphics/Point;->y:I
+    check-cast v0, [Lijx;
 
-    int-to-float v0, v0
-
-    cmpl-float v0, v3, v0
-
-    if-ltz v0, :cond_1
-
-    iget-object v0, p0, Lijx;->c:Landroid/widget/ImageView;
-
-    invoke-static {v0}, Ljvd;->z(Landroid/view/View;)Landroid/graphics/Point;
-
-    move-result-object v0
-
-    iget v0, v0, Landroid/graphics/Point;->y:I
-
-    iget-object v1, p0, Lijx;->c:Landroid/widget/ImageView;
-
-    invoke-virtual {v1}, Landroid/widget/ImageView;->getHeight()I
-
-    move-result v1
-
-    add-int/2addr v0, v1
-
-    int-to-float v0, v0
-
-    cmpg-float v0, v3, v0
-
-    if-gtz v0, :cond_1
-
-    goto :goto_0
-
-    :pswitch_1
-    iget v0, v1, Landroid/graphics/Point;->y:I
-
-    iget-object v1, p0, Lijx;->b:Landroid/widget/ImageView;
-
-    invoke-virtual {v1}, Landroid/widget/ImageView;->getHeight()I
-
-    move-result v1
-
-    sub-int/2addr v0, v1
-
-    iget-object v1, p0, Lijx;->c:Landroid/widget/ImageView;
-
-    invoke-static {v1}, Ljvd;->z(Landroid/view/View;)Landroid/graphics/Point;
-
-    move-result-object v1
-
-    iget v1, v1, Landroid/graphics/Point;->y:I
-
-    int-to-float v1, v1
-
-    int-to-float v0, v0
-
-    cmpg-float v1, v0, v1
-
-    if-gtz v1, :cond_1
-
-    iget-object v1, p0, Lijx;->c:Landroid/widget/ImageView;
-
-    invoke-static {v1}, Ljvd;->z(Landroid/view/View;)Landroid/graphics/Point;
-
-    move-result-object v1
-
-    iget v1, v1, Landroid/graphics/Point;->y:I
-
-    iget-object v2, p0, Lijx;->c:Landroid/widget/ImageView;
-
-    invoke-virtual {v2}, Landroid/widget/ImageView;->getHeight()I
-
-    move-result v2
-
-    sub-int/2addr v1, v2
-
-    int-to-float v1, v1
-
-    cmpl-float v0, v0, v1
-
-    if-ltz v0, :cond_1
-
-    :goto_0
-    iget-boolean v0, p0, Lijx;->i:Z
-
-    if-nez v0, :cond_1
-
-    iget-object v0, p0, Lijx;->e:Landroid/view/MotionEvent;
-
-    if-eqz v0, :cond_1
-
-    iget-object v0, p0, Lijx;->a:Lcom/google/android/apps/camera/ui/zoomlock/ZoomLockView;
-
-    iget-object v0, v0, Lcom/google/android/apps/camera/ui/zoomlock/ZoomLockView;->d:Landroid/animation/AnimatorSet;
-
-    invoke-virtual {v0}, Landroid/animation/AnimatorSet;->isRunning()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    if-eqz p1, :cond_1
-
-    :cond_0
-    iget-boolean p1, p0, Lijx;->h:Z
-
-    if-nez p1, :cond_2
-
-    iget-object p1, p0, Lijx;->c:Landroid/widget/ImageView;
-
-    iget-object v0, p0, Lijx;->d:Landroid/content/res/Resources;
-
-    const v1, 0x7f08021a
-
-    invoke-virtual {v0, v1, v4}, Landroid/content/res/Resources;->getDrawable(ILandroid/content/res/Resources$Theme;)Landroid/graphics/drawable/Drawable;
-
-    move-result-object v0
-
-    invoke-virtual {p1, v0}, Landroid/widget/ImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
-
-    const/4 p1, 0x1
-
-    iput-boolean p1, p0, Lijx;->h:Z
-
-    return-void
-
-    :cond_1
-    iget-boolean p1, p0, Lijx;->h:Z
-
-    if-eqz p1, :cond_2
-
-    iget-object p1, p0, Lijx;->c:Landroid/widget/ImageView;
-
-    iget-object v0, p0, Lijx;->d:Landroid/content/res/Resources;
-
-    const v1, 0x7f080219
-
-    invoke-virtual {v0, v1, v4}, Landroid/content/res/Resources;->getDrawable(ILandroid/content/res/Resources$Theme;)Landroid/graphics/drawable/Drawable;
-
-    move-result-object v0
-
-    invoke-virtual {p1, v0}, Landroid/widget/ImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
-
-    const/4 p1, 0x0
-
-    iput-boolean p1, p0, Lijx;->h:Z
-
-    return-void
-
-    :cond_2
-    return-void
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x1
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
+    return-object v0
 .end method

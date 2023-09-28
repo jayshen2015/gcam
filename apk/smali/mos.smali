@@ -1,130 +1,90 @@
 .class public final Lmos;
 .super Ljava/lang/Object;
 
-# interfaces
-.implements Lmox;
-
 
 # instance fields
-.field public a:Lj$/util/Optional;
-
-.field private final b:Lj$/util/Optional;
-
-.field private final c:I
+.field public final a:J
 
 
 # direct methods
-.method public constructor <init>(ILj$/util/Optional;)V
-    .locals 1
+.method public constructor <init>()V
+    .locals 2
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-static {}, Lj$/util/Optional;->empty()Lj$/util/Optional;
+    invoke-static {}, Landroid/os/SystemClock;->elapsedRealtimeNanos()J
 
-    move-result-object v0
+    move-result-wide v0
 
-    iput-object v0, p0, Lmos;->a:Lj$/util/Optional;
+    iput-wide v0, p0, Lmos;->a:J
 
-    iput p1, p0, Lmos;->c:I
+    new-instance v0, Ljava/lang/Throwable;
 
-    iput-object p2, p0, Lmos;->b:Lj$/util/Optional;
+    invoke-direct {v0}, Ljava/lang/Throwable;-><init>()V
 
     return-void
 .end method
 
+.method public constructor <init>(J)V
+    .locals 0
 
-# virtual methods
-.method public final a([B)V
-    .locals 3
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iget v0, p0, Lmos;->c:I
-
-    const/4 v1, 0x1
-
-    if-ne v0, v1, :cond_0
-
-    iget-object v0, p0, Lmos;->b:Lj$/util/Optional;
-
-    new-instance v1, Licl;
-
-    const/16 v2, 0x8
-
-    invoke-direct {v1, p1, v2}, Licl;-><init>([BI)V
-
-    invoke-virtual {v0, v1}, Lj$/util/Optional;->ifPresent(Ljava/util/function/Consumer;)V
+    iput-wide p1, p0, Lmos;->a:J
 
     return-void
+.end method
+
+.method public constructor <init>(Lddf;)V
+    .locals 4
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    sget-object v0, Lddl;->n:Lddi;
+
+    invoke-interface {p1, v0}, Lddf;->a(Lddi;)Lojc;
+
+    move-result-object p1
+
+    invoke-virtual {p1}, Lojc;->c()Ljava/lang/Object;
+
+    move-result-object p1
+
+    check-cast p1, Ljava/lang/Integer;
+
+    invoke-virtual {p1}, Ljava/lang/Integer;->intValue()I
+
+    move-result p1
+
+    if-lez p1, :cond_0
+
+    int-to-long v0, p1
+
+    goto :goto_0
 
     :cond_0
-    iget-object v0, p0, Lmos;->a:Lj$/util/Optional;
+    const-wide/16 v0, 0x1a4
 
-    new-instance v1, Licl;
+    :goto_0
+    const-wide/32 v2, 0xf4240
 
-    const/16 v2, 0x9
+    mul-long v0, v0, v2
 
-    invoke-direct {v1, p1, v2}, Licl;-><init>([BI)V
-
-    invoke-virtual {v0, v1}, Lj$/util/Optional;->ifPresent(Ljava/util/function/Consumer;)V
+    iput-wide v0, p0, Lmos;->a:J
 
     return-void
 .end method
 
-.method public final b(I)V
+.method public constructor <init>([B)V
     .locals 2
 
-    iget-object v0, p0, Lmos;->b:Lj$/util/Optional;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    new-instance v1, Lmor;
+    invoke-static {}, Landroid/os/Process;->getStartUptimeMillis()J
 
-    invoke-direct {v1, p1}, Lmor;-><init>(I)V
+    move-result-wide v0
 
-    invoke-virtual {v0, v1}, Lj$/util/Optional;->ifPresent(Ljava/util/function/Consumer;)V
+    iput-wide v0, p0, Lmos;->a:J
 
-    return-void
-.end method
-
-.method public final c()V
-    .locals 3
-
-    iget v0, p0, Lmos;->c:I
-
-    const/4 v1, 0x1
-
-    if-ne v0, v1, :cond_0
-
-    iget-object v0, p0, Lmos;->b:Lj$/util/Optional;
-
-    new-instance v1, Lmoq;
-
-    const/4 v2, 0x0
-
-    invoke-direct {v1, v2}, Lmoq;-><init>(I)V
-
-    invoke-virtual {v0, v1}, Lj$/util/Optional;->ifPresent(Ljava/util/function/Consumer;)V
-
-    :cond_0
-    return-void
-.end method
-
-.method public final d()V
-    .locals 3
-
-    iget v0, p0, Lmos;->c:I
-
-    const/4 v1, 0x1
-
-    if-ne v0, v1, :cond_0
-
-    iget-object v0, p0, Lmos;->b:Lj$/util/Optional;
-
-    new-instance v1, Lmoq;
-
-    const/4 v2, 0x2
-
-    invoke-direct {v1, v2}, Lmoq;-><init>(I)V
-
-    invoke-virtual {v0, v1}, Lj$/util/Optional;->ifPresent(Ljava/util/function/Consumer;)V
-
-    :cond_0
     return-void
 .end method

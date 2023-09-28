@@ -2,66 +2,146 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lcik;
+.implements Lpys;
 
 
 # instance fields
-.field public final a:Lcom/google/android/apps/camera/stats/timing/CameraActivityTiming;
+.field private final a:Lqkg;
 
-.field private final b:Lcdp;
+.field private final b:Lqkg;
+
+.field private final c:Lqkg;
+
+.field private final d:Lqkg;
+
+.field private final e:Lqkg;
+
+.field private final f:Lqkg;
+
+.field private final g:Lqkg;
+
+.field private final h:Lqkg;
 
 
 # direct methods
-.method public constructor <init>(Lcdp;Lcom/google/android/apps/camera/stats/timing/CameraActivityTiming;)V
+.method public constructor <init>(Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lcdv;->b:Lcdp;
+    iput-object p1, p0, Lcdv;->a:Lqkg;
 
-    iput-object p2, p0, Lcdv;->a:Lcom/google/android/apps/camera/stats/timing/CameraActivityTiming;
+    iput-object p2, p0, Lcdv;->b:Lqkg;
+
+    iput-object p3, p0, Lcdv;->c:Lqkg;
+
+    iput-object p4, p0, Lcdv;->d:Lqkg;
+
+    iput-object p5, p0, Lcdv;->e:Lqkg;
+
+    iput-object p6, p0, Lcdv;->f:Lqkg;
+
+    iput-object p7, p0, Lcdv;->g:Lqkg;
+
+    iput-object p8, p0, Lcdv;->h:Lqkg;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final bl()Lnou;
-    .locals 3
+.method public final a()Lcdu;
+    .locals 11
 
-    iget-object v0, p0, Lcdv;->a:Lcom/google/android/apps/camera/stats/timing/CameraActivityTiming;
+    iget-object v0, p0, Lcdv;->a:Lqkg;
 
-    sget-object v1, Lhju;->c:Lhju;
+    check-cast v0, Lemd;
 
-    sget-object v2, Lcom/google/android/apps/camera/stats/timing/CameraActivityTiming;->b:Lhkg;
+    invoke-virtual {v0}, Lemd;->a()Landroid/content/Context;
 
-    invoke-virtual {v0, v1, v2}, Lhkh;->i(Ljava/lang/Enum;Lhkg;)V
+    move-result-object v2
 
-    iget-object v0, p0, Lcdv;->b:Lcdp;
+    iget-object v0, p0, Lcdv;->b:Lqkg;
 
-    invoke-interface {v0}, Lcdp;->a()Lnou;
+    invoke-interface {v0}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    move-object v3, v0
+
+    check-cast v3, Ljava/util/concurrent/Executor;
+
+    iget-object v0, p0, Lcdv;->c:Lqkg;
+
+    invoke-interface {v0}, Lqkg;->get()Ljava/lang/Object;
 
     move-result-object v0
 
-    new-instance v1, Lcdu;
+    move-object v4, v0
 
-    const/4 v2, 0x0
+    check-cast v4, Lddf;
 
-    invoke-direct {v1, p0, v2}, Lcdu;-><init>(Lcdv;I)V
+    iget-object v0, p0, Lcdv;->d:Lqkg;
 
-    sget-object v2, Lnnv;->a:Lnnv;
+    check-cast v0, Lcbj;
 
-    invoke-static {v0, v1, v2}, Lnnf;->i(Lnou;Lmqi;Ljava/util/concurrent/Executor;)Lnou;
+    invoke-virtual {v0}, Lcbj;->a()Lkij;
+
+    move-result-object v5
+
+    iget-object v0, p0, Lcdv;->e:Lqkg;
+
+    invoke-interface {v0}, Lqkg;->get()Ljava/lang/Object;
 
     move-result-object v0
+
+    move-object v6, v0
+
+    check-cast v6, Llda;
+
+    iget-object v0, p0, Lcdv;->f:Lqkg;
+
+    invoke-interface {v0}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    move-object v7, v0
+
+    check-cast v7, Llar;
+
+    iget-object v0, p0, Lcdv;->g:Lqkg;
+
+    check-cast v0, Letf;
+
+    invoke-virtual {v0}, Letf;->b()Lfhv;
+
+    move-result-object v8
+
+    iget-object v0, p0, Lcdv;->h:Lqkg;
+
+    check-cast v0, Lcbf;
+
+    invoke-virtual {v0}, Lcbf;->a()Ljava/lang/String;
+
+    move-result-object v9
+
+    new-instance v10, Lcom/google/android/apps/camera/brella/examplestore/beholder/BeholderExampleStoreDataTtlService;
+
+    invoke-direct {v10}, Lcom/google/android/apps/camera/brella/examplestore/beholder/BeholderExampleStoreDataTtlService;-><init>()V
+
+    new-instance v0, Lcdu;
+
+    move-object v1, v0
+
+    invoke-direct/range {v1 .. v10}, Lcdu;-><init>(Landroid/content/Context;Ljava/util/concurrent/Executor;Lddf;Lkij;Llda;Llar;Lfhv;Ljava/lang/String;Lcom/google/android/apps/camera/brella/examplestore/beholder/BeholderExampleStoreDataTtlService;)V
 
     return-object v0
 .end method
 
-.method public final synthetic c()Ljava/lang/String;
+.method public final bridge synthetic get()Ljava/lang/Object;
     .locals 1
 
-    invoke-static {p0}, Ldez;->d(Lcik;)Ljava/lang/String;
+    invoke-virtual {p0}, Lcdv;->a()Lcdu;
 
     move-result-object v0
 

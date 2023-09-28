@@ -1,193 +1,409 @@
-.class public Ljvk;
-.super Ljava/lang/Object;
+.class public final Ljvk;
+.super Ljvx;
 
 # interfaces
-.implements Ljwb;
-.implements Lcwg;
+.implements Lihv;
 
 
 # instance fields
-.field private volatile a:Z
+.field public final a:Lihu;
 
-.field public final b:Ljava/util/Set;
+.field public final b:Lihw;
 
-.field public final c:Ljava/util/concurrent/Executor;
+.field public final c:Lihw;
 
-.field public volatile d:Ljava/lang/Object;
+.field private final l:Lihw;
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/Object;)V
-    .locals 1
+.method public constructor <init>()V
+    .locals 4
 
-    new-instance v0, Ljwc;
+    invoke-direct {p0}, Ljvx;-><init>()V
 
-    invoke-direct {v0}, Ljwc;-><init>()V
+    new-instance v0, Ljvh;
 
-    invoke-direct {p0, p1, v0}, Ljvk;-><init>(Ljava/lang/Object;Ljwc;)V
+    invoke-direct {v0, p0}, Ljvh;-><init>(Ljvk;)V
 
-    return-void
-.end method
+    new-instance v1, Lihw;
 
-.method public constructor <init>(Ljava/lang/Object;Ljwc;)V
-    .locals 1
+    const/4 v2, 0x0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-array v3, v2, [Lihs;
 
-    new-instance v0, Ljava/util/concurrent/CopyOnWriteArraySet;
+    invoke-direct {v1, v0, v3}, Lihw;-><init>(Lihs;[Lihs;)V
 
-    invoke-direct {v0}, Ljava/util/concurrent/CopyOnWriteArraySet;-><init>()V
+    iput-object v1, p0, Ljvk;->b:Lihw;
 
-    iput-object v0, p0, Ljvk;->b:Ljava/util/Set;
+    new-instance v0, Ljvi;
 
-    iput-object p1, p0, Ljvk;->d:Ljava/lang/Object;
+    invoke-direct {v0, p0}, Ljvi;-><init>(Ljvk;)V
 
-    iput-object p2, p0, Ljvk;->c:Ljava/util/concurrent/Executor;
+    new-instance v1, Lihw;
+
+    new-array v3, v2, [Lihs;
+
+    invoke-direct {v1, v0, v3}, Lihw;-><init>(Lihs;[Lihs;)V
+
+    iput-object v1, p0, Ljvk;->c:Lihw;
+
+    new-instance v0, Ljvj;
+
+    invoke-direct {v0, p0}, Ljvj;-><init>(Ljvk;)V
+
+    new-instance v1, Lihw;
+
+    new-array v3, v2, [Lihs;
+
+    invoke-direct {v1, v0, v3}, Lihw;-><init>(Lihs;[Lihs;)V
+
+    iput-object v1, p0, Ljvk;->l:Lihw;
+
+    new-instance v0, Lihu;
+
+    invoke-direct {v0, v1, v2}, Lihu;-><init>(Lihw;Z)V
+
+    iput-object v0, p0, Ljvk;->a:Lihu;
+
+    invoke-virtual {v0}, Lihu;->f()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Lkai;Ljava/util/concurrent/Executor;)Lkad;
-    .locals 2
-
-    new-instance v0, Ljtz;
-
-    invoke-direct {v0, p1, p2}, Ljtz;-><init>(Lkai;Ljava/util/concurrent/Executor;)V
-
-    iget-object p1, p0, Ljvk;->b:Ljava/util/Set;
-
-    invoke-interface {p1, v0}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
-
-    iget-object p1, p0, Ljvk;->c:Ljava/util/concurrent/Executor;
-
-    new-instance p2, Ljoq;
-
-    const/16 v1, 0x9
-
-    invoke-direct {p2, p0, v0, v1}, Ljoq;-><init>(Ljvk;Ljtz;I)V
-
-    invoke-interface {p1, p2}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
-
-    new-instance p1, Ligc;
-
-    const/4 p2, 0x3
-
-    invoke-direct {p1, p0, v0, p2}, Ligc;-><init>(Ljvk;Ljtz;I)V
-
-    return-object p1
-.end method
-
-.method public final bm()Ljava/lang/Object;
+.method public final a()V
     .locals 1
 
-    iget-object v0, p0, Ljvk;->d:Ljava/lang/Object;
+    iget-object v0, p0, Ljvk;->a:Lihu;
 
-    return-object v0
-.end method
+    invoke-virtual {v0}, Lihu;->a()Lihw;
 
-.method public bn(Ljava/lang/Object;)V
-    .locals 3
+    move-result-object v0
 
-    iget-object v0, p0, Ljvk;->c:Ljava/util/concurrent/Executor;
+    if-nez v0, :cond_0
 
-    new-instance v1, Ljoq;
+    return-void
 
-    const/16 v2, 0x8
+    :cond_0
+    iget-object v0, p0, Ljvk;->a:Lihu;
 
-    invoke-direct {v1, p0, p1, v2}, Ljoq;-><init>(Ljvk;Ljava/lang/Object;I)V
+    invoke-virtual {v0}, Lihu;->a()Lihw;
 
-    invoke-interface {v0, v1}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
+    move-result-object v0
+
+    iget-object v0, v0, Lihw;->a:Lihs;
+
+    check-cast v0, Ljvr;
+
+    invoke-virtual {v0}, Ljvr;->a()V
 
     return-void
 .end method
 
-.method public c(Ljava/lang/Object;)V
-    .locals 4
+.method public final b()V
+    .locals 1
 
-    const/4 v0, 0x0
+    iget-object v0, p0, Ljvk;->a:Lihu;
 
-    :try_start_0
-    iget-boolean v1, p0, Ljvk;->a:Z
+    invoke-virtual {v0}, Lihu;->a()Lihw;
 
-    const/4 v2, 0x1
+    move-result-object v0
 
-    xor-int/2addr v1, v2
+    if-nez v0, :cond_0
 
-    const-string v3, "Re-entrance isn\'t supported."
+    return-void
 
-    invoke-static {v1, v3}, Lmoz;->q(ZLjava/lang/Object;)V
+    :cond_0
+    iget-object v0, p0, Ljvk;->a:Lihu;
 
-    iput-boolean v2, p0, Ljvk;->a:Z
+    invoke-virtual {v0}, Lihu;->a()Lihw;
 
-    iput-object p1, p0, Ljvk;->d:Ljava/lang/Object;
+    move-result-object v0
 
-    iget-object v1, p0, Ljvk;->b:Ljava/util/Set;
+    iget-object v0, v0, Lihw;->a:Lihs;
 
-    invoke-interface {v1}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
+    check-cast v0, Ljvr;
+
+    invoke-virtual {v0}, Ljvr;->b()V
+
+    return-void
+.end method
+
+.method public final c()V
+    .locals 1
+
+    iget-object v0, p0, Ljvk;->a:Lihu;
+
+    invoke-virtual {v0}, Lihu;->a()Lihw;
+
+    move-result-object v0
+
+    if-nez v0, :cond_0
+
+    return-void
+
+    :cond_0
+    iget-object v0, p0, Ljvk;->a:Lihu;
+
+    invoke-virtual {v0}, Lihu;->a()Lihw;
+
+    move-result-object v0
+
+    iget-object v0, v0, Lihw;->a:Lihs;
+
+    check-cast v0, Ljvr;
+
+    invoke-virtual {v0}, Ljvr;->c()V
+
+    return-void
+.end method
+
+.method public final d()V
+    .locals 1
+
+    iget-object v0, p0, Ljvk;->a:Lihu;
+
+    invoke-virtual {v0}, Lihu;->a()Lihw;
+
+    move-result-object v0
+
+    if-nez v0, :cond_0
+
+    return-void
+
+    :cond_0
+    iget-object v0, p0, Ljvk;->a:Lihu;
+
+    invoke-virtual {v0}, Lihu;->a()Lihw;
+
+    move-result-object v0
+
+    iget-object v0, v0, Lihw;->a:Lihs;
+
+    check-cast v0, Ljvr;
+
+    invoke-virtual {v0}, Ljvr;->d()V
+
+    return-void
+.end method
+
+.method public final e()V
+    .locals 1
+
+    iget-object v0, p0, Ljvk;->a:Lihu;
+
+    invoke-virtual {v0}, Lihu;->b()V
+
+    iget-object v0, p0, Ljvk;->b:Lihw;
+
+    invoke-virtual {v0}, Lihw;->e()V
+
+    iget-object v0, p0, Ljvk;->c:Lihw;
+
+    invoke-virtual {v0}, Lihw;->e()V
+
+    iget-object v0, p0, Ljvk;->l:Lihw;
+
+    invoke-virtual {v0}, Lihw;->e()V
+
+    return-void
+.end method
+
+.method public final f()V
+    .locals 1
+
+    iget-object v0, p0, Ljvk;->a:Lihu;
+
+    invoke-virtual {v0}, Lihu;->c()V
+
+    return-void
+.end method
+
+.method public final g()V
+    .locals 1
+
+    iget-object v0, p0, Ljvk;->a:Lihu;
+
+    invoke-virtual {v0}, Lihu;->d()V
+
+    return-void
+.end method
+
+.method public final gs()V
+    .locals 1
+
+    iget-object v0, p0, Ljvk;->a:Lihu;
+
+    invoke-virtual {v0}, Lihu;->a()Lihw;
+
+    move-result-object v0
+
+    if-nez v0, :cond_0
+
+    return-void
+
+    :cond_0
+    iget-object v0, p0, Ljvk;->a:Lihu;
+
+    invoke-virtual {v0}, Lihu;->a()Lihw;
+
+    move-result-object v0
+
+    iget-object v0, v0, Lihw;->a:Lihs;
+
+    check-cast v0, Ljvr;
+
+    invoke-virtual {v0}, Ljvr;->gs()V
+
+    return-void
+.end method
+
+.method public final h()V
+    .locals 0
+
+    invoke-static {p0}, Lmip;->eQ(Lihv;)V
+
+    return-void
+.end method
+
+.method public final i()V
+    .locals 1
+
+    iget-object v0, p0, Ljvk;->a:Lihu;
+
+    invoke-virtual {v0}, Lihu;->a()Lihw;
+
+    move-result-object v0
+
+    if-nez v0, :cond_0
+
+    return-void
+
+    :cond_0
+    iget-object v0, p0, Ljvk;->a:Lihu;
+
+    invoke-virtual {v0}, Lihu;->a()Lihw;
+
+    move-result-object v0
+
+    iget-object v0, v0, Lihw;->a:Lihs;
+
+    check-cast v0, Ljvr;
+
+    invoke-virtual {v0}, Ljvr;->i()V
+
+    return-void
+.end method
+
+.method public final j(Ljvy;Landroid/net/Uri;Ljvb;Ljvo;IZZ)V
+    .locals 9
+
+    move-object v0, p0
+
+    move-object v2, p1
+
+    iget-object v1, v0, Ljvk;->a:Lihu;
+
+    invoke-virtual {v1}, Lihu;->a()Lihw;
 
     move-result-object v1
 
-    :goto_0
-    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
+    if-nez v1, :cond_0
 
-    move-result v2
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    if-eqz v2, :cond_0
+    iput-object v2, v0, Ljvx;->d:Ljvy;
 
-    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    move-object v1, v2
 
-    move-result-object v2
+    check-cast v1, Ljwd;
 
-    check-cast v2, Lkai;
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    iget-object v1, v1, Ljwd;->f:Landroid/widget/VideoView;
 
-    :try_start_1
-    invoke-interface {v2, p1}, Lkai;->bn(Ljava/lang/Object;)V
-    :try_end_1
-    .catch Ljava/util/concurrent/RejectedExecutionException; {:try_start_1 .. :try_end_1} :catch_0
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+    iput-object v1, v0, Ljvx;->e:Landroid/widget/VideoView;
 
-    goto :goto_0
+    move-object v4, p3
 
-    :catch_0
-    move-exception v2
+    iput-object v4, v0, Ljvx;->f:Ljvb;
 
-    goto :goto_0
+    move-object v5, p4
 
-    :cond_0
-    iput-boolean v0, p0, Ljvk;->a:Z
+    iput-object v5, v0, Ljvx;->g:Ljvo;
+
+    move-object v3, p2
+
+    iput-object v3, v0, Ljvx;->h:Landroid/net/Uri;
+
+    move v6, p5
+
+    iput v6, v0, Ljvx;->i:I
+
+    move v7, p6
+
+    iput-boolean v7, v0, Ljvx;->j:Z
+
+    move/from16 v8, p7
+
+    iput-boolean v8, v0, Ljvx;->k:Z
 
     return-void
 
-    :catchall_0
-    move-exception p1
+    :cond_0
+    move-object v3, p2
 
-    iput-boolean v0, p0, Ljvk;->a:Z
+    move-object v4, p3
 
-    goto :goto_2
+    move-object v5, p4
 
-    :goto_1
-    throw p1
+    move v6, p5
 
-    :goto_2
-    goto :goto_1
+    move v7, p6
+
+    move/from16 v8, p7
+
+    iget-object v1, v0, Ljvk;->a:Lihu;
+
+    invoke-virtual {v1}, Lihu;->a()Lihw;
+
+    move-result-object v1
+
+    iget-object v1, v1, Lihw;->a:Lihs;
+
+    check-cast v1, Ljvr;
+
+    move-object v2, p1
+
+    invoke-virtual/range {v1 .. v8}, Ljvr;->j(Ljvy;Landroid/net/Uri;Ljvb;Ljvo;IZZ)V
+
+    return-void
 .end method
 
-.method public final toString()Ljava/lang/String;
+.method public final k()V
     .locals 1
 
-    const-string v0, "ConcurrentObs"
+    iget-object v0, p0, Ljvk;->a:Lihu;
 
-    invoke-static {v0}, Lmoz;->z(Ljava/lang/String;)Lmqo;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lmqo;->toString()Ljava/lang/String;
+    invoke-virtual {v0}, Lihu;->a()Lihw;
 
     move-result-object v0
 
-    return-object v0
+    if-nez v0, :cond_0
+
+    return-void
+
+    :cond_0
+    iget-object v0, p0, Ljvk;->a:Lihu;
+
+    invoke-virtual {v0}, Lihu;->a()Lihw;
+
+    move-result-object v0
+
+    iget-object v0, v0, Lihw;->a:Lihs;
+
+    check-cast v0, Ljvr;
+
+    invoke-virtual {v0}, Ljvr;->k()V
+
+    return-void
 .end method

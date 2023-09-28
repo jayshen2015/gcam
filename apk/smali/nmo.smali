@@ -1,26 +1,38 @@
-.class Lnmo;
-.super Ljava/lang/Throwable;
+.class public final Lnmo;
+.super Ljava/lang/Object;
+
+
+# static fields
+.field public static final a:Laml;
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 1
+.method static constructor <clinit>()V
+    .locals 2
 
-    const-string v0, "Failure occurred while trying to finish a future."
+    new-instance v0, Lamk;
 
-    invoke-direct {p0, v0}, Ljava/lang/Throwable;-><init>(Ljava/lang/String;)V
+    invoke-direct {v0}, Lamk;-><init>()V
+
+    const/4 v1, 0x3
+
+    iput v1, v0, Lamk;->b:I
+
+    invoke-virtual {v0}, Lamk;->a()Laml;
+
+    move-result-object v0
+
+    sput-object v0, Lnmo;->a:Laml;
+
+    new-instance v0, Lamk;
+
+    invoke-direct {v0}, Lamk;-><init>()V
+
+    const/4 v1, 0x2
+
+    iput v1, v0, Lamk;->b:I
+
+    invoke-virtual {v0}, Lamk;->a()Laml;
 
     return-void
-.end method
-
-
-# virtual methods
-.method public final declared-synchronized fillInStackTrace()Ljava/lang/Throwable;
-    .locals 0
-
-    monitor-enter p0
-
-    monitor-exit p0
-
-    return-object p0
 .end method

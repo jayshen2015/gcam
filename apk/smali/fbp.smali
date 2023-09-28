@@ -1,53 +1,69 @@
-.class public final Lfbp;
+.class public final synthetic Lfbp;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lfca;
+.implements Lj$/util/function/Function;
 
 
 # instance fields
-.field private final a:Ljava/util/List;
+.field public final synthetic a:Lfbq;
 
 
 # direct methods
-.method public constructor <init>(Ljava/util/List;)V
+.method public synthetic constructor <init>(Lfbq;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lfbp;->a:Ljava/util/List;
+    iput-object p1, p0, Lfbp;->a:Lfbq;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Lngr;)V
-    .locals 2
+.method public final synthetic andThen(Lj$/util/function/Function;)Lj$/util/function/Function;
+    .locals 0
 
-    iget-object v0, p0, Lfbp;->a:Ljava/util/List;
+    invoke-static {p0, p1}, Lj$/util/function/Function$-CC;->$default$andThen(Lj$/util/function/Function;Lj$/util/function/Function;)Lj$/util/function/Function;
 
-    invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+    move-result-object p1
 
-    move-result-object v0
+    return-object p1
+.end method
 
-    :goto_0
-    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
+.method public final apply(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 1
 
-    move-result v1
+    iget-object v0, p0, Lfbp;->a:Lfbq;
 
-    if-eqz v1, :cond_0
+    check-cast p1, Landroidx/preference/Preference;
 
-    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    iget-object p1, v0, Lfbq;->l:Lpyn;
 
-    move-result-object v1
+    invoke-interface {p1}, Lpyn;->get()Ljava/lang/Object;
 
-    check-cast v1, Lfca;
+    move-result-object p1
 
-    invoke-interface {v1, p1}, Lfca;->a(Lngr;)V
+    check-cast p1, Liln;
 
-    goto :goto_0
+    invoke-virtual {p1}, Liln;->a()Z
 
-    :cond_0
-    return-void
+    move-result p1
+
+    invoke-static {p1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    move-result-object p1
+
+    return-object p1
+.end method
+
+.method public final synthetic compose(Lj$/util/function/Function;)Lj$/util/function/Function;
+    .locals 0
+
+    invoke-static {p0, p1}, Lj$/util/function/Function$-CC;->$default$compose(Lj$/util/function/Function;Lj$/util/function/Function;)Lj$/util/function/Function;
+
+    move-result-object p1
+
+    return-object p1
 .end method

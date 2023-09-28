@@ -1,148 +1,56 @@
-.class final Lkiy;
-.super Lmyk;
+.class public final Lkiy;
+.super Ljava/lang/UnsupportedOperationException;
 
 
 # instance fields
-.field private final a:Lmwa;
+.field private final a:Lkhk;
 
 
 # direct methods
-.method public constructor <init>(Ljava/util/List;)V
-    .locals 4
+.method public constructor <init>(Lkhk;)V
+    .locals 0
 
-    move-object v0, p1
+    invoke-direct {p0}, Ljava/lang/UnsupportedOperationException;-><init>()V
 
-    check-cast v0, Lmyu;
-
-    iget v0, v0, Lmyu;->c:I
-
-    invoke-static {v0}, Lmwa;->j(I)Lmvw;
-
-    move-result-object v0
-
-    check-cast p1, Lmvv;
-
-    invoke-virtual {p1}, Lmvv;->s()Lnad;
-
-    move-result-object p1
-
-    const/4 v1, 0x0
-
-    :goto_0
-    invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v2
-
-    if-eqz v2, :cond_0
-
-    invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v2
-
-    add-int/lit8 v3, v1, 0x1
-
-    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v2, v1}, Lmvw;->e(Ljava/lang/Object;Ljava/lang/Object;)V
-
-    move v1, v3
-
-    goto :goto_0
-
-    :cond_0
-    invoke-virtual {v0}, Lmvw;->b()Lmwa;
-
-    move-result-object p1
-
-    invoke-direct {p0}, Lmyk;-><init>()V
-
-    iput-object p1, p0, Lkiy;->a:Lmwa;
+    iput-object p1, p0, Lkiy;->a:Lkhk;
 
     return-void
 .end method
 
-.method private final h(Ljava/lang/Object;)I
-    .locals 1
-
-    iget-object v0, p0, Lkiy;->a:Lmwa;
-
-    invoke-virtual {v0, p1}, Lmwa;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object p1
-
-    check-cast p1, Ljava/lang/Integer;
-
-    if-nez p1, :cond_0
-
-    iget-object p1, p0, Lkiy;->a:Lmwa;
-
-    check-cast p1, Lmyz;
-
-    iget p1, p1, Lmyz;->c:I
-
-    return p1
-
-    :cond_0
-    invoke-virtual {p1}, Ljava/lang/Integer;->intValue()I
-
-    move-result p1
-
-    return p1
-.end method
-
 
 # virtual methods
-.method public final compare(Ljava/lang/Object;Ljava/lang/Object;)I
-    .locals 0
+.method public final getMessage()Ljava/lang/String;
+    .locals 3
 
-    invoke-direct {p0, p1}, Lkiy;->h(Ljava/lang/Object;)I
+    iget-object v0, p0, Lkiy;->a:Lkhk;
 
-    move-result p1
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
-    invoke-direct {p0, p2}, Lkiy;->h(Ljava/lang/Object;)I
+    move-result-object v0
 
-    move-result p2
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
-    sub-int/2addr p1, p2
+    move-result-object v1
 
-    return p1
-.end method
+    invoke-virtual {v1}, Ljava/lang/String;->length()I
 
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 1
+    move-result v1
 
-    instance-of v0, p1, Lkiy;
+    new-instance v2, Ljava/lang/StringBuilder;
 
-    if-eqz v0, :cond_0
+    add-int/lit8 v1, v1, 0x8
 
-    check-cast p1, Lkiy;
+    invoke-direct {v2, v1}, Ljava/lang/StringBuilder;-><init>(I)V
 
-    iget-object v0, p0, Lkiy;->a:Lmwa;
+    const-string v1, "Missing "
 
-    iget-object p1, p1, Lkiy;->a:Lmwa;
+    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v0, p1}, Lmwa;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result p1
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    return p1
+    move-result-object v0
 
-    :cond_0
-    const/4 p1, 0x0
-
-    return p1
-.end method
-
-.method public final hashCode()I
-    .locals 1
-
-    iget-object v0, p0, Lkiy;->a:Lmwa;
-
-    invoke-virtual {v0}, Lmwa;->hashCode()I
-
-    move-result v0
-
-    return v0
+    return-object v0
 .end method

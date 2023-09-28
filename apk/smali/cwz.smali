@@ -6,60 +6,24 @@
 
 
 # instance fields
-.field public final synthetic a:Z
+.field public final synthetic a:Lcxc;
 
-.field public final synthetic b:Ljava/lang/Object;
+.field public final synthetic b:Llvs;
 
-.field public final synthetic c:Ljava/lang/Object;
-
-.field private final synthetic d:I
+.field private final synthetic c:I
 
 
 # direct methods
-.method public synthetic constructor <init>(Lcxb;Lcwx;ZI)V
+.method public synthetic constructor <init>(Lcxc;Llvs;I)V
     .locals 0
 
-    iput p4, p0, Lcwz;->d:I
+    iput p3, p0, Lcwz;->c:I
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lcwz;->b:Ljava/lang/Object;
+    iput-object p1, p0, Lcwz;->a:Lcxc;
 
-    iput-object p2, p0, Lcwz;->c:Ljava/lang/Object;
-
-    iput-boolean p3, p0, Lcwz;->a:Z
-
-    return-void
-.end method
-
-.method public synthetic constructor <init>(Lepo;Ljava/lang/String;ZI)V
-    .locals 0
-
-    iput p4, p0, Lcwz;->d:I
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lcwz;->c:Ljava/lang/Object;
-
-    iput-object p2, p0, Lcwz;->b:Ljava/lang/Object;
-
-    iput-boolean p3, p0, Lcwz;->a:Z
-
-    return-void
-.end method
-
-.method public constructor <init>(Lewx;ZLbne;I[B)V
-    .locals 0
-
-    iput p4, p0, Lcwz;->d:I
-
-    iput-object p1, p0, Lcwz;->c:Ljava/lang/Object;
-
-    iput-boolean p2, p0, Lcwz;->a:Z
-
-    iput-object p3, p0, Lcwz;->b:Ljava/lang/Object;
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p2, p0, Lcwz;->b:Llvs;
 
     return-void
 .end method
@@ -69,144 +33,109 @@
 .method public final run()V
     .locals 5
 
-    iget v0, p0, Lcwz;->d:I
+    iget v0, p0, Lcwz;->c:I
 
     packed-switch v0, :pswitch_data_0
 
-    iget-object v0, p0, Lcwz;->c:Ljava/lang/Object;
+    iget-object v0, p0, Lcwz;->a:Lcxc;
 
-    iget-object v1, p0, Lcwz;->b:Ljava/lang/Object;
+    iget-object v1, p0, Lcwz;->b:Llvs;
 
-    iget-boolean v2, p0, Lcwz;->a:Z
+    iget-object v0, v0, Lcxc;->b:Lcom/google/android/apps/camera/camerafatalerror/CameraFatalErrorTrackerDatabase;
 
-    move-object v3, v0
+    invoke-virtual {v0}, Lcom/google/android/apps/camera/camerafatalerror/CameraFatalErrorTrackerDatabase;->s()Lcxm;
 
-    check-cast v3, Lepo;
+    move-result-object v0
 
-    iget-boolean v4, v3, Lepo;->m:Z
+    iget-object v1, v1, Llvs;->a:Ljava/lang/String;
 
-    if-nez v4, :cond_1
+    move-object v2, v0
 
-    :try_start_0
-    move-object v4, v0
+    check-cast v2, Lcxr;
 
-    check-cast v4, Lepo;
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    iget-object v3, v2, Lcxr;->a:Laii;
+
+    invoke-virtual {v3}, Laii;->g()V
+
+    iget-object v3, v2, Lcxr;->c:Laiy;
+
+    invoke-virtual {v3}, Laiy;->e()Lake;
+
+    move-result-object v3
+
+    const/4 v4, 0x1
+
+    if-nez v1, :cond_0
+
+    invoke-virtual {v3, v4}, Lake;->f(I)V
 
     goto :goto_0
 
     :pswitch_0
-    iget-object v0, p0, Lcwz;->c:Ljava/lang/Object;
+    iget-object v0, p0, Lcwz;->a:Lcxc;
 
-    check-cast v0, Lewx;
+    iget-object v1, p0, Lcwz;->b:Llvs;
 
-    iget-object v0, v0, Lewx;->a:Ljava/lang/Object;
+    iget-object v0, v0, Lcxc;->b:Lcom/google/android/apps/camera/camerafatalerror/CameraFatalErrorTrackerDatabase;
 
-    check-cast v0, Lblx;
+    invoke-virtual {v0}, Lcom/google/android/apps/camera/camerafatalerror/CameraFatalErrorTrackerDatabase;->s()Lcxm;
 
-    iget-object v0, v0, Lblx;->a:Ljava/lang/Object;
+    move-result-object v0
 
-    iget-boolean v1, p0, Lcwz;->a:Z
+    new-instance v2, Lcxl;
 
-    iget-object v2, p0, Lcwz;->b:Ljava/lang/Object;
+    iget-object v1, v1, Llvs;->a:Ljava/lang/String;
 
-    check-cast v2, Lbne;
+    invoke-direct {v2, v1}, Lcxl;-><init>(Ljava/lang/String;)V
 
-    invoke-interface {v0, v1, v2}, Lbmy;->a(ZLbne;)V
-
-    return-void
-
-    :pswitch_1
-    iget-object v0, p0, Lcwz;->b:Ljava/lang/Object;
-
-    iget-object v1, p0, Lcwz;->c:Ljava/lang/Object;
-
-    iget-boolean v2, p0, Lcwz;->a:Z
-
-    check-cast v1, Lcwx;
-
-    check-cast v0, Lcxb;
-
-    invoke-virtual {v0, v1, v2}, Lcxb;->e(Lcwx;Z)V
+    invoke-virtual {v0, v2}, Lcxm;->a(Lcxl;)V
 
     return-void
-
-    :goto_0
-    :try_start_1
-    iget-object v4, v4, Lepo;->f:Lkbc;
-
-    check-cast v1, Ljava/lang/String;
-
-    invoke-interface {v4, v1}, Lkbc;->e(Ljava/lang/String;)V
-
-    if-eqz v2, :cond_0
-
-    move-object v1, v0
-
-    check-cast v1, Lepo;
-
-    iget-object v1, v1, Lepo;->c:Leph;
-
-    check-cast v0, Lepo;
-
-    iget v0, v0, Lepo;->d:I
-
-    invoke-virtual {v1, v0}, Leph;->a(I)V
-
-    goto :goto_1
 
     :cond_0
-    move-object v1, v0
+    invoke-virtual {v3, v4, v1}, Lake;->g(ILjava/lang/String;)V
 
-    check-cast v1, Lepo;
+    :goto_0
+    iget-object v1, v2, Lcxr;->a:Laii;
 
-    iget-object v1, v1, Lepo;->c:Leph;
+    invoke-virtual {v1}, Laii;->h()V
 
-    check-cast v0, Lepo;
+    :try_start_0
+    invoke-virtual {v3}, Lake;->a()I
 
-    iget v0, v0, Lepo;->d:I
+    check-cast v0, Lcxr;
 
-    invoke-virtual {v1, v0}, Leph;->c(I)V
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+    iget-object v0, v0, Lcxr;->a:Laii;
 
-    :goto_1
-    iget-object v0, v3, Lepo;->f:Lkbc;
+    invoke-virtual {v0}, Laii;->j()V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    invoke-interface {v0}, Lkbc;->f()V
+    iget-object v0, v2, Lcxr;->a:Laii;
+
+    invoke-virtual {v0}, Laii;->i()V
+
+    iget-object v0, v2, Lcxr;->c:Laiy;
+
+    invoke-virtual {v0, v3}, Laiy;->f(Lake;)V
 
     return-void
 
     :catchall_0
     move-exception v0
 
-    iget-object v1, v3, Lepo;->f:Lkbc;
+    iget-object v1, v2, Lcxr;->a:Laii;
 
-    invoke-interface {v1}, Lkbc;->f()V
+    invoke-virtual {v1}, Laii;->i()V
+
+    iget-object v1, v2, Lcxr;->c:Laiy;
+
+    invoke-virtual {v1, v3}, Laiy;->f(Lake;)V
 
     throw v0
 
-    :cond_1
-    sget-object v0, Lepo;->a:Lnak;
-
-    invoke-virtual {v0}, Lnaf;->c()Lnaz;
-
-    move-result-object v0
-
-    const-string v2, "Shot already done, ignoring %s."
-
-    const/16 v3, 0x6f2
-
-    invoke-static {v0, v2, v1, v3}, Ld;->j(Lnaz;Ljava/lang/String;Ljava/lang/Object;C)V
-
-    return-void
-
-    nop
-
     :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_1
         :pswitch_0
     .end packed-switch
 .end method

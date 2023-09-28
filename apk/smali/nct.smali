@@ -3,101 +3,158 @@
 
 
 # static fields
-.field private static final a:Ljava/util/concurrent/atomic/AtomicBoolean;
+.field static final a:Lncu;
+
+
+# instance fields
+.field private final b:Ljava/util/Random;
+
+.field private final c:Lmdf;
+
+.field private final d:Lncd;
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 2
+    .locals 3
 
-    new-instance v0, Ljava/util/concurrent/atomic/AtomicBoolean;
+    new-instance v0, Lncr;
 
-    const/4 v1, 0x0
+    sget-object v1, Lqyj;->d:Lqyj;
 
-    invoke-direct {v0, v1}, Ljava/util/concurrent/atomic/AtomicBoolean;-><init>(Z)V
+    const/4 v2, 0x1
 
-    sput-object v0, Lnct;->a:Ljava/util/concurrent/atomic/AtomicBoolean;
+    invoke-direct {v0, v1, v2}, Lncr;-><init>(Lqyj;Z)V
+
+    sput-object v0, Lnct;->a:Lncu;
 
     return-void
 .end method
 
-.method public static a(Lnaa;)V
-    .locals 3
+.method public constructor <init>(Ljava/util/Random;Lncd;Lmdf;)V
+    .locals 0
 
-    sget-object v0, Lnct;->a:Ljava/util/concurrent/atomic/AtomicBoolean;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const/4 v1, 0x0
+    iput-object p1, p0, Lnct;->b:Ljava/util/Random;
 
-    const/4 v2, 0x1
+    iput-object p3, p0, Lnct;->c:Lmdf;
 
-    invoke-virtual {v0, v1, v2}, Ljava/util/concurrent/atomic/AtomicBoolean;->compareAndSet(ZZ)Z
+    iput-object p2, p0, Lnct;->d:Lncd;
+
+    return-void
+.end method
+
+
+# virtual methods
+.method final a(Lqyj;)Lncu;
+    .locals 8
+
+    iget v0, p1, Lqyj;->c:I
+
+    invoke-static {v0}, Lqno;->E(I)I
 
     move-result v0
 
-    if-eqz v0, :cond_3
+    const/4 v1, 0x1
 
-    iget-object p0, p0, Lnaa;->a:Ljava/lang/Object;
+    if-nez v0, :cond_0
 
-    if-nez p0, :cond_0
-
-    new-instance p0, Lnda;
-
-    invoke-direct {p0}, Lnda;-><init>()V
+    const/4 v0, 0x1
 
     :cond_0
-    sget-object v0, Lncy;->a:Ljava/util/concurrent/atomic/AtomicReference;
+    add-int/lit8 v0, v0, -0x1
 
-    :goto_0
-    const/4 v1, 0x0
+    const/4 v2, 0x0
 
-    invoke-virtual {v0, v1, p0}, Ljava/util/concurrent/atomic/AtomicReference;->compareAndSet(Ljava/lang/Object;Ljava/lang/Object;)Z
+    packed-switch v0, :pswitch_data_0
 
-    move-result v1
+    :pswitch_0
+    goto :goto_2
 
-    if-eqz v1, :cond_1
-
-    invoke-static {}, Lncy;->e()V
-
-    sget-object p0, Lncz;->a:Lncz;
-
-    iget-object p0, p0, Lncz;->b:Ljava/util/concurrent/atomic/AtomicReference;
-
-    sget-object v0, Lndf;->a:Lndd;
-
-    invoke-virtual {p0, v0}, Ljava/util/concurrent/atomic/AtomicReference;->set(Ljava/lang/Object;)V
-
-    return-void
-
-    :cond_1
-    invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicReference;->get()Ljava/lang/Object;
-
-    move-result-object v1
-
-    if-nez v1, :cond_2
-
-    goto :goto_0
-
-    :cond_2
-    new-instance p0, Ljava/lang/IllegalStateException;
-
-    const-string v0, "Logger backends can only be configured once."
-
-    invoke-direct {p0, v0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw p0
-
-    :cond_3
-    new-instance p0, Ljava/lang/IllegalStateException;
-
-    const-string v0, "Logger backend configuration may only occur once."
-
-    invoke-direct {p0, v0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+    :pswitch_1
+    sget-object p1, Lqyj;->d:Lqyj;
 
     goto :goto_2
 
+    :pswitch_2
+    new-instance v0, Lncs;
+
+    iget-object v1, p0, Lnct;->b:Ljava/util/Random;
+
+    iget-object v2, p0, Lnct;->d:Lncd;
+
+    iget-object v3, p0, Lnct;->c:Lmdf;
+
+    invoke-direct {v0, p1, v1, v2, v3}, Lncs;-><init>(Lqyj;Ljava/util/Random;Lncd;Lmdf;)V
+
+    return-object v0
+
+    :pswitch_3
+    new-instance v0, Lncr;
+
+    iget-object v3, p0, Lnct;->b:Ljava/util/Random;
+
+    invoke-virtual {v3}, Ljava/util/Random;->nextDouble()D
+
+    move-result-wide v3
+
+    const-wide v5, 0x408f400000000000L    # 1000.0
+
+    mul-double v3, v3, v5
+
+    iget-wide v5, p1, Lqyj;->b:J
+
+    long-to-double v5, v5
+
+    cmpg-double v7, v3, v5
+
+    if-gez v7, :cond_1
+
+    goto :goto_0
+
+    :cond_1
+    const/4 v1, 0x0
+
+    :goto_0
+    invoke-direct {v0, p1, v1}, Lncr;-><init>(Lqyj;Z)V
+
+    return-object v0
+
+    :pswitch_4
+    new-instance v0, Lncr;
+
+    iget-wide v3, p1, Lqyj;->b:J
+
+    const-wide/16 v5, 0x3e8
+
+    cmp-long v7, v3, v5
+
+    if-nez v7, :cond_2
+
+    goto :goto_1
+
+    :cond_2
+    const/4 v1, 0x0
+
     :goto_1
-    throw p0
+    invoke-direct {v0, p1, v1}, Lncr;-><init>(Lqyj;Z)V
+
+    return-object v0
 
     :goto_2
-    goto :goto_1
+    new-instance v0, Lncr;
+
+    invoke-direct {v0, p1, v1}, Lncr;-><init>(Lqyj;Z)V
+
+    return-object v0
+
+    :pswitch_data_0
+    .packed-switch 0x1
+        :pswitch_4
+        :pswitch_0
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+    .end packed-switch
 .end method

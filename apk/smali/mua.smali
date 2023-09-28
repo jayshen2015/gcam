@@ -1,169 +1,223 @@
-.class final Lmua;
-.super Lmuc;
+.class public final Lmua;
+.super Lmmb;
+
+# interfaces
+.implements Lmtu;
 
 
-# static fields
-.field public static final a:Lmua;
+# instance fields
+.field public final a:Lmtz;
 
-.field private static final serialVersionUID:J
+.field public final b:Ljava/util/concurrent/atomic/AtomicBoolean;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
+.method public constructor <init>(Lmtu;)V
+    .locals 2
 
-    new-instance v0, Lmua;
+    invoke-direct {p0}, Lmmb;-><init>()V
 
-    invoke-direct {v0}, Lmua;-><init>()V
+    new-instance v0, Ljava/util/concurrent/atomic/AtomicBoolean;
 
-    sput-object v0, Lmua;->a:Lmua;
+    const/4 v1, 0x1
+
+    invoke-direct {v0, v1}, Ljava/util/concurrent/atomic/AtomicBoolean;-><init>(Z)V
+
+    iput-object v0, p0, Lmua;->b:Ljava/util/concurrent/atomic/AtomicBoolean;
+
+    new-instance v0, Lmtz;
+
+    invoke-direct {v0, p1}, Lmtz;-><init>(Lmtu;)V
+
+    iput-object v0, p0, Lmua;->a:Lmtz;
 
     return-void
 .end method
 
-.method private constructor <init>()V
-    .locals 1
+.method public constructor <init>(Lmtz;)V
+    .locals 2
 
-    const-string v0, ""
+    invoke-direct {p0}, Lmmb;-><init>()V
 
-    invoke-direct {p0, v0}, Lmuc;-><init>(Ljava/lang/Comparable;)V
+    new-instance v0, Ljava/util/concurrent/atomic/AtomicBoolean;
+
+    const/4 v1, 0x1
+
+    invoke-direct {v0, v1}, Ljava/util/concurrent/atomic/AtomicBoolean;-><init>(Z)V
+
+    iput-object v0, p0, Lmua;->b:Ljava/util/concurrent/atomic/AtomicBoolean;
+
+    iput-object p1, p0, Lmua;->a:Lmtz;
 
     return-void
-.end method
-
-.method private readResolve()Ljava/lang/Object;
-    .locals 1
-
-    sget-object v0, Lmua;->a:Lmua;
-
-    return-object v0
 .end method
 
 
 # virtual methods
-.method public final a(Lmuc;)I
-    .locals 0
-
-    if-ne p1, p0, :cond_0
-
-    const/4 p1, 0x0
-
-    return p1
-
-    :cond_0
-    const/4 p1, -0x1
-
-    return p1
-.end method
-
-.method public final b()Ljava/lang/Comparable;
+.method protected final b()Lmne;
     .locals 2
 
+    iget-object v0, p0, Lmua;->b:Ljava/util/concurrent/atomic/AtomicBoolean;
+
+    const/4 v1, 0x0
+
+    invoke-virtual {v0, v1}, Ljava/util/concurrent/atomic/AtomicBoolean;->set(Z)V
+
+    iget-object v0, p0, Lmua;->a:Lmtz;
+
+    iget-object v1, v0, Lmtz;->a:Ljava/util/concurrent/atomic/AtomicInteger;
+
+    invoke-virtual {v1}, Ljava/util/concurrent/atomic/AtomicInteger;->decrementAndGet()I
+
+    move-result v1
+
+    if-nez v1, :cond_0
+
+    iget-boolean v1, v0, Lmtz;->c:Z
+
+    iget-object v0, v0, Lmtz;->b:Lmtu;
+
+    invoke-interface {v0}, Lmtu;->a()Lmne;
+
+    move-result-object v0
+
+    goto :goto_0
+
+    :cond_0
+    if-ltz v1, :cond_1
+
+    sget-object v0, Lmnd;->a:Lmne;
+
+    :goto_0
+    return-object v0
+
+    :cond_1
     new-instance v0, Ljava/lang/IllegalStateException;
 
-    const-string v1, "range unbounded on this side"
+    const-string v1, "Reference count dropped below zero"
 
     invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 
     throw v0
 .end method
 
-.method public final c(Lmuh;)Ljava/lang/Comparable;
-    .locals 0
-
-    new-instance p1, Ljava/lang/AssertionError;
-
-    invoke-direct {p1}, Ljava/lang/AssertionError;-><init>()V
-
-    throw p1
-.end method
-
-.method public final bridge synthetic compareTo(Ljava/lang/Object;)I
-    .locals 0
-
-    check-cast p1, Lmuc;
-
-    invoke-virtual {p0, p1}, Lmuc;->a(Lmuc;)I
-
-    move-result p1
-
-    return p1
-.end method
-
-.method public final d(Lmuh;)Ljava/lang/Comparable;
-    .locals 0
-
-    invoke-virtual {p1}, Lmuh;->c()Ljava/lang/Comparable;
-
-    move-result-object p1
-
-    return-object p1
-.end method
-
-.method public final e(Ljava/lang/StringBuilder;)V
+.method public final c()Ljava/lang/Object;
     .locals 1
 
-    const-string v0, "(-\u221e"
+    iget-object v0, p0, Lmua;->b:Ljava/util/concurrent/atomic/AtomicBoolean;
 
-    invoke-virtual {p1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    return-void
-.end method
-
-.method public final f(Ljava/lang/StringBuilder;)V
-    .locals 0
-
-    new-instance p1, Ljava/lang/AssertionError;
-
-    invoke-direct {p1}, Ljava/lang/AssertionError;-><init>()V
-
-    throw p1
-.end method
-
-.method public final g(Ljava/lang/Comparable;)Z
-    .locals 0
-
-    const/4 p1, 0x1
-
-    return p1
-.end method
-
-.method public final h(Lmuh;)Lmuc;
-    .locals 0
-
-    new-instance p1, Ljava/lang/IllegalStateException;
-
-    invoke-direct {p1}, Ljava/lang/IllegalStateException;-><init>()V
-
-    throw p1
-.end method
-
-.method public final hashCode()I
-    .locals 1
-
-    invoke-static {p0}, Ljava/lang/System;->identityHashCode(Ljava/lang/Object;)I
+    invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicBoolean;->get()Z
 
     move-result v0
 
-    return v0
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lmua;->a:Lmtz;
+
+    iget-object v0, v0, Lmtz;->b:Lmtu;
+
+    invoke-interface {v0}, Lmtu;->c()Ljava/lang/Object;
+
+    move-result-object v0
+
+    return-object v0
+
+    :cond_0
+    new-instance v0, Lmtx;
+
+    invoke-direct {v0}, Lmtx;-><init>()V
+
+    throw v0
 .end method
 
-.method public final i(Lmuh;)Lmuc;
+.method public final gx()Ljava/lang/Object;
     .locals 1
 
-    new-instance p1, Ljava/lang/AssertionError;
+    const/4 v0, 0x0
 
-    const-string v0, "this statement should be unreachable"
+    throw v0
+.end method
 
-    invoke-direct {p1, v0}, Ljava/lang/AssertionError;-><init>(Ljava/lang/Object;)V
+.method protected final gy()V
+    .locals 2
 
-    throw p1
+    iget-object v0, p0, Lmua;->b:Ljava/util/concurrent/atomic/AtomicBoolean;
+
+    const/4 v1, 0x0
+
+    invoke-virtual {v0, v1}, Ljava/util/concurrent/atomic/AtomicBoolean;->set(Z)V
+
+    iget-object v0, p0, Lmua;->a:Lmtz;
+
+    iget-object v1, v0, Lmtz;->a:Ljava/util/concurrent/atomic/AtomicInteger;
+
+    invoke-virtual {v1}, Ljava/util/concurrent/atomic/AtomicInteger;->decrementAndGet()I
+
+    move-result v1
+
+    if-nez v1, :cond_0
+
+    iget-boolean v1, v0, Lmtz;->c:Z
+
+    iget-object v0, v0, Lmtz;->b:Lmtu;
+
+    invoke-interface {v0}, Lmtu;->close()V
+
+    return-void
+
+    :cond_0
+    if-ltz v1, :cond_1
+
+    return-void
+
+    :cond_1
+    new-instance v0, Ljava/lang/IllegalStateException;
+
+    const-string v1, "Reference count dropped below zero"
+
+    invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw v0
 .end method
 
 .method public final toString()Ljava/lang/String;
-    .locals 1
+    .locals 3
 
-    const-string v0, "-\u221e"
+    iget-object v0, p0, Lmua;->a:Lmtz;
+
+    iget-object v0, v0, Lmtz;->b:Lmtu;
+
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/String;->length()I
+
+    move-result v1
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    add-int/lit8 v1, v1, 0xd
+
+    invoke-direct {v2, v1}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string v1, "ref-counted["
+
+    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v0, "]"
+
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
 
     return-object v0
 .end method

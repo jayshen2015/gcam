@@ -1,107 +1,54 @@
-.class public final Ljsf;
-.super Lcbe;
+.class final Ljsf;
+.super Landroid/animation/AnimatorListenerAdapter;
 
-# interfaces
-.implements Ljsh;
+
+# instance fields
+.field final synthetic a:Ljsh;
 
 
 # direct methods
-.method public constructor <init>(Landroid/os/IBinder;)V
-    .locals 1
+.method public constructor <init>(Ljsh;)V
+    .locals 0
 
-    const-string v0, "com.google.android.gms.wearable.internal.IWearableListener"
+    iput-object p1, p0, Ljsf;->a:Ljsh;
 
-    invoke-direct {p0, p1, v0}, Lcbe;-><init>(Landroid/os/IBinder;Ljava/lang/String;)V
+    invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final b(Ljqx;)V
+.method public final onAnimationCancel(Landroid/animation/Animator;)V
     .locals 0
 
-    const/4 p1, 0x0
+    iget-object p1, p0, Ljsf;->a:Ljsh;
 
-    throw p1
+    invoke-virtual {p1}, Ljsh;->b()V
+
+    return-void
 .end method
 
-.method public final c(Lcom/google/android/gms/common/data/DataHolder;)V
+.method public final onAnimationEnd(Landroid/animation/Animator;)V
     .locals 0
 
-    const/4 p1, 0x0
+    iget-object p1, p0, Ljsf;->a:Ljsh;
 
-    throw p1
+    invoke-virtual {p1}, Ljsh;->b()V
+
+    return-void
 .end method
 
-.method public final d(Ljsp;)V
-    .locals 0
-
-    const/4 p1, 0x0
-
-    throw p1
-.end method
-
-.method public final e(Ljsr;)V
-    .locals 0
-
-    const/4 p1, 0x0
-
-    throw p1
-.end method
-
-.method public final f(Ljsp;Ljsc;)V
-    .locals 0
-
-    const/4 p1, 0x0
-
-    throw p1
-.end method
-
-.method public final g()V
+.method public final onAnimationStart(Landroid/animation/Animator;)V
     .locals 1
+
+    iget-object p1, p0, Ljsf;->a:Ljsh;
+
+    iget-object p1, p1, Ljsh;->a:Landroid/view/View;
 
     const/4 v0, 0x0
 
-    throw v0
-.end method
+    invoke-virtual {p1, v0}, Landroid/view/View;->setVisibility(I)V
 
-.method public final h()V
-    .locals 1
-
-    const/4 v0, 0x0
-
-    throw v0
-.end method
-
-.method public final i()V
-    .locals 1
-
-    const/4 v0, 0x0
-
-    throw v0
-.end method
-
-.method public final j()V
-    .locals 1
-
-    const/4 v0, 0x0
-
-    throw v0
-.end method
-
-.method public final k()V
-    .locals 1
-
-    const/4 v0, 0x0
-
-    throw v0
-.end method
-
-.method public final l()V
-    .locals 1
-
-    const/4 v0, 0x0
-
-    throw v0
+    return-void
 .end method

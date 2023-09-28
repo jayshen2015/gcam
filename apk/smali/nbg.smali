@@ -1,15 +1,22 @@
-.class final Lnbg;
-.super Lnay;
+.class public final Lnbg;
+.super Ljava/lang/Object;
 
-# interfaces
-.implements Lnbf;
+
+# static fields
+.field public static final a:Louj;
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 1
 
-    invoke-direct {p0}, Lnay;-><init>()V
+    const-string v0, "com/google/android/libraries/performance/primes/metrics/storage/PackageStatsCapture"
+
+    invoke-static {v0}, Louj;->h(Ljava/lang/String;)Louj;
+
+    move-result-object v0
+
+    sput-object v0, Lnbg;->a:Louj;
 
     return-void
 .end method

@@ -1,80 +1,109 @@
-.class public Lmno;
+.class final Lmno;
 .super Ljava/lang/Object;
+
+# interfaces
+.implements Lmnf;
 
 
 # instance fields
-.field private final a:Lxf;
+.field final synthetic a:Lmoa;
 
-.field public b:Z
+.field final synthetic b:Lmtw;
 
 
 # direct methods
-.method public constructor <init>(Lxf;)V
-    .locals 1
+.method public constructor <init>(Lmoa;Lmtw;)V
+    .locals 0
+
+    iput-object p1, p0, Lmno;->a:Lmoa;
+
+    iput-object p2, p0, Lmno;->b:Lmtw;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    const/4 v0, 0x0
-
-    iput-boolean v0, p0, Lmno;->b:Z
-
-    iput-object p1, p0, Lmno;->a:Lxf;
 
     return-void
 .end method
 
 
 # virtual methods
+.method public final bridge synthetic a(Ljava/lang/Object;Ljava/util/concurrent/Executor;)Lmnb;
+    .locals 2
+
+    check-cast p1, Lmnc;
+
+    iget-object v0, p0, Lmno;->b:Lmtw;
+
+    invoke-virtual {v0}, Lmtw;->a()Lmne;
+
+    move-result-object v0
+
+    invoke-static {p1}, Lmip;->ah(Ljava/lang/Throwable;)Lmlu;
+
+    move-result-object p1
+
+    invoke-static {}, Lmip;->aj()Lmlu;
+
+    move-result-object v1
+
+    invoke-virtual {v0, p2, p1, v1}, Lmne;->c(Ljava/util/concurrent/Executor;Lmlu;Lmlu;)Lmnb;
+
+    move-result-object p1
+
+    return-object p1
+.end method
+
 .method public final toString()Ljava/lang/String;
-    .locals 4
+    .locals 5
 
-    new-instance v0, Ljava/lang/StringBuilder;
+    iget-object v0, p0, Lmno;->a:Lmoa;
 
-    const-string v1, "SpanExtras<"
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    move-result-object v0
 
-    move-object v1, p0
+    iget-object v1, p0, Lmno;->b:Lmtw;
 
-    :goto_0
-    if-eqz v1, :cond_1
+    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
-    const/4 v2, 0x0
+    move-result-object v1
 
-    :goto_1
-    iget-object v3, v1, Lmno;->a:Lxf;
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
-    iget v3, v3, Lxf;->d:I
+    move-result-object v2
 
-    if-ge v2, v3, :cond_0
+    invoke-virtual {v2}, Ljava/lang/String;->length()I
 
-    iget-object v3, p0, Lmno;->a:Lxf;
+    move-result v2
 
-    invoke-virtual {v3, v2}, Lxf;->g(I)Ljava/lang/Object;
+    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v3
 
-    invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {v3}, Ljava/lang/String;->length()I
 
-    const-string v3, "], "
+    move-result v3
 
-    invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    new-instance v4, Ljava/lang/StringBuilder;
 
-    add-int/lit8 v2, v2, 0x1
+    add-int/lit8 v2, v2, 0xc
 
-    goto :goto_1
+    add-int/2addr v2, v3
 
-    :cond_0
-    const/4 v1, 0x0
+    invoke-direct {v4, v2}, Ljava/lang/StringBuilder;-><init>(I)V
 
-    goto :goto_0
+    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    :cond_1
-    const-string v1, ">"
+    const-string v0, "thenAlways["
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v4, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v0, "]"
+
+    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v0
 

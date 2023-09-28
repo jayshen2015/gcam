@@ -1,67 +1,53 @@
-.class public final Lntj;
-.super Ljava/lang/Object;
+.class final Lntj;
+.super Lqnp;
 
 # interfaces
-.implements Ljke;
+.implements Lqmu;
 
 
 # instance fields
-.field final synthetic a:Landroid/content/Context;
-
-.field final synthetic b:Lntg;
-
-.field final synthetic c:Ljke;
-
-.field final synthetic d:Lnto;
+.field final synthetic a:Lprl;
 
 
 # direct methods
-.method public constructor <init>(Lnto;Landroid/content/Context;Lntg;Ljke;)V
+.method public constructor <init>(Lprl;)V
     .locals 0
 
-    iput-object p1, p0, Lntj;->d:Lnto;
+    iput-object p1, p0, Lntj;->a:Lprl;
 
-    iput-object p2, p0, Lntj;->a:Landroid/content/Context;
+    const/4 p1, 0x1
 
-    iput-object p3, p0, Lntj;->b:Lntg;
-
-    iput-object p4, p0, Lntj;->c:Ljke;
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0, p1}, Lqnp;-><init>(I)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(ILjava/lang/String;)V
-    .locals 1
+.method public final bridge synthetic a(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 8
 
-    iget-object v0, p0, Lntj;->c:Ljke;
+    move-object v0, p1
 
-    invoke-interface {v0, p1, p2}, Ljke;->a(ILjava/lang/String;)V
+    check-cast v0, Lnpk;
 
-    return-void
-.end method
+    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-.method public final b(Ljkd;)V
-    .locals 4
+    iget-object v2, p0, Lntj;->a:Lprl;
 
-    new-instance v0, Lntm;
+    sget-object v4, Lnnr;->g:Lnnr;
 
-    iget-object v1, p0, Lntj;->a:Landroid/content/Context;
+    const/4 v1, 0x0
 
-    iget-object v2, p0, Lntj;->d:Lnto;
+    const/4 v3, 0x0
 
-    iget-object v2, v2, Lnto;->a:Ljava/util/concurrent/Executor;
+    const-wide/high16 v5, 0x3ff0000000000000L    # 1.0
 
-    iget-object v3, p0, Lntj;->b:Lntg;
+    const/16 v7, 0xb
 
-    invoke-direct {v0, v1, v2, v3, p1}, Lntm;-><init>(Landroid/content/Context;Ljava/util/concurrent/Executor;Lntg;Ljkd;)V
+    invoke-static/range {v0 .. v7}, Lnpk;->a(Lnpk;Lprl;Lprl;Lnmr;Lnnr;DI)Lnpk;
 
-    iget-object p1, p0, Lntj;->c:Ljke;
+    move-result-object p1
 
-    invoke-interface {p1, v0}, Ljke;->b(Ljkd;)V
-
-    return-void
+    return-object p1
 .end method

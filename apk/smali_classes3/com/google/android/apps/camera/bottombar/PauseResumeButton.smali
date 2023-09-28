@@ -11,6 +11,8 @@
 
 .field private firstTimeLaunch:Z
 
+.field private isP20NewUI:Z
+
 .field private isResumeState:Z
 
 .field private listener:Lcom/google/android/apps/camera/bottombar/PauseResumeButton$PauseResumeButtonListener;
@@ -22,13 +24,17 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 1
+    .locals 3
 
-    sget v0, Lcom/google/android/apps/camera/bottombar/R$attr;->state_paused:I
+    const/4 v0, 0x1
 
-    filled-new-array {v0}, [I
+    new-array v0, v0, [I
 
-    move-result-object v0
+    sget v1, Lcom/google/android/apps/camera/bottombar/R$attr;->state_paused:I
+
+    const/4 v2, 0x0
+
+    aput v1, v0, v2
 
     sput-object v0, Lcom/google/android/apps/camera/bottombar/PauseResumeButton;->STATE_PAUSED:[I
 
@@ -43,6 +49,10 @@
     const/4 p2, 0x1
 
     iput-boolean p2, p0, Lcom/google/android/apps/camera/bottombar/PauseResumeButton;->firstTimeLaunch:Z
+
+    const/4 p2, 0x0
+
+    iput-boolean p2, p0, Lcom/google/android/apps/camera/bottombar/PauseResumeButton;->isP20NewUI:Z
 
     iput-object p1, p0, Lcom/google/android/apps/camera/bottombar/PauseResumeButton;->context:Landroid/content/Context;
 
@@ -87,11 +97,13 @@
 .end method
 
 .method protected onFinishInflate()V
-    .locals 0
+    .locals 1
 
     invoke-super {p0}, Landroid/widget/ImageButton;->onFinishInflate()V
 
-    invoke-virtual {p0}, Lcom/google/android/apps/camera/bottombar/PauseResumeButton;->transitionToPauseState()V
+    iget-boolean v0, p0, Lcom/google/android/apps/camera/bottombar/PauseResumeButton;->isP20NewUI:Z
+
+    invoke-virtual {p0, v0}, Lcom/google/android/apps/camera/bottombar/PauseResumeButton;->transitionToPauseState(Z)V
 
     return-void
 .end method
@@ -105,7 +117,9 @@
 
     if-eqz p1, :cond_0
 
-    invoke-virtual {p0}, Lcom/google/android/apps/camera/bottombar/PauseResumeButton;->transitionToPauseState()V
+    iget-boolean p1, p0, Lcom/google/android/apps/camera/bottombar/PauseResumeButton;->isP20NewUI:Z
+
+    invoke-virtual {p0, p1}, Lcom/google/android/apps/camera/bottombar/PauseResumeButton;->transitionToPauseState(Z)V
 
     const/4 p1, 0x0
 
@@ -146,25 +160,27 @@
     return v0
 .end method
 
-.method public resetButton()V
+.method public resetButton(Z)V
     .locals 0
 
-    invoke-virtual {p0}, Lcom/google/android/apps/camera/bottombar/PauseResumeButton;->transitionToPauseState()V
+    invoke-virtual {p0, p1}, Lcom/google/android/apps/camera/bottombar/PauseResumeButton;->transitionToPauseState(Z)V
 
     invoke-virtual {p0}, Lcom/google/android/apps/camera/bottombar/PauseResumeButton;->refreshDrawableState()V
 
     return-void
 .end method
 
-.method public setListener(Lcom/google/android/apps/camera/bottombar/PauseResumeButton$PauseResumeButtonListener;)V
+.method public setListener(Lcom/google/android/apps/camera/bottombar/PauseResumeButton$PauseResumeButtonListener;Z)V
     .locals 0
 
     iput-object p1, p0, Lcom/google/android/apps/camera/bottombar/PauseResumeButton;->listener:Lcom/google/android/apps/camera/bottombar/PauseResumeButton$PauseResumeButtonListener;
 
+    iput-boolean p2, p0, Lcom/google/android/apps/camera/bottombar/PauseResumeButton;->isP20NewUI:Z
+
     return-void
 .end method
 
-.method protected transitionToPauseState()V
+.method protected transitionToPauseState(Z)V
     .locals 3
 
     iget-object v0, p0, Lcom/google/android/apps/camera/bottombar/PauseResumeButton;->resumePauseAnimatable:Landroid/graphics/drawable/Drawable;
@@ -173,7 +189,7 @@
 
     iget-boolean v0, p0, Lcom/google/android/apps/camera/bottombar/PauseResumeButton;->firstTimeLaunch:Z
 
-    if-eqz v0, :cond_1
+    if-eqz v0, :cond_2
 
     :cond_0
     iget-object v0, p0, Lcom/google/android/apps/camera/bottombar/PauseResumeButton;->context:Landroid/content/Context;
@@ -182,8 +198,16 @@
 
     move-result-object v0
 
+    if-eqz p1, :cond_1
+
     sget v1, Lcom/google/android/apps/camera/bottombar/R$drawable;->ic_pause_circle_outline_24px:I
 
+    goto :goto_0
+
+    :cond_1
+    sget v1, Lcom/google/android/apps/camera/bottombar/R$drawable;->ic_resume_pause_animation:I
+
+    :goto_0
     const/4 v2, 0x0
 
     invoke-virtual {v0, v1, v2}, Landroid/content/res/Resources;->getDrawable(ILandroid/content/res/Resources$Theme;)Landroid/graphics/drawable/Drawable;
@@ -192,11 +216,36 @@
 
     iput-object v0, p0, Lcom/google/android/apps/camera/bottombar/PauseResumeButton;->resumePauseAnimatable:Landroid/graphics/drawable/Drawable;
 
-    :cond_1
+    :cond_2
     iget-object v0, p0, Lcom/google/android/apps/camera/bottombar/PauseResumeButton;->resumePauseAnimatable:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {p0, v0}, Lcom/google/android/apps/camera/bottombar/PauseResumeButton;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
 
+    if-nez p1, :cond_3
+
+    iget-object v0, p0, Lcom/google/android/apps/camera/bottombar/PauseResumeButton;->resumePauseAnimatable:Landroid/graphics/drawable/Drawable;
+
+    check-cast v0, Landroid/graphics/drawable/Animatable;
+
+    invoke-interface {v0}, Landroid/graphics/drawable/Animatable;->start()V
+
+    iget-object v0, p0, Lcom/google/android/apps/camera/bottombar/PauseResumeButton;->context:Landroid/content/Context;
+
+    invoke-virtual {v0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v0
+
+    sget v1, Lcom/google/android/apps/camera/bottombar/R$drawable;->crossfade_button_background_legacy:I
+
+    invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
+
+    move-result-object v0
+
+    invoke-virtual {p0, v0}, Lcom/google/android/apps/camera/bottombar/PauseResumeButton;->setBackground(Landroid/graphics/drawable/Drawable;)V
+
+    goto :goto_1
+
+    :cond_3
     iget-object v0, p0, Lcom/google/android/apps/camera/bottombar/PauseResumeButton;->context:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
@@ -211,28 +260,31 @@
 
     invoke-virtual {p0, v0}, Lcom/google/android/apps/camera/bottombar/PauseResumeButton;->setBackground(Landroid/graphics/drawable/Drawable;)V
 
-    const/4 v0, 0x0
+    :goto_1
+    iput-boolean p1, p0, Lcom/google/android/apps/camera/bottombar/PauseResumeButton;->isP20NewUI:Z
 
-    iput-boolean v0, p0, Lcom/google/android/apps/camera/bottombar/PauseResumeButton;->isResumeState:Z
+    const/4 p1, 0x0
+
+    iput-boolean p1, p0, Lcom/google/android/apps/camera/bottombar/PauseResumeButton;->isResumeState:Z
 
     invoke-virtual {p0}, Lcom/google/android/apps/camera/bottombar/PauseResumeButton;->getResources()Landroid/content/res/Resources;
 
-    move-result-object v0
+    move-result-object p1
 
-    sget v1, Lcom/google/android/apps/camera/bottombar/R$string;->pause_video_recording:I
+    sget v0, Lcom/google/android/apps/camera/bottombar/R$string;->pause_video_recording:I
 
-    invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
+    invoke-virtual {p1, v0}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object p1
 
-    invoke-virtual {p0, v0}, Lcom/google/android/apps/camera/bottombar/PauseResumeButton;->setContentDescription(Ljava/lang/CharSequence;)V
+    invoke-virtual {p0, p1}, Lcom/google/android/apps/camera/bottombar/PauseResumeButton;->setContentDescription(Ljava/lang/CharSequence;)V
 
     invoke-virtual {p0}, Lcom/google/android/apps/camera/bottombar/PauseResumeButton;->refreshDrawableState()V
 
     return-void
 .end method
 
-.method protected transitionToResumeState()V
+.method protected transitionToResumeState(Z)V
     .locals 3
 
     iget-object v0, p0, Lcom/google/android/apps/camera/bottombar/PauseResumeButton;->pauseResumeAnimatable:Landroid/graphics/drawable/Drawable;
@@ -241,7 +293,7 @@
 
     iget-boolean v0, p0, Lcom/google/android/apps/camera/bottombar/PauseResumeButton;->firstTimeLaunch:Z
 
-    if-eqz v0, :cond_1
+    if-eqz v0, :cond_2
 
     :cond_0
     iget-object v0, p0, Lcom/google/android/apps/camera/bottombar/PauseResumeButton;->context:Landroid/content/Context;
@@ -250,8 +302,16 @@
 
     move-result-object v0
 
+    if-eqz p1, :cond_1
+
     sget v1, Lcom/google/android/apps/camera/bottombar/R$drawable;->resume_center_circle:I
 
+    goto :goto_0
+
+    :cond_1
+    sget v1, Lcom/google/android/apps/camera/bottombar/R$drawable;->ic_pause_resume_animation:I
+
+    :goto_0
     const/4 v2, 0x0
 
     invoke-virtual {v0, v1, v2}, Landroid/content/res/Resources;->getDrawable(ILandroid/content/res/Resources$Theme;)Landroid/graphics/drawable/Drawable;
@@ -260,26 +320,37 @@
 
     iput-object v0, p0, Lcom/google/android/apps/camera/bottombar/PauseResumeButton;->pauseResumeAnimatable:Landroid/graphics/drawable/Drawable;
 
-    :cond_1
+    :cond_2
     iget-object v0, p0, Lcom/google/android/apps/camera/bottombar/PauseResumeButton;->pauseResumeAnimatable:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {p0, v0}, Lcom/google/android/apps/camera/bottombar/PauseResumeButton;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    const/4 v0, 0x1
+    if-nez p1, :cond_3
 
-    iput-boolean v0, p0, Lcom/google/android/apps/camera/bottombar/PauseResumeButton;->isResumeState:Z
+    iget-object v0, p0, Lcom/google/android/apps/camera/bottombar/PauseResumeButton;->pauseResumeAnimatable:Landroid/graphics/drawable/Drawable;
+
+    check-cast v0, Landroid/graphics/drawable/Animatable;
+
+    invoke-interface {v0}, Landroid/graphics/drawable/Animatable;->start()V
+
+    :cond_3
+    iput-boolean p1, p0, Lcom/google/android/apps/camera/bottombar/PauseResumeButton;->isP20NewUI:Z
+
+    const/4 p1, 0x1
+
+    iput-boolean p1, p0, Lcom/google/android/apps/camera/bottombar/PauseResumeButton;->isResumeState:Z
 
     invoke-virtual {p0}, Lcom/google/android/apps/camera/bottombar/PauseResumeButton;->getResources()Landroid/content/res/Resources;
 
-    move-result-object v0
+    move-result-object p1
 
-    sget v1, Lcom/google/android/apps/camera/bottombar/R$string;->resume_video_recording:I
+    sget v0, Lcom/google/android/apps/camera/bottombar/R$string;->resume_video_recording:I
 
-    invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
+    invoke-virtual {p1, v0}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object p1
 
-    invoke-virtual {p0, v0}, Lcom/google/android/apps/camera/bottombar/PauseResumeButton;->setContentDescription(Ljava/lang/CharSequence;)V
+    invoke-virtual {p0, p1}, Lcom/google/android/apps/camera/bottombar/PauseResumeButton;->setContentDescription(Ljava/lang/CharSequence;)V
 
     invoke-virtual {p0}, Lcom/google/android/apps/camera/bottombar/PauseResumeButton;->refreshDrawableState()V
 

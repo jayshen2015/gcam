@@ -1,66 +1,39 @@
-.class final Lhxw;
+.class public final synthetic Lhxw;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lhrx;
+.implements Llie;
 
 
 # instance fields
-.field final synthetic a:Liff;
+.field public final synthetic a:Lcom/google/android/apps/camera/smarts/SmartsChipView;
 
-.field final synthetic b:Lhxv;
+.field public final synthetic b:Landroid/view/View$OnLayoutChangeListener;
 
 
 # direct methods
-.method public constructor <init>(Lhxv;Liff;)V
+.method public synthetic constructor <init>(Lcom/google/android/apps/camera/smarts/SmartsChipView;Landroid/view/View$OnLayoutChangeListener;)V
     .locals 0
 
-    iput-object p1, p0, Lhxw;->b:Lhxv;
-
-    iput-object p2, p0, Lhxw;->a:Liff;
-
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lhxw;->a:Lcom/google/android/apps/camera/smarts/SmartsChipView;
+
+    iput-object p2, p0, Lhxw;->b:Landroid/view/View$OnLayoutChangeListener;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final x(I)V
-    .locals 4
+.method public final close()V
+    .locals 2
 
-    const/16 v0, 0xf
+    iget-object v0, p0, Lhxw;->a:Lcom/google/android/apps/camera/smarts/SmartsChipView;
 
-    if-ne p1, v0, :cond_0
+    iget-object v1, p0, Lhxw;->b:Landroid/view/View$OnLayoutChangeListener;
 
-    iget-object p1, p0, Lhxw;->b:Lhxv;
-
-    iget-boolean p1, p1, Lhxv;->b:Z
-
-    if-eqz p1, :cond_0
-
-    invoke-static {}, Ljvd;->n()Landroid/os/Handler;
-
-    move-result-object p1
-
-    iget-object v0, p0, Lhxw;->a:Liff;
-
-    new-instance v1, Lhxc;
-
-    const/16 v2, 0xa
-
-    invoke-direct {v1, v0, v2}, Lhxc;-><init>(Liff;I)V
-
-    const-wide/16 v2, 0x12c
-
-    invoke-virtual {p1, v1, v2, v3}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
-
-    :cond_0
-    return-void
-.end method
-
-.method public final y(I)V
-    .locals 0
+    invoke-virtual {v0, v1}, Lcom/google/android/apps/camera/smarts/SmartsChipView;->removeOnLayoutChangeListener(Landroid/view/View$OnLayoutChangeListener;)V
 
     return-void
 .end method

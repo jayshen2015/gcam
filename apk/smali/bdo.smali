@@ -2,39 +2,21 @@
 .super Ljava/lang/Object;
 
 
+# instance fields
+.field public final a:Lbdq;
+
+
 # direct methods
-.method static constructor <clinit>()V
+.method public constructor <init>(Landroid/content/Context;)V
     .locals 1
 
-    const-string v0, "ProcessUtils"
+    new-instance v0, Lbdq;
 
-    invoke-static {v0}, Laxq;->b(Ljava/lang/String;)Ljava/lang/String;
+    invoke-direct {v0, p1}, Lbdq;-><init>(Landroid/content/Context;)V
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object v0, p0, Lbdo;->a:Lbdq;
 
     return-void
-.end method
-
-.method public static final a(Landroid/content/Context;Laxd;)Z
-    .locals 0
-
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    sget-object p1, Lbdd;->a:Lbdd;
-
-    invoke-virtual {p1}, Lbdd;->a()Ljava/lang/String;
-
-    move-result-object p1
-
-    invoke-virtual {p0}, Landroid/content/Context;->getApplicationInfo()Landroid/content/pm/ApplicationInfo;
-
-    move-result-object p0
-
-    iget-object p0, p0, Landroid/content/pm/ApplicationInfo;->processName:Ljava/lang/String;
-
-    invoke-static {p1, p0}, Lone;->c(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result p0
-
-    return p0
 .end method

@@ -1,12 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <plurals name="accessibility_timelapse_manual_record_speed_desc">
-        <item quantity="other">Timelapse: %d ganger hastighet</item>
-        <item quantity="one">Timelapse: %d gang hastighet</item>
-    </plurals>
-    <plurals name="number_of_cropped_face">
-        <item quantity="other">%d er beskåret.</item>
-        <item quantity="one">Ett er beskåret.</item>
+    <plurals name="number_of_faces_announcement">
+        <item quantity="other">%1$d ansikter.</item>
+        <item quantity="one">%1$d ansikt.</item>
     </plurals>
     <plurals name="photos_remaining">
         <item quantity="other">Om lag %s bilder</item>
@@ -17,8 +13,8 @@
         <item quantity="one">(%1$d app er valgt)</item>
     </plurals>
     <plurals name="social_share_info">
-        <item quantity="other">Del bilder og videoer raskt i sosiale apper, fra Kamera. Velg opptil %1$d apper. Bilder og videoer som lagres i Låst mappe, kan ikke deles.</item>
-        <item quantity="one">Del bilder og videoer raskt i sosiale apper, fra Kamera. Velg %1$d-appen. Bilder og videoer som lagres i Låst mappe, kan ikke deles.</item>
+        <item quantity="other">Del bilder og videoer raskt i sosiale apper, rett fra Kamera. Velg opptil %1$d apper. Bilder og videoer som lagres i Låst mappe, kan ikke deles.</item>
+        <item quantity="one">Del bilder og videoer raskt i sosiale apper, rett fra Kamera. Velg %1$d-appen. Bilder og videoer som lagres i Låst mappe, kan ikke deles.</item>
     </plurals>
     <plurals name="social_share_select_error">
         <item quantity="other">Velg opptil %1$d apper</item>

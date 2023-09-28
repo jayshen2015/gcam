@@ -1,49 +1,40 @@
-.class public final Liyc;
-.super Landroid/content/BroadcastReceiver;
+.class final Liyc;
+.super Liwk;
 
 
 # instance fields
-.field final synthetic a:Ljvq;
+.field final synthetic b:Liye;
 
 
 # direct methods
-.method public constructor <init>(Ljvq;[B)V
+.method public constructor <init>(Liye;)V
     .locals 0
 
-    iput-object p1, p0, Liyc;->a:Ljvq;
+    iput-object p1, p0, Liyc;->b:Liye;
 
-    invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
+    invoke-direct {p0, p1}, Liwk;-><init>(Liwm;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onReceive(Landroid/content/Context;Landroid/content/Intent;)V
-    .locals 1
+.method public final b()V
+    .locals 2
 
-    iget-object p1, p0, Liyc;->a:Ljvq;
+    iget-object v0, p0, Liyc;->b:Liye;
 
-    const-string v0, "android.intent.action.TIMEZONE_CHANGED"
+    iget-object v0, v0, Liye;->l:Lihu;
 
-    invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
+    invoke-virtual {v0}, Lihu;->e()V
 
-    move-result-object p2
+    iget-object v0, p0, Liyc;->b:Liye;
 
-    invoke-virtual {v0, p2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    iget-object v1, v0, Liye;->l:Lihu;
 
-    move-result p2
+    iget-object v0, v0, Liye;->n:Lihw;
 
-    if-eqz p2, :cond_0
+    invoke-virtual {v1, v0}, Lihu;->g(Lihw;)V
 
-    iget-object p1, p1, Ljvq;->d:Ljava/lang/Object;
-
-    check-cast p1, Landroidx/wear/ambient/AmbientMode$AmbientController;
-
-    iget-object p1, p1, Landroidx/wear/ambient/AmbientMode$AmbientController;->a:Ljava/lang/Object;
-
-    invoke-static {}, Ljava/util/Calendar;->getInstance()Ljava/util/Calendar;
-
-    :cond_0
     return-void
 .end method

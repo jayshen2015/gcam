@@ -1,95 +1,98 @@
-.class public final Lhvn;
-.super Lhwb;
-
-# interfaces
-.implements Lhiv;
+.class public final enum Lhvn;
+.super Ljava/lang/Enum;
 
 
-# instance fields
-.field private final b:Lhiu;
+# static fields
+.field public static final enum a:Lhvn;
 
-.field private final c:Lhiw;
+.field public static final enum b:Lhvn;
+
+.field public static final enum c:Lhvn;
+
+.field public static final enum d:Lhvn;
+
+.field private static final synthetic e:[Lhvn;
 
 
 # direct methods
-.method public constructor <init>(Ljwb;Lcyh;Lcyl;)V
-    .locals 3
+.method static constructor <clinit>()V
+    .locals 9
 
-    invoke-direct {p0, p1}, Lhwb;-><init>(Ljwb;)V
+    new-instance v0, Lhvn;
 
-    new-instance p1, Lhwa;
-
-    invoke-direct {p1, p0}, Lhwa;-><init>(Lhwb;)V
-
-    new-instance v0, Lhiw;
-
-    const/4 v1, 0x2
-
-    new-array v1, v1, [Lhis;
+    const-string v1, "SHUTTER"
 
     const/4 v2, 0x0
 
-    aput-object p2, v1, v2
+    invoke-direct {v0, v1, v2}, Lhvn;-><init>(Ljava/lang/String;I)V
 
-    const/4 p2, 0x1
+    sput-object v0, Lhvn;->a:Lhvn;
 
-    aput-object p3, v1, p2
+    new-instance v1, Lhvn;
 
-    invoke-direct {v0, p1, v1}, Lhiw;-><init>(Lhis;[Lhis;)V
+    const-string v3, "ZOOM"
 
-    iput-object v0, p0, Lhvn;->c:Lhiw;
+    const/4 v4, 0x1
 
-    new-instance p1, Lhiu;
+    invoke-direct {v1, v3, v4}, Lhvn;-><init>(Ljava/lang/String;I)V
 
-    invoke-direct {p1, v0, v2}, Lhiu;-><init>(Lhiw;Z)V
+    sput-object v1, Lhvn;->b:Lhvn;
 
-    iput-object p1, p0, Lhvn;->b:Lhiu;
+    new-instance v3, Lhvn;
 
-    invoke-virtual {p1}, Lhiu;->f()V
+    const-string v5, "VOLUME"
 
-    return-void
-.end method
+    const/4 v6, 0x2
 
+    invoke-direct {v3, v5, v6}, Lhvn;-><init>(Ljava/lang/String;I)V
 
-# virtual methods
-.method public final e()V
-    .locals 1
+    sput-object v3, Lhvn;->c:Lhvn;
 
-    iget-object v0, p0, Lhvn;->b:Lhiu;
+    new-instance v5, Lhvn;
 
-    invoke-virtual {v0}, Lhiu;->b()V
+    const-string v7, "OFF"
 
-    iget-object v0, p0, Lhvn;->c:Lhiw;
+    const/4 v8, 0x3
 
-    invoke-virtual {v0}, Lhiw;->e()V
+    invoke-direct {v5, v7, v8}, Lhvn;-><init>(Ljava/lang/String;I)V
 
-    return-void
-.end method
+    sput-object v5, Lhvn;->d:Lhvn;
 
-.method public final f()V
-    .locals 1
+    const/4 v7, 0x4
 
-    iget-object v0, p0, Lhvn;->b:Lhiu;
+    new-array v7, v7, [Lhvn;
 
-    invoke-virtual {v0}, Lhiu;->c()V
+    aput-object v0, v7, v2
 
-    return-void
-.end method
+    aput-object v1, v7, v4
 
-.method public final g()V
-    .locals 1
+    aput-object v3, v7, v6
 
-    iget-object v0, p0, Lhvn;->b:Lhiu;
+    aput-object v5, v7, v8
 
-    invoke-virtual {v0}, Lhiu;->d()V
+    sput-object v7, Lhvn;->e:[Lhvn;
 
     return-void
 .end method
 
-.method public final h()V
+.method private constructor <init>(Ljava/lang/String;I)V
     .locals 0
 
-    invoke-static {p0}, Ljcb;->l(Lhiv;)V
+    invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
+.end method
+
+.method public static values()[Lhvn;
+    .locals 1
+
+    sget-object v0, Lhvn;->e:[Lhvn;
+
+    invoke-virtual {v0}, [Lhvn;->clone()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, [Lhvn;
+
+    return-object v0
 .end method

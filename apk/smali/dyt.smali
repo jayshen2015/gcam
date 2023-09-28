@@ -1,101 +1,98 @@
 .class public final Ldyt;
-.super Ljava/lang/Object;
+.super Lmip;
 
-# interfaces
-.implements Logk;
+
+# static fields
+.field public static final a:Louj;
 
 
 # instance fields
-.field private final a:Loiw;
+.field public final b:I
+
+.field public final c:Ljava/util/Set;
+
+.field private final d:Ljava/util/concurrent/Executor;
+
+.field private final g:Ljava/util/Set;
 
 
 # direct methods
-.method public constructor <init>(Loiw;)V
+.method static constructor <clinit>()V
+    .locals 1
+
+    const-string v0, "com/google/android/apps/camera/gyro/OisListener"
+
+    invoke-static {v0}, Louj;->h(Ljava/lang/String;)Louj;
+
+    move-result-object v0
+
+    sput-object v0, Ldyt;->a:Louj;
+
+    return-void
+.end method
+
+.method public constructor <init>(Ljava/lang/Integer;Ljava/util/concurrent/Executor;Ljava/util/Set;Ljava/util/Set;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Lmip;-><init>()V
 
-    iput-object p1, p0, Ldyt;->a:Loiw;
+    invoke-virtual {p1}, Ljava/lang/Integer;->intValue()I
+
+    move-result p1
+
+    iput p1, p0, Ldyt;->b:I
+
+    iput-object p2, p0, Ldyt;->d:Ljava/util/concurrent/Executor;
+
+    iput-object p3, p0, Ldyt;->g:Ljava/util/Set;
+
+    iput-object p4, p0, Ldyt;->c:Ljava/util/Set;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Landroid/content/UriMatcher;
-    .locals 4
+.method public final b(Llzv;)V
+    .locals 2
 
-    iget-object v0, p0, Ldyt;->a:Loiw;
+    iget-object v0, p0, Ldyt;->d:Ljava/util/concurrent/Executor;
 
-    check-cast v0, Ldjb;
+    new-instance v1, Ldyr;
 
-    invoke-virtual {v0}, Ldjb;->a()Ljava/lang/String;
+    invoke-direct {v1, p0, p1}, Ldyr;-><init>(Ldyt;Llzv;)V
 
-    move-result-object v0
+    invoke-interface {v0, v1}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
 
-    new-instance v1, Landroid/content/UriMatcher;
-
-    const/4 v2, -0x1
-
-    invoke-direct {v1, v2}, Landroid/content/UriMatcher;-><init>(I)V
-
-    const-string v2, "type/*"
-
-    const/4 v3, 0x1
-
-    invoke-virtual {v1, v0, v2, v3}, Landroid/content/UriMatcher;->addURI(Ljava/lang/String;Ljava/lang/String;I)V
-
-    const-string v2, "data/*"
-
-    const/4 v3, 0x2
-
-    invoke-virtual {v1, v0, v2, v3}, Landroid/content/UriMatcher;->addURI(Ljava/lang/String;Ljava/lang/String;I)V
-
-    const-string v2, "icon/#/badge"
-
-    const/4 v3, 0x3
-
-    invoke-virtual {v1, v0, v2, v3}, Landroid/content/UriMatcher;->addURI(Ljava/lang/String;Ljava/lang/String;I)V
-
-    const-string v2, "icon/#/interact"
-
-    const/4 v3, 0x4
-
-    invoke-virtual {v1, v0, v2, v3}, Landroid/content/UriMatcher;->addURI(Ljava/lang/String;Ljava/lang/String;I)V
-
-    const-string v2, "icon/#/dialog"
-
-    const/4 v3, 0x5
-
-    invoke-virtual {v1, v0, v2, v3}, Landroid/content/UriMatcher;->addURI(Ljava/lang/String;Ljava/lang/String;I)V
-
-    const-string v2, "delete/#"
-
-    const/4 v3, 0x6
-
-    invoke-virtual {v1, v0, v2, v3}, Landroid/content/UriMatcher;->addURI(Ljava/lang/String;Ljava/lang/String;I)V
-
-    const-string v2, "processing"
-
-    const/4 v3, 0x7
-
-    invoke-virtual {v1, v0, v2, v3}, Landroid/content/UriMatcher;->addURI(Ljava/lang/String;Ljava/lang/String;I)V
-
-    const-string v2, "processing/#"
-
-    const/16 v3, 0x8
-
-    invoke-virtual {v1, v0, v2, v3}, Landroid/content/UriMatcher;->addURI(Ljava/lang/String;Ljava/lang/String;I)V
-
-    return-object v1
+    return-void
 .end method
 
-.method public final bridge synthetic get()Ljava/lang/Object;
-    .locals 1
+.method public final h(JFF)V
+    .locals 2
 
-    invoke-virtual {p0}, Ldyt;->a()Landroid/content/UriMatcher;
+    iget-object v0, p0, Ldyt;->g:Ljava/util/Set;
+
+    invoke-interface {v0}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
 
     move-result-object v0
 
-    return-object v0
+    :goto_0
+    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Ldys;
+
+    invoke-interface {v1, p1, p2, p3, p4}, Ldys;->a(JFF)V
+
+    goto :goto_0
+
+    :cond_0
+    return-void
 .end method

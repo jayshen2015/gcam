@@ -1,146 +1,85 @@
-.class public final Lnub;
-.super Lnws;
+.class final Lnub;
+.super Ljava/lang/Object;
 
 # interfaces
-.implements Lnxz;
+.implements Lqbo;
 
 
-# static fields
-.field public static final a:Lnub;
+# instance fields
+.field final synthetic a:Lnuc;
 
-.field private static volatile b:Lnyf;
+.field final synthetic b:Lpvn;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
-
-    new-instance v0, Lnub;
-
-    invoke-direct {v0}, Lnub;-><init>()V
-
-    sput-object v0, Lnub;->a:Lnub;
-
-    const-class v1, Lnub;
-
-    invoke-static {v1, v0}, Lnws;->aa(Ljava/lang/Class;Lnws;)V
-
-    return-void
-.end method
-
-.method private constructor <init>()V
+.method public constructor <init>(Lnuc;Lpvn;)V
     .locals 0
 
-    invoke-direct {p0}, Lnws;-><init>()V
+    iput-object p1, p0, Lnub;->a:Lnuc;
+
+    iput-object p2, p0, Lnub;->b:Lpvn;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method protected final a(ILjava/lang/Object;)Ljava/lang/Object;
-    .locals 1
+.method public final a(Lqbn;)V
+    .locals 2
 
-    add-int/lit8 p1, p1, -0x1
+    iget-object v0, p0, Lnub;->a:Lnuc;
 
-    const/4 p2, 0x0
+    iget-object v1, v0, Lnuc;->b:Lqbn;
 
-    packed-switch p1, :pswitch_data_0
+    if-nez v1, :cond_1
 
-    :pswitch_0
-    return-object p2
+    new-instance v1, Lqfq;
 
-    :pswitch_1
-    sget-object p1, Lnub;->b:Lnyf;
+    invoke-direct {v1, p1}, Lqfq;-><init>(Lqbn;)V
 
-    if-nez p1, :cond_1
+    iput-object v1, v0, Lnuc;->b:Lqbn;
 
-    const-class p2, Lnub;
+    iget-object p1, p0, Lnub;->a:Lnuc;
 
-    monitor-enter p2
-
-    :try_start_0
-    sget-object p1, Lnub;->b:Lnyf;
+    iget-object p1, p1, Lnuc;->b:Lqbn;
 
     if-nez p1, :cond_0
 
-    new-instance p1, Lnwo;
-
-    sget-object v0, Lnub;->a:Lnub;
-
-    invoke-direct {p1, v0}, Lnwo;-><init>(Lnws;)V
-
-    sput-object p1, Lnub;->b:Lnyf;
+    return-void
 
     :cond_0
-    monitor-exit p2
+    new-instance v0, Lnua;
 
-    goto :goto_0
+    iget-object v1, p0, Lnub;->b:Lpvn;
 
-    :catchall_0
-    move-exception p1
+    invoke-direct {v0, v1}, Lnua;-><init>(Lpvn;)V
 
-    monitor-exit p2
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    check-cast p1, Lqfq;
 
-    throw p1
+    iget-object p1, p1, Lqfq;->a:Lqbn;
+
+    new-instance v1, Lqcp;
+
+    invoke-direct {v1, v0}, Lqcp;-><init>(Lnua;)V
+
+    check-cast p1, Ljava/util/concurrent/atomic/AtomicReference;
+
+    invoke-static {p1, v1}, Lqcr;->i(Ljava/util/concurrent/atomic/AtomicReference;Lqbz;)V
+
+    return-void
 
     :cond_1
-    :goto_0
-    return-object p1
+    new-instance p1, Ljava/lang/IllegalStateException;
 
-    :pswitch_2
-    sget-object p1, Lnub;->a:Lnub;
+    const-string v0, "RxTransferListener subscriptions may not exceed 0 twice"
 
-    return-object p1
+    invoke-virtual {v0}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
-    :pswitch_3
-    new-instance p1, Lnwn;
+    move-result-object v0
 
-    sget-object p2, Lnub;->a:Lnub;
+    invoke-direct {p1, v0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 
-    invoke-direct {p1, p2}, Lnwn;-><init>(Lnws;)V
-
-    return-object p1
-
-    :pswitch_4
-    new-instance p1, Lnub;
-
-    invoke-direct {p1}, Lnub;-><init>()V
-
-    return-object p1
-
-    :pswitch_5
-    sget-object p1, Lnub;->a:Lnub;
-
-    const-string v0, "\u0001\u0000"
-
-    invoke-static {p1, v0, p2}, Lnub;->X(Lnxy;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object p1
-
-    return-object p1
-
-    :pswitch_6
-    const/4 p1, 0x1
-
-    invoke-static {p1}, Ljava/lang/Byte;->valueOf(B)Ljava/lang/Byte;
-
-    move-result-object p1
-
-    return-object p1
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_6
-        :pswitch_0
-        :pswitch_5
-        :pswitch_4
-        :pswitch_3
-        :pswitch_2
-        :pswitch_1
-    .end packed-switch
+    throw p1
 .end method

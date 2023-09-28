@@ -1,41 +1,19 @@
-.class public final synthetic Licu;
+.class Licu;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Landroid/widget/AdapterView$OnItemClickListener;
+.implements Licl;
 
 
 # instance fields
-.field public final synthetic a:Ljava/lang/Object;
-
-.field public final synthetic b:Ljava/lang/Object;
-
-.field private final synthetic c:I
+.field final synthetic b:Licw;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lcom/google/android/apps/camera/ui/popupmenu/PopupMenuView;Lict;I)V
+.method public constructor <init>(Licw;)V
     .locals 0
 
-    iput p3, p0, Licu;->c:I
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Licu;->a:Ljava/lang/Object;
-
-    iput-object p2, p0, Licu;->b:Ljava/lang/Object;
-
-    return-void
-.end method
-
-.method public constructor <init>(Leb;Lee;I)V
-    .locals 0
-
-    iput p3, p0, Licu;->c:I
-
-    iput-object p1, p0, Licu;->b:Ljava/lang/Object;
-
-    iput-object p2, p0, Licu;->a:Ljava/lang/Object;
+    iput-object p1, p0, Licu;->b:Licw;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -44,108 +22,200 @@
 
 
 # virtual methods
-.method public final onItemClick(Landroid/widget/AdapterView;Landroid/view/View;IJ)V
+.method public a()V
+    .locals 3
+
+    iget-object v0, p0, Licu;->b:Licw;
+
+    const/4 v1, 0x0
+
+    const/4 v2, 0x1
+
+    invoke-virtual {v0, v1, v2}, Licw;->r(ZZ)V
+
+    return-void
+.end method
+
+.method public final synthetic b(Lbty;Z)V
     .locals 0
 
-    iget p1, p0, Licu;->c:I
+    return-void
+.end method
 
-    packed-switch p1, :pswitch_data_0
-
-    iget-object p1, p0, Licu;->b:Ljava/lang/Object;
-
-    check-cast p1, Leb;
-
-    iget-object p1, p1, Leb;->p:Landroid/content/DialogInterface$OnClickListener;
-
-    iget-object p2, p0, Licu;->a:Ljava/lang/Object;
-
-    check-cast p2, Lee;
-
-    iget-object p2, p2, Lee;->b:Lff;
-
-    invoke-interface {p1, p2, p3}, Landroid/content/DialogInterface$OnClickListener;->onClick(Landroid/content/DialogInterface;I)V
-
-    iget-object p1, p0, Licu;->b:Ljava/lang/Object;
-
-    check-cast p1, Leb;
-
-    iget-boolean p1, p1, Leb;->u:Z
-
-    if-nez p1, :cond_1
-
-    iget-object p1, p0, Licu;->a:Ljava/lang/Object;
-
-    check-cast p1, Lee;
-
-    iget-object p1, p1, Lee;->b:Lff;
-
-    invoke-virtual {p1}, Lff;->dismiss()V
+.method public final synthetic d(Lbty;Z)V
+    .locals 0
 
     return-void
+.end method
 
-    :pswitch_0
-    iget-object p1, p0, Licu;->a:Ljava/lang/Object;
+.method public final f()V
+    .locals 3
 
-    iget-object p2, p0, Licu;->b:Ljava/lang/Object;
+    iget-object v0, p0, Licu;->b:Licw;
 
-    check-cast p2, Lict;
+    invoke-static {v0}, Licw;->t(Licw;)V
 
-    invoke-virtual {p2, p3}, Lict;->b(I)V
+    iget-object v0, p0, Licu;->b:Licw;
 
-    invoke-virtual {p2, p3}, Lict;->d(I)Lida;
+    iget-object v1, v0, Licw;->t:Lbty;
 
-    move-result-object p4
+    invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    iget-boolean p4, p4, Lida;->f:Z
+    invoke-virtual {v0, v1}, Licw;->q(Lbty;)Lpht;
 
-    if-nez p4, :cond_0
+    move-result-object v0
+
+    new-instance v1, Lics;
+
+    invoke-direct {v1, p0}, Lics;-><init>(Licu;)V
+
+    invoke-static {}, Lmip;->bS()Ljava/util/concurrent/Executor;
+
+    move-result-object v2
+
+    invoke-static {v0, v1, v2}, Lmip;->ca(Lpht;Llht;Ljava/util/concurrent/Executor;)V
+
+    iget-object v0, p0, Licu;->b:Licw;
+
+    iget-object v1, v0, Licw;->l:Libm;
+
+    iget-object v0, v0, Licw;->t:Lbty;
+
+    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    invoke-interface {v1, v0}, Libm;->g(Lbty;)V
+
+    iget-object v0, p0, Licu;->b:Licw;
+
+    iget-object v0, v0, Licw;->k:Lida;
+
+    const/4 v1, 0x1
+
+    iput-boolean v1, v0, Lida;->e:Z
+
+    invoke-virtual {v0}, Lida;->a()Landroid/animation/Animator;
+
+    move-result-object v1
+
+    invoke-static {v1}, Loom;->m(Ljava/lang/Object;)Loom;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Lida;->d(Ljava/util/List;)V
+
+    iget-object v0, p0, Licu;->b:Licw;
+
+    iget-object v0, v0, Licw;->r:Lidd;
+
+    invoke-interface {v0}, Lidd;->d()V
 
     return-void
+.end method
 
-    :cond_0
-    check-cast p1, Lcom/google/android/apps/camera/ui/popupmenu/PopupMenuView;
-
-    invoke-virtual {p1}, Lcom/google/android/apps/camera/ui/popupmenu/PopupMenuView;->getContext()Landroid/content/Context;
-
-    move-result-object p4
-
-    invoke-static {p4}, Lnom;->e(Landroid/content/Context;)V
-
-    invoke-virtual {p1}, Lcom/google/android/apps/camera/ui/popupmenu/PopupMenuView;->getResources()Landroid/content/res/Resources;
-
-    move-result-object p4
-
-    const/4 p5, 0x1
-
-    new-array p5, p5, [Ljava/lang/Object;
-
-    invoke-virtual {p2, p3}, Lict;->d(I)Lida;
-
-    move-result-object p2
-
-    iget-object p2, p2, Lida;->b:Ljava/lang/String;
-
-    const/4 p3, 0x0
-
-    aput-object p2, p5, p3
-
-    const p2, 0x7f1402b6
-
-    invoke-virtual {p4, p2, p5}, Landroid/content/res/Resources;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object p2
-
-    invoke-virtual {p1, p2}, Lcom/google/android/apps/camera/ui/popupmenu/PopupMenuView;->announceForAccessibility(Ljava/lang/CharSequence;)V
+.method public final synthetic fV()V
+    .locals 0
 
     return-void
+.end method
 
-    :cond_1
+.method public fX()Z
+    .locals 1
+
+    const/4 v0, 0x1
+
+    return v0
+.end method
+
+.method public final g()V
+    .locals 2
+
+    iget-object v0, p0, Licu;->b:Licw;
+
+    iget-object v0, v0, Licw;->k:Lida;
+
+    invoke-virtual {v0}, Lida;->b()Landroid/animation/Animator;
+
+    move-result-object v1
+
+    invoke-static {v1}, Loom;->m(Ljava/lang/Object;)Loom;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Lida;->d(Ljava/util/List;)V
+
+    const/4 v1, 0x0
+
+    iput-boolean v1, v0, Lida;->e:Z
+
     return-void
+.end method
 
-    nop
+.method public final synthetic gk()V
+    .locals 0
 
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+    return-void
+.end method
+
+.method public final synthetic h()V
+    .locals 0
+
+    return-void
+.end method
+
+.method public final synthetic i()V
+    .locals 0
+
+    return-void
+.end method
+
+.method public final synthetic j()V
+    .locals 0
+
+    return-void
+.end method
+
+.method public k()V
+    .locals 0
+
+    return-void
+.end method
+
+.method public final synthetic l(Landroid/content/pm/ResolveInfo;)V
+    .locals 0
+
+    return-void
+.end method
+
+.method public m()V
+    .locals 0
+
+    return-void
+.end method
+
+.method public final synthetic n()V
+    .locals 0
+
+    return-void
+.end method
+
+.method public final o()V
+    .locals 2
+
+    iget-object v0, p0, Licu;->b:Licw;
+
+    iget-object v1, v0, Licw;->l:Libm;
+
+    iget-object v0, v0, Licw;->t:Lbty;
+
+    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    invoke-interface {v1, v0}, Libm;->g(Lbty;)V
+
+    return-void
+.end method
+
+.method public final synthetic p(J)V
+    .locals 0
+
+    return-void
 .end method

@@ -1,92 +1,51 @@
-.class Lejn;
-.super Lejl;
+.class public final Lejn;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Lejp;
 
 
-# instance fields
-.field final synthetic b:Lejo;
+# static fields
+.field public static a:I
+
+.field public static b:F
 
 
 # direct methods
-.method public constructor <init>(Lejo;)V
+.method static constructor <clinit>()V
+    .locals 1
+
+    const/16 v0, 0x2000
+
+    sput v0, Lejn;->a:I
+
+    const/high16 v0, 0x42700000    # 60.0f
+
+    sput v0, Lejn;->b:F
+
+    return-void
+.end method
+
+.method public constructor <init>()V
     .locals 0
 
-    iput-object p1, p0, Lejn;->b:Lejo;
-
-    invoke-direct {p0}, Lejl;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public b()V
-    .locals 0
+.method public final a()Lejo;
+    .locals 3
 
-    return-void
-.end method
+    new-instance v0, Lcom/google/android/apps/camera/imax/cyclops/processing/NativeCaptureImpl;
 
-.method public final f()V
-    .locals 2
+    sget v1, Lejn;->a:I
 
-    iget-object v0, p0, Lejn;->b:Lejo;
+    sget v2, Lejn;->b:F
 
-    iget-object v0, v0, Lejo;->f:Lgeh;
+    invoke-direct {v0, v1, v2}, Lcom/google/android/apps/camera/imax/cyclops/processing/NativeCaptureImpl;-><init>(IF)V
 
-    invoke-interface {v0}, Lgeh;->m()V
-
-    iget-object v0, p0, Lejn;->b:Lejo;
-
-    iget-object v0, v0, Lejo;->h:Ljew;
-
-    invoke-virtual {v0}, Ljew;->C()V
-
-    iget-object v0, p0, Lejn;->b:Lejo;
-
-    iget-object v1, v0, Lejo;->e:Lcom/google/android/apps/camera/bottombar/BottomBarController;
-
-    iget-object v0, v0, Lejo;->g:Leik;
-
-    invoke-virtual {v0}, Leik;->k()Z
-
-    move-result v0
-
-    invoke-virtual {v1, v0}, Lcom/google/android/apps/camera/bottombar/BottomBarController;->startImaxCapture(Z)V
-
-    iget-object v0, p0, Lejn;->b:Lejo;
-
-    iget-object v0, v0, Lejo;->d:Liff;
-
-    invoke-interface {v0}, Liff;->K()V
-
-    return-void
-.end method
-
-.method public final g()V
-    .locals 1
-
-    iget-object v0, p0, Lejn;->b:Lejo;
-
-    iget-object v0, v0, Lejo;->f:Lgeh;
-
-    invoke-interface {v0}, Lgeh;->l()V
-
-    iget-object v0, p0, Lejn;->b:Lejo;
-
-    iget-object v0, v0, Lejo;->h:Ljew;
-
-    invoke-virtual {v0}, Ljew;->B()V
-
-    iget-object v0, p0, Lejn;->b:Lejo;
-
-    iget-object v0, v0, Lejo;->e:Lcom/google/android/apps/camera/bottombar/BottomBarController;
-
-    invoke-virtual {v0}, Lcom/google/android/apps/camera/bottombar/BottomBarController;->stopImaxCapture()V
-
-    iget-object v0, p0, Lejn;->b:Lejo;
-
-    iget-object v0, v0, Lejo;->d:Liff;
-
-    invoke-interface {v0}, Liff;->k()V
-
-    return-void
+    return-object v0
 .end method

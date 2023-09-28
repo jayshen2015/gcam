@@ -1,75 +1,46 @@
-.class public final Lksg;
-.super Ljava/lang/Object;
-
-# interfaces
-.implements Lksk;
-
-
-# static fields
-.field public static final a:Lksg;
-
-.field public static final b:Lksg;
-
-
-# instance fields
-.field private final synthetic c:I
+.class public Lksg;
+.super Landroid/os/Handler;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
+.method public constructor <init>()V
+    .locals 0
 
-    new-instance v0, Lksg;
-
-    const/4 v1, 0x1
-
-    invoke-direct {v0, v1}, Lksg;-><init>(I)V
-
-    sput-object v0, Lksg;->b:Lksg;
-
-    new-instance v0, Lksg;
-
-    const/4 v1, 0x0
-
-    invoke-direct {v0, v1}, Lksg;-><init>(I)V
-
-    sput-object v0, Lksg;->a:Lksg;
+    invoke-direct {p0}, Landroid/os/Handler;-><init>()V
 
     return-void
 .end method
 
-.method private constructor <init>(I)V
+.method public constructor <init>(Landroid/os/Looper;)V
     .locals 0
 
-    iput p1, p0, Lksg;->c:I
+    invoke-direct {p0, p1}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    return-void
+.end method
+
+.method public constructor <init>(Landroid/os/Looper;Landroid/os/Handler$Callback;)V
+    .locals 0
+
+    invoke-direct {p0, p1, p2}, Landroid/os/Handler;-><init>(Landroid/os/Looper;Landroid/os/Handler$Callback;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Z
-    .locals 1
+.method protected b(Landroid/os/Message;)V
+    .locals 0
 
-    iget v0, p0, Lksg;->c:I
+    invoke-super {p0, p1}, Landroid/os/Handler;->dispatchMessage(Landroid/os/Message;)V
 
-    packed-switch v0, :pswitch_data_0
+    return-void
+.end method
 
-    const/4 v0, 0x1
+.method public final dispatchMessage(Landroid/os/Message;)V
+    .locals 0
 
-    return v0
+    invoke-virtual {p0, p1}, Lksg;->b(Landroid/os/Message;)V
 
-    :pswitch_0
-    const/4 v0, 0x0
-
-    return v0
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+    return-void
 .end method

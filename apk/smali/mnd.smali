@@ -1,12 +1,26 @@
-.class public Lmnd;
-.super Ljava/lang/Exception;
+.class public final Lmnd;
+.super Ljava/lang/Object;
+
+
+# static fields
+.field public static final a:Lmne;
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 1
 
-    invoke-direct {p0}, Ljava/lang/Exception;-><init>()V
+    sget-object v0, Lmlt;->a:Lmlt;
+
+    invoke-static {v0}, Lmip;->Y(Ljava/lang/Object;)Lmnb;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lmne;->i(Lmnb;)Lmne;
+
+    move-result-object v0
+
+    sput-object v0, Lmnd;->a:Lmne;
 
     return-void
 .end method

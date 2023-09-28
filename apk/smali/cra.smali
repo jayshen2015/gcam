@@ -1,262 +1,268 @@
 .class public final Lcra;
-.super Ljava/lang/Object;
+.super Lcro;
+
+# interfaces
+.implements Lihv;
 
 
 # instance fields
-.field public final a:Z
+.field public final a:Lihu;
 
-.field public final b:Z
+.field public final b:Lihw;
 
-.field public final c:J
+.field public final c:Lihw;
 
-.field public final d:I
-
-.field public final e:I
-
-.field public final f:F
+.field public final d:Lihw;
 
 
 # direct methods
-.method public constructor <init>()V
+.method public constructor <init>(Lcom/google/android/apps/camera/bottombar/BottomBarController;Lddf;Ljlb;Ljfn;Ljjp;Lcsb;Lojc;Lgtg;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct/range {p0 .. p8}, Lcro;-><init>(Lcom/google/android/apps/camera/bottombar/BottomBarController;Lddf;Ljlb;Ljfn;Ljjp;Lcsb;Lojc;Lgtg;)V
 
-    return-void
-.end method
+    new-instance p1, Lcqx;
 
-.method public constructor <init>(ZZJIIF)V
-    .locals 0
+    invoke-direct {p1, p0}, Lcqx;-><init>(Lcra;)V
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance p2, Lihw;
 
-    iput-boolean p1, p0, Lcra;->a:Z
+    const/4 p3, 0x0
 
-    iput-boolean p2, p0, Lcra;->b:Z
+    new-array p4, p3, [Lihs;
 
-    iput-wide p3, p0, Lcra;->c:J
+    invoke-direct {p2, p1, p4}, Lihw;-><init>(Lihs;[Lihs;)V
 
-    iput p5, p0, Lcra;->d:I
+    iput-object p2, p0, Lcra;->b:Lihw;
 
-    iput p6, p0, Lcra;->e:I
+    new-instance p1, Lcqy;
 
-    iput p7, p0, Lcra;->f:F
+    invoke-direct {p1, p0}, Lcqy;-><init>(Lcra;)V
+
+    new-instance p2, Lihw;
+
+    new-array p4, p3, [Lihs;
+
+    invoke-direct {p2, p1, p4}, Lihw;-><init>(Lihs;[Lihs;)V
+
+    iput-object p2, p0, Lcra;->c:Lihw;
+
+    new-instance p1, Lcqz;
+
+    invoke-direct {p1, p0}, Lcqz;-><init>(Lcra;)V
+
+    new-instance p4, Lihw;
+
+    new-array p5, p3, [Lihs;
+
+    invoke-direct {p4, p1, p5}, Lihw;-><init>(Lihs;[Lihs;)V
+
+    iput-object p4, p0, Lcra;->d:Lihw;
+
+    new-instance p1, Lihu;
+
+    invoke-direct {p1, p2, p3}, Lihu;-><init>(Lihw;Z)V
+
+    iput-object p1, p0, Lcra;->a:Lihu;
+
+    invoke-virtual {p1}, Lihu;->f()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 7
+.method public final a()V
+    .locals 1
 
-    const/4 v0, 0x1
+    iget-object v0, p0, Lcra;->a:Lihu;
 
-    if-ne p1, p0, :cond_0
-
-    return v0
-
-    :cond_0
-    instance-of v1, p1, Lcra;
-
-    const/4 v2, 0x0
-
-    if-eqz v1, :cond_1
-
-    check-cast p1, Lcra;
-
-    iget-boolean v1, p0, Lcra;->a:Z
-
-    iget-boolean v3, p1, Lcra;->a:Z
-
-    if-ne v1, v3, :cond_1
-
-    iget-boolean v1, p0, Lcra;->b:Z
-
-    iget-boolean v3, p1, Lcra;->b:Z
-
-    if-ne v1, v3, :cond_1
-
-    iget-wide v3, p0, Lcra;->c:J
-
-    iget-wide v5, p1, Lcra;->c:J
-
-    cmp-long v1, v3, v5
-
-    if-nez v1, :cond_1
-
-    iget v1, p0, Lcra;->d:I
-
-    iget v3, p1, Lcra;->d:I
-
-    if-ne v1, v3, :cond_1
-
-    iget v1, p0, Lcra;->e:I
-
-    iget v3, p1, Lcra;->e:I
-
-    if-ne v1, v3, :cond_1
-
-    iget v1, p0, Lcra;->f:F
-
-    invoke-static {v1}, Ljava/lang/Float;->floatToIntBits(F)I
-
-    move-result v1
-
-    iget p1, p1, Lcra;->f:F
-
-    invoke-static {p1}, Ljava/lang/Float;->floatToIntBits(F)I
-
-    move-result p1
-
-    if-ne v1, p1, :cond_1
-
-    return v0
-
-    :cond_1
-    return v2
-.end method
-
-.method public final hashCode()I
-    .locals 6
-
-    iget-boolean v0, p0, Lcra;->a:Z
-
-    const/16 v1, 0x4d5
-
-    const/16 v2, 0x4cf
-
-    const/4 v3, 0x1
-
-    if-eq v3, v0, :cond_0
-
-    const/16 v0, 0x4d5
-
-    goto :goto_0
-
-    :cond_0
-    const/16 v0, 0x4cf
-
-    :goto_0
-    iget-boolean v4, p0, Lcra;->b:Z
-
-    if-eq v3, v4, :cond_1
-
-    goto :goto_1
-
-    :cond_1
-    const/16 v1, 0x4cf
-
-    :goto_1
-    iget-wide v2, p0, Lcra;->c:J
-
-    const/16 v4, 0x20
-
-    ushr-long v4, v2, v4
-
-    xor-long/2addr v2, v4
-
-    const v4, 0xf4243
-
-    xor-int/2addr v0, v4
-
-    mul-int v0, v0, v4
-
-    xor-int/2addr v0, v1
-
-    mul-int v0, v0, v4
-
-    long-to-int v1, v2
-
-    xor-int/2addr v0, v1
-
-    mul-int v0, v0, v4
-
-    iget v1, p0, Lcra;->d:I
-
-    xor-int/2addr v0, v1
-
-    mul-int v0, v0, v4
-
-    iget v1, p0, Lcra;->e:I
-
-    xor-int/2addr v0, v1
-
-    iget v1, p0, Lcra;->f:F
-
-    invoke-static {v1}, Ljava/lang/Float;->floatToIntBits(F)I
-
-    move-result v1
-
-    mul-int v0, v0, v4
-
-    xor-int/2addr v0, v1
-
-    return v0
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .locals 3
-
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v1, "CocktailPartyStats{isAudioFallback="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-boolean v1, p0, Lcra;->a:Z
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    const-string v1, ", isMouthCovered="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-boolean v1, p0, Lcra;->b:Z
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    const-string v1, ", getAudioFrameCount="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-wide v1, p0, Lcra;->c:J
-
-    invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    const-string v1, ", getAudioFrameDropCount="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget v1, p0, Lcra;->d:I
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    const-string v1, ", getAudioMaxFrameDropCount="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget v1, p0, Lcra;->e:I
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    const-string v1, ", getNoiseFraction="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget v1, p0, Lcra;->f:F
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
-
-    const-string v1, "}"
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v0}, Lihu;->a()Lihw;
 
     move-result-object v0
 
-    return-object v0
+    if-nez v0, :cond_0
+
+    return-void
+
+    :cond_0
+    iget-object v0, p0, Lcra;->a:Lihu;
+
+    invoke-virtual {v0}, Lihu;->a()Lihw;
+
+    move-result-object v0
+
+    iget-object v0, v0, Lihw;->a:Lihs;
+
+    check-cast v0, Lcsa;
+
+    invoke-virtual {v0}, Lcsa;->a()V
+
+    return-void
+.end method
+
+.method public final b()V
+    .locals 1
+
+    iget-object v0, p0, Lcra;->a:Lihu;
+
+    invoke-virtual {v0}, Lihu;->a()Lihw;
+
+    move-result-object v0
+
+    if-nez v0, :cond_0
+
+    return-void
+
+    :cond_0
+    iget-object v0, p0, Lcra;->a:Lihu;
+
+    invoke-virtual {v0}, Lihu;->a()Lihw;
+
+    move-result-object v0
+
+    iget-object v0, v0, Lihw;->a:Lihs;
+
+    check-cast v0, Lcsa;
+
+    invoke-virtual {v0}, Lcsa;->b()V
+
+    return-void
+.end method
+
+.method public final c()V
+    .locals 1
+
+    iget-object v0, p0, Lcra;->a:Lihu;
+
+    invoke-virtual {v0}, Lihu;->a()Lihw;
+
+    move-result-object v0
+
+    if-nez v0, :cond_0
+
+    return-void
+
+    :cond_0
+    iget-object v0, p0, Lcra;->a:Lihu;
+
+    invoke-virtual {v0}, Lihu;->a()Lihw;
+
+    move-result-object v0
+
+    iget-object v0, v0, Lihw;->a:Lihs;
+
+    check-cast v0, Lcsa;
+
+    invoke-virtual {v0}, Lcsa;->c()V
+
+    return-void
+.end method
+
+.method public final d()V
+    .locals 1
+
+    iget-object v0, p0, Lcra;->a:Lihu;
+
+    invoke-virtual {v0}, Lihu;->a()Lihw;
+
+    move-result-object v0
+
+    if-nez v0, :cond_0
+
+    return-void
+
+    :cond_0
+    iget-object v0, p0, Lcra;->a:Lihu;
+
+    invoke-virtual {v0}, Lihu;->a()Lihw;
+
+    move-result-object v0
+
+    iget-object v0, v0, Lihw;->a:Lihs;
+
+    check-cast v0, Lcsa;
+
+    invoke-virtual {v0}, Lcsa;->d()V
+
+    return-void
+.end method
+
+.method public final e()V
+    .locals 1
+
+    iget-object v0, p0, Lcra;->a:Lihu;
+
+    invoke-virtual {v0}, Lihu;->b()V
+
+    iget-object v0, p0, Lcra;->b:Lihw;
+
+    invoke-virtual {v0}, Lihw;->e()V
+
+    iget-object v0, p0, Lcra;->c:Lihw;
+
+    invoke-virtual {v0}, Lihw;->e()V
+
+    iget-object v0, p0, Lcra;->d:Lihw;
+
+    invoke-virtual {v0}, Lihw;->e()V
+
+    return-void
+.end method
+
+.method public final f()V
+    .locals 1
+
+    iget-object v0, p0, Lcra;->a:Lihu;
+
+    invoke-virtual {v0}, Lihu;->c()V
+
+    return-void
+.end method
+
+.method public final g()V
+    .locals 1
+
+    iget-object v0, p0, Lcra;->a:Lihu;
+
+    invoke-virtual {v0}, Lihu;->d()V
+
+    return-void
+.end method
+
+.method public final h()V
+    .locals 0
+
+    invoke-static {p0}, Lmip;->eQ(Lihv;)V
+
+    return-void
+.end method
+
+.method public final i()V
+    .locals 1
+
+    iget-object v0, p0, Lcra;->a:Lihu;
+
+    invoke-virtual {v0}, Lihu;->a()Lihw;
+
+    move-result-object v0
+
+    if-nez v0, :cond_0
+
+    return-void
+
+    :cond_0
+    iget-object v0, p0, Lcra;->a:Lihu;
+
+    invoke-virtual {v0}, Lihu;->a()Lihw;
+
+    move-result-object v0
+
+    iget-object v0, v0, Lihw;->a:Lihs;
+
+    check-cast v0, Lcsa;
+
+    invoke-virtual {v0}, Lcsa;->i()V
+
+    return-void
 .end method

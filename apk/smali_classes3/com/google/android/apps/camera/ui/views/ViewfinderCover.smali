@@ -2,30 +2,30 @@
 .super Lcom/google/android/apps/camera/ui/layout/GcaLayout;
 
 # interfaces
-.implements Libf;
-.implements Ldbv;
+.implements Ljfi;
+.implements Lcwh;
 
 
 # static fields
-.field private static final i:Lnak;
+.field private static final k:Louj;
 
 
 # instance fields
-.field public c:Landroid/widget/ImageView;
+.field public e:Landroid/widget/ImageView;
 
-.field public d:Landroid/graphics/drawable/AnimatedVectorDrawable;
+.field public f:Landroid/graphics/drawable/AnimatedVectorDrawable;
 
-.field public e:Z
+.field public g:Z
 
-.field public f:Ljava/util/concurrent/Callable;
+.field public h:Ljava/util/concurrent/Callable;
 
-.field public final g:Libg;
+.field public final i:Ljfj;
 
-.field public h:Z
+.field public j:Z
 
-.field private j:Landroid/widget/TextView;
+.field private l:Landroid/widget/TextView;
 
-.field private final k:Ldhi;
+.field private final m:Lddf;
 
 
 # direct methods
@@ -34,11 +34,11 @@
 
     const-string v0, "com/google/android/apps/camera/ui/views/ViewfinderCover"
 
-    invoke-static {v0}, Lnak;->h(Ljava/lang/String;)Lnak;
+    invoke-static {v0}, Louj;->h(Ljava/lang/String;)Louj;
 
     move-result-object v0
 
-    sput-object v0, Lcom/google/android/apps/camera/ui/views/ViewfinderCover;->i:Lnak;
+    sput-object v0, Lcom/google/android/apps/camera/ui/views/ViewfinderCover;->k:Louj;
 
     return-void
 .end method
@@ -50,35 +50,35 @@
 
     const/4 p2, 0x1
 
-    iput-boolean p2, p0, Lcom/google/android/apps/camera/ui/views/ViewfinderCover;->e:Z
+    iput-boolean p2, p0, Lcom/google/android/apps/camera/ui/views/ViewfinderCover;->g:Z
 
     const/4 p2, 0x0
 
-    iput-boolean p2, p0, Lcom/google/android/apps/camera/ui/views/ViewfinderCover;->h:Z
+    iput-boolean p2, p0, Lcom/google/android/apps/camera/ui/views/ViewfinderCover;->j:Z
 
-    new-instance p2, Libg;
+    new-instance p2, Ljfj;
 
-    invoke-direct {p2, p0}, Libg;-><init>(Landroid/view/ViewGroup;)V
+    invoke-direct {p2, p0}, Ljfj;-><init>(Landroid/view/ViewGroup;)V
 
-    iput-object p2, p0, Lcom/google/android/apps/camera/ui/views/ViewfinderCover;->g:Libg;
+    iput-object p2, p0, Lcom/google/android/apps/camera/ui/views/ViewfinderCover;->i:Ljfj;
 
-    check-cast p1, Lcdd;
+    check-cast p1, Lbpx;
 
-    invoke-interface {p1}, Lcdd;->a()Ldhi;
+    invoke-interface {p1}, Lbpx;->a()Lddf;
 
     move-result-object p1
 
-    iput-object p1, p0, Lcom/google/android/apps/camera/ui/views/ViewfinderCover;->k:Ldhi;
+    iput-object p1, p0, Lcom/google/android/apps/camera/ui/views/ViewfinderCover;->m:Lddf;
 
     return-void
 .end method
 
-.method private final n(Landroid/graphics/Rect;)I
+.method private final p(Landroid/graphics/Rect;)I
     .locals 4
 
-    iget-object v0, p0, Lcom/google/android/apps/camera/ui/views/ViewfinderCover;->a:Lmrl;
+    iget-object v0, p0, Lcom/google/android/apps/camera/ui/views/ViewfinderCover;->d:Lojz;
 
-    invoke-interface {v0}, Lmrl;->a()Ljava/lang/Object;
+    invoke-interface {v0}, Lojz;->a()Ljava/lang/Object;
 
     move-result-object v0
 
@@ -89,23 +89,23 @@
     return v1
 
     :cond_0
-    iget-object v2, p0, Lcom/google/android/apps/camera/ui/views/ViewfinderCover;->k:Ldhi;
+    iget-object v2, p0, Lcom/google/android/apps/camera/ui/views/ViewfinderCover;->m:Lddf;
 
-    sget-object v3, Ldho;->bq:Ldhj;
+    sget-object v3, Lddl;->aU:Lddg;
 
-    invoke-interface {v2, v3}, Ldhi;->l(Ldhj;)Z
+    invoke-interface {v2, v3}, Lddf;->k(Lddg;)Z
 
     move-result v2
 
     if-eqz v2, :cond_2
 
-    check-cast v0, Lhyt;
+    check-cast v0, Ljbw;
 
-    iget-object v0, v0, Lhyt;->a:Lhys;
+    iget-object v0, v0, Ljbw;->a:Ljbv;
 
-    iget-object v0, v0, Lhys;->g:Liko;
+    iget-object v0, v0, Ljbv;->h:Ljrz;
 
-    sget-object v2, Liko;->a:Liko;
+    sget-object v2, Ljrz;->a:Ljrz;
 
     if-ne v0, v2, :cond_1
 
@@ -117,7 +117,7 @@
 
     move-result p1
 
-    invoke-static {v0, p1}, Ljzr;->k(II)Ljzr;
+    invoke-static {v0, p1}, Llhs;->i(II)Llhs;
 
     move-result-object p1
 
@@ -132,14 +132,14 @@
 
     move-result p1
 
-    invoke-static {v0, p1}, Ljzr;->k(II)Ljzr;
+    invoke-static {v0, p1}, Llhs;->i(II)Llhs;
 
     move-result-object p1
 
     :goto_0
-    sget-object v0, Ljzr;->b:Ljzr;
+    sget-object v0, Llhs;->b:Llhs;
 
-    invoke-virtual {p1, v0}, Ljzr;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {p1, v0}, Llhs;->equals(Ljava/lang/Object;)Z
 
     move-result p1
 
@@ -149,7 +149,7 @@
 
     move-result-object p1
 
-    const v0, 0x7f07070c
+    const v0, 0x7f0705b1
 
     invoke-virtual {p1, v0}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -161,75 +161,25 @@
     return v1
 .end method
 
-.method private static final o(Lhyt;)Landroid/graphics/Rect;
-    .locals 2
-
-    iget-object v0, p0, Lhyt;->a:Lhys;
-
-    iget-object v0, v0, Lhys;->i:Lhyn;
-
-    sget-object v1, Lhyn;->c:Lhyn;
-
-    invoke-virtual {v0, v1}, Lhyn;->equals(Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-nez v1, :cond_1
-
-    sget-object v1, Lhyn;->b:Lhyn;
-
-    invoke-virtual {v0, v1}, Lhyn;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    goto :goto_0
-
-    :cond_0
-    iget-object p0, p0, Lhyt;->d:Lhyw;
-
-    invoke-static {p0}, Llkj;->C(Ljava/lang/Object;)V
-
-    iget-object v0, p0, Lhyw;->h:Landroid/util/Size;
-
-    iget-object v1, p0, Lhyw;->g:Landroid/util/Size;
-
-    invoke-virtual {p0, v0, v1}, Lhyw;->r(Landroid/util/Size;Landroid/util/Size;)Landroid/graphics/Rect;
-
-    move-result-object p0
-
-    goto :goto_1
-
-    :cond_1
-    :goto_0
-    iget-object p0, p0, Lhyt;->b:Lhyq;
-
-    iget-object p0, p0, Lhyq;->e:Landroid/graphics/Rect;
-
-    :goto_1
-    return-object p0
-.end method
-
 
 # virtual methods
-.method public final a(Lklv;)Lnou;
-    .locals 5
+.method public final a(Llwd;)Lpht;
+    .locals 6
 
     invoke-virtual {p0}, Lcom/google/android/apps/camera/ui/views/ViewfinderCover;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
 
-    sget-object v1, Lklv;->b:Lklv;
+    sget-object v1, Llwd;->b:Llwd;
 
     if-ne p1, v1, :cond_0
 
-    const p1, 0x7f08015e
+    const p1, 0x7f08046f
 
     goto :goto_0
 
     :cond_0
-    const p1, 0x7f08015d
+    const p1, 0x7f08046e
 
     :goto_0
     const/4 v1, 0x0
@@ -240,87 +190,89 @@
 
     check-cast p1, Landroid/graphics/drawable/AnimatedVectorDrawable;
 
-    iput-object p1, p0, Lcom/google/android/apps/camera/ui/views/ViewfinderCover;->d:Landroid/graphics/drawable/AnimatedVectorDrawable;
+    iput-object p1, p0, Lcom/google/android/apps/camera/ui/views/ViewfinderCover;->f:Landroid/graphics/drawable/AnimatedVectorDrawable;
 
-    invoke-static {}, Lnph;->g()Lnph;
+    invoke-static {}, Lpih;->f()Lpih;
 
     move-result-object p1
 
-    iget-object v0, p0, Lcom/google/android/apps/camera/ui/views/ViewfinderCover;->g:Libg;
+    iget-object v0, p0, Lcom/google/android/apps/camera/ui/views/ViewfinderCover;->i:Ljfj;
 
-    sget-object v1, Lika;->a:Lika;
+    sget-object v1, Ljrl;->a:Ljrl;
 
-    sget-object v2, Lhck;->k:Lhck;
+    sget-object v2, Lisd;->k:Lisd;
 
-    new-instance v3, Liii;
+    new-instance v3, Ljpa;
 
-    invoke-direct {v3, p0}, Liii;-><init>(Lcom/google/android/apps/camera/ui/views/ViewfinderCover;)V
+    invoke-direct {v3, p0}, Ljpa;-><init>(Lcom/google/android/apps/camera/ui/views/ViewfinderCover;)V
 
-    new-instance v4, Liig;
+    new-instance v4, Ljoy;
 
-    invoke-direct {v4, p1}, Liig;-><init>(Lnph;)V
+    invoke-direct {v4, p1}, Ljoy;-><init>(Lpih;)V
 
-    invoke-virtual {v0, v1, v2, v3, v4}, Libg;->p(Lika;Ljava/lang/Runnable;Libf;Libc;)V
+    const/4 v5, 0x0
+
+    invoke-virtual/range {v0 .. v5}, Ljfj;->n(Ljrl;Ljava/lang/Runnable;Ljfi;Ljfe;Z)V
 
     return-object p1
 .end method
 
-.method public final b()Lmqp;
+.method public final b()Lojc;
     .locals 2
 
-    iget-object v0, p0, Lcom/google/android/apps/camera/ui/views/ViewfinderCover;->a:Lmrl;
+    iget-object v0, p0, Lcom/google/android/apps/camera/ui/views/ViewfinderCover;->d:Lojz;
 
-    invoke-interface {v0}, Lmrl;->a()Ljava/lang/Object;
+    invoke-interface {v0}, Lojz;->a()Ljava/lang/Object;
 
     move-result-object v0
 
     if-nez v0, :cond_0
 
-    sget-object v0, Lmpx;->a:Lmpx;
+    sget-object v0, Loih;->a:Loih;
 
     return-object v0
 
     :cond_0
-    check-cast v0, Lhyt;
+    check-cast v0, Ljbw;
 
-    invoke-static {v0}, Lcom/google/android/apps/camera/ui/views/ViewfinderCover;->o(Lhyt;)Landroid/graphics/Rect;
+    iget-object v0, v0, Ljbw;->b:Ljbt;
 
-    move-result-object v0
+    iget-object v0, v0, Ljbt;->e:Landroid/graphics/Rect;
 
-    invoke-static {}, Libd;->a()Lllz;
+    invoke-static {}, Ljfg;->a()Ljff;
 
     move-result-object v1
 
-    invoke-virtual {v1, v0}, Lllz;->e(Landroid/graphics/Rect;)V
+    invoke-virtual {v1, v0}, Ljff;->c(Landroid/graphics/Rect;)V
 
-    invoke-direct {p0, v0}, Lcom/google/android/apps/camera/ui/views/ViewfinderCover;->n(Landroid/graphics/Rect;)I
+    invoke-direct {p0, v0}, Lcom/google/android/apps/camera/ui/views/ViewfinderCover;->p(Landroid/graphics/Rect;)I
 
     move-result v0
 
-    invoke-virtual {v1, v0}, Lllz;->d(I)V
+    invoke-virtual {v1, v0}, Ljff;->b(I)V
 
-    invoke-virtual {v1}, Lllz;->c()Libd;
+    invoke-virtual {v1}, Ljff;->a()Ljfg;
 
     move-result-object v0
 
-    invoke-static {v0}, Lmqp;->i(Ljava/lang/Object;)Lmqp;
+    invoke-static {v0}, Lojc;->i(Ljava/lang/Object;)Lojc;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method public final c()Lmqp;
+.method public final c()Lojc;
     .locals 4
 
     :try_start_0
-    iget-object v0, p0, Lcom/google/android/apps/camera/ui/views/ViewfinderCover;->f:Ljava/util/concurrent/Callable;
+    iget-object v0, p0, Lcom/google/android/apps/camera/ui/views/ViewfinderCover;->h:Ljava/util/concurrent/Callable;
 
     invoke-interface {v0}, Ljava/util/concurrent/Callable;->call()Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Lmqp;
+    check-cast v0, Lojc;
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
@@ -329,53 +281,118 @@
     :catch_0
     move-exception v0
 
-    sget-object v1, Lcom/google/android/apps/camera/ui/views/ViewfinderCover;->i:Lnak;
+    sget-object v1, Lcom/google/android/apps/camera/ui/views/ViewfinderCover;->k:Louj;
 
-    invoke-virtual {v1}, Lnaf;->b()Lnaz;
+    invoke-virtual {v1}, Loue;->b()Lova;
 
     move-result-object v1
 
-    const-string v2, "Failed to create snapshot"
+    const/16 v2, 0xd90
 
-    const/16 v3, 0x10b3
+    const-string v3, "Failed to create snapshot"
 
-    invoke-static {v1, v2, v3, v0}, Ld;->h(Lnaz;Ljava/lang/String;CLjava/lang/Throwable;)V
+    invoke-static {v1, v3, v2, v0}, Ld;->w(Lova;Ljava/lang/String;CLjava/lang/Throwable;)V
 
-    sget-object v0, Lmpx;->a:Lmpx;
+    sget-object v0, Loih;->a:Loih;
 
     return-object v0
 .end method
 
-.method public final d()V
-    .locals 1
+.method public final d(Z)V
+    .locals 6
 
-    iget-object v0, p0, Lcom/google/android/apps/camera/ui/views/ViewfinderCover;->g:Libg;
+    iget-object v0, p0, Lcom/google/android/apps/camera/ui/views/ViewfinderCover;->i:Ljfj;
 
-    invoke-virtual {v0}, Libg;->f()V
+    iget-object v1, v0, Ljfj;->w:Landroid/view/View;
 
+    const/4 v2, 0x0
+
+    invoke-virtual {v1, v2}, Landroid/view/View;->setAlpha(F)V
+
+    invoke-virtual {v0}, Ljfj;->m()V
+
+    iget-object v1, v0, Ljfj;->w:Landroid/view/View;
+
+    invoke-virtual {v1}, Landroid/view/View;->animate()Landroid/view/ViewPropertyAnimator;
+
+    move-result-object v1
+
+    const/high16 v3, 0x3f800000    # 1.0f
+
+    invoke-virtual {v1, v3}, Landroid/view/ViewPropertyAnimator;->alpha(F)Landroid/view/ViewPropertyAnimator;
+
+    move-result-object v1
+
+    const-wide/16 v4, 0xfa
+
+    invoke-virtual {v1, v4, v5}, Landroid/view/ViewPropertyAnimator;->setDuration(J)Landroid/view/ViewPropertyAnimator;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Landroid/view/ViewPropertyAnimator;->start()V
+
+    if-eqz p1, :cond_0
+
+    iget-object p1, v0, Ljfj;->x:Landroid/view/View;
+
+    invoke-virtual {p1, v2}, Landroid/view/View;->setAlpha(F)V
+
+    iget-object p1, v0, Ljfj;->x:Landroid/view/View;
+
+    const/4 v1, 0x0
+
+    invoke-virtual {p1, v1}, Landroid/view/View;->setVisibility(I)V
+
+    iget-object p1, v0, Ljfj;->x:Landroid/view/View;
+
+    invoke-virtual {p1}, Landroid/view/View;->animate()Landroid/view/ViewPropertyAnimator;
+
+    move-result-object p1
+
+    invoke-virtual {p1, v3}, Landroid/view/ViewPropertyAnimator;->alpha(F)Landroid/view/ViewPropertyAnimator;
+
+    move-result-object p1
+
+    invoke-virtual {p1, v4, v5}, Landroid/view/ViewPropertyAnimator;->setDuration(J)Landroid/view/ViewPropertyAnimator;
+
+    move-result-object p1
+
+    invoke-virtual {p1}, Landroid/view/ViewPropertyAnimator;->start()V
+
+    :cond_0
     return-void
 .end method
 
 .method public final e()V
     .locals 1
 
-    iget-object v0, p0, Lcom/google/android/apps/camera/ui/views/ViewfinderCover;->g:Libg;
+    iget-object v0, p0, Lcom/google/android/apps/camera/ui/views/ViewfinderCover;->i:Ljfj;
 
-    invoke-virtual {v0}, Libg;->g()V
+    invoke-virtual {v0}, Ljfj;->f()V
 
     return-void
 .end method
 
-.method public final f(Lika;)V
+.method public final f()V
+    .locals 1
+
+    iget-object v0, p0, Lcom/google/android/apps/camera/ui/views/ViewfinderCover;->i:Ljfj;
+
+    invoke-virtual {v0}, Ljfj;->g()V
+
+    return-void
+.end method
+
+.method public final g(Ljrl;)V
     .locals 4
 
-    iget-object v0, p0, Lcom/google/android/apps/camera/ui/views/ViewfinderCover;->c:Landroid/widget/ImageView;
+    iget-object v0, p0, Lcom/google/android/apps/camera/ui/views/ViewfinderCover;->e:Landroid/widget/ImageView;
 
     const/4 v1, 0x0
 
     if-eqz p1, :cond_1
 
-    sget-object v2, Lika;->a:Lika;
+    sget-object v2, Ljrl;->a:Ljrl;
 
     if-ne p1, v2, :cond_0
 
@@ -384,7 +401,7 @@
     goto :goto_0
 
     :cond_0
-    invoke-static {p1}, Lijy;->b(Lika;)Lijy;
+    invoke-static {p1}, Ljri;->b(Ljrl;)Ljri;
 
     move-result-object v2
 
@@ -392,7 +409,7 @@
 
     move-result-object v3
 
-    invoke-virtual {v2, v3}, Lijy;->a(Landroid/content/res/Resources;)Landroid/graphics/drawable/Drawable;
+    invoke-virtual {v2, v3}, Ljri;->a(Landroid/content/res/Resources;)Landroid/graphics/drawable/Drawable;
 
     move-result-object v2
 
@@ -404,24 +421,26 @@
     :goto_0
     invoke-virtual {v0, v2}, Landroid/widget/ImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
 
+    iget-object v0, p0, Lcom/google/android/apps/camera/ui/views/ViewfinderCover;->l:Landroid/widget/TextView;
+
     if-eqz p1, :cond_3
 
-    sget-object v0, Lika;->a:Lika;
+    sget-object v2, Ljrl;->a:Ljrl;
 
-    if-ne p1, v0, :cond_2
+    if-ne p1, v2, :cond_2
 
     goto :goto_1
 
     :cond_2
-    invoke-static {p1}, Lijy;->b(Lika;)Lijy;
+    invoke-static {p1}, Ljri;->b(Ljrl;)Ljri;
 
-    move-result-object v0
+    move-result-object p1
 
     invoke-virtual {p0}, Lcom/google/android/apps/camera/ui/views/ViewfinderCover;->getResources()Landroid/content/res/Resources;
 
     move-result-object v1
 
-    invoke-virtual {v0, v1}, Lijy;->d(Landroid/content/res/Resources;)Ljava/lang/String;
+    invoke-virtual {p1, v1}, Ljri;->d(Landroid/content/res/Resources;)Ljava/lang/String;
 
     move-result-object v1
 
@@ -429,73 +448,20 @@
 
     :cond_3
     :goto_1
-    sget-object v0, Lika;->l:Lika;
-
-    if-ne p1, v0, :cond_4
-
-    invoke-virtual {p0}, Lcom/google/android/apps/camera/ui/views/ViewfinderCover;->getContext()Landroid/content/Context;
-
-    move-result-object p1
-
-    invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
-
-    move-result-object p1
-
-    iget-object v0, p0, Lcom/google/android/apps/camera/ui/views/ViewfinderCover;->k:Ldhi;
-
-    sget-object v2, Ldhx;->f:Ldhj;
-
-    invoke-interface {v0, v2}, Ldhi;->l(Ldhj;)Z
-
-    move-result v0
-
-    if-nez v0, :cond_4
-
-    iget-object v0, p0, Lcom/google/android/apps/camera/ui/views/ViewfinderCover;->k:Ldhi;
-
-    sget-object v2, Ldhx;->d:Ldhk;
-
-    invoke-interface {v0, v2}, Ldhi;->a(Ldhk;)Lj$/util/Optional;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lj$/util/Optional;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/lang/Integer;
-
-    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
-
-    move-result v0
-
-    const/4 v2, 0x1
-
-    if-ne v0, v2, :cond_4
-
-    const v0, 0x7f1402ec
-
-    invoke-virtual {p1, v0}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
-
-    move-result-object v1
-
-    :cond_4
-    iget-object p1, p0, Lcom/google/android/apps/camera/ui/views/ViewfinderCover;->j:Landroid/widget/TextView;
-
-    invoke-virtual {p1, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     return-void
 .end method
 
-.method public final g()Z
+.method public final h()Z
     .locals 1
 
-    iget-boolean v0, p0, Lcom/google/android/apps/camera/ui/views/ViewfinderCover;->e:Z
+    iget-boolean v0, p0, Lcom/google/android/apps/camera/ui/views/ViewfinderCover;->g:Z
 
     return v0
 .end method
 
-.method public final h()Z
+.method public final i()Z
     .locals 1
 
     const/4 v0, 0x1
@@ -503,62 +469,25 @@
     return v0
 .end method
 
-.method public final i()V
-    .locals 3
-
-    iget-object v0, p0, Lcom/google/android/apps/camera/ui/views/ViewfinderCover;->g:Libg;
-
-    iget-object v1, v0, Libg;->w:Landroid/view/View;
-
-    const/4 v2, 0x0
-
-    invoke-virtual {v1, v2}, Landroid/view/View;->setAlpha(F)V
-
-    invoke-virtual {v0}, Libg;->m()V
-
-    iget-object v0, v0, Libg;->w:Landroid/view/View;
-
-    invoke-virtual {v0}, Landroid/view/View;->animate()Landroid/view/ViewPropertyAnimator;
-
-    move-result-object v0
-
-    const/high16 v1, 0x3f800000    # 1.0f
-
-    invoke-virtual {v0, v1}, Landroid/view/ViewPropertyAnimator;->alpha(F)Landroid/view/ViewPropertyAnimator;
-
-    move-result-object v0
-
-    const-wide/16 v1, 0xfa
-
-    invoke-virtual {v0, v1, v2}, Landroid/view/ViewPropertyAnimator;->setDuration(J)Landroid/view/ViewPropertyAnimator;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Landroid/view/ViewPropertyAnimator;->start()V
-
-    return-void
-.end method
-
 .method public final j()V
     .locals 3
 
-    iget-object v0, p0, Lcom/google/android/apps/camera/ui/views/ViewfinderCover;->g:Libg;
+    iget-object v0, p0, Lcom/google/android/apps/camera/ui/views/ViewfinderCover;->i:Ljfj;
 
-    sget-object v1, Lika;->a:Lika;
+    sget-object v1, Ljrl;->a:Ljrl;
 
-    iget v1, v0, Libg;->F:I
+    iget v1, v0, Ljfj;->F:I
 
     add-int/lit8 v2, v1, -0x1
 
     if-eqz v1, :cond_0
 
-    packed-switch v2, :pswitch_data_0
+    sparse-switch v2, :sswitch_data_0
 
-    :pswitch_0
     return-void
 
-    :pswitch_1
-    invoke-virtual {v0}, Libg;->d()V
+    :sswitch_0
+    invoke-virtual {v0}, Ljfj;->d()V
 
     return-void
 
@@ -567,57 +496,85 @@
 
     throw v0
 
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_1
-        :pswitch_0
-        :pswitch_1
-        :pswitch_1
-    .end packed-switch
+    :sswitch_data_0
+    .sparse-switch
+        0x0 -> :sswitch_0
+        0x3 -> :sswitch_0
+    .end sparse-switch
 .end method
 
 .method public final k()V
     .locals 1
 
-    iget-object v0, p0, Lcom/google/android/apps/camera/ui/views/ViewfinderCover;->g:Libg;
+    iget-object v0, p0, Lcom/google/android/apps/camera/ui/views/ViewfinderCover;->i:Ljfj;
 
-    invoke-virtual {v0}, Libg;->l()V
+    invoke-virtual {v0}, Ljfj;->e()V
 
     return-void
 .end method
 
-.method public final l(Lika;Liij;Ljava/lang/Runnable;)V
-    .locals 3
+.method public final l()V
+    .locals 1
 
-    iget-object v0, p0, Lcom/google/android/apps/camera/ui/views/ViewfinderCover;->g:Libg;
+    iget-object v0, p0, Lcom/google/android/apps/camera/ui/views/ViewfinderCover;->i:Ljfj;
+
+    invoke-virtual {v0}, Ljfj;->l()V
+
+    return-void
+.end method
+
+.method public final m(Ljrl;Ljpb;Ljava/lang/Runnable;)V
+    .locals 6
+
+    iget-object v0, p0, Lcom/google/android/apps/camera/ui/views/ViewfinderCover;->i:Ljfj;
 
     invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    new-instance v1, Liih;
+    new-instance v4, Ljox;
 
-    const/4 v2, 0x0
+    invoke-direct {v4, p2}, Ljox;-><init>(Ljpb;)V
 
-    invoke-direct {v1, p2, v2}, Liih;-><init>(Liij;I)V
+    const/4 v5, 0x0
 
-    invoke-virtual {v0, p1, p3, p0, v1}, Libg;->p(Lika;Ljava/lang/Runnable;Libf;Libc;)V
+    move-object v1, p1
+
+    move-object v2, p3
+
+    move-object v3, p0
+
+    invoke-virtual/range {v0 .. v5}, Ljfj;->n(Ljrl;Ljava/lang/Runnable;Ljfi;Ljfe;Z)V
 
     return-void
 .end method
 
-.method public final m(Lika;Ljava/lang/Runnable;)V
-    .locals 4
+.method public final n(Ljrl;Ljava/lang/Runnable;)V
+    .locals 1
 
-    iget-object v0, p0, Lcom/google/android/apps/camera/ui/views/ViewfinderCover;->g:Libg;
+    const/4 v0, 0x0
 
-    sget-object v1, Lhck;->j:Lhck;
+    invoke-virtual {p0, p1, p2, v0}, Lcom/google/android/apps/camera/ui/views/ViewfinderCover;->o(Ljrl;Ljava/lang/Runnable;Z)V
 
-    new-instance v2, Liih;
+    return-void
+.end method
 
-    const/4 v3, 0x1
+.method public final o(Ljrl;Ljava/lang/Runnable;Z)V
+    .locals 6
 
-    invoke-direct {v2, p2, v3}, Liih;-><init>(Ljava/lang/Runnable;I)V
+    iget-object v0, p0, Lcom/google/android/apps/camera/ui/views/ViewfinderCover;->i:Ljfj;
 
-    invoke-virtual {v0, p1, v1, p0, v2}, Libg;->p(Lika;Ljava/lang/Runnable;Libf;Libc;)V
+    sget-object v2, Lisd;->l:Lisd;
+
+    new-instance v4, Ljoz;
+
+    invoke-direct {v4, p2}, Ljoz;-><init>(Ljava/lang/Runnable;)V
+
+    move-object v1, p1
+
+    move-object v3, p0
+
+    move v5, p3
+
+    invoke-virtual/range {v0 .. v5}, Ljfj;->n(Ljrl;Ljava/lang/Runnable;Ljfi;Ljfe;Z)V
 
     return-void
 .end method
@@ -625,11 +582,11 @@
 .method protected final onDraw(Landroid/graphics/Canvas;)V
     .locals 5
 
-    iget-object v0, p0, Lcom/google/android/apps/camera/ui/views/ViewfinderCover;->g:Libg;
+    iget-object v0, p0, Lcom/google/android/apps/camera/ui/views/ViewfinderCover;->i:Ljfj;
 
-    iget-object v1, v0, Libg;->k:Lmqp;
+    iget-object v1, v0, Ljfj;->k:Lojc;
 
-    invoke-virtual {v1}, Lmqp;->g()Z
+    invoke-virtual {v1}, Lojc;->g()Z
 
     move-result v1
 
@@ -642,86 +599,86 @@
     return-void
 
     :cond_0
-    iget v1, v0, Libg;->z:I
+    iget v1, v0, Ljfj;->z:I
 
     if-lez v1, :cond_1
 
-    const/4 v1, 0x0
+    const/16 v1, 0x1f
 
-    const/16 v2, 0x1f
+    const/4 v2, 0x0
 
-    invoke-virtual {p1, v1, v1, v2}, Landroid/graphics/Canvas;->saveLayer(Landroid/graphics/RectF;Landroid/graphics/Paint;I)I
+    invoke-virtual {p1, v2, v2, v1}, Landroid/graphics/Canvas;->saveLayer(Landroid/graphics/RectF;Landroid/graphics/Paint;I)I
 
-    iget-object v1, v0, Libg;->m:Libd;
+    iget-object v1, v0, Ljfj;->m:Ljfg;
 
-    iget-object v1, v1, Libd;->a:Landroid/graphics/Rect;
+    iget-object v1, v1, Ljfg;->a:Landroid/graphics/Rect;
 
-    iget v2, v0, Libg;->z:I
+    iget v2, v0, Ljfj;->z:I
 
-    iget-object v3, v0, Libg;->i:Landroid/graphics/Paint;
+    iget-object v3, v0, Ljfj;->i:Landroid/graphics/Paint;
 
-    invoke-static {p1, v1, v2, v3}, Libg;->c(Landroid/graphics/Canvas;Landroid/graphics/Rect;ILandroid/graphics/Paint;)V
+    invoke-static {p1, v1, v2, v3}, Ljfj;->c(Landroid/graphics/Canvas;Landroid/graphics/Rect;ILandroid/graphics/Paint;)V
 
     :cond_1
-    iget-object v1, v0, Libg;->k:Lmqp;
+    iget-object v1, v0, Ljfj;->k:Lojc;
 
-    invoke-virtual {v1}, Lmqp;->c()Ljava/lang/Object;
+    invoke-virtual {v1}, Lojc;->c()Ljava/lang/Object;
 
     move-result-object v1
 
-    check-cast v1, Lihc;
+    check-cast v1, Ljnm;
 
-    iget-object v1, v1, Lihc;->a:Landroid/graphics/Bitmap;
+    iget-object v1, v1, Ljnm;->a:Landroid/graphics/Bitmap;
 
-    iget-object v2, v0, Libg;->l:Landroid/graphics/Rect;
+    iget-object v2, v0, Ljfj;->l:Landroid/graphics/Rect;
 
-    iget-object v3, v0, Libg;->m:Libd;
+    iget-object v3, v0, Ljfj;->m:Ljfg;
 
-    iget-object v3, v3, Libd;->a:Landroid/graphics/Rect;
+    iget-object v3, v3, Ljfg;->a:Landroid/graphics/Rect;
 
-    iget-object v4, v0, Libg;->g:Landroid/graphics/Paint;
+    iget-object v4, v0, Ljfj;->g:Landroid/graphics/Paint;
 
     invoke-virtual {p1, v1, v2, v3, v4}, Landroid/graphics/Canvas;->drawBitmap(Landroid/graphics/Bitmap;Landroid/graphics/Rect;Landroid/graphics/Rect;Landroid/graphics/Paint;)V
 
-    iget v1, v0, Libg;->z:I
+    iget v1, v0, Ljfj;->z:I
 
     if-lez v1, :cond_2
 
     invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
 
     :cond_2
-    iget v1, v0, Libg;->n:I
+    iget v1, v0, Ljfj;->n:I
 
     if-lez v1, :cond_3
 
-    iget-object v2, v0, Libg;->h:Landroid/graphics/Paint;
+    iget-object v2, v0, Ljfj;->h:Landroid/graphics/Paint;
 
     invoke-virtual {v2, v1}, Landroid/graphics/Paint;->setAlpha(I)V
 
-    iget-object v1, v0, Libg;->m:Libd;
+    iget-object v1, v0, Ljfj;->m:Ljfg;
 
-    iget-object v1, v1, Libd;->a:Landroid/graphics/Rect;
+    iget-object v1, v1, Ljfg;->a:Landroid/graphics/Rect;
 
-    iget v2, v0, Libg;->z:I
+    iget v2, v0, Ljfj;->z:I
 
-    iget-object v3, v0, Libg;->h:Landroid/graphics/Paint;
+    iget-object v3, v0, Ljfj;->h:Landroid/graphics/Paint;
 
-    invoke-static {p1, v1, v2, v3}, Libg;->c(Landroid/graphics/Canvas;Landroid/graphics/Rect;ILandroid/graphics/Paint;)V
+    invoke-static {p1, v1, v2, v3}, Ljfj;->c(Landroid/graphics/Canvas;Landroid/graphics/Rect;ILandroid/graphics/Paint;)V
 
     :cond_3
-    iget-object p1, v0, Libg;->o:Lmqp;
+    iget-object p1, v0, Ljfj;->o:Lojc;
 
-    invoke-virtual {p1}, Lmqp;->g()Z
+    invoke-virtual {p1}, Lojc;->g()Z
 
     move-result p1
 
     if-eqz p1, :cond_4
 
-    iget-object p1, v0, Libg;->j:Landroid/os/Handler;
+    iget-object p1, v0, Ljfj;->j:Landroid/os/Handler;
 
-    iget-object v1, v0, Libg;->o:Lmqp;
+    iget-object v1, v0, Ljfj;->o:Lojc;
 
-    invoke-virtual {v1}, Lmqp;->c()Ljava/lang/Object;
+    invoke-virtual {v1}, Lojc;->c()Ljava/lang/Object;
 
     move-result-object v1
 
@@ -729,9 +686,9 @@
 
     invoke-virtual {p1, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    sget-object p1, Lmpx;->a:Lmpx;
+    sget-object p1, Loih;->a:Loih;
 
-    iput-object p1, v0, Libg;->o:Lmqp;
+    iput-object p1, v0, Ljfj;->o:Lojc;
 
     :cond_4
     return-void
@@ -742,7 +699,7 @@
 
     invoke-super {p0}, Lcom/google/android/apps/camera/ui/layout/GcaLayout;->onFinishInflate()V
 
-    const v0, 0x7f0b03f4
+    const v0, 0x7f0b0369
 
     invoke-virtual {p0, v0}, Lcom/google/android/apps/camera/ui/views/ViewfinderCover;->findViewById(I)Landroid/view/View;
 
@@ -750,9 +707,9 @@
 
     check-cast v0, Landroid/widget/ImageView;
 
-    iput-object v0, p0, Lcom/google/android/apps/camera/ui/views/ViewfinderCover;->c:Landroid/widget/ImageView;
+    iput-object v0, p0, Lcom/google/android/apps/camera/ui/views/ViewfinderCover;->e:Landroid/widget/ImageView;
 
-    const v0, 0x7f0b03f5
+    const v0, 0x7f0b036a
 
     invoke-virtual {p0, v0}, Lcom/google/android/apps/camera/ui/views/ViewfinderCover;->findViewById(I)Landroid/view/View;
 
@@ -760,23 +717,23 @@
 
     check-cast v0, Landroid/widget/TextView;
 
-    iput-object v0, p0, Lcom/google/android/apps/camera/ui/views/ViewfinderCover;->j:Landroid/widget/TextView;
+    iput-object v0, p0, Lcom/google/android/apps/camera/ui/views/ViewfinderCover;->l:Landroid/widget/TextView;
 
-    iget-object v0, p0, Lcom/google/android/apps/camera/ui/views/ViewfinderCover;->g:Libg;
+    iget-object v0, p0, Lcom/google/android/apps/camera/ui/views/ViewfinderCover;->i:Ljfj;
 
-    iget-object v1, p0, Lcom/google/android/apps/camera/ui/views/ViewfinderCover;->c:Landroid/widget/ImageView;
+    iget-object v1, p0, Lcom/google/android/apps/camera/ui/views/ViewfinderCover;->e:Landroid/widget/ImageView;
 
-    iput-object v1, v0, Libg;->w:Landroid/view/View;
+    iput-object v1, v0, Ljfj;->w:Landroid/view/View;
 
-    iget-object v1, p0, Lcom/google/android/apps/camera/ui/views/ViewfinderCover;->j:Landroid/widget/TextView;
+    iget-object v1, p0, Lcom/google/android/apps/camera/ui/views/ViewfinderCover;->l:Landroid/widget/TextView;
 
-    iput-object v1, v0, Libg;->x:Landroid/view/View;
+    iput-object v1, v0, Ljfj;->x:Landroid/view/View;
 
-    invoke-virtual {v0}, Libg;->f()V
+    invoke-virtual {v0}, Ljfj;->f()V
 
-    iget-object v0, p0, Lcom/google/android/apps/camera/ui/views/ViewfinderCover;->g:Libg;
+    iget-object v0, p0, Lcom/google/android/apps/camera/ui/views/ViewfinderCover;->i:Ljfj;
 
-    invoke-virtual {v0}, Libg;->g()V
+    invoke-virtual {v0}, Ljfj;->g()V
 
     return-void
 .end method
@@ -788,95 +745,104 @@
 
     invoke-super/range {p0 .. p5}, Lcom/google/android/apps/camera/ui/layout/GcaLayout;->onLayout(ZIIII)V
 
-    iget-object v1, v0, Lcom/google/android/apps/camera/ui/views/ViewfinderCover;->a:Lmrl;
+    iget-object v1, v0, Lcom/google/android/apps/camera/ui/views/ViewfinderCover;->d:Lojz;
 
-    invoke-interface {v1}, Lmrl;->a()Ljava/lang/Object;
+    invoke-interface {v1}, Lojz;->a()Ljava/lang/Object;
 
     move-result-object v1
 
-    iget-boolean v2, v0, Lcom/google/android/apps/camera/ui/views/ViewfinderCover;->h:Z
+    iget-boolean v2, v0, Lcom/google/android/apps/camera/ui/views/ViewfinderCover;->j:Z
 
-    if-eqz v2, :cond_d
+    if-eqz v2, :cond_c
 
-    if-eqz v1, :cond_d
+    if-eqz v1, :cond_c
 
-    check-cast v1, Lhyt;
+    check-cast v1, Ljbw;
 
-    iget-object v2, v1, Lhyt;->b:Lhyq;
+    iget-object v2, v1, Ljbw;->b:Ljbt;
 
-    iget-boolean v2, v2, Lhyq;->r:Z
+    iget-boolean v2, v2, Ljbt;->o:Z
 
     if-eqz v2, :cond_0
 
-    goto/16 :goto_5
+    goto/16 :goto_6
 
     :cond_0
     const/4 v2, 0x0
 
-    iput-boolean v2, v0, Lcom/google/android/apps/camera/ui/views/ViewfinderCover;->h:Z
+    iput-boolean v2, v0, Lcom/google/android/apps/camera/ui/views/ViewfinderCover;->j:Z
 
-    invoke-static {v1}, Lcom/google/android/apps/camera/ui/views/ViewfinderCover;->o(Lhyt;)Landroid/graphics/Rect;
-
-    move-result-object v1
-
-    invoke-static {}, Libd;->a()Lllz;
+    invoke-static {}, Ljfg;->a()Ljff;
 
     move-result-object v3
 
-    invoke-virtual {v3, v1}, Lllz;->e(Landroid/graphics/Rect;)V
+    iget-object v4, v1, Ljbw;->b:Ljbt;
 
-    invoke-direct {v0, v1}, Lcom/google/android/apps/camera/ui/views/ViewfinderCover;->n(Landroid/graphics/Rect;)I
+    iget-object v4, v4, Ljbt;->e:Landroid/graphics/Rect;
+
+    invoke-virtual {v3, v4}, Ljff;->c(Landroid/graphics/Rect;)V
+
+    iget-object v1, v1, Ljbw;->b:Ljbt;
+
+    iget-object v1, v1, Ljbt;->e:Landroid/graphics/Rect;
+
+    invoke-direct {v0, v1}, Lcom/google/android/apps/camera/ui/views/ViewfinderCover;->p(Landroid/graphics/Rect;)I
 
     move-result v1
 
-    invoke-virtual {v3, v1}, Lllz;->d(I)V
+    invoke-virtual {v3, v1}, Ljff;->b(I)V
 
-    invoke-virtual {v3}, Lllz;->c()Libd;
+    invoke-virtual {v3}, Ljff;->a()Ljfg;
 
     move-result-object v1
 
-    iget-object v3, v0, Lcom/google/android/apps/camera/ui/views/ViewfinderCover;->g:Libg;
+    iget-object v3, v0, Lcom/google/android/apps/camera/ui/views/ViewfinderCover;->i:Ljfj;
 
-    iget v4, v3, Libg;->F:I
+    iget v4, v3, Ljfj;->F:I
 
     const/4 v5, 0x3
 
     if-eq v4, v5, :cond_1
 
-    goto/16 :goto_4
+    goto/16 :goto_5
 
     :cond_1
-    invoke-interface/range {p0 .. p0}, Libf;->g()Z
+    invoke-interface/range {p0 .. p0}, Ljfi;->h()Z
 
     move-result v4
 
     const/4 v6, 0x4
 
-    if-eqz v4, :cond_c
+    if-eqz v4, :cond_b
 
-    iput v6, v3, Libg;->F:I
+    iput v6, v3, Ljfj;->F:I
 
-    iget-object v4, v3, Libg;->k:Lmqp;
+    iget-object v4, v3, Ljfj;->k:Lojc;
 
-    invoke-virtual {v4}, Lmqp;->g()Z
+    invoke-virtual {v4}, Lojc;->g()Z
 
     move-result v4
 
-    if-eqz v4, :cond_b
+    if-eqz v4, :cond_a
 
-    iget-object v4, v3, Libg;->D:Lklv;
+    iget-object v4, v3, Ljfj;->D:Llwd;
 
-    iget-object v6, v3, Libg;->C:Ldbx;
+    iget-object v7, v3, Ljfj;->C:Lcwj;
 
-    invoke-interface {v6}, Ldbx;->d()Lklv;
+    invoke-interface {v7}, Lcwj;->d()Llwd;
 
-    move-result-object v6
+    move-result-object v7
 
-    if-ne v4, v6, :cond_a
+    if-eq v4, v7, :cond_2
 
-    iget-object v4, v3, Libg;->q:Ljvs;
+    iget v4, v3, Ljfj;->p:F
 
-    invoke-interface {v4}, Ljvs;->bm()Ljava/lang/Object;
+    goto :goto_0
+
+    :cond_2
+    iget-object v4, v3, Ljfj;->q:Llco;
+
+    invoke-interface {v4}, Llco;->fA()Ljava/lang/Object;
 
     move-result-object v4
 
@@ -886,129 +852,121 @@
 
     move-result v4
 
-    iget v6, v3, Libg;->p:F
+    :goto_0
+    iget v7, v3, Ljfj;->p:F
 
-    cmpl-float v6, v6, v4
+    cmpl-float v7, v7, v4
 
-    if-gtz v6, :cond_b
+    if-gtz v7, :cond_a
 
-    iget-object v6, v3, Libg;->q:Ljvs;
+    iget-object v7, v3, Ljfj;->q:Llco;
 
-    invoke-interface {v6}, Ljvs;->bm()Ljava/lang/Object;
+    invoke-interface {v7}, Llco;->fA()Ljava/lang/Object;
 
-    iget-object v6, v1, Libd;->a:Landroid/graphics/Rect;
+    iget-object v7, v1, Ljfg;->a:Landroid/graphics/Rect;
 
-    iget-object v7, v3, Libg;->m:Libd;
+    iget-object v8, v3, Ljfj;->m:Ljfg;
 
-    iget-object v7, v7, Libd;->a:Landroid/graphics/Rect;
+    iget-object v8, v8, Ljfg;->a:Landroid/graphics/Rect;
 
-    invoke-virtual {v6, v7}, Landroid/graphics/Rect;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v7, v8}, Landroid/graphics/Rect;->equals(Ljava/lang/Object;)Z
 
-    move-result v6
+    move-result v7
 
-    const-wide/16 v7, 0x12c
+    const-wide/16 v8, 0x12c
 
-    const v9, 0x3f4ccccd    # 0.8f
+    const v10, 0x3f4ccccd    # 0.8f
 
-    const/4 v10, 0x1
+    const/4 v11, 0x1
 
-    const/4 v11, 0x2
+    const/4 v12, 0x2
 
-    if-eqz v6, :cond_4
+    if-eqz v7, :cond_4
 
-    iget-object v1, v3, Libg;->m:Libd;
+    iget-object v1, v3, Ljfj;->m:Ljfg;
 
-    iget-object v1, v1, Libd;->a:Landroid/graphics/Rect;
+    iget-object v1, v1, Ljfg;->a:Landroid/graphics/Rect;
 
-    iget-boolean v1, v3, Libg;->y:Z
+    iget-boolean v1, v3, Ljfj;->y:Z
 
-    if-eqz v1, :cond_b
+    if-eqz v1, :cond_a
 
-    iget v1, v3, Libg;->p:F
+    iget v1, v3, Ljfj;->p:F
 
-    cmpg-float v1, v1, v4
+    cmpg-float v5, v1, v4
 
-    if-ltz v1, :cond_2
+    if-gtz v5, :cond_a
 
-    invoke-virtual {v3}, Libg;->o()Z
+    iget-object v5, v3, Ljfj;->l:Landroid/graphics/Rect;
 
-    move-result v1
-
-    if-eqz v1, :cond_b
-
-    :cond_2
-    iget-object v1, v3, Libg;->l:Landroid/graphics/Rect;
-
-    iget v5, v3, Libg;->p:F
-
-    invoke-virtual {v3}, Libg;->o()Z
+    invoke-virtual {v3}, Ljfj;->p()Z
 
     move-result v6
 
     if-eqz v6, :cond_3
 
-    div-float/2addr v4, v9
+    div-float/2addr v4, v10
 
     :cond_3
-    div-float/2addr v5, v4
+    div-float/2addr v1, v4
 
-    invoke-virtual {v1}, Landroid/graphics/Rect;->width()I
+    invoke-virtual {v5}, Landroid/graphics/Rect;->width()I
 
     move-result v4
 
     int-to-float v4, v4
 
-    mul-float v4, v4, v5
+    mul-float v4, v4, v1
 
     invoke-static {v4}, Ljava/lang/Math;->round(F)I
 
     move-result v4
 
-    invoke-virtual {v1}, Landroid/graphics/Rect;->height()I
+    invoke-virtual {v5}, Landroid/graphics/Rect;->height()I
 
     move-result v6
 
     int-to-float v6, v6
 
-    mul-float v6, v6, v5
+    mul-float v6, v6, v1
 
     invoke-static {v6}, Ljava/lang/Math;->round(F)I
 
-    move-result v5
+    move-result v1
 
-    invoke-virtual {v1}, Landroid/graphics/Rect;->centerX()I
+    invoke-virtual {v5}, Landroid/graphics/Rect;->centerX()I
 
     move-result v6
 
-    invoke-virtual {v1}, Landroid/graphics/Rect;->centerY()I
+    invoke-virtual {v5}, Landroid/graphics/Rect;->centerY()I
 
-    move-result v1
+    move-result v5
 
-    div-int/2addr v4, v11
+    div-int/2addr v4, v12
 
-    div-int/2addr v5, v11
+    div-int/2addr v1, v12
 
-    sub-int v9, v6, v4
+    new-instance v7, Landroid/graphics/Rect;
+
+    sub-int v10, v6, v4
+
+    sub-int v12, v5, v1
 
     add-int/2addr v6, v4
 
-    sub-int v4, v1, v5
+    add-int/2addr v5, v1
 
-    add-int/2addr v1, v5
+    invoke-direct {v7, v10, v12, v6, v5}, Landroid/graphics/Rect;-><init>(IIII)V
 
-    new-instance v5, Landroid/graphics/Rect;
+    iget v1, v7, Landroid/graphics/Rect;->left:I
 
-    invoke-direct {v5, v9, v4, v6, v1}, Landroid/graphics/Rect;-><init>(IIII)V
+    if-ltz v1, :cond_a
 
-    iget v1, v5, Landroid/graphics/Rect;->left:I
+    iget v1, v7, Landroid/graphics/Rect;->top:I
 
-    if-ltz v1, :cond_b
+    if-ltz v1, :cond_a
 
-    iget v1, v5, Landroid/graphics/Rect;->top:I
-
-    if-ltz v1, :cond_b
-
-    iget-object v1, v3, Libg;->f:Landroid/animation/AnimatorSet;
+    iget-object v1, v3, Ljfj;->f:Landroid/animation/AnimatorSet;
 
     invoke-virtual {v1}, Landroid/animation/AnimatorSet;->cancel()V
 
@@ -1016,21 +974,21 @@
 
     invoke-direct {v1}, Landroid/animation/AnimatorSet;-><init>()V
 
-    iput-object v1, v3, Libg;->f:Landroid/animation/AnimatorSet;
+    iput-object v1, v3, Ljfj;->f:Landroid/animation/AnimatorSet;
 
-    iget-object v1, v3, Libg;->f:Landroid/animation/AnimatorSet;
+    iget-object v1, v3, Ljfj;->f:Landroid/animation/AnimatorSet;
 
-    new-array v4, v10, [Landroid/animation/Animator;
+    new-array v4, v11, [Landroid/animation/Animator;
 
-    iget-object v6, v3, Libg;->l:Landroid/graphics/Rect;
+    iget-object v5, v3, Ljfj;->l:Landroid/graphics/Rect;
 
-    iget-object v9, v3, Libg;->e:Landroid/view/animation/BaseInterpolator;
+    iget-object v6, v3, Ljfj;->e:Landroid/view/animation/BaseInterpolator;
 
-    new-instance v11, Liba;
+    new-instance v10, Ljfa;
 
-    invoke-direct {v11, v3, v10}, Liba;-><init>(Libg;I)V
+    invoke-direct {v10, v3, v2}, Ljfa;-><init>(Ljfj;I)V
 
-    invoke-static {v6, v5, v9, v11}, Libg;->b(Landroid/graphics/Rect;Landroid/graphics/Rect;Landroid/animation/TimeInterpolator;Landroid/animation/ValueAnimator$AnimatorUpdateListener;)Landroid/animation/ValueAnimator;
+    invoke-static {v5, v7, v6, v10}, Ljfj;->b(Landroid/graphics/Rect;Landroid/graphics/Rect;Landroid/animation/TimeInterpolator;Landroid/animation/ValueAnimator$AnimatorUpdateListener;)Landroid/animation/ValueAnimator;
 
     move-result-object v5
 
@@ -1038,287 +996,287 @@
 
     invoke-virtual {v1, v4}, Landroid/animation/AnimatorSet;->playTogether([Landroid/animation/Animator;)V
 
-    iget-object v1, v3, Libg;->f:Landroid/animation/AnimatorSet;
+    iget-object v1, v3, Ljfj;->f:Landroid/animation/AnimatorSet;
 
-    invoke-virtual {v1, v7, v8}, Landroid/animation/AnimatorSet;->setDuration(J)Landroid/animation/AnimatorSet;
+    invoke-virtual {v1, v8, v9}, Landroid/animation/AnimatorSet;->setDuration(J)Landroid/animation/AnimatorSet;
 
-    iget-object v1, v3, Libg;->f:Landroid/animation/AnimatorSet;
+    iget-object v1, v3, Ljfj;->f:Landroid/animation/AnimatorSet;
 
     invoke-virtual {v1}, Landroid/animation/AnimatorSet;->start()V
 
     return-void
 
     :cond_4
-    iget-object v4, v3, Libg;->k:Lmqp;
+    iget-object v4, v3, Ljfj;->k:Lojc;
 
-    invoke-virtual {v4}, Lmqp;->c()Ljava/lang/Object;
-
-    move-result-object v4
-
-    check-cast v4, Lihc;
-
-    invoke-virtual {v4}, Lihc;->a()Landroid/graphics/Rect;
+    invoke-virtual {v4}, Lojc;->c()Ljava/lang/Object;
 
     move-result-object v4
 
-    iget-object v6, v3, Libg;->l:Landroid/graphics/Rect;
+    check-cast v4, Ljnm;
 
-    invoke-virtual {v6, v4}, Landroid/graphics/Rect;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v4}, Ljnm;->a()Landroid/graphics/Rect;
 
-    move-result v12
+    move-result-object v4
 
-    if-nez v12, :cond_6
+    iget-object v7, v3, Ljfj;->l:Landroid/graphics/Rect;
 
-    invoke-virtual {v6}, Landroid/graphics/Rect;->height()I
-
-    move-result v12
-
-    invoke-virtual {v6}, Landroid/graphics/Rect;->width()I
+    invoke-virtual {v7, v4}, Landroid/graphics/Rect;->equals(Ljava/lang/Object;)Z
 
     move-result v13
 
-    if-le v12, v13, :cond_5
+    if-nez v13, :cond_6
+
+    invoke-virtual {v7}, Landroid/graphics/Rect;->height()I
+
+    move-result v13
+
+    invoke-virtual {v7}, Landroid/graphics/Rect;->width()I
+
+    move-result v14
+
+    if-le v13, v14, :cond_5
 
     invoke-virtual {v4}, Landroid/graphics/Rect;->height()I
 
-    move-result v12
+    move-result v13
 
-    int-to-float v13, v12
+    int-to-float v14, v13
 
-    invoke-static {v6}, Libg;->a(Landroid/graphics/Rect;)F
+    invoke-static {v7}, Ljfj;->a(Landroid/graphics/Rect;)F
 
-    move-result v6
+    move-result v7
 
-    mul-float v13, v13, v6
+    mul-float v14, v14, v7
 
-    invoke-static {v13}, Ljava/lang/Math;->round(F)I
+    invoke-static {v14}, Ljava/lang/Math;->round(F)I
 
-    move-result v6
+    move-result v7
 
-    goto :goto_0
+    goto :goto_1
 
     :cond_5
     invoke-virtual {v4}, Landroid/graphics/Rect;->width()I
 
-    move-result v12
+    move-result v13
 
-    int-to-float v13, v12
+    int-to-float v14, v13
 
-    invoke-static {v6}, Libg;->a(Landroid/graphics/Rect;)F
+    invoke-static {v7}, Ljfj;->a(Landroid/graphics/Rect;)F
 
-    move-result v6
+    move-result v7
 
-    div-float/2addr v13, v6
+    div-float/2addr v14, v7
 
-    invoke-static {v13}, Ljava/lang/Math;->round(F)I
+    invoke-static {v14}, Ljava/lang/Math;->round(F)I
 
-    move-result v6
+    move-result v7
 
-    move/from16 v16, v12
+    move/from16 v16, v13
 
-    move v12, v6
+    move v13, v7
 
-    move/from16 v6, v16
+    move/from16 v7, v16
 
-    :goto_0
+    :goto_1
     invoke-virtual {v4}, Landroid/graphics/Rect;->centerX()I
 
-    move-result v13
+    move-result v14
 
     invoke-virtual {v4}, Landroid/graphics/Rect;->centerY()I
 
     move-result v4
 
-    div-int/2addr v6, v11
+    div-int/2addr v7, v12
 
-    sub-int v14, v13, v6
+    div-int/2addr v13, v12
 
-    div-int/2addr v12, v11
+    new-instance v15, Landroid/graphics/Rect;
 
-    sub-int v15, v4, v12
+    sub-int v10, v14, v7
 
-    add-int/2addr v13, v6
+    sub-int v8, v4, v13
 
-    add-int/2addr v4, v12
+    add-int/2addr v14, v7
 
-    new-instance v6, Landroid/graphics/Rect;
+    add-int/2addr v4, v13
 
-    invoke-direct {v6, v14, v15, v13, v4}, Landroid/graphics/Rect;-><init>(IIII)V
+    invoke-direct {v15, v10, v8, v14, v4}, Landroid/graphics/Rect;-><init>(IIII)V
+
+    move-object v7, v15
 
     :cond_6
-    iget-object v4, v3, Libg;->k:Lmqp;
+    iget-object v4, v3, Ljfj;->k:Lojc;
 
-    invoke-virtual {v4}, Lmqp;->c()Ljava/lang/Object;
+    invoke-virtual {v4}, Lojc;->c()Ljava/lang/Object;
 
     move-result-object v4
 
-    check-cast v4, Lihc;
+    check-cast v4, Ljnm;
 
-    iget-object v12, v1, Libd;->a:Landroid/graphics/Rect;
+    iget-object v8, v1, Ljfg;->a:Landroid/graphics/Rect;
 
-    invoke-virtual {v12}, Landroid/graphics/Rect;->width()I
+    invoke-virtual {v8}, Landroid/graphics/Rect;->width()I
+
+    move-result v9
+
+    iget v10, v4, Ljnm;->b:I
+
+    add-int/2addr v10, v10
+
+    div-int/2addr v9, v10
+
+    invoke-virtual {v8}, Landroid/graphics/Rect;->height()I
+
+    move-result v10
+
+    iget v13, v4, Ljnm;->b:I
+
+    add-int/2addr v13, v13
+
+    div-int/2addr v10, v13
+
+    invoke-virtual {v8}, Landroid/graphics/Rect;->centerX()I
 
     move-result v13
 
-    iget v14, v4, Lihc;->b:I
-
-    add-int/2addr v14, v14
+    iget v14, v4, Ljnm;->b:I
 
     div-int/2addr v13, v14
 
-    invoke-virtual {v12}, Landroid/graphics/Rect;->height()I
+    invoke-virtual {v8}, Landroid/graphics/Rect;->centerY()I
 
-    move-result v14
+    move-result v8
 
-    iget v15, v4, Lihc;->b:I
+    iget v4, v4, Ljnm;->b:I
 
-    add-int/2addr v15, v15
+    div-int/2addr v8, v4
 
-    div-int/2addr v14, v15
+    new-instance v4, Landroid/graphics/Rect;
 
-    invoke-virtual {v12}, Landroid/graphics/Rect;->centerX()I
+    sub-int v14, v13, v9
 
-    move-result v15
+    sub-int v15, v8, v10
 
-    iget v9, v4, Lihc;->b:I
+    add-int/2addr v13, v9
 
-    div-int/2addr v15, v9
+    add-int/2addr v8, v10
 
-    invoke-virtual {v12}, Landroid/graphics/Rect;->centerY()I
+    invoke-direct {v4, v14, v15, v13, v8}, Landroid/graphics/Rect;-><init>(IIII)V
 
-    move-result v9
+    invoke-virtual {v3}, Ljfj;->p()Z
 
-    iget v4, v4, Lihc;->b:I
+    move-result v8
 
-    div-int/2addr v9, v4
+    if-eq v11, v8, :cond_7
 
-    sub-int v4, v15, v13
-
-    sub-int v12, v9, v14
-
-    add-int/2addr v15, v13
-
-    add-int/2addr v9, v14
-
-    new-instance v13, Landroid/graphics/Rect;
-
-    invoke-direct {v13, v4, v12, v15, v9}, Landroid/graphics/Rect;-><init>(IIII)V
-
-    invoke-virtual {v3}, Libg;->o()Z
-
-    move-result v4
-
-    if-eq v10, v4, :cond_7
-
-    const/high16 v9, 0x3f800000    # 1.0f
-
-    goto :goto_1
-
-    :cond_7
-    const v9, 0x3f4ccccd    # 0.8f
-
-    :goto_1
-    invoke-static {v6}, Libg;->a(Landroid/graphics/Rect;)F
-
-    move-result v4
-
-    invoke-static {v13}, Libg;->a(Landroid/graphics/Rect;)F
-
-    move-result v12
-
-    const/4 v14, 0x0
-
-    cmpl-float v14, v12, v14
-
-    if-nez v14, :cond_8
-
-    sget-object v4, Libg;->a:Lnak;
-
-    invoke-virtual {v4}, Lnaf;->c()Lnaz;
-
-    move-result-object v4
-
-    const-string v9, "Invalid aspect ratio in fitToRect: %s"
-
-    const/16 v12, 0xff0
-
-    invoke-static {v4, v9, v13, v12}, Ld;->j(Lnaz;Ljava/lang/String;Ljava/lang/Object;C)V
-
-    goto :goto_3
-
-    :cond_8
-    cmpg-float v4, v12, v4
-
-    if-gez v4, :cond_9
-
-    invoke-virtual {v6}, Landroid/graphics/Rect;->height()I
-
-    move-result v4
-
-    int-to-float v4, v4
-
-    mul-float v12, v12, v4
+    const/high16 v10, 0x3f800000    # 1.0f
 
     goto :goto_2
 
-    :cond_9
-    invoke-virtual {v6}, Landroid/graphics/Rect;->width()I
+    :cond_7
+    const v10, 0x3f4ccccd    # 0.8f
+
+    :goto_2
+    invoke-static {v7}, Ljfj;->a(Landroid/graphics/Rect;)F
+
+    move-result v8
+
+    invoke-static {v4}, Ljfj;->a(Landroid/graphics/Rect;)F
+
+    move-result v9
+
+    const/4 v13, 0x0
+
+    cmpl-float v13, v9, v13
+
+    if-nez v13, :cond_8
+
+    sget-object v8, Ljfj;->a:Louj;
+
+    invoke-virtual {v8}, Loue;->c()Lova;
+
+    move-result-object v8
+
+    const/16 v9, 0xcd5
+
+    const-string v10, "Invalid aspect ratio in fitToRect: %s"
+
+    invoke-static {v8, v10, v4, v9}, Ld;->u(Lova;Ljava/lang/String;Ljava/lang/Object;C)V
+
+    goto :goto_4
+
+    :cond_8
+    cmpg-float v4, v9, v8
+
+    if-gez v4, :cond_9
+
+    invoke-virtual {v7}, Landroid/graphics/Rect;->height()I
 
     move-result v4
 
     int-to-float v4, v4
 
-    div-float v12, v4, v12
+    mul-float v9, v9, v4
 
-    move/from16 v16, v12
+    goto :goto_3
 
-    move v12, v4
+    :cond_9
+    invoke-virtual {v7}, Landroid/graphics/Rect;->width()I
 
-    move/from16 v4, v16
+    move-result v4
 
-    :goto_2
-    invoke-virtual {v6}, Landroid/graphics/Rect;->centerX()I
+    int-to-float v4, v4
 
-    move-result v13
+    div-float v8, v4, v9
 
-    invoke-virtual {v6}, Landroid/graphics/Rect;->centerY()I
+    move v9, v4
 
-    move-result v6
+    move v4, v8
 
-    const/high16 v14, 0x40000000    # 2.0f
+    :goto_3
+    invoke-virtual {v7}, Landroid/graphics/Rect;->centerX()I
 
-    div-float/2addr v12, v14
+    move-result v8
 
-    mul-float v12, v12, v9
+    invoke-virtual {v7}, Landroid/graphics/Rect;->centerY()I
 
-    div-float/2addr v4, v14
+    move-result v7
 
-    mul-float v4, v4, v9
+    const/high16 v13, 0x40000000    # 2.0f
 
-    invoke-static {v12}, Ljava/lang/Math;->round(F)I
+    div-float/2addr v9, v13
+
+    mul-float v9, v9, v10
+
+    invoke-static {v9}, Ljava/lang/Math;->round(F)I
 
     move-result v9
 
-    sub-int v12, v13, v9
+    div-float/2addr v4, v13
 
-    add-int/2addr v13, v9
+    mul-float v4, v4, v10
 
     invoke-static {v4}, Ljava/lang/Math;->round(F)I
 
     move-result v4
 
-    sub-int v9, v6, v4
+    new-instance v10, Landroid/graphics/Rect;
 
-    add-int/2addr v6, v4
+    sub-int v13, v8, v9
 
-    new-instance v4, Landroid/graphics/Rect;
+    sub-int v14, v7, v4
 
-    invoke-direct {v4, v12, v9, v13, v6}, Landroid/graphics/Rect;-><init>(IIII)V
+    add-int/2addr v8, v9
 
-    move-object v6, v4
+    add-int/2addr v7, v4
 
-    :goto_3
-    iget-object v4, v3, Libg;->f:Landroid/animation/AnimatorSet;
+    invoke-direct {v10, v13, v14, v8, v7}, Landroid/graphics/Rect;-><init>(IIII)V
+
+    move-object v7, v10
+
+    :goto_4
+    iget-object v4, v3, Ljfj;->f:Landroid/animation/AnimatorSet;
 
     invoke-virtual {v4}, Landroid/animation/AnimatorSet;->cancel()V
 
@@ -1326,108 +1284,99 @@
 
     invoke-direct {v4}, Landroid/animation/AnimatorSet;-><init>()V
 
-    iput-object v4, v3, Libg;->f:Landroid/animation/AnimatorSet;
+    iput-object v4, v3, Ljfj;->f:Landroid/animation/AnimatorSet;
 
-    iget-object v4, v3, Libg;->f:Landroid/animation/AnimatorSet;
+    iget-object v4, v3, Ljfj;->f:Landroid/animation/AnimatorSet;
 
-    new-array v5, v5, [Landroid/animation/Animator;
+    new-array v8, v5, [Landroid/animation/Animator;
 
-    iget-object v9, v3, Libg;->m:Libd;
+    iget-object v9, v3, Ljfj;->m:Ljfg;
 
-    iget-object v9, v9, Libd;->a:Landroid/graphics/Rect;
+    iget-object v9, v9, Ljfg;->a:Landroid/graphics/Rect;
 
-    iget-object v12, v1, Libd;->a:Landroid/graphics/Rect;
+    iget-object v10, v1, Ljfg;->a:Landroid/graphics/Rect;
 
-    iget-object v13, v3, Libg;->e:Landroid/view/animation/BaseInterpolator;
+    iget-object v13, v3, Ljfj;->e:Landroid/view/animation/BaseInterpolator;
 
-    new-instance v14, Liba;
+    new-instance v14, Ljfa;
 
-    invoke-direct {v14, v3, v2}, Liba;-><init>(Libg;I)V
+    invoke-direct {v14, v3, v12}, Ljfa;-><init>(Ljfj;I)V
 
-    invoke-static {v9, v12, v13, v14}, Libg;->b(Landroid/graphics/Rect;Landroid/graphics/Rect;Landroid/animation/TimeInterpolator;Landroid/animation/ValueAnimator$AnimatorUpdateListener;)Landroid/animation/ValueAnimator;
+    invoke-static {v9, v10, v13, v14}, Ljfj;->b(Landroid/graphics/Rect;Landroid/graphics/Rect;Landroid/animation/TimeInterpolator;Landroid/animation/ValueAnimator$AnimatorUpdateListener;)Landroid/animation/ValueAnimator;
 
     move-result-object v9
 
-    aput-object v9, v5, v2
+    aput-object v9, v8, v2
 
-    iget-object v2, v3, Libg;->l:Landroid/graphics/Rect;
+    iget-object v9, v3, Ljfj;->l:Landroid/graphics/Rect;
 
-    iget-object v9, v3, Libg;->e:Landroid/view/animation/BaseInterpolator;
+    iget-object v10, v3, Ljfj;->e:Landroid/view/animation/BaseInterpolator;
 
-    new-instance v12, Liba;
+    new-instance v13, Ljfa;
 
-    invoke-direct {v12, v3, v11}, Liba;-><init>(Libg;I)V
+    invoke-direct {v13, v3, v5}, Ljfa;-><init>(Ljfj;I)V
 
-    invoke-static {v2, v6, v9, v12}, Libg;->b(Landroid/graphics/Rect;Landroid/graphics/Rect;Landroid/animation/TimeInterpolator;Landroid/animation/ValueAnimator$AnimatorUpdateListener;)Landroid/animation/ValueAnimator;
+    invoke-static {v9, v7, v10, v13}, Ljfj;->b(Landroid/graphics/Rect;Landroid/graphics/Rect;Landroid/animation/TimeInterpolator;Landroid/animation/ValueAnimator$AnimatorUpdateListener;)Landroid/animation/ValueAnimator;
 
-    move-result-object v2
+    move-result-object v5
 
-    aput-object v2, v5, v10
+    aput-object v5, v8, v11
 
-    iget-object v2, v3, Libg;->m:Libd;
+    iget-object v5, v3, Ljfj;->m:Ljfg;
 
-    iget v2, v2, Libd;->b:I
+    iget v5, v5, Ljfg;->b:I
 
-    iget v1, v1, Libd;->b:I
+    iget v1, v1, Ljfg;->b:I
 
-    new-instance v6, Landroid/view/animation/DecelerateInterpolator;
+    new-instance v7, Landroid/view/animation/DecelerateInterpolator;
 
-    invoke-direct {v6}, Landroid/view/animation/DecelerateInterpolator;-><init>()V
+    invoke-direct {v7}, Landroid/view/animation/DecelerateInterpolator;-><init>()V
 
-    new-instance v9, Lafx;
+    new-instance v9, Ljfa;
 
-    const/16 v10, 0x13
+    invoke-direct {v9, v3, v6}, Ljfa;-><init>(Ljfj;I)V
 
-    invoke-direct {v9, v3, v10}, Lafx;-><init>(Libg;I)V
+    new-array v6, v12, [I
 
-    filled-new-array {v2, v1}, [I
+    aput v5, v6, v2
+
+    aput v1, v6, v11
+
+    invoke-static {v6}, Landroid/animation/ValueAnimator;->ofInt([I)Landroid/animation/ValueAnimator;
 
     move-result-object v1
 
-    invoke-static {v1}, Landroid/animation/ValueAnimator;->ofInt([I)Landroid/animation/ValueAnimator;
-
-    move-result-object v1
-
-    invoke-virtual {v1, v6}, Landroid/animation/ValueAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
+    invoke-virtual {v1, v7}, Landroid/animation/ValueAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
     invoke-virtual {v1, v9}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
 
-    aput-object v1, v5, v11
+    aput-object v1, v8, v12
 
-    invoke-virtual {v4, v5}, Landroid/animation/AnimatorSet;->playTogether([Landroid/animation/Animator;)V
+    invoke-virtual {v4, v8}, Landroid/animation/AnimatorSet;->playTogether([Landroid/animation/Animator;)V
 
-    iget-object v1, v3, Libg;->f:Landroid/animation/AnimatorSet;
+    iget-object v1, v3, Ljfj;->f:Landroid/animation/AnimatorSet;
 
-    invoke-virtual {v1, v7, v8}, Landroid/animation/AnimatorSet;->setDuration(J)Landroid/animation/AnimatorSet;
+    const-wide/16 v4, 0x12c
 
-    iget-object v1, v3, Libg;->f:Landroid/animation/AnimatorSet;
+    invoke-virtual {v1, v4, v5}, Landroid/animation/AnimatorSet;->setDuration(J)Landroid/animation/AnimatorSet;
+
+    iget-object v1, v3, Ljfj;->f:Landroid/animation/AnimatorSet;
 
     invoke-virtual {v1}, Landroid/animation/AnimatorSet;->start()V
 
     return-void
 
     :cond_a
-    iget-object v1, v3, Libg;->C:Ldbx;
-
-    invoke-interface {v1}, Ldbx;->d()Lklv;
-
-    move-result-object v1
-
-    iput-object v1, v3, Libg;->D:Lklv;
-
+    :goto_5
     return-void
 
     :cond_b
-    :goto_4
+    iput v6, v3, Ljfj;->F:I
+
     return-void
 
     :cond_c
-    iput v6, v3, Libg;->F:I
-
-    return-void
-
-    :cond_d
-    :goto_5
+    :goto_6
     return-void
 .end method
 

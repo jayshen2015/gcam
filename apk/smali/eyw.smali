@@ -1,53 +1,36 @@
-.class public final Leyw;
-.super Ljava/lang/Object;
-
-# interfaces
-.implements Logk;
+.class final Leyw;
+.super Lcom/google/android/apps/camera/bottombar/BottomBarListener;
 
 
 # instance fields
-.field private final a:Loiw;
+.field final synthetic a:Lezg;
 
 
 # direct methods
-.method public constructor <init>(Loiw;)V
+.method public constructor <init>(Lezg;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Leyw;->a:Lezg;
 
-    iput-object p1, p0, Leyw;->a:Loiw;
+    invoke-direct {p0}, Lcom/google/android/apps/camera/bottombar/BottomBarListener;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Lbkb;
-    .locals 3
+.method public final onCameraSwitchButtonClicked()V
+    .locals 2
 
-    iget-object v0, p0, Leyw;->a:Loiw;
+    iget-object v0, p0, Leyw;->a:Lezg;
 
-    check-cast v0, Ldwh;
+    iget-object v0, v0, Lezg;->c:Lcvo;
 
-    invoke-virtual {v0}, Ldwh;->a()Landroid/content/Context;
+    new-instance v1, Leyv;
 
-    move-result-object v0
+    invoke-direct {v1, p0}, Leyv;-><init>(Leyw;)V
 
-    new-instance v1, Lbkb;
+    invoke-virtual {v0, v1}, Lcvo;->h(Ljava/lang/Runnable;)V
 
-    const/4 v2, 0x0
-
-    invoke-direct {v1, v0, v2}, Lbkb;-><init>(Landroid/content/Context;[B)V
-
-    return-object v1
-.end method
-
-.method public final bridge synthetic get()Ljava/lang/Object;
-    .locals 1
-
-    invoke-virtual {p0}, Leyw;->a()Lbkb;
-
-    move-result-object v0
-
-    return-object v0
+    return-void
 .end method

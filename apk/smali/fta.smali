@@ -1,70 +1,88 @@
-.class public final enum Lfta;
-.super Ljava/lang/Enum;
+.class public final synthetic Lfta;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Liho;
 
 
-# static fields
-.field public static final enum a:Lfta;
+# instance fields
+.field public final synthetic a:Lqkg;
 
-.field public static final enum b:Lfta;
+.field public final synthetic b:Lhrx;
 
-.field private static final synthetic c:[Lfta;
+.field public final synthetic c:Lbqg;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 5
-
-    new-instance v0, Lfta;
-
-    const-string v1, "IDLE"
-
-    const/4 v2, 0x0
-
-    invoke-direct {v0, v1, v2}, Lfta;-><init>(Ljava/lang/String;I)V
-
-    sput-object v0, Lfta;->a:Lfta;
-
-    new-instance v1, Lfta;
-
-    const-string v3, "RUNNING"
-
-    const/4 v4, 0x1
-
-    invoke-direct {v1, v3, v4}, Lfta;-><init>(Ljava/lang/String;I)V
-
-    sput-object v1, Lfta;->b:Lfta;
-
-    const/4 v3, 0x2
-
-    new-array v3, v3, [Lfta;
-
-    aput-object v0, v3, v2
-
-    aput-object v1, v3, v4
-
-    sput-object v3, Lfta;->c:[Lfta;
-
-    return-void
-.end method
-
-.method private constructor <init>(Ljava/lang/String;I)V
+.method public synthetic constructor <init>(Lqkg;Lhrx;Lbqg;)V
     .locals 0
 
-    invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lfta;->a:Lqkg;
+
+    iput-object p2, p0, Lfta;->b:Lhrx;
+
+    iput-object p3, p0, Lfta;->c:Lbqg;
 
     return-void
 .end method
 
-.method public static values()[Lfta;
-    .locals 1
 
-    sget-object v0, Lfta;->c:[Lfta;
+# virtual methods
+.method public final run()V
+    .locals 5
 
-    invoke-virtual {v0}, [Lfta;->clone()Ljava/lang/Object;
+    iget-object v0, p0, Lfta;->a:Lqkg;
+
+    iget-object v1, p0, Lfta;->b:Lhrx;
+
+    iget-object v2, p0, Lfta;->c:Lbqg;
+
+    invoke-interface {v0}, Lqkg;->get()Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, [Lfta;
+    check-cast v0, Lfnc;
 
-    return-object v0
+    invoke-virtual {v1, v0}, Lhrx;->a(Lhsb;)V
+
+    iget-object v3, v0, Lfnc;->c:Lojc;
+
+    invoke-virtual {v3}, Lojc;->g()Z
+
+    move-result v3
+
+    if-eqz v3, :cond_0
+
+    iget-object v3, v0, Lfnc;->c:Lojc;
+
+    invoke-virtual {v3}, Lojc;->c()Ljava/lang/Object;
+
+    move-result-object v3
+
+    check-cast v3, Lidc;
+
+    iget-object v4, v0, Lfnc;->e:Lidd;
+
+    invoke-interface {v3, v4}, Lidc;->a(Lidd;)V
+
+    iget-object v3, v0, Lfnc;->a:Ljava/util/concurrent/atomic/AtomicBoolean;
+
+    const/4 v4, 0x1
+
+    invoke-virtual {v3, v4}, Ljava/util/concurrent/atomic/AtomicBoolean;->set(Z)V
+
+    :cond_0
+    invoke-virtual {v2}, Lbqg;->i()Llap;
+
+    move-result-object v2
+
+    new-instance v3, Lftb;
+
+    invoke-direct {v3, v1, v0}, Lftb;-><init>(Lhrx;Lfnc;)V
+
+    invoke-virtual {v2, v3}, Llap;->c(Llie;)V
+
+    return-void
 .end method

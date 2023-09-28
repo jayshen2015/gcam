@@ -1,312 +1,106 @@
 .class public final Lbfs;
-.super Lbfq;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Lbfh;
+.implements Lbft;
+
+
+# instance fields
+.field private final a:Landroid/content/ContentResolver;
+
+.field private final synthetic b:I
 
 
 # direct methods
-.method public constructor <init>()V
+.method public constructor <init>(Landroid/content/ContentResolver;I)V
     .locals 0
 
-    invoke-direct {p0}, Lbfq;-><init>()V
+    iput p2, p0, Lbfs;->b:I
 
-    return-void
-.end method
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-.method public constructor <init>(I)V
-    .locals 0
-
-    invoke-direct {p0, p1}, Lbfq;-><init>(I)V
+    iput-object p1, p0, Lbfs;->a:Landroid/content/ContentResolver;
 
     return-void
 .end method
 
 
 # virtual methods
-.method protected final a()I
-    .locals 1
-
-    const v0, -0x7fffe00e
-
-    return v0
-.end method
-
-.method public final b(Lbfs;)V
-    .locals 1
-
-    if-eqz p1, :cond_0
-
-    iget v0, p0, Lbfq;->a:I
-
-    iget p1, p1, Lbfq;->a:I
-
-    or-int/2addr p1, v0
-
-    invoke-virtual {p0, p1}, Lbfq;->g(I)V
-
-    :cond_0
-    return-void
-.end method
-
-.method public final c()Z
-    .locals 1
-
-    const/16 v0, 0x40
-
-    invoke-virtual {p0, v0}, Lbfq;->h(I)Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public final d()Z
-    .locals 1
-
-    const/16 v0, 0x200
-
-    invoke-virtual {p0, v0}, Lbfq;->h(I)Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public final e(I)V
+.method public final a(Landroid/net/Uri;)Lbac;
     .locals 2
 
-    and-int/lit16 v0, p1, 0x100
+    iget v0, p0, Lbfs;->b:I
 
-    const/16 v1, 0x67
+    packed-switch v0, :pswitch_data_0
 
-    if-lez v0, :cond_1
+    new-instance v0, Lbas;
 
-    and-int/lit16 v0, p1, 0x200
+    iget-object v1, p0, Lbfs;->a:Landroid/content/ContentResolver;
 
-    if-gtz v0, :cond_0
+    invoke-direct {v0, v1, p1}, Lbas;-><init>(Landroid/content/ContentResolver;Landroid/net/Uri;)V
 
-    goto :goto_0
+    return-object v0
 
-    :cond_0
-    new-instance p1, Lbeq;
+    :pswitch_0
+    new-instance v0, Lazy;
 
-    const-string v0, "IsStruct and IsArray options are mutually exclusive"
+    iget-object v1, p0, Lbfs;->a:Landroid/content/ContentResolver;
 
-    invoke-direct {p1, v0, v1}, Lbeq;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v0, v1, p1}, Lazy;-><init>(Landroid/content/ContentResolver;Landroid/net/Uri;)V
 
-    throw p1
+    return-object v0
 
-    :cond_1
-    :goto_0
-    and-int/lit8 v0, p1, 0x2
+    :pswitch_1
+    new-instance v0, Lbak;
 
-    if-lez v0, :cond_3
+    iget-object v1, p0, Lbfs;->a:Landroid/content/ContentResolver;
 
-    and-int/lit16 p1, p1, 0x300
+    invoke-direct {v0, v1, p1}, Lbak;-><init>(Landroid/content/ContentResolver;Landroid/net/Uri;)V
 
-    if-gtz p1, :cond_2
+    return-object v0
 
-    goto :goto_1
+    nop
 
-    :cond_2
-    new-instance p1, Lbeq;
-
-    const-string v0, "Structs and arrays can\'t have \"value\" options"
-
-    invoke-direct {p1, v0, v1}, Lbeq;-><init>(Ljava/lang/String;I)V
-
-    throw p1
-
-    :cond_3
-    :goto_1
-    return-void
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method
 
-.method public final i()Z
-    .locals 1
+.method public final b(Lbfn;)Lbfg;
+    .locals 0
 
-    const/16 v0, 0x1000
+    iget p1, p0, Lbfs;->b:I
 
-    invoke-virtual {p0, v0}, Lbfq;->h(I)Z
+    packed-switch p1, :pswitch_data_0
 
-    move-result v0
+    new-instance p1, Lbfu;
 
-    return v0
-.end method
+    invoke-direct {p1, p0}, Lbfu;-><init>(Lbft;)V
 
-.method public final j()Z
-    .locals 1
+    return-object p1
 
-    const/16 v0, 0x800
+    :pswitch_0
+    new-instance p1, Lbfu;
 
-    invoke-virtual {p0, v0}, Lbfq;->h(I)Z
+    invoke-direct {p1, p0}, Lbfu;-><init>(Lbft;)V
 
-    move-result v0
+    return-object p1
 
-    return v0
-.end method
+    :pswitch_1
+    new-instance p1, Lbfu;
 
-.method public final k()Z
-    .locals 1
+    invoke-direct {p1, p0}, Lbfu;-><init>(Lbft;)V
 
-    const/16 v0, 0x400
+    return-object p1
 
-    invoke-virtual {p0, v0}, Lbfq;->h(I)Z
+    nop
 
-    move-result v0
-
-    return v0
-.end method
-
-.method public final l()Z
-    .locals 1
-
-    iget v0, p0, Lbfq;->a:I
-
-    and-int/lit16 v0, v0, 0x300
-
-    if-lez v0, :cond_0
-
-    const/4 v0, 0x1
-
-    return v0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    return v0
-.end method
-
-.method public final m()Z
-    .locals 1
-
-    const/16 v0, 0x20
-
-    invoke-virtual {p0, v0}, Lbfq;->h(I)Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public final n()Z
-    .locals 1
-
-    const/high16 v0, -0x80000000
-
-    invoke-virtual {p0, v0}, Lbfq;->h(I)Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public final o()Z
-    .locals 1
-
-    const/16 v0, 0x100
-
-    invoke-virtual {p0, v0}, Lbfq;->h(I)Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public final p()Z
-    .locals 1
-
-    const/4 v0, 0x2
-
-    invoke-virtual {p0, v0}, Lbfq;->h(I)Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public final q()V
-    .locals 2
-
-    const/16 v0, 0x200
-
-    const/4 v1, 0x1
-
-    invoke-virtual {p0, v0, v1}, Lbfq;->f(IZ)V
-
-    return-void
-.end method
-
-.method public final r()V
-    .locals 2
-
-    const/16 v0, 0x1000
-
-    const/4 v1, 0x1
-
-    invoke-virtual {p0, v0, v1}, Lbfq;->f(IZ)V
-
-    return-void
-.end method
-
-.method public final s()V
-    .locals 2
-
-    const/16 v0, 0x800
-
-    const/4 v1, 0x1
-
-    invoke-virtual {p0, v0, v1}, Lbfq;->f(IZ)V
-
-    return-void
-.end method
-
-.method public final t()V
-    .locals 2
-
-    const/16 v0, 0x400
-
-    const/4 v1, 0x1
-
-    invoke-virtual {p0, v0, v1}, Lbfq;->f(IZ)V
-
-    return-void
-.end method
-
-.method public final u(Z)V
-    .locals 1
-
-    const/16 v0, 0x40
-
-    invoke-virtual {p0, v0, p1}, Lbfq;->f(IZ)V
-
-    return-void
-.end method
-
-.method public final v(Z)V
-    .locals 1
-
-    const/16 v0, 0x10
-
-    invoke-virtual {p0, v0, p1}, Lbfq;->f(IZ)V
-
-    return-void
-.end method
-
-.method public final w(Z)V
-    .locals 1
-
-    const/16 v0, 0x80
-
-    invoke-virtual {p0, v0, p1}, Lbfq;->f(IZ)V
-
-    return-void
-.end method
-
-.method public final x(Z)V
-    .locals 1
-
-    const/16 v0, 0x100
-
-    invoke-virtual {p0, v0, p1}, Lbfq;->f(IZ)V
-
-    return-void
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method

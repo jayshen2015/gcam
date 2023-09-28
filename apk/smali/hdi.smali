@@ -3,70 +3,56 @@
 
 
 # instance fields
-.field public a:Lcom/google/android/apps/camera/smarts/SmartsChipView;
+.field public final a:Llco;
 
-.field public b:Lcom/google/android/apps/camera/smarts/SmartsUiGleamingView;
+.field public final b:Llco;
 
-.field public c:Lgft;
+.field public final c:Llco;
 
-.field public d:Lell;
+.field public final d:Llco;
 
-.field public e:Ljava/util/Map;
+.field public final e:Llco;
 
-.field public final f:Ljuh;
+.field public final f:Llco;
 
-.field public final g:Lfbz;
+.field public final g:Lpht;
 
-.field public final h:Z
-
-.field public final i:Ldja;
-
-.field public final j:Ljew;
-
-.field public final k:Ligo;
+.field public final h:Lgqs;
 
 
 # direct methods
-.method public constructor <init>(Ljuh;Lfbz;Ljew;Ldja;Ligo;Ldhi;[B[B[B[B[B)V
-    .locals 0
+.method public constructor <init>(Lgoi;Llco;Llco;Llco;Llco;Llco;Lpht;Lgqs;)V
+    .locals 1
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lhdi;->f:Ljuh;
+    invoke-interface {p1}, Lgoi;->a()Llco;
 
-    iput-object p2, p0, Lhdi;->g:Lfbz;
+    move-result-object v0
 
-    iput-object p3, p0, Lhdi;->j:Ljew;
+    iput-object v0, p0, Lhdi;->a:Llco;
 
-    iput-object p4, p0, Lhdi;->i:Ldja;
+    invoke-interface {p1}, Lgoi;->b()Llco;
 
-    iput-object p5, p0, Lhdi;->k:Ligo;
+    move-result-object p1
 
-    sget-object p1, Ldho;->aj:Ldhj;
+    iput-object p1, p0, Lhdi;->f:Llco;
 
-    invoke-interface {p6, p1}, Ldhi;->l(Ldhj;)Z
+    iput-object p2, p0, Lhdi;->b:Llco;
 
-    move-result p1
+    iput-object p4, p0, Lhdi;->d:Llco;
 
-    iput-boolean p1, p0, Lhdi;->h:Z
+    iput-object p3, p0, Lhdi;->c:Llco;
 
-    return-void
-.end method
+    iput-object p5, p0, Lhdi;->e:Llco;
 
+    new-instance p1, Lhdh;
 
-# virtual methods
-.method final a()V
-    .locals 3
+    invoke-direct {p1, p6}, Lhdh;-><init>(Llco;)V
 
-    iget-object v0, p0, Lhdi;->f:Ljuh;
+    iput-object p7, p0, Lhdi;->g:Lpht;
 
-    new-instance v1, Lhbi;
-
-    const/16 v2, 0xb
-
-    invoke-direct {v1, p0, v2}, Lhbi;-><init>(Lhdi;I)V
-
-    invoke-virtual {v0, v1}, Ljuh;->c(Ljava/lang/Runnable;)V
+    iput-object p8, p0, Lhdi;->h:Lgqs;
 
     return-void
 .end method

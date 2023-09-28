@@ -1,41 +1,43 @@
-.class public final Ldrv;
+.class public final synthetic Ldrv;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Ldsa;
+.implements Ldrs;
+
+
+# instance fields
+.field public final synthetic a:Lhnp;
+
+.field public final synthetic b:Ldsz;
 
 
 # direct methods
-.method public constructor <init>()V
+.method public synthetic constructor <init>(Ldsz;Lhnp;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Ldrv;->b:Ldsz;
+
+    iput-object p2, p0, Ldrv;->a:Lhnp;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final b(Ldry;Lmqp;)Lnou;
-    .locals 0
+.method public final a(JLlzv;)V
+    .locals 2
 
-    new-instance p2, Ldse;
+    iget-object v0, p0, Ldrv;->b:Ldsz;
 
-    invoke-interface {p1}, Ldry;->d()Ljava/lang/Object;
+    iget-object v1, p0, Ldrv;->a:Lhnp;
 
-    move-result-object p1
+    invoke-interface {v1, p3}, Lhnp;->a(Llzv;)F
 
-    invoke-direct {p2, p1}, Ldse;-><init>(Ljava/lang/Object;)V
+    move-result p3
 
-    invoke-static {p2}, Lnsy;->B(Ljava/lang/Object;)Lnou;
-
-    move-result-object p1
-
-    return-object p1
-.end method
-
-.method public final close()V
-    .locals 0
+    invoke-virtual {v0, p1, p2, p3}, Ldsz;->g(JF)V
 
     return-void
 .end method

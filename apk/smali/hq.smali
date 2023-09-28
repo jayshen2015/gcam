@@ -1,319 +1,258 @@
-.class public final Lhq;
-.super Lgw;
-
-# interfaces
-.implements Landroid/view/SubMenu;
-
-
-# instance fields
-.field public final j:Lgw;
-
-.field public final k:Lgy;
+.class public Lhq;
+.super Ljava/lang/Object;
 
 
 # direct methods
-.method public constructor <init>(Landroid/content/Context;Lgw;Lgy;)V
+.method public constructor <init>()V
     .locals 0
 
-    invoke-direct {p0, p1}, Lgw;-><init>(Landroid/content/Context;)V
-
-    iput-object p2, p0, Lhq;->j:Lgw;
-
-    iput-object p3, p0, Lhq;->k:Lgy;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
+.method public static a(Landroid/widget/PopupWindow;Landroid/view/View;III)V
+    .locals 0
 
-# virtual methods
-.method public final a()Lgw;
-    .locals 1
-
-    iget-object v0, p0, Lhq;->j:Lgw;
-
-    invoke-virtual {v0}, Lgw;->a()Lgw;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public final d()Ljava/lang/String;
-    .locals 3
-
-    iget-object v0, p0, Lhq;->k:Lgy;
-
-    iget v0, v0, Lgy;->a:I
-
-    if-nez v0, :cond_0
-
-    const/4 v0, 0x0
-
-    return-object v0
-
-    :cond_0
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, "android:menu:actionviewstates:"
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public final getItem()Landroid/view/MenuItem;
-    .locals 1
-
-    iget-object v0, p0, Lhq;->k:Lgy;
-
-    return-object v0
-.end method
-
-.method public final p(Lgu;)V
-    .locals 1
-
-    iget-object v0, p0, Lhq;->j:Lgw;
-
-    invoke-virtual {v0, p1}, Lgw;->p(Lgu;)V
+    invoke-virtual {p0, p1, p2, p3, p4}, Landroid/widget/PopupWindow;->showAsDropDown(Landroid/view/View;III)V
 
     return-void
 .end method
 
-.method public final setGroupDividerEnabled(Z)V
-    .locals 1
+.method public static b(Ljava/lang/String;)Ljava/lang/String;
+    .locals 2
 
-    iget-object v0, p0, Lhq;->j:Lgw;
+    sget-object v0, Ljava/util/Locale;->US:Ljava/util/Locale;
 
-    invoke-virtual {v0, p1}, Lgw;->setGroupDividerEnabled(Z)V
+    invoke-virtual {p0, v0}, Ljava/lang/String;->toLowerCase(Ljava/util/Locale;)Ljava/lang/String;
 
-    return-void
-.end method
+    move-result-object p0
 
-.method public final setHeaderIcon(I)Landroid/view/SubMenu;
-    .locals 6
+    const-string v0, "_"
 
-    const/4 v1, 0x0
+    const-string v1, "-"
 
-    const/4 v2, 0x0
+    invoke-virtual {p0, v0, v1}, Ljava/lang/String;->replaceAll(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
-    const/4 v4, 0x0
-
-    const/4 v5, 0x0
-
-    move-object v0, p0
-
-    move v3, p1
-
-    invoke-super/range {v0 .. v5}, Lgw;->q(ILjava/lang/CharSequence;ILandroid/graphics/drawable/Drawable;Landroid/view/View;)V
+    move-result-object p0
 
     return-object p0
 .end method
 
-.method public final setHeaderIcon(Landroid/graphics/drawable/Drawable;)Landroid/view/SubMenu;
-    .locals 6
+.method public static c(Ljava/lang/String;)Ljava/lang/String;
+    .locals 2
 
-    const/4 v1, 0x0
+    sget-object v0, Ljava/util/Locale;->US:Ljava/util/Locale;
 
-    const/4 v2, 0x0
+    invoke-virtual {p0, v0}, Ljava/lang/String;->toUpperCase(Ljava/util/Locale;)Ljava/lang/String;
 
-    const/4 v3, 0x0
+    move-result-object p0
 
-    const/4 v5, 0x0
+    const-string v0, "-"
 
-    move-object v0, p0
+    const-string v1, "_"
 
-    move-object v4, p1
+    invoke-virtual {p0, v0, v1}, Ljava/lang/String;->replaceAll(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
-    invoke-super/range {v0 .. v5}, Lgw;->q(ILjava/lang/CharSequence;ILandroid/graphics/drawable/Drawable;Landroid/view/View;)V
-
-    return-object p0
-.end method
-
-.method public final setHeaderTitle(I)Landroid/view/SubMenu;
-    .locals 6
-
-    const/4 v2, 0x0
-
-    const/4 v3, 0x0
-
-    const/4 v4, 0x0
-
-    const/4 v5, 0x0
-
-    move-object v0, p0
-
-    move v1, p1
-
-    invoke-super/range {v0 .. v5}, Lgw;->q(ILjava/lang/CharSequence;ILandroid/graphics/drawable/Drawable;Landroid/view/View;)V
+    move-result-object p0
 
     return-object p0
 .end method
 
-.method public final setHeaderTitle(Ljava/lang/CharSequence;)Landroid/view/SubMenu;
-    .locals 6
+.method public static d(I)Ljava/lang/String;
+    .locals 2
 
-    const/4 v1, 0x0
+    sparse-switch p0, :sswitch_data_0
 
-    const/4 v3, 0x0
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    const/4 v4, 0x0
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    const/4 v5, 0x0
+    const-string v1, "UNKNOWN("
 
-    move-object v0, p0
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-object v2, p1
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    invoke-super/range {v0 .. v5}, Lgw;->q(ILjava/lang/CharSequence;ILandroid/graphics/drawable/Drawable;Landroid/view/View;)V
+    const-string p0, ")"
 
-    return-object p0
-.end method
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-.method public final setHeaderView(Landroid/view/View;)Landroid/view/SubMenu;
-    .locals 6
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    const/4 v1, 0x0
-
-    const/4 v2, 0x0
-
-    const/4 v3, 0x0
-
-    const/4 v4, 0x0
-
-    move-object v0, p0
-
-    move-object v5, p1
-
-    invoke-super/range {v0 .. v5}, Lgw;->q(ILjava/lang/CharSequence;ILandroid/graphics/drawable/Drawable;Landroid/view/View;)V
+    move-result-object p0
 
     return-object p0
-.end method
 
-.method public final setIcon(I)Landroid/view/SubMenu;
-    .locals 1
-
-    iget-object v0, p0, Lhq;->k:Lgy;
-
-    invoke-virtual {v0, p1}, Lgy;->setIcon(I)Landroid/view/MenuItem;
+    :sswitch_0
+    const-string p0, "CAPTURE_PHOTO"
 
     return-object p0
-.end method
 
-.method public final setIcon(Landroid/graphics/drawable/Drawable;)Landroid/view/SubMenu;
-    .locals 1
-
-    iget-object v0, p0, Lhq;->k:Lgy;
-
-    invoke-virtual {v0, p1}, Lgy;->setIcon(Landroid/graphics/drawable/Drawable;)Landroid/view/MenuItem;
+    :sswitch_1
+    const-string p0, "SET_DISPLAY_ORIENTATION"
 
     return-object p0
-.end method
 
-.method public final setQwertyMode(Z)V
-    .locals 1
+    :sswitch_2
+    const-string p0, "ENABLE_SHUTTER_SOUND"
 
-    iget-object v0, p0, Lhq;->j:Lgw;
+    return-object p0
 
-    invoke-virtual {v0, p1}, Lgw;->setQwertyMode(Z)V
+    :sswitch_3
+    const-string p0, "STOP_FACE_DETECTION"
 
-    return-void
-.end method
+    return-object p0
 
-.method public final t(Lgy;)Z
-    .locals 1
+    :sswitch_4
+    const-string p0, "START_FACE_DETECTION"
 
-    iget-object v0, p0, Lhq;->j:Lgw;
+    return-object p0
 
-    invoke-virtual {v0, p1}, Lgw;->t(Lgy;)Z
+    :sswitch_5
+    const-string p0, "SET_FACE_DETECTION_LISTENER"
 
-    move-result p1
+    return-object p0
 
-    return p1
-.end method
+    :sswitch_6
+    const-string p0, "CANCEL_AUTO_FOCUS_FINISH"
 
-.method public final u(Lgw;Landroid/view/MenuItem;)Z
-    .locals 1
+    return-object p0
 
-    invoke-super {p0, p1, p2}, Lgw;->u(Lgw;Landroid/view/MenuItem;)Z
+    :sswitch_7
+    const-string p0, "SET_ZOOM_CHANGE_LISTENER"
 
-    move-result v0
+    return-object p0
 
-    if-nez v0, :cond_1
+    :sswitch_8
+    const-string p0, "SET_AUTO_FOCUS_MOVE_CALLBACK"
 
-    iget-object v0, p0, Lhq;->j:Lgw;
+    return-object p0
 
-    invoke-virtual {v0, p1, p2}, Lgw;->u(Lgw;Landroid/view/MenuItem;)Z
+    :sswitch_9
+    const-string p0, "CANCEL_AUTO_FOCUS"
 
-    move-result p1
+    return-object p0
 
-    if-eqz p1, :cond_0
+    :sswitch_a
+    const-string p0, "AUTO_FOCUS"
 
-    goto :goto_0
+    return-object p0
 
-    :cond_0
-    const/4 p1, 0x0
+    :sswitch_b
+    const-string p0, "APPLY_SETTINGS"
 
-    return p1
+    return-object p0
 
-    :cond_1
-    :goto_0
-    const/4 p1, 0x1
+    :sswitch_c
+    const-string p0, "REFRESH_PARAMETERS"
 
-    return p1
-.end method
+    return-object p0
 
-.method public final v(Lgy;)Z
-    .locals 1
+    :sswitch_d
+    const-string p0, "GET_PARAMETERS"
 
-    iget-object v0, p0, Lhq;->j:Lgw;
+    return-object p0
 
-    invoke-virtual {v0, p1}, Lgw;->v(Lgy;)Z
+    :sswitch_e
+    const-string p0, "SET_PARAMETERS"
 
-    move-result p1
+    return-object p0
 
-    return p1
-.end method
+    :sswitch_f
+    const-string p0, "SET_ONE_SHOT_PREVIEW_CALLBACK"
 
-.method public final w()Z
-    .locals 1
+    return-object p0
 
-    iget-object v0, p0, Lhq;->j:Lgw;
+    :sswitch_10
+    const-string p0, "SET_PREVIEW_CALLBACK"
 
-    invoke-virtual {v0}, Lgw;->w()Z
+    return-object p0
 
-    move-result v0
+    :sswitch_11
+    const-string p0, "SET_PREVIEW_DISPLAY_ASYNC"
 
-    return v0
-.end method
+    return-object p0
 
-.method public final x()Z
-    .locals 1
+    :sswitch_12
+    const-string p0, "ADD_CALLBACK_BUFFER"
 
-    iget-object v0, p0, Lhq;->j:Lgw;
+    return-object p0
 
-    invoke-virtual {v0}, Lgw;->x()Z
+    :sswitch_13
+    const-string p0, "SET_PREVIEW_CALLBACK_WITH_BUFFER"
 
-    move-result v0
+    return-object p0
 
-    return v0
-.end method
+    :sswitch_14
+    const-string p0, "STOP_PREVIEW"
 
-.method public final y()Z
-    .locals 1
+    return-object p0
 
-    iget-object v0, p0, Lhq;->j:Lgw;
+    :sswitch_15
+    const-string p0, "START_PREVIEW_ASYNC"
 
-    invoke-virtual {v0}, Lgw;->y()Z
+    return-object p0
 
-    move-result v0
+    :sswitch_16
+    const-string p0, "SET_PREVIEW_TEXTURE_ASYNC"
 
-    return v0
+    return-object p0
+
+    :sswitch_17
+    const-string p0, "LOCK"
+
+    return-object p0
+
+    :sswitch_18
+    const-string p0, "UNLOCK"
+
+    return-object p0
+
+    :sswitch_19
+    const-string p0, "RECONNECT"
+
+    return-object p0
+
+    :sswitch_1a
+    const-string p0, "RELEASE"
+
+    return-object p0
+
+    :sswitch_1b
+    const-string p0, "OPEN_CAMERA"
+
+    return-object p0
+
+    :sswitch_data_0
+    .sparse-switch
+        0x1 -> :sswitch_1b
+        0x2 -> :sswitch_1a
+        0x3 -> :sswitch_19
+        0x4 -> :sswitch_18
+        0x5 -> :sswitch_17
+        0x65 -> :sswitch_16
+        0x66 -> :sswitch_15
+        0x67 -> :sswitch_14
+        0x68 -> :sswitch_13
+        0x69 -> :sswitch_12
+        0x6a -> :sswitch_11
+        0x6b -> :sswitch_10
+        0x6c -> :sswitch_f
+        0xc9 -> :sswitch_e
+        0xca -> :sswitch_d
+        0xcb -> :sswitch_c
+        0xcc -> :sswitch_b
+        0x12d -> :sswitch_a
+        0x12e -> :sswitch_9
+        0x12f -> :sswitch_8
+        0x130 -> :sswitch_7
+        0x131 -> :sswitch_6
+        0x1cd -> :sswitch_5
+        0x1ce -> :sswitch_4
+        0x1cf -> :sswitch_3
+        0x1f5 -> :sswitch_2
+        0x1f6 -> :sswitch_1
+        0x259 -> :sswitch_0
+    .end sparse-switch
 .end method

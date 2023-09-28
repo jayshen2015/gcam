@@ -1,22 +1,19 @@
-.class final Lbct;
-.super Laqa;
-
-
-# direct methods
-.method public constructor <init>(Lapt;)V
-    .locals 0
-
-    invoke-direct {p0, p1}, Laqa;-><init>(Lapt;)V
-
-    return-void
-.end method
+.class public interface abstract Lbct;
+.super Ljava/lang/Object;
 
 
 # virtual methods
-.method public final d()Ljava/lang/String;
-    .locals 1
+.method public abstract a(ILjava/lang/Class;)Ljava/lang/Object;
+.end method
 
-    const-string v0, "UPDATE workspec SET period_count=period_count+1 WHERE id=?"
+.method public abstract b()V
+.end method
 
-    return-object v0
+.method public abstract c(Ljava/lang/Object;)V
+.end method
+
+.method public abstract d(I)V
+.end method
+
+.method public abstract e(Ljava/lang/Class;)Ljava/lang/Object;
 .end method

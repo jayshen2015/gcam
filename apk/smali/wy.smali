@@ -31,86 +31,88 @@
     return-void
 .end method
 
-.method public constructor <init>(Lxf;)V
-    .locals 1
-
-    const/4 v0, 0x0
-
-    invoke-direct {p0, v0}, Lxf;-><init>([B)V
-
-    invoke-virtual {p0, p1}, Lxf;->i(Lxf;)V
-
-    return-void
-.end method
-
 
 # virtual methods
-.method public final a(Ljava/util/Collection;)Z
-    .locals 3
+.method final a([Ljava/lang/Object;I)[Ljava/lang/Object;
+    .locals 4
 
-    iget v0, p0, Lxf;->d:I
+    iget v0, p0, Lwy;->j:I
 
-    add-int/lit8 v1, v0, -0x1
+    array-length v1, p1
 
-    :goto_0
-    if-ltz v1, :cond_1
+    if-ge v1, v0, :cond_0
 
-    invoke-virtual {p0, v1}, Lxf;->d(I)Ljava/lang/Object;
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    move-result-object v2
+    move-result-object p1
 
-    invoke-interface {p1, v2}, Ljava/util/Collection;->contains(Ljava/lang/Object;)Z
+    invoke-virtual {p1}, Ljava/lang/Class;->getComponentType()Ljava/lang/Class;
 
-    move-result v2
+    move-result-object p1
 
-    if-nez v2, :cond_0
+    invoke-static {p1, v0}, Ljava/lang/reflect/Array;->newInstance(Ljava/lang/Class;I)Ljava/lang/Object;
 
-    invoke-virtual {p0, v1}, Lxf;->e(I)Ljava/lang/Object;
+    move-result-object p1
+
+    check-cast p1, [Ljava/lang/Object;
 
     :cond_0
-    add-int/lit8 v1, v1, -0x1
+    const/4 v1, 0x0
+
+    :goto_0
+    if-ge v1, v0, :cond_1
+
+    iget-object v2, p0, Lwy;->i:[Ljava/lang/Object;
+
+    add-int v3, v1, v1
+
+    add-int/2addr v3, p2
+
+    aget-object v2, v2, v3
+
+    aput-object v2, p1, v1
+
+    add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
     :cond_1
-    iget p1, p0, Lxf;->d:I
+    array-length p2, p1
 
-    if-eq v0, p1, :cond_2
+    if-le p2, v0, :cond_2
 
-    const/4 p1, 0x1
+    const/4 p2, 0x0
 
-    return p1
+    aput-object p2, p1, v0
 
     :cond_2
-    const/4 p1, 0x0
-
-    return p1
+    return-object p1
 .end method
 
-.method public final synthetic compute(Ljava/lang/Object;Ljava/util/function/BiFunction;)Ljava/lang/Object;
+.method public final synthetic compute(Ljava/lang/Object;Lj$/util/function/BiFunction;)Ljava/lang/Object;
     .locals 0
 
-    invoke-static {p0, p1, p2}, Lj$/util/Map$-CC;->$default$compute(Ljava/util/Map;Ljava/lang/Object;Ljava/util/function/BiFunction;)Ljava/lang/Object;
+    invoke-static {p0, p1, p2}, Lj$/util/Map$-CC;->$default$compute(Ljava/util/Map;Ljava/lang/Object;Lj$/util/function/BiFunction;)Ljava/lang/Object;
 
     move-result-object p1
 
     return-object p1
 .end method
 
-.method public final synthetic computeIfAbsent(Ljava/lang/Object;Ljava/util/function/Function;)Ljava/lang/Object;
+.method public final synthetic computeIfAbsent(Ljava/lang/Object;Lj$/util/function/Function;)Ljava/lang/Object;
     .locals 0
 
-    invoke-static {p0, p1, p2}, Lj$/util/Map$-CC;->$default$computeIfAbsent(Ljava/util/Map;Ljava/lang/Object;Ljava/util/function/Function;)Ljava/lang/Object;
+    invoke-static {p0, p1, p2}, Lj$/util/Map$-CC;->$default$computeIfAbsent(Ljava/util/Map;Ljava/lang/Object;Lj$/util/function/Function;)Ljava/lang/Object;
 
     move-result-object p1
 
     return-object p1
 .end method
 
-.method public final synthetic computeIfPresent(Ljava/lang/Object;Ljava/util/function/BiFunction;)Ljava/lang/Object;
+.method public final synthetic computeIfPresent(Ljava/lang/Object;Lj$/util/function/BiFunction;)Ljava/lang/Object;
     .locals 0
 
-    invoke-static {p0, p1, p2}, Lj$/util/Map$-CC;->$default$computeIfPresent(Ljava/util/Map;Ljava/lang/Object;Ljava/util/function/BiFunction;)Ljava/lang/Object;
+    invoke-static {p0, p1, p2}, Lj$/util/Map$-CC;->$default$computeIfPresent(Ljava/util/Map;Ljava/lang/Object;Lj$/util/function/BiFunction;)Ljava/lang/Object;
 
     move-result-object p1
 
@@ -134,10 +136,10 @@
     return-object v0
 .end method
 
-.method public final synthetic forEach(Ljava/util/function/BiConsumer;)V
+.method public final synthetic forEach(Lj$/util/function/BiConsumer;)V
     .locals 0
 
-    invoke-static {p0, p1}, Lj$/util/Map$-CC;->$default$forEach(Ljava/util/Map;Ljava/util/function/BiConsumer;)V
+    invoke-static {p0, p1}, Lj$/util/Map$-CC;->$default$forEach(Ljava/util/Map;Lj$/util/function/BiConsumer;)V
 
     return-void
 .end method
@@ -159,10 +161,10 @@
     return-object v0
 .end method
 
-.method public final synthetic merge(Ljava/lang/Object;Ljava/lang/Object;Ljava/util/function/BiFunction;)Ljava/lang/Object;
+.method public final synthetic merge(Ljava/lang/Object;Ljava/lang/Object;Lj$/util/function/BiFunction;)Ljava/lang/Object;
     .locals 0
 
-    invoke-static {p0, p1, p2, p3}, Lj$/util/Map$-CC;->$default$merge(Ljava/util/Map;Ljava/lang/Object;Ljava/lang/Object;Ljava/util/function/BiFunction;)Ljava/lang/Object;
+    invoke-static {p0, p1, p2, p3}, Lj$/util/Map$-CC;->$default$merge(Ljava/util/Map;Ljava/lang/Object;Ljava/lang/Object;Lj$/util/function/BiFunction;)Ljava/lang/Object;
 
     move-result-object p1
 
@@ -172,7 +174,7 @@
 .method public final putAll(Ljava/util/Map;)V
     .locals 2
 
-    iget v0, p0, Lxf;->d:I
+    iget v0, p0, Lwy;->j:I
 
     invoke-interface {p1}, Ljava/util/Map;->size()I
 
@@ -180,7 +182,7 @@
 
     add-int/2addr v0, v1
 
-    invoke-virtual {p0, v0}, Lxf;->h(I)V
+    invoke-virtual {p0, v0}, Lxf;->j(I)V
 
     invoke-interface {p1}, Ljava/util/Map;->entrySet()Ljava/util/Set;
 
@@ -219,10 +221,10 @@
     return-void
 .end method
 
-.method public final synthetic replaceAll(Ljava/util/function/BiFunction;)V
+.method public final synthetic replaceAll(Lj$/util/function/BiFunction;)V
     .locals 0
 
-    invoke-static {p0, p1}, Lj$/util/Map$-CC;->$default$replaceAll(Ljava/util/Map;Ljava/util/function/BiFunction;)V
+    invoke-static {p0, p1}, Lj$/util/Map$-CC;->$default$replaceAll(Ljava/util/Map;Lj$/util/function/BiFunction;)V
 
     return-void
 .end method

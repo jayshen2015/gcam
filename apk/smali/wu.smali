@@ -106,29 +106,29 @@
 
     const/4 v0, 0x1
 
+    const/4 v1, 0x0
+
     if-ne p0, p1, :cond_0
 
     goto :goto_1
 
     :cond_0
-    instance-of v1, p1, Ljava/util/Set;
+    instance-of v2, p1, Ljava/util/Set;
 
-    const/4 v2, 0x0
-
-    if-eqz v1, :cond_2
+    if-eqz v2, :cond_2
 
     check-cast p1, Ljava/util/Set;
 
     :try_start_0
     invoke-interface {p0}, Ljava/util/Set;->size()I
 
-    move-result v1
+    move-result v2
 
     invoke-interface {p1}, Ljava/util/Set;->size()I
 
     move-result v3
 
-    if-ne v1, v3, :cond_2
+    if-ne v2, v3, :cond_2
 
     invoke-interface {p0, p1}, Ljava/util/Set;->containsAll(Ljava/util/Collection;)Z
 
@@ -165,7 +165,7 @@
 
     iget-object v0, p0, Lwu;->a:Lwy;
 
-    iget v0, v0, Lxf;->d:I
+    iget v0, v0, Lwy;->j:I
 
     add-int/lit8 v0, v0, -0x1
 
@@ -178,7 +178,7 @@
 
     iget-object v3, p0, Lwu;->a:Lwy;
 
-    invoke-virtual {v3, v0}, Lxf;->d(I)Ljava/lang/Object;
+    invoke-virtual {v3, v0}, Lxf;->f(I)Ljava/lang/Object;
 
     move-result-object v3
 
@@ -241,7 +241,7 @@
 
     iget-object v0, p0, Lwu;->a:Lwy;
 
-    invoke-virtual {v0, p1}, Lxf;->e(I)Ljava/lang/Object;
+    invoke-virtual {v0, p1}, Lxf;->g(I)Ljava/lang/Object;
 
     const/4 p1, 0x1
 
@@ -258,7 +258,7 @@
 
     iget-object v0, p0, Lwu;->a:Lwy;
 
-    iget v1, v0, Lxf;->d:I
+    iget v1, v0, Lwy;->j:I
 
     invoke-interface {p1}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
 
@@ -280,7 +280,7 @@
     goto :goto_0
 
     :cond_0
-    iget p1, v0, Lxf;->d:I
+    iget p1, v0, Lwy;->j:I
 
     if-eq v1, p1, :cond_1
 
@@ -295,13 +295,45 @@
 .end method
 
 .method public final retainAll(Ljava/util/Collection;)Z
-    .locals 1
+    .locals 4
 
     iget-object v0, p0, Lwu;->a:Lwy;
 
-    invoke-virtual {v0, p1}, Lwy;->a(Ljava/util/Collection;)Z
+    iget v1, v0, Lwy;->j:I
 
-    move-result p1
+    add-int/lit8 v2, v1, -0x1
+
+    :goto_0
+    if-ltz v2, :cond_1
+
+    invoke-virtual {v0, v2}, Lxf;->f(I)Ljava/lang/Object;
+
+    move-result-object v3
+
+    invoke-interface {p1, v3}, Ljava/util/Collection;->contains(Ljava/lang/Object;)Z
+
+    move-result v3
+
+    if-nez v3, :cond_0
+
+    invoke-virtual {v0, v2}, Lxf;->g(I)Ljava/lang/Object;
+
+    :cond_0
+    add-int/lit8 v2, v2, -0x1
+
+    goto :goto_0
+
+    :cond_1
+    iget p1, v0, Lwy;->j:I
+
+    if-eq v1, p1, :cond_2
+
+    const/4 p1, 0x1
+
+    return p1
+
+    :cond_2
+    const/4 p1, 0x0
 
     return p1
 .end method
@@ -311,7 +343,7 @@
 
     iget-object v0, p0, Lwu;->a:Lwy;
 
-    iget v0, v0, Lxf;->d:I
+    iget v0, v0, Lwy;->j:I
 
     return v0
 .end method
@@ -321,7 +353,7 @@
 
     iget-object v0, p0, Lwu;->a:Lwy;
 
-    iget v0, v0, Lxf;->d:I
+    iget v0, v0, Lwy;->j:I
 
     new-array v1, v0, [Ljava/lang/Object;
 
@@ -332,7 +364,7 @@
 
     iget-object v3, p0, Lwu;->a:Lwy;
 
-    invoke-virtual {v3, v2}, Lxf;->d(I)Ljava/lang/Object;
+    invoke-virtual {v3, v2}, Lxf;->f(I)Ljava/lang/Object;
 
     move-result-object v3
 
@@ -347,57 +379,15 @@
 .end method
 
 .method public final toArray([Ljava/lang/Object;)[Ljava/lang/Object;
-    .locals 3
+    .locals 2
 
-    invoke-virtual {p0}, Lwu;->size()I
-
-    move-result v0
-
-    array-length v1, p1
-
-    if-ge v1, v0, :cond_0
-
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    move-result-object p1
-
-    invoke-virtual {p1}, Ljava/lang/Class;->getComponentType()Ljava/lang/Class;
-
-    move-result-object p1
-
-    invoke-static {p1, v0}, Ljava/lang/reflect/Array;->newInstance(Ljava/lang/Class;I)Ljava/lang/Object;
-
-    move-result-object p1
-
-    check-cast p1, [Ljava/lang/Object;
-
-    :cond_0
-    const/4 v1, 0x0
-
-    :goto_0
-    if-ge v1, v0, :cond_1
-
-    iget-object v2, p0, Lwu;->a:Lwy;
-
-    invoke-virtual {v2, v1}, Lxf;->d(I)Ljava/lang/Object;
-
-    move-result-object v2
-
-    aput-object v2, p1, v1
-
-    add-int/lit8 v1, v1, 0x1
-
-    goto :goto_0
-
-    :cond_1
-    array-length v1, p1
-
-    if-le v1, v0, :cond_2
+    iget-object v0, p0, Lwu;->a:Lwy;
 
     const/4 v1, 0x0
 
-    aput-object v1, p1, v0
+    invoke-virtual {v0, p1, v1}, Lwy;->a([Ljava/lang/Object;I)[Ljava/lang/Object;
 
-    :cond_2
+    move-result-object p1
+
     return-object p1
 .end method

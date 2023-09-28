@@ -3,5 +3,8 @@
 
 
 # virtual methods
-.method public abstract k(Ldef;)V
+.method public abstract a()Ldet;
+.end method
+
+.method public abstract b()Lqiz;
 .end method

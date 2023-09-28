@@ -1,200 +1,155 @@
-.class public abstract Lbfq;
+.class public final Lbfq;
 .super Ljava/lang/Object;
+
+# interfaces
+.implements Laze;
 
 
 # instance fields
-.field public a:I
+.field private final a:Lbct;
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 1
+.method public constructor <init>(Lbct;)V
+    .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const/4 v0, 0x0
-
-    iput v0, p0, Lbfq;->a:I
+    iput-object p1, p0, Lbfq;->a:Lbct;
 
     return-void
-.end method
-
-.method public constructor <init>(I)V
-    .locals 1
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    const/4 v0, 0x0
-
-    iput v0, p0, Lbfq;->a:I
-
-    invoke-direct {p0, p1}, Lbfq;->b(I)V
-
-    invoke-virtual {p0, p1}, Lbfq;->g(I)V
-
-    return-void
-.end method
-
-.method private final b(I)V
-    .locals 3
-
-    invoke-virtual {p0}, Lbfq;->a()I
-
-    move-result v0
-
-    xor-int/lit8 v0, v0, -0x1
-
-    and-int/2addr v0, p1
-
-    if-nez v0, :cond_0
-
-    invoke-virtual {p0, p1}, Lbfq;->e(I)V
-
-    return-void
-
-    :cond_0
-    new-instance p1, Lbeq;
-
-    invoke-static {v0}, Ljava/lang/Integer;->toHexString(I)Ljava/lang/String;
-
-    move-result-object v0
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, "The option bit(s) 0x"
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v0, " are invalid!"
-
-    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    const/16 v1, 0x67
-
-    invoke-direct {p1, v0, v1}, Lbeq;-><init>(Ljava/lang/String;I)V
-
-    throw p1
 .end method
 
 
 # virtual methods
-.method protected abstract a()I
-.end method
+.method public final bridge synthetic a(Ljava/lang/Object;Ljava/io/File;Lazt;)Z
+    .locals 3
 
-.method protected e(I)V
-    .locals 0
+    check-cast p1, Ljava/io/InputStream;
 
-    return-void
-.end method
+    iget-object p3, p0, Lbfq;->a:Lbct;
 
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 1
+    const-class v0, [B
 
-    iget v0, p0, Lbfq;->a:I
+    const/high16 v1, 0x10000
 
-    check-cast p1, Lbfq;
+    invoke-interface {p3, v1, v0}, Lbct;->a(ILjava/lang/Class;)Ljava/lang/Object;
 
-    iget p1, p1, Lbfq;->a:I
+    move-result-object p3
 
-    if-ne v0, p1, :cond_0
+    check-cast p3, [B
 
-    const/4 p1, 0x1
+    const/4 v0, 0x0
 
-    return p1
+    const/4 v1, 0x0
 
-    :cond_0
-    const/4 p1, 0x0
+    :try_start_0
+    new-instance v2, Ljava/io/FileOutputStream;
 
-    return p1
-.end method
+    invoke-direct {v2, p2}, Ljava/io/FileOutputStream;-><init>(Ljava/io/File;)V
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_3
+    .catchall {:try_start_0 .. :try_end_0} :catchall_1
 
-.method public final f(IZ)V
-    .locals 0
+    :goto_0
+    :try_start_1
+    invoke-virtual {p1, p3}, Ljava/io/InputStream;->read([B)I
 
-    if-eqz p2, :cond_0
+    move-result p2
 
-    iget p2, p0, Lbfq;->a:I
+    const/4 v1, -0x1
 
-    or-int/2addr p1, p2
+    if-eq p2, v1, :cond_0
+
+    invoke-virtual {v2, p3, v0, p2}, Ljava/io/OutputStream;->write([BII)V
 
     goto :goto_0
 
     :cond_0
-    iget p2, p0, Lbfq;->a:I
+    invoke-virtual {v2}, Ljava/io/OutputStream;->close()V
+    :try_end_1
+    .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    xor-int/lit8 p1, p1, -0x1
+    :try_start_2
+    invoke-virtual {v2}, Ljava/io/OutputStream;->close()V
+    :try_end_2
+    .catch Ljava/io/IOException; {:try_start_2 .. :try_end_2} :catch_0
 
-    and-int/2addr p1, p2
+    goto :goto_1
 
-    :goto_0
-    iput p1, p0, Lbfq;->a:I
+    :catch_0
+    move-exception p1
 
-    return-void
-.end method
+    :goto_1
+    iget-object p1, p0, Lbfq;->a:Lbct;
 
-.method public final g(I)V
-    .locals 0
+    invoke-interface {p1, p3}, Lbct;->c(Ljava/lang/Object;)V
 
-    invoke-direct {p0, p1}, Lbfq;->b(I)V
+    const/4 v0, 0x1
 
-    iput p1, p0, Lbfq;->a:I
+    goto :goto_6
 
-    return-void
-.end method
+    :catchall_0
+    move-exception p1
 
-.method public final h(I)Z
-    .locals 1
+    move-object v1, v2
 
-    iget v0, p0, Lbfq;->a:I
+    goto :goto_2
 
-    and-int/2addr p1, v0
+    :catch_1
+    move-exception p1
 
-    if-eqz p1, :cond_0
+    move-object v1, v2
 
-    const/4 p1, 0x1
+    goto :goto_4
 
-    return p1
+    :catchall_1
+    move-exception p1
 
-    :cond_0
-    const/4 p1, 0x0
+    :goto_2
+    if-eqz v1, :cond_1
 
-    return p1
-.end method
+    :try_start_3
+    invoke-virtual {v1}, Ljava/io/OutputStream;->close()V
+    :try_end_3
+    .catch Ljava/io/IOException; {:try_start_3 .. :try_end_3} :catch_2
 
-.method public final hashCode()I
-    .locals 1
+    goto :goto_3
 
-    iget v0, p0, Lbfq;->a:I
+    :catch_2
+    move-exception p2
 
+    :cond_1
+    :goto_3
+    iget-object p2, p0, Lbfq;->a:Lbct;
+
+    invoke-interface {p2, p3}, Lbct;->c(Ljava/lang/Object;)V
+
+    throw p1
+
+    :catch_3
+    move-exception p1
+
+    :goto_4
+    if-eqz v1, :cond_2
+
+    :try_start_4
+    invoke-virtual {v1}, Ljava/io/OutputStream;->close()V
+    :try_end_4
+    .catch Ljava/io/IOException; {:try_start_4 .. :try_end_4} :catch_4
+
+    goto :goto_5
+
+    :catch_4
+    move-exception p1
+
+    :cond_2
+    :goto_5
+    iget-object p1, p0, Lbfq;->a:Lbct;
+
+    invoke-interface {p1, p3}, Lbct;->c(Ljava/lang/Object;)V
+
+    :goto_6
     return v0
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .locals 2
-
-    iget v0, p0, Lbfq;->a:I
-
-    invoke-static {v0}, Ljava/lang/Integer;->toHexString(I)Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v0
-
-    const-string v1, "0x"
-
-    invoke-virtual {v1, v0}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v0
-
-    return-object v0
 .end method

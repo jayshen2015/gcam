@@ -1,15 +1,7 @@
-.class final Lmgr;
+.class public interface abstract Lmgr;
 .super Ljava/lang/Object;
 
-# interfaces
-.implements Lmgs;
 
-
-# direct methods
-.method public constructor <init>()V
-    .locals 0
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
+# virtual methods
+.method public abstract a()Lcom/google/android/libraries/lens/lenslite/api/LinkConfig;
 .end method

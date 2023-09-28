@@ -1,43 +1,41 @@
-.class public final Lbxm;
+.class public final synthetic Lbxm;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lbqq;
+.implements Ljava/util/concurrent/Callable;
 
 
 # instance fields
-.field private final a:Ljava/nio/ByteBuffer;
+.field public final synthetic a:Ljava/lang/Runnable;
+
+.field public final synthetic b:Ljava/lang/Object;
 
 
 # direct methods
-.method public constructor <init>(Ljava/nio/ByteBuffer;)V
+.method public synthetic constructor <init>(Ljava/lang/Runnable;Ljava/lang/Object;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lbxm;->a:Ljava/nio/ByteBuffer;
+    iput-object p1, p0, Lbxm;->a:Ljava/lang/Runnable;
+
+    iput-object p2, p0, Lbxm;->b:Ljava/lang/Object;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final bridge synthetic a()Ljava/lang/Object;
-    .locals 2
+.method public final call()Ljava/lang/Object;
+    .locals 3
 
-    iget-object v0, p0, Lbxm;->a:Ljava/nio/ByteBuffer;
+    iget-object v0, p0, Lbxm;->a:Ljava/lang/Runnable;
 
-    const/4 v1, 0x0
+    iget-object v1, p0, Lbxm;->b:Ljava/lang/Object;
 
-    invoke-virtual {v0, v1}, Ljava/nio/ByteBuffer;->position(I)Ljava/nio/Buffer;
+    sget v2, Lbxn;->a:I
 
-    iget-object v0, p0, Lbxm;->a:Ljava/nio/ByteBuffer;
+    invoke-interface {v0}, Ljava/lang/Runnable;->run()V
 
-    return-object v0
-.end method
-
-.method public final b()V
-    .locals 0
-
-    return-void
+    return-object v1
 .end method

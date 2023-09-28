@@ -1,80 +1,47 @@
-.class public final Llku;
+.class final Llku;
 .super Ljava/lang/Object;
 
-
-# static fields
-.field private static final d:Llkt;
+# interfaces
+.implements Llkx;
 
 
 # instance fields
-.field public volatile a:Llkt;
-
-.field public b:Ljava/util/concurrent/ScheduledFuture;
-
-.field public c:Ljava/util/concurrent/ScheduledFuture;
+.field private final synthetic a:I
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
+.method public constructor <init>(I)V
+    .locals 0
 
-    sget-object v0, Llkp;->a:Llkp;
-
-    sput-object v0, Llku;->d:Llkt;
-
-    return-void
-.end method
-
-.method public constructor <init>(Llhe;Lnox;)V
-    .locals 1
+    iput p1, p0, Llku;->a:I
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    sget-object v0, Llku;->d:Llkt;
-
-    iput-object v0, p0, Llku;->a:Llkt;
-
-    new-instance v0, Llkr;
-
-    invoke-direct {v0, p0, p2}, Llkr;-><init>(Llku;Lnox;)V
-
-    invoke-virtual {p1, v0}, Llhe;->a(Llhd;)V
-
-    new-instance v0, Llks;
-
-    invoke-direct {v0, p0, p2}, Llks;-><init>(Llku;Lnox;)V
-
-    invoke-virtual {p1, v0}, Llhe;->a(Llhd;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()V
-    .locals 3
+.method public final a(Llkc;)V
+    .locals 1
 
-    iget-object v0, p0, Llku;->b:Ljava/util/concurrent/ScheduledFuture;
+    iget v0, p0, Llku;->a:I
 
-    const/4 v1, 0x0
+    packed-switch v0, :pswitch_data_0
 
-    const/4 v2, 0x1
+    invoke-interface {p1}, Llkc;->a()V
 
-    if-eqz v0, :cond_0
-
-    invoke-interface {v0, v2}, Ljava/util/concurrent/ScheduledFuture;->cancel(Z)Z
-
-    iput-object v1, p0, Llku;->b:Ljava/util/concurrent/ScheduledFuture;
-
-    :cond_0
-    iget-object v0, p0, Llku;->c:Ljava/util/concurrent/ScheduledFuture;
-
-    if-eqz v0, :cond_1
-
-    invoke-interface {v0, v2}, Ljava/util/concurrent/ScheduledFuture;->cancel(Z)Z
-
-    iput-object v1, p0, Llku;->c:Ljava/util/concurrent/ScheduledFuture;
-
-    :cond_1
     return-void
+
+    :pswitch_0
+    invoke-interface {p1}, Llkc;->b()V
+
+    return-void
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

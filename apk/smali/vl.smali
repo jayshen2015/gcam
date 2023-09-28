@@ -1,109 +1,162 @@
 .class public final Lvl;
-.super Ljava/lang/Object;
+.super Lqmb;
+
+# interfaces
+.implements Lqmy;
+
+
+# annotations
+.annotation runtime Lqlw;
+    b = "androidx.camera.camera2.pipe.compat.Camera2CameraDevices$findAll$1"
+    c = "Camera2CameraDevices.kt"
+    d = "invokeSuspend"
+    e = {
+        0x22
+    }
+.end annotation
 
 
 # instance fields
-.field public final a:J
+.field a:I
+
+.field final synthetic b:Lvm;
 
 
 # direct methods
-.method private synthetic constructor <init>(J)V
+.method public constructor <init>(Lvm;Lqlh;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lvl;->b:Lvm;
 
-    iput-wide p1, p0, Lvl;->a:J
+    const/4 p1, 0x2
+
+    invoke-direct {p0, p1, p2}, Lqmb;-><init>(ILqlh;)V
 
     return-void
 .end method
 
-.method public static final synthetic a(J)Lvl;
-    .locals 1
-
-    new-instance v0, Lvl;
-
-    invoke-direct {v0, p0, p1}, Lvl;-><init>(J)V
-
-    return-object v0
-.end method
-
-.method public static b(J)Ljava/lang/String;
-    .locals 2
-
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v1, "TimestampNs(value="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0, p0, p1}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    const/16 p0, 0x29
-
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p0
-
-    return-object p0
-.end method
-
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 4
+.method public final create(Ljava/lang/Object;Lqlh;)Lqlh;
+    .locals 1
 
-    iget-wide v0, p0, Lvl;->a:J
+    new-instance p1, Lvl;
 
-    instance-of v2, p1, Lvl;
+    iget-object v0, p0, Lvl;->b:Lvm;
 
-    if-nez v2, :cond_1
+    invoke-direct {p1, v0, p2}, Lvl;-><init>(Lvm;Lqlh;)V
 
-    :cond_0
-    goto :goto_0
+    return-object p1
+.end method
 
-    :cond_1
+.method public final bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 0
+
+    check-cast p1, Lqqj;
+
+    check-cast p2, Lqlh;
+
+    invoke-virtual {p0, p1, p2}, Lqls;->create(Ljava/lang/Object;Lqlh;)Lqlh;
+
+    move-result-object p1
+
+    sget-object p2, Lqks;->a:Lqks;
+
     check-cast p1, Lvl;
 
-    iget-wide v2, p1, Lvl;->a:J
+    invoke-virtual {p1, p2}, Lvl;->invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
 
-    cmp-long p1, v0, v2
+    move-result-object p1
 
-    if-nez p1, :cond_0
+    return-object p1
+.end method
 
-    const/4 p1, 0x1
+.method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 4
 
-    return p1
+    sget-object v0, Lqlp;->a:Lqlp;
 
+    iget v1, p0, Lvl;->a:I
+
+    packed-switch v1, :pswitch_data_0
+
+    invoke-static {p1}, Lqmd;->M(Ljava/lang/Object;)V
+
+    goto :goto_2
+
+    :pswitch_0
+    invoke-static {p1}, Lqmd;->M(Ljava/lang/Object;)V
+
+    iget-object p1, p0, Lvl;->b:Lvm;
+
+    iget-object p1, p1, Lvm;->a:Lvq;
+
+    const/4 v1, 0x1
+
+    iput v1, p0, Lvl;->a:I
+
+    iget-object v1, p1, Lvq;->b:Ljava/lang/Object;
+
+    monitor-enter v1
+
+    :try_start_0
+    iget-object v2, p1, Lvq;->c:Ljava/util/List;
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    monitor-exit v1
+
+    if-nez v2, :cond_0
+
+    goto :goto_0
+
+    :cond_0
+    invoke-interface {v2}, Ljava/util/Collection;->isEmpty()Z
+
+    move-result v1
+
+    if-nez v1, :cond_1
+
+    move-object p1, v2
+
+    goto :goto_1
+
+    :cond_1
     :goto_0
-    const/4 p1, 0x0
+    iget-object v1, p1, Lvq;->a:Lwn;
 
-    return p1
-.end method
+    iget-object v1, v1, Lwn;->b:Lqqf;
 
-.method public final hashCode()I
-    .locals 2
+    new-instance v2, Lvp;
 
-    iget-wide v0, p0, Lvl;->a:J
+    const/4 v3, 0x0
 
-    invoke-static {v0, v1}, Lnm;->e(J)I
+    invoke-direct {v2, p1, v3}, Lvp;-><init>(Lvq;Lqlh;)V
 
-    move-result v0
+    invoke-static {v1, v2, p0}, Lqmd;->k(Lqln;Lqmy;Lqlh;)Ljava/lang/Object;
 
-    return v0
-.end method
+    move-result-object p1
 
-.method public final toString()Ljava/lang/String;
-    .locals 2
-
-    iget-wide v0, p0, Lvl;->a:J
-
-    invoke-static {v0, v1}, Lvl;->b(J)Ljava/lang/String;
-
-    move-result-object v0
+    :goto_1
+    if-ne p1, v0, :cond_2
 
     return-object v0
+
+    :catchall_0
+    move-exception p1
+
+    monitor-exit v1
+
+    throw p1
+
+    :cond_2
+    :goto_2
+    return-object p1
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

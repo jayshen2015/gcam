@@ -1,99 +1,55 @@
-.class public final Lorm;
-.super Lokp;
-
-# interfaces
-.implements Lora;
+.class final Lorm;
+.super Lolo;
 
 
-# static fields
-.field public static final a:Lorm;
+# instance fields
+.field final a:Ljava/lang/Comparable;
+
+.field final synthetic b:Lorp;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
+.method public constructor <init>(Lorp;Ljava/lang/Comparable;)V
+    .locals 0
 
-    new-instance v0, Lorm;
+    iput-object p1, p0, Lorm;->b:Lorp;
 
-    invoke-direct {v0}, Lorm;-><init>()V
+    invoke-direct {p0, p2}, Lolo;-><init>(Ljava/lang/Object;)V
 
-    sput-object v0, Lorm;->a:Lorm;
+    invoke-virtual {p1}, Lorp;->S()Ljava/lang/Comparable;
 
-    return-void
-.end method
+    move-result-object p1
 
-.method private constructor <init>()V
-    .locals 1
-
-    sget-object v0, Lora;->c:Lokv;
-
-    invoke-direct {p0, v0}, Lokp;-><init>(Loky;)V
+    iput-object p1, p0, Lorm;->a:Ljava/lang/Comparable;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final dg(ZZLomk;)Loqh;
-    .locals 0
+.method protected final bridge synthetic a(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 1
 
-    sget-object p1, Lorn;->a:Lorn;
+    iget-object v0, p0, Lorm;->a:Ljava/lang/Comparable;
+
+    invoke-static {p1, v0}, Lorp;->T(Ljava/lang/Comparable;Ljava/lang/Comparable;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    const/4 p1, 0x0
 
     return-object p1
-.end method
 
-.method public final dh()Z
-    .locals 1
+    :cond_0
+    iget-object v0, p0, Lorm;->b:Lorp;
 
-    const/4 v0, 0x1
+    iget-object v0, v0, Lorp;->a:Lomw;
 
-    return v0
-.end method
+    invoke-virtual {v0, p1}, Lomw;->d(Ljava/lang/Comparable;)Ljava/lang/Comparable;
 
-.method public final o()Ljava/util/concurrent/CancellationException;
-    .locals 2
-
-    new-instance v0, Ljava/lang/IllegalStateException;
-
-    const-string v1, "This job is always active"
-
-    invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-.end method
-
-.method public final p(Lopg;)Lope;
-    .locals 0
-
-    sget-object p1, Lorn;->a:Lorn;
+    move-result-object p1
 
     return-object p1
-.end method
-
-.method public final r(Ljava/util/concurrent/CancellationException;)V
-    .locals 0
-
-    return-void
-.end method
-
-.method public final t()Z
-    .locals 1
-
-    const/4 v0, 0x0
-
-    return v0
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .locals 1
-
-    const-string v0, "NonCancellable"
-
-    return-object v0
-.end method
-
-.method public final u()V
-    .locals 0
-
-    return-void
 .end method

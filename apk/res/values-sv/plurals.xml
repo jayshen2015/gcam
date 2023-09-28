@@ -1,12 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <plurals name="accessibility_timelapse_manual_record_speed_desc">
-        <item quantity="other">%d gånger hastigheten för timelapse</item>
-        <item quantity="one">%d gång hastigheten för timelapse</item>
-    </plurals>
-    <plurals name="number_of_cropped_face">
-        <item quantity="other">%d beskurna.</item>
-        <item quantity="one">Ett beskuret.</item>
+    <plurals name="number_of_faces_announcement">
+        <item quantity="other">%1$d ansikten.</item>
+        <item quantity="one">%1$d ansikte.</item>
     </plurals>
     <plurals name="photos_remaining">
         <item quantity="other">Cirka %s foton</item>
@@ -17,8 +13,8 @@
         <item quantity="one">(%1$d app har valts)</item>
     </plurals>
     <plurals name="social_share_info">
-        <item quantity="other">Dela snabbt foton och videor i sociala appar med Kamera. Välj upp till %1$d appar. Det går inte att dela foton och videor som har sparats i Låst mapp.</item>
-        <item quantity="one">Dela snabbt foton och videor i sociala appar med Kamera. Välj %1$d app. Det går inte att dela foton och videor som har sparats i Låst mapp.</item>
+        <item quantity="other">Dela snabbt foton och videor i sociala appar direkt från Kamera. Välj upp till %1$d appar. Det går inte att dela foton och videor som har sparats i Låst mapp.</item>
+        <item quantity="one">Dela snabbt foton och videor i sociala appar direkt från Kamera. Välj %1$d app. Det går inte att dela foton och videor som har sparats i Låst mapp.</item>
     </plurals>
     <plurals name="social_share_select_error">
         <item quantity="other">Välj upp till %1$d appar</item>

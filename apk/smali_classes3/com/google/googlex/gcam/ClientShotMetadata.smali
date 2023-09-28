@@ -3,9 +3,9 @@
 
 
 # instance fields
-.field protected transient a:Z
+.field public transient a:J
 
-.field private transient b:J
+.field protected transient b:Z
 
 
 # direct methods
@@ -20,9 +20,9 @@
 
     const/4 v2, 0x1
 
-    iput-boolean v2, p0, Lcom/google/googlex/gcam/ClientShotMetadata;->a:Z
+    iput-boolean v2, p0, Lcom/google/googlex/gcam/ClientShotMetadata;->b:Z
 
-    iput-wide v0, p0, Lcom/google/googlex/gcam/ClientShotMetadata;->b:J
+    iput-wide v0, p0, Lcom/google/googlex/gcam/ClientShotMetadata;->a:J
 
     return-void
 .end method
@@ -37,7 +37,7 @@
     return-wide v0
 
     :cond_0
-    iget-wide v0, p0, Lcom/google/googlex/gcam/ClientShotMetadata;->b:J
+    iget-wide v0, p0, Lcom/google/googlex/gcam/ClientShotMetadata;->a:J
 
     return-wide v0
 .end method
@@ -50,7 +50,7 @@
     monitor-enter p0
 
     :try_start_0
-    iget-wide v0, p0, Lcom/google/googlex/gcam/ClientShotMetadata;->b:J
+    iget-wide v0, p0, Lcom/google/googlex/gcam/ClientShotMetadata;->a:J
 
     const-wide/16 v2, 0x0
 
@@ -58,18 +58,18 @@
 
     if-eqz v4, :cond_1
 
-    iget-boolean v4, p0, Lcom/google/googlex/gcam/ClientShotMetadata;->a:Z
+    iget-boolean v4, p0, Lcom/google/googlex/gcam/ClientShotMetadata;->b:Z
 
     if-eqz v4, :cond_0
 
     const/4 v4, 0x0
 
-    iput-boolean v4, p0, Lcom/google/googlex/gcam/ClientShotMetadata;->a:Z
+    iput-boolean v4, p0, Lcom/google/googlex/gcam/ClientShotMetadata;->b:Z
 
     invoke-static {v0, v1}, Lcom/google/googlex/gcam/GcamModuleJNI;->delete_ClientShotMetadata(J)V
 
     :cond_0
-    iput-wide v2, p0, Lcom/google/googlex/gcam/ClientShotMetadata;->b:J
+    iput-wide v2, p0, Lcom/google/googlex/gcam/ClientShotMetadata;->a:J
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
@@ -84,22 +84,6 @@
     monitor-exit p0
 
     throw v0
-.end method
-
-.method public final c(Lcom/google/googlex/gcam/LocationData;)V
-    .locals 6
-
-    iget-wide v0, p0, Lcom/google/googlex/gcam/ClientShotMetadata;->b:J
-
-    iget-wide v3, p1, Lcom/google/googlex/gcam/LocationData;->a:J
-
-    move-object v2, p0
-
-    move-object v5, p1
-
-    invoke-static/range {v0 .. v5}, Lcom/google/googlex/gcam/GcamModuleJNI;->ClientShotMetadata_location_set(JLcom/google/googlex/gcam/ClientShotMetadata;JLcom/google/googlex/gcam/LocationData;)V
-
-    return-void
 .end method
 
 .method protected final finalize()V

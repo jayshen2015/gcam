@@ -1,194 +1,332 @@
-.class final Lfne;
-.super Landroid/os/Handler;
+.class public final synthetic Lfne;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field private final a:Ljava/lang/ref/WeakReference;
+.field public final synthetic a:Lfnf;
+
+.field private final synthetic b:I
 
 
 # direct methods
-.method public constructor <init>(Lfng;)V
-    .locals 1
+.method public synthetic constructor <init>(Lfnf;I)V
+    .locals 0
 
-    invoke-direct {p0}, Landroid/os/Handler;-><init>()V
+    iput p2, p0, Lfne;->b:I
 
-    new-instance v0, Ljava/lang/ref/WeakReference;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {v0, p1}, Ljava/lang/ref/WeakReference;-><init>(Ljava/lang/Object;)V
-
-    iput-object v0, p0, Lfne;->a:Ljava/lang/ref/WeakReference;
+    iput-object p1, p0, Lfne;->a:Lfnf;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final handleMessage(Landroid/os/Message;)V
-    .locals 7
+.method public final run()V
+    .locals 13
 
-    iget-object v0, p0, Lfne;->a:Ljava/lang/ref/WeakReference;
+    iget v0, p0, Lfne;->b:I
 
-    invoke-virtual {v0}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
+    const/4 v1, 0x1
 
-    move-result-object v0
+    packed-switch v0, :pswitch_data_0
 
-    check-cast v0, Lfng;
+    iget-object v0, p0, Lfne;->a:Lfnf;
 
-    if-nez v0, :cond_0
+    invoke-virtual {v0}, Lfnf;->a()V
 
     return-void
-
-    :cond_0
-    iget v1, p1, Landroid/os/Message;->what:I
-
-    packed-switch v1, :pswitch_data_0
-
-    new-instance v0, Ljava/lang/AssertionError;
-
-    iget p1, p1, Landroid/os/Message;->what:I
-
-    invoke-direct {v0, p1}, Ljava/lang/AssertionError;-><init>(I)V
-
-    throw v0
 
     :pswitch_0
-    invoke-virtual {v0}, Lfng;->E()V
+    iget-object v0, p0, Lfne;->a:Lfnf;
 
-    return-void
+    iget-object v2, v0, Lfnf;->c:Lfvk;
 
-    :pswitch_1
-    iget-object p1, v0, Lfng;->m:Lcom/google/android/apps/camera/legacy/lightcycle/storage/LocalSessionStorage;
+    iget-object v3, v0, Lfnf;->a:Ljns;
 
-    iget-object v1, p1, Lcom/google/android/apps/camera/legacy/lightcycle/storage/LocalSessionStorage;->b:Lgxa;
+    iget-object v3, v3, Ljns;->c:Lcom/google/android/apps/camera/ui/views/MainActivityLayout;
 
-    iget-object v1, v1, Lgxa;->d:Lgxv;
+    iget-object v4, v0, Lfnf;->b:Lelw;
 
-    invoke-virtual {v1}, Lgxv;->b()Z
+    iget-object v5, v2, Lfvk;->b:Llda;
 
-    move-result v2
+    invoke-interface {v5}, Llda;->fA()Ljava/lang/Object;
 
-    if-nez v2, :cond_1
+    move-result-object v5
 
-    sget-object p1, Lfng;->b:Lnak;
+    check-cast v5, Ljava/lang/Boolean;
 
-    invoke-virtual {p1}, Lnaf;->b()Lnaz;
+    invoke-virtual {v5}, Ljava/lang/Boolean;->booleanValue()Z
 
-    move-result-object p1
+    move-result v5
 
-    const-string v1, "Could not create temporary mosaic file. Not able to stitch."
+    if-eqz v5, :cond_0
 
-    const/16 v2, 0x95a
+    sget-object v1, Lbug;->o:Lbug;
 
-    invoke-static {p1, v1, v2}, Ld;->g(Lnaz;Ljava/lang/String;C)V
+    goto/16 :goto_2
+
+    :cond_0
+    new-instance v5, Landroid/widget/FrameLayout;
+
+    iget-object v6, v2, Lfvk;->a:Landroid/content/Context;
+
+    invoke-direct {v5, v6}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
+
+    iget-object v6, v2, Lfvk;->a:Landroid/content/Context;
+
+    const v7, 0x7f0e0071
+
+    invoke-static {v6, v7, v5}, Landroid/view/View;->inflate(Landroid/content/Context;ILandroid/view/ViewGroup;)Landroid/view/View;
+
+    iget-object v6, v2, Lfvk;->a:Landroid/content/Context;
+
+    invoke-virtual {v6}, Landroid/content/Context;->getDisplay()Landroid/view/Display;
+
+    move-result-object v6
+
+    if-nez v6, :cond_1
+
+    sget-object v6, Ljrz;->a:Ljrz;
+
+    goto :goto_0
+
+    :cond_1
+    iget-object v7, v2, Lfvk;->a:Landroid/content/Context;
+
+    invoke-static {v6, v7}, Ljrz;->a(Landroid/view/Display;Landroid/content/Context;)Ljrz;
+
+    move-result-object v6
+
+    :goto_0
+    const v7, 0x7f0b01a5
+
+    invoke-virtual {v5, v7}, Landroid/widget/FrameLayout;->findViewById(I)Landroid/view/View;
+
+    move-result-object v7
+
+    check-cast v7, Landroid/widget/ImageView;
+
+    const v8, 0x7f0b01a6
+
+    invoke-virtual {v5, v8}, Landroid/widget/FrameLayout;->findViewById(I)Landroid/view/View;
+
+    move-result-object v8
+
+    check-cast v8, Landroid/widget/TextView;
+
+    const v9, 0x7f0b01a4
+
+    invoke-virtual {v5, v9}, Landroid/widget/FrameLayout;->findViewById(I)Landroid/view/View;
+
+    move-result-object v9
+
+    check-cast v9, Landroid/widget/TextView;
+
+    invoke-virtual {v6}, Ljrz;->ordinal()I
+
+    move-result v6
+
+    const v10, 0x7f08051c
+
+    const v11, 0x7f14023b
+
+    const v12, 0x7f14023e
+
+    packed-switch v6, :pswitch_data_1
+
+    iget-object v6, v2, Lfvk;->a:Landroid/content/Context;
+
+    invoke-virtual {v6, v12}, Landroid/content/Context;->getText(I)Ljava/lang/CharSequence;
+
+    move-result-object v6
+
+    invoke-virtual {v8, v6}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+
+    iget-object v6, v2, Lfvk;->a:Landroid/content/Context;
+
+    invoke-virtual {v6, v11}, Landroid/content/Context;->getText(I)Ljava/lang/CharSequence;
+
+    move-result-object v6
+
+    invoke-virtual {v9, v6}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+
+    iget-object v6, v2, Lfvk;->a:Landroid/content/Context;
+
+    invoke-virtual {v6, v10}, Landroid/content/Context;->getDrawable(I)Landroid/graphics/drawable/Drawable;
+
+    move-result-object v6
+
+    invoke-virtual {v7, v6}, Landroid/widget/ImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
 
     goto :goto_1
 
-    :cond_1
-    invoke-virtual {v1}, Lgxv;->a()Ljava/io/File;
+    :pswitch_1
+    iget-object v6, v2, Lfvk;->a:Landroid/content/Context;
 
-    move-result-object v1
+    const v10, 0x7f140240
 
-    invoke-virtual {v1}, Ljava/io/File;->getPath()Ljava/lang/String;
+    invoke-virtual {v6, v10}, Landroid/content/Context;->getText(I)Ljava/lang/CharSequence;
 
-    move-result-object v1
+    move-result-object v6
 
-    iget-object v2, v0, Lfng;->c:Lgqa;
+    invoke-virtual {v8, v6}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    invoke-interface {v2}, Lgqa;->a()J
+    iget-object v6, v2, Lfvk;->a:Landroid/content/Context;
 
-    move-result-wide v2
+    const v8, 0x7f14023d
 
-    const-wide/32 v4, 0xf4240
+    invoke-virtual {v6, v8}, Landroid/content/Context;->getText(I)Ljava/lang/CharSequence;
 
-    div-long/2addr v2, v4
+    move-result-object v6
 
-    iget-boolean v4, v0, Lfng;->G:Z
+    invoke-virtual {v9, v6}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    const/4 v5, 0x0
+    iget-object v6, v2, Lfvk;->a:Landroid/content/Context;
 
-    const/4 v6, 0x1
+    const v8, 0x7f08051b
 
-    if-nez v4, :cond_3
+    invoke-virtual {v6, v8}, Landroid/content/Context;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
-    sget-object v4, Lewr;->a:Ljava/lang/Object;
+    move-result-object v6
 
-    invoke-static {}, Lcom/google/android/apps/lightcycle/panorama/LightCycleNative;->GetNumCapturedTargets()I
+    invoke-virtual {v7, v6}, Landroid/widget/ImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    move-result v4
-
-    if-gtz v4, :cond_2
-
-    goto :goto_0
-
-    :cond_2
-    const/4 v6, 0x0
-
-    goto :goto_0
-
-    :cond_3
-    :goto_0
-    long-to-int v3, v2
-
-    sget-object v2, Lewr;->a:Ljava/lang/Object;
-
-    monitor-enter v2
-
-    :try_start_0
-    invoke-static {v6, v1, v1, v3}, Lcom/google/android/apps/lightcycle/panorama/LightCycleNative;->FinishCapture(ZLjava/lang/String;Ljava/lang/String;I)V
-
-    invoke-static {v5}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
-
-    move-result-object v1
-
-    sput-object v1, Lewr;->b:Ljava/lang/Boolean;
-
-    monitor-exit v2
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    new-instance v1, Lfxf;
-
-    invoke-direct {v1, v0, p1}, Lfxf;-><init>(Lfng;Lcom/google/android/apps/camera/legacy/lightcycle/storage/LocalSessionStorage;)V
-
-    new-instance v2, Lexw;
-
-    const/4 v3, 0x0
-
-    invoke-direct {v2, p1, v1, v3}, Lexw;-><init>(Lcom/google/android/apps/camera/legacy/lightcycle/storage/LocalSessionStorage;Lfxf;[B)V
-
-    invoke-virtual {v2}, Lexw;->start()V
-
-    :goto_1
-    invoke-virtual {v0}, Lfng;->E()V
-
-    return-void
-
-    :catchall_0
-    move-exception p1
-
-    :try_start_1
-    monitor-exit v2
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    throw p1
+    goto :goto_1
 
     :pswitch_2
-    return-void
+    iget-object v6, v2, Lfvk;->a:Landroid/content/Context;
+
+    const v10, 0x7f14023f
+
+    invoke-virtual {v6, v10}, Landroid/content/Context;->getText(I)Ljava/lang/CharSequence;
+
+    move-result-object v6
+
+    invoke-virtual {v8, v6}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+
+    iget-object v6, v2, Lfvk;->a:Landroid/content/Context;
+
+    const v8, 0x7f14023c
+
+    invoke-virtual {v6, v8}, Landroid/content/Context;->getText(I)Ljava/lang/CharSequence;
+
+    move-result-object v6
+
+    invoke-virtual {v9, v6}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+
+    iget-object v6, v2, Lfvk;->a:Landroid/content/Context;
+
+    const v8, 0x7f08051a
+
+    invoke-virtual {v6, v8}, Landroid/content/Context;->getDrawable(I)Landroid/graphics/drawable/Drawable;
+
+    move-result-object v6
+
+    invoke-virtual {v7, v6}, Landroid/widget/ImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
+
+    goto :goto_1
 
     :pswitch_3
-    invoke-virtual {v0}, Lfng;->w()V
+    iget-object v6, v2, Lfvk;->a:Landroid/content/Context;
+
+    invoke-virtual {v6, v12}, Landroid/content/Context;->getText(I)Ljava/lang/CharSequence;
+
+    move-result-object v6
+
+    invoke-virtual {v8, v6}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+
+    iget-object v6, v2, Lfvk;->a:Landroid/content/Context;
+
+    invoke-virtual {v6, v11}, Landroid/content/Context;->getText(I)Ljava/lang/CharSequence;
+
+    move-result-object v6
+
+    invoke-virtual {v9, v6}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+
+    iget-object v6, v2, Lfvk;->a:Landroid/content/Context;
+
+    invoke-virtual {v6, v10}, Landroid/content/Context;->getDrawable(I)Landroid/graphics/drawable/Drawable;
+
+    move-result-object v6
+
+    invoke-virtual {v7, v6}, Landroid/widget/ImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
+
+    :goto_1
+    new-instance v6, Lish;
+
+    invoke-direct {v6}, Lish;-><init>()V
+
+    iput-object v5, v6, Lish;->c:Landroid/view/View;
+
+    iput-object v3, v6, Lish;->b:Landroid/view/ViewGroup;
+
+    const-wide/16 v7, 0x4
+
+    invoke-static {v7, v8}, Lj$/time/Duration;->ofSeconds(J)Lj$/time/Duration;
+
+    move-result-object v3
+
+    iput-object v3, v6, Lish;->a:Lj$/time/Duration;
+
+    iput-object v4, v6, Lish;->i:Lelw;
+
+    iput v1, v6, Lish;->k:I
+
+    invoke-virtual {v6}, Lish;->a()Lisi;
+
+    move-result-object v1
+
+    new-instance v3, Lfvj;
+
+    invoke-direct {v3, v2}, Lfvj;-><init>(Lfvk;)V
+
+    new-instance v2, Lise;
+
+    invoke-direct {v2, v1, v3}, Lise;-><init>(Lisi;Ljava/lang/Runnable;)V
+
+    iput-object v2, v1, Lisi;->f:Ljava/lang/Runnable;
+
+    invoke-virtual {v1}, Lisi;->j()V
+
+    new-instance v2, Lfvi;
+
+    invoke-direct {v2, v1}, Lfvi;-><init>(Lisi;)V
+
+    move-object v1, v2
+
+    :goto_2
+    iput-object v1, v0, Lfnf;->f:Llie;
 
     return-void
 
-    nop
+    :pswitch_4
+    iget-object v0, p0, Lfne;->a:Lfnf;
+
+    iget-object v2, v0, Lfnf;->d:Landroid/os/Handler;
+
+    new-instance v3, Lfne;
+
+    invoke-direct {v3, v0, v1}, Lfne;-><init>(Lfnf;I)V
+
+    invoke-virtual {v2, v3}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
+
+    return-void
 
     :pswitch_data_0
-    .packed-switch 0x65
+    .packed-switch 0x0
+        :pswitch_4
+        :pswitch_0
+    .end packed-switch
+
+    :pswitch_data_1
+    .packed-switch 0x0
         :pswitch_3
         :pswitch_2
-        :pswitch_2
         :pswitch_1
-        :pswitch_0
     .end packed-switch
 .end method

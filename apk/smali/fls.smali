@@ -1,193 +1,150 @@
-.class public final Lfls;
-.super Ljava/lang/Object;
-
-# interfaces
-.implements Lftf;
-.implements Lkad;
+.class Lfls;
+.super Lflr;
 
 
 # instance fields
-.field private a:Lftf;
+.field final synthetic b:Lfly;
 
 
 # direct methods
-.method public constructor <init>(Lftf;)V
+.method public constructor <init>(Lfly;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lfls;->b:Lfly;
 
-    iput-object p1, p0, Lfls;->a:Lftf;
+    invoke-direct {p0}, Lflr;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final declared-synchronized a()V
-    .locals 1
-
-    monitor-enter p0
-
-    :try_start_0
-    iget-object v0, p0, Lfls;->a:Lftf;
-
-    if-eqz v0, :cond_0
-
-    invoke-interface {v0}, Lftf;->a()V
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    :cond_0
-    monitor-exit p0
-
-    return-void
-
-    :catchall_0
-    move-exception v0
-
-    monitor-exit p0
-
-    throw v0
-.end method
-
-.method public final declared-synchronized b(J)V
-    .locals 1
-
-    monitor-enter p0
-
-    :try_start_0
-    iget-object v0, p0, Lfls;->a:Lftf;
-
-    if-eqz v0, :cond_0
-
-    invoke-interface {v0, p1, p2}, Lftf;->b(J)V
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    :cond_0
-    monitor-exit p0
-
-    return-void
-
-    :catchall_0
-    move-exception p1
-
-    monitor-exit p0
-
-    throw p1
-.end method
-
-.method public final declared-synchronized c()V
-    .locals 1
-
-    monitor-enter p0
-
-    :try_start_0
-    iget-object v0, p0, Lfls;->a:Lftf;
-
-    if-eqz v0, :cond_0
-
-    invoke-interface {v0}, Lftf;->c()V
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    :cond_0
-    monitor-exit p0
-
-    return-void
-
-    :catchall_0
-    move-exception v0
-
-    monitor-exit p0
-
-    throw v0
-.end method
-
-.method public final declared-synchronized close()V
-    .locals 1
-
-    monitor-enter p0
-
-    const/4 v0, 0x0
-
-    :try_start_0
-    iput-object v0, p0, Lfls;->a:Lftf;
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    monitor-exit p0
-
-    return-void
-
-    :catchall_0
-    move-exception v0
-
-    monitor-exit p0
-
-    throw v0
-.end method
-
-.method public final declared-synchronized d(F)V
-    .locals 1
-
-    monitor-enter p0
-
-    :try_start_0
-    iget-object v0, p0, Lfls;->a:Lftf;
-
-    if-eqz v0, :cond_0
-
-    invoke-interface {v0, p1}, Lftf;->d(F)V
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    :cond_0
-    monitor-exit p0
-
-    return-void
-
-    :catchall_0
-    move-exception p1
-
-    monitor-exit p0
-
-    throw p1
-.end method
-
-.method public final declared-synchronized e(FI)V
+.method public a()V
     .locals 0
 
-    monitor-enter p0
+    return-void
+.end method
 
-    monitor-exit p0
+.method public final f()V
+    .locals 2
+
+    iget-object v0, p0, Lfls;->b:Lfly;
+
+    iget-object v0, v0, Lfly;->g:Ljlb;
+
+    const/4 v1, 0x1
+
+    invoke-interface {v0, v1}, Ljlb;->H(Z)V
+
+    iget-object v0, p0, Lfls;->b:Lfly;
+
+    iget-object v0, v0, Lfly;->h:Ljje;
+
+    invoke-interface {v0}, Ljje;->g()V
+
+    iget-object v0, p0, Lfls;->b:Lfly;
+
+    iget-object v0, v0, Lfly;->h:Ljje;
+
+    invoke-interface {v0}, Ljje;->e()V
+
+    iget-object v0, p0, Lfls;->b:Lfly;
+
+    iget-object v0, v0, Lfly;->i:Lgtg;
+
+    invoke-virtual {v0}, Lgtg;->l()V
+
+    iget-object v0, p0, Lfls;->b:Lfly;
+
+    iget-object v0, v0, Lfly;->l:Lgvb;
+
+    const-class v1, Lfly;
+
+    invoke-interface {v0, v1}, Lgvb;->a(Ljava/lang/Class;)V
+
+    iget-object v0, p0, Lfls;->b:Lfly;
+
+    iget-object v0, v0, Lfly;->j:Ljgq;
+
+    const/4 v1, 0x0
+
+    invoke-interface {v0, v1}, Ljgq;->p(Z)V
+
+    iget-object v0, p0, Lfls;->b:Lfly;
+
+    iget-object v0, v0, Lfly;->k:Lcom/google/android/apps/camera/bottombar/BottomBarController;
+
+    invoke-virtual {v0, v1}, Lcom/google/android/apps/camera/bottombar/BottomBarController;->setClickable(Z)V
+
+    iget-object v0, p0, Lfls;->b:Lfly;
+
+    iget-object v0, v0, Lfly;->g:Ljlb;
+
+    invoke-interface {v0}, Ljlb;->O()V
+
+    iget-object v0, p0, Lfls;->b:Lfly;
+
+    iget-object v0, v0, Lfly;->n:Lkas;
+
+    invoke-interface {v0}, Lkas;->g()V
+
+    iget-object v0, p0, Lfls;->b:Lfly;
+
+    iget-object v0, v0, Lfly;->n:Lkas;
+
+    invoke-interface {v0, v1}, Lkas;->v(Z)V
 
     return-void
 .end method
 
-.method public final declared-synchronized f(FJ)V
-    .locals 1
+.method public final g()V
+    .locals 3
 
-    monitor-enter p0
+    iget-object v0, p0, Lfls;->b:Lfly;
 
-    :try_start_0
-    iget-object v0, p0, Lfls;->a:Lftf;
+    iget-object v0, v0, Lfly;->g:Ljlb;
 
-    if-eqz v0, :cond_0
+    invoke-interface {v0}, Ljlb;->m()V
 
-    invoke-interface {v0, p1, p2, p3}, Lftf;->f(FJ)V
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    iget-object v0, p0, Lfls;->b:Lfly;
 
-    :cond_0
-    monitor-exit p0
+    iget-object v0, v0, Lfly;->i:Lgtg;
+
+    invoke-virtual {v0}, Lgtg;->j()V
+
+    iget-object v0, p0, Lfls;->b:Lfly;
+
+    iget-object v0, v0, Lfly;->j:Ljgq;
+
+    const/4 v1, 0x1
+
+    invoke-interface {v0, v1}, Ljgq;->p(Z)V
+
+    iget-object v0, p0, Lfls;->b:Lfly;
+
+    iget-object v0, v0, Lfly;->k:Lcom/google/android/apps/camera/bottombar/BottomBarController;
+
+    invoke-virtual {v0, v1}, Lcom/google/android/apps/camera/bottombar/BottomBarController;->setClickable(Z)V
+
+    iget-object v0, p0, Lfls;->b:Lfly;
+
+    iget-object v0, v0, Lfly;->l:Lgvb;
+
+    const-class v2, Lfly;
+
+    invoke-interface {v0, v2}, Lgvb;->b(Ljava/lang/Class;)V
+
+    iget-object v0, p0, Lfls;->b:Lfly;
+
+    iget-object v0, v0, Lfly;->n:Lkas;
+
+    invoke-interface {v0, v1}, Lkas;->v(Z)V
+
+    iget-object v0, p0, Lfls;->b:Lfly;
+
+    iget-object v0, v0, Lfly;->n:Lkas;
+
+    invoke-interface {v0}, Lkas;->h()V
 
     return-void
-
-    :catchall_0
-    move-exception p1
-
-    monitor-exit p0
-
-    throw p1
 .end method

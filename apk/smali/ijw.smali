@@ -1,32 +1,48 @@
 .class public final Lijw;
-.super Landroid/animation/AnimatorListenerAdapter;
-
-
-# instance fields
-.field final synthetic a:Lcom/google/android/apps/camera/ui/zoomlock/ZoomLockView;
+.super Lijs;
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/apps/camera/ui/zoomlock/ZoomLockView;)V
-    .locals 0
+.method public constructor <init>(Lmcu;)V
+    .locals 1
 
-    iput-object p1, p0, Lijw;->a:Lcom/google/android/apps/camera/ui/zoomlock/ZoomLockView;
+    invoke-static {}, Lijv;->values()[Lijv;
 
-    invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
+    move-result-object v0
+
+    invoke-direct {p0, p1, v0}, Lijs;-><init>(Lmcx;[Ljava/lang/Enum;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onAnimationEnd(Landroid/animation/Animator;Z)V
+.method public final a()V
     .locals 0
 
-    iget-object p1, p0, Lijw;->a:Lcom/google/android/apps/camera/ui/zoomlock/ZoomLockView;
-
-    const/4 p2, 0x1
-
-    iput-boolean p2, p1, Lcom/google/android/apps/camera/ui/zoomlock/ZoomLockView;->g:Z
+    invoke-super {p0}, Lijs;->a()V
 
     return-void
+.end method
+
+.method public final c(Lijv;Lijv;)I
+    .locals 2
+
+    invoke-virtual {p0, p2}, Lijs;->g(Ljava/lang/Enum;)J
+
+    move-result-wide v0
+
+    invoke-virtual {p0, p1}, Lijs;->g(Ljava/lang/Enum;)J
+
+    move-result-wide p1
+
+    sub-long/2addr v0, p1
+
+    const-wide/32 p1, 0xf4240
+
+    div-long/2addr v0, p1
+
+    long-to-int p1, v0
+
+    return p1
 .end method

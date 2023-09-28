@@ -1,12 +1,7 @@
-.class final Lblg;
-.super Ljava/io/IOException;
+.class public interface abstract Lblg;
+.super Ljava/lang/Object;
 
 
-# direct methods
-.method public constructor <init>(Ljava/lang/String;)V
-    .locals 0
-
-    invoke-direct {p0, p1}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
-
-    return-void
+# virtual methods
+.method public abstract g(II)V
 .end method

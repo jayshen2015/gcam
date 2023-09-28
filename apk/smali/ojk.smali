@@ -1,38 +1,44 @@
-.class public final Lojk;
-.super Ljava/lang/Object;
+.class final Lojk;
+.super Loii;
 
 
-# static fields
-.field public static final a:Lojk;
+# instance fields
+.field final synthetic f:Lojl;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
-
-    new-instance v0, Lojk;
-
-    invoke-direct {v0}, Lojk;-><init>()V
-
-    sput-object v0, Lojk;->a:Lojk;
-
-    return-void
-.end method
-
-.method private constructor <init>()V
+.method public constructor <init>(Lojl;Lojq;Ljava/lang/CharSequence;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lojk;->f:Lojl;
+
+    invoke-direct {p0, p2, p3}, Loii;-><init>(Lojq;Ljava/lang/CharSequence;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final toString()Ljava/lang/String;
-    .locals 1
+.method public final a(I)I
+    .locals 0
 
-    const-string v0, "kotlin.Unit"
+    add-int/lit8 p1, p1, 0x1
 
-    return-object v0
+    return p1
+.end method
+
+.method public final b(I)I
+    .locals 2
+
+    iget-object v0, p0, Lojk;->f:Lojl;
+
+    iget-object v0, v0, Lojl;->a:Loir;
+
+    iget-object v1, p0, Lojk;->b:Ljava/lang/CharSequence;
+
+    invoke-virtual {v0, v1, p1}, Loir;->c(Ljava/lang/CharSequence;I)I
+
+    move-result p1
+
+    return p1
 .end method

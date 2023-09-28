@@ -1,60 +1,43 @@
-.class final Lhzr;
-.super Liag;
+.class public final synthetic Lhzr;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Llij;
 
 
 # instance fields
-.field final synthetic a:Lhzu;
+.field public final synthetic a:Lhzu;
 
 
 # direct methods
-.method public constructor <init>(Lhzu;)V
+.method public synthetic constructor <init>(Lhzu;)V
     .locals 0
 
-    iput-object p1, p0, Lhzr;->a:Lhzu;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0, p1}, Liag;-><init>(Liaj;)V
+    iput-object p1, p0, Lhzr;->a:Lhzu;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()V
+.method public final fB(Ljava/lang/Object;)V
     .locals 2
 
     iget-object v0, p0, Lhzr;->a:Lhzu;
 
-    iget-object v0, v0, Lhzu;->a:Lhiu;
+    check-cast p1, Ljava/lang/Boolean;
 
-    invoke-virtual {v0}, Lhiu;->e()V
+    invoke-virtual {p1}, Ljava/lang/Boolean;->booleanValue()Z
 
-    iget-object v0, p0, Lhzr;->a:Lhzu;
+    move-result p1
 
-    iget-object v1, v0, Lhzu;->a:Lhiu;
+    sget-object v1, Lhzt;->e:Lhzt;
 
-    iget-object v0, v0, Lhzu;->b:Lhiw;
+    xor-int/lit8 p1, p1, 0x1
 
-    invoke-virtual {v1, v0}, Lhiu;->g(Lhiw;)V
-
-    return-void
-.end method
-
-.method public final d()V
-    .locals 2
-
-    iget-object v0, p0, Lhzr;->a:Lhzu;
-
-    iget-object v0, v0, Lhzu;->a:Lhiu;
-
-    invoke-virtual {v0}, Lhiu;->e()V
-
-    iget-object v0, p0, Lhzr;->a:Lhzu;
-
-    iget-object v1, v0, Lhzu;->a:Lhiu;
-
-    iget-object v0, v0, Lhzu;->e:Lhiw;
-
-    invoke-virtual {v1, v0}, Lhiu;->g(Lhiw;)V
+    invoke-virtual {v0, v1, p1}, Lhzu;->b(Lhzt;Z)V
 
     return-void
 .end method

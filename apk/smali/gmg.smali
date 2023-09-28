@@ -1,69 +1,43 @@
-.class public final synthetic Lgmg;
+.class public final Lgmg;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Loiw;
-
-
-# instance fields
-.field public final synthetic a:Lkli;
-
-.field public final synthetic b:Lftj;
-
-.field public final synthetic c:Lika;
-
-.field public final synthetic d:Ldhi;
-
-.field public final synthetic e:Lmqp;
-
-.field public final synthetic f:Ldja;
+.implements Lglr;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lkli;Ldja;Lftj;Lika;Ldhi;Lmqp;[B[B[B[B[B)V
+.method public constructor <init>()V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lgmg;->a:Lkli;
-
-    iput-object p2, p0, Lgmg;->f:Ldja;
-
-    iput-object p3, p0, Lgmg;->b:Lftj;
-
-    iput-object p4, p0, Lgmg;->c:Lika;
-
-    iput-object p5, p0, Lgmg;->d:Ldhi;
-
-    iput-object p6, p0, Lgmg;->e:Lmqp;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final get()Ljava/lang/Object;
-    .locals 7
+.method public final a(Lgls;)Lgmi;
+    .locals 2
 
-    iget-object v1, p0, Lgmg;->a:Lkli;
+    new-instance v0, Ljava/util/ArrayList;
 
-    iget-object v0, p0, Lgmg;->f:Ldja;
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    iget-object v2, p0, Lgmg;->b:Lftj;
+    iget-object p1, p1, Lgls;->b:Ljava/util/List;
 
-    iget-object v3, p0, Lgmg;->c:Lika;
+    invoke-interface {p1}, Ljava/util/List;->isEmpty()Z
 
-    iget-object v4, p0, Lgmg;->d:Ldhi;
+    move-result p1
 
-    iget-object v5, p0, Lgmg;->e:Lmqp;
+    const-string v1, "no-images"
 
-    invoke-interface {v1}, Lkli;->r()Ljava/util/List;
+    invoke-static {v1, p1, v0}, Lfcy;->g(Ljava/lang/String;ZLjava/util/List;)V
 
-    const/4 v6, 0x0
+    const-string p1, "cancelled"
 
-    invoke-static/range {v0 .. v6}, Lewq;->h(Ldja;Lkli;Lftj;Lika;Ldhi;Lmqp;Z)Lkfl;
+    invoke-static {p1, v0}, Lfcy;->f(Ljava/lang/String;Ljava/util/List;)Lgmi;
 
-    move-result-object v0
+    move-result-object p1
 
-    return-object v0
+    return-object p1
 .end method

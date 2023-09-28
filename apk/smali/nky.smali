@@ -1,200 +1,84 @@
-.class public final Lnky;
-.super Lnws;
-
-# interfaces
-.implements Lnxz;
+.class public final enum Lnky;
+.super Ljava/lang/Enum;
 
 
 # static fields
-.field public static final f:Lnky;
+.field public static final enum a:Lnky;
 
-.field private static volatile g:Lnyf;
+.field public static final enum b:Lnky;
 
+.field public static final enum c:Lnky;
 
-# instance fields
-.field public a:I
-
-.field public b:I
-
-.field public c:I
-
-.field public d:I
-
-.field public e:Z
+.field private static final synthetic d:[Lnky;
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 2
+    .locals 7
 
     new-instance v0, Lnky;
 
-    invoke-direct {v0}, Lnky;-><init>()V
-
-    sput-object v0, Lnky;->f:Lnky;
-
-    const-class v1, Lnky;
-
-    invoke-static {v1, v0}, Lnws;->aa(Ljava/lang/Class;Lnws;)V
-
-    return-void
-.end method
-
-.method private constructor <init>()V
-    .locals 0
-
-    invoke-direct {p0}, Lnws;-><init>()V
-
-    return-void
-.end method
-
-
-# virtual methods
-.method protected final a(ILjava/lang/Object;)Ljava/lang/Object;
-    .locals 3
-
-    add-int/lit8 p1, p1, -0x1
-
-    const/4 p2, 0x1
-
-    packed-switch p1, :pswitch_data_0
-
-    :pswitch_0
-    const/4 p1, 0x0
-
-    return-object p1
-
-    :pswitch_1
-    sget-object p1, Lnky;->g:Lnyf;
-
-    if-nez p1, :cond_1
-
-    const-class p2, Lnky;
-
-    monitor-enter p2
-
-    :try_start_0
-    sget-object p1, Lnky;->g:Lnyf;
-
-    if-nez p1, :cond_0
-
-    new-instance p1, Lnwo;
-
-    sget-object v0, Lnky;->f:Lnky;
-
-    invoke-direct {p1, v0}, Lnwo;-><init>(Lnws;)V
-
-    sput-object p1, Lnky;->g:Lnyf;
-
-    :cond_0
-    monitor-exit p2
-
-    goto :goto_0
-
-    :catchall_0
-    move-exception p1
-
-    monitor-exit p2
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw p1
-
-    :cond_1
-    :goto_0
-    return-object p1
-
-    :pswitch_2
-    sget-object p1, Lnky;->f:Lnky;
-
-    return-object p1
-
-    :pswitch_3
-    new-instance p1, Lnwn;
-
-    sget-object p2, Lnky;->f:Lnky;
-
-    invoke-direct {p1, p2}, Lnwn;-><init>(Lnws;)V
-
-    return-object p1
-
-    :pswitch_4
-    new-instance p1, Lnky;
-
-    invoke-direct {p1}, Lnky;-><init>()V
-
-    return-object p1
-
-    :pswitch_5
-    const-string p1, "a"
-
-    const-string v0, "\u0001\u0004\u0000\u0001\u0001\u0004\u0004\u0000\u0000\u0000\u0001\u100c\u0000\u0002\u100c\u0001\u0003\u1004\u0002\u0004\u1007\u0003"
-
-    const/4 v1, 0x7
-
-    new-array v1, v1, [Ljava/lang/Object;
+    const-string v1, "OPEN"
 
     const/4 v2, 0x0
 
-    aput-object p1, v1, v2
+    invoke-direct {v0, v1, v2}, Lnky;-><init>(Ljava/lang/String;I)V
 
-    const-string p1, "b"
+    sput-object v0, Lnky;->a:Lnky;
 
-    aput-object p1, v1, p2
+    new-instance v1, Lnky;
 
-    const/4 p1, 0x2
+    const-string v3, "WEP"
 
-    sget-object p2, Lnkx;->a:Lnww;
+    const/4 v4, 0x1
 
-    aput-object p2, v1, p1
+    invoke-direct {v1, v3, v4}, Lnky;-><init>(Ljava/lang/String;I)V
 
-    const/4 p1, 0x3
+    sput-object v1, Lnky;->b:Lnky;
 
-    const-string p2, "c"
+    new-instance v3, Lnky;
 
-    aput-object p2, v1, p1
+    const-string v5, "WPA"
 
-    const/4 p1, 0x4
+    const/4 v6, 0x2
 
-    sget-object p2, Lnkx;->c:Lnww;
+    invoke-direct {v3, v5, v6}, Lnky;-><init>(Ljava/lang/String;I)V
 
-    aput-object p2, v1, p1
+    sput-object v3, Lnky;->c:Lnky;
 
-    const/4 p1, 0x5
+    const/4 v5, 0x3
 
-    const-string p2, "d"
+    new-array v5, v5, [Lnky;
 
-    aput-object p2, v1, p1
+    aput-object v0, v5, v2
 
-    const/4 p1, 0x6
+    aput-object v1, v5, v4
 
-    const-string p2, "e"
+    aput-object v3, v5, v6
 
-    aput-object p2, v1, p1
+    sput-object v5, Lnky;->d:[Lnky;
 
-    sget-object p1, Lnky;->f:Lnky;
+    return-void
+.end method
 
-    invoke-static {p1, v0, v1}, Lnky;->X(Lnxy;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/Object;
+.method private constructor <init>(Ljava/lang/String;I)V
+    .locals 0
 
-    move-result-object p1
+    invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
-    return-object p1
+    return-void
+.end method
 
-    :pswitch_6
-    invoke-static {p2}, Ljava/lang/Byte;->valueOf(B)Ljava/lang/Byte;
+.method public static values()[Lnky;
+    .locals 1
 
-    move-result-object p1
+    sget-object v0, Lnky;->d:[Lnky;
 
-    return-object p1
+    invoke-virtual {v0}, [Lnky;->clone()Ljava/lang/Object;
 
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_6
-        :pswitch_0
-        :pswitch_5
-        :pswitch_4
-        :pswitch_3
-        :pswitch_2
-        :pswitch_1
-    .end packed-switch
+    move-result-object v0
+
+    check-cast v0, [Lnky;
+
+    return-object v0
 .end method

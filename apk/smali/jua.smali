@@ -1,59 +1,20 @@
 .class public final Ljua;
 .super Ljava/lang/Object;
 
-# interfaces
-.implements Lnoj;
-
 
 # instance fields
-.field final synthetic a:Ljava/lang/Object;
+.field public a:D
 
-.field private final synthetic b:I
+.field public b:D
+
+.field public c:D
+
+.field public d:D
 
 
 # direct methods
-.method public constructor <init>(Lenk;I)V
+.method public constructor <init>()V
     .locals 0
-
-    iput p2, p0, Ljua;->b:I
-
-    iput-object p1, p0, Ljua;->a:Ljava/lang/Object;
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
-.end method
-
-.method public constructor <init>(Ljyi;I)V
-    .locals 0
-
-    iput p2, p0, Ljua;->b:I
-
-    iput-object p1, p0, Ljua;->a:Ljava/lang/Object;
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
-.end method
-
-.method public constructor <init>(Ljzs;I)V
-    .locals 0
-
-    iput p2, p0, Ljua;->b:I
-
-    iput-object p1, p0, Ljua;->a:Ljava/lang/Object;
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
-.end method
-
-.method public constructor <init>(Llaa;I)V
-    .locals 0
-
-    iput p2, p0, Ljua;->b:I
-
-    iput-object p1, p0, Ljua;->a:Ljava/lang/Object;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -62,251 +23,162 @@
 
 
 # virtual methods
-.method public final a(Ljava/lang/Throwable;)V
-    .locals 3
-
-    iget v0, p0, Ljua;->b:I
-
-    packed-switch v0, :pswitch_data_0
-
-    iget-object v0, p0, Ljua;->a:Ljava/lang/Object;
-
-    invoke-static {p1}, Lkzd;->a(Ljava/lang/Throwable;)Lkzd;
-
-    move-result-object p1
-
-    check-cast v0, Llaa;
-
-    invoke-virtual {v0, p1}, Llaa;->m(Lkzd;)V
-
-    return-void
-
-    :pswitch_0
-    const-string v0, "AudioEncoder"
-
-    const-string v1, "Stopping recording due to: "
-
-    invoke-static {v0, v1, p1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
-
-    iget-object p1, p0, Ljua;->a:Ljava/lang/Object;
-
-    check-cast p1, Ljyi;
-
-    iget-object p1, p1, Ljyi;->n:Ljym;
-
-    sget-object v0, Ljyk;->k:Ljyk;
-
-    invoke-virtual {p1, v0}, Ljym;->a(Ljyk;)V
-
-    return-void
-
-    :pswitch_1
-    sget-object v0, Lenm;->a:Lnak;
-
-    invoke-virtual {v0}, Lnaf;->b()Lnaz;
-
-    move-result-object v0
-
-    sget-object v1, Lnbk;->a:Lnbc;
-
-    const-string v2, "KeplerController"
-
-    invoke-interface {v0, v1, v2}, Lnaz;->g(Lnbc;Ljava/lang/Object;)Lnaz;
-
-    move-result-object v0
-
-    const-string v1, "Encoder writing failed"
-
-    const/16 v2, 0x65b
-
-    invoke-static {v0, v1, v2, p1}, Ld;->h(Lnaz;Ljava/lang/String;CLjava/lang/Throwable;)V
-
-    iget-object v0, p0, Ljua;->a:Ljava/lang/Object;
-
-    check-cast v0, Lenk;
-
-    iget-object v0, v0, Lenk;->c:Ljava/lang/Object;
-
-    monitor-enter v0
-
-    :try_start_0
-    iget-object v1, p0, Ljua;->a:Ljava/lang/Object;
-
-    check-cast v1, Lenk;
-
-    iget-object v1, v1, Lenk;->a:Ljava/lang/Object;
-
-    check-cast v1, Lenl;
-
-    iget-object v1, v1, Lenl;->e:Lnph;
-
-    invoke-virtual {v1, p1}, Lnph;->a(Ljava/lang/Throwable;)Z
-
-    iget-object p1, p0, Ljua;->a:Ljava/lang/Object;
-
-    move-object v1, p1
-
-    check-cast v1, Lenk;
-
-    iget-object v1, v1, Lenk;->c:Ljava/lang/Object;
-
-    check-cast v1, Lenm;
-
-    iget-object v1, v1, Lenm;->i:Ljava/util/Map;
-
-    check-cast p1, Lenk;
-
-    iget-object p1, p1, Lenk;->a:Ljava/lang/Object;
-
-    check-cast p1, Lenl;
-
-    iget-object p1, p1, Lenl;->a:Leea;
-
-    invoke-interface {v1, p1}, Ljava/util/Map;->remove(Ljava/lang/Object;)Ljava/lang/Object;
-
-    monitor-exit v0
-
-    return-void
-
-    :catchall_0
-    move-exception p1
-
-    monitor-exit v0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw p1
-
-    :pswitch_2
-    return-void
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_2
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
-.end method
-
-.method public final b(Ljava/lang/Object;)V
+.method public final a(Ljua;)V
     .locals 2
 
-    iget v0, p0, Ljua;->b:I
+    iget-wide v0, p1, Ljua;->a:D
 
-    packed-switch v0, :pswitch_data_0
+    iput-wide v0, p0, Ljua;->a:D
 
-    if-nez p1, :cond_0
+    iget-wide v0, p1, Ljua;->b:D
 
-    iget-object p1, p0, Ljua;->a:Ljava/lang/Object;
+    iput-wide v0, p0, Ljua;->b:D
 
-    new-instance v0, Ljava/lang/NullPointerException;
+    iget-wide v0, p1, Ljua;->c:D
 
-    const-string v1, "Function output is null"
+    iput-wide v0, p0, Ljua;->c:D
 
-    invoke-direct {v0, v1}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
+    iget-wide v0, p1, Ljua;->d:D
 
-    invoke-static {v0}, Lkzd;->a(Ljava/lang/Throwable;)Lkzd;
-
-    move-result-object v0
-
-    check-cast p1, Llaa;
-
-    invoke-virtual {p1, v0}, Llaa;->m(Lkzd;)V
+    iput-wide v0, p0, Ljua;->d:D
 
     return-void
+.end method
 
-    :pswitch_0
+.method public final b([F)V
+    .locals 12
+
+    iget-wide v0, p0, Ljua;->a:D
+
+    double-to-float v0, v0
+
+    iget-wide v1, p0, Ljua;->b:D
+
+    double-to-float v1, v1
+
+    iget-wide v2, p0, Ljua;->c:D
+
+    double-to-float v2, v2
+
+    iget-wide v3, p0, Ljua;->d:D
+
+    double-to-float v3, v3
+
+    add-float v4, v0, v0
+
+    add-float v5, v1, v1
+
+    add-float v6, v2, v2
+
+    mul-float v7, v4, v3
+
+    mul-float v8, v5, v3
+
+    mul-float v3, v3, v6
+
+    mul-float v4, v4, v0
+
+    mul-float v9, v5, v0
+
+    mul-float v0, v0, v6
+
+    mul-float v5, v5, v1
+
+    mul-float v1, v1, v6
+
+    mul-float v6, v6, v2
+
+    add-float v2, v5, v6
+
+    const/high16 v10, 0x3f800000    # 1.0f
+
+    sub-float v2, v10, v2
+
+    const/4 v11, 0x0
+
+    aput v2, p1, v11
+
+    add-float v2, v9, v3
+
+    const/4 v11, 0x1
+
+    aput v2, p1, v11
+
+    sub-float v2, v0, v8
+
+    const/4 v11, 0x2
+
+    aput v2, p1, v11
+
+    const/4 v2, 0x3
+
+    const/4 v11, 0x0
+
+    aput v11, p1, v2
+
+    sub-float/2addr v9, v3
+
+    const/4 v2, 0x4
+
+    aput v9, p1, v2
+
+    add-float/2addr v6, v4
+
+    sub-float v2, v10, v6
+
+    const/4 v3, 0x5
+
+    aput v2, p1, v3
+
+    add-float v2, v1, v7
+
+    const/4 v3, 0x6
+
+    aput v2, p1, v3
+
+    const/4 v2, 0x7
+
+    aput v11, p1, v2
+
+    add-float/2addr v0, v8
+
+    const/16 v2, 0x8
+
+    aput v0, p1, v2
+
+    sub-float/2addr v1, v7
+
+    const/16 v0, 0x9
+
+    aput v1, p1, v0
+
+    add-float/2addr v4, v5
+
+    sub-float v0, v10, v4
+
+    const/16 v1, 0xa
+
+    aput v0, p1, v1
+
+    const/16 v0, 0xb
+
+    aput v11, p1, v0
+
+    const/16 v0, 0xc
+
+    aput v11, p1, v0
+
+    const/16 v0, 0xd
+
+    aput v11, p1, v0
+
+    const/16 v0, 0xe
+
+    aput v11, p1, v0
+
+    const/16 v0, 0xf
+
+    aput v10, p1, v0
+
     return-void
-
-    :pswitch_1
-    sget-object p1, Lnbk;->a:Lnbc;
-
-    iget-object p1, p0, Ljua;->a:Ljava/lang/Object;
-
-    check-cast p1, Lenk;
-
-    iget-object v0, p1, Lenk;->c:Ljava/lang/Object;
-
-    monitor-enter v0
-
-    :try_start_0
-    iget-object p1, p0, Ljua;->a:Ljava/lang/Object;
-
-    check-cast p1, Lenk;
-
-    iget-object p1, p1, Lenk;->a:Ljava/lang/Object;
-
-    check-cast p1, Lenl;
-
-    iget-object p1, p1, Lenl;->e:Lnph;
-
-    const/4 v1, 0x1
-
-    invoke-static {v1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
-
-    move-result-object v1
-
-    invoke-virtual {p1, v1}, Lnph;->e(Ljava/lang/Object;)Z
-
-    iget-object p1, p0, Ljua;->a:Ljava/lang/Object;
-
-    move-object v1, p1
-
-    check-cast v1, Lenk;
-
-    iget-object v1, v1, Lenk;->c:Ljava/lang/Object;
-
-    check-cast v1, Lenm;
-
-    iget-object v1, v1, Lenm;->i:Ljava/util/Map;
-
-    check-cast p1, Lenk;
-
-    iget-object p1, p1, Lenk;->a:Ljava/lang/Object;
-
-    check-cast p1, Lenl;
-
-    iget-object p1, p1, Lenl;->a:Leea;
-
-    invoke-interface {v1, p1}, Ljava/util/Map;->remove(Ljava/lang/Object;)Ljava/lang/Object;
-
-    monitor-exit v0
-
-    return-void
-
-    :catchall_0
-    move-exception p1
-
-    monitor-exit v0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw p1
-
-    :pswitch_2
-    iget-object v0, p0, Ljua;->a:Ljava/lang/Object;
-
-    invoke-interface {v0, p1}, Ljzs;->a(Ljava/lang/Object;)V
-
-    return-void
-
-    :cond_0
-    iget-object v0, p0, Ljua;->a:Ljava/lang/Object;
-
-    check-cast v0, Llaa;
-
-    invoke-virtual {v0, p1}, Llaa;->l(Ljava/lang/Object;)V
-
-    return-void
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_2
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
 .end method

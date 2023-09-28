@@ -1,61 +1,35 @@
-.class public final Ljoy;
+.class public final synthetic Ljoy;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Ljop;
-.implements Ljoo;
-.implements Ljom;
+.implements Ljfe;
 
 
 # instance fields
-.field public final a:Ljava/util/concurrent/CountDownLatch;
+.field public final synthetic a:Lpih;
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 2
+.method public synthetic constructor <init>(Lpih;)V
+    .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    new-instance v0, Ljava/util/concurrent/CountDownLatch;
-
-    const/4 v1, 0x1
-
-    invoke-direct {v0, v1}, Ljava/util/concurrent/CountDownLatch;-><init>(I)V
-
-    iput-object v0, p0, Ljoy;->a:Ljava/util/concurrent/CountDownLatch;
+    iput-object p1, p0, Ljoy;->a:Lpih;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final b()V
+.method public final a(Ljrl;)V
     .locals 1
 
-    iget-object v0, p0, Ljoy;->a:Ljava/util/concurrent/CountDownLatch;
+    iget-object p1, p0, Ljoy;->a:Lpih;
 
-    invoke-virtual {v0}, Ljava/util/concurrent/CountDownLatch;->countDown()V
+    const/4 v0, 0x0
 
-    return-void
-.end method
-
-.method public final c(Ljava/lang/Exception;)V
-    .locals 0
-
-    iget-object p1, p0, Ljoy;->a:Ljava/util/concurrent/CountDownLatch;
-
-    invoke-virtual {p1}, Ljava/util/concurrent/CountDownLatch;->countDown()V
-
-    return-void
-.end method
-
-.method public final d(Ljava/lang/Object;)V
-    .locals 0
-
-    iget-object p1, p0, Ljoy;->a:Ljava/util/concurrent/CountDownLatch;
-
-    invoke-virtual {p1}, Ljava/util/concurrent/CountDownLatch;->countDown()V
+    invoke-virtual {p1, v0}, Lpih;->o(Ljava/lang/Object;)Z
 
     return-void
 .end method

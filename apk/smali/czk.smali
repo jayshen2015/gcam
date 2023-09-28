@@ -1,218 +1,220 @@
-.class public final Lczk;
+.class public final synthetic Lczk;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lgen;
-
-
-# static fields
-.field private static final e:Lnak;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field public final a:Lgeh;
+.field public final synthetic a:Lczl;
 
-.field public final b:Lgzn;
-
-.field public final c:Lgzm;
-
-.field public d:I
-
-.field private final f:Lell;
-
-.field private final g:Landroid/content/Context;
-
-.field private h:Lkad;
+.field private final synthetic b:I
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
-
-    const-string v0, "com/google/android/apps/camera/camcorder/ui/hdrvideo/HdrTooltipController"
-
-    invoke-static {v0}, Lnak;->h(Ljava/lang/String;)Lnak;
-
-    move-result-object v0
-
-    sput-object v0, Lczk;->e:Lnak;
-
-    return-void
-.end method
-
-.method public constructor <init>(Lgeh;Lell;Landroid/content/Context;Lgzm;Lgzn;)V
+.method public synthetic constructor <init>(Lczl;I)V
     .locals 0
+
+    iput p2, p0, Lczk;->b:I
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lczk;->a:Lgeh;
-
-    iput-object p2, p0, Lczk;->f:Lell;
-
-    iput-object p3, p0, Lczk;->g:Landroid/content/Context;
-
-    iput-object p4, p0, Lczk;->c:Lgzm;
-
-    iput-object p5, p0, Lczk;->b:Lgzn;
+    iput-object p1, p0, Lczk;->a:Lczl;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()V
-    .locals 1
+.method public final run()V
+    .locals 6
 
-    iget-object v0, p0, Lczk;->h:Lkad;
+    iget v0, p0, Lczk;->b:I
 
-    if-eqz v0, :cond_0
+    const/4 v1, 0x0
 
-    invoke-interface {v0}, Lkad;->close()V
+    const/4 v2, 0x1
 
-    const/4 v0, 0x0
+    const/4 v3, 0x6
 
-    iput-object v0, p0, Lczk;->h:Lkad;
+    packed-switch v0, :pswitch_data_0
 
-    :cond_0
+    iget-object v0, p0, Lczk;->a:Lczl;
+
+    iget-object v1, v0, Lczl;->k:Ljava/util/concurrent/Executor;
+
+    new-instance v2, Lczk;
+
+    const/4 v3, 0x2
+
+    invoke-direct {v2, v0, v3}, Lczk;-><init>(Lczl;I)V
+
+    invoke-interface {v1, v2}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
+
     return-void
-.end method
 
-.method public final synthetic b()V
-    .locals 0
+    :pswitch_0
+    iget-object v0, p0, Lczk;->a:Lczl;
+
+    iget-object v2, v0, Lczl;->k:Ljava/util/concurrent/Executor;
+
+    new-instance v3, Lczk;
+
+    invoke-direct {v3, v0, v1}, Lczk;-><init>(Lczl;I)V
+
+    invoke-interface {v2, v3}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
 
     return-void
-.end method
 
-.method public final c()V
-    .locals 4
+    :pswitch_1
+    iget-object v0, p0, Lczk;->a:Lczl;
 
-    iget v0, p0, Lczk;->d:I
+    iput-boolean v2, v0, Lczl;->h:Z
 
-    if-nez v0, :cond_1
+    iput-boolean v1, v0, Lczl;->i:Z
 
-    iget-object v0, p0, Lczk;->c:Lgzm;
+    invoke-virtual {v0}, Lczl;->h()V
 
-    sget-object v1, Lgzd;->O:Lgzr;
+    return-void
 
-    invoke-interface {v0, v1}, Lgzm;->c(Lgzb;)Ljava/lang/Object;
+    :pswitch_2
+    iget-object v0, p0, Lczk;->a:Lczl;
 
-    move-result-object v0
+    iput-boolean v2, v0, Lczl;->i:Z
 
-    check-cast v0, Ljava/lang/Boolean;
+    invoke-virtual {v0}, Lczl;->g()V
 
-    invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
+    return-void
 
-    move-result v0
+    :pswitch_3
+    iget-object v0, p0, Lczk;->a:Lczl;
 
-    if-nez v0, :cond_1
-
-    iget-object v0, p0, Lczk;->a:Lgeh;
-
-    sget-object v1, Lgec;->t:Lgec;
-
-    sget-object v2, Lgej;->I:Lgej;
-
-    invoke-interface {v0, v1, v2}, Lgeh;->d(Lgec;Lgej;)Lmqp;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lmqp;->g()Z
-
-    move-result v1
+    iget-boolean v1, v0, Lczl;->f:Z
 
     if-nez v1, :cond_0
 
-    sget-object v0, Lczk;->e:Lnak;
-
-    invoke-virtual {v0}, Lnaf;->c()Lnaz;
-
-    move-result-object v0
-
-    const-string v1, "Attempting to show HDR video tooltip but anchor view is not present"
-
-    const/16 v2, 0x31a
-
-    invoke-static {v0, v1, v2}, Ld;->g(Lnaz;Ljava/lang/String;C)V
-
-    return-void
+    goto :goto_0
 
     :cond_0
-    new-instance v1, Lifx;
+    iget-object v1, v0, Lczl;->b:Lcyw;
 
-    iget-object v2, p0, Lczk;->g:Landroid/content/Context;
+    invoke-interface {v1}, Lcyw;->e()V
 
-    const v3, 0x7f1401fe
+    iget-object v1, v0, Lczl;->F:Limr;
 
-    invoke-virtual {v2, v3}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+    if-nez v1, :cond_2
 
-    move-result-object v2
+    sget-object v1, Liml;->a:Limm;
 
-    invoke-direct {v1, v2}, Lifx;-><init>(Ljava/lang/String;)V
+    iget-object v2, v0, Lczl;->z:Lcyl;
 
-    invoke-virtual {v0}, Lmqp;->c()Ljava/lang/Object;
+    invoke-virtual {v2}, Lcyl;->e()Z
 
-    move-result-object v0
+    move-result v2
 
-    check-cast v0, Landroid/view/View;
+    if-eqz v2, :cond_1
 
-    invoke-virtual {v1, v0}, Lifx;->r(Landroid/view/View;)V
+    invoke-static {}, Limw;->a()Limv;
 
-    invoke-interface {v1}, Lify;->i()V
+    move-result-object v1
 
-    invoke-interface {v1}, Lifz;->k()V
+    iget-object v2, v0, Lczl;->k:Ljava/util/concurrent/Executor;
 
-    const/16 v0, 0x12c
+    invoke-virtual {v1, v2}, Limv;->c(Ljava/util/concurrent/Executor;)V
 
-    iput v0, v1, Lifx;->d:I
+    const-string v2, "Lens suggestion"
 
-    invoke-interface {v1}, Liga;->l()V
+    iput-object v2, v1, Limv;->a:Ljava/lang/String;
 
-    const/16 v0, 0x1388
+    new-instance v2, Lczk;
 
-    iput v0, v1, Lifx;->e:I
+    const/4 v4, 0x5
 
-    const/4 v0, 0x0
+    invoke-direct {v2, v0, v4}, Lczk;-><init>(Lczl;I)V
 
-    iput-boolean v0, v1, Lifx;->f:Z
+    invoke-virtual {v1, v2}, Limv;->d(Ljava/lang/Runnable;)V
 
-    iput-boolean v0, v1, Lifx;->h:Z
+    new-instance v2, Lczk;
 
-    invoke-interface {v1}, Liga;->p()V
+    invoke-direct {v2, v0, v3}, Lczk;-><init>(Lczl;I)V
 
-    iget-object v0, p0, Lczk;->f:Lell;
+    invoke-virtual {v1, v2}, Limv;->e(Ljava/lang/Runnable;)V
 
-    iput-object v0, v1, Lifx;->i:Lell;
+    iget-object v2, v0, Lczl;->y:Lims;
 
-    const/4 v0, 0x4
+    invoke-virtual {v1, v2}, Limv;->f(Lims;)V
 
-    iput v0, v1, Lifx;->m:I
+    invoke-virtual {v1}, Limv;->a()Limw;
 
-    new-instance v0, Lctw;
-
-    const/16 v2, 0x12
-
-    invoke-direct {v0, p0, v2}, Lctw;-><init>(Lczk;I)V
-
-    iget-object v2, p0, Lczk;->g:Landroid/content/Context;
-
-    invoke-virtual {v2}, Landroid/content/Context;->getMainExecutor()Ljava/util/concurrent/Executor;
-
-    move-result-object v2
-
-    invoke-interface {v1, v0, v2}, Liga;->g(Ljava/lang/Runnable;Ljava/util/concurrent/Executor;)V
-
-    invoke-interface {v1}, Liga;->a()Lkad;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lczk;->h:Lkad;
+    move-result-object v1
 
     :cond_1
-    return-void
-.end method
+    iput-object v1, v0, Lczl;->F:Limr;
 
-.method public final synthetic d()V
-    .locals 0
+    iget-object v2, v0, Lczl;->A:Limt;
+
+    invoke-interface {v2, v1}, Limt;->d(Limr;)Llie;
+
+    move-result-object v1
+
+    iput-object v1, v0, Lczl;->a:Llie;
 
     return-void
+
+    :cond_2
+    :goto_0
+    return-void
+
+    :pswitch_4
+    iget-object v0, p0, Lczk;->a:Lczl;
+
+    iget-object v1, v0, Lczl;->w:Ljava/util/concurrent/ScheduledExecutorService;
+
+    new-instance v2, Lczk;
+
+    invoke-direct {v2, v0, v3}, Lczk;-><init>(Lczl;I)V
+
+    const-wide/16 v3, 0x1
+
+    sget-object v5, Ljava/util/concurrent/TimeUnit;->SECONDS:Ljava/util/concurrent/TimeUnit;
+
+    invoke-interface {v1, v2, v3, v4, v5}, Ljava/util/concurrent/ScheduledExecutorService;->schedule(Ljava/lang/Runnable;JLjava/util/concurrent/TimeUnit;)Ljava/util/concurrent/ScheduledFuture;
+
+    move-result-object v1
+
+    invoke-static {v1}, Lojc;->i(Ljava/lang/Object;)Lojc;
+
+    move-result-object v1
+
+    iput-object v1, v0, Lczl;->C:Lojc;
+
+    return-void
+
+    :pswitch_5
+    iget-object v0, p0, Lczk;->a:Lczl;
+
+    iget-boolean v1, v0, Lczl;->f:Z
+
+    if-nez v1, :cond_3
+
+    return-void
+
+    :cond_3
+    iget-object v0, v0, Lczl;->b:Lcyw;
+
+    invoke-interface {v0}, Lcyw;->g()V
+
+    return-void
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_5
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method

@@ -1,12 +1,22 @@
 .class public final Liku;
-.super Landroid/animation/AnimatorListenerAdapter;
+.super Ljava/lang/Object;
+
+
+# static fields
+.field public static final a:Liiy;
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 2
 
-    invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
+    new-instance v0, Liiy;
+
+    const/4 v1, 0x5
+
+    invoke-direct {v0, v1}, Liiy;-><init>(I)V
+
+    sput-object v0, Liku;->a:Liiy;
 
     return-void
 .end method

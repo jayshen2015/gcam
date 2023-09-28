@@ -1,18 +1,20 @@
 .class public final Lkln;
-.super Ljava/lang/RuntimeException;
+.super Ljava/lang/Object;
 
 
-# instance fields
-.field public final a:Ljava/util/List;
+# static fields
+.field public static final a:Ljava/lang/Object;
 
 
 # direct methods
-.method public constructor <init>(Ljava/util/List;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 1
 
-    invoke-direct {p0}, Ljava/lang/RuntimeException;-><init>()V
+    new-instance v0, Ljava/lang/Object;
 
-    iput-object p1, p0, Lkln;->a:Ljava/util/List;
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+
+    sput-object v0, Lkln;->a:Ljava/lang/Object;
 
     return-void
 .end method

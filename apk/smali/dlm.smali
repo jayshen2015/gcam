@@ -1,13 +1,22 @@
-.class public interface abstract Ldlm;
+.class public final Ldlm;
 .super Ljava/lang/Object;
 
 
-# virtual methods
-.method public abstract a(JJ)I
-.end method
+# static fields
+.field public static final a:Ldln;
 
-.method public abstract b(J)Ldlu;
-.end method
 
-.method public abstract c(Ldlu;)V
+# direct methods
+.method static constructor <clinit>()V
+    .locals 2
+
+    new-instance v0, Ldln;
+
+    const/4 v1, 0x0
+
+    invoke-direct {v0, v1}, Ldln;-><init>(I)V
+
+    sput-object v0, Ldlm;->a:Ldln;
+
+    return-void
 .end method

@@ -2,50 +2,36 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lioq;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field public final synthetic a:Logd;
-
-.field public final synthetic b:Lkbc;
+.field public final synthetic a:Landroid/view/View;
 
 
 # direct methods
-.method public synthetic constructor <init>(Logd;Lkbc;)V
+.method public synthetic constructor <init>(Landroid/view/View;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lihf;->a:Logd;
-
-    iput-object p2, p0, Lihf;->b:Lkbc;
+    iput-object p1, p0, Lihf;->a:Landroid/view/View;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Lios;)Lioo;
-    .locals 3
+.method public final run()V
+    .locals 2
 
-    iget-object v0, p0, Lihf;->a:Logd;
+    iget-object v0, p0, Lihf;->a:Landroid/view/View;
 
-    iget-object v1, p0, Lihf;->b:Lkbc;
+    sget v1, Lihg;->e:I
 
-    new-instance v2, Lihe;
+    const/4 v1, 0x0
 
-    invoke-interface {p1}, Lios;->b()Llbd;
+    invoke-virtual {v0, v1, v1}, Landroid/view/View;->scrollTo(II)V
 
-    move-result-object p1
-
-    invoke-interface {v0}, Logd;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lihd;
-
-    invoke-direct {v2, p1, v0, v1}, Lihe;-><init>(Llbd;Lihd;Lkbc;)V
-
-    return-object v2
+    return-void
 .end method

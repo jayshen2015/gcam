@@ -1,50 +1,37 @@
-.class public final Lced;
+.class public final synthetic Lced;
 .super Ljava/lang/Object;
 
+# interfaces
+.implements Lpgk;
 
-# static fields
-.field public static final a:Lbze;
+
+# instance fields
+.field public final synthetic a:Lcdf;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
+.method public synthetic constructor <init>(Lcdf;)V
+    .locals 0
 
-    new-instance v0, Lcec;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {v0}, Lcec;-><init>()V
-
-    sput-object v0, Lced;->a:Lbze;
+    iput-object p1, p0, Lced;->a:Lcdf;
 
     return-void
 .end method
 
-.method public static final a(Ljava/lang/String;Ljava/lang/String;Lbze;ZI)Ljgt;
-    .locals 7
 
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+# virtual methods
+.method public final a(Ljava/lang/Object;)Lpht;
+    .locals 1
 
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    iget-object v0, p0, Lced;->a:Lcdf;
 
-    invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    check-cast p1, Lope;
 
-    new-instance p1, Ljgt;
+    invoke-interface {v0, p1}, Lcdf;->e(Lope;)Lpht;
 
-    const/4 v5, 0x0
-
-    const/4 v6, 0x0
-
-    move-object v0, p1
-
-    move-object v1, p0
-
-    move-object v2, p2
-
-    move v3, p3
-
-    move v4, p4
-
-    invoke-direct/range {v0 .. v6}, Ljgt;-><init>(Ljava/lang/String;Lbze;ZI[B[B)V
+    move-result-object p1
 
     return-object p1
 .end method

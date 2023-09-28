@@ -1,105 +1,156 @@
-.class Lhvs;
-.super Lhvq;
+.class public final Lhvs;
+.super Lppd;
+
+# interfaces
+.implements Lpqn;
+
+
+# static fields
+.field public static final b:Lhvs;
+
+.field private static volatile c:Lpqs;
 
 
 # instance fields
-.field final synthetic b:Lhvt;
+.field public a:J
 
 
 # direct methods
-.method public constructor <init>(Lhvt;)V
+.method static constructor <clinit>()V
+    .locals 2
+
+    new-instance v0, Lhvs;
+
+    invoke-direct {v0}, Lhvs;-><init>()V
+
+    sput-object v0, Lhvs;->b:Lhvs;
+
+    const-class v1, Lhvs;
+
+    invoke-static {v1, v0}, Lppd;->F(Ljava/lang/Class;Lppd;)V
+
+    return-void
+.end method
+
+.method private constructor <init>()V
     .locals 0
 
-    iput-object p1, p0, Lhvs;->b:Lhvt;
-
-    invoke-direct {p0}, Lhvq;-><init>()V
+    invoke-direct {p0}, Lppd;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public b()V
-    .locals 0
+.method protected final a(ILjava/lang/Object;)Ljava/lang/Object;
+    .locals 1
 
-    return-void
-.end method
+    add-int/lit8 p1, p1, -0x1
 
-.method public final f()V
-    .locals 2
+    const/4 p2, 0x1
 
-    iget-object v0, p0, Lhvs;->b:Lhvt;
+    packed-switch p1, :pswitch_data_0
 
-    iget-object v0, v0, Lhvt;->d:Lcom/google/android/apps/camera/bottombar/BottomBarController;
+    :pswitch_0
+    const/4 p1, 0x0
 
-    invoke-virtual {v0}, Lcom/google/android/apps/camera/bottombar/BottomBarController;->switchToPhotoIntentReview()V
+    return-object p1
 
-    iget-object v0, p0, Lhvs;->b:Lhvt;
+    :pswitch_1
+    sget-object p1, Lhvs;->c:Lpqs;
 
-    iget-object v0, v0, Lhvt;->e:Liff;
+    if-nez p1, :cond_1
 
-    invoke-interface {v0}, Liff;->ag()V
+    const-class p2, Lhvs;
 
-    iget-object v0, p0, Lhvs;->b:Lhvt;
+    monitor-enter p2
 
-    iget-object v0, v0, Lhvt;->h:Lgeh;
+    :try_start_0
+    sget-object p1, Lhvs;->c:Lpqs;
 
-    invoke-interface {v0}, Lgeh;->m()V
+    if-nez p1, :cond_0
 
-    iget-object v0, p0, Lhvs;->b:Lhvt;
+    new-instance p1, Lpoz;
 
-    iget-object v0, v0, Lhvt;->f:Litm;
+    sget-object v0, Lhvs;->b:Lhvs;
 
-    const/4 v1, 0x0
+    invoke-direct {p1, v0}, Lpoz;-><init>(Lppd;)V
 
-    invoke-interface {v0, v1}, Litm;->I(Z)V
-
-    return-void
-.end method
-
-.method public final g()V
-    .locals 2
-
-    iget-object v0, p0, Lhvs;->b:Lhvt;
-
-    iget-object v0, v0, Lhvt;->d:Lcom/google/android/apps/camera/bottombar/BottomBarController;
-
-    invoke-virtual {v0}, Lcom/google/android/apps/camera/bottombar/BottomBarController;->returnToPhotoIntent()V
-
-    iget-object v0, p0, Lhvs;->b:Lhvt;
-
-    iget-object v0, v0, Lhvt;->e:Liff;
-
-    invoke-interface {v0}, Liff;->x()V
-
-    iget-object v0, p0, Lhvs;->b:Lhvt;
-
-    iget-object v0, v0, Lhvt;->h:Lgeh;
-
-    invoke-interface {v0}, Lgeh;->l()V
-
-    iget-object v0, p0, Lhvs;->b:Lhvt;
-
-    iget-object v0, v0, Lhvt;->f:Litm;
-
-    const/4 v1, 0x1
-
-    invoke-interface {v0, v1}, Litm;->I(Z)V
-
-    iget-object v0, p0, Lhvs;->b:Lhvt;
-
-    iget-object v0, v0, Lhvt;->f:Litm;
-
-    move-object v1, v0
-
-    check-cast v1, Lisi;
-
-    iget-boolean v1, v1, Lisi;->S:Z
-
-    if-eqz v1, :cond_0
-
-    invoke-interface {v0}, Litm;->p()V
+    sput-object p1, Lhvs;->c:Lpqs;
 
     :cond_0
-    return-void
+    monitor-exit p2
+
+    goto :goto_0
+
+    :catchall_0
+    move-exception p1
+
+    monitor-exit p2
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw p1
+
+    :cond_1
+    :goto_0
+    return-object p1
+
+    :pswitch_2
+    sget-object p1, Lhvs;->b:Lhvs;
+
+    return-object p1
+
+    :pswitch_3
+    new-instance p1, Lpoy;
+
+    sget-object p2, Lhvs;->b:Lhvs;
+
+    invoke-direct {p1, p2}, Lpoy;-><init>(Lppd;)V
+
+    return-object p1
+
+    :pswitch_4
+    new-instance p1, Lhvs;
+
+    invoke-direct {p1}, Lhvs;-><init>()V
+
+    return-object p1
+
+    :pswitch_5
+    new-array p1, p2, [Ljava/lang/Object;
+
+    const/4 p2, 0x0
+
+    const-string v0, "a"
+
+    aput-object v0, p1, p2
+
+    sget-object p2, Lhvs;->b:Lhvs;
+
+    const-string v0, "\u0000\u0001\u0000\u0000\u0002\u0002\u0001\u0000\u0000\u0000\u0002\u0002"
+
+    invoke-static {p2, v0, p1}, Lhvs;->E(Lpqm;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p1
+
+    return-object p1
+
+    :pswitch_6
+    invoke-static {p2}, Ljava/lang/Byte;->valueOf(B)Ljava/lang/Byte;
+
+    move-result-object p1
+
+    return-object p1
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_6
+        :pswitch_0
+        :pswitch_5
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+    .end packed-switch
 .end method

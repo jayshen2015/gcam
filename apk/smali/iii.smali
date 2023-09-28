@@ -2,114 +2,98 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Libf;
+.implements Liho;
+
+
+# static fields
+.field public static final a:Louj;
+
+.field public static final b:J
 
 
 # instance fields
-.field final synthetic a:Lcom/google/android/apps/camera/ui/views/ViewfinderCover;
+.field public final c:Ljava/util/List;
+
+.field public final d:Lpih;
+
+.field private final e:Llar;
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/apps/camera/ui/views/ViewfinderCover;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 3
 
-    iput-object p1, p0, Liii;->a:Lcom/google/android/apps/camera/ui/views/ViewfinderCover;
+    const-string v0, "com/google/android/apps/camera/stats/CameraActivitySettlementDetector"
+
+    invoke-static {v0}, Louj;->h(Ljava/lang/String;)Louj;
+
+    move-result-object v0
+
+    sput-object v0, Liii;->a:Louj;
+
+    sget-object v0, Ljava/util/concurrent/TimeUnit;->MILLISECONDS:Ljava/util/concurrent/TimeUnit;
+
+    const-wide/16 v1, 0x1e
+
+    invoke-virtual {v0, v1, v2}, Ljava/util/concurrent/TimeUnit;->toNanos(J)J
+
+    move-result-wide v0
+
+    sput-wide v0, Liii;->b:J
+
+    return-void
+.end method
+
+.method public constructor <init>(Llar;)V
+    .locals 1
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    new-instance v0, Ljava/util/ArrayList;
+
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+
+    iput-object v0, p0, Liii;->c:Ljava/util/List;
+
+    invoke-static {}, Lpih;->f()Lpih;
+
+    move-result-object v0
+
+    iput-object v0, p0, Liii;->d:Lpih;
+
+    iput-object p1, p0, Liii;->e:Llar;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final b()Lmqp;
-    .locals 1
-
-    iget-object v0, p0, Liii;->a:Lcom/google/android/apps/camera/ui/views/ViewfinderCover;
-
-    invoke-virtual {v0}, Lcom/google/android/apps/camera/ui/views/ViewfinderCover;->b()Lmqp;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public final c()Lmqp;
-    .locals 1
-
-    iget-object v0, p0, Liii;->a:Lcom/google/android/apps/camera/ui/views/ViewfinderCover;
-
-    invoke-virtual {v0}, Lcom/google/android/apps/camera/ui/views/ViewfinderCover;->c()Lmqp;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public final d()V
-    .locals 1
-
-    iget-object v0, p0, Liii;->a:Lcom/google/android/apps/camera/ui/views/ViewfinderCover;
-
-    invoke-virtual {v0}, Lcom/google/android/apps/camera/ui/views/ViewfinderCover;->d()V
-
-    return-void
-.end method
-
-.method public final e()V
-    .locals 1
-
-    iget-object v0, p0, Liii;->a:Lcom/google/android/apps/camera/ui/views/ViewfinderCover;
-
-    invoke-virtual {v0}, Lcom/google/android/apps/camera/ui/views/ViewfinderCover;->e()V
-
-    return-void
-.end method
-
-.method public final f(Lika;)V
-    .locals 0
-
-    return-void
-.end method
-
-.method public final g()Z
-    .locals 1
-
-    const/4 v0, 0x0
-
-    throw v0
-.end method
-
-.method public final h()Z
-    .locals 1
-
-    const/4 v0, 0x0
-
-    return v0
-.end method
-
-.method public final i()V
+.method public final a()V
     .locals 2
 
-    iget-object v0, p0, Liii;->a:Lcom/google/android/apps/camera/ui/views/ViewfinderCover;
+    invoke-static {}, Landroid/view/Choreographer;->getInstance()Landroid/view/Choreographer;
 
-    iget-object v1, v0, Lcom/google/android/apps/camera/ui/views/ViewfinderCover;->c:Landroid/widget/ImageView;
+    move-result-object v0
 
-    iget-object v0, v0, Lcom/google/android/apps/camera/ui/views/ViewfinderCover;->d:Landroid/graphics/drawable/AnimatedVectorDrawable;
+    new-instance v1, Liig;
 
-    invoke-virtual {v1, v0}, Landroid/widget/ImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
+    invoke-direct {v1, p0}, Liig;-><init>(Liii;)V
 
-    iget-object v0, p0, Liii;->a:Lcom/google/android/apps/camera/ui/views/ViewfinderCover;
+    invoke-virtual {v0, v1}, Landroid/view/Choreographer;->postFrameCallback(Landroid/view/Choreographer$FrameCallback;)V
 
-    iget-object v0, v0, Lcom/google/android/apps/camera/ui/views/ViewfinderCover;->g:Libg;
+    return-void
+.end method
 
-    invoke-virtual {v0}, Libg;->m()V
+.method public final run()V
+    .locals 2
 
-    iget-object v0, p0, Liii;->a:Lcom/google/android/apps/camera/ui/views/ViewfinderCover;
+    iget-object v0, p0, Liii;->e:Llar;
 
-    iget-object v0, v0, Lcom/google/android/apps/camera/ui/views/ViewfinderCover;->d:Landroid/graphics/drawable/AnimatedVectorDrawable;
+    new-instance v1, Liih;
 
-    invoke-virtual {v0}, Landroid/graphics/drawable/AnimatedVectorDrawable;->start()V
+    invoke-direct {v1, p0}, Liih;-><init>(Liii;)V
+
+    invoke-virtual {v0, v1}, Llar;->execute(Ljava/lang/Runnable;)V
 
     return-void
 .end method

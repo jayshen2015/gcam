@@ -1,184 +1,42 @@
 .class public final Lkfp;
-.super Lkfg;
+.super Ljava/lang/Object;
 
 
-# instance fields
-.field public final a:Lkfg;
+# static fields
+.field public static final a:Lkif;
 
-.field private final b:Ljava/util/concurrent/Executor;
+.field private static final b:Lmip;
 
 
 # direct methods
-.method public constructor <init>(Lkfg;Ljava/util/concurrent/Executor;[B[B)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 9
 
-    invoke-direct {p0}, Lkfg;-><init>()V
+    new-instance v2, Lkfo;
 
-    iput-object p2, p0, Lkfp;->b:Ljava/util/concurrent/Executor;
+    invoke-direct {v2}, Lkfo;-><init>()V
 
-    iput-object p1, p0, Lkfp;->a:Lkfg;
+    sput-object v2, Lkfp;->b:Lmip;
 
-    return-void
-.end method
+    new-instance v8, Lkif;
 
+    const-string v1, "Auth.GOOGLE_SIGN_IN_API"
 
-# virtual methods
-.method public final bC(Lkou;)V
-    .locals 3
+    const/4 v3, 0x0
 
-    iget-object v0, p0, Lkfp;->b:Ljava/util/concurrent/Executor;
+    const/4 v4, 0x0
 
-    new-instance v1, Lkcw;
-
-    const/4 v2, 0x4
-
-    invoke-direct {v1, p0, p1, v2}, Lkcw;-><init>(Lkfp;Lkou;I)V
-
-    invoke-interface {v0, v1}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
-
-    return-void
-.end method
-
-.method public final bD(JI)V
-    .locals 8
-
-    iget-object v0, p0, Lkfp;->b:Ljava/util/concurrent/Executor;
-
-    new-instance v7, Lkfo;
-
-    const/4 v6, 0x1
-
-    move-object v1, v7
-
-    move-object v2, p0
-
-    move-wide v3, p1
-
-    move v5, p3
-
-    invoke-direct/range {v1 .. v6}, Lkfo;-><init>(Lkfp;JII)V
-
-    invoke-interface {v0, v7}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
-
-    return-void
-.end method
-
-.method public final bi(Lkkp;)V
-    .locals 3
-
-    iget-object v0, p0, Lkfp;->b:Ljava/util/concurrent/Executor;
-
-    new-instance v1, Lkcw;
-
-    const/4 v2, 0x5
-
-    invoke-direct {v1, p0, p1, v2}, Lkcw;-><init>(Lkfp;Lkkp;I)V
-
-    invoke-interface {v0, v1}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
-
-    return-void
-.end method
-
-.method public final br(Lkoq;)V
-    .locals 3
-
-    iget-object v0, p0, Lkfp;->b:Ljava/util/concurrent/Executor;
-
-    new-instance v1, Lkcw;
-
-    const/4 v2, 0x2
-
-    invoke-direct {v1, p0, p1, v2}, Lkcw;-><init>(Lkfp;Lkoq;I)V
-
-    invoke-interface {v0, v1}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
-
-    return-void
-.end method
-
-.method public final bs(JI)V
-    .locals 8
-
-    iget-object v0, p0, Lkfp;->b:Ljava/util/concurrent/Executor;
-
-    new-instance v7, Lkfo;
+    const/4 v5, 0x0
 
     const/4 v6, 0x0
 
-    move-object v1, v7
+    const/4 v7, 0x0
 
-    move-object v2, p0
+    move-object v0, v8
 
-    move-wide v3, p1
+    invoke-direct/range {v0 .. v7}, Lkif;-><init>(Ljava/lang/String;Lmip;[B[B[B[B[B)V
 
-    move v5, p3
-
-    invoke-direct/range {v1 .. v6}, Lkfo;-><init>(Lkfp;JII)V
-
-    invoke-interface {v0, v7}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
-
-    return-void
-.end method
-
-.method public final bt(JIJ)V
-    .locals 9
-
-    iget-object v0, p0, Lkfp;->b:Ljava/util/concurrent/Executor;
-
-    new-instance v8, Lkfn;
-
-    move-object v1, v8
-
-    move-object v2, p0
-
-    move-wide v3, p1
-
-    move v5, p3
-
-    move-wide v6, p4
-
-    invoke-direct/range {v1 .. v7}, Lkfn;-><init>(Lkfp;JIJ)V
-
-    invoke-interface {v0, v8}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
-
-    return-void
-.end method
-
-.method public final bu(JLjava/util/Set;)V
-    .locals 8
-
-    iget-object v0, p0, Lkfp;->b:Ljava/util/concurrent/Executor;
-
-    new-instance v7, Ldcf;
-
-    const/16 v6, 0xe
-
-    move-object v1, v7
-
-    move-object v2, p0
-
-    move-wide v3, p1
-
-    move-object v5, p3
-
-    invoke-direct/range {v1 .. v6}, Ldcf;-><init>(Lkfp;JLjava/util/Set;I)V
-
-    invoke-interface {v0, v7}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
-
-    return-void
-.end method
-
-.method public final bv(Lkeg;)V
-    .locals 3
-
-    iget-object v0, p0, Lkfp;->b:Ljava/util/concurrent/Executor;
-
-    new-instance v1, Lkcw;
-
-    const/4 v2, 0x3
-
-    invoke-direct {v1, p0, p1, v2}, Lkcw;-><init>(Lkfp;Lkeg;I)V
-
-    invoke-interface {v0, v1}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
+    sput-object v8, Lkfp;->a:Lkif;
 
     return-void
 .end method

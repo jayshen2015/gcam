@@ -1,142 +1,213 @@
-.class public final Ldtu;
+.class public final synthetic Ldtu;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Ldsw;
-.implements Ldsu;
-.implements Ldss;
-.implements Ldtc;
+.implements Loiu;
 
 
 # instance fields
-.field public final a:Lduv;
+.field public final synthetic a:Ldtz;
 
-.field private final b:Ldsw;
-
-.field private final c:Ldss;
-
-.field private final d:Ldsu;
-
-.field private final e:Ldtc;
+.field public final synthetic b:Lbty;
 
 
 # direct methods
-.method public constructor <init>(Lduv;Ldsw;Ldss;Ldsu;Ldtc;)V
+.method public synthetic constructor <init>(Ldtz;Lbty;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Ldtu;->a:Lduv;
+    iput-object p1, p0, Ldtu;->a:Ldtz;
 
-    iput-object p2, p0, Ldtu;->b:Ldsw;
-
-    iput-object p3, p0, Ldtu;->c:Ldss;
-
-    iput-object p4, p0, Ldtu;->d:Ldsu;
-
-    iput-object p5, p0, Ldtu;->e:Ldtc;
+    iput-object p2, p0, Ldtu;->b:Lbty;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()V
-    .locals 1
+.method public final a(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 9
 
-    iget-object v0, p0, Ldtu;->d:Ldsu;
+    iget-object v0, p0, Ldtu;->a:Ldtz;
 
-    invoke-interface {v0}, Ldsu;->a()V
+    iget-object v1, p0, Ldtu;->b:Lbty;
 
-    return-void
-.end method
+    check-cast p1, Landroid/graphics/Bitmap;
 
-.method public final b(Lkeb;Lkfj;)V
-    .locals 1
+    invoke-static {}, Lpih;->f()Lpih;
 
-    iget-object v0, p0, Ldtu;->c:Ldss;
+    move-result-object v2
 
-    invoke-interface {v0, p1, p2}, Ldss;->b(Lkeb;Lkfj;)V
+    iget-object v3, v0, Ldtz;->c:Lcom/google/android/apps/camera/filmstrip/transition/FilmstripTransitionLayout;
 
-    return-void
-.end method
+    const/4 v4, 0x0
 
-.method public final synthetic c(Lkli;)V
-    .locals 0
+    invoke-virtual {v3, v4}, Lcom/google/android/apps/camera/filmstrip/transition/FilmstripTransitionLayout;->setVisibility(I)V
 
-    return-void
-.end method
+    iget-object v3, v0, Ldtz;->c:Lcom/google/android/apps/camera/filmstrip/transition/FilmstripTransitionLayout;
 
-.method public final d(Lkli;Lcea;)V
-    .locals 1
+    iget-object v5, v0, Ldtz;->d:Lcom/google/android/apps/camera/bottombar/RoundedThumbnailView;
 
-    iget-object v0, p0, Ldtu;->d:Ldsu;
+    iput-object v5, v3, Lcom/google/android/apps/camera/filmstrip/transition/FilmstripTransitionLayout;->f:Lcom/google/android/apps/camera/bottombar/RoundedThumbnailView;
 
-    invoke-interface {v0, p1, p2}, Ldsu;->d(Lkli;Lcea;)V
+    iput-boolean v4, v3, Lcom/google/android/apps/camera/filmstrip/transition/FilmstripTransitionLayout;->g:Z
 
-    return-void
-.end method
+    new-instance v4, Ldty;
 
-.method public final e()Z
-    .locals 1
+    invoke-direct {v4, v0, v2, v1}, Ldty;-><init>(Ldtz;Lpih;Lbty;)V
 
-    iget-object v0, p0, Ldtu;->b:Ldsw;
+    iget-object v0, v3, Lcom/google/android/apps/camera/filmstrip/transition/FilmstripTransitionLayout;->e:Lcom/google/android/apps/camera/filmstrip/transition/FilmstripTransitionThumbnailView;
 
-    invoke-interface {v0}, Ldsw;->e()Z
+    iget-object v1, v0, Lcom/google/android/apps/camera/filmstrip/transition/FilmstripTransitionThumbnailView;->a:Ljava/lang/Object;
 
-    move-result v0
+    monitor-enter v1
 
-    return v0
-.end method
+    :try_start_0
+    iput-object p1, v0, Lcom/google/android/apps/camera/filmstrip/transition/FilmstripTransitionThumbnailView;->b:Landroid/graphics/Bitmap;
 
-.method public final f()Ljava/util/Set;
-    .locals 1
+    iget-object p1, v0, Lcom/google/android/apps/camera/filmstrip/transition/FilmstripTransitionThumbnailView;->b:Landroid/graphics/Bitmap;
 
-    iget-object v0, p0, Ldtu;->e:Ldtc;
+    invoke-virtual {p1}, Landroid/graphics/Bitmap;->getWidth()I
 
-    invoke-interface {v0}, Ldtc;->f()Ljava/util/Set;
+    move-result p1
 
-    move-result-object v0
+    iget-object v5, v0, Lcom/google/android/apps/camera/filmstrip/transition/FilmstripTransitionThumbnailView;->b:Landroid/graphics/Bitmap;
 
-    return-object v0
-.end method
+    invoke-virtual {v5}, Landroid/graphics/Bitmap;->getHeight()I
 
-.method public final g(Landroid/hardware/Sensor;)V
-    .locals 1
+    move-result v5
 
-    iget-object v0, p0, Ldtu;->e:Ldtc;
+    new-instance v6, Landroid/widget/FrameLayout$LayoutParams;
 
-    invoke-interface {v0, p1}, Ldtc;->g(Landroid/hardware/Sensor;)V
+    invoke-direct {v6, p1, v5}, Landroid/widget/FrameLayout$LayoutParams;-><init>(II)V
 
-    return-void
-.end method
+    invoke-virtual {v0, v6}, Lcom/google/android/apps/camera/filmstrip/transition/FilmstripTransitionThumbnailView;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-.method public final h(Landroid/hardware/Sensor;)V
-    .locals 1
+    invoke-virtual {v0}, Lcom/google/android/apps/camera/filmstrip/transition/FilmstripTransitionThumbnailView;->requestLayout()V
 
-    iget-object v0, p0, Ldtu;->e:Ldtc;
+    new-instance p1, Landroid/graphics/Paint;
 
-    invoke-interface {v0, p1}, Ldtc;->h(Landroid/hardware/Sensor;)V
+    const/4 v5, 0x1
 
-    return-void
-.end method
+    invoke-direct {p1, v5}, Landroid/graphics/Paint;-><init>(I)V
 
-.method public final onAccuracyChanged(Landroid/hardware/Sensor;I)V
-    .locals 1
+    new-instance v5, Landroid/graphics/BitmapShader;
 
-    iget-object v0, p0, Ldtu;->e:Ldtc;
+    iget-object v6, v0, Lcom/google/android/apps/camera/filmstrip/transition/FilmstripTransitionThumbnailView;->b:Landroid/graphics/Bitmap;
 
-    invoke-interface {v0, p1, p2}, Ldtc;->onAccuracyChanged(Landroid/hardware/Sensor;I)V
+    sget-object v7, Landroid/graphics/Shader$TileMode;->CLAMP:Landroid/graphics/Shader$TileMode;
 
-    return-void
-.end method
+    sget-object v8, Landroid/graphics/Shader$TileMode;->CLAMP:Landroid/graphics/Shader$TileMode;
 
-.method public final onSensorChanged(Landroid/hardware/SensorEvent;)V
-    .locals 1
+    invoke-direct {v5, v6, v7, v8}, Landroid/graphics/BitmapShader;-><init>(Landroid/graphics/Bitmap;Landroid/graphics/Shader$TileMode;Landroid/graphics/Shader$TileMode;)V
 
-    iget-object v0, p0, Ldtu;->e:Ldtc;
+    invoke-virtual {p1, v5}, Landroid/graphics/Paint;->setShader(Landroid/graphics/Shader;)Landroid/graphics/Shader;
 
-    invoke-interface {v0, p1}, Ldtc;->onSensorChanged(Landroid/hardware/SensorEvent;)V
+    new-instance v5, Landroid/graphics/Paint;
 
-    return-void
+    invoke-direct {v5, p1}, Landroid/graphics/Paint;-><init>(Landroid/graphics/Paint;)V
+
+    iput-object v5, v0, Lcom/google/android/apps/camera/filmstrip/transition/FilmstripTransitionThumbnailView;->c:Landroid/graphics/Paint;
+
+    monitor-exit v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    iget-object p1, v3, Lcom/google/android/apps/camera/filmstrip/transition/FilmstripTransitionLayout;->a:Landroid/animation/ValueAnimator;
+
+    invoke-virtual {p1}, Landroid/animation/ValueAnimator;->isRunning()Z
+
+    move-result p1
+
+    if-eqz p1, :cond_0
+
+    invoke-virtual {v3}, Lcom/google/android/apps/camera/filmstrip/transition/FilmstripTransitionLayout;->a()Lduf;
+
+    move-result-object p1
+
+    invoke-virtual {p1}, Lduf;->a()Ldue;
+
+    move-result-object p1
+
+    iput-object p1, v3, Lcom/google/android/apps/camera/filmstrip/transition/FilmstripTransitionLayout;->h:Ldue;
+
+    :cond_0
+    iput-object v4, v3, Lcom/google/android/apps/camera/filmstrip/transition/FilmstripTransitionLayout;->i:Ldty;
+
+    invoke-virtual {v3}, Lcom/google/android/apps/camera/filmstrip/transition/FilmstripTransitionLayout;->a()Lduf;
+
+    move-result-object p1
+
+    invoke-virtual {p1}, Lduf;->a()Ldue;
+
+    move-result-object p1
+
+    iput-object p1, v3, Lcom/google/android/apps/camera/filmstrip/transition/FilmstripTransitionLayout;->h:Ldue;
+
+    iget-object p1, v3, Lcom/google/android/apps/camera/filmstrip/transition/FilmstripTransitionLayout;->h:Ldue;
+
+    const/high16 v0, 0x3f800000    # 1.0f
+
+    invoke-virtual {p1, v0}, Ldue;->b(F)F
+
+    move-result p1
+
+    iget-object v1, v3, Lcom/google/android/apps/camera/filmstrip/transition/FilmstripTransitionLayout;->e:Lcom/google/android/apps/camera/filmstrip/transition/FilmstripTransitionThumbnailView;
+
+    invoke-virtual {v1, p1}, Lcom/google/android/apps/camera/filmstrip/transition/FilmstripTransitionThumbnailView;->setScaleX(F)V
+
+    iget-object v1, v3, Lcom/google/android/apps/camera/filmstrip/transition/FilmstripTransitionLayout;->e:Lcom/google/android/apps/camera/filmstrip/transition/FilmstripTransitionThumbnailView;
+
+    invoke-virtual {v1, p1}, Lcom/google/android/apps/camera/filmstrip/transition/FilmstripTransitionThumbnailView;->setScaleY(F)V
+
+    iget-object p1, v3, Lcom/google/android/apps/camera/filmstrip/transition/FilmstripTransitionLayout;->h:Ldue;
+
+    invoke-virtual {p1, v0}, Ldue;->c(F)Landroid/graphics/PointF;
+
+    move-result-object p1
+
+    iget-object v1, v3, Lcom/google/android/apps/camera/filmstrip/transition/FilmstripTransitionLayout;->e:Lcom/google/android/apps/camera/filmstrip/transition/FilmstripTransitionThumbnailView;
+
+    iget v4, p1, Landroid/graphics/PointF;->x:F
+
+    invoke-virtual {v1, v4}, Lcom/google/android/apps/camera/filmstrip/transition/FilmstripTransitionThumbnailView;->setTranslationX(F)V
+
+    iget-object v1, v3, Lcom/google/android/apps/camera/filmstrip/transition/FilmstripTransitionLayout;->e:Lcom/google/android/apps/camera/filmstrip/transition/FilmstripTransitionThumbnailView;
+
+    iget p1, p1, Landroid/graphics/PointF;->y:F
+
+    invoke-virtual {v1, p1}, Lcom/google/android/apps/camera/filmstrip/transition/FilmstripTransitionThumbnailView;->setTranslationY(F)V
+
+    iget-object p1, v3, Lcom/google/android/apps/camera/filmstrip/transition/FilmstripTransitionLayout;->h:Ldue;
+
+    invoke-virtual {p1, v0}, Ldue;->a(F)F
+
+    move-result p1
+
+    iget-object v1, v3, Lcom/google/android/apps/camera/filmstrip/transition/FilmstripTransitionLayout;->e:Lcom/google/android/apps/camera/filmstrip/transition/FilmstripTransitionThumbnailView;
+
+    invoke-virtual {v1, p1}, Lcom/google/android/apps/camera/filmstrip/transition/FilmstripTransitionThumbnailView;->b(F)V
+
+    invoke-static {v0}, Ldue;->d(F)F
+
+    move-result p1
+
+    invoke-virtual {v3, p1}, Lcom/google/android/apps/camera/filmstrip/transition/FilmstripTransitionLayout;->b(F)V
+
+    iget-object p1, v3, Lcom/google/android/apps/camera/filmstrip/transition/FilmstripTransitionLayout;->a:Landroid/animation/ValueAnimator;
+
+    invoke-virtual {p1}, Landroid/animation/ValueAnimator;->start()V
+
+    return-object v2
+
+    :catchall_0
+    move-exception p1
+
+    :try_start_1
+    monitor-exit v1
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    throw p1
 .end method

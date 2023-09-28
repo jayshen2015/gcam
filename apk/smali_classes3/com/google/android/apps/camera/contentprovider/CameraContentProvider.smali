@@ -3,11 +3,11 @@
 
 
 # instance fields
-.field private a:Ldiz;
+.field private a:Ldeu;
 
 .field private b:Landroid/content/pm/ProviderInfo;
 
-.field private volatile c:Llij;
+.field private volatile c:Ldet;
 
 
 # direct methods
@@ -19,17 +19,17 @@
     return-void
 .end method
 
-.method private final b()Llij;
+.method private final b()Ldet;
     .locals 2
 
-    iget-object v0, p0, Lcom/google/android/apps/camera/contentprovider/CameraContentProvider;->c:Llij;
+    iget-object v0, p0, Lcom/google/android/apps/camera/contentprovider/CameraContentProvider;->c:Ldet;
 
     if-nez v0, :cond_1
 
     monitor-enter p0
 
     :try_start_0
-    iget-object v0, p0, Lcom/google/android/apps/camera/contentprovider/CameraContentProvider;->c:Llij;
+    iget-object v0, p0, Lcom/google/android/apps/camera/contentprovider/CameraContentProvider;->c:Ldet;
 
     if-nez v0, :cond_0
 
@@ -37,9 +37,9 @@
 
     invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    new-instance v1, Ldja;
+    new-instance v1, Ldev;
 
-    invoke-direct {v1, p0, v0}, Ldja;-><init>(Landroid/content/ContentProvider;Landroid/content/pm/ProviderInfo;)V
+    invoke-direct {v1, p0, v0}, Ldev;-><init>(Landroid/content/ContentProvider;Landroid/content/pm/ProviderInfo;)V
 
     invoke-virtual {p0}, Lcom/google/android/apps/camera/contentprovider/CameraContentProvider;->getContext()Landroid/content/Context;
 
@@ -49,21 +49,21 @@
 
     invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    invoke-interface {v0, v1}, Lcom/google/android/apps/camera/contentprovider/HasCameraContentProviderComponent;->cameraContentProviderComponent(Ldja;)Ldix;
+    invoke-interface {v0, v1}, Lcom/google/android/apps/camera/contentprovider/HasCameraContentProviderComponent;->cameraContentProviderComponent(Ldev;)Lder;
 
     move-result-object v0
 
-    invoke-interface {v0}, Ldix;->a()Lhjm;
+    invoke-interface {v0}, Lder;->b()Lqiz;
 
     move-result-object v1
 
-    invoke-virtual {v1}, Lhjm;->a()V
+    invoke-virtual {v1}, Lqiz;->a()V
 
-    invoke-interface {v0}, Ldix;->b()Llij;
+    invoke-interface {v0}, Lder;->a()Ldet;
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/google/android/apps/camera/contentprovider/CameraContentProvider;->c:Llij;
+    iput-object v0, p0, Lcom/google/android/apps/camera/contentprovider/CameraContentProvider;->c:Ldet;
 
     :cond_0
     monitor-exit p0
@@ -89,7 +89,7 @@
 .method protected final a()V
     .locals 2
 
-    iget-object v0, p0, Lcom/google/android/apps/camera/contentprovider/CameraContentProvider;->a:Ldiz;
+    iget-object v0, p0, Lcom/google/android/apps/camera/contentprovider/CameraContentProvider;->a:Ldeu;
 
     if-eqz v0, :cond_0
 
@@ -99,7 +99,7 @@
 
     invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    invoke-virtual {v0, v1}, Ldiz;->a(Ljava/lang/String;)Z
+    invoke-virtual {v0, v1}, Ldeu;->a(Ljava/lang/String;)Z
 
     move-result v0
 
@@ -138,7 +138,7 @@
 
     if-eqz v1, :cond_0
 
-    invoke-direct {p0}, Lcom/google/android/apps/camera/contentprovider/CameraContentProvider;->b()Llij;
+    invoke-direct {p0}, Lcom/google/android/apps/camera/contentprovider/CameraContentProvider;->b()Ldet;
 
     new-instance p1, Landroid/os/Bundle;
 
@@ -215,7 +215,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f03001c
+    const v3, 0x7f030028
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getStringArray(I)[Ljava/lang/String;
 
@@ -227,11 +227,11 @@
 
     invoke-direct {v1, v2}, Ljava/util/HashSet;-><init>(Ljava/util/Collection;)V
 
-    new-instance v2, Ldiz;
+    new-instance v2, Ldeu;
 
-    invoke-direct {v2, v0, v1}, Ldiz;-><init>(Landroid/content/Context;Ljava/util/Set;)V
+    invoke-direct {v2, v0, v1}, Ldeu;-><init>(Landroid/content/Context;Ljava/util/Set;)V
 
-    iput-object v2, p0, Lcom/google/android/apps/camera/contentprovider/CameraContentProvider;->a:Ldiz;
+    iput-object v2, p0, Lcom/google/android/apps/camera/contentprovider/CameraContentProvider;->a:Ldeu;
 
     invoke-static {}, Landroid/os/Trace;->endSection()V
 
@@ -241,29 +241,60 @@
 .end method
 
 .method public final openFile(Landroid/net/Uri;Ljava/lang/String;)Landroid/os/ParcelFileDescriptor;
-    .locals 13
+    .locals 12
+
+    const-string v0, "CAM_ProcessingMedia"
 
     invoke-virtual {p0}, Lcom/google/android/apps/camera/contentprovider/CameraContentProvider;->a()V
 
-    const-string v0, "GCA_SpecialTypes#openFile"
+    const-string v1, "GCA_SpecialTypes#openFile"
 
-    invoke-static {v0}, Landroid/os/Trace;->beginSection(Ljava/lang/String;)V
+    invoke-static {v1}, Landroid/os/Trace;->beginSection(Ljava/lang/String;)V
 
-    invoke-direct {p0}, Lcom/google/android/apps/camera/contentprovider/CameraContentProvider;->b()Llij;
+    invoke-direct {p0}, Lcom/google/android/apps/camera/contentprovider/CameraContentProvider;->b()Ldet;
 
-    move-result-object v0
+    move-result-object v1
 
-    const-string v1, "r"
+    const-string v2, "r"
 
-    invoke-virtual {v1, p2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v2, p2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-nez v2, :cond_1
+
+    new-instance p1, Ljava/lang/IllegalArgumentException;
+
+    invoke-static {p2}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object p2
+
+    const-string v0, "Unsupported mode: "
+
+    invoke-virtual {p2}, Ljava/lang/String;->length()I
 
     move-result v1
 
-    if-eqz v1, :cond_8
+    if-eqz v1, :cond_0
 
-    iget-object p2, v0, Llij;->c:Ljava/lang/Object;
+    invoke-virtual {v0, p2}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
 
-    check-cast p2, Landroid/content/UriMatcher;
+    move-result-object p2
+
+    goto :goto_0
+
+    :cond_0
+    new-instance p2, Ljava/lang/String;
+
+    invoke-direct {p2, v0}, Ljava/lang/String;-><init>(Ljava/lang/String;)V
+
+    :goto_0
+    invoke-direct {p1, p2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw p1
+
+    :cond_1
+    iget-object p2, v1, Ldet;->b:Landroid/content/UriMatcher;
 
     invoke-virtual {p2, p1}, Landroid/content/UriMatcher;->match(Landroid/net/Uri;)I
 
@@ -280,11 +311,25 @@
 
     invoke-static {p1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
-    move-result-object p1
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/String;->length()I
+
+    move-result v0
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    add-int/lit8 v0, v0, 0x15
+
+    invoke-direct {v1, v0}, Ljava/lang/StringBuilder;-><init>(I)V
 
     const-string v0, "Unrecognized format: "
 
-    invoke-virtual {v0, p1}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p1
 
@@ -294,165 +339,228 @@
 
     :pswitch_1
     :try_start_0
-    iget-object p2, v0, Llij;->b:Ljava/lang/Object;
+    iget-object p2, v1, Ldet;->e:Ldxv;
 
-    sget v1, Ldzl;->b:I
+    sget v2, Ldxv;->b:I
 
-    add-int/lit8 v1, v1, 0x1
+    add-int/lit8 v2, v2, 0x1
 
-    sput v1, Ldzl;->b:I
+    sput v2, Ldxv;->b:I
 
-    new-instance v2, Ljava/lang/StringBuilder;
+    new-instance v3, Ljava/lang/StringBuilder;
 
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+    const/16 v4, 0xe
 
-    const-string v3, "[r"
+    invoke-direct {v3, v4}, Ljava/lang/StringBuilder;-><init>(I)V
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    const-string v4, "[r"
 
-    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string v1, "]"
+    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    const-string v2, "]"
 
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v1
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
 
     invoke-static {p1}, Landroid/content/ContentUris;->parseId(Landroid/net/Uri;)J
 
-    move-result-wide v2
+    move-result-wide v3
 
-    new-instance v4, Ljava/lang/StringBuilder;
+    invoke-static {v2}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
-    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
+    move-result-object v5
 
-    invoke-virtual {v4, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v5}, Ljava/lang/String;->length()I
 
-    const-string v1, "[m"
+    move-result v5
 
-    invoke-virtual {v4, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    add-int/lit8 v5, v5, 0x18
 
-    invoke-virtual {v4, v2, v3}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+    new-instance v6, Ljava/lang/StringBuilder;
 
-    const-string v1, "] "
+    invoke-direct {v6, v5}, Ljava/lang/StringBuilder;-><init>(I)V
 
-    invoke-virtual {v4, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v6, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    const-string v2, "[m"
 
-    move-result-object v1
+    invoke-virtual {v6, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string v4, "width"
+    invoke-virtual {v6, v3, v4}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
-    sget-object v5, Lmpx;->a:Lmpx;
+    const-string v2, "] "
 
-    invoke-virtual {p1, v4}, Landroid/net/Uri;->getQueryParameter(Ljava/lang/String;)Ljava/lang/String;
+    invoke-virtual {v6, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v4
+    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    const-string v6, "height"
+    move-result-object v2
+
+    sget-object v5, Loih;->a:Loih;
+
+    const-string v6, "width"
 
     invoke-virtual {p1, v6}, Landroid/net/Uri;->getQueryParameter(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v6
 
-    if-eqz v4, :cond_0
+    const-string v7, "height"
 
-    if-eqz v6, :cond_0
+    invoke-virtual {p1, v7}, Landroid/net/Uri;->getQueryParameter(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v7
+
+    if-eqz v6, :cond_2
+
+    if-eqz v7, :cond_2
 
     new-instance v5, Landroid/util/Size;
-
-    invoke-static {v4}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
-
-    move-result v4
 
     invoke-static {v6}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
 
     move-result v6
 
-    invoke-direct {v5, v4, v6}, Landroid/util/Size;-><init>(II)V
+    invoke-static {v7}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
 
-    invoke-static {v5}, Lmqp;->i(Ljava/lang/Object;)Lmqp;
+    move-result v7
+
+    invoke-direct {v5, v6, v7}, Landroid/util/Size;-><init>(II)V
+
+    invoke-static {v5}, Lojc;->i(Ljava/lang/Object;)Lojc;
 
     move-result-object v5
 
-    :cond_0
-    move-object v4, p2
+    :cond_2
+    iget-object v6, p2, Ldxv;->e:Ldwu;
 
-    check-cast v4, Ldzl;
-
-    iget-object v4, v4, Ldzl;->e:Ldym;
-
-    invoke-virtual {v4, v2, v3}, Ldym;->a(J)Lmqp;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Lmqp;->g()Z
-
-    move-result v3
-
-    if-eqz v3, :cond_7
-
-    invoke-virtual {v2}, Lmqp;->c()Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Ldyj;
-
-    invoke-virtual {v2}, Ldyj;->b()Landroid/graphics/Bitmap;
+    invoke-virtual {v6, v3, v4}, Ldwu;->a(J)Lojc;
 
     move-result-object v3
 
-    if-eqz v3, :cond_6
-
-    invoke-virtual {v5}, Lmqp;->g()Z
+    invoke-virtual {v3}, Lojc;->g()Z
 
     move-result v4
-    :try_end_0
-    .catch Ldzo; {:try_start_0 .. :try_end_0} :catch_1
 
-    const-string v6, "CAM_ProcessingMedia"
+    if-eqz v4, :cond_8
 
-    if-eqz v4, :cond_3
+    invoke-virtual {v3}, Lojc;->c()Ljava/lang/Object;
 
-    :try_start_1
-    move-object v4, p2
+    move-result-object v3
 
-    check-cast v4, Ldzl;
+    check-cast v3, Ldws;
 
-    iget-object v4, v4, Ldzl;->c:Lkbc;
+    invoke-virtual {v3}, Ldws;->a()Lbcl;
 
-    invoke-virtual {v5}, Lmqp;->c()Ljava/lang/Object;
+    move-result-object v3
+
+    if-eqz v3, :cond_7
+
+    iget-object v4, p2, Ldxv;->c:Lljf;
+
+    invoke-static {v2}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v6
+
+    invoke-virtual {v6}, Ljava/lang/String;->length()I
+
+    move-result v6
+
+    add-int/lit8 v6, v6, 0x2d
+
+    new-instance v7, Ljava/lang/StringBuilder;
+
+    invoke-direct {v7, v6}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    invoke-virtual {v7, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v7, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v6, "BitmapDrawable.getBitmap()"
+
+    invoke-virtual {v7, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v7}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v6
+
+    invoke-interface {v4, v6}, Lljf;->e(Ljava/lang/String;)V
+
+    invoke-interface {v3}, Lbcl;->c()Ljava/lang/Object;
+
+    move-result-object v3
+
+    check-cast v3, Landroid/graphics/drawable/Drawable;
+
+    invoke-static {v3}, Lmip;->eu(Landroid/graphics/drawable/Drawable;)Landroid/graphics/Bitmap;
+
+    move-result-object v3
+
+    iget-object v4, p2, Ldxv;->c:Lljf;
+
+    invoke-interface {v4}, Lljf;->f()V
+
+    invoke-virtual {v5}, Lojc;->g()Z
+
+    move-result v4
+
+    if-eqz v4, :cond_5
+
+    iget-object v4, p2, Ldxv;->c:Lljf;
+
+    invoke-virtual {v5}, Lojc;->c()Ljava/lang/Object;
+
+    move-result-object v6
+
+    invoke-static {v6}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v6
+
+    invoke-static {v2}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v7
 
-    invoke-virtual {v7}, Ljava/lang/Object;->toString()Ljava/lang/String;
+    invoke-virtual {v7}, Ljava/lang/String;->length()I
 
-    move-result-object v7
+    move-result v7
+
+    add-int/lit8 v7, v7, 0x32
+
+    invoke-static {v6}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v8
+
+    invoke-virtual {v8}, Ljava/lang/String;->length()I
+
+    move-result v8
+
+    add-int/2addr v7, v8
 
     new-instance v8, Ljava/lang/StringBuilder;
 
-    invoke-direct {v8}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v8, v7}, Ljava/lang/StringBuilder;-><init>(I)V
 
-    invoke-virtual {v8, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v8, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v8, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v8, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string v9, "Bitmap.createScaledBitmap#size="
-
-    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    const-string v7, "Bitmap.createScaledBitmap#size="
 
     invoke-virtual {v8, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
+    invoke-virtual {v8, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
     invoke-virtual {v8}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v7
+    move-result-object v6
 
-    invoke-interface {v4, v7}, Lkbc;->e(Ljava/lang/String;)V
+    invoke-interface {v4, v6}, Lljf;->e(Ljava/lang/String;)V
 
-    invoke-virtual {v5}, Lmqp;->c()Ljava/lang/Object;
+    invoke-virtual {v5}, Lojc;->c()Ljava/lang/Object;
 
     move-result-object v4
 
@@ -460,191 +568,134 @@
 
     invoke-virtual {v3}, Landroid/graphics/Bitmap;->getWidth()I
 
-    move-result v7
+    move-result v6
 
     invoke-virtual {v3}, Landroid/graphics/Bitmap;->getHeight()I
 
-    move-result v8
+    move-result v7
 
     invoke-virtual {v4}, Landroid/util/Size;->getWidth()I
 
-    move-result v9
+    move-result v8
 
     invoke-virtual {v4}, Landroid/util/Size;->getHeight()I
 
     move-result v4
 
-    if-gt v7, v9, :cond_1
+    if-gt v6, v8, :cond_3
 
-    if-gt v8, v4, :cond_1
-
-    goto :goto_1
-
-    :cond_1
-    int-to-float v10, v4
-
-    int-to-float v11, v9
-
-    div-float/2addr v11, v10
-
-    int-to-float v10, v8
-
-    int-to-float v12, v7
-
-    div-float/2addr v12, v10
-
-    cmpl-float v10, v12, v11
-
-    if-lez v10, :cond_2
-
-    mul-int v8, v8, v9
-
-    div-int v4, v8, v7
-
-    goto :goto_0
-
-    :cond_2
-    mul-int v7, v7, v4
-
-    div-int v9, v7, v8
-
-    :goto_0
-    const/4 v7, 0x0
-
-    invoke-static {v3, v9, v4, v7}, Landroid/graphics/Bitmap;->createScaledBitmap(Landroid/graphics/Bitmap;IIZ)Landroid/graphics/Bitmap;
-
-    move-result-object v3
-
-    :goto_1
-    move-object v4, p2
-
-    check-cast v4, Ldzl;
-
-    iget-object v4, v4, Ldzl;->c:Lkbc;
-
-    invoke-interface {v4}, Lkbc;->f()V
+    if-gt v7, v4, :cond_3
 
     goto :goto_2
 
     :cond_3
-    :goto_2
-    invoke-virtual {v2}, Ldyj;->a()I
+    int-to-float v9, v6
 
-    move-result v2
+    int-to-float v10, v7
 
-    if-eqz v2, :cond_4
+    div-float/2addr v9, v10
 
-    move-object v4, p2
+    int-to-float v10, v8
 
-    check-cast v4, Ldzl;
+    int-to-float v11, v4
 
-    iget-object v4, v4, Ldzl;->c:Lkbc;
+    div-float/2addr v10, v11
 
-    new-instance v7, Ljava/lang/StringBuilder;
+    cmpl-float v9, v9, v10
 
-    invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
+    if-lez v9, :cond_4
 
-    invoke-virtual {v7, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    mul-int v7, v7, v8
 
-    invoke-virtual {v7, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    div-int v4, v7, v6
 
-    const-string v8, "Bitmap.rotateBitmap#rotation="
+    goto :goto_1
 
-    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    :cond_4
+    mul-int v6, v6, v4
 
-    invoke-virtual {v7, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    div-int v8, v6, v7
 
-    invoke-virtual {v7}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    :goto_1
+    const/4 v6, 0x0
 
-    move-result-object v7
-
-    invoke-interface {v4, v7}, Lkbc;->e(Ljava/lang/String;)V
-
-    invoke-static {v3, v2}, Ljvd;->J(Landroid/graphics/Bitmap;I)Landroid/graphics/Bitmap;
+    invoke-static {v3, v8, v4, v6}, Landroid/graphics/Bitmap;->createScaledBitmap(Landroid/graphics/Bitmap;IIZ)Landroid/graphics/Bitmap;
 
     move-result-object v3
 
-    move-object v2, p2
+    :goto_2
+    iget-object v4, p2, Ldxv;->c:Lljf;
 
-    check-cast v2, Ldzl;
-
-    iget-object v2, v2, Ldzl;->c:Lkbc;
-
-    invoke-interface {v2}, Lkbc;->f()V
-
-    :cond_4
-    move-object v2, p2
-
-    check-cast v2, Ldzl;
-
-    iget-object v2, v2, Ldzl;->c:Lkbc;
-
-    new-instance v4, Ljava/lang/StringBuilder;
-
-    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
-
-    invoke-virtual {v4, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v4, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v6, "BitmapSerializer.serialize"
-
-    invoke-virtual {v4, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-interface {v2, v4}, Lkbc;->e(Ljava/lang/String;)V
-    :try_end_1
-    .catch Ldzo; {:try_start_1 .. :try_end_1} :catch_1
-
-    :try_start_2
-    move-object v2, p2
-
-    check-cast v2, Ldzl;
-
-    iget-object v2, v2, Ldzl;->d:Ldzn;
-
-    invoke-virtual {v5}, Lmqp;->g()Z
-
-    move-result v4
-
-    if-nez v4, :cond_5
-
-    move-object v2, p2
-
-    check-cast v2, Ldzl;
-
-    iget-object v2, v2, Ldzl;->f:Ldzn;
+    invoke-interface {v4}, Lljf;->f()V
 
     goto :goto_3
 
     :cond_5
     :goto_3
-    invoke-interface {v2, v3}, Ldzj;->a(Landroid/graphics/Bitmap;)Ljava/io/ByteArrayOutputStream;
+    iget-object v4, p2, Ldxv;->c:Lljf;
 
-    move-result-object v2
-    :try_end_2
-    .catch Ljava/io/IOException; {:try_start_2 .. :try_end_2} :catch_0
-    .catchall {:try_start_2 .. :try_end_2} :catchall_0
+    invoke-static {v2}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
-    :try_start_3
-    move-object v3, p2
+    move-result-object v6
 
-    check-cast v3, Ldzl;
+    invoke-virtual {v6}, Ljava/lang/String;->length()I
 
-    iget-object v3, v3, Ldzl;->c:Lkbc;
+    move-result v6
 
-    invoke-interface {v3}, Lkbc;->f()V
+    add-int/lit8 v6, v6, 0x2d
 
-    new-instance v9, Ldzk;
+    new-instance v7, Ljava/lang/StringBuilder;
 
-    check-cast p2, Ldzl;
+    invoke-direct {v7, v6}, Ljava/lang/StringBuilder;-><init>(I)V
 
-    invoke-direct {v9, p2, v1, v2}, Ldzk;-><init>(Ldzl;Ljava/lang/String;Ljava/io/ByteArrayOutputStream;)V
+    invoke-virtual {v7, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget-object p2, v0, Llij;->e:Ljava/lang/Object;
+    invoke-virtual {v7, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v0, "BitmapSerializer.serialize"
+
+    invoke-virtual {v7, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v7}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-interface {v4, v0}, Lljf;->e(Ljava/lang/String;)V
+    :try_end_0
+    .catch Ldxy; {:try_start_0 .. :try_end_0} :catch_1
+
+    :try_start_1
+    iget-object v0, p2, Ldxv;->d:Ldxx;
+
+    invoke-virtual {v5}, Lojc;->g()Z
+
+    move-result v4
+
+    if-nez v4, :cond_6
+
+    iget-object v0, p2, Ldxv;->f:Ldxx;
+
+    goto :goto_4
+
+    :cond_6
+    :goto_4
+    invoke-interface {v0, v3}, Ldxt;->a(Landroid/graphics/Bitmap;)Ljava/io/ByteArrayOutputStream;
+
+    move-result-object v0
+    :try_end_1
+    .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_0
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    :try_start_2
+    iget-object v3, p2, Ldxv;->c:Lljf;
+
+    invoke-interface {v3}, Lljf;->f()V
+
+    new-instance v9, Ldxu;
+
+    invoke-direct {v9, p2, v2, v0}, Ldxu;-><init>(Ldxv;Ljava/lang/String;Ljava/io/ByteArrayOutputStream;)V
+
+    iget-object v4, v1, Ldet;->a:Landroid/content/ContentProvider;
 
     sget-object v5, Landroid/net/Uri;->EMPTY:Landroid/net/Uri;
 
@@ -654,88 +705,82 @@
 
     const-string v8, ""
 
-    move-object v4, p2
-
-    check-cast v4, Landroid/content/ContentProvider;
-
     invoke-virtual/range {v4 .. v9}, Landroid/content/ContentProvider;->openPipeHelper(Landroid/net/Uri;Ljava/lang/String;Landroid/os/Bundle;Ljava/lang/Object;Landroid/content/ContentProvider$PipeDataWriter;)Landroid/os/ParcelFileDescriptor;
 
     move-result-object p1
-    :try_end_3
-    .catch Ldzo; {:try_start_3 .. :try_end_3} :catch_1
+    :try_end_2
+    .catch Ldxy; {:try_start_2 .. :try_end_2} :catch_1
 
-    goto :goto_6
+    goto/16 :goto_7
 
     :catchall_0
     move-exception v0
 
-    goto :goto_4
+    goto :goto_5
 
     :catch_0
     move-exception v0
 
-    :try_start_4
-    new-instance v1, Ldzo;
+    :try_start_3
+    new-instance v1, Ldxy;
 
-    invoke-direct {v1, v0}, Ldzo;-><init>(Ljava/lang/Throwable;)V
+    invoke-direct {v1, v0}, Ldxy;-><init>(Ljava/lang/Throwable;)V
 
     throw v1
-    :try_end_4
-    .catchall {:try_start_4 .. :try_end_4} :catchall_0
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_0
 
-    :goto_4
-    :try_start_5
-    check-cast p2, Ldzl;
+    :goto_5
+    :try_start_4
+    iget-object p2, p2, Ldxv;->c:Lljf;
 
-    iget-object p2, p2, Ldzl;->c:Lkbc;
-
-    invoke-interface {p2}, Lkbc;->f()V
-
-    throw v0
-
-    :cond_6
-    sget-object p2, Ldzl;->a:Lnak;
-
-    invoke-virtual {p2}, Lnaf;->b()Lnaz;
-
-    move-result-object p2
-
-    const-string v0, "%s thumbnail bitmap is not set in ProcessingMedia"
-
-    const/16 v2, 0x4c8
-
-    invoke-static {p2, v0, v1, v2}, Ld;->j(Lnaz;Ljava/lang/String;Ljava/lang/Object;C)V
-
-    const-string p2, "Thumbnail bitmap is not set in ProcessingMedia"
-
-    new-instance v0, Ldzo;
-
-    invoke-direct {v0, p2}, Ldzo;-><init>(Ljava/lang/String;)V
+    invoke-interface {p2}, Lljf;->f()V
 
     throw v0
 
     :cond_7
-    sget-object p2, Ldzl;->a:Lnak;
+    sget-object p2, Ldxv;->a:Louj;
 
-    invoke-virtual {p2}, Lnaf;->b()Lnaz;
+    invoke-virtual {p2}, Loue;->b()Lova;
+
+    move-result-object p2
+
+    const-string v0, "%s DrawableResource is not set in ProcessingMedia"
+
+    const/16 v1, 0x3d9
+
+    invoke-static {p2, v0, v2, v1}, Ld;->u(Lova;Ljava/lang/String;Ljava/lang/Object;C)V
+
+    new-instance p2, Ldxy;
+
+    const-string v0, "DrawableResource is not set in ProcessingMedia"
+
+    invoke-direct {p2, v0}, Ldxy;-><init>(Ljava/lang/String;)V
+
+    throw p2
+
+    :cond_8
+    sget-object p2, Ldxv;->a:Louj;
+
+    invoke-virtual {p2}, Loue;->b()Lova;
 
     move-result-object p2
 
     const-string v0, "%s ProcessingMedia does not exist in ProcessingMediaManager"
 
-    const/16 v2, 0x4c9
+    const/16 v1, 0x3da
 
-    invoke-static {p2, v0, v1, v2}, Ld;->j(Lnaz;Ljava/lang/String;Ljava/lang/Object;C)V
+    invoke-static {p2, v0, v2, v1}, Ld;->u(Lova;Ljava/lang/String;Ljava/lang/Object;C)V
 
-    const-string p2, "ProcessingMedia does not exist in ProcessingMediaManager"
+    new-instance p2, Ldxy;
 
-    new-instance v0, Ldzo;
+    const-string v0, "ProcessingMedia does not exist in ProcessingMediaManager"
 
-    invoke-direct {v0, p2}, Ldzo;-><init>(Ljava/lang/String;)V
+    invoke-direct {p2, v0}, Ldxy;-><init>(Ljava/lang/String;)V
 
-    throw v0
-    :try_end_5
-    .catch Ldzo; {:try_start_5 .. :try_end_5} :catch_1
+    throw p2
+    :try_end_4
+    .catch Ldxy; {:try_start_4 .. :try_end_4} :catch_1
 
     :catch_1
     move-exception p2
@@ -746,27 +791,47 @@
 
     move-result-object p1
 
-    invoke-virtual {p2}, Ldzo;->getMessage()Ljava/lang/String;
+    invoke-virtual {p2}, Ldxy;->getMessage()Ljava/lang/String;
 
     move-result-object p2
 
-    new-instance v1, Ljava/lang/StringBuilder;
+    invoke-static {p1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+    move-result-object v1
 
-    const-string v2, "Cannot load thumbnail for URI= "
+    invoke-virtual {v1}, Ljava/lang/String;->length()I
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result v1
 
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {p2}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/String;->length()I
+
+    move-result v2
+
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    add-int/lit8 v1, v1, 0x23
+
+    add-int/2addr v1, v2
+
+    invoke-direct {v3, v1}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string v1, "Cannot load thumbnail for URI= "
+
+    invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v3, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     const-string p1, " ex="
 
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v3, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v3, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p1
 
@@ -775,44 +840,29 @@
     throw v0
 
     :pswitch_2
-    const p2, 0x7f070596
+    const p2, 0x7f0704ad
 
-    goto :goto_5
+    goto :goto_6
 
     :pswitch_3
-    const p2, 0x7f070598
+    const p2, 0x7f0704af
 
-    goto :goto_5
+    goto :goto_6
 
     :pswitch_4
-    const p2, 0x7f070595
+    const p2, 0x7f0704ac
 
-    :goto_5
-    invoke-virtual {v0, p1, p2}, Llij;->h(Landroid/net/Uri;I)Landroid/os/ParcelFileDescriptor;
+    :goto_6
+    invoke-virtual {v1, p1, p2}, Ldet;->a(Landroid/net/Uri;I)Landroid/os/ParcelFileDescriptor;
 
     move-result-object p1
 
-    :goto_6
+    :goto_7
     invoke-static {}, Landroid/os/Trace;->endSection()V
 
     return-object p1
 
-    :cond_8
-    invoke-static {p2}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object p1
-
-    new-instance p2, Ljava/lang/IllegalArgumentException;
-
-    const-string v0, "Unsupported mode: "
-
-    invoke-virtual {v0, p1}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object p1
-
-    invoke-direct {p2, p1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw p2
+    nop
 
     :pswitch_data_0
     .packed-switch 0x3
@@ -834,23 +884,19 @@
 
     invoke-static {p3}, Landroid/os/Trace;->beginSection(Ljava/lang/String;)V
 
-    invoke-direct {p0}, Lcom/google/android/apps/camera/contentprovider/CameraContentProvider;->b()Llij;
+    invoke-direct {p0}, Lcom/google/android/apps/camera/contentprovider/CameraContentProvider;->b()Ldet;
 
     move-result-object p3
 
-    iget-object p4, p3, Llij;->d:Ljava/lang/Object;
+    iget-object p4, p3, Ldet;->c:Lljf;
 
     const-string p5, "SpecialTypesQuery"
 
-    invoke-interface {p4, p5}, Lkbc;->e(Ljava/lang/String;)V
+    invoke-interface {p4, p5}, Lljf;->e(Ljava/lang/String;)V
 
-    iget-object p4, p3, Llij;->f:Ljava/lang/Object;
+    iget-object p4, p3, Ldet;->d:Ldxa;
 
-    check-cast p4, Lgkr;
-
-    iget-object p5, p4, Lgkr;->b:Ljava/lang/Object;
-
-    check-cast p5, Landroid/content/UriMatcher;
+    iget-object p5, p4, Ldxa;->d:Landroid/content/UriMatcher;
 
     invoke-virtual {p5, p1}, Landroid/content/UriMatcher;->match(Landroid/net/Uri;)I
 
@@ -866,11 +912,25 @@
 
     invoke-static {p1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
-    move-result-object p1
+    move-result-object p3
+
+    invoke-virtual {p3}, Ljava/lang/String;->length()I
+
+    move-result p3
+
+    new-instance p4, Ljava/lang/StringBuilder;
+
+    add-int/lit8 p3, p3, 0x12
+
+    invoke-direct {p4, p3}, Ljava/lang/StringBuilder;-><init>(I)V
 
     const-string p3, "Unrecognized uri: "
 
-    invoke-virtual {p3, p1}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
+    invoke-virtual {p4, p3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {p4, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {p4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p1
 
@@ -879,32 +939,30 @@
     throw p2
 
     :sswitch_0
-    iget-object p4, p4, Lgkr;->a:Ljava/lang/Object;
+    iget-object p4, p4, Ldxa;->c:Ldwz;
 
     goto :goto_0
 
     :sswitch_1
-    iget-object p4, p4, Lgkr;->d:Ljava/lang/Object;
+    iget-object p4, p4, Ldxa;->b:Ldwz;
 
     goto :goto_0
 
     :sswitch_2
-    iget-object p4, p4, Lgkr;->c:Ljava/lang/Object;
+    iget-object p4, p4, Ldxa;->a:Ldwz;
 
     :goto_0
-    invoke-interface {p4, p1, p2}, Ldyr;->a(Landroid/net/Uri;[Ljava/lang/String;)Landroid/database/Cursor;
+    invoke-interface {p4, p1, p2}, Ldwz;->a(Landroid/net/Uri;[Ljava/lang/String;)Landroid/database/Cursor;
 
     move-result-object p1
 
-    iget-object p2, p3, Llij;->d:Ljava/lang/Object;
+    iget-object p2, p3, Ldet;->c:Lljf;
 
-    invoke-interface {p2}, Lkbc;->f()V
+    invoke-interface {p2}, Lljf;->f()V
 
     invoke-static {}, Landroid/os/Trace;->endSection()V
 
     return-object p1
-
-    nop
 
     :sswitch_data_0
     .sparse-switch

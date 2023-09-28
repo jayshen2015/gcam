@@ -2,72 +2,65 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Lj$/util/function/Consumer;
 
 
 # instance fields
-.field public final synthetic a:Ljava/io/FileOutputStream;
+.field public final synthetic a:I
 
-.field public final synthetic b:Lnph;
+.field public final synthetic b:[Ljava/lang/String;
 
-.field public final synthetic c:Lnou;
+.field public final synthetic c:[I
 
 
 # direct methods
-.method public synthetic constructor <init>(Ljava/io/FileOutputStream;Lnph;Lnou;)V
+.method public synthetic constructor <init>(I[Ljava/lang/String;[I)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lfhh;->a:Ljava/io/FileOutputStream;
+    iput p1, p0, Lfhh;->a:I
 
-    iput-object p2, p0, Lfhh;->b:Lnph;
+    iput-object p2, p0, Lfhh;->b:[Ljava/lang/String;
 
-    iput-object p3, p0, Lfhh;->c:Lnou;
+    iput-object p3, p0, Lfhh;->c:[I
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final run()V
+.method public final accept(Ljava/lang/Object;)V
     .locals 4
 
-    iget-object v0, p0, Lfhh;->a:Ljava/io/FileOutputStream;
+    iget v0, p0, Lfhh;->a:I
 
-    iget-object v1, p0, Lfhh;->b:Lnph;
+    iget-object v1, p0, Lfhh;->b:[Ljava/lang/String;
 
-    iget-object v2, p0, Lfhh;->c:Lnou;
+    iget-object v2, p0, Lfhh;->c:[I
 
-    :try_start_0
-    invoke-virtual {v0}, Ljava/io/FileOutputStream;->close()V
-    :try_end_0
-    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    check-cast p1, Lfik;
 
-    invoke-virtual {v1, v2}, Lnph;->f(Lnou;)Z
+    sget v3, Lfhv;->k:I
 
+    instance-of v3, p1, Lfgt;
+
+    if-eqz v3, :cond_0
+
+    check-cast p1, Lfgt;
+
+    invoke-interface {p1, v0, v1, v2}, Lfgt;->f(I[Ljava/lang/String;[I)V
+
+    :cond_0
     return-void
+.end method
 
-    :catchall_0
-    move-exception v0
+.method public final synthetic andThen(Lj$/util/function/Consumer;)Lj$/util/function/Consumer;
+    .locals 0
 
-    goto :goto_0
+    invoke-static {p0, p1}, Lj$/util/function/Consumer$-CC;->$default$andThen(Lj$/util/function/Consumer;Lj$/util/function/Consumer;)Lj$/util/function/Consumer;
 
-    :catch_0
-    move-exception v0
+    move-result-object p1
 
-    :try_start_1
-    new-instance v3, Ljava/lang/RuntimeException;
-
-    invoke-direct {v3, v0}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/Throwable;)V
-
-    throw v3
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    :goto_0
-    invoke-virtual {v1, v2}, Lnph;->f(Lnou;)Z
-
-    throw v0
+    return-object p1
 .end method

@@ -1,18 +1,25 @@
-.class public final Lhnk;
+.class public interface abstract Lhnk;
 .super Ljava/lang/Object;
 
+# interfaces
+.implements Llie;
 
-# static fields
-.field public static final a:Lhna;
 
+# virtual methods
+.method public abstract a()I
+.end method
 
-# direct methods
-.method static constructor <clinit>()V
-    .locals 1
+.method public abstract b()I
+.end method
 
-    sget-object v0, Lhna;->e:Lhna;
+.method public abstract c()J
+.end method
 
-    sput-object v0, Lhnk;->a:Lhna;
+.method public abstract d()Landroid/graphics/Bitmap;
+.end method
 
-    return-void
+.method public abstract e()Landroid/graphics/Rect;
+.end method
+
+.method public abstract f()Llwd;
 .end method

@@ -1,63 +1,43 @@
-.class public final Ljqd;
-.super Ljava/lang/Object;
-
-# interfaces
-.implements Ljcy;
+.class final Ljqd;
+.super Lcom/google/android/apps/camera/bottombar/BottomBarListener;
 
 
-# static fields
-.field public static final a:Ljqd;
+# instance fields
+.field final synthetic a:Ljqi;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
-
-    new-instance v0, Ljqd;
-
-    invoke-direct {v0}, Ljqd;-><init>()V
-
-    sput-object v0, Ljqd;->a:Ljqd;
-
-    return-void
-.end method
-
-.method private constructor <init>()V
+.method public constructor <init>(Ljqi;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Ljqd;->a:Ljqi;
+
+    invoke-direct {p0}, Lcom/google/android/apps/camera/bottombar/BottomBarListener;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 0
+.method public final onShutterButtonClicked()V
+    .locals 1
 
-    instance-of p1, p1, Ljqd;
+    iget-object v0, p0, Ljqd;->a:Ljqi;
 
-    return p1
-.end method
+    iget-object v0, v0, Ljqi;->h:Lgtg;
 
-.method public final hashCode()I
-    .locals 3
-
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    move-result-object v0
-
-    const/4 v1, 0x1
-
-    new-array v1, v1, [Ljava/lang/Object;
-
-    const/4 v2, 0x0
-
-    aput-object v0, v1, v2
-
-    invoke-static {v1}, Ljava/util/Arrays;->hashCode([Ljava/lang/Object;)I
+    invoke-virtual {v0}, Lgtg;->F()Z
 
     move-result v0
 
-    return v0
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Ljqd;->a:Ljqi;
+
+    iget-object v0, v0, Ljqi;->h:Lgtg;
+
+    invoke-virtual {v0}, Lgtg;->g()V
+
+    :cond_0
+    return-void
 .end method

@@ -1,34 +1,44 @@
 .class public final Lhsv;
-.super Landroid/view/GestureDetector$SimpleOnGestureListener;
-
-
-# instance fields
-.field final synthetic a:Lcom/google/android/apps/camera/ui/compositevideoview/CompositeVideoView;
+.super Lldn;
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/apps/camera/ui/compositevideoview/CompositeVideoView;)V
+.method public constructor <init>(Llda;)V
     .locals 0
 
-    iput-object p1, p0, Lhsv;->a:Lcom/google/android/apps/camera/ui/compositevideoview/CompositeVideoView;
-
-    invoke-direct {p0}, Landroid/view/GestureDetector$SimpleOnGestureListener;-><init>()V
+    invoke-direct {p0, p1}, Lldn;-><init>(Llda;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onSingleTapConfirmed(Landroid/view/MotionEvent;)Z
+.method protected final bridge synthetic b(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    iget-object p1, p0, Lhsv;->a:Lcom/google/android/apps/camera/ui/compositevideoview/CompositeVideoView;
+    check-cast p1, Ljava/lang/Integer;
 
-    iget-object p1, p1, Lcom/google/android/apps/camera/ui/compositevideoview/CompositeVideoView;->a:Landroid/widget/VideoView;
+    invoke-virtual {p1}, Ljava/lang/Integer;->intValue()I
 
-    invoke-virtual {p1}, Landroid/widget/VideoView;->performClick()Z
+    move-result p1
 
-    const/4 p1, 0x1
+    invoke-static {p1}, Lhti;->a(I)Lhti;
 
-    return p1
+    move-result-object p1
+
+    return-object p1
+.end method
+
+.method protected final bridge synthetic c(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 0
+
+    check-cast p1, Lhti;
+
+    iget p1, p1, Lhti;->g:I
+
+    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object p1
+
+    return-object p1
 .end method

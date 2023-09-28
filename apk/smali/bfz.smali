@@ -1,134 +1,77 @@
 .class public final Lbfz;
-.super Landroid/view/View$BaseSavedState;
+.super Ljava/lang/Object;
 
-
-# static fields
-.field public static final CREATOR:Landroid/os/Parcelable$Creator;
+# interfaces
+.implements Lbfh;
 
 
 # instance fields
-.field public a:Ljava/lang/String;
+.field private final a:Landroid/content/Context;
 
-.field public b:I
-
-.field public c:F
-
-.field public d:Z
-
-.field public e:Ljava/lang/String;
-
-.field public f:I
-
-.field public g:I
+.field private final synthetic b:I
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
-
-    new-instance v0, Lob;
-
-    const/16 v1, 0xe
-
-    invoke-direct {v0, v1}, Lob;-><init>(I)V
-
-    sput-object v0, Lbfz;->CREATOR:Landroid/os/Parcelable$Creator;
-
-    return-void
-.end method
-
-.method public constructor <init>(Landroid/os/Parcel;)V
-    .locals 2
-
-    invoke-direct {p0, p1}, Landroid/view/View$BaseSavedState;-><init>(Landroid/os/Parcel;)V
-
-    invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lbfz;->a:Ljava/lang/String;
-
-    invoke-virtual {p1}, Landroid/os/Parcel;->readFloat()F
-
-    move-result v0
-
-    iput v0, p0, Lbfz;->c:F
-
-    invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
-
-    move-result v0
-
-    const/4 v1, 0x1
-
-    if-ne v0, v1, :cond_0
-
-    goto :goto_0
-
-    :cond_0
-    const/4 v1, 0x0
-
-    :goto_0
-    iput-boolean v1, p0, Lbfz;->d:Z
-
-    invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lbfz;->e:Ljava/lang/String;
-
-    invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
-
-    move-result v0
-
-    iput v0, p0, Lbfz;->f:I
-
-    invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
-
-    move-result p1
-
-    iput p1, p0, Lbfz;->g:I
-
-    return-void
-.end method
-
-.method public constructor <init>(Landroid/os/Parcelable;)V
+.method public constructor <init>(Landroid/content/Context;I)V
     .locals 0
 
-    invoke-direct {p0, p1}, Landroid/view/View$BaseSavedState;-><init>(Landroid/os/Parcelable;)V
+    iput p2, p0, Lbfz;->b:I
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lbfz;->a:Landroid/content/Context;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final writeToParcel(Landroid/os/Parcel;I)V
-    .locals 0
+.method public final b(Lbfn;)Lbfg;
+    .locals 3
 
-    invoke-super {p0, p1, p2}, Landroid/view/View$BaseSavedState;->writeToParcel(Landroid/os/Parcel;I)V
+    iget p1, p0, Lbfz;->b:I
 
-    iget-object p2, p0, Lbfz;->a:Ljava/lang/String;
+    const/4 v0, 0x0
 
-    invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
+    packed-switch p1, :pswitch_data_0
 
-    iget p2, p0, Lbfz;->c:F
+    new-instance p1, Lbga;
 
-    invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeFloat(F)V
+    iget-object v1, p0, Lbfz;->a:Landroid/content/Context;
 
-    iget-boolean p2, p0, Lbfz;->d:Z
+    const/4 v2, 0x2
 
-    invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeInt(I)V
+    invoke-direct {p1, v1, v2, v0}, Lbga;-><init>(Landroid/content/Context;I[C)V
 
-    iget-object p2, p0, Lbfz;->e:Ljava/lang/String;
+    return-object p1
 
-    invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
+    :pswitch_0
+    new-instance p1, Lbga;
 
-    iget p2, p0, Lbfz;->f:I
+    iget-object v1, p0, Lbfz;->a:Landroid/content/Context;
 
-    invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeInt(I)V
+    const/4 v2, 0x1
 
-    iget p2, p0, Lbfz;->g:I
+    invoke-direct {p1, v1, v2, v0}, Lbga;-><init>(Landroid/content/Context;I[B)V
 
-    invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeInt(I)V
+    return-object p1
 
-    return-void
+    :pswitch_1
+    new-instance p1, Lbga;
+
+    iget-object v0, p0, Lbfz;->a:Landroid/content/Context;
+
+    const/4 v1, 0x0
+
+    invoke-direct {p1, v0, v1}, Lbga;-><init>(Landroid/content/Context;I)V
+
+    return-object p1
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method

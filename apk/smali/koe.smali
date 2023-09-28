@@ -3,114 +3,94 @@
 
 
 # static fields
-.field private static final g:Ljava/util/regex/Pattern;
+.field private static final a:Lkoe;
 
 
 # instance fields
-.field public final a:Z
-
-.field public final b:Z
-
-.field public final c:Z
-
-.field public final d:Z
-
-.field public final e:Z
-
-.field public final f:Z
+.field private b:Lkhx;
 
 
 # direct methods
 .method static constructor <clinit>()V
     .locals 1
 
-    const-string v0, "^[A-Z][A-Z0-9]{3}\\.\\d{6}\\.\\d{3}(\\..*)?$"
+    new-instance v0, Lkoe;
 
-    invoke-static {v0}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;
+    invoke-direct {v0}, Lkoe;-><init>()V
 
-    move-result-object v0
-
-    sput-object v0, Lkoe;->g:Ljava/util/regex/Pattern;
+    sput-object v0, Lkoe;->a:Lkoe;
 
     return-void
 .end method
 
-.method private constructor <init>(ILjava/lang/String;)V
+.method public constructor <init>()V
     .locals 1
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const/4 v0, 0x1
+    const/4 v0, 0x0
 
-    iput-boolean v0, p0, Lkoe;->a:Z
+    iput-object v0, p0, Lkoe;->b:Lkhx;
 
-    iput-boolean v0, p0, Lkoe;->b:Z
-
-    iput-boolean v0, p0, Lkoe;->c:Z
-
-    iput-boolean v0, p0, Lkoe;->d:Z
-
-    iput-boolean v0, p0, Lkoe;->e:Z
-
-    iput-boolean v0, p0, Lkoe;->f:Z
-
-    const-string v0, "MASTER"
-
-    invoke-virtual {v0, p2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-nez v0, :cond_0
-
-    const/16 v0, 0x21
-
-    if-gt p1, v0, :cond_0
-
-    sget-object p1, Lkoe;->g:Ljava/util/regex/Pattern;
-
-    invoke-virtual {p1, p2}, Ljava/util/regex/Pattern;->matcher(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;
-
-    move-result-object p1
-
-    invoke-virtual {p1}, Ljava/util/regex/Matcher;->find()Z
-
-    move-result p1
-
-    if-eqz p1, :cond_0
-
-    const/4 p1, 0x0
-
-    invoke-virtual {p2, p1}, Ljava/lang/String;->charAt(I)C
-
-    :cond_0
     return-void
 .end method
 
-.method public static a()Lkoe;
-    .locals 3
+.method public static b(Landroid/content/Context;)Lkhx;
+    .locals 1
 
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
+    sget-object v0, Lkoe;->a:Lkoe;
 
-    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-virtual {v0, p0}, Lkoe;->a(Landroid/content/Context;)Lkhx;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+
+# virtual methods
+.method public final declared-synchronized a(Landroid/content/Context;)Lkhx;
+    .locals 2
+
+    monitor-enter p0
+
+    :try_start_0
+    iget-object v0, p0, Lkoe;->b:Lkhx;
+
+    if-nez v0, :cond_1
+
+    invoke-virtual {p1}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
 
     move-result-object v0
 
-    sget-object v1, Landroid/os/Build;->ID:Ljava/lang/String;
+    if-eqz v0, :cond_0
 
-    new-instance v2, Lkoe;
+    invoke-virtual {p1}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
 
-    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
-
-    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
-
-    move-result v0
-
-    if-nez v1, :cond_0
-
-    const-string v1, "AAA01"
+    move-result-object p1
 
     :cond_0
-    invoke-direct {v2, v0, v1}, Lkoe;-><init>(ILjava/lang/String;)V
+    new-instance v0, Lkhx;
 
-    return-object v2
+    const/4 v1, 0x0
+
+    invoke-direct {v0, p1, v1}, Lkhx;-><init>(Landroid/content/Context;[C)V
+
+    iput-object v0, p0, Lkoe;->b:Lkhx;
+
+    :cond_1
+    iget-object p1, p0, Lkoe;->b:Lkhx;
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    monitor-exit p0
+
+    return-object p1
+
+    :catchall_0
+    move-exception p1
+
+    monitor-exit p0
+
+    throw p1
 .end method

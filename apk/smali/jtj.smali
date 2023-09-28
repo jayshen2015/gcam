@@ -1,34 +1,82 @@
-.class final Ljtj;
-.super Ljtf;
+.class public final Ljtj;
+.super Ljava/lang/Object;
+
+
+# instance fields
+.field public a:F
+
+.field private final b:F
+
+.field private c:F
 
 
 # direct methods
-.method public constructor <init>(Ljed;)V
-    .locals 0
+.method public constructor <init>(I)V
+    .locals 1
 
-    invoke-direct {p0, p1}, Ljtf;-><init>(Ljed;)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    const/4 v0, 0x0
+
+    iput v0, p0, Ljtj;->c:F
+
+    iput v0, p0, Ljtj;->a:F
+
+    int-to-float p1, p1
+
+    iput p1, p0, Ljtj;->b:F
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final d(Ljtc;)V
-    .locals 2
+.method public final a(F)V
+    .locals 4
 
-    new-instance v0, Ljsm;
+    iget v0, p0, Ljtj;->c:F
 
-    iget v1, p1, Ljtc;->a:I
+    iget v1, p0, Ljtj;->b:F
 
-    invoke-static {v1}, Ljvd;->v(I)Lcom/google/android/gms/common/api/Status;
+    const/high16 v2, 0x3f800000    # 1.0f
 
-    move-result-object v1
+    cmpl-float v3, v0, v1
 
-    iget p1, p1, Ljtc;->b:I
+    if-nez v3, :cond_0
 
-    invoke-direct {v0, v1, p1}, Ljsm;-><init>(Lcom/google/android/gms/common/api/Status;I)V
+    goto :goto_0
 
-    invoke-virtual {p0, v0}, Ljtf;->f(Ljava/lang/Object;)V
+    :cond_0
+    add-float v1, v0, v2
+
+    :goto_0
+    iput v1, p0, Ljtj;->c:F
+
+    div-float v0, v2, v1
+
+    iget v1, p0, Ljtj;->a:F
+
+    sub-float/2addr v2, v0
+
+    mul-float v1, v1, v2
+
+    mul-float p1, p1, v0
+
+    add-float/2addr v1, p1
+
+    iput v1, p0, Ljtj;->a:F
+
+    return-void
+.end method
+
+.method public final b()V
+    .locals 1
+
+    const/4 v0, 0x0
+
+    iput v0, p0, Ljtj;->c:F
+
+    iput v0, p0, Ljtj;->a:F
 
     return-void
 .end method

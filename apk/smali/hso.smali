@@ -1,151 +1,50 @@
 .class public final Lhso;
-.super Ljava/lang/Object;
-
-# interfaces
-.implements Logk;
+.super Lhsp;
 
 
-# instance fields
-.field private final a:Loiw;
-
-.field private final b:Loiw;
-
-.field private final c:Loiw;
-
-.field private final d:Loiw;
-
-.field private final e:Loiw;
-
-.field private final f:Loiw;
-
-.field private final g:Loiw;
-
-.field private final h:Loiw;
+# static fields
+.field public static final CREATOR:Landroid/os/Parcelable$Creator;
 
 
 # direct methods
-.method public constructor <init>(Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;)V
+.method static constructor <clinit>()V
+    .locals 2
+
+    new-instance v0, Lsi;
+
+    const/16 v1, 0xe
+
+    invoke-direct {v0, v1}, Lsi;-><init>(I)V
+
+    sput-object v0, Lhso;->CREATOR:Landroid/os/Parcelable$Creator;
+
+    return-void
+.end method
+
+.method public constructor <init>(I)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lhso;->a:Loiw;
-
-    iput-object p2, p0, Lhso;->b:Loiw;
-
-    iput-object p3, p0, Lhso;->c:Loiw;
-
-    iput-object p4, p0, Lhso;->d:Loiw;
-
-    iput-object p5, p0, Lhso;->e:Loiw;
-
-    iput-object p6, p0, Lhso;->f:Loiw;
-
-    iput-object p7, p0, Lhso;->g:Loiw;
-
-    iput-object p8, p0, Lhso;->h:Loiw;
+    invoke-direct {p0, p1}, Lhsp;-><init>(I)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Lhsn;
-    .locals 12
-
-    iget-object v0, p0, Lhso;->a:Loiw;
-
-    check-cast v0, Liho;
-
-    invoke-virtual {v0}, Liho;->a()Lcom/google/android/apps/camera/bottombar/RoundedThumbnailView;
-
-    move-result-object v2
-
-    iget-object v0, p0, Lhso;->b:Loiw;
-
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/lang/Boolean;
-
-    invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
-
-    move-result v3
-
-    iget-object v0, p0, Lhso;->c:Loiw;
-
-    check-cast v0, Lera;
-
-    invoke-virtual {v0}, Lera;->a()Lbkc;
-
-    move-result-object v4
-
-    iget-object v0, p0, Lhso;->d:Loiw;
-
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    move-object v5, v0
-
-    check-cast v5, Lhlb;
-
-    iget-object v0, p0, Lhso;->e:Loiw;
-
-    invoke-static {v0}, Logj;->a(Loiw;)Logd;
-
-    move-result-object v6
-
-    iget-object v0, p0, Lhso;->f:Loiw;
-
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    move-object v7, v0
-
-    check-cast v7, Ljuh;
-
-    iget-object v0, p0, Lhso;->g:Loiw;
-
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    move-object v8, v0
-
-    check-cast v8, Ljava/util/concurrent/Executor;
-
-    iget-object v0, p0, Lhso;->h:Loiw;
-
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    move-object v9, v0
-
-    check-cast v9, Lgzm;
-
-    new-instance v0, Lhsn;
-
-    const/4 v10, 0x0
-
-    const/4 v11, 0x0
-
-    move-object v1, v0
-
-    invoke-direct/range {v1 .. v11}, Lhsn;-><init>(Lcom/google/android/apps/camera/bottombar/RoundedThumbnailView;ZLbkc;Lhlb;Logd;Ljuh;Ljava/util/concurrent/Executor;Lgzm;[B[B)V
-
-    return-object v0
-.end method
-
-.method public final bridge synthetic get()Ljava/lang/Object;
+.method public final describeContents()I
     .locals 1
 
-    invoke-virtual {p0}, Lhso;->a()Lhsn;
+    const/4 v0, 0x0
 
-    move-result-object v0
+    return v0
+.end method
 
-    return-object v0
+.method public final writeToParcel(Landroid/os/Parcel;I)V
+    .locals 0
+
+    iget p2, p0, Lhsp;->a:I
+
+    invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeInt(I)V
+
+    return-void
 .end method

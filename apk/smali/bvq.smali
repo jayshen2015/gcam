@@ -1,98 +1,99 @@
-.class public final Lbvq;
+.class public final synthetic Lbvq;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lbuz;
+.implements Lpgk;
 
 
 # instance fields
-.field private final a:Landroid/content/Context;
+.field public final synthetic a:Lbvu;
 
-.field private final b:Lbuz;
+.field public final synthetic b:Ljava/lang/String;
 
-.field private final c:Lbuz;
-
-.field private final d:Ljava/lang/Class;
+.field public final synthetic c:Lqkg;
 
 
 # direct methods
-.method public constructor <init>(Landroid/content/Context;Lbuz;Lbuz;Ljava/lang/Class;)V
+.method public synthetic constructor <init>(Lbvu;Ljava/lang/String;Lqkg;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-virtual {p1}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
+    iput-object p1, p0, Lbvq;->a:Lbvu;
 
-    move-result-object p1
+    iput-object p2, p0, Lbvq;->b:Ljava/lang/String;
 
-    iput-object p1, p0, Lbvq;->a:Landroid/content/Context;
-
-    iput-object p2, p0, Lbvq;->b:Lbuz;
-
-    iput-object p3, p0, Lbvq;->c:Lbuz;
-
-    iput-object p4, p0, Lbvq;->d:Ljava/lang/Class;
+    iput-object p3, p0, Lbvq;->c:Lqkg;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final bridge synthetic a(Ljava/lang/Object;)Z
-    .locals 0
+.method public final a(Ljava/lang/Object;)Lpht;
+    .locals 3
 
-    check-cast p1, Landroid/net/Uri;
+    iget-object v0, p0, Lbvq;->a:Lbvu;
 
-    invoke-static {p1}, Lbze;->y(Landroid/net/Uri;)Z
+    iget-object v1, p0, Lbvq;->b:Ljava/lang/String;
+
+    iget-object v2, p0, Lbvq;->c:Lqkg;
+
+    check-cast p1, Ljava/lang/Boolean;
+
+    invoke-virtual {p1}, Ljava/lang/Boolean;->booleanValue()Z
 
     move-result p1
 
-    if-eqz p1, :cond_0
+    if-nez p1, :cond_0
 
-    const/4 p1, 0x1
-
-    return p1
-
-    :cond_0
     const/4 p1, 0x0
 
-    return p1
-.end method
+    invoke-static {p1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
-.method public final bridge synthetic b(Ljava/lang/Object;IILbqf;)Lva;
-    .locals 11
+    move-result-object p1
 
-    move-object v4, p1
+    invoke-static {p1}, Lplk;->V(Ljava/lang/Object;)Lpht;
 
-    check-cast v4, Landroid/net/Uri;
+    move-result-object p1
 
-    new-instance p1, Lva;
+    goto :goto_0
 
-    new-instance v9, Lcah;
+    :cond_0
+    iget-object p1, v0, Lbvu;->b:Lljf;
 
-    invoke-direct {v9, v4}, Lcah;-><init>(Ljava/lang/Object;)V
+    invoke-interface {p1, v1}, Lljf;->e(Ljava/lang/String;)V
 
-    new-instance v10, Lbvp;
+    iget-object p1, v0, Lbvu;->b:Lljf;
 
-    iget-object v1, p0, Lbvq;->a:Landroid/content/Context;
+    const-string v1, "get"
 
-    iget-object v2, p0, Lbvq;->b:Lbuz;
+    invoke-interface {p1, v1}, Lljf;->e(Ljava/lang/String;)V
 
-    iget-object v3, p0, Lbvq;->c:Lbuz;
+    invoke-interface {v2}, Lqkg;->get()Ljava/lang/Object;
 
-    iget-object v8, p0, Lbvq;->d:Ljava/lang/Class;
+    move-result-object p1
 
-    move-object v0, v10
+    check-cast p1, Lbvv;
 
-    move v5, p2
+    iget-object v1, v0, Lbvu;->b:Lljf;
 
-    move v6, p3
+    const-string v2, "start"
 
-    move-object v7, p4
+    invoke-interface {v1, v2}, Lljf;->g(Ljava/lang/String;)V
 
-    invoke-direct/range {v0 .. v8}, Lbvp;-><init>(Landroid/content/Context;Lbuz;Lbuz;Landroid/net/Uri;IILbqf;Ljava/lang/Class;)V
+    invoke-interface {p1}, Lbvv;->fz()Lpht;
 
-    invoke-direct {p1, v9, v10}, Lva;-><init>(Lbqb;Lbqo;)V
+    move-result-object p1
 
+    iget-object v1, v0, Lbvu;->b:Lljf;
+
+    invoke-interface {v1}, Lljf;->f()V
+
+    iget-object v0, v0, Lbvu;->b:Lljf;
+
+    invoke-interface {v0}, Lljf;->f()V
+
+    :goto_0
     return-object p1
 .end method

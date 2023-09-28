@@ -1,98 +1,100 @@
-.class public final Liox;
+.class public final synthetic Liox;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lipf;
+.implements Llij;
 
 
 # instance fields
-.field private a:Lipf;
+.field public final synthetic a:Lipf;
+
+.field public final synthetic b:Lcpp;
+
+.field public final synthetic c:Lcvo;
+
+.field public final synthetic d:Lddf;
+
+.field public final synthetic e:Lcpj;
+
+.field public final synthetic f:Lqkg;
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 1
+.method public synthetic constructor <init>(Lipf;Lcpp;Lcvo;Lddf;Lcpj;Lqkg;)V
+    .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const/4 v0, 0x0
+    iput-object p1, p0, Liox;->a:Lipf;
 
-    iput-object v0, p0, Liox;->a:Lipf;
+    iput-object p2, p0, Liox;->b:Lcpp;
+
+    iput-object p3, p0, Liox;->c:Lcvo;
+
+    iput-object p4, p0, Liox;->d:Lddf;
+
+    iput-object p5, p0, Liox;->e:Lcpj;
+
+    iput-object p6, p0, Liox;->f:Lqkg;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Landroid/graphics/PointF;)Z
-    .locals 1
+.method public final fB(Ljava/lang/Object;)V
+    .locals 7
 
     iget-object v0, p0, Liox;->a:Lipf;
 
-    if-nez v0, :cond_0
+    iget-object v1, p0, Liox;->b:Lcpp;
 
-    const/4 p1, 0x0
+    iget-object v2, p0, Liox;->c:Lcvo;
 
-    return p1
+    iget-object v3, p0, Liox;->d:Lddf;
+
+    iget-object v4, p0, Liox;->e:Lcpj;
+
+    iget-object v5, p0, Liox;->f:Lqkg;
+
+    check-cast p1, Lhtl;
+
+    iget-object p1, v0, Lipf;->j:Llce;
+
+    iget-object p1, p1, Llce;->d:Ljava/lang/Object;
+
+    sget-object v6, Linr;->e:Linr;
+
+    if-eq p1, v6, :cond_0
+
+    return-void
 
     :cond_0
-    invoke-interface {v0, p1}, Lipf;->a(Landroid/graphics/PointF;)Z
+    iget-object p1, v1, Lcpp;->a:Lcpn;
 
-    move-result p1
+    invoke-static {v2, v3, v4, v1}, Lmip;->eH(Lcvo;Lddf;Lcpj;Lcpp;)Lleb;
 
-    return p1
-.end method
+    move-result-object v1
 
-.method public final b()V
-    .locals 1
+    invoke-virtual {p1, v1}, Lldn;->fB(Ljava/lang/Object;)V
 
-    iget-object v0, p0, Liox;->a:Lipf;
+    check-cast v5, Ljnw;
 
-    if-nez v0, :cond_0
+    invoke-virtual {v5}, Ljnw;->a()Ljns;
 
-    return-void
+    move-result-object p1
 
-    :cond_0
-    invoke-interface {v0}, Lipf;->b()V
+    iget-object p1, p1, Ljns;->e:Lcom/google/android/apps/camera/ui/views/ViewfinderCover;
 
-    return-void
-.end method
+    sget-object v1, Ljrl;->n:Ljrl;
 
-.method public final c()V
-    .locals 1
+    new-instance v2, Liot;
 
-    const/4 v0, 0x0
+    const/4 v3, 0x4
 
-    iput-object v0, p0, Liox;->a:Lipf;
+    invoke-direct {v2, v0, v3}, Liot;-><init>(Lipf;I)V
+
+    invoke-virtual {p1, v1, v2}, Lcom/google/android/apps/camera/ui/views/ViewfinderCover;->n(Ljrl;Ljava/lang/Runnable;)V
 
     return-void
-.end method
-
-.method public final d(Lipf;)V
-    .locals 0
-
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    iput-object p1, p0, Liox;->a:Lipf;
-
-    return-void
-.end method
-
-.method public final f(Landroid/graphics/PointF;)Z
-    .locals 1
-
-    iget-object v0, p0, Liox;->a:Lipf;
-
-    if-nez v0, :cond_0
-
-    const/4 p1, 0x0
-
-    return p1
-
-    :cond_0
-    invoke-interface {v0, p1}, Lipf;->f(Landroid/graphics/PointF;)Z
-
-    move-result p1
-
-    return p1
 .end method

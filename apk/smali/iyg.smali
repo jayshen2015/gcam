@@ -1,51 +1,42 @@
-.class public final Liyg;
-.super Ljava/lang/Object;
-
-# interfaces
-.implements Liyi;
+.class final Liyg;
+.super Liwr;
 
 
 # instance fields
-.field private final a:Landroid/widget/TextView;
+.field final synthetic b:Liwt;
 
 
 # direct methods
-.method public constructor <init>(Landroid/widget/TextView;)V
+.method public constructor <init>(Liwt;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Liyg;->b:Liwt;
 
-    iput-object p1, p0, Liyg;->a:Landroid/widget/TextView;
+    invoke-direct {p0, p1}, Liwr;-><init>(Liwt;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Landroid/view/View;
+.method public final b(Lghx;Llap;)V
     .locals 1
 
-    iget-object v0, p0, Liyg;->a:Landroid/widget/TextView;
+    iget-object v0, p0, Liyg;->b:Liwt;
 
-    return-object v0
-.end method
+    iget-object v0, v0, Liwt;->d:Lihu;
 
-.method public final b(Ljava/lang/CharSequence;)V
-    .locals 1
+    invoke-virtual {v0}, Lihu;->e()V
 
-    iget-object v0, p0, Liyg;->a:Landroid/widget/TextView;
+    invoke-super {p0, p1, p2}, Liwr;->b(Lghx;Llap;)V
 
-    invoke-virtual {v0, p1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+    iget-object p1, p0, Liyg;->b:Liwt;
 
-    return-void
-.end method
+    iget-object p2, p1, Liwt;->d:Lihu;
 
-.method public final c(I)V
-    .locals 1
+    iget-object p1, p1, Liwt;->f:Lihw;
 
-    iget-object v0, p0, Liyg;->a:Landroid/widget/TextView;
-
-    invoke-virtual {v0, p1}, Landroid/widget/TextView;->setTextColor(I)V
+    invoke-virtual {p2, p1}, Lihu;->g(Lihw;)V
 
     return-void
 .end method

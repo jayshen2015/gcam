@@ -1,103 +1,45 @@
-.class public final Lbuo;
+.class public final synthetic Lbuo;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lbun;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field private final synthetic a:I
+.field public final synthetic a:Lbup;
+
+.field public final synthetic b:Ljava/lang/Thread;
+
+.field public final synthetic c:Ljava/lang/Throwable;
 
 
 # direct methods
-.method public constructor <init>(I)V
+.method public synthetic constructor <init>(Lbup;Ljava/lang/Thread;Ljava/lang/Throwable;)V
     .locals 0
 
-    iput p1, p0, Lbuo;->a:I
-
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lbuo;->a:Lbup;
+
+    iput-object p2, p0, Lbuo;->b:Ljava/lang/Thread;
+
+    iput-object p3, p0, Lbuo;->c:Ljava/lang/Throwable;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Ljava/lang/Class;
-    .locals 1
+.method public final run()V
+    .locals 3
 
-    iget v0, p0, Lbuo;->a:I
+    iget-object v0, p0, Lbuo;->a:Lbup;
 
-    packed-switch v0, :pswitch_data_0
+    iget-object v1, p0, Lbuo;->b:Ljava/lang/Thread;
 
-    const-class v0, Landroid/os/ParcelFileDescriptor;
+    iget-object v2, p0, Lbuo;->c:Ljava/lang/Throwable;
 
-    return-object v0
-
-    :pswitch_0
-    const-class v0, Ljava/io/InputStream;
-
-    return-object v0
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
-.end method
-
-.method public final synthetic b(Ljava/io/File;)Ljava/lang/Object;
-    .locals 1
-
-    iget v0, p0, Lbuo;->a:I
-
-    packed-switch v0, :pswitch_data_0
-
-    const/high16 v0, 0x10000000
-
-    invoke-static {p1, v0}, Landroid/os/ParcelFileDescriptor;->open(Ljava/io/File;I)Landroid/os/ParcelFileDescriptor;
-
-    move-result-object p1
-
-    return-object p1
-
-    :pswitch_0
-    new-instance v0, Ljava/io/FileInputStream;
-
-    invoke-direct {v0, p1}, Ljava/io/FileInputStream;-><init>(Ljava/io/File;)V
-
-    return-object v0
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
-.end method
-
-.method public final synthetic c(Ljava/lang/Object;)V
-    .locals 1
-
-    iget v0, p0, Lbuo;->a:I
-
-    packed-switch v0, :pswitch_data_0
-
-    check-cast p1, Landroid/os/ParcelFileDescriptor;
-
-    invoke-virtual {p1}, Landroid/os/ParcelFileDescriptor;->close()V
+    invoke-virtual {v0, v1, v2}, Lbup;->b(Ljava/lang/Thread;Ljava/lang/Throwable;)V
 
     return-void
-
-    :pswitch_0
-    check-cast p1, Ljava/io/InputStream;
-
-    invoke-virtual {p1}, Ljava/io/InputStream;->close()V
-
-    return-void
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
 .end method

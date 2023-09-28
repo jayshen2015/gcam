@@ -1,40 +1,71 @@
-.class final Lgrl;
-.super Lgru;
+.class public final synthetic Lgrl;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field final synthetic a:Lgrv;
+.field public final synthetic a:Lj$/util/function/Consumer;
+
+.field public final synthetic b:I
+
+.field private final synthetic c:I
 
 
 # direct methods
-.method public constructor <init>(Lgrv;)V
+.method public synthetic constructor <init>(Lj$/util/function/Consumer;II)V
     .locals 0
 
-    iput-object p1, p0, Lgrl;->a:Lgrv;
+    iput p3, p0, Lgrl;->c:I
 
-    invoke-direct {p0, p1}, Lgru;-><init>(Lgrv;)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lgrl;->a:Lj$/util/function/Consumer;
+
+    iput p2, p0, Lgrl;->b:I
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final b()V
+.method public final run()V
     .locals 2
 
-    iget-object v0, p0, Lgrl;->a:Lgrv;
+    iget v0, p0, Lgrl;->c:I
 
-    iget-object v0, v0, Lgrv;->c:Lhiu;
+    packed-switch v0, :pswitch_data_0
 
-    invoke-virtual {v0}, Lhiu;->e()V
+    iget-object v0, p0, Lgrl;->a:Lj$/util/function/Consumer;
 
-    iget-object v0, p0, Lgrl;->a:Lgrv;
+    iget v1, p0, Lgrl;->b:I
 
-    iget-object v1, v0, Lgrv;->c:Lhiu;
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    iget-object v0, v0, Lgrv;->d:Lhiw;
+    move-result-object v1
 
-    invoke-virtual {v1, v0}, Lhiu;->g(Lhiw;)V
+    invoke-interface {v0, v1}, Lj$/util/function/Consumer;->accept(Ljava/lang/Object;)V
 
     return-void
+
+    :pswitch_0
+    iget-object v0, p0, Lgrl;->a:Lj$/util/function/Consumer;
+
+    iget v1, p0, Lgrl;->b:I
+
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v1
+
+    invoke-interface {v0, v1}, Lj$/util/function/Consumer;->accept(Ljava/lang/Object;)V
+
+    return-void
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

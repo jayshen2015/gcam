@@ -1,150 +1,115 @@
 .class public final Lkvz;
-.super Lnws;
-
-# interfaces
-.implements Lnxz;
+.super Lkno;
 
 
 # static fields
-.field public static final a:Lkvz;
+.field public static final CREATOR:Landroid/os/Parcelable$Creator;
 
-.field private static volatile b:Lnyf;
+
+# instance fields
+.field public final a:I
+
+.field public final b:Z
+
+.field public final c:Ljava/util/List;
+
+.field public final d:I
+
+.field public final e:Ljava/lang/String;
+
+.field public final f:Z
 
 
 # direct methods
 .method static constructor <clinit>()V
     .locals 2
 
-    new-instance v0, Lkvz;
+    new-instance v0, Lktu;
 
-    invoke-direct {v0}, Lkvz;-><init>()V
+    const/16 v1, 0xa
 
-    sput-object v0, Lkvz;->a:Lkvz;
+    invoke-direct {v0, v1}, Lktu;-><init>(I)V
 
-    const-class v1, Lkvz;
-
-    invoke-static {v1, v0}, Lnws;->aa(Ljava/lang/Class;Lnws;)V
+    sput-object v0, Lkvz;->CREATOR:Landroid/os/Parcelable$Creator;
 
     return-void
 .end method
 
-.method private constructor <init>()V
+.method public constructor <init>(IZLjava/util/List;ILjava/lang/String;Z)V
     .locals 1
 
-    invoke-direct {p0}, Lnws;-><init>()V
+    invoke-direct {p0}, Lkno;-><init>()V
 
-    sget-object v0, Lnyi;->b:Lnyi;
+    new-instance v0, Ljava/util/ArrayList;
 
-    sget-object v0, Lnwt;->b:Lnwt;
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+
+    iput-object v0, p0, Lkvz;->c:Ljava/util/List;
+
+    iput p1, p0, Lkvz;->a:I
+
+    iput-boolean p2, p0, Lkvz;->b:Z
+
+    if-eqz p3, :cond_0
+
+    invoke-interface {v0, p3}, Ljava/util/List;->addAll(Ljava/util/Collection;)Z
+
+    :cond_0
+    iput p4, p0, Lkvz;->d:I
+
+    iput-object p5, p0, Lkvz;->e:Ljava/lang/String;
+
+    iput-boolean p6, p0, Lkvz;->f:Z
 
     return-void
 .end method
 
 
 # virtual methods
-.method protected final a(ILjava/lang/Object;)Ljava/lang/Object;
-    .locals 1
+.method public final writeToParcel(Landroid/os/Parcel;I)V
+    .locals 2
 
-    add-int/lit8 p1, p1, -0x1
+    invoke-static {p1}, Lmip;->ct(Landroid/os/Parcel;)I
 
-    const/4 p2, 0x0
+    move-result p2
 
-    packed-switch p1, :pswitch_data_0
+    iget v0, p0, Lkvz;->a:I
 
-    :pswitch_0
-    return-object p2
+    const/4 v1, 0x2
 
-    :pswitch_1
-    sget-object p1, Lkvz;->b:Lnyf;
+    invoke-static {p1, v1, v0}, Lmip;->cA(Landroid/os/Parcel;II)V
 
-    if-nez p1, :cond_1
+    iget-boolean v0, p0, Lkvz;->b:Z
 
-    const-class p2, Lkvz;
+    const/4 v1, 0x3
 
-    monitor-enter p2
+    invoke-static {p1, v1, v0}, Lmip;->cw(Landroid/os/Parcel;IZ)V
 
-    :try_start_0
-    sget-object p1, Lkvz;->b:Lnyf;
+    iget-object v0, p0, Lkvz;->c:Ljava/util/List;
 
-    if-nez p1, :cond_0
+    const/4 v1, 0x4
 
-    new-instance p1, Lnwo;
+    invoke-static {p1, v1, v0}, Lmip;->cK(Landroid/os/Parcel;ILjava/util/List;)V
 
-    sget-object v0, Lkvz;->a:Lkvz;
+    iget v0, p0, Lkvz;->d:I
 
-    invoke-direct {p1, v0}, Lnwo;-><init>(Lnws;)V
+    const/4 v1, 0x5
 
-    sput-object p1, Lkvz;->b:Lnyf;
+    invoke-static {p1, v1, v0}, Lmip;->cA(Landroid/os/Parcel;II)V
 
-    :cond_0
-    monitor-exit p2
+    iget-object v0, p0, Lkvz;->e:Ljava/lang/String;
 
-    goto :goto_0
+    const/4 v1, 0x6
 
-    :catchall_0
-    move-exception p1
+    invoke-static {p1, v1, v0}, Lmip;->cI(Landroid/os/Parcel;ILjava/lang/String;)V
 
-    monitor-exit p2
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    iget-boolean v0, p0, Lkvz;->f:Z
 
-    throw p1
+    const/4 v1, 0x7
 
-    :cond_1
-    :goto_0
-    return-object p1
+    invoke-static {p1, v1, v0}, Lmip;->cw(Landroid/os/Parcel;IZ)V
 
-    :pswitch_2
-    sget-object p1, Lkvz;->a:Lkvz;
+    invoke-static {p1, p2}, Lmip;->cv(Landroid/os/Parcel;I)V
 
-    return-object p1
-
-    :pswitch_3
-    new-instance p1, Lnwn;
-
-    sget-object p2, Lkvz;->a:Lkvz;
-
-    invoke-direct {p1, p2}, Lnwn;-><init>(Lnws;)V
-
-    return-object p1
-
-    :pswitch_4
-    new-instance p1, Lkvz;
-
-    invoke-direct {p1}, Lkvz;-><init>()V
-
-    return-object p1
-
-    :pswitch_5
-    sget-object p1, Lkvz;->a:Lkvz;
-
-    const-string v0, "\u0001\u0000"
-
-    invoke-static {p1, v0, p2}, Lkvz;->X(Lnxy;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object p1
-
-    return-object p1
-
-    :pswitch_6
-    const/4 p1, 0x1
-
-    invoke-static {p1}, Ljava/lang/Byte;->valueOf(B)Ljava/lang/Byte;
-
-    move-result-object p1
-
-    return-object p1
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_6
-        :pswitch_0
-        :pswitch_5
-        :pswitch_4
-        :pswitch_3
-        :pswitch_2
-        :pswitch_1
-    .end packed-switch
+    return-void
 .end method

@@ -1,121 +1,75 @@
 .class final Lojo;
-.super Lojn;
+.super Ljava/lang/Object;
 
 # interfaces
-.implements Ljava/util/ListIterator;
+.implements Ljava/lang/Iterable;
 
 
 # instance fields
-.field final synthetic c:Lojq;
+.field final synthetic a:Ljava/lang/CharSequence;
+
+.field final synthetic b:Lojq;
 
 
 # direct methods
-.method public constructor <init>(Lojq;I)V
+.method public constructor <init>(Lojq;Ljava/lang/CharSequence;)V
     .locals 0
 
-    iput-object p1, p0, Lojo;->c:Lojq;
+    iput-object p1, p0, Lojo;->b:Lojq;
 
-    invoke-direct {p0, p1}, Lojn;-><init>(Lojq;)V
+    iput-object p2, p0, Lojo;->a:Ljava/lang/CharSequence;
 
-    invoke-virtual {p1}, Lojl;->a()I
-
-    move-result p1
-
-    invoke-static {p2, p1}, Lljr;->aK(II)V
-
-    iput p2, p0, Lojn;->a:I
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final add(Ljava/lang/Object;)V
-    .locals 1
-
-    new-instance p1, Ljava/lang/UnsupportedOperationException;
-
-    const-string v0, "Operation is not supported for read-only collection"
-
-    invoke-direct {p1, v0}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
-
-    throw p1
-.end method
-
-.method public final hasPrevious()Z
-    .locals 1
-
-    iget v0, p0, Lojn;->a:I
-
-    if-lez v0, :cond_0
-
-    const/4 v0, 0x1
-
-    return v0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    return v0
-.end method
-
-.method public final nextIndex()I
-    .locals 1
-
-    iget v0, p0, Lojn;->a:I
-
-    return v0
-.end method
-
-.method public final previous()Ljava/lang/Object;
+.method public final iterator()Ljava/util/Iterator;
     .locals 2
 
-    invoke-virtual {p0}, Lojo;->hasPrevious()Z
+    iget-object v0, p0, Lojo;->b:Lojq;
 
-    move-result v0
+    iget-object v1, p0, Lojo;->a:Ljava/lang/CharSequence;
 
-    if-eqz v0, :cond_0
-
-    iget-object v0, p0, Lojo;->c:Lojq;
-
-    iget v1, p0, Lojn;->a:I
-
-    add-int/lit8 v1, v1, -0x1
-
-    iput v1, p0, Lojn;->a:I
-
-    invoke-virtual {v0, v1}, Lojq;->get(I)Ljava/lang/Object;
+    invoke-virtual {v0, v1}, Lojq;->f(Ljava/lang/CharSequence;)Ljava/util/Iterator;
 
     move-result-object v0
 
     return-object v0
-
-    :cond_0
-    new-instance v0, Ljava/util/NoSuchElementException;
-
-    invoke-direct {v0}, Ljava/util/NoSuchElementException;-><init>()V
-
-    throw v0
 .end method
 
-.method public final previousIndex()I
-    .locals 1
+.method public final toString()Ljava/lang/String;
+    .locals 3
 
-    iget v0, p0, Lojn;->a:I
+    const-string v0, ", "
 
-    add-int/lit8 v0, v0, -0x1
+    invoke-static {v0}, Loxk;->e(Ljava/lang/String;)Loxk;
 
-    return v0
-.end method
+    move-result-object v0
 
-.method public final set(Ljava/lang/Object;)V
-    .locals 1
+    new-instance v1, Ljava/lang/StringBuilder;
 
-    new-instance p1, Ljava/lang/UnsupportedOperationException;
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v0, "Operation is not supported for read-only collection"
+    const/16 v2, 0x5b
 
-    invoke-direct {p1, v0}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    throw p1
+    invoke-interface {p0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
+
+    move-result-object v2
+
+    invoke-virtual {v0, v1, v2}, Loxk;->b(Ljava/lang/StringBuilder;Ljava/util/Iterator;)V
+
+    const/16 v0, 0x5d
+
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
 .end method

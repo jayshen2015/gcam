@@ -1,14 +1,25 @@
-.class public final Llfd;
+.class public interface abstract Llfd;
 .super Ljava/lang/Object;
 
+# interfaces
+.implements Llie;
 
-# direct methods
-.method public static a(Landroid/graphics/Bitmap;)Llfb;
-    .locals 1
 
-    new-instance v0, Lcom/google/android/libraries/oliveoil/natives/BitmapNativeBuffer;
+# virtual methods
+.method public abstract b(J)V
+.end method
 
-    invoke-direct {v0, p0}, Lcom/google/android/libraries/oliveoil/natives/BitmapNativeBuffer;-><init>(Landroid/graphics/Bitmap;)V
+.method public abstract c()V
+.end method
 
-    return-object v0
+.method public abstract d(J)V
+.end method
+
+.method public abstract e()V
+.end method
+
+.method public abstract k()V
+.end method
+
+.method public abstract l(Lcmj;J)V
 .end method

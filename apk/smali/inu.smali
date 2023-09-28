@@ -1,71 +1,83 @@
-.class Linu;
-.super Lins;
+.class public final synthetic Linu;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field final synthetic b:Linw;
+.field public final synthetic a:Linx;
+
+.field public final synthetic b:Z
 
 
 # direct methods
-.method public constructor <init>(Linw;)V
+.method public synthetic constructor <init>(Linx;Z)V
     .locals 0
 
-    iput-object p1, p0, Linu;->b:Linw;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0}, Lins;-><init>()V
+    iput-object p1, p0, Linu;->a:Linx;
+
+    iput-boolean p2, p0, Linu;->b:Z
 
     return-void
 .end method
 
 
 # virtual methods
-.method public a()V
-    .locals 0
+.method public final run()V
+    .locals 6
 
-    return-void
-.end method
+    iget-object v0, p0, Linu;->a:Linx;
 
-.method public final f()V
-    .locals 4
+    iget-boolean v1, p0, Linu;->b:Z
 
-    iget-object v0, p0, Linu;->b:Linw;
+    iget-object v2, v0, Linx;->h:Lddf;
 
-    iget-object v0, v0, Linw;->e:Ljvq;
+    sget-object v3, Ldeg;->g:Lddg;
 
-    iget-boolean v1, v0, Ljvq;->a:Z
+    invoke-interface {v2, v3}, Lddf;->k(Lddg;)Z
+
+    move-result v2
+
+    const/4 v3, 0x1
+
+    if-eqz v2, :cond_1
+
+    iget-object v2, v0, Linx;->o:Llnc;
+
+    const/4 v4, 0x0
+
+    iget-object v5, v0, Linx;->b:Ljava/util/concurrent/atomic/AtomicBoolean;
+
+    invoke-virtual {v5}, Ljava/util/concurrent/atomic/AtomicBoolean;->get()Z
+
+    move-result v5
+
+    xor-int/2addr v5, v3
+
+    invoke-interface {v2, v4, v3, v5}, Llnc;->l(ZZZ)V
+
+    iget-object v2, v0, Linx;->j:Lbod;
+
+    iget-object v3, v0, Linx;->m:Ljava/lang/Runnable;
+
+    invoke-virtual {v2, v3}, Lbod;->c(Ljava/lang/Runnable;)V
+
+    iget-object v2, v0, Linx;->a:Lgfy;
+
+    invoke-virtual {v2}, Lgfy;->a()V
 
     if-eqz v1, :cond_0
 
-    return-void
+    invoke-virtual {v0}, Linx;->c()V
 
     :cond_0
-    const/4 v1, 0x1
-
-    iput-boolean v1, v0, Ljvq;->a:Z
-
-    iget-object v1, v0, Ljvq;->b:Ljava/lang/Object;
-
-    iget-object v0, v0, Ljvq;->d:Ljava/lang/Object;
-
-    check-cast v1, Landroid/widget/VideoView;
-
-    const-wide/16 v2, 0xa
-
-    invoke-virtual {v1, v0, v2, v3}, Landroid/widget/VideoView;->postDelayed(Ljava/lang/Runnable;J)Z
-
     return-void
-.end method
 
-.method public final g()V
-    .locals 2
-
-    iget-object v0, p0, Linu;->b:Linw;
-
-    iget-object v0, v0, Linw;->e:Ljvq;
-
-    const/4 v1, 0x0
-
-    iput-boolean v1, v0, Ljvq;->a:Z
+    :cond_1
+    invoke-virtual {v0, v3, v3}, Linx;->b(ZZ)V
 
     return-void
 .end method

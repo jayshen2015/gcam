@@ -1,158 +1,135 @@
-.class public final Leuh;
-.super Lftk;
+.class final Leuh;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Lepi;
 
 
 # instance fields
-.field public final synthetic a:Leuj;
+.field final synthetic a:Leur;
 
 
 # direct methods
-.method public constructor <init>(Leuj;)V
+.method public constructor <init>(Leur;)V
     .locals 0
 
-    iput-object p1, p0, Leuh;->a:Leuj;
+    iput-object p1, p0, Leuh;->a:Leur;
 
-    invoke-direct {p0}, Lftk;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()V
-    .locals 3
+.method public final a(Z)V
+    .locals 1
 
-    iget-object v0, p0, Leuh;->a:Leuj;
+    iget-object v0, p0, Leuh;->a:Leur;
 
-    iget-object v0, v0, Leuj;->e:Ljuh;
+    iget-object v0, v0, Leur;->m:Ljns;
 
-    new-instance v1, Lett;
+    iget-object v0, v0, Ljns;->f:Lcom/google/android/apps/camera/bottombar/BottomBar;
 
-    const/16 v2, 0xd
+    invoke-virtual {v0}, Lcom/google/android/apps/camera/bottombar/BottomBar;->getThumbnailButton()Lcom/google/android/apps/camera/bottombar/RoundedThumbnailView;
 
-    invoke-direct {v1, p0, v2}, Lett;-><init>(Leuh;I)V
+    move-result-object v0
 
-    invoke-virtual {v0, v1}, Ljuh;->execute(Ljava/lang/Runnable;)V
+    invoke-virtual {v0}, Lcom/google/android/apps/camera/bottombar/RoundedThumbnailView;->getVisibility()I
 
-    return-void
-.end method
+    move-result v0
 
-.method public final c()V
-    .locals 3
-
-    iget-object v0, p0, Leuh;->a:Leuj;
-
-    iget-object v0, v0, Leuj;->e:Ljuh;
-
-    new-instance v1, Lett;
-
-    const/16 v2, 0xc
-
-    invoke-direct {v1, p0, v2}, Lett;-><init>(Leuh;I)V
-
-    invoke-virtual {v0, v1}, Ljuh;->execute(Ljava/lang/Runnable;)V
+    if-eqz v0, :cond_0
 
     return-void
-.end method
 
-.method public final d(F)V
-    .locals 3
+    :cond_0
+    if-eqz p1, :cond_1
 
-    iget-object v0, p0, Leuh;->a:Leuj;
+    iget-object p1, p0, Leuh;->a:Leur;
 
-    iget-object v0, v0, Leuj;->e:Ljuh;
+    iget-object p1, p1, Leur;->l:Lqkg;
 
-    new-instance v1, Leug;
+    invoke-interface {p1}, Lqkg;->get()Ljava/lang/Object;
 
-    const/4 v2, 0x2
+    move-result-object p1
 
-    invoke-direct {v1, p0, p1, v2}, Leug;-><init>(Leuh;FI)V
-
-    invoke-virtual {v0, v1}, Ljuh;->execute(Ljava/lang/Runnable;)V
-
-    return-void
-.end method
-
-.method public final e(FI)V
-    .locals 2
-
-    iget-object p2, p0, Leuh;->a:Leuj;
-
-    iget-object p2, p2, Leuj;->e:Ljuh;
-
-    new-instance v0, Leug;
-
-    const/4 v1, 0x0
-
-    invoke-direct {v0, p0, p1, v1}, Leug;-><init>(Leuh;FI)V
-
-    invoke-virtual {p2, v0}, Ljuh;->execute(Ljava/lang/Runnable;)V
-
-    return-void
-.end method
-
-.method public final f(FJ)V
-    .locals 8
-
-    iget-object v0, p0, Leuh;->a:Leuj;
-
-    iget-object v0, v0, Leuj;->e:Ljuh;
-
-    new-instance v7, Lhpi;
-
-    const/4 v6, 0x1
-
-    move-object v1, v7
-
-    move-object v2, p0
-
-    move v3, p1
-
-    move-wide v4, p2
-
-    invoke-direct/range {v1 .. v6}, Lhpi;-><init>(Leuh;FJI)V
-
-    invoke-virtual {v0, v7}, Ljuh;->execute(Ljava/lang/Runnable;)V
-
-    return-void
-.end method
-
-.method public final g(F)V
-    .locals 2
+    check-cast p1, Livj;
 
     const/4 v0, 0x0
 
-    cmpl-float v0, p1, v0
-
-    if-nez v0, :cond_0
-
-    iget-object v0, p0, Leuh;->a:Leuj;
-
-    iget-object v0, v0, Leuj;->s:Ldfo;
-
-    sget-object v1, Ldfl;->d:Ldfl;
-
-    invoke-virtual {v0, v1}, Ldfo;->f(Ldfn;)V
-
-    :cond_0
-    iget-object v0, p0, Leuh;->a:Leuj;
-
-    iget-object v0, v0, Leuj;->t:Lfcv;
-
-    invoke-virtual {v0, p1}, Lfcv;->b(F)V
-
-    const/high16 v0, 0x3f800000    # 1.0f
-
-    cmpl-float p1, p1, v0
-
-    if-nez p1, :cond_1
-
-    iget-object p1, p0, Leuh;->a:Leuj;
-
-    iget-object p1, p1, Leuj;->s:Ldfo;
-
-    invoke-virtual {p1}, Ldfo;->e()V
+    invoke-interface {p1, v0}, Livj;->d(Z)V
 
     :cond_1
+    return-void
+.end method
+
+.method public final b(Z)V
+    .locals 2
+
+    if-eqz p1, :cond_0
+
+    iget-object p1, p0, Leuh;->a:Leur;
+
+    iget-object p1, p1, Leur;->H:Ljfn;
+
+    invoke-interface {p1}, Ljfn;->q()Z
+
+    move-result p1
+
+    if-eqz p1, :cond_0
+
+    iget-object p1, p0, Leuh;->a:Leur;
+
+    iget-object p1, p1, Leur;->H:Ljfn;
+
+    const/4 v0, 0x2
+
+    const/4 v1, 0x1
+
+    invoke-interface {p1, v0, v1}, Ljfn;->u(IZ)V
+
+    :cond_0
+    return-void
+.end method
+
+.method public final synthetic c()V
+    .locals 0
+
+    return-void
+.end method
+
+.method public final d(Z)V
+    .locals 0
+
+    iget-object p1, p0, Leuh;->a:Leur;
+
+    iget-object p1, p1, Leur;->t:Lgtg;
+
+    invoke-virtual {p1}, Lgtg;->F()Z
+
+    move-result p1
+
+    if-eqz p1, :cond_0
+
+    iget-object p1, p0, Leuh;->a:Leur;
+
+    iget-object p1, p1, Leur;->t:Lgtg;
+
+    invoke-virtual {p1}, Lgtg;->g()V
+
+    :cond_0
+    return-void
+.end method
+
+.method public final synthetic e(Z)V
+    .locals 0
+
+    return-void
+.end method
+
+.method public final synthetic f(Z)V
+    .locals 0
+
     return-void
 .end method

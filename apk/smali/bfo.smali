@@ -1,71 +1,105 @@
 .class public final Lbfo;
-.super Lbfq;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Lbfh;
+
+
+# instance fields
+.field private final a:Landroid/content/res/Resources;
+
+.field private final synthetic b:I
 
 
 # direct methods
-.method public constructor <init>()V
+.method public constructor <init>(Landroid/content/res/Resources;I)V
     .locals 0
 
-    invoke-direct {p0}, Lbfq;-><init>()V
+    iput p2, p0, Lbfo;->b:I
 
-    return-void
-.end method
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-.method public constructor <init>(I)V
-    .locals 0
-
-    invoke-direct {p0, p1}, Lbfq;-><init>(I)V
+    iput-object p1, p0, Lbfo;->a:Landroid/content/res/Resources;
 
     return-void
 .end method
 
 
 # virtual methods
-.method protected final a()I
-    .locals 1
+.method public final b(Lbfn;)Lbfg;
+    .locals 4
 
-    const/16 v0, 0x1e00
+    iget v0, p0, Lbfo;->b:I
 
-    return v0
-.end method
+    packed-switch v0, :pswitch_data_0
 
-.method public final b()Lbfs;
-    .locals 2
+    new-instance p1, Lbfp;
 
-    new-instance v0, Lbfs;
+    iget-object v0, p0, Lbfo;->a:Landroid/content/res/Resources;
 
-    iget v1, p0, Lbfq;->a:I
+    sget-object v1, Lbfl;->a:Lbfl;
 
-    invoke-direct {v0, v1}, Lbfs;-><init>(I)V
+    invoke-direct {p1, v0, v1}, Lbfp;-><init>(Landroid/content/res/Resources;Lbfg;)V
+
+    return-object p1
+
+    :pswitch_0
+    new-instance v0, Lbfp;
+
+    iget-object v1, p0, Lbfo;->a:Landroid/content/res/Resources;
+
+    const-class v2, Landroid/net/Uri;
+
+    const-class v3, Ljava/io/InputStream;
+
+    invoke-virtual {p1, v2, v3}, Lbfn;->a(Ljava/lang/Class;Ljava/lang/Class;)Lbfg;
+
+    move-result-object p1
+
+    invoke-direct {v0, v1, p1}, Lbfp;-><init>(Landroid/content/res/Resources;Lbfg;)V
 
     return-object v0
-.end method
 
-.method public final c()Z
-    .locals 1
+    :pswitch_1
+    new-instance v0, Lbfp;
 
-    const/16 v0, 0x1000
+    iget-object v1, p0, Lbfo;->a:Landroid/content/res/Resources;
 
-    invoke-virtual {p0, v0}, Lbfq;->h(I)Z
+    const-class v2, Landroid/net/Uri;
 
-    move-result v0
+    const-class v3, Landroid/content/res/AssetFileDescriptor;
 
-    return v0
-.end method
+    invoke-virtual {p1, v2, v3}, Lbfn;->a(Ljava/lang/Class;Ljava/lang/Class;)Lbfg;
 
-.method public final d()Z
-    .locals 1
+    move-result-object p1
 
-    iget v0, p0, Lbfq;->a:I
+    invoke-direct {v0, v1, p1}, Lbfp;-><init>(Landroid/content/res/Resources;Lbfg;)V
 
-    if-nez v0, :cond_0
+    return-object v0
 
-    const/4 v0, 0x1
+    :pswitch_2
+    new-instance v0, Lbfp;
 
-    return v0
+    iget-object v1, p0, Lbfo;->a:Landroid/content/res/Resources;
 
-    :cond_0
-    const/4 v0, 0x0
+    const-class v2, Landroid/net/Uri;
 
-    return v0
+    const-class v3, Landroid/os/ParcelFileDescriptor;
+
+    invoke-virtual {p1, v2, v3}, Lbfn;->a(Ljava/lang/Class;Ljava/lang/Class;)Lbfg;
+
+    move-result-object p1
+
+    invoke-direct {v0, v1, p1}, Lbfp;-><init>(Landroid/content/res/Resources;Lbfg;)V
+
+    return-object v0
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method

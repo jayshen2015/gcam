@@ -1,12 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <plurals name="accessibility_timelapse_manual_record_speed_desc">
-        <item quantity="other">အမြန်ပြကွက်မုဒ် %d ဆ မြန်နှုန်း</item>
-        <item quantity="one">အမြန်ပြကွက်မုဒ် %d ဆ မြန်နှုန်း</item>
-    </plurals>
-    <plurals name="number_of_cropped_face">
-        <item quantity="other">%d ခု ဖြတ်ညှိထားသည်။</item>
-        <item quantity="one">တစ်ခု ဖြတ်ညှိထားသည်။</item>
+    <plurals name="number_of_faces_announcement">
+        <item quantity="other">မျက်နှာ %1$d ခု။</item>
+        <item quantity="one">မျက်နှာ %1$d ခု။</item>
     </plurals>
     <plurals name="photos_remaining">
         <item quantity="other">ဓာတ်ပုံ %s ပုံ ခန့်</item>

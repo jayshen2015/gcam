@@ -2,85 +2,112 @@
 .super Ljava/lang/Object;
 
 
-# static fields
-.field public static final synthetic a:I
-
-.field private static final b:Ljava/util/Map;
-
-
 # instance fields
-.field private final c:Landroid/content/SharedPreferences;
+.field public final a:Ljava/util/List;
 
-.field private final d:Landroid/content/SharedPreferences$OnSharedPreferenceChangeListener;
+.field private final b:Ljava/util/concurrent/Executor;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
+.method public constructor <init>(Ljava/util/concurrent/Executor;)V
+    .locals 0
 
-    new-instance v0, Lwy;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {v0}, Lwy;-><init>()V
+    iput-object p1, p0, Llpb;->b:Ljava/util/concurrent/Executor;
 
-    sput-object v0, Llpb;->b:Ljava/util/Map;
+    new-instance p1, Ljava/util/ArrayList;
+
+    invoke-direct {p1}, Ljava/util/ArrayList;-><init>()V
+
+    iput-object p1, p0, Llpb;->a:Ljava/util/List;
 
     return-void
 .end method
 
-.method static declared-synchronized a()V
-    .locals 4
 
-    const-class v0, Llpb;
+# virtual methods
+.method final a(Lmip;ZZLlmw;ZLlzv;ZZ)V
+    .locals 3
+
+    iget-object v0, p0, Llpb;->a:Ljava/util/List;
 
     monitor-enter v0
 
     :try_start_0
-    sget-object v1, Llpb;->b:Ljava/util/Map;
+    iget-object v1, p0, Llpb;->a:Ljava/util/List;
 
-    invoke-interface {v1}, Ljava/util/Map;->values()Ljava/util/Collection;
+    invoke-interface {v1}, Ljava/util/List;->isEmpty()Z
 
-    move-result-object v2
+    move-result v1
 
-    invoke-interface {v2}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
+    if-eqz v1, :cond_0
 
-    move-result-object v2
+    new-instance v1, Llpa;
 
-    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
+    invoke-direct {v1, p0}, Llpa;-><init>(Llpb;)V
 
-    move-result v3
-
-    if-nez v3, :cond_0
-
-    invoke-interface {v1}, Ljava/util/Map;->clear()V
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    monitor-exit v0
-
-    return-void
+    goto :goto_0
 
     :cond_0
-    :try_start_1
-    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    iget-object v1, p0, Llpb;->a:Ljava/util/List;
+
+    invoke-interface {v1}, Ljava/util/List;->size()I
+
+    move-result v2
+
+    add-int/lit8 v2, v2, -0x1
+
+    invoke-interface {v1, v2}, Ljava/util/List;->remove(I)Ljava/lang/Object;
 
     move-result-object v1
 
-    check-cast v1, Llpb;
+    check-cast v1, Llpa;
 
-    iget-object v2, v1, Llpb;->c:Landroid/content/SharedPreferences;
+    :goto_0
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    iget-object v1, v1, Llpb;->d:Landroid/content/SharedPreferences$OnSharedPreferenceChangeListener;
+    iput-object p1, v1, Llpa;->h:Lmip;
 
-    const/4 v1, 0x0
+    iput-boolean p2, v1, Llpa;->a:Z
 
-    throw v1
+    iput-boolean p3, v1, Llpa;->b:Z
+
+    iput-object p4, v1, Llpa;->c:Llmw;
+
+    iput-boolean p5, v1, Llpa;->d:Z
+
+    iput-object p6, v1, Llpa;->e:Llzv;
+
+    iput-boolean p7, v1, Llpa;->f:Z
+
+    iput-boolean p8, v1, Llpa;->g:Z
+
+    invoke-virtual {p1}, Lmip;->t()Ljava/util/concurrent/Executor;
+
+    move-result-object p1
+
+    if-nez p1, :cond_1
+
+    iget-object p1, p0, Llpb;->b:Ljava/util/concurrent/Executor;
+
+    goto :goto_1
+
+    :cond_1
+    :goto_1
+    invoke-interface {p1, v1}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
+
+    return-void
+
+    :catchall_0
+    move-exception p1
+
+    :try_start_1
+    monitor-exit v0
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    :catchall_0
-    move-exception v1
-
-    monitor-exit v0
-
-    throw v1
+    throw p1
 .end method

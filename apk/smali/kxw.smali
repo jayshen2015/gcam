@@ -1,93 +1,66 @@
 .class public final Lkxw;
-.super Ljava/lang/Object;
+.super Lkno;
 
-# interfaces
-.implements Lkxv;
+
+# static fields
+.field public static final CREATOR:Landroid/os/Parcelable$Creator;
 
 
 # instance fields
-.field private final a:Llen;
+.field public final a:I
+
+.field public final b:Z
 
 
 # direct methods
-.method public constructor <init>(Llen;)V
+.method static constructor <clinit>()V
+    .locals 2
+
+    new-instance v0, Lkxn;
+
+    const/16 v1, 0x9
+
+    invoke-direct {v0, v1}, Lkxn;-><init>(I)V
+
+    sput-object v0, Lkxw;->CREATOR:Landroid/os/Parcelable$Creator;
+
+    return-void
+.end method
+
+.method public constructor <init>(IZ)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Lkno;-><init>()V
 
-    iput-object p1, p0, Lkxw;->a:Llen;
+    iput p1, p0, Lkxw;->a:I
+
+    iput-boolean p2, p0, Lkxw;->b:Z
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Lkxy;
-    .locals 3
-
-    iget-object v0, p0, Lkxw;->a:Llen;
-
-    invoke-static {}, Lnph;->g()Lnph;
-
-    move-result-object v1
-
-    new-instance v2, Landroid/media/MediaFormat;
-
-    invoke-direct {v2}, Landroid/media/MediaFormat;-><init>()V
-
-    invoke-static {v1}, Llhe;->l(Lnou;)Llhe;
-
-    move-result-object v2
-
-    invoke-interface {v0, v2}, Llen;->c(Llhe;)Llep;
-
-    move-result-object v0
-
-    new-instance v2, Lkxx;
-
-    invoke-direct {v2, v1, v0}, Lkxx;-><init>(Lnph;Llep;)V
-
-    return-object v2
-.end method
-
-.method public final b()Lnou;
-    .locals 1
-
-    iget-object v0, p0, Lkxw;->a:Llen;
-
-    check-cast v0, Lleo;
-
-    iget-object v0, v0, Lleo;->g:Lnph;
-
-    invoke-static {v0}, Lkzz;->a(Lnou;)Lnou;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public final c()V
+.method public final writeToParcel(Landroid/os/Parcel;I)V
     .locals 2
 
-    iget-object v0, p0, Lkxw;->a:Llen;
+    invoke-static {p1}, Lmip;->ct(Landroid/os/Parcel;)I
 
-    check-cast v0, Lleo;
+    move-result p2
 
-    iget-object v0, v0, Lleo;->g:Lnph;
+    iget v0, p0, Lkxw;->a:I
 
-    const/4 v1, 0x0
+    const/4 v1, 0x2
 
-    invoke-interface {v0, v1}, Lnou;->cancel(Z)Z
+    invoke-static {p1, v1, v0}, Lmip;->cA(Landroid/os/Parcel;II)V
 
-    return-void
-.end method
+    iget-boolean v0, p0, Lkxw;->b:Z
 
-.method public final d()V
-    .locals 1
+    const/4 v1, 0x3
 
-    iget-object v0, p0, Lkxw;->a:Llen;
+    invoke-static {p1, v1, v0}, Lmip;->cw(Landroid/os/Parcel;IZ)V
 
-    invoke-interface {v0}, Llen;->b()V
+    invoke-static {p1, p2}, Lmip;->cv(Landroid/os/Parcel;I)V
 
     return-void
 .end method

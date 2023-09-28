@@ -1,171 +1,285 @@
-.class public final enum Lnlc;
-.super Ljava/lang/Enum;
-
-# interfaces
-.implements Lnwv;
+.class public final Lnlc;
+.super Ljava/lang/Object;
 
 
 # static fields
-.field public static final enum a:Lnlc;
-
-.field public static final enum b:Lnlc;
-
-.field public static final enum c:Lnlc;
-
-.field public static final enum d:Lnlc;
-
-.field public static final enum e:Lnlc;
-
-.field public static final enum f:Lnlc;
-
-.field public static final enum g:Lnlc;
-
-.field private static final synthetic i:[Lnlc;
+.field private static final a:Ljava/lang/String;
 
 
 # instance fields
-.field public final h:I
+.field private b:I
+
+.field private c:I
+
+.field private d:I
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 15
-
-    new-instance v0, Lnlc;
-
-    const-string v1, "UNKNOWN"
-
-    const/4 v2, 0x0
-
-    invoke-direct {v0, v1, v2, v2}, Lnlc;-><init>(Ljava/lang/String;II)V
-
-    sput-object v0, Lnlc;->a:Lnlc;
-
-    new-instance v1, Lnlc;
-
-    const-string v3, "SLOWEST"
-
-    const/4 v4, 0x1
-
-    invoke-direct {v1, v3, v4, v4}, Lnlc;-><init>(Ljava/lang/String;II)V
-
-    sput-object v1, Lnlc;->b:Lnlc;
-
-    new-instance v3, Lnlc;
-
-    const-string v5, "SLOW"
-
-    const/4 v6, 0x2
-
-    invoke-direct {v3, v5, v6, v6}, Lnlc;-><init>(Ljava/lang/String;II)V
-
-    sput-object v3, Lnlc;->c:Lnlc;
-
-    new-instance v5, Lnlc;
-
-    const-string v7, "LITTLE_FAST"
-
-    const/4 v8, 0x3
-
-    invoke-direct {v5, v7, v8, v8}, Lnlc;-><init>(Ljava/lang/String;II)V
-
-    sput-object v5, Lnlc;->d:Lnlc;
-
-    new-instance v7, Lnlc;
-
-    const-string v9, "FAST"
-
-    const/4 v10, 0x4
-
-    invoke-direct {v7, v9, v10, v10}, Lnlc;-><init>(Ljava/lang/String;II)V
-
-    sput-object v7, Lnlc;->e:Lnlc;
-
-    new-instance v9, Lnlc;
-
-    const-string v11, "FASTEST"
-
-    const/4 v12, 0x5
-
-    invoke-direct {v9, v11, v12, v12}, Lnlc;-><init>(Ljava/lang/String;II)V
-
-    sput-object v9, Lnlc;->f:Lnlc;
-
-    new-instance v11, Lnlc;
-
-    const-string v13, "AUTO"
-
-    const/4 v14, 0x6
-
-    invoke-direct {v11, v13, v14, v14}, Lnlc;-><init>(Ljava/lang/String;II)V
-
-    sput-object v11, Lnlc;->g:Lnlc;
-
-    const/4 v13, 0x7
-
-    new-array v13, v13, [Lnlc;
-
-    aput-object v0, v13, v2
-
-    aput-object v1, v13, v4
-
-    aput-object v3, v13, v6
-
-    aput-object v5, v13, v8
-
-    aput-object v7, v13, v10
-
-    aput-object v9, v13, v12
-
-    aput-object v11, v13, v14
-
-    sput-object v13, Lnlc;->i:[Lnlc;
-
-    return-void
-.end method
-
-.method private constructor <init>(Ljava/lang/String;II)V
-    .locals 0
-
-    invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
-    iput p3, p0, Lnlc;->h:I
-
-    return-void
-.end method
-
-.method public static values()[Lnlc;
     .locals 1
 
-    sget-object v0, Lnlc;->i:[Lnlc;
+    const-class v0, Lnlc;
 
-    invoke-virtual {v0}, [Lnlc;->clone()Ljava/lang/Object;
+    invoke-virtual {v0}, Ljava/lang/Class;->getSimpleName()Ljava/lang/String;
 
     move-result-object v0
 
-    check-cast v0, [Lnlc;
+    sput-object v0, Lnlc;->a:Ljava/lang/String;
 
-    return-object v0
+    return-void
+.end method
+
+.method public constructor <init>(Ljava/lang/String;Ljava/lang/String;)V
+    .locals 1
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    const/4 v0, -0x1
+
+    iput v0, p0, Lnlc;->b:I
+
+    iput v0, p0, Lnlc;->c:I
+
+    iput v0, p0, Lnlc;->d:I
+
+    const v0, 0x8b31
+
+    invoke-static {v0, p1}, Lnlc;->f(ILjava/lang/String;)I
+
+    move-result p1
+
+    iput p1, p0, Lnlc;->b:I
+
+    const p1, 0x8b30
+
+    invoke-static {p1, p2}, Lnlc;->f(ILjava/lang/String;)I
+
+    move-result p1
+
+    iput p1, p0, Lnlc;->c:I
+
+    invoke-static {}, Landroid/opengl/GLES20;->glCreateProgram()I
+
+    move-result p1
+
+    iput p1, p0, Lnlc;->d:I
+
+    iget p2, p0, Lnlc;->b:I
+
+    invoke-static {p1, p2}, Landroid/opengl/GLES20;->glAttachShader(II)V
+
+    iget p1, p0, Lnlc;->d:I
+
+    iget p2, p0, Lnlc;->c:I
+
+    invoke-static {p1, p2}, Landroid/opengl/GLES20;->glAttachShader(II)V
+
+    iget p1, p0, Lnlc;->d:I
+
+    invoke-static {p1}, Landroid/opengl/GLES20;->glLinkProgram(I)V
+
+    return-void
+.end method
+
+.method private static f(ILjava/lang/String;)I
+    .locals 2
+
+    invoke-static {p0}, Landroid/opengl/GLES20;->glCreateShader(I)I
+
+    move-result p0
+
+    invoke-static {p0, p1}, Landroid/opengl/GLES20;->glShaderSource(ILjava/lang/String;)V
+
+    invoke-static {p0}, Landroid/opengl/GLES20;->glCompileShader(I)V
+
+    const/4 p1, 0x1
+
+    new-array p1, p1, [I
+
+    const v0, 0x8b81
+
+    const/4 v1, 0x0
+
+    invoke-static {p0, v0, p1, v1}, Landroid/opengl/GLES20;->glGetShaderiv(II[II)V
+
+    aget p1, p1, v1
+
+    if-nez p1, :cond_1
+
+    invoke-static {p0}, Landroid/opengl/GLES20;->glGetShaderInfoLog(I)Ljava/lang/String;
+
+    move-result-object p1
+
+    sget-object v0, Lnlc;->a:Ljava/lang/String;
+
+    invoke-static {v0, p1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+
+    invoke-static {p0}, Landroid/opengl/GLES20;->glDeleteShader(I)V
+
+    new-instance p0, Ljava/lang/IllegalArgumentException;
+
+    invoke-static {p1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object p1
+
+    const-string v0, "Shader compilation failed: "
+
+    invoke-virtual {p1}, Ljava/lang/String;->length()I
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    invoke-virtual {v0, p1}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object p1
+
+    goto :goto_0
+
+    :cond_0
+    new-instance p1, Ljava/lang/String;
+
+    invoke-direct {p1, v0}, Ljava/lang/String;-><init>(Ljava/lang/String;)V
+
+    :goto_0
+    invoke-direct {p0, p1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw p0
+
+    :cond_1
+    return p0
 .end method
 
 
 # virtual methods
-.method public final a()I
-    .locals 1
+.method public final a(Ljava/lang/String;)Lnle;
+    .locals 3
 
-    iget v0, p0, Lnlc;->h:I
+    iget v0, p0, Lnlc;->d:I
 
-    return v0
+    invoke-static {v0, p1}, Landroid/opengl/GLES20;->glGetUniformLocation(ILjava/lang/String;)I
+
+    move-result v0
+
+    if-gez v0, :cond_1
+
+    sget-object v0, Lnlc;->a:Ljava/lang/String;
+
+    const-string v1, "Could not find uniform named "
+
+    invoke-virtual {p1}, Ljava/lang/String;->length()I
+
+    move-result v2
+
+    if-eqz v2, :cond_0
+
+    invoke-virtual {v1, p1}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object p1
+
+    goto :goto_0
+
+    :cond_0
+    new-instance p1, Ljava/lang/String;
+
+    invoke-direct {p1, v1}, Ljava/lang/String;-><init>(Ljava/lang/String;)V
+
+    :goto_0
+    invoke-static {v0, p1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+
+    const/4 p1, 0x0
+
+    return-object p1
+
+    :cond_1
+    new-instance p1, Lnle;
+
+    invoke-direct {p1, v0}, Lnle;-><init>(I)V
+
+    return-object p1
 .end method
 
-.method public final toString()Ljava/lang/String;
+.method public final b()V
     .locals 1
 
-    iget v0, p0, Lnlc;->h:I
+    iget v0, p0, Lnlc;->d:I
 
-    invoke-static {v0}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
+    invoke-static {v0}, Landroid/opengl/GLES20;->glUseProgram(I)V
 
-    move-result-object v0
+    return-void
+.end method
 
-    return-object v0
+.method public final c()V
+    .locals 1
+
+    iget v0, p0, Lnlc;->b:I
+
+    invoke-static {v0}, Landroid/opengl/GLES20;->glDeleteShader(I)V
+
+    iget v0, p0, Lnlc;->c:I
+
+    invoke-static {v0}, Landroid/opengl/GLES20;->glDeleteShader(I)V
+
+    iget v0, p0, Lnlc;->d:I
+
+    invoke-static {v0}, Landroid/opengl/GLES20;->glDeleteProgram(I)V
+
+    return-void
+.end method
+
+.method public final d()V
+    .locals 1
+
+    const/4 v0, 0x0
+
+    invoke-static {v0}, Landroid/opengl/GLES20;->glUseProgram(I)V
+
+    return-void
+.end method
+
+.method public final e(Ljava/lang/String;)Lnle;
+    .locals 3
+
+    iget v0, p0, Lnlc;->d:I
+
+    invoke-static {v0, p1}, Landroid/opengl/GLES20;->glGetAttribLocation(ILjava/lang/String;)I
+
+    move-result v0
+
+    if-gez v0, :cond_1
+
+    sget-object v0, Lnlc;->a:Ljava/lang/String;
+
+    const-string v1, "Could not find attribute named "
+
+    invoke-virtual {p1}, Ljava/lang/String;->length()I
+
+    move-result v2
+
+    if-eqz v2, :cond_0
+
+    invoke-virtual {v1, p1}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object p1
+
+    goto :goto_0
+
+    :cond_0
+    new-instance p1, Ljava/lang/String;
+
+    invoke-direct {p1, v1}, Ljava/lang/String;-><init>(Ljava/lang/String;)V
+
+    :goto_0
+    invoke-static {v0, p1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+
+    const/4 p1, 0x0
+
+    return-object p1
+
+    :cond_1
+    new-instance p1, Lnle;
+
+    invoke-direct {p1, v0}, Lnle;-><init>(I)V
+
+    return-object p1
 .end method

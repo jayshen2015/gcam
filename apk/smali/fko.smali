@@ -2,22 +2,26 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lfkm;
+.implements Landroid/view/View$OnAttachStateChangeListener;
 
 
 # instance fields
-.field final synthetic a:Lfkm;
+.field final synthetic a:Landroid/graphics/drawable/AnimatedVectorDrawable;
 
-.field final synthetic b:Lfkp;
+.field final synthetic b:Landroid/widget/FrameLayout;
+
+.field final synthetic c:Lfkp;
 
 
 # direct methods
-.method public constructor <init>(Lfkp;Lfkm;)V
+.method public constructor <init>(Lfkp;Landroid/graphics/drawable/AnimatedVectorDrawable;Landroid/widget/FrameLayout;)V
     .locals 0
 
-    iput-object p1, p0, Lfko;->b:Lfkp;
+    iput-object p1, p0, Lfko;->c:Lfkp;
 
-    iput-object p2, p0, Lfko;->a:Lfkm;
+    iput-object p2, p0, Lfko;->a:Landroid/graphics/drawable/AnimatedVectorDrawable;
+
+    iput-object p3, p0, Lfko;->b:Landroid/widget/FrameLayout;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -26,34 +30,34 @@
 
 
 # virtual methods
-.method public final a(Lfkd;)V
+.method public final onViewAttachedToWindow(Landroid/view/View;)V
     .locals 1
 
-    iget-object v0, p0, Lfko;->a:Lfkm;
+    iget-object p1, p0, Lfko;->a:Landroid/graphics/drawable/AnimatedVectorDrawable;
 
-    invoke-interface {v0, p1}, Lfkm;->a(Lfkd;)V
+    new-instance v0, Lfkn;
 
-    iget-object p1, p0, Lfko;->b:Lfkp;
+    invoke-direct {v0, p0}, Lfkn;-><init>(Lfko;)V
 
-    iget-object v0, p1, Lfkp;->a:Ldxl;
+    invoke-virtual {p1, v0}, Landroid/graphics/drawable/AnimatedVectorDrawable;->registerAnimationCallback(Landroid/graphics/drawable/Animatable2$AnimationCallback;)V
 
-    invoke-virtual {v0, p1}, Ldxl;->f(Ldxm;)V
+    iget-object p1, p0, Lfko;->a:Landroid/graphics/drawable/AnimatedVectorDrawable;
+
+    invoke-virtual {p1}, Landroid/graphics/drawable/AnimatedVectorDrawable;->start()V
 
     return-void
 .end method
 
-.method public final b(JLfkq;)V
-    .locals 1
+.method public final onViewDetachedFromWindow(Landroid/view/View;)V
+    .locals 0
 
-    iget-object v0, p0, Lfko;->a:Lfkm;
+    iget-object p1, p0, Lfko;->a:Landroid/graphics/drawable/AnimatedVectorDrawable;
 
-    invoke-interface {v0, p1, p2, p3}, Lfkm;->b(JLfkq;)V
+    invoke-virtual {p1}, Landroid/graphics/drawable/AnimatedVectorDrawable;->clearAnimationCallbacks()V
 
-    iget-object p1, p0, Lfko;->b:Lfkp;
+    iget-object p1, p0, Lfko;->b:Landroid/widget/FrameLayout;
 
-    iget-object p2, p1, Lfkp;->a:Ldxl;
-
-    invoke-virtual {p2, p1}, Ldxl;->f(Ldxm;)V
+    invoke-virtual {p1, p0}, Landroid/widget/FrameLayout;->removeOnAttachStateChangeListener(Landroid/view/View$OnAttachStateChangeListener;)V
 
     return-void
 .end method

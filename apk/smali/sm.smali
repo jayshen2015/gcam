@@ -2,12 +2,18 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lsd;
+.implements Lso;
+
+
+# instance fields
+.field final synthetic a:Landroid/support/wearable/complications/rendering/ComplicationDrawable;
 
 
 # direct methods
-.method public constructor <init>()V
+.method public constructor <init>(Landroid/support/wearable/complications/rendering/ComplicationDrawable;)V
     .locals 0
+
+    iput-object p1, p0, Lsm;->a:Landroid/support/wearable/complications/rendering/ComplicationDrawable;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -16,10 +22,12 @@
 
 
 # virtual methods
-.method public final e(Lonx;)Ljava/lang/Object;
-    .locals 0
+.method public final a()V
+    .locals 1
 
-    const/4 p1, 0x0
+    iget-object v0, p0, Lsm;->a:Landroid/support/wearable/complications/rendering/ComplicationDrawable;
 
-    throw p1
+    invoke-virtual {v0}, Landroid/support/wearable/complications/rendering/ComplicationDrawable;->invalidateSelf()V
+
+    return-void
 .end method

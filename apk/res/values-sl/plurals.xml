@@ -1,16 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <plurals name="accessibility_timelapse_manual_record_speed_desc">
-        <item quantity="other">%d-kratna hitrost pospešene reprodukcije</item>
-        <item quantity="one">%d-kratna hitrost pospešene reprodukcije</item>
-        <item quantity="two">%d-kratna hitrost pospešene reprodukcije</item>
-        <item quantity="few">%d-kratna hitrost pospešene reprodukcije</item>
-    </plurals>
-    <plurals name="number_of_cropped_face">
-        <item quantity="other">%d obrezanih.</item>
-        <item quantity="one">%d obrezan.</item>
-        <item quantity="two">%d obrezana.</item>
-        <item quantity="few">%d obrezani.</item>
+    <plurals name="number_of_faces_announcement">
+        <item quantity="other">%1$d obrazov.</item>
+        <item quantity="one">%1$d obraz.</item>
+        <item quantity="two">%1$d obraza.</item>
+        <item quantity="few">%1$d obrazi.</item>
     </plurals>
     <plurals name="photos_remaining">
         <item quantity="other">Približno %s fotografij</item>
@@ -25,10 +19,10 @@
         <item quantity="few">(Izbrane so %1$d aplikacije)</item>
     </plurals>
     <plurals name="social_share_info">
-        <item quantity="other">Hitro deljenje fotografij in videoposnetkov v družbenih aplikacijah iz Fotoaparata. Izberete lahko največ %1$d aplikacij. Fotografij in videoposnetkov, shranjenih v Zaklenjeno mapo, ni mogoče deliti z drugimi.</item>
-        <item quantity="one">Hitro deljenje fotografij in videoposnetkov v družbenih aplikacijah iz Fotoaparata. Izberete lahko največ %1$d aplikacijo. Fotografij in videoposnetkov, shranjenih v Zaklenjeno mapo, ni mogoče deliti z drugimi.</item>
-        <item quantity="two">Hitro deljenje fotografij in videoposnetkov v družbenih aplikacijah iz Fotoaparata. Izberete lahko največ %1$d aplikaciji. Fotografij in videoposnetkov, shranjenih v Zaklenjeno mapo, ni mogoče deliti z drugimi.</item>
-        <item quantity="few">Hitro deljenje fotografij in videoposnetkov v družbenih aplikacijah iz Fotoaparata. Izberete lahko največ %1$d aplikacije. Fotografij in videoposnetkov, shranjenih v Zaklenjeno mapo, ni mogoče deliti z drugimi.</item>
+        <item quantity="other">Hitro deljenje fotografij in videoposnetkov v družbenih aplikacijah neposredno iz Fotoaparata. Izberete lahko največ %1$d aplikacij. Fotografij in videoposnetkov, shranjenih v Zaklenjeno mapo, ni mogoče deliti z drugimi.</item>
+        <item quantity="one">Hitro deljenje fotografij in videoposnetkov v družbenih aplikacijah neposredno iz Fotoaparata. Izberete lahko največ %1$d aplikacijo. Fotografij in videoposnetkov, shranjenih v Zaklenjeno mapo, ni mogoče deliti z drugimi.</item>
+        <item quantity="two">Hitro deljenje fotografij in videoposnetkov v družbenih aplikacijah neposredno iz Fotoaparata. Izberete lahko največ %1$d aplikaciji. Fotografij in videoposnetkov, shranjenih v Zaklenjeno mapo, ni mogoče deliti z drugimi.</item>
+        <item quantity="few">Hitro deljenje fotografij in videoposnetkov v družbenih aplikacijah neposredno iz Fotoaparata. Izberete lahko največ %1$d aplikacije. Fotografij in videoposnetkov, shranjenih v Zaklenjeno mapo, ni mogoče deliti z drugimi.</item>
     </plurals>
     <plurals name="social_share_select_error">
         <item quantity="other">Izberete lahko največ %1$d aplikacij</item>

@@ -1,81 +1,71 @@
 .class public final Ljmu;
-.super Ljde;
+.super Ljava/lang/Object;
 
 # interfaces
-.implements Ljdi;
+.implements Lpys;
 
 
-# static fields
-.field public static final a:Ligo;
+# instance fields
+.field private final a:Lqkg;
+
+.field private final b:Lqkg;
+
+.field private final c:Lqkg;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 4
+.method public constructor <init>(Lqkg;Lqkg;Lqkg;)V
+    .locals 0
 
-    new-instance v0, Ligo;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    new-instance v1, Ljms;
+    iput-object p1, p0, Ljmu;->a:Lqkg;
 
-    invoke-direct {v1}, Ljms;-><init>()V
+    iput-object p2, p0, Ljmu;->b:Lqkg;
 
-    const-string v2, "LocationServices.API"
-
-    const/4 v3, 0x0
-
-    invoke-direct {v0, v2, v1, v3, v3}, Ligo;-><init>(Ljava/lang/String;Ljfc;[B[B)V
-
-    sput-object v0, Ljmu;->a:Ligo;
-
-    return-void
-.end method
-
-.method public constructor <init>(Landroid/content/Context;)V
-    .locals 8
-
-    sget-object v2, Ljmu;->a:Ligo;
-
-    sget-object v3, Ljcy;->r:Ljcx;
-
-    sget-object v4, Ljdd;->a:Ljdd;
-
-    const/4 v5, 0x0
-
-    const/4 v6, 0x0
-
-    const/4 v7, 0x0
-
-    move-object v0, p0
-
-    move-object v1, p1
-
-    invoke-direct/range {v0 .. v7}, Ljde;-><init>(Landroid/content/Context;Ligo;Ljcy;Ljdd;[B[B[B)V
+    iput-object p3, p0, Ljmu;->c:Lqkg;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Ljot;
-    .locals 2
+.method public final a()Ljmt;
+    .locals 3
 
-    invoke-static {}, Ljfm;->a()Ljfl;
+    iget-object v0, p0, Ljmu;->a:Lqkg;
 
-    move-result-object v0
+    check-cast v0, Lemh;
 
-    sget-object v1, Ljpc;->a:Ljpc;
-
-    iput-object v1, v0, Ljfl;->a:Ljfh;
-
-    const/16 v1, 0x96e
-
-    iput v1, v0, Ljfl;->c:I
-
-    invoke-virtual {v0}, Ljfl;->a()Ljfm;
+    invoke-virtual {v0}, Lemh;->a()Landroid/view/WindowManager;
 
     move-result-object v0
 
-    invoke-virtual {p0, v0}, Ljde;->e(Ljfm;)Ljot;
+    iget-object v1, p0, Ljmu;->b:Lqkg;
+
+    invoke-interface {v1}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Lddf;
+
+    iget-object v2, p0, Ljmu;->c:Lqkg;
+
+    check-cast v2, Lftf;
+
+    invoke-virtual {v2}, Lftf;->a()Ljava/lang/String;
+
+    new-instance v2, Ljmt;
+
+    invoke-direct {v2, v0, v1}, Ljmt;-><init>(Landroid/view/WindowManager;Lddf;)V
+
+    return-object v2
+.end method
+
+.method public final bridge synthetic get()Ljava/lang/Object;
+    .locals 1
+
+    invoke-virtual {p0}, Ljmu;->a()Ljmt;
 
     move-result-object v0
 

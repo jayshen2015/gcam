@@ -1,112 +1,305 @@
-.class public final enum Lhxj;
-.super Ljava/lang/Enum;
+.class public final Lhxj;
+.super Ljava/lang/Object;
 
 
-# static fields
-.field public static final enum a:Lhxj;
+# instance fields
+.field public final a:Ljava/util/Set;
 
-.field public static final enum b:Lhxj;
+.field private b:Lojc;
 
-.field public static final enum c:Lhxj;
+.field private c:Lojc;
 
-.field public static final enum d:Lhxj;
-
-.field public static final enum e:Lhxj;
-
-.field private static final synthetic f:[Lhxj;
+.field private d:Llvp;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 11
-
-    new-instance v0, Lhxj;
-
-    const-string v1, "UNKNOWN"
-
-    const/4 v2, 0x0
-
-    invoke-direct {v0, v1, v2}, Lhxj;-><init>(Ljava/lang/String;I)V
-
-    sput-object v0, Lhxj;->a:Lhxj;
-
-    new-instance v1, Lhxj;
-
-    const-string v3, "CLOSED"
-
-    const/4 v4, 0x1
-
-    invoke-direct {v1, v3, v4}, Lhxj;-><init>(Ljava/lang/String;I)V
-
-    sput-object v1, Lhxj;->b:Lhxj;
-
-    new-instance v3, Lhxj;
-
-    const-string v5, "BOOK"
-
-    const/4 v6, 0x2
-
-    invoke-direct {v3, v5, v6}, Lhxj;-><init>(Ljava/lang/String;I)V
-
-    sput-object v3, Lhxj;->c:Lhxj;
-
-    new-instance v5, Lhxj;
-
-    const-string v7, "FLAT"
-
-    const/4 v8, 0x3
-
-    invoke-direct {v5, v7, v8}, Lhxj;-><init>(Ljava/lang/String;I)V
-
-    sput-object v5, Lhxj;->d:Lhxj;
-
-    new-instance v7, Lhxj;
-
-    const-string v9, "JARVIS"
-
-    const/4 v10, 0x4
-
-    invoke-direct {v7, v9, v10}, Lhxj;-><init>(Ljava/lang/String;I)V
-
-    sput-object v7, Lhxj;->e:Lhxj;
-
-    const/4 v9, 0x5
-
-    new-array v9, v9, [Lhxj;
-
-    aput-object v0, v9, v2
-
-    aput-object v1, v9, v4
-
-    aput-object v3, v9, v6
-
-    aput-object v5, v9, v8
-
-    aput-object v7, v9, v10
-
-    sput-object v9, Lhxj;->f:[Lhxj;
-
-    return-void
-.end method
-
-.method private constructor <init>(Ljava/lang/String;I)V
-    .locals 0
-
-    invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
-    return-void
-.end method
-
-.method public static values()[Lhxj;
+.method public constructor <init>()V
     .locals 1
 
-    sget-object v0, Lhxj;->f:[Lhxj;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-virtual {v0}, [Lhxj;->clone()Ljava/lang/Object;
+    new-instance v0, Landroid/util/ArraySet;
+
+    invoke-direct {v0}, Landroid/util/ArraySet;-><init>()V
+
+    iput-object v0, p0, Lhxj;->a:Ljava/util/Set;
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public final declared-synchronized a(Lhxi;)Llie;
+    .locals 1
+
+    monitor-enter p0
+
+    :try_start_0
+    iget-object v0, p0, Lhxj;->a:Ljava/util/Set;
+
+    invoke-interface {v0, p1}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
+
+    iget-object v0, p0, Lhxj;->d:Llvp;
+
+    if-eqz v0, :cond_0
+
+    invoke-interface {p1, v0}, Lhxi;->e(Llvp;)V
+
+    :cond_0
+    new-instance v0, Lhxh;
+
+    invoke-direct {v0, p0, p1}, Lhxh;-><init>(Lhxj;Lhxi;)V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    monitor-exit p0
+
+    return-object v0
+
+    :catchall_0
+    move-exception p1
+
+    monitor-exit p0
+
+    throw p1
+.end method
+
+.method final declared-synchronized b()Lojc;
+    .locals 1
+
+    monitor-enter p0
+
+    :try_start_0
+    iget-object v0, p0, Lhxj;->b:Lojc;
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    monitor-exit p0
+
+    return-object v0
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit p0
+
+    throw v0
+.end method
+
+.method final declared-synchronized c()Lojc;
+    .locals 1
+
+    monitor-enter p0
+
+    :try_start_0
+    iget-object v0, p0, Lhxj;->c:Lojc;
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    monitor-exit p0
+
+    return-object v0
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit p0
+
+    throw v0
+.end method
+
+.method final declared-synchronized d(Llvp;)V
+    .locals 2
+
+    monitor-enter p0
+
+    :try_start_0
+    iput-object p1, p0, Lhxj;->d:Llvp;
+
+    iget-object v0, p0, Lhxj;->a:Ljava/util/Set;
+
+    invoke-interface {v0}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
 
     move-result-object v0
 
-    check-cast v0, [Lhxj;
+    :goto_0
+    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
-    return-object v0
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Lhxi;
+
+    invoke-interface {v1, p1}, Lhxi;->e(Llvp;)V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    goto :goto_0
+
+    :cond_0
+    monitor-exit p0
+
+    return-void
+
+    :catchall_0
+    move-exception p1
+
+    monitor-exit p0
+
+    goto :goto_2
+
+    :goto_1
+    throw p1
+
+    :goto_2
+    goto :goto_1
+.end method
+
+.method final declared-synchronized e(Llzv;)V
+    .locals 2
+
+    monitor-enter p0
+
+    :try_start_0
+    iget-object v0, p0, Lhxj;->a:Ljava/util/Set;
+
+    invoke-interface {v0}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
+
+    move-result-object v0
+
+    :goto_0
+    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Lhxi;
+
+    invoke-interface {v1, p1}, Lhxi;->f(Llzv;)V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    goto :goto_0
+
+    :cond_0
+    monitor-exit p0
+
+    return-void
+
+    :catchall_0
+    move-exception p1
+
+    monitor-exit p0
+
+    goto :goto_2
+
+    :goto_1
+    throw p1
+
+    :goto_2
+    goto :goto_1
+.end method
+
+.method final declared-synchronized f(Lojc;)V
+    .locals 0
+
+    monitor-enter p0
+
+    :try_start_0
+    iput-object p1, p0, Lhxj;->b:Lojc;
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    monitor-exit p0
+
+    return-void
+
+    :catchall_0
+    move-exception p1
+
+    monitor-exit p0
+
+    throw p1
+.end method
+
+.method final declared-synchronized g(Lojc;)V
+    .locals 0
+
+    monitor-enter p0
+
+    :try_start_0
+    iput-object p1, p0, Lhxj;->c:Lojc;
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    monitor-exit p0
+
+    return-void
+
+    :catchall_0
+    move-exception p1
+
+    monitor-exit p0
+
+    throw p1
+.end method
+
+.method final declared-synchronized h(Llrr;Llnx;)V
+    .locals 2
+
+    monitor-enter p0
+
+    :try_start_0
+    iget-object v0, p0, Lhxj;->a:Ljava/util/Set;
+
+    invoke-interface {v0}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
+
+    move-result-object v0
+
+    :goto_0
+    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Lhxi;
+
+    invoke-interface {v1, p1, p2}, Lhxi;->g(Llrr;Llnx;)V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    goto :goto_0
+
+    :cond_0
+    monitor-exit p0
+
+    return-void
+
+    :catchall_0
+    move-exception p1
+
+    monitor-exit p0
+
+    goto :goto_2
+
+    :goto_1
+    throw p1
+
+    :goto_2
+    goto :goto_1
 .end method

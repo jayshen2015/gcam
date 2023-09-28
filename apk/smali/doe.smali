@@ -1,38 +1,22 @@
-.class public Ldoe;
-.super Ldof;
+.class final Ldoe;
+.super Ljava/lang/Object;
+
+
+# static fields
+.field public static final a:Louj;
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 1
 
-    invoke-direct {p0}, Ldof;-><init>()V
+    const-string v0, "com/google/android/apps/camera/facebeautification/FaceBeautificationControllerUtils"
 
-    return-void
-.end method
+    invoke-static {v0}, Louj;->h(Ljava/lang/String;)Louj;
 
-.method public constructor <init>(Ljava/lang/String;Ljava/lang/Throwable;)V
-    .locals 0
+    move-result-object v0
 
-    invoke-direct {p0, p1, p2}, Ldof;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
-
-    return-void
-.end method
-
-.method public constructor <init>(Ljava/lang/Throwable;)V
-    .locals 0
-
-    invoke-direct {p0, p1}, Ldof;-><init>(Ljava/lang/Throwable;)V
-
-    return-void
-.end method
-
-.method public constructor <init>([B)V
-    .locals 0
-
-    const-string p1, "Shot has been cancelled by user."
-
-    invoke-direct {p0, p1}, Ldof;-><init>(Ljava/lang/String;)V
+    sput-object v0, Ldoe;->a:Louj;
 
     return-void
 .end method

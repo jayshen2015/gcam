@@ -1,10 +1,12 @@
-.class public interface abstract Lrm;
-.super Ljava/lang/Object;
+.class final Lrm;
+.super Lqx;
 
 
 # virtual methods
-.method public abstract a()Ljava/util/List;
-.end method
+.method public final getDrawable(I)Landroid/graphics/drawable/Drawable;
+    .locals 0
 
-.method public abstract b()Ljava/util/List;
+    const/4 p1, 0x0
+
+    throw p1
 .end method

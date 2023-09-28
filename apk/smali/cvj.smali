@@ -1,22 +1,33 @@
-.class public final Lcvj;
+.class public final synthetic Lcvj;
 .super Ljava/lang/Object;
 
+# interfaces
+.implements Llht;
 
-# static fields
-.field public static final a:Lcla;
+
+# instance fields
+.field public final synthetic a:Ljava/lang/Runnable;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
+.method public synthetic constructor <init>(Ljava/lang/Runnable;)V
+    .locals 0
 
-    new-instance v0, Lcla;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const/16 v1, 0x11
+    iput-object p1, p0, Lcvj;->a:Ljava/lang/Runnable;
 
-    invoke-direct {v0, v1}, Lcla;-><init>(I)V
+    return-void
+.end method
 
-    sput-object v0, Lcvj;->a:Lcla;
+
+# virtual methods
+.method public final a(Ljava/lang/Object;)V
+    .locals 0
+
+    iget-object p1, p0, Lcvj;->a:Ljava/lang/Runnable;
+
+    invoke-interface {p1}, Ljava/lang/Runnable;->run()V
 
     return-void
 .end method

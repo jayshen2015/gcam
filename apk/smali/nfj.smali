@@ -2,62 +2,52 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Ljava/util/Comparator;
+.implements Lojz;
 
 
 # instance fields
-.field public final synthetic a:Lnfk;
+.field public final synthetic a:Lnei;
 
-.field public final synthetic b:Ljava/util/function/Function;
+.field public final synthetic b:Ljava/lang/String;
 
-.field public final synthetic c:Ljava/util/function/Function;
+.field public final synthetic c:Z
+
+.field public final synthetic d:Z
 
 
 # direct methods
-.method public synthetic constructor <init>(Lnfk;Ljava/util/function/Function;Ljava/util/function/Function;)V
+.method public synthetic constructor <init>(Lnei;Ljava/lang/String;ZZ)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lnfj;->a:Lnfk;
+    iput-object p1, p0, Lnfj;->a:Lnei;
 
-    iput-object p2, p0, Lnfj;->b:Ljava/util/function/Function;
+    iput-object p2, p0, Lnfj;->b:Ljava/lang/String;
 
-    iput-object p3, p0, Lnfj;->c:Ljava/util/function/Function;
+    iput-boolean p3, p0, Lnfj;->c:Z
+
+    iput-boolean p4, p0, Lnfj;->d:Z
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final compare(Ljava/lang/Object;Ljava/lang/Object;)I
-    .locals 4
+.method public final a()Ljava/lang/Object;
+    .locals 5
 
-    iget-object v0, p0, Lnfj;->a:Lnfk;
+    iget-object v0, p0, Lnfj;->a:Lnei;
 
-    iget-object v1, p0, Lnfj;->b:Ljava/util/function/Function;
+    iget-object v1, p0, Lnfj;->b:Ljava/lang/String;
 
-    iget-object v2, p0, Lnfj;->c:Ljava/util/function/Function;
+    iget-boolean v2, p0, Lnfj;->c:Z
 
-    invoke-interface {v1, p1}, Ljava/util/function/Function;->apply(Ljava/lang/Object;)Ljava/lang/Object;
+    iget-boolean v3, p0, Lnfj;->d:Z
 
-    move-result-object v3
+    new-instance v4, Lnfm;
 
-    invoke-interface {v2, p1}, Ljava/util/function/Function;->apply(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-direct {v4, v0, v1, v2, v3}, Lnfm;-><init>(Lnei;Ljava/lang/String;ZZ)V
 
-    move-result-object p1
-
-    invoke-interface {v1, p2}, Ljava/util/function/Function;->apply(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v1
-
-    invoke-interface {v2, p2}, Ljava/util/function/Function;->apply(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object p2
-
-    invoke-interface {v0, v3, p1, v1, p2}, Lnfk;->a(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)I
-
-    move-result p1
-
-    return p1
+    return-object v4
 .end method

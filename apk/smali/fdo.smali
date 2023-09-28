@@ -1,125 +1,96 @@
-.class Lfdo;
-.super Lfdn;
+.class public final Lfdo;
+.super Ljava/lang/Object;
 
 
 # instance fields
-.field final synthetic b:Lfdu;
+.field public a:F
+
+.field public b:D
+
+.field public c:Z
 
 
 # direct methods
-.method public constructor <init>(Lfdu;)V
-    .locals 0
+.method public constructor <init>()V
+    .locals 2
 
-    iput-object p1, p0, Lfdo;->b:Lfdu;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0}, Lfdn;-><init>()V
+    const/4 v0, 0x0
+
+    iput v0, p0, Lfdo;->a:F
+
+    const-wide/high16 v0, -0x4010000000000000L    # -1.0
+
+    iput-wide v0, p0, Lfdo;->b:D
+
+    const/4 v0, 0x0
+
+    iput-boolean v0, p0, Lfdo;->c:Z
 
     return-void
 .end method
 
 
 # virtual methods
-.method public a()V
-    .locals 0
+.method public final a()V
+    .locals 7
 
-    return-void
-.end method
+    iget-wide v0, p0, Lfdo;->b:D
 
-.method public final f()V
-    .locals 2
+    const/4 v2, 0x1
 
-    iget-object v0, p0, Lfdo;->b:Lfdu;
+    const v3, 0x3e23d70b    # 0.16000001f
 
-    iget-object v0, v0, Lfdu;->l:Ljvs;
+    const-wide/16 v4, 0x0
 
-    invoke-interface {v0}, Ljvs;->bm()Ljava/lang/Object;
+    cmpl-double v6, v0, v4
 
-    move-result-object v0
+    if-lez v6, :cond_2
 
-    check-cast v0, Lika;
+    const-wide v4, 0x3f9999999999999aL    # 0.025
 
-    invoke-virtual {v0}, Lika;->name()Ljava/lang/String;
+    cmpl-double v6, v0, v4
 
-    iget-object v0, p0, Lfdo;->b:Lfdu;
+    if-lez v6, :cond_0
 
-    iget-object v0, v0, Lfdu;->h:Liff;
+    const v3, 0x3b23d70b    # 0.0025000002f
 
-    const/4 v1, 0x1
-
-    invoke-interface {v0, v1}, Liff;->G(Z)V
-
-    iget-object v0, p0, Lfdo;->b:Lfdu;
-
-    iget-object v0, v0, Lfdu;->k:Lebl;
-
-    invoke-virtual {v0}, Lebl;->l()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    iget-object v0, p0, Lfdo;->b:Lfdu;
-
-    iget-object v0, v0, Lfdu;->i:Liec;
-
-    invoke-interface {v0}, Liec;->g()V
-
-    iget-object v0, p0, Lfdo;->b:Lfdu;
-
-    iget-object v0, v0, Lfdu;->i:Liec;
-
-    invoke-interface {v0}, Liec;->e()V
-
-    iget-object v0, p0, Lfdo;->b:Lfdu;
-
-    iget-object v0, v0, Lfdu;->j:Lgft;
-
-    const-class v1, Lfdu;
-
-    invoke-interface {v0, v1}, Lgft;->a(Ljava/lang/Class;)V
+    goto :goto_0
 
     :cond_0
-    iget-object v0, p0, Lfdo;->b:Lfdu;
+    const-wide v4, 0x3f847ae147ae147bL    # 0.01
 
-    invoke-virtual {v0}, Lfdu;->k()V
+    cmpg-double v6, v0, v4
 
-    iget-object v0, p0, Lfdo;->b:Lfdu;
+    if-gez v6, :cond_2
 
-    iget-object v0, v0, Lfdu;->h:Liff;
+    iget-boolean v0, p0, Lfdo;->c:Z
 
-    invoke-interface {v0}, Liff;->L()V
+    if-eq v2, v0, :cond_1
 
-    return-void
-.end method
+    const/high16 v3, 0x3f800000    # 1.0f
 
-.method public final g()V
-    .locals 2
+    goto :goto_0
 
-    iget-object v0, p0, Lfdo;->b:Lfdu;
+    :cond_1
+    const v3, 0x3c23d70b    # 0.010000001f
 
-    iget-object v0, v0, Lfdu;->m:Lfdc;
+    :cond_2
+    :goto_0
+    iget v0, p0, Lfdo;->a:F
 
-    invoke-virtual {v0}, Lfdc;->c()V
+    cmpl-float v0, v0, v3
 
-    iget-object v0, p0, Lfdo;->b:Lfdu;
+    if-lez v0, :cond_3
 
-    invoke-virtual {v0}, Lfdu;->n()V
+    goto :goto_1
 
-    iget-object v0, p0, Lfdo;->b:Lfdu;
+    :cond_3
+    const/4 v2, 0x0
 
-    invoke-virtual {v0}, Lfdu;->m()V
-
-    iget-object v0, p0, Lfdo;->b:Lfdu;
-
-    invoke-virtual {v0}, Lfdu;->l()V
-
-    iget-object v0, p0, Lfdo;->b:Lfdu;
-
-    iget-object v0, v0, Lfdu;->j:Lgft;
-
-    const-class v1, Lfdu;
-
-    invoke-interface {v0, v1}, Lgft;->b(Ljava/lang/Class;)V
+    :goto_1
+    invoke-static {v2}, Lfcz;->o(Z)V
 
     return-void
 .end method

@@ -1,84 +1,54 @@
-.class final Lgiu;
-.super Lkfg;
+.class public final Lgiu;
+.super Ljava/lang/Object;
 
 
 # instance fields
-.field final synthetic a:Lnph;
+.field public final a:Lfvx;
+
+.field public final b:Lpht;
+
+.field public final c:Landroid/util/DisplayMetrics;
+
+.field public final d:Lhpb;
+
+.field public final e:Ljrl;
+
+.field public final f:Llco;
+
+.field public final g:Lcvo;
+
+.field public final h:Lojc;
+
+.field public final i:Lojc;
+
+.field public final j:Lnez;
 
 
 # direct methods
-.method public constructor <init>(Lnph;)V
+.method public constructor <init>(Lfvx;Lpht;Landroid/util/DisplayMetrics;Lhpb;Lnez;Ljrl;Llco;Lcvo;Lojc;Lojc;[B)V
     .locals 0
 
-    iput-object p1, p0, Lgiu;->a:Lnph;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0}, Lkfg;-><init>()V
+    iput-object p1, p0, Lgiu;->a:Lfvx;
 
-    return-void
-.end method
+    iput-object p2, p0, Lgiu;->b:Lpht;
 
+    iput-object p3, p0, Lgiu;->c:Landroid/util/DisplayMetrics;
 
-# virtual methods
-.method public final bi(Lkkp;)V
-    .locals 3
+    iput-object p4, p0, Lgiu;->d:Lhpb;
 
-    if-eqz p1, :cond_0
+    iput-object p5, p0, Lgiu;->j:Lnez;
 
-    invoke-virtual {p1}, Lkkp;->a()I
+    iput-object p6, p0, Lgiu;->e:Ljrl;
 
-    move-result p1
+    iput-object p7, p0, Lgiu;->f:Llco;
 
-    invoke-static {p1}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
+    iput-object p8, p0, Lgiu;->g:Lcvo;
 
-    move-result-object p1
+    iput-object p9, p0, Lgiu;->h:Lojc;
 
-    goto :goto_0
-
-    :cond_0
-    const-string p1, "Unknown"
-
-    :goto_0
-    sget-object v0, Lgiv;->a:Lnak;
-
-    invoke-virtual {v0}, Lnaf;->c()Lnaz;
-
-    move-result-object v0
-
-    const-string v1, "Failed to receive frame metadata. Reason: "
-
-    invoke-static {p1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object p1
-
-    invoke-virtual {v1, p1}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object p1
-
-    const-string v1, "%s"
-
-    const/16 v2, 0xab1
-
-    invoke-static {v0, v1, p1, v2}, Ld;->j(Lnaz;Ljava/lang/String;Ljava/lang/Object;C)V
-
-    iget-object v0, p0, Lgiu;->a:Lnph;
-
-    new-instance v1, Ljava/lang/Throwable;
-
-    invoke-direct {v1, p1}, Ljava/lang/Throwable;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v0, v1}, Lnph;->a(Ljava/lang/Throwable;)Z
-
-    return-void
-.end method
-
-.method public final br(Lkoq;)V
-    .locals 1
-
-    invoke-interface {p1}, Lkoq;->b()J
-
-    iget-object v0, p0, Lgiu;->a:Lnph;
-
-    invoke-virtual {v0, p1}, Lnph;->e(Ljava/lang/Object;)Z
+    iput-object p10, p0, Lgiu;->i:Lojc;
 
     return-void
 .end method

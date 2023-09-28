@@ -13,8 +13,73 @@
     return-void
 .end method
 
-.method public static a(Landroid/content/res/AssetManager;Ljava/lang/String;Ljava/io/File;)V
-    .locals 5
+.method public static a(Landroid/content/Context;)Ljava/lang/String;
+    .locals 8
+
+    const/4 v0, 0x1
+
+    const-string v1, "You must provide a valid context in order to use the bundled model in an Android app."
+
+    invoke-static {v0, v1}, Lobr;->aG(ZLjava/lang/Object;)V
+
+    invoke-virtual {p0}, Landroid/content/Context;->getCacheDir()Ljava/io/File;
+
+    move-result-object v0
+
+    new-instance v1, Ljava/io/File;
+
+    const-string v2, "avenh_camera"
+
+    invoke-direct {v1, v0, v2}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
+
+    invoke-virtual {v1}, Ljava/io/File;->exists()Z
+
+    move-result v3
+
+    if-eqz v3, :cond_0
+
+    invoke-virtual {v1}, Ljava/io/File;->list()[Ljava/lang/String;
+
+    move-result-object v3
+
+    array-length v4, v3
+
+    const/4 v5, 0x0
+
+    :goto_0
+    if-ge v5, v4, :cond_1
+
+    aget-object v6, v3, v5
+
+    new-instance v7, Ljava/io/File;
+
+    invoke-direct {v7, v1, v6}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
+
+    invoke-virtual {v7}, Ljava/io/File;->delete()Z
+
+    add-int/lit8 v5, v5, 0x1
+
+    goto :goto_0
+
+    :cond_0
+    invoke-virtual {v1}, Ljava/io/File;->mkdir()Z
+
+    :cond_1
+    invoke-virtual {v1}, Ljava/io/File;->getAbsolutePath()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {p0}, Landroid/content/Context;->getAssets()Landroid/content/res/AssetManager;
+
+    move-result-object p0
+
+    invoke-static {p0, v2, v0}, Lcom/google/babelfish/device/avenh/l2l/modelutils/androidmodelextractor/AndroidModelExtractor;->b(Landroid/content/res/AssetManager;Ljava/lang/String;Ljava/io/File;)V
+
+    return-object v1
+.end method
+
+.method private static b(Landroid/content/res/AssetManager;Ljava/lang/String;Ljava/io/File;)V
+    .locals 8
 
     invoke-virtual {p0, p1}, Landroid/content/res/AssetManager;->list(Ljava/lang/String;)[Ljava/lang/String;
 
@@ -69,10 +134,8 @@
     :catchall_1
     move-exception p1
 
-    :try_start_4
-    invoke-static {p2, p1}, Lmoz;->a(Ljava/lang/Throwable;Ljava/lang/Throwable;)V
-
     :goto_0
+    :try_start_4
     throw p2
     :try_end_4
     .catchall {:try_start_4 .. :try_end_4} :catchall_2
@@ -91,8 +154,6 @@
 
     :catchall_3
     move-exception p0
-
-    invoke-static {p1, p0}, Lmoz;->a(Ljava/lang/Throwable;Ljava/lang/Throwable;)V
 
     :cond_1
     :goto_1
@@ -125,21 +186,49 @@
 
     aget-object v2, v0, v3
 
-    new-instance v4, Ljava/lang/StringBuilder;
+    invoke-static {p1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
-    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
+    move-result-object v4
 
-    invoke-virtual {v4, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v4}, Ljava/lang/String;->length()I
 
-    invoke-virtual {v4, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result v4
 
-    invoke-virtual {v4, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
-    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    move-result-object v5
+
+    invoke-virtual {v5}, Ljava/lang/String;->length()I
+
+    move-result v5
+
+    invoke-static {v2}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v6
+
+    invoke-virtual {v6}, Ljava/lang/String;->length()I
+
+    move-result v6
+
+    new-instance v7, Ljava/lang/StringBuilder;
+
+    add-int/2addr v4, v5
+
+    add-int/2addr v4, v6
+
+    invoke-direct {v7, v4}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    invoke-virtual {v7, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v7, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v7, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v7}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v1
 
-    invoke-static {p0, v1, p2}, Lcom/google/babelfish/device/avenh/l2l/modelutils/androidmodelextractor/AndroidModelExtractor;->a(Landroid/content/res/AssetManager;Ljava/lang/String;Ljava/io/File;)V
+    invoke-static {p0, v1, p2}, Lcom/google/babelfish/device/avenh/l2l/modelutils/androidmodelextractor/AndroidModelExtractor;->b(Landroid/content/res/AssetManager;Ljava/lang/String;Ljava/io/File;)V
 
     add-int/lit8 v3, v3, 0x1
 

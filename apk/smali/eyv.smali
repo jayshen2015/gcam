@@ -1,63 +1,35 @@
-.class public final Leyv;
+.class public final synthetic Leyv;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Logk;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field private final a:Loiw;
-
-.field private final b:Loiw;
+.field public final synthetic a:Leyw;
 
 
 # direct methods
-.method public constructor <init>(Loiw;Loiw;)V
+.method public synthetic constructor <init>(Leyw;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Leyv;->a:Loiw;
-
-    iput-object p2, p0, Leyv;->b:Loiw;
+    iput-object p1, p0, Leyv;->a:Leyw;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Leyu;
-    .locals 3
-
-    iget-object v0, p0, Leyv;->a:Loiw;
-
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ldhi;
-
-    iget-object v1, p0, Leyv;->b:Loiw;
-
-    invoke-interface {v1}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Lhzh;
-
-    new-instance v2, Leyu;
-
-    invoke-direct {v2, v0, v1}, Leyu;-><init>(Ldhi;Lhzh;)V
-
-    return-object v2
-.end method
-
-.method public final bridge synthetic get()Ljava/lang/Object;
+.method public final run()V
     .locals 1
 
-    invoke-virtual {p0}, Leyv;->a()Leyu;
+    iget-object v0, p0, Leyv;->a:Leyw;
 
-    move-result-object v0
+    iget-object v0, v0, Leyw;->a:Lezg;
 
-    return-object v0
+    invoke-virtual {v0}, Lezg;->u()V
+
+    return-void
 .end method

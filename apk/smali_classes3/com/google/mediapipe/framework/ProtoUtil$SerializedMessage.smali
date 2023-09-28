@@ -1,4 +1,4 @@
-.class public Lcom/google/mediapipe/framework/ProtoUtil$SerializedMessage;
+.class Lcom/google/mediapipe/framework/ProtoUtil$SerializedMessage;
 .super Ljava/lang/Object;
 
 
@@ -9,7 +9,7 @@
 
 
 # direct methods
-.method public constructor <init>()V
+.method constructor <init>()V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V

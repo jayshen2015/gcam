@@ -1,91 +1,48 @@
-.class public final Lcqw;
-.super Ljava/lang/Object;
-
-# interfaces
-.implements Logk;
+.class public Lcqw;
+.super Lcqr;
 
 
 # instance fields
-.field private final a:Loiw;
+.field public final f:Lkas;
 
-.field private final b:Loiw;
+.field public final g:Llda;
 
-.field private final c:Loiw;
+.field public final h:Lddf;
 
-.field private final d:Loiw;
+.field public final i:Lojc;
+
+.field public final j:Lcvo;
+
+.field public k:Z
+
+.field public final l:Livf;
+
+.field public final m:Lnvb;
 
 
 # direct methods
-.method public constructor <init>(Loiw;Loiw;Loiw;Loiw;)V
+.method public constructor <init>(Lkas;Lnvb;Llda;Lddf;Livf;Lojc;Lcvo;[B[B[B)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Lcqr;-><init>()V
 
-    iput-object p1, p0, Lcqw;->a:Loiw;
+    const/4 p8, 0x1
 
-    iput-object p2, p0, Lcqw;->b:Loiw;
+    iput-boolean p8, p0, Lcqw;->k:Z
 
-    iput-object p3, p0, Lcqw;->c:Loiw;
+    iput-object p1, p0, Lcqw;->f:Lkas;
 
-    iput-object p4, p0, Lcqw;->d:Loiw;
+    iput-object p2, p0, Lcqw;->m:Lnvb;
+
+    iput-object p3, p0, Lcqw;->g:Llda;
+
+    iput-object p4, p0, Lcqw;->h:Lddf;
+
+    iput-object p5, p0, Lcqw;->l:Livf;
+
+    iput-object p6, p0, Lcqw;->i:Lojc;
+
+    iput-object p7, p0, Lcqw;->j:Lcvo;
 
     return-void
-.end method
-
-
-# virtual methods
-.method public final a()Liac;
-    .locals 5
-
-    iget-object v0, p0, Lcqw;->a:Loiw;
-
-    check-cast v0, Lccs;
-
-    invoke-virtual {v0}, Lccs;->a()Ljava/lang/Boolean;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
-
-    move-result v0
-
-    iget-object v1, p0, Lcqw;->b:Loiw;
-
-    check-cast v1, Lcrn;
-
-    invoke-virtual {v1}, Lcrn;->a()Lcrm;
-
-    move-result-object v1
-
-    iget-object v2, p0, Lcqw;->c:Loiw;
-
-    check-cast v2, Lhhx;
-
-    invoke-virtual {v2}, Lhhx;->a()Lmqp;
-
-    move-result-object v2
-
-    iget-object v3, p0, Lcqw;->d:Loiw;
-
-    check-cast v3, Lhhx;
-
-    invoke-virtual {v3}, Lhhx;->a()Lmqp;
-
-    move-result-object v3
-
-    new-instance v4, Liac;
-
-    invoke-direct {v4, v0, v1, v2, v3}, Liac;-><init>(ZLcrm;Lmqp;Lmqp;)V
-
-    return-object v4
-.end method
-
-.method public final bridge synthetic get()Ljava/lang/Object;
-    .locals 1
-
-    invoke-virtual {p0}, Lcqw;->a()Liac;
-
-    move-result-object v0
-
-    return-object v0
 .end method

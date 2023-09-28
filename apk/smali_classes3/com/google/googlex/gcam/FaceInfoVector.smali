@@ -37,35 +37,7 @@
 
 
 # virtual methods
-.method public final a()J
-    .locals 2
-
-    iget-wide v0, p0, Lcom/google/googlex/gcam/FaceInfoVector;->a:J
-
-    invoke-static {v0, v1, p0}, Lcom/google/googlex/gcam/GcamModuleJNI;->FaceInfoVector_size(JLcom/google/googlex/gcam/FaceInfoVector;)J
-
-    move-result-wide v0
-
-    return-wide v0
-.end method
-
-.method public final b(Lcom/google/googlex/gcam/FaceInfo;)V
-    .locals 6
-
-    iget-wide v0, p0, Lcom/google/googlex/gcam/FaceInfoVector;->a:J
-
-    iget-wide v3, p1, Lcom/google/googlex/gcam/FaceInfo;->a:J
-
-    move-object v2, p0
-
-    move-object v5, p1
-
-    invoke-static/range {v0 .. v5}, Lcom/google/googlex/gcam/GcamModuleJNI;->FaceInfoVector_add(JLcom/google/googlex/gcam/FaceInfoVector;JLcom/google/googlex/gcam/FaceInfo;)V
-
-    return-void
-.end method
-
-.method public final declared-synchronized c()V
+.method public final declared-synchronized a()V
     .locals 5
 
     monitor-enter p0
@@ -110,7 +82,7 @@
 .method protected final finalize()V
     .locals 0
 
-    invoke-virtual {p0}, Lcom/google/googlex/gcam/FaceInfoVector;->c()V
+    invoke-virtual {p0}, Lcom/google/googlex/gcam/FaceInfoVector;->a()V
 
     return-void
 .end method

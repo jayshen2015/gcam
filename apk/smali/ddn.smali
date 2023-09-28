@@ -2,361 +2,107 @@
 .super Ljava/lang/Object;
 
 
-# instance fields
-.field public a:Ljava/lang/String;
+# static fields
+.field public static final a:Lddg;
 
-.field public b:Ljava/lang/Runnable;
+.field public static final b:Lddg;
 
-.field public c:Landroid/graphics/drawable/Drawable;
+.field public static final c:Lddg;
 
-.field public d:Lmqp;
-
-.field public e:I
-
-.field public f:I
-
-.field private g:J
-
-.field private h:I
-
-.field private i:I
-
-.field private j:Lmqp;
-
-.field private k:Z
-
-.field private l:J
-
-.field private m:B
+.field public static final d:Lddg;
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 0
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
-.end method
-
-.method public constructor <init>(Lddo;)V
+.method static constructor <clinit>()V
     .locals 2
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance v0, Lddh;
 
-    sget-object v0, Lmpx;->a:Lmpx;
+    invoke-direct {v0}, Lddh;-><init>()V
 
-    iput-object v0, p0, Lddn;->d:Lmqp;
+    const-string v1, "camera.enable_imax"
 
-    iput-object v0, p0, Lddn;->j:Lmqp;
+    iput-object v1, v0, Lddh;->a:Ljava/lang/String;
 
-    iget-wide v0, p1, Lddo;->a:J
+    invoke-virtual {v0}, Lddh;->c()Lddg;
 
-    iput-wide v0, p0, Lddn;->g:J
+    move-result-object v0
 
-    iget-object v0, p1, Lddo;->b:Ljava/lang/String;
+    sput-object v0, Lddn;->a:Lddg;
 
-    iput-object v0, p0, Lddn;->a:Ljava/lang/String;
+    new-instance v0, Lddh;
 
-    iget-object v0, p1, Lddo;->c:Ljava/lang/Runnable;
+    invoke-direct {v0}, Lddh;-><init>()V
 
-    iput-object v0, p0, Lddn;->b:Ljava/lang/Runnable;
+    const-string v1, "camera.imax_keep_models"
 
-    iget-object v0, p1, Lddo;->d:Landroid/graphics/drawable/Drawable;
+    iput-object v1, v0, Lddh;->a:Ljava/lang/String;
 
-    iput-object v0, p0, Lddn;->c:Landroid/graphics/drawable/Drawable;
+    new-instance v0, Lddh;
 
-    iget v0, p1, Lddo;->k:I
+    invoke-direct {v0}, Lddh;-><init>()V
 
-    iput v0, p0, Lddn;->e:I
+    const-string v1, "camera.imax_ois"
 
-    iget v0, p1, Lddo;->l:I
+    iput-object v1, v0, Lddh;->a:Ljava/lang/String;
 
-    iput v0, p0, Lddn;->f:I
+    new-instance v0, Lddh;
 
-    iget-object v0, p1, Lddo;->e:Lmqp;
+    invoke-direct {v0}, Lddh;-><init>()V
 
-    iput-object v0, p0, Lddn;->d:Lmqp;
+    const-string v1, "camera.imax_show_axis"
 
-    iget v0, p1, Lddo;->f:I
+    iput-object v1, v0, Lddh;->a:Ljava/lang/String;
 
-    iput v0, p0, Lddn;->h:I
+    new-instance v0, Lddh;
 
-    iget v0, p1, Lddo;->g:I
+    invoke-direct {v0}, Lddh;-><init>()V
 
-    iput v0, p0, Lddn;->i:I
+    const-string v1, "camera.imax_live_tex"
 
-    iget-object v0, p1, Lddo;->h:Lmqp;
+    iput-object v1, v0, Lddh;->a:Ljava/lang/String;
 
-    iput-object v0, p0, Lddn;->j:Lmqp;
+    new-instance v0, Lddh;
 
-    iget-boolean v0, p1, Lddo;->i:Z
+    invoke-direct {v0}, Lddh;-><init>()V
 
-    iput-boolean v0, p0, Lddn;->k:Z
+    const-string v1, "camera.imax_hdrnet_input"
 
-    iget-wide v0, p1, Lddo;->j:J
+    iput-object v1, v0, Lddh;->a:Ljava/lang/String;
 
-    iput-wide v0, p0, Lddn;->l:J
+    invoke-virtual {v0}, Lddh;->f()Lddg;
 
-    const/16 p1, 0x1f
+    move-result-object v0
 
-    iput-byte p1, p0, Lddn;->m:B
+    sput-object v0, Lddn;->b:Lddg;
 
-    return-void
-.end method
+    new-instance v0, Lddh;
 
-.method public constructor <init>([B)V
-    .locals 0
+    invoke-direct {v0}, Lddh;-><init>()V
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const-string v1, "camera.imax_reg_weight"
 
-    sget-object p1, Lmpx;->a:Lmpx;
+    iput-object v1, v0, Lddh;->a:Ljava/lang/String;
 
-    iput-object p1, p0, Lddn;->d:Lmqp;
+    invoke-virtual {v0}, Lddh;->e()Lddg;
 
-    iput-object p1, p0, Lddn;->j:Lmqp;
+    move-result-object v0
 
-    return-void
-.end method
+    sput-object v0, Lddn;->c:Lddg;
 
+    new-instance v0, Lddh;
 
-# virtual methods
-.method public final a()Lddo;
-    .locals 18
+    invoke-direct {v0}, Lddh;-><init>()V
 
-    move-object/from16 v0, p0
+    const-string v1, "camera.imax_sum_weight"
 
-    iget-byte v1, v0, Lddn;->m:B
+    iput-object v1, v0, Lddh;->a:Ljava/lang/String;
 
-    const/16 v2, 0x1f
+    invoke-virtual {v0}, Lddh;->e()Lddg;
 
-    if-ne v1, v2, :cond_1
+    move-result-object v0
 
-    iget v9, v0, Lddn;->e:I
-
-    if-eqz v9, :cond_1
-
-    iget v10, v0, Lddn;->f:I
-
-    if-nez v10, :cond_0
-
-    goto :goto_0
-
-    :cond_0
-    new-instance v1, Lddo;
-
-    iget-wide v4, v0, Lddn;->g:J
-
-    iget-object v6, v0, Lddn;->a:Ljava/lang/String;
-
-    iget-object v7, v0, Lddn;->b:Ljava/lang/Runnable;
-
-    iget-object v8, v0, Lddn;->c:Landroid/graphics/drawable/Drawable;
-
-    iget-object v11, v0, Lddn;->d:Lmqp;
-
-    iget v12, v0, Lddn;->h:I
-
-    iget v13, v0, Lddn;->i:I
-
-    iget-object v14, v0, Lddn;->j:Lmqp;
-
-    iget-boolean v15, v0, Lddn;->k:Z
-
-    iget-wide v2, v0, Lddn;->l:J
-
-    move-wide/from16 v16, v2
-
-    move-object v3, v1
-
-    invoke-direct/range {v3 .. v17}, Lddo;-><init>(JLjava/lang/String;Ljava/lang/Runnable;Landroid/graphics/drawable/Drawable;IILmqp;IILmqp;ZJ)V
-
-    return-object v1
-
-    :cond_1
-    :goto_0
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    iget-byte v2, v0, Lddn;->m:B
-
-    and-int/lit8 v2, v2, 0x1
-
-    if-nez v2, :cond_2
-
-    const-string v2, " id"
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    :cond_2
-    iget v2, v0, Lddn;->e:I
-
-    if-nez v2, :cond_3
-
-    const-string v2, " actionType"
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    :cond_3
-    iget v2, v0, Lddn;->f:I
-
-    if-nez v2, :cond_4
-
-    const-string v2, " resultType"
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    :cond_4
-    iget-byte v2, v0, Lddn;->m:B
-
-    and-int/lit8 v2, v2, 0x2
-
-    if-nez v2, :cond_5
-
-    const-string v2, " barcodeValueFormat"
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    :cond_5
-    iget-byte v2, v0, Lddn;->m:B
-
-    and-int/lit8 v2, v2, 0x4
-
-    if-nez v2, :cond_6
-
-    const-string v2, " barcodeFormat"
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    :cond_6
-    iget-byte v2, v0, Lddn;->m:B
-
-    and-int/lit8 v2, v2, 0x8
-
-    if-nez v2, :cond_7
-
-    const-string v2, " gleamingEnabled"
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    :cond_7
-    iget-byte v2, v0, Lddn;->m:B
-
-    and-int/lit8 v2, v2, 0x10
-
-    if-nez v2, :cond_8
-
-    const-string v2, " timestamp"
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    :cond_8
-    new-instance v2, Ljava/lang/IllegalStateException;
-
-    invoke-virtual {v1}, Ljava/lang/Object;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    const-string v3, "Missing required properties:"
-
-    invoke-virtual {v3, v1}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-direct {v2, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw v2
-.end method
-
-.method public final b(I)V
-    .locals 0
-
-    iput p1, p0, Lddn;->i:I
-
-    iget-byte p1, p0, Lddn;->m:B
-
-    or-int/lit8 p1, p1, 0x4
-
-    int-to-byte p1, p1
-
-    iput-byte p1, p0, Lddn;->m:B
-
-    return-void
-.end method
-
-.method public final c(I)V
-    .locals 0
-
-    iput p1, p0, Lddn;->h:I
-
-    iget-byte p1, p0, Lddn;->m:B
-
-    or-int/lit8 p1, p1, 0x2
-
-    int-to-byte p1, p1
-
-    iput-byte p1, p0, Lddn;->m:B
-
-    return-void
-.end method
-
-.method public final d(Lddl;)V
-    .locals 0
-
-    invoke-static {p1}, Lmqp;->h(Ljava/lang/Object;)Lmqp;
-
-    move-result-object p1
-
-    iput-object p1, p0, Lddn;->j:Lmqp;
-
-    return-void
-.end method
-
-.method public final e(Z)V
-    .locals 0
-
-    iput-boolean p1, p0, Lddn;->k:Z
-
-    iget-byte p1, p0, Lddn;->m:B
-
-    or-int/lit8 p1, p1, 0x8
-
-    int-to-byte p1, p1
-
-    iput-byte p1, p0, Lddn;->m:B
-
-    return-void
-.end method
-
-.method public final f(J)V
-    .locals 0
-
-    iput-wide p1, p0, Lddn;->g:J
-
-    iget-byte p1, p0, Lddn;->m:B
-
-    or-int/lit8 p1, p1, 0x1
-
-    int-to-byte p1, p1
-
-    iput-byte p1, p0, Lddn;->m:B
-
-    return-void
-.end method
-
-.method public final g(J)V
-    .locals 0
-
-    iput-wide p1, p0, Lddn;->l:J
-
-    iget-byte p1, p0, Lddn;->m:B
-
-    or-int/lit8 p1, p1, 0x10
-
-    int-to-byte p1, p1
-
-    iput-byte p1, p0, Lddn;->m:B
+    sput-object v0, Lddn;->d:Lddg;
 
     return-void
 .end method

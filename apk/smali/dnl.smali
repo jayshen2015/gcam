@@ -1,107 +1,129 @@
-.class public final Ldnl;
+.class final Ldnl;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Logk;
+.implements Lgjt;
 
 
 # instance fields
-.field private final a:Loiw;
+.field final synthetic a:Ldos;
 
-.field private final b:Loiw;
-
-.field private final c:Loiw;
-
-.field private final d:Loiw;
-
-.field private final e:Loiw;
+.field final synthetic b:Ldnn;
 
 
 # direct methods
-.method public constructor <init>(Loiw;Loiw;Loiw;Loiw;Loiw;)V
+.method public constructor <init>(Ldnn;Ldos;)V
     .locals 0
 
+    iput-object p1, p0, Ldnl;->b:Ldnn;
+
+    iput-object p2, p0, Ldnl;->a:Ldos;
+
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Ldnl;->a:Loiw;
-
-    iput-object p2, p0, Ldnl;->b:Loiw;
-
-    iput-object p3, p0, Ldnl;->c:Loiw;
-
-    iput-object p4, p0, Ldnl;->d:Loiw;
-
-    iput-object p5, p0, Ldnl;->e:Loiw;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Ldnk;
-    .locals 8
+.method public final a()Lpht;
+    .locals 5
 
-    iget-object v0, p0, Ldnl;->a:Loiw;
+    iget-object v0, p0, Ldnl;->a:Ldos;
 
-    check-cast v0, Lelu;
+    iget-object v0, v0, Ldos;->a:Lmad;
 
-    invoke-virtual {v0}, Lelu;->a()Ljava/lang/ref/WeakReference;
-
-    move-result-object v2
-
-    iget-object v0, p0, Ldnl;->b:Loiw;
-
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
+    invoke-interface {v0}, Lmad;->f()Landroid/hardware/HardwareBuffer;
 
     move-result-object v0
 
-    move-object v3, v0
+    if-eqz v0, :cond_0
 
-    check-cast v3, Lfbz;
+    :try_start_0
+    sget-object v1, Ldnn;->a:Louj;
 
-    iget-object v0, p0, Ldnl;->c:Loiw;
+    invoke-virtual {v1}, Loue;->c()Lova;
 
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
+    move-result-object v1
+
+    check-cast v1, Loug;
+
+    const/16 v2, 0x36b
+
+    invoke-interface {v1, v2}, Loug;->G(I)Lova;
+
+    move-result-object v1
+
+    check-cast v1, Loug;
+
+    const-string v2, "Using CPU processing on an image having a HardwareBuffer?"
+
+    invoke-interface {v1, v2}, Loug;->o(Ljava/lang/String;)V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    goto :goto_1
+
+    :catchall_0
+    move-exception v1
+
+    :try_start_1
+    invoke-virtual {v0}, Landroid/hardware/HardwareBuffer;->close()V
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_1
+
+    goto :goto_0
+
+    :catchall_1
+    move-exception v0
+
+    :goto_0
+    throw v1
+
+    :cond_0
+    :goto_1
+    if-eqz v0, :cond_1
+
+    invoke-virtual {v0}, Landroid/hardware/HardwareBuffer;->close()V
+
+    :cond_1
+    new-instance v0, Ldnm;
+
+    iget-object v1, p0, Ldnl;->b:Ldnn;
+
+    iget-wide v2, v1, Ldnn;->d:J
+
+    iget-object v4, p0, Ldnl;->a:Ldos;
+
+    iget v1, v1, Ldnn;->b:I
+
+    invoke-direct {v0, v2, v3, v4, v1}, Ldnm;-><init>(JLdos;I)V
+
+    invoke-static {v0}, Lphu;->a(Ljava/util/concurrent/Callable;)Lphu;
 
     move-result-object v0
 
-    move-object v4, v0
+    iget-object v1, p0, Ldnl;->b:Ldnn;
 
-    check-cast v4, Lchs;
+    iget-object v1, v1, Ldnn;->c:Ljava/util/concurrent/Executor;
 
-    iget-object v0, p0, Ldnl;->d:Loiw;
-
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    move-object v5, v0
-
-    check-cast v5, Ljwb;
-
-    iget-object v0, p0, Ldnl;->e:Loiw;
-
-    check-cast v0, Ldbs;
-
-    invoke-virtual {v0}, Ldbs;->a()Lcvr;
-
-    move-result-object v6
-
-    new-instance v0, Ldnk;
-
-    const/4 v7, 0x0
-
-    move-object v1, v0
-
-    invoke-direct/range {v1 .. v7}, Ldnk;-><init>(Ljava/lang/ref/WeakReference;Lfbz;Lchs;Ljwb;Lcvr;[B)V
+    invoke-interface {v1, v0}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
 
     return-object v0
 .end method
 
-.method public final bridge synthetic get()Ljava/lang/Object;
-    .locals 1
+.method public final b()Lpht;
+    .locals 2
 
-    invoke-virtual {p0}, Ldnl;->a()Ldnk;
+    new-instance v0, Ldod;
+
+    iget-object v1, p0, Ldnl;->a:Ldos;
+
+    iget-object v1, v1, Ldos;->a:Lmad;
+
+    invoke-direct {v0, v1}, Ldod;-><init>(Lmad;)V
+
+    invoke-static {v0}, Lplk;->V(Ljava/lang/Object;)Lpht;
 
     move-result-object v0
 

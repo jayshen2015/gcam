@@ -1,208 +1,279 @@
-.class public Lmxl;
-.super Ljava/util/AbstractList;
+.class public final Lmxl;
+.super Ljava/lang/Object;
 
 
 # instance fields
-.field public final a:Ljava/util/List;
+.field public final a:Lmxi;
+
+.field public final b:Lqkg;
+
+.field public final c:Lnco;
+
+.field public final d:Lqkg;
+
+.field public final e:Lmvq;
+
+.field private final f:Lmuz;
+
+.field private final g:Ljava/util/concurrent/Executor;
 
 
 # direct methods
-.method public constructor <init>(Ljava/util/List;)V
-    .locals 0
+.method public constructor <init>(Lmxi;Lqkg;Lmuz;Lncp;Lqkg;Lmvq;Ljava/util/concurrent/Executor;Lpyn;Lqkg;)V
+    .locals 11
 
-    invoke-direct {p0}, Ljava/util/AbstractList;-><init>()V
+    move-object v0, p0
 
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    move-object v1, p4
 
-    iput-object p1, p0, Lmxl;->a:Ljava/util/List;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    move-object v2, p1
+
+    iput-object v2, v0, Lmxl;->a:Lmxi;
+
+    move-object v2, p3
+
+    iput-object v2, v0, Lmxl;->f:Lmuz;
+
+    move-object v2, p2
+
+    iput-object v2, v0, Lmxl;->b:Lqkg;
+
+    move-object/from16 v2, p7
+
+    iput-object v2, v0, Lmxl;->g:Ljava/util/concurrent/Executor;
+
+    new-instance v2, Lmxk;
+
+    const/4 v3, 0x0
+
+    move-object/from16 v4, p5
+
+    invoke-direct {v2, v4, v3}, Lmxk;-><init>(Lqkg;I)V
+
+    iput-object v2, v0, Lmxl;->d:Lqkg;
+
+    new-instance v2, Lnco;
+
+    iget-object v3, v1, Lncp;->a:Lqkg;
+
+    check-cast v3, Lemp;
+
+    invoke-virtual {v3}, Lemp;->a()Landroid/content/Context;
+
+    move-result-object v5
+
+    iget-object v3, v1, Lncp;->b:Lqkg;
+
+    invoke-interface {v3}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v3
+
+    move-object v6, v3
+
+    check-cast v6, Ljava/util/concurrent/Executor;
+
+    invoke-virtual {v6}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    iget-object v3, v1, Lncp;->c:Lqkg;
+
+    invoke-interface {v3}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v3
+
+    iget-object v1, v1, Lncp;->d:Lqkg;
+
+    invoke-interface {v1}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Ljava/lang/Boolean;
+
+    invoke-virtual {v1}, Ljava/lang/Boolean;->booleanValue()Z
+
+    move-result v9
+
+    move-object v7, v3
+
+    check-cast v7, Lnct;
+
+    move-object v4, v2
+
+    move-object/from16 v8, p8
+
+    move-object/from16 v10, p9
+
+    invoke-direct/range {v4 .. v10}, Lnco;-><init>(Landroid/content/Context;Ljava/util/concurrent/Executor;Lnct;Lpyn;ZLqkg;)V
+
+    iput-object v2, v0, Lmxl;->c:Lnco;
+
+    move-object/from16 v1, p6
+
+    iput-object v1, v0, Lmxl;->e:Lmvq;
 
     return-void
-.end method
-
-.method private final b(I)I
-    .locals 1
-
-    invoke-virtual {p0}, Lmxl;->size()I
-
-    move-result v0
-
-    invoke-static {p1, v0}, Lmoz;->w(II)V
-
-    add-int/lit8 v0, v0, -0x1
-
-    sub-int/2addr v0, p1
-
-    return v0
 .end method
 
 
 # virtual methods
-.method public final a(I)I
-    .locals 1
+.method public final a(Ljava/lang/String;)J
+    .locals 8
 
-    invoke-virtual {p0}, Lmxl;->size()I
+    iget-object v0, p0, Lmxl;->f:Lmuz;
 
-    move-result v0
+    iget-boolean v0, v0, Lmuz;->b:Z
 
-    invoke-static {p1, v0}, Lmoz;->x(II)V
+    const-wide/16 v1, -0x1
 
-    sub-int/2addr v0, p1
+    if-nez v0, :cond_5
 
-    return v0
+    iget-object v0, p0, Lmxl;->c:Lnco;
+
+    iget-object v3, v0, Lnco;->d:Lnck;
+
+    iget-object v4, v3, Lnck;->b:Lqkg;
+
+    invoke-interface {v4}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v4
+
+    check-cast v4, Ljava/lang/Integer;
+
+    invoke-virtual {v4}, Ljava/lang/Integer;->intValue()I
+
+    move-result v4
+
+    if-nez v4, :cond_0
+
+    goto :goto_1
+
+    :cond_0
+    const v5, 0x7fffffff
+
+    if-ne v4, v5, :cond_1
+
+    goto :goto_0
+
+    :cond_1
+    iget-object v5, v3, Lnck;->a:Ljava/lang/Object;
+
+    monitor-enter v5
+
+    :try_start_0
+    iget v6, v3, Lnck;->d:I
+
+    if-ge v6, v4, :cond_2
+
+    monitor-exit v5
+
+    goto :goto_0
+
+    :cond_2
+    iget-wide v6, v3, Lnck;->e:J
+
+    monitor-exit v5
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    iget-object v3, v3, Lnck;->c:Lmdf;
+
+    invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
+
+    move-result-wide v3
+
+    sub-long/2addr v3, v6
+
+    const-wide/16 v5, 0x3e8
+
+    cmp-long v7, v3, v5
+
+    if-gtz v7, :cond_3
+
+    goto :goto_1
+
+    :cond_3
+    :goto_0
+    iget-boolean v3, v0, Lnco;->c:Z
+
+    iget-object v0, v0, Lnco;->b:Lncu;
+
+    if-eqz v3, :cond_4
+
+    invoke-virtual {v0, p1}, Lncu;->a(Ljava/lang/String;)J
+
+    move-result-wide v0
+
+    move-wide v1, v0
+
+    goto :goto_1
+
+    :cond_4
+    :goto_1
+    return-wide v1
+
+    :catchall_0
+    move-exception p1
+
+    :try_start_1
+    monitor-exit v5
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    throw p1
+
+    :cond_5
+    return-wide v1
 .end method
 
-.method public final add(ILjava/lang/Object;)V
+.method public final b(Lmxg;)Lpht;
     .locals 1
 
-    iget-object v0, p0, Lmxl;->a:Ljava/util/List;
+    iget-object v0, p0, Lmxl;->f:Lmuz;
 
-    invoke-virtual {p0, p1}, Lmxl;->a(I)I
+    iget-boolean v0, v0, Lmuz;->b:Z
 
-    move-result p1
+    if-eqz v0, :cond_0
 
-    invoke-interface {v0, p1, p2}, Ljava/util/List;->add(ILjava/lang/Object;)V
+    invoke-static {}, Lplk;->T()Lpht;
 
-    return-void
-.end method
+    move-result-object p1
 
-.method public final clear()V
-    .locals 1
+    return-object p1
 
-    iget-object v0, p0, Lmxl;->a:Ljava/util/List;
+    :cond_0
+    new-instance v0, Lmxj;
 
-    invoke-interface {v0}, Ljava/util/List;->clear()V
+    invoke-direct {v0, p0, p1}, Lmxj;-><init>(Lmxl;Lmxg;)V
 
-    return-void
-.end method
+    iget-object p1, p0, Lmxl;->g:Ljava/util/concurrent/Executor;
 
-.method public final get(I)Ljava/lang/Object;
-    .locals 1
-
-    iget-object v0, p0, Lmxl;->a:Ljava/util/List;
-
-    invoke-direct {p0, p1}, Lmxl;->b(I)I
-
-    move-result p1
-
-    invoke-interface {v0, p1}, Ljava/util/List;->get(I)Ljava/lang/Object;
+    invoke-static {v0, p1}, Lplk;->Y(Ljava/lang/Runnable;Ljava/util/concurrent/Executor;)Lpht;
 
     move-result-object p1
 
     return-object p1
 .end method
 
-.method public final iterator()Ljava/util/Iterator;
-    .locals 1
+.method public final c(Ljava/lang/String;)Z
+    .locals 4
 
-    invoke-virtual {p0}, Lmxl;->listIterator()Ljava/util/ListIterator;
+    invoke-virtual {p0, p1}, Lmxl;->a(Ljava/lang/String;)J
 
-    move-result-object v0
+    move-result-wide v0
 
-    return-object v0
-.end method
+    const-wide/16 v2, -0x1
 
-.method public final listIterator(I)Ljava/util/ListIterator;
-    .locals 1
+    cmp-long p1, v0, v2
 
-    invoke-virtual {p0, p1}, Lmxl;->a(I)I
+    if-eqz p1, :cond_0
 
-    move-result p1
+    const/4 p1, 0x1
 
-    iget-object v0, p0, Lmxl;->a:Ljava/util/List;
+    return p1
 
-    invoke-interface {v0, p1}, Ljava/util/List;->listIterator(I)Ljava/util/ListIterator;
+    :cond_0
+    const/4 p1, 0x0
 
-    move-result-object p1
-
-    new-instance v0, Lmxk;
-
-    invoke-direct {v0, p0, p1}, Lmxk;-><init>(Lmxl;Ljava/util/ListIterator;)V
-
-    return-object v0
-.end method
-
-.method public final remove(I)Ljava/lang/Object;
-    .locals 1
-
-    iget-object v0, p0, Lmxl;->a:Ljava/util/List;
-
-    invoke-direct {p0, p1}, Lmxl;->b(I)I
-
-    move-result p1
-
-    invoke-interface {v0, p1}, Ljava/util/List;->remove(I)Ljava/lang/Object;
-
-    move-result-object p1
-
-    return-object p1
-.end method
-
-.method protected final removeRange(II)V
-    .locals 0
-
-    invoke-virtual {p0, p1, p2}, Lmxl;->subList(II)Ljava/util/List;
-
-    move-result-object p1
-
-    invoke-interface {p1}, Ljava/util/List;->clear()V
-
-    return-void
-.end method
-
-.method public final set(ILjava/lang/Object;)Ljava/lang/Object;
-    .locals 1
-
-    iget-object v0, p0, Lmxl;->a:Ljava/util/List;
-
-    invoke-direct {p0, p1}, Lmxl;->b(I)I
-
-    move-result p1
-
-    invoke-interface {v0, p1, p2}, Ljava/util/List;->set(ILjava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object p1
-
-    return-object p1
-.end method
-
-.method public final size()I
-    .locals 1
-
-    iget-object v0, p0, Lmxl;->a:Ljava/util/List;
-
-    invoke-interface {v0}, Ljava/util/List;->size()I
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public final subList(II)Ljava/util/List;
-    .locals 1
-
-    invoke-virtual {p0}, Lmxl;->size()I
-
-    move-result v0
-
-    invoke-static {p1, p2, v0}, Lmoz;->o(III)V
-
-    iget-object v0, p0, Lmxl;->a:Ljava/util/List;
-
-    invoke-virtual {p0, p2}, Lmxl;->a(I)I
-
-    move-result p2
-
-    invoke-virtual {p0, p1}, Lmxl;->a(I)I
-
-    move-result p1
-
-    invoke-interface {v0, p2, p1}, Ljava/util/List;->subList(II)Ljava/util/List;
-
-    move-result-object p1
-
-    invoke-static {p1}, Llyh;->G(Ljava/util/List;)Ljava/util/List;
-
-    move-result-object p1
-
-    return-object p1
+    return p1
 .end method

@@ -2,200 +2,74 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lkad;
+.implements Lpys;
 
 
 # instance fields
-.field public final a:Lkbc;
+.field private final a:Lqkg;
 
-.field public final b:Loiw;
+.field private final b:Lqkg;
 
-.field public final c:Lmqp;
-
-.field public final d:Lnow;
-
-.field public final e:Ljava/util/concurrent/ScheduledExecutorService;
-
-.field public final f:Loiw;
-
-.field public final g:Lctv;
-
-.field public final h:Lfbk;
-
-.field public final i:Ljxv;
-
-.field public final j:Ldhi;
-
-.field public final k:Ljava/lang/Object;
-
-.field public l:Lmqp;
-
-.field public m:Ljye;
-
-.field public n:Z
-
-.field public o:Lctd;
-
-.field public final p:Liac;
-
-.field public final q:Ldja;
-
-.field public final r:Ldja;
-
-.field public final s:Lcvr;
-
-.field public final t:Lcvm;
-
-.field public final u:Ldne;
+.field private final c:Lqkg;
 
 
 # direct methods
-.method public constructor <init>(Loiw;Liac;Lmqp;Lctv;Lnow;Ljava/util/concurrent/ScheduledExecutorService;Ldja;Lkbc;Loiw;Lfbk;Lcvr;Lcvm;Ljxv;Ldja;Ldhi;Ldne;[B[B[B)V
-    .locals 2
-
-    move-object v0, p0
+.method public constructor <init>(Lqkg;Lqkg;Lqkg;)V
+    .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    new-instance v1, Ljava/lang/Object;
+    iput-object p1, p0, Lcul;->a:Lqkg;
 
-    invoke-direct {v1}, Ljava/lang/Object;-><init>()V
+    iput-object p2, p0, Lcul;->b:Lqkg;
 
-    iput-object v1, v0, Lcul;->k:Ljava/lang/Object;
-
-    sget-object v1, Lmpx;->a:Lmpx;
-
-    iput-object v1, v0, Lcul;->l:Lmqp;
-
-    const/4 v1, 0x1
-
-    iput-boolean v1, v0, Lcul;->n:Z
-
-    move-object v1, p8
-
-    iput-object v1, v0, Lcul;->a:Lkbc;
-
-    move-object v1, p5
-
-    iput-object v1, v0, Lcul;->d:Lnow;
-
-    move-object v1, p6
-
-    iput-object v1, v0, Lcul;->e:Ljava/util/concurrent/ScheduledExecutorService;
-
-    move-object v1, p7
-
-    iput-object v1, v0, Lcul;->r:Ldja;
-
-    move-object v1, p9
-
-    iput-object v1, v0, Lcul;->f:Loiw;
-
-    move-object v1, p4
-
-    iput-object v1, v0, Lcul;->g:Lctv;
-
-    move-object v1, p1
-
-    iput-object v1, v0, Lcul;->b:Loiw;
-
-    move-object v1, p2
-
-    iput-object v1, v0, Lcul;->p:Liac;
-
-    move-object v1, p3
-
-    iput-object v1, v0, Lcul;->c:Lmqp;
-
-    move-object v1, p10
-
-    iput-object v1, v0, Lcul;->h:Lfbk;
-
-    move-object v1, p11
-
-    iput-object v1, v0, Lcul;->s:Lcvr;
-
-    move-object v1, p12
-
-    iput-object v1, v0, Lcul;->t:Lcvm;
-
-    move-object v1, p13
-
-    iput-object v1, v0, Lcul;->i:Ljxv;
-
-    move-object/from16 v1, p14
-
-    iput-object v1, v0, Lcul;->q:Ldja;
-
-    move-object/from16 v1, p15
-
-    iput-object v1, v0, Lcul;->j:Ldhi;
-
-    move-object/from16 v1, p16
-
-    iput-object v1, v0, Lcul;->u:Ldne;
+    iput-object p3, p0, Lcul;->c:Lqkg;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final close()V
-    .locals 2
+.method public final a()Lcuk;
+    .locals 4
 
-    iget-object v0, p0, Lcul;->k:Ljava/lang/Object;
+    iget-object v0, p0, Lcul;->a:Lqkg;
 
-    monitor-enter v0
+    check-cast v0, Lemd;
 
-    const/4 v1, 0x1
+    invoke-virtual {v0}, Lemd;->a()Landroid/content/Context;
 
-    :try_start_0
-    iput-boolean v1, p0, Lcul;->n:Z
+    move-result-object v0
 
-    iget-object v1, p0, Lcul;->m:Ljye;
+    iget-object v1, p0, Lcul;->b:Lqkg;
 
-    if-eqz v1, :cond_0
-
-    invoke-interface {v1}, Ljye;->close()V
-
-    const/4 v1, 0x0
-
-    iput-object v1, p0, Lcul;->m:Ljye;
-
-    :cond_0
-    iget-object v1, p0, Lcul;->l:Lmqp;
-
-    invoke-virtual {v1}, Lmqp;->g()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_1
-
-    iget-object v1, p0, Lcul;->l:Lmqp;
-
-    invoke-virtual {v1}, Lmqp;->c()Ljava/lang/Object;
+    invoke-interface {v1}, Lqkg;->get()Ljava/lang/Object;
 
     move-result-object v1
 
-    check-cast v1, Ljzd;
+    check-cast v1, Lius;
 
-    invoke-interface {v1}, Ljzd;->e()V
+    iget-object v2, p0, Lcul;->c:Lqkg;
 
-    sget-object v1, Lmpx;->a:Lmpx;
+    invoke-interface {v2}, Lqkg;->get()Ljava/lang/Object;
 
-    iput-object v1, p0, Lcul;->l:Lmqp;
+    move-result-object v2
 
-    :cond_1
-    monitor-exit v0
+    check-cast v2, Lddf;
 
-    return-void
+    new-instance v3, Lcuk;
 
-    :catchall_0
-    move-exception v1
+    invoke-direct {v3, v0, v1, v2}, Lcuk;-><init>(Landroid/content/Context;Lius;Lddf;)V
 
-    monitor-exit v0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    return-object v3
+.end method
 
-    throw v1
+.method public final bridge synthetic get()Ljava/lang/Object;
+    .locals 1
+
+    invoke-virtual {p0}, Lcul;->a()Lcuk;
+
+    move-result-object v0
+
+    return-object v0
 .end method

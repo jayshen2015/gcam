@@ -1,91 +1,94 @@
-.class public abstract Lcmw;
-.super Landroid/app/job/JobService;
+.class public final synthetic Lcmw;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Ljava/lang/Runnable;
 
 
-# static fields
-.field public static final e:J
+# instance fields
+.field public final synthetic a:Lcmy;
+
+.field public final synthetic b:Lhuf;
+
+.field public final synthetic c:Landroid/content/res/Resources;
+
+.field public final synthetic d:Lcvo;
+
+.field public final synthetic e:Ljhh;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 3
-
-    sget-object v0, Ljava/util/concurrent/TimeUnit;->DAYS:Ljava/util/concurrent/TimeUnit;
-
-    const-wide/16 v1, 0x1
-
-    invoke-virtual {v0, v1, v2}, Ljava/util/concurrent/TimeUnit;->toMillis(J)J
-
-    move-result-wide v0
-
-    sput-wide v0, Lcmw;->e:J
-
-    return-void
-.end method
-
-.method public constructor <init>()V
+.method public synthetic constructor <init>(Lcmy;Lhuf;Landroid/content/res/Resources;Lcvo;Ljhh;)V
     .locals 0
 
-    invoke-direct {p0}, Landroid/app/job/JobService;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lcmw;->a:Lcmy;
+
+    iput-object p2, p0, Lcmw;->b:Lhuf;
+
+    iput-object p3, p0, Lcmw;->c:Landroid/content/res/Resources;
+
+    iput-object p4, p0, Lcmw;->d:Lcvo;
+
+    iput-object p5, p0, Lcmw;->e:Ljhh;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public abstract c()Lnou;
-.end method
+.method public final run()V
+    .locals 6
 
-.method public abstract d()Lnou;
-.end method
+    iget-object v0, p0, Lcmw;->a:Lcmy;
 
-.method protected abstract e()Ljava/util/concurrent/ExecutorService;
-.end method
+    iget-object v1, p0, Lcmw;->b:Lhuf;
 
-.method public final onStartJob(Landroid/app/job/JobParameters;)Z
-    .locals 3
+    iget-object v2, p0, Lcmw;->c:Landroid/content/res/Resources;
 
-    invoke-virtual {p0}, Lcmw;->c()Lnou;
+    iget-object v3, p0, Lcmw;->d:Lcvo;
 
-    move-result-object v0
+    iget-object v4, p0, Lcmw;->e:Ljhh;
 
-    invoke-static {v0}, Lnoo;->q(Lnou;)Lnoo;
+    const/4 v5, 0x1
 
-    move-result-object v0
+    invoke-virtual {v0, v5}, Lcmy;->b(Z)V
 
-    new-instance v1, Lcmq;
+    sget-object v5, Lhtu;->l:Lhun;
 
-    const/4 v2, 0x2
+    invoke-interface {v1, v5}, Lhuf;->c(Lhts;)Ljava/lang/Object;
 
-    invoke-direct {v1, p0, v2}, Lcmq;-><init>(Lcmw;I)V
+    move-result-object v1
 
-    invoke-virtual {p0}, Lcmw;->e()Ljava/util/concurrent/ExecutorService;
+    check-cast v1, Ljava/lang/String;
+
+    const v5, 0x7f1403a0
+
+    invoke-virtual {v2, v5}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
     move-result-object v2
 
-    invoke-static {v0, v1, v2}, Lnnf;->j(Lnou;Lnno;Ljava/util/concurrent/Executor;)Lnou;
+    invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result-object v0
+    move-result v1
 
-    new-instance v1, Lcoi;
+    if-eqz v1, :cond_0
 
-    const/4 v2, 0x1
+    invoke-virtual {v3}, Lcvo;->i()Z
 
-    invoke-direct {v1, p0, p1, v2}, Lcoi;-><init>(Lcmw;Landroid/app/job/JobParameters;I)V
+    move-result v1
 
-    invoke-virtual {p0}, Lcmw;->e()Ljava/util/concurrent/ExecutorService;
+    if-eqz v1, :cond_0
 
-    move-result-object p1
+    sget-object v1, Lims;->e:Lims;
 
-    invoke-static {v0, v1, p1}, Lnsy;->L(Lnou;Lnoj;Ljava/util/concurrent/Executor;)V
+    invoke-virtual {v0}, Lcmy;->e()Z
 
-    return v2
-.end method
+    move-result v0
 
-.method public final onStopJob(Landroid/app/job/JobParameters;)Z
-    .locals 0
+    invoke-virtual {v4, v1, v0}, Ljhh;->e(Lims;Z)V
 
-    const/4 p1, 0x1
-
-    return p1
+    :cond_0
+    return-void
 .end method

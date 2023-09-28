@@ -1,68 +1,51 @@
-.class public final Lhrp;
+.class public final synthetic Lhrp;
 .super Ljava/lang/Object;
 
+# interfaces
+.implements Lj$/util/function/Consumer;
 
-# static fields
-.field private static final a:Lnak;
+
+# instance fields
+.field public final synthetic a:Lhsp;
+
+.field public final synthetic b:Llif;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
+.method public synthetic constructor <init>(Lhsp;Llif;)V
+    .locals 0
 
-    const-string v0, "com/google/android/apps/camera/tracking/api/TrackingStatus"
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-static {v0}, Lnak;->h(Ljava/lang/String;)Lnak;
+    iput-object p1, p0, Lhrp;->a:Lhsp;
 
-    move-result-object v0
-
-    sput-object v0, Lhrp;->a:Lnak;
+    iput-object p2, p0, Lhrp;->b:Llif;
 
     return-void
 .end method
 
-.method public static a(I)I
-    .locals 3
 
-    const/4 v0, 0x1
+# virtual methods
+.method public final accept(Ljava/lang/Object;)V
+    .locals 2
 
-    packed-switch p0, :pswitch_data_0
+    iget-object v0, p0, Lhrp;->a:Lhsp;
 
-    sget-object v1, Lhrp;->a:Lnak;
+    iget-object v1, p0, Lhrp;->b:Llif;
 
-    invoke-virtual {v1}, Lnaf;->c()Lnaz;
+    check-cast p1, Lhsb;
 
-    move-result-object v1
+    invoke-interface {p1, v0, v1}, Lhsb;->o(Lhsp;Llif;)V
 
-    check-cast v1, Lnah;
+    return-void
+.end method
 
-    const/16 v2, 0xf57
+.method public final synthetic andThen(Lj$/util/function/Consumer;)Lj$/util/function/Consumer;
+    .locals 0
 
-    invoke-interface {v1, v2}, Lnah;->G(I)Lnaz;
+    invoke-static {p0, p1}, Lj$/util/function/Consumer$-CC;->$default$andThen(Lj$/util/function/Consumer;Lj$/util/function/Consumer;)Lj$/util/function/Consumer;
 
-    move-result-object v1
+    move-result-object p1
 
-    check-cast v1, Lnah;
-
-    const-string v2, "Invalid tracking status: %d"
-
-    invoke-interface {v1, v2, p0}, Lnah;->p(Ljava/lang/String;I)V
-
-    return v0
-
-    :pswitch_0
-    const/4 p0, 0x2
-
-    return p0
-
-    :pswitch_1
-    return v0
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
+    return-object p1
 .end method

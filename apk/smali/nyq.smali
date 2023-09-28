@@ -1,45 +1,58 @@
 .class final Lnyq;
-.super Ljava/lang/Object;
-
-# interfaces
-.implements Ljava/util/Iterator;
+.super Landroid/util/Property;
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 0
+.method public constructor <init>(Ljava/lang/Class;)V
+    .locals 1
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const-string v0, "width"
+
+    invoke-direct {p0, p1, v0}, Landroid/util/Property;-><init>(Ljava/lang/Class;Ljava/lang/String;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final hasNext()Z
-    .locals 1
+.method public final bridge synthetic get(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 0
 
-    const/4 v0, 0x0
+    check-cast p1, Landroid/view/View;
 
-    return v0
+    invoke-virtual {p1}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
+
+    move-result-object p1
+
+    iget p1, p1, Landroid/view/ViewGroup$LayoutParams;->width:I
+
+    int-to-float p1, p1
+
+    invoke-static {p1}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
+
+    move-result-object p1
+
+    return-object p1
 .end method
 
-.method public final next()Ljava/lang/Object;
+.method public final bridge synthetic set(Ljava/lang/Object;Ljava/lang/Object;)V
     .locals 1
 
-    new-instance v0, Ljava/util/NoSuchElementException;
+    check-cast p1, Landroid/view/View;
 
-    invoke-direct {v0}, Ljava/util/NoSuchElementException;-><init>()V
+    check-cast p2, Ljava/lang/Float;
 
-    throw v0
-.end method
+    invoke-virtual {p1}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
-.method public final remove()V
-    .locals 1
+    move-result-object v0
 
-    new-instance v0, Ljava/lang/UnsupportedOperationException;
+    invoke-virtual {p2}, Ljava/lang/Float;->intValue()I
 
-    invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V
+    move-result p2
 
-    throw v0
+    iput p2, v0, Landroid/view/ViewGroup$LayoutParams;->width:I
+
+    invoke-virtual {p1}, Landroid/view/View;->requestLayout()V
+
+    return-void
 .end method

@@ -1,22 +1,33 @@
-.class public final Lllh;
+.class public final synthetic Lllh;
 .super Ljava/lang/Object;
+
+# interfaces
+.implements Llie;
 
 
 # instance fields
-.field volatile a:Ljava/lang/String;
-
-.field public volatile b:Ljava/lang/Long;
-
-.field volatile c:Ljava/lang/Long;
-
-.field volatile d:Ljava/lang/Long;
+.field public final synthetic a:Lllm;
 
 
 # direct methods
-.method public constructor <init>()V
+.method public synthetic constructor <init>(Lllm;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lllh;->a:Lllm;
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public final close()V
+    .locals 1
+
+    iget-object v0, p0, Lllh;->a:Lllm;
+
+    invoke-virtual {v0}, Lllm;->f()V
 
     return-void
 .end method

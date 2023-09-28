@@ -1,60 +1,63 @@
-.class final Lmue;
-.super Lmyf;
+.class public final Lmue;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Lpys;
 
 
 # instance fields
-.field final synthetic a:Lmuf;
+.field private final a:Lqkg;
 
 
 # direct methods
-.method public constructor <init>(Lmuf;)V
+.method public constructor <init>(Lqkg;)V
     .locals 0
 
-    iput-object p1, p0, Lmue;->a:Lmuf;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0}, Lmyf;-><init>()V
+    iput-object p1, p0, Lmue;->a:Lqkg;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Lmyb;
-    .locals 1
+.method public final a()Lnac;
+    .locals 2
 
-    iget-object v0, p0, Lmue;->a:Lmuf;
+    iget-object v0, p0, Lmue;->a:Lqkg;
+
+    check-cast v0, Lpyt;
+
+    iget-object v0, v0, Lpyt;->a:Ljava/lang/Object;
+
+    check-cast v0, Lojc;
+
+    sget-object v1, Llyh;->j:Llyh;
+
+    invoke-virtual {v0, v1}, Lojc;->e(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lqkg;
+
+    invoke-interface {v0}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lnac;
+
+    invoke-static {v0}, Lqmd;->ae(Ljava/lang/Object;)V
 
     return-object v0
 .end method
 
-.method public final iterator()Ljava/util/Iterator;
+.method public final bridge synthetic get()Ljava/lang/Object;
     .locals 1
 
-    iget-object v0, p0, Lmue;->a:Lmuf;
-
-    invoke-virtual {v0}, Lmuf;->e()Ljava/util/Iterator;
+    invoke-virtual {p0}, Lmue;->a()Lnac;
 
     move-result-object v0
 
     return-object v0
-.end method
-
-.method public final size()I
-    .locals 1
-
-    iget-object v0, p0, Lmue;->a:Lmuf;
-
-    invoke-virtual {v0}, Lmuf;->c()Lmzi;
-
-    move-result-object v0
-
-    invoke-interface {v0}, Lmzi;->g()Ljava/util/Set;
-
-    move-result-object v0
-
-    invoke-interface {v0}, Ljava/util/Set;->size()I
-
-    move-result v0
-
-    return v0
 .end method

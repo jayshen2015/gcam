@@ -2,130 +2,53 @@
 .super Ljava/lang/Object;
 
 
-# instance fields
-.field private a:Z
+# static fields
+.field public static final a:Louj;
 
-.field private b:Z
+
+# instance fields
+.field public final b:Lpih;
 
 
 # direct methods
-.method public constructor <init>()V
+.method static constructor <clinit>()V
+    .locals 1
+
+    const-string v0, "com/google/android/apps/camera/microvideo/tonemap/MeanVarianceToneMapParameterExtractor"
+
+    invoke-static {v0}, Louj;->h(Ljava/lang/String;)Louj;
+
+    move-result-object v0
+
+    sput-object v0, Lfue;->a:Louj;
+
+    return-void
+.end method
+
+.method public constructor <init>(Ljava/util/concurrent/Executor;Lpht;Lpht;Lpih;)V
     .locals 1
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const/4 v0, 0x1
+    iput-object p4, p0, Lfue;->b:Lpih;
 
-    iput-boolean v0, p0, Lfue;->a:Z
+    new-instance p4, Ljava/util/ArrayList;
 
-    const/4 v0, 0x0
+    invoke-direct {p4}, Ljava/util/ArrayList;-><init>()V
 
-    iput-boolean v0, p0, Lfue;->b:Z
+    invoke-interface {p4, p2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    return-void
-.end method
+    invoke-interface {p4, p3}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
+    invoke-static {p4}, Lplk;->ab(Ljava/lang/Iterable;)Lpht;
 
-# virtual methods
-.method public final declared-synchronized a(Z)V
-    .locals 0
+    move-result-object p4
 
-    monitor-enter p0
+    new-instance v0, Lfuc;
 
-    :try_start_0
-    iput-boolean p1, p0, Lfue;->b:Z
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    invoke-direct {v0, p0, p2, p3}, Lfuc;-><init>(Lfue;Lpht;Lpht;)V
 
-    monitor-exit p0
+    invoke-interface {p4, v0, p1}, Lpht;->d(Ljava/lang/Runnable;Ljava/util/concurrent/Executor;)V
 
     return-void
-
-    :catchall_0
-    move-exception p1
-
-    monitor-exit p0
-
-    throw p1
-.end method
-
-.method public final declared-synchronized b(Z)V
-    .locals 0
-
-    monitor-enter p0
-
-    :try_start_0
-    iput-boolean p1, p0, Lfue;->a:Z
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    monitor-exit p0
-
-    return-void
-
-    :catchall_0
-    move-exception p1
-
-    monitor-exit p0
-
-    throw p1
-.end method
-
-.method public final declared-synchronized c()Z
-    .locals 1
-
-    monitor-enter p0
-
-    :try_start_0
-    iget-boolean v0, p0, Lfue;->a:Z
-
-    if-eqz v0, :cond_0
-
-    iget-boolean v0, p0, Lfue;->b:Z
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    if-eqz v0, :cond_0
-
-    monitor-exit p0
-
-    const/4 v0, 0x1
-
-    return v0
-
-    :cond_0
-    monitor-exit p0
-
-    const/4 v0, 0x0
-
-    return v0
-
-    :catchall_0
-    move-exception v0
-
-    monitor-exit p0
-
-    throw v0
-.end method
-
-.method public final declared-synchronized d()Z
-    .locals 1
-
-    monitor-enter p0
-
-    :try_start_0
-    iget-boolean v0, p0, Lfue;->a:Z
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    monitor-exit p0
-
-    return v0
-
-    :catchall_0
-    move-exception v0
-
-    monitor-exit p0
-
-    throw v0
 .end method

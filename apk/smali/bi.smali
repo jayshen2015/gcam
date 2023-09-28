@@ -1,38 +1,73 @@
 .class final Lbi;
-.super Ljava/lang/Object;
-
-# interfaces
-.implements Landroid/content/DialogInterface$OnCancelListener;
+.super Lbj;
 
 
 # instance fields
-.field final synthetic a:Lbm;
+.field private final c:Z
+
+.field private d:Z
+
+.field private e:Lbz;
 
 
 # direct methods
-.method public constructor <init>(Lbm;)V
+.method public constructor <init>(Ldp;Laax;Z)V
     .locals 0
 
-    iput-object p1, p0, Lbi;->a:Lbm;
+    invoke-direct {p0, p1, p2}, Lbj;-><init>(Ldp;Laax;)V
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const/4 p1, 0x0
+
+    iput-boolean p1, p0, Lbi;->d:Z
+
+    iput-boolean p3, p0, Lbi;->c:Z
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onCancel(Landroid/content/DialogInterface;)V
-    .locals 1
+.method final a(Landroid/content/Context;)Lbz;
+    .locals 4
 
-    iget-object p1, p0, Lbi;->a:Lbm;
+    iget-boolean v0, p0, Lbi;->d:Z
 
-    iget-object v0, p1, Lbm;->c:Landroid/app/Dialog;
+    if-nez v0, :cond_1
 
-    if-eqz v0, :cond_0
+    iget-object v0, p0, Lbj;->a:Ldp;
 
-    invoke-virtual {p1, v0}, Lbm;->onCancel(Landroid/content/DialogInterface;)V
+    iget-object v1, v0, Ldp;->a:Lbu;
+
+    iget v0, v0, Ldp;->e:I
+
+    const/4 v2, 0x2
+
+    const/4 v3, 0x1
+
+    if-ne v0, v2, :cond_0
+
+    const/4 v0, 0x1
+
+    goto :goto_0
 
     :cond_0
-    return-void
+    const/4 v0, 0x0
+
+    :goto_0
+    iget-boolean v2, p0, Lbi;->c:Z
+
+    invoke-static {p1, v1, v0, v2}, Ld;->e(Landroid/content/Context;Lbu;ZZ)Lbz;
+
+    move-result-object p1
+
+    iput-object p1, p0, Lbi;->e:Lbz;
+
+    iput-boolean v3, p0, Lbi;->d:Z
+
+    return-object p1
+
+    :cond_1
+    iget-object p1, p0, Lbi;->e:Lbz;
+
+    return-object p1
 .end method

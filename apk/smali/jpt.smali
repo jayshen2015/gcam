@@ -1,231 +1,217 @@
 .class public final Ljpt;
-.super Ljgm;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Ljqn;
 
 
 # instance fields
-.field private final a:Ljava/util/concurrent/atomic/AtomicReference;
+.field private final a:Lojc;
+
+.field private final b:Lqkg;
+
+.field private final c:Ljbq;
 
 
 # direct methods
-.method public constructor <init>(Landroid/content/Context;Landroid/os/Looper;Ljge;Ljdf;Ljdg;)V
-    .locals 7
+.method public constructor <init>(Lojc;Ljbq;Lqkg;)V
+    .locals 0
 
-    const/16 v3, 0x29
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    move-object v0, p0
+    iput-object p1, p0, Ljpt;->a:Lojc;
 
-    move-object v1, p1
+    iput-object p2, p0, Ljpt;->c:Ljbq;
 
-    move-object v2, p2
-
-    move-object v4, p3
-
-    move-object v5, p4
-
-    move-object v6, p5
-
-    invoke-direct/range {v0 .. v6}, Ljgm;-><init>(Landroid/content/Context;Landroid/os/Looper;ILjge;Ljei;Ljff;)V
-
-    new-instance p1, Ljava/util/concurrent/atomic/AtomicReference;
-
-    invoke-direct {p1}, Ljava/util/concurrent/atomic/AtomicReference;-><init>()V
-
-    iput-object p1, p0, Ljpt;->a:Ljava/util/concurrent/atomic/AtomicReference;
+    iput-object p3, p0, Ljpt;->b:Lqkg;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final C()Z
-    .locals 1
+.method public final a()V
+    .locals 6
 
-    const/4 v0, 0x1
+    iget-object v0, p0, Ljpt;->a:Lojc;
 
-    return v0
-.end method
+    invoke-virtual {v0}, Lojc;->g()Z
 
-.method public final I(Ljnt;Ljnt;Ljed;)V
-    .locals 3
+    move-result v0
 
-    new-instance v0, Ljpr;
-
-    invoke-virtual {p0}, Ljgb;->u()Landroid/os/IInterface;
-
-    move-result-object v1
-
-    check-cast v1, Ljpo;
-
-    const/4 v2, 0x0
-
-    invoke-direct {v0, v1, p3, p2, v2}, Ljpr;-><init>(Ljpo;Ljed;Ljnt;[B)V
-
-    if-eqz p1, :cond_0
-
-    invoke-virtual {p0}, Ljgb;->u()Landroid/os/IInterface;
-
-    move-result-object p2
-
-    check-cast p2, Ljpo;
-
-    invoke-virtual {p2}, Lcbe;->a()Landroid/os/Parcel;
-
-    move-result-object p3
-
-    invoke-static {p3, p1}, Lcbg;->d(Landroid/os/Parcel;Landroid/os/IInterface;)V
-
-    invoke-static {p3, v0}, Lcbg;->d(Landroid/os/Parcel;Landroid/os/IInterface;)V
-
-    const/16 p1, 0xa
-
-    invoke-virtual {p2, p1, p3}, Lcbe;->z(ILandroid/os/Parcel;)V
+    if-nez v0, :cond_0
 
     return-void
 
     :cond_0
-    if-nez p2, :cond_1
+    iget-object v0, p0, Ljpt;->b:Lqkg;
 
-    sget-object p1, Lcom/google/android/gms/common/api/Status;->a:Lcom/google/android/gms/common/api/Status;
+    check-cast v0, Ljnw;
 
-    invoke-interface {p3, p1}, Ljed;->c(Ljava/lang/Object;)V
-
-    return-void
-
-    :cond_1
-    invoke-virtual {p0}, Ljgb;->u()Landroid/os/IInterface;
-
-    move-result-object p1
-
-    check-cast p1, Ljpo;
-
-    invoke-virtual {p1, p2, v0}, Ljpo;->e(Ljnt;Ljpn;)V
-
-    return-void
-.end method
-
-.method public final a()I
-    .locals 1
-
-    const v0, 0xc042c0
-
-    return v0
-.end method
-
-.method protected final synthetic b(Landroid/os/IBinder;)Landroid/os/IInterface;
-    .locals 2
-
-    if-nez p1, :cond_0
-
-    const/4 p1, 0x0
-
-    goto :goto_0
-
-    :cond_0
-    const-string v0, "com.google.android.gms.usagereporting.internal.IUsageReportingService"
-
-    invoke-interface {p1, v0}, Landroid/os/IBinder;->queryLocalInterface(Ljava/lang/String;)Landroid/os/IInterface;
+    invoke-virtual {v0}, Ljnw;->a()Ljns;
 
     move-result-object v0
 
-    instance-of v1, v0, Ljpo;
+    iget-object v1, v0, Ljns;->k:Ljus;
 
-    if-eqz v1, :cond_1
+    const v2, 0x7f0b0184
 
-    move-object p1, v0
-
-    check-cast p1, Ljpo;
-
-    goto :goto_0
-
-    :cond_1
-    new-instance v0, Ljpo;
-
-    invoke-direct {v0, p1}, Ljpo;-><init>(Landroid/os/IBinder;)V
-
-    move-object p1, v0
-
-    :goto_0
-    return-object p1
-.end method
-
-.method protected final c()Ljava/lang/String;
-    .locals 1
-
-    const-string v0, "com.google.android.gms.usagereporting.internal.IUsageReportingService"
-
-    return-object v0
-.end method
-
-.method protected final d()Ljava/lang/String;
-    .locals 1
-
-    const-string v0, "com.google.android.gms.usagereporting.service.START"
-
-    return-object v0
-.end method
-
-.method public final e()[Ljca;
-    .locals 1
-
-    sget-object v0, Ljpb;->d:[Ljca;
-
-    return-object v0
-.end method
-
-.method public final j()V
-    .locals 4
-
-    :try_start_0
-    iget-object v0, p0, Ljpt;->a:Ljava/util/concurrent/atomic/AtomicReference;
-
-    const/4 v1, 0x0
-
-    invoke-virtual {v0, v1}, Ljava/util/concurrent/atomic/AtomicReference;->getAndSet(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljnt;
-
-    if-eqz v0, :cond_0
-
-    new-instance v1, Ljpq;
-
-    invoke-direct {v1}, Ljpq;-><init>()V
-
-    invoke-virtual {p0}, Ljgb;->u()Landroid/os/IInterface;
+    invoke-virtual {v1, v2}, Ljus;->c(I)Ljava/lang/Object;
 
     move-result-object v2
 
-    check-cast v2, Ljpo;
+    check-cast v2, Landroid/view/ViewStub;
 
-    invoke-virtual {v2}, Lcbe;->a()Landroid/os/Parcel;
+    iget-object v3, p0, Ljpt;->a:Lojc;
+
+    invoke-virtual {v3}, Lojc;->c()Ljava/lang/Object;
 
     move-result-object v3
 
-    invoke-static {v3, v0}, Lcbg;->d(Landroid/os/Parcel;Landroid/os/IInterface;)V
+    check-cast v3, Leso;
 
-    invoke-static {v3, v1}, Lcbg;->d(Landroid/os/Parcel;Landroid/os/IInterface;)V
+    invoke-interface {v3, v2}, Leso;->c(Landroid/view/ViewStub;)V
 
-    const/4 v0, 0x5
+    const v2, 0x7f0b0151
 
-    invoke-virtual {v2, v0, v3}, Lcbe;->z(ILandroid/os/Parcel;)V
-    :try_end_0
-    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
+    invoke-virtual {v1, v2}, Ljus;->c(I)Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Landroid/view/ViewStub;
+
+    iget-object v2, p0, Ljpt;->c:Ljbq;
+
+    iget-object v3, v2, Ljbq;->b:Lcom/google/android/apps/camera/ui/views/ToggleUi;
+
+    if-nez v3, :cond_1
+
+    invoke-virtual {v1}, Landroid/view/ViewStub;->inflate()Landroid/view/View;
+
+    move-result-object v1
+
+    check-cast v1, Lcom/google/android/apps/camera/ui/views/ToggleUi;
+
+    iput-object v1, v2, Ljbq;->b:Lcom/google/android/apps/camera/ui/views/ToggleUi;
+
+    :cond_1
+    iget-object v1, v2, Ljbq;->a:Lddf;
+
+    sget-object v3, Lddl;->ay:Lddg;
+
+    invoke-interface {v1, v3}, Lddf;->k(Lddg;)Z
+
+    move-result v1
+
+    const v3, 0x7f0806db
+
+    if-eqz v1, :cond_2
+
+    iget-object v4, v2, Ljbq;->b:Lcom/google/android/apps/camera/ui/views/ToggleUi;
+
+    invoke-virtual {v4}, Lcom/google/android/apps/camera/ui/views/ToggleUi;->getContext()Landroid/content/Context;
+
+    move-result-object v4
+
+    invoke-virtual {v4, v3}, Landroid/content/Context;->getDrawable(I)Landroid/graphics/drawable/Drawable;
+
+    move-result-object v4
+
+    check-cast v4, Landroid/graphics/drawable/LayerDrawable;
+
+    if-eqz v4, :cond_2
+
+    const v5, 0x7f0b0330
+
+    invoke-virtual {v4, v5}, Landroid/graphics/drawable/LayerDrawable;->findDrawableByLayerId(I)Landroid/graphics/drawable/Drawable;
+
+    move-result-object v4
+
+    if-eqz v4, :cond_2
+
+    iget-object v5, v2, Ljbq;->b:Lcom/google/android/apps/camera/ui/views/ToggleUi;
+
+    invoke-static {v5}, Lmip;->dT(Landroid/view/View;)I
+
+    move-result v5
+
+    invoke-virtual {v4, v5}, Landroid/graphics/drawable/Drawable;->setTint(I)V
+
+    :cond_2
+    iget-object v4, v2, Ljbq;->b:Lcom/google/android/apps/camera/ui/views/ToggleUi;
+
+    const/4 v5, 0x1
+
+    if-eq v5, v1, :cond_3
+
+    const v3, 0x7f0806dc
 
     goto :goto_0
 
-    :catch_0
-    move-exception v0
-
-    const-string v1, "UsageReportingClientImp"
-
-    const-string v2, "disconnect(): Could not unregister listener from remote:"
-
-    invoke-static {v1, v2, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
-
-    :cond_0
+    :cond_3
     :goto_0
-    invoke-super {p0}, Ljgm;->j()V
+    invoke-virtual {v4, v3}, Lcom/google/android/apps/camera/ui/views/ToggleUi;->c(I)V
+
+    iget-object v3, v2, Ljbq;->b:Lcom/google/android/apps/camera/ui/views/ToggleUi;
+
+    invoke-virtual {v3}, Lcom/google/android/apps/camera/ui/views/ToggleUi;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v3
+
+    const v4, 0x7f08060a
+
+    const/4 v5, 0x0
+
+    invoke-virtual {v3, v4, v5}, Landroid/content/res/Resources;->getDrawable(ILandroid/content/res/Resources$Theme;)Landroid/graphics/drawable/Drawable;
+
+    move-result-object v3
+
+    if-eqz v1, :cond_4
+
+    if-eqz v3, :cond_4
+
+    invoke-virtual {v3}, Landroid/graphics/drawable/Drawable;->mutate()Landroid/graphics/drawable/Drawable;
+
+    move-result-object v1
+
+    iget-object v4, v2, Ljbq;->b:Lcom/google/android/apps/camera/ui/views/ToggleUi;
+
+    invoke-static {v4}, Lmip;->dS(Landroid/view/View;)I
+
+    move-result v4
+
+    invoke-virtual {v1, v4}, Landroid/graphics/drawable/Drawable;->setTint(I)V
+
+    :cond_4
+    iget-object v1, v2, Ljbq;->b:Lcom/google/android/apps/camera/ui/views/ToggleUi;
+
+    invoke-virtual {v1, v3}, Lcom/google/android/apps/camera/ui/views/ToggleUi;->d(Landroid/graphics/drawable/Drawable;)V
+
+    invoke-virtual {v2}, Ljbq;->a()V
+
+    iget-object v0, v0, Ljns;->c:Lcom/google/android/apps/camera/ui/views/MainActivityLayout;
+
+    iget-object v1, p0, Ljpt;->a:Lojc;
+
+    iput-object v1, v0, Lcom/google/android/apps/camera/ui/views/MainActivityLayout;->q:Lojc;
+
+    invoke-virtual {v0}, Lcom/google/android/apps/camera/ui/views/MainActivityLayout;->d()Ljbv;
+
+    move-result-object v1
+
+    iget-object v1, v1, Ljbv;->h:Ljrz;
+
+    invoke-virtual {v0, v1}, Lcom/google/android/apps/camera/ui/views/MainActivityLayout;->p(Ljrz;)V
+
+    iget-object v1, p0, Ljpt;->c:Ljbq;
+
+    invoke-static {v1}, Lojc;->i(Ljava/lang/Object;)Lojc;
+
+    move-result-object v1
+
+    iput-object v1, v0, Lcom/google/android/apps/camera/ui/views/MainActivityLayout;->m:Lojc;
+
+    invoke-virtual {v0}, Lcom/google/android/apps/camera/ui/views/MainActivityLayout;->l()V
 
     return-void
 .end method

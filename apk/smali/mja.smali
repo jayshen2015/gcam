@@ -1,49 +1,35 @@
-.class abstract Lmja;
+.class final Lmja;
 .super Ljava/lang/Object;
 
-
-# instance fields
-.field final a:Lmim;
-
-.field protected b:Lmiz;
+# interfaces
+.implements Lmjc;
 
 
 # direct methods
-.method public constructor <init>(Lmim;)V
+.method public constructor <init>()V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lmja;->a:Lmim;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public abstract a()I
-.end method
-
-.method public abstract b()I
-.end method
-
-.method public abstract c(Landroid/graphics/Canvas;Landroid/graphics/Rect;F)V
-.end method
-
-.method public abstract d(Landroid/graphics/Canvas;Landroid/graphics/Paint;FFI)V
-.end method
-
-.method public abstract e(Landroid/graphics/Canvas;Landroid/graphics/Paint;)V
-.end method
-
-.method final f(Landroid/graphics/Canvas;Landroid/graphics/Rect;F)V
+.method public final a()Last;
     .locals 1
 
-    iget-object v0, p0, Lmja;->a:Lmim;
+    invoke-static {}, Lmde;->a()Last;
 
-    invoke-virtual {v0}, Lmim;->a()V
+    move-result-object v0
 
-    invoke-virtual {p0, p1, p2, p3}, Lmja;->c(Landroid/graphics/Canvas;Landroid/graphics/Rect;F)V
+    return-object v0
+.end method
 
-    return-void
+.method public final b()Last;
+    .locals 1
+
+    const/4 v0, 0x0
+
+    return-object v0
 .end method

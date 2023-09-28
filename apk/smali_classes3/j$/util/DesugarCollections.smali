@@ -3,190 +3,199 @@
 
 
 # static fields
-.field public static final a:Ljava/lang/Class;
+.field private static final COLLECTION_FIELD:Ljava/lang/reflect/Field;
 
-.field private static final b:Ljava/lang/reflect/Field;
+.field private static final MUTEX_FIELD:Ljava/lang/reflect/Field;
 
-.field private static final c:Ljava/lang/reflect/Field;
+.field public static final SYNCHRONIZED_COLLECTION:Ljava/lang/Class;
 
-.field private static final d:Ljava/lang/reflect/Constructor;
+.field private static final SYNCHRONIZED_COLLECTION_CONSTRUCTOR:Ljava/lang/reflect/Constructor;
 
-.field private static final e:Ljava/lang/reflect/Constructor;
+.field static final SYNCHRONIZED_LIST:Ljava/lang/Class;
+
+.field private static final SYNCHRONIZED_SET_CONSTRUCTOR:Ljava/lang/reflect/Constructor;
 
 
 # direct methods
+.method static bridge synthetic -$$Nest$sfgetSYNCHRONIZED_COLLECTION_CONSTRUCTOR()Ljava/lang/reflect/Constructor;
+    .locals 1
+
+    sget-object v0, Lj$/util/DesugarCollections;->SYNCHRONIZED_COLLECTION_CONSTRUCTOR:Ljava/lang/reflect/Constructor;
+
+    return-object v0
+.end method
+
+.method static bridge synthetic -$$Nest$sfgetSYNCHRONIZED_SET_CONSTRUCTOR()Ljava/lang/reflect/Constructor;
+    .locals 1
+
+    sget-object v0, Lj$/util/DesugarCollections;->SYNCHRONIZED_SET_CONSTRUCTOR:Ljava/lang/reflect/Constructor;
+
+    return-object v0
+.end method
+
 .method static constructor <clinit>()V
     .locals 8
 
-    new-instance v0, Ljava/util/ArrayList;
+    const-class v0, Ljava/lang/Object;
 
-    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+    new-instance v1, Ljava/util/ArrayList;
 
-    invoke-static {v0}, Ljava/util/Collections;->synchronizedCollection(Ljava/util/Collection;)Ljava/util/Collection;
+    invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
 
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    move-result-object v0
-
-    sput-object v0, Lj$/util/DesugarCollections;->a:Ljava/lang/Class;
-
-    new-instance v1, Ljava/util/LinkedList;
-
-    invoke-direct {v1}, Ljava/util/LinkedList;-><init>()V
-
-    invoke-static {v1}, Ljava/util/Collections;->synchronizedList(Ljava/util/List;)Ljava/util/List;
+    invoke-static {v1}, Ljava/util/Collections;->synchronizedCollection(Ljava/util/Collection;)Ljava/util/Collection;
 
     move-result-object v1
 
     invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    const-string v1, "mutex"
-
-    const/4 v2, 0x0
-
-    :try_start_0
-    invoke-virtual {v0, v1}, Ljava/lang/Class;->getDeclaredField(Ljava/lang/String;)Ljava/lang/reflect/Field;
-
     move-result-object v1
-    :try_end_0
-    .catch Ljava/lang/NoSuchFieldException; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_0
+    sput-object v1, Lj$/util/DesugarCollections;->SYNCHRONIZED_COLLECTION:Ljava/lang/Class;
 
-    :catch_0
-    move-object v1, v2
+    new-instance v2, Ljava/util/LinkedList;
 
-    :goto_0
-    sput-object v1, Lj$/util/DesugarCollections;->b:Ljava/lang/reflect/Field;
+    invoke-direct {v2}, Ljava/util/LinkedList;-><init>()V
+
+    invoke-static {v2}, Ljava/util/Collections;->synchronizedList(Ljava/util/List;)Ljava/util/List;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    move-result-object v2
+
+    sput-object v2, Lj$/util/DesugarCollections;->SYNCHRONIZED_LIST:Ljava/lang/Class;
+
+    const-string v2, "mutex"
+
+    invoke-static {v1, v2}, Lj$/util/DesugarCollections;->getField(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/reflect/Field;
+
+    move-result-object v2
+
+    sput-object v2, Lj$/util/DesugarCollections;->MUTEX_FIELD:Ljava/lang/reflect/Field;
 
     const/4 v3, 0x1
 
-    if-eqz v1, :cond_0
+    if-eqz v2, :cond_0
 
-    invoke-virtual {v1, v3}, Ljava/lang/reflect/AccessibleObject;->setAccessible(Z)V
+    invoke-virtual {v2, v3}, Ljava/lang/reflect/Field;->setAccessible(Z)V
 
     :cond_0
-    const-string v1, "c"
+    const-string v2, "c"
 
-    :try_start_1
-    invoke-virtual {v0, v1}, Ljava/lang/Class;->getDeclaredField(Ljava/lang/String;)Ljava/lang/reflect/Field;
+    invoke-static {v1, v2}, Lj$/util/DesugarCollections;->getField(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/reflect/Field;
 
-    move-result-object v1
-    :try_end_1
-    .catch Ljava/lang/NoSuchFieldException; {:try_start_1 .. :try_end_1} :catch_1
+    move-result-object v2
 
-    goto :goto_1
+    sput-object v2, Lj$/util/DesugarCollections;->COLLECTION_FIELD:Ljava/lang/reflect/Field;
 
-    :catch_1
-    move-object v1, v2
+    if-eqz v2, :cond_1
 
-    :goto_1
-    sput-object v1, Lj$/util/DesugarCollections;->c:Ljava/lang/reflect/Field;
-
-    if-eqz v1, :cond_1
-
-    invoke-virtual {v1, v3}, Ljava/lang/reflect/AccessibleObject;->setAccessible(Z)V
+    invoke-virtual {v2, v3}, Ljava/lang/reflect/Field;->setAccessible(Z)V
 
     :cond_1
-    new-instance v1, Ljava/util/HashSet;
+    new-instance v2, Ljava/util/HashSet;
 
-    invoke-direct {v1}, Ljava/util/HashSet;-><init>()V
+    invoke-direct {v2}, Ljava/util/HashSet;-><init>()V
 
-    invoke-static {v1}, Ljava/util/Collections;->synchronizedSet(Ljava/util/Set;)Ljava/util/Set;
+    invoke-static {v2}, Ljava/util/Collections;->synchronizedSet(Ljava/util/Set;)Ljava/util/Set;
 
-    move-result-object v1
+    move-result-object v2
 
-    invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    invoke-virtual {v2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    move-result-object v1
+    move-result-object v2
 
     const/4 v4, 0x2
 
     new-array v5, v4, [Ljava/lang/Class;
 
-    const/4 v6, 0x0
+    const-class v6, Ljava/util/Set;
 
-    const-class v7, Ljava/util/Set;
+    const/4 v7, 0x0
 
-    aput-object v7, v5, v6
+    aput-object v6, v5, v7
 
-    const-class v7, Ljava/lang/Object;
+    aput-object v0, v5, v3
 
-    aput-object v7, v5, v3
+    invoke-static {v2, v5}, Lj$/util/DesugarCollections;->getConstructor(Ljava/lang/Class;[Ljava/lang/Class;)Ljava/lang/reflect/Constructor;
 
-    :try_start_2
-    invoke-virtual {v1, v5}, Ljava/lang/Class;->getDeclaredConstructor([Ljava/lang/Class;)Ljava/lang/reflect/Constructor;
+    move-result-object v2
 
-    move-result-object v1
-    :try_end_2
-    .catch Ljava/lang/NoSuchMethodException; {:try_start_2 .. :try_end_2} :catch_2
+    sput-object v2, Lj$/util/DesugarCollections;->SYNCHRONIZED_SET_CONSTRUCTOR:Ljava/lang/reflect/Constructor;
 
-    goto :goto_2
+    if-eqz v2, :cond_2
 
-    :catch_2
-    move-object v1, v2
-
-    :goto_2
-    sput-object v1, Lj$/util/DesugarCollections;->e:Ljava/lang/reflect/Constructor;
-
-    if-eqz v1, :cond_2
-
-    invoke-virtual {v1, v3}, Ljava/lang/reflect/AccessibleObject;->setAccessible(Z)V
+    invoke-virtual {v2, v3}, Ljava/lang/reflect/Constructor;->setAccessible(Z)V
 
     :cond_2
-    new-array v1, v4, [Ljava/lang/Class;
+    new-array v2, v4, [Ljava/lang/Class;
 
     const-class v4, Ljava/util/Collection;
 
-    aput-object v4, v1, v6
+    aput-object v4, v2, v7
 
-    aput-object v7, v1, v3
+    aput-object v0, v2, v3
 
-    :try_start_3
-    invoke-virtual {v0, v1}, Ljava/lang/Class;->getDeclaredConstructor([Ljava/lang/Class;)Ljava/lang/reflect/Constructor;
+    invoke-static {v1, v2}, Lj$/util/DesugarCollections;->getConstructor(Ljava/lang/Class;[Ljava/lang/Class;)Ljava/lang/reflect/Constructor;
 
-    move-result-object v2
-    :try_end_3
-    .catch Ljava/lang/NoSuchMethodException; {:try_start_3 .. :try_end_3} :catch_3
+    move-result-object v0
 
-    :catch_3
-    sput-object v2, Lj$/util/DesugarCollections;->d:Ljava/lang/reflect/Constructor;
+    sput-object v0, Lj$/util/DesugarCollections;->SYNCHRONIZED_COLLECTION_CONSTRUCTOR:Ljava/lang/reflect/Constructor;
 
-    if-eqz v2, :cond_3
+    if-eqz v0, :cond_3
 
-    invoke-virtual {v2, v3}, Ljava/lang/reflect/AccessibleObject;->setAccessible(Z)V
+    invoke-virtual {v0, v3}, Ljava/lang/reflect/Constructor;->setAccessible(Z)V
 
     :cond_3
     return-void
 .end method
 
-.method static bridge synthetic a()Ljava/lang/reflect/Constructor;
-    .locals 1
+.method private static varargs getConstructor(Ljava/lang/Class;[Ljava/lang/Class;)Ljava/lang/reflect/Constructor;
+    .locals 0
 
-    sget-object v0, Lj$/util/DesugarCollections;->d:Ljava/lang/reflect/Constructor;
+    :try_start_0
+    invoke-virtual {p0, p1}, Ljava/lang/Class;->getDeclaredConstructor([Ljava/lang/Class;)Ljava/lang/reflect/Constructor;
 
-    return-object v0
+    move-result-object p0
+    :try_end_0
+    .catch Ljava/lang/NoSuchMethodException; {:try_start_0 .. :try_end_0} :catch_0
+
+    return-object p0
+
+    :catch_0
+    const/4 p0, 0x0
+
+    return-object p0
 .end method
 
-.method static bridge synthetic b()Ljava/lang/reflect/Constructor;
-    .locals 1
+.method private static getField(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/reflect/Field;
+    .locals 0
 
-    sget-object v0, Lj$/util/DesugarCollections;->e:Ljava/lang/reflect/Constructor;
+    :try_start_0
+    invoke-virtual {p0, p1}, Ljava/lang/Class;->getDeclaredField(Ljava/lang/String;)Ljava/lang/reflect/Field;
 
-    return-object v0
+    move-result-object p0
+    :try_end_0
+    .catch Ljava/lang/NoSuchFieldException; {:try_start_0 .. :try_end_0} :catch_0
+
+    return-object p0
+
+    :catch_0
+    const/4 p0, 0x0
+
+    return-object p0
 .end method
 
-.method static c(Ljava/util/Collection;Ljava/util/function/Predicate;)Z
+.method static removeIf(Ljava/util/Collection;Lj$/util/function/Predicate;)Z
     .locals 2
 
-    sget-object v0, Lj$/util/DesugarCollections;->b:Ljava/lang/reflect/Field;
+    sget-object v0, Lj$/util/DesugarCollections;->MUTEX_FIELD:Ljava/lang/reflect/Field;
 
     if-nez v0, :cond_0
 
     :try_start_0
-    sget-object v0, Lj$/util/DesugarCollections;->c:Ljava/lang/reflect/Field;
+    sget-object v0, Lj$/util/DesugarCollections;->COLLECTION_FIELD:Ljava/lang/reflect/Field;
 
     invoke-virtual {v0, p0}, Ljava/lang/reflect/Field;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -194,7 +203,7 @@
 
     check-cast p0, Ljava/util/Collection;
 
-    invoke-static {p0, p1}, Lj$/util/Collection$-EL;->removeIf(Ljava/util/Collection;Ljava/util/function/Predicate;)Z
+    invoke-static {p0, p1}, Lj$/util/Collection$-EL;->removeIf(Ljava/util/Collection;Lj$/util/function/Predicate;)Z
 
     move-result p0
     :try_end_0
@@ -224,7 +233,7 @@
     .catch Ljava/lang/IllegalAccessException; {:try_start_1 .. :try_end_1} :catch_1
 
     :try_start_2
-    sget-object v1, Lj$/util/DesugarCollections;->c:Ljava/lang/reflect/Field;
+    sget-object v1, Lj$/util/DesugarCollections;->COLLECTION_FIELD:Ljava/lang/reflect/Field;
 
     invoke-virtual {v1, p0}, Ljava/lang/reflect/Field;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -232,7 +241,7 @@
 
     check-cast p0, Ljava/util/Collection;
 
-    invoke-static {p0, p1}, Lj$/util/Collection$-EL;->removeIf(Ljava/util/Collection;Ljava/util/function/Predicate;)Z
+    invoke-static {p0, p1}, Lj$/util/Collection$-EL;->removeIf(Ljava/util/Collection;Lj$/util/function/Predicate;)Z
 
     move-result p0
 
@@ -266,23 +275,10 @@
 
 .method public static synchronizedMap(Ljava/util/Map;)Ljava/util/Map;
     .locals 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "<K:",
-            "Ljava/lang/Object;",
-            "V:",
-            "Ljava/lang/Object;",
-            ">(",
-            "Ljava/util/Map<",
-            "TK;TV;>;)",
-            "Ljava/util/Map<",
-            "TK;TV;>;"
-        }
-    .end annotation
 
-    new-instance v0, Lj$/util/g;
+    new-instance v0, Lj$/util/DesugarCollections$SynchronizedMap;
 
-    invoke-direct {v0, p0}, Lj$/util/g;-><init>(Ljava/util/Map;)V
+    invoke-direct {v0, p0}, Lj$/util/DesugarCollections$SynchronizedMap;-><init>(Ljava/util/Map;)V
 
     return-object v0
 .end method

@@ -1,415 +1,708 @@
-.class public Liq;
-.super Landroid/widget/ImageButton;
+.class final Liq;
+.super Lkf;
 
 
 # instance fields
-.field private final mBackgroundTintHelper:Lij;
-
-.field private mHasLevel:Z
-
-.field private final mImageHelper:Lir;
+.field final synthetic a:Liy;
 
 
 # direct methods
-.method public constructor <init>(Landroid/content/Context;)V
-    .locals 1
-
-    const/4 v0, 0x0
-
-    invoke-direct {p0, p1, v0}, Liq;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
-
-    return-void
-.end method
-
-.method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
-    .locals 1
-
-    const v0, 0x7f040325
-
-    invoke-direct {p0, p1, p2, v0}, Liq;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
-
-    return-void
-.end method
-
-.method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
+.method public constructor <init>(Liy;Landroid/view/Window$Callback;)V
     .locals 0
 
-    invoke-static {p1}, Lnh;->a(Landroid/content/Context;)V
+    iput-object p1, p0, Liq;->a:Liy;
 
-    invoke-direct {p0, p1, p2, p3}, Landroid/widget/ImageButton;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
-
-    const/4 p1, 0x0
-
-    iput-boolean p1, p0, Liq;->mHasLevel:Z
-
-    invoke-virtual {p0}, Liq;->getContext()Landroid/content/Context;
-
-    move-result-object p1
-
-    invoke-static {p0, p1}, Lnf;->d(Landroid/view/View;Landroid/content/Context;)V
-
-    new-instance p1, Lij;
-
-    invoke-direct {p1, p0}, Lij;-><init>(Landroid/view/View;)V
-
-    iput-object p1, p0, Liq;->mBackgroundTintHelper:Lij;
-
-    invoke-virtual {p1, p2, p3}, Lij;->d(Landroid/util/AttributeSet;I)V
-
-    new-instance p1, Lir;
-
-    invoke-direct {p1, p0}, Lir;-><init>(Landroid/widget/ImageView;)V
-
-    iput-object p1, p0, Liq;->mImageHelper:Lir;
-
-    invoke-virtual {p1, p2, p3}, Lir;->c(Landroid/util/AttributeSet;I)V
+    invoke-direct {p0, p2}, Lkf;-><init>(Landroid/view/Window$Callback;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method protected drawableStateChanged()V
+.method public final dispatchKeyEvent(Landroid/view/KeyEvent;)Z
     .locals 1
 
-    invoke-super {p0}, Landroid/widget/ImageButton;->drawableStateChanged()V
+    iget-object v0, p0, Liq;->a:Liy;
 
-    iget-object v0, p0, Liq;->mBackgroundTintHelper:Lij;
+    invoke-virtual {v0, p1}, Liy;->D(Landroid/view/KeyEvent;)Z
 
-    if-eqz v0, :cond_0
+    move-result v0
 
-    invoke-virtual {v0}, Lij;->c()V
+    if-nez v0, :cond_1
+
+    invoke-super {p0, p1}, Lkf;->dispatchKeyEvent(Landroid/view/KeyEvent;)Z
+
+    move-result p1
+
+    if-eqz p1, :cond_0
+
+    goto :goto_0
 
     :cond_0
-    iget-object v0, p0, Liq;->mImageHelper:Lir;
+    const/4 p1, 0x0
 
-    if-eqz v0, :cond_1
-
-    invoke-virtual {v0}, Lir;->b()V
+    return p1
 
     :cond_1
-    return-void
+    :goto_0
+    const/4 p1, 0x1
+
+    return p1
 .end method
 
-.method public getSupportBackgroundTintList()Landroid/content/res/ColorStateList;
-    .locals 1
+.method public final dispatchKeyShortcutEvent(Landroid/view/KeyEvent;)Z
+    .locals 5
 
-    iget-object v0, p0, Liq;->mBackgroundTintHelper:Lij;
-
-    if-eqz v0, :cond_0
-
-    invoke-virtual {v0}, Lij;->a()Landroid/content/res/ColorStateList;
-
-    move-result-object v0
-
-    return-object v0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    return-object v0
-.end method
-
-.method public getSupportBackgroundTintMode()Landroid/graphics/PorterDuff$Mode;
-    .locals 1
-
-    iget-object v0, p0, Liq;->mBackgroundTintHelper:Lij;
-
-    if-eqz v0, :cond_0
-
-    invoke-virtual {v0}, Lij;->b()Landroid/graphics/PorterDuff$Mode;
-
-    move-result-object v0
-
-    return-object v0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    return-object v0
-.end method
-
-.method public getSupportImageTintList()Landroid/content/res/ColorStateList;
-    .locals 2
-
-    iget-object v0, p0, Liq;->mImageHelper:Lir;
-
-    const/4 v1, 0x0
-
-    if-eqz v0, :cond_0
-
-    iget-object v0, v0, Lir;->c:Ljava/lang/Object;
-
-    if-eqz v0, :cond_0
-
-    check-cast v0, Lni;
-
-    iget-object v0, v0, Lni;->a:Landroid/content/res/ColorStateList;
-
-    return-object v0
-
-    :cond_0
-    return-object v1
-.end method
-
-.method public getSupportImageTintMode()Landroid/graphics/PorterDuff$Mode;
-    .locals 2
-
-    iget-object v0, p0, Liq;->mImageHelper:Lir;
-
-    const/4 v1, 0x0
-
-    if-eqz v0, :cond_0
-
-    iget-object v0, v0, Lir;->c:Ljava/lang/Object;
-
-    if-eqz v0, :cond_0
-
-    check-cast v0, Lni;
-
-    iget-object v0, v0, Lni;->b:Landroid/graphics/PorterDuff$Mode;
-
-    return-object v0
-
-    :cond_0
-    return-object v1
-.end method
-
-.method public hasOverlappingRendering()Z
-    .locals 1
-
-    iget-object v0, p0, Liq;->mImageHelper:Lir;
-
-    invoke-virtual {v0}, Lir;->f()Z
+    invoke-super {p0, p1}, Lkf;->dispatchKeyShortcutEvent(Landroid/view/KeyEvent;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_0
+    const/4 v1, 0x1
 
-    invoke-super {p0}, Landroid/widget/ImageButton;->hasOverlappingRendering()Z
+    if-nez v0, :cond_3
 
-    move-result v0
+    iget-object v0, p0, Liq;->a:Liy;
 
-    if-eqz v0, :cond_0
+    invoke-virtual {p1}, Landroid/view/KeyEvent;->getKeyCode()I
 
-    const/4 v0, 0x1
+    move-result v2
 
-    return v0
+    invoke-virtual {v0}, Liy;->a()Lhu;
+
+    move-result-object v3
+
+    if-eqz v3, :cond_0
+
+    invoke-virtual {v3, v2, p1}, Lhu;->n(ILandroid/view/KeyEvent;)Z
+
+    move-result v2
+
+    if-nez v2, :cond_3
 
     :cond_0
-    const/4 v0, 0x0
+    iget-object v2, v0, Liy;->z:Liw;
 
-    return v0
+    if-eqz v2, :cond_1
+
+    invoke-virtual {p1}, Landroid/view/KeyEvent;->getKeyCode()I
+
+    move-result v3
+
+    invoke-virtual {v0, v2, v3, p1}, Liy;->K(Liw;ILandroid/view/KeyEvent;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_1
+
+    iget-object p1, v0, Liy;->z:Liw;
+
+    if-eqz p1, :cond_3
+
+    iput-boolean v1, p1, Liw;->l:Z
+
+    goto :goto_0
+
+    :cond_1
+    iget-object v2, v0, Liy;->z:Liw;
+
+    const/4 v3, 0x0
+
+    if-nez v2, :cond_2
+
+    invoke-virtual {v0, v3}, Liy;->J(I)Liw;
+
+    move-result-object v2
+
+    invoke-virtual {v0, v2, p1}, Liy;->F(Liw;Landroid/view/KeyEvent;)Z
+
+    invoke-virtual {p1}, Landroid/view/KeyEvent;->getKeyCode()I
+
+    move-result v4
+
+    invoke-virtual {v0, v2, v4, p1}, Liy;->K(Liw;ILandroid/view/KeyEvent;)Z
+
+    move-result p1
+
+    iput-boolean v3, v2, Liw;->k:Z
+
+    if-nez p1, :cond_3
+
+    :cond_2
+    return v3
+
+    :cond_3
+    :goto_0
+    return v1
 .end method
 
-.method public setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
+.method public final onContentChanged()V
     .locals 0
 
-    invoke-super {p0, p1}, Landroid/widget/ImageButton;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
-
-    iget-object p1, p0, Liq;->mBackgroundTintHelper:Lij;
-
-    if-eqz p1, :cond_0
-
-    invoke-virtual {p1}, Lij;->i()V
-
-    :cond_0
     return-void
 .end method
 
-.method public setBackgroundResource(I)V
+.method public final onCreatePanelMenu(ILandroid/view/Menu;)Z
     .locals 1
 
-    invoke-super {p0, p1}, Landroid/widget/ImageButton;->setBackgroundResource(I)V
-
-    iget-object v0, p0, Liq;->mBackgroundTintHelper:Lij;
-
-    if-eqz v0, :cond_0
-
-    invoke-virtual {v0, p1}, Lij;->e(I)V
-
-    :cond_0
-    return-void
-.end method
-
-.method public setImageBitmap(Landroid/graphics/Bitmap;)V
-    .locals 0
-
-    invoke-super {p0, p1}, Landroid/widget/ImageButton;->setImageBitmap(Landroid/graphics/Bitmap;)V
-
-    iget-object p1, p0, Liq;->mImageHelper:Lir;
-
-    if-eqz p1, :cond_0
-
-    invoke-virtual {p1}, Lir;->b()V
-
-    :cond_0
-    return-void
-.end method
-
-.method public setImageDrawable(Landroid/graphics/drawable/Drawable;)V
-    .locals 2
-
-    iget-object v0, p0, Liq;->mImageHelper:Lir;
-
-    if-eqz v0, :cond_0
-
-    if-eqz p1, :cond_0
-
-    iget-boolean v1, p0, Liq;->mHasLevel:Z
-
-    if-nez v1, :cond_0
-
-    invoke-virtual {v0, p1}, Lir;->d(Landroid/graphics/drawable/Drawable;)V
-
-    :cond_0
-    invoke-super {p0, p1}, Landroid/widget/ImageButton;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
-
-    iget-object p1, p0, Liq;->mImageHelper:Lir;
-
-    if-eqz p1, :cond_1
-
-    invoke-virtual {p1}, Lir;->b()V
-
-    iget-boolean p1, p0, Liq;->mHasLevel:Z
+    const/4 v0, 0x0
 
     if-nez p1, :cond_1
 
-    iget-object p1, p0, Liq;->mImageHelper:Lir;
-
-    invoke-virtual {p1}, Lir;->a()V
-
-    :cond_1
-    return-void
-.end method
-
-.method public setImageLevel(I)V
-    .locals 0
-
-    invoke-super {p0, p1}, Landroid/widget/ImageButton;->setImageLevel(I)V
-
-    const/4 p1, 0x1
-
-    iput-boolean p1, p0, Liq;->mHasLevel:Z
-
-    return-void
-.end method
-
-.method public setImageResource(I)V
-    .locals 1
-
-    iget-object v0, p0, Liq;->mImageHelper:Lir;
-
-    invoke-virtual {v0, p1}, Lir;->e(I)V
-
-    return-void
-.end method
-
-.method public setImageURI(Landroid/net/Uri;)V
-    .locals 0
-
-    invoke-super {p0, p1}, Landroid/widget/ImageButton;->setImageURI(Landroid/net/Uri;)V
-
-    iget-object p1, p0, Liq;->mImageHelper:Lir;
+    instance-of p1, p2, Lkw;
 
     if-eqz p1, :cond_0
 
-    invoke-virtual {p1}, Lir;->b()V
+    const/4 p1, 0x0
+
+    goto :goto_0
 
     :cond_0
-    return-void
+    return v0
+
+    :cond_1
+    :goto_0
+    invoke-super {p0, p1, p2}, Lkf;->onCreatePanelMenu(ILandroid/view/Menu;)Z
+
+    move-result p1
+
+    return p1
 .end method
 
-.method public setSupportBackgroundTintList(Landroid/content/res/ColorStateList;)V
-    .locals 1
-
-    iget-object v0, p0, Liq;->mBackgroundTintHelper:Lij;
-
-    if-eqz v0, :cond_0
-
-    invoke-virtual {v0, p1}, Lij;->g(Landroid/content/res/ColorStateList;)V
-
-    :cond_0
-    return-void
-.end method
-
-.method public setSupportBackgroundTintMode(Landroid/graphics/PorterDuff$Mode;)V
-    .locals 1
-
-    iget-object v0, p0, Liq;->mBackgroundTintHelper:Lij;
-
-    if-eqz v0, :cond_0
-
-    invoke-virtual {v0, p1}, Lij;->h(Landroid/graphics/PorterDuff$Mode;)V
-
-    :cond_0
-    return-void
-.end method
-
-.method public setSupportImageTintList(Landroid/content/res/ColorStateList;)V
+.method public final onMenuOpened(ILandroid/view/Menu;)Z
     .locals 2
 
-    iget-object v0, p0, Liq;->mImageHelper:Lir;
+    invoke-super {p0, p1, p2}, Lkf;->onMenuOpened(ILandroid/view/Menu;)Z
 
-    if-eqz v0, :cond_1
+    iget-object p2, p0, Liq;->a:Liy;
 
-    iget-object v1, v0, Lir;->c:Ljava/lang/Object;
+    const/4 v0, 0x1
 
-    if-nez v1, :cond_0
+    const/16 v1, 0x6c
 
-    new-instance v1, Lni;
+    if-ne p1, v1, :cond_0
 
-    invoke-direct {v1}, Lni;-><init>()V
+    invoke-virtual {p2}, Liy;->a()Lhu;
 
-    iput-object v1, v0, Lir;->c:Ljava/lang/Object;
+    move-result-object p1
+
+    if-eqz p1, :cond_0
+
+    invoke-virtual {p1, v0}, Lhu;->d(Z)V
 
     :cond_0
-    iget-object v1, v0, Lir;->c:Ljava/lang/Object;
+    return v0
+.end method
 
-    check-cast v1, Lni;
+.method public final onPanelClosed(ILandroid/view/Menu;)V
+    .locals 2
 
-    iput-object p1, v1, Lni;->a:Landroid/content/res/ColorStateList;
+    invoke-super {p0, p1, p2}, Lkf;->onPanelClosed(ILandroid/view/Menu;)V
 
-    const/4 p1, 0x1
+    iget-object p2, p0, Liq;->a:Liy;
 
-    iput-boolean p1, v1, Lni;->d:Z
+    const/4 v0, 0x0
 
-    invoke-virtual {v0}, Lir;->b()V
+    const/16 v1, 0x6c
+
+    if-ne p1, v1, :cond_0
+
+    invoke-virtual {p2}, Liy;->a()Lhu;
+
+    move-result-object p1
+
+    if-eqz p1, :cond_1
+
+    invoke-virtual {p1, v0}, Lhu;->d(Z)V
+
+    return-void
+
+    :cond_0
+    if-nez p1, :cond_1
+
+    invoke-virtual {p2, v0}, Liy;->J(I)Liw;
+
+    move-result-object p1
+
+    iget-boolean v1, p1, Liw;->m:Z
+
+    if-eqz v1, :cond_1
+
+    invoke-virtual {p2, p1, v0}, Liy;->x(Liw;Z)V
+
+    return-void
 
     :cond_1
     return-void
 .end method
 
-.method public setSupportImageTintMode(Landroid/graphics/PorterDuff$Mode;)V
-    .locals 2
+.method public final onPreparePanel(ILandroid/view/View;Landroid/view/Menu;)Z
+    .locals 3
 
-    iget-object v0, p0, Liq;->mImageHelper:Lir;
+    instance-of v0, p3, Lkw;
+
+    if-eqz v0, :cond_0
+
+    move-object v0, p3
+
+    check-cast v0, Lkw;
+
+    goto :goto_0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    :goto_0
+    const/4 v1, 0x0
+
+    if-nez p1, :cond_2
 
     if-eqz v0, :cond_1
 
-    iget-object v1, v0, Lir;->c:Ljava/lang/Object;
+    const/4 p1, 0x0
 
-    if-nez v1, :cond_0
-
-    new-instance v1, Lni;
-
-    invoke-direct {v1}, Lni;-><init>()V
-
-    iput-object v1, v0, Lir;->c:Ljava/lang/Object;
-
-    :cond_0
-    iget-object v1, v0, Lir;->c:Ljava/lang/Object;
-
-    check-cast v1, Lni;
-
-    iput-object p1, v1, Lni;->b:Landroid/graphics/PorterDuff$Mode;
-
-    const/4 p1, 0x1
-
-    iput-boolean p1, v1, Lni;->c:Z
-
-    invoke-virtual {v0}, Lir;->b()V
+    goto :goto_1
 
     :cond_1
+    return v1
+
+    :cond_2
+    :goto_1
+    if-eqz v0, :cond_3
+
+    const/4 v2, 0x1
+
+    iput-boolean v2, v0, Lkw;->i:Z
+
+    :cond_3
+    invoke-super {p0, p1, p2, p3}, Lkf;->onPreparePanel(ILandroid/view/View;Landroid/view/Menu;)Z
+
+    move-result p1
+
+    if-eqz v0, :cond_4
+
+    iput-boolean v1, v0, Lkw;->i:Z
+
+    :cond_4
+    return p1
+.end method
+
+.method public final onProvideKeyboardShortcuts(Ljava/util/List;Landroid/view/Menu;I)V
+    .locals 2
+
+    iget-object v0, p0, Liq;->a:Liy;
+
+    const/4 v1, 0x0
+
+    invoke-virtual {v0, v1}, Liy;->J(I)Liw;
+
+    move-result-object v0
+
+    iget-object v0, v0, Liw;->h:Lkw;
+
+    if-eqz v0, :cond_0
+
+    invoke-super {p0, p1, v0, p3}, Lkf;->onProvideKeyboardShortcuts(Ljava/util/List;Landroid/view/Menu;I)V
+
     return-void
+
+    :cond_0
+    invoke-super {p0, p1, p2, p3}, Lkf;->onProvideKeyboardShortcuts(Ljava/util/List;Landroid/view/Menu;I)V
+
+    return-void
+.end method
+
+.method public final onWindowStartingActionMode(Landroid/view/ActionMode$Callback;)Landroid/view/ActionMode;
+    .locals 0
+
+    const/4 p1, 0x0
+
+    return-object p1
+.end method
+
+.method public final onWindowStartingActionMode(Landroid/view/ActionMode$Callback;I)Landroid/view/ActionMode;
+    .locals 8
+
+    iget-object v0, p0, Liq;->a:Liy;
+
+    iget-boolean v1, v0, Liy;->q:Z
+
+    if-eqz v1, :cond_c
+
+    packed-switch p2, :pswitch_data_0
+
+    goto/16 :goto_4
+
+    :pswitch_0
+    new-instance p2, Ljy;
+
+    iget-object v0, v0, Liy;->f:Landroid/content/Context;
+
+    invoke-direct {p2, v0, p1}, Ljy;-><init>(Landroid/content/Context;Landroid/view/ActionMode$Callback;)V
+
+    iget-object p1, p0, Liq;->a:Liy;
+
+    iget-object v0, p1, Liy;->l:Ljw;
+
+    if-eqz v0, :cond_0
+
+    invoke-virtual {v0}, Ljw;->f()V
+
+    :cond_0
+    new-instance v0, Lip;
+
+    invoke-direct {v0, p1, p2}, Lip;-><init>(Liy;Ljv;)V
+
+    invoke-virtual {p1}, Liy;->a()Lhu;
+
+    move-result-object v1
+
+    if-eqz v1, :cond_1
+
+    invoke-virtual {v1, v0}, Lhu;->c(Ljv;)Ljw;
+
+    move-result-object v1
+
+    iput-object v1, p1, Liy;->l:Ljw;
+
+    :cond_1
+    iget-object v1, p1, Liy;->l:Ljw;
+
+    const/4 v2, 0x0
+
+    if-nez v1, :cond_a
+
+    invoke-virtual {p1}, Liy;->z()V
+
+    iget-object v1, p1, Liy;->l:Ljw;
+
+    if-eqz v1, :cond_2
+
+    invoke-virtual {v1}, Ljw;->f()V
+
+    :cond_2
+    iget-object v1, p1, Liy;->m:Landroid/support/v7/widget/ActionBarContextView;
+
+    const/4 v3, 0x0
+
+    if-nez v1, :cond_5
+
+    iget-boolean v1, p1, Liy;->x:Z
+
+    if-eqz v1, :cond_4
+
+    new-instance v1, Landroid/util/TypedValue;
+
+    invoke-direct {v1}, Landroid/util/TypedValue;-><init>()V
+
+    iget-object v4, p1, Liy;->f:Landroid/content/Context;
+
+    invoke-virtual {v4}, Landroid/content/Context;->getTheme()Landroid/content/res/Resources$Theme;
+
+    move-result-object v4
+
+    const v5, 0x7f04000c
+
+    const/4 v6, 0x1
+
+    invoke-virtual {v4, v5, v1, v6}, Landroid/content/res/Resources$Theme;->resolveAttribute(ILandroid/util/TypedValue;Z)Z
+
+    iget v5, v1, Landroid/util/TypedValue;->resourceId:I
+
+    if-eqz v5, :cond_3
+
+    iget-object v5, p1, Liy;->f:Landroid/content/Context;
+
+    invoke-virtual {v5}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v5
+
+    invoke-virtual {v5}, Landroid/content/res/Resources;->newTheme()Landroid/content/res/Resources$Theme;
+
+    move-result-object v5
+
+    invoke-virtual {v5, v4}, Landroid/content/res/Resources$Theme;->setTo(Landroid/content/res/Resources$Theme;)V
+
+    iget v4, v1, Landroid/util/TypedValue;->resourceId:I
+
+    invoke-virtual {v5, v4, v6}, Landroid/content/res/Resources$Theme;->applyStyle(IZ)V
+
+    new-instance v4, Lus;
+
+    iget-object v7, p1, Liy;->f:Landroid/content/Context;
+
+    invoke-direct {v4, v7, v3}, Lus;-><init>(Landroid/content/Context;I)V
+
+    invoke-virtual {v4}, Landroid/content/Context;->getTheme()Landroid/content/res/Resources$Theme;
+
+    move-result-object v7
+
+    invoke-virtual {v7, v5}, Landroid/content/res/Resources$Theme;->setTo(Landroid/content/res/Resources$Theme;)V
+
+    goto :goto_0
+
+    :cond_3
+    iget-object v4, p1, Liy;->f:Landroid/content/Context;
+
+    :goto_0
+    new-instance v5, Landroid/support/v7/widget/ActionBarContextView;
+
+    invoke-direct {v5, v4}, Landroid/support/v7/widget/ActionBarContextView;-><init>(Landroid/content/Context;)V
+
+    iput-object v5, p1, Liy;->m:Landroid/support/v7/widget/ActionBarContextView;
+
+    new-instance v5, Landroid/widget/PopupWindow;
+
+    const v7, 0x7f04001c
+
+    invoke-direct {v5, v4, v2, v7}, Landroid/widget/PopupWindow;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
+
+    iput-object v5, p1, Liy;->n:Landroid/widget/PopupWindow;
+
+    iget-object v5, p1, Liy;->n:Landroid/widget/PopupWindow;
+
+    const/4 v7, 0x2
+
+    invoke-static {v5, v7}, Lhr;->b(Landroid/widget/PopupWindow;I)V
+
+    iget-object v5, p1, Liy;->n:Landroid/widget/PopupWindow;
+
+    iget-object v7, p1, Liy;->m:Landroid/support/v7/widget/ActionBarContextView;
+
+    invoke-virtual {v5, v7}, Landroid/widget/PopupWindow;->setContentView(Landroid/view/View;)V
+
+    iget-object v5, p1, Liy;->n:Landroid/widget/PopupWindow;
+
+    const/4 v7, -0x1
+
+    invoke-virtual {v5, v7}, Landroid/widget/PopupWindow;->setWidth(I)V
+
+    invoke-virtual {v4}, Landroid/content/Context;->getTheme()Landroid/content/res/Resources$Theme;
+
+    move-result-object v5
+
+    const v7, 0x7f040006
+
+    invoke-virtual {v5, v7, v1, v6}, Landroid/content/res/Resources$Theme;->resolveAttribute(ILandroid/util/TypedValue;Z)Z
+
+    iget v1, v1, Landroid/util/TypedValue;->data:I
+
+    invoke-virtual {v4}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v4
+
+    invoke-virtual {v4}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
+
+    move-result-object v4
+
+    invoke-static {v1, v4}, Landroid/util/TypedValue;->complexToDimensionPixelSize(ILandroid/util/DisplayMetrics;)I
+
+    move-result v1
+
+    iget-object v4, p1, Liy;->m:Landroid/support/v7/widget/ActionBarContextView;
+
+    iput v1, v4, Landroid/support/v7/widget/ActionBarContextView;->e:I
+
+    iget-object v1, p1, Liy;->n:Landroid/widget/PopupWindow;
+
+    const/4 v4, -0x2
+
+    invoke-virtual {v1, v4}, Landroid/widget/PopupWindow;->setHeight(I)V
+
+    new-instance v1, Lim;
+
+    invoke-direct {v1, p1, v3}, Lim;-><init>(Liy;I)V
+
+    iput-object v1, p1, Liy;->o:Ljava/lang/Runnable;
+
+    goto :goto_1
+
+    :cond_4
+    iget-object v1, p1, Liy;->s:Landroid/view/ViewGroup;
+
+    const v4, 0x7f0b004b
+
+    invoke-virtual {v1, v4}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
+
+    move-result-object v1
+
+    check-cast v1, Landroid/support/v7/widget/ViewStubCompat;
+
+    if-eqz v1, :cond_5
+
+    invoke-virtual {p1}, Liy;->q()Landroid/content/Context;
+
+    move-result-object v4
+
+    invoke-static {v4}, Landroid/view/LayoutInflater;->from(Landroid/content/Context;)Landroid/view/LayoutInflater;
+
+    move-result-object v4
+
+    iput-object v4, v1, Landroid/support/v7/widget/ViewStubCompat;->a:Landroid/view/LayoutInflater;
+
+    invoke-virtual {v1}, Landroid/support/v7/widget/ViewStubCompat;->a()Landroid/view/View;
+
+    move-result-object v1
+
+    check-cast v1, Landroid/support/v7/widget/ActionBarContextView;
+
+    iput-object v1, p1, Liy;->m:Landroid/support/v7/widget/ActionBarContextView;
+
+    :cond_5
+    :goto_1
+    iget-object v1, p1, Liy;->m:Landroid/support/v7/widget/ActionBarContextView;
+
+    if-eqz v1, :cond_9
+
+    invoke-virtual {p1}, Liy;->z()V
+
+    iget-object v1, p1, Liy;->m:Landroid/support/v7/widget/ActionBarContextView;
+
+    invoke-virtual {v1}, Landroid/support/v7/widget/ActionBarContextView;->i()V
+
+    new-instance v1, Ljx;
+
+    iget-object v4, p1, Liy;->m:Landroid/support/v7/widget/ActionBarContextView;
+
+    invoke-virtual {v4}, Landroid/support/v7/widget/ActionBarContextView;->getContext()Landroid/content/Context;
+
+    move-result-object v4
+
+    iget-object v5, p1, Liy;->m:Landroid/support/v7/widget/ActionBarContextView;
+
+    invoke-direct {v1, v4, v5, v0}, Ljx;-><init>(Landroid/content/Context;Landroid/support/v7/widget/ActionBarContextView;Ljv;)V
+
+    iget-object v4, v1, Ljx;->a:Lkw;
+
+    invoke-interface {v0, v1, v4}, Ljv;->c(Ljw;Landroid/view/Menu;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_8
+
+    invoke-virtual {v1}, Ljw;->g()V
+
+    iget-object v0, p1, Liy;->m:Landroid/support/v7/widget/ActionBarContextView;
+
+    invoke-virtual {v0, v1}, Landroid/support/v7/widget/ActionBarContextView;->h(Ljw;)V
+
+    iput-object v1, p1, Liy;->l:Ljw;
+
+    invoke-virtual {p1}, Liy;->G()Z
+
+    move-result v0
+
+    const/high16 v1, 0x3f800000    # 1.0f
+
+    if-eqz v0, :cond_6
+
+    iget-object v0, p1, Liy;->m:Landroid/support/v7/widget/ActionBarContextView;
+
+    const/4 v3, 0x0
+
+    invoke-virtual {v0, v3}, Landroid/support/v7/widget/ActionBarContextView;->setAlpha(F)V
+
+    iget-object v0, p1, Liy;->m:Landroid/support/v7/widget/ActionBarContextView;
+
+    invoke-static {v0}, Lgl;->p(Landroid/view/View;)Lgo;
+
+    move-result-object v0
+
+    invoke-virtual {v0, v1}, Lgo;->b(F)V
+
+    iput-object v0, p1, Liy;->p:Lgo;
+
+    iget-object v0, p1, Liy;->p:Lgo;
+
+    new-instance v1, Lin;
+
+    invoke-direct {v1, p1}, Lin;-><init>(Liy;)V
+
+    invoke-virtual {v0, v1}, Lgo;->d(Lgp;)V
+
+    goto :goto_2
+
+    :cond_6
+    iget-object v0, p1, Liy;->m:Landroid/support/v7/widget/ActionBarContextView;
+
+    invoke-virtual {v0, v1}, Landroid/support/v7/widget/ActionBarContextView;->setAlpha(F)V
+
+    iget-object v0, p1, Liy;->m:Landroid/support/v7/widget/ActionBarContextView;
+
+    invoke-virtual {v0, v3}, Landroid/support/v7/widget/ActionBarContextView;->setVisibility(I)V
+
+    iget-object v0, p1, Liy;->m:Landroid/support/v7/widget/ActionBarContextView;
+
+    const/16 v1, 0x20
+
+    invoke-virtual {v0, v1}, Landroid/support/v7/widget/ActionBarContextView;->sendAccessibilityEvent(I)V
+
+    iget-object v0, p1, Liy;->m:Landroid/support/v7/widget/ActionBarContextView;
+
+    invoke-virtual {v0}, Landroid/support/v7/widget/ActionBarContextView;->getParent()Landroid/view/ViewParent;
+
+    move-result-object v0
+
+    instance-of v0, v0, Landroid/view/View;
+
+    if-eqz v0, :cond_7
+
+    iget-object v0, p1, Liy;->m:Landroid/support/v7/widget/ActionBarContextView;
+
+    invoke-virtual {v0}, Landroid/support/v7/widget/ActionBarContextView;->getParent()Landroid/view/ViewParent;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/view/View;
+
+    invoke-static {v0}, Lgl;->D(Landroid/view/View;)V
+
+    :cond_7
+    :goto_2
+    iget-object v0, p1, Liy;->n:Landroid/widget/PopupWindow;
+
+    if-eqz v0, :cond_9
+
+    iget-object v0, p1, Liy;->g:Landroid/view/Window;
+
+    invoke-virtual {v0}, Landroid/view/Window;->getDecorView()Landroid/view/View;
+
+    move-result-object v0
+
+    iget-object v1, p1, Liy;->o:Ljava/lang/Runnable;
+
+    invoke-virtual {v0, v1}, Landroid/view/View;->post(Ljava/lang/Runnable;)Z
+
+    goto :goto_3
+
+    :cond_8
+    iput-object v2, p1, Liy;->l:Ljw;
+
+    :cond_9
+    :goto_3
+    iget-object v1, p1, Liy;->l:Ljw;
+
+    :cond_a
+    if-eqz v1, :cond_b
+
+    invoke-virtual {p2, v1}, Ljy;->e(Ljw;)Landroid/view/ActionMode;
+
+    move-result-object p1
+
+    return-object p1
+
+    :cond_b
+    return-object v2
+
+    :cond_c
+    :goto_4
+    invoke-super {p0, p1, p2}, Lkf;->onWindowStartingActionMode(Landroid/view/ActionMode$Callback;I)Landroid/view/ActionMode;
+
+    move-result-object p1
+
+    return-object p1
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

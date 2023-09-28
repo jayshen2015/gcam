@@ -1,12 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <plurals name="accessibility_timelapse_manual_record_speed_desc">
-        <item quantity="other">Kamera lasterra %d aldiz bizkorragoa da</item>
-        <item quantity="one">Kamera lasterra %d aldiz bizkorragoa da</item>
-    </plurals>
-    <plurals name="number_of_cropped_face">
-        <item quantity="other">%d ebakita daude.</item>
-        <item quantity="one">Bat ebakita dago.</item>
+    <plurals name="number_of_faces_announcement">
+        <item quantity="other">%1$d aurpegi.</item>
+        <item quantity="one">%1$d aurpegi.</item>
     </plurals>
     <plurals name="photos_remaining">
         <item quantity="other">%s argazki inguru</item>
@@ -17,8 +13,8 @@
         <item quantity="one">(%1$d aplikazio hautatu da)</item>
     </plurals>
     <plurals name="social_share_info">
-        <item quantity="other">Partekatu argazkiak eta bideoak aplikazio sozialetan kameratik zuzenean. Aukeratu gehienez %1$d aplikazio. Ezingo dituzu partekatu karpeta blokeatuan gordetako argazkiak eta bideoak.</item>
-        <item quantity="one">Partekatu argazkiak eta bideoak aplikazio sozialetan kameratik zuzenean. Aukeratu %1$d aplikazio. Ezingo dituzu partekatu karpeta blokeatuan gordetako argazkiak eta bideoak.</item>
+        <item quantity="other">Partekatu azkar argazkiak eta bideoak aplikazio sozialetan kameratik zuzenean. Aukeratu gehienez %1$d aplikazio. Ezingo dituzu partekatu karpeta blokeatuan gordetako argazkiak eta bideoak.</item>
+        <item quantity="one">Partekatu azkar argazkiak eta bideoak aplikazio sozialetan kameratik zuzenean. Aukeratu %1$d aplikazio. Ezingo dituzu partekatu karpeta blokeatuan gordetako argazkiak eta bideoak.</item>
     </plurals>
     <plurals name="social_share_select_error">
         <item quantity="other">Aukeratu %1$d aplikazio</item>

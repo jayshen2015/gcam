@@ -1,488 +1,350 @@
 .class public final Lgzz;
 .super Ljava/lang/Object;
 
-# interfaces
-.implements Logk;
-
 
 # instance fields
-.field private final a:Loiw;
+.field private final a:Lqkg;
 
-.field private final synthetic b:I
+.field private final b:Lqkg;
+
+.field private final c:Lqkg;
+
+.field private final d:Lqkg;
+
+.field private final e:Lqkg;
+
+.field private final f:Lqkg;
+
+.field private final g:Lqkg;
+
+.field private final h:Lqkg;
+
+.field private final i:Lqkg;
+
+.field private final j:Lqkg;
+
+.field private final k:Lqkg;
+
+.field private final l:Lqkg;
+
+.field private final m:Lqkg;
+
+.field private final n:Lqkg;
+
+.field private final o:Lqkg;
+
+.field private final p:Lqkg;
 
 
 # direct methods
-.method public constructor <init>(Loiw;I)V
-    .locals 0
+.method public constructor <init>(Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;)V
+    .locals 2
 
-    iput p2, p0, Lgzz;->b:I
+    move-object v0, p0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lgzz;->a:Loiw;
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    move-object v1, p1
+
+    iput-object v1, v0, Lgzz;->a:Lqkg;
+
+    invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    move-object v1, p2
+
+    iput-object v1, v0, Lgzz;->b:Lqkg;
+
+    invoke-virtual {p3}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    move-object v1, p3
+
+    iput-object v1, v0, Lgzz;->c:Lqkg;
+
+    invoke-virtual {p4}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    move-object v1, p4
+
+    iput-object v1, v0, Lgzz;->d:Lqkg;
+
+    move-object v1, p5
+
+    iput-object v1, v0, Lgzz;->e:Lqkg;
+
+    move-object v1, p6
+
+    iput-object v1, v0, Lgzz;->f:Lqkg;
+
+    invoke-virtual {p7}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    move-object v1, p7
+
+    iput-object v1, v0, Lgzz;->g:Lqkg;
+
+    invoke-virtual {p8}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    move-object v1, p8
+
+    iput-object v1, v0, Lgzz;->h:Lqkg;
+
+    invoke-virtual {p9}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    move-object v1, p9
+
+    iput-object v1, v0, Lgzz;->i:Lqkg;
+
+    invoke-virtual {p10}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    move-object v1, p10
+
+    iput-object v1, v0, Lgzz;->j:Lqkg;
+
+    invoke-virtual {p11}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    move-object v1, p11
+
+    iput-object v1, v0, Lgzz;->k:Lqkg;
+
+    invoke-virtual {p12}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    move-object v1, p12
+
+    iput-object v1, v0, Lgzz;->l:Lqkg;
+
+    invoke-virtual {p13}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    move-object v1, p13
+
+    iput-object v1, v0, Lgzz;->m:Lqkg;
+
+    move-object/from16 v1, p14
+
+    iput-object v1, v0, Lgzz;->n:Lqkg;
+
+    invoke-virtual/range {p15 .. p15}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    move-object/from16 v1, p15
+
+    iput-object v1, v0, Lgzz;->o:Lqkg;
+
+    invoke-virtual/range {p16 .. p16}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    move-object/from16 v1, p16
+
+    iput-object v1, v0, Lgzz;->p:Lqkg;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic get()Ljava/lang/Object;
-    .locals 5
+.method public final a(Lgzp;)Lgzy;
+    .locals 22
 
-    iget v0, p0, Lgzz;->b:I
+    move-object/from16 v0, p0
 
-    const/4 v1, 0x1
+    move-object/from16 v19, p1
 
-    const/4 v2, 0x0
+    new-instance v21, Lgzy;
 
-    packed-switch v0, :pswitch_data_0
+    move-object/from16 v1, v21
 
-    iget-object v0, p0, Lgzz;->a:Loiw;
+    iget-object v2, v0, Lgzz;->a:Lqkg;
 
-    check-cast v0, Lgzo;
+    check-cast v2, Lliq;
 
-    invoke-virtual {v0}, Lgzo;->a()Ligo;
-
-    move-result-object v0
-
-    const-string v1, "key_promote_launch_wear"
-
-    invoke-virtual {v0, v1, v2}, Ligo;->q(Ljava/lang/String;Z)Ljwb;
-
-    move-result-object v0
-
-    return-object v0
-
-    :pswitch_0
-    iget-object v0, p0, Lgzz;->a:Loiw;
-
-    check-cast v0, Lgzo;
-
-    invoke-virtual {v0}, Lgzo;->a()Ligo;
-
-    move-result-object v0
-
-    const-string v1, "pref_switch_to_previous_mode_command_string"
-
-    const/16 v2, 0x47
-
-    invoke-virtual {v0, v1, v2}, Ligo;->r(Ljava/lang/String;I)Ljwb;
-
-    move-result-object v0
-
-    return-object v0
-
-    :pswitch_1
-    iget-object v0, p0, Lgzz;->a:Loiw;
-
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lgzn;
-
-    new-instance v1, Lcvr;
-
-    const/4 v2, 0x0
-
-    invoke-direct {v1, v2, v2, v2, v2}, Lcvr;-><init>([B[B[B[B)V
-
-    sget-object v2, Lgzd;->v:Lgzu;
-
-    invoke-interface {v0, v2}, Lgzn;->b(Lgzb;)Ljwb;
+    invoke-virtual {v2}, Lliq;->a()Llis;
 
     move-result-object v2
 
-    invoke-virtual {v1, v2}, Lcvr;->v(Ljwb;)V
+    iget-object v3, v0, Lgzz;->b:Lqkg;
 
-    sget-object v2, Lgzd;->w:Lgzu;
+    invoke-interface {v3}, Lqkg;->get()Ljava/lang/Object;
 
-    invoke-interface {v0, v2}, Lgzn;->b(Lgzb;)Ljwb;
+    move-result-object v3
 
-    move-result-object v2
+    move-object v4, v3
 
-    invoke-virtual {v1, v2}, Lcvr;->v(Ljwb;)V
+    check-cast v4, Lojc;
 
-    sget-object v2, Lgzd;->x:Lgzu;
+    move-object v3, v4
 
-    invoke-interface {v0, v2}, Lgzn;->b(Lgzb;)Ljwb;
+    invoke-virtual {v4}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    move-result-object v0
+    iget-object v4, v0, Lgzz;->c:Lqkg;
 
-    invoke-virtual {v1, v0}, Lcvr;->v(Ljwb;)V
+    invoke-interface {v4}, Lqkg;->get()Ljava/lang/Object;
 
-    return-object v1
+    move-result-object v4
 
-    :pswitch_2
-    iget-object v0, p0, Lgzz;->a:Loiw;
+    move-object v5, v4
 
-    check-cast v0, Lgzo;
+    check-cast v5, Llnc;
 
-    invoke-virtual {v0}, Lgzo;->a()Ligo;
+    move-object v4, v5
 
-    move-result-object v0
+    invoke-virtual {v5}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    const-string v1, "perf_has_shown_options_bar"
+    iget-object v5, v0, Lgzz;->d:Lqkg;
 
-    invoke-virtual {v0, v1, v2}, Ligo;->q(Ljava/lang/String;Z)Ljwb;
+    invoke-interface {v5}, Lqkg;->get()Ljava/lang/Object;
 
-    move-result-object v0
+    move-result-object v5
 
-    return-object v0
+    move-object v6, v5
 
-    :pswitch_3
-    iget-object v0, p0, Lgzz;->a:Loiw;
+    check-cast v6, Lojc;
 
-    check-cast v0, Lgzo;
+    move-object v5, v6
 
-    invoke-virtual {v0}, Lgzo;->a()Ligo;
+    invoke-virtual {v6}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    move-result-object v0
+    iget-object v6, v0, Lgzz;->e:Lqkg;
 
-    const-string v1, "pref_switch_to_next_mode_command_string"
+    invoke-interface {v6}, Lqkg;->get()Ljava/lang/Object;
 
-    const/16 v2, 0x48
+    move-result-object v6
 
-    invoke-virtual {v0, v1, v2}, Ligo;->r(Ljava/lang/String;I)Ljwb;
+    iget-object v7, v0, Lgzz;->f:Lqkg;
 
-    move-result-object v0
+    check-cast v7, Lgjp;
 
-    return-object v0
+    invoke-virtual {v7}, Lgjp;->a()Llvp;
 
-    :pswitch_4
-    iget-object v0, p0, Lgzz;->a:Loiw;
+    move-result-object v7
 
-    check-cast v0, Lgzo;
+    iget-object v8, v0, Lgzz;->g:Lqkg;
 
-    invoke-virtual {v0}, Lgzo;->a()Ligo;
+    check-cast v8, Llhr;
 
-    move-result-object v0
+    invoke-virtual {v8}, Llhr;->a()Llvq;
 
-    const-string v1, "pref_has_shown_longp_education"
+    move-result-object v8
 
-    invoke-virtual {v0, v1, v2}, Ligo;->q(Ljava/lang/String;Z)Ljwb;
+    iget-object v9, v0, Lgzz;->h:Lqkg;
 
-    move-result-object v0
+    invoke-interface {v9}, Lqkg;->get()Ljava/lang/Object;
 
-    return-object v0
+    move-result-object v9
 
-    :pswitch_5
-    iget-object v0, p0, Lgzz;->a:Loiw;
+    move-object v10, v9
 
-    check-cast v0, Lgzo;
+    check-cast v10, Llap;
 
-    invoke-virtual {v0}, Lgzo;->a()Ligo;
+    move-object v9, v10
 
-    move-result-object v0
+    invoke-virtual {v10}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    iget-object v1, v0, Ligo;->b:Ljava/lang/Object;
+    iget-object v10, v0, Lgzz;->i:Lqkg;
 
-    check-cast v1, Lgzi;
+    invoke-interface {v10}, Lqkg;->get()Ljava/lang/Object;
 
-    const-string v2, "pref_link_first_time_chip_click_ms"
+    move-result-object v10
 
-    invoke-virtual {v1, v2}, Lgzi;->n(Ljava/lang/String;)Z
+    iget-object v11, v0, Lgzz;->j:Lqkg;
 
-    move-result v1
+    invoke-interface {v11}, Lqkg;->get()Ljava/lang/Object;
 
-    if-nez v1, :cond_0
+    move-result-object v11
 
-    iget-object v1, v0, Ligo;->a:Ljava/lang/Object;
+    move-object v12, v11
 
-    const-string v3, "Initializing default value (0) for key: (pref_link_first_time_chip_click_ms)"
+    check-cast v12, Lbta;
 
-    invoke-interface {v1, v3}, Lkaq;->f(Ljava/lang/String;)V
+    move-object v11, v12
 
-    iget-object v1, v0, Ligo;->b:Ljava/lang/Object;
+    invoke-virtual {v12}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    check-cast v1, Lgzi;
+    iget-object v12, v0, Lgzz;->k:Lqkg;
 
-    const-wide/16 v3, 0x0
+    invoke-interface {v12}, Lqkg;->get()Ljava/lang/Object;
 
-    invoke-virtual {v1, v2, v3, v4}, Lgzi;->j(Ljava/lang/String;J)V
+    move-result-object v12
 
-    :cond_0
-    new-instance v1, Lgyn;
+    move-object v13, v12
 
-    iget-object v0, v0, Ligo;->b:Ljava/lang/Object;
+    check-cast v13, Lddf;
 
-    check-cast v0, Lgzi;
+    move-object v12, v13
 
-    invoke-direct {v1, v0}, Lgyn;-><init>(Lgzi;)V
+    invoke-virtual {v13}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    return-object v1
+    iget-object v13, v0, Lgzz;->l:Lqkg;
 
-    :pswitch_6
-    iget-object v0, p0, Lgzz;->a:Loiw;
+    invoke-interface {v13}, Lqkg;->get()Ljava/lang/Object;
 
-    check-cast v0, Lgzo;
+    move-result-object v13
 
-    invoke-virtual {v0}, Lgzo;->a()Ligo;
+    move-object v14, v13
 
-    move-result-object v0
+    check-cast v14, Lebe;
 
-    const-string v2, "pref_camera_enable_iris"
+    move-object v13, v14
 
-    invoke-virtual {v0, v2, v1}, Ligo;->q(Ljava/lang/String;Z)Ljwb;
+    invoke-virtual {v14}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    move-result-object v0
+    iget-object v14, v0, Lgzz;->m:Lqkg;
 
-    return-object v0
+    invoke-interface {v14}, Lqkg;->get()Ljava/lang/Object;
 
-    :pswitch_7
-    iget-object v0, p0, Lgzz;->a:Loiw;
+    move-result-object v14
 
-    check-cast v0, Lgzo;
+    move-object v15, v14
 
-    invoke-virtual {v0}, Lgzo;->a()Ligo;
+    check-cast v15, Leam;
 
-    move-result-object v0
+    move-object v14, v15
 
-    const-string v1, "pref_has_checked_gouda_mode"
+    invoke-virtual {v15}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    invoke-virtual {v0, v1, v2}, Ligo;->q(Ljava/lang/String;Z)Ljwb;
+    iget-object v15, v0, Lgzz;->f:Lqkg;
 
-    move-result-object v0
+    check-cast v15, Lgjp;
 
-    return-object v0
+    invoke-virtual {v15}, Lgjp;->a()Llvp;
 
-    :pswitch_8
-    iget-object v0, p0, Lgzz;->a:Loiw;
+    move-result-object v15
 
-    check-cast v0, Lgzo;
+    move-object/from16 p1, v1
 
-    invoke-virtual {v0}, Lgzo;->a()Ligo;
+    iget-object v1, v0, Lgzz;->n:Lqkg;
 
-    move-result-object v0
+    check-cast v1, Lgiv;
 
-    const-string v1, "pref_has_checked_tiara_mode"
+    invoke-virtual {v1}, Lgiv;->a()Ljrl;
 
-    invoke-virtual {v0, v1, v2}, Ligo;->q(Ljava/lang/String;Z)Ljwb;
+    move-result-object v16
 
-    move-result-object v0
+    iget-object v1, v0, Lgzz;->o:Lqkg;
 
-    return-object v0
+    invoke-interface {v1}, Lqkg;->get()Ljava/lang/Object;
 
-    :pswitch_9
-    iget-object v0, p0, Lgzz;->a:Loiw;
+    move-result-object v1
 
-    check-cast v0, Lgzo;
+    check-cast v1, Lljf;
 
-    invoke-virtual {v0}, Lgzo;->a()Ligo;
+    move-object/from16 v17, v1
 
-    move-result-object v0
+    invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    const-string v1, "pref_has_checked_ornament_mode"
+    iget-object v1, v0, Lgzz;->p:Lqkg;
 
-    invoke-virtual {v0, v1, v2}, Ligo;->q(Ljava/lang/String;Z)Ljwb;
+    invoke-interface {v1}, Lqkg;->get()Ljava/lang/Object;
 
-    move-result-object v0
+    move-result-object v1
 
-    return-object v0
+    move-object/from16 v18, v1
 
-    :pswitch_a
-    iget-object v0, p0, Lgzz;->a:Loiw;
+    check-cast v18, Lgzf;
 
-    check-cast v0, Lgzo;
+    check-cast v10, Lojc;
 
-    invoke-virtual {v0}, Lgzo;->a()Ligo;
+    const/16 v20, 0x0
 
-    move-result-object v0
+    move-object/from16 v1, p1
 
-    const-string v1, "pref_has_checked_measure_mode"
+    invoke-direct/range {v1 .. v20}, Lgzy;-><init>(Llis;Lojc;Llnc;Lojc;Lpht;Llvp;Llvq;Llap;Lojc;Lbta;Lddf;Lebe;Leam;Llvp;Ljrl;Lljf;Lgzf;Lgzp;[B)V
 
-    invoke-virtual {v0, v1, v2}, Ligo;->q(Ljava/lang/String;Z)Ljwb;
-
-    move-result-object v0
-
-    return-object v0
-
-    :pswitch_b
-    iget-object v0, p0, Lgzz;->a:Loiw;
-
-    check-cast v0, Lgzo;
-
-    invoke-virtual {v0}, Lgzo;->a()Ligo;
-
-    move-result-object v0
-
-    const-string v1, "pref_has_checked_lens_mode"
-
-    invoke-virtual {v0, v1, v2}, Ligo;->q(Ljava/lang/String;Z)Ljwb;
-
-    move-result-object v0
-
-    return-object v0
-
-    :pswitch_c
-    iget-object v0, p0, Lgzz;->a:Loiw;
-
-    check-cast v0, Lgzo;
-
-    invoke-virtual {v0}, Lgzo;->a()Ligo;
-
-    move-result-object v0
-
-    const-string v1, "pref_has_checked_dual_ev_shadow"
-
-    invoke-virtual {v0, v1, v2}, Ligo;->q(Ljava/lang/String;Z)Ljwb;
-
-    move-result-object v0
-
-    return-object v0
-
-    :pswitch_d
-    iget-object v0, p0, Lgzz;->a:Loiw;
-
-    check-cast v0, Lgzo;
-
-    invoke-virtual {v0}, Lgzo;->a()Ligo;
-
-    move-result-object v0
-
-    const-string v1, "pref_has_checked_dual_ev_brightness"
-
-    invoke-virtual {v0, v1, v2}, Ligo;->q(Ljava/lang/String;Z)Ljwb;
-
-    move-result-object v0
-
-    return-object v0
-
-    :pswitch_e
-    iget-object v0, p0, Lgzz;->a:Loiw;
-
-    check-cast v0, Lgzo;
-
-    invoke-virtual {v0}, Lgzo;->a()Ligo;
-
-    move-result-object v0
-
-    const-string v1, "perf_has_run_first_education"
-
-    invoke-virtual {v0, v1, v2}, Ligo;->q(Ljava/lang/String;Z)Ljwb;
-
-    move-result-object v0
-
-    return-object v0
-
-    :pswitch_f
-    iget-object v0, p0, Lgzz;->a:Loiw;
-
-    check-cast v0, Lgzo;
-
-    invoke-virtual {v0}, Lgzo;->a()Ligo;
-
-    move-result-object v0
-
-    const-string v2, "pref_exposure_control_key"
-
-    invoke-virtual {v0, v2, v1}, Ligo;->q(Ljava/lang/String;Z)Ljwb;
-
-    move-result-object v0
-
-    return-object v0
-
-    :pswitch_10
-    iget-object v0, p0, Lgzz;->a:Loiw;
-
-    check-cast v0, Lgzo;
-
-    invoke-virtual {v0}, Lgzo;->a()Ligo;
-
-    move-result-object v0
-
-    const-string v1, "pref_release_dialog_last_shown_version"
-
-    const-string v2, ""
-
-    invoke-virtual {v0, v1, v2}, Ligo;->s(Ljava/lang/String;Ljava/lang/String;)Ljwb;
-
-    move-result-object v0
-
-    return-object v0
-
-    :pswitch_11
-    iget-object v0, p0, Lgzz;->a:Loiw;
-
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ldhi;
-
-    sget-object v1, Ldgu;->a:Ldhk;
-
-    invoke-interface {v0}, Ldhi;->e()V
-
-    sget-object v0, Lgyw;->a:Lgyw;
-
-    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    return-object v0
-
-    :pswitch_12
-    iget-object v0, p0, Lgzz;->a:Loiw;
-
-    check-cast v0, Lgzo;
-
-    invoke-virtual {v0}, Lgzo;->a()Ligo;
-
-    move-result-object v0
-
-    sget-object v1, Lgyp;->a:Lgyp;
-
-    iget v1, v1, Lgyp;->f:I
-
-    const-string v2, "pref_af_mode_front"
-
-    invoke-virtual {v0, v2, v1}, Ligo;->r(Ljava/lang/String;I)Ljwb;
-
-    move-result-object v0
-
-    return-object v0
-
-    :pswitch_13
-    iget-object v0, p0, Lgzz;->a:Loiw;
-
-    check-cast v0, Lgzo;
-
-    invoke-virtual {v0}, Lgzo;->a()Ligo;
-
-    move-result-object v0
-
-    const-string v1, "pref_camera_beholder_example_percent_key"
-
-    const/4 v2, -0x1
-
-    invoke-virtual {v0, v1, v2}, Ligo;->r(Ljava/lang/String;I)Ljwb;
-
-    move-result-object v0
-
-    return-object v0
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_13
-        :pswitch_12
-        :pswitch_11
-        :pswitch_10
-        :pswitch_f
-        :pswitch_e
-        :pswitch_d
-        :pswitch_c
-        :pswitch_b
-        :pswitch_a
-        :pswitch_9
-        :pswitch_8
-        :pswitch_7
-        :pswitch_6
-        :pswitch_5
-        :pswitch_4
-        :pswitch_3
-        :pswitch_2
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
+    return-object v21
 .end method

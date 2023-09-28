@@ -1,28 +1,28 @@
 .class public final Landroidx/work/OverwritingInputMerger;
-.super Laxk;
+.super Lamt;
 
 
 # direct methods
 .method public constructor <init>()V
     .locals 0
 
-    invoke-direct {p0}, Laxk;-><init>()V
+    invoke-direct {p0}, Lamt;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Ljava/util/List;)Laxh;
+.method public final a(Ljava/util/List;)Lamq;
     .locals 3
 
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
-    new-instance v1, Ljava/util/LinkedHashMap;
+    new-instance v1, Ljava/util/HashMap;
 
-    invoke-direct {v1}, Ljava/util/LinkedHashMap;-><init>()V
+    invoke-direct {v1}, Ljava/util/HashMap;-><init>()V
 
     invoke-interface {p1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
@@ -39,22 +39,20 @@
 
     move-result-object v2
 
-    check-cast v2, Laxh;
+    check-cast v2, Lamq;
 
-    invoke-virtual {v2}, Laxh;->b()Ljava/util/Map;
+    invoke-virtual {v2}, Lamq;->b()Ljava/util/Map;
 
     move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     invoke-interface {v1, v2}, Ljava/util/Map;->putAll(Ljava/util/Map;)V
 
     goto :goto_0
 
     :cond_0
-    invoke-static {v1, v0}, Ldq;->f(Ljava/util/Map;Ljava/util/Map;)V
+    invoke-static {v1, v0}, Lgd;->o(Ljava/util/Map;Ljava/util/Map;)V
 
-    invoke-static {v0}, Ldq;->e(Ljava/util/Map;)Laxh;
+    invoke-static {v0}, Lgd;->n(Ljava/util/Map;)Lamq;
 
     move-result-object p1
 

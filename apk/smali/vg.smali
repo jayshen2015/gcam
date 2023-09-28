@@ -1,223 +1,166 @@
 .class public final Lvg;
 .super Ljava/lang/Object;
 
-# interfaces
-.implements Lvb;
-
 
 # instance fields
-.field public final a:Lvg;
+.field private final a:Ljava/util/concurrent/Executor;
 
-.field public final b:Loiw;
+.field private final b:Ljava/util/concurrent/Executor;
 
-.field public final c:Loiw;
+.field private final c:Ljava/util/concurrent/Executor;
 
-.field public final d:Loiw;
-
-.field public final e:Loiw;
-
-.field public final f:Loiw;
-
-.field public final g:Loiw;
-
-.field public final h:Loiw;
-
-.field public final i:Loiw;
-
-.field public final j:Loiw;
-
-.field public final k:Loiw;
-
-.field public final l:Loiw;
-
-.field public final m:Loiw;
-
-.field public final n:Loiw;
-
-.field public final o:Loxq;
-
-.field public final p:Lbkb;
+.field private final d:Landroid/os/HandlerThread;
 
 
 # direct methods
-.method public constructor <init>(Lbkb;Loxq;[B[B[B[B[B)V
+.method public constructor <init>()V
+    .locals 1
+
+    const/4 v0, 0x0
+
+    invoke-direct {p0, v0}, Lvg;-><init>([B)V
+
+    return-void
+.end method
+
+.method public synthetic constructor <init>([B)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p0, p0, Lvg;->a:Lvg;
+    const/4 p1, 0x0
 
-    iput-object p1, p0, Lvg;->p:Lbkb;
+    iput-object p1, p0, Lvg;->a:Ljava/util/concurrent/Executor;
 
-    iput-object p2, p0, Lvg;->o:Loxq;
+    iput-object p1, p0, Lvg;->b:Ljava/util/concurrent/Executor;
 
-    new-instance p1, Lvf;
+    iput-object p1, p0, Lvg;->c:Ljava/util/concurrent/Executor;
 
-    const/4 p2, 0x3
-
-    invoke-direct {p1, p0, p2}, Lvf;-><init>(Lvg;I)V
-
-    invoke-static {p1}, Logj;->b(Loiw;)Loiw;
-
-    move-result-object p1
-
-    iput-object p1, p0, Lvg;->b:Loiw;
-
-    new-instance p1, Lvf;
-
-    const/4 p2, 0x5
-
-    invoke-direct {p1, p0, p2}, Lvf;-><init>(Lvg;I)V
-
-    invoke-static {p1}, Logp;->a(Loiw;)Loiw;
-
-    move-result-object p1
-
-    iput-object p1, p0, Lvg;->c:Loiw;
-
-    new-instance p1, Lvf;
-
-    const/4 p2, 0x4
-
-    invoke-direct {p1, p0, p2}, Lvf;-><init>(Lvg;I)V
-
-    invoke-static {p1}, Logj;->b(Loiw;)Loiw;
-
-    move-result-object p1
-
-    iput-object p1, p0, Lvg;->d:Loiw;
-
-    new-instance p1, Lvf;
-
-    const/4 p2, 0x7
-
-    invoke-direct {p1, p0, p2}, Lvf;-><init>(Lvg;I)V
-
-    invoke-static {p1}, Logj;->b(Loiw;)Loiw;
-
-    move-result-object p1
-
-    iput-object p1, p0, Lvg;->e:Loiw;
-
-    new-instance p1, Lvf;
-
-    const/16 p2, 0x8
-
-    invoke-direct {p1, p0, p2}, Lvf;-><init>(Lvg;I)V
-
-    invoke-static {p1}, Logj;->b(Loiw;)Loiw;
-
-    move-result-object p1
-
-    iput-object p1, p0, Lvg;->f:Loiw;
-
-    new-instance p1, Lvf;
-
-    const/4 p2, 0x6
-
-    invoke-direct {p1, p0, p2}, Lvf;-><init>(Lvg;I)V
-
-    invoke-static {p1}, Logj;->b(Loiw;)Loiw;
-
-    move-result-object p1
-
-    iput-object p1, p0, Lvg;->g:Loiw;
-
-    new-instance p1, Lvf;
-
-    const/16 p2, 0xa
-
-    invoke-direct {p1, p0, p2}, Lvf;-><init>(Lvg;I)V
-
-    invoke-static {p1}, Logp;->a(Loiw;)Loiw;
-
-    move-result-object p1
-
-    iput-object p1, p0, Lvg;->h:Loiw;
-
-    new-instance p1, Lvf;
-
-    const/16 p2, 0x9
-
-    invoke-direct {p1, p0, p2}, Lvf;-><init>(Lvg;I)V
-
-    invoke-static {p1}, Logj;->b(Loiw;)Loiw;
-
-    move-result-object p1
-
-    iput-object p1, p0, Lvg;->i:Loiw;
-
-    new-instance p1, Lvf;
-
-    const/4 p2, 0x2
-
-    invoke-direct {p1, p0, p2}, Lvf;-><init>(Lvg;I)V
-
-    iput-object p1, p0, Lvg;->j:Loiw;
-
-    new-instance p1, Lvf;
-
-    const/4 p2, 0x1
-
-    invoke-direct {p1, p0, p2}, Lvf;-><init>(Lvg;I)V
-
-    invoke-static {p1}, Logj;->b(Loiw;)Loiw;
-
-    move-result-object p1
-
-    iput-object p1, p0, Lvg;->k:Loiw;
-
-    new-instance p1, Lvf;
-
-    const/4 p2, 0x0
-
-    invoke-direct {p1, p0, p2}, Lvf;-><init>(Lvg;I)V
-
-    invoke-static {p1}, Logj;->b(Loiw;)Loiw;
-
-    move-result-object p1
-
-    iput-object p1, p0, Lvg;->l:Loiw;
-
-    new-instance p1, Lvf;
-
-    const/16 p2, 0xb
-
-    invoke-direct {p1, p0, p2}, Lvf;-><init>(Lvg;I)V
-
-    invoke-static {p1}, Logj;->b(Loiw;)Loiw;
-
-    move-result-object p1
-
-    iput-object p1, p0, Lvg;->m:Loiw;
-
-    new-instance p1, Lvf;
-
-    const/16 p2, 0xc
-
-    invoke-direct {p1, p0, p2}, Lvf;-><init>(Lvg;I)V
-
-    invoke-static {p1}, Logj;->b(Loiw;)Loiw;
-
-    move-result-object p1
-
-    iput-object p1, p0, Lvg;->n:Loiw;
+    iput-object p1, p0, Lvg;->d:Landroid/os/HandlerThread;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Landroid/content/Context;
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 4
+
+    const/4 v0, 0x1
+
+    if-ne p0, p1, :cond_0
+
+    return v0
+
+    :cond_0
+    instance-of v1, p1, Lvg;
+
+    const/4 v2, 0x0
+
+    if-nez v1, :cond_1
+
+    return v2
+
+    :cond_1
+    check-cast p1, Lvg;
+
+    iget-object v1, p1, Lvg;->a:Ljava/util/concurrent/Executor;
+
+    const/4 v1, 0x0
+
+    invoke-static {v1, v1}, Lqno;->c(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v3
+
+    if-nez v3, :cond_2
+
+    return v2
+
+    :cond_2
+    iget-object v3, p1, Lvg;->b:Ljava/util/concurrent/Executor;
+
+    invoke-static {v1, v1}, Lqno;->c(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v3
+
+    if-nez v3, :cond_3
+
+    return v2
+
+    :cond_3
+    iget-object v3, p1, Lvg;->c:Ljava/util/concurrent/Executor;
+
+    invoke-static {v1, v1}, Lqno;->c(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v3
+
+    if-nez v3, :cond_4
+
+    return v2
+
+    :cond_4
+    iget-object p1, p1, Lvg;->d:Landroid/os/HandlerThread;
+
+    invoke-static {v1, v1}, Lqno;->c(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result p1
+
+    if-nez p1, :cond_5
+
+    return v2
+
+    :cond_5
+    return v0
+.end method
+
+.method public final hashCode()I
     .locals 1
 
-    iget-object v0, p0, Lvg;->p:Lbkb;
+    const/4 v0, 0x0
 
-    iget-object v0, v0, Lbkb;->a:Ljava/lang/Object;
+    return v0
+.end method
 
-    check-cast v0, Lrf;
+.method public final toString()Ljava/lang/String;
+    .locals 3
 
-    iget-object v0, v0, Lrf;->a:Landroid/content/Context;
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v1, "ThreadConfig(defaultLightweightExecutor="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const/4 v1, 0x0
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string v2, ", defaultBackgroundExecutor="
+
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string v2, ", defaultCameraExecutor="
+
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string v2, ", defaultCameraHandler="
+
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const/16 v1, 0x29
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
 
     return-object v0
 .end method

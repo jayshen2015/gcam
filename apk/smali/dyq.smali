@@ -1,75 +1,48 @@
 .class public final Ldyq;
 .super Ljava/lang/Object;
 
-# interfaces
-.implements Logk;
 
-
-# instance fields
-.field private final a:Loiw;
-
-.field private final b:Loiw;
-
-.field private final c:Loiw;
+# static fields
+.field public static final a:Louj;
 
 
 # direct methods
-.method public constructor <init>(Loiw;Loiw;Loiw;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 1
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const-string v0, "com/google/android/apps/camera/gyro/GyroVec"
 
-    iput-object p1, p0, Ldyq;->a:Loiw;
+    invoke-static {v0}, Louj;->h(Ljava/lang/String;)Louj;
 
-    iput-object p2, p0, Ldyq;->b:Loiw;
+    move-result-object v0
 
-    iput-object p3, p0, Ldyq;->c:Loiw;
+    sput-object v0, Ldyq;->a:Louj;
 
     return-void
 .end method
 
-
-# virtual methods
-.method public final a()Ldyp;
+.method public static a(FFD)F
     .locals 4
 
-    iget-object v0, p0, Ldyq;->a:Loiw;
+    const-wide/high16 v0, 0x3ff0000000000000L    # 1.0
 
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
+    sub-double/2addr v0, p2
 
-    move-result-object v0
+    float-to-double v2, p0
 
-    check-cast v0, Ldym;
+    invoke-static {v2, v3}, Ljava/lang/Double;->isNaN(D)Z
 
-    iget-object v1, p0, Ldyq;->b:Loiw;
+    mul-double v0, v0, v2
 
-    check-cast v1, Ldyt;
+    float-to-double p0, p1
 
-    invoke-virtual {v1}, Ldyt;->a()Landroid/content/UriMatcher;
+    invoke-static {p0, p1}, Ljava/lang/Double;->isNaN(D)Z
 
-    move-result-object v1
+    mul-double p2, p2, p0
 
-    iget-object v2, p0, Ldyq;->c:Loiw;
+    add-double/2addr v0, p2
 
-    invoke-interface {v2}, Loiw;->get()Ljava/lang/Object;
+    double-to-float p0, v0
 
-    move-result-object v2
-
-    check-cast v2, Ldzf;
-
-    new-instance v3, Ldyp;
-
-    invoke-direct {v3, v0, v1, v2}, Ldyp;-><init>(Ldym;Landroid/content/UriMatcher;Ldzf;)V
-
-    return-object v3
-.end method
-
-.method public final bridge synthetic get()Ljava/lang/Object;
-    .locals 1
-
-    invoke-virtual {p0}, Ldyq;->a()Ldyp;
-
-    move-result-object v0
-
-    return-object v0
+    return p0
 .end method

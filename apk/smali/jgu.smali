@@ -1,17 +1,13 @@
-.class public final Ljgu;
-.super Lcbe;
+.class public interface abstract Ljgu;
+.super Ljava/lang/Object;
 
 # interfaces
-.implements Landroid/os/IInterface;
+.implements Lelv;
 
 
-# direct methods
-.method public constructor <init>(Landroid/os/IBinder;)V
-    .locals 1
+# virtual methods
+.method public abstract r()Ljava/util/Date;
+.end method
 
-    const-string v0, "com.google.android.gms.common.internal.IAccountAccessor"
-
-    invoke-direct {p0, p1, v0}, Lcbe;-><init>(Landroid/os/IBinder;Ljava/lang/String;)V
-
-    return-void
+.method public abstract s(Ljava/lang/String;)V
 .end method

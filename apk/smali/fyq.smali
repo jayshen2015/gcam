@@ -1,43 +1,100 @@
-.class public final Lfyq;
-.super Ljava/lang/Object;
+.class final Lfyq;
+.super Landroid/os/Handler;
 
-# interfaces
-.implements Lfyh;
+
+# instance fields
+.field final synthetic a:Lfyr;
 
 
 # direct methods
-.method public constructor <init>()V
+.method public constructor <init>(Lfyr;Landroid/os/Looper;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lfyq;->a:Lfyr;
+
+    invoke-direct {p0, p2}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Lfyi;)Lfyt;
-    .locals 2
+.method public final handleMessage(Landroid/os/Message;)V
+    .locals 3
 
-    new-instance v0, Ljava/util/ArrayList;
+    iget v0, p1, Landroid/os/Message;->what:I
 
-    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+    const/4 v1, 0x0
 
-    iget-object p1, p1, Lfyi;->b:Ljava/util/List;
+    packed-switch v0, :pswitch_data_0
 
-    invoke-interface {p1}, Ljava/util/List;->isEmpty()Z
+    goto :goto_0
 
-    move-result p1
+    :pswitch_0
+    iget-object p1, p0, Lfyq;->a:Lfyr;
 
-    const-string v1, "no-images"
+    iget-object p1, p1, Lfyr;->q:Lfdm;
 
-    invoke-static {v1, p1, v0}, Lfys;->b(Ljava/lang/String;ZLjava/util/List;)V
+    if-eqz p1, :cond_0
 
-    const-string p1, "cancelled"
+    invoke-virtual {p1}, Lfdm;->b()V
 
-    invoke-static {p1, v0}, Lfys;->a(Ljava/lang/String;Ljava/util/List;)Lfyt;
+    return-void
 
-    move-result-object p1
+    :pswitch_1
+    iget v0, p1, Landroid/os/Message;->arg1:I
 
-    return-object p1
+    iget v0, p1, Landroid/os/Message;->arg2:I
+
+    iget-object v0, p0, Lfyq;->a:Lfyr;
+
+    iget-object v2, v0, Lfyr;->q:Lfdm;
+
+    if-eqz v2, :cond_0
+
+    iget-object v0, v0, Lfyr;->r:Lfdj;
+
+    if-eqz v0, :cond_0
+
+    iget v0, p1, Landroid/os/Message;->arg1:I
+
+    iget p1, p1, Landroid/os/Message;->arg2:I
+
+    invoke-virtual {v2, v1, v0, p1}, Lfdm;->onSurfaceChanged(Ljavax/microedition/khronos/opengles/GL10;II)V
+
+    iget-object p1, p0, Lfyq;->a:Lfyr;
+
+    iget-object p1, p1, Lfyr;->q:Lfdm;
+
+    invoke-virtual {p1}, Lfdm;->b()V
+
+    iget-object p1, p0, Lfyq;->a:Lfyr;
+
+    iget-object p1, p1, Lfyr;->r:Lfdj;
+
+    invoke-virtual {p1}, Lfdj;->e()V
+
+    return-void
+
+    :pswitch_2
+    iget-object p1, p0, Lfyq;->a:Lfyr;
+
+    iget-object p1, p1, Lfyr;->q:Lfdm;
+
+    if-eqz p1, :cond_0
+
+    invoke-virtual {p1, v1, v1}, Lfdm;->onSurfaceCreated(Ljavax/microedition/khronos/opengles/GL10;Ljavax/microedition/khronos/egl/EGLConfig;)V
+
+    :cond_0
+    :goto_0
+    return-void
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x1
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method

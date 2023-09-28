@@ -1,159 +1,147 @@
-.class final Lbxf;
+.class public final Lbxf;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lbqd;
+.implements Llie;
 
 
 # instance fields
-.field private final a:Ljava/nio/ByteBuffer;
+.field public final a:Lpih;
 
-.field private final synthetic b:I
+.field public final b:Lpih;
+
+.field public final c:Lpht;
+
+.field public final d:Lpht;
 
 
 # direct methods
-.method public constructor <init>(I)V
-    .locals 0
-
-    iput p1, p0, Lbxf;->b:I
+.method public constructor <init>(Ljava/util/concurrent/ScheduledExecutorService;Lpih;Lbqg;)V
+    .locals 4
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const/4 p1, 0x4
+    invoke-static {}, Lpih;->f()Lpih;
 
-    invoke-static {p1}, Ljava/nio/ByteBuffer;->allocate(I)Ljava/nio/ByteBuffer;
+    move-result-object v0
+
+    iput-object v0, p0, Lbxf;->a:Lpih;
+
+    invoke-static {}, Lpih;->f()Lpih;
+
+    move-result-object v1
+
+    iput-object v1, p0, Lbxf;->b:Lpih;
+
+    const/4 v2, 0x2
+
+    new-array v2, v2, [Lpht;
+
+    const/4 v3, 0x0
+
+    aput-object v1, v2, v3
+
+    const/4 v1, 0x1
+
+    aput-object v0, v2, v1
+
+    invoke-static {v2}, Lplk;->P([Lpht;)Lphm;
+
+    move-result-object v0
+
+    sget-object v1, Lngd;->b:Lngd;
+
+    sget-object v2, Lpgr;->a:Lpgr;
+
+    invoke-virtual {v0, v1, v2}, Lphm;->a(Ljava/util/concurrent/Callable;Ljava/util/concurrent/Executor;)Lpht;
+
+    move-result-object v0
+
+    sget-object v1, Lbxe;->a:Lbxe;
+
+    sget-object v2, Lpgr;->a:Lpgr;
+
+    invoke-static {v0, v1, v2}, Lpgb;->h(Lpht;Loiu;Ljava/util/concurrent/Executor;)Lpht;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lbxf;->c:Lpht;
+
+    sget-object v1, Ljava/util/concurrent/TimeUnit;->MILLISECONDS:Ljava/util/concurrent/TimeUnit;
+
+    const-wide/16 v2, 0xfa0
+
+    invoke-static {v0, v2, v3, v1, p1}, Lplk;->ac(Lpht;JLjava/util/concurrent/TimeUnit;Ljava/util/concurrent/ScheduledExecutorService;)Lpht;
 
     move-result-object p1
 
-    iput-object p1, p0, Lbxf;->a:Ljava/nio/ByteBuffer;
+    const-class v1, Ljava/lang/Throwable;
 
-    return-void
-.end method
+    sget-object v2, Lbxe;->d:Lbxe;
 
-.method public constructor <init>(I[B)V
-    .locals 0
+    sget-object v3, Lpgr;->a:Lpgr;
 
-    iput p1, p0, Lbxf;->b:I
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    const/16 p1, 0x8
-
-    invoke-static {p1}, Ljava/nio/ByteBuffer;->allocate(I)Ljava/nio/ByteBuffer;
+    invoke-static {p1, v1, v2, v3}, Lpfj;->h(Lpht;Ljava/lang/Class;Loiu;Ljava/util/concurrent/Executor;)Lpht;
 
     move-result-object p1
 
-    iput-object p1, p0, Lbxf;->a:Ljava/nio/ByteBuffer;
+    iput-object p1, p0, Lbxf;->d:Lpht;
+
+    invoke-virtual {p2}, Lpih;->isDone()Z
+
+    move-result p1
+
+    if-nez p1, :cond_0
+
+    sget-object p1, Lbxe;->c:Lbxe;
+
+    sget-object v1, Lpgr;->a:Lpgr;
+
+    invoke-static {v0, p1, v1}, Lpgb;->h(Lpht;Loiu;Ljava/util/concurrent/Executor;)Lpht;
+
+    move-result-object p1
+
+    const-class v0, Ljava/lang/Throwable;
+
+    sget-object v1, Lbxe;->e:Lbxe;
+
+    sget-object v2, Lpgr;->a:Lpgr;
+
+    invoke-static {p1, v0, v1, v2}, Lpfj;->h(Lpht;Ljava/lang/Class;Loiu;Ljava/util/concurrent/Executor;)Lpht;
+
+    move-result-object p1
+
+    invoke-virtual {p2, p1}, Lpih;->e(Lpht;)Z
+
+    :cond_0
+    invoke-virtual {p3}, Lbqg;->i()Llap;
+
+    move-result-object p1
+
+    invoke-virtual {p1, p0}, Llap;->c(Llie;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a([BLjava/lang/Object;Ljava/security/MessageDigest;)V
-    .locals 3
+.method public final close()V
+    .locals 2
 
-    iget v0, p0, Lbxf;->b:I
+    iget-object v0, p0, Lbxf;->c:Lpht;
 
-    const/4 v1, 0x0
+    invoke-interface {v0}, Lpht;->isDone()Z
 
-    packed-switch v0, :pswitch_data_0
+    move-result v0
 
-    check-cast p2, Ljava/lang/Long;
+    if-nez v0, :cond_0
 
-    invoke-virtual {p3, p1}, Ljava/security/MessageDigest;->update([B)V
+    iget-object v0, p0, Lbxf;->c:Lpht;
 
-    iget-object p1, p0, Lbxf;->a:Ljava/nio/ByteBuffer;
+    const/4 v1, 0x1
 
-    monitor-enter p1
-
-    goto :goto_0
-
-    :pswitch_0
-    check-cast p2, Ljava/lang/Integer;
-
-    if-nez p2, :cond_0
-
-    return-void
+    invoke-interface {v0, v1}, Lpht;->cancel(Z)Z
 
     :cond_0
-    invoke-virtual {p3, p1}, Ljava/security/MessageDigest;->update([B)V
-
-    iget-object v0, p0, Lbxf;->a:Ljava/nio/ByteBuffer;
-
-    monitor-enter v0
-
-    :try_start_0
-    iget-object p1, p0, Lbxf;->a:Ljava/nio/ByteBuffer;
-
-    invoke-virtual {p1, v1}, Ljava/nio/ByteBuffer;->position(I)Ljava/nio/Buffer;
-
-    iget-object p1, p0, Lbxf;->a:Ljava/nio/ByteBuffer;
-
-    invoke-virtual {p2}, Ljava/lang/Integer;->intValue()I
-
-    move-result p2
-
-    invoke-virtual {p1, p2}, Ljava/nio/ByteBuffer;->putInt(I)Ljava/nio/ByteBuffer;
-
-    move-result-object p1
-
-    invoke-virtual {p1}, Ljava/nio/ByteBuffer;->array()[B
-
-    move-result-object p1
-
-    invoke-virtual {p3, p1}, Ljava/security/MessageDigest;->update([B)V
-
-    monitor-exit v0
-
     return-void
-
-    :catchall_0
-    move-exception p1
-
-    monitor-exit v0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw p1
-
-    :goto_0
-    :try_start_1
-    iget-object v0, p0, Lbxf;->a:Ljava/nio/ByteBuffer;
-
-    invoke-virtual {v0, v1}, Ljava/nio/ByteBuffer;->position(I)Ljava/nio/Buffer;
-
-    iget-object v0, p0, Lbxf;->a:Ljava/nio/ByteBuffer;
-
-    invoke-virtual {p2}, Ljava/lang/Long;->longValue()J
-
-    move-result-wide v1
-
-    invoke-virtual {v0, v1, v2}, Ljava/nio/ByteBuffer;->putLong(J)Ljava/nio/ByteBuffer;
-
-    move-result-object p2
-
-    invoke-virtual {p2}, Ljava/nio/ByteBuffer;->array()[B
-
-    move-result-object p2
-
-    invoke-virtual {p3, p2}, Ljava/security/MessageDigest;->update([B)V
-
-    monitor-exit p1
-
-    return-void
-
-    :catchall_1
-    move-exception p2
-
-    monitor-exit p1
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_1
-
-    throw p2
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
 .end method

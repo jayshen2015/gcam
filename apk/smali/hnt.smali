@@ -1,62 +1,75 @@
 .class final Lhnt;
-.super Lhpf;
+.super Landroid/content/BroadcastReceiver;
 
 
 # instance fields
-.field final synthetic a:Lhnu;
+.field final synthetic a:Lhnv;
 
 
 # direct methods
-.method public constructor <init>(Lhnu;)V
+.method public constructor <init>(Lhnv;)V
     .locals 0
 
-    iput-object p1, p0, Lhnt;->a:Lhnu;
+    iput-object p1, p0, Lhnt;->a:Lhnv;
 
-    invoke-direct {p0, p1}, Lhpf;-><init>(Lhpg;)V
+    invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final b()V
+.method public final onReceive(Landroid/content/Context;Landroid/content/Intent;)V
     .locals 2
 
-    iget-object v0, p0, Lhnt;->a:Lhnu;
+    iget-object p1, p0, Lhnt;->a:Lhnv;
 
-    iget-object v0, v0, Lhnu;->a:Lhiu;
+    const/4 v0, 0x1
 
-    invoke-virtual {v0}, Lhiu;->e()V
+    iput-boolean v0, p1, Lhnv;->c:Z
 
-    invoke-super {p0}, Lhpf;->b()V
+    iget-boolean v0, p1, Lhnv;->b:Z
 
-    iget-object v0, p0, Lhnt;->a:Lhnu;
+    if-nez v0, :cond_0
 
-    iget-object v1, v0, Lhnu;->a:Lhiu;
+    invoke-static {p2}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
-    iget-object v0, v0, Lhnu;->d:Lhiw;
+    move-result-object p2
 
-    invoke-virtual {v1, v0}, Lhiu;->g(Lhiw;)V
+    invoke-static {p2}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/String;->length()I
+
+    move-result v0
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    add-int/lit8 v0, v0, 0x2b
+
+    invoke-direct {v1, v0}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string v0, "Received ScreenOff broadcast after onStop: "
+
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p2
+
+    invoke-virtual {p1, p2}, Lhnv;->c(Ljava/lang/String;)V
 
     return-void
-.end method
 
-.method public final i()V
-    .locals 2
+    :cond_0
+    iget-object p1, p1, Lhnv;->a:Llis;
 
-    iget-object v0, p0, Lhnt;->a:Lhnu;
+    const-string p2, "Ignoring ScreenOff shutdown behavior, the activity is still started."
 
-    iget-object v0, v0, Lhnu;->a:Lhiu;
-
-    invoke-virtual {v0}, Lhiu;->e()V
-
-    iget-object v0, p0, Lhnt;->a:Lhnu;
-
-    iget-object v1, v0, Lhnu;->a:Lhiu;
-
-    iget-object v0, v0, Lhnu;->b:Lhiw;
-
-    invoke-virtual {v1, v0}, Lhiu;->g(Lhiw;)V
+    invoke-interface {p1, p2}, Llis;->f(Ljava/lang/String;)V
 
     return-void
 .end method

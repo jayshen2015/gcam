@@ -40,14 +40,14 @@
 .method public final onCreate()Z
     .locals 2
 
-    sget-object v0, Ljka;->a:Ljava/lang/Object;
+    sget-object v0, Lkqe;->a:Ljava/lang/Object;
 
     monitor-enter v0
 
     const/4 v1, 0x1
 
     :try_start_0
-    sput-boolean v1, Ljka;->b:Z
+    sput-boolean v1, Lkqe;->b:Z
 
     monitor-exit v0
 

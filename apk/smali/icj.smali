@@ -1,121 +1,84 @@
-.class public final Licj;
-.super Ljava/lang/Object;
+.class public final enum Licj;
+.super Ljava/lang/Enum;
 
 
-# instance fields
-.field public final a:Ljvs;
+# static fields
+.field public static final enum a:Licj;
 
-.field public final b:Lgzi;
+.field public static final enum b:Licj;
 
-.field public final c:Lell;
+.field public static final enum c:Licj;
 
-.field public final d:Landroid/content/Context;
-
-.field public final e:Ljava/util/concurrent/Executor;
-
-.field public final f:Ljava/lang/String;
-
-.field public final g:Ljava/lang/String;
-
-.field public h:Licf;
-
-.field public i:Licf;
-
-.field public j:Licf;
-
-.field public k:Licf;
-
-.field public l:Z
-
-.field public final m:Lcdi;
+.field private static final synthetic d:[Licj;
 
 
 # direct methods
-.method public constructor <init>(Landroid/content/Context;Ljvs;Lgzi;Lell;Ljava/util/concurrent/Executor;Lcdi;)V
+.method static constructor <clinit>()V
+    .locals 7
+
+    new-instance v0, Licj;
+
+    const-string v1, "POPUP_SHARE_HANDLE"
+
+    const/4 v2, 0x0
+
+    invoke-direct {v0, v1, v2}, Licj;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, Licj;->a:Licj;
+
+    new-instance v1, Licj;
+
+    const-string v3, "LAUNCH_SHARE_PANEL"
+
+    const/4 v4, 0x1
+
+    invoke-direct {v1, v3, v4}, Licj;-><init>(Ljava/lang/String;I)V
+
+    sput-object v1, Licj;->b:Licj;
+
+    new-instance v3, Licj;
+
+    const-string v5, "TAP_SHARE_TARGET"
+
+    const/4 v6, 0x2
+
+    invoke-direct {v3, v5, v6}, Licj;-><init>(Ljava/lang/String;I)V
+
+    sput-object v3, Licj;->c:Licj;
+
+    const/4 v5, 0x3
+
+    new-array v5, v5, [Licj;
+
+    aput-object v0, v5, v2
+
+    aput-object v1, v5, v4
+
+    aput-object v3, v5, v6
+
+    sput-object v5, Licj;->d:[Licj;
+
+    return-void
+.end method
+
+.method private constructor <init>(Ljava/lang/String;I)V
+    .locals 0
+
+    invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    return-void
+.end method
+
+.method public static values()[Licj;
     .locals 1
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    sget-object v0, Licj;->d:[Licj;
 
-    const/4 v0, 0x0
+    invoke-virtual {v0}, [Licj;->clone()Ljava/lang/Object;
 
-    iput-boolean v0, p0, Licj;->l:Z
+    move-result-object v0
 
-    iput-object p2, p0, Licj;->a:Ljvs;
+    check-cast v0, [Licj;
 
-    iput-object p3, p0, Licj;->b:Lgzi;
-
-    iput-object p4, p0, Licj;->c:Lell;
-
-    iput-object p1, p0, Licj;->d:Landroid/content/Context;
-
-    iput-object p6, p0, Licj;->m:Lcdi;
-
-    invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
-
-    move-result-object p2
-
-    const p3, 0x7f140191
-
-    invoke-virtual {p2, p3}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
-
-    move-result-object p2
-
-    iput-object p2, p0, Licj;->f:Ljava/lang/String;
-
-    invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
-
-    move-result-object p1
-
-    const p2, 0x7f140192
-
-    invoke-virtual {p1, p2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
-
-    move-result-object p1
-
-    iput-object p1, p0, Licj;->g:Ljava/lang/String;
-
-    iput-object p5, p0, Licj;->e:Ljava/util/concurrent/Executor;
-
-    return-void
-.end method
-
-
-# virtual methods
-.method public final a()V
-    .locals 2
-
-    iget-object v0, p0, Licj;->k:Licf;
-
-    if-eqz v0, :cond_0
-
-    iget-object v1, p0, Licj;->c:Lell;
-
-    invoke-interface {v1, v0}, Lell;->g(Lelk;)V
-
-    :cond_0
-    return-void
-.end method
-
-.method public final b()V
-    .locals 2
-
-    iget-object v0, p0, Licj;->c:Lell;
-
-    iget-object v1, p0, Licj;->i:Licf;
-
-    invoke-interface {v0, v1}, Lell;->g(Lelk;)V
-
-    return-void
-.end method
-
-.method public final c()V
-    .locals 2
-
-    iget-object v0, p0, Licj;->c:Lell;
-
-    iget-object v1, p0, Licj;->i:Licf;
-
-    invoke-interface {v0, v1}, Lell;->d(Lelk;)Lkad;
-
-    return-void
+    return-object v0
 .end method

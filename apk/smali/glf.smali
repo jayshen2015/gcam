@@ -1,22 +1,15 @@
-.class public interface abstract Lglf;
+.class public final Lglf;
 .super Ljava/lang/Object;
 
+# interfaces
+.implements Lglg;
 
-# virtual methods
-.method public abstract d()Ljvs;
-.end method
 
-.method public abstract f()Lnou;
-.end method
+# direct methods
+.method public constructor <init>()V
+    .locals 0
 
-.method public abstract g()V
-.end method
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-.method public abstract i()V
-.end method
-
-.method public abstract k()Z
-.end method
-
-.method public abstract l(Lcdi;Ljvs;)V
+    return-void
 .end method

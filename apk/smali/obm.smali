@@ -1,146 +1,163 @@
 .class public final Lobm;
-.super Lnws;
-
-# interfaces
-.implements Lnxz;
+.super Ljava/lang/Object;
 
 
 # static fields
-.field public static final a:Lobm;
+.field private static final a:[I
 
-.field private static volatile b:Lnyf;
+.field private static final b:[I
+
+.field private static final c:[I
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 2
+    .locals 4
 
-    new-instance v0, Lobm;
+    const/4 v0, 0x1
 
-    invoke-direct {v0}, Lobm;-><init>()V
+    new-array v1, v0, [I
 
-    sput-object v0, Lobm;->a:Lobm;
+    const v2, 0x10100a7
 
-    const-class v1, Lobm;
+    const/4 v3, 0x0
 
-    invoke-static {v1, v0}, Lnws;->aa(Ljava/lang/Class;Lnws;)V
+    aput v2, v1, v3
+
+    sput-object v1, Lobm;->a:[I
+
+    const/4 v1, 0x2
+
+    new-array v1, v1, [I
+
+    fill-array-data v1, :array_0
+
+    sput-object v1, Lobm;->b:[I
+
+    new-array v0, v0, [I
+
+    const v1, 0x10100a1
+
+    aput v1, v0, v3
+
+    sput-object v0, Lobm;->c:[I
+
+    const-class v0, Lobm;
+
+    invoke-virtual {v0}, Ljava/lang/Class;->getSimpleName()Ljava/lang/String;
 
     return-void
+
+    :array_0
+    .array-data 4
+        0x10100a1
+        0x10100a7
+    .end array-data
 .end method
 
 .method private constructor <init>()V
     .locals 0
 
-    invoke-direct {p0}, Lnws;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
+.method public static a(Landroid/content/res/ColorStateList;)Landroid/content/res/ColorStateList;
+    .locals 4
 
-# virtual methods
-.method protected final a(ILjava/lang/Object;)Ljava/lang/Object;
-    .locals 1
+    const/4 v0, 0x2
 
-    add-int/lit8 p1, p1, -0x1
+    new-array v1, v0, [[I
 
-    const/4 p2, 0x0
+    new-array v0, v0, [I
 
-    packed-switch p1, :pswitch_data_0
+    sget-object v2, Lobm;->c:[I
 
-    :pswitch_0
-    return-object p2
+    const/4 v3, 0x0
 
-    :pswitch_1
-    sget-object p1, Lobm;->b:Lnyf;
+    aput-object v2, v1, v3
 
-    if-nez p1, :cond_1
+    sget-object v2, Lobm;->b:[I
 
-    const-class p2, Lobm;
+    invoke-static {p0, v2}, Lobm;->c(Landroid/content/res/ColorStateList;[I)I
 
-    monitor-enter p2
+    move-result v2
 
-    :try_start_0
-    sget-object p1, Lobm;->b:Lnyf;
+    aput v2, v0, v3
 
-    if-nez p1, :cond_0
+    sget-object v2, Landroid/util/StateSet;->NOTHING:[I
 
-    new-instance p1, Lnwo;
+    const/4 v3, 0x1
 
-    sget-object v0, Lobm;->a:Lobm;
+    aput-object v2, v1, v3
 
-    invoke-direct {p1, v0}, Lnwo;-><init>(Lnws;)V
+    sget-object v2, Lobm;->a:[I
 
-    sput-object p1, Lobm;->b:Lnyf;
+    invoke-static {p0, v2}, Lobm;->c(Landroid/content/res/ColorStateList;[I)I
+
+    move-result p0
+
+    aput p0, v0, v3
+
+    new-instance p0, Landroid/content/res/ColorStateList;
+
+    invoke-direct {p0, v1, v0}, Landroid/content/res/ColorStateList;-><init>([[I[I)V
+
+    return-object p0
+.end method
+
+.method public static b(Landroid/content/res/ColorStateList;)Landroid/content/res/ColorStateList;
+    .locals 0
+
+    if-eqz p0, :cond_0
+
+    return-object p0
 
     :cond_0
-    monitor-exit p2
+    const/4 p0, 0x0
+
+    invoke-static {p0}, Landroid/content/res/ColorStateList;->valueOf(I)Landroid/content/res/ColorStateList;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method private static c(Landroid/content/res/ColorStateList;[I)I
+    .locals 1
+
+    if-eqz p0, :cond_0
+
+    invoke-virtual {p0}, Landroid/content/res/ColorStateList;->getDefaultColor()I
+
+    move-result v0
+
+    invoke-virtual {p0, p1, v0}, Landroid/content/res/ColorStateList;->getColorForState([II)I
+
+    move-result p0
 
     goto :goto_0
 
-    :catchall_0
-    move-exception p1
+    :cond_0
+    const/4 p0, 0x0
 
-    monitor-exit p2
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw p1
-
-    :cond_1
     :goto_0
-    return-object p1
+    invoke-static {p0}, Landroid/graphics/Color;->alpha(I)I
 
-    :pswitch_2
-    sget-object p1, Lobm;->a:Lobm;
+    move-result p1
 
-    return-object p1
+    add-int/2addr p1, p1
 
-    :pswitch_3
-    new-instance p1, Lnwn;
+    const/16 v0, 0xff
 
-    sget-object p2, Lobm;->a:Lobm;
+    invoke-static {p1, v0}, Ljava/lang/Math;->min(II)I
 
-    invoke-direct {p1, p2}, Lnwn;-><init>(Lnws;)V
+    move-result p1
 
-    return-object p1
+    invoke-static {p0, p1}, Lek;->d(II)I
 
-    :pswitch_4
-    new-instance p1, Lobm;
+    move-result p0
 
-    invoke-direct {p1}, Lobm;-><init>()V
-
-    return-object p1
-
-    :pswitch_5
-    sget-object p1, Lobm;->a:Lobm;
-
-    const-string v0, "\u0001\u0000"
-
-    invoke-static {p1, v0, p2}, Lobm;->X(Lnxy;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object p1
-
-    return-object p1
-
-    :pswitch_6
-    const/4 p1, 0x1
-
-    invoke-static {p1}, Ljava/lang/Byte;->valueOf(B)Ljava/lang/Byte;
-
-    move-result-object p1
-
-    return-object p1
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_6
-        :pswitch_0
-        :pswitch_5
-        :pswitch_4
-        :pswitch_3
-        :pswitch_2
-        :pswitch_1
-    .end packed-switch
+    return p0
 .end method

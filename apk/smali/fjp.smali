@@ -1,22 +1,37 @@
-.class public final Lfjp;
+.class public final synthetic Lfjp;
 .super Ljava/lang/Object;
 
+# interfaces
+.implements Ljava/lang/Runnable;
 
-# static fields
-.field public static final a:Lfiw;
+
+# instance fields
+.field public final synthetic a:Lfjq;
 
 
 # direct methods
-.method static constructor <clinit>()V
+.method public synthetic constructor <init>(Lfjq;)V
+    .locals 0
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lfjp;->a:Lfjq;
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public final run()V
     .locals 2
 
-    new-instance v0, Lfiw;
+    iget-object v0, p0, Lfjp;->a:Lfjq;
 
-    const/16 v1, 0x9
+    const/4 v1, 0x0
 
-    invoke-direct {v0, v1}, Lfiw;-><init>(I)V
+    invoke-virtual {v0, v1}, Lfjq;->c(Z)V
 
-    sput-object v0, Lfjp;->a:Lfiw;
+    invoke-virtual {v0}, Lfjq;->a()V
 
     return-void
 .end method

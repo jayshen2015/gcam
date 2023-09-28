@@ -1,78 +1,62 @@
 .class final Llcr;
-.super Llch;
+.super Lldl;
 
 
 # instance fields
-.field final synthetic g:Llcn;
+.field final synthetic a:Loiu;
 
-.field final synthetic h:I
-
-.field final synthetic i:Llfg;
+.field final synthetic b:Llco;
 
 
 # direct methods
-.method public constructor <init>(Lldg;Landroid/opengl/EGLDisplay;Landroid/opengl/EGLSurface;Landroid/opengl/EGLContext;Landroid/opengl/EGLConfig;ILlaq;Llcn;ILlfg;)V
+.method public constructor <init>(Llco;Loiu;Llco;)V
     .locals 0
 
-    iput-object p8, p0, Llcr;->g:Llcn;
+    iput-object p2, p0, Llcr;->a:Loiu;
 
-    iput p9, p0, Llcr;->h:I
+    iput-object p3, p0, Llcr;->b:Llco;
 
-    iput-object p10, p0, Llcr;->i:Llfg;
-
-    invoke-direct/range {p0 .. p7}, Llch;-><init>(Lldg;Landroid/opengl/EGLDisplay;Landroid/opengl/EGLSurface;Landroid/opengl/EGLContext;Landroid/opengl/EGLConfig;ILlaq;)V
+    invoke-direct {p0, p1}, Lldl;-><init>(Llco;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final b()Lkzf;
+.method protected final c(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 1
+
+    iget-object v0, p0, Llcr;->a:Loiu;
+
+    invoke-interface {v0, p1}, Loiu;->a(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p1
+
+    return-object p1
+.end method
+
+.method public final toString()Ljava/lang/String;
     .locals 3
 
-    :try_start_0
-    iget-object v0, p0, Llcr;->g:Llcn;
+    const-string v0, "TransformedObs"
 
-    invoke-interface {v0}, Llcn;->k()V
-
-    const/4 v0, 0x0
-
-    invoke-static {v0}, Llcu;->f(I)V
-
-    iget v0, p0, Llcr;->h:I
-
-    invoke-static {v0}, Llcu;->e(I)V
-
-    iget-object v0, p0, Llcr;->i:Llfg;
-
-    invoke-interface {v0}, Llfg;->a()Lkzf;
-
-    move-result-object v0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    return-object v0
-
-    :catchall_0
-    move-exception v0
-
-    iget-object v1, p0, Llcr;->i:Llfg;
-
-    invoke-interface {v1}, Llfg;->a()Lkzf;
-
-    move-result-object v1
-
-    sget-object v2, Lnnv;->a:Lnnv;
-
-    invoke-static {v0}, Llpm;->p(Ljava/lang/Throwable;)Lkye;
+    invoke-static {v0}, Lobr;->ba(Ljava/lang/String;)Lojb;
 
     move-result-object v0
 
-    invoke-virtual {v1, v2, v0}, Lkzf;->a(Ljava/util/concurrent/Executor;Lkye;)Lkzc;
+    iget-object v1, p0, Llcr;->b:Llco;
 
-    move-result-object v0
+    const-string v2, "input"
 
-    invoke-static {v0}, Lkzf;->j(Lkzc;)Lkzf;
+    invoke-virtual {v0, v2, v1}, Lojb;->b(Ljava/lang/String;Ljava/lang/Object;)V
+
+    iget-object v1, p0, Llcr;->a:Loiu;
+
+    const-string v2, "func"
+
+    invoke-virtual {v0, v2, v1}, Lojb;->b(Ljava/lang/String;Ljava/lang/Object;)V
+
+    invoke-virtual {v0}, Lojb;->toString()Ljava/lang/String;
 
     move-result-object v0
 

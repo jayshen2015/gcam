@@ -50,7 +50,7 @@
 .method public native getPortraitRelightingProcessorHandle()J
 .end method
 
-.method public native initPortraitRelightingProcessor(Ljava/lang/String;ZZZ[B[B[B[B[B[B)Z
+.method public native initPortraitRelightingProcessor(Ljava/lang/String;ZZ[B[B[B[B[B[B)Z
 .end method
 
 .method public native release()V

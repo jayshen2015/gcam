@@ -1,180 +1,70 @@
-.class public final Lnid;
-.super Lnws;
+.class public final synthetic Lnid;
+.super Ljava/lang/Object;
 
 # interfaces
-.implements Lnxz;
-
-
-# static fields
-.field public static final d:Lnid;
-
-.field private static volatile e:Lnyf;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field public a:I
+.field public final synthetic a:Lcom/google/android/libraries/social/licenses/LicenseActivity;
 
-.field public b:I
+.field public final synthetic b:I
 
-.field public c:Lnlf;
+.field public final synthetic c:Landroid/widget/ScrollView;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
-
-    new-instance v0, Lnid;
-
-    invoke-direct {v0}, Lnid;-><init>()V
-
-    sput-object v0, Lnid;->d:Lnid;
-
-    const-class v1, Lnid;
-
-    invoke-static {v1, v0}, Lnws;->aa(Ljava/lang/Class;Lnws;)V
-
-    return-void
-.end method
-
-.method private constructor <init>()V
+.method public synthetic constructor <init>(Lcom/google/android/libraries/social/licenses/LicenseActivity;ILandroid/widget/ScrollView;)V
     .locals 0
 
-    invoke-direct {p0}, Lnws;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lnid;->a:Lcom/google/android/libraries/social/licenses/LicenseActivity;
+
+    iput p2, p0, Lnid;->b:I
+
+    iput-object p3, p0, Lnid;->c:Landroid/widget/ScrollView;
 
     return-void
 .end method
 
 
 # virtual methods
-.method protected final a(ILjava/lang/Object;)Ljava/lang/Object;
-    .locals 3
+.method public final run()V
+    .locals 4
 
-    add-int/lit8 p1, p1, -0x1
+    iget-object v0, p0, Lnid;->a:Lcom/google/android/libraries/social/licenses/LicenseActivity;
 
-    const/4 p2, 0x1
+    iget v1, p0, Lnid;->b:I
 
-    packed-switch p1, :pswitch_data_0
+    iget-object v2, p0, Lnid;->c:Landroid/widget/ScrollView;
 
-    :pswitch_0
-    const/4 p1, 0x0
+    const v3, 0x7f0b0190
 
-    return-object p1
+    invoke-virtual {v0, v3}, Lih;->findViewById(I)Landroid/view/View;
 
-    :pswitch_1
-    sget-object p1, Lnid;->e:Lnyf;
+    move-result-object v0
 
-    if-nez p1, :cond_1
+    check-cast v0, Landroid/widget/TextView;
 
-    const-class p2, Lnid;
+    invoke-virtual {v0}, Landroid/widget/TextView;->getLayout()Landroid/text/Layout;
 
-    monitor-enter p2
+    move-result-object v0
 
-    :try_start_0
-    sget-object p1, Lnid;->e:Lnyf;
+    if-eqz v0, :cond_0
 
-    if-nez p1, :cond_0
+    const/4 v3, 0x0
 
-    new-instance p1, Lnwo;
+    invoke-virtual {v0, v1}, Landroid/text/Layout;->getLineForOffset(I)I
 
-    sget-object v0, Lnid;->d:Lnid;
+    move-result v1
 
-    invoke-direct {p1, v0}, Lnwo;-><init>(Lnws;)V
+    invoke-virtual {v0, v1}, Landroid/text/Layout;->getLineTop(I)I
 
-    sput-object p1, Lnid;->e:Lnyf;
+    move-result v0
+
+    invoke-virtual {v2, v3, v0}, Landroid/widget/ScrollView;->scrollTo(II)V
 
     :cond_0
-    monitor-exit p2
-
-    goto :goto_0
-
-    :catchall_0
-    move-exception p1
-
-    monitor-exit p2
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw p1
-
-    :cond_1
-    :goto_0
-    return-object p1
-
-    :pswitch_2
-    sget-object p1, Lnid;->d:Lnid;
-
-    return-object p1
-
-    :pswitch_3
-    new-instance p1, Lnwn;
-
-    sget-object p2, Lnid;->d:Lnid;
-
-    invoke-direct {p1, p2}, Lnwn;-><init>(Lnws;)V
-
-    return-object p1
-
-    :pswitch_4
-    new-instance p1, Lnid;
-
-    invoke-direct {p1}, Lnid;-><init>()V
-
-    return-object p1
-
-    :pswitch_5
-    const-string p1, "a"
-
-    const-string v0, "\u0001\u0002\u0000\u0001\u0001\u0002\u0002\u0000\u0000\u0000\u0001\u100c\u0000\u0002\u1009\u0001"
-
-    const/4 v1, 0x4
-
-    new-array v1, v1, [Ljava/lang/Object;
-
-    const/4 v2, 0x0
-
-    aput-object p1, v1, v2
-
-    const-string p1, "b"
-
-    aput-object p1, v1, p2
-
-    const/4 p1, 0x2
-
-    sget-object p2, Lnia;->c:Lnww;
-
-    aput-object p2, v1, p1
-
-    const/4 p1, 0x3
-
-    const-string p2, "c"
-
-    aput-object p2, v1, p1
-
-    sget-object p1, Lnid;->d:Lnid;
-
-    invoke-static {p1, v0, v1}, Lnid;->X(Lnxy;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object p1
-
-    return-object p1
-
-    :pswitch_6
-    invoke-static {p2}, Ljava/lang/Byte;->valueOf(B)Ljava/lang/Byte;
-
-    move-result-object p1
-
-    return-object p1
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_6
-        :pswitch_0
-        :pswitch_5
-        :pswitch_4
-        :pswitch_3
-        :pswitch_2
-        :pswitch_1
-    .end packed-switch
+    return-void
 .end method

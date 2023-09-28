@@ -1,228 +1,111 @@
 .class final Lnel;
-.super Lned;
-
-# interfaces
-.implements Ljava/io/Serializable;
-
-
-# instance fields
-.field private final a:Ljava/security/MessageDigest;
-
-.field private final b:I
-
-.field private final c:Z
-
-.field private final d:Ljava/lang/String;
+.super Lner;
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 2
-
-    invoke-direct {p0}, Lned;-><init>()V
-
-    const-string v0, "SHA-256"
-
-    invoke-static {v0}, Lnel;->b(Ljava/lang/String;)Ljava/security/MessageDigest;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lnel;->a:Ljava/security/MessageDigest;
-
-    invoke-virtual {v0}, Ljava/security/MessageDigest;->getDigestLength()I
-
-    move-result v1
-
-    iput v1, p0, Lnel;->b:I
-
-    const-string v1, "Hashing.sha256()"
-
-    iput-object v1, p0, Lnel;->d:Ljava/lang/String;
-
-    invoke-static {v0}, Lnel;->c(Ljava/security/MessageDigest;)Z
-
-    move-result v0
-
-    iput-boolean v0, p0, Lnel;->c:Z
-
-    return-void
-.end method
-
-.method public constructor <init>(Ljava/lang/String;I)V
-    .locals 3
-
-    invoke-direct {p0}, Lned;-><init>()V
-
-    const-string v0, "Hashing.sha256()"
-
-    iput-object v0, p0, Lnel;->d:Ljava/lang/String;
-
-    invoke-static {p1}, Lnel;->b(Ljava/lang/String;)Ljava/security/MessageDigest;
-
-    move-result-object p1
-
-    iput-object p1, p0, Lnel;->a:Ljava/security/MessageDigest;
-
-    invoke-virtual {p1}, Ljava/security/MessageDigest;->getDigestLength()I
-
-    move-result v0
-
-    const/4 v1, 0x4
-
-    const/4 v2, 0x0
-
-    if-lt p2, v1, :cond_0
-
-    if-gt p2, v0, :cond_0
-
-    const/4 v2, 0x1
-
-    goto :goto_0
-
-    :cond_0
-    :goto_0
-    const-string v1, "bytes (%s) must be >= 4 and < %s"
-
-    invoke-static {v2, v1, p2, v0}, Lmoz;->k(ZLjava/lang/String;II)V
-
-    iput p2, p0, Lnel;->b:I
-
-    invoke-static {p1}, Lnel;->c(Ljava/security/MessageDigest;)Z
-
-    move-result p1
-
-    iput-boolean p1, p0, Lnel;->c:Z
-
-    return-void
-.end method
-
-.method private static b(Ljava/lang/String;)Ljava/security/MessageDigest;
-    .locals 1
-
-    :try_start_0
-    invoke-static {p0}, Ljava/security/MessageDigest;->getInstance(Ljava/lang/String;)Ljava/security/MessageDigest;
-
-    move-result-object p0
-    :try_end_0
-    .catch Ljava/security/NoSuchAlgorithmException; {:try_start_0 .. :try_end_0} :catch_0
-
-    return-object p0
-
-    :catch_0
-    move-exception p0
-
-    new-instance v0, Ljava/lang/AssertionError;
-
-    invoke-direct {v0, p0}, Ljava/lang/AssertionError;-><init>(Ljava/lang/Object;)V
-
-    throw v0
-.end method
-
-.method private static c(Ljava/security/MessageDigest;)Z
+.method public constructor <init>(Lnep;Ljava/lang/String;Ljava/lang/Boolean;Z)V
     .locals 0
 
-    :try_start_0
-    invoke-virtual {p0}, Ljava/security/MessageDigest;->clone()Ljava/lang/Object;
-    :try_end_0
-    .catch Ljava/lang/CloneNotSupportedException; {:try_start_0 .. :try_end_0} :catch_0
+    invoke-direct {p0, p1, p2, p3, p4}, Lner;-><init>(Lnep;Ljava/lang/String;Ljava/lang/Object;Z)V
 
-    const/4 p0, 0x1
-
-    return p0
-
-    :catch_0
-    move-exception p0
-
-    const/4 p0, 0x0
-
-    return p0
-.end method
-
-.method private readObject(Ljava/io/ObjectInputStream;)V
-    .locals 1
-
-    new-instance p1, Ljava/io/InvalidObjectException;
-
-    const-string v0, "Use SerializedForm"
-
-    invoke-direct {p1, v0}, Ljava/io/InvalidObjectException;-><init>(Ljava/lang/String;)V
-
-    throw p1
+    return-void
 .end method
 
 
 # virtual methods
-.method public final a()Lndd;
-    .locals 3
+.method public final bridge synthetic a(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 4
 
-    iget-boolean v0, p0, Lnel;->c:Z
+    sget-object v0, Lkzv;->c:Ljava/util/regex/Pattern;
+
+    invoke-virtual {v0, p1}, Ljava/util/regex/Pattern;->matcher(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/util/regex/Matcher;->matches()Z
+
+    move-result v0
 
     if-eqz v0, :cond_0
 
-    :try_start_0
-    new-instance v0, Lnej;
+    const/4 p1, 0x1
 
-    iget-object v1, p0, Lnel;->a:Ljava/security/MessageDigest;
+    invoke-static {p1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
-    invoke-virtual {v1}, Ljava/security/MessageDigest;->clone()Ljava/lang/Object;
+    move-result-object p1
 
-    move-result-object v1
-
-    check-cast v1, Ljava/security/MessageDigest;
-
-    iget v2, p0, Lnel;->b:I
-
-    invoke-direct {v0, v1, v2}, Lnej;-><init>(Ljava/security/MessageDigest;I)V
-    :try_end_0
-    .catch Ljava/lang/CloneNotSupportedException; {:try_start_0 .. :try_end_0} :catch_0
-
-    return-object v0
-
-    :catch_0
-    move-exception v0
+    goto :goto_0
 
     :cond_0
-    new-instance v0, Lnej;
+    sget-object v0, Lkzv;->d:Ljava/util/regex/Pattern;
 
-    iget-object v1, p0, Lnel;->a:Ljava/security/MessageDigest;
+    invoke-virtual {v0, p1}, Ljava/util/regex/Pattern;->matcher(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;
 
-    invoke-virtual {v1}, Ljava/security/MessageDigest;->getAlgorithm()Ljava/lang/String;
+    move-result-object v0
 
-    move-result-object v1
+    invoke-virtual {v0}, Ljava/util/regex/Matcher;->matches()Z
 
-    invoke-static {v1}, Lnel;->b(Ljava/lang/String;)Ljava/security/MessageDigest;
+    move-result v0
 
-    move-result-object v1
+    if-eqz v0, :cond_1
 
-    iget v2, p0, Lnel;->b:I
+    const/4 p1, 0x0
 
-    invoke-direct {v0, v1, v2}, Lnej;-><init>(Ljava/security/MessageDigest;I)V
+    invoke-static {p1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
-    return-object v0
-.end method
+    move-result-object p1
 
-.method public final toString()Ljava/lang/String;
-    .locals 1
+    goto :goto_0
 
-    iget-object v0, p0, Lnel;->d:Ljava/lang/String;
+    :cond_1
+    invoke-super {p0}, Lner;->f()Ljava/lang/String;
 
-    return-object v0
-.end method
+    move-result-object v0
 
-.method writeReplace()Ljava/lang/Object;
-    .locals 3
-
-    new-instance v0, Lnek;
-
-    iget-object v1, p0, Lnel;->a:Ljava/security/MessageDigest;
-
-    invoke-virtual {v1}, Ljava/security/MessageDigest;->getAlgorithm()Ljava/lang/String;
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v1
 
-    iget v2, p0, Lnel;->b:I
+    invoke-virtual {v1}, Ljava/lang/String;->length()I
 
-    invoke-direct {v0, v1, v2}, Lnek;-><init>(Ljava/lang/String;I)V
+    move-result v1
 
-    return-object v0
+    check-cast p1, Ljava/lang/String;
+
+    invoke-virtual {p1}, Ljava/lang/String;->length()I
+
+    move-result v2
+
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    add-int/lit8 v1, v1, 0x1c
+
+    add-int/2addr v1, v2
+
+    invoke-direct {v3, v1}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string v1, "Invalid boolean value for "
+
+    invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v0, ": "
+
+    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v3, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p1
+
+    const-string v0, "PhenotypeFlag"
+
+    invoke-static {v0, p1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+
+    const/4 p1, 0x0
+
+    :goto_0
+    return-object p1
 .end method

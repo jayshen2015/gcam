@@ -90,17 +90,7 @@
     return-void
 .end method
 
-.method public final e(I)V
-    .locals 2
-
-    iget-wide v0, p0, Lcom/google/googlex/gcam/Gcam;->a:J
-
-    invoke-static {v0, v1, p0, p1}, Lcom/google/googlex/gcam/GcamModuleJNI;->Gcam_FlushTemporalBinning(JLcom/google/googlex/gcam/Gcam;I)V
-
-    return-void
-.end method
-
-.method public final declared-synchronized f()V
+.method public final declared-synchronized e()V
     .locals 5
 
     monitor-enter p0
@@ -142,15 +132,7 @@
     throw v0
 .end method
 
-.method protected final finalize()V
-    .locals 0
-
-    invoke-virtual {p0}, Lcom/google/googlex/gcam/Gcam;->f()V
-
-    return-void
-.end method
-
-.method public final g()Z
+.method public final f()Z
     .locals 2
 
     iget-wide v0, p0, Lcom/google/googlex/gcam/Gcam;->a:J
@@ -160,4 +142,12 @@
     move-result v0
 
     return v0
+.end method
+
+.method protected final finalize()V
+    .locals 0
+
+    invoke-virtual {p0}, Lcom/google/googlex/gcam/Gcam;->e()V
+
+    return-void
 .end method

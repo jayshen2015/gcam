@@ -1,30 +1,22 @@
 .class public final Lhbz;
-.super Lkfg;
+.super Ljava/lang/Object;
 
 
-# instance fields
-.field final synthetic a:Lhsh;
+# static fields
+.field public static final a:Lgvo;
 
 
 # direct methods
-.method public constructor <init>(Lhsh;[B)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 2
 
-    iput-object p1, p0, Lhbz;->a:Lhsh;
+    new-instance v0, Lgvo;
 
-    invoke-direct {p0}, Lkfg;-><init>()V
+    const/16 v1, 0x8
 
-    return-void
-.end method
+    invoke-direct {v0, v1}, Lgvo;-><init>(I)V
 
-
-# virtual methods
-.method public final bC(Lkou;)V
-    .locals 1
-
-    iget-object v0, p0, Lhbz;->a:Lhsh;
-
-    invoke-virtual {v0, p1}, Lhsh;->f(Lkou;)V
+    sput-object v0, Lhbz;->a:Lgvo;
 
     return-void
 .end method

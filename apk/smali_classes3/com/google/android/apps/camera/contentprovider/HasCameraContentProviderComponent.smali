@@ -3,7 +3,7 @@
 
 
 # virtual methods
-.method public abstract cameraContentProviderComponent(Ldja;)Ldix;
+.method public abstract cameraContentProviderComponent(Ldev;)Lder;
 .end method
 
 .method public abstract initAppComponent()V

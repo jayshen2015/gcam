@@ -2,702 +2,142 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Liez;
+.implements Lj$/util/function/Consumer;
 
 
 # instance fields
-.field public final synthetic a:Life;
+.field public final synthetic a:Lies;
 
 .field private final synthetic b:I
 
 
 # direct methods
-.method public synthetic constructor <init>(Life;I)V
+.method public synthetic constructor <init>(Lies;I)V
     .locals 0
 
     iput p2, p0, Lier;->b:I
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lier;->a:Life;
+    iput-object p1, p0, Lier;->a:Lies;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final accept(Ljava/lang/Object;Ljava/lang/Object;)V
-    .locals 6
+.method public final accept(Ljava/lang/Object;)V
+    .locals 3
 
     iget v0, p0, Lier;->b:I
 
-    const/16 v1, 0x1f4
+    const/4 v1, 0x1
 
-    const/16 v2, 0x190
-
-    const/16 v3, 0xc8
-
-    const/16 v4, 0xfa
-
-    const/16 v5, 0x32
+    const/4 v2, 0x0
 
     packed-switch v0, :pswitch_data_0
 
-    iget-object v0, p0, Lier;->a:Life;
+    iget-object v0, p0, Lier;->a:Lies;
 
-    check-cast p1, Lifr;
+    check-cast p1, Landroid/animation/Animator;
 
-    check-cast p2, Lifr;
-
-    iget-object p1, v0, Life;->c:Landroid/animation/ValueAnimator;
-
-    invoke-virtual {v0, p1}, Life;->c(Landroid/animation/Animator;)Lifd;
-
-    move-result-object p1
-
-    invoke-virtual {p1, v4}, Lifd;->d(I)V
-
-    invoke-virtual {p1}, Lifd;->e()V
-
-    invoke-virtual {p1}, Lifd;->i()V
-
-    iget-object p1, v0, Life;->h:Landroid/animation/ValueAnimator;
-
-    invoke-virtual {v0, p1}, Life;->c(Landroid/animation/Animator;)Lifd;
-
-    move-result-object p1
-
-    invoke-virtual {p1, v4}, Lifd;->d(I)V
-
-    invoke-virtual {p1}, Lifd;->e()V
-
-    iget-object p1, v0, Life;->g:Landroid/animation/ValueAnimator;
-
-    invoke-virtual {v0, p1}, Life;->c(Landroid/animation/Animator;)Lifd;
-
-    move-result-object p1
-
-    invoke-virtual {p1, v4}, Lifd;->d(I)V
-
-    iget-object p2, p2, Lifr;->l:Lmqp;
-
-    invoke-virtual {p1, p2}, Lifd;->c(Lmqp;)V
+    invoke-virtual {v0, v1}, Lies;->f(Z)V
 
     return-void
 
     :pswitch_0
-    iget-object v0, p0, Lier;->a:Life;
+    iget-object v0, p0, Lier;->a:Lies;
 
-    check-cast p1, Lifr;
+    check-cast p1, Landroid/animation/Animator;
 
-    check-cast p2, Lifr;
+    invoke-virtual {v0, v2}, Lies;->setVisibility(I)V
 
-    sget-object v1, Liem;->b:Liem;
+    invoke-virtual {v0, v2}, Lies;->f(Z)V
 
-    invoke-static {p1, v1}, Life;->d(Lifr;Liem;)Lifr;
+    invoke-virtual {v0, v2}, Lies;->e(I)V
 
-    move-result-object p1
-
-    invoke-virtual {v0, p1, p2}, Life;->a(Lifr;Lifr;)Landroid/animation/AnimatorSet;
+    invoke-virtual {v0, v2, v2, v2, v2}, Lies;->setPadding(IIII)V
 
     return-void
 
     :pswitch_1
-    iget-object v0, p0, Lier;->a:Life;
+    iget-object v0, p0, Lier;->a:Lies;
 
-    check-cast p1, Lifr;
+    check-cast p1, Landroid/animation/Animator;
 
-    check-cast p2, Lifr;
+    invoke-virtual {v0, v1}, Lies;->f(Z)V
 
-    iget-object p1, v0, Life;->g:Landroid/animation/ValueAnimator;
+    sget-object p1, Loih;->a:Loih;
 
-    invoke-virtual {v0, p1}, Life;->c(Landroid/animation/Animator;)Lifd;
-
-    move-result-object p1
-
-    invoke-virtual {p1, v1}, Lifd;->d(I)V
-
-    iget-object p2, p2, Lifr;->l:Lmqp;
-
-    invoke-virtual {p1, p2}, Lifd;->h(Lmqp;)V
-
-    iget-object p1, v0, Life;->h:Landroid/animation/ValueAnimator;
-
-    invoke-virtual {v0, p1}, Life;->c(Landroid/animation/Animator;)Lifd;
-
-    move-result-object p1
-
-    invoke-virtual {p1, v4}, Lifd;->d(I)V
+    invoke-virtual {v0, p1}, Lies;->g(Lojc;)V
 
     return-void
 
     :pswitch_2
-    iget-object v0, p0, Lier;->a:Life;
+    iget-object v0, p0, Lier;->a:Lies;
 
-    check-cast p1, Lifr;
+    check-cast p1, Landroid/animation/Animator;
 
-    check-cast p2, Lifr;
+    invoke-virtual {v0, v2}, Lies;->setVisibility(I)V
 
-    invoke-virtual {v0, p2}, Life;->f(Lifr;)V
+    invoke-virtual {v0, v2}, Lies;->f(Z)V
+
+    sget-object p1, Liek;->a:Landroid/graphics/ColorMatrixColorFilter;
+
+    invoke-static {p1}, Lojc;->i(Ljava/lang/Object;)Lojc;
+
+    move-result-object p1
+
+    invoke-virtual {v0, p1}, Lies;->g(Lojc;)V
+
+    iget-object p1, v0, Lies;->b:Ljava/util/ArrayList;
+
+    invoke-virtual {p1}, Ljava/util/ArrayList;->size()I
+
+    move-result p1
+
+    invoke-virtual {v0, p1}, Lies;->e(I)V
+
+    const p1, 0x7f070550
+
+    invoke-virtual {v0, p1}, Lies;->a(I)I
+
+    move-result p1
+
+    const v1, 0x7f070548
+
+    invoke-virtual {v0, v1}, Lies;->a(I)I
+
+    move-result v1
+
+    invoke-virtual {v0, v2, p1, v2, v1}, Lies;->setPadding(IIII)V
 
     return-void
 
     :pswitch_3
-    iget-object v0, p0, Lier;->a:Life;
+    iget-object v0, p0, Lier;->a:Lies;
 
-    check-cast p1, Lifr;
+    check-cast p1, Landroid/animation/Animator;
 
-    check-cast p2, Lifr;
-
-    iget-object p1, v0, Life;->f:Landroid/animation/ValueAnimator;
-
-    invoke-virtual {v0, p1}, Life;->c(Landroid/animation/Animator;)Lifd;
-
-    move-result-object p1
-
-    invoke-virtual {p1, v5}, Lifd;->d(I)V
-
-    invoke-virtual {p1}, Lifd;->e()V
-
-    iget-object p1, v0, Life;->i:Landroid/animation/ValueAnimator;
-
-    invoke-virtual {v0, p1}, Life;->c(Landroid/animation/Animator;)Lifd;
-
-    move-result-object p1
-
-    invoke-virtual {p1, v5}, Lifd;->d(I)V
-
-    invoke-virtual {p1}, Lifd;->b()V
-
-    iget-object p1, v0, Life;->g:Landroid/animation/ValueAnimator;
-
-    invoke-virtual {v0, p1}, Life;->c(Landroid/animation/Animator;)Lifd;
-
-    move-result-object p1
-
-    iget-object p2, p2, Lifr;->l:Lmqp;
-
-    invoke-virtual {p1, p2}, Lifd;->h(Lmqp;)V
+    invoke-virtual {v0, v2}, Lies;->f(Z)V
 
     return-void
 
     :pswitch_4
-    iget-object v0, p0, Lier;->a:Life;
+    iget-object v0, p0, Lier;->a:Lies;
 
-    check-cast p1, Lifr;
+    check-cast p1, Landroid/animation/Animator;
 
-    check-cast p2, Lifr;
+    const/16 p1, 0x8
 
-    iget-object p1, v0, Life;->c:Landroid/animation/ValueAnimator;
-
-    invoke-virtual {v0, p1}, Life;->c(Landroid/animation/Animator;)Lifd;
-
-    move-result-object p1
-
-    invoke-virtual {p1, v2}, Lifd;->d(I)V
-
-    iget-object p1, v0, Life;->d:Landroid/animation/ValueAnimator;
-
-    invoke-virtual {v0, p1}, Life;->c(Landroid/animation/Animator;)Lifd;
-
-    move-result-object p1
-
-    invoke-virtual {p1, v3}, Lifd;->d(I)V
-
-    iget-object p1, v0, Life;->j:Landroid/animation/ValueAnimator;
-
-    invoke-virtual {v0, p1}, Life;->c(Landroid/animation/Animator;)Lifd;
-
-    move-result-object p1
-
-    invoke-virtual {p1, v3}, Lifd;->d(I)V
-
-    invoke-virtual {p1}, Lifd;->i()V
-
-    iget-object p1, v0, Life;->g:Landroid/animation/ValueAnimator;
-
-    invoke-virtual {v0, p1}, Life;->c(Landroid/animation/Animator;)Lifd;
-
-    move-result-object p1
-
-    iget-object p2, p2, Lifr;->l:Lmqp;
-
-    invoke-virtual {p1, p2}, Lifd;->c(Lmqp;)V
+    invoke-virtual {v0, p1}, Lies;->setVisibility(I)V
 
     return-void
 
-    :pswitch_5
-    iget-object v0, p0, Lier;->a:Life;
-
-    check-cast p1, Lifr;
-
-    check-cast p2, Lifr;
-
-    iget-object p1, v0, Life;->h:Landroid/animation/ValueAnimator;
-
-    invoke-virtual {v0, p1}, Life;->c(Landroid/animation/Animator;)Lifd;
-
-    move-result-object p1
-
-    const/16 p2, 0x12c
-
-    invoke-virtual {p1, p2}, Lifd;->d(I)V
-
-    iget-object p1, v0, Life;->c:Landroid/animation/ValueAnimator;
-
-    invoke-virtual {v0, p1}, Life;->c(Landroid/animation/Animator;)Lifd;
-
-    move-result-object p1
-
-    invoke-virtual {p1, p2}, Lifd;->d(I)V
-
-    iget-object p1, v0, Life;->n:Landroid/animation/ValueAnimator;
-
-    invoke-virtual {v0, p1}, Life;->c(Landroid/animation/Animator;)Lifd;
-
-    move-result-object p1
-
-    invoke-virtual {p1, v3}, Lifd;->d(I)V
-
-    iget-object p1, v0, Life;->m:Landroid/animation/ValueAnimator;
-
-    invoke-virtual {v0, p1}, Life;->c(Landroid/animation/Animator;)Lifd;
-
-    move-result-object p1
-
-    invoke-virtual {p1, p2}, Lifd;->d(I)V
-
-    iget-object p1, v0, Life;->g:Landroid/animation/ValueAnimator;
-
-    invoke-virtual {v0, p1}, Life;->c(Landroid/animation/Animator;)Lifd;
-
-    move-result-object p1
-
-    invoke-virtual {p1, p2}, Lifd;->d(I)V
-
-    return-void
-
-    :pswitch_6
-    iget-object v0, p0, Lier;->a:Life;
-
-    check-cast p1, Lifr;
-
-    check-cast p2, Lifr;
-
-    iget-object p1, v0, Life;->f:Landroid/animation/ValueAnimator;
-
-    invoke-virtual {v0, p1}, Life;->c(Landroid/animation/Animator;)Lifd;
-
-    move-result-object p1
-
-    invoke-virtual {p1, v5}, Lifd;->d(I)V
-
-    invoke-virtual {p1}, Lifd;->e()V
-
-    iget-object p1, v0, Life;->i:Landroid/animation/ValueAnimator;
-
-    invoke-virtual {v0, p1}, Life;->c(Landroid/animation/Animator;)Lifd;
-
-    move-result-object p1
-
-    invoke-virtual {p1, v5}, Lifd;->d(I)V
-
-    invoke-virtual {p1}, Lifd;->b()V
-
-    return-void
-
-    :pswitch_7
-    iget-object v0, p0, Lier;->a:Life;
-
-    check-cast p1, Lifr;
-
-    check-cast p2, Lifr;
-
-    invoke-virtual {v0}, Life;->g()V
-
-    return-void
-
-    :pswitch_8
-    iget-object v0, p0, Lier;->a:Life;
-
-    check-cast p1, Lifr;
-
-    check-cast p2, Lifr;
-
-    invoke-virtual {v0, p2}, Life;->i(Lifr;)V
-
-    return-void
-
-    :pswitch_9
-    iget-object v0, p0, Lier;->a:Life;
-
-    check-cast p1, Lifr;
-
-    check-cast p2, Lifr;
-
-    iget-object p1, v0, Life;->f:Landroid/animation/ValueAnimator;
-
-    invoke-virtual {v0, p1}, Life;->c(Landroid/animation/Animator;)Lifd;
-
-    move-result-object p1
-
-    invoke-virtual {p1, v5}, Lifd;->d(I)V
-
-    invoke-virtual {p1}, Lifd;->e()V
-
-    iget-object p1, v0, Life;->i:Landroid/animation/ValueAnimator;
-
-    invoke-virtual {v0, p1}, Life;->c(Landroid/animation/Animator;)Lifd;
-
-    move-result-object p1
-
-    invoke-virtual {p1, v5}, Lifd;->d(I)V
-
-    invoke-virtual {p1}, Lifd;->b()V
-
-    iget-object p1, v0, Life;->g:Landroid/animation/ValueAnimator;
-
-    invoke-virtual {v0, p1}, Life;->c(Landroid/animation/Animator;)Lifd;
-
-    move-result-object p1
-
-    iget-object p2, p2, Lifr;->l:Lmqp;
-
-    invoke-virtual {p1, p2}, Lifd;->h(Lmqp;)V
-
-    return-void
-
-    :pswitch_a
-    iget-object v0, p0, Lier;->a:Life;
-
-    check-cast p1, Lifr;
-
-    check-cast p2, Lifr;
-
-    iget-object p1, v0, Life;->f:Landroid/animation/ValueAnimator;
-
-    invoke-virtual {v0, p1}, Life;->c(Landroid/animation/Animator;)Lifd;
-
-    move-result-object p1
-
-    invoke-virtual {p1, v5}, Lifd;->d(I)V
-
-    invoke-virtual {p1}, Lifd;->e()V
-
-    iget-object p1, v0, Life;->i:Landroid/animation/ValueAnimator;
-
-    invoke-virtual {v0, p1}, Life;->c(Landroid/animation/Animator;)Lifd;
-
-    move-result-object p1
-
-    invoke-virtual {p1, v5}, Lifd;->d(I)V
-
-    invoke-virtual {p1}, Lifd;->b()V
-
-    return-void
-
-    :pswitch_b
-    iget-object v0, p0, Lier;->a:Life;
-
-    check-cast p1, Lifr;
-
-    check-cast p2, Lifr;
-
-    iget-object p1, p2, Lifr;->v:Liem;
-
-    sget-object v2, Liem;->J:Liem;
-
-    invoke-virtual {p1, v2}, Liem;->equals(Ljava/lang/Object;)Z
-
-    move-result p1
-
-    invoke-static {p1}, Lmoz;->p(Z)V
-
-    iget-object p1, v0, Life;->g:Landroid/animation/ValueAnimator;
-
-    invoke-virtual {v0, p1}, Life;->c(Landroid/animation/Animator;)Lifd;
-
-    move-result-object p1
-
-    invoke-virtual {p1, v1}, Lifd;->d(I)V
-
-    iget-object p2, p2, Lifr;->l:Lmqp;
-
-    invoke-virtual {p1, p2}, Lifd;->h(Lmqp;)V
-
-    iget-object p1, v0, Life;->h:Landroid/animation/ValueAnimator;
-
-    invoke-virtual {v0, p1}, Life;->c(Landroid/animation/Animator;)Lifd;
-
-    move-result-object p1
-
-    invoke-virtual {p1, v4}, Lifd;->d(I)V
-
-    return-void
-
-    :pswitch_c
-    iget-object v0, p0, Lier;->a:Life;
-
-    check-cast p1, Lifr;
-
-    check-cast p2, Lifr;
-
-    sget-object v1, Liem;->c:Liem;
-
-    invoke-static {p1, v1}, Life;->d(Lifr;Liem;)Lifr;
-
-    move-result-object p1
-
-    invoke-virtual {v0, p1, p2}, Life;->a(Lifr;Lifr;)Landroid/animation/AnimatorSet;
-
-    return-void
-
-    :pswitch_d
-    iget-object v0, p0, Lier;->a:Life;
-
-    check-cast p1, Lifr;
-
-    check-cast p2, Lifr;
-
-    iget-object p1, v0, Life;->f:Landroid/animation/ValueAnimator;
-
-    invoke-virtual {v0, p1}, Life;->c(Landroid/animation/Animator;)Lifd;
-
-    move-result-object p1
-
-    invoke-virtual {p1, v5}, Lifd;->d(I)V
-
-    invoke-virtual {p1}, Lifd;->e()V
-
-    iget-object p1, v0, Life;->i:Landroid/animation/ValueAnimator;
-
-    invoke-virtual {v0, p1}, Life;->c(Landroid/animation/Animator;)Lifd;
-
-    move-result-object p1
-
-    invoke-virtual {p1, v5}, Lifd;->d(I)V
-
-    invoke-virtual {p1}, Lifd;->b()V
-
-    return-void
-
-    :pswitch_e
-    iget-object v0, p0, Lier;->a:Life;
-
-    check-cast p1, Lifr;
-
-    check-cast p2, Lifr;
-
-    invoke-virtual {v0}, Life;->j()V
-
-    invoke-virtual {v0, p2}, Life;->e(Lifr;)V
-
-    return-void
-
-    :pswitch_f
-    iget-object v0, p0, Lier;->a:Life;
-
-    check-cast p1, Lifr;
-
-    check-cast p2, Lifr;
-
-    iget-object p1, v0, Life;->f:Landroid/animation/ValueAnimator;
-
-    invoke-virtual {v0, p1}, Life;->c(Landroid/animation/Animator;)Lifd;
-
-    move-result-object p1
-
-    invoke-virtual {p1, v5}, Lifd;->d(I)V
-
-    invoke-virtual {p1}, Lifd;->e()V
-
-    iget-object p1, v0, Life;->i:Landroid/animation/ValueAnimator;
-
-    invoke-virtual {v0, p1}, Life;->c(Landroid/animation/Animator;)Lifd;
-
-    move-result-object p1
-
-    invoke-virtual {p1, v5}, Lifd;->d(I)V
-
-    invoke-virtual {p1}, Lifd;->b()V
-
-    return-void
-
-    :pswitch_10
-    iget-object v0, p0, Lier;->a:Life;
-
-    check-cast p1, Lifr;
-
-    check-cast p2, Lifr;
-
-    iget-object p1, v0, Life;->d:Landroid/animation/ValueAnimator;
-
-    invoke-virtual {v0, p1}, Life;->c(Landroid/animation/Animator;)Lifd;
-
-    move-result-object p1
-
-    invoke-virtual {p1, v1}, Lifd;->d(I)V
-
-    iget-object p1, v0, Life;->j:Landroid/animation/ValueAnimator;
-
-    invoke-virtual {v0, p1}, Life;->c(Landroid/animation/Animator;)Lifd;
-
-    move-result-object p1
-
-    invoke-virtual {p1, v3}, Lifd;->d(I)V
-
-    invoke-virtual {p1}, Lifd;->i()V
-
-    iget-object p1, v0, Life;->g:Landroid/animation/ValueAnimator;
-
-    invoke-virtual {v0, p1}, Life;->c(Landroid/animation/Animator;)Lifd;
-
-    move-result-object p1
-
-    invoke-virtual {p1, v4}, Lifd;->d(I)V
-
-    iget-object p2, p2, Lifr;->l:Lmqp;
-
-    invoke-virtual {p1, p2}, Lifd;->c(Lmqp;)V
-
-    return-void
-
-    :pswitch_11
-    iget-object v0, p0, Lier;->a:Life;
-
-    check-cast p1, Lifr;
-
-    check-cast p2, Lifr;
-
-    iget-object p1, v0, Life;->n:Landroid/animation/ValueAnimator;
-
-    invoke-virtual {v0, p1}, Life;->c(Landroid/animation/Animator;)Lifd;
-
-    move-result-object p1
-
-    invoke-virtual {p1, v2}, Lifd;->d(I)V
-
-    iget-object p1, v0, Life;->m:Landroid/animation/ValueAnimator;
-
-    invoke-virtual {v0, p1}, Life;->c(Landroid/animation/Animator;)Lifd;
-
-    move-result-object p1
-
-    const/16 p2, 0x258
-
-    invoke-virtual {p1, p2}, Lifd;->d(I)V
-
-    return-void
-
-    :pswitch_12
-    iget-object v0, p0, Lier;->a:Life;
-
-    check-cast p1, Lifr;
-
-    check-cast p2, Lifr;
-
-    iget-object p1, v0, Life;->i:Landroid/animation/ValueAnimator;
-
-    invoke-virtual {v0, p1}, Life;->c(Landroid/animation/Animator;)Lifd;
-
-    move-result-object p1
-
-    const/16 p2, 0x50
-
-    invoke-virtual {p1, p2}, Lifd;->d(I)V
-
-    iget-object p1, v0, Life;->k:Landroid/animation/ValueAnimator;
-
-    invoke-virtual {v0, p1}, Life;->c(Landroid/animation/Animator;)Lifd;
-
-    move-result-object p1
-
-    invoke-virtual {p1, p2}, Lifd;->d(I)V
-
-    invoke-virtual {p1}, Lifd;->b()V
-
-    iget-object p1, v0, Life;->c:Landroid/animation/ValueAnimator;
-
-    invoke-virtual {v0, p1}, Life;->c(Landroid/animation/Animator;)Lifd;
-
-    move-result-object p1
-
-    invoke-virtual {p1, p2}, Lifd;->d(I)V
-
-    iget-object p1, v0, Life;->n:Landroid/animation/ValueAnimator;
-
-    invoke-virtual {v0, p1}, Life;->c(Landroid/animation/Animator;)Lifd;
-
-    move-result-object p1
-
-    invoke-virtual {p1, p2}, Lifd;->d(I)V
-
-    iget-object p1, v0, Life;->m:Landroid/animation/ValueAnimator;
-
-    invoke-virtual {v0, p1}, Life;->c(Landroid/animation/Animator;)Lifd;
-
-    move-result-object p1
-
-    invoke-virtual {p1, p2}, Lifd;->d(I)V
-
-    return-void
-
-    :pswitch_13
-    iget-object v0, p0, Lier;->a:Life;
-
-    check-cast p1, Lifr;
-
-    check-cast p2, Lifr;
-
-    iget-object p1, v0, Life;->c:Landroid/animation/ValueAnimator;
-
-    invoke-virtual {v0, p1}, Life;->c(Landroid/animation/Animator;)Lifd;
-
-    move-result-object p1
-
-    invoke-virtual {p1, v2}, Lifd;->d(I)V
-
-    iget-object p1, v0, Life;->d:Landroid/animation/ValueAnimator;
-
-    invoke-virtual {v0, p1}, Life;->c(Landroid/animation/Animator;)Lifd;
-
-    move-result-object p1
-
-    invoke-virtual {p1, v3}, Lifd;->d(I)V
-
-    iget-object p1, v0, Life;->g:Landroid/animation/ValueAnimator;
-
-    invoke-virtual {v0, p1}, Life;->c(Landroid/animation/Animator;)Lifd;
-
-    move-result-object p1
-
-    const/16 v0, 0x15e
-
-    invoke-virtual {p1, v0}, Lifd;->d(I)V
-
-    iget-object p2, p2, Lifr;->l:Lmqp;
-
-    invoke-virtual {p1, p2}, Lifd;->c(Lmqp;)V
-
-    return-void
+    nop
 
     :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_13
-        :pswitch_12
-        :pswitch_11
-        :pswitch_10
-        :pswitch_f
-        :pswitch_e
-        :pswitch_d
-        :pswitch_c
-        :pswitch_b
-        :pswitch_a
-        :pswitch_9
-        :pswitch_8
-        :pswitch_7
-        :pswitch_6
-        :pswitch_5
         :pswitch_4
         :pswitch_3
         :pswitch_2
@@ -706,176 +146,58 @@
     .end packed-switch
 .end method
 
-.method public final synthetic andThen(Ljava/util/function/BiConsumer;)Ljava/util/function/BiConsumer;
+.method public final synthetic andThen(Lj$/util/function/Consumer;)Lj$/util/function/Consumer;
     .locals 1
 
     iget v0, p0, Lier;->b:I
 
     packed-switch v0, :pswitch_data_0
 
-    invoke-static {p0, p1}, Lj$/util/function/BiConsumer$-CC;->$default$andThen(Ljava/util/function/BiConsumer;Ljava/util/function/BiConsumer;)Ljava/util/function/BiConsumer;
+    invoke-static {p0, p1}, Lj$/util/function/Consumer$-CC;->$default$andThen(Lj$/util/function/Consumer;Lj$/util/function/Consumer;)Lj$/util/function/Consumer;
 
     move-result-object p1
 
     return-object p1
 
     :pswitch_0
-    invoke-static {p0, p1}, Lj$/util/function/BiConsumer$-CC;->$default$andThen(Ljava/util/function/BiConsumer;Ljava/util/function/BiConsumer;)Ljava/util/function/BiConsumer;
+    invoke-static {p0, p1}, Lj$/util/function/Consumer$-CC;->$default$andThen(Lj$/util/function/Consumer;Lj$/util/function/Consumer;)Lj$/util/function/Consumer;
 
     move-result-object p1
 
     return-object p1
 
     :pswitch_1
-    invoke-static {p0, p1}, Lj$/util/function/BiConsumer$-CC;->$default$andThen(Ljava/util/function/BiConsumer;Ljava/util/function/BiConsumer;)Ljava/util/function/BiConsumer;
+    invoke-static {p0, p1}, Lj$/util/function/Consumer$-CC;->$default$andThen(Lj$/util/function/Consumer;Lj$/util/function/Consumer;)Lj$/util/function/Consumer;
 
     move-result-object p1
 
     return-object p1
 
     :pswitch_2
-    invoke-static {p0, p1}, Lj$/util/function/BiConsumer$-CC;->$default$andThen(Ljava/util/function/BiConsumer;Ljava/util/function/BiConsumer;)Ljava/util/function/BiConsumer;
+    invoke-static {p0, p1}, Lj$/util/function/Consumer$-CC;->$default$andThen(Lj$/util/function/Consumer;Lj$/util/function/Consumer;)Lj$/util/function/Consumer;
 
     move-result-object p1
 
     return-object p1
 
     :pswitch_3
-    invoke-static {p0, p1}, Lj$/util/function/BiConsumer$-CC;->$default$andThen(Ljava/util/function/BiConsumer;Ljava/util/function/BiConsumer;)Ljava/util/function/BiConsumer;
+    invoke-static {p0, p1}, Lj$/util/function/Consumer$-CC;->$default$andThen(Lj$/util/function/Consumer;Lj$/util/function/Consumer;)Lj$/util/function/Consumer;
 
     move-result-object p1
 
     return-object p1
 
     :pswitch_4
-    invoke-static {p0, p1}, Lj$/util/function/BiConsumer$-CC;->$default$andThen(Ljava/util/function/BiConsumer;Ljava/util/function/BiConsumer;)Ljava/util/function/BiConsumer;
+    invoke-static {p0, p1}, Lj$/util/function/Consumer$-CC;->$default$andThen(Lj$/util/function/Consumer;Lj$/util/function/Consumer;)Lj$/util/function/Consumer;
 
     move-result-object p1
 
     return-object p1
 
-    :pswitch_5
-    invoke-static {p0, p1}, Lj$/util/function/BiConsumer$-CC;->$default$andThen(Ljava/util/function/BiConsumer;Ljava/util/function/BiConsumer;)Ljava/util/function/BiConsumer;
-
-    move-result-object p1
-
-    return-object p1
-
-    :pswitch_6
-    invoke-static {p0, p1}, Lj$/util/function/BiConsumer$-CC;->$default$andThen(Ljava/util/function/BiConsumer;Ljava/util/function/BiConsumer;)Ljava/util/function/BiConsumer;
-
-    move-result-object p1
-
-    return-object p1
-
-    :pswitch_7
-    invoke-static {p0, p1}, Lj$/util/function/BiConsumer$-CC;->$default$andThen(Ljava/util/function/BiConsumer;Ljava/util/function/BiConsumer;)Ljava/util/function/BiConsumer;
-
-    move-result-object p1
-
-    return-object p1
-
-    :pswitch_8
-    invoke-static {p0, p1}, Lj$/util/function/BiConsumer$-CC;->$default$andThen(Ljava/util/function/BiConsumer;Ljava/util/function/BiConsumer;)Ljava/util/function/BiConsumer;
-
-    move-result-object p1
-
-    return-object p1
-
-    :pswitch_9
-    invoke-static {p0, p1}, Lj$/util/function/BiConsumer$-CC;->$default$andThen(Ljava/util/function/BiConsumer;Ljava/util/function/BiConsumer;)Ljava/util/function/BiConsumer;
-
-    move-result-object p1
-
-    return-object p1
-
-    :pswitch_a
-    invoke-static {p0, p1}, Lj$/util/function/BiConsumer$-CC;->$default$andThen(Ljava/util/function/BiConsumer;Ljava/util/function/BiConsumer;)Ljava/util/function/BiConsumer;
-
-    move-result-object p1
-
-    return-object p1
-
-    :pswitch_b
-    invoke-static {p0, p1}, Lj$/util/function/BiConsumer$-CC;->$default$andThen(Ljava/util/function/BiConsumer;Ljava/util/function/BiConsumer;)Ljava/util/function/BiConsumer;
-
-    move-result-object p1
-
-    return-object p1
-
-    :pswitch_c
-    invoke-static {p0, p1}, Lj$/util/function/BiConsumer$-CC;->$default$andThen(Ljava/util/function/BiConsumer;Ljava/util/function/BiConsumer;)Ljava/util/function/BiConsumer;
-
-    move-result-object p1
-
-    return-object p1
-
-    :pswitch_d
-    invoke-static {p0, p1}, Lj$/util/function/BiConsumer$-CC;->$default$andThen(Ljava/util/function/BiConsumer;Ljava/util/function/BiConsumer;)Ljava/util/function/BiConsumer;
-
-    move-result-object p1
-
-    return-object p1
-
-    :pswitch_e
-    invoke-static {p0, p1}, Lj$/util/function/BiConsumer$-CC;->$default$andThen(Ljava/util/function/BiConsumer;Ljava/util/function/BiConsumer;)Ljava/util/function/BiConsumer;
-
-    move-result-object p1
-
-    return-object p1
-
-    :pswitch_f
-    invoke-static {p0, p1}, Lj$/util/function/BiConsumer$-CC;->$default$andThen(Ljava/util/function/BiConsumer;Ljava/util/function/BiConsumer;)Ljava/util/function/BiConsumer;
-
-    move-result-object p1
-
-    return-object p1
-
-    :pswitch_10
-    invoke-static {p0, p1}, Lj$/util/function/BiConsumer$-CC;->$default$andThen(Ljava/util/function/BiConsumer;Ljava/util/function/BiConsumer;)Ljava/util/function/BiConsumer;
-
-    move-result-object p1
-
-    return-object p1
-
-    :pswitch_11
-    invoke-static {p0, p1}, Lj$/util/function/BiConsumer$-CC;->$default$andThen(Ljava/util/function/BiConsumer;Ljava/util/function/BiConsumer;)Ljava/util/function/BiConsumer;
-
-    move-result-object p1
-
-    return-object p1
-
-    :pswitch_12
-    invoke-static {p0, p1}, Lj$/util/function/BiConsumer$-CC;->$default$andThen(Ljava/util/function/BiConsumer;Ljava/util/function/BiConsumer;)Ljava/util/function/BiConsumer;
-
-    move-result-object p1
-
-    return-object p1
-
-    :pswitch_13
-    invoke-static {p0, p1}, Lj$/util/function/BiConsumer$-CC;->$default$andThen(Ljava/util/function/BiConsumer;Ljava/util/function/BiConsumer;)Ljava/util/function/BiConsumer;
-
-    move-result-object p1
-
-    return-object p1
+    nop
 
     :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_13
-        :pswitch_12
-        :pswitch_11
-        :pswitch_10
-        :pswitch_f
-        :pswitch_e
-        :pswitch_d
-        :pswitch_c
-        :pswitch_b
-        :pswitch_a
-        :pswitch_9
-        :pswitch_8
-        :pswitch_7
-        :pswitch_6
-        :pswitch_5
         :pswitch_4
         :pswitch_3
         :pswitch_2

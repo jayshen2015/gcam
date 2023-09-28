@@ -1,57 +1,56 @@
-.class public final Lbtv;
+.class public interface abstract Lbtv;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Ljava/util/concurrent/ThreadFactory;
-
-
-# instance fields
-.field private final synthetic a:I
-
-
-# direct methods
-.method public constructor <init>(I)V
-    .locals 0
-
-    iput p1, p0, Lbtv;->a:I
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
-.end method
+.implements Landroid/view/TextureView$SurfaceTextureListener;
+.implements Lfgl;
 
 
 # virtual methods
-.method public final newThread(Ljava/lang/Runnable;)Ljava/lang/Thread;
-    .locals 3
+.method public abstract a()Lojc;
+.end method
 
-    iget v0, p0, Lbtv;->a:I
+.method public abstract b()V
+.end method
 
-    packed-switch v0, :pswitch_data_0
+.method public abstract c()V
+.end method
 
-    new-instance v0, Ljava/lang/Thread;
+.method public abstract d()V
+.end method
 
-    new-instance v1, Lazo;
+.method public abstract e()V
+.end method
 
-    const/16 v2, 0xc
+.method public abstract f()V
+.end method
 
-    invoke-direct {v1, p1, v2}, Lazo;-><init>(Ljava/lang/Runnable;I)V
+.method public abstract g()V
+.end method
 
-    const-string p1, "glide-active-resources"
+.method public abstract h(Z)V
+.end method
 
-    invoke-direct {v0, v1, p1}, Ljava/lang/Thread;-><init>(Ljava/lang/Runnable;Ljava/lang/String;)V
+.method public abstract i(Z)V
+.end method
 
-    return-object v0
+.method public abstract j()V
+.end method
 
-    :pswitch_0
-    new-instance v0, Lbtu;
+.method public abstract k(Z)V
+.end method
 
-    invoke-direct {v0, p1}, Lbtu;-><init>(Ljava/lang/Runnable;)V
+.method public abstract l()V
+.end method
 
-    return-object v0
+.method public abstract m()V
+.end method
 
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+.method public abstract n()V
+.end method
+
+.method public abstract o()V
+.end method
+
+.method public abstract p(ILjio;)V
 .end method

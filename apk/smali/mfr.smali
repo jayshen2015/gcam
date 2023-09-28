@@ -1,32 +1,33 @@
-.class public final Lmfr;
-.super Landroid/animation/AnimatorListenerAdapter;
+.class public final synthetic Lmfr;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field final synthetic a:Lcom/google/android/material/behavior/HideBottomViewOnScrollBehavior;
+.field public final synthetic a:Lmfv;
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/material/behavior/HideBottomViewOnScrollBehavior;)V
+.method public synthetic constructor <init>(Lmfv;)V
     .locals 0
 
-    iput-object p1, p0, Lmfr;->a:Lcom/google/android/material/behavior/HideBottomViewOnScrollBehavior;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
+    iput-object p1, p0, Lmfr;->a:Lmfv;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onAnimationEnd(Landroid/animation/Animator;)V
+.method public final run()V
     .locals 1
 
-    iget-object p1, p0, Lmfr;->a:Lcom/google/android/material/behavior/HideBottomViewOnScrollBehavior;
+    iget-object v0, p0, Lmfr;->a:Lmfv;
 
-    const/4 v0, 0x0
-
-    iput-object v0, p1, Lcom/google/android/material/behavior/HideBottomViewOnScrollBehavior;->a:Landroid/view/ViewPropertyAnimator;
+    invoke-virtual {v0}, Lmfv;->h()V
 
     return-void
 .end method

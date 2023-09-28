@@ -1,156 +1,181 @@
 .class public final Lips;
-.super Lnws;
+.super Ljava/lang/Object;
 
 # interfaces
-.implements Lnxz;
-
-
-# static fields
-.field public static final b:Lips;
-
-.field private static volatile c:Lnyf;
+.implements Lpys;
 
 
 # instance fields
-.field public a:F
+.field private final a:Lqkg;
+
+.field private final b:Lqkg;
+
+.field private final c:Lqkg;
+
+.field private final d:Lqkg;
+
+.field private final e:Lqkg;
+
+.field private final f:Lqkg;
+
+.field private final g:Lqkg;
+
+.field private final h:Lqkg;
+
+.field private final i:Lqkg;
+
+.field private final j:Lqkg;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
-
-    new-instance v0, Lips;
-
-    invoke-direct {v0}, Lips;-><init>()V
-
-    sput-object v0, Lips;->b:Lips;
-
-    const-class v1, Lips;
-
-    invoke-static {v1, v0}, Lnws;->aa(Ljava/lang/Class;Lnws;)V
-
-    return-void
-.end method
-
-.method private constructor <init>()V
+.method public constructor <init>(Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;)V
     .locals 0
 
-    invoke-direct {p0}, Lnws;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lips;->a:Lqkg;
+
+    iput-object p2, p0, Lips;->b:Lqkg;
+
+    iput-object p3, p0, Lips;->c:Lqkg;
+
+    iput-object p4, p0, Lips;->d:Lqkg;
+
+    iput-object p5, p0, Lips;->e:Lqkg;
+
+    iput-object p6, p0, Lips;->f:Lqkg;
+
+    iput-object p7, p0, Lips;->g:Lqkg;
+
+    iput-object p8, p0, Lips;->h:Lqkg;
+
+    iput-object p9, p0, Lips;->i:Lqkg;
+
+    iput-object p10, p0, Lips;->j:Lqkg;
 
     return-void
 .end method
 
 
 # virtual methods
-.method protected final a(ILjava/lang/Object;)Ljava/lang/Object;
-    .locals 2
+.method public final a()Lipr;
+    .locals 12
 
-    add-int/lit8 p1, p1, -0x1
+    iget-object v0, p0, Lips;->a:Lqkg;
 
-    const/4 p2, 0x1
+    invoke-interface {v0}, Lqkg;->get()Ljava/lang/Object;
 
-    packed-switch p1, :pswitch_data_0
+    move-result-object v0
 
-    :pswitch_0
-    const/4 p1, 0x0
+    move-object v2, v0
 
-    return-object p1
+    check-cast v2, Lbtt;
 
-    :pswitch_1
-    sget-object p1, Lips;->c:Lnyf;
+    iget-object v0, p0, Lips;->b:Lqkg;
 
-    if-nez p1, :cond_1
+    invoke-interface {v0}, Lqkg;->get()Ljava/lang/Object;
 
-    const-class p2, Lips;
+    move-result-object v0
 
-    monitor-enter p2
+    move-object v3, v0
 
-    :try_start_0
-    sget-object p1, Lips;->c:Lnyf;
+    check-cast v3, Ljava/util/concurrent/Executor;
 
-    if-nez p1, :cond_0
+    iget-object v0, p0, Lips;->c:Lqkg;
 
-    new-instance p1, Lnwo;
+    invoke-interface {v0}, Lqkg;->get()Ljava/lang/Object;
 
-    sget-object v0, Lips;->b:Lips;
+    move-result-object v0
 
-    invoke-direct {p1, v0}, Lnwo;-><init>(Lnws;)V
+    move-object v4, v0
 
-    sput-object p1, Lips;->c:Lnyf;
+    check-cast v4, Llap;
 
-    :cond_0
-    monitor-exit p2
+    iget-object v0, p0, Lips;->d:Lqkg;
 
-    goto :goto_0
+    invoke-interface {v0}, Lqkg;->get()Ljava/lang/Object;
 
-    :catchall_0
-    move-exception p1
+    move-result-object v0
 
-    monitor-exit p2
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    move-object v5, v0
 
-    throw p1
+    check-cast v5, Llar;
 
-    :cond_1
-    :goto_0
-    return-object p1
+    iget-object v0, p0, Lips;->e:Lqkg;
 
-    :pswitch_2
-    sget-object p1, Lips;->b:Lips;
+    invoke-interface {v0}, Lqkg;->get()Ljava/lang/Object;
 
-    return-object p1
+    move-result-object v0
 
-    :pswitch_3
-    new-instance p1, Lnwn;
+    move-object v6, v0
 
-    sget-object p2, Lips;->b:Lips;
+    check-cast v6, Ljhh;
 
-    invoke-direct {p1, p2}, Lnwn;-><init>(Lnws;)V
+    iget-object v0, p0, Lips;->f:Lqkg;
 
-    return-object p1
+    invoke-interface {v0}, Lqkg;->get()Ljava/lang/Object;
 
-    :pswitch_4
-    new-instance p1, Lips;
+    move-result-object v0
 
-    invoke-direct {p1}, Lips;-><init>()V
+    move-object v7, v0
 
-    return-object p1
+    check-cast v7, Lilu;
 
-    :pswitch_5
-    const-string p1, "\u0000\u0001\u0000\u0000\u0001\u0001\u0001\u0000\u0000\u0000\u0001\u0001"
+    iget-object v0, p0, Lips;->g:Lqkg;
 
-    new-array p2, p2, [Ljava/lang/Object;
+    invoke-interface {v0}, Lqkg;->get()Ljava/lang/Object;
 
-    const/4 v0, 0x0
+    move-result-object v0
 
-    const-string v1, "a"
+    move-object v8, v0
 
-    aput-object v1, p2, v0
+    check-cast v8, Likm;
 
-    sget-object v0, Lips;->b:Lips;
+    iget-object v0, p0, Lips;->h:Lqkg;
 
-    invoke-static {v0, p1, p2}, Lips;->X(Lnxy;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {v0}, Lqkg;->get()Ljava/lang/Object;
 
-    move-result-object p1
+    move-result-object v0
 
-    return-object p1
+    move-object v9, v0
 
-    :pswitch_6
-    invoke-static {p2}, Ljava/lang/Byte;->valueOf(B)Ljava/lang/Byte;
+    check-cast v9, Lilx;
 
-    move-result-object p1
+    iget-object v0, p0, Lips;->i:Lqkg;
 
-    return-object p1
+    invoke-interface {v0}, Lqkg;->get()Ljava/lang/Object;
 
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_6
-        :pswitch_0
-        :pswitch_5
-        :pswitch_4
-        :pswitch_3
-        :pswitch_2
-        :pswitch_1
-    .end packed-switch
+    move-result-object v0
+
+    move-object v10, v0
+
+    check-cast v10, Limt;
+
+    iget-object v0, p0, Lips;->j:Lqkg;
+
+    invoke-interface {v0}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    move-object v11, v0
+
+    check-cast v11, Liqj;
+
+    new-instance v0, Lipr;
+
+    move-object v1, v0
+
+    invoke-direct/range {v1 .. v11}, Lipr;-><init>(Lbtt;Ljava/util/concurrent/Executor;Llap;Llar;Ljhh;Lilu;Likm;Lilx;Limt;Liqj;)V
+
+    return-object v0
+.end method
+
+.method public final bridge synthetic get()Ljava/lang/Object;
+    .locals 1
+
+    invoke-virtual {p0}, Lips;->a()Lipr;
+
+    move-result-object v0
+
+    return-object v0
 .end method

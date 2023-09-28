@@ -1,148 +1,51 @@
-.class public final Loev;
-.super Lnws;
+.class final Loev;
+.super Ljava/lang/Object;
 
 # interfaces
-.implements Lnxz;
+.implements Landroid/content/ServiceConnection;
 
 
-# static fields
-.field public static final a:Loev;
-
-.field private static volatile b:Lnyf;
+# instance fields
+.field final synthetic a:Loew;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
+.method public constructor <init>(Loew;)V
+    .locals 0
 
-    new-instance v0, Loev;
+    iput-object p1, p0, Loev;->a:Loew;
 
-    invoke-direct {v0}, Loev;-><init>()V
-
-    sput-object v0, Loev;->a:Loev;
-
-    const-class v1, Loev;
-
-    invoke-static {v1, v0}, Lnws;->aa(Ljava/lang/Class;Lnws;)V
-
-    return-void
-.end method
-
-.method private constructor <init>()V
-    .locals 1
-
-    invoke-direct {p0}, Lnws;-><init>()V
-
-    sget-object v0, Lnwl;->b:Lnwl;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method protected final a(ILjava/lang/Object;)Ljava/lang/Object;
+.method public final onServiceConnected(Landroid/content/ComponentName;Landroid/os/IBinder;)V
     .locals 1
 
-    add-int/lit8 p1, p1, -0x1
+    iget-object p1, p0, Loev;->a:Loew;
 
-    const/4 p2, 0x0
+    new-instance v0, Loet;
 
-    packed-switch p1, :pswitch_data_0
+    invoke-direct {v0, p0, p2}, Loet;-><init>(Loev;Landroid/os/IBinder;)V
 
-    :pswitch_0
-    return-object p2
+    invoke-virtual {p1, v0}, Loew;->d(Loen;)V
 
-    :pswitch_1
-    sget-object p1, Loev;->b:Lnyf;
+    return-void
+.end method
 
-    if-nez p1, :cond_1
+.method public final onServiceDisconnected(Landroid/content/ComponentName;)V
+    .locals 1
 
-    const-class p2, Loev;
+    iget-object p1, p0, Loev;->a:Loew;
 
-    monitor-enter p2
+    new-instance v0, Loeu;
 
-    :try_start_0
-    sget-object p1, Loev;->b:Lnyf;
+    invoke-direct {v0, p0}, Loeu;-><init>(Loev;)V
 
-    if-nez p1, :cond_0
+    invoke-virtual {p1, v0}, Loew;->d(Loen;)V
 
-    new-instance p1, Lnwo;
-
-    sget-object v0, Loev;->a:Loev;
-
-    invoke-direct {p1, v0}, Lnwo;-><init>(Lnws;)V
-
-    sput-object p1, Loev;->b:Lnyf;
-
-    :cond_0
-    monitor-exit p2
-
-    goto :goto_0
-
-    :catchall_0
-    move-exception p1
-
-    monitor-exit p2
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw p1
-
-    :cond_1
-    :goto_0
-    return-object p1
-
-    :pswitch_2
-    sget-object p1, Loev;->a:Loev;
-
-    return-object p1
-
-    :pswitch_3
-    new-instance p1, Lnwn;
-
-    sget-object p2, Loev;->a:Loev;
-
-    invoke-direct {p1, p2}, Lnwn;-><init>(Lnws;)V
-
-    return-object p1
-
-    :pswitch_4
-    new-instance p1, Loev;
-
-    invoke-direct {p1}, Loev;-><init>()V
-
-    return-object p1
-
-    :pswitch_5
-    sget-object p1, Loev;->a:Loev;
-
-    const-string v0, "\u0001\u0000"
-
-    invoke-static {p1, v0, p2}, Loev;->X(Lnxy;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object p1
-
-    return-object p1
-
-    :pswitch_6
-    const/4 p1, 0x1
-
-    invoke-static {p1}, Ljava/lang/Byte;->valueOf(B)Ljava/lang/Byte;
-
-    move-result-object p1
-
-    return-object p1
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_6
-        :pswitch_0
-        :pswitch_5
-        :pswitch_4
-        :pswitch_3
-        :pswitch_2
-        :pswitch_1
-    .end packed-switch
+    return-void
 .end method

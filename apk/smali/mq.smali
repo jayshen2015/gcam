@@ -1,165 +1,149 @@
 .class public Lmq;
-.super Laei;
+.super Landroid/widget/CheckBox;
 
 
 # instance fields
-.field final a:Landroid/support/v7/widget/RecyclerView;
+.field private final a:Lms;
 
-.field public final b:Lmp;
+.field private final b:Lmp;
+
+.field private final c:Lnt;
 
 
 # direct methods
-.method public constructor <init>(Landroid/support/v7/widget/RecyclerView;)V
+.method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
     .locals 1
 
-    invoke-direct {p0}, Laei;-><init>()V
+    invoke-static {p1}, Lrk;->a(Landroid/content/Context;)V
 
-    iput-object p1, p0, Lmq;->a:Landroid/support/v7/widget/RecyclerView;
+    const v0, 0x7f0400bd
 
-    invoke-virtual {p0}, Lmq;->j()Laei;
+    invoke-direct {p0, p1, p2, v0}, Landroid/widget/CheckBox;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
+
+    invoke-virtual {p0}, Lmq;->getContext()Landroid/content/Context;
 
     move-result-object p1
 
-    if-eqz p1, :cond_0
+    invoke-static {p0, p1}, Lri;->d(Landroid/view/View;Landroid/content/Context;)V
 
-    instance-of v0, p1, Lmp;
+    new-instance p1, Lms;
 
-    if-eqz v0, :cond_0
+    invoke-direct {p1, p0}, Lms;-><init>(Landroid/widget/CompoundButton;)V
 
-    check-cast p1, Lmp;
+    iput-object p1, p0, Lmq;->a:Lms;
 
-    iput-object p1, p0, Lmq;->b:Lmp;
+    invoke-virtual {p1, p2, v0}, Lms;->a(Landroid/util/AttributeSet;I)V
 
-    return-void
-
-    :cond_0
     new-instance p1, Lmp;
 
-    invoke-direct {p1, p0}, Lmp;-><init>(Lmq;)V
+    invoke-direct {p1, p0}, Lmp;-><init>(Landroid/view/View;)V
 
     iput-object p1, p0, Lmq;->b:Lmp;
+
+    invoke-virtual {p1, p2, v0}, Lmp;->d(Landroid/util/AttributeSet;I)V
+
+    new-instance p1, Lnt;
+
+    invoke-direct {p1, p0}, Lnt;-><init>(Landroid/widget/TextView;)V
+
+    iput-object p1, p0, Lmq;->c:Lnt;
+
+    invoke-virtual {p1, p2, v0}, Lnt;->b(Landroid/util/AttributeSet;I)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Landroid/view/View;Landroid/view/accessibility/AccessibilityEvent;)V
+.method protected final drawableStateChanged()V
     .locals 1
 
-    invoke-super {p0, p1, p2}, Laei;->a(Landroid/view/View;Landroid/view/accessibility/AccessibilityEvent;)V
-
-    instance-of v0, p1, Landroid/support/v7/widget/RecyclerView;
-
-    if-eqz v0, :cond_0
-
-    invoke-virtual {p0}, Lmq;->k()Z
-
-    move-result v0
-
-    if-nez v0, :cond_0
-
-    check-cast p1, Landroid/support/v7/widget/RecyclerView;
-
-    iget-object p1, p1, Landroid/support/v7/widget/RecyclerView;->n:Lly;
-
-    if-eqz p1, :cond_0
-
-    invoke-virtual {p1, p2}, Lly;->Q(Landroid/view/accessibility/AccessibilityEvent;)V
-
-    :cond_0
-    return-void
-.end method
-
-.method public b(Landroid/view/View;Lagt;)V
-    .locals 2
-
-    invoke-super {p0, p1, p2}, Laei;->b(Landroid/view/View;Lagt;)V
-
-    invoke-virtual {p0}, Lmq;->k()Z
-
-    move-result p1
-
-    if-nez p1, :cond_0
-
-    iget-object p1, p0, Lmq;->a:Landroid/support/v7/widget/RecyclerView;
-
-    iget-object p1, p1, Landroid/support/v7/widget/RecyclerView;->n:Lly;
-
-    if-eqz p1, :cond_0
-
-    iget-object v0, p1, Lly;->q:Landroid/support/v7/widget/RecyclerView;
-
-    iget-object v1, v0, Landroid/support/v7/widget/RecyclerView;->f:Lmd;
-
-    iget-object v0, v0, Landroid/support/v7/widget/RecyclerView;->M:Lml;
-
-    invoke-virtual {p1, v1, v0, p2}, Lly;->m(Lmd;Lml;Lagt;)V
-
-    :cond_0
-    return-void
-.end method
-
-.method public h(Landroid/view/View;ILandroid/os/Bundle;)Z
-    .locals 1
-
-    invoke-super {p0, p1, p2, p3}, Laei;->h(Landroid/view/View;ILandroid/os/Bundle;)Z
-
-    move-result p1
-
-    if-eqz p1, :cond_0
-
-    const/4 p1, 0x1
-
-    return p1
-
-    :cond_0
-    invoke-virtual {p0}, Lmq;->k()Z
-
-    move-result p1
-
-    if-nez p1, :cond_1
-
-    iget-object p1, p0, Lmq;->a:Landroid/support/v7/widget/RecyclerView;
-
-    iget-object p1, p1, Landroid/support/v7/widget/RecyclerView;->n:Lly;
-
-    if-eqz p1, :cond_1
-
-    iget-object p3, p1, Lly;->q:Landroid/support/v7/widget/RecyclerView;
-
-    iget-object v0, p3, Landroid/support/v7/widget/RecyclerView;->f:Lmd;
-
-    iget-object p3, p3, Landroid/support/v7/widget/RecyclerView;->M:Lml;
-
-    invoke-virtual {p1, p2}, Lly;->bs(I)Z
-
-    move-result p1
-
-    return p1
-
-    :cond_1
-    const/4 p1, 0x0
-
-    return p1
-.end method
-
-.method public j()Laei;
-    .locals 1
+    invoke-super {p0}, Landroid/widget/CheckBox;->drawableStateChanged()V
 
     iget-object v0, p0, Lmq;->b:Lmp;
 
-    return-object v0
+    if-eqz v0, :cond_0
+
+    invoke-virtual {v0}, Lmp;->c()V
+
+    :cond_0
+    iget-object v0, p0, Lmq;->c:Lnt;
+
+    if-eqz v0, :cond_1
+
+    invoke-virtual {v0}, Lnt;->a()V
+
+    :cond_1
+    return-void
 .end method
 
-.method final k()Z
+.method public final getCompoundPaddingLeft()I
     .locals 1
 
-    iget-object v0, p0, Lmq;->a:Landroid/support/v7/widget/RecyclerView;
-
-    invoke-virtual {v0}, Landroid/support/v7/widget/RecyclerView;->al()Z
+    invoke-super {p0}, Landroid/widget/CheckBox;->getCompoundPaddingLeft()I
 
     move-result v0
 
     return v0
+.end method
+
+.method public final setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
+    .locals 0
+
+    invoke-super {p0, p1}, Landroid/widget/CheckBox;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
+
+    iget-object p1, p0, Lmq;->b:Lmp;
+
+    if-eqz p1, :cond_0
+
+    invoke-virtual {p1}, Lmp;->i()V
+
+    :cond_0
+    return-void
+.end method
+
+.method public final setBackgroundResource(I)V
+    .locals 1
+
+    invoke-super {p0, p1}, Landroid/widget/CheckBox;->setBackgroundResource(I)V
+
+    iget-object v0, p0, Lmq;->b:Lmp;
+
+    if-eqz v0, :cond_0
+
+    invoke-virtual {v0, p1}, Lmp;->e(I)V
+
+    :cond_0
+    return-void
+.end method
+
+.method public final setButtonDrawable(I)V
+    .locals 1
+
+    invoke-virtual {p0}, Lmq;->getContext()Landroid/content/Context;
+
+    move-result-object v0
+
+    invoke-static {v0, p1}, Ljr;->b(Landroid/content/Context;I)Landroid/graphics/drawable/Drawable;
+
+    move-result-object p1
+
+    invoke-virtual {p0, p1}, Lmq;->setButtonDrawable(Landroid/graphics/drawable/Drawable;)V
+
+    return-void
+.end method
+
+.method public final setButtonDrawable(Landroid/graphics/drawable/Drawable;)V
+    .locals 0
+
+    invoke-super {p0, p1}, Landroid/widget/CheckBox;->setButtonDrawable(Landroid/graphics/drawable/Drawable;)V
+
+    iget-object p1, p0, Lmq;->a:Lms;
+
+    if-eqz p1, :cond_0
+
+    invoke-virtual {p1}, Lms;->b()V
+
+    :cond_0
+    return-void
 .end method

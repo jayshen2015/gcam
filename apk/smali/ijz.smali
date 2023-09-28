@@ -1,107 +1,70 @@
-.class public final Lijz;
-.super Ljava/lang/Object;
-
-# interfaces
-.implements Logk;
+.class public final enum Lijz;
+.super Ljava/lang/Enum;
 
 
-# instance fields
-.field private final synthetic a:I
+# static fields
+.field public static final enum a:Lijz;
 
-.field private final b:Ljava/lang/Object;
+.field public static final enum b:Lijz;
+
+.field private static final synthetic c:[Lijz;
 
 
 # direct methods
-.method public constructor <init>(Lfvx;I)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 5
 
-    iput p2, p0, Lijz;->a:I
+    new-instance v0, Lijz;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const-string v1, "VIEWFINDER_SURFACE_CREATED"
 
-    iput-object p1, p0, Lijz;->b:Ljava/lang/Object;
+    const/4 v2, 0x0
+
+    invoke-direct {v0, v1, v2}, Lijz;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, Lijz;->a:Lijz;
+
+    new-instance v1, Lijz;
+
+    const-string v3, "VIEWFINDER_SURFACE_READY"
+
+    const/4 v4, 0x1
+
+    invoke-direct {v1, v3, v4}, Lijz;-><init>(Ljava/lang/String;I)V
+
+    sput-object v1, Lijz;->b:Lijz;
+
+    const/4 v3, 0x2
+
+    new-array v3, v3, [Lijz;
+
+    aput-object v0, v3, v2
+
+    aput-object v1, v3, v4
+
+    sput-object v3, Lijz;->c:[Lijz;
 
     return-void
 .end method
 
-.method public constructor <init>(Loiw;I)V
+.method private constructor <init>(Ljava/lang/String;I)V
     .locals 0
 
-    iput p2, p0, Lijz;->a:I
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lijz;->b:Ljava/lang/Object;
+    invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
 .end method
 
-
-# virtual methods
-.method public final a()Lika;
+.method public static values()[Lijz;
     .locals 1
 
-    iget v0, p0, Lijz;->a:I
+    sget-object v0, Lijz;->c:[Lijz;
 
-    packed-switch v0, :pswitch_data_0
-
-    iget-object v0, p0, Lijz;->b:Ljava/lang/Object;
-
-    check-cast v0, Lfvx;
-
-    iget-object v0, v0, Lfvx;->f:Ljava/lang/Object;
-
-    check-cast v0, Lika;
-
-    return-object v0
-
-    :pswitch_0
-    iget-object v0, p0, Lijz;->b:Ljava/lang/Object;
-
-    check-cast v0, Lels;
-
-    invoke-virtual {v0}, Lels;->a()Landroid/content/Intent;
+    invoke-virtual {v0}, [Lijz;->clone()Ljava/lang/Object;
 
     move-result-object v0
 
-    invoke-static {v0}, Lcdg;->d(Landroid/content/Intent;)Lika;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    check-cast v0, [Lijz;
 
     return-object v0
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
-.end method
-
-.method public final synthetic get()Ljava/lang/Object;
-    .locals 1
-
-    iget v0, p0, Lijz;->a:I
-
-    packed-switch v0, :pswitch_data_0
-
-    invoke-virtual {p0}, Lijz;->a()Lika;
-
-    move-result-object v0
-
-    return-object v0
-
-    :pswitch_0
-    invoke-virtual {p0}, Lijz;->a()Lika;
-
-    move-result-object v0
-
-    return-object v0
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
 .end method

@@ -44,9 +44,9 @@
 
     if-eqz p1, :cond_0
 
-    new-instance v0, Lide;
+    new-instance v0, Ljhx;
 
-    invoke-direct {v0}, Lide;-><init>()V
+    invoke-direct {v0}, Ljhx;-><init>()V
 
     invoke-virtual {p1, v0}, Landroid/widget/TextView;->setAccessibilityDelegate(Landroid/view/View$AccessibilityDelegate;)V
 

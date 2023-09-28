@@ -2,90 +2,68 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Llcg;
+.implements Llij;
 
 
 # instance fields
-.field final synthetic a:Lnou;
+.field private final a:Llij;
 
-.field private final synthetic b:I
+.field private final b:Ljava/util/concurrent/Executor;
+
+.field private final c:Llap;
+
+.field private d:Llap;
 
 
 # direct methods
-.method public constructor <init>(Lnou;I)V
+.method public constructor <init>(Llij;Ljava/util/concurrent/Executor;Llap;)V
     .locals 0
 
-    iput p2, p0, Llcf;->b:I
-
-    iput-object p1, p0, Llcf;->a:Lnou;
-
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Llcf;->a:Llij;
+
+    iput-object p2, p0, Llcf;->b:Ljava/util/concurrent/Executor;
+
+    iput-object p3, p0, Llcf;->c:Llap;
+
+    invoke-virtual {p3}, Llap;->b()Llap;
+
+    move-result-object p1
+
+    iput-object p1, p0, Llcf;->d:Llap;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()V
-    .locals 1
+.method public final bridge synthetic fB(Ljava/lang/Object;)V
+    .locals 4
 
-    iget v0, p0, Llcf;->b:I
+    check-cast p1, Llco;
 
-    packed-switch v0, :pswitch_data_0
+    iget-object v0, p0, Llcf;->d:Llap;
 
-    iget-object v0, p0, Llcf;->a:Lnou;
+    iget-object v1, p0, Llcf;->c:Llap;
 
-    invoke-static {v0}, Lnsy;->K(Ljava/util/concurrent/Future;)Ljava/lang/Object;
+    invoke-virtual {v1}, Llap;->b()Llap;
 
-    move-result-object v0
+    move-result-object v1
 
-    check-cast v0, Llcg;
+    iput-object v1, p0, Llcf;->d:Llap;
 
-    invoke-interface {v0}, Llcg;->a()V
+    iget-object v2, p0, Llcf;->a:Llij;
+
+    iget-object v3, p0, Llcf;->b:Ljava/util/concurrent/Executor;
+
+    invoke-interface {p1, v2, v3}, Llco;->a(Llij;Ljava/util/concurrent/Executor;)Llie;
+
+    move-result-object p1
+
+    invoke-virtual {v1, p1}, Llap;->c(Llie;)V
+
+    invoke-virtual {v0}, Llap;->close()V
 
     return-void
-
-    :pswitch_0
-    iget-object v0, p0, Llcf;->a:Lnou;
-
-    invoke-static {v0}, Lnsy;->K(Ljava/util/concurrent/Future;)Ljava/lang/Object;
-
-    return-void
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
-.end method
-
-.method public final close()V
-    .locals 3
-
-    iget v0, p0, Llcf;->b:I
-
-    packed-switch v0, :pswitch_data_0
-
-    iget-object v0, p0, Llcf;->a:Lnou;
-
-    new-instance v1, Lcnr;
-
-    const/4 v2, 0x3
-
-    invoke-direct {v1, v2}, Lcnr;-><init>(I)V
-
-    sget-object v2, Lnnv;->a:Lnnv;
-
-    invoke-static {v0, v1, v2}, Lnsy;->L(Lnou;Lnoj;Ljava/util/concurrent/Executor;)V
-
-    :pswitch_0
-    return-void
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
 .end method

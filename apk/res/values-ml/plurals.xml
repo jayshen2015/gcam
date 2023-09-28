@@ -1,12 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <plurals name="accessibility_timelapse_manual_record_speed_desc">
-        <item quantity="other">ടൈം ലാപ്‍സ് വേഗത %d മടങ്ങ്</item>
-        <item quantity="one">ടൈം ലാപ്‍സ് വേഗത %d മടങ്ങ്</item>
-    </plurals>
-    <plurals name="number_of_cropped_face">
-        <item quantity="other">%d മുഖം ഭാഗികം.</item>
-        <item quantity="one">ഒരു മുഖം ഭാഗികം.</item>
+    <plurals name="number_of_faces_announcement">
+        <item quantity="other">%1$d മുഖങ്ങൾ.</item>
+        <item quantity="one">%1$d മുഖങ്ങൾ.</item>
     </plurals>
     <plurals name="photos_remaining">
         <item quantity="other">ഏകദേശം %s ഫോട്ടോകൾ</item>
@@ -17,8 +13,8 @@
         <item quantity="one">(%1$d ആപ്പ് തിരഞ്ഞെടുത്തു)</item>
     </plurals>
     <plurals name="social_share_info">
-        <item quantity="other">ഫോട്ടോകളും വീഡിയോകളും ക്യാമറയിൽ നിന്ന് സോഷ്യൽ ആപ്പുകളിലേക്ക് വേഗത്തിൽ പങ്കിടുക. %1$d ആപ്പുകൾ വരെ തിരഞ്ഞെടുക്കുക. ലോക്ക് ചെയ്ത ഫോൾഡറിൽ സംരക്ഷിച്ചിരിക്കുന്ന ഫോട്ടോകളും വീഡിയോകളും പങ്കിടാനാകില്ല.</item>
-        <item quantity="one">ഫോട്ടോകളും വീഡിയോകളും ക്യാമറയിൽ നിന്ന് സോഷ്യൽ ആപ്പുകളിലേക്ക് വേഗത്തിൽ പങ്കിടുക. %1$d ആപ്പ് തിരഞ്ഞെടുക്കുക. ലോക്ക് ചെയ്ത ഫോൾഡറിൽ സംരക്ഷിച്ചിരിക്കുന്ന ഫോട്ടോകളും വീഡിയോകളും പങ്കിടാനാകില്ല.</item>
+        <item quantity="other">ഫോട്ടോകളും വീഡിയോകളും ക്യാമറയിൽ നിന്ന് നേരിട്ട് സോഷ്യൽ ആപ്പുകളിലേക്ക് വേഗത്തിൽ പങ്കിടുക. %1$d ആപ്പുകൾ വരെ തിരഞ്ഞെടുക്കുക. ലോക്ക് ചെയ്ത ഫോൾഡറിൽ സംരക്ഷിച്ചിരിക്കുന്ന ഫോട്ടോകളും വീഡിയോകളും പങ്കിടാനാകില്ല.</item>
+        <item quantity="one">ഫോട്ടോകളും വീഡിയോകളും ക്യാമറയിൽ നിന്ന് നേരിട്ട് സോഷ്യൽ ആപ്പുകളിലേക്ക് വേഗത്തിൽ പങ്കിടുക. %1$d ആപ്പ് തിരഞ്ഞെടുക്കുക. ലോക്ക് ചെയ്ത ഫോൾഡറിൽ സംരക്ഷിച്ചിരിക്കുന്ന ഫോട്ടോകളും വീഡിയോകളും പങ്കിടാനാകില്ല.</item>
     </plurals>
     <plurals name="social_share_select_error">
         <item quantity="other">%1$d ആപ്പുകൾ വരെ തിരഞ്ഞെടുക്കുക</item>

@@ -1,126 +1,165 @@
-.class public final enum Livq;
-.super Ljava/lang/Enum;
+.class public final Livq;
+.super Ljava/lang/Object;
 
-
-# static fields
-.field public static final enum a:Livq;
-
-.field public static final enum b:Livq;
-
-.field public static final enum c:Livq;
-
-.field public static final enum d:Livq;
-
-.field public static final enum e:Livq;
-
-.field private static final synthetic g:[Livq;
+# interfaces
+.implements Lpys;
 
 
 # instance fields
-.field public final f:I
+.field private final a:Lqkg;
+
+.field private final b:Lqkg;
+
+.field private final c:Lqkg;
+
+.field private final d:Lqkg;
+
+.field private final e:Lqkg;
+
+.field private final f:Lqkg;
+
+.field private final g:Lqkg;
+
+.field private final h:Lqkg;
+
+.field private final i:Lqkg;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 12
-
-    new-instance v0, Livq;
-
-    const-string v1, "NONE"
-
-    const/4 v2, 0x0
-
-    invoke-direct {v0, v1, v2, v2}, Livq;-><init>(Ljava/lang/String;II)V
-
-    sput-object v0, Livq;->a:Livq;
-
-    new-instance v1, Livq;
-
-    const-string v3, "CHECKBOX"
-
-    const/4 v4, 0x1
-
-    const v5, 0x7f0e011e
-
-    invoke-direct {v1, v3, v4, v5}, Livq;-><init>(Ljava/lang/String;II)V
-
-    sput-object v1, Livq;->b:Livq;
-
-    new-instance v3, Livq;
-
-    const-string v5, "RADIO"
-
-    const/4 v6, 0x2
-
-    const v7, 0x7f0e0120
-
-    invoke-direct {v3, v5, v6, v7}, Livq;-><init>(Ljava/lang/String;II)V
-
-    sput-object v3, Livq;->c:Livq;
-
-    new-instance v5, Livq;
-
-    const-string v7, "SWITCH"
-
-    const/4 v8, 0x3
-
-    const v9, 0x7f0e0121
-
-    invoke-direct {v5, v7, v8, v9}, Livq;-><init>(Ljava/lang/String;II)V
-
-    sput-object v5, Livq;->d:Livq;
-
-    new-instance v7, Livq;
-
-    const-string v9, "ICON"
-
-    const/4 v10, 0x4
-
-    const v11, 0x7f0e011f
-
-    invoke-direct {v7, v9, v10, v11}, Livq;-><init>(Ljava/lang/String;II)V
-
-    sput-object v7, Livq;->e:Livq;
-
-    const/4 v9, 0x5
-
-    new-array v9, v9, [Livq;
-
-    aput-object v0, v9, v2
-
-    aput-object v1, v9, v4
-
-    aput-object v3, v9, v6
-
-    aput-object v5, v9, v8
-
-    aput-object v7, v9, v10
-
-    sput-object v9, Livq;->g:[Livq;
-
-    return-void
-.end method
-
-.method private constructor <init>(Ljava/lang/String;II)V
+.method public constructor <init>(Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;)V
     .locals 0
 
-    invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput p3, p0, Livq;->f:I
+    iput-object p1, p0, Livq;->a:Lqkg;
+
+    iput-object p2, p0, Livq;->b:Lqkg;
+
+    iput-object p3, p0, Livq;->c:Lqkg;
+
+    iput-object p4, p0, Livq;->d:Lqkg;
+
+    iput-object p5, p0, Livq;->e:Lqkg;
+
+    iput-object p6, p0, Livq;->f:Lqkg;
+
+    iput-object p7, p0, Livq;->g:Lqkg;
+
+    iput-object p8, p0, Livq;->h:Lqkg;
+
+    iput-object p9, p0, Livq;->i:Lqkg;
 
     return-void
 .end method
 
-.method public static values()[Livq;
-    .locals 1
 
-    sget-object v0, Livq;->g:[Livq;
+# virtual methods
+.method public final a()Livp;
+    .locals 13
 
-    invoke-virtual {v0}, [Livq;->clone()Ljava/lang/Object;
+    iget-object v0, p0, Livq;->a:Lqkg;
+
+    check-cast v0, Ljoc;
+
+    invoke-virtual {v0}, Ljoc;->a()Lcom/google/android/apps/camera/bottombar/RoundedThumbnailView;
+
+    move-result-object v2
+
+    iget-object v0, p0, Livq;->b:Lqkg;
+
+    invoke-interface {v0}, Lqkg;->get()Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, [Livq;
+    check-cast v0, Ljava/lang/Boolean;
+
+    invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
+
+    move-result v3
+
+    iget-object v0, p0, Livq;->c:Lqkg;
+
+    check-cast v0, Leth;
+
+    invoke-virtual {v0}, Leth;->a()Lemb;
+
+    move-result-object v4
+
+    iget-object v0, p0, Livq;->d:Lqkg;
+
+    invoke-interface {v0}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    move-object v5, v0
+
+    check-cast v5, Likh;
+
+    iget-object v0, p0, Livq;->e:Lqkg;
+
+    invoke-static {v0}, Lpyr;->a(Lqkg;)Lpyn;
+
+    move-result-object v6
+
+    iget-object v0, p0, Livq;->f:Lqkg;
+
+    invoke-interface {v0}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    move-object v7, v0
+
+    check-cast v7, Llar;
+
+    iget-object v0, p0, Livq;->g:Lqkg;
+
+    invoke-interface {v0}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    move-object v8, v0
+
+    check-cast v8, Ljava/util/concurrent/Executor;
+
+    iget-object v0, p0, Livq;->h:Lqkg;
+
+    invoke-interface {v0}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    move-object v9, v0
+
+    check-cast v9, Lhuf;
+
+    iget-object v0, p0, Livq;->i:Lqkg;
+
+    invoke-interface {v0}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    move-object v10, v0
+
+    check-cast v10, Lddf;
+
+    new-instance v0, Livp;
+
+    const/4 v11, 0x0
+
+    const/4 v12, 0x0
+
+    move-object v1, v0
+
+    invoke-direct/range {v1 .. v12}, Livp;-><init>(Lcom/google/android/apps/camera/bottombar/RoundedThumbnailView;ZLemb;Likh;Lpyn;Llar;Ljava/util/concurrent/Executor;Lhuf;Lddf;[B[B)V
+
+    return-object v0
+.end method
+
+.method public final bridge synthetic get()Ljava/lang/Object;
+    .locals 1
+
+    invoke-virtual {p0}, Livq;->a()Livp;
+
+    move-result-object v0
 
     return-object v0
 .end method

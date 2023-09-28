@@ -1,63 +1,70 @@
-.class public final Leiw;
-.super Ljava/lang/Object;
-
-# interfaces
-.implements Logk;
+.class final enum Leiw;
+.super Ljava/lang/Enum;
 
 
-# instance fields
-.field private final a:Loiw;
+# static fields
+.field public static final enum a:Leiw;
 
-.field private final b:Loiw;
+.field public static final enum b:Leiw;
+
+.field private static final synthetic c:[Leiw;
 
 
 # direct methods
-.method public constructor <init>(Loiw;Loiw;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 5
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance v0, Leiw;
 
-    iput-object p1, p0, Leiw;->a:Loiw;
+    const-string v1, "WHITE"
 
-    iput-object p2, p0, Leiw;->b:Loiw;
+    const/4 v2, 0x0
+
+    invoke-direct {v0, v1, v2}, Leiw;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, Leiw;->a:Leiw;
+
+    new-instance v1, Leiw;
+
+    const-string v3, "RED"
+
+    const/4 v4, 0x1
+
+    invoke-direct {v1, v3, v4}, Leiw;-><init>(Ljava/lang/String;I)V
+
+    sput-object v1, Leiw;->b:Leiw;
+
+    const/4 v3, 0x2
+
+    new-array v3, v3, [Leiw;
+
+    aput-object v0, v3, v2
+
+    aput-object v1, v3, v4
+
+    sput-object v3, Leiw;->c:[Leiw;
 
     return-void
 .end method
 
+.method private constructor <init>(Ljava/lang/String;I)V
+    .locals 0
 
-# virtual methods
-.method public final a()Leiv;
-    .locals 2
+    invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
-    iget-object v0, p0, Leiw;->a:Loiw;
-
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Leir;
-
-    iget-object v0, p0, Leiw;->b:Loiw;
-
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ldhi;
-
-    new-instance v1, Leiv;
-
-    invoke-direct {v1, v0}, Leiv;-><init>(Ldhi;)V
-
-    return-object v1
+    return-void
 .end method
 
-.method public final bridge synthetic get()Ljava/lang/Object;
+.method public static values()[Leiw;
     .locals 1
 
-    invoke-virtual {p0}, Leiw;->a()Leiv;
+    sget-object v0, Leiw;->c:[Leiw;
+
+    invoke-virtual {v0}, [Leiw;->clone()Ljava/lang/Object;
 
     move-result-object v0
+
+    check-cast v0, [Leiw;
 
     return-object v0
 .end method

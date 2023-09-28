@@ -1,8 +1,9 @@
-.class public final Lokm;
-.super Ljava/lang/Object;
+.class public Lokm;
+.super Long;
 
 # interfaces
-.implements Ljava/io/Externalizable;
+.implements Ljava/io/Serializable;
+.implements Lolt;
 
 
 # static fields
@@ -10,221 +11,392 @@
 
 
 # instance fields
-.field private a:Ljava/util/Collection;
+.field public transient a:Ljava/util/Map;
 
-.field private final b:I
+.field public transient b:Lokm;
+
+.field private transient c:Ljava/util/Set;
+
+.field private transient d:Ljava/util/Set;
+
+.field private transient e:Ljava/util/Set;
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 1
-
-    const/4 v0, 0x0
-
-    throw v0
-.end method
-
-.method public constructor <init>(Ljava/util/Collection;I)V
+.method public constructor <init>(Ljava/util/Map;Ljava/util/Map;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Long;-><init>()V
 
-    iput-object p1, p0, Lokm;->a:Ljava/util/Collection;
-
-    iput p2, p0, Lokm;->b:I
+    invoke-virtual {p0, p1, p2}, Lokm;->i(Ljava/util/Map;Ljava/util/Map;)V
 
     return-void
 .end method
 
-.method private final readResolve()Ljava/lang/Object;
-    .locals 1
+.method public constructor <init>(Ljava/util/Map;Lokm;)V
+    .locals 0
 
-    iget-object v0, p0, Lokm;->a:Ljava/util/Collection;
+    invoke-direct {p0}, Long;-><init>()V
 
-    return-object v0
+    iput-object p1, p0, Lokm;->a:Ljava/util/Map;
+
+    iput-object p2, p0, Lokm;->b:Lokm;
+
+    return-void
 .end method
 
 
 # virtual methods
-.method public final readExternal(Ljava/io/ObjectInput;)V
-    .locals 4
+.method protected final synthetic a()Ljava/lang/Object;
+    .locals 1
 
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    iget-object v0, p0, Lokm;->a:Ljava/util/Map;
 
-    invoke-interface {p1}, Ljava/io/ObjectInput;->readByte()B
+    return-object v0
+.end method
 
-    move-result v0
+.method public b(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 0
 
-    and-int/lit8 v1, v0, 0x1
+    const/4 p1, 0x0
 
-    and-int/lit8 v2, v0, -0x2
+    throw p1
+.end method
 
-    const/16 v3, 0x2e
+.method protected final c()Ljava/util/Map;
+    .locals 1
 
-    if-nez v2, :cond_3
+    iget-object v0, p0, Lokm;->a:Ljava/util/Map;
 
-    invoke-interface {p1}, Ljava/io/ObjectInput;->readInt()I
+    return-object v0
+.end method
 
-    move-result v0
+.method public final clear()V
+    .locals 1
 
-    if-ltz v0, :cond_2
+    iget-object v0, p0, Lokm;->a:Ljava/util/Map;
+
+    invoke-interface {v0}, Ljava/util/Map;->clear()V
+
+    iget-object v0, p0, Lokm;->b:Lokm;
+
+    iget-object v0, v0, Lokm;->a:Ljava/util/Map;
+
+    invoke-interface {v0}, Ljava/util/Map;->clear()V
+
+    return-void
+.end method
+
+.method public final containsValue(Ljava/lang/Object;)Z
+    .locals 1
+
+    iget-object v0, p0, Lokm;->b:Lokm;
+
+    invoke-virtual {v0, p1}, Long;->containsKey(Ljava/lang/Object;)Z
+
+    move-result p1
+
+    return p1
+.end method
+
+.method public d(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 0
+
+    return-object p1
+.end method
+
+.method public final e()Lolt;
+    .locals 1
+
+    iget-object v0, p0, Lokm;->b:Lokm;
+
+    return-object v0
+.end method
+
+.method public final entrySet()Ljava/util/Set;
+    .locals 1
+
+    iget-object v0, p0, Lokm;->e:Ljava/util/Set;
+
+    if-nez v0, :cond_0
+
+    new-instance v0, Loki;
+
+    invoke-direct {v0, p0}, Loki;-><init>(Lokm;)V
+
+    iput-object v0, p0, Lokm;->e:Ljava/util/Set;
+
+    :cond_0
+    return-object v0
+.end method
+
+.method public final f(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 1
+
+    iget-object v0, p0, Lokm;->a:Ljava/util/Map;
+
+    invoke-interface {v0, p1}, Ljava/util/Map;->remove(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p1
+
+    invoke-virtual {p0, p1}, Lokm;->h(Ljava/lang/Object;)V
+
+    return-object p1
+.end method
+
+.method public final g()Ljava/util/Set;
+    .locals 1
+
+    iget-object v0, p0, Lokm;->d:Ljava/util/Set;
+
+    if-nez v0, :cond_0
+
+    new-instance v0, Lokl;
+
+    invoke-direct {v0, p0}, Lokl;-><init>(Lokm;)V
+
+    iput-object v0, p0, Lokm;->d:Ljava/util/Set;
+
+    :cond_0
+    return-object v0
+.end method
+
+.method public final h(Ljava/lang/Object;)V
+    .locals 1
+
+    iget-object v0, p0, Lokm;->b:Lokm;
+
+    iget-object v0, v0, Lokm;->a:Ljava/util/Map;
+
+    invoke-interface {v0, p1}, Ljava/util/Map;->remove(Ljava/lang/Object;)Ljava/lang/Object;
+
+    return-void
+.end method
+
+.method final i(Ljava/util/Map;Ljava/util/Map;)V
+    .locals 3
+
+    iget-object v0, p0, Lokm;->a:Ljava/util/Map;
+
+    const/4 v1, 0x1
 
     const/4 v2, 0x0
 
-    packed-switch v1, :pswitch_data_0
+    if-nez v0, :cond_0
 
-    new-instance v1, Loko;
-
-    new-instance v3, Lokj;
-
-    invoke-direct {v3, v0}, Lokj;-><init>(I)V
-
-    invoke-direct {v1, v3}, Loko;-><init>(Lokj;)V
-
-    goto :goto_1
-
-    :pswitch_0
-    new-instance v1, Loke;
-
-    invoke-direct {v1, v0}, Loke;-><init>(I)V
-
-    :goto_0
-    if-ge v2, v0, :cond_0
-
-    invoke-interface {p1}, Ljava/io/ObjectInput;->readObject()Ljava/lang/Object;
-
-    move-result-object v3
-
-    invoke-interface {v1, v3}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-
-    add-int/lit8 v2, v2, 0x1
+    const/4 v0, 0x1
 
     goto :goto_0
 
     :cond_0
-    invoke-static {v1}, Lljr;->ar(Ljava/util/List;)V
+    const/4 v0, 0x0
 
-    goto :goto_2
+    :goto_0
+    invoke-static {v0}, Lobr;->aQ(Z)V
 
-    :goto_1
-    if-ge v2, v0, :cond_1
+    iget-object v0, p0, Lokm;->b:Lokm;
 
-    invoke-interface {p1}, Ljava/io/ObjectInput;->readObject()Ljava/lang/Object;
+    if-nez v0, :cond_1
 
-    move-result-object v3
-
-    invoke-interface {v1, v3}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
-
-    add-int/lit8 v2, v2, 0x1
+    const/4 v0, 0x1
 
     goto :goto_1
 
     :cond_1
-    invoke-static {v1}, Lljr;->U(Ljava/util/Set;)V
+    const/4 v0, 0x0
 
-    :goto_2
-    iput-object v1, p0, Lokm;->a:Ljava/util/Collection;
+    :goto_1
+    invoke-static {v0}, Lobr;->aQ(Z)V
 
-    return-void
-
-    :cond_2
-    new-instance p1, Ljava/io/InvalidObjectException;
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, "Illegal size value: "
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-direct {p1, v0}, Ljava/io/InvalidObjectException;-><init>(Ljava/lang/String;)V
-
-    throw p1
-
-    :cond_3
-    new-instance p1, Ljava/io/InvalidObjectException;
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, "Unsupported flags value: "
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-direct {p1, v0}, Ljava/io/InvalidObjectException;-><init>(Ljava/lang/String;)V
-
-    goto :goto_4
-
-    :goto_3
-    throw p1
-
-    :goto_4
-    goto :goto_3
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
-.end method
-
-.method public final writeExternal(Ljava/io/ObjectOutput;)V
-    .locals 2
-
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    iget v0, p0, Lokm;->b:I
-
-    invoke-interface {p1, v0}, Ljava/io/ObjectOutput;->writeByte(I)V
-
-    iget-object v0, p0, Lokm;->a:Ljava/util/Collection;
-
-    invoke-interface {v0}, Ljava/util/Collection;->size()I
+    invoke-interface {p1}, Ljava/util/Map;->isEmpty()Z
 
     move-result v0
 
-    invoke-interface {p1, v0}, Ljava/io/ObjectOutput;->writeInt(I)V
+    invoke-static {v0}, Lobr;->aF(Z)V
 
-    iget-object v0, p0, Lokm;->a:Ljava/util/Collection;
+    invoke-interface {p2}, Ljava/util/Map;->isEmpty()Z
 
-    invoke-interface {v0}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
+    move-result v0
 
-    move-result-object v0
+    invoke-static {v0}, Lobr;->aF(Z)V
 
-    :goto_0
-    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
+    if-eq p1, p2, :cond_2
+
+    goto :goto_2
+
+    :cond_2
+    const/4 v1, 0x0
+
+    :goto_2
+    invoke-static {v1}, Lobr;->aF(Z)V
+
+    iput-object p1, p0, Lokm;->a:Ljava/util/Map;
+
+    new-instance p1, Lokj;
+
+    invoke-direct {p1, p2, p0}, Lokj;-><init>(Ljava/util/Map;Lokm;)V
+
+    iput-object p1, p0, Lokm;->b:Lokm;
+
+    return-void
+.end method
+
+.method public final j(Ljava/lang/Object;ZLjava/lang/Object;Ljava/lang/Object;)V
+    .locals 0
+
+    if-eqz p2, :cond_0
+
+    invoke-virtual {p0, p3}, Lokm;->h(Ljava/lang/Object;)V
+
+    :cond_0
+    iget-object p2, p0, Lokm;->b:Lokm;
+
+    iget-object p2, p2, Lokm;->a:Ljava/util/Map;
+
+    invoke-interface {p2, p4, p1}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    return-void
+.end method
+
+.method public final k(Ljava/lang/Object;Ljava/lang/Object;)V
+    .locals 0
+
+    const/4 p1, 0x0
+
+    throw p1
+.end method
+
+.method public final keySet()Ljava/util/Set;
+    .locals 1
+
+    iget-object v0, p0, Lokm;->c:Ljava/util/Set;
+
+    if-nez v0, :cond_0
+
+    new-instance v0, Lokk;
+
+    invoke-direct {v0, p0}, Lokk;-><init>(Lokm;)V
+
+    iput-object v0, p0, Lokm;->c:Ljava/util/Set;
+
+    :cond_0
+    return-object v0
+.end method
+
+.method public put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 3
+
+    invoke-virtual {p0, p1}, Lokm;->b(Ljava/lang/Object;)Ljava/lang/Object;
+
+    invoke-virtual {p0, p2}, Lokm;->d(Ljava/lang/Object;)Ljava/lang/Object;
+
+    invoke-virtual {p0, p1}, Long;->containsKey(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    invoke-virtual {p0, p1}, Long;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v1
+
+    invoke-static {p2, v1}, Lobr;->bc(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v1
 
     if-eqz v1, :cond_0
 
-    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    return-object p2
+
+    :cond_0
+    invoke-virtual {p0, p2}, Long;->containsValue(Ljava/lang/Object;)Z
+
+    move-result v1
+
+    xor-int/lit8 v1, v1, 0x1
+
+    const-string v2, "value already present: %s"
+
+    invoke-static {v1, v2, p2}, Lobr;->aK(ZLjava/lang/String;Ljava/lang/Object;)V
+
+    iget-object v1, p0, Lokm;->a:Ljava/util/Map;
+
+    invoke-interface {v1, p1, p2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v1
 
-    invoke-interface {p1, v1}, Ljava/io/ObjectOutput;->writeObject(Ljava/lang/Object;)V
+    invoke-virtual {p0, p1, v0, v1, p2}, Lokm;->j(Ljava/lang/Object;ZLjava/lang/Object;Ljava/lang/Object;)V
+
+    return-object v1
+.end method
+
+.method public final putAll(Ljava/util/Map;)V
+    .locals 2
+
+    invoke-interface {p1}, Ljava/util/Map;->entrySet()Ljava/util/Set;
+
+    move-result-object p1
+
+    invoke-interface {p1}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
+
+    move-result-object p1
+
+    :goto_0
+    invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/util/Map$Entry;
+
+    invoke-interface {v0}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
+
+    move-result-object v1
+
+    invoke-interface {v0}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
+
+    move-result-object v0
+
+    invoke-virtual {p0, v1, v0}, Long;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     goto :goto_0
 
     :cond_0
     return-void
+.end method
+
+.method public final remove(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 1
+
+    invoke-virtual {p0, p1}, Long;->containsKey(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    invoke-virtual {p0, p1}, Lokm;->f(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p1
+
+    return-object p1
+
+    :cond_0
+    const/4 p1, 0x0
+
+    return-object p1
+.end method
+
+.method public final bridge synthetic values()Ljava/util/Collection;
+    .locals 1
+
+    invoke-virtual {p0}, Lokm;->g()Ljava/util/Set;
+
+    move-result-object v0
+
+    return-object v0
 .end method

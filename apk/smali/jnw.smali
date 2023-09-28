@@ -1,22 +1,43 @@
 .class public final Ljnw;
 .super Ljava/lang/Object;
 
+# interfaces
+.implements Lpys;
 
-# static fields
-.field public static volatile a:J
 
-.field private static volatile b:J
+# instance fields
+.field private final a:Ljnu;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
+.method public constructor <init>(Ljnu;)V
+    .locals 0
 
-    const-wide/16 v0, -0x1
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    sput-wide v0, Ljnw;->a:J
-
-    sput-wide v0, Ljnw;->b:J
+    iput-object p1, p0, Ljnw;->a:Ljnu;
 
     return-void
+.end method
+
+
+# virtual methods
+.method public final a()Ljns;
+    .locals 1
+
+    iget-object v0, p0, Ljnw;->a:Ljnu;
+
+    iget-object v0, v0, Ljnu;->b:Ljns;
+
+    return-object v0
+.end method
+
+.method public final bridge synthetic get()Ljava/lang/Object;
+    .locals 1
+
+    invoke-virtual {p0}, Ljnw;->a()Ljns;
+
+    move-result-object v0
+
+    return-object v0
 .end method

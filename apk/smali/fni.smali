@@ -2,45 +2,32 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lkad;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field public final synthetic a:Lnph;
+.field public final synthetic a:Ljje;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lnph;)V
+.method public synthetic constructor <init>(Ljje;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lfni;->a:Lnph;
+    iput-object p1, p0, Lfni;->a:Ljje;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final close()V
-    .locals 3
+.method public final run()V
+    .locals 1
 
-    iget-object v0, p0, Lfni;->a:Lnph;
+    iget-object v0, p0, Lfni;->a:Ljje;
 
-    invoke-virtual {v0}, Lnph;->isDone()Z
+    invoke-interface {v0}, Ljje;->g()V
 
-    move-result v1
-
-    if-nez v1, :cond_0
-
-    new-instance v1, Lkdf;
-
-    const-string v2, "FrameServer is already closed."
-
-    invoke-direct {v1, v2}, Lkdf;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v0, v1}, Lnph;->a(Ljava/lang/Throwable;)Z
-
-    :cond_0
     return-void
 .end method

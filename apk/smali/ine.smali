@@ -1,422 +1,596 @@
 .class public final Line;
-.super Lbw;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Lind;
 
 
 # instance fields
-.field public a:Liof;
+.field private final b:Ljava/io/File;
 
-.field public b:Lmqp;
-
-.field private c:Liod;
+.field private final c:Lcom/google/android/apps/camera/stats/Instrumentation;
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 1
+.method public constructor <init>(Lcom/google/android/apps/camera/stats/Instrumentation;)V
+    .locals 2
 
-    invoke-direct {p0}, Lbw;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    sget-object v0, Lmpx;->a:Lmpx;
+    new-instance v0, Ljava/io/File;
 
-    iput-object v0, p0, Line;->b:Lmqp;
+    const-string v1, "/sdcard/camera_test_score/"
+
+    invoke-direct {v0, v1}, Ljava/io/File;-><init>(Ljava/lang/String;)V
+
+    iput-object v0, p0, Line;->b:Ljava/io/File;
+
+    iput-object p1, p0, Line;->c:Lcom/google/android/apps/camera/stats/Instrumentation;
 
     return-void
-.end method
-
-.method public static c(Landroid/os/Bundle;Landroid/net/Uri;)Line;
-    .locals 1
-
-    const-string v0, "video_uri"
-
-    invoke-virtual {p0, v0, p1}, Landroid/os/Bundle;->putParcelable(Ljava/lang/String;Landroid/os/Parcelable;)V
-
-    new-instance p1, Line;
-
-    invoke-direct {p1}, Line;-><init>()V
-
-    invoke-virtual {p1, p0}, Lbw;->setArguments(Landroid/os/Bundle;)V
-
-    return-object p1
 .end method
 
 
 # virtual methods
-.method public final onCreateView(Landroid/view/LayoutInflater;Landroid/view/ViewGroup;Landroid/os/Bundle;)Landroid/view/View;
-    .locals 11
+.method public final a(Landroid/content/Intent;)V
+    .locals 8
 
-    const v0, 0x7f0e010e
-
-    const/4 v1, 0x0
-
-    invoke-virtual {p1, v0, p2, v1}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
+    invoke-virtual {p1}, Landroid/content/Intent;->getExtras()Landroid/os/Bundle;
 
     move-result-object p1
 
-    new-instance p2, Linr;
+    if-nez p1, :cond_0
 
-    invoke-direct {p2}, Linr;-><init>()V
+    sget-object v0, Line;->a:Louj;
 
-    iput-object p2, p0, Line;->c:Liod;
+    invoke-virtual {v0}, Loue;->c()Lova;
 
-    new-instance p2, Lini;
+    move-result-object v0
 
-    new-instance v0, Ldom;
+    const/16 v1, 0xbd1
 
-    const/4 v8, 0x6
+    const-string v2, "Intent needs some extra parameters"
 
-    invoke-direct {v0, p0, v8}, Ldom;-><init>(Line;I)V
+    invoke-static {v0, v2, v1}, Ld;->v(Lova;Ljava/lang/String;C)V
 
-    invoke-direct {p2, v0}, Lini;-><init>(Loiw;)V
+    :cond_0
+    const-string v0, "com.google.android.apps.camera.testing.prod.scoreprint.SCORE_TYPE"
 
-    new-instance v0, Linn;
+    invoke-virtual {p1, v0}, Landroid/os/Bundle;->getString(Ljava/lang/String;)Ljava/lang/String;
 
-    invoke-direct {v0}, Linn;-><init>()V
+    move-result-object v0
 
-    iget-object v2, p0, Lbw;->l:Landroid/os/Bundle;
+    if-nez v0, :cond_1
 
-    const-string v3, "auto_loop_enabled"
+    sget-object v0, Lind;->a:Louj;
 
-    invoke-virtual {v2, v3, v1}, Landroid/os/Bundle;->getBoolean(Ljava/lang/String;Z)Z
+    invoke-virtual {v0}, Loue;->c()Lova;
 
-    move-result v9
+    move-result-object v0
 
-    iget-object v2, p0, Lbw;->l:Landroid/os/Bundle;
+    const/16 v1, 0xbcc
 
-    const-string v3, "no_seek_bar"
+    const-string v2, "No score type given"
 
-    invoke-virtual {v2, v3, v1}, Landroid/os/Bundle;->getBoolean(Ljava/lang/String;Z)Z
+    invoke-static {v0, v2, v1}, Ld;->v(Lova;Ljava/lang/String;C)V
 
-    move-result v7
+    invoke-static {}, Loom;->l()Loom;
 
-    new-instance v10, Liof;
+    move-result-object v0
 
-    iget-object v3, p0, Line;->c:Liod;
+    goto :goto_1
 
-    move-object v2, v10
+    :cond_1
+    :try_start_0
+    invoke-static {}, Loom;->e()Looh;
 
-    move-object v4, p2
+    move-result-object v1
 
-    move-object v5, v0
+    const-string v2, ","
 
-    move-object v6, p1
-
-    invoke-direct/range {v2 .. v7}, Liof;-><init>(Liod;Lini;Linw;Landroid/view/View;Z)V
-
-    iput-object v10, p0, Line;->a:Liof;
-
-    iget-object v2, v10, Liof;->d:Landroid/view/View;
-
-    const v3, 0x7f0b03e6
-
-    invoke-virtual {v2, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+    invoke-static {v2}, Lojq;->d(Ljava/lang/String;)Lojq;
 
     move-result-object v2
 
-    check-cast v2, Landroid/widget/VideoView;
-
-    iput-object v2, v10, Liof;->f:Landroid/widget/VideoView;
-
-    iget-object v2, v10, Liof;->f:Landroid/widget/VideoView;
-
-    new-instance v3, Lclb;
-
-    const/16 v4, 0x14
-
-    invoke-direct {v3, v10, v4}, Lclb;-><init>(Liof;I)V
-
-    invoke-virtual {v2, v3}, Landroid/widget/VideoView;->setOnTouchListener(Landroid/view/View$OnTouchListener;)V
-
-    iget-object v2, v10, Liof;->d:Landroid/view/View;
-
-    new-instance v3, Lidm;
-
-    invoke-direct {v3, v10, v8}, Lidm;-><init>(Liof;I)V
-
-    invoke-virtual {v2, v3}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
-
-    iget-object v2, v10, Liof;->f:Landroid/widget/VideoView;
-
-    invoke-virtual {v2, v1}, Landroid/widget/VideoView;->setWillNotDraw(Z)V
-
-    iget-object v2, v10, Liof;->d:Landroid/view/View;
-
-    const v3, 0x7f0b03e8
-
-    invoke-virtual {v2, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+    invoke-virtual {v2, v0}, Lojq;->e(Ljava/lang/CharSequence;)Ljava/lang/Iterable;
 
     move-result-object v2
 
-    check-cast v2, Landroid/widget/ImageButton;
-
-    iput-object v2, v10, Liof;->h:Landroid/widget/ImageButton;
-
-    iget-object v2, v10, Liof;->h:Landroid/widget/ImageButton;
-
-    new-instance v3, Lidm;
-
-    const/4 v4, 0x5
-
-    invoke-direct {v3, v10, v4}, Lidm;-><init>(Liof;I)V
-
-    invoke-virtual {v2, v3}, Landroid/widget/ImageButton;->setOnClickListener(Landroid/view/View$OnClickListener;)V
-
-    iget-object v2, v10, Liof;->d:Landroid/view/View;
-
-    const v3, 0x7f0b03e9
-
-    invoke-virtual {v2, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+    invoke-interface {v2}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v2
 
-    check-cast v2, Landroid/widget/ImageButton;
+    :goto_0
+    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
 
-    iput-object v2, v10, Liof;->g:Landroid/widget/ImageButton;
+    move-result v3
 
-    iget-object v2, v10, Liof;->g:Landroid/widget/ImageButton;
+    if-eqz v3, :cond_2
 
-    new-instance v3, Lidm;
-
-    const/4 v4, 0x4
-
-    invoke-direct {v3, v10, v4}, Lidm;-><init>(Liof;I)V
-
-    invoke-virtual {v2, v3}, Landroid/widget/ImageButton;->setOnClickListener(Landroid/view/View$OnClickListener;)V
-
-    iget-object v2, v10, Liof;->d:Landroid/view/View;
-
-    const v3, 0x7f0b03e4
-
-    invoke-virtual {v2, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
-
-    move-result-object v2
-
-    iput-object v2, v10, Liof;->l:Landroid/view/View;
-
-    iget-object v2, v10, Liof;->d:Landroid/view/View;
-
-    const v3, 0x7f0b03e3
-
-    invoke-virtual {v2, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
-
-    move-result-object v2
-
-    check-cast v2, Landroid/widget/SeekBar;
-
-    iput-object v2, v10, Liof;->k:Landroid/widget/SeekBar;
-
-    iget-object v2, v10, Liof;->k:Landroid/widget/SeekBar;
-
-    new-instance v3, Lhwl;
-
-    const/4 v4, 0x2
-
-    invoke-direct {v3, v10, v4}, Lhwl;-><init>(Liof;I)V
-
-    invoke-virtual {v2, v3}, Landroid/widget/SeekBar;->setOnSeekBarChangeListener(Landroid/widget/SeekBar$OnSeekBarChangeListener;)V
-
-    iget-object v2, v10, Liof;->d:Landroid/view/View;
-
-    const v3, 0x7f0b03e5
-
-    invoke-virtual {v2, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
-
-    move-result-object v2
-
-    check-cast v2, Landroid/widget/TextView;
-
-    iput-object v2, v10, Liof;->i:Landroid/widget/TextView;
-
-    iget-object v2, v10, Liof;->d:Landroid/view/View;
-
-    const v3, 0x7f0b03e1
-
-    invoke-virtual {v2, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
-
-    move-result-object v2
-
-    check-cast v2, Landroid/widget/TextView;
-
-    iput-object v2, v10, Liof;->j:Landroid/widget/TextView;
-
-    iget-object v2, v10, Liof;->d:Landroid/view/View;
-
-    const v3, 0x7f0b03e7
-
-    invoke-virtual {v2, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
-
-    move-result-object v2
-
-    iput-object v2, v10, Liof;->o:Landroid/view/View;
-
-    iget-object v2, p0, Line;->b:Lmqp;
-
-    invoke-virtual {v2}, Lmqp;->g()Z
-
-    move-result v2
-
-    if-eqz v2, :cond_0
-
-    iget-object v2, p0, Line;->a:Liof;
-
-    iget-object v2, v2, Liof;->f:Landroid/widget/VideoView;
-
-    iget-object v3, p0, Line;->b:Lmqp;
-
-    invoke-virtual {v3}, Lmqp;->c()Ljava/lang/Object;
+    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v3
 
-    check-cast v3, Landroid/media/MediaPlayer$OnInfoListener;
+    check-cast v3, Ljava/lang/String;
 
-    invoke-virtual {v2, v3}, Landroid/widget/VideoView;->setOnInfoListener(Landroid/media/MediaPlayer$OnInfoListener;)V
+    invoke-static {v3}, Linc;->a(Ljava/lang/String;)Linc;
 
-    :cond_0
-    iget-object v2, p0, Lbw;->l:Landroid/os/Bundle;
+    move-result-object v3
 
-    const-string v3, "video_view_padding"
-
-    invoke-virtual {v2, v3}, Landroid/os/Bundle;->getParcelable(Ljava/lang/String;)Landroid/os/Parcelable;
-
-    move-result-object v2
-
-    check-cast v2, Landroid/graphics/Rect;
-
-    if-eqz v2, :cond_1
-
-    iget-object v3, p0, Line;->a:Liof;
-
-    invoke-virtual {v3, v2}, Liof;->d(Landroid/graphics/Rect;)V
-
-    :cond_1
-    iget-object v2, p0, Lbw;->l:Landroid/os/Bundle;
-
-    const-string v3, "video_uri"
-
-    invoke-virtual {v2, v3}, Landroid/os/Bundle;->getParcelable(Ljava/lang/String;)Landroid/os/Parcelable;
-
-    move-result-object v2
-
-    move-object v4, v2
-
-    check-cast v4, Landroid/net/Uri;
-
-    invoke-virtual {v4}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    iget-object v2, p0, Line;->a:Liof;
-
-    new-instance v3, Ljvq;
-
-    invoke-direct {v3, v2}, Ljvq;-><init>(Lioe;)V
-
-    invoke-virtual {v0, v2, v3}, Lins;->c(Lioe;Ljvq;)V
-
-    invoke-virtual {v0}, Lins;->f()V
-
-    invoke-virtual {v0}, Lins;->g()V
-
-    iget-object v2, p0, Line;->c:Liod;
-
-    iget-object v3, p0, Line;->a:Liof;
-
-    if-nez p3, :cond_2
-
-    const/4 v7, 0x0
+    invoke-virtual {v1, v3}, Looh;->g(Ljava/lang/Object;)V
 
     goto :goto_0
 
     :cond_2
-    const-string v5, "videoplayer_position"
+    invoke-virtual {v1}, Looh;->f()Loom;
 
-    invoke-virtual {p3, v5, v1}, Landroid/os/Bundle;->getInt(Ljava/lang/String;I)I
-
-    move-result v1
-
-    move v7, v1
-
-    :goto_0
-    const/4 v1, 0x1
-
-    if-nez p3, :cond_3
-
-    const/4 v8, 0x1
+    move-result-object v0
+    :try_end_0
+    .catch Ljava/lang/IllegalArgumentException; {:try_start_0 .. :try_end_0} :catch_0
 
     goto :goto_1
 
-    :cond_3
-    const-string v5, "videoplayer_playing_state"
+    :catch_0
+    move-exception v1
 
-    invoke-virtual {p3, v5, v1}, Landroid/os/Bundle;->getBoolean(Ljava/lang/String;Z)Z
+    sget-object v2, Lind;->a:Louj;
 
-    move-result p3
+    invoke-virtual {v2}, Loue;->c()Lova;
 
-    move v8, p3
+    move-result-object v2
+
+    const/16 v3, 0xbcb
+
+    const-string v4, "Unknown type:%s"
+
+    invoke-static {v2, v4, v0, v3, v1}, Ld;->x(Lova;Ljava/lang/String;Ljava/lang/Object;CLjava/lang/Throwable;)V
+
+    invoke-static {}, Loom;->l()Loom;
+
+    move-result-object v0
 
     :goto_1
-    move-object v5, p2
-
-    move-object v6, v0
-
-    invoke-virtual/range {v2 .. v9}, Linx;->j(Lioe;Landroid/net/Uri;Lini;Linw;IZZ)V
-
-    iget-object p3, p0, Line;->c:Liod;
-
-    invoke-virtual {p3}, Linx;->f()V
-
-    invoke-virtual {p2}, Linf;->f()V
-
-    return-object p1
-.end method
-
-.method public final onPause()V
-    .locals 1
-
-    invoke-super {p0}, Lbw;->onPause()V
-
-    iget-object v0, p0, Line;->c:Liod;
-
-    invoke-virtual {v0}, Linx;->b()V
-
-    return-void
-.end method
-
-.method public final onResume()V
-    .locals 1
-
-    invoke-super {p0}, Lbw;->onResume()V
-
-    iget-object v0, p0, Line;->c:Liod;
-
-    invoke-virtual {v0}, Linx;->k()V
-
-    return-void
-.end method
-
-.method public final onSaveInstanceState(Landroid/os/Bundle;)V
-    .locals 3
-
-    iget-object v0, p0, Line;->a:Liof;
-
-    iget-object v0, v0, Liof;->f:Landroid/widget/VideoView;
-
-    invoke-virtual {v0}, Landroid/widget/VideoView;->isPlaying()Z
-
-    move-result v0
-
-    iget-object v1, p0, Line;->a:Liof;
-
-    iget-object v1, v1, Liof;->f:Landroid/widget/VideoView;
-
-    invoke-virtual {v1}, Landroid/widget/VideoView;->getCurrentPosition()I
+    invoke-interface {v0}, Ljava/util/List;->isEmpty()Z
 
     move-result v1
 
-    const-string v2, "videoplayer_playing_state"
+    if-nez v1, :cond_9
 
-    invoke-virtual {p1, v2, v0}, Landroid/os/Bundle;->putBoolean(Ljava/lang/String;Z)V
+    const-string v1, "com.google.android.apps.camera.testing.prod.scoreprint.OUT_FILE_NAME"
 
-    const-string v0, "videoplayer_position"
+    invoke-virtual {p1, v1}, Landroid/os/Bundle;->getString(Ljava/lang/String;)Ljava/lang/String;
 
-    invoke-virtual {p1, v0, v1}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
+    move-result-object p1
+
+    if-nez p1, :cond_3
+
+    sget-object p1, Lind;->a:Louj;
+
+    invoke-virtual {p1}, Loue;->c()Lova;
+
+    move-result-object p1
+
+    const/16 v1, 0xbca
+
+    const-string v2, "No file name given"
+
+    invoke-static {p1, v2, v1}, Ld;->v(Lova;Ljava/lang/String;C)V
+
+    sget-object p1, Loih;->a:Loih;
+
+    goto :goto_2
+
+    :cond_3
+    invoke-static {p1}, Lojc;->i(Ljava/lang/Object;)Lojc;
+
+    move-result-object p1
+
+    :goto_2
+    invoke-virtual {p1}, Lojc;->g()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_8
+
+    invoke-virtual {p1}, Lojc;->c()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Ljava/lang/String;
+
+    sget-object v2, Ljava/io/File;->separator:Ljava/lang/String;
+
+    invoke-virtual {v1, v2}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_4
+
+    goto/16 :goto_a
+
+    :cond_4
+    new-instance v1, Ljava/io/File;
+
+    iget-object v2, p0, Line;->b:Ljava/io/File;
+
+    invoke-virtual {p1}, Lojc;->c()Ljava/lang/Object;
+
+    move-result-object p1
+
+    check-cast p1, Ljava/lang/String;
+
+    invoke-direct {v1, v2, p1}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
+
+    invoke-virtual {v1}, Ljava/io/File;->exists()Z
+
+    move-result p1
+
+    if-nez p1, :cond_5
+
+    sget-object p1, Loih;->a:Loih;
+
+    goto :goto_3
+
+    :cond_5
+    :try_start_1
+    new-instance p1, Ljava/lang/String;
+
+    invoke-static {v1}, Loxh;->w(Ljava/io/File;)[B
+
+    move-result-object v2
+
+    invoke-direct {p1, v2}, Ljava/lang/String;-><init>([B)V
+
+    invoke-static {p1}, Lojc;->i(Ljava/lang/Object;)Lojc;
+
+    move-result-object p1
+    :try_end_1
+    .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_5
+
+    :goto_3
+    invoke-virtual {p1}, Lojc;->g()Z
+
+    move-result v2
+
+    if-nez v2, :cond_6
+
+    new-instance p1, Lorg/json/JSONObject;
+
+    invoke-direct {p1}, Lorg/json/JSONObject;-><init>()V
+
+    goto :goto_4
+
+    :cond_6
+    :try_start_2
+    new-instance v2, Lorg/json/JSONObject;
+
+    invoke-virtual {p1}, Lojc;->c()Ljava/lang/Object;
+
+    move-result-object v3
+
+    check-cast v3, Ljava/lang/String;
+
+    invoke-direct {v2, v3}, Lorg/json/JSONObject;-><init>(Ljava/lang/String;)V
+    :try_end_2
+    .catch Lorg/json/JSONException; {:try_start_2 .. :try_end_2} :catch_1
+
+    move-object p1, v2
+
+    goto :goto_4
+
+    :catch_1
+    move-exception v2
+
+    sget-object v3, Line;->a:Louj;
+
+    invoke-virtual {v3}, Loue;->c()Lova;
+
+    move-result-object v3
+
+    invoke-virtual {p1}, Lojc;->c()Ljava/lang/Object;
+
+    move-result-object p1
+
+    const/16 v4, 0xbcf
+
+    const-string v5, "Invalid JSON data: %s"
+
+    invoke-static {v3, v5, p1, v4, v2}, Ld;->x(Lova;Ljava/lang/String;Ljava/lang/Object;CLjava/lang/Throwable;)V
+
+    new-instance p1, Lorg/json/JSONObject;
+
+    invoke-direct {p1}, Lorg/json/JSONObject;-><init>()V
+
+    :goto_4
+    :try_start_3
+    invoke-virtual {v0}, Loom;->t()Lotj;
+
+    move-result-object v0
+
+    :goto_5
+    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_7
+
+    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Linc;
+
+    invoke-virtual {v2}, Linc;->name()Ljava/lang/String;
+
+    move-result-object v3
+    :try_end_3
+    .catch Lorg/json/JSONException; {:try_start_3 .. :try_end_3} :catch_4
+
+    :try_start_4
+    invoke-virtual {p1, v3}, Lorg/json/JSONObject;->getJSONArray(Ljava/lang/String;)Lorg/json/JSONArray;
+
+    move-result-object v4
+    :try_end_4
+    .catch Lorg/json/JSONException; {:try_start_4 .. :try_end_4} :catch_2
+
+    goto :goto_6
+
+    :catch_2
+    move-exception v4
+
+    :try_start_5
+    sget-object v5, Line;->a:Louj;
+
+    invoke-virtual {v5}, Loue;->b()Lova;
+
+    move-result-object v5
+
+    const-string v6, "The value is not an array: %s"
+
+    const/16 v7, 0xbce
+
+    invoke-static {v5, v6, p1, v7, v4}, Ld;->x(Lova;Ljava/lang/String;Ljava/lang/Object;CLjava/lang/Throwable;)V
+
+    new-instance v4, Lorg/json/JSONArray;
+
+    invoke-direct {v4}, Lorg/json/JSONArray;-><init>()V
+
+    :goto_6
+    invoke-virtual {v2}, Linc;->ordinal()I
+
+    move-result v5
+
+    packed-switch v5, :pswitch_data_0
+
+    new-instance p1, Ljava/lang/AssertionError;
+
+    goto :goto_8
+
+    :pswitch_0
+    sget-object v2, Lijf;->p:Lijf;
+
+    invoke-virtual {p0, v2}, Line;->b(Lijf;)I
+
+    move-result v2
+
+    goto :goto_7
+
+    :pswitch_1
+    sget-object v2, Lijf;->m:Lijf;
+
+    invoke-virtual {p0, v2}, Line;->b(Lijf;)I
+
+    move-result v2
+
+    :goto_7
+    invoke-virtual {v4, v2}, Lorg/json/JSONArray;->put(I)Lorg/json/JSONArray;
+
+    invoke-virtual {p1, v3, v4}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
+
+    goto :goto_5
+
+    :goto_8
+    invoke-static {v2}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/String;->length()I
+
+    move-result v1
+
+    add-int/lit8 v1, v1, 0x38
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2, v1}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string v1, "Shouldn\'t be reached: The switch statement should cover "
+
+    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-direct {p1, v0}, Ljava/lang/AssertionError;-><init>(Ljava/lang/Object;)V
+
+    throw p1
+    :try_end_5
+    .catch Lorg/json/JSONException; {:try_start_5 .. :try_end_5} :catch_4
+
+    :cond_7
+    invoke-virtual {p1}, Lorg/json/JSONObject;->toString()Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-virtual {v1}, Ljava/io/File;->getParentFile()Ljava/io/File;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lobr;->ao(Ljava/lang/Object;)Ljava/lang/Object;
+
+    invoke-virtual {v0}, Ljava/io/File;->mkdirs()Z
+
+    :try_start_6
+    new-instance v0, Ljava/io/BufferedWriter;
+
+    new-instance v2, Ljava/io/FileWriter;
+
+    invoke-direct {v2, v1}, Ljava/io/FileWriter;-><init>(Ljava/io/File;)V
+
+    invoke-direct {v0, v2}, Ljava/io/BufferedWriter;-><init>(Ljava/io/Writer;)V
+    :try_end_6
+    .catch Ljava/io/IOException; {:try_start_6 .. :try_end_6} :catch_3
+
+    :try_start_7
+    invoke-virtual {v0, p1}, Ljava/io/BufferedWriter;->write(Ljava/lang/String;)V
+
+    invoke-virtual {v0}, Ljava/io/BufferedWriter;->newLine()V
+    :try_end_7
+    .catchall {:try_start_7 .. :try_end_7} :catchall_0
+
+    :try_start_8
+    invoke-virtual {v0}, Ljava/io/BufferedWriter;->close()V
+    :try_end_8
+    .catch Ljava/io/IOException; {:try_start_8 .. :try_end_8} :catch_3
 
     return-void
+
+    :catchall_0
+    move-exception p1
+
+    :try_start_9
+    invoke-virtual {v0}, Ljava/io/BufferedWriter;->close()V
+    :try_end_9
+    .catchall {:try_start_9 .. :try_end_9} :catchall_1
+
+    goto :goto_9
+
+    :catchall_1
+    move-exception v0
+
+    :goto_9
+    :try_start_a
+    throw p1
+    :try_end_a
+    .catch Ljava/io/IOException; {:try_start_a .. :try_end_a} :catch_3
+
+    :catch_3
+    move-exception p1
+
+    new-instance v0, Ljava/lang/RuntimeException;
+
+    invoke-direct {v0, p1}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/Throwable;)V
+
+    throw v0
+
+    :catch_4
+    move-exception p1
+
+    new-instance v0, Ljava/lang/RuntimeException;
+
+    invoke-direct {v0, p1}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/Throwable;)V
+
+    throw v0
+
+    :catch_5
+    move-exception p1
+
+    new-instance v0, Ljava/lang/RuntimeException;
+
+    invoke-direct {v0, p1}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/Throwable;)V
+
+    throw v0
+
+    :cond_8
+    :goto_a
+    sget-object v0, Line;->a:Louj;
+
+    invoke-virtual {v0}, Loue;->b()Lova;
+
+    move-result-object v0
+
+    const/16 v1, 0xbd0
+
+    const-string v2, "Wrong file name: %s"
+
+    invoke-static {v0, v2, p1, v1}, Ld;->u(Lova;Ljava/lang/String;Ljava/lang/Object;C)V
+
+    return-void
+
+    :cond_9
+    return-void
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
+.end method
+
+.method final b(Lijf;)I
+    .locals 5
+
+    iget-object v0, p0, Line;->c:Lcom/google/android/apps/camera/stats/Instrumentation;
+
+    const-class v1, Lcom/google/android/apps/camera/stats/timing/CameraActivityTiming;
+
+    invoke-virtual {v0, v1}, Lcom/google/android/apps/camera/stats/Instrumentation;->e(Ljava/lang/Class;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    sget-object p1, Line;->a:Louj;
+
+    invoke-virtual {p1}, Loue;->c()Lova;
+
+    move-result-object p1
+
+    const/16 v0, 0xbcd
+
+    const-string v1, "No CameraActivitySession has recorded."
+
+    invoke-static {p1, v1, v0}, Ld;->v(Lova;Ljava/lang/String;C)V
+
+    const/4 p1, 0x0
+
+    return p1
+
+    :cond_0
+    iget-object v0, p0, Line;->c:Lcom/google/android/apps/camera/stats/Instrumentation;
+
+    const-class v1, Lcom/google/android/apps/camera/stats/timing/CameraActivityTiming;
+
+    invoke-virtual {v0, v1}, Lcom/google/android/apps/camera/stats/Instrumentation;->a(Ljava/lang/Class;)Lcom/google/android/apps/camera/stats/timing/TimingSession;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/google/android/apps/camera/stats/timing/CameraActivityTiming;
+
+    invoke-virtual {v0, p1}, Lijs;->g(Ljava/lang/Enum;)J
+
+    move-result-wide v1
+
+    iget-wide v3, v0, Lijs;->m:J
+
+    sget-object p1, Ljava/util/concurrent/TimeUnit;->NANOSECONDS:Ljava/util/concurrent/TimeUnit;
+
+    sub-long/2addr v1, v3
+
+    invoke-virtual {p1, v1, v2}, Ljava/util/concurrent/TimeUnit;->toMillis(J)J
+
+    move-result-wide v0
+
+    long-to-int p1, v0
+
+    return p1
 .end method

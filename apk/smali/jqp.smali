@@ -1,76 +1,63 @@
 .class public final Ljqp;
-.super Ljhn;
+.super Ljava/lang/Object;
 
-
-# static fields
-.field public static final CREATOR:Landroid/os/Parcelable$Creator;
+# interfaces
+.implements Lpys;
 
 
 # instance fields
-.field public final a:I
+.field private final a:Lqkg;
 
-.field public final b:Ljava/util/List;
-
-.field public final c:Ljtn;
+.field private final b:Lqkg;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
-
-    new-instance v0, Ljqn;
-
-    const/4 v1, 0x3
-
-    invoke-direct {v0, v1}, Ljqn;-><init>(I)V
-
-    sput-object v0, Ljqp;->CREATOR:Landroid/os/Parcelable$Creator;
-
-    return-void
-.end method
-
-.method public constructor <init>(ILjava/util/List;Ljtn;)V
+.method public constructor <init>(Lqkg;Lqkg;)V
     .locals 0
 
-    invoke-direct {p0}, Ljhn;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput p1, p0, Ljqp;->a:I
+    iput-object p1, p0, Ljqp;->a:Lqkg;
 
-    iput-object p2, p0, Ljqp;->b:Ljava/util/List;
-
-    iput-object p3, p0, Ljqp;->c:Ljtn;
+    iput-object p2, p0, Ljqp;->b:Lqkg;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final writeToParcel(Landroid/os/Parcel;I)V
+.method public final a()Ljqo;
     .locals 3
 
-    invoke-static {p1}, Ljhp;->a(Landroid/os/Parcel;)I
+    iget-object v0, p0, Ljqp;->a:Lqkg;
 
-    move-result v0
+    invoke-interface {v0}, Lqkg;->get()Ljava/lang/Object;
 
-    iget v1, p0, Ljqp;->a:I
+    move-result-object v0
 
-    const/4 v2, 0x1
+    check-cast v0, Ljqn;
 
-    invoke-static {p1, v2, v1}, Ljhp;->g(Landroid/os/Parcel;II)V
+    iget-object v1, p0, Ljqp;->b:Lqkg;
 
-    iget-object v1, p0, Ljqp;->b:Ljava/util/List;
+    invoke-interface {v1}, Lqkg;->get()Ljava/lang/Object;
 
-    const/4 v2, 0x2
+    move-result-object v1
 
-    invoke-static {p1, v2, v1}, Ljhp;->t(Landroid/os/Parcel;ILjava/util/List;)V
+    check-cast v1, Ljqn;
 
-    iget-object v1, p0, Ljqp;->c:Ljtn;
+    new-instance v2, Ljqo;
 
-    const/4 v2, 0x3
+    invoke-direct {v2, v0, v1}, Ljqo;-><init>(Ljqn;Ljqn;)V
 
-    invoke-static {p1, v2, v1, p2}, Ljhp;->o(Landroid/os/Parcel;ILandroid/os/Parcelable;I)V
+    return-object v2
+.end method
 
-    invoke-static {p1, v0}, Ljhp;->c(Landroid/os/Parcel;I)V
+.method public final bridge synthetic get()Ljava/lang/Object;
+    .locals 1
 
-    return-void
+    invoke-virtual {p0}, Ljqp;->a()Ljqo;
+
+    move-result-object v0
+
+    return-object v0
 .end method

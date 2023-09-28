@@ -1,95 +1,189 @@
 .class public final Lijm;
 .super Ljava/lang/Object;
 
-# interfaces
-.implements Lipb;
-
 
 # instance fields
-.field final synthetic a:Lmrl;
+.field public final a:Ljava/lang/String;
 
-.field final synthetic b:Lhrq;
+.field public final b:I
 
-.field final synthetic c:Liaw;
+.field public final c:J
 
 
 # direct methods
-.method public constructor <init>(Liaw;Lmrl;Lhrq;)V
+.method public constructor <init>()V
     .locals 0
-
-    iput-object p1, p0, Lijm;->c:Liaw;
-
-    iput-object p2, p0, Lijm;->a:Lmrl;
-
-    iput-object p3, p0, Lijm;->b:Lhrq;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
+.method public constructor <init>(Ljava/lang/String;IJ)V
+    .locals 0
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    if-eqz p1, :cond_0
+
+    iput-object p1, p0, Lijm;->a:Ljava/lang/String;
+
+    iput p2, p0, Lijm;->b:I
+
+    iput-wide p3, p0, Lijm;->c:J
+
+    return-void
+
+    :cond_0
+    new-instance p1, Ljava/lang/NullPointerException;
+
+    const-string p2, "Null name"
+
+    invoke-direct {p1, p2}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
+
+    throw p1
+.end method
+
+.method public static a(Ljava/lang/String;IJ)Lijm;
+    .locals 1
+
+    new-instance v0, Lijm;
+
+    invoke-direct {v0, p0, p1, p2, p3}, Lijm;-><init>(Ljava/lang/String;IJ)V
+
+    return-object v0
+.end method
+
 
 # virtual methods
-.method public final a(F)V
-    .locals 3
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 7
 
-    iget-object v0, p0, Lijm;->c:Liaw;
+    const/4 v0, 0x1
 
-    iget-object v1, p0, Lijm;->a:Lmrl;
+    if-ne p1, p0, :cond_0
 
-    invoke-interface {v1}, Lmrl;->a()Ljava/lang/Object;
+    return v0
 
-    move-result-object v1
-
-    check-cast v1, Lhyt;
-
-    iget-object v1, v1, Lhyt;->a:Lhys;
-
-    iget-object v1, v1, Lhys;->i:Lhyn;
+    :cond_0
+    instance-of v1, p1, Lijm;
 
     const/4 v2, 0x0
 
-    invoke-virtual {v0, p1, v2, v1}, Liaw;->d(FZLhyn;)V
+    if-eqz v1, :cond_1
 
-    return-void
+    check-cast p1, Lijm;
+
+    iget-object v1, p0, Lijm;->a:Ljava/lang/String;
+
+    iget-object v3, p1, Lijm;->a:Ljava/lang/String;
+
+    invoke-virtual {v1, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_1
+
+    iget v1, p0, Lijm;->b:I
+
+    iget v3, p1, Lijm;->b:I
+
+    if-ne v1, v3, :cond_1
+
+    iget-wide v3, p0, Lijm;->c:J
+
+    iget-wide v5, p1, Lijm;->c:J
+
+    cmp-long p1, v3, v5
+
+    if-nez p1, :cond_1
+
+    return v0
+
+    :cond_1
+    return v2
 .end method
 
-.method public final b()V
-    .locals 3
+.method public final hashCode()I
+    .locals 6
 
-    iget-object v0, p0, Lijm;->c:Liaw;
+    iget-object v0, p0, Lijm;->a:Ljava/lang/String;
 
-    iget-object v1, p0, Lijm;->a:Lmrl;
+    invoke-virtual {v0}, Ljava/lang/String;->hashCode()I
 
-    invoke-interface {v1}, Lmrl;->a()Ljava/lang/Object;
+    move-result v0
 
-    move-result-object v1
+    iget v1, p0, Lijm;->b:I
 
-    check-cast v1, Lhyt;
+    iget-wide v2, p0, Lijm;->c:J
 
-    iget-object v1, v1, Lhyt;->a:Lhys;
+    const v4, 0xf4243
 
-    iget-object v1, v1, Lhys;->i:Lhyn;
+    xor-int/2addr v0, v4
 
-    const/4 v2, 0x0
+    mul-int v0, v0, v4
 
-    invoke-virtual {v0, v2, v1}, Liaw;->b(ZLhyn;)V
+    xor-int/2addr v0, v1
 
-    return-void
+    mul-int v0, v0, v4
+
+    const/16 v1, 0x20
+
+    ushr-long v4, v2, v1
+
+    xor-long/2addr v2, v4
+
+    long-to-int v1, v2
+
+    xor-int/2addr v0, v1
+
+    return v0
 .end method
 
-.method public final c()V
-    .locals 2
+.method public final toString()Ljava/lang/String;
+    .locals 6
 
-    iget-object v0, p0, Lijm;->b:Lhrq;
+    iget-object v0, p0, Lijm;->a:Ljava/lang/String;
 
-    const/4 v1, 0x1
+    iget v1, p0, Lijm;->b:I
 
-    invoke-virtual {v0, v1}, Lhrq;->b(Z)V
+    iget-wide v2, p0, Lijm;->c:J
 
-    iget-object v0, p0, Lijm;->c:Liaw;
+    invoke-virtual {v0}, Ljava/lang/String;->length()I
 
-    invoke-virtual {v0}, Liaw;->a()V
+    move-result v4
 
-    return-void
+    new-instance v5, Ljava/lang/StringBuilder;
+
+    add-int/lit8 v4, v4, 0x50
+
+    invoke-direct {v5, v4}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string v4, "RecordedCheckpoint{name="
+
+    invoke-virtual {v5, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v5, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v0, ", ordinal="
+
+    invoke-virtual {v5, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v5, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    const-string v0, ", timingNanos="
+
+    invoke-virtual {v5, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v5, v2, v3}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+
+    const-string v0, "}"
+
+    invoke-virtual {v5, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
 .end method

@@ -1,64 +1,75 @@
 .class final Lntp;
-.super Landroid/database/sqlite/SQLiteOpenHelper;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Lqco;
 
 
 # instance fields
-.field final synthetic a:Lntq;
+.field final synthetic a:Lnuj;
+
+.field private final synthetic b:I
 
 
 # direct methods
-.method public constructor <init>(Lntq;Landroid/content/Context;)V
-    .locals 1
+.method public constructor <init>(Lnuj;I)V
+    .locals 0
 
-    iput-object p1, p0, Lntp;->a:Lntq;
+    iput p2, p0, Lntp;->b:I
 
-    const/4 p1, 0x0
+    iput-object p1, p0, Lntp;->a:Lnuj;
 
-    const/4 v0, 0x1
-
-    invoke-direct {p0, p2, p1, p1, v0}, Landroid/database/sqlite/SQLiteOpenHelper;-><init>(Landroid/content/Context;Ljava/lang/String;Landroid/database/sqlite/SQLiteDatabase$CursorFactory;I)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onCreate(Landroid/database/sqlite/SQLiteDatabase;)V
+.method public final synthetic a(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 4
 
-    iget-object v0, p0, Lntp;->a:Lntq;
+    iget v0, p0, Lntp;->b:I
 
-    iget-object v0, v0, Lntq;->b:Lnti;
+    const/4 v1, 0x0
 
-    iget-object v0, v0, Lnti;->d:Ljava/lang/String;
+    packed-switch v0, :pswitch_data_0
 
-    sget-object v1, Lntq;->d:Lloi;
+    check-cast p1, Ljava/util/List;
 
-    const/4 v2, 0x1
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    new-array v2, v2, [Ljava/lang/Object;
+    iget-object v0, p0, Lntp;->a:Lnuj;
 
-    const/4 v3, 0x0
+    const/16 v2, 0x7b
 
-    aput-object v0, v2, v3
+    invoke-static {v0, v1, p1, v1, v2}, Lnuj;->b(Lnuj;Lnqh;Ljava/util/List;Ljava/util/List;I)Lnuj;
 
-    const-string v3, "Creating SQLite table as:\n%s"
+    move-result-object p1
 
-    invoke-virtual {v1, v3, v2}, Lloi;->i(Ljava/lang/String;[Ljava/lang/Object;)V
+    return-object p1
 
-    invoke-virtual {p1, v0}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
+    :pswitch_0
+    check-cast p1, Lnqi;
 
-    return-void
-.end method
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-.method public final onUpgrade(Landroid/database/sqlite/SQLiteDatabase;II)V
-    .locals 0
+    iget-object v0, p1, Lnqi;->a:Lnqh;
 
-    new-instance p1, Ljava/lang/IllegalStateException;
+    iget-object p1, p1, Lnqi;->b:Ljava/util/List;
 
-    const-string p2, "In-memory database will never call onUpgrade."
+    iget-object v2, p0, Lntp;->a:Lnuj;
 
-    invoke-direct {p1, p2}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+    const/16 v3, 0x79
 
-    throw p1
+    invoke-static {v2, v0, p1, v1, v3}, Lnuj;->b(Lnuj;Lnqh;Ljava/util/List;Ljava/util/List;I)Lnuj;
+
+    move-result-object p1
+
+    return-object p1
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

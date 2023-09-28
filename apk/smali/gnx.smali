@@ -1,130 +1,142 @@
-.class public final Lgnx;
+.class public final synthetic Lgnx;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lfvh;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field private final a:Landroid/hardware/camera2/CaptureResult$Key;
+.field public final synthetic a:Lgny;
 
-.field private final b:J
+.field private final synthetic b:I
 
 
 # direct methods
-.method public constructor <init>(Landroid/hardware/camera2/CaptureResult$Key;J)V
+.method public synthetic constructor <init>(Lgny;I)V
     .locals 0
+
+    iput p2, p0, Lgnx;->b:I
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lgnx;->a:Landroid/hardware/camera2/CaptureResult$Key;
-
-    iput-wide p2, p0, Lgnx;->b:J
+    iput-object p1, p0, Lgnx;->a:Lgny;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Lkou;)Z
-    .locals 6
+.method public final run()V
+    .locals 9
 
-    const/4 v0, 0x0
+    iget v0, p0, Lgnx;->b:I
 
-    if-nez p1, :cond_0
+    packed-switch v0, :pswitch_data_0
 
-    sget-object p1, Lgoa;->a:Lnak;
+    iget-object v0, p0, Lgnx;->a:Lgny;
 
-    invoke-virtual {p1}, Lnaf;->c()Lnaz;
+    invoke-virtual {v0}, Lgny;->c()V
 
-    move-result-object p1
+    return-void
 
-    const-string v1, "Missing metadata."
+    :pswitch_0
+    iget-object v0, p0, Lgnx;->a:Lgny;
 
-    const/16 v2, 0xc2f
+    invoke-virtual {v0}, Lgny;->c()V
 
-    invoke-static {p1, v1, v2}, Ld;->g(Lnaz;Ljava/lang/String;C)V
+    iget-object v1, v0, Lgny;->d:Lgob;
 
-    return v0
+    iget-object v1, v1, Lgob;->c:Ljava/util/concurrent/atomic/AtomicBoolean;
+
+    invoke-virtual {v1}, Ljava/util/concurrent/atomic/AtomicBoolean;->get()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_2
+
+    monitor-enter v0
+
+    :try_start_0
+    iget v1, v0, Lgny;->b:I
+
+    const/4 v2, 0x1
+
+    add-int/2addr v1, v2
+
+    iput v1, v0, Lgny;->b:I
+
+    iget v3, v0, Lgny;->a:I
+
+    if-gt v1, v3, :cond_0
+
+    goto :goto_0
 
     :cond_0
-    iget-object v1, p0, Lgnx;->a:Landroid/hardware/camera2/CaptureResult$Key;
+    const/4 v2, 0x0
 
-    invoke-interface {p1, v1}, Lkou;->d(Landroid/hardware/camera2/CaptureResult$Key;)Ljava/lang/Object;
+    :goto_0
+    invoke-static {v2}, Lobr;->aQ(Z)V
 
-    move-result-object p1
+    iget v1, v0, Lgny;->b:I
 
-    check-cast p1, Ljava/lang/Long;
+    int-to-float v2, v1
 
-    if-nez p1, :cond_1
+    iget v3, v0, Lgny;->a:I
 
-    sget-object p1, Lgoa;->a:Lnak;
+    int-to-float v4, v3
 
-    invoke-virtual {p1}, Lnaf;->c()Lnaz;
+    div-float/2addr v2, v4
 
-    move-result-object p1
+    iget-wide v4, v0, Lgny;->c:J
 
-    check-cast p1, Lnah;
+    const-wide/16 v6, 0x0
 
-    const/16 v1, 0xc2e
+    cmp-long v8, v4, v6
 
-    invoke-interface {p1, v1}, Lnah;->G(I)Lnaz;
+    if-lez v8, :cond_1
 
-    move-result-object p1
+    iget-object v1, v0, Lgny;->d:Lgob;
 
-    check-cast p1, Lnah;
+    iget-object v1, v1, Lgob;->a:Lgfs;
 
-    iget-object v1, p0, Lgnx;->a:Landroid/hardware/camera2/CaptureResult$Key;
+    iget-object v1, v1, Lgfs;->b:Lgft;
 
-    const-string v2, "Missing value for key %s."
+    invoke-interface {v1, v2, v4, v5}, Lgft;->F(FJ)V
 
-    invoke-interface {p1, v2, v1}, Lnah;->r(Ljava/lang/String;Ljava/lang/Object;)V
-
-    return v0
+    goto :goto_1
 
     :cond_1
-    invoke-virtual {p1}, Ljava/lang/Long;->longValue()J
+    sub-int/2addr v3, v1
 
-    move-result-wide v1
+    iget-object v1, v0, Lgny;->d:Lgob;
 
-    iget-wide v3, p0, Lgnx;->b:J
+    iget-object v1, v1, Lgob;->a:Lgfs;
 
-    cmp-long v5, v1, v3
+    iget-object v1, v1, Lgfs;->b:Lgft;
 
-    if-lez v5, :cond_2
+    invoke-interface {v1, v2, v3}, Lgft;->E(FI)V
 
-    const/4 p1, 0x1
+    :goto_1
+    monitor-exit v0
 
-    return p1
+    return-void
+
+    :catchall_0
+    move-exception v1
+
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw v1
 
     :cond_2
-    sget-object v1, Lgoa;->a:Lnak;
+    return-void
 
-    invoke-virtual {v1}, Lnaf;->c()Lnaz;
+    nop
 
-    move-result-object v1
-
-    check-cast v1, Lnah;
-
-    const/16 v2, 0xc2d
-
-    invoke-interface {v1, v2}, Lnah;->G(I)Lnaz;
-
-    move-result-object v1
-
-    check-cast v1, Lnah;
-
-    iget-object v2, p0, Lgnx;->a:Landroid/hardware/camera2/CaptureResult$Key;
-
-    iget-wide v3, p0, Lgnx;->b:J
-
-    invoke-static {v3, v4}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    move-result-object v3
-
-    const-string v4, "Unexpected value for key %s. Expected: greater than %s, got: %s."
-
-    invoke-interface {v1, v4, v2, v3, p1}, Lnah;->B(Ljava/lang/String;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V
-
-    return v0
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

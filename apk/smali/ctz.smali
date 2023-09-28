@@ -1,81 +1,59 @@
-.class public final Lctz;
+.class public final synthetic Lctz;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Logk;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field private final a:Loiw;
+.field public final synthetic a:Lcug;
 
-.field private final b:Loiw;
-
-.field private final c:Loiw;
+.field private final synthetic b:I
 
 
 # direct methods
-.method public constructor <init>(Loiw;Loiw;Loiw;)V
+.method public synthetic constructor <init>(Lcug;I)V
     .locals 0
+
+    iput p2, p0, Lctz;->b:I
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lctz;->a:Loiw;
-
-    iput-object p2, p0, Lctz;->b:Loiw;
-
-    iput-object p3, p0, Lctz;->c:Loiw;
+    iput-object p1, p0, Lctz;->a:Lcug;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Lcty;
-    .locals 5
+.method public final run()V
+    .locals 2
 
-    iget-object v0, p0, Lctz;->a:Loiw;
+    iget v0, p0, Lctz;->b:I
 
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
+    packed-switch v0, :pswitch_data_0
 
-    move-result-object v0
+    iget-object v0, p0, Lctz;->a:Lcug;
 
-    check-cast v0, Lhxb;
+    iget-object v0, v0, Lcug;->d:Lhuj;
 
-    iget-object v1, p0, Lctz;->b:Loiw;
+    const-string v1, "washington_tooltip"
 
-    invoke-interface {v1}, Loiw;->get()Ljava/lang/Object;
+    invoke-virtual {v0, v1}, Lhuj;->b(Ljava/lang/String;)I
 
-    move-result-object v1
+    return-void
 
-    check-cast v1, Ljuh;
+    :pswitch_0
+    iget-object v0, p0, Lctz;->a:Lcug;
 
-    iget-object v2, p0, Lctz;->c:Loiw;
+    invoke-virtual {v0}, Lcug;->d()V
 
-    invoke-interface {v2}, Loiw;->get()Ljava/lang/Object;
+    return-void
 
-    move-result-object v2
+    nop
 
-    check-cast v2, Lipk;
-
-    new-instance v3, Lcty;
-
-    sget-object v4, Lmpw;->a:Lmrq;
-
-    invoke-static {v4}, Lmrg;->c(Lmrq;)Lmrg;
-
-    move-result-object v4
-
-    invoke-direct {v3, v0, v2, v1, v4}, Lcty;-><init>(Lhxb;Lipk;Ljuh;Lmrg;)V
-
-    return-object v3
-.end method
-
-.method public final bridge synthetic get()Ljava/lang/Object;
-    .locals 1
-
-    invoke-virtual {p0}, Lctz;->a()Lcty;
-
-    move-result-object v0
-
-    return-object v0
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

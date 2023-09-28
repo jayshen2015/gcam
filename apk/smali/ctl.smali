@@ -2,2252 +2,1624 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lcte;
+.implements Lctm;
+.implements Llie;
+.implements Lfik;
+.implements Lfig;
+.implements Lfie;
 
 
 # static fields
-.field public static final a:Lnak;
-
-.field public static final b:Lcjv;
+.field private static final o:Louj;
 
 
 # instance fields
-.field public final A:Ljava/util/Set;
+.field public final a:Llda;
 
-.field public B:Z
+.field public final b:Lcom/google/android/apps/camera/bottombar/BottomBarController;
 
-.field public final C:Lkha;
+.field public final c:Ljava/util/Set;
 
-.field public D:Lkgq;
+.field public final d:Lepj;
 
-.field public E:Lkgq;
+.field public final e:Lctn;
 
-.field public final F:Ldja;
+.field public final f:Ljeg;
 
-.field public final G:Lcvr;
+.field public final g:Ljfn;
 
-.field public final H:Lcvr;
+.field public final h:Ljlb;
 
-.field public final I:Ldja;
+.field public final i:Ljava/lang/Object;
 
-.field public final J:Z
+.field public final j:Lojc;
 
-.field public final K:Ldne;
+.field public k:Ljrl;
 
-.field public final L:Ldfa;
+.field public l:Lcom/google/android/apps/camera/ui/modeslider/ModeSliderUi;
 
-.field public final c:Ljava/lang/Object;
+.field public m:Landroid/animation/ObjectAnimator;
 
-.field public final d:Lcqd;
+.field public n:Landroid/animation/ObjectAnimator;
 
-.field public final e:Loiw;
+.field private final p:Ljava/util/concurrent/atomic/AtomicBoolean;
 
-.field public final f:Lmqp;
+.field private final q:Llda;
 
-.field public final g:Lcqx;
+.field private final r:Lcvo;
 
-.field public final h:I
+.field private final s:Llap;
 
-.field public i:Lcsc;
+.field private final t:Ljava/util/Set;
 
-.field public j:Lken;
+.field private final u:Llar;
 
-.field public k:Lkfj;
+.field private final v:Lfjs;
 
-.field public l:Lkfj;
+.field private final w:Lpyn;
 
-.field public m:Lkfj;
-
-.field public n:Lkfj;
-
-.field public o:Liha;
-
-.field public p:Landroid/view/Surface;
-
-.field public q:Lkef;
-
-.field public r:Lkef;
-
-.field public s:Lkef;
-
-.field public t:Lcrr;
-
-.field public u:Ldmv;
-
-.field public v:Lccn;
-
-.field public w:Lfzj;
-
-.field public final x:Ldde;
-
-.field public final y:Ljwb;
-
-.field public final z:Ljava/util/concurrent/Executor;
+.field private final x:Lddf;
 
 
 # direct methods
 .method static constructor <clinit>()V
     .locals 1
 
-    const-string v0, "com/google/android/apps/camera/camcorder/frameserver/CamcorderFrameServerImpl"
+    const-string v0, "com/google/android/apps/camera/camcorder/ui/modeslider/ModeSliderControllerImpl"
 
-    invoke-static {v0}, Lnak;->h(Ljava/lang/String;)Lnak;
+    invoke-static {v0}, Louj;->h(Ljava/lang/String;)Louj;
 
     move-result-object v0
 
-    sput-object v0, Lctl;->a:Lnak;
-
-    new-instance v0, Lcjp;
-
-    invoke-direct {v0}, Lcjp;-><init>()V
-
-    sput-object v0, Lctl;->b:Lcjv;
+    sput-object v0, Lctl;->o:Louj;
 
     return-void
 .end method
 
-.method public constructor <init>(Lkha;Lcqd;Loiw;Ldja;Lmqp;Lcqx;Ldfa;Lcvr;Ldhi;Ldde;Ldja;Ldne;Lcvr;Ljwb;Ljava/util/concurrent/Executor;Ljava/util/Set;[B[B[B)V
+.method public constructor <init>(Lfhv;Llda;Llda;Lcom/google/android/apps/camera/bottombar/BottomBarController;Lepj;Llar;Lctn;Ljeg;Ljfn;Lojc;Ljlb;Ljava/util/Set;Lcvo;Lpyn;Lfjs;Lddf;)V
     .locals 4
 
     move-object v0, p0
 
-    move-object v1, p9
+    move-object v1, p6
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    new-instance v2, Ljava/util/concurrent/atomic/AtomicBoolean;
+
+    const/4 v3, 0x0
+
+    invoke-direct {v2, v3}, Ljava/util/concurrent/atomic/AtomicBoolean;-><init>(Z)V
+
+    iput-object v2, v0, Lctl;->p:Ljava/util/concurrent/atomic/AtomicBoolean;
 
     new-instance v2, Ljava/lang/Object;
 
     invoke-direct {v2}, Ljava/lang/Object;-><init>()V
 
-    iput-object v2, v0, Lctl;->c:Ljava/lang/Object;
+    iput-object v2, v0, Lctl;->i:Ljava/lang/Object;
 
-    const/4 v2, 0x0
+    sget-object v2, Ljrl;->a:Ljrl;
 
-    iput-boolean v2, v0, Lctl;->B:Z
+    iput-object v2, v0, Lctl;->k:Ljrl;
 
-    move-object v2, p1
+    new-instance v2, Llap;
 
-    iput-object v2, v0, Lctl;->C:Lkha;
+    invoke-direct {v2}, Llap;-><init>()V
+
+    iput-object v2, v0, Lctl;->s:Llap;
 
     move-object v2, p2
 
-    iput-object v2, v0, Lctl;->d:Lcqd;
+    iput-object v2, v0, Lctl;->a:Llda;
 
     move-object v2, p3
 
-    iput-object v2, v0, Lctl;->e:Loiw;
+    iput-object v2, v0, Lctl;->q:Llda;
 
     move-object v2, p4
 
-    iput-object v2, v0, Lctl;->F:Ldja;
+    iput-object v2, v0, Lctl;->b:Lcom/google/android/apps/camera/bottombar/BottomBarController;
+
+    move-object/from16 v2, p13
+
+    iput-object v2, v0, Lctl;->r:Lcvo;
 
     move-object v2, p5
 
-    iput-object v2, v0, Lctl;->f:Lmqp;
+    iput-object v2, v0, Lctl;->d:Lepj;
 
-    move-object v2, p6
-
-    iput-object v2, v0, Lctl;->g:Lcqx;
+    iput-object v1, v0, Lctl;->u:Llar;
 
     move-object v2, p7
 
-    iput-object v2, v0, Lctl;->L:Ldfa;
+    iput-object v2, v0, Lctl;->e:Lctn;
 
     move-object v2, p8
 
-    iput-object v2, v0, Lctl;->G:Lcvr;
+    iput-object v2, v0, Lctl;->f:Ljeg;
 
-    sget-object v2, Ldho;->d:Ldhk;
+    move-object v2, p9
 
-    invoke-interface {p9, v2}, Ldhi;->a(Ldhk;)Lj$/util/Optional;
+    iput-object v2, v0, Lctl;->g:Ljfn;
 
-    move-result-object v2
+    move-object v2, p10
 
-    invoke-virtual {v2}, Lj$/util/Optional;->get()Ljava/lang/Object;
+    iput-object v2, v0, Lctl;->j:Lojc;
 
-    move-result-object v2
+    move-object v2, p11
 
-    check-cast v2, Ljava/lang/Integer;
+    iput-object v2, v0, Lctl;->h:Ljlb;
 
-    invoke-virtual {v2}, Ljava/lang/Integer;->intValue()I
+    move-object/from16 v2, p14
 
-    move-result v2
+    iput-object v2, v0, Lctl;->w:Lpyn;
 
-    sget-object v3, Ldho;->e:Ldhk;
+    move-object/from16 v2, p15
 
-    invoke-interface {p9, v3}, Ldhi;->a(Ldhk;)Lj$/util/Optional;
+    iput-object v2, v0, Lctl;->v:Lfjs;
 
-    move-result-object v3
+    move-object/from16 v2, p16
 
-    invoke-virtual {v3}, Lj$/util/Optional;->get()Ljava/lang/Object;
+    iput-object v2, v0, Lctl;->x:Lddf;
 
-    move-result-object v3
+    new-instance v2, Ljava/util/HashSet;
 
-    check-cast v3, Ljava/lang/Integer;
+    invoke-direct {v2}, Ljava/util/HashSet;-><init>()V
 
-    invoke-virtual {v3}, Ljava/lang/Integer;->intValue()I
+    iput-object v2, v0, Lctl;->c:Ljava/util/Set;
 
-    move-result v3
+    new-instance v2, Ljava/util/HashSet;
 
-    add-int/2addr v2, v3
+    move-object/from16 v3, p12
 
-    iput v2, v0, Lctl;->h:I
+    invoke-direct {v2, v3}, Ljava/util/HashSet;-><init>(Ljava/util/Collection;)V
 
-    sget-object v2, Ldho;->aD:Ldhj;
+    iput-object v2, v0, Lctl;->t:Ljava/util/Set;
 
-    invoke-interface {p9, v2}, Ldhi;->k(Ldhj;)Z
+    new-instance v2, Lctg;
 
-    move-result v1
+    move-object v3, p1
 
-    iput-boolean v1, v0, Lctl;->J:Z
+    invoke-direct {v2, p0, p1}, Lctg;-><init>(Lctl;Lfhv;)V
 
-    move-object v1, p10
+    invoke-virtual {p6, v2}, Llar;->c(Ljava/lang/Runnable;)V
 
-    iput-object v1, v0, Lctl;->x:Ldde;
-
-    move-object v1, p11
-
-    iput-object v1, v0, Lctl;->I:Ldja;
-
-    move-object/from16 v1, p12
-
-    iput-object v1, v0, Lctl;->K:Ldne;
-
-    move-object/from16 v1, p13
-
-    iput-object v1, v0, Lctl;->H:Lcvr;
-
-    move-object/from16 v1, p14
-
-    iput-object v1, v0, Lctl;->y:Ljwb;
-
-    move-object/from16 v1, p15
-
-    iput-object v1, v0, Lctl;->z:Ljava/util/concurrent/Executor;
-
-    move-object/from16 v1, p16
-
-    iput-object v1, v0, Lctl;->A:Ljava/util/Set;
-
-    return-void
-.end method
-
-.method public static synthetic A$041(Lklw;)Ljava/util/Set;
-    .locals 1
-
-    invoke-virtual/range {p0 .. p0}, Lklw;->A()Ljava/util/Set;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public static synthetic CONTROL_AE_TARGET_FPS_RANGE$001()Landroid/hardware/camera2/CaptureRequest$Key;
-    .locals 1
-
-    sget-object v0, Landroid/hardware/camera2/CaptureRequest;->CONTROL_AE_TARGET_FPS_RANGE:Landroid/hardware/camera2/CaptureRequest$Key;
-
-    return-object v0
-.end method
-
-.method public static synthetic CONTROL_AE_TARGET_FPS_RANGE$002()Landroid/hardware/camera2/CaptureRequest$Key;
-    .locals 1
-
-    sget-object v0, Landroid/hardware/camera2/CaptureRequest;->CONTROL_AE_TARGET_FPS_RANGE:Landroid/hardware/camera2/CaptureRequest$Key;
-
-    return-object v0
-.end method
-
-.method public static synthetic CONTROL_AE_TARGET_FPS_RANGE$003()Landroid/hardware/camera2/CaptureRequest$Key;
-    .locals 1
-
-    sget-object v0, Landroid/hardware/camera2/CaptureRequest;->CONTROL_AE_TARGET_FPS_RANGE:Landroid/hardware/camera2/CaptureRequest$Key;
-
-    return-object v0
-.end method
-
-.method public static synthetic CONTROL_EXTENDED_SCENE_MODE$006()Landroid/hardware/camera2/CaptureRequest$Key;
-    .locals 1
-
-    sget-object v0, Landroid/hardware/camera2/CaptureRequest;->CONTROL_EXTENDED_SCENE_MODE:Landroid/hardware/camera2/CaptureRequest$Key;
-
-    return-object v0
-.end method
-
-.method public static synthetic CONTROL_EXTENDED_SCENE_MODE$007()Landroid/hardware/camera2/CaptureRequest$Key;
-    .locals 1
-
-    sget-object v0, Landroid/hardware/camera2/CaptureRequest;->CONTROL_EXTENDED_SCENE_MODE:Landroid/hardware/camera2/CaptureRequest$Key;
-
-    return-object v0
-.end method
-
-.method public static synthetic CONTROL_MODE$004()Landroid/hardware/camera2/CaptureRequest$Key;
-    .locals 1
-
-    sget-object v0, Landroid/hardware/camera2/CaptureRequest;->CONTROL_MODE:Landroid/hardware/camera2/CaptureRequest$Key;
-
-    return-object v0
-.end method
-
-.method public static synthetic CONTROL_SCENE_MODE$005()Landroid/hardware/camera2/CaptureRequest$Key;
-    .locals 1
-
-    sget-object v0, Landroid/hardware/camera2/CaptureRequest;->CONTROL_SCENE_MODE:Landroid/hardware/camera2/CaptureRequest$Key;
-
-    return-object v0
-.end method
-
-.method public static synthetic CONTROL_VIDEO_STABILIZATION_MODE$009()Landroid/hardware/camera2/CaptureRequest$Key;
-    .locals 1
-
-    sget-object v0, Landroid/hardware/camera2/CaptureRequest;->CONTROL_VIDEO_STABILIZATION_MODE:Landroid/hardware/camera2/CaptureRequest$Key;
-
-    return-object v0
-.end method
-
-.method public static synthetic FALSE$011()Ljava/lang/Boolean;
-    .locals 1
-
-    sget-object v0, Ljava/lang/Boolean;->FALSE:Ljava/lang/Boolean;
-
-    return-object v0
-.end method
-
-.method public static synthetic LENS_OPTICAL_STABILIZATION_MODE$010()Landroid/hardware/camera2/CaptureRequest$Key;
-    .locals 1
-
-    sget-object v0, Landroid/hardware/camera2/CaptureRequest;->LENS_OPTICAL_STABILIZATION_MODE:Landroid/hardware/camera2/CaptureRequest$Key;
-
-    return-object v0
-.end method
-
-.method public static synthetic STATISTICS_FACE_DETECT_MODE$008()Landroid/hardware/camera2/CaptureRequest$Key;
-    .locals 1
-
-    sget-object v0, Landroid/hardware/camera2/CaptureRequest;->STATISTICS_FACE_DETECT_MODE:Landroid/hardware/camera2/CaptureRequest$Key;
-
-    return-object v0
-.end method
-
-.method public static synthetic a$010(Lkfk;)Lkfl;
-    .locals 1
-
-    invoke-virtual/range {p0 .. p0}, Lkfk;->a()Lkfl;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public static synthetic a$018(Lkfk;)Lkfl;
-    .locals 1
-
-    invoke-virtual/range {p0 .. p0}, Lkfk;->a()Lkfl;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public static synthetic a$036(Lcsa;)Lcrz;
-    .locals 1
-
-    invoke-virtual/range {p0 .. p0}, Lcsa;->a()Lcrz;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public static synthetic a$066(Lkfk;)Lkfl;
-    .locals 1
-
-    invoke-virtual/range {p0 .. p0}, Lkfk;->a()Lkfl;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public static synthetic a$085(Lkfk;)Lkfl;
-    .locals 1
-
-    invoke-virtual/range {p0 .. p0}, Lkfk;->a()Lkfl;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public static synthetic a$090(Lkep;)Lkeq;
-    .locals 1
-
-    invoke-virtual/range {p0 .. p0}, Lkep;->a()Lkeq;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public static synthetic a$091(Lkha;Lkeq;)Lken;
-    .locals 1
-
-    invoke-virtual/range {p0 .. p1}, Lkha;->a(Lkeq;)Lken;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public static synthetic a$092(Lcsa;)Lcrz;
-    .locals 1
-
-    invoke-virtual/range {p0 .. p0}, Lcsa;->a()Lcrz;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public static synthetic a$094(Ljwb;Lkai;Ljava/util/concurrent/Executor;)Lkad;
-    .locals 1
-
-    invoke-interface/range {p0 .. p2}, Ljwb;->a(Lkai;Ljava/util/concurrent/Executor;)Lkad;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public static synthetic a$096(Ljvs;Lkai;Ljava/util/concurrent/Executor;)Lkad;
-    .locals 1
-
-    invoke-interface/range {p0 .. p2}, Ljvs;->a(Lkai;Ljava/util/concurrent/Executor;)Lkad;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public static synthetic a$098(Ljwb;Lkai;Ljava/util/concurrent/Executor;)Lkad;
-    .locals 1
-
-    invoke-interface/range {p0 .. p2}, Ljwb;->a(Lkai;Ljava/util/concurrent/Executor;)Lkad;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public static synthetic a$101(Ljvs;Lkai;Ljava/util/concurrent/Executor;)Lkad;
-    .locals 1
-
-    invoke-interface/range {p0 .. p2}, Ljvs;->a(Lkai;Ljava/util/concurrent/Executor;)Lkad;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public static synthetic a$103(Ljwh;Lkai;Ljava/util/concurrent/Executor;)Lkad;
-    .locals 1
-
-    invoke-virtual/range {p0 .. p2}, Ljwh;->a(Lkai;Ljava/util/concurrent/Executor;)Lkad;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public static synthetic a$105(Ljvs;Lkai;Ljava/util/concurrent/Executor;)Lkad;
-    .locals 1
-
-    invoke-interface/range {p0 .. p2}, Ljvs;->a(Lkai;Ljava/util/concurrent/Executor;)Lkad;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public static synthetic a$107(Ljwb;Lkai;Ljava/util/concurrent/Executor;)Lkad;
-    .locals 1
-
-    invoke-interface/range {p0 .. p2}, Ljwb;->a(Lkai;Ljava/util/concurrent/Executor;)Lkad;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public static synthetic a$109(Ljwb;Lkai;Ljava/util/concurrent/Executor;)Lkad;
-    .locals 1
-
-    invoke-interface/range {p0 .. p2}, Ljwb;->a(Lkai;Ljava/util/concurrent/Executor;)Lkad;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public static synthetic a$113(Ljvs;Lkai;Ljava/util/concurrent/Executor;)Lkad;
-    .locals 1
-
-    invoke-interface/range {p0 .. p2}, Ljvs;->a(Lkai;Ljava/util/concurrent/Executor;)Lkad;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public static synthetic a$116(Ljwb;Lkai;Ljava/util/concurrent/Executor;)Lkad;
-    .locals 1
-
-    invoke-interface/range {p0 .. p2}, Ljwb;->a(Lkai;Ljava/util/concurrent/Executor;)Lkad;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public static synthetic a$120(Ljwb;Lkai;Ljava/util/concurrent/Executor;)Lkad;
-    .locals 1
-
-    invoke-interface/range {p0 .. p2}, Ljwb;->a(Lkai;Ljava/util/concurrent/Executor;)Lkad;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public static synthetic a$122(Lgto;Lgtn;)V
-    .locals 1
-
-    invoke-virtual/range {p0 .. p1}, Lgto;->a(Lgtn;)V
-
-    return-void
-.end method
-
-.method public static synthetic a$138(Lcsa;)Lcrz;
-    .locals 1
-
-    invoke-virtual/range {p0 .. p0}, Lcsa;->a()Lcrz;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public static synthetic a$141(Lcqn;Lken;Lcsc;Lily;)Lcqo;
-    .locals 1
-
-    invoke-interface/range {p0 .. p3}, Lcqn;->a(Lken;Lcsc;Lily;)Lcqo;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public static synthetic a$170(Lesg;)Lesm;
-    .locals 1
-
-    invoke-virtual/range {p0 .. p0}, Lesg;->a()Lesm;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public static synthetic a$190(Lfzb;)Lnou;
-    .locals 1
-
-    invoke-virtual/range {p0 .. p0}, Lfzb;->a()Lnou;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public static synthetic add$027(Ljava/util/Set;Ljava/lang/Object;)Z
-    .locals 1
-
-    invoke-interface/range {p0 .. p1}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public static synthetic add$028(Ljava/util/Set;Ljava/lang/Object;)Z
-    .locals 1
-
-    invoke-interface/range {p0 .. p1}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public static synthetic add$029(Ljava/util/Set;Ljava/lang/Object;)Z
-    .locals 1
-
-    invoke-interface/range {p0 .. p1}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public static synthetic add$032(Ljava/util/Set;Ljava/lang/Object;)Z
-    .locals 1
-
-    invoke-interface/range {p0 .. p1}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public static synthetic add$033(Ljava/util/Set;Ljava/lang/Object;)Z
-    .locals 1
-
-    invoke-interface/range {p0 .. p1}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public static synthetic add$034(Ljava/util/Set;Ljava/lang/Object;)Z
-    .locals 1
-
-    invoke-interface/range {p0 .. p1}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public static synthetic add$035(Ljava/util/Set;Ljava/lang/Object;)Z
-    .locals 1
-
-    invoke-interface/range {p0 .. p1}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public static synthetic add$038(Ljava/util/Set;Ljava/lang/Object;)Z
-    .locals 1
-
-    invoke-interface/range {p0 .. p1}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public static synthetic add$048(Ljava/util/Set;Ljava/lang/Object;)Z
-    .locals 1
-
-    invoke-interface/range {p0 .. p1}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public static synthetic add$053(Ljava/util/Set;Ljava/lang/Object;)Z
-    .locals 1
-
-    invoke-interface/range {p0 .. p1}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public static synthetic b$006(Lkfk;Lkll;)V
-    .locals 1
-
-    invoke-virtual/range {p0 .. p1}, Lkfk;->b(Lkll;)V
-
-    return-void
-.end method
-
-.method public static synthetic b$012(Lkfk;Lkll;)V
-    .locals 1
-
-    invoke-virtual/range {p0 .. p1}, Lkfk;->b(Lkll;)V
-
-    return-void
-.end method
-
-.method public static synthetic b$013(Ljwu;)Lkaf;
-    .locals 1
-
-    invoke-virtual/range {p0 .. p0}, Ljwu;->b()Lkaf;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public static synthetic b$040(Ldms;)V
-    .locals 1
-
-    invoke-virtual/range {p0 .. p0}, Ldms;->b()V
-
-    return-void
-.end method
-
-.method public static synthetic b$058(Lkfk;Lkll;)V
-    .locals 1
-
-    invoke-virtual/range {p0 .. p1}, Lkfk;->b(Lkll;)V
-
-    return-void
-.end method
-
-.method public static synthetic b$068(Lctl;Lcsc;)Z
-    .locals 1
-
-    invoke-virtual/range {p0 .. p1}, Lctl;->b(Lcsc;)Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public static synthetic b$070(Lkfk;Lkll;)V
-    .locals 1
-
-    invoke-virtual/range {p0 .. p1}, Lkfk;->b(Lkll;)V
-
-    return-void
-.end method
-
-.method public static synthetic b$075(Ljwu;)Lkaf;
-    .locals 1
-
-    invoke-virtual/range {p0 .. p0}, Ljwu;->b()Lkaf;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public static synthetic b$077(Lkaf;)J
-    .locals 1
-
-    invoke-virtual/range {p0 .. p0}, Lkaf;->b()J
-
-    move-result-wide v0
-
-    return-wide v0
-.end method
-
-.method public static synthetic b$078(Lkaf;)J
-    .locals 1
-
-    invoke-virtual/range {p0 .. p0}, Lkaf;->b()J
-
-    move-result-wide v0
-
-    return-wide v0
-.end method
-
-.method public static synthetic b$079(Lkaf;)J
-    .locals 1
-
-    invoke-virtual/range {p0 .. p0}, Lkaf;->b()J
-
-    move-result-wide v0
-
-    return-wide v0
-.end method
-
-.method public static synthetic b$128(Lkeo;Lkfl;)Lkfj;
-    .locals 1
-
-    invoke-interface/range {p0 .. p1}, Lkeo;->b(Lkfl;)Lkfj;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public static synthetic b$130(Lkeo;Lkfl;)Lkfj;
-    .locals 1
-
-    invoke-interface/range {p0 .. p1}, Lkeo;->b(Lkfl;)Lkfj;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public static synthetic b$132(Lkeo;Lkfl;)Lkfj;
-    .locals 1
-
-    invoke-interface/range {p0 .. p1}, Lkeo;->b(Lkfl;)Lkfj;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public static synthetic b$134(Lkeo;Lkfl;)Lkfj;
-    .locals 1
-
-    invoke-interface/range {p0 .. p1}, Lkeo;->b(Lkfl;)Lkfj;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public static synthetic bm$037(Ljwb;)Ljava/lang/Object;
-    .locals 1
-
-    invoke-interface/range {p0 .. p0}, Ljwb;->bm()Ljava/lang/Object;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public static synthetic bm$139(Ljvs;)Ljava/lang/Object;
-    .locals 1
-
-    invoke-interface/range {p0 .. p0}, Ljvs;->bm()Ljava/lang/Object;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public static synthetic booleanValue$140(Ljava/lang/Boolean;)Z
-    .locals 1
-
-    invoke-virtual/range {p0 .. p0}, Ljava/lang/Boolean;->booleanValue()Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method private static c(Lcsc;)J
-    .locals 2
-
-    iget-boolean p0, p0, Lcsc;->E:Z
-
-    if-eqz p0, :cond_0
-
-    const-wide/16 v0, 0x2
-
-    return-wide v0
-
-    :cond_0
-    const-wide/16 v0, 0x1
-
-    return-wide v0
-.end method
-
-.method public static synthetic c$054(Lkep;Ljava/util/Set;)V
-    .locals 1
-
-    invoke-virtual/range {p0 .. p1}, Lkep;->c(Ljava/util/Set;)V
-
-    return-void
-.end method
-
-.method public static synthetic c$059(Lmqp;)Ljava/lang/Object;
-    .locals 1
-
-    invoke-virtual/range {p0 .. p0}, Lmqp;->c()Ljava/lang/Object;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public static synthetic c$062(Lkfk;I)V
-    .locals 1
-
-    invoke-virtual/range {p0 .. p1}, Lkfk;->c(I)V
-
-    return-void
-.end method
-
-.method public static synthetic c$083(Lkfk;I)V
-    .locals 1
-
-    invoke-virtual/range {p0 .. p1}, Lkfk;->c(I)V
-
-    return-void
-.end method
-
-.method public static synthetic c$119(Lmqp;)Ljava/lang/Object;
-    .locals 1
-
-    invoke-virtual/range {p0 .. p0}, Lmqp;->c()Ljava/lang/Object;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public static synthetic c$127(Lken;)Lkeo;
-    .locals 1
-
-    invoke-interface/range {p0 .. p0}, Lken;->c()Lkeo;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public static synthetic c$129(Lken;)Lkeo;
-    .locals 1
-
-    invoke-interface/range {p0 .. p0}, Lken;->c()Lkeo;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public static synthetic c$131(Lken;)Lkeo;
-    .locals 1
-
-    invoke-interface/range {p0 .. p0}, Lken;->c()Lkeo;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public static synthetic c$133(Lken;)Lkeo;
-    .locals 1
-
-    invoke-interface/range {p0 .. p0}, Lken;->c()Lkeo;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public static synthetic c$135(Lken;)Lkeo;
-    .locals 1
-
-    invoke-interface/range {p0 .. p0}, Lken;->c()Lkeo;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public static synthetic c$137(Ldja;Lcsc;)Z
-    .locals 1
-
-    invoke-virtual/range {p0 .. p1}, Ldja;->c(Lcsc;)Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public static synthetic d$009(Lkfk;J)V
-    .locals 1
-
-    invoke-virtual/range {p0 .. p2}, Lkfk;->d(J)V
-
-    return-void
-.end method
-
-.method public static synthetic d$017(Lkfk;J)V
-    .locals 1
-
-    invoke-virtual/range {p0 .. p2}, Lkfk;->d(J)V
-
-    return-void
-.end method
-
-.method public static synthetic d$025(Lkep;Lkfl;)V
-    .locals 1
-
-    invoke-virtual/range {p0 .. p1}, Lkep;->d(Lkfl;)V
-
-    return-void
-.end method
-
-.method public static synthetic d$026(Lkep;Lkfl;)V
-    .locals 1
-
-    invoke-virtual/range {p0 .. p1}, Lkep;->d(Lkfl;)V
-
-    return-void
-.end method
-
-.method public static synthetic d$065(Lkfk;J)V
-    .locals 1
-
-    invoke-virtual/range {p0 .. p2}, Lkfk;->d(J)V
-
-    return-void
-.end method
-
-.method public static synthetic d$067(Lkep;Lkfl;)V
-    .locals 1
-
-    invoke-virtual/range {p0 .. p1}, Lkep;->d(Lkfl;)V
-
-    return-void
-.end method
-
-.method public static synthetic d$084(Lkfk;J)V
-    .locals 1
-
-    invoke-virtual/range {p0 .. p2}, Lkfk;->d(J)V
-
-    return-void
-.end method
-
-.method public static synthetic d$086(Lkep;Lkfl;)V
-    .locals 1
-
-    invoke-virtual/range {p0 .. p1}, Lkep;->d(Lkfl;)V
-
-    return-void
-.end method
-
-.method public static synthetic d$095(Ljuf;Lkad;)V
-    .locals 1
-
-    invoke-virtual/range {p0 .. p1}, Ljuf;->d(Lkad;)V
-
-    return-void
-.end method
-
-.method public static synthetic d$097(Ljuf;Lkad;)V
-    .locals 1
-
-    invoke-virtual/range {p0 .. p1}, Ljuf;->d(Lkad;)V
-
-    return-void
-.end method
-
-.method public static synthetic d$099(Ljuf;Lkad;)V
-    .locals 1
-
-    invoke-virtual/range {p0 .. p1}, Ljuf;->d(Lkad;)V
-
-    return-void
-.end method
-
-.method public static synthetic d$102(Ljuf;Lkad;)V
-    .locals 1
-
-    invoke-virtual/range {p0 .. p1}, Ljuf;->d(Lkad;)V
-
-    return-void
-.end method
-
-.method public static synthetic d$104(Ljuf;Lkad;)V
-    .locals 1
-
-    invoke-virtual/range {p0 .. p1}, Ljuf;->d(Lkad;)V
-
-    return-void
-.end method
-
-.method public static synthetic d$106(Ljuf;Lkad;)V
-    .locals 1
-
-    invoke-virtual/range {p0 .. p1}, Ljuf;->d(Lkad;)V
-
-    return-void
-.end method
-
-.method public static synthetic d$108(Ljuf;Lkad;)V
-    .locals 1
-
-    invoke-virtual/range {p0 .. p1}, Ljuf;->d(Lkad;)V
-
-    return-void
-.end method
-
-.method public static synthetic d$110(Ljuf;Lkad;)V
-    .locals 1
-
-    invoke-virtual/range {p0 .. p1}, Ljuf;->d(Lkad;)V
-
-    return-void
-.end method
-
-.method public static synthetic d$114(Ljuf;Lkad;)V
-    .locals 1
-
-    invoke-virtual/range {p0 .. p1}, Ljuf;->d(Lkad;)V
-
-    return-void
-.end method
-
-.method public static synthetic d$117(Ljuf;Lkad;)V
-    .locals 1
-
-    invoke-virtual/range {p0 .. p1}, Ljuf;->d(Lkad;)V
-
-    return-void
-.end method
-
-.method public static synthetic d$121(Ljuf;Lkad;)V
-    .locals 1
-
-    invoke-virtual/range {p0 .. p1}, Ljuf;->d(Lkad;)V
-
-    return-void
-.end method
-
-.method public static synthetic d$123(Ljuf;Lkad;)V
-    .locals 1
-
-    invoke-virtual/range {p0 .. p1}, Ljuf;->d(Lkad;)V
-
-    return-void
-.end method
-
-.method public static synthetic d$136(Lkeo;)Lkli;
-    .locals 1
-
-    invoke-interface/range {p0 .. p0}, Lkeo;->d()Lkli;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public static synthetic d$169(Ljuf;Lkad;)V
-    .locals 1
-
-    invoke-virtual/range {p0 .. p1}, Ljuf;->d(Lkad;)V
-
-    return-void
-.end method
-
-.method public static synthetic d$192(Ljuf;Lkad;)V
-    .locals 1
-
-    invoke-virtual/range {p0 .. p1}, Ljuf;->d(Lkad;)V
-
-    return-void
-.end method
-
-.method public static synthetic d$194(Ljuf;Lkad;)V
-    .locals 1
-
-    invoke-virtual/range {p0 .. p1}, Ljuf;->d(Lkad;)V
-
-    return-void
-.end method
-
-.method public static synthetic e$008(Lkfk;Z)V
-    .locals 1
-
-    invoke-virtual/range {p0 .. p1}, Lkfk;->e(Z)V
-
-    return-void
-.end method
-
-.method public static synthetic e$016(Lkfk;Z)V
-    .locals 1
-
-    invoke-virtual/range {p0 .. p1}, Lkfk;->e(Z)V
-
-    return-void
-.end method
-
-.method public static synthetic e$030(Ldhi;)V
-    .locals 1
-
-    invoke-interface/range {p0 .. p0}, Ldhi;->e()V
-
-    return-void
-.end method
-
-.method public static synthetic e$056(Lkep;Lkdy;)V
-    .locals 1
-
-    invoke-virtual/range {p0 .. p1}, Lkep;->e(Lkdy;)V
-
-    return-void
-.end method
-
-.method public static synthetic e$064(Lkfk;Z)V
-    .locals 1
-
-    invoke-virtual/range {p0 .. p1}, Lkfk;->e(Z)V
-
-    return-void
-.end method
-
-.method public static synthetic e$082(Lkfk;Z)V
-    .locals 1
-
-    invoke-virtual/range {p0 .. p1}, Lkfk;->e(Z)V
-
-    return-void
-.end method
-
-.method public static synthetic e$112(Ldhi;)V
-    .locals 1
-
-    invoke-interface/range {p0 .. p0}, Ldhi;->e()V
-
-    return-void
-.end method
-
-.method public static synthetic e$125(Ldhi;)V
-    .locals 1
-
-    invoke-interface/range {p0 .. p0}, Ldhi;->e()V
-
-    return-void
-.end method
-
-.method public static synthetic e$191(Lnph;Ljava/lang/Object;)Z
-    .locals 1
-
-    invoke-virtual/range {p0 .. p1}, Lnph;->e(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public static synthetic equals$047(Ljava/lang/String;Ljava/lang/Object;)Z
-    .locals 1
-
-    invoke-virtual/range {p0 .. p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public static synthetic equals$051(Ljava/lang/String;Ljava/lang/Object;)Z
-    .locals 1
-
-    invoke-virtual/range {p0 .. p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public static synthetic equals$076(Ljzr;Ljava/lang/Object;)Z
-    .locals 1
-
-    invoke-virtual/range {p0 .. p1}, Ljzr;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public static synthetic f$020(Ljws;)Z
-    .locals 1
-
-    invoke-virtual/range {p0 .. p0}, Ljws;->f()Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public static synthetic f$024(Lkep;Lkll;)V
-    .locals 1
-
-    invoke-virtual/range {p0 .. p1}, Lkep;->f(Lkll;)V
-
-    return-void
-.end method
-
-.method public static synthetic f$039(Ldhi;)V
-    .locals 1
-
-    invoke-interface/range {p0 .. p0}, Ldhi;->f()V
-
-    return-void
-.end method
-
-.method public static synthetic f$088(Lmwl;)Lmwn;
-    .locals 1
-
-    invoke-virtual/range {p0 .. p0}, Lmwl;->f()Lmwn;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public static synthetic f$183(Lmwl;)Lmwn;
-    .locals 1
-
-    invoke-virtual/range {p0 .. p0}, Lmwl;->f()Lmwn;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public static synthetic g$021(Lkep;Lkez;)V
-    .locals 1
-
-    invoke-virtual/range {p0 .. p1}, Lkep;->g(Lkez;)V
-
-    return-void
-.end method
-
-.method public static synthetic g$057(Lmqp;)Z
-    .locals 1
-
-    invoke-virtual/range {p0 .. p0}, Lmqp;->g()Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public static synthetic g$087(Lmwl;Ljava/lang/Object;)V
-    .locals 1
-
-    invoke-virtual/range {p0 .. p1}, Lmwl;->g(Ljava/lang/Object;)V
-
-    return-void
-.end method
-
-.method public static synthetic g$118(Lmqp;)Z
-    .locals 1
-
-    invoke-virtual/range {p0 .. p0}, Lmqp;->g()Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public static synthetic g$176(Lmwl;Ljava/lang/Object;)V
-    .locals 1
-
-    invoke-virtual/range {p0 .. p1}, Lmwl;->g(Ljava/lang/Object;)V
-
-    return-void
-.end method
-
-.method public static synthetic g$180(Lmwl;Ljava/lang/Object;)V
-    .locals 1
-
-    invoke-virtual/range {p0 .. p1}, Lmwl;->g(Ljava/lang/Object;)V
-
-    return-void
-.end method
-
-.method public static synthetic g$182(Lmwl;Ljava/lang/Object;)V
-    .locals 1
-
-    invoke-virtual/range {p0 .. p1}, Lmwl;->g(Ljava/lang/Object;)V
-
-    return-void
-.end method
-
-.method public static synthetic get$142(Loiw;)Ljava/lang/Object;
-    .locals 1
-
-    invoke-interface/range {p0 .. p0}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public static synthetic get$144(Loiw;)Ljava/lang/Object;
-    .locals 1
-
-    invoke-interface/range {p0 .. p0}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public static synthetic get$146(Loiw;)Ljava/lang/Object;
-    .locals 1
-
-    invoke-interface/range {p0 .. p0}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public static synthetic get$148(Loiw;)Ljava/lang/Object;
-    .locals 1
-
-    invoke-interface/range {p0 .. p0}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public static synthetic get$150(Loiw;)Ljava/lang/Object;
-    .locals 1
-
-    invoke-interface/range {p0 .. p0}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public static synthetic get$152(Loiw;)Ljava/lang/Object;
-    .locals 1
-
-    invoke-interface/range {p0 .. p0}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public static synthetic get$155(Loiw;)Ljava/lang/Object;
-    .locals 1
-
-    invoke-interface/range {p0 .. p0}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public static synthetic get$157(Loiw;)Ljava/lang/Object;
-    .locals 1
-
-    invoke-interface/range {p0 .. p0}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public static synthetic get$159(Loiw;)Ljava/lang/Object;
-    .locals 1
-
-    invoke-interface/range {p0 .. p0}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public static synthetic get$161(Loiw;)Ljava/lang/Object;
-    .locals 1
-
-    invoke-interface/range {p0 .. p0}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public static synthetic get$163(Loiw;)Ljava/lang/Object;
-    .locals 1
-
-    invoke-interface/range {p0 .. p0}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public static synthetic get$165(Loiw;)Ljava/lang/Object;
-    .locals 1
-
-    invoke-interface/range {p0 .. p0}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public static synthetic get$172(Loiw;)Ljava/lang/Object;
-    .locals 1
-
-    invoke-interface/range {p0 .. p0}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public static synthetic get$174(Loiw;)Ljava/lang/Object;
-    .locals 1
-
-    invoke-interface/range {p0 .. p0}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public static synthetic get$175(Loiw;)Ljava/lang/Object;
-    .locals 1
-
-    invoke-interface/range {p0 .. p0}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public static synthetic get$177(Loiw;)Ljava/lang/Object;
-    .locals 1
-
-    invoke-interface/range {p0 .. p0}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public static synthetic get$178(Loiw;)Ljava/lang/Object;
-    .locals 1
-
-    invoke-interface/range {p0 .. p0}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public static synthetic get$179(Loiw;)Ljava/lang/Object;
-    .locals 1
-
-    invoke-interface/range {p0 .. p0}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public static synthetic get$181(Loiw;)Ljava/lang/Object;
-    .locals 1
-
-    invoke-interface/range {p0 .. p0}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public static synthetic get$184(Loiw;)Ljava/lang/Object;
-    .locals 1
-
-    invoke-interface/range {p0 .. p0}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public static synthetic get$185(Loiw;)Ljava/lang/Object;
-    .locals 1
-
-    invoke-interface/range {p0 .. p0}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public static synthetic get$186(Loiw;)Ljava/lang/Object;
-    .locals 1
-
-    invoke-interface/range {p0 .. p0}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public static synthetic get$187(Loiw;)Ljava/lang/Object;
-    .locals 1
-
-    invoke-interface/range {p0 .. p0}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public static synthetic get$188(Loiw;)Ljava/lang/Object;
-    .locals 1
-
-    invoke-interface/range {p0 .. p0}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public static synthetic get$189(Loiw;)Ljava/lang/Object;
-    .locals 1
-
-    invoke-interface/range {p0 .. p0}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public static synthetic getClass$001(Ljava/lang/Object;)Ljava/lang/Class;
-    .locals 1
-
-    invoke-virtual/range {p0 .. p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public static synthetic getClass$002(Ljava/lang/Object;)Ljava/lang/Class;
-    .locals 1
-
-    invoke-virtual/range {p0 .. p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public static synthetic getClass$004(Ljava/lang/Object;)Ljava/lang/Class;
-    .locals 1
-
-    invoke-virtual/range {p0 .. p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public static synthetic getClass$143(Ljava/lang/Object;)Ljava/lang/Class;
-    .locals 1
-
-    invoke-virtual/range {p0 .. p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public static synthetic getClass$145(Ljava/lang/Object;)Ljava/lang/Class;
-    .locals 1
-
-    invoke-virtual/range {p0 .. p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public static synthetic getClass$147(Ljava/lang/Object;)Ljava/lang/Class;
-    .locals 1
-
-    invoke-virtual/range {p0 .. p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public static synthetic getClass$149(Ljava/lang/Object;)Ljava/lang/Class;
-    .locals 1
-
-    invoke-virtual/range {p0 .. p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public static synthetic getClass$151(Ljava/lang/Object;)Ljava/lang/Class;
-    .locals 1
-
-    invoke-virtual/range {p0 .. p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public static synthetic getClass$153(Ljava/lang/Object;)Ljava/lang/Class;
-    .locals 1
-
-    invoke-virtual/range {p0 .. p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public static synthetic getClass$154(Ljava/lang/Object;)Ljava/lang/Class;
-    .locals 1
-
-    invoke-virtual/range {p0 .. p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public static synthetic getClass$156(Ljava/lang/Object;)Ljava/lang/Class;
-    .locals 1
-
-    invoke-virtual/range {p0 .. p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public static synthetic getClass$158(Ljava/lang/Object;)Ljava/lang/Class;
-    .locals 1
-
-    invoke-virtual/range {p0 .. p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public static synthetic getClass$160(Ljava/lang/Object;)Ljava/lang/Class;
-    .locals 1
-
-    invoke-virtual/range {p0 .. p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public static synthetic getClass$162(Ljava/lang/Object;)Ljava/lang/Class;
-    .locals 1
-
-    invoke-virtual/range {p0 .. p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public static synthetic getClass$164(Ljava/lang/Object;)Ljava/lang/Class;
-    .locals 1
-
-    invoke-virtual/range {p0 .. p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public static synthetic getClass$166(Ljava/lang/Object;)Ljava/lang/Class;
-    .locals 1
-
-    invoke-virtual/range {p0 .. p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public static synthetic getClass$167(Ljava/lang/Object;)Ljava/lang/Class;
-    .locals 1
-
-    invoke-virtual/range {p0 .. p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public static synthetic getClass$171(Ljava/lang/Object;)Ljava/lang/Class;
-    .locals 1
-
-    invoke-virtual/range {p0 .. p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public static synthetic getName$045(Landroid/hardware/camera2/CaptureRequest$Key;)Ljava/lang/String;
-    .locals 1
-
-    invoke-virtual/range {p0 .. p0}, Landroid/hardware/camera2/CaptureRequest$Key;->getName()Ljava/lang/String;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public static synthetic getName$046(Landroid/hardware/camera2/CaptureRequest$Key;)Ljava/lang/String;
-    .locals 1
-
-    invoke-virtual/range {p0 .. p0}, Landroid/hardware/camera2/CaptureRequest$Key;->getName()Ljava/lang/String;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public static synthetic getName$049(Landroid/hardware/camera2/CaptureRequest$Key;)Ljava/lang/String;
-    .locals 1
-
-    invoke-virtual/range {p0 .. p0}, Landroid/hardware/camera2/CaptureRequest$Key;->getName()Ljava/lang/String;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public static synthetic getName$050(Landroid/hardware/camera2/CaptureRequest$Key;)Ljava/lang/String;
-    .locals 1
-
-    invoke-virtual/range {p0 .. p0}, Landroid/hardware/camera2/CaptureRequest$Key;->getName()Ljava/lang/String;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public static synthetic h$015(Lkfk;I)V
-    .locals 1
-
-    invoke-virtual/range {p0 .. p1}, Lkfk;->h(I)V
-
-    return-void
-.end method
-
-.method public static synthetic h$061(Lkfk;I)V
-    .locals 1
-
-    invoke-virtual/range {p0 .. p1}, Lkfk;->h(I)V
-
-    return-void
-.end method
-
-.method public static synthetic h$081(Lkfk;I)V
-    .locals 1
-
-    invoke-virtual/range {p0 .. p1}, Lkfk;->h(I)V
-
-    return-void
-.end method
-
-.method public static synthetic h$089(Lkep;Lmwn;)V
-    .locals 1
-
-    invoke-virtual/range {p0 .. p1}, Lkep;->h(Lmwn;)V
-
-    return-void
-.end method
-
-.method public static synthetic h$126(Lken;Lkfa;)V
-    .locals 1
-
-    invoke-interface/range {p0 .. p1}, Lken;->h(Lkfa;)V
-
-    return-void
-.end method
-
-.method public static synthetic h$173(Lmwl;Ljava/lang/Iterable;)V
-    .locals 1
-
-    invoke-virtual/range {p0 .. p1}, Lmwl;->h(Ljava/lang/Iterable;)V
-
-    return-void
-.end method
-
-.method public static synthetic hasNext$043(Ljava/util/Iterator;)Z
-    .locals 1
-
-    invoke-interface/range {p0 .. p0}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public static synthetic hasNext$073(Ljava/util/Iterator;)Z
-    .locals 1
-
-    invoke-interface/range {p0 .. p0}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public static synthetic i$007(Lkfk;Lkaf;)V
-    .locals 1
-
-    invoke-virtual/range {p0 .. p1}, Lkfk;->i(Lkaf;)V
-
-    return-void
-.end method
-
-.method public static synthetic i$014(Lkfk;Lkaf;)V
-    .locals 1
-
-    invoke-virtual/range {p0 .. p1}, Lkfk;->i(Lkaf;)V
-
-    return-void
-.end method
-
-.method public static synthetic i$023(Lkep;Lkfd;)V
-    .locals 1
-
-    invoke-virtual/range {p0 .. p1}, Lkep;->i(Lkfd;)V
-
-    return-void
-.end method
-
-.method public static synthetic i$060(Lkfk;Lkaf;)V
-    .locals 1
-
-    invoke-virtual/range {p0 .. p1}, Lkfk;->i(Lkaf;)V
-
-    return-void
-.end method
-
-.method public static synthetic i$080(Lkfk;Lkaf;)V
-    .locals 1
-
-    invoke-virtual/range {p0 .. p1}, Lkfk;->i(Lkaf;)V
-
-    return-void
-.end method
-
-.method public static synthetic iterator$042(Ljava/util/Set;)Ljava/util/Iterator;
-    .locals 1
-
-    invoke-interface/range {p0 .. p0}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public static synthetic iterator$072(Ljava/util/List;)Ljava/util/Iterator;
-    .locals 1
-
-    invoke-interface/range {p0 .. p0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public static synthetic j$005(Lkfk;Landroid/view/Surface;)V
-    .locals 1
-
-    invoke-virtual/range {p0 .. p1}, Lkfk;->j(Landroid/view/Surface;)V
-
-    return-void
-.end method
-
-.method public static synthetic j$022(Lkep;Lkfd;)V
-    .locals 1
-
-    invoke-virtual/range {p0 .. p1}, Lkep;->j(Lkfd;)V
-
-    return-void
-.end method
-
-.method public static synthetic k$003(Lkfk;Lkfm;)V
-    .locals 1
-
-    invoke-virtual/range {p0 .. p1}, Lkfk;->k(Lkfm;)V
-
-    return-void
-.end method
-
-.method public static synthetic k$011(Lkfk;Lkfm;)V
-    .locals 1
-
-    invoke-virtual/range {p0 .. p1}, Lkfk;->k(Lkfm;)V
-
-    return-void
-.end method
-
-.method public static synthetic k$055(Lkep;Lkfg;)V
-    .locals 1
-
-    invoke-virtual/range {p0 .. p1}, Lkep;->k(Lkfg;)V
-
-    return-void
-.end method
-
-.method public static synthetic k$063(Lkfk;Lkfm;)V
-    .locals 1
-
-    invoke-virtual/range {p0 .. p1}, Lkfk;->k(Lkfm;)V
-
-    return-void
-.end method
-
-.method public static synthetic k$069(Lkfk;Lkfm;)V
-    .locals 1
-
-    invoke-virtual/range {p0 .. p1}, Lkfk;->k(Lkfm;)V
-
-    return-void
-.end method
-
-.method public static synthetic l$031(Ldhi;Ldhj;)Z
-    .locals 1
-
-    invoke-interface/range {p0 .. p1}, Ldhi;->l(Ldhj;)Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public static synthetic l$052(Ldhi;Ldhj;)Z
-    .locals 1
-
-    invoke-interface/range {p0 .. p1}, Ldhi;->l(Ldhj;)Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public static synthetic l$100(Ldhi;Ldhj;)Z
-    .locals 1
-
-    invoke-interface/range {p0 .. p1}, Ldhi;->l(Ldhj;)Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public static synthetic l$111(Ldhi;Ldhj;)Z
-    .locals 1
-
-    invoke-interface/range {p0 .. p1}, Ldhi;->l(Ldhj;)Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public static synthetic l$115(Ldhi;Ldhj;)Z
-    .locals 1
-
-    invoke-interface/range {p0 .. p1}, Ldhi;->l(Ldhj;)Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public static synthetic l$124(Ldhi;Ldhj;)Z
-    .locals 1
-
-    invoke-interface/range {p0 .. p1}, Ldhi;->l(Ldhj;)Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public static synthetic n$019(Lgfz;Lkfg;)V
-    .locals 1
-
-    invoke-virtual/range {p0 .. p1}, Lgfz;->n(Lkfg;)V
-
-    return-void
-.end method
-
-.method public static synthetic next$044(Ljava/util/Iterator;)Ljava/lang/Object;
-    .locals 1
-
-    invoke-interface/range {p0 .. p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public static synthetic next$074(Ljava/util/Iterator;)Ljava/lang/Object;
-    .locals 1
-
-    invoke-interface/range {p0 .. p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public static synthetic q$093(Lcvr;Lcua;)Ljuf;
-    .locals 1
-
-    invoke-virtual/range {p0 .. p1}, Lcvr;->q(Lcua;)Ljuf;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public static synthetic q$168(Lcvr;Lcua;)Ljuf;
-    .locals 1
-
-    invoke-virtual/range {p0 .. p1}, Lcvr;->q(Lcua;)Ljuf;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public static synthetic q$193(Lcvr;Lcua;)Ljuf;
-    .locals 1
-
-    invoke-virtual/range {p0 .. p1}, Lcvr;->q(Lcua;)Ljuf;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public static synthetic x$071(Lklw;I)Ljava/util/List;
-    .locals 1
-
-    invoke-virtual/range {p0 .. p1}, Lklw;->x(I)Ljava/util/List;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-
-# virtual methods
-.method public a()V
-    .locals 5
-
     return-void
-.end method
-
-.method public final b(Lcsc;)Z
-    .locals 2
-
-    iget-object v0, p0, Lctl;->F:Ldja;
-
-    invoke-virtual {v0, p1}, Ldja;->c(Lcsc;)Z
-
-    move-result v0
-
-    const/4 v1, 0x1
-
-    if-nez v0, :cond_0
-
-    iget-boolean v0, p1, Lcsc;->C:Z
-
-    if-nez v0, :cond_0
-
-    iget-boolean p1, p1, Lcsc;->B:Z
-
-    if-nez p1, :cond_0
-
-    const/4 v1, 0x0
-
-    :cond_0
-    return v1
 .end method
 
-.method public final close()V
+.method private final n(ZZ)V
     .locals 3
 
-    iget-object v0, p0, Lctl;->c:Ljava/lang/Object;
+    iget-object v0, p0, Lctl;->i:Ljava/lang/Object;
 
     monitor-enter v0
 
     :try_start_0
-    iget-object v1, p0, Lctl;->j:Lken;
+    iget-object v1, p0, Lctl;->k:Ljrl;
 
-    const/4 v2, 0x0
+    invoke-virtual {p0, v1}, Lctl;->k(Ljrl;)Z
 
-    if-eqz v1, :cond_0
-
-    invoke-interface {v1}, Lken;->close()V
-
-    iput-object v2, p0, Lctl;->j:Lken;
-
-    :cond_0
-    iget-object v1, p0, Lctl;->q:Lkef;
-
-    if-eqz v1, :cond_1
-
-    invoke-interface {v1}, Lkef;->close()V
-
-    iput-object v2, p0, Lctl;->q:Lkef;
-
-    :cond_1
-    iget-object v1, p0, Lctl;->r:Lkef;
-
-    if-eqz v1, :cond_2
-
-    invoke-interface {v1}, Lkef;->close()V
-
-    iput-object v2, p0, Lctl;->r:Lkef;
-
-    :cond_2
-    iget-object v1, p0, Lctl;->s:Lkef;
+    move-result v1
 
     if-eqz v1, :cond_3
 
-    invoke-interface {v1}, Lkef;->close()V
+    iget-object v1, p0, Lctl;->p:Ljava/util/concurrent/atomic/AtomicBoolean;
 
-    iput-object v2, p0, Lctl;->s:Lkef;
+    invoke-virtual {v1}, Ljava/util/concurrent/atomic/AtomicBoolean;->get()Z
+
+    move-result v1
+
+    if-nez v1, :cond_0
+
+    goto :goto_0
+
+    :cond_0
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    iget-object v0, p0, Lctl;->r:Lcvo;
+
+    invoke-virtual {v0}, Lcvo;->d()Llwd;
+
+    move-result-object v0
+
+    invoke-virtual {p0, v0}, Lctl;->j(Llwd;)V
+
+    if-eqz p1, :cond_1
+
+    iget-object p1, p0, Lctl;->l:Lcom/google/android/apps/camera/ui/modeslider/ModeSliderUi;
+
+    sget-object v0, Landroid/view/View;->ALPHA:Landroid/util/Property;
+
+    const/4 v1, 0x2
+
+    new-array v1, v1, [F
+
+    fill-array-data v1, :array_0
+
+    invoke-static {p1, v0, v1}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
+
+    move-result-object p1
+
+    const-wide/16 v0, 0xc8
+
+    invoke-virtual {p1, v0, v1}, Landroid/animation/ObjectAnimator;->setDuration(J)Landroid/animation/ObjectAnimator;
+
+    const-wide/16 v0, 0x32
+
+    invoke-virtual {p1, v0, v1}, Landroid/animation/ObjectAnimator;->setStartDelay(J)V
+
+    new-instance v0, Landroid/view/animation/LinearInterpolator;
+
+    invoke-direct {v0}, Landroid/view/animation/LinearInterpolator;-><init>()V
+
+    invoke-virtual {p1, v0}, Landroid/animation/ObjectAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
+
+    new-instance v0, Lctj;
+
+    invoke-direct {v0, p0, p2}, Lctj;-><init>(Lctl;Z)V
+
+    invoke-virtual {p1, v0}, Landroid/animation/ObjectAnimator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
+
+    iput-object p1, p0, Lctl;->m:Landroid/animation/ObjectAnimator;
+
+    invoke-virtual {p1}, Landroid/animation/ObjectAnimator;->start()V
+
+    return-void
+
+    :cond_1
+    iget-object p1, p0, Lctl;->l:Lcom/google/android/apps/camera/ui/modeslider/ModeSliderUi;
+
+    const/high16 v0, 0x3f800000    # 1.0f
+
+    invoke-virtual {p1, v0}, Lcom/google/android/apps/camera/ui/modeslider/ModeSliderUi;->setAlpha(F)V
+
+    if-eqz p2, :cond_2
+
+    iget-object p1, p0, Lctl;->f:Ljeg;
+
+    invoke-virtual {p1}, Ljea;->b()V
+
+    return-void
+
+    :cond_2
+    iget-object p1, p0, Lctl;->f:Ljeg;
+
+    invoke-virtual {p1}, Ljea;->c()V
+
+    return-void
 
     :cond_3
-    iget-object v1, p0, Lctl;->H:Lcvr;
+    :goto_0
+    :try_start_1
+    sget-object p1, Lctl;->o:Louj;
 
-    iget-object v1, v1, Lcvr;->a:Ljava/lang/Object;
+    invoke-virtual {p1}, Loue;->c()Lova;
 
-    iput-object v2, p0, Lctl;->D:Lkgq;
+    move-result-object p1
 
-    iput-object v2, p0, Lctl;->E:Lkgq;
+    check-cast p1, Loug;
 
-    const/4 v1, 0x1
+    const/16 p2, 0x27f
 
-    iput-boolean v1, p0, Lctl;->B:Z
+    invoke-interface {p1, p2}, Loug;->G(I)Lova;
+
+    move-result-object p1
+
+    check-cast p1, Loug;
+
+    const-string p2, "Ignore showing video mode slider. Current mode: %s, Ready to show UI: %b"
+
+    iget-object v1, p0, Lctl;->k:Ljrl;
+
+    iget-object v2, p0, Lctl;->p:Ljava/util/concurrent/atomic/AtomicBoolean;
+
+    invoke-virtual {v2}, Ljava/util/concurrent/atomic/AtomicBoolean;->get()Z
+
+    move-result v2
+
+    invoke-interface {p1, p2, v1, v2}, Loug;->z(Ljava/lang/String;Ljava/lang/Object;Z)V
 
     monitor-exit v0
 
     return-void
 
     :catchall_0
-    move-exception v1
+    move-exception p1
+
+    monitor-exit v0
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    throw p1
+
+    nop
+
+    :array_0
+    .array-data 4
+        0x0
+        0x3f800000    # 1.0f
+    .end array-data
+.end method
+
+
+# virtual methods
+.method public final a()V
+    .locals 2
+
+    iget-object v0, p0, Lctl;->b:Lcom/google/android/apps/camera/bottombar/BottomBarController;
+
+    const/4 v1, 0x1
+
+    invoke-virtual {v0, v1}, Lcom/google/android/apps/camera/bottombar/BottomBarController;->setClickable(Z)V
+
+    iget-object v0, p0, Lctl;->g:Ljfn;
+
+    invoke-interface {v0, v1}, Ljfn;->l(Z)V
+
+    iget-object v0, p0, Lctl;->h:Ljlb;
+
+    invoke-interface {v0, v1}, Ljlb;->F(Z)V
+
+    iget-object v0, p0, Lctl;->d:Lepj;
+
+    invoke-virtual {v0, v1}, Lepj;->g(I)V
+
+    return-void
+.end method
+
+.method public final close()V
+    .locals 1
+
+    iget-object v0, p0, Lctl;->f:Ljeg;
+
+    invoke-virtual {v0}, Ljea;->a()V
+
+    iget-object v0, p0, Lctl;->c:Ljava/util/Set;
+
+    invoke-interface {v0}, Ljava/util/Set;->clear()V
+
+    iget-object v0, p0, Lctl;->t:Ljava/util/Set;
+
+    invoke-interface {v0}, Ljava/util/Set;->clear()V
+
+    iget-object v0, p0, Lctl;->s:Llap;
+
+    invoke-virtual {v0}, Llap;->close()V
+
+    return-void
+.end method
+
+.method public final d(Z)V
+    .locals 2
+
+    if-eqz p1, :cond_0
+
+    iget-object p1, p0, Lctl;->l:Lcom/google/android/apps/camera/ui/modeslider/ModeSliderUi;
+
+    sget-object v0, Landroid/view/View;->ALPHA:Landroid/util/Property;
+
+    const/4 v1, 0x2
+
+    new-array v1, v1, [F
+
+    fill-array-data v1, :array_0
+
+    invoke-static {p1, v0, v1}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
+
+    move-result-object p1
+
+    const-wide/16 v0, 0xc8
+
+    invoke-virtual {p1, v0, v1}, Landroid/animation/ObjectAnimator;->setDuration(J)Landroid/animation/ObjectAnimator;
+
+    new-instance v0, Landroid/view/animation/LinearInterpolator;
+
+    invoke-direct {v0}, Landroid/view/animation/LinearInterpolator;-><init>()V
+
+    invoke-virtual {p1, v0}, Landroid/animation/ObjectAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
+
+    new-instance v0, Lctk;
+
+    invoke-direct {v0, p0}, Lctk;-><init>(Lctl;)V
+
+    invoke-virtual {p1, v0}, Landroid/animation/ObjectAnimator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
+
+    iput-object p1, p0, Lctl;->n:Landroid/animation/ObjectAnimator;
+
+    invoke-virtual {p1}, Landroid/animation/ObjectAnimator;->start()V
+
+    return-void
+
+    :cond_0
+    iget-object p1, p0, Lctl;->l:Lcom/google/android/apps/camera/ui/modeslider/ModeSliderUi;
+
+    const/4 v0, 0x0
+
+    invoke-virtual {p1, v0}, Lcom/google/android/apps/camera/ui/modeslider/ModeSliderUi;->setAlpha(F)V
+
+    iget-object p1, p0, Lctl;->f:Ljeg;
+
+    invoke-virtual {p1}, Ljea;->a()V
+
+    return-void
+
+    nop
+
+    :array_0
+    .array-data 4
+        0x3f800000    # 1.0f
+        0x0
+    .end array-data
+.end method
+
+.method public final e(Landroid/view/ViewStub;)V
+    .locals 4
+
+    iget-object v0, p0, Lctl;->l:Lcom/google/android/apps/camera/ui/modeslider/ModeSliderUi;
+
+    if-nez v0, :cond_0
+
+    invoke-virtual {p1}, Landroid/view/ViewStub;->inflate()Landroid/view/View;
+
+    move-result-object p1
+
+    check-cast p1, Lcom/google/android/apps/camera/ui/modeslider/ModeSliderUi;
+
+    iput-object p1, p0, Lctl;->l:Lcom/google/android/apps/camera/ui/modeslider/ModeSliderUi;
+
+    :cond_0
+    iget-object p1, p0, Lctl;->f:Ljeg;
+
+    iget-object v0, p0, Lctl;->l:Lcom/google/android/apps/camera/ui/modeslider/ModeSliderUi;
+
+    invoke-virtual {v0}, Lcom/google/android/apps/camera/ui/modeslider/ModeSliderUi;->b()Lcom/google/android/apps/camera/ui/modeslider/ModeSlider;
+
+    move-result-object v1
+
+    iget-object v2, p0, Lctl;->l:Lcom/google/android/apps/camera/ui/modeslider/ModeSliderUi;
+
+    invoke-virtual {v2}, Lcom/google/android/apps/camera/ui/modeslider/ModeSliderUi;->a()Lcom/google/android/apps/camera/camcorder/ui/modeslider/recordspeed/RecordSpeedSlider;
+
+    move-result-object v2
+
+    iget-object v3, p0, Lctl;->t:Ljava/util/Set;
+
+    iput-object v0, p1, Ljeg;->f:Landroid/view/View;
+
+    iput-object v1, p1, Ljeg;->g:Ljen;
+
+    iput-object v2, p1, Ljeg;->h:Ljen;
+
+    iput-object v3, p1, Ljeg;->i:Ljava/util/Set;
+
+    iget-object p1, p0, Lctl;->j:Lojc;
+
+    invoke-virtual {p1}, Lojc;->g()Z
+
+    move-result p1
+
+    if-eqz p1, :cond_1
+
+    iget-object p1, p0, Lctl;->j:Lojc;
+
+    invoke-virtual {p1}, Lojc;->c()Ljava/lang/Object;
+
+    move-result-object p1
+
+    check-cast p1, Lctw;
+
+    new-instance v0, Lcth;
+
+    invoke-direct {v0, p0}, Lcth;-><init>(Lctl;)V
+
+    invoke-interface {p1, v0}, Lctw;->j(Lcth;)V
+
+    :cond_1
+    iget-object p1, p0, Lctl;->l:Lcom/google/android/apps/camera/ui/modeslider/ModeSliderUi;
+
+    invoke-virtual {p1}, Lcom/google/android/apps/camera/ui/modeslider/ModeSliderUi;->b()Lcom/google/android/apps/camera/ui/modeslider/ModeSlider;
+
+    move-result-object p1
+
+    invoke-virtual {p1}, Lcom/google/android/apps/camera/ui/modeslider/ModeSlider;->getBackground()Landroid/graphics/drawable/Drawable;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/graphics/drawable/InsetDrawable;
+
+    invoke-virtual {v0}, Landroid/graphics/drawable/InsetDrawable;->getDrawable()Landroid/graphics/drawable/Drawable;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/graphics/drawable/GradientDrawable;
+
+    iget-object v1, p0, Lctl;->x:Lddf;
+
+    sget-object v2, Lddl;->ay:Lddg;
+
+    invoke-interface {v1, v2}, Lddf;->k(Lddg;)Z
+
+    move-result v1
+
+    if-nez v1, :cond_2
+
+    if-eqz v0, :cond_2
+
+    sget-object v1, Landroid/graphics/PorterDuff$Mode;->DST:Landroid/graphics/PorterDuff$Mode;
+
+    invoke-virtual {v0, v1}, Landroid/graphics/drawable/GradientDrawable;->setTintMode(Landroid/graphics/PorterDuff$Mode;)V
+
+    invoke-virtual {p1}, Lcom/google/android/apps/camera/ui/modeslider/ModeSlider;->getContext()Landroid/content/Context;
+
+    move-result-object v1
+
+    const v2, 0x7f060613
+
+    invoke-virtual {v1, v2}, Landroid/content/Context;->getColor(I)I
+
+    move-result v1
+
+    invoke-virtual {v0, v1}, Landroid/graphics/drawable/GradientDrawable;->setTint(I)V
+
+    :cond_2
+    iget-object v0, p0, Lctl;->e:Lctn;
+
+    iget-object v1, p0, Lctl;->x:Lddf;
+
+    invoke-virtual {p1, v0, v1}, Lcom/google/android/apps/camera/ui/modeslider/ModeSlider;->i(Ljdy;Lddf;)V
+
+    new-instance v0, Lcti;
+
+    invoke-direct {v0, p0}, Lcti;-><init>(Lctl;)V
+
+    iput-object v0, p1, Lcom/google/android/apps/camera/ui/modeslider/ModeSlider;->a:Ljem;
+
+    iget-object p1, p0, Lctl;->f:Ljeg;
+
+    invoke-virtual {p1}, Ljea;->f()V
+
+    iget-object p1, p0, Lctl;->s:Llap;
+
+    iget-object v0, p0, Lctl;->a:Llda;
+
+    new-instance v1, Lctf;
+
+    const/4 v2, 0x2
+
+    invoke-direct {v1, p0, v2}, Lctf;-><init>(Lctl;I)V
+
+    invoke-static {}, Lmip;->bS()Ljava/util/concurrent/Executor;
+
+    move-result-object v2
+
+    invoke-interface {v0, v1, v2}, Llda;->a(Llij;Ljava/util/concurrent/Executor;)Llie;
+
+    move-result-object v0
+
+    invoke-virtual {p1, v0}, Llap;->c(Llie;)V
+
+    iget-object p1, p0, Lctl;->s:Llap;
+
+    iget-object v0, p0, Lctl;->q:Llda;
+
+    new-instance v1, Lctf;
+
+    const/4 v2, 0x0
+
+    invoke-direct {v1, p0, v2}, Lctf;-><init>(Lctl;I)V
+
+    iget-object v2, p0, Lctl;->u:Llar;
+
+    invoke-interface {v0, v1, v2}, Llda;->a(Llij;Ljava/util/concurrent/Executor;)Llie;
+
+    move-result-object v0
+
+    invoke-virtual {p1, v0}, Llap;->c(Llie;)V
+
+    iget-object p1, p0, Lctl;->s:Llap;
+
+    iget-object v0, p0, Lctl;->r:Lcvo;
+
+    new-instance v1, Lctf;
+
+    const/4 v2, 0x1
+
+    invoke-direct {v1, p0, v2}, Lctf;-><init>(Lctl;I)V
+
+    invoke-static {}, Lmip;->bS()Ljava/util/concurrent/Executor;
+
+    move-result-object v2
+
+    invoke-virtual {v0, v1, v2}, Lcvo;->a(Llij;Ljava/util/concurrent/Executor;)Llie;
+
+    move-result-object v0
+
+    invoke-virtual {p1, v0}, Llap;->c(Llie;)V
+
+    return-void
+.end method
+
+.method public final f(Z)V
+    .locals 0
+
+    if-eqz p1, :cond_0
+
+    iget-object p1, p0, Lctl;->l:Lcom/google/android/apps/camera/ui/modeslider/ModeSliderUi;
+
+    invoke-virtual {p1}, Lcom/google/android/apps/camera/ui/modeslider/ModeSliderUi;->b()Lcom/google/android/apps/camera/ui/modeslider/ModeSlider;
+
+    move-result-object p1
+
+    invoke-virtual {p1}, Lcom/google/android/apps/camera/ui/modeslider/ModeSlider;->d()V
+
+    return-void
+
+    :cond_0
+    iget-object p1, p0, Lctl;->l:Lcom/google/android/apps/camera/ui/modeslider/ModeSliderUi;
+
+    invoke-virtual {p1}, Lcom/google/android/apps/camera/ui/modeslider/ModeSliderUi;->b()Lcom/google/android/apps/camera/ui/modeslider/ModeSlider;
+
+    move-result-object p1
+
+    invoke-virtual {p1}, Lcom/google/android/apps/camera/ui/modeslider/ModeSlider;->c()V
+
+    return-void
+.end method
+
+.method public final fU()V
+    .locals 2
+
+    iget-object v0, p0, Lctl;->p:Ljava/util/concurrent/atomic/AtomicBoolean;
+
+    const/4 v1, 0x0
+
+    invoke-virtual {v0, v1}, Ljava/util/concurrent/atomic/AtomicBoolean;->set(Z)V
+
+    iget-object v0, p0, Lctl;->m:Landroid/animation/ObjectAnimator;
+
+    if-eqz v0, :cond_0
+
+    invoke-virtual {v0}, Landroid/animation/ObjectAnimator;->end()V
+
+    :cond_0
+    return-void
+.end method
+
+.method public final fV()V
+    .locals 2
+
+    iget-object v0, p0, Lctl;->p:Ljava/util/concurrent/atomic/AtomicBoolean;
+
+    const/4 v1, 0x1
+
+    invoke-virtual {v0, v1}, Ljava/util/concurrent/atomic/AtomicBoolean;->set(Z)V
+
+    return-void
+.end method
+
+.method public final g(Ljrz;)V
+    .locals 1
+
+    iget-object v0, p0, Lctl;->l:Lcom/google/android/apps/camera/ui/modeslider/ModeSliderUi;
+
+    invoke-virtual {v0, p1}, Lcom/google/android/apps/camera/ui/modeslider/ModeSliderUi;->c(Ljrz;)V
+
+    return-void
+.end method
+
+.method public final h(Z)V
+    .locals 1
+
+    const/4 v0, 0x1
+
+    invoke-direct {p0, p1, v0}, Lctl;->n(ZZ)V
+
+    return-void
+.end method
+
+.method public final i(Ljrl;)V
+    .locals 17
+
+    move-object/from16 v0, p0
+
+    move-object/from16 v1, p1
+
+    iget-object v2, v0, Lctl;->l:Lcom/google/android/apps/camera/ui/modeslider/ModeSliderUi;
+
+    invoke-virtual {v2}, Lcom/google/android/apps/camera/ui/modeslider/ModeSliderUi;->b()Lcom/google/android/apps/camera/ui/modeslider/ModeSlider;
+
+    move-result-object v2
+
+    iget-object v3, v0, Lctl;->l:Lcom/google/android/apps/camera/ui/modeslider/ModeSliderUi;
+
+    invoke-virtual {v3}, Lcom/google/android/apps/camera/ui/modeslider/ModeSliderUi;->a()Lcom/google/android/apps/camera/camcorder/ui/modeslider/recordspeed/RecordSpeedSlider;
+
+    move-result-object v6
+
+    sget-object v3, Ljrl;->c:Ljrl;
+
+    invoke-virtual {v1, v3}, Ljrl;->equals(Ljava/lang/Object;)Z
+
+    move-result v3
+
+    const/4 v4, 0x0
+
+    if-eqz v3, :cond_0
+
+    invoke-direct {v0, v4, v4}, Lctl;->n(ZZ)V
+
+    goto/16 :goto_8
+
+    :cond_0
+    iget-object v3, v0, Lctl;->e:Lctn;
+
+    invoke-virtual {v3, v1}, Lctn;->a(Ljrl;)V
+
+    invoke-static {}, Lols;->r()Lols;
+
+    move-result-object v5
+
+    sget-object v7, Ljrl;->c:Ljrl;
+
+    invoke-virtual {v1, v7}, Ljrl;->equals(Ljava/lang/Object;)Z
+
+    move-result v7
+
+    const v8, 0x7f1404b2
+
+    const/4 v10, 0x1
+
+    if-eqz v7, :cond_1
+
+    const/4 v7, 0x2
+
+    goto/16 :goto_1
+
+    :cond_1
+    sget-object v7, Ljrl;->n:Ljrl;
+
+    invoke-virtual {v1, v7}, Ljrl;->equals(Ljava/lang/Object;)Z
+
+    move-result v7
+
+    if-eqz v7, :cond_3
+
+    invoke-static {}, Ljava/util/Collections;->reverseOrder()Ljava/util/Comparator;
+
+    move-result-object v7
+
+    invoke-static {v7}, Lorh;->b(Ljava/util/Comparator;)Lorh;
+
+    move-result-object v7
+
+    iget-object v11, v3, Lctn;->b:Liqn;
+
+    iget-object v11, v11, Liqn;->c:Loob;
+
+    invoke-virtual {v11}, Loob;->l()Lope;
+
+    move-result-object v11
+
+    invoke-virtual {v11}, Lood;->v()Loom;
+
+    move-result-object v11
+
+    invoke-static {v11}, Lohh;->x(Ljava/lang/Iterable;)[Ljava/lang/Object;
+
+    move-result-object v11
+
+    invoke-static {v11, v7}, Ljava/util/Arrays;->sort([Ljava/lang/Object;Ljava/util/Comparator;)V
+
+    invoke-static {v11}, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
+
+    move-result-object v7
+
+    invoke-static {v7}, Lobr;->ah(Ljava/lang/Iterable;)Ljava/util/ArrayList;
+
+    move-result-object v7
+
+    const v11, 0x7f1404d0
+
+    invoke-static {v11}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v11
+
+    const v12, 0x7f1404d2
+
+    invoke-static {v12}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v12
+
+    const v13, 0x7f1404ce
+
+    invoke-static {v13}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v13
+
+    const v14, 0x7f1404d1
+
+    invoke-static {v14}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v14
+
+    const v15, 0x7f1404cf
+
+    invoke-static {v15}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v15
+
+    invoke-static {v11, v12, v13, v14, v15}, Loom;->q(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Loom;
+
+    move-result-object v11
+
+    invoke-interface {v7}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+
+    move-result-object v7
+
+    const/4 v12, 0x0
+
+    :goto_0
+    invoke-interface {v7}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v13
+
+    if-eqz v13, :cond_2
+
+    invoke-interface {v7}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v13
+
+    check-cast v13, Ljava/lang/Double;
+
+    invoke-virtual {v13}, Ljava/lang/Double;->doubleValue()D
+
+    move-result-wide v13
+
+    iget-object v15, v3, Lctn;->a:Landroid/content/Context;
+
+    new-array v9, v10, [Ljava/lang/Object;
+
+    iget-object v10, v3, Lctn;->b:Liqn;
+
+    iget v10, v10, Liqn;->f:I
+
+    move-object/from16 v16, v5
+
+    int-to-double v4, v10
+
+    invoke-static {v4, v5}, Ljava/lang/Double;->isNaN(D)Z
+
+    div-double/2addr v4, v13
+
+    double-to-int v4, v4
+
+    invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v4
+
+    const/4 v5, 0x0
+
+    aput-object v4, v9, v5
+
+    invoke-virtual {v15, v8, v9}, Landroid/content/Context;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v4
+
+    iget-object v5, v3, Lctn;->a:Landroid/content/Context;
+
+    const/4 v9, 0x1
+
+    new-array v10, v9, [Ljava/lang/Object;
+
+    iget-object v9, v3, Lctn;->b:Liqn;
+
+    iget v9, v9, Liqn;->f:I
+
+    int-to-double v8, v9
+
+    invoke-static {v8, v9}, Ljava/lang/Double;->isNaN(D)Z
+
+    div-double/2addr v8, v13
+
+    double-to-int v8, v8
+
+    invoke-static {v8}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v8
+
+    const/4 v9, 0x0
+
+    aput-object v8, v10, v9
+
+    const v8, 0x7f14004b
+
+    invoke-virtual {v5, v8, v10}, Landroid/content/Context;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-static {v12}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v8
+
+    move-object/from16 v9, v16
+
+    invoke-virtual {v9, v8, v4}, Lols;->l(Ljava/lang/Object;Ljava/lang/Object;)V
+
+    invoke-virtual {v9, v8, v5}, Lols;->l(Ljava/lang/Object;Ljava/lang/Object;)V
+
+    iget-object v4, v3, Lctn;->a:Landroid/content/Context;
+
+    invoke-virtual {v4}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v4
+
+    invoke-virtual {v11, v12}, Loom;->get(I)Ljava/lang/Object;
+
+    move-result-object v5
+
+    check-cast v5, Ljava/lang/Integer;
+
+    invoke-virtual {v5}, Ljava/lang/Integer;->intValue()I
+
+    move-result v5
+
+    invoke-virtual {v4, v5}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-virtual {v9, v8, v4}, Lols;->l(Ljava/lang/Object;Ljava/lang/Object;)V
+
+    const/4 v4, 0x1
+
+    add-int/2addr v12, v4
+
+    move-object v5, v9
+
+    const/4 v4, 0x0
+
+    const v8, 0x7f1404b2
+
+    const/4 v10, 0x1
+
+    goto :goto_0
+
+    :cond_2
+    move-object v9, v5
+
+    invoke-static {v9}, Lols;->s(Loqt;)Lols;
+
+    move-result-object v3
+
+    move-object v5, v3
+
+    const/4 v7, 0x2
+
+    goto/16 :goto_1
+
+    :cond_3
+    move-object v9, v5
+
+    sget-object v4, Ljrl;->f:Ljrl;
+
+    invoke-virtual {v1, v4}, Ljrl;->equals(Ljava/lang/Object;)Z
+
+    move-result v4
+
+    if-eqz v4, :cond_4
+
+    iget-object v4, v3, Lctn;->a:Landroid/content/Context;
+
+    const/4 v5, 0x2
+
+    new-array v7, v5, [Ljava/lang/Object;
+
+    const/4 v5, 0x1
+
+    invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v8
+
+    const/4 v10, 0x0
+
+    aput-object v8, v7, v10
+
+    const/16 v11, 0x8
+
+    invoke-static {v11}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v11
+
+    aput-object v11, v7, v5
+
+    const v5, 0x7f140033
+
+    invoke-virtual {v4, v5, v7}, Landroid/content/Context;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-static {v10}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v7
+
+    iget-object v10, v3, Lctn;->e:Ljava/lang/String;
+
+    invoke-virtual {v9, v7, v10}, Lols;->l(Ljava/lang/Object;Ljava/lang/Object;)V
+
+    invoke-virtual {v9, v7, v4}, Lols;->l(Ljava/lang/Object;Ljava/lang/Object;)V
+
+    iget-object v4, v3, Lctn;->a:Landroid/content/Context;
+
+    invoke-virtual {v4}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v4
+
+    const v10, 0x7f1404c8
+
+    invoke-virtual {v4, v10}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-virtual {v9, v7, v4}, Lols;->l(Ljava/lang/Object;Ljava/lang/Object;)V
+
+    iget-object v4, v3, Lctn;->a:Landroid/content/Context;
+
+    const/4 v7, 0x2
+
+    new-array v10, v7, [Ljava/lang/Object;
+
+    const/4 v11, 0x0
+
+    aput-object v8, v10, v11
+
+    const/4 v11, 0x4
+
+    invoke-static {v11}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v11
+
+    const/4 v12, 0x1
+
+    aput-object v11, v10, v12
+
+    invoke-virtual {v4, v5, v10}, Landroid/content/Context;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v4
+
+    iget-object v5, v3, Lctn;->d:Ljava/lang/String;
+
+    invoke-virtual {v9, v8, v5}, Lols;->l(Ljava/lang/Object;Ljava/lang/Object;)V
+
+    invoke-virtual {v9, v8, v4}, Lols;->l(Ljava/lang/Object;Ljava/lang/Object;)V
+
+    iget-object v3, v3, Lctn;->a:Landroid/content/Context;
+
+    invoke-virtual {v3}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v3
+
+    const v4, 0x7f1404c7
+
+    invoke-virtual {v3, v4}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-virtual {v9, v8, v3}, Lols;->l(Ljava/lang/Object;Ljava/lang/Object;)V
+
+    invoke-static {v9}, Lols;->s(Loqt;)Lols;
+
+    move-result-object v3
+
+    move-object v5, v3
+
+    goto :goto_1
+
+    :cond_4
+    const/4 v7, 0x2
+
+    invoke-static {v9}, Lols;->s(Loqt;)Lols;
+
+    move-result-object v3
+
+    move-object v5, v3
+
+    :goto_1
+    iget-object v3, v0, Lctl;->e:Lctn;
+
+    invoke-virtual {v3, v1}, Lctn;->a(Ljrl;)V
+
+    sget-object v4, Ljrl;->c:Ljrl;
+
+    invoke-virtual {v1, v4}, Ljrl;->equals(Ljava/lang/Object;)Z
+
+    move-result v4
+
+    if-eqz v4, :cond_5
+
+    goto :goto_2
+
+    :cond_5
+    sget-object v4, Ljrl;->n:Ljrl;
+
+    invoke-virtual {v1, v4}, Ljrl;->equals(Ljava/lang/Object;)Z
+
+    move-result v4
+
+    if-eqz v4, :cond_6
+
+    iget-object v4, v3, Lctn;->a:Landroid/content/Context;
+
+    const/4 v8, 0x1
+
+    new-array v9, v8, [Ljava/lang/Object;
+
+    iget-object v8, v3, Lctn;->b:Liqn;
+
+    iget-object v3, v3, Lctn;->c:Llda;
+
+    invoke-interface {v3}, Llda;->fA()Ljava/lang/Object;
+
+    move-result-object v3
+
+    check-cast v3, Ljava/lang/Double;
+
+    invoke-virtual {v3}, Ljava/lang/Double;->doubleValue()D
+
+    move-result-wide v10
+
+    invoke-virtual {v8, v10, v11}, Liqn;->a(D)D
+
+    move-result-wide v10
+
+    double-to-int v3, v10
+
+    invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v3
+
+    const/4 v8, 0x0
+
+    aput-object v3, v9, v8
+
+    const v3, 0x7f1404b2
+
+    invoke-virtual {v4, v3, v9}, Landroid/content/Context;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v3
+
+    goto :goto_3
+
+    :cond_6
+    sget-object v4, Ljrl;->f:Ljrl;
+
+    invoke-virtual {v1, v4}, Ljrl;->equals(Ljava/lang/Object;)Z
+
+    move-result v4
+
+    if-eqz v4, :cond_8
+
+    iget-object v4, v3, Lctn;->g:Llce;
+
+    iget-object v4, v4, Llce;->d:Ljava/lang/Object;
+
+    check-cast v4, Lldz;
+
+    sget-object v8, Lldz;->g:Lldz;
+
+    invoke-virtual {v4, v8}, Lldz;->equals(Ljava/lang/Object;)Z
+
+    move-result v4
+
+    if-eqz v4, :cond_7
+
+    iget-object v3, v3, Lctn;->d:Ljava/lang/String;
+
+    goto :goto_3
+
+    :cond_7
+    iget-object v3, v3, Lctn;->e:Ljava/lang/String;
+
+    goto :goto_3
+
+    :cond_8
+    :goto_2
+    const-string v3, ""
+
+    :goto_3
+    const/4 v4, 0x0
+
+    :goto_4
+    invoke-virtual {v5}, Lols;->n()Ljava/util/Set;
+
+    move-result-object v8
+
+    invoke-interface {v8}, Ljava/util/Set;->size()I
+
+    move-result v8
+
+    const/4 v9, -0x1
+
+    if-ge v4, v8, :cond_a
+
+    invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v8
+
+    invoke-virtual {v5, v8, v3}, Lols;->o(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v8
+
+    if-eqz v8, :cond_9
+
+    move v8, v4
+
+    goto :goto_5
+
+    :cond_9
+    add-int/lit8 v4, v4, 0x1
+
+    goto :goto_4
+
+    :cond_a
+    const/4 v8, -0x1
+
+    :goto_5
+    if-eq v8, v9, :cond_e
+
+    sget-object v3, Ljrl;->n:Ljrl;
+
+    invoke-virtual {v1, v3}, Ljrl;->equals(Ljava/lang/Object;)Z
+
+    move-result v3
+
+    xor-int/lit8 v10, v3, 0x1
+
+    const/4 v4, 0x1
+
+    if-eq v4, v3, :cond_b
+
+    const v9, 0x7f08063f
+
+    goto :goto_6
+
+    :cond_b
+    const v9, 0x7f0805fd
+
+    :goto_6
+    if-eq v4, v3, :cond_c
+
+    goto :goto_7
+
+    :cond_c
+    const/4 v7, 0x1
+
+    :goto_7
+    iget-object v3, v0, Lctl;->j:Lojc;
+
+    invoke-virtual {v3}, Lojc;->g()Z
+
+    move-result v3
+
+    if-eqz v3, :cond_d
+
+    iget-object v3, v0, Lctl;->f:Ljeg;
+
+    invoke-virtual {v3}, Ljea;->d()V
+
+    const/4 v3, 0x0
+
+    invoke-virtual {v2, v3, v3}, Lcom/google/android/apps/camera/ui/modeslider/ModeSlider;->measure(II)V
+
+    invoke-virtual {v2}, Lcom/google/android/apps/camera/ui/modeslider/ModeSlider;->getMeasuredWidth()I
+
+    move-result v11
+
+    iget-object v2, v0, Lctl;->j:Lojc;
+
+    invoke-virtual {v2}, Lojc;->c()Ljava/lang/Object;
+
+    move-result-object v2
+
+    move-object v4, v2
+
+    check-cast v4, Lctw;
+
+    invoke-interface/range {v4 .. v11}, Lctw;->l(Lols;Ljen;IIIZI)V
+
+    :cond_d
+    :goto_8
+    iget-object v2, v0, Lctl;->w:Lpyn;
+
+    invoke-interface {v2}, Lpyn;->get()Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Ljxo;
+
+    invoke-interface {v2}, Ljxo;->b()V
+
+    iget-object v2, v0, Lctl;->w:Lpyn;
+
+    invoke-interface {v2}, Lpyn;->get()Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Ljxo;
+
+    invoke-virtual/range {p1 .. p1}, Ljrl;->name()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-interface {v2, v1}, Ljxo;->c(Ljava/lang/String;)V
+
+    return-void
+
+    :cond_e
+    new-instance v1, Ljava/lang/IllegalArgumentException;
+
+    const-string v2, "No default speed id found"
+
+    invoke-direct {v1, v2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    goto :goto_a
+
+    :goto_9
+    throw v1
+
+    :goto_a
+    goto :goto_9
+.end method
+
+.method public final j(Llwd;)V
+    .locals 6
+
+    iget-object v0, p0, Lctl;->l:Lcom/google/android/apps/camera/ui/modeslider/ModeSliderUi;
+
+    invoke-virtual {v0}, Lcom/google/android/apps/camera/ui/modeslider/ModeSliderUi;->b()Lcom/google/android/apps/camera/ui/modeslider/ModeSlider;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lctl;->e:Lctn;
+
+    iget-object v1, v1, Ljdy;->h:Ljava/util/List;
+
+    invoke-interface {v1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+
+    move-result-object v1
+
+    const/4 v2, 0x0
+
+    const/4 v3, 0x0
+
+    :goto_0
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v4
+
+    if-eqz v4, :cond_2
+
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v4
+
+    check-cast v4, Ljdz;
+
+    iget-boolean v4, v4, Ljdz;->d:Z
+
+    if-nez v4, :cond_1
+
+    sget-object v4, Llwd;->a:Llwd;
+
+    invoke-virtual {p1, v4}, Llwd;->equals(Ljava/lang/Object;)Z
+
+    move-result v4
+
+    if-eqz v4, :cond_0
+
+    invoke-virtual {v0, v3}, Lcom/google/android/apps/camera/ui/modeslider/ModeSlider;->getChildAt(I)Landroid/view/View;
+
+    move-result-object v4
+
+    const/16 v5, 0x8
+
+    invoke-virtual {v4, v5}, Landroid/view/View;->setVisibility(I)V
+
+    goto :goto_1
+
+    :cond_0
+    invoke-virtual {v0, v3}, Lcom/google/android/apps/camera/ui/modeslider/ModeSlider;->getChildAt(I)Landroid/view/View;
+
+    move-result-object v4
+
+    invoke-virtual {v4, v2}, Landroid/view/View;->setVisibility(I)V
+
+    :cond_1
+    :goto_1
+    add-int/lit8 v3, v3, 0x1
+
+    goto :goto_0
+
+    :cond_2
+    return-void
+.end method
+
+.method public final k(Ljrl;)Z
+    .locals 1
+
+    iget-object v0, p0, Lctl;->e:Lctn;
+
+    iget-object v0, v0, Lctn;->f:Ljava/util/LinkedHashMap;
+
+    invoke-virtual {v0, p1}, Ljava/util/LinkedHashMap;->containsKey(Ljava/lang/Object;)Z
+
+    move-result p1
+
+    return p1
+.end method
+
+.method public final l(Ljrl;)Z
+    .locals 5
+
+    iget-object v0, p0, Lctl;->i:Ljava/lang/Object;
+
+    monitor-enter v0
+
+    :try_start_0
+    iget-object v1, p0, Lctl;->k:Ljrl;
+
+    invoke-virtual {v1, p1}, Ljrl;->equals(Ljava/lang/Object;)Z
+
+    move-result v1
+
+    const/4 v2, 0x0
+
+    if-nez v1, :cond_2
+
+    invoke-virtual {p0, p1}, Lctl;->k(Ljrl;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_1
+
+    iput-object p1, p0, Lctl;->k:Ljrl;
+
+    iget-object v1, p0, Lctl;->v:Lfjs;
+
+    invoke-static {p1}, Ljri;->f(Ljrl;)I
+
+    move-result v3
+
+    const/4 v4, 0x2
+
+    invoke-interface {v1, v3, v4}, Lfjs;->W(II)V
 
     monitor-exit v0
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
+    invoke-virtual {p0, v2}, Lctl;->f(Z)V
+
+    iget-object v0, p0, Lctl;->c:Ljava/util/Set;
+
+    invoke-interface {v0}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
+
+    move-result-object v0
+
+    :goto_0
+    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Lfzk;
+
+    invoke-virtual {v1, p1}, Lfzk;->a(Ljrl;)V
+
+    goto :goto_0
+
+    :cond_0
+    iget-object v0, p0, Lctl;->l:Lcom/google/android/apps/camera/ui/modeslider/ModeSliderUi;
+
+    invoke-virtual {v0}, Lcom/google/android/apps/camera/ui/modeslider/ModeSliderUi;->b()Lcom/google/android/apps/camera/ui/modeslider/ModeSlider;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lctl;->e:Lctn;
+
+    iget-object v1, v1, Lctn;->f:Ljava/util/LinkedHashMap;
+
+    invoke-virtual {v1, p1}, Ljava/util/LinkedHashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p1
+
+    check-cast p1, Ljdz;
+
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    invoke-virtual {v0, p1}, Lcom/google/android/apps/camera/ui/modeslider/ModeSlider;->b(Ljdz;)I
+
+    move-result p1
+
+    invoke-virtual {v0, p1}, Lcom/google/android/apps/camera/ui/modeslider/ModeSlider;->k(I)V
+
+    const/4 p1, 0x1
+
+    return p1
+
+    :cond_1
+    :try_start_1
+    new-instance v1, Ljava/lang/IllegalArgumentException;
+
+    invoke-static {p1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-static {p1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/String;->length()I
+
+    move-result v2
+
+    add-int/lit8 v2, v2, 0x1e
+
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    invoke-direct {v3, v2}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string v2, "Unsupported application mode: "
+
+    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v3, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-direct {v1, p1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
     throw v1
+
+    :cond_2
+    monitor-exit v0
+
+    return v2
+
+    :catchall_0
+    move-exception p1
+
+    monitor-exit v0
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    goto :goto_2
+
+    :goto_1
+    throw p1
+
+    :goto_2
+    goto :goto_1
+.end method
+
+.method public final m(Lfzk;)Llie;
+    .locals 1
+
+    iget-object v0, p0, Lctl;->c:Ljava/util/Set;
+
+    invoke-interface {v0, p1}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
+
+    new-instance v0, Lcte;
+
+    invoke-direct {v0, p0, p1}, Lcte;-><init>(Lctl;Lfzk;)V
+
+    return-object v0
 .end method

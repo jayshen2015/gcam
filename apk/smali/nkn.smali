@@ -1,184 +1,212 @@
-.class public final Lnkn;
-.super Lnws;
+.class final Lnkn;
+.super Ljava/lang/Object;
 
 # interfaces
-.implements Lnxz;
-
-
-# static fields
-.field public static final d:Lnkn;
-
-.field private static volatile e:Lnyf;
+.implements Lpgj;
 
 
 # instance fields
-.field public a:I
+.field public a:Ljava/util/List;
 
-.field public b:I
-
-.field public c:I
+.field final synthetic b:Lnkq;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
-
-    new-instance v0, Lnkn;
-
-    invoke-direct {v0}, Lnkn;-><init>()V
-
-    sput-object v0, Lnkn;->d:Lnkn;
-
-    const-class v1, Lnkn;
-
-    invoke-static {v1, v0}, Lnws;->aa(Ljava/lang/Class;Lnws;)V
-
-    return-void
-.end method
-
-.method private constructor <init>()V
+.method public constructor <init>(Lnkq;)V
     .locals 0
 
-    invoke-direct {p0}, Lnws;-><init>()V
+    iput-object p1, p0, Lnkn;->b:Lnkq;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method protected final a(ILjava/lang/Object;)Ljava/lang/Object;
-    .locals 3
+.method public final a()Lpht;
+    .locals 5
 
-    add-int/lit8 p1, p1, -0x1
+    iget-object v0, p0, Lnkn;->b:Lnkq;
 
-    const/4 p2, 0x1
+    iget-object v1, v0, Lnkq;->e:Logb;
 
-    packed-switch p1, :pswitch_data_0
+    iget-object v0, v0, Lnkq;->a:Ljava/lang/String;
 
-    :pswitch_0
-    const/4 p1, 0x0
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
-    return-object p1
+    move-result-object v0
 
-    :pswitch_1
-    sget-object p1, Lnkn;->e:Lnyf;
+    const-string v2, "Initialize "
 
-    if-nez p1, :cond_1
+    invoke-virtual {v0}, Ljava/lang/String;->length()I
 
-    const-class p2, Lnkn;
+    move-result v3
 
-    monitor-enter p2
+    if-eqz v3, :cond_0
 
-    :try_start_0
-    sget-object p1, Lnkn;->e:Lnyf;
+    invoke-virtual {v2, v0}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
 
-    if-nez p1, :cond_0
-
-    new-instance p1, Lnwo;
-
-    sget-object v0, Lnkn;->d:Lnkn;
-
-    invoke-direct {p1, v0}, Lnwo;-><init>(Lnws;)V
-
-    sput-object p1, Lnkn;->e:Lnyf;
-
-    :cond_0
-    monitor-exit p2
+    move-result-object v0
 
     goto :goto_0
 
-    :catchall_0
-    move-exception p1
+    :cond_0
+    new-instance v0, Ljava/lang/String;
 
-    monitor-exit p2
+    invoke-direct {v0, v2}, Ljava/lang/String;-><init>(Ljava/lang/String;)V
+
+    :goto_0
+    invoke-virtual {v1, v0}, Logb;->b(Ljava/lang/String;)Logf;
+
+    move-result-object v0
+
+    :try_start_0
+    iget-object v1, p0, Lnkn;->b:Lnkq;
+
+    iget-object v1, v1, Lnkq;->d:Ljava/lang/Object;
+
+    monitor-enter v1
     :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_1
 
-    throw p1
+    :try_start_1
+    iget-object v2, p0, Lnkn;->a:Ljava/util/List;
+
+    if-nez v2, :cond_1
+
+    iget-object v2, p0, Lnkn;->b:Lnkq;
+
+    iget-object v3, v2, Lnkq;->f:Ljava/util/List;
+
+    iput-object v3, p0, Lnkn;->a:Ljava/util/List;
+
+    invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
+
+    move-result-object v3
+
+    iput-object v3, v2, Lnkq;->f:Ljava/util/List;
 
     :cond_1
-    :goto_0
-    return-object p1
+    monitor-exit v1
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    :pswitch_2
-    sget-object p1, Lnkn;->d:Lnkn;
+    :try_start_2
+    new-instance v1, Ljava/util/ArrayList;
 
-    return-object p1
+    iget-object v2, p0, Lnkn;->a:Ljava/util/List;
 
-    :pswitch_3
-    new-instance p1, Lnwn;
+    invoke-interface {v2}, Ljava/util/List;->size()I
 
-    sget-object p2, Lnkn;->d:Lnkn;
+    move-result v2
 
-    invoke-direct {p1, p2}, Lnwn;-><init>(Lnws;)V
+    invoke-direct {v1, v2}, Ljava/util/ArrayList;-><init>(I)V
 
-    return-object p1
+    new-instance v2, Lnkp;
 
-    :pswitch_4
-    new-instance p1, Lnkn;
+    iget-object v3, p0, Lnkn;->b:Lnkq;
 
-    invoke-direct {p1}, Lnkn;-><init>()V
+    invoke-direct {v2, v3}, Lnkp;-><init>(Lnkq;)V
 
-    return-object p1
+    iget-object v3, p0, Lnkn;->a:Ljava/util/List;
 
-    :pswitch_5
-    const-string p1, "a"
+    invoke-interface {v3}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
-    const-string v0, "\u0001\u0002\u0000\u0001\u0001\u0002\u0002\u0000\u0000\u0000\u0001\u100c\u0000\u0002\u100c\u0001"
+    move-result-object v3
 
-    const/4 v1, 0x5
+    :goto_1
+    invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
 
-    new-array v1, v1, [Ljava/lang/Object;
+    move-result v4
 
-    const/4 v2, 0x0
+    if-eqz v4, :cond_2
 
-    aput-object p1, v1, v2
+    invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    const-string p1, "b"
+    move-result-object v4
 
-    aput-object p1, v1, p2
+    check-cast v4, Lpgk;
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_1
 
-    const/4 p1, 0x2
+    :try_start_3
+    invoke-interface {v4, v2}, Lpgk;->a(Ljava/lang/Object;)Lpht;
 
-    sget-object p2, Lnjv;->n:Lnww;
+    move-result-object v4
 
-    aput-object p2, v1, p1
+    invoke-interface {v1, v4}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+    :try_end_3
+    .catch Ljava/lang/Exception; {:try_start_3 .. :try_end_3} :catch_0
+    .catchall {:try_start_3 .. :try_end_3} :catchall_1
 
-    const/4 p1, 0x3
+    goto :goto_1
 
-    const-string p2, "c"
+    :catch_0
+    move-exception v2
 
-    aput-object p2, v1, p1
+    :try_start_4
+    invoke-static {v2}, Lplk;->U(Ljava/lang/Throwable;)Lpht;
 
-    const/4 p1, 0x4
+    move-result-object v2
 
-    sget-object p2, Lnjv;->m:Lnww;
+    invoke-interface {v1, v2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    aput-object p2, v1, p1
+    :cond_2
+    invoke-static {v1}, Lplk;->Q(Ljava/lang/Iterable;)Lphm;
 
-    sget-object p1, Lnkn;->d:Lnkn;
+    move-result-object v1
 
-    invoke-static {p1, v0, v1}, Lnkn;->X(Lnxy;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/Object;
+    new-instance v2, Lnkm;
 
-    move-result-object p1
+    invoke-direct {v2, p0}, Lnkm;-><init>(Lnkn;)V
 
-    return-object p1
+    sget-object v3, Lpgr;->a:Lpgr;
 
-    :pswitch_6
-    invoke-static {p2}, Ljava/lang/Byte;->valueOf(B)Ljava/lang/Byte;
+    invoke-virtual {v1, v2, v3}, Lphm;->a(Ljava/util/concurrent/Callable;Ljava/util/concurrent/Executor;)Lpht;
 
-    move-result-object p1
+    move-result-object v1
 
-    return-object p1
+    invoke-virtual {v0, v1}, Logf;->a(Lpht;)V
+    :try_end_4
+    .catchall {:try_start_4 .. :try_end_4} :catchall_1
 
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_6
-        :pswitch_0
-        :pswitch_5
-        :pswitch_4
-        :pswitch_3
-        :pswitch_2
-        :pswitch_1
-    .end packed-switch
+    invoke-virtual {v0}, Logf;->close()V
+
+    return-object v1
+
+    :catchall_0
+    move-exception v2
+
+    :try_start_5
+    monitor-exit v1
+    :try_end_5
+    .catchall {:try_start_5 .. :try_end_5} :catchall_0
+
+    :try_start_6
+    throw v2
+    :try_end_6
+    .catchall {:try_start_6 .. :try_end_6} :catchall_1
+
+    :catchall_1
+    move-exception v1
+
+    :try_start_7
+    invoke-virtual {v0}, Logf;->close()V
+    :try_end_7
+    .catchall {:try_start_7 .. :try_end_7} :catchall_2
+
+    goto :goto_2
+
+    :catchall_2
+    move-exception v0
+
+    :goto_2
+    goto :goto_4
+
+    :goto_3
+    throw v1
+
+    :goto_4
+    goto :goto_3
 .end method

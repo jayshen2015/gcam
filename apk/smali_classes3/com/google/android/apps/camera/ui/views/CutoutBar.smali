@@ -3,21 +3,19 @@
 
 
 # static fields
-.field public static final a:Lnak;
+.field public static final a:Louj;
 
 
 # instance fields
-.field public final b:Ldgy;
+.field public final b:Ldcw;
 
-.field public final c:I
+.field public c:F
 
 .field public d:F
 
 .field public e:F
 
-.field public f:F
-
-.field public g:Liko;
+.field public f:Ljrz;
 
 
 # direct methods
@@ -26,11 +24,11 @@
 
     const-string v0, "com/google/android/apps/camera/ui/views/CutoutBar"
 
-    invoke-static {v0}, Lnak;->h(Ljava/lang/String;)Lnak;
+    invoke-static {v0}, Louj;->h(Ljava/lang/String;)Louj;
 
     move-result-object v0
 
-    sput-object v0, Lcom/google/android/apps/camera/ui/views/CutoutBar;->a:Lnak;
+    sput-object v0, Lcom/google/android/apps/camera/ui/views/CutoutBar;->a:Louj;
 
     return-void
 .end method
@@ -42,29 +40,29 @@
 
     const/4 p2, 0x0
 
+    iput p2, p0, Lcom/google/android/apps/camera/ui/views/CutoutBar;->c:F
+
     iput p2, p0, Lcom/google/android/apps/camera/ui/views/CutoutBar;->d:F
 
     iput p2, p0, Lcom/google/android/apps/camera/ui/views/CutoutBar;->e:F
 
-    iput p2, p0, Lcom/google/android/apps/camera/ui/views/CutoutBar;->f:F
+    sget-object p2, Ljrz;->a:Ljrz;
 
-    sget-object p2, Liko;->a:Liko;
+    iput-object p2, p0, Lcom/google/android/apps/camera/ui/views/CutoutBar;->f:Ljrz;
 
-    iput-object p2, p0, Lcom/google/android/apps/camera/ui/views/CutoutBar;->g:Liko;
+    check-cast p1, Lbpx;
 
-    check-cast p1, Lcdd;
-
-    invoke-interface {p1}, Lcdd;->a()Ldhi;
+    invoke-interface {p1}, Lbpx;->a()Lddf;
 
     move-result-object p1
 
-    sget-object p2, Ldgz;->a:Ldhk;
+    sget-object p2, Ldcy;->a:Lddi;
 
-    invoke-interface {p1, p2}, Ldhi;->a(Ldhk;)Lj$/util/Optional;
+    invoke-interface {p1, p2}, Lddf;->a(Lddi;)Lojc;
 
     move-result-object p2
 
-    invoke-virtual {p2}, Lj$/util/Optional;->get()Ljava/lang/Object;
+    invoke-virtual {p2}, Lojc;->c()Ljava/lang/Object;
 
     move-result-object p2
 
@@ -74,13 +72,11 @@
 
     move-result p2
 
-    iput p2, p0, Lcom/google/android/apps/camera/ui/views/CutoutBar;->c:I
-
-    invoke-static {p1, p2}, Ldgz;->a(Ldhi;I)Ldgy;
+    invoke-static {p1, p2}, Ldcy;->a(Lddf;I)Ldcw;
 
     move-result-object p1
 
-    iput-object p1, p0, Lcom/google/android/apps/camera/ui/views/CutoutBar;->b:Ldgy;
+    iput-object p1, p0, Lcom/google/android/apps/camera/ui/views/CutoutBar;->b:Ldcw;
 
     return-void
 .end method
@@ -94,9 +90,9 @@
 
     invoke-static {v0}, Landroid/os/Trace;->beginSection(Ljava/lang/String;)V
 
-    iget-object v0, p0, Lcom/google/android/apps/camera/ui/views/CutoutBar;->g:Liko;
+    iget-object v0, p0, Lcom/google/android/apps/camera/ui/views/CutoutBar;->f:Ljrz;
 
-    invoke-static {p0, v0}, Ljvd;->H(Landroid/view/View;Liko;)V
+    invoke-static {p0, v0}, Lmip;->es(Landroid/view/View;Ljrz;)V
 
     invoke-static {}, Landroid/os/Trace;->endSection()V
 
@@ -106,11 +102,11 @@
 .method protected final onDraw(Landroid/graphics/Canvas;)V
     .locals 5
 
-    iget v0, p0, Lcom/google/android/apps/camera/ui/views/CutoutBar;->d:F
+    iget v0, p0, Lcom/google/android/apps/camera/ui/views/CutoutBar;->c:F
 
-    iget v1, p0, Lcom/google/android/apps/camera/ui/views/CutoutBar;->e:F
+    iget v1, p0, Lcom/google/android/apps/camera/ui/views/CutoutBar;->d:F
 
-    iget v2, p0, Lcom/google/android/apps/camera/ui/views/CutoutBar;->f:F
+    iget v2, p0, Lcom/google/android/apps/camera/ui/views/CutoutBar;->e:F
 
     new-instance v3, Landroid/graphics/Paint;
 
@@ -139,5 +135,33 @@
     invoke-virtual {p0}, Lcom/google/android/apps/camera/ui/views/CutoutBar;->a()V
 
     :cond_0
+    return-void
+.end method
+
+.method protected final onMeasure(II)V
+    .locals 1
+
+    const-string v0, "FrontLensIndicator:onMeasure"
+
+    invoke-static {v0}, Landroid/os/Trace;->beginSection(Ljava/lang/String;)V
+
+    iget-object v0, p0, Lcom/google/android/apps/camera/ui/views/CutoutBar;->f:Ljrz;
+
+    invoke-static {v0}, Ljrz;->b(Ljrz;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    invoke-super {p0, p1, p2}, Landroid/view/View;->onMeasure(II)V
+
+    goto :goto_0
+
+    :cond_0
+    invoke-super {p0, p2, p1}, Landroid/view/View;->onMeasure(II)V
+
+    :goto_0
+    invoke-static {}, Landroid/os/Trace;->endSection()V
+
     return-void
 .end method

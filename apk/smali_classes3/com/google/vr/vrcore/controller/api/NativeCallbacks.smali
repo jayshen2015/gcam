@@ -67,7 +67,7 @@
 .method private native handleTrackingStatusEvent(JIJI)V
 .end method
 
-.method private final j(Lofk;)V
+.method private final j(Lpxs;)V
     .locals 13
 
     const/4 v0, 0x0
@@ -79,27 +79,27 @@
 
     if-nez v2, :cond_2
 
-    iget v2, p1, Lofk;->l:I
+    iget v2, p1, Lpxs;->l:I
 
     if-ge v1, v2, :cond_1
 
     if-ge v1, v2, :cond_0
 
-    iget-object v2, p1, Lofk;->m:[Loff;
+    iget-object v2, p1, Lpxs;->m:[Lpxn;
 
     aget-object v2, v2, v1
 
     iget-wide v4, p0, Lcom/google/vr/vrcore/controller/api/NativeCallbacks;->a:J
 
-    iget v6, v2, Loff;->e:I
+    iget v6, v2, Lpxn;->e:I
 
-    iget-wide v7, v2, Loff;->d:J
+    iget-wide v7, v2, Lpxn;->d:J
 
-    iget v9, v2, Loff;->a:F
+    iget v9, v2, Lpxn;->a:F
 
-    iget v10, v2, Loff;->b:F
+    iget v10, v2, Lpxn;->b:F
 
-    iget v11, v2, Loff;->c:F
+    iget v11, v2, Lpxn;->c:F
 
     move-object v3, p0
 
@@ -129,25 +129,25 @@
 
     if-nez v2, :cond_5
 
-    iget v2, p1, Lofk;->n:I
+    iget v2, p1, Lpxs;->n:I
 
     if-ge v1, v2, :cond_4
 
     if-ge v1, v2, :cond_3
 
-    iget-object v2, p1, Lofk;->o:[Lofh;
+    iget-object v2, p1, Lpxs;->o:[Lpxp;
 
     aget-object v2, v2, v1
 
     iget-wide v4, p0, Lcom/google/vr/vrcore/controller/api/NativeCallbacks;->a:J
 
-    iget v6, v2, Lofh;->e:I
+    iget v6, v2, Lpxp;->e:I
 
-    iget-wide v7, v2, Lofh;->d:J
+    iget-wide v7, v2, Lpxp;->d:J
 
-    iget v9, v2, Lofh;->a:I
+    iget v9, v2, Lpxp;->a:I
 
-    iget-boolean v10, v2, Lofh;->b:Z
+    iget-boolean v10, v2, Lpxp;->b:Z
 
     move-object v3, p0
 
@@ -177,27 +177,27 @@
 
     if-nez v2, :cond_8
 
-    iget v2, p1, Lofk;->p:I
+    iget v2, p1, Lpxs;->p:I
 
     if-ge v1, v2, :cond_7
 
     if-ge v1, v2, :cond_6
 
-    iget-object v2, p1, Lofk;->q:[Lofl;
+    iget-object v2, p1, Lpxs;->q:[Lpxt;
 
     aget-object v2, v2, v1
 
     iget-wide v4, p0, Lcom/google/vr/vrcore/controller/api/NativeCallbacks;->a:J
 
-    iget v6, v2, Lofl;->e:I
+    iget v6, v2, Lpxt;->e:I
 
-    iget-wide v7, v2, Lofl;->d:J
+    iget-wide v7, v2, Lpxt;->d:J
 
-    iget v9, v2, Lofl;->a:F
+    iget v9, v2, Lpxt;->a:F
 
-    iget v10, v2, Lofl;->b:F
+    iget v10, v2, Lpxt;->b:F
 
-    iget v11, v2, Lofl;->c:F
+    iget v11, v2, Lpxt;->c:F
 
     move-object v3, p0
 
@@ -227,29 +227,29 @@
 
     if-nez v2, :cond_b
 
-    iget v2, p1, Lofk;->r:I
+    iget v2, p1, Lpxs;->r:I
 
     if-ge v1, v2, :cond_a
 
     if-ge v1, v2, :cond_9
 
-    iget-object v2, p1, Lofk;->s:[Lofn;
+    iget-object v2, p1, Lpxs;->s:[Lpxv;
 
     aget-object v2, v2, v1
 
     iget-wide v4, p0, Lcom/google/vr/vrcore/controller/api/NativeCallbacks;->a:J
 
-    iget v6, v2, Lofn;->e:I
+    iget v6, v2, Lpxv;->e:I
 
-    iget-wide v7, v2, Lofn;->d:J
+    iget-wide v7, v2, Lpxv;->d:J
 
-    iget v9, v2, Lofn;->a:F
+    iget v9, v2, Lpxv;->a:F
 
-    iget v10, v2, Lofn;->b:F
+    iget v10, v2, Lpxv;->b:F
 
-    iget v11, v2, Lofn;->c:F
+    iget v11, v2, Lpxv;->c:F
 
-    iget v12, v2, Lofn;->f:F
+    iget v12, v2, Lpxv;->f:F
 
     move-object v3, p0
 
@@ -275,27 +275,27 @@
 
     if-nez v1, :cond_d
 
-    iget v1, p1, Lofk;->t:I
+    iget v1, p1, Lpxs;->t:I
 
     if-ge v0, v1, :cond_d
 
     if-ge v0, v1, :cond_c
 
-    iget-object v1, p1, Lofk;->u:[Lofs;
+    iget-object v1, p1, Lpxs;->u:[Lpyb;
 
     aget-object v1, v1, v0
 
     iget-wide v3, p0, Lcom/google/vr/vrcore/controller/api/NativeCallbacks;->a:J
 
-    iget v5, v1, Lofs;->e:I
+    iget v5, v1, Lpyb;->e:I
 
-    iget-wide v6, v1, Lofs;->d:J
+    iget-wide v6, v1, Lpyb;->d:J
 
-    iget v8, v1, Lofs;->b:I
+    iget v8, v1, Lpyb;->b:I
 
-    iget v9, v1, Lofs;->c:F
+    iget v9, v1, Lpyb;->c:F
 
-    iget v10, v1, Lofs;->f:F
+    iget v10, v1, Lpyb;->f:F
 
     move-object v2, p0
 
@@ -318,7 +318,7 @@
 
 
 # virtual methods
-.method public final declared-synchronized a(Lofk;)V
+.method public final declared-synchronized a(Lpxs;)V
     .locals 1
 
     monitor-enter p0
@@ -337,7 +337,7 @@
 
     :cond_0
     :try_start_1
-    invoke-direct {p0, p1}, Lcom/google/vr/vrcore/controller/api/NativeCallbacks;->j(Lofk;)V
+    invoke-direct {p0, p1}, Lcom/google/vr/vrcore/controller/api/NativeCallbacks;->j(Lpxs;)V
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
@@ -357,7 +357,7 @@
     goto :goto_1
 .end method
 
-.method public final declared-synchronized b(Lofj;)V
+.method public final declared-synchronized b(Lpxr;)V
     .locals 12
 
     monitor-enter p0
@@ -375,7 +375,7 @@
 
     :cond_0
     :try_start_1
-    invoke-direct {p0, p1}, Lcom/google/vr/vrcore/controller/api/NativeCallbacks;->j(Lofk;)V
+    invoke-direct {p0, p1}, Lcom/google/vr/vrcore/controller/api/NativeCallbacks;->j(Lpxs;)V
 
     const/4 v0, 0x0
 
@@ -386,27 +386,27 @@
 
     if-nez v2, :cond_3
 
-    iget v2, p1, Lofj;->c:I
+    iget v2, p1, Lpxr;->c:I
 
     if-ge v1, v2, :cond_2
 
     if-ge v1, v2, :cond_1
 
-    iget-object v2, p1, Lofj;->d:[Lofo;
+    iget-object v2, p1, Lpxr;->d:[Lpxw;
 
     aget-object v2, v2, v1
 
     iget-wide v4, p0, Lcom/google/vr/vrcore/controller/api/NativeCallbacks;->a:J
 
-    iget v6, v2, Lofo;->e:I
+    iget v6, v2, Lpxw;->e:I
 
-    iget-wide v7, v2, Lofo;->d:J
+    iget-wide v7, v2, Lpxw;->d:J
 
-    iget v9, v2, Lofo;->a:F
+    iget v9, v2, Lpxw;->a:F
 
-    iget v10, v2, Lofo;->b:F
+    iget v10, v2, Lpxw;->b:F
 
-    iget v11, v2, Lofo;->c:F
+    iget v11, v2, Lpxw;->c:F
 
     move-object v3, p0
 
@@ -432,23 +432,23 @@
 
     if-nez v1, :cond_6
 
-    iget v1, p1, Lofj;->h:I
+    iget v1, p1, Lpxr;->h:I
 
     if-ge v0, v1, :cond_5
 
     if-ge v0, v1, :cond_4
 
-    iget-object v1, p1, Lofj;->i:[Loft;
+    iget-object v1, p1, Lpxr;->i:[Lpyc;
 
     aget-object v1, v1, v0
 
     iget-wide v3, p0, Lcom/google/vr/vrcore/controller/api/NativeCallbacks;->a:J
 
-    iget v5, v1, Loft;->e:I
+    iget v5, v1, Lpyc;->e:I
 
-    iget-wide v6, v1, Loft;->d:J
+    iget-wide v6, v1, Lpyc;->d:J
 
-    iget v8, v1, Loft;->a:I
+    iget v8, v1, Lpyc;->a:I
 
     move-object v2, p0
 
@@ -466,21 +466,21 @@
     throw p1
 
     :cond_5
-    iget-boolean v0, p1, Lofj;->e:Z
+    iget-boolean v0, p1, Lpxr;->e:Z
 
     if-eqz v0, :cond_6
 
-    iget-object p1, p1, Lofj;->f:Lofg;
+    iget-object p1, p1, Lpxr;->f:Lpxo;
 
     iget-wide v1, p0, Lcom/google/vr/vrcore/controller/api/NativeCallbacks;->a:J
 
-    iget v3, p1, Lofg;->e:I
+    iget v3, p1, Lpxo;->e:I
 
-    iget-wide v4, p1, Lofg;->d:J
+    iget-wide v4, p1, Lpxo;->d:J
 
-    iget-boolean v6, p1, Lofg;->b:Z
+    iget-boolean v6, p1, Lpxo;->b:Z
 
-    iget v7, p1, Lofg;->a:I
+    iget v7, p1, Lpxo;->a:I
 
     move-object v0, p0
 
@@ -507,7 +507,7 @@
     goto :goto_2
 .end method
 
-.method public final declared-synchronized c(Lofn;)V
+.method public final declared-synchronized c(Lpxv;)V
     .locals 11
 
     monitor-enter p0
@@ -519,17 +519,17 @@
 
     iget-wide v2, p0, Lcom/google/vr/vrcore/controller/api/NativeCallbacks;->a:J
 
-    iget v4, p1, Lofn;->e:I
+    iget v4, p1, Lpxv;->e:I
 
-    iget-wide v5, p1, Lofn;->d:J
+    iget-wide v5, p1, Lpxv;->d:J
 
-    iget v7, p1, Lofn;->a:F
+    iget v7, p1, Lpxv;->a:F
 
-    iget v8, p1, Lofn;->b:F
+    iget v8, p1, Lpxv;->b:F
 
-    iget v9, p1, Lofn;->c:F
+    iget v9, p1, Lpxv;->c:F
 
-    iget v10, p1, Lofn;->f:F
+    iget v10, p1, Lpxv;->f:F
 
     move-object v1, p0
 

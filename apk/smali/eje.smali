@@ -1,70 +1,61 @@
-.class final enum Leje;
-.super Ljava/lang/Enum;
+.class public final synthetic Leje;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Ljava/lang/Runnable;
 
 
-# static fields
-.field public static final enum a:Leje;
+# instance fields
+.field public final synthetic a:Lejf;
 
-.field public static final enum b:Leje;
-
-.field private static final synthetic c:[Leje;
+.field private final synthetic b:I
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 5
-
-    new-instance v0, Leje;
-
-    const-string v1, "WHITE"
-
-    const/4 v2, 0x0
-
-    invoke-direct {v0, v1, v2}, Leje;-><init>(Ljava/lang/String;I)V
-
-    sput-object v0, Leje;->a:Leje;
-
-    new-instance v1, Leje;
-
-    const-string v3, "RED"
-
-    const/4 v4, 0x1
-
-    invoke-direct {v1, v3, v4}, Leje;-><init>(Ljava/lang/String;I)V
-
-    sput-object v1, Leje;->b:Leje;
-
-    const/4 v3, 0x2
-
-    new-array v3, v3, [Leje;
-
-    aput-object v0, v3, v2
-
-    aput-object v1, v3, v4
-
-    sput-object v3, Leje;->c:[Leje;
-
-    return-void
-.end method
-
-.method private constructor <init>(Ljava/lang/String;I)V
+.method public synthetic constructor <init>(Lejf;I)V
     .locals 0
 
-    invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+    iput p2, p0, Leje;->b:I
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Leje;->a:Lejf;
 
     return-void
 .end method
 
-.method public static values()[Leje;
-    .locals 1
 
-    sget-object v0, Leje;->c:[Leje;
+# virtual methods
+.method public final run()V
+    .locals 2
 
-    invoke-virtual {v0}, [Leje;->clone()Ljava/lang/Object;
+    iget v0, p0, Leje;->b:I
 
-    move-result-object v0
+    packed-switch v0, :pswitch_data_0
 
-    check-cast v0, [Leje;
+    iget-object v0, p0, Leje;->a:Lejf;
 
-    return-object v0
+    iget-object v0, v0, Lejf;->c:Lfvv;
+
+    sget-object v1, Ljrl;->d:Ljrl;
+
+    invoke-interface {v0, v1}, Lfvv;->b(Ljrl;)Z
+
+    return-void
+
+    :pswitch_0
+    iget-object v0, p0, Leje;->a:Lejf;
+
+    const/4 v1, 0x1
+
+    iput-boolean v1, v0, Lejf;->d:Z
+
+    return-void
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

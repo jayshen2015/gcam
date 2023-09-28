@@ -1,12 +1,7 @@
-.class abstract Lmqa;
-.super Lmqf;
+.class interface abstract Lmqa;
+.super Ljava/lang/Object;
 
 
-# direct methods
-.method public constructor <init>()V
-    .locals 0
-
-    invoke-direct {p0}, Lmqf;-><init>()V
-
-    return-void
+# virtual methods
+.method public abstract a(Lmqy;)V
 .end method

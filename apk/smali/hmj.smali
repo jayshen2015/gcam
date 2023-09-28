@@ -2,84 +2,58 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Logk;
-
-
-# instance fields
-.field private final a:Loiw;
-
-.field private final b:Loiw;
-
-.field private final c:Loiw;
+.implements Lfpq;
 
 
 # direct methods
-.method public constructor <init>(Loiw;Loiw;Loiw;)V
+.method public constructor <init>()V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lhmj;->a:Loiw;
-
-    iput-object p2, p0, Lhmj;->b:Loiw;
-
-    iput-object p3, p0, Lhmj;->c:Loiw;
-
     return-void
-.end method
-
-.method public static b(Loiw;Loiw;Loiw;)Lhmj;
-    .locals 1
-
-    new-instance v0, Lhmj;
-
-    invoke-direct {v0, p0, p1, p2}, Lhmj;-><init>(Loiw;Loiw;Loiw;)V
-
-    return-object v0
 .end method
 
 
 # virtual methods
-.method public final a()Lhmi;
-    .locals 4
+.method public final a(Lorj;)Z
+    .locals 6
 
-    iget-object v0, p0, Lhmj;->a:Loiw;
+    invoke-static {}, Landroid/os/SystemClock;->elapsedRealtimeNanos()J
 
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
+    move-result-wide v0
+
+    sget-object v2, Ljava/util/concurrent/TimeUnit;->NANOSECONDS:Ljava/util/concurrent/TimeUnit;
+
+    sget-object v3, Ljava/util/concurrent/TimeUnit;->SECONDS:Ljava/util/concurrent/TimeUnit;
+
+    const-wide/16 v4, 0x5
+
+    invoke-virtual {v2, v4, v5, v3}, Ljava/util/concurrent/TimeUnit;->convert(JLjava/util/concurrent/TimeUnit;)J
+
+    move-result-wide v2
+
+    sub-long/2addr v0, v2
+
+    invoke-static {v0, v1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     move-result-object v0
 
-    check-cast v0, Ljvs;
+    invoke-static {v0}, Lorj;->d(Ljava/lang/Comparable;)Lorj;
 
-    iget-object v1, p0, Lhmj;->b:Loiw;
+    move-result-object v0
 
-    invoke-interface {v1}, Loiw;->get()Ljava/lang/Object;
+    invoke-virtual {v0, p1}, Lorj;->o(Lorj;)Z
 
-    move-result-object v1
+    move-result p1
 
-    check-cast v1, Lily;
-
-    iget-object v2, p0, Lhmj;->c:Loiw;
-
-    invoke-interface {v2}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Ldhi;
-
-    new-instance v3, Lhmi;
-
-    invoke-direct {v3, v0, v1, v2}, Lhmi;-><init>(Ljvs;Lily;Ldhi;)V
-
-    return-object v3
+    return p1
 .end method
 
-.method public final bridge synthetic get()Ljava/lang/Object;
-    .locals 1
+.method public final b(Lorj;)Z
+    .locals 0
 
-    invoke-virtual {p0}, Lhmj;->a()Lhmi;
+    const/4 p1, 0x0
 
-    move-result-object v0
-
-    return-object v0
+    return p1
 .end method

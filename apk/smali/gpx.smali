@@ -1,25 +1,22 @@
-.class public interface abstract Lgpx;
+.class public final Lgpx;
 .super Ljava/lang/Object;
 
 
-# virtual methods
-.method public abstract a()Lgpw;
-.end method
+# static fields
+.field public static final a:Lgnk;
 
-.method public abstract b()Ljava/lang/String;
-.end method
 
-.method public abstract c(Ljzs;)V
-.end method
+# direct methods
+.method static constructor <clinit>()V
+    .locals 2
 
-.method public abstract d(Landroid/content/Context;)V
-.end method
+    new-instance v0, Lgnk;
 
-.method public abstract e(Ljzs;)V
-.end method
+    const/16 v1, 0xc
 
-.method public abstract f()V
-.end method
+    invoke-direct {v0, v1}, Lgnk;-><init>(I)V
 
-.method public abstract g()V
+    sput-object v0, Lgpx;->a:Lgnk;
+
+    return-void
 .end method

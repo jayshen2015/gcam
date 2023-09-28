@@ -71,70 +71,10 @@
     throw v0
 .end method
 
-.method public final b(D)V
-    .locals 2
-
-    iget-wide v0, p0, Lcom/google/googlex/gcam/LocationData;->a:J
-
-    invoke-static {v0, v1, p0, p1, p2}, Lcom/google/googlex/gcam/GcamModuleJNI;->LocationData_altitude_set(JLcom/google/googlex/gcam/LocationData;D)V
-
-    return-void
-.end method
-
-.method public final c(D)V
-    .locals 2
-
-    iget-wide v0, p0, Lcom/google/googlex/gcam/LocationData;->a:J
-
-    invoke-static {v0, v1, p0, p1, p2}, Lcom/google/googlex/gcam/GcamModuleJNI;->LocationData_degree_of_precision_set(JLcom/google/googlex/gcam/LocationData;D)V
-
-    return-void
-.end method
-
-.method public final d(D)V
-    .locals 2
-
-    iget-wide v0, p0, Lcom/google/googlex/gcam/LocationData;->a:J
-
-    invoke-static {v0, v1, p0, p1, p2}, Lcom/google/googlex/gcam/GcamModuleJNI;->LocationData_latitude_set(JLcom/google/googlex/gcam/LocationData;D)V
-
-    return-void
-.end method
-
-.method public final e(D)V
-    .locals 2
-
-    iget-wide v0, p0, Lcom/google/googlex/gcam/LocationData;->a:J
-
-    invoke-static {v0, v1, p0, p1, p2}, Lcom/google/googlex/gcam/GcamModuleJNI;->LocationData_longitude_set(JLcom/google/googlex/gcam/LocationData;D)V
-
-    return-void
-.end method
-
-.method public final f(Ljava/lang/String;)V
-    .locals 2
-
-    iget-wide v0, p0, Lcom/google/googlex/gcam/LocationData;->a:J
-
-    invoke-static {v0, v1, p0, p1}, Lcom/google/googlex/gcam/GcamModuleJNI;->LocationData_processing_method_set(JLcom/google/googlex/gcam/LocationData;Ljava/lang/String;)V
-
-    return-void
-.end method
-
 .method protected final finalize()V
     .locals 0
 
     invoke-virtual {p0}, Lcom/google/googlex/gcam/LocationData;->a()V
-
-    return-void
-.end method
-
-.method public final g(J)V
-    .locals 2
-
-    iget-wide v0, p0, Lcom/google/googlex/gcam/LocationData;->a:J
-
-    invoke-static {v0, v1, p0, p1, p2}, Lcom/google/googlex/gcam/GcamModuleJNI;->LocationData_timestamp_unix_set(JLcom/google/googlex/gcam/LocationData;J)V
 
     return-void
 .end method

@@ -1,718 +1,487 @@
 .class public final Lhva;
-.super Lhtz;
+.super Ljava/lang/Object;
 
 # interfaces
-.implements Lhiv;
+.implements Lpys;
 
 
 # instance fields
-.field public final A:Lhiw;
+.field private final a:Lqkg;
 
-.field public final B:Lhiw;
-
-.field public final C:Lhiw;
-
-.field public final q:Lhiu;
-
-.field public final r:Lhiw;
-
-.field public final s:Lhiw;
-
-.field public final t:Lhiw;
-
-.field public final u:Lhiw;
-
-.field public final v:Lhiw;
-
-.field public final w:Lhiw;
-
-.field public final x:Lhiw;
-
-.field public final y:Lhiw;
-
-.field public final z:Lhiw;
+.field private final synthetic b:I
 
 
 # direct methods
-.method public constructor <init>(Ljwb;Loiw;Landroid/view/Window;Lcom/google/android/apps/camera/bottombar/BottomBarController;Liff;Litm;Libj;Lhwu;Lebj;Lgeh;Ljew;Lgvs;Landroid/os/Handler;Lcfp;Loiw;Ldbf;Licj;Ldhi;Lhvz;Lcyd;Lcyp;Lcyx;[B[B)V
-    .locals 21
+.method public constructor <init>(Lqkg;I)V
+    .locals 0
 
-    move-object/from16 v15, p0
+    iput p2, p0, Lhva;->b:I
 
-    move-object/from16 v0, p0
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    move-object/from16 v1, p1
-
-    move-object/from16 v2, p2
-
-    move-object/from16 v3, p3
-
-    move-object/from16 v4, p4
-
-    move-object/from16 v5, p5
-
-    move-object/from16 v6, p6
-
-    move-object/from16 v7, p7
-
-    move-object/from16 v8, p8
-
-    move-object/from16 v9, p9
-
-    move-object/from16 v10, p10
-
-    move-object/from16 v11, p11
-
-    move-object/from16 v12, p12
-
-    move-object/from16 v13, p13
-
-    move-object/from16 v14, p14
-
-    move-object/from16 v15, p15
-
-    move-object/from16 v16, p16
-
-    move-object/from16 v17, p17
-
-    move-object/from16 v18, p18
-
-    const/16 v19, 0x0
-
-    const/16 v20, 0x0
-
-    invoke-direct/range {v0 .. v20}, Lhtz;-><init>(Ljwb;Loiw;Landroid/view/Window;Lcom/google/android/apps/camera/bottombar/BottomBarController;Liff;Litm;Libj;Lhwu;Lebj;Lgeh;Ljew;Lgvs;Landroid/os/Handler;Lcfp;Loiw;Ldbf;Licj;Ldhi;[B[B)V
-
-    new-instance v0, Lhur;
-
-    move-object/from16 v1, p0
-
-    invoke-direct {v0, v1}, Lhur;-><init>(Lhva;)V
-
-    new-instance v2, Lhiw;
-
-    const/4 v3, 0x0
-
-    new-array v4, v3, [Lhis;
-
-    invoke-direct {v2, v0, v4}, Lhiw;-><init>(Lhis;[Lhis;)V
-
-    iput-object v2, v1, Lhva;->r:Lhiw;
-
-    new-instance v0, Lhus;
-
-    invoke-direct {v0, v1}, Lhus;-><init>(Lhva;)V
-
-    new-instance v2, Lhiw;
-
-    new-array v4, v3, [Lhis;
-
-    invoke-direct {v2, v0, v4}, Lhiw;-><init>(Lhis;[Lhis;)V
-
-    iput-object v2, v1, Lhva;->s:Lhiw;
-
-    new-instance v0, Lhut;
-
-    invoke-direct {v0, v1}, Lhut;-><init>(Lhva;)V
-
-    new-instance v2, Lhiw;
-
-    new-array v4, v3, [Lhis;
-
-    invoke-direct {v2, v0, v4}, Lhiw;-><init>(Lhis;[Lhis;)V
-
-    iput-object v2, v1, Lhva;->t:Lhiw;
-
-    new-instance v0, Lhuu;
-
-    invoke-direct {v0, v1}, Lhuu;-><init>(Lhva;)V
-
-    new-instance v2, Lhiw;
-
-    new-array v4, v3, [Lhis;
-
-    invoke-direct {v2, v0, v4}, Lhiw;-><init>(Lhis;[Lhis;)V
-
-    iput-object v2, v1, Lhva;->u:Lhiw;
-
-    new-instance v0, Lhuv;
-
-    invoke-direct {v0, v1}, Lhuv;-><init>(Lhva;)V
-
-    new-instance v2, Lhiw;
-
-    const/4 v4, 0x1
-
-    new-array v5, v4, [Lhis;
-
-    aput-object p19, v5, v3
-
-    invoke-direct {v2, v0, v5}, Lhiw;-><init>(Lhis;[Lhis;)V
-
-    iput-object v2, v1, Lhva;->v:Lhiw;
-
-    new-instance v0, Lhuw;
-
-    invoke-direct {v0, v1}, Lhuw;-><init>(Lhva;)V
-
-    new-instance v2, Lhiw;
-
-    new-array v5, v3, [Lhis;
-
-    invoke-direct {v2, v0, v5}, Lhiw;-><init>(Lhis;[Lhis;)V
-
-    iput-object v2, v1, Lhva;->w:Lhiw;
-
-    new-instance v0, Lhux;
-
-    invoke-direct {v0, v1}, Lhux;-><init>(Lhva;)V
-
-    new-instance v5, Lhiw;
-
-    new-array v6, v3, [Lhis;
-
-    invoke-direct {v5, v0, v6}, Lhiw;-><init>(Lhis;[Lhis;)V
-
-    iput-object v5, v1, Lhva;->x:Lhiw;
-
-    new-instance v0, Lhuy;
-
-    invoke-direct {v0, v1}, Lhuy;-><init>(Lhva;)V
-
-    new-instance v5, Lhiw;
-
-    new-array v6, v3, [Lhis;
-
-    invoke-direct {v5, v0, v6}, Lhiw;-><init>(Lhis;[Lhis;)V
-
-    iput-object v5, v1, Lhva;->y:Lhiw;
-
-    new-instance v0, Lhuz;
-
-    invoke-direct {v0, v1}, Lhuz;-><init>(Lhva;)V
-
-    new-instance v5, Lhiw;
-
-    new-array v6, v4, [Lhis;
-
-    aput-object p20, v6, v3
-
-    invoke-direct {v5, v0, v6}, Lhiw;-><init>(Lhis;[Lhis;)V
-
-    iput-object v5, v1, Lhva;->z:Lhiw;
-
-    new-instance v0, Lhuo;
-
-    invoke-direct {v0, v1}, Lhuo;-><init>(Lhva;)V
-
-    new-instance v5, Lhiw;
-
-    new-array v6, v3, [Lhis;
-
-    invoke-direct {v5, v0, v6}, Lhiw;-><init>(Lhis;[Lhis;)V
-
-    iput-object v5, v1, Lhva;->A:Lhiw;
-
-    new-instance v0, Lhup;
-
-    invoke-direct {v0, v1}, Lhup;-><init>(Lhva;)V
-
-    new-instance v5, Lhiw;
-
-    new-array v6, v4, [Lhis;
-
-    aput-object p21, v6, v3
-
-    invoke-direct {v5, v0, v6}, Lhiw;-><init>(Lhis;[Lhis;)V
-
-    iput-object v5, v1, Lhva;->B:Lhiw;
-
-    new-instance v0, Lhuq;
-
-    invoke-direct {v0, v1}, Lhuq;-><init>(Lhva;)V
-
-    new-instance v5, Lhiw;
-
-    new-array v6, v4, [Lhis;
-
-    aput-object p22, v6, v3
-
-    invoke-direct {v5, v0, v6}, Lhiw;-><init>(Lhis;[Lhis;)V
-
-    iput-object v5, v1, Lhva;->C:Lhiw;
-
-    new-instance v0, Lhiu;
-
-    invoke-direct {v0, v2, v4}, Lhiu;-><init>(Lhiw;Z)V
-
-    iput-object v0, v1, Lhva;->q:Lhiu;
-
-    invoke-virtual {v0}, Lhiu;->f()V
+    iput-object p1, p0, Lhva;->a:Lqkg;
 
     return-void
+.end method
+
+.method public static a(Lqkg;)Lhva;
+    .locals 2
+
+    new-instance v0, Lhva;
+
+    const/16 v1, 0x12
+
+    invoke-direct {v0, p0, v1}, Lhva;-><init>(Lqkg;I)V
+
+    return-object v0
 .end method
 
 
 # virtual methods
-.method public final a()V
-    .locals 1
+.method public final synthetic get()Ljava/lang/Object;
+    .locals 5
 
-    iget-object v0, p0, Lhva;->q:Lhiu;
+    iget v0, p0, Lhva;->b:I
 
-    invoke-virtual {v0}, Lhiu;->a()Lhiw;
+    const/4 v1, 0x2
+
+    const/4 v2, 0x1
+
+    const/4 v3, 0x0
+
+    packed-switch v0, :pswitch_data_0
+
+    iget-object v0, p0, Lhva;->a:Lqkg;
+
+    check-cast v0, Linq;
+
+    invoke-virtual {v0}, Linq;->a()Linp;
 
     move-result-object v0
 
-    if-nez v0, :cond_0
+    return-object v0
 
-    return-void
+    :pswitch_0
+    iget-object v0, p0, Lhva;->a:Lqkg;
+
+    invoke-interface {v0}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Liqn;
+
+    new-instance v1, Llce;
+
+    invoke-virtual {v0}, Liqn;->b()D
+
+    move-result-wide v2
+
+    invoke-static {v2, v3}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
+
+    move-result-object v0
+
+    invoke-direct {v1, v0}, Llce;-><init>(Ljava/lang/Object;)V
+
+    return-object v1
+
+    :pswitch_1
+    iget-object v0, p0, Lhva;->a:Lqkg;
+
+    invoke-interface {v0}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lojc;
+
+    invoke-virtual {v0}, Lojc;->g()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    invoke-virtual {v0}, Lojc;->c()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Leav;
+
+    invoke-static {v0}, Lope;->H(Ljava/lang/Object;)Lope;
+
+    move-result-object v0
+
+    goto :goto_0
 
     :cond_0
-    iget-object v0, p0, Lhva;->q:Lhiu;
+    sget-object v0, Lorx;->a:Lorx;
 
-    invoke-virtual {v0}, Lhiu;->a()Lhiw;
+    :goto_0
+    invoke-static {v0}, Lqmd;->ae(Ljava/lang/Object;)V
 
-    move-result-object v0
+    return-object v0
 
-    iget-object v0, v0, Lhiw;->a:Lhis;
+    :pswitch_2
+    iget-object v0, p0, Lhva;->a:Lqkg;
 
-    check-cast v0, Lhtm;
-
-    invoke-virtual {v0}, Lhtm;->a()V
-
-    return-void
-.end method
-
-.method public final b()V
-    .locals 1
-
-    iget-object v0, p0, Lhva;->q:Lhiu;
-
-    invoke-virtual {v0}, Lhiu;->a()Lhiw;
+    invoke-interface {v0}, Lqkg;->get()Ljava/lang/Object;
 
     move-result-object v0
 
-    if-nez v0, :cond_0
+    check-cast v0, Lcom/google/android/apps/camera/stats/Instrumentation;
 
-    return-void
+    new-instance v1, Line;
 
-    :cond_0
-    iget-object v0, p0, Lhva;->q:Lhiu;
+    invoke-direct {v1, v0}, Line;-><init>(Lcom/google/android/apps/camera/stats/Instrumentation;)V
 
-    invoke-virtual {v0}, Lhiu;->a()Lhiw;
+    return-object v1
 
-    move-result-object v0
+    :pswitch_3
+    iget-object v0, p0, Lhva;->a:Lqkg;
 
-    iget-object v0, v0, Lhiw;->a:Lhis;
-
-    check-cast v0, Lhtm;
-
-    invoke-virtual {v0}, Lhtm;->b()V
-
-    return-void
-.end method
-
-.method public final c()V
-    .locals 1
-
-    iget-object v0, p0, Lhva;->q:Lhiu;
-
-    invoke-virtual {v0}, Lhiu;->a()Lhiw;
+    invoke-interface {v0}, Lqkg;->get()Ljava/lang/Object;
 
     move-result-object v0
 
-    if-nez v0, :cond_0
+    check-cast v0, Lddf;
 
-    return-void
+    sget-object v1, Ldee;->a:Lddi;
 
-    :cond_0
-    iget-object v0, p0, Lhva;->q:Lhiu;
+    invoke-interface {v0}, Lddf;->d()V
 
-    invoke-virtual {v0}, Lhiu;->a()Lhiw;
+    sget-object v0, Loih;->a:Loih;
 
-    move-result-object v0
+    return-object v0
 
-    iget-object v0, v0, Lhiw;->a:Lhis;
+    :pswitch_4
+    iget-object v0, p0, Lhva;->a:Lqkg;
 
-    check-cast v0, Lhtm;
-
-    invoke-virtual {v0}, Lhtm;->c()V
-
-    return-void
-.end method
-
-.method public final d()V
-    .locals 1
-
-    iget-object v0, p0, Lhva;->q:Lhiu;
-
-    invoke-virtual {v0}, Lhiu;->a()Lhiw;
+    invoke-interface {v0}, Lqkg;->get()Ljava/lang/Object;
 
     move-result-object v0
 
-    if-nez v0, :cond_0
+    check-cast v0, Lddf;
 
-    return-void
+    sget-object v1, Ldee;->a:Lddi;
 
-    :cond_0
-    iget-object v0, p0, Lhva;->q:Lhiu;
+    invoke-interface {v0}, Lddf;->d()V
 
-    invoke-virtual {v0}, Lhiu;->a()Lhiw;
+    sget-object v0, Loih;->a:Loih;
 
-    move-result-object v0
+    return-object v0
 
-    iget-object v0, v0, Lhiw;->a:Lhis;
+    :pswitch_5
+    iget-object v0, p0, Lhva;->a:Lqkg;
 
-    check-cast v0, Lhtm;
+    check-cast v0, Lemp;
 
-    invoke-virtual {v0}, Lhtm;->d()V
-
-    return-void
-.end method
-
-.method public final e()V
-    .locals 1
-
-    iget-object v0, p0, Lhva;->q:Lhiu;
-
-    invoke-virtual {v0}, Lhiu;->b()V
-
-    iget-object v0, p0, Lhva;->r:Lhiw;
-
-    invoke-virtual {v0}, Lhiw;->e()V
-
-    iget-object v0, p0, Lhva;->s:Lhiw;
-
-    invoke-virtual {v0}, Lhiw;->e()V
-
-    iget-object v0, p0, Lhva;->t:Lhiw;
-
-    invoke-virtual {v0}, Lhiw;->e()V
-
-    iget-object v0, p0, Lhva;->u:Lhiw;
-
-    invoke-virtual {v0}, Lhiw;->e()V
-
-    iget-object v0, p0, Lhva;->v:Lhiw;
-
-    invoke-virtual {v0}, Lhiw;->e()V
-
-    iget-object v0, p0, Lhva;->w:Lhiw;
-
-    invoke-virtual {v0}, Lhiw;->e()V
-
-    iget-object v0, p0, Lhva;->x:Lhiw;
-
-    invoke-virtual {v0}, Lhiw;->e()V
-
-    iget-object v0, p0, Lhva;->y:Lhiw;
-
-    invoke-virtual {v0}, Lhiw;->e()V
-
-    iget-object v0, p0, Lhva;->z:Lhiw;
-
-    invoke-virtual {v0}, Lhiw;->e()V
-
-    iget-object v0, p0, Lhva;->A:Lhiw;
-
-    invoke-virtual {v0}, Lhiw;->e()V
-
-    iget-object v0, p0, Lhva;->B:Lhiw;
-
-    invoke-virtual {v0}, Lhiw;->e()V
-
-    iget-object v0, p0, Lhva;->C:Lhiw;
-
-    invoke-virtual {v0}, Lhiw;->e()V
-
-    return-void
-.end method
-
-.method public final f()V
-    .locals 1
-
-    iget-object v0, p0, Lhva;->q:Lhiu;
-
-    invoke-virtual {v0}, Lhiu;->c()V
-
-    return-void
-.end method
-
-.method public final g()V
-    .locals 1
-
-    iget-object v0, p0, Lhva;->q:Lhiu;
-
-    invoke-virtual {v0}, Lhiu;->d()V
-
-    return-void
-.end method
-
-.method public final h()V
-    .locals 0
-
-    invoke-static {p0}, Ljcb;->l(Lhiv;)V
-
-    return-void
-.end method
-
-.method public final i()V
-    .locals 1
-
-    iget-object v0, p0, Lhva;->q:Lhiu;
-
-    invoke-virtual {v0}, Lhiu;->a()Lhiw;
+    invoke-virtual {v0}, Lemp;->a()Landroid/content/Context;
 
     move-result-object v0
 
-    if-nez v0, :cond_0
-
-    return-void
-
-    :cond_0
-    iget-object v0, p0, Lhva;->q:Lhiu;
-
-    invoke-virtual {v0}, Lhiu;->a()Lhiw;
+    invoke-static {v0}, Lmcc;->a(Landroid/content/Context;)Lmcb;
 
     move-result-object v0
 
-    iget-object v0, v0, Lhiw;->a:Lhis;
+    sget-object v3, Lnhn;->a:Landroid/net/Uri;
 
-    check-cast v0, Lhtm;
+    invoke-virtual {v0, v3}, Lmcb;->g(Landroid/net/Uri;)V
 
-    invoke-virtual {v0}, Lhtm;->i()V
+    sget-object v3, Lnhn;->a:Landroid/net/Uri;
 
-    return-void
-.end method
+    invoke-virtual {v0, v3}, Lmcb;->h(Landroid/net/Uri;)V
 
-.method public final j()V
-    .locals 1
+    const-string v3, "file_name"
 
-    iget-object v0, p0, Lhva;->q:Lhiu;
+    iput-object v3, v0, Lmcb;->c:Ljava/lang/String;
 
-    invoke-virtual {v0}, Lhiu;->a()Lhiw;
+    invoke-virtual {v0}, Lmcb;->f()V
 
-    move-result-object v0
+    invoke-virtual {v0}, Lmcb;->b()V
 
-    if-nez v0, :cond_0
+    const-string v3, "restore_path"
 
-    return-void
+    iput-object v3, v0, Lmcb;->f:Ljava/lang/String;
 
-    :cond_0
-    iget-object v0, p0, Lhva;->q:Lhiu;
+    invoke-virtual {v0}, Lmcb;->c()V
 
-    invoke-virtual {v0}, Lhiu;->a()Lhiw;
+    invoke-static {v2}, Lmyq;->r(I)I
 
-    move-result-object v0
+    move-result v2
 
-    iget-object v0, v0, Lhiw;->a:Lhis;
+    invoke-virtual {v0, v2}, Lmcb;->d(I)V
 
-    check-cast v0, Lhtm;
+    invoke-static {v1}, Lmyq;->r(I)I
 
-    invoke-virtual {v0}, Lhtm;->j()V
+    move-result v1
 
-    return-void
-.end method
+    invoke-virtual {v0, v1}, Lmcb;->e(I)V
 
-.method public final k()V
-    .locals 1
-
-    iget-object v0, p0, Lhva;->q:Lhiu;
-
-    invoke-virtual {v0}, Lhiu;->a()Lhiw;
+    invoke-virtual {v0}, Lmcb;->a()Lmcc;
 
     move-result-object v0
 
-    if-nez v0, :cond_0
+    return-object v0
 
-    return-void
+    :pswitch_6
+    iget-object v0, p0, Lhva;->a:Lqkg;
 
-    :cond_0
-    iget-object v0, p0, Lhva;->q:Lhiu;
+    check-cast v0, Likn;
 
-    invoke-virtual {v0}, Lhiu;->a()Lhiw;
-
-    move-result-object v0
-
-    iget-object v0, v0, Lhiw;->a:Lhis;
-
-    check-cast v0, Lhtm;
-
-    invoke-virtual {v0}, Lhtm;->k()V
-
-    return-void
-.end method
-
-.method public final l()V
-    .locals 1
-
-    iget-object v0, p0, Lhva;->q:Lhiu;
-
-    invoke-virtual {v0}, Lhiu;->a()Lhiw;
+    invoke-virtual {v0}, Likn;->a()Likm;
 
     move-result-object v0
 
-    if-nez v0, :cond_0
+    return-object v0
 
-    return-void
+    :pswitch_7
+    iget-object v0, p0, Lhva;->a:Lqkg;
 
-    :cond_0
-    iget-object v0, p0, Lhva;->q:Lhiu;
-
-    invoke-virtual {v0}, Lhiu;->a()Lhiw;
+    invoke-interface {v0}, Lqkg;->get()Ljava/lang/Object;
 
     move-result-object v0
 
-    iget-object v0, v0, Lhiw;->a:Lhis;
+    check-cast v0, Lfjs;
 
-    check-cast v0, Lhtm;
+    new-instance v1, Liio;
 
-    invoke-virtual {v0}, Lhtm;->l()V
+    invoke-direct {v1, v0}, Liio;-><init>(Lfjs;)V
 
-    return-void
-.end method
+    return-object v1
 
-.method public final m()V
-    .locals 1
+    :pswitch_8
+    iget-object v0, p0, Lhva;->a:Lqkg;
 
-    iget-object v0, p0, Lhva;->q:Lhiu;
-
-    invoke-virtual {v0}, Lhiu;->a()Lhiw;
+    invoke-interface {v0}, Lqkg;->get()Ljava/lang/Object;
 
     move-result-object v0
 
-    if-nez v0, :cond_0
+    check-cast v0, Lcom/google/android/apps/camera/stats/Instrumentation;
 
-    return-void
+    invoke-static {v0}, Lcom/google/android/apps/camera/stats/Instrumentation;->d(Lcom/google/android/apps/camera/stats/Instrumentation;)V
 
-    :cond_0
-    iget-object v0, p0, Lhva;->q:Lhiu;
+    invoke-static {v0}, Lqmd;->ae(Ljava/lang/Object;)V
 
-    invoke-virtual {v0}, Lhiu;->a()Lhiw;
+    return-object v0
 
-    move-result-object v0
+    :pswitch_9
+    iget-object v0, p0, Lhva;->a:Lqkg;
 
-    iget-object v0, v0, Lhiw;->a:Lhis;
-
-    check-cast v0, Lhtm;
-
-    invoke-virtual {v0}, Lhtm;->m()V
-
-    return-void
-.end method
-
-.method public final n()V
-    .locals 1
-
-    iget-object v0, p0, Lhva;->q:Lhiu;
-
-    invoke-virtual {v0}, Lhiu;->a()Lhiw;
+    invoke-interface {v0}, Lqkg;->get()Ljava/lang/Object;
 
     move-result-object v0
 
-    if-nez v0, :cond_0
+    check-cast v0, Lcom/google/android/apps/camera/stats/timing/CameraActivityTiming;
 
-    return-void
+    iget-object v0, v0, Lcom/google/android/apps/camera/stats/timing/CameraActivityTiming;->d:Liiz;
 
-    :cond_0
-    iget-object v0, p0, Lhva;->q:Lhiu;
+    return-object v0
 
-    invoke-virtual {v0}, Lhiu;->a()Lhiw;
+    :pswitch_a
+    iget-object v0, p0, Lhva;->a:Lqkg;
 
-    move-result-object v0
-
-    iget-object v0, v0, Lhiw;->a:Lhis;
-
-    check-cast v0, Lhtm;
-
-    invoke-virtual {v0}, Lhtm;->n()V
-
-    return-void
-.end method
-
-.method public final o()V
-    .locals 1
-
-    iget-object v0, p0, Lhva;->q:Lhiu;
-
-    invoke-virtual {v0}, Lhiu;->a()Lhiw;
+    invoke-interface {v0}, Lqkg;->get()Ljava/lang/Object;
 
     move-result-object v0
 
-    if-nez v0, :cond_0
+    check-cast v0, Lhuf;
 
-    return-void
+    new-array v1, v1, [Llco;
 
-    :cond_0
-    iget-object v0, p0, Lhva;->q:Lhiu;
+    sget-object v4, Lhtu;->g:Lhuk;
 
-    invoke-virtual {v0}, Lhiu;->a()Lhiw;
+    invoke-interface {v0, v4}, Lhuf;->a(Lhts;)Llco;
 
-    move-result-object v0
+    move-result-object v4
 
-    iget-object v0, v0, Lhiw;->a:Lhis;
+    aput-object v4, v1, v3
 
-    check-cast v0, Lhtm;
+    sget-object v3, Lhtu;->h:Lhuk;
 
-    invoke-virtual {v0}, Lhtm;->o()V
-
-    return-void
-.end method
-
-.method public final p()V
-    .locals 1
-
-    iget-object v0, p0, Lhva;->q:Lhiu;
-
-    invoke-virtual {v0}, Lhiu;->a()Lhiw;
+    invoke-interface {v0, v3}, Lhuf;->a(Lhts;)Llco;
 
     move-result-object v0
 
-    if-nez v0, :cond_0
+    aput-object v0, v1, v2
 
-    return-void
-
-    :cond_0
-    iget-object v0, p0, Lhva;->q:Lhiu;
-
-    invoke-virtual {v0}, Lhiu;->a()Lhiw;
+    invoke-static {v1}, Llcv;->i([Llco;)Llco;
 
     move-result-object v0
 
-    iget-object v0, v0, Lhiw;->a:Lhis;
+    invoke-static {v0}, Lqmd;->ae(Ljava/lang/Object;)V
 
-    check-cast v0, Lhtm;
+    return-object v0
 
-    invoke-virtual {v0}, Lhtm;->p()V
+    :pswitch_b
+    iget-object v0, p0, Lhva;->a:Lqkg;
 
-    return-void
-.end method
-
-.method public final q()V
-    .locals 1
-
-    iget-object v0, p0, Lhva;->q:Lhiu;
-
-    invoke-virtual {v0}, Lhiu;->a()Lhiw;
+    invoke-interface {v0}, Lqkg;->get()Ljava/lang/Object;
 
     move-result-object v0
 
-    if-nez v0, :cond_0
+    check-cast v0, Lddf;
 
-    return-void
+    sget-object v1, Ldds;->a:Lddg;
 
-    :cond_0
-    iget-object v0, p0, Lhva;->q:Lhiu;
+    invoke-interface {v0}, Lddf;->f()V
 
-    invoke-virtual {v0}, Lhiu;->a()Lhiw;
+    invoke-static {v3}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     move-result-object v0
 
-    iget-object v0, v0, Lhiw;->a:Lhis;
+    return-object v0
 
-    check-cast v0, Lhtm;
+    :pswitch_c
+    iget-object v0, p0, Lhva;->a:Lqkg;
 
-    invoke-virtual {v0}, Lhtm;->q()V
+    invoke-interface {v0}, Lqkg;->get()Ljava/lang/Object;
 
-    return-void
+    move-result-object v0
+
+    check-cast v0, Lpht;
+
+    new-instance v1, Lhyc;
+
+    invoke-direct {v1, v0}, Lhyc;-><init>(Lpht;)V
+
+    return-object v1
+
+    :pswitch_d
+    iget-object v0, p0, Lhva;->a:Lqkg;
+
+    invoke-interface {v0}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lpht;
+
+    new-instance v1, Lhzn;
+
+    invoke-direct {v1, v0}, Lhzn;-><init>(Lpht;)V
+
+    return-object v1
+
+    :pswitch_e
+    iget-object v0, p0, Lhva;->a:Lqkg;
+
+    check-cast v0, Lemp;
+
+    invoke-virtual {v0}, Lemp;->a()Landroid/content/Context;
+
+    move-result-object v0
+
+    new-instance v1, Lhwx;
+
+    invoke-direct {v1, v0}, Lhwx;-><init>(Landroid/content/Context;)V
+
+    return-object v1
+
+    :pswitch_f
+    iget-object v0, p0, Lhva;->a:Lqkg;
+
+    check-cast v0, Levv;
+
+    invoke-virtual {v0}, Levv;->a()Lojc;
+
+    move-result-object v0
+
+    check-cast v0, Lojj;
+
+    iget-object v0, v0, Lojj;->a:Ljava/lang/Object;
+
+    check-cast v0, Lhwu;
+
+    return-object v0
+
+    :pswitch_10
+    iget-object v0, p0, Lhva;->a:Lqkg;
+
+    check-cast v0, Lhuh;
+
+    invoke-virtual {v0}, Lhuh;->a()Lhtp;
+
+    move-result-object v0
+
+    const-string v1, "pref_has_checked_lasagna_mode"
+
+    invoke-virtual {v0, v1, v3}, Lhtp;->a(Ljava/lang/String;Z)Llda;
+
+    move-result-object v0
+
+    return-object v0
+
+    :pswitch_11
+    iget-object v0, p0, Lhva;->a:Lqkg;
+
+    check-cast v0, Lhuh;
+
+    invoke-virtual {v0}, Lhuh;->a()Lhtp;
+
+    move-result-object v0
+
+    const-string v1, "pref_has_checked_cheetah_mode"
+
+    invoke-virtual {v0, v1, v3}, Lhtp;->a(Ljava/lang/String;Z)Llda;
+
+    move-result-object v0
+
+    return-object v0
+
+    :pswitch_12
+    iget-object v0, p0, Lhva;->a:Lqkg;
+
+    check-cast v0, Lhuh;
+
+    invoke-virtual {v0}, Lhuh;->a()Lhtp;
+
+    move-result-object v0
+
+    const/16 v1, 0x14
+
+    const-string v2, "pref_zoom_out_command_string"
+
+    invoke-virtual {v0, v2, v1}, Lhtp;->b(Ljava/lang/String;I)Llda;
+
+    move-result-object v0
+
+    return-object v0
+
+    :pswitch_13
+    iget-object v0, p0, Lhva;->a:Lqkg;
+
+    check-cast v0, Lhuh;
+
+    invoke-virtual {v0}, Lhuh;->a()Lhtp;
+
+    move-result-object v0
+
+    const-string v1, "pref_audio_zoom_key"
+
+    invoke-virtual {v0, v1, v2}, Lhtp;->a(Ljava/lang/String;Z)Llda;
+
+    move-result-object v0
+
+    return-object v0
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_13
+        :pswitch_12
+        :pswitch_11
+        :pswitch_10
+        :pswitch_f
+        :pswitch_e
+        :pswitch_d
+        :pswitch_c
+        :pswitch_b
+        :pswitch_a
+        :pswitch_9
+        :pswitch_8
+        :pswitch_7
+        :pswitch_6
+        :pswitch_5
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method

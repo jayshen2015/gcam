@@ -2,131 +2,270 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lijk;
+.implements Lpys;
 
 
 # instance fields
-.field public final a:Landroid/content/Context;
-
-.field public final b:Lhzo;
-
-.field public final c:Ldhi;
-
-.field public final d:Loiw;
-
-.field public final e:Loiw;
-
-.field public final f:Ljuh;
-
-.field public final g:Lkbc;
-
-.field public final h:Lezx;
-
-.field public final i:Lhsl;
-
-.field public j:Lcom/google/android/apps/camera/ui/mars/MarsSwitch;
-
-.field private final k:Lika;
-
-.field private final l:Lgzn;
-
-.field private final m:Ljava/util/concurrent/Executor;
+.field private final synthetic a:I
 
 
 # direct methods
-.method public constructor <init>(Landroid/content/Context;Lika;Lhzo;Lgzn;Ldhi;Loiw;Loiw;Ljuh;Ljava/util/concurrent/Executor;Lkbc;Lezx;Lhsl;)V
+.method public constructor <init>(I)V
     .locals 0
 
+    iput p1, p0, Liiy;->a:I
+
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Liiy;->a:Landroid/content/Context;
-
-    iput-object p2, p0, Liiy;->k:Lika;
-
-    iput-object p3, p0, Liiy;->b:Lhzo;
-
-    iput-object p4, p0, Liiy;->l:Lgzn;
-
-    iput-object p5, p0, Liiy;->c:Ldhi;
-
-    iput-object p6, p0, Liiy;->e:Loiw;
-
-    iput-object p7, p0, Liiy;->d:Loiw;
-
-    iput-object p8, p0, Liiy;->f:Ljuh;
-
-    iput-object p9, p0, Liiy;->m:Ljava/util/concurrent/Executor;
-
-    iput-object p10, p0, Liiy;->g:Lkbc;
-
-    iput-object p11, p0, Liiy;->h:Lezx;
-
-    iput-object p12, p0, Liiy;->i:Lhsl;
 
     return-void
 .end method
 
+.method public static a()Lika;
+    .locals 1
+
+    new-instance v0, Lika;
+
+    invoke-direct {v0}, Lika;-><init>()V
+
+    return-object v0
+.end method
+
+.method public static final b()Lldt;
+    .locals 1
+
+    new-instance v0, Lldt;
+
+    invoke-direct {v0}, Lldt;-><init>()V
+
+    return-object v0
+.end method
+
+.method public static final c()Lmip;
+    .locals 1
+
+    new-instance v0, Lmip;
+
+    invoke-direct {v0}, Lmip;-><init>()V
+
+    return-object v0
+.end method
+
 
 # virtual methods
-.method public final a()V
+.method public final synthetic get()Ljava/lang/Object;
     .locals 3
 
-    iget-object v0, p0, Liiy;->l:Lgzn;
+    iget v0, p0, Liiy;->a:I
 
-    sget-object v1, Lgzd;->at:Lgzr;
+    const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    packed-switch v0, :pswitch_data_0
 
-    invoke-static {v2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+    new-instance v0, Ljug;
 
-    move-result-object v2
+    invoke-direct {v0}, Ljug;-><init>()V
 
-    invoke-interface {v0, v1, v2}, Lgzn;->e(Lgzb;Ljava/lang/Object;)V
+    return-object v0
 
-    iget-object v0, p0, Liiy;->c:Ldhi;
-
-    sget-object v1, Ldho;->bL:Ldhj;
-
-    invoke-interface {v0, v1}, Ldhi;->l(Ldhj;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_1
-
-    iget-object v0, p0, Liiy;->k:Lika;
-
-    sget-object v1, Lika;->h:Lika;
-
-    if-eq v0, v1, :cond_1
-
-    sget-object v1, Lika;->i:Lika;
-
-    if-ne v0, v1, :cond_0
-
-    goto :goto_0
-
-    :cond_0
-    iget-object v0, p0, Liiy;->m:Ljava/util/concurrent/Executor;
-
-    iget-object v1, p0, Liiy;->a:Landroid/content/Context;
-
-    invoke-static {v0, v1}, Lhzo;->a(Ljava/util/concurrent/Executor;Landroid/content/Context;)Lnou;
+    :pswitch_0
+    invoke-static {}, Ljava/text/NumberFormat;->getInstance()Ljava/text/NumberFormat;
 
     move-result-object v0
 
-    new-instance v1, Lcmc;
+    const/4 v1, 0x1
 
-    const/16 v2, 0x14
+    invoke-virtual {v0, v1}, Ljava/text/NumberFormat;->setMinimumFractionDigits(I)V
 
-    invoke-direct {v1, p0, v2}, Lcmc;-><init>(Liiy;I)V
+    invoke-virtual {v0, v1}, Ljava/text/NumberFormat;->setMaximumFractionDigits(I)V
 
-    iget-object v2, p0, Liiy;->m:Ljava/util/concurrent/Executor;
+    invoke-static {v0}, Lqmd;->ae(Ljava/lang/Object;)V
 
-    invoke-static {v0, v1, v2}, Lnsy;->L(Lnou;Lnoj;Ljava/util/concurrent/Executor;)V
+    return-object v0
 
-    return-void
+    :pswitch_1
+    invoke-static {}, Lpih;->f()Lpih;
 
-    :cond_1
-    :goto_0
-    return-void
+    move-result-object v0
+
+    return-object v0
+
+    :pswitch_2
+    new-instance v0, Ljava/util/concurrent/atomic/AtomicReference;
+
+    invoke-direct {v0}, Ljava/util/concurrent/atomic/AtomicReference;-><init>()V
+
+    return-object v0
+
+    :pswitch_3
+    new-instance v0, Llce;
+
+    const/4 v1, 0x0
+
+    invoke-static {v1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    move-result-object v1
+
+    invoke-direct {v0, v1}, Llce;-><init>(Ljava/lang/Object;)V
+
+    return-object v0
+
+    :pswitch_4
+    new-instance v0, Livf;
+
+    invoke-direct {v0}, Livf;-><init>()V
+
+    return-object v0
+
+    :pswitch_5
+    const-string v0, "trk-roi"
+
+    invoke-static {v0}, Lmip;->bM(Ljava/lang/String;)Ljava/util/concurrent/ExecutorService;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lqmd;->ae(Ljava/lang/Object;)V
+
+    return-object v0
+
+    :pswitch_6
+    const-string v0, "trk-img"
+
+    invoke-static {v0}, Lmip;->bM(Ljava/lang/String;)Ljava/util/concurrent/ExecutorService;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lqmd;->ae(Ljava/lang/Object;)V
+
+    return-object v0
+
+    :pswitch_7
+    const-string v0, "trk-analysis"
+
+    invoke-static {v0}, Lmip;->bM(Ljava/lang/String;)Ljava/util/concurrent/ExecutorService;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lqmd;->ae(Ljava/lang/Object;)V
+
+    return-object v0
+
+    :pswitch_8
+    const-string v0, "trk-deinit"
+
+    invoke-static {v0}, Lmip;->bM(Ljava/lang/String;)Ljava/util/concurrent/ExecutorService;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lqmd;->ae(Ljava/lang/Object;)V
+
+    return-object v0
+
+    :pswitch_9
+    new-instance v0, Llap;
+
+    invoke-direct {v0}, Llap;-><init>()V
+
+    return-object v0
+
+    :pswitch_a
+    const-string v0, "CheetahExecutor"
+
+    invoke-static {v0}, Lmip;->bM(Ljava/lang/String;)Ljava/util/concurrent/ExecutorService;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lqmd;->ae(Ljava/lang/Object;)V
+
+    return-object v0
+
+    :pswitch_b
+    throw v1
+
+    :pswitch_c
+    throw v1
+
+    :pswitch_d
+    sget-object v0, Landroid/os/Environment;->DIRECTORY_PICTURES:Ljava/lang/String;
+
+    invoke-static {v0}, Landroid/os/Environment;->getExternalStoragePublicDirectory(Ljava/lang/String;)Ljava/io/File;
+
+    move-result-object v0
+
+    new-instance v1, Ljava/io/File;
+
+    const-string v2, "Raw"
+
+    invoke-direct {v1, v0, v2}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
+
+    new-instance v0, Liki;
+
+    invoke-direct {v0, v1}, Liki;-><init>(Ljava/io/File;)V
+
+    return-object v0
+
+    :pswitch_e
+    invoke-static {}, Likt;->a()Liki;
+
+    move-result-object v0
+
+    return-object v0
+
+    :pswitch_f
+    new-instance v0, Likp;
+
+    invoke-direct {v0}, Likp;-><init>()V
+
+    return-object v0
+
+    :pswitch_10
+    invoke-static {}, Liiy;->a()Lika;
+
+    move-result-object v0
+
+    return-object v0
+
+    :pswitch_11
+    new-instance v0, Lmcu;
+
+    invoke-direct {v0}, Lmcu;-><init>()V
+
+    return-object v0
+
+    :pswitch_12
+    new-instance v0, Lcom/google/android/apps/camera/stats/Instrumentation;
+
+    invoke-direct {v0}, Lcom/google/android/apps/camera/stats/Instrumentation;-><init>()V
+
+    return-object v0
+
+    :pswitch_13
+    new-instance v0, Lqiz;
+
+    invoke-direct {v0}, Lqiz;-><init>()V
+
+    return-object v0
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_13
+        :pswitch_12
+        :pswitch_11
+        :pswitch_10
+        :pswitch_f
+        :pswitch_e
+        :pswitch_d
+        :pswitch_c
+        :pswitch_b
+        :pswitch_a
+        :pswitch_9
+        :pswitch_8
+        :pswitch_7
+        :pswitch_6
+        :pswitch_5
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method

@@ -2,114 +2,101 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lkci;
+.implements Landroid/os/Parcelable;
+
+
+# static fields
+.field public static final CREATOR:Landroid/os/Parcelable$Creator;
 
 
 # instance fields
-.field private final a:Lklj;
-
-.field private final b:Ljava/util/List;
-
-.field private c:I
+.field public final a:Landroid/os/Parcelable;
 
 
 # direct methods
-.method public constructor <init>(Lklj;)V
+.method static constructor <clinit>()V
     .locals 1
+
+    new-instance v0, Lkcg;
+
+    invoke-direct {v0}, Lkcg;-><init>()V
+
+    sput-object v0, Lkch;->CREATOR:Landroid/os/Parcelable$Creator;
+
+    return-void
+.end method
+
+.method public constructor <init>(Landroid/os/Parcelable;)V
+    .locals 2
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lkch;->a:Lklj;
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    new-instance v0, Ljava/util/ArrayList;
+    move-result-object v0
 
-    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+    invoke-virtual {v0}, Ljava/lang/Class;->getName()Ljava/lang/String;
 
-    iput-object v0, p0, Lkch;->b:Ljava/util/List;
+    move-result-object v0
 
-    :try_start_0
-    invoke-interface {p1}, Lklj;->g()Ljava/util/List;
+    const-string v1, "android.os."
 
-    move-result-object p1
+    invoke-virtual {v0, v1}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
-    invoke-interface {v0, p1}, Ljava/util/List;->addAll(Ljava/util/Collection;)Z
-    :try_end_0
-    .catch Lklq; {:try_start_0 .. :try_end_0} :catch_2
-    .catch Lklr; {:try_start_0 .. :try_end_0} :catch_1
-    .catch Lkln; {:try_start_0 .. :try_end_0} :catch_0
+    move-result v1
+
+    if-nez v1, :cond_1
+
+    const-string v1, "android.content.Intent"
+
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-nez v1, :cond_1
+
+    const-string v1, "android.app.PendingIntent"
+
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
 
     goto :goto_0
 
-    :catch_0
-    move-exception p1
+    :cond_0
+    new-instance p1, Ljava/lang/IllegalArgumentException;
 
-    goto :goto_0
+    const-string v0, "Only Android system classes can be passed in SystemParcelableWrapper."
 
-    :catch_1
-    move-exception p1
+    invoke-direct {p1, v0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
-    goto :goto_0
+    throw p1
 
-    :catch_2
-    move-exception p1
-
+    :cond_1
     :goto_0
-    const/4 p1, 0x0
-
-    iput p1, p0, Lkch;->c:I
+    iput-object p1, p0, Lkch;->a:Landroid/os/Parcelable;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Lkli;
-    .locals 4
-
-    iget v0, p0, Lkch;->c:I
-
-    iget-object v1, p0, Lkch;->b:Ljava/util/List;
-
-    invoke-interface {v1}, Ljava/util/List;->size()I
-
-    move-result v1
-
-    if-ne v0, v1, :cond_0
-
-    const/4 v0, 0x0
-
-    return-object v0
-
-    :cond_0
-    iget-object v0, p0, Lkch;->a:Lklj;
-
-    iget-object v1, p0, Lkch;->b:Ljava/util/List;
-
-    iget v2, p0, Lkch;->c:I
-
-    add-int/lit8 v3, v2, 0x1
-
-    iput v3, p0, Lkch;->c:I
-
-    invoke-interface {v1, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Lkll;
-
-    invoke-interface {v0, v1}, Lklj;->a(Lkll;)Lkli;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public final b()V
+.method public final describeContents()I
     .locals 1
 
     const/4 v0, 0x0
 
-    iput v0, p0, Lkch;->c:I
+    return v0
+.end method
+
+.method public final writeToParcel(Landroid/os/Parcel;I)V
+    .locals 1
+
+    iget-object v0, p0, Lkch;->a:Landroid/os/Parcelable;
+
+    invoke-virtual {p1, v0, p2}, Landroid/os/Parcel;->writeParcelable(Landroid/os/Parcelable;I)V
 
     return-void
 .end method

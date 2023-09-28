@@ -2,86 +2,110 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lkxy;
+.implements Lkwh;
 
 
 # instance fields
-.field public final a:I
-
-.field public b:Lmqp;
-
-.field public final synthetic c:Lkxh;
+.field private final a:Lmip;
 
 
 # direct methods
-.method public constructor <init>(Lkxh;I)V
+.method public constructor <init>(Lmip;[B[B[B[B[B)V
     .locals 0
-
-    iput-object p1, p0, Lkxg;->c:Lkxh;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    sget-object p1, Lmpx;->a:Lmpx;
-
-    iput-object p1, p0, Lkxg;->b:Lmqp;
-
-    iput p2, p0, Lkxg;->a:I
+    iput-object p1, p0, Lkxg;->a:Lmip;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Lnou;)V
+.method public final b(Lkxi;)V
+    .locals 0
+
+    invoke-static {p1}, Lkij;->l(Lkxi;)V
+
+    return-void
+.end method
+
+.method public final c(Lkxi;)V
+    .locals 0
+
+    invoke-static {p1}, Lkij;->l(Lkxi;)V
+
+    return-void
+.end method
+
+.method public final d(Lkxi;)V
+    .locals 0
+
+    invoke-static {p1}, Lkij;->l(Lkxi;)V
+
+    return-void
+.end method
+
+.method public final e(Lkxi;)V
+    .locals 0
+
+    invoke-static {p1}, Lkij;->l(Lkxi;)V
+
+    return-void
+.end method
+
+.method public final equals(Ljava/lang/Object;)Z
     .locals 2
 
-    new-instance v0, Lkcw;
+    if-ne p0, p1, :cond_0
 
-    const/16 v1, 0x11
+    const/4 p1, 0x1
 
-    invoke-direct {v0, p0, p1, v1}, Lkcw;-><init>(Lkxg;Lnou;I)V
+    return p1
 
-    iget-object v1, p0, Lkxg;->c:Lkxh;
+    :cond_0
+    if-eqz p1, :cond_2
 
-    iget-object v1, v1, Lkxh;->e:Ljava/util/concurrent/Executor;
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    invoke-interface {p1, v0, v1}, Lnou;->d(Ljava/lang/Runnable;Ljava/util/concurrent/Executor;)V
+    move-result-object v0
 
-    return-void
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    move-result-object v1
+
+    if-eq v0, v1, :cond_1
+
+    goto :goto_0
+
+    :cond_1
+    check-cast p1, Lkxg;
+
+    iget-object v0, p0, Lkxg;->a:Lmip;
+
+    iget-object p1, p1, Lkxg;->a:Lmip;
+
+    invoke-virtual {v0, p1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+
+    move-result p1
+
+    return p1
+
+    :cond_2
+    :goto_0
+    const/4 p1, 0x0
+
+    return p1
 .end method
 
-.method public final b(Ljava/nio/ByteBuffer;Landroid/media/MediaCodec$BufferInfo;)V
-    .locals 3
+.method public final hashCode()I
+    .locals 1
 
-    iget-object v0, p0, Lkxg;->c:Lkxh;
+    iget-object v0, p0, Lkxg;->a:Lmip;
 
-    iget-object v0, v0, Lkxh;->e:Ljava/util/concurrent/Executor;
+    invoke-virtual {v0}, Ljava/lang/Object;->hashCode()I
 
-    new-instance v1, Lkgc;
+    move-result v0
 
-    const/4 v2, 0x6
-
-    invoke-direct {v1, p0, p1, p2, v2}, Lkgc;-><init>(Lkxg;Ljava/nio/ByteBuffer;Landroid/media/MediaCodec$BufferInfo;I)V
-
-    invoke-interface {v0, v1}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
-
-    return-void
-.end method
-
-.method public final close()V
-    .locals 3
-
-    iget-object v0, p0, Lkxg;->c:Lkxh;
-
-    iget-object v0, v0, Lkxh;->e:Ljava/util/concurrent/Executor;
-
-    new-instance v1, Lkxc;
-
-    const/4 v2, 0x4
-
-    invoke-direct {v1, p0, v2}, Lkxc;-><init>(Lkxg;I)V
-
-    invoke-interface {v0, v1}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
-
-    return-void
+    return v0
 .end method

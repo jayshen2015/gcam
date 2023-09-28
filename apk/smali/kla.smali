@@ -1,53 +1,50 @@
 .class public final Lkla;
 .super Ljava/lang/Object;
 
-# interfaces
-.implements Logk;
-
 
 # instance fields
-.field private final a:Loiw;
+.field public final a:Lkky;
+
+.field public final b:Lklm;
+
+.field public final c:Ljava/lang/Runnable;
 
 
 # direct methods
-.method public constructor <init>(Loiw;)V
+.method public constructor <init>(Lkky;Lklm;Ljava/lang/Runnable;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lkla;->a:Loiw;
+    iput-object p1, p0, Lkla;->a:Lkky;
+
+    iput-object p2, p0, Lkla;->b:Lklm;
+
+    iput-object p3, p0, Lkla;->c:Ljava/lang/Runnable;
 
     return-void
 .end method
 
+.method public constructor <init>(Lkky;Lklm;Ljava/lang/Runnable;[B)V
+    .locals 0
 
-# virtual methods
-.method public final a()Lkkz;
-    .locals 3
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iget-object v0, p0, Lkla;->a:Loiw;
+    iput-object p1, p0, Lkla;->a:Lkky;
 
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
+    iput-object p2, p0, Lkla;->b:Lklm;
 
-    move-result-object v0
+    iput-object p3, p0, Lkla;->c:Ljava/lang/Runnable;
 
-    check-cast v0, Lkoe;
-
-    new-instance v1, Lkkz;
-
-    const/4 v2, 0x0
-
-    invoke-direct {v1, v0, v2}, Lkkz;-><init>(Lkoe;I)V
-
-    return-object v1
+    return-void
 .end method
 
-.method public final bridge synthetic get()Ljava/lang/Object;
+.method public static a()Lkkz;
     .locals 1
 
-    invoke-virtual {p0}, Lkla;->a()Lkkz;
+    new-instance v0, Lkkz;
 
-    move-result-object v0
+    invoke-direct {v0}, Lkkz;-><init>()V
 
     return-object v0
 .end method

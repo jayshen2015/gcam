@@ -1,26 +1,60 @@
-.class public final Ljdn;
-.super Lcom/google/android/gms/common/api/internal/BasePendingResult;
+.class final Ljdn;
+.super Ljed;
+
+
+# instance fields
+.field final synthetic a:Ljdq;
 
 
 # direct methods
-.method public constructor <init>(Ljdh;)V
+.method public constructor <init>(Ljdq;)V
     .locals 0
 
-    invoke-direct {p0, p1}, Lcom/google/android/gms/common/api/internal/BasePendingResult;-><init>(Ljdh;)V
+    iput-object p1, p0, Ljdn;->a:Ljdq;
+
+    invoke-direct {p0, p1}, Ljed;-><init>(Ljeg;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method protected final a(Lcom/google/android/gms/common/api/Status;)Ljdq;
-    .locals 1
+.method public final a()V
+    .locals 2
 
-    new-instance p1, Ljava/lang/UnsupportedOperationException;
+    iget-object v0, p0, Ljdn;->a:Ljdq;
 
-    const-string v0, "Creating failed results is not supported"
+    iget-object v0, v0, Ljdq;->a:Lihu;
 
-    invoke-direct {p1, v0}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v0}, Lihu;->e()V
 
-    throw p1
+    iget-object v0, p0, Ljdn;->a:Ljdq;
+
+    iget-object v1, v0, Ljdq;->a:Lihu;
+
+    iget-object v0, v0, Ljdq;->b:Lihw;
+
+    invoke-virtual {v1, v0}, Lihu;->g(Lihw;)V
+
+    return-void
+.end method
+
+.method public final d()V
+    .locals 2
+
+    iget-object v0, p0, Ljdn;->a:Ljdq;
+
+    iget-object v0, v0, Ljdq;->a:Lihu;
+
+    invoke-virtual {v0}, Lihu;->e()V
+
+    iget-object v0, p0, Ljdn;->a:Ljdq;
+
+    iget-object v1, v0, Ljdq;->a:Lihu;
+
+    iget-object v0, v0, Ljdq;->e:Lihw;
+
+    invoke-virtual {v1, v0}, Lihu;->g(Lihw;)V
+
+    return-void
 .end method

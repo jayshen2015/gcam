@@ -1,96 +1,189 @@
-.class public final enum Liye;
-.super Ljava/lang/Enum;
+.class public final Liye;
+.super Liwm;
 
-
-# static fields
-.field public static final enum a:Liye;
-
-.field public static final enum b:Liye;
-
-.field public static final enum c:Liye;
-
-.field private static final synthetic e:[Liye;
+# interfaces
+.implements Lihv;
 
 
 # instance fields
-.field public final d:Landroid/graphics/PorterDuff$Mode;
+.field public final l:Lihu;
+
+.field public final m:Lihw;
+
+.field public final n:Lihw;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 8
+.method public constructor <init>(Lbzg;Lcom/google/android/apps/camera/bottombar/BottomBarController;Ljlb;Ljak;Ljfn;Lgtg;Limy;Lkas;Liud;Lddf;[B)V
+    .locals 13
 
-    new-instance v0, Liye;
+    move-object v12, p0
 
-    sget-object v1, Landroid/graphics/PorterDuff$Mode;->SRC_ATOP:Landroid/graphics/PorterDuff$Mode;
+    const/4 v11, 0x0
 
-    const-string v2, "NONE"
+    move-object v0, p0
 
-    const/4 v3, 0x0
+    move-object v1, p1
 
-    invoke-direct {v0, v2, v3, v1}, Liye;-><init>(Ljava/lang/String;ILandroid/graphics/PorterDuff$Mode;)V
+    move-object v2, p2
 
-    sput-object v0, Liye;->a:Liye;
+    move-object/from16 v3, p3
 
-    new-instance v1, Liye;
+    move-object/from16 v4, p4
 
-    sget-object v2, Landroid/graphics/PorterDuff$Mode;->SRC_ATOP:Landroid/graphics/PorterDuff$Mode;
+    move-object/from16 v5, p5
 
-    const-string v4, "COLOR"
+    move-object/from16 v6, p6
 
-    const/4 v5, 0x1
+    move-object/from16 v7, p7
 
-    invoke-direct {v1, v4, v5, v2}, Liye;-><init>(Ljava/lang/String;ILandroid/graphics/PorterDuff$Mode;)V
+    move-object/from16 v8, p8
 
-    sput-object v1, Liye;->b:Liye;
+    move-object/from16 v9, p9
 
-    new-instance v2, Liye;
+    move-object/from16 v10, p10
 
-    sget-object v4, Landroid/graphics/PorterDuff$Mode;->DST_OUT:Landroid/graphics/PorterDuff$Mode;
+    invoke-direct/range {v0 .. v11}, Liwm;-><init>(Lbzg;Lcom/google/android/apps/camera/bottombar/BottomBarController;Ljlb;Ljak;Ljfn;Lgtg;Limy;Lkas;Liud;Lddf;[B)V
 
-    const-string v6, "ALPHA"
+    new-instance v0, Liyc;
 
-    const/4 v7, 0x2
+    invoke-direct {v0, p0}, Liyc;-><init>(Liye;)V
 
-    invoke-direct {v2, v6, v7, v4}, Liye;-><init>(Ljava/lang/String;ILandroid/graphics/PorterDuff$Mode;)V
+    new-instance v1, Lihw;
 
-    sput-object v2, Liye;->c:Liye;
+    const/4 v2, 0x0
 
-    const/4 v4, 0x3
+    new-array v3, v2, [Lihs;
 
-    new-array v4, v4, [Liye;
+    invoke-direct {v1, v0, v3}, Lihw;-><init>(Lihs;[Lihs;)V
 
-    aput-object v0, v4, v3
+    iput-object v1, v12, Liye;->m:Lihw;
 
-    aput-object v1, v4, v5
+    new-instance v0, Liyd;
 
-    aput-object v2, v4, v7
+    invoke-direct {v0, p0}, Liyd;-><init>(Liye;)V
 
-    sput-object v4, Liye;->e:[Liye;
+    new-instance v1, Lihw;
+
+    new-array v3, v2, [Lihs;
+
+    invoke-direct {v1, v0, v3}, Lihw;-><init>(Lihs;[Lihs;)V
+
+    iput-object v1, v12, Liye;->n:Lihw;
+
+    new-instance v0, Lihu;
+
+    invoke-direct {v0, v1, v2}, Lihu;-><init>(Lihw;Z)V
+
+    iput-object v0, v12, Liye;->l:Lihu;
+
+    invoke-virtual {v0}, Lihu;->f()V
 
     return-void
 .end method
 
-.method private constructor <init>(Ljava/lang/String;ILandroid/graphics/PorterDuff$Mode;)V
-    .locals 0
 
-    invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
-    iput-object p3, p0, Liye;->d:Landroid/graphics/PorterDuff$Mode;
-
-    return-void
-.end method
-
-.method public static values()[Liye;
+# virtual methods
+.method public final a()V
     .locals 1
 
-    sget-object v0, Liye;->e:[Liye;
+    iget-object v0, p0, Liye;->l:Lihu;
 
-    invoke-virtual {v0}, [Liye;->clone()Ljava/lang/Object;
+    invoke-virtual {v0}, Lihu;->a()Lihw;
 
     move-result-object v0
 
-    check-cast v0, [Liye;
+    if-nez v0, :cond_0
 
-    return-object v0
+    return-void
+
+    :cond_0
+    iget-object v0, p0, Liye;->l:Lihu;
+
+    invoke-virtual {v0}, Lihu;->a()Lihw;
+
+    move-result-object v0
+
+    iget-object v0, v0, Lihw;->a:Lihs;
+
+    check-cast v0, Liwj;
+
+    invoke-virtual {v0}, Liwj;->a()V
+
+    return-void
+.end method
+
+.method public final b()V
+    .locals 1
+
+    iget-object v0, p0, Liye;->l:Lihu;
+
+    invoke-virtual {v0}, Lihu;->a()Lihw;
+
+    move-result-object v0
+
+    if-nez v0, :cond_0
+
+    return-void
+
+    :cond_0
+    iget-object v0, p0, Liye;->l:Lihu;
+
+    invoke-virtual {v0}, Lihu;->a()Lihw;
+
+    move-result-object v0
+
+    iget-object v0, v0, Lihw;->a:Lihs;
+
+    check-cast v0, Liwj;
+
+    invoke-virtual {v0}, Liwj;->b()V
+
+    return-void
+.end method
+
+.method public final e()V
+    .locals 1
+
+    iget-object v0, p0, Liye;->l:Lihu;
+
+    invoke-virtual {v0}, Lihu;->b()V
+
+    iget-object v0, p0, Liye;->m:Lihw;
+
+    invoke-virtual {v0}, Lihw;->e()V
+
+    iget-object v0, p0, Liye;->n:Lihw;
+
+    invoke-virtual {v0}, Lihw;->e()V
+
+    return-void
+.end method
+
+.method public final f()V
+    .locals 1
+
+    iget-object v0, p0, Liye;->l:Lihu;
+
+    invoke-virtual {v0}, Lihu;->c()V
+
+    return-void
+.end method
+
+.method public final g()V
+    .locals 1
+
+    iget-object v0, p0, Liye;->l:Lihu;
+
+    invoke-virtual {v0}, Lihu;->d()V
+
+    return-void
+.end method
+
+.method public final h()V
+    .locals 0
+
+    invoke-static {p0}, Lmip;->eQ(Lihv;)V
+
+    return-void
 .end method

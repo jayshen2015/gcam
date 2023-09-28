@@ -1,84 +1,92 @@
-.class public final enum Lklv;
-.super Ljava/lang/Enum;
+.class public abstract Lklv;
+.super Ljava/lang/Object;
 
 
-# static fields
-.field public static final enum a:Lklv;
+# instance fields
+.field public d:Ljava/lang/Object;
 
-.field public static final enum b:Lklv;
+.field public e:Z
 
-.field public static final enum c:Lklv;
-
-.field private static final synthetic d:[Lklv;
+.field final synthetic f:Lkmb;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 7
-
-    new-instance v0, Lklv;
-
-    const-string v1, "FRONT"
-
-    const/4 v2, 0x0
-
-    invoke-direct {v0, v1, v2}, Lklv;-><init>(Ljava/lang/String;I)V
-
-    sput-object v0, Lklv;->a:Lklv;
-
-    new-instance v1, Lklv;
-
-    const-string v3, "BACK"
-
-    const/4 v4, 0x1
-
-    invoke-direct {v1, v3, v4}, Lklv;-><init>(Ljava/lang/String;I)V
-
-    sput-object v1, Lklv;->b:Lklv;
-
-    new-instance v3, Lklv;
-
-    const-string v5, "EXTERNAL"
-
-    const/4 v6, 0x2
-
-    invoke-direct {v3, v5, v6}, Lklv;-><init>(Ljava/lang/String;I)V
-
-    sput-object v3, Lklv;->c:Lklv;
-
-    const/4 v5, 0x3
-
-    new-array v5, v5, [Lklv;
-
-    aput-object v0, v5, v2
-
-    aput-object v1, v5, v4
-
-    aput-object v3, v5, v6
-
-    sput-object v5, Lklv;->d:[Lklv;
-
-    return-void
-.end method
-
-.method private constructor <init>(Ljava/lang/String;I)V
+.method public constructor <init>(Lkmb;Ljava/lang/Object;)V
     .locals 0
 
-    invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+    iput-object p1, p0, Lklv;->f:Lkmb;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p2, p0, Lklv;->d:Ljava/lang/Object;
+
+    const/4 p1, 0x0
+
+    iput-boolean p1, p0, Lklv;->e:Z
 
     return-void
 .end method
 
-.method public static values()[Lklv;
+
+# virtual methods
+.method protected abstract b()V
+.end method
+
+.method protected abstract d()V
+.end method
+
+.method public final e()V
     .locals 1
 
-    sget-object v0, Lklv;->d:[Lklv;
+    monitor-enter p0
 
-    invoke-virtual {v0}, [Lklv;->clone()Ljava/lang/Object;
+    const/4 v0, 0x0
 
-    move-result-object v0
+    :try_start_0
+    iput-object v0, p0, Lklv;->d:Ljava/lang/Object;
 
-    check-cast v0, [Lklv;
+    monitor-exit p0
 
-    return-object v0
+    return-void
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit p0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw v0
+.end method
+
+.method public final f()V
+    .locals 2
+
+    invoke-virtual {p0}, Lklv;->e()V
+
+    iget-object v0, p0, Lklv;->f:Lkmb;
+
+    iget-object v0, v0, Lkmb;->h:Ljava/util/ArrayList;
+
+    monitor-enter v0
+
+    :try_start_0
+    iget-object v1, p0, Lklv;->f:Lkmb;
+
+    iget-object v1, v1, Lkmb;->h:Ljava/util/ArrayList;
+
+    invoke-virtual {v1, p0}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
+
+    monitor-exit v0
+
+    return-void
+
+    :catchall_0
+    move-exception v1
+
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw v1
 .end method

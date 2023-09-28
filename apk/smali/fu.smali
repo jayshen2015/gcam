@@ -1,38 +1,133 @@
 .class public final Lfu;
 .super Ljava/lang/Object;
 
+# interfaces
+.implements Landroid/view/ViewTreeObserver$OnPreDrawListener;
+.implements Landroid/view/View$OnAttachStateChangeListener;
 
-# static fields
-.field public static final a:[I
+
+# instance fields
+.field private final a:Landroid/view/View;
+
+.field private b:Landroid/view/ViewTreeObserver;
+
+.field private final c:Ljava/lang/Runnable;
 
 
 # direct methods
-.method static constructor <clinit>()V
+.method private constructor <init>(Landroid/view/View;Ljava/lang/Runnable;)V
+    .locals 0
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lfu;->a:Landroid/view/View;
+
+    invoke-virtual {p1}, Landroid/view/View;->getViewTreeObserver()Landroid/view/ViewTreeObserver;
+
+    move-result-object p1
+
+    iput-object p1, p0, Lfu;->b:Landroid/view/ViewTreeObserver;
+
+    iput-object p2, p0, Lfu;->c:Ljava/lang/Runnable;
+
+    return-void
+.end method
+
+.method public static b(Landroid/view/View;Ljava/lang/Runnable;)V
     .locals 1
 
-    const/16 v0, 0xc
+    if-eqz p0, :cond_0
 
-    new-array v0, v0, [I
+    new-instance v0, Lfu;
 
-    fill-array-data v0, :array_0
+    invoke-direct {v0, p0, p1}, Lfu;-><init>(Landroid/view/View;Ljava/lang/Runnable;)V
 
-    sput-object v0, Lfu;->a:[I
+    invoke-virtual {p0}, Landroid/view/View;->getViewTreeObserver()Landroid/view/ViewTreeObserver;
+
+    move-result-object p1
+
+    invoke-virtual {p1, v0}, Landroid/view/ViewTreeObserver;->addOnPreDrawListener(Landroid/view/ViewTreeObserver$OnPreDrawListener;)V
+
+    invoke-virtual {p0, v0}, Landroid/view/View;->addOnAttachStateChangeListener(Landroid/view/View$OnAttachStateChangeListener;)V
 
     return-void
 
-    :array_0
-    .array-data 4
-        0x10100c4
-        0x10100eb
-        0x10100f1
-        0x7f040297
-        0x7f040298
-        0x7f040299
-        0x7f04029a
-        0x7f04029b
-        0x7f040373
-        0x7f04055b
-        0x7f0405cf
-        0x7f0405eb
-    .end array-data
+    :cond_0
+    new-instance p0, Ljava/lang/NullPointerException;
+
+    const-string p1, "view == null"
+
+    invoke-direct {p0, p1}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
+
+    throw p0
+.end method
+
+
+# virtual methods
+.method public final a()V
+    .locals 1
+
+    iget-object v0, p0, Lfu;->b:Landroid/view/ViewTreeObserver;
+
+    invoke-virtual {v0}, Landroid/view/ViewTreeObserver;->isAlive()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lfu;->b:Landroid/view/ViewTreeObserver;
+
+    invoke-virtual {v0, p0}, Landroid/view/ViewTreeObserver;->removeOnPreDrawListener(Landroid/view/ViewTreeObserver$OnPreDrawListener;)V
+
+    goto :goto_0
+
+    :cond_0
+    iget-object v0, p0, Lfu;->a:Landroid/view/View;
+
+    invoke-virtual {v0}, Landroid/view/View;->getViewTreeObserver()Landroid/view/ViewTreeObserver;
+
+    move-result-object v0
+
+    invoke-virtual {v0, p0}, Landroid/view/ViewTreeObserver;->removeOnPreDrawListener(Landroid/view/ViewTreeObserver$OnPreDrawListener;)V
+
+    :goto_0
+    iget-object v0, p0, Lfu;->a:Landroid/view/View;
+
+    invoke-virtual {v0, p0}, Landroid/view/View;->removeOnAttachStateChangeListener(Landroid/view/View$OnAttachStateChangeListener;)V
+
+    return-void
+.end method
+
+.method public final onPreDraw()Z
+    .locals 1
+
+    invoke-virtual {p0}, Lfu;->a()V
+
+    iget-object v0, p0, Lfu;->c:Ljava/lang/Runnable;
+
+    invoke-interface {v0}, Ljava/lang/Runnable;->run()V
+
+    const/4 v0, 0x1
+
+    return v0
+.end method
+
+.method public final onViewAttachedToWindow(Landroid/view/View;)V
+    .locals 0
+
+    invoke-virtual {p1}, Landroid/view/View;->getViewTreeObserver()Landroid/view/ViewTreeObserver;
+
+    move-result-object p1
+
+    iput-object p1, p0, Lfu;->b:Landroid/view/ViewTreeObserver;
+
+    return-void
+.end method
+
+.method public final onViewDetachedFromWindow(Landroid/view/View;)V
+    .locals 0
+
+    invoke-virtual {p0}, Lfu;->a()V
+
+    return-void
 .end method

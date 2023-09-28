@@ -1,102 +1,91 @@
-.class public final Lfbv;
+.class public final synthetic Lfbv;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lelx;
+.implements Landroid/preference/Preference$OnPreferenceClickListener;
 
 
 # instance fields
-.field final synthetic a:Lelx;
+.field public final synthetic a:Landroid/app/Activity;
 
-.field final synthetic n:Ljava/util/concurrent/TimeUnit;
-
-.field final synthetic o:Ljava/lang/String;
+.field private final synthetic b:I
 
 
 # direct methods
-.method public constructor <init>(Lelx;Ljava/util/concurrent/TimeUnit;)V
+.method public synthetic constructor <init>(Landroid/app/Activity;I)V
     .locals 0
 
-    iput-object p1, p0, Lfbv;->a:Lelx;
-
-    iput-object p2, p0, Lfbv;->n:Ljava/util/concurrent/TimeUnit;
-
-    const-string p1, "AppSettings"
-
-    iput-object p1, p0, Lfbv;->o:Ljava/lang/String;
+    iput p2, p0, Lfbv;->b:I
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lfbv;->a:Landroid/app/Activity;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Llpu;)Ljava/lang/Object;
-    .locals 7
+.method public final onPreferenceClick(Landroid/preference/Preference;)Z
+    .locals 3
 
-    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
+    iget p1, p0, Lfbv;->b:I
 
-    move-result-wide v0
+    const/4 v0, 0x1
 
-    iget-object v2, p0, Lfbv;->a:Lelx;
+    packed-switch p1, :pswitch_data_0
 
-    invoke-interface {v2, p1}, Lelx;->a(Llpu;)Ljava/lang/Object;
+    iget-object p1, p0, Lfbv;->a:Landroid/app/Activity;
 
-    move-result-object v2
+    new-instance v1, Landroid/content/Intent;
 
-    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
+    const-string v2, "android.os.storage.action.MANAGE_STORAGE"
 
-    move-result-wide v3
+    invoke-direct {v1, v2}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    sub-long/2addr v3, v0
+    invoke-virtual {p1, v1}, Landroid/app/Activity;->startActivity(Landroid/content/Intent;)V
 
-    sget-object v0, Ljava/util/concurrent/TimeUnit;->MILLISECONDS:Ljava/util/concurrent/TimeUnit;
+    return v0
 
-    iget-object v1, p0, Lfbv;->n:Ljava/util/concurrent/TimeUnit;
+    :pswitch_0
+    iget-object p1, p0, Lfbv;->a:Landroid/app/Activity;
 
-    const-wide/16 v5, 0x5
+    sget v1, Lfcb;->c:I
 
-    invoke-virtual {v0, v5, v6, v1}, Ljava/util/concurrent/TimeUnit;->convert(JLjava/util/concurrent/TimeUnit;)J
+    sget v1, Lbre;->a:I
 
-    move-result-wide v0
+    invoke-virtual {p1}, Landroid/app/Activity;->getApplicationContext()Landroid/content/Context;
 
-    cmp-long v5, v3, v0
+    move-result-object v1
 
-    if-lez v5, :cond_0
+    invoke-virtual {p1}, Landroid/app/Activity;->getPackageName()Ljava/lang/String;
 
-    iget-object v0, p0, Lfbv;->o:Ljava/lang/String;
+    invoke-static {v1, p1}, Lbre;->b(Landroid/content/Context;Landroid/app/Activity;)V
 
-    iget-object p1, p1, Llpu;->c:Ljava/lang/Object;
+    return v0
 
-    new-instance v1, Ljava/lang/StringBuilder;
+    :pswitch_1
+    iget-object p1, p0, Lfbv;->a:Landroid/app/Activity;
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+    sget v1, Lfcb;->c:I
 
-    const-string v5, "Warning: providing system service "
+    sget v1, Lbre;->a:I
 
-    invoke-virtual {v1, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {p1}, Landroid/app/Activity;->getApplicationContext()Landroid/content/Context;
 
-    check-cast p1, Ljava/lang/String;
+    move-result-object v1
 
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string p1, " took "
-
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v1, v3, v4}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    const-string p1, " ms"
-
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {p1}, Landroid/app/Activity;->getPackageName()Ljava/lang/String;
 
     move-result-object p1
 
-    invoke-static {v0, p1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {p1, v1}, Lbre;->a(Ljava/lang/String;Landroid/content/Context;)V
 
-    :cond_0
-    return-object v2
+    return v0
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method

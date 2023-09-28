@@ -1,145 +1,217 @@
-.class final Lhwn;
-.super Landroid/animation/AnimatorListenerAdapter;
+.class public final Lhwn;
+.super Ljava/lang/Object;
 
 
 # instance fields
-.field a:Z
+.field public final a:Lmcu;
 
-.field final synthetic b:D
+.field public b:J
 
-.field final synthetic c:Lhwp;
+.field public c:J
 
-.field final synthetic d:I
+.field public d:J
+
+.field public e:J
+
+.field public f:J
+
+.field private final g:Lfjs;
+
+.field private final h:Lhuf;
+
+.field private final i:Ljtx;
 
 
 # direct methods
-.method public constructor <init>(Lhwp;DI)V
+.method public constructor <init>(Lfjs;Lmcu;Ljtx;Lhuf;[B[B)V
     .locals 0
 
-    iput-object p1, p0, Lhwn;->c:Lhwp;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-wide p2, p0, Lhwn;->b:D
+    const-wide/16 p5, -0x1
 
-    iput p4, p0, Lhwn;->d:I
+    iput-wide p5, p0, Lhwn;->b:J
 
-    invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
+    iput-wide p5, p0, Lhwn;->c:J
 
-    const/4 p1, 0x0
+    iput-object p1, p0, Lhwn;->g:Lfjs;
 
-    iput-boolean p1, p0, Lhwn;->a:Z
+    iput-object p2, p0, Lhwn;->a:Lmcu;
+
+    iput-object p3, p0, Lhwn;->i:Ljtx;
+
+    iput-object p4, p0, Lhwn;->h:Lhuf;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onAnimationCancel(Landroid/animation/Animator;)V
-    .locals 0
+.method public final a(ZII)V
+    .locals 21
 
-    const/4 p1, 0x1
+    move-object/from16 v0, p0
 
-    iput-boolean p1, p0, Lhwn;->a:Z
+    invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
-    return-void
-.end method
+    move-result-wide v1
 
-.method public final onAnimationEnd(Landroid/animation/Animator;Z)V
-    .locals 2
+    iget-wide v3, v0, Lhwn;->d:J
 
-    iget-boolean p1, p0, Lhwn;->a:Z
+    const/4 v5, 0x0
 
-    if-nez p1, :cond_1
+    const-wide/16 v6, 0x0
 
-    iget-object p1, p0, Lhwn;->c:Lhwp;
+    cmp-long v8, v3, v6
 
-    iget-object p1, p1, Lhwp;->d:Lcom/google/android/apps/camera/ui/views/CountdownSnapSlider;
+    if-eqz v8, :cond_0
 
-    const/4 p2, 0x1
+    sub-long v3, v1, v3
 
-    invoke-virtual {p1, p2}, Lcom/google/android/apps/camera/ui/views/CountdownSnapSlider;->setEnabled(Z)V
+    invoke-static {v3, v4, v6, v7}, Ljava/lang/Math;->max(JJ)J
 
-    iget-object p1, p0, Lhwn;->c:Lhwp;
+    move-result-wide v3
 
-    iget-object p2, p1, Lhwp;->c:Lcom/google/android/apps/camera/ui/cuttlefish/CountdownSliderUi;
-
-    iget-object p1, p1, Lhwp;->d:Lcom/google/android/apps/camera/ui/views/CountdownSnapSlider;
-
-    iget-wide v0, p0, Lhwn;->b:D
-
-    invoke-virtual {p1, v0, v1}, Lcom/google/android/apps/camera/ui/views/CountdownSnapSlider;->a(D)D
-
-    move-result-wide v0
-
-    invoke-virtual {p2, v0, v1}, Lcom/google/android/apps/camera/ui/cuttlefish/CountdownSliderUi;->n(D)V
-
-    iget p1, p0, Lhwn;->d:I
-
-    const/4 p2, 0x2
-
-    if-ne p1, p2, :cond_0
-
-    iget-object p1, p0, Lhwn;->c:Lhwp;
-
-    iget-object p2, p1, Lhwp;->d:Lcom/google/android/apps/camera/ui/views/CountdownSnapSlider;
-
-    invoke-virtual {p2}, Lcom/google/android/apps/camera/ui/views/CountdownSnapSlider;->c()D
-
-    move-result-wide v0
-
-    double-to-int p2, v0
-
-    invoke-static {p2}, Lhwp;->u(I)I
-
-    move-result p2
-
-    invoke-virtual {p1, p2}, Lhwp;->s(I)V
-
-    iget-object p1, p0, Lhwn;->c:Lhwp;
-
-    invoke-virtual {p1}, Lhwp;->h()V
+    long-to-int v4, v3
 
     goto :goto_0
 
     :cond_0
-    iget-object p1, p0, Lhwn;->c:Lhwp;
-
-    iget-object p2, p1, Lhwp;->d:Lcom/google/android/apps/camera/ui/views/CountdownSnapSlider;
-
-    const-wide/16 v0, 0x0
-
-    iput-wide v0, p2, Lcom/google/android/apps/camera/ui/views/CountdownSnapSlider;->e:D
-
-    iget-object p2, p1, Lhwp;->c:Lcom/google/android/apps/camera/ui/cuttlefish/CountdownSliderUi;
-
-    iget-object v0, p1, Lhwp;->f:Lj$/time/Duration;
-
-    invoke-virtual {p1, v0}, Lhwp;->b(Lj$/time/Duration;)Ljava/lang/String;
-
-    move-result-object p1
-
-    invoke-virtual {p2, p1}, Lcom/google/android/apps/camera/ui/cuttlefish/CountdownSliderUi;->k(Ljava/lang/String;)V
+    const/4 v4, 0x0
 
     :goto_0
-    iget-object p1, p0, Lhwn;->c:Lhwp;
+    iget-wide v8, v0, Lhwn;->e:J
 
-    iget-object p1, p1, Lhwp;->d:Lcom/google/android/apps/camera/ui/views/CountdownSnapSlider;
+    cmp-long v3, v8, v6
 
-    iget-wide v0, p0, Lhwn;->b:D
+    if-eqz v3, :cond_1
 
-    double-to-int p2, v0
+    iget-wide v10, v0, Lhwn;->d:J
 
-    invoke-virtual {p1, p2}, Lcom/google/android/apps/camera/ui/views/CountdownSnapSlider;->setProgress(I)V
+    cmp-long v3, v10, v6
 
-    iget-object p1, p0, Lhwn;->c:Lhwp;
+    if-eqz v3, :cond_1
 
-    const/4 p2, 0x0
+    sub-long/2addr v8, v10
 
-    iput-boolean p2, p1, Lhwp;->e:Z
+    invoke-static {v8, v9, v6, v7}, Ljava/lang/Math;->max(JJ)J
 
-    invoke-virtual {p1}, Lhwp;->f()V
+    move-result-wide v8
 
-    return-void
+    long-to-int v3, v8
+
+    move v15, v3
+
+    goto :goto_1
 
     :cond_1
+    const/4 v15, 0x0
+
+    :goto_1
+    iget-wide v8, v0, Lhwn;->e:J
+
+    cmp-long v3, v8, v6
+
+    if-eqz v3, :cond_2
+
+    sub-long v8, v1, v8
+
+    invoke-static {v8, v9, v6, v7}, Ljava/lang/Math;->max(JJ)J
+
+    move-result-wide v8
+
+    long-to-int v3, v8
+
+    move/from16 v16, v3
+
+    goto :goto_2
+
+    :cond_2
+    const/16 v16, 0x0
+
+    :goto_2
+    iget-wide v8, v0, Lhwn;->f:J
+
+    cmp-long v3, v8, v6
+
+    if-eqz v3, :cond_3
+
+    sub-long/2addr v1, v8
+
+    invoke-static {v1, v2, v6, v7}, Ljava/lang/Math;->max(JJ)J
+
+    move-result-wide v1
+
+    long-to-int v5, v1
+
+    move/from16 v17, v5
+
+    goto :goto_3
+
+    :cond_3
+    const/16 v17, 0x0
+
+    :goto_3
+    iget-object v1, v0, Lhwn;->h:Lhuf;
+
+    sget-object v2, Lhtu;->U:Lhul;
+
+    invoke-interface {v1, v2}, Lhuf;->c(Lhts;)Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Ljava/lang/Integer;
+
+    invoke-virtual {v1}, Ljava/lang/Integer;->intValue()I
+
+    move-result v20
+
+    iget-object v8, v0, Lhwn;->g:Lfjs;
+
+    iget-wide v9, v0, Lhwn;->b:J
+
+    iget-wide v11, v0, Lhwn;->c:J
+
+    move/from16 v13, p1
+
+    move v14, v4
+
+    move/from16 v18, p2
+
+    move/from16 v19, p3
+
+    invoke-interface/range {v8 .. v20}, Lfjs;->ah(JJZIIIIIII)V
+
+    const/16 v1, 0x7530
+
+    if-lt v4, v1, :cond_4
+
+    iget-object v1, v0, Lhwn;->i:Ljtx;
+
+    invoke-virtual {v1}, Ljtx;->k()V
+
+    :cond_4
+    const-wide/16 v1, -0x1
+
+    iput-wide v1, v0, Lhwn;->b:J
+
+    iput-wide v1, v0, Lhwn;->c:J
+
+    iput-wide v6, v0, Lhwn;->d:J
+
+    iput-wide v6, v0, Lhwn;->e:J
+
+    iput-wide v6, v0, Lhwn;->f:J
+
+    return-void
+.end method
+
+.method final b(II)V
+    .locals 1
+
+    const/4 v0, 0x0
+
+    invoke-virtual {p0, v0, p2, p1}, Lhwn;->a(ZII)V
+
     return-void
 .end method

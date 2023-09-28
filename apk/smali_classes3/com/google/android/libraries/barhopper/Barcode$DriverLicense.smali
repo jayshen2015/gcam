@@ -43,11 +43,11 @@
 .method static constructor <clinit>()V
     .locals 2
 
-    new-instance v0, Ljsy;
+    new-instance v0, Lkza;
 
-    const/16 v1, 0xd
+    const/16 v1, 0x11
 
-    invoke-direct {v0, v1}, Ljsy;-><init>(I)V
+    invoke-direct {v0, v1}, Lkza;-><init>(I)V
 
     sput-object v0, Lcom/google/android/libraries/barhopper/Barcode$DriverLicense;->CREATOR:Landroid/os/Parcelable$Creator;
 

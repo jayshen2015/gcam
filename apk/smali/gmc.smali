@@ -1,45 +1,36 @@
 .class public final Lgmc;
-.super Ljwh;
+.super Ljava/lang/Object;
+
+
+# instance fields
+.field public final a:Lghx;
 
 
 # direct methods
-.method public constructor <init>(Ljvs;)V
+.method public constructor <init>(Lghx;)V
     .locals 0
 
-    invoke-direct {p0, p1}, Ljwh;-><init>(Ljvs;)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lgmc;->a:Lghx;
 
     return-void
 .end method
 
 
 # virtual methods
-.method protected final bridge synthetic d(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 2
+.method public final a(Lgls;)Lgmb;
+    .locals 3
 
-    check-cast p1, Lfwl;
+    new-instance v0, Lgmb;
 
-    sget-object v0, Lfwl;->b:Lfwl;
+    iget-object v1, p0, Lgmc;->a:Lghx;
 
-    const/4 v1, 0x1
+    new-instance v2, Lgmf;
 
-    if-eq p1, v0, :cond_1
+    invoke-direct {v2, p1}, Lgmf;-><init>(Lgls;)V
 
-    sget-object v0, Lfwl;->d:Lfwl;
+    invoke-direct {v0, v1, v2, p1}, Lgmb;-><init>(Lghx;Lgmf;Lgls;)V
 
-    if-ne p1, v0, :cond_0
-
-    goto :goto_0
-
-    :cond_0
-    const/4 v1, 0x0
-
-    goto :goto_0
-
-    :cond_1
-    :goto_0
-    invoke-static {v1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
-
-    move-result-object p1
-
-    return-object p1
+    return-object v0
 .end method

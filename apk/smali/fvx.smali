@@ -3,340 +3,298 @@
 
 
 # instance fields
-.field public final a:Ljava/lang/Object;
+.field public final a:Llvs;
 
-.field public final b:Ljava/lang/Object;
+.field public final b:Llwd;
 
-.field public final c:Ljava/lang/Object;
+.field public final c:Llig;
 
-.field public final d:Ljava/lang/Object;
+.field public final d:Ljnl;
 
-.field public final e:Ljava/lang/Object;
-
-.field public final f:Ljava/lang/Object;
-
-.field public final g:Ljava/lang/Object;
-
-.field public final h:Ljava/lang/Object;
-
-.field public final i:Ljava/lang/Object;
-
-.field public final j:Ljava/lang/Object;
-
-.field public final k:Ljava/lang/Object;
-
-.field public final l:Ljava/lang/Object;
-
-.field public final m:Ljava/lang/Object;
+.field private final e:Llhs;
 
 
 # direct methods
-.method public constructor <init>(Ldbf;Lfuj;Lklx;Ldhi;Ldna;Lcwh;Lcyy;Lbkc;Landroid/content/ContentResolver;Landroid/content/Context;Lcvh;Ldqx;Lcoz;[B[B[B)V
-    .locals 2
-
-    move-object v0, p0
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    move-object v1, p1
-
-    iput-object v1, v0, Lfvx;->i:Ljava/lang/Object;
-
-    move-object v1, p2
-
-    iput-object v1, v0, Lfvx;->f:Ljava/lang/Object;
-
-    move-object v1, p3
-
-    iput-object v1, v0, Lfvx;->h:Ljava/lang/Object;
-
-    move-object v1, p4
-
-    iput-object v1, v0, Lfvx;->l:Ljava/lang/Object;
-
-    move-object v1, p5
-
-    iput-object v1, v0, Lfvx;->b:Ljava/lang/Object;
-
-    move-object v1, p6
-
-    iput-object v1, v0, Lfvx;->g:Ljava/lang/Object;
-
-    move-object v1, p8
-
-    iput-object v1, v0, Lfvx;->e:Ljava/lang/Object;
-
-    move-object v1, p9
-
-    iput-object v1, v0, Lfvx;->c:Ljava/lang/Object;
-
-    move-object v1, p10
-
-    iput-object v1, v0, Lfvx;->k:Ljava/lang/Object;
-
-    move-object v1, p11
-
-    iput-object v1, v0, Lfvx;->a:Ljava/lang/Object;
-
-    move-object v1, p7
-
-    iput-object v1, v0, Lfvx;->j:Ljava/lang/Object;
-
-    move-object v1, p12
-
-    iput-object v1, v0, Lfvx;->m:Ljava/lang/Object;
-
-    move-object v1, p13
-
-    iput-object v1, v0, Lfvx;->d:Ljava/lang/Object;
-
-    return-void
-.end method
-
-.method public constructor <init>(Leic;Leji;Ljuf;Liff;Leio;Lcom/google/android/apps/camera/bottombar/BottomBarController;Leoa;Leia;Lkai;Ldhi;Ljew;Lejr;[B)V
+.method public constructor <init>()V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lfvx;->a:Ljava/lang/Object;
-
-    iput-object p2, p0, Lfvx;->g:Ljava/lang/Object;
-
-    iput-object p3, p0, Lfvx;->f:Ljava/lang/Object;
-
-    iput-object p4, p0, Lfvx;->l:Ljava/lang/Object;
-
-    iput-object p6, p0, Lfvx;->c:Ljava/lang/Object;
-
-    iput-object p7, p0, Lfvx;->i:Ljava/lang/Object;
-
-    iput-object p8, p0, Lfvx;->d:Ljava/lang/Object;
-
-    iput-object p10, p0, Lfvx;->e:Ljava/lang/Object;
-
-    iput-object p9, p0, Lfvx;->h:Ljava/lang/Object;
-
-    iput-object p12, p0, Lfvx;->m:Ljava/lang/Object;
-
-    new-instance p1, Leie;
-
-    invoke-direct {p1, p5}, Leie;-><init>(Leio;)V
-
-    iput-object p1, p0, Lfvx;->k:Ljava/lang/Object;
-
-    new-instance p1, Lfnd;
-
-    const/4 p2, 0x1
-
-    const/4 p3, 0x0
-
-    invoke-direct {p1, p0, p2, p3}, Lfnd;-><init>(Lfvx;I[B)V
-
-    iput-object p1, p0, Lfvx;->j:Ljava/lang/Object;
-
-    new-instance p1, Leif;
-
-    invoke-direct {p1, p11, p5, p10, p3}, Leif;-><init>(Ljew;Leio;Ldhi;[B)V
-
-    iput-object p1, p0, Lfvx;->b:Ljava/lang/Object;
-
     return-void
 .end method
 
-.method public constructor <init>(Lflg;Lnou;Landroid/util/DisplayMetrics;Lgvu;Llpg;Lika;Ljvs;Ldbf;Lmqp;Lmqp;Lcgi;Lnou;Lfuj;[B)V
+.method public constructor <init>(Llvs;Llwd;Llhs;Llig;Ljnl;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lfvx;->a:Ljava/lang/Object;
+    iput-object p1, p0, Lfvx;->a:Llvs;
 
-    iput-object p2, p0, Lfvx;->b:Ljava/lang/Object;
+    iput-object p2, p0, Lfvx;->b:Llwd;
 
-    iput-object p3, p0, Lfvx;->c:Ljava/lang/Object;
+    iput-object p3, p0, Lfvx;->e:Llhs;
 
-    iput-object p4, p0, Lfvx;->d:Ljava/lang/Object;
+    iput-object p4, p0, Lfvx;->c:Llig;
 
-    iput-object p5, p0, Lfvx;->e:Ljava/lang/Object;
-
-    iput-object p6, p0, Lfvx;->f:Ljava/lang/Object;
-
-    iput-object p7, p0, Lfvx;->g:Ljava/lang/Object;
-
-    iput-object p8, p0, Lfvx;->h:Ljava/lang/Object;
-
-    iput-object p9, p0, Lfvx;->i:Ljava/lang/Object;
-
-    iput-object p10, p0, Lfvx;->j:Ljava/lang/Object;
-
-    iput-object p11, p0, Lfvx;->k:Ljava/lang/Object;
-
-    iput-object p12, p0, Lfvx;->l:Ljava/lang/Object;
-
-    iput-object p13, p0, Lfvx;->m:Ljava/lang/Object;
+    iput-object p5, p0, Lfvx;->d:Ljnl;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Lika;
-    .locals 1
-
-    iget-object v0, p0, Lfvx;->a:Ljava/lang/Object;
-
-    check-cast v0, Lcvh;
-
-    invoke-virtual {v0}, Lcvh;->a()Lika;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public final b()Lkll;
+.method public final equals(Ljava/lang/Object;)Z
     .locals 4
 
-    iget-object v0, p0, Lfvx;->i:Ljava/lang/Object;
+    const/4 v0, 0x1
 
-    check-cast v0, Ldbf;
+    if-ne p1, p0, :cond_0
 
-    invoke-virtual {v0}, Ldbf;->d()Lklv;
-
-    move-result-object v0
-
-    iget-object v1, p0, Lfvx;->b:Ljava/lang/Object;
-
-    iget-object v2, p0, Lfvx;->h:Ljava/lang/Object;
-
-    iget-object v3, p0, Lfvx;->l:Ljava/lang/Object;
-
-    check-cast v1, Ldna;
-
-    invoke-virtual {v1, v2, v3, v0}, Ldna;->b(Lklj;Ldhi;Lklv;)Lkll;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public final c()Lkll;
-    .locals 7
-
-    invoke-virtual {p0}, Lfvx;->b()Lkll;
-
-    move-result-object v0
-
-    if-nez v0, :cond_0
-
-    const/4 v0, 0x0
-
-    return-object v0
+    return v0
 
     :cond_0
-    iget-object v1, p0, Lfvx;->h:Ljava/lang/Object;
-
-    check-cast v1, Lklx;
-
-    invoke-virtual {v1, v0}, Lklx;->a(Lkll;)Lkli;
-
-    move-result-object v1
-
-    invoke-interface {v1}, Lkli;->k()Lklv;
-
-    move-result-object v2
-
-    sget-object v3, Lklv;->a:Lklv;
-
-    if-ne v2, v3, :cond_4
-
-    iget-object v2, p0, Lfvx;->l:Ljava/lang/Object;
-
-    sget-object v3, Ldho;->cj:Ldhj;
-
-    invoke-interface {v2, v3}, Ldhi;->l(Ldhj;)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_1
-
-    iget-object v0, p0, Lfvx;->f:Ljava/lang/Object;
-
-    invoke-interface {v0}, Lfuj;->a()Lkll;
-
-    move-result-object v0
-
-    return-object v0
-
-    :cond_1
-    iget-object v2, p0, Lfvx;->l:Ljava/lang/Object;
-
-    sget-object v3, Ldgu;->ai:Ldhj;
-
-    invoke-interface {v2, v3}, Ldhi;->l(Ldhj;)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_4
-
-    new-instance v0, Landroid/graphics/Rect;
+    instance-of v1, p1, Lfvx;
 
     const/4 v2, 0x0
 
-    invoke-direct {v0, v2, v2, v2, v2}, Landroid/graphics/Rect;-><init>(IIII)V
+    if-eqz v1, :cond_1
 
-    check-cast v1, Lklh;
+    check-cast p1, Lfvx;
 
-    iget-object v2, v1, Lklh;->a:Lkll;
+    iget-object v1, p0, Lfvx;->a:Llvs;
 
-    iget-object v1, v1, Lklh;->b:Lmwn;
+    iget-object v3, p1, Lfvx;->a:Llvs;
 
-    invoke-interface {v1}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
+    invoke-virtual {v1, v3}, Llvs;->equals(Ljava/lang/Object;)Z
 
-    move-result-object v1
+    move-result v1
 
-    :cond_2
-    :goto_0
-    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
+    if-eqz v1, :cond_1
 
-    move-result v3
+    iget-object v1, p0, Lfvx;->b:Llwd;
 
-    if-eqz v3, :cond_3
+    iget-object v3, p1, Lfvx;->b:Llwd;
 
-    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-virtual {v1, v3}, Llwd;->equals(Ljava/lang/Object;)Z
 
-    move-result-object v3
+    move-result v1
 
-    check-cast v3, Lkll;
+    if-eqz v1, :cond_1
 
-    iget-object v4, p0, Lfvx;->h:Ljava/lang/Object;
+    iget-object v1, p0, Lfvx;->e:Llhs;
 
-    check-cast v4, Lklx;
+    iget-object v3, p1, Lfvx;->e:Llhs;
 
-    invoke-virtual {v4, v3}, Lklx;->a(Lkll;)Lkli;
+    invoke-virtual {v1, v3}, Llhs;->equals(Ljava/lang/Object;)Z
 
-    move-result-object v4
+    move-result v1
 
-    invoke-interface {v4}, Lkli;->h()Landroid/graphics/Rect;
+    if-eqz v1, :cond_1
 
-    move-result-object v5
+    iget-object v1, p0, Lfvx;->c:Llig;
 
-    iget v5, v5, Landroid/graphics/Rect;->right:I
+    iget-object v3, p1, Lfvx;->c:Llig;
 
-    iget v6, v0, Landroid/graphics/Rect;->right:I
+    invoke-virtual {v1, v3}, Llig;->equals(Ljava/lang/Object;)Z
 
-    if-le v5, v6, :cond_2
+    move-result v1
 
-    invoke-interface {v4}, Lkli;->h()Landroid/graphics/Rect;
+    if-eqz v1, :cond_1
+
+    iget-object v1, p0, Lfvx;->d:Ljnl;
+
+    iget-object p1, p1, Lfvx;->d:Ljnl;
+
+    invoke-virtual {v1, p1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+
+    move-result p1
+
+    if-eqz p1, :cond_1
+
+    return v0
+
+    :cond_1
+    return v2
+.end method
+
+.method public final hashCode()I
+    .locals 3
+
+    iget-object v0, p0, Lfvx;->a:Llvs;
+
+    iget v0, v0, Llvs;->b:I
+
+    const v1, 0xf4243
+
+    xor-int/2addr v0, v1
+
+    mul-int v0, v0, v1
+
+    iget-object v2, p0, Lfvx;->b:Llwd;
+
+    invoke-virtual {v2}, Llwd;->hashCode()I
+
+    move-result v2
+
+    xor-int/2addr v0, v2
+
+    mul-int v0, v0, v1
+
+    iget-object v2, p0, Lfvx;->e:Llhs;
+
+    invoke-virtual {v2}, Llhs;->hashCode()I
+
+    move-result v2
+
+    xor-int/2addr v0, v2
+
+    mul-int v0, v0, v1
+
+    iget-object v2, p0, Lfvx;->c:Llig;
+
+    invoke-virtual {v2}, Llig;->hashCode()I
+
+    move-result v2
+
+    xor-int/2addr v0, v2
+
+    mul-int v0, v0, v1
+
+    iget-object v1, p0, Lfvx;->d:Ljnl;
+
+    invoke-virtual {v1}, Ljava/lang/Object;->hashCode()I
+
+    move-result v1
+
+    xor-int/2addr v0, v1
+
+    return v0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .locals 11
+
+    iget-object v0, p0, Lfvx;->a:Llvs;
+
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v0
 
-    move-object v2, v3
+    iget-object v1, p0, Lfvx;->b:Llwd;
 
-    goto :goto_0
+    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
-    :cond_3
-    return-object v2
+    move-result-object v1
 
-    :cond_4
+    iget-object v2, p0, Lfvx;->e:Llhs;
+
+    invoke-static {v2}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v2
+
+    iget-object v3, p0, Lfvx;->c:Llig;
+
+    invoke-static {v3}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v3
+
+    iget-object v4, p0, Lfvx;->d:Ljnl;
+
+    invoke-static {v4}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-virtual {v5}, Ljava/lang/String;->length()I
+
+    move-result v5
+
+    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v6
+
+    invoke-virtual {v6}, Ljava/lang/String;->length()I
+
+    move-result v6
+
+    invoke-static {v2}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v7
+
+    invoke-virtual {v7}, Ljava/lang/String;->length()I
+
+    move-result v7
+
+    invoke-static {v3}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v8
+
+    invoke-virtual {v8}, Ljava/lang/String;->length()I
+
+    move-result v8
+
+    invoke-static {v4}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v9
+
+    invoke-virtual {v9}, Ljava/lang/String;->length()I
+
+    move-result v9
+
+    new-instance v10, Ljava/lang/StringBuilder;
+
+    add-int/lit8 v5, v5, 0x5c
+
+    add-int/2addr v5, v6
+
+    add-int/2addr v5, v7
+
+    add-int/2addr v5, v8
+
+    add-int/2addr v5, v9
+
+    invoke-direct {v10, v5}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string v5, "OneModeConfig{cameraId="
+
+    invoke-virtual {v10, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v10, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v0, ", cameraFacing="
+
+    invoke-virtual {v10, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v10, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v0, ", aspectRatio="
+
+    invoke-virtual {v10, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v10, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v0, ", captureResolution="
+
+    invoke-virtual {v10, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v10, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v0, ", viewfinderConfig="
+
+    invoke-virtual {v10, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v10, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v0, "}"
+
+    invoke-virtual {v10, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v10}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
     return-object v0
 .end method

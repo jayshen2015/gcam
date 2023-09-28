@@ -1,91 +1,43 @@
-.class final Lkax;
+.class public final synthetic Lkax;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lkbh;
+.implements Landroid/view/View$OnLongClickListener;
 
 
 # instance fields
-.field private final b:Ljava/lang/String;
+.field public final synthetic a:Lkbi;
 
-.field private final c:Ljava/util/concurrent/atomic/AtomicInteger;
+.field public final synthetic b:Z
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/String;)V
-    .locals 1
+.method public synthetic constructor <init>(Lkbi;Z)V
+    .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lkax;->b:Ljava/lang/String;
+    iput-object p1, p0, Lkax;->a:Lkbi;
 
-    new-instance p1, Ljava/util/concurrent/atomic/AtomicInteger;
-
-    const/4 v0, 0x0
-
-    invoke-direct {p1, v0}, Ljava/util/concurrent/atomic/AtomicInteger;-><init>(I)V
-
-    iput-object p1, p0, Lkax;->c:Ljava/util/concurrent/atomic/AtomicInteger;
+    iput-boolean p2, p0, Lkax;->b:Z
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()V
-    .locals 3
+.method public final onLongClick(Landroid/view/View;)Z
+    .locals 1
 
-    iget-object v0, p0, Lkax;->b:Ljava/lang/String;
+    iget-object p1, p0, Lkax;->a:Lkbi;
 
-    iget-object v1, p0, Lkax;->c:Ljava/util/concurrent/atomic/AtomicInteger;
+    iget-boolean v0, p0, Lkax;->b:Z
 
-    invoke-virtual {v1}, Ljava/util/concurrent/atomic/AtomicInteger;->decrementAndGet()I
+    iget-object p1, p1, Lkbi;->z:Lkbx;
 
-    move-result v1
+    invoke-virtual {p1, v0}, Lkbk;->l(Z)V
 
-    int-to-long v1, v1
+    const/4 p1, 0x1
 
-    invoke-static {v0, v1, v2}, Landroid/os/Trace;->setCounter(Ljava/lang/String;J)V
-
-    return-void
-.end method
-
-.method public final b()V
-    .locals 3
-
-    iget-object v0, p0, Lkax;->b:Ljava/lang/String;
-
-    iget-object v1, p0, Lkax;->c:Ljava/util/concurrent/atomic/AtomicInteger;
-
-    invoke-virtual {v1}, Ljava/util/concurrent/atomic/AtomicInteger;->incrementAndGet()I
-
-    move-result v1
-
-    int-to-long v1, v1
-
-    invoke-static {v0, v1, v2}, Landroid/os/Trace;->setCounter(Ljava/lang/String;J)V
-
-    return-void
-.end method
-
-.method public final c(I)V
-    .locals 2
-
-    iget-object v0, p0, Lkax;->c:Ljava/util/concurrent/atomic/AtomicInteger;
-
-    invoke-virtual {v0, p1}, Ljava/util/concurrent/atomic/AtomicInteger;->set(I)V
-
-    iget-object p1, p0, Lkax;->b:Ljava/lang/String;
-
-    iget-object v0, p0, Lkax;->c:Ljava/util/concurrent/atomic/AtomicInteger;
-
-    invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicInteger;->get()I
-
-    move-result v0
-
-    int-to-long v0, v0
-
-    invoke-static {p1, v0, v1}, Landroid/os/Trace;->setCounter(Ljava/lang/String;J)V
-
-    return-void
+    return p1
 .end method

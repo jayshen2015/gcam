@@ -1,82 +1,65 @@
 .class public final Liwi;
-.super Landroid/animation/AnimatorListenerAdapter;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Lpys;
 
 
 # instance fields
-.field final synthetic a:Lmo;
+.field private final a:Lqkg;
 
-.field final synthetic b:Landroid/view/ViewPropertyAnimator;
-
-.field final synthetic c:Liwo;
+.field private final b:Lqkg;
 
 
 # direct methods
-.method public constructor <init>(Liwo;Lmo;Landroid/view/ViewPropertyAnimator;)V
+.method public constructor <init>(Lqkg;Lqkg;)V
     .locals 0
 
-    iput-object p1, p0, Liwi;->c:Liwo;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p2, p0, Liwi;->a:Lmo;
+    iput-object p1, p0, Liwi;->a:Lqkg;
 
-    iput-object p3, p0, Liwi;->b:Landroid/view/ViewPropertyAnimator;
-
-    invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
+    iput-object p2, p0, Liwi;->b:Lqkg;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onAnimationCancel(Landroid/animation/Animator;)V
-    .locals 1
+.method public final a()Lkas;
+    .locals 2
 
-    iget-object p1, p0, Liwi;->c:Liwo;
+    iget-object v0, p0, Liwi;->a:Lqkg;
 
-    iget-object v0, p0, Liwi;->a:Lmo;
+    check-cast v0, Letg;
 
-    invoke-virtual {p1, v0}, Liwo;->y(Lmo;)V
+    invoke-virtual {v0}, Letg;->b()Lbqg;
 
-    return-void
+    move-result-object v0
+
+    iget-object v1, p0, Liwi;->b:Lqkg;
+
+    invoke-interface {v1}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Lkbi;
+
+    invoke-virtual {v0}, Lbqg;->i()Llap;
+
+    move-result-object v0
+
+    invoke-virtual {v0, v1}, Llap;->c(Llie;)V
+
+    return-object v1
 .end method
 
-.method public final onAnimationEnd(Landroid/animation/Animator;)V
+.method public final bridge synthetic get()Ljava/lang/Object;
     .locals 1
 
-    iget-object p1, p0, Liwi;->b:Landroid/view/ViewPropertyAnimator;
+    invoke-virtual {p0}, Liwi;->a()Lkas;
 
-    const/4 v0, 0x0
+    move-result-object v0
 
-    invoke-virtual {p1, v0}, Landroid/view/ViewPropertyAnimator;->setListener(Landroid/animation/Animator$AnimatorListener;)Landroid/view/ViewPropertyAnimator;
-
-    iget-object p1, p0, Liwi;->c:Liwo;
-
-    iget-object v0, p0, Liwi;->a:Lmo;
-
-    invoke-virtual {p1, v0}, Liwo;->y(Lmo;)V
-
-    iget-object p1, p0, Liwi;->c:Liwo;
-
-    iget-object v0, p0, Liwi;->a:Lmo;
-
-    invoke-virtual {p1, v0}, Llv;->l(Lmo;)V
-
-    iget-object p1, p0, Liwi;->c:Liwo;
-
-    iget-object p1, p1, Liwo;->o:Ljava/util/ArrayList;
-
-    iget-object v0, p0, Liwi;->a:Lmo;
-
-    invoke-virtual {p1, v0}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
-
-    iget-object p1, p0, Liwi;->c:Liwo;
-
-    invoke-virtual {p1}, Liwo;->D()V
-
-    return-void
-.end method
-
-.method public final onAnimationStart(Landroid/animation/Animator;)V
-    .locals 0
-
-    return-void
+    return-object v0
 .end method

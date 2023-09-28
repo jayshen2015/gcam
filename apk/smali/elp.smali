@@ -1,61 +1,39 @@
-.class public final Lelp;
+.class public final synthetic Lelp;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Logk;
+.implements Llie;
 
 
 # instance fields
-.field private final a:Lgxb;
+.field public final synthetic a:Lels;
+
+.field public final synthetic b:Lelx;
 
 
 # direct methods
-.method public constructor <init>(Lgxb;[B[B[B)V
+.method public synthetic constructor <init>(Lels;Lelx;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lelp;->a:Lgxb;
+    iput-object p1, p0, Lelp;->a:Lels;
+
+    iput-object p2, p0, Lelp;->b:Lelx;
 
     return-void
 .end method
 
-.method public static b(Lgxb;)Landroid/view/Window;
-    .locals 0
-
-    iget-object p0, p0, Lgxb;->a:Ljava/lang/Object;
-
-    check-cast p0, Landroid/app/Activity;
-
-    invoke-virtual {p0}, Landroid/app/Activity;->getWindow()Landroid/view/Window;
-
-    move-result-object p0
-
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    return-object p0
-.end method
-
 
 # virtual methods
-.method public final a()Landroid/view/Window;
-    .locals 1
+.method public final close()V
+    .locals 2
 
-    iget-object v0, p0, Lelp;->a:Lgxb;
+    iget-object v0, p0, Lelp;->a:Lels;
 
-    invoke-static {v0}, Lelp;->b(Lgxb;)Landroid/view/Window;
+    iget-object v1, p0, Lelp;->b:Lelx;
 
-    move-result-object v0
+    invoke-virtual {v0, v1}, Lels;->m(Lelx;)V
 
-    return-object v0
-.end method
-
-.method public final bridge synthetic get()Ljava/lang/Object;
-    .locals 1
-
-    invoke-virtual {p0}, Lelp;->a()Landroid/view/Window;
-
-    move-result-object v0
-
-    return-object v0
+    return-void
 .end method

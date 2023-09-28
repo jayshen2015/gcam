@@ -1,22 +1,33 @@
-.class public final Lfzg;
+.class final Lfzg;
 .super Ljava/lang/Object;
 
+# interfaces
+.implements Lctx;
 
-# static fields
-.field public static final a:Lftp;
+
+# instance fields
+.field final synthetic a:Lfzh;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
+.method public constructor <init>(Lfzh;)V
+    .locals 0
 
-    new-instance v0, Lftp;
+    iput-object p1, p0, Lfzg;->a:Lfzh;
 
-    const/16 v1, 0x11
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {v0, v1}, Lftp;-><init>(I)V
+    return-void
+.end method
 
-    sput-object v0, Lfzg;->a:Lftp;
+
+# virtual methods
+.method public final a(I)V
+    .locals 1
+
+    iget-object v0, p0, Lfzg;->a:Lfzh;
+
+    invoke-virtual {v0, p1}, Lfzh;->u(I)V
 
     return-void
 .end method

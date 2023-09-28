@@ -1,111 +1,57 @@
 .class final Lnfu;
-.super Lj$/util/Spliterators$AbstractSpliterator;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field final synthetic a:Lnfv;
+.field final synthetic a:Ljava/lang/Runnable;
+
+.field final synthetic b:Lphw;
+
+.field final synthetic c:J
+
+.field final synthetic d:Ljava/util/concurrent/TimeUnit;
 
 
 # direct methods
-.method public constructor <init>(Lnfv;J)V
+.method public constructor <init>(Ljava/lang/Runnable;Lphw;JLjava/util/concurrent/TimeUnit;)V
     .locals 0
 
-    iput-object p1, p0, Lnfu;->a:Lnfv;
+    iput-object p1, p0, Lnfu;->a:Ljava/lang/Runnable;
 
-    const/16 p1, 0x10
+    iput-object p2, p0, Lnfu;->b:Lphw;
 
-    invoke-direct {p0, p2, p3, p1}, Lj$/util/Spliterators$AbstractSpliterator;-><init>(JI)V
+    iput-wide p3, p0, Lnfu;->c:J
+
+    iput-object p5, p0, Lnfu;->d:Ljava/util/concurrent/TimeUnit;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic forEachRemaining(Ljava/util/function/Consumer;)V
-    .locals 0
+.method public final run()V
+    .locals 4
 
-    invoke-static {p0, p1}, Lj$/util/Spliterator$-CC;->$default$forEachRemaining(Lj$/util/Spliterator;Ljava/util/function/Consumer;)V
+    iget-object v0, p0, Lnfu;->a:Ljava/lang/Runnable;
+
+    invoke-interface {v0}, Ljava/lang/Runnable;->run()V
+
+    iget-object v0, p0, Lnfu;->b:Lphw;
+
+    iget-wide v1, p0, Lnfu;->c:J
+
+    iget-object v3, p0, Lnfu;->d:Ljava/util/concurrent/TimeUnit;
+
+    invoke-interface {v0, p0, v1, v2, v3}, Lphw;->d(Ljava/lang/Runnable;JLjava/util/concurrent/TimeUnit;)Lpia;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lnaq;->d(Lpht;)V
 
     return-void
-.end method
-
-.method public final synthetic getComparator()Ljava/util/Comparator;
-    .locals 1
-
-    invoke-static {p0}, Lj$/util/Spliterator$-CC;->$default$getComparator(Lj$/util/Spliterator;)Ljava/util/Comparator;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public final synthetic getExactSizeIfKnown()J
-    .locals 2
-
-    invoke-static {p0}, Lj$/util/Spliterator$-CC;->$default$getExactSizeIfKnown(Lj$/util/Spliterator;)J
-
-    move-result-wide v0
-
-    return-wide v0
-.end method
-
-.method public final synthetic hasCharacteristics(I)Z
-    .locals 0
-
-    invoke-static {p0, p1}, Lj$/util/Spliterator$-CC;->$default$hasCharacteristics(Lj$/util/Spliterator;I)Z
-
-    move-result p1
-
-    return p1
-.end method
-
-.method public final tryAdvance(Ljava/util/function/Consumer;)Z
-    .locals 3
-
-    iget-object v0, p0, Lnfu;->a:Lnfv;
-
-    iget-object v1, v0, Lnfv;->c:Lj$/util/Spliterator;
-
-    iget-object v2, v0, Lnfv;->a:Lnfs;
-
-    invoke-interface {v1, v2}, Lj$/util/Spliterator;->tryAdvance(Ljava/util/function/Consumer;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_0
-
-    iget-object v1, v0, Lnfv;->d:Lj$/util/Spliterator;
-
-    iget-object v0, v0, Lnfv;->b:Lnfs;
-
-    invoke-interface {v1, v0}, Lj$/util/Spliterator;->tryAdvance(Ljava/util/function/Consumer;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    iget-object v0, p0, Lnfu;->a:Lnfv;
-
-    iget-object v1, v0, Lnfv;->a:Lnfs;
-
-    iget-object v1, v1, Lnfs;->a:Ljava/lang/Object;
-
-    iget-object v0, v0, Lnfv;->b:Lnfs;
-
-    iget-object v0, v0, Lnfs;->a:Ljava/lang/Object;
-
-    invoke-static {v1, v0}, Lnfx;->e(Ljava/lang/Object;Ljava/lang/Object;)Ljava/util/Map$Entry;
-
-    move-result-object v0
-
-    invoke-interface {p1, v0}, Ljava/util/function/Consumer;->accept(Ljava/lang/Object;)V
-
-    const/4 p1, 0x1
-
-    return p1
-
-    :cond_0
-    const/4 p1, 0x0
-
-    return p1
 .end method

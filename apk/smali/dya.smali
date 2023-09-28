@@ -1,106 +1,105 @@
-.class public final Ldya;
+.class public final synthetic Ldya;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Ldxz;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field final synthetic a:Ldxz;
+.field public final synthetic a:Ldyc;
 
-.field final synthetic b:J
+.field public final synthetic b:Lpih;
+
+.field public final synthetic c:Lpih;
 
 
 # direct methods
-.method public constructor <init>(Ldxz;J)V
+.method public synthetic constructor <init>(Ldyc;Lpih;Lpih;)V
     .locals 0
 
-    iput-object p1, p0, Ldya;->a:Ldxz;
-
-    iput-wide p2, p0, Ldya;->b:J
-
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Ldya;->a:Ldyc;
+
+    iput-object p2, p0, Ldya;->b:Lpih;
+
+    iput-object p3, p0, Ldya;->c:Lpih;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(J)Ljyp;
-    .locals 4
+.method public final run()V
+    .locals 6
 
-    iget-object v0, p0, Ldya;->a:Ldxz;
+    iget-object v0, p0, Ldya;->a:Ldyc;
 
-    invoke-interface {v0, p1, p2}, Ldxz;->b(J)Ljyp;
+    iget-object v1, p0, Ldya;->b:Lpih;
 
-    move-result-object v0
+    iget-object v2, p0, Ldya;->c:Lpih;
 
-    if-eqz v0, :cond_0
+    invoke-static {v1}, Lplk;->ae(Ljava/util/concurrent/Future;)Ljava/lang/Object;
 
-    iget-wide v1, v0, Ljyp;->a:J
+    move-result-object v1
 
-    sub-long/2addr v1, p1
+    check-cast v1, Landroid/opengl/EGLSync;
 
-    invoke-static {v1, v2}, Ljava/lang/Math;->abs(J)J
+    invoke-static {v2}, Lplk;->ae(Ljava/util/concurrent/Future;)Ljava/lang/Object;
 
-    move-result-wide p1
+    move-result-object v2
 
-    iget-wide v1, p0, Ldya;->b:J
+    check-cast v2, Landroid/opengl/EGLDisplay;
 
-    cmp-long v3, p1, v1
+    const/4 v3, 0x1
 
-    if-gtz v3, :cond_0
+    const-wide/16 v4, -0x1
 
-    return-object v0
+    invoke-static {v2, v1, v3, v4, v5}, Landroid/opengl/EGL15;->eglClientWaitSync(Landroid/opengl/EGLDisplay;Landroid/opengl/EGLSync;IJ)I
 
-    :cond_0
-    const/4 p1, 0x0
+    sget-boolean v3, Lmot;->a:Z
 
-    return-object p1
-.end method
+    invoke-static {v2, v1}, Landroid/opengl/EGL15;->eglDestroySync(Landroid/opengl/EGLDisplay;Landroid/opengl/EGLSync;)Z
 
-.method public final b(J)Ljyp;
-    .locals 1
+    :try_start_0
+    iget-object v1, v0, Ldyc;->a:Ljava/lang/AutoCloseable;
 
-    iget-object v0, p0, Ldya;->a:Ldxz;
+    invoke-interface {v1}, Ljava/lang/AutoCloseable;->close()V
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    invoke-interface {v0, p1, p2}, Ldxz;->b(J)Ljyp;
+    return-void
 
-    move-result-object p1
+    :catch_0
+    move-exception v1
 
-    return-object p1
-.end method
+    sget-object v2, Ldyd;->a:Louj;
 
-.method public final toString()Ljava/lang/String;
-    .locals 4
+    invoke-virtual {v2}, Loue;->b()Lova;
 
-    iget-object v0, p0, Ldya;->a:Ldxz;
+    move-result-object v2
 
-    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+    check-cast v2, Loug;
 
-    move-result-object v0
+    invoke-interface {v2, v1}, Loug;->h(Ljava/lang/Throwable;)Lova;
 
-    iget-wide v1, p0, Ldya;->b:J
+    move-result-object v2
 
-    new-instance v3, Ljava/lang/StringBuilder;
+    check-cast v2, Loug;
 
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+    const/16 v3, 0x3dd
 
-    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-interface {v2, v3}, Loug;->G(I)Lova;
 
-    const-string v0, "[maxTimeDiffNs="
+    move-result-object v2
 
-    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    check-cast v2, Loug;
 
-    invoke-virtual {v3, v1, v2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+    iget-object v0, v0, Ldyc;->a:Ljava/lang/AutoCloseable;
 
-    const-string v0, "]"
+    const-string v3, "Error while closing resource %s: %s"
 
-    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-interface {v2, v3, v0, v1}, Loug;->y(Ljava/lang/String;Ljava/lang/Object;Ljava/lang/Object;)V
 
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    return-object v0
+    return-void
 .end method

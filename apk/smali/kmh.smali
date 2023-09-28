@@ -1,143 +1,94 @@
 .class public final Lkmh;
-.super Lkoz;
+.super Lkno;
+
+
+# static fields
+.field public static final CREATOR:Landroid/os/Parcelable$Creator;
 
 
 # instance fields
-.field public final a:Ljava/lang/Object;
+.field a:Landroid/os/Bundle;
 
-.field public b:I
+.field b:[Lkhk;
+
+.field c:I
+
+.field public d:Lkmi;
 
 
 # direct methods
-.method public constructor <init>(Lkpe;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 2
 
-    invoke-direct {p0, p1}, Lkoz;-><init>(Lkpe;)V
+    new-instance v0, Lsk;
 
-    new-instance p1, Ljava/lang/Object;
+    const/16 v1, 0xb
 
-    invoke-direct {p1}, Ljava/lang/Object;-><init>()V
+    invoke-direct {v0, v1}, Lsk;-><init>(I)V
 
-    iput-object p1, p0, Lkmh;->a:Ljava/lang/Object;
-
-    const/4 p1, 0x0
-
-    iput p1, p0, Lkmh;->b:I
+    sput-object v0, Lkmh;->CREATOR:Landroid/os/Parcelable$Creator;
 
     return-void
 .end method
 
-.method private final j(Lkpb;)Lkpb;
-    .locals 1
+.method public constructor <init>()V
+    .locals 0
 
-    if-nez p1, :cond_0
+    invoke-direct {p0}, Lkno;-><init>()V
 
-    const/4 p1, 0x0
+    return-void
+.end method
 
-    return-object p1
+.method public constructor <init>(Landroid/os/Bundle;[Lkhk;ILkmi;)V
+    .locals 0
 
-    :cond_0
-    iget v0, p0, Lkmh;->b:I
+    invoke-direct {p0}, Lkno;-><init>()V
 
-    add-int/lit8 v0, v0, 0x1
+    iput-object p1, p0, Lkmh;->a:Landroid/os/Bundle;
 
-    iput v0, p0, Lkmh;->b:I
+    iput-object p2, p0, Lkmh;->b:[Lkhk;
 
-    new-instance v0, Lkmg;
+    iput p3, p0, Lkmh;->c:I
 
-    invoke-direct {v0, p0, p1}, Lkmg;-><init>(Lkmh;Lkpb;)V
+    iput-object p4, p0, Lkmh;->d:Lkmi;
 
-    return-object v0
+    return-void
 .end method
 
 
 # virtual methods
-.method public final f()Lkpb;
+.method public final writeToParcel(Landroid/os/Parcel;I)V
     .locals 3
 
-    iget-object v0, p0, Lkmh;->a:Ljava/lang/Object;
+    invoke-static {p1}, Lmip;->ct(Landroid/os/Parcel;)I
 
-    monitor-enter v0
+    move-result v0
 
-    :try_start_0
-    iget v1, p0, Lkmh;->b:I
+    iget-object v1, p0, Lkmh;->a:Landroid/os/Bundle;
 
-    invoke-virtual {p0}, Lkoz;->c()I
+    const/4 v2, 0x1
 
-    move-result v2
+    invoke-static {p1, v2, v1}, Lmip;->cC(Landroid/os/Parcel;ILandroid/os/Bundle;)V
 
-    if-ne v1, v2, :cond_0
+    iget-object v1, p0, Lkmh;->b:[Lkhk;
 
-    monitor-exit v0
+    const/4 v2, 0x2
 
-    const/4 v0, 0x0
+    invoke-static {p1, v2, v1, p2}, Lmip;->cL(Landroid/os/Parcel;I[Landroid/os/Parcelable;I)V
 
-    return-object v0
+    iget v1, p0, Lkmh;->c:I
 
-    :cond_0
-    invoke-super {p0}, Lkoz;->f()Lkpb;
+    const/4 v2, 0x3
 
-    move-result-object v1
+    invoke-static {p1, v2, v1}, Lmip;->cA(Landroid/os/Parcel;II)V
 
-    invoke-direct {p0, v1}, Lkmh;->j(Lkpb;)Lkpb;
+    iget-object v1, p0, Lkmh;->d:Lkmi;
 
-    move-result-object v1
+    const/4 v2, 0x4
 
-    monitor-exit v0
+    invoke-static {p1, v2, v1, p2}, Lmip;->cH(Landroid/os/Parcel;ILandroid/os/Parcelable;I)V
 
-    return-object v1
+    invoke-static {p1, v0}, Lmip;->cv(Landroid/os/Parcel;I)V
 
-    :catchall_0
-    move-exception v1
-
-    monitor-exit v0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw v1
-.end method
-
-.method public final g()Lkpb;
-    .locals 3
-
-    iget-object v0, p0, Lkmh;->a:Ljava/lang/Object;
-
-    monitor-enter v0
-
-    :try_start_0
-    iget v1, p0, Lkmh;->b:I
-
-    invoke-virtual {p0}, Lkoz;->c()I
-
-    move-result v2
-
-    if-ne v1, v2, :cond_0
-
-    monitor-exit v0
-
-    const/4 v0, 0x0
-
-    return-object v0
-
-    :cond_0
-    invoke-super {p0}, Lkoz;->g()Lkpb;
-
-    move-result-object v1
-
-    invoke-direct {p0, v1}, Lkmh;->j(Lkpb;)Lkpb;
-
-    move-result-object v1
-
-    monitor-exit v0
-
-    return-object v1
-
-    :catchall_0
-    move-exception v1
-
-    monitor-exit v0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw v1
+    return-void
 .end method

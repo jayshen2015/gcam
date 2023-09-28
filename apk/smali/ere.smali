@@ -1,206 +1,91 @@
-.class public final Lere;
+.class public final synthetic Lere;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lcik;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field private final a:Ljux;
+.field public final synthetic a:Lerk;
 
-.field private final b:Loiw;
+.field public final synthetic b:Ljava/lang/String;
 
-.field private final c:Loiw;
+.field public final synthetic c:I
 
-.field private final d:Loiw;
-
-.field private final e:Loiw;
-
-.field private final f:Loiw;
-
-.field private final g:Loiw;
-
-.field private final h:Loiw;
-
-.field private final i:Ljava/util/concurrent/Executor;
-
-.field private final j:Ljava/util/concurrent/atomic/AtomicBoolean;
-
-.field private final k:Lkbc;
-
-.field private final l:Lkaq;
-
-.field private m:Lnou;
-
-.field private final n:Lkgd;
+.field public final synthetic d:Ljava/lang/Runnable;
 
 
 # direct methods
-.method public constructor <init>(Ljux;Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;Ljava/util/concurrent/Executor;Lkap;Lkgd;Lkbc;[B[B)V
+.method public synthetic constructor <init>(Lerk;Ljava/lang/String;ILjava/lang/Runnable;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lere;->a:Ljux;
+    iput-object p1, p0, Lere;->a:Lerk;
 
-    iput-object p2, p0, Lere;->b:Loiw;
+    iput-object p2, p0, Lere;->b:Ljava/lang/String;
 
-    iput-object p3, p0, Lere;->c:Loiw;
+    iput p3, p0, Lere;->c:I
 
-    iput-object p4, p0, Lere;->d:Loiw;
-
-    iput-object p6, p0, Lere;->f:Loiw;
-
-    iput-object p5, p0, Lere;->e:Loiw;
-
-    iput-object p7, p0, Lere;->g:Loiw;
-
-    iput-object p8, p0, Lere;->h:Loiw;
-
-    iput-object p9, p0, Lere;->i:Ljava/util/concurrent/Executor;
-
-    iput-object p11, p0, Lere;->n:Lkgd;
-
-    iput-object p12, p0, Lere;->k:Lkbc;
-
-    new-instance p1, Ljava/util/concurrent/atomic/AtomicBoolean;
-
-    const/4 p2, 0x0
-
-    invoke-direct {p1, p2}, Ljava/util/concurrent/atomic/AtomicBoolean;-><init>(Z)V
-
-    iput-object p1, p0, Lere;->j:Ljava/util/concurrent/atomic/AtomicBoolean;
-
-    const-string p1, "ActivityStartup"
-
-    invoke-interface {p10, p1}, Lkap;->a(Ljava/lang/String;)Lkaq;
-
-    move-result-object p1
-
-    iput-object p1, p0, Lere;->l:Lkaq;
+    iput-object p4, p0, Lere;->d:Ljava/lang/Runnable;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final bl()Lnou;
-    .locals 3
+.method public final run()V
+    .locals 7
 
-    iget-object v0, p0, Lere;->j:Ljava/util/concurrent/atomic/AtomicBoolean;
+    iget-object v0, p0, Lere;->a:Lerk;
 
-    const/4 v1, 0x1
+    iget-object v1, p0, Lere;->b:Ljava/lang/String;
 
-    invoke-virtual {v0, v1}, Ljava/util/concurrent/atomic/AtomicBoolean;->getAndSet(Z)Z
+    iget v2, p0, Lere;->c:I
 
-    move-result v0
+    iget-object v3, p0, Lere;->d:Ljava/lang/Runnable;
 
-    if-eqz v0, :cond_0
+    sget-object v4, Lovl;->a:Lovd;
 
-    iget-object v0, p0, Lere;->m:Lnou;
+    iget-object v4, v0, Lerk;->e:Lljf;
 
-    return-object v0
+    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
-    :cond_0
-    iget-object v0, p0, Lere;->k:Lkbc;
+    move-result-object v5
 
-    const-string v1, "ActivityStartup"
+    invoke-virtual {v5}, Ljava/lang/String;->length()I
 
-    invoke-interface {v0, v1}, Lkbc;->e(Ljava/lang/String;)V
+    move-result v5
 
-    iget-object v0, p0, Lere;->a:Ljux;
+    new-instance v6, Ljava/lang/StringBuilder;
 
-    invoke-virtual {v0}, Ljux;->a()V
+    add-int/lit8 v5, v5, 0x19
 
-    iget-object v0, p0, Lere;->e:Loiw;
+    invoke-direct {v6, v5}, Ljava/lang/StringBuilder;-><init>(I)V
 
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
+    const-string v5, "LasagnaQueue#"
 
-    iget-object v0, p0, Lere;->i:Ljava/util/concurrent/Executor;
+    invoke-virtual {v6, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-static {v0}, Lcij;->a(Ljava/util/concurrent/Executor;)Lcij;
+    invoke-virtual {v6, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v0
+    const-string v1, "-"
 
-    iget-object v1, p0, Lere;->n:Lkgd;
+    invoke-virtual {v6, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iput-object v1, v0, Lcij;->d:Lkgd;
+    invoke-virtual {v6, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    iget-object v1, p0, Lere;->k:Lkbc;
-
-    iput-object v1, v0, Lcij;->b:Lkbc;
-
-    iget-object v1, p0, Lere;->l:Lkaq;
-
-    iput-object v1, v0, Lcij;->c:Lkaq;
-
-    iget-object v1, p0, Lere;->b:Loiw;
-
-    const-string v2, "ErrorHandlerStartup"
-
-    invoke-virtual {v0, v1, v2}, Lcij;->c(Loiw;Ljava/lang/String;)V
-
-    iget-object v1, p0, Lere;->c:Loiw;
-
-    const-string v2, "WaitForHalUpdate"
-
-    invoke-virtual {v0, v1, v2}, Lcij;->c(Loiw;Ljava/lang/String;)V
-
-    iget-object v1, p0, Lere;->e:Loiw;
-
-    const-string v2, "PermissionsStartup"
-
-    invoke-virtual {v0, v1, v2}, Lcij;->c(Loiw;Ljava/lang/String;)V
-
-    iget-object v1, p0, Lere;->d:Loiw;
-
-    const-string v2, "WaitForCameraDevices"
-
-    invoke-virtual {v0, v1, v2}, Lcij;->c(Loiw;Ljava/lang/String;)V
-
-    iget-object v1, p0, Lere;->f:Loiw;
-
-    const-string v2, "CameraPolicyChecker"
-
-    invoke-virtual {v0, v1, v2}, Lcij;->c(Loiw;Ljava/lang/String;)V
-
-    iget-object v1, p0, Lere;->g:Loiw;
-
-    const-string v2, "CriticalPath"
-
-    invoke-virtual {v0, v1, v2}, Lcij;->c(Loiw;Ljava/lang/String;)V
-
-    iget-object v1, p0, Lere;->h:Loiw;
-
-    invoke-static {v1}, Lcvr;->w(Loiw;)Loiw;
+    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v1
 
-    const-string v2, "ActivityBehaviors"
+    invoke-interface {v4, v1}, Lljf;->e(Ljava/lang/String;)V
 
-    invoke-virtual {v0, v1, v2}, Lcij;->d(Loiw;Ljava/lang/String;)V
+    invoke-interface {v3}, Ljava/lang/Runnable;->run()V
 
-    invoke-virtual {v0}, Lcij;->b()Lnou;
+    iget-object v0, v0, Lerk;->e:Lljf;
 
-    move-result-object v0
+    invoke-interface {v0}, Lljf;->f()V
 
-    iput-object v0, p0, Lere;->m:Lnou;
-
-    iget-object v0, p0, Lere;->k:Lkbc;
-
-    invoke-interface {v0}, Lkbc;->f()V
-
-    iget-object v0, p0, Lere;->m:Lnou;
-
-    return-object v0
-.end method
-
-.method public final synthetic c()Ljava/lang/String;
-    .locals 1
-
-    invoke-static {p0}, Ldez;->d(Lcik;)Ljava/lang/String;
-
-    move-result-object v0
-
-    return-object v0
+    return-void
 .end method

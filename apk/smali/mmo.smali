@@ -1,102 +1,57 @@
 .class final Lmmo;
-.super Lmmk;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field final synthetic a:Lmmt;
+.field final synthetic a:Ljava/lang/Object;
+
+.field final synthetic b:Lmmq;
 
 
 # direct methods
-.method public constructor <init>(Lmmt;)V
+.method public constructor <init>(Lmmq;Ljava/lang/Object;)V
     .locals 0
 
-    iput-object p1, p0, Lmmo;->a:Lmmt;
+    iput-object p1, p0, Lmmo;->b:Lmmq;
 
-    invoke-direct {p0}, Lmmk;-><init>()V
+    iput-object p2, p0, Lmmo;->a:Ljava/lang/Object;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()V
-    .locals 3
-
-    iget-object v0, p0, Lmmo;->a:Lmmt;
-
-    iget-object v0, v0, Lmmt;->d:Ljava/lang/Object;
-
-    monitor-enter v0
+.method public final run()V
+    .locals 4
 
     :try_start_0
-    iget-object v1, p0, Lmmo;->a:Lmmt;
+    iget-object v0, p0, Lmmo;->b:Lmmq;
 
-    iget-object v1, v1, Lmmt;->i:Ljava/util/concurrent/atomic/AtomicInteger;
+    iget-object v1, p0, Lmmo;->a:Ljava/lang/Object;
 
-    invoke-virtual {v1}, Ljava/util/concurrent/atomic/AtomicInteger;->get()I
+    iget-object v2, v0, Lmmq;->c:Lmmn;
 
-    move-result v1
+    iget-object v3, v0, Lmmq;->e:Ljava/util/concurrent/Executor;
 
-    if-lez v1, :cond_1
+    iget-object v0, v0, Lmmq;->a:Lmoa;
 
-    iget-object v1, p0, Lmmo;->a:Lmmt;
-
-    iget-object v1, v1, Lmmt;->i:Ljava/util/concurrent/atomic/AtomicInteger;
-
-    invoke-virtual {v1}, Ljava/util/concurrent/atomic/AtomicInteger;->decrementAndGet()I
-
-    move-result v1
-
-    if-gtz v1, :cond_0
-
-    goto :goto_0
-
-    :cond_0
-    monitor-exit v0
-
-    return-void
-
-    :cond_1
-    :goto_0
-    iget-object v1, p0, Lmmo;->a:Lmmt;
-
-    iget-object v2, v1, Lmmt;->k:Landroid/os/IInterface;
-
-    if-eqz v2, :cond_2
-
-    iget-object v2, v1, Lmmt;->a:Landroid/content/Context;
-
-    iget-object v1, v1, Lmmt;->j:Landroid/content/ServiceConnection;
-
-    invoke-virtual {v2, v1}, Landroid/content/Context;->unbindService(Landroid/content/ServiceConnection;)V
-
-    iget-object v1, p0, Lmmo;->a:Lmmt;
-
-    invoke-static {v1}, Lmmt;->d(Lmmt;)V
-
-    iget-object v1, p0, Lmmo;->a:Lmmt;
-
-    const/4 v2, 0x0
-
-    iput-object v2, v1, Lmmt;->k:Landroid/os/IInterface;
-
-    iput-object v2, v1, Lmmt;->j:Landroid/content/ServiceConnection;
-
-    :cond_2
-    iget-object v1, p0, Lmmo;->a:Lmmt;
-
-    invoke-virtual {v1}, Lmmt;->b()V
-
-    monitor-exit v0
+    invoke-interface {v2, v1, v3, v0}, Lmmn;->a(Ljava/lang/Object;Ljava/util/concurrent/Executor;Lmoa;)V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     return-void
 
     :catchall_0
-    move-exception v1
+    move-exception v0
 
-    monitor-exit v0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    iget-object v1, p0, Lmmo;->b:Lmmq;
 
-    throw v1
+    invoke-virtual {v1, v0}, Lmmq;->a(Ljava/lang/Throwable;)V
+
+    return-void
 .end method

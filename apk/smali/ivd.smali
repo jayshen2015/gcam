@@ -1,117 +1,141 @@
-.class public final Livd;
-.super Landroid/transition/Fade;
+.class public final synthetic Livd;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Landroid/animation/ValueAnimator$AnimatorUpdateListener;
+
+
+# instance fields
+.field public final synthetic a:Livf;
+
+.field public final synthetic b:Lcom/google/android/apps/camera/ui/captureframe/CaptureFrameUi;
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 1
+.method public synthetic constructor <init>(Livf;Lcom/google/android/apps/camera/ui/captureframe/CaptureFrameUi;)V
+    .locals 0
 
-    const/4 v0, 0x1
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0, v0}, Landroid/transition/Fade;-><init>(I)V
+    iput-object p1, p0, Livd;->a:Livf;
+
+    iput-object p2, p0, Livd;->b:Lcom/google/android/apps/camera/ui/captureframe/CaptureFrameUi;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final captureEndValues(Landroid/transition/TransitionValues;)V
-    .locals 0
+.method public final onAnimationUpdate(Landroid/animation/ValueAnimator;)V
+    .locals 7
 
-    invoke-super {p0, p1}, Landroid/transition/Fade;->captureEndValues(Landroid/transition/TransitionValues;)V
+    iget-object v0, p0, Livd;->a:Livf;
 
-    invoke-static {p1}, Lcom/google/android/clockwork/common/wearable/wearmaterial/button/ContentChangeTransition;->b(Landroid/transition/TransitionValues;)V
+    iget-object v1, p0, Livd;->b:Lcom/google/android/apps/camera/ui/captureframe/CaptureFrameUi;
 
-    return-void
-.end method
+    iget-object v2, v0, Livf;->d:Ljava/lang/Object;
 
-.method public final captureStartValues(Landroid/transition/TransitionValues;)V
-    .locals 0
+    monitor-enter v2
 
-    invoke-super {p0, p1}, Landroid/transition/Fade;->captureStartValues(Landroid/transition/TransitionValues;)V
-
-    invoke-static {p1}, Lcom/google/android/clockwork/common/wearable/wearmaterial/button/ContentChangeTransition;->b(Landroid/transition/TransitionValues;)V
-
-    return-void
-.end method
-
-.method public final createAnimator(Landroid/view/ViewGroup;Landroid/transition/TransitionValues;Landroid/transition/TransitionValues;)Landroid/animation/Animator;
-    .locals 1
-
-    iget-object v0, p3, Landroid/transition/TransitionValues;->view:Landroid/view/View;
-
-    invoke-virtual {p0, p1, v0, p2, p3}, Livd;->onAppear(Landroid/view/ViewGroup;Landroid/view/View;Landroid/transition/TransitionValues;Landroid/transition/TransitionValues;)Landroid/animation/Animator;
+    :try_start_0
+    invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
 
     move-result-object p1
 
-    if-nez p1, :cond_0
+    check-cast p1, Ljava/lang/Float;
 
-    const/4 p1, 0x0
-
-    return-object p1
-
-    :cond_0
-    instance-of p2, p1, Landroid/animation/ObjectAnimator;
-
-    if-eqz p2, :cond_1
-
-    move-object p2, p1
-
-    check-cast p2, Landroid/animation/ObjectAnimator;
-
-    const/4 p3, 0x2
-
-    new-array p3, p3, [F
-
-    fill-array-data p3, :array_0
-
-    invoke-virtual {p2, p3}, Landroid/animation/ObjectAnimator;->setFloatValues([F)V
-
-    :cond_1
-    new-instance p2, Livj;
-
-    invoke-direct {p2, v0}, Livj;-><init>(Landroid/view/View;)V
-
-    invoke-virtual {p0, p2}, Livd;->addListener(Landroid/transition/Transition$TransitionListener;)Landroid/transition/Transition;
-
-    return-object p1
-
-    nop
-
-    :array_0
-    .array-data 4
-        0x3dcccccd    # 0.1f
-        0x3f800000    # 1.0f
-    .end array-data
-.end method
-
-.method public final getTransitionProperties()[Ljava/lang/String;
-    .locals 1
-
-    sget-object v0, Lcom/google/android/clockwork/common/wearable/wearmaterial/button/ContentChangeTransition;->a:[Ljava/lang/String;
-
-    return-object v0
-.end method
-
-.method public final isTransitionRequired(Landroid/transition/TransitionValues;Landroid/transition/TransitionValues;)Z
-    .locals 0
-
-    if-eqz p1, :cond_0
-
-    if-eqz p2, :cond_0
-
-    invoke-static {p1, p2}, Lcom/google/android/clockwork/common/wearable/wearmaterial/button/ContentChangeTransition;->e(Landroid/transition/TransitionValues;Landroid/transition/TransitionValues;)Z
+    invoke-virtual {p1}, Ljava/lang/Float;->floatValue()F
 
     move-result p1
 
-    if-eqz p1, :cond_0
+    iget-object v3, v0, Livf;->b:Livh;
 
-    const/4 p1, 0x1
+    invoke-virtual {v3}, Livh;->a()I
 
-    return p1
+    move-result v3
+
+    iget-object v4, v0, Livf;->b:Livh;
+
+    iget v5, v4, Livh;->e:I
+
+    iget v6, v4, Livh;->f:I
+
+    iget v4, v4, Livh;->g:I
+
+    invoke-static {v3, v5, v6, v4}, Landroid/graphics/Color;->argb(IIII)I
+
+    move-result v3
+
+    iget-object v4, v0, Livf;->c:Livh;
+
+    sget-object v5, Livh;->a:Livh;
+
+    invoke-virtual {v4, v5}, Livh;->equals(Ljava/lang/Object;)Z
+
+    move-result v4
+
+    if-eqz v4, :cond_0
+
+    iget-object v4, v0, Livf;->c:Livh;
+
+    invoke-virtual {v4}, Livh;->a()I
+
+    move-result v4
+
+    iget-object v0, v0, Livf;->b:Livh;
+
+    iget v5, v0, Livh;->e:I
+
+    iget v6, v0, Livh;->f:I
+
+    iget v0, v0, Livh;->g:I
+
+    invoke-static {v4, v5, v6, v0}, Landroid/graphics/Color;->argb(IIII)I
+
+    move-result v0
+
+    goto :goto_0
 
     :cond_0
-    const/4 p1, 0x0
+    iget-object v4, v0, Livf;->c:Livh;
 
-    return p1
+    invoke-virtual {v4}, Livh;->a()I
+
+    move-result v4
+
+    iget-object v0, v0, Livf;->c:Livh;
+
+    iget v5, v0, Livh;->e:I
+
+    iget v6, v0, Livh;->f:I
+
+    iget v0, v0, Livh;->g:I
+
+    invoke-static {v4, v5, v6, v0}, Landroid/graphics/Color;->argb(IIII)I
+
+    move-result v0
+
+    :goto_0
+    invoke-static {v3, v0, p1}, Lek;->b(IIF)I
+
+    move-result p1
+
+    iget-object v0, v1, Lcom/google/android/apps/camera/ui/captureframe/CaptureFrameUi;->b:Landroid/graphics/Paint;
+
+    invoke-virtual {v0, p1}, Landroid/graphics/Paint;->setColor(I)V
+
+    invoke-virtual {v1}, Lcom/google/android/apps/camera/ui/captureframe/CaptureFrameUi;->invalidate()V
+
+    monitor-exit v2
+
+    return-void
+
+    :catchall_0
+    move-exception p1
+
+    monitor-exit v2
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw p1
 .end method

@@ -2,100 +2,72 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lfsm;
+.implements Lpys;
 
 
 # instance fields
-.field public final a:Lfsm;
+.field private final a:Lqkg;
 
-.field public final b:Lgue;
-
-.field private final c:Landroid/os/Handler;
+.field private final b:Lqkg;
 
 
 # direct methods
-.method public constructor <init>(Lfsm;Landroid/os/Handler;Lgue;[B)V
+.method public constructor <init>(Lqkg;Lqkg;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lfpg;->a:Lfsm;
+    iput-object p1, p0, Lfpg;->a:Lqkg;
 
-    iput-object p2, p0, Lfpg;->c:Landroid/os/Handler;
-
-    iput-object p3, p0, Lfpg;->b:Lgue;
+    iput-object p2, p0, Lfpg;->b:Lqkg;
 
     return-void
+.end method
+
+.method public static b(Lqkg;Lqkg;)Lfpg;
+    .locals 1
+
+    new-instance v0, Lfpg;
+
+    invoke-direct {v0, p0, p1}, Lfpg;-><init>(Lqkg;Lqkg;)V
+
+    return-object v0
 .end method
 
 
 # virtual methods
-.method public final a()I
-    .locals 1
+.method public final a()Lfpf;
+    .locals 3
 
-    const v0, 0x7fffffff
+    iget-object v0, p0, Lfpg;->a:Lqkg;
 
-    return v0
+    invoke-interface {v0}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lfpo;
+
+    iget-object v1, p0, Lfpg;->b:Lqkg;
+
+    invoke-interface {v1}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Lfou;
+
+    new-instance v2, Lfpf;
+
+    invoke-direct {v2, v0, v1}, Lfpf;-><init>(Lfpo;Lfou;)V
+
+    return-object v2
 .end method
 
-.method public final b(Lkeb;Lgue;)Z
+.method public final bridge synthetic get()Ljava/lang/Object;
     .locals 1
 
-    iget-object v0, p0, Lfpg;->a:Lfsm;
+    invoke-virtual {p0}, Lfpg;->a()Lfpf;
 
-    invoke-interface {v0, p1, p2}, Lfsm;->b(Lkeb;Lgue;)Z
+    move-result-object v0
 
-    move-result p1
-
-    return p1
-.end method
-
-.method public final declared-synchronized c(Lkeb;Lfte;Lnom;Lfsl;)V
-    .locals 8
-
-    monitor-enter p0
-
-    :try_start_0
-    new-instance v7, Lfpf;
-
-    const/4 v5, 0x0
-
-    const/4 v6, 0x0
-
-    move-object v0, v7
-
-    move-object v1, p0
-
-    move-object v2, p1
-
-    move-object v3, p2
-
-    move-object v4, p3
-
-    invoke-direct/range {v0 .. v6}, Lfpf;-><init>(Lfpg;Lkeb;Lfte;Lnom;[B[B)V
-
-    iget-object p1, p0, Lfpg;->c:Landroid/os/Handler;
-
-    new-instance p2, Lfqt;
-
-    const/4 p3, 0x1
-
-    invoke-direct {p2, p4, v7, p3}, Lfqt;-><init>(Lfsl;Lkpb;I)V
-
-    const-wide/16 p3, 0x64
-
-    invoke-virtual {p1, p2, p3, p4}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    monitor-exit p0
-
-    return-void
-
-    :catchall_0
-    move-exception p1
-
-    monitor-exit p0
-
-    throw p1
+    return-object v0
 .end method

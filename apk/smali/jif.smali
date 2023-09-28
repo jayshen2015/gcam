@@ -1,185 +1,101 @@
-.class public final Ljif;
-.super Lcbf;
+.class public final synthetic Ljif;
+.super Ljava/lang/Object;
 
 # interfaces
-.implements Ljig;
+.implements Landroid/view/View$OnClickListener;
 
 
 # instance fields
-.field private final a:Ljava/lang/Object;
+.field public final synthetic a:Landroid/widget/FrameLayout;
+
+.field public final synthetic b:Landroid/widget/ImageView;
+
+.field private final synthetic c:I
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 1
+.method public synthetic constructor <init>(Landroid/widget/FrameLayout;Landroid/widget/ImageView;I)V
+    .locals 0
 
-    const-string v0, "com.google.android.gms.dynamic.IObjectWrapper"
+    iput p3, p0, Ljif;->c:I
 
-    invoke-direct {p0, v0}, Lcbf;-><init>(Ljava/lang/String;)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    return-void
-.end method
+    iput-object p1, p0, Ljif;->a:Landroid/widget/FrameLayout;
 
-.method private constructor <init>(Ljava/lang/Object;)V
-    .locals 1
-
-    const-string v0, "com.google.android.gms.dynamic.IObjectWrapper"
-
-    invoke-direct {p0, v0}, Lcbf;-><init>(Ljava/lang/String;)V
-
-    iput-object p1, p0, Ljif;->a:Ljava/lang/Object;
+    iput-object p2, p0, Ljif;->b:Landroid/widget/ImageView;
 
     return-void
 .end method
 
-.method public static b(Ljava/lang/Object;)Ljig;
-    .locals 1
 
-    new-instance v0, Ljif;
+# virtual methods
+.method public final onClick(Landroid/view/View;)V
+    .locals 4
 
-    invoke-direct {v0, p0}, Ljif;-><init>(Ljava/lang/Object;)V
+    iget p1, p0, Ljif;->c:I
 
-    return-object v0
-.end method
+    const/16 v0, 0x8
 
-.method public static c(Ljig;)Ljava/lang/Object;
-    .locals 7
+    const/4 v1, 0x0
 
-    instance-of v0, p0, Ljif;
+    packed-switch p1, :pswitch_data_0
 
-    if-eqz v0, :cond_0
+    iget-object p1, p0, Ljif;->a:Landroid/widget/FrameLayout;
 
-    check-cast p0, Ljif;
+    iget-object v2, p0, Ljif;->b:Landroid/widget/ImageView;
 
-    iget-object p0, p0, Ljif;->a:Ljava/lang/Object;
+    invoke-virtual {p1}, Landroid/widget/FrameLayout;->getVisibility()I
 
-    return-object p0
+    move-result v3
 
-    :cond_0
-    invoke-interface {p0}, Ljig;->asBinder()Landroid/os/IBinder;
+    if-nez v3, :cond_1
 
-    move-result-object p0
+    goto :goto_1
 
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    :pswitch_0
+    iget-object p1, p0, Ljif;->a:Landroid/widget/FrameLayout;
 
-    move-result-object v0
+    iget-object v2, p0, Ljif;->b:Landroid/widget/ImageView;
 
-    invoke-virtual {v0}, Ljava/lang/Class;->getDeclaredFields()[Ljava/lang/reflect/Field;
+    invoke-virtual {p1}, Landroid/widget/FrameLayout;->getVisibility()I
 
-    move-result-object v0
+    move-result v3
 
-    array-length v1, v0
-
-    const/4 v2, 0x0
-
-    const/4 v3, 0x0
-
-    move-object v4, v3
-
-    const/4 v3, 0x0
-
-    :goto_0
-    if-ge v2, v1, :cond_2
-
-    aget-object v5, v0, v2
-
-    invoke-virtual {v5}, Ljava/lang/reflect/Field;->isSynthetic()Z
-
-    move-result v6
-
-    if-nez v6, :cond_1
-
-    add-int/lit8 v3, v3, 0x1
-
-    move-object v4, v5
-
-    :cond_1
-    add-int/lit8 v2, v2, 0x1
+    if-nez v3, :cond_0
 
     goto :goto_0
 
-    :cond_2
-    const/4 v1, 0x1
+    :cond_0
+    const/4 v0, 0x0
 
-    if-ne v3, v1, :cond_4
+    :goto_0
+    invoke-virtual {p1, v0}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
-    invoke-static {v4}, Ljhp;->ab(Ljava/lang/Object;)V
+    invoke-static {p1}, Lcom/google/android/apps/camera/ui/preference/MaterialManagedSwitchPreference;->af(Landroid/widget/FrameLayout;)I
 
-    invoke-virtual {v4}, Ljava/lang/reflect/Field;->isAccessible()Z
+    move-result p1
 
-    move-result v0
+    invoke-virtual {v2, p1}, Landroid/widget/ImageView;->setImageResource(I)V
 
-    if-nez v0, :cond_3
+    return-void
 
-    invoke-virtual {v4, v1}, Ljava/lang/reflect/Field;->setAccessible(Z)V
-
-    :try_start_0
-    invoke-virtual {v4, p0}, Ljava/lang/reflect/Field;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object p0
-    :try_end_0
-    .catch Ljava/lang/NullPointerException; {:try_start_0 .. :try_end_0} :catch_1
-    .catch Ljava/lang/IllegalAccessException; {:try_start_0 .. :try_end_0} :catch_0
-
-    return-object p0
-
-    :catch_0
-    move-exception p0
-
-    new-instance v0, Ljava/lang/IllegalArgumentException;
-
-    const-string v1, "Could not access the field in remoteBinder."
-
-    invoke-direct {v0, v1, p0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
-
-    throw v0
-
-    :catch_1
-    move-exception p0
-
-    new-instance v0, Ljava/lang/IllegalArgumentException;
-
-    const-string v1, "Binder object is null."
-
-    invoke-direct {v0, v1, p0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
-
-    throw v0
-
-    :cond_3
-    new-instance p0, Ljava/lang/IllegalArgumentException;
-
-    const-string v0, "IObjectWrapper declared field not private!"
-
-    invoke-direct {p0, v0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw p0
-
-    :cond_4
-    new-instance p0, Ljava/lang/IllegalArgumentException;
-
-    array-length v0, v0
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, "Unexpected number of IObjectWrapper declared fields: "
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-direct {p0, v0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    goto :goto_2
+    :cond_1
+    const/4 v0, 0x0
 
     :goto_1
-    throw p0
+    invoke-virtual {p1, v0}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
-    :goto_2
-    goto :goto_1
+    invoke-static {p1}, Lcom/google/android/apps/camera/ui/preference/ManagedSwitchPreference;->c(Landroid/widget/FrameLayout;)I
+
+    move-result p1
+
+    invoke-virtual {v2, p1}, Landroid/widget/ImageView;->setImageResource(I)V
+
+    return-void
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

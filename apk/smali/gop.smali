@@ -5,725 +5,476 @@
 .implements Lgoy;
 
 
-# static fields
-.field public static final a:Lnak;
-
-.field public static final b:Ljava/lang/String;
-
-.field public static final c:Ljava/lang/String;
-
-.field public static final d:Ljava/lang/String;
-
-
 # instance fields
-.field public final e:Ljava/util/concurrent/Executor;
+.field private final a:Lgoy;
 
-.field public final f:Ldhi;
+.field private final b:Lojc;
 
-.field public final g:Ljava/lang/Object;
+.field private final c:Lely;
 
-.field public final h:Ljava/lang/Object;
+.field private final d:Lely;
 
-.field public final i:Ljava/util/HashMap;
+.field private final e:Z
 
-.field public final j:Lcom/google/googlex/gcam/creativecamera/portraitmode/PortraitOutputsInterface;
+.field private final f:Z
 
-.field public k:Z
+.field private final g:Lljf;
 
-.field public final l:Lgpc;
+.field private final h:Llis;
 
-.field public final m:Lgpb;
+.field private final i:Lddf;
 
-.field private final n:Lfwx;
-
-.field private final o:Lebi;
-
-.field private final p:Z
-
-.field private final q:Lgvb;
-
-.field private final r:Loiw;
+.field private final j:Lghx;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
-
-    const-string v0, "com/google/android/apps/camera/portrait/PortraitControllerImpl"
-
-    invoke-static {v0}, Lnak;->h(Ljava/lang/String;)Lnak;
-
-    move-result-object v0
-
-    sput-object v0, Lgop;->a:Lnak;
-
-    invoke-static {}, Lcom/google/googlex/gcam/GcamModuleJNI;->kRequestCameraPrimary_get()Ljava/lang/String;
-
-    move-result-object v0
-
-    sput-object v0, Lgop;->b:Ljava/lang/String;
-
-    invoke-static {}, Lcom/google/googlex/gcam/GcamModuleJNI;->kRequestCameraSecondaryTele_get()Ljava/lang/String;
-
-    move-result-object v0
-
-    sput-object v0, Lgop;->c:Ljava/lang/String;
-
-    invoke-static {}, Lcom/google/googlex/gcam/GcamModuleJNI;->kRequestCameraSecondaryWide_get()Ljava/lang/String;
-
-    move-result-object v0
-
-    sput-object v0, Lgop;->d:Ljava/lang/String;
-
-    return-void
-.end method
-
-.method public constructor <init>(Lgpc;Lgpb;Lfwx;Ljava/util/concurrent/Executor;Ldhi;Lebi;Lgvb;Loiw;)V
-    .locals 2
+.method public constructor <init>(Lgoy;Lojc;Lghx;Lpyn;Lpyn;ZZLlir;Lljf;Lddf;)V
+    .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    new-instance v0, Ljava/lang/Object;
+    iput-object p1, p0, Lgop;->a:Lgoy;
 
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+    iput-object p2, p0, Lgop;->b:Lojc;
 
-    iput-object v0, p0, Lgop;->g:Ljava/lang/Object;
+    iput-object p3, p0, Lgop;->j:Lghx;
 
-    new-instance v1, Ljava/lang/Object;
-
-    invoke-direct {v1}, Ljava/lang/Object;-><init>()V
-
-    iput-object v1, p0, Lgop;->h:Ljava/lang/Object;
-
-    new-instance v1, Ljava/util/HashMap;
-
-    invoke-direct {v1}, Ljava/util/HashMap;-><init>()V
-
-    iput-object v1, p0, Lgop;->i:Ljava/util/HashMap;
-
-    new-instance v1, Lcom/google/googlex/gcam/creativecamera/portraitmode/PortraitOutputsInterface;
-
-    invoke-direct {v1}, Lcom/google/googlex/gcam/creativecamera/portraitmode/PortraitOutputsInterface;-><init>()V
-
-    iput-object v1, p0, Lgop;->j:Lcom/google/googlex/gcam/creativecamera/portraitmode/PortraitOutputsInterface;
-
-    const/4 v1, 0x0
-
-    iput-boolean v1, p0, Lgop;->k:Z
-
-    monitor-enter v0
-
-    :try_start_0
-    iput-object p1, p0, Lgop;->l:Lgpc;
-
-    iput-object p2, p0, Lgop;->m:Lgpb;
-
-    monitor-exit v0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    iput-object p3, p0, Lgop;->n:Lfwx;
-
-    iput-object p4, p0, Lgop;->e:Ljava/util/concurrent/Executor;
-
-    iput-object p5, p0, Lgop;->f:Ldhi;
-
-    iput-object p6, p0, Lgop;->o:Lebi;
-
-    sget-object p1, Ldib;->e:Ldhj;
-
-    invoke-interface {p5, p1}, Ldhi;->l(Ldhj;)Z
-
-    move-result p1
-
-    iput-boolean p1, p0, Lgop;->p:Z
-
-    iput-object p7, p0, Lgop;->q:Lgvb;
-
-    iput-object p8, p0, Lgop;->r:Loiw;
-
-    return-void
-
-    :catchall_0
-    move-exception p1
-
-    :try_start_1
-    monitor-exit v0
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    throw p1
-.end method
-
-.method public static a(Ljava/lang/String;Ljava/lang/String;)Lgpa;
-    .locals 1
-
-    sget-object v0, Lmpx;->a:Lmpx;
-
-    invoke-static {p0}, Lgop;->b(Ljava/lang/String;)Lmqp;
-
-    move-result-object p0
-
-    invoke-static {p1}, Lgop;->b(Ljava/lang/String;)Lmqp;
+    invoke-static {p4}, Lely;->a(Lpyn;)Lely;
 
     move-result-object p1
 
-    invoke-static {p0, p1, v0}, Lgoz;->a(Lmqp;Lmqp;Lmqp;)Lgpa;
+    iput-object p1, p0, Lgop;->c:Lely;
 
-    move-result-object p0
+    invoke-static {p5}, Lely;->a(Lpyn;)Lely;
 
-    return-object p0
-.end method
+    move-result-object p1
 
-.method public static b(Ljava/lang/String;)Lmqp;
-    .locals 2
+    iput-object p1, p0, Lgop;->d:Lely;
 
-    invoke-static {p0}, Lmqr;->b(Ljava/lang/String;)Z
+    iput-boolean p6, p0, Lgop;->e:Z
 
-    move-result v0
+    iput-boolean p7, p0, Lgop;->f:Z
 
-    if-eqz v0, :cond_0
+    iput-object p9, p0, Lgop;->g:Lljf;
 
-    sget-object p0, Lmpx;->a:Lmpx;
+    iput-object p10, p0, Lgop;->i:Lddf;
 
-    return-object p0
+    const-string p1, "MicrovideoCapCmd"
 
-    :cond_0
-    :try_start_0
-    sget-object v0, Lbet;->a:Lcvm;
+    invoke-interface {p8, p1}, Llir;->a(Ljava/lang/String;)Llis;
 
-    invoke-static {p0}, Lbfg;->a(Ljava/lang/Object;)Lber;
+    move-result-object p1
 
-    move-result-object p0
+    iput-object p1, p0, Lgop;->h:Llis;
 
-    invoke-static {p0}, Lmqp;->i(Ljava/lang/Object;)Lmqp;
-
-    move-result-object p0
-    :try_end_0
-    .catch Lbeq; {:try_start_0 .. :try_end_0} :catch_0
-
-    return-object p0
-
-    :catch_0
-    move-exception p0
-
-    sget-object p0, Lgop;->a:Lnak;
-
-    invoke-virtual {p0}, Lnaf;->b()Lnaz;
-
-    move-result-object p0
-
-    const-string v0, "String was not a serialized XMPMeta."
-
-    const/16 v1, 0xc3e
-
-    invoke-static {p0, v0, v1}, Ld;->g(Lnaz;Ljava/lang/String;C)V
-
-    sget-object p0, Lmpx;->a:Lmpx;
-
-    return-object p0
-.end method
-
-.method public static f(Ligo;)Z
-    .locals 4
-
-    iget-object v0, p0, Ligo;->b:Ljava/lang/Object;
-
-    check-cast v0, Lmqp;
-
-    invoke-virtual {v0}, Lmqp;->g()Z
-
-    move-result v1
-
-    iget-object p0, p0, Ligo;->a:Ljava/lang/Object;
-
-    const/4 v2, 0x1
-
-    const/4 v3, 0x0
-
-    if-eqz v1, :cond_0
-
-    invoke-virtual {v0}, Lmqp;->c()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lcom/google/googlex/gcam/InterleavedImageU8;
-
-    invoke-virtual {v0}, Lcom/google/googlex/gcam/InterleavedImageU8;->h()Z
-
-    move-result v0
-
-    if-nez v0, :cond_0
-
-    const/4 v0, 0x1
-
-    goto :goto_0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    :goto_0
-    check-cast p0, Lmqp;
-
-    invoke-virtual {p0}, Lmqp;->g()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_1
-
-    invoke-virtual {p0}, Lmqp;->c()Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Landroid/hardware/HardwareBuffer;
-
-    invoke-virtual {v1}, Landroid/hardware/HardwareBuffer;->getWidth()I
-
-    move-result v1
-
-    if-lez v1, :cond_1
-
-    invoke-virtual {p0}, Lmqp;->c()Ljava/lang/Object;
-
-    move-result-object p0
-
-    check-cast p0, Landroid/hardware/HardwareBuffer;
-
-    invoke-virtual {p0}, Landroid/hardware/HardwareBuffer;->getHeight()I
-
-    move-result p0
-
-    if-lez p0, :cond_1
-
-    const/4 p0, 0x1
-
-    goto :goto_1
-
-    :cond_1
-    const/4 p0, 0x0
-
-    :goto_1
-    if-nez v0, :cond_2
-
-    if-nez p0, :cond_2
-
-    return v2
-
-    :cond_2
-    return v3
+    return-void
 .end method
 
 
 # virtual methods
-.method public final c()V
-    .locals 3
+.method public final a()Llco;
+    .locals 1
 
-    iget-object v0, p0, Lgop;->e:Ljava/util/concurrent/Executor;
+    iget-object v0, p0, Lgop;->a:Lgoy;
 
-    new-instance v1, Lghc;
-
-    const/16 v2, 0xb
-
-    invoke-direct {v1, p0, v2}, Lghc;-><init>(Lgop;I)V
-
-    invoke-interface {v0, v1}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
-
-    return-void
-.end method
-
-.method public final d()V
-    .locals 0
-
-    return-void
-.end method
-
-.method public final e(JLcom/google/googlex/gcam/InterleavedImageU8;Lcom/google/googlex/gcam/InterleavedImageU16;Lfuz;Lcom/google/googlex/gcam/PortraitRequest;Lcom/google/googlex/gcam/RawReadView;Lcom/google/googlex/gcam/ShotMetadata;Lcom/google/googlex/gcam/RawReadView;Lcom/google/googlex/gcam/ShotMetadata;Lehb;)Lnou;
-    .locals 16
-
-    move-object/from16 v13, p0
-
-    move-object/from16 v6, p6
-
-    iget-object v0, v13, Lgop;->n:Lfwx;
-
-    iget-object v0, v0, Lfwx;->a:Lgda;
-
-    iget-object v0, v0, Ljvk;->d:Ljava/lang/Object;
-
-    iget-boolean v0, v13, Lgop;->p:Z
-
-    iget-wide v1, v6, Lcom/google/googlex/gcam/PortraitRequest;->a:J
-
-    invoke-static {v1, v2, v6, v0}, Lcom/google/googlex/gcam/GcamModuleJNI;->PortraitRequest_embed_gdepth_metadata_set(JLcom/google/googlex/gcam/PortraitRequest;Z)V
-
-    invoke-virtual/range {p5 .. p5}, Lklw;->k()Lklv;
-
-    move-result-object v0
-
-    sget-object v1, Lklv;->a:Lklv;
-
-    invoke-virtual {v0, v1}, Lklv;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_1
-
-    iget-object v0, v13, Lgop;->f:Ldhi;
-
-    sget-object v1, Ldib;->z:Ldhj;
-
-    invoke-interface {v0, v1}, Ldhi;->l(Ldhj;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    sget-object v0, Lnqi;->c:Lnqi;
-
-    invoke-virtual {v6, v0}, Lcom/google/googlex/gcam/PortraitRequest;->c(Lnqi;)V
-
-    goto :goto_0
-
-    :cond_0
-    sget-object v0, Lnqi;->a:Lnqi;
-
-    invoke-virtual {v6, v0}, Lcom/google/googlex/gcam/PortraitRequest;->c(Lnqi;)V
-
-    goto :goto_0
-
-    :cond_1
-    iget-object v0, v13, Lgop;->f:Ldhi;
-
-    sget-object v1, Ldib;->y:Ldhj;
-
-    invoke-interface {v0, v1}, Ldhi;->l(Ldhj;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_2
-
-    sget-object v0, Lnqi;->b:Lnqi;
-
-    invoke-virtual {v6, v0}, Lcom/google/googlex/gcam/PortraitRequest;->c(Lnqi;)V
-
-    :cond_2
-    :goto_0
-    iget-object v0, v13, Lgop;->f:Ldhi;
-
-    sget-object v1, Ldib;->C:Ldhj;
-
-    invoke-interface {v0, v1}, Ldhi;->l(Ldhj;)Z
-
-    move-result v0
-
-    iget-wide v1, v6, Lcom/google/googlex/gcam/PortraitRequest;->a:J
-
-    invoke-static {v1, v2, v6, v0}, Lcom/google/googlex/gcam/GcamModuleJNI;->PortraitRequest_allow_raw_blur_rear_set(JLcom/google/googlex/gcam/PortraitRequest;Z)V
-
-    iget-object v0, v13, Lgop;->f:Ldhi;
-
-    sget-object v1, Ldib;->B:Ldhj;
-
-    invoke-interface {v0, v1}, Ldhi;->l(Ldhj;)Z
-
-    move-result v0
-
-    iget-wide v1, v6, Lcom/google/googlex/gcam/PortraitRequest;->a:J
-
-    invoke-static {v1, v2, v6, v0}, Lcom/google/googlex/gcam/GcamModuleJNI;->PortraitRequest_allow_raw_blur_front_set(JLcom/google/googlex/gcam/PortraitRequest;Z)V
-
-    iget-object v0, v13, Lgop;->f:Ldhi;
-
-    sget-object v1, Ldib;->x:Ldhj;
-
-    invoke-interface {v0, v1}, Ldhi;->l(Ldhj;)Z
-
-    move-result v0
-
-    iget-wide v1, v6, Lcom/google/googlex/gcam/PortraitRequest;->a:J
-
-    invoke-static {v1, v2, v6, v0}, Lcom/google/googlex/gcam/GcamModuleJNI;->PortraitRequest_use_opencl_depth_set(JLcom/google/googlex/gcam/PortraitRequest;Z)V
-
-    iget-object v0, v13, Lgop;->f:Ldhi;
-
-    sget-object v1, Ldib;->E:Ldhj;
-
-    invoke-interface {v0, v1}, Ldhi;->l(Ldhj;)Z
-
-    move-result v0
-
-    const/4 v1, 0x3
-
-    const/4 v2, 0x1
-
-    if-eqz v0, :cond_3
-
-    invoke-static {v1}, Lgoz;->b(I)I
-
-    move-result v0
-
-    goto :goto_1
-
-    :cond_3
-    invoke-static {v2}, Lgoz;->b(I)I
-
-    move-result v0
-
-    :goto_1
-    sget-object v3, Lnrd;->d:[Lnrd;
-
-    aget-object v3, v3, v0
-
-    iget v4, v3, Lnrd;->e:I
-
-    const/4 v5, 0x0
-
-    if-ne v4, v0, :cond_4
-
-    goto :goto_3
-
-    :cond_4
-    const/4 v3, 0x0
-
-    :goto_2
-    sget-object v4, Lnrd;->d:[Lnrd;
-
-    if-ge v3, v1, :cond_9
-
-    aget-object v4, v4, v3
-
-    iget v7, v4, Lnrd;->e:I
-
-    if-ne v7, v0, :cond_8
-
-    move-object v3, v4
-
-    :goto_3
-    iget-wide v0, v6, Lcom/google/googlex/gcam/PortraitRequest;->a:J
-
-    iget v3, v3, Lnrd;->e:I
-
-    invoke-static {v0, v1, v6, v3}, Lcom/google/googlex/gcam/GcamModuleJNI;->PortraitRequest_relighting_option_set(JLcom/google/googlex/gcam/PortraitRequest;I)V
-
-    iget-object v0, v13, Lgop;->q:Lgvb;
-
-    invoke-virtual/range {p5 .. p5}, Lklw;->k()Lklv;
-
-    move-result-object v1
-
-    invoke-interface {v0, v1}, Lgvb;->h(Lklv;)Z
-
-    move-result v0
-
-    iget-wide v3, v6, Lcom/google/googlex/gcam/PortraitRequest;->a:J
-
-    invoke-static {v3, v4, v6, v0}, Lcom/google/googlex/gcam/GcamModuleJNI;->PortraitRequest_horizontal_flip_set(JLcom/google/googlex/gcam/PortraitRequest;Z)V
-
-    iget-object v0, v13, Lgop;->f:Ldhi;
-
-    sget-object v1, Ldib;->G:Ldhj;
-
-    invoke-interface {v0, v1}, Ldhi;->l(Ldhj;)Z
-
-    move-result v0
-
-    iget-wide v3, v6, Lcom/google/googlex/gcam/PortraitRequest;->a:J
-
-    invoke-static {v3, v4, v6, v0}, Lcom/google/googlex/gcam/GcamModuleJNI;->PortraitRequest_use_spotlight_enhance_set(JLcom/google/googlex/gcam/PortraitRequest;Z)V
-
-    iget-object v0, v13, Lgop;->f:Ldhi;
-
-    sget-object v1, Ldib;->H:Ldhj;
-
-    invoke-interface {v0, v1}, Ldhi;->l(Ldhj;)Z
-
-    move-result v0
-
-    iget-wide v3, v6, Lcom/google/googlex/gcam/PortraitRequest;->a:J
-
-    invoke-static {v3, v4, v6, v0}, Lcom/google/googlex/gcam/GcamModuleJNI;->PortraitRequest_use_spotlight_enhance_v2_set(JLcom/google/googlex/gcam/PortraitRequest;Z)V
-
-    iget-object v0, v13, Lgop;->f:Ldhi;
-
-    sget-object v1, Ldib;->s:Ldhj;
-
-    invoke-interface {v0, v1}, Ldhi;->l(Ldhj;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_5
-
-    invoke-virtual/range {p5 .. p5}, Lklw;->k()Lklv;
-
-    move-result-object v0
-
-    sget-object v1, Lklv;->a:Lklv;
-
-    invoke-virtual {v0, v1}, Lklv;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_5
-
-    goto :goto_4
-
-    :cond_5
-    const/4 v2, 0x0
-
-    :goto_4
-    iget-wide v0, v6, Lcom/google/googlex/gcam/PortraitRequest;->a:J
-
-    invoke-static {v0, v1, v6, v2}, Lcom/google/googlex/gcam/GcamModuleJNI;->PortraitRequest_apply_portrait_matting_set(JLcom/google/googlex/gcam/PortraitRequest;Z)V
-
-    iget-object v0, v13, Lgop;->f:Ldhi;
-
-    invoke-interface {v0}, Ldhi;->e()V
-
-    iget-wide v0, v6, Lcom/google/googlex/gcam/PortraitRequest;->a:J
-
-    invoke-static {v0, v1, v6, v5}, Lcom/google/googlex/gcam/GcamModuleJNI;->PortraitRequest_use_gpu_resample_set(JLcom/google/googlex/gcam/PortraitRequest;Z)V
-
-    iget-object v0, v13, Lgop;->f:Ldhi;
-
-    sget-object v1, Ldib;->K:Ldhj;
-
-    invoke-interface {v0, v1}, Ldhi;->l(Ldhj;)Z
-
-    move-result v0
-
-    iget-wide v1, v6, Lcom/google/googlex/gcam/PortraitRequest;->a:J
-
-    invoke-static {v1, v2, v6, v0}, Lcom/google/googlex/gcam/GcamModuleJNI;->PortraitRequest_enable_gpu_boost_set(JLcom/google/googlex/gcam/PortraitRequest;Z)V
-
-    iget-object v0, v13, Lgop;->r:Loiw;
-
-    check-cast v0, Lfix;
-
-    invoke-virtual {v0}, Lfix;->b()Lmqp;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lmqp;->g()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_6
-
-    invoke-virtual {v0}, Lmqp;->c()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/io/File;
-
-    invoke-virtual {v0}, Ljava/io/File;->getAbsolutePath()Ljava/lang/String;
-
-    move-result-object v0
-
-    iget-wide v1, v6, Lcom/google/googlex/gcam/PortraitRequest;->a:J
-
-    invoke-static {v1, v2, v6, v0}, Lcom/google/googlex/gcam/GcamModuleJNI;->PortraitRequest_cache_directory_set(JLcom/google/googlex/gcam/PortraitRequest;Ljava/lang/String;)V
-
-    :cond_6
-    iget-object v0, v13, Lgop;->o:Lebi;
-
-    invoke-virtual {v0}, Lebi;->c()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_7
-
-    sget-object v0, Lnqk;->c:Lnqk;
-
-    iget-wide v1, v6, Lcom/google/googlex/gcam/PortraitRequest;->a:J
-
-    iget v0, v0, Lnqk;->f:I
-
-    invoke-static {v1, v2, v6, v0}, Lcom/google/googlex/gcam/GcamModuleJNI;->PortraitRequest_execute_finish_on_set(JLcom/google/googlex/gcam/PortraitRequest;I)V
-
-    :cond_7
-    iget-object v0, v13, Lgop;->f:Ldhi;
-
-    sget-object v1, Ldib;->I:Ldhj;
-
-    invoke-interface {v0, v1}, Ldhi;->l(Ldhj;)Z
-
-    move-result v5
-
-    iget-object v14, v13, Lgop;->n:Lfwx;
-
-    new-instance v15, Lgom;
-
-    move-object v0, v15
-
-    move-object/from16 v1, p0
-
-    move-wide/from16 v2, p1
-
-    move-object/from16 v4, p11
-
-    move-object/from16 v6, p6
-
-    move-object/from16 v7, p7
-
-    move-object/from16 v8, p8
-
-    move-object/from16 v9, p9
-
-    move-object/from16 v10, p10
-
-    move-object/from16 v11, p4
-
-    move-object/from16 v12, p3
-
-    invoke-direct/range {v0 .. v12}, Lgom;-><init>(Lgop;JLehb;ZLcom/google/googlex/gcam/PortraitRequest;Lcom/google/googlex/gcam/RawReadView;Lcom/google/googlex/gcam/ShotMetadata;Lcom/google/googlex/gcam/RawReadView;Lcom/google/googlex/gcam/ShotMetadata;Lcom/google/googlex/gcam/InterleavedImageU16;Lcom/google/googlex/gcam/InterleavedImageU8;)V
-
-    invoke-virtual {v14, v15}, Lfwx;->a(Lfwu;)Lnou;
+    invoke-interface {v0}, Lgoy;->a()Llco;
 
     move-result-object v0
 
     return-object v0
+.end method
 
-    :cond_8
-    add-int/lit8 v3, v3, 0x1
+.method public final b()Llco;
+    .locals 1
 
-    goto/16 :goto_2
+    iget-object v0, p0, Lgop;->a:Lgoy;
 
-    :cond_9
-    const-class v1, Lnrd;
-
-    new-instance v2, Ljava/lang/IllegalArgumentException;
-
-    invoke-virtual {v1}, Ljava/lang/Object;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v4, "No enum "
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v1, " with value "
-
-    invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-interface {v0}, Lgoy;->b()Llco;
 
     move-result-object v0
 
-    invoke-direct {v2, v0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+    return-object v0
+.end method
 
-    goto :goto_6
+.method public final c(Lgox;Lgog;)V
+    .locals 9
 
-    :goto_5
-    throw v2
+    iget-object v0, p0, Lgop;->g:Lljf;
 
-    :goto_6
+    const-string v1, "MvCaptureCommand"
+
+    invoke-interface {v0, v1}, Lljf;->e(Ljava/lang/String;)V
+
+    iget-boolean v0, p0, Lgop;->e:Z
+
+    xor-int/lit8 v0, v0, 0x1
+
+    iget-object v1, p2, Lgog;->a:Lgfs;
+
+    iget-boolean v1, v1, Lgfs;->i:Z
+
+    iget-object v2, p0, Lgop;->h:Llis;
+
+    iget-object v3, p0, Lgop;->c:Lely;
+
+    invoke-virtual {v3}, Lely;->c()Z
+
+    move-result v3
+
+    iget-object v4, p0, Lgop;->a:Lgoy;
+
+    invoke-static {v4}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-static {v4}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-virtual {v5}, Ljava/lang/String;->length()I
+
+    move-result v5
+
+    new-instance v6, Ljava/lang/StringBuilder;
+
+    add-int/lit8 v5, v5, 0x39
+
+    invoke-direct {v6, v5}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string v5, "captureImage: microvideoApi present="
+
+    invoke-virtual {v6, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v6, v3}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    const-string v3, " primaryCommand="
+
+    invoke-virtual {v6, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v6, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-interface {v2, v3}, Llis;->f(Ljava/lang/String;)V
+
+    iget-object v2, p2, Lgog;->b:Lhsa;
+
+    iget-object v3, p0, Lgop;->g:Lljf;
+
+    const-string v4, "setup"
+
+    invoke-interface {v3, v4}, Lljf;->e(Ljava/lang/String;)V
+
+    instance-of v3, v2, Lhqu;
+
+    if-eqz v3, :cond_0
+
+    move-object v3, v2
+
+    check-cast v3, Lhqu;
+
+    invoke-static {v3}, Lojc;->i(Ljava/lang/Object;)Lojc;
+
+    move-result-object v3
+
+    goto :goto_0
+
+    :cond_0
+    sget-object v3, Loih;->a:Loih;
+
+    :goto_0
+    invoke-virtual {v3}, Lojc;->g()Z
+
+    move-result v4
+
+    if-nez v4, :cond_1
+
+    iget-object v4, p0, Lgop;->h:Llis;
+
+    invoke-static {v2}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-static {v5}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v6
+
+    invoke-virtual {v6}, Ljava/lang/String;->length()I
+
+    move-result v6
+
+    new-instance v7, Ljava/lang/StringBuilder;
+
+    add-int/lit8 v6, v6, 0x21
+
+    invoke-direct {v7, v6}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string v6, "Capture session not a Photo one: "
+
+    invoke-virtual {v7, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v7, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v7}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-interface {v4, v5}, Llis;->h(Ljava/lang/String;)V
+
+    :cond_1
+    iget-object v4, p0, Lgop;->c:Lely;
+
+    invoke-virtual {v4}, Lely;->c()Z
+
+    move-result v4
+
+    const/4 v5, 0x0
+
+    if-eqz v4, :cond_5
+
+    if-nez v0, :cond_2
+
+    if-eqz v1, :cond_5
+
+    :cond_2
+    invoke-virtual {v3}, Lojc;->g()Z
+
+    move-result v4
+
+    if-eqz v4, :cond_5
+
+    iget-object v4, p2, Lgog;->a:Lgfs;
+
+    iget v4, v4, Lgfs;->a:I
+
+    iget-object v6, p0, Lgop;->j:Lghx;
+
+    iget-object v7, p0, Lgop;->i:Lddf;
+
+    invoke-static {v4, v6, v7}, Lbrg;->d(ILlvp;Lddf;)I
+
+    move-result v4
+
+    iget-object v6, p0, Lgop;->d:Lely;
+
+    invoke-virtual {v6}, Lely;->c()Z
+
+    move-result v6
+
+    if-eqz v6, :cond_3
+
+    iget-object v5, p0, Lgop;->g:Lljf;
+
+    const-string v6, "createSession"
+
+    invoke-interface {v5, v6}, Lljf;->g(Ljava/lang/String;)V
+
+    iget-object v5, p0, Lgop;->d:Lely;
+
+    invoke-virtual {v5}, Lely;->b()Ljava/lang/Object;
+
+    move-result-object v5
+
+    check-cast v5, Lfui;
+
+    iget-object v6, p2, Lgog;->b:Lhsa;
+
+    invoke-interface {v6}, Lhsa;->d()J
+
+    move-result-wide v6
+
+    iget-object v8, p2, Lgog;->b:Lhsa;
+
+    invoke-interface {v8}, Lhsa;->h()Lhsp;
+
+    move-result-object v8
+
+    invoke-virtual {v5, v6, v7, v8}, Lfui;->a(JLhsp;)Lfuh;
+
+    move-result-object v5
+
+    goto :goto_1
+
+    :cond_3
+    :goto_1
+    iget-object v6, p0, Lgop;->g:Lljf;
+
+    const-string v7, "attachSession"
+
+    invoke-interface {v6, v7}, Lljf;->g(Ljava/lang/String;)V
+
+    invoke-virtual {v3}, Lojc;->c()Ljava/lang/Object;
+
+    move-result-object v3
+
+    check-cast v3, Lhqu;
+
+    iget-object v6, p0, Lgop;->c:Lely;
+
+    invoke-virtual {v6}, Lely;->b()Ljava/lang/Object;
+
+    move-result-object v6
+
+    check-cast v6, Lfpm;
+
+    iget-boolean v7, p0, Lgop;->f:Z
+
+    if-eqz v5, :cond_4
+
+    iget-object v8, v5, Lfuh;->a:Lpih;
+
+    goto :goto_2
+
+    :cond_4
+    sget-object v8, Loih;->a:Loih;
+
+    invoke-static {v8}, Lplk;->V(Ljava/lang/Object;)Lpht;
+
+    move-result-object v8
+
+    :goto_2
+    invoke-interface {v6, v2, v4, v7, v8}, Lfpm;->a(Lhsa;IZLpht;)Lfpl;
+
+    move-result-object v2
+
+    invoke-static {v2}, Lojc;->i(Ljava/lang/Object;)Lojc;
+
+    move-result-object v2
+
+    iput-object v2, v3, Lhqu;->c:Lojc;
+
+    goto :goto_3
+
+    :cond_5
+    :goto_3
+    if-nez v0, :cond_6
+
+    if-nez v1, :cond_6
+
+    iget-object v0, p0, Lgop;->b:Lojc;
+
+    invoke-virtual {v0}, Lojc;->g()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_6
+
+    iget-object v0, p0, Lgop;->g:Lljf;
+
+    const-string v1, "fallbackCommand#captureImage"
+
+    invoke-interface {v0, v1}, Lljf;->g(Ljava/lang/String;)V
+
+    iget-object v0, p0, Lgop;->b:Lojc;
+
+    invoke-virtual {v0}, Lojc;->c()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lgoy;
+
+    invoke-interface {v0, p1, p2}, Lgoy;->c(Lgox;Lgog;)V
+
+    goto :goto_4
+
+    :cond_6
+    iget-object v0, p0, Lgop;->g:Lljf;
+
+    const-string v1, "primaryCommand#captureImage"
+
+    invoke-interface {v0, v1}, Lljf;->g(Ljava/lang/String;)V
+
+    iget-object v0, p0, Lgop;->a:Lgoy;
+
+    invoke-interface {v0, p1, p2}, Lgoy;->c(Lgox;Lgog;)V
+
+    :goto_4
+    if-eqz v5, :cond_8
+
+    iget-object p1, p0, Lgop;->g:Lljf;
+
+    const-string p2, "deactivate"
+
+    invoke-interface {p1, p2}, Lljf;->g(Ljava/lang/String;)V
+
+    iget-object p1, v5, Lfuh;->f:Lfui;
+
+    monitor-enter p1
+
+    :try_start_0
+    iget-boolean p2, v5, Lfuh;->c:Z
+
+    if-nez p2, :cond_7
+
+    iget-object p2, v5, Lfuh;->a:Lpih;
+
+    sget-object v0, Loih;->a:Loih;
+
+    invoke-virtual {p2, v0}, Lpih;->o(Ljava/lang/Object;)Z
+
+    :cond_7
+    iget-object p2, v5, Lfuh;->b:Llie;
+
+    invoke-interface {p2}, Llie;->close()V
+
+    monitor-exit p1
+
     goto :goto_5
+
+    :catchall_0
+    move-exception p2
+
+    monitor-exit p1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw p2
+
+    :cond_8
+    :goto_5
+    iget-object p1, p0, Lgop;->g:Lljf;
+
+    invoke-interface {p1}, Lljf;->f()V
+
+    iget-object p1, p0, Lgop;->g:Lljf;
+
+    invoke-interface {p1}, Lljf;->f()V
+
+    return-void
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .locals 3
+
+    invoke-static {p0}, Lobr;->aZ(Ljava/lang/Object;)Lojb;
+
+    move-result-object v0
+
+    const/4 v1, 0x1
+
+    iput-boolean v1, v0, Lojb;->a:Z
+
+    iget-object v1, p0, Lgop;->a:Lgoy;
+
+    const-string v2, "primaryCommand"
+
+    invoke-virtual {v0, v2, v1}, Lojb;->b(Ljava/lang/String;Ljava/lang/Object;)V
+
+    iget-object v1, p0, Lgop;->b:Lojc;
+
+    invoke-virtual {v1}, Lojc;->f()Ljava/lang/Object;
+
+    move-result-object v1
+
+    const-string v2, "fallback"
+
+    invoke-virtual {v0, v2, v1}, Lojb;->b(Ljava/lang/String;Ljava/lang/Object;)V
+
+    invoke-virtual {v0}, Lojb;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
 .end method

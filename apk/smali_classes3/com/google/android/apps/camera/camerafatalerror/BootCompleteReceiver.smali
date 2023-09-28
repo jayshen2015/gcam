@@ -16,7 +16,7 @@
 .method public final onReceive(Landroid/content/Context;Landroid/content/Intent;)V
     .locals 1
 
-    invoke-static {p1}, Laoo;->c(Landroid/content/Context;)Landroid/content/SharedPreferences;
+    invoke-static {p1}, Lahj;->c(Landroid/content/Context;)Landroid/content/SharedPreferences;
 
     move-result-object p1
 

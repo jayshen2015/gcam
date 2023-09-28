@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <attr name="aebMainButtonSizeDp" format="reference|dimension" />
-    <attr name="aebSubButtonSizeDp" format="reference|dimension" />
-    <attr name="accessibilityActionForActionButton" format="string" />
-    <attr name="accessibilityActionForItemSelection" format="string" />
-    <attr name="accessibilityActionForNextColumnButton" format="string" />
-    <attr name="accessibilityActionForToggleChange" format="string" />
+    <attr name="ConstraintRotate">
+        <enum name="left" value="2" />
+        <enum name="none" value="0" />
+        <enum name="right" value="1" />
+        <enum name="x_left" value="4" />
+        <enum name="x_right" value="3" />
+    </attr>
+    <item type="attr" name="APKTOOL_DUMMY_1" />
+    <item type="attr" name="APKTOOL_DUMMY_2" />
     <attr name="actionBarDivider" format="reference" />
     <attr name="actionBarItemBackground" format="reference" />
     <attr name="actionBarPopupTheme" format="reference" />
@@ -22,7 +25,7 @@
     <attr name="actionButtonStyle" format="reference" />
     <attr name="actionDropDownStyle" format="reference" />
     <attr name="actionLayout" format="reference" />
-    <attr name="aebButtonGapDp" format="reference|dimension" />
+    <item type="attr" name="APKTOOL_DUMMY_11" />
     <attr name="actionMenuTextAppearance" format="reference" />
     <attr name="actionMenuTextColor" format="reference|color" />
     <attr name="actionModeBackground" format="reference" />
@@ -45,11 +48,8 @@
     <attr name="actionProviderClass" format="string" />
     <attr name="actionTextColorAlpha" format="float" />
     <attr name="actionViewClass" format="string" />
-    <attr name="aebStartAngleDegree" format="reference|integer" />
-    <attr name="aebEndAngleDegree" format="reference|integer" />
+    <item type="attr" name="APKTOOL_DUMMY_28" />
     <attr name="activityChooserViewStyle" format="reference" />
-    <attr name="aebAnimDurationMillis" format="reference|integer" />
-    <attr name="addElevationShadow" format="boolean" />
     <attr name="adjustable" format="boolean" />
     <attr name="alertDialogButtonGroupStyle" format="reference" />
     <attr name="alertDialogCenterButtons" format="boolean" />
@@ -58,7 +58,6 @@
     <attr name="allowDividerAbove" format="boolean" />
     <attr name="allowDividerAfterLastItem" format="boolean" />
     <attr name="allowDividerBelow" format="boolean" />
-    <attr name="allowLongPress" format="boolean" />
     <attr name="allowStacking" format="boolean" />
     <attr name="alpha" format="float" />
     <attr name="alphabeticModifiers">
@@ -69,14 +68,9 @@
         <flag name="SHIFT" value="0x00000001" />
         <flag name="SYM" value="0x00000004" />
     </attr>
-    <attr name="aebButtonElevation" format="reference|dimension" />
-    <attr name="aebMaskBackgroundColor" format="reference|color" />
-    <attr name="anchorAngleDegrees" format="float" />
-    <attr name="anchorPosition">
-        <enum name="center" value="1" />
-        <enum name="end" value="2" />
-        <enum name="start" value="0" />
-    </attr>
+    <item type="attr" name="APKTOOL_DUMMY_35" />
+    <item type="attr" name="APKTOOL_DUMMY_36" />
+    <item type="attr" name="APKTOOL_DUMMY_37" />
     <attr name="animateCircleAngleTo">
         <enum name="antiClockwise" value="3" />
         <enum name="bestChoice" value="0" />
@@ -84,23 +78,22 @@
         <enum name="closest" value="1" />
         <enum name="constraint" value="4" />
     </attr>
-    <attr name="aebIsSelectionMode" format="boolean" />
-    <attr name="aebMainButtonTextColor" format="reference|color" />
+    <item type="attr" name="APKTOOL_DUMMY_39" />
+    <item type="attr" name="APKTOOL_DUMMY_3a" />
     <attr name="animateRelativeTo" format="reference" />
-    <attr name="aebSubButtonTextColor" format="reference|color" />
     <attr name="animationMode">
         <enum name="fade" value="1" />
         <enum name="slide" value="0" />
     </attr>
     <attr name="appBarLayoutStyle" format="reference" />
-    <attr name="aebMainButtonTextSizeSp" format="reference|dimension" />
-    <attr name="aebSubButtonTextSizeSp" format="reference|dimension" />
+    <item type="attr" name="APKTOOL_DUMMY_3e" />
+    <item type="attr" name="APKTOOL_DUMMY_3f" />
     <attr name="arrowHeadLength" format="dimension" />
     <attr name="arrowShaftLength" format="dimension" />
     <attr name="attributeName" format="string" />
-    <attr name="aebRippleEffect" format="boolean" />
+    <item type="attr" name="APKTOOL_DUMMY_43" />
     <attr name="autoCompleteTextViewStyle" format="reference" />
-    <attr name="aebRippleColor" format="reference|color" />
+    <item type="attr" name="APKTOOL_DUMMY_45" />
     <attr name="autoSizeMaxTextSize" format="dimension" />
     <attr name="autoSizeMinTextSize" format="dimension" />
     <attr name="autoSizePresetSizes" format="reference" />
@@ -109,12 +102,10 @@
         <enum name="none" value="0" />
         <enum name="uniform" value="1" />
     </attr>
-    <attr name="aebMainButtonRotateDegree" format="reference|integer" />
+    <item type="attr" name="APKTOOL_DUMMY_4b" />
     <attr name="background" format="reference" />
     <attr name="backgroundColor" format="color" />
     <attr name="backgroundDrawable" format="reference" />
-    <attr name="aebMainButtonRotateAnimDurationMillis" format="reference|integer" />
-    <attr name="aebBlurBackground" format="boolean" />
     <attr name="backgroundInsetBottom" format="dimension" />
     <attr name="backgroundInsetEnd" format="dimension" />
     <attr name="backgroundInsetStart" format="dimension" />
@@ -152,8 +143,7 @@
     </attr>
     <attr name="badgeRadius" format="dimension" />
     <attr name="badgeStyle" format="reference" />
-    <attr name="badgeTextAppearance" format="reference" />
-    <attr name="badgeTextColor" format="color" />
+    <item type="attr" name="APKTOOL_DUMMY_64" />
     <attr name="badgeWidePadding" format="dimension" />
     <attr name="badgeWithTextRadius" format="dimension" />
     <attr name="barLength" format="dimension" />
@@ -167,18 +157,6 @@
         <enum name="top" value="2" />
     </attr>
     <attr name="barrierMargin" format="dimension" />
-    <attr name="baseBarColor" format="reference|color" />
-    <attr name="aebBlurRadius" format="reference|float" />
-    <attr name="max" format="integer" />
-    <attr name="seekBarProgress" format="integer" />
-    <attr name="thumb" format="reference" />
-    <attr name="progressDrawable" format="reference" />
-    <attr name="custom_color3" format="reference|color" />
-    <attr name="custom_size3" format="reference|dimension" />
-    <attr name="baselineToBottomWearButton1" format="dimension" />
-    <attr name="baselineToBottomWearCaption1" format="dimension" />
-    <attr name="baselineToTopWearButton1" format="dimension" />
-    <attr name="baselineToTopWearCaption1" format="dimension" />
     <attr name="behavior_autoHide" format="boolean" />
     <attr name="behavior_autoShrink" format="boolean" />
     <attr name="behavior_draggable" format="boolean" />
@@ -198,17 +176,16 @@
         <flag name="peekHeight" value="0x00000001" />
         <flag name="skipCollapsed" value="0x00000008" />
     </attr>
-    <attr name="behavior_significantVelocityThreshold" format="dimension" />
     <attr name="behavior_skipCollapsed" format="boolean" />
-    <attr name="blendMode">
-        <enum name="alpha" value="2" />
-        <enum name="color" value="1" />
-        <enum name="none" value="0" />
-    </attr>
+    <item type="attr" name="APKTOOL_DUMMY_76" />
+    <item type="attr" name="APKTOOL_DUMMY_77" />
+    <item type="attr" name="APKTOOL_DUMMY_78" />
     <attr name="borderColor" format="color" />
     <attr name="borderDashGap" format="dimension" />
     <attr name="borderDashWidth" format="dimension" />
     <attr name="borderRadius" format="dimension" />
+    <item type="attr" name="APKTOOL_DUMMY_7d" />
+    <item type="attr" name="APKTOOL_DUMMY_7e" />
     <attr name="borderStyle">
         <enum name="dashed" value="2" />
         <enum name="none" value="0" />
@@ -220,9 +197,7 @@
     <attr name="bottomDrawerStyle" format="reference" />
     <attr name="bottomInsetScrimEnabled" format="boolean" />
     <attr name="bottomNavigationStyle" format="reference" />
-    <attr name="bottomPaddingPercent" format="float" />
     <attr name="bottomSheetDialogTheme" format="reference" />
-    <attr name="bottomSheetDragHandleStyle" format="reference" />
     <attr name="bottomSheetStyle" format="reference" />
     <attr name="boxBackgroundColor" format="color" />
     <attr name="boxBackgroundMode">
@@ -231,21 +206,16 @@
         <enum name="outline" value="2" />
     </attr>
     <attr name="boxCollapsedPaddingTop" format="dimension" />
+    <item type="attr" name="APKTOOL_DUMMY_8b" />
+    <item type="attr" name="APKTOOL_DUMMY_8c" />
+    <item type="attr" name="APKTOOL_DUMMY_8d" />
+    <item type="attr" name="APKTOOL_DUMMY_8e" />
     <attr name="boxStrokeColor" format="color" />
     <attr name="boxStrokeErrorColor" format="color" />
     <attr name="boxStrokeWidth" format="dimension" />
     <attr name="boxStrokeWidthFocused" format="dimension" />
-    <attr name="boxedEdges">
-        <flag name="all" value="0x0000000f" />
-        <flag name="bottom" value="0x00000008" />
-        <flag name="left" value="0x00000001" />
-        <flag name="none" value="0x00000000" />
-        <flag name="right" value="0x00000004" />
-        <flag name="top" value="0x00000002" />
-    </attr>
-    <attr name="buttonActiveBackgroundColor" format="color" />
-    <attr name="buttonActiveIconTint" format="color" />
-    <attr name="buttonBackgroundColor" format="reference|color" />
+    <item type="attr" name="APKTOOL_DUMMY_93" />
+    <item type="attr" name="APKTOOL_DUMMY_94" />
     <attr name="buttonBarButtonStyle" format="reference" />
     <attr name="buttonBarNegativeButtonStyle" format="reference" />
     <attr name="buttonBarNeutralButtonStyle" format="reference" />
@@ -257,21 +227,10 @@
         <flag name="center_vertical" value="0x00000010" />
         <flag name="top" value="0x00000030" />
     </attr>
-    <attr name="buttonIcon" format="reference" />
     <attr name="buttonIconDimen" format="dimension" />
-    <attr name="buttonIconTint" format="reference|color" />
-    <attr name="buttonIconTintMode">
-        <enum name="add" value="16" />
-        <enum name="multiply" value="14" />
-        <enum name="screen" value="15" />
-        <enum name="src_atop" value="9" />
-        <enum name="src_in" value="5" />
-        <enum name="src_over" value="3" />
-    </attr>
-    <attr name="buttonInactiveBackgroundColor" format="color" />
-    <attr name="buttonInactiveIconTint" format="color" />
     <attr name="buttonPanelSideLayout" format="reference" />
     <attr name="buttonRippleColor" format="reference|color" />
+    <item type="attr" name="APKTOOL_DUMMY_9f" />
     <attr name="buttonStyle" format="reference" />
     <attr name="buttonStyleSmall" format="reference" />
     <attr name="buttonTint" format="color" />
@@ -283,6 +242,11 @@
         <enum name="src_in" value="5" />
         <enum name="src_over" value="3" />
     </attr>
+    <item type="attr" name="APKTOOL_DUMMY_a4" />
+    <item type="attr" name="APKTOOL_DUMMY_a5" />
+    <item type="attr" name="APKTOOL_DUMMY_a6" />
+    <item type="attr" name="APKTOOL_DUMMY_a7" />
+    <item type="attr" name="APKTOOL_DUMMY_a8" />
     <attr name="cardBackgroundColor" format="color" />
     <attr name="cardCornerRadius" format="dimension" />
     <attr name="cardElevation" format="dimension" />
@@ -291,40 +255,40 @@
     <attr name="cardPreventCornerOverlap" format="boolean" />
     <attr name="cardUseCompatPadding" format="boolean" />
     <attr name="cardViewStyle" format="reference" />
-    <attr name="centerEdgeItems" format="boolean" />
-    <attr name="centerIfNoTextEnabled" format="boolean" />
+    <item type="attr" name="APKTOOL_DUMMY_b1" />
+    <item type="attr" name="APKTOOL_DUMMY_b2" />
+    <item type="attr" name="APKTOOL_DUMMY_b3" />
+    <item type="attr" name="APKTOOL_DUMMY_b4" />
+    <item type="attr" name="APKTOOL_DUMMY_b5" />
+    <item type="attr" name="APKTOOL_DUMMY_b6" />
+    <item type="attr" name="APKTOOL_DUMMY_b7" />
+    <item type="attr" name="APKTOOL_DUMMY_b8" />
+    <item type="attr" name="APKTOOL_DUMMY_b9" />
+    <item type="attr" name="APKTOOL_DUMMY_ba" />
     <attr name="chainUseRtl" format="boolean" />
     <attr name="checkBoxPreferenceStyle" format="reference" />
-    <attr name="checkMarkCompat" format="reference" />
-    <attr name="checkMarkTint" format="color" />
-    <attr name="checkMarkTintMode">
-        <enum name="add" value="16" />
-        <enum name="multiply" value="14" />
-        <enum name="screen" value="15" />
-        <enum name="src_atop" value="9" />
-        <enum name="src_in" value="5" />
-        <enum name="src_over" value="3" />
-    </attr>
     <attr name="checkboxStyle" format="reference" />
+    <item type="attr" name="APKTOOL_DUMMY_be" />
+    <item type="attr" name="APKTOOL_DUMMY_bf" />
     <attr name="checkedIcon" format="reference" />
+    <item type="attr" name="APKTOOL_DUMMY_c1" />
     <attr name="checkedIconMargin" format="dimension" />
     <attr name="checkedIconSize" format="dimension" />
     <attr name="checkedIconTint" format="color" />
     <attr name="checkedIconVisible" format="boolean" />
-    <attr name="checkedState">
-        <enum name="checked" value="1" />
-        <enum name="indeterminate" value="2" />
-        <enum name="unchecked" value="0" />
-    </attr>
     <attr name="checkedTextViewStyle" format="reference" />
     <attr name="chipBackgroundColor" format="color" />
+    <item type="attr" name="APKTOOL_DUMMY_c8" />
     <attr name="chipEndPadding" format="dimension" />
     <attr name="chipGroupStyle" format="reference" />
     <attr name="chipIcon" format="reference" />
+    <item type="attr" name="APKTOOL_DUMMY_cc" />
     <attr name="chipIconSize" format="dimension" />
+    <item type="attr" name="APKTOOL_DUMMY_ce" />
     <attr name="chipIconVisible" format="boolean" />
     <attr name="chipMinHeight" format="dimension" />
     <attr name="chipMinTouchTargetSize" format="dimension" />
+    <item type="attr" name="APKTOOL_DUMMY_d2" />
     <attr name="chipSpacingHorizontal" format="dimension" />
     <attr name="chipSpacingVertical" format="dimension" />
     <attr name="chipStandaloneStyle" format="reference" />
@@ -333,6 +297,8 @@
     <attr name="chipStrokeWidth" format="dimension" />
     <attr name="chipStyle" format="reference" />
     <attr name="chipSurfaceColor" format="color" />
+    <item type="attr" name="APKTOOL_DUMMY_db" />
+    <item type="attr" name="APKTOOL_DUMMY_dc" />
     <attr name="circle_border_cap">
         <enum name="butt" value="0" />
         <enum name="round" value="1" />
@@ -347,11 +313,16 @@
     <attr name="circle_radius_pressed" format="dimension" />
     <attr name="circle_radius_pressed_percent" format="fraction" />
     <attr name="circularProgressIndicatorStyle" format="reference" />
+    <item type="attr" name="APKTOOL_DUMMY_e7" />
+    <item type="attr" name="APKTOOL_DUMMY_e8" />
     <attr name="circularflow_angles" format="string" />
     <attr name="circularflow_defaultAngle" format="float" />
     <attr name="circularflow_defaultRadius" format="dimension" />
     <attr name="circularflow_radiusInDP" format="string" />
     <attr name="circularflow_viewCenter" format="reference" />
+    <item type="attr" name="APKTOOL_DUMMY_ee" />
+    <item type="attr" name="APKTOOL_DUMMY_ef" />
+    <item type="attr" name="APKTOOL_DUMMY_f0" />
     <attr name="clip_dimen">
         <enum name="height" value="1" />
         <enum name="none" value="0" />
@@ -361,8 +332,9 @@
     <attr name="clockHandColor" format="color" />
     <attr name="clockIcon" format="reference" />
     <attr name="clockNumberTextColor" format="color" />
-    <attr name="clockwise" format="boolean" />
+    <item type="attr" name="APKTOOL_DUMMY_f6" />
     <attr name="closeIcon" format="reference" />
+    <item type="attr" name="APKTOOL_DUMMY_f8" />
     <attr name="closeIconEndPadding" format="dimension" />
     <attr name="closeIconSize" format="dimension" />
     <attr name="closeIconStartPadding" format="dimension" />
@@ -371,6 +343,7 @@
     <attr name="closeItemLayout" format="reference" />
     <attr name="collapseContentDescription" format="string" />
     <attr name="collapseIcon" format="reference" />
+    <item type="attr" name="APKTOOL_DUMMY_101" />
     <attr name="collapsedSize" format="dimension" />
     <attr name="collapsedTitleGravity">
         <flag name="bottom" value="0x00000050" />
@@ -393,7 +366,7 @@
     <attr name="collapsingToolbarLayoutStyle" format="reference" />
     <attr name="color" format="color" />
     <attr name="colorAccent" format="color" />
-    <attr name="colorBackground" format="color" />
+    <item type="attr" name="APKTOOL_DUMMY_10d" />
     <attr name="colorBackgroundFloating" format="color" />
     <attr name="colorButtonNormal" format="color" />
     <attr name="colorContainer" format="color" />
@@ -401,20 +374,20 @@
     <attr name="colorControlHighlight" format="color" />
     <attr name="colorControlNormal" format="color" />
     <attr name="colorError" format="reference|color" />
-    <attr name="colorErrorContainer" format="color" />
+    <item type="attr" name="APKTOOL_DUMMY_115" />
     <attr name="colorErrorStateContent" format="color" />
     <attr name="colorHairline" format="color" />
     <attr name="colorOnBackground" format="reference|string|integer|boolean|color|float|dimension|fraction" />
+    <item type="attr" name="APKTOOL_DUMMY_119" />
     <attr name="colorOnContainer" format="color" />
-    <attr name="colorOnContainerUnchecked" format="color" />
+    <attr name="colorOnContainerStateContent" format="color" />
+    <attr name="colorOnContainerStateLayer" format="color" />
     <attr name="colorOnError" format="color" />
-    <attr name="colorOnErrorContainer" format="color" />
+    <item type="attr" name="APKTOOL_DUMMY_11e" />
     <attr name="colorOnPrimary" format="color" />
     <attr name="colorOnPrimaryContainer" format="color" />
     <attr name="colorOnPrimaryContainerStateContent" format="color" />
     <attr name="colorOnPrimaryContainerStateLayer" format="color" />
-    <attr name="colorOnPrimaryFixed" format="color" />
-    <attr name="colorOnPrimaryFixedVariant" format="color" />
     <attr name="colorOnPrimaryGoogle" format="color" />
     <attr name="colorOnPrimaryStateContent" format="color" />
     <attr name="colorOnPrimaryStateLayer" format="color" />
@@ -424,8 +397,6 @@
     <attr name="colorOnSecondaryContainer" format="color" />
     <attr name="colorOnSecondaryContainerStateContent" format="color" />
     <attr name="colorOnSecondaryContainerStateLayer" format="color" />
-    <attr name="colorOnSecondaryFixed" format="color" />
-    <attr name="colorOnSecondaryFixedVariant" format="color" />
     <attr name="colorOnSecondaryStateContent" format="color" />
     <attr name="colorOnSecondaryStateLayer" format="color" />
     <attr name="colorOnSurface" format="color" />
@@ -435,19 +406,15 @@
     <attr name="colorOnSurfaceVariant" format="color" />
     <attr name="colorOnSurfaceVariantStateContent" format="color" />
     <attr name="colorOnSurfaceVariantStateLayer" format="color" />
-    <attr name="colorOnTertiary" format="color" />
+    <item type="attr" name="APKTOOL_DUMMY_135" />
     <attr name="colorOnTertiaryContainer" format="color" />
     <attr name="colorOnTertiaryContainerStateContent" format="color" />
     <attr name="colorOnTertiaryContainerStateLayer" format="color" />
-    <attr name="colorOnTertiaryFixed" format="color" />
-    <attr name="colorOnTertiaryFixedVariant" format="color" />
+    <item type="attr" name="APKTOOL_DUMMY_139" />
     <attr name="colorOutline" format="color" />
-    <attr name="colorOutlineVariant" format="color" />
     <attr name="colorPrimary" format="color" />
     <attr name="colorPrimaryContainer" format="color" />
     <attr name="colorPrimaryDark" format="color" />
-    <attr name="colorPrimaryFixed" format="color" />
-    <attr name="colorPrimaryFixedDim" format="color" />
     <attr name="colorPrimaryGoogle" format="color" />
     <attr name="colorPrimaryGoogleInverse" format="color" />
     <attr name="colorPrimaryInverse" format="color" />
@@ -461,48 +428,36 @@
     <attr name="colorPrimarySurface" format="color" />
     <attr name="colorPrimaryVariant" format="color" />
     <attr name="colorPrimaryVariantGoogle" format="color" />
+    <item type="attr" name="APKTOOL_DUMMY_14b" />
+    <item type="attr" name="APKTOOL_DUMMY_14c" />
     <attr name="colorSecondary" format="color" />
     <attr name="colorSecondaryContainer" format="color" />
-    <attr name="colorSecondaryFixed" format="color" />
-    <attr name="colorSecondaryFixedDim" format="color" />
     <attr name="colorSecondaryStateContent" format="color" />
     <attr name="colorSecondaryStateLayer" format="color" />
     <attr name="colorSecondaryVariant" format="color" />
     <attr name="colorSurface" format="color" />
-    <attr name="colorSurfaceBright" format="color" />
-    <attr name="colorSurfaceContainer" format="color" />
-    <attr name="colorSurfaceContainerHigh" format="color" />
-    <attr name="colorSurfaceContainerHighest" format="color" />
-    <attr name="colorSurfaceContainerLow" format="color" />
-    <attr name="colorSurfaceContainerLowest" format="color" />
-    <attr name="colorSurfaceDim" format="color" />
     <attr name="colorSurfaceInverse" format="color" />
     <attr name="colorSurfaceVariant" format="color" />
     <attr name="colorSwitchThumbNormal" format="color" />
-    <attr name="colorTertiary" format="color" />
+    <item type="attr" name="APKTOOL_DUMMY_156" />
     <attr name="colorTertiaryContainer" format="color" />
-    <attr name="colorTertiaryFixed" format="color" />
-    <attr name="colorTertiaryFixedDim" format="color" />
     <attr name="colorTextFieldError" format="color" />
     <attr name="colorTextFieldHairline" format="color" />
     <attr name="colorTextFieldOnSurfaceVariant" format="color" />
+    <attr name="colorTextFieldPrimary" format="color" />
     <attr name="colorTextFieldSurface" format="color" />
+    <attr name="colorTimePickerSurface" format="color" />
+    <item type="attr" name="APKTOOL_DUMMY_15e" />
+    <item type="attr" name="APKTOOL_DUMMY_15f" />
     <attr name="commitIcon" format="reference" />
-    <attr name="compatShadowEnabled" format="boolean" />
-    <attr name="constraintRotate">
-        <enum name="left" value="2" />
-        <enum name="none" value="0" />
-        <enum name="right" value="1" />
-        <enum name="x_left" value="4" />
-        <enum name="x_right" value="3" />
-    </attr>
     <attr name="constraintSet" format="reference" />
+    <item type="attr" name="APKTOOL_DUMMY_162" />
+    <item type="attr" name="APKTOOL_DUMMY_163" />
     <attr name="constraint_referenced_ids" format="string" />
     <attr name="constraint_referenced_tags" format="string" />
     <attr name="constraints" format="reference" />
+    <item type="attr" name="APKTOOL_DUMMY_167" />
     <attr name="contentDescription" format="string" />
-    <attr name="contentDescriptionForActionButton" format="string" />
-    <attr name="contentDescriptionForNextColumnButton" format="string" />
     <attr name="contentInsetEnd" format="dimension" />
     <attr name="contentInsetEndWithActions" format="dimension" />
     <attr name="contentInsetLeft" format="dimension" />
@@ -515,16 +470,8 @@
     <attr name="contentPaddingRight" format="dimension" />
     <attr name="contentPaddingTop" format="dimension" />
     <attr name="contentScrim" format="color" />
+    <item type="attr" name="APKTOOL_DUMMY_175" />
     <attr name="controlBackground" format="reference" />
-    <attr name="controlIcon" format="reference" />
-    <attr name="controlIconTint" format="color" />
-    <attr name="controlType">
-        <enum name="checkbox" value="1" />
-        <enum name="icon" value="4" />
-        <enum name="none" value="0" />
-        <enum name="radio" value="2" />
-        <enum name="toggle" value="3" />
-    </attr>
     <attr name="coordinatorLayoutStyle" format="reference" />
     <attr name="cornerFamily">
         <enum name="cut" value="1" />
@@ -552,10 +499,15 @@
     <attr name="cornerSizeBottomRight" format="dimension|fraction" />
     <attr name="cornerSizeTopLeft" format="dimension|fraction" />
     <attr name="cornerSizeTopRight" format="dimension|fraction" />
+    <item type="attr" name="APKTOOL_DUMMY_183" />
+    <item type="attr" name="APKTOOL_DUMMY_184" />
     <attr name="counterOverflowTextAppearance" format="reference" />
     <attr name="counterOverflowTextColor" format="reference" />
     <attr name="counterTextAppearance" format="reference" />
     <attr name="counterTextColor" format="reference" />
+    <item type="attr" name="APKTOOL_DUMMY_189" />
+    <item type="attr" name="APKTOOL_DUMMY_18a" />
+    <item type="attr" name="APKTOOL_DUMMY_18b" />
     <attr name="customBoolean" format="boolean" />
     <attr name="customColorDrawableValue" format="color" />
     <attr name="customColorValue" format="color" />
@@ -570,13 +522,15 @@
     <attr name="daySelectedStyle" format="reference" />
     <attr name="dayStyle" format="reference" />
     <attr name="dayTodayStyle" format="reference" />
-    <attr name="decrementContentDescription" format="string" />
-    <attr name="decrementDrawable" format="reference" />
     <attr name="defValue" format="reference|string" />
+    <item type="attr" name="APKTOOL_DUMMY_19b" />
     <attr name="defaultMarginsEnabled" format="boolean" />
     <attr name="defaultQueryHint" format="string" />
     <attr name="defaultScrollFlagsEnabled" format="boolean" />
+    <item type="attr" name="APKTOOL_DUMMY_19f" />
     <attr name="defaultValue" format="reference|string|integer|boolean|float" />
+    <item type="attr" name="APKTOOL_DUMMY_1a1" />
+    <item type="attr" name="APKTOOL_DUMMY_1a2" />
     <attr name="dependency" format="string" />
     <attr name="deriveConstraintsFrom" format="reference" />
     <attr name="dialogCornerRadius" format="dimension" />
@@ -605,6 +559,22 @@
     <attr name="dividerPadding" format="dimension" />
     <attr name="dividerThickness" format="dimension" />
     <attr name="dividerVertical" format="reference" />
+    <item type="attr" name="APKTOOL_DUMMY_1b7" />
+    <item type="attr" name="APKTOOL_DUMMY_1b8" />
+    <item type="attr" name="APKTOOL_DUMMY_1b9" />
+    <item type="attr" name="APKTOOL_DUMMY_1ba" />
+    <item type="attr" name="APKTOOL_DUMMY_1bb" />
+    <item type="attr" name="APKTOOL_DUMMY_1bc" />
+    <item type="attr" name="APKTOOL_DUMMY_1bd" />
+    <item type="attr" name="APKTOOL_DUMMY_1be" />
+    <item type="attr" name="APKTOOL_DUMMY_1bf" />
+    <item type="attr" name="APKTOOL_DUMMY_1c0" />
+    <item type="attr" name="APKTOOL_DUMMY_1c1" />
+    <item type="attr" name="APKTOOL_DUMMY_1c2" />
+    <item type="attr" name="APKTOOL_DUMMY_1c3" />
+    <item type="attr" name="APKTOOL_DUMMY_1c4" />
+    <item type="attr" name="APKTOOL_DUMMY_1c5" />
+    <item type="attr" name="APKTOOL_DUMMY_1c6" />
     <attr name="drawPath">
         <enum name="asConfigured" value="4" />
         <enum name="deltaRelative" value="3" />
@@ -630,11 +600,17 @@
     </attr>
     <attr name="drawableTopCompat" format="reference" />
     <attr name="drawerArrowStyle" format="reference" />
+    <item type="attr" name="APKTOOL_DUMMY_1d2" />
     <attr name="drawerLayoutCornerSize" format="dimension" />
     <attr name="drawerLayoutStyle" format="reference" />
+    <item type="attr" name="APKTOOL_DUMMY_1d5" />
+    <item type="attr" name="APKTOOL_DUMMY_1d6" />
+    <item type="attr" name="APKTOOL_DUMMY_1d7" />
     <attr name="dropDownListViewStyle" format="reference" />
     <attr name="dropdownListPreferredItemHeight" format="dimension" />
     <attr name="dropdownPreferenceStyle" format="reference" />
+    <item type="attr" name="APKTOOL_DUMMY_1db" />
+    <item type="attr" name="APKTOOL_DUMMY_1dc" />
     <attr name="dynamicColorThemeOverlay" format="reference" />
     <attr name="editTextBackground" format="reference" />
     <attr name="editTextColor" format="reference|color" />
@@ -644,11 +620,13 @@
     <attr name="elevationOverlayAccentColor" format="color" />
     <attr name="elevationOverlayColor" format="color" />
     <attr name="elevationOverlayEnabled" format="boolean" />
-    <attr name="emojiCompatEnabled" format="boolean" />
-    <attr name="enableAutomaticStateTransitions" format="boolean" />
+    <item type="attr" name="APKTOOL_DUMMY_1e6" />
     <attr name="enableCopying" format="boolean" />
     <attr name="enableEdgeToEdge" format="boolean" />
     <attr name="enabled" format="boolean" />
+    <item type="attr" name="APKTOOL_DUMMY_1ea" />
+    <item type="attr" name="APKTOOL_DUMMY_1eb" />
+    <item type="attr" name="APKTOOL_DUMMY_1ec" />
     <attr name="endIconMode">
         <enum name="clear_text" value="2" />
         <enum name="custom" value="-1" />
@@ -657,19 +635,23 @@
         <enum name="password_toggle" value="1" />
     </attr>
     <attr name="endIconTint" format="color" />
-    <attr name="endPaddingPercent" format="float" />
+    <item type="attr" name="APKTOOL_DUMMY_1ef" />
     <attr name="enforceMaterialTheme" format="boolean" />
     <attr name="enforceTextAppearance" format="boolean" />
     <attr name="ensureMinTouchTargetSize" format="boolean" />
     <attr name="entries" format="reference" />
     <attr name="entryValues" format="reference" />
-    <attr name="errorAccessibilityLabel" format="string" />
+    <item type="attr" name="APKTOOL_DUMMY_1f5" />
+    <item type="attr" name="APKTOOL_DUMMY_1f6" />
     <attr name="errorIconDrawable" format="reference" />
     <attr name="errorIconTint" format="reference" />
-    <attr name="errorShown" format="boolean" />
+    <item type="attr" name="APKTOOL_DUMMY_1f9" />
     <attr name="errorTextAppearance" format="reference" />
     <attr name="errorTextColor" format="color" />
+    <item type="attr" name="APKTOOL_DUMMY_1fc" />
     <attr name="expanded" format="boolean" />
+    <item type="attr" name="APKTOOL_DUMMY_1fe" />
+    <item type="attr" name="APKTOOL_DUMMY_1ff" />
     <attr name="expandedTitleGravity">
         <flag name="bottom" value="0x00000050" />
         <flag name="center" value="0x00000011" />
@@ -689,12 +671,7 @@
     <attr name="expandedTitleMarginTop" format="dimension" />
     <attr name="expandedTitleTextAppearance" format="reference" />
     <attr name="expandedTitleTextColor" format="reference|color" />
-    <attr name="extendMotionSpec" format="reference" />
-    <attr name="extendStrategy">
-        <enum name="auto" value="0" />
-        <enum name="match_parent" value="2" />
-        <enum name="wrap_content" value="1" />
-    </attr>
+    <item type="attr" name="APKTOOL_DUMMY_208" />
     <attr name="extendedFloatingActionButtonBrandedStyle" format="reference" />
     <attr name="extendedFloatingActionButtonPrimaryStyle" format="reference" />
     <attr name="extendedFloatingActionButtonSecondaryStyle" format="reference" />
@@ -702,15 +679,7 @@
     <attr name="extendedFloatingActionButtonSurfaceStyle" format="reference" />
     <attr name="extendedFloatingActionButtonTertiaryStyle" format="reference" />
     <attr name="extraMultilineHeightEnabled" format="boolean" />
-    <attr name="fabAlignmentMode">
-        <enum name="center" value="0" />
-        <enum name="end" value="1" />
-    </attr>
-    <attr name="fabAlignmentModeEndMargin" format="dimension" />
-    <attr name="fabAnchorMode">
-        <enum name="cradle" value="1" />
-        <enum name="embed" value="0" />
-    </attr>
+    <item type="attr" name="APKTOOL_DUMMY_210" />
     <attr name="fabAnimationMode">
         <enum name="scale" value="0" />
         <enum name="slide" value="1" />
@@ -729,8 +698,6 @@
     <attr name="fastScrollHorizontalTrackDrawable" format="reference" />
     <attr name="fastScrollVerticalThumbDrawable" format="reference" />
     <attr name="fastScrollVerticalTrackDrawable" format="reference" />
-    <attr name="filled" format="boolean" />
-    <attr name="filledBarColor" format="reference|color" />
     <attr name="firstBaselineToTopHeight" format="dimension" />
     <attr name="floatingActionButtonBrandedStyle" format="reference" />
     <attr name="floatingActionButtonLargeBrandedStyle" format="reference" />
@@ -741,11 +708,6 @@
     <attr name="floatingActionButtonLargeTertiaryStyle" format="reference" />
     <attr name="floatingActionButtonPrimaryStyle" format="reference" />
     <attr name="floatingActionButtonSecondaryStyle" format="reference" />
-    <attr name="floatingActionButtonSmallPrimaryStyle" format="reference" />
-    <attr name="floatingActionButtonSmallSecondaryStyle" format="reference" />
-    <attr name="floatingActionButtonSmallStyle" format="reference" />
-    <attr name="floatingActionButtonSmallSurfaceStyle" format="reference" />
-    <attr name="floatingActionButtonSmallTertiaryStyle" format="reference" />
     <attr name="floatingActionButtonStyle" format="reference" />
     <attr name="floatingActionButtonSurfaceStyle" format="reference" />
     <attr name="floatingActionButtonTertiaryStyle" format="reference" />
@@ -788,6 +750,7 @@
         <enum name="spread_inside" value="1" />
     </attr>
     <attr name="flow_maxElementsWrap" format="integer" />
+    <item type="attr" name="APKTOOL_DUMMY_238" />
     <attr name="flow_verticalAlign">
         <enum name="baseline" value="3" />
         <enum name="bottom" value="1" />
@@ -804,15 +767,10 @@
     <attr name="flow_wrapMode">
         <enum name="aligned" value="2" />
         <enum name="chain" value="1" />
-        <enum name="chain2" value="3" />
         <enum name="none" value="0" />
     </attr>
     <attr name="font" format="reference" />
     <attr name="fontFamily" format="string" />
-    <attr name="fontFamilyWearButton1" format="string" />
-    <attr name="fontFamilyWearCaption1" format="string" />
-    <attr name="fontFamilyWearDisplay2" format="string" />
-    <attr name="fontFamilyWearMedium" format="string" />
     <attr name="fontProviderAuthority" format="string" />
     <attr name="fontProviderCerts" format="reference" />
     <attr name="fontProviderFetchStrategy">
@@ -833,8 +791,11 @@
     <attr name="fontWeight" format="integer" />
     <attr name="footerPreferenceStyle" format="reference" />
     <attr name="forceApplySystemWindowInsetTop" format="boolean" />
+    <item type="attr" name="APKTOOL_DUMMY_24c" />
     <attr name="foregroundInsidePadding" format="boolean" />
     <attr name="fragment" format="string" />
+    <item type="attr" name="APKTOOL_DUMMY_24f" />
+    <item type="attr" name="APKTOOL_DUMMY_250" />
     <attr name="gapBetweenBars" format="dimension" />
     <attr name="gca_box">
         <enum name="bottomBar" value="3" />
@@ -843,13 +804,9 @@
         <enum name="gradientBar" value="8" />
         <enum name="modeSlider" value="12" />
         <enum name="modeSwitcherUi" value="5" />
-        <enum name="moreModes" value="15" />
         <enum name="optionsMenuContainer" value="10" />
         <enum name="preview" value="1" />
         <enum name="previewOverlay" value="9" />
-        <enum name="previewWidgets" value="14" />
-        <enum name="rotatingUncoveredPreview" value="16" />
-        <enum name="timerWidget" value="13" />
         <enum name="uncoveredPreview" value="2" />
         <enum name="viewfinder" value="4" />
         <enum name="viewfinderCoverIconArea" value="7" />
@@ -857,10 +814,12 @@
     </attr>
     <attr name="gestureInsetBottomIgnored" format="boolean" />
     <attr name="goIcon" format="reference" />
-    <attr name="guidelineUseRtl" format="boolean" />
     <attr name="haloColor" format="color" />
     <attr name="haloRadius" format="dimension" />
+    <item type="attr" name="APKTOOL_DUMMY_257" />
     <attr name="height" format="dimension" />
+    <item type="attr" name="APKTOOL_DUMMY_259" />
+    <item type="attr" name="APKTOOL_DUMMY_25a" />
     <attr name="helperTextTextAppearance" format="reference" />
     <attr name="helperTextTextColor" format="color" />
     <attr name="hideAnimationBehavior">
@@ -871,7 +830,10 @@
     <attr name="hideMotionSpec" format="reference" />
     <attr name="hideNavigationIcon" format="boolean" />
     <attr name="hideOnContentScroll" format="boolean" />
+    <item type="attr" name="APKTOOL_DUMMY_261" />
     <attr name="highlightColor" format="color" />
+    <item type="attr" name="APKTOOL_DUMMY_263" />
+    <item type="attr" name="APKTOOL_DUMMY_264" />
     <attr name="hintTextAppearance" format="reference" />
     <attr name="hintTextColor" format="color" />
     <attr name="homeAsUpIndicator" format="reference" />
@@ -880,7 +842,6 @@
     <attr name="horizontalOffsetWithText" format="dimension" />
     <attr name="hoveredFocusedTranslationZ" format="dimension" />
     <attr name="icon" format="reference" />
-    <attr name="iconAndTextPadding" format="dimension" />
     <attr name="iconColor" format="color" />
     <attr name="iconEndPadding" format="dimension" />
     <attr name="iconGravity">
@@ -891,7 +852,6 @@
         <flag name="textTop" value="0x00000020" />
         <flag name="top" value="0x00000010" />
     </attr>
-    <attr name="iconOnlyPadding" format="dimension" />
     <attr name="iconPadding" format="dimension" />
     <attr name="iconSize" format="dimension" />
     <attr name="iconSpaceReserved" format="boolean" />
@@ -905,11 +865,20 @@
         <enum name="src_in" value="5" />
         <enum name="src_over" value="3" />
     </attr>
+    <item type="attr" name="APKTOOL_DUMMY_276" />
+    <item type="attr" name="APKTOOL_DUMMY_277" />
+    <item type="attr" name="APKTOOL_DUMMY_278" />
+    <item type="attr" name="APKTOOL_DUMMY_279" />
+    <item type="attr" name="APKTOOL_DUMMY_27a" />
     <attr name="imageButtonStyle" format="reference" />
+    <item type="attr" name="APKTOOL_DUMMY_27c" />
+    <item type="attr" name="APKTOOL_DUMMY_27d" />
+    <item type="attr" name="APKTOOL_DUMMY_27e" />
     <attr name="imageScaleMode">
         <enum name="center" value="1" />
         <enum name="fit" value="0" />
     </attr>
+    <item type="attr" name="APKTOOL_DUMMY_280" />
     <attr name="image_circle_percentage" format="dimension" />
     <attr name="image_horizontal_offcenter_percentage" format="dimension" />
     <attr name="image_tint" format="color" />
@@ -917,8 +886,7 @@
     <attr name="img_horizontal_offset_percentage" format="dimension" />
     <attr name="img_padding" format="dimension" />
     <attr name="img_tint" format="color" />
-    <attr name="incrementContentDescription" format="string" />
-    <attr name="incrementDrawable" format="reference" />
+    <item type="attr" name="APKTOOL_DUMMY_288" />
     <attr name="indeterminateAnimationType">
         <enum name="contiguous" value="0" />
         <enum name="disjoint" value="1" />
@@ -937,16 +905,12 @@
     </attr>
     <attr name="indicatorInset" format="dimension" />
     <attr name="indicatorSize" format="dimension" />
+    <item type="attr" name="APKTOOL_DUMMY_290" />
     <attr name="initialExpandedChildrenCount" format="integer" />
-    <attr name="inlineSliderPreferenceStyle" format="reference" />
-    <attr name="inlineSliderStyle" format="reference" />
     <attr name="insetForeground" format="reference|color" />
-    <attr name="isFlingEnabled" format="boolean" />
     <attr name="isLightTheme" format="boolean" />
-    <attr name="isMaterial3DynamicColorApplied" format="boolean" />
-    <attr name="isMaterial3Theme" format="boolean" />
+    <item type="attr" name="APKTOOL_DUMMY_294" />
     <attr name="isMaterialTheme" format="boolean" />
-    <attr name="isPickerHapticsEnabled" format="boolean" />
     <attr name="isPreferenceVisible" format="boolean" />
     <attr name="itemActiveIndicatorStyle" format="reference" />
     <attr name="itemBackground" format="reference" />
@@ -956,6 +920,7 @@
     <attr name="itemIconPadding" format="dimension" />
     <attr name="itemIconSize" format="dimension" />
     <attr name="itemIconTint" format="color" />
+    <item type="attr" name="APKTOOL_DUMMY_29f" />
     <attr name="itemMinHeight" format="dimension" />
     <attr name="itemPadding" format="dimension" />
     <attr name="itemPaddingBottom" format="dimension" />
@@ -968,6 +933,7 @@
     <attr name="itemShapeInsetEnd" format="dimension" />
     <attr name="itemShapeInsetStart" format="dimension" />
     <attr name="itemShapeInsetTop" format="dimension" />
+    <item type="attr" name="APKTOOL_DUMMY_2ac" />
     <attr name="itemStrokeColor" format="color" />
     <attr name="itemStrokeWidth" format="dimension" />
     <attr name="itemTextAppearance" format="reference" />
@@ -976,9 +942,11 @@
     <attr name="itemTextColor" format="color" />
     <attr name="itemVerticalPadding" format="dimension" />
     <attr name="key" format="string" />
+    <item type="attr" name="APKTOOL_DUMMY_2b5" />
     <attr name="keyboardIcon" format="reference" />
     <attr name="keylines" format="reference" />
     <attr name="lStar" format="float" />
+    <item type="attr" name="APKTOOL_DUMMY_2b9" />
     <attr name="labelList" format="reference" />
     <attr name="labelStyle" format="reference" />
     <attr name="labelVisibilityMode">
@@ -990,11 +958,8 @@
     <attr name="lastBaselineToBottomHeight" format="dimension" />
     <attr name="layout" format="reference" />
     <attr name="layoutDescription" format="reference" />
+    <item type="attr" name="APKTOOL_DUMMY_2c0" />
     <attr name="layoutManager" format="string" />
-    <attr name="layoutStrategy">
-        <enum name="fixed" value="0" />
-        <enum name="stretched" value="1" />
-    </attr>
     <attr name="layout_anchor" format="reference" />
     <attr name="layout_anchorGravity">
         <flag name="bottom" value="0x00000050" />
@@ -1014,21 +979,8 @@
     </attr>
     <attr name="layout_aspectRatio" format="fraction" />
     <attr name="layout_behavior" format="string" />
-    <attr name="layout_box">
-        <flag name="all" value="0x0000000f" />
-        <flag name="bottom" value="0x00000008" />
-        <flag name="left" value="0x00000001" />
-        <flag name="right" value="0x00000004" />
-        <flag name="top" value="0x00000002" />
-    </attr>
-    <attr name="layout_boxedEdges">
-        <flag name="all" value="0x0000000f" />
-        <flag name="bottom" value="0x00000008" />
-        <flag name="left" value="0x00000001" />
-        <flag name="none" value="0x00000000" />
-        <flag name="right" value="0x00000004" />
-        <flag name="top" value="0x00000002" />
-    </attr>
+    <item type="attr" name="APKTOOL_DUMMY_2c6" />
+    <item type="attr" name="APKTOOL_DUMMY_2c7" />
     <attr name="layout_collapseMode">
         <enum name="none" value="0" />
         <enum name="parallax" value="2" />
@@ -1164,7 +1116,9 @@
     <attr name="layout_goneMarginRight" format="dimension" />
     <attr name="layout_goneMarginStart" format="dimension" />
     <attr name="layout_goneMarginTop" format="dimension" />
+    <item type="attr" name="APKTOOL_DUMMY_302" />
     <attr name="layout_heightPercent" format="fraction" />
+    <item type="attr" name="APKTOOL_DUMMY_304" />
     <attr name="layout_insetEdge">
         <enum name="bottom" value="80" />
         <enum name="end" value="8388613" />
@@ -1177,12 +1131,17 @@
     <attr name="layout_keyline" format="integer" />
     <attr name="layout_marginBaseline" format="dimension" />
     <attr name="layout_marginBottomPercent" format="fraction" />
+    <item type="attr" name="APKTOOL_DUMMY_309" />
     <attr name="layout_marginEndPercent" format="fraction" />
     <attr name="layout_marginLeftPercent" format="fraction" />
+    <item type="attr" name="APKTOOL_DUMMY_30c" />
     <attr name="layout_marginPercent" format="fraction" />
     <attr name="layout_marginRightPercent" format="fraction" />
+    <item type="attr" name="APKTOOL_DUMMY_30f" />
+    <item type="attr" name="APKTOOL_DUMMY_310" />
     <attr name="layout_marginStartPercent" format="fraction" />
     <attr name="layout_marginTopPercent" format="fraction" />
+    <item type="attr" name="APKTOOL_DUMMY_313" />
     <attr name="layout_optimizationLevel">
         <flag name="barrier" value="0x00000002" />
         <flag name="cache_measures" value="0x00000100" />
@@ -1199,7 +1158,7 @@
         <flag name="ratio" value="0x00000010" />
         <flag name="standard" value="0x00000101" />
     </attr>
-    <attr name="layout_rotate" format="boolean" />
+    <item type="attr" name="APKTOOL_DUMMY_315" />
     <attr name="layout_scrollEffect">
         <enum name="compress" value="1" />
         <enum name="none" value="0" />
@@ -1214,28 +1173,20 @@
         <flag name="snapMargins" value="0x00000020" />
     </attr>
     <attr name="layout_scrollInterpolator" format="reference" />
-    <attr name="layout_valign">
-        <enum name="center" value="1" />
-        <enum name="inner" value="2" />
-        <enum name="outer" value="0" />
-    </attr>
-    <attr name="layout_weight" format="float" />
+    <item type="attr" name="APKTOOL_DUMMY_319" />
     <attr name="layout_widthPercent" format="fraction" />
+    <item type="attr" name="APKTOOL_DUMMY_31b" />
     <attr name="layout_wrapBehaviorInParent">
         <enum name="horizontal_only" value="1" />
         <enum name="included" value="0" />
         <enum name="skipped" value="3" />
         <enum name="vertical_only" value="2" />
     </attr>
-    <attr name="letterSpacingWearButton1" format="float" />
-    <attr name="letterSpacingWearCaption1" format="float" />
-    <attr name="letterSpacingWearDisplay2" format="float" />
     <attr name="liftOnScroll" format="boolean" />
-    <attr name="liftOnScrollColor" format="color" />
     <attr name="liftOnScrollTargetViewId" format="reference" />
+    <item type="attr" name="APKTOOL_DUMMY_31f" />
     <attr name="lineHeight" format="dimension" />
-    <attr name="lineHeightWearButton1" format="dimension" />
-    <attr name="lineHeightWearCaption1" format="dimension" />
+    <item type="attr" name="APKTOOL_DUMMY_321" />
     <attr name="linearProgressIndicatorStyle" format="reference" />
     <attr name="listChoiceBackgroundIndicator" format="reference" />
     <attr name="listChoiceIndicatorMultipleAnimated" format="reference" />
@@ -1266,37 +1217,9 @@
         <enum name="standard" value="0" />
     </attr>
     <attr name="logoDescription" format="string" />
-    <attr name="lottieAnimationViewStyle" format="reference" />
-    <attr name="lottie_autoPlay" format="boolean" />
-    <attr name="lottie_cacheComposition" format="boolean" />
-    <attr name="lottie_colorFilter" format="color" />
-    <attr name="lottie_enableMergePathsForKitKatAndAbove" format="boolean" />
-    <attr name="lottie_fallbackRes" format="reference" />
-    <attr name="lottie_fileName" format="string" />
-    <attr name="lottie_ignoreDisabledSystemAnimations" format="boolean" />
-    <attr name="lottie_imageAssetsFolder" format="string" />
-    <attr name="lottie_loop" format="boolean" />
-    <attr name="lottie_progress" format="float" />
-    <attr name="lottie_rawRes" format="reference" />
-    <attr name="lottie_renderMode">
-        <enum name="automatic" value="0" />
-        <enum name="hardware" value="1" />
-        <enum name="software" value="2" />
-    </attr>
-    <attr name="lottie_repeatCount" format="integer" />
-    <attr name="lottie_repeatMode">
-        <enum name="restart" value="1" />
-        <enum name="reverse" value="2" />
-    </attr>
-    <attr name="lottie_scale" format="float" />
-    <attr name="lottie_speed" format="float" />
-    <attr name="lottie_url" format="string" />
-    <attr name="lowResEncoderSmoothScrollingEnabled" format="boolean" />
-    <attr name="margin" format="dimension" />
+    <item type="attr" name="APKTOOL_DUMMY_336" />
+    <item type="attr" name="APKTOOL_DUMMY_337" />
     <attr name="marginHorizontal" format="dimension" />
-    <attr name="marginLeftSystemWindowInsets" format="boolean" />
-    <attr name="marginRightSystemWindowInsets" format="boolean" />
-    <attr name="marginTopSystemWindowInsets" format="boolean" />
     <attr name="materialAlertDialogBodyTextStyle" format="reference" />
     <attr name="materialAlertDialogButtonSpacerVisibility" format="integer" />
     <attr name="materialAlertDialogTheme" format="reference" />
@@ -1322,39 +1245,31 @@
     <attr name="materialCalendarTheme" format="reference" />
     <attr name="materialCalendarYearNavigationButton" format="reference" />
     <attr name="materialCardViewElevatedStyle" format="reference" />
-    <attr name="materialCardViewFilledStyle" format="reference" />
+    <item type="attr" name="APKTOOL_DUMMY_352" />
     <attr name="materialCardViewOutlinedStyle" format="reference" />
     <attr name="materialCardViewStyle" format="reference" />
+    <item type="attr" name="APKTOOL_DUMMY_355" />
     <attr name="materialClockStyle" format="reference" />
     <attr name="materialDisplayDividerStyle" format="reference" />
     <attr name="materialDividerHeavyStyle" format="reference|string|integer|boolean|color|float|dimension|fraction" />
     <attr name="materialDividerStyle" format="reference|string|integer|boolean|color|float|dimension|fraction" />
-    <attr name="materialIconButtonFilledStyle" format="reference" />
-    <attr name="materialIconButtonFilledTonalStyle" format="reference" />
-    <attr name="materialIconButtonOutlinedStyle" format="reference" />
-    <attr name="materialIconButtonStyle" format="reference" />
-    <attr name="materialSearchBarStyle" format="reference" />
-    <attr name="materialSearchViewStyle" format="reference" />
-    <attr name="materialSwitchStyle" format="reference|string|integer|boolean|color|float|dimension|fraction" />
     <attr name="materialThemeOverlay" format="reference" />
     <attr name="materialTimePickerStyle" format="reference" />
     <attr name="materialTimePickerTheme" format="reference" />
     <attr name="materialTimePickerTitleStyle" format="reference" />
+    <item type="attr" name="APKTOOL_DUMMY_35e" />
     <attr name="maxActionInlineWidth" format="dimension" />
     <attr name="maxButtonHeight" format="dimension" />
     <attr name="maxCharacterCount" format="integer" />
     <attr name="maxHeight" format="dimension" />
     <attr name="maxImageSize" format="dimension" />
     <attr name="maxLines" format="integer" />
-    <attr name="maxSweepDegrees" format="float" />
+    <item type="attr" name="APKTOOL_DUMMY_365" />
     <attr name="maxTextSize" format="dimension" />
+    <item type="attr" name="APKTOOL_DUMMY_367" />
     <attr name="maxWidth" format="dimension" />
     <attr name="measureWithLargestChild" format="boolean" />
     <attr name="menu" format="reference" />
-    <attr name="menuAlignmentMode">
-        <enum name="auto" value="0" />
-        <enum name="start" value="1" />
-    </attr>
     <attr name="menuGravity">
         <enum name="bottom" value="81" />
         <enum name="center" value="17" />
@@ -1364,39 +1279,41 @@
     <attr name="min" format="integer" />
     <attr name="minHeight" format="dimension" />
     <attr name="minHideDelay" format="integer" />
+    <item type="attr" name="APKTOOL_DUMMY_370" />
     <attr name="minSeparation" format="dimension" />
-    <attr name="minSweepDegrees" format="float" />
+    <item type="attr" name="APKTOOL_DUMMY_372" />
     <attr name="minTextSize" format="dimension" />
     <attr name="minTouchTargetSize" format="dimension" />
     <attr name="minWidth" format="dimension" />
-    <attr name="motionDurationExtraLong1" format="integer" />
-    <attr name="motionDurationExtraLong2" format="integer" />
-    <attr name="motionDurationExtraLong3" format="integer" />
-    <attr name="motionDurationExtraLong4" format="integer" />
+    <item type="attr" name="APKTOOL_DUMMY_376" />
+    <item type="attr" name="APKTOOL_DUMMY_377" />
+    <item type="attr" name="APKTOOL_DUMMY_378" />
+    <item type="attr" name="APKTOOL_DUMMY_379" />
+    <item type="attr" name="APKTOOL_DUMMY_37a" />
+    <item type="attr" name="APKTOOL_DUMMY_37b" />
+    <item type="attr" name="APKTOOL_DUMMY_37c" />
+    <item type="attr" name="APKTOOL_DUMMY_37d" />
+    <item type="attr" name="APKTOOL_DUMMY_37e" />
     <attr name="motionDurationLong1" format="integer" />
     <attr name="motionDurationLong2" format="integer" />
-    <attr name="motionDurationLong3" format="integer" />
-    <attr name="motionDurationLong4" format="integer" />
     <attr name="motionDurationMedium1" format="integer" />
     <attr name="motionDurationMedium2" format="integer" />
-    <attr name="motionDurationMedium3" format="integer" />
-    <attr name="motionDurationMedium4" format="integer" />
     <attr name="motionDurationShort1" format="integer" />
     <attr name="motionDurationShort2" format="integer" />
-    <attr name="motionDurationShort3" format="integer" />
-    <attr name="motionDurationShort4" format="integer" />
     <attr name="motionEasingAccelerated" format="string" />
     <attr name="motionEasingDecelerated" format="string" />
     <attr name="motionEasingEmphasized" format="string" />
-    <attr name="motionEasingEmphasizedAccelerateInterpolator" format="reference" />
-    <attr name="motionEasingEmphasizedDecelerateInterpolator" format="reference" />
-    <attr name="motionEasingEmphasizedInterpolator" format="reference" />
     <attr name="motionEasingLinear" format="string" />
-    <attr name="motionEasingLinearInterpolator" format="reference" />
     <attr name="motionEasingStandard" format="string" />
-    <attr name="motionEasingStandardAccelerateInterpolator" format="reference" />
-    <attr name="motionEasingStandardDecelerateInterpolator" format="reference" />
-    <attr name="motionEasingStandardInterpolator" format="reference" />
+    <item type="attr" name="APKTOOL_DUMMY_38a" />
+    <item type="attr" name="APKTOOL_DUMMY_38b" />
+    <item type="attr" name="APKTOOL_DUMMY_38c" />
+    <item type="attr" name="APKTOOL_DUMMY_38d" />
+    <item type="attr" name="APKTOOL_DUMMY_38e" />
+    <item type="attr" name="APKTOOL_DUMMY_38f" />
+    <item type="attr" name="APKTOOL_DUMMY_390" />
+    <item type="attr" name="APKTOOL_DUMMY_391" />
+    <item type="attr" name="APKTOOL_DUMMY_392" />
     <attr name="motionPath" format="string">
         <enum name="arc" value="1" />
         <enum name="linear" value="0" />
@@ -1405,6 +1322,18 @@
     <attr name="motionProgress" format="float" />
     <attr name="motionStagger" format="float" />
     <attr name="motionTarget" format="reference|string" />
+    <item type="attr" name="APKTOOL_DUMMY_398" />
+    <item type="attr" name="APKTOOL_DUMMY_399" />
+    <item type="attr" name="APKTOOL_DUMMY_39a" />
+    <item type="attr" name="APKTOOL_DUMMY_39b" />
+    <item type="attr" name="APKTOOL_DUMMY_39c" />
+    <item type="attr" name="APKTOOL_DUMMY_39d" />
+    <item type="attr" name="APKTOOL_DUMMY_39e" />
+    <item type="attr" name="APKTOOL_DUMMY_39f" />
+    <item type="attr" name="APKTOOL_DUMMY_3a0" />
+    <item type="attr" name="APKTOOL_DUMMY_3a1" />
+    <item type="attr" name="APKTOOL_DUMMY_3a2" />
+    <item type="attr" name="APKTOOL_DUMMY_3a3" />
     <attr name="multiChoiceItemLayout" format="reference" />
     <attr name="navigationContentDescription" format="string" />
     <attr name="navigationIcon" format="reference" />
@@ -1415,10 +1344,17 @@
         <enum name="tabMode" value="2" />
     </attr>
     <attr name="navigationRailStyle" format="reference" />
+    <item type="attr" name="APKTOOL_DUMMY_3aa" />
     <attr name="navigationViewStyle" format="reference" />
+    <item type="attr" name="APKTOOL_DUMMY_3ac" />
+    <item type="attr" name="APKTOOL_DUMMY_3ad" />
     <attr name="negativeButtonText" format="string" />
-    <attr name="negativeIcon" format="reference" />
+    <item type="attr" name="APKTOOL_DUMMY_3af" />
     <attr name="nestedScrollViewStyle" format="reference" />
+    <item type="attr" name="APKTOOL_DUMMY_3b1" />
+    <item type="attr" name="APKTOOL_DUMMY_3b2" />
+    <item type="attr" name="APKTOOL_DUMMY_3b3" />
+    <item type="attr" name="APKTOOL_DUMMY_3b4" />
     <attr name="numericModifiers">
         <flag name="ALT" value="0x00000002" />
         <flag name="CTRL" value="0x00001000" />
@@ -1427,16 +1363,20 @@
         <flag name="SHIFT" value="0x00000001" />
         <flag name="SYM" value="0x00000004" />
     </attr>
-    <attr name="offsetAlignmentMode">
-        <enum name="edge" value="0" />
-        <enum name="legacy" value="1" />
-    </attr>
+    <item type="attr" name="APKTOOL_DUMMY_3b6" />
+    <item type="attr" name="APKTOOL_DUMMY_3b7" />
+    <item type="attr" name="APKTOOL_DUMMY_3b8" />
+    <item type="attr" name="APKTOOL_DUMMY_3b9" />
+    <item type="attr" name="APKTOOL_DUMMY_3ba" />
+    <item type="attr" name="APKTOOL_DUMMY_3bb" />
+    <item type="attr" name="APKTOOL_DUMMY_3bc" />
     <attr name="openSearchBarStyle" format="reference" />
     <attr name="openSearchViewPrefixStyle" format="reference" />
     <attr name="openSearchViewStyle" format="reference" />
     <attr name="order" format="integer" />
     <attr name="orderingFromXml" format="boolean" />
     <attr name="overlapAnchor" format="boolean" />
+    <item type="attr" name="APKTOOL_DUMMY_3c3" />
     <attr name="paddingBottomNoButtons" format="dimension" />
     <attr name="paddingBottomSystemWindowInsets" format="boolean" />
     <attr name="paddingEnd" format="dimension" />
@@ -1463,58 +1403,58 @@
     <attr name="panelMenuListWidth" format="dimension" />
     <attr name="passwordToggleContentDescription" format="string" />
     <attr name="passwordToggleDrawable" format="reference" />
+    <item type="attr" name="APKTOOL_DUMMY_3de" />
     <attr name="passwordToggleTint" format="color" />
+    <item type="attr" name="APKTOOL_DUMMY_3e0" />
     <attr name="pathMotionArc">
         <enum name="flip" value="3" />
         <enum name="none" value="0" />
         <enum name="startHorizontal" value="2" />
         <enum name="startVertical" value="1" />
     </attr>
+    <item type="attr" name="APKTOOL_DUMMY_3e2" />
+    <item type="attr" name="APKTOOL_DUMMY_3e3" />
+    <item type="attr" name="APKTOOL_DUMMY_3e4" />
+    <item type="attr" name="APKTOOL_DUMMY_3e5" />
+    <item type="attr" name="APKTOOL_DUMMY_3e6" />
+    <item type="attr" name="APKTOOL_DUMMY_3e7" />
+    <item type="attr" name="APKTOOL_DUMMY_3e8" />
+    <item type="attr" name="APKTOOL_DUMMY_3e9" />
     <attr name="persistent" format="boolean" />
     <attr name="pivotAnchor" format="reference">
         <enum name="parent" value="0" />
     </attr>
+    <item type="attr" name="APKTOOL_DUMMY_3ec" />
     <attr name="placeholderTextAppearance" format="reference" />
     <attr name="placeholderTextColor" format="color" />
+    <item type="attr" name="APKTOOL_DUMMY_3ef" />
     <attr name="polarRelativeTo" format="reference" />
     <attr name="popupMenuBackground" format="reference" />
     <attr name="popupMenuStyle" format="reference" />
     <attr name="popupTheme" format="reference" />
     <attr name="popupWindowStyle" format="reference" />
+    <item type="attr" name="APKTOOL_DUMMY_3f5" />
     <attr name="positiveButtonText" format="string" />
-    <attr name="positiveIcon" format="reference" />
     <attr name="preferenceCategoryStyle" format="reference" />
     <attr name="preferenceCategoryTitleTextAppearance" format="reference" />
     <attr name="preferenceCategoryTitleTextColor" format="reference|color" />
     <attr name="preferenceFragmentCompatStyle" format="reference" />
     <attr name="preferenceFragmentListStyle" format="reference" />
     <attr name="preferenceFragmentStyle" format="reference" />
+    <item type="attr" name="APKTOOL_DUMMY_3fd" />
     <attr name="preferenceScreenStyle" format="reference" />
-    <attr name="preferenceSliderIncrement" format="float" />
-    <attr name="preferenceSliderIncrementSeparators" format="boolean" />
-    <attr name="preferenceSliderMaxValue" format="float" />
-    <attr name="preferenceSliderMinValue" format="float" />
-    <attr name="preferenceSliderShowMinimumIncrement" format="boolean" />
     <attr name="preferenceStyle" format="reference" />
     <attr name="preferenceTheme" format="reference" />
+    <item type="attr" name="APKTOOL_DUMMY_401" />
     <attr name="prefixTextAppearance" format="reference" />
     <attr name="prefixTextColor" format="color" />
     <attr name="preserveIconSpacing" format="boolean" />
     <attr name="pressedButtonTranslationZ" format="dimension" />
     <attr name="pressedTranslationZ" format="dimension" />
-    <attr name="primaryText" format="string" />
-    <attr name="primaryTextAppearance" format="reference" />
-    <attr name="primaryTextColor" format="reference|color" />
-    <attr name="primaryTextHorizontalPosition">
-        <enum name="center" value="1" />
-        <enum name="start" value="0" />
-    </attr>
-    <attr name="primaryTextMaxLines" format="integer" />
     <attr name="productLockupViewStyle" format="reference" />
     <attr name="productNameTextColor" format="color" />
     <attr name="progressBarPadding" format="dimension" />
     <attr name="progressBarStyle" format="reference" />
-    <attr name="progressContentDescription" format="string" />
     <attr name="quantizeMotionInterpolator" format="reference|string">
         <enum name="bounce" value="4" />
         <enum name="easeIn" value="1" />
@@ -1526,8 +1466,10 @@
     <attr name="quantizeMotionPhase" format="float" />
     <attr name="quantizeMotionSteps" format="integer" />
     <attr name="queryBackground" format="reference" />
+    <item type="attr" name="APKTOOL_DUMMY_40f" />
+    <item type="attr" name="APKTOOL_DUMMY_410" />
     <attr name="radioButtonStyle" format="reference" />
-    <attr name="radius" format="dimension" />
+    <item type="attr" name="APKTOOL_DUMMY_412" />
     <attr name="rangeFillColor" format="color" />
     <attr name="rangedValuePrimaryColor" format="color" />
     <attr name="rangedValueProgressHidden" format="boolean" />
@@ -1536,58 +1478,53 @@
     <attr name="ratingBarStyle" format="reference" />
     <attr name="ratingBarStyleIndicator" format="reference" />
     <attr name="ratingBarStyleSmall" format="reference" />
+    <item type="attr" name="APKTOOL_DUMMY_41b" />
+    <item type="attr" name="APKTOOL_DUMMY_41c" />
+    <item type="attr" name="APKTOOL_DUMMY_41d" />
+    <item type="attr" name="APKTOOL_DUMMY_41e" />
+    <item type="attr" name="APKTOOL_DUMMY_41f" />
     <attr name="recyclerViewStyle" format="reference" />
     <attr name="region_heightLessThan" format="dimension" />
     <attr name="region_heightMoreThan" format="dimension" />
     <attr name="region_widthLessThan" format="dimension" />
     <attr name="region_widthMoreThan" format="dimension" />
-    <attr name="removeEmbeddedFabElevation" format="boolean" />
     <attr name="reverseLayout" format="boolean" />
     <attr name="rippleColor" format="color" />
-    <attr name="rotaryInputHapticStrategy">
-        <enum name="off" value="0" />
-        <enum name="on_fixed_interval" value="1" />
-    </attr>
+    <item type="attr" name="APKTOOL_DUMMY_427" />
+    <item type="attr" name="APKTOOL_DUMMY_428" />
+    <item type="attr" name="APKTOOL_DUMMY_429" />
+    <item type="attr" name="APKTOOL_DUMMY_42a" />
+    <item type="attr" name="APKTOOL_DUMMY_42b" />
+    <item type="attr" name="APKTOOL_DUMMY_42c" />
+    <item type="attr" name="APKTOOL_DUMMY_42d" />
+    <item type="attr" name="APKTOOL_DUMMY_42e" />
     <attr name="scrimAnimationDuration" format="integer" />
     <attr name="scrimBackground" format="reference|color" />
     <attr name="scrimColor" format="color" />
     <attr name="scrimVisibleHeightTrigger" format="dimension" />
-    <attr name="scrollDecelerationFactor" format="reference|float" />
-    <attr name="scrollSpeedFactor" format="reference|float" />
+    <item type="attr" name="APKTOOL_DUMMY_433" />
+    <item type="attr" name="APKTOOL_DUMMY_434" />
     <attr name="searchHintIcon" format="reference" />
     <attr name="searchIcon" format="reference" />
+    <item type="attr" name="APKTOOL_DUMMY_437" />
     <attr name="searchViewStyle" format="reference" />
-    <attr name="secondaryText" format="string" />
-    <attr name="secondaryTextAppearance" format="reference" />
-    <attr name="secondaryTextColor" format="reference|color" />
-    <attr name="secondaryTextEnabled" format="boolean" />
-    <attr name="secondaryTextMaxLines" format="integer" />
     <attr name="seekBarIncrement" format="integer" />
     <attr name="seekBarPreferenceStyle" format="reference" />
     <attr name="seekBarStyle" format="reference" />
     <attr name="selectable" format="boolean" />
     <attr name="selectableItemBackground" format="reference" />
     <attr name="selectableItemBackgroundBorderless" format="reference" />
-    <attr name="selectedAlpha" format="float" />
-    <attr name="selectionControlContentDescription" format="string" />
-    <attr name="separatorColor" format="reference|color" />
+    <item type="attr" name="APKTOOL_DUMMY_43f" />
+    <item type="attr" name="APKTOOL_DUMMY_440" />
+    <item type="attr" name="APKTOOL_DUMMY_441" />
     <attr name="shadow_width" format="dimension" />
     <attr name="shapeAppearance" format="reference" />
-    <attr name="shapeAppearanceCornerExtraLarge" format="reference" />
-    <attr name="shapeAppearanceCornerExtraSmall" format="reference" />
-    <attr name="shapeAppearanceCornerLarge" format="reference" />
-    <attr name="shapeAppearanceCornerMedium" format="reference" />
-    <attr name="shapeAppearanceCornerSmall" format="reference" />
     <attr name="shapeAppearanceLargeComponent" format="reference" />
     <attr name="shapeAppearanceMediumComponent" format="reference" />
     <attr name="shapeAppearanceOverlay" format="reference" />
     <attr name="shapeAppearanceSmallComponent" format="reference" />
-    <attr name="shapeCornerFamily">
-        <enum name="cut" value="1" />
-        <enum name="rounded" value="0" />
-    </attr>
+    <item type="attr" name="APKTOOL_DUMMY_448" />
     <attr name="shouldDisableView" format="boolean" />
-    <attr name="shouldRemoveExpandedCorners" format="boolean" />
     <attr name="showAnimationBehavior">
         <enum name="inward" value="2" />
         <enum name="none" value="0" />
@@ -1601,77 +1538,44 @@
         <flag name="withText" value="0x00000004" />
     </attr>
     <attr name="showDelay" format="integer" />
+    <item type="attr" name="APKTOOL_DUMMY_44d" />
+    <item type="attr" name="APKTOOL_DUMMY_44e" />
     <attr name="showDividers">
         <flag name="beginning" value="0x00000001" />
         <flag name="end" value="0x00000004" />
         <flag name="middle" value="0x00000002" />
         <flag name="none" value="0x00000000" />
     </attr>
-    <attr name="showEmptySweepAngle" format="boolean" />
-    <attr name="showIncrementSeparators" format="boolean" />
-    <attr name="showMinimumIncrement" format="boolean" />
     <attr name="showMotionSpec" format="reference" />
+    <item type="attr" name="APKTOOL_DUMMY_451" />
+    <item type="attr" name="APKTOOL_DUMMY_452" />
+    <item type="attr" name="APKTOOL_DUMMY_453" />
+    <item type="attr" name="APKTOOL_DUMMY_454" />
+    <item type="attr" name="APKTOOL_DUMMY_455" />
     <attr name="showSeekBarValue" format="boolean" />
-    <attr name="showStartUpAnimation" format="boolean" />
     <attr name="showText" format="boolean" />
     <attr name="showTitle" format="boolean" />
-    <attr name="shrinkMotionSpec" format="reference" />
-    <attr name="sideSheetDialogTheme" format="reference" />
-    <attr name="sideSheetModalStyle" format="reference" />
-    <attr name="simpleItemLayout" format="reference" />
-    <attr name="simpleItemSelectedColor" format="color" />
-    <attr name="simpleItemSelectedRippleColor" format="color" />
-    <attr name="simpleItems" format="reference" />
+    <item type="attr" name="APKTOOL_DUMMY_459" />
+    <item type="attr" name="APKTOOL_DUMMY_45a" />
     <attr name="singleChoiceItemLayout" format="reference" />
     <attr name="singleLine" format="boolean" />
     <attr name="singleLineTitle" format="boolean" />
     <attr name="singleSelection" format="boolean" />
-    <attr name="size">
-        <enum name="large" value="3" />
-        <enum name="small" value="1" />
-        <enum name="standard" value="2" />
-        <enum name="xsmall" value="0" />
-    </attr>
-    <attr name="skipFirstItemWhenCentering" format="boolean" />
+    <item type="attr" name="APKTOOL_DUMMY_45f" />
     <attr name="sliderStyle" format="reference" />
-    <attr name="slider_bigDotColor" format="reference|color" />
-    <attr name="slider_bigDotRadius" format="reference|dimension" />
-    <attr name="slider_currentValue" format="reference|float" />
-    <attr name="slider_currentValueTextColor" format="reference|color" />
-    <attr name="slider_dotUnit" format="reference|float" />
-    <attr name="slider_dotsGap" format="reference|dimension" />
-    <attr name="slider_dotsNumberGap" format="reference|dimension" />
-    <attr name="slider_indicatorDotColor" format="reference|color" />
-    <attr name="slider_indicatorDotRadius" format="reference|dimension" />
-    <attr name="slider_maxValue" format="reference|float" />
-    <attr name="slider_microDotRadius" format="reference|dimension" />
-    <attr name="slider_minValue" format="reference|float" />
-    <attr name="slider_miniDotRadius" format="reference|dimension" />
-    <attr name="slider_numberPerCount" format="reference|integer" />
-    <attr name="slider_smallDotColor" format="reference|color" />
-    <attr name="slider_smallDotRadius" format="reference|dimension" />
-    <attr name="slider_valueTextSize" format="reference|dimension" />
     <attr name="snackbarButtonStyle" format="reference" />
     <attr name="snackbarStyle" format="reference" />
     <attr name="snackbarTextViewStyle" format="reference" />
-    <attr name="snappingEnabled" format="boolean" />
     <attr name="spanCount" format="integer" />
     <attr name="spinBars" format="boolean" />
-    <attr name="spinnerDirection">
-        <enum name="clockwise" value="0" />
-        <enum name="counter_clockwise" value="1" />
-    </attr>
     <attr name="spinnerDropDownItemStyle" format="reference" />
-    <attr name="spinnerProgressColor" format="reference|color" />
-    <attr name="spinnerRotation" format="float" />
-    <attr name="spinnerStartAngle" format="float" />
     <attr name="spinnerStyle" format="reference" />
-    <attr name="spinnerSweepAngle" format="float" />
-    <attr name="spinnerTrackColor" format="reference|color" />
-    <attr name="spinnerTrackEndAngle" format="float" />
-    <attr name="spinnerTrackStartAngle" format="float" />
-    <attr name="spinnerTrackWidth" format="dimension" />
     <attr name="splitTrack" format="boolean" />
+    <item type="attr" name="APKTOOL_DUMMY_469" />
+    <item type="attr" name="APKTOOL_DUMMY_46a" />
+    <item type="attr" name="APKTOOL_DUMMY_46b" />
+    <item type="attr" name="APKTOOL_DUMMY_46c" />
+    <item type="attr" name="APKTOOL_DUMMY_46d" />
     <attr name="square_dimen">
         <enum name="height" value="1" />
         <enum name="none" value="0" />
@@ -1679,26 +1583,24 @@
     </attr>
     <attr name="srcCompat" format="reference" />
     <attr name="stackFromEnd" format="boolean" />
+    <item type="attr" name="APKTOOL_DUMMY_471" />
+    <item type="attr" name="APKTOOL_DUMMY_472" />
+    <item type="attr" name="APKTOOL_DUMMY_473" />
+    <item type="attr" name="APKTOOL_DUMMY_474" />
     <attr name="startIconTint" format="color" />
-    <attr name="startPaddingPercent" format="float" />
-    <attr name="stateLabels" format="string" />
+    <item type="attr" name="APKTOOL_DUMMY_476" />
+    <item type="attr" name="APKTOOL_DUMMY_477" />
     <attr name="state_collapsed" format="boolean" />
     <attr name="state_collapsible" format="boolean" />
     <attr name="state_dragged" format="boolean" />
-    <attr name="state_error" format="boolean" />
-    <attr name="state_indeterminate" format="boolean" />
     <attr name="state_liftable" format="boolean" />
     <attr name="state_lifted" format="boolean" />
-    <attr name="state_light" format="boolean" />
     <attr name="state_paused" format="boolean" />
-    <attr name="state_with_icon" format="boolean" />
     <attr name="statusBarBackground" format="reference|color" />
     <attr name="statusBarForeground" format="color" />
     <attr name="statusBarScrim" format="color" />
     <attr name="strokeColor" format="color" />
     <attr name="strokeWidth" format="dimension" />
-    <attr name="stroke_width" format="integer" />
-    <attr name="strokedOnChecked" format="boolean" />
     <attr name="subMenuArrow" format="reference" />
     <attr name="subheaderColor" format="reference|color" />
     <attr name="subheaderInsetEnd" format="dimension" />
@@ -1706,15 +1608,18 @@
     <attr name="subheaderTextAppearance" format="reference" />
     <attr name="submitBackground" format="reference" />
     <attr name="subtitle" format="string" />
+    <item type="attr" name="APKTOOL_DUMMY_48a" />
     <attr name="subtitleTextAppearance" format="reference" />
     <attr name="subtitleTextColor" format="color" />
     <attr name="subtitleTextStyle" format="reference" />
+    <item type="attr" name="APKTOOL_DUMMY_48e" />
     <attr name="suffixTextAppearance" format="reference" />
     <attr name="suffixTextColor" format="color" />
     <attr name="suggestionRowLayout" format="reference" />
     <attr name="summary" format="string" />
     <attr name="summaryOff" format="string" />
     <attr name="summaryOn" format="string" />
+    <item type="attr" name="APKTOOL_DUMMY_495" />
     <attr name="switchMinWidth" format="dimension" />
     <attr name="switchPadding" format="dimension" />
     <attr name="switchPreferenceCompatStyle" format="reference" />
@@ -1743,7 +1648,6 @@
     <attr name="tabIndicatorAnimationDuration" format="integer" />
     <attr name="tabIndicatorAnimationMode">
         <enum name="elastic" value="1" />
-        <enum name="fade" value="2" />
         <enum name="linear" value="0" />
     </attr>
     <attr name="tabIndicatorColor" format="color" />
@@ -1770,40 +1674,43 @@
     <attr name="tabPaddingTop" format="dimension" />
     <attr name="tabRippleColor" format="color" />
     <attr name="tabSecondaryStyle" format="reference" />
-    <attr name="tabSelectedTextAppearance" format="reference" />
     <attr name="tabSelectedTextColor" format="color" />
     <attr name="tabStyle" format="reference" />
     <attr name="tabTextAppearance" format="reference" />
     <attr name="tabTextColor" format="color" />
     <attr name="tabUnboundedRipple" format="boolean" />
+    <item type="attr" name="APKTOOL_DUMMY_4ba" />
+    <item type="attr" name="APKTOOL_DUMMY_4bb" />
+    <item type="attr" name="APKTOOL_DUMMY_4bc" />
+    <item type="attr" name="APKTOOL_DUMMY_4bd" />
     <attr name="textAllCaps" format="reference|boolean" />
     <attr name="textAppearanceBody1" format="reference" />
     <attr name="textAppearanceBody1Bold" format="reference" />
     <attr name="textAppearanceBody2" format="reference" />
     <attr name="textAppearanceBody2Bold" format="reference" />
-    <attr name="textAppearanceBodyLarge" format="reference" />
-    <attr name="textAppearanceBodyMedium" format="reference" />
-    <attr name="textAppearanceBodySmall" format="reference" />
+    <item type="attr" name="APKTOOL_DUMMY_4c3" />
+    <item type="attr" name="APKTOOL_DUMMY_4c4" />
+    <item type="attr" name="APKTOOL_DUMMY_4c5" />
     <attr name="textAppearanceButton" format="reference" />
     <attr name="textAppearanceCaption" format="reference" />
     <attr name="textAppearanceDisplay1" format="reference" />
     <attr name="textAppearanceDisplay2" format="reference" />
     <attr name="textAppearanceDisplay3" format="reference" />
-    <attr name="textAppearanceDisplayLarge" format="reference" />
-    <attr name="textAppearanceDisplayMedium" format="reference" />
-    <attr name="textAppearanceDisplaySmall" format="reference" />
+    <item type="attr" name="APKTOOL_DUMMY_4cb" />
+    <item type="attr" name="APKTOOL_DUMMY_4cc" />
+    <item type="attr" name="APKTOOL_DUMMY_4cd" />
     <attr name="textAppearanceHeadline1" format="reference" />
     <attr name="textAppearanceHeadline2" format="reference" />
     <attr name="textAppearanceHeadline3" format="reference" />
     <attr name="textAppearanceHeadline4" format="reference" />
     <attr name="textAppearanceHeadline5" format="reference" />
     <attr name="textAppearanceHeadline6" format="reference" />
-    <attr name="textAppearanceHeadlineLarge" format="reference" />
-    <attr name="textAppearanceHeadlineMedium" format="reference" />
-    <attr name="textAppearanceHeadlineSmall" format="reference" />
-    <attr name="textAppearanceLabelLarge" format="reference" />
-    <attr name="textAppearanceLabelMedium" format="reference" />
-    <attr name="textAppearanceLabelSmall" format="reference" />
+    <item type="attr" name="APKTOOL_DUMMY_4d4" />
+    <item type="attr" name="APKTOOL_DUMMY_4d5" />
+    <item type="attr" name="APKTOOL_DUMMY_4d6" />
+    <item type="attr" name="APKTOOL_DUMMY_4d7" />
+    <item type="attr" name="APKTOOL_DUMMY_4d8" />
+    <item type="attr" name="APKTOOL_DUMMY_4d9" />
     <attr name="textAppearanceLargePopupMenu" format="reference" />
     <attr name="textAppearanceLineHeightEnabled" format="boolean" />
     <attr name="textAppearanceListItem" format="reference" />
@@ -1818,13 +1725,35 @@
     <attr name="textAppearanceSubhead2" format="reference" />
     <attr name="textAppearanceSubtitle1" format="reference" />
     <attr name="textAppearanceSubtitle2" format="reference" />
-    <attr name="textAppearanceTitleLarge" format="reference" />
-    <attr name="textAppearanceTitleMedium" format="reference" />
-    <attr name="textAppearanceTitleSmall" format="reference" />
+    <item type="attr" name="APKTOOL_DUMMY_4e8" />
+    <item type="attr" name="APKTOOL_DUMMY_4e9" />
+    <item type="attr" name="APKTOOL_DUMMY_4ea" />
+    <item type="attr" name="APKTOOL_DUMMY_4eb" />
+    <item type="attr" name="APKTOOL_DUMMY_4ec" />
+    <item type="attr" name="APKTOOL_DUMMY_4ed" />
+    <item type="attr" name="APKTOOL_DUMMY_4ee" />
+    <item type="attr" name="APKTOOL_DUMMY_4ef" />
+    <item type="attr" name="APKTOOL_DUMMY_4f0" />
+    <item type="attr" name="APKTOOL_DUMMY_4f1" />
+    <item type="attr" name="APKTOOL_DUMMY_4f2" />
+    <item type="attr" name="APKTOOL_DUMMY_4f3" />
+    <item type="attr" name="APKTOOL_DUMMY_4f4" />
+    <item type="attr" name="APKTOOL_DUMMY_4f5" />
+    <item type="attr" name="APKTOOL_DUMMY_4f6" />
+    <item type="attr" name="APKTOOL_DUMMY_4f7" />
+    <item type="attr" name="APKTOOL_DUMMY_4f8" />
+    <item type="attr" name="APKTOOL_DUMMY_4f9" />
+    <item type="attr" name="APKTOOL_DUMMY_4fa" />
+    <item type="attr" name="APKTOOL_DUMMY_4fb" />
+    <item type="attr" name="APKTOOL_DUMMY_4fc" />
+    <item type="attr" name="APKTOOL_DUMMY_4fd" />
+    <item type="attr" name="APKTOOL_DUMMY_4fe" />
+    <item type="attr" name="APKTOOL_DUMMY_4ff" />
     <attr name="textColor" format="color" />
     <attr name="textColorAlertDialogListItem" format="reference|color" />
     <attr name="textColorSearchUrl" format="reference|color" />
     <attr name="textEndPadding" format="dimension" />
+    <item type="attr" name="APKTOOL_DUMMY_504" />
     <attr name="textInputFilledDenseStyle" format="reference" />
     <attr name="textInputFilledExposedDropdownMenuStyle" format="reference" />
     <attr name="textInputFilledStyle" format="reference" />
@@ -1834,14 +1763,33 @@
     <attr name="textInputOutlinedStyle" format="reference" />
     <attr name="textInputStyle" format="reference" />
     <attr name="textLocale" format="string" />
+    <item type="attr" name="APKTOOL_DUMMY_50e" />
+    <item type="attr" name="APKTOOL_DUMMY_50f" />
+    <item type="attr" name="APKTOOL_DUMMY_510" />
+    <item type="attr" name="APKTOOL_DUMMY_511" />
     <attr name="textSize" format="dimension" />
-    <attr name="textSizeNonScalableWearDisplay2" format="dimension" />
-    <attr name="textSizeWearButton1" format="dimension" />
-    <attr name="textSizeWearCaption1" format="dimension" />
-    <attr name="textSizeWearDisplay2" format="dimension" />
     <attr name="textStartPadding" format="dimension" />
-    <attr name="textStyleWearCaption2" format="reference" />
+    <item type="attr" name="APKTOOL_DUMMY_514" />
+    <item type="attr" name="APKTOOL_DUMMY_515" />
+    <item type="attr" name="APKTOOL_DUMMY_516" />
+    <item type="attr" name="APKTOOL_DUMMY_517" />
+    <item type="attr" name="APKTOOL_DUMMY_518" />
+    <item type="attr" name="APKTOOL_DUMMY_519" />
+    <item type="attr" name="APKTOOL_DUMMY_51a" />
+    <item type="attr" name="APKTOOL_DUMMY_51b" />
+    <item type="attr" name="APKTOOL_DUMMY_51c" />
+    <item type="attr" name="APKTOOL_DUMMY_51d" />
+    <item type="attr" name="APKTOOL_DUMMY_51e" />
+    <item type="attr" name="APKTOOL_DUMMY_51f" />
+    <item type="attr" name="APKTOOL_DUMMY_520" />
+    <item type="attr" name="APKTOOL_DUMMY_521" />
+    <item type="attr" name="APKTOOL_DUMMY_522" />
+    <item type="attr" name="APKTOOL_DUMMY_523" />
     <attr name="textTypeface" format="string" />
+    <item type="attr" name="APKTOOL_DUMMY_525" />
+    <item type="attr" name="APKTOOL_DUMMY_526" />
+    <item type="attr" name="APKTOOL_DUMMY_527" />
+    <item type="attr" name="APKTOOL_DUMMY_528" />
     <attr name="theme" format="reference" />
     <attr name="themeFontFamily" format="reference|string" />
     <attr name="themeFontFamilyContent" format="reference|string" />
@@ -1852,8 +1800,9 @@
     <attr name="thickness" format="dimension" />
     <attr name="thumbColor" format="color" />
     <attr name="thumbElevation" format="dimension" />
-    <attr name="thumbIconTint" format="color" />
     <attr name="thumbRadius" format="dimension" />
+    <item type="attr" name="APKTOOL_DUMMY_534" />
+    <item type="attr" name="APKTOOL_DUMMY_535" />
     <attr name="thumbTextPadding" format="dimension" />
     <attr name="thumbTint" format="color" />
     <attr name="thumbTintMode">
@@ -1864,6 +1813,7 @@
         <enum name="src_in" value="5" />
         <enum name="src_over" value="3" />
     </attr>
+    <item type="attr" name="APKTOOL_DUMMY_539" />
     <attr name="tickColorActive" format="color" />
     <attr name="tickColorInactive" format="color" />
     <attr name="tickMark" format="reference" />
@@ -1876,8 +1826,7 @@
         <enum name="src_in" value="5" />
         <enum name="src_over" value="3" />
     </attr>
-    <attr name="tickRadiusActive" format="dimension" />
-    <attr name="tickRadiusInactive" format="dimension" />
+    <item type="attr" name="APKTOOL_DUMMY_53f" />
     <attr name="tint" format="color" />
     <attr name="tintMode">
         <enum name="add" value="16" />
@@ -1887,7 +1836,9 @@
         <enum name="src_in" value="5" />
         <enum name="src_over" value="3" />
     </attr>
+    <item type="attr" name="APKTOOL_DUMMY_542" />
     <attr name="title" format="string" />
+    <item type="attr" name="APKTOOL_DUMMY_544" />
     <attr name="titleCollapseMode">
         <enum name="fade" value="1" />
         <enum name="scale" value="0" />
@@ -1900,37 +1851,28 @@
     <attr name="titleMarginStart" format="dimension" />
     <attr name="titleMarginTop" format="dimension" />
     <attr name="titleMargins" format="dimension" />
-    <attr name="titlePositionInterpolator" format="reference" />
     <attr name="titleSize" format="dimension" />
-    <attr name="titleText" format="string" />
     <attr name="titleTextAppearance" format="reference" />
     <attr name="titleTextColor" format="color" />
-    <attr name="titleTextEllipsize">
-        <enum name="end" value="2" />
-        <enum name="marquee" value="3" />
-        <enum name="middle" value="1" />
-        <enum name="start" value="0" />
-    </attr>
     <attr name="titleTextStyle" format="reference" />
     <attr name="titleTypeface" format="string" />
-    <attr name="toggleCheckedStateOnClick" format="boolean" />
-    <attr name="toggleOnClick" format="boolean" />
     <attr name="toolbarId" format="reference" />
     <attr name="toolbarNavigationButtonStyle" format="reference" />
     <attr name="toolbarStyle" format="reference" />
     <attr name="toolbarSurfaceStyle" format="reference" />
     <attr name="tooltipForegroundColor" format="reference|color" />
     <attr name="tooltipFrameBackground" format="reference" />
+    <item type="attr" name="APKTOOL_DUMMY_559" />
     <attr name="tooltipText" format="string" />
     <attr name="topInsetScrimEnabled" format="boolean" />
-    <attr name="topPaddingPercent" format="float" />
+    <item type="attr" name="APKTOOL_DUMMY_55c" />
+    <item type="attr" name="APKTOOL_DUMMY_55d" />
+    <item type="attr" name="APKTOOL_DUMMY_55e" />
     <attr name="track" format="reference" />
     <attr name="trackColor" format="color" />
     <attr name="trackColorActive" format="color" />
     <attr name="trackColorInactive" format="color" />
     <attr name="trackCornerRadius" format="dimension" />
-    <attr name="trackDecoration" format="reference" />
-    <attr name="trackDecorationTint" format="color" />
     <attr name="trackHeight" format="dimension" />
     <attr name="trackThickness" format="dimension" />
     <attr name="trackTint" format="color" />
@@ -1943,51 +1885,47 @@
         <enum name="src_over" value="3" />
     </attr>
     <attr name="transformPivotTarget" format="reference" />
+    <item type="attr" name="APKTOOL_DUMMY_569" />
     <attr name="transitionEasing" format="string">
         <enum name="accelerate" value="1" />
         <enum name="decelerate" value="2" />
         <enum name="linear" value="3" />
         <enum name="standard" value="0" />
     </attr>
+    <item type="attr" name="APKTOOL_DUMMY_56b" />
     <attr name="transitionPathRotate" format="float" />
+    <item type="attr" name="APKTOOL_DUMMY_56d" />
+    <item type="attr" name="APKTOOL_DUMMY_56e" />
+    <item type="attr" name="APKTOOL_DUMMY_56f" />
+    <item type="attr" name="APKTOOL_DUMMY_570" />
     <attr name="ttcIndex" format="integer" />
-    <attr name="unselectedAlpha" format="float" />
+    <item type="attr" name="APKTOOL_DUMMY_572" />
+    <item type="attr" name="APKTOOL_DUMMY_573" />
     <attr name="updatesContinuously" format="boolean" />
     <attr name="useCompatPadding" format="boolean" />
+    <item type="attr" name="APKTOOL_DUMMY_576" />
     <attr name="useMaterialThemeColors" format="boolean" />
     <attr name="useSimpleSummaryProvider" format="boolean" />
+    <item type="attr" name="APKTOOL_DUMMY_579" />
     <attr name="verticalOffset" format="dimension" />
     <attr name="verticalOffsetWithText" format="dimension" />
     <attr name="viewInflaterClass" format="string" />
-    <attr name="vignette" format="reference" />
-    <attr name="vignetteColor" format="reference|color" />
+    <item type="attr" name="APKTOOL_DUMMY_57d" />
+    <item type="attr" name="APKTOOL_DUMMY_57e" />
+    <item type="attr" name="APKTOOL_DUMMY_57f" />
+    <item type="attr" name="APKTOOL_DUMMY_580" />
     <attr name="visibilityMode">
         <enum name="ignore" value="1" />
         <enum name="normal" value="0" />
     </attr>
     <attr name="voiceIcon" format="reference" />
-    <attr name="wearActionButton" format="reference" />
-    <attr name="wearActionButtonStyle" format="reference" />
-    <attr name="wearButtonStyle" format="reference|string|integer|boolean|color|float|dimension|fraction" />
-    <attr name="wearChipButtonDefaultLayoutStrategy">
-        <enum name="fixed" value="0" />
-        <enum name="stretched" value="1" />
-    </attr>
-    <attr name="wearChipButtonStyle" format="reference|string|integer|boolean|color|float|dimension|fraction" />
-    <attr name="wearCircularButtonStyle" format="reference|string|integer|boolean|color|float|dimension|fraction" />
-    <attr name="wearColumnLabelStyle" format="reference" />
-    <attr name="wearForcedProgressButton" format="reference" />
-    <attr name="wearListItemTextAppearance" format="reference" />
-    <attr name="wearSelectableItemBackground" format="reference" />
-    <attr name="wearSelectionDisabledBackgroundColorUnselected" format="color" />
-    <attr name="wearSelectionDisabledColorUnselected" format="color" />
-    <attr name="wearSeparatorTextStyle" format="reference" />
-    <attr name="wearToggleStyle" format="reference" />
-    <attr name="wearToggleTextStyle" format="reference" />
-    <attr name="wearToggleTextWidth" format="dimension">
-        <enum name="wrap_content" value="-2" />
-    </attr>
-    <attr name="wear_icon_size" format="dimension" />
+    <item type="attr" name="APKTOOL_DUMMY_583" />
+    <item type="attr" name="APKTOOL_DUMMY_584" />
+    <item type="attr" name="APKTOOL_DUMMY_585" />
+    <item type="attr" name="APKTOOL_DUMMY_586" />
+    <item type="attr" name="APKTOOL_DUMMY_587" />
+    <item type="attr" name="APKTOOL_DUMMY_588" />
+    <item type="attr" name="APKTOOL_DUMMY_589" />
     <attr name="widgetLayout" format="reference" />
     <attr name="windowActionBar" format="boolean" />
     <attr name="windowActionBarOverlay" format="boolean" />
@@ -2015,4 +1953,29 @@
     <attr name="yearSelectedStyle" format="reference" />
     <attr name="yearStyle" format="reference" />
     <attr name="yearTodayStyle" format="reference" />
+    <attr name="aebMainButtonSizeDp" format="reference|dimension" />
+    <attr name="aebSubButtonSizeDp" format="reference|dimension" />
+    <attr name="aebButtonGapDp" format="reference|dimension" />
+    <attr name="aebStartAngleDegree" format="reference|integer" />
+    <attr name="aebEndAngleDegree" format="reference|integer" />
+    <attr name="aebAnimDurationMillis" format="reference|integer" />
+    <attr name="aebButtonElevation" format="reference|dimension" />
+    <attr name="aebMaskBackgroundColor" format="reference|color" />
+    <attr name="aebIsSelectionMode" format="boolean" />
+    <attr name="aebMainButtonTextColor" format="reference|color" />
+    <attr name="aebSubButtonTextColor" format="reference|color" />
+    <attr name="aebMainButtonTextSizeSp" format="reference|dimension" />
+    <attr name="aebSubButtonTextSizeSp" format="reference|dimension" />
+    <attr name="aebRippleEffect" format="boolean" />
+    <attr name="aebRippleColor" format="reference|color" />
+    <attr name="aebMainButtonRotateDegree" format="reference|integer" />
+    <attr name="aebMainButtonRotateAnimDurationMillis" format="reference|integer" />
+    <attr name="aebBlurBackground" format="boolean" />
+    <attr name="aebBlurRadius" format="reference|float" />
+    <attr name="max" format="integer" />
+    <attr name="seekBarProgress" format="integer" />
+    <attr name="thumb" format="reference" />
+    <attr name="progressDrawable" format="reference" />
+    <attr name="custom_color3" format="reference|color" />
+    <attr name="custom_size3" format="reference|dimension" />
 </resources>

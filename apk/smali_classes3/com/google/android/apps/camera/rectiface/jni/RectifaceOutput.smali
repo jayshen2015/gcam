@@ -3,14 +3,14 @@
 
 
 # instance fields
-.field public final a:J
+.field public a:J
 
 
 # direct methods
 .method static constructor <clinit>()V
     .locals 0
 
-    invoke-static {}, Lgtl;->a()V
+    invoke-static {}, Lhls;->a()V
 
     return-void
 .end method
@@ -27,12 +27,6 @@
     iput-wide v0, p0, Lcom/google/android/apps/camera/rectiface/jni/RectifaceOutput;->a:J
 
     return-void
-.end method
-
-.method public static native getAnglerfishFallbackStatusImpl(JI)I
-.end method
-
-.method private static native getAnglerfishFallbackStatusSizeImpl(J)I
 .end method
 
 .method private static native getCameraFovInDegreeImpl(J)I
@@ -53,13 +47,7 @@
 .method private static native getFaceDistortionCorrectionProcessingTimeMsImpl(J)I
 .end method
 
-.method public static native getIsAnglerfishAppliedImpl(J)Z
-.end method
-
 .method private static native getPortraitRelightingTimeMsImpl(J)I
-.end method
-
-.method private static native getSegmentationTimeMsImpl(J)I
 .end method
 
 .method private static native getShapeCorrectionModeImpl(J)I
@@ -102,7 +90,7 @@
 
     iget-wide v0, p0, Lcom/google/android/apps/camera/rectiface/jni/RectifaceOutput;->a:J
 
-    invoke-static {v0, v1}, Lcom/google/android/apps/camera/rectiface/jni/RectifaceOutput;->getAnglerfishFallbackStatusSizeImpl(J)I
+    invoke-static {v0, v1}, Lcom/google/android/apps/camera/rectiface/jni/RectifaceOutput;->getCameraFovInDegreeImpl(J)I
 
     move-result v0
 
@@ -114,7 +102,7 @@
 
     iget-wide v0, p0, Lcom/google/android/apps/camera/rectiface/jni/RectifaceOutput;->a:J
 
-    invoke-static {v0, v1}, Lcom/google/android/apps/camera/rectiface/jni/RectifaceOutput;->getCameraFovInDegreeImpl(J)I
+    invoke-static {v0, v1}, Lcom/google/android/apps/camera/rectiface/jni/RectifaceOutput;->getFaceConformalityAfterShapeCorrectionSizeImpl(J)I
 
     move-result v0
 
@@ -126,7 +114,7 @@
 
     iget-wide v0, p0, Lcom/google/android/apps/camera/rectiface/jni/RectifaceOutput;->a:J
 
-    invoke-static {v0, v1}, Lcom/google/android/apps/camera/rectiface/jni/RectifaceOutput;->getFaceConformalityAfterShapeCorrectionSizeImpl(J)I
+    invoke-static {v0, v1}, Lcom/google/android/apps/camera/rectiface/jni/RectifaceOutput;->getFaceConformalityBeforeShapeCorrectionSizeImpl(J)I
 
     move-result v0
 
@@ -138,7 +126,7 @@
 
     iget-wide v0, p0, Lcom/google/android/apps/camera/rectiface/jni/RectifaceOutput;->a:J
 
-    invoke-static {v0, v1}, Lcom/google/android/apps/camera/rectiface/jni/RectifaceOutput;->getFaceConformalityBeforeShapeCorrectionSizeImpl(J)I
+    invoke-static {v0, v1}, Lcom/google/android/apps/camera/rectiface/jni/RectifaceOutput;->getFaceDistortionCorrectionProcessingTimeMsImpl(J)I
 
     move-result v0
 
@@ -150,7 +138,7 @@
 
     iget-wide v0, p0, Lcom/google/android/apps/camera/rectiface/jni/RectifaceOutput;->a:J
 
-    invoke-static {v0, v1}, Lcom/google/android/apps/camera/rectiface/jni/RectifaceOutput;->getFaceDistortionCorrectionProcessingTimeMsImpl(J)I
+    invoke-static {v0, v1}, Lcom/google/android/apps/camera/rectiface/jni/RectifaceOutput;->getPortraitRelightingTimeMsImpl(J)I
 
     move-result v0
 
@@ -162,7 +150,7 @@
 
     iget-wide v0, p0, Lcom/google/android/apps/camera/rectiface/jni/RectifaceOutput;->a:J
 
-    invoke-static {v0, v1}, Lcom/google/android/apps/camera/rectiface/jni/RectifaceOutput;->getPortraitRelightingTimeMsImpl(J)I
+    invoke-static {v0, v1}, Lcom/google/android/apps/camera/rectiface/jni/RectifaceOutput;->getCameraFovInDegreeImpl(J)I
 
     move-result v0
 
@@ -174,18 +162,6 @@
 
     iget-wide v0, p0, Lcom/google/android/apps/camera/rectiface/jni/RectifaceOutput;->a:J
 
-    invoke-static {v0, v1}, Lcom/google/android/apps/camera/rectiface/jni/RectifaceOutput;->getSegmentationTimeMsImpl(J)I
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public final j()I
-    .locals 2
-
-    iget-wide v0, p0, Lcom/google/android/apps/camera/rectiface/jni/RectifaceOutput;->a:J
-
     invoke-static {v0, v1}, Lcom/google/android/apps/camera/rectiface/jni/RectifaceOutput;->getShapeCorrectionModeImpl(J)I
 
     move-result v0
@@ -193,7 +169,7 @@
     return v0
 .end method
 
-.method public final k()V
+.method public final j()V
     .locals 2
 
     iget-wide v0, p0, Lcom/google/android/apps/camera/rectiface/jni/RectifaceOutput;->a:J

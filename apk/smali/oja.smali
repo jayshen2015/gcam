@@ -1,10 +1,20 @@
-.class public interface abstract Loja;
+.class Loja;
 .super Ljava/lang/Object;
 
 
-# virtual methods
-.method public abstract a()Ljava/lang/Object;
-.end method
+# instance fields
+.field a:Ljava/lang/String;
 
-.method public abstract b()Z
+.field b:Ljava/lang/Object;
+
+.field c:Loja;
+
+
+# direct methods
+.method public constructor <init>()V
+    .locals 0
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
 .end method

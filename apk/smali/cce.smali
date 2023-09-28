@@ -1,137 +1,230 @@
-.class public final Lcce;
+.class public final synthetic Lcce;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Logk;
+.implements Lpgj;
 
 
 # instance fields
-.field private final a:Loiw;
+.field public final synthetic a:Lccn;
 
-.field private final b:Loiw;
+.field public final synthetic b:Lccu;
 
-.field private final c:Loiw;
+.field public final synthetic c:Lccs;
 
-.field private final d:Loiw;
-
-.field private final e:Loiw;
+.field public final synthetic d:I
 
 
 # direct methods
-.method public constructor <init>(Loiw;Loiw;Loiw;Loiw;Loiw;)V
+.method public synthetic constructor <init>(Lccn;Lccu;Lccs;I)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lcce;->a:Loiw;
+    iput-object p1, p0, Lcce;->a:Lccn;
 
-    iput-object p2, p0, Lcce;->b:Loiw;
+    iput-object p2, p0, Lcce;->b:Lccu;
 
-    iput-object p3, p0, Lcce;->c:Loiw;
+    iput-object p3, p0, Lcce;->c:Lccs;
 
-    iput-object p4, p0, Lcce;->d:Loiw;
-
-    iput-object p5, p0, Lcce;->e:Loiw;
+    iput p4, p0, Lcce;->d:I
 
     return-void
 .end method
 
-.method public static a(Loiw;Loiw;Loiw;Loiw;Loiw;)Lcce;
-    .locals 7
-
-    new-instance v6, Lcce;
-
-    move-object v0, v6
-
-    move-object v1, p0
-
-    move-object v2, p1
-
-    move-object v3, p2
-
-    move-object v4, p3
-
-    move-object v5, p4
-
-    invoke-direct/range {v0 .. v5}, Lcce;-><init>(Loiw;Loiw;Loiw;Loiw;Loiw;)V
-
-    return-object v6
-.end method
-
 
 # virtual methods
-.method public final b()Ldfa;
+.method public final a()Lpht;
     .locals 9
 
-    iget-object v0, p0, Lcce;->a:Loiw;
+    iget-object v0, p0, Lcce;->a:Lccn;
 
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
+    iget-object v1, p0, Lcce;->b:Lccu;
+
+    iget-object v2, p0, Lcce;->c:Lccs;
+
+    iget v3, p0, Lcce;->d:I
+
+    iget-object v0, v0, Lccn;->b:Lcco;
+
+    invoke-virtual {v0}, Lcco;->getReadableDatabase()Landroid/database/sqlite/SQLiteDatabase;
 
     move-result-object v0
 
-    move-object v2, v0
+    :try_start_0
+    new-instance v4, Lccl;
 
-    check-cast v2, Lgdk;
+    invoke-direct {v4, v1, v2, v3}, Lccl;-><init>(Lccu;Lccs;I)V
 
-    invoke-static {}, Lftp;->d()Lgfp;
+    new-instance v1, Lccc;
 
-    move-result-object v3
+    const/4 v2, 0x1
 
-    iget-object v0, p0, Lcce;->b:Loiw;
+    invoke-direct {v1, v4, v2}, Lccc;-><init>(Lccl;I)V
 
-    check-cast v0, Lfwo;
+    invoke-static {v1}, Loxh;->g(Louk;)V
 
-    invoke-virtual {v0}, Lfwo;->a()Lfuz;
+    new-instance v1, Lccc;
+
+    const/4 v3, 0x0
+
+    invoke-direct {v1, v4, v3}, Lccc;-><init>(Lccl;I)V
+
+    invoke-static {v1}, Loxh;->g(Louk;)V
+
+    iget-object v1, v4, Lccl;->a:Ljava/lang/String;
+
+    invoke-virtual {v4}, Lccl;->a()[Ljava/lang/String;
 
     move-result-object v4
 
-    iget-object v0, p0, Lcce;->c:Loiw;
+    invoke-virtual {v0, v1, v4}, Landroid/database/sqlite/SQLiteDatabase;->rawQuery(Ljava/lang/String;[Ljava/lang/String;)Landroid/database/Cursor;
 
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
+    move-result-object v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_2
 
-    move-result-object v0
+    :try_start_1
+    new-instance v4, Ljava/util/ArrayList;
 
-    move-object v5, v0
+    invoke-direct {v4}, Ljava/util/ArrayList;-><init>()V
 
-    check-cast v5, Ljvs;
+    :goto_0
+    invoke-interface {v1}, Landroid/database/Cursor;->moveToNext()Z
 
-    iget-object v0, p0, Lcce;->d:Loiw;
+    move-result v5
 
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
+    if-eqz v5, :cond_1
 
-    move-result-object v0
+    sget-object v5, Lccs;->c:Lccs;
 
-    move-object v6, v0
+    invoke-virtual {v5}, Lppd;->m()Lpoy;
 
-    check-cast v6, Lkoe;
+    move-result-object v5
 
-    iget-object v0, p0, Lcce;->e:Loiw;
+    const-string v6, "session_id"
 
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
+    invoke-interface {v1, v6}, Landroid/database/Cursor;->getColumnIndex(Ljava/lang/String;)I
 
-    move-result-object v0
+    move-result v6
 
-    move-object v7, v0
+    invoke-interface {v1, v6}, Landroid/database/Cursor;->getLong(I)J
 
-    check-cast v7, Ldhi;
+    move-result-wide v6
 
-    new-instance v0, Ldfa;
+    iget-boolean v8, v5, Lpoy;->c:Z
 
-    const/4 v8, 0x0
+    if-eqz v8, :cond_0
 
-    move-object v1, v0
+    invoke-virtual {v5}, Lpoy;->m()V
 
-    invoke-direct/range {v1 .. v8}, Ldfa;-><init>(Lgdk;Lgfp;Lfuz;Ljvs;Lkoe;Ldhi;[B)V
+    iput-boolean v3, v5, Lpoy;->c:Z
 
-    return-object v0
-.end method
+    :cond_0
+    iget-object v8, v5, Lpoy;->b:Lppd;
 
-.method public final bridge synthetic get()Ljava/lang/Object;
-    .locals 1
+    check-cast v8, Lccs;
 
-    invoke-virtual {p0}, Lcce;->b()Ldfa;
+    iput v2, v8, Lccs;->a:I
 
-    move-result-object v0
+    invoke-static {v6, v7}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
-    return-object v0
+    move-result-object v6
+
+    iput-object v6, v8, Lccs;->b:Ljava/lang/Object;
+
+    invoke-virtual {v5}, Lpoy;->h()Lppd;
+
+    move-result-object v5
+
+    check-cast v5, Lccs;
+
+    const-string v6, "value"
+
+    invoke-interface {v1, v6}, Landroid/database/Cursor;->getColumnIndex(Ljava/lang/String;)I
+
+    move-result v6
+
+    invoke-interface {v1, v6}, Landroid/database/Cursor;->getBlob(I)[B
+
+    move-result-object v6
+
+    invoke-static {v5, v6}, Lojd;->a(Ljava/lang/Object;Ljava/lang/Object;)Lojd;
+
+    move-result-object v5
+
+    invoke-interface {v4, v5}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    goto :goto_0
+
+    :cond_1
+    invoke-interface {v4}, Ljava/util/List;->size()I
+
+    invoke-static {v4}, Lplk;->V(Ljava/lang/Object;)Lpht;
+
+    move-result-object v2
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    if-eqz v1, :cond_2
+
+    :try_start_2
+    invoke-interface {v1}, Landroid/database/Cursor;->close()V
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_2
+
+    :cond_2
+    if-eqz v0, :cond_3
+
+    invoke-virtual {v0}, Landroid/database/sqlite/SQLiteDatabase;->close()V
+
+    :cond_3
+    return-object v2
+
+    :catchall_0
+    move-exception v2
+
+    if-eqz v1, :cond_4
+
+    :try_start_3
+    invoke-interface {v1}, Landroid/database/Cursor;->close()V
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_1
+
+    goto :goto_1
+
+    :catchall_1
+    move-exception v1
+
+    :cond_4
+    :goto_1
+    :try_start_4
+    throw v2
+    :try_end_4
+    .catchall {:try_start_4 .. :try_end_4} :catchall_2
+
+    :catchall_2
+    move-exception v1
+
+    if-eqz v0, :cond_5
+
+    :try_start_5
+    invoke-virtual {v0}, Landroid/database/sqlite/SQLiteDatabase;->close()V
+    :try_end_5
+    .catchall {:try_start_5 .. :try_end_5} :catchall_3
+
+    goto :goto_2
+
+    :catchall_3
+    move-exception v0
+
+    :cond_5
+    :goto_2
+    goto :goto_4
+
+    :goto_3
+    throw v1
+
+    :goto_4
+    goto :goto_3
 .end method

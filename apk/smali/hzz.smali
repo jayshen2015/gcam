@@ -1,101 +1,68 @@
-.class public final synthetic Lhzz;
+.class public final Lhzz;
 .super Ljava/lang/Object;
-
-# interfaces
-.implements Landroid/view/View$OnClickListener;
 
 
 # instance fields
-.field public final synthetic a:I
+.field public a:Lcom/google/android/apps/camera/smarts/SmartsChipView;
 
-.field public final synthetic b:Landroid/widget/LinearLayout;
+.field public b:Lcom/google/android/apps/camera/smarts/SmartsUiGleamingView;
 
-.field private final synthetic c:I
+.field public c:Lgvb;
+
+.field public d:Lelw;
+
+.field public e:Ljava/util/Map;
+
+.field public final f:Llar;
+
+.field public final g:Lfjs;
+
+.field public final h:Liuf;
+
+.field public final i:Z
+
+.field public final j:Lhuq;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lcom/google/android/apps/camera/camcorder/ui/modeslider/recordspeed/RecordSpeedSlider;II)V
+.method public constructor <init>(Llar;Lfjs;Liuf;Lhuq;Lddf;[B)V
     .locals 0
-
-    iput p3, p0, Lhzz;->c:I
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lhzz;->b:Landroid/widget/LinearLayout;
+    iput-object p1, p0, Lhzz;->f:Llar;
 
-    iput p2, p0, Lhzz;->a:I
+    iput-object p2, p0, Lhzz;->g:Lfjs;
 
-    return-void
-.end method
+    iput-object p3, p0, Lhzz;->h:Liuf;
 
-.method public synthetic constructor <init>(Lcom/google/android/apps/camera/ui/modeslider/ModeSlider;II)V
-    .locals 0
+    iput-object p4, p0, Lhzz;->j:Lhuq;
 
-    iput p3, p0, Lhzz;->c:I
+    sget-object p1, Lddl;->V:Lddg;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-interface {p5, p1}, Lddf;->k(Lddg;)Z
 
-    iput-object p1, p0, Lhzz;->b:Landroid/widget/LinearLayout;
+    move-result p1
 
-    iput p2, p0, Lhzz;->a:I
+    iput-boolean p1, p0, Lhzz;->i:Z
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onClick(Landroid/view/View;)V
-    .locals 4
+.method final a()V
+    .locals 3
 
-    iget p1, p0, Lhzz;->c:I
+    iget-object v0, p0, Lhzz;->f:Llar;
 
-    const/4 v0, 0x1
+    new-instance v1, Lhzv;
 
-    packed-switch p1, :pswitch_data_0
+    const/4 v2, 0x1
 
-    iget-object p1, p0, Lhzz;->b:Landroid/widget/LinearLayout;
+    invoke-direct {v1, p0, v2}, Lhzv;-><init>(Lhzz;I)V
 
-    iget v1, p0, Lhzz;->a:I
-
-    move-object v2, p1
-
-    check-cast v2, Lcom/google/android/apps/camera/camcorder/ui/modeslider/recordspeed/RecordSpeedSlider;
-
-    iget-object v3, v2, Lcom/google/android/apps/camera/camcorder/ui/modeslider/recordspeed/RecordSpeedSlider;->d:Liap;
-
-    invoke-interface {v3, v0}, Liap;->c(Z)V
-
-    invoke-virtual {v2, v1, v0}, Lcom/google/android/apps/camera/camcorder/ui/modeslider/recordspeed/RecordSpeedSlider;->g(IZ)V
-
-    iget-object v1, v2, Lcom/google/android/apps/camera/camcorder/ui/modeslider/recordspeed/RecordSpeedSlider;->d:Liap;
-
-    invoke-interface {v1, p1, v0}, Liap;->b(Landroid/view/View;Z)V
+    invoke-virtual {v0, v1}, Llar;->c(Ljava/lang/Runnable;)V
 
     return-void
-
-    :pswitch_0
-    iget-object p1, p0, Lhzz;->b:Landroid/widget/LinearLayout;
-
-    iget v1, p0, Lhzz;->a:I
-
-    move-object v2, p1
-
-    check-cast v2, Lcom/google/android/apps/camera/ui/modeslider/ModeSlider;
-
-    iget-object v3, v2, Lcom/google/android/apps/camera/ui/modeslider/ModeSlider;->a:Liap;
-
-    invoke-interface {v3, v0}, Liap;->c(Z)V
-
-    invoke-virtual {v2, v1, v0}, Lcom/google/android/apps/camera/ui/modeslider/ModeSlider;->l(IZ)V
-
-    iget-object v1, v2, Lcom/google/android/apps/camera/ui/modeslider/ModeSlider;->a:Liap;
-
-    invoke-interface {v1, p1, v0}, Liap;->b(Landroid/view/View;Z)V
-
-    return-void
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
 .end method

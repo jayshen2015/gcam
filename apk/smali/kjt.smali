@@ -1,118 +1,202 @@
 .class public final Lkjt;
-.super Lkkb;
+.super Ljava/lang/Object;
 
 
 # instance fields
-.field public final a:Lkjz;
+.field public final a:Ljava/util/Map;
 
-.field public final b:Lkaf;
-
-.field public final c:J
-
-.field public final d:I
-
-.field public final e:Lkgd;
+.field public final b:Ljava/util/Map;
 
 
 # direct methods
-.method public constructor <init>(Lkfl;Lkll;Lkjz;IZ)V
-    .locals 0
+.method public constructor <init>()V
+    .locals 1
 
-    invoke-direct {p0, p1, p2, p5}, Lkkb;-><init>(Lkfl;Lkll;Z)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p3, p0, Lkjt;->a:Lkjz;
+    new-instance v0, Ljava/util/WeakHashMap;
 
-    iput p4, p0, Lkjt;->d:I
+    invoke-direct {v0}, Ljava/util/WeakHashMap;-><init>()V
 
-    iget-object p1, p3, Lkjz;->c:Lkaf;
+    invoke-static {v0}, Lj$/util/DesugarCollections;->synchronizedMap(Ljava/util/Map;)Ljava/util/Map;
 
-    iput-object p1, p0, Lkjt;->b:Lkaf;
+    move-result-object v0
 
-    iget p2, p3, Lkjz;->b:I
+    iput-object v0, p0, Lkjt;->a:Ljava/util/Map;
 
-    invoke-static {p2, p1}, Llho;->D(ILkaf;)J
+    new-instance v0, Ljava/util/WeakHashMap;
 
-    move-result-wide p1
+    invoke-direct {v0}, Ljava/util/WeakHashMap;-><init>()V
 
-    iput-wide p1, p0, Lkjt;->c:J
+    invoke-static {v0}, Lj$/util/DesugarCollections;->synchronizedMap(Ljava/util/Map;)Ljava/util/Map;
 
-    new-instance p1, Lkgd;
+    move-result-object v0
 
-    invoke-direct {p1, p4}, Lkgd;-><init>(I)V
-
-    iput-object p1, p0, Lkjt;->e:Lkgd;
+    iput-object v0, p0, Lkjt;->b:Ljava/util/Map;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()I
-    .locals 1
+.method public final a(ZLcom/google/android/gms/common/api/Status;)V
+    .locals 4
 
-    iget-object v0, p0, Lkjt;->a:Lkjz;
+    iget-object v0, p0, Lkjt;->a:Ljava/util/Map;
 
-    iget v0, v0, Lkjz;->b:I
+    monitor-enter v0
 
-    return v0
-.end method
+    :try_start_0
+    new-instance v1, Ljava/util/HashMap;
 
-.method public final b()Lkaf;
-    .locals 1
+    iget-object v2, p0, Lkjt;->a:Ljava/util/Map;
 
-    iget-object v0, p0, Lkjt;->b:Lkaf;
+    invoke-direct {v1, v2}, Ljava/util/HashMap;-><init>(Ljava/util/Map;)V
 
-    return-object v0
-.end method
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_1
 
-.method public final d(Landroid/view/Surface;)V
-    .locals 1
+    iget-object v2, p0, Lkjt;->b:Ljava/util/Map;
 
-    new-instance p1, Ljava/lang/UnsupportedOperationException;
+    monitor-enter v2
 
-    const-string v0, "setSurface should never be called on buffered streams."
+    :try_start_1
+    new-instance v0, Ljava/util/HashMap;
 
-    invoke-direct {p1, v0}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
+    iget-object v3, p0, Lkjt;->b:Ljava/util/Map;
 
-    throw p1
-.end method
+    invoke-direct {v0, v3}, Ljava/util/HashMap;-><init>(Ljava/util/Map;)V
 
-.method public final f()J
-    .locals 2
+    monitor-exit v2
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    iget-wide v0, p0, Lkjt;->c:J
+    invoke-interface {v1}, Ljava/util/Map;->entrySet()Ljava/util/Set;
 
-    return-wide v0
-.end method
+    move-result-object v1
 
-.method public final g()Landroid/view/Surface;
-    .locals 1
+    invoke-interface {v1}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
 
-    iget-object v0, p0, Lkjt;->a:Lkjz;
+    move-result-object v1
 
-    iget-object v0, v0, Lkjz;->a:Lkpe;
+    :cond_0
+    :goto_0
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
-    invoke-interface {v0}, Lkpe;->e()Landroid/view/Surface;
+    move-result v2
+
+    if-eqz v2, :cond_2
+
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Ljava/util/Map$Entry;
+
+    if-nez p1, :cond_1
+
+    invoke-interface {v2}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
+
+    move-result-object v3
+
+    check-cast v3, Ljava/lang/Boolean;
+
+    invoke-virtual {v3}, Ljava/lang/Boolean;->booleanValue()Z
+
+    move-result v3
+
+    if-eqz v3, :cond_0
+
+    :cond_1
+    invoke-interface {v2}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Lcom/google/android/gms/common/api/internal/BasePendingResult;
+
+    invoke-virtual {v2, p2}, Lcom/google/android/gms/common/api/internal/BasePendingResult;->h(Lcom/google/android/gms/common/api/Status;)V
+
+    goto :goto_0
+
+    :cond_2
+    invoke-interface {v0}, Ljava/util/Map;->entrySet()Ljava/util/Set;
 
     move-result-object v0
 
-    return-object v0
-.end method
+    invoke-interface {v0}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
 
-.method public final h()Lkfm;
-    .locals 1
+    move-result-object v0
 
-    sget-object v0, Lkfm;->a:Lkfm;
+    :cond_3
+    :goto_1
+    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
-    return-object v0
-.end method
+    move-result v1
 
-.method public final i()Z
-    .locals 1
+    if-eqz v1, :cond_5
 
-    iget-object v0, p0, Lkjt;->h:Lkfl;
+    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    iget-boolean v0, v0, Lkfl;->j:Z
+    move-result-object v1
 
-    return v0
+    check-cast v1, Ljava/util/Map$Entry;
+
+    if-nez p1, :cond_4
+
+    invoke-interface {v1}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Ljava/lang/Boolean;
+
+    invoke-virtual {v2}, Ljava/lang/Boolean;->booleanValue()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_3
+
+    :cond_4
+    invoke-interface {v1}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Lkvm;
+
+    new-instance v2, Lkig;
+
+    invoke-direct {v2, p2}, Lkig;-><init>(Lcom/google/android/gms/common/api/Status;)V
+
+    invoke-virtual {v1, v2}, Lkvm;->c(Ljava/lang/Exception;)V
+
+    goto :goto_1
+
+    :cond_5
+    return-void
+
+    :catchall_0
+    move-exception p1
+
+    :try_start_2
+    monitor-exit v2
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
+
+    throw p1
+
+    :catchall_1
+    move-exception p1
+
+    :try_start_3
+    monitor-exit v0
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_1
+
+    goto :goto_3
+
+    :goto_2
+    throw p1
+
+    :goto_3
+    goto :goto_2
 .end method

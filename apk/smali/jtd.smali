@@ -1,76 +1,44 @@
 .class public final Ljtd;
-.super Ljhn;
-
-
-# static fields
-.field public static final CREATOR:Landroid/os/Parcelable$Creator;
+.super Ljava/lang/Object;
 
 
 # instance fields
-.field public final a:I
-
-.field public final b:J
-
-.field public final c:Ljava/util/List;
+.field private final a:Lj$/util/Optional;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
-
-    new-instance v0, Ljsy;
-
-    const/4 v1, 0x6
-
-    invoke-direct {v0, v1}, Ljsy;-><init>(I)V
-
-    sput-object v0, Ljtd;->CREATOR:Landroid/os/Parcelable$Creator;
-
-    return-void
-.end method
-
-.method public constructor <init>(IJLjava/util/List;)V
+.method public constructor <init>(Lj$/util/Optional;)V
     .locals 0
 
-    invoke-direct {p0}, Ljhn;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput p1, p0, Ljtd;->a:I
-
-    iput-wide p2, p0, Ljtd;->b:J
-
-    iput-object p4, p0, Ljtd;->c:Ljava/util/List;
+    iput-object p1, p0, Ljtd;->a:Lj$/util/Optional;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final writeToParcel(Landroid/os/Parcel;I)V
-    .locals 3
+.method public final a()V
+    .locals 2
 
-    invoke-static {p1}, Ljhp;->a(Landroid/os/Parcel;)I
+    iget-object v0, p0, Ljtd;->a:Lj$/util/Optional;
 
-    move-result p2
+    sget-object v1, Lgui;->d:Lgui;
 
-    iget v0, p0, Ljtd;->a:I
+    invoke-virtual {v0, v1}, Lj$/util/Optional;->ifPresent(Lj$/util/function/Consumer;)V
 
-    const/4 v1, 0x2
+    return-void
+.end method
 
-    invoke-static {p1, v1, v0}, Ljhp;->g(Landroid/os/Parcel;II)V
+.method public final b()V
+    .locals 2
 
-    iget-wide v0, p0, Ljtd;->b:J
+    iget-object v0, p0, Ljtd;->a:Lj$/util/Optional;
 
-    const/4 v2, 0x3
+    sget-object v1, Lgui;->e:Lgui;
 
-    invoke-static {p1, v2, v0, v1}, Ljhp;->h(Landroid/os/Parcel;IJ)V
-
-    iget-object v0, p0, Ljtd;->c:Ljava/util/List;
-
-    const/4 v1, 0x4
-
-    invoke-static {p1, v1, v0}, Ljhp;->t(Landroid/os/Parcel;ILjava/util/List;)V
-
-    invoke-static {p1, p2}, Ljhp;->c(Landroid/os/Parcel;I)V
+    invoke-virtual {v0, v1}, Lj$/util/Optional;->ifPresent(Lj$/util/function/Consumer;)V
 
     return-void
 .end method

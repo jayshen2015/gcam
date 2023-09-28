@@ -1,40 +1,51 @@
-.class final Leqj;
-.super Leqp;
+.class public final synthetic Leqj;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Llie;
 
 
 # instance fields
-.field final synthetic a:Leqn;
+.field public final synthetic a:Llie;
+
+.field public final synthetic b:Lpih;
 
 
 # direct methods
-.method public constructor <init>(Leqn;)V
+.method public synthetic constructor <init>(Llie;Lpih;)V
     .locals 0
 
-    iput-object p1, p0, Leqj;->a:Leqn;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0, p1}, Leqp;-><init>(Leqt;)V
+    iput-object p1, p0, Leqj;->a:Llie;
+
+    iput-object p2, p0, Leqj;->b:Lpih;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()V
-    .locals 2
+.method public final close()V
+    .locals 3
 
-    iget-object v0, p0, Leqj;->a:Leqn;
+    iget-object v0, p0, Leqj;->a:Llie;
 
-    iget-object v0, v0, Leqn;->a:Lhiu;
+    iget-object v1, p0, Leqj;->b:Lpih;
 
-    invoke-virtual {v0}, Lhiu;->e()V
+    sget-object v2, Leqx;->a:Louj;
 
-    iget-object v0, p0, Leqj;->a:Leqn;
+    sget-object v2, Lovl;->a:Lovd;
 
-    iget-object v1, v0, Leqn;->a:Lhiu;
+    invoke-interface {v0}, Llie;->close()V
 
-    iget-object v0, v0, Leqn;->c:Lhiw;
+    const/4 v0, 0x1
 
-    invoke-virtual {v1, v0}, Lhiu;->g(Lhiw;)V
+    invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    move-result-object v0
+
+    invoke-virtual {v1, v0}, Lpih;->o(Ljava/lang/Object;)Z
 
     return-void
 .end method

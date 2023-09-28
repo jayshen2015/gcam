@@ -1,19 +1,22 @@
-.class public interface abstract Ldvk;
+.class public final Ldvk;
 .super Ljava/lang/Object;
 
 
-# virtual methods
-.method public abstract a()Lnou;
-.end method
+# static fields
+.field public static final a:Ldug;
 
-.method public abstract b()V
-.end method
 
-.method public abstract c()V
-.end method
+# direct methods
+.method static constructor <clinit>()V
+    .locals 2
 
-.method public abstract d(Lgur;)V
-.end method
+    new-instance v0, Ldug;
 
-.method public abstract e()Z
+    const/4 v1, 0x3
+
+    invoke-direct {v0, v1}, Ldug;-><init>(I)V
+
+    sput-object v0, Ldvk;->a:Ldug;
+
+    return-void
 .end method

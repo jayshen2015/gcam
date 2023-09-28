@@ -1,74 +1,111 @@
-.class public final Lits;
-.super Landroid/animation/AnimatorListenerAdapter;
+.class public final synthetic Lits;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field final synthetic a:Lcom/google/android/apps/camera/zoomui/view/ZoomUi;
+.field public final synthetic a:Llap;
+
+.field public final synthetic b:Lqkg;
+
+.field public final synthetic c:Lqkg;
+
+.field public final synthetic d:Lqkg;
+
+.field public final synthetic e:Lqkg;
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/apps/camera/zoomui/view/ZoomUi;)V
+.method public synthetic constructor <init>(Llap;Lqkg;Lqkg;Lqkg;Lqkg;)V
     .locals 0
 
-    iput-object p1, p0, Lits;->a:Lcom/google/android/apps/camera/zoomui/view/ZoomUi;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
+    iput-object p1, p0, Lits;->a:Llap;
+
+    iput-object p2, p0, Lits;->b:Lqkg;
+
+    iput-object p3, p0, Lits;->c:Lqkg;
+
+    iput-object p4, p0, Lits;->d:Lqkg;
+
+    iput-object p5, p0, Lits;->e:Lqkg;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onAnimationCancel(Landroid/animation/Animator;)V
-    .locals 1
+.method public final run()V
+    .locals 7
 
-    invoke-super {p0, p1}, Landroid/animation/AnimatorListenerAdapter;->onAnimationCancel(Landroid/animation/Animator;)V
+    iget-object v0, p0, Lits;->a:Llap;
 
-    iget-object p1, p0, Lits;->a:Lcom/google/android/apps/camera/zoomui/view/ZoomUi;
+    iget-object v1, p0, Lits;->b:Lqkg;
 
-    invoke-virtual {p1}, Lcom/google/android/apps/camera/zoomui/view/ZoomUi;->t()Lcom/google/android/apps/camera/zoomui/view/ZoomKnob;
+    iget-object v2, p0, Lits;->c:Lqkg;
 
-    move-result-object p1
+    iget-object v3, p0, Lits;->d:Lqkg;
 
-    const/4 v0, 0x0
+    iget-object v4, p0, Lits;->e:Lqkg;
 
-    invoke-virtual {p1, v0}, Lcom/google/android/apps/camera/zoomui/view/ZoomKnob;->d(Z)V
+    move-object v5, v1
 
-    iget-object p1, p0, Lits;->a:Lcom/google/android/apps/camera/zoomui/view/ZoomUi;
+    check-cast v5, Lhlj;
 
-    invoke-virtual {p1}, Lcom/google/android/apps/camera/zoomui/view/ZoomUi;->t()Lcom/google/android/apps/camera/zoomui/view/ZoomKnob;
+    invoke-virtual {v5}, Lhlj;->a()Lojc;
 
-    move-result-object p1
+    move-result-object v5
 
-    invoke-virtual {p1, v0}, Lcom/google/android/apps/camera/zoomui/view/ZoomKnob;->setVisibility(I)V
+    invoke-virtual {v5}, Lojc;->c()Ljava/lang/Object;
 
-    return-void
-.end method
+    move-result-object v5
 
-.method public final onAnimationStart(Landroid/animation/Animator;)V
-    .locals 1
+    check-cast v5, Litw;
 
-    invoke-super {p0, p1}, Landroid/animation/AnimatorListenerAdapter;->onAnimationStart(Landroid/animation/Animator;)V
+    invoke-interface {v2}, Lqkg;->get()Ljava/lang/Object;
 
-    iget-object p1, p0, Lits;->a:Lcom/google/android/apps/camera/zoomui/view/ZoomUi;
+    move-result-object v6
 
-    invoke-virtual {p1}, Lcom/google/android/apps/camera/zoomui/view/ZoomUi;->t()Lcom/google/android/apps/camera/zoomui/view/ZoomKnob;
+    check-cast v6, Lfpo;
 
-    move-result-object p1
+    invoke-static {v6}, Lojc;->i(Ljava/lang/Object;)Lojc;
 
-    const/4 v0, 0x0
+    move-result-object v6
 
-    invoke-virtual {p1, v0}, Lcom/google/android/apps/camera/zoomui/view/ZoomKnob;->d(Z)V
+    invoke-interface {v3}, Lqkg;->get()Ljava/lang/Object;
 
-    iget-object p1, p0, Lits;->a:Lcom/google/android/apps/camera/zoomui/view/ZoomUi;
+    move-result-object v3
 
-    invoke-virtual {p1}, Lcom/google/android/apps/camera/zoomui/view/ZoomUi;->t()Lcom/google/android/apps/camera/zoomui/view/ZoomKnob;
+    check-cast v3, Lojc;
 
-    move-result-object p1
+    invoke-interface {v5, v6, v3}, Litw;->d(Lojc;Lojc;)Llie;
 
-    const/4 v0, 0x4
+    move-result-object v3
 
-    invoke-virtual {p1, v0}, Lcom/google/android/apps/camera/zoomui/view/ZoomKnob;->setVisibility(I)V
+    invoke-virtual {v0, v3}, Llap;->c(Llie;)V
+
+    invoke-interface {v2}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lfpo;
+
+    new-instance v2, Lgbw;
+
+    const/4 v3, 0x2
+
+    invoke-direct {v2, v1, v3}, Lgbw;-><init>(Lqkg;I)V
+
+    invoke-interface {v4}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Ljava/util/concurrent/Executor;
+
+    invoke-interface {v0, v2, v1}, Lfpo;->g(Lfpn;Ljava/util/concurrent/Executor;)V
 
     return-void
 .end method

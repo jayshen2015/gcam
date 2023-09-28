@@ -1,18 +1,10 @@
-.class public final Lbae;
+.class public interface abstract Lbae;
 .super Ljava/lang/Object;
 
 
-# static fields
-.field public static final synthetic a:I
+# virtual methods
+.method public abstract a()Ljava/lang/Object;
+.end method
 
-
-# direct methods
-.method static constructor <clinit>()V
-    .locals 1
-
-    const-string v0, "WorkConstraintsTracker"
-
-    invoke-static {v0}, Laxq;->b(Ljava/lang/String;)Ljava/lang/String;
-
-    return-void
+.method public abstract b()V
 .end method

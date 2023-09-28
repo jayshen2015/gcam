@@ -2,133 +2,162 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Ljava/util/Iterator;
+.implements Lojz;
 
 
 # instance fields
-.field public a:Z
+.field volatile a:Lojz;
 
-.field private final b:I
+.field volatile b:Z
 
-.field private final c:I
-
-.field private d:I
+.field c:Ljava/lang/Object;
 
 
 # direct methods
-.method public constructor <init>()V
+.method public constructor <init>(Lojz;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    return-void
-.end method
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-.method public constructor <init>(II)V
-    .locals 2
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    const/4 v0, 0x1
-
-    iput v0, p0, Lokb;->b:I
-
-    iput p2, p0, Lokb;->c:I
-
-    if-gt p1, p2, :cond_0
-
-    const/4 v1, 0x1
-
-    goto :goto_0
-
-    :cond_0
-    const/4 v1, 0x0
-
-    :goto_0
-    iput-boolean v1, p0, Lokb;->a:Z
-
-    if-ne v0, v1, :cond_1
-
-    goto :goto_1
-
-    :cond_1
-    move p1, p2
-
-    :goto_1
-    iput p1, p0, Lokb;->d:I
+    iput-object p1, p0, Lokb;->a:Lojz;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()I
+.method public final a()Ljava/lang/Object;
     .locals 2
 
-    iget v0, p0, Lokb;->d:I
+    iget-boolean v0, p0, Lokb;->b:Z
 
-    iget v1, p0, Lokb;->c:I
+    if-nez v0, :cond_1
 
-    if-ne v0, v1, :cond_1
+    monitor-enter p0
 
-    iget-boolean v1, p0, Lokb;->a:Z
+    :try_start_0
+    iget-boolean v0, p0, Lokb;->b:Z
 
-    if-eqz v1, :cond_0
+    if-nez v0, :cond_0
+
+    iget-object v0, p0, Lokb;->a:Lojz;
+
+    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    invoke-interface {v0}, Lojz;->a()Ljava/lang/Object;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lokb;->c:Ljava/lang/Object;
+
+    const/4 v1, 0x1
+
+    iput-boolean v1, p0, Lokb;->b:Z
 
     const/4 v1, 0x0
 
-    iput-boolean v1, p0, Lokb;->a:Z
+    iput-object v1, p0, Lokb;->a:Lojz;
+
+    monitor-exit p0
+
+    return-object v0
+
+    :cond_0
+    monitor-exit p0
 
     goto :goto_0
 
-    :cond_0
-    new-instance v0, Ljava/util/NoSuchElementException;
+    :catchall_0
+    move-exception v0
 
-    invoke-direct {v0}, Ljava/util/NoSuchElementException;-><init>()V
+    monitor-exit p0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw v0
 
     :cond_1
-    iget v1, p0, Lokb;->b:I
-
-    add-int/2addr v1, v0
-
-    iput v1, p0, Lokb;->d:I
-
     :goto_0
-    return v0
-.end method
-
-.method public final hasNext()Z
-    .locals 1
-
-    iget-boolean v0, p0, Lokb;->a:Z
-
-    return v0
-.end method
-
-.method public final bridge synthetic next()Ljava/lang/Object;
-    .locals 1
-
-    invoke-virtual {p0}, Lokb;->a()I
-
-    move-result v0
-
-    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v0
+    iget-object v0, p0, Lokb;->c:Ljava/lang/Object;
 
     return-object v0
 .end method
 
-.method public final remove()V
-    .locals 2
+.method public final toString()Ljava/lang/String;
+    .locals 3
 
-    new-instance v0, Ljava/lang/UnsupportedOperationException;
+    iget-object v0, p0, Lokb;->a:Lojz;
 
-    const-string v1, "Operation is not supported for read-only collection"
+    if-nez v0, :cond_0
 
-    invoke-direct {v0, v1}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
+    iget-object v0, p0, Lokb;->c:Ljava/lang/Object;
 
-    throw v0
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/String;->length()I
+
+    move-result v1
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    add-int/lit8 v1, v1, 0x19
+
+    invoke-direct {v2, v1}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string v1, "<supplier that returned "
+
+    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v0, ">"
+
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    :cond_0
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/String;->length()I
+
+    move-result v1
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    add-int/lit8 v1, v1, 0x13
+
+    invoke-direct {v2, v1}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string v1, "Suppliers.memoize("
+
+    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v0, ")"
+
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
 .end method

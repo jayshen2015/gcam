@@ -1,59 +1,41 @@
-.class public final Leyd;
+.class public final synthetic Leyd;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lcom/google/android/libraries/lens/lenslite/api/ImageProxy$Plane;
+.implements Llij;
 
 
 # instance fields
-.field private final a:Lkpa;
+.field public final synthetic a:Leyf;
 
 
 # direct methods
-.method public constructor <init>(Lkpa;)V
+.method public synthetic constructor <init>(Leyf;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Leyd;->a:Lkpa;
+    iput-object p1, p0, Leyd;->a:Leyf;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final getBuffer()Ljava/nio/ByteBuffer;
+.method public final fB(Ljava/lang/Object;)V
     .locals 1
 
-    iget-object v0, p0, Leyd;->a:Lkpa;
+    iget-object v0, p0, Leyd;->a:Leyf;
 
-    invoke-interface {v0}, Lkpa;->getBuffer()Ljava/nio/ByteBuffer;
+    check-cast p1, Ljava/lang/Boolean;
 
-    move-result-object v0
+    iget-object v0, v0, Leyf;->a:Leyg;
 
-    return-object v0
-.end method
+    invoke-virtual {p1}, Ljava/lang/Boolean;->booleanValue()Z
 
-.method public final getPixelStride()I
-    .locals 1
+    move-result p1
 
-    iget-object v0, p0, Leyd;->a:Lkpa;
+    invoke-virtual {v0, p1}, Leyg;->x(Z)V
 
-    invoke-interface {v0}, Lkpa;->getPixelStride()I
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public final getRowStride()I
-    .locals 1
-
-    iget-object v0, p0, Leyd;->a:Lkpa;
-
-    invoke-interface {v0}, Lkpa;->getRowStride()I
-
-    move-result v0
-
-    return v0
+    return-void
 .end method

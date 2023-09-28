@@ -1,24 +1,22 @@
-.class public final Loep;
+.class public final synthetic Loep;
 .super Ljava/lang/Object;
 
 
-# static fields
-.field public static final a:Landroid/content/ComponentName;
+# instance fields
+.field public final synthetic a:Loew;
+
+.field public final synthetic b:Lofi;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 3
+.method public synthetic constructor <init>(Loew;Lofi;)V
+    .locals 0
 
-    new-instance v0, Landroid/content/ComponentName;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const-string v1, "com.google.vr.vrcore"
+    iput-object p1, p0, Loep;->a:Loew;
 
-    const-string v2, "com.google.vr.vrcore.settings.RequestFeatureActivity"
-
-    invoke-direct {v0, v1, v2}, Landroid/content/ComponentName;-><init>(Ljava/lang/String;Ljava/lang/String;)V
-
-    sput-object v0, Loep;->a:Landroid/content/ComponentName;
+    iput-object p2, p0, Loep;->b:Lofi;
 
     return-void
 .end method

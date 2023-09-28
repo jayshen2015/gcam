@@ -1,71 +1,100 @@
-.class public final Lfln;
-.super Ljava/lang/Object;
-
-# interfaces
-.implements Logk;
+.class final Lfln;
+.super Lflv;
 
 
 # instance fields
-.field private final a:Loiw;
-
-.field private final b:Loiw;
+.field final synthetic a:Lflq;
 
 
 # direct methods
-.method public constructor <init>(Loiw;Loiw;)V
+.method public constructor <init>(Lflq;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lfln;->a:Lflq;
 
-    iput-object p1, p0, Lfln;->a:Loiw;
-
-    iput-object p2, p0, Lfln;->b:Loiw;
+    invoke-direct {p0, p1}, Lflv;-><init>(Lfly;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Lgxb;
-    .locals 7
+.method public final c()V
+    .locals 2
 
-    iget-object v0, p0, Lfln;->a:Loiw;
+    iget-object v0, p0, Lfln;->a:Lflq;
 
-    check-cast v0, Lfli;
+    iget-object v0, v0, Lflq;->a:Lihu;
 
-    invoke-virtual {v0}, Lfli;->a()Lgkr;
+    invoke-virtual {v0}, Lihu;->e()V
 
-    move-result-object v2
+    iget-object v0, p0, Lfln;->a:Lflq;
 
-    iget-object v0, p0, Lfln;->b:Loiw;
+    iget-object v1, v0, Lflq;->a:Lihu;
 
-    check-cast v0, Ldjw;
+    iget-object v0, v0, Lflq;->b:Lihw;
 
-    invoke-virtual {v0}, Ldjw;->a()Lkap;
+    invoke-virtual {v1, v0}, Lihu;->g(Lihw;)V
 
-    move-result-object v3
-
-    new-instance v0, Lgxb;
-
-    const/4 v4, 0x0
-
-    const/4 v5, 0x0
-
-    const/4 v6, 0x0
-
-    move-object v1, v0
-
-    invoke-direct/range {v1 .. v6}, Lgxb;-><init>(Lgkr;Lkap;[B[B[B)V
-
-    return-object v0
+    return-void
 .end method
 
-.method public final bridge synthetic get()Ljava/lang/Object;
-    .locals 1
+.method public final d()V
+    .locals 2
 
-    invoke-virtual {p0}, Lfln;->a()Lgxb;
+    iget-object v0, p0, Lfln;->a:Lflq;
 
-    move-result-object v0
+    iget-object v0, v0, Lflq;->a:Lihu;
 
-    return-object v0
+    invoke-virtual {v0}, Lihu;->e()V
+
+    iget-object v0, p0, Lfln;->a:Lflq;
+
+    iget-object v1, v0, Lflq;->a:Lihu;
+
+    iget-object v0, v0, Lflq;->f:Lihw;
+
+    invoke-virtual {v1, v0}, Lihu;->g(Lihw;)V
+
+    return-void
+.end method
+
+.method public final fZ()V
+    .locals 2
+
+    iget-object v0, p0, Lfln;->a:Lflq;
+
+    iget-object v0, v0, Lflq;->a:Lihu;
+
+    invoke-virtual {v0}, Lihu;->e()V
+
+    iget-object v0, p0, Lfln;->a:Lflq;
+
+    iget-object v1, v0, Lflq;->a:Lihu;
+
+    iget-object v0, v0, Lflq;->c:Lihw;
+
+    invoke-virtual {v1, v0}, Lihu;->g(Lihw;)V
+
+    return-void
+.end method
+
+.method public final i()V
+    .locals 2
+
+    iget-object v0, p0, Lfln;->a:Lflq;
+
+    iget-object v0, v0, Lflq;->a:Lihu;
+
+    invoke-virtual {v0}, Lihu;->e()V
+
+    iget-object v0, p0, Lfln;->a:Lflq;
+
+    iget-object v1, v0, Lflq;->a:Lihu;
+
+    iget-object v0, v0, Lflq;->d:Lihw;
+
+    invoke-virtual {v1, v0}, Lihu;->g(Lihw;)V
+
+    return-void
 .end method

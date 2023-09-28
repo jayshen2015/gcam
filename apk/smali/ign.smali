@@ -1,87 +1,166 @@
-.class public final Lign;
-.super Ljava/lang/Object;
-
-# interfaces
-.implements Logk;
+.class final Lign;
+.super Lmip;
 
 
 # instance fields
-.field private final a:Loiw;
-
-.field private final b:Loiw;
-
-.field private final c:Loiw;
-
-.field private final d:Loiw;
+.field final synthetic a:Ligq;
 
 
 # direct methods
-.method public constructor <init>(Loiw;Loiw;Loiw;Loiw;)V
+.method public constructor <init>(Ligq;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lign;->a:Ligq;
 
-    iput-object p1, p0, Lign;->a:Loiw;
-
-    iput-object p2, p0, Lign;->b:Loiw;
-
-    iput-object p3, p0, Lign;->c:Loiw;
-
-    iput-object p4, p0, Lign;->d:Loiw;
+    invoke-direct {p0}, Lmip;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Ligm;
-    .locals 5
+.method public final q([B)V
+    .locals 2
 
-    iget-object v0, p0, Lign;->a:Loiw;
+    array-length v0, p1
 
-    check-cast v0, Lelq;
+    if-lez v0, :cond_0
 
-    invoke-virtual {v0}, Lelq;->a()Landroid/view/WindowManager;
+    sget-object v0, Ligq;->a:Louj;
+
+    :cond_0
+    iget-object v0, p0, Lign;->a:Ligq;
+
+    iget-object v0, v0, Ligq;->h:Ljava/util/List;
+
+    invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object v0
 
-    iget-object v1, p0, Lign;->b:Loiw;
+    :goto_0
+    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
-    invoke-interface {v1}, Loiw;->get()Ljava/lang/Object;
+    move-result v1
+
+    if-eqz v1, :cond_1
+
+    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v1
 
-    check-cast v1, Ldhi;
+    check-cast v1, Liha;
 
-    iget-object v2, p0, Lign;->c:Loiw;
+    invoke-interface {v1, p1}, Liha;->a([B)V
 
-    check-cast v2, Ljzo;
+    goto :goto_0
 
-    invoke-virtual {v2}, Ljzo;->a()Lklj;
-
-    move-result-object v2
-
-    iget-object v3, p0, Lign;->d:Loiw;
-
-    check-cast v3, Lfjj;
-
-    invoke-virtual {v3}, Lfjj;->a()Ljava/lang/String;
-
-    move-result-object v3
-
-    new-instance v4, Ligm;
-
-    invoke-direct {v4, v0, v1, v2, v3}, Ligm;-><init>(Landroid/view/WindowManager;Ldhi;Lklj;Ljava/lang/String;)V
-
-    return-object v4
+    :cond_1
+    return-void
 .end method
 
-.method public final bridge synthetic get()Ljava/lang/Object;
-    .locals 1
+.method public final r()V
+    .locals 2
 
-    invoke-virtual {p0}, Lign;->a()Ligm;
+    sget-object v0, Ligq;->a:Louj;
+
+    iget-object v0, p0, Lign;->a:Ligq;
+
+    iget-object v0, v0, Ligq;->h:Ljava/util/List;
+
+    invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object v0
 
-    return-object v0
+    :goto_0
+    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Liha;
+
+    invoke-interface {v1}, Liha;->b()V
+
+    goto :goto_0
+
+    :cond_0
+    return-void
+.end method
+
+.method public final s(I)V
+    .locals 3
+
+    sget-object v0, Ligq;->a:Louj;
+
+    iget-object v0, p0, Lign;->a:Ligq;
+
+    iget-object v0, v0, Ligq;->h:Ljava/util/List;
+
+    invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+
+    move-result-object v0
+
+    :goto_0
+    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Liha;
+
+    packed-switch p1, :pswitch_data_0
+
+    new-instance p1, Ljava/lang/IllegalArgumentException;
+
+    const-string v0, "Unknown fallback reason"
+
+    invoke-direct {p1, v0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw p1
+
+    :pswitch_0
+    const/4 v2, 0x4
+
+    goto :goto_1
+
+    :pswitch_1
+    const/4 v2, 0x3
+
+    goto :goto_1
+
+    :pswitch_2
+    const/4 v2, 0x2
+
+    goto :goto_1
+
+    :pswitch_3
+    const/4 v2, 0x1
+
+    :goto_1
+    invoke-interface {v1, v2}, Liha;->c(I)V
+
+    goto :goto_0
+
+    :cond_0
+    return-void
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method

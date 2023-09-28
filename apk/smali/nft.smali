@@ -2,58 +2,55 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Ljava/util/function/Supplier;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field public final synthetic a:Lnfw;
-
-.field public final synthetic b:Ljava/util/function/BiFunction;
+.field public final synthetic a:Lnfv;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lnfw;Ljava/util/function/BiFunction;)V
+.method public synthetic constructor <init>(Lnfv;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lnft;->a:Lnfw;
-
-    iput-object p2, p0, Lnft;->b:Ljava/util/function/BiFunction;
+    iput-object p1, p0, Lnft;->a:Lnfv;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final get()Ljava/lang/Object;
-    .locals 6
+.method public final run()V
+    .locals 1
 
-    iget-object v0, p0, Lnft;->a:Lnfw;
+    iget-object v0, p0, Lnft;->a:Lnfv;
 
-    new-instance v1, Lnfv;
+    iget-object v0, v0, Lnfv;->a:Lojz;
 
-    invoke-direct {v1, v0}, Lnfv;-><init>(Lnfw;)V
+    invoke-interface {v0}, Lojz;->a()Ljava/lang/Object;
 
-    new-instance v0, Lnfu;
+    move-result-object v0
 
-    iget-object v2, v1, Lnfv;->c:Lj$/util/Spliterator;
+    check-cast v0, Ljava/lang/Boolean;
 
-    invoke-interface {v2}, Lj$/util/Spliterator;->estimateSize()J
+    invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
 
-    move-result-wide v2
+    move-result v0
 
-    iget-object v4, v1, Lnfv;->d:Lj$/util/Spliterator;
+    if-eqz v0, :cond_0
 
-    invoke-interface {v4}, Lj$/util/Spliterator;->estimateSize()J
+    invoke-static {}, Landroid/os/Process;->myPid()I
 
-    move-result-wide v4
+    move-result v0
 
-    invoke-static {v2, v3, v4, v5}, Ljava/lang/Math;->min(JJ)J
+    invoke-static {v0}, Landroid/os/Process;->killProcess(I)V
 
-    move-result-wide v2
+    const/4 v0, 0x0
 
-    invoke-direct {v0, v1, v2, v3}, Lnfu;-><init>(Lnfv;J)V
+    invoke-static {v0}, Ljava/lang/System;->exit(I)V
 
-    return-object v0
+    :cond_0
+    return-void
 .end method

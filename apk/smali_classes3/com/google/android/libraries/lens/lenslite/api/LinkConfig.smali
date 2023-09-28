@@ -18,17 +18,23 @@
 .method public static builder()Lcom/google/android/libraries/lens/lenslite/api/LinkConfig$Builder;
     .locals 2
 
-    new-instance v0, Lkuw;
+    new-instance v0, Lmgp;
 
-    invoke-direct {v0}, Lkuw;-><init>()V
+    invoke-direct {v0}, Lmgp;-><init>()V
 
-    sget-object v1, Lkvk;->b:Lkvy;
+    sget-object v1, Lmhf;->b:Lmhy;
 
-    invoke-virtual {v0, v1}, Lkuw;->a(Lkvy;)V
+    invoke-virtual {v0, v1}, Lmgp;->a(Lmhy;)V
 
-    const/4 v1, 0x3
+    const/4 v1, 0x0
 
-    iput-byte v1, v0, Lkuw;->G:B
+    invoke-static {v1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    move-result-object v1
+
+    iput-object v1, v0, Lmgp;->j:Ljava/lang/Boolean;
+
+    iput-object v1, v0, Lmgp;->k:Ljava/lang/Boolean;
 
     return-object v0
 .end method
@@ -36,29 +42,23 @@
 .method public static fromByteArray([B)Lcom/google/android/libraries/lens/lenslite/api/LinkConfig;
     .locals 8
 
-    invoke-static {}, Lnwh;->a()Lnwh;
+    invoke-static {}, Lpos;->b()Lpos;
 
     move-result-object v0
 
-    sget-object v1, Lkwa;->L:Lkwa;
+    sget-object v1, Lmia;->L:Lmia;
 
-    array-length v2, p0
-
-    const/4 v3, 0x0
-
-    invoke-static {v1, p0, v3, v2, v0}, Lnws;->Q(Lnws;[BIILnwh;)Lnws;
+    invoke-static {v1, p0, v0}, Lppd;->s(Lppd;[BLpos;)Lppd;
 
     move-result-object p0
 
-    invoke-static {p0}, Lnws;->ae(Lnws;)V
-
-    check-cast p0, Lkwa;
+    check-cast p0, Lmia;
 
     invoke-static {}, Lcom/google/android/libraries/lens/lenslite/api/LinkConfig;->builder()Lcom/google/android/libraries/lens/lenslite/api/LinkConfig$Builder;
 
     move-result-object v0
 
-    iget v1, p0, Lkwa;->a:I
+    iget v1, p0, Lmia;->a:I
 
     const/4 v2, 0x1
 
@@ -66,7 +66,7 @@
 
     if-eqz v1, :cond_0
 
-    iget-boolean v1, p0, Lkwa;->c:Z
+    iget-boolean v1, p0, Lmia;->c:Z
 
     invoke-static {v1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
@@ -74,12 +74,12 @@
 
     move-object v3, v0
 
-    check-cast v3, Lkuw;
+    check-cast v3, Lmgp;
 
-    iput-object v1, v3, Lkuw;->a:Ljava/lang/Boolean;
+    iput-object v1, v3, Lmgp;->a:Ljava/lang/Boolean;
 
     :cond_0
-    iget v1, p0, Lkwa;->a:I
+    iget v1, p0, Lmia;->a:I
 
     const/high16 v3, 0x800000
 
@@ -87,7 +87,7 @@
 
     if-eqz v1, :cond_1
 
-    iget-boolean v1, p0, Lkwa;->c:Z
+    iget-boolean v1, p0, Lmia;->c:Z
 
     invoke-static {v1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
@@ -95,12 +95,12 @@
 
     move-object v3, v0
 
-    check-cast v3, Lkuw;
+    check-cast v3, Lmgp;
 
-    iput-object v1, v3, Lkuw;->b:Ljava/lang/Boolean;
+    iput-object v1, v3, Lmgp;->b:Ljava/lang/Boolean;
 
     :cond_1
-    iget v1, p0, Lkwa;->a:I
+    iget v1, p0, Lmia;->a:I
 
     const/4 v3, 0x2
 
@@ -108,7 +108,7 @@
 
     if-eqz v1, :cond_2
 
-    iget-boolean v1, p0, Lkwa;->d:Z
+    iget-boolean v1, p0, Lmia;->d:Z
 
     invoke-static {v1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
@@ -116,18 +116,18 @@
 
     move-object v4, v0
 
-    check-cast v4, Lkuw;
+    check-cast v4, Lmgp;
 
-    iput-object v1, v4, Lkuw;->c:Ljava/lang/Boolean;
+    iput-object v1, v4, Lmgp;->c:Ljava/lang/Boolean;
 
     :cond_2
-    iget v1, p0, Lkwa;->a:I
+    iget v1, p0, Lmia;->a:I
 
     and-int/lit8 v1, v1, 0x10
 
     if-eqz v1, :cond_4
 
-    iget-boolean v1, p0, Lkwa;->g:Z
+    iget-boolean v1, p0, Lmia;->g:Z
 
     invoke-static {v1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
@@ -135,29 +135,29 @@
 
     move-object v4, v0
 
-    check-cast v4, Lkuw;
+    check-cast v4, Lmgp;
 
-    iput-object v1, v4, Lkuw;->e:Ljava/lang/Boolean;
+    iput-object v1, v4, Lmgp;->e:Ljava/lang/Boolean;
 
-    iget-object v1, p0, Lkwa;->r:Lkwc;
+    iget-object v1, p0, Lmia;->r:Lmic;
 
     if-nez v1, :cond_3
 
-    sget-object v1, Lkwc;->b:Lkwc;
+    sget-object v1, Lmic;->b:Lmic;
 
     :cond_3
-    iget-object v1, v1, Lkwc;->a:Lnxa;
+    iget-object v1, v1, Lmic;->a:Lppm;
 
-    iput-object v1, v4, Lkuw;->f:Ljava/util/List;
+    iput-object v1, v4, Lmgp;->f:Ljava/util/List;
 
     :cond_4
-    iget v1, p0, Lkwa;->a:I
+    iget v1, p0, Lmia;->a:I
 
     and-int/lit8 v1, v1, 0x20
 
     if-eqz v1, :cond_5
 
-    iget v1, p0, Lkwa;->h:I
+    iget v1, p0, Lmia;->h:I
 
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -165,32 +165,32 @@
 
     move-object v4, v0
 
-    check-cast v4, Lkuw;
+    check-cast v4, Lmgp;
 
-    iput-object v1, v4, Lkuw;->g:Ljava/lang/Integer;
+    iput-object v1, v4, Lmgp;->g:Ljava/lang/Integer;
 
     :cond_5
-    iget-object v1, p0, Lkwa;->i:Lkwd;
+    iget-object v1, p0, Lmia;->i:Lmid;
 
     if-nez v1, :cond_6
 
-    sget-object v1, Lkwd;->c:Lkwd;
+    sget-object v1, Lmid;->c:Lmid;
 
     :cond_6
-    iget v1, v1, Lkwd;->a:I
+    iget v1, v1, Lmid;->a:I
 
     and-int/2addr v1, v3
 
     if-eqz v1, :cond_8
 
-    iget-object v1, p0, Lkwa;->i:Lkwd;
+    iget-object v1, p0, Lmia;->i:Lmid;
 
     if-nez v1, :cond_7
 
-    sget-object v1, Lkwd;->c:Lkwd;
+    sget-object v1, Lmid;->c:Lmid;
 
     :cond_7
-    iget-boolean v1, v1, Lkwd;->b:Z
+    iget-boolean v1, v1, Lmid;->b:Z
 
     invoke-static {v1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
@@ -198,18 +198,18 @@
 
     move-object v4, v0
 
-    check-cast v4, Lkuw;
+    check-cast v4, Lmgp;
 
-    iput-object v1, v4, Lkuw;->d:Ljava/lang/Boolean;
+    iput-object v1, v4, Lmgp;->d:Ljava/lang/Boolean;
 
     :cond_8
-    iget v1, p0, Lkwa;->a:I
+    iget v1, p0, Lmia;->a:I
 
     and-int/2addr v1, v3
 
     if-eqz v1, :cond_a
 
-    iget-boolean v1, p0, Lkwa;->d:Z
+    iget-boolean v1, p0, Lmia;->d:Z
 
     invoke-static {v1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
@@ -217,13 +217,13 @@
 
     move-object v4, v0
 
-    check-cast v4, Lkuw;
+    check-cast v4, Lmgp;
 
-    iput-object v1, v4, Lkuw;->c:Ljava/lang/Boolean;
+    iput-object v1, v4, Lmgp;->c:Ljava/lang/Boolean;
 
-    iget-object v1, p0, Lkwa;->p:Lnxa;
+    iget-object v1, p0, Lmia;->p:Lppm;
 
-    invoke-interface {v1}, Lnxa;->size()I
+    invoke-interface {v1}, Lppm;->size()I
 
     move-result v1
 
@@ -233,7 +233,7 @@
 
     invoke-direct {v1}, Ljava/util/HashMap;-><init>()V
 
-    iget-object v5, p0, Lkwa;->p:Lnxa;
+    iget-object v5, p0, Lmia;->p:Lppm;
 
     invoke-interface {v5}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
@@ -250,11 +250,11 @@
 
     move-result-object v6
 
-    check-cast v6, Lkwf;
+    check-cast v6, Lmif;
 
-    iget-object v7, v6, Lkwf;->b:Ljava/lang/String;
+    iget-object v7, v6, Lmif;->b:Ljava/lang/String;
 
-    iget v6, v6, Lkwf;->c:F
+    iget v6, v6, Lmif;->c:F
 
     invoke-static {v6}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
 
@@ -265,18 +265,18 @@
     goto :goto_0
 
     :cond_9
-    iput-object v1, v4, Lkuw;->l:Ljava/util/Map;
+    iput-object v1, v4, Lmgp;->n:Ljava/util/Map;
 
     :cond_a
-    iget v1, p0, Lkwa;->a:I
+    iget v1, p0, Lmia;->a:I
 
     and-int/lit16 v1, v1, 0x80
 
     if-eqz v1, :cond_c
 
-    iget v1, p0, Lkwa;->j:I
+    iget v1, p0, Lmia;->j:I
 
-    invoke-static {v1}, Lkwp;->a(I)I
+    invoke-static {v1}, Lmip;->y(I)I
 
     move-result v1
 
@@ -293,18 +293,18 @@
 
     move-object v4, v0
 
-    check-cast v4, Lkuw;
+    check-cast v4, Lmgp;
 
-    iput-object v1, v4, Lkuw;->h:Ljava/lang/Integer;
+    iput-object v1, v4, Lmgp;->h:Ljava/lang/Integer;
 
     :cond_c
-    iget v1, p0, Lkwa;->a:I
+    iget v1, p0, Lmia;->a:I
 
     and-int/lit16 v1, v1, 0x100
 
     if-eqz v1, :cond_d
 
-    iget-boolean v1, p0, Lkwa;->k:Z
+    iget-boolean v1, p0, Lmia;->k:Z
 
     invoke-static {v1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
@@ -312,12 +312,12 @@
 
     move-object v4, v0
 
-    check-cast v4, Lkuw;
+    check-cast v4, Lmgp;
 
-    iput-object v1, v4, Lkuw;->i:Ljava/lang/Boolean;
+    iput-object v1, v4, Lmgp;->i:Ljava/lang/Boolean;
 
     :cond_d
-    iget v1, p0, Lkwa;->a:I
+    iget v1, p0, Lmia;->a:I
 
     const/high16 v4, 0x100000
 
@@ -325,7 +325,7 @@
 
     if-eqz v1, :cond_f
 
-    iget-boolean v1, p0, Lkwa;->x:Z
+    iget-boolean v1, p0, Lmia;->x:Z
 
     invoke-static {v1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
@@ -333,11 +333,11 @@
 
     move-object v4, v0
 
-    check-cast v4, Lkuw;
+    check-cast v4, Lmgp;
 
-    iput-object v1, v4, Lkuw;->u:Ljava/lang/Boolean;
+    iput-object v1, v4, Lmgp;->w:Ljava/lang/Boolean;
 
-    iget v1, p0, Lkwa;->a:I
+    iget v1, p0, Lmia;->a:I
 
     const/high16 v5, 0x400000
 
@@ -345,23 +345,23 @@
 
     if-eqz v1, :cond_f
 
-    iget-object v1, p0, Lkwa;->z:Lkvz;
+    iget-object v1, p0, Lmia;->z:Lmhz;
 
     if-nez v1, :cond_e
 
-    sget-object v1, Lkvz;->a:Lkvz;
+    sget-object v1, Lmhz;->a:Lmhz;
 
     :cond_e
-    iput-object v1, v4, Lkuw;->v:Lkvz;
+    iput-object v1, v4, Lmgp;->x:Lmhz;
 
     :cond_f
-    iget v1, p0, Lkwa;->a:I
+    iget v1, p0, Lmia;->a:I
 
     and-int/lit16 v1, v1, 0x200
 
     if-eqz v1, :cond_10
 
-    iget v1, p0, Lkwa;->l:I
+    iget v1, p0, Lmia;->l:I
 
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -369,18 +369,18 @@
 
     move-object v4, v0
 
-    check-cast v4, Lkuw;
+    check-cast v4, Lmgp;
 
-    iput-object v1, v4, Lkuw;->j:Ljava/lang/Integer;
+    iput-object v1, v4, Lmgp;->l:Ljava/lang/Integer;
 
     :cond_10
-    iget v1, p0, Lkwa;->a:I
+    iget v1, p0, Lmia;->a:I
 
     and-int/lit16 v1, v1, 0x400
 
     if-eqz v1, :cond_11
 
-    iget-boolean v1, p0, Lkwa;->m:Z
+    iget-boolean v1, p0, Lmia;->m:Z
 
     invoke-static {v1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
@@ -388,18 +388,18 @@
 
     move-object v4, v0
 
-    check-cast v4, Lkuw;
+    check-cast v4, Lmgp;
 
-    iput-object v1, v4, Lkuw;->k:Ljava/lang/Boolean;
+    iput-object v1, v4, Lmgp;->m:Ljava/lang/Boolean;
 
     :cond_11
-    iget v1, p0, Lkwa;->a:I
+    iget v1, p0, Lmia;->a:I
 
     and-int/lit16 v1, v1, 0x800
 
     if-eqz v1, :cond_12
 
-    iget-boolean v1, p0, Lkwa;->n:Z
+    iget-boolean v1, p0, Lmia;->n:Z
 
     invoke-static {v1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
@@ -407,18 +407,18 @@
 
     move-object v4, v0
 
-    check-cast v4, Lkuw;
+    check-cast v4, Lmgp;
 
-    iput-object v1, v4, Lkuw;->m:Ljava/lang/Boolean;
+    iput-object v1, v4, Lmgp;->o:Ljava/lang/Boolean;
 
     :cond_12
-    iget v1, p0, Lkwa;->a:I
+    iget v1, p0, Lmia;->a:I
 
     and-int/lit16 v1, v1, 0x1000
 
     if-eqz v1, :cond_13
 
-    iget-boolean v1, p0, Lkwa;->o:Z
+    iget-boolean v1, p0, Lmia;->o:Z
 
     invoke-static {v1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
@@ -426,12 +426,12 @@
 
     move-object v4, v0
 
-    check-cast v4, Lkuw;
+    check-cast v4, Lmgp;
 
-    iput-object v1, v4, Lkuw;->n:Ljava/lang/Boolean;
+    iput-object v1, v4, Lmgp;->p:Ljava/lang/Boolean;
 
     :cond_13
-    iget v1, p0, Lkwa;->a:I
+    iget v1, p0, Lmia;->a:I
 
     and-int/lit8 v1, v1, 0x4
 
@@ -443,12 +443,12 @@
 
     move-object v4, v0
 
-    check-cast v4, Lkuw;
+    check-cast v4, Lmgp;
 
-    iput-object v1, v4, Lkuw;->o:Ljava/lang/Boolean;
+    iput-object v1, v4, Lmgp;->q:Ljava/lang/Boolean;
 
     :cond_14
-    iget v1, p0, Lkwa;->a:I
+    iget v1, p0, Lmia;->a:I
 
     const/high16 v4, 0x10000
 
@@ -456,7 +456,7 @@
 
     if-eqz v1, :cond_15
 
-    iget-boolean v1, p0, Lkwa;->t:Z
+    iget-boolean v1, p0, Lmia;->t:Z
 
     invoke-static {v1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
@@ -464,46 +464,46 @@
 
     move-object v4, v0
 
-    check-cast v4, Lkuw;
+    check-cast v4, Lmgp;
 
-    iput-object v1, v4, Lkuw;->p:Ljava/lang/Boolean;
+    iput-object v1, v4, Lmgp;->r:Ljava/lang/Boolean;
 
     :cond_15
-    iget v1, p0, Lkwa;->q:I
+    iget v1, p0, Lmia;->q:I
 
-    invoke-static {v1}, Lkvy;->b(I)Lkvy;
+    invoke-static {v1}, Lmhy;->b(I)Lmhy;
 
     move-result-object v1
 
     if-nez v1, :cond_16
 
-    sget-object v1, Lkvy;->a:Lkvy;
+    sget-object v1, Lmhy;->a:Lmhy;
 
     :cond_16
-    sget-object v4, Lkvy;->a:Lkvy;
+    sget-object v4, Lmhy;->a:Lmhy;
 
     if-ne v1, v4, :cond_17
 
-    sget-object v1, Lkvk;->b:Lkvy;
+    sget-object v1, Lmhf;->b:Lmhy;
 
     goto :goto_1
 
     :cond_17
-    iget v1, p0, Lkwa;->q:I
+    iget v1, p0, Lmia;->q:I
 
-    invoke-static {v1}, Lkvy;->b(I)Lkvy;
+    invoke-static {v1}, Lmhy;->b(I)Lmhy;
 
     move-result-object v1
 
     if-nez v1, :cond_18
 
-    sget-object v1, Lkvy;->a:Lkvy;
+    sget-object v1, Lmhy;->a:Lmhy;
 
     :cond_18
     :goto_1
-    invoke-virtual {v0, v1}, Lcom/google/android/libraries/lens/lenslite/api/LinkConfig$Builder;->a(Lkvy;)V
+    invoke-virtual {v0, v1}, Lcom/google/android/libraries/lens/lenslite/api/LinkConfig$Builder;->a(Lmhy;)V
 
-    iget v1, p0, Lkwa;->a:I
+    iget v1, p0, Lmia;->a:I
 
     const/high16 v4, 0x20000
 
@@ -511,9 +511,9 @@
 
     if-eqz v1, :cond_1a
 
-    iget v1, p0, Lkwa;->u:I
+    iget v1, p0, Lmia;->u:I
 
-    invoke-static {v1}, Lkwp;->b(I)I
+    invoke-static {v1}, Lmip;->z(I)I
 
     move-result v1
 
@@ -530,12 +530,12 @@
 
     move-object v4, v0
 
-    check-cast v4, Lkuw;
+    check-cast v4, Lmgp;
 
-    iput-object v1, v4, Lkuw;->q:Ljava/lang/Integer;
+    iput-object v1, v4, Lmgp;->s:Ljava/lang/Integer;
 
     :cond_1a
-    iget v1, p0, Lkwa;->a:I
+    iget v1, p0, Lmia;->a:I
 
     const/high16 v4, 0x40000
 
@@ -543,7 +543,7 @@
 
     if-eqz v1, :cond_1b
 
-    iget-boolean v1, p0, Lkwa;->v:Z
+    iget-boolean v1, p0, Lmia;->v:Z
 
     invoke-static {v1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
@@ -551,18 +551,18 @@
 
     move-object v4, v0
 
-    check-cast v4, Lkuw;
+    check-cast v4, Lmgp;
 
-    iput-object v1, v4, Lkuw;->r:Ljava/lang/Boolean;
+    iput-object v1, v4, Lmgp;->t:Ljava/lang/Boolean;
 
     :cond_1b
-    iget v1, p0, Lkwa;->b:I
+    iget v1, p0, Lmia;->b:I
 
     and-int/2addr v1, v3
 
     if-eqz v1, :cond_1c
 
-    iget-wide v3, p0, Lkwa;->K:J
+    iget-wide v3, p0, Lmia;->K:J
 
     invoke-static {v3, v4}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
@@ -570,12 +570,12 @@
 
     move-object v3, v0
 
-    check-cast v3, Lkuw;
+    check-cast v3, Lmgp;
 
-    iput-object v1, v3, Lkuw;->s:Ljava/lang/Long;
+    iput-object v1, v3, Lmgp;->u:Ljava/lang/Long;
 
     :cond_1c
-    iget v1, p0, Lkwa;->a:I
+    iget v1, p0, Lmia;->a:I
 
     const/high16 v3, 0x80000
 
@@ -583,7 +583,7 @@
 
     if-eqz v1, :cond_1d
 
-    iget-boolean v1, p0, Lkwa;->w:Z
+    iget-boolean v1, p0, Lmia;->w:Z
 
     invoke-static {v1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
@@ -591,12 +591,12 @@
 
     move-object v3, v0
 
-    check-cast v3, Lkuw;
+    check-cast v3, Lmgp;
 
-    iput-object v1, v3, Lkuw;->t:Ljava/lang/Boolean;
+    iput-object v1, v3, Lmgp;->v:Ljava/lang/Boolean;
 
     :cond_1d
-    iget v1, p0, Lkwa;->a:I
+    iget v1, p0, Lmia;->a:I
 
     const/high16 v3, 0x200000
 
@@ -604,7 +604,7 @@
 
     if-eqz v1, :cond_1e
 
-    iget-wide v3, p0, Lkwa;->y:J
+    iget-wide v3, p0, Lmia;->y:J
 
     invoke-static {v3, v4}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
@@ -612,12 +612,12 @@
 
     move-object v3, v0
 
-    check-cast v3, Lkuw;
+    check-cast v3, Lmgp;
 
-    iput-object v1, v3, Lkuw;->w:Ljava/lang/Long;
+    iput-object v1, v3, Lmgp;->y:Ljava/lang/Long;
 
     :cond_1e
-    iget v1, p0, Lkwa;->a:I
+    iget v1, p0, Lmia;->a:I
 
     const/high16 v3, 0x1000000
 
@@ -625,7 +625,7 @@
 
     if-eqz v1, :cond_1f
 
-    iget-boolean v1, p0, Lkwa;->B:Z
+    iget-boolean v1, p0, Lmia;->B:Z
 
     invoke-static {v1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
@@ -633,12 +633,12 @@
 
     move-object v3, v0
 
-    check-cast v3, Lkuw;
+    check-cast v3, Lmgp;
 
-    iput-object v1, v3, Lkuw;->x:Ljava/lang/Boolean;
+    iput-object v1, v3, Lmgp;->z:Ljava/lang/Boolean;
 
     :cond_1f
-    iget v1, p0, Lkwa;->a:I
+    iget v1, p0, Lmia;->a:I
 
     const/high16 v3, 0x2000000
 
@@ -646,14 +646,14 @@
 
     if-eqz v1, :cond_21
 
-    iget-object v1, p0, Lkwa;->C:Lkwo;
+    iget-object v1, p0, Lmia;->C:Lmio;
 
     if-nez v1, :cond_20
 
-    sget-object v1, Lkwo;->a:Lkwo;
+    sget-object v1, Lmio;->a:Lmio;
 
     :cond_20
-    invoke-virtual {v1}, Lnve;->J()[B
+    invoke-virtual {v1}, Lpnm;->g()[B
 
     move-result-object v1
 
@@ -663,12 +663,12 @@
 
     move-object v3, v0
 
-    check-cast v3, Lkuw;
+    check-cast v3, Lmgp;
 
-    iput-object v1, v3, Lkuw;->y:Ljava/nio/ByteBuffer;
+    iput-object v1, v3, Lmgp;->A:Ljava/nio/ByteBuffer;
 
     :cond_21
-    iget v1, p0, Lkwa;->a:I
+    iget v1, p0, Lmia;->a:I
 
     const/high16 v3, 0x4000000
 
@@ -676,7 +676,7 @@
 
     if-eqz v1, :cond_22
 
-    iget-boolean v1, p0, Lkwa;->D:Z
+    iget-boolean v1, p0, Lmia;->D:Z
 
     invoke-static {v1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
@@ -684,12 +684,12 @@
 
     move-object v3, v0
 
-    check-cast v3, Lkuw;
+    check-cast v3, Lmgp;
 
-    iput-object v1, v3, Lkuw;->z:Ljava/lang/Boolean;
+    iput-object v1, v3, Lmgp;->B:Ljava/lang/Boolean;
 
     :cond_22
-    iget v1, p0, Lkwa;->a:I
+    iget v1, p0, Lmia;->a:I
 
     const/high16 v3, 0x8000000
 
@@ -697,9 +697,9 @@
 
     if-eqz v1, :cond_23
 
-    iget-object v1, p0, Lkwa;->E:Lnvt;
+    iget-object v1, p0, Lmia;->E:Lpoc;
 
-    invoke-virtual {v1}, Lnvt;->A()[B
+    invoke-virtual {v1}, Lpoc;->B()[B
 
     move-result-object v1
 
@@ -709,12 +709,12 @@
 
     move-object v3, v0
 
-    check-cast v3, Lkuw;
+    check-cast v3, Lmgp;
 
-    iput-object v1, v3, Lkuw;->A:Ljava/nio/ByteBuffer;
+    iput-object v1, v3, Lmgp;->C:Ljava/nio/ByteBuffer;
 
     :cond_23
-    iget v1, p0, Lkwa;->a:I
+    iget v1, p0, Lmia;->a:I
 
     const/high16 v3, 0x10000000
 
@@ -722,7 +722,7 @@
 
     if-eqz v1, :cond_24
 
-    iget-boolean v1, p0, Lkwa;->F:Z
+    iget-boolean v1, p0, Lmia;->F:Z
 
     invoke-static {v1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
@@ -730,18 +730,18 @@
 
     move-object v3, v0
 
-    check-cast v3, Lkuw;
+    check-cast v3, Lmgp;
 
-    iput-object v1, v3, Lkuw;->B:Ljava/lang/Boolean;
+    iput-object v1, v3, Lmgp;->D:Ljava/lang/Boolean;
 
     :cond_24
-    iget v1, p0, Lkwa;->b:I
+    iget v1, p0, Lmia;->b:I
 
     and-int/2addr v1, v2
 
     if-eqz v1, :cond_25
 
-    iget-boolean v1, p0, Lkwa;->J:Z
+    iget-boolean v1, p0, Lmia;->J:Z
 
     invoke-static {v1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
@@ -749,12 +749,12 @@
 
     move-object v2, v0
 
-    check-cast v2, Lkuw;
+    check-cast v2, Lmgp;
 
-    iput-object v1, v2, Lkuw;->C:Ljava/lang/Boolean;
+    iput-object v1, v2, Lmgp;->E:Ljava/lang/Boolean;
 
     :cond_25
-    iget v1, p0, Lkwa;->a:I
+    iget v1, p0, Lmia;->a:I
 
     const/high16 v2, 0x20000000
 
@@ -762,21 +762,21 @@
 
     if-eqz v1, :cond_27
 
-    iget-object v1, p0, Lkwa;->G:Lkwe;
+    iget-object v1, p0, Lmia;->G:Lmie;
 
     if-nez v1, :cond_26
 
-    sget-object v1, Lkwe;->a:Lkwe;
+    sget-object v1, Lmie;->a:Lmie;
 
     :cond_26
     move-object v2, v0
 
-    check-cast v2, Lkuw;
+    check-cast v2, Lmgp;
 
-    iput-object v1, v2, Lkuw;->E:Lkwe;
+    iput-object v1, v2, Lmgp;->G:Lmie;
 
     :cond_27
-    iget v1, p0, Lkwa;->a:I
+    iget v1, p0, Lmia;->a:I
 
     const/high16 v2, 0x40000000    # 2.0f
 
@@ -784,7 +784,7 @@
 
     if-eqz v1, :cond_28
 
-    iget-boolean v1, p0, Lkwa;->H:Z
+    iget-boolean v1, p0, Lmia;->H:Z
 
     invoke-static {v1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
@@ -792,12 +792,12 @@
 
     move-object v2, v0
 
-    check-cast v2, Lkuw;
+    check-cast v2, Lmgp;
 
-    iput-object v1, v2, Lkuw;->D:Ljava/lang/Boolean;
+    iput-object v1, v2, Lmgp;->F:Ljava/lang/Boolean;
 
     :cond_28
-    iget v1, p0, Lkwa;->a:I
+    iget v1, p0, Lmia;->a:I
 
     const/high16 v2, -0x80000000
 
@@ -805,7 +805,7 @@
 
     if-eqz v1, :cond_29
 
-    iget-boolean p0, p0, Lkwa;->I:Z
+    iget-boolean p0, p0, Lmia;->I:Z
 
     invoke-static {p0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
@@ -813,9 +813,9 @@
 
     move-object v1, v0
 
-    check-cast v1, Lkuw;
+    check-cast v1, Lmgp;
 
-    iput-object p0, v1, Lkuw;->F:Ljava/lang/Boolean;
+    iput-object p0, v1, Lmgp;->H:Ljava/lang/Boolean;
 
     :cond_29
     invoke-virtual {v0}, Lcom/google/android/libraries/lens/lenslite/api/LinkConfig$Builder;->build()Lcom/google/android/libraries/lens/lenslite/api/LinkConfig;
@@ -850,7 +850,7 @@
 .method public abstract dutyCycleMode()Ljava/lang/Integer;
 .end method
 
-.method public abstract dynamicLoadingMode()Lkvy;
+.method public abstract dynamicLoadingMode()Lmhy;
 .end method
 
 .method public abstract embedderModeEnabled()Ljava/lang/Boolean;
@@ -871,7 +871,7 @@
 .method public abstract lens2020ModeEnabled()Ljava/lang/Boolean;
 .end method
 
-.method public abstract lens2020Params()Lkvz;
+.method public abstract lens2020Params()Lmhz;
 .end method
 
 .method public abstract lightweightSuggestionsModeEnabled()Ljava/lang/Boolean;
@@ -886,7 +886,7 @@
 .method public abstract minimumDynamicLoadingHostVersion()Ljava/lang/Long;
 .end method
 
-.method public abstract mobileRaidParams()Lkwe;
+.method public abstract mobileRaidParams()Lmie;
 .end method
 
 .method public abstract modelDownloadCheckTimeoutMs()Ljava/lang/Long;
@@ -946,11 +946,11 @@
 .end method
 
 .method public final toByteArray()[B
-    .locals 8
+    .locals 9
 
-    sget-object v0, Lkwa;->L:Lkwa;
+    sget-object v0, Lmia;->L:Lmia;
 
-    invoke-virtual {v0}, Lnws;->O()Lnwn;
+    invoke-virtual {v0}, Lppd;->m()Lpoy;
 
     move-result-object v0
 
@@ -960,34 +960,34 @@
 
     const/4 v2, 0x1
 
+    const/4 v3, 0x0
+
     if-eqz v1, :cond_1
 
     invoke-virtual {v1}, Ljava/lang/Boolean;->booleanValue()Z
 
     move-result v1
 
-    iget-object v3, v0, Lnwn;->b:Lnws;
+    iget-boolean v4, v0, Lpoy;->c:Z
 
-    invoke-virtual {v3}, Lnws;->ac()Z
+    if-eqz v4, :cond_0
 
-    move-result v3
+    invoke-virtual {v0}, Lpoy;->m()V
 
-    if-nez v3, :cond_0
-
-    invoke-virtual {v0}, Lnwn;->p()V
+    iput-boolean v3, v0, Lpoy;->c:Z
 
     :cond_0
-    iget-object v3, v0, Lnwn;->b:Lnws;
+    iget-object v4, v0, Lpoy;->b:Lppd;
 
-    check-cast v3, Lkwa;
+    check-cast v4, Lmia;
 
-    iget v4, v3, Lkwa;->a:I
+    iget v5, v4, Lmia;->a:I
 
-    or-int/2addr v4, v2
+    or-int/2addr v5, v2
 
-    iput v4, v3, Lkwa;->a:I
+    iput v5, v4, Lmia;->a:I
 
-    iput-boolean v1, v3, Lkwa;->c:Z
+    iput-boolean v1, v4, Lmia;->c:Z
 
     :cond_1
     invoke-virtual {p0}, Lcom/google/android/libraries/lens/lenslite/api/LinkConfig;->wifiScanEnabled()Ljava/lang/Boolean;
@@ -1000,30 +1000,28 @@
 
     move-result v1
 
-    iget-object v3, v0, Lnwn;->b:Lnws;
+    iget-boolean v4, v0, Lpoy;->c:Z
 
-    invoke-virtual {v3}, Lnws;->ac()Z
+    if-eqz v4, :cond_2
 
-    move-result v3
+    invoke-virtual {v0}, Lpoy;->m()V
 
-    if-nez v3, :cond_2
-
-    invoke-virtual {v0}, Lnwn;->p()V
+    iput-boolean v3, v0, Lpoy;->c:Z
 
     :cond_2
-    iget-object v3, v0, Lnwn;->b:Lnws;
+    iget-object v4, v0, Lpoy;->b:Lppd;
 
-    check-cast v3, Lkwa;
+    check-cast v4, Lmia;
 
-    iget v4, v3, Lkwa;->a:I
+    iget v5, v4, Lmia;->a:I
 
-    const/high16 v5, 0x800000
+    const/high16 v6, 0x800000
 
-    or-int/2addr v4, v5
+    or-int/2addr v5, v6
 
-    iput v4, v3, Lkwa;->a:I
+    iput v5, v4, Lmia;->a:I
 
-    iput-boolean v1, v3, Lkwa;->A:Z
+    iput-boolean v1, v4, Lmia;->A:Z
 
     :cond_3
     invoke-virtual {p0}, Lcom/google/android/libraries/lens/lenslite/api/LinkConfig;->sceneDetectionEnabled()Ljava/lang/Boolean;
@@ -1036,28 +1034,26 @@
 
     move-result v1
 
-    iget-object v3, v0, Lnwn;->b:Lnws;
+    iget-boolean v4, v0, Lpoy;->c:Z
 
-    invoke-virtual {v3}, Lnws;->ac()Z
+    if-eqz v4, :cond_4
 
-    move-result v3
+    invoke-virtual {v0}, Lpoy;->m()V
 
-    if-nez v3, :cond_4
-
-    invoke-virtual {v0}, Lnwn;->p()V
+    iput-boolean v3, v0, Lpoy;->c:Z
 
     :cond_4
-    iget-object v3, v0, Lnwn;->b:Lnws;
+    iget-object v4, v0, Lpoy;->b:Lppd;
 
-    check-cast v3, Lkwa;
+    check-cast v4, Lmia;
 
-    iget v4, v3, Lkwa;->a:I
+    iget v5, v4, Lmia;->a:I
 
-    or-int/lit8 v4, v4, 0x2
+    or-int/lit8 v5, v5, 0x2
 
-    iput v4, v3, Lkwa;->a:I
+    iput v5, v4, Lmia;->a:I
 
-    iput-boolean v1, v3, Lkwa;->d:Z
+    iput-boolean v1, v4, Lmia;->d:Z
 
     :cond_5
     invoke-virtual {p0}, Lcom/google/android/libraries/lens/lenslite/api/LinkConfig;->freeTextCopyEnabled()Ljava/lang/Boolean;
@@ -1070,28 +1066,26 @@
 
     move-result v1
 
-    iget-object v3, v0, Lnwn;->b:Lnws;
+    iget-boolean v4, v0, Lpoy;->c:Z
 
-    invoke-virtual {v3}, Lnws;->ac()Z
+    if-eqz v4, :cond_6
 
-    move-result v3
+    invoke-virtual {v0}, Lpoy;->m()V
 
-    if-nez v3, :cond_6
-
-    invoke-virtual {v0}, Lnwn;->p()V
+    iput-boolean v3, v0, Lpoy;->c:Z
 
     :cond_6
-    iget-object v3, v0, Lnwn;->b:Lnws;
+    iget-object v4, v0, Lpoy;->b:Lppd;
 
-    check-cast v3, Lkwa;
+    check-cast v4, Lmia;
 
-    iget v4, v3, Lkwa;->a:I
+    iget v5, v4, Lmia;->a:I
 
-    or-int/lit8 v4, v4, 0x8
+    or-int/lit8 v5, v5, 0x8
 
-    iput v4, v3, Lkwa;->a:I
+    iput v5, v4, Lmia;->a:I
 
-    iput-boolean v1, v3, Lkwa;->f:Z
+    iput-boolean v1, v4, Lmia;->f:Z
 
     :cond_7
     invoke-virtual {p0}, Lcom/google/android/libraries/lens/lenslite/api/LinkConfig;->foreignLanguageDetectionEnabled()Ljava/lang/Boolean;
@@ -1104,28 +1098,26 @@
 
     move-result v1
 
-    iget-object v3, v0, Lnwn;->b:Lnws;
+    iget-boolean v4, v0, Lpoy;->c:Z
 
-    invoke-virtual {v3}, Lnws;->ac()Z
+    if-eqz v4, :cond_8
 
-    move-result v3
+    invoke-virtual {v0}, Lpoy;->m()V
 
-    if-nez v3, :cond_8
-
-    invoke-virtual {v0}, Lnwn;->p()V
+    iput-boolean v3, v0, Lpoy;->c:Z
 
     :cond_8
-    iget-object v3, v0, Lnwn;->b:Lnws;
+    iget-object v4, v0, Lpoy;->b:Lppd;
 
-    check-cast v3, Lkwa;
+    check-cast v4, Lmia;
 
-    iget v4, v3, Lkwa;->a:I
+    iget v5, v4, Lmia;->a:I
 
-    or-int/lit8 v4, v4, 0x10
+    or-int/lit8 v5, v5, 0x10
 
-    iput v4, v3, Lkwa;->a:I
+    iput v5, v4, Lmia;->a:I
 
-    iput-boolean v1, v3, Lkwa;->g:Z
+    iput-boolean v1, v4, Lmia;->g:Z
 
     invoke-virtual {p0}, Lcom/google/android/libraries/lens/lenslite/api/LinkConfig;->supportedTranslateLanguages()Ljava/util/List;
 
@@ -1133,76 +1125,72 @@
 
     if-eqz v1, :cond_c
 
-    sget-object v3, Lkwc;->b:Lkwc;
+    sget-object v4, Lmic;->b:Lmic;
 
-    invoke-virtual {v3}, Lnws;->O()Lnwn;
+    invoke-virtual {v4}, Lppd;->m()Lpoy;
 
-    move-result-object v3
+    move-result-object v4
 
-    iget-object v4, v3, Lnwn;->b:Lnws;
+    iget-boolean v5, v4, Lpoy;->c:Z
 
-    invoke-virtual {v4}, Lnws;->ac()Z
+    if-eqz v5, :cond_9
 
-    move-result v4
+    invoke-virtual {v4}, Lpoy;->m()V
 
-    if-nez v4, :cond_9
-
-    invoke-virtual {v3}, Lnwn;->p()V
+    iput-boolean v3, v4, Lpoy;->c:Z
 
     :cond_9
-    iget-object v4, v3, Lnwn;->b:Lnws;
+    iget-object v5, v4, Lpoy;->b:Lppd;
 
-    check-cast v4, Lkwc;
+    check-cast v5, Lmic;
 
-    iget-object v5, v4, Lkwc;->a:Lnxa;
+    iget-object v6, v5, Lmic;->a:Lppm;
 
-    invoke-interface {v5}, Lnxa;->c()Z
+    invoke-interface {v6}, Lppm;->c()Z
 
-    move-result v6
+    move-result v7
 
-    if-nez v6, :cond_a
+    if-nez v7, :cond_a
 
-    invoke-static {v5}, Lnws;->U(Lnxa;)Lnxa;
+    invoke-static {v6}, Lppd;->B(Lppm;)Lppm;
 
-    move-result-object v5
+    move-result-object v6
 
-    iput-object v5, v4, Lkwc;->a:Lnxa;
+    iput-object v6, v5, Lmic;->a:Lppm;
 
     :cond_a
-    iget-object v4, v4, Lkwc;->a:Lnxa;
+    iget-object v5, v5, Lmic;->a:Lppm;
 
-    invoke-static {v1, v4}, Lnvd;->e(Ljava/lang/Iterable;Ljava/util/List;)V
+    invoke-static {v1, v5}, Lpnl;->e(Ljava/lang/Iterable;Ljava/util/List;)V
 
-    iget-object v1, v0, Lnwn;->b:Lnws;
+    iget-boolean v1, v0, Lpoy;->c:Z
 
-    invoke-virtual {v1}, Lnws;->ac()Z
+    if-eqz v1, :cond_b
 
-    move-result v1
+    invoke-virtual {v0}, Lpoy;->m()V
 
-    if-nez v1, :cond_b
-
-    invoke-virtual {v0}, Lnwn;->p()V
+    iput-boolean v3, v0, Lpoy;->c:Z
 
     :cond_b
-    iget-object v1, v0, Lnwn;->b:Lnws;
+    iget-object v1, v0, Lpoy;->b:Lppd;
 
-    check-cast v1, Lkwa;
+    check-cast v1, Lmia;
 
-    invoke-virtual {v3}, Lnwn;->i()Lnws;
+    invoke-virtual {v4}, Lpoy;->h()Lppd;
 
-    move-result-object v3
+    move-result-object v4
 
-    check-cast v3, Lkwc;
+    check-cast v4, Lmic;
 
-    invoke-virtual {v3}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    invoke-virtual {v4}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    iput-object v3, v1, Lkwa;->r:Lkwc;
+    iput-object v4, v1, Lmia;->r:Lmic;
 
-    iget v3, v1, Lkwa;->a:I
+    iget v4, v1, Lmia;->a:I
 
-    or-int/lit16 v3, v3, 0x4000
+    or-int/lit16 v4, v4, 0x4000
 
-    iput v3, v1, Lkwa;->a:I
+    iput v4, v1, Lmia;->a:I
 
     :cond_c
     invoke-virtual {p0}, Lcom/google/android/libraries/lens/lenslite/api/LinkConfig;->processorMode()Ljava/lang/Integer;
@@ -1215,28 +1203,26 @@
 
     move-result v1
 
-    iget-object v3, v0, Lnwn;->b:Lnws;
+    iget-boolean v4, v0, Lpoy;->c:Z
 
-    invoke-virtual {v3}, Lnws;->ac()Z
+    if-eqz v4, :cond_d
 
-    move-result v3
+    invoke-virtual {v0}, Lpoy;->m()V
 
-    if-nez v3, :cond_d
-
-    invoke-virtual {v0}, Lnwn;->p()V
+    iput-boolean v3, v0, Lpoy;->c:Z
 
     :cond_d
-    iget-object v3, v0, Lnwn;->b:Lnws;
+    iget-object v4, v0, Lpoy;->b:Lppd;
 
-    check-cast v3, Lkwa;
+    check-cast v4, Lmia;
 
-    iget v4, v3, Lkwa;->a:I
+    iget v5, v4, Lmia;->a:I
 
-    or-int/lit8 v4, v4, 0x20
+    or-int/lit8 v5, v5, 0x20
 
-    iput v4, v3, Lkwa;->a:I
+    iput v5, v4, Lmia;->a:I
 
-    iput v1, v3, Lkwa;->h:I
+    iput v1, v4, Lmia;->h:I
 
     :cond_e
     invoke-virtual {p0}, Lcom/google/android/libraries/lens/lenslite/api/LinkConfig;->freeTextCopyEnabled()Ljava/lang/Boolean;
@@ -1251,65 +1237,61 @@
 
     if-eqz v1, :cond_11
 
-    sget-object v1, Lkwd;->c:Lkwd;
+    sget-object v1, Lmid;->c:Lmid;
 
-    invoke-virtual {v1}, Lnws;->O()Lnwn;
+    invoke-virtual {v1}, Lppd;->m()Lpoy;
 
     move-result-object v1
 
-    iget-object v3, v1, Lnwn;->b:Lnws;
+    iget-boolean v4, v1, Lpoy;->c:Z
 
-    invoke-virtual {v3}, Lnws;->ac()Z
+    if-eqz v4, :cond_f
 
-    move-result v3
+    invoke-virtual {v1}, Lpoy;->m()V
 
-    if-nez v3, :cond_f
-
-    invoke-virtual {v1}, Lnwn;->p()V
+    iput-boolean v3, v1, Lpoy;->c:Z
 
     :cond_f
-    iget-object v3, v1, Lnwn;->b:Lnws;
+    iget-object v4, v1, Lpoy;->b:Lppd;
 
-    check-cast v3, Lkwd;
+    check-cast v4, Lmid;
 
-    iget v4, v3, Lkwd;->a:I
+    iget v5, v4, Lmid;->a:I
 
-    or-int/lit8 v4, v4, 0x2
+    or-int/lit8 v5, v5, 0x2
 
-    iput v4, v3, Lkwd;->a:I
+    iput v5, v4, Lmid;->a:I
 
-    iput-boolean v2, v3, Lkwd;->b:Z
+    iput-boolean v2, v4, Lmid;->b:Z
 
-    iget-object v3, v0, Lnwn;->b:Lnws;
+    iget-boolean v4, v0, Lpoy;->c:Z
 
-    invoke-virtual {v3}, Lnws;->ac()Z
+    if-eqz v4, :cond_10
 
-    move-result v3
+    invoke-virtual {v0}, Lpoy;->m()V
 
-    if-nez v3, :cond_10
-
-    invoke-virtual {v0}, Lnwn;->p()V
+    iput-boolean v3, v0, Lpoy;->c:Z
 
     :cond_10
-    iget-object v3, v0, Lnwn;->b:Lnws;
+    iget-object v4, v0, Lpoy;->b:Lppd;
 
-    check-cast v3, Lkwa;
+    check-cast v4, Lmia;
 
-    invoke-virtual {v1}, Lnwn;->i()Lnws;
+    invoke-virtual {v1}, Lpoy;->h()Lppd;
 
     move-result-object v1
 
-    check-cast v1, Lkwd;
+    check-cast v1, Lmid;
 
     invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    iput-object v1, v3, Lkwa;->i:Lkwd;
+    iput-object v1, v4, Lmia;->i:Lmid;
 
-    iget v1, v3, Lkwa;->a:I
+    iget v1, v4, Lmia;->a:I
 
     or-int/lit8 v1, v1, 0x40
 
-    iput v1, v3, Lkwa;->a:I
+    iput v1, v4, Lmia;->a:I
 
     :cond_11
     invoke-virtual {p0}, Lcom/google/android/libraries/lens/lenslite/api/LinkConfig;->sceneDetectionEnabled()Ljava/lang/Boolean;
@@ -1322,28 +1304,26 @@
 
     move-result v1
 
-    iget-object v3, v0, Lnwn;->b:Lnws;
+    iget-boolean v4, v0, Lpoy;->c:Z
 
-    invoke-virtual {v3}, Lnws;->ac()Z
+    if-eqz v4, :cond_12
 
-    move-result v3
+    invoke-virtual {v0}, Lpoy;->m()V
 
-    if-nez v3, :cond_12
-
-    invoke-virtual {v0}, Lnwn;->p()V
+    iput-boolean v3, v0, Lpoy;->c:Z
 
     :cond_12
-    iget-object v3, v0, Lnwn;->b:Lnws;
+    iget-object v4, v0, Lpoy;->b:Lppd;
 
-    check-cast v3, Lkwa;
+    check-cast v4, Lmia;
 
-    iget v4, v3, Lkwa;->a:I
+    iget v5, v4, Lmia;->a:I
 
-    or-int/lit8 v4, v4, 0x2
+    or-int/lit8 v5, v5, 0x2
 
-    iput v4, v3, Lkwa;->a:I
+    iput v5, v4, Lmia;->a:I
 
-    iput-boolean v1, v3, Lkwa;->d:Z
+    iput-boolean v1, v4, Lmia;->d:Z
 
     invoke-virtual {p0}, Lcom/google/android/libraries/lens/lenslite/api/LinkConfig;->sceneClassificationMap()Ljava/util/Map;
 
@@ -1362,127 +1342,121 @@
     :goto_0
     invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
-    move-result v3
+    move-result v4
 
-    if-eqz v3, :cond_17
+    if-eqz v4, :cond_17
 
     invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    move-result-object v3
+    move-result-object v4
 
-    check-cast v3, Ljava/util/Map$Entry;
+    check-cast v4, Ljava/util/Map$Entry;
 
-    sget-object v4, Lkwf;->d:Lkwf;
+    sget-object v5, Lmif;->d:Lmif;
 
-    invoke-virtual {v4}, Lnws;->O()Lnwn;
+    invoke-virtual {v5}, Lppd;->m()Lpoy;
+
+    move-result-object v5
+
+    invoke-interface {v4}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
+
+    move-result-object v6
+
+    check-cast v6, Ljava/lang/String;
+
+    iget-boolean v7, v5, Lpoy;->c:Z
+
+    if-eqz v7, :cond_13
+
+    invoke-virtual {v5}, Lpoy;->m()V
+
+    iput-boolean v3, v5, Lpoy;->c:Z
+
+    :cond_13
+    iget-object v7, v5, Lpoy;->b:Lppd;
+
+    check-cast v7, Lmif;
+
+    invoke-virtual {v6}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    iget v8, v7, Lmif;->a:I
+
+    or-int/2addr v8, v2
+
+    iput v8, v7, Lmif;->a:I
+
+    iput-object v6, v7, Lmif;->b:Ljava/lang/String;
+
+    invoke-interface {v4}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
     move-result-object v4
 
-    invoke-interface {v3}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
+    check-cast v4, Ljava/lang/Float;
 
-    move-result-object v5
-
-    check-cast v5, Ljava/lang/String;
-
-    iget-object v6, v4, Lnwn;->b:Lnws;
-
-    invoke-virtual {v6}, Lnws;->ac()Z
-
-    move-result v6
-
-    if-nez v6, :cond_13
-
-    invoke-virtual {v4}, Lnwn;->p()V
-
-    :cond_13
-    iget-object v6, v4, Lnwn;->b:Lnws;
-
-    check-cast v6, Lkwf;
-
-    invoke-virtual {v5}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    iget v7, v6, Lkwf;->a:I
-
-    or-int/2addr v7, v2
-
-    iput v7, v6, Lkwf;->a:I
-
-    iput-object v5, v6, Lkwf;->b:Ljava/lang/String;
-
-    invoke-interface {v3}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
-
-    move-result-object v3
-
-    check-cast v3, Ljava/lang/Float;
-
-    invoke-virtual {v3}, Ljava/lang/Float;->floatValue()F
-
-    move-result v3
-
-    iget-object v5, v4, Lnwn;->b:Lnws;
-
-    invoke-virtual {v5}, Lnws;->ac()Z
-
-    move-result v5
-
-    if-nez v5, :cond_14
-
-    invoke-virtual {v4}, Lnwn;->p()V
-
-    :cond_14
-    iget-object v5, v4, Lnwn;->b:Lnws;
-
-    check-cast v5, Lkwf;
-
-    iget v6, v5, Lkwf;->a:I
-
-    or-int/lit8 v6, v6, 0x2
-
-    iput v6, v5, Lkwf;->a:I
-
-    iput v3, v5, Lkwf;->c:F
-
-    invoke-virtual {v4}, Lnwn;->i()Lnws;
-
-    move-result-object v3
-
-    check-cast v3, Lkwf;
-
-    iget-object v4, v0, Lnwn;->b:Lnws;
-
-    invoke-virtual {v4}, Lnws;->ac()Z
+    invoke-virtual {v4}, Ljava/lang/Float;->floatValue()F
 
     move-result v4
 
-    if-nez v4, :cond_15
+    iget-boolean v6, v5, Lpoy;->c:Z
 
-    invoke-virtual {v0}, Lnwn;->p()V
+    if-eqz v6, :cond_14
+
+    invoke-virtual {v5}, Lpoy;->m()V
+
+    iput-boolean v3, v5, Lpoy;->c:Z
+
+    :cond_14
+    iget-object v6, v5, Lpoy;->b:Lppd;
+
+    check-cast v6, Lmif;
+
+    iget v7, v6, Lmif;->a:I
+
+    or-int/lit8 v7, v7, 0x2
+
+    iput v7, v6, Lmif;->a:I
+
+    iput v4, v6, Lmif;->c:F
+
+    invoke-virtual {v5}, Lpoy;->h()Lppd;
+
+    move-result-object v4
+
+    check-cast v4, Lmif;
+
+    iget-boolean v5, v0, Lpoy;->c:Z
+
+    if-eqz v5, :cond_15
+
+    invoke-virtual {v0}, Lpoy;->m()V
+
+    iput-boolean v3, v0, Lpoy;->c:Z
 
     :cond_15
-    iget-object v4, v0, Lnwn;->b:Lnws;
+    iget-object v5, v0, Lpoy;->b:Lppd;
 
-    check-cast v4, Lkwa;
+    check-cast v5, Lmia;
 
-    invoke-virtual {v3}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    invoke-virtual {v4}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    iget-object v5, v4, Lkwa;->p:Lnxa;
+    iget-object v6, v5, Lmia;->p:Lppm;
 
-    invoke-interface {v5}, Lnxa;->c()Z
+    invoke-interface {v6}, Lppm;->c()Z
 
-    move-result v6
+    move-result v7
 
-    if-nez v6, :cond_16
+    if-nez v7, :cond_16
 
-    invoke-static {v5}, Lnws;->U(Lnxa;)Lnxa;
+    invoke-static {v6}, Lppd;->B(Lppm;)Lppm;
 
-    move-result-object v5
+    move-result-object v6
 
-    iput-object v5, v4, Lkwa;->p:Lnxa;
+    iput-object v6, v5, Lmia;->p:Lppm;
 
     :cond_16
-    iget-object v4, v4, Lkwa;->p:Lnxa;
+    iget-object v5, v5, Lmia;->p:Lppm;
 
-    invoke-interface {v4, v3}, Lnxa;->add(Ljava/lang/Object;)Z
+    invoke-interface {v5, v4}, Lppm;->add(Ljava/lang/Object;)Z
 
     goto :goto_0
 
@@ -1491,7 +1465,7 @@
 
     move-result-object v1
 
-    const/4 v3, 0x0
+    const/4 v4, 0x0
 
     if-eqz v1, :cond_1a
 
@@ -1499,41 +1473,39 @@
 
     move-result v1
 
-    invoke-static {v1}, Lkwp;->a(I)I
+    invoke-static {v1}, Lmip;->y(I)I
 
     move-result v1
 
-    iget-object v4, v0, Lnwn;->b:Lnws;
+    iget-boolean v5, v0, Lpoy;->c:Z
 
-    invoke-virtual {v4}, Lnws;->ac()Z
+    if-eqz v5, :cond_18
 
-    move-result v4
+    invoke-virtual {v0}, Lpoy;->m()V
 
-    if-nez v4, :cond_18
-
-    invoke-virtual {v0}, Lnwn;->p()V
+    iput-boolean v3, v0, Lpoy;->c:Z
 
     :cond_18
-    iget-object v4, v0, Lnwn;->b:Lnws;
+    iget-object v5, v0, Lpoy;->b:Lppd;
 
-    check-cast v4, Lkwa;
+    check-cast v5, Lmia;
 
-    add-int/lit8 v5, v1, -0x1
+    add-int/lit8 v6, v1, -0x1
 
     if-eqz v1, :cond_19
 
-    iput v5, v4, Lkwa;->j:I
+    iput v6, v5, Lmia;->j:I
 
-    iget v1, v4, Lkwa;->a:I
+    iget v1, v5, Lmia;->a:I
 
     or-int/lit16 v1, v1, 0x80
 
-    iput v1, v4, Lkwa;->a:I
+    iput v1, v5, Lmia;->a:I
 
     goto :goto_1
 
     :cond_19
-    throw v3
+    throw v4
 
     :cond_1a
     :goto_1
@@ -1541,779 +1513,690 @@
 
     move-result-object v1
 
-    if-eqz v1, :cond_1d
+    if-eqz v1, :cond_1c
 
     invoke-virtual {v1}, Ljava/lang/Boolean;->booleanValue()Z
 
     move-result v1
 
-    iget-object v4, v0, Lnwn;->b:Lnws;
+    iget-boolean v5, v0, Lpoy;->c:Z
 
-    invoke-virtual {v4}, Lnws;->ac()Z
+    if-eqz v5, :cond_1b
 
-    move-result v4
+    invoke-virtual {v0}, Lpoy;->m()V
 
-    if-nez v4, :cond_1b
-
-    invoke-virtual {v0}, Lnwn;->p()V
+    iput-boolean v3, v0, Lpoy;->c:Z
 
     :cond_1b
-    iget-object v4, v0, Lnwn;->b:Lnws;
+    iget-object v5, v0, Lpoy;->b:Lppd;
 
-    move-object v5, v4
+    check-cast v5, Lmia;
 
-    check-cast v5, Lkwa;
-
-    iget v6, v5, Lkwa;->a:I
+    iget v6, v5, Lmia;->a:I
 
     or-int/lit16 v6, v6, 0x100
 
-    iput v6, v5, Lkwa;->a:I
+    iput v6, v5, Lmia;->a:I
 
-    iput-boolean v1, v5, Lkwa;->k:Z
+    iput-boolean v1, v5, Lmia;->k:Z
 
-    invoke-virtual {v4}, Lnws;->ac()Z
+    iput v2, v5, Lmia;->s:I
 
-    move-result v1
+    const v1, 0x8000
 
-    if-nez v1, :cond_1c
+    or-int/2addr v1, v6
 
-    invoke-virtual {v0}, Lnwn;->p()V
+    iput v1, v5, Lmia;->a:I
 
     :cond_1c
-    iget-object v1, v0, Lnwn;->b:Lnws;
-
-    check-cast v1, Lkwa;
-
-    iput v2, v1, Lkwa;->s:I
-
-    iget v4, v1, Lkwa;->a:I
-
-    const v5, 0x8000
-
-    or-int/2addr v4, v5
-
-    iput v4, v1, Lkwa;->a:I
-
-    :cond_1d
     invoke-virtual {p0}, Lcom/google/android/libraries/lens/lenslite/api/LinkConfig;->processorImagePoolSize()Ljava/lang/Integer;
 
     move-result-object v1
 
-    if-eqz v1, :cond_1f
+    if-eqz v1, :cond_1e
 
     invoke-virtual {v1}, Ljava/lang/Integer;->intValue()I
 
     move-result v1
 
-    iget-object v4, v0, Lnwn;->b:Lnws;
+    iget-boolean v5, v0, Lpoy;->c:Z
 
-    invoke-virtual {v4}, Lnws;->ac()Z
+    if-eqz v5, :cond_1d
 
-    move-result v4
+    invoke-virtual {v0}, Lpoy;->m()V
 
-    if-nez v4, :cond_1e
+    iput-boolean v3, v0, Lpoy;->c:Z
 
-    invoke-virtual {v0}, Lnwn;->p()V
+    :cond_1d
+    iget-object v5, v0, Lpoy;->b:Lppd;
+
+    check-cast v5, Lmia;
+
+    iget v6, v5, Lmia;->a:I
+
+    or-int/lit16 v6, v6, 0x200
+
+    iput v6, v5, Lmia;->a:I
+
+    iput v1, v5, Lmia;->l:I
 
     :cond_1e
-    iget-object v4, v0, Lnwn;->b:Lnws;
-
-    check-cast v4, Lkwa;
-
-    iget v5, v4, Lkwa;->a:I
-
-    or-int/lit16 v5, v5, 0x200
-
-    iput v5, v4, Lkwa;->a:I
-
-    iput v1, v4, Lkwa;->l:I
-
-    :cond_1f
     invoke-virtual {p0}, Lcom/google/android/libraries/lens/lenslite/api/LinkConfig;->nonEnPersonNameDetectionEnabled()Ljava/lang/Boolean;
 
     move-result-object v1
 
-    if-eqz v1, :cond_21
+    if-eqz v1, :cond_20
 
     invoke-virtual {v1}, Ljava/lang/Boolean;->booleanValue()Z
 
     move-result v1
 
-    iget-object v4, v0, Lnwn;->b:Lnws;
+    iget-boolean v5, v0, Lpoy;->c:Z
 
-    invoke-virtual {v4}, Lnws;->ac()Z
+    if-eqz v5, :cond_1f
 
-    move-result v4
+    invoke-virtual {v0}, Lpoy;->m()V
 
-    if-nez v4, :cond_20
+    iput-boolean v3, v0, Lpoy;->c:Z
 
-    invoke-virtual {v0}, Lnwn;->p()V
+    :cond_1f
+    iget-object v5, v0, Lpoy;->b:Lppd;
+
+    check-cast v5, Lmia;
+
+    iget v6, v5, Lmia;->a:I
+
+    or-int/lit16 v6, v6, 0x400
+
+    iput v6, v5, Lmia;->a:I
+
+    iput-boolean v1, v5, Lmia;->m:Z
 
     :cond_20
-    iget-object v4, v0, Lnwn;->b:Lnws;
-
-    check-cast v4, Lkwa;
-
-    iget v5, v4, Lkwa;->a:I
-
-    or-int/lit16 v5, v5, 0x400
-
-    iput v5, v4, Lkwa;->a:I
-
-    iput-boolean v1, v4, Lkwa;->m:Z
-
-    :cond_21
     invoke-virtual {p0}, Lcom/google/android/libraries/lens/lenslite/api/LinkConfig;->legacyPixelParity()Ljava/lang/Boolean;
 
     move-result-object v1
 
-    if-eqz v1, :cond_23
+    if-eqz v1, :cond_22
 
     invoke-virtual {v1}, Ljava/lang/Boolean;->booleanValue()Z
 
     move-result v1
 
-    iget-object v4, v0, Lnwn;->b:Lnws;
+    iget-boolean v5, v0, Lpoy;->c:Z
 
-    invoke-virtual {v4}, Lnws;->ac()Z
+    if-eqz v5, :cond_21
 
-    move-result v4
+    invoke-virtual {v0}, Lpoy;->m()V
 
-    if-nez v4, :cond_22
+    iput-boolean v3, v0, Lpoy;->c:Z
 
-    invoke-virtual {v0}, Lnwn;->p()V
+    :cond_21
+    iget-object v5, v0, Lpoy;->b:Lppd;
+
+    check-cast v5, Lmia;
+
+    iget v6, v5, Lmia;->a:I
+
+    or-int/lit16 v6, v6, 0x800
+
+    iput v6, v5, Lmia;->a:I
+
+    iput-boolean v1, v5, Lmia;->n:Z
 
     :cond_22
-    iget-object v4, v0, Lnwn;->b:Lnws;
-
-    check-cast v4, Lkwa;
-
-    iget v5, v4, Lkwa;->a:I
-
-    or-int/lit16 v5, v5, 0x800
-
-    iput v5, v4, Lkwa;->a:I
-
-    iput-boolean v1, v4, Lkwa;->n:Z
-
-    :cond_23
     invoke-virtual {p0}, Lcom/google/android/libraries/lens/lenslite/api/LinkConfig;->pixelChipMode()Ljava/lang/Boolean;
 
     move-result-object v1
 
-    if-eqz v1, :cond_25
+    if-eqz v1, :cond_24
 
     invoke-virtual {v1}, Ljava/lang/Boolean;->booleanValue()Z
 
     move-result v1
 
-    iget-object v4, v0, Lnwn;->b:Lnws;
+    iget-boolean v5, v0, Lpoy;->c:Z
 
-    invoke-virtual {v4}, Lnws;->ac()Z
+    if-eqz v5, :cond_23
 
-    move-result v4
+    invoke-virtual {v0}, Lpoy;->m()V
 
-    if-nez v4, :cond_24
+    iput-boolean v3, v0, Lpoy;->c:Z
 
-    invoke-virtual {v0}, Lnwn;->p()V
+    :cond_23
+    iget-object v5, v0, Lpoy;->b:Lppd;
+
+    check-cast v5, Lmia;
+
+    iget v6, v5, Lmia;->a:I
+
+    or-int/lit16 v6, v6, 0x1000
+
+    iput v6, v5, Lmia;->a:I
+
+    iput-boolean v1, v5, Lmia;->o:Z
 
     :cond_24
-    iget-object v4, v0, Lnwn;->b:Lnws;
-
-    check-cast v4, Lkwa;
-
-    iget v5, v4, Lkwa;->a:I
-
-    or-int/lit16 v5, v5, 0x1000
-
-    iput v5, v4, Lkwa;->a:I
-
-    iput-boolean v1, v4, Lkwa;->o:Z
-
-    :cond_25
     invoke-virtual {p0}, Lcom/google/android/libraries/lens/lenslite/api/LinkConfig;->documentScanningEnabled()Ljava/lang/Boolean;
 
     move-result-object v1
 
-    if-eqz v1, :cond_27
+    if-eqz v1, :cond_26
 
     invoke-virtual {v1}, Ljava/lang/Boolean;->booleanValue()Z
 
     move-result v1
 
-    if-eqz v1, :cond_27
+    if-eqz v1, :cond_26
 
-    sget-object v1, Lkwb;->a:Lkwb;
+    sget-object v1, Lmib;->a:Lmib;
 
-    iget-object v4, v0, Lnwn;->b:Lnws;
+    iget-boolean v5, v0, Lpoy;->c:Z
 
-    invoke-virtual {v4}, Lnws;->ac()Z
+    if-eqz v5, :cond_25
 
-    move-result v4
+    invoke-virtual {v0}, Lpoy;->m()V
 
-    if-nez v4, :cond_26
+    iput-boolean v3, v0, Lpoy;->c:Z
 
-    invoke-virtual {v0}, Lnwn;->p()V
+    :cond_25
+    iget-object v5, v0, Lpoy;->b:Lppd;
 
-    :cond_26
-    iget-object v4, v0, Lnwn;->b:Lnws;
-
-    check-cast v4, Lkwa;
+    check-cast v5, Lmia;
 
     invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    iput-object v1, v4, Lkwa;->e:Lkwb;
+    iput-object v1, v5, Lmia;->e:Lmib;
 
-    iget v1, v4, Lkwa;->a:I
+    iget v1, v5, Lmia;->a:I
 
     or-int/lit8 v1, v1, 0x4
 
-    iput v1, v4, Lkwa;->a:I
+    iput v1, v5, Lmia;->a:I
 
-    :cond_27
+    :cond_26
     invoke-virtual {p0}, Lcom/google/android/libraries/lens/lenslite/api/LinkConfig;->gleamEngineEnabled()Ljava/lang/Boolean;
 
     move-result-object v1
 
-    if-eqz v1, :cond_29
+    if-eqz v1, :cond_28
 
     invoke-virtual {v1}, Ljava/lang/Boolean;->booleanValue()Z
 
     move-result v1
 
-    iget-object v4, v0, Lnwn;->b:Lnws;
+    iget-boolean v5, v0, Lpoy;->c:Z
 
-    invoke-virtual {v4}, Lnws;->ac()Z
+    if-eqz v5, :cond_27
 
-    move-result v4
+    invoke-virtual {v0}, Lpoy;->m()V
 
-    if-nez v4, :cond_28
+    iput-boolean v3, v0, Lpoy;->c:Z
 
-    invoke-virtual {v0}, Lnwn;->p()V
+    :cond_27
+    iget-object v5, v0, Lpoy;->b:Lppd;
+
+    check-cast v5, Lmia;
+
+    iget v6, v5, Lmia;->a:I
+
+    const/high16 v7, 0x10000
+
+    or-int/2addr v6, v7
+
+    iput v6, v5, Lmia;->a:I
+
+    iput-boolean v1, v5, Lmia;->t:Z
 
     :cond_28
-    iget-object v4, v0, Lnwn;->b:Lnws;
-
-    check-cast v4, Lkwa;
-
-    iget v5, v4, Lkwa;->a:I
-
-    const/high16 v6, 0x10000
-
-    or-int/2addr v5, v6
-
-    iput v5, v4, Lkwa;->a:I
-
-    iput-boolean v1, v4, Lkwa;->t:Z
-
-    :cond_29
-    invoke-virtual {p0}, Lcom/google/android/libraries/lens/lenslite/api/LinkConfig;->dynamicLoadingMode()Lkvy;
+    invoke-virtual {p0}, Lcom/google/android/libraries/lens/lenslite/api/LinkConfig;->dynamicLoadingMode()Lmhy;
 
     move-result-object v1
 
-    iget-object v4, v0, Lnwn;->b:Lnws;
+    iget-boolean v5, v0, Lpoy;->c:Z
 
-    invoke-virtual {v4}, Lnws;->ac()Z
+    if-eqz v5, :cond_29
 
-    move-result v4
+    invoke-virtual {v0}, Lpoy;->m()V
 
-    if-nez v4, :cond_2a
+    iput-boolean v3, v0, Lpoy;->c:Z
 
-    invoke-virtual {v0}, Lnwn;->p()V
+    :cond_29
+    iget-object v5, v0, Lpoy;->b:Lppd;
 
-    :cond_2a
-    iget-object v4, v0, Lnwn;->b:Lnws;
+    check-cast v5, Lmia;
 
-    check-cast v4, Lkwa;
+    iget v1, v1, Lmhy;->f:I
 
-    iget v1, v1, Lkvy;->f:I
+    iput v1, v5, Lmia;->q:I
 
-    iput v1, v4, Lkwa;->q:I
-
-    iget v1, v4, Lkwa;->a:I
+    iget v1, v5, Lmia;->a:I
 
     or-int/lit16 v1, v1, 0x2000
 
-    iput v1, v4, Lkwa;->a:I
+    iput v1, v5, Lmia;->a:I
 
     invoke-virtual {p0}, Lcom/google/android/libraries/lens/lenslite/api/LinkConfig;->dutyCycleMode()Ljava/lang/Integer;
 
     move-result-object v1
 
-    if-eqz v1, :cond_2d
+    if-eqz v1, :cond_2c
 
     invoke-virtual {v1}, Ljava/lang/Integer;->intValue()I
 
     move-result v1
 
-    invoke-static {v1}, Lkwp;->b(I)I
+    invoke-static {v1}, Lmip;->z(I)I
 
     move-result v1
 
-    iget-object v4, v0, Lnwn;->b:Lnws;
+    iget-boolean v5, v0, Lpoy;->c:Z
 
-    invoke-virtual {v4}, Lnws;->ac()Z
+    if-eqz v5, :cond_2a
 
-    move-result v4
+    invoke-virtual {v0}, Lpoy;->m()V
 
-    if-nez v4, :cond_2b
+    iput-boolean v3, v0, Lpoy;->c:Z
 
-    invoke-virtual {v0}, Lnwn;->p()V
+    :cond_2a
+    iget-object v5, v0, Lpoy;->b:Lppd;
 
-    :cond_2b
-    iget-object v4, v0, Lnwn;->b:Lnws;
+    check-cast v5, Lmia;
 
-    check-cast v4, Lkwa;
+    add-int/lit8 v6, v1, -0x1
 
-    add-int/lit8 v5, v1, -0x1
+    if-eqz v1, :cond_2b
 
-    if-eqz v1, :cond_2c
+    iput v6, v5, Lmia;->u:I
 
-    iput v5, v4, Lkwa;->u:I
+    iget v1, v5, Lmia;->a:I
 
-    iget v1, v4, Lkwa;->a:I
+    const/high16 v4, 0x20000
 
-    const/high16 v3, 0x20000
+    or-int/2addr v1, v4
 
-    or-int/2addr v1, v3
-
-    iput v1, v4, Lkwa;->a:I
+    iput v1, v5, Lmia;->a:I
 
     goto :goto_2
 
-    :cond_2c
-    throw v3
+    :cond_2b
+    throw v4
 
-    :cond_2d
+    :cond_2c
     :goto_2
     invoke-virtual {p0}, Lcom/google/android/libraries/lens/lenslite/api/LinkConfig;->modelDownloadEnabled()Ljava/lang/Boolean;
 
     move-result-object v1
 
-    if-eqz v1, :cond_2f
+    if-eqz v1, :cond_2e
 
     invoke-virtual {v1}, Ljava/lang/Boolean;->booleanValue()Z
 
     move-result v1
 
-    iget-object v3, v0, Lnwn;->b:Lnws;
+    iget-boolean v4, v0, Lpoy;->c:Z
 
-    invoke-virtual {v3}, Lnws;->ac()Z
+    if-eqz v4, :cond_2d
 
-    move-result v3
+    invoke-virtual {v0}, Lpoy;->m()V
 
-    if-nez v3, :cond_2e
+    iput-boolean v3, v0, Lpoy;->c:Z
 
-    invoke-virtual {v0}, Lnwn;->p()V
+    :cond_2d
+    iget-object v4, v0, Lpoy;->b:Lppd;
+
+    check-cast v4, Lmia;
+
+    iget v5, v4, Lmia;->a:I
+
+    const/high16 v6, 0x40000
+
+    or-int/2addr v5, v6
+
+    iput v5, v4, Lmia;->a:I
+
+    iput-boolean v1, v4, Lmia;->v:Z
 
     :cond_2e
-    iget-object v3, v0, Lnwn;->b:Lnws;
-
-    check-cast v3, Lkwa;
-
-    iget v4, v3, Lkwa;->a:I
-
-    const/high16 v5, 0x40000
-
-    or-int/2addr v4, v5
-
-    iput v4, v3, Lkwa;->a:I
-
-    iput-boolean v1, v3, Lkwa;->v:Z
-
-    :cond_2f
     invoke-virtual {p0}, Lcom/google/android/libraries/lens/lenslite/api/LinkConfig;->modelDownloadCheckTimeoutMs()Ljava/lang/Long;
 
     move-result-object v1
 
-    if-eqz v1, :cond_31
+    if-eqz v1, :cond_30
 
     invoke-virtual {v1}, Ljava/lang/Long;->longValue()J
 
-    move-result-wide v3
+    move-result-wide v4
 
-    iget-object v1, v0, Lnwn;->b:Lnws;
+    iget-boolean v1, v0, Lpoy;->c:Z
 
-    invoke-virtual {v1}, Lnws;->ac()Z
+    if-eqz v1, :cond_2f
 
-    move-result v1
+    invoke-virtual {v0}, Lpoy;->m()V
 
-    if-nez v1, :cond_30
+    iput-boolean v3, v0, Lpoy;->c:Z
 
-    invoke-virtual {v0}, Lnwn;->p()V
+    :cond_2f
+    iget-object v1, v0, Lpoy;->b:Lppd;
+
+    check-cast v1, Lmia;
+
+    iget v6, v1, Lmia;->b:I
+
+    or-int/lit8 v6, v6, 0x2
+
+    iput v6, v1, Lmia;->b:I
+
+    iput-wide v4, v1, Lmia;->K:J
 
     :cond_30
-    iget-object v1, v0, Lnwn;->b:Lnws;
-
-    check-cast v1, Lkwa;
-
-    iget v5, v1, Lkwa;->b:I
-
-    or-int/lit8 v5, v5, 0x2
-
-    iput v5, v1, Lkwa;->b:I
-
-    iput-wide v3, v1, Lkwa;->K:J
-
-    :cond_31
     invoke-virtual {p0}, Lcom/google/android/libraries/lens/lenslite/api/LinkConfig;->barcodeEnabled()Ljava/lang/Boolean;
 
     move-result-object v1
 
-    if-eqz v1, :cond_33
+    if-eqz v1, :cond_32
 
     invoke-virtual {v1}, Ljava/lang/Boolean;->booleanValue()Z
 
     move-result v1
 
-    iget-object v3, v0, Lnwn;->b:Lnws;
+    iget-boolean v4, v0, Lpoy;->c:Z
 
-    invoke-virtual {v3}, Lnws;->ac()Z
+    if-eqz v4, :cond_31
 
-    move-result v3
+    invoke-virtual {v0}, Lpoy;->m()V
 
-    if-nez v3, :cond_32
+    iput-boolean v3, v0, Lpoy;->c:Z
 
-    invoke-virtual {v0}, Lnwn;->p()V
+    :cond_31
+    iget-object v4, v0, Lpoy;->b:Lppd;
+
+    check-cast v4, Lmia;
+
+    iget v5, v4, Lmia;->a:I
+
+    const/high16 v6, 0x80000
+
+    or-int/2addr v5, v6
+
+    iput v5, v4, Lmia;->a:I
+
+    iput-boolean v1, v4, Lmia;->w:Z
 
     :cond_32
-    iget-object v3, v0, Lnwn;->b:Lnws;
-
-    check-cast v3, Lkwa;
-
-    iget v4, v3, Lkwa;->a:I
-
-    const/high16 v5, 0x80000
-
-    or-int/2addr v4, v5
-
-    iput v4, v3, Lkwa;->a:I
-
-    iput-boolean v1, v3, Lkwa;->w:Z
-
-    :cond_33
     invoke-virtual {p0}, Lcom/google/android/libraries/lens/lenslite/api/LinkConfig;->lens2020ModeEnabled()Ljava/lang/Boolean;
 
     move-result-object v1
 
-    if-eqz v1, :cond_36
+    if-eqz v1, :cond_35
 
     invoke-virtual {v1}, Ljava/lang/Boolean;->booleanValue()Z
 
     move-result v1
 
-    iget-object v3, v0, Lnwn;->b:Lnws;
+    iget-boolean v4, v0, Lpoy;->c:Z
 
-    invoke-virtual {v3}, Lnws;->ac()Z
+    if-eqz v4, :cond_33
 
-    move-result v3
+    invoke-virtual {v0}, Lpoy;->m()V
 
-    if-nez v3, :cond_34
+    iput-boolean v3, v0, Lpoy;->c:Z
 
-    invoke-virtual {v0}, Lnwn;->p()V
+    :cond_33
+    iget-object v4, v0, Lpoy;->b:Lppd;
 
-    :cond_34
-    iget-object v3, v0, Lnwn;->b:Lnws;
+    check-cast v4, Lmia;
 
-    check-cast v3, Lkwa;
+    iget v5, v4, Lmia;->a:I
 
-    iget v4, v3, Lkwa;->a:I
+    const/high16 v6, 0x100000
 
-    const/high16 v5, 0x100000
+    or-int/2addr v5, v6
 
-    or-int/2addr v4, v5
+    iput v5, v4, Lmia;->a:I
 
-    iput v4, v3, Lkwa;->a:I
+    iput-boolean v1, v4, Lmia;->x:Z
 
-    iput-boolean v1, v3, Lkwa;->x:Z
-
-    invoke-virtual {p0}, Lcom/google/android/libraries/lens/lenslite/api/LinkConfig;->lens2020Params()Lkvz;
+    invoke-virtual {p0}, Lcom/google/android/libraries/lens/lenslite/api/LinkConfig;->lens2020Params()Lmhz;
 
     move-result-object v1
 
-    if-eqz v1, :cond_36
+    if-eqz v1, :cond_35
 
-    iget-object v3, v0, Lnwn;->b:Lnws;
+    iget-boolean v4, v0, Lpoy;->c:Z
 
-    invoke-virtual {v3}, Lnws;->ac()Z
+    if-eqz v4, :cond_34
 
-    move-result v3
+    invoke-virtual {v0}, Lpoy;->m()V
 
-    if-nez v3, :cond_35
+    iput-boolean v3, v0, Lpoy;->c:Z
 
-    invoke-virtual {v0}, Lnwn;->p()V
+    :cond_34
+    iget-object v4, v0, Lpoy;->b:Lppd;
+
+    check-cast v4, Lmia;
+
+    iput-object v1, v4, Lmia;->z:Lmhz;
+
+    iget v1, v4, Lmia;->a:I
+
+    const/high16 v5, 0x400000
+
+    or-int/2addr v1, v5
+
+    iput v1, v4, Lmia;->a:I
 
     :cond_35
-    iget-object v3, v0, Lnwn;->b:Lnws;
-
-    check-cast v3, Lkwa;
-
-    iput-object v1, v3, Lkwa;->z:Lkvz;
-
-    iget v1, v3, Lkwa;->a:I
-
-    const/high16 v4, 0x400000
-
-    or-int/2addr v1, v4
-
-    iput v1, v3, Lkwa;->a:I
-
-    :cond_36
     invoke-virtual {p0}, Lcom/google/android/libraries/lens/lenslite/api/LinkConfig;->trivialFeatureEnabledBits()Ljava/lang/Long;
 
     move-result-object v1
 
-    if-eqz v1, :cond_38
+    if-eqz v1, :cond_37
 
     invoke-virtual {v1}, Ljava/lang/Long;->longValue()J
 
-    move-result-wide v3
+    move-result-wide v4
 
-    iget-object v1, v0, Lnwn;->b:Lnws;
+    iget-boolean v1, v0, Lpoy;->c:Z
 
-    invoke-virtual {v1}, Lnws;->ac()Z
+    if-eqz v1, :cond_36
 
-    move-result v1
+    invoke-virtual {v0}, Lpoy;->m()V
 
-    if-nez v1, :cond_37
+    iput-boolean v3, v0, Lpoy;->c:Z
 
-    invoke-virtual {v0}, Lnwn;->p()V
+    :cond_36
+    iget-object v1, v0, Lpoy;->b:Lppd;
+
+    check-cast v1, Lmia;
+
+    iget v6, v1, Lmia;->a:I
+
+    const/high16 v7, 0x200000
+
+    or-int/2addr v6, v7
+
+    iput v6, v1, Lmia;->a:I
+
+    iput-wide v4, v1, Lmia;->y:J
 
     :cond_37
-    iget-object v1, v0, Lnwn;->b:Lnws;
-
-    check-cast v1, Lkwa;
-
-    iget v5, v1, Lkwa;->a:I
-
-    const/high16 v6, 0x200000
-
-    or-int/2addr v5, v6
-
-    iput v5, v1, Lkwa;->a:I
-
-    iput-wide v3, v1, Lkwa;->y:J
-
-    :cond_38
     invoke-virtual {p0}, Lcom/google/android/libraries/lens/lenslite/api/LinkConfig;->pdpTextExtractionEnabled()Ljava/lang/Boolean;
 
     move-result-object v1
 
-    if-eqz v1, :cond_3a
+    if-eqz v1, :cond_39
 
     invoke-virtual {v1}, Ljava/lang/Boolean;->booleanValue()Z
 
     move-result v1
 
-    iget-object v3, v0, Lnwn;->b:Lnws;
+    iget-boolean v4, v0, Lpoy;->c:Z
 
-    invoke-virtual {v3}, Lnws;->ac()Z
+    if-eqz v4, :cond_38
 
-    move-result v3
+    invoke-virtual {v0}, Lpoy;->m()V
 
-    if-nez v3, :cond_39
+    iput-boolean v3, v0, Lpoy;->c:Z
 
-    invoke-virtual {v0}, Lnwn;->p()V
+    :cond_38
+    iget-object v4, v0, Lpoy;->b:Lppd;
+
+    check-cast v4, Lmia;
+
+    iget v5, v4, Lmia;->a:I
+
+    const/high16 v6, 0x1000000
+
+    or-int/2addr v5, v6
+
+    iput v5, v4, Lmia;->a:I
+
+    iput-boolean v1, v4, Lmia;->B:Z
 
     :cond_39
-    iget-object v3, v0, Lnwn;->b:Lnws;
-
-    check-cast v3, Lkwa;
-
-    iget v4, v3, Lkwa;->a:I
-
-    const/high16 v5, 0x1000000
-
-    or-int/2addr v4, v5
-
-    iput v4, v3, Lkwa;->a:I
-
-    iput-boolean v1, v3, Lkwa;->B:Z
-
-    :cond_3a
     invoke-virtual {p0}, Lcom/google/android/libraries/lens/lenslite/api/LinkConfig;->linkEvalConfigMetadata()Ljava/nio/ByteBuffer;
 
     move-result-object v1
 
-    if-eqz v1, :cond_3f
+    if-eqz v1, :cond_3b
 
     :try_start_0
-    invoke-static {}, Lnwh;->a()Lnwh;
-
-    move-result-object v3
-
-    sget-object v4, Lkwo;->a:Lkwo;
-
-    invoke-static {v1}, Lnvy;->J(Ljava/nio/ByteBuffer;)Lnvy;
-
-    move-result-object v1
-
-    invoke-virtual {v4}, Lnws;->P()Lnws;
+    invoke-static {}, Lpos;->b()Lpos;
 
     move-result-object v4
-    :try_end_0
-    .catch Lnxd; {:try_start_0 .. :try_end_0} :catch_4
 
-    :try_start_1
-    sget-object v5, Lnyh;->a:Lnyh;
+    sget-object v5, Lmio;->a:Lmio;
 
-    invoke-virtual {v5, v4}, Lnyh;->b(Ljava/lang/Object;)Lnyo;
-
-    move-result-object v5
-
-    invoke-static {v1}, Lnvz;->p(Lnvy;)Lnvz;
+    invoke-static {v5, v1, v4}, Lppd;->r(Lppd;Ljava/nio/ByteBuffer;Lpos;)Lppd;
 
     move-result-object v1
 
-    invoke-interface {v5, v4, v1, v3}, Lnyo;->h(Ljava/lang/Object;Lnyk;Lnwh;)V
+    check-cast v1, Lmio;
 
-    invoke-interface {v5, v4}, Lnyo;->f(Ljava/lang/Object;)V
-    :try_end_1
-    .catch Lnxd; {:try_start_1 .. :try_end_1} :catch_3
-    .catch Lnyz; {:try_start_1 .. :try_end_1} :catch_2
-    .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_1
-    .catch Ljava/lang/RuntimeException; {:try_start_1 .. :try_end_1} :catch_0
+    iget-boolean v4, v0, Lpoy;->c:Z
 
-    :try_start_2
-    invoke-static {v4}, Lnws;->ae(Lnws;)V
+    if-eqz v4, :cond_3a
 
-    invoke-static {v4}, Lnws;->ae(Lnws;)V
+    invoke-virtual {v0}, Lpoy;->m()V
 
-    check-cast v4, Lkwo;
+    iput-boolean v3, v0, Lpoy;->c:Z
 
-    iget-object v1, v0, Lnwn;->b:Lnws;
+    :cond_3a
+    iget-object v4, v0, Lpoy;->b:Lppd;
 
-    invoke-virtual {v1}, Lnws;->ac()Z
+    check-cast v4, Lmia;
 
-    move-result v1
+    invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    if-nez v1, :cond_3b
+    iput-object v1, v4, Lmia;->C:Lmio;
 
-    invoke-virtual {v0}, Lnwn;->p()V
+    iget v1, v4, Lmia;->a:I
 
-    :cond_3b
-    iget-object v1, v0, Lnwn;->b:Lnws;
+    const/high16 v5, 0x2000000
 
-    check-cast v1, Lkwa;
+    or-int/2addr v1, v5
 
-    invoke-virtual {v4}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    iput-object v4, v1, Lkwa;->C:Lkwo;
-
-    iget v3, v1, Lkwa;->a:I
-
-    const/high16 v4, 0x2000000
-
-    or-int/2addr v3, v4
-
-    iput v3, v1, Lkwa;->a:I
+    iput v1, v4, Lmia;->a:I
+    :try_end_0
+    .catch Lppp; {:try_start_0 .. :try_end_0} :catch_0
 
     goto :goto_3
 
     :catch_0
     move-exception v1
 
-    invoke-virtual {v1}, Ljava/lang/RuntimeException;->getCause()Ljava/lang/Throwable;
+    new-array v1, v3, [Ljava/lang/Object;
 
-    move-result-object v3
+    const/4 v4, 0x6
 
-    instance-of v3, v3, Lnxd;
+    const-string v5, "LinkConfig"
 
-    if-eqz v3, :cond_3c
+    invoke-static {v5, v4}, Landroid/util/Log;->isLoggable(Ljava/lang/String;I)Z
 
-    invoke-virtual {v1}, Ljava/lang/RuntimeException;->getCause()Ljava/lang/Throwable;
+    move-result v4
 
-    move-result-object v1
+    if-eqz v4, :cond_3b
 
-    check-cast v1, Lnxd;
+    const-string v4, "Unable to parse LinkEvalConfigMetadata."
 
-    throw v1
-
-    :cond_3c
-    throw v1
-
-    :catch_1
-    move-exception v1
-
-    invoke-virtual {v1}, Ljava/io/IOException;->getCause()Ljava/lang/Throwable;
-
-    move-result-object v3
-
-    instance-of v3, v3, Lnxd;
-
-    if-eqz v3, :cond_3d
-
-    invoke-virtual {v1}, Ljava/io/IOException;->getCause()Ljava/lang/Throwable;
+    invoke-static {v4, v1}, Lmip;->D(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v1
 
-    check-cast v1, Lnxd;
+    invoke-static {v5, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    throw v1
-
-    :cond_3d
-    new-instance v3, Lnxd;
-
-    invoke-direct {v3, v1}, Lnxd;-><init>(Ljava/io/IOException;)V
-
-    throw v3
-
-    :catch_2
-    move-exception v1
-
-    invoke-virtual {v1}, Lnyz;->a()Lnxd;
-
-    move-result-object v1
-
-    throw v1
-
-    :catch_3
-    move-exception v1
-
-    iget-boolean v3, v1, Lnxd;->a:Z
-
-    if-eqz v3, :cond_3e
-
-    new-instance v3, Lnxd;
-
-    invoke-direct {v3, v1}, Lnxd;-><init>(Ljava/io/IOException;)V
-
-    move-object v1, v3
-
-    :cond_3e
-    throw v1
-    :try_end_2
-    .catch Lnxd; {:try_start_2 .. :try_end_2} :catch_4
-
-    :catch_4
-    move-exception v1
-
-    const/4 v1, 0x0
-
-    new-array v1, v1, [Ljava/lang/Object;
-
-    const/4 v3, 0x6
-
-    const-string v4, "LinkConfig"
-
-    invoke-static {v4, v3}, Landroid/util/Log;->isLoggable(Ljava/lang/String;I)Z
-
-    move-result v3
-
-    if-eqz v3, :cond_3f
-
-    const-string v3, "Unable to parse LinkEvalConfigMetadata."
-
-    invoke-static {v3, v1}, Llho;->r(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v4, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
-
-    :cond_3f
+    :cond_3b
     :goto_3
     invoke-virtual {p0}, Lcom/google/android/libraries/lens/lenslite/api/LinkConfig;->linkModelDownloadEnabled()Ljava/lang/Boolean;
+
+    move-result-object v1
+
+    if-eqz v1, :cond_3d
+
+    invoke-virtual {v1}, Ljava/lang/Boolean;->booleanValue()Z
+
+    move-result v1
+
+    iget-boolean v4, v0, Lpoy;->c:Z
+
+    if-eqz v4, :cond_3c
+
+    invoke-virtual {v0}, Lpoy;->m()V
+
+    iput-boolean v3, v0, Lpoy;->c:Z
+
+    :cond_3c
+    iget-object v4, v0, Lpoy;->b:Lppd;
+
+    check-cast v4, Lmia;
+
+    iget v5, v4, Lmia;->a:I
+
+    const/high16 v6, 0x4000000
+
+    or-int/2addr v5, v6
+
+    iput v5, v4, Lmia;->a:I
+
+    iput-boolean v1, v4, Lmia;->D:Z
+
+    :cond_3d
+    invoke-virtual {p0}, Lcom/google/android/libraries/lens/lenslite/api/LinkConfig;->serializedPipelineConfig()Ljava/nio/ByteBuffer;
+
+    move-result-object v1
+
+    if-eqz v1, :cond_3f
+
+    invoke-static {v1}, Lpoc;->s(Ljava/nio/ByteBuffer;)Lpoc;
+
+    move-result-object v1
+
+    iget-boolean v4, v0, Lpoy;->c:Z
+
+    if-eqz v4, :cond_3e
+
+    invoke-virtual {v0}, Lpoy;->m()V
+
+    iput-boolean v3, v0, Lpoy;->c:Z
+
+    :cond_3e
+    iget-object v4, v0, Lpoy;->b:Lppd;
+
+    check-cast v4, Lmia;
+
+    iget v5, v4, Lmia;->a:I
+
+    const/high16 v6, 0x8000000
+
+    or-int/2addr v5, v6
+
+    iput v5, v4, Lmia;->a:I
+
+    iput-object v1, v4, Lmia;->E:Lpoc;
+
+    :cond_3f
+    invoke-virtual {p0}, Lcom/google/android/libraries/lens/lenslite/api/LinkConfig;->stopPipelineOnPause()Ljava/lang/Boolean;
 
     move-result-object v1
 
@@ -2323,103 +2206,93 @@
 
     move-result v1
 
-    iget-object v3, v0, Lnwn;->b:Lnws;
+    iget-boolean v4, v0, Lpoy;->c:Z
 
-    invoke-virtual {v3}, Lnws;->ac()Z
+    if-eqz v4, :cond_40
 
-    move-result v3
+    invoke-virtual {v0}, Lpoy;->m()V
 
-    if-nez v3, :cond_40
-
-    invoke-virtual {v0}, Lnwn;->p()V
+    iput-boolean v3, v0, Lpoy;->c:Z
 
     :cond_40
-    iget-object v3, v0, Lnwn;->b:Lnws;
+    iget-object v4, v0, Lpoy;->b:Lppd;
 
-    check-cast v3, Lkwa;
+    check-cast v4, Lmia;
 
-    iget v4, v3, Lkwa;->a:I
+    iget v5, v4, Lmia;->b:I
 
-    const/high16 v5, 0x4000000
+    or-int/2addr v2, v5
 
-    or-int/2addr v4, v5
+    iput v2, v4, Lmia;->b:I
 
-    iput v4, v3, Lkwa;->a:I
-
-    iput-boolean v1, v3, Lkwa;->D:Z
+    iput-boolean v1, v4, Lmia;->J:Z
 
     :cond_41
-    invoke-virtual {p0}, Lcom/google/android/libraries/lens/lenslite/api/LinkConfig;->serializedPipelineConfig()Ljava/nio/ByteBuffer;
+    invoke-virtual {p0}, Lcom/google/android/libraries/lens/lenslite/api/LinkConfig;->lightweightSuggestionsModeEnabled()Ljava/lang/Boolean;
 
     move-result-object v1
 
     if-eqz v1, :cond_43
 
-    invoke-static {v1}, Lnvt;->t(Ljava/nio/ByteBuffer;)Lnvt;
+    invoke-virtual {v1}, Ljava/lang/Boolean;->booleanValue()Z
 
-    move-result-object v1
+    move-result v1
 
-    iget-object v3, v0, Lnwn;->b:Lnws;
+    iget-boolean v2, v0, Lpoy;->c:Z
 
-    invoke-virtual {v3}, Lnws;->ac()Z
+    if-eqz v2, :cond_42
 
-    move-result v3
+    invoke-virtual {v0}, Lpoy;->m()V
 
-    if-nez v3, :cond_42
-
-    invoke-virtual {v0}, Lnwn;->p()V
+    iput-boolean v3, v0, Lpoy;->c:Z
 
     :cond_42
-    iget-object v3, v0, Lnwn;->b:Lnws;
+    iget-object v2, v0, Lpoy;->b:Lppd;
 
-    check-cast v3, Lkwa;
+    check-cast v2, Lmia;
 
-    iget v4, v3, Lkwa;->a:I
+    iget v4, v2, Lmia;->a:I
 
-    const/high16 v5, 0x8000000
+    const/high16 v5, 0x10000000
 
     or-int/2addr v4, v5
 
-    iput v4, v3, Lkwa;->a:I
+    iput v4, v2, Lmia;->a:I
 
-    iput-object v1, v3, Lkwa;->E:Lnvt;
+    iput-boolean v1, v2, Lmia;->F:Z
 
     :cond_43
-    invoke-virtual {p0}, Lcom/google/android/libraries/lens/lenslite/api/LinkConfig;->stopPipelineOnPause()Ljava/lang/Boolean;
+    invoke-virtual {p0}, Lcom/google/android/libraries/lens/lenslite/api/LinkConfig;->mobileRaidParams()Lmie;
 
     move-result-object v1
 
     if-eqz v1, :cond_45
 
-    invoke-virtual {v1}, Ljava/lang/Boolean;->booleanValue()Z
+    iget-boolean v2, v0, Lpoy;->c:Z
 
-    move-result v1
+    if-eqz v2, :cond_44
 
-    iget-object v3, v0, Lnwn;->b:Lnws;
+    invoke-virtual {v0}, Lpoy;->m()V
 
-    invoke-virtual {v3}, Lnws;->ac()Z
-
-    move-result v3
-
-    if-nez v3, :cond_44
-
-    invoke-virtual {v0}, Lnwn;->p()V
+    iput-boolean v3, v0, Lpoy;->c:Z
 
     :cond_44
-    iget-object v3, v0, Lnwn;->b:Lnws;
+    iget-object v2, v0, Lpoy;->b:Lppd;
 
-    check-cast v3, Lkwa;
+    check-cast v2, Lmia;
 
-    iget v4, v3, Lkwa;->b:I
+    iput-object v1, v2, Lmia;->G:Lmie;
 
-    or-int/2addr v2, v4
+    iget v1, v2, Lmia;->a:I
 
-    iput v2, v3, Lkwa;->b:I
+    const/high16 v4, 0x20000000
 
-    iput-boolean v1, v3, Lkwa;->J:Z
+    or-int/2addr v1, v4
+
+    iput v1, v2, Lmia;->a:I
 
     :cond_45
-    invoke-virtual {p0}, Lcom/google/android/libraries/lens/lenslite/api/LinkConfig;->lightweightSuggestionsModeEnabled()Ljava/lang/Boolean;
+    invoke-virtual {p0}, Lcom/google/android/libraries/lens/lenslite/api/LinkConfig;->embedderModeEnabled()Ljava/lang/Boolean;
 
     move-result-object v1
 
@@ -2429,143 +2302,71 @@
 
     move-result v1
 
-    iget-object v2, v0, Lnwn;->b:Lnws;
+    iget-boolean v2, v0, Lpoy;->c:Z
 
-    invoke-virtual {v2}, Lnws;->ac()Z
+    if-eqz v2, :cond_46
 
-    move-result v2
+    invoke-virtual {v0}, Lpoy;->m()V
 
-    if-nez v2, :cond_46
-
-    invoke-virtual {v0}, Lnwn;->p()V
+    iput-boolean v3, v0, Lpoy;->c:Z
 
     :cond_46
-    iget-object v2, v0, Lnwn;->b:Lnws;
+    iget-object v2, v0, Lpoy;->b:Lppd;
 
-    check-cast v2, Lkwa;
+    check-cast v2, Lmia;
 
-    iget v3, v2, Lkwa;->a:I
+    iget v4, v2, Lmia;->a:I
 
-    const/high16 v4, 0x10000000
+    const/high16 v5, 0x40000000    # 2.0f
 
-    or-int/2addr v3, v4
+    or-int/2addr v4, v5
 
-    iput v3, v2, Lkwa;->a:I
+    iput v4, v2, Lmia;->a:I
 
-    iput-boolean v1, v2, Lkwa;->F:Z
+    iput-boolean v1, v2, Lmia;->H:Z
 
     :cond_47
-    invoke-virtual {p0}, Lcom/google/android/libraries/lens/lenslite/api/LinkConfig;->mobileRaidParams()Lkwe;
+    invoke-virtual {p0}, Lcom/google/android/libraries/lens/lenslite/api/LinkConfig;->waitForVkpStartEnabled()Ljava/lang/Boolean;
 
     move-result-object v1
 
     if-eqz v1, :cond_49
 
-    iget-object v2, v0, Lnwn;->b:Lnws;
+    invoke-virtual {v1}, Ljava/lang/Boolean;->booleanValue()Z
 
-    invoke-virtual {v2}, Lnws;->ac()Z
+    move-result v1
 
-    move-result v2
+    iget-boolean v2, v0, Lpoy;->c:Z
 
-    if-nez v2, :cond_48
+    if-eqz v2, :cond_48
 
-    invoke-virtual {v0}, Lnwn;->p()V
+    invoke-virtual {v0}, Lpoy;->m()V
+
+    iput-boolean v3, v0, Lpoy;->c:Z
 
     :cond_48
-    iget-object v2, v0, Lnwn;->b:Lnws;
+    iget-object v2, v0, Lpoy;->b:Lppd;
 
-    check-cast v2, Lkwa;
+    check-cast v2, Lmia;
 
-    iput-object v1, v2, Lkwa;->G:Lkwe;
-
-    iget v1, v2, Lkwa;->a:I
-
-    const/high16 v3, 0x20000000
-
-    or-int/2addr v1, v3
-
-    iput v1, v2, Lkwa;->a:I
-
-    :cond_49
-    invoke-virtual {p0}, Lcom/google/android/libraries/lens/lenslite/api/LinkConfig;->embedderModeEnabled()Ljava/lang/Boolean;
-
-    move-result-object v1
-
-    if-eqz v1, :cond_4b
-
-    invoke-virtual {v1}, Ljava/lang/Boolean;->booleanValue()Z
-
-    move-result v1
-
-    iget-object v2, v0, Lnwn;->b:Lnws;
-
-    invoke-virtual {v2}, Lnws;->ac()Z
-
-    move-result v2
-
-    if-nez v2, :cond_4a
-
-    invoke-virtual {v0}, Lnwn;->p()V
-
-    :cond_4a
-    iget-object v2, v0, Lnwn;->b:Lnws;
-
-    check-cast v2, Lkwa;
-
-    iget v3, v2, Lkwa;->a:I
-
-    const/high16 v4, 0x40000000    # 2.0f
-
-    or-int/2addr v3, v4
-
-    iput v3, v2, Lkwa;->a:I
-
-    iput-boolean v1, v2, Lkwa;->H:Z
-
-    :cond_4b
-    invoke-virtual {p0}, Lcom/google/android/libraries/lens/lenslite/api/LinkConfig;->waitForVkpStartEnabled()Ljava/lang/Boolean;
-
-    move-result-object v1
-
-    if-eqz v1, :cond_4d
-
-    invoke-virtual {v1}, Ljava/lang/Boolean;->booleanValue()Z
-
-    move-result v1
-
-    iget-object v2, v0, Lnwn;->b:Lnws;
-
-    invoke-virtual {v2}, Lnws;->ac()Z
-
-    move-result v2
-
-    if-nez v2, :cond_4c
-
-    invoke-virtual {v0}, Lnwn;->p()V
-
-    :cond_4c
-    iget-object v2, v0, Lnwn;->b:Lnws;
-
-    check-cast v2, Lkwa;
-
-    iget v3, v2, Lkwa;->a:I
+    iget v3, v2, Lmia;->a:I
 
     const/high16 v4, -0x80000000
 
     or-int/2addr v3, v4
 
-    iput v3, v2, Lkwa;->a:I
+    iput v3, v2, Lmia;->a:I
 
-    iput-boolean v1, v2, Lkwa;->I:Z
+    iput-boolean v1, v2, Lmia;->I:Z
 
-    :cond_4d
-    invoke-virtual {v0}, Lnwn;->i()Lnws;
+    :cond_49
+    invoke-virtual {v0}, Lpoy;->h()Lppd;
 
     move-result-object v0
 
-    check-cast v0, Lkwa;
+    check-cast v0, Lmia;
 
-    invoke-virtual {v0}, Lnve;->J()[B
+    invoke-virtual {v0}, Lpnm;->g()[B
 
     move-result-object v0
 

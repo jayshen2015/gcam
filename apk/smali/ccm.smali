@@ -3,34 +3,26 @@
 
 
 # instance fields
-.field public final a:Lmvv;
+.field public final a:Landroid/database/sqlite/SQLiteDatabase;
 
-.field public final b:Lmvv;
+.field public final b:Lmdf;
 
-.field public final c:I
+.field public final c:Ljava/util/Random;
 
-.field public final d:I
+.field private final d:I
 
 
 # direct methods
-.method public constructor <init>()V
+.method public constructor <init>(Landroid/database/sqlite/SQLiteDatabase;Lmdf;Ljava/util/Random;I)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    return-void
-.end method
+    iput-object p1, p0, Lccm;->a:Landroid/database/sqlite/SQLiteDatabase;
 
-.method public constructor <init>(Lmvv;Lmvv;II)V
-    .locals 0
+    iput-object p2, p0, Lccm;->b:Lmdf;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lccm;->a:Lmvv;
-
-    iput-object p2, p0, Lccm;->b:Lmvv;
-
-    iput p3, p0, Lccm;->c:I
+    iput-object p3, p0, Lccm;->c:Ljava/util/Random;
 
     iput p4, p0, Lccm;->d:I
 
@@ -39,209 +31,97 @@
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 5
+.method public final a(Ljava/lang/String;Ljava/lang/String;)V
+    .locals 8
 
-    const/4 v0, 0x1
+    iget-object v0, p0, Lccm;->a:Landroid/database/sqlite/SQLiteDatabase;
 
-    if-ne p1, p0, :cond_0
+    invoke-static {v0, p1}, Landroid/database/DatabaseUtils;->queryNumEntries(Landroid/database/sqlite/SQLiteDatabase;Ljava/lang/String;)J
 
-    return v0
+    move-result-wide v0
 
-    :cond_0
-    instance-of v1, p1, Lccm;
+    iget v2, p0, Lccm;->d:I
 
-    const/4 v2, 0x0
+    int-to-long v2, v2
 
-    if-eqz v1, :cond_4
+    sub-long/2addr v0, v2
 
-    check-cast p1, Lccm;
+    const-wide/16 v2, 0x0
 
-    iget-object v1, p0, Lccm;->a:Lmvv;
+    cmp-long v4, v0, v2
 
-    iget-object v3, p1, Lccm;->a:Lmvv;
+    if-lez v4, :cond_0
 
-    invoke-static {v1, v3}, Llyh;->I(Ljava/util/List;Ljava/lang/Object;)Z
+    iget-object v2, p0, Lccm;->a:Landroid/database/sqlite/SQLiteDatabase;
 
-    move-result v1
+    invoke-virtual {p2}, Ljava/lang/String;->length()I
 
-    if-eqz v1, :cond_3
+    move-result v3
 
-    iget-object v1, p0, Lccm;->b:Lmvv;
+    invoke-virtual {p2}, Ljava/lang/String;->length()I
 
-    iget-object v3, p1, Lccm;->b:Lmvv;
+    move-result v4
 
-    invoke-static {v1, v3}, Llyh;->I(Ljava/util/List;Ljava/lang/Object;)Z
+    invoke-virtual {p1}, Ljava/lang/String;->length()I
 
-    move-result v1
+    move-result v5
 
-    if-eqz v1, :cond_3
+    invoke-virtual {p2}, Ljava/lang/String;->length()I
 
-    iget v1, p0, Lccm;->c:I
+    move-result v6
 
-    iget v3, p1, Lccm;->c:I
+    new-instance v7, Ljava/lang/StringBuilder;
 
-    const/4 v4, 0x0
+    add-int/lit8 v3, v3, 0x3c
 
-    if-eqz v1, :cond_2
+    add-int/2addr v3, v4
 
-    if-ne v1, v3, :cond_3
+    add-int/2addr v3, v5
 
-    iget v1, p0, Lccm;->d:I
+    add-int/2addr v3, v6
 
-    iget p1, p1, Lccm;->d:I
+    invoke-direct {v7, v3}, Ljava/lang/StringBuilder;-><init>(I)V
 
-    if-eqz v1, :cond_1
+    invoke-virtual {v7, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    if-ne v1, p1, :cond_3
+    const-string v3, " IN (SELECT "
 
-    return v0
+    invoke-virtual {v7, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    :cond_1
-    throw v4
+    invoke-virtual {v7, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    :cond_2
-    throw v4
+    const-string v3, " FROM "
 
-    :cond_3
-    return v2
+    invoke-virtual {v7, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    :cond_4
-    return v2
-.end method
+    invoke-virtual {v7, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-.method public final hashCode()I
-    .locals 5
+    const-string v3, " ORDER BY "
 
-    iget-object v0, p0, Lccm;->a:Lmvv;
+    invoke-virtual {v7, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v0}, Lmvv;->hashCode()I
+    invoke-virtual {v7, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result v0
+    const-string p2, " ASC LIMIT "
 
-    const v1, 0xf4243
+    invoke-virtual {v7, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    xor-int/2addr v0, v1
+    invoke-virtual {v7, v0, v1}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
-    iget-object v2, p0, Lccm;->b:Lmvv;
+    const-string p2, ")"
 
-    invoke-virtual {v2}, Lmvv;->hashCode()I
+    invoke-virtual {v7, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result v2
+    invoke-virtual {v7}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    mul-int v0, v0, v1
+    move-result-object p2
 
-    xor-int/2addr v0, v2
+    const/4 v0, 0x0
 
-    iget v2, p0, Lccm;->c:I
+    new-array v0, v0, [Ljava/lang/String;
 
-    const/4 v3, 0x0
-
-    if-eqz v2, :cond_1
-
-    mul-int v0, v0, v1
-
-    iget v4, p0, Lccm;->d:I
-
-    if-eqz v4, :cond_0
-
-    xor-int/2addr v0, v2
-
-    mul-int v0, v0, v1
-
-    xor-int/2addr v0, v4
-
-    return v0
+    invoke-virtual {v2, p1, p2, v0}, Landroid/database/sqlite/SQLiteDatabase;->delete(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;)I
 
     :cond_0
-    throw v3
-
-    :cond_1
-    throw v3
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .locals 6
-
-    iget-object v0, p0, Lccm;->a:Lmvv;
-
-    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v0
-
-    iget-object v1, p0, Lccm;->b:Lmvv;
-
-    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v1
-
-    iget v2, p0, Lccm;->c:I
-
-    const-string v3, "null"
-
-    if-eqz v2, :cond_0
-
-    add-int/lit8 v2, v2, -0x1
-
-    invoke-static {v2}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
-
-    move-result-object v2
-
-    goto :goto_0
-
-    :cond_0
-    move-object v2, v3
-
-    :goto_0
-    iget v4, p0, Lccm;->d:I
-
-    if-eqz v4, :cond_1
-
-    add-int/lit8 v4, v4, -0x1
-
-    invoke-static {v4}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
-
-    move-result-object v3
-
-    goto :goto_1
-
-    :cond_1
-    :goto_1
-    new-instance v4, Ljava/lang/StringBuilder;
-
-    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v5, "Stats3AData{dataFieldsFloat="
-
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v0, ", dataFieldsInteger="
-
-    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v4, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v0, ", cameraPosition="
-
-    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v4, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v0, ", cameraApplicationMode="
-
-    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v4, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v0, "}"
-
-    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    return-object v0
+    return-void
 .end method

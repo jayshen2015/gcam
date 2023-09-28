@@ -2,130 +2,60 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Logk;
+.implements Lpys;
 
 
 # instance fields
-.field private final a:Loiw;
+.field private final a:Lqkg;
 
-.field private final b:Loiw;
-
-.field private final c:Loiw;
-
-.field private final d:Loiw;
-
-.field private final e:Loiw;
-
-.field private final f:Loiw;
-
-.field private final g:Loiw;
+.field private final b:Lqkg;
 
 
 # direct methods
-.method public constructor <init>(Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;)V
+.method public constructor <init>(Lqkg;Lqkg;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lfmc;->a:Loiw;
+    iput-object p1, p0, Lfmc;->a:Lqkg;
 
-    iput-object p2, p0, Lfmc;->b:Loiw;
-
-    iput-object p3, p0, Lfmc;->c:Loiw;
-
-    iput-object p4, p0, Lfmc;->d:Loiw;
-
-    iput-object p5, p0, Lfmc;->e:Loiw;
-
-    iput-object p6, p0, Lfmc;->f:Loiw;
-
-    iput-object p7, p0, Lfmc;->g:Loiw;
+    iput-object p2, p0, Lfmc;->b:Lqkg;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Lhdk;
-    .locals 12
+.method public final a()Lfmb;
+    .locals 3
 
-    iget-object v0, p0, Lfmc;->a:Loiw;
+    iget-object v0, p0, Lfmc;->a:Lqkg;
 
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    move-object v2, v0
-
-    check-cast v2, Ljew;
-
-    iget-object v0, p0, Lfmc;->b:Loiw;
-
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
+    invoke-interface {v0}, Lqkg;->get()Ljava/lang/Object;
 
     move-result-object v0
 
-    move-object v3, v0
+    check-cast v0, Llxx;
 
-    check-cast v3, Lcdx;
+    iget-object v1, p0, Lfmc;->b:Lqkg;
 
-    iget-object v0, p0, Lfmc;->c:Loiw;
+    check-cast v1, Lgsi;
 
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
+    invoke-virtual {v1}, Lgsi;->a()Lgsf;
 
-    move-result-object v0
+    move-result-object v1
 
-    move-object v4, v0
+    new-instance v2, Lfmb;
 
-    check-cast v4, Lhlw;
+    invoke-direct {v2, v0, v1}, Lfmb;-><init>(Llxx;Lgsf;)V
 
-    iget-object v0, p0, Lfmc;->d:Loiw;
-
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    move-object v5, v0
-
-    check-cast v5, Lhlu;
-
-    iget-object v6, p0, Lfmc;->e:Loiw;
-
-    iget-object v0, p0, Lfmc;->f:Loiw;
-
-    invoke-static {v0}, Logj;->a(Loiw;)Logd;
-
-    move-result-object v7
-
-    iget-object v0, p0, Lfmc;->g:Loiw;
-
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    move-object v8, v0
-
-    check-cast v8, Ljuh;
-
-    new-instance v0, Lhdk;
-
-    const/4 v9, 0x0
-
-    const/4 v10, 0x0
-
-    const/4 v11, 0x0
-
-    move-object v1, v0
-
-    invoke-direct/range {v1 .. v11}, Lhdk;-><init>(Ljew;Lcdx;Lhlw;Lhlu;Loiw;Logd;Ljuh;[B[B[B)V
-
-    return-object v0
+    return-object v2
 .end method
 
 .method public final bridge synthetic get()Ljava/lang/Object;
     .locals 1
 
-    invoke-virtual {p0}, Lfmc;->a()Lhdk;
+    invoke-virtual {p0}, Lfmc;->a()Lfmb;
 
     move-result-object v0
 

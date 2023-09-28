@@ -1,5 +1,5 @@
 .class final Lwz;
-.super Lxb;
+.super Lxc;
 
 
 # instance fields
@@ -12,9 +12,9 @@
 
     iput-object p1, p0, Lwz;->a:Lxa;
 
-    iget p1, p1, Lxa;->c:I
+    iget p1, p1, Lxa;->b:I
 
-    invoke-direct {p0, p1}, Lxb;-><init>(I)V
+    invoke-direct {p0, p1}, Lxc;-><init>(I)V
 
     return-void
 .end method
@@ -38,7 +38,7 @@
 
     iget-object v0, p0, Lwz;->a:Lxa;
 
-    invoke-virtual {v0, p1}, Lxa;->e(I)V
+    invoke-virtual {v0, p1}, Lxa;->c(I)V
 
     return-void
 .end method

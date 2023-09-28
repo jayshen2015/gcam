@@ -1,209 +1,119 @@
 .class public final Lkzf;
-.super Ljava/lang/Object;
+.super Lkno;
 
-# interfaces
-.implements Lkzc;
+
+# static fields
+.field public static final CREATOR:Landroid/os/Parcelable$Creator;
 
 
 # instance fields
-.field private final a:Lkzc;
+.field final a:I
+
+.field public final b:Lkyn;
 
 
 # direct methods
-.method private constructor <init>(Lkzc;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 2
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance v0, Lkza;
 
-    iput-object p1, p0, Lkzf;->a:Lkzc;
+    const/4 v1, 0x6
+
+    invoke-direct {v0, v1}, Lkza;-><init>(I)V
+
+    sput-object v0, Lkzf;->CREATOR:Landroid/os/Parcelable$Creator;
 
     return-void
 .end method
 
-.method public static j(Lkzc;)Lkzf;
+.method public constructor <init>(ILandroid/os/IBinder;)V
     .locals 1
 
-    new-instance v0, Lkzf;
+    invoke-direct {p0}, Lkno;-><init>()V
 
-    invoke-direct {v0, p0}, Lkzf;-><init>(Lkzc;)V
+    iput p1, p0, Lkzf;->a:I
 
-    return-object v0
+    if-eqz p2, :cond_1
+
+    const-string p1, "com.google.android.gms.wearable.internal.IWearableListener"
+
+    invoke-interface {p2, p1}, Landroid/os/IBinder;->queryLocalInterface(Ljava/lang/String;)Landroid/os/IInterface;
+
+    move-result-object p1
+
+    instance-of v0, p1, Lkyn;
+
+    if-eqz v0, :cond_0
+
+    check-cast p1, Lkyn;
+
+    goto :goto_0
+
+    :cond_0
+    new-instance p1, Lkyl;
+
+    invoke-direct {p1, p2}, Lkyl;-><init>(Landroid/os/IBinder;)V
+
+    :goto_0
+    iput-object p1, p0, Lkzf;->b:Lkyn;
+
+    return-void
+
+    :cond_1
+    const/4 p1, 0x0
+
+    goto :goto_0
 .end method
 
-.method public static k(Lkzc;)Lkzf;
-    .locals 2
+.method public constructor <init>(Lkyn;)V
+    .locals 1
 
-    sget-object v0, Lnnv;->a:Lnnv;
+    invoke-direct {p0}, Lkno;-><init>()V
 
-    invoke-static {}, Llpm;->q()Lkyp;
+    const/4 v0, 0x1
 
-    move-result-object v1
+    iput v0, p0, Lkzf;->a:I
 
-    invoke-interface {p0, v0, v1}, Lkzc;->a(Ljava/util/concurrent/Executor;Lkye;)Lkzc;
+    iput-object p1, p0, Lkzf;->b:Lkyn;
 
-    move-result-object p0
-
-    invoke-static {p0}, Lkzf;->j(Lkzc;)Lkzf;
-
-    move-result-object p0
-
-    return-object p0
-.end method
-
-.method public static l(Ljava/util/concurrent/Executor;Ljava/lang/Runnable;)Lkzf;
-    .locals 3
-
-    new-instance v0, Lkzf;
-
-    new-instance v1, Llba;
-
-    const/4 v2, 0x1
-
-    invoke-direct {v1, p1, v2}, Llba;-><init>(Ljava/lang/Runnable;I)V
-
-    invoke-static {p0, v1}, Llpm;->e(Ljava/util/concurrent/Executor;Ljava/util/concurrent/Callable;)Lkzc;
-
-    move-result-object p0
-
-    invoke-direct {v0, p0}, Lkzf;-><init>(Lkzc;)V
-
-    return-object v0
+    return-void
 .end method
 
 
 # virtual methods
-.method public final a(Ljava/util/concurrent/Executor;Lkye;)Lkzc;
-    .locals 1
-
-    iget-object v0, p0, Lkzf;->a:Lkzc;
-
-    invoke-interface {v0, p1, p2}, Lkzc;->a(Ljava/util/concurrent/Executor;Lkye;)Lkzc;
-
-    move-result-object p1
-
-    return-object p1
-.end method
-
-.method public final b(Ljava/util/concurrent/Executor;Lkzg;)Lkzc;
-    .locals 1
-
-    iget-object v0, p0, Lkzf;->a:Lkzc;
-
-    invoke-interface {v0, p1, p2}, Lkzc;->b(Ljava/util/concurrent/Executor;Lkzg;)Lkzc;
-
-    move-result-object p1
-
-    return-object p1
-.end method
-
-.method public final c(Ljava/util/concurrent/Executor;Lkye;Lkye;)Lkzc;
-    .locals 1
-
-    iget-object v0, p0, Lkzf;->a:Lkzc;
-
-    invoke-interface {v0, p1, p2, p3}, Lkzc;->c(Ljava/util/concurrent/Executor;Lkye;Lkye;)Lkzc;
-
-    move-result-object p1
-
-    return-object p1
-.end method
-
-.method public final d(Ljava/util/concurrent/Executor;Lkzg;Lkzg;)Lkzc;
-    .locals 1
-
-    iget-object v0, p0, Lkzf;->a:Lkzc;
-
-    invoke-interface {v0, p1, p2, p3}, Lkzc;->d(Ljava/util/concurrent/Executor;Lkzg;Lkzg;)Lkzc;
-
-    move-result-object p1
-
-    return-object p1
-.end method
-
-.method public final e()Lnou;
-    .locals 1
-
-    iget-object v0, p0, Lkzf;->a:Lkzc;
-
-    invoke-interface {v0}, Lkzc;->e()Lnou;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public final bridge synthetic f()Ljava/lang/Object;
-    .locals 1
-
-    iget-object v0, p0, Lkzf;->a:Lkzc;
-
-    invoke-interface {v0}, Lkzc;->f()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lkyd;
-
-    return-object v0
-.end method
-
-.method public final g()Z
-    .locals 1
-
-    iget-object v0, p0, Lkzf;->a:Lkzc;
-
-    invoke-interface {v0}, Lkzc;->g()Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public final h(Lkyo;)V
-    .locals 1
-
-    iget-object v0, p0, Lkzf;->a:Lkzc;
-
-    invoke-interface {v0, p1}, Lkzc;->h(Lkyo;)V
-
-    return-void
-.end method
-
-.method public final bridge synthetic i(Ljava/util/concurrent/Executor;Llhe;)Lkzc;
-    .locals 0
-
-    invoke-virtual {p0, p1, p2}, Lkzf;->m(Ljava/util/concurrent/Executor;Llhe;)Lkzf;
-
-    move-result-object p1
-
-    return-object p1
-.end method
-
-.method public final m(Ljava/util/concurrent/Executor;Llhe;)Lkzf;
+.method public final writeToParcel(Landroid/os/Parcel;I)V
     .locals 2
 
-    new-instance v0, Lkzf;
+    invoke-static {p1}, Lmip;->ct(Landroid/os/Parcel;)I
 
-    iget-object v1, p0, Lkzf;->a:Lkzc;
+    move-result p2
 
-    invoke-interface {v1, p1, p2}, Lkzc;->i(Ljava/util/concurrent/Executor;Llhe;)Lkzc;
+    iget v0, p0, Lkzf;->a:I
 
-    move-result-object p1
+    const/4 v1, 0x1
 
-    invoke-direct {v0, p1}, Lkzf;-><init>(Lkzc;)V
+    invoke-static {p1, v1, v0}, Lmip;->cA(Landroid/os/Parcel;II)V
 
-    return-object v0
-.end method
+    iget-object v0, p0, Lkzf;->b:Lkyn;
 
-.method public final toString()Ljava/lang/String;
-    .locals 1
+    if-nez v0, :cond_0
 
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    const/4 v0, 0x0
+
+    goto :goto_0
+
+    :cond_0
+    invoke-interface {v0}, Lkyn;->asBinder()Landroid/os/IBinder;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Ljava/lang/Class;->getSimpleName()Ljava/lang/String;
+    :goto_0
+    const/4 v1, 0x2
 
-    move-result-object v0
+    invoke-static {p1, v1, v0}, Lmip;->cF(Landroid/os/Parcel;ILandroid/os/IBinder;)V
 
-    return-object v0
+    invoke-static {p1, p2}, Lmip;->cv(Landroid/os/Parcel;I)V
+
+    return-void
 .end method

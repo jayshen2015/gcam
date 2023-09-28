@@ -1,120 +1,99 @@
-.class public final enum Lhrc;
-.super Ljava/lang/Enum;
-
-
-# static fields
-.field public static final enum a:Lhrc;
-
-.field public static final enum b:Lhrc;
-
-.field public static final enum c:Lhrc;
-
-.field public static final enum d:Lhrc;
-
-.field public static final enum e:Lhrc;
-
-.field private static final synthetic g:[Lhrc;
+.class public final Lhrc;
+.super Ljava/lang/Object;
 
 
 # instance fields
-.field public final f:I
+.field public final a:Landroid/content/Context;
+
+.field public final b:Likp;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 12
-
-    new-instance v0, Lhrc;
-
-    const-string v1, "TOUCH_TO_FOCUS"
-
-    const/4 v2, 0x0
-
-    const/4 v3, 0x1
-
-    invoke-direct {v0, v1, v2, v3}, Lhrc;-><init>(Ljava/lang/String;II)V
-
-    sput-object v0, Lhrc;->a:Lhrc;
-
-    new-instance v1, Lhrc;
-
-    const-string v4, "TAXI"
-
-    const/4 v5, 0x2
-
-    invoke-direct {v1, v4, v3, v5}, Lhrc;-><init>(Ljava/lang/String;II)V
-
-    sput-object v1, Lhrc;->b:Lhrc;
-
-    new-instance v4, Lhrc;
-
-    const-string v6, "QR_GLEAMING"
-
-    const/4 v7, 0x3
-
-    invoke-direct {v4, v6, v5, v7}, Lhrc;-><init>(Ljava/lang/String;II)V
-
-    sput-object v4, Lhrc;->c:Lhrc;
-
-    new-instance v6, Lhrc;
-
-    const-string v8, "FACE_TRACKING"
-
-    invoke-direct {v6, v8, v7, v7}, Lhrc;-><init>(Ljava/lang/String;II)V
-
-    sput-object v6, Lhrc;->d:Lhrc;
-
-    new-instance v8, Lhrc;
-
-    const-string v9, "NONE"
-
-    const/4 v10, 0x4
-
-    const v11, 0x7fffffff
-
-    invoke-direct {v8, v9, v10, v11}, Lhrc;-><init>(Ljava/lang/String;II)V
-
-    sput-object v8, Lhrc;->e:Lhrc;
-
-    const/4 v9, 0x5
-
-    new-array v9, v9, [Lhrc;
-
-    aput-object v0, v9, v2
-
-    aput-object v1, v9, v3
-
-    aput-object v4, v9, v5
-
-    aput-object v6, v9, v7
-
-    aput-object v8, v9, v10
-
-    sput-object v9, Lhrc;->g:[Lhrc;
-
-    return-void
-.end method
-
-.method private constructor <init>(Ljava/lang/String;II)V
+.method public constructor <init>(Landroid/content/Context;Likp;)V
     .locals 0
 
-    invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput p3, p0, Lhrc;->f:I
+    iput-object p1, p0, Lhrc;->a:Landroid/content/Context;
+
+    iput-object p2, p0, Lhrc;->b:Likp;
 
     return-void
 .end method
 
-.method public static values()[Lhrc;
-    .locals 1
 
-    sget-object v0, Lhrc;->g:[Lhrc;
+# virtual methods
+.method public final a(Lhrb;)V
+    .locals 2
 
-    invoke-virtual {v0}, [Lhrc;->clone()Ljava/lang/Object;
+    if-eqz p1, :cond_0
 
-    move-result-object v0
+    iget-object v0, p0, Lhrc;->b:Likp;
 
-    check-cast v0, [Lhrc;
+    iget-object p1, p1, Lhrb;->a:Lhsp;
 
-    return-object v0
+    iget-object v1, v0, Likp;->c:Ljava/util/HashMap;
+
+    invoke-virtual {v1, p1}, Ljava/util/HashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
+
+    iget-object v1, v0, Likp;->b:Landroid/util/LruCache;
+
+    invoke-virtual {v1, p1}, Landroid/util/LruCache;->remove(Ljava/lang/Object;)Ljava/lang/Object;
+
+    iget-object v0, v0, Likp;->d:Ljava/util/HashMap;
+
+    invoke-virtual {v0, p1}, Ljava/util/HashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
+
+    :cond_0
+    return-void
+.end method
+
+.method public final b(Llig;Lhsp;)Lhrb;
+    .locals 2
+
+    iget-object v0, p0, Lhrc;->b:Likp;
+
+    iget-object v1, v0, Likp;->c:Ljava/util/HashMap;
+
+    invoke-virtual {v1, p2, p1}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    iget-object p1, v0, Likp;->b:Landroid/util/LruCache;
+
+    invoke-virtual {p1, p2}, Landroid/util/LruCache;->remove(Ljava/lang/Object;)Ljava/lang/Object;
+
+    iget-object p1, v0, Likp;->d:Ljava/util/HashMap;
+
+    invoke-virtual {p1, p2}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p1
+
+    check-cast p1, Ljava/lang/Integer;
+
+    iget-object v0, v0, Likp;->d:Ljava/util/HashMap;
+
+    if-nez p1, :cond_0
+
+    const/4 p1, 0x0
+
+    goto :goto_0
+
+    :cond_0
+    invoke-virtual {p1}, Ljava/lang/Integer;->intValue()I
+
+    move-result p1
+
+    add-int/lit8 p1, p1, 0x1
+
+    :goto_0
+    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object p1
+
+    invoke-virtual {v0, p2, p1}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    new-instance p1, Lhrb;
+
+    invoke-direct {p1, p2}, Lhrb;-><init>(Lhsp;)V
+
+    return-object p1
 .end method

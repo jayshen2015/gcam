@@ -1,24 +1,40 @@
-.class public final Liyh;
-.super Ljava/lang/Object;
+.class final Liyh;
+.super Liws;
 
 
-# static fields
-.field public static final a:[I
+# instance fields
+.field final synthetic b:Liwt;
 
 
 # direct methods
-.method static constructor <clinit>()V
+.method public constructor <init>(Liwt;)V
+    .locals 0
+
+    iput-object p1, p0, Liyh;->b:Liwt;
+
+    invoke-direct {p0, p1}, Liws;-><init>(Liwt;)V
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public final a()V
     .locals 2
 
-    const v0, 0x1010199
+    iget-object v0, p0, Liyh;->b:Liwt;
 
-    const v1, 0x7f0400b4
+    iget-object v0, v0, Liwt;->d:Lihu;
 
-    filled-new-array {v0, v1}, [I
+    invoke-virtual {v0}, Lihu;->e()V
 
-    move-result-object v0
+    iget-object v0, p0, Liyh;->b:Liwt;
 
-    sput-object v0, Liyh;->a:[I
+    iget-object v1, v0, Liwt;->d:Lihu;
+
+    iget-object v0, v0, Liwt;->e:Lihw;
+
+    invoke-virtual {v1, v0}, Lihu;->g(Lihw;)V
 
     return-void
 .end method

@@ -1,126 +1,201 @@
-.class public final enum Lhpt;
-.super Ljava/lang/Enum;
+.class public final Lhpt;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Lhpr;
 
 
-# static fields
-.field public static final enum a:Lhpt;
+# instance fields
+.field private final a:Lqkg;
 
-.field public static final enum b:Lhpt;
+.field private final b:Lqkg;
 
-.field public static final enum c:Lhpt;
+.field private final c:Lqkg;
 
-.field public static final enum d:Lhpt;
+.field private final d:Lqkg;
 
-.field public static final enum e:Lhpt;
+.field private final e:Lqkg;
 
-.field public static final enum f:Lhpt;
+.field private final f:Lqkg;
 
-.field private static final synthetic g:[Lhpt;
+.field private final g:Lqkg;
+
+.field private final h:Lqkg;
+
+.field private final i:Lqkg;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 13
-
-    new-instance v0, Lhpt;
-
-    const-string v1, "AUTO"
-
-    const/4 v2, 0x0
-
-    invoke-direct {v0, v1, v2}, Lhpt;-><init>(Ljava/lang/String;I)V
-
-    sput-object v0, Lhpt;->a:Lhpt;
-
-    new-instance v1, Lhpt;
-
-    const-string v3, "SLOWEST"
-
-    const/4 v4, 0x1
-
-    invoke-direct {v1, v3, v4}, Lhpt;-><init>(Ljava/lang/String;I)V
-
-    sput-object v1, Lhpt;->b:Lhpt;
-
-    new-instance v3, Lhpt;
-
-    const-string v5, "SLOW"
-
-    const/4 v6, 0x2
-
-    invoke-direct {v3, v5, v6}, Lhpt;-><init>(Ljava/lang/String;I)V
-
-    sput-object v3, Lhpt;->c:Lhpt;
-
-    new-instance v5, Lhpt;
-
-    const-string v7, "LITTLE_FAST"
-
-    const/4 v8, 0x3
-
-    invoke-direct {v5, v7, v8}, Lhpt;-><init>(Ljava/lang/String;I)V
-
-    sput-object v5, Lhpt;->d:Lhpt;
-
-    new-instance v7, Lhpt;
-
-    const-string v9, "FAST"
-
-    const/4 v10, 0x4
-
-    invoke-direct {v7, v9, v10}, Lhpt;-><init>(Ljava/lang/String;I)V
-
-    sput-object v7, Lhpt;->e:Lhpt;
-
-    new-instance v9, Lhpt;
-
-    const-string v11, "FASTEST"
-
-    const/4 v12, 0x5
-
-    invoke-direct {v9, v11, v12}, Lhpt;-><init>(Ljava/lang/String;I)V
-
-    sput-object v9, Lhpt;->f:Lhpt;
-
-    const/4 v11, 0x6
-
-    new-array v11, v11, [Lhpt;
-
-    aput-object v0, v11, v2
-
-    aput-object v1, v11, v4
-
-    aput-object v3, v11, v6
-
-    aput-object v5, v11, v8
-
-    aput-object v7, v11, v10
-
-    aput-object v9, v11, v12
-
-    sput-object v11, Lhpt;->g:[Lhpt;
-
-    return-void
-.end method
-
-.method private constructor <init>(Ljava/lang/String;I)V
+.method public constructor <init>(Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;)V
     .locals 0
 
-    invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    iput-object p1, p0, Lhpt;->a:Lqkg;
+
+    invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    iput-object p2, p0, Lhpt;->b:Lqkg;
+
+    invoke-virtual {p3}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    iput-object p3, p0, Lhpt;->c:Lqkg;
+
+    invoke-virtual {p4}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    iput-object p4, p0, Lhpt;->d:Lqkg;
+
+    invoke-virtual {p5}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    iput-object p5, p0, Lhpt;->e:Lqkg;
+
+    invoke-virtual {p6}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    iput-object p6, p0, Lhpt;->f:Lqkg;
+
+    invoke-virtual {p7}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    iput-object p7, p0, Lhpt;->g:Lqkg;
+
+    invoke-virtual {p8}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    iput-object p8, p0, Lhpt;->h:Lqkg;
+
+    invoke-virtual {p9}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    iput-object p9, p0, Lhpt;->i:Lqkg;
 
     return-void
 .end method
 
-.method public static values()[Lhpt;
-    .locals 1
 
-    sget-object v0, Lhpt;->g:[Lhpt;
+# virtual methods
+.method public final a(Lhsr;Ljava/lang/String;Lbww;Lhsg;Lhhl;Lojc;)Lhps;
+    .locals 16
 
-    invoke-virtual {v0}, [Lhpt;->clone()Ljava/lang/Object;
+    move-object/from16 v0, p0
 
-    move-result-object v0
+    new-instance v15, Lhps;
 
-    check-cast v0, [Lhpt;
+    iget-object v1, v0, Lhpt;->a:Lqkg;
 
-    return-object v0
+    invoke-interface {v1}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v1
+
+    move-object v2, v1
+
+    check-cast v2, Ljava/util/concurrent/Executor;
+
+    invoke-virtual {v2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    iget-object v1, v0, Lhpt;->b:Lqkg;
+
+    invoke-interface {v1}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v1
+
+    invoke-static {}, Lhrf;->a()Lhqb;
+
+    move-result-object v4
+
+    iget-object v3, v0, Lhpt;->c:Lqkg;
+
+    check-cast v3, Liil;
+
+    invoke-virtual {v3}, Liil;->a()Liik;
+
+    move-result-object v5
+
+    iget-object v3, v0, Lhpt;->d:Lqkg;
+
+    invoke-interface {v3}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v3
+
+    move-object v6, v3
+
+    check-cast v6, Ldib;
+
+    invoke-virtual {v6}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    iget-object v3, v0, Lhpt;->e:Lqkg;
+
+    invoke-interface {v3}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v3
+
+    move-object v7, v3
+
+    check-cast v7, Lhrx;
+
+    invoke-virtual {v7}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    iget-object v3, v0, Lhpt;->f:Lqkg;
+
+    invoke-interface {v3}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v3
+
+    move-object v8, v3
+
+    check-cast v8, Ljtx;
+
+    invoke-virtual {v8}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    iget-object v3, v0, Lhpt;->g:Lqkg;
+
+    invoke-interface {v3}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v3
+
+    check-cast v3, Lfw;
+
+    invoke-virtual {v3}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    iget-object v3, v0, Lhpt;->h:Lqkg;
+
+    invoke-interface {v3}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v3
+
+    check-cast v3, Llar;
+
+    invoke-virtual {v3}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    iget-object v3, v0, Lhpt;->i:Lqkg;
+
+    invoke-interface {v3}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v3
+
+    check-cast v3, Lddf;
+
+    invoke-virtual {v3}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    invoke-virtual/range {p1 .. p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    move-object v3, v1
+
+    check-cast v3, Lhrc;
+
+    move-object v1, v15
+
+    move-object/from16 v9, p1
+
+    move-object/from16 v10, p2
+
+    move-object/from16 v11, p3
+
+    move-object/from16 v12, p4
+
+    move-object/from16 v13, p5
+
+    move-object/from16 v14, p6
+
+    invoke-direct/range {v1 .. v14}, Lhps;-><init>(Ljava/util/concurrent/Executor;Lhrc;Lhqb;Liij;Ldib;Lhrx;Ljtx;Lhsr;Ljava/lang/String;Lbww;Lhsg;Lhhl;Lojc;)V
+
+    return-object v15
 .end method

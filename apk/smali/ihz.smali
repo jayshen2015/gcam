@@ -1,64 +1,48 @@
-.class public final Lihz;
-.super Landroid/animation/AnimatorListenerAdapter;
+.class public final synthetic Lihz;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Llie;
 
 
 # instance fields
-.field final synthetic a:Lcom/google/android/apps/camera/ui/views/FrontLensIndicatorOverlay;
+.field public final synthetic a:Ljava/lang/String;
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/apps/camera/ui/views/FrontLensIndicatorOverlay;)V
+.method public synthetic constructor <init>(Ljava/lang/String;)V
     .locals 0
 
-    iput-object p1, p0, Lihz;->a:Lcom/google/android/apps/camera/ui/views/FrontLensIndicatorOverlay;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
+    iput-object p1, p0, Lihz;->a:Ljava/lang/String;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onAnimationCancel(Landroid/animation/Animator;)V
-    .locals 1
+.method public final close()V
+    .locals 3
 
-    iget-object p1, p0, Lihz;->a:Lcom/google/android/apps/camera/ui/views/FrontLensIndicatorOverlay;
+    iget-object v0, p0, Lihz;->a:Ljava/lang/String;
 
-    const/4 v0, 0x1
+    invoke-virtual {v0}, Ljava/lang/String;->length()I
 
-    iput v0, p1, Lcom/google/android/apps/camera/ui/views/FrontLensIndicatorOverlay;->q:I
+    move-result v1
 
-    const/4 v0, 0x4
+    const-string v2, "Exiting scope: "
 
-    invoke-virtual {p1, v0}, Lcom/google/android/apps/camera/ui/views/FrontLensIndicatorOverlay;->setVisibility(I)V
+    if-eqz v1, :cond_0
 
-    return-void
-.end method
-
-.method public final onAnimationEnd(Landroid/animation/Animator;)V
-    .locals 1
-
-    iget-object p1, p0, Lihz;->a:Lcom/google/android/apps/camera/ui/views/FrontLensIndicatorOverlay;
-
-    const/4 v0, 0x1
-
-    iput v0, p1, Lcom/google/android/apps/camera/ui/views/FrontLensIndicatorOverlay;->q:I
-
-    const/4 v0, 0x4
-
-    invoke-virtual {p1, v0}, Lcom/google/android/apps/camera/ui/views/FrontLensIndicatorOverlay;->setVisibility(I)V
+    invoke-virtual {v2, v0}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
 
     return-void
-.end method
 
-.method public final onAnimationStart(Landroid/animation/Animator;)V
-    .locals 1
+    :cond_0
+    new-instance v0, Ljava/lang/String;
 
-    iget-object p1, p0, Lihz;->a:Lcom/google/android/apps/camera/ui/views/FrontLensIndicatorOverlay;
-
-    const/4 v0, 0x3
-
-    iput v0, p1, Lcom/google/android/apps/camera/ui/views/FrontLensIndicatorOverlay;->q:I
+    invoke-direct {v0, v2}, Ljava/lang/String;-><init>(Ljava/lang/String;)V
 
     return-void
 .end method

@@ -1,83 +1,28 @@
 .class public final Lohp;
 .super Ljava/lang/Object;
 
-# interfaces
-.implements Loho;
 
+# instance fields
+.field public a:Ljava/lang/Boolean;
 
-# static fields
-.field public static final a:Llqb;
+.field public b:Lj$/time/Duration;
+
+.field public c:Ljava/lang/Integer;
+
+.field public d:Ljava/lang/Integer;
+
+.field public e:Ljava/lang/Integer;
+
+.field public f:Ljava/lang/Integer;
+
+.field public g:Ljava/lang/Integer;
+
+.field public h:Lj$/time/Duration;
+
+.field private i:Ljava/lang/Integer;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 8
-
-    sget-object v0, Lmza;->a:Lmza;
-
-    const-string v4, "com.google.android.libraries.performance.primes"
-
-    const-string v0, "CLIENT_LOGGING_PROD"
-
-    invoke-static {v0}, Lmwn;->H(Ljava/lang/Object;)Lmwn;
-
-    move-result-object v5
-
-    :try_start_0
-    const-string v1, "16"
-
-    const-string v0, "EAAYAg"
-
-    const/4 v2, 0x3
-
-    invoke-static {v0, v2}, Landroid/util/Base64;->decode(Ljava/lang/String;I)[B
-
-    move-result-object v0
-
-    sget-object v2, Lozu;->d:Lozu;
-
-    array-length v3, v0
-
-    sget-object v6, Lnwh;->a:Lnwh;
-
-    const/4 v7, 0x0
-
-    invoke-static {v2, v0, v7, v3, v6}, Lnws;->Q(Lnws;[BIILnwh;)Lnws;
-
-    move-result-object v0
-
-    invoke-static {v0}, Lnws;->ae(Lnws;)V
-
-    move-object v2, v0
-
-    check-cast v2, Lozu;
-
-    sget-object v3, Llqd;->g:Llqd;
-
-    const/4 v6, 0x1
-
-    const/4 v7, 0x1
-
-    invoke-static/range {v1 .. v7}, Llqf;->d(Ljava/lang/String;Ljava/lang/Object;Llqe;Ljava/lang/String;Ljava/util/Set;ZZ)Llqb;
-
-    move-result-object v0
-
-    sput-object v0, Lohp;->a:Llqb;
-    :try_end_0
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
-
-    return-void
-
-    :catch_0
-    move-exception v0
-
-    new-instance v1, Ljava/lang/AssertionError;
-
-    invoke-direct {v1, v0}, Ljava/lang/AssertionError;-><init>(Ljava/lang/Object;)V
-
-    throw v1
-.end method
-
 .method public constructor <init>()V
     .locals 0
 
@@ -88,16 +33,230 @@
 
 
 # virtual methods
-.method public final a(Landroid/content/Context;)Lozu;
-    .locals 1
+.method public final a()Lohq;
+    .locals 12
 
-    sget-object v0, Lohp;->a:Llqb;
+    iget-object v0, p0, Lohp;->i:Ljava/lang/Integer;
 
-    invoke-virtual {v0, p1}, Llqb;->b(Landroid/content/Context;)Ljava/lang/Object;
+    if-eqz v0, :cond_1
+
+    iget-object v1, p0, Lohp;->a:Ljava/lang/Boolean;
+
+    if-eqz v1, :cond_1
+
+    iget-object v1, p0, Lohp;->b:Lj$/time/Duration;
+
+    if-eqz v1, :cond_1
+
+    iget-object v1, p0, Lohp;->c:Ljava/lang/Integer;
+
+    if-eqz v1, :cond_1
+
+    iget-object v1, p0, Lohp;->d:Ljava/lang/Integer;
+
+    if-eqz v1, :cond_1
+
+    iget-object v1, p0, Lohp;->e:Ljava/lang/Integer;
+
+    if-eqz v1, :cond_1
+
+    iget-object v1, p0, Lohp;->f:Ljava/lang/Integer;
+
+    if-eqz v1, :cond_1
+
+    iget-object v1, p0, Lohp;->g:Ljava/lang/Integer;
+
+    if-eqz v1, :cond_1
+
+    iget-object v1, p0, Lohp;->h:Lj$/time/Duration;
+
+    if-nez v1, :cond_0
+
+    goto :goto_0
+
+    :cond_0
+    new-instance v1, Lohq;
+
+    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
+
+    move-result v3
+
+    iget-object v0, p0, Lohp;->a:Ljava/lang/Boolean;
+
+    invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
+
+    move-result v4
+
+    iget-object v5, p0, Lohp;->b:Lj$/time/Duration;
+
+    iget-object v0, p0, Lohp;->c:Ljava/lang/Integer;
+
+    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
+
+    move-result v6
+
+    iget-object v0, p0, Lohp;->d:Ljava/lang/Integer;
+
+    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
+
+    move-result v7
+
+    iget-object v0, p0, Lohp;->e:Ljava/lang/Integer;
+
+    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
+
+    move-result v8
+
+    iget-object v0, p0, Lohp;->f:Ljava/lang/Integer;
+
+    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
+
+    move-result v9
+
+    iget-object v0, p0, Lohp;->g:Ljava/lang/Integer;
+
+    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
+
+    move-result v10
+
+    iget-object v11, p0, Lohp;->h:Lj$/time/Duration;
+
+    move-object v2, v1
+
+    invoke-direct/range {v2 .. v11}, Lohq;-><init>(IZLj$/time/Duration;IIIIILj$/time/Duration;)V
+
+    return-object v1
+
+    :cond_1
+    :goto_0
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
+    iget-object v1, p0, Lohp;->i:Ljava/lang/Integer;
+
+    if-nez v1, :cond_2
+
+    const-string v1, " targetFps"
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    :cond_2
+    iget-object v1, p0, Lohp;->a:Ljava/lang/Boolean;
+
+    if-nez v1, :cond_3
+
+    const-string v1, " trackFpsPerformance"
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    :cond_3
+    iget-object v1, p0, Lohp;->b:Lj$/time/Duration;
+
+    if-nez v1, :cond_4
+
+    const-string v1, " fpsWindowDuration"
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    :cond_4
+    iget-object v1, p0, Lohp;->c:Ljava/lang/Integer;
+
+    if-nez v1, :cond_5
+
+    const-string v1, " expectedInputFps"
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    :cond_5
+    iget-object v1, p0, Lohp;->d:Ljava/lang/Integer;
+
+    if-nez v1, :cond_6
+
+    const-string v1, " minInputFpsWarningThreshold"
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    :cond_6
+    iget-object v1, p0, Lohp;->e:Ljava/lang/Integer;
+
+    if-nez v1, :cond_7
+
+    const-string v1, " maxInputFpsWarningThreshold"
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    :cond_7
+    iget-object v1, p0, Lohp;->f:Ljava/lang/Integer;
+
+    if-nez v1, :cond_8
+
+    const-string v1, " minOutputFpsWarningThreshold"
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    :cond_8
+    iget-object v1, p0, Lohp;->g:Ljava/lang/Integer;
+
+    if-nez v1, :cond_9
+
+    const-string v1, " maxOutputFpsWarningThreshold"
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    :cond_9
+    iget-object v1, p0, Lohp;->h:Lj$/time/Duration;
+
+    if-nez v1, :cond_a
+
+    const-string v1, " minDurationBetweenLogs"
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    :cond_a
+    new-instance v1, Ljava/lang/IllegalStateException;
+
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/String;->length()I
+
+    move-result v2
+
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    add-int/lit8 v2, v2, 0x1c
+
+    invoke-direct {v3, v2}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string v2, "Missing required properties:"
+
+    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-direct {v1, v0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw v1
+.end method
+
+.method public final b(I)V
+    .locals 0
+
+    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object p1
 
-    check-cast p1, Lozu;
+    iput-object p1, p0, Lohp;->i:Ljava/lang/Integer;
 
-    return-object p1
+    return-void
 .end method

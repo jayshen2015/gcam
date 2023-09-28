@@ -1,33 +1,26 @@
-.class public final synthetic Lkkx;
+.class public final Lkkx;
 .super Ljava/lang/Object;
-
-# interfaces
-.implements Landroid/media/ImageReader$OnImageAvailableListener;
 
 
 # instance fields
-.field public final synthetic a:Lkpd;
+.field public final a:Lkjf;
+
+.field public final b:I
+
+.field public final c:Lkij;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lkpd;)V
+.method public constructor <init>(Lkjf;ILkij;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lkkx;->a:Lkpd;
+    iput-object p1, p0, Lkkx;->a:Lkjf;
 
-    return-void
-.end method
+    iput p2, p0, Lkkx;->b:I
 
-
-# virtual methods
-.method public final onImageAvailable(Landroid/media/ImageReader;)V
-    .locals 0
-
-    iget-object p1, p0, Lkkx;->a:Lkpd;
-
-    invoke-interface {p1}, Lkpd;->ci()V
+    iput-object p3, p0, Lkkx;->c:Lkij;
 
     return-void
 .end method

@@ -1,50 +1,53 @@
-.class public final synthetic Ldeb;
+.class public final Ldeb;
 .super Ljava/lang/Object;
 
-# interfaces
-.implements Lhdw;
 
-
-# instance fields
-.field public final synthetic a:Ldec;
-
-.field public final synthetic b:Lddo;
+# static fields
+.field private static final a:Ljava/util/regex/Pattern;
 
 
 # direct methods
-.method public synthetic constructor <init>(Ldec;Lddo;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 2
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const-string v0, "^(1|true|t|on|yes|y)$"
 
-    iput-object p1, p0, Ldeb;->a:Ldec;
+    const/4 v1, 0x2
 
-    iput-object p2, p0, Ldeb;->b:Lddo;
+    invoke-static {v0, v1}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;I)Ljava/util/regex/Pattern;
+
+    move-result-object v0
+
+    sput-object v0, Ldeb;->a:Ljava/util/regex/Pattern;
+
+    const-string v0, "^(0|false|f|off|no|n)$"
+
+    invoke-static {v0, v1}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;I)Ljava/util/regex/Pattern;
 
     return-void
 .end method
 
+.method public static a(Ljava/lang/String;)Z
+    .locals 1
 
-# virtual methods
-.method public final a(Landroid/graphics/Bitmap;)V
-    .locals 5
+    sget-object v0, Ldeb;->a:Ljava/util/regex/Pattern;
 
-    iget-object v0, p0, Ldeb;->a:Ldec;
+    invoke-virtual {v0, p0}, Ljava/util/regex/Pattern;->matcher(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;
 
-    iget-object v1, p0, Ldeb;->b:Lddo;
+    move-result-object p0
 
-    if-eqz p1, :cond_0
+    invoke-virtual {p0}, Ljava/util/regex/Matcher;->matches()Z
 
-    iget-object v2, v0, Ldec;->o:Ljuh;
+    move-result p0
 
-    new-instance v3, Lblx;
+    if-eqz p0, :cond_0
 
-    const/16 v4, 0xb
+    const/4 p0, 0x1
 
-    invoke-direct {v3, v0, p1, v1, v4}, Lblx;-><init>(Ldec;Landroid/graphics/Bitmap;Lddo;I)V
-
-    invoke-virtual {v2, v3}, Ljuh;->execute(Ljava/lang/Runnable;)V
+    return p0
 
     :cond_0
-    return-void
+    const/4 p0, 0x0
+
+    return p0
 .end method

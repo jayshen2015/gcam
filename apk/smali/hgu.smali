@@ -1,42 +1,22 @@
-.class final Lhgu;
-.super Landroid/animation/AnimatorListenerAdapter;
+.class public final Lhgu;
+.super Ljava/lang/Object;
 
 
-# instance fields
-.field final synthetic a:Lhgw;
+# static fields
+.field public static final a:Lgvo;
 
 
 # direct methods
-.method public constructor <init>(Lhgw;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 2
 
-    iput-object p1, p0, Lhgu;->a:Lhgw;
+    new-instance v0, Lgvo;
 
-    invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
+    const/16 v1, 0x13
 
-    return-void
-.end method
+    invoke-direct {v0, v1}, Lgvo;-><init>(I)V
 
-
-# virtual methods
-.method public final onAnimationEnd(Landroid/animation/Animator;)V
-    .locals 1
-
-    iget-object p1, p0, Lhgu;->a:Lhgw;
-
-    const/4 v0, 0x0
-
-    iput-object v0, p1, Lhgw;->q:Landroid/animation/Animator;
-
-    return-void
-.end method
-
-.method public final onAnimationStart(Landroid/animation/Animator;)V
-    .locals 0
-
-    iget-object p1, p0, Lhgu;->a:Lhgw;
-
-    invoke-virtual {p1}, Lhgw;->k()V
+    sput-object v0, Lhgu;->a:Lgvo;
 
     return-void
 .end method

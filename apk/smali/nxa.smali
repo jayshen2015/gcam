@@ -1,17 +1,18 @@
-.class public interface abstract Lnxa;
+.class public final Lnxa;
 .super Ljava/lang/Object;
 
-# interfaces
-.implements Ljava/util/List;
-.implements Ljava/util/RandomAccess;
+
+# instance fields
+.field public final synthetic a:Lcom/google/android/material/appbar/CollapsingToolbarLayout;
 
 
-# virtual methods
-.method public abstract b()V
-.end method
+# direct methods
+.method public constructor <init>(Lcom/google/android/material/appbar/CollapsingToolbarLayout;)V
+    .locals 0
 
-.method public abstract c()Z
-.end method
+    iput-object p1, p0, Lnxa;->a:Lcom/google/android/material/appbar/CollapsingToolbarLayout;
 
-.method public abstract e(I)Lnxa;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
 .end method

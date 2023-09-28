@@ -2,73 +2,108 @@
 .super Ljava/lang/Object;
 
 
-# instance fields
-.field public final a:Ljava/util/List;
-
-.field public final b:D
-
-.field private final c:C
-
-.field private final d:Ljava/lang/String;
-
-.field private final e:Ljava/lang/String;
+# static fields
+.field private static volatile a:Z
 
 
 # direct methods
-.method public constructor <init>(Ljava/util/List;CDLjava/lang/String;Ljava/lang/String;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 1
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const/4 v0, 0x1
 
-    iput-object p1, p0, Lbij;->a:Ljava/util/List;
-
-    iput-char p2, p0, Lbij;->c:C
-
-    iput-wide p3, p0, Lbij;->b:D
-
-    iput-object p5, p0, Lbij;->d:Ljava/lang/String;
-
-    iput-object p6, p0, Lbij;->e:Ljava/lang/String;
+    sput-boolean v0, Lbij;->a:Z
 
     return-void
 .end method
 
-.method public static a(CLjava/lang/String;Ljava/lang/String;)I
-    .locals 0
+.method public static a(Landroid/content/Context;Landroid/content/Context;ILandroid/content/res/Resources$Theme;)Landroid/graphics/drawable/Drawable;
+    .locals 1
 
-    mul-int/lit8 p0, p0, 0x1f
+    :try_start_0
+    sget-boolean v0, Lbij;->a:Z
 
-    invoke-virtual {p1}, Ljava/lang/String;->hashCode()I
+    if-eqz v0, :cond_2
 
-    move-result p1
+    if-eqz p3, :cond_0
 
-    add-int/2addr p0, p1
+    new-instance v0, Lus;
 
-    mul-int/lit8 p0, p0, 0x1f
+    invoke-direct {v0, p1, p3}, Lus;-><init>(Landroid/content/Context;Landroid/content/res/Resources$Theme;)V
 
-    invoke-virtual {p2}, Ljava/lang/String;->hashCode()I
+    goto :goto_0
 
-    move-result p1
+    :cond_0
+    move-object v0, p1
 
-    add-int/2addr p0, p1
+    :goto_0
+    invoke-static {v0, p2}, Ljr;->b(Landroid/content/Context;I)Landroid/graphics/drawable/Drawable;
 
-    return p0
-.end method
+    move-result-object p0
+    :try_end_0
+    .catch Ljava/lang/NoClassDefFoundError; {:try_start_0 .. :try_end_0} :catch_2
+    .catch Ljava/lang/IllegalStateException; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Landroid/content/res/Resources$NotFoundException; {:try_start_0 .. :try_end_0} :catch_0
 
+    return-object p0
 
-# virtual methods
-.method public final hashCode()I
-    .locals 3
+    :catch_0
+    move-exception p0
 
-    iget-char v0, p0, Lbij;->c:C
+    goto :goto_1
 
-    iget-object v1, p0, Lbij;->e:Ljava/lang/String;
+    :catch_1
+    move-exception p3
 
-    iget-object v2, p0, Lbij;->d:Ljava/lang/String;
+    invoke-virtual {p0}, Landroid/content/Context;->getPackageName()Ljava/lang/String;
 
-    invoke-static {v0, v1, v2}, Lbij;->a(CLjava/lang/String;Ljava/lang/String;)I
+    move-result-object p0
 
-    move-result v0
+    invoke-virtual {p1}, Landroid/content/Context;->getPackageName()Ljava/lang/String;
 
-    return v0
+    move-result-object v0
+
+    invoke-virtual {p0, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result p0
+
+    if-nez p0, :cond_1
+
+    invoke-static {p1, p2}, Laar;->a(Landroid/content/Context;I)Landroid/graphics/drawable/Drawable;
+
+    move-result-object p0
+
+    return-object p0
+
+    :cond_1
+    throw p3
+
+    :catch_2
+    move-exception p0
+
+    const/4 p0, 0x0
+
+    sput-boolean p0, Lbij;->a:Z
+
+    :cond_2
+    :goto_1
+    if-eqz p3, :cond_3
+
+    goto :goto_2
+
+    :cond_3
+    invoke-virtual {p1}, Landroid/content/Context;->getTheme()Landroid/content/res/Resources$Theme;
+
+    move-result-object p3
+
+    :goto_2
+    invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+
+    move-result-object p0
+
+    invoke-static {p0, p2, p3}, Lei;->d(Landroid/content/res/Resources;ILandroid/content/res/Resources$Theme;)Landroid/graphics/drawable/Drawable;
+
+    move-result-object p0
+
+    return-object p0
 .end method

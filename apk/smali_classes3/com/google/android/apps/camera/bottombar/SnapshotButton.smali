@@ -42,7 +42,7 @@
 
     const/high16 v0, 0x40000000    # 2.0f
 
-    invoke-static {v0}, Likp;->b(F)I
+    invoke-static {v0}, Ljsa;->b(F)I
 
     move-result v0
 
@@ -59,27 +59,27 @@
     return-void
 .end method
 
-.method public setMode(Liem;Life;)V
+.method public setMode(Ljkc;Ljkz;Z)V
     .locals 1
 
-    sget-object v0, Liem;->b:Liem;
+    sget-object v0, Ljkc;->b:Ljkc;
 
-    invoke-virtual {p1, v0}, Liem;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {p1, v0}, Ljkc;->equals(Ljava/lang/Object;)Z
 
     move-result p1
 
     if-eqz p1, :cond_0
 
-    sget-object p1, Liem;->b:Liem;
+    sget-object p1, Ljkc;->b:Ljkc;
 
-    invoke-super {p0, p1, p2}, Lcom/google/android/apps/camera/ui/shutterbutton/ShutterButton;->setMode(Liem;Life;)V
+    invoke-super {p0, p1, p2, p3}, Lcom/google/android/apps/camera/ui/shutterbutton/ShutterButton;->setMode(Ljkc;Ljkz;Z)V
 
     return-void
 
     :cond_0
-    sget-object p1, Liem;->a:Liem;
+    sget-object p1, Ljkc;->a:Ljkc;
 
-    invoke-super {p0, p1, p2}, Lcom/google/android/apps/camera/ui/shutterbutton/ShutterButton;->setMode(Liem;Life;)V
+    invoke-super {p0, p1, p2, p3}, Lcom/google/android/apps/camera/ui/shutterbutton/ShutterButton;->setMode(Ljkc;Ljkz;Z)V
 
     return-void
 .end method
@@ -87,15 +87,15 @@
 .method public wirePressedStateAnimationListener()V
     .locals 2
 
-    new-instance v0, Life;
+    new-instance v0, Ljkz;
 
-    invoke-direct {v0, p0}, Life;-><init>(Lcom/google/android/apps/camera/ui/shutterbutton/ShutterButton;)V
+    invoke-direct {v0, p0}, Ljkz;-><init>(Lcom/google/android/apps/camera/ui/shutterbutton/ShutterButton;)V
 
     new-instance v1, Lcom/google/android/apps/camera/bottombar/SnapshotButton$1;
 
-    invoke-direct {v1, p0, v0}, Lcom/google/android/apps/camera/bottombar/SnapshotButton$1;-><init>(Lcom/google/android/apps/camera/bottombar/SnapshotButton;Life;)V
+    invoke-direct {v1, p0, v0}, Lcom/google/android/apps/camera/bottombar/SnapshotButton$1;-><init>(Lcom/google/android/apps/camera/bottombar/SnapshotButton;Ljkz;)V
 
-    invoke-virtual {p0, v1}, Lcom/google/android/apps/camera/ui/shutterbutton/ShutterButton;->setListener(Lifj;)V
+    invoke-virtual {p0, v1}, Lcom/google/android/apps/camera/ui/shutterbutton/ShutterButton;->setListener(Ljli;)V
 
     const/4 v0, 0x1
 

@@ -1,114 +1,134 @@
-.class public final synthetic Lduk;
+.class public final Lduk;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Ldvg;
+.implements Lduj;
 
 
 # instance fields
-.field public final synthetic a:Lgsm;
+.field private final a:Landroid/graphics/drawable/GradientDrawable;
 
-.field private final synthetic b:I
+.field private b:F
+
+.field private c:F
 
 
 # direct methods
-.method public synthetic constructor <init>(Lgsm;I)V
-    .locals 0
+.method public constructor <init>()V
+    .locals 2
 
-    iput p2, p0, Lduk;->b:I
+    new-instance v0, Landroid/graphics/drawable/GradientDrawable;
+
+    invoke-direct {v0}, Landroid/graphics/drawable/GradientDrawable;-><init>()V
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lduk;->a:Lgsm;
+    iput-object v0, p0, Lduk;->a:Landroid/graphics/drawable/GradientDrawable;
+
+    const/4 v1, 0x1
+
+    invoke-virtual {v0, v1}, Landroid/graphics/drawable/GradientDrawable;->setShape(I)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(J)F
+.method public final a(Landroid/graphics/Canvas;)V
+    .locals 3
+
+    iget v0, p0, Lduk;->b:F
+
+    const/4 v1, 0x0
+
+    cmpl-float v1, v0, v1
+
+    if-lez v1, :cond_0
+
+    iget-object v1, p0, Lduk;->a:Landroid/graphics/drawable/GradientDrawable;
+
+    iget v2, p0, Lduk;->c:F
+
+    invoke-static {p1, v1, v0, v2}, Lenl;->E(Landroid/graphics/Canvas;Landroid/graphics/drawable/Drawable;FF)V
+
+    :cond_0
+    return-void
+.end method
+
+.method public final b(II)V
     .locals 2
 
-    iget v0, p0, Lduk;->b:I
+    iget-object v0, p0, Lduk;->a:Landroid/graphics/drawable/GradientDrawable;
 
-    const/high16 v1, 0x7fc00000    # Float.NaN
+    const/4 v1, 0x0
 
-    packed-switch v0, :pswitch_data_0
+    invoke-virtual {v0, v1, v1, p1, p2}, Landroid/graphics/drawable/GradientDrawable;->setBounds(IIII)V
 
-    iget-object v0, p0, Lduk;->a:Lgsm;
+    return-void
+.end method
 
-    invoke-interface {v0, p1, p2}, Lgsm;->c(J)Lgsl;
+.method public final c(F)V
+    .locals 1
 
-    move-result-object p1
+    iget-object v0, p0, Lduk;->a:Landroid/graphics/drawable/GradientDrawable;
 
-    if-eqz p1, :cond_3
+    invoke-virtual {v0, p1}, Landroid/graphics/drawable/GradientDrawable;->setCornerRadius(F)V
 
-    iget p1, p1, Lgsl;->b:F
+    return-void
+.end method
 
-    return p1
+.method public final d(F)V
+    .locals 1
 
-    :pswitch_0
-    iget-object v0, p0, Lduk;->a:Lgsm;
+    const/4 v0, 0x0
 
-    invoke-interface {v0, p1, p2}, Lgsm;->c(J)Lgsl;
+    cmpl-float v0, p1, v0
 
-    move-result-object p1
+    if-lez v0, :cond_0
 
-    const/4 p2, 0x0
-
-    if-eqz p1, :cond_0
-
-    iget-object p1, p1, Lgsl;->p:Lmqp;
-
-    invoke-virtual {p1}, Lmqp;->g()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    invoke-virtual {p1}, Lmqp;->c()Ljava/lang/Object;
-
-    move-result-object p1
-
-    move-object p2, p1
-
-    check-cast p2, Lgsx;
+    const/4 v0, 0x1
 
     goto :goto_0
 
     :cond_0
+    const/4 v0, 0x0
+
     :goto_0
-    if-eqz p2, :cond_1
+    invoke-static {v0}, Lobr;->aF(Z)V
 
-    iget p1, p2, Lgsx;->b:F
+    iput p1, p0, Lduk;->b:F
 
-    return p1
+    return-void
+.end method
 
-    :cond_1
-    return v1
+.method public final e(F)V
+    .locals 2
 
-    :pswitch_1
-    iget-object v0, p0, Lduk;->a:Lgsm;
+    iget-object v0, p0, Lduk;->a:Landroid/graphics/drawable/GradientDrawable;
 
-    invoke-interface {v0, p1, p2}, Lgsm;->c(J)Lgsl;
+    const/high16 v1, 0x437f0000    # 255.0f
 
-    move-result-object p1
+    mul-float p1, p1, v1
 
-    if-eqz p1, :cond_2
+    float-to-int p1, p1
 
-    iget p1, p1, Lgsl;->m:F
+    invoke-virtual {v0, p1}, Landroid/graphics/drawable/GradientDrawable;->setAlpha(I)V
 
-    return p1
+    return-void
+.end method
 
-    :cond_2
-    return v1
+.method public final f(F)V
+    .locals 2
 
-    :cond_3
-    return v1
+    iput p1, p0, Lduk;->c:F
 
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
+    iget-object v0, p0, Lduk;->a:Landroid/graphics/drawable/GradientDrawable;
+
+    float-to-int p1, p1
+
+    const/4 v1, -0x1
+
+    invoke-virtual {v0, p1, v1}, Landroid/graphics/drawable/GradientDrawable;->setStroke(II)V
+
+    return-void
 .end method

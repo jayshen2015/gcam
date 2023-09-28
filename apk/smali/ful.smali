@@ -1,61 +1,101 @@
-.class public final Lful;
+.class final Lful;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Logk;
+.implements Lfuv;
 
 
 # instance fields
-.field private final a:Loiw;
+.field final synthetic a:Lfum;
 
 
 # direct methods
-.method public constructor <init>(Loiw;)V
+.method public constructor <init>(Lfum;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lful;->a:Lfum;
 
-    iput-object p1, p0, Lful;->a:Loiw;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
-.method public static b(Loiw;)Lful;
-    .locals 1
-
-    new-instance v0, Lful;
-
-    invoke-direct {v0, p0}, Lful;-><init>(Loiw;)V
-
-    return-object v0
-.end method
-
 
 # virtual methods
-.method public final a()Lfuk;
-    .locals 2
+.method public final a(Lfuj;)V
+    .locals 3
 
-    iget-object v0, p0, Lful;->a:Loiw;
+    iget-object v0, p0, Lful;->a:Lfum;
 
-    check-cast v0, Ljzo;
+    monitor-enter v0
 
-    invoke-virtual {v0}, Ljzo;->a()Lklj;
+    :try_start_0
+    iget-object v1, p0, Lful;->a:Lfum;
 
-    move-result-object v0
+    const/4 v2, 0x1
 
-    new-instance v1, Lfuk;
+    iput-boolean v2, v1, Lfum;->d:Z
 
-    invoke-direct {v1, v0}, Lfuk;-><init>(Lklj;)V
+    invoke-static {p1}, Lojc;->i(Ljava/lang/Object;)Lojc;
 
-    return-object v1
+    move-result-object p1
+
+    iput-object p1, v1, Lfum;->e:Lojc;
+
+    iget-object p1, p0, Lful;->a:Lfum;
+
+    invoke-virtual {p1}, Lfum;->c()V
+
+    monitor-exit v0
+
+    return-void
+
+    :catchall_0
+    move-exception p1
+
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw p1
 .end method
 
-.method public final bridge synthetic get()Ljava/lang/Object;
-    .locals 1
+.method public final b(JLfuz;)V
+    .locals 3
 
-    invoke-virtual {p0}, Lful;->a()Lfuk;
+    iget-object v0, p0, Lful;->a:Lfum;
 
-    move-result-object v0
+    monitor-enter v0
 
-    return-object v0
+    :try_start_0
+    iget-object v1, p0, Lful;->a:Lfum;
+
+    const/4 v2, 0x1
+
+    iput-boolean v2, v1, Lfum;->b:Z
+
+    invoke-static {p3}, Lojc;->i(Ljava/lang/Object;)Lojc;
+
+    move-result-object p3
+
+    iput-object p3, v1, Lfum;->c:Lojc;
+
+    iget-object p3, p0, Lful;->a:Lfum;
+
+    iput-wide p1, p3, Lfum;->f:J
+
+    invoke-virtual {p3}, Lfum;->c()V
+
+    monitor-exit v0
+
+    return-void
+
+    :catchall_0
+    move-exception p1
+
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw p1
 .end method

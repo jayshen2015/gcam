@@ -2,100 +2,56 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lkai;
+.implements Lpys;
 
 
 # instance fields
-.field final synthetic a:Ljava/lang/Runnable;
-
-.field final synthetic b:Lva;
-
-.field private final c:Ljava/util/concurrent/atomic/AtomicBoolean;
+.field private final a:Lqkg;
 
 
 # direct methods
-.method public constructor <init>(Lva;Ljava/lang/Runnable;[B[B[B[B)V
+.method public constructor <init>(Lqkg;)V
     .locals 0
-
-    iput-object p1, p0, Lenb;->b:Lva;
-
-    iput-object p2, p0, Lenb;->a:Ljava/lang/Runnable;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    new-instance p1, Ljava/util/concurrent/atomic/AtomicBoolean;
-
-    const/4 p2, 0x1
-
-    invoke-direct {p1, p2}, Ljava/util/concurrent/atomic/AtomicBoolean;-><init>(Z)V
-
-    iput-object p1, p0, Lenb;->c:Ljava/util/concurrent/atomic/AtomicBoolean;
+    iput-object p1, p0, Lenb;->a:Lqkg;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final bridge synthetic bn(Ljava/lang/Object;)V
-    .locals 3
+.method public final a()Landroid/os/UserManager;
+    .locals 2
 
-    check-cast p1, Ljava/lang/Boolean;
+    iget-object v0, p0, Lenb;->a:Lqkg;
 
-    iget-object v0, p0, Lenb;->c:Ljava/util/concurrent/atomic/AtomicBoolean;
+    invoke-interface {v0}, Lqkg;->get()Ljava/lang/Object;
 
-    const/4 v1, 0x1
+    move-result-object v0
 
-    const/4 v2, 0x0
+    check-cast v0, Lemr;
 
-    invoke-virtual {v0, v1, v2}, Ljava/util/concurrent/atomic/AtomicBoolean;->compareAndSet(ZZ)Z
+    sget-object v1, Lemr;->m:Lemq;
 
-    move-result v0
+    invoke-interface {v0, v1}, Lemr;->a(Lemq;)Ljava/lang/Object;
 
-    if-eqz v0, :cond_0
+    move-result-object v0
 
-    return-void
+    check-cast v0, Landroid/os/UserManager;
 
-    :cond_0
-    invoke-virtual {p1}, Ljava/lang/Boolean;->booleanValue()Z
+    invoke-static {v0}, Lqmd;->ae(Ljava/lang/Object;)V
 
-    move-result p1
+    return-object v0
+.end method
 
-    if-eqz p1, :cond_1
+.method public final bridge synthetic get()Ljava/lang/Object;
+    .locals 1
 
-    iget-object p1, p0, Lenb;->b:Lva;
+    invoke-virtual {p0}, Lenb;->a()Landroid/os/UserManager;
 
-    iget-object p1, p1, Lva;->a:Ljava/lang/Object;
+    move-result-object v0
 
-    check-cast p1, Ldbf;
-
-    invoke-virtual {p1}, Ldbf;->d()Lklv;
-
-    move-result-object p1
-
-    sget-object v0, Lklv;->a:Lklv;
-
-    invoke-virtual {p1, v0}, Lklv;->equals(Ljava/lang/Object;)Z
-
-    move-result p1
-
-    if-eqz p1, :cond_1
-
-    iget-object p1, p0, Lenb;->b:Lva;
-
-    iget-object p1, p1, Lva;->a:Ljava/lang/Object;
-
-    iget-object v0, p0, Lenb;->a:Ljava/lang/Runnable;
-
-    check-cast p1, Ldbf;
-
-    invoke-virtual {p1, v0}, Ldbf;->h(Ljava/lang/Runnable;)V
-
-    return-void
-
-    :cond_1
-    iget-object p1, p0, Lenb;->a:Ljava/lang/Runnable;
-
-    invoke-interface {p1}, Ljava/lang/Runnable;->run()V
-
-    return-void
+    return-object v0
 .end method

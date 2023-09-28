@@ -1,104 +1,72 @@
 .class public final Lno;
-.super Ldw;
+.super Landroid/view/View$BaseSavedState;
+
+
+# static fields
+.field public static final CREATOR:Landroid/os/Parcelable$Creator;
 
 
 # instance fields
-.field public b:I
+.field a:Z
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 1
+.method static constructor <clinit>()V
+    .locals 2
 
-    invoke-direct {p0}, Ldw;-><init>()V
+    new-instance v0, Lba;
 
-    const/4 v0, 0x0
+    const/16 v1, 0x11
 
-    iput v0, p0, Lno;->b:I
+    invoke-direct {v0, v1}, Lba;-><init>(I)V
 
-    const v0, 0x800013
-
-    iput v0, p0, Lno;->a:I
+    sput-object v0, Lno;->CREATOR:Landroid/os/Parcelable$Creator;
 
     return-void
 .end method
 
-.method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
+.method public constructor <init>(Landroid/os/Parcel;)V
     .locals 0
 
-    invoke-direct {p0, p1, p2}, Ldw;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
+    invoke-direct {p0, p1}, Landroid/view/View$BaseSavedState;-><init>(Landroid/os/Parcel;)V
 
+    invoke-virtual {p1}, Landroid/os/Parcel;->readByte()B
+
+    move-result p1
+
+    if-eqz p1, :cond_0
+
+    const/4 p1, 0x1
+
+    goto :goto_0
+
+    :cond_0
     const/4 p1, 0x0
 
-    iput p1, p0, Lno;->b:I
+    :goto_0
+    iput-boolean p1, p0, Lno;->a:Z
 
     return-void
 .end method
 
-.method public constructor <init>(Landroid/view/ViewGroup$LayoutParams;)V
+.method public constructor <init>(Landroid/os/Parcelable;)V
     .locals 0
 
-    invoke-direct {p0, p1}, Ldw;-><init>(Landroid/view/ViewGroup$LayoutParams;)V
-
-    const/4 p1, 0x0
-
-    iput p1, p0, Lno;->b:I
+    invoke-direct {p0, p1}, Landroid/view/View$BaseSavedState;-><init>(Landroid/os/Parcelable;)V
 
     return-void
 .end method
 
-.method public constructor <init>(Landroid/view/ViewGroup$MarginLayoutParams;)V
-    .locals 1
 
-    invoke-direct {p0, p1}, Ldw;-><init>(Landroid/view/ViewGroup$LayoutParams;)V
-
-    const/4 v0, 0x0
-
-    iput v0, p0, Lno;->b:I
-
-    iget v0, p1, Landroid/view/ViewGroup$MarginLayoutParams;->leftMargin:I
-
-    iput v0, p0, Lno;->leftMargin:I
-
-    iget v0, p1, Landroid/view/ViewGroup$MarginLayoutParams;->topMargin:I
-
-    iput v0, p0, Lno;->topMargin:I
-
-    iget v0, p1, Landroid/view/ViewGroup$MarginLayoutParams;->rightMargin:I
-
-    iput v0, p0, Lno;->rightMargin:I
-
-    iget p1, p1, Landroid/view/ViewGroup$MarginLayoutParams;->bottomMargin:I
-
-    iput p1, p0, Lno;->bottomMargin:I
-
-    return-void
-.end method
-
-.method public constructor <init>(Ldw;)V
+# virtual methods
+.method public final writeToParcel(Landroid/os/Parcel;I)V
     .locals 0
 
-    invoke-direct {p0, p1}, Ldw;-><init>(Ldw;)V
+    invoke-super {p0, p1, p2}, Landroid/view/View$BaseSavedState;->writeToParcel(Landroid/os/Parcel;I)V
 
-    const/4 p1, 0x0
+    iget-boolean p2, p0, Lno;->a:Z
 
-    iput p1, p0, Lno;->b:I
-
-    return-void
-.end method
-
-.method public constructor <init>(Lno;)V
-    .locals 1
-
-    invoke-direct {p0, p1}, Ldw;-><init>(Ldw;)V
-
-    const/4 v0, 0x0
-
-    iput v0, p0, Lno;->b:I
-
-    iget p1, p1, Lno;->b:I
-
-    iput p1, p0, Lno;->b:I
+    invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeByte(B)V
 
     return-void
 .end method

@@ -140,24 +140,22 @@
     return-void
 .end method
 
-.method public final d(Z)V
+.method public final d(I)V
     .locals 2
 
     iget-wide v0, p0, Lcom/google/googlex/gcam/ShotParams;->a:J
 
-    invoke-static {v0, v1, p0, p1}, Lcom/google/googlex/gcam/GcamModuleJNI;->ShotParams_recompute_wb_on_base_frame_set(JLcom/google/googlex/gcam/ShotParams;Z)V
+    invoke-static {v0, v1, p0, p1}, Lcom/google/googlex/gcam/GcamModuleJNI;->ShotParams_image_rotation_set(JLcom/google/googlex/gcam/ShotParams;I)V
 
     return-void
 .end method
 
-.method public final e(Lnre;)V
+.method public final e(Z)V
     .locals 2
 
     iget-wide v0, p0, Lcom/google/googlex/gcam/ShotParams;->a:J
 
-    iget p1, p1, Lnre;->d:I
-
-    invoke-static {v0, v1, p0, p1}, Lcom/google/googlex/gcam/GcamModuleJNI;->ShotParams_resampling_method_override_set(JLcom/google/googlex/gcam/ShotParams;I)V
+    invoke-static {v0, v1, p0, p1}, Lcom/google/googlex/gcam/GcamModuleJNI;->ShotParams_manually_rotate_final_jpg_set(JLcom/google/googlex/gcam/ShotParams;Z)V
 
     return-void
 .end method
@@ -167,7 +165,7 @@
 
     iget-wide v0, p0, Lcom/google/googlex/gcam/ShotParams;->a:J
 
-    invoke-static {v0, v1, p0, p1}, Lcom/google/googlex/gcam/GcamModuleJNI;->ShotParams_shasta_enabled_set(JLcom/google/googlex/gcam/ShotParams;Z)V
+    invoke-static {v0, v1, p0, p1}, Lcom/google/googlex/gcam/GcamModuleJNI;->ShotParams_recompute_wb_on_base_frame_set(JLcom/google/googlex/gcam/ShotParams;Z)V
 
     return-void
 .end method
@@ -176,6 +174,26 @@
     .locals 0
 
     invoke-virtual {p0}, Lcom/google/googlex/gcam/ShotParams;->b()V
+
+    return-void
+.end method
+
+.method public final g(Z)V
+    .locals 2
+
+    iget-wide v0, p0, Lcom/google/googlex/gcam/ShotParams;->a:J
+
+    invoke-static {v0, v1, p0, p1}, Lcom/google/googlex/gcam/GcamModuleJNI;->ShotParams_shasta_enabled_set(JLcom/google/googlex/gcam/ShotParams;Z)V
+
+    return-void
+.end method
+
+.method public final h(F)V
+    .locals 2
+
+    iget-wide v0, p0, Lcom/google/googlex/gcam/ShotParams;->a:J
+
+    invoke-static {v0, v1, p0, p1}, Lcom/google/googlex/gcam/GcamModuleJNI;->ShotParams_tripod_max_total_capture_time_ms_set(JLcom/google/googlex/gcam/ShotParams;F)V
 
     return-void
 .end method

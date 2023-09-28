@@ -20,9 +20,9 @@
 
     iput-object p3, p0, Lcom/google/lullaby/modules/audio/DeviceInfo;->b:Landroid/content/Context;
 
-    new-instance p1, Lnuq;
+    new-instance p1, Lpmt;
 
-    invoke-direct {p1, p0}, Lnuq;-><init>(Lcom/google/lullaby/modules/audio/DeviceInfo;)V
+    invoke-direct {p1, p0}, Lpmt;-><init>(Lcom/google/lullaby/modules/audio/DeviceInfo;)V
 
     iput-object p1, p0, Lcom/google/lullaby/modules/audio/DeviceInfo;->c:Landroid/content/BroadcastReceiver;
 

@@ -19,12 +19,10 @@
     return-void
 .end method
 
-.method public constructor <init>(IIILnrb;Lnrf;)V
+.method public constructor <init>(IIIILpjk;)V
     .locals 6
 
-    iget v3, p4, Lnrb;->f:I
-
-    invoke-static {p5}, Lnrf;->a(Lnrf;)J
+    invoke-static {p5}, Lpjk;->a(Lpjk;)J
 
     move-result-wide v4
 
@@ -33,6 +31,8 @@
     move v1, p2
 
     move v2, p3
+
+    move v3, p4
 
     invoke-static/range {v0 .. v5}, Lcom/google/googlex/gcam/GcamModuleJNI;->new_RawWriteView__SWIG_1(IIIIJ)J
 

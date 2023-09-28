@@ -1,60 +1,51 @@
 .class public final Ldji;
-.super Landroid/database/ContentObserver;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Lfie;
+.implements Lfig;
+.implements Lfik;
 
 
 # instance fields
-.field public a:Z
-
-.field public b:Lgoz;
-
-.field private c:Z
+.field private final a:Lddf;
 
 
 # direct methods
-.method public constructor <init>()V
+.method public constructor <init>(Lddf;)V
     .locals 1
 
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Ldji;->a:Lddf;
+
+    new-instance p1, Lmip;
+
     const/4 v0, 0x0
 
-    invoke-direct {p0, v0}, Landroid/database/ContentObserver;-><init>(Landroid/os/Handler;)V
-
-    const/4 v0, 0x0
-
-    iput-boolean v0, p0, Ldji;->c:Z
-
-    iput-boolean v0, p0, Ldji;->a:Z
+    invoke-direct {p1, v0}, Lmip;-><init>([B)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Z)V
-    .locals 0
+.method public final fU()V
+    .locals 1
 
-    iput-boolean p1, p0, Ldji;->c:Z
+    const/4 v0, 0x0
 
-    if-nez p1, :cond_0
-
-    const/4 p1, 0x0
-
-    iput-boolean p1, p0, Ldji;->a:Z
-
-    :cond_0
-    return-void
+    throw v0
 .end method
 
-.method public final onChange(Z)V
-    .locals 0
+.method public final fV()V
+    .locals 2
 
-    iget-boolean p1, p0, Ldji;->c:Z
+    iget-object v0, p0, Ldji;->a:Lddf;
 
-    if-eqz p1, :cond_0
+    sget-object v1, Lddl;->a:Lddi;
 
-    const/4 p1, 0x1
+    invoke-interface {v0}, Lddf;->e()V
 
-    iput-boolean p1, p0, Ldji;->a:Z
-
-    :cond_0
     return-void
 .end method

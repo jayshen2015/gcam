@@ -1,43 +1,46 @@
-.class public final Lfbo;
+.class public final synthetic Lfbo;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lfbk;
+.implements Llij;
+
+
+# instance fields
+.field public final synthetic a:Lfbq;
 
 
 # direct methods
-.method public constructor <init>()V
+.method public synthetic constructor <init>(Lfbq;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lfbo;->a:Lfbq;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final b()Lcjf;
+.method public final fB(Ljava/lang/Object;)V
     .locals 1
 
-    invoke-static {}, Lcjf;->a()Lcjf;
+    iget-object v0, p0, Lfbo;->a:Lfbq;
 
-    move-result-object v0
+    check-cast p1, Ljava/lang/Boolean;
 
-    return-object v0
-.end method
+    invoke-virtual {p1}, Ljava/lang/Boolean;->booleanValue()Z
 
-.method public final c()Lmqp;
-    .locals 1
+    move-result p1
 
-    sget-object v0, Lmpx;->a:Lmpx;
+    if-nez p1, :cond_0
 
-    return-object v0
-.end method
+    iget-object p1, v0, Lfbq;->e:Lgqy;
 
-.method public final e()Lmqp;
-    .locals 1
+    sget-object v0, Lgqx;->b:Lgqx;
 
-    sget-object v0, Lmpx;->a:Lmpx;
+    invoke-virtual {p1, v0}, Lldn;->fB(Ljava/lang/Object;)V
 
-    return-object v0
+    :cond_0
+    return-void
 .end method

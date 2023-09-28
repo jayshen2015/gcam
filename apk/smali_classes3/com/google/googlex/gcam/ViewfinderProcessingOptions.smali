@@ -10,19 +10,27 @@
 
 # direct methods
 .method public constructor <init>()V
-    .locals 3
+    .locals 2
 
     invoke-static {}, Lcom/google/googlex/gcam/GcamModuleJNI;->new_ViewfinderProcessingOptions__SWIG_0()J
 
     move-result-wide v0
 
+    invoke-direct {p0, v0, v1}, Lcom/google/googlex/gcam/ViewfinderProcessingOptions;-><init>(J)V
+
+    return-void
+.end method
+
+.method public constructor <init>(J)V
+    .locals 1
+
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const/4 v2, 0x1
+    const/4 v0, 0x1
 
-    iput-boolean v2, p0, Lcom/google/googlex/gcam/ViewfinderProcessingOptions;->b:Z
+    iput-boolean v0, p0, Lcom/google/googlex/gcam/ViewfinderProcessingOptions;->b:Z
 
-    iput-wide v0, p0, Lcom/google/googlex/gcam/ViewfinderProcessingOptions;->a:J
+    iput-wide p1, p0, Lcom/google/googlex/gcam/ViewfinderProcessingOptions;->a:J
 
     return-void
 .end method
@@ -69,6 +77,36 @@
     monitor-exit p0
 
     throw v0
+.end method
+
+.method public final b(I)V
+    .locals 2
+
+    iget-wide v0, p0, Lcom/google/googlex/gcam/ViewfinderProcessingOptions;->a:J
+
+    invoke-static {v0, v1, p0, p1}, Lcom/google/googlex/gcam/GcamModuleJNI;->ViewfinderProcessingOptions_motion_processing_method_set(JLcom/google/googlex/gcam/ViewfinderProcessingOptions;I)V
+
+    return-void
+.end method
+
+.method public final c(Z)V
+    .locals 2
+
+    iget-wide v0, p0, Lcom/google/googlex/gcam/ViewfinderProcessingOptions;->a:J
+
+    invoke-static {v0, v1, p0, p1}, Lcom/google/googlex/gcam/GcamModuleJNI;->ViewfinderProcessingOptions_process_gyro_set(JLcom/google/googlex/gcam/ViewfinderProcessingOptions;Z)V
+
+    return-void
+.end method
+
+.method public final d(Z)V
+    .locals 2
+
+    iget-wide v0, p0, Lcom/google/googlex/gcam/ViewfinderProcessingOptions;->a:J
+
+    invoke-static {v0, v1, p0, p1}, Lcom/google/googlex/gcam/GcamModuleJNI;->ViewfinderProcessingOptions_save_motion_trace_set(JLcom/google/googlex/gcam/ViewfinderProcessingOptions;Z)V
+
+    return-void
 .end method
 
 .method protected final finalize()V

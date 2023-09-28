@@ -1,49 +1,55 @@
-.class public abstract Lkiu;
+.class public final Lkiu;
 .super Ljava/lang/Object;
 
 
 # instance fields
-.field public final b:Lkkb;
-
-.field protected final c:Lnou;
+.field public a:Lkiv;
 
 
 # direct methods
-.method public constructor <init>(Lkkb;Lnou;)V
+.method public constructor <init>()V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lkiu;->b:Lkkb;
+    return-void
+.end method
 
-    iput-object p2, p0, Lkiu;->c:Lnou;
+.method public constructor <init>(Lkiv;)V
+    .locals 0
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lkiu;->a:Lkiv;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public abstract a()Lkow;
-.end method
+.method public final a()Z
+    .locals 2
 
-.method public final c()Landroid/view/Surface;
-    .locals 1
+    iget-object v0, p0, Lkiu;->a:Lkiv;
 
-    iget-object v0, p0, Lkiu;->c:Lnou;
+    check-cast v0, Lkwd;
 
-    invoke-interface {v0}, Lnou;->isDone()Z
+    iget-object v1, v0, Lkwd;->a:Lkvz;
 
-    move-result v0
+    invoke-static {v1}, Lmip;->dk(Ljava/lang/Object;)Ljava/lang/Object;
 
-    invoke-static {v0}, Lmoz;->p(Z)V
+    iget-object v0, v0, Lkwd;->a:Lkvz;
 
-    iget-object v0, p0, Lkiu;->c:Lnou;
+    iget v0, v0, Lkvz;->a:I
 
-    invoke-static {v0}, Lnsy;->K(Ljava/util/concurrent/Future;)Ljava/lang/Object;
+    const/4 v1, 0x1
 
-    move-result-object v0
+    if-ne v0, v1, :cond_0
 
-    check-cast v0, Landroid/view/Surface;
+    return v1
 
-    return-object v0
+    :cond_0
+    const/4 v0, 0x0
+
+    return v0
 .end method

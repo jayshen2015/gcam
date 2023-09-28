@@ -1,77 +1,72 @@
-.class final Lmsq;
-.super Lmsv;
-
-# interfaces
-.implements Ljava/io/Serializable;
+.class public final Lmsq;
+.super Ljava/lang/Object;
 
 
-# static fields
-.field private static final serialVersionUID:J
+# instance fields
+.field public final a:Lojc;
+
+.field public final b:Lojc;
 
 
 # direct methods
-.method private readObject(Ljava/io/ObjectInputStream;)V
+.method public constructor <init>(Ljava/io/FileDescriptor;)V
     .locals 0
 
-    const/4 p1, 0x0
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    throw p1
+    invoke-static {p1}, Lojc;->i(Ljava/lang/Object;)Lojc;
+
+    move-result-object p1
+
+    iput-object p1, p0, Lmsq;->b:Lojc;
+
+    sget-object p1, Loih;->a:Loih;
+
+    iput-object p1, p0, Lmsq;->a:Lojc;
+
+    return-void
 .end method
 
-.method private writeObject(Ljava/io/ObjectOutputStream;)V
+.method private constructor <init>(Lojc;Lojc;)V
     .locals 0
 
-    const/4 p1, 0x0
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    throw p1
+    iput-object p1, p0, Lmsq;->b:Lojc;
+
+    iput-object p2, p0, Lmsq;->a:Lojc;
+
+    return-void
 .end method
 
+.method public static a(Ljava/lang/Object;)Lmsq;
+    .locals 2
 
-# virtual methods
-.method public final b()I
-    .locals 1
+    new-instance v0, Lmsq;
 
-    const/4 v0, 0x0
+    invoke-static {p0}, Lojc;->i(Ljava/lang/Object;)Lojc;
 
-    throw v0
+    move-result-object p0
+
+    sget-object v1, Loih;->a:Loih;
+
+    invoke-direct {v0, p0, v1}, Lmsq;-><init>(Lojc;Lojc;)V
+
+    return-object v0
 .end method
 
-.method public final c()Ljava/util/Iterator;
-    .locals 1
+.method public static b(Ljava/lang/Object;)Lmsq;
+    .locals 2
 
-    const/4 v0, 0x0
+    new-instance v0, Lmsq;
 
-    throw v0
-.end method
+    sget-object v1, Loih;->a:Loih;
 
-.method public final clear()V
-    .locals 1
+    invoke-static {p0}, Lojc;->i(Ljava/lang/Object;)Lojc;
 
-    const/4 v0, 0x0
+    move-result-object p0
 
-    throw v0
-.end method
+    invoke-direct {v0, v1, p0}, Lmsq;-><init>(Lojc;Lojc;)V
 
-.method public final cw(Ljava/lang/Object;)I
-    .locals 0
-
-    const/4 p1, 0x0
-
-    throw p1
-.end method
-
-.method public final iterator()Ljava/util/Iterator;
-    .locals 1
-
-    const/4 v0, 0x0
-
-    throw v0
-.end method
-
-.method public final size()I
-    .locals 1
-
-    const/4 v0, 0x0
-
-    throw v0
+    return-object v0
 .end method

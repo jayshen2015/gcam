@@ -1,249 +1,668 @@
 .class public final Lktq;
-.super Ljava/lang/Object;
+.super Lkno;
+
+
+# static fields
+.field public static final CREATOR:Landroid/os/Parcelable$Creator;
 
 
 # instance fields
-.field private final a:Lkts;
+.field public final a:Ljava/lang/String;
 
-.field private final b:Lkts;
+.field public final b:[B
 
-.field private final c:Lkts;
+.field public final c:[[B
 
-.field private final d:Lkts;
+.field public final d:[[B
 
-.field private e:D
+.field public final e:[[B
 
-.field private f:D
+.field public final f:[[B
+
+.field public final g:[I
+
+.field public final h:[[B
+
+.field public final i:[I
 
 
 # direct methods
-.method public constructor <init>(Landroidx/wear/ambient/AmbientMode$AmbientController;[B[B[B[B)V
-    .locals 19
+.method static constructor <clinit>()V
+    .locals 2
 
-    move-object/from16 v0, p0
+    new-instance v0, Lkpg;
 
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    const/16 v1, 0x14
 
-    const-wide/high16 v1, -0x4010000000000000L    # -1.0
+    invoke-direct {v0, v1}, Lkpg;-><init>(I)V
 
-    iput-wide v1, v0, Lktq;->e:D
+    sput-object v0, Lktq;->CREATOR:Landroid/os/Parcelable$Creator;
 
-    iput-wide v1, v0, Lktq;->f:D
+    return-void
+.end method
 
-    new-instance v1, Lkts;
+.method public constructor <init>(Ljava/lang/String;[B[[B[[B[[B[[B[I[[B[I)V
+    .locals 0
 
-    invoke-direct {v1}, Lkts;-><init>()V
+    invoke-direct {p0}, Lkno;-><init>()V
 
-    iput-object v1, v0, Lktq;->a:Lkts;
+    iput-object p1, p0, Lktq;->a:Ljava/lang/String;
 
-    new-instance v9, Lktp;
+    iput-object p2, p0, Lktq;->b:[B
 
-    const/4 v4, 0x1
+    iput-object p3, p0, Lktq;->c:[[B
 
-    const/4 v5, 0x0
+    iput-object p4, p0, Lktq;->d:[[B
 
-    const/4 v6, 0x0
+    iput-object p5, p0, Lktq;->e:[[B
 
-    const/4 v7, 0x0
+    iput-object p6, p0, Lktq;->f:[[B
 
-    const/4 v8, 0x0
+    iput-object p7, p0, Lktq;->g:[I
 
-    move-object v2, v9
+    iput-object p8, p0, Lktq;->h:[[B
 
-    move-object/from16 v3, p1
+    iput-object p9, p0, Lktq;->i:[I
 
-    invoke-direct/range {v2 .. v8}, Lktp;-><init>(Landroidx/wear/ambient/AmbientMode$AmbientController;I[B[B[B[B)V
+    return-void
+.end method
 
-    const-wide v2, 0x4051800000000000L    # 70.0
+.method private static a([I)Ljava/util/List;
+    .locals 4
 
-    invoke-virtual {v1, v2, v3, v9}, Lkts;->b(DLktr;)V
+    if-nez p0, :cond_0
 
-    new-instance v4, Lktp;
+    invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
 
-    const/4 v12, 0x0
+    move-result-object p0
 
-    const/4 v13, 0x0
+    return-object p0
 
-    const/4 v14, 0x0
+    :cond_0
+    array-length v0, p0
 
-    const/4 v15, 0x0
+    new-instance v1, Ljava/util/ArrayList;
 
-    const/16 v16, 0x0
+    invoke-direct {v1, v0}, Ljava/util/ArrayList;-><init>(I)V
 
-    move-object v10, v4
+    const/4 v2, 0x0
 
-    move-object/from16 v11, p1
+    :goto_0
+    if-ge v2, v0, :cond_1
 
-    invoke-direct/range {v10 .. v16}, Lktp;-><init>(Landroidx/wear/ambient/AmbientMode$AmbientController;I[B[B[B[B)V
+    aget v3, p0, v2
 
-    invoke-virtual {v1, v4}, Lkts;->c(Lktr;)V
+    invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    new-instance v1, Lkts;
+    move-result-object v3
 
-    invoke-direct {v1}, Lkts;-><init>()V
+    invoke-interface {v1, v3}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    iput-object v1, v0, Lktq;->b:Lkts;
+    add-int/lit8 v2, v2, 0x1
 
-    new-instance v11, Lktp;
+    goto :goto_0
 
-    const/4 v6, 0x2
+    :cond_1
+    invoke-static {v1}, Ljava/util/Collections;->sort(Ljava/util/List;)V
 
-    const/4 v9, 0x0
+    return-object v1
+.end method
 
-    const/4 v10, 0x0
+.method private static b([[B)Ljava/util/List;
+    .locals 5
 
-    move-object v4, v11
+    if-nez p0, :cond_0
 
-    move-object/from16 v5, p1
+    invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
 
-    invoke-direct/range {v4 .. v10}, Lktp;-><init>(Landroidx/wear/ambient/AmbientMode$AmbientController;I[B[B[B[B)V
+    move-result-object p0
 
-    const-wide v4, 0x3ff199999999999aL    # 1.1
+    return-object p0
 
-    invoke-virtual {v1, v4, v5, v11}, Lkts;->b(DLktr;)V
+    :cond_0
+    array-length v0, p0
 
-    new-instance v1, Lkts;
+    new-instance v1, Ljava/util/ArrayList;
 
-    invoke-direct {v1}, Lkts;-><init>()V
+    invoke-direct {v1, v0}, Ljava/util/ArrayList;-><init>(I)V
 
-    iput-object v1, v0, Lktq;->c:Lkts;
+    const/4 v2, 0x0
 
-    new-instance v11, Lktp;
+    :goto_0
+    if-ge v2, v0, :cond_1
 
-    const/4 v6, 0x3
+    aget-object v3, p0, v2
 
-    move-object v4, v11
+    invoke-static {v3}, Lmip;->dk(Ljava/lang/Object;)Ljava/lang/Object;
 
-    move-object/from16 v5, p1
+    const/4 v4, 0x3
 
-    invoke-direct/range {v4 .. v10}, Lktp;-><init>(Landroidx/wear/ambient/AmbientMode$AmbientController;I[B[B[B[B)V
+    invoke-static {v3, v4}, Landroid/util/Base64;->encodeToString([BI)Ljava/lang/String;
 
-    invoke-virtual {v1, v2, v3, v11}, Lkts;->b(DLktr;)V
+    move-result-object v3
 
-    new-instance v2, Lktp;
+    invoke-interface {v1, v3}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    const/4 v14, 0x4
+    add-int/lit8 v2, v2, 0x1
 
-    const/16 v17, 0x0
+    goto :goto_0
 
-    const/16 v18, 0x0
+    :cond_1
+    invoke-static {v1}, Ljava/util/Collections;->sort(Ljava/util/List;)V
 
-    move-object v12, v2
+    return-object v1
+.end method
 
-    move-object/from16 v13, p1
+.method private static c([I)Ljava/util/List;
+    .locals 5
 
-    invoke-direct/range {v12 .. v18}, Lktp;-><init>(Landroidx/wear/ambient/AmbientMode$AmbientController;I[B[B[B[B)V
+    if-nez p0, :cond_0
 
-    invoke-virtual {v1, v2}, Lkts;->c(Lktr;)V
+    invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
 
-    new-instance v1, Lkts;
+    move-result-object p0
 
-    invoke-direct {v1}, Lkts;-><init>()V
+    return-object p0
 
-    iput-object v1, v0, Lktq;->d:Lkts;
+    :cond_0
+    array-length v0, p0
 
-    new-instance v9, Lktp;
+    new-instance v1, Ljava/util/ArrayList;
 
-    const/4 v4, 0x5
+    shr-int/lit8 v0, v0, 0x1
 
-    const/4 v5, 0x0
+    invoke-direct {v1, v0}, Ljava/util/ArrayList;-><init>(I)V
 
-    const/4 v6, 0x0
+    const/4 v0, 0x0
 
-    move-object v2, v9
+    :goto_0
+    array-length v2, p0
 
-    move-object/from16 v3, p1
+    if-ge v0, v2, :cond_1
 
-    invoke-direct/range {v2 .. v8}, Lktp;-><init>(Landroidx/wear/ambient/AmbientMode$AmbientController;I[B[B[B[B)V
+    new-instance v2, Lktw;
 
-    const-wide v2, 0x405f400000000000L    # 125.0
+    aget v3, p0, v0
 
-    invoke-virtual {v1, v2, v3, v9}, Lkts;->b(DLktr;)V
+    add-int/lit8 v4, v0, 0x1
 
-    new-instance v2, Lktp;
+    aget v4, p0, v4
 
-    const/4 v12, 0x6
+    invoke-direct {v2, v3, v4}, Lktw;-><init>(II)V
 
-    const/4 v13, 0x0
+    invoke-interface {v1, v2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    const/4 v14, 0x0
+    add-int/lit8 v0, v0, 0x2
 
-    move-object v10, v2
+    goto :goto_0
 
-    move-object/from16 v11, p1
+    :cond_1
+    invoke-static {v1}, Ljava/util/Collections;->sort(Ljava/util/List;)V
 
-    invoke-direct/range {v10 .. v16}, Lktp;-><init>(Landroidx/wear/ambient/AmbientMode$AmbientController;I[B[B[B[B)V
+    return-object v1
+.end method
 
-    invoke-virtual {v1, v2}, Lkts;->c(Lktr;)V
+.method private static d(Ljava/lang/StringBuilder;Ljava/lang/String;[[B)V
+    .locals 5
+
+    invoke-virtual {p0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string p1, "="
+
+    invoke-virtual {p0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    if-nez p2, :cond_0
+
+    const-string p1, "null"
+
+    invoke-virtual {p0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    return-void
+
+    :cond_0
+    const-string p1, "("
+
+    invoke-virtual {p0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    array-length p1, p2
+
+    const/4 v0, 0x0
+
+    const/4 v1, 0x1
+
+    const/4 v2, 0x0
+
+    :goto_0
+    if-ge v2, p1, :cond_2
+
+    aget-object v3, p2, v2
+
+    if-nez v1, :cond_1
+
+    const-string v1, ", "
+
+    invoke-virtual {p0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    :cond_1
+    const-string v1, "\'"
+
+    invoke-virtual {p0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-static {v3}, Lmip;->dk(Ljava/lang/Object;)Ljava/lang/Object;
+
+    const/4 v4, 0x3
+
+    invoke-static {v3, v4}, Landroid/util/Base64;->encodeToString([BI)Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-virtual {p0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {p0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    add-int/lit8 v2, v2, 0x1
+
+    const/4 v1, 0x0
+
+    goto :goto_0
+
+    :cond_2
+    const-string p1, ")"
+
+    invoke-virtual {p0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final declared-synchronized a(JJ)V
-    .locals 8
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 3
 
-    monitor-enter p0
+    instance-of v0, p1, Lktq;
 
-    :try_start_0
-    iget-wide v0, p0, Lktq;->e:D
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    const/4 v1, 0x0
 
-    const-wide/16 v2, 0x0
+    if-eqz v0, :cond_0
 
-    const-wide v4, 0x412e848000000000L    # 1000000.0
+    check-cast p1, Lktq;
 
-    cmpl-double v6, v0, v2
+    iget-object v0, p0, Lktq;->a:Ljava/lang/String;
 
-    long-to-double p1, p1
+    iget-object v2, p1, Lktq;->a:Ljava/lang/String;
 
-    invoke-static {p1, p2}, Ljava/lang/Double;->isNaN(D)Z
+    invoke-static {v0, v2}, Lmip;->ce(Ljava/lang/Object;Ljava/lang/Object;)Z
 
-    div-double/2addr p1, v4
+    move-result v0
 
-    if-lez v6, :cond_0
+    if-eqz v0, :cond_0
 
-    sub-double v0, p1, v0
+    iget-object v0, p0, Lktq;->b:[B
 
-    :try_start_1
-    iget-object v2, p0, Lktq;->a:Lkts;
+    iget-object v2, p1, Lktq;->b:[B
 
-    invoke-virtual {v2, v0, v1}, Lkts;->a(D)V
+    invoke-static {v0, v2}, Ljava/util/Arrays;->equals([B[B)Z
 
-    iget-object v2, p0, Lktq;->b:Lkts;
+    move-result v0
 
-    iget-wide v6, p0, Lktq;->f:D
+    if-eqz v0, :cond_0
 
-    div-double/2addr v0, v6
+    iget-object v0, p0, Lktq;->c:[[B
 
-    invoke-virtual {v2, v0, v1}, Lkts;->a(D)V
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+    invoke-static {v0}, Lktq;->b([[B)Ljava/util/List;
+
+    move-result-object v0
+
+    iget-object v2, p1, Lktq;->c:[[B
+
+    invoke-static {v2}, Lktq;->b([[B)Ljava/util/List;
+
+    move-result-object v2
+
+    invoke-static {v0, v2}, Lmip;->ce(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lktq;->d:[[B
+
+    invoke-static {v0}, Lktq;->b([[B)Ljava/util/List;
+
+    move-result-object v0
+
+    iget-object v2, p1, Lktq;->d:[[B
+
+    invoke-static {v2}, Lktq;->b([[B)Ljava/util/List;
+
+    move-result-object v2
+
+    invoke-static {v0, v2}, Lmip;->ce(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lktq;->e:[[B
+
+    invoke-static {v0}, Lktq;->b([[B)Ljava/util/List;
+
+    move-result-object v0
+
+    iget-object v2, p1, Lktq;->e:[[B
+
+    invoke-static {v2}, Lktq;->b([[B)Ljava/util/List;
+
+    move-result-object v2
+
+    invoke-static {v0, v2}, Lmip;->ce(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lktq;->f:[[B
+
+    invoke-static {v0}, Lktq;->b([[B)Ljava/util/List;
+
+    move-result-object v0
+
+    iget-object v2, p1, Lktq;->f:[[B
+
+    invoke-static {v2}, Lktq;->b([[B)Ljava/util/List;
+
+    move-result-object v2
+
+    invoke-static {v0, v2}, Lmip;->ce(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lktq;->g:[I
+
+    invoke-static {v0}, Lktq;->a([I)Ljava/util/List;
+
+    move-result-object v0
+
+    iget-object v2, p1, Lktq;->g:[I
+
+    invoke-static {v2}, Lktq;->a([I)Ljava/util/List;
+
+    move-result-object v2
+
+    invoke-static {v0, v2}, Lmip;->ce(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lktq;->h:[[B
+
+    invoke-static {v0}, Lktq;->b([[B)Ljava/util/List;
+
+    move-result-object v0
+
+    iget-object v2, p1, Lktq;->h:[[B
+
+    invoke-static {v2}, Lktq;->b([[B)Ljava/util/List;
+
+    move-result-object v2
+
+    invoke-static {v0, v2}, Lmip;->ce(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lktq;->i:[I
+
+    invoke-static {v0}, Lktq;->c([I)Ljava/util/List;
+
+    move-result-object v0
+
+    iget-object p1, p1, Lktq;->i:[I
+
+    invoke-static {p1}, Lktq;->c([I)Ljava/util/List;
+
+    move-result-object p1
+
+    invoke-static {v0, p1}, Lmip;->ce(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result p1
+
+    if-eqz p1, :cond_0
+
+    const/4 p1, 0x1
+
+    return p1
 
     :cond_0
-    long-to-double p3, p3
+    return v1
+.end method
 
-    invoke-static {p3, p4}, Ljava/lang/Double;->isNaN(D)Z
+.method public final toString()Ljava/lang/String;
+    .locals 6
 
-    div-double/2addr p3, v4
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    :try_start_2
-    iput-wide p1, p0, Lktq;->e:D
+    const-string v1, "ExperimentTokens"
 
-    iput-wide p3, p0, Lktq;->f:D
-    :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_0
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    monitor-exit p0
+    const-string v1, "("
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v1, p0, Lktq;->a:Ljava/lang/String;
+
+    const-string v2, "null"
+
+    const-string v3, "\'"
+
+    if-nez v1, :cond_0
+
+    move-object v1, v2
+
+    goto :goto_0
+
+    :cond_0
+    invoke-virtual {v1}, Ljava/lang/String;->length()I
+
+    move-result v4
+
+    new-instance v5, Ljava/lang/StringBuilder;
+
+    add-int/lit8 v4, v4, 0x2
+
+    invoke-direct {v5, v4}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    invoke-virtual {v5, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v5, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v5, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    :goto_0
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v1, p0, Lktq;->b:[B
+
+    const-string v4, ", direct=="
+
+    invoke-virtual {v0, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    if-nez v1, :cond_1
+
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    goto :goto_1
+
+    :cond_1
+    invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const/4 v2, 0x3
+
+    invoke-static {v1, v2}, Landroid/util/Base64;->encodeToString([BI)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    :goto_1
+    const-string v1, ", "
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v2, p0, Lktq;->c:[[B
+
+    const-string v3, "GAIA="
+
+    invoke-static {v0, v3, v2}, Lktq;->d(Ljava/lang/StringBuilder;Ljava/lang/String;[[B)V
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v2, p0, Lktq;->d:[[B
+
+    const-string v3, "PSEUDO="
+
+    invoke-static {v0, v3, v2}, Lktq;->d(Ljava/lang/StringBuilder;Ljava/lang/String;[[B)V
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v2, p0, Lktq;->e:[[B
+
+    const-string v3, "ALWAYS="
+
+    invoke-static {v0, v3, v2}, Lktq;->d(Ljava/lang/StringBuilder;Ljava/lang/String;[[B)V
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v2, p0, Lktq;->f:[[B
+
+    const-string v3, "OTHER="
+
+    invoke-static {v0, v3, v2}, Lktq;->d(Ljava/lang/StringBuilder;Ljava/lang/String;[[B)V
+
+    const-string v2, ", weak="
+
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v2, p0, Lktq;->g:[I
+
+    invoke-static {v2}, Ljava/util/Arrays;->toString([I)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v1, p0, Lktq;->h:[[B
+
+    const-string v2, "directs="
+
+    invoke-static {v0, v2, v1}, Lktq;->d(Ljava/lang/StringBuilder;Ljava/lang/String;[[B)V
+
+    const-string v1, ", genDims="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v1, p0, Lktq;->i:[I
+
+    invoke-static {v1}, Lktq;->c([I)Ljava/util/List;
+
+    move-result-object v1
+
+    invoke-interface {v1}, Ljava/util/List;->toArray()[Ljava/lang/Object;
+
+    move-result-object v1
+
+    invoke-static {v1}, Ljava/util/Arrays;->toString([Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v1, ")"
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public final writeToParcel(Landroid/os/Parcel;I)V
+    .locals 2
+
+    invoke-static {p1}, Lmip;->ct(Landroid/os/Parcel;)I
+
+    move-result p2
+
+    iget-object v0, p0, Lktq;->a:Ljava/lang/String;
+
+    const/4 v1, 0x2
+
+    invoke-static {p1, v1, v0}, Lmip;->cI(Landroid/os/Parcel;ILjava/lang/String;)V
+
+    iget-object v0, p0, Lktq;->b:[B
+
+    const/4 v1, 0x3
+
+    invoke-static {p1, v1, v0}, Lmip;->cD(Landroid/os/Parcel;I[B)V
+
+    iget-object v0, p0, Lktq;->c:[[B
+
+    const/4 v1, 0x4
+
+    invoke-static {p1, v1, v0}, Lmip;->cE(Landroid/os/Parcel;I[[B)V
+
+    iget-object v0, p0, Lktq;->d:[[B
+
+    const/4 v1, 0x5
+
+    invoke-static {p1, v1, v0}, Lmip;->cE(Landroid/os/Parcel;I[[B)V
+
+    iget-object v0, p0, Lktq;->e:[[B
+
+    const/4 v1, 0x6
+
+    invoke-static {p1, v1, v0}, Lmip;->cE(Landroid/os/Parcel;I[[B)V
+
+    iget-object v0, p0, Lktq;->f:[[B
+
+    const/4 v1, 0x7
+
+    invoke-static {p1, v1, v0}, Lmip;->cE(Landroid/os/Parcel;I[[B)V
+
+    iget-object v0, p0, Lktq;->g:[I
+
+    const/16 v1, 0x8
+
+    invoke-static {p1, v1, v0}, Lmip;->cG(Landroid/os/Parcel;I[I)V
+
+    iget-object v0, p0, Lktq;->h:[[B
+
+    const/16 v1, 0x9
+
+    invoke-static {p1, v1, v0}, Lmip;->cE(Landroid/os/Parcel;I[[B)V
+
+    iget-object v0, p0, Lktq;->i:[I
+
+    const/16 v1, 0xa
+
+    invoke-static {p1, v1, v0}, Lmip;->cG(Landroid/os/Parcel;I[I)V
+
+    invoke-static {p1, p2}, Lmip;->cv(Landroid/os/Parcel;I)V
 
     return-void
-
-    :catchall_0
-    move-exception p1
-
-    monitor-exit p0
-
-    throw p1
 .end method

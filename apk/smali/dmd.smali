@@ -1,22 +1,36 @@
-.class public final Ldmd;
-.super Ljava/lang/Object;
-
-
-# static fields
-.field public static final a:Lday;
+.class public Ldmd;
+.super Ldmc;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
+.method public constructor <init>()V
+    .locals 0
 
-    new-instance v0, Lday;
+    invoke-direct {p0}, Ldmc;-><init>()V
 
-    const/16 v1, 0xf
+    return-void
+.end method
 
-    invoke-direct {v0, v1}, Lday;-><init>(I)V
+.method public constructor <init>(Ljava/lang/String;)V
+    .locals 0
 
-    sput-object v0, Ldmd;->a:Lday;
+    invoke-direct {p0, p1}, Ldmc;-><init>(Ljava/lang/String;)V
+
+    return-void
+.end method
+
+.method public constructor <init>(Ljava/lang/String;Ljava/lang/Throwable;)V
+    .locals 0
+
+    invoke-direct {p0, p1, p2}, Ldmc;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
+
+    return-void
+.end method
+
+.method public constructor <init>(Ljava/lang/Throwable;)V
+    .locals 0
+
+    invoke-direct {p0, p1}, Ldmc;-><init>(Ljava/lang/Throwable;)V
 
     return-void
 .end method

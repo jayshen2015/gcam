@@ -1,217 +1,321 @@
 .class public final Lrf;
 .super Ljava/lang/Object;
 
+# interfaces
+.implements Landroid/os/Parcelable;
+
+
+# static fields
+.field public static final CREATOR:Landroid/os/Parcelable$Creator;
+
 
 # instance fields
-.field public final a:Landroid/content/Context;
+.field public a:I
 
-.field public final b:Lrg;
+.field public b:I
 
-.field public final c:Lre;
+.field public c:I
 
-.field public final d:Lbkb;
+.field public d:[I
 
-.field public final e:Lbkb;
+.field public e:I
+
+.field public f:[I
+
+.field public g:Ljava/util/List;
+
+.field public h:Z
+
+.field public i:Z
+
+.field public j:Z
 
 
 # direct methods
-.method public constructor <init>(Landroid/content/Context;Lrg;Lbkb;Lbkb;Lre;[B[B[B[B)V
+.method static constructor <clinit>()V
+    .locals 2
+
+    new-instance v0, Lba;
+
+    const/16 v1, 0x14
+
+    invoke-direct {v0, v1}, Lba;-><init>(I)V
+
+    sput-object v0, Lrf;->CREATOR:Landroid/os/Parcelable$Creator;
+
+    return-void
+.end method
+
+.method public constructor <init>()V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lrf;->a:Landroid/content/Context;
+    return-void
+.end method
 
-    iput-object p2, p0, Lrf;->b:Lrg;
+.method public constructor <init>(Landroid/os/Parcel;)V
+    .locals 3
 
-    iput-object p3, p0, Lrf;->d:Lbkb;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p4, p0, Lrf;->e:Lbkb;
+    invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
-    iput-object p5, p0, Lrf;->c:Lre;
+    move-result v0
+
+    iput v0, p0, Lrf;->a:I
+
+    invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
+
+    move-result v0
+
+    iput v0, p0, Lrf;->b:I
+
+    invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
+
+    move-result v0
+
+    iput v0, p0, Lrf;->c:I
+
+    if-lez v0, :cond_0
+
+    new-array v0, v0, [I
+
+    iput-object v0, p0, Lrf;->d:[I
+
+    invoke-virtual {p1, v0}, Landroid/os/Parcel;->readIntArray([I)V
+
+    :cond_0
+    invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
+
+    move-result v0
+
+    iput v0, p0, Lrf;->e:I
+
+    if-lez v0, :cond_1
+
+    new-array v0, v0, [I
+
+    iput-object v0, p0, Lrf;->f:[I
+
+    invoke-virtual {p1, v0}, Landroid/os/Parcel;->readIntArray([I)V
+
+    :cond_1
+    invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
+
+    move-result v0
+
+    const/4 v1, 0x0
+
+    const/4 v2, 0x1
+
+    if-ne v0, v2, :cond_2
+
+    const/4 v0, 0x1
+
+    goto :goto_0
+
+    :cond_2
+    const/4 v0, 0x0
+
+    :goto_0
+    iput-boolean v0, p0, Lrf;->h:Z
+
+    invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
+
+    move-result v0
+
+    if-ne v0, v2, :cond_3
+
+    const/4 v0, 0x1
+
+    goto :goto_1
+
+    :cond_3
+    const/4 v0, 0x0
+
+    :goto_1
+    iput-boolean v0, p0, Lrf;->i:Z
+
+    invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
+
+    move-result v0
+
+    if-ne v0, v2, :cond_4
+
+    const/4 v1, 0x1
+
+    goto :goto_2
+
+    :cond_4
+    :goto_2
+    iput-boolean v1, p0, Lrf;->j:Z
+
+    const-class v0, Lrd;
+
+    invoke-virtual {v0}, Ljava/lang/Class;->getClassLoader()Ljava/lang/ClassLoader;
+
+    move-result-object v0
+
+    invoke-virtual {p1, v0}, Landroid/os/Parcel;->readArrayList(Ljava/lang/ClassLoader;)Ljava/util/ArrayList;
+
+    move-result-object p1
+
+    iput-object p1, p0, Lrf;->g:Ljava/util/List;
+
+    return-void
+.end method
+
+.method public constructor <init>(Lrf;)V
+    .locals 1
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iget v0, p1, Lrf;->c:I
+
+    iput v0, p0, Lrf;->c:I
+
+    iget v0, p1, Lrf;->a:I
+
+    iput v0, p0, Lrf;->a:I
+
+    iget v0, p1, Lrf;->b:I
+
+    iput v0, p0, Lrf;->b:I
+
+    iget-object v0, p1, Lrf;->d:[I
+
+    iput-object v0, p0, Lrf;->d:[I
+
+    iget v0, p1, Lrf;->e:I
+
+    iput v0, p0, Lrf;->e:I
+
+    iget-object v0, p1, Lrf;->f:[I
+
+    iput-object v0, p0, Lrf;->f:[I
+
+    iget-boolean v0, p1, Lrf;->h:Z
+
+    iput-boolean v0, p0, Lrf;->h:Z
+
+    iget-boolean v0, p1, Lrf;->i:Z
+
+    iput-boolean v0, p0, Lrf;->i:Z
+
+    iget-boolean v0, p1, Lrf;->j:Z
+
+    iput-boolean v0, p0, Lrf;->j:Z
+
+    iget-object p1, p1, Lrf;->g:Ljava/util/List;
+
+    iput-object p1, p0, Lrf;->g:Ljava/util/List;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 4
+.method public final a()V
+    .locals 1
 
-    const/4 v0, 0x1
+    const/4 v0, 0x0
 
-    if-ne p0, p1, :cond_0
+    iput-object v0, p0, Lrf;->d:[I
+
+    const/4 v0, 0x0
+
+    iput v0, p0, Lrf;->c:I
+
+    const/4 v0, -0x1
+
+    iput v0, p0, Lrf;->a:I
+
+    iput v0, p0, Lrf;->b:I
+
+    return-void
+.end method
+
+.method public final b()V
+    .locals 2
+
+    const/4 v0, 0x0
+
+    iput-object v0, p0, Lrf;->d:[I
+
+    const/4 v1, 0x0
+
+    iput v1, p0, Lrf;->c:I
+
+    iput v1, p0, Lrf;->e:I
+
+    iput-object v0, p0, Lrf;->f:[I
+
+    iput-object v0, p0, Lrf;->g:Ljava/util/List;
+
+    return-void
+.end method
+
+.method public final describeContents()I
+    .locals 1
+
+    const/4 v0, 0x0
 
     return v0
+.end method
+
+.method public final writeToParcel(Landroid/os/Parcel;I)V
+    .locals 0
+
+    iget p2, p0, Lrf;->a:I
+
+    invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeInt(I)V
+
+    iget p2, p0, Lrf;->b:I
+
+    invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeInt(I)V
+
+    iget p2, p0, Lrf;->c:I
+
+    invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeInt(I)V
+
+    iget p2, p0, Lrf;->c:I
+
+    if-lez p2, :cond_0
+
+    iget-object p2, p0, Lrf;->d:[I
+
+    invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeIntArray([I)V
 
     :cond_0
-    instance-of v1, p1, Lrf;
+    iget p2, p0, Lrf;->e:I
 
-    const/4 v2, 0x0
+    invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeInt(I)V
 
-    if-nez v1, :cond_1
+    iget p2, p0, Lrf;->e:I
 
-    return v2
+    if-lez p2, :cond_1
+
+    iget-object p2, p0, Lrf;->f:[I
+
+    invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeIntArray([I)V
 
     :cond_1
-    check-cast p1, Lrf;
+    iget-boolean p2, p0, Lrf;->h:Z
 
-    iget-object v1, p0, Lrf;->a:Landroid/content/Context;
+    invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeInt(I)V
 
-    iget-object v3, p1, Lrf;->a:Landroid/content/Context;
+    iget-boolean p2, p0, Lrf;->i:Z
 
-    invoke-static {v1, v3}, Lone;->c(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeInt(I)V
 
-    move-result v1
+    iget-boolean p2, p0, Lrf;->j:Z
 
-    if-nez v1, :cond_2
+    invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeInt(I)V
 
-    return v2
+    iget-object p2, p0, Lrf;->g:Ljava/util/List;
 
-    :cond_2
-    iget-object v1, p0, Lrf;->b:Lrg;
+    invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeList(Ljava/util/List;)V
 
-    iget-object v3, p1, Lrf;->b:Lrg;
-
-    invoke-static {v1, v3}, Lone;->c(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-nez v1, :cond_3
-
-    return v2
-
-    :cond_3
-    iget-object v1, p0, Lrf;->d:Lbkb;
-
-    iget-object v3, p1, Lrf;->d:Lbkb;
-
-    invoke-static {v1, v3}, Lone;->c(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-nez v1, :cond_4
-
-    return v2
-
-    :cond_4
-    iget-object v1, p0, Lrf;->e:Lbkb;
-
-    iget-object v3, p1, Lrf;->e:Lbkb;
-
-    invoke-static {v1, v3}, Lone;->c(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-nez v1, :cond_5
-
-    return v2
-
-    :cond_5
-    iget-object v1, p0, Lrf;->c:Lre;
-
-    iget-object p1, p1, Lrf;->c:Lre;
-
-    invoke-static {v1, p1}, Lone;->c(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result p1
-
-    if-nez p1, :cond_6
-
-    return v2
-
-    :cond_6
-    return v0
-.end method
-
-.method public final hashCode()I
-    .locals 2
-
-    iget-object v0, p0, Lrf;->a:Landroid/content/Context;
-
-    invoke-virtual {v0}, Landroid/content/Context;->hashCode()I
-
-    move-result v0
-
-    mul-int/lit16 v0, v0, 0x3c1
-
-    iget-object v1, p0, Lrf;->d:Lbkb;
-
-    invoke-virtual {v1}, Lbkb;->hashCode()I
-
-    move-result v1
-
-    add-int/2addr v0, v1
-
-    iget-object v1, p0, Lrf;->e:Lbkb;
-
-    invoke-virtual {v1}, Lbkb;->hashCode()I
-
-    move-result v1
-
-    mul-int/lit8 v0, v0, 0x1f
-
-    add-int/2addr v0, v1
-
-    mul-int/lit8 v0, v0, 0x1f
-
-    return v0
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .locals 2
-
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v1, "Config(appContext="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-object v1, p0, Lrf;->a:Landroid/content/Context;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const-string v1, ", threadConfig="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-object v1, p0, Lrf;->b:Lrg;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const-string v1, ", cameraMetadataConfig="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-object v1, p0, Lrf;->d:Lbkb;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const-string v1, ", cameraBackendConfig="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-object v1, p0, Lrf;->e:Lbkb;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const-string v1, ", cameraInteropConfig="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-object v1, p0, Lrf;->c:Lre;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const/16 v1, 0x29
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    return-object v0
+    return-void
 .end method

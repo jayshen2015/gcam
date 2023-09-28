@@ -1,76 +1,110 @@
-.class public final Ljzo;
-.super Ljava/lang/Object;
-
-# interfaces
-.implements Logk;
+.class Ljzo;
+.super Ljzi;
 
 
 # instance fields
-.field private final a:Loiw;
-
-.field private final b:Loiw;
+.field final synthetic b:Ljzq;
 
 
 # direct methods
-.method public constructor <init>(Loiw;Loiw;)V
+.method public constructor <init>(Ljzq;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Ljzo;->b:Ljzq;
 
-    iput-object p1, p0, Ljzo;->a:Loiw;
-
-    iput-object p2, p0, Ljzo;->b:Loiw;
+    invoke-direct {p0}, Ljzi;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Lklj;
-    .locals 3
+.method public final a(Z)V
+    .locals 2
 
-    iget-object v0, p0, Ljzo;->a:Loiw;
+    iget-object p1, p0, Ljzo;->b:Ljzq;
 
-    check-cast v0, Logl;
+    const/4 v0, 0x0
 
-    iget-object v0, v0, Logl;->a:Ljava/lang/Object;
+    const/4 v1, 0x1
 
-    check-cast v0, Lmqp;
+    invoke-virtual {p1, v0, v1}, Ljzq;->n(ZZ)V
 
-    iget-object v1, p0, Ljzo;->b:Loiw;
-
-    invoke-interface {v1}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Lklj;
-
-    invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    invoke-virtual {v0}, Lmqp;->g()Z
-
-    move-result v2
-
-    if-eqz v2, :cond_0
-
-    invoke-virtual {v0}, Lmqp;->c()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lklj;
-
-    return-object v0
-
-    :cond_0
-    return-object v1
+    return-void
 .end method
 
-.method public final bridge synthetic get()Ljava/lang/Object;
+.method public final b(Z)V
     .locals 1
 
-    invoke-virtual {p0}, Ljzo;->a()Lklj;
+    iget-object p1, p0, Ljzo;->b:Ljzq;
+
+    const/4 v0, 0x0
+
+    invoke-virtual {p1, v0, v0}, Ljzq;->n(ZZ)V
+
+    return-void
+.end method
+
+.method public c(Z)V
+    .locals 2
+
+    iget-object v0, p0, Ljzo;->b:Ljzq;
+
+    const/4 v1, 0x1
+
+    invoke-virtual {v0, p1, v1}, Ljzq;->l(ZZ)V
+
+    return-void
+.end method
+
+.method public d()V
+    .locals 0
+
+    return-void
+.end method
+
+.method public final f()V
+    .locals 3
+
+    sget-object v0, Ljzq;->f:Louj;
+
+    invoke-virtual {v0}, Loue;->c()Lova;
 
     move-result-object v0
 
-    return-object v0
+    const-string v1, "Enter [Visible] state"
+
+    const/16 v2, 0xddd
+
+    invoke-static {v0, v1, v2}, Ld;->v(Lova;Ljava/lang/String;C)V
+
+    return-void
+.end method
+
+.method public gt(Z)V
+    .locals 2
+
+    iget-object v0, p0, Ljzo;->b:Ljzq;
+
+    const/4 v1, 0x0
+
+    invoke-virtual {v0, p1, v1}, Ljzq;->l(ZZ)V
+
+    return-void
+.end method
+
+.method public i()V
+    .locals 0
+
+    return-void
+.end method
+
+.method public final j()V
+    .locals 1
+
+    iget-object v0, p0, Ljzo;->b:Ljzq;
+
+    invoke-virtual {v0}, Ljzq;->m()V
+
+    return-void
 .end method

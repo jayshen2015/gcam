@@ -6,7 +6,7 @@
 
 
 # instance fields
-.field public synthetic f$0:Lcom/google/android/apps/camera/bottombar/CameraSwitchButton;
+.field public final synthetic f$0:Lcom/google/android/apps/camera/bottombar/CameraSwitchButton;
 
 
 # direct methods

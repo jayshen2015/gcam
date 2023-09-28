@@ -2,483 +2,350 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lkpb;
+.implements Lpys;
 
 
 # instance fields
-.field public final a:J
+.field private final a:Lqkg;
 
-.field public final b:Ljava/util/List;
+.field private final b:Lqkg;
 
-.field public final c:Lcom/google/googlex/gcam/YuvReadView;
+.field private final c:Lqkg;
+
+.field private final d:Lqkg;
+
+.field private final synthetic e:I
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/googlex/gcam/YuvImage;J)V
+.method public constructor <init>(Lqkg;Lqkg;Lqkg;Lqkg;I)V
     .locals 0
 
-    invoke-static {p1}, Lnsy;->e(Lcom/google/googlex/gcam/YuvImage;)Lcom/google/googlex/gcam/YuvReadView;
+    iput p5, p0, Leej;->e:I
 
-    move-result-object p1
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0, p1, p2, p3}, Leej;-><init>(Lcom/google/googlex/gcam/YuvReadView;J)V
+    iput-object p1, p0, Leej;->a:Lqkg;
+
+    iput-object p2, p0, Leej;->b:Lqkg;
+
+    iput-object p3, p0, Leej;->c:Lqkg;
+
+    iput-object p4, p0, Leej;->d:Lqkg;
 
     return-void
 .end method
 
-.method public constructor <init>(Lcom/google/googlex/gcam/YuvReadView;J)V
-    .locals 19
+.method public constructor <init>(Lqkg;Lqkg;Lqkg;Lqkg;I[B)V
+    .locals 0
 
-    move-object/from16 v0, p0
+    iput p5, p0, Leej;->e:I
 
-    move-object/from16 v1, p1
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Leej;->c:Lqkg;
 
-    invoke-virtual/range {p1 .. p1}, Lcom/google/googlex/gcam/YuvReadView;->a()Lnrj;
+    iput-object p2, p0, Leej;->a:Lqkg;
 
-    move-result-object v2
+    iput-object p3, p0, Leej;->d:Lqkg;
 
-    sget-object v3, Lnrj;->b:Lnrj;
-
-    if-eq v2, v3, :cond_1
-
-    invoke-virtual/range {p1 .. p1}, Lcom/google/googlex/gcam/YuvReadView;->a()Lnrj;
-
-    move-result-object v2
-
-    sget-object v3, Lnrj;->c:Lnrj;
-
-    if-ne v2, v3, :cond_0
-
-    const/4 v2, 0x1
-
-    goto :goto_0
-
-    :cond_0
-    const/4 v2, 0x0
-
-    goto :goto_0
-
-    :cond_1
-    const/4 v2, 0x1
-
-    :goto_0
-    const-string v3, "Format of yuvReadView can only be NV12 or NV21!"
-
-    invoke-static {v2, v3}, Lmoz;->f(ZLjava/lang/Object;)V
-
-    new-instance v2, Lcom/google/googlex/gcam/GrayReadViewU8;
-
-    iget-wide v6, v1, Lcom/google/googlex/gcam/YuvReadView;->a:J
-
-    invoke-static {v6, v7, v1}, Lcom/google/googlex/gcam/GcamModuleJNI;->YuvReadView_luma(JLcom/google/googlex/gcam/YuvReadView;)J
-
-    move-result-wide v6
-
-    invoke-direct {v2, v6, v7}, Lcom/google/googlex/gcam/GrayReadViewU8;-><init>(J)V
-
-    new-instance v3, Lcom/google/googlex/gcam/InterleavedReadViewU8;
-
-    iget-wide v6, v1, Lcom/google/googlex/gcam/YuvReadView;->a:J
-
-    invoke-static {v6, v7, v1}, Lcom/google/googlex/gcam/GcamModuleJNI;->YuvReadView_chroma(JLcom/google/googlex/gcam/YuvReadView;)J
-
-    move-result-wide v6
-
-    invoke-direct {v3, v6, v7}, Lcom/google/googlex/gcam/InterleavedReadViewU8;-><init>(J)V
-
-    invoke-virtual {v2}, Lcom/google/googlex/gcam/GrayReadViewU8;->a()I
-
-    move-result v6
-
-    iget-wide v7, v2, Lcom/google/googlex/gcam/GrayReadViewU8;->a:J
-
-    invoke-static {v7, v8, v2}, Lcom/google/googlex/gcam/GcamModuleJNI;->GrayReadViewU8_width(JLcom/google/googlex/gcam/GrayReadViewU8;)I
-
-    move-result v7
-
-    add-int/lit8 v7, v7, -0x1
-
-    mul-int v6, v6, v7
-
-    invoke-virtual {v2}, Lcom/google/googlex/gcam/GrayReadViewU8;->b()I
-
-    move-result v7
-
-    iget-wide v8, v2, Lcom/google/googlex/gcam/GrayReadViewU8;->a:J
-
-    invoke-static {v8, v9, v2}, Lcom/google/googlex/gcam/GcamModuleJNI;->GrayReadViewU8_height(JLcom/google/googlex/gcam/GrayReadViewU8;)I
-
-    move-result v8
-
-    add-int/lit8 v8, v8, -0x1
-
-    mul-int v7, v7, v8
-
-    invoke-virtual {v3}, Lcom/google/googlex/gcam/InterleavedReadViewU8;->e()I
-
-    move-result v8
-
-    invoke-virtual {v3}, Lcom/google/googlex/gcam/InterleavedReadViewU8;->d()I
-
-    move-result v9
-
-    add-int/lit8 v9, v9, -0x1
-
-    mul-int v8, v8, v9
-
-    invoke-virtual {v3}, Lcom/google/googlex/gcam/InterleavedReadViewU8;->f()I
-
-    move-result v9
-
-    invoke-virtual {v3}, Lcom/google/googlex/gcam/InterleavedReadViewU8;->c()I
-
-    move-result v10
-
-    add-int/lit8 v10, v10, -0x1
-
-    mul-int v9, v9, v10
-
-    invoke-virtual {v3}, Lcom/google/googlex/gcam/InterleavedReadViewU8;->a()I
-
-    move-result v10
-
-    invoke-virtual {v3}, Lcom/google/googlex/gcam/InterleavedReadViewU8;->b()I
-
-    move-result v11
-
-    add-int/lit8 v11, v11, -0x1
-
-    mul-int v10, v10, v11
-
-    iget-wide v11, v2, Lcom/google/googlex/gcam/GrayReadViewU8;->a:J
-
-    invoke-static {v11, v12, v2}, Lcom/google/googlex/gcam/GcamModuleJNI;->GrayReadViewU8_data(JLcom/google/googlex/gcam/GrayReadViewU8;)J
-
-    move-result-wide v11
-
-    const-wide/16 v13, 0x0
-
-    cmp-long v15, v11, v13
-
-    if-nez v15, :cond_2
-
-    const/4 v11, 0x0
-
-    goto :goto_1
-
-    :cond_2
-    new-instance v13, Lnrf;
-
-    invoke-direct {v13, v11, v12}, Lnrf;-><init>(J)V
-
-    move-object v11, v13
-
-    :goto_1
-    int-to-long v12, v8
-
-    int-to-long v8, v9
-
-    int-to-long v14, v6
-
-    int-to-long v4, v10
-
-    int-to-long v6, v7
-
-    invoke-static {v11}, Lnrf;->a(Lnrf;)J
-
-    move-result-wide v10
-
-    const-wide/16 v16, 0x1
-
-    add-long v14, v14, v16
-
-    add-long/2addr v14, v6
-
-    long-to-int v6, v14
-
-    invoke-static {v10, v11, v6}, Lcom/google/googlex/gcam/BufferUtils;->b(JI)Ljava/nio/ByteBuffer;
-
-    move-result-object v6
-
-    invoke-virtual/range {p1 .. p1}, Lcom/google/googlex/gcam/YuvReadView;->a()Lnrj;
-
-    move-result-object v7
-
-    add-long v12, v12, v16
-
-    add-long/2addr v12, v8
-
-    add-long/2addr v12, v4
-
-    long-to-int v4, v12
-
-    sget-object v5, Lnrj;->b:Lnrj;
-
-    if-ne v7, v5, :cond_3
-
-    invoke-virtual {v3}, Lcom/google/googlex/gcam/InterleavedReadViewU8;->g()Lnrf;
-
-    move-result-object v5
-
-    invoke-static {v5}, Lnrf;->a(Lnrf;)J
-
-    move-result-wide v7
-
-    invoke-static {v7, v8, v4}, Lcom/google/googlex/gcam/BufferUtils;->b(JI)Ljava/nio/ByteBuffer;
-
-    move-result-object v5
-
-    invoke-virtual {v3}, Lcom/google/googlex/gcam/InterleavedReadViewU8;->g()Lnrf;
-
-    move-result-object v7
-
-    invoke-static {v7}, Lnrf;->a(Lnrf;)J
-
-    move-result-wide v7
-
-    invoke-virtual {v3}, Lcom/google/googlex/gcam/InterleavedReadViewU8;->a()I
-
-    move-result v9
-
-    int-to-long v9, v9
-
-    add-long/2addr v7, v9
-
-    invoke-static {v7, v8, v4}, Lcom/google/googlex/gcam/BufferUtils;->b(JI)Ljava/nio/ByteBuffer;
-
-    move-result-object v4
-
-    goto :goto_2
-
-    :cond_3
-    invoke-virtual {v3}, Lcom/google/googlex/gcam/InterleavedReadViewU8;->g()Lnrf;
-
-    move-result-object v5
-
-    invoke-static {v5}, Lnrf;->a(Lnrf;)J
-
-    move-result-wide v7
-
-    invoke-static {v7, v8, v4}, Lcom/google/googlex/gcam/BufferUtils;->b(JI)Ljava/nio/ByteBuffer;
-
-    move-result-object v5
-
-    invoke-virtual {v3}, Lcom/google/googlex/gcam/InterleavedReadViewU8;->g()Lnrf;
-
-    move-result-object v7
-
-    invoke-static {v7}, Lnrf;->a(Lnrf;)J
-
-    move-result-wide v7
-
-    invoke-virtual {v3}, Lcom/google/googlex/gcam/InterleavedReadViewU8;->a()I
-
-    move-result v9
-
-    int-to-long v9, v9
-
-    add-long/2addr v7, v9
-
-    invoke-static {v7, v8, v4}, Lcom/google/googlex/gcam/BufferUtils;->b(JI)Ljava/nio/ByteBuffer;
-
-    move-result-object v4
-
-    move-object/from16 v18, v5
-
-    move-object v5, v4
-
-    move-object/from16 v4, v18
-
-    :goto_2
-    move-wide/from16 v7, p2
-
-    iput-wide v7, v0, Leej;->a:J
-
-    iput-object v1, v0, Leej;->c:Lcom/google/googlex/gcam/YuvReadView;
-
-    const/4 v1, 0x3
-
-    new-array v1, v1, [Lkpa;
-
-    new-instance v7, Lkkv;
-
-    invoke-virtual {v2}, Lcom/google/googlex/gcam/GrayReadViewU8;->b()I
-
-    move-result v8
-
-    invoke-virtual {v2}, Lcom/google/googlex/gcam/GrayReadViewU8;->a()I
-
-    move-result v2
-
-    const/4 v9, 0x1
-
-    invoke-direct {v7, v6, v8, v2, v9}, Lkkv;-><init>(Ljava/nio/ByteBuffer;III)V
-
-    const/4 v2, 0x0
-
-    aput-object v7, v1, v2
-
-    new-instance v2, Lkkv;
-
-    invoke-virtual {v3}, Lcom/google/googlex/gcam/InterleavedReadViewU8;->f()I
-
-    move-result v6
-
-    invoke-virtual {v3}, Lcom/google/googlex/gcam/InterleavedReadViewU8;->e()I
-
-    move-result v7
-
-    invoke-direct {v2, v5, v6, v7, v9}, Lkkv;-><init>(Ljava/nio/ByteBuffer;III)V
-
-    aput-object v2, v1, v9
-
-    new-instance v2, Lkkv;
-
-    invoke-virtual {v3}, Lcom/google/googlex/gcam/InterleavedReadViewU8;->f()I
-
-    move-result v5
-
-    invoke-virtual {v3}, Lcom/google/googlex/gcam/InterleavedReadViewU8;->e()I
-
-    move-result v3
-
-    invoke-direct {v2, v4, v5, v3, v9}, Lkkv;-><init>(Ljava/nio/ByteBuffer;III)V
-
-    const/4 v3, 0x2
-
-    aput-object v2, v1, v3
-
-    invoke-static {v1}, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
-
-    move-result-object v1
-
-    iput-object v1, v0, Leej;->b:Ljava/util/List;
+    iput-object p4, p0, Leej;->b:Lqkg;
 
     return-void
 .end method
 
-.method public constructor <init>(Lcom/google/googlex/gcam/YuvWriteView;J)V
+.method public constructor <init>(Lqkg;Lqkg;Lqkg;Lqkg;I[C)V
     .locals 0
 
-    invoke-static {p1}, Lnsy;->f(Lcom/google/googlex/gcam/YuvWriteView;)Lcom/google/googlex/gcam/YuvReadView;
+    iput p5, p0, Leej;->e:I
 
-    move-result-object p1
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0, p1, p2, p3}, Leej;-><init>(Lcom/google/googlex/gcam/YuvReadView;J)V
+    iput-object p1, p0, Leej;->d:Lqkg;
+
+    iput-object p2, p0, Leej;->a:Lqkg;
+
+    iput-object p3, p0, Leej;->c:Lqkg;
+
+    iput-object p4, p0, Leej;->b:Lqkg;
 
     return-void
+.end method
+
+.method public static a(Lqkg;Lqkg;Lqkg;Lqkg;)Leej;
+    .locals 7
+
+    new-instance v6, Leej;
+
+    const/4 v5, 0x0
+
+    move-object v0, v6
+
+    move-object v1, p0
+
+    move-object v2, p1
+
+    move-object v3, p2
+
+    move-object v4, p3
+
+    invoke-direct/range {v0 .. v5}, Leej;-><init>(Lqkg;Lqkg;Lqkg;Lqkg;I)V
+
+    return-object v6
 .end method
 
 
 # virtual methods
-.method public final a()I
-    .locals 1
+.method public final b()Llco;
+    .locals 8
 
-    const/16 v0, 0x23
+    iget v0, p0, Leej;->e:I
 
-    return v0
-.end method
+    const/4 v1, 0x1
 
-.method public final b()I
-    .locals 3
+    const/4 v2, 0x0
 
-    iget-object v0, p0, Leej;->c:Lcom/google/googlex/gcam/YuvReadView;
+    const/4 v3, 0x2
 
-    iget-wide v1, v0, Lcom/google/googlex/gcam/YuvReadView;->a:J
+    packed-switch v0, :pswitch_data_0
 
-    invoke-static {v1, v2, v0}, Lcom/google/googlex/gcam/GcamModuleJNI;->YuvReadView_height(JLcom/google/googlex/gcam/YuvReadView;)I
+    iget-object v0, p0, Leej;->d:Lqkg;
 
-    move-result v0
+    invoke-interface {v0}, Lqkg;->get()Ljava/lang/Object;
 
-    return v0
-.end method
+    move-result-object v0
 
-.method public final c()I
-    .locals 3
+    check-cast v0, Llco;
 
-    iget-object v0, p0, Leej;->c:Lcom/google/googlex/gcam/YuvReadView;
+    iget-object v4, p0, Leej;->a:Lqkg;
 
-    iget-wide v1, v0, Lcom/google/googlex/gcam/YuvReadView;->a:J
+    invoke-interface {v4}, Lqkg;->get()Ljava/lang/Object;
 
-    invoke-static {v1, v2, v0}, Lcom/google/googlex/gcam/GcamModuleJNI;->YuvReadView_width(JLcom/google/googlex/gcam/YuvReadView;)I
+    move-result-object v4
 
-    move-result v0
+    check-cast v4, Llco;
 
-    return v0
-.end method
+    iget-object v5, p0, Leej;->c:Lqkg;
 
-.method public final close()V
-    .locals 0
+    check-cast v5, Lemh;
 
-    return-void
-.end method
+    invoke-virtual {v5}, Lemh;->a()Landroid/view/WindowManager;
 
-.method public final d()J
-    .locals 2
+    move-result-object v5
 
-    iget-wide v0, p0, Leej;->a:J
+    iget-object v6, p0, Leej;->b:Lqkg;
 
-    return-wide v0
-.end method
+    check-cast v6, Lemd;
 
-.method public final e()Landroid/graphics/Rect;
-    .locals 4
+    invoke-virtual {v6}, Lemd;->a()Landroid/content/Context;
 
-    new-instance v0, Landroid/graphics/Rect;
+    move-result-object v6
 
-    invoke-virtual {p0}, Leej;->c()I
+    new-instance v7, Lhxb;
 
-    move-result v1
+    invoke-direct {v7, v5, v6}, Lhxb;-><init>(Landroid/view/WindowManager;Landroid/content/Context;)V
 
-    invoke-virtual {p0}, Leej;->b()I
+    invoke-static {v4, v7}, Llcv;->j(Llco;Loiu;)Llco;
+
+    move-result-object v4
+
+    new-array v3, v3, [Llco;
+
+    aput-object v0, v3, v2
+
+    aput-object v4, v3, v1
+
+    invoke-static {v3}, Llcv;->i([Llco;)Llco;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lqmd;->ae(Ljava/lang/Object;)V
+
+    return-object v0
+
+    :pswitch_0
+    iget-object v0, p0, Leej;->c:Lqkg;
+
+    invoke-interface {v0}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lddf;
+
+    iget-object v1, p0, Leej;->a:Lqkg;
+
+    invoke-interface {v1}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Llda;
+
+    iget-object v2, p0, Leej;->d:Lqkg;
+
+    invoke-interface {v2}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Ljava/lang/Boolean;
+
+    invoke-virtual {v2}, Ljava/lang/Boolean;->booleanValue()Z
 
     move-result v2
 
-    const/4 v3, 0x0
+    iget-object v4, p0, Leej;->b:Lqkg;
 
-    invoke-direct {v0, v3, v3, v1, v2}, Landroid/graphics/Rect;-><init>(IIII)V
+    invoke-interface {v4}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v4
+
+    check-cast v4, Ljava/lang/Boolean;
+
+    invoke-virtual {v4}, Ljava/lang/Boolean;->booleanValue()Z
+
+    move-result v4
+
+    sget-object v5, Ldda;->a:Lddi;
+
+    invoke-interface {v0}, Lddf;->d()V
+
+    new-instance v0, Ldoo;
+
+    invoke-direct {v0, v2, v4, v3}, Ldoo;-><init>(ZZI)V
+
+    invoke-static {v1, v0}, Llcv;->j(Llco;Loiu;)Llco;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lqmd;->ae(Ljava/lang/Object;)V
 
     return-object v0
-.end method
 
-.method public final f()Landroid/hardware/HardwareBuffer;
-    .locals 1
+    :pswitch_1
+    iget-object v0, p0, Leej;->a:Lqkg;
 
-    const/4 v0, 0x0
+    check-cast v0, Lffg;
+
+    invoke-virtual {v0}, Lffg;->a()Ljava/lang/Boolean;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
+
+    move-result v0
+
+    iget-object v4, p0, Leej;->b:Lqkg;
+
+    invoke-interface {v4}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v4
+
+    check-cast v4, Llco;
+
+    iget-object v5, p0, Leej;->c:Lqkg;
+
+    invoke-interface {v5}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v5
+
+    check-cast v5, Llco;
+
+    iget-object v6, p0, Leej;->d:Lqkg;
+
+    invoke-interface {v6}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v6
+
+    check-cast v6, Lddf;
+
+    if-eqz v0, :cond_0
+
+    sget-object v0, Lkdd;->o:Landroid/hardware/camera2/CaptureRequest$Key;
+
+    if-eqz v0, :cond_0
+
+    sget-object v0, Lddm;->a:Lddi;
+
+    invoke-interface {v6}, Lddf;->d()V
+
+    new-array v0, v3, [Llco;
+
+    aput-object v4, v0, v2
+
+    aput-object v5, v0, v1
+
+    invoke-static {v0}, Llcv;->b([Llco;)Llco;
+
+    move-result-object v0
+
+    new-instance v1, Lbxe;
+
+    const/16 v2, 0x12
+
+    invoke-direct {v1, v2}, Lbxe;-><init>(I)V
+
+    invoke-static {v0, v1}, Llcv;->j(Llco;Loiu;)Llco;
+
+    move-result-object v0
+
+    sget-object v1, Lkdd;->o:Landroid/hardware/camera2/CaptureRequest$Key;
+
+    invoke-static {v1, v0}, Lfcy;->m(Landroid/hardware/camera2/CaptureRequest$Key;Llco;)Llco;
+
+    move-result-object v0
+
+    goto :goto_0
+
+    :cond_0
+    invoke-static {}, Lfcy;->l()Lgjm;
+
+    move-result-object v0
+
+    invoke-static {v0}, Llcv;->g(Ljava/lang/Object;)Llco;
+
+    move-result-object v0
+
+    :goto_0
+    invoke-static {v0}, Lqmd;->ae(Ljava/lang/Object;)V
 
     return-object v0
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method
 
-.method public final g()Ljava/util/List;
+.method public final synthetic get()Ljava/lang/Object;
     .locals 1
 
-    iget-object v0, p0, Leej;->b:Ljava/util/List;
+    iget v0, p0, Leej;->e:I
 
-    return-object v0
-.end method
+    packed-switch v0, :pswitch_data_0
 
-.method public final h(Landroid/graphics/Rect;)V
-    .locals 0
-
-    return-void
-.end method
-
-.method public final synthetic i()Z
-    .locals 1
-
-    const/4 v0, 0x0
-
-    return v0
-.end method
-
-.method public final j()Lkgd;
-    .locals 1
-
-    invoke-static {}, Lkgd;->x()Lkgd;
+    invoke-virtual {p0}, Leej;->b()Llco;
 
     move-result-object v0
 
     return-object v0
+
+    :pswitch_0
+    invoke-virtual {p0}, Leej;->b()Llco;
+
+    move-result-object v0
+
+    return-object v0
+
+    :pswitch_1
+    invoke-virtual {p0}, Leej;->b()Llco;
+
+    move-result-object v0
+
+    return-object v0
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method

@@ -1,36 +1,10 @@
-.class final Lfo;
-.super Lagb;
-
-
-# instance fields
-.field final synthetic a:Lfq;
-
-
-# direct methods
-.method public constructor <init>(Lfq;)V
-    .locals 0
-
-    iput-object p1, p0, Lfo;->a:Lfq;
-
-    invoke-direct {p0}, Lagb;-><init>()V
-
-    return-void
-.end method
+.class public interface abstract Lfo;
+.super Ljava/lang/Object;
 
 
 # virtual methods
-.method public final a()V
-    .locals 2
+.method public abstract a()V
+.end method
 
-    iget-object v0, p0, Lfo;->a:Lfq;
-
-    const/4 v1, 0x0
-
-    iput-object v1, v0, Lfq;->m:Lgf;
-
-    iget-object v0, v0, Lfq;->c:Landroid/support/v7/widget/ActionBarContainer;
-
-    invoke-virtual {v0}, Landroid/support/v7/widget/ActionBarContainer;->requestLayout()V
-
-    return-void
+.method public abstract b()Z
 .end method

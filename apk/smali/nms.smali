@@ -1,120 +1,97 @@
-.class final Lnms;
-.super Lnmm;
+.class public final Lnms;
+.super Lohh;
 
 
 # instance fields
-.field final a:Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
-
-.field final b:Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
-
-.field final c:Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
-
-.field final d:Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
-
-.field final e:Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
+.field public final a:Ljava/util/Set;
 
 
 # direct methods
-.method public constructor <init>(Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;)V
+.method public constructor <init>(Ljava/util/Set;)V
     .locals 0
 
-    invoke-direct {p0}, Lnmm;-><init>()V
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    iput-object p1, p0, Lnms;->a:Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
+    invoke-direct {p0}, Lohh;-><init>()V
 
-    iput-object p2, p0, Lnms;->b:Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
-
-    iput-object p3, p0, Lnms;->c:Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
-
-    iput-object p4, p0, Lnms;->d:Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
-
-    iput-object p5, p0, Lnms;->e:Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
+    iput-object p1, p0, Lnms;->a:Ljava/util/Set;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Lnnb;Lnmq;)Lnmq;
-    .locals 1
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 3
 
-    iget-object v0, p0, Lnms;->d:Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
+    const/4 v0, 0x1
 
-    invoke-virtual {v0, p1, p2}, Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;->getAndSet(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    if-ne p0, p1, :cond_0
 
-    move-result-object p1
+    return v0
 
-    check-cast p1, Lnmq;
+    :cond_0
+    instance-of v1, p1, Lnms;
 
-    return-object p1
-.end method
+    const/4 v2, 0x0
 
-.method public final b(Lnnb;Lnna;)Lnna;
-    .locals 1
+    if-nez v1, :cond_1
 
-    iget-object v0, p0, Lnms;->c:Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
+    return v2
 
-    invoke-virtual {v0, p1, p2}, Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;->getAndSet(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    :cond_1
+    check-cast p1, Lnms;
 
-    move-result-object p1
+    iget-object v1, p0, Lnms;->a:Ljava/util/Set;
 
-    check-cast p1, Lnna;
+    iget-object p1, p1, Lnms;->a:Ljava/util/Set;
 
-    return-object p1
-.end method
-
-.method public final c(Lnna;Lnna;)V
-    .locals 1
-
-    iget-object v0, p0, Lnms;->b:Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
-
-    invoke-virtual {v0, p1, p2}, Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;->lazySet(Ljava/lang/Object;Ljava/lang/Object;)V
-
-    return-void
-.end method
-
-.method public final d(Lnna;Ljava/lang/Thread;)V
-    .locals 1
-
-    iget-object v0, p0, Lnms;->a:Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
-
-    invoke-virtual {v0, p1, p2}, Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;->lazySet(Ljava/lang/Object;Ljava/lang/Object;)V
-
-    return-void
-.end method
-
-.method public final e(Lnnb;Lnmq;Lnmq;)Z
-    .locals 1
-
-    iget-object v0, p0, Lnms;->d:Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
-
-    invoke-static {v0, p1, p2, p3}, Lnmr;->a(Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {v1, p1}, Lqno;->c(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result p1
 
-    return p1
+    if-nez p1, :cond_2
+
+    return v2
+
+    :cond_2
+    return v0
 .end method
 
-.method public final f(Lnnb;Ljava/lang/Object;Ljava/lang/Object;)Z
+.method public final hashCode()I
     .locals 1
 
-    iget-object v0, p0, Lnms;->e:Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
+    iget-object v0, p0, Lnms;->a:Ljava/util/Set;
 
-    invoke-static {v0, p1, p2, p3}, Lnmr;->a(Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-virtual {v0}, Ljava/lang/Object;->hashCode()I
 
-    move-result p1
+    move-result v0
 
-    return p1
+    return v0
 .end method
 
-.method public final g(Lnnb;Lnna;Lnna;)Z
-    .locals 1
+.method public final toString()Ljava/lang/String;
+    .locals 2
 
-    iget-object v0, p0, Lnms;->c:Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    invoke-static {v0, p1, p2, p3}, Lnmr;->a(Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    move-result p1
+    const-string v1, "AirlockFileStateFilter(values="
 
-    return p1
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v1, p0, Lnms;->a:Ljava/util/Set;
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const/16 v1, 0x29
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
 .end method

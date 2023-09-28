@@ -1,110 +1,136 @@
-.class public final enum Ldio;
-.super Ljava/lang/Enum;
-
-
-# static fields
-.field public static final enum a:Ldio;
-
-.field public static final enum b:Ldio;
-
-.field public static final enum c:Ldio;
-
-.field public static final enum d:Ldio;
-
-.field private static final synthetic f:[Ldio;
-
-
-# instance fields
-.field public final e:Ljava/lang/String;
+.class final Ldio;
+.super Lahz;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 10
-
-    new-instance v0, Ldio;
-
-    const-string v1, "ENG"
-
-    const/4 v2, 0x0
-
-    const-string v3, "com.google.android.apps.camera.specialtypes.SpecialTypesProviderEng"
-
-    invoke-direct {v0, v1, v2, v3}, Ldio;-><init>(Ljava/lang/String;ILjava/lang/String;)V
-
-    sput-object v0, Ldio;->a:Ldio;
-
-    new-instance v1, Ldio;
-
-    const-string v3, "FISHFOOD"
-
-    const/4 v4, 0x1
-
-    const-string v5, "com.google.android.apps.camera.specialtypes.SpecialTypesProviderNext"
-
-    invoke-direct {v1, v3, v4, v5}, Ldio;-><init>(Ljava/lang/String;ILjava/lang/String;)V
-
-    sput-object v1, Ldio;->b:Ldio;
-
-    new-instance v3, Ldio;
-
-    const-string v5, "DOGFOOD"
-
-    const/4 v6, 0x2
-
-    const-string v7, "com.google.android.apps.camera.specialtypes.SpecialTypesProvider"
-
-    invoke-direct {v3, v5, v6, v7}, Ldio;-><init>(Ljava/lang/String;ILjava/lang/String;)V
-
-    sput-object v3, Ldio;->c:Ldio;
-
-    new-instance v5, Ldio;
-
-    const-string v8, "RELEASE"
-
-    const/4 v9, 0x3
-
-    invoke-direct {v5, v8, v9, v7}, Ldio;-><init>(Ljava/lang/String;ILjava/lang/String;)V
-
-    sput-object v5, Ldio;->d:Ldio;
-
-    const/4 v7, 0x4
-
-    new-array v7, v7, [Ldio;
-
-    aput-object v0, v7, v2
-
-    aput-object v1, v7, v4
-
-    aput-object v3, v7, v6
-
-    aput-object v5, v7, v9
-
-    sput-object v7, Ldio;->f:[Ldio;
-
-    return-void
-.end method
-
-.method private constructor <init>(Ljava/lang/String;ILjava/lang/String;)V
+.method public constructor <init>(Laii;)V
     .locals 0
 
-    invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
-    iput-object p3, p0, Ldio;->e:Ljava/lang/String;
+    invoke-direct {p0, p1}, Lahz;-><init>(Laii;)V
 
     return-void
 .end method
 
-.method public static values()[Ldio;
+
+# virtual methods
+.method public final bridge synthetic c(Lake;Ljava/lang/Object;)V
+    .locals 3
+
+    check-cast p2, Ldit;
+
+    iget-wide v0, p2, Ldit;->a:J
+
+    const/4 v2, 0x1
+
+    invoke-virtual {p1, v2, v0, v1}, Lake;->e(IJ)V
+
+    iget-object v0, p2, Ldit;->b:Ljava/lang/String;
+
+    const/4 v1, 0x2
+
+    if-nez v0, :cond_0
+
+    invoke-virtual {p1, v1}, Lake;->f(I)V
+
+    goto :goto_0
+
+    :cond_0
+    invoke-virtual {p1, v1, v0}, Lake;->g(ILjava/lang/String;)V
+
+    :goto_0
+    const/4 v0, 0x3
+
+    iget-wide v1, p2, Ldit;->c:J
+
+    invoke-virtual {p1, v0, v1, v2}, Lake;->e(IJ)V
+
+    const/4 v0, 0x4
+
+    iget-wide v1, p2, Ldit;->d:J
+
+    invoke-virtual {p1, v0, v1, v2}, Lake;->e(IJ)V
+
+    const/4 v0, 0x5
+
+    iget-wide v1, p2, Ldit;->e:J
+
+    invoke-virtual {p1, v0, v1, v2}, Lake;->e(IJ)V
+
+    const/4 v0, 0x6
+
+    iget-wide v1, p2, Ldit;->f:J
+
+    invoke-virtual {p1, v0, v1, v2}, Lake;->e(IJ)V
+
+    const/4 v0, 0x7
+
+    iget-wide v1, p2, Ldit;->g:J
+
+    invoke-virtual {p1, v0, v1, v2}, Lake;->e(IJ)V
+
+    iget-object v0, p2, Ldit;->h:Ljava/lang/String;
+
+    const/16 v1, 0x8
+
+    if-nez v0, :cond_1
+
+    invoke-virtual {p1, v1}, Lake;->f(I)V
+
+    goto :goto_1
+
+    :cond_1
+    invoke-virtual {p1, v1, v0}, Lake;->g(ILjava/lang/String;)V
+
+    :goto_1
+    iget-object v0, p2, Ldit;->i:Ljava/lang/String;
+
+    const/16 v1, 0x9
+
+    if-nez v0, :cond_2
+
+    invoke-virtual {p1, v1}, Lake;->f(I)V
+
+    goto :goto_2
+
+    :cond_2
+    invoke-virtual {p1, v1, v0}, Lake;->g(ILjava/lang/String;)V
+
+    :goto_2
+    const/16 v0, 0xa
+
+    iget-wide v1, p2, Ldit;->j:J
+
+    invoke-virtual {p1, v0, v1, v2}, Lake;->e(IJ)V
+
+    const/16 v0, 0xb
+
+    iget-boolean v1, p2, Ldit;->k:Z
+
+    int-to-long v1, v1
+
+    invoke-virtual {p1, v0, v1, v2}, Lake;->e(IJ)V
+
+    const/16 v0, 0xc
+
+    iget-boolean v1, p2, Ldit;->l:Z
+
+    int-to-long v1, v1
+
+    invoke-virtual {p1, v0, v1, v2}, Lake;->e(IJ)V
+
+    const/16 v0, 0xd
+
+    iget-wide v1, p2, Ldit;->a:J
+
+    invoke-virtual {p1, v0, v1, v2}, Lake;->e(IJ)V
+
+    return-void
+.end method
+
+.method public final d()Ljava/lang/String;
     .locals 1
 
-    sget-object v0, Ldio;->f:[Ldio;
-
-    invoke-virtual {v0}, [Ldio;->clone()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, [Ldio;
+    const-string v0, "UPDATE OR ABORT `shots` SET `shot_id` = ?,`title` = ?,`start_millis` = ?,`persisted_millis` = ?,`canceled_millis` = ?,`deleted_millis` = ?,`most_recent_event_millis` = ?,`capture_session_type` = ?,`capture_session_shot_id` = ?,`pid` = ?,`stuck` = ?,`failed` = ? WHERE `shot_id` = ?"
 
     return-object v0
 .end method

@@ -2,146 +2,52 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Ldsu;
+.implements Lpys;
 
 
 # instance fields
-.field final synthetic a:Ljava/lang/Object;
-
-.field private final synthetic b:I
+.field private final a:Lqkg;
 
 
 # direct methods
-.method public constructor <init>(Ldtq;I)V
+.method public constructor <init>(Lqkg;)V
     .locals 0
-
-    iput p2, p0, Ldto;->b:I
-
-    iput-object p1, p0, Ldto;->a:Ljava/lang/Object;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    return-void
-.end method
-
-.method public constructor <init>(Ldts;I)V
-    .locals 0
-
-    iput p2, p0, Ldto;->b:I
-
-    iput-object p1, p0, Ldto;->a:Ljava/lang/Object;
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Ldto;->a:Lqkg;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()V
-    .locals 2
+.method public final a()Landroid/content/res/Resources;
+    .locals 1
 
-    iget v0, p0, Ldto;->b:I
+    iget-object v0, p0, Ldto;->a:Lqkg;
 
-    packed-switch v0, :pswitch_data_0
+    check-cast v0, Lemd;
 
-    return-void
-
-    :pswitch_0
-    iget-object v0, p0, Ldto;->a:Ljava/lang/Object;
-
-    check-cast v0, Ldtq;
-
-    iget-object v0, v0, Ldtq;->a:Ljava/util/List;
-
-    invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+    invoke-virtual {v0}, Lemd;->a()Landroid/content/Context;
 
     move-result-object v0
 
-    :goto_0
-    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_0
-
-    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Ldsu;
-
-    invoke-interface {v1}, Ldsu;->a()V
-
-    goto :goto_0
-
-    :cond_0
-    return-void
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
-.end method
-
-.method public final synthetic c(Lkli;)V
-    .locals 0
-
-    iget p1, p0, Ldto;->b:I
-
-    return-void
-.end method
-
-.method public final d(Lkli;Lcea;)V
-    .locals 2
-
-    iget v0, p0, Ldto;->b:I
-
-    packed-switch v0, :pswitch_data_0
-
-    iget-object v0, p0, Ldto;->a:Ljava/lang/Object;
-
-    check-cast v0, Ldts;
-
-    invoke-virtual {v0, p1, p2}, Ldts;->a(Lkli;Lcea;)V
-
-    return-void
-
-    :pswitch_0
-    iget-object v0, p0, Ldto;->a:Ljava/lang/Object;
-
-    check-cast v0, Ldtq;
-
-    iget-object v0, v0, Ldtq;->a:Ljava/util/List;
-
-    invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+    invoke-virtual {v0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
 
-    :goto_0
-    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
+    invoke-static {v0}, Lqmd;->ae(Ljava/lang/Object;)V
 
-    move-result v1
+    return-object v0
+.end method
 
-    if-eqz v1, :cond_0
+.method public final bridge synthetic get()Ljava/lang/Object;
+    .locals 1
 
-    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-virtual {p0}, Ldto;->a()Landroid/content/res/Resources;
 
-    move-result-object v1
+    move-result-object v0
 
-    check-cast v1, Ldsu;
-
-    invoke-interface {v1, p1, p2}, Ldsu;->d(Lkli;Lcea;)V
-
-    goto :goto_0
-
-    :cond_0
-    return-void
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+    return-object v0
 .end method

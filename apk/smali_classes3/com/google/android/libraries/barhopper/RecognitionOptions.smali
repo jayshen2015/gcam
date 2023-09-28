@@ -41,8 +41,6 @@
 
 .field private outputUnrecognizedBarcodes:Z
 
-.field private useQrMobilenetV3:Z
-
 
 # direct methods
 .method public constructor <init>()V
@@ -55,8 +53,6 @@
     iput v0, p0, Lcom/google/android/libraries/barhopper/RecognitionOptions;->barcodeFormats:I
 
     iput-boolean v0, p0, Lcom/google/android/libraries/barhopper/RecognitionOptions;->outputUnrecognizedBarcodes:Z
-
-    iput-boolean v0, p0, Lcom/google/android/libraries/barhopper/RecognitionOptions;->useQrMobilenetV3:Z
 
     new-instance v0, Lcom/google/android/libraries/barhopper/OnedRecognitionOptions;
 
@@ -93,14 +89,6 @@
     return v0
 .end method
 
-.method public getUseQrMobilenetV3()Z
-    .locals 1
-
-    iget-boolean v0, p0, Lcom/google/android/libraries/barhopper/RecognitionOptions;->useQrMobilenetV3:Z
-
-    return v0
-.end method
-
 .method public setBarcodeFormats(I)V
     .locals 0
 
@@ -121,14 +109,6 @@
     .locals 0
 
     iput-boolean p1, p0, Lcom/google/android/libraries/barhopper/RecognitionOptions;->outputUnrecognizedBarcodes:Z
-
-    return-void
-.end method
-
-.method public setUseQrMobilenetV3(Z)V
-    .locals 0
-
-    iput-boolean p1, p0, Lcom/google/android/libraries/barhopper/RecognitionOptions;->useQrMobilenetV3:Z
 
     return-void
 .end method

@@ -1,73 +1,66 @@
-.class public final Lghi;
+.class final Lghi;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Logk;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field private final a:Loiw;
-
-.field private final b:Loiw;
+.field final synthetic a:Lghj;
 
 
 # direct methods
-.method public constructor <init>(Loiw;Loiw;)V
+.method public constructor <init>(Lghj;)V
     .locals 0
 
+    iput-object p1, p0, Lghi;->a:Lghj;
+
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lghi;->a:Loiw;
-
-    iput-object p2, p0, Lghi;->b:Loiw;
 
     return-void
 .end method
 
-.method public static a(Loiw;Loiw;)Lghi;
-    .locals 1
-
-    new-instance v0, Lghi;
-
-    invoke-direct {v0, p0, p1}, Lghi;-><init>(Loiw;Loiw;)V
-
-    return-object v0
-.end method
-
 
 # virtual methods
-.method public final b()Lgxb;
-    .locals 3
+.method public final run()V
+    .locals 2
 
-    iget-object v0, p0, Lghi;->a:Loiw;
+    iget-object v0, p0, Lghi;->a:Lghj;
 
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
+    iget-object v0, v0, Lghj;->c:Lpht;
 
-    move-result-object v0
+    if-eqz v0, :cond_0
 
-    check-cast v0, Lkog;
+    invoke-interface {v0}, Lpht;->isDone()Z
 
-    iget-object v1, p0, Lghi;->b:Loiw;
+    move-result v0
 
-    invoke-interface {v1}, Loiw;->get()Ljava/lang/Object;
+    if-nez v0, :cond_0
 
-    move-result-object v1
+    iget-object v0, p0, Lghi;->a:Lghj;
 
-    check-cast v1, Ldhi;
+    iget-object v0, v0, Lghj;->c:Lpht;
 
-    new-instance v2, Lgxb;
+    const/4 v1, 0x0
 
-    invoke-direct {v2, v0, v1}, Lgxb;-><init>(Lkog;Ldhi;)V
+    invoke-interface {v0, v1}, Lpht;->cancel(Z)Z
 
-    return-object v2
-.end method
+    iget-object v0, p0, Lghi;->a:Lghj;
 
-.method public final bridge synthetic get()Ljava/lang/Object;
-    .locals 1
+    invoke-static {v0}, Lghj;->b(Lghj;)V
 
-    invoke-virtual {p0}, Lghi;->b()Lgxb;
+    :cond_0
+    iget-object v0, p0, Lghi;->a:Lghj;
 
-    move-result-object v0
+    iget-object v0, v0, Lghj;->e:Lghu;
 
-    return-object v0
+    invoke-virtual {v0}, Lghu;->d()V
+
+    iget-object v0, p0, Lghi;->a:Lghj;
+
+    iget-object v0, v0, Lghj;->b:Llap;
+
+    invoke-virtual {v0}, Llap;->close()V
+
+    return-void
 .end method

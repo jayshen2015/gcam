@@ -1,84 +1,37 @@
-.class public final enum Lhfe;
-.super Ljava/lang/Enum;
+.class public final synthetic Lhfe;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Ljava/lang/Runnable;
 
 
-# static fields
-.field public static final enum a:Lhfe;
-
-.field public static final enum b:Lhfe;
-
-.field public static final enum c:Lhfe;
-
-.field private static final synthetic d:[Lhfe;
+# instance fields
+.field public final synthetic a:Lhff;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 7
-
-    new-instance v0, Lhfe;
-
-    const-string v1, "POPUP_SHARE_HANDLE"
-
-    const/4 v2, 0x0
-
-    invoke-direct {v0, v1, v2}, Lhfe;-><init>(Ljava/lang/String;I)V
-
-    sput-object v0, Lhfe;->a:Lhfe;
-
-    new-instance v1, Lhfe;
-
-    const-string v3, "LAUNCH_SHARE_PANEL"
-
-    const/4 v4, 0x1
-
-    invoke-direct {v1, v3, v4}, Lhfe;-><init>(Ljava/lang/String;I)V
-
-    sput-object v1, Lhfe;->b:Lhfe;
-
-    new-instance v3, Lhfe;
-
-    const-string v5, "TAP_SHARE_TARGET"
-
-    const/4 v6, 0x2
-
-    invoke-direct {v3, v5, v6}, Lhfe;-><init>(Ljava/lang/String;I)V
-
-    sput-object v3, Lhfe;->c:Lhfe;
-
-    const/4 v5, 0x3
-
-    new-array v5, v5, [Lhfe;
-
-    aput-object v0, v5, v2
-
-    aput-object v1, v5, v4
-
-    aput-object v3, v5, v6
-
-    sput-object v5, Lhfe;->d:[Lhfe;
-
-    return-void
-.end method
-
-.method private constructor <init>(Ljava/lang/String;I)V
+.method public synthetic constructor <init>(Lhff;)V
     .locals 0
 
-    invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lhfe;->a:Lhff;
 
     return-void
 .end method
 
-.method public static values()[Lhfe;
-    .locals 1
 
-    sget-object v0, Lhfe;->d:[Lhfe;
+# virtual methods
+.method public final run()V
+    .locals 2
 
-    invoke-virtual {v0}, [Lhfe;->clone()Ljava/lang/Object;
+    iget-object v0, p0, Lhfe;->a:Lhff;
 
-    move-result-object v0
+    iget-object v0, v0, Lhff;->a:Lfvv;
 
-    check-cast v0, [Lhfe;
+    sget-object v1, Ljrl;->g:Ljrl;
 
-    return-object v0
+    invoke-interface {v0, v1}, Lfvv;->b(Ljrl;)Z
+
+    return-void
 .end method

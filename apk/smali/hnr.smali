@@ -1,42 +1,50 @@
-.class final Lhnr;
-.super Lhpd;
+.class public final Lhnr;
+.super Ljava/lang/Object;
 
 
 # instance fields
-.field final synthetic a:Lhnu;
+.field public final a:Ljava/util/NavigableMap;
 
 
 # direct methods
-.method public constructor <init>(Lhnu;)V
-    .locals 0
+.method public constructor <init>()V
+    .locals 3
 
-    iput-object p1, p0, Lhnr;->a:Lhnu;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0, p1}, Lhpd;-><init>(Lhpg;)V
+    new-instance v0, Ljava/util/TreeMap;
 
-    return-void
-.end method
+    invoke-direct {v0}, Ljava/util/TreeMap;-><init>()V
 
+    invoke-interface {v0}, Ljava/util/NavigableMap;->size()I
 
-# virtual methods
-.method public final d()V
-    .locals 2
+    move-result v1
 
-    iget-object v0, p0, Lhnr;->a:Lhnu;
+    const/16 v2, 0x2328
 
-    iget-object v0, v0, Lhnu;->a:Lhiu;
+    if-gt v1, v2, :cond_0
 
-    invoke-virtual {v0}, Lhiu;->e()V
+    const/4 v1, 0x1
 
-    invoke-super {p0}, Lhpd;->d()V
+    goto :goto_0
 
-    iget-object v0, p0, Lhnr;->a:Lhnu;
+    :cond_0
+    const/4 v1, 0x0
 
-    iget-object v1, v0, Lhnu;->a:Lhiu;
+    :goto_0
+    invoke-static {v1}, Lobr;->aF(Z)V
 
-    iget-object v0, v0, Lhnu;->e:Lhiw;
+    new-instance v1, Llia;
 
-    invoke-virtual {v1, v0}, Lhiu;->g(Lhiw;)V
+    invoke-direct {v1, v0}, Llia;-><init>(Ljava/util/NavigableMap;)V
+
+    const/4 v0, 0x0
+
+    invoke-static {v1, v0}, Loxh;->k(Ljava/util/NavigableMap;Ljava/lang/Object;)Ljava/util/NavigableMap;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lhnr;->a:Ljava/util/NavigableMap;
 
     return-void
 .end method

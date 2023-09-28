@@ -1,36 +1,51 @@
 .class public final Lczw;
-.super Lacl;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Lpys;
 
 
 # instance fields
-.field final synthetic a:Landroid/widget/TextView;
+.field private final a:Lqkg;
 
 
 # direct methods
-.method public constructor <init>(Landroid/widget/TextView;)V
+.method public constructor <init>(Lqkg;)V
     .locals 0
 
-    iput-object p1, p0, Lczw;->a:Landroid/widget/TextView;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0}, Lacl;-><init>()V
+    iput-object p1, p0, Lczw;->a:Lqkg;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Landroid/graphics/Typeface;)V
-    .locals 1
+.method public final a()Lczv;
+    .locals 2
 
-    iget-object v0, p0, Lczw;->a:Landroid/widget/TextView;
+    iget-object v0, p0, Lczw;->a:Lqkg;
 
-    invoke-virtual {v0, p1}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
+    invoke-interface {v0}, Lqkg;->get()Ljava/lang/Object;
 
-    return-void
+    move-result-object v0
+
+    check-cast v0, Ljava/util/concurrent/ScheduledExecutorService;
+
+    new-instance v1, Lczv;
+
+    invoke-direct {v1, v0}, Lczv;-><init>(Ljava/util/concurrent/ScheduledExecutorService;)V
+
+    return-object v1
 .end method
 
-.method public final b()V
-    .locals 0
+.method public final bridge synthetic get()Ljava/lang/Object;
+    .locals 1
 
-    return-void
+    invoke-virtual {p0}, Lczw;->a()Lczv;
+
+    move-result-object v0
+
+    return-object v0
 .end method

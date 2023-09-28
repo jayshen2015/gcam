@@ -1,157 +1,38 @@
-.class public final Lkgn;
-.super Ljava/lang/Object;
-
-# interfaces
-.implements Lkad;
-
-
-# instance fields
-.field private final a:Lmwa;
-
-.field private b:Z
+.class final Lkgn;
+.super Lmip;
 
 
 # direct methods
-.method public constructor <init>(Lmwa;)V
-    .locals 1
+.method public constructor <init>()V
+    .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    const/4 v0, 0x0
-
-    iput-boolean v0, p0, Lkgn;->b:Z
-
-    iput-object p1, p0, Lkgn;->a:Lmwa;
+    invoke-direct {p0}, Lmip;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final declared-synchronized a(Lkgq;)Lkeb;
-    .locals 2
+.method public final bridge synthetic u(Landroid/content/Context;Landroid/os/Looper;Lkmf;Ljava/lang/Object;Lkik;Lkil;)Lkie;
+    .locals 6
 
-    monitor-enter p0
+    check-cast p4, Lkic;
 
-    :try_start_0
-    iget-boolean v0, p0, Lkgn;->b:Z
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    new-instance p4, Lkhc;
 
-    const/4 v1, 0x0
+    move-object v0, p4
 
-    if-eqz v0, :cond_0
+    move-object v1, p1
 
-    :goto_0
-    monitor-exit p0
+    move-object v2, p2
 
-    return-object v1
+    move-object v3, p3
 
-    :cond_0
-    :try_start_1
-    iget-object v0, p0, Lkgn;->a:Lmwa;
+    move-object v4, p5
 
-    invoke-virtual {v0, p1}, Lmwa;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    move-object v5, p6
 
-    move-result-object p1
+    invoke-direct/range {v0 .. v5}, Lkhc;-><init>(Landroid/content/Context;Landroid/os/Looper;Lkmf;Lkik;Lkil;)V
 
-    check-cast p1, Lkeb;
-
-    if-nez p1, :cond_1
-
-    goto :goto_0
-
-    :cond_1
-    invoke-interface {p1}, Lkeb;->a()Lkeb;
-
-    move-result-object p1
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    monitor-exit p0
-
-    return-object p1
-
-    :catchall_0
-    move-exception p1
-
-    monitor-exit p0
-
-    goto :goto_2
-
-    :goto_1
-    throw p1
-
-    :goto_2
-    goto :goto_1
-.end method
-
-.method public final declared-synchronized close()V
-    .locals 2
-
-    monitor-enter p0
-
-    :try_start_0
-    iget-boolean v0, p0, Lkgn;->b:Z
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    if-eqz v0, :cond_0
-
-    monitor-exit p0
-
-    return-void
-
-    :cond_0
-    const/4 v0, 0x1
-
-    :try_start_1
-    iput-boolean v0, p0, Lkgn;->b:Z
-
-    iget-object v0, p0, Lkgn;->a:Lmwa;
-
-    invoke-virtual {v0}, Lmwa;->f()Lmvm;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lmvm;->cz()Lnac;
-
-    move-result-object v0
-
-    :goto_0
-    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_1
-
-    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Lkeb;
-
-    invoke-interface {v1}, Lkeb;->close()V
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    goto :goto_0
-
-    :cond_1
-    monitor-exit p0
-
-    return-void
-
-    :catchall_0
-    move-exception v0
-
-    monitor-exit p0
-
-    goto :goto_2
-
-    :goto_1
-    throw v0
-
-    :goto_2
-    goto :goto_1
+    return-object p4
 .end method

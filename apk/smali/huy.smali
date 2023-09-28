@@ -1,40 +1,22 @@
-.class final Lhuy;
-.super Lhtu;
+.class public final Lhuy;
+.super Ljava/lang/Object;
 
 
-# instance fields
-.field final synthetic b:Lhva;
+# static fields
+.field public static final a:Lhrf;
 
 
 # direct methods
-.method public constructor <init>(Lhva;)V
-    .locals 0
-
-    iput-object p1, p0, Lhuy;->b:Lhva;
-
-    invoke-direct {p0, p1}, Lhtu;-><init>(Lhtz;)V
-
-    return-void
-.end method
-
-
-# virtual methods
-.method public final k()V
+.method static constructor <clinit>()V
     .locals 2
 
-    iget-object v0, p0, Lhuy;->b:Lhva;
+    new-instance v0, Lhrf;
 
-    iget-object v0, v0, Lhva;->q:Lhiu;
+    const/16 v1, 0xa
 
-    invoke-virtual {v0}, Lhiu;->e()V
+    invoke-direct {v0, v1}, Lhrf;-><init>(I)V
 
-    iget-object v0, p0, Lhuy;->b:Lhva;
-
-    iget-object v1, v0, Lhva;->q:Lhiu;
-
-    iget-object v0, v0, Lhva;->w:Lhiw;
-
-    invoke-virtual {v1, v0}, Lhiu;->g(Lhiw;)V
+    sput-object v0, Lhuy;->a:Lhrf;
 
     return-void
 .end method

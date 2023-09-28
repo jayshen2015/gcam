@@ -1,12 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <plurals name="accessibility_timelapse_manual_record_speed_desc">
-        <item quantity="other">Time Lapse ылдамдыгы: %d</item>
-        <item quantity="one">Time Lapse ылдамдыгы: %d</item>
-    </plurals>
-    <plurals name="number_of_cropped_face">
-        <item quantity="other">%d кесилди.</item>
-        <item quantity="one">Бири кесилди.</item>
+    <plurals name="number_of_faces_announcement">
+        <item quantity="other">%1$d жүз.</item>
+        <item quantity="one">%1$d жүз.</item>
     </plurals>
     <plurals name="photos_remaining">
         <item quantity="other">%s сүрөт жөнүндө маалымат</item>
@@ -17,8 +13,8 @@
         <item quantity="one">(%1$d колдонмо тандалды)</item>
     </plurals>
     <plurals name="social_share_info">
-        <item quantity="other">Сүрөттөр менен видеолоруңузду коомдук тармактарга Камерадан бөлүшөсүз. %1$d колдонмого чейин тандасаңыз болот. Жеке папкадагы сүрөттөр жана видеолорду бөлүшө албайсыз.</item>
-        <item quantity="one">Сүрөттөр менен видеолоруңузду коомдук тармактарга Камерадан бөлүшөсүз. %1$d колдонмого чейин тандаңыз. Жеке папкадагы сүрөттөр жана видеолорду бөлүшө албайсыз.</item>
+        <item quantity="other">Сүрөттөр менен видеолоруңузду коомдук тармактарга дароо Камерадан бөлүшөсүз. %1$d колдонмого чейин тандасаңыз болот. Жеке папкадагы сүрөттөр жана видеолорду бөлүшө албайсыз.</item>
+        <item quantity="one">Сүрөттөр менен видеолоруңузду коомдук тармактарга дароо Камерадан бөлүшөсүз. %1$d колдонмого чейин тандаңыз. Жеке папкадагы сүрөттөр жана видеолорду бөлүшө албайсыз.</item>
     </plurals>
     <plurals name="social_share_select_error">
         <item quantity="other">%1$d колдонмого чейин тандасаңыз болот</item>

@@ -1,32 +1,40 @@
-.class public final Ljvh;
-.super Ljava/lang/Object;
+.class final Ljvh;
+.super Ljvs;
 
 
-# static fields
-.field public static final a:Ljve;
+# instance fields
+.field final synthetic a:Ljvk;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
+.method public constructor <init>(Ljvk;)V
+    .locals 0
 
-    new-instance v0, Ljvf;
+    iput-object p1, p0, Ljvh;->a:Ljvk;
 
-    invoke-direct {v0}, Ljvf;-><init>()V
-
-    sput-object v0, Ljvh;->a:Ljve;
+    invoke-direct {p0, p1}, Ljvs;-><init>(Ljvx;)V
 
     return-void
 .end method
 
-.method public static a(Ljve;Lkad;Ljava/lang/String;)V
-    .locals 1
 
-    new-instance v0, Ljvg;
+# virtual methods
+.method public final a()V
+    .locals 2
 
-    invoke-direct {v0, p1, p2}, Ljvg;-><init>(Lkad;Ljava/lang/String;)V
+    iget-object v0, p0, Ljvh;->a:Ljvk;
 
-    invoke-interface {p0, v0}, Ljve;->a(Lkad;)V
+    iget-object v0, v0, Ljvk;->a:Lihu;
+
+    invoke-virtual {v0}, Lihu;->e()V
+
+    iget-object v0, p0, Ljvh;->a:Ljvk;
+
+    iget-object v1, v0, Ljvk;->a:Lihu;
+
+    iget-object v0, v0, Ljvk;->c:Lihw;
+
+    invoke-virtual {v1, v0}, Lihu;->g(Lihw;)V
 
     return-void
 .end method

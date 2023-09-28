@@ -1,30 +1,33 @@
-.class public final Liui;
+.class public final synthetic Liui;
 .super Ljava/lang/Object;
 
+# interfaces
+.implements Landroid/content/DialogInterface$OnDismissListener;
 
-# static fields
-.field public static final a:Llhj;
+
+# instance fields
+.field public final synthetic a:Lius;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 5
+.method public synthetic constructor <init>(Lius;)V
+    .locals 0
 
-    sget-object v0, Liur;->b:Liur;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    sget-object v1, Liuo;->e:Liuo;
+    iput-object p1, p0, Liui;->a:Lius;
 
-    sget-object v2, Liuo;->e:Liuo;
+    return-void
+.end method
 
-    sget-object v3, Lnzl;->k:Lnzl;
 
-    const v4, 0x9198308
+# virtual methods
+.method public final onDismiss(Landroid/content/DialogInterface;)V
+    .locals 0
 
-    invoke-static {v0, v1, v2, v4, v3}, Lnws;->af(Lnxy;Ljava/lang/Object;Lnxy;ILnzl;)Llhj;
+    iget-object p1, p0, Liui;->a:Lius;
 
-    move-result-object v0
-
-    sput-object v0, Liui;->a:Llhj;
+    invoke-virtual {p1}, Lius;->e()V
 
     return-void
 .end method

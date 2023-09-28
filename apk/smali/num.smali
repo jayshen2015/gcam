@@ -1,73 +1,79 @@
-.class public final synthetic Lnum;
-.super Ljava/lang/Object;
+.class final Lnum;
+.super Lqnp;
 
 # interfaces
-.implements Lktx;
+.implements Lqmu;
 
 
 # instance fields
-.field public final synthetic a:Lcom/google/lens/sdk/LensApi$LensAvailabilityCallback;
-
-.field private final synthetic b:I
+.field final synthetic a:Ljava/util/List;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lcom/google/lens/sdk/LensApi$LensAvailabilityCallback;I)V
+.method public constructor <init>(Ljava/util/List;)V
     .locals 0
 
-    iput p2, p0, Lnum;->b:I
+    iput-object p1, p0, Lnum;->a:Ljava/util/List;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const/4 p1, 0x1
 
-    iput-object p1, p0, Lnum;->a:Lcom/google/lens/sdk/LensApi$LensAvailabilityCallback;
+    invoke-direct {p0, p1}, Lqnp;-><init>(I)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(I)V
-    .locals 3
+.method public final bridge synthetic a(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 4
 
-    iget v0, p0, Lnum;->b:I
+    check-cast p1, Ljava/lang/Number;
 
-    const/4 v1, 0x0
+    invoke-virtual {p1}, Ljava/lang/Number;->doubleValue()D
 
-    packed-switch v0, :pswitch_data_0
+    move-result-wide v0
 
-    iget-object v0, p0, Lnum;->a:Lcom/google/lens/sdk/LensApi$LensAvailabilityCallback;
+    iget-object p1, p0, Lnum;->a:Ljava/util/List;
 
-    sget v2, Lcom/google/lens/sdk/LensApi;->d:I
+    invoke-static {v0, v1}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
 
-    if-eqz p1, :cond_1
+    move-result-object v0
 
-    add-int/lit8 p1, p1, -0x2
+    invoke-interface {p1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
-    invoke-interface {v0, p1}, Lcom/google/lens/sdk/LensApi$LensAvailabilityCallback;->onAvailabilityStatusFetched(I)V
+    move-result-object p1
 
-    return-void
+    :goto_0
+    invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
 
-    :pswitch_0
-    iget-object v0, p0, Lnum;->a:Lcom/google/lens/sdk/LensApi$LensAvailabilityCallback;
+    move-result v1
 
-    sget v2, Lcom/google/lens/sdk/LensApi;->d:I
+    if-eqz v1, :cond_0
 
-    if-eqz p1, :cond_0
+    invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    add-int/lit8 p1, p1, -0x2
+    move-result-object v1
 
-    invoke-interface {v0, p1}, Lcom/google/lens/sdk/LensApi$LensAvailabilityCallback;->onAvailabilityStatusFetched(I)V
+    check-cast v1, Lnpe;
 
-    return-void
+    invoke-virtual {v0}, Ljava/lang/Number;->doubleValue()D
+
+    move-result-wide v2
+
+    iget-wide v0, v1, Lnpe;->d:J
+
+    long-to-double v0, v0
+
+    invoke-static {v0, v1}, Ljava/lang/Double;->isNaN(D)Z
+
+    sub-double/2addr v2, v0
+
+    invoke-static {v2, v3}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
+
+    move-result-object v0
+
+    goto :goto_0
 
     :cond_0
-    throw v1
-
-    :cond_1
-    throw v1
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+    return-object v0
 .end method

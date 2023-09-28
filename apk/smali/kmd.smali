@@ -1,92 +1,52 @@
-.class final Lkmd;
-.super Lkoy;
+.class public final Lkmd;
+.super Ljava/lang/Object;
 
 
 # instance fields
-.field final synthetic a:Lkme;
+.field public a:Landroid/accounts/Account;
 
-.field private final b:Ljava/util/concurrent/atomic/AtomicBoolean;
+.field public b:Lxa;
+
+.field public c:Ljava/lang/String;
+
+.field public d:Ljava/lang/String;
+
+.field private final e:Lkuj;
 
 
 # direct methods
-.method public constructor <init>(Lkme;Lkpb;)V
-    .locals 0
+.method public constructor <init>()V
+    .locals 1
 
-    iput-object p1, p0, Lkmd;->a:Lkme;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0, p2}, Lkoy;-><init>(Lkpb;)V
+    sget-object v0, Lkuj;->a:Lkuj;
 
-    new-instance p1, Ljava/util/concurrent/atomic/AtomicBoolean;
-
-    const/4 p2, 0x0
-
-    invoke-direct {p1, p2}, Ljava/util/concurrent/atomic/AtomicBoolean;-><init>(Z)V
-
-    iput-object p1, p0, Lkmd;->b:Ljava/util/concurrent/atomic/AtomicBoolean;
+    iput-object v0, p0, Lkmd;->e:Lkuj;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final close()V
-    .locals 3
+.method public final a()Lkmf;
+    .locals 7
 
-    iget-object v0, p0, Lkmd;->b:Ljava/util/concurrent/atomic/AtomicBoolean;
+    new-instance v6, Lkmf;
 
-    const/4 v1, 0x1
+    iget-object v1, p0, Lkmd;->a:Landroid/accounts/Account;
 
-    invoke-virtual {v0, v1}, Ljava/util/concurrent/atomic/AtomicBoolean;->getAndSet(Z)Z
+    iget-object v2, p0, Lkmd;->b:Lxa;
 
-    move-result v0
+    iget-object v3, p0, Lkmd;->c:Ljava/lang/String;
 
-    if-nez v0, :cond_1
+    iget-object v4, p0, Lkmd;->d:Ljava/lang/String;
 
-    invoke-super {p0}, Lkoy;->close()V
+    iget-object v5, p0, Lkmd;->e:Lkuj;
 
-    iget-object v0, p0, Lkmd;->a:Lkme;
+    move-object v0, v6
 
-    iget-object v1, v0, Lkme;->a:Ljava/lang/Object;
+    invoke-direct/range {v0 .. v5}, Lkmf;-><init>(Landroid/accounts/Account;Ljava/util/Set;Ljava/lang/String;Ljava/lang/String;Lkuj;)V
 
-    monitor-enter v1
-
-    :try_start_0
-    iget v2, v0, Lkme;->c:I
-
-    add-int/lit8 v2, v2, -0x1
-
-    iput v2, v0, Lkme;->c:I
-
-    iget-boolean v2, v0, Lkme;->b:Z
-
-    if-eqz v2, :cond_0
-
-    invoke-virtual {v0}, Lkme;->j()V
-
-    :cond_0
-    monitor-exit v1
-
-    return-void
-
-    :catchall_0
-    move-exception v0
-
-    monitor-exit v1
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw v0
-
-    :cond_1
-    return-void
-.end method
-
-.method public final finalize()V
-    .locals 0
-
-    invoke-virtual {p0}, Lkoy;->close()V
-
-    invoke-super {p0}, Ljava/lang/Object;->finalize()V
-
-    return-void
+    return-object v6
 .end method

@@ -1,40 +1,40 @@
 .class public final Lzw;
-.super Ljava/lang/Object;
-
-
-# instance fields
-.field public a:Z
-
-.field public b:I
-
-.field public c:I
-
-.field public d:F
-
-.field public e:F
+.super Landroid/view/View;
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 1
+.method public constructor <init>(Landroid/content/Context;)V
+    .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0, p1}, Landroid/view/View;-><init>(Landroid/content/Context;)V
 
-    const/4 v0, 0x0
+    const/16 p1, 0x8
 
-    iput-boolean v0, p0, Lzw;->a:Z
+    invoke-super {p0, p1}, Landroid/view/View;->setVisibility(I)V
 
-    iput v0, p0, Lzw;->b:I
+    return-void
+.end method
 
-    iput v0, p0, Lzw;->c:I
 
-    const/high16 v0, 0x3f800000    # 1.0f
+# virtual methods
+.method public final draw(Landroid/graphics/Canvas;)V
+    .locals 0
 
-    iput v0, p0, Lzw;->d:F
+    return-void
+.end method
 
-    const/high16 v0, 0x7fc00000    # Float.NaN
+.method protected final onMeasure(II)V
+    .locals 0
 
-    iput v0, p0, Lzw;->e:F
+    const/4 p1, 0x0
+
+    invoke-virtual {p0, p1, p1}, Lzw;->setMeasuredDimension(II)V
+
+    return-void
+.end method
+
+.method public final setVisibility(I)V
+    .locals 0
 
     return-void
 .end method

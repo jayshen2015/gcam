@@ -1,10 +1,30 @@
-.class public interface abstract Llnl;
-.super Ljava/lang/Object;
+.class public final Llnl;
+.super Llnm;
+
+
+# direct methods
+.method public constructor <init>()V
+    .locals 0
+
+    invoke-direct {p0}, Llnm;-><init>()V
+
+    return-void
+.end method
 
 
 # virtual methods
-.method public abstract a(Lozv;)Lnou;
+.method public final fx()V
+    .locals 0
+
+    invoke-virtual {p0}, Llnm;->x()V
+
+    return-void
 .end method
 
-.method public abstract b()Loxq;
+.method public final fy()V
+    .locals 0
+
+    invoke-virtual {p0}, Llnm;->x()V
+
+    return-void
 .end method

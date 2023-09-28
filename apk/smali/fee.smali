@@ -1,200 +1,94 @@
 .class public final Lfee;
-.super Ljava/lang/Object;
-
-
-# static fields
-.field public static final a:Lnak;
+.super Landroid/os/HandlerThread;
 
 
 # instance fields
-.field public final b:Z
+.field a:Landroid/os/Handler;
 
-.field public final c:I
-
-.field public final d:I
-
-.field public final e:I
-
-.field public final f:I
-
-.field public final g:Z
-
-.field public final h:Z
+.field final synthetic b:Lfeg;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
+.method public constructor <init>(Lfeg;)V
+    .locals 0
 
-    const-string v0, "com/google/android/apps/camera/metadata/panorama/PanoMetadata"
+    iput-object p1, p0, Lfee;->b:Lfeg;
 
-    invoke-static {v0}, Lnak;->h(Ljava/lang/String;)Lnak;
+    const-string p1, "sensor thread"
+
+    invoke-direct {p0, p1}, Landroid/os/HandlerThread;-><init>(Ljava/lang/String;)V
+
+    const/4 p1, 0x0
+
+    iput-object p1, p0, Lfee;->a:Landroid/os/Handler;
+
+    return-void
+.end method
+
+
+# virtual methods
+.method protected final onLooperPrepared()V
+    .locals 5
+
+    invoke-virtual {p0}, Lfee;->getLooper()Landroid/os/Looper;
 
     move-result-object v0
 
-    sput-object v0, Lfee;->a:Lnak;
+    invoke-static {v0}, Lmip;->bV(Landroid/os/Looper;)Landroid/os/Handler;
 
-    return-void
-.end method
+    move-result-object v0
 
-.method public constructor <init>(II)V
-    .locals 1
+    iput-object v0, p0, Lfee;->a:Landroid/os/Handler;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iget-object v0, p0, Lfee;->b:Lfeg;
 
-    invoke-static {}, Ljava/util/Calendar;->getInstance()Ljava/util/Calendar;
+    iget-object v1, v0, Lfeg;->b:Landroid/hardware/SensorManager;
 
-    invoke-static {}, Ljava/util/Calendar;->getInstance()Ljava/util/Calendar;
+    iget-object v0, v0, Lfeg;->p:Landroid/hardware/SensorEventListener;
 
-    const/4 v0, 0x1
+    const/4 v2, 0x1
 
-    iput-boolean v0, p0, Lfee;->b:Z
+    invoke-virtual {v1, v2}, Landroid/hardware/SensorManager;->getDefaultSensor(I)Landroid/hardware/Sensor;
 
-    iput p1, p0, Lfee;->c:I
+    move-result-object v3
 
-    iput p2, p0, Lfee;->d:I
+    iget-object v4, p0, Lfee;->a:Landroid/os/Handler;
 
-    iput p1, p0, Lfee;->e:I
+    invoke-virtual {v1, v0, v3, v2, v4}, Landroid/hardware/SensorManager;->registerListener(Landroid/hardware/SensorEventListener;Landroid/hardware/Sensor;ILandroid/os/Handler;)Z
 
-    iput p2, p0, Lfee;->f:I
+    iget-object v0, p0, Lfee;->b:Lfeg;
 
-    iput-boolean v0, p0, Lfee;->g:Z
+    iget-object v1, v0, Lfeg;->b:Landroid/hardware/SensorManager;
 
-    const/4 p1, 0x0
+    iget-object v0, v0, Lfeg;->p:Landroid/hardware/SensorEventListener;
 
-    iput-boolean p1, p0, Lfee;->h:Z
+    const/4 v3, 0x4
 
-    return-void
-.end method
+    invoke-virtual {v1, v3}, Landroid/hardware/SensorManager;->getDefaultSensor(I)Landroid/hardware/Sensor;
 
-.method public constructor <init>(ZIIIIZ)V
-    .locals 0
+    move-result-object v3
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iget-object v4, p0, Lfee;->a:Landroid/os/Handler;
 
-    iput-boolean p1, p0, Lfee;->b:Z
+    invoke-virtual {v1, v0, v3, v2, v4}, Landroid/hardware/SensorManager;->registerListener(Landroid/hardware/SensorEventListener;Landroid/hardware/Sensor;ILandroid/os/Handler;)Z
 
-    iput p2, p0, Lfee;->c:I
+    iget-object v0, p0, Lfee;->b:Lfeg;
 
-    iput p3, p0, Lfee;->d:I
+    iget-object v1, v0, Lfeg;->b:Landroid/hardware/SensorManager;
 
-    iput p4, p0, Lfee;->e:I
+    iget-object v0, v0, Lfeg;->p:Landroid/hardware/SensorEventListener;
 
-    iput p5, p0, Lfee;->f:I
+    const/4 v2, 0x2
 
-    const/4 p1, 0x0
+    invoke-virtual {v1, v2}, Landroid/hardware/SensorManager;->getDefaultSensor(I)Landroid/hardware/Sensor;
 
-    iput-boolean p1, p0, Lfee;->g:Z
+    move-result-object v2
 
-    iput-boolean p6, p0, Lfee;->h:Z
+    iget-object v3, p0, Lfee;->a:Landroid/os/Handler;
 
-    return-void
-.end method
+    const/4 v4, 0x3
 
-.method public static a(Lber;Ljava/lang/String;)I
-    .locals 2
+    invoke-virtual {v1, v0, v2, v4, v3}, Landroid/hardware/SensorManager;->registerListener(Landroid/hardware/SensorEventListener;Landroid/hardware/Sensor;ILandroid/os/Handler;)Z
 
-    const-string v0, "http://ns.google.com/photos/1.0/panorama/"
-
-    invoke-interface {p0, v0, p1}, Lber;->e(Ljava/lang/String;Ljava/lang/String;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_0
-
-    invoke-interface {p0, v0, p1}, Lber;->b(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/Integer;
-
-    move-result-object p0
-
-    invoke-virtual {p0}, Ljava/lang/Integer;->intValue()I
-
-    move-result p0
-
-    return p0
-
-    :cond_0
-    const/4 p0, 0x0
-
-    return p0
-.end method
-
-.method public static b(Lber;Ljava/lang/String;)Z
-    .locals 2
-
-    const-string v0, "http://ns.google.com/photos/1.0/panorama/"
-
-    invoke-interface {p0, v0, p1}, Lber;->e(Ljava/lang/String;Ljava/lang/String;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_0
-
-    check-cast p0, Lbff;
-
-    const/4 v1, 0x1
-
-    invoke-virtual {p0, v0, p1, v1}, Lbff;->l(Ljava/lang/String;Ljava/lang/String;I)Ljava/lang/Object;
-
-    move-result-object p0
-
-    check-cast p0, Ljava/lang/Boolean;
-
-    invoke-virtual {p0}, Ljava/lang/Boolean;->booleanValue()Z
-
-    move-result p0
-
-    return p0
-
-    :cond_0
-    const/4 p0, 0x0
-
-    return p0
-.end method
-
-.method public static c(DDD)Z
-    .locals 0
-
-    sub-double/2addr p0, p2
-
-    invoke-static {p0, p1}, Ljava/lang/Math;->abs(D)D
-
-    move-result-wide p0
-
-    cmpg-double p2, p0, p4
-
-    if-gez p2, :cond_0
-
-    const/4 p0, 0x1
-
-    return p0
-
-    :cond_0
-    const/4 p0, 0x0
-
-    return p0
-.end method
-
-.method public static d(Lber;Ljava/lang/String;)V
-    .locals 2
-
-    const-string v0, "http://ns.google.com/photos/1.0/panorama/"
-
-    invoke-interface {p0, v0, p1}, Lber;->e(Ljava/lang/String;Ljava/lang/String;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_0
-
-    check-cast p0, Lbff;
-
-    const/4 v1, 0x6
-
-    invoke-virtual {p0, v0, p1, v1}, Lbff;->l(Ljava/lang/String;Ljava/lang/String;I)Ljava/lang/Object;
-
-    move-result-object p0
-
-    check-cast p0, Ljava/util/Calendar;
-
-    :cond_0
     return-void
 .end method

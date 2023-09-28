@@ -3,13 +3,13 @@
 
 
 # static fields
-.field private static final c:Lj$/util/OptionalLong;
+.field private static final EMPTY:Lj$/util/OptionalLong;
 
 
 # instance fields
-.field private final a:Z
+.field private final isPresent:Z
 
-.field private final b:J
+.field private final value:J
 
 
 # direct methods
@@ -20,7 +20,7 @@
 
     invoke-direct {v0}, Lj$/util/OptionalLong;-><init>()V
 
-    sput-object v0, Lj$/util/OptionalLong;->c:Lj$/util/OptionalLong;
+    sput-object v0, Lj$/util/OptionalLong;->EMPTY:Lj$/util/OptionalLong;
 
     return-void
 .end method
@@ -32,11 +32,11 @@
 
     const/4 v0, 0x0
 
-    iput-boolean v0, p0, Lj$/util/OptionalLong;->a:Z
+    iput-boolean v0, p0, Lj$/util/OptionalLong;->isPresent:Z
 
     const-wide/16 v0, 0x0
 
-    iput-wide v0, p0, Lj$/util/OptionalLong;->b:J
+    iput-wide v0, p0, Lj$/util/OptionalLong;->value:J
 
     return-void
 .end method
@@ -48,22 +48,22 @@
 
     const/4 v0, 0x1
 
-    iput-boolean v0, p0, Lj$/util/OptionalLong;->a:Z
+    iput-boolean v0, p0, Lj$/util/OptionalLong;->isPresent:Z
 
-    iput-wide p1, p0, Lj$/util/OptionalLong;->b:J
+    iput-wide p1, p0, Lj$/util/OptionalLong;->value:J
 
     return-void
 .end method
 
-.method public static a()Lj$/util/OptionalLong;
+.method public static empty()Lj$/util/OptionalLong;
     .locals 1
 
-    sget-object v0, Lj$/util/OptionalLong;->c:Lj$/util/OptionalLong;
+    sget-object v0, Lj$/util/OptionalLong;->EMPTY:Lj$/util/OptionalLong;
 
     return-object v0
 .end method
 
-.method public static b(J)Lj$/util/OptionalLong;
+.method public static of(J)Lj$/util/OptionalLong;
     .locals 1
 
     new-instance v0, Lj$/util/OptionalLong;
@@ -75,7 +75,7 @@
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
+.method public equals(Ljava/lang/Object;)Z
     .locals 7
 
     const/4 v0, 0x1
@@ -96,17 +96,17 @@
     :cond_1
     check-cast p1, Lj$/util/OptionalLong;
 
-    iget-boolean v1, p0, Lj$/util/OptionalLong;->a:Z
+    iget-boolean v1, p0, Lj$/util/OptionalLong;->isPresent:Z
 
     if-eqz v1, :cond_2
 
-    iget-boolean v3, p1, Lj$/util/OptionalLong;->a:Z
+    iget-boolean v3, p1, Lj$/util/OptionalLong;->isPresent:Z
 
     if-eqz v3, :cond_2
 
-    iget-wide v3, p0, Lj$/util/OptionalLong;->b:J
+    iget-wide v3, p0, Lj$/util/OptionalLong;->value:J
 
-    iget-wide v5, p1, Lj$/util/OptionalLong;->b:J
+    iget-wide v5, p1, Lj$/util/OptionalLong;->value:J
 
     cmp-long p1, v3, v5
 
@@ -115,7 +115,7 @@
     goto :goto_0
 
     :cond_2
-    iget-boolean p1, p1, Lj$/util/OptionalLong;->a:Z
+    iget-boolean p1, p1, Lj$/util/OptionalLong;->isPresent:Z
 
     if-ne v1, p1, :cond_3
 
@@ -128,22 +128,18 @@
     return v0
 .end method
 
-.method public final hashCode()I
-    .locals 5
+.method public hashCode()I
+    .locals 2
 
-    iget-boolean v0, p0, Lj$/util/OptionalLong;->a:Z
+    iget-boolean v0, p0, Lj$/util/OptionalLong;->isPresent:Z
 
     if-eqz v0, :cond_0
 
-    const/16 v0, 0x20
+    iget-wide v0, p0, Lj$/util/OptionalLong;->value:J
 
-    iget-wide v1, p0, Lj$/util/OptionalLong;->b:J
+    invoke-static {v0, v1}, Lj$/util/OptionalLong$$ExternalSyntheticBackport0;->m(J)I
 
-    ushr-long v3, v1, v0
-
-    xor-long/2addr v1, v3
-
-    long-to-int v0, v1
+    move-result v0
 
     goto :goto_0
 
@@ -154,28 +150,19 @@
     return v0
 .end method
 
-.method public orElseThrow(Ljava/util/function/Supplier;)J
+.method public orElseThrow(Lj$/util/function/Supplier;)J
     .locals 2
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "<X:",
-            "Ljava/lang/Throwable;",
-            ">(",
-            "Ljava/util/function/Supplier<",
-            "+TX;>;)J^TX;"
-        }
-    .end annotation
 
-    iget-boolean v0, p0, Lj$/util/OptionalLong;->a:Z
+    iget-boolean v0, p0, Lj$/util/OptionalLong;->isPresent:Z
 
     if-eqz v0, :cond_0
 
-    iget-wide v0, p0, Lj$/util/OptionalLong;->b:J
+    iget-wide v0, p0, Lj$/util/OptionalLong;->value:J
 
     return-wide v0
 
     :cond_0
-    invoke-interface {p1}, Ljava/util/function/Supplier;->get()Ljava/lang/Object;
+    invoke-interface {p1}, Lj$/util/function/Supplier;->get()Ljava/lang/Object;
 
     move-result-object p1
 
@@ -184,10 +171,10 @@
     throw p1
 .end method
 
-.method public final toString()Ljava/lang/String;
-    .locals 3
+.method public toString()Ljava/lang/String;
+    .locals 4
 
-    iget-boolean v0, p0, Lj$/util/OptionalLong;->a:Z
+    iget-boolean v0, p0, Lj$/util/OptionalLong;->isPresent:Z
 
     if-eqz v0, :cond_0
 
@@ -195,15 +182,15 @@
 
     new-array v0, v0, [Ljava/lang/Object;
 
-    iget-wide v1, p0, Lj$/util/OptionalLong;->b:J
+    const/4 v1, 0x0
 
-    invoke-static {v1, v2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+    iget-wide v2, p0, Lj$/util/OptionalLong;->value:J
 
-    move-result-object v1
+    invoke-static {v2, v3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
-    const/4 v2, 0x0
+    move-result-object v2
 
-    aput-object v1, v0, v2
+    aput-object v2, v0, v1
 
     const-string v1, "OptionalLong[%s]"
 

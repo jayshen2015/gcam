@@ -1,15 +1,7 @@
-.class public final Lfig;
+.class public interface abstract Lfig;
 .super Ljava/lang/Object;
-
-# interfaces
-.implements Ljava/lang/AutoCloseable;
 
 
 # virtual methods
-.method public final close()V
-    .locals 1
-
-    const/4 v0, 0x0
-
-    throw v0
+.method public abstract fV()V
 .end method

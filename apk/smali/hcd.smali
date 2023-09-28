@@ -2,66 +2,38 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Landroid/view/View$OnLayoutChangeListener;
+.implements Llij;
 
 
 # instance fields
-.field public final synthetic a:Lcom/google/android/apps/camera/smarts/SmartsChipView;
-
-.field public final synthetic b:Lhdu;
+.field public final synthetic a:Lljk;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lcom/google/android/apps/camera/smarts/SmartsChipView;Lhdu;)V
+.method public synthetic constructor <init>(Lljk;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lhcd;->a:Lcom/google/android/apps/camera/smarts/SmartsChipView;
-
-    iput-object p2, p0, Lhcd;->b:Lhdu;
+    iput-object p1, p0, Lhcd;->a:Lljk;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onLayoutChange(Landroid/view/View;IIIIIIII)V
-    .locals 0
+.method public final fB(Ljava/lang/Object;)V
+    .locals 1
 
-    iget-object p1, p0, Lhcd;->a:Lcom/google/android/apps/camera/smarts/SmartsChipView;
+    iget-object v0, p0, Lhcd;->a:Lljk;
 
-    iget-object p2, p0, Lhcd;->b:Lhdu;
+    check-cast p1, Ljava/lang/Integer;
 
-    invoke-static {p2}, Lhbp;->a(Lhdu;)Lhbo;
+    invoke-virtual {p1}, Ljava/lang/Integer;->intValue()I
 
-    move-result-object p2
+    move-result p1
 
-    iget p3, p1, Lcom/google/android/apps/camera/smarts/SmartsChipView;->m:I
-
-    invoke-virtual {p2, p3}, Lhbo;->f(I)V
-
-    const/4 p3, 0x1
-
-    invoke-virtual {p2, p3}, Lhbo;->b(Z)V
-
-    iget-boolean p3, p1, Lcom/google/android/apps/camera/smarts/SmartsChipView;->i:Z
-
-    invoke-virtual {p2, p3}, Lhbo;->d(Z)V
-
-    iget-boolean p3, p1, Lcom/google/android/apps/camera/smarts/SmartsChipView;->j:Z
-
-    invoke-virtual {p2, p3}, Lhbo;->c(Z)V
-
-    iget-boolean p3, p1, Lcom/google/android/apps/camera/smarts/SmartsChipView;->k:Z
-
-    invoke-virtual {p2, p3}, Lhbo;->e(Z)V
-
-    invoke-virtual {p2}, Lhbo;->a()Lhbp;
-
-    move-result-object p2
-
-    invoke-virtual {p1, p2}, Lcom/google/android/apps/camera/smarts/SmartsChipView;->e(Lhbp;)V
+    invoke-interface {v0, p1}, Lljk;->c(I)V
 
     return-void
 .end method

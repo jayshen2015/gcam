@@ -1,55 +1,45 @@
-.class public final Lhdh;
-.super Ljava/lang/Object;
-
-# interfaces
-.implements Lhec;
-
-
-# instance fields
-.field final synthetic a:Lhdz;
-
-.field final synthetic b:Lhdy;
-
-.field final synthetic c:Lhdi;
+.class final Lhdh;
+.super Lldl;
 
 
 # direct methods
-.method public constructor <init>(Lhdi;Lhdz;Lhdy;)V
+.method public constructor <init>(Llco;)V
     .locals 0
 
-    iput-object p1, p0, Lhdh;->c:Lhdi;
-
-    iput-object p2, p0, Lhdh;->a:Lhdz;
-
-    iput-object p3, p0, Lhdh;->b:Lhdy;
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0, p1}, Lldl;-><init>(Llco;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()V
-    .locals 1
+.method protected final bridge synthetic c(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 2
 
-    const/4 v0, 0x0
+    check-cast p1, Lgjk;
 
-    throw v0
-.end method
+    sget-object v0, Lgjk;->b:Lgjk;
 
-.method public final b(Lheb;)V
-    .locals 0
+    const/4 v1, 0x1
 
-    const/4 p1, 0x0
+    if-eq p1, v0, :cond_1
 
-    throw p1
-.end method
+    sget-object v0, Lgjk;->d:Lgjk;
 
-.method public final c(Lheb;)V
-    .locals 0
+    if-ne p1, v0, :cond_0
 
-    const/4 p1, 0x0
+    goto :goto_0
 
-    throw p1
+    :cond_0
+    const/4 v1, 0x0
+
+    goto :goto_0
+
+    :cond_1
+    :goto_0
+    invoke-static {v1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    move-result-object p1
+
+    return-object p1
 .end method

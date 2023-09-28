@@ -1,72 +1,188 @@
 .class public final Lmhv;
-.super Lahx;
-
-
-# static fields
-.field public static final CREATOR:Landroid/os/Parcelable$Creator;
+.super Ljava/lang/Object;
 
 
 # instance fields
-.field public a:Z
+.field public final a:Lcom/google/android/libraries/lens/lenslite/dynamicloading/DLEngineApi;
+
+.field public final b:Ljava/lang/String;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
+.method public constructor <init>()V
+    .locals 0
 
-    new-instance v0, Lmfz;
-
-    const/4 v1, 0x3
-
-    invoke-direct {v0, v1}, Lmfz;-><init>(I)V
-
-    sput-object v0, Lmhv;->CREATOR:Landroid/os/Parcelable$Creator;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
-.method public constructor <init>(Landroid/os/Parcel;Ljava/lang/ClassLoader;)V
+.method public constructor <init>(Lcom/google/android/libraries/lens/lenslite/dynamicloading/DLEngineApi;Ljava/lang/String;)V
     .locals 0
 
-    invoke-direct {p0, p1, p2}, Lahx;-><init>(Landroid/os/Parcel;Ljava/lang/ClassLoader;)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
+    if-eqz p1, :cond_1
 
-    move-result p1
+    iput-object p1, p0, Lmhv;->a:Lcom/google/android/libraries/lens/lenslite/dynamicloading/DLEngineApi;
 
-    const/4 p2, 0x1
+    if-eqz p2, :cond_0
 
-    if-ne p1, p2, :cond_0
+    iput-object p2, p0, Lmhv;->b:Ljava/lang/String;
 
-    goto :goto_0
+    return-void
 
     :cond_0
-    const/4 p2, 0x0
+    new-instance p1, Ljava/lang/NullPointerException;
 
-    :goto_0
-    iput-boolean p2, p0, Lmhv;->a:Z
+    const-string p2, "Null hostPackageName"
 
-    return-void
+    invoke-direct {p1, p2}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
+
+    throw p1
+
+    :cond_1
+    new-instance p1, Ljava/lang/NullPointerException;
+
+    const-string p2, "Null dlEngineApi"
+
+    invoke-direct {p1, p2}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
+
+    throw p1
 .end method
 
-.method public constructor <init>(Landroid/os/Parcelable;)V
-    .locals 0
+.method public static a(Lcom/google/android/libraries/lens/lenslite/dynamicloading/DLEngineApi;Ljava/lang/String;)Lmhv;
+    .locals 1
 
-    invoke-direct {p0, p1}, Lahx;-><init>(Landroid/os/Parcelable;)V
+    new-instance v0, Lmhv;
 
-    return-void
+    invoke-direct {v0, p0, p1}, Lmhv;-><init>(Lcom/google/android/libraries/lens/lenslite/dynamicloading/DLEngineApi;Ljava/lang/String;)V
+
+    return-object v0
 .end method
 
 
 # virtual methods
-.method public final writeToParcel(Landroid/os/Parcel;I)V
-    .locals 0
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 4
 
-    invoke-super {p0, p1, p2}, Lahx;->writeToParcel(Landroid/os/Parcel;I)V
+    const/4 v0, 0x1
 
-    iget-boolean p2, p0, Lmhv;->a:Z
+    if-ne p1, p0, :cond_0
 
-    invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeInt(I)V
+    return v0
 
-    return-void
+    :cond_0
+    instance-of v1, p1, Lmhv;
+
+    const/4 v2, 0x0
+
+    if-eqz v1, :cond_1
+
+    check-cast p1, Lmhv;
+
+    iget-object v1, p0, Lmhv;->a:Lcom/google/android/libraries/lens/lenslite/dynamicloading/DLEngineApi;
+
+    iget-object v3, p1, Lmhv;->a:Lcom/google/android/libraries/lens/lenslite/dynamicloading/DLEngineApi;
+
+    invoke-virtual {v1, v3}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_1
+
+    iget-object v1, p0, Lmhv;->b:Ljava/lang/String;
+
+    iget-object p1, p1, Lmhv;->b:Ljava/lang/String;
+
+    invoke-virtual {v1, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result p1
+
+    if-eqz p1, :cond_1
+
+    return v0
+
+    :cond_1
+    return v2
+.end method
+
+.method public final hashCode()I
+    .locals 2
+
+    iget-object v0, p0, Lmhv;->a:Lcom/google/android/libraries/lens/lenslite/dynamicloading/DLEngineApi;
+
+    invoke-virtual {v0}, Ljava/lang/Object;->hashCode()I
+
+    move-result v0
+
+    const v1, 0xf4243
+
+    xor-int/2addr v0, v1
+
+    mul-int v0, v0, v1
+
+    iget-object v1, p0, Lmhv;->b:Ljava/lang/String;
+
+    invoke-virtual {v1}, Ljava/lang/String;->hashCode()I
+
+    move-result v1
+
+    xor-int/2addr v0, v1
+
+    return v0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .locals 5
+
+    iget-object v0, p0, Lmhv;->a:Lcom/google/android/libraries/lens/lenslite/dynamicloading/DLEngineApi;
+
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lmhv;->b:Ljava/lang/String;
+
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/String;->length()I
+
+    move-result v2
+
+    invoke-virtual {v1}, Ljava/lang/String;->length()I
+
+    move-result v3
+
+    new-instance v4, Ljava/lang/StringBuilder;
+
+    add-int/lit8 v2, v2, 0x2f
+
+    add-int/2addr v2, v3
+
+    invoke-direct {v4, v2}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string v2, "EngineApiBundle{dlEngineApi="
+
+    invoke-virtual {v4, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v0, ", hostPackageName="
+
+    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v4, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v0, "}"
+
+    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
 .end method

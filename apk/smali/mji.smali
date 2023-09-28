@@ -1,43 +1,33 @@
-.class final Lmji;
-.super Landroid/animation/AnimatorListenerAdapter;
+.class public final synthetic Lmji;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field final synthetic a:Lmjk;
+.field public final synthetic a:Ljava/util/concurrent/ExecutorService;
 
 
 # direct methods
-.method public constructor <init>(Lmjk;)V
+.method public synthetic constructor <init>(Ljava/util/concurrent/ExecutorService;)V
     .locals 0
 
-    iput-object p1, p0, Lmji;->a:Lmjk;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
+    iput-object p1, p0, Lmji;->a:Ljava/util/concurrent/ExecutorService;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onAnimationEnd(Landroid/animation/Animator;)V
+.method public final run()V
     .locals 1
 
-    invoke-super {p0, p1}, Landroid/animation/AnimatorListenerAdapter;->onAnimationEnd(Landroid/animation/Animator;)V
+    iget-object v0, p0, Lmji;->a:Ljava/util/concurrent/ExecutorService;
 
-    iget-object p1, p0, Lmji;->a:Lmjk;
+    invoke-interface {v0}, Ljava/util/concurrent/ExecutorService;->shutdown()V
 
-    invoke-virtual {p1}, Lmjk;->a()V
-
-    iget-object p1, p0, Lmji;->a:Lmjk;
-
-    iget-object v0, p1, Lmjk;->h:Latc;
-
-    if-eqz v0, :cond_0
-
-    iget-object p1, p1, Lmjk;->j:Lmjc;
-
-    invoke-virtual {v0, p1}, Latc;->b(Landroid/graphics/drawable/Drawable;)V
-
-    :cond_0
     return-void
 .end method

@@ -1,75 +1,51 @@
-.class public final Ligl;
+.class public final synthetic Ligl;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Logk;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field private final a:Loiw;
-
-.field private final b:Loiw;
-
-.field private final c:Loiw;
+.field public final synthetic a:Ligm;
 
 
 # direct methods
-.method public constructor <init>(Loiw;Loiw;Loiw;)V
+.method public synthetic constructor <init>(Ligm;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Ligl;->a:Loiw;
-
-    iput-object p2, p0, Ligl;->b:Loiw;
-
-    iput-object p3, p0, Ligl;->c:Loiw;
+    iput-object p1, p0, Ligl;->a:Ligm;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Ligk;
-    .locals 4
+.method public final run()V
+    .locals 3
 
-    iget-object v0, p0, Ligl;->a:Loiw;
+    iget-object v0, p0, Ligl;->a:Ligm;
 
-    check-cast v0, Lelq;
+    iget-object v1, v0, Ligm;->b:Ligq;
 
-    invoke-virtual {v0}, Lelq;->a()Landroid/view/WindowManager;
+    iget-object v1, v1, Ligq;->g:Lljf;
 
-    move-result-object v0
+    const-string v2, "SEController#warmupModel"
 
-    iget-object v1, p0, Ligl;->b:Loiw;
+    invoke-interface {v1, v2}, Lljf;->e(Ljava/lang/String;)V
 
-    invoke-interface {v1}, Loiw;->get()Ljava/lang/Object;
+    iget-object v1, v0, Ligm;->b:Ligq;
 
-    move-result-object v1
+    iget-object v1, v1, Ligq;->j:Ljava/nio/file/Path;
 
-    check-cast v1, Ldhi;
+    invoke-static {v1}, Lcom/google/babelfish/device/avenh/l2l/speechenhancer2/jni/SpeechEnhancerJniWrapperRealtime;->modelWarmup(Ljava/nio/file/Path;)V
 
-    iget-object v2, p0, Ligl;->c:Loiw;
+    iget-object v0, v0, Ligm;->b:Ligq;
 
-    check-cast v2, Lfjj;
+    iget-object v0, v0, Ligq;->g:Lljf;
 
-    invoke-virtual {v2}, Lfjj;->a()Ljava/lang/String;
+    invoke-interface {v0}, Lljf;->f()V
 
-    move-result-object v2
-
-    new-instance v3, Ligk;
-
-    invoke-direct {v3, v0, v1, v2}, Ligk;-><init>(Landroid/view/WindowManager;Ldhi;Ljava/lang/String;)V
-
-    return-object v3
-.end method
-
-.method public final bridge synthetic get()Ljava/lang/Object;
-    .locals 1
-
-    invoke-virtual {p0}, Ligl;->a()Ligk;
-
-    move-result-object v0
-
-    return-object v0
+    return-void
 .end method

@@ -1,132 +1,172 @@
 .class public final Lbln;
 .super Ljava/lang/Object;
 
+# interfaces
+.implements Lazp;
 
-# static fields
-.field public static final a:Landroid/graphics/PointF;
+
+# instance fields
+.field private final b:Ljava/lang/String;
+
+.field private final c:J
+
+.field private final d:I
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
+.method public constructor <init>(Ljava/lang/String;JI)V
+    .locals 0
 
-    new-instance v0, Landroid/graphics/PointF;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {v0}, Landroid/graphics/PointF;-><init>()V
+    iput-object p1, p0, Lbln;->b:Ljava/lang/String;
 
-    sput-object v0, Lbln;->a:Landroid/graphics/PointF;
+    iput-wide p2, p0, Lbln;->c:J
+
+    iput p4, p0, Lbln;->d:I
 
     return-void
 .end method
 
-.method public static a(FFF)F
-    .locals 0
 
-    invoke-static {p2, p0}, Ljava/lang/Math;->min(FF)F
-
-    move-result p0
-
-    invoke-static {p1, p0}, Ljava/lang/Math;->max(FF)F
-
-    move-result p0
-
-    return p0
-.end method
-
-.method static b(FF)I
+# virtual methods
+.method public final a(Ljava/security/MessageDigest;)V
     .locals 3
 
-    float-to-int p0, p0
+    const/16 v0, 0xc
 
-    float-to-int p1, p1
-
-    div-int v0, p0, p1
-
-    rem-int v1, p0, p1
-
-    xor-int v2, p0, p1
-
-    if-gez v2, :cond_0
-
-    if-eqz v1, :cond_0
-
-    add-int/lit8 v0, v0, -0x1
-
-    :cond_0
-    mul-int p1, p1, v0
-
-    sub-int/2addr p0, p1
-
-    return p0
-.end method
-
-.method public static c(Landroid/graphics/PointF;Landroid/graphics/PointF;)Landroid/graphics/PointF;
-    .locals 3
-
-    new-instance v0, Landroid/graphics/PointF;
-
-    iget v1, p0, Landroid/graphics/PointF;->x:F
-
-    iget v2, p1, Landroid/graphics/PointF;->x:F
-
-    add-float/2addr v1, v2
-
-    iget p0, p0, Landroid/graphics/PointF;->y:F
-
-    iget p1, p1, Landroid/graphics/PointF;->y:F
-
-    add-float/2addr p0, p1
-
-    invoke-direct {v0, v1, p0}, Landroid/graphics/PointF;-><init>(FF)V
-
-    return-object v0
-.end method
-
-.method public static d(Lbik;ILjava/util/List;Lbik;Lbhe;)V
-    .locals 1
-
-    invoke-interface {p4}, Lbhe;->g()Ljava/lang/String;
+    invoke-static {v0}, Ljava/nio/ByteBuffer;->allocate(I)Ljava/nio/ByteBuffer;
 
     move-result-object v0
 
-    invoke-virtual {p0, v0, p1}, Lbik;->d(Ljava/lang/String;I)Z
+    iget-wide v1, p0, Lbln;->c:J
 
-    move-result p0
+    invoke-virtual {v0, v1, v2}, Ljava/nio/ByteBuffer;->putLong(J)Ljava/nio/ByteBuffer;
 
-    if-eqz p0, :cond_0
+    move-result-object v0
 
-    invoke-interface {p4}, Lbhe;->g()Ljava/lang/String;
+    iget v1, p0, Lbln;->d:I
 
-    move-result-object p0
+    invoke-virtual {v0, v1}, Ljava/nio/ByteBuffer;->putInt(I)Ljava/nio/ByteBuffer;
 
-    invoke-virtual {p3, p0}, Lbik;->b(Ljava/lang/String;)Lbik;
+    move-result-object v0
 
-    move-result-object p0
+    invoke-virtual {v0}, Ljava/nio/ByteBuffer;->array()[B
 
-    invoke-virtual {p0, p4}, Lbik;->c(Lbil;)Lbik;
+    move-result-object v0
 
-    move-result-object p0
+    invoke-virtual {p1, v0}, Ljava/security/MessageDigest;->update([B)V
 
-    invoke-interface {p2, p0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+    iget-object v0, p0, Lbln;->b:Ljava/lang/String;
 
-    :cond_0
+    sget-object v1, Lbln;->a:Ljava/nio/charset/Charset;
+
+    invoke-virtual {v0, v1}, Ljava/lang/String;->getBytes(Ljava/nio/charset/Charset;)[B
+
+    move-result-object v0
+
+    invoke-virtual {p1, v0}, Ljava/security/MessageDigest;->update([B)V
+
     return-void
 .end method
 
-.method public static e(I)I
-    .locals 1
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 7
 
-    const/16 v0, 0xff
+    const/4 v0, 0x1
 
-    invoke-static {v0, p0}, Ljava/lang/Math;->min(II)I
+    if-ne p0, p1, :cond_0
 
-    move-result p0
+    return v0
 
-    const/4 v0, 0x0
+    :cond_0
+    const/4 v1, 0x0
 
-    invoke-static {v0, p0}, Ljava/lang/Math;->max(II)I
+    if-eqz p1, :cond_5
 
-    move-result p0
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    return p0
+    move-result-object v2
+
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    move-result-object v3
+
+    if-eq v2, v3, :cond_1
+
+    goto :goto_0
+
+    :cond_1
+    check-cast p1, Lbln;
+
+    iget-wide v2, p0, Lbln;->c:J
+
+    iget-wide v4, p1, Lbln;->c:J
+
+    cmp-long v6, v2, v4
+
+    if-eqz v6, :cond_2
+
+    return v1
+
+    :cond_2
+    iget v2, p0, Lbln;->d:I
+
+    iget v3, p1, Lbln;->d:I
+
+    if-eq v2, v3, :cond_3
+
+    return v1
+
+    :cond_3
+    iget-object v2, p0, Lbln;->b:Ljava/lang/String;
+
+    iget-object p1, p1, Lbln;->b:Ljava/lang/String;
+
+    invoke-virtual {v2, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result p1
+
+    if-nez p1, :cond_4
+
+    return v1
+
+    :cond_4
+    return v0
+
+    :cond_5
+    :goto_0
+    return v1
+.end method
+
+.method public final hashCode()I
+    .locals 5
+
+    iget-object v0, p0, Lbln;->b:Ljava/lang/String;
+
+    invoke-virtual {v0}, Ljava/lang/String;->hashCode()I
+
+    move-result v0
+
+    iget-wide v1, p0, Lbln;->c:J
+
+    mul-int/lit8 v0, v0, 0x1f
+
+    const/16 v3, 0x20
+
+    ushr-long v3, v1, v3
+
+    xor-long/2addr v1, v3
+
+    long-to-int v2, v1
+
+    add-int/2addr v0, v2
+
+    mul-int/lit8 v0, v0, 0x1f
+
+    iget v1, p0, Lbln;->d:I
+
+    add-int/2addr v0, v1
+
+    return v0
 .end method

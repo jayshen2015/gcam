@@ -1,114 +1,97 @@
-.class public final Ldtq;
+.class public final synthetic Ldtq;
 .super Ljava/lang/Object;
+
+# interfaces
+.implements Landroid/content/DialogInterface$OnClickListener;
 
 
 # instance fields
-.field public final a:Ljava/util/List;
+.field public final synthetic a:Likm;
 
-.field public final b:Ljava/util/List;
-
-.field public c:Ldsw;
-
-.field public final d:Ljava/util/List;
-
-.field private final e:Lduv;
+.field private final synthetic b:I
 
 
 # direct methods
-.method public constructor <init>(Lduv;)V
-    .locals 1
+.method public synthetic constructor <init>(Likm;I[B)V
+    .locals 0
+
+    iput p2, p0, Ldtq;->b:I
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    new-instance v0, Ljava/util/ArrayList;
-
-    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
-
-    iput-object v0, p0, Ldtq;->a:Ljava/util/List;
-
-    new-instance v0, Ljava/util/ArrayList;
-
-    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
-
-    iput-object v0, p0, Ldtq;->b:Ljava/util/List;
-
-    sget-object v0, Ldta;->a:Ldta;
-
-    iput-object v0, p0, Ldtq;->c:Ldsw;
-
-    new-instance v0, Ljava/util/ArrayList;
-
-    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
-
-    iput-object v0, p0, Ldtq;->d:Ljava/util/List;
-
-    iput-object p1, p0, Ldtq;->e:Lduv;
+    iput-object p1, p0, Ldtq;->a:Likm;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Ldtu;
-    .locals 7
-
-    new-instance v4, Ldto;
-
-    const/4 v0, 0x0
-
-    invoke-direct {v4, p0, v0}, Ldto;-><init>(Ldtq;I)V
-
-    new-instance v3, Ldtj;
-
-    invoke-direct {v3, p0, v0}, Ldtj;-><init>(Ldtq;I)V
-
-    new-instance v5, Ldtp;
-
-    invoke-direct {v5, p0}, Ldtp;-><init>(Ldtq;)V
-
-    new-instance v6, Ldtu;
-
-    iget-object v1, p0, Ldtq;->e:Lduv;
-
-    iget-object v2, p0, Ldtq;->c:Ldsw;
-
-    move-object v0, v6
-
-    invoke-direct/range {v0 .. v5}, Ldtu;-><init>(Lduv;Ldsw;Ldss;Ldsu;Ldtc;)V
-
-    return-object v6
-.end method
-
-.method public final b(Ldss;)V
+.method public final onClick(Landroid/content/DialogInterface;I)V
     .locals 1
 
-    iget-object v0, p0, Ldtq;->b:Ljava/util/List;
+    iget p1, p0, Ldtq;->b:I
 
-    invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+    packed-switch p1, :pswitch_data_0
 
-    return-void
-.end method
+    iget-object p1, p0, Ldtq;->a:Likm;
 
-.method public final c(Ldsu;)V
-    .locals 1
+    new-instance p2, Landroid/content/Intent;
 
-    iget-object v0, p0, Ldtq;->a:Ljava/util/List;
+    const-string v0, "android.settings.APPLICATION_DETAILS_SETTINGS"
 
-    invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+    invoke-direct {p2, v0}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    return-void
-.end method
+    const-string v0, "package:com.google.android.apps.photos"
 
-.method public final d(Ldtt;)V
-    .locals 2
+    invoke-static {v0}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
 
-    new-instance v0, Ldtj;
+    move-result-object v0
 
-    const/4 v1, 0x1
+    invoke-virtual {p2, v0}, Landroid/content/Intent;->setData(Landroid/net/Uri;)Landroid/content/Intent;
 
-    invoke-direct {v0, p1, v1}, Ldtj;-><init>(Ldtt;I)V
+    move-result-object p2
 
-    invoke-virtual {p0, v0}, Ldtq;->b(Ldss;)V
+    iget-object p1, p1, Likm;->a:Landroid/content/Context;
+
+    invoke-virtual {p1, p2}, Landroid/content/Context;->startActivity(Landroid/content/Intent;)V
 
     return-void
+
+    :pswitch_0
+    iget-object p1, p0, Ldtq;->a:Likm;
+
+    new-instance p2, Landroid/content/Intent;
+
+    const-string v0, "android.intent.action.VIEW"
+
+    invoke-direct {p2, v0}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
+
+    const-string v0, "market://details?id=com.google.android.apps.photos"
+
+    invoke-static {v0}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
+
+    move-result-object v0
+
+    invoke-virtual {p2, v0}, Landroid/content/Intent;->setData(Landroid/net/Uri;)Landroid/content/Intent;
+
+    move-result-object p2
+
+    const-string v0, "android.intent.category.BROWSABLE"
+
+    invoke-virtual {p2, v0}, Landroid/content/Intent;->addCategory(Ljava/lang/String;)Landroid/content/Intent;
+
+    move-result-object p2
+
+    iget-object p1, p1, Likm;->a:Landroid/content/Context;
+
+    invoke-virtual {p1, p2}, Landroid/content/Context;->startActivity(Landroid/content/Intent;)V
+
+    return-void
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

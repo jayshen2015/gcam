@@ -1,62 +1,104 @@
-.class public interface abstract Libj;
-.super Ljava/lang/Object;
+.class final Libj;
+.super Licu;
 
-# interfaces
-.implements Libk;
-.implements Licc;
+
+# instance fields
+.field final synthetic a:Libl;
+
+
+# direct methods
+.method public constructor <init>(Libl;)V
+    .locals 0
+
+    iput-object p1, p0, Libj;->a:Libl;
+
+    invoke-direct {p0, p1}, Licu;-><init>(Licw;)V
+
+    return-void
+.end method
 
 
 # virtual methods
-.method public abstract a()Ljava/util/List;
+.method public final a()V
+    .locals 2
+
+    iget-object v0, p0, Libj;->a:Libl;
+
+    iget-object v0, v0, Libl;->a:Lihu;
+
+    invoke-virtual {v0}, Lihu;->e()V
+
+    invoke-super {p0}, Licu;->a()V
+
+    iget-object v0, p0, Libj;->a:Libl;
+
+    iget-object v1, v0, Libl;->a:Lihu;
+
+    iget-object v0, v0, Libl;->c:Lihw;
+
+    invoke-virtual {v1, v0}, Lihu;->g(Lihw;)V
+
+    return-void
 .end method
 
-.method public abstract b()V
+.method public final fX()Z
+    .locals 2
+
+    iget-object v0, p0, Libj;->a:Libl;
+
+    iget-object v0, v0, Libl;->a:Lihu;
+
+    invoke-virtual {v0}, Lihu;->e()V
+
+    iget-object v0, p0, Libj;->a:Libl;
+
+    iget-object v1, v0, Libl;->a:Lihu;
+
+    iget-object v0, v0, Libl;->b:Lihw;
+
+    invoke-virtual {v1, v0}, Lihu;->g(Lihw;)V
+
+    const/4 v0, 0x1
+
+    return v0
 .end method
 
-.method public abstract c()V
+.method public final k()V
+    .locals 2
+
+    iget-object v0, p0, Libj;->a:Libl;
+
+    iget-object v0, v0, Libl;->a:Lihu;
+
+    invoke-virtual {v0}, Lihu;->e()V
+
+    iget-object v0, p0, Libj;->a:Libl;
+
+    iget-object v1, v0, Libl;->a:Lihu;
+
+    iget-object v0, v0, Libl;->b:Lihw;
+
+    invoke-virtual {v1, v0}, Lihu;->g(Lihw;)V
+
+    return-void
 .end method
 
-.method public abstract d(Z)V
-.end method
+.method public final m()V
+    .locals 2
 
-.method public abstract e(Lihg;)V
-.end method
+    iget-object v0, p0, Libj;->a:Libl;
 
-.method public abstract i(Libh;)V
-.end method
+    iget-object v0, v0, Libl;->a:Lihu;
 
-.method public abstract j(Lika;Z)V
-.end method
+    invoke-virtual {v0}, Lihu;->e()V
 
-.method public abstract k(Libi;)V
-.end method
+    iget-object v0, p0, Libj;->a:Libl;
 
-.method public abstract l(Z)V
-.end method
+    iget-object v1, v0, Libl;->a:Lihu;
 
-.method public abstract m()V
-.end method
+    iget-object v0, v0, Libl;->e:Lihw;
 
-.method public abstract n()V
-.end method
+    invoke-virtual {v1, v0}, Lihu;->g(Lihw;)V
 
-.method public abstract q()Z
-.end method
-
-.method public abstract r()Z
-.end method
-
-.method public abstract s(Lika;)Z
-.end method
-
-.method public abstract t(Lika;)Z
-.end method
-
-.method public abstract v(Z)V
-.end method
-
-.method public abstract w(Lika;)V
-.end method
-
-.method public abstract x()Liaw;
+    return-void
 .end method

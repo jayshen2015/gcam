@@ -98,15 +98,15 @@
 
     new-array v1, v1, [Ljava/lang/Object;
 
-    iget-wide v2, p0, Lcom/google/googlex/gcam/base/OwningNativePointer;->nativeSharedPointer:J
+    const/4 v2, 0x0
 
-    invoke-static {v2, v3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+    iget-wide v3, p0, Lcom/google/googlex/gcam/base/OwningNativePointer;->nativeSharedPointer:J
 
-    move-result-object v2
+    invoke-static {v3, v4}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
-    const/4 v3, 0x0
+    move-result-object v3
 
-    aput-object v2, v1, v3
+    aput-object v3, v1, v2
 
     const-string v2, "OwningNativePointer finalized with a non-zero nativeSharedPointer (0x%x), this indicates a resource management error%n"
 

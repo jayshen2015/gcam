@@ -1,61 +1,49 @@
-.class public final Lhrs;
+.class public final synthetic Lhrs;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Logk;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field private final a:Loiw;
+.field public final synthetic a:Lhrx;
+
+.field public final synthetic b:Lhsp;
+
+.field public final synthetic c:Llif;
 
 
 # direct methods
-.method public constructor <init>(Loiw;)V
+.method public synthetic constructor <init>(Lhrx;Lhsp;Llif;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lhrs;->a:Loiw;
+    iput-object p1, p0, Lhrs;->a:Lhrx;
+
+    iput-object p2, p0, Lhrs;->b:Lhsp;
+
+    iput-object p3, p0, Lhrs;->c:Llif;
 
     return-void
 .end method
 
-.method public static a(Loiw;)Lhrs;
-    .locals 1
-
-    new-instance v0, Lhrs;
-
-    invoke-direct {v0, p0}, Lhrs;-><init>(Loiw;)V
-
-    return-object v0
-.end method
-
 
 # virtual methods
-.method public final b()Ljew;
-    .locals 2
+.method public final run()V
+    .locals 4
 
-    iget-object v0, p0, Lhrs;->a:Loiw;
+    iget-object v0, p0, Lhrs;->a:Lhrx;
 
-    check-cast v0, Lelz;
+    iget-object v1, p0, Lhrs;->b:Lhsp;
 
-    invoke-virtual {v0}, Lelz;->a()Landroid/view/accessibility/AccessibilityManager;
+    iget-object v2, p0, Lhrs;->c:Llif;
 
-    move-result-object v0
+    new-instance v3, Lhrp;
 
-    new-instance v1, Ljew;
+    invoke-direct {v3, v1, v2}, Lhrp;-><init>(Lhsp;Llif;)V
 
-    invoke-direct {v1, v0}, Ljew;-><init>(Landroid/view/accessibility/AccessibilityManager;)V
+    invoke-virtual {v0, v3}, Lhrx;->d(Lj$/util/function/Consumer;)V
 
-    return-object v1
-.end method
-
-.method public final bridge synthetic get()Ljava/lang/Object;
-    .locals 1
-
-    invoke-virtual {p0}, Lhrs;->b()Ljew;
-
-    move-result-object v0
-
-    return-object v0
+    return-void
 .end method

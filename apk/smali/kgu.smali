@@ -1,41 +1,36 @@
-.class public final synthetic Lkgu;
+.class public final Lkgu;
 .super Ljava/lang/Object;
-
-# interfaces
-.implements Ljzu;
 
 
 # static fields
-.field public static final synthetic a:Lkgu;
+.field public static final a:Lkhk;
+
+.field public static final b:[Lkhk;
 
 
 # direct methods
-.method static synthetic constructor <clinit>()V
-    .locals 1
+.method static constructor <clinit>()V
+    .locals 4
 
-    new-instance v0, Lkgu;
+    new-instance v0, Lkhk;
 
-    invoke-direct {v0}, Lkgu;-><init>()V
+    const-string v1, "log_error"
 
-    sput-object v0, Lkgu;->a:Lkgu;
+    const-wide/16 v2, 0x1
+
+    invoke-direct {v0, v1, v2, v3}, Lkhk;-><init>(Ljava/lang/String;J)V
+
+    sput-object v0, Lkgu;->a:Lkhk;
+
+    const/4 v1, 0x1
+
+    new-array v1, v1, [Lkhk;
+
+    const/4 v2, 0x0
+
+    aput-object v0, v1, v2
+
+    sput-object v1, Lkgu;->b:[Lkhk;
 
     return-void
-.end method
-
-.method private synthetic constructor <init>()V
-    .locals 0
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
-.end method
-
-
-# virtual methods
-.method public final a()Ljava/lang/Object;
-    .locals 1
-
-    const/4 v0, 0x0
-
-    return-object v0
 .end method

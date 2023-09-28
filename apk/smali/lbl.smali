@@ -1,101 +1,54 @@
-.class public final synthetic Llbl;
+.class public final Llbl;
 .super Ljava/lang/Object;
-
-# interfaces
-.implements Ljava/lang/Runnable;
-
-
-# static fields
-.field public static final synthetic a:Llbl;
-
-.field public static final synthetic b:Llbl;
-
-.field public static final synthetic c:Llbl;
 
 
 # instance fields
-.field private final synthetic d:I
+.field private final a:Llar;
 
 
 # direct methods
-.method static synthetic constructor <clinit>()V
-    .locals 2
+.method public constructor <init>(Llar;)V
+    .locals 0
 
-    new-instance v0, Llbl;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const/4 v1, 0x3
-
-    invoke-direct {v0, v1}, Llbl;-><init>(I)V
-
-    sput-object v0, Llbl;->c:Llbl;
-
-    new-instance v0, Llbl;
-
-    const/4 v1, 0x2
-
-    invoke-direct {v0, v1}, Llbl;-><init>(I)V
-
-    sput-object v0, Llbl;->b:Llbl;
-
-    new-instance v0, Llbl;
-
-    const/4 v1, 0x0
-
-    invoke-direct {v0, v1}, Llbl;-><init>(I)V
-
-    sput-object v0, Llbl;->a:Llbl;
+    iput-object p1, p0, Llbl;->a:Llar;
 
     return-void
 .end method
 
-.method public synthetic constructor <init>(I)V
-    .locals 0
+.method public static a(Ljava/lang/Throwable;)V
+    .locals 2
 
-    iput p1, p0, Llbl;->d:I
+    new-instance v0, Llbl;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance v1, Llar;
+
+    invoke-direct {v1}, Llar;-><init>()V
+
+    invoke-direct {v0, v1}, Llbl;-><init>(Llar;)V
+
+    invoke-virtual {v0, p0}, Llbl;->b(Ljava/lang/Throwable;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final run()V
-    .locals 2
+.method public final b(Ljava/lang/Throwable;)V
+    .locals 4
 
-    iget v0, p0, Llbl;->d:I
+    iget-object v0, p0, Llbl;->a:Llar;
 
-    packed-switch v0, :pswitch_data_0
+    new-instance v1, Lkqn;
 
-    :pswitch_0
-    return-void
+    const/4 v2, 0x4
 
-    :pswitch_1
-    new-instance v0, Ljava/lang/IllegalStateException;
+    const/4 v3, 0x0
 
-    const-string v1, "Span was closed by an invalid call to SpanEndSignal.run()"
+    invoke-direct {v1, p1, v2, v3}, Lkqn;-><init>(Ljava/lang/Throwable;I[C)V
 
-    invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-
-    :pswitch_2
-    invoke-static {}, Lloz;->g()V
-
-    :pswitch_3
-    return-void
-
-    :pswitch_4
-    invoke-static {}, Landroid/opengl/GLES20;->glFlush()V
+    invoke-virtual {v0, v1}, Llar;->execute(Ljava/lang/Runnable;)V
 
     return-void
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_4
-        :pswitch_3
-        :pswitch_2
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
 .end method

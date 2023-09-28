@@ -1,28 +1,51 @@
 .class public final Llvi;
-.super Lllj;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Lpys;
+
+
+# instance fields
+.field private final a:Lqkg;
+
+
+# direct methods
+.method public constructor <init>(Lqkg;)V
+    .locals 0
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Llvi;->a:Lqkg;
+
+    return-void
+.end method
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 0
+.method public final a()Llvh;
+    .locals 2
 
-    const/4 p1, 0x0
+    iget-object v0, p0, Llvi;->a:Lqkg;
 
-    throw p1
+    invoke-interface {v0}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Llzh;
+
+    new-instance v1, Llvh;
+
+    invoke-direct {v1, v0}, Llvh;-><init>(Llzh;)V
+
+    return-object v1
 .end method
 
-.method public final hashCode()I
+.method public final bridge synthetic get()Ljava/lang/Object;
     .locals 1
 
-    const/4 v0, 0x0
+    invoke-virtual {p0}, Llvi;->a()Llvh;
 
-    throw v0
-.end method
+    move-result-object v0
 
-.method public final toString()Ljava/lang/String;
-    .locals 1
-
-    const/4 v0, 0x0
-
-    throw v0
+    return-object v0
 .end method

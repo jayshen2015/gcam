@@ -1,66 +1,61 @@
 .class public final Llax;
-.super Llbk;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Ljava/util/concurrent/Executor;
+
+
+# static fields
+.field static final a:Llar;
+
+
+# instance fields
+.field public final b:Llar;
+
+.field private final c:Ljava/util/concurrent/Executor;
 
 
 # direct methods
-.method protected constructor <init>(Llbd;Lkzc;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 2
 
-    invoke-direct {p0, p1, p2}, Llbk;-><init>(Llbd;Lkzc;)V
+    new-instance v0, Llar;
+
+    sget-object v1, Llar;->a:Llas;
+
+    invoke-direct {v0, v1}, Llar;-><init>(Llas;)V
+
+    sput-object v0, Llax;->a:Llar;
 
     return-void
 .end method
 
-.method public static b(Llbd;ILjava/nio/ByteBuffer;)Llax;
-    .locals 2
+.method public constructor <init>(Ljava/util/concurrent/Executor;)V
+    .locals 1
 
-    new-instance v0, Llax;
+    sget-object v0, Llax;->a:Llar;
 
-    new-instance v1, Llaw;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {v1, p0, p1, p2}, Llaw;-><init>(Llbd;ILjava/nio/ByteBuffer;)V
+    iput-object v0, p0, Llax;->b:Llar;
 
-    invoke-static {p0, v1}, Llbk;->d(Llbd;Ljava/util/concurrent/Callable;)Lkzc;
+    iput-object p1, p0, Llax;->c:Ljava/util/concurrent/Executor;
 
-    move-result-object p1
-
-    invoke-direct {v0, p0, p1}, Llax;-><init>(Llbd;Lkzc;)V
-
-    return-object v0
+    return-void
 .end method
 
 
 # virtual methods
-.method public final toString()Ljava/lang/String;
-    .locals 3
+.method public final execute(Ljava/lang/Runnable;)V
+    .locals 2
 
-    invoke-virtual {p0}, Llbk;->f()Llcv;
+    iget-object v0, p0, Llax;->c:Ljava/util/concurrent/Executor;
 
-    move-result-object v0
+    new-instance v1, Llaw;
 
-    check-cast v0, Llcm;
+    invoke-direct {v1, p0, p1}, Llaw;-><init>(Llax;Ljava/lang/Runnable;)V
 
-    invoke-virtual {v0}, Llcm;->toString()Ljava/lang/String;
+    invoke-interface {v0, v1}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
 
-    move-result-object v0
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, "GLBuffer{"
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v0, "}"
-
-    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    return-object v0
+    return-void
 .end method

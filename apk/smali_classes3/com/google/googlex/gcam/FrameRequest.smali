@@ -37,8 +37,54 @@
 
 
 # virtual methods
-.method public final a()Lnqg;
-    .locals 5
+.method public final a()F
+    .locals 2
+
+    iget-wide v0, p0, Lcom/google/googlex/gcam/FrameRequest;->a:J
+
+    invoke-static {v0, v1, p0}, Lcom/google/googlex/gcam/GcamModuleJNI;->FrameRequest_desired_analog_gain_get(JLcom/google/googlex/gcam/FrameRequest;)F
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public final b()F
+    .locals 2
+
+    iget-wide v0, p0, Lcom/google/googlex/gcam/FrameRequest;->a:J
+
+    invoke-static {v0, v1, p0}, Lcom/google/googlex/gcam/GcamModuleJNI;->FrameRequest_desired_digital_gain_get(JLcom/google/googlex/gcam/FrameRequest;)F
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public b(F)V
+    .locals 2
+
+    iget-wide v0, p0, Lcom/google/googlex/gcam/FrameRequest;->a:J
+
+    invoke-static {v0, v1, p0, p1}, Lcom/google/googlex/gcam/GcamModuleJNI;->FrameRequest_desired_exposure_time_ms_set(JLcom/google/googlex/gcam/FrameRequest;F)V
+
+    return-void
+.end method
+
+.method public final c()F
+    .locals 2
+
+    iget-wide v0, p0, Lcom/google/googlex/gcam/FrameRequest;->a:J
+
+    invoke-static {v0, v1, p0}, Lcom/google/googlex/gcam/GcamModuleJNI;->FrameRequest_desired_exposure_time_ms_get(JLcom/google/googlex/gcam/FrameRequest;)F
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public final d()I
+    .locals 2
 
     iget-wide v0, p0, Lcom/google/googlex/gcam/FrameRequest;->a:J
 
@@ -46,88 +92,10 @@
 
     move-result v0
 
-    sget-object v1, Lnqg;->i:[Lnqg;
-
-    const/4 v2, 0x0
-
-    const/16 v3, 0x8
-
-    if-ge v0, v3, :cond_1
-
-    if-ltz v0, :cond_0
-
-    aget-object v1, v1, v0
-
-    iget v4, v1, Lnqg;->j:I
-
-    if-eq v4, v0, :cond_2
-
-    goto :goto_0
-
-    :cond_0
-    goto :goto_0
-
-    :cond_1
-    :goto_0
-    sget-object v1, Lnqg;->i:[Lnqg;
-
-    if-ge v2, v3, :cond_4
-
-    aget-object v1, v1, v2
-
-    iget v4, v1, Lnqg;->j:I
-
-    if-ne v4, v0, :cond_3
-
-    :cond_2
-    return-object v1
-
-    :cond_3
-    add-int/lit8 v2, v2, 0x1
-
-    goto :goto_0
-
-    :cond_4
-    const-class v1, Lnqg;
-
-    new-instance v2, Ljava/lang/IllegalArgumentException;
-
-    invoke-virtual {v1}, Ljava/lang/Object;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v4, "No enum "
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v1, " with value "
-
-    invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-direct {v2, v0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    goto :goto_2
-
-    :goto_1
-    throw v2
-
-    :goto_2
-    goto :goto_1
+    return v0
 .end method
 
-.method public final declared-synchronized b()V
+.method public final declared-synchronized e()V
     .locals 5
 
     monitor-enter p0
@@ -172,7 +140,17 @@
 .method protected final finalize()V
     .locals 0
 
-    invoke-virtual {p0}, Lcom/google/googlex/gcam/FrameRequest;->b()V
+    invoke-virtual {p0}, Lcom/google/googlex/gcam/FrameRequest;->e()V
+
+    return-void
+.end method
+
+.method public setDesired_analog_gain(F)V
+    .locals 2
+
+    iget-wide v0, p0, Lcom/google/googlex/gcam/FrameRequest;->a:J
+
+    invoke-static {v0, v1, p0, p1}, Lcom/google/googlex/gcam/GcamModuleJNI;->FrameRequest_desired_analog_gain_set(JLcom/google/googlex/gcam/FrameRequest;F)V
 
     return-void
 .end method

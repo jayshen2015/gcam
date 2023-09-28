@@ -3,7 +3,7 @@
 
 
 # virtual methods
-.method public final a(Laor;)V
+.method public final a(Lahm;)V
     .locals 0
 
     const/4 p1, 0x0

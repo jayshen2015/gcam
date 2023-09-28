@@ -1,47 +1,63 @@
 .class public final Lban;
-.super Lbai;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Lbae;
+
+
+# instance fields
+.field public final a:Lbht;
 
 
 # direct methods
-.method public constructor <init>(Lbav;)V
-    .locals 0
+.method public constructor <init>(Ljava/io/InputStream;Lbct;)V
+    .locals 1
 
-    invoke-direct {p0, p1}, Lbai;-><init>(Lbav;)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    new-instance v0, Lbht;
+
+    invoke-direct {v0, p1, p2}, Lbht;-><init>(Ljava/io/InputStream;Lbct;)V
+
+    iput-object v0, p0, Lban;->a:Lbht;
+
+    const/high16 p1, 0x500000
+
+    invoke-virtual {v0, p1}, Lbht;->mark(I)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final b(Lbcj;)Z
-    .locals 0
+.method public final bridge synthetic a()Ljava/lang/Object;
+    .locals 1
 
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    invoke-virtual {p0}, Lban;->c()Ljava/io/InputStream;
 
-    iget-object p1, p1, Lbcj;->i:Laxf;
+    move-result-object v0
 
-    iget-boolean p1, p1, Laxf;->e:Z
-
-    return p1
+    return-object v0
 .end method
 
-.method public final bridge synthetic c(Ljava/lang/Object;)Z
-    .locals 0
+.method public final b()V
+    .locals 1
 
-    check-cast p1, Ljava/lang/Boolean;
+    iget-object v0, p0, Lban;->a:Lbht;
 
-    invoke-virtual {p1}, Ljava/lang/Boolean;->booleanValue()Z
+    invoke-virtual {v0}, Lbht;->b()V
 
-    move-result p1
+    return-void
+.end method
 
-    if-nez p1, :cond_0
+.method public final c()Ljava/io/InputStream;
+    .locals 1
 
-    const/4 p1, 0x1
+    iget-object v0, p0, Lban;->a:Lbht;
 
-    return p1
+    invoke-virtual {v0}, Lbht;->reset()V
 
-    :cond_0
-    const/4 p1, 0x0
+    iget-object v0, p0, Lban;->a:Lbht;
 
-    return p1
+    return-object v0
 .end method

@@ -1,18 +1,51 @@
-.class public final Lhqt;
-.super Landroid/widget/FrameLayout;
+.class final Lhqt;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Lphh;
 
 
 # instance fields
-.field public a:Z
+.field final synthetic a:Lhqu;
 
 
 # direct methods
-.method public constructor <init>(Landroid/content/Context;)V
-    .locals 1
+.method public constructor <init>(Lhqu;)V
+    .locals 0
 
-    const/4 v0, 0x0
+    iput-object p1, p0, Lhqt;->a:Lhqu;
 
-    invoke-direct {p0, p1, v0}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public final a(Ljava/lang/Throwable;)V
+    .locals 0
+
+    iget-object p1, p0, Lhqt;->a:Lhqu;
+
+    iget-object p1, p1, Lhqd;->b:Lhps;
+
+    invoke-virtual {p1}, Lhps;->t()V
+
+    return-void
+.end method
+
+.method public final bridge synthetic b(Ljava/lang/Object;)V
+    .locals 0
+
+    check-cast p1, Likc;
+
+    iget-object p1, p0, Lhqt;->a:Lhqu;
+
+    invoke-virtual {p1}, Lhqd;->v()Lhsg;
+
+    move-result-object p1
+
+    invoke-virtual {p1}, Lhsg;->g()V
 
     return-void
 .end method

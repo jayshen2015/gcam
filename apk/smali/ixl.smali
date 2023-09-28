@@ -2,58 +2,38 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lqv;
+.implements Ljava/lang/Runnable;
 
 
-# static fields
-.field public static final synthetic a:Lixl;
+# instance fields
+.field public final synthetic a:Lixx;
 
 
 # direct methods
-.method static synthetic constructor <clinit>()V
-    .locals 1
-
-    new-instance v0, Lixl;
-
-    invoke-direct {v0}, Lixl;-><init>()V
-
-    sput-object v0, Lixl;->a:Lixl;
-
-    return-void
-.end method
-
-.method private synthetic constructor <init>()V
+.method public synthetic constructor <init>(Lixx;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lixl;->a:Lixx;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Ljava/lang/Object;)Ljava/lang/Object;
+.method public final run()V
     .locals 2
 
-    new-instance v0, Lixt;
+    iget-object v0, p0, Lixl;->a:Lixx;
 
-    move-object v1, p1
+    invoke-virtual {v0}, Lixx;->r()Lcom/google/android/apps/camera/ui/gridlines/GridLinesUi;
 
-    check-cast v1, Landroid/support/v7/widget/RecyclerView;
+    move-result-object v0
 
-    invoke-virtual {v1}, Landroid/support/v7/widget/RecyclerView;->getContext()Landroid/content/Context;
+    const/4 v1, 0x0
 
-    move-result-object v1
+    invoke-virtual {v0, v1}, Lcom/google/android/apps/camera/ui/gridlines/GridLinesUi;->setVisibility(I)V
 
-    check-cast p1, Landroid/view/View;
-
-    invoke-direct {v0, v1, p1}, Lixt;-><init>(Landroid/content/Context;Landroid/view/View;)V
-
-    const/4 p1, 0x0
-
-    iput-boolean p1, v0, Lixt;->b:Z
-
-    iput-boolean p1, v0, Lixt;->c:Z
-
-    return-object v0
+    return-void
 .end method

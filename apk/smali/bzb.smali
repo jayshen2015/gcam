@@ -1,279 +1,151 @@
 .class public final Lbzb;
-.super Lbw;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Lpys;
 
 
 # instance fields
-.field public final a:Lbyi;
+.field private final a:Lqkg;
 
-.field private final b:Ljava/util/Set;
+.field private final b:Lqkg;
 
-.field private c:Lbzb;
+.field private final c:Lqkg;
+
+.field private final d:Lqkg;
+
+.field private final e:Lqkg;
+
+.field private final f:Lqkg;
+
+.field private final g:Lqkg;
+
+.field private final h:Lqkg;
+
+.field private final i:Lqkg;
+
+.field private final j:Lqkg;
+
+.field private final k:Lqkg;
+
+.field private final l:Lqkg;
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 2
+.method public constructor <init>(Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;)V
+    .locals 0
 
-    new-instance v0, Lbyi;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {v0}, Lbyi;-><init>()V
+    iput-object p1, p0, Lbzb;->a:Lqkg;
 
-    invoke-direct {p0}, Lbw;-><init>()V
+    iput-object p2, p0, Lbzb;->b:Lqkg;
 
-    new-instance v1, Ljava/util/HashSet;
+    iput-object p3, p0, Lbzb;->c:Lqkg;
 
-    invoke-direct {v1}, Ljava/util/HashSet;-><init>()V
+    iput-object p4, p0, Lbzb;->d:Lqkg;
 
-    iput-object v1, p0, Lbzb;->b:Ljava/util/Set;
+    iput-object p5, p0, Lbzb;->e:Lqkg;
 
-    iput-object v0, p0, Lbzb;->a:Lbyi;
+    iput-object p6, p0, Lbzb;->f:Lqkg;
+
+    iput-object p7, p0, Lbzb;->g:Lqkg;
+
+    iput-object p8, p0, Lbzb;->h:Lqkg;
+
+    iput-object p9, p0, Lbzb;->i:Lqkg;
+
+    iput-object p10, p0, Lbzb;->j:Lqkg;
+
+    iput-object p11, p0, Lbzb;->k:Lqkg;
+
+    iput-object p12, p0, Lbzb;->l:Lqkg;
 
     return-void
 .end method
 
-.method private final c()V
-    .locals 1
+.method public static b(Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;)Lbzb;
+    .locals 14
 
-    iget-object v0, p0, Lbzb;->c:Lbzb;
+    new-instance v13, Lbzb;
 
-    if-eqz v0, :cond_0
+    move-object v0, v13
 
-    iget-object v0, v0, Lbzb;->b:Ljava/util/Set;
+    move-object v1, p0
 
-    invoke-interface {v0, p0}, Ljava/util/Set;->remove(Ljava/lang/Object;)Z
+    move-object v2, p1
 
-    const/4 v0, 0x0
+    move-object/from16 v3, p2
 
-    iput-object v0, p0, Lbzb;->c:Lbzb;
+    move-object/from16 v4, p3
 
-    :cond_0
-    return-void
+    move-object/from16 v5, p4
+
+    move-object/from16 v6, p5
+
+    move-object/from16 v7, p6
+
+    move-object/from16 v8, p7
+
+    move-object/from16 v9, p8
+
+    move-object/from16 v10, p9
+
+    move-object/from16 v11, p10
+
+    move-object/from16 v12, p11
+
+    invoke-direct/range {v0 .. v12}, Lbzb;-><init>(Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;)V
+
+    return-object v13
 .end method
 
 
 # virtual methods
-.method public final onAttach(Landroid/content/Context;)V
-    .locals 6
+.method public final a()Lbza;
+    .locals 14
 
-    const-string v0, "com.bumptech.glide.manager"
+    iget-object v1, p0, Lbzb;->a:Lqkg;
 
-    invoke-super {p0, p1}, Lbw;->onAttach(Landroid/content/Context;)V
+    iget-object v2, p0, Lbzb;->b:Lqkg;
 
-    move-object p1, p0
+    iget-object v3, p0, Lbzb;->c:Lqkg;
 
-    :goto_0
-    iget-object v1, p1, Lbw;->B:Lbw;
+    iget-object v4, p0, Lbzb;->d:Lqkg;
 
-    if-eqz v1, :cond_0
+    iget-object v5, p0, Lbzb;->e:Lqkg;
 
-    move-object p1, v1
+    iget-object v6, p0, Lbzb;->f:Lqkg;
 
-    goto :goto_0
+    iget-object v7, p0, Lbzb;->g:Lqkg;
 
-    :cond_0
-    iget-object p1, p1, Lbw;->y:Lcq;
+    iget-object v8, p0, Lbzb;->h:Lqkg;
 
-    const/4 v1, 0x5
+    iget-object v9, p0, Lbzb;->i:Lqkg;
 
-    const-string v2, "SupportRMFragment"
+    iget-object v10, p0, Lbzb;->j:Lqkg;
 
-    if-nez p1, :cond_2
+    iget-object v0, p0, Lbzb;->k:Lqkg;
 
-    invoke-static {v2, v1}, Landroid/util/Log;->isLoggable(Ljava/lang/String;I)Z
+    invoke-static {v0}, Lpyv;->b(Lqkg;)Lqkg;
 
-    move-result p1
+    move-result-object v11
 
-    if-eqz p1, :cond_1
+    iget-object v12, p0, Lbzb;->l:Lqkg;
 
-    const-string p1, "Unable to register fragment with root, ancestor detached"
+    new-instance v13, Lbza;
 
-    invoke-static {v2, p1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
+    move-object v0, v13
 
-    :cond_1
-    return-void
+    invoke-direct/range {v0 .. v12}, Lbza;-><init>(Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;)V
 
-    :cond_2
-    :try_start_0
-    invoke-virtual {p0}, Lbw;->getContext()Landroid/content/Context;
-
-    move-result-object v3
-
-    invoke-direct {p0}, Lbzb;->c()V
-
-    invoke-static {v3}, Lbol;->b(Landroid/content/Context;)Lbol;
-
-    move-result-object v3
-
-    iget-object v3, v3, Lbol;->d:Lbyu;
-
-    iget-object v4, v3, Lbyu;->b:Ljava/util/Map;
-
-    invoke-interface {v4, p1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v4
-
-    check-cast v4, Lbzb;
-
-    if-nez v4, :cond_3
-
-    invoke-virtual {p1, v0}, Lcq;->e(Ljava/lang/String;)Lbw;
-
-    move-result-object v4
-
-    check-cast v4, Lbzb;
-
-    if-nez v4, :cond_3
-
-    new-instance v4, Lbzb;
-
-    invoke-direct {v4}, Lbzb;-><init>()V
-
-    iget-object v5, v3, Lbyu;->b:Ljava/util/Map;
-
-    invoke-interface {v5, p1, v4}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    invoke-virtual {p1}, Lcq;->i()Lcx;
-
-    move-result-object v5
-
-    invoke-virtual {v5, v4, v0}, Lcx;->o(Lbw;Ljava/lang/String;)V
-
-    invoke-virtual {v5}, Lcx;->i()V
-
-    iget-object v0, v3, Lbyu;->c:Landroid/os/Handler;
-
-    const/4 v3, 0x2
-
-    invoke-virtual {v0, v3, p1}, Landroid/os/Handler;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
-
-    move-result-object p1
-
-    invoke-virtual {p1}, Landroid/os/Message;->sendToTarget()V
-
-    goto :goto_1
-
-    :cond_3
-    :goto_1
-    iput-object v4, p0, Lbzb;->c:Lbzb;
-
-    invoke-virtual {p0, v4}, Lbzb;->equals(Ljava/lang/Object;)Z
-
-    move-result p1
-
-    if-nez p1, :cond_4
-
-    iget-object p1, p0, Lbzb;->c:Lbzb;
-
-    iget-object p1, p1, Lbzb;->b:Ljava/util/Set;
-
-    invoke-interface {p1, p0}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
-    :try_end_0
-    .catch Ljava/lang/IllegalStateException; {:try_start_0 .. :try_end_0} :catch_0
-
-    return-void
-
-    :catch_0
-    move-exception p1
-
-    invoke-static {v2, v1}, Landroid/util/Log;->isLoggable(Ljava/lang/String;I)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_4
-
-    const-string v0, "Unable to register fragment with root"
-
-    invoke-static {v2, v0, p1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
-
-    return-void
-
-    :cond_4
-    return-void
+    return-object v13
 .end method
 
-.method public final onDestroy()V
+.method public final bridge synthetic get()Ljava/lang/Object;
     .locals 1
 
-    invoke-super {p0}, Lbw;->onDestroy()V
-
-    iget-object v0, p0, Lbzb;->a:Lbyi;
-
-    invoke-virtual {v0}, Lbyi;->b()V
-
-    invoke-direct {p0}, Lbzb;->c()V
-
-    return-void
-.end method
-
-.method public final onDetach()V
-    .locals 0
-
-    invoke-super {p0}, Lbw;->onDetach()V
-
-    invoke-direct {p0}, Lbzb;->c()V
-
-    return-void
-.end method
-
-.method public final onStart()V
-    .locals 1
-
-    invoke-super {p0}, Lbw;->onStart()V
-
-    iget-object v0, p0, Lbzb;->a:Lbyi;
-
-    invoke-virtual {v0}, Lbyi;->c()V
-
-    return-void
-.end method
-
-.method public final onStop()V
-    .locals 1
-
-    invoke-super {p0}, Lbw;->onStop()V
-
-    iget-object v0, p0, Lbzb;->a:Lbyi;
-
-    invoke-virtual {v0}, Lbyi;->d()V
-
-    return-void
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .locals 3
-
-    invoke-super {p0}, Lbw;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    iget-object v1, p0, Lbw;->B:Lbw;
-
-    if-nez v1, :cond_0
-
-    const/4 v1, 0x0
-
-    :cond_0
-    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v1
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v0, "{parent="
-
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v0, "}"
-
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {p0}, Lbzb;->a()Lbza;
 
     move-result-object v0
 

@@ -1,54 +1,81 @@
-.class final Lbkx;
-.super Ljava/lang/Object;
+.class public final Lbkx;
+.super Lbko;
 
 
 # static fields
-.field public static final a:Ldne;
+.field private static t:Lbkx;
 
 
 # direct methods
-.method static constructor <clinit>()V
+.method public constructor <init>()V
+    .locals 0
+
+    invoke-direct {p0}, Lbko;-><init>()V
+
+    return-void
+.end method
+
+.method public static a()Lbkx;
     .locals 3
 
-    const/4 v0, 0x5
+    sget-object v0, Lbkx;->t:Lbkx;
 
-    new-array v0, v0, [Ljava/lang/String;
+    if-nez v0, :cond_0
 
-    const/4 v1, 0x0
+    new-instance v0, Lbkx;
 
-    const-string v2, "nm"
+    invoke-direct {v0}, Lbkx;-><init>()V
 
-    aput-object v2, v0, v1
+    sget-object v1, Lbhb;->b:Lbhb;
 
-    const/4 v1, 0x1
+    new-instance v2, Lbgr;
 
-    const-string v2, "c"
+    invoke-direct {v2}, Lbgr;-><init>()V
 
-    aput-object v2, v0, v1
-
-    const/4 v1, 0x2
-
-    const-string v2, "o"
-
-    aput-object v2, v0, v1
-
-    const/4 v1, 0x3
-
-    const-string v2, "tr"
-
-    aput-object v2, v0, v1
-
-    const/4 v1, 0x4
-
-    const-string v2, "hd"
-
-    aput-object v2, v0, v1
-
-    invoke-static {v0}, Ldne;->J([Ljava/lang/String;)Ldne;
+    invoke-virtual {v0, v1, v2}, Lbko;->A(Lbhb;Lazx;)Lbko;
 
     move-result-object v0
 
-    sput-object v0, Lbkx;->a:Ldne;
+    check-cast v0, Lbkx;
 
-    return-void
+    invoke-virtual {v0}, Lbko;->M()V
+
+    sput-object v0, Lbkx;->t:Lbkx;
+
+    :cond_0
+    sget-object v0, Lbkx;->t:Lbkx;
+
+    return-object v0
+.end method
+
+.method public static b(Ljava/lang/Class;)Lbkx;
+    .locals 1
+
+    new-instance v0, Lbkx;
+
+    invoke-direct {v0}, Lbkx;-><init>()V
+
+    invoke-virtual {v0, p0}, Lbko;->m(Ljava/lang/Class;)Lbko;
+
+    move-result-object p0
+
+    check-cast p0, Lbkx;
+
+    return-object p0
+.end method
+
+.method public static c(Lbbr;)Lbkx;
+    .locals 1
+
+    new-instance v0, Lbkx;
+
+    invoke-direct {v0}, Lbkx;-><init>()V
+
+    invoke-virtual {v0, p0}, Lbko;->n(Lbbr;)Lbko;
+
+    move-result-object p0
+
+    check-cast p0, Lbkx;
+
+    return-object p0
 .end method

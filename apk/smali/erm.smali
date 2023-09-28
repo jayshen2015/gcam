@@ -6,140 +6,24 @@
 
 
 # instance fields
-.field public final synthetic a:Ljava/lang/Object;
+.field public final synthetic a:Lerp;
 
-.field private final synthetic b:I
+.field public final synthetic b:I
+
+.field public final synthetic c:Ljava/lang/String;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lchh;I)V
+.method public synthetic constructor <init>(Lerp;ILjava/lang/String;)V
     .locals 0
-
-    iput p2, p0, Lerm;->b:I
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lerm;->a:Ljava/lang/Object;
-
-    return-void
-.end method
-
-.method public synthetic constructor <init>(Lero;I)V
-    .locals 0
+    iput-object p1, p0, Lerm;->a:Lerp;
 
     iput p2, p0, Lerm;->b:I
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lerm;->a:Ljava/lang/Object;
-
-    return-void
-.end method
-
-.method public synthetic constructor <init>(Lert;I)V
-    .locals 0
-
-    iput p2, p0, Lerm;->b:I
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lerm;->a:Ljava/lang/Object;
-
-    return-void
-.end method
-
-.method public synthetic constructor <init>(Lerx;I)V
-    .locals 0
-
-    iput p2, p0, Lerm;->b:I
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lerm;->a:Ljava/lang/Object;
-
-    return-void
-.end method
-
-.method public synthetic constructor <init>(Lesz;I)V
-    .locals 0
-
-    iput p2, p0, Lerm;->b:I
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lerm;->a:Ljava/lang/Object;
-
-    return-void
-.end method
-
-.method public synthetic constructor <init>(Letj;I)V
-    .locals 0
-
-    iput p2, p0, Lerm;->b:I
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lerm;->a:Ljava/lang/Object;
-
-    return-void
-.end method
-
-.method public synthetic constructor <init>(Letk;I)V
-    .locals 0
-
-    iput p2, p0, Lerm;->b:I
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lerm;->a:Ljava/lang/Object;
-
-    return-void
-.end method
-
-.method public synthetic constructor <init>(Leto;I)V
-    .locals 0
-
-    iput p2, p0, Lerm;->b:I
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lerm;->a:Ljava/lang/Object;
-
-    return-void
-.end method
-
-.method public synthetic constructor <init>(Letp;I)V
-    .locals 0
-
-    iput p2, p0, Lerm;->b:I
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lerm;->a:Ljava/lang/Object;
-
-    return-void
-.end method
-
-.method public synthetic constructor <init>(Letr;I)V
-    .locals 0
-
-    iput p2, p0, Lerm;->b:I
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lerm;->a:Ljava/lang/Object;
-
-    return-void
-.end method
-
-.method public synthetic constructor <init>(Leuc;I)V
-    .locals 0
-
-    iput p2, p0, Lerm;->b:I
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lerm;->a:Ljava/lang/Object;
+    iput-object p3, p0, Lerm;->c:Ljava/lang/String;
 
     return-void
 .end method
@@ -147,612 +31,403 @@
 
 # virtual methods
 .method public final run()V
-    .locals 6
+    .locals 12
 
-    iget v0, p0, Lerm;->b:I
+    iget-object v0, p0, Lerm;->a:Lerp;
 
-    const/4 v1, 0x0
+    iget v1, p0, Lerm;->b:I
 
-    const/4 v2, 0x1
+    iget-object v2, p0, Lerm;->c:Ljava/lang/String;
 
-    packed-switch v0, :pswitch_data_0
+    sget-object v3, Lovl;->a:Lovd;
 
-    iget-object v0, p0, Lerm;->a:Ljava/lang/Object;
+    const-class v3, Lplo;
 
-    check-cast v0, Leuc;
+    sget-object v4, Ljava/util/Locale;->ROOT:Ljava/util/Locale;
 
-    iget-object v3, v0, Leuc;->w:Lebl;
+    invoke-virtual {v2, v4}, Ljava/lang/String;->toUpperCase(Ljava/util/Locale;)Ljava/lang/String;
 
-    invoke-virtual {v3}, Lebl;->j()V
+    move-result-object v4
 
-    iget-object v3, v0, Leuc;->n:Lflp;
-
-    invoke-virtual {v3}, Lflp;->c()V
-
-    invoke-virtual {v0, v1}, Leuc;->C(Z)V
-
-    iget-object v1, v0, Leuc;->p:Lfdu;
-
-    invoke-virtual {v1}, Lfdn;->a()V
-
-    iget-object v1, v0, Leuc;->R:Lflk;
-
-    if-eqz v1, :cond_8
-
-    invoke-virtual {v1}, Lflk;->b()Ljvs;
-
-    move-result-object v1
-
-    invoke-interface {v1}, Ljvs;->bm()Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Ljava/lang/Boolean;
-
-    invoke-virtual {v1}, Ljava/lang/Boolean;->booleanValue()Z
-
-    move-result v1
-
-    invoke-virtual {v0, v1}, Leuc;->y(Z)V
-
-    goto/16 :goto_0
-
-    :pswitch_0
-    iget-object v0, p0, Lerm;->a:Ljava/lang/Object;
-
-    check-cast v0, Lchk;
-
-    invoke-virtual {v0}, Lchk;->k()V
-
-    return-void
-
-    :pswitch_1
-    iget-object v0, p0, Lerm;->a:Ljava/lang/Object;
-
-    check-cast v0, Letr;
-
-    iget-object v3, v0, Letr;->a:Logd;
-
-    invoke-interface {v3}, Logd;->get()Ljava/lang/Object;
+    invoke-static {v3, v4}, Loit;->a(Ljava/lang/Class;Ljava/lang/String;)Lojc;
 
     move-result-object v3
 
-    check-cast v3, Letp;
+    invoke-virtual {v3}, Lojc;->g()Z
 
-    iget-object v4, v3, Letp;->aa:Ljvk;
+    move-result v4
 
-    invoke-static {v1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+    const/4 v5, 0x2
 
-    move-result-object v5
+    const/4 v6, 0x0
 
-    invoke-virtual {v4, v5}, Ljvk;->bn(Ljava/lang/Object;)V
+    if-eqz v4, :cond_0
 
-    iget-object v4, v3, Letp;->k:Litm;
+    sget-object v4, Ljava/util/Locale;->ROOT:Ljava/util/Locale;
 
-    if-eqz v4, :cond_1
+    const/4 v7, 0x3
 
-    invoke-interface {v4, v1}, Litm;->q(Z)V
+    new-array v7, v7, [Ljava/lang/Object;
 
-    iget-object v1, v3, Letp;->ac:Ldhi;
+    invoke-virtual {v3}, Lojc;->c()Ljava/lang/Object;
 
-    sget-object v4, Ldho;->aj:Ldhj;
+    move-result-object v8
 
-    invoke-interface {v1, v4}, Ldhi;->l(Ldhj;)Z
+    check-cast v8, Lplo;
 
-    move-result v1
+    iget v8, v8, Lplo;->f:I
 
-    if-nez v1, :cond_0
+    invoke-static {v8}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    iget-object v1, v3, Letp;->n:Ldbf;
+    move-result-object v8
 
-    invoke-virtual {v1}, Ldbf;->j()Z
+    aput-object v8, v7, v6
 
-    move-result v1
+    const/4 v8, 0x1
 
-    if-eqz v1, :cond_1
+    invoke-virtual {v3}, Lojc;->c()Ljava/lang/Object;
 
-    iget-object v1, v3, Letp;->ap:Lfuz;
+    move-result-object v9
 
-    invoke-virtual {v1}, Lklw;->C()Z
+    check-cast v9, Lplo;
 
-    move-result v1
+    invoke-virtual {v9}, Lplo;->name()Ljava/lang/String;
 
-    if-eqz v1, :cond_1
+    move-result-object v9
+
+    aput-object v9, v7, v8
+
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v8
+
+    aput-object v8, v7, v5
+
+    const-string v8, "Received failure signal %d (%s) for shot %d"
+
+    invoke-static {v4, v8, v7}, Ljava/lang/String;->format(Ljava/util/Locale;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
     :cond_0
-    iget-object v1, v3, Letp;->k:Litm;
+    invoke-virtual {v3}, Lojc;->g()Z
 
-    invoke-interface {v1}, Litm;->p()V
+    move-result v4
+
+    if-eqz v4, :cond_3
+
+    iget-object v4, v0, Lerp;->n:Lesh;
+
+    if-eqz v4, :cond_3
+
+    iget-object v7, v0, Lerp;->j:Ledd;
+
+    if-eqz v7, :cond_3
+
+    invoke-virtual {v3}, Lojc;->c()Ljava/lang/Object;
+
+    move-result-object v8
+
+    check-cast v8, Lplo;
+
+    sget-object v9, Lerw;->a:Louj;
+
+    invoke-virtual {v9}, Loue;->c()Lova;
+
+    move-result-object v9
+
+    sget-object v10, Lovl;->a:Lovd;
+
+    const-string v11, "LasagnaProcessor"
+
+    invoke-interface {v9, v10, v11}, Lova;->g(Lovd;Ljava/lang/Object;)Lova;
+
+    move-result-object v9
+
+    check-cast v9, Loug;
+
+    const/16 v10, 0x5bf
+
+    invoke-interface {v9, v10}, Loug;->G(I)Lova;
+
+    move-result-object v9
+
+    check-cast v9, Loug;
+
+    invoke-virtual {v7}, Ledd;->a()I
+
+    move-result v7
+
+    const-string v10, "onLasagnaFailureSignal %s for shot %d"
+
+    invoke-interface {v9, v10, v8, v7}, Loug;->w(Ljava/lang/String;Ljava/lang/Object;I)V
+
+    check-cast v4, Lerw;
+
+    iget-object v7, v4, Lerw;->f:Lojc;
+
+    invoke-virtual {v7}, Lojc;->g()Z
+
+    move-result v7
+
+    if-eqz v7, :cond_3
+
+    iget-object v4, v4, Lerw;->f:Lojc;
+
+    invoke-virtual {v4}, Lojc;->c()Ljava/lang/Object;
+
+    move-result-object v4
+
+    check-cast v4, Leqy;
+
+    iget-object v7, v4, Leqy;->a:Ljava/util/Map;
+
+    invoke-interface {v7, v8}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v7
+
+    check-cast v7, Ljgu;
+
+    if-eqz v7, :cond_1
+
+    invoke-static {v7}, Lojc;->i(Ljava/lang/Object;)Lojc;
+
+    move-result-object v7
+
+    goto :goto_1
 
     :cond_1
-    iget-object v1, v3, Letp;->l:Ldol;
+    invoke-virtual {v8}, Lplo;->ordinal()I
 
-    if-eqz v1, :cond_2
+    move-result v7
 
-    invoke-interface {v1}, Ldol;->h()V
+    packed-switch v7, :pswitch_data_0
 
-    :cond_2
-    iget-object v1, v3, Letp;->D:Lflp;
+    :pswitch_0
+    const/4 v7, 0x0
 
-    invoke-virtual {v1}, Lflp;->c()V
+    goto :goto_0
 
-    iget-object v1, v3, Letp;->y:Lmqp;
+    :pswitch_1
+    iget-object v7, v4, Leqy;->k:Landroid/content/Context;
 
-    invoke-virtual {v1}, Lmqp;->g()Z
+    const v9, 0x7f140313
 
-    move-result v1
+    invoke-virtual {v7, v9}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
-    if-eqz v1, :cond_3
+    move-result-object v7
 
-    iget-object v1, v3, Letp;->y:Lmqp;
+    invoke-virtual {v4, v7}, Leqy;->a(Ljava/lang/String;)Ljgu;
 
-    invoke-virtual {v1}, Lmqp;->c()Ljava/lang/Object;
+    move-result-object v7
 
-    move-result-object v1
-
-    check-cast v1, Lckr;
-
-    invoke-interface {v1}, Lckr;->l()V
-
-    :cond_3
-    iget-object v1, v3, Letp;->x:Lmqp;
-
-    invoke-virtual {v1}, Lmqp;->g()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_4
-
-    iget-object v1, v3, Letp;->x:Lmqp;
-
-    invoke-virtual {v1}, Lmqp;->c()Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Lhms;
-
-    invoke-interface {v1}, Lhms;->s()V
-
-    iget-object v1, v3, Letp;->x:Lmqp;
-
-    invoke-virtual {v1}, Lmqp;->c()Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Lhms;
-
-    sget-object v4, Lmpx;->a:Lmpx;
-
-    invoke-interface {v1, v4}, Lhms;->m(Lmqp;)V
-
-    :cond_4
-    iget-object v1, v3, Letp;->ae:Lebl;
-
-    invoke-virtual {v1}, Lebl;->j()V
-
-    iget-object v1, v3, Letp;->ae:Lebl;
-
-    iget-object v1, v1, Lebl;->b:Ljvs;
-
-    invoke-interface {v1}, Ljvs;->bm()Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Ljava/lang/Boolean;
-
-    invoke-virtual {v1}, Ljava/lang/Boolean;->booleanValue()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_5
-
-    iget-object v1, v3, Letp;->i:Liff;
-
-    invoke-interface {v1}, Liff;->h()V
-
-    :cond_5
-    iget-object v1, v3, Letp;->m:Lhwu;
-
-    invoke-virtual {v1, v2}, Lhwu;->d(Z)V
-
-    iget-object v1, v3, Letp;->t:Libj;
-
-    invoke-interface {v1, v2}, Libj;->l(Z)V
-
-    iget-object v1, v3, Letp;->B:Lcgy;
-
-    invoke-interface {v1}, Lcgy;->g()Lcha;
-
-    move-result-object v1
-
-    invoke-interface {v1}, Lcha;->f()V
-
-    iget-object v1, v3, Letp;->ab:Lgeh;
-
-    invoke-interface {v1}, Lgeh;->j()V
-
-    iget-object v1, v3, Letp;->ah:Lell;
-
-    sget-object v4, Lelm;->d:Lelm;
-
-    invoke-interface {v1, v4}, Lell;->k(Lelm;)V
-
-    iget-object v1, v3, Letp;->al:Lgdz;
-
-    invoke-virtual {v1}, Lgdz;->e()V
-
-    iput-boolean v2, v0, Letr;->c:Z
-
-    iget-object v0, v0, Letr;->b:Ljvx;
-
-    invoke-virtual {v0}, Ljvx;->c()V
-
-    return-void
+    goto :goto_0
 
     :pswitch_2
-    iget-object v0, p0, Lerm;->a:Ljava/lang/Object;
+    iget-object v7, v4, Leqy;->k:Landroid/content/Context;
 
-    check-cast v0, Leto;
+    const v9, 0x7f140497
 
-    iget-object v1, v0, Leto;->a:Letp;
+    invoke-virtual {v7, v9}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
-    invoke-virtual {v1}, Letp;->D()V
+    move-result-object v7
 
-    iget-object v1, v0, Leto;->a:Letp;
+    invoke-virtual {v4, v7}, Leqy;->a(Ljava/lang/String;)Ljgu;
 
-    iget-object v1, v1, Letp;->w:Logd;
+    move-result-object v7
 
-    invoke-interface {v1}, Logd;->get()Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Lfeu;
-
-    iget-boolean v1, v1, Lfeu;->o:Z
-
-    if-nez v1, :cond_6
-
-    iget-object v0, v0, Leto;->a:Letp;
-
-    iget-object v0, v0, Letp;->C:Lhgy;
-
-    const v1, 0x7f130008
-
-    invoke-interface {v0, v1}, Lhgy;->b(I)V
-
-    :cond_6
-    return-void
+    goto :goto_0
 
     :pswitch_3
-    iget-object v0, p0, Lerm;->a:Ljava/lang/Object;
+    iget-object v7, v4, Leqy;->k:Landroid/content/Context;
 
-    check-cast v0, Letk;
+    const v9, 0x7f140347
 
-    iget-object v0, v0, Letk;->a:Letp;
+    invoke-virtual {v7, v9}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
-    invoke-virtual {v0, v2}, Letp;->B(Z)V
+    move-result-object v7
 
-    return-void
+    invoke-virtual {v4, v7}, Leqy;->a(Ljava/lang/String;)Ljgu;
 
-    :pswitch_4
-    iget-object v0, p0, Lerm;->a:Ljava/lang/Object;
+    move-result-object v7
 
-    check-cast v0, Letj;
+    :goto_0
+    if-eqz v7, :cond_2
 
-    iget-object v0, v0, Letj;->e:Letp;
+    iget-object v9, v4, Leqy;->a:Ljava/util/Map;
 
-    invoke-virtual {v0, v2}, Letp;->B(Z)V
+    invoke-interface {v9, v8, v7}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    return-void
+    invoke-static {v7}, Lojc;->i(Ljava/lang/Object;)Lojc;
 
-    :pswitch_5
-    iget-object v0, p0, Lerm;->a:Ljava/lang/Object;
+    move-result-object v7
 
-    check-cast v0, Letp;
+    goto :goto_1
 
-    iget-object v1, v0, Letp;->g:Lkbc;
+    :cond_2
+    sget-object v7, Loih;->a:Loih;
 
-    const-string v2, "resume#startHotshot"
+    :goto_1
+    invoke-virtual {v7}, Lojc;->g()Z
 
-    invoke-interface {v1, v2}, Lkbc;->e(Ljava/lang/String;)V
+    move-result v8
 
-    iget-object v1, v0, Letp;->G:Lhxx;
+    if-eqz v8, :cond_3
 
-    invoke-virtual {v1}, Lhxx;->e()V
+    invoke-virtual {v7}, Lojc;->c()Ljava/lang/Object;
 
-    iget-object v0, v0, Letp;->g:Lkbc;
+    move-result-object v7
 
-    invoke-interface {v0}, Lkbc;->f()V
+    check-cast v7, Ljgu;
 
-    return-void
+    invoke-virtual {v4, v7}, Ljgs;->g(Ljgu;)V
 
-    :pswitch_6
-    iget-object v0, p0, Lerm;->a:Ljava/lang/Object;
+    :cond_3
+    iget-object v4, v0, Lerp;->p:Lfjx;
 
-    check-cast v0, Lchk;
+    iget-object v7, v4, Lfjx;->a:Lpoy;
 
-    invoke-virtual {v0}, Lchk;->r()V
+    iget-boolean v8, v7, Lpoy;->c:Z
 
-    return-void
+    if-eqz v8, :cond_4
 
-    :pswitch_7
-    iget-object v0, p0, Lerm;->a:Ljava/lang/Object;
+    invoke-virtual {v7}, Lpoy;->m()V
 
-    check-cast v0, Lchk;
+    iput-boolean v6, v7, Lpoy;->c:Z
 
-    invoke-virtual {v0}, Lchk;->k()V
+    :cond_4
+    iget-object v7, v7, Lpoy;->b:Lppd;
 
-    return-void
+    check-cast v7, Lpdb;
 
-    :pswitch_8
-    iget-object v0, p0, Lerm;->a:Ljava/lang/Object;
+    sget-object v8, Lpdb;->v:Lpdb;
 
-    check-cast v0, Letp;
+    iget v8, v7, Lpdb;->a:I
 
-    iget-object v2, v0, Letp;->n:Ldbf;
+    or-int/2addr v5, v8
 
-    invoke-virtual {v2}, Ldbf;->d()Lklv;
+    iput v5, v7, Lpdb;->a:I
 
-    move-result-object v2
+    iput-boolean v6, v7, Lpdb;->c:Z
 
-    invoke-virtual {v0, v1, v2}, Letp;->y(ZLklv;)V
+    invoke-virtual {v3}, Lojc;->g()Z
 
-    return-void
+    move-result v5
 
-    :pswitch_9
-    iget-object v0, p0, Lerm;->a:Ljava/lang/Object;
+    if-eqz v5, :cond_6
 
-    check-cast v0, Letp;
+    iget-object v4, v4, Lfjx;->a:Lpoy;
 
-    iget-object v1, v0, Letp;->g:Lkbc;
+    invoke-virtual {v3}, Lojc;->c()Ljava/lang/Object;
 
-    const-string v2, "changeCamera#startHotshot"
+    move-result-object v3
 
-    invoke-interface {v1, v2}, Lkbc;->e(Ljava/lang/String;)V
+    check-cast v3, Lplo;
 
-    iget-object v1, v0, Letp;->G:Lhxx;
+    iget v3, v3, Lplo;->f:I
 
-    invoke-virtual {v1}, Lhxx;->e()V
+    iget-boolean v5, v4, Lpoy;->c:Z
 
-    iget-object v0, v0, Letp;->g:Lkbc;
+    if-eqz v5, :cond_5
 
-    invoke-interface {v0}, Lkbc;->f()V
+    invoke-virtual {v4}, Lpoy;->m()V
 
-    return-void
+    iput-boolean v6, v4, Lpoy;->c:Z
 
-    :pswitch_a
-    iget-object v0, p0, Lerm;->a:Ljava/lang/Object;
+    :cond_5
+    iget-object v4, v4, Lpoy;->b:Lppd;
 
-    check-cast v0, Letp;
+    check-cast v4, Lpdb;
 
-    iget-object v1, v0, Letp;->g:Lkbc;
+    iget v5, v4, Lpdb;->a:I
 
-    const-string v2, "countdown#startHotshot"
+    or-int/lit8 v5, v5, 0x4
 
-    invoke-interface {v1, v2}, Lkbc;->e(Ljava/lang/String;)V
+    iput v5, v4, Lpdb;->a:I
 
-    iget-object v1, v0, Letp;->G:Lhxx;
+    iput v3, v4, Lpdb;->d:I
 
-    invoke-virtual {v1}, Lhxx;->e()V
+    goto :goto_2
 
-    iget-object v0, v0, Letp;->g:Lkbc;
+    :cond_6
+    iget-object v3, v4, Lfjx;->a:Lpoy;
 
-    invoke-interface {v0}, Lkbc;->f()V
+    iget-boolean v4, v3, Lpoy;->c:Z
 
-    return-void
+    if-eqz v4, :cond_7
 
-    :pswitch_b
-    iget-object v0, p0, Lerm;->a:Ljava/lang/Object;
+    invoke-virtual {v3}, Lpoy;->m()V
 
-    check-cast v0, Letp;
-
-    iget-object v1, v0, Letp;->Y:Lhtg;
-
-    iget-object v2, v0, Letp;->ap:Lfuz;
-
-    iget-object v0, v0, Letp;->V:Ljuf;
-
-    invoke-virtual {v1, v2, v0}, Lhtd;->b(Lfuz;Ljuf;)V
-
-    return-void
-
-    :pswitch_c
-    iget-object v0, p0, Lerm;->a:Ljava/lang/Object;
-
-    check-cast v0, Letp;
-
-    invoke-virtual {v0, v2}, Letp;->B(Z)V
-
-    return-void
-
-    :pswitch_d
-    iget-object v0, p0, Lerm;->a:Ljava/lang/Object;
-
-    check-cast v0, Lesz;
-
-    iget-object v0, v0, Lesz;->a:Logd;
-
-    invoke-interface {v0}, Logd;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lijk;
-
-    invoke-interface {v0}, Lijk;->a()V
-
-    return-void
-
-    :pswitch_e
-    iget-object v0, p0, Lerm;->a:Ljava/lang/Object;
-
-    sget v1, Lery;->a:I
-
-    const-string v1, "prewarmSensorService"
-
-    invoke-static {v1}, Landroid/os/Trace;->beginSection(Ljava/lang/String;)V
-
-    check-cast v0, Lerx;
-
-    iget-object v0, v0, Lerx;->a:Landroid/content/Context;
-
-    const-string v1, "sensor"
-
-    invoke-virtual {v0, v1}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
-
-    invoke-static {}, Landroid/os/Trace;->endSection()V
-
-    return-void
-
-    :pswitch_f
-    iget-object v0, p0, Lerm;->a:Ljava/lang/Object;
-
-    sget v1, Lery;->a:I
-
-    check-cast v0, Lerx;
-
-    invoke-virtual {v0}, Lerx;->a()V
-
-    return-void
-
-    :pswitch_10
-    iget-object v0, p0, Lerm;->a:Ljava/lang/Object;
-
-    sget v1, Lery;->a:I
-
-    const-string v1, "retrievePhenotypeFlags"
-
-    invoke-static {v1}, Landroid/os/Trace;->beginSection(Ljava/lang/String;)V
-
-    check-cast v0, Lerx;
-
-    iget-object v0, v0, Lerx;->a:Landroid/content/Context;
-
-    invoke-static {v0}, Lgfw;->a(Landroid/content/Context;)V
-
-    invoke-static {}, Landroid/os/Trace;->endSection()V
-
-    return-void
-
-    :pswitch_11
-    iget-object v0, p0, Lerm;->a:Ljava/lang/Object;
-
-    move-object v1, v0
-
-    check-cast v1, Lero;
-
-    iget-object v1, v1, Lero;->a:Lert;
-
-    iget-object v1, v1, Lert;->q:Lmqp;
-
-    invoke-virtual {v1}, Lmqp;->c()Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Lhfu;
-
-    invoke-interface {v1, v0}, Lhfu;->i(Lhfv;)V
-
-    return-void
-
-    :pswitch_12
-    iget-object v0, p0, Lerm;->a:Ljava/lang/Object;
-
-    check-cast v0, Lert;
-
-    iget-boolean v1, v0, Lert;->y:Z
-
-    if-nez v1, :cond_7
-
-    iget-boolean v1, v0, Lert;->z:Z
-
-    if-nez v1, :cond_7
-
-    iget-object v1, v0, Lert;->q:Lmqp;
-
-    invoke-virtual {v1}, Lmqp;->c()Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Lhfu;
-
-    iget-object v2, v0, Lert;->A:Landroid/os/Parcelable;
-
-    iget-object v0, v0, Lert;->B:Ljava/io/Serializable;
-
-    invoke-interface {v1, v2, v0}, Lhfu;->h(Landroid/os/Parcelable;Ljava/io/Serializable;)V
+    iput-boolean v6, v3, Lpoy;->c:Z
 
     :cond_7
-    return-void
+    iget-object v3, v3, Lpoy;->b:Lppd;
 
-    :pswitch_13
-    iget-object v0, p0, Lerm;->a:Ljava/lang/Object;
+    check-cast v3, Lpdb;
 
-    invoke-interface {v0}, Lchh;->h()V
+    iget v4, v3, Lpdb;->a:I
 
-    return-void
+    or-int/lit8 v4, v4, 0x4
 
-    :cond_8
-    :goto_0
-    iget-object v1, v0, Leuc;->T:Lhdk;
+    iput v4, v3, Lpdb;->a:I
 
-    invoke-virtual {v1}, Lhdk;->g()V
+    iput v6, v3, Lpdb;->d:I
 
-    iget-object v1, v0, Leuc;->y:Lmqp;
+    :goto_2
+    invoke-virtual {v0}, Lerp;->c()V
 
-    invoke-virtual {v1}, Lmqp;->g()Z
+    sget-object v3, Lplo;->d:Lplo;
 
-    move-result v1
+    invoke-virtual {v3}, Lplo;->name()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-virtual {v2, v3}, Ljava/lang/String;->endsWith(Ljava/lang/String;)Z
+
+    move-result v3
+
+    iget-object v4, v0, Lerp;->b:Lerk;
+
+    invoke-virtual {v4, v1, v3}, Lerk;->a(IZ)V
+
+    iget-object v1, v0, Lerp;->l:Lpih;
 
     if-eqz v1, :cond_9
 
-    iget-object v1, v0, Leuc;->y:Lmqp;
+    invoke-virtual {v1}, Lpih;->isDone()Z
 
-    invoke-virtual {v1}, Lmqp;->c()Ljava/lang/Object;
+    move-result v1
 
-    move-result-object v1
+    if-nez v1, :cond_9
 
-    check-cast v1, Lhlx;
+    iget-object v0, v0, Lerp;->l:Lpih;
 
-    iget-object v3, v0, Leuc;->e:Lcgx;
+    if-eqz v3, :cond_8
 
-    invoke-interface {v3}, Lcgx;->l()Lika;
+    new-instance v1, Ldma;
 
-    iget-object v3, v0, Leuc;->z:Lgla;
+    invoke-direct {v1, v2}, Ldma;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {v3}, Lgla;->m()V
+    goto :goto_3
 
-    invoke-interface {v1}, Lhlx;->a()V
+    :cond_8
+    new-instance v1, Ljava/lang/IllegalStateException;
 
-    :cond_9
-    iget-object v0, v0, Leuc;->k:Litm;
+    invoke-direct {v1, v2}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    invoke-interface {v0, v2}, Litm;->K(Z)V
+    :goto_3
+    invoke-virtual {v0, v1}, Lpih;->a(Ljava/lang/Throwable;)Z
 
     return-void
 
+    :cond_9
+    return-void
+
+    nop
+
     :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_13
-        :pswitch_12
-        :pswitch_11
-        :pswitch_10
-        :pswitch_f
-        :pswitch_e
-        :pswitch_d
-        :pswitch_c
-        :pswitch_b
-        :pswitch_a
-        :pswitch_9
-        :pswitch_8
-        :pswitch_7
-        :pswitch_6
-        :pswitch_5
-        :pswitch_4
+    .packed-switch 0x1
         :pswitch_3
         :pswitch_2
-        :pswitch_1
         :pswitch_0
+        :pswitch_1
     .end packed-switch
 .end method

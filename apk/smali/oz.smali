@@ -1,50 +1,133 @@
-.class final Loz;
-.super Landroid/util/Property;
+.class public final Loz;
+.super Ljava/lang/Object;
+
+
+# instance fields
+.field public a:Z
+
+.field public b:I
+
+.field public c:I
+
+.field public d:I
+
+.field public e:I
+
+.field public f:I
+
+.field public g:I
+
+.field public h:Z
+
+.field public i:Z
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/Class;)V
+.method public constructor <init>()V
     .locals 1
 
-    const-string v0, "level"
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0, p1, v0}, Landroid/util/Property;-><init>(Ljava/lang/Class;Ljava/lang/String;)V
+    const/4 v0, 0x1
+
+    iput-boolean v0, p0, Loz;->a:Z
+
+    const/4 v0, 0x0
+
+    iput v0, p0, Loz;->f:I
+
+    iput v0, p0, Loz;->g:I
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final bridge synthetic get(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 0
+.method public final a(Lqp;)Z
+    .locals 1
 
-    check-cast p1, Lpa;
+    iget v0, p0, Loz;->c:I
 
-    invoke-virtual {p1}, Lpa;->getLevel()I
+    if-ltz v0, :cond_0
+
+    invoke-virtual {p1}, Lqp;->a()I
 
     move-result p1
 
-    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    if-ge v0, p1, :cond_0
 
-    move-result-object p1
+    const/4 p1, 0x1
 
-    return-object p1
+    return p1
+
+    :cond_0
+    const/4 p1, 0x0
+
+    return p1
 .end method
 
-.method public final bridge synthetic set(Ljava/lang/Object;Ljava/lang/Object;)V
-    .locals 0
+.method public final toString()Ljava/lang/String;
+    .locals 2
 
-    check-cast p1, Lpa;
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    check-cast p2, Ljava/lang/Integer;
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-virtual {p2}, Ljava/lang/Integer;->intValue()I
+    const-string v1, "LayoutState{mAvailable="
 
-    move-result p2
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {p1, p2}, Lpa;->setLevel(I)Z
+    iget v1, p0, Loz;->b:I
 
-    invoke-virtual {p1}, Lpa;->invalidateSelf()V
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    return-void
+    const-string v1, ", mCurrentPosition="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget v1, p0, Loz;->c:I
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    const-string v1, ", mItemDirection="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget v1, p0, Loz;->d:I
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    const-string v1, ", mLayoutDirection="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget v1, p0, Loz;->e:I
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    const-string v1, ", mStartLine="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget v1, p0, Loz;->f:I
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    const-string v1, ", mEndLine="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget v1, p0, Loz;->g:I
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    const/16 v1, 0x7d
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
 .end method

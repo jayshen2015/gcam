@@ -1,45 +1,40 @@
-.class public abstract Loll;
-.super Lolf;
+.class final Loll;
+.super Loqz;
+
+
+# instance fields
+.field final synthetic a:Loln;
 
 
 # direct methods
-.method public constructor <init>(Loku;)V
-    .locals 1
+.method public constructor <init>(Loln;)V
+    .locals 0
 
-    invoke-direct {p0, p1}, Lolf;-><init>(Loku;)V
+    iput-object p1, p0, Loll;->a:Loln;
 
-    if-eqz p1, :cond_1
+    invoke-direct {p0}, Loqz;-><init>()V
 
-    invoke-interface {p1}, Loku;->d()Lola;
-
-    move-result-object p1
-
-    sget-object v0, Lolb;->a:Lolb;
-
-    if-ne p1, v0, :cond_0
-
-    goto :goto_0
-
-    :cond_0
-    new-instance p1, Ljava/lang/IllegalArgumentException;
-
-    const-string v0, "Coroutines with restricted suspension must have EmptyCoroutineContext"
-
-    invoke-direct {p1, v0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw p1
-
-    :cond_1
-    :goto_0
     return-void
 .end method
 
 
 # virtual methods
-.method public final d()Lola;
+.method public final a()Loqw;
     .locals 1
 
-    sget-object v0, Lolb;->a:Lolb;
+    iget-object v0, p0, Loll;->a:Loln;
+
+    return-object v0
+.end method
+
+.method public final iterator()Ljava/util/Iterator;
+    .locals 1
+
+    iget-object v0, p0, Loll;->a:Loln;
+
+    invoke-virtual {v0}, Loln;->d()Ljava/util/Iterator;
+
+    move-result-object v0
 
     return-object v0
 .end method

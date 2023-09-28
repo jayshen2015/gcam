@@ -1,80 +1,48 @@
-.class public final Ljsl;
-.super Ljqr;
+.class final Ljsl;
+.super Landroid/animation/AnimatorListenerAdapter;
 
 
 # instance fields
-.field final synthetic a:Ljava/lang/String;
-
-.field final synthetic b:Ljava/lang/String;
-
-.field final synthetic f:[B
+.field final synthetic a:Lpih;
 
 
 # direct methods
-.method public constructor <init>(Ljdh;Ljava/lang/String;Ljava/lang/String;[B)V
+.method public constructor <init>(Lpih;)V
     .locals 0
 
-    iput-object p2, p0, Ljsl;->a:Ljava/lang/String;
+    iput-object p1, p0, Ljsl;->a:Lpih;
 
-    iput-object p3, p0, Ljsl;->b:Ljava/lang/String;
-
-    iput-object p4, p0, Ljsl;->f:[B
-
-    invoke-direct {p0, p1}, Ljqr;-><init>(Ljdh;)V
+    invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method protected final bridge synthetic a(Lcom/google/android/gms/common/api/Status;)Ljdq;
-    .locals 2
+.method public final onAnimationCancel(Landroid/animation/Animator;)V
+    .locals 1
 
-    new-instance v0, Ljsm;
+    invoke-virtual {p1, p0}, Landroid/animation/Animator;->removeListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    const/4 v1, -0x1
+    iget-object p1, p0, Ljsl;->a:Lpih;
 
-    invoke-direct {v0, p1, v1}, Ljsm;-><init>(Lcom/google/android/gms/common/api/Status;I)V
+    sget-object v0, Ljava/lang/Boolean;->FALSE:Ljava/lang/Boolean;
 
-    return-object v0
+    invoke-virtual {p1, v0}, Lpih;->o(Ljava/lang/Object;)Z
+
+    return-void
 .end method
 
-.method protected final bridge synthetic b(Ljcu;)V
-    .locals 5
+.method public final onAnimationEnd(Landroid/animation/Animator;)V
+    .locals 1
 
-    check-cast p1, Ljtk;
+    invoke-virtual {p1, p0}, Landroid/animation/Animator;->removeListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    iget-object v0, p0, Ljsl;->a:Ljava/lang/String;
+    iget-object p1, p0, Ljsl;->a:Lpih;
 
-    iget-object v1, p0, Ljsl;->b:Ljava/lang/String;
+    sget-object v0, Ljava/lang/Boolean;->TRUE:Ljava/lang/Boolean;
 
-    iget-object v2, p0, Ljsl;->f:[B
-
-    invoke-virtual {p1}, Ljgb;->u()Landroid/os/IInterface;
-
-    move-result-object p1
-
-    check-cast p1, Ljsi;
-
-    new-instance v3, Ljtj;
-
-    invoke-direct {v3, p0}, Ljtj;-><init>(Ljed;)V
-
-    invoke-virtual {p1}, Lcbe;->a()Landroid/os/Parcel;
-
-    move-result-object v4
-
-    invoke-static {v4, v3}, Lcbg;->d(Landroid/os/Parcel;Landroid/os/IInterface;)V
-
-    invoke-virtual {v4, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
-
-    invoke-virtual {v4, v1}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
-
-    invoke-virtual {v4, v2}, Landroid/os/Parcel;->writeByteArray([B)V
-
-    const/16 v0, 0xc
-
-    invoke-virtual {p1, v0, v4}, Lcbe;->z(ILandroid/os/Parcel;)V
+    invoke-virtual {p1, v0}, Lpih;->o(Ljava/lang/Object;)Z
 
     return-void
 .end method

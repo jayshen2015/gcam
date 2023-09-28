@@ -132,18 +132,6 @@
     throw v0
 .end method
 
-.method public final e()Z
-    .locals 2
-
-    iget-wide v0, p0, Lcom/google/googlex/gcam/MeshWarp;->a:J
-
-    invoke-static {v0, v1, p0}, Lcom/google/googlex/gcam/GcamModuleJNI;->MeshWarp_is_forward_mesh_get(JLcom/google/googlex/gcam/MeshWarp;)Z
-
-    move-result v0
-
-    return v0
-.end method
-
 .method protected final finalize()V
     .locals 0
 

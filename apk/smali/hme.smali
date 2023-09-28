@@ -1,63 +1,103 @@
 .class public final Lhme;
 .super Ljava/lang/Object;
 
-# interfaces
-.implements Logk;
-
 
 # instance fields
-.field private final a:Loiw;
+.field public final a:Lhmh;
 
-.field private final b:Loiw;
+.field private final b:Ljava/lang/Object;
+
+.field private final c:Ljava/util/List;
 
 
 # direct methods
-.method public constructor <init>(Loiw;Loiw;)V
-    .locals 0
+.method public constructor <init>(Lhmh;)V
+    .locals 1
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lhme;->a:Loiw;
+    new-instance v0, Ljava/lang/Object;
 
-    iput-object p2, p0, Lhme;->b:Loiw;
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+
+    iput-object v0, p0, Lhme;->b:Ljava/lang/Object;
+
+    new-instance v0, Ljava/util/ArrayList;
+
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+
+    iput-object v0, p0, Lhme;->c:Ljava/util/List;
+
+    iput-object p1, p0, Lhme;->a:Lhmh;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Lhmd;
-    .locals 3
+.method public final a()Lhna;
+    .locals 2
 
-    iget-object v0, p0, Lhme;->a:Loiw;
+    iget-object v0, p0, Lhme;->b:Ljava/lang/Object;
 
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
+    monitor-enter v0
 
-    move-result-object v0
+    :try_start_0
+    iget-object v1, p0, Lhme;->c:Ljava/util/List;
 
-    check-cast v0, Ljuh;
+    invoke-interface {v1}, Ljava/util/List;->isEmpty()Z
 
-    iget-object v1, p0, Lhme;->b:Loiw;
+    move-result v1
 
-    check-cast v1, Lelp;
+    if-eqz v1, :cond_0
 
-    invoke-virtual {v1}, Lelp;->a()Landroid/view/Window;
+    monitor-exit v0
+
+    const/4 v0, 0x0
+
+    return-object v0
+
+    :cond_0
+    iget-object v1, p0, Lhme;->c:Ljava/util/List;
+
+    invoke-static {v1}, Lohh;->t(Ljava/lang/Iterable;)Ljava/lang/Object;
 
     move-result-object v1
 
-    new-instance v2, Lhmd;
+    check-cast v1, Lhna;
 
-    invoke-direct {v2, v0, v1}, Lhmd;-><init>(Ljuh;Landroid/view/Window;)V
+    monitor-exit v0
 
-    return-object v2
+    return-object v1
+
+    :catchall_0
+    move-exception v1
+
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw v1
 .end method
 
-.method public final bridge synthetic get()Ljava/lang/Object;
-    .locals 1
+.method public final b(Lhnk;)Z
+    .locals 3
 
-    invoke-virtual {p0}, Lhme;->a()Lhmd;
+    iget-object v0, p0, Lhme;->a:Lhmh;
+
+    invoke-interface {p1}, Lhnk;->c()J
+
+    move-result-wide v1
+
+    iget-object p1, v0, Lhmh;->c:Lj$/util/concurrent/ConcurrentHashMap;
+
+    invoke-static {v1, v2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     move-result-object v0
 
-    return-object v0
+    invoke-virtual {p1, v0}, Lj$/util/concurrent/ConcurrentHashMap;->containsKey(Ljava/lang/Object;)Z
+
+    move-result p1
+
+    return p1
 .end method

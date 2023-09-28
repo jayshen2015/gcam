@@ -1,73 +1,138 @@
 .class public final Lhhp;
 .super Ljava/lang/Object;
 
-# interfaces
-.implements Lnoj;
-
 
 # instance fields
-.field private final synthetic a:I
+.field private final a:Landroid/os/PowerManager;
+
+.field private final b:Ljava/lang/String;
+
+.field private final c:J
+
+.field private d:Landroid/os/PowerManager$WakeLock;
 
 
 # direct methods
-.method public constructor <init>(I)V
+.method public constructor <init>(Landroid/os/PowerManager;J)V
     .locals 0
 
-    iput p1, p0, Lhhp;->a:I
-
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lhhp;->a:Landroid/os/PowerManager;
+
+    const-string p1, "ProcessingService"
+
+    iput-object p1, p0, Lhhp;->b:Ljava/lang/String;
+
+    iput-wide p2, p0, Lhhp;->c:J
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Ljava/lang/Throwable;)V
-    .locals 3
+.method public final declared-synchronized a(Ljava/lang/String;)V
+    .locals 6
 
-    iget v0, p0, Lhhp;->a:I
+    monitor-enter p0
 
-    const-string v1, "Failed to submit a task to the executor."
+    :try_start_0
+    iget-object v0, p0, Lhhp;->a:Landroid/os/PowerManager;
 
-    packed-switch v0, :pswitch_data_0
+    iget-object v1, p0, Lhhp;->b:Ljava/lang/String;
 
-    sget-object v0, Lcri;->a:Lnak;
+    invoke-virtual {v1}, Ljava/lang/String;->length()I
 
-    invoke-virtual {v0}, Lnaf;->b()Lnaz;
+    move-result v2
 
-    move-result-object v0
+    invoke-static {p1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
-    const/16 v2, 0x225
+    move-result-object v3
 
-    invoke-static {v0, v1, v2, p1}, Ld;->h(Lnaz;Ljava/lang/String;CLjava/lang/Throwable;)V
+    invoke-virtual {v3}, Ljava/lang/String;->length()I
+
+    move-result v3
+
+    new-instance v4, Ljava/lang/StringBuilder;
+
+    const/4 v5, 0x1
+
+    add-int/2addr v2, v5
+
+    add-int/2addr v2, v3
+
+    invoke-direct {v4, v2}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    invoke-virtual {v4, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v1, ":"
+
+    invoke-virtual {v4, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v4, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-virtual {v0, v5, p1}, Landroid/os/PowerManager;->newWakeLock(ILjava/lang/String;)Landroid/os/PowerManager$WakeLock;
+
+    move-result-object p1
+
+    iget-wide v0, p0, Lhhp;->c:J
+
+    invoke-virtual {p1, v0, v1}, Landroid/os/PowerManager$WakeLock;->acquire(J)V
+
+    iget-object v0, p0, Lhhp;->d:Landroid/os/PowerManager$WakeLock;
+
+    if-eqz v0, :cond_0
+
+    invoke-virtual {v0}, Landroid/os/PowerManager$WakeLock;->release()V
+
+    :cond_0
+    iput-object p1, p0, Lhhp;->d:Landroid/os/PowerManager$WakeLock;
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    monitor-exit p0
 
     return-void
 
-    :pswitch_0
-    sget-object v0, Lhhr;->a:Lnak;
+    :catchall_0
+    move-exception p1
 
-    invoke-virtual {v0}, Lnaf;->b()Lnaz;
+    monitor-exit p0
 
-    move-result-object v0
-
-    const/16 v2, 0xe2b
-
-    invoke-static {v0, v1, v2, p1}, Ld;->h(Lnaz;Ljava/lang/String;CLjava/lang/Throwable;)V
-
-    return-void
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+    throw p1
 .end method
 
-.method public final b(Ljava/lang/Object;)V
-    .locals 0
+.method public final declared-synchronized b()V
+    .locals 1
 
-    iget p1, p0, Lhhp;->a:I
+    monitor-enter p0
+
+    :try_start_0
+    iget-object v0, p0, Lhhp;->d:Landroid/os/PowerManager$WakeLock;
+
+    if-eqz v0, :cond_0
+
+    invoke-virtual {v0}, Landroid/os/PowerManager$WakeLock;->release()V
+
+    const/4 v0, 0x0
+
+    iput-object v0, p0, Lhhp;->d:Landroid/os/PowerManager$WakeLock;
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    :cond_0
+    monitor-exit p0
 
     return-void
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit p0
+
+    throw v0
 .end method

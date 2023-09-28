@@ -1,70 +1,41 @@
-.class public final Lbv;
+.class public final synthetic Lbv;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Landroid/os/Parcelable;
-
-
-# static fields
-.field public static final CREATOR:Landroid/os/Parcelable$Creator;
+.implements Luh;
 
 
 # instance fields
-.field final a:Landroid/os/Bundle;
+.field public final synthetic a:Lby;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
-
-    new-instance v0, Lmg;
-
-    const/4 v1, 0x1
-
-    invoke-direct {v0, v1}, Lmg;-><init>(I)V
-
-    sput-object v0, Lbv;->CREATOR:Landroid/os/Parcelable$Creator;
-
-    return-void
-.end method
-
-.method public constructor <init>(Landroid/os/Parcel;Ljava/lang/ClassLoader;)V
+.method public synthetic constructor <init>(Lby;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-virtual {p1}, Landroid/os/Parcel;->readBundle()Landroid/os/Bundle;
+    iput-object p1, p0, Lbv;->a:Lby;
 
-    move-result-object p1
-
-    iput-object p1, p0, Lbv;->a:Landroid/os/Bundle;
-
-    if-eqz p2, :cond_0
-
-    if-eqz p1, :cond_0
-
-    invoke-virtual {p1, p2}, Landroid/os/Bundle;->setClassLoader(Ljava/lang/ClassLoader;)V
-
-    :cond_0
     return-void
 .end method
 
 
 # virtual methods
-.method public final describeContents()I
-    .locals 1
+.method public final a()V
+    .locals 3
 
-    const/4 v0, 0x0
+    iget-object v0, p0, Lbv;->a:Lby;
 
-    return v0
-.end method
+    iget-object v0, v0, Lby;->a:Lcd;
 
-.method public final writeToParcel(Landroid/os/Parcel;I)V
-    .locals 0
+    iget-object v0, v0, Lcd;->a:Lcf;
 
-    iget-object p2, p0, Lbv;->a:Landroid/os/Bundle;
+    iget-object v1, v0, Lcf;->e:Lcu;
 
-    invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeBundle(Landroid/os/Bundle;)V
+    const/4 v2, 0x0
+
+    invoke-virtual {v1, v0, v0, v2}, Lcu;->j(Lcf;Lcb;Lbu;)V
 
     return-void
 .end method

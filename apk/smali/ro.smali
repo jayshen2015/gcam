@@ -1,28 +1,18 @@
 .class public final Lro;
-.super Lja;
+.super Ljava/lang/Object;
 
 
-# static fields
-.field public static final a:Lro;
+# instance fields
+.field final synthetic a:Landroid/support/v7/widget/Toolbar;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
-
-    new-instance v0, Lro;
-
-    invoke-direct {v0}, Lro;-><init>()V
-
-    sput-object v0, Lro;->a:Lro;
-
-    return-void
-.end method
-
-.method private constructor <init>()V
+.method public constructor <init>(Landroid/support/v7/widget/Toolbar;)V
     .locals 0
 
-    invoke-direct {p0}, Lja;-><init>()V
+    iput-object p1, p0, Lro;->a:Landroid/support/v7/widget/Toolbar;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method

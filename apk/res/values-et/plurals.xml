@@ -1,12 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <plurals name="accessibility_timelapse_manual_record_speed_desc">
-        <item quantity="other">%d-kordse kiirusega kiirendatud video</item>
-        <item quantity="one">%d-kordse kiirusega kiirendatud video</item>
-    </plurals>
-    <plurals name="number_of_cropped_face">
-        <item quantity="other">%d on kärbitud.</item>
-        <item quantity="one">Üks on kärbitud.</item>
+    <plurals name="number_of_faces_announcement">
+        <item quantity="other">%1$d nägu.</item>
+        <item quantity="one">%1$d nägu.</item>
     </plurals>
     <plurals name="photos_remaining">
         <item quantity="other">Umbes %s fotot</item>
@@ -17,8 +13,8 @@
         <item quantity="one">(Valitud on %1$d rakendus)</item>
     </plurals>
     <plurals name="social_share_info">
-        <item quantity="other">Jagage sotsiaalrakendustes kiiresti fotosid ja videoid rakendusest Kaamera. Valige kuni %1$d rakendust. Lukustatud kausta salvestatud fotosid ja videoid ei saa jagada.</item>
-        <item quantity="one">Jagage sotsiaalrakendustes kiiresti fotosid ja videoid rakendusest Kaamera. Valige %1$d rakendus. Lukustatud kausta salvestatud fotosid ja videoid ei saa jagada.</item>
+        <item quantity="other">Jagage sotsiaalrakendustes fotosid ja videoid kiiresti otse kaamerast. Valige kuni %1$d rakendust. Lukustatud kausta salvestatud fotosid ja videoid ei saa jagada.</item>
+        <item quantity="one">Jagage sotsiaalrakendustes fotosid ja videoid kiiresti otse kaamerast. Valige %1$d rakendus. Lukustatud kausta salvestatud fotosid ja videoid ei saa jagada.</item>
     </plurals>
     <plurals name="social_share_select_error">
         <item quantity="other">Valige kuni %1$d rakendust</item>

@@ -1,130 +1,111 @@
-.class public final Lfvd;
+.class final Lfvd;
 .super Ljava/lang/Object;
+
+# interfaces
+.implements Lfvh;
 
 
 # instance fields
-.field public final a:Lkbc;
-
-.field public final b:Ljuh;
-
-.field public final c:Ljava/lang/Object;
-
-.field public d:Lnow;
-
-.field public e:Z
+.field final synthetic a:F
 
 
 # direct methods
-.method public constructor <init>(Lkap;Lkbc;Ljuh;)V
+.method public constructor <init>(F)V
     .locals 0
 
+    iput p1, p0, Lfvd;->a:F
+
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p3, p0, Lfvd;->b:Ljuh;
-
-    iput-object p2, p0, Lfvd;->a:Lkbc;
-
-    const-string p2, "CommandExecutor"
-
-    invoke-interface {p1, p2}, Lkap;->a(Ljava/lang/String;)Lkaq;
-
-    new-instance p1, Ljava/lang/Object;
-
-    invoke-direct {p1}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lfvd;->c:Ljava/lang/Object;
-
-    const/4 p1, 0x0
-
-    iput-boolean p1, p0, Lfvd;->e:Z
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Z
-    .locals 2
+.method public final a()Lfuz;
+    .locals 1
 
-    iget-object v0, p0, Lfvd;->c:Ljava/lang/Object;
+    sget-object v0, Lfuz;->d:Lfuz;
 
-    monitor-enter v0
-
-    :try_start_0
-    iget-boolean v1, p0, Lfvd;->e:Z
-
-    monitor-exit v0
-
-    return v1
-
-    :catchall_0
-    move-exception v1
-
-    monitor-exit v0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw v1
+    return-object v0
 .end method
 
-.method public final b(Lfvb;)V
-    .locals 4
+.method public final b(Lhjz;Lhjz;)Z
+    .locals 11
 
-    iget-object v0, p0, Lfvd;->c:Ljava/lang/Object;
+    iget v0, p1, Lhjz;->t:I
 
-    monitor-enter v0
+    const/4 v1, 0x0
 
-    :try_start_0
-    iget-boolean v1, p0, Lfvd;->e:Z
+    const/4 v2, 0x1
 
-    if-eqz v1, :cond_0
+    if-ne v0, v2, :cond_1
 
-    const/4 p1, 0x0
+    iget v0, p1, Lhjz;->u:I
 
-    invoke-static {p1}, Lnsy;->B(Ljava/lang/Object;)Lnou;
+    if-eqz v0, :cond_0
 
-    monitor-exit v0
-
-    return-void
+    goto :goto_0
 
     :cond_0
-    iget-object v1, p0, Lfvd;->d:Lnow;
-
-    if-nez v1, :cond_1
-
-    invoke-static {}, Lftp;->a()Ljava/util/concurrent/ExecutorService;
-
-    move-result-object v1
-
-    invoke-static {v1}, Lnsy;->p(Ljava/util/concurrent/ExecutorService;)Lnow;
-
-    move-result-object v1
-
-    iput-object v1, p0, Lfvd;->d:Lnow;
+    return v1
 
     :cond_1
-    iget-object v1, p0, Lfvd;->d:Lnow;
+    :goto_0
+    iget v0, p2, Lhjz;->e:I
 
-    invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    int-to-long v3, v0
 
-    new-instance v2, Lfvc;
+    iget-wide v5, p2, Lhjz;->c:J
 
-    const/4 v3, 0x0
+    mul-long v3, v3, v5
 
-    invoke-direct {v2, p0, p1, v3}, Lfvc;-><init>(Lfvd;Lfvb;I)V
+    iget p2, p2, Lhjz;->f:I
 
-    invoke-interface {v1, v2}, Lnow;->a(Ljava/lang/Runnable;)Lnou;
+    int-to-long v5, p2
 
-    monitor-exit v0
+    mul-long v3, v3, v5
 
-    return-void
+    const-wide/16 v5, 0x64
 
-    :catchall_0
-    move-exception p1
+    div-long/2addr v3, v5
 
-    monitor-exit v0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    iget p2, p1, Lhjz;->e:I
 
-    throw p1
+    int-to-long v7, p2
+
+    iget-wide v9, p1, Lhjz;->c:J
+
+    mul-long v7, v7, v9
+
+    iget p1, p1, Lhjz;->f:I
+
+    int-to-long p1, p1
+
+    mul-long v7, v7, p1
+
+    div-long/2addr v7, v5
+
+    sub-long/2addr v7, v3
+
+    invoke-static {v7, v8}, Ljava/lang/Math;->abs(J)J
+
+    move-result-wide p1
+
+    long-to-float p1, p1
+
+    long-to-float p2, v3
+
+    iget v0, p0, Lfvd;->a:F
+
+    mul-float p2, p2, v0
+
+    cmpl-float p1, p1, p2
+
+    if-lez p1, :cond_2
+
+    return v2
+
+    :cond_2
+    return v1
 .end method

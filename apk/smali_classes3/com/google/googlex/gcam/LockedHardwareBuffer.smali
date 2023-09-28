@@ -39,7 +39,7 @@
     :goto_0
     const-string p2, "Failed to lock HardwareBuffer."
 
-    invoke-static {p1, p2}, Lmoz;->f(ZLjava/lang/Object;)V
+    invoke-static {p1, p2}, Lobr;->aG(ZLjava/lang/Object;)V
 
     return-void
 .end method

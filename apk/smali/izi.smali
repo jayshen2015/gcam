@@ -1,21 +1,18 @@
 .class final Lizi;
-.super Ljava/lang/Object;
-
-# interfaces
-.implements Lizp;
+.super Lizu;
 
 
 # instance fields
-.field final synthetic a:Lizj;
+.field final synthetic a:Lizx;
 
 
 # direct methods
-.method public constructor <init>(Lizj;)V
+.method public constructor <init>(Lizx;)V
     .locals 0
 
-    iput-object p1, p0, Lizi;->a:Lizj;
+    iput-object p1, p0, Lizi;->a:Lizx;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0, p1}, Lizu;-><init>(Lizx;)V
 
     return-void
 .end method
@@ -23,11 +20,45 @@
 
 # virtual methods
 .method public final a()V
-    .locals 1
+    .locals 2
 
-    iget-object v0, p0, Lizi;->a:Lizj;
+    iget-object v0, p0, Lizi;->a:Lizx;
 
-    invoke-virtual {v0}, Lizj;->F()V
+    iget-object v0, v0, Lizx;->g:Lihu;
+
+    invoke-virtual {v0}, Lihu;->e()V
+
+    invoke-super {p0}, Lizu;->a()V
+
+    iget-object v0, p0, Lizi;->a:Lizx;
+
+    iget-object v1, v0, Lizx;->g:Lihu;
+
+    iget-object v0, v0, Lizx;->k:Lihw;
+
+    invoke-virtual {v1, v0}, Lihu;->g(Lihw;)V
+
+    return-void
+.end method
+
+.method public final c()V
+    .locals 2
+
+    iget-object v0, p0, Lizi;->a:Lizx;
+
+    iget-object v0, v0, Lizx;->g:Lihu;
+
+    invoke-virtual {v0}, Lihu;->e()V
+
+    invoke-super {p0}, Lizu;->c()V
+
+    iget-object v0, p0, Lizi;->a:Lizx;
+
+    iget-object v1, v0, Lizx;->g:Lihu;
+
+    iget-object v0, v0, Lizx;->k:Lihw;
+
+    invoke-virtual {v1, v0}, Lihu;->g(Lihw;)V
 
     return-void
 .end method

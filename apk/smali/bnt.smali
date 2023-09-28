@@ -1,59 +1,181 @@
-.class final Lbnt;
+.class public final Lbnt;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Lpys;
 
 
 # instance fields
-.field final synthetic a:Ljava/lang/RuntimeException;
+.field private final a:Lqkg;
 
-.field final synthetic b:Ljava/lang/String;
+.field private final b:Lqkg;
 
-.field final synthetic c:I
+.field private final c:Lqkg;
 
-.field final synthetic d:I
+.field private final d:Lqkg;
 
-.field final synthetic e:Lbnv;
+.field private final e:Lqkg;
+
+.field private final f:Lqkg;
+
+.field private final g:Lqkg;
+
+.field private final h:Lqkg;
+
+.field private final i:Lqkg;
+
+.field private final j:Lqkg;
+
+.field private final k:Lqkg;
+
+.field private final l:Lqkg;
+
+.field private final m:Lqkg;
+
+.field private final n:Lqkg;
+
+.field private final o:Lqkg;
+
+.field private final p:Lqkg;
 
 
 # direct methods
-.method public constructor <init>(Lbnv;Ljava/lang/RuntimeException;Ljava/lang/String;II)V
-    .locals 0
+.method public constructor <init>(Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;)V
+    .locals 2
 
-    iput-object p1, p0, Lbnt;->e:Lbnv;
-
-    iput-object p2, p0, Lbnt;->a:Ljava/lang/RuntimeException;
-
-    iput-object p3, p0, Lbnt;->b:Ljava/lang/String;
-
-    iput p4, p0, Lbnt;->c:I
-
-    iput p5, p0, Lbnt;->d:I
+    move-object v0, p0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    move-object v1, p1
+
+    iput-object v1, v0, Lbnt;->a:Lqkg;
+
+    move-object v1, p2
+
+    iput-object v1, v0, Lbnt;->b:Lqkg;
+
+    move-object v1, p3
+
+    iput-object v1, v0, Lbnt;->c:Lqkg;
+
+    move-object v1, p4
+
+    iput-object v1, v0, Lbnt;->d:Lqkg;
+
+    move-object v1, p5
+
+    iput-object v1, v0, Lbnt;->e:Lqkg;
+
+    move-object v1, p6
+
+    iput-object v1, v0, Lbnt;->f:Lqkg;
+
+    move-object v1, p7
+
+    iput-object v1, v0, Lbnt;->g:Lqkg;
+
+    move-object v1, p8
+
+    iput-object v1, v0, Lbnt;->h:Lqkg;
+
+    move-object v1, p9
+
+    iput-object v1, v0, Lbnt;->i:Lqkg;
+
+    move-object v1, p10
+
+    iput-object v1, v0, Lbnt;->j:Lqkg;
+
+    move-object v1, p11
+
+    iput-object v1, v0, Lbnt;->k:Lqkg;
+
+    move-object v1, p12
+
+    iput-object v1, v0, Lbnt;->l:Lqkg;
+
+    move-object v1, p13
+
+    iput-object v1, v0, Lbnt;->m:Lqkg;
+
+    move-object/from16 v1, p14
+
+    iput-object v1, v0, Lbnt;->n:Lqkg;
+
+    move-object/from16 v1, p15
+
+    iput-object v1, v0, Lbnt;->o:Lqkg;
+
+    move-object/from16 v1, p16
+
+    iput-object v1, v0, Lbnt;->p:Lqkg;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final run()V
-    .locals 5
+.method public final a()Lbon;
+    .locals 21
 
-    iget-object v0, p0, Lbnt;->e:Lbnv;
+    move-object/from16 v0, p0
 
-    iget-object v0, v0, Lbnv;->a:Lbnu;
+    iget-object v2, v0, Lbnt;->a:Lqkg;
 
-    iget-object v1, p0, Lbnt;->a:Ljava/lang/RuntimeException;
+    iget-object v3, v0, Lbnt;->b:Lqkg;
 
-    iget-object v2, p0, Lbnt;->b:Ljava/lang/String;
+    iget-object v4, v0, Lbnt;->c:Lqkg;
 
-    iget v3, p0, Lbnt;->c:I
+    iget-object v5, v0, Lbnt;->d:Lqkg;
 
-    iget v4, p0, Lbnt;->d:I
+    iget-object v6, v0, Lbnt;->e:Lqkg;
 
-    invoke-interface {v0, v1, v2, v3, v4}, Lbnu;->b(Ljava/lang/RuntimeException;Ljava/lang/String;II)V
+    iget-object v7, v0, Lbnt;->f:Lqkg;
 
-    return-void
+    iget-object v8, v0, Lbnt;->g:Lqkg;
+
+    iget-object v9, v0, Lbnt;->h:Lqkg;
+
+    iget-object v10, v0, Lbnt;->i:Lqkg;
+
+    iget-object v11, v0, Lbnt;->j:Lqkg;
+
+    iget-object v12, v0, Lbnt;->k:Lqkg;
+
+    iget-object v13, v0, Lbnt;->l:Lqkg;
+
+    iget-object v14, v0, Lbnt;->m:Lqkg;
+
+    iget-object v15, v0, Lbnt;->n:Lqkg;
+
+    iget-object v1, v0, Lbnt;->o:Lqkg;
+
+    move-object/from16 v16, v1
+
+    iget-object v1, v0, Lbnt;->p:Lqkg;
+
+    move-object/from16 v17, v1
+
+    new-instance v20, Lbon;
+
+    move-object/from16 v1, v20
+
+    const/16 v18, 0x1
+
+    const/16 v19, 0x0
+
+    invoke-direct/range {v1 .. v19}, Lbon;-><init>(Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;I[B)V
+
+    return-object v20
+.end method
+
+.method public final bridge synthetic get()Ljava/lang/Object;
+    .locals 1
+
+    invoke-virtual {p0}, Lbnt;->a()Lbon;
+
+    move-result-object v0
+
+    return-object v0
 .end method

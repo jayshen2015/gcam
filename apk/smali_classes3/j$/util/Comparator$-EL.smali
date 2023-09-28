@@ -3,28 +3,32 @@
 
 
 # direct methods
-.method public static reversed(Ljava/util/Comparator;)Ljava/util/Comparator;
+.method public static synthetic reversed(Ljava/util/Comparator;)Ljava/util/Comparator;
     .locals 0
 
-    invoke-static {p0}, Ljava/util/Collections;->reverseOrder(Ljava/util/Comparator;)Ljava/util/Comparator;
+    invoke-static {p0}, Lj$/util/Comparator$-CC;->$default$reversed(Ljava/util/Comparator;)Ljava/util/Comparator;
 
     move-result-object p0
 
     return-object p0
 .end method
 
-.method public static thenComparing(Ljava/util/Comparator;Ljava/util/function/Function;)Ljava/util/Comparator;
-    .locals 1
+.method public static synthetic thenComparing(Ljava/util/Comparator;Lj$/util/function/Function;)Ljava/util/Comparator;
+    .locals 0
 
-    invoke-static {p1}, Lj$/util/Comparator$-CC;->comparing(Ljava/util/function/Function;)Ljava/util/Comparator;
+    invoke-static {p0, p1}, Lj$/util/Comparator$-CC;->$default$thenComparing(Ljava/util/Comparator;Lj$/util/function/Function;)Ljava/util/Comparator;
 
-    move-result-object p1
+    move-result-object p0
 
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    return-object p0
+.end method
 
-    new-instance v0, Lj$/util/d;
+.method public static synthetic thenComparing(Ljava/util/Comparator;Ljava/util/Comparator;)Ljava/util/Comparator;
+    .locals 0
 
-    invoke-direct {v0, p0, p1}, Lj$/util/d;-><init>(Ljava/util/Comparator;Ljava/util/Comparator;)V
+    invoke-static {p0, p1}, Lj$/util/Comparator$-CC;->$default$thenComparing(Ljava/util/Comparator;Ljava/util/Comparator;)Ljava/util/Comparator;
 
-    return-object v0
+    move-result-object p0
+
+    return-object p0
 .end method

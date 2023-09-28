@@ -1,55 +1,133 @@
-.class public final Lgxc;
+.class public final synthetic Lgxc;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Logk;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field private final a:Loiw;
+.field public final synthetic a:Lgxi;
 
-.field private final b:Loiw;
-
-.field private final c:Loiw;
+.field private final synthetic b:I
 
 
 # direct methods
-.method public constructor <init>(Loiw;Loiw;Loiw;)V
+.method public synthetic constructor <init>(Lgxi;I)V
     .locals 0
+
+    iput p2, p0, Lgxc;->b:I
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lgxc;->a:Loiw;
+    iput-object p1, p0, Lgxc;->a:Lgxi;
 
-    iput-object p2, p0, Lgxc;->b:Loiw;
+    return-void
+.end method
 
-    iput-object p3, p0, Lgxc;->c:Loiw;
+.method public constructor <init>(Lgxi;I[B)V
+    .locals 0
+
+    iput p2, p0, Lgxc;->b:I
+
+    iput-object p1, p0, Lgxc;->a:Lgxi;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Lgxb;
+.method public final run()V
     .locals 3
 
-    iget-object v0, p0, Lgxc;->a:Loiw;
+    iget v0, p0, Lgxc;->b:I
 
-    iget-object v1, p0, Lgxc;->c:Loiw;
+    packed-switch v0, :pswitch_data_0
 
-    new-instance v2, Lgxb;
+    iget-object v0, p0, Lgxc;->a:Lgxi;
 
-    invoke-direct {v2, v0, v1}, Lgxb;-><init>(Loiw;Loiw;)V
+    invoke-virtual {v0}, Lgxi;->c()V
 
-    return-object v2
-.end method
+    iget-object v0, p0, Lgxc;->a:Lgxi;
 
-.method public final bridge synthetic get()Ljava/lang/Object;
-    .locals 1
+    iget-object v0, v0, Lgxi;->i:Lpih;
 
-    invoke-virtual {p0}, Lgxc;->a()Lgxb;
+    if-eqz v0, :cond_1
 
-    move-result-object v0
+    const/4 v1, 0x0
 
-    return-object v0
+    invoke-virtual {v0, v1}, Lpih;->o(Ljava/lang/Object;)Z
+
+    return-void
+
+    :pswitch_0
+    iget-object v0, p0, Lgxc;->a:Lgxi;
+
+    iget-object v1, v0, Lgxi;->g:Lbod;
+
+    iget-object v1, v1, Lbod;->a:Ljrl;
+
+    sget-object v2, Ljrl;->m:Ljrl;
+
+    if-eq v1, v2, :cond_0
+
+    iget-object v1, v0, Lgxi;->g:Lbod;
+
+    iget-object v0, v0, Lgxi;->p:Ljava/lang/Runnable;
+
+    invoke-virtual {v1, v0}, Lbod;->a(Ljava/lang/Runnable;)V
+
+    return-void
+
+    :cond_0
+    iget-object v1, v0, Lgxi;->h:Lbnn;
+
+    invoke-virtual {v1}, Lbnn;->d()V
+
+    iget-object v1, v0, Lgxi;->h:Lbnn;
+
+    iget-object v0, v0, Lgxi;->p:Ljava/lang/Runnable;
+
+    invoke-virtual {v1, v0}, Lbnn;->a(Ljava/lang/Runnable;)V
+
+    return-void
+
+    :pswitch_1
+    iget-object v0, p0, Lgxc;->a:Lgxi;
+
+    iget-object v0, v0, Lgxi;->c:Llnc;
+
+    invoke-static {}, Laap;->e()Llnv;
+
+    move-result-object v1
+
+    invoke-interface {v0, v1}, Llnc;->j(Llnv;)V
+
+    return-void
+
+    :pswitch_2
+    iget-object v0, p0, Lgxc;->a:Lgxi;
+
+    iget-object v0, v0, Lgxi;->c:Llnc;
+
+    invoke-static {}, Laap;->f()Llnv;
+
+    move-result-object v1
+
+    invoke-interface {v0, v1}, Llnc;->j(Llnv;)V
+
+    return-void
+
+    :cond_1
+    return-void
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method

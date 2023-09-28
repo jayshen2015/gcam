@@ -14,27 +14,13 @@
 .method public static systemUTC()Lj$/time/Clock;
     .locals 1
 
-    sget-object v0, Lj$/time/a;->b:Lj$/time/a;
+    sget-object v0, Lj$/time/Clock$SystemClock;->UTC:Lj$/time/Clock$SystemClock;
 
     return-object v0
 .end method
 
 
 # virtual methods
-.method public a()J
-    .locals 2
-
-    invoke-virtual {p0}, Lj$/time/Clock;->instant()Lj$/time/Instant;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lj$/time/Instant;->toEpochMilli()J
-
-    move-result-wide v0
-
-    return-wide v0
-.end method
-
 .method public equals(Ljava/lang/Object;)Z
     .locals 0
 
@@ -56,4 +42,18 @@
 .end method
 
 .method public abstract instant()Lj$/time/Instant;
+.end method
+
+.method public millis()J
+    .locals 2
+
+    invoke-virtual {p0}, Lj$/time/Clock;->instant()Lj$/time/Instant;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lj$/time/Instant;->toEpochMilli()J
+
+    move-result-wide v0
+
+    return-wide v0
 .end method

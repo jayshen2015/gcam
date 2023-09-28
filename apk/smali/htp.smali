@@ -1,122 +1,221 @@
-.class Lhtp;
-.super Lhtm;
+.class public final Lhtp;
+.super Ljava/lang/Object;
 
 
 # instance fields
-.field final synthetic a:Lhtz;
+.field public final a:Lhub;
+
+.field public final b:Llis;
 
 
 # direct methods
-.method public constructor <init>(Lhtz;)V
+.method public constructor <init>(Lhub;Llir;)V
     .locals 0
 
-    iput-object p1, p0, Lhtp;->a:Lhtz;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0}, Lhtm;-><init>()V
+    iput-object p1, p0, Lhtp;->a:Lhub;
+
+    const-string p1, "Settings"
+
+    invoke-interface {p2, p1}, Llir;->a(Ljava/lang/String;)Llis;
+
+    move-result-object p1
+
+    iput-object p1, p0, Lhtp;->b:Llis;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public c()V
-    .locals 0
-
-    return-void
-.end method
-
-.method public d()V
-    .locals 0
-
-    return-void
-.end method
-
-.method public final f()V
+.method public final a(Ljava/lang/String;Z)Llda;
     .locals 3
 
-    iget-object v0, p0, Lhtp;->a:Lhtz;
+    iget-object v0, p0, Lhtp;->a:Lhub;
 
-    invoke-virtual {v0}, Lhtz;->x()V
+    invoke-virtual {v0, p1}, Lhub;->n(Ljava/lang/String;)Z
 
-    iget-object v0, p0, Lhtp;->a:Lhtz;
+    move-result v0
 
-    invoke-virtual {v0}, Lhtz;->t()Lcom/google/android/apps/camera/ui/wirers/PreviewOverlay;
+    if-nez v0, :cond_0
 
-    move-result-object v0
+    iget-object v0, p0, Lhtp;->b:Llis;
 
-    const/4 v1, 0x1
+    invoke-virtual {p1}, Ljava/lang/String;->length()I
 
-    iput-boolean v1, v0, Lcom/google/android/apps/camera/ui/wirers/PreviewOverlay;->d:Z
+    move-result v1
 
-    iget-object v0, p0, Lhtp;->a:Lhtz;
+    new-instance v2, Ljava/lang/StringBuilder;
 
-    iget-object v0, v0, Lhtz;->c:Libj;
+    add-int/lit8 v1, v1, 0x2e
 
-    sget-object v2, Lika;->l:Lika;
+    invoke-direct {v2, v1}, Ljava/lang/StringBuilder;-><init>(I)V
 
-    invoke-interface {v0, v2, v1}, Libj;->j(Lika;Z)V
+    const-string v1, "Initializing default value ("
 
-    iget-object v0, p0, Lhtp;->a:Lhtz;
+    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    sget-object v1, Lika;->l:Lika;
+    invoke-virtual {v2, p2}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v0, v1}, Lhtz;->B(Lika;)V
+    const-string v1, ") for key: ("
 
-    iget-object v0, p0, Lhtp;->a:Lhtz;
+    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget-object v0, v0, Lhtz;->c:Libj;
+    invoke-virtual {v2, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-interface {v0}, Libj;->m()V
+    const-string v1, ")"
 
-    iget-object v0, p0, Lhtp;->a:Lhtz;
+    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v0}, Lhtz;->w()V
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    return-void
+    move-result-object v1
+
+    invoke-interface {v0, v1}, Llis;->f(Ljava/lang/String;)V
+
+    iget-object v0, p0, Lhtp;->a:Lhub;
+
+    invoke-virtual {v0, p1, p2}, Lhub;->l(Ljava/lang/String;Z)V
+
+    :cond_0
+    new-instance p2, Lhst;
+
+    iget-object v0, p0, Lhtp;->a:Lhub;
+
+    invoke-direct {p2, v0, p1}, Lhst;-><init>(Lhub;Ljava/lang/String;)V
+
+    return-object p2
 .end method
 
-.method public final g()V
-    .locals 2
+.method public final b(Ljava/lang/String;I)Llda;
+    .locals 3
 
-    iget-object v0, p0, Lhtp;->a:Lhtz;
+    iget-object v0, p0, Lhtp;->a:Lhub;
 
-    invoke-virtual {v0}, Lhtz;->t()Lcom/google/android/apps/camera/ui/wirers/PreviewOverlay;
+    invoke-virtual {v0, p1}, Lhub;->n(Ljava/lang/String;)Z
 
-    move-result-object v0
+    move-result v0
 
-    const/4 v1, 0x0
+    if-nez v0, :cond_0
 
-    iput-boolean v1, v0, Lcom/google/android/apps/camera/ui/wirers/PreviewOverlay;->d:Z
+    iget-object v0, p0, Lhtp;->b:Llis;
 
-    iget-object v0, p0, Lhtp;->a:Lhtz;
+    invoke-virtual {p1}, Ljava/lang/String;->length()I
 
-    iget-object v0, v0, Lhtz;->b:Litm;
+    move-result v1
 
-    invoke-interface {v0, v1}, Litm;->I(Z)V
+    new-instance v2, Ljava/lang/StringBuilder;
 
-    return-void
+    add-int/lit8 v1, v1, 0x34
+
+    invoke-direct {v2, v1}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string v1, "Initializing default value ("
+
+    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2, p2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    const-string v1, ") for key: ("
+
+    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v1, ")"
+
+    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-interface {v0, v1}, Llis;->f(Ljava/lang/String;)V
+
+    iget-object v0, p0, Lhtp;->a:Lhub;
+
+    invoke-virtual {v0, p1, p2}, Lhub;->i(Ljava/lang/String;I)V
+
+    :cond_0
+    new-instance p2, Lhta;
+
+    iget-object v0, p0, Lhtp;->a:Lhub;
+
+    invoke-direct {p2, v0, p1}, Lhta;-><init>(Lhub;Ljava/lang/String;)V
+
+    return-object p2
 .end method
 
-.method public k()V
-    .locals 0
+.method public final c(Ljava/lang/String;Ljava/lang/String;)Llda;
+    .locals 4
 
-    return-void
-.end method
+    iget-object v0, p0, Lhtp;->a:Lhub;
 
-.method public l()V
-    .locals 0
+    invoke-virtual {v0, p1}, Lhub;->n(Ljava/lang/String;)Z
 
-    return-void
-.end method
+    move-result v0
 
-.method public p()V
-    .locals 0
+    if-nez v0, :cond_0
 
-    return-void
-.end method
+    iget-object v0, p0, Lhtp;->b:Llis;
 
-.method public q()V
-    .locals 0
+    invoke-static {p2}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
-    return-void
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/String;->length()I
+
+    move-result v1
+
+    invoke-static {p1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/String;->length()I
+
+    move-result v2
+
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    add-int/lit8 v1, v1, 0x29
+
+    add-int/2addr v1, v2
+
+    invoke-direct {v3, v1}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string v1, "Initializing default value ("
+
+    invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v3, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v1, ") for key: ("
+
+    invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v3, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v1, ")"
+
+    invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-interface {v0, v1}, Llis;->f(Ljava/lang/String;)V
+
+    iget-object v0, p0, Lhtp;->a:Lhub;
+
+    invoke-virtual {v0, p1, p2}, Lhub;->k(Ljava/lang/String;Ljava/lang/String;)V
+
+    :cond_0
+    new-instance p2, Lhui;
+
+    iget-object v0, p0, Lhtp;->a:Lhub;
+
+    invoke-direct {p2, v0, p1}, Lhui;-><init>(Lhub;Ljava/lang/String;)V
+
+    return-object p2
 .end method

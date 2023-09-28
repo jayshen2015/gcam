@@ -1,70 +1,35 @@
-.class final Livk;
-.super Laei;
+.class public final synthetic Livk;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Lcom/google/android/apps/camera/bottombar/RoundedThumbnailView$Callback;
 
 
 # instance fields
-.field final synthetic a:Livl;
+.field public final synthetic a:Livp;
 
 
 # direct methods
-.method public constructor <init>(Livl;)V
+.method public synthetic constructor <init>(Livp;)V
     .locals 0
 
-    iput-object p1, p0, Livk;->a:Livl;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0}, Laei;-><init>()V
+    iput-object p1, p0, Livk;->a:Livp;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Landroid/view/View;Landroid/view/accessibility/AccessibilityEvent;)V
-    .locals 0
+.method public final onHitStateFinished()V
+    .locals 2
 
-    invoke-super {p0, p1, p2}, Laei;->a(Landroid/view/View;Landroid/view/accessibility/AccessibilityEvent;)V
+    iget-object v0, p0, Livk;->a:Livp;
 
-    iget-object p1, p0, Livk;->a:Livl;
+    const/4 v1, 0x1
 
-    invoke-virtual {p1}, Livl;->b()Ljava/lang/String;
-
-    move-result-object p1
-
-    invoke-virtual {p2, p1}, Landroid/view/accessibility/AccessibilityEvent;->setClassName(Ljava/lang/CharSequence;)V
-
-    iget-object p1, p0, Livk;->a:Livl;
-
-    iget-boolean p1, p1, Livl;->g:Z
-
-    invoke-virtual {p2, p1}, Landroid/view/accessibility/AccessibilityEvent;->setChecked(Z)V
-
-    return-void
-.end method
-
-.method public final b(Landroid/view/View;Lagt;)V
-    .locals 0
-
-    invoke-super {p0, p1, p2}, Laei;->b(Landroid/view/View;Lagt;)V
-
-    iget-object p1, p0, Livk;->a:Livl;
-
-    invoke-virtual {p1}, Livl;->b()Ljava/lang/String;
-
-    move-result-object p1
-
-    invoke-virtual {p2, p1}, Lagt;->i(Ljava/lang/CharSequence;)V
-
-    iget-object p1, p0, Livk;->a:Livl;
-
-    iget-boolean p1, p1, Livl;->h:Z
-
-    invoke-virtual {p2, p1}, Lagt;->g(Z)V
-
-    iget-object p1, p0, Livk;->a:Livl;
-
-    iget-boolean p1, p1, Livl;->g:Z
-
-    invoke-virtual {p2, p1}, Lagt;->h(Z)V
+    invoke-virtual {v0, v1}, Livp;->d(Z)V
 
     return-void
 .end method

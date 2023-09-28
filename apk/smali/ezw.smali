@@ -2,113 +2,43 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lfaj;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field public final synthetic a:Landroid/os/Bundle;
-
-.field public final synthetic b:Lfak;
-
-.field private final synthetic c:I
+.field public final synthetic a:Lfah;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lezx;Landroid/os/Bundle;I)V
+.method public synthetic constructor <init>(Lfah;)V
     .locals 0
-
-    iput p3, p0, Lezw;->c:I
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lezw;->b:Lfak;
-
-    iput-object p2, p0, Lezw;->a:Landroid/os/Bundle;
-
-    return-void
-.end method
-
-.method public synthetic constructor <init>(Lfak;Landroid/os/Bundle;I)V
-    .locals 0
-
-    iput p3, p0, Lezw;->c:I
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lezw;->b:Lfak;
-
-    iput-object p2, p0, Lezw;->a:Landroid/os/Bundle;
+    iput-object p1, p0, Lezw;->a:Lfah;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Lfaz;)V
-    .locals 2
+.method public final run()V
+    .locals 3
 
-    iget v0, p0, Lezw;->c:I
+    iget-object v0, p0, Lezw;->a:Lfah;
 
-    packed-switch v0, :pswitch_data_0
-
-    iget-object v0, p0, Lezw;->a:Landroid/os/Bundle;
-
-    instance-of v1, p1, Lfan;
-
-    if-eqz v1, :cond_2
-
-    invoke-static {p1, v0}, Lfak;->g(Lfaz;Landroid/os/Bundle;)Landroid/os/Bundle;
-
-    check-cast p1, Lfan;
-
-    invoke-interface {p1}, Lfan;->bQ()V
-
-    return-void
-
-    :pswitch_0
-    iget-object v0, p0, Lezw;->a:Landroid/os/Bundle;
-
-    instance-of v1, p1, Lezl;
+    iget-object v1, v0, Lfah;->v:Lfwc;
 
     if-eqz v1, :cond_0
 
-    invoke-static {p1, v0}, Lezx;->g(Lfaz;Landroid/os/Bundle;)Landroid/os/Bundle;
+    iget-object v0, v0, Lfah;->o:Liwt;
 
-    move-result-object v0
+    iget-object v2, v1, Lfwc;->c:Lghx;
 
-    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    iget-object v1, v1, Lfwc;->a:Llap;
 
-    check-cast p1, Lezl;
-
-    invoke-interface {p1, v0}, Lezl;->g(Landroid/os/Bundle;)V
+    invoke-virtual {v0, v2, v1}, Liwo;->b(Lghx;Llap;)V
 
     :cond_0
     return-void
-
-    :pswitch_1
-    iget-object v0, p0, Lezw;->a:Landroid/os/Bundle;
-
-    instance-of v1, p1, Lezi;
-
-    if-eqz v1, :cond_1
-
-    invoke-static {p1, v0}, Lezx;->g(Lfaz;Landroid/os/Bundle;)Landroid/os/Bundle;
-
-    check-cast p1, Lezi;
-
-    invoke-interface {p1}, Lezi;->b()V
-
-    :cond_1
-    return-void
-
-    :cond_2
-    return-void
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
 .end method

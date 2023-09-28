@@ -1,28 +1,22 @@
-.class final Locg;
+.class Locg;
 .super Ljava/lang/Object;
-
-
-# static fields
-.field static final a:Llzz;
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 4
+    .locals 1
 
-    sget-object v0, Lnzl;->i:Lnzl;
+    new-instance v0, Landroid/graphics/Matrix;
 
-    sget-object v1, Lnzl;->k:Lnzl;
+    invoke-direct {v0}, Landroid/graphics/Matrix;-><init>()V
 
-    sget-object v2, Locf;->a:Locf;
+    return-void
+.end method
 
-    const-string v3, ""
+.method public constructor <init>()V
+    .locals 0
 
-    invoke-static {v0, v3, v1, v2}, Llzz;->B(Lnzl;Ljava/lang/Object;Lnzl;Ljava/lang/Object;)Llzz;
-
-    move-result-object v0
-
-    sput-object v0, Locg;->a:Llzz;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method

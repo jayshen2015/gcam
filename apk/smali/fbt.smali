@@ -1,163 +1,178 @@
-.class public final Lfbt;
+.class public final synthetic Lfbt;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lfca;
+.implements Landroid/preference/Preference$OnPreferenceChangeListener;
 
 
 # instance fields
-.field private final a:Lnak;
+.field public final synthetic a:Lfcb;
+
+.field private final synthetic b:I
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 1
+.method public synthetic constructor <init>(Lfcb;I)V
+    .locals 0
+
+    iput p2, p0, Lfbt;->b:I
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const-string v0, "com/google/android/apps/camera/logging/LogcatCameraEventLogger"
-
-    invoke-static {v0}, Lnak;->h(Ljava/lang/String;)Lnak;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lfbt;->a:Lnak;
+    iput-object p1, p0, Lfbt;->a:Lfcb;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final declared-synchronized a(Lngr;)V
-    .locals 6
+.method public final onPreferenceChange(Landroid/preference/Preference;Ljava/lang/Object;)Z
+    .locals 5
 
-    monitor-enter p0
+    iget v0, p0, Lfbt;->b:I
 
-    :try_start_0
-    iget-object v0, p0, Lfbt;->a:Lnak;
+    const/4 v1, 0x1
 
-    invoke-virtual {v0}, Lnaf;->c()Lnaz;
+    packed-switch v0, :pswitch_data_0
 
-    move-result-object v0
+    iget-object v0, p0, Lfbt;->a:Lfcb;
 
-    check-cast v0, Lnah;
+    move-object v2, p1
 
-    const/16 v1, 0x83c
+    check-cast v2, Landroid/preference/ListPreference;
 
-    invoke-interface {v0, v1}, Lnah;->G(I)Lnaz;
+    invoke-virtual {v2}, Landroid/preference/ListPreference;->getValue()Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object v3
 
-    check-cast v0, Lnah;
+    invoke-virtual {v2, v3}, Landroid/preference/ListPreference;->findIndexOfValue(Ljava/lang/String;)I
 
-    iget v1, p1, Lngr;->d:I
+    move-result v3
 
-    invoke-static {v1}, Lngq;->b(I)Lngq;
+    check-cast p2, Ljava/lang/String;
 
-    move-result-object v1
+    invoke-virtual {v2, p2}, Landroid/preference/ListPreference;->findIndexOfValue(Ljava/lang/String;)I
 
-    if-nez v1, :cond_0
+    move-result p2
 
-    sget-object v1, Lngq;->a:Lngq;
-
-    :cond_0
-    const-string v2, "----------------------\nStart event: %s"
-
-    invoke-interface {v0, v2, v1}, Lnah;->r(Ljava/lang/String;Ljava/lang/Object;)V
-
-    invoke-virtual {p1}, Lnws;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    const-string v1, "\n"
-
-    const/4 v2, -0x1
-
-    invoke-virtual {v0, v1, v2}, Ljava/lang/String;->split(Ljava/lang/String;I)[Ljava/lang/String;
-
-    move-result-object v0
-
-    array-length v1, v0
-
-    const/4 v2, 0x0
-
-    :goto_0
-    if-ge v2, v1, :cond_1
-
-    aget-object v3, v0, v2
-
-    iget-object v4, p0, Lfbt;->a:Lnak;
-
-    invoke-virtual {v4}, Lnaf;->c()Lnaz;
+    invoke-virtual {v2}, Landroid/preference/ListPreference;->getEntries()[Ljava/lang/CharSequence;
 
     move-result-object v4
 
-    check-cast v4, Lnah;
+    aget-object v4, v4, p2
 
-    const/16 v5, 0x83e
+    invoke-virtual {v2, v4}, Landroid/preference/ListPreference;->setSummary(Ljava/lang/CharSequence;)V
 
-    invoke-interface {v4, v5}, Lnah;->G(I)Lnaz;
+    iget-object v0, v0, Lfcb;->a:Lfce;
 
-    move-result-object v4
+    iget-object v0, v0, Lfce;->j:Lfjs;
 
-    check-cast v4, Lnah;
-
-    const-string v5, "%s"
-
-    invoke-interface {v4, v5, v3}, Lnah;->r(Ljava/lang/String;Ljava/lang/Object;)V
-
-    add-int/lit8 v2, v2, 0x1
-
-    goto :goto_0
-
-    :cond_1
-    iget-object v0, p0, Lfbt;->a:Lnak;
-
-    invoke-virtual {v0}, Lnaf;->c()Lnaz;
-
-    move-result-object v0
-
-    check-cast v0, Lnah;
-
-    const/16 v1, 0x83d
-
-    invoke-interface {v0, v1}, Lnah;->G(I)Lnaz;
-
-    move-result-object v0
-
-    check-cast v0, Lnah;
-
-    iget p1, p1, Lngr;->d:I
-
-    invoke-static {p1}, Lngq;->b(I)Lngq;
+    invoke-virtual {p1}, Landroid/preference/Preference;->getKey()Ljava/lang/String;
 
     move-result-object p1
 
-    if-nez p1, :cond_2
+    invoke-virtual {v2}, Landroid/preference/ListPreference;->getEntries()[Ljava/lang/CharSequence;
 
-    sget-object p1, Lngq;->a:Lngq;
+    move-result-object v4
 
-    :cond_2
-    const-string v1, "End Event: %s\n"
+    aget-object v3, v4, v3
 
-    invoke-interface {v0, v1, p1}, Lnah;->r(Ljava/lang/String;Ljava/lang/Object;)V
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    invoke-virtual {v2}, Landroid/preference/ListPreference;->getEntries()[Ljava/lang/CharSequence;
 
-    monitor-exit p0
+    move-result-object v2
 
-    return-void
+    aget-object p2, v2, p2
 
-    :catchall_0
-    move-exception p1
+    invoke-interface {v0, p1, v3, p2}, Lfjs;->p(Ljava/lang/String;Ljava/lang/Object;Ljava/lang/Object;)V
 
-    monitor-exit p0
+    return v1
 
-    goto :goto_2
+    :pswitch_0
+    iget-object v0, p0, Lfbt;->a:Lfcb;
 
-    :goto_1
-    throw p1
+    iget-object v2, v0, Lfcb;->a:Lfce;
 
-    :goto_2
-    goto :goto_1
+    iget-object v2, v2, Lfce;->j:Lfjs;
+
+    invoke-virtual {p1}, Landroid/preference/Preference;->getKey()Ljava/lang/String;
+
+    move-result-object p1
+
+    iget-object v3, v0, Lfcb;->b:Lcom/google/android/apps/camera/ui/preference/ManagedSwitchPreference;
+
+    invoke-virtual {v3}, Lcom/google/android/apps/camera/ui/preference/ManagedSwitchPreference;->isChecked()Z
+
+    move-result v3
+
+    invoke-static {v3}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    move-result-object v3
+
+    invoke-interface {v2, p1, v3, p2}, Lfjs;->p(Ljava/lang/String;Ljava/lang/Object;Ljava/lang/Object;)V
+
+    check-cast p2, Ljava/lang/Boolean;
+
+    invoke-virtual {p2}, Ljava/lang/Boolean;->booleanValue()Z
+
+    move-result p1
+
+    if-eqz p1, :cond_0
+
+    invoke-virtual {v0}, Lfcb;->b()Z
+
+    move-result p1
+
+    if-nez p1, :cond_0
+
+    invoke-virtual {v0}, Lfcb;->getActivity()Landroid/app/Activity;
+
+    move-result-object p1
+
+    const/4 p2, 0x2
+
+    new-array p2, p2, [Ljava/lang/String;
+
+    const/4 v0, 0x0
+
+    const-string v2, "android.permission.ACCESS_COARSE_LOCATION"
+
+    aput-object v2, p2, v0
+
+    const-string v0, "android.permission.ACCESS_FINE_LOCATION"
+
+    aput-object v0, p2, v1
+
+    invoke-virtual {p1, p2, v1}, Landroid/app/Activity;->requestPermissions([Ljava/lang/String;I)V
+
+    :cond_0
+    return v1
+
+    :pswitch_1
+    iget-object p1, p0, Lfbt;->a:Lfcb;
+
+    iget-object p1, p1, Lfcb;->a:Lfce;
+
+    check-cast p2, Ljava/lang/Boolean;
+
+    invoke-virtual {p2}, Ljava/lang/Boolean;->booleanValue()Z
+
+    move-result p2
+
+    iget-object p1, p1, Lfce;->k:Llda;
+
+    invoke-static {p2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    move-result-object p2
+
+    invoke-interface {p1, p2}, Llda;->fB(Ljava/lang/Object;)V
+
+    return v1
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method

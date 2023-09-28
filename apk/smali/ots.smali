@@ -2,65 +2,49 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lott;
+.implements Loud;
 
 
 # instance fields
-.field public final a:Lomk;
+.field final synthetic a:Lpfb;
 
-.field public final b:Lomo;
-
-.field private final c:Lott;
+.field final synthetic b:Lott;
 
 
 # direct methods
-.method public constructor <init>(Lott;Lomk;Lomo;)V
+.method public constructor <init>(Lott;Lpfb;)V
     .locals 0
 
+    iput-object p1, p0, Lots;->b:Lott;
+
+    iput-object p2, p0, Lots;->a:Lpfb;
+
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lots;->c:Lott;
-
-    iput-object p2, p0, Lots;->a:Lomk;
-
-    iput-object p3, p0, Lots;->b:Lomo;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final di(Lotu;Loku;)Ljava/lang/Object;
-    .locals 4
+.method public final a(Ljava/lang/Object;)V
+    .locals 1
 
-    new-instance v0, Lonk;
+    iget-object v0, p0, Lots;->b:Lott;
 
-    invoke-direct {v0}, Lonk;-><init>()V
+    iget-object v0, v0, Lott;->a:Loqw;
 
-    sget-object v1, Lovo;->a:Loxb;
+    invoke-interface {v0, p1}, Loqw;->gD(Ljava/lang/Object;)I
 
-    iput-object v1, v0, Lonk;->a:Ljava/lang/Object;
+    move-result p1
 
-    iget-object v1, p0, Lots;->c:Lott;
+    if-nez p1, :cond_0
 
-    new-instance v2, Lotr;
-
-    const/4 v3, 0x0
-
-    invoke-direct {v2, p0, v0, p1, v3}, Lotr;-><init>(Lots;Lonk;Lotu;I)V
-
-    invoke-interface {v1, v2, p2}, Lott;->di(Lotu;Loku;)Ljava/lang/Object;
-
-    move-result-object p1
-
-    sget-object p2, Lolc;->a:Lolc;
-
-    if-ne p1, p2, :cond_0
-
-    return-object p1
+    const/4 p1, 0x0
 
     :cond_0
-    sget-object p1, Lojk;->a:Lojk;
+    iget-object v0, p0, Lots;->a:Lpfb;
 
-    return-object p1
+    invoke-virtual {v0, p1}, Lpfb;->b(I)V
+
+    return-void
 .end method

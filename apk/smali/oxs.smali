@@ -1,96 +1,63 @@
-.class public final Loxs;
+.class public abstract Loxs;
 .super Ljava/lang/Object;
 
 
-# static fields
-.field public static final a:J
+# instance fields
+.field public final a:I
 
-.field public static final b:I
-
-.field public static final c:I
-
-.field public static final d:J
-
-.field public static final e:Loxq;
-
-.field public static final f:Loxq;
+.field public final b:Lovn;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 6
+.method protected constructor <init>(Lovn;I)V
+    .locals 2
 
-    const-string v0, "kotlinx.coroutines.scheduler.resolution.ns"
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const-wide/32 v1, 0x186a0
+    if-eqz p1, :cond_1
 
-    invoke-static {v0, v1, v2}, Lljz;->F(Ljava/lang/String;J)J
+    if-ltz p2, :cond_0
 
-    move-result-wide v0
+    iput p2, p0, Loxs;->a:I
 
-    sput-wide v0, Loxs;->a:J
-
-    sget v0, Loxc;->a:I
-
-    const/4 v1, 0x2
-
-    invoke-static {v0, v1}, Lonm;->f(II)I
-
-    move-result v0
-
-    const-string v1, "kotlinx.coroutines.scheduler.core.pool.size"
-
-    const/4 v2, 0x1
-
-    const/4 v3, 0x0
-
-    const/16 v4, 0x8
-
-    invoke-static {v1, v0, v2, v3, v4}, Lljz;->E(Ljava/lang/String;IIII)I
-
-    move-result v0
-
-    sput v0, Loxs;->b:I
-
-    const-string v0, "kotlinx.coroutines.scheduler.max.pool.size"
-
-    const v1, 0x1ffffe
-
-    const/4 v4, 0x4
-
-    invoke-static {v0, v1, v3, v1, v4}, Lljz;->E(Ljava/lang/String;IIII)I
-
-    move-result v0
-
-    sput v0, Loxs;->c:I
-
-    sget-object v0, Ljava/util/concurrent/TimeUnit;->SECONDS:Ljava/util/concurrent/TimeUnit;
-
-    const-string v1, "kotlinx.coroutines.scheduler.keep.alive.sec"
-
-    const-wide/16 v4, 0x3c
-
-    invoke-static {v1, v4, v5}, Lljz;->F(Ljava/lang/String;J)J
-
-    move-result-wide v4
-
-    invoke-virtual {v0, v4, v5}, Ljava/util/concurrent/TimeUnit;->toNanos(J)J
-
-    move-result-wide v0
-
-    sput-wide v0, Loxs;->d:J
-
-    new-instance v0, Loxq;
-
-    invoke-direct {v0, v3}, Loxq;-><init>(I)V
-
-    sput-object v0, Loxs;->e:Loxq;
-
-    new-instance v0, Loxq;
-
-    invoke-direct {v0, v2}, Loxq;-><init>(I)V
-
-    sput-object v0, Loxs;->f:Loxq;
+    iput-object p1, p0, Loxs;->b:Lovn;
 
     return-void
+
+    :cond_0
+    new-instance p1, Ljava/lang/IllegalArgumentException;
+
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    const/16 v1, 0x1a
+
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string v1, "invalid index: "
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0, p2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p2
+
+    invoke-direct {p1, p2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw p1
+
+    :cond_1
+    new-instance p1, Ljava/lang/IllegalArgumentException;
+
+    const-string p2, "format options cannot be null"
+
+    invoke-direct {p1, p2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw p1
+.end method
+
+
+# virtual methods
+.method public abstract a(Loxt;Ljava/lang/Object;)V
 .end method

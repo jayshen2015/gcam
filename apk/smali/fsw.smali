@@ -1,47 +1,73 @@
-.class public final Lfsw;
+.class public final synthetic Lfsw;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lfst;
+.implements Llie;
+
+
+# instance fields
+.field public final synthetic a:Lqkg;
+
+.field private final synthetic b:I
 
 
 # direct methods
-.method public constructor <init>()V
+.method public synthetic constructor <init>(Lqkg;I)V
     .locals 0
 
+    iput p2, p0, Lfsw;->b:I
+
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lfsw;->a:Lqkg;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Lkad;
-    .locals 1
+.method public final close()V
+    .locals 2
 
-    sget-object v0, Lgnl;->b:Lgnl;
+    iget v0, p0, Lfsw;->b:I
 
-    return-object v0
-.end method
+    packed-switch v0, :pswitch_data_0
 
-.method public final f(Lgxy;)V
-    .locals 0
+    iget-object v0, p0, Lfsw;->a:Lqkg;
+
+    sget v1, Ldqg;->a:I
+
+    invoke-interface {v0}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ldqe;
+
+    iget-object v0, v0, Ldqe;->a:Ldqh;
+
+    invoke-virtual {v0}, Ldqh;->b()V
 
     return-void
-.end method
 
-.method public final l(Lgxy;JLkab;ZLlhm;Lkxy;)Lfss;
-    .locals 0
+    :pswitch_0
+    iget-object v0, p0, Lfsw;->a:Lqkg;
 
-    invoke-virtual {p6}, Llhm;->g()V
+    invoke-interface {v0}, Lqkg;->get()Ljava/lang/Object;
 
-    invoke-interface {p7}, Lkxy;->close()V
+    move-result-object v0
 
-    new-instance p1, Lfsv;
+    check-cast v0, Ldvx;
 
-    const/4 p2, 0x0
+    const-string v1, "microvideo-metadata"
 
-    invoke-direct {p1, p2}, Lfsv;-><init>(I)V
+    invoke-virtual {v0, v1}, Ldvx;->i(Ljava/lang/String;)V
 
-    return-object p1
+    return-void
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

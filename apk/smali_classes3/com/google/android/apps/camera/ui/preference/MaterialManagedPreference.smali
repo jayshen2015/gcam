@@ -3,6 +3,14 @@
 
 
 # direct methods
+.method public constructor <init>(Landroid/content/Context;)V
+    .locals 0
+
+    invoke-direct {p0, p1}, Landroidx/preference/Preference;-><init>(Landroid/content/Context;)V
+
+    return-void
+.end method
+
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
     .locals 0
 
@@ -11,14 +19,22 @@
     return-void
 .end method
 
+.method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
+    .locals 0
+
+    invoke-direct {p0, p1, p2, p3}, Landroidx/preference/Preference;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
+
+    return-void
+.end method
+
 
 # virtual methods
-.method public final a(Laor;)V
+.method public final a(Lahm;)V
     .locals 1
 
-    invoke-super {p0, p1}, Landroidx/preference/Preference;->a(Laor;)V
+    invoke-super {p0, p1}, Landroidx/preference/Preference;->a(Lahm;)V
 
-    iget-object p1, p1, Laor;->a:Landroid/view/View;
+    iget-object p1, p1, Lahm;->a:Landroid/view/View;
 
     const v0, 0x1020010
 
@@ -30,9 +46,9 @@
 
     if-eqz p1, :cond_0
 
-    new-instance v0, Lidl;
+    new-instance v0, Ljic;
 
-    invoke-direct {v0}, Lidl;-><init>()V
+    invoke-direct {v0}, Ljic;-><init>()V
 
     invoke-virtual {p1, v0}, Landroid/widget/TextView;->setAccessibilityDelegate(Landroid/view/View$AccessibilityDelegate;)V
 

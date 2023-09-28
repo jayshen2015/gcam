@@ -2,63 +2,65 @@
 .super Ljava/lang/Object;
 
 
-# static fields
-.field public static final a:[Ljava/lang/String;
-
-
 # instance fields
-.field public final b:Lnph;
+.field public final a:Llvp;
 
-.field public final c:Lnph;
+.field public final b:Lenm;
 
-.field public final d:Ljava/util/concurrent/Executor;
+.field public final c:Lqkg;
+
+.field public final d:Lgsf;
+
+.field public final e:Lojc;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 3
-
-    const/4 v0, 0x1
-
-    new-array v0, v0, [Ljava/lang/String;
-
-    const/4 v1, 0x0
-
-    const-string v2, "special_type_id"
-
-    aput-object v2, v0, v1
-
-    sput-object v0, Ldzb;->a:[Ljava/lang/String;
-
-    return-void
-.end method
-
-.method public constructor <init>(Ldzd;Ljava/util/concurrent/Executor;)V
-    .locals 2
+.method public constructor <init>(Lddf;Llvp;Ljth;Lenm;Lqkg;Lgsf;)V
+    .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-static {}, Lnph;->g()Lnph;
+    iput-object p2, p0, Ldzb;->a:Llvp;
 
-    move-result-object v0
+    iput-object p4, p0, Ldzb;->b:Lenm;
 
-    iput-object v0, p0, Ldzb;->b:Lnph;
+    iput-object p5, p0, Ldzb;->c:Lqkg;
 
-    invoke-static {}, Lnph;->g()Lnph;
+    iput-object p6, p0, Ldzb;->d:Lgsf;
 
-    move-result-object v0
+    invoke-interface {p2}, Llvp;->L()Z
 
-    iput-object v0, p0, Ldzb;->c:Lnph;
+    move-result p2
 
-    iput-object p2, p0, Ldzb;->d:Ljava/util/concurrent/Executor;
+    if-eqz p2, :cond_0
 
-    new-instance v0, Ldgd;
+    sget-object p2, Lddl;->T:Lddg;
 
-    const/16 v1, 0xd
+    invoke-interface {p1, p2}, Lddf;->k(Lddg;)Z
 
-    invoke-direct {v0, p0, p1, v1}, Ldgd;-><init>(Ldzb;Ldzd;I)V
+    move-result p1
 
-    invoke-interface {p2, v0}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
+    if-eqz p1, :cond_0
+
+    invoke-virtual {p3}, Ljth;->e()Llvp;
+
+    move-result-object p1
+
+    invoke-interface {p1}, Llvp;->i()Llvs;
+
+    move-result-object p1
+
+    invoke-static {p1}, Lojc;->i(Ljava/lang/Object;)Lojc;
+
+    move-result-object p1
+
+    :goto_0
+    iput-object p1, p0, Ldzb;->e:Lojc;
 
     return-void
+
+    :cond_0
+    sget-object p1, Loih;->a:Loih;
+
+    goto :goto_0
 .end method

@@ -1,92 +1,39 @@
-.class public final Lnao;
+.class public final synthetic Lnao;
 .super Ljava/lang/Object;
 
+# interfaces
+.implements Landroid/view/ViewTreeObserver$OnGlobalLayoutListener;
 
-# static fields
-.field public static final a:Lnbc;
 
-.field public static final b:Lnbc;
+# instance fields
+.field public final synthetic a:Lnar;
 
-.field public static final c:Lnbc;
-
-.field public static final d:Lnbc;
-
-.field public static final e:Lnbc;
-
-.field public static final f:Lnbc;
-
-.field public static final g:Lnbc;
+.field public final synthetic b:Landroid/view/View;
 
 
 # direct methods
-.method static constructor <clinit>()V
+.method public synthetic constructor <init>(Lnar;Landroid/view/View;)V
+    .locals 0
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lnao;->a:Lnar;
+
+    iput-object p2, p0, Lnao;->b:Landroid/view/View;
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public final onGlobalLayout()V
     .locals 2
 
-    const-string v0, "cause"
+    iget-object v0, p0, Lnao;->a:Lnar;
 
-    const-class v1, Ljava/lang/Throwable;
+    iget-object v1, p0, Lnao;->b:Landroid/view/View;
 
-    invoke-static {v0, v1}, Lnbc;->c(Ljava/lang/String;Ljava/lang/Class;)Lnbc;
-
-    move-result-object v0
-
-    sput-object v0, Lnao;->a:Lnbc;
-
-    const-class v0, Ljava/lang/Integer;
-
-    const-string v1, "ratelimit_count"
-
-    invoke-static {v1, v0}, Lnbc;->c(Ljava/lang/String;Ljava/lang/Class;)Lnbc;
-
-    move-result-object v0
-
-    sput-object v0, Lnao;->b:Lnbc;
-
-    const-class v0, Lnaw;
-
-    const-string v1, "ratelimit_period"
-
-    invoke-static {v1, v0}, Lnbc;->c(Ljava/lang/String;Ljava/lang/Class;)Lnbc;
-
-    move-result-object v0
-
-    sput-object v0, Lnao;->c:Lnbc;
-
-    new-instance v0, Lnam;
-
-    const-class v1, Ljava/lang/Object;
-
-    invoke-direct {v0, v1}, Lnam;-><init>(Ljava/lang/Class;)V
-
-    sput-object v0, Lnao;->d:Lnbc;
-
-    const-class v0, Ljava/lang/Boolean;
-
-    const-string v1, "forced"
-
-    invoke-static {v1, v0}, Lnbc;->c(Ljava/lang/String;Ljava/lang/Class;)Lnbc;
-
-    move-result-object v0
-
-    sput-object v0, Lnao;->e:Lnbc;
-
-    new-instance v0, Lnan;
-
-    const-class v1, Lndl;
-
-    invoke-direct {v0, v1}, Lnan;-><init>(Ljava/lang/Class;)V
-
-    sput-object v0, Lnao;->f:Lnbc;
-
-    const-class v0, Lnbe;
-
-    const-string v1, "stack_size"
-
-    invoke-static {v1, v0}, Lnbc;->c(Ljava/lang/String;Ljava/lang/Class;)Lnbc;
-
-    move-result-object v0
-
-    sput-object v0, Lnao;->g:Lnbc;
+    invoke-virtual {v0, v1}, Lnar;->a(Landroid/view/View;)V
 
     return-void
 .end method

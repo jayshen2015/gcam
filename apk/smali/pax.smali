@@ -1,20 +1,20 @@
 .class public final Lpax;
-.super Lnws;
+.super Lppd;
 
 # interfaces
-.implements Lnxz;
+.implements Lpqn;
 
 
 # static fields
 .field public static final c:Lpax;
 
-.field private static volatile d:Lnyf;
+.field private static volatile d:Lpqs;
 
 
 # instance fields
 .field public a:I
 
-.field public b:Lmem;
+.field public b:I
 
 
 # direct methods
@@ -29,7 +29,7 @@
 
     const-class v1, Lpax;
 
-    invoke-static {v1, v0}, Lnws;->aa(Ljava/lang/Class;Lnws;)V
+    invoke-static {v1, v0}, Lppd;->F(Ljava/lang/Class;Lppd;)V
 
     return-void
 .end method
@@ -37,7 +37,7 @@
 .method private constructor <init>()V
     .locals 0
 
-    invoke-direct {p0}, Lnws;-><init>()V
+    invoke-direct {p0}, Lppd;-><init>()V
 
     return-void
 .end method
@@ -45,7 +45,7 @@
 
 # virtual methods
 .method protected final a(ILjava/lang/Object;)Ljava/lang/Object;
-    .locals 3
+    .locals 2
 
     add-int/lit8 p1, p1, -0x1
 
@@ -59,7 +59,7 @@
     return-object p1
 
     :pswitch_1
-    sget-object p1, Lpax;->d:Lnyf;
+    sget-object p1, Lpax;->d:Lpqs;
 
     if-nez p1, :cond_1
 
@@ -68,17 +68,17 @@
     monitor-enter p2
 
     :try_start_0
-    sget-object p1, Lpax;->d:Lnyf;
+    sget-object p1, Lpax;->d:Lpqs;
 
     if-nez p1, :cond_0
 
-    new-instance p1, Lnwo;
+    new-instance p1, Lpoz;
 
     sget-object v0, Lpax;->c:Lpax;
 
-    invoke-direct {p1, v0}, Lnwo;-><init>(Lnws;)V
+    invoke-direct {p1, v0}, Lpoz;-><init>(Lppd;)V
 
-    sput-object p1, Lpax;->d:Lnyf;
+    sput-object p1, Lpax;->d:Lpqs;
 
     :cond_0
     monitor-exit p2
@@ -104,11 +104,11 @@
     return-object p1
 
     :pswitch_3
-    new-instance p1, Lnwn;
+    new-instance p1, Lpoy;
 
     sget-object p2, Lpax;->c:Lpax;
 
-    invoke-direct {p1, p2}, Lnwn;-><init>(Lnws;)V
+    invoke-direct {p1, p2}, Lpoy;-><init>(Lppd;)V
 
     return-object p1
 
@@ -120,25 +120,31 @@
     return-object p1
 
     :pswitch_5
-    const-string p1, "a"
+    const/4 p1, 0x3
 
-    const-string v0, "\u0001\u0001\u0000\u0001\u0001\u0001\u0001\u0000\u0000\u0000\u0001\u1009\u0000"
+    new-array p1, p1, [Ljava/lang/Object;
 
-    const/4 v1, 0x2
+    const/4 v0, 0x0
 
-    new-array v1, v1, [Ljava/lang/Object;
+    const-string v1, "a"
 
-    const/4 v2, 0x0
+    aput-object v1, p1, v0
 
-    aput-object p1, v1, v2
+    const-string v0, "b"
 
-    const-string p1, "b"
+    aput-object v0, p1, p2
 
-    aput-object p1, v1, p2
+    const/4 p2, 0x2
 
-    sget-object p1, Lpax;->c:Lpax;
+    sget-object v0, Lpaf;->o:Lppi;
 
-    invoke-static {p1, v0, v1}, Lpax;->X(Lnxy;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/Object;
+    aput-object v0, p1, p2
+
+    sget-object p2, Lpax;->c:Lpax;
+
+    const-string v0, "\u0001\u0001\u0000\u0001\u0001\u0001\u0001\u0000\u0000\u0000\u0001\u100c\u0000"
+
+    invoke-static {p2, v0, p1}, Lpax;->E(Lpqm;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p1
 
@@ -150,8 +156,6 @@
     move-result-object p1
 
     return-object p1
-
-    nop
 
     :pswitch_data_0
     .packed-switch 0x0

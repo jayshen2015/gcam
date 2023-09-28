@@ -1,45 +1,68 @@
-.class public final synthetic Lmor;
-.super Ljava/lang/Object;
-
-# interfaces
-.implements Ljava/util/function/Consumer;
-
-
-# instance fields
-.field public final synthetic a:I
+.class public final Lmor;
+.super Lmoq;
 
 
 # direct methods
-.method public synthetic constructor <init>(I)V
-    .locals 0
+.method public constructor <init>(Lmme;)V
+    .locals 1
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    sget-object v0, Lmop;->i:Lmol;
 
-    iput p1, p0, Lmor;->a:I
+    invoke-direct {p0, v0, p1}, Lmoq;-><init>(Lmod;Lmme;)V
 
     return-void
+.end method
+
+.method public constructor <init>(Lmme;I)V
+    .locals 1
+
+    sget-object v0, Lmop;->i:Lmol;
+
+    invoke-direct {p0, v0, p1, p2}, Lmoq;-><init>(Lmod;Lmme;I)V
+
+    return-void
+.end method
+
+.method public static final c(Lmmf;)Lmor;
+    .locals 1
+
+    new-instance v0, Lmor;
+
+    invoke-virtual {p0}, Lmmf;->c()Lmme;
+
+    move-result-object p0
+
+    invoke-direct {v0, p0}, Lmor;-><init>(Lmme;)V
+
+    return-object v0
 .end method
 
 
 # virtual methods
-.method public final accept(Ljava/lang/Object;)V
-    .locals 1
-
-    iget v0, p0, Lmor;->a:I
-
-    check-cast p1, Linb;
-
-    invoke-virtual {p1, v0}, Linb;->c(I)V
-
-    return-void
-.end method
-
-.method public final synthetic andThen(Ljava/util/function/Consumer;)Ljava/util/function/Consumer;
+.method public final bridge synthetic a(Lmmf;)Lmoq;
     .locals 0
 
-    invoke-static {p0, p1}, Lj$/util/function/Consumer$-CC;->$default$andThen(Ljava/util/function/Consumer;Ljava/util/function/Consumer;)Ljava/util/function/Consumer;
+    invoke-static {p1}, Lmor;->c(Lmmf;)Lmor;
 
     move-result-object p1
 
     return-object p1
+.end method
+
+.method public final bridge synthetic b(Lmmf;)Lmoq;
+    .locals 0
+
+    invoke-static {p1}, Lmor;->c(Lmmf;)Lmor;
+
+    move-result-object p1
+
+    return-object p1
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .locals 1
+
+    const-string v0, "RGBA8888"
+
+    return-object v0
 .end method

@@ -1,22 +1,69 @@
 .class public final Lenp;
 .super Ljava/lang/Object;
 
-
-# static fields
-.field public static final a:Lemu;
+# interfaces
+.implements Lenr;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
+.method public constructor <init>()V
+    .locals 0
 
-    new-instance v0, Lemu;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const/4 v1, 0x4
+    return-void
+.end method
 
-    invoke-direct {v0, v1}, Lemu;-><init>(I)V
 
-    sput-object v0, Lenp;->a:Lemu;
+# virtual methods
+.method public final a(J)[F
+    .locals 0
+
+    const/4 p1, 0x2
+
+    new-array p1, p1, [F
+
+    fill-array-data p1, :array_0
+
+    return-object p1
+
+    nop
+
+    :array_0
+    .array-data 4
+        0x0
+        0x0
+    .end array-data
+.end method
+
+.method public final b(JJ)[F
+    .locals 0
+
+    const/4 p1, 0x2
+
+    new-array p1, p1, [F
+
+    fill-array-data p1, :array_0
+
+    return-object p1
+
+    nop
+
+    :array_0
+    .array-data 4
+        0x0
+        0x0
+    .end array-data
+.end method
+
+.method public final c(JFF)V
+    .locals 0
+
+    return-void
+.end method
+
+.method public final close()V
+    .locals 0
 
     return-void
 .end method

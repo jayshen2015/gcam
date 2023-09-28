@@ -1,17 +1,10 @@
-.class public final Lmmc;
-.super Lcbe;
+.class public interface abstract Lmmc;
+.super Ljava/lang/Object;
 
 # interfaces
-.implements Landroid/os/IInterface;
+.implements Ljava/io/Closeable;
 
 
-# direct methods
-.method public constructor <init>(Landroid/os/IBinder;)V
-    .locals 1
-
-    const-string v0, "com.google.android.play.core.appupdate.protocol.IAppUpdateService"
-
-    invoke-direct {p0, p1, v0}, Lcbe;-><init>(Landroid/os/IBinder;Ljava/lang/String;)V
-
-    return-void
+# virtual methods
+.method public abstract close()V
 .end method

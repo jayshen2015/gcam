@@ -1,62 +1,119 @@
-.class final Lgvh;
-.super Lgvr;
+.class public final Lgvh;
+.super Ljava/lang/Object;
 
 
-# instance fields
-.field final synthetic a:Lgvs;
+# static fields
+.field private static final a:Ljava/util/concurrent/atomic/AtomicBoolean;
 
 
 # direct methods
-.method public constructor <init>(Lgvs;)V
+.method static constructor <clinit>()V
+    .locals 2
+
+    new-instance v0, Ljava/util/concurrent/atomic/AtomicBoolean;
+
+    const/4 v1, 0x0
+
+    invoke-direct {v0, v1}, Ljava/util/concurrent/atomic/AtomicBoolean;-><init>(Z)V
+
+    sput-object v0, Lgvh;->a:Ljava/util/concurrent/atomic/AtomicBoolean;
+
+    return-void
+.end method
+
+.method public static a(Landroid/content/Context;)V
+    .locals 4
+
+    new-instance v0, Lgvg;
+
+    invoke-static {p0}, Lkty;->a(Landroid/content/Context;)Lkij;
+
+    move-result-object v1
+
+    invoke-virtual {p0}, Landroid/content/Context;->getPackageName()Ljava/lang/String;
+
+    move-result-object p0
+
+    invoke-static {p0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object p0
+
+    invoke-virtual {p0}, Ljava/lang/String;->length()I
+
+    move-result v2
+
+    const-string v3, "com.google.android.apps.camera#"
+
+    if-eqz v2, :cond_0
+
+    invoke-virtual {v3, p0}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object p0
+
+    goto :goto_0
+
+    :cond_0
+    new-instance p0, Ljava/lang/String;
+
+    invoke-direct {p0, v3}, Ljava/lang/String;-><init>(Ljava/lang/String;)V
+
+    :goto_0
+    invoke-direct {v0, v1, p0}, Lgvg;-><init>(Lkij;Ljava/lang/String;)V
+
+    invoke-virtual {v0}, Lkuc;->b()V
+
+    return-void
+.end method
+
+.method public static b(Landroid/content/Context;)V
     .locals 0
 
-    iput-object p1, p0, Lgvh;->a:Lgvs;
-
-    invoke-direct {p0, p1}, Lgvr;-><init>(Lgvs;)V
+    invoke-static {p0}, Lner;->h(Landroid/content/Context;)V
 
     return-void
 .end method
 
+.method public static c(Landroid/content/Context;)V
+    .locals 3
 
-# virtual methods
-.method public final c()V
-    .locals 2
+    sget-object v0, Lgvh;->a:Ljava/util/concurrent/atomic/AtomicBoolean;
 
-    iget-object v0, p0, Lgvh;->a:Lgvs;
+    const/4 v1, 0x0
 
-    iget-object v0, v0, Lgvs;->c:Lhiu;
+    const/4 v2, 0x1
 
-    invoke-virtual {v0}, Lhiu;->e()V
+    invoke-virtual {v0, v1, v2}, Ljava/util/concurrent/atomic/AtomicBoolean;->compareAndSet(ZZ)Z
 
-    iget-object v0, p0, Lgvh;->a:Lgvs;
+    move-result v0
 
-    iget-object v1, v0, Lgvs;->c:Lhiu;
-
-    iget-object v0, v0, Lgvs;->f:Lhiw;
-
-    invoke-virtual {v1, v0}, Lhiu;->g(Lhiw;)V
+    if-nez v0, :cond_0
 
     return-void
-.end method
 
-.method public final d()V
-    .locals 2
+    :cond_0
+    invoke-static {p0}, Lner;->h(Landroid/content/Context;)V
 
-    iget-object v0, p0, Lgvh;->a:Lgvs;
+    new-instance p0, Lnep;
 
-    iget-object v0, v0, Lgvs;->c:Lhiu;
+    const-string v0, "com.google.android.apps.camera"
 
-    invoke-virtual {v0}, Lhiu;->e()V
+    invoke-static {v0}, Lneg;->a(Ljava/lang/String;)Landroid/net/Uri;
 
-    invoke-super {p0}, Lgvr;->d()V
+    move-result-object v0
 
-    iget-object v0, p0, Lgvh;->a:Lgvs;
+    invoke-direct {p0, v0}, Lnep;-><init>(Landroid/net/Uri;)V
 
-    iget-object v1, v0, Lgvs;->c:Lhiu;
+    invoke-virtual {p0}, Lnep;->a()Lnep;
 
-    iget-object v0, v0, Lgvs;->d:Lhiw;
+    move-result-object p0
 
-    invoke-virtual {v1, v0}, Lhiu;->g(Lhiw;)V
+    const-string v0, "DummyFlag"
+
+    invoke-virtual {p0, v0, v1}, Lnep;->c(Ljava/lang/String;Z)Lner;
+
+    move-result-object p0
+
+    invoke-virtual {p0}, Lner;->e()Ljava/lang/Object;
 
     return-void
 .end method

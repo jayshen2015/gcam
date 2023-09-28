@@ -1,184 +1,411 @@
 .class public final Loew;
-.super Lnws;
-
-# interfaces
-.implements Lnxz;
+.super Ljava/lang/Object;
 
 
 # static fields
-.field public static final e:Loew;
-
-.field private static volatile f:Lnyf;
+.field private static final l:Ljava/util/Map;
 
 
 # instance fields
-.field public a:I
+.field public final a:Landroid/content/Context;
 
-.field public b:F
+.field public final b:Ljava/util/List;
 
-.field public c:F
+.field public final c:Ljava/util/Set;
 
-.field public d:F
+.field public final d:Ljava/lang/Object;
+
+.field public e:Z
+
+.field public final f:Landroid/content/Intent;
+
+.field public final g:Ljava/lang/ref/WeakReference;
+
+.field public final h:Landroid/os/IBinder$DeathRecipient;
+
+.field public i:Landroid/content/ServiceConnection;
+
+.field public j:Landroid/os/IInterface;
+
+.field public final k:Loxk;
+
+.field private final m:Ljava/lang/String;
+
+.field private final n:Ljava/util/concurrent/atomic/AtomicInteger;
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 2
+    .locals 1
 
-    new-instance v0, Loew;
+    new-instance v0, Ljava/util/HashMap;
 
-    invoke-direct {v0}, Loew;-><init>()V
+    invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
-    sput-object v0, Loew;->e:Loew;
-
-    const-class v1, Loew;
-
-    invoke-static {v1, v0}, Lnws;->aa(Ljava/lang/Class;Lnws;)V
+    sput-object v0, Loew;->l:Ljava/util/Map;
 
     return-void
 .end method
 
-.method private constructor <init>()V
+.method public constructor <init>(Landroid/content/Context;Loxk;Landroid/content/Intent;[B)V
     .locals 1
 
-    invoke-direct {p0}, Lnws;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    sget-object v0, Lnwl;->b:Lnwl;
+    new-instance p4, Ljava/util/ArrayList;
+
+    invoke-direct {p4}, Ljava/util/ArrayList;-><init>()V
+
+    iput-object p4, p0, Loew;->b:Ljava/util/List;
+
+    new-instance p4, Ljava/util/HashSet;
+
+    invoke-direct {p4}, Ljava/util/HashSet;-><init>()V
+
+    iput-object p4, p0, Loew;->c:Ljava/util/Set;
+
+    new-instance p4, Ljava/lang/Object;
+
+    invoke-direct {p4}, Ljava/lang/Object;-><init>()V
+
+    iput-object p4, p0, Loew;->d:Ljava/lang/Object;
+
+    new-instance p4, Loeo;
+
+    invoke-direct {p4, p0}, Loeo;-><init>(Loew;)V
+
+    iput-object p4, p0, Loew;->h:Landroid/os/IBinder$DeathRecipient;
+
+    new-instance p4, Ljava/util/concurrent/atomic/AtomicInteger;
+
+    const/4 v0, 0x0
+
+    invoke-direct {p4, v0}, Ljava/util/concurrent/atomic/AtomicInteger;-><init>(I)V
+
+    iput-object p4, p0, Loew;->n:Ljava/util/concurrent/atomic/AtomicInteger;
+
+    iput-object p1, p0, Loew;->a:Landroid/content/Context;
+
+    iput-object p2, p0, Loew;->k:Loxk;
+
+    const-string p1, "AppUpdateService"
+
+    iput-object p1, p0, Loew;->m:Ljava/lang/String;
+
+    iput-object p3, p0, Loew;->f:Landroid/content/Intent;
+
+    new-instance p1, Ljava/lang/ref/WeakReference;
+
+    const/4 p2, 0x0
+
+    invoke-direct {p1, p2}, Ljava/lang/ref/WeakReference;-><init>(Ljava/lang/Object;)V
+
+    iput-object p1, p0, Loew;->g:Ljava/lang/ref/WeakReference;
+
+    return-void
+.end method
+
+.method static bridge synthetic f(Loew;)V
+    .locals 1
+
+    const/4 v0, 0x0
+
+    iput-boolean v0, p0, Loew;->e:Z
 
     return-void
 .end method
 
 
 # virtual methods
-.method protected final a(ILjava/lang/Object;)Ljava/lang/Object;
+.method public final a()Landroid/os/RemoteException;
     .locals 3
 
-    add-int/lit8 p1, p1, -0x1
+    new-instance v0, Landroid/os/RemoteException;
 
-    const/4 p2, 0x1
+    iget-object v1, p0, Loew;->m:Ljava/lang/String;
 
-    packed-switch p1, :pswitch_data_0
+    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
-    :pswitch_0
-    const/4 p1, 0x0
+    move-result-object v1
 
-    return-object p1
+    const-string v2, " : Binder has died."
 
-    :pswitch_1
-    sget-object p1, Loew;->f:Lnyf;
+    invoke-virtual {v1, v2}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
 
-    if-nez p1, :cond_1
+    move-result-object v1
 
-    const-class p2, Loew;
+    invoke-direct {v0, v1}, Landroid/os/RemoteException;-><init>(Ljava/lang/String;)V
+
+    return-object v0
+.end method
+
+.method public final b(Loen;Lofi;)V
+    .locals 5
+
+    iget-object v0, p0, Loew;->d:Ljava/lang/Object;
+
+    monitor-enter v0
+
+    :try_start_0
+    iget-object v1, p0, Loew;->c:Ljava/util/Set;
+
+    invoke-interface {v1, p2}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
+
+    iget-object v1, p2, Lofi;->a:Loff;
+
+    new-instance v2, Loep;
+
+    invoke-direct {v2, p0, p2}, Loep;-><init>(Loew;Lofi;)V
+
+    sget-object p2, Lofl;->a:Ljava/util/concurrent/Executor;
+
+    iget-object v3, v1, Loff;->b:Lofh;
+
+    new-instance v4, Loez;
+
+    invoke-direct {v4, p2, v2}, Loez;-><init>(Ljava/util/concurrent/Executor;Loep;)V
+
+    invoke-virtual {v3, v4}, Lofh;->a(Lofg;)V
+
+    invoke-virtual {v1}, Loff;->a()V
+
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_1
+
+    iget-object p2, p0, Loew;->d:Ljava/lang/Object;
 
     monitor-enter p2
 
-    :try_start_0
-    sget-object p1, Loew;->f:Lnyf;
+    :try_start_1
+    iget-object v0, p0, Loew;->n:Ljava/util/concurrent/atomic/AtomicInteger;
 
-    if-nez p1, :cond_0
+    invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicInteger;->getAndIncrement()I
 
-    new-instance p1, Lnwo;
-
-    sget-object v0, Loew;->e:Loew;
-
-    invoke-direct {p1, v0}, Lnwo;-><init>(Lnws;)V
-
-    sput-object p1, Loew;->f:Lnyf;
-
-    :cond_0
     monitor-exit p2
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    goto :goto_0
+    new-instance p2, Loeq;
+
+    iget-object v0, p1, Loen;->d:Lofi;
+
+    invoke-direct {p2, p0, v0, p1}, Loeq;-><init>(Loew;Lofi;Loen;)V
+
+    invoke-virtual {p0, p2}, Loew;->d(Loen;)V
+
+    return-void
 
     :catchall_0
     move-exception p1
 
+    :try_start_2
     monitor-exit p2
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
     throw p1
 
-    :cond_1
+    :catchall_1
+    move-exception p1
+
+    :try_start_3
+    monitor-exit v0
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_1
+
+    throw p1
+.end method
+
+.method public final c()V
+    .locals 4
+
+    iget-object v0, p0, Loew;->d:Ljava/lang/Object;
+
+    monitor-enter v0
+
+    :try_start_0
+    iget-object v1, p0, Loew;->c:Ljava/util/Set;
+
+    invoke-interface {v1}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
+
+    move-result-object v1
+
     :goto_0
-    return-object p1
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
-    :pswitch_2
-    sget-object p1, Loew;->e:Loew;
+    move-result v2
 
-    return-object p1
+    if-eqz v2, :cond_0
 
-    :pswitch_3
-    new-instance p1, Lnwn;
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    sget-object p2, Loew;->e:Loew;
+    move-result-object v2
 
-    invoke-direct {p1, p2}, Lnwn;-><init>(Lnws;)V
+    check-cast v2, Lofi;
 
-    return-object p1
+    invoke-virtual {p0}, Loew;->a()Landroid/os/RemoteException;
 
-    :pswitch_4
-    new-instance p1, Loew;
+    move-result-object v3
 
-    invoke-direct {p1}, Loew;-><init>()V
+    invoke-virtual {v2, v3}, Lofi;->a(Ljava/lang/Exception;)V
 
-    return-object p1
+    goto :goto_0
 
-    :pswitch_5
-    const-string p1, "a"
+    :cond_0
+    iget-object v1, p0, Loew;->c:Ljava/util/Set;
 
-    const-string v0, "\u0001\u0003\u0000\u0001\u0001\u0003\u0003\u0000\u0000\u0000\u0001\u1001\u0000\u0002\u1001\u0001\u0003\u1001\u0002"
+    invoke-interface {v1}, Ljava/util/Set;->clear()V
 
-    const/4 v1, 0x4
+    monitor-exit v0
 
-    new-array v1, v1, [Ljava/lang/Object;
+    return-void
 
-    const/4 v2, 0x0
+    :catchall_0
+    move-exception v1
 
-    aput-object p1, v1, v2
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    const-string p1, "b"
+    goto :goto_2
 
-    aput-object p1, v1, p2
+    :goto_1
+    throw v1
 
-    const/4 p1, 0x2
+    :goto_2
+    goto :goto_1
+.end method
 
-    const-string p2, "c"
+.method public final d(Loen;)V
+    .locals 4
 
-    aput-object p2, v1, p1
+    sget-object v0, Loew;->l:Ljava/util/Map;
 
-    const/4 p1, 0x3
+    monitor-enter v0
 
-    const-string p2, "d"
+    :try_start_0
+    iget-object v1, p0, Loew;->m:Ljava/lang/String;
 
-    aput-object p2, v1, p1
+    invoke-interface {v0, v1}, Ljava/util/Map;->containsKey(Ljava/lang/Object;)Z
 
-    sget-object p1, Loew;->e:Loew;
+    move-result v1
 
-    invoke-static {p1, v0, v1}, Loew;->X(Lnxy;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/Object;
+    if-nez v1, :cond_0
 
-    move-result-object p1
+    new-instance v1, Landroid/os/HandlerThread;
 
-    return-object p1
+    iget-object v2, p0, Loew;->m:Ljava/lang/String;
 
-    :pswitch_6
-    invoke-static {p2}, Ljava/lang/Byte;->valueOf(B)Ljava/lang/Byte;
+    const/16 v3, 0xa
 
-    move-result-object p1
+    invoke-direct {v1, v2, v3}, Landroid/os/HandlerThread;-><init>(Ljava/lang/String;I)V
 
-    return-object p1
+    invoke-virtual {v1}, Landroid/os/HandlerThread;->start()V
 
-    nop
+    iget-object v2, p0, Loew;->m:Ljava/lang/String;
 
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_6
-        :pswitch_0
-        :pswitch_5
-        :pswitch_4
-        :pswitch_3
-        :pswitch_2
-        :pswitch_1
-    .end packed-switch
+    new-instance v3, Landroid/os/Handler;
+
+    invoke-virtual {v1}, Landroid/os/HandlerThread;->getLooper()Landroid/os/Looper;
+
+    move-result-object v1
+
+    invoke-direct {v3, v1}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
+
+    invoke-interface {v0, v2, v3}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    :cond_0
+    iget-object v1, p0, Loew;->m:Ljava/lang/String;
+
+    invoke-interface {v0, v1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Landroid/os/Handler;
+
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    invoke-virtual {v1, p1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
+
+    return-void
+
+    :catchall_0
+    move-exception p1
+
+    :try_start_1
+    monitor-exit v0
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    throw p1
+.end method
+
+.method public final e(Lofi;)V
+    .locals 2
+
+    iget-object v0, p0, Loew;->d:Ljava/lang/Object;
+
+    monitor-enter v0
+
+    :try_start_0
+    iget-object v1, p0, Loew;->c:Ljava/util/Set;
+
+    invoke-interface {v1, p1}, Ljava/util/Set;->remove(Ljava/lang/Object;)Z
+
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_1
+
+    iget-object p1, p0, Loew;->d:Ljava/lang/Object;
+
+    monitor-enter p1
+
+    :try_start_1
+    iget-object v0, p0, Loew;->n:Ljava/util/concurrent/atomic/AtomicInteger;
+
+    invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicInteger;->decrementAndGet()I
+
+    move-result v0
+
+    if-lez v0, :cond_0
+
+    monitor-exit p1
+
+    return-void
+
+    :cond_0
+    monitor-exit p1
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    new-instance p1, Loer;
+
+    invoke-direct {p1, p0}, Loer;-><init>(Loew;)V
+
+    invoke-virtual {p0, p1}, Loew;->d(Loen;)V
+
+    return-void
+
+    :catchall_0
+    move-exception v0
+
+    :try_start_2
+    monitor-exit p1
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
+
+    throw v0
+
+    :catchall_1
+    move-exception p1
+
+    :try_start_3
+    monitor-exit v0
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_1
+
+    throw p1
 .end method

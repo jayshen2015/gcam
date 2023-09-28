@@ -1,98 +1,100 @@
-.class abstract Ley;
-.super Ljava/lang/Object;
+.class public final Ley;
+.super Landroid/os/Binder;
+
+# interfaces
+.implements Lez;
 
 
 # instance fields
-.field private a:Landroid/content/BroadcastReceiver;
-
-.field final synthetic c:Lfd;
+.field final synthetic a:Lfa;
 
 
 # direct methods
-.method public constructor <init>(Lfd;)V
+.method public constructor <init>()V
+    .locals 1
+
+    invoke-direct {p0}, Landroid/os/Binder;-><init>()V
+
+    const-string v0, "android.support.v4.os.IResultReceiver"
+
+    invoke-virtual {p0, p0, v0}, Ley;->attachInterface(Landroid/os/IInterface;Ljava/lang/String;)V
+
+    return-void
+.end method
+
+.method public constructor <init>(Lfa;)V
     .locals 0
 
-    iput-object p1, p0, Ley;->c:Lfd;
+    iput-object p1, p0, Ley;->a:Lfa;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Landroid/os/Binder;-><init>()V
+
+    const-string p1, "android.support.v4.os.IResultReceiver"
+
+    invoke-virtual {p0, p0, p1}, Ley;->attachInterface(Landroid/os/IInterface;Ljava/lang/String;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public abstract a()Landroid/content/IntentFilter;
+.method public final asBinder()Landroid/os/IBinder;
+    .locals 0
+
+    return-object p0
 .end method
 
-.method public abstract b()V
-.end method
-
-.method final c()V
+.method public final onTransact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
     .locals 2
 
-    iget-object v0, p0, Ley;->a:Landroid/content/BroadcastReceiver;
+    const/4 v0, 0x1
 
-    if-eqz v0, :cond_0
+    const-string v1, "android.support.v4.os.IResultReceiver"
 
-    :try_start_0
-    iget-object v1, p0, Ley;->c:Lfd;
+    sparse-switch p1, :sswitch_data_0
 
-    iget-object v1, v1, Lfd;->i:Landroid/content/Context;
+    invoke-super {p0, p1, p2, p3, p4}, Landroid/os/Binder;->onTransact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
-    invoke-virtual {v1, v0}, Landroid/content/Context;->unregisterReceiver(Landroid/content/BroadcastReceiver;)V
-    :try_end_0
-    .catch Ljava/lang/IllegalArgumentException; {:try_start_0 .. :try_end_0} :catch_0
+    move-result p1
 
-    goto :goto_0
+    return p1
 
-    :catch_0
-    move-exception v0
+    :sswitch_0
+    invoke-virtual {p3, v1}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    :goto_0
-    const/4 v0, 0x0
+    return v0
 
-    iput-object v0, p0, Ley;->a:Landroid/content/BroadcastReceiver;
+    :sswitch_1
+    invoke-virtual {p2, v1}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
-    :cond_0
-    return-void
-.end method
+    invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
 
-.method final d()V
-    .locals 3
+    invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
 
-    invoke-virtual {p0}, Ley;->c()V
+    move-result p1
 
-    invoke-virtual {p0}, Ley;->a()Landroid/content/IntentFilter;
+    if-eqz p1, :cond_0
 
-    move-result-object v0
+    sget-object p1, Landroid/os/Bundle;->CREATOR:Landroid/os/Parcelable$Creator;
 
-    invoke-virtual {v0}, Landroid/content/IntentFilter;->countActions()I
+    invoke-interface {p1, p2}, Landroid/os/Parcelable$Creator;->createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
 
-    move-result v1
+    move-result-object p1
 
-    if-nez v1, :cond_0
-
-    return-void
+    check-cast p1, Landroid/os/Bundle;
 
     :cond_0
-    iget-object v1, p0, Ley;->a:Landroid/content/BroadcastReceiver;
+    iget-object p1, p0, Ley;->a:Lfa;
 
-    if-nez v1, :cond_1
+    invoke-virtual {p1}, Lfa;->a()V
 
-    new-instance v1, Lex;
+    return v0
 
-    invoke-direct {v1, p0}, Lex;-><init>(Ley;)V
+    nop
 
-    iput-object v1, p0, Ley;->a:Landroid/content/BroadcastReceiver;
-
-    :cond_1
-    iget-object v1, p0, Ley;->c:Lfd;
-
-    iget-object v1, v1, Lfd;->i:Landroid/content/Context;
-
-    iget-object v2, p0, Ley;->a:Landroid/content/BroadcastReceiver;
-
-    invoke-virtual {v1, v2, v0}, Landroid/content/Context;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;)Landroid/content/Intent;
-
-    return-void
+    :sswitch_data_0
+    .sparse-switch
+        0x1 -> :sswitch_1
+        0x5f4e5446 -> :sswitch_0
+    .end sparse-switch
 .end method

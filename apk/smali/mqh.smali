@@ -1,134 +1,216 @@
-.class public final Lmqh;
-.super Ljava/lang/Object;
+.class abstract Lmqh;
+.super Lmmb;
+
+# interfaces
+.implements Lmqq;
 
 
-# static fields
-.field private static final a:Ljava/util/Map;
+# instance fields
+.field public final a:Lmrh;
+
+.field public final b:Landroid/opengl/EGLDisplay;
+
+.field public final c:Landroid/opengl/EGLSurface;
+
+.field public final d:Landroid/opengl/EGLContext;
+
+.field private final e:Landroid/opengl/EGLConfig;
+
+.field private final f:I
+
+.field private final g:Lmoq;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
+.method public constructor <init>(Lmrh;Landroid/opengl/EGLDisplay;Landroid/opengl/EGLSurface;Landroid/opengl/EGLContext;Landroid/opengl/EGLConfig;ILmoq;)V
+    .locals 0
 
-    new-instance v0, Ljava/util/WeakHashMap;
+    invoke-direct {p0}, Lmmb;-><init>()V
 
-    invoke-direct {v0}, Ljava/util/WeakHashMap;-><init>()V
+    iput-object p1, p0, Lmqh;->a:Lmrh;
 
-    sput-object v0, Lmqh;->a:Ljava/util/Map;
+    iput-object p2, p0, Lmqh;->b:Landroid/opengl/EGLDisplay;
+
+    iput-object p3, p0, Lmqh;->c:Landroid/opengl/EGLSurface;
+
+    iput-object p4, p0, Lmqh;->d:Landroid/opengl/EGLContext;
+
+    iput-object p5, p0, Lmqh;->e:Landroid/opengl/EGLConfig;
+
+    iput p6, p0, Lmqh;->f:I
+
+    iput-object p7, p0, Lmqh;->g:Lmoq;
 
     return-void
 .end method
 
-.method public static a(Ljava/lang/Class;Ljava/lang/String;)Lmqp;
-    .locals 6
 
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+# virtual methods
+.method public final d()Landroid/opengl/EGLConfig;
+    .locals 1
 
-    sget v0, Lmqr;->a:I
+    iget-object v0, p0, Lmqh;->e:Landroid/opengl/EGLConfig;
 
-    sget-object v0, Lmqh;->a:Ljava/util/Map;
+    return-object v0
+.end method
 
-    monitor-enter v0
+.method public final e()Landroid/opengl/EGLContext;
+    .locals 1
 
-    :try_start_0
-    invoke-interface {v0, p0}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    iget-object v0, p0, Lmqh;->d:Landroid/opengl/EGLContext;
 
-    move-result-object v1
+    return-object v0
+.end method
 
-    check-cast v1, Ljava/util/Map;
+.method public final f()Landroid/opengl/EGLDisplay;
+    .locals 1
 
-    if-nez v1, :cond_1
+    iget-object v0, p0, Lmqh;->b:Landroid/opengl/EGLDisplay;
 
-    new-instance v1, Ljava/util/HashMap;
+    return-object v0
+.end method
 
-    invoke-direct {v1}, Ljava/util/HashMap;-><init>()V
+.method public final g()Landroid/opengl/EGLSurface;
+    .locals 1
 
-    invoke-static {p0}, Ljava/util/EnumSet;->allOf(Ljava/lang/Class;)Ljava/util/EnumSet;
+    iget-object v0, p0, Lmqh;->c:Landroid/opengl/EGLSurface;
 
-    move-result-object v2
+    return-object v0
+.end method
 
-    invoke-virtual {v2}, Ljava/util/EnumSet;->iterator()Ljava/util/Iterator;
+.method public final gy()V
+    .locals 1
 
-    move-result-object v2
+    invoke-virtual {p0}, Lmqh;->b()Lmne;
 
-    :goto_0
-    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
+    move-result-object v0
+
+    invoke-static {v0}, Lmip;->ac(Lmnb;)Ljava/lang/Object;
+
+    return-void
+.end method
+
+.method public final h()Lmrh;
+    .locals 1
+
+    iget-object v0, p0, Lmqh;->a:Lmrh;
+
+    return-object v0
+.end method
+
+.method public final i()V
+    .locals 3
+
+    iget-object v0, p0, Lmqh;->b:Landroid/opengl/EGLDisplay;
+
+    iget-object v1, p0, Lmqh;->c:Landroid/opengl/EGLSurface;
+
+    iget-object v2, p0, Lmqh;->d:Landroid/opengl/EGLContext;
+
+    invoke-static {v0, v1, v1, v2}, Landroid/opengl/EGL14;->eglMakeCurrent(Landroid/opengl/EGLDisplay;Landroid/opengl/EGLSurface;Landroid/opengl/EGLSurface;Landroid/opengl/EGLContext;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    const v0, 0x8d40
+
+    iget v1, p0, Lmqh;->f:I
+
+    invoke-static {v0, v1}, Landroid/opengl/GLES30;->glBindFramebuffer(II)V
+
+    iget-object v0, p0, Lmqh;->g:Lmoq;
+
+    iget-object v0, v0, Lmoq;->a:Lmme;
+
+    invoke-virtual {v0}, Lmmf;->b()I
+
+    move-result v0
+
+    iget-object v1, p0, Lmqh;->g:Lmoq;
+
+    iget-object v1, v1, Lmoq;->a:Lmme;
+
+    invoke-virtual {v1}, Lmmf;->a()I
+
+    move-result v1
+
+    const/4 v2, 0x0
+
+    invoke-static {v2, v2, v0, v1}, Landroid/opengl/GLES30;->glViewport(IIII)V
+
+    :cond_0
+    return-void
+.end method
+
+.method public final j(Ljava/nio/Buffer;)V
+    .locals 8
+
+    invoke-static {}, Lmqi;->b()V
+
+    iget-object v0, p0, Lmqh;->a:Lmrh;
+
+    sget-object v1, Lmrh;->a:Lmrh;
+
+    invoke-virtual {v0, v1}, Lmrh;->b(Lmrh;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    const v0, 0x8ce0
+
+    invoke-static {v0}, Landroid/opengl/GLES30;->glReadBuffer(I)V
+
+    :cond_0
+    iget-object v0, p0, Lmqh;->g:Lmoq;
+
+    iget-object v0, v0, Lmoq;->a:Lmme;
+
+    const/4 v1, 0x0
+
+    const/4 v2, 0x0
+
+    invoke-virtual {v0}, Lmmf;->b()I
 
     move-result v3
 
-    if-eqz v3, :cond_0
+    invoke-virtual {v0}, Lmmf;->a()I
 
-    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    move-result v4
 
-    move-result-object v3
+    const/16 v5, 0x1908
 
-    check-cast v3, Ljava/lang/Enum;
+    const/16 v6, 0x1401
 
-    invoke-virtual {v3}, Ljava/lang/Enum;->name()Ljava/lang/String;
+    move-object v7, p1
 
-    move-result-object v4
+    invoke-static/range {v1 .. v7}, Landroid/opengl/GLES30;->glReadPixels(IIIIIILjava/nio/Buffer;)V
 
-    new-instance v5, Ljava/lang/ref/WeakReference;
+    return-void
+.end method
 
-    invoke-direct {v5, v3}, Ljava/lang/ref/WeakReference;-><init>(Ljava/lang/Object;)V
+.method public final k()V
+    .locals 2
 
-    invoke-interface {v1, v4, v5}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    iget v0, p0, Lmqh;->f:I
 
-    goto :goto_0
+    if-nez v0, :cond_0
+
+    iget-object v0, p0, Lmqh;->b:Landroid/opengl/EGLDisplay;
+
+    iget-object v1, p0, Lmqh;->c:Landroid/opengl/EGLSurface;
+
+    invoke-static {v0, v1}, Landroid/opengl/EGL14;->eglSwapBuffers(Landroid/opengl/EGLDisplay;Landroid/opengl/EGLSurface;)Z
 
     :cond_0
-    sget-object v2, Lmqh;->a:Ljava/util/Map;
+    return-void
+.end method
 
-    invoke-interface {v2, p0, v1}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+.method public final l()Lmoq;
+    .locals 1
 
-    :cond_1
-    monitor-exit v0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    iget-object v0, p0, Lmqh;->g:Lmoq;
 
-    invoke-interface {v1, p1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object p1
-
-    check-cast p1, Ljava/lang/ref/WeakReference;
-
-    if-nez p1, :cond_2
-
-    sget-object p0, Lmpx;->a:Lmpx;
-
-    goto :goto_1
-
-    :cond_2
-    invoke-virtual {p1}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
-
-    move-result-object p1
-
-    invoke-virtual {p0, p1}, Ljava/lang/Class;->cast(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object p0
-
-    check-cast p0, Ljava/lang/Enum;
-
-    invoke-static {p0}, Lmqp;->i(Ljava/lang/Object;)Lmqp;
-
-    move-result-object p0
-
-    :goto_1
-    return-object p0
-
-    :catchall_0
-    move-exception p0
-
-    :try_start_1
-    monitor-exit v0
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    goto :goto_3
-
-    :goto_2
-    throw p0
-
-    :goto_3
-    goto :goto_2
+    return-object v0
 .end method

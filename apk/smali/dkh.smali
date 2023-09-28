@@ -1,43 +1,22 @@
-.class public final synthetic Ldkh;
+.class public final Ldkh;
 .super Ljava/lang/Object;
-
-# interfaces
-.implements Ldkj;
 
 
 # static fields
-.field public static final synthetic a:Ldkh;
+.field public static final a:Lcsm;
 
 
 # direct methods
-.method static synthetic constructor <clinit>()V
-    .locals 1
+.method static constructor <clinit>()V
+    .locals 2
 
-    new-instance v0, Ldkh;
+    new-instance v0, Lcsm;
 
-    invoke-direct {v0}, Ldkh;-><init>()V
+    const/16 v1, 0x12
 
-    sput-object v0, Ldkh;->a:Ldkh;
+    invoke-direct {v0, v1}, Lcsm;-><init>(I)V
 
-    return-void
-.end method
-
-.method private synthetic constructor <init>()V
-    .locals 0
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    sput-object v0, Ldkh;->a:Lcsm;
 
     return-void
-.end method
-
-
-# virtual methods
-.method public final a(Ljava/util/List;ILhkb;)Z
-    .locals 0
-
-    invoke-static {p1, p2}, Ldkl;->c(Ljava/util/List;I)Z
-
-    move-result p1
-
-    return p1
 .end method

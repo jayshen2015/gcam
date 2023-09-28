@@ -3,85 +3,140 @@
 
 
 # direct methods
-.method public static forEach(Ljava/util/Collection;Ljava/util/function/Consumer;)V
+.method public static synthetic forEach(Ljava/util/Collection;Lj$/util/function/Consumer;)V
     .locals 1
 
-    instance-of v0, p0, Lj$/util/c;
+    instance-of v0, p0, Lj$/util/Collection;
 
     if-eqz v0, :cond_0
 
-    check-cast p0, Lj$/util/c;
+    check-cast p0, Lj$/util/Collection;
 
-    invoke-interface {p0, p1}, Lj$/util/c;->forEach(Ljava/util/function/Consumer;)V
+    invoke-interface {p0, p1}, Lj$/util/Collection;->forEach(Lj$/util/function/Consumer;)V
 
     return-void
 
     :cond_0
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    invoke-static {p0, p1}, Lj$/util/Collection$-CC;->$default$forEach(Ljava/util/Collection;Lj$/util/function/Consumer;)V
 
-    invoke-interface {p0}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
-
-    move-result-object p0
-
-    :goto_0
-    invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_1
-
-    invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v0
-
-    invoke-interface {p1, v0}, Ljava/util/function/Consumer;->accept(Ljava/lang/Object;)V
-
-    goto :goto_0
-
-    :cond_1
     return-void
 .end method
 
-.method public static synthetic removeIf(Ljava/util/Collection;Ljava/util/function/Predicate;)Z
+.method public static synthetic removeIf(Ljava/util/Collection;Lj$/util/function/Predicate;)Z
     .locals 1
 
-    instance-of v0, p0, Lj$/util/c;
+    instance-of v0, p0, Lj$/util/Collection;
 
     if-eqz v0, :cond_0
 
-    check-cast p0, Lj$/util/c;
+    check-cast p0, Lj$/util/Collection;
 
-    invoke-interface {p0, p1}, Lj$/util/c;->removeIf(Ljava/util/function/Predicate;)Z
+    invoke-interface {p0, p1}, Lj$/util/Collection;->removeIf(Lj$/util/function/Predicate;)Z
 
     move-result p0
 
     return p0
 
     :cond_0
-    invoke-static {p0, p1}, Lj$/util/b;->d(Ljava/util/Collection;Ljava/util/function/Predicate;)Z
+    invoke-static {p0, p1}, Lj$/util/Collection$-CC;->$default$removeIf(Ljava/util/Collection;Lj$/util/function/Predicate;)Z
 
     move-result p0
 
     return p0
 .end method
 
-.method public static synthetic stream(Ljava/util/Collection;)Lj$/util/stream/Stream;
+.method public static synthetic spliterator(Ljava/util/Collection;)Lj$/util/Spliterator;
     .locals 1
 
-    instance-of v0, p0, Lj$/util/c;
+    instance-of v0, p0, Lj$/util/Collection;
 
     if-eqz v0, :cond_0
 
-    check-cast p0, Lj$/util/c;
+    check-cast p0, Lj$/util/Collection;
 
-    invoke-interface {p0}, Lj$/util/c;->stream()Lj$/util/stream/Stream;
+    invoke-interface {p0}, Lj$/util/Collection;->spliterator()Lj$/util/Spliterator;
 
     move-result-object p0
 
     return-object p0
 
     :cond_0
-    invoke-static {p0}, Lj$/util/b;->i(Ljava/util/Collection;)Lj$/util/stream/Stream;
+    instance-of v0, p0, Ljava/util/LinkedHashSet;
+
+    if-eqz v0, :cond_1
+
+    check-cast p0, Ljava/util/LinkedHashSet;
+
+    invoke-static {p0}, Lj$/util/DesugarLinkedHashSet;->spliterator(Ljava/util/LinkedHashSet;)Lj$/util/Spliterator;
+
+    move-result-object p0
+
+    return-object p0
+
+    :cond_1
+    instance-of v0, p0, Ljava/util/SortedSet;
+
+    if-eqz v0, :cond_2
+
+    check-cast p0, Ljava/util/SortedSet;
+
+    invoke-static {p0}, Lj$/util/SortedSet$-CC;->$default$spliterator(Ljava/util/SortedSet;)Lj$/util/Spliterator;
+
+    move-result-object p0
+
+    return-object p0
+
+    :cond_2
+    instance-of v0, p0, Ljava/util/Set;
+
+    if-eqz v0, :cond_3
+
+    check-cast p0, Ljava/util/Set;
+
+    invoke-static {p0}, Lj$/util/Set$-CC;->$default$spliterator(Ljava/util/Set;)Lj$/util/Spliterator;
+
+    move-result-object p0
+
+    return-object p0
+
+    :cond_3
+    instance-of v0, p0, Ljava/util/List;
+
+    if-eqz v0, :cond_4
+
+    check-cast p0, Ljava/util/List;
+
+    invoke-static {p0}, Lj$/util/List$-CC;->$default$spliterator(Ljava/util/List;)Lj$/util/Spliterator;
+
+    move-result-object p0
+
+    return-object p0
+
+    :cond_4
+    invoke-static {p0}, Lj$/util/Collection$-CC;->$default$spliterator(Ljava/util/Collection;)Lj$/util/Spliterator;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public static synthetic stream(Ljava/util/Collection;)Lj$/util/stream/Stream;
+    .locals 1
+
+    instance-of v0, p0, Lj$/util/Collection;
+
+    if-eqz v0, :cond_0
+
+    check-cast p0, Lj$/util/Collection;
+
+    invoke-interface {p0}, Lj$/util/Collection;->stream()Lj$/util/stream/Stream;
+
+    move-result-object p0
+
+    return-object p0
+
+    :cond_0
+    invoke-static {p0}, Lj$/util/Collection$-CC;->$default$stream(Ljava/util/Collection;)Lj$/util/stream/Stream;
 
     move-result-object p0
 

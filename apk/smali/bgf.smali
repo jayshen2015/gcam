@@ -2,22 +2,12 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lbgi;
-
-
-# instance fields
-.field final synthetic a:F
-
-.field final synthetic b:Lbgj;
+.implements Landroid/graphics/ImageDecoder$OnPartialImageListener;
 
 
 # direct methods
-.method public constructor <init>(Lbgj;F)V
+.method public constructor <init>()V
     .locals 0
-
-    iput-object p1, p0, Lbgf;->b:Lbgj;
-
-    iput p2, p0, Lbgf;->a:F
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -26,14 +16,10 @@
 
 
 # virtual methods
-.method public final a()V
-    .locals 2
+.method public final onPartialImage(Landroid/graphics/ImageDecoder$DecodeException;)Z
+    .locals 0
 
-    iget-object v0, p0, Lbgf;->b:Lbgj;
+    const/4 p1, 0x0
 
-    iget v1, p0, Lbgf;->a:F
-
-    invoke-virtual {v0, v1}, Lbgj;->n(F)V
-
-    return-void
+    return p1
 .end method

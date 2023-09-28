@@ -1,192 +1,53 @@
 .class final Lfoh;
-.super Lcom/google/android/apps/camera/bottombar/BottomBarListener;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Lphh;
 
 
 # instance fields
-.field final synthetic a:Lfoj;
+.field final synthetic a:Lpih;
+
+.field final synthetic b:Lpht;
 
 
 # direct methods
-.method public constructor <init>(Lfoj;)V
+.method public constructor <init>(Lpih;Lpht;)V
     .locals 0
 
-    iput-object p1, p0, Lfoh;->a:Lfoj;
+    iput-object p1, p0, Lfoh;->a:Lpih;
 
-    invoke-direct {p0}, Lcom/google/android/apps/camera/bottombar/BottomBarListener;-><init>()V
+    iput-object p2, p0, Lfoh;->b:Lpht;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onCameraSwitchButtonClicked()V
-    .locals 2
+.method public final a(Ljava/lang/Throwable;)V
+    .locals 1
 
-    iget-object v0, p0, Lfoh;->a:Lfoj;
+    iget-object p1, p0, Lfoh;->a:Lpih;
 
-    iget-object v0, v0, Lfoj;->k:Ljava/lang/Object;
+    sget-object v0, Loih;->a:Loih;
 
-    monitor-enter v0
-
-    :try_start_0
-    iget-object v1, p0, Lfoh;->a:Lfoj;
-
-    iget-object v1, v1, Lfoj;->j:Lcox;
-
-    invoke-virtual {v1}, Lcox;->e()V
-
-    monitor-exit v0
+    invoke-virtual {p1, v0}, Lpih;->o(Ljava/lang/Object;)Z
 
     return-void
-
-    :catchall_0
-    move-exception v1
-
-    monitor-exit v0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw v1
 .end method
 
-.method public final onPauseButtonClicked()V
-    .locals 2
+.method public final bridge synthetic b(Ljava/lang/Object;)V
+    .locals 1
 
-    iget-object v0, p0, Lfoh;->a:Lfoj;
+    check-cast p1, Lojc;
 
-    iget-object v0, v0, Lfoj;->k:Ljava/lang/Object;
+    iget-object p1, p0, Lfoh;->a:Lpih;
 
-    monitor-enter v0
+    iget-object v0, p0, Lfoh;->b:Lpht;
 
-    :try_start_0
-    iget-object v1, p0, Lfoh;->a:Lfoj;
-
-    iget-object v1, v1, Lfoj;->j:Lcox;
-
-    invoke-virtual {v1}, Lcox;->o()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_0
-
-    iget-object v1, p0, Lfoh;->a:Lfoj;
-
-    iget-object v1, v1, Lfoj;->l:Lcqa;
-
-    invoke-virtual {v1}, Lcqa;->f()V
-
-    :cond_0
-    monitor-exit v0
+    invoke-virtual {p1, v0}, Lpih;->e(Lpht;)Z
 
     return-void
-
-    :catchall_0
-    move-exception v1
-
-    monitor-exit v0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw v1
-.end method
-
-.method public final onResumeButtonClicked()V
-    .locals 2
-
-    iget-object v0, p0, Lfoh;->a:Lfoj;
-
-    iget-object v0, v0, Lfoj;->k:Ljava/lang/Object;
-
-    monitor-enter v0
-
-    :try_start_0
-    iget-object v1, p0, Lfoh;->a:Lfoj;
-
-    iget-object v1, v1, Lfoj;->j:Lcox;
-
-    invoke-virtual {v1}, Lcox;->p()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_0
-
-    iget-object v1, p0, Lfoh;->a:Lfoj;
-
-    iget-object v1, v1, Lfoj;->l:Lcqa;
-
-    invoke-virtual {v1}, Lcqa;->g()V
-
-    :cond_0
-    monitor-exit v0
-
-    return-void
-
-    :catchall_0
-    move-exception v1
-
-    monitor-exit v0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw v1
-.end method
-
-.method public final onSnapshotButtonClicked()V
-    .locals 2
-
-    iget-object v0, p0, Lfoh;->a:Lfoj;
-
-    iget-object v0, v0, Lfoj;->k:Ljava/lang/Object;
-
-    monitor-enter v0
-
-    :try_start_0
-    iget-object v1, p0, Lfoh;->a:Lfoj;
-
-    iget-object v1, v1, Lfoj;->j:Lcox;
-
-    invoke-virtual {v1}, Lcox;->h()V
-
-    monitor-exit v0
-
-    return-void
-
-    :catchall_0
-    move-exception v1
-
-    monitor-exit v0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw v1
-.end method
-
-.method public final onThumbnailButtonClicked()V
-    .locals 2
-
-    iget-object v0, p0, Lfoh;->a:Lfoj;
-
-    iget-object v0, v0, Lfoj;->k:Ljava/lang/Object;
-
-    monitor-enter v0
-
-    :try_start_0
-    iget-object v1, p0, Lfoh;->a:Lfoj;
-
-    iget-object v1, v1, Lfoj;->j:Lcox;
-
-    invoke-virtual {v1}, Lcox;->i()V
-
-    monitor-exit v0
-
-    return-void
-
-    :catchall_0
-    move-exception v1
-
-    monitor-exit v0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw v1
 .end method

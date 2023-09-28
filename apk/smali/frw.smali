@@ -2,198 +2,78 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lfpz;
+.implements Lfpp;
 
 
 # instance fields
-.field final synthetic a:Lfrx;
-
-.field private final b:Lfpz;
-
-.field private c:Z
+.field final synthetic a:Lddf;
 
 
 # direct methods
-.method public constructor <init>(Lfrx;Lfpz;)V
+.method public constructor <init>(Lddf;)V
     .locals 0
 
-    iput-object p1, p0, Lfrw;->a:Lfrx;
+    iput-object p1, p0, Lfrw;->a:Lddf;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    const/4 p1, 0x0
-
-    iput-boolean p1, p0, Lfrw;->c:Z
-
-    iput-object p2, p0, Lfrw;->b:Lfpz;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final declared-synchronized a(Lkpb;)Z
+.method public final a(Ljava/io/FileOutputStream;ILpht;Ljava/util/concurrent/Executor;)Lmlk;
     .locals 2
 
-    monitor-enter p0
-
     :try_start_0
-    iget-boolean v0, p0, Lfrw;->c:Z
+    iget-object v0, p0, Lfrw;->a:Lddf;
 
-    if-nez v0, :cond_0
+    sget-object v1, Lddr;->a:Lddi;
 
-    iget-object v0, p0, Lfrw;->b:Lfpz;
+    invoke-interface {v0}, Lddf;->b()V
 
-    invoke-interface {v0, p1}, Lfpz;->a(Lkpb;)Z
+    invoke-static {}, Lmkg;->a()Lmkf;
 
-    move-result v0
+    move-result-object v0
+
+    const/4 v1, 0x2
+
+    iput v1, v0, Lmkf;->c:I
+
+    invoke-virtual {v0}, Lmkf;->b()V
+
+    invoke-virtual {v0}, Lmkf;->a()Lmkg;
+
+    move-result-object v0
+
+    invoke-static {p1, v0}, Lmip;->ar(Ljava/io/FileOutputStream;Lmkg;)Lmkd;
+
+    move-result-object v0
+
+    invoke-interface {v0, p2}, Lmkd;->e(I)V
+
+    new-instance p2, Lmkb;
+
+    invoke-direct {p2, p1, v0, p4}, Lmkb;-><init>(Ljava/io/FileOutputStream;Lmkd;Ljava/util/concurrent/Executor;)V
+
+    new-instance p1, Lmju;
+
+    invoke-direct {p1, p2, p3}, Lmju;-><init>(Lmkb;Lpht;)V
+
+    iget-object p4, p2, Lmkb;->e:Ljava/util/concurrent/Executor;
+
+    invoke-interface {p3, p1, p4}, Lpht;->d(Ljava/lang/Runnable;Ljava/util/concurrent/Executor;)V
     :try_end_0
-    .catch Ljava/lang/RuntimeException; {:try_start_0 .. :try_end_0} :catch_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
-    :try_start_1
-    invoke-interface {p1}, Lkpb;->close()V
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_1
-
-    monitor-exit p0
-
-    return v0
-
-    :cond_0
-    :try_start_2
-    sget-object v0, Lfrx;->a:Lnak;
-
-    invoke-virtual {v0}, Lnaf;->c()Lnaz;
-
-    move-result-object v0
-
-    check-cast v0, Lnah;
-
-    const/16 v1, 0x9b1
-
-    invoke-interface {v0, v1}, Lnah;->G(I)Lnaz;
-
-    move-result-object v0
-
-    check-cast v0, Lnah;
-
-    const-string v1, "Attempting to enqueue image on closed sink!"
-
-    invoke-interface {v0, v1}, Lnah;->o(Ljava/lang/String;)V
-    :try_end_2
-    .catch Ljava/lang/RuntimeException; {:try_start_2 .. :try_end_2} :catch_0
-    .catchall {:try_start_2 .. :try_end_2} :catchall_0
-
-    :goto_0
-    :try_start_3
-    invoke-interface {p1}, Lkpb;->close()V
-    :try_end_3
-    .catchall {:try_start_3 .. :try_end_3} :catchall_1
-
-    goto :goto_1
-
-    :catchall_0
-    move-exception v0
-
-    goto :goto_2
+    return-object p2
 
     :catch_0
-    move-exception v0
-
-    :try_start_4
-    sget-object v1, Lfrx;->a:Lnak;
-
-    invoke-virtual {v1}, Lnaf;->b()Lnaz;
-
-    move-result-object v1
-
-    check-cast v1, Lnah;
-
-    invoke-interface {v1, v0}, Lnah;->h(Ljava/lang/Throwable;)Lnaz;
-
-    move-result-object v0
-
-    check-cast v0, Lnah;
-
-    const/16 v1, 0x9b2
-
-    invoke-interface {v0, v1}, Lnah;->G(I)Lnaz;
-
-    move-result-object v0
-
-    check-cast v0, Lnah;
-
-    const-string v1, "Could not encode out image"
-
-    invoke-interface {v0, v1}, Lnah;->o(Ljava/lang/String;)V
-    :try_end_4
-    .catchall {:try_start_4 .. :try_end_4} :catchall_0
-
-    goto :goto_0
-
-    :goto_1
-    monitor-exit p0
-
-    const/4 p1, 0x0
-
-    return p1
-
-    :goto_2
-    :try_start_5
-    invoke-interface {p1}, Lkpb;->close()V
-
-    throw v0
-    :try_end_5
-    .catchall {:try_start_5 .. :try_end_5} :catchall_1
-
-    :catchall_1
     move-exception p1
 
-    monitor-exit p0
+    new-instance p2, Lmkn;
 
-    goto :goto_4
+    invoke-direct {p2, p1}, Lmkn;-><init>(Ljava/lang/Throwable;)V
 
-    :goto_3
-    throw p1
-
-    :goto_4
-    goto :goto_3
-.end method
-
-.method public final declared-synchronized close()V
-    .locals 1
-
-    monitor-enter p0
-
-    :try_start_0
-    iget-boolean v0, p0, Lfrw;->c:Z
-
-    if-nez v0, :cond_0
-
-    iget-object v0, p0, Lfrw;->b:Lfpz;
-
-    invoke-interface {v0}, Lfpz;->close()V
-
-    const/4 v0, 0x1
-
-    iput-boolean v0, p0, Lfrw;->c:Z
-
-    iget-object v0, p0, Lfrw;->a:Lfrx;
-
-    invoke-virtual {v0}, Lfrx;->c()V
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    :cond_0
-    monitor-exit p0
-
-    return-void
-
-    :catchall_0
-    move-exception v0
-
-    monitor-exit p0
-
-    throw v0
+    throw p2
 .end method

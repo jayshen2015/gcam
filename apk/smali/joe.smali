@@ -1,86 +1,55 @@
 .class public final Ljoe;
-.super Ljhn;
+.super Ljava/lang/Object;
 
 # interfaces
-.implements Ljdq;
-
-
-# static fields
-.field public static final CREATOR:Landroid/os/Parcelable$Creator;
+.implements Landroid/animation/ValueAnimator$AnimatorUpdateListener;
 
 
 # instance fields
-.field public final a:Ljava/util/List;
-
-.field public final b:Ljava/lang/String;
+.field final synthetic a:Lcom/google/android/apps/camera/ui/views/CaptureAnimationOverlay;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
-
-    new-instance v0, Ljnd;
-
-    const/16 v1, 0xb
-
-    invoke-direct {v0, v1}, Ljnd;-><init>(I)V
-
-    sput-object v0, Ljoe;->CREATOR:Landroid/os/Parcelable$Creator;
-
-    return-void
-.end method
-
-.method public constructor <init>(Ljava/util/List;Ljava/lang/String;)V
+.method public constructor <init>(Lcom/google/android/apps/camera/ui/views/CaptureAnimationOverlay;)V
     .locals 0
 
-    invoke-direct {p0}, Ljhn;-><init>()V
+    iput-object p1, p0, Ljoe;->a:Lcom/google/android/apps/camera/ui/views/CaptureAnimationOverlay;
 
-    iput-object p1, p0, Ljoe;->a:Ljava/util/List;
-
-    iput-object p2, p0, Ljoe;->b:Ljava/lang/String;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Lcom/google/android/gms/common/api/Status;
-    .locals 1
-
-    iget-object v0, p0, Ljoe;->b:Ljava/lang/String;
-
-    if-eqz v0, :cond_0
-
-    sget-object v0, Lcom/google/android/gms/common/api/Status;->a:Lcom/google/android/gms/common/api/Status;
-
-    return-object v0
-
-    :cond_0
-    sget-object v0, Lcom/google/android/gms/common/api/Status;->e:Lcom/google/android/gms/common/api/Status;
-
-    return-object v0
-.end method
-
-.method public final writeToParcel(Landroid/os/Parcel;I)V
+.method public final onAnimationUpdate(Landroid/animation/ValueAnimator;)V
     .locals 2
 
-    invoke-static {p1}, Ljhp;->a(Landroid/os/Parcel;)I
+    invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
 
-    move-result p2
+    move-result-object p1
 
-    iget-object v0, p0, Ljoe;->a:Ljava/util/List;
+    check-cast p1, Ljava/lang/Float;
 
-    const/4 v1, 0x1
+    invoke-virtual {p1}, Ljava/lang/Float;->floatValue()F
 
-    invoke-static {p1, v1, v0}, Ljhp;->r(Landroid/os/Parcel;ILjava/util/List;)V
+    move-result p1
 
-    iget-object v0, p0, Ljoe;->b:Ljava/lang/String;
+    iget-object v0, p0, Ljoe;->a:Lcom/google/android/apps/camera/ui/views/CaptureAnimationOverlay;
 
-    const/4 v1, 0x2
+    iget-object v0, v0, Lcom/google/android/apps/camera/ui/views/CaptureAnimationOverlay;->a:Landroid/graphics/Paint;
 
-    invoke-static {p1, v1, v0}, Ljhp;->p(Landroid/os/Parcel;ILjava/lang/String;)V
+    const/high16 v1, 0x437f0000    # 255.0f
 
-    invoke-static {p1, p2}, Ljhp;->c(Landroid/os/Parcel;I)V
+    mul-float p1, p1, v1
+
+    float-to-int p1, p1
+
+    invoke-virtual {v0, p1}, Landroid/graphics/Paint;->setAlpha(I)V
+
+    iget-object p1, p0, Ljoe;->a:Lcom/google/android/apps/camera/ui/views/CaptureAnimationOverlay;
+
+    invoke-virtual {p1}, Lcom/google/android/apps/camera/ui/views/CaptureAnimationOverlay;->invalidate()V
 
     return-void
 .end method

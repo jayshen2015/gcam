@@ -1,84 +1,103 @@
-.class public final enum Ljya;
-.super Ljava/lang/Enum;
+.class public final Ljya;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Lpys;
 
 
-# static fields
-.field public static final enum a:Ljya;
+# instance fields
+.field private final a:Lqkg;
 
-.field public static final enum b:Ljya;
+.field private final b:Lqkg;
 
-.field public static final enum c:Ljya;
+.field private final c:Lqkg;
 
-.field private static final synthetic d:[Ljya;
+.field private final d:Lqkg;
+
+.field private final e:Lqkg;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 7
-
-    new-instance v0, Ljya;
-
-    const-string v1, "AUDIO"
-
-    const/4 v2, 0x0
-
-    invoke-direct {v0, v1, v2}, Ljya;-><init>(Ljava/lang/String;I)V
-
-    sput-object v0, Ljya;->a:Ljya;
-
-    new-instance v1, Ljya;
-
-    const-string v3, "VIDEO"
-
-    const/4 v4, 0x1
-
-    invoke-direct {v1, v3, v4}, Ljya;-><init>(Ljava/lang/String;I)V
-
-    sput-object v1, Ljya;->b:Ljya;
-
-    new-instance v3, Ljya;
-
-    const-string v5, "METADATA"
-
-    const/4 v6, 0x2
-
-    invoke-direct {v3, v5, v6}, Ljya;-><init>(Ljava/lang/String;I)V
-
-    sput-object v3, Ljya;->c:Ljya;
-
-    const/4 v5, 0x3
-
-    new-array v5, v5, [Ljya;
-
-    aput-object v0, v5, v2
-
-    aput-object v1, v5, v4
-
-    aput-object v3, v5, v6
-
-    sput-object v5, Ljya;->d:[Ljya;
-
-    return-void
-.end method
-
-.method private constructor <init>(Ljava/lang/String;I)V
+.method public constructor <init>(Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;)V
     .locals 0
 
-    invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Ljya;->a:Lqkg;
+
+    iput-object p2, p0, Ljya;->b:Lqkg;
+
+    iput-object p3, p0, Ljya;->c:Lqkg;
+
+    iput-object p4, p0, Ljya;->d:Lqkg;
+
+    iput-object p5, p0, Ljya;->e:Lqkg;
 
     return-void
 .end method
 
-.method public static values()[Ljya;
-    .locals 1
 
-    sget-object v0, Ljya;->d:[Ljya;
+# virtual methods
+.method public final a()Ljxz;
+    .locals 7
 
-    invoke-virtual {v0}, [Ljya;->clone()Ljava/lang/Object;
+    iget-object v0, p0, Ljya;->a:Lqkg;
+
+    invoke-interface {v0}, Lqkg;->get()Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, [Ljya;
+    move-object v2, v0
+
+    check-cast v2, Ljava/util/concurrent/Executor;
+
+    iget-object v0, p0, Ljya;->b:Lqkg;
+
+    check-cast v0, Lliq;
+
+    invoke-virtual {v0}, Lliq;->a()Llis;
+
+    move-result-object v3
+
+    iget-object v0, p0, Ljya;->c:Lqkg;
+
+    check-cast v0, Ljyc;
+
+    invoke-virtual {v0}, Ljyc;->a()Lkij;
+
+    move-result-object v4
+
+    iget-object v0, p0, Ljya;->d:Lqkg;
+
+    check-cast v0, Ljyb;
+
+    invoke-virtual {v0}, Ljyb;->a()Lkij;
+
+    move-result-object v5
+
+    iget-object v0, p0, Ljya;->e:Lqkg;
+
+    check-cast v0, Ljyd;
+
+    invoke-virtual {v0}, Ljyd;->a()Lkij;
+
+    move-result-object v6
+
+    new-instance v0, Ljxz;
+
+    move-object v1, v0
+
+    invoke-direct/range {v1 .. v6}, Ljxz;-><init>(Ljava/util/concurrent/Executor;Llis;Lkij;Lkij;Lkij;)V
+
+    return-object v0
+.end method
+
+.method public final bridge synthetic get()Ljava/lang/Object;
+    .locals 1
+
+    invoke-virtual {p0}, Ljya;->a()Ljxz;
+
+    move-result-object v0
 
     return-object v0
 .end method

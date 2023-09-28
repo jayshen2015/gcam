@@ -1,103 +1,77 @@
-.class public final Lhdc;
+.class public final synthetic Lhdc;
 .super Ljava/lang/Object;
 
-
-# static fields
-.field public static final a:Lnak;
+# interfaces
+.implements Lbvv;
 
 
 # instance fields
-.field public final b:Lfse;
+.field public final synthetic a:Lpht;
 
-.field private final c:Lhsh;
+.field public final synthetic b:Lojc;
+
+.field public final synthetic c:Lojc;
+
+.field public final synthetic d:Llar;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
-
-    const-string v0, "com/google/android/apps/camera/smarts/SmartsHighResBitmapProviderImpl"
-
-    invoke-static {v0}, Lnak;->h(Ljava/lang/String;)Lnak;
-
-    move-result-object v0
-
-    sput-object v0, Lhdc;->a:Lnak;
-
-    return-void
-.end method
-
-.method public constructor <init>(Lhsh;Lfse;[B)V
+.method public synthetic constructor <init>(Lpht;Lojc;Lojc;Llar;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lhdc;->c:Lhsh;
+    iput-object p1, p0, Lhdc;->a:Lpht;
 
-    iput-object p2, p0, Lhdc;->b:Lfse;
+    iput-object p2, p0, Lhdc;->b:Lojc;
+
+    iput-object p3, p0, Lhdc;->c:Lojc;
+
+    iput-object p4, p0, Lhdc;->d:Llar;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Lhdw;)V
-    .locals 3
+.method public final synthetic c()Ljava/lang/String;
+    .locals 1
 
-    iget-object v0, p0, Lhdc;->c:Lhsh;
-
-    invoke-virtual {v0}, Lhsh;->c()Lmqp;
+    invoke-static {p0}, Laas;->g(Lbvv;)Ljava/lang/String;
 
     move-result-object v0
 
-    iget-object v1, p0, Lhdc;->c:Lhsh;
+    return-object v0
+.end method
 
-    invoke-virtual {v1}, Lhsh;->d()Lmqp;
+.method public final fz()Lpht;
+    .locals 5
 
-    move-result-object v1
+    iget-object v0, p0, Lhdc;->a:Lpht;
 
-    invoke-virtual {v0}, Lmqp;->g()Z
+    iget-object v1, p0, Lhdc;->b:Lojc;
 
-    move-result v2
+    iget-object v2, p0, Lhdc;->c:Lojc;
 
-    if-eqz v2, :cond_0
+    iget-object v3, p0, Lhdc;->d:Llar;
 
-    invoke-virtual {v1}, Lmqp;->g()Z
+    new-instance v4, Lhdd;
 
-    move-result v2
+    invoke-direct {v4, v1, v2}, Lhdd;-><init>(Lojc;Lojc;)V
 
-    if-eqz v2, :cond_0
-
-    invoke-virtual {v0}, Lmqp;->c()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lhbw;
-
-    new-instance v2, Lhda;
-
-    invoke-direct {v2, p0, v1, p1}, Lhda;-><init>(Lhdc;Lmqp;Lhdw;)V
-
-    invoke-interface {v0, v2}, Lhbw;->a(Lhda;)V
-
-    return-void
-
-    :cond_0
-    sget-object v0, Lhdc;->a:Lnak;
-
-    invoke-virtual {v0}, Lnaf;->c()Lnaz;
+    invoke-static {v0, v4, v3}, Lpgb;->h(Lpht;Loiu;Ljava/util/concurrent/Executor;)Lpht;
 
     move-result-object v0
 
-    const-string v1, "No frame provider."
+    const-class v1, Ljava/lang/Throwable;
 
-    const/16 v2, 0xd98
+    sget-object v2, Lewp;->d:Lewp;
 
-    invoke-static {v0, v1, v2}, Ld;->g(Lnaz;Ljava/lang/String;C)V
+    sget-object v3, Lpgr;->a:Lpgr;
 
-    const/4 v0, 0x0
+    invoke-static {v0, v1, v2, v3}, Lpfj;->i(Lpht;Ljava/lang/Class;Lpgk;Ljava/util/concurrent/Executor;)Lpht;
 
-    invoke-interface {p1, v0}, Lhdw;->a(Landroid/graphics/Bitmap;)V
+    move-result-object v0
 
-    return-void
+    return-object v0
 .end method

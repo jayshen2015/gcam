@@ -1,75 +1,219 @@
 .class public abstract Lowp;
-.super Lowv;
+.super Ljava/lang/Object;
 
 
-# instance fields
-.field public final c:Lowr;
+# static fields
+.field private static a:Ljava/lang/String;
 
-.field public d:Lowr;
+.field private static b:Ljava/lang/String;
+
+.field private static c:Ljava/lang/String;
+
+.field private static final d:[Ljava/lang/String;
 
 
 # direct methods
-.method public constructor <init>(Lowr;)V
-    .locals 1
+.method static constructor <clinit>()V
+    .locals 5
 
-    const/4 v0, 0x0
+    const-string v0, "owz"
 
-    invoke-direct {p0, v0}, Lowv;-><init>([B)V
+    sput-object v0, Lowp;->a:Ljava/lang/String;
 
-    iput-object p1, p0, Lowp;->c:Lowr;
+    const-string v1, "com.google.common.flogger.backend.google.GooglePlatform"
+
+    sput-object v1, Lowp;->b:Ljava/lang/String;
+
+    const-string v2, "com.google.common.flogger.backend.system.DefaultPlatform"
+
+    sput-object v2, Lowp;->c:Ljava/lang/String;
+
+    const/4 v3, 0x3
+
+    new-array v3, v3, [Ljava/lang/String;
+
+    const/4 v4, 0x0
+
+    aput-object v0, v3, v4
+
+    const/4 v0, 0x1
+
+    aput-object v1, v3, v0
+
+    const/4 v0, 0x2
+
+    aput-object v2, v3, v0
+
+    sput-object v3, Lowp;->d:[Ljava/lang/String;
 
     return-void
 .end method
 
+.method public constructor <init>()V
+    .locals 0
 
-# virtual methods
-.method public final bridge synthetic b(Ljava/lang/Object;Ljava/lang/Object;)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method
+
+.method public static a()I
     .locals 1
 
-    check-cast p1, Lowr;
+    sget-object v0, Loyd;->a:Ljava/lang/ThreadLocal;
 
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    invoke-virtual {v0}, Ljava/lang/ThreadLocal;->get()Ljava/lang/Object;
 
-    if-nez p2, :cond_0
+    move-result-object v0
 
-    const/4 p2, 0x1
+    check-cast v0, Loyd;
 
-    goto :goto_0
+    iget v0, v0, Loyd;->b:I
 
-    :cond_0
-    const/4 p2, 0x0
+    return v0
+.end method
 
-    :goto_0
-    if-eqz p2, :cond_1
+.method public static b()J
+    .locals 2
 
-    iget-object v0, p0, Lowp;->c:Lowr;
+    sget-object v0, Lown;->a:Lowp;
 
-    goto :goto_1
+    invoke-virtual {v0}, Lowp;->c()J
 
-    :cond_1
-    iget-object v0, p0, Lowp;->d:Lowr;
+    move-result-wide v0
 
-    :goto_1
-    if-eqz v0, :cond_2
+    return-wide v0
+.end method
 
-    iget-object p1, p1, Lowr;->c:Loop;
+.method public static d(Ljava/lang/String;)Lovr;
+    .locals 1
 
-    invoke-virtual {p1, p0, v0}, Loop;->d(Ljava/lang/Object;Ljava/lang/Object;)Z
+    sget-object v0, Lown;->a:Lowp;
 
-    move-result p1
+    invoke-virtual {v0, p0}, Lowp;->e(Ljava/lang/String;)Lovr;
 
-    if-eqz p1, :cond_2
+    move-result-object p0
 
-    if-eqz p2, :cond_2
+    return-object p0
+.end method
 
-    iget-object p1, p0, Lowp;->c:Lowr;
+.method public static f()Lovv;
+    .locals 1
 
-    iget-object p2, p0, Lowp;->d:Lowr;
+    invoke-static {}, Lowp;->i()Loxh;
 
-    invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    move-result-object v0
 
-    invoke-virtual {p1, p2}, Lowr;->o(Lowr;)V
+    invoke-virtual {v0}, Loxh;->a()Lovv;
 
-    :cond_2
-    return-void
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public static g()Lowo;
+    .locals 1
+
+    sget-object v0, Lown;->a:Lowp;
+
+    invoke-virtual {v0}, Lowp;->h()Lowo;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public static i()Loxh;
+    .locals 1
+
+    sget-object v0, Lown;->a:Lowp;
+
+    invoke-virtual {v0}, Lowp;->j()Loxh;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public static k()Loxp;
+    .locals 1
+
+    invoke-static {}, Lowp;->i()Loxh;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Loxh;->b()Loxp;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public static l()Ljava/lang/String;
+    .locals 1
+
+    sget-object v0, Lown;->a:Lowp;
+
+    invoke-virtual {v0}, Lowp;->m()Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public static n(Ljava/lang/String;Ljava/util/logging/Level;Z)Z
+    .locals 1
+
+    invoke-static {}, Lowp;->i()Loxh;
+
+    move-result-object v0
+
+    invoke-virtual {v0, p0, p1, p2}, Loxh;->c(Ljava/lang/String;Ljava/util/logging/Level;Z)V
+
+    const/4 p0, 0x0
+
+    return p0
+.end method
+
+.method static synthetic o()[Ljava/lang/String;
+    .locals 1
+
+    sget-object v0, Lowp;->d:[Ljava/lang/String;
+
+    return-object v0
+.end method
+
+
+# virtual methods
+.method protected c()J
+    .locals 3
+
+    sget-object v0, Ljava/util/concurrent/TimeUnit;->MILLISECONDS:Ljava/util/concurrent/TimeUnit;
+
+    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
+
+    move-result-wide v1
+
+    invoke-virtual {v0, v1, v2}, Ljava/util/concurrent/TimeUnit;->toNanos(J)J
+
+    move-result-wide v0
+
+    return-wide v0
+.end method
+
+.method protected abstract e(Ljava/lang/String;)Lovr;
+.end method
+
+.method protected abstract h()Lowo;
+.end method
+
+.method protected j()Loxh;
+    .locals 1
+
+    sget-object v0, Loxj;->a:Loxh;
+
+    return-object v0
+.end method
+
+.method protected abstract m()Ljava/lang/String;
 .end method

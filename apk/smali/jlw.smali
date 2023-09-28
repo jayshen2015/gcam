@@ -1,204 +1,70 @@
-.class public final Ljlw;
+.class public final synthetic Ljlw;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Ljkh;
+.implements Llie;
 
 
 # instance fields
-.field private final a:Ljln;
+.field public final synthetic a:Ljlz;
+
+.field public final synthetic b:Ljlu;
+
+.field public final synthetic c:Ljmg;
 
 
 # direct methods
-.method public constructor <init>(Ljln;)V
+.method public synthetic constructor <init>(Ljlz;Ljlu;Ljmg;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Ljlw;->a:Ljln;
+    iput-object p1, p0, Ljlw;->a:Ljlz;
+
+    iput-object p2, p0, Ljlw;->b:Ljlu;
+
+    iput-object p3, p0, Ljlw;->c:Ljmg;
 
     return-void
 .end method
 
-.method public static c(Landroid/content/Context;Ljava/util/concurrent/Executor;Ljkj;)Ljot;
-    .locals 9
-
-    new-instance v7, Lkgd;
-
-    const/4 v0, 0x0
-
-    invoke-direct {v7, v0, v0}, Lkgd;-><init>([B[B)V
-
-    new-instance v8, Ljls;
-
-    const/4 v5, 0x0
-
-    const/4 v6, 0x0
-
-    move-object v0, v8
-
-    move-object v1, p0
-
-    move-object v2, v7
-
-    move-object v3, p1
-
-    move-object v4, p2
-
-    invoke-direct/range {v0 .. v6}, Ljls;-><init>(Landroid/content/Context;Lkgd;Ljava/util/concurrent/Executor;Ljkj;[B[B)V
-
-    invoke-interface {p1, v8}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
-
-    iget-object p0, v7, Lkgd;->a:Ljava/lang/Object;
-
-    check-cast p0, Ljot;
-
-    return-object p0
-.end method
-
-.method public static d(Landroid/net/Uri;)Z
-    .locals 1
-
-    if-eqz p0, :cond_0
-
-    const-string v0, "appdir"
-
-    invoke-virtual {p0}, Landroid/net/Uri;->getScheme()Ljava/lang/String;
-
-    move-result-object p0
-
-    invoke-virtual {v0, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result p0
-
-    if-eqz p0, :cond_0
-
-    const/4 p0, 0x1
-
-    return p0
-
-    :cond_0
-    const/4 p0, 0x0
-
-    return p0
-.end method
-
 
 # virtual methods
-.method public final a()Ljot;
+.method public final close()V
     .locals 5
 
-    new-instance v0, Lkgd;
+    iget-object v0, p0, Ljlw;->a:Ljlz;
 
-    const/4 v1, 0x0
+    iget-object v1, p0, Ljlw;->b:Ljlu;
 
-    invoke-direct {v0, v1, v1}, Lkgd;-><init>([B[B)V
+    iget-object v2, p0, Ljlw;->c:Ljmg;
 
-    new-instance v2, Ljlv;
+    iget-object v3, v0, Ljlz;->l:Ljava/lang/Object;
 
-    invoke-direct {v2, v0, v1, v1}, Ljlv;-><init>(Lkgd;[B[B)V
+    monitor-enter v3
 
-    :try_start_0
-    iget-object v1, p0, Ljlw;->a:Ljln;
-
-    invoke-virtual {v1}, Lcbe;->a()Landroid/os/Parcel;
-
-    move-result-object v3
-
-    invoke-static {v3, v2}, Lcbg;->d(Landroid/os/Parcel;Landroid/os/IInterface;)V
-
-    const/4 v2, 0x4
-
-    invoke-virtual {v1, v2, v3}, Lcbe;->z(ILandroid/os/Parcel;)V
-    :try_end_0
-    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
-
-    goto :goto_0
-
-    :catch_0
-    move-exception v1
-
-    new-instance v2, Ljda;
-
-    new-instance v3, Lcom/google/android/gms/common/api/Status;
-
-    invoke-static {v1}, Lmrp;->b(Ljava/lang/Throwable;)Ljava/lang/String;
-
-    move-result-object v1
-
-    const/16 v4, 0x8
-
-    invoke-direct {v3, v4, v1}, Lcom/google/android/gms/common/api/Status;-><init>(ILjava/lang/String;)V
-
-    invoke-direct {v2, v3}, Ljda;-><init>(Lcom/google/android/gms/common/api/Status;)V
-
-    invoke-virtual {v0, v2}, Lkgd;->j(Ljava/lang/Exception;)V
-
-    :goto_0
-    iget-object v0, v0, Lkgd;->a:Ljava/lang/Object;
-
-    check-cast v0, Ljot;
-
-    return-object v0
-.end method
-
-.method public final b()Ljot;
-    .locals 5
-
-    new-instance v0, Lkgd;
-
-    const/4 v1, 0x0
-
-    invoke-direct {v0, v1, v1}, Lkgd;-><init>([B[B)V
-
-    new-instance v2, Ljlu;
-
-    invoke-direct {v2, v0, v1, v1}, Ljlu;-><init>(Lkgd;[B[B)V
+    const/4 v4, 0x1
 
     :try_start_0
-    iget-object v1, p0, Ljlw;->a:Ljln;
+    iput-boolean v4, v0, Ljlz;->k:Z
 
-    invoke-virtual {v1}, Lcbe;->a()Landroid/os/Parcel;
-
-    move-result-object v3
-
-    const/4 v4, 0x0
-
-    invoke-virtual {v3, v4}, Landroid/os/Parcel;->writeInt(I)V
-
-    invoke-static {v3, v2}, Lcbg;->d(Landroid/os/Parcel;Landroid/os/IInterface;)V
-
-    const/4 v2, 0x3
-
-    invoke-virtual {v1, v2, v3}, Lcbe;->z(ILandroid/os/Parcel;)V
+    monitor-exit v3
     :try_end_0
-    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    goto :goto_0
+    invoke-virtual {v1}, Ljlu;->close()V
 
-    :catch_0
-    move-exception v1
+    invoke-virtual {v2}, Ljmg;->close()V
 
-    new-instance v2, Ljda;
+    return-void
 
-    new-instance v3, Lcom/google/android/gms/common/api/Status;
+    :catchall_0
+    move-exception v0
 
-    invoke-static {v1}, Lmrp;->b(Ljava/lang/Throwable;)Ljava/lang/String;
+    :try_start_1
+    monitor-exit v3
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    move-result-object v1
-
-    const/16 v4, 0x8
-
-    invoke-direct {v3, v4, v1}, Lcom/google/android/gms/common/api/Status;-><init>(ILjava/lang/String;)V
-
-    invoke-direct {v2, v3}, Ljda;-><init>(Lcom/google/android/gms/common/api/Status;)V
-
-    invoke-virtual {v0, v2}, Lkgd;->j(Ljava/lang/Exception;)V
-
-    :goto_0
-    iget-object v0, v0, Lkgd;->a:Ljava/lang/Object;
-
-    check-cast v0, Ljot;
-
-    return-object v0
+    throw v0
 .end method

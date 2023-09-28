@@ -1,64 +1,169 @@
-.class final Lhnq;
-.super Lhpc;
+.class public final Lhnq;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Lhnp;
 
 
 # instance fields
-.field final synthetic a:Lhnu;
+.field private final a:Ldqx;
+
+.field private final b:[F
 
 
 # direct methods
-.method public constructor <init>(Lhnu;)V
-    .locals 0
+.method public constructor <init>(Ldqx;)V
+    .locals 1
 
-    iput-object p1, p0, Lhnq;->a:Lhnu;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0, p1}, Lhpc;-><init>(Lhpg;)V
+    const/4 v0, 0x3
+
+    new-array v0, v0, [F
+
+    iput-object v0, p0, Lhnq;->b:[F
+
+    iput-object p1, p0, Lhnq;->a:Ldqx;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final b()V
-    .locals 2
+.method public final a(Llzv;)F
+    .locals 6
 
-    iget-object v0, p0, Lhnq;->a:Lhnu;
+    sget-object v0, Landroid/hardware/camera2/CaptureResult;->SENSOR_EXPOSURE_TIME:Landroid/hardware/camera2/CaptureResult$Key;
 
-    iget-object v0, v0, Lhnu;->a:Lhiu;
+    invoke-interface {p1, v0}, Llzv;->d(Landroid/hardware/camera2/CaptureResult$Key;)Ljava/lang/Object;
 
-    invoke-virtual {v0}, Lhiu;->e()V
+    move-result-object v0
 
-    invoke-super {p0}, Lhpc;->b()V
+    check-cast v0, Ljava/lang/Long;
 
-    iget-object v0, p0, Lhnq;->a:Lhnu;
+    const/high16 v1, 0x7fc00000    # Float.NaN
 
-    iget-object v1, v0, Lhnu;->a:Lhiu;
+    if-nez v0, :cond_0
 
-    iget-object v0, v0, Lhnu;->d:Lhiw;
+    const/high16 v0, 0x7fc00000    # Float.NaN
 
-    invoke-virtual {v1, v0}, Lhiu;->g(Lhiw;)V
+    goto :goto_0
 
-    return-void
-.end method
+    :cond_0
+    invoke-virtual {v0}, Ljava/lang/Long;->longValue()J
 
-.method public final c()V
-    .locals 2
+    move-result-wide v2
 
-    iget-object v0, p0, Lhnq;->a:Lhnu;
+    long-to-float v0, v2
 
-    iget-object v0, v0, Lhnu;->a:Lhiu;
+    :goto_0
+    const v2, -0x4af9c843    # -5.0E-7f
 
-    invoke-virtual {v0}, Lhiu;->e()V
+    mul-float v0, v0, v2
 
-    invoke-super {p0}, Lhpc;->c()V
+    sget-object v2, Landroid/hardware/camera2/CaptureResult;->SENSOR_TIMESTAMP:Landroid/hardware/camera2/CaptureResult$Key;
 
-    iget-object v0, p0, Lhnq;->a:Lhnu;
+    invoke-interface {p1, v2}, Llzv;->d(Landroid/hardware/camera2/CaptureResult$Key;)Ljava/lang/Object;
 
-    iget-object v1, v0, Lhnu;->a:Lhiu;
+    move-result-object p1
 
-    iget-object v0, v0, Lhnu;->f:Lhiw;
+    check-cast p1, Ljava/lang/Long;
 
-    invoke-virtual {v1, v0}, Lhiu;->g(Lhiw;)V
+    if-nez p1, :cond_1
 
-    return-void
+    goto :goto_2
+
+    :cond_1
+    iget-object v2, p0, Lhnq;->b:[F
+
+    monitor-enter v2
+
+    :try_start_0
+    iget-object v3, p0, Lhnq;->a:Ldqx;
+
+    if-eqz v3, :cond_3
+
+    invoke-virtual {p1}, Ljava/lang/Long;->longValue()J
+
+    move-result-wide v4
+
+    invoke-interface {v3, v4, v5}, Ldqx;->c(J)Ldqu;
+
+    move-result-object p1
+
+    invoke-virtual {p1}, Ldqu;->e()Z
+
+    move-result v3
+
+    if-eqz v3, :cond_2
+
+    goto :goto_1
+
+    :cond_2
+    iget-object p1, p1, Ldqu;->a:[F
+
+    const/4 v1, 0x0
+
+    aget v1, p1, v1
+
+    mul-float v1, v1, v1
+
+    const/4 v3, 0x1
+
+    aget v3, p1, v3
+
+    mul-float v3, v3, v3
+
+    add-float/2addr v1, v3
+
+    const/4 v3, 0x2
+
+    aget p1, p1, v3
+
+    mul-float p1, p1, p1
+
+    add-float/2addr v1, p1
+
+    float-to-double v3, v1
+
+    invoke-static {v3, v4}, Ljava/lang/Math;->sqrt(D)D
+
+    move-result-wide v3
+
+    double-to-float p1, v3
+
+    move v1, p1
+
+    :goto_1
+    monitor-exit v2
+
+    goto :goto_2
+
+    :cond_3
+    monitor-exit v2
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    :goto_2
+    mul-float v0, v0, v1
+
+    float-to-double v0, v0
+
+    invoke-static {v0, v1}, Ljava/lang/Math;->exp(D)D
+
+    move-result-wide v0
+
+    double-to-float p1, v0
+
+    return p1
+
+    :catchall_0
+    move-exception p1
+
+    :try_start_1
+    monitor-exit v2
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    throw p1
 .end method

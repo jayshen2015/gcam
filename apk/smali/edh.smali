@@ -1,22 +1,55 @@
 .class final Ledh;
 .super Ljava/lang/Object;
 
+# interfaces
+.implements Ljava/lang/Runnable;
 
-# static fields
-.field public static final a:Lnak;
+
+# instance fields
+.field final synthetic a:Ledi;
+
+.field private final b:Z
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
+.method public constructor <init>(Ledi;Z)V
+    .locals 0
 
-    const-string v0, "com/google/android/apps/camera/hdrplus/PecanInitializer"
+    iput-object p1, p0, Ledh;->a:Ledi;
 
-    invoke-static {v0}, Lnak;->h(Ljava/lang/String;)Lnak;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    move-result-object v0
-
-    sput-object v0, Ledh;->a:Lnak;
+    iput-boolean p2, p0, Ledh;->b:Z
 
     return-void
+.end method
+
+
+# virtual methods
+.method public final run()V
+    .locals 3
+
+    iget-object v0, p0, Ledh;->a:Ledi;
+
+    monitor-enter v0
+
+    :try_start_0
+    iget-object v1, p0, Ledh;->a:Ledi;
+
+    iget-boolean v2, p0, Ledh;->b:Z
+
+    iput-boolean v2, v1, Ledi;->a:Z
+
+    monitor-exit v0
+
+    return-void
+
+    :catchall_0
+    move-exception v1
+
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw v1
 .end method

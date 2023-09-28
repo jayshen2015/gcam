@@ -1,39 +1,22 @@
-.class public final synthetic Lgik;
+.class public final Lgik;
 .super Ljava/lang/Object;
-
-# interfaces
-.implements Lgnj;
 
 
 # static fields
-.field public static final synthetic a:Lgik;
+.field public static final a:Lgfp;
 
 
 # direct methods
-.method static synthetic constructor <clinit>()V
-    .locals 1
+.method static constructor <clinit>()V
+    .locals 2
 
-    new-instance v0, Lgik;
+    new-instance v0, Lgfp;
 
-    invoke-direct {v0}, Lgik;-><init>()V
+    const/16 v1, 0xe
 
-    sput-object v0, Lgik;->a:Lgik;
+    invoke-direct {v0, v1}, Lgfp;-><init>(I)V
 
-    return-void
-.end method
-
-.method private synthetic constructor <init>()V
-    .locals 0
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
-.end method
-
-
-# virtual methods
-.method public final a()V
-    .locals 0
+    sput-object v0, Lgik;->a:Lgfp;
 
     return-void
 .end method

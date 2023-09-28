@@ -6,17 +6,17 @@
 
 
 # virtual methods
-.method public abstract a(Lj$/time/temporal/Temporal;Lj$/time/temporal/TemporalUnit;)J
+.method public abstract minus(JLj$/time/temporal/TemporalUnit;)Lj$/time/temporal/Temporal;
 .end method
 
-.method public abstract c(JLj$/time/temporal/l;)Lj$/time/temporal/Temporal;
+.method public abstract plus(JLj$/time/temporal/TemporalUnit;)Lj$/time/temporal/Temporal;
 .end method
 
-.method public abstract e(JLj$/time/temporal/ChronoUnit;)Lj$/time/temporal/Temporal;
+.method public abstract until(Lj$/time/temporal/Temporal;Lj$/time/temporal/TemporalUnit;)J
 .end method
 
-.method public abstract i(Lj$/time/g;)Lj$/time/temporal/Temporal;
+.method public abstract with(Lj$/time/temporal/TemporalAdjuster;)Lj$/time/temporal/Temporal;
 .end method
 
-.method public abstract l(JLj$/time/temporal/TemporalUnit;)Lj$/time/temporal/Temporal;
+.method public abstract with(Lj$/time/temporal/TemporalField;J)Lj$/time/temporal/Temporal;
 .end method

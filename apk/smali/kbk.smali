@@ -2,7 +2,7 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lkbw;
+.implements Lihs;
 
 
 # direct methods
@@ -22,19 +22,97 @@
     return-void
 .end method
 
-.method public final b()V
+.method public b()V
     .locals 0
 
     return-void
 .end method
 
-.method public c(Lkbo;)V
+.method public c()V
     .locals 0
 
     return-void
 .end method
 
-.method public d(Lkoo;)V
+.method public d()V
+    .locals 0
+
+    return-void
+.end method
+
+.method public synthetic f()V
+    .locals 0
+
+    return-void
+.end method
+
+.method public synthetic g()V
+    .locals 0
+
+    return-void
+.end method
+
+.method public gu()V
+    .locals 0
+
+    return-void
+.end method
+
+.method public synthetic h()V
+    .locals 0
+
+    return-void
+.end method
+
+.method public i()V
+    .locals 0
+
+    return-void
+.end method
+
+.method public j(I)V
+    .locals 0
+
+    return-void
+.end method
+
+.method public k()V
+    .locals 0
+
+    return-void
+.end method
+
+.method public l(Z)V
+    .locals 0
+
+    return-void
+.end method
+
+.method public m(FI)V
+    .locals 0
+
+    return-void
+.end method
+
+.method public n()V
+    .locals 0
+
+    return-void
+.end method
+
+.method public o()V
+    .locals 0
+
+    return-void
+.end method
+
+.method public p()V
+    .locals 0
+
+    return-void
+.end method
+
+.method public q(F)V
     .locals 0
 
     return-void

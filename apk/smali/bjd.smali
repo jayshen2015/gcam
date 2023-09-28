@@ -2,60 +2,56 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lbjc;
+.implements Lbjg;
 
 
 # instance fields
-.field public final a:Landroid/graphics/Path$FillType;
-
-.field public final b:Lbiq;
-
-.field public final c:Lbir;
-
-.field public final d:Lbit;
-
-.field public final e:Lbit;
-
-.field public final f:Ljava/lang/String;
-
-.field public final g:Z
-
-.field public final h:I
+.field private final a:Landroid/graphics/Bitmap$CompressFormat;
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/String;ILandroid/graphics/Path$FillType;Lbiq;Lbir;Lbit;Lbit;Z)V
-    .locals 0
+.method public constructor <init>()V
+    .locals 1
+
+    sget-object v0, Landroid/graphics/Bitmap$CompressFormat;->JPEG:Landroid/graphics/Bitmap$CompressFormat;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput p2, p0, Lbjd;->h:I
-
-    iput-object p3, p0, Lbjd;->a:Landroid/graphics/Path$FillType;
-
-    iput-object p4, p0, Lbjd;->b:Lbiq;
-
-    iput-object p5, p0, Lbjd;->c:Lbir;
-
-    iput-object p6, p0, Lbjd;->d:Lbit;
-
-    iput-object p7, p0, Lbjd;->e:Lbit;
-
-    iput-object p1, p0, Lbjd;->f:Ljava/lang/String;
-
-    iput-boolean p8, p0, Lbjd;->g:Z
+    iput-object v0, p0, Lbjd;->a:Landroid/graphics/Bitmap$CompressFormat;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Lbgj;Lbjq;)Lbgw;
-    .locals 1
+.method public final a(Lbcl;Lazt;)Lbcl;
+    .locals 3
 
-    new-instance v0, Lbhb;
+    new-instance p2, Ljava/io/ByteArrayOutputStream;
 
-    invoke-direct {v0, p1, p2, p0}, Lbhb;-><init>(Lbgj;Lbjq;Lbjd;)V
+    invoke-direct {p2}, Ljava/io/ByteArrayOutputStream;-><init>()V
 
-    return-object v0
+    invoke-interface {p1}, Lbcl;->c()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/graphics/Bitmap;
+
+    iget-object v1, p0, Lbjd;->a:Landroid/graphics/Bitmap$CompressFormat;
+
+    const/16 v2, 0x64
+
+    invoke-virtual {v0, v1, v2, p2}, Landroid/graphics/Bitmap;->compress(Landroid/graphics/Bitmap$CompressFormat;ILjava/io/OutputStream;)Z
+
+    invoke-interface {p1}, Lbcl;->e()V
+
+    new-instance p1, Lbii;
+
+    invoke-virtual {p2}, Ljava/io/ByteArrayOutputStream;->toByteArray()[B
+
+    move-result-object p2
+
+    invoke-direct {p1, p2}, Lbii;-><init>([B)V
+
+    return-object p1
 .end method

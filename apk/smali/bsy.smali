@@ -1,84 +1,80 @@
-.class final Lbsy;
+.class public final Lbsy;
 .super Ljava/lang/Object;
 
 
 # instance fields
-.field final a:Ljava/lang/Object;
-
-.field public b:Ljava/util/List;
-
-.field c:Lbsy;
-
-.field d:Lbsy;
+.field public final a:Lcom/google/googlex/gcam/FloatDeque;
 
 
 # direct methods
-.method constructor <init>()V
-    .locals 1
+.method public constructor <init>()V
+    .locals 4
 
-    const/4 v0, 0x0
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0, v0}, Lbsy;-><init>(Ljava/lang/Object;)V
+    new-instance v0, Lcom/google/googlex/gcam/FloatDeque;
+
+    invoke-static {}, Lcom/google/googlex/gcam/GcamModuleJNI;->new_FloatDeque__SWIG_0()J
+
+    move-result-wide v1
+
+    const/4 v3, 0x1
+
+    invoke-direct {v0, v1, v2, v3}, Lcom/google/googlex/gcam/FloatDeque;-><init>(JZ)V
+
+    iput-object v0, p0, Lbsy;->a:Lcom/google/googlex/gcam/FloatDeque;
 
     return-void
 .end method
 
-.method public constructor <init>(Ljava/lang/Object;)V
+.method public constructor <init>(Lcom/google/googlex/gcam/FloatDeque;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p0, p0, Lbsy;->d:Lbsy;
-
-    iput-object p0, p0, Lbsy;->c:Lbsy;
-
-    iput-object p1, p0, Lbsy;->a:Ljava/lang/Object;
+    iput-object p1, p0, Lbsy;->a:Lcom/google/googlex/gcam/FloatDeque;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()I
-    .locals 1
+.method public final a(I)F
+    .locals 3
 
-    iget-object v0, p0, Lbsy;->b:Ljava/util/List;
+    iget-object v0, p0, Lbsy;->a:Lcom/google/googlex/gcam/FloatDeque;
 
-    if-eqz v0, :cond_0
+    iget-wide v1, v0, Lcom/google/googlex/gcam/FloatDeque;->a:J
 
-    invoke-interface {v0}, Ljava/util/List;->size()I
+    invoke-static {v1, v2, v0, p1}, Lcom/google/googlex/gcam/GcamModuleJNI;->FloatDeque_getitem(JLcom/google/googlex/gcam/FloatDeque;I)F
 
-    move-result v0
+    move-result p1
 
-    return v0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    return v0
+    return p1
 .end method
 
-.method public final b()Ljava/lang/Object;
-    .locals 2
+.method public final b()J
+    .locals 3
 
-    invoke-virtual {p0}, Lbsy;->a()I
+    iget-object v0, p0, Lbsy;->a:Lcom/google/googlex/gcam/FloatDeque;
 
-    move-result v0
+    iget-wide v1, v0, Lcom/google/googlex/gcam/FloatDeque;->a:J
 
-    if-lez v0, :cond_0
+    invoke-static {v1, v2, v0}, Lcom/google/googlex/gcam/GcamModuleJNI;->FloatDeque_size(JLcom/google/googlex/gcam/FloatDeque;)J
 
-    iget-object v1, p0, Lbsy;->b:Ljava/util/List;
+    move-result-wide v0
 
-    add-int/lit8 v0, v0, -0x1
+    return-wide v0
+.end method
 
-    invoke-interface {v1, v0}, Ljava/util/List;->remove(I)Ljava/lang/Object;
+.method public final c(F)V
+    .locals 3
 
-    move-result-object v0
+    iget-object v0, p0, Lbsy;->a:Lcom/google/googlex/gcam/FloatDeque;
 
-    return-object v0
+    iget-wide v1, v0, Lcom/google/googlex/gcam/FloatDeque;->a:J
 
-    :cond_0
-    const/4 v0, 0x0
+    invoke-static {v1, v2, v0, p1}, Lcom/google/googlex/gcam/GcamModuleJNI;->FloatDeque_push_back(JLcom/google/googlex/gcam/FloatDeque;F)V
 
-    return-object v0
+    return-void
 .end method

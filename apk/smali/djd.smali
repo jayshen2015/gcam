@@ -1,90 +1,49 @@
-.class public final Ldjd;
-.super Ldjp;
+.class public final synthetic Ldjd;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Landroid/preference/Preference$OnPreferenceChangeListener;
 
 
-# static fields
-.field public static final CREATOR:Landroid/os/Parcelable$Creator;
+# instance fields
+.field public final synthetic a:Ldjh;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
-
-    new-instance v0, Lob;
-
-    const/16 v1, 0x10
-
-    invoke-direct {v0, v1}, Lob;-><init>(I)V
-
-    sput-object v0, Ldjd;->CREATOR:Landroid/os/Parcelable$Creator;
-
-    return-void
-.end method
-
-.method public constructor <init>(JLgxy;Lmvv;Ljava/lang/String;Ljava/lang/String;Lj$/time/Instant;Lj$/time/Instant;Landroid/net/Uri;ZLkaf;I)V
+.method public synthetic constructor <init>(Ldjh;)V
     .locals 0
 
-    invoke-direct/range {p0 .. p12}, Ldjp;-><init>(JLgxy;Lmvv;Ljava/lang/String;Ljava/lang/String;Lj$/time/Instant;Lj$/time/Instant;Landroid/net/Uri;ZLkaf;I)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Ldjd;->a:Ldjh;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final describeContents()I
+.method public final onPreferenceChange(Landroid/preference/Preference;Ljava/lang/Object;)Z
     .locals 1
 
-    const/4 v0, 0x0
+    iget-object v0, p0, Ldjd;->a:Ldjh;
 
-    return v0
-.end method
+    check-cast p2, Ljava/lang/String;
 
-.method public final writeToParcel(Landroid/os/Parcel;I)V
-    .locals 2
+    invoke-virtual {p1, p2}, Landroid/preference/Preference;->setSummary(Ljava/lang/CharSequence;)V
 
-    iget-wide v0, p0, Ldjp;->b:J
+    iget-object p1, v0, Ldjh;->b:Landroid/content/SharedPreferences;
 
-    invoke-virtual {p1, v0, v1}, Landroid/os/Parcel;->writeLong(J)V
+    invoke-interface {p1}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
 
-    iget-object v0, p0, Ldjp;->c:Lgxy;
+    move-result-object p1
 
-    invoke-virtual {p1, v0, p2}, Landroid/os/Parcel;->writeParcelable(Landroid/os/Parcelable;I)V
+    const-string v0, "camera.onscreen_logcat_filter"
 
-    iget-object v0, p0, Ldjp;->d:Lmvv;
+    invoke-interface {p1, v0, p2}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
 
-    invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeList(Ljava/util/List;)V
+    invoke-interface {p1}, Landroid/content/SharedPreferences$Editor;->apply()V
 
-    iget-object v0, p0, Ldjp;->e:Ljava/lang/String;
+    const/4 p1, 0x1
 
-    invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
-
-    iget-object v0, p0, Ldjp;->f:Ljava/lang/String;
-
-    invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
-
-    iget-object v0, p0, Ldjp;->g:Lj$/time/Instant;
-
-    invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeSerializable(Ljava/io/Serializable;)V
-
-    iget-object v0, p0, Ldjp;->h:Lj$/time/Instant;
-
-    invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeSerializable(Ljava/io/Serializable;)V
-
-    iget-object v0, p0, Ldjp;->i:Landroid/net/Uri;
-
-    invoke-virtual {p1, v0, p2}, Landroid/os/Parcel;->writeParcelable(Landroid/os/Parcelable;I)V
-
-    iget-boolean p2, p0, Ldjp;->j:Z
-
-    invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeInt(I)V
-
-    iget-object p2, p0, Ldjp;->k:Lkaf;
-
-    invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeSerializable(Ljava/io/Serializable;)V
-
-    iget p2, p0, Ldjp;->l:I
-
-    invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeInt(I)V
-
-    return-void
+    return p1
 .end method

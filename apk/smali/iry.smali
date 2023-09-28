@@ -1,418 +1,204 @@
-.class public final synthetic Liry;
-.super Ljava/lang/Object;
-
-# interfaces
-.implements Landroid/view/View$OnTouchListener;
+.class public final Liry;
+.super Liru;
 
 
 # instance fields
-.field public final synthetic a:Lisi;
-
-.field public final synthetic b:Ljava/util/concurrent/atomic/AtomicBoolean;
-
-.field public final synthetic c:Ljava/util/concurrent/atomic/AtomicBoolean;
-
-.field public final synthetic d:Landroid/view/GestureDetector;
+.field final synthetic d:Lirz;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lisi;Ljava/util/concurrent/atomic/AtomicBoolean;Ljava/util/concurrent/atomic/AtomicBoolean;Landroid/view/GestureDetector;)V
+.method public constructor <init>(Lirz;Landroid/content/Context;Lirr;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Liry;->d:Lirz;
 
-    iput-object p1, p0, Liry;->a:Lisi;
-
-    iput-object p2, p0, Liry;->b:Ljava/util/concurrent/atomic/AtomicBoolean;
-
-    iput-object p3, p0, Liry;->c:Ljava/util/concurrent/atomic/AtomicBoolean;
-
-    iput-object p4, p0, Liry;->d:Landroid/view/GestureDetector;
+    invoke-direct {p0, p2, p3}, Liru;-><init>(Landroid/content/Context;Lirr;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onTouch(Landroid/view/View;Landroid/view/MotionEvent;)Z
-    .locals 10
+.method protected final onLayout(ZIIII)V
+    .locals 1
 
-    iget-object v0, p0, Liry;->a:Lisi;
+    invoke-super/range {p0 .. p5}, Liru;->onLayout(ZIIII)V
 
-    iget-object v1, p0, Liry;->b:Ljava/util/concurrent/atomic/AtomicBoolean;
+    if-eqz p1, :cond_1
 
-    iget-object v2, p0, Liry;->c:Ljava/util/concurrent/atomic/AtomicBoolean;
+    iget-object p1, p0, Liry;->d:Lirz;
 
-    iget-object v3, p0, Liry;->d:Landroid/view/GestureDetector;
+    iget-object p1, p1, Lirz;->t:Llie;
 
-    iget-object v4, v0, Lisi;->O:Lcom/google/android/apps/camera/zoomui/view/ZoomUi;
+    invoke-interface {p1}, Llie;->close()V
 
-    invoke-virtual {v4}, Lcom/google/android/apps/camera/zoomui/view/ZoomUi;->D()Z
+    iget-object p1, p0, Liry;->d:Lirz;
 
-    move-result v4
+    iget-object p2, p1, Lirz;->o:Lirr;
 
-    const/4 v5, 0x0
-
-    if-nez v4, :cond_0
-
-    iget-boolean v4, v0, Lisi;->T:Z
-
-    if-nez v4, :cond_0
-
-    goto/16 :goto_2
-
-    :cond_0
-    invoke-virtual {p2}, Landroid/view/MotionEvent;->getAction()I
-
-    move-result v4
-
-    const/4 v6, 0x1
-
-    if-ne v4, v6, :cond_4
-
-    invoke-virtual {v1}, Ljava/util/concurrent/atomic/AtomicBoolean;->get()Z
-
-    move-result v4
-
-    if-eqz v4, :cond_1
-
-    invoke-virtual {v1, v5}, Ljava/util/concurrent/atomic/AtomicBoolean;->set(Z)V
-
-    goto/16 :goto_2
-
-    :cond_1
-    invoke-virtual {v2}, Ljava/util/concurrent/atomic/AtomicBoolean;->get()Z
-
-    move-result v4
-
-    if-eqz v4, :cond_2
-
-    invoke-virtual {v2, v5}, Ljava/util/concurrent/atomic/AtomicBoolean;->set(Z)V
-
-    :cond_2
-    iget-boolean v4, v0, Lisi;->U:Z
-
-    if-eqz v4, :cond_3
-
-    iget-object v4, v0, Lisi;->E:Lita;
-
-    invoke-virtual {v4}, Lisk;->cq()V
-
-    iget-object v4, v0, Lisi;->K:Lcom/google/android/apps/camera/zoomui/view/ZoomKnob;
-
-    invoke-virtual {v4, v5}, Lcom/google/android/apps/camera/zoomui/view/ZoomKnob;->c(Z)V
-
-    iput-boolean v5, v0, Lisi;->U:Z
-
-    :cond_3
-    iget-object v4, v0, Lisi;->r:Ljava/lang/Runnable;
-
-    const-wide/16 v7, 0x64
-
-    invoke-virtual {p1, v4, v7, v8}, Landroid/view/View;->postDelayed(Ljava/lang/Runnable;J)Z
-
-    iget-object v4, v0, Lisi;->s:Ljava/lang/Runnable;
-
-    invoke-virtual {p1, v4}, Landroid/view/View;->removeCallbacks(Ljava/lang/Runnable;)Z
-
-    iget-object v4, v0, Lisi;->q:Ljava/util/concurrent/atomic/AtomicBoolean;
-
-    invoke-virtual {v4, v6}, Ljava/util/concurrent/atomic/AtomicBoolean;->set(Z)V
-
-    const/4 v4, 0x0
-
-    iput v4, v0, Lisi;->ab:F
-
-    :cond_4
-    invoke-virtual {v3, p2}, Landroid/view/GestureDetector;->onTouchEvent(Landroid/view/MotionEvent;)Z
-
-    invoke-virtual {p2}, Landroid/view/MotionEvent;->getAction()I
-
-    move-result v3
-
-    const-wide/16 v7, 0x1
-
-    if-nez v3, :cond_6
-
-    iget-object v3, v0, Lisi;->v:Lmqp;
-
-    invoke-virtual {v3}, Lmqp;->g()Z
-
-    move-result v3
-
-    if-eqz v3, :cond_5
-
-    iget-object v3, v0, Lisi;->v:Lmqp;
-
-    invoke-virtual {v3}, Lmqp;->c()Ljava/lang/Object;
-
-    move-result-object v3
-
-    check-cast v3, Ljava/lang/Integer;
-
-    invoke-virtual {v3}, Ljava/lang/Integer;->intValue()I
-
-    move-result v3
-
-    int-to-long v3, v3
-
-    goto :goto_0
-
-    :cond_5
-    const-wide/16 v3, 0x190
-
-    :goto_0
-    iget-object v9, v0, Lisi;->s:Ljava/lang/Runnable;
-
-    invoke-virtual {p1, v9, v3, v4}, Landroid/view/View;->postDelayed(Ljava/lang/Runnable;J)Z
-
-    invoke-static {p2}, Landroid/view/MotionEvent;->obtain(Landroid/view/MotionEvent;)Landroid/view/MotionEvent;
-
-    move-result-object v3
-
-    invoke-virtual {v3, v6}, Landroid/view/MotionEvent;->setAction(I)V
-
-    invoke-virtual {v1, v6}, Ljava/util/concurrent/atomic/AtomicBoolean;->set(Z)V
-
-    new-instance v1, Lioi;
-
-    const/4 v4, 0x3
-
-    invoke-direct {v1, v0, v3, v4}, Lioi;-><init>(Lisi;Landroid/view/MotionEvent;I)V
-
-    invoke-virtual {p1, v1, v7, v8}, Landroid/view/View;->postDelayed(Ljava/lang/Runnable;J)Z
-
-    iget-object v1, v0, Lisi;->q:Ljava/util/concurrent/atomic/AtomicBoolean;
-
-    invoke-virtual {v1, v5}, Ljava/util/concurrent/atomic/AtomicBoolean;->set(Z)V
-
-    new-instance v1, Landroid/graphics/PointF;
-
-    invoke-virtual {p2}, Landroid/view/MotionEvent;->getRawX()F
-
-    move-result v3
-
-    invoke-virtual {p2}, Landroid/view/MotionEvent;->getRawY()F
-
-    move-result v4
-
-    invoke-direct {v1, v3, v4}, Landroid/graphics/PointF;-><init>(FF)V
-
-    iput-object v1, v0, Lisi;->Q:Landroid/graphics/PointF;
-
-    :cond_6
-    invoke-virtual {p2}, Landroid/view/MotionEvent;->getAction()I
-
-    move-result v1
-
-    const/4 v3, 0x2
-
-    if-ne v1, v3, :cond_9
-
-    iget-boolean v1, v0, Lisi;->T:Z
-
-    if-nez v1, :cond_9
-
-    invoke-virtual {v0, p2}, Lisi;->i(Landroid/view/MotionEvent;)F
-
-    move-result v1
-
-    iget-object v4, v0, Lisi;->K:Lcom/google/android/apps/camera/zoomui/view/ZoomKnob;
-
-    invoke-virtual {v4}, Lcom/google/android/apps/camera/zoomui/view/ZoomKnob;->getWidth()I
-
-    move-result v4
-
-    int-to-float v4, v4
-
-    const/high16 v9, 0x40000000    # 2.0f
-
-    div-float/2addr v4, v9
-
-    cmpl-float v1, v1, v4
-
-    if-gtz v1, :cond_7
-
-    invoke-virtual {v0, p2}, Lisi;->i(Landroid/view/MotionEvent;)F
-
-    move-result v1
-
-    iget-object v4, v0, Lisi;->K:Lcom/google/android/apps/camera/zoomui/view/ZoomKnob;
-
-    invoke-virtual {v4}, Lcom/google/android/apps/camera/zoomui/view/ZoomKnob;->getWidth()I
-
-    move-result v4
-
-    int-to-float v4, v4
-
-    div-float/2addr v4, v9
-
-    neg-float v4, v4
-
-    cmpg-float v1, v1, v4
-
-    if-gez v1, :cond_9
-
-    :cond_7
-    iget-object v1, v0, Lisi;->s:Ljava/lang/Runnable;
-
-    invoke-virtual {p1, v1}, Landroid/view/View;->removeCallbacks(Ljava/lang/Runnable;)Z
-
-    iget-boolean v1, v0, Lisi;->Y:Z
-
-    if-eqz v1, :cond_8
-
-    iget-object p2, v0, Lisi;->s:Ljava/lang/Runnable;
-
-    invoke-virtual {p1, p2, v7, v8}, Landroid/view/View;->postDelayed(Ljava/lang/Runnable;J)Z
-
-    const/4 v5, 0x1
-
-    goto/16 :goto_2
-
-    :cond_8
-    iget-object v1, v0, Lisi;->q:Ljava/util/concurrent/atomic/AtomicBoolean;
-
-    invoke-virtual {v1, v6}, Ljava/util/concurrent/atomic/AtomicBoolean;->set(Z)V
-
-    :cond_9
-    invoke-virtual {p2}, Landroid/view/MotionEvent;->getAction()I
-
-    move-result v1
-
-    if-ne v1, v3, :cond_d
-
-    iget-boolean v1, v0, Lisi;->T:Z
-
-    if-eqz v1, :cond_d
-
-    iget-boolean v1, v0, Lisi;->Y:Z
-
-    const/high16 v3, 0x41f00000    # 30.0f
-
-    if-eqz v1, :cond_c
-
-    invoke-virtual {v2}, Ljava/util/concurrent/atomic/AtomicBoolean;->get()Z
-
-    move-result v1
-
-    if-nez v1, :cond_a
-
-    iget-object v1, v0, Lisi;->P:Lirs;
-
-    invoke-virtual {v1}, Lirs;->f()V
-
-    invoke-static {p2}, Landroid/view/MotionEvent;->obtain(Landroid/view/MotionEvent;)Landroid/view/MotionEvent;
-
-    move-result-object v1
-
-    invoke-virtual {v1, v5}, Landroid/view/MotionEvent;->setAction(I)V
-
-    invoke-virtual {p2}, Landroid/view/MotionEvent;->getX()F
-
-    move-result v3
-
-    invoke-virtual {p2}, Landroid/view/MotionEvent;->getY()F
+    invoke-virtual {p2}, Lirr;->getProgress()I
 
     move-result p2
 
-    invoke-virtual {v1, v3, p2}, Landroid/view/MotionEvent;->setLocation(FF)V
+    iget-object p3, p1, Lirz;->o:Lirr;
 
-    new-instance p2, Lioi;
+    invoke-virtual {p3, p2}, Lirr;->c(I)Liqm;
 
-    const/4 v3, 0x5
+    move-result-object p2
 
-    invoke-direct {p2, v0, v1, v3}, Lioi;-><init>(Lisi;Landroid/view/MotionEvent;I)V
+    invoke-virtual {p1, p2}, Lirz;->a(Liqm;)Ljava/lang/String;
 
-    invoke-virtual {p1, p2, v7, v8}, Landroid/view/View;->postDelayed(Ljava/lang/Runnable;J)Z
+    move-result-object p3
 
-    invoke-virtual {v2, v6}, Ljava/util/concurrent/atomic/AtomicBoolean;->set(Z)V
+    invoke-virtual {p1, p2}, Lirz;->a(Liqm;)Ljava/lang/String;
+
+    move-result-object p2
+
+    iget-object p4, p1, Lirz;->q:Liru;
+
+    if-eqz p4, :cond_1
+
+    iget-object p4, p1, Lirz;->a:Ljava/util/concurrent/atomic/AtomicBoolean;
+
+    invoke-virtual {p4}, Ljava/util/concurrent/atomic/AtomicBoolean;->get()Z
+
+    move-result p4
+
+    if-nez p4, :cond_0
+
+    goto/16 :goto_1
+
+    :cond_0
+    iget-object p4, p1, Lirz;->i:Landroid/view/WindowManager;
+
+    invoke-interface {p4}, Landroid/view/WindowManager;->getDefaultDisplay()Landroid/view/Display;
+
+    move-result-object p4
+
+    iget-object p5, p1, Lirz;->c:Landroid/content/Context;
+
+    invoke-static {p4, p5}, Ljrz;->a(Landroid/view/Display;Landroid/content/Context;)Ljrz;
+
+    move-result-object p4
+
+    iget-object p5, p1, Lirz;->g:Landroid/content/res/Resources;
+
+    const v0, 0x7f070563
+
+    invoke-virtual {p5, v0}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
+
+    move-result p5
+
+    invoke-virtual {p4}, Ljrz;->ordinal()I
+
+    move-result p4
+
+    packed-switch p4, :pswitch_data_0
 
     goto :goto_1
 
-    :cond_a
-    invoke-virtual {v0, p2}, Lisi;->i(Landroid/view/MotionEvent;)F
+    :pswitch_0
+    new-instance p4, Ljlz;
 
-    move-result v1
+    invoke-direct {p4, p3}, Ljlz;-><init>(Ljava/lang/String;)V
 
-    invoke-static {v1}, Ljava/lang/Math;->abs(F)F
+    iget-object p3, p1, Lirz;->q:Liru;
 
-    move-result v1
+    invoke-virtual {p4, p3, p5}, Ljlz;->h(Landroid/view/View;I)V
 
-    cmpl-float v1, v1, v3
+    invoke-interface {p4}, Ljma;->k()V
 
-    if-lez v1, :cond_b
+    goto :goto_0
 
-    invoke-virtual {v0}, Lisi;->A()V
+    :pswitch_1
+    new-instance p4, Ljlz;
 
-    invoke-virtual {p2}, Landroid/view/MotionEvent;->getX()F
+    invoke-direct {p4, p3}, Ljlz;-><init>(Ljava/lang/String;)V
 
-    move-result v1
+    iget-object p3, p1, Lirz;->q:Liru;
 
-    iget v2, v0, Lisi;->ab:F
+    invoke-virtual {p4, p3, p5}, Ljlz;->l(Landroid/view/View;I)V
 
-    sub-float/2addr v1, v2
+    invoke-interface {p4}, Ljma;->j()V
 
-    invoke-virtual {p2}, Landroid/view/MotionEvent;->getY()F
+    goto :goto_0
 
-    move-result v2
+    :pswitch_2
+    new-instance p4, Ljlz;
 
-    invoke-virtual {p2, v1, v2}, Landroid/view/MotionEvent;->setLocation(FF)V
+    invoke-direct {p4, p3}, Ljlz;-><init>(Ljava/lang/String;)V
 
-    new-instance v1, Lioi;
+    iget-object p3, p1, Lirz;->q:Liru;
 
-    const/4 v2, 0x6
+    invoke-virtual {p4, p3}, Ljlz;->s(Landroid/view/View;)V
 
-    invoke-direct {v1, v0, p2, v2}, Lioi;-><init>(Lisi;Landroid/view/MotionEvent;I)V
+    invoke-interface {p4}, Ljma;->i()V
 
-    invoke-virtual {p1, v1, v7, v8}, Landroid/view/View;->postDelayed(Ljava/lang/Runnable;J)Z
+    :goto_0
+    iget-object p3, p1, Lirz;->g:Landroid/content/res/Resources;
 
-    :cond_b
+    const p5, 0x7f06035c
+
+    const/4 v0, 0x0
+
+    invoke-virtual {p3, p5, v0}, Landroid/content/res/Resources;->getColor(ILandroid/content/res/Resources$Theme;)I
+
+    move-result p3
+
+    iput p3, p4, Ljlz;->j:I
+
+    invoke-interface {p4}, Ljmc;->o()V
+
+    const/4 p3, 0x1
+
+    iput-boolean p3, p4, Ljlz;->f:Z
+
+    const/16 p3, 0x12c
+
+    iput p3, p4, Ljlz;->c:I
+
+    const/16 p3, 0xce4
+
+    iput p3, p4, Ljlz;->d:I
+
+    const/4 p3, 0x5
+
+    iput p3, p4, Ljlz;->m:I
+
+    const/4 p3, 0x0
+
+    iput-boolean p3, p4, Ljlz;->e:Z
+
+    iget-object p3, p1, Lirz;->h:Lelw;
+
+    iput-object p3, p4, Ljlz;->i:Lelw;
+
+    invoke-interface {p4}, Ljmc;->a()Llie;
+
+    move-result-object p3
+
+    iput-object p3, p1, Lirz;->t:Llie;
+
+    iget-object p3, p1, Lirz;->q:Liru;
+
+    invoke-virtual {p3, p2}, Liru;->announceForAccessibility(Ljava/lang/CharSequence;)V
+
+    iget-object p2, p1, Lirz;->e:Llap;
+
+    iget-object p1, p1, Lirz;->t:Llie;
+
+    invoke-virtual {p2, p1}, Llap;->c(Llie;)V
+
+    return-void
+
+    :cond_1
     :goto_1
-    invoke-virtual {v0}, Lisi;->m()V
+    return-void
 
-    const/4 v5, 0x1
-
-    goto :goto_2
-
-    :cond_c
-    invoke-virtual {v0, p2}, Lisi;->i(Landroid/view/MotionEvent;)F
-
-    move-result p1
-
-    invoke-static {p1}, Ljava/lang/Math;->abs(F)F
-
-    move-result p1
-
-    cmpl-float p1, p1, v3
-
-    if-lez p1, :cond_d
-
-    invoke-virtual {v0}, Lisi;->A()V
-
-    invoke-virtual {p2}, Landroid/view/MotionEvent;->getX()F
-
-    move-result p1
-
-    iget v1, v0, Lisi;->ab:F
-
-    sub-float/2addr p1, v1
-
-    invoke-virtual {p2}, Landroid/view/MotionEvent;->getY()F
-
-    move-result v1
-
-    invoke-virtual {p2, p1, v1}, Landroid/view/MotionEvent;->setLocation(FF)V
-
-    iget-object p1, v0, Lisi;->P:Lirs;
-
-    invoke-virtual {p1}, Lirs;->f()V
-
-    goto :goto_2
-
-    :cond_d
-    iget-boolean v5, v0, Lisi;->T:Z
-
-    :goto_2
-    return v5
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method

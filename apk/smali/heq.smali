@@ -1,104 +1,133 @@
-.class final Lheq;
-.super Lhfo;
+.class public final Lheq;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Llmu;
+.implements Llie;
+
+
+# static fields
+.field public static final a:Louj;
 
 
 # instance fields
-.field final synthetic a:Lhes;
+.field public final b:Lebe;
+
+.field public final c:Lhcg;
+
+.field public final d:Llmv;
+
+.field public final e:Ljava/util/HashSet;
+
+.field public final f:Llbs;
+
+.field private final g:Lj$/util/function/Supplier;
 
 
 # direct methods
-.method public constructor <init>(Lhes;)V
+.method static constructor <clinit>()V
+    .locals 1
+
+    const-string v0, "com/google/android/apps/camera/pixelcamerakit/temporalbinning/PckTemporalBinningShunt"
+
+    invoke-static {v0}, Louj;->h(Ljava/lang/String;)Louj;
+
+    move-result-object v0
+
+    sput-object v0, Lheq;->a:Louj;
+
+    return-void
+.end method
+
+.method public constructor <init>(Lebe;Lhcg;Llbs;Lj$/util/function/Supplier;Llmv;)V
     .locals 0
 
-    iput-object p1, p0, Lheq;->a:Lhes;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0, p1}, Lhfo;-><init>(Lhfq;)V
+    iput-object p1, p0, Lheq;->b:Lebe;
+
+    iput-object p2, p0, Lheq;->c:Lhcg;
+
+    iput-object p5, p0, Lheq;->d:Llmv;
+
+    new-instance p1, Ljava/util/HashSet;
+
+    invoke-direct {p1}, Ljava/util/HashSet;-><init>()V
+
+    iput-object p1, p0, Lheq;->e:Ljava/util/HashSet;
+
+    iput-object p3, p0, Lheq;->f:Llbs;
+
+    iput-object p4, p0, Lheq;->g:Lj$/util/function/Supplier;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()V
-    .locals 2
+.method public final a(Llrr;)V
+    .locals 1
 
-    iget-object v0, p0, Lheq;->a:Lhes;
+    iget-object v0, p0, Lheq;->g:Lj$/util/function/Supplier;
 
-    iget-object v0, v0, Lhes;->a:Lhiu;
+    invoke-interface {v0}, Lj$/util/function/Supplier;->get()Ljava/lang/Object;
 
-    invoke-virtual {v0}, Lhiu;->e()V
+    move-result-object v0
 
-    invoke-super {p0}, Lhfo;->a()V
+    check-cast v0, Ljava/lang/Boolean;
 
-    iget-object v0, p0, Lheq;->a:Lhes;
+    invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
 
-    iget-object v1, v0, Lhes;->a:Lhiu;
+    move-result v0
 
-    iget-object v0, v0, Lhes;->c:Lhiw;
+    if-eqz v0, :cond_0
 
-    invoke-virtual {v1, v0}, Lhiu;->g(Lhiw;)V
+    new-instance v0, Lheo;
 
+    invoke-direct {v0, p0}, Lheo;-><init>(Lheq;)V
+
+    invoke-static {p1, v0}, Lmip;->bj(Llrr;Llnn;)V
+
+    :cond_0
     return-void
 .end method
 
-.method public final bP()Z
-    .locals 2
+.method public final close()V
+    .locals 3
 
-    iget-object v0, p0, Lheq;->a:Lhes;
+    iget-object v0, p0, Lheq;->e:Ljava/util/HashSet;
 
-    iget-object v0, v0, Lhes;->a:Lhiu;
+    invoke-virtual {v0}, Ljava/util/HashSet;->iterator()Ljava/util/Iterator;
 
-    invoke-virtual {v0}, Lhiu;->e()V
+    move-result-object v0
 
-    iget-object v0, p0, Lheq;->a:Lhes;
+    :goto_0
+    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
-    iget-object v1, v0, Lhes;->a:Lhiu;
+    move-result v1
 
-    iget-object v0, v0, Lhes;->b:Lhiw;
+    if-eqz v1, :cond_0
 
-    invoke-virtual {v1, v0}, Lhiu;->g(Lhiw;)V
+    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    const/4 v0, 0x1
+    move-result-object v1
 
-    return v0
-.end method
+    check-cast v1, Ljava/lang/Integer;
 
-.method public final k()V
-    .locals 2
+    invoke-virtual {v1}, Ljava/lang/Integer;->intValue()I
 
-    iget-object v0, p0, Lheq;->a:Lhes;
+    move-result v1
 
-    iget-object v0, v0, Lhes;->a:Lhiu;
+    iget-object v2, p0, Lheq;->b:Lebe;
 
-    invoke-virtual {v0}, Lhiu;->e()V
+    invoke-interface {v2, v1}, Lebe;->v(I)V
 
-    iget-object v0, p0, Lheq;->a:Lhes;
+    goto :goto_0
 
-    iget-object v1, v0, Lhes;->a:Lhiu;
+    :cond_0
+    iget-object v0, p0, Lheq;->e:Ljava/util/HashSet;
 
-    iget-object v0, v0, Lhes;->b:Lhiw;
-
-    invoke-virtual {v1, v0}, Lhiu;->g(Lhiw;)V
-
-    return-void
-.end method
-
-.method public final m()V
-    .locals 2
-
-    iget-object v0, p0, Lheq;->a:Lhes;
-
-    iget-object v0, v0, Lhes;->a:Lhiu;
-
-    invoke-virtual {v0}, Lhiu;->e()V
-
-    iget-object v0, p0, Lheq;->a:Lhes;
-
-    iget-object v1, v0, Lhes;->a:Lhiu;
-
-    iget-object v0, v0, Lhes;->e:Lhiw;
-
-    invoke-virtual {v1, v0}, Lhiu;->g(Lhiw;)V
+    invoke-virtual {v0}, Ljava/util/HashSet;->clear()V
 
     return-void
 .end method

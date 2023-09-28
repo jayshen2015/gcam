@@ -1,95 +1,67 @@
-.class Lhpf;
+.class public final synthetic Lhpf;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lhou;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field final synthetic b:Lhpg;
+.field public final synthetic a:Lhpj;
+
+.field private final synthetic b:I
 
 
 # direct methods
-.method public constructor <init>(Lhpg;)V
+.method public synthetic constructor <init>(Lhpj;I)V
     .locals 0
 
-    iput-object p1, p0, Lhpf;->b:Lhpg;
+    iput p2, p0, Lhpf;->b:I
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lhpf;->a:Lhpj;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a()V
-    .locals 0
+.method public final run()V
+    .locals 4
+
+    iget v0, p0, Lhpf;->b:I
+
+    packed-switch v0, :pswitch_data_0
+
+    iget-object v0, p0, Lhpf;->a:Lhpj;
+
+    iget-object v1, v0, Lhpj;->a:Landroid/hardware/SensorManager;
+
+    iget-object v2, v0, Lhpj;->d:Lhpi;
+
+    iget-object v0, v0, Lhpj;->c:Landroid/hardware/Sensor;
+
+    invoke-virtual {v1, v2, v0}, Landroid/hardware/SensorManager;->unregisterListener(Landroid/hardware/SensorEventListener;Landroid/hardware/Sensor;)V
 
     return-void
-.end method
 
-.method public b()V
-    .locals 1
+    :pswitch_0
+    iget-object v0, p0, Lhpf;->a:Lhpj;
 
-    iget-object v0, p0, Lhpf;->b:Lhpg;
+    iget-object v1, v0, Lhpj;->a:Landroid/hardware/SensorManager;
 
-    invoke-virtual {v0}, Lhpg;->j()V
+    iget-object v2, v0, Lhpj;->d:Lhpi;
 
-    return-void
-.end method
+    iget-object v0, v0, Lhpj;->c:Landroid/hardware/Sensor;
 
-.method public final synthetic c()V
-    .locals 0
+    const/4 v3, 0x3
 
-    return-void
-.end method
-
-.method public final synthetic ck()V
-    .locals 0
+    invoke-virtual {v1, v2, v0, v3}, Landroid/hardware/SensorManager;->registerListener(Landroid/hardware/SensorEventListener;Landroid/hardware/Sensor;I)Z
 
     return-void
-.end method
 
-.method public final synthetic d()V
-    .locals 0
-
-    return-void
-.end method
-
-.method public final f()V
-    .locals 3
-
-    iget-object v0, p0, Lhpf;->b:Lhpg;
-
-    iget-object v0, v0, Lhpg;->o:Litm;
-
-    move-object v1, v0
-
-    check-cast v1, Lisi;
-
-    const/4 v2, 0x0
-
-    iput-boolean v2, v1, Lisi;->V:Z
-
-    invoke-interface {v0, v2}, Litm;->r(Z)V
-
-    return-void
-.end method
-
-.method public final synthetic g()V
-    .locals 0
-
-    return-void
-.end method
-
-.method public final synthetic h()V
-    .locals 0
-
-    return-void
-.end method
-
-.method public i()V
-    .locals 0
-
-    return-void
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

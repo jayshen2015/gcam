@@ -1,113 +1,68 @@
-.class public final Lhyd;
+.class public final synthetic Lhyd;
 .super Ljava/lang/Object;
 
-
-# static fields
-.field public static final a:Lnak;
+# interfaces
+.implements Llht;
 
 
 # instance fields
-.field public final b:Lmqp;
+.field public final synthetic a:Liat;
 
-.field public c:Z
-
-.field public d:Ljwb;
+.field public final synthetic b:Liav;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
-
-    const-string v0, "com/google/android/apps/camera/ui/hotshot/HotshotViewAdapter"
-
-    invoke-static {v0}, Lnak;->h(Ljava/lang/String;)Lnak;
-
-    move-result-object v0
-
-    sput-object v0, Lhyd;->a:Lnak;
-
-    return-void
-.end method
-
-.method public constructor <init>(Landroid/view/ViewStub;Ldhi;)V
-    .locals 2
+.method public synthetic constructor <init>(Liat;Liav;)V
+    .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const/4 v0, 0x0
+    iput-object p1, p0, Lhyd;->a:Liat;
 
-    iput-boolean v0, p0, Lhyd;->c:Z
-
-    new-instance v1, Ljvk;
-
-    new-array v0, v0, [Lhyb;
-
-    invoke-direct {v1, v0}, Ljvk;-><init>(Ljava/lang/Object;)V
-
-    iput-object v1, p0, Lhyd;->d:Ljwb;
-
-    sget-object v0, Ldho;->ci:Ldhj;
-
-    invoke-interface {p2, v0}, Ldhi;->l(Ldhj;)Z
-
-    move-result p2
-
-    if-eqz p2, :cond_0
-
-    invoke-virtual {p1}, Landroid/view/ViewStub;->inflate()Landroid/view/View;
-
-    move-result-object p1
-
-    check-cast p1, Lcom/google/android/apps/camera/ui/hotshot/HotshotView;
-
-    invoke-static {p1}, Lmqp;->i(Ljava/lang/Object;)Lmqp;
-
-    move-result-object p1
-
-    :goto_0
-    iput-object p1, p0, Lhyd;->b:Lmqp;
+    iput-object p2, p0, Lhyd;->b:Liav;
 
     return-void
-
-    :cond_0
-    sget-object p1, Lmpx;->a:Lmpx;
-
-    goto :goto_0
 .end method
 
 
 # virtual methods
-.method public final a(Z)V
-    .locals 2
+.method public final a(Ljava/lang/Object;)V
+    .locals 5
 
-    iget-object v0, p0, Lhyd;->b:Lmqp;
+    iget-object v0, p0, Lhyd;->a:Liat;
 
-    invoke-virtual {v0}, Lmqp;->g()Z
+    iget-object v1, p0, Lhyd;->b:Liav;
 
-    move-result v1
+    check-cast p1, Lhza;
 
-    if-eqz v1, :cond_1
+    invoke-static {p1}, Lobr;->ao(Ljava/lang/Object;)Ljava/lang/Object;
 
-    invoke-virtual {v0}, Lmqp;->c()Ljava/lang/Object;
+    iget-object v2, p1, Lhza;->b:Llar;
 
-    move-result-object v0
+    iget-object v3, v1, Liav;->h:Lojc;
 
-    check-cast v0, Lcom/google/android/apps/camera/ui/hotshot/HotshotView;
+    invoke-virtual {v3}, Lojc;->g()Z
 
-    const/4 v1, 0x1
+    move-result v3
 
-    if-eq v1, p1, :cond_0
+    if-eqz v3, :cond_0
 
-    const/4 p1, 0x4
+    iget-object v2, v1, Liav;->h:Lojc;
 
-    goto :goto_0
+    invoke-virtual {v2}, Lojc;->c()Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Llar;
 
     :cond_0
-    const/4 p1, 0x0
+    iget-object v3, p1, Lhza;->o:Lpih;
 
-    :goto_0
-    invoke-virtual {v0, p1}, Lcom/google/android/apps/camera/ui/hotshot/HotshotView;->setVisibility(I)V
+    new-instance v4, Lhyk;
 
-    :cond_1
+    invoke-direct {v4, p1, v0, v1}, Lhyk;-><init>(Lhza;Liat;Liav;)V
+
+    invoke-virtual {v3, v4, v2}, Lpih;->d(Ljava/lang/Runnable;Ljava/util/concurrent/Executor;)V
+
     return-void
 .end method

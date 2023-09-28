@@ -1,584 +1,448 @@
-.class public final synthetic Lead;
+.class public final Lead;
 .super Ljava/lang/Object;
-
-# interfaces
-.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field public final synthetic a:Leaf;
+.field public final a:Lddf;
 
-.field public final synthetic b:Lkou;
+.field public final b:I
+
+.field public final c:I
+
+.field public final d:I
+
+.field public final e:I
+
+.field public final f:I
+
+.field public final g:Z
+
+.field public final h:F
 
 
 # direct methods
-.method public synthetic constructor <init>(Leaf;Lkou;)V
-    .locals 0
+.method public constructor <init>(Lgxm;Lddf;[B)V
+    .locals 7
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lead;->a:Leaf;
+    iput-object p2, p0, Lead;->a:Lddf;
 
-    iput-object p2, p0, Lead;->b:Lkou;
+    sget-object p3, Lddm;->h:Lddi;
 
-    return-void
-.end method
+    invoke-interface {p2, p3}, Lddf;->a(Lddi;)Lojc;
 
+    move-result-object p3
 
-# virtual methods
-.method public final run()V
-    .locals 13
+    invoke-virtual {p3}, Lojc;->c()Ljava/lang/Object;
 
-    iget-object v6, p0, Lead;->a:Leaf;
+    move-result-object p3
 
-    iget-object v7, p0, Lead;->b:Lkou;
+    check-cast p3, Ljava/lang/Integer;
 
-    monitor-enter v6
+    invoke-virtual {p3}, Ljava/lang/Integer;->intValue()I
 
-    :try_start_0
-    sget-object v0, Landroid/hardware/camera2/CaptureResult;->LOGICAL_MULTI_CAMERA_ACTIVE_PHYSICAL_ID:Landroid/hardware/camera2/CaptureResult$Key;
+    move-result p3
 
-    invoke-interface {v7, v0}, Lkou;->d(Landroid/hardware/camera2/CaptureResult$Key;)Ljava/lang/Object;
+    const/4 v0, 0x1
 
-    move-result-object v0
+    invoke-static {v0, p3}, Ljava/lang/Math;->max(II)I
 
-    check-cast v0, Ljava/lang/String;
+    move-result p3
 
-    if-eqz v0, :cond_0
+    iput p3, p0, Lead;->b:I
 
-    invoke-interface {v7}, Lkou;->g()Ljava/util/Map;
+    sget-object v1, Lddm;->g:Lddi;
 
-    move-result-object v1
-
-    invoke-interface {v1, v0}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {p2, v1}, Lddf;->a(Lddi;)Lojc;
 
     move-result-object v1
 
-    check-cast v1, Lkoq;
+    invoke-virtual {v1}, Lojc;->c()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Ljava/lang/Integer;
+
+    invoke-virtual {v1}, Ljava/lang/Integer;->intValue()I
+
+    move-result v1
+
+    invoke-interface {p2}, Lddf;->b()V
+
+    invoke-static {v0, v1}, Ljava/lang/Math;->max(II)I
+
+    move-result v1
+
+    sget-object v2, Lddm;->r:Lddi;
+
+    invoke-interface {p2, v2}, Lddf;->a(Lddi;)Lojc;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Lojc;->c()Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Ljava/lang/Integer;
+
+    invoke-virtual {v2}, Ljava/lang/Integer;->intValue()I
+
+    move-result v2
+
+    const/4 v3, 0x0
+
+    const/16 v4, 0xa
+
+    if-lt v2, v4, :cond_0
+
+    const/4 v4, 0x1
 
     goto :goto_0
 
     :cond_0
-    const/4 v1, 0x0
+    const/4 v4, 0x0
 
     :goto_0
-    if-nez v1, :cond_1
+    invoke-static {v4}, Lobr;->aQ(Z)V
 
-    move-object v1, v7
-
-    :cond_1
-    if-nez v0, :cond_2
-
-    const-string v0, "0"
-
-    :cond_2
-    move-object v8, v0
-
-    iget v0, v6, Leaf;->b:I
-
-    const/4 v2, 0x0
-
-    packed-switch v0, :pswitch_data_0
-
-    sget-object v0, Leaf;->a:Lnak;
-
-    goto/16 :goto_6
-
-    :pswitch_0
-    sget-object v0, Liuz;->r:Landroid/hardware/camera2/CaptureResult$Key;
-
-    if-eqz v0, :cond_4
-
-    sget-object v0, Liuz;->s:Landroid/hardware/camera2/CaptureResult$Key;
-
-    if-eqz v0, :cond_4
-
-    sget-object v0, Liuz;->q:Landroid/hardware/camera2/CaptureResult$Key;
-
-    invoke-interface {v1, v0}, Lkoq;->d(Landroid/hardware/camera2/CaptureResult$Key;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    move-object v9, v0
-
-    check-cast v9, [J
-
-    sget-object v0, Liuz;->r:Landroid/hardware/camera2/CaptureResult$Key;
-
-    invoke-interface {v1, v0}, Lkoq;->d(Landroid/hardware/camera2/CaptureResult$Key;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    move-object v10, v0
-
-    check-cast v10, [I
-
-    sget-object v0, Liuz;->s:Landroid/hardware/camera2/CaptureResult$Key;
-
-    invoke-interface {v1, v0}, Lkoq;->d(Landroid/hardware/camera2/CaptureResult$Key;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    move-object v11, v0
-
-    check-cast v11, [I
-
-    if-eqz v9, :cond_3
-
-    if-eqz v10, :cond_3
-
-    if-eqz v11, :cond_3
-
-    const/4 v12, 0x0
-
-    :goto_1
-    array-length v0, v9
-
-    if-ge v12, v0, :cond_c
-
-    aget-wide v1, v9, v12
-
-    aget v0, v10, v12
-
-    int-to-float v3, v0
-
-    aget v0, v11, v12
-
-    int-to-float v4, v0
-
-    move-object v0, v6
-
-    move-object v5, v8
-
-    invoke-virtual/range {v0 .. v5}, Leaf;->i(JFFLjava/lang/String;)V
-
-    add-int/lit8 v12, v12, 0x1
-
-    goto :goto_1
-
-    :cond_3
-    sget-object v0, Leaf;->a:Lnak;
-
-    invoke-virtual {v0}, Lnaf;->b()Lnaz;
-
-    move-result-object v0
-
-    const-string v1, "Null pointer for OIS data. OIS API version: 3"
-
-    const/16 v2, 0x4d9
-
-    invoke-static {v0, v1, v2}, Leab;->a(Lnaz;Ljava/lang/String;C)V
-
-    goto/16 :goto_7
-
-    :cond_4
-    sget-object v0, Leaf;->a:Lnak;
-
-    invoke-virtual {v0}, Lnaf;->b()Lnaz;
-
-    move-result-object v0
-
-    const-string v1, "Null OIS keys (version: 3)"
-
-    const/16 v2, 0x4d5
-
-    invoke-static {v0, v1, v2}, Leab;->a(Lnaz;Ljava/lang/String;C)V
-
-    goto/16 :goto_7
-
-    :pswitch_1
-    sget-object v0, Landroid/hardware/camera2/CaptureResult;->STATISTICS_OIS_SAMPLES:Landroid/hardware/camera2/CaptureResult$Key;
-
-    if-nez v0, :cond_5
-
-    sget-object v0, Leaf;->a:Lnak;
-
-    invoke-virtual {v0}, Lnaf;->b()Lnaz;
-
-    move-result-object v0
-
-    const-string v1, "Null OIS key (version: 2)"
-
-    const/16 v2, 0x4d4
-
-    invoke-static {v0, v1, v2}, Leab;->a(Lnaz;Ljava/lang/String;C)V
-
-    goto/16 :goto_7
-
-    :cond_5
-    sget-object v0, Landroid/hardware/camera2/CaptureResult;->STATISTICS_OIS_SAMPLES:Landroid/hardware/camera2/CaptureResult$Key;
-
-    invoke-interface {v1, v0}, Lkoq;->d(Landroid/hardware/camera2/CaptureResult$Key;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    move-object v9, v0
-
-    check-cast v9, [Landroid/hardware/camera2/params/OisSample;
-
-    if-eqz v9, :cond_6
-
-    array-length v10, v9
-
-    const/4 v11, 0x0
-
-    :goto_2
-    if-ge v11, v10, :cond_c
-
-    aget-object v0, v9, v11
-
-    invoke-virtual {v0}, Landroid/hardware/camera2/params/OisSample;->getTimestamp()J
-
-    move-result-wide v1
-
-    invoke-virtual {v0}, Landroid/hardware/camera2/params/OisSample;->getXshift()F
-
-    move-result v3
-
-    invoke-virtual {v0}, Landroid/hardware/camera2/params/OisSample;->getYshift()F
+    invoke-static {p2}, Lead;->c(Lddf;)Z
 
     move-result v4
 
-    move-object v0, v6
+    if-eq v0, v4, :cond_1
 
-    move-object v5, v8
+    move v2, v1
 
-    invoke-virtual/range {v0 .. v5}, Leaf;->i(JFFLjava/lang/String;)V
+    goto :goto_1
 
-    add-int/lit8 v11, v11, 0x1
+    :cond_1
+    :goto_1
+    invoke-static {p2}, Lead;->d(Lddf;)Z
+
+    move-result v4
+
+    if-nez v4, :cond_2
+
+    invoke-interface {p2}, Lddf;->b()V
+
+    move v4, v1
 
     goto :goto_2
 
-    :cond_6
-    sget-object v0, Leaf;->a:Lnak;
+    :cond_2
+    sget-object v4, Lddm;->q:Lddi;
 
-    invoke-virtual {v0}, Lnaf;->b()Lnaz;
+    invoke-interface {p2, v4}, Lddf;->a(Lddi;)Lojc;
 
-    move-result-object v0
+    move-result-object v4
 
-    const-string v2, "Null pointer for OIS data. OIS API version: 2"
+    invoke-virtual {v4}, Lojc;->c()Ljava/lang/Object;
 
-    const/16 v3, 0x4d8
+    move-result-object v4
 
-    invoke-static {v0, v2, v3}, Leab;->a(Lnaz;Ljava/lang/String;C)V
+    check-cast v4, Ljava/lang/Integer;
 
-    sget-object v0, Landroid/hardware/camera2/CaptureResult;->SENSOR_TIMESTAMP:Landroid/hardware/camera2/CaptureResult$Key;
+    invoke-virtual {v4}, Ljava/lang/Integer;->intValue()I
 
-    invoke-interface {v1, v0}, Lkoq;->d(Landroid/hardware/camera2/CaptureResult$Key;)Ljava/lang/Object;
+    move-result v4
 
-    move-result-object v0
+    :goto_2
+    invoke-static {v2, v4}, Ljava/lang/Math;->max(II)I
 
-    check-cast v0, Ljava/lang/Long;
+    move-result v2
 
-    if-nez v0, :cond_7
+    invoke-virtual {p1}, Lgxm;->d()Z
 
-    const-wide/16 v0, 0x0
+    move-result v4
 
-    move-wide v1, v0
-
-    goto :goto_3
-
-    :cond_7
-    invoke-virtual {v0}, Ljava/lang/Long;->longValue()J
-
-    move-result-wide v0
-
-    move-wide v1, v0
-
-    :goto_3
-    const/4 v3, 0x0
+    if-eq v0, v4, :cond_3
 
     const/4 v4, 0x0
 
-    move-object v0, v6
+    goto :goto_3
 
-    move-object v5, v8
+    :cond_3
+    const/4 v4, 0x4
 
-    invoke-virtual/range {v0 .. v5}, Leaf;->i(JFFLjava/lang/String;)V
+    :goto_3
+    invoke-virtual {p1}, Lgxm;->d()Z
 
-    goto/16 :goto_7
+    move-result v5
 
-    :pswitch_2
-    sget-object v0, Liuv;->g:Landroid/hardware/camera2/CaptureResult$Key;
+    invoke-virtual {p1}, Lgxm;->d()Z
 
-    if-eqz v0, :cond_9
+    move-result v6
 
-    sget-object v0, Liuv;->h:Landroid/hardware/camera2/CaptureResult$Key;
+    if-eqz v6, :cond_6
 
-    if-eqz v0, :cond_9
+    sget-object v6, Ldds;->w:Lddg;
 
-    sget-object v0, Liuv;->d:Landroid/hardware/camera2/CaptureResult$Key;
+    invoke-interface {p2, v6}, Lddf;->k(Lddg;)Z
 
-    invoke-interface {v1, v0}, Lkoq;->d(Landroid/hardware/camera2/CaptureResult$Key;)Ljava/lang/Object;
+    move-result v6
 
-    move-result-object v0
+    if-eqz v6, :cond_6
 
-    move-object v9, v0
+    add-int/2addr v4, v1
 
-    check-cast v9, [J
+    add-int/2addr v5, v2
 
-    sget-object v0, Liuv;->g:Landroid/hardware/camera2/CaptureResult$Key;
+    invoke-static {v4, v5}, Ljava/lang/Math;->max(II)I
 
-    invoke-interface {v1, v0}, Lkoq;->d(Landroid/hardware/camera2/CaptureResult$Key;)Ljava/lang/Object;
+    move-result v4
 
-    move-result-object v0
+    iput v4, p0, Lead;->c:I
 
-    move-object v10, v0
+    invoke-virtual {p1}, Lgxm;->d()Z
 
-    check-cast v10, [F
+    move-result v5
 
-    sget-object v0, Liuv;->h:Landroid/hardware/camera2/CaptureResult$Key;
+    if-eqz v5, :cond_4
 
-    invoke-interface {v1, v0}, Lkoq;->d(Landroid/hardware/camera2/CaptureResult$Key;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    move-object v11, v0
-
-    check-cast v11, [F
-
-    if-eqz v9, :cond_8
-
-    if-eqz v10, :cond_8
-
-    if-eqz v11, :cond_8
-
-    const/4 v12, 0x0
-
-    :goto_4
-    array-length v0, v9
-
-    if-ge v12, v0, :cond_c
-
-    aget-wide v1, v9, v12
-
-    aget v3, v10, v12
-
-    aget v4, v11, v12
-
-    move-object v0, v6
-
-    move-object v5, v8
-
-    invoke-virtual/range {v0 .. v5}, Leaf;->i(JFFLjava/lang/String;)V
-
-    add-int/lit8 v12, v12, 0x1
+    sub-int v1, v4, v1
 
     goto :goto_4
 
-    :cond_8
-    sget-object v0, Leaf;->a:Lnak;
+    :cond_4
+    const/4 v1, 0x0
 
-    invoke-virtual {v0}, Lnaf;->b()Lnaz;
+    :goto_4
+    iput v1, p0, Lead;->e:I
 
-    move-result-object v0
+    invoke-virtual {p1}, Lgxm;->d()Z
 
-    const-string v1, "Null pointer for OIS data. OIS API version: 1"
+    move-result p1
 
-    const/16 v2, 0x4d7
+    if-eqz p1, :cond_5
 
-    invoke-static {v0, v1, v2}, Leab;->a(Lnaz;Ljava/lang/String;C)V
-
-    goto/16 :goto_7
-
-    :cond_9
-    sget-object v0, Leaf;->a:Lnak;
-
-    invoke-virtual {v0}, Lnaf;->b()Lnaz;
-
-    move-result-object v0
-
-    const-string v1, "Null OIS keys (version: 1)"
-
-    const/16 v2, 0x4d3
-
-    invoke-static {v0, v1, v2}, Leab;->a(Lnaz;Ljava/lang/String;C)V
-
-    goto/16 :goto_7
-
-    :pswitch_3
-    sget-object v0, Liuv;->e:Landroid/hardware/camera2/CaptureResult$Key;
-
-    if-eqz v0, :cond_b
-
-    sget-object v0, Liuv;->f:Landroid/hardware/camera2/CaptureResult$Key;
-
-    if-eqz v0, :cond_b
-
-    sget-object v0, Liuv;->d:Landroid/hardware/camera2/CaptureResult$Key;
-
-    invoke-interface {v1, v0}, Lkoq;->d(Landroid/hardware/camera2/CaptureResult$Key;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    move-object v9, v0
-
-    check-cast v9, [J
-
-    sget-object v0, Liuv;->e:Landroid/hardware/camera2/CaptureResult$Key;
-
-    invoke-interface {v1, v0}, Lkoq;->d(Landroid/hardware/camera2/CaptureResult$Key;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    move-object v10, v0
-
-    check-cast v10, [I
-
-    sget-object v0, Liuv;->f:Landroid/hardware/camera2/CaptureResult$Key;
-
-    invoke-interface {v1, v0}, Lkoq;->d(Landroid/hardware/camera2/CaptureResult$Key;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    move-object v11, v0
-
-    check-cast v11, [I
-
-    if-eqz v9, :cond_a
-
-    if-eqz v10, :cond_a
-
-    if-eqz v11, :cond_a
-
-    const/4 v12, 0x0
-
-    :goto_5
-    array-length v0, v9
-
-    if-ge v12, v0, :cond_c
-
-    aget-wide v1, v9, v12
-
-    aget v0, v10, v12
-
-    int-to-float v3, v0
-
-    aget v0, v11, v12
-
-    int-to-float v4, v0
-
-    move-object v0, v6
-
-    move-object v5, v8
-
-    invoke-virtual/range {v0 .. v5}, Leaf;->i(JFFLjava/lang/String;)V
-
-    add-int/lit8 v12, v12, 0x1
+    sub-int/2addr v4, v2
 
     goto :goto_5
 
-    :cond_a
-    sget-object v0, Leaf;->a:Lnak;
+    :cond_5
+    const/4 v4, 0x0
 
-    invoke-virtual {v0}, Lnaf;->b()Lnaz;
-
-    move-result-object v0
-
-    const-string v1, "Null pointer for OIS data. OIS API version: 0"
-
-    const/16 v2, 0x4d6
-
-    invoke-static {v0, v1, v2}, Leab;->a(Lnaz;Ljava/lang/String;C)V
+    :goto_5
+    iput v4, p0, Lead;->f:I
 
     goto :goto_7
 
-    :cond_b
-    sget-object v0, Leaf;->a:Lnak;
+    :cond_6
+    add-int/2addr v4, v1
 
-    invoke-virtual {v0}, Lnaf;->b()Lnaz;
+    invoke-static {v4, v2}, Ljava/lang/Math;->max(II)I
 
-    move-result-object v0
+    move-result v2
 
-    const-string v1, "Null OIS keys (version: 0)"
+    iput v2, p0, Lead;->c:I
 
-    const/16 v2, 0x4d2
+    invoke-virtual {p1}, Lgxm;->d()Z
 
-    invoke-static {v0, v1, v2}, Leab;->a(Lnaz;Ljava/lang/String;C)V
+    move-result p1
 
-    goto :goto_7
+    if-eqz p1, :cond_7
+
+    sub-int/2addr v2, v1
+
+    goto :goto_6
+
+    :cond_7
+    const/4 v2, 0x0
 
     :goto_6
-    invoke-virtual {v0}, Lnaf;->b()Lnaz;
+    iput v2, p0, Lead;->e:I
 
-    move-result-object v0
+    iput v3, p0, Lead;->f:I
 
-    check-cast v0, Lnah;
-
-    sget-object v1, Ljava/util/concurrent/TimeUnit;->MILLISECONDS:Ljava/util/concurrent/TimeUnit;
-
-    invoke-interface {v0, v1}, Lnah;->H(Ljava/util/concurrent/TimeUnit;)Lnaz;
-
-    move-result-object v0
-
-    check-cast v0, Lnah;
-
-    const/16 v1, 0x4d1
-
-    invoke-interface {v0, v1}, Lnah;->G(I)Lnaz;
-
-    move-result-object v0
-
-    check-cast v0, Lnah;
-
-    const-string v1, "Invalid OIS API version: %d"
-
-    iget v2, v6, Leaf;->b:I
-
-    invoke-interface {v0, v1, v2}, Lnah;->p(Ljava/lang/String;I)V
-
-    :cond_c
     :goto_7
-    iget-object v0, v6, Leaf;->c:Ljava/util/Set;
+    iget p1, p0, Lead;->c:I
 
-    invoke-interface {v0}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
+    int-to-float p1, p1
 
-    move-result-object v0
+    sget-object v1, Lddm;->Z:Lddg;
 
-    :goto_8
-    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_d
-
-    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-interface {p2, v1}, Lddf;->g(Lddg;)Lojc;
 
     move-result-object v1
 
-    check-cast v1, Lkfg;
+    invoke-virtual {v1}, Lojc;->c()Ljava/lang/Object;
 
-    invoke-virtual {v1, v7}, Lkfg;->bC(Lkou;)V
+    move-result-object v1
+
+    check-cast v1, Ljava/lang/Float;
+
+    invoke-virtual {v1}, Ljava/lang/Float;->floatValue()F
+
+    move-result v1
+
+    mul-float p1, p1, v1
+
+    float-to-int p1, p1
+
+    iput p1, p0, Lead;->d:I
+
+    if-lez p3, :cond_8
+
+    const/4 p1, 0x1
 
     goto :goto_8
 
-    :cond_d
-    monitor-exit v6
+    :cond_8
+    const/4 p1, 0x0
 
-    return-void
+    :goto_8
+    invoke-static {p1}, Lobr;->aQ(Z)V
 
-    :catchall_0
-    move-exception v0
+    iget p1, p0, Lead;->c:I
 
-    monitor-exit v6
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    if-gt p3, p1, :cond_9
 
-    goto :goto_a
+    goto :goto_9
+
+    :cond_9
+    const/4 v0, 0x0
 
     :goto_9
-    throw v0
+    invoke-static {v0}, Lobr;->aQ(Z)V
 
-    :goto_a
-    goto :goto_9
+    sget-object p1, Lddm;->A:Lddg;
+
+    invoke-interface {p2, p1}, Lddf;->k(Lddg;)Z
+
+    move-result p1
+
+    iput-boolean p1, p0, Lead;->g:Z
+
+    invoke-interface {p2}, Lddf;->d()V
+
+    invoke-interface {p2}, Lddf;->c()V
+
+    sget-object p1, Ldde;->a:Lddg;
+
+    invoke-interface {p2, p1}, Lddf;->g(Lddg;)Lojc;
+
+    move-result-object p1
+
+    invoke-virtual {p1}, Lojc;->c()Ljava/lang/Object;
+
+    move-result-object p1
+
+    check-cast p1, Ljava/lang/Float;
+
+    invoke-virtual {p1}, Ljava/lang/Float;->floatValue()F
+
+    move-result p1
+
+    iput p1, p0, Lead;->h:F
+
+    return-void
+.end method
+
+.method static a(Leac;)Ljava/lang/String;
+    .locals 0
+
+    invoke-virtual {p0}, Leac;->ordinal()I
+
+    move-result p0
+
+    packed-switch p0, :pswitch_data_0
+
+    const-string p0, ""
+
+    return-object p0
+
+    :pswitch_0
+    const-string p0, "h"
+
+    return-object p0
+
+    :pswitch_1
+    const-string p0, "r"
+
+    return-object p0
+
+    :pswitch_2
+    const-string p0, "y"
+
+    return-object p0
 
     nop
 
     :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_3
+    .packed-switch 0x2
         :pswitch_2
         :pswitch_1
         :pswitch_0
     .end packed-switch
+.end method
+
+.method public static c(Lddf;)Z
+    .locals 1
+
+    sget-object v0, Lddm;->W:Lddg;
+
+    invoke-interface {p0, v0}, Lddf;->k(Lddg;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    const/4 p0, 0x0
+
+    return p0
+
+    :cond_0
+    sget-object v0, Lddm;->V:Lddg;
+
+    invoke-interface {p0, v0}, Lddf;->k(Lddg;)Z
+
+    move-result p0
+
+    return p0
+.end method
+
+.method public static d(Lddf;)Z
+    .locals 1
+
+    sget-object v0, Lddm;->O:Lddg;
+
+    invoke-interface {p0, v0}, Lddf;->k(Lddg;)Z
+
+    move-result p0
+
+    return p0
+.end method
+
+
+# virtual methods
+.method public final b()Z
+    .locals 2
+
+    iget-object v0, p0, Lead;->a:Lddf;
+
+    sget-object v1, Lddm;->a:Lddi;
+
+    invoke-interface {v0}, Lddf;->c()V
+
+    new-instance v0, Ljava/io/File;
+
+    const-string v1, "/dev/adsprpc-smd"
+
+    invoke-direct {v0, v1}, Ljava/io/File;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v0}, Ljava/io/File;->canRead()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    const/4 v0, 0x1
+
+    return v0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    return v0
 .end method

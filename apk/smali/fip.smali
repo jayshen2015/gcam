@@ -1,63 +1,109 @@
-.class public final Lfip;
-.super Ljava/lang/Object;
+.class public Lfip;
+.super Landroid/app/Application;
 
-# interfaces
-.implements Logk;
+
+# static fields
+.field protected static final j:J
 
 
 # instance fields
-.field private final a:Loiw;
+.field public final k:Lfhi;
 
 
 # direct methods
-.method public constructor <init>(Loiw;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 2
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-static {}, Lfip;->initVM()V
 
-    iput-object p1, p0, Lfip;->a:Loiw;
+    invoke-static {}, Landroid/os/SystemClock;->elapsedRealtimeNanos()J
+
+    move-result-wide v0
+
+    sput-wide v0, Lfip;->j:J
 
     return-void
 .end method
 
-.method public static a(Loiw;)Lfip;
+.method public constructor <init>()V
     .locals 1
 
-    new-instance v0, Lfip;
+    invoke-direct {p0}, Landroid/app/Application;-><init>()V
 
-    invoke-direct {v0, p0}, Lfip;-><init>(Loiw;)V
+    new-instance v0, Lfhi;
 
-    return-object v0
+    invoke-direct {v0}, Lfhi;-><init>()V
+
+    iput-object v0, p0, Lfip;->k:Lfhi;
+
+    return-void
+.end method
+
+.method public static initVM()V
+    .locals 2
+
+    return-void
 .end method
 
 
 # virtual methods
-.method public final b()Lbkb;
-    .locals 3
+.method public onCreate()V
+    .locals 2
 
-    iget-object v0, p0, Lfip;->a:Loiw;
+    iget-object v0, p0, Lfip;->k:Lfhi;
 
-    check-cast v0, Ldmf;
+    sget-object v1, Lfhc;->c:Lfhc;
 
-    invoke-virtual {v0}, Ldmf;->a()Ldne;
+    invoke-virtual {v0, v1}, Lfhi;->f(Lfhu;)V
 
-    move-result-object v0
+    iput-object v1, v0, Lfhi;->d:Lfhu;
 
-    new-instance v1, Lbkb;
+    invoke-super {p0}, Landroid/app/Application;->onCreate()V
 
-    const/4 v2, 0x0
-
-    invoke-direct {v1, v0, v2, v2}, Lbkb;-><init>(Ldne;[B[B)V
-
-    return-object v1
+    return-void
 .end method
 
-.method public final bridge synthetic get()Ljava/lang/Object;
-    .locals 1
+.method public final onTerminate()V
+    .locals 3
 
-    invoke-virtual {p0}, Lfip;->b()Lbkb;
+    iget-object v0, p0, Lfip;->k:Lfhi;
+
+    iget-object v1, v0, Lfhi;->d:Lfhu;
+
+    invoke-virtual {v0, v1}, Lfhi;->a(Lfhu;)V
+
+    iget-object v0, v0, Lfhi;->a:Ljava/util/List;
+
+    invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object v0
 
-    return-object v0
+    :cond_0
+    :goto_0
+    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_1
+
+    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Lfik;
+
+    instance-of v2, v1, Lfho;
+
+    if-eqz v2, :cond_0
+
+    check-cast v1, Lfho;
+
+    invoke-interface {v1}, Lfho;->a()V
+
+    goto :goto_0
+
+    :cond_1
+    invoke-super {p0}, Landroid/app/Application;->onTerminate()V
+
+    return-void
 .end method

@@ -1,102 +1,100 @@
-.class public final Llcl;
+.class final Llcl;
 .super Ljava/lang/Object;
 
+# interfaces
+.implements Llij;
 
-# static fields
-.field public static final a:[F
 
-.field public static final b:[F
+# instance fields
+.field final synthetic a:Llcm;
+
+.field private final b:I
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
-
-    const/16 v0, 0x8
-
-    new-array v1, v0, [F
-
-    fill-array-data v1, :array_0
-
-    sput-object v1, Llcl;->a:[F
-
-    new-array v0, v0, [F
-
-    fill-array-data v0, :array_1
-
-    sput-object v0, Llcl;->b:[F
-
-    return-void
-
-    nop
-
-    :array_0
-    .array-data 4
-        -0x40800000    # -1.0f
-        -0x40800000    # -1.0f
-        0x3f800000    # 1.0f
-        -0x40800000    # -1.0f
-        -0x40800000    # -1.0f
-        0x3f800000    # 1.0f
-        0x3f800000    # 1.0f
-        0x3f800000    # 1.0f
-    .end array-data
-
-    :array_1
-    .array-data 4
-        0x0
-        0x0
-        0x3f800000    # 1.0f
-        0x0
-        0x0
-        0x3f800000    # 1.0f
-        0x3f800000    # 1.0f
-        0x3f800000    # 1.0f
-    .end array-data
-.end method
-
-.method public constructor <init>()V
+.method public constructor <init>(Llcm;I)V
     .locals 0
+
+    iput-object p1, p0, Llcl;->a:Llcm;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    iput p2, p0, Llcl;->b:I
+
     return-void
 .end method
 
-.method public static a(Llbd;)Lldh;
-    .locals 3
 
-    const-class v0, Llcl;
+# virtual methods
+.method public final fB(Ljava/lang/Object;)V
+    .locals 2
 
-    invoke-virtual {v0}, Ljava/lang/Class;->getName()Ljava/lang/String;
+    iget-object v0, p0, Llcl;->a:Llcm;
+
+    iget-object v0, v0, Llcm;->a:Ljava/util/List;
+
+    iget v1, p0, Llcl;->b:I
+
+    invoke-interface {v0, v1, p1}, Ljava/util/List;->set(ILjava/lang/Object;)Ljava/lang/Object;
+
+    iget-object p1, p0, Llcl;->a:Llcm;
+
+    iget-boolean v0, p1, Llcm;->b:Z
+
+    if-nez v0, :cond_2
+
+    iget-object p1, p1, Llcm;->a:Ljava/util/List;
+
+    invoke-interface {p1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+
+    move-result-object p1
+
+    :cond_0
+    invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v0
 
-    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+    if-nez v0, :cond_0
 
-    move-result-object v0
+    goto :goto_0
 
-    new-instance v1, Ldet;
+    :cond_1
+    iget-object p1, p0, Llcl;->a:Llcm;
 
-    const/16 v2, 0xc
+    const/4 v0, 0x1
 
-    invoke-direct {v1, p0, v2}, Ldet;-><init>(Llbd;I)V
+    iput-boolean v0, p1, Llcm;->b:Z
 
-    const-string v2, "_texcoords"
+    :cond_2
+    :goto_0
+    iget-object p1, p0, Llcl;->a:Llcm;
 
-    invoke-virtual {v0, v2}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
+    iget-boolean v0, p1, Llcm;->b:Z
 
-    move-result-object v0
+    if-eqz v0, :cond_3
 
-    invoke-interface {p0, v0, v1}, Llbd;->h(Ljava/lang/Object;Lmrl;)Llfl;
+    iget-object p1, p1, Llcm;->a:Ljava/util/List;
 
-    move-result-object p0
+    invoke-static {p1}, Loom;->j(Ljava/util/Collection;)Loom;
 
-    invoke-virtual {p0}, Llfl;->c()Ljava/lang/Object;
+    move-result-object p1
 
-    move-result-object p0
+    iget-object v0, p0, Llcl;->a:Llcm;
 
-    check-cast p0, Lldh;
+    iget-object v0, v0, Llcm;->d:Ljava/util/concurrent/Executor;
 
-    return-object p0
+    new-instance v1, Llck;
+
+    invoke-direct {v1, p0, p1}, Llck;-><init>(Llcl;Loom;)V
+
+    invoke-interface {v0, v1}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
+
+    :cond_3
+    return-void
 .end method

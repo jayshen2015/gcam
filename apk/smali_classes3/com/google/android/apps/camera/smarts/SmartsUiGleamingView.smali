@@ -32,7 +32,7 @@
 .method public final a()V
     .locals 2
 
-    invoke-static {}, Ljuh;->a()V
+    invoke-static {}, Llar;->a()V
 
     iget-object v0, p0, Lcom/google/android/apps/camera/smarts/SmartsUiGleamingView;->c:Landroid/graphics/drawable/AnimatedVectorDrawable;
 
@@ -70,15 +70,15 @@
 
     invoke-super {p0}, Landroid/view/View;->onFinishInflate()V
 
-    new-instance v0, Lhdj;
+    new-instance v0, Liab;
 
-    invoke-direct {v0, p0}, Lhdj;-><init>(Lcom/google/android/apps/camera/smarts/SmartsUiGleamingView;)V
+    invoke-direct {v0, p0}, Liab;-><init>(Lcom/google/android/apps/camera/smarts/SmartsUiGleamingView;)V
 
     invoke-virtual {p0}, Lcom/google/android/apps/camera/smarts/SmartsUiGleamingView;->getResources()Landroid/content/res/Resources;
 
     move-result-object v1
 
-    const v2, 0x7f08019a
+    const v2, 0x7f0804a7
 
     const/4 v3, 0x0
 
@@ -96,7 +96,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f070649
+    const v2, 0x7f070521
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -114,7 +114,7 @@
 
     move-result-object v1
 
-    const v4, 0x7f08029a
+    const v4, 0x7f080577
 
     invoke-virtual {v1, v4, v3}, Landroid/content/res/Resources;->getDrawable(ILandroid/content/res/Resources$Theme;)Landroid/graphics/drawable/Drawable;
 
@@ -130,7 +130,7 @@
 
     move-result-object v1
 
-    const v3, 0x7f07064b
+    const v3, 0x7f070523
 
     invoke-virtual {v1, v3}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 

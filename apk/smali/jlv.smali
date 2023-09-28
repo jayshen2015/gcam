@@ -1,30 +1,51 @@
-.class final Ljlv;
-.super Ljeu;
+.class public final synthetic Ljlv;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Ljly;
 
 
 # instance fields
-.field final synthetic a:Lkgd;
+.field public final synthetic a:Landroid/text/Spannable;
 
 
 # direct methods
-.method public constructor <init>(Lkgd;[B[B)V
+.method public synthetic constructor <init>(Landroid/text/Spannable;)V
     .locals 0
 
-    iput-object p1, p0, Ljlv;->a:Lkgd;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0}, Ljeu;-><init>()V
+    iput-object p1, p0, Ljlv;->a:Landroid/text/Spannable;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final b(Lcom/google/android/gms/common/api/Status;)V
-    .locals 1
+.method public final a(Landroid/content/Context;Z)Landroid/view/View;
+    .locals 2
 
-    iget-object v0, p0, Ljlv;->a:Lkgd;
+    iget-object v0, p0, Ljlv;->a:Landroid/text/Spannable;
 
-    invoke-static {p1, v0}, Ljhp;->aj(Lcom/google/android/gms/common/api/Status;Lkgd;)V
+    new-instance v1, Landroid/widget/TextView;
 
-    return-void
+    invoke-direct {v1, p1}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
+
+    const/4 p1, 0x1
+
+    if-eq p1, p2, :cond_0
+
+    const p1, 0x7f1504a0
+
+    goto :goto_0
+
+    :cond_0
+    const p1, 0x7f15049e
+
+    :goto_0
+    invoke-virtual {v1, p1}, Landroid/widget/TextView;->setTextAppearance(I)V
+
+    invoke-virtual {v1, v0}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+
+    return-object v1
 .end method

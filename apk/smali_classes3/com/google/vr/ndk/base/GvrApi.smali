@@ -6,18 +6,18 @@
 .method static constructor <clinit>()V
     .locals 2
 
-    const-string v0, "robolectric"
+    sget-object v0, Landroid/os/Build;->FINGERPRINT:Ljava/lang/String;
 
-    sget-object v1, Landroid/os/Build;->FINGERPRINT:Ljava/lang/String;
+    const-string v1, "robolectric"
 
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     invoke-static {}, Landroid/os/StrictMode;->allowThreadDiskReads()Landroid/os/StrictMode$ThreadPolicy;
 
     move-result-object v0
 
     :try_start_0
-    invoke-static {}, Loeq;->a()V
+    invoke-static {}, Lpwy;->a()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
@@ -45,21 +45,21 @@
 .method private static requestFeatures(Landroid/content/Context;J[I[ILandroid/app/PendingIntent;)V
     .locals 8
 
-    invoke-static {p3}, Loes;->a([I)[Loes;
+    invoke-static {p3}, Lpxa;->a([I)[Lpxa;
 
     move-result-object p3
 
-    invoke-static {p4}, Loes;->a([I)[Loes;
+    invoke-static {p4}, Lpxa;->a([I)[Lpxa;
 
     move-result-object p4
 
-    new-instance v0, Loet;
+    new-instance v0, Lpxb;
 
     invoke-static {p1, p2}, Lcom/google/vr/ndk/base/GvrApi;->nativeGetUserPrefs(J)J
 
     move-result-wide v1
 
-    invoke-direct {v0, v1, v2}, Loet;-><init>(J)V
+    invoke-direct {v0, v1, v2}, Lpxb;-><init>(J)V
 
     new-instance v1, Landroid/content/Intent;
 
@@ -67,7 +67,7 @@
 
     invoke-direct {v1, v2}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    sget-object v2, Loep;->a:Landroid/content/ComponentName;
+    sget-object v2, Lpwq;->a:Landroid/content/ComponentName;
 
     invoke-virtual {v1, v2}, Landroid/content/Intent;->setComponent(Landroid/content/ComponentName;)Landroid/content/Intent;
 
@@ -94,7 +94,7 @@
 
     aget-object v6, p3, v5
 
-    iget v7, v6, Loes;->c:I
+    iget v7, v6, Lpxa;->c:I
 
     invoke-static {p1, p2, v7}, Lcom/google/vr/ndk/base/GvrApi;->nativeIsFeatureSupported(JI)Z
 
@@ -102,13 +102,13 @@
 
     if-eqz v7, :cond_0
 
-    invoke-virtual {v0, v6}, Loet;->a(Loes;)Z
+    invoke-virtual {v0, v6}, Lpxb;->a(Lpxa;)Z
 
     move-result v7
 
     if-nez v7, :cond_0
 
-    iget-object v6, v6, Loes;->d:Ljava/lang/String;
+    iget-object v6, v6, Lpxa;->d:Ljava/lang/String;
 
     invoke-virtual {v2, v6}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
@@ -152,7 +152,7 @@
 
     aget-object v3, p4, v4
 
-    iget v5, v3, Loes;->c:I
+    iget v5, v3, Lpxa;->c:I
 
     invoke-static {p1, p2, v5}, Lcom/google/vr/ndk/base/GvrApi;->nativeIsFeatureSupported(JI)Z
 
@@ -160,13 +160,13 @@
 
     if-eqz v5, :cond_3
 
-    invoke-virtual {v0, v3}, Loet;->a(Loes;)Z
+    invoke-virtual {v0, v3}, Lpxb;->a(Lpxa;)Z
 
     move-result v5
 
     if-nez v5, :cond_3
 
-    iget-object v3, v3, Loes;->d:Ljava/lang/String;
+    iget-object v3, v3, Lpxa;->d:Ljava/lang/String;
 
     invoke-virtual {p3, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 

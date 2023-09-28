@@ -1,24 +1,30 @@
 .class public final Lhxm;
-.super Lhxp;
+.super Lmip;
+
+
+# instance fields
+.field final synthetic a:Lhxj;
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 2
+.method public constructor <init>(Lhxj;)V
+    .locals 0
 
-    const/4 v0, 0x1
+    iput-object p1, p0, Lhxm;->a:Lhxj;
 
-    const/4 v1, 0x0
-
-    invoke-direct {p0, v0, v1, v0}, Lhxp;-><init>(ZZZ)V
+    invoke-direct {p0}, Lmip;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Landroid/graphics/RectF;)V
-    .locals 0
+.method public final b(Llzv;)V
+    .locals 1
+
+    iget-object v0, p0, Lhxm;->a:Lhxj;
+
+    invoke-virtual {v0, p1}, Lhxj;->e(Llzv;)V
 
     return-void
 .end method

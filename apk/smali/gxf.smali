@@ -1,67 +1,120 @@
-.class public final Lgxf;
+.class public final synthetic Lgxf;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Logk;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field private final a:Loiw;
+.field public final synthetic a:Lgxi;
 
-.field private final b:Loiw;
+.field public final synthetic b:Z
 
-.field private final c:Loiw;
+.field public final synthetic c:Z
 
-.field private final d:Loiw;
+.field public final synthetic d:Z
+
+.field public final synthetic e:Z
 
 
 # direct methods
-.method public constructor <init>(Loiw;Loiw;Loiw;Loiw;)V
+.method public synthetic constructor <init>(Lgxi;ZZZZ)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lgxf;->a:Loiw;
+    iput-object p1, p0, Lgxf;->a:Lgxi;
 
-    iput-object p2, p0, Lgxf;->b:Loiw;
+    iput-boolean p2, p0, Lgxf;->b:Z
 
-    iput-object p3, p0, Lgxf;->c:Loiw;
+    iput-boolean p3, p0, Lgxf;->c:Z
 
-    iput-object p4, p0, Lgxf;->d:Loiw;
+    iput-boolean p4, p0, Lgxf;->d:Z
+
+    iput-boolean p5, p0, Lgxf;->e:Z
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Lkte;
+.method public final run()V
     .locals 7
 
-    iget-object v1, p0, Lgxf;->a:Loiw;
+    iget-object v0, p0, Lgxf;->a:Lgxi;
 
-    iget-object v2, p0, Lgxf;->b:Loiw;
+    iget-boolean v1, p0, Lgxf;->b:Z
 
-    iget-object v3, p0, Lgxf;->c:Loiw;
+    iget-boolean v2, p0, Lgxf;->c:Z
 
-    iget-object v4, p0, Lgxf;->d:Loiw;
+    iget-boolean v3, p0, Lgxf;->d:Z
 
-    new-instance v6, Lkte;
+    iget-boolean v4, p0, Lgxf;->e:Z
 
-    const/4 v5, 0x0
+    iget-object v5, v0, Lgxi;->c:Llnc;
 
-    move-object v0, v6
+    const/4 v6, 0x0
 
-    invoke-direct/range {v0 .. v5}, Lkte;-><init>(Loiw;Loiw;Loiw;Loiw;[C)V
+    invoke-interface {v5, v1, v2, v6}, Llnc;->l(ZZZ)V
 
-    return-object v6
-.end method
+    if-eqz v3, :cond_2
 
-.method public final bridge synthetic get()Ljava/lang/Object;
-    .locals 1
+    iget-object v1, v0, Lgxi;->c:Llnc;
 
-    invoke-virtual {p0}, Lgxf;->a()Lkte;
+    invoke-interface {v1}, Llnc;->a()Llmp;
 
-    move-result-object v0
+    move-result-object v1
 
-    return-object v0
+    if-eqz v4, :cond_0
+
+    iget-object v3, v0, Lgxi;->l:Lbny;
+
+    invoke-virtual {v3}, Lbny;->a()[Landroid/hardware/camera2/params/MeteringRectangle;
+
+    move-result-object v3
+
+    move-object v4, v1
+
+    check-cast v4, Llok;
+
+    iput-object v3, v4, Llok;->h:[Landroid/hardware/camera2/params/MeteringRectangle;
+
+    :cond_0
+    if-eqz v2, :cond_1
+
+    iget-object v2, v0, Lgxi;->l:Lbny;
+
+    invoke-virtual {v2}, Lbny;->a()[Landroid/hardware/camera2/params/MeteringRectangle;
+
+    move-result-object v2
+
+    move-object v3, v1
+
+    check-cast v3, Llok;
+
+    iput-object v2, v3, Llok;->i:[Landroid/hardware/camera2/params/MeteringRectangle;
+
+    :cond_1
+    iget-object v2, v0, Lgxi;->l:Lbny;
+
+    invoke-virtual {v2}, Lbny;->a()[Landroid/hardware/camera2/params/MeteringRectangle;
+
+    move-result-object v2
+
+    move-object v3, v1
+
+    check-cast v3, Llok;
+
+    iput-object v2, v3, Llok;->j:[Landroid/hardware/camera2/params/MeteringRectangle;
+
+    iget-object v0, v0, Lgxi;->c:Llnc;
+
+    invoke-interface {v1}, Llmp;->a()Llmq;
+
+    move-result-object v1
+
+    invoke-interface {v0, v1}, Llnc;->m(Llmq;)V
+
+    :cond_2
+    return-void
 .end method

@@ -1,28 +1,49 @@
 .class final Locu;
 .super Ljava/lang/Object;
 
+# interfaces
+.implements Landroid/animation/ValueAnimator$AnimatorUpdateListener;
 
-# static fields
-.field static final a:Llzz;
+
+# instance fields
+.field final synthetic a:Landroid/view/View;
+
+.field final synthetic b:Landroid/view/View;
+
+.field final synthetic c:Locw;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 4
+.method public constructor <init>(Locw;Landroid/view/View;Landroid/view/View;)V
+    .locals 0
 
-    sget-object v0, Lnzl;->i:Lnzl;
+    iput-object p1, p0, Locu;->c:Locw;
 
-    sget-object v1, Lnzl;->k:Lnzl;
+    iput-object p2, p0, Locu;->a:Landroid/view/View;
 
-    sget-object v2, Lodd;->a:Lodd;
+    iput-object p3, p0, Locu;->b:Landroid/view/View;
 
-    const-string v3, ""
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-static {v0, v3, v1, v2}, Llzz;->B(Lnzl;Ljava/lang/Object;Lnzl;Ljava/lang/Object;)Llzz;
+    return-void
+.end method
 
-    move-result-object v0
 
-    sput-object v0, Locu;->a:Llzz;
+# virtual methods
+.method public final onAnimationUpdate(Landroid/animation/ValueAnimator;)V
+    .locals 3
+
+    iget-object v0, p0, Locu;->c:Locw;
+
+    iget-object v1, p0, Locu;->a:Landroid/view/View;
+
+    iget-object v2, p0, Locu;->b:Landroid/view/View;
+
+    invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedFraction()F
+
+    move-result p1
+
+    invoke-virtual {v0, v1, v2, p1}, Locw;->c(Landroid/view/View;Landroid/view/View;F)V
 
     return-void
 .end method

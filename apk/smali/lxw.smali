@@ -1,32 +1,47 @@
-.class public final Llxw;
-.super Laqc;
+.class public final synthetic Llxw;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Loiu;
+
+
+# instance fields
+.field public final synthetic a:Llxx;
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 2
+.method public synthetic constructor <init>(Llxx;)V
+    .locals 0
 
-    const/4 v0, 0x4
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const/4 v1, 0x7
-
-    invoke-direct {p0, v0, v1}, Laqc;-><init>(II)V
+    iput-object p1, p0, Llxw;->a:Llxx;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Laqp;)V
-    .locals 1
+.method public final a(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 5
 
-    sget-object v0, Llya;->o:Laqc;
+    iget-object v0, p0, Llxw;->a:Llxx;
 
-    invoke-virtual {v0, p1}, Laqc;->a(Laqp;)V
+    check-cast p1, Ljava/lang/Long;
 
-    sget-object v0, Llya;->p:Laqc;
+    invoke-virtual {p1}, Ljava/lang/Long;->longValue()J
 
-    invoke-virtual {v0, p1}, Laqc;->a(Laqp;)V
+    move-result-wide v1
 
-    return-void
+    iget-wide v3, v0, Llxq;->b:J
+
+    invoke-static {v1, v2, v3, v4}, Ljava/lang/Math;->min(JJ)J
+
+    move-result-wide v0
+
+    invoke-static {v0, v1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object p1
+
+    return-object p1
 .end method

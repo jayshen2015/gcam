@@ -11,7 +11,7 @@
 
 .field private final d:Ljava/lang/Object;
 
-.field private volatile e:Loeb;
+.field private volatile e:Lpwa;
 
 .field private final f:Ljava/lang/Object;
 
@@ -147,15 +147,15 @@
 
     new-array v1, v1, [I
 
-    const/4 v2, 0x0
+    const v2, 0x821e
 
-    const v3, 0x821e
+    const/4 v3, 0x0
 
-    invoke-static {v3, v1, v2}, Landroid/opengl/GLES20;->glGetIntegerv(I[II)V
+    invoke-static {v2, v1, v3}, Landroid/opengl/GLES20;->glGetIntegerv(I[II)V
 
     invoke-static {}, Landroid/opengl/GLES20;->glGetError()I
 
-    aget v1, v1, v2
+    aget v1, v1, v3
 
     iput v1, p0, Lcom/google/vr/cardboard/EglReadyListener;->b:I
 

@@ -1,46 +1,30 @@
-.class Lkew;
-.super Lkfg;
+.class public final Lkew;
+.super Ljava/lang/Object;
 
 
 # instance fields
-.field private final a:Ljava/util/concurrent/CountDownLatch;
+.field public a:Ljava/lang/String;
+
+.field public b:Ljava/lang/String;
+
+.field public c:Ljava/lang/String;
+
+.field public d:I
+
+.field public e:I
 
 
 # direct methods
 .method public constructor <init>()V
-    .locals 2
-
-    invoke-direct {p0}, Lkfg;-><init>()V
-
-    new-instance v0, Ljava/util/concurrent/CountDownLatch;
-
-    const/4 v1, 0x1
-
-    invoke-direct {v0, v1}, Ljava/util/concurrent/CountDownLatch;-><init>(I)V
-
-    iput-object v0, p0, Lkew;->a:Ljava/util/concurrent/CountDownLatch;
-
-    return-void
-.end method
-
-
-# virtual methods
-.method public final p()V
     .locals 1
 
-    iget-object v0, p0, Lkew;->a:Ljava/util/concurrent/CountDownLatch;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-virtual {v0}, Ljava/util/concurrent/CountDownLatch;->await()V
+    const/4 v0, -0x1
 
-    return-void
-.end method
+    iput v0, p0, Lkew;->d:I
 
-.method protected final q()V
-    .locals 1
-
-    iget-object v0, p0, Lkew;->a:Ljava/util/concurrent/CountDownLatch;
-
-    invoke-virtual {v0}, Ljava/util/concurrent/CountDownLatch;->countDown()V
+    iput v0, p0, Lkew;->e:I
 
     return-void
 .end method

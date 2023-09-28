@@ -1,191 +1,124 @@
-.class final Lmxk;
+.class public final synthetic Lmxk;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Ljava/util/ListIterator;
+.implements Lqkg;
 
 
 # instance fields
-.field a:Z
+.field public final synthetic a:Lqkg;
 
-.field final synthetic b:Ljava/util/ListIterator;
-
-.field final synthetic c:Lmxl;
+.field private final synthetic b:I
 
 
 # direct methods
-.method public constructor <init>(Lmxl;Ljava/util/ListIterator;)V
+.method public synthetic constructor <init>(Lqkg;I)V
     .locals 0
 
-    iput-object p1, p0, Lmxk;->c:Lmxl;
-
-    iput-object p2, p0, Lmxk;->b:Ljava/util/ListIterator;
+    iput p2, p0, Lmxk;->b:I
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lmxk;->a:Lqkg;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final add(Ljava/lang/Object;)V
-    .locals 1
+.method public final get()Ljava/lang/Object;
+    .locals 2
 
-    iget-object v0, p0, Lmxk;->b:Ljava/util/ListIterator;
+    iget v0, p0, Lmxk;->b:I
 
-    invoke-interface {v0, p1}, Ljava/util/ListIterator;->add(Ljava/lang/Object;)V
+    packed-switch v0, :pswitch_data_0
 
-    iget-object p1, p0, Lmxk;->b:Ljava/util/ListIterator;
+    iget-object v0, p0, Lmxk;->a:Lqkg;
 
-    invoke-interface {p1}, Ljava/util/ListIterator;->previous()Ljava/lang/Object;
-
-    const/4 p1, 0x0
-
-    iput-boolean p1, p0, Lmxk;->a:Z
-
-    return-void
-.end method
-
-.method public final hasNext()Z
-    .locals 1
-
-    iget-object v0, p0, Lmxk;->b:Ljava/util/ListIterator;
-
-    invoke-interface {v0}, Ljava/util/ListIterator;->hasPrevious()Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public final hasPrevious()Z
-    .locals 1
-
-    iget-object v0, p0, Lmxk;->b:Ljava/util/ListIterator;
-
-    invoke-interface {v0}, Ljava/util/ListIterator;->hasNext()Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public final next()Ljava/lang/Object;
-    .locals 1
-
-    invoke-virtual {p0}, Lmxk;->hasNext()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    const/4 v0, 0x1
-
-    iput-boolean v0, p0, Lmxk;->a:Z
-
-    iget-object v0, p0, Lmxk;->b:Ljava/util/ListIterator;
-
-    invoke-interface {v0}, Ljava/util/ListIterator;->previous()Ljava/lang/Object;
+    invoke-interface {v0}, Lqkg;->get()Ljava/lang/Object;
 
     move-result-object v0
 
+    check-cast v0, Lnbu;
+
     return-object v0
 
-    :cond_0
-    new-instance v0, Ljava/util/NoSuchElementException;
+    :pswitch_0
+    iget-object v0, p0, Lmxk;->a:Lqkg;
 
-    invoke-direct {v0}, Ljava/util/NoSuchElementException;-><init>()V
+    invoke-interface {v0}, Lqkg;->get()Ljava/lang/Object;
 
-    throw v0
-.end method
+    move-result-object v0
 
-.method public final nextIndex()I
-    .locals 2
+    check-cast v0, Lgtt;
 
-    iget-object v0, p0, Lmxk;->c:Lmxl;
+    return-object v0
 
-    iget-object v1, p0, Lmxk;->b:Ljava/util/ListIterator;
+    :pswitch_1
+    iget-object v0, p0, Lmxk;->a:Lqkg;
 
-    invoke-interface {v1}, Ljava/util/ListIterator;->nextIndex()I
+    check-cast v0, Lfsr;
+
+    invoke-virtual {v0}, Lfsr;->b()Lojc;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Lojc;->g()Z
 
     move-result v1
 
-    invoke-virtual {v0, v1}, Lmxl;->a(I)I
+    if-eqz v1, :cond_0
 
-    move-result v0
+    invoke-virtual {v0}, Lfsr;->b()Lojc;
 
-    return v0
-.end method
+    move-result-object v1
 
-.method public final previous()Ljava/lang/Object;
-    .locals 1
+    invoke-virtual {v1}, Lojc;->c()Ljava/lang/Object;
 
-    invoke-virtual {p0}, Lmxk;->hasPrevious()Z
+    move-result-object v1
 
-    move-result v0
+    check-cast v1, Lmxe;
 
-    if-eqz v0, :cond_0
+    invoke-virtual {v1}, Lmxe;->b()Lqkg;
 
-    const/4 v0, 0x1
+    move-result-object v1
 
-    iput-boolean v0, p0, Lmxk;->a:Z
+    if-eqz v1, :cond_0
 
-    iget-object v0, p0, Lmxk;->b:Ljava/util/ListIterator;
-
-    invoke-interface {v0}, Ljava/util/ListIterator;->next()Ljava/lang/Object;
+    invoke-virtual {v0}, Lfsr;->b()Lojc;
 
     move-result-object v0
+
+    invoke-virtual {v0}, Lojc;->c()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lmxe;
+
+    invoke-virtual {v0}, Lmxe;->b()Lqkg;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    invoke-interface {v0}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lqxe;
 
     return-object v0
 
     :cond_0
-    new-instance v0, Ljava/util/NoSuchElementException;
-
-    invoke-direct {v0}, Ljava/util/NoSuchElementException;-><init>()V
-
-    throw v0
-.end method
-
-.method public final previousIndex()I
-    .locals 1
-
-    invoke-virtual {p0}, Lmxk;->nextIndex()I
-
-    move-result v0
-
-    add-int/lit8 v0, v0, -0x1
-
-    return v0
-.end method
-
-.method public final remove()V
-    .locals 1
-
-    iget-boolean v0, p0, Lmxk;->a:Z
-
-    invoke-static {v0}, Llkj;->u(Z)V
-
-    iget-object v0, p0, Lmxk;->b:Ljava/util/ListIterator;
-
-    invoke-interface {v0}, Ljava/util/ListIterator;->remove()V
-
     const/4 v0, 0x0
 
-    iput-boolean v0, p0, Lmxk;->a:Z
+    return-object v0
 
-    return-void
-.end method
+    nop
 
-.method public final set(Ljava/lang/Object;)V
-    .locals 1
-
-    iget-boolean v0, p0, Lmxk;->a:Z
-
-    invoke-static {v0}, Lmoz;->p(Z)V
-
-    iget-object v0, p0, Lmxk;->b:Ljava/util/ListIterator;
-
-    invoke-interface {v0, p1}, Ljava/util/ListIterator;->set(Ljava/lang/Object;)V
-
-    return-void
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method

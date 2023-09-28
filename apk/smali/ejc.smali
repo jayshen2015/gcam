@@ -1,51 +1,54 @@
-.class public final Lejc;
+.class final Lejc;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Logk;
+.implements Landroid/graphics/SurfaceTexture$OnFrameAvailableListener;
 
 
 # instance fields
-.field private final a:Loiw;
+.field final synthetic a:Lejd;
 
 
 # direct methods
-.method public constructor <init>(Loiw;)V
+.method public constructor <init>(Lejd;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lejc;->a:Lejd;
 
-    iput-object p1, p0, Lejc;->a:Loiw;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Lejb;
+.method public final onFrameAvailable(Landroid/graphics/SurfaceTexture;)V
     .locals 2
 
-    iget-object v0, p0, Lejc;->a:Loiw;
+    iget-object p1, p0, Lejc;->a:Lejd;
 
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
+    iget-object p1, p1, Lejd;->h:Ljava/util/concurrent/atomic/AtomicBoolean;
 
-    move-result-object v0
+    const/4 v0, 0x1
 
-    check-cast v0, Leir;
+    invoke-virtual {p1, v0}, Ljava/util/concurrent/atomic/AtomicBoolean;->getAndSet(Z)Z
 
-    new-instance v1, Lejb;
+    move-result p1
 
-    invoke-direct {v1, v0}, Lejb;-><init>(Leir;)V
+    if-eqz p1, :cond_0
 
-    return-object v1
-.end method
+    sget-object p1, Lejd;->a:Louj;
 
-.method public final bridge synthetic get()Ljava/lang/Object;
-    .locals 1
+    invoke-virtual {p1}, Loue;->c()Lova;
 
-    invoke-virtual {p0}, Lejc;->a()Lejb;
+    move-result-object p1
 
-    move-result-object v0
+    const/16 v0, 0x4ae
 
-    return-object v0
+    const-string v1, "Skipped a camera frame"
+
+    invoke-static {p1, v1, v0}, Ld;->v(Lova;Ljava/lang/String;C)V
+
+    :cond_0
+    return-void
 .end method

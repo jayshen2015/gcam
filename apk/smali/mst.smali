@@ -1,229 +1,194 @@
-.class public abstract Lmst;
+.class public final synthetic Lmst;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lmxy;
+.implements Lpgk;
 
 
 # instance fields
-.field private transient a:Ljava/util/Set;
-
-.field private transient b:Ljava/util/Map;
-
-.field public transient c:Ljava/util/Collection;
-
-.field public transient d:Ljava/util/Collection;
+.field public final synthetic a:Lmsv;
 
 
 # direct methods
-.method public constructor <init>()V
+.method public synthetic constructor <init>(Lmsv;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lmst;->a:Lmsv;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 1
+.method public final a(Ljava/lang/Object;)Lpht;
+    .locals 6
 
-    if-ne p1, p0, :cond_0
+    iget-object v0, p0, Lmst;->a:Lmsv;
 
-    const/4 p1, 0x1
+    check-cast p1, Ljava/util/List;
+
+    :try_start_0
+    iget-object p1, v0, Lmsv;->b:Lpht;
+
+    invoke-static {p1}, Lplk;->ad(Ljava/util/concurrent/Future;)Ljava/lang/Object;
+
+    move-result-object p1
+
+    check-cast p1, Ljava/lang/Integer;
+
+    invoke-static {p1}, Lojc;->h(Ljava/lang/Object;)Lojc;
+
+    move-result-object p1
+
+    iget-object v1, v0, Lmsv;->c:Lpht;
+
+    invoke-static {v1}, Lplk;->ad(Ljava/util/concurrent/Future;)Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Ljava/lang/Float;
+
+    invoke-static {v1}, Lojc;->h(Ljava/lang/Object;)Lojc;
+
+    move-result-object v1
+
+    iget-object v2, v0, Lmsv;->d:Lpht;
+
+    invoke-static {v2}, Lplk;->ad(Ljava/util/concurrent/Future;)Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Ljava/lang/Float;
+
+    invoke-static {v2}, Lojc;->h(Ljava/lang/Object;)Lojc;
+
+    move-result-object v2
+
+    iget-object v3, v0, Lmsv;->a:Lpht;
+
+    invoke-static {v3}, Lplk;->ad(Ljava/util/concurrent/Future;)Ljava/lang/Object;
+
+    move-result-object v3
+
+    check-cast v3, Lmsq;
+
+    iget-object v4, v3, Lmsq;->a:Lojc;
+
+    new-instance v4, Landroid/media/MediaMuxer;
+
+    iget-object v3, v3, Lmsq;->b:Lojc;
+
+    check-cast v3, Lojj;
+
+    iget-object v3, v3, Lojj;->a:Ljava/lang/Object;
+
+    check-cast v3, Ljava/io/FileDescriptor;
+
+    const/4 v5, 0x0
+
+    invoke-direct {v4, v3, v5}, Landroid/media/MediaMuxer;-><init>(Ljava/io/FileDescriptor;I)V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_1
+
+    :try_start_1
+    invoke-virtual {p1}, Lojc;->g()Z
+
+    move-result v3
+
+    if-eqz v3, :cond_0
+
+    invoke-virtual {p1}, Lojc;->c()Ljava/lang/Object;
+
+    move-result-object p1
+
+    check-cast p1, Ljava/lang/Integer;
+
+    invoke-virtual {p1}, Ljava/lang/Integer;->intValue()I
+
+    move-result p1
+
+    invoke-virtual {v4, p1}, Landroid/media/MediaMuxer;->setOrientationHint(I)V
+
+    :cond_0
+    invoke-virtual {v1}, Lojc;->g()Z
+
+    move-result p1
+
+    if-eqz p1, :cond_1
+
+    invoke-virtual {v2}, Lojc;->g()Z
+
+    move-result p1
+
+    if-eqz p1, :cond_1
+
+    invoke-virtual {v1}, Lojc;->c()Ljava/lang/Object;
+
+    move-result-object p1
+
+    check-cast p1, Ljava/lang/Float;
+
+    invoke-virtual {p1}, Ljava/lang/Float;->floatValue()F
+
+    move-result p1
+
+    invoke-virtual {v2}, Lojc;->c()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Ljava/lang/Float;
+
+    invoke-virtual {v1}, Ljava/lang/Float;->floatValue()F
+
+    move-result v1
+
+    invoke-virtual {v4, p1, v1}, Landroid/media/MediaMuxer;->setLocation(FF)V
+
+    :cond_1
+    invoke-static {v4}, Lplk;->V(Ljava/lang/Object;)Lpht;
+
+    move-result-object p1
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    goto :goto_1
+
+    :catchall_0
+    move-exception p1
 
     goto :goto_0
 
-    :cond_0
-    instance-of v0, p1, Lmxy;
+    :catchall_1
+    move-exception p1
 
-    if-nez v0, :cond_1
-
-    const/4 p1, 0x0
+    const/4 v4, 0x0
 
     :goto_0
-    return p1
+    const-string v1, "MuxerImpl"
 
-    :cond_1
-    check-cast p1, Lmxy;
+    const-string v2, "Error trying to construct MediaMuxer."
 
-    invoke-interface {p0}, Lmxy;->q()Ljava/util/Map;
+    invoke-static {v1, v2, p1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    move-result-object v0
+    iget-boolean v1, v0, Lmsv;->i:Z
 
-    invoke-interface {p1}, Lmxy;->q()Ljava/util/Map;
+    if-nez v1, :cond_2
 
-    move-result-object p1
+    if-eqz v4, :cond_2
 
-    invoke-virtual {v0, p1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v4}, Landroid/media/MediaMuxer;->release()V
 
-    move-result p1
+    const/4 v1, 0x1
 
-    return p1
-.end method
+    iput-boolean v1, v0, Lmsv;->i:Z
 
-.method public f()Ljava/util/Iterator;
-    .locals 1
-
-    const/4 v0, 0x0
-
-    throw v0
-.end method
-
-.method public abstract h()Ljava/util/Map;
-.end method
-
-.method public final hashCode()I
-    .locals 1
-
-    invoke-virtual {p0}, Lmst;->q()Ljava/util/Map;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/Object;->hashCode()I
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public abstract i()Ljava/util/Set;
-.end method
-
-.method public p(Ljava/lang/Object;Ljava/lang/Object;)V
-    .locals 0
-
-    const/4 p1, 0x0
-
-    throw p1
-.end method
-
-.method public final q()Ljava/util/Map;
-    .locals 1
-
-    iget-object v0, p0, Lmst;->b:Ljava/util/Map;
-
-    if-nez v0, :cond_0
-
-    invoke-virtual {p0}, Lmst;->h()Ljava/util/Map;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lmst;->b:Ljava/util/Map;
-
-    :cond_0
-    return-object v0
-.end method
-
-.method public final r()Ljava/util/Set;
-    .locals 1
-
-    iget-object v0, p0, Lmst;->a:Ljava/util/Set;
-
-    if-nez v0, :cond_0
-
-    invoke-virtual {p0}, Lmst;->i()Ljava/util/Set;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lmst;->a:Ljava/util/Set;
-
-    :cond_0
-    return-object v0
-.end method
-
-.method public final s(Ljava/lang/Object;Ljava/lang/Object;)Z
-    .locals 1
-
-    invoke-virtual {p0}, Lmst;->q()Ljava/util/Map;
-
-    move-result-object v0
-
-    invoke-interface {v0, p1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    :cond_2
+    invoke-static {p1}, Lplk;->U(Ljava/lang/Throwable;)Lpht;
 
     move-result-object p1
 
-    check-cast p1, Ljava/util/Collection;
-
-    if-eqz p1, :cond_0
-
-    invoke-interface {p1, p2}, Ljava/util/Collection;->contains(Ljava/lang/Object;)Z
-
-    move-result p1
-
-    if-eqz p1, :cond_0
-
-    const/4 p1, 0x1
-
-    return p1
-
-    :cond_0
-    const/4 p1, 0x0
-
-    return p1
-.end method
-
-.method public final t()Z
-    .locals 1
-
-    invoke-virtual {p0}, Lmst;->e()I
-
-    move-result v0
-
-    if-nez v0, :cond_0
-
-    const/4 v0, 0x1
-
-    return v0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    return v0
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .locals 1
-
-    invoke-virtual {p0}, Lmst;->q()Ljava/util/Map;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/Object;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public final u(Ljava/lang/Object;Ljava/lang/Object;)Z
-    .locals 1
-
-    invoke-virtual {p0}, Lmst;->q()Ljava/util/Map;
-
-    move-result-object v0
-
-    invoke-interface {v0, p1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object p1
-
-    check-cast p1, Ljava/util/Collection;
-
-    if-eqz p1, :cond_0
-
-    invoke-interface {p1, p2}, Ljava/util/Collection;->remove(Ljava/lang/Object;)Z
-
-    move-result p1
-
-    if-eqz p1, :cond_0
-
-    const/4 p1, 0x1
-
-    return p1
-
-    :cond_0
-    const/4 p1, 0x0
-
-    return p1
+    :goto_1
+    return-object p1
 .end method

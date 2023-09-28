@@ -3,8 +3,5 @@
 
 
 # virtual methods
-.method public abstract a(J)V
-.end method
-
-.method public abstract b(JLjava/util/List;)V
+.method public abstract C(Z)V
 .end method

@@ -1,29 +1,22 @@
 .class public final Lcpg;
 .super Ljava/lang/Object;
 
-# interfaces
-.implements Lcqt;
+
+# static fields
+.field public static final a:Lbyr;
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 2
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance v0, Lbyr;
 
-    return-void
-.end method
+    const/16 v1, 0x14
 
+    invoke-direct {v0, v1}, Lbyr;-><init>(I)V
 
-# virtual methods
-.method public final a()V
-    .locals 0
-
-    return-void
-.end method
-
-.method public final b(Landroid/graphics/Bitmap;)V
-    .locals 0
+    sput-object v0, Lcpg;->a:Lbyr;
 
     return-void
 .end method

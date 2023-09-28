@@ -1,92 +1,98 @@
-.class public final Lkd;
-.super Landroid/animation/AnimatorListenerAdapter;
+.class final Lkd;
+.super Lgq;
 
 
 # instance fields
 .field final synthetic a:Lke;
 
-.field final synthetic b:Landroid/view/ViewPropertyAnimator;
+.field private b:Z
 
-.field final synthetic c:Landroid/view/View;
-
-.field final synthetic d:Lkf;
+.field private c:I
 
 
 # direct methods
-.method public constructor <init>(Lkf;Lke;Landroid/view/ViewPropertyAnimator;Landroid/view/View;)V
+.method public constructor <init>(Lke;)V
     .locals 0
 
-    iput-object p1, p0, Lkd;->d:Lkf;
+    iput-object p1, p0, Lkd;->a:Lke;
 
-    iput-object p2, p0, Lkd;->a:Lke;
+    invoke-direct {p0}, Lgq;-><init>()V
 
-    iput-object p3, p0, Lkd;->b:Landroid/view/ViewPropertyAnimator;
+    const/4 p1, 0x0
 
-    iput-object p4, p0, Lkd;->c:Landroid/view/View;
+    iput-boolean p1, p0, Lkd;->b:Z
 
-    invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
+    iput p1, p0, Lkd;->c:I
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onAnimationEnd(Landroid/animation/Animator;)V
-    .locals 1
+.method public final b()V
+    .locals 2
 
-    iget-object p1, p0, Lkd;->b:Landroid/view/ViewPropertyAnimator;
+    iget v0, p0, Lkd;->c:I
 
-    const/4 v0, 0x0
+    add-int/lit8 v0, v0, 0x1
 
-    invoke-virtual {p1, v0}, Landroid/view/ViewPropertyAnimator;->setListener(Landroid/animation/Animator$AnimatorListener;)Landroid/view/ViewPropertyAnimator;
+    iput v0, p0, Lkd;->c:I
 
-    iget-object p1, p0, Lkd;->c:Landroid/view/View;
+    iget-object v1, p0, Lkd;->a:Lke;
 
-    const/high16 v0, 0x3f800000    # 1.0f
+    iget-object v1, v1, Lke;->a:Ljava/util/ArrayList;
 
-    invoke-virtual {p1, v0}, Landroid/view/View;->setAlpha(F)V
+    invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
 
-    iget-object p1, p0, Lkd;->c:Landroid/view/View;
+    move-result v1
 
-    const/4 v0, 0x0
-
-    invoke-virtual {p1, v0}, Landroid/view/View;->setTranslationX(F)V
-
-    iget-object p1, p0, Lkd;->c:Landroid/view/View;
-
-    invoke-virtual {p1, v0}, Landroid/view/View;->setTranslationY(F)V
-
-    iget-object p1, p0, Lkd;->d:Lkf;
+    if-ne v0, v1, :cond_1
 
     iget-object v0, p0, Lkd;->a:Lke;
 
-    iget-object v0, v0, Lke;->b:Lmo;
+    iget-object v0, v0, Lke;->b:Lgp;
 
-    invoke-virtual {p1, v0}, Llv;->l(Lmo;)V
+    if-eqz v0, :cond_0
 
-    iget-object p1, p0, Lkd;->d:Lkf;
+    invoke-interface {v0}, Lgp;->b()V
 
-    iget-object p1, p1, Lkf;->g:Ljava/util/ArrayList;
+    :cond_0
+    const/4 v0, 0x0
 
-    iget-object v0, p0, Lkd;->a:Lke;
+    iput v0, p0, Lkd;->c:I
 
-    iget-object v0, v0, Lke;->b:Lmo;
+    iput-boolean v0, p0, Lkd;->b:Z
 
-    invoke-virtual {p1, v0}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
+    iget-object v1, p0, Lkd;->a:Lke;
 
-    iget-object p1, p0, Lkd;->d:Lkf;
+    iput-boolean v0, v1, Lke;->c:Z
 
-    invoke-virtual {p1}, Lkf;->a()V
-
+    :cond_1
     return-void
 .end method
 
-.method public final onAnimationStart(Landroid/animation/Animator;)V
-    .locals 0
+.method public final c()V
+    .locals 1
 
-    iget-object p1, p0, Lkd;->a:Lke;
+    iget-boolean v0, p0, Lkd;->b:Z
 
-    iget-object p1, p1, Lke;->b:Lmo;
+    if-eqz v0, :cond_0
 
+    return-void
+
+    :cond_0
+    const/4 v0, 0x1
+
+    iput-boolean v0, p0, Lkd;->b:Z
+
+    iget-object v0, p0, Lkd;->a:Lke;
+
+    iget-object v0, v0, Lke;->b:Lgp;
+
+    if-eqz v0, :cond_1
+
+    invoke-interface {v0}, Lgp;->c()V
+
+    :cond_1
     return-void
 .end method

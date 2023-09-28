@@ -1,24 +1,26 @@
 .class final Lkdn;
-.super Ljava/lang/Object;
-
-
-# instance fields
-.field final a:I
-
-.field final b:Z
+.super Ljava/lang/Thread;
 
 
 # direct methods
-.method public constructor <init>(I)V
+.method public constructor <init>(Ljava/lang/Runnable;Ljava/lang/String;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0, p1, p2}, Ljava/lang/Thread;-><init>(Ljava/lang/Runnable;Ljava/lang/String;)V
 
-    iput p1, p0, Lkdn;->a:I
+    return-void
+.end method
 
-    const/4 p1, 0x1
 
-    iput-boolean p1, p0, Lkdn;->b:Z
+# virtual methods
+.method public final run()V
+    .locals 1
+
+    const/16 v0, 0xa
+
+    invoke-static {v0}, Landroid/os/Process;->setThreadPriority(I)V
+
+    invoke-super {p0}, Ljava/lang/Thread;->run()V
 
     return-void
 .end method

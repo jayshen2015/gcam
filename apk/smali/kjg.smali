@@ -1,295 +1,122 @@
-.class final Lkjg;
+.class public final Lkjg;
 .super Ljava/lang/Object;
-
-# interfaces
-.implements Lnoj;
 
 
 # instance fields
-.field final synthetic a:Ljuf;
+.field public final a:Lkif;
 
-.field final synthetic b:Lkiq;
+.field private final b:I
 
-.field final synthetic c:Ljava/util/List;
+.field private final c:Lkid;
 
-.field final synthetic d:Lkoo;
-
-.field final synthetic e:Ljava/util/List;
-
-.field final synthetic f:Ljava/util/List;
-
-.field final synthetic g:Landroid/os/Handler;
-
-.field final synthetic h:Ljava/util/concurrent/Executor;
-
-.field final synthetic i:Lkji;
+.field private final d:Ljava/lang/String;
 
 
 # direct methods
-.method public constructor <init>(Lkji;Ljuf;Lkiq;Ljava/util/List;Lkoo;Ljava/util/List;Ljava/util/List;Landroid/os/Handler;Ljava/util/concurrent/Executor;)V
-    .locals 0
-
-    iput-object p1, p0, Lkjg;->i:Lkji;
-
-    iput-object p2, p0, Lkjg;->a:Ljuf;
-
-    iput-object p3, p0, Lkjg;->b:Lkiq;
-
-    iput-object p4, p0, Lkjg;->c:Ljava/util/List;
-
-    iput-object p5, p0, Lkjg;->d:Lkoo;
-
-    iput-object p6, p0, Lkjg;->e:Ljava/util/List;
-
-    iput-object p7, p0, Lkjg;->f:Ljava/util/List;
-
-    iput-object p8, p0, Lkjg;->g:Landroid/os/Handler;
-
-    iput-object p9, p0, Lkjg;->h:Ljava/util/concurrent/Executor;
+.method public constructor <init>(Lkif;Lkid;Ljava/lang/String;)V
+    .locals 2
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lkjg;->a:Lkif;
+
+    iput-object p2, p0, Lkjg;->c:Lkid;
+
+    iput-object p3, p0, Lkjg;->d:Ljava/lang/String;
+
+    const/4 v0, 0x3
+
+    new-array v0, v0, [Ljava/lang/Object;
+
+    const/4 v1, 0x0
+
+    aput-object p1, v0, v1
+
+    const/4 p1, 0x1
+
+    aput-object p2, v0, p1
+
+    const/4 p1, 0x2
+
+    aput-object p3, v0, p1
+
+    invoke-static {v0}, Ljava/util/Arrays;->hashCode([Ljava/lang/Object;)I
+
+    move-result p1
+
+    iput p1, p0, Lkjg;->b:I
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Ljava/lang/Throwable;)V
-    .locals 5
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 4
 
-    iget-object v0, p0, Lkjg;->i:Lkji;
+    const/4 v0, 0x0
 
-    iget-object v0, v0, Lkji;->b:Lkaq;
+    if-nez p1, :cond_0
 
-    iget-object v1, p0, Lkjg;->b:Lkiq;
-
-    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v1
-
-    iget-object v2, p0, Lkjg;->c:Ljava/util/List;
-
-    invoke-virtual {v2}, Ljava/lang/Object;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v4, "Failed to receive required outputs for "
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v1, " "
-
-    invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v1, "."
-
-    invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-interface {v0, v1, p1}, Lkaq;->j(Ljava/lang/String;Ljava/lang/Throwable;)V
-
-    iget-object p1, p0, Lkjg;->b:Lkiq;
-
-    invoke-virtual {p1}, Lkiq;->b()V
-
-    return-void
-.end method
-
-.method public final bridge synthetic b(Ljava/lang/Object;)V
-    .locals 9
-
-    check-cast p1, Ljava/util/List;
-
-    iget-object v0, p0, Lkjg;->a:Ljuf;
-
-    invoke-virtual {v0}, Ljuf;->b()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    iget-object v0, p0, Lkjg;->i:Lkji;
-
-    iget-object v0, v0, Lkji;->b:Lkaq;
-
-    iget-object v1, p0, Lkjg;->b:Lkiq;
-
-    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {p1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object p1
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v3, "Refusing to create "
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v1, " using "
-
-    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v2, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string p1, ". Delayed streams were configured, but the session is now closed."
-
-    invoke-virtual {v2, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p1
-
-    invoke-interface {v0, p1}, Lkaq;->f(Ljava/lang/String;)V
-
-    return-void
+    return v0
 
     :cond_0
-    const-string v0, " "
+    const/4 v1, 0x1
 
-    if-eqz p1, :cond_1
+    if-ne p1, p0, :cond_1
 
-    invoke-interface {p1}, Ljava/util/List;->isEmpty()Z
+    return v1
+
+    :cond_1
+    instance-of v2, p1, Lkjg;
+
+    if-nez v2, :cond_2
+
+    return v0
+
+    :cond_2
+    check-cast p1, Lkjg;
+
+    iget-object v2, p0, Lkjg;->a:Lkif;
+
+    iget-object v3, p1, Lkjg;->a:Lkif;
+
+    invoke-static {v2, v3}, Lmip;->dx(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_3
+
+    iget-object v2, p0, Lkjg;->c:Lkid;
+
+    iget-object v3, p1, Lkjg;->c:Lkid;
+
+    invoke-static {v2, v3}, Lmip;->dx(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_3
+
+    iget-object v2, p0, Lkjg;->d:Ljava/lang/String;
+
+    iget-object p1, p1, Lkjg;->d:Ljava/lang/String;
+
+    invoke-static {v2, p1}, Lmip;->dx(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result p1
 
-    if-nez p1, :cond_1
+    if-eqz p1, :cond_3
 
-    iget-object p1, p0, Lkjg;->i:Lkji;
+    return v1
 
-    iget-object p1, p1, Lkji;->b:Lkaq;
+    :cond_3
+    return v0
+.end method
 
-    iget-object v1, p0, Lkjg;->b:Lkiq;
+.method public final hashCode()I
+    .locals 1
 
-    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+    iget v0, p0, Lkjg;->b:I
 
-    move-result-object v1
-
-    iget-object v2, p0, Lkjg;->c:Ljava/util/List;
-
-    invoke-virtual {v2}, Ljava/lang/Object;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v4, "Required outputs for "
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v0, " are available."
-
-    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-interface {p1, v0}, Lkaq;->f(Ljava/lang/String;)V
-
-    iget-object v1, p0, Lkjg;->i:Lkji;
-
-    iget-object v2, p0, Lkjg;->d:Lkoo;
-
-    iget-object v3, p0, Lkjg;->b:Lkiq;
-
-    invoke-static {}, Lmvv;->e()Lmvq;
-
-    move-result-object p1
-
-    iget-object v0, p0, Lkjg;->e:Ljava/util/List;
-
-    invoke-virtual {p1, v0}, Lmvq;->h(Ljava/lang/Iterable;)V
-
-    iget-object v0, p0, Lkjg;->c:Ljava/util/List;
-
-    invoke-virtual {p1, v0}, Lmvq;->h(Ljava/lang/Iterable;)V
-
-    invoke-virtual {p1}, Lmvq;->f()Lmvv;
-
-    move-result-object v4
-
-    iget-object v5, p0, Lkjg;->f:Ljava/util/List;
-
-    iget-object v6, p0, Lkjg;->a:Ljuf;
-
-    iget-object v7, p0, Lkjg;->g:Landroid/os/Handler;
-
-    iget-object v8, p0, Lkjg;->h:Ljava/util/concurrent/Executor;
-
-    invoke-virtual/range {v1 .. v8}, Lkji;->b(Lkoo;Lkiq;Ljava/util/List;Ljava/util/List;Ljuf;Landroid/os/Handler;Ljava/util/concurrent/Executor;)V
-
-    return-void
-
-    :cond_1
-    iget-object p1, p0, Lkjg;->i:Lkji;
-
-    iget-object p1, p1, Lkji;->b:Lkaq;
-
-    iget-object v1, p0, Lkjg;->b:Lkiq;
-
-    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v1
-
-    iget-object v2, p0, Lkjg;->c:Ljava/util/List;
-
-    invoke-virtual {v2}, Ljava/lang/Object;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v4, "Failed to receive required outputs for "
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v0, ". The list of outputs was null or empty!"
-
-    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-interface {p1, v0}, Lkaq;->i(Ljava/lang/String;)V
-
-    iget-object p1, p0, Lkjg;->b:Lkiq;
-
-    invoke-virtual {p1}, Lkiq;->b()V
-
-    return-void
+    return v0
 .end method

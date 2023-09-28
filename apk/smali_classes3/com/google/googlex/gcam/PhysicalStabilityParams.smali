@@ -3,7 +3,7 @@
 
 
 # instance fields
-.field private transient a:J
+.field public transient a:J
 
 
 # direct methods

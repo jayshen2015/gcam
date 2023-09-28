@@ -1,77 +1,158 @@
 .class public final Ljue;
 .super Ljava/lang/Object;
 
-# interfaces
-.implements Lkad;
+
+# static fields
+.field public static final a:Louj;
 
 
 # instance fields
-.field private final a:Landroid/os/HandlerThread;
-
-.field private final b:Ljava/util/concurrent/atomic/AtomicBoolean;
+.field public final b:Landroid/content/Context;
 
 
 # direct methods
-.method public constructor <init>(Landroid/os/HandlerThread;)V
+.method static constructor <clinit>()V
     .locals 1
+
+    const-string v0, "com/google/android/apps/camera/util/photos/PhotosPackageDetector"
+
+    invoke-static {v0}, Louj;->h(Ljava/lang/String;)Louj;
+
+    move-result-object v0
+
+    sput-object v0, Ljue;->a:Louj;
+
+    return-void
+.end method
+
+.method public constructor <init>(Landroid/content/Context;)V
+    .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Ljue;->a:Landroid/os/HandlerThread;
-
-    new-instance p1, Ljava/util/concurrent/atomic/AtomicBoolean;
-
-    const/4 v0, 0x0
-
-    invoke-direct {p1, v0}, Ljava/util/concurrent/atomic/AtomicBoolean;-><init>(Z)V
-
-    iput-object p1, p0, Ljue;->b:Ljava/util/concurrent/atomic/AtomicBoolean;
+    iput-object p1, p0, Ljue;->b:Landroid/content/Context;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final close()V
+.method public final a()Landroid/content/pm/PackageInfo;
+    .locals 4
+
+    :try_start_0
+    iget-object v0, p0, Ljue;->b:Landroid/content/Context;
+
+    invoke-virtual {v0}, Landroid/content/Context;->getPackageName()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v0}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
+
+    move-result-object v0
+
+    const/4 v2, 0x0
+
+    invoke-virtual {v0, v1, v2}, Landroid/content/pm/PackageManager;->getPackageInfo(Ljava/lang/String;I)Landroid/content/pm/PackageInfo;
+
+    move-result-object v0
+    :try_end_0
+    .catch Landroid/content/pm/PackageManager$NameNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
+
+    goto :goto_0
+
+    :catch_0
+    move-exception v0
+
+    sget-object v1, Ljue;->a:Louj;
+
+    invoke-virtual {v1}, Loue;->c()Lova;
+
+    move-result-object v1
+
+    const/16 v2, 0xdbf
+
+    const-string v3, "Photos app package not found."
+
+    invoke-static {v1, v3, v2, v0}, Ld;->w(Lova;Ljava/lang/String;CLjava/lang/Throwable;)V
+
+    const/4 v0, 0x0
+
+    :goto_0
+    return-object v0
+.end method
+
+.method public final b(Ljava/lang/String;)Z
     .locals 5
 
-    iget-object v0, p0, Ljue;->b:Ljava/util/concurrent/atomic/AtomicBoolean;
+    invoke-virtual {p0}, Ljue;->a()Landroid/content/pm/PackageInfo;
 
-    const/4 v1, 0x1
+    move-result-object v0
 
-    invoke-virtual {v0, v1}, Ljava/util/concurrent/atomic/AtomicBoolean;->getAndSet(Z)Z
+    const/4 v1, 0x0
 
-    move-result v0
+    if-nez v0, :cond_0
 
-    if-eqz v0, :cond_0
-
-    return-void
+    return v1
 
     :cond_0
-    iget-object v0, p0, Ljue;->a:Landroid/os/HandlerThread;
+    iget-object v0, v0, Landroid/content/pm/PackageInfo;->versionName:Ljava/lang/String;
 
-    invoke-virtual {v0}, Landroid/os/HandlerThread;->getLooper()Landroid/os/Looper;
+    const-string v2, "DEVELOPMENT"
 
-    move-result-object v0
+    invoke-virtual {v0, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    if-eqz v0, :cond_1
+    move-result v2
 
-    invoke-static {v0}, Ljvd;->o(Landroid/os/Looper;)Landroid/os/Handler;
+    const/4 v3, 0x1
 
-    move-result-object v0
+    if-nez v2, :cond_2
 
-    iget-object v1, p0, Ljue;->a:Landroid/os/HandlerThread;
+    :try_start_0
+    new-instance v2, Ljud;
 
-    new-instance v2, Liwu;
+    invoke-direct {v2, v0}, Ljud;-><init>(Ljava/lang/String;)V
 
-    const/16 v3, 0x14
+    new-instance v4, Ljud;
 
-    invoke-direct {v2, v1, v3}, Liwu;-><init>(Landroid/os/HandlerThread;I)V
+    invoke-direct {v4, p1}, Ljud;-><init>(Ljava/lang/String;)V
 
-    const-wide/16 v3, 0x1388
+    invoke-virtual {v2, v4}, Ljud;->a(Ljud;)I
 
-    invoke-virtual {v0, v2, v3, v4}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
+    move-result p1
+    :try_end_0
+    .catch Ljava/lang/IllegalArgumentException; {:try_start_0 .. :try_end_0} :catch_0
+
+    if-ltz p1, :cond_1
+
+    return v3
+
+    :catch_0
+    move-exception v2
+
+    sget-object v2, Ljue;->a:Louj;
+
+    invoke-virtual {v2}, Loue;->b()Lova;
+
+    move-result-object v2
+
+    check-cast v2, Loug;
+
+    const/16 v3, 0xdc1
+
+    invoke-interface {v2, v3}, Loug;->G(I)Lova;
+
+    move-result-object v2
+
+    check-cast v2, Loug;
+
+    const-string v3, "Fail to check the version between %s and %s"
+
+    invoke-interface {v2, v3, v0, p1}, Loug;->y(Ljava/lang/String;Ljava/lang/Object;Ljava/lang/Object;)V
 
     :cond_1
-    return-void
+    return v1
+
+    :cond_2
+    return v3
 .end method

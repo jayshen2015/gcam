@@ -2,86 +2,214 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Landroid/view/View$OnScrollChangeListener;
+.implements Loiu;
 
 
 # instance fields
-.field public final synthetic a:Lhse;
+.field public final synthetic a:Lhsg;
 
-.field public final synthetic b:Landroidx/wear/ambient/AmbientModeSupport$AmbientController;
+.field public final synthetic b:Landroid/graphics/Bitmap;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lhse;Landroidx/wear/ambient/AmbientModeSupport$AmbientController;[B[B[B[B)V
+.method public synthetic constructor <init>(Lhsg;Landroid/graphics/Bitmap;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lhsd;->a:Lhse;
+    iput-object p1, p0, Lhsd;->a:Lhsg;
 
-    iput-object p2, p0, Lhsd;->b:Landroidx/wear/ambient/AmbientModeSupport$AmbientController;
+    iput-object p2, p0, Lhsd;->b:Landroid/graphics/Bitmap;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onScrollChange(Landroid/view/View;IIII)V
-    .locals 0
+.method public final a(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 9
 
-    iget-object p1, p0, Lhsd;->a:Lhse;
+    iget-object v0, p0, Lhsd;->a:Lhsg;
 
-    iget-object p2, p0, Lhsd;->b:Landroidx/wear/ambient/AmbientModeSupport$AmbientController;
+    iget-object v1, p0, Lhsd;->b:Landroid/graphics/Bitmap;
 
-    iget-object p3, p1, Lhse;->x:Landroid/widget/HorizontalScrollView;
+    check-cast p1, Landroid/net/Uri;
 
-    const/4 p4, 0x0
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    invoke-virtual {p3, p4}, Landroid/widget/HorizontalScrollView;->getChildAt(I)Landroid/view/View;
+    invoke-virtual {p1}, Landroid/net/Uri;->buildUpon()Landroid/net/Uri$Builder;
 
-    move-result-object p3
+    move-result-object p1
 
-    invoke-virtual {p3}, Landroid/view/View;->getWidth()I
+    const-string v2, "thumbnail"
 
-    move-result p3
+    invoke-virtual {p1, v2}, Landroid/net/Uri$Builder;->appendPath(Ljava/lang/String;)Landroid/net/Uri$Builder;
 
-    iget-object p4, p1, Lhse;->x:Landroid/widget/HorizontalScrollView;
+    move-result-object p1
 
-    invoke-virtual {p4}, Landroid/widget/HorizontalScrollView;->getWidth()I
+    invoke-virtual {p1}, Landroid/net/Uri$Builder;->build()Landroid/net/Uri;
 
-    move-result p4
+    move-result-object p1
 
-    sub-int/2addr p3, p4
+    iget-object v2, v0, Lhsg;->g:Llis;
 
-    iget-object p1, p1, Lhse;->x:Landroid/widget/HorizontalScrollView;
+    invoke-static {p1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
-    invoke-virtual {p1}, Landroid/widget/HorizontalScrollView;->getScrollX()I
+    move-result-object v3
 
-    move-result p1
+    invoke-static {v3}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
-    int-to-float p1, p1
+    move-result-object v4
 
-    iget-object p2, p2, Landroidx/wear/ambient/AmbientModeSupport$AmbientController;->a:Ljava/lang/Object;
+    invoke-virtual {v4}, Ljava/lang/String;->length()I
 
-    check-cast p2, Lhsb;
+    move-result v4
 
-    iget p4, p2, Lhsb;->d:I
+    new-instance v5, Ljava/lang/StringBuilder;
 
-    int-to-float p3, p3
+    add-int/lit8 v4, v4, 0xf
 
-    div-float/2addr p1, p3
+    invoke-direct {v5, v4}, Ljava/lang/StringBuilder;-><init>(I)V
 
-    const/high16 p3, 0x42c80000    # 100.0f
+    const-string v4, "Writing to URI "
 
-    mul-float p1, p1, p3
+    invoke-virtual {v5, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    float-to-int p1, p1
+    invoke-virtual {v5, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-static {p4, p1}, Ljava/lang/Math;->max(II)I
+    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result p1
+    move-result-object v3
 
-    iput p1, p2, Lhsb;->d:I
+    invoke-interface {v2, v3}, Llis;->f(Ljava/lang/String;)V
 
-    return-void
+    const/4 v2, 0x1
+
+    :try_start_0
+    new-instance v3, Landroid/os/ParcelFileDescriptor$AutoCloseOutputStream;
+
+    iget-object v4, v0, Lhsg;->e:Landroid/content/Context;
+
+    const-string v5, "w"
+
+    invoke-static {}, Lnhx;->a()Lnhw;
+
+    move-result-object v6
+
+    invoke-virtual {v6}, Lnhw;->b()V
+
+    iput-boolean v2, v6, Lnhw;->c:Z
+
+    new-instance v7, Lnib;
+
+    const/4 v8, 0x0
+
+    invoke-direct {v7, v8}, Lnib;-><init>([B)V
+
+    iget-object v8, v6, Lnhw;->b:Ljava/lang/Boolean;
+
+    invoke-virtual {v8}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    iget-object v8, v6, Lnhw;->a:Looh;
+
+    invoke-virtual {v8, v7}, Looh;->g(Ljava/lang/Object;)V
+
+    invoke-virtual {v6}, Lnhw;->a()Lnhx;
+
+    move-result-object v6
+
+    invoke-static {v4, p1, v5, v6}, Lnhy;->b(Landroid/content/Context;Landroid/net/Uri;Ljava/lang/String;Lnhx;)Landroid/content/res/AssetFileDescriptor;
+
+    move-result-object v4
+
+    invoke-virtual {v4}, Landroid/content/res/AssetFileDescriptor;->getParcelFileDescriptor()Landroid/os/ParcelFileDescriptor;
+
+    move-result-object v4
+
+    invoke-direct {v3, v4}, Landroid/os/ParcelFileDescriptor$AutoCloseOutputStream;-><init>(Landroid/os/ParcelFileDescriptor;)V
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
+
+    :try_start_1
+    sget-object v4, Landroid/graphics/Bitmap$CompressFormat;->JPEG:Landroid/graphics/Bitmap$CompressFormat;
+
+    const-string v5, "hsd->a()"
+
+    invoke-static {v5}, Lcom/agc/AdvancedSettings;->getJPGQuality(Ljava/lang/String;)I
+
+    move-result v5
+
+    invoke-virtual {v1, v4, v5, v3}, Landroid/graphics/Bitmap;->compress(Landroid/graphics/Bitmap$CompressFormat;ILjava/io/OutputStream;)Z
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    :try_start_2
+    invoke-virtual {v3}, Ljava/io/FileOutputStream;->close()V
+    :try_end_2
+    .catch Ljava/io/IOException; {:try_start_2 .. :try_end_2} :catch_0
+
+    goto :goto_1
+
+    :catchall_0
+    move-exception v1
+
+    :try_start_3
+    invoke-virtual {v3}, Ljava/io/FileOutputStream;->close()V
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_1
+
+    goto :goto_0
+
+    :catchall_1
+    move-exception v2
+
+    :goto_0
+    :try_start_4
+    throw v1
+    :try_end_4
+    .catch Ljava/io/IOException; {:try_start_4 .. :try_end_4} :catch_0
+
+    :catch_0
+    move-exception v1
+
+    iget-object v0, v0, Lhsg;->g:Llis;
+
+    invoke-static {p1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-static {p1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/String;->length()I
+
+    move-result v2
+
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    add-int/lit8 v2, v2, 0x19
+
+    invoke-direct {v3, v2}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string v2, "Failed to save bitmap to "
+
+    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v3, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-interface {v0, p1, v1}, Llis;->e(Ljava/lang/String;Ljava/lang/Throwable;)V
+
+    const/4 v2, 0x0
+
+    :goto_1
+    invoke-static {v2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    move-result-object p1
+
+    return-object p1
 .end method

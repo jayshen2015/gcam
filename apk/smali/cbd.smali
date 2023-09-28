@@ -1,46 +1,43 @@
-.class public final Lcbd;
+.class final Lcbd;
 .super Ljava/lang/Object;
 
+# interfaces
+.implements Lcbm;
 
-# static fields
-.field private static final a:Lcbc;
+
+# instance fields
+.field final synthetic a:Ljava/util/concurrent/Executor;
+
+.field final synthetic b:Ljava/util/Set;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
+.method public constructor <init>(Ljava/util/concurrent/Executor;Ljava/util/Set;)V
+    .locals 0
 
-    new-instance v0, Lcax;
+    iput-object p1, p0, Lcbd;->a:Ljava/util/concurrent/Executor;
 
-    invoke-direct {v0}, Lcax;-><init>()V
+    iput-object p2, p0, Lcbd;->b:Ljava/util/Set;
 
-    sput-object v0, Lcbd;->a:Lcbc;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
-.method public static a(Laed;Lcaz;Lcbc;)Laed;
-    .locals 1
 
-    new-instance v0, Lcba;
+# virtual methods
+.method public final fP(Ljrl;F)V
+    .locals 3
 
-    invoke-direct {v0, p0, p1, p2}, Lcba;-><init>(Laed;Lcaz;Lcbc;)V
+    iget-object v0, p0, Lcbd;->a:Ljava/util/concurrent/Executor;
 
-    return-object v0
-.end method
+    iget-object v1, p0, Lcbd;->b:Ljava/util/Set;
 
-.method public static b(ILcaz;)Laed;
-    .locals 1
+    new-instance v2, Lcbc;
 
-    new-instance v0, Laef;
+    invoke-direct {v2, v1, p1, p2}, Lcbc;-><init>(Ljava/util/Set;Ljrl;F)V
 
-    invoke-direct {v0, p0}, Laef;-><init>(I)V
+    invoke-interface {v0, v2}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
 
-    sget-object p0, Lcbd;->a:Lcbc;
-
-    invoke-static {v0, p1, p0}, Lcbd;->a(Laed;Lcaz;Lcbc;)Laed;
-
-    move-result-object p0
-
-    return-object p0
+    return-void
 .end method

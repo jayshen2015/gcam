@@ -16,7 +16,7 @@
 
 .field public d:Z
 
-.field public e:Landroidx/wear/ambient/AmbientModeSupport$AmbientController;
+.field public e:Ljqq;
 
 .field private final f:[I
 
@@ -27,11 +27,11 @@
 
     invoke-direct {p0, p1, p2}, Landroid/view/View;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
-    const/4 p1, 0x0
+    const/4 p1, 0x2
 
-    filled-new-array {p1, p1}, [I
+    new-array p1, p1, [I
 
-    move-result-object p1
+    fill-array-data p1, :array_0
 
     iput-object p1, p0, Lcom/google/android/apps/camera/ui/wirers/PreviewOverlay;->f:[I
 
@@ -48,6 +48,12 @@
     iput-boolean p1, p0, Lcom/google/android/apps/camera/ui/wirers/PreviewOverlay;->d:Z
 
     return-void
+
+    :array_0
+    .array-data 4
+        0x0
+        0x0
+    .end array-data
 .end method
 
 
@@ -65,7 +71,7 @@
 .end method
 
 .method public final onTouchEvent(Landroid/view/MotionEvent;)Z
-    .locals 5
+    .locals 4
 
     iget-boolean v0, p0, Lcom/google/android/apps/camera/ui/wirers/PreviewOverlay;->c:Z
 
@@ -80,11 +86,11 @@
 
     if-eqz v0, :cond_5
 
-    iget-object v0, p0, Lcom/google/android/apps/camera/ui/wirers/PreviewOverlay;->e:Landroidx/wear/ambient/AmbientModeSupport$AmbientController;
+    iget-object v0, p0, Lcom/google/android/apps/camera/ui/wirers/PreviewOverlay;->e:Ljqq;
 
     if-eqz v0, :cond_5
 
-    iget-object v0, v0, Landroidx/wear/ambient/AmbientModeSupport$AmbientController;->a:Ljava/lang/Object;
+    iget-object v0, v0, Ljqq;->a:Ljxn;
 
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getActionMasked()I
 
@@ -98,133 +104,111 @@
     goto :goto_2
 
     :pswitch_1
-    move-object v2, v0
+    iget v2, v0, Ljxn;->o:I
 
-    check-cast v2, Lipj;
-
-    iget v3, v2, Lipj;->o:I
-
-    add-int/lit8 v3, v3, -0x1
+    add-int/lit8 v2, v2, -0x1
 
     goto :goto_0
 
     :pswitch_2
-    move-object v2, v0
+    iget v2, v0, Ljxn;->o:I
 
-    check-cast v2, Lipj;
-
-    iget v3, v2, Lipj;->o:I
-
-    add-int/2addr v3, v1
+    add-int/2addr v2, v1
 
     :goto_0
-    iput v3, v2, Lipj;->o:I
+    iput v2, v0, Ljxn;->o:I
 
     goto :goto_2
 
     :pswitch_3
-    move-object v2, v0
+    invoke-virtual {v0}, Ljxn;->b()Ljxf;
 
-    check-cast v2, Lipj;
+    move-result-object v2
 
-    invoke-virtual {v2}, Lipj;->b()Lipb;
+    invoke-interface {v2}, Ljxf;->g()V
 
-    move-result-object v4
+    iget-boolean v2, v0, Ljxn;->l:Z
 
-    invoke-interface {v4}, Lipb;->c()V
+    if-eqz v2, :cond_1
 
-    iget-boolean v4, v2, Lipj;->l:Z
-
-    if-eqz v4, :cond_1
-
-    iget-object v4, v2, Lipj;->e:Lipc;
+    iget-object v2, v0, Ljxn;->e:Ljxg;
 
     goto :goto_1
 
     :cond_1
-    sget-object v4, Lipb;->A:Lipb;
+    sget-object v2, Ljxf;->m:Ljxf;
 
     :goto_1
-    invoke-interface {v4}, Lipb;->c()V
+    invoke-interface {v2}, Ljxf;->g()V
 
-    iput v3, v2, Lipj;->o:I
+    iput v3, v0, Ljxn;->o:I
 
     goto :goto_2
 
     :pswitch_4
-    move-object v2, v0
+    invoke-virtual {v0}, Ljxn;->b()Ljxf;
 
-    check-cast v2, Lipj;
+    move-result-object v2
 
-    invoke-virtual {v2}, Lipj;->b()Lipb;
+    invoke-interface {v2}, Ljxf;->b()V
 
-    move-result-object v4
+    iget-object v2, v0, Ljxn;->e:Ljxg;
 
-    invoke-interface {v4}, Lipb;->b()V
+    invoke-interface {v2}, Ljxg;->b()V
 
-    iget-object v4, v2, Lipj;->e:Lipc;
+    const/4 v2, 0x0
 
-    invoke-interface {v4}, Lipc;->b()V
+    iput v2, v0, Ljxn;->n:F
 
-    const/4 v4, 0x0
+    iput v2, v0, Ljxn;->m:F
 
-    iput v4, v2, Lipj;->n:F
+    iput v1, v0, Ljxn;->q:I
 
-    iput v4, v2, Lipj;->m:F
+    iput-boolean v3, v0, Ljxn;->k:Z
 
-    iput v1, v2, Lipj;->q:I
+    iput-boolean v3, v0, Ljxn;->l:Z
 
-    iput-boolean v3, v2, Lipj;->k:Z
-
-    iput-boolean v3, v2, Lipj;->l:Z
-
-    iput v3, v2, Lipj;->o:I
+    iput v3, v0, Ljxn;->o:I
 
     goto :goto_2
 
     :pswitch_5
-    move-object v2, v0
+    iget-object v2, v0, Ljxn;->e:Ljxg;
 
-    check-cast v2, Lipj;
+    invoke-virtual {v0, p1}, Ljxn;->a(Landroid/view/MotionEvent;)Landroid/graphics/PointF;
 
-    iget-object v3, v2, Lipj;->e:Lipc;
+    move-result-object v3
 
-    invoke-virtual {v2, p1}, Lipj;->a(Landroid/view/MotionEvent;)Landroid/graphics/PointF;
-
-    move-result-object v2
-
-    invoke-interface {v3, v2}, Lipc;->a(Landroid/graphics/PointF;)V
+    invoke-interface {v2, v3}, Ljxg;->a(Landroid/graphics/PointF;)V
 
     :goto_2
-    check-cast v0, Lipj;
-
-    iget-boolean v2, v0, Lipj;->k:Z
+    iget-boolean v2, v0, Ljxn;->k:Z
 
     if-eqz v2, :cond_2
 
-    iget-object v0, v0, Lipj;->d:Landroid/view/ScaleGestureDetector;
+    iget-object v0, v0, Ljxn;->d:Landroid/view/ScaleGestureDetector;
 
     invoke-virtual {v0, p1}, Landroid/view/ScaleGestureDetector;->onTouchEvent(Landroid/view/MotionEvent;)Z
 
     goto :goto_4
 
     :cond_2
-    iget v2, v0, Lipj;->q:I
+    iget v2, v0, Ljxn;->q:I
 
     if-ne v2, v1, :cond_4
 
-    iget-boolean v2, v0, Lipj;->l:Z
+    iget-boolean v2, v0, Ljxn;->l:Z
 
     if-eqz v2, :cond_3
 
     goto :goto_3
 
     :cond_3
-    iget-object v2, v0, Lipj;->d:Landroid/view/ScaleGestureDetector;
+    iget-object v2, v0, Ljxn;->d:Landroid/view/ScaleGestureDetector;
 
     invoke-virtual {v2, p1}, Landroid/view/ScaleGestureDetector;->onTouchEvent(Landroid/view/MotionEvent;)Z
 
-    iget-object v0, v0, Lipj;->c:Landroid/view/GestureDetector;
+    iget-object v0, v0, Ljxn;->c:Landroid/view/GestureDetector;
 
     invoke-virtual {v0, p1}, Landroid/view/GestureDetector;->onTouchEvent(Landroid/view/MotionEvent;)Z
 
@@ -232,7 +216,7 @@
 
     :cond_4
     :goto_3
-    iget-object v0, v0, Lipj;->c:Landroid/view/GestureDetector;
+    iget-object v0, v0, Ljxn;->c:Landroid/view/GestureDetector;
 
     invoke-virtual {v0, p1}, Landroid/view/GestureDetector;->onTouchEvent(Landroid/view/MotionEvent;)Z
 
@@ -255,8 +239,6 @@
 
     :cond_7
     return v1
-
-    nop
 
     :pswitch_data_0
     .packed-switch 0x0

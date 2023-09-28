@@ -1,22 +1,20 @@
-.class public final Lowo;
+.class public abstract Lowo;
 .super Ljava/lang/Object;
 
 
-# static fields
-.field public static final a:Ljava/lang/Object;
-
-
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
+.method public constructor <init>()V
+    .locals 0
 
-    new-instance v0, Loxb;
-
-    const-string v1, "CONDITION_FALSE"
-
-    invoke-direct {v0, v1}, Loxb;-><init>(Ljava/lang/String;)V
-
-    sput-object v0, Lowo;->a:Ljava/lang/Object;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
+.end method
+
+
+# virtual methods
+.method public abstract a(Ljava/lang/Class;I)Lous;
+.end method
+
+.method public abstract b(Ljava/lang/Class;)Ljava/lang/String;
 .end method

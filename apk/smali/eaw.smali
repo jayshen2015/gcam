@@ -2,145 +2,455 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lecv;
+.implements Leav;
 
 
 # instance fields
-.field final synthetic a:Lefz;
+.field private final a:Ljava/util/Set;
 
-.field final synthetic b:Ledn;
-
-.field final synthetic c:Lebb;
-
-.field final synthetic d:Lewa;
-
-.field final synthetic e:Lgkr;
+.field private final b:Lljf;
 
 
 # direct methods
-.method public constructor <init>(Lewa;Lefz;Lgkr;Ledn;Lebb;[B[B)V
+.method public constructor <init>(Ljava/util/Set;Lljf;)V
     .locals 0
 
-    iput-object p1, p0, Leaw;->d:Lewa;
-
-    iput-object p2, p0, Leaw;->a:Lefz;
-
-    iput-object p3, p0, Leaw;->e:Lgkr;
-
-    iput-object p4, p0, Leaw;->b:Ledn;
-
-    iput-object p5, p0, Leaw;->c:Lebb;
-
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    invoke-interface {p1}, Ljava/util/Set;->size()I
+
+    iput-object p1, p0, Leaw;->a:Ljava/util/Set;
+
+    iput-object p2, p0, Leaw;->b:Lljf;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Leea;Lcom/google/googlex/gcam/InterleavedImageU8;Lcom/google/googlex/gcam/ShotMetadata;)V
-    .locals 8
+.method public final d(Lhsp;)V
+    .locals 6
 
-    iget-object p1, p0, Leaw;->d:Lewa;
+    iget-object v0, p0, Leaw;->a:Ljava/util/Set;
 
-    iget-object p1, p1, Lewa;->h:Ljava/lang/Object;
+    invoke-interface {v0}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
 
-    const-string v0, "RgbCallback"
+    move-result-object v0
 
-    invoke-interface {p1, v0}, Lkbc;->e(Ljava/lang/String;)V
+    :goto_0
+    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
-    iget-object p1, p0, Leaw;->d:Lewa;
+    move-result v1
 
-    iget-object p1, p1, Lewa;->m:Ljava/lang/Object;
+    if-eqz v1, :cond_1
 
-    check-cast p1, Lcvr;
+    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    invoke-virtual {p1}, Lcvr;->H()Z
+    move-result-object v1
 
-    move-result p1
+    check-cast v1, Leav;
 
-    if-eqz p1, :cond_0
+    iget-object v2, p0, Leaw;->b:Lljf;
 
-    iget-object p1, p0, Leaw;->a:Lefz;
+    invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    sget-object v0, Lefz;->c:Lefz;
+    move-result-object v3
 
-    if-ne p1, v0, :cond_0
+    invoke-virtual {v3}, Ljava/lang/Class;->getName()Ljava/lang/String;
 
-    iget-object p1, p0, Leaw;->d:Lewa;
+    move-result-object v3
 
-    iget-object p1, p1, Lewa;->g:Ljava/lang/Object;
+    invoke-static {v3}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
-    const-string v0, "Sending primary RGB for fusion processing."
+    move-result-object v3
 
-    invoke-interface {p1, v0}, Lkaq;->b(Ljava/lang/String;)V
+    const-string v4, "abort#"
 
-    iget-object p1, p0, Leaw;->d:Lewa;
+    invoke-virtual {v3}, Ljava/lang/String;->length()I
 
-    iget-object p1, p1, Lewa;->m:Ljava/lang/Object;
+    move-result v5
 
-    check-cast p1, Lcvr;
+    if-eqz v5, :cond_0
 
-    invoke-virtual {p1}, Lcvr;->G()Ljava/lang/Object;
+    invoke-virtual {v4, v3}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object p1
+    move-result-object v3
 
-    check-cast p1, Ledk;
-
-    iget-object v0, p0, Leaw;->e:Lgkr;
-
-    sget-object v1, Lefz;->c:Lefz;
-
-    invoke-interface {p1, v0, v1}, Ledk;->d(Lgkr;Lefz;)Ledm;
-
-    move-result-object p1
-
-    new-instance v4, Lcom/google/googlex/gcam/PortraitRequest;
-
-    invoke-direct {v4}, Lcom/google/googlex/gcam/PortraitRequest;-><init>()V
-
-    invoke-static {}, Lnsy;->z()Lnou;
-
-    move-result-object v6
-
-    new-instance v7, Ljuf;
-
-    invoke-direct {v7}, Ljuf;-><init>()V
-
-    move-object v2, p1
-
-    move-object v3, p2
-
-    move-object v5, p3
-
-    invoke-interface/range {v2 .. v7}, Ledm;->c(Lcom/google/googlex/gcam/InterleavedImageU8;Lcom/google/googlex/gcam/PortraitRequest;Lcom/google/googlex/gcam/ShotMetadata;Lnou;Ljuf;)V
-
-    invoke-interface {p1}, Ledm;->close()V
-
-    return-void
+    goto :goto_1
 
     :cond_0
-    iget-object p1, p0, Leaw;->b:Ledn;
+    new-instance v3, Ljava/lang/String;
 
-    iput-object p2, p1, Ledn;->a:Lcom/google/googlex/gcam/InterleavedImageU8;
+    invoke-direct {v3, v4}, Ljava/lang/String;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {p1, p3}, Ledn;->f(Lcom/google/googlex/gcam/ShotMetadata;)V
+    :goto_1
+    invoke-interface {v2, v3}, Lljf;->e(Ljava/lang/String;)V
 
-    invoke-virtual {p1}, Ledn;->a()Ledo;
+    invoke-interface {v1, p1}, Leav;->d(Lhsp;)V
 
-    move-result-object p1
+    iget-object v1, p0, Leaw;->b:Lljf;
 
-    iget-object p2, p0, Leaw;->d:Lewa;
+    invoke-interface {v1}, Lljf;->f()V
 
-    iget-object p3, p0, Leaw;->c:Lebb;
+    goto :goto_0
 
-    invoke-virtual {p2, p3, p1}, Lewa;->c(Lebb;Ledo;)V
+    :cond_1
+    return-void
+.end method
 
-    iget-object p1, p0, Leaw;->d:Lewa;
+.method public final e(Ledd;Llmr;)V
+    .locals 6
 
-    iget-object p1, p1, Lewa;->h:Ljava/lang/Object;
+    iget-object v0, p0, Leaw;->a:Ljava/util/Set;
 
-    invoke-interface {p1}, Lkbc;->f()V
+    invoke-interface {v0}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
 
+    move-result-object v0
+
+    :goto_0
+    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_2
+
+    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Leav;
+
+    iget-object v2, p0, Leaw;->b:Lljf;
+
+    invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/lang/Class;->getName()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-static {v3}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v3
+
+    const-string v4, "addPayload#"
+
+    invoke-virtual {v3}, Ljava/lang/String;->length()I
+
+    move-result v5
+
+    if-eqz v5, :cond_0
+
+    invoke-virtual {v4, v3}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v3
+
+    goto :goto_1
+
+    :cond_0
+    new-instance v3, Ljava/lang/String;
+
+    invoke-direct {v3, v4}, Ljava/lang/String;-><init>(Ljava/lang/String;)V
+
+    :goto_1
+    invoke-interface {v2, v3}, Lljf;->e(Ljava/lang/String;)V
+
+    invoke-interface {p2}, Llmr;->a()Llmr;
+
+    move-result-object v2
+
+    if-eqz v2, :cond_1
+
+    invoke-interface {v1, p1, v2}, Leav;->e(Ledd;Llmr;)V
+
+    :cond_1
+    iget-object v1, p0, Leaw;->b:Lljf;
+
+    invoke-interface {v1}, Lljf;->f()V
+
+    goto :goto_0
+
+    :cond_2
+    return-void
+.end method
+
+.method public final f(Ledd;Lcom/google/googlex/gcam/BurstSpec;Llzv;)V
+    .locals 6
+
+    iget-object v0, p0, Leaw;->a:Ljava/util/Set;
+
+    invoke-interface {v0}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
+
+    move-result-object v0
+
+    :goto_0
+    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_1
+
+    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Leav;
+
+    iget-object v2, p0, Leaw;->b:Lljf;
+
+    invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/lang/Class;->getName()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-static {v3}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v3
+
+    const-string v4, "begin#"
+
+    invoke-virtual {v3}, Ljava/lang/String;->length()I
+
+    move-result v5
+
+    if-eqz v5, :cond_0
+
+    invoke-virtual {v4, v3}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v3
+
+    goto :goto_1
+
+    :cond_0
+    new-instance v3, Ljava/lang/String;
+
+    invoke-direct {v3, v4}, Ljava/lang/String;-><init>(Ljava/lang/String;)V
+
+    :goto_1
+    invoke-interface {v2, v3}, Lljf;->e(Ljava/lang/String;)V
+
+    invoke-interface {v1, p1, p2, p3}, Leav;->f(Ledd;Lcom/google/googlex/gcam/BurstSpec;Llzv;)V
+
+    iget-object v1, p0, Leaw;->b:Lljf;
+
+    invoke-interface {v1}, Lljf;->f()V
+
+    goto :goto_0
+
+    :cond_1
+    return-void
+.end method
+
+.method public final g(Lhsp;)V
+    .locals 6
+
+    iget-object v0, p0, Leaw;->a:Ljava/util/Set;
+
+    invoke-interface {v0}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
+
+    move-result-object v0
+
+    :goto_0
+    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_1
+
+    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Leav;
+
+    iget-object v2, p0, Leaw;->b:Lljf;
+
+    invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/lang/Class;->getName()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-static {v3}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v3
+
+    const-string v4, "start#"
+
+    invoke-virtual {v3}, Ljava/lang/String;->length()I
+
+    move-result v5
+
+    if-eqz v5, :cond_0
+
+    invoke-virtual {v4, v3}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v3
+
+    goto :goto_1
+
+    :cond_0
+    new-instance v3, Ljava/lang/String;
+
+    invoke-direct {v3, v4}, Ljava/lang/String;-><init>(Ljava/lang/String;)V
+
+    :goto_1
+    invoke-interface {v2, v3}, Lljf;->e(Ljava/lang/String;)V
+
+    invoke-interface {v1, p1}, Leav;->g(Lhsp;)V
+
+    iget-object v1, p0, Leaw;->b:Lljf;
+
+    invoke-interface {v1}, Lljf;->f()V
+
+    goto :goto_0
+
+    :cond_1
+    return-void
+.end method
+
+.method public final h(Ledd;)V
+    .locals 6
+
+    iget-object v0, p0, Leaw;->a:Ljava/util/Set;
+
+    invoke-interface {v0}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
+
+    move-result-object v0
+
+    :goto_0
+    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_1
+
+    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Leav;
+
+    iget-object v2, p0, Leaw;->b:Lljf;
+
+    invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/lang/Class;->getName()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-static {v3}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v3
+
+    const-string v4, "endPayload#"
+
+    invoke-virtual {v3}, Ljava/lang/String;->length()I
+
+    move-result v5
+
+    if-eqz v5, :cond_0
+
+    invoke-virtual {v4, v3}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v3
+
+    goto :goto_1
+
+    :cond_0
+    new-instance v3, Ljava/lang/String;
+
+    invoke-direct {v3, v4}, Ljava/lang/String;-><init>(Ljava/lang/String;)V
+
+    :goto_1
+    invoke-interface {v2, v3}, Lljf;->e(Ljava/lang/String;)V
+
+    invoke-interface {v1, p1}, Leav;->h(Ledd;)V
+
+    iget-object v1, p0, Leaw;->b:Lljf;
+
+    invoke-interface {v1}, Lljf;->f()V
+
+    goto :goto_0
+
+    :cond_1
+    return-void
+.end method
+
+.method public final i(Ledd;)V
+    .locals 6
+
+    iget-object v0, p0, Leaw;->a:Ljava/util/Set;
+
+    invoke-interface {v0}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
+
+    move-result-object v0
+
+    :goto_0
+    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_1
+
+    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Leav;
+
+    iget-object v2, p0, Leaw;->b:Lljf;
+
+    invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/lang/Class;->getName()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-static {v3}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v3
+
+    const-string v4, "endZslPayload#"
+
+    invoke-virtual {v3}, Ljava/lang/String;->length()I
+
+    move-result v5
+
+    if-eqz v5, :cond_0
+
+    invoke-virtual {v4, v3}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v3
+
+    goto :goto_1
+
+    :cond_0
+    new-instance v3, Ljava/lang/String;
+
+    invoke-direct {v3, v4}, Ljava/lang/String;-><init>(Ljava/lang/String;)V
+
+    :goto_1
+    invoke-interface {v2, v3}, Lljf;->e(Ljava/lang/String;)V
+
+    invoke-interface {v1, p1}, Leav;->i(Ledd;)V
+
+    iget-object v1, p0, Leaw;->b:Lljf;
+
+    invoke-interface {v1}, Lljf;->f()V
+
+    goto :goto_0
+
+    :cond_1
     return-void
 .end method

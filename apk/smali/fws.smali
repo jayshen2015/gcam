@@ -1,101 +1,64 @@
 .class public final Lfws;
-.super Lkoy;
+.super Ljava/lang/Object;
 
 
 # instance fields
-.field public final a:Ljava/util/Map;
+.field public final a:Landroid/view/accessibility/AccessibilityManager;
+
+.field public final b:Ldnj;
+
+.field public final c:Lfvx;
+
+.field public final d:Lgvb;
+
+.field public final e:Lghx;
 
 
 # direct methods
-.method public constructor <init>(Lkpb;)V
+.method public constructor <init>(Landroid/view/accessibility/AccessibilityManager;Ldnj;Lghx;Lgvb;Lfvx;Lenl;Lddf;[B[B[B[B[B)V
     .locals 0
 
-    invoke-direct {p0, p1}, Lkoy;-><init>(Lkpb;)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    new-instance p1, Lj$/util/concurrent/ConcurrentHashMap;
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    invoke-direct {p1}, Lj$/util/concurrent/ConcurrentHashMap;-><init>()V
+    iput-object p1, p0, Lfws;->a:Landroid/view/accessibility/AccessibilityManager;
 
-    iput-object p1, p0, Lfws;->a:Ljava/util/Map;
+    invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    return-void
-.end method
+    iput-object p2, p0, Lfws;->b:Ldnj;
 
-.method public constructor <init>(Lkpb;Lnou;)V
-    .locals 1
+    invoke-virtual {p3}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    invoke-direct {p0, p1}, Lfws;-><init>(Lkpb;)V
+    iput-object p3, p0, Lfws;->e:Lghx;
 
-    if-eqz p2, :cond_0
+    invoke-virtual {p4}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    iget-object p1, p0, Lfws;->a:Ljava/util/Map;
+    iput-object p4, p0, Lfws;->d:Lgvb;
 
-    sget-object v0, Lfwr;->a:Lfwq;
+    iput-object p5, p0, Lfws;->c:Lfvx;
 
-    invoke-interface {p1, v0, p2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {p6}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    :cond_0
+    sget-object p1, Lddl;->a:Lddi;
+
+    invoke-interface {p7}, Lddf;->c()V
+
     return-void
 .end method
 
 
 # virtual methods
-.method public final k()Lnou;
+.method public final a(Llco;Llar;)Llie;
     .locals 1
 
-    sget-object v0, Lfwr;->a:Lfwq;
+    new-instance v0, Lfwp;
 
-    invoke-virtual {p0, v0}, Lfws;->l(Lfwq;)Ljava/lang/Object;
+    invoke-direct {v0, p0}, Lfwp;-><init>(Lfws;)V
 
-    move-result-object v0
-
-    check-cast v0, Lnou;
-
-    return-object v0
-.end method
-
-.method public final l(Lfwq;)Ljava/lang/Object;
-    .locals 1
-
-    iget-object v0, p0, Lfws;->a:Ljava/util/Map;
-
-    invoke-interface {v0, p1}, Ljava/util/Map;->containsKey(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    iget-object v0, p0, Lfws;->a:Ljava/util/Map;
-
-    invoke-interface {v0, p1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {p1, v0, p2}, Llco;->a(Llij;Ljava/util/concurrent/Executor;)Llie;
 
     move-result-object p1
 
     return-object p1
-
-    :cond_0
-    const/4 p1, 0x0
-
-    return-object p1
-.end method
-
-.method public final m()Z
-    .locals 2
-
-    invoke-virtual {p0}, Lkoy;->a()I
-
-    move-result v0
-
-    const/4 v1, -0x1
-
-    if-eq v0, v1, :cond_0
-
-    const/4 v0, 0x1
-
-    return v0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    return v0
 .end method

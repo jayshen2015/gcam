@@ -1,72 +1,41 @@
-.class public final Lguw;
+.class final Lguw;
 .super Ljava/lang/Object;
 
+# interfaces
+.implements Ljava/lang/Runnable;
 
-# static fields
-.field public static final a:Lnak;
+
+# instance fields
+.field final synthetic a:Llic;
+
+.field final synthetic b:Lgux;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
+.method public constructor <init>(Lgux;Llic;)V
+    .locals 0
 
-    const-string v0, "com/google/android/apps/camera/secure/SecureActivityModule"
+    iput-object p1, p0, Lguw;->b:Lgux;
 
-    invoke-static {v0}, Lnak;->h(Ljava/lang/String;)Lnak;
+    iput-object p2, p0, Lguw;->a:Llic;
 
-    move-result-object v0
-
-    sput-object v0, Lguw;->a:Lnak;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
-.method public static a(Landroid/content/Intent;)Z
-    .locals 3
 
-    const/4 v0, 0x0
+# virtual methods
+.method public final run()V
+    .locals 2
 
-    if-nez p0, :cond_0
+    iget-object v0, p0, Lguw;->b:Lgux;
 
-    return v0
+    iget-object v0, v0, Lgux;->b:Llij;
 
-    :cond_0
-    invoke-virtual {p0}, Landroid/content/Intent;->getAction()Ljava/lang/String;
+    iget-object v1, p0, Lguw;->a:Llic;
 
-    move-result-object v1
+    invoke-interface {v0, v1}, Llij;->fB(Ljava/lang/Object;)V
 
-    const-string v2, "android.media.action.STILL_IMAGE_CAMERA_SECURE"
-
-    invoke-virtual {v2, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v2
-
-    if-nez v2, :cond_2
-
-    const-string v2, "android.media.action.IMAGE_CAPTURE_SECURE"
-
-    invoke-virtual {v2, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-nez v1, :cond_2
-
-    const-string v1, "secure_camera"
-
-    invoke-virtual {p0, v1, v0}, Landroid/content/Intent;->getBooleanExtra(Ljava/lang/String;Z)Z
-
-    move-result p0
-
-    if-eqz p0, :cond_1
-
-    goto :goto_0
-
-    :cond_1
-    return v0
-
-    :cond_2
-    :goto_0
-    const/4 p0, 0x1
-
-    return p0
+    return-void
 .end method

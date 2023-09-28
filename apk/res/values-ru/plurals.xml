@@ -1,16 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <plurals name="accessibility_timelapse_manual_record_speed_desc">
-        <item quantity="other">Скорость записи в режиме ускорения: %d</item>
-        <item quantity="one">Скорость записи в режиме ускорения: %d</item>
-        <item quantity="few">Скорость записи в режиме ускорения: %d</item>
-        <item quantity="many">Скорость записи в режиме ускорения: %d</item>
-    </plurals>
-    <plurals name="number_of_cropped_face">
-        <item quantity="other">%d лица частично в кадре.</item>
-        <item quantity="one">%d лицо частично в кадре.</item>
-        <item quantity="few">%d лица частично в кадре.</item>
-        <item quantity="many">%d лиц частично в кадре.</item>
+    <plurals name="number_of_faces_announcement">
+        <item quantity="other">%1$d лица.</item>
+        <item quantity="one">%1$d лицо.</item>
+        <item quantity="few">%1$d лица.</item>
+        <item quantity="many">%1$d лиц.</item>
     </plurals>
     <plurals name="photos_remaining">
         <item quantity="other">Примерно %s фотографии</item>

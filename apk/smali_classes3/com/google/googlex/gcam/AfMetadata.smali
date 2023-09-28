@@ -66,40 +66,6 @@
     throw v0
 .end method
 
-.method public final b(Lnqc;)V
-    .locals 2
-
-    iget-wide v0, p0, Lcom/google/googlex/gcam/AfMetadata;->a:J
-
-    iget p1, p1, Lnqc;->h:I
-
-    invoke-static {v0, v1, p0, p1}, Lcom/google/googlex/gcam/GcamModuleJNI;->AfMetadata_mode_set(JLcom/google/googlex/gcam/AfMetadata;I)V
-
-    return-void
-.end method
-
-.method public final c(Lnqd;)V
-    .locals 2
-
-    iget-wide v0, p0, Lcom/google/googlex/gcam/AfMetadata;->a:J
-
-    iget p1, p1, Lnqd;->i:I
-
-    invoke-static {v0, v1, p0, p1}, Lcom/google/googlex/gcam/GcamModuleJNI;->AfMetadata_state_set(JLcom/google/googlex/gcam/AfMetadata;I)V
-
-    return-void
-.end method
-
-.method public final d(I)V
-    .locals 2
-
-    iget-wide v0, p0, Lcom/google/googlex/gcam/AfMetadata;->a:J
-
-    invoke-static {v0, v1, p0, p1}, Lcom/google/googlex/gcam/GcamModuleJNI;->AfMetadata_trigger_set(JLcom/google/googlex/gcam/AfMetadata;I)V
-
-    return-void
-.end method
-
 .method protected final finalize()V
     .locals 0
 

@@ -2,90 +2,76 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Ljava/util/concurrent/ThreadFactory;
-
-
-# static fields
-.field public static final synthetic a:Lkub;
-
-.field public static final synthetic b:Lkub;
+.implements Lklb;
 
 
 # instance fields
-.field private final synthetic c:I
+.field public final synthetic a:Ljava/lang/String;
+
+.field public final synthetic b:I
+
+.field public final synthetic c:[Ljava/lang/String;
 
 
 # direct methods
-.method static synthetic constructor <clinit>()V
-    .locals 2
-
-    new-instance v0, Lkub;
-
-    const/4 v1, 0x2
-
-    invoke-direct {v0, v1}, Lkub;-><init>(I)V
-
-    sput-object v0, Lkub;->b:Lkub;
-
-    new-instance v0, Lkub;
-
-    const/4 v1, 0x0
-
-    invoke-direct {v0, v1}, Lkub;-><init>(I)V
-
-    sput-object v0, Lkub;->a:Lkub;
-
-    return-void
-.end method
-
-.method public synthetic constructor <init>(I)V
+.method public synthetic constructor <init>(Ljava/lang/String;I[Ljava/lang/String;)V
     .locals 0
 
-    iput p1, p0, Lkub;->c:I
-
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lkub;->a:Ljava/lang/String;
+
+    iput p2, p0, Lkub;->b:I
+
+    iput-object p3, p0, Lkub;->c:[Ljava/lang/String;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final newThread(Ljava/lang/Runnable;)Ljava/lang/Thread;
-    .locals 2
+.method public final a(Ljava/lang/Object;Ljava/lang/Object;)V
+    .locals 4
 
-    iget v0, p0, Lkub;->c:I
+    iget-object v0, p0, Lkub;->a:Ljava/lang/String;
 
-    packed-switch v0, :pswitch_data_0
+    iget v1, p0, Lkub;->b:I
 
-    new-instance v0, Ljava/lang/Thread;
+    iget-object v2, p0, Lkub;->c:[Ljava/lang/String;
 
-    const-string v1, "ProcessStablePhenotypeFlag"
+    check-cast p1, Lkuf;
 
-    invoke-direct {v0, p1, v1}, Ljava/lang/Thread;-><init>(Ljava/lang/Runnable;Ljava/lang/String;)V
+    new-instance v3, Lkud;
 
-    return-object v0
+    check-cast p2, Lkvm;
 
-    :pswitch_0
-    new-instance v0, Ladx;
+    invoke-direct {v3, p2}, Lkud;-><init>(Lkvm;)V
 
-    invoke-direct {v0, p1}, Ladx;-><init>(Ljava/lang/Runnable;)V
+    invoke-virtual {p1}, Lkmb;->u()Landroid/os/IInterface;
 
-    return-object v0
+    move-result-object p1
 
-    :pswitch_1
-    new-instance v0, Ljava/lang/Thread;
+    check-cast p1, Lkue;
 
-    const-string v1, "LensSvConn"
+    invoke-virtual {p1}, Lbmn;->a()Landroid/os/Parcel;
 
-    invoke-direct {v0, p1, v1}, Ljava/lang/Thread;-><init>(Ljava/lang/Runnable;Ljava/lang/String;)V
+    move-result-object p2
 
-    return-object v0
+    invoke-static {p2, v3}, Lbmp;->e(Landroid/os/Parcel;Landroid/os/IInterface;)V
 
-    nop
+    invoke-virtual {p2, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
+    invoke-virtual {p2, v1}, Landroid/os/Parcel;->writeInt(I)V
+
+    invoke-virtual {p2, v2}, Landroid/os/Parcel;->writeStringArray([Ljava/lang/String;)V
+
+    const/4 v0, 0x0
+
+    invoke-virtual {p2, v0}, Landroid/os/Parcel;->writeByteArray([B)V
+
+    const/4 v0, 0x1
+
+    invoke-virtual {p1, v0, p2}, Lbmn;->z(ILandroid/os/Parcel;)V
+
+    return-void
 .end method

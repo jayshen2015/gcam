@@ -1,28 +1,40 @@
-.class final Loce;
-.super Ljava/lang/Object;
+.class public final Loce;
+.super Locf;
 
 
-# static fields
-.field static final a:Llzz;
+# instance fields
+.field public a:F
+
+.field public b:F
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 4
+.method public constructor <init>()V
+    .locals 0
 
-    sget-object v0, Lnzl;->i:Lnzl;
+    invoke-direct {p0}, Locf;-><init>()V
 
-    sget-object v1, Lnzl;->k:Lnzl;
+    return-void
+.end method
 
-    sget-object v2, Loch;->b:Loch;
 
-    const-string v3, ""
+# virtual methods
+.method public final a(Landroid/graphics/Matrix;Landroid/graphics/Path;)V
+    .locals 2
 
-    invoke-static {v0, v3, v1, v2}, Llzz;->B(Lnzl;Ljava/lang/Object;Lnzl;Ljava/lang/Object;)Llzz;
+    iget-object v0, p0, Loce;->g:Landroid/graphics/Matrix;
 
-    move-result-object v0
+    invoke-virtual {p1, v0}, Landroid/graphics/Matrix;->invert(Landroid/graphics/Matrix;)Z
 
-    sput-object v0, Loce;->a:Llzz;
+    invoke-virtual {p2, v0}, Landroid/graphics/Path;->transform(Landroid/graphics/Matrix;)V
+
+    iget v0, p0, Loce;->a:F
+
+    iget v1, p0, Loce;->b:F
+
+    invoke-virtual {p2, v0, v1}, Landroid/graphics/Path;->lineTo(FF)V
+
+    invoke-virtual {p2, p1}, Landroid/graphics/Path;->transform(Landroid/graphics/Matrix;)V
 
     return-void
 .end method

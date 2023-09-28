@@ -1,41 +1,36 @@
-.class final Losc;
-.super Ljava/lang/Object;
-
-# interfaces
-.implements Loqh;
-
-
-# instance fields
-.field final synthetic a:Losd;
-
-.field final synthetic b:Ljava/lang/Runnable;
+.class abstract Losc;
+.super Ljava/util/AbstractSet;
 
 
 # direct methods
-.method public constructor <init>(Losd;Ljava/lang/Runnable;)V
+.method public constructor <init>()V
     .locals 0
 
-    iput-object p1, p0, Losc;->a:Losd;
-
-    iput-object p2, p0, Losc;->b:Ljava/lang/Runnable;
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/util/AbstractSet;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final cN()V
-    .locals 2
+.method public removeAll(Ljava/util/Collection;)Z
+    .locals 0
 
-    iget-object v0, p0, Losc;->a:Losd;
+    invoke-static {p0, p1}, Lobr;->E(Ljava/util/Set;Ljava/util/Collection;)Z
 
-    iget-object v0, v0, Losd;->c:Landroid/os/Handler;
+    move-result p1
 
-    iget-object v1, p0, Losc;->b:Ljava/lang/Runnable;
+    return p1
+.end method
 
-    invoke-virtual {v0, v1}, Landroid/os/Handler;->removeCallbacks(Ljava/lang/Runnable;)V
+.method public retainAll(Ljava/util/Collection;)Z
+    .locals 0
 
-    return-void
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    invoke-super {p0, p1}, Ljava/util/AbstractSet;->retainAll(Ljava/util/Collection;)Z
+
+    move-result p1
+
+    return p1
 .end method

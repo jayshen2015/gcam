@@ -1,64 +1,49 @@
-.class public Lnfr;
-.super Lnfx;
+.class public final synthetic Lnfr;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field private final a:Lj$/util/stream/Stream;
-
-.field public final b:Ljava/util/function/Function;
-
-.field public final c:Ljava/util/function/Function;
+.field public final synthetic a:Lpht;
 
 
 # direct methods
-.method public constructor <init>(Lj$/util/stream/Stream;Ljava/util/function/Function;Ljava/util/function/Function;)V
+.method public synthetic constructor <init>(Lpht;)V
     .locals 0
 
-    invoke-direct {p0}, Lnfx;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    iput-object p1, p0, Lnfr;->a:Lj$/util/stream/Stream;
-
-    invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    iput-object p2, p0, Lnfr;->b:Ljava/util/function/Function;
-
-    invoke-virtual {p3}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    iput-object p3, p0, Lnfr;->c:Ljava/util/function/Function;
+    iput-object p1, p0, Lnfr;->a:Lpht;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final b(Ljava/util/function/BiFunction;)Lj$/util/stream/Stream;
+.method public final run()V
     .locals 3
 
-    iget-object v0, p0, Lnfr;->a:Lj$/util/stream/Stream;
+    iget-object v0, p0, Lnfr;->a:Lpht;
 
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    :try_start_0
+    invoke-static {v0}, Lplk;->ad(Ljava/util/concurrent/Future;)Ljava/lang/Object;
+    :try_end_0
+    .catch Ljava/util/concurrent/ExecutionException; {:try_start_0 .. :try_end_0} :catch_0
 
-    new-instance v1, Lgdn;
+    return-void
 
-    const/4 v2, 0x4
+    :catch_0
+    move-exception v0
 
-    invoke-direct {v1, p0, p1, v2}, Lgdn;-><init>(Lnfr;Ljava/util/function/BiFunction;I)V
+    new-instance v1, Lnfs;
 
-    invoke-interface {v0, v1}, Lj$/util/stream/Stream;->map(Ljava/util/function/Function;)Lj$/util/stream/Stream;
+    const/4 v2, 0x0
 
-    move-result-object p1
+    invoke-direct {v1, v0, v2}, Lnfs;-><init>(Ljava/util/concurrent/ExecutionException;I)V
 
-    return-object p1
-.end method
-
-.method public final close()V
-    .locals 1
-
-    iget-object v0, p0, Lnfr;->a:Lj$/util/stream/Stream;
-
-    invoke-interface {v0}, Lj$/util/stream/Stream;->close()V
+    invoke-static {v1}, Lmyw;->h(Ljava/lang/Runnable;)V
 
     return-void
 .end method

@@ -1,139 +1,52 @@
 .class public final Lntq;
 .super Ljava/lang/Object;
 
-# interfaces
-.implements Ljava/io/Closeable;
-
-
-# static fields
-.field public static final d:Lloi;
-
 
 # instance fields
-.field public final a:Landroid/database/sqlite/SQLiteOpenHelper;
-
-.field public final b:Lnti;
-
-.field public final c:Lmwn;
+.field final synthetic a:Lnuj;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
+.method public constructor <init>(Lnuj;)V
+    .locals 0
 
-    const-string v0, "SqliteDbAdapter"
-
-    invoke-static {v0}, Lloi;->s(Ljava/lang/String;)Lloi;
-
-    move-result-object v0
-
-    sput-object v0, Lntq;->d:Lloi;
-
-    return-void
-.end method
-
-.method public constructor <init>(Landroid/content/Context;Lntf;)V
-    .locals 4
+    iput-object p1, p0, Lntq;->a:Lnuj;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iget-object v0, p2, Lntf;->a:Lnxa;
-
-    invoke-interface {v0}, Lnxa;->size()I
-
-    move-result v0
-
-    iget-object v1, p2, Lntf;->a:Lnxa;
-
-    invoke-interface {v1}, Lnxa;->size()I
-
-    move-result v1
-
-    const/4 v2, 0x0
-
-    const/4 v3, 0x1
-
-    if-ne v0, v3, :cond_0
-
-    goto :goto_0
-
-    :cond_0
-    const/4 v3, 0x0
-
-    :goto_0
-    const-string v0, "schema must contain a single table, found %s"
-
-    invoke-static {v3, v0, v1}, Lmoz;->h(ZLjava/lang/String;I)V
-
-    iget-object p2, p2, Lntf;->a:Lnxa;
-
-    invoke-interface {p2, v2}, Lnxa;->get(I)Ljava/lang/Object;
-
-    move-result-object p2
-
-    check-cast p2, Lnti;
-
-    iput-object p2, p0, Lntq;->b:Lnti;
-
-    iget-object v0, p2, Lnti;->b:Lnxa;
-
-    invoke-interface {v0}, Lnxa;->size()I
-
-    move-result v0
-
-    invoke-static {v0}, Lmjy;->A(I)Ljava/util/HashSet;
-
-    move-result-object v0
-
-    iget-object p2, p2, Lnti;->b:Lnxa;
-
-    invoke-interface {p2}, Ljava/util/List;->iterator()Ljava/util/Iterator;
-
-    move-result-object p2
-
-    :goto_1
-    invoke-interface {p2}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_1
-
-    invoke-interface {p2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Lnte;
-
-    iget-object v1, v1, Lnte;->a:Ljava/lang/String;
-
-    invoke-interface {v0, v1}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
-
-    goto :goto_1
-
-    :cond_1
-    invoke-static {v0}, Lmwn;->F(Ljava/util/Collection;)Lmwn;
-
-    move-result-object p2
-
-    iput-object p2, p0, Lntq;->c:Lmwn;
-
-    new-instance p2, Lntp;
-
-    invoke-direct {p2, p0, p1}, Lntp;-><init>(Lntq;Landroid/content/Context;)V
-
-    iput-object p2, p0, Lntq;->a:Landroid/database/sqlite/SQLiteOpenHelper;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final close()V
-    .locals 1
+.method public final bridge synthetic a(Ljava/lang/Object;)Z
+    .locals 2
 
-    iget-object v0, p0, Lntq;->a:Landroid/database/sqlite/SQLiteOpenHelper;
+    check-cast p1, Ljava/lang/Number;
 
-    invoke-virtual {v0}, Landroid/database/sqlite/SQLiteOpenHelper;->close()V
+    invoke-virtual {p1}, Ljava/lang/Number;->intValue()I
 
-    return-void
+    move-result p1
+
+    sget-object v0, Lntz;->a:Ljava/util/Set;
+
+    iget-object v1, p0, Lntq;->a:Lnuj;
+
+    iget-object v1, v1, Lnuj;->d:Ljava/util/List;
+
+    invoke-interface {v1, p1}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object p1
+
+    check-cast p1, Lnpe;
+
+    iget-object p1, p1, Lnpe;->h:Lnpk;
+
+    iget-object p1, p1, Lnpk;->e:Lnnr;
+
+    invoke-interface {v0, p1}, Ljava/util/Set;->contains(Ljava/lang/Object;)Z
+
+    move-result p1
+
+    return p1
 .end method

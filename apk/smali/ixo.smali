@@ -1,76 +1,137 @@
-.class public final enum Lixo;
-.super Ljava/lang/Enum;
-
-
-# static fields
-.field public static final enum a:Lixo;
-
-.field public static final enum b:Lixo;
-
-.field private static final synthetic d:[Lixo;
+.class Lixo;
+.super Lixk;
 
 
 # instance fields
-.field public final c:I
+.field final synthetic a:Lixx;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 5
-
-    new-instance v0, Lixo;
-
-    const-string v1, "CLOCKWISE"
-
-    const/4 v2, 0x0
-
-    invoke-direct {v0, v1, v2, v2}, Lixo;-><init>(Ljava/lang/String;II)V
-
-    sput-object v0, Lixo;->a:Lixo;
-
-    new-instance v1, Lixo;
-
-    const-string v3, "COUNTER_CLOCKWISE"
-
-    const/4 v4, 0x1
-
-    invoke-direct {v1, v3, v4, v4}, Lixo;-><init>(Ljava/lang/String;II)V
-
-    sput-object v1, Lixo;->b:Lixo;
-
-    const/4 v3, 0x2
-
-    new-array v3, v3, [Lixo;
-
-    aput-object v0, v3, v2
-
-    aput-object v1, v3, v4
-
-    sput-object v3, Lixo;->d:[Lixo;
-
-    return-void
-.end method
-
-.method private constructor <init>(Ljava/lang/String;II)V
+.method public constructor <init>(Lixx;)V
     .locals 0
 
-    invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+    iput-object p1, p0, Lixo;->a:Lixx;
 
-    iput p3, p0, Lixo;->c:I
+    invoke-direct {p0}, Lixk;-><init>()V
 
     return-void
 .end method
 
-.method public static values()[Lixo;
-    .locals 1
 
-    sget-object v0, Lixo;->d:[Lixo;
+# virtual methods
+.method public c()V
+    .locals 0
 
-    invoke-virtual {v0}, [Lixo;->clone()Ljava/lang/Object;
+    return-void
+.end method
+
+.method public d()V
+    .locals 0
+
+    return-void
+.end method
+
+.method public final f()V
+    .locals 3
+
+    iget-object v0, p0, Lixo;->a:Lixx;
+
+    invoke-virtual {v0}, Lixx;->w()V
+
+    iget-object v0, p0, Lixo;->a:Lixx;
+
+    invoke-virtual {v0}, Lixx;->s()Lcom/google/android/apps/camera/ui/wirers/PreviewOverlay;
 
     move-result-object v0
 
-    check-cast v0, [Lixo;
+    const/4 v1, 0x1
 
-    return-object v0
+    iput-boolean v1, v0, Lcom/google/android/apps/camera/ui/wirers/PreviewOverlay;->d:Z
+
+    iget-object v0, p0, Lixo;->a:Lixx;
+
+    iget-object v0, v0, Lixx;->b:Ljfn;
+
+    sget-object v2, Ljrl;->l:Ljrl;
+
+    invoke-interface {v0, v2, v1}, Ljfn;->j(Ljrl;Z)V
+
+    iget-object v0, p0, Lixo;->a:Lixx;
+
+    sget-object v2, Ljrl;->l:Ljrl;
+
+    invoke-virtual {v0, v2}, Lixx;->A(Ljrl;)V
+
+    iget-object v0, p0, Lixo;->a:Lixx;
+
+    iget-object v0, v0, Lixx;->b:Ljfn;
+
+    invoke-interface {v0}, Ljfn;->m()V
+
+    iget-object v0, p0, Lixo;->a:Lixx;
+
+    iget-object v0, v0, Lixx;->a:Lkas;
+
+    invoke-interface {v0, v1}, Lkas;->v(Z)V
+
+    iget-object v0, p0, Lixo;->a:Lixx;
+
+    iget-object v0, v0, Lixx;->a:Lkas;
+
+    move-object v1, v0
+
+    check-cast v1, Lkbi;
+
+    iget-boolean v1, v1, Lkbi;->L:Z
+
+    if-eqz v1, :cond_0
+
+    invoke-interface {v0}, Lkas;->h()V
+
+    :cond_0
+    iget-object v0, p0, Lixo;->a:Lixx;
+
+    invoke-virtual {v0}, Lixx;->v()V
+
+    return-void
+.end method
+
+.method public final g()V
+    .locals 2
+
+    iget-object v0, p0, Lixo;->a:Lixx;
+
+    invoke-virtual {v0}, Lixx;->s()Lcom/google/android/apps/camera/ui/wirers/PreviewOverlay;
+
+    move-result-object v0
+
+    const/4 v1, 0x0
+
+    iput-boolean v1, v0, Lcom/google/android/apps/camera/ui/wirers/PreviewOverlay;->d:Z
+
+    iget-object v0, p0, Lixo;->a:Lixx;
+
+    iget-object v0, v0, Lixx;->a:Lkas;
+
+    invoke-interface {v0, v1}, Lkas;->v(Z)V
+
+    return-void
+.end method
+
+.method public k()V
+    .locals 0
+
+    return-void
+.end method
+
+.method public l()V
+    .locals 0
+
+    return-void
+.end method
+
+.method public p()V
+    .locals 0
+
+    return-void
 .end method

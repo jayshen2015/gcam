@@ -1,81 +1,45 @@
-.class public final Limh;
-.super Limi;
+.class public final synthetic Limh;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field public final a:Landroid/content/SharedPreferences;
+.field public final synthetic a:Limj;
 
-.field public final b:Ljava/lang/Object;
+.field public final synthetic b:Landroid/view/Window;
 
 
 # direct methods
-.method public constructor <init>(Landroid/app/DownloadManager;Landroid/content/Context;Landroid/content/SharedPreferences;)V
+.method public synthetic constructor <init>(Limj;Landroid/view/Window;)V
     .locals 0
 
-    invoke-direct {p0, p1, p2}, Limi;-><init>(Landroid/app/DownloadManager;Landroid/content/Context;)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    new-instance p1, Ljava/lang/Object;
+    iput-object p1, p0, Limh;->a:Limj;
 
-    invoke-direct {p1}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Limh;->b:Ljava/lang/Object;
-
-    iput-object p3, p0, Limh;->a:Landroid/content/SharedPreferences;
+    iput-object p2, p0, Limh;->b:Landroid/view/Window;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Landroid/net/Uri;)Ljava/lang/Long;
-    .locals 4
+.method public final run()V
+    .locals 2
 
-    iget-object v0, p0, Limh;->b:Ljava/lang/Object;
+    iget-object v0, p0, Limh;->a:Limj;
 
-    monitor-enter v0
+    iget-object v1, p0, Limh;->b:Landroid/view/Window;
 
-    :try_start_0
-    invoke-virtual {p1}, Landroid/net/Uri;->toString()Ljava/lang/String;
+    invoke-virtual {v1}, Landroid/view/Window;->getDecorView()Landroid/view/View;
 
-    move-result-object p1
+    move-result-object v1
 
-    iget-object v1, p0, Limh;->a:Landroid/content/SharedPreferences;
+    iget-object v0, v0, Limj;->d:Landroid/view/View$OnSystemUiVisibilityChangeListener;
 
-    invoke-interface {v1, p1}, Landroid/content/SharedPreferences;->contains(Ljava/lang/String;)Z
+    invoke-virtual {v1, v0}, Landroid/view/View;->setOnSystemUiVisibilityChangeListener(Landroid/view/View$OnSystemUiVisibilityChangeListener;)V
 
-    move-result v1
-
-    if-eqz v1, :cond_0
-
-    iget-object v1, p0, Limh;->a:Landroid/content/SharedPreferences;
-
-    const-wide/16 v2, 0x0
-
-    invoke-interface {v1, p1, v2, v3}, Landroid/content/SharedPreferences;->getLong(Ljava/lang/String;J)J
-
-    move-result-wide v1
-
-    invoke-static {v1, v2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    move-result-object p1
-
-    monitor-exit v0
-
-    return-object p1
-
-    :cond_0
-    monitor-exit v0
-
-    const/4 p1, 0x0
-
-    return-object p1
-
-    :catchall_0
-    move-exception p1
-
-    monitor-exit v0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw p1
+    return-void
 .end method

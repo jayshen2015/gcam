@@ -1,45 +1,36 @@
-.class public final Lgdf;
+.class final Lgdf;
 .super Ljava/lang/Object;
-
-# interfaces
-.implements Logk;
 
 
 # instance fields
-.field private final a:Lbkb;
+.field final a:Lhsp;
+
+.field b:Lgbp;
+
+.field public final c:Lgfe;
+
+.field d:Lorj;
+
+.field e:Z
+
+.field public final f:Z
 
 
 # direct methods
-.method public constructor <init>(Lbkb;[B[B[B)V
-    .locals 0
+.method public constructor <init>(Lhsp;Lgfe;Z)V
+    .locals 1
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lgdf;->a:Lbkb;
+    const/4 v0, 0x0
+
+    iput-boolean v0, p0, Lgdf;->e:Z
+
+    iput-object p1, p0, Lgdf;->a:Lhsp;
+
+    iput-object p2, p0, Lgdf;->c:Lgfe;
+
+    iput-boolean p3, p0, Lgdf;->f:Z
 
     return-void
-.end method
-
-
-# virtual methods
-.method public final a()Lgdd;
-    .locals 1
-
-    iget-object v0, p0, Lgdf;->a:Lbkb;
-
-    iget-object v0, v0, Lbkb;->a:Ljava/lang/Object;
-
-    check-cast v0, Lgdd;
-
-    return-object v0
-.end method
-
-.method public final bridge synthetic get()Ljava/lang/Object;
-    .locals 1
-
-    invoke-virtual {p0}, Lgdf;->a()Lgdd;
-
-    move-result-object v0
-
-    return-object v0
 .end method

@@ -3,20 +3,22 @@
 
 
 # static fields
-.field public static final a:Lkhz;
+.field public static a:Ljava/lang/String;
+
+.field public static b:I
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 2
+    .locals 1
 
-    new-instance v0, Lkhz;
+    const/4 v0, 0x0
 
-    const/4 v1, 0x5
+    sput-object v0, Lkob;->a:Ljava/lang/String;
 
-    invoke-direct {v0, v1}, Lkhz;-><init>(I)V
+    const/4 v0, 0x0
 
-    sput-object v0, Lkob;->a:Lkhz;
+    sput v0, Lkob;->b:I
 
     return-void
 .end method

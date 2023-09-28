@@ -1,100 +1,50 @@
-.class public abstract Lbzv;
+.class public final Lbzv;
 .super Ljava/lang/Object;
-
-# interfaces
-.implements Lbzz;
 
 
 # instance fields
-.field private a:Lbzk;
+.field public final a:Lbrg;
+
+.field public final b:Z
+
+.field public final c:Ljth;
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 2
+.method public constructor <init>(Ljth;Llzb;Llvp;Ljug;Lddf;)V
+    .locals 1
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const/high16 v0, -0x80000000
+    invoke-interface {p3}, Llvp;->k()Llwd;
 
-    invoke-static {v0, v0}, Lcaw;->n(II)Z
+    move-result-object p4
 
-    move-result v0
+    sget-object v0, Llwd;->a:Llwd;
 
-    if-eqz v0, :cond_0
+    if-ne p4, v0, :cond_0
 
-    return-void
+    const/4 p4, 0x1
+
+    goto :goto_0
 
     :cond_0
-    new-instance v0, Ljava/lang/IllegalArgumentException;
+    const/4 p4, 0x0
 
-    const-string v1, "Width and height must both be > 0 or Target#SIZE_ORIGINAL, but given width: -2147483648 and height: -2147483648"
+    :goto_0
+    iput-boolean p4, p0, Lbzv;->b:Z
 
-    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+    new-instance v0, Lbrg;
 
-    throw v0
-.end method
+    invoke-interface {p3}, Llvp;->f()I
 
+    move-result p3
 
-# virtual methods
-.method public final c()Lbzk;
-    .locals 1
+    invoke-direct {v0, p2, p5, p3, p4}, Lbrg;-><init>(Llzb;Lddf;IZ)V
 
-    iget-object v0, p0, Lbzv;->a:Lbzk;
+    iput-object v0, p0, Lbzv;->a:Lbrg;
 
-    return-object v0
-.end method
-
-.method public final d(Lbzy;)V
-    .locals 1
-
-    const/high16 v0, -0x80000000
-
-    invoke-interface {p1, v0, v0}, Lbzy;->g(II)V
-
-    return-void
-.end method
-
-.method public final e(Landroid/graphics/drawable/Drawable;)V
-    .locals 0
-
-    return-void
-.end method
-
-.method public final f(Landroid/graphics/drawable/Drawable;)V
-    .locals 0
-
-    return-void
-.end method
-
-.method public final g()V
-    .locals 0
-
-    return-void
-.end method
-
-.method public final h()V
-    .locals 0
-
-    return-void
-.end method
-
-.method public final i()V
-    .locals 0
-
-    return-void
-.end method
-
-.method public final j(Lbzy;)V
-    .locals 0
-
-    return-void
-.end method
-
-.method public final k(Lbzk;)V
-    .locals 0
-
-    iput-object p1, p0, Lbzv;->a:Lbzk;
+    iput-object p1, p0, Lbzv;->c:Ljth;
 
     return-void
 .end method

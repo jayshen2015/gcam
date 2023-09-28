@@ -1,125 +1,188 @@
-.class public final Ldzi;
+.class final Ldzi;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Logk;
+.implements Lebo;
 
 
 # instance fields
-.field private final a:Loiw;
+.field final synthetic a:I
 
-.field private final b:Loiw;
+.field final synthetic b:Lgog;
 
-.field private final c:Loiw;
-
-.field private final d:Loiw;
-
-.field private final e:Loiw;
-
-.field private final f:Loiw;
+.field final synthetic c:Ldzr;
 
 
 # direct methods
-.method public constructor <init>(Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;)V
+.method public constructor <init>(Ldzr;ILgog;)V
     .locals 0
 
+    iput-object p1, p0, Ldzi;->c:Ldzr;
+
+    iput p2, p0, Ldzi;->a:I
+
+    iput-object p3, p0, Ldzi;->b:Lgog;
+
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Ldzi;->a:Loiw;
-
-    iput-object p2, p0, Ldzi;->b:Loiw;
-
-    iput-object p3, p0, Ldzi;->c:Loiw;
-
-    iput-object p4, p0, Ldzi;->d:Loiw;
-
-    iput-object p5, p0, Ldzi;->e:Loiw;
-
-    iput-object p6, p0, Ldzi;->f:Loiw;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Ldzh;
-    .locals 9
+.method public final r(Ledd;Landroid/graphics/Bitmap;Lcom/google/googlex/gcam/ShotMetadata;)V
+    .locals 7
 
-    iget-object v0, p0, Ldzi;->a:Loiw;
+    iget-object p1, p0, Ldzi;->c:Ldzr;
 
-    check-cast v0, Lelv;
+    iget-object p1, p1, Ldzr;->i:Lljf;
 
-    invoke-virtual {v0}, Lelv;->a()Landroid/content/ContentResolver;
+    const-string v0, "PostviewRgbCallback"
 
-    move-result-object v2
+    invoke-interface {p1, v0}, Lljf;->e(Ljava/lang/String;)V
 
-    iget-object v0, p0, Ldzi;->b:Loiw;
+    iget-object p1, p0, Ldzi;->c:Ldzr;
 
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
+    iget-object p1, p1, Ldzr;->f:Lely;
 
-    move-result-object v0
+    invoke-virtual {p1}, Lely;->c()Z
 
-    move-object v3, v0
+    move-result p1
 
-    check-cast v3, Lhlc;
+    const/4 v0, 0x0
 
-    iget-object v0, p0, Ldzi;->c:Loiw;
+    if-eqz p1, :cond_3
 
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
+    invoke-virtual {p3}, Lcom/google/googlex/gcam/ShotMetadata;->f()Lcom/google/googlex/gcam/FrameMetadata;
 
-    move-result-object v0
+    move-result-object p1
 
-    move-object v4, v0
+    iget-wide v1, p1, Lcom/google/googlex/gcam/FrameMetadata;->a:J
 
-    check-cast v4, Lhlc;
+    invoke-static {v1, v2, p1}, Lcom/google/googlex/gcam/GcamModuleJNI;->FrameMetadata_geometric_calibration_get(JLcom/google/googlex/gcam/FrameMetadata;)J
 
-    iget-object v0, p0, Ldzi;->d:Loiw;
+    move-result-wide v1
 
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
+    const/4 p1, 0x0
 
-    move-result-object v0
+    const-wide/16 v3, 0x0
 
-    move-object v5, v0
+    cmp-long v5, v1, v3
 
-    check-cast v5, Lkbc;
+    if-nez v5, :cond_0
 
-    iget-object v0, p0, Ldzi;->e:Loiw;
+    move-object v5, p1
 
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
+    goto :goto_0
 
-    move-result-object v0
+    :cond_0
+    new-instance v5, Lcom/google/googlex/gcam/GeometricCalibrationVector;
 
-    move-object v6, v0
+    invoke-direct {v5, v1, v2, v0}, Lcom/google/googlex/gcam/GeometricCalibrationVector;-><init>(JZ)V
 
-    check-cast v6, Llpg;
+    :goto_0
+    iget-wide v1, v5, Lcom/google/googlex/gcam/GeometricCalibrationVector;->a:J
 
-    iget-object v0, p0, Ldzi;->f:Loiw;
+    invoke-static {v1, v2, v5}, Lcom/google/googlex/gcam/GcamModuleJNI;->GeometricCalibrationVector_isEmpty(JLcom/google/googlex/gcam/GeometricCalibrationVector;)Z
 
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
+    move-result v1
 
-    move-result-object v0
+    if-eqz v1, :cond_2
 
-    move-object v7, v0
+    invoke-virtual {p3}, Lcom/google/googlex/gcam/ShotMetadata;->f()Lcom/google/googlex/gcam/FrameMetadata;
 
-    check-cast v7, Ldhi;
+    move-result-object v1
 
-    new-instance v0, Ldzh;
+    iget-wide v5, v1, Lcom/google/googlex/gcam/FrameMetadata;->a:J
 
-    const/4 v8, 0x0
+    invoke-static {v5, v6, v1}, Lcom/google/googlex/gcam/GcamModuleJNI;->FrameMetadata_mesh_warp_get(JLcom/google/googlex/gcam/FrameMetadata;)J
 
-    move-object v1, v0
+    move-result-wide v1
 
-    invoke-direct/range {v1 .. v8}, Ldzh;-><init>(Landroid/content/ContentResolver;Lhlc;Lhlc;Lkbc;Llpg;Ldhi;[B)V
+    cmp-long v5, v1, v3
 
-    return-object v0
-.end method
+    if-nez v5, :cond_1
 
-.method public final bridge synthetic get()Ljava/lang/Object;
-    .locals 1
+    goto :goto_1
 
-    invoke-virtual {p0}, Ldzi;->a()Ldzh;
+    :cond_1
+    new-instance p1, Lcom/google/googlex/gcam/MeshWarp;
 
-    move-result-object v0
+    invoke-direct {p1, v1, v2, v0}, Lcom/google/googlex/gcam/MeshWarp;-><init>(JZ)V
 
-    return-object v0
+    :goto_1
+    invoke-virtual {p1}, Lcom/google/googlex/gcam/MeshWarp;->c()Lcom/google/googlex/gcam/FloatVector;
+
+    move-result-object p1
+
+    iget-wide v1, p1, Lcom/google/googlex/gcam/FloatVector;->a:J
+
+    invoke-static {v1, v2, p1}, Lcom/google/googlex/gcam/GcamModuleJNI;->FloatVector_isEmpty(JLcom/google/googlex/gcam/FloatVector;)Z
+
+    move-result p1
+
+    if-nez p1, :cond_3
+
+    :cond_2
+    iget-object p1, p0, Ldzi;->c:Ldzr;
+
+    iget-object p1, p1, Ldzr;->f:Lely;
+
+    invoke-virtual {p1}, Lely;->b()Ljava/lang/Object;
+
+    move-result-object p1
+
+    check-cast p1, Lhli;
+
+    invoke-interface {p1, p2, p3}, Lhli;->c(Landroid/graphics/Bitmap;Lcom/google/googlex/gcam/ShotMetadata;)V
+
+    :cond_3
+    iget-object p1, p0, Ldzi;->c:Ldzr;
+
+    iget-object p3, p1, Ldzr;->g:Lhoh;
+
+    iget v1, p0, Ldzi;->a:I
+
+    iget-object p1, p1, Ldzr;->l:Lghx;
+
+    invoke-virtual {p1}, Llwe;->k()Llwd;
+
+    move-result-object p1
+
+    invoke-virtual {p3, p2, v1, p1}, Lhoh;->a(Landroid/graphics/Bitmap;ILlwd;)Landroid/graphics/Bitmap;
+
+    move-result-object p1
+
+    invoke-virtual {p1, p2}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+
+    move-result p3
+
+    if-eqz p3, :cond_4
+
+    iget p3, p0, Ldzi;->a:I
+
+    if-eqz p3, :cond_4
+
+    if-eqz p2, :cond_4
+
+    invoke-static {p2, p3}, Ldzr;->a(Landroid/graphics/Bitmap;I)Landroid/graphics/Bitmap;
+
+    move-result-object p1
+
+    :cond_4
+    iget-object p2, p0, Ldzi;->b:Lgog;
+
+    iget-object p2, p2, Lgog;->b:Lhsa;
+
+    invoke-interface {p2, p1, v0}, Lhsa;->U(Landroid/graphics/Bitmap;I)V
+
+    invoke-interface {p2, p1}, Lhsa;->W(Landroid/graphics/Bitmap;)V
+
+    iget-object p1, p0, Ldzi;->c:Ldzr;
+
+    iget-object p1, p1, Ldzr;->i:Lljf;
+
+    invoke-interface {p1}, Lljf;->f()V
+
+    return-void
 .end method

@@ -1,50 +1,33 @@
-.class public final synthetic Llkw;
+.class final Llkw;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Llkt;
+.implements Llkx;
 
 
 # instance fields
-.field public final synthetic a:Llkv;
+.field private final a:Llzp;
 
 
 # direct methods
-.method public synthetic constructor <init>(Llkv;)V
+.method public constructor <init>(Llzp;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Llkw;->a:Llkv;
+    iput-object p1, p0, Llkw;->a:Llzp;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(ILjava/lang/String;)V
-    .locals 2
+.method public final a(Llkc;)V
+    .locals 1
 
-    iget-object v0, p0, Llkw;->a:Llkv;
+    iget-object v0, p0, Llkw;->a:Llzp;
 
-    iget-object v1, v0, Llkv;->b:Llgf;
-
-    iget-boolean v1, v1, Llgf;->a:Z
-
-    if-eqz v1, :cond_0
-
-    invoke-static {}, Lnsy;->z()Lnou;
-
-    return-void
-
-    :cond_0
-    new-instance v1, Llkx;
-
-    invoke-direct {v1, v0, p1, p2}, Llkx;-><init>(Llkv;ILjava/lang/String;)V
-
-    iget-object p1, v0, Llkv;->a:Lnox;
-
-    invoke-static {v1, p1}, Lnsy;->G(Lnnn;Ljava/util/concurrent/Executor;)Lnou;
+    invoke-interface {p1, v0}, Llkc;->d(Llzp;)V
 
     return-void
 .end method

@@ -1,120 +1,167 @@
-.class public final Lbia;
-.super Lbhx;
+.class final Lbia;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Lazr;
 
 
 # instance fields
-.field private final e:Landroid/graphics/PointF;
+.field private final a:Ljava/nio/ByteBuffer;
+
+.field private final synthetic b:I
 
 
 # direct methods
-.method public constructor <init>(Ljava/util/List;)V
+.method public constructor <init>(I)V
     .locals 0
 
-    invoke-direct {p0, p1}, Lbhx;-><init>(Ljava/util/List;)V
+    iput p1, p0, Lbia;->b:I
 
-    new-instance p1, Landroid/graphics/PointF;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p1}, Landroid/graphics/PointF;-><init>()V
+    const/4 p1, 0x4
 
-    iput-object p1, p0, Lbia;->e:Landroid/graphics/PointF;
+    invoke-static {p1}, Ljava/nio/ByteBuffer;->allocate(I)Ljava/nio/ByteBuffer;
+
+    move-result-object p1
+
+    iput-object p1, p0, Lbia;->a:Ljava/nio/ByteBuffer;
+
+    return-void
+.end method
+
+.method public constructor <init>(I[B)V
+    .locals 0
+
+    iput p1, p0, Lbia;->b:I
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    const/16 p1, 0x8
+
+    invoke-static {p1}, Ljava/nio/ByteBuffer;->allocate(I)Ljava/nio/ByteBuffer;
+
+    move-result-object p1
+
+    iput-object p1, p0, Lbia;->a:Ljava/nio/ByteBuffer;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic f(Lblt;F)Ljava/lang/Object;
-    .locals 0
+.method public final synthetic a([BLjava/lang/Object;Ljava/security/MessageDigest;)V
+    .locals 3
 
-    invoke-virtual {p0, p1, p2, p2}, Lbia;->k(Lblt;FF)Landroid/graphics/PointF;
+    iget v0, p0, Lbia;->b:I
 
-    move-result-object p1
+    const/4 v1, 0x0
 
-    return-object p1
-.end method
+    packed-switch v0, :pswitch_data_0
 
-.method protected final bridge synthetic j(Lblt;FF)Ljava/lang/Object;
-    .locals 0
+    check-cast p2, Ljava/lang/Long;
 
-    invoke-virtual {p0, p1, p2, p3}, Lbia;->k(Lblt;FF)Landroid/graphics/PointF;
+    invoke-virtual {p3, p1}, Ljava/security/MessageDigest;->update([B)V
 
-    move-result-object p1
+    iget-object p1, p0, Lbia;->a:Ljava/nio/ByteBuffer;
 
-    return-object p1
-.end method
+    monitor-enter p1
 
-.method protected final k(Lblt;FF)Landroid/graphics/PointF;
-    .locals 5
+    goto :goto_0
 
-    iget-object v0, p1, Lblt;->b:Ljava/lang/Object;
+    :pswitch_0
+    check-cast p2, Ljava/lang/Integer;
 
-    if-eqz v0, :cond_1
+    if-nez p2, :cond_0
 
-    iget-object v1, p1, Lblt;->c:Ljava/lang/Object;
-
-    if-eqz v1, :cond_1
-
-    check-cast v0, Landroid/graphics/PointF;
-
-    check-cast v1, Landroid/graphics/PointF;
-
-    iget-object v2, p0, Lbia;->d:Lbkc;
-
-    if-eqz v2, :cond_0
-
-    iget p2, p1, Lblt;->g:F
-
-    iget-object p1, p1, Lblt;->h:Ljava/lang/Float;
-
-    invoke-virtual {p1}, Ljava/lang/Float;->floatValue()F
-
-    invoke-virtual {p0}, Lbhs;->c()F
-
-    iget-object p1, v2, Lbkc;->a:Ljava/lang/Object;
-
-    check-cast p1, Landroid/graphics/PointF;
-
-    return-object p1
+    return-void
 
     :cond_0
-    iget-object p1, p0, Lbia;->e:Landroid/graphics/PointF;
+    invoke-virtual {p3, p1}, Ljava/security/MessageDigest;->update([B)V
 
-    iget v2, v0, Landroid/graphics/PointF;->x:F
+    iget-object v0, p0, Lbia;->a:Ljava/nio/ByteBuffer;
 
-    iget v3, v1, Landroid/graphics/PointF;->x:F
+    monitor-enter v0
 
-    iget v4, v0, Landroid/graphics/PointF;->x:F
+    :try_start_0
+    iget-object p1, p0, Lbia;->a:Ljava/nio/ByteBuffer;
 
-    sub-float/2addr v3, v4
+    invoke-virtual {p1, v1}, Ljava/nio/ByteBuffer;->position(I)Ljava/nio/Buffer;
 
-    mul-float p2, p2, v3
+    move-result-object p1
 
-    add-float/2addr v2, p2
+    check-cast p1, Ljava/nio/ByteBuffer;
 
-    iget p2, v0, Landroid/graphics/PointF;->y:F
+    iget-object p1, p0, Lbia;->a:Ljava/nio/ByteBuffer;
 
-    iget v1, v1, Landroid/graphics/PointF;->y:F
+    invoke-virtual {p2}, Ljava/lang/Integer;->intValue()I
 
-    iget v0, v0, Landroid/graphics/PointF;->y:F
+    move-result p2
 
-    sub-float/2addr v1, v0
+    invoke-virtual {p1, p2}, Ljava/nio/ByteBuffer;->putInt(I)Ljava/nio/ByteBuffer;
 
-    mul-float p3, p3, v1
+    move-result-object p1
 
-    add-float/2addr p2, p3
+    invoke-virtual {p1}, Ljava/nio/ByteBuffer;->array()[B
 
-    invoke-virtual {p1, v2, p2}, Landroid/graphics/PointF;->set(FF)V
+    move-result-object p1
 
-    iget-object p1, p0, Lbia;->e:Landroid/graphics/PointF;
+    invoke-virtual {p3, p1}, Ljava/security/MessageDigest;->update([B)V
 
-    return-object p1
+    monitor-exit v0
 
-    :cond_1
-    new-instance p1, Ljava/lang/IllegalStateException;
+    return-void
 
-    const-string p2, "Missing values for keyframe."
+    :catchall_0
+    move-exception p1
 
-    invoke-direct {p1, p2}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw p1
+
+    :goto_0
+    :try_start_1
+    iget-object v0, p0, Lbia;->a:Ljava/nio/ByteBuffer;
+
+    invoke-virtual {v0, v1}, Ljava/nio/ByteBuffer;->position(I)Ljava/nio/Buffer;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/nio/ByteBuffer;
+
+    iget-object v0, p0, Lbia;->a:Ljava/nio/ByteBuffer;
+
+    invoke-virtual {p2}, Ljava/lang/Long;->longValue()J
+
+    move-result-wide v1
+
+    invoke-virtual {v0, v1, v2}, Ljava/nio/ByteBuffer;->putLong(J)Ljava/nio/ByteBuffer;
+
+    move-result-object p2
+
+    invoke-virtual {p2}, Ljava/nio/ByteBuffer;->array()[B
+
+    move-result-object p2
+
+    invoke-virtual {p3, p2}, Ljava/security/MessageDigest;->update([B)V
+
+    monitor-exit p1
+
+    return-void
+
+    :catchall_1
+    move-exception p2
+
+    monitor-exit p1
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_1
+
+    throw p2
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

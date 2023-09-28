@@ -1,172 +1,185 @@
 .class public final Lknb;
-.super Ljava/lang/Object;
+.super Lbmo;
 
 # interfaces
-.implements Lkad;
+.implements Landroid/os/IInterface;
 
 
 # instance fields
-.field final synthetic a:Landroidx/wear/ambient/AmbientDelegate;
+.field private a:Lkmb;
 
-.field private final b:Lkmy;
-
-.field private c:Z
-
-.field private d:Z
+.field private final b:I
 
 
 # direct methods
-.method public constructor <init>(Landroidx/wear/ambient/AmbientDelegate;Lkmy;[B[B)V
-    .locals 0
+.method public constructor <init>()V
+    .locals 1
 
-    iput-object p1, p0, Lknb;->a:Landroidx/wear/ambient/AmbientDelegate;
+    const-string v0, "com.google.android.gms.common.internal.IGmsCallbacks"
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0, v0}, Lbmo;-><init>(Ljava/lang/String;)V
 
-    iput-object p2, p0, Lknb;->b:Lkmy;
+    return-void
+.end method
+
+.method public constructor <init>(Lkmb;I)V
+    .locals 1
+
+    const-string v0, "com.google.android.gms.common.internal.IGmsCallbacks"
+
+    invoke-direct {p0, v0}, Lbmo;-><init>(Ljava/lang/String;)V
+
+    iput-object p1, p0, Lknb;->a:Lkmb;
+
+    iput p2, p0, Lknb;->b:I
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Z)V
-    .locals 5
+.method public final b(ILandroid/os/IBinder;Landroid/os/Bundle;)V
+    .locals 2
 
-    monitor-enter p0
+    iget-object v0, p0, Lknb;->a:Lkmb;
 
-    :try_start_0
-    iget-boolean v0, p0, Lknb;->d:Z
+    const-string v1, "onPostInitComplete can be called only once per call to getRemoteService"
 
-    if-nez v0, :cond_3
+    invoke-static {v0, v1}, Lmip;->du(Ljava/lang/Object;Ljava/lang/Object;)V
 
-    iget-object v0, p0, Lknb;->b:Lkmy;
+    iget-object v0, p0, Lknb;->a:Lkmb;
 
-    iget-wide v0, v0, Lkmy;->a:J
+    iget v1, p0, Lknb;->b:I
 
-    const-wide/16 v2, 0x0
+    invoke-virtual {v0, p1, p2, p3, v1}, Lkmb;->x(ILandroid/os/IBinder;Landroid/os/Bundle;I)V
 
-    cmp-long v4, v0, v2
+    const/4 p1, 0x0
 
-    if-nez v4, :cond_0
-
-    goto :goto_1
-
-    :cond_0
-    iget-boolean v4, p0, Lknb;->c:Z
-
-    if-eqz v4, :cond_1
-
-    if-nez p1, :cond_1
-
-    neg-long v0, v0
-
-    goto :goto_0
-
-    :cond_1
-    if-nez v4, :cond_2
-
-    if-eqz p1, :cond_2
-
-    goto :goto_0
-
-    :cond_2
-    move-wide v0, v2
-
-    :goto_0
-    iput-boolean p1, p0, Lknb;->c:Z
-
-    monitor-exit p0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    iget-object p1, p0, Lknb;->a:Landroidx/wear/ambient/AmbientDelegate;
-
-    invoke-virtual {p1, v0, v1}, Landroidx/wear/ambient/AmbientDelegate;->ac(J)V
+    iput-object p1, p0, Lknb;->a:Lkmb;
 
     return-void
-
-    :cond_3
-    :goto_1
-    :try_start_1
-    monitor-exit p0
-
-    return-void
-
-    :catchall_0
-    move-exception p1
-
-    monitor-exit p0
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    throw p1
 .end method
 
-.method public final close()V
-    .locals 4
+.method protected final x(ILandroid/os/Parcel;Landroid/os/Parcel;)Z
+    .locals 3
 
-    monitor-enter p0
+    packed-switch p1, :pswitch_data_0
 
-    :try_start_0
-    iget-boolean v0, p0, Lknb;->d:Z
+    const/4 p1, 0x0
 
-    if-eqz v0, :cond_0
+    return p1
 
-    monitor-exit p0
+    :pswitch_0
+    invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
 
-    return-void
+    move-result p1
 
-    :cond_0
-    const/4 v0, 0x1
+    invoke-virtual {p2}, Landroid/os/Parcel;->readStrongBinder()Landroid/os/IBinder;
 
-    iput-boolean v0, p0, Lknb;->d:Z
+    move-result-object v0
 
-    iget-boolean v0, p0, Lknb;->c:Z
+    sget-object v1, Lkmh;->CREATOR:Landroid/os/Parcelable$Creator;
 
-    if-eqz v0, :cond_1
+    invoke-static {p2, v1}, Lbmp;->a(Landroid/os/Parcel;Landroid/os/Parcelable$Creator;)Landroid/os/Parcelable;
 
-    iget-object v0, p0, Lknb;->b:Lkmy;
+    move-result-object p2
 
-    iget-wide v0, v0, Lkmy;->a:J
+    check-cast p2, Lkmh;
 
-    neg-long v0, v0
+    iget-object v1, p0, Lknb;->a:Lkmb;
 
-    goto :goto_0
+    const-string v2, "onPostInitCompleteWithConnectionInfo can be called only once per call togetRemoteService"
 
-    :cond_1
-    const-wide/16 v0, 0x0
+    invoke-static {v1, v2}, Lmip;->du(Ljava/lang/Object;Ljava/lang/Object;)V
 
-    :goto_0
-    monitor-exit p0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    invoke-static {p2}, Lmip;->dk(Ljava/lang/Object;)Ljava/lang/Object;
 
-    iget-object v2, p0, Lknb;->a:Landroidx/wear/ambient/AmbientDelegate;
+    iput-object p2, v1, Lkmb;->n:Lkmh;
 
-    invoke-virtual {v2}, Landroidx/wear/ambient/AmbientDelegate;->Y()Lkad;
+    invoke-virtual {v1}, Lkmb;->C()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_1
+
+    iget-object v1, p2, Lkmh;->d:Lkmi;
+
+    invoke-static {}, Lknk;->a()Lknk;
 
     move-result-object v2
 
-    iget-object v3, p0, Lknb;->b:Lkmy;
+    if-nez v1, :cond_0
 
-    invoke-virtual {v3}, Lkmy;->close()V
+    const/4 v1, 0x0
 
-    iget-object v3, p0, Lknb;->a:Landroidx/wear/ambient/AmbientDelegate;
+    goto :goto_0
 
-    invoke-virtual {v3, v0, v1}, Landroidx/wear/ambient/AmbientDelegate;->ac(J)V
+    :cond_0
+    iget-object v1, v1, Lkmi;->a:Lknl;
 
-    invoke-interface {v2}, Lkad;->close()V
+    :goto_0
+    invoke-virtual {v2, v1}, Lknk;->b(Lknl;)V
 
-    return-void
+    :cond_1
+    iget-object p2, p2, Lkmh;->a:Landroid/os/Bundle;
 
-    :catchall_0
-    move-exception v0
+    invoke-virtual {p0, p1, v0, p2}, Lknb;->b(ILandroid/os/IBinder;Landroid/os/Bundle;)V
 
-    :try_start_1
-    monitor-exit p0
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+    goto :goto_1
 
-    throw v0
+    :pswitch_1
+    invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
+
+    sget-object p1, Landroid/os/Bundle;->CREATOR:Landroid/os/Parcelable$Creator;
+
+    invoke-static {p2, p1}, Lbmp;->a(Landroid/os/Parcel;Landroid/os/Parcelable$Creator;)Landroid/os/Parcelable;
+
+    move-result-object p1
+
+    check-cast p1, Landroid/os/Bundle;
+
+    new-instance p1, Ljava/lang/Exception;
+
+    invoke-direct {p1}, Ljava/lang/Exception;-><init>()V
+
+    const-string p2, "GmsClient"
+
+    const-string v0, "received deprecated onAccountValidationComplete callback, ignoring"
+
+    invoke-static {p2, v0, p1}, Landroid/util/Log;->wtf(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+
+    goto :goto_1
+
+    :pswitch_2
+    invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
+
+    move-result p1
+
+    invoke-virtual {p2}, Landroid/os/Parcel;->readStrongBinder()Landroid/os/IBinder;
+
+    move-result-object v0
+
+    sget-object v1, Landroid/os/Bundle;->CREATOR:Landroid/os/Parcelable$Creator;
+
+    invoke-static {p2, v1}, Lbmp;->a(Landroid/os/Parcel;Landroid/os/Parcelable$Creator;)Landroid/os/Parcelable;
+
+    move-result-object p2
+
+    check-cast p2, Landroid/os/Bundle;
+
+    invoke-virtual {p0, p1, v0, p2}, Lknb;->b(ILandroid/os/IBinder;Landroid/os/Bundle;)V
+
+    :goto_1
+    invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
+
+    const/4 p1, 0x1
+
+    return p1
+
+    :pswitch_data_0
+    .packed-switch 0x1
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method

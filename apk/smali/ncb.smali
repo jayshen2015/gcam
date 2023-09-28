@@ -1,25 +1,40 @@
-.class public abstract Lncb;
+.class public final Lncb;
 .super Ljava/lang/Object;
 
 
-# direct methods
-.method public constructor <init>()V
-    .locals 0
+# static fields
+.field public static final a:Louj;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+# instance fields
+.field public final b:Landroid/content/Context;
+
+.field public final c:Lqkg;
+
+
+# direct methods
+.method static constructor <clinit>()V
+    .locals 1
+
+    const-string v0, "com/google/android/libraries/performance/primes/persistent/PersistentStorage"
+
+    invoke-static {v0}, Louj;->h(Ljava/lang/String;)Louj;
+
+    move-result-object v0
+
+    sput-object v0, Lncb;->a:Louj;
 
     return-void
 .end method
 
-
-# virtual methods
-.method protected abstract a(Lnbc;Ljava/lang/Object;Ljava/lang/Object;)V
-.end method
-
-.method protected b(Lnbc;Ljava/util/Iterator;Ljava/lang/Object;)V
+.method public constructor <init>(Landroid/content/Context;Lqkg;)V
     .locals 0
 
-    const/4 p1, 0x0
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    throw p1
+    iput-object p1, p0, Lncb;->b:Landroid/content/Context;
+
+    iput-object p2, p0, Lncb;->c:Lqkg;
+
+    return-void
 .end method

@@ -2,262 +2,552 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Logk;
+.implements Ldpx;
+
+
+# static fields
+.field private static final d:Louj;
 
 
 # instance fields
-.field private final synthetic a:I
+.field public final a:Lmpi;
+
+.field public final b:Lmrg;
+
+.field public volatile c:Ldps;
+
+.field private final e:Ljava/util/concurrent/Executor;
+
+.field private final f:Lpmv;
+
+.field private volatile g:Lmrf;
+
+.field private final h:Lgjw;
 
 
 # direct methods
-.method public constructor <init>(I)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 1
 
-    iput p1, p0, Ldpt;->a:I
+    const-string v0, "com/google/android/apps/camera/faceobfuscation/GpuFaceObfuscationController"
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-static {v0}, Louj;->h(Ljava/lang/String;)Louj;
+
+    move-result-object v0
+
+    sput-object v0, Ldpt;->d:Louj;
 
     return-void
 .end method
 
-.method public static a()Lksm;
-    .locals 1
+.method public constructor <init>(Lgjw;Ljtx;Ljava/util/concurrent/Executor;Landroid/content/Context;[B[B)V
+    .locals 0
 
-    new-instance v0, Lksm;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {v0}, Lksm;-><init>()V
+    invoke-static {p4}, Lcom/google/mediapipe/framework/AndroidAssetUtil;->a(Landroid/content/Context;)V
 
-    return-object v0
+    iput-object p1, p0, Ldpt;->h:Lgjw;
+
+    iput-object p3, p0, Ldpt;->e:Ljava/util/concurrent/Executor;
+
+    const-string p1, "faceobfuscation"
+
+    invoke-virtual {p2, p1}, Ljtx;->h(Ljava/lang/String;)Lmpi;
+
+    move-result-object p1
+
+    iput-object p1, p0, Ldpt;->a:Lmpi;
+
+    invoke-static {p1}, Lmrg;->a(Lmpi;)Lmrg;
+
+    move-result-object p2
+
+    iput-object p2, p0, Ldpt;->b:Lmrg;
+
+    invoke-static {}, Lpih;->f()Lpih;
+
+    move-result-object p2
+
+    new-instance p3, Ldpm;
+
+    invoke-direct {p3, p0, p2}, Ldpm;-><init>(Ldpt;Lpih;)V
+
+    invoke-interface {p1, p3}, Lmpi;->execute(Ljava/lang/Runnable;)V
+
+    const-wide/16 p5, 0x3e8
+
+    :try_start_0
+    sget-object p1, Ljava/util/concurrent/TimeUnit;->MILLISECONDS:Ljava/util/concurrent/TimeUnit;
+
+    invoke-virtual {p2, p5, p6, p1}, Lpih;->get(JLjava/util/concurrent/TimeUnit;)Ljava/lang/Object;
+
+    move-result-object p1
+
+    check-cast p1, Ljava/lang/Long;
+
+    invoke-virtual {p1}, Ljava/lang/Long;->longValue()J
+
+    move-result-wide p1
+    :try_end_0
+    .catch Ljava/lang/InterruptedException; {:try_start_0 .. :try_end_0} :catch_2
+    .catch Ljava/util/concurrent/ExecutionException; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Ljava/util/concurrent/TimeoutException; {:try_start_0 .. :try_end_0} :catch_0
+
+    new-instance p3, Lpmv;
+
+    invoke-direct {p3, p4, p1, p2}, Lpmv;-><init>(Landroid/content/Context;J)V
+
+    iput-object p3, p0, Ldpt;->f:Lpmv;
+
+    new-instance p1, Ldpk;
+
+    invoke-direct {p1, p0}, Ldpk;-><init>(Ldpt;)V
+
+    monitor-enter p3
+
+    const/4 p2, 0x1
+
+    :try_start_1
+    new-array p4, p2, [Lpmw;
+
+    const/4 p5, 0x0
+
+    aput-object p1, p4, p5
+
+    invoke-static {p4}, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
+
+    move-result-object p1
+
+    iput-object p1, p3, Lpmv;->a:Ljava/util/List;
+
+    monitor-exit p3
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    iget-object p1, p3, Lpmv;->b:Ljava/util/concurrent/atomic/AtomicBoolean;
+
+    invoke-virtual {p1, p2}, Ljava/util/concurrent/atomic/AtomicBoolean;->getAndSet(Z)Z
+
+    move-result p1
+
+    if-nez p1, :cond_0
+
+    invoke-virtual {p3}, Lpmv;->b()V
+
+    :cond_0
+    return-void
+
+    :catchall_0
+    move-exception p1
+
+    :try_start_2
+    monitor-exit p3
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
+
+    throw p1
+
+    :catch_0
+    move-exception p1
+
+    goto :goto_0
+
+    :catch_1
+    move-exception p1
+
+    goto :goto_0
+
+    :catch_2
+    move-exception p1
+
+    :goto_0
+    new-instance p1, Ljava/lang/AssertionError;
+
+    const-string p2, "Unhandled exception"
+
+    invoke-direct {p1, p2}, Ljava/lang/AssertionError;-><init>(Ljava/lang/Object;)V
+
+    throw p1
 .end method
 
 
 # virtual methods
-.method public final synthetic get()Ljava/lang/Object;
+.method public final a(Landroid/hardware/HardwareBuffer;J)Lpht;
+    .locals 11
+
+    new-instance v10, Ldps;
+
+    invoke-virtual {p1}, Landroid/hardware/HardwareBuffer;->getWidth()I
+
+    move-result v2
+
+    invoke-virtual {p1}, Landroid/hardware/HardwareBuffer;->getHeight()I
+
+    move-result v3
+
+    invoke-virtual {p1}, Landroid/hardware/HardwareBuffer;->getFormat()I
+
+    move-result v4
+
+    invoke-virtual {p1}, Landroid/hardware/HardwareBuffer;->getLayers()I
+
+    move-result v5
+
+    invoke-virtual {p1}, Landroid/hardware/HardwareBuffer;->getUsage()J
+
+    move-result-wide v6
+
+    move-object v0, v10
+
+    move-object v1, p0
+
+    move-wide v8, p2
+
+    invoke-direct/range {v0 .. v9}, Ldps;-><init>(Ldpt;IIIIJJ)V
+
+    iput-object v10, p0, Ldpt;->c:Ldps;
+
+    new-instance v0, Lcom/google/android/libraries/oliveoil/gl/EGLImage;
+
+    invoke-direct {v0, p1}, Lcom/google/android/libraries/oliveoil/gl/EGLImage;-><init>(Landroid/hardware/HardwareBuffer;)V
+
+    iget-object v1, p0, Ldpt;->a:Lmpi;
+
+    invoke-static {v1, v0}, Lmqg;->b(Lmpi;Lcom/google/android/libraries/oliveoil/gl/EGLImage;)Lmqg;
+
+    move-result-object v1
+
+    iget-object v2, p0, Ldpt;->a:Lmpi;
+
+    invoke-virtual {v1}, Lmqg;->g()Lmoq;
+
+    move-result-object v3
+
+    invoke-static {v2, v3}, Lmrf;->g(Lmpi;Lmoq;)Lmrf;
+
+    move-result-object v2
+
+    invoke-static {v2}, Lmwp;->f(Ljava/lang/Object;)Lmtu;
+
+    move-result-object v3
+
+    invoke-static {v3}, Lmrd;->m(Lmtu;)Lmrd;
+
+    move-result-object v3
+
+    iget-object v4, p0, Ldpt;->b:Lmrg;
+
+    invoke-virtual {v4, v1, v3}, Lmrg;->d(Lmqg;Lmrd;)V
+
+    invoke-virtual {v3}, Lmpo;->close()V
+
+    invoke-virtual {v1}, Lmpo;->close()V
+
+    invoke-virtual {v0}, Lcom/google/android/libraries/oliveoil/gl/EGLImage;->close()V
+
+    invoke-virtual {p1}, Landroid/hardware/HardwareBuffer;->close()V
+
+    iput-object v2, p0, Ldpt;->g:Lmrf;
+
+    :try_start_0
+    iget-object v0, p0, Ldpt;->g:Lmrf;
+
+    invoke-static {}, Lpih;->f()Lpih;
+
+    move-result-object v1
+
+    iget-object v2, p0, Ldpt;->a:Lmpi;
+
+    new-instance v3, Ldpn;
+
+    invoke-direct {v3, v1, v0}, Ldpn;-><init>(Lpih;Lmrf;)V
+
+    invoke-interface {v2, v3}, Lmpi;->execute(Ljava/lang/Runnable;)V
+
+    sget-object v2, Ljava/util/concurrent/TimeUnit;->MILLISECONDS:Ljava/util/concurrent/TimeUnit;
+
+    const-wide/16 v3, 0x3e8
+
+    invoke-virtual {v1, v3, v4, v2}, Lpih;->get(JLjava/util/concurrent/TimeUnit;)Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Ljava/lang/Integer;
+
+    invoke-virtual {v1}, Ljava/lang/Integer;->intValue()I
+
+    move-result v1
+
+    new-instance v2, Ldpq;
+
+    invoke-direct {v2, v1, v0, p2, p3}, Ldpq;-><init>(ILmrf;J)V
+    :try_end_0
+    .catch Ljava/lang/InterruptedException; {:try_start_0 .. :try_end_0} :catch_2
+    .catch Ljava/util/concurrent/ExecutionException; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Ljava/util/concurrent/TimeoutException; {:try_start_0 .. :try_end_0} :catch_0
+
+    iget-object p2, p0, Ldpt;->f:Lpmv;
+
+    invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    invoke-virtual {p2, v2}, Lpmv;->a(Lcom/google/mediapipe/framework/TextureFrame;)V
+
+    new-instance p2, Ldpo;
+
+    invoke-direct {p2, p0, p1}, Ldpo;-><init>(Ldpt;Landroid/hardware/HardwareBuffer;)V
+
+    invoke-static {p2}, Lphu;->a(Ljava/util/concurrent/Callable;)Lphu;
+
+    move-result-object p1
+
+    iget-object p2, p0, Ldpt;->e:Ljava/util/concurrent/Executor;
+
+    invoke-interface {p2, p1}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
+
+    return-object p1
+
+    :catch_0
+    move-exception p1
+
+    goto :goto_0
+
+    :catch_1
+    move-exception p1
+
+    goto :goto_0
+
+    :catch_2
+    move-exception p1
+
+    :goto_0
+    sget-object p2, Ldpt;->d:Louj;
+
+    invoke-virtual {p2}, Loue;->c()Lova;
+
+    move-result-object p2
+
+    const/16 p3, 0x37d
+
+    const-string v0, "couldn\'t create input texture frame"
+
+    invoke-static {p2, v0, p3}, Ld;->v(Lova;Ljava/lang/String;C)V
+
+    invoke-static {p1}, Lplk;->U(Ljava/lang/Throwable;)Lpht;
+
+    move-result-object p1
+
+    return-object p1
+.end method
+
+.method public final b(Landroid/hardware/HardwareBuffer;)Lpht;
+    .locals 4
+
+    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
+
+    move-result-wide v0
+
+    iget-object v2, p0, Ldpt;->h:Lgjw;
+
+    new-instance v3, Ldpp;
+
+    invoke-direct {v3, p0, p1, v0, v1}, Ldpp;-><init>(Ldpt;Landroid/hardware/HardwareBuffer;J)V
+
+    invoke-virtual {v2, v3}, Lgjw;->a(Lgjt;)Lpht;
+
+    move-result-object p1
+
+    return-object p1
+.end method
+
+.method public final declared-synchronized c()V
+    .locals 1
+
+    monitor-enter p0
+
+    :try_start_0
+    iget-object v0, p0, Ldpt;->b:Lmrg;
+
+    invoke-virtual {v0}, Lmrg;->close()V
+
+    iget-object v0, p0, Ldpt;->g:Lmrf;
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Ldpt;->g:Lmrf;
+
+    invoke-virtual {v0}, Lmpo;->close()V
+
+    :cond_0
+    iget-object v0, p0, Ldpt;->a:Lmpi;
+
+    invoke-interface {v0}, Lmpi;->close()V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    monitor-exit p0
+
+    return-void
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit p0
+
+    throw v0
+.end method
+
+.method public final close()V
     .locals 2
 
-    iget v0, p0, Ldpt;->a:I
+    iget-object v0, p0, Ldpt;->e:Ljava/util/concurrent/Executor;
 
-    packed-switch v0, :pswitch_data_0
+    new-instance v1, Ldpl;
 
-    const-string v0, "feature.acmi.camera.face-position-quality"
+    invoke-direct {v1, p0}, Ldpl;-><init>(Ldpt;)V
 
-    invoke-static {v0}, Ldsx;->b(Ljava/lang/String;)Ldsx;
+    invoke-interface {v0, v1}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
 
-    move-result-object v0
+    return-void
+.end method
 
-    return-object v0
+.method final synthetic d(Lcom/google/mediapipe/framework/TextureFrame;)V
+    .locals 6
 
-    :pswitch_0
-    const-string v0, "feature.acmi.image.face-familiarity"
+    iget-object v0, p0, Ldpt;->g:Lmrf;
 
-    invoke-static {v0}, Ldsx;->b(Ljava/lang/String;)Ldsx;
+    if-eqz v0, :cond_0
 
-    move-result-object v0
+    iget-object v0, p0, Ldpt;->g:Lmrf;
 
-    return-object v0
+    invoke-virtual {v0}, Lmpo;->close()V
 
-    :pswitch_1
-    const-string v0, "feature.acmi.image.aesthetic"
+    :cond_0
+    :try_start_0
+    iget-object v0, p0, Ldpt;->c:Ldps;
 
-    invoke-static {v0}, Ldsx;->b(Ljava/lang/String;)Ldsx;
+    if-eqz v0, :cond_4
 
-    move-result-object v0
+    iget-object v0, p0, Ldpt;->c:Ldps;
 
-    return-object v0
+    iget-object v0, v0, Ldps;->c:Lpih;
 
-    :pswitch_2
-    const-string v0, "feature.acmi.imu.sensor-accelerometer"
+    const-wide/16 v1, 0xbb8
 
-    invoke-static {v0}, Ldsx;->b(Ljava/lang/String;)Ldsx;
+    sget-object v3, Ljava/util/concurrent/TimeUnit;->MILLISECONDS:Ljava/util/concurrent/TimeUnit;
 
-    move-result-object v0
-
-    return-object v0
-
-    :pswitch_3
-    const-string v0, "feature.acmi.imu.frame-gyro"
-
-    invoke-static {v0}, Ldsx;->b(Ljava/lang/String;)Ldsx;
+    invoke-virtual {v0, v1, v2, v3}, Lpih;->get(JLjava/util/concurrent/TimeUnit;)Ljava/lang/Object;
 
     move-result-object v0
 
-    return-object v0
+    check-cast v0, Ljava/lang/Boolean;
 
-    :pswitch_4
-    const-string v0, "feature.acmi.camera.lens-stability"
+    invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
 
-    invoke-static {v0}, Ldsx;->b(Ljava/lang/String;)Ldsx;
+    move-result v0
+    :try_end_0
+    .catch Ljava/lang/InterruptedException; {:try_start_0 .. :try_end_0} :catch_2
+    .catch Ljava/util/concurrent/ExecutionException; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Ljava/util/concurrent/TimeoutException; {:try_start_0 .. :try_end_0} :catch_0
 
-    move-result-object v0
+    if-nez v0, :cond_1
 
-    return-object v0
+    goto :goto_1
 
-    :pswitch_5
-    const-string v0, "feature.acmi.camera.face-count"
+    :cond_1
+    iget-object v0, p0, Ldpt;->c:Ldps;
 
-    invoke-static {v0}, Ldsx;->b(Ljava/lang/String;)Ldsx;
+    move-object v1, p1
 
-    move-result-object v0
+    check-cast v1, Lcom/google/mediapipe/framework/GraphTextureFrame;
 
-    return-object v0
+    iget-wide v1, v1, Lcom/google/mediapipe/framework/GraphTextureFrame;->c:J
 
-    :pswitch_6
-    const-string v0, "feature.acmi.camera.awb-stability"
+    iget-wide v3, v0, Ldps;->a:J
 
-    invoke-static {v0}, Ldsx;->b(Ljava/lang/String;)Ldsx;
+    cmp-long v5, v1, v3
 
-    move-result-object v0
+    if-nez v5, :cond_3
 
-    return-object v0
+    iget-object v1, v0, Ldps;->c:Lpih;
 
-    :pswitch_7
-    const-string v0, "feature.acmi.camera.af-stability"
+    invoke-virtual {v1}, Lpih;->isDone()Z
 
-    invoke-static {v0}, Ldsx;->b(Ljava/lang/String;)Ldsx;
+    move-result v1
 
-    move-result-object v0
+    if-nez v1, :cond_2
 
-    return-object v0
+    goto :goto_0
 
-    :pswitch_8
-    const-string v0, "feature.acmi.camera.ae-stability"
+    :cond_2
+    iget-object v1, v0, Ldps;->f:Ldpt;
 
-    invoke-static {v0}, Ldsx;->b(Ljava/lang/String;)Ldsx;
+    iget-object v1, v1, Ldpt;->a:Lmpi;
 
-    move-result-object v0
+    new-instance v2, Ldpr;
 
-    return-object v0
+    invoke-direct {v2, v0, p1}, Ldpr;-><init>(Ldps;Lcom/google/mediapipe/framework/TextureFrame;)V
 
-    :pswitch_9
-    invoke-static {}, Ldpt;->a()Lksm;
+    invoke-interface {v1, v2}, Lmpi;->execute(Ljava/lang/Runnable;)V
 
-    move-result-object v0
+    return-void
 
-    return-object v0
+    :cond_3
+    :goto_0
+    sget-object v0, Ldpt;->d:Louj;
 
-    :pswitch_a
-    new-instance v0, Ljul;
-
-    const-string v1, "GpuFaceObfus"
-
-    invoke-static {v1}, Ljvd;->f(Ljava/lang/String;)Ljava/util/concurrent/ExecutorService;
-
-    move-result-object v1
-
-    invoke-direct {v0, v1}, Ljul;-><init>(Ljava/util/concurrent/Executor;)V
-
-    return-object v0
-
-    :pswitch_b
-    invoke-static {}, Ldre;->a()Lfwx;
+    invoke-virtual {v0}, Loue;->c()Lova;
 
     move-result-object v0
 
-    return-object v0
+    const/16 v1, 0x381
 
-    :pswitch_c
-    sget-object v0, Ldrl;->a:Ldrl;
+    const-string v2, "couldn\'t set result frame"
 
-    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    invoke-static {v0, v2, v1}, Ld;->v(Lova;Ljava/lang/String;C)V
 
-    return-object v0
+    invoke-interface {p1}, Lcom/google/mediapipe/framework/TextureFrame;->release()V
 
-    :pswitch_d
-    invoke-static {}, Ldre;->e()Lfwx;
+    return-void
 
-    move-result-object v0
+    :cond_4
+    :goto_1
+    :try_start_1
+    invoke-interface {p1}, Lcom/google/mediapipe/framework/TextureFrame;->release()V
+    :try_end_1
+    .catch Ljava/lang/InterruptedException; {:try_start_1 .. :try_end_1} :catch_2
+    .catch Ljava/util/concurrent/ExecutionException; {:try_start_1 .. :try_end_1} :catch_1
+    .catch Ljava/util/concurrent/TimeoutException; {:try_start_1 .. :try_end_1} :catch_0
 
-    return-object v0
+    return-void
 
-    :pswitch_e
-    new-instance v0, Ljul;
+    :catch_0
+    move-exception v0
 
-    const-string v1, "FaceDeblur"
+    goto :goto_2
 
-    invoke-static {v1}, Ljvd;->c(Ljava/lang/String;)Ljava/util/concurrent/ExecutorService;
+    :catch_1
+    move-exception v0
 
-    move-result-object v1
+    goto :goto_2
 
-    invoke-direct {v0, v1}, Ljul;-><init>(Ljava/util/concurrent/Executor;)V
+    :catch_2
+    move-exception v0
 
-    return-object v0
+    :goto_2
+    sget-object v0, Ldpt;->d:Louj;
 
-    :pswitch_f
-    const-string v0, "VsprAtvClbck"
-
-    invoke-static {v0}, Ljvd;->f(Ljava/lang/String;)Ljava/util/concurrent/ExecutorService;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    return-object v0
-
-    :pswitch_10
-    new-instance v0, Ljul;
-
-    const-string v1, "GpuFaceBeau"
-
-    invoke-static {v1}, Ljvd;->f(Ljava/lang/String;)Ljava/util/concurrent/ExecutorService;
-
-    move-result-object v1
-
-    invoke-direct {v0, v1}, Ljul;-><init>(Ljava/util/concurrent/Executor;)V
-
-    return-object v0
-
-    :pswitch_11
-    invoke-static {}, Ldnf;->c()Lfwx;
+    invoke-virtual {v0}, Loue;->c()Lova;
 
     move-result-object v0
 
-    return-object v0
+    const/16 v1, 0x380
 
-    :pswitch_12
-    new-instance v0, Ljvk;
+    const-string v2, "couldn\'t wait for initialization of result texture"
 
-    sget-object v1, Ldoh;->a:Ldoh;
+    invoke-static {v0, v2, v1}, Ld;->v(Lova;Ljava/lang/String;C)V
 
-    invoke-direct {v0, v1}, Ljvk;-><init>(Ljava/lang/Object;)V
+    invoke-interface {p1}, Lcom/google/mediapipe/framework/TextureFrame;->release()V
 
-    return-object v0
-
-    :pswitch_13
-    new-instance v0, Ljul;
-
-    const-string v1, "FaceBeau"
-
-    invoke-static {v1}, Ljvd;->c(Ljava/lang/String;)Ljava/util/concurrent/ExecutorService;
-
-    move-result-object v1
-
-    invoke-direct {v0, v1}, Ljul;-><init>(Ljava/util/concurrent/Executor;)V
-
-    return-object v0
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_13
-        :pswitch_12
-        :pswitch_11
-        :pswitch_10
-        :pswitch_f
-        :pswitch_e
-        :pswitch_d
-        :pswitch_c
-        :pswitch_b
-        :pswitch_a
-        :pswitch_9
-        :pswitch_8
-        :pswitch_7
-        :pswitch_6
-        :pswitch_5
-        :pswitch_4
-        :pswitch_3
-        :pswitch_2
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
+    return-void
 .end method

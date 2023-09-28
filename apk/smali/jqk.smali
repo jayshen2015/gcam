@@ -1,56 +1,55 @@
 .class public final Ljqk;
-.super Ljhn;
+.super Ljava/lang/Object;
 
-
-# static fields
-.field public static final CREATOR:Landroid/os/Parcelable$Creator;
+# interfaces
+.implements Ljqn;
 
 
 # instance fields
-.field public final a:I
+.field private final a:Lqkg;
+
+.field private final b:Lhjn;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
-
-    new-instance v0, Ljnd;
-
-    const/16 v1, 0x14
-
-    invoke-direct {v0, v1}, Ljnd;-><init>(I)V
-
-    sput-object v0, Ljqk;->CREATOR:Landroid/os/Parcelable$Creator;
-
-    return-void
-.end method
-
-.method public constructor <init>(I)V
+.method public constructor <init>(Lhjn;Lqkg;)V
     .locals 0
 
-    invoke-direct {p0}, Ljhn;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput p1, p0, Ljqk;->a:I
+    iput-object p1, p0, Ljqk;->b:Lhjn;
+
+    iput-object p2, p0, Ljqk;->a:Lqkg;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final writeToParcel(Landroid/os/Parcel;I)V
+.method public final a()V
     .locals 2
 
-    invoke-static {p1}, Ljhp;->a(Landroid/os/Parcel;)I
+    iget-object v0, p0, Ljqk;->a:Lqkg;
 
-    move-result p2
+    invoke-interface {v0}, Lqkg;->get()Ljava/lang/Object;
 
-    iget v0, p0, Ljqk;->a:I
+    move-result-object v0
 
-    const/4 v1, 0x2
+    check-cast v0, Ljnr;
 
-    invoke-static {p1, v1, v0}, Ljhp;->g(Landroid/os/Parcel;II)V
+    iget-object v0, v0, Ljnr;->c:Ljus;
 
-    invoke-static {p1, p2}, Ljhp;->c(Landroid/os/Parcel;I)V
+    const v1, 0x7f0b024b
+
+    invoke-virtual {v0, v1}, Ljus;->c(I)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/google/android/apps/camera/progressoverlay/ProgressOverlay;
+
+    iget-object v1, p0, Ljqk;->b:Lhjn;
+
+    invoke-virtual {v1, v0}, Lhjn;->d(Lcom/google/android/apps/camera/progressoverlay/ProgressOverlay;)V
 
     return-void
 .end method

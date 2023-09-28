@@ -1,13 +1,18 @@
-.class public interface abstract Lipc;
+.class final Lipc;
 .super Ljava/lang/Object;
 
-# interfaces
-.implements Lipb;
+
+# instance fields
+.field final synthetic a:Lipf;
 
 
-# virtual methods
-.method public abstract a(Landroid/graphics/PointF;)V
-.end method
+# direct methods
+.method public constructor <init>(Lipf;)V
+    .locals 0
 
-.method public abstract d(Landroid/graphics/PointF;)V
+    iput-object p1, p0, Lipc;->a:Lipf;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
 .end method

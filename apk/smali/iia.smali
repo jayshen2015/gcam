@@ -2,44 +2,54 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lhyi;
+.implements Liht;
 
 
 # instance fields
-.field final synthetic a:Lcom/google/android/apps/camera/ui/views/MainActivityLayout;
+.field private final a:Liib;
+
+.field private b:Llie;
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/apps/camera/ui/views/MainActivityLayout;)V
+.method public constructor <init>(Liib;)V
     .locals 0
 
-    iput-object p1, p0, Liia;->a:Lcom/google/android/apps/camera/ui/views/MainActivityLayout;
-
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Liia;->a:Liib;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic onLayoutUpdated(Lhyn;Liko;)V
-    .locals 0
+.method public final f()V
+    .locals 1
+
+    iget-object v0, p0, Liia;->a:Liib;
+
+    invoke-interface {v0}, Liib;->a()Llie;
+
+    move-result-object v0
+
+    iput-object v0, p0, Liia;->b:Llie;
 
     return-void
 .end method
 
-.method public final onLayoutUpdated(Liko;)V
-    .locals 2
+.method public final g()V
+    .locals 1
 
-    iget-object v0, p0, Liia;->a:Lcom/google/android/apps/camera/ui/views/MainActivityLayout;
+    iget-object v0, p0, Liia;->b:Llie;
 
-    const v1, 0x7f0b0482
+    invoke-static {v0}, Lobr;->ao(Ljava/lang/Object;)Ljava/lang/Object;
 
-    invoke-virtual {v0, v1}, Lcom/google/android/apps/camera/ui/views/MainActivityLayout;->findViewById(I)Landroid/view/View;
+    invoke-interface {v0}, Llie;->close()V
 
-    move-result-object v0
+    const/4 v0, 0x0
 
-    invoke-static {v0, p1}, Ljvd;->H(Landroid/view/View;Liko;)V
+    iput-object v0, p0, Liia;->b:Llie;
 
     return-void
 .end method

@@ -1,60 +1,42 @@
-.class public final Lcrb;
-.super Ljava/lang/Object;
-
-
-# static fields
-.field public static final a:Lnak;
+.class final Lcrb;
+.super Lcrq;
 
 
 # instance fields
-.field public final b:Ljava/util/concurrent/atomic/AtomicBoolean;
-
-.field public final c:Ljava/lang/Object;
-
-.field public d:I
-
-.field public e:I
-
-.field public f:J
-
-.field public g:Lj$/time/Duration;
-
-.field public h:J
+.field final synthetic a:Lcrs;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
+.method public constructor <init>(Lcrs;)V
+    .locals 0
 
-    const-string v0, "com/google/android/apps/camera/camcorder/audio/processor/AudioFrameDropWatcherImpl"
+    iput-object p1, p0, Lcrb;->a:Lcrs;
 
-    invoke-static {v0}, Lnak;->h(Ljava/lang/String;)Lnak;
-
-    move-result-object v0
-
-    sput-object v0, Lcrb;->a:Lnak;
+    invoke-direct {p0, p1}, Lcrq;-><init>(Lcrs;)V
 
     return-void
 .end method
 
-.method public constructor <init>()V
-    .locals 2
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+# virtual methods
+.method public final a(Lghx;)V
+    .locals 1
 
-    new-instance v0, Ljava/util/concurrent/atomic/AtomicBoolean;
+    iget-object v0, p0, Lcrb;->a:Lcrs;
 
-    const/4 v1, 0x1
+    iget-object v0, v0, Lcrs;->c:Lihu;
 
-    invoke-direct {v0, v1}, Ljava/util/concurrent/atomic/AtomicBoolean;-><init>(Z)V
+    invoke-virtual {v0}, Lihu;->e()V
 
-    iput-object v0, p0, Lcrb;->b:Ljava/util/concurrent/atomic/AtomicBoolean;
+    invoke-super {p0, p1}, Lcrq;->a(Lghx;)V
 
-    new-instance v0, Ljava/lang/Object;
+    iget-object p1, p0, Lcrb;->a:Lcrs;
 
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+    iget-object v0, p1, Lcrs;->c:Lihu;
 
-    iput-object v0, p0, Lcrb;->c:Ljava/lang/Object;
+    iget-object p1, p1, Lcrs;->e:Lihw;
+
+    invoke-virtual {v0, p1}, Lihu;->g(Lihw;)V
 
     return-void
 .end method

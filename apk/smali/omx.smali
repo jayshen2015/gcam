@@ -6,34 +6,32 @@
 
 
 # static fields
-.field public static final a:Lomx;
+.field private static final serialVersionUID:J
+
+
+# instance fields
+.field private final a:Lomw;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
-
-    new-instance v0, Lomx;
-
-    invoke-direct {v0}, Lomx;-><init>()V
-
-    sput-object v0, Lomx;->a:Lomx;
-
-    return-void
-.end method
-
-.method private constructor <init>()V
+.method public constructor <init>(Lomw;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lomx;->a:Lomw;
 
     return-void
 .end method
 
 .method private readResolve()Ljava/lang/Object;
-    .locals 1
+    .locals 2
 
-    sget-object v0, Lomx;->a:Lomx;
+    new-instance v0, Lomy;
+
+    iget-object v1, p0, Lomx;->a:Lomw;
+
+    invoke-direct {v0, v1}, Lomy;-><init>(Lomw;)V
 
     return-object v0
 .end method

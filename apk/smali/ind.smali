@@ -1,30 +1,27 @@
-.class public final Lind;
-.super Landroid/content/BroadcastReceiver;
+.class public interface abstract Lind;
+.super Ljava/lang/Object;
 
 
-# instance fields
-.field final synthetic a:Lcom/google/android/apps/camera/videoplayer/VideoPlayerActivity;
+# static fields
+.field public static final a:Louj;
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/apps/camera/videoplayer/VideoPlayerActivity;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 1
 
-    iput-object p1, p0, Lind;->a:Lcom/google/android/apps/camera/videoplayer/VideoPlayerActivity;
+    const-string v0, "com/google/android/apps/camera/testing/prod/scoreprint/ScorePrinter"
 
-    invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
+    invoke-static {v0}, Louj;->h(Ljava/lang/String;)Louj;
+
+    move-result-object v0
+
+    sput-object v0, Lind;->a:Louj;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onReceive(Landroid/content/Context;Landroid/content/Intent;)V
-    .locals 0
-
-    iget-object p1, p0, Lind;->a:Lcom/google/android/apps/camera/videoplayer/VideoPlayerActivity;
-
-    invoke-virtual {p1}, Lcom/google/android/apps/camera/videoplayer/VideoPlayerActivity;->finish()V
-
-    return-void
+.method public abstract a(Landroid/content/Intent;)V
 .end method

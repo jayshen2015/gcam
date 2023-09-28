@@ -1,120 +1,127 @@
-.class public final Lfkg;
+.class final Lfkg;
 .super Ljava/lang/Object;
+
+# interfaces
+.implements Leak;
 
 
 # instance fields
-.field public volatile a:Z
+.field final synthetic a:Lfkh;
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 1
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    const/4 v0, 0x0
-
-    iput-boolean v0, p0, Lfkg;->a:Z
-
-    return-void
-.end method
-
-.method public constructor <init>([B)V
+.method public constructor <init>(Lfkh;)V
     .locals 0
 
+    iput-object p1, p0, Lfkg;->a:Lfkh;
+
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
-.end method
-
-.method public static d()Lfkg;
-    .locals 2
-
-    new-instance v0, Lfkg;
-
-    const/4 v1, 0x0
-
-    invoke-direct {v0, v1}, Lfkg;-><init>([B)V
-
-    return-object v0
 .end method
 
 
 # virtual methods
-.method public final declared-synchronized a()J
-    .locals 2
+.method public final synthetic a(ZZZZ)V
+    .locals 0
 
-    monitor-enter p0
-
-    :try_start_0
-    iget-boolean v0, p0, Lfkg;->a:Z
-
-    if-nez v0, :cond_0
-
-    invoke-static {}, Landroid/os/SystemClock;->elapsedRealtimeNanos()J
-
-    move-result-wide v0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    monitor-exit p0
-
-    return-wide v0
-
-    :cond_0
-    monitor-exit p0
-
-    const-wide v0, 0x3fffffffffffffffL    # 1.9999999999999998
-
-    return-wide v0
-
-    :catchall_0
-    move-exception v0
-
-    monitor-exit p0
-
-    throw v0
+    return-void
 .end method
 
-.method public final declared-synchronized b()V
-    .locals 1
-
-    monitor-enter p0
+.method public final b(Z)V
+    .locals 5
 
     const/4 v0, 0x1
 
-    :try_start_0
-    iput-boolean v0, p0, Lfkg;->a:Z
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    const/4 v1, 0x0
 
-    monitor-exit p0
+    if-eqz p1, :cond_1
 
-    return-void
+    iget-object p1, p0, Lfkg;->a:Lfkh;
 
-    :catchall_0
-    move-exception v0
+    iget-boolean v2, p1, Lfkh;->h:Z
 
-    monitor-exit p0
+    if-nez v2, :cond_2
 
-    throw v0
-.end method
+    iget-object v2, p1, Lfkh;->f:Lhuj;
 
-.method public final c()V
-    .locals 2
+    const-string v3, "Astro_smarts_chip"
 
-    iget-boolean v0, p0, Lfkg;->a:Z
+    invoke-virtual {v2, v3}, Lhuj;->a(Ljava/lang/String;)I
 
-    if-nez v0, :cond_0
+    move-result v2
 
-    return-void
+    const/4 v3, 0x3
+
+    if-lt v2, v3, :cond_0
+
+    goto :goto_0
 
     :cond_0
-    new-instance v0, Ljava/lang/IllegalStateException;
+    iget-object v2, p1, Lfkh;->a:Ljava/util/concurrent/atomic/AtomicBoolean;
 
-    const-string v1, "Already released"
+    invoke-virtual {v2, v1, v0}, Ljava/util/concurrent/atomic/AtomicBoolean;->compareAndSet(ZZ)Z
 
-    invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+    move-result v0
 
-    throw v0
+    if-eqz v0, :cond_2
+
+    iget-object v0, p1, Lfkh;->b:Liay;
+
+    if-eqz v0, :cond_2
+
+    iget-object p1, p1, Lfkh;->c:Liax;
+
+    invoke-interface {v0, p1}, Liay;->b(Liax;)V
+
+    return-void
+
+    :cond_1
+    iget-object p1, p0, Lfkg;->a:Lfkh;
+
+    iget-object v2, p1, Lfkh;->a:Ljava/util/concurrent/atomic/AtomicBoolean;
+
+    invoke-virtual {v2, v0, v1}, Ljava/util/concurrent/atomic/AtomicBoolean;->compareAndSet(ZZ)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_2
+
+    iget-object v0, p1, Lfkh;->b:Liay;
+
+    if-eqz v0, :cond_2
+
+    iget-object v2, p1, Lfkh;->e:Ljava/util/concurrent/ScheduledExecutorService;
+
+    new-instance v3, Lfkf;
+
+    invoke-direct {v3, v0, v1}, Lfkf;-><init>(Liay;I)V
+
+    const-wide/16 v0, 0x7d0
+
+    sget-object v4, Ljava/util/concurrent/TimeUnit;->MILLISECONDS:Ljava/util/concurrent/TimeUnit;
+
+    invoke-interface {v2, v3, v0, v1, v4}, Ljava/util/concurrent/ScheduledExecutorService;->schedule(Ljava/lang/Runnable;JLjava/util/concurrent/TimeUnit;)Ljava/util/concurrent/ScheduledFuture;
+
+    move-result-object v0
+
+    iput-object v0, p1, Lfkh;->i:Ljava/util/concurrent/ScheduledFuture;
+
+    return-void
+
+    :cond_2
+    :goto_0
+    return-void
+.end method
+
+.method public final synthetic c()V
+    .locals 0
+
+    return-void
+.end method
+
+.method public final synthetic d()V
+    .locals 0
+
+    return-void
 .end method

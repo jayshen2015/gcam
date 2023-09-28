@@ -20,9 +20,9 @@
 
     iput-object p3, p0, Lcom/google/vr/audio/DeviceInfo;->b:Landroid/content/Context;
 
-    new-instance p1, Lodw;
+    new-instance p1, Lpvu;
 
-    invoke-direct {p1, p0}, Lodw;-><init>(Lcom/google/vr/audio/DeviceInfo;)V
+    invoke-direct {p1, p0}, Lpvu;-><init>(Lcom/google/vr/audio/DeviceInfo;)V
 
     iput-object p1, p0, Lcom/google/vr/audio/DeviceInfo;->c:Landroid/content/BroadcastReceiver;
 

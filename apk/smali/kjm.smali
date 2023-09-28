@@ -1,197 +1,353 @@
-.class public final Lkjm;
-.super Ljava/lang/Object;
+.class public abstract Lkjm;
+.super Lcom/google/android/gms/common/api/internal/LifecycleCallback;
 
 # interfaces
-.implements Lkai;
+.implements Landroid/content/DialogInterface$OnCancelListener;
 
 
 # instance fields
-.field final synthetic a:Ljava/lang/Object;
+.field protected volatile a:Z
 
-.field final synthetic b:Ljava/lang/Object;
+.field protected final b:Ljava/util/concurrent/atomic/AtomicReference;
 
-.field private c:Z
+.field public final c:Landroid/os/Handler;
 
-.field private final synthetic d:I
+.field protected final d:Lkhm;
 
 
 # direct methods
-.method public constructor <init>(Lccv;Ldqx;I[B[B)V
-    .locals 0
+.method public constructor <init>(Lkkn;Lkhm;)V
+    .locals 1
 
-    iput p3, p0, Lkjm;->d:I
+    invoke-direct {p0, p1}, Lcom/google/android/gms/common/api/internal/LifecycleCallback;-><init>(Lkkn;)V
 
-    iput-object p1, p0, Lkjm;->b:Ljava/lang/Object;
+    new-instance p1, Ljava/util/concurrent/atomic/AtomicReference;
 
-    iput-object p2, p0, Lkjm;->a:Ljava/lang/Object;
+    const/4 v0, 0x0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p1, v0}, Ljava/util/concurrent/atomic/AtomicReference;-><init>(Ljava/lang/Object;)V
 
-    const/4 p1, 0x1
+    iput-object p1, p0, Lkjm;->b:Ljava/util/concurrent/atomic/AtomicReference;
 
-    iput-boolean p1, p0, Lkjm;->c:Z
+    new-instance p1, Lksg;
+
+    invoke-static {}, Landroid/os/Looper;->getMainLooper()Landroid/os/Looper;
+
+    move-result-object v0
+
+    invoke-direct {p1, v0}, Lksg;-><init>(Landroid/os/Looper;)V
+
+    iput-object p1, p0, Lkjm;->c:Landroid/os/Handler;
+
+    iput-object p2, p0, Lkjm;->d:Lkhm;
 
     return-void
 .end method
 
-.method public constructor <init>(Lkjn;Lkju;I)V
+.method private static final k(Lkjk;)I
     .locals 0
 
-    iput p3, p0, Lkjm;->d:I
+    if-nez p0, :cond_0
 
-    iput-object p1, p0, Lkjm;->b:Ljava/lang/Object;
+    const/4 p0, -0x1
 
-    iput-object p2, p0, Lkjm;->a:Ljava/lang/Object;
+    return p0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    :cond_0
+    iget p0, p0, Lkjk;->a:I
 
-    const/4 p1, 0x1
-
-    iput-boolean p1, p0, Lkjm;->c:Z
-
-    return-void
+    return p0
 .end method
 
 
 # virtual methods
-.method public final synthetic bn(Ljava/lang/Object;)V
-    .locals 4
+.method public final a(Lkhi;I)V
+    .locals 2
 
-    iget v0, p0, Lkjm;->d:I
+    iget-object v0, p0, Lkjm;->b:Ljava/util/concurrent/atomic/AtomicReference;
 
     const/4 v1, 0x0
 
-    packed-switch v0, :pswitch_data_0
+    invoke-virtual {v0, v1}, Ljava/util/concurrent/atomic/AtomicReference;->set(Ljava/lang/Object;)V
 
-    check-cast p1, Ljava/lang/Boolean;
-
-    iget-boolean v0, p0, Lkjm;->c:Z
-
-    if-eqz v0, :cond_2
-
-    iput-boolean v1, p0, Lkjm;->c:Z
+    invoke-virtual {p0, p1, p2}, Lkjm;->e(Lkhi;I)V
 
     return-void
+.end method
 
-    :pswitch_0
-    check-cast p1, Lmqp;
+.method public final b()V
+    .locals 2
 
-    iget-boolean v0, p0, Lkjm;->c:Z
+    iget-object v0, p0, Lkjm;->b:Ljava/util/concurrent/atomic/AtomicReference;
 
-    if-nez v0, :cond_1
+    const/4 v1, 0x0
 
-    iget-object v0, p0, Lkjm;->b:Ljava/lang/Object;
+    invoke-virtual {v0, v1}, Ljava/util/concurrent/atomic/AtomicReference;->set(Ljava/lang/Object;)V
 
-    check-cast v0, Lkjn;
+    invoke-virtual {p0}, Lkjm;->f()V
 
-    iget-object v0, v0, Lkjn;->c:Lkaq;
+    return-void
+.end method
 
-    iget-object v1, p0, Lkjm;->a:Ljava/lang/Object;
+.method public final c(IILandroid/content/Intent;)V
+    .locals 2
 
-    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+    iget-object v0, p0, Lkjm;->b:Ljava/util/concurrent/atomic/AtomicReference;
 
-    move-result-object v1
+    invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicReference;->get()Ljava/lang/Object;
 
-    invoke-virtual {p1}, Lmqp;->g()Z
+    move-result-object v0
 
-    move-result v2
+    check-cast v0, Lkjk;
 
-    if-eqz v2, :cond_0
-
-    invoke-virtual {p1}, Lmqp;->c()Ljava/lang/Object;
-
-    move-result-object p1
-
-    invoke-virtual {p1}, Ljava/lang/Object;->toString()Ljava/lang/String;
-
-    move-result-object p1
-
-    const-string v2, "set to "
-
-    invoke-virtual {v2, p1}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object p1
-
-    goto :goto_0
-
-    :cond_0
-    const-string p1, "destroyed."
-
-    :goto_0
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v3, "Surface for "
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v1, " was "
-
-    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v2, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p1
-
-    invoke-interface {v0, p1}, Lkaq;->f(Ljava/lang/String;)V
+    packed-switch p1, :pswitch_data_0
 
     goto :goto_1
 
+    :pswitch_0
+    iget-object p1, p0, Lkjm;->d:Lkhm;
+
+    invoke-virtual {p0}, Lcom/google/android/gms/common/api/internal/LifecycleCallback;->l()Landroid/app/Activity;
+
+    move-result-object p2
+
+    invoke-virtual {p1, p2}, Lkhn;->e(Landroid/content/Context;)I
+
+    move-result p1
+
+    if-nez p1, :cond_0
+
+    invoke-virtual {p0}, Lkjm;->b()V
+
+    return-void
+
+    :cond_0
+    if-nez v0, :cond_1
+
+    return-void
+
     :cond_1
-    iput-boolean v1, p0, Lkjm;->c:Z
+    iget-object p2, v0, Lkjk;->b:Lkhi;
 
-    :goto_1
-    iget-object p1, p0, Lkjm;->b:Ljava/lang/Object;
+    iget p2, p2, Lkhi;->c:I
 
-    check-cast p1, Lkjn;
+    const/16 p3, 0x12
 
-    invoke-virtual {p1}, Lkjn;->e()V
+    if-ne p2, p3, :cond_5
+
+    if-ne p1, p3, :cond_5
+
+    return-void
+
+    :pswitch_1
+    const/4 p1, -0x1
+
+    if-ne p2, p1, :cond_2
+
+    invoke-virtual {p0}, Lkjm;->b()V
 
     return-void
 
     :cond_2
-    invoke-virtual {p1}, Ljava/lang/Boolean;->booleanValue()Z
+    if-nez p2, :cond_5
 
-    move-result p1
+    if-nez v0, :cond_3
 
-    if-nez p1, :cond_3
-
-    iget-object p1, p0, Lkjm;->a:Ljava/lang/Object;
-
-    check-cast p1, Ldqx;
-
-    iget-object p1, p1, Ldqx;->d:Ljava/lang/Object;
-
-    check-cast p1, Ljvk;
-
-    iget-object p1, p1, Ljvk;->d:Ljava/lang/Object;
-
-    check-cast p1, Ljava/lang/Boolean;
-
-    invoke-virtual {p1}, Ljava/lang/Boolean;->booleanValue()Z
-
-    move-result p1
-
-    if-nez p1, :cond_3
-
-    iget-object p1, p0, Lkjm;->b:Ljava/lang/Object;
-
-    check-cast p1, Lccv;
-
-    invoke-virtual {p1}, Lccv;->close()V
+    return-void
 
     :cond_3
+    const/16 p1, 0xd
+
+    if-eqz p3, :cond_4
+
+    const-string p2, "<<ResolutionFailureErrorDetail>>"
+
+    invoke-virtual {p3, p2, p1}, Landroid/content/Intent;->getIntExtra(Ljava/lang/String;I)I
+
+    move-result p1
+
+    goto :goto_0
+
+    :cond_4
+    :goto_0
+    new-instance p2, Lkhi;
+
+    const/4 p3, 0x0
+
+    iget-object v1, v0, Lkjk;->b:Lkhi;
+
+    invoke-virtual {v1}, Lkhi;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-direct {p2, p1, p3, v1}, Lkhi;-><init>(ILandroid/app/PendingIntent;Ljava/lang/String;)V
+
+    invoke-static {v0}, Lkjm;->k(Lkjk;)I
+
+    move-result p1
+
+    invoke-virtual {p0, p2, p1}, Lkjm;->a(Lkhi;I)V
+
+    return-void
+
+    :cond_5
+    :goto_1
+    if-eqz v0, :cond_6
+
+    iget-object p1, v0, Lkjk;->b:Lkhi;
+
+    iget p2, v0, Lkjk;->a:I
+
+    invoke-virtual {p0, p1, p2}, Lkjm;->a(Lkhi;I)V
+
+    :cond_6
     return-void
 
     nop
 
     :pswitch_data_0
-    .packed-switch 0x0
+    .packed-switch 0x1
+        :pswitch_1
         :pswitch_0
     .end packed-switch
+.end method
+
+.method public final d(Landroid/os/Bundle;)V
+    .locals 4
+
+    if-eqz p1, :cond_1
+
+    iget-object v0, p0, Lkjm;->b:Ljava/util/concurrent/atomic/AtomicReference;
+
+    const/4 v1, 0x0
+
+    const-string v2, "resolving_error"
+
+    invoke-virtual {p1, v2, v1}, Landroid/os/Bundle;->getBoolean(Ljava/lang/String;Z)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    new-instance v1, Lkhi;
+
+    const-string v2, "failed_status"
+
+    invoke-virtual {p1, v2}, Landroid/os/Bundle;->getInt(Ljava/lang/String;)I
+
+    move-result v2
+
+    const-string v3, "failed_resolution"
+
+    invoke-virtual {p1, v3}, Landroid/os/Bundle;->getParcelable(Ljava/lang/String;)Landroid/os/Parcelable;
+
+    move-result-object v3
+
+    check-cast v3, Landroid/app/PendingIntent;
+
+    invoke-direct {v1, v2, v3}, Lkhi;-><init>(ILandroid/app/PendingIntent;)V
+
+    const/4 v2, -0x1
+
+    const-string v3, "failed_client_id"
+
+    invoke-virtual {p1, v3, v2}, Landroid/os/Bundle;->getInt(Ljava/lang/String;I)I
+
+    move-result p1
+
+    new-instance v2, Lkjk;
+
+    invoke-direct {v2, v1, p1}, Lkjk;-><init>(Lkhi;I)V
+
+    goto :goto_0
+
+    :cond_0
+    const/4 v2, 0x0
+
+    :goto_0
+    invoke-virtual {v0, v2}, Ljava/util/concurrent/atomic/AtomicReference;->set(Ljava/lang/Object;)V
+
+    :cond_1
+    return-void
+.end method
+
+.method protected abstract e(Lkhi;I)V
+.end method
+
+.method protected abstract f()V
+.end method
+
+.method public final g(Landroid/os/Bundle;)V
+    .locals 3
+
+    iget-object v0, p0, Lkjm;->b:Ljava/util/concurrent/atomic/AtomicReference;
+
+    invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicReference;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lkjk;
+
+    if-nez v0, :cond_0
+
+    return-void
+
+    :cond_0
+    const/4 v1, 0x1
+
+    const-string v2, "resolving_error"
+
+    invoke-virtual {p1, v2, v1}, Landroid/os/Bundle;->putBoolean(Ljava/lang/String;Z)V
+
+    iget v1, v0, Lkjk;->a:I
+
+    const-string v2, "failed_client_id"
+
+    invoke-virtual {p1, v2, v1}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
+
+    iget-object v1, v0, Lkjk;->b:Lkhi;
+
+    iget v1, v1, Lkhi;->c:I
+
+    const-string v2, "failed_status"
+
+    invoke-virtual {p1, v2, v1}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
+
+    iget-object v0, v0, Lkjk;->b:Lkhi;
+
+    iget-object v0, v0, Lkhi;->d:Landroid/app/PendingIntent;
+
+    const-string v1, "failed_resolution"
+
+    invoke-virtual {p1, v1, v0}, Landroid/os/Bundle;->putParcelable(Ljava/lang/String;Landroid/os/Parcelable;)V
+
+    return-void
+.end method
+
+.method public final onCancel(Landroid/content/DialogInterface;)V
+    .locals 2
+
+    new-instance p1, Lkhi;
+
+    const/16 v0, 0xd
+
+    const/4 v1, 0x0
+
+    invoke-direct {p1, v0, v1}, Lkhi;-><init>(ILandroid/app/PendingIntent;)V
+
+    iget-object v0, p0, Lkjm;->b:Ljava/util/concurrent/atomic/AtomicReference;
+
+    invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicReference;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lkjk;
+
+    invoke-static {v0}, Lkjm;->k(Lkjk;)I
+
+    move-result v0
+
+    invoke-virtual {p0, p1, v0}, Lkjm;->a(Lkhi;I)V
+
+    return-void
 .end method

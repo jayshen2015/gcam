@@ -1,12 +1,7 @@
-.class public final synthetic Llnn;
+.class public interface abstract Llnn;
 .super Ljava/lang/Object;
 
 
-# direct methods
-.method static constructor <clinit>()V
-    .locals 1
-
-    sget-object v0, Llno;->b:Llno;
-
-    return-void
+# virtual methods
+.method public abstract a(Llmr;)V
 .end method

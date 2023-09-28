@@ -1,103 +1,157 @@
-.class public final Lcwr;
+.class public final synthetic Lcwr;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Logk;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field private final a:Loiw;
-
-.field private final b:Loiw;
-
-.field private final c:Loiw;
-
-.field private final d:Loiw;
+.field public final synthetic a:Lcwt;
 
 
 # direct methods
-.method public constructor <init>(Loiw;Loiw;Loiw;Loiw;)V
+.method public synthetic constructor <init>(Lcwt;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lcwr;->a:Loiw;
-
-    iput-object p2, p0, Lcwr;->b:Loiw;
-
-    iput-object p3, p0, Lcwr;->c:Loiw;
-
-    iput-object p4, p0, Lcwr;->d:Loiw;
+    iput-object p1, p0, Lcwr;->a:Lcwt;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Lcwq;
-    .locals 10
+.method public final run()V
+    .locals 5
 
-    iget-object v0, p0, Lcwr;->a:Loiw;
+    iget-object v0, p0, Lcwr;->a:Lcwt;
 
-    check-cast v0, Lcwf;
+    iget-object v1, v0, Lcwt;->a:Lcom/google/android/apps/camera/camerafatalerror/CameraFatalErrorTrackerDatabase;
 
-    invoke-virtual {v0}, Lcwf;->b()Ldja;
+    invoke-virtual {v1}, Lcom/google/android/apps/camera/camerafatalerror/CameraFatalErrorTrackerDatabase;->s()Lcxm;
 
-    move-result-object v2
+    move-result-object v1
 
-    iget-object v0, p0, Lcwr;->b:Loiw;
+    move-object v2, v1
 
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
+    check-cast v2, Lcxr;
 
-    move-result-object v0
+    iget-object v3, v2, Lcxr;->a:Laii;
 
-    move-object v3, v0
+    invoke-virtual {v3}, Laii;->g()V
 
-    check-cast v3, Lfbk;
+    iget-object v3, v2, Lcxr;->d:Laiy;
 
-    iget-object v0, p0, Lcwr;->c:Loiw;
+    invoke-virtual {v3}, Laiy;->e()Lake;
 
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
+    move-result-object v3
 
-    move-result-object v0
+    iget-object v4, v2, Lcxr;->a:Laii;
 
-    move-object v4, v0
+    invoke-virtual {v4}, Laii;->h()V
 
-    check-cast v4, Ljew;
+    :try_start_0
+    invoke-virtual {v3}, Lake;->a()I
 
-    iget-object v0, p0, Lcwr;->d:Loiw;
+    check-cast v1, Lcxr;
 
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
+    iget-object v1, v1, Lcxr;->a:Laii;
 
-    move-result-object v0
+    invoke-virtual {v1}, Laii;->j()V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_1
 
-    move-object v5, v0
+    iget-object v1, v2, Lcxr;->a:Laii;
 
-    check-cast v5, Lcvm;
+    invoke-virtual {v1}, Laii;->i()V
 
-    new-instance v0, Lcwq;
+    iget-object v1, v2, Lcxr;->d:Laiy;
 
-    const/4 v6, 0x0
+    invoke-virtual {v1, v3}, Laiy;->f(Lake;)V
 
-    const/4 v7, 0x0
+    iget-object v1, v0, Lcwt;->a:Lcom/google/android/apps/camera/camerafatalerror/CameraFatalErrorTrackerDatabase;
 
-    const/4 v8, 0x0
+    invoke-virtual {v1}, Lcom/google/android/apps/camera/camerafatalerror/CameraFatalErrorTrackerDatabase;->r()Lcxf;
 
-    const/4 v9, 0x0
+    move-result-object v1
 
-    move-object v1, v0
+    move-object v2, v1
 
-    invoke-direct/range {v1 .. v9}, Lcwq;-><init>(Ldja;Lfbk;Ljew;Lcvm;[B[B[B[B)V
+    check-cast v2, Lcxk;
 
-    return-object v0
-.end method
+    iget-object v3, v2, Lcxk;->a:Laii;
 
-.method public final bridge synthetic get()Ljava/lang/Object;
-    .locals 1
+    invoke-virtual {v3}, Laii;->g()V
 
-    invoke-virtual {p0}, Lcwr;->a()Lcwq;
+    iget-object v3, v2, Lcxk;->d:Laiy;
 
-    move-result-object v0
+    invoke-virtual {v3}, Laiy;->e()Lake;
 
-    return-object v0
+    move-result-object v3
+
+    iget-object v4, v2, Lcxk;->a:Laii;
+
+    invoke-virtual {v4}, Laii;->h()V
+
+    :try_start_1
+    invoke-virtual {v3}, Lake;->a()I
+
+    check-cast v1, Lcxk;
+
+    iget-object v1, v1, Lcxk;->a:Laii;
+
+    invoke-virtual {v1}, Laii;->j()V
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    iget-object v1, v2, Lcxk;->a:Laii;
+
+    invoke-virtual {v1}, Laii;->i()V
+
+    iget-object v1, v2, Lcxk;->d:Laiy;
+
+    invoke-virtual {v1, v3}, Laiy;->f(Lake;)V
+
+    invoke-static {}, Lcxy;->values()[Lcxy;
+
+    move-result-object v1
+
+    invoke-static {v1}, Lj$/util/DesugarArrays;->stream([Ljava/lang/Object;)Lj$/util/stream/Stream;
+
+    move-result-object v1
+
+    new-instance v2, Lcws;
+
+    invoke-direct {v2, v0}, Lcws;-><init>(Lcwt;)V
+
+    invoke-interface {v1, v2}, Lj$/util/stream/Stream;->forEach(Lj$/util/function/Consumer;)V
+
+    return-void
+
+    :catchall_0
+    move-exception v0
+
+    iget-object v1, v2, Lcxk;->a:Laii;
+
+    invoke-virtual {v1}, Laii;->i()V
+
+    iget-object v1, v2, Lcxk;->d:Laiy;
+
+    invoke-virtual {v1, v3}, Laiy;->f(Lake;)V
+
+    throw v0
+
+    :catchall_1
+    move-exception v0
+
+    iget-object v1, v2, Lcxr;->a:Laii;
+
+    invoke-virtual {v1}, Laii;->i()V
+
+    iget-object v1, v2, Lcxr;->d:Laiy;
+
+    invoke-virtual {v1, v3}, Laiy;->f(Lake;)V
+
+    throw v0
 .end method

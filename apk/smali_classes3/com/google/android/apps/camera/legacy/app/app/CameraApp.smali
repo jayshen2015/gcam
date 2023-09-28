@@ -1,58 +1,56 @@
 .class public Lcom/google/android/apps/camera/legacy/app/app/CameraApp;
-.super Lfbd;
+.super Lfip;
 
 # interfaces
 .implements Lcom/google/android/apps/camera/contentprovider/HasCameraContentProviderComponent;
-.implements Lesy;
-.implements Lhng;
-.implements Lemj;
-.implements Laxc;
-.implements Lchv;
-.implements Lehh;
-.implements Lcjq;
+.implements Lewc;
+.implements Linb;
+.implements Lenc;
+.implements Lami;
+.implements Lbux;
 
 
 # static fields
-.field private static final k:Ljava/util/concurrent/atomic/AtomicBoolean;
+.field private static final l:Ljava/util/concurrent/atomic/AtomicBoolean;
 
 
 # instance fields
 .field a:Landroid/app/NotificationManager;
 
-.field b:Loiw;
+.field b:Lbuv;
 
-.field c:Loiw;
+.field c:Lqkg;
 
-.field d:Llfw;
+.field d:Lqkg;
 
-.field e:Laxz;
+.field e:Lmun;
 
-.field f:Lchs;
+.field f:Lani;
 
-.field g:Ldfa;
+.field public volatile g:Legh;
 
-.field h:Lbkc;
+.field h:Lbus;
 
-.field private volatile l:Lehi;
+.field i:Ljtx;
 
-.field private volatile m:Lerw;
+.field private volatile m:Leuv;
 
-.field private final n:Lery;
+.field private final n:Leuy;
 
 
 # direct methods
 .method static constructor <clinit>()V
     .locals 8
 
-    sget-object v0, Lllo;->a:Lllo;
+    sget-object v0, Lnav;->a:Lnav;
 
-    iget-wide v1, v0, Lllo;->c:J
+    iget-wide v1, v0, Lnav;->c:J
 
-    const-wide/16 v3, 0x0
+    const/4 v3, 0x1
 
-    const/4 v5, 0x1
+    const-wide/16 v4, 0x0
 
-    cmp-long v6, v1, v3
+    cmp-long v6, v1, v4
 
     if-nez v6, :cond_0
 
@@ -60,25 +58,25 @@
 
     move-result-wide v1
 
-    iput-wide v1, v0, Lllo;->c:J
+    iput-wide v1, v0, Lnav;->c:J
 
-    iget-object v0, v0, Lllo;->l:Llln;
+    iget-object v0, v0, Lnav;->l:Lnau;
 
-    iput-boolean v5, v0, Llln;->a:Z
+    iput-boolean v3, v0, Lnau;->a:Z
 
     :cond_0
-    sget-wide v0, Lcom/google/android/apps/camera/legacy/app/app/CameraApp;->i:J
+    sget-wide v0, Lcom/google/android/apps/camera/legacy/app/app/CameraApp;->j:J
 
-    invoke-static {v0, v1}, Lhkn;->d(J)V
+    invoke-static {v0, v1}, Lijy;->d(J)V
 
-    sget-object v0, Lemz;->a:Lmvv;
+    sget-object v0, Lent;->a:Loom;
 
-    sget-object v1, Lkak;->a:Ljava/lang/Object;
+    sget-object v1, Llil;->a:Ljava/lang/Object;
 
     monitor-enter v1
 
     :try_start_0
-    invoke-virtual {v0}, Lmvv;->s()Lnad;
+    invoke-virtual {v0}, Loom;->t()Lotj;
 
     move-result-object v0
 
@@ -87,7 +85,7 @@
 
     move-result v2
 
-    const/4 v3, 0x0
+    const/4 v4, 0x0
 
     if-eqz v2, :cond_5
 
@@ -97,11 +95,11 @@
 
     check-cast v2, Ljava/lang/Class;
 
-    const-string v4, "gcastartup"
+    const-string v5, "gcastartup"
 
-    sget-object v6, Lkak;->c:Ljava/util/Map;
+    sget-object v6, Llil;->c:Ljava/util/Map;
 
-    invoke-interface {v6, v2, v4}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {v6, v2, v5}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v6
 
@@ -109,7 +107,7 @@
 
     if-eqz v6, :cond_2
 
-    invoke-virtual {v6, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v6, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v7
 
@@ -124,23 +122,39 @@
 
     move-result-object v2
 
-    new-instance v3, Ljava/lang/StringBuilder;
+    invoke-static {v2}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+    move-result-object v3
 
-    const-string v4, "Could not register "
+    invoke-virtual {v3}, Ljava/lang/String;->length()I
 
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result v3
 
-    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    add-int/lit8 v3, v3, 0x38
+
+    invoke-virtual {v6}, Ljava/lang/String;->length()I
+
+    move-result v4
+
+    add-int/2addr v3, v4
+
+    new-instance v4, Ljava/lang/StringBuilder;
+
+    invoke-direct {v4, v3}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string v3, "Could not register "
+
+    invoke-virtual {v4, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v4, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     const-string v2, ". It was previously registered with: "
 
-    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v4, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v3, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v4, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v2
 
@@ -150,28 +164,28 @@
 
     :cond_2
     :goto_1
-    sget-object v6, Lkak;->b:Ljava/util/Map;
+    sget-object v6, Llil;->b:Ljava/util/Map;
 
-    invoke-interface {v6, v4}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {v6, v5}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v6
 
-    check-cast v6, Lkaj;
+    check-cast v6, Llik;
 
     if-nez v6, :cond_3
 
-    sget-object v2, Lkak;->b:Ljava/util/Map;
+    sget-object v2, Llil;->b:Ljava/util/Map;
 
-    new-instance v3, Lkaj;
+    new-instance v4, Llik;
 
-    invoke-direct {v3, v4}, Lkaj;-><init>(Ljava/lang/String;)V
+    invoke-direct {v4, v5}, Llik;-><init>(Ljava/lang/String;)V
 
-    invoke-interface {v2, v4, v3}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {v2, v5, v4}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     goto :goto_2
 
     :cond_3
-    invoke-virtual {v6}, Lkaj;->a()Z
+    invoke-virtual {v6}, Llik;->a()Z
 
     move-result v6
 
@@ -183,23 +197,23 @@
     :cond_4
     new-instance v0, Ljava/lang/UnsatisfiedLinkError;
 
-    const-string v6, "Registering \"%s\" after \"%s\" was loaded is racy."
+    const/4 v6, 0x2
 
-    const/4 v7, 0x2
-
-    new-array v7, v7, [Ljava/lang/Object;
+    new-array v6, v6, [Ljava/lang/Object;
 
     invoke-virtual {v2}, Ljava/lang/Class;->getSimpleName()Ljava/lang/String;
 
     move-result-object v2
 
-    aput-object v2, v7, v3
+    aput-object v2, v6, v4
 
-    aput-object v4, v7, v5
+    aput-object v5, v6, v3
 
     const/4 v2, 0x0
 
-    invoke-static {v2, v6, v7}, Ljava/lang/String;->format(Ljava/util/Locale;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+    const-string v3, "Registering \"%s\" after \"%s\" was loaded is racy."
+
+    invoke-static {v2, v3, v6}, Ljava/lang/String;->format(Ljava/util/Locale;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v2
 
@@ -214,9 +228,9 @@
 
     new-instance v0, Ljava/util/concurrent/atomic/AtomicBoolean;
 
-    invoke-direct {v0, v3}, Ljava/util/concurrent/atomic/AtomicBoolean;-><init>(Z)V
+    invoke-direct {v0, v4}, Ljava/util/concurrent/atomic/AtomicBoolean;-><init>(Z)V
 
-    sput-object v0, Lcom/google/android/apps/camera/legacy/app/app/CameraApp;->k:Ljava/util/concurrent/atomic/AtomicBoolean;
+    sput-object v0, Lcom/google/android/apps/camera/legacy/app/app/CameraApp;->l:Ljava/util/concurrent/atomic/AtomicBoolean;
 
     return-void
 
@@ -240,119 +254,59 @@
 .method public constructor <init>()V
     .locals 1
 
-    invoke-direct {p0}, Lfbd;-><init>()V
+    invoke-direct {p0}, Lfip;-><init>()V
 
-    new-instance v0, Lery;
+    new-instance v0, Leuy;
 
-    invoke-direct {v0}, Lery;-><init>()V
+    invoke-direct {v0}, Leuy;-><init>()V
 
-    iput-object v0, p0, Lcom/google/android/apps/camera/legacy/app/app/CameraApp;->n:Lery;
+    iput-object v0, p0, Lcom/google/android/apps/camera/legacy/app/app/CameraApp;->n:Leuy;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Laxd;
-    .locals 7
+.method public final a()Lamj;
+    .locals 2
 
-    new-instance v1, Lnaa;
+    new-instance v0, Lamh;
 
-    const/4 v0, 0x0
+    invoke-direct {v0}, Lamh;-><init>()V
 
-    invoke-direct {v1, v0, v0, v0, v0}, Lnaa;-><init>([B[B[B[B)V
+    iget-object v1, p0, Lcom/google/android/apps/camera/legacy/app/app/CameraApp;->f:Lani;
 
-    iget-object v0, p0, Lcom/google/android/apps/camera/legacy/app/app/CameraApp;->e:Laxz;
+    iput-object v1, v0, Lamh;->a:Lani;
 
-    iput-object v0, v1, Lnaa;->a:Ljava/lang/Object;
+    new-instance v1, Lamj;
 
-    new-instance v6, Laxd;
-
-    const/4 v2, 0x0
-
-    const/4 v3, 0x0
-
-    const/4 v4, 0x0
-
-    const/4 v5, 0x0
-
-    move-object v0, v6
-
-    invoke-direct/range {v0 .. v5}, Laxd;-><init>(Lnaa;[B[B[B[B)V
-
-    return-object v6
-.end method
-
-.method public final b()Ldfa;
-    .locals 1
-
-    iget-object v0, p0, Lcom/google/android/apps/camera/legacy/app/app/CameraApp;->n:Lery;
-
-    invoke-virtual {v0, p0}, Lery;->b(Landroid/content/Context;)V
-
-    invoke-virtual {p0}, Lcom/google/android/apps/camera/legacy/app/app/CameraApp;->f()Lerw;
-
-    move-result-object v0
-
-    invoke-interface {v0}, Lerw;->b()Ldfa;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public final c()Lnou;
-    .locals 1
-
-    iget-object v0, p0, Lcom/google/android/apps/camera/legacy/app/app/CameraApp;->n:Lery;
-
-    invoke-virtual {v0}, Lery;->a()Lnou;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public final cameraContentProviderComponent(Ldja;)Ldix;
-    .locals 3
-
-    iget-object v0, p0, Lcom/google/android/apps/camera/legacy/app/app/CameraApp;->m:Lerw;
-
-    const/4 v1, 0x0
-
-    new-array v1, v1, [Ljava/lang/Object;
-
-    const-string v2, "initAppComponent needs to be called on main thread\u00ac"
-
-    invoke-static {v0, v2, v1}, Llkj;->B(Ljava/lang/Object;Ljava/lang/String;[Ljava/lang/Object;)V
-
-    iget-object v0, p0, Lcom/google/android/apps/camera/legacy/app/app/CameraApp;->m:Lerw;
-
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    new-instance v1, Lesi;
-
-    check-cast v0, Lesh;
-
-    iget-object v0, v0, Lesh;->a:Lesh;
-
-    invoke-direct {v1, v0, p1}, Lesi;-><init>(Lesh;Ldja;)V
+    invoke-direct {v1, v0}, Lamj;-><init>(Lamh;)V
 
     return-object v1
 .end method
 
-.method public final d()Lehi;
+.method public final b()Lbuw;
     .locals 1
 
-    iget-object v0, p0, Lcom/google/android/apps/camera/legacy/app/app/CameraApp;->l:Lehi;
+    iget-object v0, p0, Lcom/google/android/apps/camera/legacy/app/app/CameraApp;->n:Leuy;
+
+    invoke-virtual {v0, p0}, Leuy;->b(Landroid/content/Context;)V
+
+    invoke-virtual {p0}, Lcom/google/android/apps/camera/legacy/app/app/CameraApp;->d()Leuv;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Leuv;->b()Lbuw;
+
+    move-result-object v0
 
     return-object v0
 .end method
 
-.method public final e(Ljava/lang/Class;)Leml;
+.method public final c(Ljava/lang/Class;)Lene;
     .locals 1
 
-    invoke-virtual {p0}, Lcom/google/android/apps/camera/legacy/app/app/CameraApp;->f()Lerw;
+    invoke-virtual {p0}, Lcom/google/android/apps/camera/legacy/app/app/CameraApp;->d()Leuv;
 
     move-result-object v0
 
@@ -360,26 +314,54 @@
 
     move-result-object p1
 
-    check-cast p1, Leml;
+    check-cast p1, Lene;
 
     return-object p1
 .end method
 
-.method public final f()Lerw;
-    .locals 23
+.method public final cameraContentProviderComponent(Ldev;)Lder;
+    .locals 3
+
+    iget-object v0, p0, Lcom/google/android/apps/camera/legacy/app/app/CameraApp;->m:Leuv;
+
+    const/4 v1, 0x0
+
+    new-array v1, v1, [Ljava/lang/Object;
+
+    const-string v2, "initAppComponent needs to be called on main thread\u00ac"
+
+    invoke-static {v0, v2, v1}, Lobr;->at(Ljava/lang/Object;Ljava/lang/String;[Ljava/lang/Object;)V
+
+    iget-object v0, p0, Lcom/google/android/apps/camera/legacy/app/app/CameraApp;->m:Leuv;
+
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    new-instance v1, Levi;
+
+    check-cast v0, Lewb;
+
+    iget-object v0, v0, Lewb;->d:Lewb;
+
+    invoke-direct {v1, v0, p1}, Levi;-><init>(Lewb;Ldev;)V
+
+    return-object v1
+.end method
+
+.method public final d()Leuv;
+    .locals 28
 
     move-object/from16 v1, p0
 
-    iget-object v0, v1, Lcom/google/android/apps/camera/legacy/app/app/CameraApp;->m:Lerw;
+    iget-object v0, v1, Lcom/google/android/apps/camera/legacy/app/app/CameraApp;->m:Leuv;
 
-    if-nez v0, :cond_2
+    if-nez v0, :cond_10
 
     monitor-enter p0
 
     :try_start_0
-    iget-object v0, v1, Lcom/google/android/apps/camera/legacy/app/app/CameraApp;->m:Lerw;
+    iget-object v0, v1, Lcom/google/android/apps/camera/legacy/app/app/CameraApp;->m:Leuv;
 
-    if-nez v0, :cond_1
+    if-nez v0, :cond_f
 
     const-string v0, "GCA_App#component"
 
@@ -389,79 +371,251 @@
 
     invoke-static {v0}, Landroid/os/Trace;->beginSection(Ljava/lang/String;)V
 
-    sget-object v0, Lesx;->a:Loiw;
-
-    new-instance v5, Lgxb;
-
-    invoke-virtual/range {p0 .. p0}, Landroid/app/Application;->getApplicationContext()Landroid/content/Context;
+    invoke-static {}, Lewb;->l()Levb;
 
     move-result-object v0
 
-    invoke-direct {v5, v1, v0}, Lgxb;-><init>(Landroid/app/Application;Landroid/content/Context;)V
+    new-instance v2, Leml;
 
-    new-instance v6, Lbkb;
+    invoke-virtual/range {p0 .. p0}, Landroid/app/Application;->getApplicationContext()Landroid/content/Context;
 
-    iget-object v0, v1, Lfbd;->j:Lezy;
+    move-result-object v3
 
-    invoke-direct {v6, v0}, Lbkb;-><init>(Lezy;)V
+    invoke-direct {v2, v1, v3}, Leml;-><init>(Landroid/app/Application;Landroid/content/Context;)V
 
-    new-instance v3, Ldiu;
+    iput-object v2, v0, Levb;->b:Leml;
 
-    invoke-direct {v3}, Ldiu;-><init>()V
+    new-instance v2, Lfhp;
 
-    new-instance v4, Lewq;
+    iget-object v3, v1, Lfip;->k:Lfhi;
 
-    invoke-direct {v4}, Lewq;-><init>()V
+    invoke-direct {v2, v3}, Lfhp;-><init>(Lfhi;)V
 
-    new-instance v7, Lgsj;
+    iput-object v2, v0, Levb;->c:Lfhp;
 
-    const/4 v0, 0x0
+    new-instance v2, Lett;
 
-    invoke-direct {v7, v0, v0}, Lgsj;-><init>([B[B)V
+    new-instance v3, Leuu;
 
-    new-instance v8, Ldez;
+    invoke-direct {v3, v1}, Leuu;-><init>(Lcom/google/android/apps/camera/legacy/app/app/CameraApp;)V
 
-    invoke-direct {v8}, Ldez;-><init>()V
+    iget-object v4, v1, Lcom/google/android/apps/camera/legacy/app/app/CameraApp;->n:Leuy;
 
-    new-instance v9, Ldle;
+    invoke-virtual {v4}, Leuy;->a()Lpht;
 
-    invoke-direct {v9}, Ldle;-><init>()V
+    move-result-object v4
 
-    new-instance v10, Lcis;
+    invoke-direct {v2, v3, v4}, Lett;-><init>(Lpyn;Lpht;)V
 
-    invoke-direct {v10}, Lcis;-><init>()V
+    iput-object v2, v0, Levb;->a:Lett;
 
-    new-instance v11, Ljfc;
+    iget-object v2, v0, Levb;->g:Laar;
 
-    invoke-direct {v11}, Ljfc;-><init>()V
+    if-nez v2, :cond_0
 
-    new-instance v12, Lfwt;
+    new-instance v2, Laar;
 
-    invoke-direct {v12}, Lfwt;-><init>()V
+    invoke-direct {v2}, Laar;-><init>()V
 
-    new-instance v13, Ljew;
+    iput-object v2, v0, Levb;->g:Laar;
 
-    invoke-direct {v13, v0}, Ljew;-><init>([S)V
+    :cond_0
+    iget-object v2, v0, Levb;->a:Lett;
 
-    new-instance v14, Linb;
+    const-class v3, Lett;
 
-    invoke-direct {v14}, Linb;-><init>()V
+    invoke-static {v2, v3}, Lqmd;->ad(Ljava/lang/Object;Ljava/lang/Class;)V
 
-    new-instance v15, Llho;
+    iget-object v2, v0, Levb;->k:Lfw;
 
-    invoke-direct {v15, v0}, Llho;-><init>([B)V
+    if-nez v2, :cond_1
 
-    new-instance v2, Lcvr;
+    new-instance v2, Lfw;
 
-    invoke-direct {v2, v0, v0, v0}, Lcvr;-><init>([B[B[C)V
+    invoke-direct {v2}, Lfw;-><init>()V
 
-    new-instance v0, Lesh;
+    iput-object v2, v0, Levb;->k:Lfw;
 
-    const/16 v17, 0x0
+    :cond_1
+    iget-object v2, v0, Levb;->f:Ldkr;
 
-    const/16 v18, 0x0
+    if-nez v2, :cond_2
 
-    const/16 v19, 0x0
+    new-instance v2, Ldkr;
+
+    invoke-direct {v2}, Ldkr;-><init>()V
+
+    iput-object v2, v0, Levb;->f:Ldkr;
+
+    :cond_2
+    iget-object v2, v0, Levb;->o:Lfcy;
+
+    if-nez v2, :cond_3
+
+    new-instance v2, Lfcy;
+
+    invoke-direct {v2}, Lfcy;-><init>()V
+
+    iput-object v2, v0, Levb;->o:Lfcy;
+
+    :cond_3
+    iget-object v2, v0, Levb;->b:Leml;
+
+    const-class v3, Leml;
+
+    invoke-static {v2, v3}, Lqmd;->ad(Ljava/lang/Object;Ljava/lang/Class;)V
+
+    iget-object v2, v0, Levb;->c:Lfhp;
+
+    const-class v3, Lfhp;
+
+    invoke-static {v2, v3}, Lqmd;->ad(Ljava/lang/Object;Ljava/lang/Class;)V
+
+    iget-object v2, v0, Levb;->l:Lfcy;
+
+    const/4 v3, 0x0
+
+    if-nez v2, :cond_4
+
+    new-instance v2, Lfcy;
+
+    invoke-direct {v2, v3, v3}, Lfcy;-><init>([B[B)V
+
+    iput-object v2, v0, Levb;->l:Lfcy;
+
+    :cond_4
+    iget-object v2, v0, Levb;->h:Laat;
+
+    if-nez v2, :cond_5
+
+    new-instance v2, Laat;
+
+    invoke-direct {v2}, Laat;-><init>()V
+
+    iput-object v2, v0, Levb;->h:Laat;
+
+    :cond_5
+    iget-object v2, v0, Levb;->j:Lfw;
+
+    if-nez v2, :cond_6
+
+    new-instance v2, Lfw;
+
+    invoke-direct {v2}, Lfw;-><init>()V
+
+    iput-object v2, v0, Levb;->j:Lfw;
+
+    :cond_6
+    iget-object v2, v0, Levb;->d:Lbwk;
+
+    if-nez v2, :cond_7
+
+    new-instance v2, Lbwk;
+
+    invoke-direct {v2}, Lbwk;-><init>()V
+
+    iput-object v2, v0, Levb;->d:Lbwk;
+
+    :cond_7
+    iget-object v2, v0, Levb;->q:Lmip;
+
+    if-nez v2, :cond_8
+
+    new-instance v2, Lmip;
+
+    invoke-direct {v2}, Lmip;-><init>()V
+
+    iput-object v2, v0, Levb;->q:Lmip;
+
+    :cond_8
+    iget-object v2, v0, Levb;->n:Lfcy;
+
+    if-nez v2, :cond_9
+
+    new-instance v2, Lfcy;
+
+    invoke-direct {v2}, Lfcy;-><init>()V
+
+    iput-object v2, v0, Levb;->n:Lfcy;
+
+    :cond_9
+    iget-object v2, v0, Levb;->e:Limy;
+
+    if-nez v2, :cond_a
+
+    new-instance v2, Limy;
+
+    invoke-direct {v2}, Limy;-><init>()V
+
+    iput-object v2, v0, Levb;->e:Limy;
+
+    :cond_a
+    iget-object v2, v0, Levb;->p:Lmip;
+
+    if-nez v2, :cond_b
+
+    new-instance v2, Lmip;
+
+    invoke-direct {v2}, Lmip;-><init>()V
+
+    iput-object v2, v0, Levb;->p:Lmip;
+
+    :cond_b
+    iget-object v2, v0, Levb;->m:Lmip;
+
+    if-nez v2, :cond_c
+
+    new-instance v2, Lmip;
+
+    invoke-direct {v2}, Lmip;-><init>()V
+
+    iput-object v2, v0, Levb;->m:Lmip;
+
+    :cond_c
+    iget-object v2, v0, Levb;->i:Limy;
+
+    if-nez v2, :cond_d
+
+    new-instance v2, Limy;
+
+    invoke-direct {v2, v3}, Limy;-><init>([C)V
+
+    iput-object v2, v0, Levb;->i:Limy;
+
+    :cond_d
+    new-instance v2, Lewb;
+
+    iget-object v5, v0, Levb;->a:Lett;
+
+    iget-object v6, v0, Levb;->k:Lfw;
+
+    iget-object v7, v0, Levb;->f:Ldkr;
+
+    iget-object v8, v0, Levb;->o:Lfcy;
+
+    iget-object v9, v0, Levb;->b:Leml;
+
+    iget-object v10, v0, Levb;->c:Lfhp;
+
+    iget-object v11, v0, Levb;->l:Lfcy;
+
+    iget-object v12, v0, Levb;->h:Laat;
+
+    iget-object v13, v0, Levb;->j:Lfw;
+
+    iget-object v14, v0, Levb;->d:Lbwk;
+
+    iget-object v15, v0, Levb;->q:Lmip;
+
+    iget-object v3, v0, Levb;->e:Limy;
+
+    iget-object v4, v0, Levb;->p:Lmip;
+
+    move-object/from16 v16, v3
+
+    iget-object v3, v0, Levb;->m:Lmip;
+
+    iget-object v0, v0, Levb;->i:Limy;
 
     const/16 v20, 0x0
 
@@ -469,13 +623,27 @@
 
     const/16 v22, 0x0
 
-    move-object/from16 v16, v2
+    const/16 v23, 0x0
 
-    move-object v2, v0
+    const/16 v24, 0x0
 
-    invoke-direct/range {v2 .. v22}, Lesh;-><init>(Ldiu;Lewq;Lgxb;Lbkb;Lgsj;Ldez;Ldle;Lcis;Ljfc;Lfwt;Ljew;Linb;Llho;Lcvr;[B[B[B[B[B[B)V
+    const/16 v25, 0x0
 
-    iput-object v0, v1, Lcom/google/android/apps/camera/legacy/app/app/CameraApp;->m:Lerw;
+    const/16 v26, 0x0
+
+    const/16 v27, 0x0
+
+    move-object/from16 v17, v4
+
+    move-object v4, v2
+
+    move-object/from16 v18, v3
+
+    move-object/from16 v19, v0
+
+    invoke-direct/range {v4 .. v27}, Lewb;-><init>(Lett;Lfw;Ldkr;Lfcy;Leml;Lfhp;Lfcy;Laat;Lfw;Lbwk;Lmip;Limy;Lmip;Lmip;Limy;[B[B[B[B[B[B[B[B)V
+
+    iput-object v2, v1, Lcom/google/android/apps/camera/legacy/app/app/CameraApp;->m:Leuv;
 
     invoke-static {}, Landroid/os/Trace;->endSection()V
 
@@ -483,7 +651,7 @@
 
     invoke-static {v0}, Landroid/os/Trace;->beginSection(Ljava/lang/String;)V
 
-    iget-object v0, v1, Lcom/google/android/apps/camera/legacy/app/app/CameraApp;->m:Lerw;
+    iget-object v0, v1, Lcom/google/android/apps/camera/legacy/app/app/CameraApp;->m:Leuv;
 
     const-string v2, "GCA_App#inject"
 
@@ -491,87 +659,87 @@
 
     move-object v2, v0
 
-    check-cast v2, Lesh;
+    check-cast v2, Lewb;
 
-    iget-object v2, v2, Lesh;->f:Loiw;
+    iget-object v2, v2, Lewb;->i:Lqkg;
 
-    invoke-interface {v2}, Loiw;->get()Ljava/lang/Object;
+    invoke-interface {v2}, Lqkg;->get()Ljava/lang/Object;
 
     move-result-object v2
 
-    check-cast v2, Ldhi;
+    check-cast v2, Lddf;
 
     move-object v3, v0
 
-    check-cast v3, Lesh;
+    check-cast v3, Lewb;
 
-    iget-object v3, v3, Lesh;->G:Loiw;
+    iget-object v3, v3, Lewb;->H:Lqkg;
 
-    invoke-interface {v3}, Loiw;->get()Ljava/lang/Object;
+    invoke-interface {v3}, Lqkg;->get()Ljava/lang/Object;
 
     move-result-object v3
 
-    check-cast v3, Ldle;
+    check-cast v3, Lfw;
 
     move-object v3, v0
 
-    check-cast v3, Lesh;
+    check-cast v3, Lewb;
 
-    iget-object v3, v3, Lesh;->n:Loiw;
+    iget-object v3, v3, Lewb;->q:Lqkg;
 
-    invoke-interface {v3}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v3
-
-    check-cast v3, Lkaq;
-
-    invoke-static {v3}, Lmqp;->i(Ljava/lang/Object;)Lmqp;
+    invoke-interface {v3}, Lqkg;->get()Ljava/lang/Object;
 
     move-result-object v3
 
-    invoke-static {v3}, Lkao;->b(Lmqp;)Lkaq;
+    check-cast v3, Llis;
+
+    invoke-static {v3}, Lojc;->i(Ljava/lang/Object;)Lojc;
 
     move-result-object v3
 
-    invoke-static {v3}, Ldjw;->b(Lkaq;)Lkap;
+    invoke-static {v3}, Lliq;->b(Lojc;)Llis;
+
+    move-result-object v3
+
+    invoke-static {v3}, Ldgb;->b(Llis;)Llir;
 
     move-result-object v3
 
     move-object v4, v0
 
-    check-cast v4, Lesh;
+    check-cast v4, Lewb;
 
-    iget-object v4, v4, Lesh;->l:Loiw;
+    iget-object v4, v4, Lewb;->o:Lqkg;
 
-    invoke-interface {v4}, Loiw;->get()Ljava/lang/Object;
+    invoke-interface {v4}, Lqkg;->get()Ljava/lang/Object;
 
     move-result-object v4
 
-    check-cast v4, Ljuh;
+    check-cast v4, Llar;
 
     move-object v4, v0
 
-    check-cast v4, Lesh;
+    check-cast v4, Lewb;
 
-    iget-object v4, v4, Lesh;->L:Loiw;
+    iget-object v4, v4, Lewb;->N:Lqkg;
 
-    invoke-interface {v4}, Loiw;->get()Ljava/lang/Object;
+    invoke-interface {v4}, Lqkg;->get()Ljava/lang/Object;
 
     move-result-object v4
 
     check-cast v4, Ljava/util/concurrent/Executor;
 
-    new-instance v4, Lbkc;
+    new-instance v4, Ljtx;
 
-    invoke-direct {v4, v2, v3}, Lbkc;-><init>(Ldhi;Lkap;)V
+    invoke-direct {v4, v2, v3}, Ljtx;-><init>(Lddf;Llir;)V
 
-    iput-object v4, v1, Lcom/google/android/apps/camera/legacy/app/app/CameraApp;->h:Lbkc;
+    iput-object v4, v1, Lcom/google/android/apps/camera/legacy/app/app/CameraApp;->i:Ljtx;
 
     move-object v2, v0
 
-    check-cast v2, Lesh;
+    check-cast v2, Lewb;
 
-    invoke-virtual {v2}, Lesh;->k()Landroid/app/NotificationManager;
+    invoke-virtual {v2}, Lewb;->k()Landroid/app/NotificationManager;
 
     move-result-object v2
 
@@ -579,111 +747,111 @@
 
     move-object v2, v0
 
-    check-cast v2, Lesh;
+    check-cast v2, Lewb;
 
-    iget-object v2, v2, Lesh;->f:Loiw;
+    iget-object v2, v2, Lewb;->i:Lqkg;
 
-    invoke-interface {v2}, Loiw;->get()Ljava/lang/Object;
+    invoke-interface {v2}, Lqkg;->get()Ljava/lang/Object;
 
     move-result-object v2
 
     move-object v4, v2
 
-    check-cast v4, Ldhi;
+    check-cast v4, Lddf;
 
     move-object v2, v0
 
-    check-cast v2, Lesh;
+    check-cast v2, Lewb;
 
-    iget-object v5, v2, Lesh;->M:Loiw;
-
-    move-object v2, v0
-
-    check-cast v2, Lesh;
-
-    iget-object v6, v2, Lesh;->O:Loiw;
+    iget-object v5, v2, Lewb;->O:Lqkg;
 
     move-object v2, v0
 
-    check-cast v2, Lesh;
+    check-cast v2, Lewb;
 
-    iget-object v7, v2, Lesh;->P:Loiw;
-
-    move-object v2, v0
-
-    check-cast v2, Lesh;
-
-    iget-object v8, v2, Lesh;->Q:Loiw;
+    iget-object v6, v2, Lewb;->P:Lqkg;
 
     move-object v2, v0
 
-    check-cast v2, Lesh;
+    check-cast v2, Lewb;
 
-    iget-object v9, v2, Lesh;->R:Loiw;
+    iget-object v7, v2, Lewb;->Q:Lqkg;
 
-    new-instance v2, Ldfa;
+    move-object v2, v0
+
+    check-cast v2, Lewb;
+
+    iget-object v8, v2, Lewb;->R:Lqkg;
+
+    move-object v2, v0
+
+    check-cast v2, Lewb;
+
+    iget-object v9, v2, Lewb;->S:Lqkg;
+
+    new-instance v2, Lbuv;
 
     move-object v3, v2
 
-    invoke-direct/range {v3 .. v9}, Ldfa;-><init>(Ldhi;Loiw;Loiw;Loiw;Loiw;Loiw;)V
+    invoke-direct/range {v3 .. v9}, Lbuv;-><init>(Lddf;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;)V
 
-    iput-object v2, v1, Lcom/google/android/apps/camera/legacy/app/app/CameraApp;->g:Ldfa;
-
-    move-object v2, v0
-
-    check-cast v2, Lesh;
-
-    iget-object v2, v2, Lesh;->S:Loiw;
-
-    iput-object v2, v1, Lcom/google/android/apps/camera/legacy/app/app/CameraApp;->b:Loiw;
+    iput-object v2, v1, Lcom/google/android/apps/camera/legacy/app/app/CameraApp;->b:Lbuv;
 
     move-object v2, v0
 
-    check-cast v2, Lesh;
+    check-cast v2, Lewb;
 
-    iget-object v2, v2, Lesh;->r:Loiw;
+    iget-object v2, v2, Lewb;->T:Lqkg;
 
-    iput-object v2, v1, Lcom/google/android/apps/camera/legacy/app/app/CameraApp;->c:Loiw;
+    iput-object v2, v1, Lcom/google/android/apps/camera/legacy/app/app/CameraApp;->c:Lqkg;
 
     move-object v2, v0
 
-    check-cast v2, Lesh;
+    check-cast v2, Lewb;
 
-    iget-object v2, v2, Lesh;->U:Loiw;
+    iget-object v2, v2, Lewb;->t:Lqkg;
 
-    invoke-interface {v2}, Loiw;->get()Ljava/lang/Object;
+    iput-object v2, v1, Lcom/google/android/apps/camera/legacy/app/app/CameraApp;->d:Lqkg;
+
+    move-object v2, v0
+
+    check-cast v2, Lewb;
+
+    iget-object v2, v2, Lewb;->V:Lqkg;
+
+    invoke-interface {v2}, Lqkg;->get()Ljava/lang/Object;
 
     move-result-object v2
 
-    check-cast v2, Llfw;
+    check-cast v2, Lmun;
 
-    iput-object v2, v1, Lcom/google/android/apps/camera/legacy/app/app/CameraApp;->d:Llfw;
+    iput-object v2, v1, Lcom/google/android/apps/camera/legacy/app/app/CameraApp;->e:Lmun;
 
     move-object v2, v0
 
-    check-cast v2, Lesh;
+    check-cast v2, Lewb;
 
-    iget-object v2, v2, Lesh;->V:Loiw;
+    iget-object v2, v2, Lewb;->W:Lqkg;
 
-    invoke-interface {v2}, Loiw;->get()Ljava/lang/Object;
+    invoke-interface {v2}, Lqkg;->get()Ljava/lang/Object;
 
     move-result-object v2
 
-    check-cast v2, Laxz;
+    check-cast v2, Lani;
 
-    iput-object v2, v1, Lcom/google/android/apps/camera/legacy/app/app/CameraApp;->e:Laxz;
+    iput-object v2, v1, Lcom/google/android/apps/camera/legacy/app/app/CameraApp;->f:Lani;
 
-    check-cast v0, Lesh;
+    check-cast v0, Lewb;
 
-    iget-object v0, v0, Lesh;->N:Loiw;
+    iget-object v0, v0, Lewb;->I:Lqkg;
 
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
+    invoke-interface {v0}, Lqkg;->get()Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Lchs;
+    check-cast v0, Lbus;
 
-    iput-object v0, v1, Lcom/google/android/apps/camera/legacy/app/app/CameraApp;->f:Lchs;
+    iput-object v0, v1, Lcom/google/android/apps/camera/legacy/app/app/CameraApp;->h:Lbus;
 
     invoke-static {}, Landroid/os/Trace;->endSection()V
 
@@ -691,11 +859,11 @@
 
     invoke-static {v0}, Landroid/os/Trace;->beginSection(Ljava/lang/String;)V
 
-    iget-object v0, v1, Lcom/google/android/apps/camera/legacy/app/app/CameraApp;->d:Llfw;
+    iget-object v0, v1, Lcom/google/android/apps/camera/legacy/app/app/CameraApp;->e:Lmun;
 
-    iget-object v0, v0, Llfw;->a:Llfx;
+    iget-object v0, v0, Lmun;->a:Lmuo;
 
-    invoke-interface {v0}, Llfx;->b()V
+    invoke-interface {v0}, Lmuo;->b()V
 
     invoke-static {}, Landroid/os/Trace;->endSection()V
 
@@ -703,13 +871,13 @@
 
     invoke-static {v0}, Landroid/os/Trace;->beginSection(Ljava/lang/String;)V
 
-    iget-object v0, v1, Lcom/google/android/apps/camera/legacy/app/app/CameraApp;->h:Lbkc;
+    iget-object v0, v1, Lcom/google/android/apps/camera/legacy/app/app/CameraApp;->i:Ljtx;
 
-    iget-object v0, v0, Lbkc;->a:Ljava/lang/Object;
+    iget-object v0, v0, Ljtx;->a:Lddf;
 
-    sget-object v2, Ldho;->a:Ldhk;
+    sget-object v2, Lddl;->a:Lddi;
 
-    invoke-interface {v0}, Ldhi;->f()V
+    invoke-interface {v0}, Lddf;->e()V
 
     invoke-static {}, Landroid/os/Trace;->endSection()V
 
@@ -717,67 +885,67 @@
 
     invoke-static {v0}, Landroid/os/Trace;->beginSection(Ljava/lang/String;)V
 
-    iget-object v0, v1, Lcom/google/android/apps/camera/legacy/app/app/CameraApp;->g:Ldfa;
+    iget-object v0, v1, Lcom/google/android/apps/camera/legacy/app/app/CameraApp;->b:Lbuv;
 
     const-string v2, "appStartup.start"
 
     invoke-static {v2}, Landroid/os/Trace;->beginSection(Ljava/lang/String;)V
 
-    iget-object v2, v0, Ldfa;->e:Ljava/lang/Object;
+    iget-object v2, v0, Lbuv;->d:Lqkg;
 
-    iget-object v3, v0, Ldfa;->a:Ljava/lang/Object;
+    iget-object v3, v0, Lbuv;->b:Lqkg;
 
-    iget-object v4, v0, Ldfa;->d:Ljava/lang/Object;
+    iget-object v4, v0, Lbuv;->e:Lqkg;
 
-    iget-object v5, v0, Ldfa;->c:Ljava/lang/Object;
+    iget-object v5, v0, Lbuv;->f:Lqkg;
 
-    invoke-static {v2, v3, v4, v5}, Lmvv;->o(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Lmvv;
+    invoke-static {v2, v3, v4, v5}, Loom;->p(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Loom;
 
     move-result-object v2
 
     move-object v3, v2
 
-    check-cast v3, Lmyu;
+    check-cast v3, Lorr;
 
-    iget v3, v3, Lmyu;->c:I
+    iget v3, v3, Lorr;->c:I
 
     const/4 v4, 0x0
 
     :goto_0
-    if-ge v4, v3, :cond_0
+    if-ge v4, v3, :cond_e
 
     invoke-interface {v2, v4}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v5
 
-    check-cast v5, Loiw;
+    check-cast v5, Lqkg;
 
-    invoke-interface {v5}, Loiw;->get()Ljava/lang/Object;
+    invoke-interface {v5}, Lqkg;->get()Ljava/lang/Object;
 
     move-result-object v5
 
-    check-cast v5, Lhip;
+    check-cast v5, Liho;
 
-    invoke-interface {v5}, Lhip;->run()V
+    invoke-interface {v5}, Liho;->run()V
 
     add-int/lit8 v4, v4, 0x1
 
     goto :goto_0
 
-    :cond_0
-    iget-object v2, v0, Ldfa;->f:Ljava/lang/Object;
+    :cond_e
+    iget-object v2, v0, Lbuv;->a:Lddf;
 
-    invoke-interface {v2}, Ldhi;->c()V
+    invoke-interface {v2}, Lddf;->b()V
 
-    iget-object v0, v0, Ldfa;->b:Ljava/lang/Object;
+    iget-object v0, v0, Lbuv;->c:Lqkg;
 
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
+    invoke-interface {v0}, Lqkg;->get()Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Lgfy;
+    check-cast v0, Lgvk;
 
-    invoke-virtual {v0}, Lgfy;->run()V
+    invoke-virtual {v0}, Lgvk;->run()V
 
     invoke-static {}, Landroid/os/Trace;->endSection()V
 
@@ -797,57 +965,57 @@
 
     invoke-static {v0}, Landroid/os/Trace;->beginSection(Ljava/lang/String;)V
 
-    iget-object v0, v1, Lcom/google/android/apps/camera/legacy/app/app/CameraApp;->f:Lchs;
+    iget-object v0, v1, Lcom/google/android/apps/camera/legacy/app/app/CameraApp;->h:Lbus;
 
-    new-instance v2, Lchu;
+    new-instance v2, Lbuu;
 
-    iget-object v3, v1, Lcom/google/android/apps/camera/legacy/app/app/CameraApp;->c:Loiw;
+    iget-object v3, v1, Lcom/google/android/apps/camera/legacy/app/app/CameraApp;->d:Lqkg;
 
-    iget-object v4, v1, Lcom/google/android/apps/camera/legacy/app/app/CameraApp;->b:Loiw;
+    iget-object v4, v1, Lcom/google/android/apps/camera/legacy/app/app/CameraApp;->c:Lqkg;
 
-    invoke-direct {v2, v3, v4}, Lchu;-><init>(Loiw;Loiw;)V
+    invoke-direct {v2, v3, v4}, Lbuu;-><init>(Lqkg;Lqkg;)V
 
-    invoke-virtual {v0, v2}, Lchs;->a(Lchr;)Lkad;
+    invoke-virtual {v0, v2}, Lbus;->a(Lbur;)Llie;
 
-    new-instance v0, Lcho;
+    new-instance v0, Lbun;
 
-    iget-object v2, v1, Lcom/google/android/apps/camera/legacy/app/app/CameraApp;->f:Lchs;
+    iget-object v2, v1, Lcom/google/android/apps/camera/legacy/app/app/CameraApp;->h:Lbus;
 
     invoke-static {}, Ljava/lang/Thread;->getDefaultUncaughtExceptionHandler()Ljava/lang/Thread$UncaughtExceptionHandler;
 
     move-result-object v3
 
-    invoke-direct {v0, v2, v3}, Lcho;-><init>(Lchs;Ljava/lang/Thread$UncaughtExceptionHandler;)V
+    invoke-direct {v0, v2, v3}, Lbun;-><init>(Lbus;Ljava/lang/Thread$UncaughtExceptionHandler;)V
 
     invoke-static {v0}, Ljava/lang/Thread;->setDefaultUncaughtExceptionHandler(Ljava/lang/Thread$UncaughtExceptionHandler;)V
 
-    iget-object v0, v1, Lcom/google/android/apps/camera/legacy/app/app/CameraApp;->d:Llfw;
+    iget-object v0, v1, Lcom/google/android/apps/camera/legacy/app/app/CameraApp;->e:Lmun;
 
-    iget-object v0, v0, Llfw;->a:Llfx;
+    iget-object v0, v0, Lmun;->a:Lmuo;
 
-    invoke-interface {v0}, Llfx;->a()V
+    invoke-interface {v0}, Lmuo;->a()V
 
-    sget-object v0, Lkan;->b:Ljava/util/logging/Logger;
+    sget-object v0, Llip;->b:Ljava/util/logging/Logger;
 
-    sget-object v2, Lkas;->a:Lkas;
-
-    invoke-virtual {v0, v2}, Ljava/util/logging/Logger;->addHandler(Ljava/util/logging/Handler;)V
-
-    sget-object v0, Lkan;->a:Ljava/util/logging/Logger;
-
-    sget-object v2, Lkas;->a:Lkas;
+    sget-object v2, Lliv;->a:Lliv;
 
     invoke-virtual {v0, v2}, Ljava/util/logging/Logger;->addHandler(Ljava/util/logging/Handler;)V
 
-    sget-object v0, Lkan;->c:Ljava/util/logging/Logger;
+    sget-object v0, Llip;->a:Ljava/util/logging/Logger;
 
-    sget-object v2, Lkas;->a:Lkas;
+    sget-object v2, Lliv;->a:Lliv;
 
     invoke-virtual {v0, v2}, Ljava/util/logging/Logger;->addHandler(Ljava/util/logging/Handler;)V
 
-    sget-object v0, Lkan;->d:Ljava/util/logging/Logger;
+    sget-object v0, Llip;->c:Ljava/util/logging/Logger;
 
-    sget-object v2, Lkas;->a:Lkas;
+    sget-object v2, Lliv;->a:Lliv;
+
+    invoke-virtual {v0, v2}, Ljava/util/logging/Logger;->addHandler(Ljava/util/logging/Handler;)V
+
+    sget-object v0, Llip;->d:Ljava/util/logging/Logger;
+
+    sget-object v2, Lliv;->a:Lliv;
 
     invoke-virtual {v0, v2}, Ljava/util/logging/Logger;->addHandler(Ljava/util/logging/Handler;)V
 
@@ -857,7 +1025,7 @@
 
     invoke-static {}, Landroid/os/Trace;->endSection()V
 
-    :cond_1
+    :cond_f
     monitor-exit p0
 
     goto :goto_1
@@ -871,21 +1039,21 @@
 
     throw v0
 
-    :cond_2
+    :cond_10
     :goto_1
-    iget-object v0, v1, Lcom/google/android/apps/camera/legacy/app/app/CameraApp;->m:Lerw;
+    iget-object v0, v1, Lcom/google/android/apps/camera/legacy/app/app/CameraApp;->m:Leuv;
 
     return-object v0
 .end method
 
-.method public final g(Ljhp;)Lgxb;
+.method public final e(Lmip;)Levy;
     .locals 1
 
-    invoke-virtual {p0}, Lcom/google/android/apps/camera/legacy/app/app/CameraApp;->f()Lerw;
+    invoke-virtual {p0}, Lcom/google/android/apps/camera/legacy/app/app/CameraApp;->d()Leuv;
 
     move-result-object v0
 
-    invoke-interface {v0, p1}, Lerw;->g(Ljhp;)Lgxb;
+    invoke-interface {v0, p1}, Leuv;->e(Lmip;)Levy;
 
     move-result-object p1
 
@@ -899,17 +1067,15 @@
 
     invoke-static {}, Lcom/Globals;->initDevice()V
 
-    invoke-static {}, Ljuh;->a()V
+    invoke-static {}, Llar;->a()V
 
-    invoke-virtual {p0}, Lcom/google/android/apps/camera/legacy/app/app/CameraApp;->f()Lerw;
+    invoke-virtual {p0}, Lcom/google/android/apps/camera/legacy/app/app/CameraApp;->d()Leuv;
 
     return-void
 .end method
 
 .method public final onCreate()V
-    .locals 26
-
-    move-object/from16 v1, p0
+    .locals 9
 
     const-string v0, "GCA_App#onCreate"
 
@@ -917,483 +1083,280 @@
 
     sget-object v0, Lcom/agc/Application;->lifecycle:Landroid/app/Application$ActivityLifecycleCallbacks;
 
-    invoke-virtual {v1, v0}, Lcom/google/android/apps/camera/legacy/app/app/CameraApp;->registerActivityLifecycleCallbacks(Landroid/app/Application$ActivityLifecycleCallbacks;)V
+    invoke-virtual {p0, v0}, Lcom/google/android/apps/camera/legacy/app/app/CameraApp;->registerActivityLifecycleCallbacks(Landroid/app/Application$ActivityLifecycleCallbacks;)V
 
-    sget-object v2, Ljka;->a:Ljava/lang/Object;
+    sget-object v0, Lkqe;->a:Ljava/lang/Object;
 
-    monitor-enter v2
+    monitor-enter v0
 
     :try_start_0
-    sget-boolean v0, Ljka;->b:Z
+    sget-boolean v1, Lkqe;->b:Z
 
-    monitor-exit v2
+    monitor-exit v0
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_1
 
-    if-nez v0, :cond_8
+    if-nez v1, :cond_3
 
-    sget-object v2, Ljkb;->a:Ljava/lang/Object;
+    sget-object v0, Lkqf;->a:Ljava/lang/Object;
 
-    monitor-enter v2
+    monitor-enter v0
 
-    const/4 v0, 0x1
+    const/4 v1, 0x1
 
     :try_start_1
-    sput-boolean v0, Ljkb;->b:Z
+    sput-boolean v1, Lkqf;->b:Z
 
-    monitor-exit v2
+    monitor-exit v0
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    invoke-static {}, Lhkn;->e()Lhkn;
+    invoke-static {}, Lijy;->e()Lijy;
 
-    move-result-object v2
+    move-result-object v0
 
-    sget-object v3, Lhjv;->a:Lhjv;
+    sget-object v2, Lijg;->a:Lijg;
 
-    invoke-virtual {v2, v3}, Lhkh;->h(Ljava/lang/Enum;)V
+    invoke-virtual {v0, v2}, Lijs;->i(Ljava/lang/Enum;)V
 
-    sget-object v3, Ldin;->d:Ldin;
+    const-string v2, "#floggerConfig"
 
-    sget-object v4, Ldin;->c:Ldin;
+    invoke-static {v2}, Landroid/os/Trace;->beginSection(Ljava/lang/String;)V
 
-    invoke-virtual {v3, v4}, Ldin;->a(Ldin;)Z
+    sget-object v2, Ldei;->d:Ldei;
 
-    move-result v3
+    sget-object v3, Ldei;->c:Ldei;
 
-    const/4 v4, 0x0
+    invoke-virtual {v2, v3}, Ldei;->a(Ldei;)Z
 
-    if-eqz v3, :cond_0
-
-    sget-object v3, Lcom/google/android/apps/camera/legacy/app/app/CameraApp;->k:Ljava/util/concurrent/atomic/AtomicBoolean;
-
-    invoke-virtual {v3, v0}, Ljava/util/concurrent/atomic/AtomicBoolean;->getAndSet(Z)Z
-
-    move-result v3
-
-    if-nez v3, :cond_4
-
-    const-string v3, "#floggerConfig"
-
-    invoke-static {v3}, Landroid/os/Trace;->beginSection(Ljava/lang/String;)V
-
-    invoke-static {}, Lnaa;->e()Lnaa;
-
-    move-result-object v3
-
-    new-instance v5, Lnda;
-
-    invoke-direct {v5}, Lnda;-><init>()V
-
-    new-instance v13, Lnda;
-
-    iget-boolean v8, v5, Lnda;->b:Z
-
-    iget-object v9, v5, Lnda;->c:Ljava/util/logging/Level;
-
-    iget-boolean v10, v5, Lnda;->d:Z
-
-    iget-object v11, v5, Lnda;->e:Ljava/util/Set;
-
-    iget-object v12, v5, Lnda;->f:Lncb;
-
-    const-string v7, "CAM_"
-
-    move-object v6, v13
-
-    invoke-direct/range {v6 .. v12}, Lnda;-><init>(Ljava/lang/String;ZLjava/util/logging/Level;ZLjava/util/Set;Lncb;)V
-
-    new-instance v5, Lnda;
-
-    iget-object v15, v13, Lnda;->a:Ljava/lang/String;
-
-    iget-boolean v6, v13, Lnda;->b:Z
-
-    iget-object v7, v13, Lnda;->c:Ljava/util/logging/Level;
-
-    const/16 v18, 0x1
-
-    iget-object v8, v13, Lnda;->e:Ljava/util/Set;
-
-    iget-object v9, v13, Lnda;->f:Lncb;
-
-    move-object v14, v5
-
-    move/from16 v16, v6
-
-    move-object/from16 v17, v7
-
-    move-object/from16 v19, v8
-
-    move-object/from16 v20, v9
-
-    invoke-direct/range {v14 .. v20}, Lnda;-><init>(Ljava/lang/String;ZLjava/util/logging/Level;ZLjava/util/Set;Lncb;)V
-
-    new-instance v6, Lnda;
-
-    iget-object v7, v5, Lnda;->a:Ljava/lang/String;
-
-    const/16 v21, 0x0
-
-    iget-object v8, v5, Lnda;->c:Ljava/util/logging/Level;
-
-    iget-boolean v9, v5, Lnda;->d:Z
-
-    iget-object v10, v5, Lnda;->e:Ljava/util/Set;
-
-    iget-object v5, v5, Lnda;->f:Lncb;
-
-    move-object/from16 v19, v6
-
-    move-object/from16 v20, v7
-
-    move-object/from16 v22, v8
-
-    move/from16 v23, v9
-
-    move-object/from16 v24, v10
-
-    move-object/from16 v25, v5
-
-    invoke-direct/range {v19 .. v25}, Lnda;-><init>(Ljava/lang/String;ZLjava/util/logging/Level;ZLjava/util/Set;Lncb;)V
-
-    iput-object v6, v3, Lnaa;->a:Ljava/lang/Object;
-
-    invoke-static {v3}, Lnct;->a(Lnaa;)V
-
-    invoke-static {}, Landroid/os/Trace;->endSection()V
-
-    goto/16 :goto_2
-
-    :cond_0
-    sget-object v3, Lcom/google/android/apps/camera/legacy/app/app/CameraApp;->k:Ljava/util/concurrent/atomic/AtomicBoolean;
-
-    invoke-virtual {v3, v0}, Ljava/util/concurrent/atomic/AtomicBoolean;->getAndSet(Z)Z
-
-    move-result v3
-
-    if-nez v3, :cond_1
-
-    const-string v3, "#floggerConfig"
-
-    invoke-static {v3}, Landroid/os/Trace;->beginSection(Ljava/lang/String;)V
-
-    invoke-static {}, Lnaa;->e()Lnaa;
-
-    move-result-object v3
-
-    new-instance v5, Lncr;
-
-    invoke-direct {v5}, Lncr;-><init>()V
-
-    new-instance v6, Lncr;
-
-    iget-boolean v5, v5, Lncr;->b:Z
-
-    const-string v7, "CAM_"
-
-    invoke-direct {v6, v7, v5}, Lncr;-><init>(Ljava/lang/String;Z)V
-
-    new-instance v5, Lncr;
-
-    iget-object v6, v6, Lncr;->a:Ljava/lang/String;
-
-    invoke-direct {v5, v6, v4}, Lncr;-><init>(Ljava/lang/String;Z)V
-
-    iput-object v5, v3, Lnaa;->a:Ljava/lang/Object;
-
-    invoke-static {v3}, Lnct;->a(Lnaa;)V
-
-    invoke-static {}, Landroid/os/Trace;->endSection()V
-
-    :cond_1
-    const-string v3, "HierarchySnapshot#init"
-
-    invoke-static {v3}, Landroid/os/Trace;->beginSection(Ljava/lang/String;)V
-
-    new-instance v3, Ljava/util/HashSet;
-
-    invoke-direct {v3}, Ljava/util/HashSet;-><init>()V
-
-    new-instance v5, Ljava/util/HashSet;
-
-    invoke-direct {v5}, Ljava/util/HashSet;-><init>()V
-
-    new-instance v6, Lltb;
-
-    invoke-direct {v6}, Lltb;-><init>()V
-
-    invoke-interface {v3, v6}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
-
-    new-instance v6, Lltl;
-
-    invoke-direct {v6, v0}, Lltl;-><init>(I)V
-
-    invoke-interface {v3, v6}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
-
-    new-instance v6, Llth;
-
-    invoke-direct {v6}, Llth;-><init>()V
-
-    invoke-interface {v3, v6}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
-
-    new-instance v6, Lltj;
-
-    invoke-direct {v6}, Lltj;-><init>()V
-
-    invoke-interface {v3, v6}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
-
-    new-instance v6, Lltk;
-
-    invoke-direct {v6}, Lltk;-><init>()V
-
-    invoke-interface {v3, v6}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
-
-    new-instance v6, Lltl;
-
-    invoke-direct {v6, v4}, Lltl;-><init>(I)V
-
-    invoke-interface {v3, v6}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
-
-    new-instance v6, Lltm;
-
-    invoke-direct {v6}, Lltm;-><init>()V
-
-    invoke-interface {v3, v6}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
-
-    new-instance v6, Llte;
-
-    invoke-interface {v3}, Ljava/util/Set;->isEmpty()Z
-
-    move-result v7
-
-    if-nez v7, :cond_7
-
-    new-instance v7, Lltg;
-
-    invoke-direct {v7}, Lltg;-><init>()V
-
-    invoke-interface {v3}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
-
-    move-result-object v3
-
-    :goto_0
-    invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v8
-
-    if-eqz v8, :cond_2
-
-    invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v8
-
-    check-cast v8, Lltc;
-
-    iget-object v9, v7, Lltg;->b:Ljava/util/List;
-
-    new-instance v10, Landroidx/wear/ambient/AmbientMode$AmbientController;
-
-    invoke-direct {v10, v8}, Landroidx/wear/ambient/AmbientMode$AmbientController;-><init>(Lltc;)V
-
-    invoke-interface {v9, v10}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-
-    goto :goto_0
-
-    :cond_2
-    invoke-interface {v5}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
-
-    move-result-object v3
-
-    :goto_1
-    invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v5
-
-    if-eqz v5, :cond_3
-
-    invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v5
-
-    check-cast v5, Landroidx/wear/ambient/AmbientMode$AmbientController;
-
-    iget-object v8, v7, Lltg;->b:Ljava/util/List;
-
-    invoke-interface {v8, v5}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-
-    goto :goto_1
-
-    :cond_3
-    invoke-direct {v6, v7}, Llte;-><init>(Lltg;)V
-
-    new-instance v3, Landroid/content/IntentFilter;
-
-    const-string v5, "com.google.android.libraries.snapshot.action.CAPTURE_SNAPSHOT"
-
-    invoke-direct {v3, v5}, Landroid/content/IntentFilter;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v3, v4}, Landroid/content/IntentFilter;->setPriority(I)V
-
-    const/4 v5, 0x2
-
-    invoke-virtual {v1, v6, v3, v5}, Landroid/content/Context;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;I)Landroid/content/Intent;
-
-    invoke-static {}, Landroid/os/Trace;->endSection()V
-
-    :cond_4
-    :goto_2
-    invoke-virtual/range {p0 .. p0}, Lcom/google/android/apps/camera/legacy/app/app/CameraApp;->getContentResolver()Landroid/content/ContentResolver;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    const-string v5, "camera:logging_override_level"
+    move-result v2
 
     const/4 v3, 0x0
 
-    sput v3, Ldjy;->a:I
+    if-eqz v2, :cond_0
 
-    const-string v3, "PhenotypeHelper#init"
+    sget-object v2, Lcom/google/android/apps/camera/legacy/app/app/CameraApp;->l:Ljava/util/concurrent/atomic/AtomicBoolean;
 
-    invoke-static {v3}, Landroid/os/Trace;->beginSection(Ljava/lang/String;)V
+    invoke-virtual {v2, v1}, Ljava/util/concurrent/atomic/AtomicBoolean;->getAndSet(Z)Z
 
-    sget v3, Lgfw;->a:I
+    move-result v2
 
-    invoke-static/range {p0 .. p0}, Lloz;->h(Landroid/content/Context;)V
+    if-nez v2, :cond_1
+
+    invoke-static {}, Lowv;->a()Lowv;
+
+    move-result-object v2
+
+    new-instance v4, Loxe;
+
+    invoke-direct {v4}, Loxe;-><init>()V
+
+    new-instance v5, Loxe;
+
+    const-string v6, "CAM_"
+
+    iget-boolean v7, v4, Loxe;->b:Z
+
+    iget-object v8, v4, Loxe;->c:Ljava/util/logging/Level;
+
+    iget-boolean v4, v4, Loxe;->d:Z
+
+    invoke-direct {v5, v6, v7, v8, v4}, Loxe;-><init>(Ljava/lang/String;ZLjava/util/logging/Level;Z)V
+
+    new-instance v4, Loxe;
+
+    iget-object v6, v5, Loxe;->a:Ljava/lang/String;
+
+    iget-boolean v7, v5, Loxe;->b:Z
+
+    iget-object v5, v5, Loxe;->c:Ljava/util/logging/Level;
+
+    invoke-direct {v4, v6, v7, v5, v1}, Loxe;-><init>(Ljava/lang/String;ZLjava/util/logging/Level;Z)V
+
+    new-instance v5, Loxe;
+
+    iget-object v6, v4, Loxe;->a:Ljava/lang/String;
+
+    iget-object v7, v4, Loxe;->c:Ljava/util/logging/Level;
+
+    iget-boolean v4, v4, Loxe;->d:Z
+
+    invoke-direct {v5, v6, v3, v7, v4}, Loxe;-><init>(Ljava/lang/String;ZLjava/util/logging/Level;Z)V
+
+    iput-object v5, v2, Lowv;->a:Lowu;
+
+    invoke-static {v2}, Loww;->a(Lowv;)V
+
+    goto :goto_0
+
+    :cond_0
+    sget-object v2, Lcom/google/android/apps/camera/legacy/app/app/CameraApp;->l:Ljava/util/concurrent/atomic/AtomicBoolean;
+
+    invoke-virtual {v2, v1}, Ljava/util/concurrent/atomic/AtomicBoolean;->getAndSet(Z)Z
+
+    move-result v2
+
+    if-nez v2, :cond_1
+
+    invoke-static {}, Lowv;->a()Lowv;
+
+    move-result-object v2
+
+    new-instance v4, Lowt;
+
+    invoke-direct {v4}, Lowt;-><init>()V
+
+    new-instance v5, Lowt;
+
+    const-string v6, "CAM_"
+
+    iget-boolean v4, v4, Lowt;->b:Z
+
+    invoke-direct {v5, v6, v4}, Lowt;-><init>(Ljava/lang/String;Z)V
+
+    new-instance v4, Lowt;
+
+    iget-object v5, v5, Lowt;->a:Ljava/lang/String;
+
+    invoke-direct {v4, v5, v3}, Lowt;-><init>(Ljava/lang/String;Z)V
+
+    iput-object v4, v2, Lowv;->a:Lowu;
+
+    invoke-static {v2}, Loww;->a(Lowv;)V
+
+    :cond_1
+    :goto_0
+    invoke-static {}, Landroid/os/Trace;->endSection()V
+
+    invoke-virtual {p0}, Lcom/google/android/apps/camera/legacy/app/app/CameraApp;->getContentResolver()Landroid/content/ContentResolver;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    const-string v4, "camera:logging_override_level"
+
+    const/4 v2, 0x0
+
+    sput v2, Ldgd;->a:I
+
+    const-string v2, "PhenotypeHelper#init"
+
+    invoke-static {v2}, Landroid/os/Trace;->beginSection(Ljava/lang/String;)V
+
+    invoke-static {p0}, Lgvh;->b(Landroid/content/Context;)V
 
     invoke-static {}, Landroid/os/Trace;->endSection()V
 
-    new-instance v3, Lchw;
+    new-instance v2, Lbuy;
 
-    new-instance v4, Lerv;
+    new-instance v3, Leut;
 
-    invoke-direct {v4, v1}, Lerv;-><init>(Lcom/google/android/apps/camera/legacy/app/app/CameraApp;)V
+    invoke-direct {v3, p0}, Leut;-><init>(Lcom/google/android/apps/camera/legacy/app/app/CameraApp;)V
 
-    invoke-direct {v3, v4}, Lchw;-><init>(Lchv;)V
+    invoke-direct {v2, v3}, Lbuy;-><init>(Lbux;)V
 
-    invoke-virtual {v1, v3}, Lcom/google/android/apps/camera/legacy/app/app/CameraApp;->registerActivityLifecycleCallbacks(Landroid/app/Application$ActivityLifecycleCallbacks;)V
+    invoke-virtual {p0, v2}, Lcom/google/android/apps/camera/legacy/app/app/CameraApp;->registerActivityLifecycleCallbacks(Landroid/app/Application$ActivityLifecycleCallbacks;)V
 
-    invoke-super/range {p0 .. p0}, Lfbd;->onCreate()V
+    invoke-super {p0}, Lfip;->onCreate()V
 
-    invoke-virtual/range {p0 .. p0}, Lcom/google/android/apps/camera/legacy/app/app/CameraApp;->getPackageManager()Landroid/content/pm/PackageManager;
+    invoke-virtual {p0}, Lcom/google/android/apps/camera/legacy/app/app/CameraApp;->getPackageManager()Landroid/content/pm/PackageManager;
 
-    move-result-object v3
+    move-result-object v2
 
-    const-string v4, "android.hardware.camera"
+    const-string v3, "com.google.android.feature.PIXEL_2018_EXPERIENCE"
 
-    invoke-virtual {v3, v4}, Landroid/content/pm/PackageManager;->hasSystemFeature(Ljava/lang/String;)Z
+    invoke-virtual {v2, v3}, Landroid/content/pm/PackageManager;->hasSystemFeature(Ljava/lang/String;)Z
+
+    move-result v2
+
+    sget-object v2, Lnav;->a:Lnav;
+
+    invoke-static {}, Lmyw;->i()Z
 
     move-result v3
 
-    if-eqz v3, :cond_6
+    if-eqz v3, :cond_2
 
-    sget-object v3, Lllo;->a:Lllo;
+    iget-wide v3, v2, Lnav;->c:J
 
-    invoke-static {}, Llho;->k()Z
+    const-wide/16 v5, 0x0
 
-    move-result v4
+    cmp-long v7, v3, v5
 
-    if-eqz v4, :cond_5
+    if-lez v7, :cond_2
 
-    iget-wide v4, v3, Lllo;->c:J
+    iget-wide v3, v2, Lnav;->d:J
 
-    const-wide/16 v6, 0x0
+    cmp-long v7, v3, v5
 
-    cmp-long v8, v4, v6
-
-    if-lez v8, :cond_5
-
-    iget-wide v4, v3, Lllo;->d:J
-
-    cmp-long v8, v4, v6
-
-    if-nez v8, :cond_5
+    if-nez v7, :cond_2
 
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
-    move-result-wide v4
+    move-result-wide v3
 
-    iput-wide v4, v3, Lllo;->d:J
+    iput-wide v3, v2, Lnav;->d:J
 
-    iget-object v4, v3, Lllo;->l:Llln;
+    iget-object v3, v2, Lnav;->l:Lnau;
 
-    iput-boolean v0, v4, Llln;->b:Z
+    iput-boolean v1, v3, Lnau;->b:Z
 
-    new-instance v0, Lkxc;
+    new-instance v1, Lnam;
 
-    const/16 v4, 0x11
+    invoke-direct {v1, v2}, Lnam;-><init>(Lnav;)V
 
-    invoke-direct {v0, v3, v4}, Lkxc;-><init>(Lllo;I)V
+    invoke-static {v1}, Lmyw;->h(Ljava/lang/Runnable;)V
 
-    invoke-static {v0}, Llho;->j(Ljava/lang/Runnable;)V
+    new-instance v1, Lnat;
 
-    new-instance v0, Lllm;
+    invoke-direct {v1, v2, p0}, Lnat;-><init>(Lnav;Landroid/app/Application;)V
 
-    invoke-direct {v0, v3, v1}, Lllm;-><init>(Lllo;Landroid/app/Application;)V
+    invoke-virtual {p0, v1}, Landroid/app/Application;->registerActivityLifecycleCallbacks(Landroid/app/Application$ActivityLifecycleCallbacks;)V
 
-    invoke-virtual {v1, v0}, Landroid/app/Application;->registerActivityLifecycleCallbacks(Landroid/app/Application$ActivityLifecycleCallbacks;)V
+    :cond_2
+    new-instance v1, Legh;
 
-    :cond_5
-    new-instance v0, Lehi;
+    invoke-direct {v1, p0}, Legh;-><init>(Landroid/content/Context;)V
 
-    invoke-direct {v0, v1}, Lehi;-><init>(Landroid/content/Context;)V
+    iput-object v1, p0, Lcom/google/android/apps/camera/legacy/app/app/CameraApp;->g:Legh;
 
-    iput-object v0, v1, Lcom/google/android/apps/camera/legacy/app/app/CameraApp;->l:Lehi;
+    sget-object v1, Lijg;->b:Lijg;
 
-    sget-object v0, Lhjv;->b:Lhjv;
-
-    invoke-virtual {v2, v0}, Lhkh;->h(Ljava/lang/Enum;)V
+    invoke-virtual {v0, v1}, Lijs;->i(Ljava/lang/Enum;)V
 
     invoke-static {}, Landroid/os/Trace;->endSection()V
 
     return-void
 
-    :cond_6
     new-instance v0, Ljava/lang/IllegalStateException;
 
-    const-string v2, "Cannot start the Google Camera on an unsupported device"
+    const-string v1, "Cannot start the Google Camera on an unsupported device"
 
-    invoke-direct {v0, v2}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-
-    :cond_7
-    new-instance v0, Ljava/lang/IllegalStateException;
-
-    const-string v2, "No AttributeGenerators were registered. Try calling withCommonAttributeGenerators()."
-
-    invoke-direct {v0, v2}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+    invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 
     throw v0
 
     :catchall_0
-    move-exception v0
+    move-exception v1
 
     :try_start_2
-    monitor-exit v2
+    monitor-exit v0
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
-    throw v0
+    throw v1
 
-    :cond_8
+    :cond_3
     return-void
 
     :catchall_1
-    move-exception v0
+    move-exception v1
 
     :try_start_3
-    monitor-exit v2
+    monitor-exit v0
     :try_end_3
     .catchall {:try_start_3 .. :try_end_3} :catchall_1
 
-    goto :goto_4
-
-    :goto_3
-    throw v0
-
-    :goto_4
-    goto :goto_3
+    throw v1
 .end method

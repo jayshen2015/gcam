@@ -9,18 +9,6 @@
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 2
-
-    invoke-static {}, Lcom/google/googlex/gcam/GcamModuleJNI;->new_RawReadView()J
-
-    move-result-wide v0
-
-    invoke-direct {p0, v0, v1}, Lcom/google/googlex/gcam/RawReadView;-><init>(J)V
-
-    return-void
-.end method
-
 .method public constructor <init>(J)V
     .locals 1
 

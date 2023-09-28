@@ -1,232 +1,163 @@
-.class public final Lczf;
+.class public final synthetic Lczf;
 .super Ljava/lang/Object;
+
+# interfaces
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field public final a:Ljava/util/List;
+.field public final synthetic a:Lczl;
 
-.field b:Lkad;
-
-.field private c:Z
-
-.field private final d:Ljvs;
-
-.field private e:Z
+.field public final synthetic b:Lczo;
 
 
 # direct methods
-.method public constructor <init>(Ljvs;)V
-    .locals 2
+.method public synthetic constructor <init>(Lczl;Lczo;)V
+    .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const/4 v0, 0x0
+    iput-object p1, p0, Lczf;->a:Lczl;
 
-    iput-boolean v0, p0, Lczf;->c:Z
+    iput-object p2, p0, Lczf;->b:Lczo;
 
-    new-instance v1, Ljava/util/ArrayList;
-
-    invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
-
-    iput-object v1, p0, Lczf;->a:Ljava/util/List;
-
-    iput-boolean v0, p0, Lczf;->e:Z
-
-    const/4 v1, 0x0
-
-    iput-object v1, p0, Lczf;->b:Lkad;
-
-    iput-object p1, p0, Lczf;->d:Ljvs;
-
-    new-instance v1, Lcze;
-
-    invoke-direct {v1, p0, v0}, Lcze;-><init>(Lczf;I)V
-
-    sget-object v0, Lnnv;->a:Lnnv;
-
-    invoke-interface {p1, v1, v0}, Ljvs;->a(Lkai;Ljava/util/concurrent/Executor;)Lkad;
-
-    return-void
-.end method
-
-.method private final e()V
-    .locals 1
-
-    iget-boolean v0, p0, Lczf;->c:Z
-
-    if-nez v0, :cond_0
-
-    const/4 v0, 0x0
-
-    iput-boolean v0, p0, Lczf;->e:Z
-
-    goto :goto_0
-
-    :cond_0
-    iget-object v0, p0, Lczf;->d:Ljvs;
-
-    invoke-interface {v0}, Ljvs;->bm()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/lang/Boolean;
-
-    invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
-
-    move-result v0
-
-    if-nez v0, :cond_1
-
-    iget-boolean v0, p0, Lczf;->e:Z
-
-    if-nez v0, :cond_1
-
-    iget-object v0, p0, Lczf;->b:Lkad;
-
-    if-nez v0, :cond_2
-
-    iget-object v0, p0, Lczf;->a:Ljava/util/List;
-
-    invoke-interface {v0}, Ljava/util/List;->isEmpty()Z
-
-    move-result v0
-
-    if-nez v0, :cond_2
-
-    iget-object v0, p0, Lczf;->a:Ljava/util/List;
-
-    invoke-static {v0}, Llyh;->S(Ljava/lang/Iterable;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lczc;
-
-    invoke-virtual {v0}, Lczc;->a()Lkad;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lczf;->b:Lkad;
-
-    return-void
-
-    :cond_1
-    :goto_0
-    iget-object v0, p0, Lczf;->b:Lkad;
-
-    if-eqz v0, :cond_2
-
-    invoke-interface {v0}, Lkad;->close()V
-
-    const/4 v0, 0x0
-
-    iput-object v0, p0, Lczf;->b:Lkad;
-
-    :cond_2
     return-void
 .end method
 
 
 # virtual methods
-.method public final declared-synchronized a(Lczc;)Lkad;
-    .locals 2
+.method public final run()V
+    .locals 9
 
-    monitor-enter p0
+    iget-object v0, p0, Lczf;->a:Lczl;
 
-    :try_start_0
-    iget-object v0, p0, Lczf;->a:Ljava/util/List;
+    iget-object v1, p0, Lczf;->b:Lczo;
 
-    invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+    iget-boolean v2, v0, Lczl;->f:Z
 
-    invoke-direct {p0}, Lczf;->e()V
+    if-nez v2, :cond_0
 
-    new-instance v0, Lchq;
+    goto :goto_1
 
-    const/16 v1, 0x8
+    :cond_0
+    iget-object v2, v1, Lczo;->b:Lojc;
 
-    invoke-direct {v0, p0, p1, v1}, Lchq;-><init>(Lczf;Lczc;I)V
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    invoke-virtual {v0, v2}, Lczl;->f(Lojc;)V
 
-    monitor-exit p0
+    iget-wide v2, v1, Lczo;->a:J
 
-    return-object v0
+    iget-object v1, v1, Lczo;->c:Lojc;
 
-    :catchall_0
-    move-exception p1
+    invoke-virtual {v1}, Lojc;->g()Z
 
-    monitor-exit p0
+    move-result v4
 
-    throw p1
-.end method
+    if-eqz v4, :cond_5
 
-.method public final declared-synchronized b()V
-    .locals 1
+    invoke-virtual {v1}, Lojc;->c()Ljava/lang/Object;
 
-    monitor-enter p0
+    move-result-object v4
 
-    const/4 v0, 0x1
+    check-cast v4, Lcyn;
 
-    :try_start_0
-    iput-boolean v0, p0, Lczf;->e:Z
+    iget-object v4, v4, Lcyn;->a:Loor;
 
-    invoke-direct {p0}, Lczf;->e()V
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    invoke-interface {v4}, Ljava/util/Map;->isEmpty()Z
 
-    monitor-exit p0
+    move-result v5
+
+    if-nez v5, :cond_1
+
+    iget-object v5, v0, Lczl;->c:Ldbr;
+
+    invoke-interface {v5, v2, v3, v4}, Ldbr;->fL(JLjava/util/Map;)V
+
+    :cond_1
+    invoke-virtual {v1}, Lojc;->c()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Lcyn;
+
+    iget-object v1, v1, Lcyn;->b:Lojc;
+
+    invoke-virtual {v1}, Lojc;->g()Z
+
+    move-result v4
+
+    if-eqz v4, :cond_5
+
+    new-instance v4, Landroid/util/ArrayMap;
+
+    invoke-direct {v4}, Landroid/util/ArrayMap;-><init>()V
+
+    invoke-virtual {v1}, Lojc;->c()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Lnwh;
+
+    iget-object v1, v1, Lnwh;->a:Lppm;
+
+    invoke-interface {v1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+
+    move-result-object v1
+
+    :cond_2
+    :goto_0
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v5
+
+    if-eqz v5, :cond_4
+
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v5
+
+    check-cast v5, Lnwg;
+
+    iget-object v6, v5, Lnwg;->a:Lnwi;
+
+    if-nez v6, :cond_3
+
+    sget-object v6, Lnwi;->b:Lnwi;
+
+    :cond_3
+    iget-object v6, v6, Lnwi;->a:Lppj;
+
+    invoke-interface {v6}, Ljava/util/List;->isEmpty()Z
+
+    move-result v7
+
+    if-nez v7, :cond_2
+
+    iget v5, v5, Lnwg;->b:I
+
+    int-to-long v7, v5
+
+    invoke-static {v7, v8}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object v5
+
+    invoke-interface {v4, v5, v6}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    goto :goto_0
+
+    :cond_4
+    invoke-interface {v4}, Ljava/util/Map;->isEmpty()Z
+
+    move-result v1
+
+    if-nez v1, :cond_5
+
+    iget-object v0, v0, Lczl;->d:Ldbg;
+
+    invoke-interface {v0, v2, v3, v4}, Ldbg;->g(JLjava/util/Map;)V
 
     return-void
 
-    :catchall_0
-    move-exception v0
-
-    monitor-exit p0
-
-    throw v0
-.end method
-
-.method public final declared-synchronized c(Z)V
-    .locals 0
-
-    monitor-enter p0
-
-    :try_start_0
-    iput-boolean p1, p0, Lczf;->c:Z
-
-    invoke-direct {p0}, Lczf;->e()V
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    monitor-exit p0
-
+    :cond_5
+    :goto_1
     return-void
-
-    :catchall_0
-    move-exception p1
-
-    monitor-exit p0
-
-    throw p1
-.end method
-
-.method public final declared-synchronized d()V
-    .locals 1
-
-    monitor-enter p0
-
-    :try_start_0
-    invoke-direct {p0}, Lczf;->e()V
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    monitor-exit p0
-
-    return-void
-
-    :catchall_0
-    move-exception v0
-
-    monitor-exit p0
-
-    throw v0
 .end method

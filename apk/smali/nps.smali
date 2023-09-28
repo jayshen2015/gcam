@@ -1,32 +1,32 @@
 .class public final Lnps;
-.super Ljava/lang/Object;
-
-
-# instance fields
-.field private final a:Ljava/lang/Object;
+.super Lajd;
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/Object;)V
-    .locals 0
+.method public constructor <init>()V
+    .locals 2
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const/4 v0, 0x2
 
-    iput-object p1, p0, Lnps;->a:Ljava/lang/Object;
+    const/4 v1, 0x5
+
+    invoke-direct {p0, v0, v1}, Lajd;-><init>(II)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final toString()Ljava/lang/String;
+.method public final a(Lajy;)V
     .locals 1
 
-    iget-object v0, p0, Lnps;->a:Ljava/lang/Object;
+    sget-object v0, Lnpw;->e:Lajd;
 
-    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+    invoke-virtual {v0, p1}, Lajd;->a(Lajy;)V
 
-    move-result-object v0
+    sget-object v0, Lnpw;->g:Lajd;
 
-    return-object v0
+    invoke-virtual {v0, p1}, Lajd;->a(Lajy;)V
+
+    return-void
 .end method

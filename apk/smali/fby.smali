@@ -1,52 +1,39 @@
-.class public final Lfby;
+.class public final synthetic Lfby;
 .super Ljava/lang/Object;
 
-
-# static fields
-.field public static final a:J
+# interfaces
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field public final b:Lkaq;
+.field public final synthetic a:Lfcb;
 
-.field public final c:Lfbz;
-
-.field public final d:Ljava/util/concurrent/ScheduledExecutorService;
+.field public final synthetic b:Landroid/content/Intent;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 3
-
-    sget-object v0, Ljava/util/concurrent/TimeUnit;->SECONDS:Ljava/util/concurrent/TimeUnit;
-
-    const-wide/16 v1, 0xa
-
-    invoke-virtual {v0, v1, v2}, Ljava/util/concurrent/TimeUnit;->toNanos(J)J
-
-    move-result-wide v0
-
-    sput-wide v0, Lfby;->a:J
-
-    return-void
-.end method
-
-.method public constructor <init>(Lfbz;Lkap;Ljava/util/concurrent/ScheduledExecutorService;)V
+.method public synthetic constructor <init>(Lfcb;Landroid/content/Intent;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lfby;->c:Lfbz;
+    iput-object p1, p0, Lfby;->a:Lfcb;
 
-    const-string p1, "ProcessingEvent"
+    iput-object p2, p0, Lfby;->b:Landroid/content/Intent;
 
-    invoke-interface {p2, p1}, Lkap;->a(Ljava/lang/String;)Lkaq;
+    return-void
+.end method
 
-    move-result-object p1
 
-    iput-object p1, p0, Lfby;->b:Lkaq;
+# virtual methods
+.method public final run()V
+    .locals 2
 
-    iput-object p3, p0, Lfby;->d:Ljava/util/concurrent/ScheduledExecutorService;
+    iget-object v0, p0, Lfby;->a:Lfcb;
+
+    iget-object v1, p0, Lfby;->b:Landroid/content/Intent;
+
+    invoke-virtual {v0, v1}, Lfcb;->startActivity(Landroid/content/Intent;)V
 
     return-void
 .end method

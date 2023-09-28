@@ -1,183 +1,352 @@
 .class public final Liqx;
 .super Ljava/lang/Object;
 
-# interfaces
-.implements Landroid/animation/Animator$AnimatorListener;
-
 
 # instance fields
-.field final synthetic a:Landroid/view/View;
+.field public final a:Llzr;
 
-.field final synthetic b:Ljava/lang/Object;
+.field public final b:Landroid/graphics/Rect;
 
-.field private final synthetic c:I
+.field public final c:Landroid/util/SizeF;
+
+.field public final d:Z
+
+.field public final e:I
+
+.field public final f:Landroid/graphics/Rect;
+
+.field private final g:F
 
 
 # direct methods
-.method public constructor <init>(Lirc;Landroid/view/View;I)V
+.method public constructor <init>()V
     .locals 0
-
-    iput p3, p0, Liqx;->c:I
-
-    iput-object p1, p0, Liqx;->b:Ljava/lang/Object;
-
-    iput-object p2, p0, Liqx;->a:Landroid/view/View;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
-.method public constructor <init>(Lnaa;Landroid/view/View;I[B[B[B)V
+.method public constructor <init>(Llzr;Landroid/graphics/Rect;Landroid/util/SizeF;ZIFLandroid/graphics/Rect;)V
     .locals 0
 
-    iput p3, p0, Liqx;->c:I
-
-    iput-object p1, p0, Liqx;->b:Ljava/lang/Object;
-
-    iput-object p2, p0, Liqx;->a:Landroid/view/View;
-
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Liqx;->a:Llzr;
+
+    iput-object p2, p0, Liqx;->b:Landroid/graphics/Rect;
+
+    iput-object p3, p0, Liqx;->c:Landroid/util/SizeF;
+
+    iput-boolean p4, p0, Liqx;->d:Z
+
+    iput p5, p0, Liqx;->e:I
+
+    iput p6, p0, Liqx;->g:F
+
+    iput-object p7, p0, Liqx;->f:Landroid/graphics/Rect;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onAnimationCancel(Landroid/animation/Animator;)V
-    .locals 1
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 4
 
-    iget p1, p0, Liqx;->c:I
+    const/4 v0, 0x1
 
-    packed-switch p1, :pswitch_data_0
+    if-ne p1, p0, :cond_0
 
-    return-void
+    return v0
 
-    :pswitch_0
-    iget-object p1, p0, Liqx;->a:Landroid/view/View;
+    :cond_0
+    instance-of v1, p1, Liqx;
 
-    invoke-virtual {p1}, Landroid/view/View;->getAlpha()F
+    const/4 v2, 0x0
+
+    if-eqz v1, :cond_1
+
+    check-cast p1, Liqx;
+
+    iget-object v1, p0, Liqx;->a:Llzr;
+
+    iget-object v3, p1, Liqx;->a:Llzr;
+
+    invoke-virtual {v1, v3}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_1
+
+    iget-object v1, p0, Liqx;->b:Landroid/graphics/Rect;
+
+    iget-object v3, p1, Liqx;->b:Landroid/graphics/Rect;
+
+    invoke-virtual {v1, v3}, Landroid/graphics/Rect;->equals(Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_1
+
+    iget-object v1, p0, Liqx;->c:Landroid/util/SizeF;
+
+    iget-object v3, p1, Liqx;->c:Landroid/util/SizeF;
+
+    invoke-virtual {v1, v3}, Landroid/util/SizeF;->equals(Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_1
+
+    iget-boolean v1, p0, Liqx;->d:Z
+
+    iget-boolean v3, p1, Liqx;->d:Z
+
+    if-ne v1, v3, :cond_1
+
+    iget v1, p0, Liqx;->e:I
+
+    iget v3, p1, Liqx;->e:I
+
+    if-ne v1, v3, :cond_1
+
+    iget v1, p0, Liqx;->g:F
+
+    invoke-static {v1}, Ljava/lang/Float;->floatToIntBits(F)I
+
+    move-result v1
+
+    iget v3, p1, Liqx;->g:F
+
+    invoke-static {v3}, Ljava/lang/Float;->floatToIntBits(F)I
+
+    move-result v3
+
+    if-ne v1, v3, :cond_1
+
+    iget-object v1, p0, Liqx;->f:Landroid/graphics/Rect;
+
+    iget-object p1, p1, Liqx;->f:Landroid/graphics/Rect;
+
+    invoke-virtual {v1, p1}, Landroid/graphics/Rect;->equals(Ljava/lang/Object;)Z
 
     move-result p1
 
-    const/4 v0, 0x0
+    if-eqz p1, :cond_1
 
-    cmpl-float p1, p1, v0
+    return v0
 
-    if-nez p1, :cond_0
+    :cond_1
+    return v2
+.end method
 
-    iget-object p1, p0, Liqx;->a:Landroid/view/View;
+.method public final hashCode()I
+    .locals 4
 
-    const/16 v0, 0x8
+    iget-object v0, p0, Liqx;->a:Llzr;
 
-    invoke-virtual {p1, v0}, Landroid/view/View;->setVisibility(I)V
+    invoke-virtual {v0}, Ljava/lang/Object;->hashCode()I
+
+    move-result v0
+
+    const v1, 0xf4243
+
+    xor-int/2addr v0, v1
+
+    mul-int v0, v0, v1
+
+    iget-object v2, p0, Liqx;->b:Landroid/graphics/Rect;
+
+    invoke-virtual {v2}, Landroid/graphics/Rect;->hashCode()I
+
+    move-result v2
+
+    xor-int/2addr v0, v2
+
+    mul-int v0, v0, v1
+
+    iget-object v2, p0, Liqx;->c:Landroid/util/SizeF;
+
+    invoke-virtual {v2}, Landroid/util/SizeF;->hashCode()I
+
+    move-result v2
+
+    xor-int/2addr v0, v2
+
+    mul-int v0, v0, v1
+
+    iget-boolean v2, p0, Liqx;->d:Z
+
+    const/4 v3, 0x1
+
+    if-eq v3, v2, :cond_0
+
+    const/16 v2, 0x4d5
+
+    goto :goto_0
 
     :cond_0
-    return-void
+    const/16 v2, 0x4cf
 
-    nop
+    :goto_0
+    xor-int/2addr v0, v2
 
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+    mul-int v0, v0, v1
+
+    iget v2, p0, Liqx;->e:I
+
+    xor-int/2addr v0, v2
+
+    mul-int v0, v0, v1
+
+    iget v2, p0, Liqx;->g:F
+
+    invoke-static {v2}, Ljava/lang/Float;->floatToIntBits(F)I
+
+    move-result v2
+
+    xor-int/2addr v0, v2
+
+    mul-int v0, v0, v1
+
+    iget-object v1, p0, Liqx;->f:Landroid/graphics/Rect;
+
+    invoke-virtual {v1}, Landroid/graphics/Rect;->hashCode()I
+
+    move-result v1
+
+    xor-int/2addr v0, v1
+
+    return v0
 .end method
 
-.method public final onAnimationEnd(Landroid/animation/Animator;)V
-    .locals 2
+.method public final toString()Ljava/lang/String;
+    .locals 12
 
-    iget p1, p0, Liqx;->c:I
+    iget-object v0, p0, Liqx;->a:Llzr;
 
-    const/16 v0, 0x8
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
-    const/4 v1, 0x0
+    move-result-object v0
 
-    packed-switch p1, :pswitch_data_0
+    iget-object v1, p0, Liqx;->b:Landroid/graphics/Rect;
 
-    iget-object p1, p0, Liqx;->a:Landroid/view/View;
+    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
-    invoke-virtual {p1, v1}, Landroid/view/View;->setAlpha(F)V
+    move-result-object v1
 
-    iget-object p1, p0, Liqx;->a:Landroid/view/View;
+    iget-object v2, p0, Liqx;->c:Landroid/util/SizeF;
 
-    invoke-virtual {p1, v0}, Landroid/view/View;->setVisibility(I)V
+    invoke-static {v2}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
-    iget-object p1, p0, Liqx;->b:Ljava/lang/Object;
+    move-result-object v2
 
-    check-cast p1, Lnaa;
+    iget-boolean v3, p0, Liqx;->d:Z
 
-    iget-object p1, p1, Lnaa;->a:Ljava/lang/Object;
+    iget v4, p0, Liqx;->e:I
 
-    check-cast p1, Landroid/animation/ObjectAnimator;
+    iget v5, p0, Liqx;->g:F
 
-    invoke-virtual {p1}, Landroid/animation/ObjectAnimator;->removeAllListeners()V
+    iget-object v6, p0, Liqx;->f:Landroid/graphics/Rect;
 
-    iget-object p1, p0, Liqx;->b:Ljava/lang/Object;
+    invoke-static {v6}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
-    check-cast p1, Lnaa;
+    move-result-object v6
 
-    const/4 v0, 0x0
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
-    iput-object v0, p1, Lnaa;->a:Ljava/lang/Object;
+    move-result-object v7
 
-    return-void
+    invoke-virtual {v7}, Ljava/lang/String;->length()I
 
-    :pswitch_0
-    iget-object p1, p0, Liqx;->a:Landroid/view/View;
+    move-result v7
 
-    invoke-virtual {p1}, Landroid/view/View;->getAlpha()F
+    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
-    move-result p1
+    move-result-object v8
 
-    cmpl-float p1, p1, v1
+    invoke-virtual {v8}, Ljava/lang/String;->length()I
 
-    if-nez p1, :cond_0
+    move-result v8
 
-    iget-object p1, p0, Liqx;->a:Landroid/view/View;
+    invoke-static {v2}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
-    invoke-virtual {p1, v0}, Landroid/view/View;->setVisibility(I)V
+    move-result-object v9
 
-    iget-object p1, p0, Liqx;->b:Ljava/lang/Object;
+    invoke-virtual {v9}, Ljava/lang/String;->length()I
 
-    check-cast p1, Lirc;
+    move-result v9
 
-    invoke-virtual {p1}, Lirc;->k()V
+    invoke-static {v6}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
-    :cond_0
-    return-void
+    move-result-object v10
 
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
-.end method
+    invoke-virtual {v10}, Ljava/lang/String;->length()I
 
-.method public final onAnimationRepeat(Landroid/animation/Animator;)V
-    .locals 0
+    move-result v10
 
-    iget p1, p0, Liqx;->c:I
+    new-instance v11, Ljava/lang/StringBuilder;
 
-    return-void
-.end method
+    add-int/lit16 v7, v7, 0xa5
 
-.method public final onAnimationStart(Landroid/animation/Animator;)V
-    .locals 1
+    add-int/2addr v7, v8
 
-    iget p1, p0, Liqx;->c:I
+    add-int/2addr v7, v9
 
-    packed-switch p1, :pswitch_data_0
+    add-int/2addr v7, v10
 
-    iget-object p1, p0, Liqx;->a:Landroid/view/View;
+    invoke-direct {v11, v7}, Ljava/lang/StringBuilder;-><init>(I)V
 
-    const/4 v0, 0x0
+    const-string v7, "EisParams{metadata="
 
-    invoke-virtual {p1, v0}, Landroid/view/View;->setVisibility(I)V
+    invoke-virtual {v11, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    :pswitch_0
-    return-void
+    invoke-virtual {v11, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+    const-string v0, ", sensorInfoActiveArraySize="
+
+    invoke-virtual {v11, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v11, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v0, ", sensorInfoPhysicalSize="
+
+    invoke-virtual {v11, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v11, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v0, ", supportOis="
+
+    invoke-virtual {v11, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v11, v3}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    const-string v0, ", oisApiVersion="
+
+    invoke-virtual {v11, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v11, v4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    const-string v0, ", digitalZoomRatio="
+
+    invoke-virtual {v11, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v11, v5}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
+
+    const-string v0, ", cropRegion="
+
+    invoke-virtual {v11, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v11, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v0, "}"
+
+    invoke-virtual {v11, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v11}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
 .end method

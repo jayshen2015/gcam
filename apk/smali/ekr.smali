@@ -1,220 +1,481 @@
-.class final Lekr;
-.super Ljava/lang/Thread;
+.class public final Lekr;
+.super Ljava/lang/Object;
+
+
+# static fields
+.field public static final a:Louj;
 
 
 # instance fields
-.field final synthetic a:Lekt;
+.field public final b:Leko;
+
+.field public final c:Leks;
+
+.field public final d:Ljava/util/Queue;
+
+.field public final e:Ljava/lang/Object;
+
+.field public f:I
+
+.field public g:Z
+
+.field public h:Z
+
+.field public i:Z
+
+.field public j:Z
+
+.field public k:I
+
+.field public l:I
+
+.field private m:Ljava/lang/Thread;
+
+.field private n:Ljava/lang/Thread;
 
 
 # direct methods
-.method public constructor <init>(Lekt;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 1
 
-    iput-object p1, p0, Lekr;->a:Lekt;
+    const-string v0, "com/google/android/apps/camera/imax/cyclops/video/EncoderDrainer"
 
-    const-string p1, "EncoderDrainerWriteThread"
+    invoke-static {v0}, Louj;->h(Ljava/lang/String;)Louj;
 
-    invoke-direct {p0, p1}, Ljava/lang/Thread;-><init>(Ljava/lang/String;)V
+    move-result-object v0
+
+    sput-object v0, Lekr;->a:Louj;
+
+    return-void
+.end method
+
+.method public constructor <init>(Leko;Leks;)V
+    .locals 1
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    new-instance v0, Ljava/util/LinkedList;
+
+    invoke-direct {v0}, Ljava/util/LinkedList;-><init>()V
+
+    iput-object v0, p0, Lekr;->d:Ljava/util/Queue;
+
+    new-instance v0, Ljava/lang/Object;
+
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+
+    iput-object v0, p0, Lekr;->e:Ljava/lang/Object;
+
+    const/4 v0, 0x0
+
+    iput-object v0, p0, Lekr;->m:Ljava/lang/Thread;
+
+    iput-object v0, p0, Lekr;->n:Ljava/lang/Thread;
+
+    const/4 v0, -0x1
+
+    iput v0, p0, Lekr;->f:I
+
+    const/4 v0, 0x0
+
+    iput-boolean v0, p0, Lekr;->g:Z
+
+    iput-boolean v0, p0, Lekr;->h:Z
+
+    iput-boolean v0, p0, Lekr;->i:Z
+
+    iput-boolean v0, p0, Lekr;->j:Z
+
+    iput v0, p0, Lekr;->k:I
+
+    iput v0, p0, Lekr;->l:I
+
+    iput-object p1, p0, Lekr;->b:Leko;
+
+    iput-object p2, p0, Lekr;->c:Leks;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final run()V
-    .locals 5
+.method public final declared-synchronized a()V
+    .locals 8
 
-    iget-object v0, p0, Lekr;->a:Lekt;
+    monitor-enter p0
 
-    :goto_0
-    iget-boolean v1, v0, Lekt;->j:Z
-
-    if-eqz v1, :cond_5
-
-    iget-object v1, v0, Lekt;->e:Ljava/lang/Object;
-
-    monitor-enter v1
-
-    :goto_1
     :try_start_0
-    iget-object v2, v0, Lekt;->d:Ljava/util/Queue;
+    iget-object v0, p0, Lekr;->n:Ljava/lang/Thread;
 
-    invoke-interface {v2}, Ljava/util/Queue;->size()I
+    if-eqz v0, :cond_3
 
-    move-result v2
+    iget-object v0, p0, Lekr;->m:Ljava/lang/Thread;
 
-    const/16 v3, 0x64
+    if-nez v0, :cond_0
 
-    if-le v2, v3, :cond_0
-
-    sget-object v2, Lekt;->a:Lnak;
-
-    invoke-virtual {v2}, Lnaf;->b()Lnaz;
-
-    move-result-object v2
-
-    check-cast v2, Lnah;
-
-    const/16 v3, 0x621
-
-    invoke-interface {v2, v3}, Lnah;->G(I)Lnaz;
-
-    move-result-object v2
-
-    check-cast v2, Lnah;
-
-    const-string v3, "Dropping frames in drainer!"
-
-    invoke-interface {v2, v3}, Lnah;->o(Ljava/lang/String;)V
-
-    iget-object v2, v0, Lekt;->d:Ljava/util/Queue;
-
-    invoke-interface {v2}, Ljava/util/Queue;->poll()Ljava/lang/Object;
-
-    iget v2, v0, Lekt;->k:I
-
-    add-int/lit8 v2, v2, 0x1
-
-    iput v2, v0, Lekt;->k:I
-
-    goto :goto_1
+    goto/16 :goto_4
 
     :cond_0
-    iget-object v2, v0, Lekt;->d:Ljava/util/Queue;
+    iget-object v0, p0, Lekr;->b:Leko;
 
-    invoke-interface {v2}, Ljava/util/Queue;->poll()Ljava/lang/Object;
+    invoke-interface {v0}, Leko;->b()V
 
-    move-result-object v2
+    const/4 v0, 0x1
 
-    check-cast v2, Lgxb;
-
-    monitor-exit v1
+    iput-boolean v0, p0, Lekr;->g:Z
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_1
 
-    if-eqz v2, :cond_1
-
-    iget-object v1, v0, Lekt;->c:Leku;
-
-    iget v3, v0, Lekt;->f:I
-
-    iget-object v4, v2, Lgxb;->b:Ljava/lang/Object;
-
-    iget-object v2, v2, Lgxb;->a:Ljava/lang/Object;
-
-    check-cast v2, Landroid/media/MediaCodec$BufferInfo;
-
-    check-cast v4, Ljava/nio/ByteBuffer;
-
-    invoke-virtual {v1, v3, v4, v2}, Leku;->c(ILjava/nio/ByteBuffer;Landroid/media/MediaCodec$BufferInfo;)V
-
-    :cond_1
-    iget-object v2, v0, Lekt;->e:Ljava/lang/Object;
-
-    monitor-enter v2
+    const-wide/16 v1, 0x3e8
 
     :try_start_1
-    iget-object v1, v0, Lekt;->d:Ljava/util/Queue;
+    iget-object v3, p0, Lekr;->m:Ljava/lang/Thread;
 
-    invoke-interface {v1}, Ljava/util/Queue;->isEmpty()Z
+    invoke-virtual {v3, v1, v2}, Ljava/lang/Thread;->join(J)V
+    :try_end_1
+    .catch Ljava/lang/InterruptedException; {:try_start_1 .. :try_end_1} :catch_0
+    .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
-    move-result v1
+    goto :goto_0
 
-    if-nez v1, :cond_2
+    :catch_0
+    move-exception v3
+
+    :try_start_2
+    sget-object v4, Lekr;->a:Louj;
+
+    invoke-virtual {v4}, Loue;->b()Lova;
+
+    move-result-object v4
+
+    const-string v5, "Failed to stop drainer"
+
+    const/16 v6, 0x4d0
+
+    invoke-static {v4, v5, v6, v3}, Ld;->w(Lova;Ljava/lang/String;CLjava/lang/Throwable;)V
+
+    :goto_0
+    const/4 v3, 0x0
+
+    iput-boolean v3, p0, Lekr;->i:Z
+
+    iget-object v4, p0, Lekr;->m:Ljava/lang/Thread;
+
+    invoke-virtual {v4}, Ljava/lang/Thread;->isAlive()Z
+
+    move-result v4
+
+    if-eqz v4, :cond_1
+
+    sget-object v4, Lekr;->a:Louj;
+
+    invoke-virtual {v4}, Loue;->b()Lova;
+
+    move-result-object v4
+
+    const-string v5, "Stopping drainer timed out, forcing stop"
+
+    const/16 v6, 0x4ce
+
+    invoke-static {v4, v5, v6}, Ld;->v(Lova;Ljava/lang/String;C)V
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_1
+
+    :try_start_3
+    iget-object v4, p0, Lekr;->m:Ljava/lang/Thread;
+
+    invoke-virtual {v4}, Ljava/lang/Thread;->join()V
+    :try_end_3
+    .catch Ljava/lang/InterruptedException; {:try_start_3 .. :try_end_3} :catch_1
+    .catchall {:try_start_3 .. :try_end_3} :catchall_1
+
+    goto :goto_1
+
+    :catch_1
+    move-exception v4
+
+    :try_start_4
+    sget-object v5, Lekr;->a:Louj;
+
+    invoke-virtual {v5}, Loue;->b()Lova;
+
+    move-result-object v5
+
+    const-string v6, "Failed to stop drainer"
+
+    const/16 v7, 0x4cf
+
+    invoke-static {v5, v6, v7, v4}, Ld;->w(Lova;Ljava/lang/String;CLjava/lang/Throwable;)V
+
+    :cond_1
+    :goto_1
+    const/4 v4, 0x0
+
+    iput-object v4, p0, Lekr;->m:Ljava/lang/Thread;
+
+    iput-boolean v0, p0, Lekr;->h:Z
+
+    iget-object v0, p0, Lekr;->e:Ljava/lang/Object;
+
+    monitor-enter v0
+    :try_end_4
+    .catchall {:try_start_4 .. :try_end_4} :catchall_1
+
+    :try_start_5
+    iget-object v5, p0, Lekr;->e:Ljava/lang/Object;
+
+    invoke-virtual {v5}, Ljava/lang/Object;->notifyAll()V
+
+    monitor-exit v0
+    :try_end_5
+    .catchall {:try_start_5 .. :try_end_5} :catchall_0
+
+    :try_start_6
+    iget-object v0, p0, Lekr;->n:Ljava/lang/Thread;
+
+    invoke-virtual {v0, v1, v2}, Ljava/lang/Thread;->join(J)V
+    :try_end_6
+    .catch Ljava/lang/InterruptedException; {:try_start_6 .. :try_end_6} :catch_2
+    .catchall {:try_start_6 .. :try_end_6} :catchall_1
 
     goto :goto_2
 
+    :catch_2
+    move-exception v0
+
+    :try_start_7
+    sget-object v1, Lekr;->a:Louj;
+
+    invoke-virtual {v1}, Loue;->b()Lova;
+
+    move-result-object v1
+
+    const-string v2, "Failed to stop writer thread"
+
+    const/16 v5, 0x4d3
+
+    invoke-static {v1, v2, v5, v0}, Ld;->w(Lova;Ljava/lang/String;CLjava/lang/Throwable;)V
+
+    :goto_2
+    iput-boolean v3, p0, Lekr;->j:Z
+
+    iget-object v0, p0, Lekr;->n:Ljava/lang/Thread;
+
+    invoke-virtual {v0}, Ljava/lang/Thread;->isAlive()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_2
+
+    sget-object v0, Lekr;->a:Louj;
+
+    invoke-virtual {v0}, Loue;->b()Lova;
+
+    move-result-object v0
+
+    const-string v1, "Stopping writer timed out, forcing stop"
+
+    const/16 v2, 0x4d1
+
+    invoke-static {v0, v1, v2}, Ld;->v(Lova;Ljava/lang/String;C)V
+    :try_end_7
+    .catchall {:try_start_7 .. :try_end_7} :catchall_1
+
+    :try_start_8
+    iget-object v0, p0, Lekr;->n:Ljava/lang/Thread;
+
+    invoke-virtual {v0}, Ljava/lang/Thread;->join()V
+    :try_end_8
+    .catch Ljava/lang/InterruptedException; {:try_start_8 .. :try_end_8} :catch_3
+    .catchall {:try_start_8 .. :try_end_8} :catchall_1
+
+    goto :goto_3
+
+    :catch_3
+    move-exception v0
+
+    :try_start_9
+    sget-object v1, Lekr;->a:Louj;
+
+    invoke-virtual {v1}, Loue;->b()Lova;
+
+    move-result-object v1
+
+    const-string v2, "Failed to stop drainer"
+
+    const/16 v3, 0x4d2
+
+    invoke-static {v1, v2, v3, v0}, Ld;->w(Lova;Ljava/lang/String;CLjava/lang/Throwable;)V
+
     :cond_2
-    iget-boolean v1, v0, Lekt;->h:Z
+    :goto_3
+    iput-object v4, p0, Lekr;->n:Ljava/lang/Thread;
 
-    if-eqz v1, :cond_3
+    iget-object v0, p0, Lekr;->c:Leks;
 
-    monitor-exit v2
+    invoke-virtual {v0}, Leks;->b()V
+
+    iget-object v0, p0, Lekr;->b:Leko;
+
+    invoke-interface {v0}, Leko;->c()V
+    :try_end_9
+    .catchall {:try_start_9 .. :try_end_9} :catchall_1
+
+    monitor-exit p0
 
     return-void
 
-    :cond_3
-    :goto_2
-    iget-object v1, v0, Lekt;->d:Ljava/util/Queue;
-
-    invoke-interface {v1}, Ljava/util/Queue;->isEmpty()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_4
-
-    iget-boolean v1, v0, Lekt;->h:Z
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    if-nez v1, :cond_4
-
-    :try_start_2
-    iget-object v1, v0, Lekt;->e:Ljava/lang/Object;
-
-    invoke-virtual {v1}, Ljava/lang/Object;->wait()V
-    :try_end_2
-    .catch Ljava/lang/InterruptedException; {:try_start_2 .. :try_end_2} :catch_0
-    .catchall {:try_start_2 .. :try_end_2} :catchall_0
-
-    goto :goto_2
-
-    :catch_0
+    :catchall_0
     move-exception v1
 
-    :try_start_3
-    sget-object v3, Lekt;->a:Lnak;
+    :try_start_a
+    monitor-exit v0
+    :try_end_a
+    .catchall {:try_start_a .. :try_end_a} :catchall_0
 
-    invoke-virtual {v3}, Lnaf;->b()Lnaz;
+    :try_start_b
+    throw v1
 
-    move-result-object v3
+    :cond_3
+    :goto_4
+    sget-object v0, Lekr;->a:Louj;
 
-    check-cast v3, Lnah;
+    invoke-virtual {v0}, Loue;->b()Lova;
 
-    invoke-interface {v3, v1}, Lnah;->h(Ljava/lang/Throwable;)Lnaz;
+    move-result-object v0
 
-    move-result-object v1
+    const-string v1, "stop called more than once!"
 
-    check-cast v1, Lnah;
+    const/16 v2, 0x4cd
 
-    const/16 v3, 0x620
+    invoke-static {v0, v1, v2}, Ld;->v(Lova;Ljava/lang/String;C)V
+    :try_end_b
+    .catchall {:try_start_b .. :try_end_b} :catchall_1
 
-    invoke-interface {v1, v3}, Lnah;->G(I)Lnaz;
+    monitor-exit p0
 
-    move-result-object v1
-
-    check-cast v1, Lnah;
-
-    const-string v3, "Interrupted during wait"
-
-    invoke-interface {v1, v3}, Lnah;->o(Ljava/lang/String;)V
-
-    goto :goto_2
-
-    :cond_4
-    monitor-exit v2
-
-    goto/16 :goto_0
-
-    :catchall_0
-    move-exception v0
-
-    monitor-exit v2
-    :try_end_3
-    .catchall {:try_start_3 .. :try_end_3} :catchall_0
-
-    throw v0
+    return-void
 
     :catchall_1
     move-exception v0
 
-    :try_start_4
-    monitor-exit v1
-    :try_end_4
-    .catchall {:try_start_4 .. :try_end_4} :catchall_1
+    monitor-exit p0
 
     throw v0
+.end method
 
-    :cond_5
-    return-void
+.method public final declared-synchronized b()Z
+    .locals 4
+
+    monitor-enter p0
+
+    :try_start_0
+    iget-object v0, p0, Lekr;->n:Ljava/lang/Thread;
+
+    const/4 v1, 0x1
+
+    if-nez v0, :cond_2
+
+    iget-object v0, p0, Lekr;->m:Ljava/lang/Thread;
+
+    if-eqz v0, :cond_0
+
+    goto :goto_0
+
+    :cond_0
+    const/4 v0, -0x1
+
+    iput v0, p0, Lekr;->f:I
+
+    const/4 v0, 0x0
+
+    iput-boolean v0, p0, Lekr;->g:Z
+
+    iput-boolean v0, p0, Lekr;->h:Z
+
+    iput-boolean v1, p0, Lekr;->i:Z
+
+    iput-boolean v1, p0, Lekr;->j:Z
+
+    iput v0, p0, Lekr;->k:I
+
+    iput v0, p0, Lekr;->l:I
+
+    iget-object v2, p0, Lekr;->b:Leko;
+
+    invoke-interface {v2}, Leko;->d()Z
+
+    move-result v2
+
+    if-nez v2, :cond_1
+
+    sget-object v1, Lekr;->a:Louj;
+
+    invoke-virtual {v1}, Loue;->b()Lova;
+
+    move-result-object v1
+
+    const-string v2, "Failed to start the encoder."
+
+    const/16 v3, 0x4d7
+
+    invoke-static {v1, v2, v3}, Ld;->v(Lova;Ljava/lang/String;C)V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    monitor-exit p0
+
+    return v0
+
+    :cond_1
+    :try_start_1
+    new-instance v0, Lekp;
+
+    invoke-direct {v0, p0}, Lekp;-><init>(Lekr;)V
+
+    iput-object v0, p0, Lekr;->n:Ljava/lang/Thread;
+
+    invoke-virtual {v0}, Ljava/lang/Thread;->start()V
+
+    new-instance v0, Lekq;
+
+    invoke-direct {v0, p0}, Lekq;-><init>(Lekr;)V
+
+    iput-object v0, p0, Lekr;->m:Ljava/lang/Thread;
+
+    invoke-virtual {v0}, Ljava/lang/Thread;->start()V
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    monitor-exit p0
+
+    return v1
+
+    :cond_2
+    :goto_0
+    :try_start_2
+    sget-object v0, Lekr;->a:Louj;
+
+    invoke-virtual {v0}, Loue;->b()Lova;
+
+    move-result-object v0
+
+    const-string v2, "start called more than once!"
+
+    const/16 v3, 0x4d6
+
+    invoke-static {v0, v2, v3}, Ld;->v(Lova;Ljava/lang/String;C)V
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
+
+    monitor-exit p0
+
+    return v1
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit p0
+
+    throw v0
 .end method

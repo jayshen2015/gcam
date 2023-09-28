@@ -231,15 +231,6 @@
 .method public final i(I)V
     .locals 2
 
-    invoke-static {}, Lagc/Agc;->needFixResolution()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_0
-
-    return-void
-
-    :cond_0
     iget-wide v0, p0, Lcom/google/googlex/gcam/AeShotParams;->a:J
 
     invoke-static {p1}, Lcom/agc/LensSettings;->getUpscale(I)I
@@ -254,15 +245,6 @@
 .method public final j(I)V
     .locals 2
 
-    invoke-static {}, Lagc/Agc;->needFixResolution()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_0
-
-    return-void
-
-    :cond_0
     iget-wide v0, p0, Lcom/google/googlex/gcam/AeShotParams;->a:J
 
     invoke-static {p1}, Lcom/agc/LensSettings;->getUpscale(I)I
@@ -274,12 +256,10 @@
     return-void
 .end method
 
-.method public final k(Lnrh;)V
+.method public final k(I)V
     .locals 2
 
     iget-wide v0, p0, Lcom/google/googlex/gcam/AeShotParams;->a:J
-
-    iget p1, p1, Lnrh;->e:I
 
     invoke-static {v0, v1, p0, p1}, Lcom/google/googlex/gcam/GcamModuleJNI;->AeShotParams_ux_mode_set(JLcom/google/googlex/gcam/AeShotParams;I)V
 

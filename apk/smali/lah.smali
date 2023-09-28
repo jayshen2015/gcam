@@ -1,30 +1,41 @@
 .class public final Llah;
-.super Llak;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Llij;
+
+
+# instance fields
+.field public final a:Llij;
+
+.field private final b:Ljava/util/concurrent/Executor;
 
 
 # direct methods
-.method public constructor <init>()V
+.method public constructor <init>(Llij;Ljava/util/concurrent/Executor;)V
     .locals 0
 
-    invoke-direct {p0}, Llak;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Llah;->a:Llij;
+
+    iput-object p2, p0, Llah;->b:Ljava/util/concurrent/Executor;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()I
-    .locals 1
+.method public final fB(Ljava/lang/Object;)V
+    .locals 2
 
-    const/16 v0, 0x10
+    iget-object v0, p0, Llah;->b:Ljava/util/concurrent/Executor;
 
-    return v0
-.end method
+    new-instance v1, Llag;
 
-.method public final b()Ljava/lang/String;
-    .locals 1
+    invoke-direct {v1, p0, p1}, Llag;-><init>(Llah;Ljava/lang/Object;)V
 
-    const-string v0, "Int16"
+    invoke-interface {v0, v1}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
 
-    return-object v0
+    return-void
 .end method

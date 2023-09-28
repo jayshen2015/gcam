@@ -1,24 +1,16 @@
-.class public interface abstract Lkom;
+.class public final Lkom;
 .super Ljava/lang/Object;
 
 
-# virtual methods
-.method public abstract d(Lkon;)V
-.end method
+# instance fields
+.field public a:Landroid/database/Cursor;
 
-.method public abstract e(Lkon;)V
-.end method
 
-.method public abstract f(Lkon;)V
-.end method
+# direct methods
+.method public constructor <init>()V
+    .locals 0
 
-.method public abstract i()V
-.end method
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-.method public abstract j()V
-.end method
-
-.method public abstract k(Landroid/view/Surface;)V
-    .annotation runtime Ljava/lang/Deprecated;
-    .end annotation
+    return-void
 .end method

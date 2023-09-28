@@ -1,57 +1,84 @@
-.class final Lbxb;
+.class public final Lbxb;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lbwo;
+.implements Llco;
+.implements Llie;
 
 
 # instance fields
-.field private final a:Lbxa;
+.field private final a:Llie;
 
-.field private final b:Lcam;
+.field private final b:Llco;
 
 
 # direct methods
-.method public constructor <init>(Lbxa;Lcam;)V
-    .locals 0
+.method public constructor <init>(Llco;Ljava/util/concurrent/Executor;)V
+    .locals 3
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lbxb;->a:Lbxa;
+    invoke-static {p2}, Lplk;->M(Ljava/util/concurrent/Executor;)Ljava/util/concurrent/Executor;
 
-    iput-object p2, p0, Lbxb;->b:Lcam;
+    move-result-object p2
+
+    new-instance v0, Llce;
+
+    invoke-interface {p1}, Llco;->fA()Ljava/lang/Object;
+
+    move-result-object v1
+
+    invoke-direct {v0, v1}, Llce;-><init>(Ljava/lang/Object;)V
+
+    iput-object v0, p0, Lbxb;->b:Llco;
+
+    new-instance v1, Leqd;
+
+    const/4 v2, 0x1
+
+    invoke-direct {v1, v0, v2}, Leqd;-><init>(Llce;I)V
+
+    invoke-interface {p1, v1, p2}, Llco;->a(Llij;Ljava/util/concurrent/Executor;)Llie;
+
+    move-result-object p1
+
+    iput-object p1, p0, Lbxb;->a:Llie;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Lbsw;Landroid/graphics/Bitmap;)V
+.method public final a(Llij;Ljava/util/concurrent/Executor;)Llie;
     .locals 1
 
-    iget-object v0, p0, Lbxb;->b:Lcam;
+    iget-object v0, p0, Lbxb;->b:Llco;
 
-    iget-object v0, v0, Lcam;->c:Ljava/io/IOException;
+    invoke-interface {v0, p1, p2}, Llco;->a(Llij;Ljava/util/concurrent/Executor;)Llie;
 
-    if-eqz v0, :cond_1
+    move-result-object p1
 
-    if-eqz p2, :cond_0
+    return-object p1
+.end method
 
-    invoke-interface {p1, p2}, Lbsw;->d(Landroid/graphics/Bitmap;)V
+.method public final close()V
+    .locals 1
 
-    :cond_0
-    throw v0
+    iget-object v0, p0, Lbxb;->a:Llie;
 
-    :cond_1
+    invoke-interface {v0}, Llie;->close()V
+
     return-void
 .end method
 
-.method public final b()V
+.method public final fA()Ljava/lang/Object;
     .locals 1
 
-    iget-object v0, p0, Lbxb;->a:Lbxa;
+    iget-object v0, p0, Lbxb;->b:Llco;
 
-    invoke-virtual {v0}, Lbxa;->a()V
+    check-cast v0, Llce;
 
-    return-void
+    iget-object v0, v0, Llce;->d:Ljava/lang/Object;
+
+    return-object v0
 .end method

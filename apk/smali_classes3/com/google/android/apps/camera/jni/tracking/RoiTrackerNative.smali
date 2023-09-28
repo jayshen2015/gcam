@@ -8,7 +8,7 @@
 
     const-class v0, Lcom/google/android/apps/camera/jni/tracking/RoiTrackerNative;
 
-    invoke-static {v0}, Lkak;->a(Ljava/lang/Class;)V
+    invoke-static {v0}, Llil;->a(Ljava/lang/Class;)V
 
     return-void
 .end method
@@ -21,7 +21,7 @@
     return-void
 .end method
 
-.method public static native createHandle(Landroid/content/Context;Ljava/lang/String;IZIJJIJJZ)J
+.method public static native createHandle(Landroid/content/Context;Ljava/lang/String;I)J
 .end method
 
 .method public static native getCurrentTrackerIndex(J)I
@@ -30,14 +30,17 @@
 .method public static native getIsRefresherCalled(J)Z
 .end method
 
+.method public static native prepare(J)V
+.end method
+
 .method public static native releaseHandle(J)V
 .end method
 
-.method public static native startTracking(JZIIFIILjava/nio/ByteBuffer;IILjava/nio/ByteBuffer;IILjava/nio/ByteBuffer;IILandroid/hardware/HardwareBuffer;[FZI)I
+.method public static native startTracking(JZIIFIILjava/nio/ByteBuffer;IILjava/nio/ByteBuffer;IILjava/nio/ByteBuffer;IILandroid/hardware/HardwareBuffer;[F)I
 .end method
 
 .method public static native stopTracking(J)V
 .end method
 
-.method public static native updateRoi(JIFIILjava/nio/ByteBuffer;IILjava/nio/ByteBuffer;IILjava/nio/ByteBuffer;II[FLandroid/hardware/HardwareBuffer;[FZI)I
+.method public static native updateRoi(JIFIILjava/nio/ByteBuffer;IILjava/nio/ByteBuffer;IILjava/nio/ByteBuffer;II[FLandroid/hardware/HardwareBuffer;[F)I
 .end method

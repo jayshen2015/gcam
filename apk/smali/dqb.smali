@@ -1,163 +1,83 @@
-.class public final Ldqb;
+.class public final synthetic Ldqb;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Logk;
+.implements Liho;
 
 
 # instance fields
-.field private final a:Loiw;
+.field public final synthetic a:Llda;
 
-.field private final b:Loiw;
+.field public final synthetic b:Ldqe;
 
-.field private final c:Loiw;
+.field public final synthetic c:Lcvo;
 
-.field private final d:Loiw;
-
-.field private final e:Loiw;
-
-.field private final f:Loiw;
-
-.field private final g:Loiw;
+.field public final synthetic d:Lbqg;
 
 
 # direct methods
-.method public constructor <init>(Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;)V
+.method public synthetic constructor <init>(Lbqg;Llda;Ldqe;Lcvo;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Ldqb;->a:Loiw;
+    iput-object p1, p0, Ldqb;->d:Lbqg;
 
-    iput-object p2, p0, Ldqb;->b:Loiw;
+    iput-object p2, p0, Ldqb;->a:Llda;
 
-    iput-object p3, p0, Ldqb;->c:Loiw;
+    iput-object p3, p0, Ldqb;->b:Ldqe;
 
-    iput-object p4, p0, Ldqb;->d:Loiw;
-
-    iput-object p5, p0, Ldqb;->e:Loiw;
-
-    iput-object p6, p0, Ldqb;->f:Loiw;
-
-    iput-object p7, p0, Ldqb;->g:Loiw;
+    iput-object p4, p0, Ldqb;->c:Lcvo;
 
     return-void
 .end method
 
-.method public static a(Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;)Ldqb;
-    .locals 9
-
-    new-instance v8, Ldqb;
-
-    move-object v0, v8
-
-    move-object v1, p0
-
-    move-object v2, p1
-
-    move-object v3, p2
-
-    move-object v4, p3
-
-    move-object v5, p4
-
-    move-object v6, p5
-
-    move-object v7, p6
-
-    invoke-direct/range {v0 .. v7}, Ldqb;-><init>(Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;)V
-
-    return-object v8
-.end method
-
 
 # virtual methods
-.method public final b()Ljava/lang/Runnable;
-    .locals 10
+.method public final run()V
+    .locals 7
 
-    iget-object v0, p0, Ldqb;->a:Loiw;
+    iget-object v0, p0, Ldqb;->d:Lbqg;
 
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
+    iget-object v1, p0, Ldqb;->a:Llda;
+
+    iget-object v2, p0, Ldqb;->b:Ldqe;
+
+    iget-object v3, p0, Ldqb;->c:Lcvo;
+
+    invoke-virtual {v0}, Lbqg;->i()Llap;
+
+    move-result-object v4
+
+    iget-object v5, v2, Ldqe;->c:Ljava/util/concurrent/atomic/AtomicReference;
+
+    new-instance v6, Ldqd;
+
+    invoke-direct {v6, v5}, Ldqd;-><init>(Ljava/util/concurrent/atomic/AtomicReference;)V
+
+    sget-object v5, Lpgr;->a:Lpgr;
+
+    invoke-interface {v1, v6, v5}, Llda;->a(Llij;Ljava/util/concurrent/Executor;)Llie;
+
+    move-result-object v1
+
+    invoke-virtual {v4, v1}, Llap;->c(Llie;)V
+
+    invoke-virtual {v0}, Lbqg;->i()Llap;
 
     move-result-object v0
 
-    check-cast v0, Ljava/lang/Boolean;
+    new-instance v1, Ldqc;
 
-    invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
+    invoke-direct {v1, v2}, Ldqc;-><init>(Ldqe;)V
 
-    move-result v0
+    sget-object v2, Lpgr;->a:Lpgr;
 
-    iget-object v1, p0, Ldqb;->b:Loiw;
-
-    invoke-interface {v1}, Loiw;->get()Ljava/lang/Object;
+    invoke-virtual {v3, v1, v2}, Lcvo;->a(Llij;Ljava/util/concurrent/Executor;)Llie;
 
     move-result-object v1
 
-    move-object v4, v1
+    invoke-virtual {v0, v1}, Llap;->c(Llie;)V
 
-    check-cast v4, Ldqj;
-
-    iget-object v1, p0, Ldqb;->c:Loiw;
-
-    invoke-interface {v1}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Ljava/lang/Boolean;
-
-    invoke-virtual {v1}, Ljava/lang/Boolean;->booleanValue()Z
-
-    move-result v5
-
-    iget-object v6, p0, Ldqb;->d:Loiw;
-
-    iget-object v1, p0, Ldqb;->e:Loiw;
-
-    invoke-interface {v1}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Ljava/lang/Boolean;
-
-    invoke-virtual {v1}, Ljava/lang/Boolean;->booleanValue()Z
-
-    move-result v7
-
-    iget-object v8, p0, Ldqb;->f:Loiw;
-
-    iget-object v1, p0, Ldqb;->g:Loiw;
-
-    check-cast v1, Lfwo;
-
-    invoke-virtual {v1}, Lfwo;->a()Lfuz;
-
-    move-result-object v3
-
-    if-nez v0, :cond_0
-
-    sget-object v0, Lnpd;->a:Ljava/lang/Runnable;
-
-    goto :goto_0
-
-    :cond_0
-    new-instance v0, Ldqa;
-
-    const/4 v9, 0x0
-
-    move-object v2, v0
-
-    invoke-direct/range {v2 .. v9}, Ldqa;-><init>(Lfuz;Ldqj;ZLoiw;ZLoiw;I)V
-
-    :goto_0
-    return-object v0
-.end method
-
-.method public final bridge synthetic get()Ljava/lang/Object;
-    .locals 1
-
-    invoke-virtual {p0}, Ldqb;->b()Ljava/lang/Runnable;
-
-    move-result-object v0
-
-    return-object v0
+    return-void
 .end method

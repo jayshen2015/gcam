@@ -1,132 +1,57 @@
 .class public final Lbhz;
-.super Lbhx;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Lbcl;
 
 
 # instance fields
-.field private final e:Landroid/graphics/PointF;
-
-.field private final f:[F
-
-.field private final g:Landroid/graphics/PathMeasure;
-
-.field private h:Lbhy;
+.field private final a:Landroid/graphics/Bitmap;
 
 
 # direct methods
-.method public constructor <init>(Ljava/util/List;)V
+.method public constructor <init>(Landroid/graphics/Bitmap;)V
     .locals 0
 
-    invoke-direct {p0, p1}, Lbhx;-><init>(Ljava/util/List;)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    new-instance p1, Landroid/graphics/PointF;
-
-    invoke-direct {p1}, Landroid/graphics/PointF;-><init>()V
-
-    iput-object p1, p0, Lbhz;->e:Landroid/graphics/PointF;
-
-    const/4 p1, 0x2
-
-    new-array p1, p1, [F
-
-    iput-object p1, p0, Lbhz;->f:[F
-
-    new-instance p1, Landroid/graphics/PathMeasure;
-
-    invoke-direct {p1}, Landroid/graphics/PathMeasure;-><init>()V
-
-    iput-object p1, p0, Lbhz;->g:Landroid/graphics/PathMeasure;
+    iput-object p1, p0, Lbhz;->a:Landroid/graphics/Bitmap;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic f(Lblt;F)Ljava/lang/Object;
-    .locals 3
+.method public final a()I
+    .locals 1
 
-    move-object v0, p1
+    iget-object v0, p0, Lbhz;->a:Landroid/graphics/Bitmap;
 
-    check-cast v0, Lbhy;
-
-    iget-object v1, v0, Lbhy;->a:Landroid/graphics/Path;
-
-    if-nez v1, :cond_0
-
-    iget-object p1, p1, Lblt;->b:Ljava/lang/Object;
-
-    check-cast p1, Landroid/graphics/PointF;
-
-    goto :goto_0
-
-    :cond_0
-    iget-object p1, p0, Lbhz;->d:Lbkc;
-
-    if-eqz p1, :cond_1
-
-    iget p2, v0, Lbhy;->g:F
-
-    iget-object p2, v0, Lbhy;->h:Ljava/lang/Float;
-
-    invoke-virtual {p2}, Ljava/lang/Float;->floatValue()F
-
-    iget-object p2, v0, Lbhy;->b:Ljava/lang/Object;
-
-    check-cast p2, Landroid/graphics/PointF;
-
-    iget-object p2, v0, Lbhy;->c:Ljava/lang/Object;
-
-    check-cast p2, Landroid/graphics/PointF;
-
-    invoke-virtual {p0}, Lbhs;->c()F
-
-    iget-object p1, p1, Lbkc;->a:Ljava/lang/Object;
-
-    check-cast p1, Landroid/graphics/PointF;
-
-    goto :goto_0
-
-    :cond_1
-    iget-object p1, p0, Lbhz;->h:Lbhy;
-
-    const/4 v2, 0x0
-
-    if-eq p1, v0, :cond_2
-
-    iget-object p1, p0, Lbhz;->g:Landroid/graphics/PathMeasure;
-
-    invoke-virtual {p1, v1, v2}, Landroid/graphics/PathMeasure;->setPath(Landroid/graphics/Path;Z)V
-
-    iput-object v0, p0, Lbhz;->h:Lbhy;
-
-    :cond_2
-    iget-object p1, p0, Lbhz;->g:Landroid/graphics/PathMeasure;
-
-    invoke-virtual {p1}, Landroid/graphics/PathMeasure;->getLength()F
+    invoke-static {v0}, Lbmf;->a(Landroid/graphics/Bitmap;)I
 
     move-result v0
 
-    mul-float p2, p2, v0
+    return v0
+.end method
 
-    iget-object v0, p0, Lbhz;->f:[F
+.method public final b()Ljava/lang/Class;
+    .locals 1
 
-    const/4 v1, 0x0
+    const-class v0, Landroid/graphics/Bitmap;
 
-    invoke-virtual {p1, p2, v0, v1}, Landroid/graphics/PathMeasure;->getPosTan(F[F[F)Z
+    return-object v0
+.end method
 
-    iget-object p1, p0, Lbhz;->e:Landroid/graphics/PointF;
+.method public final synthetic c()Ljava/lang/Object;
+    .locals 1
 
-    iget-object p2, p0, Lbhz;->f:[F
+    iget-object v0, p0, Lbhz;->a:Landroid/graphics/Bitmap;
 
-    aget v0, p2, v2
+    return-object v0
+.end method
 
-    const/4 v1, 0x1
+.method public final e()V
+    .locals 0
 
-    aget p2, p2, v1
-
-    invoke-virtual {p1, v0, p2}, Landroid/graphics/PointF;->set(FF)V
-
-    iget-object p1, p0, Lbhz;->e:Landroid/graphics/PointF;
-
-    :goto_0
-    return-object p1
+    return-void
 .end method

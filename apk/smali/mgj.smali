@@ -1,254 +1,92 @@
 .class public final Lmgj;
 .super Ljava/lang/Object;
 
+# interfaces
+.implements Lmgk;
+.implements Lmgg;
+
 
 # instance fields
-.field public final a:Lcom/google/android/material/button/MaterialButton;
+.field private final a:Landroid/net/Uri;
 
-.field public b:Lmkf;
-
-.field public c:I
-
-.field public d:I
-
-.field public e:I
-
-.field public f:I
-
-.field public g:I
-
-.field public h:I
-
-.field public i:Landroid/graphics/PorterDuff$Mode;
-
-.field public j:Landroid/content/res/ColorStateList;
-
-.field public k:Landroid/content/res/ColorStateList;
-
-.field public l:Landroid/content/res/ColorStateList;
-
-.field public m:Landroid/graphics/drawable/Drawable;
-
-.field public n:Z
-
-.field public o:Z
-
-.field public p:Z
-
-.field public q:Landroid/graphics/drawable/LayerDrawable;
-
-.field public r:I
+.field private final b:Lodu;
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/material/button/MaterialButton;Lmkf;)V
-    .locals 1
+.method public constructor <init>(Lodu;Ljava/lang/String;[B[B)V
+    .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const/4 v0, 0x0
+    iput-object p1, p0, Lmgj;->b:Lodu;
 
-    iput-boolean v0, p0, Lmgj;->n:Z
+    const-string p1, "https://google.com/search"
 
-    const/4 v0, 0x1
-
-    iput-boolean v0, p0, Lmgj;->p:Z
-
-    iput-object p1, p0, Lmgj;->a:Lcom/google/android/material/button/MaterialButton;
-
-    iput-object p2, p0, Lmgj;->b:Lmkf;
-
-    return-void
-.end method
-
-.method private final e(Z)Lmka;
-    .locals 2
-
-    iget-object v0, p0, Lmgj;->q:Landroid/graphics/drawable/LayerDrawable;
-
-    if-eqz v0, :cond_0
-
-    invoke-virtual {v0}, Landroid/graphics/drawable/LayerDrawable;->getNumberOfLayers()I
-
-    move-result v0
-
-    if-lez v0, :cond_0
-
-    iget-object v0, p0, Lmgj;->q:Landroid/graphics/drawable/LayerDrawable;
-
-    const/4 v1, 0x0
-
-    invoke-virtual {v0, v1}, Landroid/graphics/drawable/LayerDrawable;->getDrawable(I)Landroid/graphics/drawable/Drawable;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/graphics/drawable/InsetDrawable;
-
-    invoke-virtual {v0}, Landroid/graphics/drawable/InsetDrawable;->getDrawable()Landroid/graphics/drawable/Drawable;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/graphics/drawable/LayerDrawable;
-
-    xor-int/lit8 p1, p1, 0x1
-
-    invoke-virtual {v0, p1}, Landroid/graphics/drawable/LayerDrawable;->getDrawable(I)Landroid/graphics/drawable/Drawable;
+    invoke-static {p1}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
 
     move-result-object p1
 
-    check-cast p1, Lmka;
+    invoke-virtual {p1}, Landroid/net/Uri;->buildUpon()Landroid/net/Uri$Builder;
 
-    return-object p1
+    move-result-object p1
 
-    :cond_0
-    const/4 p1, 0x0
+    const-string p3, "q"
 
-    return-object p1
-.end method
+    invoke-virtual {p1, p3, p2}, Landroid/net/Uri$Builder;->appendQueryParameter(Ljava/lang/String;Ljava/lang/String;)Landroid/net/Uri$Builder;
 
-.method private final f()Lmka;
-    .locals 1
+    move-result-object p1
 
-    const/4 v0, 0x1
+    const-string p2, "tbm"
 
-    invoke-direct {p0, v0}, Lmgj;->e(Z)Lmka;
+    const-string p3, "shop"
 
-    move-result-object v0
+    invoke-virtual {p1, p2, p3}, Landroid/net/Uri$Builder;->appendQueryParameter(Ljava/lang/String;Ljava/lang/String;)Landroid/net/Uri$Builder;
 
-    return-object v0
+    move-result-object p1
+
+    const-string p2, "source"
+
+    const-string p3, "google-camera"
+
+    invoke-virtual {p1, p2, p3}, Landroid/net/Uri$Builder;->appendQueryParameter(Ljava/lang/String;Ljava/lang/String;)Landroid/net/Uri$Builder;
+
+    move-result-object p1
+
+    invoke-virtual {p1}, Landroid/net/Uri$Builder;->build()Landroid/net/Uri;
+
+    move-result-object p1
+
+    iput-object p1, p0, Lmgj;->a:Landroid/net/Uri;
+
+    return-void
 .end method
 
 
 # virtual methods
-.method public final a()Lmka;
-    .locals 1
-
-    const/4 v0, 0x0
-
-    invoke-direct {p0, v0}, Lmgj;->e(Z)Lmka;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public final b()Lmko;
+.method public final a()Landroid/content/Intent;
     .locals 3
 
-    iget-object v0, p0, Lmgj;->q:Landroid/graphics/drawable/LayerDrawable;
+    new-instance v0, Landroid/content/Intent;
 
-    if-eqz v0, :cond_1
+    iget-object v1, p0, Lmgj;->a:Landroid/net/Uri;
 
-    invoke-virtual {v0}, Landroid/graphics/drawable/LayerDrawable;->getNumberOfLayers()I
+    const-string v2, "android.intent.action.VIEW"
 
-    move-result v0
-
-    const/4 v1, 0x1
-
-    if-le v0, v1, :cond_1
-
-    iget-object v0, p0, Lmgj;->q:Landroid/graphics/drawable/LayerDrawable;
-
-    invoke-virtual {v0}, Landroid/graphics/drawable/LayerDrawable;->getNumberOfLayers()I
-
-    move-result v0
-
-    const/4 v2, 0x2
-
-    if-le v0, v2, :cond_0
-
-    iget-object v0, p0, Lmgj;->q:Landroid/graphics/drawable/LayerDrawable;
-
-    invoke-virtual {v0, v2}, Landroid/graphics/drawable/LayerDrawable;->getDrawable(I)Landroid/graphics/drawable/Drawable;
-
-    move-result-object v0
-
-    check-cast v0, Lmko;
-
-    return-object v0
-
-    :cond_0
-    iget-object v0, p0, Lmgj;->q:Landroid/graphics/drawable/LayerDrawable;
-
-    invoke-virtual {v0, v1}, Landroid/graphics/drawable/LayerDrawable;->getDrawable(I)Landroid/graphics/drawable/Drawable;
-
-    move-result-object v0
-
-    check-cast v0, Lmko;
-
-    return-object v0
-
-    :cond_1
-    const/4 v0, 0x0
+    invoke-direct {v0, v2, v1}, Landroid/content/Intent;-><init>(Ljava/lang/String;Landroid/net/Uri;)V
 
     return-object v0
 .end method
 
-.method public final c()V
+.method public final b()V
     .locals 2
 
-    const/4 v0, 0x1
+    iget-object v0, p0, Lmgj;->b:Lodu;
 
-    iput-boolean v0, p0, Lmgj;->n:Z
+    invoke-virtual {p0}, Lmgj;->a()Landroid/content/Intent;
 
-    iget-object v0, p0, Lmgj;->a:Lcom/google/android/material/button/MaterialButton;
+    move-result-object v1
 
-    iget-object v1, p0, Lmgj;->j:Landroid/content/res/ColorStateList;
+    invoke-virtual {v0, v1}, Lodu;->b(Landroid/content/Intent;)V
 
-    invoke-virtual {v0, v1}, Lcom/google/android/material/button/MaterialButton;->d(Landroid/content/res/ColorStateList;)V
-
-    iget-object v0, p0, Lmgj;->a:Lcom/google/android/material/button/MaterialButton;
-
-    iget-object v1, p0, Lmgj;->i:Landroid/graphics/PorterDuff$Mode;
-
-    invoke-virtual {v0, v1}, Lcom/google/android/material/button/MaterialButton;->e(Landroid/graphics/PorterDuff$Mode;)V
-
-    return-void
-.end method
-
-.method public final d(Lmkf;)V
-    .locals 1
-
-    iput-object p1, p0, Lmgj;->b:Lmkf;
-
-    invoke-virtual {p0}, Lmgj;->a()Lmka;
-
-    move-result-object v0
-
-    if-eqz v0, :cond_0
-
-    invoke-virtual {p0}, Lmgj;->a()Lmka;
-
-    move-result-object v0
-
-    invoke-virtual {v0, p1}, Lmka;->c(Lmkf;)V
-
-    :cond_0
-    invoke-direct {p0}, Lmgj;->f()Lmka;
-
-    move-result-object v0
-
-    if-eqz v0, :cond_1
-
-    invoke-direct {p0}, Lmgj;->f()Lmka;
-
-    move-result-object v0
-
-    invoke-virtual {v0, p1}, Lmka;->c(Lmkf;)V
-
-    :cond_1
-    invoke-virtual {p0}, Lmgj;->b()Lmko;
-
-    move-result-object v0
-
-    if-eqz v0, :cond_2
-
-    invoke-virtual {p0}, Lmgj;->b()Lmko;
-
-    move-result-object v0
-
-    invoke-interface {v0, p1}, Lmko;->c(Lmkf;)V
-
-    :cond_2
     return-void
 .end method

@@ -1,201 +1,149 @@
-.class public final Lhvi;
-.super Lhvt;
+.class public abstract Lhvi;
+.super Ljava/lang/Object;
 
-# interfaces
-.implements Lhiv;
+
+# static fields
+.field public static final a:Louj;
 
 
 # instance fields
-.field public final a:Lhiu;
+.field private final b:Ljava/lang/String;
 
-.field public final b:Lhiw;
-
-.field public final c:Lhiw;
+.field private final c:I
 
 
 # direct methods
-.method public constructor <init>(Ljwb;Lcom/google/android/apps/camera/bottombar/BottomBarController;Liff;Litm;Landroid/view/Window;Lhwu;Lcvr;Lgeh;Libj;Lhud;[B[B[B[B)V
-    .locals 15
+.method static constructor <clinit>()V
+    .locals 1
 
-    move-object v14, p0
+    const-string v0, "com/google/android/apps/camera/settings/upgrader/SettingsUpgrader"
 
-    const/4 v10, 0x0
+    invoke-static {v0}, Louj;->h(Ljava/lang/String;)Louj;
 
-    const/4 v11, 0x0
+    move-result-object v0
 
-    const/4 v12, 0x0
-
-    const/4 v13, 0x0
-
-    move-object v0, p0
-
-    move-object/from16 v1, p1
-
-    move-object/from16 v2, p2
-
-    move-object/from16 v3, p3
-
-    move-object/from16 v4, p4
-
-    move-object/from16 v5, p5
-
-    move-object/from16 v6, p6
-
-    move-object/from16 v7, p7
-
-    move-object/from16 v8, p8
-
-    move-object/from16 v9, p9
-
-    invoke-direct/range {v0 .. v13}, Lhvt;-><init>(Ljwb;Lcom/google/android/apps/camera/bottombar/BottomBarController;Liff;Litm;Landroid/view/Window;Lhwu;Lcvr;Lgeh;Libj;[B[B[B[B)V
-
-    new-instance v0, Lhvg;
-
-    invoke-direct {v0, p0}, Lhvg;-><init>(Lhvi;)V
-
-    new-instance v1, Lhiw;
-
-    const/4 v2, 0x1
-
-    new-array v2, v2, [Lhis;
-
-    const/4 v3, 0x0
-
-    aput-object p10, v2, v3
-
-    invoke-direct {v1, v0, v2}, Lhiw;-><init>(Lhis;[Lhis;)V
-
-    iput-object v1, v14, Lhvi;->b:Lhiw;
-
-    new-instance v0, Lhvh;
-
-    invoke-direct {v0, p0}, Lhvh;-><init>(Lhvi;)V
-
-    new-instance v2, Lhiw;
-
-    new-array v4, v3, [Lhis;
-
-    invoke-direct {v2, v0, v4}, Lhiw;-><init>(Lhis;[Lhis;)V
-
-    iput-object v2, v14, Lhvi;->c:Lhiw;
-
-    new-instance v0, Lhiu;
-
-    invoke-direct {v0, v1, v3}, Lhiu;-><init>(Lhiw;Z)V
-
-    iput-object v0, v14, Lhvi;->a:Lhiu;
-
-    invoke-virtual {v0}, Lhiu;->f()V
+    sput-object v0, Lhvi;->a:Louj;
 
     return-void
+.end method
+
+.method public constructor <init>(Ljava/lang/String;I)V
+    .locals 0
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lhvi;->b:Ljava/lang/String;
+
+    iput p2, p0, Lhvi;->c:I
+
+    return-void
+.end method
+
+.method protected static final c(Landroid/content/SharedPreferences;Ljava/lang/String;)Ljava/lang/String;
+    .locals 5
+
+    const/4 v0, 0x0
+
+    :try_start_0
+    invoke-interface {p0, p1, v0}, Landroid/content/SharedPreferences;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v0
+    :try_end_0
+    .catch Ljava/lang/ClassCastException; {:try_start_0 .. :try_end_0} :catch_0
+
+    goto :goto_0
+
+    :catch_0
+    move-exception v1
+
+    sget-object v2, Lhvi;->a:Louj;
+
+    invoke-virtual {v2}, Loue;->b()Lova;
+
+    move-result-object v2
+
+    const/16 v3, 0xa62
+
+    const-string v4, "error reading old value, removing and returning default"
+
+    invoke-static {v2, v4, v3, v1}, Ld;->w(Lova;Ljava/lang/String;CLjava/lang/Throwable;)V
+
+    :goto_0
+    invoke-interface {p0}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
+
+    move-result-object p0
+
+    invoke-interface {p0, p1}, Landroid/content/SharedPreferences$Editor;->remove(Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
+
+    move-result-object p0
+
+    invoke-interface {p0}, Landroid/content/SharedPreferences$Editor;->apply()V
+
+    return-object v0
 .end method
 
 
 # virtual methods
-.method public final a()V
-    .locals 1
+.method protected abstract a(Lhub;I)V
+.end method
 
-    iget-object v0, p0, Lhvi;->a:Lhiu;
+.method protected b(Lhub;)I
+    .locals 2
 
-    invoke-virtual {v0}, Lhiu;->a()Lhiw;
+    iget-object v0, p0, Lhvi;->b:Ljava/lang/String;
 
-    move-result-object v0
+    iget v1, p0, Lhvi;->c:I
 
-    if-nez v0, :cond_0
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    return-void
+    move-result-object v1
+
+    invoke-virtual {p1, v0, v1}, Lhub;->b(Ljava/lang/String;Ljava/lang/Integer;)I
+
+    move-result p1
+
+    return p1
+.end method
+
+.method public final d(Lhub;)V
+    .locals 3
+
+    :try_start_0
+    invoke-virtual {p0, p1}, Lhvi;->b(Lhub;)I
+
+    move-result v0
+
+    iget v1, p0, Lhvi;->c:I
+
+    if-eq v0, v1, :cond_0
+
+    invoke-virtual {p0, p1, v0}, Lhvi;->a(Lhub;I)V
 
     :cond_0
-    iget-object v0, p0, Lhvi;->a:Lhiu;
+    iget-object v0, p0, Lhvi;->b:Ljava/lang/String;
 
-    invoke-virtual {v0}, Lhiu;->a()Lhiw;
+    iget v1, p0, Lhvi;->c:I
+
+    invoke-virtual {p1, v0, v1}, Lhub;->i(Ljava/lang/String;I)V
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+
+    return-void
+
+    :catch_0
+    move-exception p1
+
+    sget-object v0, Lhvi;->a:Louj;
+
+    invoke-virtual {v0}, Loue;->b()Lova;
 
     move-result-object v0
 
-    iget-object v0, v0, Lhiw;->a:Lhis;
+    const/16 v1, 0xa63
 
-    check-cast v0, Lhvq;
+    const-string v2, "exception during upgrade"
 
-    invoke-virtual {v0}, Lhvq;->a()V
+    invoke-static {v0, v2, v1, p1}, Ld;->w(Lova;Ljava/lang/String;CLjava/lang/Throwable;)V
 
-    return-void
-.end method
-
-.method public final b()V
-    .locals 1
-
-    iget-object v0, p0, Lhvi;->a:Lhiu;
-
-    invoke-virtual {v0}, Lhiu;->a()Lhiw;
-
-    move-result-object v0
-
-    if-nez v0, :cond_0
-
-    return-void
-
-    :cond_0
-    iget-object v0, p0, Lhvi;->a:Lhiu;
-
-    invoke-virtual {v0}, Lhiu;->a()Lhiw;
-
-    move-result-object v0
-
-    iget-object v0, v0, Lhiw;->a:Lhis;
-
-    check-cast v0, Lhvq;
-
-    invoke-virtual {v0}, Lhvq;->b()V
-
-    return-void
-.end method
-
-.method public final e()V
-    .locals 1
-
-    iget-object v0, p0, Lhvi;->a:Lhiu;
-
-    invoke-virtual {v0}, Lhiu;->b()V
-
-    iget-object v0, p0, Lhvi;->b:Lhiw;
-
-    invoke-virtual {v0}, Lhiw;->e()V
-
-    iget-object v0, p0, Lhvi;->c:Lhiw;
-
-    invoke-virtual {v0}, Lhiw;->e()V
-
-    return-void
-.end method
-
-.method public final f()V
-    .locals 1
-
-    invoke-super {p0}, Lhvt;->f()V
-
-    iget-object v0, p0, Lhvi;->a:Lhiu;
-
-    invoke-virtual {v0}, Lhiu;->c()V
-
-    return-void
-.end method
-
-.method public final g()V
-    .locals 1
-
-    invoke-super {p0}, Lhvt;->g()V
-
-    iget-object v0, p0, Lhvi;->a:Lhiu;
-
-    invoke-virtual {v0}, Lhiu;->d()V
-
-    return-void
-.end method
-
-.method public final h()V
-    .locals 0
-
-    invoke-static {p0}, Ljcb;->l(Lhiv;)V
-
-    return-void
+    throw p1
 .end method

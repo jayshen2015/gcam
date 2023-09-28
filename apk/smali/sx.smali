@@ -1,108 +1,204 @@
-.class final Lsx;
-.super Loln;
-
-# interfaces
-.implements Lomo;
-
-
-# annotations
-.annotation runtime Lolj;
-    b = "androidx.camera.camera2.pipe.compat.Camera2CameraController$close$2"
-    c = "Camera2CameraController.kt"
-    d = "invokeSuspend"
-    e = {}
-.end annotation
+.class public Lsx;
+.super Ljava/lang/Object;
 
 
 # instance fields
-.field final synthetic a:Lonk;
+.field public a:Landroid/support/wearable/complications/ComplicationData;
 
-.field final synthetic b:Lonk;
+.field private final b:Landroid/graphics/Rect;
 
 
 # direct methods
-.method public constructor <init>(Lonk;Lonk;Loku;)V
-    .locals 0
+.method public constructor <init>()V
+    .locals 1
 
-    iput-object p1, p0, Lsx;->a:Lonk;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p2, p0, Lsx;->b:Lonk;
+    new-instance v0, Landroid/graphics/Rect;
 
-    const/4 p1, 0x2
+    invoke-direct {v0}, Landroid/graphics/Rect;-><init>()V
 
-    invoke-direct {p0, p1, p3}, Loln;-><init>(ILoku;)V
+    iput-object v0, p0, Lsx;->b:Landroid/graphics/Rect;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final bridge synthetic a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+.method public a(Landroid/graphics/Rect;)V
     .locals 0
 
-    check-cast p1, Lopu;
+    invoke-virtual {p1}, Landroid/graphics/Rect;->setEmpty()V
 
-    check-cast p2, Loku;
-
-    invoke-virtual {p0, p1, p2}, Lolf;->c(Ljava/lang/Object;Loku;)Loku;
-
-    move-result-object p1
-
-    sget-object p2, Lojk;->a:Lojk;
-
-    check-cast p1, Lsx;
-
-    invoke-virtual {p1, p2}, Lsx;->b(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object p1
-
-    return-object p1
+    return-void
 .end method
 
-.method public final b(Ljava/lang/Object;)Ljava/lang/Object;
+.method public b(Landroid/graphics/Rect;)V
+    .locals 0
+
+    invoke-virtual {p1}, Landroid/graphics/Rect;->setEmpty()V
+
+    return-void
+.end method
+
+.method public c()I
     .locals 1
 
-    sget-object v0, Lolc;->a:Lolc;
+    const/16 v0, 0x11
 
-    invoke-static {p1}, Lljr;->aO(Ljava/lang/Object;)V
-
-    iget-object p1, p0, Lsx;->a:Lonk;
-
-    iget-object p1, p1, Lonk;->a:Ljava/lang/Object;
-
-    check-cast p1, Lty;
-
-    if-eqz p1, :cond_0
-
-    invoke-virtual {p1}, Lty;->d()V
-
-    :cond_0
-    iget-object p1, p0, Lsx;->b:Lonk;
-
-    iget-object p1, p1, Lonk;->a:Ljava/lang/Object;
-
-    check-cast p1, Luk;
-
-    if-eqz p1, :cond_1
-
-    invoke-static {p1}, Lld;->c(Luk;)V
-
-    :cond_1
-    sget-object p1, Lojk;->a:Lojk;
-
-    return-object p1
+    return v0
 .end method
 
-.method public final c(Ljava/lang/Object;Loku;)Loku;
-    .locals 2
+.method public d()I
+    .locals 1
 
-    new-instance p1, Lsx;
+    const/16 v0, 0x11
 
-    iget-object v0, p0, Lsx;->a:Lonk;
+    return v0
+.end method
 
-    iget-object v1, p0, Lsx;->b:Lonk;
+.method public e()I
+    .locals 1
 
-    invoke-direct {p1, v0, v1, p2}, Lsx;-><init>(Lonk;Lonk;Loku;)V
+    const/16 v0, 0x11
 
-    return-object p1
+    return v0
+.end method
+
+.method public f()I
+    .locals 1
+
+    const/16 v0, 0x11
+
+    return v0
+.end method
+
+.method public g()Landroid/text/Layout$Alignment;
+    .locals 1
+
+    sget-object v0, Landroid/text/Layout$Alignment;->ALIGN_CENTER:Landroid/text/Layout$Alignment;
+
+    return-object v0
+.end method
+
+.method public h()Landroid/text/Layout$Alignment;
+    .locals 1
+
+    sget-object v0, Landroid/text/Layout$Alignment;->ALIGN_CENTER:Landroid/text/Layout$Alignment;
+
+    return-object v0
+.end method
+
+.method public i()Landroid/text/Layout$Alignment;
+    .locals 1
+
+    sget-object v0, Landroid/text/Layout$Alignment;->ALIGN_CENTER:Landroid/text/Layout$Alignment;
+
+    return-object v0
+.end method
+
+.method public j()Landroid/text/Layout$Alignment;
+    .locals 1
+
+    sget-object v0, Landroid/text/Layout$Alignment;->ALIGN_CENTER:Landroid/text/Layout$Alignment;
+
+    return-object v0
+.end method
+
+.method public final k(Landroid/graphics/Rect;)V
+    .locals 1
+
+    iget-object v0, p0, Lsx;->b:Landroid/graphics/Rect;
+
+    invoke-virtual {p1, v0}, Landroid/graphics/Rect;->set(Landroid/graphics/Rect;)V
+
+    return-void
+.end method
+
+.method public l(Landroid/graphics/Rect;)V
+    .locals 0
+
+    invoke-virtual {p1}, Landroid/graphics/Rect;->setEmpty()V
+
+    return-void
+.end method
+
+.method public m(Landroid/graphics/Rect;)V
+    .locals 0
+
+    invoke-virtual {p1}, Landroid/graphics/Rect;->setEmpty()V
+
+    return-void
+.end method
+
+.method public n(Landroid/graphics/Rect;)V
+    .locals 0
+
+    invoke-virtual {p1}, Landroid/graphics/Rect;->setEmpty()V
+
+    return-void
+.end method
+
+.method public o(Landroid/graphics/Rect;)V
+    .locals 0
+
+    invoke-virtual {p1}, Landroid/graphics/Rect;->setEmpty()V
+
+    return-void
+.end method
+
+.method public p(Landroid/graphics/Rect;)V
+    .locals 0
+
+    invoke-virtual {p1}, Landroid/graphics/Rect;->setEmpty()V
+
+    return-void
+.end method
+
+.method public q(Landroid/graphics/Rect;)V
+    .locals 0
+
+    invoke-virtual {p1}, Landroid/graphics/Rect;->setEmpty()V
+
+    return-void
+.end method
+
+.method public r(Landroid/support/wearable/complications/ComplicationData;)V
+    .locals 0
+
+    iput-object p1, p0, Lsx;->a:Landroid/support/wearable/complications/ComplicationData;
+
+    return-void
+.end method
+
+.method public s(I)V
+    .locals 1
+
+    iget-object v0, p0, Lsx;->b:Landroid/graphics/Rect;
+
+    iput p1, v0, Landroid/graphics/Rect;->bottom:I
+
+    return-void
+.end method
+
+.method public t(I)V
+    .locals 1
+
+    iget-object v0, p0, Lsx;->b:Landroid/graphics/Rect;
+
+    iput p1, v0, Landroid/graphics/Rect;->right:I
+
+    return-void
+.end method
+
+.method public final u(IILandroid/support/wearable/complications/ComplicationData;)V
+    .locals 0
+
+    invoke-virtual {p0, p1}, Lsx;->t(I)V
+
+    invoke-virtual {p0, p2}, Lsx;->s(I)V
+
+    invoke-virtual {p0, p3}, Lsx;->r(Landroid/support/wearable/complications/ComplicationData;)V
+
+    return-void
 .end method

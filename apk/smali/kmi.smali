@@ -1,75 +1,106 @@
 .class public final Lkmi;
-.super Ljava/lang/Object;
+.super Lkno;
 
-# interfaces
-.implements Logk;
+
+# static fields
+.field public static final CREATOR:Landroid/os/Parcelable$Creator;
 
 
 # instance fields
-.field private final a:Loiw;
+.field public final a:Lknl;
 
-.field private final b:Loiw;
+.field public final b:Z
 
-.field private final c:Loiw;
+.field public final c:Z
+
+.field public final d:[I
+
+.field public final e:I
+
+.field public final f:[I
 
 
 # direct methods
-.method public constructor <init>(Loiw;Loiw;Loiw;)V
+.method static constructor <clinit>()V
+    .locals 2
+
+    new-instance v0, Lsk;
+
+    const/16 v1, 0xc
+
+    invoke-direct {v0, v1}, Lsk;-><init>(I)V
+
+    sput-object v0, Lkmi;->CREATOR:Landroid/os/Parcelable$Creator;
+
+    return-void
+.end method
+
+.method public constructor <init>(Lknl;ZZ[II[I)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Lkno;-><init>()V
 
-    iput-object p1, p0, Lkmi;->a:Loiw;
+    iput-object p1, p0, Lkmi;->a:Lknl;
 
-    iput-object p2, p0, Lkmi;->b:Loiw;
+    iput-boolean p2, p0, Lkmi;->b:Z
 
-    iput-object p3, p0, Lkmi;->c:Loiw;
+    iput-boolean p3, p0, Lkmi;->c:Z
+
+    iput-object p4, p0, Lkmi;->d:[I
+
+    iput p5, p0, Lkmi;->e:I
+
+    iput-object p6, p0, Lkmi;->f:[I
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Lkkz;
+.method public final writeToParcel(Landroid/os/Parcel;I)V
     .locals 3
 
-    iget-object v0, p0, Lkmi;->a:Loiw;
+    invoke-static {p1}, Lmip;->ct(Landroid/os/Parcel;)I
 
-    check-cast v0, Lkla;
+    move-result v0
 
-    invoke-virtual {v0}, Lkla;->a()Lkkz;
+    iget-object v1, p0, Lkmi;->a:Lknl;
 
-    move-result-object v0
+    const/4 v2, 0x1
 
-    iget-object v1, p0, Lkmi;->b:Loiw;
+    invoke-static {p1, v2, v1, p2}, Lmip;->cH(Landroid/os/Parcel;ILandroid/os/Parcelable;I)V
 
-    invoke-interface {v1}, Loiw;->get()Ljava/lang/Object;
+    iget-boolean p2, p0, Lkmi;->b:Z
 
-    move-result-object v1
+    const/4 v1, 0x2
 
-    check-cast v1, Lkbc;
+    invoke-static {p1, v1, p2}, Lmip;->cw(Landroid/os/Parcel;IZ)V
 
-    iget-object v1, p0, Lkmi;->c:Loiw;
+    iget-boolean p2, p0, Lkmi;->c:Z
 
-    check-cast v1, Lkao;
+    const/4 v1, 0x3
 
-    invoke-virtual {v1}, Lkao;->a()Lkaq;
+    invoke-static {p1, v1, p2}, Lmip;->cw(Landroid/os/Parcel;IZ)V
 
-    new-instance v1, Lkkz;
+    iget-object p2, p0, Lkmi;->d:[I
 
-    const/4 v2, 0x2
+    const/4 v1, 0x4
 
-    invoke-direct {v1, v0, v2}, Lkkz;-><init>(Lkpc;I)V
+    invoke-static {p1, v1, p2}, Lmip;->cG(Landroid/os/Parcel;I[I)V
 
-    return-object v1
-.end method
+    iget p2, p0, Lkmi;->e:I
 
-.method public final bridge synthetic get()Ljava/lang/Object;
-    .locals 1
+    const/4 v1, 0x5
 
-    invoke-virtual {p0}, Lkmi;->a()Lkkz;
+    invoke-static {p1, v1, p2}, Lmip;->cA(Landroid/os/Parcel;II)V
 
-    move-result-object v0
+    iget-object p2, p0, Lkmi;->f:[I
 
-    return-object v0
+    const/4 v1, 0x6
+
+    invoke-static {p1, v1, p2}, Lmip;->cG(Landroid/os/Parcel;I[I)V
+
+    invoke-static {p1, v0}, Lmip;->cv(Landroid/os/Parcel;I)V
+
+    return-void
 .end method

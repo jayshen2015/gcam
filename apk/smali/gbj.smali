@@ -1,22 +1,45 @@
-.class public final Lgbj;
+.class final Lgbj;
 .super Ljava/lang/Object;
 
+# interfaces
+.implements Lgbg;
 
-# static fields
-.field public static final a:Lgaw;
+
+# instance fields
+.field final synthetic a:Ljava/util/concurrent/atomic/AtomicInteger;
+
+.field final synthetic b:Lgbg;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
+.method public constructor <init>(Ljava/util/concurrent/atomic/AtomicInteger;Lgbg;)V
+    .locals 0
 
-    new-instance v0, Lgaw;
+    iput-object p1, p0, Lgbj;->a:Ljava/util/concurrent/atomic/AtomicInteger;
 
-    const/4 v1, 0x7
+    iput-object p2, p0, Lgbj;->b:Lgbg;
 
-    invoke-direct {v0, v1}, Lgaw;-><init>(I)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    sput-object v0, Lgbj;->a:Lgaw;
+    return-void
+.end method
+
+
+# virtual methods
+.method public final a(Lmad;Lgbf;)Lgbe;
+    .locals 0
+
+    const/4 p1, 0x0
+
+    throw p1
+.end method
+
+.method public final close()V
+    .locals 1
+
+    iget-object v0, p0, Lgbj;->b:Lgbg;
+
+    invoke-interface {v0}, Lgbg;->close()V
 
     return-void
 .end method

@@ -3,40 +3,44 @@
 
 
 # instance fields
-.field private bitmap:Lmqp;
+.field private bitmap:Lojc;
 
-.field private final height:Lmqp;
+.field private final height:Lojc;
 
-.field private image:Lmqp;
+.field private image:Lojc;
 
-.field private imageProxy:Lmqp;
+.field private imageProxy:Lojc;
 
 .field private final linkImageType:I
 
-.field private final rotation:Lmqp;
+.field private final rotation:Lojc;
 
-.field private final width:Lmqp;
+.field private final width:Lojc;
 
 
 # direct methods
-.method private constructor <init>(Lmqp;Lmqp;Lmqp;I)V
+.method private constructor <init>(Lojc;Lojc;Lojc;I)V
     .locals 1
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    sget-object v0, Lmpx;->a:Lmpx;
+    sget-object v0, Loih;->a:Loih;
 
-    iput-object v0, p0, Lcom/google/android/libraries/lens/lenslite/api/LinkImage;->bitmap:Lmqp;
+    iput-object v0, p0, Lcom/google/android/libraries/lens/lenslite/api/LinkImage;->bitmap:Lojc;
 
-    iput-object v0, p0, Lcom/google/android/libraries/lens/lenslite/api/LinkImage;->image:Lmqp;
+    sget-object v0, Loih;->a:Loih;
 
-    iput-object v0, p0, Lcom/google/android/libraries/lens/lenslite/api/LinkImage;->imageProxy:Lmqp;
+    iput-object v0, p0, Lcom/google/android/libraries/lens/lenslite/api/LinkImage;->image:Lojc;
 
-    iput-object p1, p0, Lcom/google/android/libraries/lens/lenslite/api/LinkImage;->width:Lmqp;
+    sget-object v0, Loih;->a:Loih;
 
-    iput-object p2, p0, Lcom/google/android/libraries/lens/lenslite/api/LinkImage;->height:Lmqp;
+    iput-object v0, p0, Lcom/google/android/libraries/lens/lenslite/api/LinkImage;->imageProxy:Lojc;
 
-    iput-object p3, p0, Lcom/google/android/libraries/lens/lenslite/api/LinkImage;->rotation:Lmqp;
+    iput-object p1, p0, Lcom/google/android/libraries/lens/lenslite/api/LinkImage;->width:Lojc;
+
+    iput-object p2, p0, Lcom/google/android/libraries/lens/lenslite/api/LinkImage;->height:Lojc;
+
+    iput-object p3, p0, Lcom/google/android/libraries/lens/lenslite/api/LinkImage;->rotation:Lojc;
 
     iput p4, p0, Lcom/google/android/libraries/lens/lenslite/api/LinkImage;->linkImageType:I
 
@@ -56,7 +60,7 @@
 
     move-result-object v1
 
-    invoke-static {v1}, Lmqp;->i(Ljava/lang/Object;)Lmqp;
+    invoke-static {v1}, Lojc;->i(Ljava/lang/Object;)Lojc;
 
     move-result-object v1
 
@@ -68,7 +72,7 @@
 
     move-result-object v2
 
-    invoke-static {v2}, Lmqp;->i(Ljava/lang/Object;)Lmqp;
+    invoke-static {v2}, Lojc;->i(Ljava/lang/Object;)Lojc;
 
     move-result-object v2
 
@@ -76,19 +80,19 @@
 
     move-result-object p1
 
-    invoke-static {p1}, Lmqp;->i(Ljava/lang/Object;)Lmqp;
+    invoke-static {p1}, Lojc;->i(Ljava/lang/Object;)Lojc;
 
     move-result-object p1
 
     const/4 v3, 0x1
 
-    invoke-direct {v0, v1, v2, p1, v3}, Lcom/google/android/libraries/lens/lenslite/api/LinkImage;-><init>(Lmqp;Lmqp;Lmqp;I)V
+    invoke-direct {v0, v1, v2, p1, v3}, Lcom/google/android/libraries/lens/lenslite/api/LinkImage;-><init>(Lojc;Lojc;Lojc;I)V
 
-    invoke-static {p0}, Lmqp;->i(Ljava/lang/Object;)Lmqp;
+    invoke-static {p0}, Lojc;->i(Ljava/lang/Object;)Lojc;
 
     move-result-object p0
 
-    iput-object p0, v0, Lcom/google/android/libraries/lens/lenslite/api/LinkImage;->bitmap:Lmqp;
+    iput-object p0, v0, Lcom/google/android/libraries/lens/lenslite/api/LinkImage;->bitmap:Lojc;
 
     return-object v0
 .end method
@@ -106,7 +110,7 @@
 
     move-result-object v1
 
-    invoke-static {v1}, Lmqp;->i(Ljava/lang/Object;)Lmqp;
+    invoke-static {v1}, Lojc;->i(Ljava/lang/Object;)Lojc;
 
     move-result-object v1
 
@@ -118,7 +122,7 @@
 
     move-result-object v2
 
-    invoke-static {v2}, Lmqp;->i(Ljava/lang/Object;)Lmqp;
+    invoke-static {v2}, Lojc;->i(Ljava/lang/Object;)Lojc;
 
     move-result-object v2
 
@@ -126,19 +130,19 @@
 
     move-result-object p1
 
-    invoke-static {p1}, Lmqp;->i(Ljava/lang/Object;)Lmqp;
+    invoke-static {p1}, Lojc;->i(Ljava/lang/Object;)Lojc;
 
     move-result-object p1
 
     const/4 v3, 0x2
 
-    invoke-direct {v0, v1, v2, p1, v3}, Lcom/google/android/libraries/lens/lenslite/api/LinkImage;-><init>(Lmqp;Lmqp;Lmqp;I)V
+    invoke-direct {v0, v1, v2, p1, v3}, Lcom/google/android/libraries/lens/lenslite/api/LinkImage;-><init>(Lojc;Lojc;Lojc;I)V
 
-    invoke-static {p0}, Lmqp;->i(Ljava/lang/Object;)Lmqp;
+    invoke-static {p0}, Lojc;->i(Ljava/lang/Object;)Lojc;
 
     move-result-object p0
 
-    iput-object p0, v0, Lcom/google/android/libraries/lens/lenslite/api/LinkImage;->image:Lmqp;
+    iput-object p0, v0, Lcom/google/android/libraries/lens/lenslite/api/LinkImage;->image:Lojc;
 
     return-object v0
 .end method
@@ -156,7 +160,7 @@
 
     move-result-object v1
 
-    invoke-static {v1}, Lmqp;->i(Ljava/lang/Object;)Lmqp;
+    invoke-static {v1}, Lojc;->i(Ljava/lang/Object;)Lojc;
 
     move-result-object v1
 
@@ -168,7 +172,7 @@
 
     move-result-object v2
 
-    invoke-static {v2}, Lmqp;->i(Ljava/lang/Object;)Lmqp;
+    invoke-static {v2}, Lojc;->i(Ljava/lang/Object;)Lojc;
 
     move-result-object v2
 
@@ -176,19 +180,19 @@
 
     move-result-object p1
 
-    invoke-static {p1}, Lmqp;->i(Ljava/lang/Object;)Lmqp;
+    invoke-static {p1}, Lojc;->i(Ljava/lang/Object;)Lojc;
 
     move-result-object p1
 
     const/4 v3, 0x3
 
-    invoke-direct {v0, v1, v2, p1, v3}, Lcom/google/android/libraries/lens/lenslite/api/LinkImage;-><init>(Lmqp;Lmqp;Lmqp;I)V
+    invoke-direct {v0, v1, v2, p1, v3}, Lcom/google/android/libraries/lens/lenslite/api/LinkImage;-><init>(Lojc;Lojc;Lojc;I)V
 
-    invoke-static {p0}, Lmqp;->i(Ljava/lang/Object;)Lmqp;
+    invoke-static {p0}, Lojc;->i(Ljava/lang/Object;)Lojc;
 
     move-result-object p0
 
-    iput-object p0, v0, Lcom/google/android/libraries/lens/lenslite/api/LinkImage;->imageProxy:Lmqp;
+    iput-object p0, v0, Lcom/google/android/libraries/lens/lenslite/api/LinkImage;->imageProxy:Lojc;
 
     return-object v0
 .end method
@@ -198,17 +202,17 @@
 .method public close()V
     .locals 1
 
-    iget-object v0, p0, Lcom/google/android/libraries/lens/lenslite/api/LinkImage;->image:Lmqp;
+    iget-object v0, p0, Lcom/google/android/libraries/lens/lenslite/api/LinkImage;->image:Lojc;
 
-    invoke-virtual {v0}, Lmqp;->g()Z
+    invoke-virtual {v0}, Lojc;->g()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    iget-object v0, p0, Lcom/google/android/libraries/lens/lenslite/api/LinkImage;->image:Lmqp;
+    iget-object v0, p0, Lcom/google/android/libraries/lens/lenslite/api/LinkImage;->image:Lojc;
 
-    invoke-virtual {v0}, Lmqp;->c()Ljava/lang/Object;
+    invoke-virtual {v0}, Lojc;->c()Ljava/lang/Object;
 
     move-result-object v0
 
@@ -219,17 +223,17 @@
     return-void
 
     :cond_0
-    iget-object v0, p0, Lcom/google/android/libraries/lens/lenslite/api/LinkImage;->imageProxy:Lmqp;
+    iget-object v0, p0, Lcom/google/android/libraries/lens/lenslite/api/LinkImage;->imageProxy:Lojc;
 
-    invoke-virtual {v0}, Lmqp;->g()Z
+    invoke-virtual {v0}, Lojc;->g()Z
 
     move-result v0
 
     if-eqz v0, :cond_1
 
-    iget-object v0, p0, Lcom/google/android/libraries/lens/lenslite/api/LinkImage;->imageProxy:Lmqp;
+    iget-object v0, p0, Lcom/google/android/libraries/lens/lenslite/api/LinkImage;->imageProxy:Lojc;
 
-    invoke-virtual {v0}, Lmqp;->c()Ljava/lang/Object;
+    invoke-virtual {v0}, Lojc;->c()Ljava/lang/Object;
 
     move-result-object v0
 
@@ -241,10 +245,10 @@
     return-void
 .end method
 
-.method public getBitmap()Lmqp;
+.method public getBitmap()Lojc;
     .locals 1
 
-    iget-object v0, p0, Lcom/google/android/libraries/lens/lenslite/api/LinkImage;->bitmap:Lmqp;
+    iget-object v0, p0, Lcom/google/android/libraries/lens/lenslite/api/LinkImage;->bitmap:Lojc;
 
     return-object v0
 .end method
@@ -252,17 +256,17 @@
 .method public getHeight()I
     .locals 1
 
-    iget-object v0, p0, Lcom/google/android/libraries/lens/lenslite/api/LinkImage;->height:Lmqp;
+    iget-object v0, p0, Lcom/google/android/libraries/lens/lenslite/api/LinkImage;->height:Lojc;
 
-    invoke-virtual {v0}, Lmqp;->g()Z
+    invoke-virtual {v0}, Lojc;->g()Z
 
     move-result v0
 
-    invoke-static {v0}, Lmoz;->p(Z)V
+    invoke-static {v0}, Lobr;->aQ(Z)V
 
-    iget-object v0, p0, Lcom/google/android/libraries/lens/lenslite/api/LinkImage;->height:Lmqp;
+    iget-object v0, p0, Lcom/google/android/libraries/lens/lenslite/api/LinkImage;->height:Lojc;
 
-    invoke-virtual {v0}, Lmqp;->c()Ljava/lang/Object;
+    invoke-virtual {v0}, Lojc;->c()Ljava/lang/Object;
 
     move-result-object v0
 
@@ -275,18 +279,18 @@
     return v0
 .end method
 
-.method public getImage()Lmqp;
+.method public getImage()Lojc;
     .locals 1
 
-    iget-object v0, p0, Lcom/google/android/libraries/lens/lenslite/api/LinkImage;->image:Lmqp;
+    iget-object v0, p0, Lcom/google/android/libraries/lens/lenslite/api/LinkImage;->image:Lojc;
 
     return-object v0
 .end method
 
-.method public getImageProxy()Lmqp;
+.method public getImageProxy()Lojc;
     .locals 1
 
-    iget-object v0, p0, Lcom/google/android/libraries/lens/lenslite/api/LinkImage;->imageProxy:Lmqp;
+    iget-object v0, p0, Lcom/google/android/libraries/lens/lenslite/api/LinkImage;->imageProxy:Lojc;
 
     return-object v0
 .end method
@@ -294,17 +298,17 @@
 .method public getRotation()I
     .locals 1
 
-    iget-object v0, p0, Lcom/google/android/libraries/lens/lenslite/api/LinkImage;->height:Lmqp;
+    iget-object v0, p0, Lcom/google/android/libraries/lens/lenslite/api/LinkImage;->height:Lojc;
 
-    invoke-virtual {v0}, Lmqp;->g()Z
+    invoke-virtual {v0}, Lojc;->g()Z
 
     move-result v0
 
-    invoke-static {v0}, Lmoz;->p(Z)V
+    invoke-static {v0}, Lobr;->aQ(Z)V
 
-    iget-object v0, p0, Lcom/google/android/libraries/lens/lenslite/api/LinkImage;->rotation:Lmqp;
+    iget-object v0, p0, Lcom/google/android/libraries/lens/lenslite/api/LinkImage;->rotation:Lojc;
 
-    invoke-virtual {v0}, Lmqp;->c()Ljava/lang/Object;
+    invoke-virtual {v0}, Lojc;->c()Ljava/lang/Object;
 
     move-result-object v0
 
@@ -328,17 +332,17 @@
 .method public getWidth()I
     .locals 1
 
-    iget-object v0, p0, Lcom/google/android/libraries/lens/lenslite/api/LinkImage;->width:Lmqp;
+    iget-object v0, p0, Lcom/google/android/libraries/lens/lenslite/api/LinkImage;->width:Lojc;
 
-    invoke-virtual {v0}, Lmqp;->g()Z
+    invoke-virtual {v0}, Lojc;->g()Z
 
     move-result v0
 
-    invoke-static {v0}, Lmoz;->p(Z)V
+    invoke-static {v0}, Lobr;->aQ(Z)V
 
-    iget-object v0, p0, Lcom/google/android/libraries/lens/lenslite/api/LinkImage;->width:Lmqp;
+    iget-object v0, p0, Lcom/google/android/libraries/lens/lenslite/api/LinkImage;->width:Lojc;
 
-    invoke-virtual {v0}, Lmqp;->c()Ljava/lang/Object;
+    invoke-virtual {v0}, Lojc;->c()Ljava/lang/Object;
 
     move-result-object v0
 

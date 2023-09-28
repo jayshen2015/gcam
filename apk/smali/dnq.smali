@@ -1,26 +1,22 @@
 .class public final Ldnq;
-.super Ljava/lang/RuntimeException;
+.super Ljava/lang/Object;
 
 
-# instance fields
-.field public final a:Ljava/util/List;
-
-.field public final b:Lkbo;
+# static fields
+.field public static final a:Ldln;
 
 
 # direct methods
-.method public varargs constructor <init>(Ljava/lang/String;Lkbo;[Lklv;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 2
 
-    invoke-direct {p0, p1}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
+    new-instance v0, Ldln;
 
-    invoke-static {p3}, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
+    const/4 v1, 0x3
 
-    move-result-object p1
+    invoke-direct {v0, v1}, Ldln;-><init>(I)V
 
-    iput-object p1, p0, Ldnq;->a:Ljava/util/List;
-
-    iput-object p2, p0, Ldnq;->b:Lkbo;
+    sput-object v0, Ldnq;->a:Ldln;
 
     return-void
 .end method

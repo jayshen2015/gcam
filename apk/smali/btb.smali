@@ -2,131 +2,75 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lbtg;
+.implements Lbrx;
 
 
 # instance fields
-.field a:I
+.field private final a:Llda;
 
-.field public b:Ljava/lang/Class;
-
-.field private final c:Lbtc;
+.field private final b:Llda;
 
 
 # direct methods
-.method public constructor <init>(Lbtc;)V
-    .locals 0
+.method public constructor <init>(Llda;)V
+    .locals 1
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lbtb;->c:Lbtc;
+    iput-object p1, p0, Lbtb;->a:Llda;
+
+    new-instance p1, Llce;
+
+    const/16 v0, 0xf
+
+    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v0
+
+    invoke-direct {p1, v0}, Llce;-><init>(Ljava/lang/Object;)V
+
+    iput-object p1, p0, Lbtb;->b:Llda;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()V
+.method public final a()Llco;
     .locals 1
 
-    iget-object v0, p0, Lbtb;->c:Lbtc;
+    iget-object v0, p0, Lbtb;->a:Llda;
 
-    invoke-virtual {v0, p0}, Lbsv;->c(Lbtg;)V
-
-    return-void
+    return-object v0
 .end method
 
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 3
+.method public final b()Llda;
+    .locals 1
 
-    instance-of v0, p1, Lbtb;
+    iget-object v0, p0, Lbtb;->b:Llda;
 
-    const/4 v1, 0x0
-
-    if-eqz v0, :cond_0
-
-    check-cast p1, Lbtb;
-
-    iget v0, p0, Lbtb;->a:I
-
-    iget v2, p1, Lbtb;->a:I
-
-    if-ne v0, v2, :cond_0
-
-    iget-object v0, p0, Lbtb;->b:Ljava/lang/Class;
-
-    iget-object p1, p1, Lbtb;->b:Ljava/lang/Class;
-
-    if-ne v0, p1, :cond_0
-
-    const/4 p1, 0x1
-
-    return p1
-
-    :cond_0
-    return v1
+    return-object v0
 .end method
 
-.method public final hashCode()I
+.method public final c()Z
     .locals 2
 
-    iget v0, p0, Lbtb;->a:I
+    const/4 v0, 0x0
 
-    mul-int/lit8 v0, v0, 0x1f
-
-    iget-object v1, p0, Lbtb;->b:Ljava/lang/Class;
+    :try_start_0
+    sget-object v1, Lkda;->a:Landroid/hardware/camera2/CaptureResult$Key;
+    :try_end_0
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_0 .. :try_end_0} :catch_0
 
     if-eqz v1, :cond_0
 
-    invoke-virtual {v1}, Ljava/lang/Object;->hashCode()I
-
-    move-result v1
-
-    goto :goto_0
+    const/4 v0, 0x1
 
     :cond_0
-    const/4 v1, 0x0
+    return v0
 
-    :goto_0
-    add-int/2addr v0, v1
+    :catch_0
+    move-exception v1
 
     return v0
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .locals 4
-
-    iget v0, p0, Lbtb;->a:I
-
-    iget-object v1, p0, Lbtb;->b:Ljava/lang/Class;
-
-    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v1
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v3, "Key{size="
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    const-string v0, "array="
-
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v0, "}"
-
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    return-object v0
 .end method

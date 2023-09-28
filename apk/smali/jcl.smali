@@ -1,32 +1,33 @@
-.class final Ljcl;
+.class public final synthetic Ljcl;
 .super Ljava/lang/Object;
 
+# interfaces
+.implements Ljava/lang/Runnable;
 
-# static fields
-.field static final a:[Ljgw;
+
+# instance fields
+.field public final synthetic a:Lojz;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 3
+.method public synthetic constructor <init>(Lojz;)V
+    .locals 0
 
-    const/4 v0, 0x2
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    new-array v0, v0, [Ljgw;
+    iput-object p1, p0, Ljcl;->a:Lojz;
 
-    const/4 v1, 0x0
+    return-void
+.end method
 
-    sget-object v2, Ljcm;->a:Ljck;
 
-    aput-object v2, v0, v1
+# virtual methods
+.method public final run()V
+    .locals 1
 
-    const/4 v1, 0x1
+    iget-object v0, p0, Ljcl;->a:Lojz;
 
-    sget-object v2, Ljcm;->b:Ljck;
-
-    aput-object v2, v0, v1
-
-    sput-object v0, Ljcl;->a:[Ljgw;
+    invoke-interface {v0}, Lojz;->a()Ljava/lang/Object;
 
     return-void
 .end method

@@ -1,53 +1,77 @@
-.class public final synthetic Lgod;
+.class public final Lgod;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lcom/google/googlex/gcam/creativecamera/portraitmode/PortraitOpaqueHandleCallback;
-
-
-# instance fields
-.field public final synthetic a:Lgon;
+.implements Lgof;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lgon;)V
+.method public constructor <init>()V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lgod;->a:Lgon;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onImage(JLjava/lang/Object;ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
-    .locals 7
+.method public final a()Lgoe;
+    .locals 1
 
-    iget-object v0, p0, Lgod;->a:Lgon;
+    new-instance v0, Lgoc;
 
-    instance-of p5, p3, Landroid/hardware/HardwareBuffer;
+    invoke-direct {v0}, Lgoc;-><init>()V
 
-    invoke-static {p5}, Lmoz;->e(Z)V
+    return-object v0
+.end method
 
-    check-cast p3, Landroid/hardware/HardwareBuffer;
+.method public final b()Lgoe;
+    .locals 1
 
-    invoke-static {p3}, Ligo;->j(Ljava/lang/Object;)Ligo;
+    new-instance v0, Lgoc;
 
-    move-result-object v3
+    invoke-direct {v0}, Lgoc;-><init>()V
 
-    invoke-static {p4}, Lnqz;->a(I)Lnqz;
+    return-object v0
+.end method
 
-    move-result-object v4
+.method public final c()Lgoe;
+    .locals 1
 
-    move-wide v1, p1
+    new-instance v0, Lgoc;
 
-    move-object v5, p6
+    invoke-direct {v0}, Lgoc;-><init>()V
 
-    move-object v6, p7
+    return-object v0
+.end method
 
-    invoke-interface/range {v0 .. v6}, Lgon;->a(JLigo;Lnqz;Ljava/lang/String;Ljava/lang/String;)V
+.method public final d()Lgoe;
+    .locals 1
+
+    const/4 v0, 0x0
+
+    return-object v0
+.end method
+
+.method public final e()Lgoe;
+    .locals 1
+
+    new-instance v0, Lgoc;
+
+    invoke-direct {v0}, Lgoc;-><init>()V
+
+    return-object v0
+.end method
+
+.method public final f()V
+    .locals 0
+
+    return-void
+.end method
+
+.method public final g()V
+    .locals 0
 
     return-void
 .end method

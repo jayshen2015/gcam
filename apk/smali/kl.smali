@@ -1,99 +1,116 @@
 .class final Lkl;
-.super Lft;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Landroid/view/ViewTreeObserver$OnGlobalLayoutListener;
 
 
 # instance fields
-.field public a:Z
+.field final synthetic a:Lkq;
 
 
 # direct methods
-.method public constructor <init>(Landroid/graphics/drawable/Drawable;)V
+.method public constructor <init>(Lkq;)V
     .locals 0
 
-    invoke-direct {p0, p1}, Lft;-><init>(Landroid/graphics/drawable/Drawable;)V
+    iput-object p1, p0, Lkl;->a:Lkq;
 
-    const/4 p1, 0x1
-
-    iput-boolean p1, p0, Lkl;->a:Z
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final draw(Landroid/graphics/Canvas;)V
-    .locals 1
+.method public final onGlobalLayout()V
+    .locals 2
 
-    iget-boolean v0, p0, Lkl;->a:Z
+    iget-object v0, p0, Lkl;->a:Lkq;
 
-    if-eqz v0, :cond_0
+    invoke-virtual {v0}, Lkq;->u()Z
 
-    invoke-super {p0, p1}, Lft;->draw(Landroid/graphics/Canvas;)V
+    move-result v0
+
+    if-eqz v0, :cond_2
+
+    iget-object v0, p0, Lkl;->a:Lkq;
+
+    iget-object v0, v0, Lkq;->b:Ljava/util/List;
+
+    invoke-interface {v0}, Ljava/util/List;->size()I
+
+    move-result v0
+
+    if-lez v0, :cond_2
+
+    iget-object v0, p0, Lkl;->a:Lkq;
+
+    iget-object v0, v0, Lkq;->b:Ljava/util/List;
+
+    const/4 v1, 0x0
+
+    invoke-interface {v0, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lkp;
+
+    iget-object v0, v0, Lkp;->a:Lpn;
+
+    iget-boolean v0, v0, Lpk;->p:Z
+
+    if-nez v0, :cond_2
+
+    iget-object v0, p0, Lkl;->a:Lkq;
+
+    iget-object v0, v0, Lkq;->d:Landroid/view/View;
+
+    if-eqz v0, :cond_1
+
+    invoke-virtual {v0}, Landroid/view/View;->isShown()Z
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    goto :goto_1
 
     :cond_0
+    iget-object v0, p0, Lkl;->a:Lkq;
+
+    iget-object v0, v0, Lkq;->b:Ljava/util/List;
+
+    invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+
+    move-result-object v0
+
+    :goto_0
+    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_2
+
+    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Lkp;
+
+    iget-object v1, v1, Lkp;->a:Lpn;
+
+    invoke-virtual {v1}, Lpk;->s()V
+
+    goto :goto_0
+
+    :cond_1
+    :goto_1
+    iget-object v0, p0, Lkl;->a:Lkq;
+
+    invoke-virtual {v0}, Lkq;->k()V
+
     return-void
-.end method
 
-.method public final setHotspot(FF)V
-    .locals 1
-
-    iget-boolean v0, p0, Lkl;->a:Z
-
-    if-eqz v0, :cond_0
-
-    invoke-super {p0, p1, p2}, Lft;->setHotspot(FF)V
-
-    :cond_0
+    :cond_2
     return-void
-.end method
-
-.method public final setHotspotBounds(IIII)V
-    .locals 1
-
-    iget-boolean v0, p0, Lkl;->a:Z
-
-    if-eqz v0, :cond_0
-
-    invoke-super {p0, p1, p2, p3, p4}, Lft;->setHotspotBounds(IIII)V
-
-    :cond_0
-    return-void
-.end method
-
-.method public final setState([I)Z
-    .locals 1
-
-    iget-boolean v0, p0, Lkl;->a:Z
-
-    if-eqz v0, :cond_0
-
-    invoke-super {p0, p1}, Lft;->setState([I)Z
-
-    move-result p1
-
-    return p1
-
-    :cond_0
-    const/4 p1, 0x0
-
-    return p1
-.end method
-
-.method public final setVisible(ZZ)Z
-    .locals 1
-
-    iget-boolean v0, p0, Lkl;->a:Z
-
-    if-eqz v0, :cond_0
-
-    invoke-super {p0, p1, p2}, Lft;->setVisible(ZZ)Z
-
-    move-result p1
-
-    return p1
-
-    :cond_0
-    const/4 p1, 0x0
-
-    return p1
 .end method

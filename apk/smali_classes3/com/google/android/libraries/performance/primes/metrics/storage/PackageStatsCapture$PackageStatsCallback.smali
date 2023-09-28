@@ -37,17 +37,17 @@
     goto :goto_0
 
     :cond_0
-    sget-object p1, Lllw;->a:Lnak;
+    sget-object p1, Lnbg;->a:Louj;
 
-    invoke-virtual {p1}, Lnaf;->c()Lnaz;
+    invoke-virtual {p1}, Loue;->c()Lova;
 
     move-result-object p1
 
-    const-string p2, "Failure getting PackageStats"
+    const/16 p2, 0xe45
 
-    const/16 v0, 0x11bb
+    const-string v0, "Failure getting PackageStats"
 
-    invoke-static {p1, p2, v0}, Ld;->g(Lnaz;Ljava/lang/String;C)V
+    invoke-static {p1, v0, p2}, Ld;->v(Lova;Ljava/lang/String;C)V
 
     :goto_0
     iget-object p1, p0, Lcom/google/android/libraries/performance/primes/metrics/storage/PackageStatsCapture$PackageStatsCallback;->a:Ljava/util/concurrent/Semaphore;

@@ -1,45 +1,28 @@
-.class final synthetic Lovq;
-.super Lond;
-
-# interfaces
-.implements Lomp;
-
-
-# static fields
-.field public static final e:Lovq;
-
-
-# direct methods
-.method static constructor <clinit>()V
-    .locals 1
-
-    new-instance v0, Lovq;
-
-    invoke-direct {v0}, Lovq;-><init>()V
-
-    sput-object v0, Lovq;->e:Lovq;
-
-    return-void
-.end method
-
-.method public constructor <init>()V
-    .locals 1
-
-    const-class v0, Lotu;
-
-    invoke-direct {p0, v0}, Lond;-><init>(Ljava/lang/Class;)V
-
-    return-void
-.end method
+.class public interface abstract Lovq;
+.super Ljava/lang/Object;
 
 
 # virtual methods
-.method public final bridge synthetic a(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 0
+.method public abstract D()Z
+.end method
 
-    invoke-interface {p1, p2, p3}, Lotu;->a(Ljava/lang/Object;Loku;)Ljava/lang/Object;
+.method public abstract E()[Ljava/lang/Object;
+.end method
 
-    move-result-object p1
+.method public abstract e()J
+.end method
 
-    return-object p1
+.method public abstract f()Lous;
+.end method
+
+.method public abstract j()Lovv;
+.end method
+
+.method public abstract k()Lowr;
+.end method
+
+.method public abstract l()Ljava/lang/Object;
+.end method
+
+.method public abstract m()Ljava/util/logging/Level;
 .end method

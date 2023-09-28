@@ -1,57 +1,66 @@
-.class public final synthetic Lmml;
+.class final Lmml;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Ljon;
+.implements Lphh;
 
 
 # instance fields
-.field public final synthetic a:Lmmt;
-
-.field public final synthetic b:Lkgd;
+.field final synthetic a:Lmoa;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lmmt;Lkgd;[B[B)V
+.method public constructor <init>(Lmoa;)V
     .locals 0
 
+    iput-object p1, p0, Lmml;->a:Lmoa;
+
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lmml;->a:Lmmt;
-
-    iput-object p2, p0, Lmml;->b:Lkgd;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Ljot;)V
+.method public final a(Ljava/lang/Throwable;)V
+    .locals 1
+
+    iget-object v0, p0, Lmml;->a:Lmoa;
+
+    invoke-static {p1}, Lmnc;->a(Ljava/lang/Throwable;)Lmnc;
+
+    move-result-object p1
+
+    invoke-virtual {v0, p1}, Lmoa;->l(Lmnc;)V
+
+    return-void
+.end method
+
+.method public final b(Ljava/lang/Object;)V
     .locals 2
 
-    iget-object p1, p0, Lmml;->a:Lmmt;
+    if-nez p1, :cond_0
 
-    iget-object v0, p0, Lmml;->b:Lkgd;
+    iget-object p1, p0, Lmml;->a:Lmoa;
 
-    iget-object v1, p1, Lmmt;->d:Ljava/lang/Object;
+    new-instance v0, Ljava/lang/NullPointerException;
 
-    monitor-enter v1
+    const-string v1, "Function output is null"
 
-    :try_start_0
-    iget-object p1, p1, Lmmt;->c:Ljava/util/Set;
+    invoke-direct {v0, v1}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
 
-    invoke-interface {p1, v0}, Ljava/util/Set;->remove(Ljava/lang/Object;)Z
+    invoke-static {v0}, Lmnc;->a(Ljava/lang/Throwable;)Lmnc;
 
-    monitor-exit v1
+    move-result-object v0
+
+    invoke-virtual {p1, v0}, Lmoa;->l(Lmnc;)V
 
     return-void
 
-    :catchall_0
-    move-exception p1
+    :cond_0
+    iget-object v0, p0, Lmml;->a:Lmoa;
 
-    monitor-exit v1
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    invoke-virtual {v0, p1}, Lmoa;->k(Ljava/lang/Object;)V
 
-    throw p1
+    return-void
 .end method

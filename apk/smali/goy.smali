@@ -3,11 +3,11 @@
 
 
 # virtual methods
-.method public abstract c()V
+.method public abstract a()Llco;
 .end method
 
-.method public abstract d()V
+.method public abstract b()Llco;
 .end method
 
-.method public abstract e(JLcom/google/googlex/gcam/InterleavedImageU8;Lcom/google/googlex/gcam/InterleavedImageU16;Lfuz;Lcom/google/googlex/gcam/PortraitRequest;Lcom/google/googlex/gcam/RawReadView;Lcom/google/googlex/gcam/ShotMetadata;Lcom/google/googlex/gcam/RawReadView;Lcom/google/googlex/gcam/ShotMetadata;Lehb;)Lnou;
+.method public abstract c(Lgox;Lgog;)V
 .end method

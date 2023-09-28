@@ -1,127 +1,132 @@
-.class final Ldee;
+.class public final Ldee;
 .super Ljava/lang/Object;
 
 
-# instance fields
-.field public a:Lmqp;
+# static fields
+.field public static final a:Lddi;
 
-.field private b:J
+.field public static final b:Lddi;
 
-.field private c:Lmvv;
+.field public static final c:Lddi;
 
-.field private d:B
+.field public static final d:Lddi;
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 2
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance v0, Lddh;
 
-    return-void
-.end method
+    invoke-direct {v0}, Lddh;-><init>()V
 
-.method public constructor <init>([B)V
-    .locals 0
+    const-string v1, "camera.swiss_enabled.RESTART"
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object v1, v0, Lddh;->a:Ljava/lang/String;
 
-    sget-object p1, Lmpx;->a:Lmpx;
+    new-instance v0, Lddh;
 
-    iput-object p1, p0, Ldee;->a:Lmqp;
+    invoke-direct {v0}, Lddh;-><init>()V
 
-    return-void
-.end method
+    const-string v1, "swiss_native_render.RESTART"
 
+    iput-object v1, v0, Lddh;->a:Ljava/lang/String;
 
-# virtual methods
-.method public final a()Ldef;
-    .locals 5
+    new-instance v0, Lddh;
 
-    iget-byte v0, p0, Ldee;->d:B
+    invoke-direct {v0}, Lddh;-><init>()V
 
-    const/4 v1, 0x1
+    const-string v1, "swiss_use_darwinn_tpu_delegate.RESTART"
 
-    if-ne v0, v1, :cond_1
+    iput-object v1, v0, Lddh;->a:Ljava/lang/String;
 
-    iget-object v0, p0, Ldee;->c:Lmvv;
+    new-instance v0, Lddh;
 
-    if-nez v0, :cond_0
+    invoke-direct {v0}, Lddh;-><init>()V
 
-    goto :goto_0
+    const-string v1, "swiss_controller_use_darwinn_tpu_delegate.RESTART"
 
-    :cond_0
-    new-instance v1, Ldef;
+    iput-object v1, v0, Lddh;->a:Ljava/lang/String;
 
-    iget-wide v2, p0, Ldee;->b:J
+    new-instance v0, Lddh;
 
-    iget-object v4, p0, Ldee;->a:Lmqp;
+    invoke-direct {v0}, Lddh;-><init>()V
 
-    invoke-direct {v1, v2, v3, v0, v4}, Ldef;-><init>(JLmvv;Lmqp;)V
+    const-string v1, "camera.swiss_setting_force_on"
 
-    return-object v1
+    iput-object v1, v0, Lddh;->a:Ljava/lang/String;
 
-    :cond_1
-    :goto_0
-    new-instance v0, Ljava/lang/StringBuilder;
+    new-instance v0, Lddh;
 
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v0}, Lddh;-><init>()V
 
-    iget-byte v1, p0, Ldee;->d:B
+    const-string v1, "camera.swiss_debug"
 
-    if-nez v1, :cond_2
+    iput-object v1, v0, Lddh;->a:Ljava/lang/String;
 
-    const-string v1, " timestampNs"
+    new-instance v0, Lddh;
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-direct {v0}, Lddh;-><init>()V
 
-    :cond_2
-    iget-object v1, p0, Ldee;->c:Lmvv;
+    const-string v1, "camera.swiss_suggestion_enabled.RESTART"
 
-    if-nez v1, :cond_3
+    iput-object v1, v0, Lddh;->a:Ljava/lang/String;
 
-    const-string v1, " cameraVisionKitChipResults"
+    new-instance v0, Lddh;
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-direct {v0}, Lddh;-><init>()V
 
-    :cond_3
-    new-instance v1, Ljava/lang/IllegalStateException;
+    const-string v1, "camera.swiss_tooltip_max_count"
 
-    invoke-virtual {v0}, Ljava/lang/Object;->toString()Ljava/lang/String;
+    iput-object v1, v0, Lddh;->a:Ljava/lang/String;
+
+    invoke-virtual {v0}, Lddh;->a()Lddi;
 
     move-result-object v0
 
-    const-string v2, "Missing required properties:"
+    sput-object v0, Ldee;->a:Lddi;
 
-    invoke-virtual {v2, v0}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
+    new-instance v0, Lddh;
+
+    invoke-direct {v0}, Lddh;-><init>()V
+
+    const-string v1, "swiss_suggesstion_min_sample"
+
+    iput-object v1, v0, Lddh;->a:Ljava/lang/String;
+
+    invoke-virtual {v0}, Lddh;->a()Lddi;
 
     move-result-object v0
 
-    invoke-direct {v1, v0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+    sput-object v0, Ldee;->b:Lddi;
 
-    throw v1
-.end method
+    new-instance v0, Lddh;
 
-.method public final b(Ljava/util/List;)V
-    .locals 0
+    invoke-direct {v0}, Lddh;-><init>()V
 
-    invoke-static {p1}, Lmvv;->j(Ljava/util/Collection;)Lmvv;
+    const-string v1, "swiss_suggestion_sampling_period_ms"
 
-    move-result-object p1
+    iput-object v1, v0, Lddh;->a:Ljava/lang/String;
 
-    iput-object p1, p0, Ldee;->c:Lmvv;
+    invoke-virtual {v0}, Lddh;->a()Lddi;
 
-    return-void
-.end method
+    move-result-object v0
 
-.method public final c(J)V
-    .locals 0
+    sput-object v0, Ldee;->c:Lddi;
 
-    iput-wide p1, p0, Ldee;->b:J
+    new-instance v0, Lddh;
 
-    const/4 p1, 0x1
+    invoke-direct {v0}, Lddh;-><init>()V
 
-    iput-byte p1, p0, Ldee;->d:B
+    const-string v1, "swiss_suggestion_sample_timeout_ms"
+
+    iput-object v1, v0, Lddh;->a:Ljava/lang/String;
+
+    invoke-virtual {v0}, Lddh;->a()Lddi;
+
+    move-result-object v0
+
+    sput-object v0, Ldee;->d:Lddi;
 
     return-void
 .end method

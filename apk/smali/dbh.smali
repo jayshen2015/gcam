@@ -2,173 +2,87 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Landroid/content/DialogInterface$OnClickListener;
+.implements Lj$/util/function/IntFunction;
+
+
+# static fields
+.field public static final synthetic a:Ldbh;
+
+.field public static final synthetic b:Ldbh;
+
+.field public static final synthetic c:Ldbh;
 
 
 # instance fields
-.field public final synthetic a:Ldbi;
-
-.field public final synthetic b:I
-
-.field private final synthetic c:I
+.field private final synthetic d:I
 
 
 # direct methods
-.method public synthetic constructor <init>(Ldbi;II)V
+.method static synthetic constructor <clinit>()V
+    .locals 2
+
+    new-instance v0, Ldbh;
+
+    const/4 v1, 0x2
+
+    invoke-direct {v0, v1}, Ldbh;-><init>(I)V
+
+    sput-object v0, Ldbh;->c:Ldbh;
+
+    new-instance v0, Ldbh;
+
+    const/4 v1, 0x1
+
+    invoke-direct {v0, v1}, Ldbh;-><init>(I)V
+
+    sput-object v0, Ldbh;->b:Ldbh;
+
+    new-instance v0, Ldbh;
+
+    const/4 v1, 0x0
+
+    invoke-direct {v0, v1}, Ldbh;-><init>(I)V
+
+    sput-object v0, Ldbh;->a:Ldbh;
+
+    return-void
+.end method
+
+.method private synthetic constructor <init>(I)V
     .locals 0
 
-    iput p3, p0, Ldbh;->c:I
+    iput p1, p0, Ldbh;->d:I
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Ldbh;->a:Ldbi;
-
-    iput p2, p0, Ldbh;->b:I
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onClick(Landroid/content/DialogInterface;I)V
-    .locals 7
+.method public final apply(I)Ljava/lang/Object;
+    .locals 1
 
-    iget p2, p0, Ldbh;->c:I
+    iget v0, p0, Ldbh;->d:I
 
-    const/4 v0, 0x4
+    packed-switch v0, :pswitch_data_0
 
-    const-string v1, "None of the cameras are working. User decided to close the app"
+    new-array p1, p1, [Lhjy;
 
-    packed-switch p2, :pswitch_data_0
-
-    iget-object p2, p0, Ldbh;->a:Ldbi;
-
-    const/4 v0, 0x3
-
-    iget v2, p0, Ldbh;->b:I
-
-    invoke-virtual {p2, v0, v2}, Ldbi;->d(II)V
-
-    invoke-interface {p1}, Landroid/content/DialogInterface;->dismiss()V
-
-    iget-object p1, p2, Ldbi;->b:Lcdx;
-
-    invoke-virtual {p1, v1}, Lcdx;->a(Ljava/lang/String;)V
-
-    return-void
+    return-object p1
 
     :pswitch_0
-    iget-object p1, p0, Ldbh;->a:Ldbi;
+    new-array p1, p1, [Lcxy;
 
-    iget v4, p0, Ldbh;->b:I
-
-    iget-object p2, p1, Ldbi;->e:Lkaq;
-
-    invoke-static {v4}, Ldcb;->a(I)Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v0}, Lmoz;->L(I)Ljava/lang/String;
-
-    move-result-object v0
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v3, "Hardware help dialog for unavailability of any cameras due to reason: "
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v1, " at stage "
-
-    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v0, "Positive button clicked"
-
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-interface {p2, v0}, Lkaq;->b(Ljava/lang/String;)V
-
-    iget-object v1, p1, Ldbi;->d:Lfbz;
-
-    const/4 v2, 0x3
-
-    const/4 v3, 0x4
-
-    const/4 v5, 0x0
-
-    const/4 v6, 0x0
-
-    invoke-interface/range {v1 .. v6}, Lfbz;->W(IIILklv;I)V
-
-    iget-object p2, p1, Ldbi;->b:Lcdx;
-
-    const-string v0, "None of the cameras are working. User decided to visit the help center"
-
-    invoke-virtual {p2, v0}, Lcdx;->a(Ljava/lang/String;)V
-
-    iget-object p2, p1, Ldbi;->a:Landroid/content/Context;
-
-    iget-object p1, p1, Ldbi;->f:Lcvr;
-
-    invoke-virtual {p1}, Lcvr;->h()Ljava/lang/String;
-
-    move-result-object p1
-
-    invoke-static {p1}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
-
-    move-result-object p1
-
-    invoke-static {p2, p1}, Lbze;->ac(Landroid/content/Context;Landroid/net/Uri;)V
-
-    return-void
+    return-object p1
 
     :pswitch_1
-    iget-object p2, p0, Ldbh;->a:Ldbi;
+    new-array p1, p1, [Landroid/graphics/Rect;
 
-    iget v0, p0, Ldbh;->b:I
-
-    const/4 v2, 0x5
-
-    invoke-virtual {p2, v2, v0}, Ldbi;->d(II)V
-
-    invoke-interface {p1}, Landroid/content/DialogInterface;->dismiss()V
-
-    iget-object p1, p2, Ldbi;->b:Lcdx;
-
-    invoke-virtual {p1, v1}, Lcdx;->a(Ljava/lang/String;)V
-
-    return-void
-
-    :pswitch_2
-    iget-object p2, p0, Ldbh;->a:Ldbi;
-
-    iget v2, p0, Ldbh;->b:I
-
-    invoke-virtual {p2, v0, v2}, Ldbi;->d(II)V
-
-    invoke-interface {p1}, Landroid/content/DialogInterface;->dismiss()V
-
-    iget-object p1, p2, Ldbi;->b:Lcdx;
-
-    invoke-virtual {p1, v1}, Lcdx;->a(Ljava/lang/String;)V
-
-    return-void
-
-    nop
+    return-object p1
 
     :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_2
         :pswitch_1
         :pswitch_0
     .end packed-switch

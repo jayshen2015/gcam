@@ -1,25 +1,33 @@
-.class public interface abstract Lmxy;
+.class public final synthetic Lmxy;
 .super Ljava/lang/Object;
+
+# interfaces
+.implements Ljava/lang/Runnable;
+
+
+# instance fields
+.field public final synthetic a:Lmxz;
+
+
+# direct methods
+.method public synthetic constructor <init>(Lmxz;)V
+    .locals 0
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lmxy;->a:Lmxz;
+
+    return-void
+.end method
 
 
 # virtual methods
-.method public abstract b(Ljava/lang/Object;)Ljava/util/Collection;
-.end method
+.method public final run()V
+    .locals 1
 
-.method public abstract e()I
-.end method
+    iget-object v0, p0, Lmxy;->a:Lmxz;
 
-.method public abstract j()V
-.end method
+    invoke-virtual {v0}, Lmxz;->a()V
 
-.method public abstract q()Ljava/util/Map;
-.end method
-
-.method public abstract r()Ljava/util/Set;
-.end method
-
-.method public abstract s(Ljava/lang/Object;Ljava/lang/Object;)Z
-.end method
-
-.method public abstract u(Ljava/lang/Object;Ljava/lang/Object;)Z
+    return-void
 .end method

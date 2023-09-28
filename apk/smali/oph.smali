@@ -1,359 +1,322 @@
 .class public final Loph;
-.super Ljava/lang/Object;
+.super Loon;
 
 
 # instance fields
-.field public final a:Ljava/lang/Object;
+.field private transient c:[Ljava/lang/Object;
 
-.field public final b:Loox;
+.field private transient d:[Ljava/lang/Object;
 
-.field public final c:Lomk;
-
-.field public final d:Ljava/lang/Object;
-
-.field public final e:Ljava/lang/Throwable;
+.field private final e:Ljava/util/Comparator;
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/Object;Loox;Lomk;Ljava/lang/Throwable;)V
-    .locals 0
+.method public constructor <init>(Ljava/util/Comparator;)V
+    .locals 1
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Loon;-><init>()V
 
-    iput-object p1, p0, Loph;->a:Ljava/lang/Object;
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    iput-object p2, p0, Loph;->b:Loox;
+    iput-object p1, p0, Loph;->e:Ljava/util/Comparator;
 
-    iput-object p3, p0, Loph;->c:Lomk;
+    const/4 p1, 0x4
 
-    const/4 p1, 0x0
+    new-array v0, p1, [Ljava/lang/Object;
 
-    iput-object p1, p0, Loph;->d:Ljava/lang/Object;
+    iput-object v0, p0, Loph;->c:[Ljava/lang/Object;
 
-    iput-object p4, p0, Loph;->e:Ljava/lang/Throwable;
+    new-array p1, p1, [Ljava/lang/Object;
 
-    return-void
-.end method
-
-.method public synthetic constructor <init>(Ljava/lang/Object;Loox;Lomk;Ljava/lang/Throwable;I)V
-    .locals 2
-
-    and-int/lit8 v0, p5, 0x2
-
-    const/4 v1, 0x0
-
-    if-eqz v0, :cond_0
-
-    move-object p2, v1
-
-    :cond_0
-    and-int/lit8 v0, p5, 0x4
-
-    if-eqz v0, :cond_1
-
-    move-object p3, v1
-
-    :cond_1
-    and-int/lit8 p5, p5, 0x10
-
-    if-eqz p5, :cond_2
-
-    move-object p4, v1
-
-    :cond_2
-    invoke-direct {p0, p1, p2, p3, p4}, Loph;-><init>(Ljava/lang/Object;Loox;Lomk;Ljava/lang/Throwable;)V
+    iput-object p1, p0, Loph;->d:[Ljava/lang/Object;
 
     return-void
-.end method
-
-.method public static synthetic b(Loph;Loox;Ljava/lang/Throwable;I)Loph;
-    .locals 3
-
-    and-int/lit8 v0, p3, 0x1
-
-    const/4 v1, 0x0
-
-    if-eqz v0, :cond_0
-
-    iget-object v0, p0, Loph;->a:Ljava/lang/Object;
-
-    goto :goto_0
-
-    :cond_0
-    move-object v0, v1
-
-    :goto_0
-    and-int/lit8 v2, p3, 0x2
-
-    if-eqz v2, :cond_1
-
-    iget-object p1, p0, Loph;->b:Loox;
-
-    :cond_1
-    and-int/lit8 v2, p3, 0x4
-
-    if-eqz v2, :cond_2
-
-    iget-object v1, p0, Loph;->c:Lomk;
-
-    :cond_2
-    and-int/lit8 v2, p3, 0x8
-
-    if-eqz v2, :cond_3
-
-    iget-object v2, p0, Loph;->d:Ljava/lang/Object;
-
-    :cond_3
-    and-int/lit8 p3, p3, 0x10
-
-    if-eqz p3, :cond_4
-
-    iget-object p2, p0, Loph;->e:Ljava/lang/Throwable;
-
-    :cond_4
-    new-instance p0, Loph;
-
-    invoke-direct {p0, v0, p1, v1, p2}, Loph;-><init>(Ljava/lang/Object;Loox;Lomk;Ljava/lang/Throwable;)V
-
-    return-object p0
 .end method
 
 
 # virtual methods
-.method public final a()Z
-    .locals 1
+.method public final a()Lopj;
+    .locals 7
 
-    iget-object v0, p0, Loph;->e:Ljava/lang/Throwable;
-
-    if-eqz v0, :cond_0
-
-    const/4 v0, 0x1
-
-    return v0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    return v0
-.end method
-
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 4
-
-    const/4 v0, 0x1
-
-    if-ne p0, p1, :cond_0
-
-    return v0
-
-    :cond_0
-    instance-of v1, p1, Loph;
-
-    const/4 v2, 0x0
-
-    if-nez v1, :cond_1
-
-    return v2
-
-    :cond_1
-    check-cast p1, Loph;
-
-    iget-object v1, p0, Loph;->a:Ljava/lang/Object;
-
-    iget-object v3, p1, Loph;->a:Ljava/lang/Object;
-
-    invoke-static {v1, v3}, Lone;->c(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-nez v1, :cond_2
-
-    return v2
-
-    :cond_2
-    iget-object v1, p0, Loph;->b:Loox;
-
-    iget-object v3, p1, Loph;->b:Loox;
-
-    invoke-static {v1, v3}, Lone;->c(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-nez v1, :cond_3
-
-    return v2
-
-    :cond_3
-    iget-object v1, p0, Loph;->c:Lomk;
-
-    iget-object v3, p1, Loph;->c:Lomk;
-
-    invoke-static {v1, v3}, Lone;->c(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-nez v1, :cond_4
-
-    return v2
-
-    :cond_4
-    iget-object v1, p1, Loph;->d:Ljava/lang/Object;
+    iget v0, p0, Loph;->b:I
 
     const/4 v1, 0x0
 
-    invoke-static {v1, v1}, Lone;->c(Ljava/lang/Object;Ljava/lang/Object;)Z
+    packed-switch v0, :pswitch_data_0
 
-    move-result v1
+    iget-object v2, p0, Loph;->c:[Ljava/lang/Object;
 
-    if-nez v1, :cond_5
+    invoke-static {v2, v0}, Ljava/util/Arrays;->copyOf([Ljava/lang/Object;I)[Ljava/lang/Object;
 
-    return v2
+    move-result-object v0
 
-    :cond_5
-    iget-object v1, p0, Loph;->e:Ljava/lang/Throwable;
+    iget-object v2, p0, Loph;->e:Ljava/util/Comparator;
 
-    iget-object p1, p1, Loph;->e:Ljava/lang/Throwable;
+    invoke-static {v0, v2}, Ljava/util/Arrays;->sort([Ljava/lang/Object;Ljava/util/Comparator;)V
 
-    invoke-static {v1, p1}, Lone;->c(Ljava/lang/Object;Ljava/lang/Object;)Z
+    iget v2, p0, Loph;->b:I
 
-    move-result p1
-
-    if-nez p1, :cond_6
-
-    return v2
-
-    :cond_6
-    return v0
-.end method
-
-.method public final hashCode()I
-    .locals 4
-
-    iget-object v0, p0, Loph;->a:Ljava/lang/Object;
-
-    const/4 v1, 0x0
-
-    if-nez v0, :cond_0
-
-    const/4 v0, 0x0
+    new-array v2, v2, [Ljava/lang/Object;
 
     goto :goto_0
 
-    :cond_0
-    invoke-virtual {v0}, Ljava/lang/Object;->hashCode()I
+    :pswitch_0
+    iget-object v0, p0, Loph;->e:Ljava/util/Comparator;
 
-    move-result v0
+    iget-object v2, p0, Loph;->c:[Ljava/lang/Object;
 
-    :goto_0
-    iget-object v2, p0, Loph;->b:Loox;
+    aget-object v2, v2, v1
 
-    if-nez v2, :cond_1
+    invoke-virtual {v2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    const/4 v2, 0x0
+    iget-object v3, p0, Loph;->d:[Ljava/lang/Object;
 
-    goto :goto_1
+    aget-object v1, v3, v1
 
-    :cond_1
-    invoke-virtual {v2}, Loox;->hashCode()I
+    invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    move-result v2
+    new-instance v3, Lopj;
 
-    :goto_1
-    mul-int/lit8 v0, v0, 0x1f
+    new-instance v4, Lory;
 
-    iget-object v3, p0, Loph;->c:Lomk;
+    invoke-static {v2}, Loom;->m(Ljava/lang/Object;)Loom;
 
-    if-nez v3, :cond_2
+    move-result-object v2
 
-    const/4 v3, 0x0
+    invoke-direct {v4, v2, v0}, Lory;-><init>(Loom;Ljava/util/Comparator;)V
 
-    goto :goto_2
+    invoke-static {v1}, Loom;->m(Ljava/lang/Object;)Loom;
 
-    :cond_2
-    invoke-virtual {v3}, Ljava/lang/Object;->hashCode()I
+    move-result-object v0
 
-    move-result v3
+    invoke-direct {v3, v4, v0}, Lopj;-><init>(Lory;Loom;)V
 
-    :goto_2
-    add-int/2addr v0, v2
+    return-object v3
 
-    mul-int/lit8 v0, v0, 0x1f
+    :pswitch_1
+    iget-object v0, p0, Loph;->e:Ljava/util/Comparator;
 
-    iget-object v2, p0, Loph;->e:Ljava/lang/Throwable;
-
-    if-nez v2, :cond_3
-
-    goto :goto_3
-
-    :cond_3
-    invoke-virtual {v2}, Ljava/lang/Throwable;->hashCode()I
-
-    move-result v1
-
-    :goto_3
-    add-int/2addr v0, v3
-
-    mul-int/lit16 v0, v0, 0x3c1
-
-    add-int/2addr v0, v1
-
-    return v0
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .locals 6
-
-    iget-object v0, p0, Loph;->a:Ljava/lang/Object;
-
-    iget-object v1, p0, Loph;->b:Loox;
-
-    iget-object v2, p0, Loph;->c:Lomk;
-
-    iget-object v3, p0, Loph;->e:Ljava/lang/Throwable;
-
-    new-instance v4, Ljava/lang/StringBuilder;
-
-    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v5, "CompletedContinuation(result="
-
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const-string v0, ", cancelHandler="
-
-    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v4, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const-string v0, ", onCancellation="
-
-    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v4, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const-string v0, ", idempotentResume="
-
-    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const/4 v0, 0x0
-
-    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const-string v0, ", cancelCause="
-
-    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v4, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const-string v0, ")"
-
-    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-static {v0}, Lopj;->f(Ljava/util/Comparator;)Lopj;
 
     move-result-object v0
 
     return-object v0
+
+    :goto_0
+    iget v3, p0, Loph;->b:I
+
+    if-ge v1, v3, :cond_2
+
+    if-lez v1, :cond_1
+
+    add-int/lit8 v3, v1, -0x1
+
+    iget-object v4, p0, Loph;->e:Ljava/util/Comparator;
+
+    aget-object v5, v0, v3
+
+    aget-object v6, v0, v1
+
+    invoke-interface {v4, v5, v6}, Ljava/util/Comparator;->compare(Ljava/lang/Object;Ljava/lang/Object;)I
+
+    move-result v4
+
+    if-eqz v4, :cond_0
+
+    goto :goto_1
+
+    :cond_0
+    new-instance v2, Ljava/lang/IllegalArgumentException;
+
+    aget-object v3, v0, v3
+
+    invoke-static {v3}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v3
+
+    aget-object v0, v0, v1
+
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {v3}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/String;->length()I
+
+    move-result v1
+
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-virtual {v4}, Ljava/lang/String;->length()I
+
+    move-result v4
+
+    new-instance v5, Ljava/lang/StringBuilder;
+
+    add-int/lit8 v1, v1, 0x39
+
+    add-int/2addr v1, v4
+
+    invoke-direct {v5, v1}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string v1, "keys required to be distinct but compared as equal: "
+
+    invoke-virtual {v5, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v5, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v1, " and "
+
+    invoke-virtual {v5, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v5, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-direct {v2, v0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw v2
+
+    :cond_1
+    :goto_1
+    iget-object v3, p0, Loph;->c:[Ljava/lang/Object;
+
+    aget-object v3, v3, v1
+
+    invoke-virtual {v3}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    iget-object v4, p0, Loph;->e:Ljava/util/Comparator;
+
+    invoke-static {v0, v3, v4}, Ljava/util/Arrays;->binarySearch([Ljava/lang/Object;Ljava/lang/Object;Ljava/util/Comparator;)I
+
+    move-result v3
+
+    iget-object v4, p0, Loph;->d:[Ljava/lang/Object;
+
+    aget-object v4, v4, v1
+
+    invoke-virtual {v4}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    aput-object v4, v2, v3
+
+    add-int/lit8 v1, v1, 0x1
+
+    goto :goto_0
+
+    :cond_2
+    new-instance v1, Lopj;
+
+    new-instance v3, Lory;
+
+    invoke-static {v0}, Loom;->g([Ljava/lang/Object;)Loom;
+
+    move-result-object v0
+
+    iget-object v4, p0, Loph;->e:Ljava/util/Comparator;
+
+    invoke-direct {v3, v0, v4}, Lory;-><init>(Loom;Ljava/util/Comparator;)V
+
+    invoke-static {v2}, Loom;->g([Ljava/lang/Object;)Loom;
+
+    move-result-object v0
+
+    invoke-direct {v1, v3, v0}, Lopj;-><init>(Lory;Loom;)V
+
+    return-object v1
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
+.end method
+
+.method public final synthetic b()Loor;
+    .locals 1
+
+    invoke-virtual {p0}, Loph;->a()Lopj;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public final bridge synthetic c()Loor;
+    .locals 1
+
+    invoke-virtual {p0}, Loph;->a()Lopj;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public final d(Ljava/lang/Object;Ljava/lang/Object;)V
+    .locals 2
+
+    iget v0, p0, Loph;->b:I
+
+    add-int/lit8 v0, v0, 0x1
+
+    iget-object v1, p0, Loph;->c:[Ljava/lang/Object;
+
+    array-length v1, v1
+
+    if-le v0, v1, :cond_0
+
+    invoke-static {v1, v0}, Looc;->a(II)I
+
+    move-result v0
+
+    iget-object v1, p0, Loph;->c:[Ljava/lang/Object;
+
+    invoke-static {v1, v0}, Ljava/util/Arrays;->copyOf([Ljava/lang/Object;I)[Ljava/lang/Object;
+
+    move-result-object v1
+
+    iput-object v1, p0, Loph;->c:[Ljava/lang/Object;
+
+    iget-object v1, p0, Loph;->d:[Ljava/lang/Object;
+
+    invoke-static {v1, v0}, Ljava/util/Arrays;->copyOf([Ljava/lang/Object;I)[Ljava/lang/Object;
+
+    move-result-object v0
+
+    iput-object v0, p0, Loph;->d:[Ljava/lang/Object;
+
+    :cond_0
+    invoke-static {p1, p2}, Lohh;->S(Ljava/lang/Object;Ljava/lang/Object;)V
+
+    iget-object v0, p0, Loph;->c:[Ljava/lang/Object;
+
+    iget v1, p0, Loph;->b:I
+
+    aput-object p1, v0, v1
+
+    iget-object p1, p0, Loph;->d:[Ljava/lang/Object;
+
+    aput-object p2, p1, v1
+
+    add-int/lit8 v1, v1, 0x1
+
+    iput v1, p0, Loph;->b:I
+
+    return-void
+.end method
+
+.method public final bridge synthetic e(Ljava/lang/Object;Ljava/lang/Object;)V
+    .locals 0
+
+    invoke-virtual {p0, p1, p2}, Loph;->d(Ljava/lang/Object;Ljava/lang/Object;)V
+
+    return-void
 .end method

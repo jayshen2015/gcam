@@ -1,54 +1,107 @@
-.class public final Lgyn;
-.super Lgyy;
+.class public final synthetic Lgyn;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Llij;
+
+
+# instance fields
+.field public final synthetic a:Lgyr;
+
+.field public final synthetic b:Llnc;
 
 
 # direct methods
-.method public constructor <init>(Lgzi;)V
-    .locals 1
+.method public synthetic constructor <init>(Lgyr;Llnc;)V
+    .locals 0
 
-    const-string v0, "pref_link_first_time_chip_click_ms"
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0, p1, v0}, Lgyy;-><init>(Lgzi;Ljava/lang/String;)V
+    iput-object p1, p0, Lgyn;->a:Lgyr;
+
+    iput-object p2, p0, Lgyn;->b:Llnc;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final bridge synthetic bn(Ljava/lang/Object;)V
-    .locals 4
+.method public final fB(Ljava/lang/Object;)V
+    .locals 3
 
-    check-cast p1, Ljava/lang/Long;
+    iget-object v0, p0, Lgyn;->a:Lgyr;
 
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    iget-object v1, p0, Lgyn;->b:Llnc;
 
-    iget-object v0, p0, Lgyn;->a:Lgzi;
+    check-cast p1, Ljava/lang/Boolean;
 
-    iget-object v1, p0, Lgyn;->b:Ljava/lang/String;
+    monitor-enter v0
 
-    invoke-virtual {p1}, Ljava/lang/Long;->longValue()J
+    :try_start_0
+    iget-boolean v2, v0, Lgyr;->f:Z
 
-    move-result-wide v2
+    if-eqz v2, :cond_0
 
-    invoke-virtual {v0, v1, v2, v3}, Lgzi;->j(Ljava/lang/String;J)V
+    monitor-exit v0
 
     return-void
-.end method
 
-.method protected final bridge synthetic c()Ljava/lang/Object;
-    .locals 2
+    :cond_0
+    invoke-virtual {p1}, Ljava/lang/Boolean;->booleanValue()Z
 
-    iget-object v0, p0, Lgyn;->a:Lgzi;
+    move-result p1
 
-    iget-object v1, p0, Lgyn;->b:Ljava/lang/String;
+    if-eqz p1, :cond_1
 
-    invoke-virtual {v0, v1}, Lgzi;->c(Ljava/lang/String;)J
+    iget-object p1, v0, Lgyr;->e:Llmv;
 
-    move-result-wide v0
+    iget-object v1, v0, Lgyr;->c:Llmv;
 
-    invoke-static {v0, v1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+    invoke-virtual {p1, v1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
 
-    move-result-object v0
+    move-result p1
 
-    return-object v0
+    if-eqz p1, :cond_2
+
+    invoke-virtual {v0}, Lgyr;->r()Llmv;
+
+    move-result-object p1
+
+    iput-object p1, v0, Lgyr;->e:Llmv;
+
+    goto :goto_0
+
+    :cond_1
+    iget-object p1, v0, Lgyr;->e:Llmv;
+
+    iget-object v2, v0, Lgyr;->g:Llmu;
+
+    invoke-interface {p1, v2}, Llmv;->l(Llmu;)V
+
+    iget-object p1, v0, Lgyr;->e:Llmv;
+
+    invoke-static {v1, p1}, Lfvq;->x(Llnc;Llmv;)V
+
+    iget-object p1, v0, Lgyr;->e:Llmv;
+
+    invoke-interface {p1}, Llmv;->close()V
+
+    iget-object p1, v0, Lgyr;->c:Llmv;
+
+    iput-object p1, v0, Lgyr;->e:Llmv;
+
+    :cond_2
+    :goto_0
+    monitor-exit v0
+
+    return-void
+
+    :catchall_0
+    move-exception p1
+
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw p1
 .end method

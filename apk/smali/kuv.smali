@@ -1,151 +1,151 @@
-.class public final Lkuv;
+.class final Lkuv;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lkus;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field public final a:Landroid/net/wifi/WifiConfiguration;
+.field final synthetic a:Lkvk;
 
-.field private final b:Landroid/net/wifi/WifiManager;
-
-.field private c:Z
-
-.field private final d:Ldne;
-
-.field private final e:Lloi;
+.field final synthetic b:Lkuw;
 
 
 # direct methods
-.method public constructor <init>(Landroid/net/wifi/WifiManager;Ldne;Landroid/net/wifi/WifiConfiguration;Lloi;[B[B)V
+.method public constructor <init>(Lkuw;Lkvk;)V
     .locals 0
 
+    iput-object p1, p0, Lkuv;->b:Lkuw;
+
+    iput-object p2, p0, Lkuv;->a:Lkvk;
+
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lkuv;->b:Landroid/net/wifi/WifiManager;
-
-    iput-object p2, p0, Lkuv;->d:Ldne;
-
-    iput-object p3, p0, Lkuv;->a:Landroid/net/wifi/WifiConfiguration;
-
-    iput-object p4, p0, Lkuv;->e:Lloi;
-
-    const/4 p1, 0x0
-
-    iput-boolean p1, p0, Lkuv;->c:Z
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final b()V
-    .locals 5
+.method public final run()V
+    .locals 3
 
-    iget-boolean v0, p0, Lkuv;->c:Z
+    iget-object v0, p0, Lkuv;->a:Lkvk;
 
-    const/4 v1, 0x0
+    check-cast v0, Lkvp;
 
-    if-eqz v0, :cond_0
+    iget-boolean v0, v0, Lkvp;->c:Z
 
-    sget-object v0, Llug;->a:Llug;
+    if-eqz v0, :cond_1
 
-    new-array v1, v1, [Ljava/lang/Object;
+    iget-object v0, p0, Lkuv;->b:Lkuw;
 
-    const-class v2, Lkuv;
+    iget-object v0, v0, Lkuw;->b:Lkvp;
 
-    const-string v3, "act() was called more than once."
+    iget-object v1, v0, Lkvp;->a:Ljava/lang/Object;
 
-    invoke-virtual {v0, v2, v3, v1}, Llug;->c(Ljava/lang/Object;Ljava/lang/String;[Ljava/lang/Object;)V
+    monitor-enter v1
+
+    :try_start_0
+    iget-boolean v2, v0, Lkvp;->b:Z
+
+    if-eqz v2, :cond_0
+
+    monitor-exit v1
 
     return-void
 
     :cond_0
-    const/4 v0, 0x1
+    const/4 v2, 0x1
 
-    iput-boolean v0, p0, Lkuv;->c:Z
+    iput-boolean v2, v0, Lkvp;->b:Z
 
-    iget-object v2, p0, Lkuv;->b:Landroid/net/wifi/WifiManager;
+    iput-boolean v2, v0, Lkvp;->c:Z
 
-    invoke-virtual {v2, v0}, Landroid/net/wifi/WifiManager;->setWifiEnabled(Z)Z
+    monitor-exit v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    iget-object v2, p0, Lkuv;->b:Landroid/net/wifi/WifiManager;
+    iget-object v1, v0, Lkvp;->f:Lofh;
 
-    iget-object v3, p0, Lkuv;->a:Landroid/net/wifi/WifiConfiguration;
+    invoke-virtual {v1, v0}, Lofh;->d(Lkvk;)V
 
-    invoke-virtual {v2, v3}, Landroid/net/wifi/WifiManager;->addNetwork(Landroid/net/wifi/WifiConfiguration;)I
+    return-void
 
-    move-result v2
+    :catchall_0
+    move-exception v0
 
-    const/4 v3, -0x1
+    :try_start_1
+    monitor-exit v1
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    const v4, 0x7f140450
-
-    if-ne v2, v3, :cond_1
-
-    iget-object v2, p0, Lkuv;->d:Ldne;
-
-    new-array v0, v0, [Ljava/lang/Object;
-
-    iget-object v3, p0, Lkuv;->a:Landroid/net/wifi/WifiConfiguration;
-
-    iget-object v3, v3, Landroid/net/wifi/WifiConfiguration;->SSID:Ljava/lang/String;
-
-    aput-object v3, v0, v1
-
-    invoke-virtual {v2, v4, v0}, Ldne;->m(I[Ljava/lang/Object;)V
-
-    goto :goto_0
+    throw v0
 
     :cond_1
-    iget-object v3, p0, Lkuv;->b:Landroid/net/wifi/WifiManager;
+    :try_start_2
+    iget-object v0, p0, Lkuv;->b:Lkuw;
 
-    invoke-virtual {v3, v2, v0}, Landroid/net/wifi/WifiManager;->enableNetwork(IZ)Z
+    iget-object v0, v0, Lkuw;->a:Lkuu;
 
-    move-result v2
+    iget-object v1, p0, Lkuv;->a:Lkvk;
 
-    if-eqz v2, :cond_2
+    invoke-interface {v0, v1}, Lkuu;->a(Lkvk;)Ljava/lang/Object;
 
-    iget-object v2, p0, Lkuv;->d:Ldne;
+    move-result-object v0
+    :try_end_2
+    .catch Lkvj; {:try_start_2 .. :try_end_2} :catch_1
+    .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_0
 
-    new-array v0, v0, [Ljava/lang/Object;
+    iget-object v1, p0, Lkuv;->b:Lkuw;
 
-    iget-object v3, p0, Lkuv;->a:Landroid/net/wifi/WifiConfiguration;
+    iget-object v1, v1, Lkuw;->b:Lkvp;
 
-    iget-object v3, v3, Landroid/net/wifi/WifiConfiguration;->SSID:Ljava/lang/String;
+    invoke-virtual {v1, v0}, Lkvp;->l(Ljava/lang/Object;)V
 
-    aput-object v3, v0, v1
+    return-void
 
-    const v1, 0x7f140456
+    :catch_0
+    move-exception v0
 
-    invoke-virtual {v2, v1, v0}, Ldne;->m(I[Ljava/lang/Object;)V
+    iget-object v1, p0, Lkuv;->b:Lkuw;
 
-    goto :goto_0
+    iget-object v1, v1, Lkuw;->b:Lkvp;
+
+    invoke-virtual {v1, v0}, Lkvp;->k(Ljava/lang/Exception;)V
+
+    return-void
+
+    :catch_1
+    move-exception v0
+
+    invoke-virtual {v0}, Lkvj;->getCause()Ljava/lang/Throwable;
+
+    move-result-object v1
+
+    instance-of v1, v1, Ljava/lang/Exception;
+
+    if-eqz v1, :cond_2
+
+    iget-object v1, p0, Lkuv;->b:Lkuw;
+
+    iget-object v1, v1, Lkuw;->b:Lkvp;
+
+    invoke-virtual {v0}, Lkvj;->getCause()Ljava/lang/Throwable;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/Exception;
+
+    invoke-virtual {v1, v0}, Lkvp;->k(Ljava/lang/Exception;)V
+
+    return-void
 
     :cond_2
-    iget-object v2, p0, Lkuv;->d:Ldne;
+    iget-object v1, p0, Lkuv;->b:Lkuw;
 
-    new-array v0, v0, [Ljava/lang/Object;
+    iget-object v1, v1, Lkuw;->b:Lkvp;
 
-    iget-object v3, p0, Lkuv;->a:Landroid/net/wifi/WifiConfiguration;
-
-    iget-object v3, v3, Landroid/net/wifi/WifiConfiguration;->SSID:Ljava/lang/String;
-
-    aput-object v3, v0, v1
-
-    invoke-virtual {v2, v4, v0}, Ldne;->m(I[Ljava/lang/Object;)V
-
-    :goto_0
-    iget-object v0, p0, Lkuv;->e:Lloi;
-
-    new-instance v1, Landroid/content/Intent;
-
-    const-string v2, "android.settings.WIFI_SETTINGS"
-
-    invoke-direct {v1, v2}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v0, v1}, Lloi;->k(Landroid/content/Intent;)V
+    invoke-virtual {v1, v0}, Lkvp;->k(Ljava/lang/Exception;)V
 
     return-void
 .end method

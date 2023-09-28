@@ -1,17 +1,38 @@
-.class public final Ljax;
-.super Lcbe;
+.class final Ljax;
+.super Leg;
 
-# interfaces
-.implements Landroid/os/IInterface;
+
+# instance fields
+.field final synthetic a:Ljay;
 
 
 # direct methods
-.method public constructor <init>(Landroid/os/IBinder;)V
+.method public constructor <init>(Ljay;)V
+    .locals 0
+
+    iput-object p1, p0, Ljax;->a:Ljay;
+
+    invoke-direct {p0}, Leg;-><init>()V
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public final a(Landroid/graphics/Typeface;)V
     .locals 1
 
-    const-string v0, "com.google.android.gms.auth.api.signin.internal.ISignInService"
+    iget-object v0, p0, Ljax;->a:Ljay;
 
-    invoke-direct {p0, p1, v0}, Lcbe;-><init>(Landroid/os/IBinder;Ljava/lang/String;)V
+    iget-object v0, v0, Ljay;->d:Landroid/widget/TextView;
+
+    invoke-virtual {v0, p1}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
+
+    return-void
+.end method
+
+.method public final e()V
+    .locals 0
 
     return-void
 .end method

@@ -1,110 +1,67 @@
-.class abstract Lmyf;
-.super Lmze;
+.class public final synthetic Lmyf;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Lpgj;
+
+
+# instance fields
+.field public final synthetic a:Lmyi;
+
+.field public final synthetic b:Ljava/util/concurrent/atomic/AtomicInteger;
+
+.field public final synthetic c:I
 
 
 # direct methods
-.method public constructor <init>()V
+.method public synthetic constructor <init>(Lmyi;Ljava/util/concurrent/atomic/AtomicInteger;I)V
     .locals 0
 
-    invoke-direct {p0}, Lmze;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lmyf;->a:Lmyi;
+
+    iput-object p2, p0, Lmyf;->b:Ljava/util/concurrent/atomic/AtomicInteger;
+
+    iput p3, p0, Lmyf;->c:I
 
     return-void
 .end method
 
 
 # virtual methods
-.method public abstract a()Lmyb;
-.end method
-
-.method public final clear()V
-    .locals 1
-
-    invoke-virtual {p0}, Lmyf;->a()Lmyb;
-
-    move-result-object v0
-
-    invoke-interface {v0}, Lmyb;->clear()V
-
-    return-void
-.end method
-
-.method public final contains(Ljava/lang/Object;)Z
+.method public final a()Lpht;
     .locals 3
 
-    instance-of v0, p1, Lmya;
+    iget-object v0, p0, Lmyf;->a:Lmyi;
 
-    const/4 v1, 0x0
+    iget-object v1, p0, Lmyf;->b:Ljava/util/concurrent/atomic/AtomicInteger;
 
-    if-eqz v0, :cond_1
+    iget v2, p0, Lmyf;->c:I
 
-    check-cast p1, Lmya;
+    invoke-virtual {v1}, Ljava/util/concurrent/atomic/AtomicInteger;->getAndDecrement()I
 
-    invoke-interface {p1}, Lmya;->a()I
+    move-result v1
 
-    move-result v0
+    if-gtz v1, :cond_0
 
-    if-gtz v0, :cond_0
+    sget-object v0, Lphq;->a:Lpht;
 
-    return v1
+    goto :goto_0
 
     :cond_0
-    invoke-virtual {p0}, Lmyf;->a()Lmyb;
+    iget-object v1, v0, Lmyi;->c:Lpyn;
 
-    move-result-object v0
-
-    invoke-interface {p1}, Lmya;->b()Ljava/lang/Object;
-
-    move-result-object v2
-
-    invoke-interface {v0, v2}, Lmyb;->cw(Ljava/lang/Object;)I
-
-    move-result v0
-
-    invoke-interface {p1}, Lmya;->a()I
-
-    move-result p1
-
-    if-ne v0, p1, :cond_1
-
-    const/4 p1, 0x1
-
-    return p1
-
-    :cond_1
-    return v1
-.end method
-
-.method public final remove(Ljava/lang/Object;)Z
-    .locals 2
-
-    instance-of v0, p1, Lmya;
-
-    if-eqz v0, :cond_0
-
-    check-cast p1, Lmya;
-
-    invoke-interface {p1}, Lmya;->b()Ljava/lang/Object;
-
-    move-result-object v0
-
-    invoke-interface {p1}, Lmya;->a()I
-
-    move-result p1
-
-    if-eqz p1, :cond_0
-
-    invoke-virtual {p0}, Lmyf;->a()Lmyb;
+    invoke-interface {v1}, Lpyn;->get()Ljava/lang/Object;
 
     move-result-object v1
 
-    invoke-interface {v1, v0, p1}, Lmyb;->i(Ljava/lang/Object;I)Z
+    check-cast v1, Lmyd;
 
-    move-result p1
+    invoke-virtual {v0, v2, v1}, Lmyi;->f(ILmyd;)Lpht;
 
-    return p1
+    move-result-object v0
 
-    :cond_0
-    const/4 p1, 0x0
-
-    return p1
+    :goto_0
+    return-object v0
 .end method

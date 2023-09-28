@@ -1,70 +1,133 @@
-.class public final Ljan;
-.super Ljas;
+.class final Ljan;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Lbkw;
 
 
 # instance fields
-.field final synthetic a:Landroid/content/Context;
+.field final synthetic a:Ljap;
 
-.field final synthetic b:Lcom/google/android/gms/auth/api/signin/GoogleSignInOptions;
+.field private final synthetic b:I
 
 
 # direct methods
-.method public constructor <init>(Ljdh;Landroid/content/Context;Lcom/google/android/gms/auth/api/signin/GoogleSignInOptions;)V
+.method public constructor <init>(Ljap;I)V
     .locals 0
 
-    iput-object p2, p0, Ljan;->a:Landroid/content/Context;
+    iput p2, p0, Ljan;->b:I
 
-    iput-object p3, p0, Ljan;->b:Lcom/google/android/gms/auth/api/signin/GoogleSignInOptions;
+    iput-object p1, p0, Ljan;->a:Ljap;
 
-    invoke-direct {p0, p1}, Ljas;-><init>(Ljdh;)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method protected final bridge synthetic a(Lcom/google/android/gms/common/api/Status;)Ljdq;
-    .locals 3
+.method public final l(Lbcg;)V
+    .locals 1
 
-    new-instance v0, Ljqu;
+    iget p1, p0, Ljan;->b:I
 
-    const/4 v1, 0x0
+    packed-switch p1, :pswitch_data_0
 
-    const/4 v2, 0x1
+    iget-object p1, p0, Ljan;->a:Ljap;
 
-    invoke-direct {v0, v1, p1, v2}, Ljqu;-><init>(Lcom/google/android/gms/auth/api/signin/GoogleSignInAccount;Lcom/google/android/gms/common/api/Status;I)V
+    iget-object p1, p1, Ljap;->b:Lcom/google/android/apps/camera/ui/eduimageview/EduImageView;
 
-    return-object v0
-.end method
+    iget-object p1, p1, Lcom/google/android/apps/camera/ui/eduimageview/EduImageView;->a:Landroid/widget/ImageView;
 
-.method protected final bridge synthetic b(Ljcu;)V
-    .locals 3
+    sget-object v0, Ljao;->a:Ljao;
 
-    check-cast p1, Ljal;
+    invoke-virtual {p1, v0}, Landroid/widget/ImageView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    invoke-virtual {p1}, Ljgb;->u()Landroid/os/IInterface;
+    iget-object p1, p0, Ljan;->a:Ljap;
 
-    move-result-object p1
+    invoke-virtual {p1}, Ljap;->c()V
 
-    check-cast p1, Ljax;
+    return-void
+
+    :pswitch_0
+    iget-object p1, p0, Ljan;->a:Ljap;
+
+    iget-object p1, p1, Ljap;->b:Lcom/google/android/apps/camera/ui/eduimageview/EduImageView;
+
+    iget-object p1, p1, Lcom/google/android/apps/camera/ui/eduimageview/EduImageView;->a:Landroid/widget/ImageView;
+
+    const/4 v0, 0x2
+
+    invoke-virtual {p1, v0}, Landroid/widget/ImageView;->setImportantForAccessibility(I)V
+
+    return-void
+
+    :pswitch_1
+    iget-object p1, p0, Ljan;->a:Ljap;
+
+    iget-object p1, p1, Ljap;->b:Lcom/google/android/apps/camera/ui/eduimageview/EduImageView;
+
+    iget-object p1, p1, Lcom/google/android/apps/camera/ui/eduimageview/EduImageView;->a:Landroid/widget/ImageView;
 
     new-instance v0, Ljam;
 
     invoke-direct {v0, p0}, Ljam;-><init>(Ljan;)V
 
-    iget-object v1, p0, Ljan;->b:Lcom/google/android/gms/auth/api/signin/GoogleSignInOptions;
+    invoke-virtual {p1, v0}, Landroid/widget/ImageView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    invoke-virtual {p1}, Lcbe;->a()Landroid/os/Parcel;
+    iget-object p1, p0, Ljan;->a:Ljap;
 
-    move-result-object v2
-
-    invoke-static {v2, v0}, Lcbg;->d(Landroid/os/Parcel;Landroid/os/IInterface;)V
-
-    invoke-static {v2, v1}, Lcbg;->c(Landroid/os/Parcel;Landroid/os/Parcelable;)V
-
-    const/16 v0, 0x65
-
-    invoke-virtual {p1, v0, v2}, Lcbe;->z(ILandroid/os/Parcel;)V
+    invoke-virtual {p1}, Ljap;->c()V
 
     return-void
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
+.end method
+
+.method public final synthetic m(Ljava/lang/Object;)V
+    .locals 1
+
+    iget v0, p0, Ljan;->b:I
+
+    packed-switch v0, :pswitch_data_0
+
+    check-cast p1, Landroid/graphics/drawable/Drawable;
+
+    iget-object p1, p0, Ljan;->a:Ljap;
+
+    invoke-virtual {p1}, Ljap;->a()V
+
+    return-void
+
+    :pswitch_0
+    check-cast p1, Landroid/graphics/drawable/Drawable;
+
+    iget-object p1, p0, Ljan;->a:Ljap;
+
+    invoke-virtual {p1}, Ljap;->a()V
+
+    return-void
+
+    :pswitch_1
+    check-cast p1, Landroid/graphics/drawable/Drawable;
+
+    iget-object p1, p0, Ljan;->a:Ljap;
+
+    invoke-virtual {p1}, Ljap;->a()V
+
+    return-void
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method

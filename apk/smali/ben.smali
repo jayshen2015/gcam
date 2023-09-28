@@ -1,46 +1,47 @@
 .class public final Lben;
 .super Ljava/lang/Object;
 
-
-# static fields
-.field public static final a:Ljava/lang/String;
+# interfaces
+.implements Lbfg;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
+.method public constructor <init>()V
+    .locals 0
 
-    const-string v0, "ConstraintTrkngWrkr"
-
-    invoke-static {v0}, Laxq;->b(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v0
-
-    sput-object v0, Lben;->a:Ljava/lang/String;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
-.method public static final a(Lbej;)V
-    .locals 1
 
-    invoke-static {}, Ldr;->c()Ldr;
+# virtual methods
+.method public final bridge synthetic a(Ljava/lang/Object;IILazt;)Lbff;
+    .locals 0
 
-    move-result-object v0
+    check-cast p1, Ljava/io/File;
 
-    invoke-virtual {p0, v0}, Lbej;->h(Ljava/lang/Object;)V
+    new-instance p2, Lbff;
 
-    return-void
+    new-instance p3, Lblo;
+
+    invoke-direct {p3, p1}, Lblo;-><init>(Ljava/lang/Object;)V
+
+    new-instance p4, Lbem;
+
+    invoke-direct {p4, p1}, Lbem;-><init>(Ljava/io/File;)V
+
+    invoke-direct {p2, p3, p4}, Lbff;-><init>(Lazp;Lbac;)V
+
+    return-object p2
 .end method
 
-.method public static final b(Lbej;)V
-    .locals 1
+.method public final bridge synthetic b(Ljava/lang/Object;)Z
+    .locals 0
 
-    invoke-static {}, Ldr;->d()Ldr;
+    check-cast p1, Ljava/io/File;
 
-    move-result-object v0
+    const/4 p1, 0x1
 
-    invoke-virtual {p0, v0}, Lbej;->h(Ljava/lang/Object;)V
-
-    return-void
+    return p1
 .end method

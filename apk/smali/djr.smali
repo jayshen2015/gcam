@@ -1,51 +1,47 @@
-.class public final Ldjr;
+.class final Ldjr;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Logk;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field private final a:Loiw;
+.field final synthetic a:Ljava/lang/String;
+
+.field final synthetic b:Ldjs;
 
 
 # direct methods
-.method public constructor <init>(Loiw;)V
+.method public constructor <init>(Ldjs;Ljava/lang/String;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Ldjr;->b:Ldjs;
 
-    iput-object p1, p0, Ldjr;->a:Loiw;
+    iput-object p2, p0, Ldjr;->a:Ljava/lang/String;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Lbkc;
-    .locals 2
+.method public final run()V
+    .locals 3
 
-    iget-object v0, p0, Ldjr;->a:Loiw;
+    iget-object v0, p0, Ldjr;->b:Ldjs;
 
-    check-cast v0, Lfed;
+    iget-object v0, v0, Ldjs;->a:Landroid/content/Context;
 
-    invoke-virtual {v0}, Lfed;->a()Lfec;
+    iget-object v1, p0, Ldjr;->a:Ljava/lang/String;
 
-    move-result-object v0
+    const/4 v2, 0x1
 
-    new-instance v1, Lbkc;
-
-    invoke-direct {v1, v0}, Lbkc;-><init>(Lfec;)V
-
-    return-object v1
-.end method
-
-.method public final bridge synthetic get()Ljava/lang/Object;
-    .locals 1
-
-    invoke-virtual {p0}, Ldjr;->a()Lbkc;
+    invoke-static {v0, v1, v2}, Landroid/widget/Toast;->makeText(Landroid/content/Context;Ljava/lang/CharSequence;I)Landroid/widget/Toast;
 
     move-result-object v0
 
-    return-object v0
+    invoke-virtual {v0}, Landroid/widget/Toast;->show()V
+
+    return-void
 .end method

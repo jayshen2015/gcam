@@ -1,75 +1,37 @@
-.class public final Lif;
-.super Lkw;
+.class final Lif;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Lajl;
 
 
 # instance fields
-.field public a:Z
-    .annotation runtime Landroid/view/ViewDebug$ExportedProperty;
-    .end annotation
-.end field
-
-.field public b:I
-    .annotation runtime Landroid/view/ViewDebug$ExportedProperty;
-    .end annotation
-.end field
-
-.field public c:I
-    .annotation runtime Landroid/view/ViewDebug$ExportedProperty;
-    .end annotation
-.end field
-
-.field public d:Z
-    .annotation runtime Landroid/view/ViewDebug$ExportedProperty;
-    .end annotation
-.end field
-
-.field public e:Z
-    .annotation runtime Landroid/view/ViewDebug$ExportedProperty;
-    .end annotation
-.end field
-
-.field public f:Z
+.field final synthetic a:Lih;
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 1
+.method public constructor <init>(Lih;)V
+    .locals 0
 
-    const/4 v0, -0x2
+    iput-object p1, p0, Lif;->a:Lih;
 
-    invoke-direct {p0, v0}, Lkw;-><init>(I)V
-
-    const/4 v0, 0x0
-
-    iput-boolean v0, p0, Lif;->a:Z
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
-.method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
-    .locals 0
 
-    invoke-direct {p0, p1, p2}, Lkw;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
+# virtual methods
+.method public final a()Landroid/os/Bundle;
+    .locals 2
 
-    return-void
-.end method
+    new-instance v0, Landroid/os/Bundle;
 
-.method public constructor <init>(Landroid/view/ViewGroup$LayoutParams;)V
-    .locals 0
+    invoke-direct {v0}, Landroid/os/Bundle;-><init>()V
 
-    invoke-direct {p0, p1}, Lkw;-><init>(Landroid/view/ViewGroup$LayoutParams;)V
+    iget-object v1, p0, Lif;->a:Lih;
 
-    return-void
-.end method
+    invoke-virtual {v1}, Lih;->g()Lii;
 
-.method public constructor <init>(Lif;)V
-    .locals 0
-
-    invoke-direct {p0, p1}, Lkw;-><init>(Landroid/view/ViewGroup$LayoutParams;)V
-
-    iget-boolean p1, p1, Lif;->a:Z
-
-    iput-boolean p1, p0, Lif;->a:Z
-
-    return-void
+    return-object v0
 .end method

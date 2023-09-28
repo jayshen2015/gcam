@@ -1,76 +1,65 @@
 .class public final Ldhz;
 .super Ljava/lang/Object;
 
-
-# static fields
-.field public static final a:Ldhj;
-
-.field public static final b:Ldhj;
-
-.field public static final c:Ldhj;
+# interfaces
+.implements Ldib;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
+.method public constructor <init>()V
+    .locals 0
 
-    new-instance v0, Lnoc;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {v0}, Lnoc;-><init>()V
+    return-void
+.end method
 
-    const-string v1, "camera.optbar.hdr"
 
-    iput-object v1, v0, Lnoc;->b:Ljava/lang/Object;
+# virtual methods
+.method public final b()V
+    .locals 0
 
-    new-instance v0, Lnoc;
+    return-void
+.end method
 
-    invoke-direct {v0}, Lnoc;-><init>()V
+.method public final c(JLjava/lang/String;)V
+    .locals 0
 
-    const-string v1, "default_aspect_ratio"
+    return-void
+.end method
 
-    iput-object v1, v0, Lnoc;->b:Ljava/lang/Object;
+.method public final d(JLjava/lang/String;)V
+    .locals 0
 
-    invoke-virtual {v0}, Lnoc;->t()Ldhj;
+    return-void
+.end method
 
-    move-result-object v0
+.method public final e(J)V
+    .locals 0
 
-    sput-object v0, Ldhz;->a:Ldhj;
+    return-void
+.end method
 
-    new-instance v0, Lnoc;
+.method public final f(J)V
+    .locals 0
 
-    invoke-direct {v0}, Lnoc;-><init>()V
+    return-void
+.end method
 
-    const-string v1, "camera.use_video_resolution_option"
+.method public final g(JLjava/lang/Integer;)V
+    .locals 0
 
-    iput-object v1, v0, Lnoc;->b:Ljava/lang/Object;
+    return-void
+.end method
 
-    invoke-virtual {v0}, Lnoc;->t()Ldhj;
+.method public final h(J)V
+    .locals 0
 
-    move-result-object v0
+    return-void
+.end method
 
-    sput-object v0, Ldhz;->b:Ldhj;
-
-    new-instance v0, Lnoc;
-
-    invoke-direct {v0}, Lnoc;-><init>()V
-
-    const-string v1, "camera.optbar.show_auto_flash_option"
-
-    iput-object v1, v0, Lnoc;->b:Ljava/lang/Object;
-
-    invoke-virtual {v0}, Lnoc;->r()Ldhj;
-
-    move-result-object v0
-
-    sput-object v0, Ldhz;->c:Ldhj;
-
-    new-instance v0, Lnoc;
-
-    invoke-direct {v0}, Lnoc;-><init>()V
-
-    const-string v1, "camera.optbar.log"
-
-    iput-object v1, v0, Lnoc;->b:Ljava/lang/Object;
+.method public final i(Lhsq;)V
+    .locals 0
 
     return-void
 .end method

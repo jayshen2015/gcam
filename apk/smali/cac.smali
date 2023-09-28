@@ -1,22 +1,20 @@
 .class public final Lcac;
-.super Ljava/lang/Object;
-
-
-# static fields
-.field public static final a:Lbze;
+.super Landroid/widget/FrameLayout;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
+.method public constructor <init>(Landroid/content/Context;)V
+    .locals 1
 
-    new-instance v0, Lbze;
+    invoke-direct {p0, p1}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
 
-    const/4 v1, 0x0
+    const v0, 0x7f060028
 
-    invoke-direct {v0, v1}, Lbze;-><init>([S)V
+    invoke-virtual {p1, v0}, Landroid/content/Context;->getColor(I)I
 
-    sput-object v0, Lcac;->a:Lbze;
+    move-result p1
+
+    invoke-virtual {p0, p1}, Lcac;->setBackgroundColor(I)V
 
     return-void
 .end method

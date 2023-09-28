@@ -1,172 +1,105 @@
-.class public final enum Lhrg;
-.super Ljava/lang/Enum;
+.class public final synthetic Lhrg;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Ljava/lang/Runnable;
 
 
-# static fields
-.field public static final enum a:Lhrg;
+# instance fields
+.field public final synthetic a:Lhri;
 
-.field public static final enum b:Lhrg;
+.field public final synthetic b:[B
 
-.field public static final enum c:Lhrg;
+.field public final synthetic c:Lojc;
 
-.field public static final enum d:Lhrg;
-
-.field public static final enum e:Lhrg;
-
-.field public static final enum f:Lhrg;
-
-.field private static final synthetic g:[Lhrg;
+.field public final synthetic d:Likc;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 13
+.method public synthetic constructor <init>(Lhri;[BLojc;Likc;)V
+    .locals 0
 
-    new-instance v0, Lhrg;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const-string v1, "UNKNOWN"
+    iput-object p1, p0, Lhrg;->a:Lhri;
 
-    const/4 v2, 0x0
+    iput-object p2, p0, Lhrg;->b:[B
 
-    invoke-direct {v0, v1, v2}, Lhrg;-><init>(Ljava/lang/String;I)V
+    iput-object p3, p0, Lhrg;->c:Lojc;
 
-    sput-object v0, Lhrg;->a:Lhrg;
-
-    new-instance v1, Lhrg;
-
-    const-string v3, "OPTICAL_FLOW"
-
-    const/4 v4, 0x1
-
-    invoke-direct {v1, v3, v4}, Lhrg;-><init>(Ljava/lang/String;I)V
-
-    sput-object v1, Lhrg;->b:Lhrg;
-
-    new-instance v3, Lhrg;
-
-    const-string v5, "GYRO"
-
-    const/4 v6, 0x2
-
-    invoke-direct {v3, v5, v6}, Lhrg;-><init>(Ljava/lang/String;I)V
-
-    sput-object v3, Lhrg;->c:Lhrg;
-
-    new-instance v5, Lhrg;
-
-    const-string v7, "GPU_TEMPLATE"
-
-    const/4 v8, 0x3
-
-    invoke-direct {v5, v7, v8}, Lhrg;-><init>(Ljava/lang/String;I)V
-
-    sput-object v5, Lhrg;->d:Lhrg;
-
-    new-instance v7, Lhrg;
-
-    const-string v9, "ML"
-
-    const/4 v10, 0x4
-
-    invoke-direct {v7, v9, v10}, Lhrg;-><init>(Ljava/lang/String;I)V
-
-    sput-object v7, Lhrg;->e:Lhrg;
-
-    new-instance v9, Lhrg;
-
-    const-string v11, "HYBRID"
-
-    const/4 v12, 0x5
-
-    invoke-direct {v9, v11, v12}, Lhrg;-><init>(Ljava/lang/String;I)V
-
-    sput-object v9, Lhrg;->f:Lhrg;
-
-    const/4 v11, 0x6
-
-    new-array v11, v11, [Lhrg;
-
-    aput-object v0, v11, v2
-
-    aput-object v1, v11, v4
-
-    aput-object v3, v11, v6
-
-    aput-object v5, v11, v8
-
-    aput-object v7, v11, v10
-
-    aput-object v9, v11, v12
-
-    sput-object v11, Lhrg;->g:[Lhrg;
+    iput-object p4, p0, Lhrg;->d:Likc;
 
     return-void
 .end method
 
-.method private constructor <init>(Ljava/lang/String;I)V
-    .locals 0
 
-    invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+# virtual methods
+.method public final run()V
+    .locals 7
+
+    iget-object v0, p0, Lhrg;->a:Lhri;
+
+    iget-object v1, p0, Lhrg;->b:[B
+
+    iget-object v2, p0, Lhrg;->c:Lojc;
+
+    iget-object v3, p0, Lhrg;->d:Likc;
+
+    :try_start_0
+    invoke-virtual {v0}, Lhqd;->f()Lhsc;
+
+    move-result-object v4
+
+    iget-object v5, v4, Lhsc;->a:Lmak;
+
+    const-string v6, "REWIND"
+
+    invoke-interface {v5, v6}, Lmak;->h(Ljava/lang/String;)V
+
+    invoke-virtual {v2}, Lojc;->f()Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Lcom/google/android/libraries/camera/exif/ExifInterface;
+
+    iget-object v5, v4, Lhsc;->a:Lmak;
+
+    invoke-static {v1, v2, v5}, Lmip;->P([BLcom/google/android/libraries/camera/exif/ExifInterface;Lmak;)J
+
+    move-result-wide v1
+
+    invoke-virtual {v0}, Lhqd;->k()Liij;
+
+    move-result-object v5
+
+    invoke-interface {v5, v1, v2}, Liij;->e(J)V
+
+    invoke-virtual {v4}, Lhsc;->c()V
+
+    invoke-virtual {v0}, Lhqd;->z()Lpih;
+
+    move-result-object v1
+
+    invoke-virtual {v1, v3}, Lpih;->o(Ljava/lang/Object;)Z
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     return-void
-.end method
 
-.method public static a(I)Lhrg;
-    .locals 0
+    :catchall_0
+    move-exception v1
 
-    packed-switch p0, :pswitch_data_0
+    invoke-virtual {v0}, Lhqd;->f()Lhsc;
 
-    sget-object p0, Lhrg;->a:Lhrg;
+    move-result-object v2
 
-    return-object p0
+    invoke-virtual {v2}, Lhsc;->b()V
 
-    :pswitch_0
-    sget-object p0, Lhrg;->f:Lhrg;
-
-    return-object p0
-
-    :pswitch_1
-    sget-object p0, Lhrg;->e:Lhrg;
-
-    return-object p0
-
-    :pswitch_2
-    sget-object p0, Lhrg;->d:Lhrg;
-
-    return-object p0
-
-    :pswitch_3
-    sget-object p0, Lhrg;->c:Lhrg;
-
-    return-object p0
-
-    :pswitch_4
-    sget-object p0, Lhrg;->b:Lhrg;
-
-    return-object p0
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x1
-        :pswitch_4
-        :pswitch_3
-        :pswitch_2
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
-.end method
-
-.method public static values()[Lhrg;
-    .locals 1
-
-    sget-object v0, Lhrg;->g:[Lhrg;
-
-    invoke-virtual {v0}, [Lhrg;->clone()Ljava/lang/Object;
+    invoke-virtual {v0}, Lhqd;->z()Lpih;
 
     move-result-object v0
 
-    check-cast v0, [Lhrg;
+    invoke-virtual {v0, v1}, Lpih;->a(Ljava/lang/Throwable;)Z
 
-    return-object v0
+    return-void
 .end method

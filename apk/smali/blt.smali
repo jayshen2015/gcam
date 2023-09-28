@@ -1,464 +1,200 @@
-.class public Lblt;
-.super Ljava/lang/Object;
+.class public final Lblt;
+.super Ljava/io/FilterInputStream;
 
 
 # instance fields
-.field private final a:Lbga;
+.field private final a:J
 
-.field public final b:Ljava/lang/Object;
-
-.field public c:Ljava/lang/Object;
-
-.field public final d:Landroid/view/animation/Interpolator;
-
-.field public final e:Landroid/view/animation/Interpolator;
-
-.field public final f:Landroid/view/animation/Interpolator;
-
-.field public final g:F
-
-.field public h:Ljava/lang/Float;
-
-.field public i:F
-
-.field public j:F
-
-.field public k:I
-
-.field public l:I
-
-.field public m:Landroid/graphics/PointF;
-
-.field public n:Landroid/graphics/PointF;
-
-.field private o:F
-
-.field private p:F
+.field private b:I
 
 
 # direct methods
-.method public constructor <init>(Lbga;Ljava/lang/Object;Ljava/lang/Object;Landroid/view/animation/Interpolator;FLjava/lang/Float;)V
-    .locals 1
+.method public constructor <init>(Ljava/io/InputStream;J)V
+    .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0, p1}, Ljava/io/FilterInputStream;-><init>(Ljava/io/InputStream;)V
 
-    const v0, -0x358c9d09
-
-    iput v0, p0, Lblt;->i:F
-
-    iput v0, p0, Lblt;->j:F
-
-    const v0, 0x2ec8fb09
-
-    iput v0, p0, Lblt;->k:I
-
-    iput v0, p0, Lblt;->l:I
-
-    const/4 v0, 0x1
-
-    iput v0, p0, Lblt;->o:F
-
-    iput v0, p0, Lblt;->p:F
-
-    const/4 v0, 0x0
-
-    iput-object v0, p0, Lblt;->m:Landroid/graphics/PointF;
-
-    iput-object v0, p0, Lblt;->n:Landroid/graphics/PointF;
-
-    iput-object p1, p0, Lblt;->a:Lbga;
-
-    iput-object p2, p0, Lblt;->b:Ljava/lang/Object;
-
-    iput-object p3, p0, Lblt;->c:Ljava/lang/Object;
-
-    iput-object p4, p0, Lblt;->d:Landroid/view/animation/Interpolator;
-
-    iput-object v0, p0, Lblt;->e:Landroid/view/animation/Interpolator;
-
-    iput-object v0, p0, Lblt;->f:Landroid/view/animation/Interpolator;
-
-    iput p5, p0, Lblt;->g:F
-
-    iput-object p6, p0, Lblt;->h:Ljava/lang/Float;
+    iput-wide p2, p0, Lblt;->a:J
 
     return-void
 .end method
 
-.method public constructor <init>(Lbga;Ljava/lang/Object;Ljava/lang/Object;Landroid/view/animation/Interpolator;Landroid/view/animation/Interpolator;F)V
-    .locals 1
+.method private final a(I)V
+    .locals 7
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    if-ltz p1, :cond_0
 
-    const v0, -0x358c9d09
+    iget v0, p0, Lblt;->b:I
 
-    iput v0, p0, Lblt;->i:F
+    add-int/2addr v0, p1
 
-    iput v0, p0, Lblt;->j:F
-
-    const v0, 0x2ec8fb09
-
-    iput v0, p0, Lblt;->k:I
-
-    iput v0, p0, Lblt;->l:I
-
-    const/4 v0, 0x1
-
-    iput v0, p0, Lblt;->o:F
-
-    iput v0, p0, Lblt;->p:F
-
-    const/4 v0, 0x0
-
-    iput-object v0, p0, Lblt;->m:Landroid/graphics/PointF;
-
-    iput-object v0, p0, Lblt;->n:Landroid/graphics/PointF;
-
-    iput-object p1, p0, Lblt;->a:Lbga;
-
-    iput-object p2, p0, Lblt;->b:Ljava/lang/Object;
-
-    iput-object p3, p0, Lblt;->c:Ljava/lang/Object;
-
-    iput-object v0, p0, Lblt;->d:Landroid/view/animation/Interpolator;
-
-    iput-object p4, p0, Lblt;->e:Landroid/view/animation/Interpolator;
-
-    iput-object p5, p0, Lblt;->f:Landroid/view/animation/Interpolator;
-
-    iput p6, p0, Lblt;->g:F
-
-    iput-object v0, p0, Lblt;->h:Ljava/lang/Float;
+    iput v0, p0, Lblt;->b:I
 
     return-void
-.end method
 
-.method protected constructor <init>(Lbga;Ljava/lang/Object;Ljava/lang/Object;Landroid/view/animation/Interpolator;Landroid/view/animation/Interpolator;Landroid/view/animation/Interpolator;FLjava/lang/Float;)V
-    .locals 1
+    :cond_0
+    iget-wide v0, p0, Lblt;->a:J
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iget p1, p0, Lblt;->b:I
 
-    const v0, -0x358c9d09
+    int-to-long v2, p1
 
-    iput v0, p0, Lblt;->i:F
+    sub-long v2, v0, v2
 
-    iput v0, p0, Lblt;->j:F
+    const-wide/16 v4, 0x0
 
-    const v0, 0x2ec8fb09
+    cmp-long v6, v2, v4
 
-    iput v0, p0, Lblt;->k:I
-
-    iput v0, p0, Lblt;->l:I
-
-    const/4 v0, 0x1
-
-    iput v0, p0, Lblt;->o:F
-
-    iput v0, p0, Lblt;->p:F
-
-    const/4 v0, 0x0
-
-    iput-object v0, p0, Lblt;->m:Landroid/graphics/PointF;
-
-    iput-object v0, p0, Lblt;->n:Landroid/graphics/PointF;
-
-    iput-object p1, p0, Lblt;->a:Lbga;
-
-    iput-object p2, p0, Lblt;->b:Ljava/lang/Object;
-
-    iput-object p3, p0, Lblt;->c:Ljava/lang/Object;
-
-    iput-object p4, p0, Lblt;->d:Landroid/view/animation/Interpolator;
-
-    iput-object p5, p0, Lblt;->e:Landroid/view/animation/Interpolator;
-
-    iput-object p6, p0, Lblt;->f:Landroid/view/animation/Interpolator;
-
-    iput p7, p0, Lblt;->g:F
-
-    iput-object p8, p0, Lblt;->h:Ljava/lang/Float;
+    if-gtz v6, :cond_1
 
     return-void
-.end method
 
-.method public constructor <init>(Ljava/lang/Object;)V
-    .locals 2
+    :cond_1
+    new-instance v2, Ljava/io/IOException;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance v3, Ljava/lang/StringBuilder;
 
-    const v0, -0x358c9d09
+    const/16 v4, 0x57
 
-    iput v0, p0, Lblt;->i:F
+    invoke-direct {v3, v4}, Ljava/lang/StringBuilder;-><init>(I)V
 
-    iput v0, p0, Lblt;->j:F
+    const-string v4, "Failed to read all expected data, expected: "
 
-    const v0, 0x2ec8fb09
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iput v0, p0, Lblt;->k:I
+    invoke-virtual {v3, v0, v1}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
-    iput v0, p0, Lblt;->l:I
+    const-string v0, ", but read: "
 
-    const/4 v0, 0x1
+    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iput v0, p0, Lblt;->o:F
+    invoke-virtual {v3, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    iput v0, p0, Lblt;->p:F
-
-    const/4 v1, 0x0
-
-    iput-object v1, p0, Lblt;->m:Landroid/graphics/PointF;
-
-    iput-object v1, p0, Lblt;->n:Landroid/graphics/PointF;
-
-    iput-object v1, p0, Lblt;->a:Lbga;
-
-    iput-object p1, p0, Lblt;->b:Ljava/lang/Object;
-
-    iput-object p1, p0, Lblt;->c:Ljava/lang/Object;
-
-    iput-object v1, p0, Lblt;->d:Landroid/view/animation/Interpolator;
-
-    iput-object v1, p0, Lblt;->e:Landroid/view/animation/Interpolator;
-
-    iput-object v1, p0, Lblt;->f:Landroid/view/animation/Interpolator;
-
-    iput v0, p0, Lblt;->g:F
-
-    const p1, 0x7f7fffff    # Float.MAX_VALUE
-
-    invoke-static {p1}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p1
 
-    iput-object p1, p0, Lblt;->h:Ljava/lang/Float;
+    invoke-direct {v2, p1}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
 
-    return-void
+    throw v2
 .end method
 
 
 # virtual methods
-.method public final b()F
-    .locals 3
+.method public final declared-synchronized available()I
+    .locals 4
 
-    iget-object v0, p0, Lblt;->a:Lbga;
+    monitor-enter p0
 
-    const/high16 v1, 0x3f800000    # 1.0f
+    :try_start_0
+    iget-wide v0, p0, Lblt;->a:J
 
-    if-nez v0, :cond_0
+    iget v2, p0, Lblt;->b:I
 
-    return v1
+    int-to-long v2, v2
 
-    :cond_0
-    iget v0, p0, Lblt;->p:F
+    sub-long/2addr v0, v2
 
-    const/4 v2, 0x1
+    iget-object v2, p0, Lblt;->in:Ljava/io/InputStream;
 
-    cmpl-float v2, v0, v2
-
-    if-nez v2, :cond_2
-
-    iget-object v0, p0, Lblt;->h:Ljava/lang/Float;
-
-    if-nez v0, :cond_1
-
-    iput v1, p0, Lblt;->p:F
-
-    goto :goto_0
-
-    :cond_1
-    invoke-virtual {p0}, Lblt;->c()F
-
-    move-result v0
-
-    iget-object v1, p0, Lblt;->h:Ljava/lang/Float;
-
-    invoke-virtual {v1}, Ljava/lang/Float;->floatValue()F
-
-    move-result v1
-
-    iget v2, p0, Lblt;->g:F
-
-    sub-float/2addr v1, v2
-
-    iget-object v2, p0, Lblt;->a:Lbga;
-
-    invoke-virtual {v2}, Lbga;->b()F
+    invoke-virtual {v2}, Ljava/io/InputStream;->available()I
 
     move-result v2
 
-    div-float/2addr v1, v2
+    int-to-long v2, v2
 
-    add-float/2addr v1, v0
+    invoke-static {v0, v1, v2, v3}, Ljava/lang/Math;->max(JJ)J
 
-    iput v1, p0, Lblt;->p:F
+    move-result-wide v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    goto :goto_0
+    long-to-int v1, v0
 
-    :cond_2
-    move v1, v0
+    monitor-exit p0
 
-    :goto_0
     return v1
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit p0
+
+    throw v0
 .end method
 
-.method public final c()F
-    .locals 3
+.method public final declared-synchronized read()I
+    .locals 2
 
-    iget-object v0, p0, Lblt;->a:Lbga;
+    monitor-enter p0
 
-    if-nez v0, :cond_0
-
-    const/4 v0, 0x0
-
-    return v0
-
-    :cond_0
-    iget v1, p0, Lblt;->o:F
-
-    const/4 v2, 0x1
-
-    cmpl-float v2, v1, v2
-
-    if-nez v2, :cond_1
-
-    iget v1, p0, Lblt;->g:F
-
-    iget v2, v0, Lbga;->h:F
-
-    sub-float/2addr v1, v2
-
-    invoke-virtual {v0}, Lbga;->b()F
+    :try_start_0
+    invoke-super {p0}, Ljava/io/FilterInputStream;->read()I
 
     move-result v0
-
-    div-float/2addr v1, v0
-
-    iput v1, p0, Lblt;->o:F
-
-    :cond_1
-    return v1
-.end method
-
-.method public final d(F)Z
-    .locals 1
-
-    invoke-virtual {p0}, Lblt;->c()F
-
-    move-result v0
-
-    cmpl-float v0, p1, v0
 
     if-ltz v0, :cond_0
 
-    invoke-virtual {p0}, Lblt;->b()F
+    const/4 v1, 0x1
 
-    move-result v0
-
-    cmpg-float p1, p1, v0
-
-    if-gez p1, :cond_0
-
-    const/4 p1, 0x1
-
-    return p1
+    goto :goto_0
 
     :cond_0
-    const/4 p1, 0x0
+    const/4 v1, -0x1
+
+    :goto_0
+    invoke-direct {p0, v1}, Lblt;->a(I)V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    monitor-exit p0
+
+    return v0
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit p0
+
+    throw v0
+.end method
+
+.method public final read([B)I
+    .locals 2
+
+    array-length v0, p1
+
+    const/4 v1, 0x0
+
+    invoke-virtual {p0, p1, v1, v0}, Lblt;->read([BII)I
+
+    move-result p1
 
     return p1
 .end method
 
-.method public final e()Z
-    .locals 1
+.method public final declared-synchronized read([BII)I
+    .locals 0
 
-    iget-object v0, p0, Lblt;->d:Landroid/view/animation/Interpolator;
+    monitor-enter p0
 
-    if-nez v0, :cond_0
+    :try_start_0
+    invoke-super {p0, p1, p2, p3}, Ljava/io/FilterInputStream;->read([BII)I
 
-    iget-object v0, p0, Lblt;->e:Landroid/view/animation/Interpolator;
+    move-result p1
 
-    if-nez v0, :cond_0
+    invoke-direct {p0, p1}, Lblt;->a(I)V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    iget-object v0, p0, Lblt;->f:Landroid/view/animation/Interpolator;
+    monitor-exit p0
 
-    if-nez v0, :cond_0
+    return p1
 
-    const/4 v0, 0x1
+    :catchall_0
+    move-exception p1
 
-    return v0
+    monitor-exit p0
 
-    :cond_0
-    const/4 v0, 0x0
-
-    return v0
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .locals 7
-
-    iget-object v0, p0, Lblt;->b:Ljava/lang/Object;
-
-    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v0
-
-    iget-object v1, p0, Lblt;->c:Ljava/lang/Object;
-
-    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v1
-
-    iget v2, p0, Lblt;->g:F
-
-    iget-object v3, p0, Lblt;->h:Ljava/lang/Float;
-
-    iget-object v4, p0, Lblt;->d:Landroid/view/animation/Interpolator;
-
-    invoke-static {v4}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v4
-
-    new-instance v5, Ljava/lang/StringBuilder;
-
-    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v6, "Keyframe{startValue="
-
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v5, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v0, ", endValue="
-
-    invoke-virtual {v5, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v5, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v0, ", startFrame="
-
-    invoke-virtual {v5, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v5, v2}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
-
-    const-string v0, ", endFrame="
-
-    invoke-virtual {v5, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v5, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const-string v0, ", interpolator="
-
-    invoke-virtual {v5, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v5, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v0, "}"
-
-    invoke-virtual {v5, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    return-object v0
+    throw p1
 .end method

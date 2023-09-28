@@ -1,194 +1,157 @@
 .class public final Lozi;
-.super Lnws;
+.super Ljava/lang/Object;
 
 # interfaces
-.implements Lnxz;
+.implements Ljava/io/Closeable;
 
 
 # static fields
-.field public static final f:Lozi;
-
-.field private static volatile g:Lnyf;
+.field public static final a:Lozh;
 
 
 # instance fields
-.field public a:I
+.field final b:Lozh;
 
-.field public b:I
+.field public final c:Ljava/util/Deque;
 
-.field public c:I
-
-.field public d:Lnwy;
-
-.field public e:Lnwy;
+.field public d:Ljava/lang/Throwable;
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 2
+    .locals 3
 
-    new-instance v0, Lozi;
+    const/4 v0, 0x1
 
-    invoke-direct {v0}, Lozi;-><init>()V
+    :try_start_0
+    new-array v0, v0, [Ljava/lang/Class;
 
-    sput-object v0, Lozi;->f:Lozi;
+    const/4 v1, 0x0
 
-    const-class v1, Lozi;
+    const-class v2, Ljava/lang/Throwable;
 
-    invoke-static {v1, v0}, Lnws;->aa(Ljava/lang/Class;Lnws;)V
+    aput-object v2, v0, v1
+
+    const-class v1, Ljava/lang/Throwable;
+
+    const-string v2, "addSuppressed"
+
+    invoke-virtual {v1, v2, v0}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
+
+    move-result-object v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    new-instance v1, Lozg;
+
+    invoke-direct {v1, v0}, Lozg;-><init>(Ljava/lang/reflect/Method;)V
+
+    goto :goto_0
+
+    :catchall_0
+    move-exception v0
+
+    const/4 v1, 0x0
+
+    :goto_0
+    if-nez v1, :cond_0
+
+    sget-object v1, Lozf;->a:Lozf;
+
+    :cond_0
+    sput-object v1, Lozi;->a:Lozh;
 
     return-void
 .end method
 
-.method private constructor <init>()V
-    .locals 1
+.method public constructor <init>(Lozh;)V
+    .locals 2
 
-    invoke-direct {p0}, Lnws;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    sget-object v0, Lnwt;->b:Lnwt;
+    new-instance v0, Ljava/util/ArrayDeque;
 
-    iput-object v0, p0, Lozi;->d:Lnwy;
+    const/4 v1, 0x4
 
-    iput-object v0, p0, Lozi;->e:Lnwy;
+    invoke-direct {v0, v1}, Ljava/util/ArrayDeque;-><init>(I)V
+
+    iput-object v0, p0, Lozi;->c:Ljava/util/Deque;
+
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    iput-object p1, p0, Lozi;->b:Lozh;
 
     return-void
 .end method
 
 
 # virtual methods
-.method protected final a(ILjava/lang/Object;)Ljava/lang/Object;
-    .locals 3
+.method public final close()V
+    .locals 4
 
-    add-int/lit8 p1, p1, -0x1
+    iget-object v0, p0, Lozi;->d:Ljava/lang/Throwable;
 
-    const/4 p2, 0x1
+    :goto_0
+    iget-object v1, p0, Lozi;->c:Ljava/util/Deque;
 
-    packed-switch p1, :pswitch_data_0
+    invoke-interface {v1}, Ljava/util/Deque;->isEmpty()Z
 
-    :pswitch_0
-    const/4 p1, 0x0
+    move-result v1
 
-    return-object p1
+    if-nez v1, :cond_1
 
-    :pswitch_1
-    sget-object p1, Lozi;->g:Lnyf;
+    iget-object v1, p0, Lozi;->c:Ljava/util/Deque;
 
-    if-nez p1, :cond_1
+    invoke-interface {v1}, Ljava/util/Deque;->removeFirst()Ljava/lang/Object;
 
-    const-class p2, Lozi;
+    move-result-object v1
 
-    monitor-enter p2
+    check-cast v1, Ljava/io/Closeable;
 
     :try_start_0
-    sget-object p1, Lozi;->g:Lnyf;
-
-    if-nez p1, :cond_0
-
-    new-instance p1, Lnwo;
-
-    sget-object v0, Lozi;->f:Lozi;
-
-    invoke-direct {p1, v0}, Lnwo;-><init>(Lnws;)V
-
-    sput-object p1, Lozi;->g:Lnyf;
-
-    :cond_0
-    monitor-exit p2
+    invoke-interface {v1}, Ljava/io/Closeable;->close()V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     goto :goto_0
 
     :catchall_0
-    move-exception p1
+    move-exception v2
 
-    monitor-exit p2
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    if-nez v0, :cond_0
 
-    throw p1
+    move-object v0, v2
+
+    goto :goto_0
+
+    :cond_0
+    iget-object v3, p0, Lozi;->b:Lozh;
+
+    invoke-interface {v3, v1, v0, v2}, Lozh;->a(Ljava/io/Closeable;Ljava/lang/Throwable;Ljava/lang/Throwable;)V
+
+    goto :goto_0
 
     :cond_1
-    :goto_0
-    return-object p1
+    iget-object v1, p0, Lozi;->d:Ljava/lang/Throwable;
 
-    :pswitch_2
-    sget-object p1, Lozi;->f:Lozi;
+    if-nez v1, :cond_3
 
-    return-object p1
+    if-nez v0, :cond_2
 
-    :pswitch_3
-    new-instance p1, Lnwn;
+    goto :goto_1
 
-    sget-object p2, Lozi;->f:Lozi;
+    :cond_2
+    const-class v1, Ljava/io/IOException;
 
-    invoke-direct {p1, p2}, Lnwn;-><init>(Lnws;)V
+    invoke-static {v0, v1}, Lokd;->c(Ljava/lang/Throwable;Ljava/lang/Class;)V
 
-    return-object p1
+    new-instance v1, Ljava/lang/AssertionError;
 
-    :pswitch_4
-    new-instance p1, Lozi;
+    invoke-direct {v1, v0}, Ljava/lang/AssertionError;-><init>(Ljava/lang/Object;)V
 
-    invoke-direct {p1}, Lozi;-><init>()V
+    throw v1
 
-    return-object p1
-
-    :pswitch_5
-    const-string p1, "a"
-
-    const-string v0, "\u0001\u0004\u0000\u0001\u0001\u0004\u0004\u0000\u0002\u0000\u0001\u1004\u0000\u0002\u1004\u0001\u0003\'\u0004\'"
-
-    const/4 v1, 0x5
-
-    new-array v1, v1, [Ljava/lang/Object;
-
-    const/4 v2, 0x0
-
-    aput-object p1, v1, v2
-
-    const-string p1, "b"
-
-    aput-object p1, v1, p2
-
-    const/4 p1, 0x2
-
-    const-string p2, "c"
-
-    aput-object p2, v1, p1
-
-    const/4 p1, 0x3
-
-    const-string p2, "d"
-
-    aput-object p2, v1, p1
-
-    const/4 p1, 0x4
-
-    const-string p2, "e"
-
-    aput-object p2, v1, p1
-
-    sget-object p1, Lozi;->f:Lozi;
-
-    invoke-static {p1, v0, v1}, Lozi;->X(Lnxy;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object p1
-
-    return-object p1
-
-    :pswitch_6
-    invoke-static {p2}, Ljava/lang/Byte;->valueOf(B)Ljava/lang/Byte;
-
-    move-result-object p1
-
-    return-object p1
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_6
-        :pswitch_0
-        :pswitch_5
-        :pswitch_4
-        :pswitch_3
-        :pswitch_2
-        :pswitch_1
-    .end packed-switch
+    :cond_3
+    :goto_1
+    return-void
 .end method

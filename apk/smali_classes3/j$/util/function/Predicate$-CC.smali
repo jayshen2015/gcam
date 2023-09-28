@@ -2,52 +2,105 @@
 .super Ljava/lang/Object;
 
 
-# annotations
-.annotation system Ldalvik/annotation/Signature;
-    value = {
-        "<T:",
-        "Ljava/lang/Object;",
-        ">",
-        "Ljava/lang/Object;"
-    }
-.end annotation
-
-
 # direct methods
-.method public static $default$and(Ljava/util/function/Predicate;Ljava/util/function/Predicate;)Ljava/util/function/Predicate;
-    .locals 2
-
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    new-instance v0, Lj$/util/function/i;
-
-    const/4 v1, 0x0
-
-    invoke-direct {v0, p0, p1, v1}, Lj$/util/function/i;-><init>(Ljava/util/function/Predicate;Ljava/util/function/Predicate;I)V
-
-    return-object v0
-.end method
-
-.method public static $default$negate(Ljava/util/function/Predicate;)Ljava/util/function/Predicate;
+.method public static $default$and(Lj$/util/function/Predicate;Lj$/util/function/Predicate;)Lj$/util/function/Predicate;
     .locals 1
 
-    new-instance v0, Lj$/util/function/b;
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    invoke-direct {v0, p0}, Lj$/util/function/b;-><init>(Ljava/lang/Object;)V
+    new-instance v0, Lj$/util/function/Predicate$$ExternalSyntheticLambda2;
+
+    invoke-direct {v0, p0, p1}, Lj$/util/function/Predicate$$ExternalSyntheticLambda2;-><init>(Lj$/util/function/Predicate;Lj$/util/function/Predicate;)V
 
     return-object v0
 .end method
 
-.method public static $default$or(Ljava/util/function/Predicate;Ljava/util/function/Predicate;)Ljava/util/function/Predicate;
-    .locals 2
+.method public static $default$negate(Lj$/util/function/Predicate;)Lj$/util/function/Predicate;
+    .locals 1
+
+    new-instance v0, Lj$/util/function/Predicate$$ExternalSyntheticLambda1;
+
+    invoke-direct {v0, p0}, Lj$/util/function/Predicate$$ExternalSyntheticLambda1;-><init>(Lj$/util/function/Predicate;)V
+
+    return-object v0
+.end method
+
+.method public static $default$or(Lj$/util/function/Predicate;Lj$/util/function/Predicate;)Lj$/util/function/Predicate;
+    .locals 1
 
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    new-instance v0, Lj$/util/function/i;
+    new-instance v0, Lj$/util/function/Predicate$$ExternalSyntheticLambda3;
 
-    const/4 v1, 0x1
-
-    invoke-direct {v0, p0, p1, v1}, Lj$/util/function/i;-><init>(Ljava/util/function/Predicate;Ljava/util/function/Predicate;I)V
+    invoke-direct {v0, p0, p1}, Lj$/util/function/Predicate$$ExternalSyntheticLambda3;-><init>(Lj$/util/function/Predicate;Lj$/util/function/Predicate;)V
 
     return-object v0
+.end method
+
+.method public static synthetic lambda$and$0(Lj$/util/function/Predicate;Lj$/util/function/Predicate;Ljava/lang/Object;)Z
+    .locals 0
+
+    invoke-interface {p0, p2}, Lj$/util/function/Predicate;->test(Ljava/lang/Object;)Z
+
+    move-result p0
+
+    if-eqz p0, :cond_0
+
+    invoke-interface {p1, p2}, Lj$/util/function/Predicate;->test(Ljava/lang/Object;)Z
+
+    move-result p0
+
+    if-eqz p0, :cond_0
+
+    const/4 p0, 0x1
+
+    goto :goto_0
+
+    :cond_0
+    const/4 p0, 0x0
+
+    :goto_0
+    return p0
+.end method
+
+.method public static synthetic lambda$negate$1(Lj$/util/function/Predicate;Ljava/lang/Object;)Z
+    .locals 0
+
+    invoke-interface {p0, p1}, Lj$/util/function/Predicate;->test(Ljava/lang/Object;)Z
+
+    move-result p0
+
+    xor-int/lit8 p0, p0, 0x1
+
+    return p0
+.end method
+
+.method public static synthetic lambda$or$2(Lj$/util/function/Predicate;Lj$/util/function/Predicate;Ljava/lang/Object;)Z
+    .locals 0
+
+    invoke-interface {p0, p2}, Lj$/util/function/Predicate;->test(Ljava/lang/Object;)Z
+
+    move-result p0
+
+    if-nez p0, :cond_1
+
+    invoke-interface {p1, p2}, Lj$/util/function/Predicate;->test(Ljava/lang/Object;)Z
+
+    move-result p0
+
+    if-eqz p0, :cond_0
+
+    goto :goto_0
+
+    :cond_0
+    const/4 p0, 0x0
+
+    goto :goto_1
+
+    :cond_1
+    :goto_0
+    const/4 p0, 0x1
+
+    :goto_1
+    return p0
 .end method

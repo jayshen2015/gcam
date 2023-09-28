@@ -1,114 +1,111 @@
-.class final Lkj;
+.class public Lkj;
 .super Ljava/lang/Object;
 
+# interfaces
+.implements Llk;
 
-# static fields
-.field public static a:Ljava/lang/reflect/Method;
 
-.field public static b:Ljava/lang/reflect/Method;
+# instance fields
+.field protected final a:Landroid/content/Context;
 
-.field public static c:Ljava/lang/reflect/Method;
+.field public b:Landroid/content/Context;
 
-.field public static d:Z
+.field public c:Lkw;
+
+.field public final d:Landroid/view/LayoutInflater;
+
+.field public e:Llj;
+
+.field public f:Llm;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 7
+.method public constructor <init>(Landroid/content/Context;)V
+    .locals 0
 
-    :try_start_0
-    const-class v0, Landroid/widget/AbsListView;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const-string v1, "positionSelector"
+    iput-object p1, p0, Lkj;->a:Landroid/content/Context;
 
-    const/4 v2, 0x5
+    invoke-static {p1}, Landroid/view/LayoutInflater;->from(Landroid/content/Context;)Landroid/view/LayoutInflater;
 
-    new-array v2, v2, [Ljava/lang/Class;
+    move-result-object p1
 
-    sget-object v3, Ljava/lang/Integer;->TYPE:Ljava/lang/Class;
-
-    const/4 v4, 0x0
-
-    aput-object v3, v2, v4
-
-    const-class v3, Landroid/view/View;
-
-    const/4 v5, 0x1
-
-    aput-object v3, v2, v5
-
-    sget-object v3, Ljava/lang/Boolean;->TYPE:Ljava/lang/Class;
-
-    const/4 v6, 0x2
-
-    aput-object v3, v2, v6
-
-    sget-object v3, Ljava/lang/Float;->TYPE:Ljava/lang/Class;
-
-    const/4 v6, 0x3
-
-    aput-object v3, v2, v6
-
-    sget-object v3, Ljava/lang/Float;->TYPE:Ljava/lang/Class;
-
-    const/4 v6, 0x4
-
-    aput-object v3, v2, v6
-
-    invoke-virtual {v0, v1, v2}, Ljava/lang/Class;->getDeclaredMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
-
-    move-result-object v0
-
-    sput-object v0, Lkj;->a:Ljava/lang/reflect/Method;
-
-    invoke-virtual {v0, v5}, Ljava/lang/reflect/Method;->setAccessible(Z)V
-
-    const-class v0, Landroid/widget/AdapterView;
-
-    const-string v1, "setSelectedPositionInt"
-
-    new-array v2, v5, [Ljava/lang/Class;
-
-    sget-object v3, Ljava/lang/Integer;->TYPE:Ljava/lang/Class;
-
-    aput-object v3, v2, v4
-
-    invoke-virtual {v0, v1, v2}, Ljava/lang/Class;->getDeclaredMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
-
-    move-result-object v0
-
-    sput-object v0, Lkj;->b:Ljava/lang/reflect/Method;
-
-    invoke-virtual {v0, v5}, Ljava/lang/reflect/Method;->setAccessible(Z)V
-
-    const-class v0, Landroid/widget/AdapterView;
-
-    const-string v1, "setNextSelectedPositionInt"
-
-    new-array v2, v5, [Ljava/lang/Class;
-
-    sget-object v3, Ljava/lang/Integer;->TYPE:Ljava/lang/Class;
-
-    aput-object v3, v2, v4
-
-    invoke-virtual {v0, v1, v2}, Ljava/lang/Class;->getDeclaredMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
-
-    move-result-object v0
-
-    sput-object v0, Lkj;->c:Ljava/lang/reflect/Method;
-
-    invoke-virtual {v0, v5}, Ljava/lang/reflect/Method;->setAccessible(Z)V
-
-    sput-boolean v5, Lkj;->d:Z
-    :try_end_0
-    .catch Ljava/lang/NoSuchMethodException; {:try_start_0 .. :try_end_0} :catch_0
+    iput-object p1, p0, Lkj;->d:Landroid/view/LayoutInflater;
 
     return-void
+.end method
 
-    :catch_0
-    move-exception v0
 
-    invoke-virtual {v0}, Ljava/lang/NoSuchMethodException;->printStackTrace()V
+# virtual methods
+.method public a(Lkz;Landroid/view/View;Landroid/view/ViewGroup;)Landroid/view/View;
+    .locals 0
 
-    return-void
+    const/4 p1, 0x0
+
+    throw p1
+.end method
+
+.method public b(Landroid/content/Context;Lkw;)V
+    .locals 0
+
+    const/4 p1, 0x0
+
+    throw p1
+.end method
+
+.method public c(Lkw;Z)V
+    .locals 0
+
+    const/4 p1, 0x0
+
+    throw p1
+.end method
+
+.method public final d(Llj;)V
+    .locals 0
+
+    const/4 p1, 0x0
+
+    throw p1
+.end method
+
+.method public e()Z
+    .locals 1
+
+    const/4 v0, 0x0
+
+    throw v0
+.end method
+
+.method public f(Lls;)Z
+    .locals 0
+
+    const/4 p1, 0x0
+
+    throw p1
+.end method
+
+.method public final g(Lkz;)Z
+    .locals 0
+
+    const/4 p1, 0x0
+
+    return p1
+.end method
+
+.method public final h(Lkz;)Z
+    .locals 0
+
+    const/4 p1, 0x0
+
+    return p1
+.end method
+
+.method public i()V
+    .locals 1
+
+    const/4 v0, 0x0
+
+    throw v0
 .end method

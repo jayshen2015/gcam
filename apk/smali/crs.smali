@@ -1,179 +1,173 @@
 .class public final Lcrs;
-.super Ljava/lang/Object;
+.super Lcrp;
 
 # interfaces
-.implements Logk;
+.implements Lihv;
 
 
 # instance fields
-.field private final a:Loiw;
+.field public final a:Ldmh;
 
-.field private final b:Loiw;
+.field public final b:Lgfy;
 
-.field private final c:Loiw;
+.field public final c:Lihu;
 
-.field private final d:Loiw;
+.field public final d:Lihw;
 
-.field private final e:Loiw;
+.field public final e:Lihw;
 
-.field private final f:Loiw;
-
-.field private final g:Loiw;
-
-.field private final h:Loiw;
-
-.field private final i:Loiw;
-
-.field private final j:Loiw;
+.field public f:Lghx;
 
 
 # direct methods
-.method public constructor <init>(Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;)V
-    .locals 0
+.method public constructor <init>(Ldmh;Lgfy;)V
+    .locals 3
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Lcrp;-><init>()V
 
-    iput-object p1, p0, Lcrs;->a:Loiw;
+    iput-object p1, p0, Lcrs;->a:Ldmh;
 
-    iput-object p2, p0, Lcrs;->b:Loiw;
+    iput-object p2, p0, Lcrs;->b:Lgfy;
 
-    iput-object p3, p0, Lcrs;->c:Loiw;
+    new-instance p1, Lcrb;
 
-    iput-object p4, p0, Lcrs;->d:Loiw;
+    invoke-direct {p1, p0}, Lcrb;-><init>(Lcrs;)V
 
-    iput-object p5, p0, Lcrs;->e:Loiw;
+    new-instance p2, Lihw;
 
-    iput-object p6, p0, Lcrs;->f:Loiw;
+    const/4 v0, 0x0
 
-    iput-object p7, p0, Lcrs;->g:Loiw;
+    new-array v1, v0, [Lihs;
 
-    iput-object p8, p0, Lcrs;->h:Loiw;
+    invoke-direct {p2, p1, v1}, Lihw;-><init>(Lihs;[Lihs;)V
 
-    iput-object p9, p0, Lcrs;->i:Loiw;
+    iput-object p2, p0, Lcrs;->d:Lihw;
 
-    iput-object p10, p0, Lcrs;->j:Loiw;
+    new-instance p1, Lcrc;
+
+    invoke-direct {p1, p0}, Lcrc;-><init>(Lcrs;)V
+
+    new-instance v1, Lihw;
+
+    new-array v2, v0, [Lihs;
+
+    invoke-direct {v1, p1, v2}, Lihw;-><init>(Lihs;[Lihs;)V
+
+    iput-object v1, p0, Lcrs;->e:Lihw;
+
+    new-instance p1, Lihu;
+
+    invoke-direct {p1, p2, v0}, Lihu;-><init>(Lihw;Z)V
+
+    iput-object p1, p0, Lcrs;->c:Lihu;
+
+    invoke-virtual {p1}, Lihu;->f()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Lcrr;
-    .locals 11
-
-    iget-object v0, p0, Lcrs;->a:Loiw;
-
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    move-object v2, v0
-
-    check-cast v2, Lcsa;
-
-    iget-object v0, p0, Lcrs;->b:Loiw;
-
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    move-object v3, v0
-
-    check-cast v3, Lccg;
-
-    iget-object v0, p0, Lcrs;->c:Loiw;
-
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    move-object v4, v0
-
-    check-cast v4, Lftu;
-
-    iget-object v0, p0, Lcrs;->d:Loiw;
-
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    move-object v5, v0
-
-    check-cast v5, Lcfp;
-
-    iget-object v0, p0, Lcrs;->e:Loiw;
-
-    check-cast v0, Lcdb;
-
-    invoke-virtual {v0}, Lcdb;->a()Lcda;
-
-    move-result-object v6
-
-    iget-object v0, p0, Lcrs;->f:Loiw;
-
-    check-cast v0, Lccs;
-
-    invoke-virtual {v0}, Lccs;->a()Ljava/lang/Boolean;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
-
-    move-result v7
-
-    iget-object v0, p0, Lcrs;->g:Loiw;
-
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    move-object v8, v0
-
-    check-cast v8, Ldkp;
-
-    iget-object v0, p0, Lcrs;->h:Loiw;
-
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    move-object v9, v0
-
-    check-cast v9, Ldhi;
-
-    iget-object v0, p0, Lcrs;->i:Loiw;
-
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ldbf;
-
-    iget-object v0, p0, Lcrs;->j:Loiw;
-
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    move-object v10, v0
-
-    check-cast v10, Ldms;
-
-    new-instance v0, Lcrr;
-
-    move-object v1, v0
-
-    invoke-direct/range {v1 .. v10}, Lcrr;-><init>(Lcsa;Lccg;Lftu;Lcfp;Lcda;ZLdkp;Ldhi;Ldms;)V
-
-    return-object v0
-.end method
-
-.method public final bridge synthetic get()Ljava/lang/Object;
+.method public final a(Lghx;)V
     .locals 1
 
-    invoke-virtual {p0}, Lcrs;->a()Lcrr;
+    iget-object v0, p0, Lcrs;->c:Lihu;
+
+    invoke-virtual {v0}, Lihu;->a()Lihw;
 
     move-result-object v0
 
-    return-object v0
+    if-nez v0, :cond_0
+
+    return-void
+
+    :cond_0
+    iget-object v0, p0, Lcrs;->c:Lihu;
+
+    invoke-virtual {v0}, Lihu;->a()Lihw;
+
+    move-result-object v0
+
+    iget-object v0, v0, Lihw;->a:Lihs;
+
+    check-cast v0, Lcrp;
+
+    invoke-virtual {v0, p1}, Lcrp;->a(Lghx;)V
+
+    return-void
+.end method
+
+.method public final b()V
+    .locals 1
+
+    iget-object v0, p0, Lcrs;->c:Lihu;
+
+    invoke-virtual {v0}, Lihu;->a()Lihw;
+
+    move-result-object v0
+
+    if-nez v0, :cond_0
+
+    return-void
+
+    :cond_0
+    iget-object v0, p0, Lcrs;->c:Lihu;
+
+    invoke-virtual {v0}, Lihu;->a()Lihw;
+
+    move-result-object v0
+
+    iget-object v0, v0, Lihw;->a:Lihs;
+
+    check-cast v0, Lcrp;
+
+    invoke-virtual {v0}, Lcrp;->b()V
+
+    return-void
+.end method
+
+.method public final e()V
+    .locals 1
+
+    iget-object v0, p0, Lcrs;->c:Lihu;
+
+    invoke-virtual {v0}, Lihu;->b()V
+
+    iget-object v0, p0, Lcrs;->d:Lihw;
+
+    invoke-virtual {v0}, Lihw;->e()V
+
+    iget-object v0, p0, Lcrs;->e:Lihw;
+
+    invoke-virtual {v0}, Lihw;->e()V
+
+    return-void
+.end method
+
+.method public final f()V
+    .locals 1
+
+    iget-object v0, p0, Lcrs;->c:Lihu;
+
+    invoke-virtual {v0}, Lihu;->c()V
+
+    return-void
+.end method
+
+.method public final g()V
+    .locals 1
+
+    iget-object v0, p0, Lcrs;->c:Lihu;
+
+    invoke-virtual {v0}, Lihu;->d()V
+
+    return-void
+.end method
+
+.method public final h()V
+    .locals 0
+
+    invoke-static {p0}, Lmip;->eQ(Lihv;)V
+
+    return-void
 .end method

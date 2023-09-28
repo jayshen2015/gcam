@@ -1,188 +1,219 @@
 .class public final Lnhe;
-.super Lnws;
+.super Ljava/lang/Object;
 
 # interfaces
-.implements Lnxz;
+.implements Ljava/io/Externalizable;
 
 
 # static fields
-.field public static final f:Lnhe;
-
-.field private static volatile g:Lnyf;
+.field private static final serialVersionUID:J = 0x1L
 
 
 # instance fields
-.field public a:I
+.field public a:Ljava/lang/String;
 
-.field public b:Lngp;
+.field public b:Ljava/lang/String;
 
-.field public c:J
+.field public final c:Ljava/util/List;
 
-.field public d:J
+.field public d:Ljava/lang/String;
 
-.field public e:Lnhi;
+.field public e:Z
+
+.field public f:Ljava/lang/String;
+
+.field private g:Z
+
+.field private h:Z
 
 
 # direct methods
-.method static constructor <clinit>()V
+.method public constructor <init>()V
     .locals 2
 
-    new-instance v0, Lnhe;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {v0}, Lnhe;-><init>()V
+    const-string v0, ""
 
-    sput-object v0, Lnhe;->f:Lnhe;
+    iput-object v0, p0, Lnhe;->a:Ljava/lang/String;
 
-    const-class v1, Lnhe;
+    iput-object v0, p0, Lnhe;->b:Ljava/lang/String;
 
-    invoke-static {v1, v0}, Lnws;->aa(Ljava/lang/Class;Lnws;)V
+    new-instance v1, Ljava/util/ArrayList;
 
-    return-void
-.end method
+    invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
 
-.method private constructor <init>()V
-    .locals 0
+    iput-object v1, p0, Lnhe;->c:Ljava/util/List;
 
-    invoke-direct {p0}, Lnws;-><init>()V
+    iput-object v0, p0, Lnhe;->d:Ljava/lang/String;
+
+    const/4 v1, 0x0
+
+    iput-boolean v1, p0, Lnhe;->e:Z
+
+    iput-object v0, p0, Lnhe;->f:Ljava/lang/String;
 
     return-void
 .end method
 
 
 # virtual methods
-.method protected final a(ILjava/lang/Object;)Ljava/lang/Object;
-    .locals 3
+.method public final a()I
+    .locals 1
 
-    add-int/lit8 p1, p1, -0x1
+    iget-object v0, p0, Lnhe;->c:Ljava/util/List;
 
-    const/4 p2, 0x1
+    invoke-interface {v0}, Ljava/util/List;->size()I
 
-    packed-switch p1, :pswitch_data_0
+    move-result v0
 
-    :pswitch_0
-    const/4 p1, 0x0
+    return v0
+.end method
 
-    return-object p1
+.method public final readExternal(Ljava/io/ObjectInput;)V
+    .locals 4
 
-    :pswitch_1
-    sget-object p1, Lnhe;->g:Lnyf;
+    invoke-interface {p1}, Ljava/io/ObjectInput;->readUTF()Ljava/lang/String;
 
-    if-nez p1, :cond_1
+    move-result-object v0
 
-    const-class p2, Lnhe;
+    iput-object v0, p0, Lnhe;->a:Ljava/lang/String;
 
-    monitor-enter p2
+    invoke-interface {p1}, Ljava/io/ObjectInput;->readUTF()Ljava/lang/String;
 
-    :try_start_0
-    sget-object p1, Lnhe;->g:Lnyf;
+    move-result-object v0
 
-    if-nez p1, :cond_0
+    iput-object v0, p0, Lnhe;->b:Ljava/lang/String;
 
-    new-instance p1, Lnwo;
+    invoke-interface {p1}, Ljava/io/ObjectInput;->readInt()I
 
-    sget-object v0, Lnhe;->f:Lnhe;
+    move-result v0
 
-    invoke-direct {p1, v0}, Lnwo;-><init>(Lnws;)V
+    const/4 v1, 0x0
 
-    sput-object p1, Lnhe;->g:Lnyf;
+    :goto_0
+    if-ge v1, v0, :cond_0
 
-    :cond_0
-    monitor-exit p2
+    iget-object v2, p0, Lnhe;->c:Ljava/util/List;
+
+    invoke-interface {p1}, Ljava/io/ObjectInput;->readUTF()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-interface {v2, v3}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    :catchall_0
-    move-exception p1
+    :cond_0
+    invoke-interface {p1}, Ljava/io/ObjectInput;->readBoolean()Z
 
-    monitor-exit p2
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    move-result v0
 
-    throw p1
+    const/4 v1, 0x1
+
+    if-eqz v0, :cond_1
+
+    invoke-interface {p1}, Ljava/io/ObjectInput;->readUTF()Ljava/lang/String;
+
+    move-result-object v0
+
+    iput-boolean v1, p0, Lnhe;->g:Z
+
+    iput-object v0, p0, Lnhe;->d:Ljava/lang/String;
 
     :cond_1
+    invoke-interface {p1}, Ljava/io/ObjectInput;->readBoolean()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_2
+
+    invoke-interface {p1}, Ljava/io/ObjectInput;->readUTF()Ljava/lang/String;
+
+    move-result-object v0
+
+    iput-boolean v1, p0, Lnhe;->h:Z
+
+    iput-object v0, p0, Lnhe;->f:Ljava/lang/String;
+
+    :cond_2
+    invoke-interface {p1}, Ljava/io/ObjectInput;->readBoolean()Z
+
+    move-result p1
+
+    iput-boolean p1, p0, Lnhe;->e:Z
+
+    return-void
+.end method
+
+.method public final writeExternal(Ljava/io/ObjectOutput;)V
+    .locals 3
+
+    iget-object v0, p0, Lnhe;->a:Ljava/lang/String;
+
+    invoke-interface {p1, v0}, Ljava/io/ObjectOutput;->writeUTF(Ljava/lang/String;)V
+
+    iget-object v0, p0, Lnhe;->b:Ljava/lang/String;
+
+    invoke-interface {p1, v0}, Ljava/io/ObjectOutput;->writeUTF(Ljava/lang/String;)V
+
+    invoke-virtual {p0}, Lnhe;->a()I
+
+    move-result v0
+
+    invoke-interface {p1, v0}, Ljava/io/ObjectOutput;->writeInt(I)V
+
+    const/4 v1, 0x0
+
     :goto_0
-    return-object p1
+    if-ge v1, v0, :cond_0
 
-    :pswitch_2
-    sget-object p1, Lnhe;->f:Lnhe;
+    iget-object v2, p0, Lnhe;->c:Ljava/util/List;
 
-    return-object p1
+    invoke-interface {v2, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
-    :pswitch_3
-    new-instance p1, Lnwn;
+    move-result-object v2
 
-    sget-object p2, Lnhe;->f:Lnhe;
+    check-cast v2, Ljava/lang/String;
 
-    invoke-direct {p1, p2}, Lnwn;-><init>(Lnws;)V
+    invoke-interface {p1, v2}, Ljava/io/ObjectOutput;->writeUTF(Ljava/lang/String;)V
 
-    return-object p1
+    add-int/lit8 v1, v1, 0x1
 
-    :pswitch_4
-    new-instance p1, Lnhe;
+    goto :goto_0
 
-    invoke-direct {p1}, Lnhe;-><init>()V
+    :cond_0
+    iget-boolean v0, p0, Lnhe;->g:Z
 
-    return-object p1
+    invoke-interface {p1, v0}, Ljava/io/ObjectOutput;->writeBoolean(Z)V
 
-    :pswitch_5
-    const-string p1, "a"
+    iget-boolean v0, p0, Lnhe;->g:Z
 
-    const-string v0, "\u0001\u0004\u0000\u0001\u0001\u0004\u0004\u0000\u0000\u0000\u0001\u1009\u0000\u0002\u1002\u0001\u0003\u1002\u0002\u0004\u1009\u0003"
+    if-eqz v0, :cond_1
 
-    const/4 v1, 0x5
+    iget-object v0, p0, Lnhe;->d:Ljava/lang/String;
 
-    new-array v1, v1, [Ljava/lang/Object;
+    invoke-interface {p1, v0}, Ljava/io/ObjectOutput;->writeUTF(Ljava/lang/String;)V
 
-    const/4 v2, 0x0
+    :cond_1
+    iget-boolean v0, p0, Lnhe;->h:Z
 
-    aput-object p1, v1, v2
+    invoke-interface {p1, v0}, Ljava/io/ObjectOutput;->writeBoolean(Z)V
 
-    const-string p1, "b"
+    iget-boolean v0, p0, Lnhe;->h:Z
 
-    aput-object p1, v1, p2
+    if-eqz v0, :cond_2
 
-    const/4 p1, 0x2
+    iget-object v0, p0, Lnhe;->f:Ljava/lang/String;
 
-    const-string p2, "c"
+    invoke-interface {p1, v0}, Ljava/io/ObjectOutput;->writeUTF(Ljava/lang/String;)V
 
-    aput-object p2, v1, p1
+    :cond_2
+    iget-boolean v0, p0, Lnhe;->e:Z
 
-    const/4 p1, 0x3
+    invoke-interface {p1, v0}, Ljava/io/ObjectOutput;->writeBoolean(Z)V
 
-    const-string p2, "d"
-
-    aput-object p2, v1, p1
-
-    const/4 p1, 0x4
-
-    const-string p2, "e"
-
-    aput-object p2, v1, p1
-
-    sget-object p1, Lnhe;->f:Lnhe;
-
-    invoke-static {p1, v0, v1}, Lnhe;->X(Lnxy;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object p1
-
-    return-object p1
-
-    :pswitch_6
-    invoke-static {p2}, Ljava/lang/Byte;->valueOf(B)Ljava/lang/Byte;
-
-    move-result-object p1
-
-    return-object p1
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_6
-        :pswitch_0
-        :pswitch_5
-        :pswitch_4
-        :pswitch_3
-        :pswitch_2
-        :pswitch_1
-    .end packed-switch
+    return-void
 .end method

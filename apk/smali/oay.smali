@@ -1,230 +1,157 @@
-.class public final Loay;
-.super Lnws;
-
-# interfaces
-.implements Lnxz;
-
-
-# static fields
-.field public static final h:Loay;
-
-.field private static volatile j:Lnyf;
-
-
-# instance fields
-.field public a:F
-
-.field public b:F
-
-.field public c:F
-
-.field public d:F
-
-.field public e:I
-
-.field public f:F
-
-.field public g:F
-
-.field private i:I
+.class final Loay;
+.super Landroid/util/Property;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
+.method public constructor <init>(Ljava/lang/Class;)V
+    .locals 1
 
-    new-instance v0, Loay;
+    const-string v0, "animationFraction"
 
-    invoke-direct {v0}, Loay;-><init>()V
-
-    sput-object v0, Loay;->h:Loay;
-
-    const-class v1, Loay;
-
-    invoke-static {v1, v0}, Lnws;->aa(Ljava/lang/Class;Lnws;)V
-
-    return-void
-.end method
-
-.method private constructor <init>()V
-    .locals 2
-
-    invoke-direct {p0}, Lnws;-><init>()V
-
-    const/high16 v0, -0x40800000    # -1.0f
-
-    iput v0, p0, Loay;->a:F
-
-    iput v0, p0, Loay;->b:F
-
-    iput v0, p0, Loay;->c:F
-
-    iput v0, p0, Loay;->d:F
-
-    const/4 v1, -0x1
-
-    iput v1, p0, Loay;->e:I
-
-    iput v0, p0, Loay;->f:F
-
-    iput v0, p0, Loay;->g:F
+    invoke-direct {p0, p1, v0}, Landroid/util/Property;-><init>(Ljava/lang/Class;Ljava/lang/String;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method protected final a(ILjava/lang/Object;)Ljava/lang/Object;
-    .locals 3
+.method public final bridge synthetic get(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 1
 
-    add-int/lit8 p1, p1, -0x1
+    check-cast p1, Loaz;
 
-    const/4 p2, 0x1
+    sget v0, Loaz;->f:I
 
-    packed-switch p1, :pswitch_data_0
+    iget p1, p1, Loaz;->e:F
 
-    :pswitch_0
-    const/4 p1, 0x0
+    invoke-static {p1}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
 
-    return-object p1
-
-    :pswitch_1
-    sget-object p1, Loay;->j:Lnyf;
-
-    if-nez p1, :cond_1
-
-    const-class p2, Loay;
-
-    monitor-enter p2
-
-    :try_start_0
-    sget-object p1, Loay;->j:Lnyf;
-
-    if-nez p1, :cond_0
-
-    new-instance p1, Lnwo;
-
-    sget-object v0, Loay;->h:Loay;
-
-    invoke-direct {p1, v0}, Lnwo;-><init>(Lnws;)V
-
-    sput-object p1, Loay;->j:Lnyf;
-
-    :cond_0
-    monitor-exit p2
-
-    goto :goto_0
-
-    :catchall_0
-    move-exception p1
-
-    monitor-exit p2
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw p1
-
-    :cond_1
-    :goto_0
-    return-object p1
-
-    :pswitch_2
-    sget-object p1, Loay;->h:Loay;
+    move-result-object p1
 
     return-object p1
+.end method
 
-    :pswitch_3
-    new-instance p1, Lnwn;
+.method public final bridge synthetic set(Ljava/lang/Object;Ljava/lang/Object;)V
+    .locals 6
 
-    sget-object p2, Loay;->h:Loay;
+    check-cast p1, Loaz;
 
-    invoke-direct {p1, p2}, Lnwn;-><init>(Lnws;)V
+    check-cast p2, Ljava/lang/Float;
 
-    return-object p1
+    invoke-virtual {p2}, Ljava/lang/Float;->floatValue()F
 
-    :pswitch_4
-    new-instance p1, Loay;
+    move-result p2
 
-    invoke-direct {p1}, Loay;-><init>()V
+    iput p2, p1, Loaz;->e:F
 
-    return-object p1
+    iget-object v0, p1, Loaz;->k:[F
 
-    :pswitch_5
-    const-string p1, "i"
-
-    const-string v0, "\u0001\u0007\u0000\u0001\u0001\u0007\u0007\u0000\u0000\u0000\u0001\u1001\u0000\u0002\u1001\u0001\u0003\u1001\u0002\u0004\u1001\u0003\u0005\u1004\u0004\u0006\u1001\u0005\u0007\u1001\u0006"
-
-    const/16 v1, 0x8
-
-    new-array v1, v1, [Ljava/lang/Object;
+    const/4 v1, 0x0
 
     const/4 v2, 0x0
 
-    aput-object p1, v1, v2
+    aput v1, v0, v2
 
-    const-string p1, "a"
+    const v0, 0x43a68000    # 333.0f
 
-    aput-object p1, v1, p2
+    mul-float p2, p2, v0
 
-    const/4 p1, 0x2
+    float-to-int p2, p2
 
-    const-string p2, "b"
+    const/16 v0, 0x29b
 
-    aput-object p2, v1, p1
+    invoke-static {p2, v2, v0}, Loaz;->f(III)F
 
-    const/4 p1, 0x3
+    move-result p2
 
-    const-string p2, "c"
+    iget-object v0, p1, Loaz;->k:[F
 
-    aput-object p2, v1, p1
+    iget-object v1, p1, Loaz;->a:Ladt;
 
-    const/4 p1, 0x4
+    invoke-virtual {v1, p2}, Ladt;->getInterpolation(F)F
 
-    const-string p2, "d"
+    move-result v1
 
-    aput-object p2, v1, p1
+    const/4 v3, 0x2
 
-    const/4 p1, 0x5
+    aput v1, v0, v3
 
-    const-string p2, "e"
+    const/4 v4, 0x1
 
-    aput-object p2, v1, p1
+    aput v1, v0, v4
 
-    const/4 p1, 0x6
+    iget-object v0, p1, Loaz;->k:[F
 
-    const-string p2, "f"
+    iget-object v1, p1, Loaz;->a:Ladt;
 
-    aput-object p2, v1, p1
+    const v5, 0x3eff9dbf
 
-    const/4 p1, 0x7
+    add-float/2addr p2, v5
 
-    const-string p2, "g"
+    invoke-virtual {v1, p2}, Ladt;->getInterpolation(F)F
 
-    aput-object p2, v1, p1
+    move-result p2
 
-    sget-object p1, Loay;->h:Loay;
+    const/4 v1, 0x4
 
-    invoke-static {p1, v0, v1}, Loay;->X(Lnxy;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/Object;
+    aput p2, v0, v1
 
-    move-result-object p1
+    const/4 v1, 0x3
 
-    return-object p1
+    aput p2, v0, v1
 
-    :pswitch_6
-    invoke-static {p2}, Ljava/lang/Byte;->valueOf(B)Ljava/lang/Byte;
+    iget-object p2, p1, Loaz;->k:[F
 
-    move-result-object p1
+    const/4 v0, 0x5
 
-    return-object p1
+    const/high16 v5, 0x3f800000    # 1.0f
 
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_6
-        :pswitch_0
-        :pswitch_5
-        :pswitch_4
-        :pswitch_3
-        :pswitch_2
-        :pswitch_1
-    .end packed-switch
+    aput v5, p2, v0
+
+    iget-boolean v0, p1, Loaz;->d:Z
+
+    if-eqz v0, :cond_0
+
+    aget p2, p2, v1
+
+    cmpg-float p2, p2, v5
+
+    if-gez p2, :cond_0
+
+    iget-object p2, p1, Loaz;->l:[I
+
+    aget v0, p2, v4
+
+    aput v0, p2, v3
+
+    aget v0, p2, v2
+
+    aput v0, p2, v4
+
+    iget-object v0, p1, Loaz;->b:Loaf;
+
+    iget-object v0, v0, Loaf;->c:[I
+
+    iget v1, p1, Loaz;->c:I
+
+    aget v0, v0, v1
+
+    iget-object v1, p1, Loaz;->j:Loav;
+
+    iget v1, v1, Loas;->i:I
+
+    invoke-static {v0, v1}, Lohh;->W(II)I
+
+    move-result v0
+
+    aput v0, p2, v2
+
+    iput-boolean v2, p1, Loaz;->d:Z
+
+    :cond_0
+    iget-object p1, p1, Loaz;->j:Loav;
+
+    invoke-virtual {p1}, Loav;->invalidateSelf()V
+
+    return-void
 .end method

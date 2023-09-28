@@ -1,101 +1,135 @@
-.class final Ldai;
+.class public final synthetic Ldai;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Ldaw;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field final synthetic a:Ldaj;
+.field public final synthetic a:Lcom/google/android/apps/camera/coach/CameraCoachHudView;
+
+.field private final synthetic b:I
 
 
 # direct methods
-.method public constructor <init>(Ldaj;)V
+.method public synthetic constructor <init>(Lcom/google/android/apps/camera/coach/CameraCoachHudView;I)V
     .locals 0
 
-    iput-object p1, p0, Ldai;->a:Ldaj;
+    iput p2, p0, Ldai;->b:I
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Ldai;->a:Lcom/google/android/apps/camera/coach/CameraCoachHudView;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()V
+.method public final run()V
     .locals 1
 
-    iget-object v0, p0, Ldai;->a:Ldaj;
+    iget v0, p0, Ldai;->b:I
 
-    invoke-virtual {v0}, Ldaj;->h()V
+    packed-switch v0, :pswitch_data_0
 
-    iget-object v0, p0, Ldai;->a:Ldaj;
+    iget-object v0, p0, Ldai;->a:Lcom/google/android/apps/camera/coach/CameraCoachHudView;
 
-    invoke-virtual {v0}, Ldaj;->o()V
+    iget-object v0, v0, Lcom/google/android/apps/camera/coach/CameraCoachHudView;->c:Lojc;
 
-    return-void
-.end method
-
-.method public final b()V
-    .locals 2
-
-    iget-object v0, p0, Ldai;->a:Ldaj;
-
-    iget-object v0, v0, Ldaj;->g:Lgft;
-
-    invoke-interface {v0}, Lgft;->c()Lkab;
+    invoke-virtual {v0}, Lojc;->c()Ljava/lang/Object;
 
     move-result-object v0
 
-    invoke-static {v0}, Ldaj;->r(Lkab;)Z
+    check-cast v0, Ldck;
 
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    iget-object v0, p0, Ldai;->a:Ldaj;
-
-    invoke-virtual {v0}, Ldaj;->c()V
-
-    :cond_0
-    iget-object v0, p0, Ldai;->a:Ldaj;
-
-    iget-object v1, v0, Ldaj;->r:Lhyn;
-
-    iget-object v0, v0, Ldaj;->s:Liko;
-
-    invoke-static {v1, v0}, Lbze;->af(Lhyn;Liko;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_1
-
-    iget-object v0, p0, Ldai;->a:Ldaj;
-
-    iget-object v0, v0, Ldaj;->q:Ldav;
-
-    sget-object v1, Ldav;->a:Ldav;
-
-    if-ne v0, v1, :cond_1
-
-    iget-object v0, p0, Ldai;->a:Ldaj;
-
-    invoke-virtual {v0}, Ldaj;->e()V
-
-    :cond_1
-    iget-object v0, p0, Ldai;->a:Ldaj;
-
-    iget-object v0, v0, Ldaj;->k:Lgeh;
-
-    invoke-interface {v0}, Lgeh;->M()V
-
-    iget-object v0, p0, Ldai;->a:Ldaj;
-
-    iget-object v0, v0, Ldaj;->d:Lhrq;
-
-    const/4 v1, 0x1
-
-    invoke-virtual {v0, v1}, Lhrq;->b(Z)V
+    invoke-virtual {v0}, Ldck;->b()V
 
     return-void
+
+    :pswitch_0
+    iget-object v0, p0, Ldai;->a:Lcom/google/android/apps/camera/coach/CameraCoachHudView;
+
+    iget-object v0, v0, Lcom/google/android/apps/camera/coach/CameraCoachHudView;->b:Lojc;
+
+    invoke-virtual {v0}, Lojc;->c()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ldbq;
+
+    invoke-virtual {v0}, Ldbq;->a()V
+
+    return-void
+
+    :pswitch_1
+    iget-object v0, p0, Ldai;->a:Lcom/google/android/apps/camera/coach/CameraCoachHudView;
+
+    iget-object v0, v0, Lcom/google/android/apps/camera/coach/CameraCoachHudView;->d:Lojc;
+
+    invoke-virtual {v0}, Lojc;->c()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ldbc;
+
+    invoke-virtual {v0}, Ldbc;->a()V
+
+    return-void
+
+    :pswitch_2
+    iget-object v0, p0, Ldai;->a:Lcom/google/android/apps/camera/coach/CameraCoachHudView;
+
+    iget-object v0, v0, Lcom/google/android/apps/camera/coach/CameraCoachHudView;->d:Lojc;
+
+    invoke-virtual {v0}, Lojc;->c()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ldbc;
+
+    invoke-virtual {v0}, Ldbc;->a()V
+
+    return-void
+
+    :pswitch_3
+    iget-object v0, p0, Ldai;->a:Lcom/google/android/apps/camera/coach/CameraCoachHudView;
+
+    iget-object v0, v0, Lcom/google/android/apps/camera/coach/CameraCoachHudView;->b:Lojc;
+
+    invoke-virtual {v0}, Lojc;->c()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ldbq;
+
+    invoke-virtual {v0}, Ldbq;->a()V
+
+    return-void
+
+    :pswitch_4
+    iget-object v0, p0, Ldai;->a:Lcom/google/android/apps/camera/coach/CameraCoachHudView;
+
+    iget-object v0, v0, Lcom/google/android/apps/camera/coach/CameraCoachHudView;->c:Lojc;
+
+    invoke-virtual {v0}, Lojc;->c()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ldck;
+
+    invoke-virtual {v0}, Ldck;->b()V
+
+    return-void
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method

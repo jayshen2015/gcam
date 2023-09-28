@@ -1,172 +1,196 @@
 .class public final Lmes;
-.super Lnws;
-
-# interfaces
-.implements Lnxz;
-
-
-# static fields
-.field public static final c:Lmes;
-
-.field private static volatile e:Lnyf;
+.super Ljava/lang/Object;
 
 
 # instance fields
-.field public a:Lmeu;
+.field public final a:Lmdo;
 
-.field public b:I
-
-.field private d:I
+.field public final b:Lmdw;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
+.method private constructor <init>(Landroid/content/Context;Lmdw;)V
+    .locals 4
 
-    new-instance v0, Lmes;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {v0}, Lmes;-><init>()V
+    new-instance v0, Ljava/lang/Throwable;
 
-    sput-object v0, Lmes;->c:Lmes;
+    invoke-direct {v0}, Ljava/lang/Throwable;-><init>()V
 
-    const-class v1, Lmes;
+    new-instance v1, Lmdn;
 
-    invoke-static {v1, v0}, Lnws;->aa(Ljava/lang/Class;Lnws;)V
+    const/4 v2, 0x0
+
+    invoke-direct {v1, v2}, Lmdn;-><init>([B)V
+
+    invoke-virtual {v1}, Lmdn;->a()V
+
+    if-eqz p1, :cond_4
+
+    iput-object p1, v1, Lmdn;->a:Landroid/content/Context;
+
+    invoke-static {v0}, Lojc;->i(Ljava/lang/Object;)Lojc;
+
+    move-result-object p1
+
+    iput-object p1, v1, Lmdn;->c:Lojc;
+
+    invoke-virtual {v1}, Lmdn;->a()V
+
+    iget-object p1, v1, Lmdn;->a:Landroid/content/Context;
+
+    if-eqz p1, :cond_1
+
+    iget-object v0, v1, Lmdn;->d:Ljava/lang/Boolean;
+
+    if-nez v0, :cond_0
+
+    goto :goto_0
+
+    :cond_0
+    new-instance v2, Lmdo;
+
+    iget-object v3, v1, Lmdn;->b:Lojc;
+
+    iget-object v1, v1, Lmdn;->c:Lojc;
+
+    invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
+
+    move-result v0
+
+    invoke-direct {v2, p1, v3, v1, v0}, Lmdo;-><init>(Landroid/content/Context;Lojc;Lojc;Z)V
+
+    iput-object v2, p0, Lmes;->a:Lmdo;
+
+    iput-object p2, p0, Lmes;->b:Lmdw;
 
     return-void
+
+    :cond_1
+    :goto_0
+    new-instance p1, Ljava/lang/StringBuilder;
+
+    invoke-direct {p1}, Ljava/lang/StringBuilder;-><init>()V
+
+    iget-object p2, v1, Lmdn;->a:Landroid/content/Context;
+
+    if-nez p2, :cond_2
+
+    const-string p2, " context"
+
+    invoke-virtual {p1, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    :cond_2
+    iget-object p2, v1, Lmdn;->d:Ljava/lang/Boolean;
+
+    if-nez p2, :cond_3
+
+    const-string p2, " googlerOverridesCheckbox"
+
+    invoke-virtual {p1, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    :cond_3
+    new-instance p2, Ljava/lang/IllegalStateException;
+
+    invoke-static {p1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-static {p1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/String;->length()I
+
+    move-result v0
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    add-int/lit8 v0, v0, 0x1c
+
+    invoke-direct {v1, v0}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string v0, "Missing required properties:"
+
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-direct {p2, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw p2
+
+    :cond_4
+    new-instance p1, Ljava/lang/NullPointerException;
+
+    const-string p2, "Null context"
+
+    invoke-direct {p1, p2}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
+
+    throw p1
 .end method
 
-.method private constructor <init>()V
-    .locals 0
+.method public static a(Landroid/content/Context;Lmdv;)Lmes;
+    .locals 1
 
-    invoke-direct {p0}, Lnws;-><init>()V
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    return-void
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    new-instance v0, Lmdw;
+
+    invoke-direct {v0, p1}, Lmdw;-><init>(Lmdv;)V
+
+    new-instance p1, Lmes;
+
+    invoke-virtual {p0}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
+
+    move-result-object p0
+
+    invoke-direct {p1, p0, v0}, Lmes;-><init>(Landroid/content/Context;Lmdw;)V
+
+    return-object p1
 .end method
 
 
 # virtual methods
-.method protected final a(ILjava/lang/Object;)Ljava/lang/Object;
-    .locals 3
+.method public final toString()Ljava/lang/String;
+    .locals 2
 
-    add-int/lit8 p1, p1, -0x1
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    const/4 p2, 0x1
+    const-string v1, "CollectionBasisLogVerifier{"
 
-    packed-switch p1, :pswitch_data_0
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    :pswitch_0
-    const/4 p1, 0x0
+    const-string v1, "collectionBasisContext="
 
-    return-object p1
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    :pswitch_1
-    sget-object p1, Lmes;->e:Lnyf;
+    iget-object v1, p0, Lmes;->a:Lmdo;
 
-    if-nez p1, :cond_1
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    const-class p2, Lmes;
+    const-string v1, ", basis="
 
-    monitor-enter p2
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    :try_start_0
-    sget-object p1, Lmes;->e:Lnyf;
+    iget-object v1, p0, Lmes;->b:Lmdw;
 
-    if-nez p1, :cond_0
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    new-instance p1, Lnwo;
+    const-string v1, "}"
 
-    sget-object v0, Lmes;->c:Lmes;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-direct {p1, v0}, Lnwo;-><init>(Lnws;)V
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    sput-object p1, Lmes;->e:Lnyf;
+    move-result-object v0
 
-    :cond_0
-    monitor-exit p2
-
-    goto :goto_0
-
-    :catchall_0
-    move-exception p1
-
-    monitor-exit p2
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw p1
-
-    :cond_1
-    :goto_0
-    return-object p1
-
-    :pswitch_2
-    sget-object p1, Lmes;->c:Lmes;
-
-    return-object p1
-
-    :pswitch_3
-    new-instance p1, Lnwn;
-
-    sget-object p2, Lmes;->c:Lmes;
-
-    invoke-direct {p1, p2}, Lnwn;-><init>(Lnws;)V
-
-    return-object p1
-
-    :pswitch_4
-    new-instance p1, Lmes;
-
-    invoke-direct {p1}, Lmes;-><init>()V
-
-    return-object p1
-
-    :pswitch_5
-    const-string p1, "d"
-
-    const-string v0, "\u0001\u0002\u0000\u0001\u0001\u0002\u0002\u0000\u0000\u0000\u0001\u1009\u0000\u0002\u1004\u0001"
-
-    const/4 v1, 0x3
-
-    new-array v1, v1, [Ljava/lang/Object;
-
-    const/4 v2, 0x0
-
-    aput-object p1, v1, v2
-
-    const-string p1, "a"
-
-    aput-object p1, v1, p2
-
-    const/4 p1, 0x2
-
-    const-string p2, "b"
-
-    aput-object p2, v1, p1
-
-    sget-object p1, Lmes;->c:Lmes;
-
-    invoke-static {p1, v0, v1}, Lmes;->X(Lnxy;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object p1
-
-    return-object p1
-
-    :pswitch_6
-    invoke-static {p2}, Ljava/lang/Byte;->valueOf(B)Ljava/lang/Byte;
-
-    move-result-object p1
-
-    return-object p1
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_6
-        :pswitch_0
-        :pswitch_5
-        :pswitch_4
-        :pswitch_3
-        :pswitch_2
-        :pswitch_1
-    .end packed-switch
+    return-object v0
 .end method

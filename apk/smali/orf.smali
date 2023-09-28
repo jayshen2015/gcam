@@ -1,85 +1,97 @@
 .class final Lorf;
-.super Lore;
+.super Loqy;
 
 
 # instance fields
-.field private final a:Lori;
+.field final a:Ljava/lang/Object;
 
-.field private final e:Lorg;
+.field b:I
 
-.field private final f:Lopf;
-
-.field private final g:Ljava/lang/Object;
+.field final synthetic c:Lorg;
 
 
 # direct methods
-.method public constructor <init>(Lori;Lorg;Lopf;Ljava/lang/Object;)V
+.method public constructor <init>(Lorg;I)V
     .locals 0
 
-    invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    iput-object p1, p0, Lorf;->c:Lorg;
 
-    invoke-virtual {p3}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    invoke-direct {p0}, Loqy;-><init>()V
 
-    invoke-direct {p0}, Lore;-><init>()V
+    iget-object p1, p1, Lorg;->a:[Ljava/lang/Object;
 
-    iput-object p1, p0, Lorf;->a:Lori;
+    aget-object p1, p1, p2
 
-    iput-object p2, p0, Lorf;->e:Lorg;
+    iput-object p1, p0, Lorf;->a:Ljava/lang/Object;
 
-    iput-object p3, p0, Lorf;->f:Lopf;
-
-    iput-object p4, p0, Lorf;->g:Ljava/lang/Object;
+    iput p2, p0, Lorf;->b:I
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final bridge synthetic a(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 0
-
-    check-cast p1, Ljava/lang/Throwable;
-
-    invoke-virtual {p0, p1}, Lorf;->b(Ljava/lang/Throwable;)V
-
-    sget-object p1, Lojk;->a:Lojk;
-
-    return-object p1
-.end method
-
-.method public final b(Ljava/lang/Throwable;)V
+.method public final a()I
     .locals 4
 
-    iget-object p1, p0, Lorf;->a:Lori;
+    iget v0, p0, Lorf;->b:I
 
-    iget-object v0, p0, Lorf;->e:Lorg;
+    const/4 v1, -0x1
 
-    iget-object v1, p0, Lorf;->f:Lopf;
+    if-eq v0, v1, :cond_0
 
-    iget-object v2, p0, Lorf;->g:Ljava/lang/Object;
+    iget-object v2, p0, Lorf;->c:Lorg;
 
-    sget-boolean v3, Lopw;->a:Z
+    iget v3, v2, Lorg;->c:I
 
-    invoke-static {v1}, Lori;->J(Lowr;)Lopf;
+    if-ge v0, v3, :cond_0
 
-    move-result-object v1
+    iget-object v3, p0, Lorf;->a:Ljava/lang/Object;
 
-    if-eqz v1, :cond_0
+    iget-object v2, v2, Lorg;->a:[Ljava/lang/Object;
 
-    invoke-virtual {p1, v0, v1, v2}, Lori;->I(Lorg;Lopf;Ljava/lang/Object;)Z
+    aget-object v0, v2, v0
 
-    move-result v1
+    invoke-static {v3, v0}, Lobr;->bc(Ljava/lang/Object;Ljava/lang/Object;)Z
 
-    if-eqz v1, :cond_0
+    move-result v0
 
-    return-void
+    if-nez v0, :cond_1
 
     :cond_0
-    invoke-virtual {p1, v0, v2}, Lori;->v(Lorg;Ljava/lang/Object;)Ljava/lang/Object;
+    iget-object v0, p0, Lorf;->c:Lorg;
 
-    move-result-object v0
+    iget-object v2, p0, Lorf;->a:Ljava/lang/Object;
 
-    invoke-virtual {p1, v0}, Lori;->f(Ljava/lang/Object;)V
+    invoke-virtual {v0, v2}, Lorg;->c(Ljava/lang/Object;)I
 
-    return-void
+    move-result v0
+
+    iput v0, p0, Lorf;->b:I
+
+    :cond_1
+    iget v0, p0, Lorf;->b:I
+
+    if-ne v0, v1, :cond_2
+
+    const/4 v0, 0x0
+
+    return v0
+
+    :cond_2
+    iget-object v1, p0, Lorf;->c:Lorg;
+
+    iget-object v1, v1, Lorg;->b:[I
+
+    aget v0, v1, v0
+
+    return v0
+.end method
+
+.method public final b()Ljava/lang/Object;
+    .locals 1
+
+    iget-object v0, p0, Lorf;->a:Ljava/lang/Object;
+
+    return-object v0
 .end method

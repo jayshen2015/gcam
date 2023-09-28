@@ -3,7 +3,7 @@
 
 
 # static fields
-.field private static final a:Lnak;
+.field private static final a:Louj;
 
 
 # direct methods
@@ -12,11 +12,11 @@
 
     const-string v0, "com/google/android/apps/camera/testing/prod/ScorePrintService"
 
-    invoke-static {v0}, Lnak;->h(Ljava/lang/String;)Lnak;
+    invoke-static {v0}, Louj;->h(Ljava/lang/String;)Louj;
 
     move-result-object v0
 
-    sput-object v0, Lcom/google/android/apps/camera/testing/prod/ScorePrintService;->a:Lnak;
+    sput-object v0, Lcom/google/android/apps/camera/testing/prod/ScorePrintService;->a:Louj;
 
     return-void
 .end method
@@ -38,17 +38,17 @@
 
     if-nez p1, :cond_0
 
-    sget-object p1, Lcom/google/android/apps/camera/testing/prod/ScorePrintService;->a:Lnak;
+    sget-object p1, Lcom/google/android/apps/camera/testing/prod/ScorePrintService;->a:Louj;
 
-    invoke-virtual {p1}, Lnaf;->c()Lnaz;
+    invoke-virtual {p1}, Loue;->c()Lova;
 
     move-result-object p1
 
-    const-string v0, "No intent is given."
+    const/16 v0, 0xbc9
 
-    const/16 v1, 0xeb3
+    const-string v1, "No intent is given."
 
-    invoke-static {p1, v0, v1}, Ld;->g(Lnaz;Ljava/lang/String;C)V
+    invoke-static {p1, v1, v0}, Ld;->v(Lova;Ljava/lang/String;C)V
 
     return-void
 
@@ -57,42 +57,42 @@
 
     move-result-object v0
 
-    check-cast v0, Lhng;
+    check-cast v0, Linb;
 
-    new-instance v1, Ljhp;
+    new-instance v1, Lmip;
 
-    invoke-direct {v1}, Ljhp;-><init>()V
+    invoke-direct {v1}, Lmip;-><init>()V
 
-    invoke-interface {v0, v1}, Lhng;->g(Ljhp;)Lgxb;
-
-    move-result-object v0
-
-    iget-object v0, v0, Lgxb;->b:Ljava/lang/Object;
-
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
+    invoke-interface {v0, v1}, Linb;->e(Lmip;)Levy;
 
     move-result-object v0
 
-    check-cast v0, Lhni;
+    iget-object v0, v0, Levy;->a:Lqkg;
+
+    invoke-interface {v0}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lind;
 
     if-nez v0, :cond_1
 
-    sget-object p1, Lcom/google/android/apps/camera/testing/prod/ScorePrintService;->a:Lnak;
+    sget-object p1, Lcom/google/android/apps/camera/testing/prod/ScorePrintService;->a:Louj;
 
-    invoke-virtual {p1}, Lnaf;->c()Lnaz;
+    invoke-virtual {p1}, Loue;->c()Lova;
 
     move-result-object p1
 
-    const-string v0, "The service isn\'t enabled."
+    const/16 v0, 0xbc8
 
-    const/16 v1, 0xeb2
+    const-string v1, "The service isn\'t enabled."
 
-    invoke-static {p1, v0, v1}, Ld;->g(Lnaz;Ljava/lang/String;C)V
+    invoke-static {p1, v1, v0}, Ld;->v(Lova;Ljava/lang/String;C)V
 
     return-void
 
     :cond_1
-    invoke-interface {v0, p1}, Lhni;->a(Landroid/content/Intent;)V
+    invoke-interface {v0, p1}, Lind;->a(Landroid/content/Intent;)V
 
     return-void
 .end method

@@ -1,82 +1,28 @@
-.class final Llbb;
-.super Lldc;
+.class public final synthetic Llbb;
+.super Ljava/lang/Object;
 
 
-# instance fields
-.field final synthetic a:Llcd;
+# static fields
+.field public static final synthetic a:Llbb;
 
 
 # direct methods
-.method public constructor <init>(Llbd;Lkzc;Llcd;)V
-    .locals 0
+.method static synthetic constructor <clinit>()V
+    .locals 1
 
-    iput-object p3, p0, Llbb;->a:Llcd;
+    new-instance v0, Llbb;
 
-    const/4 p3, 0x0
+    invoke-direct {v0}, Llbb;-><init>()V
 
-    invoke-direct {p0, p1, p2, p3, p3}, Lldc;-><init>(Llbd;Lkzc;[B[B)V
+    sput-object v0, Llbb;->a:Llbb;
 
     return-void
 .end method
 
+.method private synthetic constructor <init>()V
+    .locals 0
 
-# virtual methods
-.method public final a()Lkzf;
-    .locals 3
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const/4 v0, 0x2
-
-    new-array v0, v0, [Lnou;
-
-    iget-object v1, p0, Llbb;->a:Llcd;
-
-    invoke-virtual {v1}, Llbk;->a()Lkzf;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Lkzf;->e()Lnou;
-
-    move-result-object v1
-
-    const/4 v2, 0x0
-
-    aput-object v1, v0, v2
-
-    invoke-super {p0}, Lldc;->a()Lkzf;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Lkzf;->e()Lnou;
-
-    move-result-object v1
-
-    const/4 v2, 0x1
-
-    aput-object v1, v0, v2
-
-    invoke-static {v0}, Lnsy;->y([Lnou;)Lnou;
-
-    move-result-object v0
-
-    new-instance v1, Lcej;
-
-    const/16 v2, 0x8
-
-    invoke-direct {v1, v2}, Lcej;-><init>(I)V
-
-    sget-object v2, Lnnv;->a:Lnnv;
-
-    invoke-static {v0, v1, v2}, Lnnf;->i(Lnou;Lmqi;Ljava/util/concurrent/Executor;)Lnou;
-
-    move-result-object v0
-
-    invoke-static {v0}, Llpm;->d(Lnou;)Lkzc;
-
-    move-result-object v0
-
-    invoke-static {v0}, Lkzf;->j(Lkzc;)Lkzf;
-
-    move-result-object v0
-
-    return-object v0
+    return-void
 .end method

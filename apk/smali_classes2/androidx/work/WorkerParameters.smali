@@ -3,28 +3,28 @@
 
 
 # instance fields
-.field public final a:Ljava/util/UUID;
+.field public a:Ljava/util/UUID;
 
-.field public final b:Laxh;
+.field public b:Lamq;
 
-.field public final c:I
+.field public c:I
 
-.field public final d:Ljava/util/concurrent/Executor;
+.field public d:Ljava/util/concurrent/Executor;
 
-.field public final e:Laxz;
+.field public e:Lani;
 
-.field public final f:Lva;
+.field public f:Laso;
 
 
 # direct methods
-.method public constructor <init>(Ljava/util/UUID;Laxh;Ljava/util/Collection;ILjava/util/concurrent/Executor;Lva;Laxz;[B)V
+.method public constructor <init>(Ljava/util/UUID;Lamq;Ljava/util/Collection;ILjava/util/concurrent/Executor;Laso;Lani;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     iput-object p1, p0, Landroidx/work/WorkerParameters;->a:Ljava/util/UUID;
 
-    iput-object p2, p0, Landroidx/work/WorkerParameters;->b:Laxh;
+    iput-object p2, p0, Landroidx/work/WorkerParameters;->b:Lamq;
 
     new-instance p1, Ljava/util/HashSet;
 
@@ -34,9 +34,9 @@
 
     iput-object p5, p0, Landroidx/work/WorkerParameters;->d:Ljava/util/concurrent/Executor;
 
-    iput-object p6, p0, Landroidx/work/WorkerParameters;->f:Lva;
+    iput-object p6, p0, Landroidx/work/WorkerParameters;->f:Laso;
 
-    iput-object p7, p0, Landroidx/work/WorkerParameters;->e:Laxz;
+    iput-object p7, p0, Landroidx/work/WorkerParameters;->e:Lani;
 
     return-void
 .end method

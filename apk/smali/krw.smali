@@ -1,210 +1,179 @@
-.class public final Lkrw;
+.class public final synthetic Lkrw;
 .super Ljava/lang/Object;
+
+# interfaces
+.implements Lkro;
+
+
+# static fields
+.field public static final synthetic a:Lkrw;
+
+.field public static final synthetic b:Lkrw;
+
+.field public static final synthetic c:Lkrw;
+
+.field public static final synthetic d:Lkrw;
 
 
 # instance fields
-.field public final a:Landroid/content/Context;
-
-.field public final b:Lmqp;
-
-.field public final c:Lmqp;
-
-.field private final d:Lmqp;
+.field private final synthetic e:I
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 0
+.method static synthetic constructor <clinit>()V
+    .locals 2
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance v0, Lkrw;
+
+    const/4 v1, 0x3
+
+    invoke-direct {v0, v1}, Lkrw;-><init>(I)V
+
+    sput-object v0, Lkrw;->d:Lkrw;
+
+    new-instance v0, Lkrw;
+
+    const/4 v1, 0x2
+
+    invoke-direct {v0, v1}, Lkrw;-><init>(I)V
+
+    sput-object v0, Lkrw;->c:Lkrw;
+
+    new-instance v0, Lkrw;
+
+    const/4 v1, 0x1
+
+    invoke-direct {v0, v1}, Lkrw;-><init>(I)V
+
+    sput-object v0, Lkrw;->b:Lkrw;
+
+    new-instance v0, Lkrw;
+
+    const/4 v1, 0x0
+
+    invoke-direct {v0, v1}, Lkrw;-><init>(I)V
+
+    sput-object v0, Lkrw;->a:Lkrw;
 
     return-void
 .end method
 
-.method public constructor <init>(Landroid/content/Context;Lmqp;Lmqp;Lmqp;)V
+.method private synthetic constructor <init>(I)V
     .locals 0
 
+    iput p1, p0, Lkrw;->e:I
+
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lkrw;->a:Landroid/content/Context;
-
-    iput-object p2, p0, Lkrw;->d:Lmqp;
-
-    iput-object p3, p0, Lkrw;->b:Lmqp;
-
-    iput-object p4, p0, Lkrw;->c:Lmqp;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 4
+.method public final a(Landroid/os/IBinder;)Landroid/os/IInterface;
+    .locals 2
 
-    const/4 v0, 0x1
+    iget v0, p0, Lkrw;->e:I
 
-    if-ne p1, p0, :cond_0
+    packed-switch v0, :pswitch_data_0
 
-    return v0
+    const-string v0, "com.google.android.gms.learning.internal.training.IInAppTrainingService"
+
+    invoke-interface {p1, v0}, Landroid/os/IBinder;->queryLocalInterface(Ljava/lang/String;)Landroid/os/IInterface;
+
+    move-result-object v0
+
+    instance-of v1, v0, Lkrv;
+
+    if-eqz v1, :cond_3
+
+    check-cast v0, Lkrv;
+
+    goto :goto_3
+
+    :pswitch_0
+    const-string v0, "com.google.android.gms.learning.internal.training.IInAppTrainer"
+
+    invoke-interface {p1, v0}, Landroid/os/IBinder;->queryLocalInterface(Ljava/lang/String;)Landroid/os/IInterface;
+
+    move-result-object v0
+
+    instance-of v1, v0, Lkrt;
+
+    if-eqz v1, :cond_0
+
+    check-cast v0, Lkrt;
+
+    goto :goto_0
 
     :cond_0
-    instance-of v1, p1, Lkrw;
+    new-instance v0, Lkrt;
 
-    const/4 v2, 0x0
+    invoke-direct {v0, p1}, Lkrt;-><init>(Landroid/os/IBinder;)V
 
-    if-eqz v1, :cond_1
+    :goto_0
+    return-object v0
 
-    check-cast p1, Lkrw;
+    :pswitch_1
+    const-string v0, "com.google.android.gms.learning.internal.IInAppExampleStoreProxy"
 
-    iget-object v1, p0, Lkrw;->a:Landroid/content/Context;
+    invoke-interface {p1, v0}, Landroid/os/IBinder;->queryLocalInterface(Ljava/lang/String;)Landroid/os/IInterface;
 
-    iget-object v3, p1, Lkrw;->a:Landroid/content/Context;
+    move-result-object v0
 
-    invoke-virtual {v1, v3}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_1
-
-    iget-object v1, p0, Lkrw;->d:Lmqp;
-
-    iget-object v3, p1, Lkrw;->d:Lmqp;
-
-    invoke-virtual {v1, v3}, Lmqp;->equals(Ljava/lang/Object;)Z
-
-    move-result v1
+    instance-of v1, v0, Lkrj;
 
     if-eqz v1, :cond_1
 
-    iget-object v1, p0, Lkrw;->b:Lmqp;
+    check-cast v0, Lkrj;
 
-    iget-object v3, p1, Lkrw;->b:Lmqp;
-
-    invoke-virtual {v1, v3}, Lmqp;->equals(Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_1
-
-    iget-object v1, p0, Lkrw;->c:Lmqp;
-
-    iget-object p1, p1, Lkrw;->c:Lmqp;
-
-    invoke-virtual {v1, p1}, Lmqp;->equals(Ljava/lang/Object;)Z
-
-    move-result p1
-
-    if-eqz p1, :cond_1
-
-    return v0
+    goto :goto_1
 
     :cond_1
-    return v2
-.end method
+    new-instance v0, Lkrj;
 
-.method public final hashCode()I
-    .locals 4
+    invoke-direct {v0, p1}, Lkrj;-><init>(Landroid/os/IBinder;)V
 
-    iget-object v0, p0, Lkrw;->a:Landroid/content/Context;
-
-    invoke-virtual {v0}, Ljava/lang/Object;->hashCode()I
-
-    move-result v0
-
-    const v1, 0xf4243
-
-    xor-int/2addr v0, v1
-
-    iget-object v2, p0, Lkrw;->b:Lmqp;
-
-    invoke-virtual {v2}, Lmqp;->hashCode()I
-
-    move-result v2
-
-    mul-int v0, v0, v1
-
-    const v3, 0x79a31aac
-
-    xor-int/2addr v0, v3
-
-    mul-int v0, v0, v1
-
-    xor-int/2addr v0, v2
-
-    mul-int v0, v0, v1
-
-    xor-int/lit16 v0, v0, 0x4d5
-
-    mul-int v0, v0, v1
-
-    xor-int/2addr v0, v3
-
-    return v0
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .locals 6
-
-    iget-object v0, p0, Lkrw;->a:Landroid/content/Context;
-
-    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v0
-
-    iget-object v1, p0, Lkrw;->d:Lmqp;
-
-    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v1
-
-    iget-object v2, p0, Lkrw;->b:Lmqp;
-
-    invoke-static {v2}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v2
-
-    iget-object v3, p0, Lkrw;->c:Lmqp;
-
-    invoke-static {v3}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v3
-
-    new-instance v4, Ljava/lang/StringBuilder;
-
-    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v5, "CollectionBasisContext{context="
-
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v0, ", accountNames="
-
-    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v4, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v0, ", stacktrace="
-
-    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v4, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v0, ", googlerOverridesCheckbox=false, executor="
-
-    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v4, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v0, "}"
-
-    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
+    :goto_1
     return-object v0
+
+    :pswitch_2
+    const-string v0, "com.google.android.gms.learning.internal.training.IInAppJobService"
+
+    invoke-interface {p1, v0}, Landroid/os/IBinder;->queryLocalInterface(Ljava/lang/String;)Landroid/os/IInterface;
+
+    move-result-object v0
+
+    instance-of v1, v0, Lkrs;
+
+    if-eqz v1, :cond_2
+
+    check-cast v0, Lkrs;
+
+    goto :goto_2
+
+    :cond_2
+    new-instance v0, Lkrr;
+
+    invoke-direct {v0, p1}, Lkrr;-><init>(Landroid/os/IBinder;)V
+
+    :goto_2
+    return-object v0
+
+    :cond_3
+    new-instance v0, Lkru;
+
+    invoke-direct {v0, p1}, Lkru;-><init>(Landroid/os/IBinder;)V
+
+    :goto_3
+    return-object v0
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method

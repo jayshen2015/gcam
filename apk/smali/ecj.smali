@@ -2,21 +2,35 @@
 .super Ljava/lang/Object;
 
 
-# static fields
-.field public static final a:Lduq;
+# instance fields
+.field private final a:Lcom/google/googlex/gcam/Gcam;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
+.method public constructor <init>(Lcom/google/googlex/gcam/Gcam;)V
+    .locals 0
 
-    new-instance v0, Lduq;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const/16 v1, 0x14
-
-    invoke-direct {v0, v1}, Lduq;-><init>(I)V
-
-    sput-object v0, Lecj;->a:Lduq;
+    iput-object p1, p0, Lecj;->a:Lcom/google/googlex/gcam/Gcam;
 
     return-void
+.end method
+
+
+# virtual methods
+.method public final a(Llzv;I)Leck;
+    .locals 2
+
+    new-instance v0, Leck;
+
+    iget-object v1, p0, Lecj;->a:Lcom/google/googlex/gcam/Gcam;
+
+    invoke-virtual {v1, p2}, Lcom/google/googlex/gcam/Gcam;->c(I)Lcom/google/googlex/gcam/Tuning;
+
+    move-result-object p2
+
+    invoke-direct {v0, p2, p1}, Leck;-><init>(Lcom/google/googlex/gcam/Tuning;Llzv;)V
+
+    return-object v0
 .end method

@@ -1,46 +1,93 @@
-.class public final Lnrx;
-.super Ljava/lang/Object;
+.class final Lnrx;
+.super Lqnp;
 
 # interfaces
-.implements Lkad;
+.implements Lqmj;
 
 
 # instance fields
-.field private a:J
+.field final synthetic a:Lnsb;
+
+.field final synthetic b:Laml;
+
+.field final synthetic c:Lnrl;
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/String;)V
-    .locals 2
+.method public constructor <init>(Lnsb;Laml;Lnrl;)V
+    .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lnrx;->a:Lnsb;
 
-    invoke-static {p1}, Lcom/google/googlex/gcam/creativecamera/skysegmentation/SkySegmenterManager;->getReservation(Ljava/lang/String;)J
+    iput-object p2, p0, Lnrx;->b:Laml;
 
-    move-result-wide v0
+    iput-object p3, p0, Lnrx;->c:Lnrl;
 
-    iput-wide v0, p0, Lnrx;->a:J
+    const/4 p1, 0x0
+
+    invoke-direct {p0, p1}, Lqnp;-><init>(I)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final close()V
+.method public final bridge synthetic invoke()Ljava/lang/Object;
     .locals 5
 
-    iget-wide v0, p0, Lnrx;->a:J
+    iget-object v0, p0, Lnrx;->a:Lnsb;
 
-    const-wide/16 v2, 0x0
+    iget-object v1, v0, Lnsb;->a:Lpyn;
 
-    cmp-long v4, v0, v2
+    invoke-interface {v1}, Lpyn;->get()Ljava/lang/Object;
 
-    if-eqz v4, :cond_0
+    move-result-object v1
 
-    invoke-static {v0, v1}, Lcom/google/googlex/gcam/creativecamera/skysegmentation/SkySegmenterManager;->releaseReservation(J)V
+    check-cast v1, Land;
 
-    iput-wide v2, p0, Lnrx;->a:J
+    new-instance v2, Lane;
 
-    :cond_0
-    return-void
+    const-class v3, Lcom/google/android/libraries/vision/visionkit/f250/internal/uploader/work/F250Worker;
+
+    invoke-direct {v2, v3}, Lane;-><init>(Ljava/lang/Class;)V
+
+    iget-object v3, p0, Lnrx;->b:Laml;
+
+    iget-object v4, v2, Lane;->b:Laqt;
+
+    iput-object v3, v4, Laqt;->i:Laml;
+
+    invoke-virtual {v3}, Laml;->hashCode()I
+
+    move-result v3
+
+    invoke-static {v3}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-virtual {v2, v3}, Lane;->b(Ljava/lang/String;)V
+
+    invoke-virtual {v2}, Lane;->a()Lanf;
+
+    move-result-object v2
+
+    const-string v3, "F250_WORKER_TAG"
+
+    const/4 v4, 0x2
+
+    invoke-virtual {v1, v3, v4, v2}, Land;->c(Ljava/lang/String;ILanf;)Lana;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    iget-object v2, p0, Lnrx;->c:Lnrl;
+
+    const/4 v3, 0x5
+
+    invoke-virtual {v0, v1, v2, v3}, Lnsb;->c(Lana;Lnrl;I)Lqbd;
+
+    move-result-object v0
+
+    return-object v0
 .end method

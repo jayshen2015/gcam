@@ -1,168 +1,74 @@
 .class public final Lmeq;
-.super Lnws;
-
-# interfaces
-.implements Lnxz;
-
-
-# static fields
-.field public static final b:Lmeq;
-
-.field private static volatile c:Lnyf;
+.super Ljava/lang/Object;
 
 
 # instance fields
-.field public a:Lnxa;
+.field private a:Ljava/lang/Integer;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
+.method public constructor <init>()V
+    .locals 0
 
-    new-instance v0, Lmeq;
-
-    invoke-direct {v0}, Lmeq;-><init>()V
-
-    sput-object v0, Lmeq;->b:Lmeq;
-
-    const-class v1, Lmeq;
-
-    invoke-static {v1, v0}, Lnws;->aa(Ljava/lang/Class;Lnws;)V
-
-    return-void
-.end method
-
-.method private constructor <init>()V
-    .locals 1
-
-    invoke-direct {p0}, Lnws;-><init>()V
-
-    sget-object v0, Lnyi;->b:Lnyi;
-
-    iput-object v0, p0, Lmeq;->a:Lnxa;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method protected final a(ILjava/lang/Object;)Ljava/lang/Object;
-    .locals 3
+.method public final a(Landroid/content/Context;)I
+    .locals 2
 
-    add-int/lit8 p1, p1, -0x1
+    iget-object v0, p0, Lmeq;->a:Ljava/lang/Integer;
 
-    const/4 p2, 0x1
-
-    packed-switch p1, :pswitch_data_0
-
-    :pswitch_0
-    const/4 p1, 0x0
-
-    return-object p1
-
-    :pswitch_1
-    sget-object p1, Lmeq;->c:Lnyf;
-
-    if-nez p1, :cond_1
-
-    const-class p2, Lmeq;
-
-    monitor-enter p2
+    if-nez v0, :cond_0
 
     :try_start_0
-    sget-object p1, Lmeq;->c:Lnyf;
+    invoke-virtual {p1}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
 
-    if-nez p1, :cond_0
+    move-result-object v0
 
-    new-instance p1, Lnwo;
+    invoke-virtual {p1}, Landroid/content/Context;->getPackageName()Ljava/lang/String;
 
-    sget-object v0, Lmeq;->b:Lmeq;
+    move-result-object p1
 
-    invoke-direct {p1, v0}, Lnwo;-><init>(Lnws;)V
+    const/4 v1, 0x0
 
-    sput-object p1, Lmeq;->c:Lnyf;
+    invoke-virtual {v0, p1, v1}, Landroid/content/pm/PackageManager;->getPackageInfo(Ljava/lang/String;I)Landroid/content/pm/PackageInfo;
 
-    :cond_0
-    monitor-exit p2
+    move-result-object p1
+
+    iget p1, p1, Landroid/content/pm/PackageInfo;->versionCode:I
+
+    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object p1
+
+    iput-object p1, p0, Lmeq;->a:Ljava/lang/Integer;
+    :try_end_0
+    .catch Landroid/content/pm/PackageManager$NameNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
 
     goto :goto_0
 
-    :catchall_0
+    :catch_0
     move-exception p1
 
-    monitor-exit p2
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    const/4 p1, -0x1
 
-    throw p1
+    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    :cond_1
+    move-result-object p1
+
+    iput-object p1, p0, Lmeq;->a:Ljava/lang/Integer;
+
+    :cond_0
     :goto_0
-    return-object p1
+    iget-object p1, p0, Lmeq;->a:Ljava/lang/Integer;
 
-    :pswitch_2
-    sget-object p1, Lmeq;->b:Lmeq;
+    invoke-virtual {p1}, Ljava/lang/Integer;->intValue()I
 
-    return-object p1
+    move-result p1
 
-    :pswitch_3
-    new-instance p1, Lnwn;
-
-    sget-object p2, Lmeq;->b:Lmeq;
-
-    invoke-direct {p1, p2}, Lnwn;-><init>(Lnws;)V
-
-    return-object p1
-
-    :pswitch_4
-    new-instance p1, Lmeq;
-
-    invoke-direct {p1}, Lmeq;-><init>()V
-
-    return-object p1
-
-    :pswitch_5
-    const-string p1, "a"
-
-    const-string v0, "\u0001\u0001\u0000\u0000\u0001\u0001\u0001\u0000\u0001\u0000\u0001\u001b"
-
-    const/4 v1, 0x2
-
-    new-array v1, v1, [Ljava/lang/Object;
-
-    const/4 v2, 0x0
-
-    aput-object p1, v1, v2
-
-    const-class p1, Lmer;
-
-    aput-object p1, v1, p2
-
-    sget-object p1, Lmeq;->b:Lmeq;
-
-    invoke-static {p1, v0, v1}, Lmeq;->X(Lnxy;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object p1
-
-    return-object p1
-
-    :pswitch_6
-    invoke-static {p2}, Ljava/lang/Byte;->valueOf(B)Ljava/lang/Byte;
-
-    move-result-object p1
-
-    return-object p1
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_6
-        :pswitch_0
-        :pswitch_5
-        :pswitch_4
-        :pswitch_3
-        :pswitch_2
-        :pswitch_1
-    .end packed-switch
+    return p1
 .end method

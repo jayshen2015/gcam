@@ -1,49 +1,50 @@
-.class public interface abstract Ldwa;
+.class public final synthetic Ldwa;
 .super Ljava/lang/Object;
+
+# interfaces
+.implements Landroid/preference/Preference$OnPreferenceChangeListener;
+
+
+# instance fields
+.field public final synthetic a:Ldwd;
+
+
+# direct methods
+.method public synthetic constructor <init>(Ldwd;[B)V
+    .locals 0
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Ldwa;->a:Ldwd;
+
+    return-void
+.end method
 
 
 # virtual methods
-.method public abstract a()I
-.end method
+.method public final onPreferenceChange(Landroid/preference/Preference;Ljava/lang/Object;)Z
+    .locals 1
 
-.method public abstract b(Landroid/graphics/Canvas;)V
-.end method
+    iget-object p1, p0, Ldwa;->a:Ldwd;
 
-.method public abstract c(Lmwn;)V
-.end method
+    check-cast p2, Ljava/lang/Boolean;
 
-.method public abstract d(Lmwn;)V
-.end method
+    invoke-virtual {p2}, Ljava/lang/Boolean;->booleanValue()Z
 
-.method public abstract e(I)V
-.end method
+    move-result p2
 
-.method public abstract f(FF)V
-.end method
+    if-nez p2, :cond_0
 
-.method public abstract g(FF)V
-.end method
+    iget-object v0, p1, Ldwd;->a:Landroid/content/Context;
 
-.method public abstract h(F)V
-.end method
+    invoke-static {v0}, Ldwd;->a(Landroid/content/Context;)V
 
-.method public abstract i(II)V
-.end method
+    :cond_0
+    iget-object p1, p1, Ldwd;->c:Lfjs;
 
-.method public abstract j(I)V
-.end method
+    invoke-interface {p1, p2}, Lfjs;->f(Z)V
 
-.method public abstract k(F)V
-.end method
+    const/4 p1, 0x1
 
-.method public abstract l(F)V
-.end method
-
-.method public abstract m(F)V
-.end method
-
-.method public abstract n(F)V
-.end method
-
-.method public abstract o(I)V
+    return p1
 .end method

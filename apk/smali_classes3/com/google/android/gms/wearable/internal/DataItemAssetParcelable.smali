@@ -1,9 +1,9 @@
 .class public Lcom/google/android/gms/wearable/internal/DataItemAssetParcelable;
-.super Ljhn;
+.super Lkno;
 
 # interfaces
 .implements Lcom/google/android/gms/common/internal/ReflectedParcelable;
-.implements Ljpx;
+.implements Lkwi;
 
 
 # static fields
@@ -20,11 +20,11 @@
 .method static constructor <clinit>()V
     .locals 2
 
-    new-instance v0, Ljqn;
+    new-instance v0, Lkxn;
 
-    const/16 v1, 0xd
+    const/4 v1, 0x2
 
-    invoke-direct {v0, v1}, Ljqn;-><init>(I)V
+    invoke-direct {v0, v1}, Lkxn;-><init>(I)V
 
     sput-object v0, Lcom/google/android/gms/wearable/internal/DataItemAssetParcelable;->CREATOR:Landroid/os/Parcelable$Creator;
 
@@ -34,7 +34,7 @@
 .method public constructor <init>(Ljava/lang/String;Ljava/lang/String;)V
     .locals 0
 
-    invoke-direct {p0}, Ljhn;-><init>()V
+    invoke-direct {p0}, Lkno;-><init>()V
 
     iput-object p1, p0, Lcom/google/android/gms/wearable/internal/DataItemAssetParcelable;->a:Ljava/lang/String;
 
@@ -43,24 +43,24 @@
     return-void
 .end method
 
-.method public constructor <init>(Ljpx;)V
+.method public constructor <init>(Lkwi;)V
     .locals 1
 
-    invoke-direct {p0}, Ljhn;-><init>()V
+    invoke-direct {p0}, Lkno;-><init>()V
 
-    invoke-interface {p1}, Ljpx;->d()Ljava/lang/String;
+    invoke-interface {p1}, Lkwi;->d()Ljava/lang/String;
 
     move-result-object v0
 
-    invoke-static {v0}, Ljhp;->ab(Ljava/lang/Object;)V
+    invoke-static {v0}, Lmip;->dk(Ljava/lang/Object;)Ljava/lang/Object;
 
     iput-object v0, p0, Lcom/google/android/gms/wearable/internal/DataItemAssetParcelable;->a:Ljava/lang/String;
 
-    invoke-interface {p1}, Ljpx;->c()Ljava/lang/String;
+    invoke-interface {p1}, Lkwi;->c()Ljava/lang/String;
 
     move-result-object p1
 
-    invoke-static {p1}, Ljhp;->ab(Ljava/lang/Object;)V
+    invoke-static {p1}, Lmip;->dk(Ljava/lang/Object;)Ljava/lang/Object;
 
     iput-object p1, p0, Lcom/google/android/gms/wearable/internal/DataItemAssetParcelable;->b:Ljava/lang/String;
 
@@ -148,7 +148,7 @@
 .method public final writeToParcel(Landroid/os/Parcel;I)V
     .locals 2
 
-    invoke-static {p1}, Ljhp;->a(Landroid/os/Parcel;)I
+    invoke-static {p1}, Lmip;->ct(Landroid/os/Parcel;)I
 
     move-result p2
 
@@ -156,15 +156,15 @@
 
     const/4 v1, 0x2
 
-    invoke-static {p1, v1, v0}, Ljhp;->p(Landroid/os/Parcel;ILjava/lang/String;)V
+    invoke-static {p1, v1, v0}, Lmip;->cI(Landroid/os/Parcel;ILjava/lang/String;)V
 
     iget-object v0, p0, Lcom/google/android/gms/wearable/internal/DataItemAssetParcelable;->b:Ljava/lang/String;
 
     const/4 v1, 0x3
 
-    invoke-static {p1, v1, v0}, Ljhp;->p(Landroid/os/Parcel;ILjava/lang/String;)V
+    invoke-static {p1, v1, v0}, Lmip;->cI(Landroid/os/Parcel;ILjava/lang/String;)V
 
-    invoke-static {p1, p2}, Ljhp;->c(Landroid/os/Parcel;I)V
+    invoke-static {p1, p2}, Lmip;->cv(Landroid/os/Parcel;I)V
 
     return-void
 .end method

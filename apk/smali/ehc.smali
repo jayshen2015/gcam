@@ -1,574 +1,271 @@
 .class public final Lehc;
 .super Ljava/lang/Object;
 
-# interfaces
-.implements Lnoj;
+
+# static fields
+.field private static final b:Louj;
 
 
 # instance fields
-.field final synthetic a:J
+.field public final a:Ljava/lang/String;
 
-.field final synthetic b:Ljava/lang/Object;
+.field private final c:Ljava/io/File;
 
-.field private final synthetic c:I
+.field private final d:Liki;
 
 
 # direct methods
-.method public constructor <init>(Lefh;JI)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 1
 
-    iput p4, p0, Lehc;->c:I
+    const-string v0, "com/google/android/apps/camera/imax/ImaxDataset"
 
-    iput-object p1, p0, Lehc;->b:Ljava/lang/Object;
+    invoke-static {v0}, Louj;->h(Ljava/lang/String;)Louj;
 
-    iput-wide p2, p0, Lehc;->a:J
+    move-result-object v0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
-.end method
-
-.method public constructor <init>(Lehe;JI)V
-    .locals 0
-
-    iput p4, p0, Lehc;->c:I
-
-    iput-object p1, p0, Lehc;->b:Ljava/lang/Object;
-
-    iput-wide p2, p0, Lehc;->a:J
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    sput-object v0, Lehc;->b:Louj;
 
     return-void
 .end method
 
-.method public constructor <init>(Lffp;JI)V
-    .locals 0
-
-    iput p4, p0, Lehc;->c:I
-
-    iput-object p1, p0, Lehc;->b:Ljava/lang/Object;
-
-    iput-wide p2, p0, Lehc;->a:J
+.method public constructor <init>(Landroid/content/Context;Liki;Lkme;Ljava/util/Set;[B)V
+    .locals 2
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
+
+    move-result-wide v0
+
+    invoke-virtual {p3, v0, v1}, Lkme;->b(J)Ljava/lang/String;
+
+    move-result-object p3
+
+    new-instance p5, Ljava/io/File;
+
+    invoke-virtual {p1}, Landroid/content/Context;->getCacheDir()Ljava/io/File;
+
+    move-result-object p1
+
+    const-string v0, "datasets"
+
+    invoke-direct {p5, p1, v0}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
+
+    new-instance p1, Ljava/io/File;
+
+    invoke-direct {p1, p5, p3}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
+
+    monitor-enter p4
+
+    :try_start_0
+    invoke-virtual {p1}, Ljava/io/File;->toString()Ljava/lang/String;
+
+    move-result-object p3
+
+    invoke-interface {p4, p3}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
+
+    monitor-exit p4
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    invoke-virtual {p5}, Ljava/io/File;->exists()Z
+
+    move-result p3
+
+    if-nez p3, :cond_0
+
+    invoke-virtual {p5}, Ljava/io/File;->mkdir()Z
+
+    :cond_0
+    invoke-virtual {p1}, Ljava/io/File;->mkdirs()Z
+
+    move-result p3
+
+    if-nez p3, :cond_1
+
+    sget-object p3, Lehc;->b:Louj;
+
+    invoke-virtual {p3}, Loue;->b()Lova;
+
+    move-result-object p3
+
+    const-string p4, "Failed to create directory"
+
+    const/16 p5, 0x486
+
+    invoke-static {p3, p4, p5}, Ld;->v(Lova;Ljava/lang/String;C)V
+
+    :cond_1
+    iput-object p1, p0, Lehc;->c:Ljava/io/File;
+
+    invoke-virtual {p1}, Ljava/io/File;->getName()Ljava/lang/String;
+
+    move-result-object p1
+
+    iput-object p1, p0, Lehc;->a:Ljava/lang/String;
+
+    iput-object p2, p0, Lehc;->d:Liki;
+
     return-void
-.end method
 
-.method public constructor <init>(Lhba;JI)V
-    .locals 0
+    :catchall_0
+    move-exception p1
 
-    iput p4, p0, Lehc;->c:I
+    :try_start_1
+    monitor-exit p4
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    iput-object p1, p0, Lehc;->b:Ljava/lang/Object;
-
-    iput-wide p2, p0, Lehc;->a:J
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
+    throw p1
 .end method
 
 
 # virtual methods
-.method public final a(Ljava/lang/Throwable;)V
-    .locals 4
+.method public final a()Ljava/lang/String;
+    .locals 7
 
-    iget v0, p0, Lehc;->c:I
+    iget-object v0, p0, Lehc;->c:Ljava/io/File;
 
-    packed-switch v0, :pswitch_data_0
-
-    invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
-
-    move-result-wide v0
-
-    iget-wide v2, p0, Lehc;->a:J
-
-    sub-long/2addr v0, v2
-
-    iget-object v2, p0, Lehc;->b:Ljava/lang/Object;
-
-    check-cast v2, Lhba;
-
-    iget-object v2, v2, Lhba;->s:Lkbf;
-
-    if-eqz v2, :cond_1
-
-    invoke-interface {v2}, Lkbf;->a()V
-
-    goto/16 :goto_0
-
-    :pswitch_0
-    sget-object p1, Lffp;->a:Lnak;
-
-    invoke-virtual {p1}, Lnaf;->c()Lnaz;
-
-    move-result-object p1
-
-    const-string v0, "Cannot get final shutter timestamp from microvideo as it failed to start!"
-
-    const/16 v1, 0x87e
-
-    invoke-static {p1, v0, v1}, Ld;->g(Lnaz;Ljava/lang/String;C)V
-
-    return-void
-
-    :pswitch_1
-    sget-object v0, Lefi;->a:Lnak;
-
-    invoke-virtual {v0}, Lnaf;->c()Lnaz;
+    invoke-virtual {v0}, Ljava/io/File;->getParent()Ljava/lang/String;
 
     move-result-object v0
 
-    check-cast v0, Lnah;
+    sget-object v1, Ljava/io/File;->separator:Ljava/lang/String;
 
-    invoke-interface {v0, p1}, Lnah;->h(Ljava/lang/Throwable;)Lnaz;
+    iget-object v2, p0, Lehc;->c:Ljava/io/File;
 
-    move-result-object p1
-
-    check-cast p1, Lnah;
-
-    const/16 v0, 0x570
-
-    invoke-interface {p1, v0}, Lnah;->G(I)Lnaz;
-
-    move-result-object p1
-
-    check-cast p1, Lnah;
-
-    iget-object v0, p0, Lehc;->b:Ljava/lang/Object;
-
-    check-cast v0, Lefh;
-
-    iget-object v0, v0, Lefh;->c:Ljava/lang/String;
-
-    iget-wide v1, p0, Lehc;->a:J
-
-    const-string v3, "[%s] Fusion effect failed for shot %d"
-
-    invoke-interface {p1, v3, v0, v1, v2}, Lnah;->y(Ljava/lang/String;Ljava/lang/Object;J)V
-
-    iget-object p1, p0, Lehc;->b:Ljava/lang/Object;
-
-    check-cast p1, Lefh;
-
-    iget-object p1, p1, Lefh;->i:Lnwn;
-
-    iget-object v0, p1, Lnwn;->b:Lnws;
-
-    invoke-virtual {v0}, Lnws;->ac()Z
-
-    move-result v0
-
-    if-nez v0, :cond_0
-
-    invoke-virtual {p1}, Lnwn;->p()V
-
-    :cond_0
-    iget-object p1, p1, Lnwn;->b:Lnws;
-
-    check-cast p1, Lnib;
-
-    sget-object v0, Lnib;->e:Lnib;
-
-    const/4 v0, 0x3
-
-    iput v0, p1, Lnib;->c:I
-
-    iget v0, p1, Lnib;->a:I
-
-    or-int/lit8 v0, v0, 0x2
-
-    iput v0, p1, Lnib;->a:I
-
-    iget-object p1, p0, Lehc;->b:Ljava/lang/Object;
-
-    check-cast p1, Lefh;
-
-    invoke-static {p1}, Lefh;->h(Lefh;)V
-
-    iget-object p1, p0, Lehc;->b:Ljava/lang/Object;
-
-    iget-wide v0, p0, Lehc;->a:J
-
-    check-cast p1, Lefh;
-
-    invoke-virtual {p1, v0, v1}, Lefh;->f(J)V
-
-    return-void
-
-    :pswitch_2
-    sget-object v0, Lehf;->b:Lnak;
-
-    invoke-virtual {v0}, Lnaf;->c()Lnaz;
-
-    move-result-object v0
-
-    check-cast v0, Lnah;
-
-    invoke-interface {v0, p1}, Lnah;->h(Ljava/lang/Throwable;)Lnaz;
-
-    move-result-object p1
-
-    check-cast p1, Lnah;
-
-    const/16 v0, 0x5b4
-
-    invoke-interface {p1, v0}, Lnah;->G(I)Lnaz;
-
-    move-result-object p1
-
-    check-cast p1, Lnah;
-
-    const-string v0, "Portrait effect failed for shot %d"
-
-    iget-wide v1, p0, Lehc;->a:J
-
-    invoke-interface {p1, v0, v1, v2}, Lnah;->q(Ljava/lang/String;J)V
-
-    iget-object p1, p0, Lehc;->b:Ljava/lang/Object;
-
-    check-cast p1, Lehe;
-
-    invoke-static {p1}, Lehe;->g(Lehe;)V
-
-    iget-object p1, p0, Lehc;->b:Ljava/lang/Object;
-
-    iget-wide v0, p0, Lehc;->a:J
-
-    sget-object v2, Lmpx;->a:Lmpx;
-
-    check-cast p1, Lehe;
-
-    invoke-virtual {p1, v0, v1, v2}, Lehe;->f(JLmqp;)V
-
-    return-void
-
-    :cond_1
-    :goto_0
-    sget-object v2, Lhba;->a:Lnak;
-
-    invoke-virtual {v2}, Lnaf;->b()Lnaz;
+    invoke-virtual {v2}, Ljava/io/File;->getName()Ljava/lang/String;
 
     move-result-object v2
 
-    check-cast v2, Lnah;
-
-    invoke-interface {v2, p1}, Lnah;->h(Ljava/lang/Throwable;)Lnaz;
-
-    move-result-object p1
-
-    check-cast p1, Lnah;
-
-    const/16 v2, 0xd56
-
-    invoke-interface {p1, v2}, Lnah;->G(I)Lnaz;
-
-    move-result-object p1
-
-    check-cast p1, Lnah;
-
-    const-string v2, "HAL failed to restart after %dms due to an exception."
-
-    invoke-interface {p1, v2, v0, v1}, Lnah;->q(Ljava/lang/String;J)V
-
-    iget-object p1, p0, Lehc;->b:Ljava/lang/Object;
-
-    check-cast p1, Lhba;
-
-    iget-object p1, p1, Lhba;->c:Ldin;
-
-    sget-object v0, Ldin;->c:Ldin;
-
-    invoke-virtual {p1, v0}, Ldin;->b(Ldin;)Z
-
-    move-result p1
-
-    if-eqz p1, :cond_2
-
-    iget-object p1, p0, Lehc;->b:Ljava/lang/Object;
-
-    check-cast p1, Lhba;
-
-    iget-object p1, p1, Lhba;->u:Ldja;
-
-    invoke-virtual {p1}, Ldja;->A()V
-
-    :cond_2
-    iget-object p1, p0, Lehc;->b:Ljava/lang/Object;
-
-    check-cast p1, Lhba;
-
-    iget-object p1, p1, Lhba;->q:Lnph;
-
-    const/4 v0, 0x1
-
-    invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
-
-    move-result-object v0
-
-    invoke-virtual {p1, v0}, Lnph;->e(Ljava/lang/Object;)Z
-
-    iget-object p1, p0, Lehc;->b:Ljava/lang/Object;
-
-    check-cast p1, Lhba;
-
-    iget-object p1, p1, Lhba;->k:Lhbf;
-
-    sget-object v0, Lkbo;->m:Lkbo;
-
-    iget v0, v0, Lkbo;->u:I
-
-    const/4 v1, 0x4
-
-    invoke-virtual {p1, v0, v1}, Lhbf;->b(II)V
-
-    return-void
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_2
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
-.end method
-
-.method public final synthetic b(Ljava/lang/Object;)V
-    .locals 8
-
-    iget v0, p0, Lehc;->c:I
-
-    const/4 v1, 0x4
-
-    packed-switch v0, :pswitch_data_0
-
-    check-cast p1, Ldmy;
-
-    invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
-
-    move-result-wide v2
-
-    iget-wide v4, p0, Lehc;->a:J
-
-    sub-long/2addr v2, v4
-
-    iget-object v0, p0, Lehc;->b:Ljava/lang/Object;
-
-    check-cast v0, Lhba;
-
-    iget-object v0, v0, Lhba;->s:Lkbf;
-
-    if-eqz v0, :cond_2
-
-    invoke-interface {v0}, Lkbf;->a()V
-
-    goto :goto_0
-
-    :pswitch_0
-    check-cast p1, Lffo;
-
-    iget-object v0, p0, Lehc;->b:Ljava/lang/Object;
-
-    sget-object v2, Ljava/util/concurrent/TimeUnit;->MICROSECONDS:Ljava/util/concurrent/TimeUnit;
-
-    iget-wide v3, p0, Lehc;->a:J
-
-    sget-object v5, Ljava/util/concurrent/TimeUnit;->NANOSECONDS:Ljava/util/concurrent/TimeUnit;
-
-    invoke-virtual {v2, v3, v4, v5}, Ljava/util/concurrent/TimeUnit;->convert(JLjava/util/concurrent/TimeUnit;)J
-
-    move-result-wide v2
-
-    check-cast v0, Lffp;
-
-    iget-object v0, v0, Lffp;->b:Ljava/util/concurrent/Executor;
-
-    new-instance v4, Lepm;
-
-    invoke-direct {v4, p1, v2, v3, v1}, Lepm;-><init>(Lffo;JI)V
-
-    invoke-interface {v0, v4}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
-
-    return-void
-
-    :pswitch_1
-    check-cast p1, Ljava/lang/Boolean;
-
-    if-eqz p1, :cond_0
-
-    invoke-virtual {p1}, Ljava/lang/Boolean;->booleanValue()Z
-
-    :cond_0
-    return-void
-
-    :pswitch_2
-    check-cast p1, Ljava/lang/Boolean;
-
-    if-eqz p1, :cond_1
-
-    invoke-virtual {p1}, Ljava/lang/Boolean;->booleanValue()Z
-
-    :cond_1
-    return-void
-
-    :cond_2
-    :goto_0
-    iget-boolean v0, p1, Ldmy;->a:Z
-
-    const/4 v4, 0x1
-
-    const/4 v5, 0x0
-
-    if-eqz v0, :cond_3
-
-    iget-object p1, p0, Lehc;->b:Ljava/lang/Object;
-
-    check-cast p1, Lhba;
-
-    iget-object p1, p1, Lhba;->k:Lhbf;
-
-    invoke-virtual {p1, v4, v5, v5}, Lhbf;->a(ZII)V
-
-    goto :goto_4
-
-    :cond_3
-    iget-object v0, p1, Ldmy;->c:Ljava/lang/Exception;
-
-    iget-object p1, p1, Ldmy;->b:Lkbo;
-
-    if-eqz p1, :cond_4
-
-    iget v5, p1, Lkbo;->u:I
-
-    goto :goto_1
-
-    :cond_4
-    :goto_1
-    if-eqz p1, :cond_5
-
-    invoke-virtual {p1}, Lkbo;->c()Ljava/lang/String;
-
-    move-result-object p1
-
-    goto :goto_2
-
-    :cond_5
-    const-string p1, ""
-
-    :goto_2
-    sget-object v6, Lhba;->a:Lnak;
-
-    invoke-virtual {v6}, Lnaf;->c()Lnaz;
-
-    move-result-object v6
-
-    check-cast v6, Lnah;
-
-    invoke-interface {v6, v0}, Lnah;->h(Ljava/lang/Throwable;)Lnaz;
-
-    move-result-object v6
-
-    check-cast v6, Lnah;
-
-    const/16 v7, 0xd57
-
-    invoke-interface {v6, v7}, Lnah;->G(I)Lnaz;
-
-    move-result-object v6
-
-    check-cast v6, Lnah;
-
-    invoke-static {v2, v3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    move-result-object v2
-
-    invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v3
 
-    const-string v7, "HAL failed to restart after %dms due to error (%d): %s"
+    invoke-virtual {v3}, Ljava/lang/String;->length()I
 
-    invoke-interface {v6, v7, v2, v3, p1}, Lnah;->B(Ljava/lang/String;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V
+    move-result v3
 
-    iget-object p1, p0, Lehc;->b:Ljava/lang/Object;
+    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
-    check-cast p1, Lhba;
+    move-result-object v4
 
-    iget-object p1, p1, Lhba;->c:Ldin;
+    invoke-virtual {v4}, Ljava/lang/String;->length()I
 
-    sget-object v2, Ldin;->c:Ldin;
+    move-result v4
 
-    invoke-virtual {p1, v2}, Ldin;->b(Ldin;)Z
+    invoke-static {v2}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
-    move-result p1
+    move-result-object v5
 
-    if-eqz p1, :cond_6
+    invoke-virtual {v5}, Ljava/lang/String;->length()I
 
-    iget-object p1, p0, Lehc;->b:Ljava/lang/Object;
+    move-result v5
 
-    check-cast p1, Lhba;
+    new-instance v6, Ljava/lang/StringBuilder;
 
-    iget-object p1, p1, Lhba;->u:Ldja;
+    add-int/2addr v3, v4
 
-    invoke-virtual {p1}, Ldja;->A()V
+    add-int/2addr v3, v5
 
-    :cond_6
-    instance-of p1, v0, Ljava/util/concurrent/TimeoutException;
+    invoke-direct {v6, v3}, Ljava/lang/StringBuilder;-><init>(I)V
 
-    if-eqz p1, :cond_7
+    invoke-virtual {v6, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const/4 v1, 0x7
+    invoke-virtual {v6, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    goto :goto_3
+    invoke-virtual {v6, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    :cond_7
-    instance-of p1, v0, Ljava/lang/InterruptedException;
-
-    if-eqz p1, :cond_8
-
-    const/16 v1, 0x8
-
-    goto :goto_3
-
-    :cond_8
-    instance-of p1, v0, Landroid/hardware/camera2/CameraAccessException;
-
-    if-eqz p1, :cond_9
-
-    goto :goto_3
-
-    :cond_9
-    const/4 v1, 0x3
-
-    :goto_3
-    iget-object p1, p0, Lehc;->b:Ljava/lang/Object;
-
-    check-cast p1, Lhba;
-
-    iget-object p1, p1, Lhba;->k:Lhbf;
-
-    invoke-virtual {p1, v5, v1}, Lhbf;->b(II)V
-
-    :goto_4
-    iget-object p1, p0, Lehc;->b:Ljava/lang/Object;
-
-    check-cast p1, Lhba;
-
-    iget-object p1, p1, Lhba;->q:Lnph;
-
-    invoke-static {v4}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v0
 
-    invoke-virtual {p1, v0}, Lnph;->e(Ljava/lang/Object;)Z
+    return-object v0
+.end method
+
+.method public final b()Ljava/lang/String;
+    .locals 5
+
+    invoke-virtual {p0}, Lehc;->a()Ljava/lang/String;
+
+    move-result-object v0
+
+    sget-object v1, Ljava/io/File;->separator:Ljava/lang/String;
+
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/String;->length()I
+
+    move-result v2
+
+    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/lang/String;->length()I
+
+    move-result v3
+
+    new-instance v4, Ljava/lang/StringBuilder;
+
+    add-int/lit8 v2, v2, 0xb
+
+    add-int/2addr v2, v3
+
+    invoke-direct {v4, v2}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v4, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v0, "capture.mp4"
+
+    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public final c()V
+    .locals 3
+
+    iget-object v0, p0, Lehc;->d:Liki;
+
+    invoke-virtual {v0}, Liki;->a()Ljava/io/File;
+
+    move-result-object v0
+
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v0
+
+    sget-object v1, Ljava/io/File;->separator:Ljava/lang/String;
+
+    iget-object v2, p0, Lehc;->a:Ljava/lang/String;
+
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/String;->length()I
+
+    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/String;->length()I
+
+    invoke-static {v2}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/String;->length()I
 
     return-void
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_2
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
 .end method

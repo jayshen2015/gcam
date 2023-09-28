@@ -1,22 +1,26 @@
-.class final Ldlr;
-.super Laqa;
+.class public final Ldlr;
+.super Ljava/lang/RuntimeException;
+
+
+# instance fields
+.field public final a:Ljava/util/List;
+
+.field public final b:Llju;
 
 
 # direct methods
-.method public constructor <init>(Lapt;)V
+.method public varargs constructor <init>(Ljava/lang/String;Llju;[Llwd;)V
     .locals 0
 
-    invoke-direct {p0, p1}, Laqa;-><init>(Lapt;)V
+    invoke-direct {p0, p1}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
+
+    invoke-static {p3}, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
+
+    move-result-object p1
+
+    iput-object p1, p0, Ldlr;->a:Ljava/util/List;
+
+    iput-object p2, p0, Ldlr;->b:Llju;
 
     return-void
-.end method
-
-
-# virtual methods
-.method public final d()Ljava/lang/String;
-    .locals 1
-
-    const-string v0, "UPDATE shots SET most_recent_event_millis = ? WHERE shot_id = ?"
-
-    return-object v0
 .end method

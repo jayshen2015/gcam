@@ -1,166 +1,273 @@
 .class public final Loch;
-.super Lnws;
-
-# interfaces
-.implements Lnxz;
-
-
-# static fields
-.field public static final b:Loch;
-
-.field private static volatile d:Lnyf;
+.super Ljava/lang/Object;
 
 
 # instance fields
 .field public a:F
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
+.end field
 
-.field private c:I
+.field public b:F
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
+.end field
+
+.field public c:F
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
+.end field
+
+.field public d:F
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
+.end field
+
+.field public e:F
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
+.end field
+
+.field public final f:Ljava/util/List;
+
+.field private final g:Ljava/util/List;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
+.method public constructor <init>()V
+    .locals 1
 
-    new-instance v0, Loch;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {v0}, Loch;-><init>()V
+    new-instance v0, Ljava/util/ArrayList;
 
-    sput-object v0, Loch;->b:Loch;
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    const-class v1, Loch;
+    iput-object v0, p0, Loch;->f:Ljava/util/List;
 
-    invoke-static {v1, v0}, Lnws;->aa(Ljava/lang/Class;Lnws;)V
+    new-instance v0, Ljava/util/ArrayList;
+
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+
+    iput-object v0, p0, Loch;->g:Ljava/util/List;
+
+    invoke-virtual {p0}, Loch;->e()V
 
     return-void
 .end method
 
-.method private constructor <init>()V
-    .locals 0
+.method private final g(F)V
+    .locals 4
 
-    invoke-direct {p0}, Lnws;-><init>()V
+    iget v0, p0, Loch;->d:F
 
+    cmpl-float v1, v0, p1
+
+    if-eqz v1, :cond_1
+
+    sub-float v0, p1, v0
+
+    const/high16 v1, 0x43b40000    # 360.0f
+
+    add-float/2addr v0, v1
+
+    rem-float/2addr v0, v1
+
+    const/high16 v1, 0x43340000    # 180.0f
+
+    cmpl-float v1, v0, v1
+
+    if-lez v1, :cond_0
+
+    return-void
+
+    :cond_0
+    new-instance v1, Locd;
+
+    iget v2, p0, Loch;->b:F
+
+    iget v3, p0, Loch;->c:F
+
+    invoke-direct {v1, v2, v3, v2, v3}, Locd;-><init>(FFFF)V
+
+    iget v2, p0, Loch;->d:F
+
+    iput v2, v1, Locd;->e:F
+
+    iput v0, v1, Locd;->f:F
+
+    iget-object v0, p0, Loch;->g:Ljava/util/List;
+
+    new-instance v1, Locg;
+
+    invoke-direct {v1}, Locg;-><init>()V
+
+    invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    iput p1, p0, Loch;->d:F
+
+    :cond_1
     return-void
 .end method
 
 
 # virtual methods
-.method protected final a(ILjava/lang/Object;)Ljava/lang/Object;
-    .locals 3
+.method final a(Landroid/graphics/Matrix;)Locg;
+    .locals 1
 
-    add-int/lit8 p1, p1, -0x1
+    iget v0, p0, Loch;->e:F
 
-    const/4 p2, 0x1
+    invoke-direct {p0, v0}, Loch;->g(F)V
 
-    packed-switch p1, :pswitch_data_0
+    new-instance v0, Landroid/graphics/Matrix;
 
-    :pswitch_0
-    const/4 p1, 0x0
+    invoke-direct {v0, p1}, Landroid/graphics/Matrix;-><init>(Landroid/graphics/Matrix;)V
+
+    new-instance p1, Ljava/util/ArrayList;
+
+    iget-object v0, p0, Loch;->g:Ljava/util/List;
+
+    invoke-direct {p1, v0}, Ljava/util/ArrayList;-><init>(Ljava/util/Collection;)V
+
+    new-instance p1, Locg;
+
+    invoke-direct {p1}, Locg;-><init>()V
 
     return-object p1
+.end method
 
-    :pswitch_1
-    sget-object p1, Loch;->d:Lnyf;
+.method public final b(Locg;FF)V
+    .locals 0
 
-    if-nez p1, :cond_1
+    invoke-direct {p0, p2}, Loch;->g(F)V
 
-    const-class p2, Loch;
+    iget-object p2, p0, Loch;->g:Ljava/util/List;
 
-    monitor-enter p2
+    invoke-interface {p2, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    :try_start_0
-    sget-object p1, Loch;->d:Lnyf;
+    iput p3, p0, Loch;->d:F
 
-    if-nez p1, :cond_0
+    return-void
+.end method
 
-    new-instance p1, Lnwo;
+.method public final c(Landroid/graphics/Matrix;Landroid/graphics/Path;)V
+    .locals 3
 
-    sget-object v0, Loch;->b:Loch;
+    iget-object v0, p0, Loch;->f:Ljava/util/List;
 
-    invoke-direct {p1, v0}, Lnwo;-><init>(Lnws;)V
+    invoke-interface {v0}, Ljava/util/List;->size()I
 
-    sput-object p1, Loch;->d:Lnyf;
+    move-result v0
 
-    :cond_0
-    monitor-exit p2
+    const/4 v1, 0x0
+
+    :goto_0
+    if-ge v1, v0, :cond_0
+
+    iget-object v2, p0, Loch;->f:Ljava/util/List;
+
+    invoke-interface {v2, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Locf;
+
+    invoke-virtual {v2, p1, p2}, Locf;->a(Landroid/graphics/Matrix;Landroid/graphics/Path;)V
+
+    add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    :catchall_0
-    move-exception p1
+    :cond_0
+    return-void
+.end method
 
-    monitor-exit p2
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+.method public final d(FF)V
+    .locals 4
 
-    throw p1
+    new-instance v0, Loce;
 
-    :cond_1
-    :goto_0
-    return-object p1
+    invoke-direct {v0}, Loce;-><init>()V
 
-    :pswitch_2
-    sget-object p1, Loch;->b:Loch;
+    iput p1, v0, Loce;->a:F
 
-    return-object p1
+    iput p2, v0, Loce;->b:F
 
-    :pswitch_3
-    new-instance p1, Lnwn;
+    iget-object v1, p0, Loch;->f:Ljava/util/List;
 
-    sget-object p2, Loch;->b:Loch;
+    invoke-interface {v1, v0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    invoke-direct {p1, p2}, Lnwn;-><init>(Lnws;)V
+    new-instance v1, Locc;
 
-    return-object p1
+    iget v2, p0, Loch;->b:F
 
-    :pswitch_4
-    new-instance p1, Loch;
+    iget v3, p0, Loch;->c:F
 
-    invoke-direct {p1}, Loch;-><init>()V
+    invoke-direct {v1, v0, v2, v3}, Locc;-><init>(Loce;FF)V
 
-    return-object p1
+    invoke-virtual {v1}, Locc;->a()F
 
-    :pswitch_5
-    const-string p1, "c"
+    move-result v0
 
-    const-string v0, "\u0001\u0001\u0000\u0001\u0001\u0001\u0001\u0000\u0000\u0000\u0001\u1001\u0000"
+    const/high16 v2, 0x43870000    # 270.0f
 
-    const/4 v1, 0x2
+    add-float/2addr v0, v2
 
-    new-array v1, v1, [Ljava/lang/Object;
+    invoke-virtual {v1}, Locc;->a()F
 
-    const/4 v2, 0x0
+    move-result v3
 
-    aput-object p1, v1, v2
+    add-float/2addr v3, v2
 
-    const-string p1, "a"
+    invoke-virtual {p0, v1, v0, v3}, Loch;->b(Locg;FF)V
 
-    aput-object p1, v1, p2
+    iput p1, p0, Loch;->b:F
 
-    sget-object p1, Loch;->b:Loch;
+    iput p2, p0, Loch;->c:F
 
-    invoke-static {p1, v0, v1}, Loch;->X(Lnxy;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/Object;
+    return-void
+.end method
 
-    move-result-object p1
+.method public final e()V
+    .locals 2
 
-    return-object p1
+    const/4 v0, 0x0
 
-    :pswitch_6
-    invoke-static {p2}, Ljava/lang/Byte;->valueOf(B)Ljava/lang/Byte;
+    const/high16 v1, 0x43870000    # 270.0f
 
-    move-result-object p1
+    invoke-virtual {p0, v0, v1, v0}, Loch;->f(FFF)V
 
-    return-object p1
+    return-void
+.end method
 
-    nop
+.method public final f(FFF)V
+    .locals 1
 
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_6
-        :pswitch_0
-        :pswitch_5
-        :pswitch_4
-        :pswitch_3
-        :pswitch_2
-        :pswitch_1
-    .end packed-switch
+    iput p1, p0, Loch;->a:F
+
+    const/4 v0, 0x0
+
+    iput v0, p0, Loch;->b:F
+
+    iput p1, p0, Loch;->c:F
+
+    iput p2, p0, Loch;->d:F
+
+    add-float/2addr p2, p3
+
+    const/high16 p1, 0x43b40000    # 360.0f
+
+    rem-float/2addr p2, p1
+
+    iput p2, p0, Loch;->e:F
+
+    iget-object p1, p0, Loch;->f:Ljava/util/List;
+
+    invoke-interface {p1}, Ljava/util/List;->clear()V
+
+    iget-object p1, p0, Loch;->g:Ljava/util/List;
+
+    invoke-interface {p1}, Ljava/util/List;->clear()V
+
+    return-void
 .end method

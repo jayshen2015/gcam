@@ -1,216 +1,160 @@
-.class public final enum Ljyk;
-.super Ljava/lang/Enum;
+.class public final synthetic Ljyk;
+.super Ljava/lang/Object;
 
-
-# static fields
-.field public static final enum a:Ljyk;
-
-.field public static final enum b:Ljyk;
-
-.field public static final enum c:Ljyk;
-
-.field public static final enum d:Ljyk;
-
-.field public static final enum e:Ljyk;
-
-.field public static final enum f:Ljyk;
-
-.field public static final enum g:Ljyk;
-
-.field public static final enum h:Ljyk;
-
-.field public static final enum i:Ljyk;
-
-.field public static final enum j:Ljyk;
-
-.field public static final enum k:Ljyk;
-
-.field private static final synthetic m:[Ljyk;
+# interfaces
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field public final l:Z
+.field public final synthetic a:Ljyq;
+
+.field public final synthetic b:Landroid/graphics/Bitmap;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 16
-
-    new-instance v0, Ljyk;
-
-    const-string v1, "VIDEO_BUFFER_DELAY"
-
-    const/4 v2, 0x0
-
-    const/4 v3, 0x1
-
-    invoke-direct {v0, v1, v2, v3}, Ljyk;-><init>(Ljava/lang/String;IZ)V
-
-    sput-object v0, Ljyk;->a:Ljyk;
-
-    new-instance v1, Ljyk;
-
-    const-string v4, "AUDIO_BUFFER_DELAY"
-
-    invoke-direct {v1, v4, v3, v2}, Ljyk;-><init>(Ljava/lang/String;IZ)V
-
-    sput-object v1, Ljyk;->b:Ljyk;
-
-    new-instance v4, Ljyk;
-
-    const-string v5, "VIDEO_TRACK_FAIL_TO_START"
-
-    const/4 v6, 0x2
-
-    invoke-direct {v4, v5, v6, v3}, Ljyk;-><init>(Ljava/lang/String;IZ)V
-
-    sput-object v4, Ljyk;->c:Ljyk;
-
-    new-instance v5, Ljyk;
-
-    const-string v7, "AUDIO_TRACK_FAIL_TO_START"
-
-    const/4 v8, 0x3
-
-    invoke-direct {v5, v7, v8, v2}, Ljyk;-><init>(Ljava/lang/String;IZ)V
-
-    sput-object v5, Ljyk;->d:Ljyk;
-
-    new-instance v7, Ljyk;
-
-    const-string v9, "METADATA_DELAY"
-
-    const/4 v10, 0x4
-
-    invoke-direct {v7, v9, v10, v2}, Ljyk;-><init>(Ljava/lang/String;IZ)V
-
-    sput-object v7, Ljyk;->e:Ljyk;
-
-    new-instance v9, Ljyk;
-
-    const-string v11, "AUDIO_RECORD_ERROR"
-
-    const/4 v12, 0x5
-
-    invoke-direct {v9, v11, v12, v2}, Ljyk;-><init>(Ljava/lang/String;IZ)V
-
-    sput-object v9, Ljyk;->f:Ljyk;
-
-    new-instance v11, Ljyk;
-
-    const-string v13, "MUXER_STOP_ERROR"
-
-    const/4 v14, 0x6
-
-    invoke-direct {v11, v13, v14, v3}, Ljyk;-><init>(Ljava/lang/String;IZ)V
-
-    sput-object v11, Ljyk;->g:Ljyk;
-
-    new-instance v13, Ljyk;
-
-    const-string v15, "MEDIA_CODEC_ERROR_AUDIO"
-
-    const/4 v14, 0x7
-
-    invoke-direct {v13, v15, v14, v3}, Ljyk;-><init>(Ljava/lang/String;IZ)V
-
-    sput-object v13, Ljyk;->h:Ljyk;
-
-    new-instance v15, Ljyk;
-
-    const-string v14, "MEDIA_CODEC_ERROR_VIDEO"
-
-    const/16 v12, 0x8
-
-    invoke-direct {v15, v14, v12, v3}, Ljyk;-><init>(Ljava/lang/String;IZ)V
-
-    sput-object v15, Ljyk;->i:Ljyk;
-
-    new-instance v14, Ljyk;
-
-    const-string v12, "FILE_LOST"
-
-    const/16 v10, 0x9
-
-    invoke-direct {v14, v12, v10, v2}, Ljyk;-><init>(Ljava/lang/String;IZ)V
-
-    sput-object v14, Ljyk;->j:Ljyk;
-
-    new-instance v12, Ljyk;
-
-    const-string v10, "OTHER"
-
-    const/16 v8, 0xa
-
-    invoke-direct {v12, v10, v8, v3}, Ljyk;-><init>(Ljava/lang/String;IZ)V
-
-    sput-object v12, Ljyk;->k:Ljyk;
-
-    const/16 v10, 0xb
-
-    new-array v10, v10, [Ljyk;
-
-    aput-object v0, v10, v2
-
-    aput-object v1, v10, v3
-
-    aput-object v4, v10, v6
-
-    const/4 v0, 0x3
-
-    aput-object v5, v10, v0
-
-    const/4 v0, 0x4
-
-    aput-object v7, v10, v0
-
-    const/4 v0, 0x5
-
-    aput-object v9, v10, v0
-
-    const/4 v0, 0x6
-
-    aput-object v11, v10, v0
-
-    const/4 v0, 0x7
-
-    aput-object v13, v10, v0
-
-    const/16 v0, 0x8
-
-    aput-object v15, v10, v0
-
-    const/16 v0, 0x9
-
-    aput-object v14, v10, v0
-
-    aput-object v12, v10, v8
-
-    sput-object v10, Ljyk;->m:[Ljyk;
-
-    return-void
-.end method
-
-.method private constructor <init>(Ljava/lang/String;IZ)V
+.method public synthetic constructor <init>(Ljyq;Landroid/graphics/Bitmap;)V
     .locals 0
 
-    invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-boolean p3, p0, Ljyk;->l:Z
+    iput-object p1, p0, Ljyk;->a:Ljyq;
+
+    iput-object p2, p0, Ljyk;->b:Landroid/graphics/Bitmap;
 
     return-void
 .end method
 
-.method public static values()[Ljyk;
-    .locals 1
 
-    sget-object v0, Ljyk;->m:[Ljyk;
+# virtual methods
+.method public final run()V
+    .locals 8
 
-    invoke-virtual {v0}, [Ljyk;->clone()Ljava/lang/Object;
+    iget-object v0, p0, Ljyk;->a:Ljyq;
 
-    move-result-object v0
+    iget-object v1, p0, Ljyk;->b:Landroid/graphics/Bitmap;
 
-    check-cast v0, [Ljyk;
+    invoke-virtual {v1}, Landroid/graphics/Bitmap;->getWidth()I
 
-    return-object v0
+    move-result v2
+
+    int-to-float v2, v2
+
+    iget v3, v0, Ljyq;->d:I
+
+    int-to-float v3, v3
+
+    div-float/2addr v2, v3
+
+    invoke-virtual {v1}, Landroid/graphics/Bitmap;->getHeight()I
+
+    move-result v3
+
+    int-to-float v3, v3
+
+    iget v4, v0, Ljyq;->e:I
+
+    int-to-float v4, v4
+
+    div-float/2addr v3, v4
+
+    invoke-static {v2, v3}, Ljava/lang/Math;->max(FF)F
+
+    move-result v2
+
+    const/high16 v3, 0x40000000    # 2.0f
+
+    div-float/2addr v2, v3
+
+    const/high16 v3, 0x3f800000    # 1.0f
+
+    invoke-static {v2, v3}, Ljava/lang/Math;->max(FF)F
+
+    move-result v2
+
+    iget-object v4, v0, Ljyq;->m:Lljf;
+
+    iget-object v5, v0, Ljyq;->l:Llis;
+
+    const/4 v6, 0x0
+
+    cmpg-float v3, v2, v3
+
+    if-lez v3, :cond_0
+
+    const-string v3, "resizeBitmap"
+
+    invoke-interface {v4, v3}, Lljf;->e(Ljava/lang/String;)V
+
+    invoke-virtual {v1}, Landroid/graphics/Bitmap;->getWidth()I
+
+    move-result v3
+
+    int-to-float v3, v3
+
+    div-float/2addr v3, v2
+
+    float-to-int v3, v3
+
+    invoke-virtual {v1}, Landroid/graphics/Bitmap;->getHeight()I
+
+    move-result v7
+
+    int-to-float v7, v7
+
+    div-float/2addr v7, v2
+
+    float-to-int v7, v7
+
+    invoke-static {v1, v3, v7, v6}, Landroid/graphics/Bitmap;->createScaledBitmap(Landroid/graphics/Bitmap;IIZ)Landroid/graphics/Bitmap;
+
+    move-result-object v1
+
+    invoke-interface {v4}, Lljf;->f()V
+
+    const/4 v3, 0x3
+
+    new-array v3, v3, [Ljava/lang/Object;
+
+    invoke-virtual {v1}, Landroid/graphics/Bitmap;->getWidth()I
+
+    move-result v4
+
+    invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v4
+
+    aput-object v4, v3, v6
+
+    const/4 v4, 0x1
+
+    invoke-virtual {v1}, Landroid/graphics/Bitmap;->getHeight()I
+
+    move-result v7
+
+    invoke-static {v7}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v7
+
+    aput-object v7, v3, v4
+
+    const/4 v4, 0x2
+
+    invoke-static {v2}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
+
+    move-result-object v2
+
+    aput-object v2, v3, v4
+
+    const-string v2, "Size:%d/%d, resizeScale:%.3f"
+
+    invoke-static {v2, v3}, Lmip;->bp(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-interface {v5, v2}, Llis;->b(Ljava/lang/String;)V
+
+    :cond_0
+    invoke-virtual {v0, v1, v6}, Ljyq;->i(Landroid/graphics/Bitmap;Z)V
+
+    return-void
 .end method

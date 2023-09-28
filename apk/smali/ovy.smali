@@ -2,46 +2,63 @@
 .super Ljava/lang/Object;
 
 
+# static fields
+.field public static final a:Lowb;
+
+.field public static final b:Lowa;
+
+
 # instance fields
-.field public a:[Ljava/lang/Object;
+.field public final c:Ljava/util/Map;
 
-.field public b:I
+.field public final d:Ljava/util/Map;
 
-.field public c:I
+.field public final e:Lowb;
+
+.field public f:Lowa;
 
 
 # direct methods
-.method public constructor <init>()V
+.method static constructor <clinit>()V
     .locals 1
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance v0, Lovw;
 
-    const/16 v0, 0x10
+    invoke-direct {v0}, Lovw;-><init>()V
 
-    new-array v0, v0, [Ljava/lang/Object;
+    sput-object v0, Lovy;->a:Lowb;
 
-    iput-object v0, p0, Lovy;->a:[Ljava/lang/Object;
+    new-instance v0, Lovx;
+
+    invoke-direct {v0}, Lovx;-><init>()V
+
+    sput-object v0, Lovy;->b:Lowa;
 
     return-void
 .end method
 
+.method public constructor <init>(Lowb;)V
+    .locals 1
 
-# virtual methods
-.method public final a()Z
-    .locals 2
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iget v0, p0, Lovy;->b:I
+    new-instance v0, Ljava/util/HashMap;
 
-    iget v1, p0, Lovy;->c:I
+    invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
-    if-ne v0, v1, :cond_0
+    iput-object v0, p0, Lovy;->c:Ljava/util/Map;
 
-    const/4 v0, 0x1
+    new-instance v0, Ljava/util/HashMap;
 
-    return v0
+    invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
-    :cond_0
+    iput-object v0, p0, Lovy;->d:Ljava/util/Map;
+
     const/4 v0, 0x0
 
-    return v0
+    iput-object v0, p0, Lovy;->f:Lowa;
+
+    iput-object p1, p0, Lovy;->e:Lowb;
+
+    return-void
 .end method

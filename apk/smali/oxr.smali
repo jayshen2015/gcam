@@ -1,94 +1,157 @@
 .class public final Loxr;
-.super Loxp;
+.super Loxs;
 
 
 # instance fields
-.field public final a:Ljava/lang/Runnable;
+.field private final c:Loxq;
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/Runnable;JLoxq;)V
-    .locals 0
+.method public constructor <init>(Lovn;ILoxq;)V
+    .locals 1
 
-    invoke-direct {p0, p2, p3, p4}, Loxp;-><init>(JLoxq;)V
+    invoke-direct {p0, p1, p2}, Loxs;-><init>(Lovn;I)V
 
-    iput-object p1, p0, Loxr;->a:Ljava/lang/Runnable;
+    iput-object p3, p0, Loxr;->c:Loxq;
+
+    new-instance p2, Ljava/lang/StringBuilder;
+
+    const-string v0, "%"
+
+    invoke-direct {p2, v0}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {p1, p2}, Lovn;->f(Ljava/lang/StringBuilder;)V
+
+    invoke-virtual {p1}, Lovn;->d()Z
+
+    move-result p1
+
+    const/4 v0, 0x1
+
+    if-eq v0, p1, :cond_0
+
+    const/16 p1, 0x74
+
+    goto :goto_0
+
+    :cond_0
+    const/16 p1, 0x54
+
+    :goto_0
+    invoke-virtual {p2, p1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    iget-char p1, p3, Loxq;->G:C
+
+    invoke-virtual {p2, p1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    invoke-virtual {p2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final run()V
-    .locals 1
+.method public final a(Loxt;Ljava/lang/Object;)V
+    .locals 4
 
-    :try_start_0
-    iget-object v0, p0, Loxr;->a:Ljava/lang/Runnable;
+    iget-object v0, p0, Loxr;->c:Loxq;
 
-    invoke-interface {v0}, Ljava/lang/Runnable;->run()V
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    iget-object v1, p0, Loxs;->b:Lovn;
+
+    instance-of v2, p2, Ljava/util/Date;
+
+    if-nez v2, :cond_1
+
+    instance-of v2, p2, Ljava/util/Calendar;
+
+    if-nez v2, :cond_1
+
+    instance-of v2, p2, Ljava/lang/Long;
+
+    if-eqz v2, :cond_0
+
+    goto :goto_0
+
+    :cond_0
+    check-cast p1, Loxx;
+
+    iget-object p1, p1, Loxx;->d:Ljava/lang/StringBuilder;
+
+    iget-char v0, v0, Loxq;->G:C
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    const/4 v2, 0x3
+
+    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string v2, "%t"
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {p1, p2, v0}, Loxx;->d(Ljava/lang/StringBuilder;Ljava/lang/Object;Ljava/lang/String;)V
 
     return-void
 
-    :catchall_0
-    move-exception v0
+    :cond_1
+    :goto_0
+    new-instance v2, Ljava/lang/StringBuilder;
 
-    throw v0
-.end method
+    const-string v3, "%"
 
-.method public final toString()Ljava/lang/String;
-    .locals 7
+    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    iget-object v0, p0, Loxr;->a:Ljava/lang/Runnable;
+    invoke-virtual {v1, v2}, Lovn;->f(Ljava/lang/StringBuilder;)V
 
-    invoke-static {v0}, Lopx;->a(Ljava/lang/Object;)Ljava/lang/String;
+    invoke-virtual {v1}, Lovn;->d()Z
 
-    move-result-object v0
+    move-result v1
 
-    iget-object v1, p0, Loxr;->a:Ljava/lang/Runnable;
+    const/4 v3, 0x1
 
-    invoke-static {v1}, Lopx;->b(Ljava/lang/Object;)Ljava/lang/String;
+    if-eq v3, v1, :cond_2
 
-    move-result-object v1
+    const/16 v1, 0x74
 
-    iget-wide v2, p0, Loxr;->g:J
+    goto :goto_1
 
-    iget-object v4, p0, Loxr;->h:Loxq;
+    :cond_2
+    const/16 v1, 0x54
 
-    new-instance v5, Ljava/lang/StringBuilder;
+    :goto_1
+    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
+    iget-char v0, v0, Loxq;->G:C
 
-    const-string v6, "Task["
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v5, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v0, "@"
-
-    invoke-virtual {v5, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v5, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v0, ", "
-
-    invoke-virtual {v5, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v5, v2, v3}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v5, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v5, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const-string v0, "]"
-
-    invoke-virtual {v5, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v0
 
-    return-object v0
+    check-cast p1, Loxx;
+
+    iget-object p1, p1, Loxx;->d:Ljava/lang/StringBuilder;
+
+    sget-object v1, Lovt;->a:Ljava/util/Locale;
+
+    new-array v2, v3, [Ljava/lang/Object;
+
+    const/4 v3, 0x0
+
+    aput-object p2, v2, v3
+
+    invoke-static {v1, v0, v2}, Ljava/lang/String;->format(Ljava/util/Locale;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object p2
+
+    invoke-virtual {p1, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    return-void
 .end method

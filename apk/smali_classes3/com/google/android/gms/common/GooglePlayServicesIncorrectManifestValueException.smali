@@ -6,11 +6,13 @@
 .method public constructor <init>(I)V
     .locals 3
 
-    sget v0, Ljce;->c:I
+    sget v0, Lkhn;->c:I
 
     new-instance v1, Ljava/lang/StringBuilder;
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+    const/16 v2, 0x140
+
+    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(I)V
 
     const-string v2, "The meta-data tag in your app\'s AndroidManifest.xml does not have the right value.  Expected "
 

@@ -1,64 +1,105 @@
-.class public final Loum;
-.super Lolh;
-
-
-# annotations
-.annotation runtime Lolj;
-    b = "kotlinx.coroutines.flow.FlowKt__TransformKt$onEach$$inlined$unsafeTransform$1$2"
-    c = "Transform.kt"
-    d = "emit"
-    e = {
-        0xdf,
-        0xe0
-    }
-.end annotation
-
-
-# instance fields
-.field public synthetic a:Ljava/lang/Object;
-
-.field public b:I
-
-.field public c:Ljava/lang/Object;
-
-.field public d:Lotu;
-
-.field final synthetic e:Lmcc;
+.class final Loum;
+.super Lovd;
 
 
 # direct methods
-.method public constructor <init>(Lmcc;Loku;[B)V
-    .locals 0
+.method public constructor <init>(Ljava/lang/Class;)V
+    .locals 2
 
-    iput-object p1, p0, Loum;->e:Lmcc;
+    const-string v0, "tags"
 
-    invoke-direct {p0, p2}, Lolh;-><init>(Loku;)V
+    const/4 v1, 0x0
+
+    invoke-direct {p0, v0, p1, v1}, Lovd;-><init>(Ljava/lang/String;Ljava/lang/Class;Z)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final b(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 1
+.method public final bridge synthetic b(Ljava/lang/Object;Lovc;)V
+    .locals 4
 
-    iput-object p1, p0, Loum;->a:Ljava/lang/Object;
+    check-cast p1, Loxp;
 
-    iget p1, p0, Loum;->b:I
+    iget-object p1, p1, Loxp;->c:Loxn;
 
-    const/high16 v0, -0x80000000
+    iget-object p1, p1, Loxn;->d:Ljava/util/Set;
 
-    or-int/2addr p1, v0
-
-    iput p1, p0, Loum;->b:I
-
-    iget-object p1, p0, Loum;->e:Lmcc;
-
-    const/4 v0, 0x0
-
-    invoke-virtual {p1, v0, p0}, Lmcc;->a(Ljava/lang/Object;Loku;)Ljava/lang/Object;
+    invoke-interface {p1}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
 
     move-result-object p1
 
-    return-object p1
+    :cond_0
+    :goto_0
+    invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_2
+
+    invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/util/Map$Entry;
+
+    invoke-interface {v0}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Ljava/util/Set;
+
+    invoke-interface {v1}, Ljava/util/Set;->isEmpty()Z
+
+    move-result v1
+
+    if-nez v1, :cond_1
+
+    invoke-interface {v0}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Ljava/util/Set;
+
+    invoke-interface {v1}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
+
+    move-result-object v1
+
+    :goto_1
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_0
+
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v2
+
+    invoke-interface {v0}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
+
+    move-result-object v3
+
+    check-cast v3, Ljava/lang/String;
+
+    invoke-interface {p2, v3, v2}, Lovc;->a(Ljava/lang/String;Ljava/lang/Object;)V
+
+    goto :goto_1
+
+    :cond_1
+    invoke-interface {v0}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/String;
+
+    const/4 v1, 0x0
+
+    invoke-interface {p2, v0, v1}, Lovc;->a(Ljava/lang/String;Ljava/lang/Object;)V
+
+    goto :goto_0
+
+    :cond_2
+    return-void
 .end method

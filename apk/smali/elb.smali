@@ -3,11 +3,11 @@
 
 
 # virtual methods
-.method public abstract a()Leia;
+.method public abstract a()Lehj;
 .end method
 
-.method public abstract b()Leio;
+.method public abstract b()Leig;
 .end method
 
-.method public abstract c()Lekh;
+.method public abstract c()Lekf;
 .end method

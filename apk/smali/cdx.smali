@@ -1,111 +1,119 @@
 .class public final Lcdx;
 .super Ljava/lang/Object;
 
-
-# static fields
-.field private static final a:Lnak;
+# interfaces
+.implements Lpys;
 
 
 # instance fields
-.field private final b:Ljava/lang/ref/WeakReference;
+.field private final a:Lqkg;
 
-.field private final c:Ljuh;
+.field private final b:Lqkg;
 
-.field private final d:Ljava/util/concurrent/atomic/AtomicBoolean;
+.field private final c:Lqkg;
+
+.field private final d:Lqkg;
+
+.field private final e:Lqkg;
+
+.field private final f:Lqkg;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
-
-    const-string v0, "com/google/android/apps/camera/activity/util/ActivityFinishWithReason"
-
-    invoke-static {v0}, Lnak;->h(Ljava/lang/String;)Lnak;
-
-    move-result-object v0
-
-    sput-object v0, Lcdx;->a:Lnak;
-
-    return-void
-.end method
-
-.method public constructor <init>(Ljava/lang/ref/WeakReference;Ljuh;)V
+.method public constructor <init>(Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lcdx;->b:Ljava/lang/ref/WeakReference;
+    iput-object p1, p0, Lcdx;->a:Lqkg;
 
-    iput-object p2, p0, Lcdx;->c:Ljuh;
+    iput-object p2, p0, Lcdx;->b:Lqkg;
 
-    new-instance p1, Ljava/util/concurrent/atomic/AtomicBoolean;
+    iput-object p3, p0, Lcdx;->c:Lqkg;
 
-    const/4 p2, 0x0
+    iput-object p4, p0, Lcdx;->d:Lqkg;
 
-    invoke-direct {p1, p2}, Ljava/util/concurrent/atomic/AtomicBoolean;-><init>(Z)V
+    iput-object p5, p0, Lcdx;->e:Lqkg;
 
-    iput-object p1, p0, Lcdx;->d:Ljava/util/concurrent/atomic/AtomicBoolean;
+    iput-object p6, p0, Lcdx;->f:Lqkg;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Ljava/lang/String;)V
-    .locals 4
+.method public final a()Lcdw;
+    .locals 8
 
-    invoke-static {}, Ljuh;->a()V
+    iget-object v0, p0, Lcdx;->a:Lqkg;
 
-    invoke-static {p1}, Lmqr;->b(Ljava/lang/String;)Z
+    check-cast v0, Lemd;
 
-    move-result v0
+    invoke-virtual {v0}, Lemd;->a()Landroid/content/Context;
 
-    const/4 v1, 0x1
+    move-result-object v2
 
-    xor-int/2addr v0, v1
+    iget-object v0, p0, Lcdx;->b:Lqkg;
 
-    invoke-static {v0}, Lmoz;->e(Z)V
-
-    iget-object v0, p0, Lcdx;->b:Ljava/lang/ref/WeakReference;
-
-    invoke-virtual {v0}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
+    invoke-interface {v0}, Lqkg;->get()Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Landroid/app/Activity;
+    move-object v3, v0
 
-    if-eqz v0, :cond_0
+    check-cast v3, Ljava/util/concurrent/Executor;
 
-    iget-object v2, p0, Lcdx;->d:Ljava/util/concurrent/atomic/AtomicBoolean;
+    iget-object v0, p0, Lcdx;->c:Lqkg;
 
-    invoke-virtual {v2, v1}, Ljava/util/concurrent/atomic/AtomicBoolean;->getAndSet(Z)Z
+    invoke-interface {v0}, Lqkg;->get()Ljava/lang/Object;
 
-    move-result v1
+    move-result-object v0
 
-    if-nez v1, :cond_0
+    move-object v4, v0
 
-    sget-object v1, Lcdx;->a:Lnak;
+    check-cast v4, Llar;
 
-    invoke-virtual {v1}, Lnaf;->c()Lnaz;
+    iget-object v0, p0, Lcdx;->d:Lqkg;
 
-    move-result-object v1
+    check-cast v0, Letf;
 
-    const-string v2, "WARNING: Activity was artificially finished: %s"
+    invoke-virtual {v0}, Letf;->b()Lfhv;
 
-    const/16 v3, 0x37
+    move-result-object v5
 
-    invoke-static {v1, v2, p1, v3}, Ld;->j(Lnaz;Ljava/lang/String;Ljava/lang/Object;C)V
+    iget-object v0, p0, Lcdx;->e:Lqkg;
 
-    iget-object p1, p0, Lcdx;->c:Ljuh;
+    check-cast v0, Lcbf;
 
-    new-instance v1, Lcdw;
+    invoke-virtual {v0}, Lcbf;->a()Ljava/lang/String;
 
-    const/4 v2, 0x0
+    move-result-object v6
 
-    invoke-direct {v1, v0, v2}, Lcdw;-><init>(Landroid/app/Activity;I)V
+    iget-object v0, p0, Lcdx;->f:Lqkg;
 
-    invoke-virtual {p1, v1}, Ljuh;->execute(Ljava/lang/Runnable;)V
+    invoke-interface {v0}, Lqkg;->get()Ljava/lang/Object;
 
-    :cond_0
-    return-void
+    move-result-object v0
+
+    move-object v7, v0
+
+    check-cast v7, Lcdf;
+
+    new-instance v0, Lcdw;
+
+    move-object v1, v0
+
+    invoke-direct/range {v1 .. v7}, Lcdw;-><init>(Landroid/content/Context;Ljava/util/concurrent/Executor;Llar;Lfhv;Ljava/lang/String;Lcdf;)V
+
+    return-object v0
+.end method
+
+.method public final bridge synthetic get()Ljava/lang/Object;
+    .locals 1
+
+    invoke-virtual {p0}, Lcdx;->a()Lcdw;
+
+    move-result-object v0
+
+    return-object v0
 .end method

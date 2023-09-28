@@ -2,52 +2,81 @@
 .super Ljava/lang/Object;
 
 
+# instance fields
+.field public final a:Landroid/util/SparseArray;
+
+.field public b:I
+
+
 # direct methods
-.method static a(Lqi;Landroid/content/res/Configuration;)Landroid/content/Context;
-    .locals 0
+.method public constructor <init>()V
+    .locals 1
 
-    invoke-virtual {p0, p1}, Lqi;->createConfigurationContext(Landroid/content/res/Configuration;)Landroid/content/Context;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    move-result-object p0
+    new-instance v0, Landroid/util/SparseArray;
 
-    return-object p0
+    invoke-direct {v0}, Landroid/util/SparseArray;-><init>()V
+
+    iput-object v0, p0, Lqh;->a:Landroid/util/SparseArray;
+
+    const/4 v0, 0x0
+
+    iput v0, p0, Lqh;->b:I
+
+    return-void
 .end method
 
-.method public static b(Lxw;)Lnou;
-    .locals 3
+.method static final b(JJ)J
+    .locals 4
 
-    new-instance v0, Lxu;
+    const-wide/16 v0, 0x0
 
-    invoke-direct {v0}, Lxu;-><init>()V
+    cmp-long v2, p0, v0
 
-    new-instance v1, Lxy;
+    if-nez v2, :cond_0
 
-    invoke-direct {v1, v0}, Lxy;-><init>(Lxu;)V
+    return-wide p2
 
-    iput-object v1, v0, Lxu;->b:Lxy;
+    :cond_0
+    const-wide/16 v0, 0x4
 
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    div-long/2addr p0, v0
 
-    move-result-object v2
+    const-wide/16 v2, 0x3
 
-    iput-object v2, v0, Lxu;->a:Ljava/lang/Object;
+    mul-long p0, p0, v2
 
-    :try_start_0
-    invoke-interface {p0, v0}, Lxw;->a(Lxu;)Ljava/lang/Object;
+    div-long/2addr p2, v0
 
-    move-result-object p0
+    add-long/2addr p0, p2
 
-    iput-object p0, v0, Lxu;->a:Ljava/lang/Object;
-    :try_end_0
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+    return-wide p0
+.end method
 
-    goto :goto_0
 
-    :catch_0
-    move-exception p0
+# virtual methods
+.method public final a(I)Lqg;
+    .locals 2
 
-    invoke-virtual {v1, p0}, Lxy;->a(Ljava/lang/Throwable;)V
+    iget-object v0, p0, Lqh;->a:Landroid/util/SparseArray;
 
-    :goto_0
-    return-object v1
+    invoke-virtual {v0, p1}, Landroid/util/SparseArray;->get(I)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lqg;
+
+    if-nez v0, :cond_0
+
+    new-instance v0, Lqg;
+
+    invoke-direct {v0}, Lqg;-><init>()V
+
+    iget-object v1, p0, Lqh;->a:Landroid/util/SparseArray;
+
+    invoke-virtual {v1, p1, v0}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
+
+    :cond_0
+    return-object v0
 .end method

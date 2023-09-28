@@ -1,28 +1,35 @@
 .class final Lntn;
-.super Ljava/lang/Exception;
+.super Lqnp;
+
+# interfaces
+.implements Lqmj;
 
 
 # instance fields
-.field public final a:I
+.field final synthetic a:Lnuj;
 
 
 # direct methods
-.method public constructor <init>(ILjava/lang/String;)V
+.method public constructor <init>(Lnuj;)V
     .locals 0
 
-    invoke-direct {p0, p2}, Ljava/lang/Exception;-><init>(Ljava/lang/String;)V
+    iput-object p1, p0, Lntn;->a:Lnuj;
 
-    iput p1, p0, Lntn;->a:I
+    const/4 p1, 0x0
+
+    invoke-direct {p0, p1}, Lqnp;-><init>(I)V
 
     return-void
 .end method
 
-.method public constructor <init>(ILjava/lang/String;Ljava/lang/Throwable;)V
-    .locals 0
 
-    invoke-direct {p0, p2, p3}, Ljava/lang/Exception;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
+# virtual methods
+.method public final bridge synthetic invoke()Ljava/lang/Object;
+    .locals 1
 
-    iput p1, p0, Lntn;->a:I
+    iget-object v0, p0, Lntn;->a:Lnuj;
 
-    return-void
+    iget-object v0, v0, Lnuj;->a:Lnrl;
+
+    return-object v0
 .end method

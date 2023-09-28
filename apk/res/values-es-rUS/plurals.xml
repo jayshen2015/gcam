@@ -1,12 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <plurals name="accessibility_timelapse_manual_record_speed_desc">
-        <item quantity="other">Velocidad de time lapse: %d veces</item>
-        <item quantity="one">Velocidad de time lapse: %d vez</item>
-    </plurals>
-    <plurals name="number_of_cropped_face">
-        <item quantity="other">%d recortadas.</item>
-        <item quantity="one">Una recortada.</item>
+    <plurals name="number_of_faces_announcement">
+        <item quantity="other">%1$d rostros.</item>
+        <item quantity="one">%1$d rostro.</item>
     </plurals>
     <plurals name="photos_remaining">
         <item quantity="other">Aproximadamente %s fotos</item>
@@ -17,8 +13,8 @@
         <item quantity="one">(se seleccionó %1$d app)</item>
     </plurals>
     <plurals name="social_share_info">
-        <item quantity="other">Comparte rápidamente fotos y videos en apps sociales desde la Cámara. Elige hasta %1$d apps. Las fotos y los videos que se guardan en la Carpeta bloqueada no se pueden compartir.</item>
-        <item quantity="one">Comparte rápidamente fotos y videos en apps sociales desde la Cámara. Elige %1$d app. Las fotos y los videos que se guardaron en la Carpeta bloqueada no se pueden compartir.</item>
+        <item quantity="other">Comparte rápidamente fotos y videos en aplicaciones sociales desde la Cámara. Elige hasta %1$d apps. Las fotos y los videos que se guardaron en la Carpeta bloqueada no se pueden compartir.</item>
+        <item quantity="one">Comparte rápidamente fotos y videos en aplicaciones sociales desde la Cámara. Elige %1$d app. Las fotos y los videos que se guardaron en la Carpeta bloqueada no se pueden compartir.</item>
     </plurals>
     <plurals name="social_share_select_error">
         <item quantity="other">Elige hasta %1$d apps</item>

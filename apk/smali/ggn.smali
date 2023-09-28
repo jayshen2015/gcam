@@ -1,155 +1,291 @@
 .class public final Lggn;
 .super Ljava/lang/Object;
 
-# interfaces
-.implements Lfub;
-
-
-# static fields
-.field private static final b:Lnak;
-
 
 # instance fields
-.field public final a:J
+.field public final a:Lhkc;
 
-.field private final c:Lker;
+.field public final b:Lhkd;
 
-.field private final d:Z
+.field public final c:F
 
-.field private final e:Z
+.field public final d:Z
 
-.field private final f:Z
+.field public final e:Lojc;
 
-.field private g:Z
+.field public final f:I
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
-
-    const-string v0, "com/google/android/apps/camera/pixelcamerakit/aaa/PckLock3A"
-
-    invoke-static {v0}, Lnak;->h(Ljava/lang/String;)Lnak;
-
-    move-result-object v0
-
-    sput-object v0, Lggn;->b:Lnak;
-
-    return-void
-.end method
-
-.method public constructor <init>(Lker;JZZZ)V
+.method public constructor <init>(Lhkc;Lhkd;FZLojc;I)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lggn;->c:Lker;
+    iput-object p1, p0, Lggn;->a:Lhkc;
 
-    iput-wide p2, p0, Lggn;->a:J
+    iput-object p2, p0, Lggn;->b:Lhkd;
+
+    iput p3, p0, Lggn;->c:F
 
     iput-boolean p4, p0, Lggn;->d:Z
 
-    iput-boolean p5, p0, Lggn;->e:Z
+    iput-object p5, p0, Lggn;->e:Lojc;
 
-    iput-boolean p6, p0, Lggn;->f:Z
+    iput p6, p0, Lggn;->f:I
 
     return-void
+.end method
+
+.method public static a()Lggn;
+    .locals 8
+
+    new-instance v7, Lggn;
+
+    sget-object v1, Lhkc;->a:Lhkc;
+
+    sget-object v2, Lhkd;->a:Lhkd;
+
+    sget-object v5, Loih;->a:Loih;
+
+    const/4 v3, 0x0
+
+    const/4 v4, 0x0
+
+    const/4 v6, 0x0
+
+    move-object v0, v7
+
+    invoke-direct/range {v0 .. v6}, Lggn;-><init>(Lhkc;Lhkd;FZLojc;I)V
+
+    return-object v7
 .end method
 
 
 # virtual methods
-.method public final a()J
-    .locals 2
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 4
 
-    iget-wide v0, p0, Lggn;->a:J
-
-    return-wide v0
-.end method
-
-.method public final declared-synchronized close()V
-    .locals 6
-
-    monitor-enter p0
-
-    :try_start_0
-    iget-boolean v0, p0, Lggn;->g:Z
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    if-eqz v0, :cond_0
-
-    monitor-exit p0
-
-    return-void
-
-    :cond_0
     const/4 v0, 0x1
 
-    :try_start_1
-    iput-boolean v0, p0, Lggn;->g:Z
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+    if-ne p1, p0, :cond_0
 
-    :try_start_2
-    iget-object v1, p0, Lggn;->c:Lker;
+    return v0
 
-    iget-boolean v2, p0, Lggn;->d:Z
+    :cond_0
+    instance-of v1, p1, Lggn;
 
-    iget-boolean v3, p0, Lggn;->e:Z
+    const/4 v2, 0x0
 
-    iget-boolean v4, p0, Lggn;->f:Z
+    if-nez v1, :cond_1
 
-    check-cast v1, Lkgo;
+    return v2
 
-    iget-object v1, v1, Lkgo;->a:Lkhd;
+    :cond_1
+    check-cast p1, Lggn;
 
-    const/4 v5, 0x0
+    iget-object v1, p0, Lggn;->a:Lhkc;
 
-    invoke-virtual {v1, v2, v3, v4, v5}, Lkhd;->d(ZZZZ)Lnou;
+    iget-object v3, p1, Lggn;->a:Lhkc;
+
+    if-ne v1, v3, :cond_2
+
+    iget-object v1, p0, Lggn;->b:Lhkd;
+
+    iget-object v3, p1, Lggn;->b:Lhkd;
+
+    if-ne v1, v3, :cond_2
+
+    iget v1, p0, Lggn;->c:F
+
+    iget v3, p1, Lggn;->c:F
+
+    cmpl-float v1, v1, v3
+
+    if-nez v1, :cond_2
+
+    iget-boolean v1, p0, Lggn;->d:Z
+
+    iget-boolean v3, p1, Lggn;->d:Z
+
+    if-ne v1, v3, :cond_2
+
+    iget v1, p0, Lggn;->f:I
+
+    iget v3, p1, Lggn;->f:I
+
+    if-ne v1, v3, :cond_2
+
+    const/4 v1, 0x1
+
+    goto :goto_0
+
+    :cond_2
+    const/4 v1, 0x0
+
+    :goto_0
+    iget-object v3, p0, Lggn;->e:Lojc;
+
+    invoke-virtual {v3}, Lojc;->g()Z
+
+    move-result v3
+
+    if-eqz v3, :cond_4
+
+    iget-object v3, p1, Lggn;->e:Lojc;
+
+    invoke-virtual {v3}, Lojc;->g()Z
+
+    move-result v3
+
+    if-eqz v3, :cond_4
+
+    if-eqz v1, :cond_3
+
+    iget-object v1, p0, Lggn;->e:Lojc;
+
+    invoke-virtual {v1}, Lojc;->c()Ljava/lang/Object;
 
     move-result-object v1
 
-    new-instance v2, Lghr;
+    check-cast v1, Lggm;
 
-    invoke-direct {v2, v0}, Lghr;-><init>(I)V
+    iget-object p1, p1, Lggn;->e:Lojc;
 
-    sget-object v0, Lnnv;->a:Lnnv;
+    invoke-virtual {p1}, Lojc;->c()Ljava/lang/Object;
 
-    invoke-static {v1, v2, v0}, Lnsy;->L(Lnou;Lnoj;Ljava/util/concurrent/Executor;)V
-    :try_end_2
-    .catch Lkdf; {:try_start_2 .. :try_end_2} :catch_0
-    .catchall {:try_start_2 .. :try_end_2} :catchall_0
+    move-result-object p1
 
-    monitor-exit p0
+    invoke-virtual {v1, p1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
 
-    return-void
+    move-result p1
 
-    :catch_0
-    move-exception v0
+    if-eqz p1, :cond_3
 
-    :try_start_3
-    sget-object v1, Lggn;->b:Lnak;
+    goto :goto_1
 
-    invoke-virtual {v1}, Lnaf;->b()Lnaz;
+    :cond_3
+    const/4 v0, 0x0
+
+    goto :goto_1
+
+    :cond_4
+    move v0, v1
+
+    :goto_1
+    return v0
+.end method
+
+.method public final hashCode()I
+    .locals 2
+
+    iget-object v0, p0, Lggn;->a:Lhkc;
+
+    iget v0, v0, Lhkc;->h:I
+
+    add-int/lit16 v0, v0, 0x20f
+
+    mul-int/lit8 v0, v0, 0x1f
+
+    iget-object v1, p0, Lggn;->b:Lhkd;
+
+    iget v1, v1, Lhkd;->h:I
+
+    add-int/2addr v0, v1
+
+    mul-int/lit8 v0, v0, 0x1f
+
+    iget v1, p0, Lggn;->c:F
+
+    invoke-static {v1}, Ljava/lang/Float;->floatToIntBits(F)I
+
+    move-result v1
+
+    add-int/2addr v0, v1
+
+    mul-int/lit8 v0, v0, 0x1f
+
+    iget-boolean v1, p0, Lggn;->d:Z
+
+    add-int/2addr v0, v1
+
+    return v0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .locals 7
+
+    iget-object v0, p0, Lggn;->a:Lhkc;
+
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lggn;->b:Lhkd;
+
+    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v1
 
-    const-string v2, "Error unlocking 3A."
+    iget v2, p0, Lggn;->c:F
 
-    const/16 v3, 0xa42
+    iget-boolean v3, p0, Lggn;->d:Z
 
-    invoke-static {v1, v2, v3, v0}, Ld;->h(Lnaz;Ljava/lang/String;CLjava/lang/Throwable;)V
-    :try_end_3
-    .catchall {:try_start_3 .. :try_end_3} :catchall_0
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
-    monitor-exit p0
+    move-result-object v4
 
-    return-void
+    invoke-virtual {v4}, Ljava/lang/String;->length()I
 
-    :catchall_0
-    move-exception v0
+    move-result v4
 
-    monitor-exit p0
+    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
-    throw v0
+    move-result-object v5
+
+    invoke-virtual {v5}, Ljava/lang/String;->length()I
+
+    move-result v5
+
+    new-instance v6, Ljava/lang/StringBuilder;
+
+    add-int/lit8 v4, v4, 0x61
+
+    add-int/2addr v4, v5
+
+    invoke-direct {v6, v4}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string v4, "{controlAfMode="
+
+    invoke-virtual {v6, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v6, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v0, ", controlAfState="
+
+    invoke-virtual {v6, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v6, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v0, ", lensFocusDistance="
+
+    invoke-virtual {v6, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v6, v2}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
+
+    const-string v0, ", isSceneChangeDetected="
+
+    invoke-virtual {v6, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v6, v3}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    const/16 v0, 0x7d
+
+    invoke-virtual {v6, v0}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
 .end method

@@ -3,10 +3,10 @@
 
 
 # virtual methods
-.method public abstract a(IILjava/lang/String;Lmqp;)V
+.method public abstract a(IILjava/lang/String;Lojc;)V
 .end method
 
-.method public abstract e(IJILjava/lang/String;Lcom/google/googlex/gcam/ShotMetadata;)V
+.method public abstract b(IJILjava/lang/String;Lcom/google/googlex/gcam/ShotMetadata;)V
 .end method
 
 .method public abstract onFinalStatusNative(IILjava/lang/String;[B)V

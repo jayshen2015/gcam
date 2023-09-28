@@ -1,22 +1,37 @@
-.class public final Lgbl;
+.class final Lgbl;
 .super Ljava/lang/Object;
 
+# interfaces
+.implements Lgbe;
 
-# static fields
-.field public static final a:Lgaw;
+
+# instance fields
+.field final synthetic a:Landroid/media/MediaCodec$BufferInfo;
+
+.field final synthetic b:Landroid/media/MediaFormat;
+
+.field final synthetic c:Ljava/nio/ByteBuffer;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
+.method public constructor <init>(Landroid/media/MediaCodec$BufferInfo;Landroid/media/MediaFormat;Ljava/nio/ByteBuffer;)V
+    .locals 0
 
-    new-instance v0, Lgaw;
+    iput-object p1, p0, Lgbl;->a:Landroid/media/MediaCodec$BufferInfo;
 
-    const/16 v1, 0x9
+    iput-object p2, p0, Lgbl;->b:Landroid/media/MediaFormat;
 
-    invoke-direct {v0, v1}, Lgaw;-><init>(I)V
+    iput-object p3, p0, Lgbl;->c:Ljava/nio/ByteBuffer;
 
-    sput-object v0, Lgbl;->a:Lgaw;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public final close()V
+    .locals 0
 
     return-void
 .end method

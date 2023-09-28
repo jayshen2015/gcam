@@ -1,74 +1,226 @@
-.class public final Lhhy;
+.class final Lhhy;
 .super Ljava/lang/Object;
+
+# interfaces
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field public a:I
+.field private final a:Lhia;
 
-.field public b:I
+.field private final b:Lhhz;
 
-.field public c:D
+.field private final c:Lhja;
 
-.field public d:B
-
-.field public e:I
+.field private final d:Lljf;
 
 
 # direct methods
-.method public constructor <init>()V
+.method public constructor <init>(Lhia;Lhhz;Lhja;Lljf;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lhhy;->a:Lhia;
+
+    iput-object p2, p0, Lhhy;->b:Lhhz;
+
+    iput-object p3, p0, Lhhy;->c:Lhja;
+
+    iput-object p4, p0, Lhhy;->d:Lljf;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(D)V
-    .locals 0
+.method public final run()V
+    .locals 6
 
-    iput-wide p1, p0, Lhhy;->c:D
+    iget-object v0, p0, Lhhy;->d:Lljf;
 
-    iget-byte p1, p0, Lhhy;->d:B
+    const-string v1, "TaskDoneWrapper#run"
 
-    or-int/lit8 p1, p1, 0x4
+    invoke-interface {v0, v1}, Lljf;->e(Ljava/lang/String;)V
 
-    int-to-byte p1, p1
+    :try_start_0
+    iget-object v0, p0, Lhhy;->c:Lhja;
 
-    iput-byte p1, p0, Lhhy;->d:B
+    invoke-virtual {v0}, Lhja;->run()V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_2
+
+    iget-object v0, p0, Lhhy;->a:Lhia;
+
+    iget-object v1, p0, Lhhy;->c:Lhja;
+
+    invoke-virtual {v0, v1}, Lhia;->a(Lhja;)V
+
+    iget-object v0, p0, Lhhy;->b:Lhhz;
+
+    iget-object v0, v0, Lhhz;->a:Lhik;
+
+    iget-object v1, p0, Lhhy;->a:Lhia;
+
+    iget-object v1, v1, Lhia;->f:Ljava/util/Map;
+
+    monitor-enter v1
+
+    :try_start_1
+    iget-object v2, v0, Lhik;->b:Lhgy;
+
+    const/4 v3, -0x1
+
+    invoke-virtual {v2, v3}, Lhgy;->a(I)I
+
+    move-result v2
+
+    if-nez v2, :cond_3
+
+    iget-object v2, v0, Lhik;->b:Lhgy;
+
+    invoke-virtual {v2}, Lhgy;->d()V
+
+    monitor-exit v1
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_1
+
+    iget-object v1, p0, Lhhy;->b:Lhhz;
+
+    iget-object v1, v1, Lhhz;->b:Ljava/util/Set;
+
+    iget-object v2, p0, Lhhy;->a:Lhia;
+
+    iget-object v3, v2, Lhia;->e:Ljava/util/Map;
+
+    monitor-enter v3
+
+    :try_start_2
+    invoke-interface {v1}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
+
+    move-result-object v1
+
+    :cond_0
+    :goto_0
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v4
+
+    if-eqz v4, :cond_1
+
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v4
+
+    check-cast v4, Lmad;
+
+    iget-object v5, v2, Lhia;->e:Ljava/util/Map;
+
+    invoke-interface {v5, v4}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v5
+
+    check-cast v5, Lhhx;
+
+    if-eqz v5, :cond_0
+
+    iget-object v5, v2, Lhia;->g:Ljava/util/Set;
+
+    invoke-interface {v5, v4}, Ljava/util/Set;->contains(Ljava/lang/Object;)Z
+
+    move-result v5
+
+    if-nez v5, :cond_0
+
+    iget-object v5, v2, Lhia;->g:Ljava/util/Set;
+
+    invoke-interface {v5, v4}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
+
+    goto :goto_0
+
+    :cond_1
+    monitor-exit v3
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
+
+    iget-object v0, v0, Lhik;->c:Ljava/lang/Runnable;
+
+    if-eqz v0, :cond_4
+
+    iget-object v1, p0, Lhhy;->d:Lljf;
+
+    const-string v2, "TaskDoneWrapper#done#run"
+
+    invoke-interface {v1, v2}, Lljf;->e(Ljava/lang/String;)V
+
+    iget-object v1, p0, Lhhy;->c:Lhja;
+
+    iget-object v1, v1, Lhja;->d:Ljava/util/concurrent/Executor;
+
+    if-nez v1, :cond_2
+
+    invoke-interface {v0}, Ljava/lang/Runnable;->run()V
+
+    goto :goto_1
+
+    :cond_2
+    invoke-interface {v1, v0}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
+
+    :goto_1
+    iget-object v0, p0, Lhhy;->d:Lljf;
+
+    invoke-interface {v0}, Lljf;->f()V
+
+    goto :goto_2
+
+    :catchall_0
+    move-exception v0
+
+    :try_start_3
+    monitor-exit v3
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_0
+
+    throw v0
+
+    :cond_3
+    :try_start_4
+    monitor-exit v1
+    :try_end_4
+    .catchall {:try_start_4 .. :try_end_4} :catchall_1
+
+    :cond_4
+    :goto_2
+    iget-object v0, p0, Lhhy;->d:Lljf;
+
+    invoke-interface {v0}, Lljf;->f()V
 
     return-void
-.end method
 
-.method public final b(I)V
-    .locals 0
+    :catchall_1
+    move-exception v0
 
-    iput p1, p0, Lhhy;->b:I
+    :try_start_5
+    monitor-exit v1
+    :try_end_5
+    .catchall {:try_start_5 .. :try_end_5} :catchall_1
 
-    iget-byte p1, p0, Lhhy;->d:B
+    throw v0
 
-    or-int/lit8 p1, p1, 0x2
+    :catchall_2
+    move-exception v0
 
-    int-to-byte p1, p1
+    iget-object v1, p0, Lhhy;->a:Lhia;
 
-    iput-byte p1, p0, Lhhy;->d:B
+    iget-object v2, p0, Lhhy;->c:Lhja;
 
-    return-void
-.end method
+    invoke-virtual {v1, v2}, Lhia;->a(Lhja;)V
 
-.method public final c(I)V
-    .locals 0
+    goto :goto_4
 
-    iput p1, p0, Lhhy;->a:I
+    :goto_3
+    throw v0
 
-    iget-byte p1, p0, Lhhy;->d:B
-
-    or-int/lit8 p1, p1, 0x1
-
-    int-to-byte p1, p1
-
-    iput-byte p1, p0, Lhhy;->d:B
-
-    return-void
+    :goto_4
+    goto :goto_3
 .end method

@@ -1,924 +1,243 @@
-.class public List;
-.super Lisk;
+.class public final List;
+.super Ljava/lang/Object;
+
+
+# static fields
+.field private static final a:Lj$/time/Duration;
+
+.field private static final b:Louj;
 
 
 # instance fields
-.field private final a:Landroid/animation/AnimatorListenerAdapter;
+.field private final c:Ljava/lang/ref/WeakReference;
 
-.field final synthetic b:Lita;
+.field private final d:Landroid/app/NotificationManager;
+
+.field private final e:Lbtt;
+
+.field private final f:Lfjs;
+
+.field private final g:Ljava/util/concurrent/atomic/AtomicBoolean;
+
+.field private final h:Lelw;
 
 
 # direct methods
-.method public constructor <init>(Lita;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 2
 
-    iput-object p1, p0, List;->b:Lita;
+    const-wide/16 v0, 0x2
 
-    invoke-direct {p0}, Lisk;-><init>()V
+    invoke-static {v0, v1}, Lj$/time/Duration;->ofSeconds(J)Lj$/time/Duration;
 
-    new-instance p1, Liss;
+    move-result-object v0
 
-    invoke-direct {p1, p0}, Liss;-><init>(List;)V
+    sput-object v0, List;->a:Lj$/time/Duration;
 
-    iput-object p1, p0, List;->a:Landroid/animation/AnimatorListenerAdapter;
+    const-string v0, "com/google/android/apps/camera/toast/app/startup/DnDAccessToastController"
+
+    invoke-static {v0}, Louj;->h(Ljava/lang/String;)Louj;
+
+    move-result-object v0
+
+    sput-object v0, List;->b:Louj;
+
+    return-void
+.end method
+
+.method public constructor <init>(Ljava/lang/ref/WeakReference;Landroid/app/NotificationManager;Lbtt;Lfjs;Lelw;)V
+    .locals 1
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    new-instance v0, Ljava/util/concurrent/atomic/AtomicBoolean;
+
+    invoke-direct {v0}, Ljava/util/concurrent/atomic/AtomicBoolean;-><init>()V
+
+    iput-object v0, p0, List;->g:Ljava/util/concurrent/atomic/AtomicBoolean;
+
+    iput-object p1, p0, List;->c:Ljava/lang/ref/WeakReference;
+
+    iput-object p2, p0, List;->d:Landroid/app/NotificationManager;
+
+    iput-object p3, p0, List;->e:Lbtt;
+
+    iput-object p4, p0, List;->f:Lfjs;
+
+    iput-object p5, p0, List;->h:Lelw;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public a()V
-    .locals 0
+.method public final a()V
+    .locals 5
 
-    invoke-virtual {p0}, Lisk;->r()V
+    iget-object v0, p0, List;->g:Ljava/util/concurrent/atomic/AtomicBoolean;
 
-    return-void
-.end method
-
-.method public b()V
-    .locals 0
-
-    return-void
-.end method
-
-.method public c()V
-    .locals 0
-
-    return-void
-.end method
-
-.method public d(FI)V
-    .locals 3
-
-    iget-object v0, p0, List;->b:Lita;
-
-    iget-object v1, v0, Lita;->j:Ljwb;
-
-    invoke-interface {v1}, Ljwb;->bm()Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Ljava/lang/Float;
-
-    invoke-virtual {v1}, Ljava/lang/Float;->floatValue()F
-
-    move-result v1
-
-    invoke-static {p2}, Lita;->I(I)I
-
-    move-result p2
-
-    invoke-virtual {v0, p2, v1, p1}, Lita;->J(IFF)V
-
-    iget-object p2, p0, List;->b:Lita;
-
-    iget-object v0, p2, Lita;->p:Landroid/animation/ValueAnimator;
-
-    const/4 v1, 0x2
-
-    new-array v1, v1, [F
-
-    iget-object p2, p2, Lita;->j:Ljwb;
-
-    invoke-interface {p2}, Ljwb;->bm()Ljava/lang/Object;
-
-    move-result-object p2
-
-    check-cast p2, Ljava/lang/Float;
-
-    invoke-virtual {p2}, Ljava/lang/Float;->floatValue()F
-
-    move-result p2
-
-    const/4 v2, 0x0
-
-    aput p2, v1, v2
-
-    const/4 p2, 0x1
-
-    aput p1, v1, p2
-
-    invoke-virtual {v0, v1}, Landroid/animation/ValueAnimator;->setFloatValues([F)V
-
-    iget-object p1, p0, List;->b:Lita;
-
-    iget-object p1, p1, Lita;->p:Landroid/animation/ValueAnimator;
-
-    invoke-virtual {p1}, Landroid/animation/ValueAnimator;->start()V
-
-    return-void
-.end method
-
-.method public final f()V
-    .locals 8
-
-    iget-object v0, p0, List;->b:Lita;
-
-    iget-object v0, v0, Lita;->s:Lcom/google/android/apps/camera/zoomui/view/ZoomUi;
-
-    invoke-virtual {v0}, Lcom/google/android/apps/camera/zoomui/view/ZoomUi;->d()Landroid/view/ViewGroup;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Landroid/view/ViewGroup;->animate()Landroid/view/ViewPropertyAnimator;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Landroid/view/ViewPropertyAnimator;->cancel()V
-
-    iget-object v0, p0, List;->b:Lita;
-
-    iget-object v0, v0, Lita;->s:Lcom/google/android/apps/camera/zoomui/view/ZoomUi;
-
-    invoke-virtual {v0}, Lcom/google/android/apps/camera/zoomui/view/ZoomUi;->g()Landroid/widget/ImageView;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Landroid/widget/ImageView;->animate()Landroid/view/ViewPropertyAnimator;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Landroid/view/ViewPropertyAnimator;->cancel()V
-
-    iget-object v0, p0, List;->b:Lita;
-
-    iget-boolean v1, v0, Lita;->C:Z
-
-    if-nez v1, :cond_0
-
-    iget-object v0, v0, Lita;->s:Lcom/google/android/apps/camera/zoomui/view/ZoomUi;
-
-    invoke-virtual {v0}, Lcom/google/android/apps/camera/zoomui/view/ZoomUi;->n()Landroid/widget/TextView;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Landroid/widget/TextView;->animate()Landroid/view/ViewPropertyAnimator;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Landroid/view/ViewPropertyAnimator;->cancel()V
-
-    :cond_0
-    iget-object v0, p0, List;->b:Lita;
-
-    iget-boolean v1, v0, Lita;->I:Z
-
-    const/16 v2, 0x8
-
-    if-nez v1, :cond_1
-
-    iget-object v0, v0, Lita;->s:Lcom/google/android/apps/camera/zoomui/view/ZoomUi;
-
-    invoke-virtual {v0, v2}, Lcom/google/android/apps/camera/zoomui/view/ZoomUi;->setVisibility(I)V
-
-    :cond_1
-    iget-object v0, p0, List;->b:Lita;
-
-    iget-object v0, v0, Lita;->t:Lcom/google/android/apps/camera/zoomui/view/ZoomSliderView;
-
-    invoke-virtual {v0}, Lcom/google/android/apps/camera/zoomui/view/ZoomSliderView;->getVisibility()I
+    invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicBoolean;->get()Z
 
     move-result v0
 
-    const/4 v1, 0x4
+    if-eqz v0, :cond_0
+
+    return-void
+
+    :cond_0
+    iget-object v0, p0, List;->c:Ljava/lang/ref/WeakReference;
+
+    invoke-virtual {v0}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/app/Activity;
+
+    if-nez v0, :cond_1
+
+    sget-object v0, List;->b:Louj;
+
+    invoke-virtual {v0}, Loue;->c()Lova;
+
+    move-result-object v0
+
+    const/16 v1, 0xc4d
+
+    const-string v2, "Activity reference returns null, skipping"
+
+    invoke-static {v0, v2, v1}, Ld;->v(Lova;Ljava/lang/String;C)V
+
+    return-void
+
+    :cond_1
+    invoke-virtual {v0}, Landroid/app/Activity;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v1
+
+    const v2, 0x7f0b0053
+
+    invoke-virtual {v0, v2}, Landroid/app/Activity;->findViewById(I)Landroid/view/View;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/view/ViewGroup;
+
+    iget-object v2, p0, List;->d:Landroid/app/NotificationManager;
+
+    invoke-virtual {v2}, Landroid/app/NotificationManager;->isNotificationPolicyAccessGranted()Z
+
+    move-result v2
+
+    if-nez v2, :cond_2
+
+    iget-object v2, p0, List;->g:Ljava/util/concurrent/atomic/AtomicBoolean;
 
     const/4 v3, 0x0
 
-    const/4 v4, 0x0
+    const/4 v4, 0x1
 
-    if-nez v0, :cond_3
+    invoke-virtual {v2, v3, v4}, Ljava/util/concurrent/atomic/AtomicBoolean;->compareAndSet(ZZ)Z
 
-    iget-object v0, p0, List;->b:Lita;
+    move-result v2
 
-    invoke-virtual {v0}, Lita;->z()V
+    if-eqz v2, :cond_2
 
-    iget-object v5, v0, Lita;->x:Ldhi;
+    iget-object v2, p0, List;->h:Lelw;
 
-    sget-object v6, Ldho;->am:Ldhj;
+    new-instance v3, Lish;
 
-    invoke-interface {v5, v6}, Ldhi;->l(Ldhj;)Z
+    invoke-direct {v3}, Lish;-><init>()V
 
-    move-result v5
+    iput-object v0, v3, Lish;->b:Landroid/view/ViewGroup;
 
-    if-eqz v5, :cond_2
+    const v0, 0x7f14013c
 
-    iget-object v5, v0, Lita;->s:Lcom/google/android/apps/camera/zoomui/view/ZoomUi;
+    invoke-virtual {v1, v0}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
-    iget-object v6, v0, Lita;->j:Ljwb;
+    move-result-object v0
 
-    invoke-interface {v6}, Ljwb;->bm()Ljava/lang/Object;
+    iput-object v0, v3, Lish;->d:Ljava/lang/String;
 
-    move-result-object v6
+    const v0, 0x7f1402d1
 
-    check-cast v6, Ljava/lang/Float;
+    invoke-virtual {v1, v0}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
-    invoke-virtual {v6}, Ljava/lang/Float;->floatValue()F
+    move-result-object v0
 
-    move-result v6
+    iput-object v0, v3, Lish;->e:Ljava/lang/String;
 
-    iget v7, v0, Lita;->M:I
+    sget-object v0, List;->a:Lj$/time/Duration;
 
-    invoke-virtual {v0, v6, v7}, Lita;->K(FI)I
+    iput-object v0, v3, Lish;->a:Lj$/time/Duration;
 
-    move-result v6
+    new-instance v0, Liss;
 
-    invoke-virtual {v5, v6, v3}, Lcom/google/android/apps/camera/zoomui/view/ZoomUi;->A(IZ)V
+    invoke-direct {v0, p0}, Liss;-><init>(List;)V
 
-    goto :goto_0
+    iput-object v0, v3, Lish;->f:Ljava/lang/Runnable;
+
+    const/16 v0, 0x8
+
+    iput v0, v3, Lish;->k:I
+
+    iget-object v0, p0, List;->h:Lelw;
+
+    iput-object v0, v3, Lish;->i:Lelw;
+
+    invoke-virtual {v3}, Lish;->a()Lisi;
+
+    move-result-object v0
+
+    invoke-interface {v2, v0}, Lelw;->d(Lelv;)Llie;
+
+    iget-object v0, p0, List;->f:Lfjs;
+
+    const/4 v1, 0x2
+
+    invoke-interface {v0, v1}, Lfjs;->Z(I)V
 
     :cond_2
-    iget-object v5, v0, Lita;->s:Lcom/google/android/apps/camera/zoomui/view/ZoomUi;
-
-    iget-object v6, v0, Lita;->j:Ljwb;
-
-    invoke-interface {v6}, Ljwb;->bm()Ljava/lang/Object;
-
-    move-result-object v6
-
-    check-cast v6, Ljava/lang/Float;
-
-    invoke-virtual {v6}, Ljava/lang/Float;->floatValue()F
-
-    move-result v6
-
-    iget v7, v0, Lita;->M:I
-
-    invoke-virtual {v0, v6, v7}, Lita;->K(FI)I
-
-    move-result v6
-
-    invoke-virtual {v5, v6}, Lcom/google/android/apps/camera/zoomui/view/ZoomUi;->B(I)V
-
-    :goto_0
-    iget-object v5, v0, Lita;->u:Lirs;
-
-    iget-object v6, v0, Lita;->s:Lcom/google/android/apps/camera/zoomui/view/ZoomUi;
-
-    iget-object v7, v0, Lita;->j:Ljwb;
-
-    invoke-interface {v7}, Ljwb;->bm()Ljava/lang/Object;
-
-    move-result-object v7
-
-    check-cast v7, Ljava/lang/Float;
-
-    invoke-virtual {v7}, Ljava/lang/Float;->floatValue()F
-
-    move-result v7
-
-    invoke-virtual {v5, v7}, Lirs;->d(F)Litn;
-
-    move-result-object v7
-
-    invoke-virtual {v5, v6, v7}, Lirs;->e(Lcom/google/android/apps/camera/zoomui/view/ZoomUi;Litn;)V
-
-    iget-object v5, v0, Lita;->u:Lirs;
-
-    iget-object v6, v0, Lita;->s:Lcom/google/android/apps/camera/zoomui/view/ZoomUi;
-
-    iget-object v7, v0, Lita;->j:Ljwb;
-
-    invoke-interface {v7}, Ljwb;->bm()Ljava/lang/Object;
-
-    move-result-object v7
-
-    check-cast v7, Ljava/lang/Float;
-
-    invoke-virtual {v7}, Ljava/lang/Float;->floatValue()F
-
-    move-result v7
-
-    invoke-virtual {v5, v6, v7}, Lirs;->g(Lcom/google/android/apps/camera/zoomui/view/ZoomUi;F)V
-
-    iget-object v5, v0, Lita;->j:Ljwb;
-
-    invoke-interface {v5}, Ljwb;->bm()Ljava/lang/Object;
-
-    invoke-virtual {v0}, Lita;->x()Landroid/animation/AnimatorSet;
-
-    move-result-object v5
-
-    iget-object v6, v0, Lita;->s:Lcom/google/android/apps/camera/zoomui/view/ZoomUi;
-
-    invoke-virtual {v6}, Lcom/google/android/apps/camera/zoomui/view/ZoomUi;->h()Landroid/widget/ImageView;
-
-    move-result-object v6
-
-    invoke-virtual {v6, v4}, Landroid/widget/ImageView;->setAlpha(F)V
-
-    iget-object v6, v0, Lita;->s:Lcom/google/android/apps/camera/zoomui/view/ZoomUi;
-
-    invoke-virtual {v6}, Lcom/google/android/apps/camera/zoomui/view/ZoomUi;->d()Landroid/view/ViewGroup;
-
-    move-result-object v6
-
-    invoke-virtual {v6, v1}, Landroid/view/ViewGroup;->setVisibility(I)V
-
-    iget-object v0, v0, Lita;->s:Lcom/google/android/apps/camera/zoomui/view/ZoomUi;
-
-    invoke-virtual {v0}, Lcom/google/android/apps/camera/zoomui/view/ZoomUi;->g()Landroid/widget/ImageView;
-
-    move-result-object v0
-
-    invoke-virtual {v0, v4}, Landroid/widget/ImageView;->setAlpha(F)V
-
-    invoke-virtual {v5}, Landroid/animation/AnimatorSet;->end()V
-
-    :cond_3
-    iget-object v0, p0, List;->b:Lita;
-
-    iget-boolean v5, v0, Lita;->C:Z
-
-    if-nez v5, :cond_4
-
-    invoke-virtual {v0}, Lita;->y()Landroid/animation/ValueAnimator;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Landroid/animation/ValueAnimator;->end()V
-
-    :cond_4
-    iget-object v0, p0, List;->b:Lita;
-
-    iget-object v0, v0, Lita;->s:Lcom/google/android/apps/camera/zoomui/view/ZoomUi;
-
-    invoke-virtual {v0}, Lcom/google/android/apps/camera/zoomui/view/ZoomUi;->n()Landroid/widget/TextView;
-
-    move-result-object v0
-
-    invoke-virtual {v0, v3}, Landroid/widget/TextView;->setVisibility(I)V
-
-    iget-object v0, p0, List;->b:Lita;
-
-    iget-object v0, v0, Lita;->s:Lcom/google/android/apps/camera/zoomui/view/ZoomUi;
-
-    invoke-virtual {v0}, Lcom/google/android/apps/camera/zoomui/view/ZoomUi;->n()Landroid/widget/TextView;
-
-    move-result-object v0
-
-    const/4 v5, 0x1
-
-    invoke-virtual {v0, v5}, Landroid/widget/TextView;->setEnabled(Z)V
-
-    iget-object v0, p0, List;->b:Lita;
-
-    iget-object v0, v0, Lita;->s:Lcom/google/android/apps/camera/zoomui/view/ZoomUi;
-
-    invoke-virtual {v0}, Lcom/google/android/apps/camera/zoomui/view/ZoomUi;->h()Landroid/widget/ImageView;
-
-    move-result-object v0
-
-    invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setVisibility(I)V
-
-    iget-object v0, p0, List;->b:Lita;
-
-    iget-object v0, v0, Lita;->s:Lcom/google/android/apps/camera/zoomui/view/ZoomUi;
-
-    invoke-virtual {v0}, Lcom/google/android/apps/camera/zoomui/view/ZoomUi;->k()Landroid/widget/SeekBar;
-
-    move-result-object v0
-
-    invoke-virtual {v0, v3}, Landroid/widget/SeekBar;->setEnabled(Z)V
-
-    iget-object v0, p0, List;->b:Lita;
-
-    iget-object v0, v0, Lita;->t:Lcom/google/android/apps/camera/zoomui/view/ZoomSliderView;
-
-    invoke-virtual {v0, v2}, Lcom/google/android/apps/camera/zoomui/view/ZoomSliderView;->setVisibility(I)V
-
-    iget-object v0, p0, List;->b:Lita;
-
-    iget-object v0, v0, Lita;->s:Lcom/google/android/apps/camera/zoomui/view/ZoomUi;
-
-    invoke-virtual {v0}, Lcom/google/android/apps/camera/zoomui/view/ZoomUi;->d()Landroid/view/ViewGroup;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Landroid/view/ViewGroup;->animate()Landroid/view/ViewPropertyAnimator;
-
-    move-result-object v0
-
-    invoke-virtual {v0, v4}, Landroid/view/ViewPropertyAnimator;->alpha(F)Landroid/view/ViewPropertyAnimator;
-
-    move-result-object v0
-
-    iget-object v1, p0, List;->b:Lita;
-
-    iget v2, v1, Lita;->A:F
-
-    iget-object v1, v1, Lita;->s:Lcom/google/android/apps/camera/zoomui/view/ZoomUi;
-
-    invoke-virtual {v1}, Lcom/google/android/apps/camera/zoomui/view/ZoomUi;->c()Landroid/view/ViewGroup;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Landroid/view/ViewGroup;->getWidth()I
-
-    move-result v1
-
-    int-to-float v1, v1
-
-    const/high16 v6, 0x40000000    # 2.0f
-
-    div-float/2addr v1, v6
-
-    add-float/2addr v2, v1
-
-    iget-object v1, p0, List;->b:Lita;
-
-    iget-object v1, v1, Lita;->s:Lcom/google/android/apps/camera/zoomui/view/ZoomUi;
-
-    invoke-virtual {v1}, Lcom/google/android/apps/camera/zoomui/view/ZoomUi;->getWidth()I
-
-    move-result v1
-
-    int-to-float v1, v1
-
-    div-float/2addr v1, v6
-
-    sub-float/2addr v2, v1
-
-    invoke-virtual {v0, v2}, Landroid/view/ViewPropertyAnimator;->translationX(F)Landroid/view/ViewPropertyAnimator;
-
-    move-result-object v0
-
-    iget-object v1, p0, List;->b:Lita;
-
-    iget v1, v1, Lita;->z:I
-
-    int-to-long v1, v1
-
-    invoke-virtual {v0, v1, v2}, Landroid/view/ViewPropertyAnimator;->setDuration(J)Landroid/view/ViewPropertyAnimator;
-
-    move-result-object v0
-
-    iget-object v1, p0, List;->b:Lita;
-
-    iget-object v1, v1, Lita;->y:Landroid/view/animation/Interpolator;
-
-    invoke-virtual {v0, v1}, Landroid/view/ViewPropertyAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)Landroid/view/ViewPropertyAnimator;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Landroid/view/ViewPropertyAnimator;->start()V
-
-    iget-object v0, p0, List;->b:Lita;
-
-    iget-object v0, v0, Lita;->s:Lcom/google/android/apps/camera/zoomui/view/ZoomUi;
-
-    invoke-virtual {v0}, Lcom/google/android/apps/camera/zoomui/view/ZoomUi;->g()Landroid/widget/ImageView;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Landroid/widget/ImageView;->animate()Landroid/view/ViewPropertyAnimator;
-
-    move-result-object v0
-
-    invoke-virtual {v0, v4}, Landroid/view/ViewPropertyAnimator;->alpha(F)Landroid/view/ViewPropertyAnimator;
-
-    move-result-object v0
-
-    iget-object v1, p0, List;->b:Lita;
-
-    iget v2, v1, Lita;->A:F
-
-    iget-object v1, v1, Lita;->s:Lcom/google/android/apps/camera/zoomui/view/ZoomUi;
-
-    invoke-virtual {v1}, Lcom/google/android/apps/camera/zoomui/view/ZoomUi;->c()Landroid/view/ViewGroup;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Landroid/view/ViewGroup;->getWidth()I
-
-    move-result v1
-
-    int-to-float v1, v1
-
-    div-float/2addr v1, v6
-
-    add-float/2addr v2, v1
-
-    iget-object v1, p0, List;->b:Lita;
-
-    iget-object v1, v1, Lita;->s:Lcom/google/android/apps/camera/zoomui/view/ZoomUi;
-
-    invoke-virtual {v1}, Lcom/google/android/apps/camera/zoomui/view/ZoomUi;->getWidth()I
-
-    move-result v1
-
-    int-to-float v1, v1
-
-    div-float/2addr v1, v6
-
-    sub-float/2addr v2, v1
-
-    invoke-virtual {v0, v2}, Landroid/view/ViewPropertyAnimator;->translationX(F)Landroid/view/ViewPropertyAnimator;
-
-    move-result-object v0
-
-    iget-object v1, p0, List;->b:Lita;
-
-    iget v1, v1, Lita;->z:I
-
-    int-to-long v1, v1
-
-    invoke-virtual {v0, v1, v2}, Landroid/view/ViewPropertyAnimator;->setDuration(J)Landroid/view/ViewPropertyAnimator;
-
-    move-result-object v0
-
-    iget-object v1, p0, List;->b:Lita;
-
-    iget-object v1, v1, Lita;->y:Landroid/view/animation/Interpolator;
-
-    invoke-virtual {v0, v1}, Landroid/view/ViewPropertyAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)Landroid/view/ViewPropertyAnimator;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Landroid/view/ViewPropertyAnimator;->start()V
-
-    iget-object v0, p0, List;->b:Lita;
-
-    iget-boolean v1, v0, Lita;->C:Z
-
-    if-eqz v1, :cond_5
-
-    iget-object v1, v0, Lita;->s:Lcom/google/android/apps/camera/zoomui/view/ZoomUi;
-
-    invoke-virtual {v1}, Lcom/google/android/apps/camera/zoomui/view/ZoomUi;->n()Landroid/widget/TextView;
-
-    move-result-object v1
-
-    invoke-virtual {v0}, Lita;->v()F
-
-    move-result v2
-
-    invoke-virtual {v0}, Lita;->w()I
-
-    move-result v6
-
-    int-to-float v6, v6
-
-    add-float/2addr v2, v6
-
-    invoke-virtual {v1, v2}, Landroid/widget/TextView;->setTranslationX(F)V
-
-    invoke-virtual {v1, v4}, Landroid/widget/TextView;->setTranslationY(F)V
-
-    const/high16 v2, 0x3f800000    # 1.0f
-
-    invoke-virtual {v1, v2}, Landroid/widget/TextView;->setAlpha(F)V
-
-    invoke-virtual {v1, v3}, Landroid/widget/TextView;->setVisibility(I)V
-
-    invoke-virtual {v1}, Landroid/widget/TextView;->animate()Landroid/view/ViewPropertyAnimator;
-
-    move-result-object v1
-
-    invoke-virtual {v1, v4}, Landroid/view/ViewPropertyAnimator;->translationX(F)Landroid/view/ViewPropertyAnimator;
-
-    move-result-object v1
-
-    iget v2, v0, Lita;->z:I
-
-    int-to-long v2, v2
-
-    invoke-virtual {v1, v2, v3}, Landroid/view/ViewPropertyAnimator;->setDuration(J)Landroid/view/ViewPropertyAnimator;
-
-    move-result-object v1
-
-    iget-object v0, v0, Lita;->y:Landroid/view/animation/Interpolator;
-
-    invoke-virtual {v1, v0}, Landroid/view/ViewPropertyAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)Landroid/view/ViewPropertyAnimator;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Landroid/view/ViewPropertyAnimator;->start()V
-
-    goto :goto_1
-
-    :cond_5
-    invoke-virtual {v0}, Lita;->w()I
-
-    move-result v0
-
-    iget-object v1, p0, List;->b:Lita;
-
-    iget-object v1, v1, Lita;->s:Lcom/google/android/apps/camera/zoomui/view/ZoomUi;
-
-    invoke-virtual {v1}, Lcom/google/android/apps/camera/zoomui/view/ZoomUi;->n()Landroid/widget/TextView;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Landroid/widget/TextView;->animate()Landroid/view/ViewPropertyAnimator;
-
-    move-result-object v1
-
-    iget-object v2, p0, List;->b:Lita;
-
-    iget v3, v2, Lita;->A:F
-
-    iget v4, v2, Lita;->B:F
-
-    div-float/2addr v4, v6
-
-    add-float/2addr v3, v4
-
-    iget-object v2, v2, Lita;->s:Lcom/google/android/apps/camera/zoomui/view/ZoomUi;
-
-    invoke-virtual {v2}, Lcom/google/android/apps/camera/zoomui/view/ZoomUi;->getWidth()I
-
-    move-result v2
-
-    int-to-float v2, v2
-
-    int-to-float v0, v0
-
-    div-float/2addr v2, v6
-
-    sub-float/2addr v3, v2
-
-    sub-float/2addr v3, v0
-
-    invoke-virtual {v1, v3}, Landroid/view/ViewPropertyAnimator;->translationX(F)Landroid/view/ViewPropertyAnimator;
-
-    move-result-object v0
-
-    iget-object v1, p0, List;->b:Lita;
-
-    iget v1, v1, Lita;->z:I
-
-    int-to-long v1, v1
-
-    invoke-virtual {v0, v1, v2}, Landroid/view/ViewPropertyAnimator;->setDuration(J)Landroid/view/ViewPropertyAnimator;
-
-    move-result-object v0
-
-    iget-object v1, p0, List;->b:Lita;
-
-    iget-object v1, v1, Lita;->y:Landroid/view/animation/Interpolator;
-
-    invoke-virtual {v0, v1}, Landroid/view/ViewPropertyAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)Landroid/view/ViewPropertyAnimator;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Landroid/view/ViewPropertyAnimator;->start()V
-
-    :goto_1
-    iget-object v0, p0, List;->b:Lita;
-
-    invoke-virtual {v0, v5}, Lita;->B(Z)V
-
-    iget-object v0, p0, List;->b:Lita;
-
-    const/4 v1, 0x7
-
-    invoke-virtual {v0, v1}, Lita;->L(I)V
-
     return-void
 .end method
 
-.method public final g()V
-    .locals 7
+.method public final b()V
+    .locals 4
 
-    iget-object v0, p0, List;->b:Lita;
+    iget-object v0, p0, List;->f:Lfjs;
 
-    iget-boolean v1, v0, Lita;->C:Z
+    const/4 v1, 0x3
 
-    const/4 v2, 0x0
+    invoke-interface {v0, v1}, Lfjs;->Z(I)V
 
-    const/high16 v3, 0x3f800000    # 1.0f
+    :try_start_0
+    iget-object v0, p0, List;->e:Lbtt;
 
-    const/4 v4, 0x0
+    new-instance v1, Landroid/content/Intent;
 
-    if-eqz v1, :cond_0
+    const-string v2, "android.settings.NOTIFICATION_POLICY_ACCESS_SETTINGS"
 
-    iget-object v1, v0, Lita;->s:Lcom/google/android/apps/camera/zoomui/view/ZoomUi;
+    invoke-direct {v1, v2}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {v1}, Lcom/google/android/apps/camera/zoomui/view/ZoomUi;->n()Landroid/widget/TextView;
-
-    move-result-object v1
-
-    invoke-virtual {v1, v4}, Landroid/widget/TextView;->setTranslationX(F)V
-
-    invoke-virtual {v1, v4}, Landroid/widget/TextView;->setTranslationY(F)V
-
-    invoke-virtual {v1, v3}, Landroid/widget/TextView;->setAlpha(F)V
-
-    invoke-virtual {v1, v2}, Landroid/widget/TextView;->setVisibility(I)V
-
-    invoke-virtual {v1}, Landroid/widget/TextView;->animate()Landroid/view/ViewPropertyAnimator;
-
-    move-result-object v1
-
-    invoke-virtual {v0}, Lita;->v()F
-
-    move-result v5
-
-    invoke-virtual {v0}, Lita;->w()I
-
-    move-result v6
-
-    int-to-float v6, v6
-
-    add-float/2addr v5, v6
-
-    invoke-virtual {v1, v5}, Landroid/view/ViewPropertyAnimator;->translationX(F)Landroid/view/ViewPropertyAnimator;
-
-    move-result-object v1
-
-    iget v5, v0, Lita;->z:I
-
-    int-to-long v5, v5
-
-    invoke-virtual {v1, v5, v6}, Landroid/view/ViewPropertyAnimator;->setDuration(J)Landroid/view/ViewPropertyAnimator;
-
-    move-result-object v1
-
-    iget-object v0, v0, Lita;->y:Landroid/view/animation/Interpolator;
-
-    invoke-virtual {v1, v0}, Landroid/view/ViewPropertyAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)Landroid/view/ViewPropertyAnimator;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Landroid/view/ViewPropertyAnimator;->start()V
-
-    goto :goto_0
-
-    :cond_0
-    iget-object v0, v0, Lita;->s:Lcom/google/android/apps/camera/zoomui/view/ZoomUi;
-
-    invoke-virtual {v0}, Lcom/google/android/apps/camera/zoomui/view/ZoomUi;->n()Landroid/widget/TextView;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Landroid/widget/TextView;->animate()Landroid/view/ViewPropertyAnimator;
-
-    move-result-object v0
-
-    invoke-virtual {v0, v4}, Landroid/view/ViewPropertyAnimator;->translationX(F)Landroid/view/ViewPropertyAnimator;
-
-    move-result-object v0
-
-    iget-object v1, p0, List;->b:Lita;
-
-    iget v1, v1, Lita;->z:I
-
-    int-to-long v5, v1
-
-    invoke-virtual {v0, v5, v6}, Landroid/view/ViewPropertyAnimator;->setDuration(J)Landroid/view/ViewPropertyAnimator;
-
-    move-result-object v0
-
-    iget-object v1, p0, List;->b:Lita;
-
-    iget-object v1, v1, Lita;->y:Landroid/view/animation/Interpolator;
-
-    invoke-virtual {v0, v1}, Landroid/view/ViewPropertyAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)Landroid/view/ViewPropertyAnimator;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Landroid/view/ViewPropertyAnimator;->start()V
-
-    :goto_0
-    iget-object v0, p0, List;->b:Lita;
-
-    iget-object v0, v0, Lita;->s:Lcom/google/android/apps/camera/zoomui/view/ZoomUi;
-
-    invoke-virtual {v0}, Lcom/google/android/apps/camera/zoomui/view/ZoomUi;->d()Landroid/view/ViewGroup;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Landroid/view/ViewGroup;->animate()Landroid/view/ViewPropertyAnimator;
-
-    move-result-object v0
-
-    invoke-virtual {v0, v3}, Landroid/view/ViewPropertyAnimator;->alpha(F)Landroid/view/ViewPropertyAnimator;
-
-    move-result-object v0
-
-    invoke-virtual {v0, v4}, Landroid/view/ViewPropertyAnimator;->translationX(F)Landroid/view/ViewPropertyAnimator;
-
-    move-result-object v0
-
-    iget-object v1, p0, List;->b:Lita;
-
-    iget v1, v1, Lita;->z:I
-
-    int-to-long v5, v1
-
-    invoke-virtual {v0, v5, v6}, Landroid/view/ViewPropertyAnimator;->setDuration(J)Landroid/view/ViewPropertyAnimator;
-
-    move-result-object v0
-
-    iget-object v1, p0, List;->a:Landroid/animation/AnimatorListenerAdapter;
-
-    invoke-virtual {v0, v1}, Landroid/view/ViewPropertyAnimator;->setListener(Landroid/animation/Animator$AnimatorListener;)Landroid/view/ViewPropertyAnimator;
-
-    move-result-object v0
-
-    iget-object v1, p0, List;->b:Lita;
-
-    iget-object v1, v1, Lita;->y:Landroid/view/animation/Interpolator;
-
-    invoke-virtual {v0, v1}, Landroid/view/ViewPropertyAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)Landroid/view/ViewPropertyAnimator;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Landroid/view/ViewPropertyAnimator;->start()V
-
-    iget-object v0, p0, List;->b:Lita;
-
-    iget-object v0, v0, Lita;->s:Lcom/google/android/apps/camera/zoomui/view/ZoomUi;
-
-    invoke-virtual {v0}, Lcom/google/android/apps/camera/zoomui/view/ZoomUi;->g()Landroid/widget/ImageView;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Landroid/widget/ImageView;->animate()Landroid/view/ViewPropertyAnimator;
-
-    move-result-object v0
-
-    invoke-virtual {v0, v3}, Landroid/view/ViewPropertyAnimator;->alpha(F)Landroid/view/ViewPropertyAnimator;
-
-    move-result-object v0
-
-    invoke-virtual {v0, v4}, Landroid/view/ViewPropertyAnimator;->translationX(F)Landroid/view/ViewPropertyAnimator;
-
-    move-result-object v0
-
-    iget-object v1, p0, List;->b:Lita;
-
-    iget v1, v1, Lita;->z:I
-
-    int-to-long v3, v1
-
-    invoke-virtual {v0, v3, v4}, Landroid/view/ViewPropertyAnimator;->setDuration(J)Landroid/view/ViewPropertyAnimator;
-
-    move-result-object v0
-
-    iget-object v1, p0, List;->b:Lita;
-
-    iget-object v1, v1, Lita;->y:Landroid/view/animation/Interpolator;
-
-    invoke-virtual {v0, v1}, Landroid/view/ViewPropertyAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)Landroid/view/ViewPropertyAnimator;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Landroid/view/ViewPropertyAnimator;->start()V
-
-    iget-object v0, p0, List;->b:Lita;
-
-    invoke-virtual {v0, v2}, Lita;->B(Z)V
+    invoke-interface {v0, v1}, Lbtt;->o(Landroid/content/Intent;)V
+    :try_end_0
+    .catch Landroid/content/ActivityNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
 
     return-void
-.end method
 
-.method public final k()V
-    .locals 0
+    :catch_0
+    move-exception v0
 
-    invoke-virtual {p0}, Lisk;->u()V
+    sget-object v1, List;->b:Louj;
 
-    return-void
-.end method
+    invoke-virtual {v1}, Loue;->b()Lova;
 
-.method public final r()V
-    .locals 2
+    move-result-object v1
 
-    iget-object v0, p0, List;->b:Lita;
+    const/16 v2, 0xc4f
 
-    iget-object v0, v0, Lita;->s:Lcom/google/android/apps/camera/zoomui/view/ZoomUi;
+    const-string v3, "Failed to launch notification policy access settings"
 
-    invoke-virtual {v0}, Lcom/google/android/apps/camera/zoomui/view/ZoomUi;->n()Landroid/widget/TextView;
-
-    move-result-object v0
-
-    const/16 v1, 0x8
-
-    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setVisibility(I)V
-
-    return-void
-.end method
-
-.method public final u()V
-    .locals 2
-
-    iget-object v0, p0, List;->b:Lita;
-
-    iget-object v0, v0, Lita;->s:Lcom/google/android/apps/camera/zoomui/view/ZoomUi;
-
-    const/4 v1, 0x0
-
-    invoke-virtual {v0, v1}, Lcom/google/android/apps/camera/zoomui/view/ZoomUi;->setVisibility(I)V
-
-    iget-object v0, p0, List;->b:Lita;
-
-    iget-object v0, v0, Lita;->s:Lcom/google/android/apps/camera/zoomui/view/ZoomUi;
-
-    invoke-virtual {v0}, Lcom/google/android/apps/camera/zoomui/view/ZoomUi;->n()Landroid/widget/TextView;
-
-    move-result-object v0
-
-    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setVisibility(I)V
+    invoke-static {v1, v3, v2, v0}, Ld;->w(Lova;Ljava/lang/String;CLjava/lang/Throwable;)V
 
     return-void
 .end method

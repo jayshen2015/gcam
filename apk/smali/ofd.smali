@@ -1,76 +1,77 @@
 .class public final Lofd;
-.super Lcbf;
+.super Ljava/lang/Object;
 
 # interfaces
-.implements Landroid/os/IInterface;
+.implements Lofg;
 
 
 # instance fields
-.field public final synthetic a:Landroid/app/Activity;
+.field public final a:Ljava/lang/Object;
 
-.field public final synthetic b:Landroid/app/PendingIntent;
+.field public final b:Ljta;
 
-.field public final synthetic c:I
+.field private final c:Ljava/util/concurrent/Executor;
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 1
-
-    const-string v0, "com.google.vr.vrcore.common.api.ITransitionCallbacks"
-
-    invoke-direct {p0, v0}, Lcbf;-><init>(Ljava/lang/String;)V
-
-    return-void
-.end method
-
-.method public constructor <init>(Landroid/app/Activity;Landroid/app/PendingIntent;I)V
+.method public constructor <init>(Ljava/util/concurrent/Executor;Ljta;[B)V
     .locals 0
 
-    iput-object p1, p0, Lofd;->a:Landroid/app/Activity;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p2, p0, Lofd;->b:Landroid/app/PendingIntent;
+    new-instance p3, Ljava/lang/Object;
 
-    iput p3, p0, Lofd;->c:I
+    invoke-direct {p3}, Ljava/lang/Object;-><init>()V
 
-    const-string p1, "com.google.vr.vrcore.common.api.ITransitionCallbacks"
+    iput-object p3, p0, Lofd;->a:Ljava/lang/Object;
 
-    invoke-direct {p0, p1}, Lcbf;-><init>(Ljava/lang/String;)V
+    iput-object p1, p0, Lofd;->c:Ljava/util/concurrent/Executor;
+
+    iput-object p2, p0, Lofd;->b:Ljta;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final b()V
-    .locals 3
+.method public final a(Loff;)V
+    .locals 2
 
-    iget-object v0, p0, Lofd;->a:Landroid/app/Activity;
+    invoke-virtual {p1}, Loff;->b()Z
 
-    new-instance v1, Llmm;
+    move-result v0
 
-    const/16 v2, 0x14
+    if-eqz v0, :cond_0
 
-    invoke-direct {v1, p0, v2}, Llmm;-><init>(Lofd;I)V
+    iget-object v0, p0, Lofd;->a:Ljava/lang/Object;
 
-    invoke-virtual {v0, v1}, Landroid/app/Activity;->runOnUiThread(Ljava/lang/Runnable;)V
+    monitor-enter v0
+
+    :try_start_0
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    iget-object v0, p0, Lofd;->c:Ljava/util/concurrent/Executor;
+
+    new-instance v1, Lofc;
+
+    invoke-direct {v1, p0, p1}, Lofc;-><init>(Lofd;Loff;)V
+
+    invoke-interface {v0, v1}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
 
     return-void
-.end method
 
-.method protected final x(ILandroid/os/Parcel;Landroid/os/Parcel;)Z
-    .locals 0
+    :catchall_0
+    move-exception p1
 
-    const/4 p2, 0x1
+    :try_start_1
+    monitor-exit v0
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    if-ne p1, p2, :cond_0
-
-    invoke-virtual {p0}, Lofd;->b()V
-
-    return p2
+    throw p1
 
     :cond_0
-    const/4 p1, 0x0
-
-    return p1
+    return-void
 .end method

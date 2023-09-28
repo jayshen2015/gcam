@@ -1,196 +1,167 @@
-.class final Lews;
-.super Landroid/os/AsyncTask;
+.class public final synthetic Lews;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field final synthetic a:Leww;
+.field public final synthetic a:Lexi;
+
+.field public final synthetic b:Z
 
 
 # direct methods
-.method public constructor <init>(Leww;)V
+.method public synthetic constructor <init>(Lexi;Z)V
     .locals 0
 
-    iput-object p1, p0, Lews;->a:Leww;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0}, Landroid/os/AsyncTask;-><init>()V
+    iput-object p1, p0, Lews;->a:Lexi;
+
+    iput-boolean p2, p0, Lews;->b:Z
 
     return-void
 .end method
 
 
 # virtual methods
-.method protected final bridge synthetic doInBackground([Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 6
+.method public final run()V
+    .locals 5
 
-    check-cast p1, [Ljava/lang/Void;
+    iget-object v0, p0, Lews;->a:Lexi;
 
-    iget-object p1, p0, Lews;->a:Leww;
+    iget-boolean v1, p0, Lews;->b:Z
 
-    iget-boolean v0, p1, Leww;->s:Z
+    iget-object v2, v0, Lexi;->ad:Lfle;
 
-    const/4 v1, 0x0
+    invoke-virtual {v2}, Lfle;->c()V
 
-    if-nez v0, :cond_1
+    iget-object v2, v0, Lexi;->U:Llce;
 
-    :cond_0
-    goto/16 :goto_4
+    const/4 v3, 0x0
 
-    :cond_1
-    iget-object v0, p1, Leww;->c:Lewd;
+    invoke-static {v3}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
-    iget-object v0, v0, Lewd;->b:Lbne;
+    move-result-object v4
 
-    if-eqz v0, :cond_0
+    invoke-virtual {v2, v4}, Llce;->fB(Ljava/lang/Object;)V
 
-    iget-object p1, p1, Leww;->H:Landroid/os/Handler;
+    iget-object v2, v0, Lexi;->y:Lbtt;
 
-    invoke-virtual {v0, p1, v1}, Lbne;->p(Landroid/os/Handler;Landroidx/wear/ambient/AmbientMode$AmbientController;)V
-
-    iget-object p1, p0, Lews;->a:Leww;
-
-    iget-object p1, p1, Leww;->H:Landroid/os/Handler;
-
-    invoke-virtual {v0, p1, v1}, Lbne;->o(Landroid/os/Handler;Landroidx/wear/ambient/AmbientMode$AmbientController;)V
-
-    iget-object p1, p0, Lews;->a:Leww;
-
-    iget-object v2, p1, Leww;->g:Lexs;
-
-    invoke-virtual {v2}, Lexs;->f()[F
+    invoke-interface {v2}, Lbtt;->g()Lbtv;
 
     move-result-object v2
 
-    const/4 v3, 0x6
+    invoke-interface {v2}, Lbtv;->f()V
 
-    aget v2, v2, v3
+    if-nez v1, :cond_2
 
-    neg-float v2, v2
+    iget-object v1, v0, Lexi;->P:Lfwg;
 
-    float-to-double v2, v2
+    invoke-virtual {v1}, Lfwg;->c()Ljava/lang/Boolean;
 
-    invoke-static {v2, v3}, Ljava/lang/Math;->asin(D)D
+    move-result-object v1
 
-    move-result-wide v2
+    invoke-virtual {v1}, Ljava/lang/Boolean;->booleanValue()Z
 
-    const-wide v4, 0x404ca5dc1a63c1f8L    # 57.29577951308232
+    move-result v1
 
-    mul-double v2, v2, v4
+    invoke-virtual {v0, v1}, Lexi;->H(Z)V
 
-    double-to-float v2, v2
+    iget-object v1, v0, Lexi;->N:Lbzg;
 
-    float-to-double v2, v2
+    invoke-virtual {v1}, Lbzg;->e()Z
 
-    iput-wide v2, p1, Leww;->i:D
+    move-result v1
 
-    iget-object p1, p0, Lews;->a:Leww;
+    const/4 v2, 0x1
 
-    iget v2, p1, Leww;->n:I
+    if-nez v1, :cond_0
 
-    if-nez v2, :cond_2
+    iget-object v1, v0, Lexi;->s:Ljfn;
 
-    iget-wide v2, p1, Leww;->i:D
+    invoke-interface {v1, v2}, Ljfn;->l(Z)V
 
-    iput-wide v2, p1, Leww;->h:D
+    :cond_0
+    iget-object v1, v0, Lexi;->x:Lojc;
+
+    invoke-virtual {v1}, Lojc;->g()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_1
+
+    iget-object v1, v0, Lexi;->x:Lojc;
+
+    invoke-virtual {v1}, Lojc;->c()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Lbys;
+
+    invoke-interface {v1}, Lbys;->h()V
+
+    :cond_1
+    iget-object v1, v0, Lexi;->aa:Leam;
+
+    invoke-virtual {v1, v3}, Leam;->j(Z)V
+
+    iget-object v1, v0, Lexi;->A:Lfwl;
+
+    invoke-virtual {v1}, Lfwl;->c()V
+
+    iget-object v1, v0, Lexi;->j:Lkas;
+
+    invoke-interface {v1, v2}, Lkas;->v(Z)V
+
+    iget-object v1, v0, Lexi;->j:Lkas;
+
+    invoke-interface {v1}, Lkas;->h()V
+
+    iget-object v1, v0, Lexi;->N:Lbzg;
+
+    invoke-virtual {v1}, Lbzg;->e()Z
+
+    move-result v1
+
+    if-nez v1, :cond_2
+
+    iget-object v1, v0, Lexi;->V:Lgtg;
+
+    invoke-virtual {v1}, Lgtg;->j()V
 
     :cond_2
-    iget-wide v2, p1, Leww;->i:D
+    iget-object v1, v0, Lexi;->r:Lfxf;
 
-    iget-wide v4, p1, Leww;->h:D
+    invoke-virtual {v1}, Lfxf;->a()V
 
-    sub-double/2addr v2, v4
+    iget-object v1, v0, Lexi;->ae:Lojc;
 
-    invoke-static {v2, v3}, Ljava/lang/Math;->abs(D)D
+    invoke-virtual {v1}, Lojc;->g()Z
 
-    move-result-wide v2
+    move-result v1
 
-    iget-object p1, p0, Lews;->a:Leww;
+    if-eqz v1, :cond_3
 
-    iget-boolean p1, p1, Leww;->v:Z
+    iget-object v1, v0, Lexi;->ae:Lojc;
 
-    if-eqz p1, :cond_5
+    invoke-virtual {v1}, Lojc;->c()Ljava/lang/Object;
 
-    invoke-static {v2, v3}, Ljava/lang/Math;->abs(D)D
+    move-result-object v1
 
-    move-result-wide v2
+    check-cast v1, Lily;
 
-    const-wide/high16 v4, 0x4020000000000000L    # 8.0
+    iget-object v2, v0, Lexi;->y:Lbtt;
 
-    cmpl-double p1, v2, v4
+    invoke-interface {v2}, Lbtt;->l()Ljrl;
 
-    if-lez p1, :cond_3
+    iget-object v0, v0, Lexi;->af:Lhbq;
 
-    goto :goto_0
+    invoke-virtual {v0}, Lhbq;->l()V
+
+    invoke-interface {v1}, Lily;->a()V
 
     :cond_3
-    iget-object p1, p0, Lews;->a:Leww;
-
-    iget-boolean p1, p1, Leww;->G:Z
-
-    if-nez p1, :cond_4
-
-    goto :goto_3
-
-    :cond_4
-    :goto_0
-    iget-object p1, p0, Lews;->a:Leww;
-
-    const/4 v2, 0x0
-
-    iput-boolean v2, p1, Leww;->j:Z
-
-    iput v2, p1, Leww;->k:I
-
-    iget-object p1, p1, Leww;->l:Ljava/util/concurrent/Semaphore;
-
-    invoke-virtual {p1}, Ljava/util/concurrent/Semaphore;->drainPermits()I
-
-    :goto_1
-    const/4 p1, 0x3
-
-    if-ge v2, p1, :cond_6
-
-    iget-object p1, p0, Lews;->a:Leww;
-
-    iget-boolean v3, p1, Leww;->j:Z
-
-    if-nez v3, :cond_6
-
-    iget-object p1, p1, Leww;->H:Landroid/os/Handler;
-
-    new-instance v3, Lewv;
-
-    const/4 v4, 0x1
-
-    invoke-direct {v3, p0, v0, v4}, Lewv;-><init>(Lews;Lbne;I)V
-
-    invoke-virtual {v0, p1, v3}, Lbne;->j(Landroid/os/Handler;Lbmy;)V
-
-    :try_start_0
-    iget-object p1, p0, Lews;->a:Leww;
-
-    iget-object p1, p1, Leww;->l:Ljava/util/concurrent/Semaphore;
-
-    invoke-virtual {p1}, Ljava/util/concurrent/Semaphore;->acquire()V
-    :try_end_0
-    .catch Ljava/lang/InterruptedException; {:try_start_0 .. :try_end_0} :catch_0
-
-    goto :goto_2
-
-    :catch_0
-    move-exception p1
-
-    :goto_2
-    add-int/lit8 v2, v2, 0x1
-
-    goto :goto_1
-
-    :cond_5
-    :goto_3
-    iget-object p1, p0, Lews;->a:Leww;
-
-    invoke-virtual {p1, v0}, Leww;->d(Lbne;)V
-
-    :cond_6
-    :goto_4
-    return-object v1
+    return-void
 .end method

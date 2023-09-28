@@ -2,102 +2,276 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lbuz;
-
-
-# static fields
-.field private static final a:Ljava/util/Set;
+.implements Lpys;
 
 
 # instance fields
-.field private final b:Lbuz;
+.field private final A:Lqkg;
+
+.field private final a:Lqkg;
+
+.field private final b:Lqkg;
+
+.field private final c:Lqkg;
+
+.field private final d:Lqkg;
+
+.field private final e:Lqkg;
+
+.field private final f:Lqkg;
+
+.field private final g:Lqkg;
+
+.field private final h:Lqkg;
+
+.field private final i:Lqkg;
+
+.field private final j:Lqkg;
+
+.field private final k:Lqkg;
+
+.field private final l:Lqkg;
+
+.field private final m:Lqkg;
+
+.field private final n:Lqkg;
+
+.field private final o:Lqkg;
+
+.field private final p:Lqkg;
+
+.field private final q:Lqkg;
+
+.field private final r:Lqkg;
+
+.field private final s:Lqkg;
+
+.field private final t:Lqkg;
+
+.field private final u:Lqkg;
+
+.field private final v:Lqkg;
+
+.field private final w:Lqkg;
+
+.field private final x:Lqkg;
+
+.field private final y:Lqkg;
+
+.field private final z:Lqkg;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 4
+.method public constructor <init>(Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;)V
+    .locals 2
 
-    new-instance v0, Ljava/util/HashSet;
-
-    const/4 v1, 0x2
-
-    new-array v1, v1, [Ljava/lang/String;
-
-    const/4 v2, 0x0
-
-    const-string v3, "http"
-
-    aput-object v3, v1, v2
-
-    const/4 v2, 0x1
-
-    const-string v3, "https"
-
-    aput-object v3, v1, v2
-
-    invoke-static {v1}, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
-
-    move-result-object v1
-
-    invoke-direct {v0, v1}, Ljava/util/HashSet;-><init>(Ljava/util/Collection;)V
-
-    invoke-static {v0}, Ljava/util/Collections;->unmodifiableSet(Ljava/util/Set;)Ljava/util/Set;
-
-    move-result-object v0
-
-    sput-object v0, Lbvm;->a:Ljava/util/Set;
-
-    return-void
-.end method
-
-.method public constructor <init>(Lbuz;)V
-    .locals 0
+    move-object v0, p0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lbvm;->b:Lbuz;
+    move-object v1, p1
+
+    iput-object v1, v0, Lbvm;->a:Lqkg;
+
+    move-object v1, p2
+
+    iput-object v1, v0, Lbvm;->b:Lqkg;
+
+    move-object v1, p3
+
+    iput-object v1, v0, Lbvm;->c:Lqkg;
+
+    move-object v1, p4
+
+    iput-object v1, v0, Lbvm;->d:Lqkg;
+
+    move-object v1, p5
+
+    iput-object v1, v0, Lbvm;->e:Lqkg;
+
+    move-object v1, p6
+
+    iput-object v1, v0, Lbvm;->f:Lqkg;
+
+    move-object v1, p7
+
+    iput-object v1, v0, Lbvm;->g:Lqkg;
+
+    move-object v1, p8
+
+    iput-object v1, v0, Lbvm;->h:Lqkg;
+
+    move-object v1, p9
+
+    iput-object v1, v0, Lbvm;->i:Lqkg;
+
+    move-object v1, p10
+
+    iput-object v1, v0, Lbvm;->j:Lqkg;
+
+    move-object v1, p11
+
+    iput-object v1, v0, Lbvm;->k:Lqkg;
+
+    move-object v1, p12
+
+    iput-object v1, v0, Lbvm;->l:Lqkg;
+
+    move-object v1, p13
+
+    iput-object v1, v0, Lbvm;->m:Lqkg;
+
+    move-object/from16 v1, p14
+
+    iput-object v1, v0, Lbvm;->n:Lqkg;
+
+    move-object/from16 v1, p15
+
+    iput-object v1, v0, Lbvm;->o:Lqkg;
+
+    move-object/from16 v1, p16
+
+    iput-object v1, v0, Lbvm;->p:Lqkg;
+
+    move-object/from16 v1, p17
+
+    iput-object v1, v0, Lbvm;->q:Lqkg;
+
+    move-object/from16 v1, p18
+
+    iput-object v1, v0, Lbvm;->r:Lqkg;
+
+    move-object/from16 v1, p19
+
+    iput-object v1, v0, Lbvm;->s:Lqkg;
+
+    move-object/from16 v1, p20
+
+    iput-object v1, v0, Lbvm;->t:Lqkg;
+
+    move-object/from16 v1, p21
+
+    iput-object v1, v0, Lbvm;->u:Lqkg;
+
+    move-object/from16 v1, p22
+
+    iput-object v1, v0, Lbvm;->v:Lqkg;
+
+    move-object/from16 v1, p23
+
+    iput-object v1, v0, Lbvm;->w:Lqkg;
+
+    move-object/from16 v1, p24
+
+    iput-object v1, v0, Lbvm;->x:Lqkg;
+
+    move-object/from16 v1, p25
+
+    iput-object v1, v0, Lbvm;->y:Lqkg;
+
+    move-object/from16 v1, p26
+
+    iput-object v1, v0, Lbvm;->z:Lqkg;
+
+    move-object/from16 v1, p27
+
+    iput-object v1, v0, Lbvm;->A:Lqkg;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final bridge synthetic a(Ljava/lang/Object;)Z
-    .locals 1
+.method public final bridge synthetic get()Ljava/lang/Object;
+    .locals 30
 
-    check-cast p1, Landroid/net/Uri;
+    move-object/from16 v0, p0
 
-    sget-object v0, Lbvm;->a:Ljava/util/Set;
+    iget-object v2, v0, Lbvm;->a:Lqkg;
 
-    invoke-virtual {p1}, Landroid/net/Uri;->getScheme()Ljava/lang/String;
+    iget-object v3, v0, Lbvm;->b:Lqkg;
 
-    move-result-object p1
+    iget-object v4, v0, Lbvm;->c:Lqkg;
 
-    invoke-interface {v0, p1}, Ljava/util/Set;->contains(Ljava/lang/Object;)Z
+    iget-object v5, v0, Lbvm;->d:Lqkg;
 
-    move-result p1
+    iget-object v6, v0, Lbvm;->e:Lqkg;
 
-    return p1
-.end method
+    iget-object v7, v0, Lbvm;->f:Lqkg;
 
-.method public final bridge synthetic b(Ljava/lang/Object;IILbqf;)Lva;
-    .locals 1
+    iget-object v8, v0, Lbvm;->g:Lqkg;
 
-    check-cast p1, Landroid/net/Uri;
+    iget-object v9, v0, Lbvm;->h:Lqkg;
 
-    new-instance v0, Lbuq;
+    iget-object v10, v0, Lbvm;->i:Lqkg;
 
-    invoke-virtual {p1}, Landroid/net/Uri;->toString()Ljava/lang/String;
+    iget-object v11, v0, Lbvm;->j:Lqkg;
 
-    move-result-object p1
+    iget-object v12, v0, Lbvm;->k:Lqkg;
 
-    invoke-direct {v0, p1}, Lbuq;-><init>(Ljava/lang/String;)V
+    iget-object v13, v0, Lbvm;->l:Lqkg;
 
-    iget-object p1, p0, Lbvm;->b:Lbuz;
+    iget-object v14, v0, Lbvm;->m:Lqkg;
 
-    invoke-interface {p1, v0, p2, p3, p4}, Lbuz;->b(Ljava/lang/Object;IILbqf;)Lva;
+    iget-object v15, v0, Lbvm;->n:Lqkg;
 
-    move-result-object p1
+    iget-object v1, v0, Lbvm;->o:Lqkg;
 
-    return-object p1
+    move-object/from16 v16, v1
+
+    iget-object v1, v0, Lbvm;->p:Lqkg;
+
+    move-object/from16 v17, v1
+
+    iget-object v1, v0, Lbvm;->q:Lqkg;
+
+    move-object/from16 v18, v1
+
+    iget-object v1, v0, Lbvm;->r:Lqkg;
+
+    move-object/from16 v19, v1
+
+    iget-object v1, v0, Lbvm;->s:Lqkg;
+
+    move-object/from16 v20, v1
+
+    iget-object v1, v0, Lbvm;->t:Lqkg;
+
+    move-object/from16 v21, v1
+
+    iget-object v1, v0, Lbvm;->u:Lqkg;
+
+    move-object/from16 v22, v1
+
+    iget-object v1, v0, Lbvm;->v:Lqkg;
+
+    move-object/from16 v23, v1
+
+    iget-object v1, v0, Lbvm;->w:Lqkg;
+
+    move-object/from16 v24, v1
+
+    iget-object v1, v0, Lbvm;->x:Lqkg;
+
+    move-object/from16 v25, v1
+
+    iget-object v1, v0, Lbvm;->y:Lqkg;
+
+    move-object/from16 v26, v1
+
+    iget-object v1, v0, Lbvm;->z:Lqkg;
+
+    move-object/from16 v27, v1
+
+    iget-object v1, v0, Lbvm;->A:Lqkg;
+
+    move-object/from16 v28, v1
+
+    new-instance v29, Lbvl;
+
+    move-object/from16 v1, v29
+
+    invoke-direct/range {v1 .. v28}, Lbvl;-><init>(Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;)V
+
+    return-object v29
 .end method

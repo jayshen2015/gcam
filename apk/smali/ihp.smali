@@ -1,51 +1,65 @@
-.class public final Lihp;
+.class public final synthetic Lihp;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Logk;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field private final a:Loiw;
+.field public final synthetic a:Lqkg;
+
+.field public final synthetic b:Ljava/util/concurrent/Executor;
 
 
 # direct methods
-.method public constructor <init>(Loiw;)V
+.method public synthetic constructor <init>(Lqkg;Ljava/util/concurrent/Executor;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lihp;->a:Loiw;
+    iput-object p1, p0, Lihp;->a:Lqkg;
+
+    iput-object p2, p0, Lihp;->b:Ljava/util/concurrent/Executor;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Lcom/google/android/apps/camera/bottombar/BottomBar;
-    .locals 1
+.method public final run()V
+    .locals 3
 
-    iget-object v0, p0, Lihp;->a:Loiw;
+    iget-object v0, p0, Lihp;->a:Lqkg;
 
-    check-cast v0, Lihj;
+    iget-object v1, p0, Lihp;->b:Ljava/util/concurrent/Executor;
 
-    invoke-virtual {v0}, Lihj;->a()Lihg;
+    check-cast v0, Lpyw;
 
-    move-result-object v0
-
-    iget-object v0, v0, Lihg;->f:Ljava/lang/Object;
-
-    check-cast v0, Lcom/google/android/apps/camera/bottombar/BottomBar;
-
-    return-object v0
-.end method
-
-.method public final bridge synthetic get()Ljava/lang/Object;
-    .locals 1
-
-    invoke-virtual {p0}, Lihp;->a()Lcom/google/android/apps/camera/bottombar/BottomBar;
+    invoke-virtual {v0}, Lpyw;->a()Ljava/util/Set;
 
     move-result-object v0
 
-    return-object v0
+    invoke-interface {v0}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
+
+    move-result-object v0
+
+    :goto_0
+    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_0
+
+    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Liho;
+
+    invoke-interface {v1, v2}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
+
+    goto :goto_0
+
+    :cond_0
+    return-void
 .end method

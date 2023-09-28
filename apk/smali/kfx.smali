@@ -1,148 +1,68 @@
 .class public final Lkfx;
-.super Ljava/lang/Object;
-
-# interfaces
-.implements Ljava/lang/Runnable;
+.super Lkgc;
 
 
 # instance fields
-.field public a:Z
+.field final synthetic a:Landroid/content/Context;
 
-.field public b:Z
-
-.field public c:Lkeg;
-
-.field public d:Z
-
-.field public e:Lkou;
-
-.field public f:Z
-
-.field public g:Z
-
-.field public h:Lkfg;
-
-.field private final i:Ligo;
+.field final synthetic b:Lcom/google/android/gms/auth/api/signin/GoogleSignInOptions;
 
 
 # direct methods
-.method public constructor <init>(Ligo;[B[B[B)V
+.method public constructor <init>(Lkim;Landroid/content/Context;Lcom/google/android/gms/auth/api/signin/GoogleSignInOptions;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p2, p0, Lkfx;->a:Landroid/content/Context;
 
-    const/4 p2, 0x0
+    iput-object p3, p0, Lkfx;->b:Lcom/google/android/gms/auth/api/signin/GoogleSignInOptions;
 
-    iput-object p2, p0, Lkfx;->h:Lkfg;
-
-    iput-object p2, p0, Lkfx;->c:Lkeg;
-
-    iput-object p2, p0, Lkfx;->e:Lkou;
-
-    iput-object p1, p0, Lkfx;->i:Ligo;
+    invoke-direct {p0, p1}, Lkgc;-><init>(Lkim;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final run()V
+.method protected final bridge synthetic a(Lcom/google/android/gms/common/api/Status;)Lkiv;
     .locals 2
 
-    iget-object v0, p0, Lkfx;->h:Lkfg;
-
-    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    iget-boolean v1, p0, Lkfx;->a:Z
-
-    if-eqz v1, :cond_0
-
-    invoke-virtual {v0}, Lkfg;->bj()V
-
-    :cond_0
-    iget-boolean v0, p0, Lkfx;->b:Z
-
-    if-eqz v0, :cond_1
-
-    iget-object v0, p0, Lkfx;->h:Lkfg;
-
-    iget-object v1, p0, Lkfx;->c:Lkeg;
-
-    invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    invoke-virtual {v0}, Lkfg;->bF()V
-
-    :cond_1
-    iget-boolean v0, p0, Lkfx;->d:Z
-
-    if-eqz v0, :cond_2
-
-    iget-object v0, p0, Lkfx;->h:Lkfg;
-
-    iget-object v1, p0, Lkfx;->e:Lkou;
-
-    invoke-virtual {v0, v1}, Lkfg;->bw(Lkou;)V
-
-    :cond_2
-    iget-boolean v0, p0, Lkfx;->f:Z
-
-    if-eqz v0, :cond_3
-
-    iget-object v0, p0, Lkfx;->h:Lkfg;
-
-    invoke-virtual {v0}, Lkfg;->bq()V
-
-    :cond_3
-    iget-boolean v0, p0, Lkfx;->g:Z
-
-    if-eqz v0, :cond_4
-
-    iget-object v0, p0, Lkfx;->h:Lkfg;
-
-    invoke-virtual {v0}, Lkfg;->bk()V
-
-    :cond_4
-    const/4 v0, 0x0
-
-    iput-object v0, p0, Lkfx;->h:Lkfg;
+    new-instance v0, Lkfs;
 
     const/4 v1, 0x0
 
-    iput-boolean v1, p0, Lkfx;->a:Z
+    invoke-direct {v0, v1, p1}, Lkfs;-><init>(Lcom/google/android/gms/auth/api/signin/GoogleSignInAccount;Lcom/google/android/gms/common/api/Status;)V
 
-    iput-boolean v1, p0, Lkfx;->b:Z
+    return-object v0
+.end method
 
-    iput-object v0, p0, Lkfx;->c:Lkeg;
+.method protected final bridge synthetic b(Lkhz;)V
+    .locals 3
 
-    iput-boolean v1, p0, Lkfx;->d:Z
+    check-cast p1, Lkfv;
 
-    iput-object v0, p0, Lkfx;->e:Lkou;
+    invoke-virtual {p1}, Lkmb;->u()Landroid/os/IInterface;
 
-    iput-boolean v1, p0, Lkfx;->f:Z
+    move-result-object p1
 
-    iput-boolean v1, p0, Lkfx;->g:Z
+    check-cast p1, Lkgi;
 
-    iget-object v0, p0, Lkfx;->i:Ligo;
+    new-instance v0, Lkfw;
 
-    iget-object v1, v0, Ligo;->b:Ljava/lang/Object;
+    invoke-direct {v0, p0}, Lkfw;-><init>(Lkfx;)V
 
-    monitor-enter v1
+    iget-object v1, p0, Lkfx;->b:Lcom/google/android/gms/auth/api/signin/GoogleSignInOptions;
 
-    :try_start_0
-    iget-object v0, v0, Ligo;->b:Ljava/lang/Object;
+    invoke-virtual {p1}, Lbmn;->a()Landroid/os/Parcel;
 
-    invoke-interface {v0, p0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+    move-result-object v2
 
-    monitor-exit v1
+    invoke-static {v2, v0}, Lbmp;->e(Landroid/os/Parcel;Landroid/os/IInterface;)V
+
+    invoke-static {v2, v1}, Lbmp;->c(Landroid/os/Parcel;Landroid/os/Parcelable;)V
+
+    const/16 v0, 0x65
+
+    invoke-virtual {p1, v0, v2}, Lbmn;->z(ILandroid/os/Parcel;)V
 
     return-void
-
-    :catchall_0
-    move-exception v0
-
-    monitor-exit v1
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw v0
 .end method

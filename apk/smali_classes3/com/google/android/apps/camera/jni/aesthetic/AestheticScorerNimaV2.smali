@@ -2,35 +2,23 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lemo;
-
-
-# static fields
-.field private static final a:Lnak;
+.implements Lenh;
 
 
 # instance fields
-.field private b:J
+.field private a:J
 
-.field private final c:Ljava/util/concurrent/atomic/AtomicBoolean;
+.field private final b:Ljava/util/concurrent/atomic/AtomicBoolean;
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 4
-
-    const-string v0, "com/google/android/apps/camera/jni/aesthetic/AestheticScorerNimaV2"
-
-    invoke-static {v0}, Lnak;->h(Ljava/lang/String;)Lnak;
-
-    move-result-object v0
-
-    sput-object v0, Lcom/google/android/apps/camera/jni/aesthetic/AestheticScorerNimaV2;->a:Lnak;
+    .locals 3
 
     :try_start_0
-    const-class v0, Lcom/google/android/apps/camera/jni/aesthetic/AestheticScorerNimaV2;
+    const-string v0, "aesthetic_scorer_nima_v2_jni"
 
-    invoke-static {v0}, Lkak;->a(Ljava/lang/Class;)V
+    invoke-static {v0}, Ljava/lang/System;->loadLibrary(Ljava/lang/String;)V
     :try_end_0
     .catch Ljava/lang/UnsatisfiedLinkError; {:try_start_0 .. :try_end_0} :catch_0
 
@@ -53,18 +41,6 @@
 
     if-nez v1, :cond_0
 
-    sget-object v1, Lcom/google/android/apps/camera/jni/aesthetic/AestheticScorerNimaV2;->a:Lnak;
-
-    invoke-virtual {v1}, Lnaf;->c()Lnaz;
-
-    move-result-object v1
-
-    const-string v2, "Ignoring loading native library for non-android environments."
-
-    const/16 v3, 0x640
-
-    invoke-static {v1, v2, v3, v0}, Ld;->h(Lnaz;Ljava/lang/String;CLjava/lang/Throwable;)V
-
     return-void
 
     :cond_0
@@ -82,7 +58,7 @@
 
     invoke-direct {v0, v1}, Ljava/util/concurrent/atomic/AtomicBoolean;-><init>(Z)V
 
-    iput-object v0, p0, Lcom/google/android/apps/camera/jni/aesthetic/AestheticScorerNimaV2;->c:Ljava/util/concurrent/atomic/AtomicBoolean;
+    iput-object v0, p0, Lcom/google/android/apps/camera/jni/aesthetic/AestheticScorerNimaV2;->b:Ljava/util/concurrent/atomic/AtomicBoolean;
 
     return-void
 .end method
@@ -103,7 +79,7 @@
 
     move-object/from16 v15, p0
 
-    iget-object v0, v15, Lcom/google/android/apps/camera/jni/aesthetic/AestheticScorerNimaV2;->c:Ljava/util/concurrent/atomic/AtomicBoolean;
+    iget-object v0, v15, Lcom/google/android/apps/camera/jni/aesthetic/AestheticScorerNimaV2;->b:Ljava/util/concurrent/atomic/AtomicBoolean;
 
     invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicBoolean;->get()Z
 
@@ -111,7 +87,7 @@
 
     if-nez v0, :cond_0
 
-    iget-wide v1, v15, Lcom/google/android/apps/camera/jni/aesthetic/AestheticScorerNimaV2;->b:J
+    iget-wide v1, v15, Lcom/google/android/apps/camera/jni/aesthetic/AestheticScorerNimaV2;->a:J
 
     move-object/from16 v0, p0
 
@@ -154,7 +130,7 @@
 .method public final b()V
     .locals 2
 
-    iget-object v0, p0, Lcom/google/android/apps/camera/jni/aesthetic/AestheticScorerNimaV2;->c:Ljava/util/concurrent/atomic/AtomicBoolean;
+    iget-object v0, p0, Lcom/google/android/apps/camera/jni/aesthetic/AestheticScorerNimaV2;->b:Ljava/util/concurrent/atomic/AtomicBoolean;
 
     const/4 v1, 0x1
 
@@ -164,7 +140,7 @@
 
     if-nez v0, :cond_0
 
-    iget-wide v0, p0, Lcom/google/android/apps/camera/jni/aesthetic/AestheticScorerNimaV2;->b:J
+    iget-wide v0, p0, Lcom/google/android/apps/camera/jni/aesthetic/AestheticScorerNimaV2;->a:J
 
     invoke-direct {p0, v0, v1}, Lcom/google/android/apps/camera/jni/aesthetic/AestheticScorerNimaV2;->nativeClose(J)V
 
@@ -175,7 +151,7 @@
 .method public final c(Z)V
     .locals 2
 
-    iget-object v0, p0, Lcom/google/android/apps/camera/jni/aesthetic/AestheticScorerNimaV2;->c:Ljava/util/concurrent/atomic/AtomicBoolean;
+    iget-object v0, p0, Lcom/google/android/apps/camera/jni/aesthetic/AestheticScorerNimaV2;->b:Ljava/util/concurrent/atomic/AtomicBoolean;
 
     const/4 v1, 0x0
 
@@ -189,7 +165,7 @@
 
     move-result-wide v0
 
-    iput-wide v0, p0, Lcom/google/android/apps/camera/jni/aesthetic/AestheticScorerNimaV2;->b:J
+    iput-wide v0, p0, Lcom/google/android/apps/camera/jni/aesthetic/AestheticScorerNimaV2;->a:J
 
     :cond_0
     return-void

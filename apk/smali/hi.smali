@@ -1,10 +1,12 @@
-.class public interface abstract Lhi;
-.super Ljava/lang/Object;
+.class public final Lhi;
+.super Lfy;
 
 
-# virtual methods
-.method public abstract a(Lgw;Z)V
-.end method
+# direct methods
+.method public constructor <init>()V
+    .locals 0
 
-.method public abstract b(Lgw;)Z
+    invoke-direct {p0}, Lfy;-><init>()V
+
+    return-void
 .end method

@@ -1,22 +1,36 @@
-.class public final Lgyk;
-.super Ljava/lang/Object;
+.class final Lgyk;
+.super Lmip;
 
 
-# static fields
-.field public static final a:Lgyj;
+# instance fields
+.field final synthetic a:Lgog;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
+.method public constructor <init>(Lgog;)V
+    .locals 0
 
-    new-instance v0, Lgyj;
+    iput-object p1, p0, Lgyk;->a:Lgog;
 
-    const/4 v1, 0x2
+    invoke-direct {p0}, Lmip;-><init>()V
 
-    invoke-direct {v0, v1}, Lgyj;-><init>(I)V
+    return-void
+.end method
 
-    sput-object v0, Lgyk;->a:Lgyj;
+
+# virtual methods
+.method public final fJ(Llmw;)V
+    .locals 0
+
+    iget-object p1, p0, Lgyk;->a:Lgog;
+
+    iget-object p1, p1, Lgog;->c:Lgof;
+
+    invoke-interface {p1}, Lgof;->c()Lgoe;
+
+    move-result-object p1
+
+    invoke-interface {p1}, Lgoe;->g()V
 
     return-void
 .end method

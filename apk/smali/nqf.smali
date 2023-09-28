@@ -1,150 +1,63 @@
 .class public final Lnqf;
 .super Ljava/lang/Object;
 
-
-# static fields
-.field public static final a:Lnqf;
-
-.field public static final b:Lnqf;
-
-.field public static final c:Lnqf;
-
-.field public static final d:Lnqf;
-
-.field public static final e:Lnqf;
-
-.field private static g:I
+# interfaces
+.implements Lnpz;
 
 
 # instance fields
-.field public final f:I
+.field public final a:Laii;
 
-.field private final h:Ljava/lang/String;
+.field public final b:Lahz;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
-
-    new-instance v0, Lnqf;
-
-    invoke-direct {v0}, Lnqf;-><init>()V
-
-    sput-object v0, Lnqf;->a:Lnqf;
-
-    new-instance v0, Lnqf;
-
-    const-string v1, "kRGGB"
-
-    invoke-direct {v0, v1}, Lnqf;-><init>(Ljava/lang/String;)V
-
-    sput-object v0, Lnqf;->b:Lnqf;
-
-    new-instance v0, Lnqf;
-
-    const-string v1, "kBGGR"
-
-    invoke-direct {v0, v1}, Lnqf;-><init>(Ljava/lang/String;)V
-
-    sput-object v0, Lnqf;->c:Lnqf;
-
-    new-instance v0, Lnqf;
-
-    const-string v1, "kGRBG"
-
-    invoke-direct {v0, v1}, Lnqf;-><init>(Ljava/lang/String;)V
-
-    sput-object v0, Lnqf;->d:Lnqf;
-
-    new-instance v0, Lnqf;
-
-    const-string v1, "kGBRG"
-
-    invoke-direct {v0, v1}, Lnqf;-><init>(Ljava/lang/String;)V
-
-    sput-object v0, Lnqf;->e:Lnqf;
-
-    new-instance v0, Lnqf;
-
-    const-string v1, "kQuadRGGB"
-
-    invoke-direct {v0, v1}, Lnqf;-><init>(Ljava/lang/String;)V
-
-    new-instance v0, Lnqf;
-
-    const-string v1, "kQuadBGGR"
-
-    invoke-direct {v0, v1}, Lnqf;-><init>(Ljava/lang/String;)V
-
-    new-instance v0, Lnqf;
-
-    const-string v1, "kQuadGRBG"
-
-    invoke-direct {v0, v1}, Lnqf;-><init>(Ljava/lang/String;)V
-
-    new-instance v0, Lnqf;
-
-    const-string v1, "kQuadGBRG"
-
-    invoke-direct {v0, v1}, Lnqf;-><init>(Ljava/lang/String;)V
-
-    new-instance v0, Lnqf;
-
-    const-string v1, "kNone"
-
-    invoke-direct {v0, v1}, Lnqf;-><init>(Ljava/lang/String;)V
-
-    const/4 v0, 0x0
-
-    sput v0, Lnqf;->g:I
-
-    return-void
-.end method
-
-.method private constructor <init>()V
+.method public constructor <init>(Laii;)V
     .locals 1
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const-string v0, "kInvalid"
+    iput-object p1, p0, Lnqf;->a:Laii;
 
-    iput-object v0, p0, Lnqf;->h:Ljava/lang/String;
+    new-instance v0, Lnqb;
 
-    const/4 v0, 0x0
+    invoke-direct {v0, p1}, Lnqb;-><init>(Laii;)V
 
-    iput v0, p0, Lnqf;->f:I
+    new-instance v0, Lnqc;
 
-    const/4 v0, 0x1
+    invoke-direct {v0, p1}, Lnqc;-><init>(Laii;)V
 
-    sput v0, Lnqf;->g:I
-
-    return-void
-.end method
-
-.method private constructor <init>(Ljava/lang/String;)V
-    .locals 1
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lnqf;->h:Ljava/lang/String;
-
-    sget p1, Lnqf;->g:I
-
-    add-int/lit8 v0, p1, 0x1
-
-    sput v0, Lnqf;->g:I
-
-    iput p1, p0, Lnqf;->f:I
+    iput-object v0, p0, Lnqf;->b:Lahz;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final toString()Ljava/lang/String;
+.method public final a(Lnqh;)Lqbu;
     .locals 1
 
-    iget-object v0, p0, Lnqf;->h:Ljava/lang/String;
+    new-instance v0, Lnqd;
 
-    return-object v0
+    invoke-direct {v0, p0, p1}, Lnqd;-><init>(Lnqf;Lnqh;)V
+
+    invoke-static {v0}, Lqbu;->j(Ljava/util/concurrent/Callable;)Lqbu;
+
+    move-result-object p1
+
+    return-object p1
+.end method
+
+.method public final b(Ljava/lang/Iterable;)Lqbu;
+    .locals 1
+
+    new-instance v0, Lnqe;
+
+    invoke-direct {v0, p0, p1}, Lnqe;-><init>(Lnqf;Ljava/lang/Iterable;)V
+
+    invoke-static {v0}, Lqbu;->j(Ljava/util/concurrent/Callable;)Lqbu;
+
+    move-result-object p1
+
+    return-object p1
 .end method

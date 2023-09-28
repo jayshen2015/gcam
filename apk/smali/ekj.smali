@@ -1,108 +1,47 @@
 .class public final Lekj;
 .super Ljava/lang/Object;
 
-
-# static fields
-.field private static final a:Ljava/util/Map;
+# interfaces
+.implements Leki;
 
 
 # direct methods
 .method static constructor <clinit>()V
     .locals 1
 
-    new-instance v0, Ljava/util/HashMap;
+    const-string v0, "cyclops"
 
-    invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
-
-    sput-object v0, Lekj;->a:Ljava/util/Map;
+    invoke-static {v0}, Ljava/lang/System;->loadLibrary(Ljava/lang/String;)V
 
     return-void
 .end method
 
-.method public static declared-synchronized a(Ljava/lang/Class;)Ljava/lang/Object;
-    .locals 4
+.method public constructor <init>()V
+    .locals 0
 
-    const-class v0, Lekj;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    monitor-enter v0
-
-    :try_start_0
-    sget-object v1, Lekj;->a:Ljava/util/Map;
-
-    invoke-interface {v1, p0}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v1
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    if-eqz v1, :cond_0
-
-    monitor-exit v0
-
-    return-object v1
-
-    :cond_0
-    :try_start_1
-    new-instance v1, Ljava/lang/IllegalStateException;
-
-    invoke-virtual {p0}, Ljava/lang/Class;->getName()Ljava/lang/String;
-
-    move-result-object p0
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v3, "No instance for "
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v2, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string p0, " has been provided."
-
-    invoke-virtual {v2, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p0
-
-    invoke-direct {v1, p0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw v1
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    :catchall_0
-    move-exception p0
-
-    monitor-exit v0
-
-    throw p0
+    return-void
 .end method
 
-.method public static declared-synchronized b(Ljava/lang/Class;Ljava/lang/Object;)V
+
+# virtual methods
+.method public final a(Lcom/google/android/apps/camera/imax/cyclops/image/StereoPanorama;Ljava/lang/String;Lcom/google/geo/lightfield/processing/ProgressCallback;)V
     .locals 2
 
-    const-class v0, Lekj;
+    const v0, 0x3e4ccccd    # 0.2f
 
-    monitor-enter v0
+    invoke-interface {p3, v0}, Lcom/google/geo/lightfield/processing/ProgressCallback;->setProgress(F)V
 
-    :try_start_0
-    sget-object v1, Lekj;->a:Ljava/util/Map;
+    iget-object p3, p1, Lcom/google/android/apps/camera/imax/cyclops/image/StereoPanorama;->a:[B
 
-    invoke-interface {v1, p0, p1}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    iget-object v0, p1, Lcom/google/android/apps/camera/imax/cyclops/image/StereoPanorama;->b:[B
 
-    monitor-exit v0
+    iget-object v1, p1, Lcom/google/android/apps/camera/imax/cyclops/image/StereoPanorama;->c:Lcom/google/android/apps/camera/imax/cyclops/metadata/PanoMeta;
+
+    iget-object p1, p1, Lcom/google/android/apps/camera/imax/cyclops/image/StereoPanorama;->d:Lcom/google/android/apps/camera/imax/cyclops/audio/AudioTrack;
+
+    invoke-static {p3, v0, v1, p1, p2}, Lcom/google/android/apps/camera/imax/cyclops/image/CyclopsPhotoWriter;->writeToFile([B[BLcom/google/android/apps/camera/imax/cyclops/metadata/PanoMeta;Lcom/google/android/apps/camera/imax/cyclops/audio/AudioTrack;Ljava/lang/String;)Z
 
     return-void
-
-    :catchall_0
-    move-exception p0
-
-    monitor-exit v0
-
-    throw p0
 .end method

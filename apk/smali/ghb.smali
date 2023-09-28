@@ -1,164 +1,144 @@
-.class public final synthetic Lghb;
+.class public final Lghb;
 .super Ljava/lang/Object;
-
-# interfaces
-.implements Lkai;
 
 
 # instance fields
-.field public final synthetic a:Lghe;
+.field public a:Z
 
-.field public final synthetic b:Lnph;
+.field public b:Z
 
 
 # direct methods
-.method public synthetic constructor <init>(Lghe;Lnph;)V
-    .locals 0
+.method public constructor <init>()V
+    .locals 1
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lghb;->a:Lghe;
+    const/4 v0, 0x1
 
-    iput-object p2, p0, Lghb;->b:Lnph;
+    iput-boolean v0, p0, Lghb;->a:Z
+
+    const/4 v0, 0x0
+
+    iput-boolean v0, p0, Lghb;->b:Z
+
+    return-void
+.end method
+
+.method public constructor <init>([B)V
+    .locals 0
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final bn(Ljava/lang/Object;)V
-    .locals 11
+.method public final declared-synchronized a(Z)V
+    .locals 0
 
-    iget-object v0, p0, Lghb;->a:Lghe;
+    monitor-enter p0
 
-    iget-object v1, p0, Lghb;->b:Lnph;
+    :try_start_0
+    iput-boolean p1, p0, Lghb;->b:Z
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    check-cast p1, Lhrm;
+    monitor-exit p0
 
-    iget v2, p1, Lhrm;->f:I
+    return-void
 
-    const/4 v3, 0x1
+    :catchall_0
+    move-exception p1
 
-    if-ne v2, v3, :cond_4
+    monitor-exit p0
 
-    iget-object v4, v0, Lghe;->e:Lfbz;
+    throw p1
+.end method
 
-    const/4 v5, 0x1
+.method public final declared-synchronized b(Z)V
+    .locals 0
 
-    new-instance v6, Landroid/graphics/PointF;
+    monitor-enter p0
 
-    iget-object v2, p1, Lhrm;->b:Landroid/graphics/RectF;
+    :try_start_0
+    iput-boolean p1, p0, Lghb;->a:Z
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    invoke-virtual {v2}, Landroid/graphics/RectF;->centerX()F
+    monitor-exit p0
 
-    move-result v2
+    return-void
 
-    iget-object v7, p1, Lhrm;->b:Landroid/graphics/RectF;
+    :catchall_0
+    move-exception p1
 
-    invoke-virtual {v7}, Landroid/graphics/RectF;->centerY()F
+    monitor-exit p0
 
-    move-result v7
+    throw p1
+.end method
 
-    invoke-direct {v6, v2, v7}, Landroid/graphics/PointF;-><init>(FF)V
+.method public final declared-synchronized c()Z
+    .locals 1
 
-    iget-wide v7, p1, Lhrm;->e:J
+    monitor-enter p0
 
-    iget v9, p1, Lhrm;->d:I
+    :try_start_0
+    iget-boolean v0, p0, Lghb;->a:Z
 
-    iget-object v2, p1, Lhrm;->a:Lhrg;
+    if-eqz v0, :cond_0
 
-    invoke-virtual {v2}, Lhrg;->ordinal()I
+    iget-boolean v0, p0, Lghb;->b:Z
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    move-result v10
+    if-eqz v0, :cond_0
 
-    invoke-interface/range {v4 .. v10}, Lfbz;->g(ZLandroid/graphics/PointF;JII)V
+    const/4 v0, 0x1
 
-    invoke-static {}, Lbze;->w()Lbze;
+    :goto_0
+    monitor-exit p0
 
-    move-result-object v2
-
-    invoke-virtual {v1, v2}, Lnph;->e(Ljava/lang/Object;)Z
-
-    iget v1, p1, Lhrm;->f:I
-
-    if-eq v1, v3, :cond_0
-
-    goto :goto_1
+    return v0
 
     :cond_0
-    iget-object v1, v0, Lghe;->b:Ljvs;
-
-    invoke-interface {v1}, Ljvs;->bm()Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Ljava/lang/Boolean;
-
-    invoke-virtual {v1}, Ljava/lang/Boolean;->booleanValue()Z
-
-    move-result v1
-
-    if-nez v1, :cond_3
-
-    iget-wide v1, p1, Lhrm;->e:J
-
-    const-wide/16 v3, 0x1388
-
-    cmp-long v5, v1, v3
-
-    if-ltz v5, :cond_2
-
-    iget-object v1, v0, Lghe;->n:Lcbj;
-
-    invoke-virtual {v1}, Lcbj;->a()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_1
+    const/4 v0, 0x0
 
     goto :goto_0
 
-    :cond_1
-    iget-object p1, v0, Lghe;->d:Lmqp;
+    :catchall_0
+    move-exception v0
 
-    invoke-virtual {p1}, Lmqp;->c()Ljava/lang/Object;
+    monitor-exit p0
 
-    move-result-object p1
+    goto :goto_2
 
-    check-cast p1, Ljava/util/concurrent/Executor;
-
-    iget-object v0, v0, Lghe;->o:Ljava/lang/Runnable;
-
-    invoke-interface {p1, v0}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
-
-    return-void
-
-    :cond_2
-    :goto_0
-    iget-wide v1, p1, Lhrm;->e:J
-
-    sub-long/2addr v3, v1
-
-    const-wide/16 v1, 0x0
-
-    invoke-static {v1, v2, v3, v4}, Ljava/lang/Math;->max(JJ)J
-
-    move-result-wide v1
-
-    invoke-virtual {v0, v1, v2}, Lghe;->d(J)V
-
-    return-void
-
-    :cond_3
-    iget p1, v0, Lghe;->f:I
-
-    int-to-long v1, p1
-
-    invoke-virtual {v0, v1, v2}, Lghe;->d(J)V
-
-    return-void
-
-    :cond_4
     :goto_1
-    return-void
+    throw v0
+
+    :goto_2
+    goto :goto_1
+.end method
+
+.method public final declared-synchronized d()Z
+    .locals 1
+
+    monitor-enter p0
+
+    :try_start_0
+    iget-boolean v0, p0, Lghb;->a:Z
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    monitor-exit p0
+
+    return v0
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit p0
+
+    throw v0
 .end method

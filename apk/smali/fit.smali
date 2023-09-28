@@ -2,225 +2,117 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lkad;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field public final synthetic a:Ljava/lang/Object;
-
-.field public final synthetic b:Ljava/lang/Object;
-
-.field public final synthetic c:Ljava/lang/Object;
-
-.field private final synthetic d:I
+.field public final synthetic a:Lfiv;
 
 
 # direct methods
-.method public synthetic constructor <init>(Ldra;Ljava/util/concurrent/Executor;Lkbc;I)V
+.method public synthetic constructor <init>(Lfiv;)V
     .locals 0
-
-    iput p4, p0, Lfit;->d:I
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lfit;->a:Ljava/lang/Object;
-
-    iput-object p2, p0, Lfit;->c:Ljava/lang/Object;
-
-    iput-object p3, p0, Lfit;->b:Ljava/lang/Object;
-
-    return-void
-.end method
-
-.method public synthetic constructor <init>(Lifx;Lifu;Ligb;I)V
-    .locals 0
-
-    iput p4, p0, Lfit;->d:I
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lfit;->b:Ljava/lang/Object;
-
-    iput-object p2, p0, Lfit;->a:Ljava/lang/Object;
-
-    iput-object p3, p0, Lfit;->c:Ljava/lang/Object;
-
-    return-void
-.end method
-
-.method public synthetic constructor <init>(Lkbc;Loiw;Loiw;I)V
-    .locals 0
-
-    iput p4, p0, Lfit;->d:I
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lfit;->a:Ljava/lang/Object;
-
-    iput-object p2, p0, Lfit;->b:Ljava/lang/Object;
-
-    iput-object p3, p0, Lfit;->c:Ljava/lang/Object;
-
-    return-void
-.end method
-
-.method public synthetic constructor <init>(Lkcs;Ljava/lang/String;Lkad;I)V
-    .locals 0
-
-    iput p4, p0, Lfit;->d:I
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lfit;->b:Ljava/lang/Object;
-
-    iput-object p2, p0, Lfit;->c:Ljava/lang/Object;
-
-    iput-object p3, p0, Lfit;->a:Ljava/lang/Object;
+    iput-object p1, p0, Lfit;->a:Lfiv;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final close()V
-    .locals 5
+.method public final run()V
+    .locals 8
 
-    iget v0, p0, Lfit;->d:I
+    iget-object v0, p0, Lfit;->a:Lfiv;
 
-    packed-switch v0, :pswitch_data_0
+    invoke-static {}, Llar;->a()V
 
-    iget-object v0, p0, Lfit;->b:Ljava/lang/Object;
+    iget-object v1, v0, Lfiv;->b:Landroid/location/LocationManager;
 
-    iget-object v1, p0, Lfit;->c:Ljava/lang/Object;
+    if-nez v1, :cond_0
 
-    iget-object v2, p0, Lfit;->a:Ljava/lang/Object;
+    iget-object v1, v0, Lfiv;->a:Lqkg;
 
-    check-cast v0, Lkcs;
+    check-cast v1, Lemx;
 
-    iget-object v0, v0, Lkcs;->c:Lkaq;
-
-    const-string v3, "Closed by "
-
-    check-cast v1, Ljava/lang/String;
-
-    invoke-virtual {v3, v1}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
+    invoke-virtual {v1}, Lemx;->a()Landroid/location/LocationManager;
 
     move-result-object v1
 
-    invoke-interface {v0, v1}, Lkaq;->b(Ljava/lang/String;)V
+    iput-object v1, v0, Lfiv;->b:Landroid/location/LocationManager;
 
-    invoke-interface {v2}, Lkad;->close()V
+    :cond_0
+    iget-object v2, v0, Lfiv;->b:Landroid/location/LocationManager;
 
-    return-void
-
-    :pswitch_0
-    iget-object v0, p0, Lfit;->b:Ljava/lang/Object;
-
-    iget-object v1, p0, Lfit;->a:Ljava/lang/Object;
-
-    iget-object v2, p0, Lfit;->c:Ljava/lang/Object;
-
-    move-object v3, v0
-
-    check-cast v3, Lifx;
-
-    iget-object v3, v3, Lifx;->l:Ljava/lang/Object;
-
-    monitor-enter v3
+    if-eqz v2, :cond_1
 
     :try_start_0
-    check-cast v0, Lifx;
+    const-string v3, "network"
 
-    const/4 v4, 0x1
+    const-wide/16 v4, 0x3e8
 
-    iput-boolean v4, v0, Lifx;->k:Z
+    const/4 v6, 0x0
 
-    monitor-exit v3
+    iget-object v1, v0, Lfiv;->c:[Lfiu;
+
+    const/4 v7, 0x1
+
+    aget-object v7, v1, v7
+
+    invoke-virtual/range {v2 .. v7}, Landroid/location/LocationManager;->requestLocationUpdates(Ljava/lang/String;JFLandroid/location/LocationListener;)V
     :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    .catch Ljava/lang/SecurityException; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Ljava/lang/IllegalArgumentException; {:try_start_0 .. :try_end_0} :catch_0
 
-    check-cast v1, Lifu;
+    goto :goto_0
 
-    invoke-virtual {v1}, Lifu;->close()V
+    :catch_0
+    move-exception v1
 
-    invoke-interface {v2}, Ligb;->close()V
+    invoke-virtual {v1}, Ljava/lang/IllegalArgumentException;->getMessage()Ljava/lang/String;
+
+    goto :goto_0
+
+    :catch_1
+    move-exception v1
+
+    :goto_0
+    :try_start_1
+    iget-object v2, v0, Lfiv;->b:Landroid/location/LocationManager;
+
+    const-string v3, "gps"
+
+    const-wide/16 v4, 0x3e8
+
+    const/4 v6, 0x0
+
+    iget-object v0, v0, Lfiv;->c:[Lfiu;
+
+    const/4 v1, 0x0
+
+    aget-object v7, v0, v1
+
+    invoke-virtual/range {v2 .. v7}, Landroid/location/LocationManager;->requestLocationUpdates(Ljava/lang/String;JFLandroid/location/LocationListener;)V
+    :try_end_1
+    .catch Ljava/lang/SecurityException; {:try_start_1 .. :try_end_1} :catch_3
+    .catch Ljava/lang/IllegalArgumentException; {:try_start_1 .. :try_end_1} :catch_2
 
     return-void
 
-    :catchall_0
+    :catch_2
     move-exception v0
 
-    :try_start_1
-    monitor-exit v3
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    throw v0
-
-    :pswitch_1
-    iget-object v0, p0, Lfit;->a:Ljava/lang/Object;
-
-    iget-object v1, p0, Lfit;->c:Ljava/lang/Object;
-
-    iget-object v2, p0, Lfit;->b:Ljava/lang/Object;
-
-    new-instance v3, Ldgg;
-
-    check-cast v0, Ldra;
-
-    const/16 v4, 0x14
-
-    invoke-direct {v3, v0, v4}, Ldgg;-><init>(Ldra;I)V
-
-    const-string v0, "FaceMetadataExtractor.close"
-
-    invoke-interface {v2, v0, v3}, Lkbc;->c(Ljava/lang/String;Ljava/lang/Runnable;)Ljava/lang/Runnable;
-
-    move-result-object v0
-
-    invoke-interface {v1, v0}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
+    invoke-virtual {v0}, Ljava/lang/IllegalArgumentException;->getMessage()Ljava/lang/String;
 
     return-void
 
-    :pswitch_2
-    iget-object v0, p0, Lfit;->a:Ljava/lang/Object;
-
-    iget-object v1, p0, Lfit;->b:Ljava/lang/Object;
-
-    iget-object v2, p0, Lfit;->c:Ljava/lang/Object;
-
-    const-string v3, "MICRO_EncoderModule#shutdown_controller"
-
-    invoke-interface {v0, v3}, Lkbc;->e(Ljava/lang/String;)V
-
-    invoke-interface {v1}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Lfhm;
-
-    const/4 v3, 0x0
-
-    invoke-virtual {v1, v3}, Lfhm;->a(Z)V
-
-    invoke-interface {v2}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Lgxb;
-
-    invoke-virtual {v1}, Lgxb;->j()V
-
-    invoke-interface {v0}, Lkbc;->f()V
+    :catch_3
+    move-exception v0
 
     return-void
 
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_2
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
+    :cond_1
+    return-void
 .end method

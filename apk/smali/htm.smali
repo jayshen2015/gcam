@@ -1,13 +1,23 @@
-.class public Lhtm;
+.class final Lhtm;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lhis;
+.implements Ljava/lang/Runnable;
+
+
+# instance fields
+.field final synthetic a:Ljava/lang/Object;
+
+.field final synthetic b:Lhtn;
 
 
 # direct methods
-.method public constructor <init>()V
+.method public constructor <init>(Lhtn;Ljava/lang/Object;)V
     .locals 0
+
+    iput-object p1, p0, Lhtm;->b:Lhtn;
+
+    iput-object p2, p0, Lhtm;->a:Ljava/lang/Object;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -16,98 +26,18 @@
 
 
 # virtual methods
-.method public a()V
-    .locals 0
+.method public final run()V
+    .locals 2
 
-    return-void
-.end method
+    iget-object v0, p0, Lhtm;->b:Lhtn;
 
-.method public b()V
-    .locals 0
+    iget-object v0, v0, Lhtn;->a:Llij;
 
-    return-void
-.end method
+    iget-object v1, p0, Lhtm;->a:Ljava/lang/Object;
 
-.method public c()V
-    .locals 0
+    invoke-static {v1}, Lobr;->ao(Ljava/lang/Object;)Ljava/lang/Object;
 
-    return-void
-.end method
-
-.method public d()V
-    .locals 0
-
-    return-void
-.end method
-
-.method public synthetic f()V
-    .locals 0
-
-    return-void
-.end method
-
-.method public synthetic g()V
-    .locals 0
-
-    return-void
-.end method
-
-.method public synthetic h()V
-    .locals 0
-
-    return-void
-.end method
-
-.method public i()V
-    .locals 0
-
-    return-void
-.end method
-
-.method public j()V
-    .locals 0
-
-    return-void
-.end method
-
-.method public k()V
-    .locals 0
-
-    return-void
-.end method
-
-.method public l()V
-    .locals 0
-
-    return-void
-.end method
-
-.method public m()V
-    .locals 0
-
-    return-void
-.end method
-
-.method public n()V
-    .locals 0
-
-    return-void
-.end method
-
-.method public o()V
-    .locals 0
-
-    return-void
-.end method
-
-.method public p()V
-    .locals 0
-
-    return-void
-.end method
-
-.method public q()V
-    .locals 0
+    invoke-interface {v0, v1}, Llij;->fB(Ljava/lang/Object;)V
 
     return-void
 .end method

@@ -1,153 +1,267 @@
-.class public final Lndn;
-.super Lndo;
+.class public final synthetic Lndn;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Ljava/util/concurrent/Callable;
 
 
 # instance fields
-.field private final c:Lndm;
+.field public final synthetic a:Lndo;
+
+.field public final synthetic b:Lpht;
+
+.field public final synthetic c:Lpht;
+
+.field public final synthetic d:Lpht;
 
 
 # direct methods
-.method public constructor <init>(Lnbm;ILndm;)V
-    .locals 1
+.method public synthetic constructor <init>(Lndo;Lpht;Lpht;Lpht;)V
+    .locals 0
 
-    invoke-direct {p0, p1, p2}, Lndo;-><init>(Lnbm;I)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p3, p0, Lndn;->c:Lndm;
+    iput-object p1, p0, Lndn;->a:Lndo;
 
-    new-instance p2, Ljava/lang/StringBuilder;
+    iput-object p2, p0, Lndn;->b:Lpht;
 
-    const-string v0, "%"
+    iput-object p3, p0, Lndn;->c:Lpht;
 
-    invoke-direct {p2, v0}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {p1, p2}, Lnbm;->f(Ljava/lang/StringBuilder;)V
-
-    invoke-virtual {p1}, Lnbm;->d()Z
-
-    move-result p1
-
-    const/4 v0, 0x1
-
-    if-eq v0, p1, :cond_0
-
-    const/16 p1, 0x74
-
-    goto :goto_0
-
-    :cond_0
-    const/16 p1, 0x54
-
-    :goto_0
-    invoke-virtual {p2, p1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
-
-    iget-char p1, p3, Lndm;->G:C
-
-    invoke-virtual {p2, p1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+    iput-object p4, p0, Lndn;->d:Lpht;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Lndp;Ljava/lang/Object;)V
-    .locals 4
+.method public final call()Ljava/lang/Object;
+    .locals 9
 
-    iget-object v0, p0, Lndn;->c:Lndm;
+    iget-object v0, p0, Lndn;->a:Lndo;
 
-    iget-object v1, p0, Lndo;->b:Lnbm;
+    iget-object v1, p0, Lndn;->b:Lpht;
 
-    instance-of v2, p2, Ljava/util/Date;
+    iget-object v2, p0, Lndn;->c:Lpht;
 
-    if-nez v2, :cond_1
+    iget-object v3, p0, Lndn;->d:Lpht;
 
-    instance-of v2, p2, Ljava/util/Calendar;
+    sget-object v4, Lndm;->h:Lndm;
 
-    if-nez v2, :cond_1
+    invoke-virtual {v4}, Lppd;->m()Lpoy;
 
-    instance-of v2, p2, Ljava/lang/Long;
+    move-result-object v4
 
-    if-eqz v2, :cond_0
+    iget-object v5, v0, Lndo;->b:Ljava/lang/String;
 
-    goto :goto_0
+    iget-boolean v6, v4, Lpoy;->c:Z
+
+    const/4 v7, 0x0
+
+    if-eqz v6, :cond_0
+
+    invoke-virtual {v4}, Lpoy;->m()V
+
+    iput-boolean v7, v4, Lpoy;->c:Z
 
     :cond_0
-    check-cast p1, Lndt;
+    iget-object v6, v4, Lpoy;->b:Lppd;
 
-    iget-object p1, p1, Lndt;->d:Ljava/lang/StringBuilder;
+    check-cast v6, Lndm;
 
-    iget-char v0, v0, Lndm;->G:C
+    iget v8, v6, Lndm;->a:I
 
-    new-instance v1, Ljava/lang/StringBuilder;
+    or-int/lit8 v8, v8, 0x1
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+    iput v8, v6, Lndm;->a:I
 
-    const-string v2, "%t"
+    iput-object v5, v6, Lndm;->b:Ljava/lang/String;
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    iget-object v5, v0, Lndo;->a:Ljava/lang/String;
 
-    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+    invoke-virtual {v5}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    or-int/lit8 v8, v8, 0x2
+
+    iput v8, v6, Lndm;->a:I
+
+    iput-object v5, v6, Lndm;->c:Ljava/lang/String;
+
+    iget-boolean v0, v0, Lndo;->c:Z
+
+    or-int/lit8 v5, v8, 0x4
+
+    iput v5, v6, Lndm;->a:I
+
+    iput-boolean v0, v6, Lndm;->d:Z
+
+    :try_start_0
+    invoke-static {v1}, Lplk;->ad(Ljava/util/concurrent/Future;)Ljava/lang/Object;
 
     move-result-object v0
 
-    invoke-static {p1, p2, v0}, Lndt;->d(Ljava/lang/StringBuilder;Ljava/lang/Object;Ljava/lang/String;)V
+    check-cast v0, Lojc;
 
-    return-void
-
-    :cond_1
-    :goto_0
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    const-string v3, "%"
-
-    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v1, v2}, Lnbm;->f(Ljava/lang/StringBuilder;)V
-
-    invoke-virtual {v1}, Lnbm;->d()Z
+    invoke-virtual {v0}, Lojc;->g()Z
 
     move-result v1
 
-    const/4 v3, 0x1
+    if-eqz v1, :cond_2
 
-    if-eq v3, v1, :cond_2
-
-    const/16 v1, 0x74
-
-    goto :goto_1
-
-    :cond_2
-    const/16 v1, 0x54
-
-    :goto_1
-    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
-
-    iget-char v0, v0, Lndm;->G:C
-
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v0}, Lojc;->c()Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast p1, Lndt;
+    check-cast v0, Ljava/lang/String;
 
-    iget-object p1, p1, Lndt;->d:Ljava/lang/StringBuilder;
+    iget-boolean v1, v4, Lpoy;->c:Z
 
-    sget-object v1, Lnbs;->a:Ljava/util/Locale;
+    if-eqz v1, :cond_1
 
-    new-array v2, v3, [Ljava/lang/Object;
+    invoke-virtual {v4}, Lpoy;->m()V
 
-    const/4 v3, 0x0
+    iput-boolean v7, v4, Lpoy;->c:Z
 
-    aput-object p2, v2, v3
+    :cond_1
+    iget-object v1, v4, Lpoy;->b:Lppd;
 
-    invoke-static {v1, v0, v2}, Ljava/lang/String;->format(Ljava/util/Locale;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+    check-cast v1, Lndm;
 
-    move-result-object p2
+    iget v5, v1, Lndm;->a:I
 
-    invoke-virtual {p1, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    or-int/lit8 v5, v5, 0x10
 
-    return-void
+    iput v5, v1, Lndm;->a:I
+
+    iput-object v0, v1, Lndm;->f:Ljava/lang/String;
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+
+    goto :goto_0
+
+    :catch_0
+    move-exception v0
+
+    :cond_2
+    :goto_0
+    :try_start_1
+    invoke-static {v2}, Lplk;->ad(Ljava/util/concurrent/Future;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/util/List;
+
+    iget-boolean v1, v4, Lpoy;->c:Z
+
+    if-eqz v1, :cond_3
+
+    invoke-virtual {v4}, Lpoy;->m()V
+
+    iput-boolean v7, v4, Lpoy;->c:Z
+
+    :cond_3
+    iget-object v1, v4, Lpoy;->b:Lppd;
+
+    check-cast v1, Lndm;
+
+    iget-object v2, v1, Lndm;->g:Lppk;
+
+    invoke-interface {v2}, Lppk;->c()Z
+
+    move-result v5
+
+    if-nez v5, :cond_4
+
+    invoke-static {v2}, Lppd;->x(Lppk;)Lppk;
+
+    move-result-object v2
+
+    iput-object v2, v1, Lndm;->g:Lppk;
+
+    :cond_4
+    iget-object v1, v1, Lndm;->g:Lppk;
+
+    invoke-static {v0, v1}, Lpnl;->e(Ljava/lang/Iterable;Ljava/util/List;)V
+    :try_end_1
+    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_1
+
+    goto :goto_1
+
+    :catch_1
+    move-exception v0
+
+    :goto_1
+    :try_start_2
+    invoke-static {v3}, Lplk;->ad(Ljava/util/concurrent/Future;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lojc;
+
+    invoke-virtual {v0}, Lojc;->g()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_6
+
+    invoke-virtual {v0}, Lojc;->c()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/String;
+
+    iget-boolean v1, v4, Lpoy;->c:Z
+
+    if-eqz v1, :cond_5
+
+    invoke-virtual {v4}, Lpoy;->m()V
+
+    iput-boolean v7, v4, Lpoy;->c:Z
+
+    :cond_5
+    iget-object v1, v4, Lpoy;->b:Lppd;
+
+    check-cast v1, Lndm;
+
+    iget v2, v1, Lndm;->a:I
+
+    or-int/lit8 v2, v2, 0x8
+
+    iput v2, v1, Lndm;->a:I
+
+    iput-object v0, v1, Lndm;->e:Ljava/lang/String;
+    :try_end_2
+    .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_2
+
+    goto :goto_2
+
+    :catch_2
+    move-exception v0
+
+    :cond_6
+    :goto_2
+    sget-object v0, Lndf;->c:Lndf;
+
+    invoke-virtual {v0}, Lppd;->m()Lpoy;
+
+    move-result-object v0
+
+    check-cast v0, Lppa;
+
+    sget-object v1, Lndm;->i:Lpoq;
+
+    invoke-virtual {v4}, Lpoy;->h()Lppd;
+
+    move-result-object v2
+
+    check-cast v2, Lndm;
+
+    invoke-virtual {v0, v1, v2}, Lppa;->av(Lpoq;Ljava/lang/Object;)V
+
+    invoke-virtual {v0}, Lpoy;->h()Lppd;
+
+    move-result-object v0
+
+    check-cast v0, Lndf;
+
+    return-object v0
 .end method

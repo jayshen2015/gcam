@@ -1,15 +1,22 @@
-.class final Lbyq;
+.class public final Lbyq;
 .super Ljava/lang/Object;
 
-# interfaces
-.implements Lbyv;
+
+# static fields
+.field public static final a:Lbyr;
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 2
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance v0, Lbyr;
+
+    const/4 v1, 0x0
+
+    invoke-direct {v0, v1}, Lbyr;-><init>(I)V
+
+    sput-object v0, Lbyq;->a:Lbyr;
 
     return-void
 .end method

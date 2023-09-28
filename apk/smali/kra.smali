@@ -1,137 +1,74 @@
-.class Lkra;
-.super Lkqx;
+.class public final Lkra;
+.super Ljava/lang/Object;
 
-# interfaces
-.implements Lkqq;
+
+# static fields
+.field public static final synthetic e:I
+
+.field private static final f:Loom;
+
+
+# instance fields
+.field public final a:Lkrc;
+
+.field public final b:Lmdf;
+
+.field public final c:Ljava/util/Random;
+
+.field public final d:Ljava/util/concurrent/ExecutorService;
 
 
 # direct methods
-.method public constructor <init>(Lkof;Lkqq;Lkaq;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 1
 
-    invoke-direct {p0, p1, p2, p3}, Lkqx;-><init>(Lkof;Lkqp;Lkaq;)V
+    const-string v0, "CREATE TABLE collections(id INTEGER PRIMARY KEY, collection_name STRING NOT NULL,time INTEGER NOT NULL,selection_key INTEGER NOT NULL,value BLOB NOT NULL)"
+
+    invoke-static {v0}, Loom;->m(Ljava/lang/Object;)Loom;
+
+    move-result-object v0
+
+    sput-object v0, Lkra;->f:Loom;
+
+    return-void
+.end method
+
+.method public constructor <init>(Landroid/content/Context;Lmdf;Ljava/util/Random;Ljava/util/concurrent/ExecutorService;)V
+    .locals 2
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    new-instance v0, Lkrc;
+
+    sget-object v1, Lkra;->f:Loom;
+
+    invoke-direct {v0, p1, v1}, Lkrc;-><init>(Landroid/content/Context;Loom;)V
+
+    iput-object v0, p0, Lkra;->a:Lkrc;
+
+    iput-object p2, p0, Lkra;->b:Lmdf;
+
+    iput-object p3, p0, Lkra;->c:Ljava/util/Random;
+
+    iput-object p4, p0, Lkra;->d:Ljava/util/concurrent/ExecutorService;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()J
-    .locals 2
-
-    invoke-virtual {p0}, Lkqx;->l()Lkqp;
-
-    move-result-object v0
-
-    invoke-interface {v0}, Lkqq;->a()J
-
-    move-result-wide v0
-
-    return-wide v0
-.end method
-
-.method public final e()Z
+.method public final a(Loiu;)Lpht;
     .locals 1
 
-    invoke-virtual {p0}, Lkqx;->l()Lkqp;
+    new-instance v0, Lkqx;
 
-    move-result-object v0
+    invoke-direct {v0, p0, p1}, Lkqx;-><init>(Lkra;Loiu;)V
 
-    invoke-interface {v0}, Lkqq;->e()Z
+    iget-object p1, p0, Lkra;->d:Ljava/util/concurrent/ExecutorService;
 
-    move-result v0
+    invoke-static {v0, p1}, Lplk;->aa(Lpgj;Ljava/util/concurrent/Executor;)Lpht;
 
-    return v0
-.end method
+    move-result-object p1
 
-.method public final f()Z
-    .locals 1
-
-    invoke-virtual {p0}, Lkqx;->l()Lkqp;
-
-    move-result-object v0
-
-    invoke-interface {v0}, Lkqq;->f()Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public final h()Landroid/net/Uri;
-    .locals 1
-
-    invoke-virtual {p0}, Lkqx;->l()Lkqp;
-
-    move-result-object v0
-
-    invoke-interface {v0}, Lkqq;->h()Landroid/net/Uri;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public final i()Lkqy;
-    .locals 1
-
-    invoke-virtual {p0}, Lkqx;->l()Lkqp;
-
-    move-result-object v0
-
-    invoke-interface {v0}, Lkqq;->i()Lkqy;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public final j()V
-    .locals 1
-
-    iget-object v0, p0, Lkqx;->d:Ljava/util/concurrent/locks/ReadWriteLock;
-
-    invoke-interface {v0}, Ljava/util/concurrent/locks/ReadWriteLock;->writeLock()Ljava/util/concurrent/locks/Lock;
-
-    move-result-object v0
-
-    invoke-interface {v0}, Ljava/util/concurrent/locks/Lock;->lockInterruptibly()V
-
-    iget-object v0, p0, Lkqx;->d:Ljava/util/concurrent/locks/ReadWriteLock;
-
-    invoke-interface {v0}, Ljava/util/concurrent/locks/ReadWriteLock;->writeLock()Ljava/util/concurrent/locks/Lock;
-
-    move-result-object v0
-
-    invoke-interface {v0}, Ljava/util/concurrent/locks/Lock;->unlock()V
-
-    return-void
-.end method
-
-.method public final k()Z
-    .locals 1
-
-    invoke-virtual {p0}, Lkqx;->l()Lkqp;
-
-    move-result-object v0
-
-    invoke-interface {v0}, Lkqq;->k()Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .locals 1
-
-    invoke-virtual {p0}, Lkqx;->l()Lkqp;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/Object;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    return-object v0
+    return-object p1
 .end method

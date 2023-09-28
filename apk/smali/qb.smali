@@ -1,7 +1,22 @@
-.class public interface abstract Lqb;
+.class public final Lqb;
 .super Ljava/lang/Object;
 
 
-# virtual methods
-.method public abstract c()Lqa;
+# instance fields
+.field public a:I
+
+.field public b:I
+
+.field public c:Z
+
+.field public d:Z
+
+
+# direct methods
+.method public constructor <init>()V
+    .locals 0
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
 .end method

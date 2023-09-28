@@ -39,15 +39,15 @@
 .method private static readDeviceParams(Landroid/content/Context;)[B
     .locals 1
 
-    invoke-static {p0}, Llho;->T(Landroid/content/Context;)Loeo;
+    invoke-static {p0}, Lplk;->ai(Landroid/content/Context;)Lpwo;
 
     move-result-object p0
 
-    invoke-interface {p0}, Loeo;->b()Loev;
+    invoke-interface {p0}, Lpwo;->b()Lpxd;
 
     move-result-object v0
 
-    invoke-interface {p0}, Loeo;->e()V
+    invoke-interface {p0}, Lpwo;->e()V
 
     if-nez v0, :cond_0
 
@@ -56,7 +56,7 @@
     return-object p0
 
     :cond_0
-    invoke-virtual {v0}, Lnve;->J()[B
+    invoke-virtual {v0}, Lpnm;->g()[B
 
     move-result-object p0
 
@@ -64,15 +64,19 @@
 .end method
 
 .method private static readDisplayParams(Landroid/content/Context;J)V
-    .locals 5
+    .locals 11
+
+    const/4 v0, 0x0
+
+    const/4 v1, 0x0
 
     if-nez p0, :cond_0
 
     const-string p0, "VrParamsProviderJni"
 
-    const-string v0, "Missing context for phone params lookup. Results may be invalid."
+    const-string v2, "Missing context for phone params lookup. Results may be invalid."
 
-    invoke-static {p0, v0}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {p0, v2}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
     invoke-static {}, Landroid/content/res/Resources;->getSystem()Landroid/content/res/Resources;
 
@@ -82,73 +86,161 @@
 
     move-result-object p0
 
-    const/4 v0, 0x0
-
-    invoke-static {v0}, Llho;->U(Loew;)F
+    invoke-static {v0}, Lplk;->aj(Lpxe;)F
 
     move-result v0
-
-    const/4 v1, 0x0
 
     invoke-static {p1, p2, p0, v0, v1}, Lcom/google/vr/cardboard/VrParamsProviderJni;->a(JLandroid/util/DisplayMetrics;FI)V
 
     return-void
 
     :cond_0
-    invoke-static {p0}, Llho;->T(Landroid/content/Context;)Loeo;
-
-    move-result-object v0
-
-    invoke-interface {v0}, Loeo;->c()Loew;
-
-    move-result-object v1
-
-    invoke-interface {v0}, Loeo;->e()V
-
-    invoke-static {p0}, Llho;->W(Landroid/content/Context;)Landroid/view/Display;
-
-    move-result-object v0
-
-    invoke-static {v0}, Llho;->V(Landroid/view/Display;)Landroid/util/DisplayMetrics;
+    invoke-static {p0}, Lplk;->ai(Landroid/content/Context;)Lpwo;
 
     move-result-object v2
 
-    const/4 v3, 0x1
+    invoke-interface {v2}, Lpwo;->c()Lpxe;
 
-    if-eqz v1, :cond_2
+    move-result-object v3
 
-    iget v4, v1, Loew;->a:I
+    invoke-interface {v2}, Lpwo;->e()V
 
-    and-int/2addr v4, v3
+    invoke-static {p0}, Lplk;->al(Landroid/content/Context;)Landroid/view/Display;
 
-    if-eqz v4, :cond_1
+    move-result-object v2
 
-    iget v4, v1, Loew;->b:F
+    invoke-static {v2}, Lplk;->ak(Landroid/view/Display;)Landroid/util/DisplayMetrics;
 
-    iput v4, v2, Landroid/util/DisplayMetrics;->xdpi:F
+    move-result-object v4
+
+    const/4 v5, 0x1
+
+    if-eqz v3, :cond_2
+
+    iget v6, v3, Lpxe;->a:I
+
+    and-int/2addr v6, v5
+
+    if-eqz v6, :cond_1
+
+    iget v6, v3, Lpxe;->b:F
+
+    iput v6, v4, Landroid/util/DisplayMetrics;->xdpi:F
 
     :cond_1
-    iget v4, v1, Loew;->a:I
+    iget v6, v3, Lpxe;->a:I
 
-    and-int/lit8 v4, v4, 0x2
+    and-int/lit8 v6, v6, 0x2
 
-    if-eqz v4, :cond_2
+    if-eqz v6, :cond_2
 
-    iget v4, v1, Loew;->c:F
+    iget v6, v3, Lpxe;->c:F
 
-    iput v4, v2, Landroid/util/DisplayMetrics;->ydpi:F
+    iput v6, v4, Landroid/util/DisplayMetrics;->ydpi:F
 
     :cond_2
-    invoke-static {v1}, Llho;->U(Loew;)F
+    invoke-static {v3}, Lplk;->aj(Lpxe;)F
 
-    move-result v1
+    move-result v3
 
-    sget v4, Lody;->a:I
+    :try_start_0
+    const-string v6, "android.view.DisplayInfo"
 
-    invoke-virtual {v0}, Landroid/view/Display;->getCutout()Landroid/view/DisplayCutout;
+    invoke-static {v6}, Ljava/lang/Class;->forName(Ljava/lang/String;)Ljava/lang/Class;
+
+    move-result-object v6
+
+    new-array v7, v1, [Ljava/lang/Class;
+
+    invoke-virtual {v6, v7}, Ljava/lang/Class;->getConstructor([Ljava/lang/Class;)Ljava/lang/reflect/Constructor;
+
+    move-result-object v7
+
+    new-array v8, v1, [Ljava/lang/Object;
+
+    invoke-virtual {v7, v8}, Ljava/lang/reflect/Constructor;->newInstance([Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v7
+
+    new-array v8, v5, [Ljava/lang/Class;
+
+    aput-object v6, v8, v1
+
+    const-class v9, Landroid/view/Display;
+
+    const-string v10, "getDisplayInfo"
+
+    invoke-virtual {v9, v10, v8}, Ljava/lang/Class;->getDeclaredMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
+
+    move-result-object v8
+
+    new-array v9, v5, [Ljava/lang/Object;
+
+    aput-object v7, v9, v1
+
+    invoke-virtual {v8, v2, v9}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
+
+    const-string v2, "displayCutout"
+
+    invoke-virtual {v6, v2}, Ljava/lang/Class;->getDeclaredField(Ljava/lang/String;)Ljava/lang/reflect/Field;
+
+    move-result-object v2
+
+    invoke-virtual {v2, v5}, Ljava/lang/reflect/Field;->setAccessible(Z)V
+
+    invoke-virtual {v2, v7}, Ljava/lang/reflect/Field;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v2
+
+    invoke-static {v2}, Lpvx;->b(Ljava/lang/Object;)Lpvx;
 
     move-result-object v0
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
+    goto :goto_0
+
+    :catch_0
+    move-exception v2
+
+    invoke-static {v2}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v2}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v6
+
+    invoke-virtual {v6}, Ljava/lang/String;->length()I
+
+    move-result v6
+
+    new-instance v7, Ljava/lang/StringBuilder;
+
+    add-int/lit8 v6, v6, 0x2c
+
+    invoke-direct {v7, v6}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string v6, "Failed to fetch DisplayCutout from Display: "
+
+    invoke-virtual {v7, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v7, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v7}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    const-string v6, "AndroidPCompat"
+
+    invoke-static {v6, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+
+    :goto_0
+    if-nez v0, :cond_3
+
+    goto :goto_1
+
+    :cond_3
     invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object p0
@@ -159,211 +251,71 @@
 
     iget p0, p0, Landroid/content/res/Configuration;->orientation:I
 
-    if-ne p0, v3, :cond_3
+    if-ne p0, v5, :cond_4
 
     const-string p0, "getSafeInsetTop"
 
-    invoke-static {p0, v0}, Lody;->a(Ljava/lang/String;Ljava/lang/Object;)I
+    invoke-virtual {v0, p0}, Lpvx;->a(Ljava/lang/String;)I
 
     move-result p0
 
-    const-string v3, "getSafeInsetBottom"
+    const-string v1, "getSafeInsetBottom"
 
-    invoke-static {v3, v0}, Lody;->a(Ljava/lang/String;Ljava/lang/Object;)I
+    invoke-virtual {v0, v1}, Lpvx;->a(Ljava/lang/String;)I
 
     move-result v0
 
-    add-int/2addr p0, v0
+    add-int v1, p0, v0
 
-    goto :goto_0
+    goto :goto_1
 
-    :cond_3
+    :cond_4
     const-string p0, "getSafeInsetLeft"
 
-    invoke-static {p0, v0}, Lody;->a(Ljava/lang/String;Ljava/lang/Object;)I
+    invoke-virtual {v0, p0}, Lpvx;->a(Ljava/lang/String;)I
 
     move-result p0
 
-    const-string v3, "getSafeInsetRight"
+    const-string v1, "getSafeInsetRight"
 
-    invoke-static {v3, v0}, Lody;->a(Ljava/lang/String;Ljava/lang/Object;)I
+    invoke-virtual {v0, v1}, Lpvx;->a(Ljava/lang/String;)I
 
     move-result v0
 
-    add-int/2addr p0, v0
+    add-int v1, p0, v0
 
-    :goto_0
-    invoke-static {p1, p2, v2, v1, p0}, Lcom/google/vr/cardboard/VrParamsProviderJni;->a(JLandroid/util/DisplayMetrics;FI)V
+    :goto_1
+    invoke-static {p1, p2, v4, v3, v1}, Lcom/google/vr/cardboard/VrParamsProviderJni;->a(JLandroid/util/DisplayMetrics;FI)V
 
     return-void
 .end method
 
 .method private static readSdkConfigurationParams(Landroid/content/Context;)[B
-    .locals 4
+    .locals 0
 
-    sget-object v0, Loer;->a:Lngb;
-
-    const-class v0, Loer;
-
-    monitor-enter v0
-
-    :try_start_0
-    sget-object v1, Loer;->b:Lngb;
-
-    if-eqz v1, :cond_0
-
-    monitor-exit v0
-
-    goto :goto_1
-
-    :cond_0
-    monitor-exit v0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_1
-
-    invoke-static {p0}, Llho;->T(Landroid/content/Context;)Loeo;
+    invoke-static {p0}, Lpwz;->a(Landroid/content/Context;)Lozn;
 
     move-result-object p0
 
-    sget-object v0, Loey;->d:Loey;
-
-    invoke-virtual {v0}, Lnws;->O()Lnwn;
-
-    move-result-object v0
-
-    sget-object v1, Loer;->a:Lngb;
-
-    iget-object v2, v0, Lnwn;->b:Lnws;
-
-    invoke-virtual {v2}, Lnws;->ac()Z
-
-    move-result v2
-
-    if-nez v2, :cond_1
-
-    invoke-virtual {v0}, Lnwn;->p()V
-
-    :cond_1
-    iget-object v2, v0, Lnwn;->b:Lnws;
-
-    move-object v3, v2
-
-    check-cast v3, Loey;
-
-    invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    iput-object v1, v3, Loey;->c:Lngb;
-
-    iget v1, v3, Loey;->a:I
-
-    or-int/lit8 v1, v1, 0x2
-
-    iput v1, v3, Loey;->a:I
-
-    invoke-virtual {v2}, Lnws;->ac()Z
-
-    move-result v1
-
-    if-nez v1, :cond_2
-
-    invoke-virtual {v0}, Lnwn;->p()V
-
-    :cond_2
-    iget-object v1, v0, Lnwn;->b:Lnws;
-
-    check-cast v1, Loey;
-
-    iget v2, v1, Loey;->a:I
-
-    or-int/lit8 v2, v2, 0x1
-
-    iput v2, v1, Loey;->a:I
-
-    const-string v2, "1.228.0"
-
-    iput-object v2, v1, Loey;->b:Ljava/lang/String;
-
-    invoke-virtual {v0}, Lnwn;->i()Lnws;
-
-    move-result-object v0
-
-    check-cast v0, Loey;
-
-    invoke-interface {p0, v0}, Loeo;->a(Loey;)Lngb;
-
-    move-result-object v0
-
-    if-nez v0, :cond_3
-
-    const-string v0, "SdkConfigurationReader"
-
-    const-string v1, "VrParamsProvider returned null params, using defaults."
-
-    invoke-static {v0, v1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
-
-    sget-object v0, Loer;->c:Lngb;
-
-    goto :goto_0
-
-    :cond_3
-    invoke-virtual {v0}, Ljava/lang/Object;->toString()Ljava/lang/String;
-
-    :goto_0
-    const-class v1, Loer;
-
-    monitor-enter v1
-
-    :try_start_1
-    sput-object v0, Loer;->b:Lngb;
-
-    monitor-exit v1
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    invoke-interface {p0}, Loeo;->e()V
-
-    sget-object v1, Loer;->b:Lngb;
-
-    :goto_1
-    invoke-virtual {v1}, Lnve;->J()[B
+    invoke-virtual {p0}, Lpnm;->g()[B
 
     move-result-object p0
 
     return-object p0
-
-    :catchall_0
-    move-exception p0
-
-    :try_start_2
-    monitor-exit v1
-    :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_0
-
-    throw p0
-
-    :catchall_1
-    move-exception p0
-
-    :try_start_3
-    monitor-exit v0
-    :try_end_3
-    .catchall {:try_start_3 .. :try_end_3} :catchall_1
-
-    throw p0
 .end method
 
 .method private static readUserPrefs(Landroid/content/Context;)[B
     .locals 1
 
-    invoke-static {p0}, Llho;->T(Landroid/content/Context;)Loeo;
+    invoke-static {p0}, Lplk;->ai(Landroid/content/Context;)Lpwo;
 
     move-result-object p0
 
-    invoke-interface {p0}, Loeo;->d()Loex;
+    invoke-interface {p0}, Lpwo;->d()Lpxf;
 
     move-result-object v0
 
-    invoke-interface {p0}, Loeo;->e()V
+    invoke-interface {p0}, Lpwo;->e()V
 
     if-nez v0, :cond_0
 
@@ -372,7 +324,7 @@
     return-object p0
 
     :cond_0
-    invoke-virtual {v0}, Lnve;->J()[B
+    invoke-virtual {v0}, Lpnm;->g()[B
 
     move-result-object p0
 
@@ -380,32 +332,26 @@
 .end method
 
 .method private static writeDeviceParams(Landroid/content/Context;[B)Z
-    .locals 4
+    .locals 3
 
-    invoke-static {p0}, Llho;->T(Landroid/content/Context;)Loeo;
+    invoke-static {p0}, Lplk;->ai(Landroid/content/Context;)Lpwo;
 
     move-result-object p0
-
-    const/4 v0, 0x0
 
     if-eqz p1, :cond_0
 
     :try_start_0
-    invoke-static {}, Lnwh;->a()Lnwh;
+    invoke-static {}, Lpos;->b()Lpos;
 
-    move-result-object v1
+    move-result-object v0
 
-    sget-object v2, Loev;->a:Loev;
+    sget-object v1, Lpxd;->a:Lpxd;
 
-    array-length v3, p1
-
-    invoke-static {v2, p1, v0, v3, v1}, Lnws;->Q(Lnws;[BIILnwh;)Lnws;
+    invoke-static {v1, p1, v0}, Lppd;->s(Lppd;[BLpos;)Lppd;
 
     move-result-object p1
 
-    invoke-static {p1}, Lnws;->ae(Lnws;)V
-
-    check-cast p1, Loev;
+    check-cast p1, Lpxd;
 
     goto :goto_0
 
@@ -423,32 +369,42 @@
     const/4 p1, 0x0
 
     :goto_0
-    invoke-interface {p0, p1}, Loeo;->f(Loev;)Z
+    invoke-interface {p0, p1}, Lpwo;->f(Lpxd;)Z
 
     move-result p1
     :try_end_0
-    .catch Lnxd; {:try_start_0 .. :try_end_0} :catch_0
+    .catch Lppp; {:try_start_0 .. :try_end_0} :catch_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    invoke-interface {p0}, Loeo;->e()V
+    invoke-interface {p0}, Lpwo;->e()V
 
     return p1
 
     :goto_1
     :try_start_1
-    const-string v1, "VrParamsProviderJni"
+    const-string v0, "VrParamsProviderJni"
 
-    invoke-virtual {p1}, Ljava/lang/Object;->toString()Ljava/lang/String;
+    invoke-static {p1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p1
 
+    invoke-static {p1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/String;->length()I
+
+    move-result v1
+
+    add-int/lit8 v1, v1, 0x1f
+
     new-instance v2, Ljava/lang/StringBuilder;
 
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v2, v1}, Ljava/lang/StringBuilder;-><init>(I)V
 
-    const-string v3, "Error parsing protocol buffer: "
+    const-string v1, "Error parsing protocol buffer: "
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-virtual {v2, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -456,16 +412,18 @@
 
     move-result-object p1
 
-    invoke-static {v1, p1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v0, p1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    invoke-interface {p0}, Loeo;->e()V
+    invoke-interface {p0}, Lpwo;->e()V
 
-    return v0
+    const/4 p0, 0x0
+
+    return p0
 
     :goto_2
-    invoke-interface {p0}, Loeo;->e()V
+    invoke-interface {p0}, Lpwo;->e()V
 
     throw p1
 .end method

@@ -1,51 +1,26 @@
 .class public final Lcwn;
 .super Ljava/lang/Object;
 
-# interfaces
-.implements Logk;
-
-
-# instance fields
-.field private final a:Loiw;
-
 
 # direct methods
-.method public constructor <init>(Loiw;)V
+.method public static synthetic a(I)Ljava/lang/String;
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    packed-switch p0, :pswitch_data_0
 
-    iput-object p1, p0, Lcwn;->a:Loiw;
+    const-string p0, "OPEN"
 
-    return-void
-.end method
+    return-object p0
 
+    :pswitch_0
+    const-string p0, "ENUMERATION"
 
-# virtual methods
-.method public final a()Lcwm;
-    .locals 2
+    return-object p0
 
-    iget-object v0, p0, Lcwn;->a:Loiw;
+    nop
 
-    check-cast v0, Lcwi;
-
-    invoke-virtual {v0}, Lcwi;->a()Lcwj;
-
-    move-result-object v0
-
-    new-instance v1, Lcwm;
-
-    invoke-direct {v1, v0}, Lcwm;-><init>(Lcwj;)V
-
-    return-object v1
-.end method
-
-.method public final bridge synthetic get()Ljava/lang/Object;
-    .locals 1
-
-    invoke-virtual {p0}, Lcwn;->a()Lcwm;
-
-    move-result-object v0
-
-    return-object v0
+    :pswitch_data_0
+    .packed-switch 0x2
+        :pswitch_0
+    .end packed-switch
 .end method

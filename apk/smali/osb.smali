@@ -1,28 +1,46 @@
 .class public final Losb;
-.super Lokp;
+.super Ljava/lang/Object;
 
 
-# static fields
-.field public static final a:Lokv;
+# instance fields
+.field public final a:Ljava/lang/reflect/Field;
 
 
 # direct methods
-.method static constructor <clinit>()V
+.method public constructor <init>(Ljava/lang/reflect/Field;)V
     .locals 1
 
-    new-instance v0, Lokv;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {v0}, Lokv;-><init>()V
+    iput-object p1, p0, Losb;->a:Ljava/lang/reflect/Field;
 
-    sput-object v0, Losb;->a:Lokv;
+    const/4 v0, 0x1
+
+    invoke-virtual {p1, v0}, Ljava/lang/reflect/Field;->setAccessible(Z)V
 
     return-void
 .end method
 
-.method public constructor <init>()V
+
+# virtual methods
+.method final a(Ljava/lang/Object;Ljava/lang/Object;)V
     .locals 1
 
-    const/4 v0, 0x0
+    :try_start_0
+    iget-object v0, p0, Losb;->a:Ljava/lang/reflect/Field;
 
-    throw v0
+    invoke-virtual {v0, p1, p2}, Ljava/lang/reflect/Field;->set(Ljava/lang/Object;Ljava/lang/Object;)V
+    :try_end_0
+    .catch Ljava/lang/IllegalAccessException; {:try_start_0 .. :try_end_0} :catch_0
+
+    return-void
+
+    :catch_0
+    move-exception p1
+
+    new-instance p2, Ljava/lang/AssertionError;
+
+    invoke-direct {p2, p1}, Ljava/lang/AssertionError;-><init>(Ljava/lang/Object;)V
+
+    throw p2
 .end method

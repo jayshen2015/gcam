@@ -1,20 +1,23 @@
-.class final Lncx;
+.class public interface abstract Lncx;
 .super Ljava/lang/Object;
 
 
 # static fields
-.field static final a:Ljava/util/concurrent/ConcurrentLinkedQueue;
+.field public static final b:Lncx;
 
 
 # direct methods
 .method static constructor <clinit>()V
     .locals 1
 
-    new-instance v0, Ljava/util/concurrent/ConcurrentLinkedQueue;
+    sget-object v0, Lncv;->a:Lncv;
 
-    invoke-direct {v0}, Ljava/util/concurrent/ConcurrentLinkedQueue;-><init>()V
-
-    sput-object v0, Lncx;->a:Ljava/util/concurrent/ConcurrentLinkedQueue;
+    sput-object v0, Lncx;->b:Lncx;
 
     return-void
+.end method
+
+
+# virtual methods
+.method public abstract a()Lpht;
 .end method

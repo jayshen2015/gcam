@@ -1,157 +1,177 @@
 .class public final Lcsy;
 .super Ljava/lang/Object;
 
-# interfaces
-.implements Lctd;
-
-
-# static fields
-.field private static final a:Lnak;
-
 
 # instance fields
-.field private final b:Landroid/os/ParcelFileDescriptor;
+.field a:Ljava/util/concurrent/ScheduledFuture;
 
-.field private final c:Ljava/io/FileDescriptor;
+.field private final b:Lqkg;
+
+.field private final c:Ljava/util/concurrent/ScheduledExecutorService;
+
+.field private final d:Lddf;
 
 
 # direct methods
-.method static constructor <clinit>()V
+.method public constructor <init>(Lqkg;Ljava/util/concurrent/ScheduledExecutorService;Lddf;)V
     .locals 1
-
-    const-string v0, "com/google/android/apps/camera/camcorder/file/FileDescriptorOutputVideo"
-
-    invoke-static {v0}, Lnak;->h(Ljava/lang/String;)Lnak;
-
-    move-result-object v0
-
-    sput-object v0, Lcsy;->a:Lnak;
-
-    return-void
-.end method
-
-.method public constructor <init>(Landroid/os/ParcelFileDescriptor;)V
-    .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lcsy;->b:Landroid/os/ParcelFileDescriptor;
+    const/4 v0, 0x0
 
-    invoke-virtual {p1}, Landroid/os/ParcelFileDescriptor;->getFileDescriptor()Ljava/io/FileDescriptor;
+    iput-object v0, p0, Lcsy;->a:Ljava/util/concurrent/ScheduledFuture;
 
-    move-result-object p1
+    iput-object p1, p0, Lcsy;->b:Lqkg;
 
-    iput-object p1, p0, Lcsy;->c:Ljava/io/FileDescriptor;
+    iput-object p2, p0, Lcsy;->c:Ljava/util/concurrent/ScheduledExecutorService;
+
+    iput-object p3, p0, Lcsy;->d:Lddf;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()J
+.method public final declared-synchronized a()V
     .locals 2
 
-    iget-object v0, p0, Lcsy;->b:Landroid/os/ParcelFileDescriptor;
-
-    invoke-virtual {v0}, Landroid/os/ParcelFileDescriptor;->getStatSize()J
-
-    move-result-wide v0
-
-    return-wide v0
-.end method
-
-.method public final synthetic b()Lgyb;
-    .locals 1
-
-    invoke-static {p0}, Ldgx;->e(Lctd;)Lgyb;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public final c()Lmqp;
-    .locals 1
-
-    sget-object v0, Lmpx;->a:Lmpx;
-
-    return-object v0
-.end method
-
-.method public final close()V
-    .locals 4
+    monitor-enter p0
 
     :try_start_0
-    iget-object v0, p0, Lcsy;->b:Landroid/os/ParcelFileDescriptor;
+    iget-object v0, p0, Lcsy;->d:Lddf;
 
-    invoke-virtual {v0}, Landroid/os/ParcelFileDescriptor;->close()V
+    sget-object v1, Ldcu;->aa:Lddg;
+
+    invoke-interface {v0, v1}, Lddf;->k(Lddg;)Z
+
+    move-result v0
     :try_end_0
-    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    if-nez v0, :cond_0
+
+    monitor-exit p0
 
     return-void
 
-    :catch_0
-    move-exception v0
+    :cond_0
+    :try_start_1
+    iget-object v0, p0, Lcsy;->a:Ljava/util/concurrent/ScheduledFuture;
 
-    sget-object v1, Lcsy;->a:Lnak;
+    if-eqz v0, :cond_1
 
-    invoke-virtual {v1}, Lnaf;->b()Lnaz;
+    const/4 v1, 0x0
 
-    move-result-object v1
-
-    const-string v2, "Error closing parcelFileDescriptor."
-
-    const/16 v3, 0x25a
-
-    invoke-static {v1, v2, v3, v0}, Ld;->h(Lnaz;Ljava/lang/String;CLjava/lang/Throwable;)V
-
-    return-void
-.end method
-
-.method public final d()Lmqp;
-    .locals 1
-
-    sget-object v0, Lmpx;->a:Lmpx;
-
-    return-object v0
-.end method
-
-.method public final e()Lnou;
-    .locals 1
-
-    iget-object v0, p0, Lcsy;->c:Ljava/io/FileDescriptor;
-
-    invoke-static {v0}, Lnsy;->B(Ljava/lang/Object;)Lnou;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public final f()Ljava/io/FileDescriptor;
-    .locals 1
+    invoke-interface {v0, v1}, Ljava/util/concurrent/ScheduledFuture;->cancel(Z)Z
 
     const/4 v0, 0x0
+
+    iput-object v0, p0, Lcsy;->a:Ljava/util/concurrent/ScheduledFuture;
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    :cond_1
+    monitor-exit p0
+
+    return-void
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit p0
 
     throw v0
 .end method
 
-.method public final g()V
-    .locals 0
+.method public final declared-synchronized b()V
+    .locals 8
+
+    monitor-enter p0
+
+    :try_start_0
+    iget-object v0, p0, Lcsy;->d:Lddf;
+
+    sget-object v1, Ldcu;->aa:Lddg;
+
+    invoke-interface {v0, v1}, Lddf;->k(Lddg;)Z
+
+    move-result v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    if-nez v0, :cond_0
+
+    monitor-exit p0
 
     return-void
-.end method
 
-.method public final h()Z
-    .locals 1
+    :cond_0
+    :try_start_1
+    iget-object v0, p0, Lcsy;->a:Ljava/util/concurrent/ScheduledFuture;
 
-    const/4 v0, 0x1
+    if-nez v0, :cond_1
 
-    return v0
-.end method
+    iget-object v1, p0, Lcsy;->c:Ljava/util/concurrent/ScheduledExecutorService;
 
-.method public final i()V
-    .locals 0
+    iget-object v0, p0, Lcsy;->b:Lqkg;
+
+    invoke-interface {v0}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lctd;
+
+    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    new-instance v2, Lcsx;
+
+    invoke-direct {v2, v0}, Lcsx;-><init>(Lctd;)V
+
+    const-wide/16 v3, 0x0
+
+    const-wide/16 v5, 0x3e8
+
+    sget-object v7, Ljava/util/concurrent/TimeUnit;->MILLISECONDS:Ljava/util/concurrent/TimeUnit;
+
+    invoke-interface/range {v1 .. v7}, Ljava/util/concurrent/ScheduledExecutorService;->scheduleAtFixedRate(Ljava/lang/Runnable;JJLjava/util/concurrent/TimeUnit;)Ljava/util/concurrent/ScheduledFuture;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lcsy;->a:Ljava/util/concurrent/ScheduledFuture;
+
+    iget-object v0, p0, Lcsy;->b:Lqkg;
+
+    invoke-interface {v0}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lctd;
+
+    invoke-virtual {v0}, Lctd;->a()V
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    monitor-exit p0
 
     return-void
+
+    :cond_1
+    :try_start_2
+    new-instance v0, Ljava/lang/IllegalStateException;
+
+    const-string v1, "Scheduler running already."
+
+    invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit p0
+
+    throw v0
 .end method

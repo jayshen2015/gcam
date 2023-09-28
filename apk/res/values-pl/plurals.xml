@@ -1,16 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <plurals name="accessibility_timelapse_manual_record_speed_desc">
-        <item quantity="other">Tryb poklatkowy: prędkość razy %d</item>
-        <item quantity="one">Tryb poklatkowy: prędkość razy %d</item>
-        <item quantity="few">Tryb poklatkowy: prędkość razy %d</item>
-        <item quantity="many">Tryb poklatkowy: prędkość razy %d</item>
-    </plurals>
-    <plurals name="number_of_cropped_face">
-        <item quantity="other">%d przyciętej.</item>
-        <item quantity="one">1 przycięta.</item>
-        <item quantity="few">%d przycięte.</item>
-        <item quantity="many">%d przyciętych.</item>
+    <plurals name="number_of_faces_announcement">
+        <item quantity="other">%1$d twarzy.</item>
+        <item quantity="one">%1$d twarz.</item>
+        <item quantity="few">%1$d twarze.</item>
+        <item quantity="many">%1$d twarzy.</item>
     </plurals>
     <plurals name="photos_remaining">
         <item quantity="other">Około %s zdjęcia</item>

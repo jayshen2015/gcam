@@ -1,76 +1,60 @@
-.class public final Lfht;
+.class public final synthetic Lfht;
 .super Ljava/lang/Object;
+
+# interfaces
+.implements Lj$/util/function/Consumer;
 
 
 # instance fields
-.field public a:I
+.field public final synthetic a:I
 
-.field public b:I
-
-.field public c:J
-
-.field public d:J
+.field public final synthetic b:I
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 2
+.method public synthetic constructor <init>(II)V
+    .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const-wide/16 v0, 0x0
+    iput p1, p0, Lfht;->a:I
 
-    iput-wide v0, p0, Lfht;->d:J
-
-    iput-wide v0, p0, Lfht;->c:J
-
-    const/4 v0, 0x0
-
-    iput v0, p0, Lfht;->b:I
-
-    iput v0, p0, Lfht;->a:I
+    iput p2, p0, Lfht;->b:I
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Lfht;
+.method public final accept(Ljava/lang/Object;)V
     .locals 3
 
-    monitor-enter p0
-
-    :try_start_0
-    new-instance v0, Lfht;
-
-    invoke-direct {v0}, Lfht;-><init>()V
-
-    iget v1, p0, Lfht;->a:I
-
-    iput v1, v0, Lfht;->a:I
+    iget v0, p0, Lfht;->a:I
 
     iget v1, p0, Lfht;->b:I
 
-    iput v1, v0, Lfht;->b:I
+    check-cast p1, Lfik;
 
-    iget-wide v1, p0, Lfht;->c:J
+    sget v2, Lfhv;->k:I
 
-    iput-wide v1, v0, Lfht;->c:J
+    instance-of v2, p1, Lfhw;
 
-    iget-wide v1, p0, Lfht;->d:J
+    if-eqz v2, :cond_0
 
-    iput-wide v1, v0, Lfht;->d:J
+    check-cast p1, Lfhw;
 
-    monitor-exit p0
+    invoke-interface {p1, v0, v1}, Lfhw;->b(II)V
 
-    return-object v0
+    :cond_0
+    return-void
+.end method
 
-    :catchall_0
-    move-exception v0
+.method public final synthetic andThen(Lj$/util/function/Consumer;)Lj$/util/function/Consumer;
+    .locals 0
 
-    monitor-exit p0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    invoke-static {p0, p1}, Lj$/util/function/Consumer$-CC;->$default$andThen(Lj$/util/function/Consumer;Lj$/util/function/Consumer;)Lj$/util/function/Consumer;
 
-    throw v0
+    move-result-object p1
+
+    return-object p1
 .end method

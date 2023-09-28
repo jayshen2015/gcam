@@ -33,46 +33,46 @@
     return-void
 .end method
 
-.method public static d(Landroid/content/Context;)V
+.method public static c(Landroid/content/Context;)V
     .locals 3
 
     invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
 
-    new-instance v1, Lmgv;
+    new-instance v1, Lnyj;
 
-    const v2, 0x7f1503e3
+    const v2, 0x7f150366
 
-    invoke-direct {v1, p0, v2}, Lmgv;-><init>(Landroid/content/Context;I)V
+    invoke-direct {v1, p0, v2}, Lnyj;-><init>(Landroid/content/Context;I)V
 
-    const p0, 0x7f14023d
-
-    invoke-virtual {v0, p0}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
-
-    move-result-object p0
-
-    invoke-virtual {v1, p0}, Lmgv;->t(Ljava/lang/CharSequence;)V
-
-    const p0, 0x7f140126
+    const p0, 0x7f140215
 
     invoke-virtual {v0, p0}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
     move-result-object p0
 
-    invoke-virtual {v1, p0}, Lmgv;->m(Ljava/lang/CharSequence;)V
+    invoke-virtual {v1, p0}, Lnyj;->t(Ljava/lang/CharSequence;)V
 
-    const p0, 0x7f14014f
+    const p0, 0x7f140108
 
     invoke-virtual {v0, p0}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
     move-result-object p0
 
-    sget-object v0, Lfmx;->a:Lfmx;
+    invoke-virtual {v1, p0}, Lnyj;->m(Ljava/lang/CharSequence;)V
 
-    invoke-virtual {v1, p0, v0}, Lmgv;->r(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)V
+    const p0, 0x7f140132
 
-    invoke-virtual {v1}, Lef;->c()Leg;
+    invoke-virtual {v0, p0}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
+
+    move-result-object p0
+
+    sget-object v0, Lfyb;->a:Lfyb;
+
+    invoke-virtual {v1, p0, v0}, Lnyj;->r(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)V
+
+    invoke-virtual {v1}, Lid;->c()Lie;
 
     return-void
 .end method
@@ -91,48 +91,26 @@
     return-void
 .end method
 
-.method public final b(Landroid/graphics/drawable/Drawable;Ljava/lang/String;)V
-    .locals 1
-
-    iget-object v0, p0, Lcom/google/android/apps/camera/ui/eduimageview/EduImageView;->a:Landroid/widget/ImageView;
-
-    invoke-virtual {v0, p1}, Landroid/widget/ImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
-
-    iget-object p1, p0, Lcom/google/android/apps/camera/ui/eduimageview/EduImageView;->a:Landroid/widget/ImageView;
-
-    invoke-virtual {p1, p2}, Landroid/widget/ImageView;->setContentDescription(Ljava/lang/CharSequence;)V
-
-    iget-object p1, p0, Lcom/google/android/apps/camera/ui/eduimageview/EduImageView;->a:Landroid/widget/ImageView;
-
-    sget-object p2, Landroid/widget/ImageView$ScaleType;->CENTER_CROP:Landroid/widget/ImageView$ScaleType;
-
-    invoke-virtual {p1, p2}, Landroid/widget/ImageView;->setScaleType(Landroid/widget/ImageView$ScaleType;)V
-
-    return-void
-.end method
-
-.method public final c(Ljava/lang/String;Ljava/lang/String;)V
+.method public final b(Ljava/lang/String;Ljava/lang/String;)V
     .locals 1
 
     const/4 v0, 0x0
 
-    invoke-virtual {p0, p1, p2, v0}, Lcom/google/android/apps/camera/ui/eduimageview/EduImageView;->e(Ljava/lang/String;Ljava/lang/String;Ljes;)V
+    invoke-virtual {p0, p1, p2, v0}, Lcom/google/android/apps/camera/ui/eduimageview/EduImageView;->d(Ljava/lang/String;Ljava/lang/String;Liuz;)V
 
     return-void
 .end method
 
-.method public final e(Ljava/lang/String;Ljava/lang/String;Ljes;)V
-    .locals 8
+.method public final d(Ljava/lang/String;Ljava/lang/String;Liuz;)V
+    .locals 7
 
-    new-instance v7, Lhwy;
+    new-instance v6, Ljap;
 
     invoke-virtual {p0}, Lcom/google/android/apps/camera/ui/eduimageview/EduImageView;->getContext()Landroid/content/Context;
 
     move-result-object v2
 
-    const/4 v6, 0x0
-
-    move-object v0, v7
+    move-object v0, v6
 
     move-object v1, p0
 
@@ -142,11 +120,11 @@
 
     move-object v5, p3
 
-    invoke-direct/range {v0 .. v6}, Lhwy;-><init>(Lcom/google/android/apps/camera/ui/eduimageview/EduImageView;Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;Ljes;[B)V
+    invoke-direct/range {v0 .. v5}, Ljap;-><init>(Lcom/google/android/apps/camera/ui/eduimageview/EduImageView;Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;Liuz;)V
 
     const/4 p1, 0x0
 
-    invoke-virtual {v7, p1}, Lhwy;->b(Z)V
+    invoke-virtual {v6, p1}, Ljap;->b(Z)V
 
     return-void
 .end method
@@ -168,11 +146,11 @@
 
     check-cast v0, Landroid/view/LayoutInflater;
 
-    const v1, 0x7f0e0052
+    const v1, 0x7f0e004e
 
     invoke-virtual {v0, v1, p0}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;)Landroid/view/View;
 
-    const v0, 0x7f0b019d
+    const v0, 0x7f0b0160
 
     invoke-virtual {p0, v0}, Lcom/google/android/apps/camera/ui/eduimageview/EduImageView;->findViewById(I)Landroid/view/View;
 
@@ -182,7 +160,7 @@
 
     iput-object v0, p0, Lcom/google/android/apps/camera/ui/eduimageview/EduImageView;->a:Landroid/widget/ImageView;
 
-    const v0, 0x7f0b0397
+    const v0, 0x7f0b031a
 
     invoke-virtual {p0, v0}, Lcom/google/android/apps/camera/ui/eduimageview/EduImageView;->findViewById(I)Landroid/view/View;
 

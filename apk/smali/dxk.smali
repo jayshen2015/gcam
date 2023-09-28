@@ -1,75 +1,41 @@
-.class public final Ldxk;
+.class final Ldxk;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Logk;
+.implements Loiu;
 
 
 # instance fields
-.field private final a:Loiw;
-
-.field private final b:Loiw;
+.field final synthetic a:Landroid/content/ContentValues;
 
 
 # direct methods
-.method public constructor <init>(Loiw;Loiw;)V
+.method public constructor <init>(Landroid/content/ContentValues;)V
     .locals 0
 
+    iput-object p1, p0, Ldxk;->a:Landroid/content/ContentValues;
+
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Ldxk;->a:Loiw;
-
-    iput-object p2, p0, Ldxk;->b:Loiw;
 
     return-void
 .end method
 
-.method public static b(Loiw;Loiw;)Ldxk;
-    .locals 1
-
-    new-instance v0, Ldxk;
-
-    invoke-direct {v0, p0, p1}, Ldxk;-><init>(Loiw;Loiw;)V
-
-    return-object v0
-.end method
-
 
 # virtual methods
-.method public final a()Landroid/os/Handler;
-    .locals 2
+.method public final bridge synthetic a(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 3
 
-    iget-object v0, p0, Ldxk;->a:Loiw;
+    check-cast p1, Landroid/database/sqlite/SQLiteDatabase;
 
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    move-result-object v0
+    iget-object v0, p0, Ldxk;->a:Landroid/content/ContentValues;
 
-    check-cast v0, Ljuf;
+    const-string v1, "type_uri"
 
-    iget-object v1, p0, Ldxk;->b:Loiw;
+    const/4 v2, 0x0
 
-    invoke-interface {v1}, Loiw;->get()Ljava/lang/Object;
+    invoke-virtual {p1, v1, v2, v0}, Landroid/database/sqlite/SQLiteDatabase;->replace(Ljava/lang/String;Ljava/lang/String;Landroid/content/ContentValues;)J
 
-    move-result-object v1
-
-    check-cast v1, Ljvd;
-
-    const-string v1, "MicrovideoQSharedStartup"
-
-    invoke-static {v0, v1}, Ljvd;->p(Ljuf;Ljava/lang/String;)Landroid/os/Handler;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public final bridge synthetic get()Ljava/lang/Object;
-    .locals 1
-
-    invoke-virtual {p0}, Ldxk;->a()Landroid/os/Handler;
-
-    move-result-object v0
-
-    return-object v0
+    return-object v2
 .end method

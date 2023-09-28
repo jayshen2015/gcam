@@ -1,85 +1,90 @@
-.class public final Lcir;
+.class final Lcir;
 .super Ljava/lang/Object;
 
-# interfaces
-.implements Ljava/util/concurrent/Executor;
-.implements Lkad;
 
-
-# annotations
-.annotation runtime Ljava/lang/Deprecated;
-.end annotation
+# static fields
+.field public static final a:Louj;
 
 
 # instance fields
-.field public final a:Ljava/util/concurrent/Executor;
+.field public final b:Lcip;
 
-.field private final b:I
-
-.field private final c:Ljava/util/concurrent/ScheduledExecutorService;
+.field public final c:Lciq;
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/String;I)V
+.method static constructor <clinit>()V
     .locals 1
 
-    new-instance v0, Ljuh;
+    const-string v0, "com/google/android/apps/camera/camcorder/audio/processor/AudioPipedStream"
 
-    invoke-direct {v0}, Ljuh;-><init>()V
+    invoke-static {v0}, Louj;->h(Ljava/lang/String;)Louj;
+
+    move-result-object v0
+
+    sput-object v0, Lcir;->a:Louj;
+
+    return-void
+.end method
+
+.method public constructor <init>(II)V
+    .locals 1
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput p2, p0, Lcir;->b:I
+    new-instance v0, Lcip;
 
-    invoke-static {p1}, Ljvd;->j(Ljava/lang/String;)Ljava/util/concurrent/ScheduledExecutorService;
+    invoke-direct {v0, p1, p2}, Lcip;-><init>(II)V
 
-    move-result-object p1
-
-    iput-object p1, p0, Lcir;->c:Ljava/util/concurrent/ScheduledExecutorService;
-
-    iput-object v0, p0, Lcir;->a:Ljava/util/concurrent/Executor;
-
-    return-void
-.end method
-
-
-# virtual methods
-.method public final close()V
-    .locals 1
-
-    iget-object v0, p0, Lcir;->c:Ljava/util/concurrent/ScheduledExecutorService;
-
-    invoke-interface {v0}, Ljava/util/concurrent/ScheduledExecutorService;->shutdown()V
-
-    return-void
-.end method
-
-.method public final execute(Ljava/lang/Runnable;)V
-    .locals 4
+    iput-object v0, p0, Lcir;->b:Lcip;
 
     :try_start_0
-    iget-object v0, p0, Lcir;->c:Ljava/util/concurrent/ScheduledExecutorService;
+    new-instance p1, Lciq;
 
-    new-instance v1, Lcfz;
+    invoke-direct {p1, v0}, Lciq;-><init>(Lcip;)V
 
-    const/16 v2, 0x8
-
-    invoke-direct {v1, p0, p1, v2}, Lcfz;-><init>(Lcir;Ljava/lang/Runnable;I)V
-
-    iget p1, p0, Lcir;->b:I
-
-    int-to-long v2, p1
-
-    sget-object p1, Ljava/util/concurrent/TimeUnit;->MILLISECONDS:Ljava/util/concurrent/TimeUnit;
-
-    invoke-interface {v0, v1, v2, v3, p1}, Ljava/util/concurrent/ScheduledExecutorService;->schedule(Ljava/lang/Runnable;JLjava/util/concurrent/TimeUnit;)Ljava/util/concurrent/ScheduledFuture;
+    iput-object p1, p0, Lcir;->c:Lciq;
     :try_end_0
-    .catch Ljava/util/concurrent/RejectedExecutionException; {:try_start_0 .. :try_end_0} :catch_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
     return-void
 
     :catch_0
     move-exception p1
 
+    new-instance p2, Ljava/io/IOException;
+
+    const-string v0, "Failed to set up output stream pipe"
+
+    invoke-direct {p2, v0, p1}, Ljava/io/IOException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
+
+    throw p2
+.end method
+
+
+# virtual methods
+.method public final a()V
+    .locals 2
+
+    iget-object v0, p0, Lcir;->b:Lcip;
+
+    monitor-enter v0
+
+    :try_start_0
+    iget-object v1, p0, Lcir;->b:Lcip;
+
+    invoke-virtual {v1}, Ljava/lang/Object;->notifyAll()V
+
+    monitor-exit v0
+
     return-void
+
+    :catchall_0
+    move-exception v1
+
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw v1
 .end method

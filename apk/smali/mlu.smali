@@ -3,17 +3,5 @@
 
 
 # virtual methods
-.method public abstract a()Ljot;
-.end method
-
-.method public abstract b()V
-.end method
-
-.method public abstract c(Lmlt;Landroid/app/Activity;)V
-.end method
-
-.method public abstract d(Landroidx/wear/ambient/AmbientModeSupport$AmbientController;)V
-.end method
-
-.method public abstract e(Landroidx/wear/ambient/AmbientModeSupport$AmbientController;)V
+.method public abstract a(Ljava/lang/Object;)Ljava/lang/Object;
 .end method

@@ -1,79 +1,57 @@
-.class public final Lcyr;
+.class public final synthetic Lcyr;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Logk;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field private final a:Loiw;
+.field public final synthetic a:Lqkg;
 
-.field private final b:Loiw;
-
-.field private final c:Loiw;
-
-.field private final d:Loiw;
+.field public final synthetic b:Landroid/content/Intent;
 
 
 # direct methods
-.method public constructor <init>(Loiw;Loiw;Loiw;Loiw;)V
+.method public synthetic constructor <init>(Lqkg;Landroid/content/Intent;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lcyr;->a:Loiw;
+    iput-object p1, p0, Lcyr;->a:Lqkg;
 
-    iput-object p2, p0, Lcyr;->b:Loiw;
-
-    iput-object p3, p0, Lcyr;->c:Loiw;
-
-    iput-object p4, p0, Lcyr;->d:Loiw;
+    iput-object p2, p0, Lcyr;->b:Landroid/content/Intent;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Lcvm;
+.method public final run()V
     .locals 5
 
-    iget-object v0, p0, Lcyr;->a:Loiw;
+    iget-object v0, p0, Lcyr;->a:Lqkg;
 
-    invoke-static {v0}, Logj;->a(Loiw;)Logd;
+    iget-object v1, p0, Lcyr;->b:Landroid/content/Intent;
 
-    move-result-object v0
-
-    iget-object v1, p0, Lcyr;->b:Loiw;
-
-    invoke-static {v1}, Logj;->a(Loiw;)Logd;
-
-    move-result-object v1
-
-    iget-object v2, p0, Lcyr;->c:Loiw;
-
-    invoke-static {v2}, Logj;->a(Loiw;)Logd;
-
-    move-result-object v2
-
-    iget-object v3, p0, Lcyr;->d:Loiw;
-
-    invoke-static {v3}, Logj;->a(Loiw;)Logd;
-
-    move-result-object v3
-
-    new-instance v4, Lcvm;
-
-    invoke-direct {v4, v0, v1, v2, v3}, Lcvm;-><init>(Logd;Logd;Logd;Logd;)V
-
-    return-object v4
-.end method
-
-.method public final bridge synthetic get()Ljava/lang/Object;
-    .locals 1
-
-    invoke-virtual {p0}, Lcyr;->a()Lcvm;
+    invoke-interface {v0}, Lqkg;->get()Ljava/lang/Object;
 
     move-result-object v0
 
-    return-object v0
+    check-cast v0, Lczl;
+
+    iget-object v2, v0, Lczl;->k:Ljava/util/concurrent/Executor;
+
+    iget-object v3, v0, Lczl;->x:Lbxy;
+
+    new-instance v4, Lczc;
+
+    invoke-direct {v4, v0, v1}, Lczc;-><init>(Lczl;Landroid/content/Intent;)V
+
+    invoke-virtual {v3, v4}, Lbxy;->a(Ljava/lang/Runnable;)Ljava/lang/Runnable;
+
+    move-result-object v0
+
+    invoke-interface {v2, v0}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
+
+    return-void
 .end method

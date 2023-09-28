@@ -3,5 +3,5 @@
 
 
 # virtual methods
-.method public abstract a(Ljuf;Lklv;Landroid/graphics/PointF;Lccv;)Lccx;
+.method public abstract a([B)Lojc;
 .end method

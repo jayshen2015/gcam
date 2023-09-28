@@ -1,5 +1,5 @@
 .class public final Lcom/google/vr/vrcore/library/api/ObjectWrapper;
-.super Lcbf;
+.super Lbmo;
 
 
 # instance fields
@@ -12,14 +12,14 @@
 
     const-string v0, "com.google.vr.vrcore.library.api.IObjectWrapper"
 
-    invoke-direct {p0, v0}, Lcbf;-><init>(Ljava/lang/String;)V
+    invoke-direct {p0, v0}, Lbmo;-><init>(Ljava/lang/String;)V
 
     iput-object p1, p0, Lcom/google/vr/vrcore/library/api/ObjectWrapper;->wrappedObject:Ljava/lang/Object;
 
     return-void
 .end method
 
-.method public static b(Ljava/lang/Object;)Lcbf;
+.method public static b(Ljava/lang/Object;)Lbmo;
     .locals 1
 
     new-instance v0, Lcom/google/vr/vrcore/library/api/ObjectWrapper;

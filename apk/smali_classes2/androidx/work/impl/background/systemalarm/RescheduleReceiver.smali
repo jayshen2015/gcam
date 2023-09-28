@@ -12,7 +12,7 @@
 
     const-string v0, "RescheduleReceiver"
 
-    invoke-static {v0}, Laxq;->b(Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v0}, Lkus;->g(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -32,22 +32,30 @@
 
 # virtual methods
 .method public final onReceive(Landroid/content/Context;Landroid/content/Intent;)V
-    .locals 2
+    .locals 4
 
-    invoke-static {}, Laxq;->a()Laxq;
+    invoke-static {}, Lkus;->l()Lkus;
 
-    new-instance v0, Ljava/lang/StringBuilder;
+    move-result-object v0
 
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+    const/4 v1, 0x1
 
-    const-string v1, "Received intent "
+    new-array v2, v1, [Ljava/lang/Object;
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    const/4 v3, 0x0
 
-    invoke-virtual {v0, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    aput-object p2, v2, v3
+
+    const-string p2, "Received intent %s"
+
+    invoke-static {p2, v2}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+
+    new-array p2, v3, [Ljava/lang/Throwable;
+
+    invoke-virtual {v0, p2}, Lkus;->h([Ljava/lang/Throwable;)V
 
     :try_start_0
-    invoke-static {p1}, Lazd;->e(Landroid/content/Context;)Lazd;
+    invoke-static {p1}, Laof;->e(Landroid/content/Context;)Laof;
 
     move-result-object p1
 
@@ -55,35 +63,28 @@
 
     move-result-object p2
 
-    sget-object v0, Lazd;->a:Ljava/lang/Object;
+    sget-object v0, Laof;->a:Ljava/lang/Object;
 
     monitor-enter v0
     :try_end_0
     .catch Ljava/lang/IllegalStateException; {:try_start_0 .. :try_end_0} :catch_0
 
     :try_start_1
-    iget-object v1, p1, Lazd;->h:Landroid/content/BroadcastReceiver$PendingResult;
+    iput-object p2, p1, Laof;->h:Landroid/content/BroadcastReceiver$PendingResult;
 
-    if-eqz v1, :cond_0
+    iget-boolean p2, p1, Laof;->g:Z
 
-    invoke-virtual {v1}, Landroid/content/BroadcastReceiver$PendingResult;->finish()V
+    if-eqz p2, :cond_0
 
-    :cond_0
-    iput-object p2, p1, Lazd;->h:Landroid/content/BroadcastReceiver$PendingResult;
-
-    iget-boolean p2, p1, Lazd;->g:Z
-
-    if-eqz p2, :cond_1
-
-    iget-object p2, p1, Lazd;->h:Landroid/content/BroadcastReceiver$PendingResult;
+    iget-object p2, p1, Laof;->h:Landroid/content/BroadcastReceiver$PendingResult;
 
     invoke-virtual {p2}, Landroid/content/BroadcastReceiver$PendingResult;->finish()V
 
     const/4 p2, 0x0
 
-    iput-object p2, p1, Lazd;->h:Landroid/content/BroadcastReceiver$PendingResult;
+    iput-object p2, p1, Laof;->h:Landroid/content/BroadcastReceiver$PendingResult;
 
-    :cond_1
+    :cond_0
     monitor-exit v0
 
     return-void
@@ -103,13 +104,17 @@
     :catch_0
     move-exception p1
 
-    invoke-static {}, Laxq;->a()Laxq;
+    invoke-static {}, Lkus;->l()Lkus;
 
     sget-object p2, Landroidx/work/impl/background/systemalarm/RescheduleReceiver;->a:Ljava/lang/String;
 
-    const-string v0, "Cannot reschedule jobs. WorkManager needs to be initialized via a ContentProvider#onCreate() or an Application#onCreate()."
+    new-array v0, v1, [Ljava/lang/Throwable;
 
-    invoke-static {p2, v0, p1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+    aput-object p1, v0, v3
+
+    const-string p1, "Cannot reschedule jobs. WorkManager needs to be initialized via a ContentProvider#onCreate() or an Application#onCreate()."
+
+    invoke-static {p2, p1, v0}, Lkus;->i(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Throwable;)V
 
     return-void
 .end method

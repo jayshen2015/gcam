@@ -2,1061 +2,548 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Landroid/hardware/SensorEventListener;
 
 
 # instance fields
-.field final synthetic a:Ljava/lang/Object;
+.field public final a:Landroid/hardware/SensorManager;
 
-.field final synthetic b:Ljava/lang/Object;
+.field public final b:Landroid/hardware/Sensor;
 
-.field private final synthetic c:I
+.field public final c:Landroid/hardware/Sensor;
+
+.field private final d:Ldyu;
+
+.field private e:J
+
+.field private f:I
+
+.field private final g:[F
+
+.field private final h:[F
+
+.field private final i:[F
+
+.field private j:D
+
+.field private k:D
 
 
 # direct methods
-.method public synthetic constructor <init>(Lcom/google/android/apps/camera/keepalive/ProcessGcService;Landroid/app/job/JobParameters;I)V
-    .locals 0
+.method public constructor <init>(Landroid/hardware/SensorManager;)V
+    .locals 9
 
-    iput p3, p0, Lekf;->c:I
+    invoke-static {}, Ldyu;->b()Ldyu;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lekf;->a:Ljava/lang/Object;
-
-    iput-object p2, p0, Lekf;->b:Ljava/lang/Object;
-
-    return-void
-.end method
-
-.method public synthetic constructor <init>(Lehy;Lkai;I)V
-    .locals 0
-
-    iput p3, p0, Lekf;->c:I
+    move-result-object v0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lekf;->b:Ljava/lang/Object;
+    const-wide/16 v1, 0x0
 
-    iput-object p2, p0, Lekf;->a:Ljava/lang/Object;
+    iput-wide v1, p0, Lekf;->e:J
 
-    return-void
-.end method
+    const/4 v1, 0x0
 
-.method public constructor <init>(Lekg;Lmqi;I)V
-    .locals 0
+    iput v1, p0, Lekf;->f:I
 
-    iput p3, p0, Lekf;->c:I
+    const/16 v1, 0x10
 
-    iput-object p1, p0, Lekf;->b:Ljava/lang/Object;
+    new-array v2, v1, [F
 
-    iput-object p2, p0, Lekf;->a:Ljava/lang/Object;
+    iput-object v2, p0, Lekf;->g:[F
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-array v3, v1, [F
 
-    return-void
-.end method
+    iput-object v3, p0, Lekf;->h:[F
 
-.method public synthetic constructor <init>(Lelj;Lelk;I)V
-    .locals 0
+    new-array v3, v1, [F
 
-    iput p3, p0, Lekf;->c:I
+    iput-object v3, p0, Lekf;->i:[F
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const-wide/16 v3, 0x0
 
-    iput-object p1, p0, Lekf;->b:Ljava/lang/Object;
+    iput-wide v3, p0, Lekf;->j:D
 
-    iput-object p2, p0, Lekf;->a:Ljava/lang/Object;
+    iput-wide v3, p0, Lekf;->k:D
 
-    return-void
-.end method
+    iput-object v0, p0, Lekf;->d:Ldyu;
 
-.method public synthetic constructor <init>(Lelj;Ljava/lang/Runnable;I)V
-    .locals 0
+    iput-object p1, p0, Lekf;->a:Landroid/hardware/SensorManager;
 
-    iput p3, p0, Lekf;->c:I
+    const/4 v0, 0x1
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-virtual {p1, v0}, Landroid/hardware/SensorManager;->getDefaultSensor(I)Landroid/hardware/Sensor;
 
-    iput-object p1, p0, Lekf;->b:Ljava/lang/Object;
+    move-result-object v0
 
-    iput-object p2, p0, Lekf;->a:Ljava/lang/Object;
+    iput-object v0, p0, Lekf;->b:Landroid/hardware/Sensor;
 
-    return-void
-.end method
+    const/4 v0, 0x4
 
-.method public synthetic constructor <init>(Lelj;Loiw;I)V
-    .locals 0
+    invoke-virtual {p1, v0}, Landroid/hardware/SensorManager;->getDefaultSensor(I)Landroid/hardware/Sensor;
 
-    iput p3, p0, Lekf;->c:I
+    move-result-object p1
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lekf;->c:Landroid/hardware/Sensor;
 
-    iput-object p1, p0, Lekf;->b:Ljava/lang/Object;
+    new-array p1, v1, [F
 
-    iput-object p2, p0, Lekf;->a:Ljava/lang/Object;
+    new-array v0, v1, [F
 
-    return-void
-.end method
+    const/4 v4, 0x0
 
-.method public synthetic constructor <init>(Leoa;Lenz;I)V
-    .locals 0
+    const/high16 v5, 0x43340000    # 180.0f
 
-    iput p3, p0, Lekf;->c:I
+    const/high16 v6, 0x3f800000    # 1.0f
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const/4 v7, 0x0
 
-    iput-object p1, p0, Lekf;->a:Ljava/lang/Object;
+    const/4 v8, 0x0
 
-    iput-object p2, p0, Lekf;->b:Ljava/lang/Object;
+    move-object v3, p1
 
-    return-void
-.end method
+    invoke-static/range {v3 .. v8}, Landroid/opengl/Matrix;->setRotateM([FIFFFF)V
 
-.method public synthetic constructor <init>(Lepa;Ljava/lang/Runnable;I)V
-    .locals 0
+    const/high16 v5, 0x42b40000    # 90.0f
 
-    iput p3, p0, Lekf;->c:I
+    const/4 v6, 0x0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const/high16 v8, 0x3f800000    # 1.0f
 
-    iput-object p1, p0, Lekf;->b:Ljava/lang/Object;
+    move-object v3, v0
 
-    iput-object p2, p0, Lekf;->a:Ljava/lang/Object;
+    invoke-static/range {v3 .. v8}, Landroid/opengl/Matrix;->setRotateM([FIFFFF)V
 
-    return-void
-.end method
+    const/4 v3, 0x0
 
-.method public synthetic constructor <init>(Lepo;Lnsx;I)V
-    .locals 0
+    const/4 v5, 0x0
 
-    iput p3, p0, Lekf;->c:I
+    const/4 v7, 0x0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    move-object v4, p1
 
-    iput-object p1, p0, Lekf;->b:Ljava/lang/Object;
+    move-object v6, v0
 
-    iput-object p2, p0, Lekf;->a:Ljava/lang/Object;
-
-    return-void
-.end method
-
-.method public synthetic constructor <init>(Lepq;Leea;I)V
-    .locals 0
-
-    iput p3, p0, Lekf;->c:I
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lekf;->a:Ljava/lang/Object;
-
-    iput-object p2, p0, Lekf;->b:Ljava/lang/Object;
-
-    return-void
-.end method
-
-.method public synthetic constructor <init>(Lepq;Lgkr;I[B[B)V
-    .locals 0
-
-    iput p3, p0, Lekf;->c:I
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lekf;->b:Ljava/lang/Object;
-
-    iput-object p2, p0, Lekf;->a:Ljava/lang/Object;
-
-    return-void
-.end method
-
-.method public synthetic constructor <init>(Lert;Lika;I)V
-    .locals 0
-
-    iput p3, p0, Lekf;->c:I
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lekf;->b:Ljava/lang/Object;
-
-    iput-object p2, p0, Lekf;->a:Ljava/lang/Object;
-
-    return-void
-.end method
-
-.method public synthetic constructor <init>(Leti;Lklv;I)V
-    .locals 0
-
-    iput p3, p0, Lekf;->c:I
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lekf;->b:Ljava/lang/Object;
-
-    iput-object p2, p0, Lekf;->a:Ljava/lang/Object;
-
-    return-void
-.end method
-
-.method public synthetic constructor <init>(Letp;Lklv;I)V
-    .locals 0
-
-    iput p3, p0, Lekf;->c:I
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lekf;->b:Ljava/lang/Object;
-
-    iput-object p2, p0, Lekf;->a:Ljava/lang/Object;
-
-    return-void
-.end method
-
-.method public synthetic constructor <init>(Leup;Landroid/content/Intent;I)V
-    .locals 0
-
-    iput p3, p0, Lekf;->c:I
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lekf;->a:Ljava/lang/Object;
-
-    iput-object p2, p0, Lekf;->b:Ljava/lang/Object;
-
-    return-void
-.end method
-
-.method public synthetic constructor <init>(Levk;Lnou;I)V
-    .locals 0
-
-    iput p3, p0, Lekf;->c:I
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lekf;->b:Ljava/lang/Object;
-
-    iput-object p2, p0, Lekf;->a:Ljava/lang/Object;
-
-    return-void
-.end method
-
-.method public synthetic constructor <init>(Lezx;Logd;I)V
-    .locals 0
-
-    iput p3, p0, Lekf;->c:I
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lekf;->b:Ljava/lang/Object;
-
-    iput-object p2, p0, Lekf;->a:Ljava/lang/Object;
-
-    return-void
-.end method
-
-.method public synthetic constructor <init>(Lkpb;Lkbf;I)V
-    .locals 0
-
-    iput p3, p0, Lekf;->c:I
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lekf;->a:Ljava/lang/Object;
-
-    iput-object p2, p0, Lekf;->b:Ljava/lang/Object;
+    invoke-static/range {v2 .. v7}, Landroid/opengl/Matrix;->multiplyMM([FI[FI[FI)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final run()V
-    .locals 8
+.method public final declared-synchronized a()D
+    .locals 2
 
-    iget v0, p0, Lekf;->c:I
+    monitor-enter p0
+
+    :try_start_0
+    iget-wide v0, p0, Lekf;->k:D
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    monitor-exit p0
+
+    return-wide v0
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit p0
+
+    throw v0
+.end method
+
+.method public final declared-synchronized b()D
+    .locals 2
+
+    monitor-enter p0
+
+    :try_start_0
+    iget-wide v0, p0, Lekf;->j:D
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    monitor-exit p0
+
+    return-wide v0
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit p0
+
+    throw v0
+.end method
+
+.method public final declared-synchronized c(I)V
+    .locals 0
+
+    monitor-enter p0
+
+    :try_start_0
+    iput p1, p0, Lekf;->f:I
+
+    iget-object p1, p0, Lekf;->d:Ldyu;
+
+    invoke-virtual {p1}, Ldyu;->e()V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    monitor-exit p0
+
+    return-void
+
+    :catchall_0
+    move-exception p1
+
+    monitor-exit p0
+
+    throw p1
+.end method
+
+.method public final declared-synchronized d([F)V
+    .locals 4
+
+    monitor-enter p0
+
+    :try_start_0
+    iget-object v0, p0, Lekf;->i:[F
+
+    const/4 v1, 0x0
+
+    aget v2, v0, v1
+
+    aput v2, p1, v1
+
+    const/4 v1, 0x1
+
+    aget v2, v0, v1
+
+    aput v2, p1, v1
 
     const/4 v1, 0x2
 
-    const/4 v2, 0x0
+    aget v2, v0, v1
 
-    const/4 v3, 0x0
+    aput v2, p1, v1
 
-    const/4 v4, 0x1
+    const/4 v1, 0x3
 
-    invoke-static {v4}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+    const/4 v2, 0x4
 
-    move-result-object v5
+    aget v3, v0, v2
 
-    packed-switch v0, :pswitch_data_0
+    aput v3, p1, v1
 
-    iget-object v0, p0, Lekf;->b:Ljava/lang/Object;
+    const/4 v1, 0x5
 
-    iget-object v1, p0, Lekf;->a:Ljava/lang/Object;
+    aget v3, v0, v1
 
-    move-object v2, v0
+    aput v3, p1, v2
 
-    check-cast v2, Levk;
+    const/4 v2, 0x6
 
-    iget-object v5, v2, Levk;->O:Ljava/util/List;
+    aget v3, v0, v2
 
-    monitor-enter v5
+    aput v3, p1, v1
 
-    goto/16 :goto_1
+    const/16 v1, 0x8
 
-    :pswitch_0
-    iget-object v0, p0, Lekf;->a:Ljava/lang/Object;
+    aget v3, v0, v1
 
-    iget-object v1, p0, Lekf;->b:Ljava/lang/Object;
+    aput v3, p1, v2
 
-    check-cast v0, Leup;
+    const/4 v2, 0x7
 
-    iget-object v0, v0, Leup;->e:Lcgx;
+    const/16 v3, 0x9
 
-    check-cast v1, Landroid/content/Intent;
+    aget v3, v0, v3
 
-    invoke-interface {v0, v1}, Lcgx;->n(Landroid/content/Intent;)V
+    aput v3, p1, v2
 
-    return-void
+    const/16 v2, 0xa
 
-    :pswitch_1
-    iget-object v0, p0, Lekf;->b:Ljava/lang/Object;
+    aget v0, v0, v2
 
-    iget-object v1, p0, Lekf;->a:Ljava/lang/Object;
+    aput v0, p1, v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    check-cast v0, Leti;
-
-    iget-object v0, v0, Leti;->b:Letp;
-
-    check-cast v1, Lklv;
-
-    invoke-virtual {v0, v2, v1}, Letp;->y(ZLklv;)V
+    monitor-exit p0
 
     return-void
 
-    :pswitch_2
-    iget-object v0, p0, Lekf;->b:Ljava/lang/Object;
+    :catchall_0
+    move-exception p1
 
-    iget-object v1, p0, Lekf;->a:Ljava/lang/Object;
+    monitor-exit p0
 
-    check-cast v1, Lklv;
+    throw p1
+.end method
 
-    check-cast v0, Letp;
+.method final declared-synchronized e([FIJ)V
+    .locals 15
 
-    invoke-virtual {v0, v4, v1}, Letp;->y(ZLklv;)V
+    move-object v1, p0
 
-    return-void
+    move-object/from16 v0, p1
 
-    :pswitch_3
-    iget-object v0, p0, Lekf;->b:Ljava/lang/Object;
+    move/from16 v2, p2
 
-    iget-object v1, p0, Lekf;->a:Ljava/lang/Object;
+    move-wide/from16 v3, p3
 
-    check-cast v0, Lert;
+    monitor-enter p0
 
-    iget-object v0, v0, Lert;->Q:Logd;
+    :try_start_0
+    iget-wide v5, v1, Lekf;->e:J
 
-    invoke-interface {v0}, Logd;->get()Ljava/lang/Object;
+    const-wide/16 v7, 0x0
+
+    cmp-long v9, v5, v7
+
+    if-nez v9, :cond_0
+
+    iget-object v5, v1, Lekf;->d:Ldyu;
+
+    invoke-virtual {v5}, Ldyu;->e()V
+
+    :cond_0
+    iput-wide v3, v1, Lekf;->e:J
+
+    const/4 v5, 0x1
+
+    if-ne v2, v5, :cond_1
+
+    iget-object v2, v1, Lekf;->d:Ldyu;
+
+    invoke-virtual {v2, v0, v3, v4}, Ldyu;->c([FJ)V
+
+    goto :goto_0
+
+    :cond_1
+    const/4 v5, 0x4
+
+    if-ne v2, v5, :cond_2
+
+    iget-object v2, v1, Lekf;->d:Ldyu;
+
+    invoke-virtual {v2, v0, v3, v4}, Ldyu;->d([FJ)V
+
+    :cond_2
+    :goto_0
+    iget-object v0, v1, Lekf;->d:Ldyu;
+
+    invoke-virtual {v0}, Ldyu;->h()[D
 
     move-result-object v0
 
-    check-cast v0, Lipk;
+    const/4 v2, 0x0
 
-    check-cast v1, Lika;
+    :goto_1
+    const/16 v3, 0x10
 
-    invoke-virtual {v1}, Lika;->name()Ljava/lang/String;
+    if-ge v2, v3, :cond_3
 
-    move-result-object v1
+    iget-object v3, v1, Lekf;->h:[F
 
-    invoke-interface {v0, v1}, Lipk;->g(Ljava/lang/String;)V
+    aget-wide v4, v0, v2
 
-    return-void
+    double-to-float v4, v4
 
-    :pswitch_4
-    iget-object v0, p0, Lekf;->b:Ljava/lang/Object;
+    aput v4, v3, v2
 
-    iget-object v1, p0, Lekf;->a:Ljava/lang/Object;
+    add-int/lit8 v2, v2, 0x1
 
-    check-cast v1, Lgkr;
+    goto :goto_1
 
-    iget-object v4, v1, Lgkr;->b:Ljava/lang/Object;
+    :cond_3
+    iget-object v3, v1, Lekf;->h:[F
 
-    invoke-interface {v4}, Lfzz;->d()Lfzy;
+    const/4 v4, 0x0
 
-    move-result-object v4
+    const/high16 v5, -0x3d4c0000    # -90.0f
 
-    invoke-interface {v4, v3}, Lfzy;->bn(Ljava/lang/Object;)V
+    const/high16 v6, 0x3f800000    # 1.0f
 
-    iget-object v1, v1, Lgkr;->c:Ljava/lang/Object;
+    const/4 v7, 0x0
 
-    invoke-interface {v1}, Lgxl;->h()Lgxy;
+    const/4 v8, 0x0
 
-    move-result-object v1
+    invoke-static/range {v3 .. v8}, Landroid/opengl/Matrix;->rotateM([FIFFFF)V
 
-    check-cast v0, Lepq;
+    iget-object v9, v1, Lekf;->i:[F
 
-    iget-object v4, v0, Lepq;->d:Ljava/util/Map;
+    const/4 v10, 0x0
 
-    invoke-interface {v4}, Ljava/util/Map;->values()Ljava/util/Collection;
+    iget-object v11, v1, Lekf;->g:[F
 
-    move-result-object v4
+    const/4 v12, 0x0
 
-    invoke-interface {v4}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
+    iget-object v13, v1, Lekf;->h:[F
 
-    move-result-object v4
+    const/4 v14, 0x0
 
-    :cond_0
-    invoke-interface {v4}, Ljava/util/Iterator;->hasNext()Z
+    invoke-static/range {v9 .. v14}, Landroid/opengl/Matrix;->multiplyMM([FI[FI[FI)V
 
-    move-result v5
+    iget-object v2, v1, Lekf;->i:[F
 
-    if-eqz v5, :cond_1
+    const/4 v3, 0x0
 
-    invoke-interface {v4}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    iget v0, v1, Lekf;->f:I
 
-    move-result-object v5
+    neg-int v0, v0
 
-    check-cast v5, Lepd;
+    int-to-float v4, v0
 
-    iget-object v6, v5, Lepd;->b:Leea;
+    const/high16 v5, 0x3f800000    # 1.0f
 
-    iget-object v6, v6, Leea;->v:Lgkr;
+    const/4 v6, 0x0
 
-    iget-object v6, v6, Lgkr;->c:Ljava/lang/Object;
+    const/4 v7, 0x0
 
-    invoke-interface {v6}, Lgxl;->h()Lgxy;
+    invoke-static/range {v2 .. v7}, Landroid/opengl/Matrix;->rotateM([FIFFFF)V
 
-    move-result-object v6
+    iget-object v0, v1, Lekf;->i:[F
 
-    invoke-virtual {v1, v6}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+    const/4 v2, 0x2
 
-    move-result v6
+    aget v2, v0, v2
 
-    if-eqz v6, :cond_0
+    float-to-double v2, v2
 
-    iget-object v6, v5, Lepd;->i:Landroid/graphics/Bitmap;
+    const/16 v4, 0xa
 
-    if-eqz v6, :cond_0
+    aget v0, v0, v4
 
-    invoke-virtual {v0, v5, v6, v2}, Lepq;->l(Lepd;Landroid/graphics/Bitmap;Z)V
+    float-to-double v4, v0
 
-    iput-object v3, v5, Lepd;->i:Landroid/graphics/Bitmap;
+    invoke-static {v2, v3, v4, v5}, Ljava/lang/Math;->hypot(DD)D
 
-    :cond_1
-    return-void
+    move-result-wide v6
 
-    :pswitch_5
-    iget-object v0, p0, Lekf;->a:Ljava/lang/Object;
+    const-wide v8, 0x3fb999999999999aL    # 0.1
 
-    iget-object v1, p0, Lekf;->b:Ljava/lang/Object;
+    const-wide/16 v10, 0x0
 
-    sget-object v2, Lmpx;->a:Lmpx;
+    cmpg-double v0, v6, v8
 
-    check-cast v1, Leea;
+    if-gez v0, :cond_4
 
-    check-cast v0, Lepq;
+    goto :goto_2
 
-    invoke-virtual {v0, v1, v2}, Lepq;->k(Leea;Lmqp;)V
+    :cond_4
+    const-wide v6, -0x3fa9800000000000L    # -90.0
 
-    return-void
+    invoke-static {v4, v5, v2, v3}, Ljava/lang/Math;->atan2(DD)D
 
-    :pswitch_6
-    iget-object v0, p0, Lekf;->b:Ljava/lang/Object;
+    move-result-wide v2
 
-    iget-object v1, p0, Lekf;->a:Ljava/lang/Object;
+    invoke-static {v2, v3}, Ljava/lang/Math;->toDegrees(D)D
 
-    check-cast v0, Lepo;
+    move-result-wide v2
 
-    iget-boolean v2, v0, Lepo;->m:Z
+    sub-double/2addr v6, v2
 
-    if-nez v2, :cond_2
+    const-wide v2, 0x4076800000000000L    # 360.0
 
-    iget-object v2, v0, Lepo;->f:Lkbc;
+    cmpg-double v0, v6, v10
 
-    const-string v3, "processPslFrame"
+    if-gez v0, :cond_5
 
-    invoke-interface {v2, v3}, Lkbc;->e(Ljava/lang/String;)V
+    add-double/2addr v6, v2
 
-    iget-object v2, v0, Lepo;->c:Leph;
+    :cond_5
+    move-wide v10, v6
 
-    iget v3, v0, Lepo;->d:I
+    cmpl-double v0, v10, v2
 
-    check-cast v1, Lnsx;
+    if-ltz v0, :cond_6
 
-    invoke-virtual {v2, v3, v1}, Leph;->h(ILnsx;)V
+    const-wide v2, -0x3f89800000000000L    # -360.0
 
-    iget-object v0, v0, Lepo;->f:Lkbc;
+    add-double/2addr v10, v2
 
-    invoke-interface {v0}, Lkbc;->f()V
+    :cond_6
+    :goto_2
+    iput-wide v10, v1, Lekf;->k:D
 
-    return-void
+    iget-object v0, v1, Lekf;->i:[F
 
-    :cond_2
-    check-cast v1, Lnsx;
+    const/4 v2, 0x6
 
-    iget-object v0, v1, Lnsx;->d:Ljava/lang/Runnable;
+    aget v0, v0, v2
 
-    invoke-interface {v0}, Ljava/lang/Runnable;->run()V
+    float-to-double v2, v0
 
-    return-void
+    invoke-static {v2, v3}, Ljava/lang/Math;->asin(D)D
 
-    :pswitch_7
-    iget-object v0, p0, Lekf;->b:Ljava/lang/Object;
+    move-result-wide v2
 
-    iget-object v1, p0, Lekf;->a:Ljava/lang/Object;
+    invoke-static {v2, v3}, Ljava/lang/Math;->toDegrees(D)D
 
-    invoke-interface {v1}, Ljava/lang/Runnable;->run()V
+    move-result-wide v2
 
-    sget-object v1, Lepb;->a:Lnak;
+    iput-wide v2, v1, Lekf;->j:D
 
-    check-cast v0, Lepa;
+    iget-object v0, v1, Lekf;->i:[F
 
-    iget-object v0, v0, Lepa;->i:Lepb;
+    const/4 v2, 0x5
 
-    iget-object v0, v0, Lepb;->e:Ljvk;
+    aget v0, v0, v2
 
-    invoke-virtual {v0, v5}, Ljvk;->bn(Ljava/lang/Object;)V
+    invoke-static {v0}, Ljava/lang/Math;->abs(F)F
 
-    return-void
+    move-result v0
 
-    :pswitch_8
-    iget-object v0, p0, Lekf;->a:Ljava/lang/Object;
+    float-to-double v2, v0
 
-    iget-object v1, p0, Lekf;->b:Ljava/lang/Object;
+    invoke-static {v2, v3}, Ljava/lang/Math;->asin(D)D
 
-    invoke-interface {v0}, Lkpb;->close()V
+    move-result-wide v2
 
-    invoke-interface {v1}, Lkbf;->a()V
+    invoke-static {v2, v3}, Ljava/lang/Math;->toDegrees(D)D
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    return-void
-
-    :pswitch_9
-    iget-object v0, p0, Lekf;->a:Ljava/lang/Object;
-
-    iget-object v1, p0, Lekf;->b:Ljava/lang/Object;
-
-    move-object v2, v0
-
-    check-cast v2, Leoa;
-
-    iget-object v2, v2, Leoa;->e:Ljava/lang/Object;
-
-    monitor-enter v2
-
-    :try_start_0
-    check-cast v0, Leoa;
-
-    iget-object v0, v0, Leoa;->b:Ljava/util/Set;
-
-    invoke-interface {v0, v1}, Ljava/util/Set;->remove(Ljava/lang/Object;)Z
-
-    monitor-exit v2
+    monitor-exit p0
 
     return-void
 
     :catchall_0
     move-exception v0
 
-    monitor-exit v2
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    monitor-exit p0
 
-    throw v0
-
-    :pswitch_a
-    iget-object v0, p0, Lekf;->a:Ljava/lang/Object;
-
-    iget-object v1, p0, Lekf;->b:Ljava/lang/Object;
-
-    move-object v2, v0
-
-    check-cast v2, Leoa;
-
-    iget-object v3, v2, Leoa;->e:Ljava/lang/Object;
-
-    monitor-enter v3
-
-    :try_start_1
-    check-cast v0, Leoa;
-
-    iget-object v0, v0, Leoa;->b:Ljava/util/Set;
-
-    invoke-interface {v0, v1}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
-
-    monitor-exit v3
-
-    return-void
-
-    :catchall_1
-    move-exception v0
-
-    monitor-exit v3
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_1
-
-    throw v0
-
-    :pswitch_b
-    iget-object v0, p0, Lekf;->a:Ljava/lang/Object;
-
-    iget-object v3, p0, Lekf;->b:Ljava/lang/Object;
-
-    move-object v5, v0
-
-    check-cast v5, Lcom/google/android/apps/camera/keepalive/ProcessGcService;
-
-    iget-object v6, v5, Lcom/google/android/apps/camera/keepalive/ProcessGcService;->c:Lend;
-
-    invoke-virtual {v6}, Lend;->c()Z
-
-    move-result v6
-
-    const/4 v7, 0x3
-
-    if-eqz v6, :cond_3
-
-    sget-object v1, Lcom/google/android/apps/camera/keepalive/ProcessGcService;->a:Lnak;
-
-    invoke-virtual {v1}, Lnaf;->c()Lnaz;
-
-    move-result-object v1
-
-    const-string v2, "Process is Alive! Rescheduling."
-
-    const/16 v6, 0x658
-
-    invoke-static {v1, v2, v6}, Ld;->g(Lnaz;Ljava/lang/String;C)V
-
-    invoke-virtual {v5, v7}, Lcom/google/android/apps/camera/keepalive/ProcessGcService;->a(I)V
-
-    check-cast v3, Landroid/app/job/JobParameters;
-
-    invoke-virtual {v5, v3, v4}, Lcom/google/android/apps/camera/keepalive/ProcessGcService;->jobFinished(Landroid/app/job/JobParameters;Z)V
-
-    check-cast v0, Landroid/content/Context;
-
-    invoke-static {v0}, Lgxb;->o(Landroid/content/Context;)V
-
-    return-void
-
-    :cond_3
-    check-cast v3, Landroid/app/job/JobParameters;
-
-    invoke-virtual {v5, v3, v2}, Lcom/google/android/apps/camera/keepalive/ProcessGcService;->jobFinished(Landroid/app/job/JobParameters;Z)V
-
-    invoke-virtual {v5, v1}, Lcom/google/android/apps/camera/keepalive/ProcessGcService;->a(I)V
-
-    iget-object v0, v5, Lcom/google/android/apps/camera/keepalive/ProcessGcService;->d:Landroid/os/Handler;
-
-    new-instance v1, Leli;
-
-    invoke-direct {v1, v5, v7}, Leli;-><init>(Lcom/google/android/apps/camera/keepalive/ProcessGcService;I)V
-
-    const-wide/16 v2, 0x1f4
-
-    invoke-virtual {v0, v1, v2, v3}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
-
-    return-void
-
-    :pswitch_c
-    iget-object v0, p0, Lekf;->b:Ljava/lang/Object;
-
-    iget-object v1, p0, Lekf;->a:Ljava/lang/Object;
-
-    invoke-interface {v1}, Logd;->get()Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Lenc;
-
-    check-cast v0, Lfak;
-
-    invoke-virtual {v0, v1}, Lfak;->e(Lfaz;)V
-
-    return-void
-
-    :pswitch_d
-    iget-object v0, p0, Lekf;->b:Ljava/lang/Object;
-
-    iget-object v1, p0, Lekf;->a:Ljava/lang/Object;
-
-    sget-object v4, Lelj;->a:Ljava/lang/Object;
-
-    monitor-enter v4
-
-    :try_start_2
-    invoke-interface {v1}, Ljava/lang/Runnable;->run()V
-
-    move-object v1, v0
-
-    check-cast v1, Lelj;
-
-    invoke-virtual {v1}, Lelj;->f()Lmqp;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Lmqp;->g()Z
-
-    move-result v5
-
-    if-eqz v5, :cond_4
-
-    invoke-virtual {v1}, Lmqp;->c()Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Lelk;
-
-    move-object v3, v0
-
-    check-cast v3, Lelj;
-
-    invoke-virtual {v3, v1}, Lelj;->l(Lelk;)V
-
-    goto :goto_0
-
-    :cond_4
-    move-object v1, v0
-
-    check-cast v1, Lelj;
-
-    iput-object v3, v1, Lelj;->l:Lelk;
-
-    :goto_0
-    check-cast v0, Lelj;
-
-    iput-boolean v2, v0, Lelj;->g:Z
-
-    monitor-exit v4
-
-    return-void
-
-    :catchall_2
-    move-exception v0
-
-    monitor-exit v4
-    :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_2
-
-    throw v0
-
-    :pswitch_e
-    iget-object v0, p0, Lekf;->b:Ljava/lang/Object;
-
-    iget-object v1, p0, Lekf;->a:Ljava/lang/Object;
-
-    sget-object v2, Lelj;->a:Ljava/lang/Object;
-
-    monitor-enter v2
-
-    :try_start_3
-    check-cast v0, Lelj;
-
-    iget-object v0, v0, Lelj;->d:Ljava/util/PriorityQueue;
-
-    invoke-virtual {v0, v1}, Ljava/util/PriorityQueue;->remove(Ljava/lang/Object;)Z
-
-    monitor-exit v2
-
-    return-void
-
-    :catchall_3
-    move-exception v0
-
-    monitor-exit v2
-    :try_end_3
-    .catchall {:try_start_3 .. :try_end_3} :catchall_3
-
-    throw v0
-
-    :pswitch_f
-    iget-object v0, p0, Lekf;->b:Ljava/lang/Object;
-
-    iget-object v1, p0, Lekf;->a:Ljava/lang/Object;
-
-    sget-object v2, Lelj;->a:Ljava/lang/Object;
-
-    monitor-enter v2
-
-    :try_start_4
-    check-cast v0, Lelj;
-
-    iget-object v0, v0, Lelj;->l:Lelk;
-
-    invoke-virtual {v1, v0}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_5
-
-    invoke-interface {v1}, Lelk;->h()V
-
-    :cond_5
-    monitor-exit v2
-
-    return-void
-
-    :catchall_4
-    move-exception v0
-
-    monitor-exit v2
-    :try_end_4
-    .catchall {:try_start_4 .. :try_end_4} :catchall_4
-
-    throw v0
-
-    :pswitch_10
-    iget-object v0, p0, Lekf;->b:Ljava/lang/Object;
-
-    iget-object v7, p0, Lekf;->a:Ljava/lang/Object;
-
-    check-cast v0, Lelj;
-
-    iget v2, v0, Lelj;->n:I
-
-    iget-boolean v3, v0, Lelj;->h:Z
-
-    iget-boolean v4, v0, Lelj;->i:Z
-
-    iget-object v5, v0, Lelj;->j:Liko;
-
-    iget-object v6, v0, Lelj;->k:Lhyn;
-
-    move-object v1, v7
-
-    invoke-interface/range {v1 .. v6}, Lelk;->q(IZZLiko;Lhyn;)V
-
-    invoke-interface {v7}, Lelk;->j()V
-
-    return-void
-
-    :pswitch_11
-    iget-object v0, p0, Lekf;->b:Ljava/lang/Object;
-
-    iget-object v1, p0, Lekf;->a:Ljava/lang/Object;
-
-    check-cast v1, Lihj;
-
-    invoke-virtual {v1}, Lihj;->a()Lihg;
-
-    move-result-object v1
-
-    iget-object v1, v1, Lihg;->c:Ljava/lang/Object;
-
-    sget-object v2, Lhyh;->a:Lhyh;
-
-    check-cast v1, Lcom/google/android/apps/camera/ui/views/MainActivityLayout;
-
-    invoke-virtual {v1, v0, v2}, Lcom/google/android/apps/camera/ui/views/MainActivityLayout;->d(Lhyi;Lhyh;)V
-
-    return-void
-
-    :pswitch_12
-    iget-object v0, p0, Lekf;->b:Ljava/lang/Object;
-
-    iget-object v1, p0, Lekf;->a:Ljava/lang/Object;
-
-    check-cast v0, Lehy;
-
-    iget-object v2, v0, Lehy;->c:Leia;
-
-    iget-object v2, v2, Leia;->c:Lejo;
-
-    invoke-virtual {v2}, Lejl;->f()V
-
-    sget-object v2, Lfmg;->b:Lfmg;
-
-    invoke-interface {v1, v2}, Lkai;->bn(Ljava/lang/Object;)V
-
-    iget-object v0, v0, Lehy;->c:Leia;
-
-    iget-object v0, v0, Leia;->f:Ljvk;
-
-    invoke-virtual {v0, v5}, Ljvk;->bn(Ljava/lang/Object;)V
-
-    return-void
-
-    :pswitch_13
-    iget-object v0, p0, Lekf;->a:Ljava/lang/Object;
-
-    iget-object v2, p0, Lekf;->b:Ljava/lang/Object;
-
-    check-cast v2, Lekg;
-
-    iget-object v2, v2, Lekg;->d:Lejt;
-
-    invoke-interface {v2, v1}, Lejt;->getPreview(I)Landroid/graphics/Bitmap;
-
-    move-result-object v1
-
-    invoke-interface {v0, v1}, Lmqi;->apply(Ljava/lang/Object;)Ljava/lang/Object;
-
-    return-void
-
-    :goto_1
-    :try_start_5
-    check-cast v0, Levk;
-
-    iget-object v0, v0, Levk;->O:Ljava/util/List;
-
-    invoke-interface {v0, v1}, Ljava/util/List;->remove(Ljava/lang/Object;)Z
-
-    monitor-exit v5
-    :try_end_5
-    .catchall {:try_start_5 .. :try_end_5} :catchall_5
-
-    iput-object v3, v2, Levk;->P:Lgya;
-
-    iget-object v0, v2, Levk;->D:Lmqp;
-
-    invoke-virtual {v0}, Lmqp;->g()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_6
-
-    iget-object v0, v2, Levk;->D:Lmqp;
-
-    invoke-virtual {v0}, Lmqp;->c()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lckr;
-
-    invoke-interface {v0}, Lckr;->d()V
-
-    :cond_6
-    iget-object v0, v2, Levk;->T:Lflk;
-
-    if-eqz v0, :cond_7
-
-    invoke-virtual {v0}, Lflk;->b()Ljvs;
-
-    move-result-object v0
-
-    invoke-interface {v0}, Ljvs;->bm()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/lang/Boolean;
-
-    invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
-
-    move-result v0
-
-    invoke-virtual {v2, v0}, Levk;->w(Z)V
-
-    :cond_7
-    iget-object v0, v2, Levk;->V:Lhdk;
-
-    invoke-virtual {v0}, Lhdk;->g()V
-
-    iget-object v0, v2, Levk;->u:Lflp;
-
-    invoke-virtual {v0}, Lflp;->c()V
-
-    iget-object v0, v2, Levk;->r:Litm;
-
-    invoke-interface {v0, v4}, Litm;->I(Z)V
-
-    iget-object v0, v2, Levk;->r:Litm;
-
-    invoke-interface {v0}, Litm;->p()V
-
-    iget-object v0, v2, Levk;->D:Lmqp;
-
-    invoke-virtual {v0}, Lmqp;->g()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_8
-
-    iget-object v0, v2, Levk;->D:Lmqp;
-
-    invoke-virtual {v0}, Lmqp;->c()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lckr;
-
-    invoke-interface {v0}, Lckr;->m()V
-
-    :cond_8
-    iget-object v0, v2, Levk;->z:Libj;
-
-    invoke-interface {v0, v4}, Libj;->l(Z)V
-
-    iget-object v0, v2, Levk;->e:Lcgx;
-
-    invoke-interface {v0}, Lcgx;->g()Lcha;
-
-    move-result-object v0
-
-    invoke-interface {v0}, Lcha;->f()V
-
-    iget-object v0, v2, Levk;->B:Lmqp;
-
-    invoke-virtual {v0}, Lmqp;->g()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_9
-
-    iget-object v0, v2, Levk;->B:Lmqp;
-
-    invoke-virtual {v0}, Lmqp;->c()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lhlx;
-
-    iget-object v1, v2, Levk;->e:Lcgx;
-
-    invoke-interface {v1}, Lcgx;->l()Lika;
-
-    iget-object v1, v2, Levk;->C:Lgla;
-
-    invoke-virtual {v1}, Lgla;->m()V
-
-    invoke-interface {v0}, Lhlx;->a()V
-
-    :cond_9
-    return-void
-
-    :catchall_5
-    move-exception v0
-
-    :try_start_6
-    monitor-exit v5
-    :try_end_6
-    .catchall {:try_start_6 .. :try_end_6} :catchall_5
-
-    goto :goto_3
-
-    :goto_2
-    throw v0
+    goto :goto_4
 
     :goto_3
-    goto :goto_2
+    throw v0
 
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_13
-        :pswitch_12
-        :pswitch_11
-        :pswitch_10
-        :pswitch_f
-        :pswitch_e
-        :pswitch_d
-        :pswitch_c
-        :pswitch_b
-        :pswitch_a
-        :pswitch_9
-        :pswitch_8
-        :pswitch_7
-        :pswitch_6
-        :pswitch_5
-        :pswitch_4
-        :pswitch_3
-        :pswitch_2
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
+    :goto_4
+    goto :goto_3
+.end method
+
+.method public final onAccuracyChanged(Landroid/hardware/Sensor;I)V
+    .locals 0
+
+    return-void
+.end method
+
+.method public final onSensorChanged(Landroid/hardware/SensorEvent;)V
+    .locals 4
+
+    iget-object v0, p1, Landroid/hardware/SensorEvent;->values:[F
+
+    iget-object v1, p1, Landroid/hardware/SensorEvent;->sensor:Landroid/hardware/Sensor;
+
+    invoke-virtual {v1}, Landroid/hardware/Sensor;->getType()I
+
+    move-result v1
+
+    iget-wide v2, p1, Landroid/hardware/SensorEvent;->timestamp:J
+
+    invoke-virtual {p0, v0, v1, v2, v3}, Lekf;->e([FIJ)V
+
+    return-void
 .end method

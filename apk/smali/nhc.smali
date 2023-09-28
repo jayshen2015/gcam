@@ -1,188 +1,98 @@
-.class public final Lnhc;
-.super Lnws;
-
-# interfaces
-.implements Lnxz;
+.class public final enum Lnhc;
+.super Ljava/lang/Enum;
 
 
 # static fields
-.field public static final f:Lnhc;
+.field public static final enum a:Lnhc;
 
-.field private static volatile g:Lnyf;
+.field public static final enum b:Lnhc;
 
+.field public static final enum c:Lnhc;
 
-# instance fields
-.field public a:I
+.field public static final enum d:Lnhc;
 
-.field public b:Lngp;
-
-.field public c:J
-
-.field public d:J
-
-.field public e:Lnhi;
+.field private static final synthetic e:[Lnhc;
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 2
+    .locals 9
 
     new-instance v0, Lnhc;
 
-    invoke-direct {v0}, Lnhc;-><init>()V
-
-    sput-object v0, Lnhc;->f:Lnhc;
-
-    const-class v1, Lnhc;
-
-    invoke-static {v1, v0}, Lnws;->aa(Ljava/lang/Class;Lnws;)V
-
-    return-void
-.end method
-
-.method private constructor <init>()V
-    .locals 0
-
-    invoke-direct {p0}, Lnws;-><init>()V
-
-    return-void
-.end method
-
-
-# virtual methods
-.method protected final a(ILjava/lang/Object;)Ljava/lang/Object;
-    .locals 3
-
-    add-int/lit8 p1, p1, -0x1
-
-    const/4 p2, 0x1
-
-    packed-switch p1, :pswitch_data_0
-
-    :pswitch_0
-    const/4 p1, 0x0
-
-    return-object p1
-
-    :pswitch_1
-    sget-object p1, Lnhc;->g:Lnyf;
-
-    if-nez p1, :cond_1
-
-    const-class p2, Lnhc;
-
-    monitor-enter p2
-
-    :try_start_0
-    sget-object p1, Lnhc;->g:Lnyf;
-
-    if-nez p1, :cond_0
-
-    new-instance p1, Lnwo;
-
-    sget-object v0, Lnhc;->f:Lnhc;
-
-    invoke-direct {p1, v0}, Lnwo;-><init>(Lnws;)V
-
-    sput-object p1, Lnhc;->g:Lnyf;
-
-    :cond_0
-    monitor-exit p2
-
-    goto :goto_0
-
-    :catchall_0
-    move-exception p1
-
-    monitor-exit p2
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw p1
-
-    :cond_1
-    :goto_0
-    return-object p1
-
-    :pswitch_2
-    sget-object p1, Lnhc;->f:Lnhc;
-
-    return-object p1
-
-    :pswitch_3
-    new-instance p1, Lnwn;
-
-    sget-object p2, Lnhc;->f:Lnhc;
-
-    invoke-direct {p1, p2}, Lnwn;-><init>(Lnws;)V
-
-    return-object p1
-
-    :pswitch_4
-    new-instance p1, Lnhc;
-
-    invoke-direct {p1}, Lnhc;-><init>()V
-
-    return-object p1
-
-    :pswitch_5
-    const-string p1, "a"
-
-    const-string v0, "\u0001\u0004\u0000\u0001\u0001\u0004\u0004\u0000\u0000\u0000\u0001\u1009\u0000\u0002\u1002\u0001\u0003\u1002\u0002\u0004\u1009\u0003"
-
-    const/4 v1, 0x5
-
-    new-array v1, v1, [Ljava/lang/Object;
+    const-string v1, "POSSIBLE"
 
     const/4 v2, 0x0
 
-    aput-object p1, v1, v2
+    invoke-direct {v0, v1, v2}, Lnhc;-><init>(Ljava/lang/String;I)V
 
-    const-string p1, "b"
+    sput-object v0, Lnhc;->a:Lnhc;
 
-    aput-object p1, v1, p2
+    new-instance v1, Lnhc;
 
-    const/4 p1, 0x2
+    const-string v3, "VALID"
 
-    const-string p2, "c"
+    const/4 v4, 0x1
 
-    aput-object p2, v1, p1
+    invoke-direct {v1, v3, v4}, Lnhc;-><init>(Ljava/lang/String;I)V
 
-    const/4 p1, 0x3
+    sput-object v1, Lnhc;->b:Lnhc;
 
-    const-string p2, "d"
+    new-instance v3, Lnhc;
 
-    aput-object p2, v1, p1
+    const-string v5, "STRICT_GROUPING"
 
-    const/4 p1, 0x4
+    const/4 v6, 0x2
 
-    const-string p2, "e"
+    invoke-direct {v3, v5, v6}, Lnhc;-><init>(Ljava/lang/String;I)V
 
-    aput-object p2, v1, p1
+    sput-object v3, Lnhc;->c:Lnhc;
 
-    sget-object p1, Lnhc;->f:Lnhc;
+    new-instance v5, Lnhc;
 
-    invoke-static {p1, v0, v1}, Lnhc;->X(Lnxy;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/Object;
+    const-string v7, "EXACT_GROUPING"
 
-    move-result-object p1
+    const/4 v8, 0x3
 
-    return-object p1
+    invoke-direct {v5, v7, v8}, Lnhc;-><init>(Ljava/lang/String;I)V
 
-    :pswitch_6
-    invoke-static {p2}, Ljava/lang/Byte;->valueOf(B)Ljava/lang/Byte;
+    sput-object v5, Lnhc;->d:Lnhc;
 
-    move-result-object p1
+    const/4 v7, 0x4
 
-    return-object p1
+    new-array v7, v7, [Lnhc;
 
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_6
-        :pswitch_0
-        :pswitch_5
-        :pswitch_4
-        :pswitch_3
-        :pswitch_2
-        :pswitch_1
-    .end packed-switch
+    aput-object v0, v7, v2
+
+    aput-object v1, v7, v4
+
+    aput-object v3, v7, v6
+
+    aput-object v5, v7, v8
+
+    sput-object v7, Lnhc;->e:[Lnhc;
+
+    return-void
+.end method
+
+.method private constructor <init>(Ljava/lang/String;I)V
+    .locals 0
+
+    invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    return-void
+.end method
+
+.method public static values()[Lnhc;
+    .locals 1
+
+    sget-object v0, Lnhc;->e:[Lnhc;
+
+    invoke-virtual {v0}, [Lnhc;->clone()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, [Lnhc;
+
+    return-object v0
 .end method

@@ -1,168 +1,227 @@
 .class public final Lbaa;
-.super Ljava/lang/Object;
+.super Ljava/io/OutputStream;
 
 
 # instance fields
-.field public final a:Z
+.field private final a:Ljava/io/OutputStream;
 
-.field public final b:Z
+.field private b:[B
 
-.field public final c:Z
+.field private final c:Lbct;
 
-.field public final d:Z
+.field private d:I
 
 
 # direct methods
-.method public constructor <init>(ZZZZ)V
-    .locals 0
+.method public constructor <init>(Ljava/io/OutputStream;Lbct;)V
+    .locals 1
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/io/OutputStream;-><init>()V
 
-    iput-boolean p1, p0, Lbaa;->a:Z
+    iput-object p1, p0, Lbaa;->a:Ljava/io/OutputStream;
 
-    iput-boolean p2, p0, Lbaa;->b:Z
+    iput-object p2, p0, Lbaa;->c:Lbct;
 
-    iput-boolean p3, p0, Lbaa;->c:Z
+    const-class p1, [B
 
-    iput-boolean p4, p0, Lbaa;->d:Z
+    const/high16 v0, 0x10000
 
+    invoke-interface {p2, v0, p1}, Lbct;->a(ILjava/lang/Class;)Ljava/lang/Object;
+
+    move-result-object p1
+
+    check-cast p1, [B
+
+    iput-object p1, p0, Lbaa;->b:[B
+
+    return-void
+.end method
+
+.method private final a()V
+    .locals 4
+
+    iget v0, p0, Lbaa;->d:I
+
+    if-lez v0, :cond_0
+
+    iget-object v1, p0, Lbaa;->a:Ljava/io/OutputStream;
+
+    iget-object v2, p0, Lbaa;->b:[B
+
+    const/4 v3, 0x0
+
+    invoke-virtual {v1, v2, v3, v0}, Ljava/io/OutputStream;->write([BII)V
+
+    iput v3, p0, Lbaa;->d:I
+
+    :cond_0
+    return-void
+.end method
+
+.method private final b()V
+    .locals 2
+
+    iget v0, p0, Lbaa;->d:I
+
+    iget-object v1, p0, Lbaa;->b:[B
+
+    array-length v1, v1
+
+    if-ne v0, v1, :cond_0
+
+    invoke-direct {p0}, Lbaa;->a()V
+
+    :cond_0
     return-void
 .end method
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 4
+.method public final close()V
+    .locals 2
 
-    const/4 v0, 0x1
+    :try_start_0
+    invoke-virtual {p0}, Lbaa;->flush()V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    if-ne p0, p1, :cond_0
+    iget-object v0, p0, Lbaa;->a:Ljava/io/OutputStream;
 
-    return v0
+    invoke-virtual {v0}, Ljava/io/OutputStream;->close()V
+
+    iget-object v0, p0, Lbaa;->b:[B
+
+    if-eqz v0, :cond_0
+
+    iget-object v1, p0, Lbaa;->c:Lbct;
+
+    invoke-interface {v1, v0}, Lbct;->c(Ljava/lang/Object;)V
+
+    const/4 v0, 0x0
+
+    iput-object v0, p0, Lbaa;->b:[B
+
+    return-void
 
     :cond_0
-    instance-of v1, p1, Lbaa;
+    return-void
 
-    const/4 v2, 0x0
+    :catchall_0
+    move-exception v0
 
-    if-nez v1, :cond_1
+    iget-object v1, p0, Lbaa;->a:Ljava/io/OutputStream;
 
-    return v2
+    invoke-virtual {v1}, Ljava/io/OutputStream;->close()V
+
+    throw v0
+.end method
+
+.method public final flush()V
+    .locals 1
+
+    invoke-direct {p0}, Lbaa;->a()V
+
+    iget-object v0, p0, Lbaa;->a:Ljava/io/OutputStream;
+
+    invoke-virtual {v0}, Ljava/io/OutputStream;->flush()V
+
+    return-void
+.end method
+
+.method public final write(I)V
+    .locals 3
+
+    iget-object v0, p0, Lbaa;->b:[B
+
+    iget v1, p0, Lbaa;->d:I
+
+    add-int/lit8 v2, v1, 0x1
+
+    iput v2, p0, Lbaa;->d:I
+
+    int-to-byte p1, p1
+
+    aput-byte p1, v0, v1
+
+    invoke-direct {p0}, Lbaa;->b()V
+
+    return-void
+.end method
+
+.method public final write([B)V
+    .locals 2
+
+    array-length v0, p1
+
+    const/4 v1, 0x0
+
+    invoke-virtual {p0, p1, v1, v0}, Lbaa;->write([BII)V
+
+    return-void
+.end method
+
+.method public final write([BII)V
+    .locals 6
+
+    const/4 v0, 0x0
+
+    const/4 v1, 0x0
+
+    :cond_0
+    sub-int v2, p3, v1
+
+    add-int v3, p2, v1
+
+    iget v4, p0, Lbaa;->d:I
+
+    if-nez v4, :cond_2
+
+    iget-object v4, p0, Lbaa;->b:[B
+
+    array-length v4, v4
+
+    if-ge v2, v4, :cond_1
+
+    const/4 v4, 0x0
+
+    goto :goto_0
 
     :cond_1
-    check-cast p1, Lbaa;
+    iget-object p2, p0, Lbaa;->a:Ljava/io/OutputStream;
 
-    iget-boolean v1, p0, Lbaa;->a:Z
+    invoke-virtual {p2, p1, v3, v2}, Ljava/io/OutputStream;->write([BII)V
 
-    iget-boolean v3, p1, Lbaa;->a:Z
-
-    if-eq v1, v3, :cond_2
-
-    return v2
+    return-void
 
     :cond_2
-    iget-boolean v1, p0, Lbaa;->b:Z
+    :goto_0
+    iget-object v5, p0, Lbaa;->b:[B
 
-    iget-boolean v3, p1, Lbaa;->b:Z
+    array-length v5, v5
 
-    if-eq v1, v3, :cond_3
+    sub-int/2addr v5, v4
 
-    return v2
+    invoke-static {v2, v5}, Ljava/lang/Math;->min(II)I
 
-    :cond_3
-    iget-boolean v1, p0, Lbaa;->c:Z
+    move-result v2
 
-    iget-boolean v3, p1, Lbaa;->c:Z
+    iget-object v4, p0, Lbaa;->b:[B
 
-    if-eq v1, v3, :cond_4
+    iget v5, p0, Lbaa;->d:I
 
-    return v2
+    invoke-static {p1, v3, v4, v5, v2}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
-    :cond_4
-    iget-boolean v1, p0, Lbaa;->d:Z
+    iget v3, p0, Lbaa;->d:I
 
-    iget-boolean p1, p1, Lbaa;->d:Z
+    add-int/2addr v3, v2
 
-    if-eq v1, p1, :cond_5
+    iput v3, p0, Lbaa;->d:I
 
-    return v2
+    add-int/2addr v1, v2
 
-    :cond_5
-    return v0
-.end method
+    invoke-direct {p0}, Lbaa;->b()V
 
-.method public final hashCode()I
-    .locals 2
+    if-lt v1, p3, :cond_0
 
-    iget-boolean v0, p0, Lbaa;->a:Z
-
-    mul-int/lit8 v0, v0, 0x1f
-
-    iget-boolean v1, p0, Lbaa;->b:Z
-
-    add-int/2addr v0, v1
-
-    mul-int/lit8 v0, v0, 0x1f
-
-    iget-boolean v1, p0, Lbaa;->c:Z
-
-    add-int/2addr v0, v1
-
-    mul-int/lit8 v0, v0, 0x1f
-
-    iget-boolean v1, p0, Lbaa;->d:Z
-
-    add-int/2addr v0, v1
-
-    return v0
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .locals 2
-
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v1, "NetworkState(isConnected="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-boolean v1, p0, Lbaa;->a:Z
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    const-string v1, ", isValidated="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-boolean v1, p0, Lbaa;->b:Z
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    const-string v1, ", isMetered="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-boolean v1, p0, Lbaa;->c:Z
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    const-string v1, ", isNotRoaming="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-boolean v1, p0, Lbaa;->d:Z
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    const/16 v1, 0x29
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    return-object v0
+    return-void
 .end method

@@ -10,7 +10,7 @@
 .method static constructor <clinit>()V
     .locals 3
 
-    invoke-static {}, Likn;->values()[Likn;
+    invoke-static {}, Ljrx;->values()[Ljrx;
 
     move-result-object v0
 
@@ -21,9 +21,9 @@
     sput-object v0, Lcom/google/android/apps/camera/bottombar/RoundedThumbnailView$5;->$SwitchMap$com$google$android$apps$camera$uiutils$TypedThumbnailBitmap$ThumbnailType:[I
 
     :try_start_0
-    sget-object v1, Likn;->d:Likn;
+    sget-object v1, Ljrx;->d:Ljrx;
 
-    invoke-virtual {v1}, Likn;->ordinal()I
+    invoke-virtual {v1}, Ljrx;->ordinal()I
 
     move-result v1
 
@@ -42,9 +42,9 @@
     :try_start_1
     sget-object v0, Lcom/google/android/apps/camera/bottombar/RoundedThumbnailView$5;->$SwitchMap$com$google$android$apps$camera$uiutils$TypedThumbnailBitmap$ThumbnailType:[I
 
-    sget-object v1, Likn;->c:Likn;
+    sget-object v1, Ljrx;->c:Ljrx;
 
-    invoke-virtual {v1}, Likn;->ordinal()I
+    invoke-virtual {v1}, Ljrx;->ordinal()I
 
     move-result v1
 
@@ -63,9 +63,9 @@
     :try_start_2
     sget-object v0, Lcom/google/android/apps/camera/bottombar/RoundedThumbnailView$5;->$SwitchMap$com$google$android$apps$camera$uiutils$TypedThumbnailBitmap$ThumbnailType:[I
 
-    sget-object v1, Likn;->e:Likn;
+    sget-object v1, Ljrx;->e:Ljrx;
 
-    invoke-virtual {v1}, Likn;->ordinal()I
+    invoke-virtual {v1}, Ljrx;->ordinal()I
 
     move-result v1
 
@@ -84,9 +84,9 @@
     :try_start_3
     sget-object v0, Lcom/google/android/apps/camera/bottombar/RoundedThumbnailView$5;->$SwitchMap$com$google$android$apps$camera$uiutils$TypedThumbnailBitmap$ThumbnailType:[I
 
-    sget-object v1, Likn;->f:Likn;
+    sget-object v1, Ljrx;->f:Ljrx;
 
-    invoke-virtual {v1}, Likn;->ordinal()I
+    invoke-virtual {v1}, Ljrx;->ordinal()I
 
     move-result v1
 
@@ -105,9 +105,9 @@
     :try_start_4
     sget-object v0, Lcom/google/android/apps/camera/bottombar/RoundedThumbnailView$5;->$SwitchMap$com$google$android$apps$camera$uiutils$TypedThumbnailBitmap$ThumbnailType:[I
 
-    sget-object v1, Likn;->b:Likn;
+    sget-object v1, Ljrx;->b:Ljrx;
 
-    invoke-virtual {v1}, Likn;->ordinal()I
+    invoke-virtual {v1}, Ljrx;->ordinal()I
 
     move-result v1
 
@@ -126,9 +126,9 @@
     :try_start_5
     sget-object v0, Lcom/google/android/apps/camera/bottombar/RoundedThumbnailView$5;->$SwitchMap$com$google$android$apps$camera$uiutils$TypedThumbnailBitmap$ThumbnailType:[I
 
-    sget-object v1, Likn;->a:Likn;
+    sget-object v1, Ljrx;->a:Ljrx;
 
-    invoke-virtual {v1}, Likn;->ordinal()I
+    invoke-virtual {v1}, Ljrx;->ordinal()I
 
     move-result v1
 

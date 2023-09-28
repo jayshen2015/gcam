@@ -1,195 +1,45 @@
-.class public final Lmzr;
-.super Lmzl;
+.class public final synthetic Lmzr;
+.super Ljava/lang/Object;
 
 # interfaces
-.implements Ljava/util/Queue;
+.implements Ljava/lang/Runnable;
 
 
-# static fields
-.field private static final serialVersionUID:J
+# instance fields
+.field public final synthetic a:Lmzs;
+
+.field public final synthetic b:Ljava/lang/String;
 
 
 # direct methods
-.method public constructor <init>(Ljava/util/Queue;)V
-    .locals 1
+.method public synthetic constructor <init>(Lmzs;Ljava/lang/String;)V
+    .locals 0
 
-    const/4 v0, 0x0
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0, p1, v0}, Lmzl;-><init>(Ljava/util/Collection;Ljava/lang/Object;)V
+    iput-object p1, p0, Lmzr;->a:Lmzs;
+
+    iput-object p2, p0, Lmzr;->b:Ljava/lang/String;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final bridge synthetic a()Ljava/util/Collection;
-    .locals 1
+.method public final run()V
+    .locals 3
 
-    invoke-virtual {p0}, Lmzr;->b()Ljava/util/Queue;
+    iget-object v0, p0, Lmzr;->a:Lmzs;
 
-    move-result-object v0
+    iget-object v1, p0, Lmzr;->b:Ljava/lang/String;
 
-    return-object v0
-.end method
+    iget-object v0, v0, Lmzs;->b:Lmzu;
 
-.method final b()Ljava/util/Queue;
-    .locals 1
+    iget-object v0, v0, Lmzu;->a:Lmzt;
 
-    invoke-super {p0}, Lmzl;->a()Ljava/util/Collection;
+    const/4 v2, 0x6
 
-    move-result-object v0
+    invoke-interface {v0, v2, v1}, Lmzt;->a(ILjava/lang/String;)V
 
-    check-cast v0, Ljava/util/Queue;
-
-    return-object v0
-.end method
-
-.method public final element()Ljava/lang/Object;
-    .locals 2
-
-    iget-object v0, p0, Lmzr;->h:Ljava/lang/Object;
-
-    monitor-enter v0
-
-    :try_start_0
-    invoke-virtual {p0}, Lmzr;->b()Ljava/util/Queue;
-
-    move-result-object v1
-
-    invoke-interface {v1}, Ljava/util/Queue;->element()Ljava/lang/Object;
-
-    move-result-object v1
-
-    monitor-exit v0
-
-    return-object v1
-
-    :catchall_0
-    move-exception v1
-
-    monitor-exit v0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw v1
-.end method
-
-.method public final offer(Ljava/lang/Object;)Z
-    .locals 2
-
-    iget-object v0, p0, Lmzr;->h:Ljava/lang/Object;
-
-    monitor-enter v0
-
-    :try_start_0
-    invoke-virtual {p0}, Lmzr;->b()Ljava/util/Queue;
-
-    move-result-object v1
-
-    invoke-interface {v1, p1}, Ljava/util/Queue;->offer(Ljava/lang/Object;)Z
-
-    move-result p1
-
-    monitor-exit v0
-
-    return p1
-
-    :catchall_0
-    move-exception p1
-
-    monitor-exit v0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw p1
-.end method
-
-.method public final peek()Ljava/lang/Object;
-    .locals 2
-
-    iget-object v0, p0, Lmzr;->h:Ljava/lang/Object;
-
-    monitor-enter v0
-
-    :try_start_0
-    invoke-virtual {p0}, Lmzr;->b()Ljava/util/Queue;
-
-    move-result-object v1
-
-    invoke-interface {v1}, Ljava/util/Queue;->peek()Ljava/lang/Object;
-
-    move-result-object v1
-
-    monitor-exit v0
-
-    return-object v1
-
-    :catchall_0
-    move-exception v1
-
-    monitor-exit v0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw v1
-.end method
-
-.method public final poll()Ljava/lang/Object;
-    .locals 2
-
-    iget-object v0, p0, Lmzr;->h:Ljava/lang/Object;
-
-    monitor-enter v0
-
-    :try_start_0
-    invoke-virtual {p0}, Lmzr;->b()Ljava/util/Queue;
-
-    move-result-object v1
-
-    invoke-interface {v1}, Ljava/util/Queue;->poll()Ljava/lang/Object;
-
-    move-result-object v1
-
-    monitor-exit v0
-
-    return-object v1
-
-    :catchall_0
-    move-exception v1
-
-    monitor-exit v0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw v1
-.end method
-
-.method public final remove()Ljava/lang/Object;
-    .locals 2
-
-    iget-object v0, p0, Lmzr;->h:Ljava/lang/Object;
-
-    monitor-enter v0
-
-    :try_start_0
-    invoke-virtual {p0}, Lmzr;->b()Ljava/util/Queue;
-
-    move-result-object v1
-
-    invoke-interface {v1}, Ljava/util/Queue;->remove()Ljava/lang/Object;
-
-    move-result-object v1
-
-    monitor-exit v0
-
-    return-object v1
-
-    :catchall_0
-    move-exception v1
-
-    monitor-exit v0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw v1
+    return-void
 .end method

@@ -2,53 +2,63 @@
 .super Ljava/lang/Object;
 
 
-# static fields
-.field public static final a:[Ljava/lang/String;
+# instance fields
+.field public final a:Lyk;
+
+.field public b:Lyk;
+
+.field public c:Lyk;
+
+.field public d:Lyk;
+
+.field public e:Lyk;
+
+.field public f:Lyk;
+
+.field public g:Lyk;
+
+.field public h:Ljava/util/ArrayList;
+
+.field public i:I
+
+.field public j:I
+
+.field public k:F
+
+.field public l:I
+
+.field public m:I
+
+.field public n:I
+
+.field public final o:I
+
+.field public final p:Z
+
+.field public q:Z
+
+.field public r:Z
+
+.field public s:Z
+
+.field public t:Z
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 3
-
-    const/4 v0, 0x4
-
-    new-array v0, v0, [Ljava/lang/String;
-
-    const/4 v1, 0x0
-
-    const-string v2, "standard"
-
-    aput-object v2, v0, v1
-
-    const/4 v1, 0x1
-
-    const-string v2, "accelerate"
-
-    aput-object v2, v0, v1
-
-    const/4 v1, 0x2
-
-    const-string v2, "decelerate"
-
-    aput-object v2, v0, v1
-
-    const/4 v1, 0x3
-
-    const-string v2, "linear"
-
-    aput-object v2, v0, v1
-
-    sput-object v0, Lyi;->a:[Ljava/lang/String;
-
-    return-void
-.end method
-
-
-# virtual methods
-.method public final toString()Ljava/lang/String;
+.method public constructor <init>(Lyk;IZ)V
     .locals 1
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     const/4 v0, 0x0
 
-    throw v0
+    iput v0, p0, Lyi;->k:F
+
+    iput-object p1, p0, Lyi;->a:Lyk;
+
+    iput p2, p0, Lyi;->o:I
+
+    iput-boolean p3, p0, Lyi;->p:Z
+
+    return-void
 .end method

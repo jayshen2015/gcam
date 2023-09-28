@@ -1,22 +1,13 @@
-.class final Lbes;
+.class public interface abstract Lbes;
 .super Ljava/lang/Object;
 
 
-# direct methods
-.method public constructor <init>()V
-    .locals 0
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
+# virtual methods
+.method public abstract a()Ljava/lang/Class;
 .end method
 
+.method public abstract b(Ljava/io/File;)Ljava/lang/Object;
+.end method
 
-# virtual methods
-.method public final toString()Ljava/lang/String;
-    .locals 1
-
-    const-string v0, "Adobe XMP Core 5.1.0-jc003"
-
-    return-object v0
+.method public abstract c(Ljava/lang/Object;)V
 .end method

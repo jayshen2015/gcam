@@ -1,164 +1,138 @@
 .class final Lcfa;
-.super Ljava/lang/Object;
-
-# interfaces
-.implements Lfyy;
+.super Ljlj;
 
 
 # instance fields
-.field private final a:Lcea;
-
-.field private final b:Lnou;
-
-.field private final c:Lfyy;
-
-.field private d:Lfws;
+.field final synthetic a:Lcfe;
 
 
 # direct methods
-.method public constructor <init>(Lcea;Lnou;Lfyy;)V
+.method public constructor <init>(Lcfe;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lcfa;->a:Lcfe;
 
-    iput-object p1, p0, Lcfa;->a:Lcea;
-
-    iput-object p2, p0, Lcfa;->b:Lnou;
-
-    iput-object p3, p0, Lcfa;->c:Lfyy;
+    invoke-direct {p0}, Ljlj;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Lkpb;Lnou;)V
-    .locals 5
+.method public final onShutterButtonClick()V
+    .locals 3
 
-    invoke-interface {p1}, Lkpb;->a()I
+    iget-object v0, p0, Lcfa;->a:Lcfe;
+
+    iget-object v0, v0, Lcfe;->i:Liuf;
+
+    invoke-virtual {v0}, Liuf;->a()Z
 
     move-result v0
 
-    const/16 v1, 0x23
+    if-eqz v0, :cond_2
 
-    if-ne v0, v1, :cond_2
+    iget-object v0, p0, Lcfa;->a:Lcfe;
 
-    iget-object v0, p0, Lcfa;->d:Lfws;
+    iget-object v0, v0, Lcfe;->f:Ljava/util/List;
 
-    if-eqz v0, :cond_0
+    invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
-    invoke-interface {p1}, Lkpb;->d()J
+    move-result-object v0
 
-    move-result-wide v0
+    :goto_0
+    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
-    iget-object v2, p0, Lcfa;->d:Lfws;
+    move-result v1
 
-    invoke-virtual {v2}, Lkoy;->d()J
+    const/4 v2, 0x0
 
-    move-result-wide v2
+    if-eqz v1, :cond_0
 
-    cmp-long v4, v0, v2
+    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    if-lez v4, :cond_2
+    move-result-object v1
+
+    check-cast v1, Lchy;
+
+    invoke-interface {v1, v2}, Lchy;->j(Z)V
+
+    goto :goto_0
 
     :cond_0
-    new-instance v0, Lkma;
+    iget-object v0, p0, Lcfa;->a:Lcfe;
 
-    const/4 v1, 0x2
+    iget-object v0, v0, Lcfe;->m:Lddf;
 
-    invoke-direct {v0, p1, v1}, Lkma;-><init>(Lkpb;I)V
+    sget-object v1, Lddl;->aw:Lddg;
 
-    iget-object p1, p0, Lcfa;->d:Lfws;
+    invoke-interface {v0, v1}, Lddf;->k(Lddg;)Z
 
-    if-eqz p1, :cond_1
+    move-result v0
 
-    invoke-virtual {p1}, Lkoy;->close()V
+    if-eqz v0, :cond_1
+
+    iget-object v0, p0, Lcfa;->a:Lcfe;
+
+    iget-object v0, v0, Lcfe;->h:Ljlb;
+
+    invoke-interface {v0, v2}, Ljlb;->A(Z)V
 
     :cond_1
-    new-instance p1, Lfws;
-
-    new-instance v1, Lkmb;
-
-    invoke-direct {v1, v0}, Lkmb;-><init>(Lkpb;)V
-
-    invoke-direct {p1, v1, p2}, Lfws;-><init>(Lkpb;Lnou;)V
-
-    iput-object p1, p0, Lcfa;->d:Lfws;
-
-    move-object p1, v0
+    return-void
 
     :cond_2
-    iget-object v0, p0, Lcfa;->c:Lfyy;
+    iget-object v0, p0, Lcfa;->a:Lcfe;
 
-    new-instance v1, Lkmb;
+    iget-object v0, v0, Lcfe;->m:Lddf;
 
-    invoke-direct {v1, p1}, Lkmb;-><init>(Lkpb;)V
+    sget-object v1, Lddl;->a:Lddi;
 
-    invoke-interface {v0, v1, p2}, Lfyy;->a(Lkpb;Lnou;)V
+    invoke-interface {v0}, Lddf;->d()V
 
     return-void
 .end method
 
-.method public final close()V
+.method public final onShutterButtonDown()V
     .locals 3
 
-    iget-object v0, p0, Lcfa;->d:Lfws;
+    iget-object v0, p0, Lcfa;->a:Lcfe;
 
-    if-eqz v0, :cond_1
+    iget-object v0, v0, Lcfe;->i:Liuf;
 
-    iget-object v0, p0, Lcfa;->b:Lnou;
+    invoke-virtual {v0}, Liuf;->a()Z
 
-    invoke-static {v0}, Ljvd;->r(Lnou;)Ljava/lang/Object;
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    iget-object v0, p0, Lcfa;->a:Lcfe;
+
+    iget-object v0, v0, Lcfe;->f:Ljava/util/List;
+
+    invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object v0
 
-    check-cast v0, Lceh;
-
-    if-eqz v0, :cond_0
-
-    iget-object v1, p0, Lcfa;->a:Lcea;
-
-    invoke-virtual {v1}, Lcea;->c()Ljvs;
-
-    move-result-object v1
-
-    invoke-interface {v1}, Ljvs;->bm()Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Ljava/lang/Integer;
-
-    invoke-virtual {v1}, Ljava/lang/Integer;->intValue()I
+    :goto_0
+    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v1
 
-    invoke-static {v1}, Lkab;->b(I)Lkab;
+    if-eqz v1, :cond_0
+
+    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v1
 
-    iget-object v2, p0, Lcfa;->d:Lfws;
+    check-cast v1, Lchy;
 
-    invoke-static {v2}, Lgqr;->b(Lfws;)Lgqq;
+    const/4 v2, 0x0
 
-    move-result-object v2
+    invoke-interface {v1, v2}, Lchy;->j(Z)V
 
-    iput-object v1, v2, Lgqq;->c:Lkab;
-
-    invoke-virtual {v2}, Lgqq;->a()Lgqr;
-
-    move-result-object v1
-
-    invoke-interface {v0, v1}, Lceh;->f(Lgqr;)V
+    goto :goto_0
 
     :cond_0
-    iget-object v0, p0, Lcfa;->d:Lfws;
-
-    invoke-virtual {v0}, Lkoy;->close()V
-
-    :cond_1
-    iget-object v0, p0, Lcfa;->c:Lfyy;
-
-    invoke-interface {v0}, Lfyy;->close()V
-
     return-void
 .end method

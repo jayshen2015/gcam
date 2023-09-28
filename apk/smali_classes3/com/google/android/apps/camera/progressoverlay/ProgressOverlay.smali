@@ -38,11 +38,11 @@
 
     invoke-virtual {p0}, Lcom/google/android/apps/camera/progressoverlay/ProgressOverlay;->removeAllViewsInLayout()V
 
-    const v1, 0x7f0e0066
+    const v1, 0x7f0e0061
 
     invoke-virtual {v0, v1, p0}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;)Landroid/view/View;
 
-    const v0, 0x7f0b01c3
+    const v0, 0x7f0b0182
 
     invoke-virtual {p0, v0}, Lcom/google/android/apps/camera/progressoverlay/ProgressOverlay;->findViewById(I)Landroid/view/View;
 
@@ -56,7 +56,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f080295
+    const v1, 0x7f080571
 
     invoke-virtual {v0, v1}, Landroid/content/Context;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -88,11 +88,11 @@
 
     check-cast v0, Landroid/view/LayoutInflater;
 
-    const v1, 0x7f0e00d6
+    const v1, 0x7f0e00cf
 
     invoke-virtual {v0, v1, p0}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;)Landroid/view/View;
 
-    const v0, 0x7f0b02ab
+    const v0, 0x7f0b0248
 
     invoke-virtual {p0, v0}, Lcom/google/android/apps/camera/progressoverlay/ProgressOverlay;->findViewById(I)Landroid/view/View;
 
@@ -106,7 +106,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f080316
+    const v1, 0x7f0805d3
 
     invoke-virtual {v0, v1}, Landroid/content/Context;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 

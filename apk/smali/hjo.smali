@@ -1,88 +1,47 @@
-.class public final Lhjo;
+.class public Lhjo;
 .super Ljava/lang/Object;
 
-
-# instance fields
-.field public a:I
-
-.field private final b:I
-
-.field private final c:Z
+# interfaces
+.implements Lihs;
 
 
 # direct methods
-.method public constructor <init>(IZ)V
+.method public constructor <init>()V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput p1, p0, Lhjo;->b:I
-
-    iput-boolean p2, p0, Lhjo;->c:Z
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Z
-    .locals 1
+.method public a()V
+    .locals 0
 
-    iget-boolean v0, p0, Lhjo;->c:Z
-
-    if-nez v0, :cond_0
-
-    iget v0, p0, Lhjo;->b:I
-
-    if-nez v0, :cond_0
-
-    const/4 v0, 0x1
-
-    return v0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    return v0
+    return-void
 .end method
 
-.method public final b()I
-    .locals 1
+.method public b()V
+    .locals 0
 
-    iget v0, p0, Lhjo;->a:I
+    return-void
+.end method
 
-    packed-switch v0, :pswitch_data_0
+.method public synthetic f()V
+    .locals 0
 
-    const/4 v0, 0x3
+    return-void
+.end method
 
-    return v0
+.method public synthetic g()V
+    .locals 0
 
-    :pswitch_0
-    invoke-virtual {p0}, Lhjo;->a()Z
+    return-void
+.end method
 
-    move-result v0
+.method public synthetic h()V
+    .locals 0
 
-    if-eqz v0, :cond_0
-
-    const/4 v0, 0x1
-
-    return v0
-
-    :cond_0
-    const/4 v0, 0x2
-
-    return v0
-
-    :pswitch_1
-    const/4 v0, 0x4
-
-    return v0
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
+    return-void
 .end method

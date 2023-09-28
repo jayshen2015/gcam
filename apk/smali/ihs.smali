@@ -1,36 +1,16 @@
-.class public final Lihs;
-.super Landroid/animation/AnimatorListenerAdapter;
+.class public interface abstract Lihs;
+.super Ljava/lang/Object;
 
-
-# instance fields
-.field final synthetic a:Lcom/google/android/apps/camera/ui/views/CaptureAnimationOverlay;
-
-
-# direct methods
-.method public constructor <init>(Lcom/google/android/apps/camera/ui/views/CaptureAnimationOverlay;)V
-    .locals 0
-
-    iput-object p1, p0, Lihs;->a:Lcom/google/android/apps/camera/ui/views/CaptureAnimationOverlay;
-
-    invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
-
-    return-void
-.end method
+# interfaces
+.implements Liht;
 
 
 # virtual methods
-.method public final onAnimationEnd(Landroid/animation/Animator;)V
-    .locals 1
+.method public abstract f()V
+.end method
 
-    iget-object p1, p0, Lihs;->a:Lcom/google/android/apps/camera/ui/views/CaptureAnimationOverlay;
+.method public abstract g()V
+.end method
 
-    const/4 v0, 0x1
-
-    iput v0, p1, Lcom/google/android/apps/camera/ui/views/CaptureAnimationOverlay;->c:I
-
-    const/4 v0, 0x4
-
-    invoke-virtual {p1, v0}, Lcom/google/android/apps/camera/ui/views/CaptureAnimationOverlay;->setVisibility(I)V
-
-    return-void
+.method public abstract h()V
 .end method

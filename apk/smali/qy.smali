@@ -3,106 +3,92 @@
 
 
 # instance fields
-.field public final a:I
+.field public a:I
+
+.field public b:I
+
+.field public c:I
+
+.field public d:I
+
+.field public e:I
+
+.field public f:I
+
+.field public g:Z
+
+.field public h:Z
 
 
 # direct methods
-.method private synthetic constructor <init>(I)V
-    .locals 0
+.method public constructor <init>()V
+    .locals 2
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput p1, p0, Lqy;->a:I
+    const/4 v0, 0x0
+
+    iput v0, p0, Lqy;->a:I
+
+    iput v0, p0, Lqy;->b:I
+
+    const/high16 v1, -0x80000000
+
+    iput v1, p0, Lqy;->c:I
+
+    iput v1, p0, Lqy;->d:I
+
+    iput v0, p0, Lqy;->e:I
+
+    iput v0, p0, Lqy;->f:I
+
+    iput-boolean v0, p0, Lqy;->g:Z
+
+    iput-boolean v0, p0, Lqy;->h:Z
 
     return-void
 .end method
 
-.method public static final synthetic a(I)Lqy;
-    .locals 1
-
-    new-instance v0, Lqy;
-
-    invoke-direct {v0, p0}, Lqy;-><init>(I)V
-
-    return-object v0
-.end method
-
-.method public static final b(II)Z
-    .locals 0
-
-    if-ne p0, p1, :cond_0
-
-    const/4 p0, 0x1
-
-    return p0
-
-    :cond_0
-    const/4 p0, 0x0
-
-    return p0
-.end method
-
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
+.method public final a(II)V
     .locals 2
 
-    iget v0, p0, Lqy;->a:I
+    iput p1, p0, Lqy;->c:I
 
-    instance-of v1, p1, Lqy;
+    iput p2, p0, Lqy;->d:I
 
-    if-nez v1, :cond_1
+    const/4 v0, 0x1
+
+    iput-boolean v0, p0, Lqy;->h:Z
+
+    iget-boolean v0, p0, Lqy;->g:Z
+
+    const/high16 v1, -0x80000000
+
+    if-eqz v0, :cond_1
+
+    if-eq p2, v1, :cond_0
+
+    iput p2, p0, Lqy;->a:I
 
     :cond_0
-    goto :goto_0
+    if-eq p1, v1, :cond_3
+
+    iput p1, p0, Lqy;->b:I
+
+    return-void
 
     :cond_1
-    check-cast p1, Lqy;
+    if-eq p1, v1, :cond_2
 
-    iget p1, p1, Lqy;->a:I
+    iput p1, p0, Lqy;->a:I
 
-    if-ne v0, p1, :cond_0
+    :cond_2
+    if-eq p2, v1, :cond_3
 
-    const/4 p1, 0x1
+    iput p2, p0, Lqy;->b:I
 
-    return p1
-
-    :goto_0
-    const/4 p1, 0x0
-
-    return p1
-.end method
-
-.method public final hashCode()I
-    .locals 1
-
-    iget v0, p0, Lqy;->a:I
-
-    return v0
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .locals 3
-
-    iget v0, p0, Lqy;->a:I
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, "CameraError(value="
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    const/16 v0, 0x29
-
-    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    return-object v0
+    :cond_3
+    return-void
 .end method

@@ -1,43 +1,43 @@
-.class final Lefs;
-.super Ljava/util/LinkedHashMap;
+.class public final synthetic Lefs;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field private final a:I
+.field public final synthetic a:Lefu;
+
+.field public final synthetic b:Ljhh;
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 1
+.method public synthetic constructor <init>(Lefu;Ljhh;)V
+    .locals 0
 
-    invoke-direct {p0}, Ljava/util/LinkedHashMap;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const/16 v0, 0xa
+    iput-object p1, p0, Lefs;->a:Lefu;
 
-    iput v0, p0, Lefs;->a:I
+    iput-object p2, p0, Lefs;->b:Ljhh;
 
     return-void
 .end method
 
 
 # virtual methods
-.method protected final removeEldestEntry(Ljava/util/Map$Entry;)Z
-    .locals 1
+.method public final run()V
+    .locals 2
 
-    invoke-virtual {p0}, Lefs;->size()I
+    iget-object v0, p0, Lefs;->a:Lefu;
 
-    move-result p1
+    iget-object v1, p0, Lefs;->b:Ljhh;
 
-    iget v0, p0, Lefs;->a:I
+    invoke-virtual {v1}, Ljhh;->b()V
 
-    if-le p1, v0, :cond_0
+    const/4 v1, 0x1
 
-    const/4 p1, 0x1
+    invoke-virtual {v0, v1}, Lefu;->a(Z)V
 
-    return p1
-
-    :cond_0
-    const/4 p1, 0x0
-
-    return p1
+    return-void
 .end method

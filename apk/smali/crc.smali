@@ -1,22 +1,40 @@
-.class public final Lcrc;
-.super Ljava/lang/Object;
+.class final Lcrc;
+.super Lcrr;
 
 
-# static fields
-.field public static final a:Lcla;
+# instance fields
+.field final synthetic a:Lcrs;
 
 
 # direct methods
-.method static constructor <clinit>()V
+.method public constructor <init>(Lcrs;)V
+    .locals 0
+
+    iput-object p1, p0, Lcrc;->a:Lcrs;
+
+    invoke-direct {p0, p1}, Lcrr;-><init>(Lcrs;)V
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public final b()V
     .locals 2
 
-    new-instance v0, Lcla;
+    iget-object v0, p0, Lcrc;->a:Lcrs;
 
-    const/16 v1, 0xd
+    iget-object v0, v0, Lcrs;->c:Lihu;
 
-    invoke-direct {v0, v1}, Lcla;-><init>(I)V
+    invoke-virtual {v0}, Lihu;->e()V
 
-    sput-object v0, Lcrc;->a:Lcla;
+    iget-object v0, p0, Lcrc;->a:Lcrs;
+
+    iget-object v1, v0, Lcrs;->c:Lihu;
+
+    iget-object v0, v0, Lcrs;->d:Lihw;
+
+    invoke-virtual {v1, v0}, Lihu;->g(Lihw;)V
 
     return-void
 .end method

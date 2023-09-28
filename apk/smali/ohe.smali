@@ -3,47 +3,14 @@
 
 
 # virtual methods
-.method public abstract a()D
+.method public abstract a([B)V
 .end method
 
-.method public abstract b()J
+.method public abstract b(I)V
 .end method
 
-.method public abstract c()J
+.method public abstract c()V
 .end method
 
-.method public abstract d()J
-.end method
-
-.method public abstract e()Z
-.end method
-
-.method public abstract f()Z
-.end method
-
-.method public abstract g()Z
-.end method
-
-.method public abstract h()Z
-.end method
-
-.method public abstract i()Z
-.end method
-
-.method public abstract j()Z
-.end method
-
-.method public abstract k()Z
-.end method
-
-.method public abstract l()Z
-.end method
-
-.method public abstract m()Z
-.end method
-
-.method public abstract n()Z
-.end method
-
-.method public abstract o()Z
+.method public abstract d()V
 .end method

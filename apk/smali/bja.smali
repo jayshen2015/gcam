@@ -1,136 +1,51 @@
-.class public abstract Lbja;
+.class public final Lbja;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lbiz;
+.implements Lazv;
 
 
 # instance fields
-.field public final a:Ljava/util/List;
+.field private final a:Lbcv;
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/Object;)V
-    .locals 1
-
-    new-instance v0, Lblt;
-
-    invoke-direct {v0, p1}, Lblt;-><init>(Ljava/lang/Object;)V
-
-    invoke-static {v0}, Ljava/util/Collections;->singletonList(Ljava/lang/Object;)Ljava/util/List;
-
-    move-result-object p1
-
-    invoke-direct {p0, p1}, Lbja;-><init>(Ljava/util/List;)V
-
-    return-void
-.end method
-
-.method public constructor <init>(Ljava/util/List;)V
+.method public constructor <init>(Lbcv;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lbja;->a:Ljava/util/List;
+    iput-object p1, p0, Lbja;->a:Lbcv;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final b()Ljava/util/List;
-    .locals 1
+.method public final bridge synthetic a(Ljava/lang/Object;IILazt;)Lbcl;
+    .locals 0
 
-    iget-object v0, p0, Lbja;->a:Ljava/util/List;
+    check-cast p1, Layy;
 
-    return-object v0
+    invoke-interface {p1}, Layy;->a()Landroid/graphics/Bitmap;
+
+    move-result-object p1
+
+    iget-object p2, p0, Lbja;->a:Lbcv;
+
+    invoke-static {p1, p2}, Lbgn;->f(Landroid/graphics/Bitmap;Lbcv;)Lbgn;
+
+    move-result-object p1
+
+    return-object p1
 .end method
 
-.method public final c()Z
-    .locals 3
+.method public final bridge synthetic b(Ljava/lang/Object;Lazt;)Z
+    .locals 0
 
-    iget-object v0, p0, Lbja;->a:Ljava/util/List;
+    check-cast p1, Layy;
 
-    invoke-interface {v0}, Ljava/util/List;->isEmpty()Z
+    const/4 p1, 0x1
 
-    move-result v0
-
-    const/4 v1, 0x1
-
-    if-nez v0, :cond_2
-
-    iget-object v0, p0, Lbja;->a:Ljava/util/List;
-
-    invoke-interface {v0}, Ljava/util/List;->size()I
-
-    move-result v0
-
-    const/4 v2, 0x0
-
-    if-ne v0, v1, :cond_1
-
-    iget-object v0, p0, Lbja;->a:Ljava/util/List;
-
-    invoke-interface {v0, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lblt;
-
-    invoke-virtual {v0}, Lblt;->e()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    goto :goto_0
-
-    :cond_0
-    return v2
-
-    :cond_1
-    const/4 v1, 0x0
-
-    :cond_2
-    :goto_0
-    return v1
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .locals 2
-
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
-    iget-object v1, p0, Lbja;->a:Ljava/util/List;
-
-    invoke-interface {v1}, Ljava/util/List;->isEmpty()Z
-
-    move-result v1
-
-    if-nez v1, :cond_0
-
-    const-string v1, "values="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-object v1, p0, Lbja;->a:Ljava/util/List;
-
-    invoke-interface {v1}, Ljava/util/List;->toArray()[Ljava/lang/Object;
-
-    move-result-object v1
-
-    invoke-static {v1}, Ljava/util/Arrays;->toString([Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    :cond_0
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    return-object v0
+    return p1
 .end method

@@ -2,47 +2,54 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Landroid/view/View$OnScrollChangeListener;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field public final synthetic a:Lhrz;
+.field public final synthetic a:Lhrx;
+
+.field public final synthetic b:Lj$/util/function/Consumer;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lhrz;)V
+.method public synthetic constructor <init>(Lhrx;Lj$/util/function/Consumer;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lhrt;->a:Lhrz;
+    iput-object p1, p0, Lhrt;->a:Lhrx;
+
+    iput-object p2, p0, Lhrt;->b:Lj$/util/function/Consumer;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onScrollChange(Landroid/view/View;IIII)V
-    .locals 7
+.method public final run()V
+    .locals 3
 
-    iget-object v0, p0, Lhrt;->a:Lhrz;
+    iget-object v0, p0, Lhrt;->a:Lhrx;
 
-    iget-object v1, v0, Lhrz;->f:Landroid/view/View$OnScrollChangeListener;
+    iget-object v1, p0, Lhrt;->b:Lj$/util/function/Consumer;
 
-    if-eqz v1, :cond_0
+    iget-object v2, v0, Lhrx;->b:Ljava/util/List;
 
-    move-object v2, p1
+    monitor-enter v2
 
-    move v3, p2
+    :try_start_0
+    invoke-virtual {v0, v1}, Lhrx;->c(Lj$/util/function/Consumer;)V
 
-    move v4, p3
+    monitor-exit v2
 
-    move v5, p4
-
-    move v6, p5
-
-    invoke-interface/range {v1 .. v6}, Landroid/view/View$OnScrollChangeListener;->onScrollChange(Landroid/view/View;IIII)V
-
-    :cond_0
     return-void
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit v2
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw v0
 .end method

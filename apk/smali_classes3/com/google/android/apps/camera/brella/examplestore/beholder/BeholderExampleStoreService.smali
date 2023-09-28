@@ -1,43 +1,43 @@
 .class public Lcom/google/android/apps/camera/brella/examplestore/beholder/BeholderExampleStoreService;
-.super Lcmx;
+.super Lcbz;
 
 
 # instance fields
-.field public a:Lcnt;
+.field public a:Lcdf;
 
 
 # direct methods
 .method public constructor <init>()V
     .locals 0
 
-    invoke-direct {p0}, Lcmx;-><init>()V
+    invoke-direct {p0}, Lcbz;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method protected final a(Landroid/content/Context;Lcnm;Lcnk;)Lcmv;
+.method protected final a(Landroid/content/Context;Lccu;Lccs;)Lcbv;
     .locals 0
 
-    invoke-virtual {p0, p1}, Lcom/google/android/apps/camera/brella/examplestore/beholder/BeholderExampleStoreService;->b(Landroid/content/Context;)Lcnt;
+    invoke-virtual {p0, p1}, Lcom/google/android/apps/camera/brella/examplestore/beholder/BeholderExampleStoreService;->b(Landroid/content/Context;)Lcdf;
 
     move-result-object p1
 
-    invoke-interface {p1, p2, p3}, Lcnt;->a(Lcnm;Lcnk;)Lcmv;
+    invoke-interface {p1, p2, p3}, Lcdf;->a(Lccu;Lccs;)Lcbv;
 
     move-result-object p1
 
     return-object p1
 .end method
 
-.method protected final declared-synchronized b(Landroid/content/Context;)Lcnt;
+.method protected final declared-synchronized b(Landroid/content/Context;)Lcdf;
     .locals 1
 
     monitor-enter p0
 
     :try_start_0
-    iget-object v0, p0, Lcom/google/android/apps/camera/brella/examplestore/beholder/BeholderExampleStoreService;->a:Lcnt;
+    iget-object v0, p0, Lcom/google/android/apps/camera/brella/examplestore/beholder/BeholderExampleStoreService;->a:Lcdf;
 
     if-nez v0, :cond_0
 
@@ -45,20 +45,20 @@
 
     move-result-object p1
 
-    check-cast p1, Lemj;
+    check-cast p1, Lenc;
 
-    const-class v0, Lcms;
+    const-class v0, Lcbq;
 
-    invoke-interface {p1, v0}, Lemj;->e(Ljava/lang/Class;)Leml;
+    invoke-interface {p1, v0}, Lenc;->c(Ljava/lang/Class;)Lene;
 
     move-result-object p1
 
-    check-cast p1, Lcms;
+    check-cast p1, Lcbq;
 
-    invoke-interface {p1, p0}, Lcms;->d(Lcom/google/android/apps/camera/brella/examplestore/beholder/BeholderExampleStoreService;)V
+    invoke-interface {p1, p0}, Lcbq;->d(Lcom/google/android/apps/camera/brella/examplestore/beholder/BeholderExampleStoreService;)V
 
     :cond_0
-    iget-object p1, p0, Lcom/google/android/apps/camera/brella/examplestore/beholder/BeholderExampleStoreService;->a:Lcnt;
+    iget-object p1, p0, Lcom/google/android/apps/camera/brella/examplestore/beholder/BeholderExampleStoreService;->a:Lcdf;
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 

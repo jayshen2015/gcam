@@ -1,60 +1,61 @@
-.class final Lhuk;
-.super Lhti;
-
-
-# instance fields
-.field final synthetic b:Lhun;
+.class public final Lhuk;
+.super Lhts;
 
 
 # direct methods
-.method public constructor <init>(Lhun;)V
+.method public constructor <init>(Ljava/lang/String;Lhtr;)V
     .locals 0
 
-    iput-object p1, p0, Lhuk;->b:Lhun;
+    invoke-direct {p0, p1, p2}, Lhts;-><init>(Ljava/lang/String;Lhtr;)V
 
-    invoke-direct {p0, p1}, Lhti;-><init>(Lhtl;)V
+    return-void
+.end method
+
+.method public constructor <init>(Ljava/lang/String;Ljava/lang/Boolean;)V
+    .locals 0
+
+    invoke-direct {p0, p1, p2}, Lhts;-><init>(Ljava/lang/String;Ljava/lang/Object;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final c()V
-    .locals 2
+.method public final bridge synthetic b(Ljava/lang/String;)Ljava/lang/Object;
+    .locals 1
 
-    iget-object v0, p0, Lhuk;->b:Lhun;
+    const-string v0, "1"
 
-    iget-object v0, v0, Lhun;->o:Lhiu;
+    invoke-virtual {p1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    invoke-virtual {v0}, Lhiu;->e()V
+    move-result p1
 
-    iget-object v0, p0, Lhuk;->b:Lhun;
+    invoke-static {p1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
-    iget-object v1, v0, Lhun;->o:Lhiu;
+    move-result-object p1
 
-    iget-object v0, v0, Lhun;->q:Lhiw;
-
-    invoke-virtual {v1, v0}, Lhiu;->g(Lhiw;)V
-
-    return-void
+    return-object p1
 .end method
 
-.method public final i()V
-    .locals 2
+.method public final bridge synthetic c(Ljava/lang/Object;)Ljava/lang/String;
+    .locals 1
 
-    iget-object v0, p0, Lhuk;->b:Lhun;
+    check-cast p1, Ljava/lang/Boolean;
 
-    iget-object v0, v0, Lhun;->o:Lhiu;
+    invoke-virtual {p1}, Ljava/lang/Boolean;->booleanValue()Z
 
-    invoke-virtual {v0}, Lhiu;->e()V
+    move-result p1
 
-    iget-object v0, p0, Lhuk;->b:Lhun;
+    const/4 v0, 0x1
 
-    iget-object v1, v0, Lhun;->o:Lhiu;
+    if-eq v0, p1, :cond_0
 
-    iget-object v0, v0, Lhun;->r:Lhiw;
+    const-string p1, "0"
 
-    invoke-virtual {v1, v0}, Lhiu;->g(Lhiw;)V
+    return-object p1
 
-    return-void
+    :cond_0
+    const-string p1, "1"
+
+    return-object p1
 .end method

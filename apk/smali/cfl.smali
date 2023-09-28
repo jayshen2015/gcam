@@ -2,174 +2,89 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lceq;
+.implements Llgb;
 
 
 # instance fields
-.field public final a:Ldhi;
+.field final a:Ljava/util/Map;
 
-.field public final b:Ljwb;
-
-.field public final c:Ljwb;
-
-.field public final d:Ligo;
-
-.field private final e:Ljvs;
+.field public final b:Ljava/lang/Object;
 
 
 # direct methods
-.method public constructor <init>(Ligo;Ldhi;Lgzm;[B[B[B)V
-    .locals 0
+.method public constructor <init>()V
+    .locals 2
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lcfl;->d:Ligo;
+    new-instance v0, Ljava/util/EnumMap;
 
-    iput-object p2, p0, Lcfl;->a:Ldhi;
+    const-class v1, Llga;
 
-    sget-object p1, Lgzd;->q:Lgzr;
+    invoke-direct {v0, v1}, Ljava/util/EnumMap;-><init>(Ljava/lang/Class;)V
 
-    invoke-interface {p3, p1}, Lgzm;->a(Lgzb;)Ljvs;
+    iput-object v0, p0, Lcfl;->a:Ljava/util/Map;
 
-    move-result-object p1
+    new-instance v0, Ljava/lang/Object;
 
-    iput-object p1, p0, Lcfl;->e:Ljvs;
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
-    new-instance p1, Ljvk;
-
-    const/4 p2, 0x0
-
-    invoke-static {p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object p3
-
-    invoke-direct {p1, p3}, Ljvk;-><init>(Ljava/lang/Object;)V
-
-    iput-object p1, p0, Lcfl;->b:Ljwb;
-
-    new-instance p1, Ljvk;
-
-    invoke-static {p2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
-
-    move-result-object p2
-
-    invoke-direct {p1, p2}, Ljvk;-><init>(Ljava/lang/Object;)V
-
-    iput-object p1, p0, Lcfl;->c:Ljwb;
+    iput-object v0, p0, Lcfl;->b:Ljava/lang/Object;
 
     return-void
 .end method
 
-.method public static e(Lkll;Ljava/lang/String;)Ljava/lang/String;
-    .locals 3
-
-    const-string v0, "pref_camera_dirty_lens_history_key"
-
-    if-nez p1, :cond_0
-
-    iget-object p0, p0, Lkll;->a:Ljava/lang/String;
-
-    :goto_0
-    invoke-static {p0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object p0
-
-    invoke-virtual {v0, p0}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object p0
-
-    return-object p0
-
-    :cond_0
-    const/4 v1, 0x2
-
-    new-array v1, v1, [Ljava/lang/Object;
-
-    const/4 v2, 0x0
-
-    iget-object p0, p0, Lkll;->a:Ljava/lang/String;
-
-    aput-object p0, v1, v2
-
-    const/4 p0, 0x1
-
-    aput-object p1, v1, p0
-
-    const-string p0, "%s-%s"
-
-    invoke-static {p0, v1}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object p0
-
-    goto :goto_0
-.end method
-
 
 # virtual methods
-.method public final a()Ljvs;
+.method public final fE(Llga;)V
     .locals 3
 
-    const/4 v0, 0x2
+    iget-object v0, p0, Lcfl;->b:Ljava/lang/Object;
 
-    new-array v0, v0, [Ljvs;
+    monitor-enter v0
 
-    const/4 v1, 0x0
+    :try_start_0
+    iget-object v1, p0, Lcfl;->a:Ljava/util/Map;
 
-    iget-object v2, p0, Lcfl;->c:Ljwb;
-
-    aput-object v2, v0, v1
-
-    const/4 v1, 0x1
-
-    iget-object v2, p0, Lcfl;->e:Ljvs;
-
-    aput-object v2, v0, v1
-
-    invoke-static {v0}, Ljvw;->d([Ljvs;)Ljvs;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public final b()Ljwb;
-    .locals 1
-
-    iget-object v0, p0, Lcfl;->b:Ljwb;
-
-    return-object v0
-.end method
-
-.method public final c()Z
-    .locals 1
-
-    const/4 v0, 0x0
-
-    throw v0
-.end method
-
-.method public final d(Lkll;)Lcfk;
-    .locals 3
-
-    const/4 v0, 0x0
-
-    invoke-static {p1, v0}, Lcfl;->e(Lkll;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object p1
-
-    new-instance v0, Lcfk;
-
-    iget-object v1, p0, Lcfl;->d:Ligo;
-
-    const-string v2, ""
-
-    invoke-virtual {v1, p1, v2}, Ligo;->s(Ljava/lang/String;Ljava/lang/String;)Ljwb;
+    invoke-interface {v1, p1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v1
 
-    iget-object v2, p0, Lcfl;->a:Ldhi;
+    check-cast v1, Ljava/lang/Integer;
 
-    invoke-direct {v0, p1, v1, v2}, Lcfk;-><init>(Ljava/lang/String;Ljwb;Ldhi;)V
+    if-nez v1, :cond_0
 
-    return-object v0
+    const/4 v1, 0x0
+
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v1
+
+    :cond_0
+    iget-object v2, p0, Lcfl;->a:Ljava/util/Map;
+
+    invoke-virtual {v1}, Ljava/lang/Integer;->intValue()I
+
+    move-result v1
+
+    add-int/lit8 v1, v1, 0x1
+
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v1
+
+    invoke-interface {v2, p1, v1}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    monitor-exit v0
+
+    return-void
+
+    :catchall_0
+    move-exception p1
+
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw p1
 .end method

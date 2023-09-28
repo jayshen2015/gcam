@@ -1,80 +1,73 @@
-.class public final Lkwr;
+.class public final synthetic Lkwr;
 .super Ljava/lang/Object;
 
-
-# static fields
-.field private static final d:Ljava/lang/Runtime;
+# interfaces
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field public final a:J
+.field public final synthetic a:Lkyw;
 
-.field public final b:Ljava/util/Stack;
-
-.field public c:J
+.field public final synthetic b:Lkyi;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
-
-    invoke-static {}, Ljava/lang/Runtime;->getRuntime()Ljava/lang/Runtime;
-
-    move-result-object v0
-
-    sput-object v0, Lkwr;->d:Ljava/lang/Runtime;
-
-    return-void
-.end method
-
-.method public constructor <init>()V
-    .locals 2
+.method public synthetic constructor <init>(Lkyw;Lkyi;)V
+    .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-static {}, Ljava/lang/Runtime;->getRuntime()Ljava/lang/Runtime;
+    iput-object p1, p0, Lkwr;->a:Lkyw;
 
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/Runtime;->maxMemory()J
-
-    move-result-wide v0
-
-    iput-wide v0, p0, Lkwr;->a:J
-
-    new-instance v0, Ljava/util/Stack;
-
-    invoke-direct {v0}, Ljava/util/Stack;-><init>()V
-
-    iput-object v0, p0, Lkwr;->b:Ljava/util/Stack;
+    iput-object p2, p0, Lkwr;->b:Lkyi;
 
     return-void
 .end method
 
-.method public static a()F
-    .locals 5
 
-    sget-object v0, Lkwr;->d:Ljava/lang/Runtime;
+# virtual methods
+.method public final run()V
+    .locals 3
 
-    invoke-virtual {v0}, Ljava/lang/Runtime;->totalMemory()J
+    iget-object v0, p0, Lkwr;->a:Lkyw;
 
-    move-result-wide v1
+    iget-object v1, p0, Lkwr;->b:Lkyi;
 
-    invoke-virtual {v0}, Ljava/lang/Runtime;->freeMemory()J
+    iget-object v2, v0, Lkyw;->d:Ljava/lang/String;
 
-    move-result-wide v3
+    iget-object v2, v0, Lkyw;->b:Ljava/lang/String;
 
-    sub-long/2addr v1, v3
+    iget-object v0, v0, Lkyw;->c:[B
 
-    invoke-virtual {v0}, Ljava/lang/Runtime;->maxMemory()J
+    :try_start_0
+    invoke-virtual {v1}, Lbmn;->a()Landroid/os/Parcel;
 
-    move-result-wide v3
+    move-result-object v0
 
-    long-to-float v0, v3
+    const/4 v2, 0x0
 
-    long-to-float v1, v1
+    invoke-static {v0, v2}, Lbmp;->b(Landroid/os/Parcel;Z)V
 
-    div-float/2addr v1, v0
+    const/4 v2, 0x0
 
-    return v1
+    invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeByteArray([B)V
+
+    const/4 v2, 0x1
+
+    invoke-virtual {v1, v2, v0}, Lbmn;->A(ILandroid/os/Parcel;)V
+    :try_end_0
+    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
+
+    return-void
+
+    :catch_0
+    move-exception v0
+
+    const-string v1, "WearableLS"
+
+    const-string v2, "Failed to send a response back"
+
+    invoke-static {v1, v2, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+
+    return-void
 .end method

@@ -1,22 +1,22 @@
-.class public final Llgh;
+.class final Llgh;
 .super Ljava/lang/Object;
 
 
-# static fields
-.field public static final a:Lkhz;
+# instance fields
+.field public final a:J
+
+.field public final b:Lcmj;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
+.method public constructor <init>(Lcmj;J)V
+    .locals 0
 
-    new-instance v0, Lkhz;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const/16 v1, 0xd
+    iput-object p1, p0, Llgh;->b:Lcmj;
 
-    invoke-direct {v0, v1}, Lkhz;-><init>(I)V
-
-    sput-object v0, Llgh;->a:Lkhz;
+    iput-wide p2, p0, Llgh;->a:J
 
     return-void
 .end method

@@ -1,109 +1,43 @@
-.class public final Lfbh;
+.class public final synthetic Lfbh;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Landroid/location/LocationListener;
+.implements Lagm;
 
 
 # instance fields
-.field final a:Landroid/location/Location;
+.field public final synthetic a:Lfjs;
 
-.field b:Z
-
-.field final c:Ljava/lang/String;
+.field public final synthetic b:Ljava/lang/Object;
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/String;)V
-    .locals 1
+.method public synthetic constructor <init>(Lfjs;Ljava/lang/Object;)V
+    .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const/4 v0, 0x0
+    iput-object p1, p0, Lfbh;->a:Lfjs;
 
-    iput-boolean v0, p0, Lfbh;->b:Z
-
-    iput-object p1, p0, Lfbh;->c:Ljava/lang/String;
-
-    new-instance v0, Landroid/location/Location;
-
-    invoke-direct {v0, p1}, Landroid/location/Location;-><init>(Ljava/lang/String;)V
-
-    iput-object v0, p0, Lfbh;->a:Landroid/location/Location;
+    iput-object p2, p0, Lfbh;->b:Ljava/lang/Object;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onLocationChanged(Landroid/location/Location;)V
-    .locals 5
+.method public final b(Landroidx/preference/Preference;Ljava/lang/Object;)Z
+    .locals 2
 
-    invoke-virtual {p1}, Landroid/location/Location;->getLatitude()D
+    iget-object v0, p0, Lfbh;->a:Lfjs;
 
-    move-result-wide v0
+    iget-object v1, p0, Lfbh;->b:Ljava/lang/Object;
 
-    const-wide/16 v2, 0x0
+    iget-object p1, p1, Landroidx/preference/Preference;->t:Ljava/lang/String;
 
-    cmpl-double v4, v0, v2
-
-    if-nez v4, :cond_0
-
-    invoke-virtual {p1}, Landroid/location/Location;->getLongitude()D
-
-    move-result-wide v0
-
-    cmpl-double v4, v0, v2
-
-    if-nez v4, :cond_0
-
-    return-void
-
-    :cond_0
-    iget-object v0, p0, Lfbh;->a:Landroid/location/Location;
-
-    invoke-virtual {v0, p1}, Landroid/location/Location;->set(Landroid/location/Location;)V
+    invoke-interface {v0, p1, v1, p2}, Lfjs;->p(Ljava/lang/String;Ljava/lang/Object;Ljava/lang/Object;)V
 
     const/4 p1, 0x1
 
-    iput-boolean p1, p0, Lfbh;->b:Z
-
-    return-void
-.end method
-
-.method public final onProviderDisabled(Ljava/lang/String;)V
-    .locals 0
-
-    const/4 p1, 0x0
-
-    iput-boolean p1, p0, Lfbh;->b:Z
-
-    return-void
-.end method
-
-.method public final onProviderEnabled(Ljava/lang/String;)V
-    .locals 0
-
-    return-void
-.end method
-
-.method public final onStatusChanged(Ljava/lang/String;ILandroid/os/Bundle;)V
-    .locals 0
-
-    packed-switch p2, :pswitch_data_0
-
-    return-void
-
-    :pswitch_0
-    const/4 p1, 0x0
-
-    iput-boolean p1, p0, Lfbh;->b:Z
-
-    return-void
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-        :pswitch_0
-    .end packed-switch
+    return p1
 .end method

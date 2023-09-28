@@ -1,89 +1,63 @@
-.class public final synthetic Lnse;
-.super Ljava/lang/Object;
+.class public final Lnse;
+.super Lqlu;
 
-# interfaces
-.implements Lcom/google/googlex/gcam/hdrplus/MutableMergedRawCallback;
+
+# annotations
+.annotation runtime Lqlw;
+    b = "com.google.android.libraries.vision.visionkit.f250.internal.uploader.work.F250Worker"
+    c = "F250Worker.kt"
+    d = "failPermanentlyInvalidUploads"
+    e = {
+        0x5b
+    }
+.end annotation
 
 
 # instance fields
-.field public final synthetic a:Landroidx/wear/ambient/AmbientMode$AmbientController;
+.field public a:Ljava/lang/Object;
+
+.field public b:Ljava/lang/Object;
+
+.field public synthetic c:Ljava/lang/Object;
+
+.field final synthetic d:Lcom/google/android/libraries/vision/visionkit/f250/internal/uploader/work/F250Worker;
+
+.field public e:I
 
 
 # direct methods
-.method public synthetic constructor <init>(Landroidx/wear/ambient/AmbientMode$AmbientController;[B[B[B)V
+.method public constructor <init>(Lcom/google/android/libraries/vision/visionkit/f250/internal/uploader/work/F250Worker;Lqlh;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lnse;->d:Lcom/google/android/libraries/vision/visionkit/f250/internal/uploader/work/F250Worker;
 
-    iput-object p1, p0, Lnse;->a:Landroidx/wear/ambient/AmbientMode$AmbientController;
+    invoke-direct {p0, p2}, Lqlu;-><init>(Lqlh;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onImageView(IJJ)V
+.method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 1
 
-    iget-object p1, p0, Lnse;->a:Landroidx/wear/ambient/AmbientMode$AmbientController;
+    iput-object p1, p0, Lnse;->c:Ljava/lang/Object;
 
-    new-instance v0, Lcom/google/googlex/gcam/ShotMetadata;
+    iget p1, p0, Lnse;->e:I
 
-    invoke-direct {v0, p4, p5}, Lcom/google/googlex/gcam/ShotMetadata;-><init>(J)V
+    const/high16 v0, -0x80000000
 
-    iget-object p1, p1, Landroidx/wear/ambient/AmbientMode$AmbientController;->a:Ljava/lang/Object;
+    or-int/2addr p1, v0
 
-    check-cast p1, Leea;
+    iput p1, p0, Lnse;->e:I
 
-    iget-object p4, p1, Leea;->r:Lhna;
+    iget-object p1, p0, Lnse;->d:Lcom/google/android/libraries/vision/visionkit/f250/internal/uploader/work/F250Worker;
 
-    invoke-static {p4}, Leea;->d(Lhna;)Lnqn;
+    const/4 v0, 0x0
 
-    move-result-object p4
+    invoke-virtual {p1, v0, p0}, Lcom/google/android/libraries/vision/visionkit/f250/internal/uploader/work/F250Worker;->k(Lnrl;Lqlh;)Ljava/lang/Object;
 
-    invoke-static {v0, p4}, Lnsy;->j(Lcom/google/googlex/gcam/ShotMetadata;Lnqn;)V
+    move-result-object p1
 
-    iget p4, p1, Leea;->s:I
-
-    const/4 p5, 0x1
-
-    if-ne p4, p5, :cond_0
-
-    goto :goto_0
-
-    :cond_0
-    const/4 p5, 0x0
-
-    :goto_0
-    invoke-static {p5}, Lmoz;->p(Z)V
-
-    iget-object p4, p1, Leea;->l:Leec;
-
-    invoke-virtual {p4}, Leec;->d()Lmqp;
-
-    move-result-object p4
-
-    invoke-virtual {p4}, Lmqp;->g()Z
-
-    move-result p4
-
-    const-string p5, "Got mutable merged RAW callback but no callback present"
-
-    invoke-static {p4, p5}, Lmoz;->q(ZLjava/lang/Object;)V
-
-    iget-object p4, p1, Leea;->l:Leec;
-
-    invoke-virtual {p4}, Leec;->d()Lmqp;
-
-    move-result-object p4
-
-    invoke-virtual {p4}, Lmqp;->c()Ljava/lang/Object;
-
-    move-result-object p4
-
-    check-cast p4, Lecr;
-
-    invoke-interface {p4, p1, p2, p3, v0}, Lecr;->j(Leea;JLcom/google/googlex/gcam/ShotMetadata;)V
-
-    return-void
+    return-object p1
 .end method

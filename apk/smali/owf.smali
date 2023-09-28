@@ -1,59 +1,109 @@
 .class public final Lowf;
 .super Ljava/lang/Object;
 
-# interfaces
-.implements Lopu;
 
+# static fields
+.field private static final a:Lowb;
 
-# instance fields
-.field private final a:Lola;
+.field private static final b:Lowa;
 
 
 # direct methods
-.method public constructor <init>(Lola;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 1
 
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    new-instance v0, Lowd;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {v0}, Lowd;-><init>()V
 
-    iput-object p1, p0, Lowf;->a:Lola;
+    sput-object v0, Lowf;->a:Lowb;
+
+    new-instance v0, Lowe;
+
+    invoke-direct {v0}, Lowe;-><init>()V
+
+    sput-object v0, Lowf;->b:Lowa;
 
     return-void
 .end method
 
+.method public static a(Ljava/util/Set;)Lowc;
+    .locals 5
 
-# virtual methods
-.method public final da()Lola;
-    .locals 1
+    sget-object v0, Lowf;->a:Lowb;
 
-    iget-object v0, p0, Lowf;->a:Lola;
+    new-instance v1, Lovy;
 
-    return-object v0
-.end method
+    invoke-direct {v1, v0}, Lovy;-><init>(Lowb;)V
 
-.method public final toString()Ljava/lang/String;
-    .locals 3
+    sget-object v0, Lowf;->b:Lowa;
 
-    iget-object v0, p0, Lowf;->a:Lola;
+    iput-object v0, v1, Lovy;->f:Lowa;
 
-    new-instance v1, Ljava/lang/StringBuilder;
+    invoke-interface {p0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+    move-result-object p0
 
-    const-string v2, "CoroutineScope(coroutineContext="
+    :goto_0
+    invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result v0
 
-    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    if-eqz v0, :cond_1
 
-    const-string v0, ")"
-
-    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v0
 
-    return-object v0
+    check-cast v0, Lovd;
+
+    const-string v2, "key"
+
+    invoke-static {v0, v2}, Loxh;->x(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+
+    iget-boolean v3, v0, Lovd;->b:Z
+
+    if-eqz v3, :cond_0
+
+    sget-object v3, Lovy;->b:Lowa;
+
+    invoke-static {v0, v2}, Loxh;->x(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+
+    iget-boolean v2, v0, Lovd;->b:Z
+
+    const-string v4, "key must be repeating"
+
+    invoke-static {v2, v4}, Loxh;->y(ZLjava/lang/String;)V
+
+    iget-object v2, v1, Lovy;->c:Ljava/util/Map;
+
+    invoke-interface {v2, v0}, Ljava/util/Map;->remove(Ljava/lang/Object;)Ljava/lang/Object;
+
+    iget-object v2, v1, Lovy;->d:Ljava/util/Map;
+
+    invoke-interface {v2, v0, v3}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    goto :goto_0
+
+    :cond_0
+    sget-object v3, Lovy;->a:Lowb;
+
+    invoke-static {v0, v2}, Loxh;->x(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+
+    iget-object v2, v1, Lovy;->d:Ljava/util/Map;
+
+    invoke-interface {v2, v0}, Ljava/util/Map;->remove(Ljava/lang/Object;)Ljava/lang/Object;
+
+    iget-object v2, v1, Lovy;->c:Ljava/util/Map;
+
+    invoke-interface {v2, v0, v3}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    goto :goto_0
+
+    :cond_1
+    new-instance p0, Lovz;
+
+    invoke-direct {p0, v1}, Lovz;-><init>(Lovy;)V
+
+    return-object p0
 .end method

@@ -1,317 +1,206 @@
 .class public final Lcej;
 .super Ljava/lang/Object;
 
-# interfaces
-.implements Lmqi;
-
 
 # instance fields
-.field private final synthetic a:I
+.field public final a:Ljava/lang/String;
+
+.field public final b:Z
+
+.field private final c:Landroid/net/Uri;
 
 
 # direct methods
-.method public constructor <init>(I)V
+.method public constructor <init>()V
     .locals 0
-
-    iput p1, p0, Lcej;->a:I
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
+.method public constructor <init>(Landroid/net/Uri;Ljava/lang/String;Z)V
+    .locals 0
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lcej;->c:Landroid/net/Uri;
+
+    iput-object p2, p0, Lcej;->a:Ljava/lang/String;
+
+    iput-boolean p3, p0, Lcej;->b:Z
+
+    return-void
+.end method
+
+.method public static a()Lcei;
+    .locals 1
+
+    new-instance v0, Lcei;
+
+    invoke-direct {v0}, Lcei;-><init>()V
+
+    return-object v0
+.end method
+
 
 # virtual methods
-.method public final synthetic apply(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 5
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 4
 
-    iget v0, p0, Lcej;->a:I
+    const/4 v0, 0x1
 
-    const/4 v1, 0x1
+    if-ne p1, p0, :cond_0
+
+    return v0
+
+    :cond_0
+    instance-of v1, p1, Lcej;
 
     const/4 v2, 0x0
 
-    packed-switch v0, :pswitch_data_0
+    if-eqz v1, :cond_1
 
-    check-cast p1, Ljava/lang/Iterable;
+    check-cast p1, Lcej;
 
-    invoke-interface {p1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
+    iget-object v1, p0, Lcej;->c:Landroid/net/Uri;
 
-    move-result-object p1
+    iget-object v3, p1, Lcej;->c:Landroid/net/Uri;
 
-    return-object p1
-
-    :pswitch_0
-    check-cast p1, Ljava/util/List;
-
-    sget-object p1, Lkyd;->a:Lkyd;
-
-    return-object p1
-
-    :pswitch_1
-    check-cast p1, Lkdl;
-
-    iget-short p1, p1, Lkdl;->i:S
-
-    invoke-static {p1}, Ljava/lang/Short;->valueOf(S)Ljava/lang/Short;
-
-    move-result-object p1
-
-    return-object p1
-
-    :pswitch_2
-    check-cast p1, Lgam;
-
-    invoke-interface {p1}, Lgam;->b()Ljvs;
-
-    move-result-object p1
-
-    return-object p1
-
-    :pswitch_3
-    check-cast p1, Lgam;
-
-    invoke-interface {p1}, Lgam;->a()Ljvs;
-
-    move-result-object p1
-
-    return-object p1
-
-    :pswitch_4
-    check-cast p1, Ljava/util/List;
-
-    new-instance v0, Ljava/util/ArrayList;
-
-    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
-
-    invoke-interface {p1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
-
-    move-result-object p1
-
-    :goto_0
-    invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
+    invoke-virtual {v1, v3}, Landroid/net/Uri;->equals(Ljava/lang/Object;)Z
 
     move-result v1
 
-    if-eqz v1, :cond_0
+    if-eqz v1, :cond_1
 
-    invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    iget-object v1, p0, Lcej;->a:Ljava/lang/String;
 
-    move-result-object v1
+    iget-object v3, p1, Lcej;->a:Ljava/lang/String;
 
-    check-cast v1, Lkou;
+    invoke-virtual {v1, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    const-string v2, "Metadata"
+    move-result v1
 
-    invoke-static {v2}, Lmoz;->z(Ljava/lang/String;)Lmqo;
+    if-eqz v1, :cond_1
 
-    move-result-object v2
+    iget-boolean v1, p0, Lcej;->b:Z
 
-    sget-object v3, Landroid/hardware/camera2/CaptureResult;->SENSOR_TIMESTAMP:Landroid/hardware/camera2/CaptureResult$Key;
+    iget-boolean p1, p1, Lcej;->b:Z
 
-    invoke-interface {v1, v3}, Lkou;->d(Landroid/hardware/camera2/CaptureResult$Key;)Ljava/lang/Object;
+    if-ne v1, p1, :cond_1
 
-    move-result-object v3
+    return v0
 
-    const-string v4, "timestamp"
+    :cond_1
+    return v2
+.end method
 
-    invoke-virtual {v2, v4, v3}, Lmqo;->b(Ljava/lang/String;Ljava/lang/Object;)V
+.method public final hashCode()I
+    .locals 3
 
-    sget-object v3, Landroid/hardware/camera2/CaptureResult;->NOISE_REDUCTION_MODE:Landroid/hardware/camera2/CaptureResult$Key;
+    iget-object v0, p0, Lcej;->c:Landroid/net/Uri;
 
-    invoke-interface {v1, v3}, Lkou;->d(Landroid/hardware/camera2/CaptureResult$Key;)Ljava/lang/Object;
+    invoke-virtual {v0}, Landroid/net/Uri;->hashCode()I
 
-    move-result-object v3
+    move-result v0
 
-    const-string v4, "NR"
+    const v1, 0xf4243
 
-    invoke-virtual {v2, v4, v3}, Lmqo;->b(Ljava/lang/String;Ljava/lang/Object;)V
+    xor-int/2addr v0, v1
 
-    sget-object v3, Landroid/hardware/camera2/CaptureResult;->EDGE_MODE:Landroid/hardware/camera2/CaptureResult$Key;
+    mul-int v0, v0, v1
 
-    invoke-interface {v1, v3}, Lkou;->d(Landroid/hardware/camera2/CaptureResult$Key;)Ljava/lang/Object;
+    iget-object v2, p0, Lcej;->a:Ljava/lang/String;
 
-    move-result-object v3
+    invoke-virtual {v2}, Ljava/lang/String;->hashCode()I
 
-    const-string v4, "EDGE"
+    move-result v2
 
-    invoke-virtual {v2, v4, v3}, Lmqo;->b(Ljava/lang/String;Ljava/lang/Object;)V
+    xor-int/2addr v0, v2
 
-    sget-object v3, Landroid/hardware/camera2/CaptureResult;->REPROCESS_EFFECTIVE_EXPOSURE_FACTOR:Landroid/hardware/camera2/CaptureResult$Key;
+    mul-int v0, v0, v1
 
-    invoke-interface {v1, v3}, Lkou;->d(Landroid/hardware/camera2/CaptureResult$Key;)Ljava/lang/Object;
+    iget-boolean v1, p0, Lcej;->b:Z
 
-    move-result-object v3
+    const/4 v2, 0x1
 
-    const-string v4, "REEF"
+    if-eq v2, v1, :cond_0
 
-    invoke-virtual {v2, v4, v3}, Lmqo;->b(Ljava/lang/String;Ljava/lang/Object;)V
-
-    sget-object v3, Landroid/hardware/camera2/CaptureResult;->JPEG_QUALITY:Landroid/hardware/camera2/CaptureResult$Key;
-
-    invoke-interface {v1, v3}, Lkou;->d(Landroid/hardware/camera2/CaptureResult$Key;)Ljava/lang/Object;
-
-    move-result-object v1
-
-    const-string v3, "Jpeg Qual"
-
-    invoke-virtual {v2, v3, v1}, Lmqo;->b(Ljava/lang/String;Ljava/lang/Object;)V
-
-    invoke-virtual {v2}, Lmqo;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+    const/16 v1, 0x4d5
 
     goto :goto_0
 
     :cond_0
-    invoke-virtual {v0}, Ljava/lang/Object;->toString()Ljava/lang/String;
+    const/16 v1, 0x4cf
 
-    move-result-object p1
+    :goto_0
+    xor-int/2addr v0, v1
 
-    return-object p1
+    return v0
+.end method
 
-    :pswitch_5
-    check-cast p1, Ljava/lang/Boolean;
+.method public final toString()Ljava/lang/String;
+    .locals 6
 
-    invoke-virtual {p1}, Ljava/lang/Boolean;->booleanValue()Z
+    iget-object v0, p0, Lcej;->c:Landroid/net/Uri;
 
-    move-result p1
-
-    if-eqz p1, :cond_1
-
-    sget-object p1, Landroid/hardware/camera2/CaptureRequest;->CONTROL_AF_TRIGGER:Landroid/hardware/camera2/CaptureRequest$Key;
-
-    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v0
 
-    invoke-static {p1, v0}, Lfwt;->b(Landroid/hardware/camera2/CaptureRequest$Key;Ljava/lang/Object;)Lfwn;
+    iget-object v1, p0, Lcej;->a:Ljava/lang/String;
 
-    move-result-object p1
+    iget-boolean v2, p0, Lcej;->b:Z
 
-    goto :goto_1
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
-    :cond_1
-    invoke-static {}, Lfwt;->e()Lfwn;
+    move-result-object v3
 
-    move-result-object p1
+    invoke-virtual {v3}, Ljava/lang/String;->length()I
 
-    :goto_1
-    return-object p1
+    move-result v3
 
-    :pswitch_6
-    check-cast p1, Lgxb;
+    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
-    iget-object v0, p1, Lgxb;->a:Ljava/lang/Object;
+    move-result-object v4
 
-    check-cast v0, Lftt;
+    invoke-virtual {v4}, Ljava/lang/String;->length()I
 
-    iget-object v0, v0, Lftt;->a:Lgrx;
+    move-result v4
 
-    sget-object v3, Lgrx;->e:Lgrx;
+    new-instance v5, Ljava/lang/StringBuilder;
 
-    if-ne v0, v3, :cond_2
+    add-int/lit8 v3, v3, 0x30
 
-    iget-object v0, p1, Lgxb;->a:Ljava/lang/Object;
+    add-int/2addr v3, v4
 
-    check-cast v0, Lftt;
+    invoke-direct {v5, v3}, Ljava/lang/StringBuilder;-><init>(I)V
 
-    iget-object v0, v0, Lftt;->b:Lgry;
+    const-string v3, "MediaRecordInfo{uri="
 
-    sget-object v3, Lgry;->e:Lgry;
+    invoke-virtual {v5, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    if-eq v0, v3, :cond_2
+    invoke-virtual {v5, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget-object p1, p1, Lgxb;->a:Ljava/lang/Object;
+    const-string v0, ", mediaId="
 
-    check-cast p1, Lftt;
+    invoke-virtual {v5, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget-object p1, p1, Lftt;->b:Lgry;
+    invoke-virtual {v5, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    sget-object v0, Lgry;->f:Lgry;
+    const-string v0, ", isDeleted="
 
-    if-eq p1, v0, :cond_2
+    invoke-virtual {v5, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    goto :goto_2
+    invoke-virtual {v5, v2}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
-    :cond_2
-    const/4 v1, 0x0
+    const-string v0, "}"
 
-    :goto_2
-    invoke-static {v1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+    invoke-virtual {v5, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object p1
+    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    return-object p1
+    move-result-object v0
 
-    :pswitch_7
-    check-cast p1, Lgrx;
-
-    iget p1, p1, Lgrx;->h:I
-
-    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object p1
-
-    return-object p1
-
-    :pswitch_8
-    check-cast p1, Ljava/util/List;
-
-    if-eqz p1, :cond_4
-
-    invoke-interface {p1}, Ljava/util/List;->isEmpty()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_3
-
-    goto :goto_3
-
-    :cond_3
-    sget-object v0, Lmyj;->a:Lmyj;
-
-    invoke-virtual {v0, p1}, Lmyk;->e(Ljava/lang/Iterable;)Ljava/lang/Object;
-
-    move-result-object p1
-
-    check-cast p1, Ljava/lang/Integer;
-
-    invoke-virtual {p1}, Ljava/lang/Integer;->intValue()I
-
-    move-result p1
-
-    invoke-static {p1, v2}, Ljava/lang/Math;->max(II)I
-
-    move-result p1
-
-    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object p1
-
-    goto :goto_4
-
-    :cond_4
-    :goto_3
-    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object p1
-
-    :goto_4
-    return-object p1
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_8
-        :pswitch_7
-        :pswitch_6
-        :pswitch_5
-        :pswitch_4
-        :pswitch_3
-        :pswitch_2
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
+    return-object v0
 .end method

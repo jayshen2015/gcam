@@ -1,32 +1,45 @@
 .class public final Ljny;
 .super Ljava/lang/Object;
 
+# interfaces
+.implements Lpys;
 
-# static fields
-.field public static final a:Ljfc;
+
+# instance fields
+.field private final a:Ljnu;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
+.method public constructor <init>(Ljnu;)V
+    .locals 0
 
-    new-instance v0, Ljnx;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {v0}, Ljnx;-><init>()V
-
-    sput-object v0, Ljny;->a:Ljfc;
-
-    new-instance v0, Lcom/google/android/gms/common/api/Scope;
-
-    const-string v1, "profile"
-
-    invoke-direct {v0, v1}, Lcom/google/android/gms/common/api/Scope;-><init>(Ljava/lang/String;)V
-
-    new-instance v0, Lcom/google/android/gms/common/api/Scope;
-
-    const-string v1, "email"
-
-    invoke-direct {v0, v1}, Lcom/google/android/gms/common/api/Scope;-><init>(Ljava/lang/String;)V
+    iput-object p1, p0, Ljny;->a:Ljnu;
 
     return-void
+.end method
+
+
+# virtual methods
+.method public final a()Lcom/google/android/apps/camera/ui/views/GradientBar;
+    .locals 1
+
+    iget-object v0, p0, Ljny;->a:Ljnu;
+
+    iget-object v0, v0, Ljnu;->b:Ljns;
+
+    iget-object v0, v0, Ljns;->n:Lcom/google/android/apps/camera/ui/views/GradientBar;
+
+    return-object v0
+.end method
+
+.method public final bridge synthetic get()Ljava/lang/Object;
+    .locals 1
+
+    invoke-virtual {p0}, Ljny;->a()Lcom/google/android/apps/camera/ui/views/GradientBar;
+
+    move-result-object v0
+
+    return-object v0
 .end method

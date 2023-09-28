@@ -2,89 +2,135 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lcom/google/lens/sdk/LensApi$LensAvailabilityCallback;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field public final synthetic a:Lhzh;
+.field public final synthetic a:Lhzi;
 
-.field public final synthetic b:Landroid/graphics/Bitmap;
-
-.field public final synthetic c:J
-
-.field public final synthetic d:Lxu;
-
-.field public final synthetic e:Loem;
+.field public final synthetic b:Lmad;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lhzh;Landroid/graphics/Bitmap;Loem;JLxu;[B)V
+.method public synthetic constructor <init>(Lhzi;Lmad;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lhzf;->a:Lhzh;
+    iput-object p1, p0, Lhzf;->a:Lhzi;
 
-    iput-object p2, p0, Lhzf;->b:Landroid/graphics/Bitmap;
-
-    iput-object p3, p0, Lhzf;->e:Loem;
-
-    iput-wide p4, p0, Lhzf;->c:J
-
-    iput-object p6, p0, Lhzf;->d:Lxu;
+    iput-object p2, p0, Lhzf;->b:Lmad;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onAvailabilityStatusFetched(I)V
-    .locals 8
+.method public final run()V
+    .locals 6
 
-    iget-object v6, p0, Lhzf;->a:Lhzh;
+    iget-object v0, p0, Lhzf;->a:Lhzi;
 
-    iget-object v2, p0, Lhzf;->b:Landroid/graphics/Bitmap;
+    iget-object v1, p0, Lhzf;->b:Lmad;
 
-    iget-object v3, p0, Lhzf;->e:Loem;
+    iget-object v2, v0, Lhzi;->e:Ljava/lang/Object;
 
-    iget-object v7, p0, Lhzf;->d:Lxu;
+    monitor-enter v2
 
-    if-nez p1, :cond_0
+    :try_start_0
+    iget v3, v0, Lhzi;->f:I
 
-    new-instance p1, Lgwr;
+    monitor-exit v2
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_1
 
-    const/16 v4, 0xc
+    const/4 v2, 0x3
 
-    const/4 v5, 0x0
+    if-ge v3, v2, :cond_1
 
-    move-object v0, p1
+    iget-object v2, v0, Lhzi;->e:Ljava/lang/Object;
 
-    move-object v1, v6
+    monitor-enter v2
 
-    invoke-direct/range {v0 .. v5}, Lgwr;-><init>(Lhzh;Landroid/graphics/Bitmap;Loem;I[B)V
+    :try_start_1
+    iget v3, v0, Lhzi;->f:I
 
-    invoke-virtual {v6, p1}, Lhzh;->c(Ljava/lang/Runnable;)Lnou;
+    const/4 v4, 0x1
 
-    move-result-object p1
+    add-int/2addr v3, v4
 
-    new-instance v0, Lcmc;
+    iput v3, v0, Lhzi;->f:I
 
-    const/16 v1, 0x13
+    monitor-exit v2
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    invoke-direct {v0, v7, v1}, Lcmc;-><init>(Lxu;I)V
+    new-instance v2, Llwk;
 
-    sget-object v1, Lnnv;->a:Lnnv;
+    new-instance v3, Lhwy;
 
-    invoke-static {p1, v0, v1}, Lnsy;->L(Lnou;Lnoj;Ljava/util/concurrent/Executor;)V
+    new-instance v5, Lhze;
 
-    return-void
+    invoke-direct {v5, v0, v4}, Lhze;-><init>(Lhzi;I)V
+
+    invoke-direct {v3, v1, v5}, Lhwy;-><init>(Lmad;Ljava/lang/Runnable;)V
+
+    invoke-direct {v2, v3}, Llwk;-><init>(Lmad;)V
+
+    invoke-virtual {v2}, Llwk;->k()Lmad;
+
+    move-result-object v1
+
+    if-eqz v1, :cond_0
+
+    iget-object v0, v0, Lhzi;->g:Lhzh;
+
+    invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
+
+    invoke-interface {v0, v1}, Lhzh;->k(Lmad;)V
+
+    goto :goto_0
 
     :cond_0
-    invoke-virtual {v6}, Lhzh;->e()Lcom/google/lens/sdk/LensApi;
+    sget-object v0, Lhzi;->a:Louj;
 
-    move-result-object p1
+    invoke-virtual {v0}, Loue;->b()Lova;
 
-    invoke-virtual {p1}, Lcom/google/lens/sdk/LensApi;->onPause()V
+    move-result-object v0
+
+    const-string v1, "Unable to fork ref counted image"
+
+    const/16 v3, 0xaad
+
+    invoke-static {v0, v1, v3}, Ld;->v(Lova;Ljava/lang/String;C)V
+
+    :goto_0
+    invoke-virtual {v2}, Llwk;->l()V
 
     return-void
+
+    :catchall_0
+    move-exception v0
+
+    :try_start_2
+    monitor-exit v2
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
+
+    throw v0
+
+    :cond_1
+    invoke-interface {v1}, Lmad;->close()V
+
+    return-void
+
+    :catchall_1
+    move-exception v0
+
+    :try_start_3
+    monitor-exit v2
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_1
+
+    throw v0
 .end method

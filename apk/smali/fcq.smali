@@ -1,397 +1,141 @@
-.class public final synthetic Lfcq;
-.super Ljava/lang/Object;
-
-# interfaces
-.implements Ljava/util/function/Consumer;
+.class public final Lfcq;
+.super Ljava/lang/Exception;
 
 
-# instance fields
-.field public final synthetic a:Ljava/lang/Object;
-
-.field public final synthetic b:Ljava/lang/Object;
-
-.field public final synthetic c:Ljava/lang/Object;
-
-.field private final synthetic d:I
+# static fields
+.field private static final a:Louj;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lgxy;Lgxt;Lgyb;I)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 1
 
-    iput p4, p0, Lfcq;->d:I
+    const-string v0, "com/google/android/apps/camera/legacy/lightcycle/opengl/OpenGLException"
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lfcq;->a:Ljava/lang/Object;
-
-    iput-object p2, p0, Lfcq;->c:Ljava/lang/Object;
-
-    iput-object p3, p0, Lfcq;->b:Ljava/lang/Object;
-
-    return-void
-.end method
-
-.method public synthetic constructor <init>(Lhfb;Ljava/util/ArrayList;Lhyz;I[B)V
-    .locals 0
-
-    iput p4, p0, Lfcq;->d:I
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lfcq;->c:Ljava/lang/Object;
-
-    iput-object p2, p0, Lfcq;->b:Ljava/lang/Object;
-
-    iput-object p3, p0, Lfcq;->a:Ljava/lang/Object;
-
-    return-void
-.end method
-
-.method public synthetic constructor <init>(Ljvs;Ljava/util/function/Predicate;Lgec;I)V
-    .locals 0
-
-    iput p4, p0, Lfcq;->d:I
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lfcq;->a:Ljava/lang/Object;
-
-    iput-object p2, p0, Lfcq;->b:Ljava/lang/Object;
-
-    iput-object p3, p0, Lfcq;->c:Ljava/lang/Object;
-
-    return-void
-.end method
-
-.method public synthetic constructor <init>(Ljvs;Ljava/util/function/Predicate;Ljvs;I)V
-    .locals 0
-
-    iput p4, p0, Lfcq;->d:I
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lfcq;->c:Ljava/lang/Object;
-
-    iput-object p2, p0, Lfcq;->b:Ljava/lang/Object;
-
-    iput-object p3, p0, Lfcq;->a:Ljava/lang/Object;
-
-    return-void
-.end method
-
-.method public synthetic constructor <init>(Ljwb;Ljwb;Ljwb;I)V
-    .locals 0
-
-    iput p4, p0, Lfcq;->d:I
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lfcq;->c:Ljava/lang/Object;
-
-    iput-object p2, p0, Lfcq;->a:Ljava/lang/Object;
-
-    iput-object p3, p0, Lfcq;->b:Ljava/lang/Object;
-
-    return-void
-.end method
-
-
-# virtual methods
-.method public final accept(Ljava/lang/Object;)V
-    .locals 7
-
-    iget v0, p0, Lfcq;->d:I
-
-    const/16 v1, 0xa
-
-    packed-switch v0, :pswitch_data_0
-
-    iget-object v0, p0, Lfcq;->c:Ljava/lang/Object;
-
-    iget-object v1, p0, Lfcq;->b:Ljava/lang/Object;
-
-    iget-object v2, p0, Lfcq;->a:Ljava/lang/Object;
-
-    check-cast p1, Landroid/content/pm/ResolveInfo;
-
-    check-cast v2, Lhyz;
-
-    invoke-virtual {v2, p1}, Lhyz;->h(Landroid/content/pm/ResolveInfo;)V
-
-    iget-object p1, p1, Landroid/content/pm/ResolveInfo;->activityInfo:Landroid/content/pm/ActivityInfo;
-
-    iget-object p1, p1, Landroid/content/pm/ActivityInfo;->packageName:Ljava/lang/String;
-
-    check-cast v0, Lhfb;
-
-    invoke-virtual {v0, p1}, Lhfb;->f(Ljava/lang/String;)Z
-
-    move-result p1
-
-    invoke-virtual {v2, p1}, Lhyz;->i(Z)V
-
-    invoke-virtual {v2}, Lhyz;->f()Lhgx;
-
-    move-result-object p1
-
-    check-cast v1, Ljava/util/ArrayList;
-
-    invoke-virtual {v1, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    return-void
-
-    :pswitch_0
-    iget-object v0, p0, Lfcq;->c:Ljava/lang/Object;
-
-    iget-object v1, p0, Lfcq;->b:Ljava/lang/Object;
-
-    iget-object v2, p0, Lfcq;->a:Ljava/lang/Object;
-
-    check-cast p1, Landroid/content/pm/ResolveInfo;
-
-    check-cast v2, Lhyz;
-
-    invoke-virtual {v2, p1}, Lhyz;->h(Landroid/content/pm/ResolveInfo;)V
-
-    iget-object p1, p1, Landroid/content/pm/ResolveInfo;->activityInfo:Landroid/content/pm/ActivityInfo;
-
-    iget-object p1, p1, Landroid/content/pm/ActivityInfo;->packageName:Ljava/lang/String;
-
-    check-cast v0, Lhfb;
-
-    invoke-virtual {v0, p1}, Lhfb;->f(Ljava/lang/String;)Z
-
-    move-result p1
-
-    invoke-virtual {v2, p1}, Lhyz;->i(Z)V
-
-    invoke-virtual {v2}, Lhyz;->f()Lhgx;
-
-    move-result-object p1
-
-    check-cast v1, Ljava/util/ArrayList;
-
-    invoke-virtual {v1, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    return-void
-
-    :pswitch_1
-    iget-object v0, p0, Lfcq;->a:Ljava/lang/Object;
-
-    iget-object v1, p0, Lfcq;->c:Ljava/lang/Object;
-
-    iget-object v2, p0, Lfcq;->b:Ljava/lang/Object;
-
-    check-cast p1, Lgxm;
-
-    invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    check-cast v2, Lgyb;
-
-    check-cast v1, Lgxt;
-
-    check-cast v0, Lgxy;
-
-    invoke-interface {p1, v0, v1, v2}, Lgxm;->q(Lgxy;Lgxt;Lgyb;)V
-
-    return-void
-
-    :pswitch_2
-    iget-object v0, p0, Lfcq;->c:Ljava/lang/Object;
-
-    iget-object v2, p0, Lfcq;->a:Ljava/lang/Object;
-
-    iget-object v3, p0, Lfcq;->b:Ljava/lang/Object;
-
-    check-cast p1, Lgeh;
-
-    sget-object v4, Lgff;->a:Lnak;
-
-    invoke-interface {p1}, Lgeh;->I()Ljuf;
-
-    move-result-object v4
-
-    new-instance v5, Lgdl;
-
-    invoke-direct {v5, p1, v1}, Lgdl;-><init>(Lgeh;I)V
-
-    sget-object v1, Lnnv;->a:Lnnv;
-
-    invoke-interface {v0, v5, v1}, Ljwb;->a(Lkai;Ljava/util/concurrent/Executor;)Lkad;
+    invoke-static {v0}, Louj;->h(Ljava/lang/String;)Louj;
 
     move-result-object v0
 
-    invoke-virtual {v4, v0}, Ljuf;->d(Lkad;)V
+    sput-object v0, Lfcq;->a:Louj;
 
-    new-instance v0, Lgdl;
+    return-void
+.end method
 
-    const/16 v1, 0xd
+.method public constructor <init>(Ljava/lang/String;)V
+    .locals 3
 
-    invoke-direct {v0, p1, v1}, Lgdl;-><init>(Lgeh;I)V
+    invoke-direct {p0, p1}, Ljava/lang/Exception;-><init>(Ljava/lang/String;)V
 
-    sget-object v1, Lnnv;->a:Lnnv;
+    sget-object v0, Lfcq;->a:Louj;
 
-    invoke-interface {v2, v0, v1}, Ljwb;->a(Lkai;Ljava/util/concurrent/Executor;)Lkad;
+    invoke-virtual {v0}, Loue;->b()Lova;
 
     move-result-object v0
 
-    invoke-virtual {v4, v0}, Ljuf;->d(Lkad;)V
+    const-string v1, "%s"
 
-    new-instance v0, Lgdl;
+    const/16 v2, 0x669
 
-    const/16 v1, 0xe
-
-    invoke-direct {v0, p1, v1}, Lgdl;-><init>(Lgeh;I)V
-
-    sget-object p1, Lnnv;->a:Lnnv;
-
-    invoke-interface {v3, v0, p1}, Ljwb;->a(Lkai;Ljava/util/concurrent/Executor;)Lkad;
-
-    move-result-object p1
-
-    invoke-virtual {v4, p1}, Ljuf;->d(Lkad;)V
+    invoke-static {v0, v1, p1, v2, p0}, Ld;->x(Lova;Ljava/lang/String;Ljava/lang/Object;CLjava/lang/Throwable;)V
 
     return-void
+.end method
 
-    :pswitch_3
-    iget-object v0, p0, Lfcq;->c:Ljava/lang/Object;
+.method public constructor <init>(Ljava/lang/String;Ljava/lang/String;)V
+    .locals 2
 
-    iget-object v2, p0, Lfcq;->b:Ljava/lang/Object;
+    invoke-direct {p0, p1}, Ljava/lang/Exception;-><init>(Ljava/lang/String;)V
 
-    iget-object v3, p0, Lfcq;->a:Ljava/lang/Object;
+    sget-object v0, Lfcq;->a:Louj;
 
-    check-cast p1, Lgeh;
-
-    invoke-interface {p1}, Lgeh;->I()Ljuf;
-
-    move-result-object v4
-
-    new-instance v5, Lccp;
-
-    const/16 v6, 0x12
-
-    invoke-direct {v5, v2, p1, v6}, Lccp;-><init>(Ljava/util/function/Predicate;Lgeh;I)V
-
-    sget-object v2, Lnnv;->a:Lnnv;
-
-    invoke-interface {v0, v5, v2}, Ljvs;->a(Lkai;Ljava/util/concurrent/Executor;)Lkad;
+    invoke-virtual {v0}, Loue;->b()Lova;
 
     move-result-object v0
 
-    invoke-virtual {v4, v0}, Ljuf;->d(Lkad;)V
+    check-cast v0, Loug;
 
-    new-instance v0, Lcze;
+    invoke-interface {v0, p0}, Loug;->h(Ljava/lang/Throwable;)Lova;
 
-    invoke-direct {v0, p1, v1}, Lcze;-><init>(Lgeh;I)V
+    move-result-object v0
 
-    sget-object p1, Lnnv;->a:Lnnv;
+    check-cast v0, Loug;
 
-    invoke-interface {v3, v0, p1}, Ljvs;->a(Lkai;Ljava/util/concurrent/Executor;)Lkad;
+    const/16 v1, 0x66a
 
-    move-result-object p1
+    invoke-interface {v0, v1}, Loug;->G(I)Lova;
 
-    invoke-virtual {v4, p1}, Ljuf;->d(Lkad;)V
+    move-result-object v0
+
+    check-cast v0, Loug;
+
+    const-string v1, "%s : %s"
+
+    invoke-interface {v0, v1, p1, p2}, Loug;->y(Ljava/lang/String;Ljava/lang/Object;Ljava/lang/Object;)V
+
+    return-void
+.end method
+
+.method public static a(Ljava/lang/String;)V
+    .locals 6
+
+    invoke-static {}, Landroid/opengl/GLES20;->glGetError()I
+
+    move-result v0
+
+    if-nez v0, :cond_0
 
     return-void
 
-    :pswitch_4
-    iget-object v0, p0, Lfcq;->a:Ljava/lang/Object;
+    :cond_0
+    new-instance v1, Lfcq;
 
-    iget-object v1, p0, Lfcq;->b:Ljava/lang/Object;
+    invoke-static {v0}, Landroid/opengl/GLU;->gluErrorString(I)Ljava/lang/String;
 
-    iget-object v2, p0, Lfcq;->c:Ljava/lang/Object;
+    move-result-object v2
 
-    check-cast p1, Lgeh;
-
-    invoke-interface {p1}, Lgeh;->I()Ljuf;
+    invoke-static {p0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v3
 
-    new-instance v4, Lctn;
+    invoke-virtual {v3}, Ljava/lang/String;->length()I
 
-    check-cast v2, Lgec;
+    move-result v3
 
-    const/4 v5, 0x3
+    invoke-static {v2}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
-    invoke-direct {v4, v1, p1, v2, v5}, Lctn;-><init>(Ljava/util/function/Predicate;Lgeh;Lgec;I)V
+    move-result-object v4
 
-    sget-object p1, Lnnv;->a:Lnnv;
+    invoke-virtual {v4}, Ljava/lang/String;->length()I
 
-    invoke-interface {v0, v4, p1}, Ljvs;->a(Lkai;Ljava/util/concurrent/Executor;)Lkad;
+    move-result v4
 
-    move-result-object p1
+    new-instance v5, Ljava/lang/StringBuilder;
 
-    invoke-virtual {v3, p1}, Ljuf;->d(Lkad;)V
+    add-int/lit8 v3, v3, 0x16
 
-    return-void
+    add-int/2addr v3, v4
 
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_4
-        :pswitch_3
-        :pswitch_2
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
-.end method
+    invoke-direct {v5, v3}, Ljava/lang/StringBuilder;-><init>(I)V
 
-.method public final synthetic andThen(Ljava/util/function/Consumer;)Ljava/util/function/Consumer;
-    .locals 1
+    invoke-virtual {v5, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget v0, p0, Lfcq;->d:I
+    const-string p0, ": glError "
 
-    packed-switch v0, :pswitch_data_0
+    invoke-virtual {v5, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-static {p0, p1}, Lj$/util/function/Consumer$-CC;->$default$andThen(Ljava/util/function/Consumer;Ljava/util/function/Consumer;)Ljava/util/function/Consumer;
+    invoke-virtual {v5, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object p1
+    const-string p0, " "
 
-    return-object p1
+    invoke-virtual {v5, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    :pswitch_0
-    invoke-static {p0, p1}, Lj$/util/function/Consumer$-CC;->$default$andThen(Ljava/util/function/Consumer;Ljava/util/function/Consumer;)Ljava/util/function/Consumer;
+    invoke-virtual {v5, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    move-result-object p1
+    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    return-object p1
+    move-result-object p0
 
-    :pswitch_1
-    invoke-static {p0, p1}, Lj$/util/function/Consumer$-CC;->$default$andThen(Ljava/util/function/Consumer;Ljava/util/function/Consumer;)Ljava/util/function/Consumer;
+    invoke-direct {v1, p0}, Lfcq;-><init>(Ljava/lang/String;)V
 
-    move-result-object p1
-
-    return-object p1
-
-    :pswitch_2
-    invoke-static {p0, p1}, Lj$/util/function/Consumer$-CC;->$default$andThen(Ljava/util/function/Consumer;Ljava/util/function/Consumer;)Ljava/util/function/Consumer;
-
-    move-result-object p1
-
-    return-object p1
-
-    :pswitch_3
-    invoke-static {p0, p1}, Lj$/util/function/Consumer$-CC;->$default$andThen(Ljava/util/function/Consumer;Ljava/util/function/Consumer;)Ljava/util/function/Consumer;
-
-    move-result-object p1
-
-    return-object p1
-
-    :pswitch_4
-    invoke-static {p0, p1}, Lj$/util/function/Consumer$-CC;->$default$andThen(Ljava/util/function/Consumer;Ljava/util/function/Consumer;)Ljava/util/function/Consumer;
-
-    move-result-object p1
-
-    return-object p1
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_4
-        :pswitch_3
-        :pswitch_2
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
+    throw v1
 .end method

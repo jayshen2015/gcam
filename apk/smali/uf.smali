@@ -1,12 +1,5 @@
-.class public final Luf;
-.super Ljn;
+.class public interface abstract Luf;
+.super Ljava/lang/Object;
 
-
-# direct methods
-.method private constructor <init>()V
-    .locals 0
-
-    invoke-direct {p0}, Ljn;-><init>()V
-
-    return-void
-.end method
+# interfaces
+.implements Laee;

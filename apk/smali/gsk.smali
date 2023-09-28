@@ -1,34 +1,39 @@
-.class public final Lgsk;
+.class public final synthetic Lgsk;
 .super Ljava/lang/Object;
+
+# interfaces
+.implements Llij;
 
 
 # instance fields
-.field public final a:F
-
-.field public final b:F
+.field public final synthetic a:Lgsn;
 
 
 # direct methods
-.method public constructor <init>(FF)V
+.method public synthetic constructor <init>(Lgsn;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput p1, p0, Lgsk;->a:F
-
-    iput p2, p0, Lgsk;->b:F
+    iput-object p1, p0, Lgsk;->a:Lgsn;
 
     return-void
 .end method
 
-.method public constructor <init>(FF[B)V
-    .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+# virtual methods
+.method public final fB(Ljava/lang/Object;)V
+    .locals 1
 
-    iput p1, p0, Lgsk;->b:F
+    iget-object v0, p0, Lgsk;->a:Lgsn;
 
-    iput p2, p0, Lgsk;->a:F
+    check-cast p1, Lcwi;
+
+    invoke-virtual {p1}, Lcwi;->a()Llwd;
+
+    move-result-object p1
+
+    invoke-virtual {v0, p1}, Lgsn;->f(Llwd;)V
 
     return-void
 .end method

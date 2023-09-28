@@ -1,68 +1,76 @@
 .class public Ldmt;
-.super Landroid/view/View;
+.super Ldmo;
 
 
 # instance fields
-.field public final b:Lkbj;
+.field public final a:Lcom/google/android/apps/camera/evcomp/EvCompView;
+
+.field public final b:Landroid/widget/CheckBox;
+
+.field public final c:Landroid/animation/ObjectAnimator;
+
+.field public final d:Ldna;
+
+.field public final e:Llda;
 
 
 # direct methods
-.method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
+.method public constructor <init>(Lcom/google/android/apps/camera/evcomp/EvCompView;Landroid/widget/CheckBox;Landroid/animation/ObjectAnimator;Ldna;Lhuq;[B)V
     .locals 0
 
-    invoke-direct {p0, p1, p2}, Landroid/view/View;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
+    invoke-direct {p0}, Ldmo;-><init>()V
 
-    new-instance p1, Lkbj;
+    iput-object p1, p0, Ldmt;->a:Lcom/google/android/apps/camera/evcomp/EvCompView;
 
-    invoke-direct {p1}, Lkbj;-><init>()V
+    iput-object p2, p0, Ldmt;->b:Landroid/widget/CheckBox;
 
-    iput-object p1, p0, Ldmt;->b:Lkbj;
+    iput-object p3, p0, Ldmt;->c:Landroid/animation/ObjectAnimator;
+
+    iput-object p4, p0, Ldmt;->d:Ldna;
+
+    iget-object p2, p5, Lhuq;->b:Llda;
+
+    iput-object p2, p0, Ldmt;->e:Llda;
+
+    new-instance p2, Ldmp;
+
+    invoke-direct {p2, p1}, Ldmp;-><init>(Lcom/google/android/apps/camera/evcomp/EvCompView;)V
+
+    invoke-virtual {p3, p2}, Landroid/animation/ObjectAnimator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Landroid/graphics/Matrix;
-    .locals 1
+.method public final i(ZZ)V
+    .locals 0
 
-    iget-object v0, p0, Ldmt;->b:Lkbj;
+    if-eqz p2, :cond_0
 
-    invoke-virtual {v0}, Lkbj;->a()Landroid/graphics/Matrix;
+    iget-object p2, p0, Ldmt;->d:Ldna;
 
-    move-result-object v0
+    invoke-virtual {p2}, Ldna;->j()V
 
-    return-object v0
-.end method
+    :cond_0
+    if-eqz p1, :cond_1
 
-.method public final layout(IIII)V
-    .locals 6
+    iget-object p1, p0, Ldmt;->c:Landroid/animation/ObjectAnimator;
 
-    invoke-super {p0, p1, p2, p3, p4}, Landroid/view/View;->layout(IIII)V
+    invoke-virtual {p1}, Landroid/animation/ObjectAnimator;->start()V
 
-    iget-object v0, p0, Ldmt;->b:Lkbj;
+    return-void
 
-    invoke-virtual {p0}, Ldmt;->getContext()Landroid/content/Context;
+    :cond_1
+    iget-object p1, p0, Ldmt;->c:Landroid/animation/ObjectAnimator;
 
-    move-result-object v1
+    invoke-virtual {p1}, Landroid/animation/ObjectAnimator;->cancel()V
 
-    invoke-static {v1}, Loxq;->i(Landroid/content/Context;)I
+    iget-object p1, p0, Ldmt;->a:Lcom/google/android/apps/camera/evcomp/EvCompView;
 
-    move-result v1
+    const/high16 p2, 0x3f800000    # 1.0f
 
-    invoke-static {v1}, Lkab;->e(I)Lkab;
-
-    move-result-object v5
-
-    move v1, p1
-
-    move v2, p2
-
-    move v3, p3
-
-    move v4, p4
-
-    invoke-virtual/range {v0 .. v5}, Lkbj;->c(IIIILkab;)V
+    invoke-virtual {p1, p2}, Lcom/google/android/apps/camera/evcomp/EvCompView;->setAlpha(F)V
 
     return-void
 .end method

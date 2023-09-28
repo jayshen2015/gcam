@@ -1,109 +1,136 @@
 .class public final Legy;
 .super Ljava/lang/Object;
 
-# interfaces
-.implements Logk;
+
+# static fields
+.field private static final a:Louj;
 
 
 # instance fields
-.field private final a:Loiw;
-
-.field private final b:Loiw;
+.field private final b:Landroid/opengl/GLSurfaceView;
 
 
 # direct methods
-.method public constructor <init>(Loiw;Loiw;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 1
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const-string v0, "com/google/android/apps/camera/imax/GlTaskQueueImpl"
 
-    iput-object p1, p0, Legy;->a:Loiw;
+    invoke-static {v0}, Louj;->h(Ljava/lang/String;)Louj;
 
-    iput-object p2, p0, Legy;->b:Loiw;
+    move-result-object v0
+
+    sput-object v0, Legy;->a:Louj;
 
     return-void
 .end method
 
-.method public static a(Loiw;Loiw;)Legy;
-    .locals 1
+.method public constructor <init>(Landroid/opengl/GLSurfaceView;)V
+    .locals 0
 
-    new-instance v0, Legy;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {v0, p0, p1}, Legy;-><init>(Loiw;Loiw;)V
+    iput-object p1, p0, Legy;->b:Landroid/opengl/GLSurfaceView;
 
-    return-object v0
+    return-void
 .end method
 
 
 # virtual methods
-.method public final b()Ljava/lang/Long;
-    .locals 5
+.method public final a(Ljava/lang/Runnable;)V
+    .locals 1
 
-    iget-object v0, p0, Legy;->a:Loiw;
+    iget-object v0, p0, Legy;->b:Landroid/opengl/GLSurfaceView;
 
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
+    invoke-virtual {v0, p1}, Landroid/opengl/GLSurfaceView;->queueEvent(Ljava/lang/Runnable;)V
 
-    move-result-object v0
+    return-void
+.end method
 
-    check-cast v0, Lebi;
+.method public final b(Ljava/lang/Runnable;)V
+    .locals 2
 
-    iget-object v1, p0, Legy;->b:Loiw;
+    new-instance v0, Ljava/util/concurrent/atomic/AtomicBoolean;
 
-    invoke-interface {v1}, Loiw;->get()Ljava/lang/Object;
+    const/4 v1, 0x0
+
+    invoke-direct {v0, v1}, Ljava/util/concurrent/atomic/AtomicBoolean;-><init>(Z)V
+
+    new-instance v1, Legx;
+
+    invoke-direct {v1, p1, v0}, Legx;-><init>(Ljava/lang/Runnable;Ljava/util/concurrent/atomic/AtomicBoolean;)V
+
+    invoke-virtual {p0, v1}, Legy;->a(Ljava/lang/Runnable;)V
+
+    monitor-enter v0
+
+    :goto_0
+    :try_start_0
+    invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicBoolean;->get()Z
+
+    move-result p1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    if-nez p1, :cond_0
+
+    :try_start_1
+    invoke-virtual {v0}, Ljava/lang/Object;->wait()V
+    :try_end_1
+    .catch Ljava/lang/InterruptedException; {:try_start_1 .. :try_end_1} :catch_0
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    goto :goto_0
+
+    :catch_0
+    move-exception p1
+
+    :try_start_2
+    sget-object v1, Legy;->a:Louj;
+
+    invoke-virtual {v1}, Loue;->c()Lova;
 
     move-result-object v1
 
-    check-cast v1, Ldhi;
+    check-cast v1, Loug;
 
-    sget-object v2, Ldhq;->X:Ldhj;
+    invoke-interface {v1, p1}, Loug;->h(Ljava/lang/Throwable;)Lova;
 
-    invoke-interface {v1, v2}, Ldhi;->l(Ldhj;)Z
+    move-result-object p1
 
-    move-result v1
+    check-cast p1, Loug;
 
-    if-eqz v1, :cond_0
+    const/16 v1, 0x481
 
-    sget-wide v1, Legx;->b:J
+    invoke-interface {p1, v1}, Loug;->G(I)Lova;
+
+    move-result-object p1
+
+    check-cast p1, Loug;
+
+    const-string v1, "Interrupted during wait"
+
+    invoke-interface {p1, v1}, Loug;->o(Ljava/lang/String;)V
 
     goto :goto_0
 
     :cond_0
-    sget-wide v1, Legx;->a:J
+    monitor-exit v0
 
-    :goto_0
-    iget v0, v0, Lebi;->b:I
+    return-void
 
-    int-to-long v3, v0
+    :catchall_0
+    move-exception p1
 
-    mul-long v1, v1, v3
+    monitor-exit v0
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
-    const/16 v0, 0x1f4
+    goto :goto_2
 
-    invoke-static {v0}, Linb;->s(I)J
+    :goto_1
+    throw p1
 
-    move-result-wide v3
-
-    add-long/2addr v1, v3
-
-    const-wide/32 v3, 0x3b9aca00
-
-    invoke-static {v3, v4, v1, v2}, Ljava/lang/Math;->max(JJ)J
-
-    move-result-wide v0
-
-    invoke-static {v0, v1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public final bridge synthetic get()Ljava/lang/Object;
-    .locals 1
-
-    invoke-virtual {p0}, Legy;->b()Ljava/lang/Long;
-
-    move-result-object v0
-
-    return-object v0
+    :goto_2
+    goto :goto_1
 .end method

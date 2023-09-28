@@ -1,135 +1,39 @@
-.class public final Lhww;
+.class public final synthetic Lhww;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lbzo;
+.implements Lj$/util/function/Supplier;
 
 
 # instance fields
-.field public final synthetic a:Lhwy;
-
-.field private final synthetic b:I
+.field public final synthetic a:Landroid/content/Context;
 
 
 # direct methods
-.method public constructor <init>(Lhwy;I)V
+.method public synthetic constructor <init>(Landroid/content/Context;)V
     .locals 0
 
-    iput p2, p0, Lhww;->b:I
-
-    iput-object p1, p0, Lhww;->a:Lhwy;
-
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lhww;->a:Landroid/content/Context;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final l(Lbsj;)V
+.method public final get()Ljava/lang/Object;
     .locals 2
 
-    iget p1, p0, Lhww;->b:I
+    iget-object v0, p0, Lhww;->a:Landroid/content/Context;
 
-    packed-switch p1, :pswitch_data_0
+    invoke-static {v0}, Lhwv;->b(Landroid/content/Context;)J
 
-    iget-object p1, p0, Lhww;->a:Lhwy;
+    move-result-wide v0
 
-    iget-object p1, p1, Lhwy;->b:Lcom/google/android/apps/camera/ui/eduimageview/EduImageView;
+    invoke-static {v0, v1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
-    iget-object p1, p1, Lcom/google/android/apps/camera/ui/eduimageview/EduImageView;->a:Landroid/widget/ImageView;
+    move-result-object v0
 
-    sget-object v0, Lhwx;->a:Lhwx;
-
-    invoke-virtual {p1, v0}, Landroid/widget/ImageView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
-
-    iget-object p1, p0, Lhww;->a:Lhwy;
-
-    invoke-virtual {p1}, Lhwy;->c()V
-
-    return-void
-
-    :pswitch_0
-    iget-object p1, p0, Lhww;->a:Lhwy;
-
-    iget-object p1, p1, Lhwy;->b:Lcom/google/android/apps/camera/ui/eduimageview/EduImageView;
-
-    iget-object p1, p1, Lcom/google/android/apps/camera/ui/eduimageview/EduImageView;->a:Landroid/widget/ImageView;
-
-    const/4 v0, 0x2
-
-    invoke-virtual {p1, v0}, Landroid/widget/ImageView;->setImportantForAccessibility(I)V
-
-    return-void
-
-    :pswitch_1
-    iget-object p1, p0, Lhww;->a:Lhwy;
-
-    iget-object p1, p1, Lhwy;->b:Lcom/google/android/apps/camera/ui/eduimageview/EduImageView;
-
-    iget-object p1, p1, Lcom/google/android/apps/camera/ui/eduimageview/EduImageView;->a:Landroid/widget/ImageView;
-
-    new-instance v0, Lgdu;
-
-    const/16 v1, 0xe
-
-    invoke-direct {v0, p0, v1}, Lgdu;-><init>(Lhww;I)V
-
-    invoke-virtual {p1, v0}, Landroid/widget/ImageView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
-
-    iget-object p1, p0, Lhww;->a:Lhwy;
-
-    invoke-virtual {p1}, Lhwy;->c()V
-
-    return-void
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
-.end method
-
-.method public final synthetic m(Ljava/lang/Object;)V
-    .locals 1
-
-    iget v0, p0, Lhww;->b:I
-
-    packed-switch v0, :pswitch_data_0
-
-    check-cast p1, Landroid/graphics/drawable/Drawable;
-
-    iget-object p1, p0, Lhww;->a:Lhwy;
-
-    invoke-virtual {p1}, Lhwy;->a()V
-
-    return-void
-
-    :pswitch_0
-    check-cast p1, Landroid/graphics/drawable/Drawable;
-
-    iget-object p1, p0, Lhww;->a:Lhwy;
-
-    invoke-virtual {p1}, Lhwy;->a()V
-
-    return-void
-
-    :pswitch_1
-    check-cast p1, Landroid/graphics/drawable/Drawable;
-
-    iget-object p1, p0, Lhww;->a:Lhwy;
-
-    invoke-virtual {p1}, Lhwy;->a()V
-
-    return-void
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
+    return-object v0
 .end method

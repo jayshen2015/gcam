@@ -1,113 +1,75 @@
-.class public final Lopt;
-.super Lokp;
-
-
-# static fields
-.field public static final b:Lokv;
+.class final Lopt;
+.super Lond;
 
 
 # instance fields
-.field public final a:Ljava/lang/String;
+.field final synthetic a:Ljava/lang/Iterable;
+
+.field final synthetic b:I
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
+.method public constructor <init>(Ljava/lang/Iterable;I)V
+    .locals 0
 
-    new-instance v0, Lokv;
+    iput-object p1, p0, Lopt;->a:Ljava/lang/Iterable;
 
-    invoke-direct {v0}, Lokv;-><init>()V
+    iput p2, p0, Lopt;->b:I
 
-    sput-object v0, Lopt;->b:Lokv;
-
-    return-void
-.end method
-
-.method public constructor <init>(Ljava/lang/String;)V
-    .locals 1
-
-    sget-object v0, Lopt;->b:Lokv;
-
-    invoke-direct {p0, v0}, Lokp;-><init>(Loky;)V
-
-    iput-object p1, p0, Lopt;->a:Ljava/lang/String;
+    invoke-direct {p0}, Lond;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
+.method public final iterator()Ljava/util/Iterator;
     .locals 3
 
-    const/4 v0, 0x1
+    iget-object v0, p0, Lopt;->a:Ljava/lang/Iterable;
 
-    if-ne p0, p1, :cond_0
+    instance-of v1, v0, Ljava/util/List;
 
-    return v0
+    if-eqz v1, :cond_0
 
-    :cond_0
-    instance-of v1, p1, Lopt;
+    check-cast v0, Ljava/util/List;
 
-    const/4 v2, 0x0
+    invoke-interface {v0}, Ljava/util/List;->size()I
 
-    if-nez v1, :cond_1
+    move-result v1
 
-    return v2
+    iget v2, p0, Lopt;->b:I
 
-    :cond_1
-    check-cast p1, Lopt;
+    invoke-static {v1, v2}, Ljava/lang/Math;->min(II)I
 
-    iget-object v1, p0, Lopt;->a:Ljava/lang/String;
+    move-result v1
 
-    iget-object p1, p1, Lopt;->a:Ljava/lang/String;
+    invoke-interface {v0}, Ljava/util/List;->size()I
 
-    invoke-static {v1, p1}, Lone;->c(Ljava/lang/Object;Ljava/lang/Object;)Z
+    move-result v2
 
-    move-result p1
+    invoke-interface {v0, v1, v2}, Ljava/util/List;->subList(II)Ljava/util/List;
 
-    if-nez p1, :cond_2
+    move-result-object v0
 
-    return v2
-
-    :cond_2
-    return v0
-.end method
-
-.method public final hashCode()I
-    .locals 1
-
-    iget-object v0, p0, Lopt;->a:Ljava/lang/String;
-
-    invoke-virtual {v0}, Ljava/lang/String;->hashCode()I
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .locals 3
-
-    iget-object v0, p0, Lopt;->a:Ljava/lang/String;
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, "CoroutineName("
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v0, ")"
-
-    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object v0
 
     return-object v0
+
+    :cond_0
+    invoke-interface {v0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
+
+    move-result-object v0
+
+    iget v1, p0, Lopt;->b:I
+
+    invoke-static {v0, v1}, Lohh;->h(Ljava/util/Iterator;I)I
+
+    new-instance v1, Lops;
+
+    invoke-direct {v1, v0}, Lops;-><init>(Ljava/util/Iterator;)V
+
+    return-object v1
 .end method

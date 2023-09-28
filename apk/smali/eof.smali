@@ -1,22 +1,41 @@
 .class public final Leof;
 .super Ljava/lang/Object;
 
+# interfaces
+.implements Liho;
 
-# static fields
-.field public static final a:Lemu;
+
+# instance fields
+.field public final a:Lenw;
+
+.field private final b:Landroid/app/Application;
 
 
 # direct methods
-.method static constructor <clinit>()V
+.method public constructor <init>(Landroid/app/Application;Lenw;)V
+    .locals 0
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Leof;->b:Landroid/app/Application;
+
+    iput-object p2, p0, Leof;->a:Lenw;
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public final run()V
     .locals 2
 
-    new-instance v0, Lemu;
+    iget-object v0, p0, Leof;->b:Landroid/app/Application;
 
-    const/4 v1, 0x6
+    new-instance v1, Leoe;
 
-    invoke-direct {v0, v1}, Lemu;-><init>(I)V
+    invoke-direct {v1, p0}, Leoe;-><init>(Leof;)V
 
-    sput-object v0, Leof;->a:Lemu;
+    invoke-virtual {v0, v1}, Landroid/app/Application;->registerActivityLifecycleCallbacks(Landroid/app/Application$ActivityLifecycleCallbacks;)V
 
     return-void
 .end method

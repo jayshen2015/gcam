@@ -1,182 +1,74 @@
 .class public final Lntz;
-.super Lnws;
-
-# interfaces
-.implements Lnxz;
+.super Ljava/lang/Object;
 
 
 # static fields
-.field public static final e:Lntz;
+.field public static final a:Ljava/util/Set;
 
-.field private static volatile f:Lnyf;
+.field public static final b:Ljava/util/Set;
 
-
-# instance fields
-.field public a:I
-
-.field public b:Z
-
-.field public c:Lntx;
-
-.field public d:Lnty;
+.field public static final c:Lqmu;
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 2
+    .locals 5
 
-    new-instance v0, Lntz;
+    const/4 v0, 0x3
 
-    invoke-direct {v0}, Lntz;-><init>()V
+    new-array v0, v0, [Lnnr;
 
-    sput-object v0, Lntz;->e:Lntz;
-
-    const-class v1, Lntz;
-
-    invoke-static {v1, v0}, Lnws;->aa(Ljava/lang/Class;Lnws;)V
-
-    return-void
-.end method
-
-.method private constructor <init>()V
-    .locals 0
-
-    invoke-direct {p0}, Lnws;-><init>()V
-
-    return-void
-.end method
-
-
-# virtual methods
-.method protected final a(ILjava/lang/Object;)Ljava/lang/Object;
-    .locals 3
-
-    add-int/lit8 p1, p1, -0x1
-
-    const/4 p2, 0x1
-
-    packed-switch p1, :pswitch_data_0
-
-    :pswitch_0
-    const/4 p1, 0x0
-
-    return-object p1
-
-    :pswitch_1
-    sget-object p1, Lntz;->f:Lnyf;
-
-    if-nez p1, :cond_1
-
-    const-class p2, Lntz;
-
-    monitor-enter p2
-
-    :try_start_0
-    sget-object p1, Lntz;->f:Lnyf;
-
-    if-nez p1, :cond_0
-
-    new-instance p1, Lnwo;
-
-    sget-object v0, Lntz;->e:Lntz;
-
-    invoke-direct {p1, v0}, Lnwo;-><init>(Lnws;)V
-
-    sput-object p1, Lntz;->f:Lnyf;
-
-    :cond_0
-    monitor-exit p2
-
-    goto :goto_0
-
-    :catchall_0
-    move-exception p1
-
-    monitor-exit p2
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw p1
-
-    :cond_1
-    :goto_0
-    return-object p1
-
-    :pswitch_2
-    sget-object p1, Lntz;->e:Lntz;
-
-    return-object p1
-
-    :pswitch_3
-    new-instance p1, Lnwn;
-
-    sget-object p2, Lntz;->e:Lntz;
-
-    invoke-direct {p1, p2}, Lnwn;-><init>(Lnws;)V
-
-    return-object p1
-
-    :pswitch_4
-    new-instance p1, Lntz;
-
-    invoke-direct {p1}, Lntz;-><init>()V
-
-    return-object p1
-
-    :pswitch_5
-    const-string p1, "a"
-
-    const-string v0, "\u0001\u0003\u0000\u0001\u0001\u0003\u0003\u0000\u0000\u0000\u0001\u1007\u0000\u0002\u1009\u0001\u0003\u1009\u0002"
-
-    const/4 v1, 0x4
-
-    new-array v1, v1, [Ljava/lang/Object;
+    sget-object v1, Lnnr;->c:Lnnr;
 
     const/4 v2, 0x0
 
-    aput-object p1, v1, v2
+    aput-object v1, v0, v2
 
-    const-string p1, "b"
+    sget-object v1, Lnnr;->d:Lnnr;
 
-    aput-object p1, v1, p2
+    const/4 v2, 0x1
 
-    const/4 p1, 0x2
+    aput-object v1, v0, v2
 
-    const-string p2, "c"
+    sget-object v1, Lnnr;->e:Lnnr;
 
-    aput-object p2, v1, p1
+    const/4 v3, 0x2
 
-    const/4 p1, 0x3
+    aput-object v1, v0, v3
 
-    const-string p2, "d"
+    invoke-static {v0}, Lqmd;->H([Ljava/lang/Object;)Ljava/util/Set;
 
-    aput-object p2, v1, p1
+    move-result-object v0
 
-    sget-object p1, Lntz;->e:Lntz;
+    sput-object v0, Lntz;->a:Ljava/util/Set;
 
-    invoke-static {p1, v0, v1}, Lntz;->X(Lnxy;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/Object;
+    sget-object v1, Lnnr;->g:Lnnr;
 
-    move-result-object p1
+    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    return-object p1
+    new-instance v3, Ljava/util/LinkedHashSet;
 
-    :pswitch_6
-    invoke-static {p2}, Ljava/lang/Byte;->valueOf(B)Ljava/lang/Byte;
+    invoke-interface {v0}, Ljava/util/Set;->size()I
 
-    move-result-object p1
+    move-result v4
 
-    return-object p1
+    add-int/2addr v4, v2
 
-    nop
+    invoke-static {v4}, Lqmd;->o(I)I
 
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_6
-        :pswitch_0
-        :pswitch_5
-        :pswitch_4
-        :pswitch_3
-        :pswitch_2
-        :pswitch_1
-    .end packed-switch
+    move-result v2
+
+    invoke-direct {v3, v2}, Ljava/util/LinkedHashSet;-><init>(I)V
+
+    invoke-virtual {v3, v0}, Ljava/util/LinkedHashSet;->addAll(Ljava/util/Collection;)Z
+
+    invoke-virtual {v3, v1}, Ljava/util/LinkedHashSet;->add(Ljava/lang/Object;)Z
+
+    sput-object v3, Lntz;->b:Ljava/util/Set;
+
+    sget-object v0, Lnoj;->r:Lnoj;
+
+    sput-object v0, Lntz;->c:Lqmu;
+
+    return-void
 .end method

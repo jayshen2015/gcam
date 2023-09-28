@@ -11,7 +11,7 @@
     return-void
 .end method
 
-.method public static a(I)Ljad;
+.method public static a(I)Lkfm;
     .locals 4
 
     const/4 v0, 0x2
@@ -31,9 +31,9 @@
     return-object p0
 
     :cond_0
-    new-instance p0, Ljad;
+    new-instance p0, Lkfm;
 
-    invoke-direct {p0, v0, v1}, Ljad;-><init>(J)V
+    invoke-direct {p0, v0, v1}, Lkfm;-><init>(J)V
 
     return-object p0
 .end method

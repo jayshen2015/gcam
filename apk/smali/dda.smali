@@ -1,66 +1,204 @@
-.class final Ldda;
-.super Lapo;
+.class public final Ldda;
+.super Ljava/lang/Object;
+
+
+# static fields
+.field public static final a:Lddi;
+
+.field public static final b:Lddi;
+
+.field public static final c:Lddg;
+
+.field public static final d:Lddg;
+
+.field public static final e:Lddg;
+
+.field public static final f:Lddg;
+
+.field public static final g:Lddg;
+
+.field public static final h:Lddg;
+
+.field public static final i:Lddg;
 
 
 # direct methods
-.method public constructor <init>(Lapt;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 2
 
-    invoke-direct {p0, p1}, Lapo;-><init>(Lapt;)V
+    new-instance v0, Lddh;
+
+    invoke-direct {v0}, Lddh;-><init>()V
+
+    const-string v1, "camera.vesper_debug"
+
+    iput-object v1, v0, Lddh;->a:Ljava/lang/String;
+
+    new-instance v0, Lddh;
+
+    invoke-direct {v0}, Lddh;-><init>()V
+
+    const-string v1, "camera.vesper_force_strong"
+
+    iput-object v1, v0, Lddh;->a:Ljava/lang/String;
+
+    new-instance v0, Lddh;
+
+    invoke-direct {v0}, Lddh;-><init>()V
+
+    const-string v1, "camera.vesper_debl"
+
+    iput-object v1, v0, Lddh;->a:Ljava/lang/String;
+
+    invoke-virtual {v0}, Lddh;->f()Lddg;
+
+    move-result-object v0
+
+    sput-object v0, Ldda;->c:Lddg;
+
+    new-instance v0, Lddh;
+
+    invoke-direct {v0}, Lddh;-><init>()V
+
+    const-string v1, "camera.vesper_ew"
+
+    iput-object v1, v0, Lddh;->a:Ljava/lang/String;
+
+    invoke-virtual {v0}, Lddh;->f()Lddg;
+
+    move-result-object v0
+
+    sput-object v0, Ldda;->d:Lddg;
+
+    new-instance v0, Lddh;
+
+    invoke-direct {v0}, Lddh;-><init>()V
+
+    const-string v1, "camera.vesper_tooltip"
+
+    iput-object v1, v0, Lddh;->a:Ljava/lang/String;
+
+    invoke-virtual {v0}, Lddh;->f()Lddg;
+
+    move-result-object v0
+
+    sput-object v0, Ldda;->e:Lddg;
+
+    new-instance v0, Lddh;
+
+    invoke-direct {v0}, Lddh;-><init>()V
+
+    const-string v1, "camera.vesper_bottomsheet"
+
+    iput-object v1, v0, Lddh;->a:Ljava/lang/String;
+
+    invoke-virtual {v0}, Lddh;->f()Lddg;
+
+    move-result-object v0
+
+    sput-object v0, Ldda;->f:Lddg;
+
+    new-instance v0, Lddh;
+
+    invoke-direct {v0}, Lddh;-><init>()V
+
+    const-string v1, "camera.enable_vesper"
+
+    iput-object v1, v0, Lddh;->a:Ljava/lang/String;
+
+    invoke-virtual {v0}, Lddh;->f()Lddg;
+
+    move-result-object v0
+
+    sput-object v0, Ldda;->g:Lddg;
+
+    new-instance v0, Lddh;
+
+    invoke-direct {v0}, Lddh;-><init>()V
+
+    const-string v1, "camera.enable_vesper_advanced"
+
+    iput-object v1, v0, Lddh;->a:Ljava/lang/String;
+
+    new-instance v0, Lddh;
+
+    invoke-direct {v0}, Lddh;-><init>()V
+
+    const-string v1, "camera.vesper_main_gpu"
+
+    iput-object v1, v0, Lddh;->a:Ljava/lang/String;
+
+    new-instance v0, Lddh;
+
+    invoke-direct {v0}, Lddh;-><init>()V
+
+    const-string v1, "camera.gpu_postproc"
+
+    iput-object v1, v0, Lddh;->a:Ljava/lang/String;
+
+    new-instance v0, Lddh;
+
+    invoke-direct {v0}, Lddh;-><init>()V
+
+    const-string v1, "face_retouching_default_setting"
+
+    iput-object v1, v0, Lddh;->a:Ljava/lang/String;
+
+    invoke-virtual {v0}, Lddh;->a()Lddi;
+
+    move-result-object v0
+
+    sput-object v0, Ldda;->a:Lddi;
+
+    new-instance v0, Lddh;
+
+    invoke-direct {v0}, Lddh;-><init>()V
+
+    const-string v1, "makeup_default_setting"
+
+    iput-object v1, v0, Lddh;->a:Ljava/lang/String;
+
+    invoke-virtual {v0}, Lddh;->a()Lddi;
+
+    move-result-object v0
+
+    sput-object v0, Ldda;->b:Lddi;
+
+    new-instance v0, Lddh;
+
+    invoke-direct {v0}, Lddh;-><init>()V
+
+    const-string v1, "camera.enable_lvesper"
+
+    iput-object v1, v0, Lddh;->a:Ljava/lang/String;
+
+    invoke-virtual {v0}, Lddh;->f()Lddg;
+
+    move-result-object v0
+
+    sput-object v0, Ldda;->h:Lddg;
+
+    new-instance v0, Lddh;
+
+    invoke-direct {v0}, Lddh;-><init>()V
+
+    const-string v1, "camera.enable_mvesper"
+
+    iput-object v1, v0, Lddh;->a:Ljava/lang/String;
+
+    invoke-virtual {v0}, Lddh;->f()Lddg;
+
+    move-result-object v0
+
+    sput-object v0, Ldda;->i:Lddg;
+
+    new-instance v0, Lddh;
+
+    invoke-direct {v0}, Lddh;-><init>()V
+
+    const-string v1, "camera.adaptive_vesper"
+
+    iput-object v1, v0, Lddh;->a:Ljava/lang/String;
 
     return-void
-.end method
-
-
-# virtual methods
-.method public final bridge synthetic b(Larf;Ljava/lang/Object;)V
-    .locals 3
-
-    check-cast p2, Ldcx;
-
-    iget-object v0, p2, Ldcx;->a:Lddd;
-
-    invoke-virtual {v0}, Lddd;->ordinal()I
-
-    move-result v0
-
-    int-to-long v0, v0
-
-    const/4 v2, 0x1
-
-    invoke-virtual {p1, v2, v0, v1}, Lare;->e(IJ)V
-
-    iget v0, p2, Ldcx;->b:I
-
-    int-to-long v0, v0
-
-    const/4 v2, 0x2
-
-    invoke-virtual {p1, v2, v0, v1}, Lare;->e(IJ)V
-
-    iget v0, p2, Ldcx;->c:I
-
-    int-to-long v0, v0
-
-    const/4 v2, 0x3
-
-    invoke-virtual {p1, v2, v0, v1}, Lare;->e(IJ)V
-
-    iget p2, p2, Ldcx;->d:I
-
-    int-to-long v0, p2
-
-    const/4 p2, 0x4
-
-    invoke-virtual {p1, p2, v0, v1}, Lare;->e(IJ)V
-
-    return-void
-.end method
-
-.method public final d()Ljava/lang/String;
-    .locals 1
-
-    const-string v0, "INSERT OR REPLACE INTO `HardwareHelpDialogCounts` (`reason`,`impressionsBeforeReboot`,`impressionsAfterReboot`,`rebootCount`) VALUES (?,?,?,?)"
-
-    return-object v0
 .end method

@@ -9,9 +9,9 @@
 
 .field private final c:Landroid/graphics/Paint;
 
-.field private final d:Lavc;
+.field private final d:Lamb;
 
-.field private final e:Lavh;
+.field private final e:Lamd;
 
 .field private final f:Landroid/graphics/drawable/Drawable$Callback;
 
@@ -80,7 +80,7 @@
 .end method
 
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
-    .locals 12
+    .locals 11
 
     invoke-direct {p0, p1, p2, p3}, Landroid/view/View;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
@@ -88,57 +88,55 @@
 
     invoke-direct {p3}, Landroid/graphics/Rect;-><init>()V
 
-    new-instance p3, Latd;
+    new-instance p3, Lalz;
 
-    const/4 v0, 0x2
-
-    invoke-direct {p3, p0, v0}, Latd;-><init>(Landroidx/wear/widget/CircledImageView;I)V
+    invoke-direct {p3, p0}, Lalz;-><init>(Landroidx/wear/widget/CircledImageView;)V
 
     iput-object p3, p0, Landroidx/wear/widget/CircledImageView;->f:Landroid/graphics/drawable/Drawable$Callback;
 
-    const/high16 v1, 0x3f800000    # 1.0f
+    const/high16 v0, 0x3f800000    # 1.0f
 
-    iput v1, p0, Landroidx/wear/widget/CircledImageView;->q:F
-
-    const/4 v2, 0x0
-
-    iput-boolean v2, p0, Landroidx/wear/widget/CircledImageView;->r:Z
-
-    iput v1, p0, Landroidx/wear/widget/CircledImageView;->s:F
+    iput v0, p0, Landroidx/wear/widget/CircledImageView;->q:F
 
     const/4 v1, 0x0
 
-    iput v1, p0, Landroidx/wear/widget/CircledImageView;->t:F
+    iput-boolean v1, p0, Landroidx/wear/widget/CircledImageView;->r:Z
 
-    sget-object v3, Lavb;->a:Lavb;
+    iput v0, p0, Landroidx/wear/widget/CircledImageView;->s:F
+
+    const/4 v0, 0x0
+
+    iput v0, p0, Landroidx/wear/widget/CircledImageView;->t:F
+
+    sget v2, Lama;->a:I
 
     invoke-virtual {p0}, Landroidx/wear/widget/CircledImageView;->getContext()Landroid/content/Context;
 
-    move-result-object v3
+    move-result-object v2
 
-    sget-object v4, Lauv;->d:[I
+    sget-object v3, Lalx;->a:[I
 
-    invoke-virtual {v3, p2, v4}, Landroid/content/Context;->obtainStyledAttributes(Landroid/util/AttributeSet;[I)Landroid/content/res/TypedArray;
+    invoke-virtual {v2, p2, v3}, Landroid/content/Context;->obtainStyledAttributes(Landroid/util/AttributeSet;[I)Landroid/content/res/TypedArray;
 
-    move-result-object v3
+    move-result-object v2
 
-    sget-object v7, Lauv;->d:[I
+    sget-object v6, Lalx;->a:[I
+
+    const/4 v9, 0x0
 
     const/4 v10, 0x0
 
-    const/4 v11, 0x0
+    move-object v4, p0
 
-    move-object v5, p0
+    move-object v5, p1
 
-    move-object v6, p1
+    move-object v7, p2
 
-    move-object v8, p2
+    move-object v8, v2
 
-    move-object v9, v3
+    invoke-static/range {v4 .. v10}, Lgl;->E(Landroid/view/View;Landroid/content/Context;[ILandroid/util/AttributeSet;Landroid/content/res/TypedArray;II)V
 
-    invoke-static/range {v5 .. v11}, Lafn;->c(Landroid/view/View;Landroid/content/Context;[ILandroid/util/AttributeSet;Landroid/content/res/TypedArray;II)V
-
-    invoke-virtual {v3, v2}, Landroid/content/res/TypedArray;->getDrawable(I)Landroid/graphics/drawable/Drawable;
+    invoke-virtual {v2, v1}, Landroid/content/res/TypedArray;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
     move-result-object p2
 
@@ -160,13 +158,13 @@
 
     invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
-    move-result-object v4
+    move-result-object v3
 
     invoke-virtual {p1}, Landroid/content/Context;->getTheme()Landroid/content/res/Resources$Theme;
 
-    move-result-object v5
+    move-result-object v4
 
-    invoke-virtual {p2, v4, v5}, Landroid/graphics/drawable/Drawable$ConstantState;->newDrawable(Landroid/content/res/Resources;Landroid/content/res/Resources$Theme;)Landroid/graphics/drawable/Drawable;
+    invoke-virtual {p2, v3, v4}, Landroid/graphics/drawable/Drawable$ConstantState;->newDrawable(Landroid/content/res/Resources;Landroid/content/res/Resources$Theme;)Landroid/graphics/drawable/Drawable;
 
     move-result-object p2
 
@@ -181,7 +179,7 @@
     :cond_0
     const/4 p2, 0x4
 
-    invoke-virtual {v3, p2}, Landroid/content/res/TypedArray;->getColorStateList(I)Landroid/content/res/ColorStateList;
+    invoke-virtual {v2, p2}, Landroid/content/res/TypedArray;->getColorStateList(I)Landroid/content/res/ColorStateList;
 
     move-result-object p2
 
@@ -204,7 +202,7 @@
     :cond_1
     const/4 p1, 0x5
 
-    invoke-virtual {v3, p1, v1}, Landroid/content/res/TypedArray;->getDimension(IF)F
+    invoke-virtual {v2, p1, v0}, Landroid/content/res/TypedArray;->getDimension(IF)F
 
     move-result p1
 
@@ -212,15 +210,17 @@
 
     const/4 p2, 0x7
 
-    invoke-virtual {v3, p2, p1}, Landroid/content/res/TypedArray;->getDimension(IF)F
+    invoke-virtual {v2, p2, p1}, Landroid/content/res/TypedArray;->getDimension(IF)F
 
     move-result p1
 
     iput p1, p0, Landroidx/wear/widget/CircledImageView;->k:F
 
-    const/high16 p1, -0x1000000
+    const/4 p1, 0x2
 
-    invoke-virtual {v3, v0, p1}, Landroid/content/res/TypedArray;->getColor(II)I
+    const/high16 p2, -0x1000000
+
+    invoke-virtual {v2, p1, p2}, Landroid/content/res/TypedArray;->getColor(II)I
 
     move-result p1
 
@@ -232,57 +232,57 @@
 
     const/4 p2, 0x1
 
-    invoke-virtual {v3, p2, v2}, Landroid/content/res/TypedArray;->getInt(II)I
+    invoke-virtual {v2, p2, v1}, Landroid/content/res/TypedArray;->getInt(II)I
 
-    move-result v0
+    move-result v3
 
-    aget-object p1, p1, v0
+    aget-object p1, p1, v3
 
     iput-object p1, p0, Landroidx/wear/widget/CircledImageView;->o:Landroid/graphics/Paint$Cap;
 
     const/4 p1, 0x3
 
-    invoke-virtual {v3, p1, v1}, Landroid/content/res/TypedArray;->getDimension(IF)F
+    invoke-virtual {v2, p1, v0}, Landroid/content/res/TypedArray;->getDimension(IF)F
 
     move-result p1
 
     iput p1, p0, Landroidx/wear/widget/CircledImageView;->p:F
 
-    cmpl-float v0, p1, v1
+    cmpl-float v3, p1, v0
 
-    if-lez v0, :cond_2
+    if-lez v3, :cond_2
 
-    iget v0, p0, Landroidx/wear/widget/CircledImageView;->m:F
+    iget v3, p0, Landroidx/wear/widget/CircledImageView;->m:F
 
     const/high16 v4, 0x40000000    # 2.0f
 
     div-float/2addr p1, v4
 
-    add-float/2addr v0, p1
+    add-float/2addr v3, p1
 
-    iput v0, p0, Landroidx/wear/widget/CircledImageView;->m:F
+    iput v3, p0, Landroidx/wear/widget/CircledImageView;->m:F
 
     :cond_2
     const/16 p1, 0x19
 
-    invoke-virtual {v3, p1, v1}, Landroid/content/res/TypedArray;->getDimension(IF)F
+    invoke-virtual {v2, p1, v0}, Landroid/content/res/TypedArray;->getDimension(IF)F
 
     move-result p1
 
-    cmpl-float v0, p1, v1
+    cmpl-float v3, p1, v0
 
-    if-lez v0, :cond_3
+    if-lez v3, :cond_3
 
-    iget v0, p0, Landroidx/wear/widget/CircledImageView;->m:F
+    iget v3, p0, Landroidx/wear/widget/CircledImageView;->m:F
 
-    add-float/2addr v0, p1
+    add-float/2addr v3, p1
 
-    iput v0, p0, Landroidx/wear/widget/CircledImageView;->m:F
+    iput v3, p0, Landroidx/wear/widget/CircledImageView;->m:F
 
     :cond_3
     const/16 p1, 0x17
 
-    invoke-virtual {v3, p1, v1}, Landroid/content/res/TypedArray;->getFloat(IF)F
+    invoke-virtual {v2, p1, v0}, Landroid/content/res/TypedArray;->getFloat(IF)F
 
     move-result p1
 
@@ -290,7 +290,7 @@
 
     const/16 p1, 0x18
 
-    invoke-virtual {v3, p1, v1}, Landroid/content/res/TypedArray;->getFloat(IF)F
+    invoke-virtual {v2, p1, v0}, Landroid/content/res/TypedArray;->getFloat(IF)F
 
     move-result p1
 
@@ -298,13 +298,13 @@
 
     const/16 p1, 0x1a
 
-    invoke-virtual {v3, p1}, Landroid/content/res/TypedArray;->hasValue(I)Z
+    invoke-virtual {v2, p1}, Landroid/content/res/TypedArray;->hasValue(I)Z
 
-    move-result v0
+    move-result v3
 
-    if-eqz v0, :cond_4
+    if-eqz v3, :cond_4
 
-    invoke-virtual {v3, p1, v2}, Landroid/content/res/TypedArray;->getColor(II)I
+    invoke-virtual {v2, p1, v1}, Landroid/content/res/TypedArray;->getColor(II)I
 
     move-result p1
 
@@ -317,13 +317,13 @@
     :cond_4
     const/16 p1, 0x13
 
-    invoke-virtual {v3, p1}, Landroid/content/res/TypedArray;->hasValue(I)Z
+    invoke-virtual {v2, p1}, Landroid/content/res/TypedArray;->hasValue(I)Z
 
-    move-result v0
+    move-result v3
 
-    if-eqz v0, :cond_5
+    if-eqz v3, :cond_5
 
-    invoke-virtual {v3, p1, v2}, Landroid/content/res/TypedArray;->getInt(II)I
+    invoke-virtual {v2, p1, v1}, Landroid/content/res/TypedArray;->getInt(II)I
 
     move-result p1
 
@@ -336,15 +336,15 @@
     :cond_5
     const/4 p1, 0x6
 
-    invoke-virtual {v3, p1, p2, p2, v1}, Landroid/content/res/TypedArray;->getFraction(IIIF)F
+    invoke-virtual {v2, p1, p2, p2, v0}, Landroid/content/res/TypedArray;->getFraction(IIIF)F
 
     move-result p1
 
     iput p1, p0, Landroidx/wear/widget/CircledImageView;->j:F
 
-    const/16 v0, 0x8
+    const/16 v3, 0x8
 
-    invoke-virtual {v3, v0, p2, p2, p1}, Landroid/content/res/TypedArray;->getFraction(IIIF)F
+    invoke-virtual {v2, v3, p2, p2, p1}, Landroid/content/res/TypedArray;->getFraction(IIIF)F
 
     move-result p1
 
@@ -352,11 +352,11 @@
 
     const/16 p1, 0x9
 
-    invoke-virtual {v3, p1, v1}, Landroid/content/res/TypedArray;->getDimension(IF)F
+    invoke-virtual {v2, p1, v0}, Landroid/content/res/TypedArray;->getDimension(IF)F
 
     move-result p1
 
-    invoke-virtual {v3}, Landroid/content/res/TypedArray;->recycle()V
+    invoke-virtual {v2}, Landroid/content/res/TypedArray;->recycle()V
 
     new-instance v0, Landroid/graphics/RectF;
 
@@ -372,27 +372,27 @@
 
     invoke-virtual {v0, p2}, Landroid/graphics/Paint;->setAntiAlias(Z)V
 
-    new-instance p2, Lavc;
+    new-instance p2, Lamb;
 
     invoke-virtual {p0}, Landroidx/wear/widget/CircledImageView;->a()F
 
     move-result v0
 
-    iget v1, p0, Landroidx/wear/widget/CircledImageView;->p:F
+    iget v2, p0, Landroidx/wear/widget/CircledImageView;->p:F
 
-    invoke-direct {p2, p1, v0, v1}, Lavc;-><init>(FFF)V
+    invoke-direct {p2, p1, v0, v2}, Lamb;-><init>(FFF)V
 
-    iput-object p2, p0, Landroidx/wear/widget/CircledImageView;->d:Lavc;
+    iput-object p2, p0, Landroidx/wear/widget/CircledImageView;->d:Lamb;
 
-    new-instance p1, Lavh;
+    new-instance p1, Lamd;
 
-    invoke-direct {p1}, Lavh;-><init>()V
+    invoke-direct {p1}, Lamd;-><init>()V
 
-    iput-object p1, p0, Landroidx/wear/widget/CircledImageView;->e:Lavh;
+    iput-object p1, p0, Landroidx/wear/widget/CircledImageView;->e:Lamd;
 
-    invoke-virtual {p1, p3}, Lavh;->setCallback(Landroid/graphics/drawable/Drawable$Callback;)V
+    invoke-virtual {p1, p3}, Lamd;->setCallback(Landroid/graphics/drawable/Drawable$Callback;)V
 
-    invoke-virtual {p0, v2}, Landroidx/wear/widget/CircledImageView;->setWillNotDraw(Z)V
+    invoke-virtual {p0, v1}, Landroidx/wear/widget/CircledImageView;->setWillNotDraw(Z)V
 
     invoke-direct {p0}, Landroidx/wear/widget/CircledImageView;->d()V
 
@@ -521,11 +521,11 @@
 .method public final c()V
     .locals 1
 
-    iget-object v0, p0, Landroidx/wear/widget/CircledImageView;->e:Lavh;
+    iget-object v0, p0, Landroidx/wear/widget/CircledImageView;->e:Lamd;
 
     if-eqz v0, :cond_0
 
-    iget-object v0, v0, Lavh;->a:Landroid/animation/ObjectAnimator;
+    iget-object v0, v0, Lamd;->a:Landroid/animation/ObjectAnimator;
 
     invoke-virtual {v0}, Landroid/animation/ObjectAnimator;->cancel()V
 
@@ -596,6 +596,8 @@
 
     sub-int/2addr v6, v7
 
+    int-to-float v6, v6
+
     invoke-virtual {p0}, Landroidx/wear/widget/CircledImageView;->getHeight()I
 
     move-result v7
@@ -605,8 +607,6 @@
     move-result v8
 
     sub-int/2addr v7, v8
-
-    int-to-float v6, v6
 
     int-to-float v7, v7
 
@@ -725,6 +725,8 @@
 
     sub-int/2addr v4, v5
 
+    int-to-float v4, v4
+
     invoke-virtual {p0}, Landroidx/wear/widget/CircledImageView;->getHeight()I
 
     move-result v5
@@ -734,8 +736,6 @@
     move-result v6
 
     sub-int/2addr v5, v6
-
-    int-to-float v4, v4
 
     int-to-float v5, v5
 
@@ -914,25 +914,25 @@
 
     mul-float v0, v0, v4
 
-    mul-float v4, v4, v1
-
     invoke-static {v0}, Ljava/lang/Math;->round(F)I
 
     move-result v0
 
-    sub-int/2addr v2, v0
+    mul-float v4, v4, v1
 
     invoke-static {v4}, Ljava/lang/Math;->round(F)I
 
     move-result v1
+
+    sub-int/2addr v2, v0
+
+    div-int/lit8 v2, v2, 0x2
 
     iget v4, p0, Landroidx/wear/widget/CircledImageView;->t:F
 
     int-to-float v5, v0
 
     mul-float v4, v4, v5
-
-    div-int/lit8 v2, v2, 0x2
 
     invoke-static {v4}, Ljava/lang/Math;->round(F)I
 
@@ -942,9 +942,9 @@
 
     sub-int/2addr v3, v1
 
-    iget-object v4, p0, Landroidx/wear/widget/CircledImageView;->h:Landroid/graphics/drawable/Drawable;
-
     div-int/lit8 v3, v3, 0x2
+
+    iget-object v4, p0, Landroidx/wear/widget/CircledImageView;->h:Landroid/graphics/drawable/Drawable;
 
     add-int/2addr v0, v2
 
@@ -959,7 +959,7 @@
 .end method
 
 .method protected final onMeasure(II)V
-    .locals 6
+    .locals 5
 
     invoke-virtual {p0}, Landroidx/wear/widget/CircledImageView;->a()F
 
@@ -967,17 +967,21 @@
 
     iget v1, p0, Landroidx/wear/widget/CircledImageView;->p:F
 
+    iget-object v2, p0, Landroidx/wear/widget/CircledImageView;->d:Lamb;
+
+    iget v3, v2, Lamb;->a:F
+
+    iget v2, v2, Lamb;->b:F
+
     add-float/2addr v0, v1
-
-    iget-object v1, p0, Landroidx/wear/widget/CircledImageView;->d:Lavc;
-
-    iget v2, v1, Lavc;->a:F
-
-    iget v1, v1, Lavc;->b:F
 
     const/4 v1, 0x0
 
-    mul-float v2, v2, v1
+    mul-float v3, v3, v1
+
+    add-float/2addr v0, v3
+
+    add-float/2addr v0, v0
 
     invoke-static {p1}, Landroid/view/View$MeasureSpec;->getMode(I)I
 
@@ -989,27 +993,26 @@
 
     invoke-static {p2}, Landroid/view/View$MeasureSpec;->getMode(I)I
 
-    move-result v3
+    move-result v2
 
     invoke-static {p2}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
     move-result p2
 
-    add-float/2addr v0, v2
-
-    const/high16 v2, -0x80000000
+    const/high16 v3, -0x80000000
 
     const/high16 v4, 0x40000000    # 2.0f
 
-    if-eq v1, v4, :cond_1
+    if-ne v1, v4, :cond_0
 
-    add-float v5, v0, v0
+    goto :goto_0
 
-    if-ne v1, v2, :cond_0
+    :cond_0
+    if-ne v1, v3, :cond_1
 
     int-to-float p1, p1
 
-    invoke-static {v5, p1}, Ljava/lang/Math;->min(FF)F
+    invoke-static {v0, p1}, Ljava/lang/Math;->min(FF)F
 
     move-result p1
 
@@ -1017,16 +1020,16 @@
 
     goto :goto_0
 
-    :cond_0
-    float-to-int p1, v5
-
     :cond_1
+    float-to-int p1, v0
+
     :goto_0
-    if-eq v3, v4, :cond_3
+    if-ne v2, v4, :cond_2
 
-    add-float/2addr v0, v0
+    goto :goto_1
 
-    if-ne v3, v2, :cond_2
+    :cond_2
+    if-ne v2, v3, :cond_3
 
     int-to-float p2, p2
 
@@ -1038,10 +1041,9 @@
 
     goto :goto_1
 
-    :cond_2
+    :cond_3
     float-to-int p2, v0
 
-    :cond_3
     :goto_1
     iget-object v0, p0, Landroidx/wear/widget/CircledImageView;->v:Ljava/lang/Integer;
 
@@ -1063,6 +1065,8 @@
     :pswitch_1
     move p1, p2
 
+    goto :goto_2
+
     :cond_4
     :goto_2
     invoke-static {p1, v4}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
@@ -1076,8 +1080,6 @@
     invoke-super {p0, p1, p2}, Landroid/view/View;->onMeasure(II)V
 
     return-void
-
-    nop
 
     :pswitch_data_0
     .packed-switch 0x1
@@ -1108,7 +1110,7 @@
 
     :cond_1
     :goto_0
-    iget-object p3, p0, Landroidx/wear/widget/CircledImageView;->d:Lavc;
+    iget-object p3, p0, Landroidx/wear/widget/CircledImageView;->d:Lamb;
 
     invoke-virtual {p0}, Landroidx/wear/widget/CircledImageView;->getPaddingLeft()I
 
@@ -1130,7 +1132,7 @@
 
     sub-int/2addr p2, v1
 
-    invoke-virtual {p3, p4, v0, p1, p2}, Lavc;->a(IIII)V
+    invoke-virtual {p3, p4, v0, p1, p2}, Lamb;->a(IIII)V
 
     return-void
 .end method
@@ -1183,7 +1185,7 @@
     if-eq p4, v0, :cond_1
 
     :cond_0
-    iget-object v0, p0, Landroidx/wear/widget/CircledImageView;->d:Lavc;
+    iget-object v0, p0, Landroidx/wear/widget/CircledImageView;->d:Lamb;
 
     invoke-virtual {p0}, Landroidx/wear/widget/CircledImageView;->getWidth()I
 
@@ -1197,7 +1199,7 @@
 
     sub-int/2addr v2, p4
 
-    invoke-virtual {v0, p1, p2, v1, v2}, Lavc;->a(IIII)V
+    invoke-virtual {v0, p1, p2, v1, v2}, Lamb;->a(IIII)V
 
     :cond_1
     invoke-super {p0, p1, p2, p3, p4}, Landroid/view/View;->setPadding(IIII)V
@@ -1216,7 +1218,7 @@
 
     iput-boolean p1, p0, Landroidx/wear/widget/CircledImageView;->r:Z
 
-    iget-object v0, p0, Landroidx/wear/widget/CircledImageView;->d:Lavc;
+    iget-object v0, p0, Landroidx/wear/widget/CircledImageView;->d:Lamb;
 
     if-eqz p1, :cond_0
 
@@ -1232,9 +1234,9 @@
     move-result p1
 
     :goto_0
-    iput p1, v0, Lavc;->c:F
+    iput p1, v0, Lamb;->c:F
 
-    invoke-virtual {v0}, Lavc;->b()V
+    invoke-virtual {v0}, Lamb;->b()V
 
     invoke-virtual {p0}, Landroidx/wear/widget/CircledImageView;->invalidate()V
 

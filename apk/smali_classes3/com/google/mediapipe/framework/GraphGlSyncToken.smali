@@ -31,14 +31,6 @@
 
 
 # virtual methods
-.method public final nativeToken()J
-    .locals 2
-
-    iget-wide v0, p0, Lcom/google/mediapipe/framework/GraphGlSyncToken;->a:J
-
-    return-wide v0
-.end method
-
 .method public final release()V
     .locals 5
 

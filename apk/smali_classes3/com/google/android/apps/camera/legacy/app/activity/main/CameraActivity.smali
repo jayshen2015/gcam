@@ -1,52 +1,52 @@
 .class public Lcom/google/android/apps/camera/legacy/app/activity/main/CameraActivity;
-.super Leqw;
+.super Letd;
 
 # interfaces
-.implements Lemk;
-.implements Lcdd;
+.implements Lend;
+.implements Lbpx;
 
 
 # static fields
-.field private static final sCameraActivity:Lcom/google/android/apps/camera/legacy/app/activity/main/CameraActivity;
+.field private static final s:Louj;
 
-.field private static final z:Lnak;
+.field private static final sCameraActivity:Lcom/google/android/apps/camera/legacy/app/activity/main/CameraActivity;
 
 
 # instance fields
-.field private A:Lerd;
+.field public o:Lddf;
 
-.field private B:Lerf;
+.field public p:Lbxj;
 
-.field private C:Lcom/google/android/apps/camera/stats/timing/CameraActivityTiming;
+.field public q:Ldke;
 
-.field private D:Z
+.field public r:Lijc;
 
-.field public t:Ldhi;
+.field private v:Letk;
 
-.field public u:Ldmu;
+.field private w:Letm;
 
-.field public v:Lhjr;
+.field private x:Lcom/google/android/apps/camera/stats/timing/CameraActivityTiming;
 
-.field public w:Lgre;
+.field private y:Z
 
 
 # direct methods
 .method static constructor <clinit>()V
     .locals 8
 
-    sget-object v0, Lllo;->a:Lllo;
+    sget-object v0, Lnav;->a:Lnav;
 
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
     move-result-wide v1
 
-    invoke-static {}, Llho;->k()Z
+    invoke-static {}, Lmyw;->i()Z
 
     move-result v3
 
     if-eqz v3, :cond_1
 
-    iget-wide v3, v0, Lllo;->c:J
+    iget-wide v3, v0, Lnav;->c:J
 
     const-wide/16 v5, 0x0
 
@@ -62,15 +62,15 @@
 
     if-gtz v7, :cond_1
 
-    iget-object v3, v0, Lllo;->m:Lllh;
+    iget-object v3, v0, Lnav;->m:Lnan;
 
-    iget-object v3, v3, Lllh;->b:Ljava/lang/Long;
+    iget-object v3, v3, Lnan;->b:Ljava/lang/Long;
 
     if-eqz v3, :cond_0
 
-    iget-object v3, v0, Lllo;->m:Lllh;
+    iget-object v3, v0, Lnav;->m:Lnan;
 
-    iget-object v3, v3, Lllh;->b:Ljava/lang/Long;
+    iget-object v3, v3, Lnan;->b:Ljava/lang/Long;
 
     invoke-virtual {v3}, Ljava/lang/Long;->longValue()J
 
@@ -81,28 +81,28 @@
     if-gtz v7, :cond_1
 
     :cond_0
-    iget-wide v3, v0, Lllo;->e:J
+    iget-wide v3, v0, Lnav;->e:J
 
     cmp-long v7, v3, v5
 
     if-nez v7, :cond_1
 
-    iput-wide v1, v0, Lllo;->e:J
+    iput-wide v1, v0, Lnav;->e:J
 
-    iget-object v0, v0, Lllo;->l:Llln;
+    iget-object v0, v0, Lnav;->l:Lnau;
 
     const/4 v1, 0x1
 
-    iput-boolean v1, v0, Llln;->f:Z
+    iput-boolean v1, v0, Lnau;->f:Z
 
     :cond_1
     const-string v0, "com/google/android/apps/camera/legacy/app/activity/main/CameraActivity"
 
-    invoke-static {v0}, Lnak;->h(Ljava/lang/String;)Lnak;
+    invoke-static {v0}, Louj;->h(Ljava/lang/String;)Louj;
 
     move-result-object v0
 
-    sput-object v0, Lcom/google/android/apps/camera/legacy/app/activity/main/CameraActivity;->z:Lnak;
+    sput-object v0, Lcom/google/android/apps/camera/legacy/app/activity/main/CameraActivity;->s:Louj;
 
     return-void
 .end method
@@ -110,9 +110,13 @@
 .method public constructor <init>()V
     .locals 0
 
-    invoke-direct {p0}, Leqw;-><init>()V
+    invoke-direct {p0}, Letd;-><init>()V
 
     sput-object p0, Lcom/google/android/apps/camera/legacy/app/activity/main/CameraActivity;->sCameraActivity:Lcom/google/android/apps/camera/legacy/app/activity/main/CameraActivity;
+
+    new-instance p0, LAGC;
+
+    invoke-direct {p0}, LAGC;-><init>()V
 
     return-void
 .end method
@@ -122,9 +126,9 @@
 
     sget-object v0, Lcom/google/android/apps/camera/legacy/app/activity/main/CameraActivity;->sCameraActivity:Lcom/google/android/apps/camera/legacy/app/activity/main/CameraActivity;
 
-    invoke-super {v0}, Lfbc;->onPause()V
+    invoke-super {v0}, Lfio;->onPause()V
 
-    invoke-super {v0}, Lfbc;->onStop()V
+    invoke-super {v0}, Lfio;->onStop()V
 
     invoke-virtual {v0}, Lcom/google/android/apps/camera/legacy/app/activity/main/CameraActivity;->onStart()V
 
@@ -176,56 +180,76 @@
 
 
 # virtual methods
-.method public final a()Ldhi;
+.method public final a()Lddf;
     .locals 1
 
-    iget-object v0, p0, Lcom/google/android/apps/camera/legacy/app/activity/main/CameraActivity;->t:Ldhi;
+    iget-object v0, p0, Lcom/google/android/apps/camera/legacy/app/activity/main/CameraActivity;->o:Lddf;
 
     return-object v0
 .end method
 
-.method public final b(Ljava/lang/Class;)Leml;
+.method public final b(Ljava/lang/Class;)Lene;
     .locals 1
 
-    iget-object v0, p0, Lcom/google/android/apps/camera/legacy/app/activity/main/CameraActivity;->A:Lerd;
+    iget-object v0, p0, Lcom/google/android/apps/camera/legacy/app/activity/main/CameraActivity;->v:Letk;
 
     invoke-virtual {p1, v0}, Ljava/lang/Class;->cast(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p1
 
-    check-cast p1, Leml;
+    check-cast p1, Lene;
 
     return-object p1
+.end method
+
+.method protected n()Z
+    .locals 1
+
+    const/4 v0, 0x0
+
+    return v0
 .end method
 
 .method protected onCreate(Landroid/os/Bundle;)V
     .locals 22
 
-    move-object/from16 v0, p0
+    move-object/from16 v1, p0
+
+    invoke-static {v1}, LAGC;->showDebugView(Landroid/app/Activity;)V
 
     const v2, 0x64
 
     int-to-float v3, v2
 
-    invoke-direct {v0, v3}, Lcom/google/android/apps/camera/legacy/app/activity/main/CameraActivity;->refreshBrightness(F)V
+    invoke-direct {v1, v3}, Lcom/google/android/apps/camera/legacy/app/activity/main/CameraActivity;->refreshBrightness(F)V
 
-    invoke-virtual/range {p0 .. p0}, Leqw;->n()Lkbc;
+    invoke-virtual/range {p0 .. p0}, Letd;->m()Lljf;
 
-    move-result-object v1
+    move-result-object v0
 
     const-string v2, "CameraActivity#onCreate"
 
-    invoke-interface {v1, v2}, Lkbc;->e(Ljava/lang/String;)V
+    invoke-interface {v0, v2}, Lljf;->e(Ljava/lang/String;)V
 
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtimeNanos()J
 
-    move-result-wide v1
+    move-result-wide v2
 
-    const/4 v3, 0x0
+    const/4 v0, 0x0
 
-    iput-boolean v3, v0, Lcom/google/android/apps/camera/legacy/app/activity/main/CameraActivity;->D:Z
+    iput-boolean v0, v1, Lcom/google/android/apps/camera/legacy/app/activity/main/CameraActivity;->y:Z
 
-    invoke-super/range {p0 .. p1}, Leqw;->onCreate(Landroid/os/Bundle;)V
+    invoke-super/range {p0 .. p1}, Letd;->onCreate(Landroid/os/Bundle;)V
+
+    new-instance v0, Landroid/os/StrictMode$VmPolicy$Builder;
+
+    invoke-direct {v0}, Landroid/os/StrictMode$VmPolicy$Builder;-><init>()V
+
+    invoke-virtual {v0}, Landroid/os/StrictMode$VmPolicy$Builder;->build()Landroid/os/StrictMode$VmPolicy;
+
+    move-result-object v0
+
+    invoke-static {v0}, Landroid/os/StrictMode;->setVmPolicy(Landroid/os/StrictMode$VmPolicy;)V
 
     invoke-virtual/range {p0 .. p0}, Lcom/google/android/apps/camera/legacy/app/activity/main/CameraActivity;->getApplicationContext()Landroid/content/Context;
 
@@ -233,398 +257,392 @@
 
     check-cast v4, Lcom/google/android/apps/camera/legacy/app/app/CameraApp;
 
-    invoke-virtual {v4}, Lcom/google/android/apps/camera/legacy/app/app/CameraApp;->f()Lerw;
+    invoke-virtual {v4}, Lcom/google/android/apps/camera/legacy/app/app/CameraApp;->d()Leuv;
 
     move-result-object v4
 
-    check-cast v4, Lesh;
+    check-cast v4, Lewb;
 
-    iget-object v5, v4, Lesh;->h:Loiw;
+    iget-object v5, v4, Lewb;->k:Lqkg;
 
-    invoke-interface {v5}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v5
-
-    check-cast v5, Lkbc;
-
-    iput-object v5, v0, Leqw;->q:Lkbc;
-
-    iget-object v5, v4, Lesh;->z:Loiw;
-
-    invoke-interface {v5}, Loiw;->get()Ljava/lang/Object;
+    invoke-interface {v5}, Lqkg;->get()Ljava/lang/Object;
 
     move-result-object v5
 
-    check-cast v5, Lchl;
+    check-cast v5, Lljf;
 
-    iput-object v5, v0, Leqw;->s:Lchl;
+    iput-object v5, v1, Letd;->k:Lljf;
 
-    iget-object v5, v4, Lesh;->hV:Lbkb;
+    iget-object v5, v4, Lewb;->B:Lqkg;
 
-    invoke-static {v5}, Lfaf;->b(Lbkb;)Lezy;
-
-    move-result-object v5
-
-    iput-object v5, v0, Leqw;->r:Lezy;
-
-    iget-object v5, v4, Lesh;->C:Loiw;
-
-    invoke-interface {v5}, Loiw;->get()Ljava/lang/Object;
+    invoke-interface {v5}, Lqkg;->get()Ljava/lang/Object;
 
     move-result-object v5
 
-    check-cast v5, Lhjr;
+    check-cast v5, Lbui;
 
-    iput-object v5, v0, Lcom/google/android/apps/camera/legacy/app/activity/main/CameraActivity;->v:Lhjr;
+    iput-object v5, v1, Letd;->n:Lbui;
 
-    iget-object v5, v4, Lesh;->f:Loiw;
+    iget-object v5, v4, Lewb;->b:Lfhp;
 
-    invoke-interface {v5}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v5
-
-    check-cast v5, Ldhi;
-
-    iput-object v5, v0, Lcom/google/android/apps/camera/legacy/app/activity/main/CameraActivity;->t:Ldhi;
-
-    iget-object v5, v4, Lesh;->D:Loiw;
-
-    invoke-interface {v5}, Loiw;->get()Ljava/lang/Object;
+    invoke-static {v5}, Lfhq;->b(Lfhp;)Lfhi;
 
     move-result-object v5
 
-    check-cast v5, Lgzm;
+    iput-object v5, v1, Letd;->l:Lfhi;
 
-    iget-object v5, v4, Lesh;->F:Loiw;
+    iget-object v5, v4, Lewb;->i:Lqkg;
 
-    invoke-interface {v5}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v5
-
-    check-cast v5, Lgre;
-
-    iput-object v5, v0, Lcom/google/android/apps/camera/legacy/app/activity/main/CameraActivity;->w:Lgre;
-
-    iget-object v5, v4, Lesh;->I:Loiw;
-
-    invoke-interface {v5}, Loiw;->get()Ljava/lang/Object;
+    invoke-interface {v5}, Lqkg;->get()Ljava/lang/Object;
 
     move-result-object v5
 
-    check-cast v5, Lkcs;
+    check-cast v5, Lddf;
 
-    invoke-static {}, Lgxb;->q()Landroid/os/Handler;
+    iput-object v5, v1, Letd;->m:Lddf;
+
+    iget-object v5, v4, Lewb;->E:Lqkg;
+
+    invoke-interface {v5}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v5
+
+    check-cast v5, Lijc;
+
+    iput-object v5, v1, Lcom/google/android/apps/camera/legacy/app/activity/main/CameraActivity;->r:Lijc;
+
+    iget-object v5, v4, Lewb;->i:Lqkg;
+
+    invoke-interface {v5}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v5
+
+    check-cast v5, Lddf;
+
+    iput-object v5, v1, Lcom/google/android/apps/camera/legacy/app/activity/main/CameraActivity;->o:Lddf;
+
+    iget-object v5, v4, Lewb;->G:Lqkg;
+
+    invoke-interface {v5}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v5
+
+    check-cast v5, Lbxj;
+
+    iput-object v5, v1, Lcom/google/android/apps/camera/legacy/app/activity/main/CameraActivity;->p:Lbxj;
+
+    iget-object v5, v4, Lewb;->K:Lqkg;
+
+    invoke-interface {v5}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v5
+
+    check-cast v5, Llld;
+
+    invoke-static {}, Lefb;->b()Landroid/os/Handler;
 
     move-result-object v6
 
-    new-instance v7, Ldmu;
+    new-instance v7, Ldke;
 
-    invoke-direct {v7, v5, v6}, Ldmu;-><init>(Lkcs;Landroid/os/Handler;)V
+    invoke-direct {v7, v5, v6}, Ldke;-><init>(Llld;Landroid/os/Handler;)V
 
-    iput-object v7, v0, Lcom/google/android/apps/camera/legacy/app/activity/main/CameraActivity;->u:Ldmu;
+    iput-object v7, v1, Lcom/google/android/apps/camera/legacy/app/activity/main/CameraActivity;->q:Ldke;
 
-    iget-object v5, v0, Lcom/google/android/apps/camera/legacy/app/activity/main/CameraActivity;->v:Lhjr;
+    iget-object v5, v1, Lcom/google/android/apps/camera/legacy/app/activity/main/CameraActivity;->r:Lijc;
 
-    iget-object v6, v5, Lhjr;->a:Lhjm;
+    iget-object v6, v5, Lijc;->d:Lqiz;
 
-    iget-object v7, v5, Lhjr;->d:Lcom/google/android/apps/camera/stats/Instrumentation;
+    iget-object v7, v5, Lijc;->c:Lcom/google/android/apps/camera/stats/Instrumentation;
 
-    iget-object v11, v5, Lhjr;->b:Lkrf;
+    iget-object v11, v5, Lijc;->a:Lmcu;
 
-    iget-object v13, v5, Lhjr;->c:Lkbc;
+    iget-object v13, v5, Lijc;->b:Lljf;
 
-    new-instance v12, Lhjo;
+    new-instance v12, Liiz;
 
-    iget v5, v6, Lhjm;->a:I
+    iget v5, v6, Lqiz;->b:I
 
     add-int/lit8 v8, v5, 0x1
 
-    iput v8, v6, Lhjm;->a:I
+    iput v8, v6, Lqiz;->b:I
 
-    iget-boolean v6, v6, Lhjm;->b:Z
+    iget-boolean v6, v6, Lqiz;->a:Z
 
-    invoke-direct {v12, v5, v6}, Lhjo;-><init>(IZ)V
+    invoke-direct {v12, v5, v6}, Liiz;-><init>(IZ)V
 
-    invoke-virtual {v12}, Lhjo;->a()Z
+    invoke-virtual {v12}, Liiz;->a()Z
 
     move-result v5
 
     if-eqz v5, :cond_0
 
-    invoke-static {}, Lhkn;->e()Lhkn;
+    invoke-static {}, Lijy;->e()Lijy;
 
     move-result-object v5
 
-    iget-wide v5, v5, Lhkh;->m:J
+    iget-wide v5, v5, Lijs;->m:J
 
     move-wide v9, v5
 
     goto :goto_0
 
     :cond_0
-    move-wide v9, v1
+    move-wide v9, v2
 
     :goto_0
     new-instance v5, Lcom/google/android/apps/camera/stats/timing/CameraActivityTiming;
 
     move-object v8, v5
 
-    invoke-direct/range {v8 .. v13}, Lcom/google/android/apps/camera/stats/timing/CameraActivityTiming;-><init>(JLkrh;Lhjo;Lkbc;)V
+    invoke-direct/range {v8 .. v13}, Lcom/google/android/apps/camera/stats/timing/CameraActivityTiming;-><init>(JLmcx;Liiz;Lljf;)V
 
     invoke-virtual {v7, v5}, Lcom/google/android/apps/camera/stats/Instrumentation;->f(Lcom/google/android/apps/camera/stats/timing/TimingSession;)V
 
-    iput-object v5, v0, Lcom/google/android/apps/camera/legacy/app/activity/main/CameraActivity;->C:Lcom/google/android/apps/camera/stats/timing/CameraActivityTiming;
+    iput-object v5, v1, Lcom/google/android/apps/camera/legacy/app/activity/main/CameraActivity;->x:Lcom/google/android/apps/camera/stats/timing/CameraActivityTiming;
 
-    invoke-virtual {v5, v1, v2}, Lcom/google/android/apps/camera/stats/timing/CameraActivityTiming;->recordActivityOnCreateStart(J)V
+    invoke-virtual {v5, v2, v3}, Lcom/google/android/apps/camera/stats/timing/CameraActivityTiming;->recordActivityOnCreateStart(J)V
 
-    iget-object v1, v0, Lcom/google/android/apps/camera/legacy/app/activity/main/CameraActivity;->u:Ldmu;
+    iget-object v2, v1, Lcom/google/android/apps/camera/legacy/app/activity/main/CameraActivity;->q:Ldke;
 
     invoke-virtual/range {p0 .. p0}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v3
 
-    invoke-static {}, Ljuh;->a()V
+    invoke-static {}, Llar;->a()V
 
-    iget-object v5, v1, Ldmu;->d:Lkad;
+    iget-object v5, v2, Ldke;->d:Llie;
 
-    if-nez v5, :cond_1
+    if-nez v5, :cond_2
 
-    iget-object v5, v1, Ldmu;->a:Lkcs;
+    iget-object v5, v2, Ldke;->a:Llld;
 
-    invoke-static {v2}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {v3}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v3
 
     const-string v6, "CameraActivity onCreate: "
 
-    invoke-virtual {v6, v2}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
+    invoke-virtual {v3}, Ljava/lang/String;->length()I
 
-    move-result-object v2
+    move-result v7
 
-    invoke-virtual {v5, v2}, Lkcs;->b(Ljava/lang/String;)Lkad;
+    if-eqz v7, :cond_1
 
-    move-result-object v2
+    invoke-virtual {v6, v3}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
 
-    iput-object v2, v1, Ldmu;->d:Lkad;
+    move-result-object v3
+
+    goto :goto_1
 
     :cond_1
-    iget-object v2, v1, Ldmu;->b:Landroid/os/Handler;
+    new-instance v3, Ljava/lang/String;
 
-    new-instance v5, Ldgg;
+    invoke-direct {v3, v6}, Ljava/lang/String;-><init>(Ljava/lang/String;)V
 
-    const/16 v6, 0xb
+    :goto_1
+    invoke-virtual {v5, v3}, Llld;->b(Ljava/lang/String;)Llie;
 
-    invoke-direct {v5, v1, v6}, Ldgg;-><init>(Ldmu;I)V
+    move-result-object v3
+
+    iput-object v3, v2, Ldke;->d:Llie;
+
+    :cond_2
+    iget-object v3, v2, Ldke;->b:Landroid/os/Handler;
+
+    new-instance v5, Ldkd;
+
+    invoke-direct {v5, v2}, Ldkd;-><init>(Ldke;)V
 
     const-wide/16 v6, 0xbb8
 
-    invoke-virtual {v2, v5, v6, v7}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
+    invoke-virtual {v3, v5, v6, v7}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
 
-    iget-object v1, v0, Lcom/google/android/apps/camera/legacy/app/activity/main/CameraActivity;->t:Ldhi;
+    iget-object v2, v1, Lcom/google/android/apps/camera/legacy/app/activity/main/CameraActivity;->o:Lddf;
 
-    sget-object v2, Ldho;->a:Ldhk;
+    sget-object v3, Lddl;->a:Lddi;
 
-    invoke-interface {v1}, Ldhi;->c()V
+    invoke-interface {v2}, Lddf;->b()V
 
-    iget-object v1, v0, Lcom/google/android/apps/camera/legacy/app/activity/main/CameraActivity;->C:Lcom/google/android/apps/camera/stats/timing/CameraActivityTiming;
+    iget-object v2, v1, Lcom/google/android/apps/camera/legacy/app/activity/main/CameraActivity;->x:Lcom/google/android/apps/camera/stats/timing/CameraActivityTiming;
 
-    invoke-virtual/range {p0 .. p0}, Leqw;->n()Lkbc;
+    invoke-virtual/range {p0 .. p0}, Letd;->m()Lljf;
 
-    move-result-object v2
+    move-result-object v3
 
     const-string v5, "setupDefaultActivity#init"
 
-    invoke-interface {v2, v5}, Lkbc;->e(Ljava/lang/String;)V
+    invoke-interface {v3, v5}, Lljf;->e(Ljava/lang/String;)V
 
-    invoke-virtual/range {p0 .. p0}, Leqw;->o()Lva;
+    invoke-virtual/range {p0 .. p0}, Letd;->l()Lete;
 
-    move-result-object v8
+    move-result-object v3
 
-    invoke-virtual/range {p0 .. p0}, Leqw;->p()Lgxb;
+    invoke-virtual/range {p0 .. p0}, Letd;->k()Lemb;
 
-    move-result-object v9
+    move-result-object v5
 
-    new-instance v10, Ljew;
+    new-instance v6, Liid;
 
-    invoke-direct {v10, v1}, Ljew;-><init>(Lcom/google/android/apps/camera/stats/timing/CameraActivityTiming;)V
+    invoke-direct {v6, v2}, Liid;-><init>(Lcom/google/android/apps/camera/stats/timing/CameraActivityTiming;)V
 
-    invoke-virtual {v8}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    invoke-virtual {v3}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    invoke-virtual {v9}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    invoke-virtual {v5}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    new-instance v1, Lerz;
+    new-instance v2, Levc;
 
-    iget-object v7, v4, Lesh;->a:Lesh;
+    iget-object v4, v4, Lewb;->d:Lewb;
 
-    const/4 v11, 0x0
+    invoke-direct {v2, v4, v3, v5, v6}, Levc;-><init>(Lewb;Lete;Lemb;Liid;)V
 
-    const/4 v12, 0x0
+    iput-object v2, v1, Lcom/google/android/apps/camera/legacy/app/activity/main/CameraActivity;->v:Letk;
 
-    const/4 v13, 0x0
-
-    const/4 v14, 0x0
-
-    const/4 v15, 0x0
-
-    move-object v6, v1
-
-    invoke-direct/range {v6 .. v15}, Lerz;-><init>(Lesh;Lva;Lgxb;Ljew;[B[B[B[B[B)V
-
-    iput-object v1, v0, Lcom/google/android/apps/camera/legacy/app/activity/main/CameraActivity;->A:Lerd;
-
-    invoke-virtual/range {p0 .. p0}, Leqw;->n()Lkbc;
-
-    move-result-object v1
-
-    const-string v2, "activityInitializer#get"
-
-    invoke-interface {v1, v2}, Lkbc;->g(Ljava/lang/String;)V
-
-    iget-object v1, v0, Lcom/google/android/apps/camera/legacy/app/activity/main/CameraActivity;->A:Lerd;
-
-    check-cast v1, Lerz;
-
-    iget-object v1, v1, Lerz;->ai:Loiw;
-
-    invoke-interface {v1}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Lere;
-
-    invoke-virtual/range {p0 .. p0}, Leqw;->n()Lkbc;
+    invoke-virtual/range {p0 .. p0}, Letd;->m()Lljf;
 
     move-result-object v2
 
+    const-string v3, "activityInitializer#get"
+
+    invoke-interface {v2, v3}, Lljf;->g(Ljava/lang/String;)V
+
+    iget-object v2, v1, Lcom/google/android/apps/camera/legacy/app/activity/main/CameraActivity;->v:Letk;
+
+    check-cast v2, Levc;
+
+    iget-object v2, v2, Levc;->X:Lqkg;
+
+    invoke-interface {v2}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Letl;
+
+    invoke-virtual/range {p0 .. p0}, Letd;->m()Lljf;
+
+    move-result-object v3
+
     const-string v4, "activityInitializer#start"
 
-    invoke-interface {v2, v4}, Lkbc;->g(Ljava/lang/String;)V
+    invoke-interface {v3, v4}, Lljf;->g(Ljava/lang/String;)V
 
-    invoke-interface {v1}, Lcik;->bl()Lnou;
+    invoke-interface {v2}, Lbvv;->fz()Lpht;
 
     invoke-virtual/range {p0 .. p0}, Lcom/google/android/apps/camera/legacy/app/activity/main/CameraActivity;->isVoiceInteractionRoot()Z
 
-    move-result v1
+    move-result v2
 
-    if-eqz v1, :cond_4
+    const/4 v3, 0x1
 
-    new-instance v1, Landroid/content/Intent;
+    if-eqz v2, :cond_3
+
+    new-instance v2, Landroid/content/Intent;
 
     invoke-virtual/range {p0 .. p0}, Lcom/google/android/apps/camera/legacy/app/activity/main/CameraActivity;->getIntent()Landroid/content/Intent;
 
     move-result-object v4
 
-    invoke-direct {v1, v4}, Landroid/content/Intent;-><init>(Landroid/content/Intent;)V
+    invoke-direct {v2, v4}, Landroid/content/Intent;-><init>(Landroid/content/Intent;)V
 
-    iget-object v4, v0, Lcom/google/android/apps/camera/legacy/app/activity/main/CameraActivity;->A:Lerd;
+    iget-object v4, v1, Lcom/google/android/apps/camera/legacy/app/activity/main/CameraActivity;->v:Letk;
 
-    check-cast v4, Lerz;
+    check-cast v4, Levc;
 
-    iget-object v5, v4, Lerz;->a:Lesh;
+    iget-object v5, v4, Levc;->b:Lewb;
 
-    invoke-virtual {v5}, Lesh;->B()Z
+    invoke-virtual {v5}, Lewb;->z()Z
 
     move-result v7
 
-    iget-object v5, v4, Lerz;->a:Lesh;
+    iget-object v5, v4, Levc;->b:Lewb;
 
-    invoke-virtual {v5}, Lesh;->z()Z
+    invoke-virtual {v5}, Lewb;->x()Z
 
     move-result v8
 
-    iget-object v5, v4, Lerz;->a:Lesh;
+    iget-object v5, v4, Levc;->b:Lewb;
 
-    invoke-virtual {v5}, Lesh;->A()Z
+    invoke-virtual {v5}, Lewb;->y()Z
 
     move-result v9
 
-    iget-object v5, v4, Lerz;->af:Loiw;
+    iget-object v5, v4, Levc;->V:Lqkg;
 
-    invoke-interface {v5}, Loiw;->get()Ljava/lang/Object;
+    invoke-interface {v5}, Lqkg;->get()Ljava/lang/Object;
 
     move-result-object v5
 
     move-object v15, v5
 
-    check-cast v15, Lhzh;
+    check-cast v15, Ljcw;
 
-    iget-object v5, v4, Lerz;->ak:Loiw;
+    iget-object v14, v4, Levc;->Z:Lqkg;
 
-    iget-object v6, v4, Lerz;->a:Lesh;
+    iget-object v5, v4, Levc;->b:Lewb;
 
-    iget-object v6, v6, Lesh;->f:Loiw;
+    iget-object v5, v5, Lewb;->i:Lqkg;
 
-    invoke-interface {v6}, Loiw;->get()Ljava/lang/Object;
+    invoke-interface {v5}, Lqkg;->get()Ljava/lang/Object;
 
-    move-result-object v6
+    move-result-object v5
 
-    check-cast v6, Ldhi;
+    check-cast v5, Lddf;
 
-    invoke-static {v6}, Lhqq;->b(Ldhi;)Ljew;
+    invoke-static {v5}, Lirk;->a(Lddf;)Ljtx;
 
     move-result-object v16
 
-    iget-object v6, v4, Lerz;->bG:Lgxb;
+    iget-object v5, v4, Levc;->a:Lemb;
 
-    iget-object v6, v6, Lgxb;->a:Ljava/lang/Object;
+    iget-object v13, v5, Lemb;->a:Landroid/app/Activity;
 
-    iget-object v10, v4, Lerz;->a:Lesh;
+    iget-object v5, v4, Levc;->b:Lewb;
 
-    iget-object v10, v10, Lesh;->r:Loiw;
+    iget-object v5, v5, Lewb;->t:Lqkg;
 
-    invoke-interface {v10}, Loiw;->get()Ljava/lang/Object;
+    invoke-interface {v5}, Lqkg;->get()Ljava/lang/Object;
 
-    move-result-object v10
+    move-result-object v5
 
-    move-object/from16 v17, v10
+    move-object/from16 v17, v5
 
-    check-cast v17, Lfbz;
+    check-cast v17, Lfjs;
 
-    iget-object v10, v4, Lerz;->a:Lesh;
+    iget-object v5, v4, Levc;->b:Lewb;
 
-    iget-object v10, v10, Lesh;->fm:Loiw;
+    iget-object v5, v5, Lewb;->ck:Lqkg;
 
-    invoke-interface {v10}, Loiw;->get()Ljava/lang/Object;
+    invoke-interface {v5}, Lqkg;->get()Ljava/lang/Object;
 
-    move-result-object v10
+    move-result-object v5
 
-    move-object/from16 v18, v10
+    move-object/from16 v18, v5
 
-    check-cast v18, Lcvr;
+    check-cast v18, Lkhx;
 
-    iget-object v10, v4, Lerz;->a:Lesh;
+    iget-object v5, v4, Levc;->b:Lewb;
 
-    iget-object v10, v10, Lesh;->cJ:Loiw;
+    iget-object v5, v5, Lewb;->db:Lqkg;
 
-    invoke-interface {v10}, Loiw;->get()Ljava/lang/Object;
+    invoke-interface {v5}, Lqkg;->get()Ljava/lang/Object;
 
-    move-result-object v10
+    move-result-object v5
 
-    move-object v14, v10
+    check-cast v5, Llqv;
 
-    check-cast v14, Lkha;
+    iget-object v4, v4, Levc;->b:Lewb;
 
-    iget-object v4, v4, Lerz;->a:Lesh;
+    iget-object v4, v4, Lewb;->az:Lqkg;
 
-    iget-object v4, v4, Lesh;->D:Loiw;
-
-    invoke-interface {v4}, Loiw;->get()Ljava/lang/Object;
+    invoke-interface {v4}, Lqkg;->get()Ljava/lang/Object;
 
     move-result-object v4
 
-    check-cast v4, Lgzn;
+    check-cast v4, Lhug;
 
-    new-instance v19, Lemm;
-
-    move-object v13, v6
-
-    check-cast v13, Landroid/app/Activity;
+    new-instance v19, Lenf;
 
     const/4 v12, 0x0
-
-    const/16 v20, 0x0
-
-    const/16 v21, 0x0
 
     move-object/from16 v6, v19
 
@@ -632,328 +650,387 @@
 
     move-object v11, v13
 
-    move-object v3, v13
+    invoke-direct/range {v6 .. v12}, Lenf;-><init>(ZZZLjtx;Landroid/app/Activity;[B)V
 
-    move-object/from16 v13, v20
-
-    move-object v2, v14
-
-    move-object/from16 v14, v21
-
-    invoke-direct/range {v6 .. v14}, Lemm;-><init>(ZZZLjew;Landroid/app/Activity;[B[B[B)V
-
-    invoke-static/range {v19 .. v19}, Llkj;->D(Lmrl;)Lmrl;
+    invoke-static/range {v19 .. v19}, Lobr;->au(Lojz;)Lojz;
 
     move-result-object v12
 
-    invoke-static {v1, v3, v12, v2}, Lemn;->b(Landroid/content/Intent;Landroid/app/Activity;Lmrl;Lkha;)Lmqp;
+    invoke-static {v2, v13, v12, v5}, Leng;->b(Landroid/content/Intent;Landroid/app/Activity;Lojz;Llqv;)Lojc;
 
     move-result-object v6
 
-    move-object v14, v4
+    move-object v11, v4
 
     move-object v4, v6
 
     move-object/from16 v19, v5
 
-    move-object v5, v1
+    move-object v5, v2
 
     move-object v6, v15
 
-    move-object/from16 v7, v19
+    move-object v7, v14
 
     move-object/from16 v8, v16
 
-    move-object v9, v3
+    move-object v9, v13
 
     move-object/from16 v10, v17
 
+    move-object/from16 p1, v11
+
     move-object/from16 v11, v18
 
-    move-object v13, v14
+    move-object v0, v13
 
-    move-object v0, v14
+    move-object/from16 v13, p1
 
-    move-object v14, v2
+    move-object/from16 v20, v14
 
-    invoke-static/range {v4 .. v14}, Lemn;->c(Lmqp;Landroid/content/Intent;Lhzh;Loiw;Ljew;Landroid/app/Activity;Lfbz;Lcvr;Lmrl;Lgzn;Lkha;)Lmqp;
+    move-object/from16 v14, v19
+
+    invoke-static/range {v4 .. v14}, Leng;->c(Lojc;Landroid/content/Intent;Ljcw;Lqkg;Ljtx;Landroid/app/Activity;Lfjs;Lkhx;Lojz;Lhug;Llqv;)Lojc;
+
+    move-result-object v4
+
+    invoke-virtual {v4}, Lojc;->g()Z
+
+    move-result v5
+
+    xor-int/2addr v5, v3
+
+    move-object/from16 v6, p1
+
+    invoke-static {v2, v5, v0, v6}, Leng;->a(Landroid/content/Intent;ZLandroid/app/Activity;Lhug;)V
+
+    invoke-virtual {v0, v2}, Landroid/app/Activity;->setIntent(Landroid/content/Intent;)V
+
+    invoke-virtual {v4}, Lojc;->g()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_3
+
+    invoke-virtual {v4}, Lojc;->c()Ljava/lang/Object;
 
     move-result-object v2
 
-    invoke-virtual {v2}, Lmqp;->g()Z
+    move-object v10, v2
 
-    move-result v4
-
-    const/4 v5, 0x1
-
-    xor-int/2addr v4, v5
-
-    invoke-static {v1, v4, v3, v0}, Lemn;->a(Landroid/content/Intent;ZLandroid/app/Activity;Lgzn;)V
-
-    invoke-virtual {v3, v1}, Landroid/app/Activity;->setIntent(Landroid/content/Intent;)V
-
-    invoke-virtual {v2}, Lmqp;->g()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_3
-
-    invoke-virtual {v2}, Lmqp;->c()Ljava/lang/Object;
-
-    move-result-object v0
-
-    move-object v10, v0
-
-    check-cast v10, Lika;
+    check-cast v10, Ljrl;
 
     move-object v11, v15
 
-    move-object/from16 v12, v19
+    move-object/from16 v12, v20
 
     move-object/from16 v13, v16
 
-    move-object v14, v3
+    move-object v14, v0
 
     move-object/from16 v15, v17
 
     move-object/from16 v16, v18
 
-    invoke-static/range {v10 .. v16}, Lemn;->d(Lika;Lhzh;Loiw;Ljew;Landroid/app/Activity;Lfbz;Lcvr;)Z
+    invoke-static/range {v10 .. v16}, Leng;->d(Ljrl;Ljcw;Lqkg;Ljtx;Landroid/app/Activity;Lfjs;Lkhx;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_2
+    if-eqz v0, :cond_3
 
-    sget-object v0, Lcom/google/android/apps/camera/legacy/app/activity/main/CameraActivity;->z:Lnak;
+    sget-object v0, Lcom/google/android/apps/camera/legacy/app/activity/main/CameraActivity;->s:Louj;
 
-    invoke-virtual {v0}, Lnaf;->c()Lnaz;
+    invoke-virtual {v0}, Loue;->c()Lova;
 
     move-result-object v0
 
-    const-string v1, "Warning: have Launched outside activity and coming soon finish activity."
+    const/16 v2, 0x5e4
 
-    const/16 v2, 0x744
+    const-string v4, "Warning: have Launched outside activity and coming soon finish activity."
 
-    invoke-static {v0, v1, v2}, Ld;->g(Lnaz;Ljava/lang/String;C)V
+    invoke-static {v0, v4, v2}, Ld;->v(Lova;Ljava/lang/String;C)V
 
-    const/4 v1, 0x1
-
-    move-object/from16 v0, p0
-
-    iput-boolean v1, v0, Lcom/google/android/apps/camera/legacy/app/activity/main/CameraActivity;->D:Z
-
-    goto :goto_1
-
-    :cond_2
-    move-object/from16 v0, p0
-
-    goto :goto_1
+    iput-boolean v3, v1, Lcom/google/android/apps/camera/legacy/app/activity/main/CameraActivity;->y:Z
 
     :cond_3
-    move-object/from16 v0, p0
+    invoke-virtual/range {p0 .. p0}, Letd;->m()Lljf;
 
-    :cond_4
-    :goto_1
-    invoke-virtual/range {p0 .. p0}, Leqw;->n()Lkbc;
-
-    move-result-object v1
+    move-result-object v0
 
     const-string v2, "#cameraUiModule#inflate"
 
-    invoke-interface {v1, v2}, Lkbc;->g(Ljava/lang/String;)V
+    invoke-interface {v0, v2}, Lljf;->g(Ljava/lang/String;)V
 
-    iget-object v1, v0, Lcom/google/android/apps/camera/legacy/app/activity/main/CameraActivity;->A:Lerd;
+    iget-object v0, v1, Lcom/google/android/apps/camera/legacy/app/activity/main/CameraActivity;->v:Letk;
 
-    check-cast v1, Lerz;
+    check-cast v0, Levc;
 
-    iget-object v2, v1, Lerz;->bG:Lgxb;
+    iget-object v2, v0, Levc;->a:Lemb;
 
-    invoke-virtual {v2}, Lgxb;->r()Lei;
-
-    move-result-object v2
-
-    new-instance v3, Linc;
-
-    iget-object v1, v1, Lerz;->bG:Lgxb;
-
-    iget-object v4, v1, Lgxb;->a:Ljava/lang/Object;
-
-    check-cast v4, Landroid/app/Activity;
-
-    const/4 v5, 0x1
-
-    invoke-direct {v3, v4, v5}, Linc;-><init>(Landroid/app/Activity;I)V
-
-    invoke-static {v1}, Lelp;->b(Lgxb;)Landroid/view/Window;
-
-    move-result-object v1
-
-    invoke-virtual {v2}, Lei;->getLayoutInflater()Landroid/view/LayoutInflater;
+    invoke-static {v2}, Lemi;->b(Lemb;)Lih;
 
     move-result-object v2
 
-    invoke-static {}, Ljuh;->a()V
+    new-instance v4, Ljup;
 
-    invoke-virtual {v1}, Landroid/view/Window;->getAttributes()Landroid/view/WindowManager$LayoutParams;
+    iget-object v5, v0, Levc;->a:Lemb;
 
-    move-result-object v4
+    iget-object v5, v5, Lemb;->a:Landroid/app/Activity;
 
-    const/4 v5, 0x3
+    invoke-direct {v4, v5}, Ljup;-><init>(Landroid/app/Activity;)V
 
-    iput v5, v4, Landroid/view/WindowManager$LayoutParams;->rotationAnimation:I
+    iget-object v5, v0, Levc;->b:Lewb;
 
-    const/4 v5, 0x1
+    iget-object v5, v5, Lewb;->e:Lqkg;
 
-    iput v5, v4, Landroid/view/WindowManager$LayoutParams;->layoutInDisplayCutoutMode:I
-
-    invoke-virtual {v1, v4}, Landroid/view/Window;->setAttributes(Landroid/view/WindowManager$LayoutParams;)V
-
-    const/16 v4, 0x8
-
-    invoke-virtual {v1, v4}, Landroid/view/Window;->requestFeature(I)Z
-
-    const/high16 v4, -0x80000000
-
-    invoke-virtual {v1, v4}, Landroid/view/Window;->addFlags(I)V
-
-    const/4 v4, 0x0
-
-    invoke-virtual {v1, v4}, Landroid/view/Window;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
-
-    invoke-virtual {v1}, Landroid/view/Window;->getDecorView()Landroid/view/View;
+    invoke-interface {v5}, Lqkg;->get()Ljava/lang/Object;
 
     move-result-object v5
 
-    const/4 v6, 0x0
+    check-cast v5, Llzi;
 
-    invoke-virtual {v5, v6, v6, v6, v6}, Landroid/view/View;->setPadding(IIII)V
+    iget-object v0, v0, Levc;->a:Lemb;
 
-    invoke-virtual {v1}, Landroid/view/Window;->getDecorView()Landroid/view/View;
+    invoke-static {v0}, Lemg;->b(Lemb;)Landroid/view/Window;
 
-    move-result-object v5
+    move-result-object v0
 
-    const/16 v7, 0x705
+    invoke-virtual {v2}, Lih;->getLayoutInflater()Landroid/view/LayoutInflater;
 
-    invoke-virtual {v5, v7}, Landroid/view/View;->setSystemUiVisibility(I)V
+    invoke-static {}, Llar;->a()V
 
-    invoke-virtual {v1, v6}, Landroid/view/Window;->setNavigationBarContrastEnforced(Z)V
-
-    iget-object v1, v3, Linc;->a:Ljava/lang/Object;
-
-    check-cast v1, Landroid/app/Activity;
-
-    const v5, 0x7f0e0020
-
-    invoke-virtual {v1, v5}, Landroid/app/Activity;->setContentView(I)V
-
-    new-instance v1, Lihg;
-
-    invoke-static {v3}, Ljew;->p(Lina;)Ljew;
-
-    move-result-object v3
-
-    invoke-direct {v1, v3, v4, v4}, Lihg;-><init>(Ljew;[B[B)V
-
-    new-instance v3, Lihi;
-
-    invoke-direct {v3, v2, v1}, Lihi;-><init>(Landroid/view/LayoutInflater;Lihg;)V
-
-    invoke-virtual/range {p0 .. p0}, Leqw;->n()Lkbc;
-
-    move-result-object v1
-
-    const-string v2, "activityUiInitializer#get"
-
-    invoke-interface {v1, v2}, Lkbc;->g(Ljava/lang/String;)V
-
-    iget-object v1, v0, Lcom/google/android/apps/camera/legacy/app/activity/main/CameraActivity;->A:Lerd;
-
-    new-instance v2, Lese;
-
-    check-cast v1, Lerz;
-
-    iget-object v4, v1, Lerz;->a:Lesh;
-
-    iget-object v1, v1, Lerz;->b:Lerz;
-
-    invoke-direct {v2, v4, v1, v3}, Lese;-><init>(Lesh;Lerz;Lihi;)V
-
-    iput-object v2, v0, Lcom/google/android/apps/camera/legacy/app/activity/main/CameraActivity;->B:Lerf;
-
-    move-object v1, v2
-
-    check-cast v1, Lese;
-
-    iget-object v1, v2, Lese;->Q:Loiw;
-
-    invoke-interface {v1}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Lerh;
-
-    invoke-virtual/range {p0 .. p0}, Leqw;->n()Lkbc;
+    invoke-virtual {v0}, Landroid/view/Window;->getAttributes()Landroid/view/WindowManager$LayoutParams;
 
     move-result-object v2
 
-    const-string v3, "#activityUiInitializer#start"
+    const/4 v6, 0x3
 
-    invoke-interface {v2, v3}, Lkbc;->g(Ljava/lang/String;)V
+    iput v6, v2, Landroid/view/WindowManager$LayoutParams;->rotationAnimation:I
 
-    invoke-interface {v1}, Lcik;->bl()Lnou;
+    iget-boolean v5, v5, Llzi;->c:Z
 
-    invoke-virtual/range {p0 .. p0}, Leqw;->n()Lkbc;
+    if-eqz v5, :cond_4
 
-    move-result-object v1
+    const/4 v5, 0x0
 
-    invoke-interface {v1}, Lkbc;->f()V
+    iput v5, v2, Landroid/view/WindowManager$LayoutParams;->layoutInDisplayCutoutMode:I
 
-    invoke-virtual/range {p0 .. p0}, Lcom/google/android/apps/camera/legacy/app/activity/main/CameraActivity;->q()Z
+    goto :goto_2
 
-    move-result v1
+    :cond_4
+    iput v3, v2, Landroid/view/WindowManager$LayoutParams;->layoutInDisplayCutoutMode:I
 
-    if-nez v1, :cond_5
+    :goto_2
+    invoke-virtual {v0, v2}, Landroid/view/Window;->setAttributes(Landroid/view/WindowManager$LayoutParams;)V
+
+    const/16 v2, 0x8
+
+    invoke-virtual {v0, v2}, Landroid/view/Window;->requestFeature(I)Z
+
+    const/high16 v2, -0x80000000
+
+    invoke-virtual {v0, v2}, Landroid/view/Window;->addFlags(I)V
+
+    const/4 v2, 0x0
+
+    invoke-virtual {v0, v2}, Landroid/view/Window;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
+
+    invoke-virtual {v0}, Landroid/view/Window;->getDecorView()Landroid/view/View;
+
+    move-result-object v2
+
+    const/4 v5, 0x0
+
+    invoke-virtual {v2, v5, v5, v5, v5}, Landroid/view/View;->setPadding(IIII)V
+
+    invoke-virtual {v0}, Landroid/view/Window;->getDecorView()Landroid/view/View;
+
+    move-result-object v2
+
+    const/16 v6, 0x705
+
+    invoke-virtual {v2, v6}, Landroid/view/View;->setSystemUiVisibility(I)V
+
+    invoke-virtual {v0, v5}, Landroid/view/Window;->setNavigationBarContrastEnforced(Z)V
+
+    iget-object v0, v4, Ljup;->a:Landroid/app/Activity;
+
+    const v2, 0x7f0e0020
+
+    invoke-virtual {v0, v2}, Landroid/app/Activity;->setContentView(I)V
+
+    new-instance v0, Ljns;
+
+    invoke-static {v4}, Ljus;->b(Ljut;)Ljus;
+
+    move-result-object v2
+
+    invoke-direct {v0, v2}, Ljns;-><init>(Ljus;)V
+
+    new-instance v2, Ljnu;
+
+    invoke-direct {v2, v0}, Ljnu;-><init>(Ljns;)V
+
+    invoke-virtual/range {p0 .. p0}, Letd;->m()Lljf;
+
+    move-result-object v0
+
+    const-string v4, "activityUiInitializer#get"
+
+    invoke-interface {v0, v4}, Lljf;->g(Ljava/lang/String;)V
+
+    iget-object v0, v1, Lcom/google/android/apps/camera/legacy/app/activity/main/CameraActivity;->v:Letk;
+
+    new-instance v4, Levh;
+
+    check-cast v0, Levc;
+
+    iget-object v5, v0, Levc;->b:Lewb;
+
+    iget-object v0, v0, Levc;->c:Levc;
+
+    invoke-direct {v4, v5, v0, v2}, Levh;-><init>(Lewb;Levc;Ljnu;)V
+
+    iput-object v4, v1, Lcom/google/android/apps/camera/legacy/app/activity/main/CameraActivity;->w:Letm;
+
+    move-object v0, v4
+
+    check-cast v0, Levh;
+
+    iget-object v0, v4, Levh;->K:Lqkg;
+
+    invoke-interface {v0}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lets;
+
+    invoke-virtual/range {p0 .. p0}, Letd;->m()Lljf;
+
+    move-result-object v2
+
+    const-string v4, "#activityUiInitializer#start"
+
+    invoke-interface {v2, v4}, Lljf;->g(Ljava/lang/String;)V
+
+    invoke-interface {v0}, Lbvv;->fz()Lpht;
+
+    invoke-virtual/range {p0 .. p0}, Letd;->m()Lljf;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Lljf;->f()V
+
+    invoke-virtual/range {p0 .. p0}, Lcom/google/android/apps/camera/legacy/app/activity/main/CameraActivity;->n()Z
+
+    move-result v0
+
+    if-nez v0, :cond_5
 
     invoke-virtual/range {p0 .. p0}, Lcom/google/android/apps/camera/legacy/app/activity/main/CameraActivity;->isVoiceInteractionRoot()Z
 
-    move-result v1
+    move-result v0
 
-    if-nez v1, :cond_5
+    if-nez v0, :cond_5
 
     invoke-virtual/range {p0 .. p0}, Lcom/google/android/apps/camera/legacy/app/activity/main/CameraActivity;->getIntent()Landroid/content/Intent;
 
-    move-result-object v1
+    move-result-object v0
 
-    invoke-static {v1}, Lcdg;->f(Landroid/content/Intent;)V
+    invoke-static {v0}, Lbqe;->f(Landroid/content/Intent;)V
 
     :cond_5
+    invoke-virtual/range {p0 .. p0}, Letd;->m()Lljf;
+
+    move-result-object v0
+
+    const-string v2, "CameraActivity#disablePreviewScreenshots"
+
+    invoke-interface {v0, v2}, Lljf;->e(Ljava/lang/String;)V
+
     :try_start_0
-    const/4 v1, 0x0
+    new-array v0, v3, [Ljava/lang/Class;
 
-    invoke-virtual {v0, v1}, Lcom/google/android/apps/camera/legacy/app/activity/main/CameraActivity;->setRecentsScreenshotEnabled(Z)V
+    sget-object v2, Ljava/lang/Boolean;->TYPE:Ljava/lang/Class;
+
+    const/4 v4, 0x0
+
+    aput-object v2, v0, v4
+
+    const-class v2, Landroid/app/Activity;
+
+    const-string v4, "setDisablePreviewScreenshots"
+
+    invoke-virtual {v2, v4, v0}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
+
+    move-result-object v0
+
+    invoke-virtual {v0, v3}, Ljava/lang/reflect/Method;->setAccessible(Z)V
+
+    new-array v2, v3, [Ljava/lang/Object;
+
+    invoke-static {v3}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    move-result-object v3
+
+    const/4 v4, 0x0
+
+    aput-object v3, v2, v4
+
+    invoke-virtual {v0, v1, v2}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
     :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    .catch Ljava/lang/reflect/InvocationTargetException; {:try_start_0 .. :try_end_0} :catch_2
+    .catch Ljava/lang/NoSuchMethodException; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Ljava/lang/IllegalAccessException; {:try_start_0 .. :try_end_0} :catch_0
 
-    :catchall_0
-    iget-object v1, v0, Lcom/google/android/apps/camera/legacy/app/activity/main/CameraActivity;->C:Lcom/google/android/apps/camera/stats/timing/CameraActivityTiming;
+    goto :goto_4
 
-    sget-object v2, Lhju;->b:Lhju;
+    :catch_0
+    move-exception v0
 
-    sget-object v3, Lcom/google/android/apps/camera/stats/timing/CameraActivityTiming;->b:Lhkg;
+    goto :goto_3
 
-    invoke-virtual {v1, v2, v3}, Lhkh;->i(Ljava/lang/Enum;Lhkg;)V
+    :catch_1
+    move-exception v0
 
-    invoke-virtual/range {p0 .. p0}, Leqw;->n()Lkbc;
+    goto :goto_3
 
-    move-result-object v1
+    :catch_2
+    move-exception v0
 
-    invoke-interface {v1}, Lkbc;->f()V
+    :goto_3
+    sget-object v0, Lcom/google/android/apps/camera/legacy/app/activity/main/CameraActivity;->s:Louj;
 
-    invoke-virtual/range {p0 .. p0}, Lcom/google/android/apps/camera/legacy/app/activity/main/CameraActivity;->getIntent()Landroid/content/Intent;
+    invoke-virtual {v0}, Loue;->c()Lova;
 
-    move-result-object v1
+    move-result-object v0
 
-    invoke-static {v1}, Lcom/Globals;->onNewIntent(Landroid/content/Intent;)V
+    const/16 v2, 0x5e2
+
+    const-string v3, "Could not find method: setDisablePreviewScreenshots"
+
+    invoke-static {v0, v3, v2}, Ld;->v(Lova;Ljava/lang/String;C)V
+
+    :goto_4
+    invoke-virtual/range {p0 .. p0}, Letd;->m()Lljf;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Lljf;->f()V
+
+    iget-object v0, v1, Lcom/google/android/apps/camera/legacy/app/activity/main/CameraActivity;->x:Lcom/google/android/apps/camera/stats/timing/CameraActivityTiming;
+
+    sget-object v2, Lijf;->b:Lijf;
+
+    sget-object v3, Lcom/google/android/apps/camera/stats/timing/CameraActivityTiming;->b:Lijr;
+
+    invoke-virtual {v0, v2, v3}, Lijs;->j(Ljava/lang/Enum;Lijr;)V
+
+    invoke-virtual/range {p0 .. p0}, Letd;->m()Lljf;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Lljf;->f()V
 
     return-void
 .end method
@@ -961,13 +1038,23 @@
 .method protected final onDestroy()V
     .locals 1
 
-    iget-object v0, p0, Lcom/google/android/apps/camera/legacy/app/activity/main/CameraActivity;->u:Ldmu;
+    invoke-static {p0}, LAGC;->destoryDebugView(Landroid/content/Context;)V
 
-    invoke-static {}, Ljuh;->a()V
+    iget-object v0, p0, Lcom/google/android/apps/camera/legacy/app/activity/main/CameraActivity;->q:Ldke;
 
-    invoke-virtual {v0}, Ldmu;->a()V
+    invoke-static {}, Llar;->a()V
 
-    invoke-super {p0}, Leqw;->onDestroy()V
+    invoke-virtual {v0}, Ldke;->a()V
+
+    invoke-super {p0}, Letd;->onDestroy()V
+
+    return-void
+.end method
+
+.method protected final onPause()V
+    .locals 1
+
+    invoke-super {p0}, Letd;->onPause()V
 
     return-void
 .end method
@@ -975,157 +1062,176 @@
 .method protected final onResume()V
     .locals 3
 
-    iget-object v0, p0, Lcom/google/android/apps/camera/legacy/app/activity/main/CameraActivity;->C:Lcom/google/android/apps/camera/stats/timing/CameraActivityTiming;
+    iget-object v0, p0, Lcom/google/android/apps/camera/legacy/app/activity/main/CameraActivity;->x:Lcom/google/android/apps/camera/stats/timing/CameraActivityTiming;
 
-    sget-object v1, Lhju;->h:Lhju;
+    sget-object v1, Lijf;->h:Lijf;
 
-    sget-object v2, Lcom/google/android/apps/camera/stats/timing/CameraActivityTiming;->a:Lhkg;
+    sget-object v2, Lcom/google/android/apps/camera/stats/timing/CameraActivityTiming;->a:Lijr;
 
-    invoke-virtual {v0, v1, v2}, Lhkh;->i(Ljava/lang/Enum;Lhkg;)V
+    invoke-virtual {v0, v1, v2}, Lijs;->j(Ljava/lang/Enum;Lijr;)V
 
-    invoke-super {p0}, Leqw;->onResume()V
+    invoke-super {p0}, Letd;->onResume()V
 
-    iget-object v0, p0, Lcom/google/android/apps/camera/legacy/app/activity/main/CameraActivity;->C:Lcom/google/android/apps/camera/stats/timing/CameraActivityTiming;
+    iget-object v0, p0, Lcom/google/android/apps/camera/legacy/app/activity/main/CameraActivity;->x:Lcom/google/android/apps/camera/stats/timing/CameraActivityTiming;
 
-    sget-object v1, Lhju;->i:Lhju;
+    sget-object v1, Lijf;->i:Lijf;
 
-    sget-object v2, Lcom/google/android/apps/camera/stats/timing/CameraActivityTiming;->b:Lhkg;
+    sget-object v2, Lcom/google/android/apps/camera/stats/timing/CameraActivityTiming;->b:Lijr;
 
-    invoke-virtual {v0, v1, v2}, Lhkh;->i(Ljava/lang/Enum;Lhkg;)V
+    invoke-virtual {v0, v1, v2}, Lijs;->j(Ljava/lang/Enum;Lijr;)V
 
-    iget-object v0, p0, Lcom/google/android/apps/camera/legacy/app/activity/main/CameraActivity;->t:Ldhi;
+    iget-object v0, p0, Lcom/google/android/apps/camera/legacy/app/activity/main/CameraActivity;->o:Lddf;
 
-    invoke-static {v0}, Lfcr;->c(Ldhi;)V
+    invoke-static {v0}, Lfji;->a(Lddf;)V
 
-    iget-boolean v0, p0, Lcom/google/android/apps/camera/legacy/app/activity/main/CameraActivity;->D:Z
+    iget-boolean v0, p0, Lcom/google/android/apps/camera/legacy/app/activity/main/CameraActivity;->y:Z
 
     if-eqz v0, :cond_0
 
-    invoke-virtual {p0}, Lfbc;->finish()V
+    invoke-virtual {p0}, Lfio;->finish()V
 
     :cond_0
     return-void
 .end method
 
 .method protected final onStart()V
-    .locals 8
+    .locals 10
 
-    iget-object v0, p0, Lcom/google/android/apps/camera/legacy/app/activity/main/CameraActivity;->C:Lcom/google/android/apps/camera/stats/timing/CameraActivityTiming;
+    iget-object v0, p0, Lcom/google/android/apps/camera/legacy/app/activity/main/CameraActivity;->x:Lcom/google/android/apps/camera/stats/timing/CameraActivityTiming;
 
-    iget-object v1, v0, Lcom/google/android/apps/camera/stats/timing/CameraActivityTiming;->l:Lkrh;
+    iget-object v1, v0, Lcom/google/android/apps/camera/stats/timing/CameraActivityTiming;->l:Lmcx;
 
-    invoke-interface {v1}, Lkrh;->a()J
+    invoke-interface {v1}, Lmcx;->a()J
 
     move-result-wide v1
 
-    iget-object v3, v0, Lcom/google/android/apps/camera/stats/timing/CameraActivityTiming;->d:Lhjo;
+    iget-object v3, v0, Lcom/google/android/apps/camera/stats/timing/CameraActivityTiming;->d:Liiz;
 
-    iget v4, v3, Lhjo;->a:I
+    iget v4, v3, Liiz;->a:I
 
     const/4 v5, 0x1
 
     add-int/2addr v4, v5
 
-    iput v4, v3, Lhjo;->a:I
+    iput v4, v3, Liiz;->a:I
 
-    invoke-virtual {v3}, Lhjo;->b()I
+    invoke-virtual {v3}, Liiz;->b()I
 
     move-result v3
 
     const/4 v4, 0x3
 
-    if-ne v3, v4, :cond_1
+    if-ne v3, v4, :cond_2
 
     invoke-virtual {v0}, Lcom/google/android/apps/camera/stats/timing/CameraActivityTiming;->a()V
 
-    iget-object v3, v0, Lcom/google/android/apps/camera/stats/timing/CameraActivityTiming;->e:Lkbc;
+    iget-object v3, v0, Lcom/google/android/apps/camera/stats/timing/CameraActivityTiming;->e:Lljf;
 
-    const-string v4, "FirstPreviewFrame"
+    const-string v6, "FirstPreviewFrame"
 
-    invoke-interface {v3, v4}, Lkbc;->a(Ljava/lang/String;)Lkbf;
-
-    move-result-object v3
-
-    iput-object v3, v0, Lcom/google/android/apps/camera/stats/timing/CameraActivityTiming;->f:Lkbf;
-
-    iget-object v3, v0, Lcom/google/android/apps/camera/stats/timing/CameraActivityTiming;->e:Lkbc;
-
-    const-string v4, "FirstFrameReceived"
-
-    invoke-interface {v3, v4}, Lkbc;->a(Ljava/lang/String;)Lkbf;
+    invoke-interface {v3, v6}, Lljf;->a(Ljava/lang/String;)Llji;
 
     move-result-object v3
 
-    iput-object v3, v0, Lcom/google/android/apps/camera/stats/timing/CameraActivityTiming;->g:Lkbf;
+    iput-object v3, v0, Lcom/google/android/apps/camera/stats/timing/CameraActivityTiming;->f:Llji;
 
-    iget-object v3, v0, Lcom/google/android/apps/camera/stats/timing/CameraActivityTiming;->e:Lkbc;
+    iget-object v3, v0, Lcom/google/android/apps/camera/stats/timing/CameraActivityTiming;->e:Lljf;
 
-    const-string v4, "ShutterButtonEnabled"
+    const-string v6, "FirstFrameReceived"
 
-    invoke-interface {v3, v4}, Lkbc;->a(Ljava/lang/String;)Lkbf;
-
-    move-result-object v3
-
-    iput-object v3, v0, Lcom/google/android/apps/camera/stats/timing/CameraActivityTiming;->h:Lkbf;
-
-    invoke-static {}, Lhju;->values()[Lhju;
+    invoke-interface {v3, v6}, Lljf;->a(Ljava/lang/String;)Llji;
 
     move-result-object v3
 
-    array-length v4, v3
+    iput-object v3, v0, Lcom/google/android/apps/camera/stats/timing/CameraActivityTiming;->g:Llji;
 
-    const/4 v5, 0x0
+    iget-object v3, v0, Lcom/google/android/apps/camera/stats/timing/CameraActivityTiming;->e:Lljf;
+
+    const-string v6, "ShutterButtonEnabled"
+
+    invoke-interface {v3, v6}, Lljf;->a(Ljava/lang/String;)Llji;
+
+    move-result-object v3
+
+    iput-object v3, v0, Lcom/google/android/apps/camera/stats/timing/CameraActivityTiming;->h:Llji;
+
+    invoke-static {}, Lijf;->values()[Lijf;
+
+    move-result-object v3
+
+    array-length v6, v3
+
+    const/4 v7, 0x0
 
     :goto_0
-    if-ge v5, v4, :cond_2
+    if-ge v7, v6, :cond_1
 
-    aget-object v6, v3, v5
+    aget-object v8, v3, v7
 
-    iget-boolean v7, v6, Lhju;->s:Z
+    iget-boolean v9, v8, Lijf;->r:Z
 
-    if-eqz v7, :cond_0
+    if-eqz v9, :cond_0
 
-    sget-object v7, Lcom/google/android/apps/camera/stats/timing/CameraActivityTiming;->k:Lhkg;
+    sget-object v9, Lcom/google/android/apps/camera/stats/timing/CameraActivityTiming;->k:Lijr;
 
-    invoke-virtual {v0, v6, v1, v2, v7}, Lhkh;->j(Ljava/lang/Enum;JLhkg;)V
+    invoke-virtual {v0, v8, v1, v2, v9}, Lijs;->k(Ljava/lang/Enum;JLijr;)V
 
     :cond_0
-    add-int/lit8 v5, v5, 0x1
+    add-int/lit8 v7, v7, 0x1
 
     goto :goto_0
 
     :cond_1
-    if-eq v3, v5, :cond_3
+    const/4 v3, 0x3
 
     :cond_2
-    iget-object v3, v0, Lcom/google/android/apps/camera/stats/timing/CameraActivityTiming;->o:Ljfc;
+    if-eq v3, v5, :cond_3
+
+    iget-object v4, v0, Lcom/google/android/apps/camera/stats/timing/CameraActivityTiming;->o:Lmip;
+
+    packed-switch v3, :pswitch_data_0
+
+    const-string v3, "NONE"
+
+    goto :goto_1
+
+    :pswitch_0
+    const-string v3, "HOT"
+
+    goto :goto_1
+
+    :pswitch_1
+    const-string v3, "WARM"
+
+    :goto_1
+    invoke-virtual {v3}, Ljava/lang/String;->length()I
 
     :cond_3
-    sget-object v3, Lhju;->g:Lhju;
+    sget-object v3, Lijf;->g:Lijf;
 
-    sget-object v4, Lcom/google/android/apps/camera/stats/timing/CameraActivityTiming;->a:Lhkg;
+    sget-object v4, Lcom/google/android/apps/camera/stats/timing/CameraActivityTiming;->a:Lijr;
 
-    invoke-virtual {v0, v3, v1, v2, v4}, Lhkh;->j(Ljava/lang/Enum;JLhkg;)V
+    invoke-virtual {v0, v3, v1, v2, v4}, Lijs;->k(Ljava/lang/Enum;JLijr;)V
 
-    iget-object v0, p0, Lcom/google/android/apps/camera/legacy/app/activity/main/CameraActivity;->w:Lgre;
+    iget-object v0, p0, Lcom/google/android/apps/camera/legacy/app/activity/main/CameraActivity;->p:Lbxj;
 
-    invoke-virtual {v0}, Lgre;->c()Lkad;
+    invoke-virtual {v0}, Lbxj;->b()Llie;
 
     move-result-object v0
 
-    iget-object v1, p0, Lcom/google/android/apps/camera/legacy/app/activity/main/CameraActivity;->u:Ldmu;
+    iget-object v1, p0, Lcom/google/android/apps/camera/legacy/app/activity/main/CameraActivity;->q:Ldke;
 
     invoke-virtual {p0}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
     move-result-object v2
 
-    invoke-static {}, Ljuh;->a()V
+    invoke-static {}, Llar;->a()V
 
-    iget-object v3, v1, Ldmu;->c:Lkad;
+    iget-object v3, v1, Ldke;->c:Llie;
 
-    if-nez v3, :cond_4
+    if-nez v3, :cond_5
 
-    iget-object v3, v1, Ldmu;->a:Lkcs;
+    iget-object v3, v1, Ldke;->a:Llld;
 
     invoke-static {v2}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
@@ -1133,55 +1239,69 @@
 
     const-string v4, "CameraActivity onStart: "
 
+    invoke-virtual {v2}, Ljava/lang/String;->length()I
+
+    move-result v5
+
+    if-eqz v5, :cond_4
+
     invoke-virtual {v4, v2}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v2
 
-    invoke-virtual {v3, v2}, Lkcs;->b(Ljava/lang/String;)Lkad;
+    goto :goto_2
+
+    :cond_4
+    new-instance v2, Ljava/lang/String;
+
+    invoke-direct {v2, v4}, Ljava/lang/String;-><init>(Ljava/lang/String;)V
+
+    :goto_2
+    invoke-virtual {v3, v2}, Llld;->b(Ljava/lang/String;)Llie;
 
     move-result-object v2
 
-    iput-object v2, v1, Ldmu;->c:Lkad;
+    iput-object v2, v1, Ldke;->c:Llie;
 
-    :cond_4
-    invoke-virtual {v1}, Ldmu;->a()V
+    :cond_5
+    invoke-virtual {v1}, Ldke;->a()V
 
-    invoke-super {p0}, Leqw;->onStart()V
+    invoke-super {p0}, Letd;->onStart()V
 
-    invoke-interface {v0}, Lkad;->close()V
+    invoke-interface {v0}, Llie;->close()V
 
     return-void
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x2
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method
 
 .method protected final onStop()V
     .locals 2
 
-    iget-object v0, p0, Lcom/google/android/apps/camera/legacy/app/activity/main/CameraActivity;->u:Ldmu;
+    iget-object v0, p0, Lcom/google/android/apps/camera/legacy/app/activity/main/CameraActivity;->q:Ldke;
 
-    invoke-static {}, Ljuh;->a()V
+    invoke-static {}, Llar;->a()V
 
-    iget-object v1, v0, Ldmu;->c:Lkad;
+    iget-object v1, v0, Ldke;->c:Llie;
 
     if-eqz v1, :cond_0
 
-    invoke-interface {v1}, Lkad;->close()V
+    invoke-interface {v1}, Llie;->close()V
 
     const/4 v1, 0x0
 
-    iput-object v1, v0, Ldmu;->c:Lkad;
+    iput-object v1, v0, Ldke;->c:Llie;
 
     :cond_0
-    invoke-virtual {v0}, Ldmu;->a()V
+    invoke-virtual {v0}, Ldke;->a()V
 
-    invoke-super {p0}, Leqw;->onStop()V
+    invoke-super {p0}, Letd;->onStop()V
 
     return-void
-.end method
-
-.method protected q()Z
-    .locals 1
-
-    const/4 v0, 0x0
-
-    return v0
 .end method

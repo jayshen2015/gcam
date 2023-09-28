@@ -1,159 +1,151 @@
-.class final Losh;
-.super Lote;
+.class Losh;
+.super Loqz;
+
+# interfaces
+.implements Ljava/util/SortedSet;
 
 
 # instance fields
-.field public final a:Looz;
-
-.field public final b:I
+.field public final a:Losg;
 
 
 # direct methods
-.method public constructor <init>(Looz;I)V
+.method public constructor <init>(Losg;)V
     .locals 0
 
-    invoke-direct {p0}, Lote;-><init>()V
+    invoke-direct {p0}, Loqz;-><init>()V
 
-    iput-object p1, p0, Losh;->a:Looz;
-
-    iput p2, p0, Losh;->b:I
+    iput-object p1, p0, Losh;->a:Losg;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 2
+.method public final synthetic a()Loqw;
+    .locals 1
 
-    iget v0, p0, Losh;->b:I
+    iget-object v0, p0, Losh;->a:Losg;
 
-    const/4 v1, 0x1
-
-    if-ne v0, v1, :cond_0
-
-    invoke-static {p1}, Losw;->a(Ljava/lang/Object;)Losw;
-
-    move-result-object p1
-
-    :cond_0
-    return-object p1
+    return-object v0
 .end method
 
-.method public final b(Ljava/lang/Object;)V
-    .locals 0
+.method public final comparator()Ljava/util/Comparator;
+    .locals 1
 
-    iget-object p1, p0, Losh;->a:Looz;
+    iget-object v0, p0, Losh;->a:Losg;
 
-    invoke-interface {p1}, Looz;->l()V
-
-    return-void
-.end method
-
-.method public final c(Losy;)V
-    .locals 2
-
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    iget v0, p0, Losh;->b:I
-
-    const/4 v1, 0x1
-
-    if-ne v0, v1, :cond_0
-
-    iget-object v0, p0, Losh;->a:Looz;
-
-    iget-object p1, p1, Losy;->a:Ljava/lang/Throwable;
-
-    invoke-static {p1}, Lolp;->O(Ljava/lang/Throwable;)Ljava/lang/Object;
-
-    move-result-object p1
-
-    invoke-static {p1}, Losw;->a(Ljava/lang/Object;)Losw;
-
-    move-result-object p1
-
-    invoke-interface {v0, p1}, Loku;->e(Ljava/lang/Object;)V
-
-    return-void
-
-    :cond_0
-    iget-object v0, p0, Losh;->a:Looz;
-
-    invoke-virtual {p1}, Losy;->e()Ljava/lang/Throwable;
-
-    move-result-object p1
-
-    invoke-static {p1}, Lljr;->aN(Ljava/lang/Throwable;)Ljava/lang/Object;
-
-    move-result-object p1
-
-    invoke-interface {v0, p1}, Loku;->e(Ljava/lang/Object;)V
-
-    return-void
-.end method
-
-.method public final d(Ljava/lang/Object;)Loxb;
-    .locals 2
-
-    iget-object v0, p0, Losh;->a:Looz;
-
-    invoke-virtual {p0, p1}, Losh;->a(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object p1
-
-    check-cast v0, Lopa;
-
-    const/4 v1, 0x0
-
-    invoke-virtual {v0, p1, v1}, Lopa;->A(Ljava/lang/Object;Lomk;)Loxb;
-
-    move-result-object p1
-
-    if-nez p1, :cond_0
-
-    return-object v1
-
-    :cond_0
-    sget-boolean p1, Lopw;->a:Z
-
-    sget-object p1, Lopb;->a:Loxb;
-
-    return-object p1
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .locals 4
-
-    invoke-static {p0}, Lopx;->b(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v0
-
-    iget v1, p0, Losh;->b:I
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v3, "ReceiveElement@"
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v0, "[receiveMode="
-
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    const-string v0, "]"
-
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-interface {v0}, Losg;->comparator()Ljava/util/Comparator;
 
     move-result-object v0
 
     return-object v0
+.end method
+
+.method public final first()Ljava/lang/Object;
+    .locals 1
+
+    iget-object v0, p0, Losh;->a:Losg;
+
+    invoke-interface {v0}, Losg;->g()Loqv;
+
+    move-result-object v0
+
+    invoke-static {v0}, Loxh;->q(Loqv;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public final headSet(Ljava/lang/Object;)Ljava/util/SortedSet;
+    .locals 2
+
+    iget-object v0, p0, Losh;->a:Losg;
+
+    const/4 v1, 0x1
+
+    invoke-interface {v0, p1, v1}, Losg;->gE(Ljava/lang/Object;I)Losg;
+
+    move-result-object p1
+
+    invoke-interface {p1}, Losg;->q()Ljava/util/NavigableSet;
+
+    move-result-object p1
+
+    return-object p1
+.end method
+
+.method public final iterator()Ljava/util/Iterator;
+    .locals 1
+
+    iget-object v0, p0, Losh;->a:Losg;
+
+    invoke-interface {v0}, Losg;->k()Ljava/util/Set;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lobr;->U(Ljava/util/Iterator;)Ljava/util/Iterator;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public final last()Ljava/lang/Object;
+    .locals 1
+
+    iget-object v0, p0, Losh;->a:Losg;
+
+    invoke-interface {v0}, Losg;->l()Loqv;
+
+    move-result-object v0
+
+    invoke-static {v0}, Loxh;->q(Loqv;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public final subSet(Ljava/lang/Object;Ljava/lang/Object;)Ljava/util/SortedSet;
+    .locals 3
+
+    iget-object v0, p0, Losh;->a:Losg;
+
+    const/4 v1, 0x2
+
+    const/4 v2, 0x1
+
+    invoke-interface {v0, p1, v1, p2, v2}, Losg;->r(Ljava/lang/Object;ILjava/lang/Object;I)Losg;
+
+    move-result-object p1
+
+    invoke-interface {p1}, Losg;->q()Ljava/util/NavigableSet;
+
+    move-result-object p1
+
+    return-object p1
+.end method
+
+.method public final tailSet(Ljava/lang/Object;)Ljava/util/SortedSet;
+    .locals 2
+
+    iget-object v0, p0, Losh;->a:Losg;
+
+    const/4 v1, 0x2
+
+    invoke-interface {v0, p1, v1}, Losg;->s(Ljava/lang/Object;I)Losg;
+
+    move-result-object p1
+
+    invoke-interface {p1}, Losg;->q()Ljava/util/NavigableSet;
+
+    move-result-object p1
+
+    return-object p1
 .end method

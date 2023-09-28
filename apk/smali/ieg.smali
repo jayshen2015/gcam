@@ -1,34 +1,13 @@
-.class final Lieg;
-.super Landroid/animation/AnimatorListenerAdapter;
-
-
-# instance fields
-.field final synthetic a:Liei;
-
-
-# direct methods
-.method public constructor <init>(Liei;)V
-    .locals 0
-
-    iput-object p1, p0, Lieg;->a:Liei;
-
-    invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
-
-    return-void
-.end method
+.class interface abstract Lieg;
+.super Ljava/lang/Object;
 
 
 # virtual methods
-.method public final onAnimationStart(Landroid/animation/Animator;)V
-    .locals 1
+.method public abstract b()V
+.end method
 
-    invoke-super {p0, p1}, Landroid/animation/AnimatorListenerAdapter;->onAnimationStart(Landroid/animation/Animator;)V
+.method public abstract c()V
+.end method
 
-    iget-object p1, p0, Lieg;->a:Liei;
-
-    const/4 v0, 0x0
-
-    invoke-virtual {p1, v0}, Liei;->setVisibility(I)V
-
-    return-void
+.method public abstract d()V
 .end method

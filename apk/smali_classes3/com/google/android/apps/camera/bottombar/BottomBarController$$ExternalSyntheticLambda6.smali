@@ -6,7 +6,7 @@
 
 
 # instance fields
-.field public synthetic f$0:Lcom/google/android/apps/camera/bottombar/BottomBarController;
+.field public final synthetic f$0:Lcom/google/android/apps/camera/bottombar/BottomBarController;
 
 
 # direct methods
@@ -27,7 +27,7 @@
 
     iget-object v0, p0, Lcom/google/android/apps/camera/bottombar/BottomBarController$$ExternalSyntheticLambda6;->f$0:Lcom/google/android/apps/camera/bottombar/BottomBarController;
 
-    invoke-virtual {v0, p1}, Lcom/google/android/apps/camera/bottombar/BottomBarController;->lambda$wireListeners$9$com-google-android-apps-camera-bottombar-BottomBarController(Landroid/view/View;)V
+    invoke-virtual {v0, p1}, Lcom/google/android/apps/camera/bottombar/BottomBarController;->lambda$wireListeners$8$com-google-android-apps-camera-bottombar-BottomBarController(Landroid/view/View;)V
 
     return-void
 .end method

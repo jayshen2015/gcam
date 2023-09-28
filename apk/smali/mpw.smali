@@ -1,37 +1,43 @@
-.class public final Lmpw;
+.class final Lmpw;
 .super Ljava/lang/Object;
 
+# interfaces
+.implements Lmqa;
 
-# static fields
-.field public static final a:Lmrq;
+
+# instance fields
+.field final synthetic a:Ljava/lang/String;
+
+.field final synthetic b:F
 
 
 # direct methods
-.method static constructor <clinit>()V
+.method public constructor <init>(Ljava/lang/String;F)V
+    .locals 0
+
+    iput-object p1, p0, Lmpw;->a:Ljava/lang/String;
+
+    iput p2, p0, Lmpw;->b:F
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public final a(Lmqy;)V
     .locals 1
 
-    :try_start_0
-    invoke-static {}, Landroid/os/SystemClock;->elapsedRealtimeNanos()J
+    iget-object v0, p0, Lmpw;->a:Ljava/lang/String;
 
-    new-instance v0, Lmpu;
+    invoke-virtual {p1, v0}, Lmqy;->b(Ljava/lang/String;)I
 
-    invoke-direct {v0}, Lmpu;-><init>()V
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    move-result p1
 
-    goto :goto_0
+    iget v0, p0, Lmpw;->b:F
 
-    :catchall_0
-    move-exception v0
-
-    invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
-
-    new-instance v0, Lmpv;
-
-    invoke-direct {v0}, Lmpv;-><init>()V
-
-    :goto_0
-    sput-object v0, Lmpw;->a:Lmrq;
+    invoke-static {p1, v0}, Landroid/opengl/GLES20;->glUniform1f(IF)V
 
     return-void
 .end method

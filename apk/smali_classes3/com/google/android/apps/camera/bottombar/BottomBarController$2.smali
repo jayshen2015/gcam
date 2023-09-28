@@ -10,7 +10,7 @@
 .method static constructor <clinit>()V
     .locals 3
 
-    invoke-static {}, Lika;->values()[Lika;
+    invoke-static {}, Ljrl;->values()[Ljrl;
 
     move-result-object v0
 
@@ -21,9 +21,9 @@
     sput-object v0, Lcom/google/android/apps/camera/bottombar/BottomBarController$2;->$SwitchMap$com$google$android$apps$camera$uistate$api$ApplicationMode:[I
 
     :try_start_0
-    sget-object v1, Lika;->b:Lika;
+    sget-object v1, Ljrl;->b:Ljrl;
 
-    invoke-virtual {v1}, Lika;->ordinal()I
+    invoke-virtual {v1}, Ljrl;->ordinal()I
 
     move-result v1
 
@@ -42,9 +42,9 @@
     :try_start_1
     sget-object v0, Lcom/google/android/apps/camera/bottombar/BottomBarController$2;->$SwitchMap$com$google$android$apps$camera$uistate$api$ApplicationMode:[I
 
-    sget-object v1, Lika;->g:Lika;
+    sget-object v1, Ljrl;->g:Ljrl;
 
-    invoke-virtual {v1}, Lika;->ordinal()I
+    invoke-virtual {v1}, Ljrl;->ordinal()I
 
     move-result v1
 
@@ -63,9 +63,9 @@
     :try_start_2
     sget-object v0, Lcom/google/android/apps/camera/bottombar/BottomBarController$2;->$SwitchMap$com$google$android$apps$camera$uistate$api$ApplicationMode:[I
 
-    sget-object v1, Lika;->l:Lika;
+    sget-object v1, Ljrl;->l:Ljrl;
 
-    invoke-virtual {v1}, Lika;->ordinal()I
+    invoke-virtual {v1}, Ljrl;->ordinal()I
 
     move-result v1
 
@@ -84,9 +84,9 @@
     :try_start_3
     sget-object v0, Lcom/google/android/apps/camera/bottombar/BottomBarController$2;->$SwitchMap$com$google$android$apps$camera$uistate$api$ApplicationMode:[I
 
-    sget-object v1, Lika;->m:Lika;
+    sget-object v1, Ljrl;->m:Ljrl;
 
-    invoke-virtual {v1}, Lika;->ordinal()I
+    invoke-virtual {v1}, Ljrl;->ordinal()I
 
     move-result v1
 
@@ -105,9 +105,9 @@
     :try_start_4
     sget-object v0, Lcom/google/android/apps/camera/bottombar/BottomBarController$2;->$SwitchMap$com$google$android$apps$camera$uistate$api$ApplicationMode:[I
 
-    sget-object v1, Lika;->n:Lika;
+    sget-object v1, Ljrl;->n:Ljrl;
 
-    invoke-virtual {v1}, Lika;->ordinal()I
+    invoke-virtual {v1}, Ljrl;->ordinal()I
 
     move-result v1
 
@@ -126,9 +126,9 @@
     :try_start_5
     sget-object v0, Lcom/google/android/apps/camera/bottombar/BottomBarController$2;->$SwitchMap$com$google$android$apps$camera$uistate$api$ApplicationMode:[I
 
-    sget-object v1, Lika;->c:Lika;
+    sget-object v1, Ljrl;->c:Ljrl;
 
-    invoke-virtual {v1}, Lika;->ordinal()I
+    invoke-virtual {v1}, Ljrl;->ordinal()I
 
     move-result v1
 
@@ -147,9 +147,9 @@
     :try_start_6
     sget-object v0, Lcom/google/android/apps/camera/bottombar/BottomBarController$2;->$SwitchMap$com$google$android$apps$camera$uistate$api$ApplicationMode:[I
 
-    sget-object v1, Lika;->e:Lika;
+    sget-object v1, Ljrl;->f:Ljrl;
 
-    invoke-virtual {v1}, Lika;->ordinal()I
+    invoke-virtual {v1}, Ljrl;->ordinal()I
 
     move-result v1
 
@@ -168,9 +168,9 @@
     :try_start_7
     sget-object v0, Lcom/google/android/apps/camera/bottombar/BottomBarController$2;->$SwitchMap$com$google$android$apps$camera$uistate$api$ApplicationMode:[I
 
-    sget-object v1, Lika;->d:Lika;
+    sget-object v1, Ljrl;->e:Ljrl;
 
-    invoke-virtual {v1}, Lika;->ordinal()I
+    invoke-virtual {v1}, Ljrl;->ordinal()I
 
     move-result v1
 
@@ -189,9 +189,9 @@
     :try_start_8
     sget-object v0, Lcom/google/android/apps/camera/bottombar/BottomBarController$2;->$SwitchMap$com$google$android$apps$camera$uistate$api$ApplicationMode:[I
 
-    sget-object v1, Lika;->t:Lika;
+    sget-object v1, Ljrl;->d:Ljrl;
 
-    invoke-virtual {v1}, Lika;->ordinal()I
+    invoke-virtual {v1}, Ljrl;->ordinal()I
 
     move-result v1
 
@@ -210,9 +210,9 @@
     :try_start_9
     sget-object v0, Lcom/google/android/apps/camera/bottombar/BottomBarController$2;->$SwitchMap$com$google$android$apps$camera$uistate$api$ApplicationMode:[I
 
-    sget-object v1, Lika;->f:Lika;
+    sget-object v1, Ljrl;->r:Ljrl;
 
-    invoke-virtual {v1}, Lika;->ordinal()I
+    invoke-virtual {v1}, Ljrl;->ordinal()I
 
     move-result v1
 
@@ -231,9 +231,9 @@
     :try_start_a
     sget-object v0, Lcom/google/android/apps/camera/bottombar/BottomBarController$2;->$SwitchMap$com$google$android$apps$camera$uistate$api$ApplicationMode:[I
 
-    sget-object v1, Lika;->r:Lika;
+    sget-object v1, Ljrl;->h:Ljrl;
 
-    invoke-virtual {v1}, Lika;->ordinal()I
+    invoke-virtual {v1}, Ljrl;->ordinal()I
 
     move-result v1
 
@@ -252,9 +252,9 @@
     :try_start_b
     sget-object v0, Lcom/google/android/apps/camera/bottombar/BottomBarController$2;->$SwitchMap$com$google$android$apps$camera$uistate$api$ApplicationMode:[I
 
-    sget-object v1, Lika;->h:Lika;
+    sget-object v1, Ljrl;->i:Ljrl;
 
-    invoke-virtual {v1}, Lika;->ordinal()I
+    invoke-virtual {v1}, Ljrl;->ordinal()I
 
     move-result v1
 
@@ -273,9 +273,9 @@
     :try_start_c
     sget-object v0, Lcom/google/android/apps/camera/bottombar/BottomBarController$2;->$SwitchMap$com$google$android$apps$camera$uistate$api$ApplicationMode:[I
 
-    sget-object v1, Lika;->i:Lika;
+    sget-object v1, Ljrl;->p:Ljrl;
 
-    invoke-virtual {v1}, Lika;->ordinal()I
+    invoke-virtual {v1}, Ljrl;->ordinal()I
 
     move-result v1
 
@@ -294,9 +294,9 @@
     :try_start_d
     sget-object v0, Lcom/google/android/apps/camera/bottombar/BottomBarController$2;->$SwitchMap$com$google$android$apps$camera$uistate$api$ApplicationMode:[I
 
-    sget-object v1, Lika;->p:Lika;
+    sget-object v1, Ljrl;->k:Ljrl;
 
-    invoke-virtual {v1}, Lika;->ordinal()I
+    invoke-virtual {v1}, Ljrl;->ordinal()I
 
     move-result v1
 
@@ -315,9 +315,9 @@
     :try_start_e
     sget-object v0, Lcom/google/android/apps/camera/bottombar/BottomBarController$2;->$SwitchMap$com$google$android$apps$camera$uistate$api$ApplicationMode:[I
 
-    sget-object v1, Lika;->k:Lika;
+    sget-object v1, Ljrl;->a:Ljrl;
 
-    invoke-virtual {v1}, Lika;->ordinal()I
+    invoke-virtual {v1}, Ljrl;->ordinal()I
 
     move-result v1
 
@@ -336,9 +336,9 @@
     :try_start_f
     sget-object v0, Lcom/google/android/apps/camera/bottombar/BottomBarController$2;->$SwitchMap$com$google$android$apps$camera$uistate$api$ApplicationMode:[I
 
-    sget-object v1, Lika;->a:Lika;
+    sget-object v1, Ljrl;->o:Ljrl;
 
-    invoke-virtual {v1}, Lika;->ordinal()I
+    invoke-virtual {v1}, Ljrl;->ordinal()I
 
     move-result v1
 
@@ -357,9 +357,9 @@
     :try_start_10
     sget-object v0, Lcom/google/android/apps/camera/bottombar/BottomBarController$2;->$SwitchMap$com$google$android$apps$camera$uistate$api$ApplicationMode:[I
 
-    sget-object v1, Lika;->o:Lika;
+    sget-object v1, Ljrl;->j:Ljrl;
 
-    invoke-virtual {v1}, Lika;->ordinal()I
+    invoke-virtual {v1}, Ljrl;->ordinal()I
 
     move-result v1
 
@@ -378,9 +378,9 @@
     :try_start_11
     sget-object v0, Lcom/google/android/apps/camera/bottombar/BottomBarController$2;->$SwitchMap$com$google$android$apps$camera$uistate$api$ApplicationMode:[I
 
-    sget-object v1, Lika;->j:Lika;
+    sget-object v1, Ljrl;->q:Ljrl;
 
-    invoke-virtual {v1}, Lika;->ordinal()I
+    invoke-virtual {v1}, Ljrl;->ordinal()I
 
     move-result v1
 
@@ -399,9 +399,9 @@
     :try_start_12
     sget-object v0, Lcom/google/android/apps/camera/bottombar/BottomBarController$2;->$SwitchMap$com$google$android$apps$camera$uistate$api$ApplicationMode:[I
 
-    sget-object v1, Lika;->q:Lika;
+    sget-object v1, Ljrl;->s:Ljrl;
 
-    invoke-virtual {v1}, Lika;->ordinal()I
+    invoke-virtual {v1}, Ljrl;->ordinal()I
 
     move-result v1
 
@@ -411,30 +411,9 @@
     :try_end_12
     .catch Ljava/lang/NoSuchFieldError; {:try_start_12 .. :try_end_12} :catch_12
 
-    goto :goto_12
-
-    :catch_12
-    move-exception v0
-
-    :goto_12
-    :try_start_13
-    sget-object v0, Lcom/google/android/apps/camera/bottombar/BottomBarController$2;->$SwitchMap$com$google$android$apps$camera$uistate$api$ApplicationMode:[I
-
-    sget-object v1, Lika;->s:Lika;
-
-    invoke-virtual {v1}, Lika;->ordinal()I
-
-    move-result v1
-
-    const/16 v2, 0x14
-
-    aput v2, v0, v1
-    :try_end_13
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_13 .. :try_end_13} :catch_13
-
     return-void
 
-    :catch_13
+    :catch_12
     move-exception v0
 
     return-void

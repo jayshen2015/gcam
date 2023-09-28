@@ -1,47 +1,47 @@
-.class public final Libs;
+.class public final synthetic Libs;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Libw;
+.implements Llie;
 
 
 # instance fields
-.field private final synthetic a:I
+.field public final synthetic a:Libz;
 
 
 # direct methods
-.method public constructor <init>(I)V
+.method public synthetic constructor <init>(Libz;)V
     .locals 0
 
-    iput p1, p0, Libs;->a:I
-
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Libs;->a:Libz;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final synthetic a()V
-    .locals 1
+.method public final close()V
+    .locals 3
 
-    iget v0, p0, Libs;->a:I
+    iget-object v0, p0, Libs;->a:Libz;
 
-    return-void
-.end method
+    iget-object v1, v0, Libz;->g:Lbue;
 
-.method public final synthetic b()V
-    .locals 1
+    iget-object v2, v0, Libz;->e:Libe;
 
-    iget v0, p0, Libs;->a:I
+    invoke-interface {v1, v2}, Lbue;->d(Lbtw;)V
 
-    return-void
-.end method
+    iget-object v1, v0, Libz;->h:Lhrx;
 
-.method public final synthetic c()V
-    .locals 1
+    iget-object v2, v0, Libz;->e:Libe;
 
-    iget v0, p0, Libs;->a:I
+    invoke-virtual {v1, v2}, Lhrx;->i(Lhsb;)V
+
+    iget-object v0, v0, Libz;->e:Libe;
+
+    invoke-virtual {v0}, Libe;->b()V
 
     return-void
 .end method

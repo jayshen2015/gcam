@@ -1,36 +1,40 @@
-.class public final Liyd;
-.super Landroid/database/ContentObserver;
+.class final Liyd;
+.super Liwl;
 
 
 # instance fields
-.field final synthetic a:Landroidx/wear/ambient/AmbientMode$AmbientController;
+.field final synthetic a:Liye;
 
 
 # direct methods
-.method public constructor <init>(Landroid/os/Handler;Landroidx/wear/ambient/AmbientMode$AmbientController;[B[B[B[B[B)V
+.method public constructor <init>(Liye;)V
     .locals 0
 
-    iput-object p2, p0, Liyd;->a:Landroidx/wear/ambient/AmbientMode$AmbientController;
+    iput-object p1, p0, Liyd;->a:Liye;
 
-    invoke-direct {p0, p1}, Landroid/database/ContentObserver;-><init>(Landroid/os/Handler;)V
+    invoke-direct {p0}, Liwl;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onChange(Z)V
-    .locals 0
+.method public final a()V
+    .locals 2
 
-    invoke-super {p0, p1}, Landroid/database/ContentObserver;->onChange(Z)V
+    iget-object v0, p0, Liyd;->a:Liye;
 
-    iget-object p1, p0, Liyd;->a:Landroidx/wear/ambient/AmbientMode$AmbientController;
+    iget-object v0, v0, Liye;->l:Lihu;
 
-    iget-object p1, p1, Landroidx/wear/ambient/AmbientMode$AmbientController;->a:Ljava/lang/Object;
+    invoke-virtual {v0}, Lihu;->e()V
 
-    check-cast p1, Lcom/google/android/clockwork/common/wearable/wearmaterial/time/WearTimeText;
+    iget-object v0, p0, Liyd;->a:Liye;
 
-    invoke-virtual {p1}, Lcom/google/android/clockwork/common/wearable/wearmaterial/time/WearTimeText;->a()V
+    iget-object v1, v0, Liye;->l:Lihu;
+
+    iget-object v0, v0, Liye;->m:Lihw;
+
+    invoke-virtual {v1, v0}, Lihu;->g(Lihw;)V
 
     return-void
 .end method

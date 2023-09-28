@@ -1,54 +1,200 @@
 .class final Liyp;
-.super Ljava/util/concurrent/ThreadPoolExecutor;
+.super Lixn;
 
 
 # instance fields
-.field final synthetic a:Liys;
+.field final synthetic b:Liyx;
 
 
 # direct methods
-.method public constructor <init>(Liys;)V
-    .locals 7
+.method public constructor <init>(Liyx;)V
+    .locals 0
 
-    iput-object p1, p0, Liyp;->a:Liys;
+    iput-object p1, p0, Liyp;->b:Liyx;
 
-    const/4 v1, 0x1
-
-    const/4 v2, 0x1
-
-    const-wide/16 v3, 0x1
-
-    sget-object v5, Ljava/util/concurrent/TimeUnit;->MINUTES:Ljava/util/concurrent/TimeUnit;
-
-    new-instance v6, Ljava/util/concurrent/LinkedBlockingQueue;
-
-    invoke-direct {v6}, Ljava/util/concurrent/LinkedBlockingQueue;-><init>()V
-
-    move-object v0, p0
-
-    invoke-direct/range {v0 .. v6}, Ljava/util/concurrent/ThreadPoolExecutor;-><init>(IIJLjava/util/concurrent/TimeUnit;Ljava/util/concurrent/BlockingQueue;)V
-
-    new-instance p1, Liyq;
-
-    invoke-direct {p1}, Liyq;-><init>()V
-
-    invoke-virtual {p0, p1}, Liyp;->setThreadFactory(Ljava/util/concurrent/ThreadFactory;)V
-
-    const/4 p1, 0x1
-
-    invoke-virtual {p0, p1}, Liyp;->allowCoreThreadTimeOut(Z)V
+    invoke-direct {p0, p1}, Lixn;-><init>(Lixx;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method protected final newTaskFor(Ljava/lang/Runnable;Ljava/lang/Object;)Ljava/util/concurrent/RunnableFuture;
-    .locals 1
+.method public final b()V
+    .locals 2
 
-    new-instance v0, Liyo;
+    iget-object v0, p0, Liyp;->b:Liyx;
 
-    invoke-direct {v0, p0, p1, p2}, Liyo;-><init>(Liyp;Ljava/lang/Runnable;Ljava/lang/Object;)V
+    iget-object v0, v0, Liyx;->p:Lihu;
 
-    return-object v0
+    invoke-virtual {v0}, Lihu;->e()V
+
+    iget-object v0, p0, Liyp;->b:Liyx;
+
+    iget-object v1, v0, Liyx;->p:Lihu;
+
+    iget-object v0, v0, Liyx;->u:Lihw;
+
+    invoke-virtual {v1, v0}, Lihu;->g(Lihw;)V
+
+    return-void
+.end method
+
+.method public final c()V
+    .locals 2
+
+    iget-object v0, p0, Liyp;->b:Liyx;
+
+    iget-object v0, v0, Liyx;->p:Lihu;
+
+    invoke-virtual {v0}, Lihu;->e()V
+
+    iget-object v0, p0, Liyp;->b:Liyx;
+
+    iget-object v1, v0, Liyx;->p:Lihu;
+
+    iget-object v0, v0, Liyx;->q:Lihw;
+
+    invoke-virtual {v1, v0}, Lihu;->g(Lihw;)V
+
+    return-void
+.end method
+
+.method public final i()V
+    .locals 2
+
+    iget-object v0, p0, Liyp;->b:Liyx;
+
+    iget-object v0, v0, Liyx;->p:Lihu;
+
+    invoke-virtual {v0}, Lihu;->e()V
+
+    iget-object v0, p0, Liyp;->b:Liyx;
+
+    iget-object v1, v0, Liyx;->p:Lihu;
+
+    iget-object v0, v0, Liyx;->s:Lihw;
+
+    invoke-virtual {v1, v0}, Lihu;->g(Lihw;)V
+
+    return-void
+.end method
+
+.method public final j()V
+    .locals 2
+
+    iget-object v0, p0, Liyp;->b:Liyx;
+
+    iget-object v0, v0, Liyx;->p:Lihu;
+
+    invoke-virtual {v0}, Lihu;->e()V
+
+    iget-object v0, p0, Liyp;->b:Liyx;
+
+    iget-object v1, v0, Liyx;->p:Lihu;
+
+    iget-object v0, v0, Liyx;->t:Lihw;
+
+    invoke-virtual {v1, v0}, Lihu;->g(Lihw;)V
+
+    return-void
+.end method
+
+.method public final k()V
+    .locals 2
+
+    iget-object v0, p0, Liyp;->b:Liyx;
+
+    iget-object v0, v0, Liyx;->p:Lihu;
+
+    invoke-virtual {v0}, Lihu;->e()V
+
+    iget-object v0, p0, Liyp;->b:Liyx;
+
+    iget-object v1, v0, Liyx;->p:Lihu;
+
+    iget-object v0, v0, Liyx;->v:Lihw;
+
+    invoke-virtual {v1, v0}, Lihu;->g(Lihw;)V
+
+    return-void
+.end method
+
+.method public final l()V
+    .locals 2
+
+    iget-object v0, p0, Liyp;->b:Liyx;
+
+    iget-object v0, v0, Liyx;->p:Lihu;
+
+    invoke-virtual {v0}, Lihu;->e()V
+
+    iget-object v0, p0, Liyp;->b:Liyx;
+
+    iget-object v1, v0, Liyx;->p:Lihu;
+
+    iget-object v0, v0, Liyx;->w:Lihw;
+
+    invoke-virtual {v1, v0}, Lihu;->g(Lihw;)V
+
+    return-void
+.end method
+
+.method public final n()V
+    .locals 2
+
+    iget-object v0, p0, Liyp;->b:Liyx;
+
+    iget-object v0, v0, Liyx;->p:Lihu;
+
+    invoke-virtual {v0}, Lihu;->e()V
+
+    iget-object v0, p0, Liyp;->b:Liyx;
+
+    iget-object v1, v0, Liyx;->p:Lihu;
+
+    iget-object v0, v0, Liyx;->y:Lihw;
+
+    invoke-virtual {v1, v0}, Lihu;->g(Lihw;)V
+
+    return-void
+.end method
+
+.method public final o()V
+    .locals 2
+
+    iget-object v0, p0, Liyp;->b:Liyx;
+
+    iget-object v0, v0, Liyx;->p:Lihu;
+
+    invoke-virtual {v0}, Lihu;->e()V
+
+    iget-object v0, p0, Liyp;->b:Liyx;
+
+    iget-object v1, v0, Liyx;->p:Lihu;
+
+    iget-object v0, v0, Liyx;->z:Lihw;
+
+    invoke-virtual {v1, v0}, Lihu;->g(Lihw;)V
+
+    return-void
+.end method
+
+.method public final p()V
+    .locals 2
+
+    iget-object v0, p0, Liyp;->b:Liyx;
+
+    iget-object v0, v0, Liyx;->p:Lihu;
+
+    invoke-virtual {v0}, Lihu;->e()V
+
+    iget-object v0, p0, Liyp;->b:Liyx;
+
+    iget-object v1, v0, Liyx;->p:Lihu;
+
+    iget-object v0, v0, Liyx;->A:Lihw;
+
+    invoke-virtual {v1, v0}, Lihu;->g(Lihw;)V
+
+    return-void
 .end method

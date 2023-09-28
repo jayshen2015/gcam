@@ -1,112 +1,126 @@
-.class public final enum Liep;
-.super Ljava/lang/Enum;
+.class public final synthetic Liep;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Landroid/animation/ValueAnimator$AnimatorUpdateListener;
 
 
-# static fields
-.field public static final enum a:Liep;
+# instance fields
+.field public final synthetic a:Lies;
 
-.field public static final enum b:Liep;
-
-.field public static final enum c:Liep;
-
-.field public static final enum d:Liep;
-
-.field public static final enum e:Liep;
-
-.field private static final synthetic f:[Liep;
+.field private final synthetic b:I
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 11
-
-    new-instance v0, Liep;
-
-    const-string v1, "STATE_NONE"
-
-    const/4 v2, 0x0
-
-    invoke-direct {v0, v1, v2}, Liep;-><init>(Ljava/lang/String;I)V
-
-    sput-object v0, Liep;->a:Liep;
-
-    new-instance v1, Liep;
-
-    const-string v3, "STATE_IDLE"
-
-    const/4 v4, 0x1
-
-    invoke-direct {v1, v3, v4}, Liep;-><init>(Ljava/lang/String;I)V
-
-    sput-object v1, Liep;->b:Liep;
-
-    new-instance v3, Liep;
-
-    const-string v5, "STATE_RESUME"
-
-    const/4 v6, 0x2
-
-    invoke-direct {v3, v5, v6}, Liep;-><init>(Ljava/lang/String;I)V
-
-    sput-object v3, Liep;->c:Liep;
-
-    new-instance v5, Liep;
-
-    const-string v7, "STATE_PAUSE"
-
-    const/4 v8, 0x3
-
-    invoke-direct {v5, v7, v8}, Liep;-><init>(Ljava/lang/String;I)V
-
-    sput-object v5, Liep;->d:Liep;
-
-    new-instance v7, Liep;
-
-    const-string v9, "STATE_UPDATED"
-
-    const/4 v10, 0x4
-
-    invoke-direct {v7, v9, v10}, Liep;-><init>(Ljava/lang/String;I)V
-
-    sput-object v7, Liep;->e:Liep;
-
-    const/4 v9, 0x5
-
-    new-array v9, v9, [Liep;
-
-    aput-object v0, v9, v2
-
-    aput-object v1, v9, v4
-
-    aput-object v3, v9, v6
-
-    aput-object v5, v9, v8
-
-    aput-object v7, v9, v10
-
-    sput-object v9, Liep;->f:[Liep;
-
-    return-void
-.end method
-
-.method private constructor <init>(Ljava/lang/String;I)V
+.method public synthetic constructor <init>(Lies;I)V
     .locals 0
 
-    invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+    iput p2, p0, Liep;->b:I
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Liep;->a:Lies;
 
     return-void
 .end method
 
-.method public static values()[Liep;
-    .locals 1
 
-    sget-object v0, Liep;->f:[Liep;
+# virtual methods
+.method public final onAnimationUpdate(Landroid/animation/ValueAnimator;)V
+    .locals 3
 
-    invoke-virtual {v0}, [Liep;->clone()Ljava/lang/Object;
+    iget v0, p0, Liep;->b:I
 
-    move-result-object v0
+    packed-switch v0, :pswitch_data_0
 
-    check-cast v0, [Liep;
+    iget-object v0, p0, Liep;->a:Lies;
 
-    return-object v0
+    invoke-virtual {v0}, Lies;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
+
+    move-result-object v1
+
+    invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
+
+    move-result-object p1
+
+    check-cast p1, Ljava/lang/Integer;
+
+    invoke-virtual {p1}, Ljava/lang/Integer;->intValue()I
+
+    move-result p1
+
+    iput p1, v1, Landroid/view/ViewGroup$LayoutParams;->height:I
+
+    invoke-virtual {v0}, Lies;->requestLayout()V
+
+    return-void
+
+    :pswitch_0
+    iget-object v0, p0, Liep;->a:Lies;
+
+    invoke-virtual {v0}, Lies;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
+
+    move-result-object v1
+
+    invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Ljava/lang/Integer;
+
+    invoke-virtual {v2}, Ljava/lang/Integer;->intValue()I
+
+    move-result v2
+
+    iput v2, v1, Landroid/view/ViewGroup$LayoutParams;->height:I
+
+    iget v1, v0, Lies;->f:I
+
+    const/4 v2, 0x1
+
+    if-ne v1, v2, :cond_0
+
+    const/high16 v1, 0x3f800000    # 1.0f
+
+    invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedFraction()F
+
+    move-result p1
+
+    sub-float/2addr v1, p1
+
+    invoke-virtual {v0, v1}, Lies;->setAlpha(F)V
+
+    :cond_0
+    invoke-virtual {v0}, Lies;->requestLayout()V
+
+    return-void
+
+    :pswitch_1
+    iget-object v0, p0, Liep;->a:Lies;
+
+    invoke-virtual {v0}, Lies;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
+
+    move-result-object v1
+
+    invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
+
+    move-result-object p1
+
+    check-cast p1, Ljava/lang/Integer;
+
+    invoke-virtual {p1}, Ljava/lang/Integer;->intValue()I
+
+    move-result p1
+
+    iput p1, v1, Landroid/view/ViewGroup$LayoutParams;->height:I
+
+    invoke-virtual {v0}, Lies;->requestLayout()V
+
+    return-void
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method

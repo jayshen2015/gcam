@@ -1,172 +1,108 @@
 .class public final Lntg;
-.super Lnws;
-
-# interfaces
-.implements Lnxz;
-
-
-# static fields
-.field public static final d:Lntg;
-
-.field private static volatile e:Lnyf;
+.super Ljava/lang/Object;
 
 
 # instance fields
-.field public a:Lnth;
+.field public final a:Lnoc;
 
-.field public b:Lnvi;
+.field public final b:Lnoq;
 
-.field public c:I
+.field public final c:Lmdf;
+
+.field public final d:Lnov;
+
+.field public final e:Lohh;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
-
-    new-instance v0, Lntg;
-
-    invoke-direct {v0}, Lntg;-><init>()V
-
-    sput-object v0, Lntg;->d:Lntg;
-
-    const-class v1, Lntg;
-
-    invoke-static {v1, v0}, Lnws;->aa(Ljava/lang/Class;Lnws;)V
-
-    return-void
-.end method
-
-.method private constructor <init>()V
+.method public constructor <init>(Lnov;Lohh;Lnoc;Lnoq;Lmdf;[B[B)V
     .locals 0
 
-    invoke-direct {p0}, Lnws;-><init>()V
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    invoke-virtual {p3}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    invoke-virtual {p4}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    invoke-virtual {p5}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lntg;->d:Lnov;
+
+    iput-object p2, p0, Lntg;->e:Lohh;
+
+    iput-object p3, p0, Lntg;->a:Lnoc;
+
+    iput-object p4, p0, Lntg;->b:Lnoq;
+
+    iput-object p5, p0, Lntg;->c:Lmdf;
 
     return-void
 .end method
 
 
 # virtual methods
-.method protected final a(ILjava/lang/Object;)Ljava/lang/Object;
-    .locals 3
+.method public final a(Lnsy;)Lqbd;
+    .locals 8
 
-    add-int/lit8 p1, p1, -0x1
+    iget-object v0, p1, Lnsy;->a:Lnrl;
 
-    const/4 p2, 0x1
+    iget-object v1, p1, Lnsy;->b:Lnqh;
 
-    packed-switch p1, :pswitch_data_0
+    iget-object v2, p1, Lnsy;->c:Lnpe;
 
-    :pswitch_0
-    const/4 p1, 0x0
+    iget-object p1, p1, Lnsy;->d:Lqoj;
 
-    return-object p1
+    iget-object v3, p0, Lntg;->b:Lnoq;
 
-    :pswitch_1
-    sget-object p1, Lntg;->e:Lnyf;
+    new-instance v4, Lnqi;
 
-    if-nez p1, :cond_1
+    const/4 v5, 0x2
 
-    const-class p2, Lntg;
+    new-array v5, v5, [Lqoj;
 
-    monitor-enter p2
+    const/4 v6, 0x0
 
-    :try_start_0
-    sget-object p1, Lntg;->e:Lnyf;
+    aput-object p1, v5, v6
 
-    if-nez p1, :cond_0
+    const/4 p1, 0x1
 
-    new-instance p1, Lnwo;
+    new-array v7, p1, [Ljava/lang/Object;
 
-    sget-object v0, Lntg;->d:Lntg;
+    aput-object v2, v7, v6
 
-    invoke-direct {p1, v0}, Lnwo;-><init>(Lnws;)V
+    invoke-static {v7}, Lqmd;->I([Ljava/lang/Object;)Lqoj;
 
-    sput-object p1, Lntg;->e:Lnyf;
+    move-result-object v2
 
-    :cond_0
-    monitor-exit p2
+    aput-object v2, v5, p1
 
-    goto :goto_0
+    invoke-static {v5}, Lqmd;->I([Ljava/lang/Object;)Lqoj;
 
-    :catchall_0
-    move-exception p1
+    move-result-object p1
 
-    monitor-exit p2
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    invoke-static {p1}, Lqnt;->b(Lqoj;)Lqoj;
 
-    throw p1
+    move-result-object p1
 
-    :cond_1
-    :goto_0
-    return-object p1
+    invoke-static {p1}, Lqnt;->c(Lqoj;)Ljava/util/List;
 
-    :pswitch_2
-    sget-object p1, Lntg;->d:Lntg;
+    move-result-object p1
 
-    return-object p1
+    invoke-direct {v4, v1, p1}, Lnqi;-><init>(Lnqh;Ljava/util/List;)V
 
-    :pswitch_3
-    new-instance p1, Lnwn;
+    sget-object p1, Lnoj;->m:Lnoj;
 
-    sget-object p2, Lntg;->d:Lntg;
+    invoke-virtual {v3, v0, v4, p1}, Lnoq;->d(Lnrl;Lnqi;Lqmu;)Lqbu;
 
-    invoke-direct {p1, p2}, Lnwn;-><init>(Lnws;)V
+    move-result-object p1
 
-    return-object p1
-
-    :pswitch_4
-    new-instance p1, Lntg;
-
-    invoke-direct {p1}, Lntg;-><init>()V
-
-    return-object p1
-
-    :pswitch_5
-    const-string p1, "a"
-
-    const-string v0, "\u0000\u0003\u0000\u0000\u0001\u0003\u0003\u0000\u0000\u0000\u0001\t\u0002\t\u0003\u0004"
-
-    const/4 v1, 0x3
-
-    new-array v1, v1, [Ljava/lang/Object;
-
-    const/4 v2, 0x0
-
-    aput-object p1, v1, v2
-
-    const-string p1, "b"
-
-    aput-object p1, v1, p2
-
-    const/4 p1, 0x2
-
-    const-string p2, "c"
-
-    aput-object p2, v1, p1
-
-    sget-object p1, Lntg;->d:Lntg;
-
-    invoke-static {p1, v0, v1}, Lntg;->X(Lnxy;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {p1}, Lqbu;->e()Lqbd;
 
     move-result-object p1
 
     return-object p1
-
-    :pswitch_6
-    invoke-static {p2}, Ljava/lang/Byte;->valueOf(B)Ljava/lang/Byte;
-
-    move-result-object p1
-
-    return-object p1
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_6
-        :pswitch_0
-        :pswitch_5
-        :pswitch_4
-        :pswitch_3
-        :pswitch_2
-        :pswitch_1
-    .end packed-switch
 .end method

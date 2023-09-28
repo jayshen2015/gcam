@@ -48,7 +48,7 @@
 .method public native abortShot(JI)V
 .end method
 
-.method public native addViewfinderFrame(JJJLjava/lang/Runnable;)Z
+.method public native addViewfinderFrame(JJJLjava/lang/Runnable;)V
 .end method
 
 .method public native analyzeShot(JII)V
@@ -57,7 +57,7 @@
 .method public native beginShot(JI)V
 .end method
 
-.method public native create(IIILjava/lang/String;JLcom/google/googlex/gcam/clientallocator/InterleavedU8ClientAllocator;Lcom/google/googlex/gcam/lasagna/LasagnaCallbacks;Z[B[B[B)J
+.method public native create(IIILjava/lang/String;JLcom/google/googlex/gcam/clientallocator/InterleavedU8ClientAllocator;Lcom/google/googlex/gcam/lasagna/LasagnaCallbacks;)J
 .end method
 
 .method public native delete(J)V
@@ -75,5 +75,5 @@
 .method public native processZslBurst(JIJJ)V
 .end method
 
-.method public native setOptions(JJIZZFIZZZ)V
+.method public native setOptions(JIZFIZZ)V
 .end method

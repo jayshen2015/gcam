@@ -1,57 +1,109 @@
-.class public final synthetic Lhow;
-.super Ljava/lang/Object;
-
-# interfaces
-.implements Lhmz;
+.class Lhow;
+.super Lhos;
 
 
 # instance fields
-.field public final synthetic a:Lhoz;
+.field private a:Landroid/animation/Animator;
+
+.field final synthetic b:Lhoz;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lhoz;)V
+.method public constructor <init>(Lhoz;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lhow;->b:Lhoz;
 
-    iput-object p1, p0, Lhow;->a:Lhoz;
+    invoke-direct {p0}, Lhos;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final bG(Lhna;)V
-    .locals 4
+.method public a()V
+    .locals 0
 
-    iget-object v0, p0, Lhow;->a:Lhoz;
+    return-void
+.end method
 
-    iget-object v0, v0, Lhoz;->l:Lmvv;
+.method public c()V
+    .locals 0
 
-    move-object v1, v0
+    return-void
+.end method
 
-    check-cast v1, Lmyu;
+.method public d()V
+    .locals 0
 
-    iget v1, v1, Lmyu;->c:I
+    return-void
+.end method
 
-    const/4 v2, 0x0
+.method public final f()V
+    .locals 2
 
-    :goto_0
-    if-ge v2, v1, :cond_0
+    iget-object v0, p0, Lhow;->b:Lhoz;
 
-    invoke-interface {v0, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
+    invoke-virtual {v0}, Lhoz;->i()V
 
-    move-result-object v3
+    iget-object v0, p0, Lhow;->b:Lhoz;
 
-    check-cast v3, Lhmz;
+    iget-object v0, v0, Lhoz;->b:Lpyn;
 
-    invoke-interface {v3, p1}, Lhmz;->bG(Lhna;)V
+    invoke-interface {v0}, Lpyn;->get()Ljava/lang/Object;
 
-    add-int/lit8 v2, v2, 0x1
+    move-result-object v0
 
-    goto :goto_0
+    check-cast v0, Lhpc;
+
+    iget-object v1, p0, Lhow;->b:Lhoz;
+
+    invoke-virtual {v1}, Lhoz;->k()Z
+
+    move-result v1
+
+    invoke-interface {v0, v1}, Lhpc;->c(Z)Landroid/animation/Animator;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lhow;->a:Landroid/animation/Animator;
+
+    new-instance v1, Lhov;
+
+    invoke-direct {v1, p0}, Lhov;-><init>(Lhow;)V
+
+    invoke-virtual {v0, v1}, Landroid/animation/Animator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
+
+    iget-object v0, p0, Lhow;->a:Landroid/animation/Animator;
+
+    invoke-virtual {v0}, Landroid/animation/Animator;->start()V
+
+    return-void
+.end method
+
+.method public final g()V
+    .locals 1
+
+    iget-object v0, p0, Lhow;->a:Landroid/animation/Animator;
+
+    invoke-virtual {v0}, Landroid/animation/Animator;->isRunning()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lhow;->a:Landroid/animation/Animator;
+
+    invoke-virtual {v0}, Landroid/animation/Animator;->removeAllListeners()V
+
+    iget-object v0, p0, Lhow;->a:Landroid/animation/Animator;
+
+    invoke-virtual {v0}, Landroid/animation/Animator;->cancel()V
 
     :cond_0
+    iget-object v0, p0, Lhow;->b:Lhoz;
+
+    invoke-virtual {v0}, Lhoz;->j()V
+
     return-void
 .end method

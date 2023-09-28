@@ -1,236 +1,104 @@
 .class public final Locd;
-.super Lnws;
-
-# interfaces
-.implements Lnxz;
+.super Locf;
 
 
 # static fields
-.field public static final k:Locd;
-
-.field private static volatile l:Lnyf;
+.field private static final h:Landroid/graphics/RectF;
 
 
 # instance fields
-.field public a:I
+.field public final a:F
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
+.end field
 
-.field public b:I
+.field public final b:F
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
+.end field
 
-.field public c:I
+.field public final c:F
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
+.end field
 
-.field public d:J
+.field public final d:F
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
+.end field
 
-.field public e:J
+.field public e:F
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
+.end field
 
-.field public f:J
-
-.field public g:J
-
-.field public h:J
-
-.field public i:J
-
-.field public j:J
+.field public f:F
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
+.end field
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 2
+    .locals 1
 
-    new-instance v0, Locd;
+    new-instance v0, Landroid/graphics/RectF;
 
-    invoke-direct {v0}, Locd;-><init>()V
+    invoke-direct {v0}, Landroid/graphics/RectF;-><init>()V
 
-    sput-object v0, Locd;->k:Locd;
-
-    const-class v1, Locd;
-
-    invoke-static {v1, v0}, Lnws;->aa(Ljava/lang/Class;Lnws;)V
+    sput-object v0, Locd;->h:Landroid/graphics/RectF;
 
     return-void
 .end method
 
-.method private constructor <init>()V
-    .locals 1
+.method public constructor <init>(FFFF)V
+    .locals 0
 
-    invoke-direct {p0}, Lnws;-><init>()V
+    invoke-direct {p0}, Locf;-><init>()V
 
-    sget-object v0, Lnwl;->b:Lnwl;
+    iput p1, p0, Locd;->a:F
+
+    iput p2, p0, Locd;->b:F
+
+    iput p3, p0, Locd;->c:F
+
+    iput p4, p0, Locd;->d:F
 
     return-void
 .end method
 
 
 # virtual methods
-.method protected final a(ILjava/lang/Object;)Ljava/lang/Object;
-    .locals 3
+.method public final a(Landroid/graphics/Matrix;Landroid/graphics/Path;)V
+    .locals 5
 
-    add-int/lit8 p1, p1, -0x1
+    iget-object v0, p0, Locd;->g:Landroid/graphics/Matrix;
 
-    const/4 p2, 0x1
+    invoke-virtual {p1, v0}, Landroid/graphics/Matrix;->invert(Landroid/graphics/Matrix;)Z
 
-    packed-switch p1, :pswitch_data_0
+    invoke-virtual {p2, v0}, Landroid/graphics/Path;->transform(Landroid/graphics/Matrix;)V
 
-    :pswitch_0
-    const/4 p1, 0x0
+    sget-object v0, Locd;->h:Landroid/graphics/RectF;
 
-    return-object p1
+    iget v1, p0, Locd;->a:F
 
-    :pswitch_1
-    sget-object p1, Locd;->l:Lnyf;
+    iget v2, p0, Locd;->b:F
 
-    if-nez p1, :cond_1
+    iget v3, p0, Locd;->c:F
 
-    const-class p2, Locd;
+    iget v4, p0, Locd;->d:F
 
-    monitor-enter p2
+    invoke-virtual {v0, v1, v2, v3, v4}, Landroid/graphics/RectF;->set(FFFF)V
 
-    :try_start_0
-    sget-object p1, Locd;->l:Lnyf;
+    iget v1, p0, Locd;->e:F
 
-    if-nez p1, :cond_0
+    iget v2, p0, Locd;->f:F
 
-    new-instance p1, Lnwo;
+    const/4 v3, 0x0
 
-    sget-object v0, Locd;->k:Locd;
+    invoke-virtual {p2, v0, v1, v2, v3}, Landroid/graphics/Path;->arcTo(Landroid/graphics/RectF;FFZ)V
 
-    invoke-direct {p1, v0}, Lnwo;-><init>(Lnws;)V
+    invoke-virtual {p2, p1}, Landroid/graphics/Path;->transform(Landroid/graphics/Matrix;)V
 
-    sput-object p1, Locd;->l:Lnyf;
-
-    :cond_0
-    monitor-exit p2
-
-    goto :goto_0
-
-    :catchall_0
-    move-exception p1
-
-    monitor-exit p2
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw p1
-
-    :cond_1
-    :goto_0
-    return-object p1
-
-    :pswitch_2
-    sget-object p1, Locd;->k:Locd;
-
-    return-object p1
-
-    :pswitch_3
-    new-instance p1, Lnwn;
-
-    sget-object p2, Locd;->k:Locd;
-
-    invoke-direct {p1, p2}, Lnwn;-><init>(Lnws;)V
-
-    return-object p1
-
-    :pswitch_4
-    new-instance p1, Locd;
-
-    invoke-direct {p1}, Locd;-><init>()V
-
-    return-object p1
-
-    :pswitch_5
-    const-string p1, "a"
-
-    const-string v0, "\u0001\t\u0000\u0001\u0001\u0010\t\u0000\u0000\u0000\u0001\u100c\u0000\u0004\u1002\u0004\u0005\u1002\u0005\u0006\u1002\u0006\u0007\u1002\u0007\u0008\u1002\u0008\t\u1002\t\n\u1002\n\u0010\u1004\u0002"
-
-    const/16 v1, 0xb
-
-    new-array v1, v1, [Ljava/lang/Object;
-
-    const/4 v2, 0x0
-
-    aput-object p1, v1, v2
-
-    const-string p1, "b"
-
-    aput-object p1, v1, p2
-
-    const/4 p1, 0x2
-
-    sget-object p2, Lnzw;->k:Lnww;
-
-    aput-object p2, v1, p1
-
-    const/4 p1, 0x3
-
-    const-string p2, "d"
-
-    aput-object p2, v1, p1
-
-    const/4 p1, 0x4
-
-    const-string p2, "e"
-
-    aput-object p2, v1, p1
-
-    const/4 p1, 0x5
-
-    const-string p2, "f"
-
-    aput-object p2, v1, p1
-
-    const/4 p1, 0x6
-
-    const-string p2, "g"
-
-    aput-object p2, v1, p1
-
-    const/4 p1, 0x7
-
-    const-string p2, "h"
-
-    aput-object p2, v1, p1
-
-    const/16 p1, 0x8
-
-    const-string p2, "i"
-
-    aput-object p2, v1, p1
-
-    const/16 p1, 0x9
-
-    const-string p2, "j"
-
-    aput-object p2, v1, p1
-
-    const/16 p1, 0xa
-
-    const-string p2, "c"
-
-    aput-object p2, v1, p1
-
-    sget-object p1, Locd;->k:Locd;
-
-    invoke-static {p1, v0, v1}, Locd;->X(Lnxy;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object p1
-
-    return-object p1
-
-    :pswitch_6
-    invoke-static {p2}, Ljava/lang/Byte;->valueOf(B)Ljava/lang/Byte;
-
-    move-result-object p1
-
-    return-object p1
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_6
-        :pswitch_0
-        :pswitch_5
-        :pswitch_4
-        :pswitch_3
-        :pswitch_2
-        :pswitch_1
-    .end packed-switch
+    return-void
 .end method

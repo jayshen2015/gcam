@@ -1,18 +1,67 @@
-.class public final Lhao;
+.class public final synthetic Lhao;
 .super Ljava/lang/Object;
+
+# interfaces
+.implements Lgox;
+
+
+# static fields
+.field public static final synthetic a:Lhao;
+
+.field public static final synthetic b:Lhao;
+
+.field public static final synthetic c:Lhao;
+
+.field public static final synthetic d:Lhao;
 
 
 # instance fields
-.field public a:Lkaf;
-
-.field public b:Lkaf;
-
-.field public c:Lkaf;
+.field private final synthetic e:I
 
 
 # direct methods
-.method public constructor <init>()V
+.method static synthetic constructor <clinit>()V
+    .locals 2
+
+    new-instance v0, Lhao;
+
+    const/4 v1, 0x3
+
+    invoke-direct {v0, v1}, Lhao;-><init>(I)V
+
+    sput-object v0, Lhao;->d:Lhao;
+
+    new-instance v0, Lhao;
+
+    const/4 v1, 0x2
+
+    invoke-direct {v0, v1}, Lhao;-><init>(I)V
+
+    sput-object v0, Lhao;->c:Lhao;
+
+    new-instance v0, Lhao;
+
+    const/4 v1, 0x1
+
+    invoke-direct {v0, v1}, Lhao;-><init>(I)V
+
+    sput-object v0, Lhao;->b:Lhao;
+
+    new-instance v0, Lhao;
+
+    const/4 v1, 0x0
+
+    invoke-direct {v0, v1}, Lhao;-><init>(I)V
+
+    sput-object v0, Lhao;->a:Lhao;
+
+    return-void
+.end method
+
+.method private synthetic constructor <init>(I)V
     .locals 0
+
+    iput p1, p0, Lhao;->e:I
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -21,50 +70,10 @@
 
 
 # virtual methods
-.method public final toString()Ljava/lang/String;
-    .locals 5
+.method public final close()V
+    .locals 1
 
-    iget-object v0, p0, Lhao;->a:Lkaf;
+    iget v0, p0, Lhao;->e:I
 
-    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v0
-
-    iget-object v1, p0, Lhao;->b:Lkaf;
-
-    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v1
-
-    iget-object v2, p0, Lhao;->c:Lkaf;
-
-    invoke-static {v2}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v2
-
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v4, "SelectedPictureSizes: "
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v0, ", "
-
-    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    return-object v0
+    return-void
 .end method

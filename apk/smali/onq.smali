@@ -1,41 +1,75 @@
 .class final Lonq;
-.super Ljava/lang/Object;
-
-# interfaces
-.implements Ljava/io/Serializable;
+.super Lont;
 
 
-# static fields
-.field public static final a:Lonq;
-
-.field private static final serialVersionUID:J
+# instance fields
+.field final synthetic a:Lonu;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
-
-    new-instance v0, Lonq;
-
-    invoke-direct {v0}, Lonq;-><init>()V
-
-    sput-object v0, Lonq;->a:Lonq;
-
-    return-void
-.end method
-
-.method private constructor <init>()V
+.method public constructor <init>(Lonu;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lonq;->a:Lonu;
+
+    invoke-direct {p0, p1}, Lont;-><init>(Lonu;)V
 
     return-void
 .end method
 
-.method private final readResolve()Ljava/lang/Object;
+
+# virtual methods
+.method public final a(I)Ljava/lang/Object;
     .locals 1
 
-    sget-object v0, Lons;->a:Lonr;
+    iget-object v0, p0, Lonq;->a:Lonu;
 
-    return-object v0
+    iget-object v0, v0, Lonu;->a:[Ljava/lang/Object;
+
+    aget-object p1, v0, p1
+
+    return-object p1
+.end method
+
+.method public final contains(Ljava/lang/Object;)Z
+    .locals 1
+
+    iget-object v0, p0, Lonq;->a:Lonu;
+
+    invoke-virtual {v0, p1}, Lonu;->containsKey(Ljava/lang/Object;)Z
+
+    move-result p1
+
+    return p1
+.end method
+
+.method public final remove(Ljava/lang/Object;)Z
+    .locals 2
+
+    invoke-static {p1}, Lohh;->D(Ljava/lang/Object;)I
+
+    move-result v0
+
+    iget-object v1, p0, Lonq;->a:Lonu;
+
+    invoke-virtual {v1, p1, v0}, Lonu;->c(Ljava/lang/Object;I)I
+
+    move-result p1
+
+    const/4 v1, -0x1
+
+    if-eq p1, v1, :cond_0
+
+    iget-object v1, p0, Lonq;->a:Lonu;
+
+    invoke-virtual {v1, p1, v0}, Lonu;->h(II)V
+
+    const/4 p1, 0x1
+
+    return p1
+
+    :cond_0
+    const/4 p1, 0x0
+
+    return p1
 .end method

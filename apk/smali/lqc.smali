@@ -1,123 +1,53 @@
-.class public final synthetic Llqc;
+.class public final Llqc;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Llqe;
+.implements Lpys;
 
 
 # instance fields
-.field public final synthetic a:Ljava/lang/Object;
+.field private final a:Lqkg;
 
-.field private final synthetic b:I
+.field private final b:Lqkg;
 
 
 # direct methods
-.method public synthetic constructor <init>(Ljava/lang/Class;I)V
+.method public constructor <init>(Lqkg;Lqkg;)V
     .locals 0
-
-    iput p2, p0, Llqc;->b:I
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Llqc;->a:Ljava/lang/Object;
+    iput-object p1, p0, Llqc;->a:Lqkg;
 
-    return-void
-.end method
-
-.method public synthetic constructor <init>(Llqe;I)V
-    .locals 0
-
-    iput p2, p0, Llqc;->b:I
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Llqc;->a:Ljava/lang/Object;
+    iput-object p2, p0, Llqc;->b:Lqkg;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 2
+.method public final a()Lmhm;
+    .locals 4
 
-    iget v0, p0, Llqc;->b:I
+    iget-object v0, p0, Llqc;->a:Lqkg;
 
-    packed-switch v0, :pswitch_data_0
+    iget-object v1, p0, Llqc;->b:Lqkg;
 
-    iget-object v0, p0, Llqc;->a:Ljava/lang/Object;
+    new-instance v2, Lmhm;
 
-    check-cast v0, Ljava/lang/Class;
+    const/4 v3, 0x0
 
-    invoke-virtual {v0, p1}, Ljava/lang/Class;->cast(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-direct {v2, v0, v1, v3, v3}, Lmhm;-><init>(Lqkg;Lqkg;[B[B)V
 
-    move-result-object p1
+    return-object v2
+.end method
 
-    check-cast p1, Ljava/lang/Long;
+.method public final bridge synthetic get()Ljava/lang/Object;
+    .locals 1
 
-    return-object p1
+    invoke-virtual {p0}, Llqc;->a()Lmhm;
 
-    :pswitch_0
-    iget-object v0, p0, Llqc;->a:Ljava/lang/Object;
+    move-result-object v0
 
-    check-cast v0, Ljava/lang/Class;
-
-    invoke-virtual {v0, p1}, Ljava/lang/Class;->cast(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object p1
-
-    check-cast p1, Ljava/lang/Boolean;
-
-    return-object p1
-
-    :pswitch_1
-    iget-object v0, p0, Llqc;->a:Ljava/lang/Object;
-
-    check-cast v0, Ljava/lang/Class;
-
-    invoke-virtual {v0, p1}, Ljava/lang/Class;->cast(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object p1
-
-    check-cast p1, Ljava/lang/Double;
-
-    return-object p1
-
-    :pswitch_2
-    iget-object v0, p0, Llqc;->a:Ljava/lang/Object;
-
-    check-cast p1, Ljava/lang/String;
-
-    const/4 v1, 0x3
-
-    invoke-static {p1, v1}, Landroid/util/Base64;->decode(Ljava/lang/String;I)[B
-
-    move-result-object p1
-
-    invoke-interface {v0, p1}, Llqe;->a(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object p1
-
-    return-object p1
-
-    :pswitch_3
-    iget-object v0, p0, Llqc;->a:Ljava/lang/Object;
-
-    check-cast p1, [B
-
-    invoke-interface {v0, p1}, Llqe;->a(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object p1
-
-    return-object p1
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_3
-        :pswitch_2
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
+    return-object v0
 .end method

@@ -1,65 +1,87 @@
-.class public final Lncr;
-.super Ljava/lang/Object;
-
-# interfaces
-.implements Lncs;
+.class final Lncr;
+.super Lncu;
 
 
 # instance fields
-.field public final a:Ljava/lang/String;
-
-.field public final b:Z
+.field private final a:Z
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 2
+.method public constructor <init>(Lqyj;Z)V
+    .locals 0
 
-    const-string v0, ""
+    invoke-direct {p0, p1}, Lncu;-><init>(Lqyj;)V
 
-    const/4 v1, 0x1
-
-    invoke-direct {p0, v0, v1}, Lncr;-><init>(Ljava/lang/String;Z)V
+    iput-boolean p2, p0, Lncr;->a:Z
 
     return-void
 .end method
 
-.method public constructor <init>(Ljava/lang/String;Z)V
-    .locals 0
+.method private final f(Ljava/lang/Long;)Lqyj;
+    .locals 1
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iget-boolean v0, p0, Lncr;->a:Z
 
-    iput-object p1, p0, Lncr;->a:Ljava/lang/String;
+    if-eqz v0, :cond_0
 
-    iput-boolean p2, p0, Lncr;->b:Z
+    invoke-virtual {p0, p1}, Lncu;->e(Ljava/lang/Long;)Lqyj;
 
-    return-void
+    move-result-object p1
+
+    goto :goto_0
+
+    :cond_0
+    invoke-virtual {p0}, Lncu;->d()Lqyj;
+
+    move-result-object p1
+
+    :goto_0
+    return-object p1
 .end method
 
 
 # virtual methods
-.method public final a(Ljava/lang/String;)Lnbq;
-    .locals 9
+.method public final a(Ljava/lang/String;)J
+    .locals 2
 
-    new-instance v8, Lndb;
+    const/4 p1, 0x0
 
-    iget-object v1, p0, Lncr;->a:Ljava/lang/String;
+    invoke-direct {p0, p1}, Lncr;->f(Ljava/lang/Long;)Lqyj;
 
-    iget-boolean v3, p0, Lncr;->b:Z
+    move-result-object p1
 
-    sget-object v4, Ljava/util/logging/Level;->ALL:Ljava/util/logging/Level;
+    sget-object v0, Lqyj;->d:Lqyj;
 
-    const/4 v5, 0x1
+    invoke-virtual {p1, v0}, Lppd;->equals(Ljava/lang/Object;)Z
 
-    sget-object v6, Lndc;->a:Ljava/util/Set;
+    move-result v0
 
-    sget-object v7, Lndc;->b:Lncb;
+    if-eqz v0, :cond_0
 
-    move-object v0, v8
+    const-wide/16 v0, 0x3e8
 
-    move-object v2, p1
+    return-wide v0
 
-    invoke-direct/range {v0 .. v7}, Lndb;-><init>(Ljava/lang/String;Ljava/lang/String;ZLjava/util/logging/Level;ZLjava/util/Set;Lncb;)V
+    :cond_0
+    iget-wide v0, p1, Lqyj;->b:J
 
-    return-object v8
+    return-wide v0
+.end method
+
+.method public final b(Ljava/lang/Long;)Lqyj;
+    .locals 0
+
+    invoke-direct {p0, p1}, Lncr;->f(Ljava/lang/Long;)Lqyj;
+
+    move-result-object p1
+
+    return-object p1
+.end method
+
+.method public final c()Z
+    .locals 1
+
+    iget-boolean v0, p0, Lncr;->a:Z
+
+    return v0
 .end method

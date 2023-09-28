@@ -1,84 +1,34 @@
 .class public final Ldwq;
-.super Landroid/animation/AnimatorListenerAdapter;
+.super Ljava/lang/Object;
 
 
 # instance fields
-.field final synthetic a:Ldwa;
+.field public a:Ljava/lang/Integer;
 
-.field final synthetic b:Landroid/content/res/Resources;
+.field public b:Ljava/lang/Float;
 
-.field final synthetic c:Lcom/google/android/apps/camera/focusindicator/FocusIndicatorView;
+.field public c:Lojc;
+
+.field public d:Ljava/lang/Float;
 
 
 # direct methods
-.method public constructor <init>(Ldwa;Landroid/content/res/Resources;Lcom/google/android/apps/camera/focusindicator/FocusIndicatorView;)V
+.method public constructor <init>()V
     .locals 0
 
-    iput-object p1, p0, Ldwq;->a:Ldwa;
-
-    iput-object p2, p0, Ldwq;->b:Landroid/content/res/Resources;
-
-    iput-object p3, p0, Ldwq;->c:Lcom/google/android/apps/camera/focusindicator/FocusIndicatorView;
-
-    invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
+.method public constructor <init>([B)V
+    .locals 0
 
-# virtual methods
-.method public final onAnimationStart(Landroid/animation/Animator;)V
-    .locals 1
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iget-object p1, p0, Ldwq;->a:Ldwa;
+    sget-object p1, Loih;->a:Loih;
 
-    const/4 v0, 0x1
-
-    invoke-interface {p1, v0}, Ldwa;->o(I)V
-
-    iget-object p1, p0, Ldwq;->a:Ldwa;
-
-    const/4 v0, -0x1
-
-    invoke-interface {p1, v0}, Ldwa;->j(I)V
-
-    iget-object p1, p0, Ldwq;->b:Landroid/content/res/Resources;
-
-    const v0, 0x7f0706f4
-
-    invoke-virtual {p1, v0}, Landroid/content/res/Resources;->getDimension(I)F
-
-    move-result p1
-
-    iget-object v0, p0, Ldwq;->a:Ldwa;
-
-    invoke-interface {v0, p1}, Ldwa;->n(F)V
-
-    iget-object p1, p0, Ldwq;->b:Landroid/content/res/Resources;
-
-    const v0, 0x7f070147
-
-    invoke-virtual {p1, v0}, Landroid/content/res/Resources;->getDimension(I)F
-
-    move-result p1
-
-    const/high16 v0, 0x40000000    # 2.0f
-
-    div-float/2addr p1, v0
-
-    iget-object v0, p0, Ldwq;->a:Ldwa;
-
-    invoke-interface {v0, p1}, Ldwa;->k(F)V
-
-    iget-object p1, p0, Ldwq;->a:Ldwa;
-
-    const/4 v0, 0x0
-
-    invoke-interface {p1, v0, v0}, Ldwa;->g(FF)V
-
-    iget-object p1, p0, Ldwq;->c:Lcom/google/android/apps/camera/focusindicator/FocusIndicatorView;
-
-    invoke-virtual {p1}, Lcom/google/android/apps/camera/focusindicator/FocusIndicatorView;->invalidate()V
+    iput-object p1, p0, Ldwq;->c:Lojc;
 
     return-void
 .end method

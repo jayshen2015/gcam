@@ -1,71 +1,63 @@
-.class abstract Lbsv;
+.class public final Lbsv;
 .super Ljava/lang/Object;
+
+# interfaces
+.implements Lpys;
 
 
 # instance fields
-.field private final a:Ljava/util/Queue;
+.field private final a:Lqkg;
+
+.field private final b:Lqkg;
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 1
+.method public constructor <init>(Lqkg;Lqkg;)V
+    .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const/16 v0, 0x14
+    iput-object p1, p0, Lbsv;->a:Lqkg;
 
-    invoke-static {v0}, Lcaw;->g(I)Ljava/util/Queue;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lbsv;->a:Ljava/util/Queue;
+    iput-object p2, p0, Lbsv;->b:Lqkg;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public abstract a()Lbtg;
+.method public final a()Lbsu;
+    .locals 3
+
+    iget-object v0, p0, Lbsv;->a:Lqkg;
+
+    check-cast v0, Lbsw;
+
+    invoke-virtual {v0}, Lbsw;->a()Lbsx;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lbsv;->b:Lqkg;
+
+    invoke-interface {v1}, Lqkg;->get()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Lddf;
+
+    new-instance v2, Lbsu;
+
+    invoke-direct {v2, v0, v1}, Lbsu;-><init>(Lbsx;Lddf;)V
+
+    return-object v2
 .end method
 
-.method final b()Lbtg;
+.method public final bridge synthetic get()Ljava/lang/Object;
     .locals 1
 
-    iget-object v0, p0, Lbsv;->a:Ljava/util/Queue;
-
-    invoke-interface {v0}, Ljava/util/Queue;->poll()Ljava/lang/Object;
+    invoke-virtual {p0}, Lbsv;->a()Lbsu;
 
     move-result-object v0
 
-    check-cast v0, Lbtg;
-
-    if-nez v0, :cond_0
-
-    invoke-virtual {p0}, Lbsv;->a()Lbtg;
-
-    move-result-object v0
-
-    :cond_0
     return-object v0
-.end method
-
-.method public final c(Lbtg;)V
-    .locals 2
-
-    iget-object v0, p0, Lbsv;->a:Ljava/util/Queue;
-
-    invoke-interface {v0}, Ljava/util/Queue;->size()I
-
-    move-result v0
-
-    const/16 v1, 0x14
-
-    if-ge v0, v1, :cond_0
-
-    iget-object v0, p0, Lbsv;->a:Ljava/util/Queue;
-
-    invoke-interface {v0, p1}, Ljava/util/Queue;->offer(Ljava/lang/Object;)Z
-
-    :cond_0
-    return-void
 .end method

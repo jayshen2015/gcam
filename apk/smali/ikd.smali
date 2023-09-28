@@ -3,144 +3,94 @@
 
 
 # instance fields
-.field public a:I
+.field public final a:Landroid/graphics/Bitmap;
 
-.field private final b:Landroid/view/animation/Interpolator;
-
-.field private final c:Landroid/animation/AnimatorSet;
-
-.field private d:Landroid/animation/AnimatorSet$Builder;
+.field public final b:Llic;
 
 
 # direct methods
-.method private constructor <init>(ILandroid/view/animation/Interpolator;)V
+.method public constructor <init>(Landroid/graphics/Bitmap;Llic;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput p1, p0, Likd;->a:I
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    iput-object p2, p0, Likd;->b:Landroid/view/animation/Interpolator;
+    invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    new-instance p1, Landroid/animation/AnimatorSet;
+    iput-object p1, p0, Likd;->a:Landroid/graphics/Bitmap;
 
-    invoke-direct {p1}, Landroid/animation/AnimatorSet;-><init>()V
-
-    iput-object p1, p0, Likd;->c:Landroid/animation/AnimatorSet;
+    iput-object p2, p0, Likd;->b:Llic;
 
     return-void
-.end method
-
-.method public static b(ILandroid/view/animation/Interpolator;)Likd;
-    .locals 1
-
-    new-instance v0, Likd;
-
-    invoke-direct {v0, p0, p1}, Likd;-><init>(ILandroid/view/animation/Interpolator;)V
-
-    return-object v0
 .end method
 
 
 # virtual methods
-.method public final a()Landroid/animation/AnimatorSet;
-    .locals 1
+.method public final toString()Ljava/lang/String;
+    .locals 6
 
-    iget-object v0, p0, Likd;->c:Landroid/animation/AnimatorSet;
+    iget-object v0, p0, Likd;->a:Landroid/graphics/Bitmap;
 
-    invoke-virtual {v0}, Landroid/animation/AnimatorSet;->clone()Landroid/animation/AnimatorSet;
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v0
+
+    iget-object v1, p0, Likd;->b:Llic;
+
+    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
+
+    move-result v2
+
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/lang/String;->length()I
+
+    move-result v3
+
+    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-virtual {v4}, Ljava/lang/String;->length()I
+
+    move-result v4
+
+    new-instance v5, Ljava/lang/StringBuilder;
+
+    add-int/lit8 v3, v3, 0x34
+
+    add-int/2addr v3, v4
+
+    invoke-direct {v5, v3}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string v3, "OrientationBitmap[Bitmap: "
+
+    invoke-virtual {v5, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v5, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v0, "][rotation: "
+
+    invoke-virtual {v5, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v5, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v0, "]: "
+
+    invoke-virtual {v5, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v5, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v0
 
     return-object v0
-.end method
-
-.method public final c(Ljava/lang/Object;Ljava/lang/String;FF)V
-    .locals 2
-
-    const/4 v0, 0x2
-
-    new-array v0, v0, [F
-
-    const/4 v1, 0x0
-
-    aput p3, v0, v1
-
-    const/4 p3, 0x1
-
-    aput p4, v0, p3
-
-    invoke-static {p1, p2, v0}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Ljava/lang/String;[F)Landroid/animation/ObjectAnimator;
-
-    move-result-object p1
-
-    iget p2, p0, Likd;->a:I
-
-    int-to-long p2, p2
-
-    invoke-virtual {p1, p2, p3}, Landroid/animation/ObjectAnimator;->setDuration(J)Landroid/animation/ObjectAnimator;
-
-    iget-object p2, p0, Likd;->b:Landroid/view/animation/Interpolator;
-
-    invoke-virtual {p1, p2}, Landroid/animation/ObjectAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
-
-    iget-object p2, p0, Likd;->d:Landroid/animation/AnimatorSet$Builder;
-
-    if-nez p2, :cond_0
-
-    iget-object p2, p0, Likd;->c:Landroid/animation/AnimatorSet;
-
-    invoke-virtual {p2, p1}, Landroid/animation/AnimatorSet;->play(Landroid/animation/Animator;)Landroid/animation/AnimatorSet$Builder;
-
-    move-result-object p1
-
-    iput-object p1, p0, Likd;->d:Landroid/animation/AnimatorSet$Builder;
-
-    return-void
-
-    :cond_0
-    invoke-virtual {p2, p1}, Landroid/animation/AnimatorSet$Builder;->with(Landroid/animation/Animator;)Landroid/animation/AnimatorSet$Builder;
-
-    return-void
-.end method
-
-.method public final d(Ljava/lang/Object;Ljava/lang/String;II)V
-    .locals 0
-
-    filled-new-array {p3, p4}, [I
-
-    move-result-object p3
-
-    invoke-static {p1, p2, p3}, Landroid/animation/ObjectAnimator;->ofArgb(Ljava/lang/Object;Ljava/lang/String;[I)Landroid/animation/ObjectAnimator;
-
-    move-result-object p1
-
-    iget p2, p0, Likd;->a:I
-
-    int-to-long p2, p2
-
-    invoke-virtual {p1, p2, p3}, Landroid/animation/ObjectAnimator;->setDuration(J)Landroid/animation/ObjectAnimator;
-
-    iget-object p2, p0, Likd;->b:Landroid/view/animation/Interpolator;
-
-    invoke-virtual {p1, p2}, Landroid/animation/ObjectAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
-
-    iget-object p2, p0, Likd;->d:Landroid/animation/AnimatorSet$Builder;
-
-    if-nez p2, :cond_0
-
-    iget-object p2, p0, Likd;->c:Landroid/animation/AnimatorSet;
-
-    invoke-virtual {p2, p1}, Landroid/animation/AnimatorSet;->play(Landroid/animation/Animator;)Landroid/animation/AnimatorSet$Builder;
-
-    move-result-object p1
-
-    iput-object p1, p0, Likd;->d:Landroid/animation/AnimatorSet$Builder;
-
-    return-void
-
-    :cond_0
-    invoke-virtual {p2, p1}, Landroid/animation/AnimatorSet$Builder;->with(Landroid/animation/Animator;)Landroid/animation/AnimatorSet$Builder;
-
-    return-void
 .end method

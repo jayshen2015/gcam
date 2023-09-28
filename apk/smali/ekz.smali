@@ -1,92 +1,91 @@
-.class public final Lekz;
+.class public final synthetic Lekz;
 .super Ljava/lang/Object;
 
-
-# static fields
-.field public static final a:Lnak;
+# interfaces
+.implements Liho;
 
 
 # instance fields
-.field public final b:Lekw;
+.field public final synthetic a:Lpyn;
 
-.field public final c:Lekt;
+.field public final synthetic b:Liau;
 
-.field public final d:Landroid/os/Looper;
+.field public final synthetic c:Lhyc;
 
-.field public final e:Leky;
-
-.field public f:Z
-
-.field public final g:Ljava/util/concurrent/atomic/AtomicInteger;
+.field private final synthetic d:I
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
+.method public synthetic constructor <init>(Lhyc;Lpyn;Liau;I)V
+    .locals 0
 
-    const-string v0, "com/google/android/apps/camera/imax/cyclops/video/VideoRecorder"
-
-    invoke-static {v0}, Lnak;->h(Ljava/lang/String;)Lnak;
-
-    move-result-object v0
-
-    sput-object v0, Lekz;->a:Lnak;
-
-    return-void
-.end method
-
-.method public constructor <init>(Lekw;Lekt;)V
-    .locals 2
+    iput p4, p0, Lekz;->d:I
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const/4 v0, 0x0
+    iput-object p1, p0, Lekz;->c:Lhyc;
 
-    iput-boolean v0, p0, Lekz;->f:Z
+    iput-object p2, p0, Lekz;->a:Lpyn;
 
-    new-instance v1, Ljava/util/concurrent/atomic/AtomicInteger;
-
-    invoke-direct {v1, v0}, Ljava/util/concurrent/atomic/AtomicInteger;-><init>(I)V
-
-    iput-object v1, p0, Lekz;->g:Ljava/util/concurrent/atomic/AtomicInteger;
-
-    iput-object p1, p0, Lekz;->b:Lekw;
-
-    iput-object p2, p0, Lekz;->c:Lekt;
-
-    new-instance p1, Landroid/os/HandlerThread;
-
-    const-string p2, "VideoRecorderThread"
-
-    invoke-direct {p1, p2}, Landroid/os/HandlerThread;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {p1}, Landroid/os/HandlerThread;->start()V
-
-    invoke-virtual {p1}, Landroid/os/HandlerThread;->getLooper()Landroid/os/Looper;
-
-    move-result-object p1
-
-    iput-object p1, p0, Lekz;->d:Landroid/os/Looper;
-
-    new-instance p2, Leky;
-
-    invoke-direct {p2, p0, p1}, Leky;-><init>(Lekz;Landroid/os/Looper;)V
-
-    iput-object p2, p0, Lekz;->e:Leky;
+    iput-object p3, p0, Lekz;->b:Liau;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()I
-    .locals 1
+.method public final run()V
+    .locals 3
 
-    iget-object v0, p0, Lekz;->g:Ljava/util/concurrent/atomic/AtomicInteger;
+    iget v0, p0, Lekz;->d:I
 
-    invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicInteger;->get()I
+    packed-switch v0, :pswitch_data_0
 
-    move-result v0
+    iget-object v0, p0, Lekz;->c:Lhyc;
 
-    return v0
+    iget-object v1, p0, Lekz;->a:Lpyn;
+
+    iget-object v2, p0, Lekz;->b:Liau;
+
+    invoke-interface {v1}, Lpyn;->get()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Liat;
+
+    invoke-virtual {v2}, Liau;->a()Liav;
+
+    move-result-object v2
+
+    invoke-virtual {v0, v1, v2}, Lhyc;->a(Liat;Liav;)V
+
+    return-void
+
+    :pswitch_0
+    iget-object v0, p0, Lekz;->c:Lhyc;
+
+    iget-object v1, p0, Lekz;->a:Lpyn;
+
+    iget-object v2, p0, Lekz;->b:Liau;
+
+    invoke-interface {v1}, Lpyn;->get()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Liat;
+
+    invoke-virtual {v2}, Liau;->a()Liav;
+
+    move-result-object v2
+
+    invoke-virtual {v0, v1, v2}, Lhyc;->a(Liat;Liav;)V
+
+    return-void
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

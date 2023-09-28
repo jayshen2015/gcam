@@ -1,61 +1,109 @@
-.class public final Litb;
+.class public final synthetic Litb;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Logk;
+.implements Llie;
 
 
 # instance fields
-.field private final a:Loiw;
+.field public final synthetic a:Lite;
 
-.field private final b:Loiw;
+.field public final synthetic b:Lojc;
+
+.field public final synthetic c:Llie;
 
 
 # direct methods
-.method public constructor <init>(Loiw;Loiw;)V
+.method public synthetic constructor <init>(Lite;Lojc;Llie;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Litb;->a:Loiw;
+    iput-object p1, p0, Litb;->a:Lite;
 
-    iput-object p2, p0, Litb;->b:Loiw;
+    iput-object p2, p0, Litb;->b:Lojc;
+
+    iput-object p3, p0, Litb;->c:Llie;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Litm;
-    .locals 2
+.method public final close()V
+    .locals 5
 
-    iget-object v0, p0, Litb;->a:Loiw;
+    iget-object v0, p0, Litb;->a:Lite;
 
-    check-cast v0, Leqx;
+    iget-object v1, p0, Litb;->b:Lojc;
 
-    invoke-virtual {v0}, Leqx;->a()Ljuf;
+    iget-object v2, p0, Litb;->c:Llie;
 
-    move-result-object v0
+    monitor-enter v0
 
-    iget-object v1, p0, Litb;->b:Loiw;
+    :try_start_0
+    iget-object v3, v0, Lite;->e:Lojc;
 
-    invoke-interface {v1}, Loiw;->get()Ljava/lang/Object;
+    invoke-virtual {v3}, Lojc;->g()Z
+
+    move-result v3
+
+    if-eqz v3, :cond_0
+
+    invoke-virtual {v1}, Lojc;->g()Z
+
+    move-result v3
+
+    if-eqz v3, :cond_0
+
+    iget-object v3, v0, Lite;->e:Lojc;
+
+    invoke-virtual {v3}, Lojc;->c()Ljava/lang/Object;
+
+    move-result-object v3
+
+    invoke-virtual {v1}, Lojc;->c()Ljava/lang/Object;
 
     move-result-object v1
 
-    check-cast v1, Lisi;
+    if-ne v3, v1, :cond_0
 
-    invoke-virtual {v0, v1}, Ljuf;->d(Lkad;)V
+    sget-object v1, Loih;->a:Loih;
 
-    return-object v1
-.end method
+    iput-object v1, v0, Lite;->e:Lojc;
 
-.method public final bridge synthetic get()Ljava/lang/Object;
-    .locals 1
+    :cond_0
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    invoke-virtual {p0}, Litb;->a()Litm;
+    iget-object v1, v0, Lite;->a:Ljava/util/concurrent/Executor;
+
+    iget-object v0, v0, Lite;->b:Lljf;
+
+    new-instance v3, Lgng;
+
+    const/4 v4, 0x2
+
+    invoke-direct {v3, v2, v4}, Lgng;-><init>(Llie;I)V
+
+    const-string v2, "detachResources.close"
+
+    invoke-interface {v0, v2, v3}, Lljf;->c(Ljava/lang/String;Ljava/lang/Runnable;)Ljava/lang/Runnable;
 
     move-result-object v0
 
-    return-object v0
+    invoke-interface {v1, v0}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
+
+    return-void
+
+    :catchall_0
+    move-exception v1
+
+    :try_start_1
+    monitor-exit v0
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    throw v1
 .end method

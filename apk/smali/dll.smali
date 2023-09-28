@@ -2,94 +2,206 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Logk;
+.implements Ldlt;
 
 
 # instance fields
-.field private final a:Loiw;
-
-.field private final b:Loiw;
-
-.field private final c:Loiw;
-
-.field private final d:Loiw;
+.field public final a:Ljava/util/List;
 
 
 # direct methods
-.method public constructor <init>(Loiw;Loiw;Loiw;Loiw;)V
-    .locals 0
+.method public constructor <init>()V
+    .locals 1
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Ldll;->a:Loiw;
+    new-instance v0, Ljava/util/concurrent/CopyOnWriteArrayList;
 
-    iput-object p2, p0, Ldll;->b:Loiw;
+    invoke-direct {v0}, Ljava/util/concurrent/CopyOnWriteArrayList;-><init>()V
 
-    iput-object p3, p0, Ldll;->c:Loiw;
-
-    iput-object p4, p0, Ldll;->d:Loiw;
+    iput-object v0, p0, Ldll;->a:Ljava/util/List;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Ldlk;
-    .locals 7
+.method public final d()V
+    .locals 2
 
-    iget-object v0, p0, Ldll;->a:Loiw;
+    iget-object v0, p0, Ldll;->a:Ljava/util/List;
 
-    check-cast v0, Ldwh;
-
-    invoke-virtual {v0}, Ldwh;->a()Landroid/content/Context;
-
-    invoke-static {}, Lday;->b()Lnox;
-
-    move-result-object v2
-
-    invoke-static {}, Lday;->a()Ljava/util/concurrent/Executor;
-
-    move-result-object v3
-
-    invoke-static {}, Lday;->c()Lj$/time/Clock;
-
-    move-result-object v4
-
-    iget-object v0, p0, Ldll;->b:Loiw;
-
-    check-cast v0, Lccs;
-
-    invoke-virtual {v0}, Lccs;->a()Ljava/lang/Boolean;
+    invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
+    :goto_0
+    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
-    iget-object v0, p0, Ldll;->c:Loiw;
+    move-result v1
 
-    check-cast v0, Lkao;
+    if-eqz v1, :cond_0
 
-    invoke-virtual {v0}, Lkao;->a()Lkaq;
+    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    move-result-object v5
+    move-result-object v1
 
-    iget-object v6, p0, Ldll;->d:Loiw;
+    check-cast v1, Ldlt;
 
-    new-instance v0, Ldlk;
+    invoke-interface {v1}, Ldlt;->d()V
 
-    move-object v1, v0
+    goto :goto_0
 
-    invoke-direct/range {v1 .. v6}, Ldlk;-><init>(Lnox;Ljava/util/concurrent/Executor;Lj$/time/Clock;Lkaq;Loiw;)V
-
-    return-object v0
+    :cond_0
+    return-void
 .end method
 
-.method public final bridge synthetic get()Ljava/lang/Object;
-    .locals 1
+.method public final e(Ljava/lang/Throwable;)V
+    .locals 2
 
-    invoke-virtual {p0}, Ldll;->a()Ldlk;
+    iget-object v0, p0, Ldll;->a:Ljava/util/List;
+
+    invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object v0
 
-    return-object v0
+    :goto_0
+    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Ldlt;
+
+    invoke-interface {v1, p1}, Ldlt;->e(Ljava/lang/Throwable;)V
+
+    goto :goto_0
+
+    :cond_0
+    return-void
+.end method
+
+.method public final f(Ljava/lang/Throwable;)V
+    .locals 2
+
+    iget-object v0, p0, Ldll;->a:Ljava/util/List;
+
+    invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+
+    move-result-object v0
+
+    :goto_0
+    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Ldlt;
+
+    invoke-interface {v1, p1}, Ldlt;->f(Ljava/lang/Throwable;)V
+
+    goto :goto_0
+
+    :cond_0
+    return-void
+.end method
+
+.method public final g()V
+    .locals 2
+
+    iget-object v0, p0, Ldll;->a:Ljava/util/List;
+
+    invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+
+    move-result-object v0
+
+    :goto_0
+    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Ldlt;
+
+    invoke-interface {v1}, Ldlt;->g()V
+
+    goto :goto_0
+
+    :cond_0
+    return-void
+.end method
+
+.method public final h()V
+    .locals 2
+
+    iget-object v0, p0, Ldll;->a:Ljava/util/List;
+
+    invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+
+    move-result-object v0
+
+    :goto_0
+    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Ldlt;
+
+    invoke-interface {v1}, Ldlt;->h()V
+
+    goto :goto_0
+
+    :cond_0
+    return-void
+.end method
+
+.method public final i()V
+    .locals 2
+
+    iget-object v0, p0, Ldll;->a:Ljava/util/List;
+
+    invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+
+    move-result-object v0
+
+    :goto_0
+    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Ldlt;
+
+    invoke-interface {v1}, Ldlt;->i()V
+
+    goto :goto_0
+
+    :cond_0
+    return-void
 .end method

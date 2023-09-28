@@ -1,65 +1,47 @@
-.class public Lhvu;
+.class public final synthetic Lhvu;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lhis;
+.implements Lxt;
+
+
+# instance fields
+.field public final synthetic a:Lhvy;
+
+.field public final synthetic b:Lhvx;
 
 
 # direct methods
-.method public constructor <init>()V
+.method public synthetic constructor <init>(Lhvy;Lhvx;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lhvu;->a:Lhvy;
+
+    iput-object p2, p0, Lhvu;->b:Lhvx;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public a()V
-    .locals 0
+.method public final a(Lxr;)Ljava/lang/Object;
+    .locals 2
 
-    return-void
-.end method
+    iget-object v0, p0, Lhvu;->a:Lhvy;
 
-.method public b()V
-    .locals 0
+    iget-object v1, p0, Lhvu;->b:Lhvx;
 
-    return-void
-.end method
+    iput-object p1, v1, Lhvx;->a:Lxr;
 
-.method public c()V
-    .locals 0
+    iget-object p1, v0, Lhvy;->b:Landroid/hardware/camera2/CameraManager;
 
-    return-void
-.end method
+    iget-object v0, v0, Lhvy;->c:Ljava/util/concurrent/Executor;
 
-.method public cl()V
-    .locals 0
+    invoke-virtual {p1, v0, v1}, Landroid/hardware/camera2/CameraManager;->registerAvailabilityCallback(Ljava/util/concurrent/Executor;Landroid/hardware/camera2/CameraManager$AvailabilityCallback;)V
 
-    return-void
-.end method
+    const-string p1, "SidelineCameraStateChecker#waitForCamerasAllAvailable"
 
-.method public d()V
-    .locals 0
-
-    return-void
-.end method
-
-.method public synthetic f()V
-    .locals 0
-
-    return-void
-.end method
-
-.method public synthetic g()V
-    .locals 0
-
-    return-void
-.end method
-
-.method public synthetic h()V
-    .locals 0
-
-    return-void
+    return-object p1
 .end method

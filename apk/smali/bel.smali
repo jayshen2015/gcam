@@ -2,18 +2,12 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Ljava/util/concurrent/Executor;
-
-
-# instance fields
-.field final synthetic a:Lva;
+.implements Laze;
 
 
 # direct methods
-.method public constructor <init>(Lva;[B)V
+.method public constructor <init>()V
     .locals 0
-
-    iput-object p1, p0, Lbel;->a:Lva;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -22,16 +16,25 @@
 
 
 # virtual methods
-.method public final execute(Ljava/lang/Runnable;)V
-    .locals 1
+.method public final bridge synthetic a(Ljava/lang/Object;Ljava/io/File;Lazt;)Z
+    .locals 0
 
-    iget-object v0, p0, Lbel;->a:Lva;
+    check-cast p1, Ljava/nio/ByteBuffer;
 
-    iget-object v0, v0, Lva;->c:Ljava/lang/Object;
+    :try_start_0
+    invoke-static {p1, p2}, Lblr;->e(Ljava/nio/ByteBuffer;Ljava/io/File;)V
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
-    check-cast v0, Landroid/os/Handler;
+    const/4 p1, 0x1
 
-    invoke-virtual {v0, p1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
+    goto :goto_0
 
-    return-void
+    :catch_0
+    move-exception p1
+
+    const/4 p1, 0x0
+
+    :goto_0
+    return p1
 .end method

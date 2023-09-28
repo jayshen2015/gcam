@@ -1,25 +1,37 @@
-.class public interface abstract Ldhm;
+.class public final synthetic Ldhm;
 .super Ljava/lang/Object;
+
+# interfaces
+.implements Ljava/lang/Runnable;
+
+
+# instance fields
+.field public final synthetic a:Ldhs;
+
+
+# direct methods
+.method public synthetic constructor <init>(Ldhs;)V
+    .locals 0
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Ldhm;->a:Ldhs;
+
+    return-void
+.end method
 
 
 # virtual methods
-.method public abstract q(Ldhk;Ljava/lang/Integer;)V
-.end method
+.method public final run()V
+    .locals 2
 
-.method public abstract r(Ldhj;)V
-.end method
+    iget-object v0, p0, Ldhm;->a:Ldhs;
 
-.method public abstract s(Ldhj;Z)V
-.end method
+    iget-object v0, v0, Ldhs;->d:Llis;
 
-.method public abstract t(Ldhj;Ljava/lang/Float;)V
-.end method
+    const-string v1, "showing \"Possible shot loss\" warning"
 
-.method public abstract u(Ldhj;Z)V
-.end method
+    invoke-interface {v0, v1}, Llis;->d(Ljava/lang/String;)V
 
-.method public abstract v(Ldhj;Ljava/lang/String;)V
-.end method
-
-.method public abstract w(Ldhj;Ljava/lang/String;)V
+    return-void
 .end method

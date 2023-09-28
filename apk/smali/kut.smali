@@ -1,290 +1,605 @@
 .class public final Lkut;
 .super Ljava/lang/Object;
 
-# interfaces
-.implements Lkus;
-.implements Lkuq;
+
+# static fields
+.field public static final a:J
+
+.field public static volatile p:Lmip;
+
+.field private static volatile q:Ljava/util/concurrent/ScheduledExecutorService;
+
+.field private static final r:Ljava/lang/Object;
 
 
 # instance fields
-.field private final a:Landroid/content/Context;
+.field public final b:Ljava/lang/Object;
 
-.field private final b:Ljava/lang/String;
+.field public final c:Landroid/os/PowerManager$WakeLock;
 
-.field private final synthetic c:I
+.field public d:I
 
-.field private final d:Ljava/lang/Object;
+.field public e:Ljava/util/concurrent/Future;
 
-.field private final e:Lloi;
+.field public f:J
+
+.field public g:Z
+
+.field public h:I
+
+.field public i:Lksd;
+
+.field public final j:Ljava/lang/String;
+
+.field public final k:Ljava/lang/String;
+
+.field public final l:Ljava/util/Map;
+
+.field public m:Ljava/util/concurrent/atomic/AtomicInteger;
+
+.field public final n:Ljava/util/concurrent/ScheduledExecutorService;
+
+.field public o:Lkny;
+
+.field private final s:Ljava/util/Set;
+
+.field private t:Landroid/os/WorkSource;
 
 
 # direct methods
-.method public constructor <init>(Lloi;Landroid/content/Context;Ljava/lang/String;Ljava/util/Locale;I[B[B)V
-    .locals 0
-
-    iput p5, p0, Lkut;->c:I
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lkut;->e:Lloi;
-
-    iput-object p2, p0, Lkut;->a:Landroid/content/Context;
-
-    iput-object p3, p0, Lkut;->b:Ljava/lang/String;
-
-    iput-object p4, p0, Lkut;->d:Ljava/lang/Object;
-
-    return-void
-.end method
-
-.method public constructor <init>(Lloi;Landroid/content/Context;Lmqp;I[B[B)V
-    .locals 0
-
-    iput p4, p0, Lkut;->c:I
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lkut;->e:Lloi;
-
-    iput-object p2, p0, Lkut;->a:Landroid/content/Context;
-
-    sget-object p1, Lkwl;->c:Lkwl;
-
-    invoke-virtual {p3, p1}, Lmqp;->e(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object p1
-
-    check-cast p1, Lkwl;
-
-    iget-object p1, p1, Lkwl;->b:Ljava/lang/String;
-
-    iput-object p1, p0, Lkut;->b:Ljava/lang/String;
-
-    sget-object p1, Lkwl;->c:Lkwl;
-
-    invoke-virtual {p3, p1}, Lmqp;->e(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object p1
-
-    check-cast p1, Lkwl;
-
-    iget-object p1, p1, Lkwl;->a:Ljava/lang/String;
-
-    iput-object p1, p0, Lkut;->d:Ljava/lang/Object;
-
-    return-void
-.end method
-
-.method private final c()Landroid/content/Intent;
+.method static constructor <clinit>()V
     .locals 3
 
-    iget-object v0, p0, Lkut;->a:Landroid/content/Context;
+    sget-object v0, Ljava/util/concurrent/TimeUnit;->DAYS:Ljava/util/concurrent/TimeUnit;
 
-    invoke-static {v0}, Landroid/provider/Telephony$Sms;->getDefaultSmsPackage(Landroid/content/Context;)Ljava/lang/String;
+    const-wide/16 v1, 0x16e
+
+    invoke-virtual {v0, v1, v2}, Ljava/util/concurrent/TimeUnit;->toMillis(J)J
+
+    move-result-wide v0
+
+    sput-wide v0, Lkut;->a:J
+
+    const/4 v0, 0x0
+
+    sput-object v0, Lkut;->q:Ljava/util/concurrent/ScheduledExecutorService;
+
+    new-instance v0, Ljava/lang/Object;
+
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+
+    sput-object v0, Lkut;->r:Ljava/lang/Object;
+
+    new-instance v0, Lmip;
+
+    invoke-direct {v0}, Lmip;-><init>()V
+
+    sput-object v0, Lkut;->p:Lmip;
+
+    return-void
+.end method
+
+.method public constructor <init>(Landroid/content/Context;)V
+    .locals 5
+
+    invoke-virtual {p1}, Landroid/content/Context;->getPackageName()Ljava/lang/String;
 
     move-result-object v0
 
-    new-instance v1, Landroid/content/Intent;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {v1}, Landroid/content/Intent;-><init>()V
+    new-instance v1, Ljava/lang/Object;
 
-    invoke-static {v0}, Lmqr;->b(Ljava/lang/String;)Z
+    invoke-direct {v1}, Ljava/lang/Object;-><init>()V
 
-    move-result v2
+    iput-object v1, p0, Lkut;->b:Ljava/lang/Object;
 
-    if-nez v2, :cond_0
+    const/4 v1, 0x0
 
-    invoke-virtual {v1, v0}, Landroid/content/Intent;->setPackage(Ljava/lang/String;)Landroid/content/Intent;
+    iput v1, p0, Lkut;->d:I
+
+    new-instance v2, Ljava/util/HashSet;
+
+    invoke-direct {v2}, Ljava/util/HashSet;-><init>()V
+
+    iput-object v2, p0, Lkut;->s:Ljava/util/Set;
+
+    const/4 v2, 0x1
+
+    iput-boolean v2, p0, Lkut;->g:Z
+
+    sget-object v3, Lkny;->a:Lkny;
+
+    iput-object v3, p0, Lkut;->o:Lkny;
+
+    new-instance v3, Ljava/util/HashMap;
+
+    invoke-direct {v3}, Ljava/util/HashMap;-><init>()V
+
+    iput-object v3, p0, Lkut;->l:Ljava/util/Map;
+
+    new-instance v3, Ljava/util/concurrent/atomic/AtomicInteger;
+
+    invoke-direct {v3, v1}, Ljava/util/concurrent/atomic/AtomicInteger;-><init>(I)V
+
+    iput-object v3, p0, Lkut;->m:Ljava/util/concurrent/atomic/AtomicInteger;
+
+    const-string v1, "WakeLock: context must not be null"
+
+    invoke-static {p1, v1}, Lmip;->du(Ljava/lang/Object;Ljava/lang/Object;)V
+
+    const-string v1, "Analytics WakeLock"
+
+    const-string v3, "WakeLock: wakeLockName must not be empty"
+
+    invoke-static {v1, v3}, Lmip;->dt(Ljava/lang/String;Ljava/lang/Object;)V
+
+    invoke-virtual {p1}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
+
+    iput-object v1, p0, Lkut;->k:Ljava/lang/String;
+
+    const/4 v3, 0x0
+
+    iput-object v3, p0, Lkut;->i:Lksd;
+
+    const-string v3, "com.google.android.gms"
+
+    invoke-virtual {p1}, Landroid/content/Context;->getPackageName()Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-virtual {v3, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v3
+
+    if-nez v3, :cond_0
+
+    const-string v3, "*gcore*:Analytics WakeLock"
+
+    iput-object v3, p0, Lkut;->j:Ljava/lang/String;
 
     goto :goto_0
 
     :cond_0
-    const-string v0, "com.android.sms"
-
-    invoke-virtual {v1, v0}, Landroid/content/Intent;->setPackage(Ljava/lang/String;)Landroid/content/Intent;
+    iput-object v1, p0, Lkut;->j:Ljava/lang/String;
 
     :goto_0
-    const-string v0, "android.intent.action.SEND"
+    const-string v3, "power"
 
-    invoke-virtual {v1, v0}, Landroid/content/Intent;->setAction(Ljava/lang/String;)Landroid/content/Intent;
+    invoke-virtual {p1, v3}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 
-    iget-object v0, p0, Lkut;->d:Ljava/lang/Object;
+    move-result-object v3
 
-    check-cast v0, Ljava/lang/String;
+    check-cast v3, Landroid/os/PowerManager;
 
-    invoke-static {v0}, Lmqr;->b(Ljava/lang/String;)Z
+    invoke-static {v3}, Lobr;->ao(Ljava/lang/Object;)Ljava/lang/Object;
 
-    move-result v0
+    invoke-virtual {v3, v2, v1}, Landroid/os/PowerManager;->newWakeLock(ILjava/lang/String;)Landroid/os/PowerManager$WakeLock;
 
-    if-nez v0, :cond_1
+    move-result-object v1
 
-    iget-object v0, p0, Lkut;->b:Ljava/lang/String;
+    iput-object v1, p0, Lkut;->c:Landroid/os/PowerManager$WakeLock;
 
-    invoke-static {v0}, Lmqr;->b(Ljava/lang/String;)Z
+    invoke-static {p1}, Lkod;->b(Landroid/content/Context;)Z
 
-    move-result v0
+    move-result v3
 
-    if-nez v0, :cond_1
+    if-eqz v3, :cond_2
 
-    iget-object v0, p0, Lkut;->b:Ljava/lang/String;
+    invoke-static {v0}, Lkoc;->a(Ljava/lang/String;)Z
 
-    const-string v2, "address"
+    move-result v3
 
-    invoke-virtual {v1, v2, v0}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
+    if-eqz v3, :cond_1
 
-    iget-object v0, p0, Lkut;->d:Ljava/lang/Object;
+    invoke-virtual {p1}, Landroid/content/Context;->getPackageName()Ljava/lang/String;
 
-    check-cast v0, Ljava/lang/String;
-
-    const-string v2, "sms_body"
-
-    invoke-virtual {v1, v2, v0}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
+    move-result-object v0
 
     :cond_1
-    const-string v0, "text/plain"
+    invoke-static {p1, v0}, Lkod;->a(Landroid/content/Context;Ljava/lang/String;)Landroid/os/WorkSource;
 
-    invoke-virtual {v1, v0}, Landroid/content/Intent;->setType(Ljava/lang/String;)Landroid/content/Intent;
+    move-result-object p1
 
-    return-object v1
+    iput-object p1, p0, Lkut;->t:Landroid/os/WorkSource;
+
+    if-eqz p1, :cond_2
+
+    invoke-static {v1, p1}, Lkut;->e(Landroid/os/PowerManager$WakeLock;Landroid/os/WorkSource;)V
+
+    :cond_2
+    sget-object p1, Lkut;->q:Ljava/util/concurrent/ScheduledExecutorService;
+
+    if-nez p1, :cond_4
+
+    sget-object v0, Lkut;->r:Ljava/lang/Object;
+
+    monitor-enter v0
+
+    :try_start_0
+    sget-object p1, Lkut;->q:Ljava/util/concurrent/ScheduledExecutorService;
+
+    if-nez p1, :cond_3
+
+    sget-object p1, Lksf;->a:Lmip;
+
+    invoke-static {v2}, Ljava/util/concurrent/Executors;->newScheduledThreadPool(I)Ljava/util/concurrent/ScheduledExecutorService;
+
+    move-result-object p1
+
+    invoke-static {p1}, Ljava/util/concurrent/Executors;->unconfigurableScheduledExecutorService(Ljava/util/concurrent/ScheduledExecutorService;)Ljava/util/concurrent/ScheduledExecutorService;
+
+    move-result-object p1
+
+    sput-object p1, Lkut;->q:Ljava/util/concurrent/ScheduledExecutorService;
+
+    :cond_3
+    monitor-exit v0
+
+    goto :goto_1
+
+    :catchall_0
+    move-exception p1
+
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw p1
+
+    :cond_4
+    :goto_1
+    iput-object p1, p0, Lkut;->n:Ljava/util/concurrent/ScheduledExecutorService;
+
+    return-void
+.end method
+
+.method private static e(Landroid/os/PowerManager$WakeLock;Landroid/os/WorkSource;)V
+    .locals 0
+
+    :try_start_0
+    invoke-virtual {p0, p1}, Landroid/os/PowerManager$WakeLock;->setWorkSource(Landroid/os/WorkSource;)V
+    :try_end_0
+    .catch Ljava/lang/IllegalArgumentException; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Ljava/lang/ArrayIndexOutOfBoundsException; {:try_start_0 .. :try_end_0} :catch_0
+
+    return-void
+
+    :catch_0
+    move-exception p0
+
+    goto :goto_0
+
+    :catch_1
+    move-exception p0
+
+    :goto_0
+    invoke-virtual {p0}, Ljava/lang/RuntimeException;->toString()Ljava/lang/String;
+
+    move-result-object p0
+
+    const-string p1, "WakeLock"
+
+    invoke-static {p1, p0}, Landroid/util/Log;->wtf(Ljava/lang/String;Ljava/lang/String;)I
+
+    return-void
 .end method
 
 
 # virtual methods
-.method public final a()Landroid/content/Intent;
-    .locals 4
+.method public final a()V
+    .locals 2
 
-    const-string v0, "com.google.android.apps.translate"
+    iget-object v0, p0, Lkut;->s:Ljava/util/Set;
 
-    iget v1, p0, Lkut;->c:I
+    invoke-interface {v0}, Ljava/util/Set;->isEmpty()Z
 
-    packed-switch v1, :pswitch_data_0
+    move-result v0
 
-    invoke-direct {p0}, Lkut;->c()Landroid/content/Intent;
+    if-eqz v0, :cond_0
+
+    return-void
+
+    :cond_0
+    new-instance v0, Ljava/util/ArrayList;
+
+    iget-object v1, p0, Lkut;->s:Ljava/util/Set;
+
+    invoke-direct {v0, v1}, Ljava/util/ArrayList;-><init>(Ljava/util/Collection;)V
+
+    iget-object v1, p0, Lkut;->s:Ljava/util/Set;
+
+    invoke-interface {v1}, Ljava/util/Set;->clear()V
+
+    invoke-interface {v0}, Ljava/util/List;->size()I
+
+    move-result v1
+
+    if-gtz v1, :cond_1
+
+    return-void
+
+    :cond_1
+    const/4 v1, 0x0
+
+    invoke-interface {v0, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v0
 
-    return-object v0
+    check-cast v0, Lmip;
 
-    :pswitch_0
-    new-instance v1, Landroid/content/Intent;
+    const/4 v0, 0x0
 
-    invoke-direct {v1}, Landroid/content/Intent;-><init>()V
+    throw v0
+.end method
 
-    const-string v2, "android.intent.action.VIEW"
+.method public final b()Z
+    .locals 2
 
-    invoke-virtual {v1, v2}, Landroid/content/Intent;->setAction(Ljava/lang/String;)Landroid/content/Intent;
+    iget-object v0, p0, Lkut;->b:Ljava/lang/Object;
 
-    iget-object v2, p0, Lkut;->a:Landroid/content/Context;
-
-    invoke-virtual {v2}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
-
-    move-result-object v2
-
-    const/4 v3, 0x1
+    monitor-enter v0
 
     :try_start_0
-    invoke-virtual {v2, v0, v3}, Landroid/content/pm/PackageManager;->getPackageInfo(Ljava/lang/String;I)Landroid/content/pm/PackageInfo;
-    :try_end_0
-    .catch Landroid/content/pm/PackageManager$NameNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
+    iget v1, p0, Lkut;->d:I
 
-    invoke-virtual {v1, v0}, Landroid/content/Intent;->setPackage(Ljava/lang/String;)Landroid/content/Intent;
+    if-lez v1, :cond_0
+
+    const/4 v1, 0x1
 
     goto :goto_0
 
-    :catch_0
-    move-exception v0
+    :cond_0
+    const/4 v1, 0x0
 
     :goto_0
-    new-instance v0, Landroid/net/Uri$Builder;
+    monitor-exit v0
 
-    invoke-direct {v0}, Landroid/net/Uri$Builder;-><init>()V
+    return v1
 
-    const-string v2, "https"
+    :catchall_0
+    move-exception v1
 
-    invoke-virtual {v0, v2}, Landroid/net/Uri$Builder;->scheme(Ljava/lang/String;)Landroid/net/Uri$Builder;
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    move-result-object v0
+    throw v1
+.end method
 
-    const-string v2, "translate.google.com"
+.method public final c()V
+    .locals 1
 
-    invoke-virtual {v0, v2}, Landroid/net/Uri$Builder;->authority(Ljava/lang/String;)Landroid/net/Uri$Builder;
+    iget-boolean v0, p0, Lkut;->g:Z
 
-    move-result-object v0
+    if-eqz v0, :cond_0
 
-    const-string v2, "/m/translate"
+    const/4 v0, 0x0
 
-    invoke-virtual {v0, v2}, Landroid/net/Uri$Builder;->path(Ljava/lang/String;)Landroid/net/Uri$Builder;
+    invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
-    move-result-object v0
+    :cond_0
+    return-void
+.end method
 
-    iget-object v2, p0, Lkut;->b:Ljava/lang/String;
+.method public final d()V
+    .locals 6
 
-    const-string v3, "q"
+    iget-object v0, p0, Lkut;->b:Ljava/lang/Object;
 
-    invoke-virtual {v0, v3, v2}, Landroid/net/Uri$Builder;->appendQueryParameter(Ljava/lang/String;Ljava/lang/String;)Landroid/net/Uri$Builder;
+    monitor-enter v0
 
-    move-result-object v0
+    :try_start_0
+    invoke-virtual {p0}, Lkut;->b()Z
 
-    iget-object v2, p0, Lkut;->d:Ljava/lang/Object;
+    move-result v1
 
-    check-cast v2, Ljava/util/Locale;
+    if-nez v1, :cond_0
 
-    invoke-virtual {v2}, Ljava/util/Locale;->getLanguage()Ljava/lang/String;
+    monitor-exit v0
+
+    return-void
+
+    :cond_0
+    iget-boolean v1, p0, Lkut;->g:Z
+
+    const/4 v2, 0x0
+
+    if-eqz v1, :cond_2
+
+    iget v1, p0, Lkut;->d:I
+
+    add-int/lit8 v1, v1, -0x1
+
+    iput v1, p0, Lkut;->d:I
+
+    if-gtz v1, :cond_1
+
+    goto :goto_0
+
+    :cond_1
+    monitor-exit v0
+
+    return-void
+
+    :cond_2
+    iput v2, p0, Lkut;->d:I
+
+    :goto_0
+    invoke-virtual {p0}, Lkut;->a()V
+
+    iget-object v1, p0, Lkut;->l:Ljava/util/Map;
+
+    invoke-interface {v1}, Ljava/util/Map;->values()Ljava/util/Collection;
+
+    move-result-object v1
+
+    invoke-interface {v1}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
+
+    move-result-object v1
+
+    :goto_1
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v3
+
+    if-eqz v3, :cond_3
+
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v3
+
+    check-cast v3, Lkus;
+
+    iput v2, v3, Lkus;->a:I
+
+    goto :goto_1
+
+    :cond_3
+    iget-object v1, p0, Lkut;->l:Ljava/util/Map;
+
+    invoke-interface {v1}, Ljava/util/Map;->clear()V
+
+    iget-object v1, p0, Lkut;->e:Ljava/util/concurrent/Future;
+
+    const/4 v3, 0x0
+
+    if-eqz v1, :cond_4
+
+    invoke-interface {v1, v2}, Ljava/util/concurrent/Future;->cancel(Z)Z
+
+    iput-object v3, p0, Lkut;->e:Ljava/util/concurrent/Future;
+
+    const-wide/16 v4, 0x0
+
+    iput-wide v4, p0, Lkut;->f:J
+
+    :cond_4
+    iput v2, p0, Lkut;->h:I
+
+    iget-object v1, p0, Lkut;->c:Landroid/os/PowerManager$WakeLock;
+
+    invoke-virtual {v1}, Landroid/os/PowerManager$WakeLock;->isHeld()Z
+
+    move-result v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_1
+
+    if-eqz v1, :cond_7
+
+    :try_start_1
+    iget-object v1, p0, Lkut;->c:Landroid/os/PowerManager$WakeLock;
+
+    invoke-virtual {v1}, Landroid/os/PowerManager$WakeLock;->release()V
+    :try_end_1
+    .catch Ljava/lang/RuntimeException; {:try_start_1 .. :try_end_1} :catch_0
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    :try_start_2
+    iget-object v1, p0, Lkut;->i:Lksd;
+
+    if-eqz v1, :cond_8
+
+    iput-object v3, p0, Lkut;->i:Lksd;
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_1
+
+    goto :goto_3
+
+    :catchall_0
+    move-exception v1
+
+    goto :goto_2
+
+    :catch_0
+    move-exception v1
+
+    :try_start_3
+    invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     move-result-object v2
 
-    const-string v3, "tl"
+    const-class v4, Ljava/lang/RuntimeException;
 
-    invoke-virtual {v0, v3, v2}, Landroid/net/Uri$Builder;->appendQueryParameter(Ljava/lang/String;Ljava/lang/String;)Landroid/net/Uri$Builder;
+    invoke-virtual {v2, v4}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
 
-    move-result-object v0
+    move-result v2
 
-    invoke-virtual {v0}, Landroid/net/Uri$Builder;->build()Landroid/net/Uri;
+    if-eqz v2, :cond_5
 
-    move-result-object v0
+    const-string v2, "WakeLock"
 
-    invoke-virtual {v1, v0}, Landroid/content/Intent;->setData(Landroid/net/Uri;)Landroid/content/Intent;
+    iget-object v4, p0, Lkut;->j:Ljava/lang/String;
 
-    return-object v1
+    const-string v5, " failed to release!"
 
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
-.end method
+    invoke-virtual {v4, v5}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
 
-.method public final b()V
-    .locals 2
+    move-result-object v4
 
-    iget v0, p0, Lkut;->c:I
+    invoke-static {v2, v4, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_0
 
-    packed-switch v0, :pswitch_data_0
+    :try_start_4
+    iget-object v1, p0, Lkut;->i:Lksd;
 
-    invoke-direct {p0}, Lkut;->c()Landroid/content/Intent;
+    if-eqz v1, :cond_8
 
-    move-result-object v0
+    iput-object v3, p0, Lkut;->i:Lksd;
+    :try_end_4
+    .catchall {:try_start_4 .. :try_end_4} :catchall_1
 
-    iget-object v1, p0, Lkut;->e:Lloi;
+    goto :goto_3
 
-    invoke-virtual {v1, v0}, Lloi;->k(Landroid/content/Intent;)V
+    :cond_5
+    :try_start_5
+    throw v1
+    :try_end_5
+    .catchall {:try_start_5 .. :try_end_5} :catchall_0
+
+    :goto_2
+    :try_start_6
+    iget-object v2, p0, Lkut;->i:Lksd;
+
+    if-eqz v2, :cond_6
+
+    iput-object v3, p0, Lkut;->i:Lksd;
+
+    :cond_6
+    throw v1
+
+    :cond_7
+    const-string v1, "WakeLock"
+
+    iget-object v2, p0, Lkut;->j:Ljava/lang/String;
+
+    const-string v3, " should be held!"
+
+    invoke-virtual {v2, v3}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v1, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+
+    :cond_8
+    :goto_3
+    monitor-exit v0
 
     return-void
 
-    :pswitch_0
-    invoke-virtual {p0}, Lkut;->a()Landroid/content/Intent;
+    :catchall_1
+    move-exception v1
 
-    move-result-object v0
+    monitor-exit v0
+    :try_end_6
+    .catchall {:try_start_6 .. :try_end_6} :catchall_1
 
-    iget-object v1, p0, Lkut;->e:Lloi;
+    goto :goto_5
 
-    invoke-virtual {v1, v0}, Lloi;->k(Landroid/content/Intent;)V
+    :goto_4
+    throw v1
 
-    return-void
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+    :goto_5
+    goto :goto_4
 .end method

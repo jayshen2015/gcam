@@ -1,106 +1,74 @@
-.class public final Lfhe;
+.class public final synthetic Lfhe;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lkxy;
+.implements Lj$/util/function/BiFunction;
 
 
 # instance fields
-.field public final a:I
-
-.field public final synthetic b:Lfhf;
-
-.field private final c:Lkxy;
-
-.field private final d:Ljava/util/concurrent/atomic/AtomicInteger;
+.field public final synthetic a:I
 
 
 # direct methods
-.method public constructor <init>(Lfhf;Lkxy;I)V
-    .locals 1
-
-    iput-object p1, p0, Lfhe;->b:Lfhf;
+.method public synthetic constructor <init>(I)V
+    .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    new-instance p1, Ljava/util/concurrent/atomic/AtomicInteger;
-
-    const/4 v0, 0x0
-
-    invoke-direct {p1, v0}, Ljava/util/concurrent/atomic/AtomicInteger;-><init>(I)V
-
-    iput-object p1, p0, Lfhe;->d:Ljava/util/concurrent/atomic/AtomicInteger;
-
-    iput-object p2, p0, Lfhe;->c:Lkxy;
-
-    iput p3, p0, Lfhe;->a:I
+    iput p1, p0, Lfhe;->a:I
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Lnou;)V
-    .locals 2
+.method public final synthetic andThen(Lj$/util/function/Function;)Lj$/util/function/BiFunction;
+    .locals 0
 
-    new-instance v0, Ldje;
+    invoke-static {p0, p1}, Lj$/util/function/BiFunction$-CC;->$default$andThen(Lj$/util/function/BiFunction;Lj$/util/function/Function;)Lj$/util/function/BiFunction;
 
-    const/4 v1, 0x4
+    move-result-object p1
 
-    invoke-direct {v0, p0, v1}, Ldje;-><init>(Lfhe;I)V
-
-    sget-object v1, Lnnv;->a:Lnnv;
-
-    invoke-static {p1, v0, v1}, Lnsy;->L(Lnou;Lnoj;Ljava/util/concurrent/Executor;)V
-
-    iget-object v0, p0, Lfhe;->c:Lkxy;
-
-    invoke-interface {v0, p1}, Lkxy;->a(Lnou;)V
-
-    return-void
+    return-object p1
 .end method
 
-.method public final b(Ljava/nio/ByteBuffer;Landroid/media/MediaCodec$BufferInfo;)V
-    .locals 1
+.method public final apply(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 2
 
-    iget-object v0, p0, Lfhe;->c:Lkxy;
+    iget v0, p0, Lfhe;->a:I
 
-    invoke-interface {v0, p1, p2}, Lkxy;->b(Ljava/nio/ByteBuffer;Landroid/media/MediaCodec$BufferInfo;)V
+    check-cast p1, Lfik;
 
-    iget-object p1, p0, Lfhe;->d:Ljava/util/concurrent/atomic/AtomicInteger;
+    check-cast p2, Ljava/lang/Boolean;
 
-    invoke-virtual {p1}, Ljava/util/concurrent/atomic/AtomicInteger;->incrementAndGet()I
+    sget v1, Lfhv;->k:I
+
+    invoke-virtual {p2}, Ljava/lang/Boolean;->booleanValue()Z
+
+    move-result v1
+
+    if-nez v1, :cond_0
+
+    instance-of v1, p1, Lfgp;
+
+    if-eqz v1, :cond_0
+
+    check-cast p1, Lfgp;
+
+    invoke-interface {p1, v0}, Lfgp;->i(I)Z
 
     move-result p1
 
-    rem-int/lit8 p1, p1, 0xa
+    if-eqz p1, :cond_0
 
-    const/4 p2, 0x1
+    const/4 p1, 0x1
 
-    if-ne p1, p2, :cond_0
+    invoke-static {p1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
-    iget-object p1, p0, Lfhe;->b:Lfhf;
+    move-result-object p1
 
-    iget-object p1, p1, Lfhf;->c:Ldhi;
-
-    sget-object p2, Ldho;->a:Ldhk;
-
-    invoke-interface {p1}, Ldhi;->f()V
+    return-object p1
 
     :cond_0
-    return-void
-.end method
-
-.method public final close()V
-    .locals 1
-
-    iget-object v0, p0, Lfhe;->d:Ljava/util/concurrent/atomic/AtomicInteger;
-
-    invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicInteger;->get()I
-
-    iget-object v0, p0, Lfhe;->c:Lkxy;
-
-    invoke-interface {v0}, Lkxy;->close()V
-
-    return-void
+    return-object p2
 .end method

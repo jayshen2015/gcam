@@ -8,7 +8,7 @@
 
     const-string v0, "ForceStopRunnable$Rcvr"
 
-    invoke-static {v0}, Laxq;->b(Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v0}, Lkus;->g(Ljava/lang/String;)Ljava/lang/String;
 
     return-void
 .end method
@@ -24,7 +24,7 @@
 
 # virtual methods
 .method public final onReceive(Landroid/content/Context;Landroid/content/Intent;)V
-    .locals 4
+    .locals 1
 
     if-eqz p2, :cond_0
 
@@ -40,37 +40,9 @@
 
     if-eqz p2, :cond_0
 
-    invoke-static {}, Laxq;->a()Laxq;
+    invoke-static {}, Lkus;->l()Lkus;
 
-    sget-wide v0, Lbdi;->a:J
-
-    const-string p2, "alarm"
-
-    invoke-virtual {p1, p2}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
-
-    move-result-object p2
-
-    check-cast p2, Landroid/app/AlarmManager;
-
-    const/high16 v0, 0xa000000
-
-    invoke-static {p1, v0}, Lbdi;->a(Landroid/content/Context;I)Landroid/app/PendingIntent;
-
-    move-result-object p1
-
-    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
-
-    move-result-wide v0
-
-    sget-wide v2, Lbdi;->a:J
-
-    add-long/2addr v0, v2
-
-    if-eqz p2, :cond_0
-
-    const/4 v2, 0x0
-
-    invoke-virtual {p2, v2, v0, v1, p1}, Landroid/app/AlarmManager;->setExact(IJLandroid/app/PendingIntent;)V
+    invoke-static {p1}, Larl;->a(Landroid/content/Context;)V
 
     :cond_0
     return-void

@@ -42,7 +42,7 @@
 
     move-result-object p2
 
-    invoke-static {p1, p2}, Ljji;->n(Landroid/content/Context;Landroid/view/Display;)Z
+    invoke-static {p1, p2}, Lmip;->eD(Landroid/content/Context;Landroid/view/Display;)Z
 
     move-result p1
 

@@ -1,30 +1,74 @@
-.class public final synthetic Lhjr;
-.super Ljava/lang/Object;
+.class Lhjr;
+.super Lhjo;
 
 
 # instance fields
-.field public final synthetic a:Lhjm;
-
-.field public final synthetic b:Lkrf;
-
-.field public final synthetic c:Lkbc;
-
-.field public final synthetic d:Lcom/google/android/apps/camera/stats/Instrumentation;
+.field final synthetic b:Lhjs;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lhjm;Lcom/google/android/apps/camera/stats/Instrumentation;Lkrf;Lkbc;)V
+.method public constructor <init>(Lhjs;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lhjr;->b:Lhjs;
 
-    iput-object p1, p0, Lhjr;->a:Lhjm;
+    invoke-direct {p0}, Lhjo;-><init>()V
 
-    iput-object p2, p0, Lhjr;->d:Lcom/google/android/apps/camera/stats/Instrumentation;
+    return-void
+.end method
 
-    iput-object p3, p0, Lhjr;->b:Lkrf;
 
-    iput-object p4, p0, Lhjr;->c:Lkbc;
+# virtual methods
+.method public b()V
+    .locals 0
+
+    return-void
+.end method
+
+.method public final f()V
+    .locals 2
+
+    iget-object v0, p0, Lhjr;->b:Lhjs;
+
+    iget-object v0, v0, Lhjs;->a:Lcom/google/android/apps/camera/progressoverlay/ProgressOverlay;
+
+    const/4 v1, 0x0
+
+    invoke-virtual {v0, v1}, Lcom/google/android/apps/camera/progressoverlay/ProgressOverlay;->setVisibility(I)V
+
+    iget-object v0, p0, Lhjr;->b:Lhjs;
+
+    const/4 v1, 0x1
+
+    iput-boolean v1, v0, Lhjs;->b:Z
+
+    iget-object v0, v0, Lhjs;->c:Landroid/graphics/drawable/AnimatedVectorDrawable;
+
+    invoke-virtual {v0}, Landroid/graphics/drawable/AnimatedVectorDrawable;->start()V
+
+    return-void
+.end method
+
+.method public final g()V
+    .locals 2
+
+    iget-object v0, p0, Lhjr;->b:Lhjs;
+
+    const/4 v1, 0x0
+
+    iput-boolean v1, v0, Lhjs;->b:Z
+
+    iget-object v0, v0, Lhjs;->c:Landroid/graphics/drawable/AnimatedVectorDrawable;
+
+    invoke-virtual {v0}, Landroid/graphics/drawable/AnimatedVectorDrawable;->stop()V
+
+    iget-object v0, p0, Lhjr;->b:Lhjs;
+
+    iget-object v0, v0, Lhjs;->a:Lcom/google/android/apps/camera/progressoverlay/ProgressOverlay;
+
+    const/16 v1, 0x8
+
+    invoke-virtual {v0, v1}, Lcom/google/android/apps/camera/progressoverlay/ProgressOverlay;->setVisibility(I)V
 
     return-void
 .end method

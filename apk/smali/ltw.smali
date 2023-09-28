@@ -1,134 +1,118 @@
 .class public final Lltw;
-.super Ljava/lang/Object;
+.super Llui;
 
 
-# static fields
-.field private static final a:Llhz;
+# instance fields
+.field public final a:Llug;
+
+.field public final b:Lltx;
+
+.field public final c:Llig;
+
+.field public final d:J
+
+.field public final e:I
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
+.method public constructor <init>(Llnz;Llvs;Llug;IZ)V
+    .locals 0
 
-    new-instance v0, Llhz;
+    invoke-direct {p0, p1, p2, p5}, Llui;-><init>(Llnz;Llvs;Z)V
 
-    const-string v1, "/"
+    iput-object p3, p0, Lltw;->a:Llug;
 
-    invoke-direct {v0, v1}, Llhz;-><init>(Ljava/lang/String;)V
+    iput p4, p0, Lltw;->e:I
 
-    sput-object v0, Lltw;->a:Llhz;
+    iget-object p1, p3, Llug;->c:Llig;
+
+    iput-object p1, p0, Lltw;->c:Llig;
+
+    iget p2, p3, Llug;->b:I
+
+    invoke-static {p2, p1}, Lmip;->S(ILlig;)J
+
+    move-result-wide p1
+
+    iput-wide p1, p0, Lltw;->d:J
+
+    new-instance p1, Lltx;
+
+    invoke-direct {p1, p4}, Lltx;-><init>(I)V
+
+    iput-object p1, p0, Lltw;->b:Lltx;
 
     return-void
 .end method
 
-.method public static a(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-    .locals 2
 
-    if-eqz p1, :cond_1
-
-    invoke-virtual {p1}, Ljava/lang/String;->isEmpty()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    goto :goto_0
-
-    :cond_0
-    const/4 v0, 0x1
-
-    new-array v0, v0, [Ljava/lang/Object;
-
-    const/4 v1, 0x0
-
-    aput-object p1, v0, v1
-
-    invoke-static {p0, v0}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object p0
-
-    return-object p0
-
-    :cond_1
-    :goto_0
-    const-string p0, ""
-
-    return-object p0
-.end method
-
-.method public static b(Landroid/net/Uri;)Ljava/lang/String;
-    .locals 3
-
-    sget-object v0, Lltw;->a:Llhz;
-
-    invoke-virtual {p0}, Landroid/net/Uri;->getPathSegments()Ljava/util/List;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Llhz;->f(Ljava/lang/Iterable;)Ljava/lang/String;
-
-    move-result-object v0
-
-    const-string v1, "/%s"
-
-    invoke-static {v1, v0}, Lltw;->a(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-virtual {p0}, Landroid/net/Uri;->getQuery()Ljava/lang/String;
-
-    move-result-object v1
-
-    const-string v2, "?%s"
-
-    invoke-static {v2, v1}, Lltw;->a(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {p0}, Landroid/net/Uri;->getFragment()Ljava/lang/String;
-
-    move-result-object p0
-
-    const-string v2, "#%s"
-
-    invoke-static {v2, p0}, Lltw;->a(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object p0
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v2, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p0
-
-    return-object p0
-.end method
-
-.method public static c(Ljava/lang/String;)Z
+# virtual methods
+.method public final a()I
     .locals 1
 
-    invoke-virtual {p0}, Ljava/lang/String;->length()I
+    iget-object v0, p0, Lltw;->a:Llug;
 
-    move-result p0
+    iget v0, v0, Llug;->b:I
 
-    const/16 v0, 0x19
+    return v0
+.end method
 
-    if-le p0, v0, :cond_0
+.method public final b()Llig;
+    .locals 1
 
-    const/4 p0, 0x1
+    iget-object v0, p0, Lltw;->c:Llig;
 
-    return p0
+    return-object v0
+.end method
 
-    :cond_0
-    const/4 p0, 0x0
+.method public final d(Landroid/view/Surface;)V
+    .locals 1
 
-    return p0
+    new-instance p1, Ljava/lang/UnsupportedOperationException;
+
+    const-string v0, "setSurface should never be called on buffered streams."
+
+    invoke-direct {p1, v0}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
+
+    throw p1
+.end method
+
+.method public final f()J
+    .locals 2
+
+    iget-wide v0, p0, Lltw;->d:J
+
+    return-wide v0
+.end method
+
+.method public final g()Landroid/view/Surface;
+    .locals 1
+
+    iget-object v0, p0, Lltw;->a:Llug;
+
+    iget-object v0, v0, Llug;->a:Lmag;
+
+    invoke-interface {v0}, Lmag;->e()Landroid/view/Surface;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public final h()Lloa;
+    .locals 1
+
+    sget-object v0, Lloa;->a:Lloa;
+
+    return-object v0
+.end method
+
+.method public final i()Z
+    .locals 1
+
+    iget-object v0, p0, Lltw;->h:Llnz;
+
+    iget-boolean v0, v0, Llnz;->i:Z
+
+    return v0
 .end method

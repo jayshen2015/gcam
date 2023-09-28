@@ -3,72 +3,50 @@
 
 
 # instance fields
-.field final a:I
+.field public a:Ljava/text/AttributedCharacterIterator$Attribute;
 
-.field final b:Ljava/lang/String;
+.field public b:Ljava/lang/Object;
 
-.field final c:Ljava/lang/Number;
+.field public c:I
 
-.field final d:D
-
-.field e:I
-
-.field f:Ljava/text/Format;
-
-.field g:Ljava/lang/String;
-
-.field h:Z
+.field public d:I
 
 
 # direct methods
-.method public constructor <init>(ILjava/lang/String;Ljava/lang/Number;D)V
+.method public constructor <init>(Ljava/lang/Object;II)V
     .locals 1
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput p1, p0, Lh;->a:I
+    sget-object v0, Li;->a:Li;
 
-    iput-object p2, p0, Lh;->b:Ljava/lang/String;
+    invoke-virtual {p0, v0, p1, p2, p3}, Lh;->a(Ljava/text/AttributedCharacterIterator$Attribute;Ljava/lang/Object;II)V
 
-    const-wide/16 p1, 0x0
+    return-void
+.end method
 
-    cmpl-double v0, p4, p1
+.method public constructor <init>(Ljava/text/AttributedCharacterIterator$Attribute;Ljava/lang/Object;II)V
+    .locals 0
 
-    if-nez v0, :cond_0
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p3, p0, Lh;->c:Ljava/lang/Number;
-
-    goto :goto_0
-
-    :cond_0
-    invoke-virtual {p3}, Ljava/lang/Number;->doubleValue()D
-
-    move-result-wide p1
-
-    sub-double/2addr p1, p4
-
-    invoke-static {p1, p2}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
-
-    move-result-object p1
-
-    iput-object p1, p0, Lh;->c:Ljava/lang/Number;
-
-    :goto_0
-    iput-wide p4, p0, Lh;->d:D
+    invoke-virtual {p0, p1, p2, p3, p4}, Lh;->a(Ljava/text/AttributedCharacterIterator$Attribute;Ljava/lang/Object;II)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final toString()Ljava/lang/String;
-    .locals 2
+.method public final a(Ljava/text/AttributedCharacterIterator$Attribute;Ljava/lang/Object;II)V
+    .locals 0
 
-    new-instance v0, Ljava/lang/AssertionError;
+    iput-object p1, p0, Lh;->a:Ljava/text/AttributedCharacterIterator$Attribute;
 
-    const-string v1, "PluralSelectorContext being formatted, rather than its number"
+    iput-object p2, p0, Lh;->b:Ljava/lang/Object;
 
-    invoke-direct {v0, v1}, Ljava/lang/AssertionError;-><init>(Ljava/lang/Object;)V
+    iput p3, p0, Lh;->c:I
 
-    throw v0
+    iput p4, p0, Lh;->d:I
+
+    return-void
 .end method

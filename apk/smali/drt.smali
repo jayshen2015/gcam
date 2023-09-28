@@ -1,58 +1,142 @@
 .class public final Ldrt;
 .super Ljava/lang/Object;
 
+# interfaces
+.implements Ldqv;
+.implements Ldqt;
+.implements Ldqs;
+.implements Ldrb;
+
 
 # instance fields
-.field public final a:Lj$/time/Instant;
+.field public final a:Ldsz;
 
-.field public final b:Lnph;
+.field private final b:Ldqv;
 
-.field public final c:Lnph;
+.field private final c:Ldqs;
 
-.field public final d:Ljava/lang/Object;
+.field private final d:Ldqt;
 
-.field public final e:Landroid/hardware/HardwareBuffer;
-
-.field public final synthetic f:Ldru;
+.field private final e:Ldrb;
 
 
 # direct methods
-.method public constructor <init>(Ldru;Landroid/hardware/HardwareBuffer;Lj$/time/Instant;)V
-    .locals 1
-
-    iput-object p1, p0, Ldrt;->f:Ldru;
+.method public constructor <init>(Ldsz;Ldqv;Ldqs;Ldqt;Ldrb;)V
+    .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-static {}, Lnph;->g()Lnph;
+    iput-object p1, p0, Ldrt;->a:Ldsz;
 
-    move-result-object p1
+    iput-object p2, p0, Ldrt;->b:Ldqv;
 
-    iput-object p1, p0, Ldrt;->b:Lnph;
+    iput-object p3, p0, Ldrt;->c:Ldqs;
 
-    invoke-static {}, Lnph;->g()Lnph;
+    iput-object p4, p0, Ldrt;->d:Ldqt;
 
-    move-result-object p1
+    iput-object p5, p0, Ldrt;->e:Ldrb;
 
-    iput-object p1, p0, Ldrt;->c:Lnph;
+    return-void
+.end method
 
-    new-instance v0, Ljava/lang/Object;
 
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+# virtual methods
+.method public final a()V
+    .locals 1
 
-    iput-object v0, p0, Ldrt;->d:Ljava/lang/Object;
+    iget-object v0, p0, Ldrt;->d:Ldqt;
 
-    iput-object p2, p0, Ldrt;->e:Landroid/hardware/HardwareBuffer;
+    invoke-interface {v0}, Ldqt;->a()V
 
-    iput-object p3, p0, Ldrt;->a:Lj$/time/Instant;
+    return-void
+.end method
 
-    const/4 p2, 0x1
+.method public final b(Llmr;Llnx;)V
+    .locals 1
 
-    invoke-static {p2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+    iget-object v0, p0, Ldrt;->c:Ldqs;
 
-    move-result-object p2
+    invoke-interface {v0, p1, p2}, Ldqs;->b(Llmr;Llnx;)V
 
-    invoke-virtual {p1, p2}, Lnph;->e(Ljava/lang/Object;)Z
+    return-void
+.end method
+
+.method public final synthetic c(Llvp;)V
+    .locals 0
+
+    return-void
+.end method
+
+.method public final d(Llvp;Lbrg;)V
+    .locals 1
+
+    iget-object v0, p0, Ldrt;->d:Ldqt;
+
+    invoke-interface {v0, p1, p2}, Ldqt;->d(Llvp;Lbrg;)V
+
+    return-void
+.end method
+
+.method public final e()Z
+    .locals 1
+
+    iget-object v0, p0, Ldrt;->b:Ldqv;
+
+    invoke-interface {v0}, Ldqv;->e()Z
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public final f()Ljava/util/Set;
+    .locals 1
+
+    iget-object v0, p0, Ldrt;->e:Ldrb;
+
+    invoke-interface {v0}, Ldrb;->f()Ljava/util/Set;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public final g(Landroid/hardware/Sensor;)V
+    .locals 1
+
+    iget-object v0, p0, Ldrt;->e:Ldrb;
+
+    invoke-interface {v0, p1}, Ldrb;->g(Landroid/hardware/Sensor;)V
+
+    return-void
+.end method
+
+.method public final h(Landroid/hardware/Sensor;)V
+    .locals 1
+
+    iget-object v0, p0, Ldrt;->e:Ldrb;
+
+    invoke-interface {v0, p1}, Ldrb;->h(Landroid/hardware/Sensor;)V
+
+    return-void
+.end method
+
+.method public final onAccuracyChanged(Landroid/hardware/Sensor;I)V
+    .locals 1
+
+    iget-object v0, p0, Ldrt;->e:Ldrb;
+
+    invoke-interface {v0, p1, p2}, Ldrb;->onAccuracyChanged(Landroid/hardware/Sensor;I)V
+
+    return-void
+.end method
+
+.method public final onSensorChanged(Landroid/hardware/SensorEvent;)V
+    .locals 1
+
+    iget-object v0, p0, Ldrt;->e:Ldrb;
+
+    invoke-interface {v0, p1}, Ldrb;->onSensorChanged(Landroid/hardware/SensorEvent;)V
 
     return-void
 .end method

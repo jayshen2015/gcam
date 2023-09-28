@@ -1,5 +1,5 @@
 .class public Lcom/google/android/libraries/oliveoil/natives/BitmapNativeBuffer;
-.super Llfc;
+.super Lmtq;
 
 
 # instance fields
@@ -14,7 +14,7 @@
 .method public constructor <init>(Landroid/graphics/Bitmap;)V
     .locals 3
 
-    new-instance v0, Llar;
+    new-instance v0, Lmor;
 
     invoke-virtual {p1}, Landroid/graphics/Bitmap;->getWidth()I
 
@@ -24,7 +24,7 @@
 
     move-result v2
 
-    invoke-static {v1, v2}, Lkyn;->d(II)Lkym;
+    invoke-static {v1, v2}, Lmmf;->d(II)Lmme;
 
     move-result-object v1
 
@@ -34,9 +34,9 @@
 
     mul-int/lit8 v2, v2, 0x8
 
-    invoke-direct {v0, v1, v2}, Llar;-><init>(Lkym;I)V
+    invoke-direct {v0, v1, v2}, Lmor;-><init>(Lmme;I)V
 
-    invoke-direct {p0, v0}, Llfc;-><init>(Llaq;)V
+    invoke-direct {p0, v0}, Lmtq;-><init>(Lmoq;)V
 
     const/4 v0, 0x0
 
@@ -56,7 +56,7 @@
 
     :cond_0
     :goto_0
-    invoke-static {v0}, Lmoz;->e(Z)V
+    invoke-static {v0}, Lobr;->aF(Z)V
 
     iput-object p1, p0, Lcom/google/android/libraries/oliveoil/natives/BitmapNativeBuffer;->b:Landroid/graphics/Bitmap;
 
@@ -150,7 +150,7 @@
     const/4 v0, 0x0
 
     :goto_0
-    invoke-static {v0}, Lmoz;->p(Z)V
+    invoke-static {v0}, Lobr;->aQ(Z)V
 
     iget v0, p0, Lcom/google/android/libraries/oliveoil/natives/BitmapNativeBuffer;->c:I
 
@@ -183,12 +183,12 @@
     throw v0
 .end method
 
-.method public final c()Llfg;
+.method public final c()Lmtu;
     .locals 1
 
-    new-instance v0, Llew;
+    new-instance v0, Lmtj;
 
-    invoke-direct {v0, p0}, Llew;-><init>(Lcom/google/android/libraries/oliveoil/natives/BitmapNativeBuffer;)V
+    invoke-direct {v0, p0}, Lmtj;-><init>(Lcom/google/android/libraries/oliveoil/natives/BitmapNativeBuffer;)V
 
     return-object v0
 .end method

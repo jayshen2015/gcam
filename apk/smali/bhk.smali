@@ -1,189 +1,253 @@
 .class public final Lbhk;
 .super Ljava/lang/Object;
 
-# interfaces
-.implements Lbhg;
-.implements Lbhn;
+
+# static fields
+.field public static volatile a:I
+
+.field private static final b:Ljava/io/File;
+
+.field private static volatile c:Lbhk;
 
 
 # instance fields
-.field private final a:Landroid/graphics/Path;
-
-.field private final b:Z
-
-.field private final c:Lbgj;
-
-.field private final d:Lbhs;
+.field private d:I
 
 .field private e:Z
 
-.field private final f:Lbkb;
-
 
 # direct methods
-.method public constructor <init>(Lbgj;Lbjq;Lbjm;)V
-    .locals 1
+.method static constructor <clinit>()V
+    .locals 2
+
+    new-instance v0, Ljava/io/File;
+
+    const-string v1, "/proc/self/fd"
+
+    invoke-direct {v0, v1}, Ljava/io/File;-><init>(Ljava/lang/String;)V
+
+    sput-object v0, Lbhk;->b:Ljava/io/File;
+
+    const/4 v0, -0x1
+
+    sput v0, Lbhk;->a:I
+
+    return-void
+.end method
+
+.method public constructor <init>()V
+    .locals 2
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    new-instance v0, Landroid/graphics/Path;
-
-    invoke-direct {v0}, Landroid/graphics/Path;-><init>()V
-
-    iput-object v0, p0, Lbhk;->a:Landroid/graphics/Path;
-
-    new-instance v0, Lbkb;
-
-    invoke-direct {v0}, Lbkb;-><init>()V
-
-    iput-object v0, p0, Lbhk;->f:Lbkb;
-
-    iget-boolean v0, p3, Lbjm;->b:Z
-
-    iput-boolean v0, p0, Lbhk;->b:Z
-
-    iput-object p1, p0, Lbhk;->c:Lbgj;
-
-    iget-object p1, p3, Lbjm;->a:Lbiv;
-
-    invoke-virtual {p1}, Lbiv;->a()Lbhs;
-
-    move-result-object p1
-
-    iput-object p1, p0, Lbhk;->d:Lbhs;
-
-    invoke-virtual {p2, p1}, Lbjq;->h(Lbhs;)V
-
-    invoke-virtual {p1, p0}, Lbhs;->g(Lbhn;)V
-
-    return-void
-.end method
-
-
-# virtual methods
-.method public final c()V
-    .locals 1
-
-    const/4 v0, 0x0
+    const/4 v0, 0x1
 
     iput-boolean v0, p0, Lbhk;->e:Z
 
-    iget-object v0, p0, Lbhk;->c:Lbgj;
+    new-instance v0, Ljava/util/concurrent/atomic/AtomicBoolean;
 
-    invoke-virtual {v0}, Lbgj;->invalidateSelf()V
+    const/4 v1, 0x0
+
+    invoke-direct {v0, v1}, Ljava/util/concurrent/atomic/AtomicBoolean;-><init>(Z)V
 
     return-void
 .end method
 
-.method public final e(Ljava/util/List;Ljava/util/List;)V
-    .locals 3
+.method public static a()Lbhk;
+    .locals 2
 
-    const/4 p2, 0x0
+    sget-object v0, Lbhk;->c:Lbhk;
 
-    :goto_0
-    invoke-interface {p1}, Ljava/util/List;->size()I
+    if-nez v0, :cond_1
 
-    move-result v0
+    const-class v0, Lbhk;
 
-    if-ge p2, v0, :cond_1
+    monitor-enter v0
 
-    invoke-interface {p1, p2}, Ljava/util/List;->get(I)Ljava/lang/Object;
+    :try_start_0
+    sget-object v1, Lbhk;->c:Lbhk;
 
-    move-result-object v0
+    if-nez v1, :cond_0
 
-    check-cast v0, Lbgw;
+    new-instance v1, Lbhk;
 
-    instance-of v1, v0, Lbhm;
+    invoke-direct {v1}, Lbhk;-><init>()V
 
-    if-eqz v1, :cond_0
-
-    check-cast v0, Lbhm;
-
-    iget v1, v0, Lbhm;->e:I
-
-    const/4 v2, 0x1
-
-    if-ne v1, v2, :cond_0
-
-    iget-object v1, p0, Lbhk;->f:Lbkb;
-
-    invoke-virtual {v1, v0}, Lbkb;->d(Lbhm;)V
-
-    invoke-virtual {v0, p0}, Lbhm;->a(Lbhn;)V
+    sput-object v1, Lbhk;->c:Lbhk;
 
     :cond_0
-    add-int/lit8 p2, p2, 0x1
+    monitor-exit v0
 
     goto :goto_0
 
+    :catchall_0
+    move-exception v1
+
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw v1
+
     :cond_1
-    return-void
+    :goto_0
+    sget-object v0, Lbhk;->c:Lbhk;
+
+    return-object v0
 .end method
 
-.method public final g()Ljava/lang/String;
-    .locals 1
+.method private final declared-synchronized c()Z
+    .locals 8
+
+    monitor-enter p0
+
+    :try_start_0
+    iget v0, p0, Lbhk;->d:I
+
+    const/4 v1, 0x1
+
+    add-int/2addr v0, v1
+
+    iput v0, p0, Lbhk;->d:I
+
+    const/16 v2, 0x32
+
+    if-lt v0, v2, :cond_2
 
     const/4 v0, 0x0
+
+    iput v0, p0, Lbhk;->d:I
+
+    sget-object v2, Lbhk;->b:Ljava/io/File;
+
+    invoke-virtual {v2}, Ljava/io/File;->list()[Ljava/lang/String;
+
+    move-result-object v2
+
+    array-length v2, v2
+
+    sget v3, Lbhk;->a:I
+
+    const/4 v4, -0x1
+
+    if-eq v3, v4, :cond_0
+
+    sget v3, Lbhk;->a:I
+
+    goto :goto_0
+
+    :cond_0
+    const/16 v3, 0x4e20
+
+    :goto_0
+    int-to-long v3, v3
+
+    int-to-long v5, v2
+
+    cmp-long v7, v5, v3
+
+    if-gez v7, :cond_1
+
+    goto :goto_1
+
+    :cond_1
+    const/4 v1, 0x0
+
+    :goto_1
+    iput-boolean v1, p0, Lbhk;->e:Z
+
+    if-nez v1, :cond_2
+
+    const-string v0, "Downsampler"
+
+    const/4 v1, 0x5
+
+    invoke-static {v0, v1}, Landroid/util/Log;->isLoggable(Ljava/lang/String;I)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_2
+
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    const/16 v1, 0x87
+
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string v1, "Excluding HARDWARE bitmap config because we\'re over the file descriptor limit, file descriptors "
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    const-string v1, ", limit "
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0, v3, v4}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+
+    const-string v1, "Downsampler"
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {v1, v0}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
+
+    :cond_2
+    iget-boolean v0, p0, Lbhk;->e:Z
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    monitor-exit p0
+
+    return v0
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit p0
 
     throw v0
 .end method
 
-.method public final i()Landroid/graphics/Path;
-    .locals 3
 
-    iget-boolean v0, p0, Lbhk;->e:Z
+# virtual methods
+.method public final b(IIZZ)Z
+    .locals 1
 
-    if-eqz v0, :cond_0
+    const/4 v0, 0x0
 
-    iget-object v0, p0, Lbhk;->a:Landroid/graphics/Path;
+    if-nez p3, :cond_0
 
-    return-object v0
+    return v0
 
     :cond_0
-    iget-object v0, p0, Lbhk;->a:Landroid/graphics/Path;
+    if-eqz p4, :cond_1
 
-    invoke-virtual {v0}, Landroid/graphics/Path;->reset()V
-
-    iget-boolean v0, p0, Lbhk;->b:Z
-
-    const/4 v1, 0x1
-
-    if-eqz v0, :cond_1
-
-    iput-boolean v1, p0, Lbhk;->e:Z
-
-    iget-object v0, p0, Lbhk;->a:Landroid/graphics/Path;
-
-    return-object v0
+    return v0
 
     :cond_1
-    iget-object v0, p0, Lbhk;->a:Landroid/graphics/Path;
+    if-gez p1, :cond_2
 
-    iget-object v2, p0, Lbhk;->d:Lbhs;
+    return v0
 
-    invoke-virtual {v2}, Lbhs;->e()Ljava/lang/Object;
+    :cond_2
+    if-gez p2, :cond_3
 
-    move-result-object v2
+    return v0
 
-    check-cast v2, Landroid/graphics/Path;
+    :cond_3
+    invoke-direct {p0}, Lbhk;->c()Z
 
-    invoke-virtual {v0, v2}, Landroid/graphics/Path;->set(Landroid/graphics/Path;)V
+    move-result p1
 
-    iget-object v0, p0, Lbhk;->a:Landroid/graphics/Path;
+    if-nez p1, :cond_4
 
-    sget-object v2, Landroid/graphics/Path$FillType;->EVEN_ODD:Landroid/graphics/Path$FillType;
+    return v0
 
-    invoke-virtual {v0, v2}, Landroid/graphics/Path;->setFillType(Landroid/graphics/Path$FillType;)V
+    :cond_4
+    const/4 p1, 0x1
 
-    iget-object v0, p0, Lbhk;->f:Lbkb;
-
-    iget-object v2, p0, Lbhk;->a:Landroid/graphics/Path;
-
-    invoke-virtual {v0, v2}, Lbkb;->e(Landroid/graphics/Path;)V
-
-    iput-boolean v1, p0, Lbhk;->e:Z
-
-    iget-object v0, p0, Lbhk;->a:Landroid/graphics/Path;
-
-    return-object v0
+    return p1
 .end method

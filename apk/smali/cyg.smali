@@ -1,89 +1,53 @@
-.class Lcyg;
-.super Lcye;
+.class public final Lcyg;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Ljava/util/concurrent/Executor;
 
 
 # instance fields
-.field final synthetic b:Lcyh;
+.field private final a:Ljava/util/concurrent/Executor;
+
+.field private final b:Llis;
 
 
 # direct methods
-.method public constructor <init>(Lcyh;)V
+.method public constructor <init>(Llis;Lddf;Ljava/util/concurrent/Executor;)V
     .locals 0
 
-    iput-object p1, p0, Lcyg;->b:Lcyh;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0}, Lcye;-><init>()V
+    iput-object p3, p0, Lcyg;->a:Ljava/util/concurrent/Executor;
+
+    const-string p3, "SQLiteExpnCatchr"
+
+    invoke-interface {p1, p3}, Llis;->a(Ljava/lang/String;)Llis;
+
+    move-result-object p1
+
+    iput-object p1, p0, Lcyg;->b:Llis;
+
+    sget-object p1, Lddl;->a:Lddi;
+
+    invoke-interface {p2}, Lddf;->e()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public b()V
-    .locals 0
+.method public final execute(Ljava/lang/Runnable;)V
+    .locals 3
 
-    return-void
-.end method
+    iget-object v0, p0, Lcyg;->a:Ljava/util/concurrent/Executor;
 
-.method public final f()V
-    .locals 4
+    new-instance v1, Lcyf;
 
-    iget-object v0, p0, Lcyg;->b:Lcyh;
+    iget-object v2, p0, Lcyg;->b:Llis;
 
-    iget-object v0, v0, Lcyh;->b:Lfuz;
+    invoke-direct {v1, v2, p1}, Lcyf;-><init>(Llis;Ljava/lang/Runnable;)V
 
-    invoke-virtual {v0}, Lklw;->H()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    iget-object v0, p0, Lcyg;->b:Lcyh;
-
-    iget-object v1, v0, Lcyh;->a:Ldol;
-
-    iget-object v0, v0, Lcyh;->b:Lfuz;
-
-    invoke-virtual {v0}, Lklw;->e()I
-
-    move-result v0
-
-    iget-object v2, p0, Lcyg;->b:Lcyh;
-
-    iget-object v2, v2, Lcyh;->b:Lfuz;
-
-    invoke-virtual {v2}, Lklw;->d()I
-
-    move-result v2
-
-    iget-object v3, p0, Lcyg;->b:Lcyh;
-
-    iget-object v3, v3, Lcyh;->b:Lfuz;
-
-    invoke-virtual {v3}, Lklw;->a()F
-
-    move-result v3
-
-    invoke-interface {v1, v0, v2, v3}, Ldol;->g(IIF)V
-
-    :cond_0
-    iget-object v0, p0, Lcyg;->b:Lcyh;
-
-    iget-object v0, v0, Lcyh;->f:Ldqx;
-
-    invoke-virtual {v0}, Ldqx;->f()V
-
-    return-void
-.end method
-
-.method public final g()V
-    .locals 1
-
-    iget-object v0, p0, Lcyg;->b:Lcyh;
-
-    iget-object v0, v0, Lcyh;->a:Ldol;
-
-    invoke-interface {v0}, Ldol;->d()V
+    invoke-interface {v0, v1}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
 
     return-void
 .end method

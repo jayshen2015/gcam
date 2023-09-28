@@ -3,9 +3,6 @@
 
 
 # virtual methods
-.method public abstract nativeToken()J
-.end method
-
 .method public abstract release()V
 .end method
 

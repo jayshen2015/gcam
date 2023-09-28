@@ -1,22 +1,20 @@
-.class final Llzj;
-.super Laqa;
+.class public final Llzj;
+.super Ljava/lang/Object;
+
+
+# static fields
+.field public static final a:Llzk;
 
 
 # direct methods
-.method public constructor <init>(Lapt;)V
-    .locals 0
-
-    invoke-direct {p0, p1}, Laqa;-><init>(Lapt;)V
-
-    return-void
-.end method
-
-
-# virtual methods
-.method public final d()Ljava/lang/String;
+.method static constructor <clinit>()V
     .locals 1
 
-    const-string v0, "\n      UPDATE ResourceEntity\n      SET\n        f250ResourceId = ?,\n        status_uploadToF250CompletedEpochTimestamp = ?,\n        status_uploadState = ?,\n        status_uploadProgressPercent = 1.0\n      WHERE onDeviceId = ?\n    "
+    new-instance v0, Llzk;
 
-    return-object v0
+    invoke-direct {v0}, Llzk;-><init>()V
+
+    sput-object v0, Llzj;->a:Llzk;
+
+    return-void
 .end method

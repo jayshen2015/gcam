@@ -1,136 +1,52 @@
-.class final Lfms;
-.super Lcom/google/android/apps/camera/bottombar/BottomBarListener;
+.class public final synthetic Lfms;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Lfb;
 
 
 # instance fields
-.field final synthetic a:Lfng;
+.field public final synthetic a:Lfpn;
+
+.field public final synthetic b:Llrr;
 
 
 # direct methods
-.method public constructor <init>(Lfng;)V
+.method public synthetic constructor <init>(Llrr;Lfpn;)V
     .locals 0
 
-    iput-object p1, p0, Lfms;->a:Lfng;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0}, Lcom/google/android/apps/camera/bottombar/BottomBarListener;-><init>()V
+    iput-object p1, p0, Lfms;->b:Llrr;
+
+    iput-object p2, p0, Lfms;->a:Lfpn;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onCancelButtonPressed()V
-    .locals 1
+.method public final accept(Ljava/lang/Object;)V
+    .locals 4
 
-    iget-object v0, p0, Lfms;->a:Lfng;
+    iget-object v0, p0, Lfms;->b:Llrr;
 
-    invoke-virtual {v0}, Lfng;->A()V
+    iget-object v1, p0, Lfms;->a:Lfpn;
 
-    return-void
-.end method
+    check-cast p1, Llmr;
 
-.method public final onRetakeButtonPressed()V
-    .locals 3
+    invoke-virtual {v0}, Llrr;->b()Llmw;
 
-    iget-object v0, p0, Lfms;->a:Lfng;
+    move-result-object p1
 
-    iget v1, v0, Lfng;->N:I
-
-    add-int/lit8 v1, v1, 0x1
-
-    iput v1, v0, Lfng;->N:I
-
-    iget v0, v0, Lfng;->p:I
-
-    if-nez v0, :cond_0
-
-    sget-object v0, Lfng;->b:Lnak;
-
-    invoke-virtual {v0}, Lnaf;->b()Lnaz;
-
-    move-result-object v0
-
-    const-string v1, "Can\'t undo capture, no images captured."
-
-    const/16 v2, 0x942
-
-    invoke-static {v0, v1, v2}, Ld;->g(Lnaz;Ljava/lang/String;C)V
+    if-nez p1, :cond_0
 
     return-void
 
     :cond_0
-    sget-object v0, Lewr;->a:Ljava/lang/Object;
+    iget-wide v2, p1, Llmw;->b:J
 
-    invoke-static {}, Lcom/google/android/apps/lightcycle/panorama/LightCycleNative;->CanUndo()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_3
-
-    iget-object v0, p0, Lfms;->a:Lfng;
-
-    iget-object v0, v0, Lfng;->i:Lewd;
-
-    iget-object v0, v0, Lewd;->b:Lbne;
-
-    invoke-virtual {v0}, Lbne;->g()Lbnx;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lbnx;->a()I
-
-    move-result v0
-
-    const/16 v1, 0x8
-
-    if-eq v0, v1, :cond_3
-
-    iget-object v0, p0, Lfms;->a:Lfng;
-
-    iget v1, v0, Lfng;->p:I
-
-    if-lez v1, :cond_1
-
-    add-int/lit8 v1, v1, -0x1
-
-    iput v1, v0, Lfng;->p:I
-
-    iget-object v0, v0, Lfng;->q:Lewz;
-
-    invoke-virtual {v0}, Lewz;->d()V
-
-    iget-object v0, p0, Lfms;->a:Lfng;
-
-    iget-object v0, v0, Lfng;->B:Landroid/os/Handler;
-
-    const/16 v1, 0x65
-
-    invoke-virtual {v0, v1}, Landroid/os/Handler;->sendEmptyMessage(I)Z
-
-    :cond_1
-    iget-object v0, p0, Lfms;->a:Lfng;
-
-    iget v1, v0, Lfng;->p:I
-
-    if-nez v1, :cond_2
-
-    invoke-virtual {v0}, Lfng;->x()V
-
-    :cond_2
-    return-void
-
-    :cond_3
-    sget-object v0, Lfng;->b:Lnak;
-
-    invoke-virtual {v0}, Lnaf;->b()Lnaz;
-
-    move-result-object v0
-
-    const-string v1, "Can\'t undo capture, LightCycle not ready to undo."
-
-    const/16 v2, 0x941
-
-    invoke-static {v0, v1, v2}, Ld;->g(Lnaz;Ljava/lang/String;C)V
+    invoke-interface {v1, v2, v3}, Lfpn;->a(J)V
 
     return-void
 .end method

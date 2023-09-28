@@ -1,200 +1,337 @@
 .class public final Loao;
-.super Lnws;
-
-# interfaces
-.implements Lnxz;
+.super Loas;
 
 
 # static fields
-.field public static final f:Loao;
+.field public static final synthetic c:I
 
-.field private static volatile g:Lnyf;
+.field private static final j:Lacw;
 
 
 # instance fields
-.field public a:I
+.field public final a:Loat;
 
-.field public b:Lnxa;
+.field public b:F
 
-.field public c:F
+.field private final k:Lacy;
 
-.field public d:I
+.field private final l:Lacx;
 
-.field public e:Loap;
+.field private m:Z
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 2
+    .locals 1
 
-    new-instance v0, Loao;
+    new-instance v0, Loan;
 
-    invoke-direct {v0}, Loao;-><init>()V
+    invoke-direct {v0}, Loan;-><init>()V
 
-    sput-object v0, Loao;->f:Loao;
-
-    const-class v1, Loao;
-
-    invoke-static {v1, v0}, Lnws;->aa(Ljava/lang/Class;Lnws;)V
+    sput-object v0, Loao;->j:Lacw;
 
     return-void
 .end method
 
-.method private constructor <init>()V
+.method public constructor <init>(Landroid/content/Context;Loaf;Loat;)V
     .locals 1
 
-    invoke-direct {p0}, Lnws;-><init>()V
+    invoke-direct {p0, p1, p2}, Loas;-><init>(Landroid/content/Context;Loaf;)V
 
-    sget-object v0, Lnyi;->b:Lnyi;
+    const/4 p1, 0x0
 
-    iput-object v0, p0, Loao;->b:Lnxa;
+    iput-boolean p1, p0, Loao;->m:Z
+
+    iput-object p3, p0, Loao;->a:Loat;
+
+    iput-object p0, p3, Loat;->b:Loas;
+
+    new-instance p1, Lacy;
+
+    invoke-direct {p1}, Lacy;-><init>()V
+
+    iput-object p1, p0, Loao;->k:Lacy;
+
+    const/high16 p2, 0x3f800000    # 1.0f
+
+    invoke-virtual {p1, p2}, Lacy;->c(F)V
+
+    const/high16 p3, 0x42480000    # 50.0f
+
+    invoke-virtual {p1, p3}, Lacy;->e(F)V
+
+    new-instance p3, Lacx;
+
+    sget-object v0, Loao;->j:Lacw;
+
+    invoke-direct {p3, p0, v0}, Lacx;-><init>(Ljava/lang/Object;Lacw;)V
+
+    iput-object p3, p0, Loao;->l:Lacx;
+
+    iput-object p1, p3, Lacx;->q:Lacy;
+
+    invoke-virtual {p0, p2}, Loas;->d(F)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method protected final a(ILjava/lang/Object;)Ljava/lang/Object;
-    .locals 3
+.method public final a(F)V
+    .locals 0
 
-    add-int/lit8 p1, p1, -0x1
+    iput p1, p0, Loao;->b:F
+
+    invoke-virtual {p0}, Loao;->invalidateSelf()V
+
+    return-void
+.end method
+
+.method public final b(ZZZ)Z
+    .locals 1
+
+    invoke-super {p0, p1, p2, p3}, Loas;->b(ZZZ)Z
+
+    move-result p1
+
+    iget-object p2, p0, Loao;->d:Landroid/content/Context;
+
+    invoke-virtual {p2}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+
+    move-result-object p2
+
+    invoke-static {p2}, Lobr;->r(Landroid/content/ContentResolver;)F
+
+    move-result p2
+
+    const/4 p3, 0x0
+
+    cmpl-float p3, p2, p3
+
+    if-nez p3, :cond_0
 
     const/4 p2, 0x1
 
-    packed-switch p1, :pswitch_data_0
-
-    :pswitch_0
-    const/4 p1, 0x0
-
-    return-object p1
-
-    :pswitch_1
-    sget-object p1, Loao;->g:Lnyf;
-
-    if-nez p1, :cond_1
-
-    const-class p2, Loao;
-
-    monitor-enter p2
-
-    :try_start_0
-    sget-object p1, Loao;->g:Lnyf;
-
-    if-nez p1, :cond_0
-
-    new-instance p1, Lnwo;
-
-    sget-object v0, Loao;->f:Loao;
-
-    invoke-direct {p1, v0}, Lnwo;-><init>(Lnws;)V
-
-    sput-object p1, Loao;->g:Lnyf;
-
-    :cond_0
-    monitor-exit p2
+    iput-boolean p2, p0, Loao;->m:Z
 
     goto :goto_0
 
-    :catchall_0
-    move-exception p1
+    :cond_0
+    const/4 p3, 0x0
 
-    monitor-exit p2
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    iput-boolean p3, p0, Loao;->m:Z
 
-    throw p1
+    iget-object p3, p0, Loao;->k:Lacy;
+
+    const/high16 v0, 0x42480000    # 50.0f
+
+    div-float/2addr v0, p2
+
+    invoke-virtual {p3, v0}, Lacy;->e(F)V
+
+    :goto_0
+    return p1
+.end method
+
+.method public final draw(Landroid/graphics/Canvas;)V
+    .locals 8
+
+    new-instance v0, Landroid/graphics/Rect;
+
+    invoke-direct {v0}, Landroid/graphics/Rect;-><init>()V
+
+    invoke-virtual {p0}, Loao;->getBounds()Landroid/graphics/Rect;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Landroid/graphics/Rect;->isEmpty()Z
+
+    move-result v1
+
+    if-nez v1, :cond_1
+
+    invoke-virtual {p0}, Loao;->isVisible()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_1
+
+    invoke-virtual {p1, v0}, Landroid/graphics/Canvas;->getClipBounds(Landroid/graphics/Rect;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    goto :goto_0
+
+    :cond_0
+    invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
+
+    iget-object v0, p0, Loao;->a:Loat;
+
+    invoke-virtual {p0}, Loas;->c()F
+
+    move-result v1
+
+    invoke-virtual {v0, p1, v1}, Loat;->f(Landroid/graphics/Canvas;F)V
+
+    iget-object v0, p0, Loao;->a:Loat;
+
+    iget-object v1, p0, Loao;->h:Landroid/graphics/Paint;
+
+    invoke-virtual {v0, p1, v1}, Loat;->e(Landroid/graphics/Canvas;Landroid/graphics/Paint;)V
+
+    iget-object v0, p0, Loao;->e:Loaf;
+
+    iget-object v0, v0, Loaf;->c:[I
+
+    const/4 v1, 0x0
+
+    aget v0, v0, v1
+
+    iget v1, p0, Loas;->i:I
+
+    invoke-static {v0, v1}, Lohh;->W(II)I
+
+    move-result v7
+
+    iget-object v2, p0, Loao;->a:Loat;
+
+    iget-object v4, p0, Loao;->h:Landroid/graphics/Paint;
+
+    const/4 v5, 0x0
+
+    iget v6, p0, Loao;->b:F
+
+    move-object v3, p1
+
+    invoke-virtual/range {v2 .. v7}, Loat;->d(Landroid/graphics/Canvas;Landroid/graphics/Paint;FFI)V
+
+    invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
+
+    return-void
 
     :cond_1
     :goto_0
-    return-object p1
+    return-void
+.end method
 
-    :pswitch_2
-    sget-object p1, Loao;->f:Loao;
+.method public final getIntrinsicHeight()I
+    .locals 1
 
-    return-object p1
+    iget-object v0, p0, Loao;->a:Loat;
 
-    :pswitch_3
-    new-instance p1, Lnwn;
+    invoke-virtual {v0}, Loat;->a()I
 
-    sget-object p2, Loao;->f:Loao;
+    move-result v0
 
-    invoke-direct {p1, p2}, Lnwn;-><init>(Lnws;)V
+    return v0
+.end method
 
-    return-object p1
+.method public final getIntrinsicWidth()I
+    .locals 1
 
-    :pswitch_4
-    new-instance p1, Loao;
+    iget-object v0, p0, Loao;->a:Loat;
 
-    invoke-direct {p1}, Loao;-><init>()V
+    invoke-virtual {v0}, Loat;->b()I
 
-    return-object p1
+    move-result v0
 
-    :pswitch_5
-    const-string p1, "a"
+    return v0
+.end method
 
-    const-string v0, "\u0001\u0004\u0000\u0001\u0001\u0005\u0004\u0000\u0001\u0000\u0001\u001b\u0002\u1001\u0000\u0003\u1004\u0001\u0005\u1009\u0002"
+.method public final bridge synthetic getOpacity()I
+    .locals 1
 
-    const/4 v1, 0x6
+    const/4 v0, -0x3
 
-    new-array v1, v1, [Ljava/lang/Object;
+    return v0
+.end method
 
-    const/4 v2, 0x0
+.method public final jumpToCurrentState()V
+    .locals 2
 
-    aput-object p1, v1, v2
+    iget-object v0, p0, Loao;->l:Lacx;
 
-    const-string p1, "b"
+    invoke-virtual {v0}, Lacx;->j()V
 
-    aput-object p1, v1, p2
+    invoke-virtual {p0}, Loao;->getLevel()I
 
-    const/4 p1, 0x2
+    move-result v0
 
-    const-class p2, Loan;
+    int-to-float v0, v0
 
-    aput-object p2, v1, p1
+    const v1, 0x461c4000    # 10000.0f
 
-    const/4 p1, 0x3
+    div-float/2addr v0, v1
 
-    const-string p2, "c"
+    invoke-virtual {p0, v0}, Loao;->a(F)V
 
-    aput-object p2, v1, p1
+    return-void
+.end method
 
-    const/4 p1, 0x4
+.method protected final onLevelChange(I)Z
+    .locals 3
 
-    const-string p2, "d"
+    iget-boolean v0, p0, Loao;->m:Z
 
-    aput-object p2, v1, p1
+    const v1, 0x461c4000    # 10000.0f
 
-    const/4 p1, 0x5
+    if-eqz v0, :cond_0
 
-    const-string p2, "e"
+    iget-object v0, p0, Loao;->l:Lacx;
 
-    aput-object p2, v1, p1
+    invoke-virtual {v0}, Lacx;->j()V
 
-    sget-object p1, Loao;->f:Loao;
+    int-to-float p1, p1
 
-    invoke-static {p1, v0, v1}, Loao;->X(Lnxy;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/Object;
+    div-float/2addr p1, v1
 
-    move-result-object p1
+    invoke-virtual {p0, p1}, Loao;->a(F)V
 
-    return-object p1
+    goto :goto_0
 
-    :pswitch_6
-    invoke-static {p2}, Ljava/lang/Byte;->valueOf(B)Ljava/lang/Byte;
+    :cond_0
+    iget-object v0, p0, Loao;->l:Lacx;
 
-    move-result-object p1
+    iget v2, p0, Loao;->b:F
 
-    return-object p1
+    mul-float v2, v2, v1
 
-    nop
+    invoke-virtual {v0, v2}, Lact;->h(F)V
 
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_6
-        :pswitch_0
-        :pswitch_5
-        :pswitch_4
-        :pswitch_3
-        :pswitch_2
-        :pswitch_1
-    .end packed-switch
+    iget-object v0, p0, Loao;->l:Lacx;
+
+    int-to-float p1, p1
+
+    iget-boolean v1, v0, Lact;->m:Z
+
+    if-eqz v1, :cond_1
+
+    iput p1, v0, Lacx;->r:F
+
+    goto :goto_0
+
+    :cond_1
+    iget-object v1, v0, Lacx;->q:Lacy;
+
+    if-nez v1, :cond_2
+
+    new-instance v1, Lacy;
+
+    invoke-direct {v1, p1}, Lacy;-><init>(F)V
+
+    iput-object v1, v0, Lacx;->q:Lacy;
+
+    :cond_2
+    iget-object v1, v0, Lacx;->q:Lacy;
+
+    invoke-virtual {v1, p1}, Lacy;->d(F)V
+
+    invoke-virtual {v0}, Lact;->e()V
+
+    :goto_0
+    const/4 p1, 0x1
+
+    return p1
 .end method

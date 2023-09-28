@@ -1,105 +1,75 @@
-.class public final synthetic Llay;
+.class final Llay;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Llcj;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field public final synthetic a:Ljava/lang/Object;
+.field final synthetic a:Llba;
 
-.field private final synthetic b:I
+.field private final b:Ljava/util/concurrent/Future;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lkym;I)V
+.method public constructor <init>(Llba;Ljava/util/concurrent/Future;)V
     .locals 0
 
-    iput p2, p0, Llay;->b:I
+    iput-object p1, p0, Llay;->a:Llba;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Llay;->a:Ljava/lang/Object;
-
-    return-void
-.end method
-
-.method public synthetic constructor <init>(Llcd;I)V
-    .locals 0
-
-    iput p2, p0, Llay;->b:I
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Llay;->a:Ljava/lang/Object;
+    iput-object p2, p0, Llay;->b:Ljava/util/concurrent/Future;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Ljava/lang/String;
+.method public final run()V
     .locals 4
 
-    iget v0, p0, Llay;->b:I
+    :try_start_0
+    iget-object v0, p0, Llay;->b:Ljava/util/concurrent/Future;
 
-    const-string v1, ")"
+    invoke-static {v0}, Lplk;->ad(Ljava/util/concurrent/Future;)Ljava/lang/Object;
+    :try_end_0
+    .catch Ljava/util/concurrent/ExecutionException; {:try_start_0 .. :try_end_0} :catch_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    packed-switch v0, :pswitch_data_0
+    return-void
 
-    iget-object v0, p0, Llay;->a:Ljava/lang/Object;
+    :catchall_0
+    move-exception v0
 
-    check-cast v0, Llcd;
+    iget-object v1, p0, Llay;->a:Llba;
 
-    invoke-virtual {v0}, Llcd;->g()Llaq;
+    iget-object v1, v1, Llba;->a:Llar;
 
-    new-instance v0, Ljava/lang/StringBuilder;
+    new-instance v2, Lkqn;
 
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+    const/4 v3, 0x3
 
-    const-string v2, "attachImageToTexture("
+    invoke-direct {v2, v0, v3}, Lkqn;-><init>(Ljava/lang/Throwable;I)V
 
-    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v2}, Llar;->execute(Ljava/lang/Runnable;)V
 
-    const-string v2, "RGBA8888"
+    return-void
 
-    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    :catch_0
+    move-exception v0
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    iget-object v1, p0, Llay;->a:Llba;
 
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    iget-object v1, v1, Llba;->a:Llar;
 
-    move-result-object v0
+    new-instance v2, Lnfs;
 
-    return-object v0
+    const/4 v3, 0x1
 
-    :pswitch_0
-    iget-object v0, p0, Llay;->a:Ljava/lang/Object;
+    invoke-direct {v2, v0, v3}, Lnfs;-><init>(Ljava/util/concurrent/ExecutionException;I)V
 
-    invoke-virtual {v0}, Ljava/lang/Object;->toString()Ljava/lang/String;
+    invoke-virtual {v1, v2}, Llar;->execute(Ljava/lang/Runnable;)V
 
-    move-result-object v0
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v3, "createCanvasForSurface("
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    return-object v0
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+    return-void
 .end method

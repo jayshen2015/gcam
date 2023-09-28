@@ -1,42 +1,25 @@
-.class final Lbku;
+.class public interface abstract Lbku;
 .super Ljava/lang/Object;
 
 
-# static fields
-.field public static final a:Ldne;
+# virtual methods
+.method public abstract a()Lbku;
+.end method
 
+.method public abstract d(Lbks;)V
+.end method
 
-# direct methods
-.method static constructor <clinit>()V
-    .locals 3
+.method public abstract e(Lbks;)V
+.end method
 
-    const/4 v0, 0x3
+.method public abstract g(Lbks;)Z
+.end method
 
-    new-array v0, v0, [Ljava/lang/String;
+.method public abstract h(Lbks;)Z
+.end method
 
-    const/4 v1, 0x0
+.method public abstract i(Lbks;)Z
+.end method
 
-    const-string v2, "nm"
-
-    aput-object v2, v0, v1
-
-    const/4 v1, 0x1
-
-    const-string v2, "mm"
-
-    aput-object v2, v0, v1
-
-    const/4 v1, 0x2
-
-    const-string v2, "hd"
-
-    aput-object v2, v0, v1
-
-    invoke-static {v0}, Ldne;->J([Ljava/lang/String;)Ldne;
-
-    move-result-object v0
-
-    sput-object v0, Lbku;->a:Ldne;
-
-    return-void
+.method public abstract j()Z
 .end method

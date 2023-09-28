@@ -1,214 +1,123 @@
 .class public final Lhla;
 .super Ljava/lang/Object;
 
-# interfaces
-.implements Lnno;
-
 
 # instance fields
-.field final synthetic a:Ljava/lang/Object;
+.field public final a:[Lhkz;
 
-.field final synthetic b:Lhlb;
+.field public final b:F
+
+.field public final c:F
+
+.field public final d:F
+
+.field public final e:F
+
+.field public final f:J
 
 
 # direct methods
-.method public constructor <init>(Lhlb;Ljava/lang/Object;)V
-    .locals 0
-
-    iput-object p1, p0, Lhla;->b:Lhlb;
-
-    iput-object p2, p0, Lhla;->a:Ljava/lang/Object;
+.method public constructor <init>(Lpud;)V
+    .locals 6
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    return-void
-.end method
+    iget v0, p1, Lpud;->j:F
 
+    iput v0, p0, Lhla;->b:F
 
-# virtual methods
-.method public final synthetic a(Ljava/lang/Object;)Lnou;
-    .locals 8
+    iget-object v0, p1, Lpud;->i:Lpuc;
 
-    check-cast p1, Lbpj;
+    if-nez v0, :cond_0
 
-    :try_start_0
-    iget-object v0, p0, Lhla;->b:Lhlb;
-
-    iget-object v0, v0, Lhlb;->c:Ljava/lang/String;
-
-    invoke-virtual {p1, v0}, Lbpj;->e(Ljava/lang/String;)Lbph;
-
-    move-result-object p1
-    :try_end_0
-    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_1
-
-    const/4 v0, 0x0
-
-    if-eqz p1, :cond_0
-
-    :try_start_1
-    invoke-virtual {p1}, Lbph;->d()Ljava/io/File;
-
-    move-result-object v1
-
-    iget-object v2, p0, Lhla;->a:Ljava/lang/Object;
-
-    invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    new-instance v3, Ljava/io/FileOutputStream;
-
-    invoke-direct {v3, v1}, Ljava/io/FileOutputStream;-><init>(Ljava/io/File;)V
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_3
-
-    :try_start_2
-    move-object v1, v2
-
-    check-cast v1, Lhkx;
-
-    iget-object v1, v1, Lhkx;->b:Lkab;
-
-    iget v1, v1, Lkab;->e:I
-
-    and-int/lit16 v4, v1, 0xff
-
-    invoke-virtual {v3, v4}, Ljava/io/FileOutputStream;->write(I)V
-
-    shr-int/lit8 v1, v1, 0x8
-
-    invoke-virtual {v3, v1}, Ljava/io/FileOutputStream;->write(I)V
-
-    check-cast v2, Lhkx;
-
-    iget-object v1, v2, Lhkx;->a:Landroid/graphics/Bitmap;
-
-    sget-object v2, Landroid/graphics/Bitmap$CompressFormat;->JPEG:Landroid/graphics/Bitmap$CompressFormat;
-
-    const/16 v4, 0x50
-
-    invoke-virtual {v1, v2, v4, v3}, Landroid/graphics/Bitmap;->compress(Landroid/graphics/Bitmap$CompressFormat;ILjava/io/OutputStream;)Z
-    :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_1
-
-    :try_start_3
-    invoke-virtual {v3}, Ljava/io/FileOutputStream;->close()V
-
-    invoke-virtual {p1}, Lbph;->c()V
-
-    iget-object v1, p0, Lhla;->b:Lhlb;
-
-    iget-object v1, v1, Lhlb;->f:Ljava/lang/Object;
-
-    monitor-enter v1
-    :try_end_3
-    .catchall {:try_start_3 .. :try_end_3} :catchall_3
-
-    :try_start_4
-    iget-object v2, p0, Lhla;->b:Lhlb;
-
-    iput-object v0, v2, Lhlb;->e:Ljava/lang/Object;
-
-    monitor-exit v1
-    :try_end_4
-    .catchall {:try_start_4 .. :try_end_4} :catchall_0
-
-    :try_start_5
-    invoke-virtual {p1}, Lbph;->b()V
-    :try_end_5
-    .catch Ljava/io/IOException; {:try_start_5 .. :try_end_5} :catch_1
-
-    goto :goto_1
-
-    :catchall_0
-    move-exception v0
-
-    :try_start_6
-    monitor-exit v1
-    :try_end_6
-    .catchall {:try_start_6 .. :try_end_6} :catchall_0
-
-    :try_start_7
-    throw v0
-    :try_end_7
-    .catchall {:try_start_7 .. :try_end_7} :catchall_3
-
-    :catchall_1
-    move-exception v0
-
-    :try_start_8
-    invoke-virtual {v3}, Ljava/io/FileOutputStream;->close()V
-    :try_end_8
-    .catchall {:try_start_8 .. :try_end_8} :catchall_2
-
-    goto :goto_0
-
-    :catchall_2
-    move-exception v1
-
-    :try_start_9
-    const-class v2, Ljava/lang/Throwable;
-
-    const-string v3, "addSuppressed"
-
-    const/4 v4, 0x1
-
-    new-array v5, v4, [Ljava/lang/Class;
-
-    const-class v6, Ljava/lang/Throwable;
-
-    const/4 v7, 0x0
-
-    aput-object v6, v5, v7
-
-    invoke-virtual {v2, v3, v5}, Ljava/lang/Class;->getDeclaredMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
-
-    move-result-object v2
-
-    new-array v3, v4, [Ljava/lang/Object;
-
-    aput-object v1, v3, v7
-
-    invoke-virtual {v2, v0, v3}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
-    :try_end_9
-    .catch Ljava/lang/Exception; {:try_start_9 .. :try_end_9} :catch_0
-    .catchall {:try_start_9 .. :try_end_9} :catchall_3
-
-    goto :goto_0
-
-    :catch_0
-    move-exception v1
-
-    :goto_0
-    :try_start_a
-    throw v0
-    :try_end_a
-    .catchall {:try_start_a .. :try_end_a} :catchall_3
-
-    :catchall_3
-    move-exception v0
-
-    :try_start_b
-    invoke-virtual {p1}, Lbph;->b()V
-
-    throw v0
+    sget-object v0, Lpuc;->i:Lpuc;
 
     :cond_0
-    :goto_1
-    invoke-static {v0}, Lnsy;->B(Ljava/lang/Object;)Lnou;
+    iget v0, v0, Lpuc;->e:F
 
-    move-result-object p1
-    :try_end_b
-    .catch Ljava/io/IOException; {:try_start_b .. :try_end_b} :catch_1
+    iget-object v0, p1, Lpud;->i:Lpuc;
 
-    goto :goto_2
+    if-nez v0, :cond_1
 
-    :catch_1
-    move-exception p1
+    sget-object v0, Lpuc;->i:Lpuc;
 
-    invoke-static {p1}, Lnsy;->A(Ljava/lang/Throwable;)Lnou;
+    :cond_1
+    iget v0, v0, Lpuc;->g:F
 
-    move-result-object p1
+    iput v0, p0, Lhla;->c:F
 
-    :goto_2
-    return-object p1
+    iget-object v0, p1, Lpud;->i:Lpuc;
+
+    if-nez v0, :cond_2
+
+    sget-object v0, Lpuc;->i:Lpuc;
+
+    :cond_2
+    iget v0, v0, Lpuc;->f:F
+
+    iput v0, p0, Lhla;->d:F
+
+    iget-object v0, p1, Lpud;->i:Lpuc;
+
+    if-nez v0, :cond_3
+
+    sget-object v0, Lpuc;->i:Lpuc;
+
+    :cond_3
+    iget v0, v0, Lpuc;->h:F
+
+    iput v0, p0, Lhla;->e:F
+
+    iget-wide v0, p1, Lpud;->c:J
+
+    iput-wide v0, p0, Lhla;->f:J
+
+    iget-object v0, p1, Lpud;->e:Lpte;
+
+    if-nez v0, :cond_4
+
+    sget-object v0, Lpte;->b:Lpte;
+
+    :cond_4
+    iget-object v1, v0, Lpte;->a:Lppm;
+
+    invoke-interface {v1}, Lppm;->size()I
+
+    move-result v1
+
+    new-array v1, v1, [Lhkz;
+
+    iput-object v1, p0, Lhla;->a:[Lhkz;
+
+    const/4 v1, 0x0
+
+    :goto_0
+    iget-object v2, p0, Lhla;->a:[Lhkz;
+
+    array-length v3, v2
+
+    if-ge v1, v3, :cond_5
+
+    new-instance v3, Lhkz;
+
+    iget-object v4, v0, Lpte;->a:Lppm;
+
+    invoke-interface {v4, v1}, Lppm;->get(I)Ljava/lang/Object;
+
+    move-result-object v4
+
+    check-cast v4, Lptd;
+
+    iget-boolean v5, p1, Lpud;->g:Z
+
+    invoke-direct {v3, v4, v5}, Lhkz;-><init>(Lptd;Z)V
+
+    aput-object v3, v2, v1
+
+    add-int/lit8 v1, v1, 0x1
+
+    goto :goto_0
+
+    :cond_5
+    return-void
 .end method

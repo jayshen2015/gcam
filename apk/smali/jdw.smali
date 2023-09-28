@@ -1,173 +1,181 @@
 .class public final Ljdw;
-.super Ljds;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Landroid/view/View$OnTouchListener;
 
 
 # instance fields
-.field private final a:Ljfm;
-
-.field private final b:Lkgd;
+.field final synthetic a:Lcom/google/android/apps/camera/ui/modeslider/ModeSlider;
 
 
 # direct methods
-.method public constructor <init>(ILjfm;Lkgd;[B[B)V
+.method public constructor <init>(Lcom/google/android/apps/camera/ui/modeslider/ModeSlider;)V
     .locals 0
 
-    invoke-direct {p0, p1}, Ljds;-><init>(I)V
+    iput-object p1, p0, Ljdw;->a:Lcom/google/android/apps/camera/ui/modeslider/ModeSlider;
 
-    iput-object p3, p0, Ljdw;->b:Lkgd;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p2, p0, Ljdw;->a:Ljfm;
-
-    const/4 p3, 0x2
-
-    if-ne p1, p3, :cond_1
-
-    iget-boolean p1, p2, Ljfm;->b:Z
-
-    if-nez p1, :cond_0
-
-    goto :goto_0
-
-    :cond_0
-    new-instance p1, Ljava/lang/IllegalArgumentException;
-
-    const-string p2, "Best-effort write calls cannot pass methods that should auto-resolve missing features."
-
-    invoke-direct {p1, p2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw p1
-
-    :cond_1
-    :goto_0
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Ljen;)Z
-    .locals 0
+.method public final onTouch(Landroid/view/View;Landroid/view/MotionEvent;)Z
+    .locals 7
 
-    iget-object p1, p0, Ljdw;->a:Ljfm;
+    move-object v0, p1
 
-    iget-boolean p1, p1, Ljfm;->b:Z
+    check-cast v0, Lcom/google/android/apps/camera/ui/modeslider/ModeSlider;
 
-    return p1
-.end method
+    invoke-virtual {v0}, Lcom/google/android/apps/camera/ui/modeslider/ModeSlider;->j()Z
 
-.method public final b(Ljen;)[Ljca;
-    .locals 0
+    move-result v1
 
-    iget-object p1, p0, Ljdw;->a:Ljfm;
+    const/4 v2, 0x0
 
-    iget-object p1, p1, Ljfm;->a:[Ljca;
+    if-nez v1, :cond_0
 
-    return-object p1
-.end method
+    return v2
 
-.method public final d(Lcom/google/android/gms/common/api/Status;)V
-    .locals 1
+    :cond_0
+    iget-object v1, p0, Ljdw;->a:Lcom/google/android/apps/camera/ui/modeslider/ModeSlider;
 
-    iget-object v0, p0, Ljdw;->b:Lkgd;
+    iget-object v1, v1, Lcom/google/android/apps/camera/ui/modeslider/ModeSlider;->a:Ljem;
 
-    invoke-static {p1}, Ljhp;->ai(Lcom/google/android/gms/common/api/Status;)Ljda;
+    const/4 v3, 0x1
 
-    move-result-object p1
+    if-eqz v1, :cond_2
 
-    invoke-virtual {v0, p1}, Lkgd;->j(Ljava/lang/Exception;)V
+    invoke-virtual {p2}, Landroid/view/MotionEvent;->getAction()I
 
-    return-void
-.end method
+    move-result v1
 
-.method public final e(Ljava/lang/Exception;)V
-    .locals 1
+    if-nez v1, :cond_2
 
-    iget-object v0, p0, Ljdw;->b:Lkgd;
+    invoke-virtual {p1}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
 
-    invoke-virtual {v0, p1}, Lkgd;->j(Ljava/lang/Exception;)V
+    move-result-object v1
 
-    return-void
-.end method
+    if-eqz v1, :cond_1
 
-.method public final f(Ljen;)V
-    .locals 2
+    invoke-virtual {p1}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
 
-    :try_start_0
-    iget-object v0, p0, Ljdw;->a:Ljfm;
+    move-result-object v1
 
-    iget-object p1, p1, Ljen;->b:Ljcz;
+    invoke-interface {v1, v3}, Landroid/view/ViewParent;->requestDisallowInterceptTouchEvent(Z)V
 
-    iget-object v1, p0, Ljdw;->b:Lkgd;
+    :cond_1
+    iget-object v1, p0, Ljdw;->a:Lcom/google/android/apps/camera/ui/modeslider/ModeSlider;
 
-    iget-object v0, v0, Ljfm;->d:Ljfl;
+    iget-object v1, v1, Lcom/google/android/apps/camera/ui/modeslider/ModeSlider;->a:Ljem;
 
-    iget-object v0, v0, Ljfl;->a:Ljfh;
+    invoke-interface {v1, v3}, Ljem;->c(Z)V
 
-    invoke-interface {v0, p1, v1}, Ljfh;->a(Ljava/lang/Object;Ljava/lang/Object;)V
-    :try_end_0
-    .catch Landroid/os/DeadObjectException; {:try_start_0 .. :try_end_0} :catch_2
-    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_1
-    .catch Ljava/lang/RuntimeException; {:try_start_0 .. :try_end_0} :catch_0
+    const/4 v1, 0x0
 
-    return-void
+    goto :goto_0
 
-    :catch_0
-    move-exception p1
+    :cond_2
+    const/4 v1, 0x0
 
-    invoke-virtual {p0, p1}, Ljdw;->e(Ljava/lang/Exception;)V
+    :goto_0
+    invoke-virtual {v0}, Lcom/google/android/apps/camera/ui/modeslider/ModeSlider;->getChildCount()I
 
-    return-void
+    move-result v4
 
-    :catch_1
-    move-exception p1
+    if-ge v1, v4, :cond_5
 
-    invoke-static {p1}, Ljdy;->h(Landroid/os/RemoteException;)Lcom/google/android/gms/common/api/Status;
+    invoke-virtual {v0, v1}, Lcom/google/android/apps/camera/ui/modeslider/ModeSlider;->getChildAt(I)Landroid/view/View;
 
-    move-result-object p1
+    move-result-object v4
 
-    invoke-virtual {p0, p1}, Ljdw;->d(Lcom/google/android/gms/common/api/Status;)V
+    invoke-virtual {v4}, Landroid/view/View;->getVisibility()I
 
-    return-void
+    move-result v5
 
-    :catch_2
-    move-exception p1
+    if-eqz v5, :cond_3
 
-    throw p1
-.end method
+    goto :goto_1
 
-.method public final g(Ligo;Z)V
-    .locals 8
+    :cond_3
+    new-instance v5, Landroid/graphics/Rect;
 
-    iget-object v2, p0, Ljdw;->b:Lkgd;
+    invoke-direct {v5}, Landroid/graphics/Rect;-><init>()V
 
-    iget-object v0, p1, Ligo;->a:Ljava/lang/Object;
+    invoke-virtual {v4, v5}, Landroid/view/View;->getHitRect(Landroid/graphics/Rect;)V
 
-    invoke-static {p2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+    const/high16 v4, -0x80000000
+
+    iput v4, v5, Landroid/graphics/Rect;->top:I
+
+    const v4, 0x7fffffff
+
+    iput v4, v5, Landroid/graphics/Rect;->bottom:I
+
+    invoke-virtual {p2}, Landroid/view/MotionEvent;->getX()F
+
+    move-result v4
+
+    float-to-int v4, v4
+
+    invoke-virtual {p2}, Landroid/view/MotionEvent;->getY()F
+
+    move-result v6
+
+    float-to-int v6, v6
+
+    invoke-virtual {v5, v4, v6}, Landroid/graphics/Rect;->contains(II)Z
+
+    move-result v4
+
+    if-eqz v4, :cond_4
+
+    iget-object v0, p0, Ljdw;->a:Lcom/google/android/apps/camera/ui/modeslider/ModeSlider;
+
+    invoke-virtual {v0, v1, v3}, Lcom/google/android/apps/camera/ui/modeslider/ModeSlider;->l(IZ)V
+
+    goto :goto_2
+
+    :cond_4
+    :goto_1
+    add-int/lit8 v1, v1, 0x1
+
+    goto :goto_0
+
+    :cond_5
+    :goto_2
+    iget-object v0, p0, Ljdw;->a:Lcom/google/android/apps/camera/ui/modeslider/ModeSlider;
+
+    iget-object v0, v0, Lcom/google/android/apps/camera/ui/modeslider/ModeSlider;->a:Ljem;
+
+    if-eqz v0, :cond_6
+
+    invoke-virtual {p2}, Landroid/view/MotionEvent;->getAction()I
+
+    move-result p2
+
+    if-ne p2, v3, :cond_6
+
+    iget-object p2, p0, Ljdw;->a:Lcom/google/android/apps/camera/ui/modeslider/ModeSlider;
+
+    iget-object p2, p2, Lcom/google/android/apps/camera/ui/modeslider/ModeSlider;->a:Ljem;
+
+    invoke-interface {p2, p1, v3}, Ljem;->b(Landroid/view/View;Z)V
+
+    invoke-virtual {p1}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
 
     move-result-object p2
 
-    invoke-interface {v0, v2, p2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    if-eqz p2, :cond_6
 
-    iget-object p2, v2, Lkgd;->a:Ljava/lang/Object;
+    invoke-virtual {p1}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
 
-    new-instance v7, Ljek;
+    move-result-object p1
 
-    const/4 v3, 0x0
+    invoke-interface {p1, v2}, Landroid/view/ViewParent;->requestDisallowInterceptTouchEvent(Z)V
 
-    const/4 v4, 0x0
-
-    const/4 v5, 0x0
-
-    const/4 v6, 0x0
-
-    move-object v0, v7
-
-    move-object v1, p1
-
-    invoke-direct/range {v0 .. v6}, Ljek;-><init>(Ligo;Lkgd;[B[B[B[B)V
-
-    check-cast p2, Ljot;
-
-    invoke-virtual {p2, v7}, Ljot;->g(Ljon;)V
-
-    return-void
+    :cond_6
+    return v3
 .end method

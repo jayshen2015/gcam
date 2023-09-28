@@ -1,104 +1,119 @@
 .class public final Loff;
-.super Lofi;
-
-
-# static fields
-.field public static final CREATOR:Landroid/os/Parcelable$Creator;
+.super Ljava/lang/Object;
 
 
 # instance fields
-.field public a:F
+.field public final a:Ljava/lang/Object;
 
-.field public b:F
+.field public final b:Lofh;
 
-.field public c:F
+.field public c:Z
+
+.field public d:Ljava/lang/Object;
+
+.field public e:Ljava/lang/Exception;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
-
-    new-instance v0, Llqu;
-
-    const/4 v1, 0x3
-
-    invoke-direct {v0, v1}, Llqu;-><init>(I)V
-
-    sput-object v0, Loff;->CREATOR:Landroid/os/Parcelable$Creator;
-
-    return-void
-.end method
-
 .method public constructor <init>()V
     .locals 0
 
-    invoke-direct {p0}, Lofi;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
-.method public constructor <init>(Landroid/os/Parcel;)V
+.method public constructor <init>([B)V
     .locals 0
 
-    invoke-direct {p0}, Lofi;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-virtual {p0, p1}, Lofi;->a(Landroid/os/Parcel;)V
+    new-instance p1, Ljava/lang/Object;
+
+    invoke-direct {p1}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Loff;->a:Ljava/lang/Object;
+
+    new-instance p1, Lofh;
+
+    invoke-direct {p1}, Lofh;-><init>()V
+
+    iput-object p1, p0, Loff;->b:Lofh;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Landroid/os/Parcel;)V
-    .locals 1
+.method public final a()V
+    .locals 2
 
-    invoke-super {p0, p1}, Lofi;->a(Landroid/os/Parcel;)V
+    iget-object v0, p0, Loff;->a:Ljava/lang/Object;
 
-    invoke-virtual {p1}, Landroid/os/Parcel;->readFloat()F
+    monitor-enter v0
 
-    move-result v0
+    :try_start_0
+    iget-boolean v1, p0, Loff;->c:Z
 
-    iput v0, p0, Loff;->a:F
+    if-nez v1, :cond_0
 
-    invoke-virtual {p1}, Landroid/os/Parcel;->readFloat()F
-
-    move-result v0
-
-    iput v0, p0, Loff;->b:F
-
-    invoke-virtual {p1}, Landroid/os/Parcel;->readFloat()F
-
-    move-result p1
-
-    iput p1, p0, Loff;->c:F
+    monitor-exit v0
 
     return-void
-.end method
 
-.method public final describeContents()I
-    .locals 1
+    :cond_0
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    const/4 v0, 0x0
+    iget-object v0, p0, Loff;->b:Lofh;
 
-    return v0
-.end method
-
-.method public final writeToParcel(Landroid/os/Parcel;I)V
-    .locals 0
-
-    invoke-super {p0, p1, p2}, Lofi;->writeToParcel(Landroid/os/Parcel;I)V
-
-    iget p2, p0, Loff;->a:F
-
-    invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeFloat(F)V
-
-    iget p2, p0, Loff;->b:F
-
-    invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeFloat(F)V
-
-    iget p2, p0, Loff;->c:F
-
-    invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeFloat(F)V
+    invoke-virtual {v0, p0}, Lofh;->b(Loff;)V
 
     return-void
+
+    :catchall_0
+    move-exception v1
+
+    :try_start_1
+    monitor-exit v0
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    throw v1
+.end method
+
+.method public final b()Z
+    .locals 3
+
+    iget-object v0, p0, Loff;->a:Ljava/lang/Object;
+
+    monitor-enter v0
+
+    :try_start_0
+    iget-boolean v1, p0, Loff;->c:Z
+
+    const/4 v2, 0x0
+
+    if-eqz v1, :cond_0
+
+    iget-object v1, p0, Loff;->e:Ljava/lang/Exception;
+
+    if-nez v1, :cond_0
+
+    const/4 v2, 0x1
+
+    :cond_0
+    monitor-exit v0
+
+    return v2
+
+    :catchall_0
+    move-exception v1
+
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw v1
 .end method

@@ -1,329 +1,296 @@
 .class public final Lfdz;
 .super Ljava/lang/Object;
 
-
-# static fields
-.field private static final d:Lnak;
+# interfaces
+.implements Lfea;
 
 
 # instance fields
-.field public final a:Ljava/lang/Object;
+.field final a:Ljava/util/ArrayList;
 
-.field public final b:Ljava/util/concurrent/Executor;
+.field final b:[F
 
-.field public final c:Ljava/util/EnumMap;
+.field final c:[F
 
-.field private final e:J
+.field final d:[F
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
-
-    const-string v0, "com/google/android/apps/camera/memory/MemoryManager"
-
-    invoke-static {v0}, Lnak;->h(Ljava/lang/String;)Lnak;
-
-    move-result-object v0
-
-    sput-object v0, Lfdz;->d:Lnak;
-
-    return-void
-.end method
-
-.method public constructor <init>(Llas;Ljava/util/concurrent/Executor;[B)V
+.method public constructor <init>()V
     .locals 2
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iget-wide v0, p1, Llas;->a:J
+    new-instance v0, Ljava/util/ArrayList;
 
-    iput-wide v0, p0, Lfdz;->e:J
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    new-instance p1, Ljava/util/EnumMap;
+    iput-object v0, p0, Lfdz;->a:Ljava/util/ArrayList;
 
-    const-class p3, Lfdv;
+    const/16 v0, 0x26
 
-    invoke-direct {p1, p3}, Ljava/util/EnumMap;-><init>(Ljava/lang/Class;)V
+    new-array v1, v0, [F
 
-    iput-object p1, p0, Lfdz;->c:Ljava/util/EnumMap;
+    fill-array-data v1, :array_0
 
-    new-instance p1, Ljava/lang/Object;
+    iput-object v1, p0, Lfdz;->b:[F
 
-    invoke-direct {p1}, Ljava/lang/Object;-><init>()V
+    new-array v1, v0, [F
 
-    iput-object p1, p0, Lfdz;->a:Ljava/lang/Object;
+    fill-array-data v1, :array_1
 
-    iput-object p2, p0, Lfdz;->b:Ljava/util/concurrent/Executor;
+    iput-object v1, p0, Lfdz;->c:[F
+
+    new-array v0, v0, [F
+
+    fill-array-data v0, :array_2
+
+    iput-object v0, p0, Lfdz;->d:[F
 
     return-void
-.end method
 
-.method private final b()J
-    .locals 6
+    :array_0
+    .array-data 4
+        -0x409b4e87
+        -0x40a3d70a    # -0.86f
+        -0x40a3d70a    # -0.86f
+        -0x40c5f927
+        -0x40cb17df
+        -0x40cb17df
+        -0x40d70a3d    # -0.66f
+        -0x40d70a3d    # -0.66f
+        -0x41317e56
+        -0x4134e810
+        -0x4134e810
+        -0x413bbbc7
+        -0x413bbbc7
+        -0x41428f5c    # -0.37f
+        -0x41428f5c    # -0.37f
+        0x0
+        0x0
+        0x0
+        0x0
+        0x0
+        0x0
+        0x0
+        0x3ebd70a4    # 0.37f
+        0x3ebd70a4    # 0.37f
+        0x3ec44439
+        0x3ec44439
+        0x3ecb17f0
+        0x3ecb17f0
+        0x3ece81aa
+        0x3f28f5c3    # 0.66f
+        0x3f28f5c3    # 0.66f
+        0x3f34e821
+        0x3f34e821
+        0x3f3a06d9
+        0x3f5c28f6    # 0.86f
+        0x3f5c28f6    # 0.86f
+        0x3f64b179
+        -0x409b4e87
+    .end array-data
 
-    iget-object v0, p0, Lfdz;->a:Ljava/lang/Object;
+    :array_1
+    .array-data 4
+        0x0
+        -0x41444439
+        0x3ebbbbc7
+        0x0
+        -0x413d70a4    # -0.38f
+        0x3ec28f5c    # 0.38f
+        -0x40d62fcf
+        0x3f29d031
+        0x0
+        -0x41369d0f
+        0x3ec962f1
+        -0x40ca3d71    # -0.71f
+        0x3f35c28f    # 0.71f
+        -0x40a2fc9c
+        0x3f5d0364
+        -0x408e81ba
+        -0x40c5f927
+        -0x41317e56
+        0x0
+        0x3ece81aa
+        0x3f3a06d9
+        0x3f717e46
+        -0x40a2fc9c
+        0x3f5d0364
+        -0x40ca3d71    # -0.71f
+        0x3f35c28f    # 0.71f
+        -0x41369d0f
+        0x3ec962f1
+        0x0
+        -0x40d62fcf
+        0x3f29d031
+        -0x413d70a4    # -0.38f
+        0x3ec28f5c    # 0.38f
+        0x0
+        -0x41444439
+        0x3ebbbbc7
+        0x0
+        0x0
+    .end array-data
 
-    monitor-enter v0
-
-    :try_start_0
-    iget-object v1, p0, Lfdz;->c:Ljava/util/EnumMap;
-
-    invoke-virtual {v1}, Ljava/util/EnumMap;->keySet()Ljava/util/Set;
-
-    move-result-object v1
-
-    invoke-interface {v1}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
-
-    move-result-object v1
-
-    const-wide/16 v2, 0x0
-
-    :goto_0
-    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v4
-
-    if-eqz v4, :cond_0
-
-    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v4
-
-    check-cast v4, Lfdv;
-
-    iget-object v5, p0, Lfdz;->c:Ljava/util/EnumMap;
-
-    invoke-virtual {v5, v4}, Ljava/util/EnumMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v4
-
-    check-cast v4, Lfdy;
-
-    iget-object v4, v4, Lfdy;->c:Ljava/lang/Object;
-
-    check-cast v4, Landroidx/wear/ambient/AmbientModeSupport$AmbientController;
-
-    invoke-virtual {v4}, Landroidx/wear/ambient/AmbientModeSupport$AmbientController;->m()Ljvs;
-
-    move-result-object v4
-
-    check-cast v4, Ljvk;
-
-    iget-object v4, v4, Ljvk;->d:Ljava/lang/Object;
-
-    check-cast v4, Ljava/lang/Long;
-
-    invoke-virtual {v4}, Ljava/lang/Long;->longValue()J
-
-    move-result-wide v4
-
-    add-long/2addr v2, v4
-
-    goto :goto_0
-
-    :cond_0
-    iget-wide v4, p0, Lfdz;->e:J
-
-    sub-long/2addr v4, v2
-
-    monitor-exit v0
-
-    return-wide v4
-
-    :catchall_0
-    move-exception v1
-
-    monitor-exit v0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    goto :goto_2
-
-    :goto_1
-    throw v1
-
-    :goto_2
-    goto :goto_1
+    :array_2
+    .array-data 4
+        0x3f000000    # 0.5f
+        0x3f000000    # 0.5f
+        0x3f000000    # 0.5f
+        0x3f333333    # 0.7f
+        0x3f333333    # 0.7f
+        0x3f333333    # 0.7f
+        0x3f000000    # 0.5f
+        0x3f000000    # 0.5f
+        0x3f800000    # 1.0f
+        0x3f800000    # 1.0f
+        0x3f800000    # 1.0f
+        0x3f333333    # 0.7f
+        0x3f333333    # 0.7f
+        0x3f000000    # 0.5f
+        0x3f000000    # 0.5f
+        0x3f000000    # 0.5f
+        0x3f333333    # 0.7f
+        0x3f800000    # 1.0f
+        0x3f800000    # 1.0f
+        0x3f800000    # 1.0f
+        0x3f333333    # 0.7f
+        0x3f000000    # 0.5f
+        0x3f000000    # 0.5f
+        0x3f000000    # 0.5f
+        0x3f333333    # 0.7f
+        0x3f333333    # 0.7f
+        0x3f800000    # 1.0f
+        0x3f800000    # 1.0f
+        0x3f800000    # 1.0f
+        0x3f000000    # 0.5f
+        0x3f000000    # 0.5f
+        0x3f333333    # 0.7f
+        0x3f333333    # 0.7f
+        0x3f333333    # 0.7f
+        0x3f000000    # 0.5f
+        0x3f000000    # 0.5f
+        0x3f000000    # 0.5f
+        0x3f000000    # 0.5f
+    .end array-data
 .end method
 
 
 # virtual methods
-.method public final a()V
-    .locals 13
+.method public final a(FLfdv;[FII)V
+    .locals 7
 
-    iget-object v0, p0, Lfdz;->a:Ljava/lang/Object;
+    int-to-float p4, p4
 
-    monitor-enter v0
+    const/high16 v0, 0x40000000    # 2.0f
 
-    :try_start_0
-    invoke-direct {p0}, Lfdz;->b()J
+    div-float/2addr p4, v0
 
-    iget-object v1, p0, Lfdz;->c:Ljava/util/EnumMap;
+    int-to-float p5, p5
 
-    invoke-virtual {v1}, Ljava/util/EnumMap;->keySet()Ljava/util/Set;
+    div-float/2addr p5, v0
 
-    move-result-object v1
+    invoke-static {p4, p5}, Ljava/lang/Math;->min(FF)F
 
-    invoke-interface {v1}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
+    move-result v0
 
-    move-result-object v1
+    const v1, 0x3f733333    # 0.95f
 
-    :goto_0
-    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
+    mul-float v0, v0, v1
 
-    move-result v2
+    iget-object v1, p0, Lfdz;->a:Ljava/util/ArrayList;
 
-    if-eqz v2, :cond_2
+    invoke-virtual {v1}, Ljava/util/ArrayList;->clear()V
 
-    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    new-instance v1, Landroid/graphics/PointF;
 
-    move-result-object v2
+    invoke-direct {v1}, Landroid/graphics/PointF;-><init>()V
 
-    check-cast v2, Lfdv;
+    iget-object v2, p2, Lfdv;->h:Lfeh;
 
-    iget-object v3, p0, Lfdz;->c:Ljava/util/EnumMap;
+    const/4 v3, 0x0
 
-    invoke-virtual {v3, v2}, Ljava/util/EnumMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v3
-
-    check-cast v3, Lfdy;
-
-    iget-object v3, v3, Lfdy;->a:Ljava/lang/Object;
-
-    iget-object v4, p0, Lfdz;->a:Ljava/lang/Object;
-
-    monitor-enter v4
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_1
-
-    :try_start_1
-    invoke-direct {p0}, Lfdz;->b()J
-
-    move-result-wide v5
-
-    iget-object v7, p0, Lfdz;->c:Ljava/util/EnumMap;
-
-    invoke-virtual {v7, v2}, Ljava/util/EnumMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v7
-
-    check-cast v7, Lfdy;
-
-    iget-object v7, v7, Lfdy;->c:Ljava/lang/Object;
-
-    check-cast v7, Landroidx/wear/ambient/AmbientModeSupport$AmbientController;
-
-    invoke-virtual {v7}, Landroidx/wear/ambient/AmbientModeSupport$AmbientController;->l()Ljvs;
-
-    move-result-object v7
-
-    check-cast v7, Ljvu;
-
-    iget-object v7, v7, Ljvu;->a:Ljava/lang/Object;
-
-    check-cast v7, Ljava/lang/Long;
-
-    invoke-virtual {v7}, Ljava/lang/Long;->longValue()J
-
-    move-result-wide v7
-
-    const-wide/16 v9, 0x0
-
-    const/4 v11, 0x0
-
-    cmp-long v12, v7, v9
-
-    if-gez v12, :cond_0
-
-    sget-object v5, Lfdz;->d:Lnak;
-
-    invoke-virtual {v5}, Lnaf;->c()Lnaz;
-
-    move-result-object v5
-
-    check-cast v5, Lnah;
-
-    const/16 v6, 0x862
-
-    invoke-interface {v5, v6}, Lnah;->G(I)Lnaz;
-
-    move-result-object v5
-
-    check-cast v5, Lnah;
-
-    const-string v6, "Feature (%s) reports negative shot memory: %d. Disabling."
-
-    invoke-virtual {v2}, Lfdv;->name()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-interface {v5, v6, v2, v7, v8}, Lnah;->y(Ljava/lang/String;Ljava/lang/Object;J)V
-
-    monitor-exit v4
-
-    goto :goto_2
-
-    :cond_0
-    cmp-long v9, v7, v5
-
-    if-gtz v9, :cond_1
-
-    const/4 v11, 0x1
-
-    goto :goto_1
-
-    :cond_1
-    :goto_1
-    invoke-virtual {v2}, Lfdv;->name()Ljava/lang/String;
-
-    monitor-exit v4
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    :goto_2
-    :try_start_2
-    invoke-static {v11}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
-
-    move-result-object v2
-
-    check-cast v3, Ljvk;
-
-    invoke-virtual {v3, v2}, Ljvk;->bn(Ljava/lang/Object;)V
-    :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_1
+    if-nez v2, :cond_0
 
     goto :goto_0
 
-    :catchall_0
-    move-exception v1
+    :cond_0
+    invoke-virtual {v2}, Lfcr;->c()V
 
-    :try_start_3
-    monitor-exit v4
-    :try_end_3
-    .catchall {:try_start_3 .. :try_end_3} :catchall_0
+    iget-object v2, p2, Lfdv;->h:Lfeh;
 
-    :try_start_4
-    throw v1
+    const/high16 v4, 0x3f800000    # 1.0f
+
+    invoke-virtual {v2, v4}, Lfeh;->j(F)V
+
+    :goto_0
+    const/16 v2, 0x26
+
+    if-ge v3, v2, :cond_2
+
+    iget-object v2, p0, Lfdz;->b:[F
+
+    aget v2, v2, v3
+
+    mul-float v2, v2, p1
+
+    mul-float v2, v2, v0
+
+    add-float/2addr v2, p4
+
+    iput v2, v1, Landroid/graphics/PointF;->x:F
+
+    iget-object v2, p0, Lfdz;->c:[F
+
+    aget v2, v2, v3
+
+    mul-float v2, v2, p1
+
+    mul-float v2, v2, v0
+
+    add-float/2addr v2, p5
+
+    iput v2, v1, Landroid/graphics/PointF;->y:F
+
+    iget-object v2, p0, Lfdz;->d:[F
+
+    aget v2, v2, v3
+
+    const v4, 0x3ecccccd    # 0.4f
+
+    mul-float v2, v2, v4
+
+    iget-object v4, p2, Lfdv;->e:Lfct;
+
+    if-eqz v4, :cond_1
+
+    iget-object v5, p2, Lfdv;->h:Lfeh;
+
+    if-eqz v5, :cond_1
+
+    :try_start_0
+    iget v5, v1, Landroid/graphics/PointF;->x:F
+
+    iget v6, v1, Landroid/graphics/PointF;->y:F
+
+    invoke-virtual {v4, p3, v5, v6, v2}, Lfct;->f([FFFF)V
+    :try_end_0
+    .catch Lfcq; {:try_start_0 .. :try_end_0} :catch_0
+
+    goto :goto_1
+
+    :catch_0
+    move-exception v2
+
+    invoke-virtual {v2}, Lfcq;->printStackTrace()V
+
+    :cond_1
+    :goto_1
+    add-int/lit8 v3, v3, 0x1
+
+    goto :goto_0
 
     :cond_2
-    monitor-exit v0
-
     return-void
-
-    :catchall_1
-    move-exception v1
-
-    monitor-exit v0
-    :try_end_4
-    .catchall {:try_start_4 .. :try_end_4} :catchall_1
-
-    goto :goto_4
-
-    :goto_3
-    throw v1
-
-    :goto_4
-    goto :goto_3
 .end method

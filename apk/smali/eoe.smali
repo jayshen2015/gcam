@@ -1,22 +1,89 @@
-.class public final Leoe;
+.class final Leoe;
 .super Ljava/lang/Object;
 
+# interfaces
+.implements Landroid/app/Application$ActivityLifecycleCallbacks;
 
-# static fields
-.field public static final a:Lemu;
+
+# instance fields
+.field final synthetic a:Leof;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
+.method public constructor <init>(Leof;)V
+    .locals 0
 
-    new-instance v0, Lemu;
+    iput-object p1, p0, Leoe;->a:Leof;
 
-    const/4 v1, 0x5
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {v0, v1}, Lemu;-><init>(I)V
+    return-void
+.end method
 
-    sput-object v0, Leoe;->a:Lemu;
+
+# virtual methods
+.method public final onActivityCreated(Landroid/app/Activity;Landroid/os/Bundle;)V
+    .locals 0
+
+    return-void
+.end method
+
+.method public final onActivityDestroyed(Landroid/app/Activity;)V
+    .locals 0
+
+    return-void
+.end method
+
+.method public final onActivityPaused(Landroid/app/Activity;)V
+    .locals 0
+
+    return-void
+.end method
+
+.method public final onActivityPostStopped(Landroid/app/Activity;)V
+    .locals 0
+
+    iget-object p1, p0, Leoe;->a:Leof;
+
+    iget-object p1, p1, Leof;->a:Lenw;
+
+    invoke-virtual {p1}, Lenw;->b()V
+
+    return-void
+.end method
+
+.method public final onActivityPreStarted(Landroid/app/Activity;)V
+    .locals 0
+
+    iget-object p1, p0, Leoe;->a:Leof;
+
+    iget-object p1, p1, Leof;->a:Lenw;
+
+    invoke-virtual {p1}, Lenw;->a()V
+
+    return-void
+.end method
+
+.method public final onActivityResumed(Landroid/app/Activity;)V
+    .locals 0
+
+    return-void
+.end method
+
+.method public final onActivitySaveInstanceState(Landroid/app/Activity;Landroid/os/Bundle;)V
+    .locals 0
+
+    return-void
+.end method
+
+.method public final onActivityStarted(Landroid/app/Activity;)V
+    .locals 0
+
+    return-void
+.end method
+
+.method public final onActivityStopped(Landroid/app/Activity;)V
+    .locals 0
 
     return-void
 .end method

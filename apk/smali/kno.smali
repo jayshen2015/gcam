@@ -1,53 +1,25 @@
-.class public final Lkno;
+.class public abstract Lkno;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Logk;
-
-
-# instance fields
-.field private final a:Loiw;
+.implements Lknq;
 
 
 # direct methods
-.method public constructor <init>(Loiw;)V
+.method public constructor <init>()V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lkno;->a:Loiw;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Lknq;
+.method public final describeContents()I
     .locals 1
 
-    iget-object v0, p0, Lkno;->a:Loiw;
+    const/4 v0, 0x0
 
-    check-cast v0, Lest;
-
-    invoke-virtual {v0}, Lest;->a()Lmqp;
-
-    move-result-object v0
-
-    check-cast v0, Lmqt;
-
-    iget-object v0, v0, Lmqt;->a:Ljava/lang/Object;
-
-    check-cast v0, Lknq;
-
-    return-object v0
-.end method
-
-.method public final bridge synthetic get()Ljava/lang/Object;
-    .locals 1
-
-    invoke-virtual {p0}, Lkno;->a()Lknq;
-
-    move-result-object v0
-
-    return-object v0
+    return v0
 .end method

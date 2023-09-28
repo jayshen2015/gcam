@@ -1,262 +1,183 @@
-.class public final Lfdc;
-.super Ljava/lang/Object;
+.class final Lfdc;
+.super Landroid/os/AsyncTask;
 
 
 # instance fields
-.field public final a:Lcom/google/android/apps/camera/ui/widget/ReviewImageView;
-
-.field public final b:Landroid/widget/ImageView;
-
-.field public c:Z
-
-.field public d:Z
-
-.field public e:I
-
-.field public f:I
-
-.field public g:I
-
-.field private final h:Lgft;
-
-.field private final i:Lgxi;
-
-.field private final j:Landroid/widget/FrameLayout;
-
-.field private final k:Ljvs;
-
-.field private final l:Lgxm;
+.field final synthetic a:Lfdj;
 
 
 # direct methods
-.method public constructor <init>(Lcgy;Landroid/content/res/Resources;Lgft;Lgxi;Ljvs;)V
-    .locals 1
+.method public constructor <init>(Lfdj;)V
+    .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lfdc;->a:Lfdj;
 
-    const/16 v0, 0xb2
-
-    iput v0, p0, Lfdc;->g:I
-
-    new-instance v0, Lfdb;
-
-    invoke-direct {v0, p0}, Lfdb;-><init>(Lfdc;)V
-
-    iput-object v0, p0, Lfdc;->l:Lgxm;
-
-    iput-object p3, p0, Lfdc;->h:Lgft;
-
-    iput-object p4, p0, Lfdc;->i:Lgxi;
-
-    invoke-interface {p1}, Lcgy;->g()Lcha;
-
-    move-result-object p1
-
-    check-cast p1, Lcie;
-
-    iget-object p1, p1, Lcie;->f:Lcom/google/android/apps/camera/ui/views/MainActivityLayout;
-
-    const p3, 0x7f0b0239
-
-    invoke-virtual {p1, p3}, Landroidx/constraintlayout/widget/ConstraintLayout;->findViewById(I)Landroid/view/View;
-
-    move-result-object p3
-
-    check-cast p3, Landroid/widget/FrameLayout;
-
-    iput-object p3, p0, Lfdc;->j:Landroid/widget/FrameLayout;
-
-    new-instance p3, Lcom/google/android/apps/camera/ui/widget/ReviewImageView;
-
-    invoke-virtual {p1}, Landroidx/constraintlayout/widget/ConstraintLayout;->getContext()Landroid/content/Context;
-
-    move-result-object p4
-
-    invoke-direct {p3, p4}, Lcom/google/android/apps/camera/ui/widget/ReviewImageView;-><init>(Landroid/content/Context;)V
-
-    iput-object p3, p0, Lfdc;->a:Lcom/google/android/apps/camera/ui/widget/ReviewImageView;
-
-    new-instance p3, Landroid/widget/ImageView;
-
-    invoke-virtual {p1}, Landroidx/constraintlayout/widget/ConstraintLayout;->getContext()Landroid/content/Context;
-
-    move-result-object p1
-
-    invoke-direct {p3, p1}, Landroid/widget/ImageView;-><init>(Landroid/content/Context;)V
-
-    iput-object p3, p0, Lfdc;->b:Landroid/widget/ImageView;
-
-    iput-object p5, p0, Lfdc;->k:Ljvs;
-
-    const p1, 0x7f0803db
-
-    const/4 p4, 0x0
-
-    invoke-virtual {p2, p1, p4}, Landroid/content/res/Resources;->getDrawable(ILandroid/content/res/Resources$Theme;)Landroid/graphics/drawable/Drawable;
-
-    move-result-object p1
-
-    invoke-virtual {p3, p1}, Landroid/widget/ImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
-
-    const/16 p1, 0x8
-
-    invoke-virtual {p3, p1}, Landroid/widget/ImageView;->setVisibility(I)V
-
-    return-void
-.end method
-
-.method static bridge synthetic f(Lfdc;)V
-    .locals 1
-
-    const/4 v0, 0x1
-
-    iput-boolean v0, p0, Lfdc;->c:Z
+    invoke-direct {p0}, Landroid/os/AsyncTask;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()V
-    .locals 2
+.method protected final bridge synthetic doInBackground([Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 6
 
-    invoke-virtual {p0}, Lfdc;->c()V
+    check-cast p1, [Ljava/lang/Void;
 
-    iget-object v0, p0, Lfdc;->j:Landroid/widget/FrameLayout;
+    iget-object p1, p0, Lfdc;->a:Lfdj;
 
-    invoke-virtual {v0}, Landroid/widget/FrameLayout;->removeAllViews()V
-
-    iget-object v0, p0, Lfdc;->i:Lgxi;
-
-    iget-object v1, p0, Lfdc;->l:Lgxm;
-
-    invoke-virtual {v0, v1}, Lgxi;->h(Lgxm;)V
-
-    return-void
-.end method
-
-.method public final b()V
-    .locals 3
-
-    iget-object v0, p0, Lfdc;->a:Lcom/google/android/apps/camera/ui/widget/ReviewImageView;
-
-    invoke-virtual {v0}, Lcom/google/android/apps/camera/ui/widget/ReviewImageView;->getParent()Landroid/view/ViewParent;
-
-    move-result-object v0
-
-    if-nez v0, :cond_0
-
-    iget-object v0, p0, Lfdc;->j:Landroid/widget/FrameLayout;
-
-    iget-object v1, p0, Lfdc;->a:Lcom/google/android/apps/camera/ui/widget/ReviewImageView;
-
-    const/4 v2, 0x0
-
-    invoke-virtual {v0, v1, v2}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;I)V
-
-    :cond_0
-    iget-object v0, p0, Lfdc;->b:Landroid/widget/ImageView;
-
-    invoke-virtual {v0}, Landroid/widget/ImageView;->getParent()Landroid/view/ViewParent;
-
-    move-result-object v0
-
-    if-nez v0, :cond_1
-
-    iget-object v0, p0, Lfdc;->j:Landroid/widget/FrameLayout;
-
-    iget-object v1, p0, Lfdc;->b:Landroid/widget/ImageView;
-
-    const/4 v2, 0x1
-
-    invoke-virtual {v0, v1, v2}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;I)V
-
-    :cond_1
-    iget-object v0, p0, Lfdc;->i:Lgxi;
-
-    iget-object v1, p0, Lfdc;->l:Lgxm;
-
-    invoke-virtual {v0, v1}, Lgxi;->h(Lgxm;)V
-
-    iget-object v0, p0, Lfdc;->i:Lgxi;
-
-    iget-object v1, p0, Lfdc;->l:Lgxm;
-
-    invoke-virtual {v0, v1}, Lgxi;->a(Lgxm;)V
-
-    return-void
-.end method
-
-.method public final c()V
-    .locals 3
-
-    const/4 v0, 0x0
-
-    iput-boolean v0, p0, Lfdc;->d:Z
-
-    iget-object v1, p0, Lfdc;->b:Landroid/widget/ImageView;
-
-    const/16 v2, 0x8
-
-    invoke-virtual {v1, v2}, Landroid/widget/ImageView;->setVisibility(I)V
-
-    iget-object v1, p0, Lfdc;->a:Lcom/google/android/apps/camera/ui/widget/ReviewImageView;
-
-    invoke-virtual {v1}, Lcom/google/android/apps/camera/ui/widget/ReviewImageView;->a()V
-
-    iput-boolean v0, p0, Lfdc;->c:Z
-
-    return-void
-.end method
-
-.method public final d()V
-    .locals 1
-
-    const/4 v0, 0x1
-
-    iput-boolean v0, p0, Lfdc;->d:Z
-
-    iget-object v0, p0, Lfdc;->h:Lgft;
-
-    invoke-interface {v0}, Lgft;->f()Lkab;
-
-    move-result-object v0
-
-    iget v0, v0, Lkab;->e:I
-
-    iput v0, p0, Lfdc;->e:I
-
-    iget-object v0, p0, Lfdc;->k:Ljvs;
-
-    invoke-interface {v0}, Ljvs;->bm()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/lang/Integer;
-
-    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
-
-    move-result v0
-
-    iput v0, p0, Lfdc;->f:I
-
-    return-void
-.end method
-
-.method public final e(I)V
-    .locals 2
-
-    iput p1, p0, Lfdc;->g:I
-
-    iget-object v0, p0, Lfdc;->b:Landroid/widget/ImageView;
+    iget-boolean v0, p1, Lfdj;->s:Z
 
     const/4 v1, 0x0
 
-    invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setVisibility(I)V
+    if-nez v0, :cond_1
 
-    iget-object v0, p0, Lfdc;->b:Landroid/widget/ImageView;
+    :cond_0
+    goto/16 :goto_2
 
-    invoke-virtual {v0, p1}, Landroid/widget/ImageView;->setImageAlpha(I)V
+    :cond_1
+    iget-object v0, p1, Lfdj;->c:Lfck;
 
-    return-void
+    iget-object v0, v0, Lfck;->b:Lawl;
+
+    if-eqz v0, :cond_0
+
+    iget-object p1, p1, Lfdj;->H:Landroid/os/Handler;
+
+    invoke-virtual {v0, p1, v1}, Lawl;->q(Landroid/os/Handler;Lfde;)V
+
+    iget-object p1, p0, Lfdc;->a:Lfdj;
+
+    iget-object p1, p1, Lfdj;->H:Landroid/os/Handler;
+
+    invoke-virtual {v0, p1, v1}, Lawl;->p(Landroid/os/Handler;Lfde;)V
+
+    iget-object p1, p0, Lfdc;->a:Lfdj;
+
+    iget-object v2, p1, Lfdj;->g:Lfeg;
+
+    invoke-virtual {v2}, Lfeg;->f()[F
+
+    move-result-object v2
+
+    const/4 v3, 0x6
+
+    aget v2, v2, v3
+
+    neg-float v2, v2
+
+    float-to-double v2, v2
+
+    invoke-static {v2, v3}, Ljava/lang/Math;->asin(D)D
+
+    move-result-wide v2
+
+    const-wide v4, 0x404ca5dc1a63c1f8L    # 57.29577951308232
+
+    mul-double v2, v2, v4
+
+    double-to-float v2, v2
+
+    float-to-double v2, v2
+
+    iput-wide v2, p1, Lfdj;->i:D
+
+    iget-object p1, p0, Lfdc;->a:Lfdj;
+
+    iget v2, p1, Lfdj;->n:I
+
+    if-nez v2, :cond_2
+
+    iget-wide v2, p1, Lfdj;->i:D
+
+    iput-wide v2, p1, Lfdj;->h:D
+
+    :cond_2
+    iget-wide v2, p1, Lfdj;->i:D
+
+    iget-wide v4, p1, Lfdj;->h:D
+
+    sub-double/2addr v2, v4
+
+    invoke-static {v2, v3}, Ljava/lang/Math;->abs(D)D
+
+    move-result-wide v2
+
+    iget-object p1, p0, Lfdc;->a:Lfdj;
+
+    iget-boolean p1, p1, Lfdj;->v:Z
+
+    if-eqz p1, :cond_4
+
+    invoke-static {v2, v3}, Lfcv;->d(D)Z
+
+    move-result p1
+
+    if-nez p1, :cond_3
+
+    iget-object p1, p0, Lfdc;->a:Lfdj;
+
+    iget-boolean p1, p1, Lfdj;->G:Z
+
+    if-eqz p1, :cond_4
+
+    :cond_3
+    iget-object p1, p0, Lfdc;->a:Lfdj;
+
+    const/4 v2, 0x0
+
+    iput-boolean v2, p1, Lfdj;->j:Z
+
+    iput v2, p1, Lfdj;->k:I
+
+    iget-object p1, p1, Lfdj;->l:Ljava/util/concurrent/Semaphore;
+
+    invoke-virtual {p1}, Ljava/util/concurrent/Semaphore;->drainPermits()I
+
+    :goto_0
+    const/4 p1, 0x3
+
+    if-ge v2, p1, :cond_5
+
+    iget-object p1, p0, Lfdc;->a:Lfdj;
+
+    iget-boolean v3, p1, Lfdj;->j:Z
+
+    if-nez v3, :cond_5
+
+    iget-object p1, p1, Lfdj;->H:Landroid/os/Handler;
+
+    new-instance v3, Lfdb;
+
+    invoke-direct {v3, p0, v0}, Lfdb;-><init>(Lfdc;Lawl;)V
+
+    invoke-virtual {v0, p1, v3}, Lawl;->j(Landroid/os/Handler;Lavu;)V
+
+    :try_start_0
+    iget-object p1, p0, Lfdc;->a:Lfdj;
+
+    iget-object p1, p1, Lfdj;->l:Ljava/util/concurrent/Semaphore;
+
+    invoke-virtual {p1}, Ljava/util/concurrent/Semaphore;->acquire()V
+    :try_end_0
+    .catch Ljava/lang/InterruptedException; {:try_start_0 .. :try_end_0} :catch_0
+
+    goto :goto_1
+
+    :catch_0
+    move-exception p1
+
+    :goto_1
+    add-int/lit8 v2, v2, 0x1
+
+    goto :goto_0
+
+    :cond_4
+    iget-object p1, p0, Lfdc;->a:Lfdj;
+
+    invoke-virtual {p1, v0}, Lfdj;->d(Lawl;)V
+
+    :cond_5
+    :goto_2
+    return-object v1
 .end method

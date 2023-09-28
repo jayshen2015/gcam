@@ -1,12 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <plurals name="accessibility_timelapse_manual_record_speed_desc">
-        <item quantity="other">Selang Masa %d kelajuan masa</item>
-        <item quantity="one">Selang Masa %d kelajuan masa</item>
-    </plurals>
-    <plurals name="number_of_cropped_face">
-        <item quantity="other">%d dipangkas.</item>
-        <item quantity="one">Dipangkas serentak.</item>
+    <plurals name="number_of_faces_announcement">
+        <item quantity="other">%1$d wajah.</item>
+        <item quantity="one">%1$d wajah.</item>
     </plurals>
     <plurals name="photos_remaining">
         <item quantity="other">Kira-kira %s foto</item>
@@ -17,8 +13,8 @@
         <item quantity="one">(%1$d apl dipilih)</item>
     </plurals>
     <plurals name="social_share_info">
-        <item quantity="other">Kongsi foto dan video pada apl sosial dengan pantas daripada Kamera. Pilih hingga %1$d apl. Foto dan video yang disimpan pada Folder Dikunci tidak dapat dikongsi.</item>
-        <item quantity="one">Kongsi foto dan video pada apl sosial dengan pantas daripada Kamera. Pilih apl %1$d. Foto dan video yang disimpan pada Folder Dikunci tidak boleh dikongsi.</item>
+        <item quantity="other">Kongsi foto dan video pada apl sosial dengan pantas, terus daripada Kamera. Pilih sehingga %1$d apl. Foto dan video yang disimpan pada Folder Dikunci tidak dapat dikongsi.</item>
+        <item quantity="one">Kongsi foto dan video pada apl sosial dengan pantas, terus daripada Kamera. Pilih apl %1$d. Foto dan video yang disimpan pada Folder Dikunci tidak boleh dikongsi.</item>
     </plurals>
     <plurals name="social_share_select_error">
         <item quantity="other">Pilih sehingga %1$d apl</item>

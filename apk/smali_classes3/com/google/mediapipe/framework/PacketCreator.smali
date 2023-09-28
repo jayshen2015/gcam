@@ -3,7 +3,7 @@
 
 
 # instance fields
-.field public final a:Lcom/google/mediapipe/framework/Graph;
+.field public a:Lcom/google/mediapipe/framework/Graph;
 
 
 # direct methods
@@ -32,7 +32,4 @@
 
 # virtual methods
 .method public native nativeCreateGpuBuffer(JIIILcom/google/mediapipe/framework/TextureReleaseCallback;)J
-.end method
-
-.method public native nativeCreateProto(JLcom/google/mediapipe/framework/ProtoUtil$SerializedMessage;)J
 .end method

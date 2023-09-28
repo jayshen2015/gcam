@@ -1,45 +1,66 @@
 .class public final Lkup;
-.super Ljava/lang/Object;
+.super Lkno;
 
-# interfaces
-.implements Lkus;
+
+# static fields
+.field public static final CREATOR:Landroid/os/Parcelable$Creator;
 
 
 # instance fields
-.field private final a:I
+.field final a:I
 
-.field private final b:[Ljava/lang/Object;
-
-.field private final c:Ldne;
+.field final b:Lkni;
 
 
 # direct methods
-.method public varargs constructor <init>(Ldne;I[Ljava/lang/Object;[B)V
+.method static constructor <clinit>()V
+    .locals 2
+
+    new-instance v0, Lktu;
+
+    const/4 v1, 0x6
+
+    invoke-direct {v0, v1}, Lktu;-><init>(I)V
+
+    sput-object v0, Lkup;->CREATOR:Landroid/os/Parcelable$Creator;
+
+    return-void
+.end method
+
+.method public constructor <init>(ILkni;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Lkno;-><init>()V
 
-    iput-object p1, p0, Lkup;->c:Ldne;
+    iput p1, p0, Lkup;->a:I
 
-    iput p2, p0, Lkup;->a:I
-
-    iput-object p3, p0, Lkup;->b:[Ljava/lang/Object;
+    iput-object p2, p0, Lkup;->b:Lkni;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final b()V
+.method public final writeToParcel(Landroid/os/Parcel;I)V
     .locals 3
 
-    iget-object v0, p0, Lkup;->c:Ldne;
+    invoke-static {p1}, Lmip;->ct(Landroid/os/Parcel;)I
+
+    move-result v0
 
     iget v1, p0, Lkup;->a:I
 
-    iget-object v2, p0, Lkup;->b:[Ljava/lang/Object;
+    const/4 v2, 0x1
 
-    invoke-virtual {v0, v1, v2}, Ldne;->m(I[Ljava/lang/Object;)V
+    invoke-static {p1, v2, v1}, Lmip;->cA(Landroid/os/Parcel;II)V
+
+    iget-object v1, p0, Lkup;->b:Lkni;
+
+    const/4 v2, 0x2
+
+    invoke-static {p1, v2, v1, p2}, Lmip;->cH(Landroid/os/Parcel;ILandroid/os/Parcelable;I)V
+
+    invoke-static {p1, v0}, Lmip;->cv(Landroid/os/Parcel;I)V
 
     return-void
 .end method

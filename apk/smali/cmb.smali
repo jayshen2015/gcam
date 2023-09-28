@@ -2,140 +2,56 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lnno;
+.implements Llij;
 
 
 # instance fields
-.field public final synthetic a:Lcmd;
+.field public final synthetic a:Llnc;
 
-.field public final synthetic b:I
-
-.field public final synthetic c:I
-
-.field public final synthetic d:Lnwn;
+.field public final synthetic b:Lcju;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lcmd;IILnwn;)V
+.method public synthetic constructor <init>(Llnc;Lcju;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lcmb;->a:Lcmd;
+    iput-object p1, p0, Lcmb;->a:Llnc;
 
-    iput p2, p0, Lcmb;->b:I
-
-    iput p3, p0, Lcmb;->c:I
-
-    iput-object p4, p0, Lcmb;->d:Lnwn;
+    iput-object p2, p0, Lcmb;->b:Lcju;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Ljava/lang/Object;)Lnou;
-    .locals 12
+.method public final fB(Ljava/lang/Object;)V
+    .locals 3
 
-    iget-object v0, p0, Lcmb;->a:Lcmd;
+    iget-object v0, p0, Lcmb;->a:Llnc;
 
-    iget v1, p0, Lcmb;->b:I
+    iget-object v1, p0, Lcmb;->b:Lcju;
 
-    iget v2, p0, Lcmb;->c:I
+    check-cast p1, Ljava/lang/Float;
 
-    iget-object v3, p0, Lcmb;->d:Lnwn;
+    sget-object v2, Landroid/hardware/camera2/CaptureRequest;->CONTROL_ZOOM_RATIO:Landroid/hardware/camera2/CaptureRequest$Key;
 
-    check-cast p1, Ljava/lang/Long;
+    invoke-interface {v0, v2, p1}, Llnc;->h(Landroid/hardware/camera2/CaptureRequest$Key;Ljava/lang/Object;)V
 
-    invoke-virtual {p1}, Ljava/lang/Long;->longValue()J
+    sget-object p1, Landroid/hardware/camera2/CaptureRequest;->SCALER_CROP_REGION:Landroid/hardware/camera2/CaptureRequest$Key;
 
-    move-result-wide v10
+    iget-object v1, v1, Lcju;->s:Lgsn;
 
-    sget-object p1, Lpar;->b:Lpar;
+    invoke-virtual {v1}, Lldl;->fA()Ljava/lang/Object;
 
-    invoke-virtual {p1}, Lnws;->O()Lnwn;
+    move-result-object v1
 
-    move-result-object p1
+    check-cast v1, Lgsm;
 
-    iget-object v4, p1, Lnwn;->b:Lnws;
+    iget-object v1, v1, Lgsm;->b:Landroid/graphics/Rect;
 
-    invoke-virtual {v4}, Lnws;->ac()Z
+    invoke-interface {v0, p1, v1}, Llnc;->h(Landroid/hardware/camera2/CaptureRequest$Key;Ljava/lang/Object;)V
 
-    move-result v4
-
-    if-nez v4, :cond_0
-
-    invoke-virtual {p1}, Lnwn;->p()V
-
-    :cond_0
-    iget-object v4, p1, Lnwn;->b:Lnws;
-
-    check-cast v4, Lpar;
-
-    invoke-virtual {v3}, Lnwn;->i()Lnws;
-
-    move-result-object v3
-
-    check-cast v3, Lpau;
-
-    invoke-virtual {v3}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    iput-object v3, v4, Lpar;->a:Lpau;
-
-    invoke-virtual {p1}, Lnwn;->i()Lnws;
-
-    move-result-object p1
-
-    check-cast p1, Lpar;
-
-    invoke-virtual {p1}, Lnve;->J()[B
-
-    move-result-object v9
-
-    iget-object v4, v0, Lcmd;->d:Lcnt;
-
-    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object p1
-
-    const-string v1, "photo_mode"
-
-    invoke-static {v1, p1}, Lmwa;->n(Ljava/lang/Object;Ljava/lang/Object;)Lmwa;
-
-    move-result-object v8
-
-    const-string v7, "metadata"
-
-    move-wide v5, v10
-
-    invoke-interface/range {v4 .. v9}, Lcnt;->d(JLjava/lang/String;Ljava/util/Map;[B)Lnou;
-
-    move-result-object p1
-
-    invoke-static {p1}, Lnoo;->q(Lnou;)Lnoo;
-
-    move-result-object p1
-
-    iget-object v1, v0, Lcmd;->b:Ldhi;
-
-    sget-object v3, Ldho;->bA:Ldhj;
-
-    invoke-interface {v1, v3}, Ldhi;->l(Ldhj;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_1
-
-    new-instance v1, Lclz;
-
-    invoke-direct {v1, v0, v10, v11, v2}, Lclz;-><init>(Lcmd;JI)V
-
-    iget-object v0, v0, Lcmd;->h:Ljava/util/concurrent/ExecutorService;
-
-    invoke-static {p1, v1, v0}, Lnnf;->j(Lnou;Lnno;Ljava/util/concurrent/Executor;)Lnou;
-
-    move-result-object p1
-
-    :cond_1
-    return-object p1
+    return-void
 .end method

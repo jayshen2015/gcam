@@ -1,74 +1,36 @@
-.class final Lmqy;
-.super Lmpy;
-
-
-# instance fields
-.field final synthetic f:Lmra;
+.class public final Lmqy;
+.super Lmqx;
 
 
 # direct methods
-.method public constructor <init>(Lmra;Lmrd;Ljava/lang/CharSequence;[B)V
+.method public constructor <init>(I)V
     .locals 0
 
-    iput-object p1, p0, Lmqy;->f:Lmra;
-
-    invoke-direct {p0, p2, p3}, Lmpy;-><init>(Lmrd;Ljava/lang/CharSequence;)V
+    invoke-direct {p0, p1}, Lmqx;-><init>(I)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(I)I
-    .locals 0
+.method public final b(Ljava/lang/String;)I
+    .locals 1
 
-    add-int/lit8 p1, p1, 0x1
+    iget v0, p0, Lmqy;->b:I
+
+    invoke-static {v0, p1}, Landroid/opengl/GLES20;->glGetUniformLocation(ILjava/lang/String;)I
+
+    move-result p1
 
     return p1
 .end method
 
-.method public final b(I)I
-    .locals 5
+.method protected final c()V
+    .locals 1
 
-    iget-object v0, p0, Lmqy;->f:Lmra;
+    iget v0, p0, Lmqy;->b:I
 
-    iget-object v0, v0, Lmra;->a:Ljava/lang/Object;
+    invoke-static {v0}, Landroid/opengl/GLES20;->glDeleteProgram(I)V
 
-    iget-object v1, p0, Lmqy;->b:Ljava/lang/CharSequence;
-
-    invoke-interface {v1}, Ljava/lang/CharSequence;->length()I
-
-    move-result v2
-
-    invoke-static {p1, v2}, Lmoz;->x(II)V
-
-    :goto_0
-    if-ge p1, v2, :cond_1
-
-    invoke-interface {v1, p1}, Ljava/lang/CharSequence;->charAt(I)C
-
-    move-result v3
-
-    move-object v4, v0
-
-    check-cast v4, Lmqf;
-
-    invoke-virtual {v4, v3}, Lmqf;->b(C)Z
-
-    move-result v3
-
-    if-eqz v3, :cond_0
-
-    goto :goto_1
-
-    :cond_0
-    add-int/lit8 p1, p1, 0x1
-
-    goto :goto_0
-
-    :cond_1
-    const/4 p1, -0x1
-
-    :goto_1
-    return p1
+    return-void
 .end method

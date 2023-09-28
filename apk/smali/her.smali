@@ -1,104 +1,73 @@
-.class final Lher;
-.super Lhfp;
+.class public final Lher;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Lpys;
 
 
 # instance fields
-.field final synthetic a:Lhes;
+.field private final a:Lqkg;
+
+.field private final b:Lqkg;
+
+.field private final c:Lqkg;
+
+.field private final d:Lqkg;
 
 
 # direct methods
-.method public constructor <init>(Lhes;)V
+.method public constructor <init>(Lqkg;Lqkg;Lqkg;Lqkg;)V
     .locals 0
 
-    iput-object p1, p0, Lher;->a:Lhes;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0, p1}, Lhfp;-><init>(Lhfq;)V
+    iput-object p1, p0, Lher;->a:Lqkg;
+
+    iput-object p2, p0, Lher;->b:Lqkg;
+
+    iput-object p3, p0, Lher;->c:Lqkg;
+
+    iput-object p4, p0, Lher;->d:Lqkg;
 
     return-void
+.end method
+
+.method public static a(Lqkg;Lqkg;Lqkg;Lqkg;)Lher;
+    .locals 1
+
+    new-instance v0, Lher;
+
+    invoke-direct {v0, p0, p1, p2, p3}, Lher;-><init>(Lqkg;Lqkg;Lqkg;Lqkg;)V
+
+    return-object v0
 .end method
 
 
 # virtual methods
-.method public final a()V
-    .locals 2
+.method public final b()Lmeh;
+    .locals 5
 
-    iget-object v0, p0, Lher;->a:Lhes;
+    iget-object v0, p0, Lher;->a:Lqkg;
 
-    iget-object v0, v0, Lhes;->a:Lhiu;
+    iget-object v1, p0, Lher;->b:Lqkg;
 
-    invoke-virtual {v0}, Lhiu;->e()V
+    iget-object v2, p0, Lher;->d:Lqkg;
 
-    invoke-super {p0}, Lhfp;->a()V
+    new-instance v3, Lmeh;
 
-    iget-object v0, p0, Lher;->a:Lhes;
+    const/4 v4, 0x0
 
-    iget-object v1, v0, Lhes;->a:Lhiu;
+    invoke-direct {v3, v0, v1, v2, v4}, Lmeh;-><init>(Lqkg;Lqkg;Lqkg;[B)V
 
-    iget-object v0, v0, Lhes;->c:Lhiw;
-
-    invoke-virtual {v1, v0}, Lhiu;->g(Lhiw;)V
-
-    return-void
+    return-object v3
 .end method
 
-.method public final bN()V
-    .locals 2
+.method public final bridge synthetic get()Ljava/lang/Object;
+    .locals 1
 
-    iget-object v0, p0, Lher;->a:Lhes;
+    invoke-virtual {p0}, Lher;->b()Lmeh;
 
-    iget-object v0, v0, Lhes;->a:Lhiu;
+    move-result-object v0
 
-    invoke-virtual {v0}, Lhiu;->e()V
-
-    iget-object v0, p0, Lher;->a:Lhes;
-
-    iget-object v1, v0, Lhes;->a:Lhiu;
-
-    iget-object v0, v0, Lhes;->b:Lhiw;
-
-    invoke-virtual {v1, v0}, Lhiu;->g(Lhiw;)V
-
-    return-void
-.end method
-
-.method public final k()V
-    .locals 2
-
-    iget-object v0, p0, Lher;->a:Lhes;
-
-    iget-object v0, v0, Lhes;->a:Lhiu;
-
-    invoke-virtual {v0}, Lhiu;->e()V
-
-    iget-object v0, p0, Lher;->a:Lhes;
-
-    iget-object v1, v0, Lhes;->a:Lhiu;
-
-    iget-object v0, v0, Lhes;->b:Lhiw;
-
-    invoke-virtual {v1, v0}, Lhiu;->g(Lhiw;)V
-
-    return-void
-.end method
-
-.method public final n()V
-    .locals 2
-
-    iget-object v0, p0, Lher;->a:Lhes;
-
-    iget-object v0, v0, Lhes;->a:Lhiu;
-
-    invoke-virtual {v0}, Lhiu;->e()V
-
-    invoke-super {p0}, Lhfp;->n()V
-
-    iget-object v0, p0, Lher;->a:Lhes;
-
-    iget-object v1, v0, Lhes;->a:Lhiu;
-
-    iget-object v0, v0, Lhes;->b:Lhiw;
-
-    invoke-virtual {v1, v0}, Lhiu;->g(Lhiw;)V
-
-    return-void
+    return-object v0
 .end method

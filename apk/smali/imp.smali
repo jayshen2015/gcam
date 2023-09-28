@@ -1,51 +1,55 @@
-.class public final Limp;
+.class public final synthetic Limp;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Logk;
+.implements Llie;
 
 
 # instance fields
-.field private final a:Loiw;
+.field public final synthetic a:Limq;
+
+.field public final synthetic b:Limr;
 
 
 # direct methods
-.method public constructor <init>(Loiw;)V
+.method public synthetic constructor <init>(Limq;Limr;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Limp;->a:Loiw;
+    iput-object p1, p0, Limp;->a:Limq;
+
+    iput-object p2, p0, Limp;->b:Limr;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Limo;
-    .locals 2
+.method public final close()V
+    .locals 3
 
-    iget-object v0, p0, Limp;->a:Loiw;
+    iget-object v0, p0, Limp;->a:Limq;
 
-    check-cast v0, Ldwh;
+    iget-object v1, p0, Limp;->b:Limr;
 
-    invoke-virtual {v0}, Ldwh;->a()Landroid/content/Context;
+    monitor-enter v0
 
-    move-result-object v0
+    :try_start_0
+    iget-object v2, v0, Limq;->a:Ljava/util/List;
 
-    new-instance v1, Limo;
+    invoke-interface {v2, v1}, Ljava/util/List;->remove(Ljava/lang/Object;)Z
 
-    invoke-direct {v1, v0}, Limo;-><init>(Landroid/content/Context;)V
+    monitor-exit v0
 
-    return-object v1
-.end method
+    return-void
 
-.method public final bridge synthetic get()Ljava/lang/Object;
-    .locals 1
+    :catchall_0
+    move-exception v1
 
-    invoke-virtual {p0}, Limp;->a()Limo;
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    move-result-object v0
-
-    return-object v0
+    throw v1
 .end method

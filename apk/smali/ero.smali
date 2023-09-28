@@ -1,86 +1,110 @@
-.class final Lero;
+.class public final synthetic Lero;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lhfv;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field final synthetic a:Lert;
+.field public final synthetic a:Lerp;
+
+.field public final synthetic b:Ljava/lang/String;
+
+.field public final synthetic c:Z
 
 
 # direct methods
-.method public constructor <init>(Lert;)V
+.method public synthetic constructor <init>(Lerp;Ljava/lang/String;Z)V
     .locals 0
 
-    iput-object p1, p0, Lero;->a:Lert;
-
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lero;->a:Lerp;
+
+    iput-object p2, p0, Lero;->b:Ljava/lang/String;
+
+    iput-boolean p3, p0, Lero;->c:Z
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()V
+.method public final run()V
     .locals 4
 
-    iget-object v0, p0, Lero;->a:Lert;
+    iget-object v0, p0, Lero;->a:Lerp;
 
-    iget-boolean v1, v0, Lert;->C:Z
+    iget-object v1, p0, Lero;->b:Ljava/lang/String;
 
-    if-eqz v1, :cond_0
+    iget-boolean v2, p0, Lero;->c:Z
 
-    const/4 v1, 0x0
+    iget-boolean v3, v0, Lerp;->o:Z
 
-    iput-boolean v1, v0, Lert;->C:Z
+    if-nez v3, :cond_1
 
-    iget-object v1, v0, Lert;->e:Landroid/os/Handler;
+    sget-object v3, Lovl;->a:Lovd;
 
-    new-instance v2, Lerm;
+    :try_start_0
+    iget-object v3, v0, Lerp;->f:Lljf;
 
-    const/4 v3, 0x1
+    invoke-interface {v3, v1}, Lljf;->e(Ljava/lang/String;)V
 
-    invoke-direct {v2, v0, v3}, Lerm;-><init>(Lert;I)V
+    if-eqz v2, :cond_0
 
-    invoke-virtual {v1, v2}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
+    iget-object v1, v0, Lerp;->c:Lepm;
+
+    iget v2, v0, Lerp;->d:I
+
+    invoke-virtual {v1, v2}, Lepm;->a(I)V
+
+    goto :goto_0
 
     :cond_0
-    iget-object v0, p0, Lero;->a:Lert;
+    iget-object v1, v0, Lerp;->c:Lepm;
 
-    iget-object v0, v0, Lert;->e:Landroid/os/Handler;
+    iget v2, v0, Lerp;->d:I
 
-    new-instance v1, Lerm;
+    invoke-virtual {v1, v2}, Lepm;->c(I)V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    const/4 v2, 0x2
+    :goto_0
+    iget-object v0, v0, Lerp;->f:Lljf;
 
-    invoke-direct {v1, p0, v2}, Lerm;-><init>(Lero;I)V
-
-    invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
-
-    return-void
-.end method
-
-.method public final synthetic b()V
-    .locals 0
+    invoke-interface {v0}, Lljf;->f()V
 
     return-void
-.end method
 
-.method public final synthetic c()V
-    .locals 0
+    :catchall_0
+    move-exception v1
 
-    return-void
-.end method
+    iget-object v0, v0, Lerp;->f:Lljf;
 
-.method public final synthetic d()V
-    .locals 0
+    invoke-interface {v0}, Lljf;->f()V
 
-    return-void
-.end method
+    throw v1
 
-.method public final synthetic e()V
-    .locals 0
+    :cond_1
+    sget-object v0, Lerp;->a:Louj;
+
+    invoke-virtual {v0}, Loue;->c()Lova;
+
+    move-result-object v0
+
+    sget-object v2, Lovl;->a:Lovd;
+
+    const-string v3, "LasagnaProcSession"
+
+    invoke-interface {v0, v2, v3}, Lova;->g(Lovd;Ljava/lang/Object;)Lova;
+
+    move-result-object v0
+
+    const/16 v2, 0x5a1
+
+    const-string v3, "Shot already done, ignoring %s."
+
+    invoke-static {v0, v3, v1, v2}, Ld;->u(Lova;Ljava/lang/String;Ljava/lang/Object;C)V
 
     return-void
 .end method

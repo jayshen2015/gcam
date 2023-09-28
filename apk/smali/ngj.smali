@@ -1,182 +1,441 @@
-.class public final Lngj;
-.super Lnws;
+.class public final synthetic Lngj;
+.super Ljava/lang/Object;
 
 # interfaces
-.implements Lnxz;
+.implements Lngm;
 
 
 # static fields
-.field public static final e:Lngj;
+.field public static final synthetic a:Lngj;
 
-.field private static volatile f:Lnyf;
+.field public static final synthetic b:Lngj;
+
+.field public static final synthetic c:Lngj;
+
+.field public static final synthetic d:Lngj;
+
+.field public static final synthetic e:Lngj;
+
+.field public static final synthetic f:Lngj;
+
+.field public static final synthetic g:Lngj;
+
+.field public static final synthetic h:Lngj;
+
+.field public static final synthetic i:Lngj;
+
+.field public static final synthetic j:Lngj;
+
+.field public static final synthetic k:Lngj;
+
+.field public static final synthetic l:Lngj;
+
+.field public static final synthetic m:Lngj;
+
+.field public static final synthetic n:Lngj;
+
+.field public static final synthetic o:Lngj;
+
+.field public static final synthetic p:Lngj;
+
+.field public static final synthetic q:Lngj;
 
 
 # instance fields
-.field public a:I
-
-.field public b:Z
-
-.field public c:Z
-
-.field public d:F
+.field private final synthetic r:I
 
 
 # direct methods
-.method static constructor <clinit>()V
+.method static synthetic constructor <clinit>()V
     .locals 2
 
     new-instance v0, Lngj;
 
-    invoke-direct {v0}, Lngj;-><init>()V
+    const/16 v1, 0x10
+
+    invoke-direct {v0, v1}, Lngj;-><init>(I)V
+
+    sput-object v0, Lngj;->q:Lngj;
+
+    new-instance v0, Lngj;
+
+    const/16 v1, 0xf
+
+    invoke-direct {v0, v1}, Lngj;-><init>(I)V
+
+    sput-object v0, Lngj;->p:Lngj;
+
+    new-instance v0, Lngj;
+
+    const/16 v1, 0xe
+
+    invoke-direct {v0, v1}, Lngj;-><init>(I)V
+
+    sput-object v0, Lngj;->o:Lngj;
+
+    new-instance v0, Lngj;
+
+    const/16 v1, 0xd
+
+    invoke-direct {v0, v1}, Lngj;-><init>(I)V
+
+    sput-object v0, Lngj;->n:Lngj;
+
+    new-instance v0, Lngj;
+
+    const/16 v1, 0xc
+
+    invoke-direct {v0, v1}, Lngj;-><init>(I)V
+
+    sput-object v0, Lngj;->m:Lngj;
+
+    new-instance v0, Lngj;
+
+    const/16 v1, 0xb
+
+    invoke-direct {v0, v1}, Lngj;-><init>(I)V
+
+    sput-object v0, Lngj;->l:Lngj;
+
+    new-instance v0, Lngj;
+
+    const/16 v1, 0xa
+
+    invoke-direct {v0, v1}, Lngj;-><init>(I)V
+
+    sput-object v0, Lngj;->k:Lngj;
+
+    new-instance v0, Lngj;
+
+    const/16 v1, 0x9
+
+    invoke-direct {v0, v1}, Lngj;-><init>(I)V
+
+    sput-object v0, Lngj;->j:Lngj;
+
+    new-instance v0, Lngj;
+
+    const/16 v1, 0x8
+
+    invoke-direct {v0, v1}, Lngj;-><init>(I)V
+
+    sput-object v0, Lngj;->i:Lngj;
+
+    new-instance v0, Lngj;
+
+    const/4 v1, 0x7
+
+    invoke-direct {v0, v1}, Lngj;-><init>(I)V
+
+    sput-object v0, Lngj;->h:Lngj;
+
+    new-instance v0, Lngj;
+
+    const/4 v1, 0x6
+
+    invoke-direct {v0, v1}, Lngj;-><init>(I)V
+
+    sput-object v0, Lngj;->g:Lngj;
+
+    new-instance v0, Lngj;
+
+    const/4 v1, 0x5
+
+    invoke-direct {v0, v1}, Lngj;-><init>(I)V
+
+    sput-object v0, Lngj;->f:Lngj;
+
+    new-instance v0, Lngj;
+
+    const/4 v1, 0x4
+
+    invoke-direct {v0, v1}, Lngj;-><init>(I)V
 
     sput-object v0, Lngj;->e:Lngj;
 
-    const-class v1, Lngj;
+    new-instance v0, Lngj;
 
-    invoke-static {v1, v0}, Lnws;->aa(Ljava/lang/Class;Lnws;)V
+    const/4 v1, 0x3
+
+    invoke-direct {v0, v1}, Lngj;-><init>(I)V
+
+    sput-object v0, Lngj;->d:Lngj;
+
+    new-instance v0, Lngj;
+
+    const/4 v1, 0x2
+
+    invoke-direct {v0, v1}, Lngj;-><init>(I)V
+
+    sput-object v0, Lngj;->c:Lngj;
+
+    new-instance v0, Lngj;
+
+    const/4 v1, 0x1
+
+    invoke-direct {v0, v1}, Lngj;-><init>(I)V
+
+    sput-object v0, Lngj;->b:Lngj;
+
+    new-instance v0, Lngj;
+
+    const/4 v1, 0x0
+
+    invoke-direct {v0, v1}, Lngj;-><init>(I)V
+
+    sput-object v0, Lngj;->a:Lngj;
 
     return-void
 .end method
 
-.method private constructor <init>()V
+.method private synthetic constructor <init>(I)V
     .locals 0
 
-    invoke-direct {p0}, Lnws;-><init>()V
+    iput p1, p0, Lngj;->r:I
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method protected final a(ILjava/lang/Object;)Ljava/lang/Object;
-    .locals 3
+.method public final a(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 2
 
-    add-int/lit8 p1, p1, -0x1
+    iget v0, p0, Lngj;->r:I
 
-    const/4 p2, 0x1
+    packed-switch v0, :pswitch_data_0
 
-    packed-switch p1, :pswitch_data_0
+    check-cast p1, [B
+
+    sget-object v0, Lqyj;->d:Lqyj;
+
+    invoke-static {v0, p1}, Lppd;->p(Lppd;[B)Lppd;
+
+    move-result-object p1
+
+    check-cast p1, Lqyj;
+
+    return-object p1
 
     :pswitch_0
-    const/4 p1, 0x0
+    check-cast p1, [B
+
+    sget-object v0, Lqyj;->d:Lqyj;
+
+    invoke-static {v0, p1}, Lppd;->p(Lppd;[B)Lppd;
+
+    move-result-object p1
+
+    check-cast p1, Lqyj;
 
     return-object p1
 
     :pswitch_1
-    sget-object p1, Lngj;->f:Lnyf;
+    check-cast p1, [B
 
-    if-nez p1, :cond_1
+    sget-object v0, Lqyj;->d:Lqyj;
 
-    const-class p2, Lngj;
+    invoke-static {v0, p1}, Lppd;->p(Lppd;[B)Lppd;
 
-    monitor-enter p2
+    move-result-object p1
 
-    :try_start_0
-    sget-object p1, Lngj;->f:Lnyf;
+    check-cast p1, Lqyj;
 
-    if-nez p1, :cond_0
-
-    new-instance p1, Lnwo;
-
-    sget-object v0, Lngj;->e:Lngj;
-
-    invoke-direct {p1, v0}, Lnwo;-><init>(Lnws;)V
-
-    sput-object p1, Lngj;->f:Lnyf;
-
-    :cond_0
-    monitor-exit p2
-
-    goto :goto_0
-
-    :catchall_0
-    move-exception p1
-
-    monitor-exit p2
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw p1
-
-    :cond_1
-    :goto_0
     return-object p1
 
     :pswitch_2
-    sget-object p1, Lngj;->e:Lngj;
+    check-cast p1, [B
+
+    sget-object v0, Lqyj;->d:Lqyj;
+
+    invoke-static {v0, p1}, Lppd;->p(Lppd;[B)Lppd;
+
+    move-result-object p1
+
+    check-cast p1, Lqyj;
 
     return-object p1
 
     :pswitch_3
-    new-instance p1, Lnwn;
+    check-cast p1, [B
 
-    sget-object p2, Lngj;->e:Lngj;
+    sget-object v0, Lqyj;->d:Lqyj;
 
-    invoke-direct {p1, p2}, Lnwn;-><init>(Lnws;)V
+    invoke-static {v0, p1}, Lppd;->p(Lppd;[B)Lppd;
+
+    move-result-object p1
+
+    check-cast p1, Lqyj;
 
     return-object p1
 
     :pswitch_4
-    new-instance p1, Lngj;
+    check-cast p1, [B
 
-    invoke-direct {p1}, Lngj;-><init>()V
+    sget-object v0, Lqyj;->d:Lqyj;
+
+    invoke-static {v0, p1}, Lppd;->p(Lppd;[B)Lppd;
+
+    move-result-object p1
+
+    check-cast p1, Lqyj;
 
     return-object p1
 
     :pswitch_5
-    const-string p1, "a"
+    check-cast p1, [B
 
-    const-string v0, "\u0001\u0003\u0000\u0001\u0001\u0003\u0003\u0000\u0000\u0000\u0001\u1007\u0000\u0002\u1007\u0001\u0003\u1001\u0002"
+    sget-object v0, Lqyj;->d:Lqyj;
 
-    const/4 v1, 0x4
-
-    new-array v1, v1, [Ljava/lang/Object;
-
-    const/4 v2, 0x0
-
-    aput-object p1, v1, v2
-
-    const-string p1, "b"
-
-    aput-object p1, v1, p2
-
-    const/4 p1, 0x2
-
-    const-string p2, "c"
-
-    aput-object p2, v1, p1
-
-    const/4 p1, 0x3
-
-    const-string p2, "d"
-
-    aput-object p2, v1, p1
-
-    sget-object p1, Lngj;->e:Lngj;
-
-    invoke-static {p1, v0, v1}, Lngj;->X(Lnxy;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {v0, p1}, Lppd;->p(Lppd;[B)Lppd;
 
     move-result-object p1
+
+    check-cast p1, Lqyj;
 
     return-object p1
 
     :pswitch_6
-    invoke-static {p2}, Ljava/lang/Byte;->valueOf(B)Ljava/lang/Byte;
+    check-cast p1, [B
+
+    sget-object v0, Lmzk;->d:Lmzk;
+
+    invoke-static {v0, p1}, Lppd;->p(Lppd;[B)Lppd;
+
+    move-result-object p1
+
+    check-cast p1, Lmzk;
+
+    return-object p1
+
+    :pswitch_7
+    check-cast p1, [B
+
+    sget-object v0, Lqyj;->d:Lqyj;
+
+    invoke-static {v0, p1}, Lppd;->p(Lppd;[B)Lppd;
+
+    move-result-object p1
+
+    check-cast p1, Lqyj;
+
+    return-object p1
+
+    :pswitch_8
+    check-cast p1, [B
+
+    sget-object v0, Lqyj;->d:Lqyj;
+
+    invoke-static {v0, p1}, Lppd;->p(Lppd;[B)Lppd;
+
+    move-result-object p1
+
+    check-cast p1, Lqyj;
+
+    return-object p1
+
+    :pswitch_9
+    check-cast p1, [B
+
+    sget-object v0, Lmyc;->a:Lmyc;
+
+    invoke-static {v0, p1}, Lppd;->p(Lppd;[B)Lppd;
+
+    move-result-object p1
+
+    check-cast p1, Lmyc;
+
+    return-object p1
+
+    :pswitch_a
+    check-cast p1, [B
+
+    sget-object v0, Lqyj;->d:Lqyj;
+
+    invoke-static {v0, p1}, Lppd;->p(Lppd;[B)Lppd;
+
+    move-result-object p1
+
+    check-cast p1, Lqyj;
+
+    return-object p1
+
+    :pswitch_b
+    check-cast p1, [B
+
+    sget-object v0, Lqws;->b:Lqws;
+
+    invoke-static {v0, p1}, Lppd;->p(Lppd;[B)Lppd;
+
+    move-result-object p1
+
+    check-cast p1, Lqws;
+
+    return-object p1
+
+    :pswitch_c
+    check-cast p1, [B
+
+    sget-object v0, Lpyy;->d:Lpyy;
+
+    invoke-static {v0, p1}, Lppd;->p(Lppd;[B)Lppd;
+
+    move-result-object p1
+
+    check-cast p1, Lpyy;
+
+    return-object p1
+
+    :pswitch_d
+    check-cast p1, Ljava/lang/String;
+
+    invoke-static {p1}, Ljava/lang/Long;->parseLong(Ljava/lang/String;)J
+
+    move-result-wide v0
+
+    invoke-static {v0, v1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     move-result-object p1
 
     return-object p1
 
-    nop
+    :pswitch_e
+    check-cast p1, Ljava/lang/String;
+
+    return-object p1
+
+    :pswitch_f
+    check-cast p1, Ljava/lang/String;
+
+    invoke-static {p1}, Ljava/lang/Boolean;->parseBoolean(Ljava/lang/String;)Z
+
+    move-result p1
+
+    invoke-static {p1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    move-result-object p1
+
+    return-object p1
 
     :pswitch_data_0
     .packed-switch 0x0
+        :pswitch_f
+        :pswitch_e
+        :pswitch_d
+        :pswitch_c
+        :pswitch_b
+        :pswitch_a
+        :pswitch_9
+        :pswitch_8
+        :pswitch_7
         :pswitch_6
-        :pswitch_0
         :pswitch_5
         :pswitch_4
         :pswitch_3
         :pswitch_2
         :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method

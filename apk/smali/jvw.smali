@@ -1,236 +1,137 @@
-.class public final Ljvw;
-.super Ljava/lang/Object;
+.class Ljvw;
+.super Ljvr;
 
 
-# static fields
-.field public static final a:Lkad;
+# instance fields
+.field final synthetic b:Ljvx;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
+.method public constructor <init>(Ljvx;)V
+    .locals 0
 
-    new-instance v0, Lgnl;
+    iput-object p1, p0, Ljvw;->b:Ljvx;
 
-    const/16 v1, 0xe
-
-    invoke-direct {v0, v1}, Lgnl;-><init>(I)V
-
-    sput-object v0, Ljvw;->a:Lkad;
+    invoke-direct {p0}, Ljvr;-><init>()V
 
     return-void
 .end method
 
-.method public static a(Ljava/util/Collection;)Ljvs;
-    .locals 1
 
-    new-instance v0, Ljvr;
+# virtual methods
+.method public final f()V
+    .locals 2
 
-    invoke-direct {v0, p0}, Ljvr;-><init>(Ljava/util/Collection;)V
+    iget-object v0, p0, Ljvw;->b:Ljvx;
 
-    return-object v0
-.end method
+    iget-object v1, v0, Ljvx;->h:Landroid/net/Uri;
 
-.method public static varargs b([Ljvs;)Ljvs;
-    .locals 3
-    .annotation runtime Ljava/lang/SafeVarargs;
-    .end annotation
+    if-eqz v1, :cond_0
 
-    new-instance v0, Ljava/util/ArrayList;
+    iget-object v0, v0, Ljvx;->e:Landroid/widget/VideoView;
 
-    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
-
-    const/4 v1, 0x0
-
-    :goto_0
-    array-length v2, p0
-
-    if-ge v1, v2, :cond_0
-
-    aget-object v2, p0, v1
-
-    invoke-interface {v0, v2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-
-    add-int/lit8 v1, v1, 0x1
-
-    goto :goto_0
+    invoke-virtual {v0, v1}, Landroid/widget/VideoView;->setVideoURI(Landroid/net/Uri;)V
 
     :cond_0
-    invoke-static {v0}, Ljvw;->a(Ljava/util/Collection;)Ljvs;
+    iget-object v0, p0, Ljvw;->b:Ljvx;
 
-    move-result-object p0
+    iget-object v0, v0, Ljvx;->e:Landroid/widget/VideoView;
 
-    return-object p0
+    new-instance v1, Ljvu;
+
+    invoke-direct {v1, p0}, Ljvu;-><init>(Ljvw;)V
+
+    invoke-virtual {v0, v1}, Landroid/widget/VideoView;->setOnCompletionListener(Landroid/media/MediaPlayer$OnCompletionListener;)V
+
+    iget-object v0, p0, Ljvw;->b:Ljvx;
+
+    iget-object v0, v0, Ljvx;->e:Landroid/widget/VideoView;
+
+    new-instance v1, Ljvv;
+
+    invoke-direct {v1, p0}, Ljvv;-><init>(Ljvw;)V
+
+    invoke-virtual {v0, v1}, Landroid/widget/VideoView;->setOnPreparedListener(Landroid/media/MediaPlayer$OnPreparedListener;)V
+
+    return-void
 .end method
 
-.method public static c(Ljava/util/Collection;)Ljvs;
-    .locals 1
-
-    invoke-static {p0}, Ljvw;->a(Ljava/util/Collection;)Ljvs;
-
-    move-result-object p0
-
-    sget-object v0, Lhop;->g:Lhop;
-
-    invoke-static {p0, v0}, Ljvw;->j(Ljvs;Lmqi;)Ljvs;
-
-    move-result-object p0
-
-    return-object p0
-.end method
-
-.method public static varargs d([Ljvs;)Ljvs;
-    .locals 0
-    .annotation runtime Ljava/lang/SafeVarargs;
-    .end annotation
-
-    invoke-static {p0}, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
-
-    move-result-object p0
-
-    invoke-static {p0}, Ljvw;->c(Ljava/util/Collection;)Ljvs;
-
-    move-result-object p0
-
-    return-object p0
-.end method
-
-.method public static e(Ljvs;Ljava/lang/Comparable;)Ljvs;
+.method public gs()V
     .locals 2
 
-    new-instance v0, Lhga;
+    iget-object v0, p0, Ljvw;->b:Ljvx;
 
-    const/16 v1, 0x8
+    iget-object v1, v0, Ljvx;->d:Ljvy;
 
-    invoke-direct {v0, p1, v1}, Lhga;-><init>(Ljava/lang/Comparable;I)V
+    iget-object v0, v0, Ljvx;->e:Landroid/widget/VideoView;
 
-    invoke-static {p0, v0}, Ljvw;->j(Ljvs;Lmqi;)Ljvs;
-
-    move-result-object p0
-
-    return-object p0
-.end method
-
-.method public static f(Ljava/util/Collection;)Ljvs;
-    .locals 1
-
-    invoke-interface {p0}, Ljava/util/Collection;->isEmpty()Z
+    invoke-virtual {v0}, Landroid/widget/VideoView;->getDuration()I
 
     move-result v0
 
-    xor-int/lit8 v0, v0, 0x1
+    invoke-interface {v1, v0}, Ljvy;->a(I)V
 
-    invoke-static {v0}, Lmoz;->e(Z)V
+    iget-object v0, p0, Ljvw;->b:Ljvx;
 
-    invoke-static {p0}, Ljvw;->a(Ljava/util/Collection;)Ljvs;
+    iget-object v1, v0, Ljvx;->e:Landroid/widget/VideoView;
 
-    move-result-object p0
+    iget v0, v0, Ljvx;->i:I
 
-    sget-object v0, Lhop;->i:Lhop;
+    invoke-virtual {v1, v0}, Landroid/widget/VideoView;->seekTo(I)V
 
-    invoke-static {p0, v0}, Ljvw;->j(Ljvs;Lmqi;)Ljvs;
+    iget-object v0, p0, Ljvw;->b:Ljvx;
 
-    move-result-object p0
+    iget-object v1, v0, Ljvx;->d:Ljvy;
 
-    return-object p0
+    iget v0, v0, Ljvx;->i:I
+
+    invoke-interface {v1, v0}, Ljvy;->b(I)V
+
+    iget-object v0, p0, Ljvw;->b:Ljvx;
+
+    iget-object v0, v0, Ljvx;->f:Ljvb;
+
+    invoke-virtual {v0}, Ljuy;->a()V
+
+    return-void
 .end method
 
-.method public static g(Ljava/lang/Object;)Ljvs;
-    .locals 1
+.method public i()V
+    .locals 2
 
-    new-instance v0, Ljvu;
+    iget-object v0, p0, Ljvw;->b:Ljvx;
 
-    invoke-direct {v0, p0}, Ljvu;-><init>(Ljava/lang/Object;)V
+    iget-object v1, v0, Ljvx;->d:Ljvy;
 
-    return-object v0
-.end method
+    iget-object v0, v0, Ljvx;->e:Landroid/widget/VideoView;
 
-.method public static h(Ljava/util/Collection;)Ljvs;
-    .locals 1
-
-    invoke-interface {p0}, Ljava/util/Collection;->isEmpty()Z
+    invoke-virtual {v0}, Landroid/widget/VideoView;->getDuration()I
 
     move-result v0
 
-    xor-int/lit8 v0, v0, 0x1
+    invoke-interface {v1, v0}, Ljvy;->a(I)V
 
-    invoke-static {v0}, Lmoz;->e(Z)V
+    iget-object v0, p0, Ljvw;->b:Ljvx;
 
-    invoke-static {p0}, Ljvw;->a(Ljava/util/Collection;)Ljvs;
+    iget-object v1, v0, Ljvx;->e:Landroid/widget/VideoView;
 
-    move-result-object p0
+    iget v0, v0, Ljvx;->i:I
 
-    sget-object v0, Lhop;->h:Lhop;
+    invoke-virtual {v1, v0}, Landroid/widget/VideoView;->seekTo(I)V
 
-    invoke-static {p0, v0}, Ljvw;->j(Ljvs;Lmqi;)Ljvs;
+    iget-object v0, p0, Ljvw;->b:Ljvx;
 
-    move-result-object p0
+    iget-object v1, v0, Ljvx;->d:Ljvy;
 
-    return-object p0
-.end method
+    iget v0, v0, Ljvx;->i:I
 
-.method public static varargs i([Ljvs;)Ljvs;
-    .locals 0
-    .annotation runtime Ljava/lang/SafeVarargs;
-    .end annotation
+    invoke-interface {v1, v0}, Ljvy;->b(I)V
 
-    invoke-static {p0}, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
+    iget-object v0, p0, Ljvw;->b:Ljvx;
 
-    move-result-object p0
+    iget-object v0, v0, Ljvx;->f:Ljvb;
 
-    invoke-static {p0}, Ljvw;->h(Ljava/util/Collection;)Ljvs;
+    invoke-virtual {v0}, Ljuy;->b()V
 
-    move-result-object p0
-
-    return-object p0
-.end method
-
-.method public static j(Ljvs;Lmqi;)Ljvs;
-    .locals 1
-
-    new-instance v0, Ljvt;
-
-    invoke-direct {v0, p0, p1, p0}, Ljvt;-><init>(Ljvs;Lmqi;Ljvs;)V
-
-    invoke-static {v0}, Ljvo;->c(Ljvs;)Ljvs;
-
-    move-result-object p0
-
-    return-object p0
-.end method
-
-.method public static k(Ljvs;Ljava/lang/Runnable;Ljava/util/concurrent/Executor;)Lkad;
-    .locals 2
-
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    new-instance v0, Liiz;
-
-    const/16 v1, 0xc
-
-    invoke-direct {v0, p1, v1}, Liiz;-><init>(Ljava/lang/Runnable;I)V
-
-    invoke-interface {p0, v0, p2}, Ljvs;->a(Lkai;Ljava/util/concurrent/Executor;)Lkad;
-
-    move-result-object p0
-
-    return-object p0
-.end method
-
-.method public static l(Ljvs;Lkai;)Lkad;
-    .locals 1
-
-    invoke-static {}, Lnsy;->q()Lnow;
-
-    move-result-object v0
-
-    invoke-interface {p0, p1, v0}, Ljvs;->a(Lkai;Ljava/util/concurrent/Executor;)Lkad;
-
-    move-result-object p0
-
-    return-object p0
+    return-void
 .end method

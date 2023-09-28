@@ -1,197 +1,157 @@
-.class public final Lcne;
+.class public final synthetic Lcne;
 .super Ljava/lang/Object;
+
+# interfaces
+.implements Llij;
 
 
 # instance fields
-.field public final a:Ljava/lang/String;
+.field public final synthetic a:Lcng;
 
-.field public final b:Lmvv;
-
-.field public final c:Lcmt;
+.field private final synthetic b:I
 
 
 # direct methods
-.method public constructor <init>()V
+.method public synthetic constructor <init>(Lcng;I)V
     .locals 0
+
+    iput p2, p0, Lcne;->b:I
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    return-void
-.end method
-
-.method public constructor <init>(Ljava/lang/String;Lmvv;Lcmt;)V
-    .locals 0
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lcne;->a:Ljava/lang/String;
-
-    iput-object p2, p0, Lcne;->b:Lmvv;
-
-    if-eqz p3, :cond_0
-
-    iput-object p3, p0, Lcne;->c:Lcmt;
+    iput-object p1, p0, Lcne;->a:Lcng;
 
     return-void
-
-    :cond_0
-    new-instance p1, Ljava/lang/NullPointerException;
-
-    const-string p2, "Null converter"
-
-    invoke-direct {p1, p2}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
-
-    throw p1
-.end method
-
-.method public static a(Ljava/lang/String;Lmvv;Lcmt;)Lcne;
-    .locals 1
-
-    new-instance v0, Lcne;
-
-    invoke-direct {v0, p0, p1, p2}, Lcne;-><init>(Ljava/lang/String;Lmvv;Lcmt;)V
-
-    return-object v0
 .end method
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
+.method public final fB(Ljava/lang/Object;)V
     .locals 4
 
-    const/4 v0, 0x1
+    iget v0, p0, Lcne;->b:I
 
-    if-ne p1, p0, :cond_0
+    packed-switch v0, :pswitch_data_0
 
-    return v0
+    iget-object v0, p0, Lcne;->a:Lcng;
 
-    :cond_0
-    instance-of v1, p1, Lcne;
+    check-cast p1, Ljava/lang/Boolean;
 
-    const/4 v2, 0x0
-
-    if-eqz v1, :cond_1
-
-    check-cast p1, Lcne;
-
-    iget-object v1, p0, Lcne;->a:Ljava/lang/String;
-
-    iget-object v3, p1, Lcne;->a:Ljava/lang/String;
-
-    invoke-virtual {v1, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_1
-
-    iget-object v1, p0, Lcne;->b:Lmvv;
-
-    iget-object v3, p1, Lcne;->b:Lmvv;
-
-    invoke-static {v1, v3}, Llyh;->I(Ljava/util/List;Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_1
-
-    iget-object v1, p0, Lcne;->c:Lcmt;
-
-    iget-object p1, p1, Lcne;->c:Lcmt;
-
-    invoke-virtual {v1, p1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {p1}, Ljava/lang/Boolean;->booleanValue()Z
 
     move-result p1
 
-    if-eqz p1, :cond_1
+    iget-object v1, v0, Lcng;->e:Ljava/lang/Object;
 
-    return v0
+    monitor-enter v1
 
-    :cond_1
-    return v2
-.end method
+    goto :goto_0
 
-.method public final hashCode()I
-    .locals 3
+    :pswitch_0
+    iget-object v0, p0, Lcne;->a:Lcng;
 
-    iget-object v0, p0, Lcne;->a:Ljava/lang/String;
+    check-cast p1, Ljava/lang/String;
 
-    invoke-virtual {v0}, Ljava/lang/String;->hashCode()I
+    iget-object v1, v0, Lcng;->e:Ljava/lang/Object;
 
-    move-result v0
+    monitor-enter v1
 
-    const v1, 0xf4243
+    :try_start_0
+    iget-boolean v2, v0, Lcng;->j:Z
 
-    xor-int/2addr v0, v1
+    if-eqz v2, :cond_0
 
-    iget-object v2, p0, Lcne;->b:Lmvv;
+    monitor-exit v1
 
-    invoke-virtual {v2}, Lmvv;->hashCode()I
+    return-void
 
-    move-result v2
+    :cond_0
+    iget-boolean v2, v0, Lcng;->i:Z
 
-    mul-int v0, v0, v1
+    if-eqz v2, :cond_1
 
-    xor-int/2addr v0, v2
+    iget-object v2, v0, Lcng;->f:Llda;
 
-    iget-object v2, p0, Lcne;->c:Lcmt;
-
-    invoke-virtual {v2}, Ljava/lang/Object;->hashCode()I
-
-    move-result v2
-
-    mul-int v0, v0, v1
-
-    xor-int/2addr v0, v2
-
-    return v0
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .locals 5
-
-    iget-object v0, p0, Lcne;->a:Ljava/lang/String;
-
-    iget-object v1, p0, Lcne;->b:Lmvv;
-
-    invoke-virtual {v1}, Ljava/lang/Object;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    iget-object v2, p0, Lcne;->c:Lcmt;
-
-    invoke-virtual {v2}, Ljava/lang/Object;->toString()Ljava/lang/String;
+    invoke-interface {v2}, Llda;->fA()Ljava/lang/Object;
 
     move-result-object v2
 
-    new-instance v3, Ljava/lang/StringBuilder;
+    check-cast v2, Lhth;
 
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+    sget-object v3, Lhth;->c:Lhth;
 
-    const-string v4, "ExampleStoreTable{tableName="
+    invoke-virtual {v2, v3}, Lhth;->equals(Ljava/lang/Object;)Z
 
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result v2
 
-    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    if-eqz v2, :cond_1
 
-    const-string v0, ", customColumns="
+    invoke-virtual {p1}, Ljava/lang/String;->isEmpty()Z
 
-    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result v2
 
-    invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    if-nez v2, :cond_1
 
-    const-string v0, ", converter="
+    invoke-virtual {v0, p1}, Lcng;->a(Ljava/lang/String;)V
 
-    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    :cond_1
+    monitor-exit v1
 
-    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    return-void
 
-    const-string v0, "}"
+    :catchall_0
+    move-exception p1
 
-    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    monitor-exit v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    throw p1
 
-    move-result-object v0
+    :goto_0
+    :try_start_1
+    iget-boolean v2, v0, Lcng;->j:Z
 
-    return-object v0
+    if-eqz v2, :cond_2
+
+    monitor-exit v1
+
+    return-void
+
+    :cond_2
+    if-eqz p1, :cond_3
+
+    iget-object p1, v0, Lcng;->g:Llda;
+
+    invoke-interface {p1}, Llda;->fA()Ljava/lang/Object;
+
+    move-result-object p1
+
+    check-cast p1, Ljava/lang/String;
+
+    invoke-virtual {v0, p1}, Lcng;->a(Ljava/lang/String;)V
+
+    goto :goto_1
+
+    :cond_3
+    invoke-virtual {v0}, Lcng;->b()V
+
+    :goto_1
+    monitor-exit v1
+
+    return-void
+
+    :catchall_1
+    move-exception p1
+
+    monitor-exit v1
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_1
+
+    throw p1
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

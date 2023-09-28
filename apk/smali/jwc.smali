@@ -2,121 +2,65 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Ljava/util/concurrent/Executor;
+.implements Landroid/widget/SeekBar$OnSeekBarChangeListener;
 
 
 # instance fields
-.field private a:Z
-
-.field private final b:Ljava/util/Queue;
+.field final synthetic a:Ljwd;
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 1
+.method public constructor <init>(Ljwd;)V
+    .locals 0
+
+    iput-object p1, p0, Ljwc;->a:Ljwd;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    const/4 v0, 0x0
-
-    iput-boolean v0, p0, Ljwc;->a:Z
-
-    new-instance v0, Ljava/util/LinkedList;
-
-    invoke-direct {v0}, Ljava/util/LinkedList;-><init>()V
-
-    iput-object v0, p0, Ljwc;->b:Ljava/util/Queue;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final execute(Ljava/lang/Runnable;)V
-    .locals 2
+.method public final onProgressChanged(Landroid/widget/SeekBar;IZ)V
+    .locals 0
 
-    iget-object v0, p0, Ljwc;->b:Ljava/util/Queue;
-
-    monitor-enter v0
-
-    :try_start_0
-    iget-boolean v1, p0, Ljwc;->a:Z
-
-    if-eqz v1, :cond_0
-
-    iget-object v1, p0, Ljwc;->b:Ljava/util/Queue;
-
-    invoke-interface {v1, p1}, Ljava/util/Queue;->add(Ljava/lang/Object;)Z
-
-    monitor-exit v0
+    if-nez p3, :cond_0
 
     return-void
 
     :cond_0
-    const/4 v1, 0x1
+    iget-object p1, p0, Ljwc;->a:Ljwd;
 
-    iput-boolean v1, p0, Ljwc;->a:Z
+    iget-object p1, p1, Ljwd;->c:Ljvo;
 
-    monitor-exit v0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_1
+    iget-object p1, p1, Ljvo;->d:Landroid/widget/VideoView;
 
-    :goto_0
-    if-eqz p1, :cond_2
+    invoke-virtual {p1, p2}, Landroid/widget/VideoView;->seekTo(I)V
 
-    invoke-interface {p1}, Ljava/lang/Runnable;->run()V
-
-    iget-object p1, p0, Ljwc;->b:Ljava/util/Queue;
-
-    monitor-enter p1
-
-    :try_start_1
-    iget-object v0, p0, Ljwc;->b:Ljava/util/Queue;
-
-    invoke-interface {v0}, Ljava/util/Queue;->poll()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/lang/Runnable;
-
-    if-nez v0, :cond_1
-
-    const/4 v1, 0x0
-
-    iput-boolean v1, p0, Ljwc;->a:Z
-
-    :cond_1
-    monitor-exit p1
-
-    move-object p1, v0
-
-    goto :goto_0
-
-    :catchall_0
-    move-exception v0
-
-    monitor-exit p1
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    throw v0
-
-    :cond_2
     return-void
+.end method
 
-    :catchall_1
-    move-exception p1
+.method public final onStartTrackingTouch(Landroid/widget/SeekBar;)V
+    .locals 0
 
-    :try_start_2
-    monitor-exit v0
-    :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_1
+    iget-object p1, p0, Ljwc;->a:Ljwd;
 
-    goto :goto_2
+    iget-object p1, p1, Ljwd;->c:Ljvo;
 
-    :goto_1
-    throw p1
+    invoke-virtual {p1}, Ljvl;->a()V
 
-    :goto_2
-    goto :goto_1
+    return-void
+.end method
+
+.method public final onStopTrackingTouch(Landroid/widget/SeekBar;)V
+    .locals 0
+
+    iget-object p1, p0, Ljwc;->a:Ljwd;
+
+    iget-object p1, p1, Ljwd;->c:Ljvo;
+
+    invoke-virtual {p1}, Ljvl;->b()V
+
+    return-void
 .end method

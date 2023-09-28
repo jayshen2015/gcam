@@ -1,233 +1,113 @@
-.class public abstract Lmuq;
-.super Lmut;
+.class public final Lmuq;
+.super Ljava/lang/Object;
 
 # interfaces
-.implements Ljava/util/Map;
+.implements Lpys;
+
+
+# instance fields
+.field private final a:Lqkg;
+
+.field private final b:Lqkg;
+
+.field private final c:Lqkg;
+
+.field private final d:Lqkg;
+
+.field private final e:Lqkg;
+
+.field private final f:Lqkg;
+
+.field private final g:Lqkg;
 
 
 # direct methods
-.method protected constructor <init>()V
+.method public constructor <init>(Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;Lqkg;)V
     .locals 0
 
-    invoke-direct {p0}, Lmut;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lmuq;->a:Lqkg;
+
+    iput-object p2, p0, Lmuq;->b:Lqkg;
+
+    iput-object p3, p0, Lmuq;->c:Lqkg;
+
+    iput-object p4, p0, Lmuq;->d:Lqkg;
+
+    iput-object p5, p0, Lmuq;->e:Lqkg;
+
+    iput-object p6, p0, Lmuq;->f:Lqkg;
+
+    iput-object p7, p0, Lmuq;->g:Lqkg;
 
     return-void
 .end method
 
 
 # virtual methods
-.method protected bridge synthetic a()Ljava/lang/Object;
-    .locals 1
+.method public final a()Lmup;
+    .locals 10
 
-    const/4 v0, 0x0
+    iget-object v0, p0, Lmuq;->a:Lqkg;
 
-    throw v0
-.end method
+    check-cast v0, Lemp;
 
-.method protected abstract c()Ljava/util/Map;
-.end method
+    invoke-virtual {v0}, Lemp;->a()Landroid/content/Context;
 
-.method public clear()V
-    .locals 1
+    iget-object v0, p0, Lmuq;->b:Lqkg;
 
-    invoke-virtual {p0}, Lmuq;->c()Ljava/util/Map;
+    invoke-interface {v0}, Lqkg;->get()Ljava/lang/Object;
 
     move-result-object v0
 
-    invoke-interface {v0}, Ljava/util/Map;->clear()V
+    move-object v2, v0
 
-    return-void
-.end method
+    check-cast v2, Lmuz;
 
-.method public final containsKey(Ljava/lang/Object;)Z
-    .locals 1
+    iget-object v3, p0, Lmuq;->c:Lqkg;
 
-    invoke-virtual {p0}, Lmuq;->c()Ljava/util/Map;
+    iget-object v4, p0, Lmuq;->d:Lqkg;
 
-    move-result-object v0
+    iget-object v5, p0, Lmuq;->e:Lqkg;
 
-    invoke-interface {v0, p1}, Ljava/util/Map;->containsKey(Ljava/lang/Object;)Z
+    iget-object v0, p0, Lmuq;->f:Lqkg;
 
-    move-result p1
+    check-cast v0, Lpyt;
 
-    return p1
-.end method
+    iget-object v0, v0, Lpyt;->a:Ljava/lang/Object;
 
-.method public containsValue(Ljava/lang/Object;)Z
-    .locals 1
+    move-object v6, v0
 
-    invoke-virtual {p0}, Lmuq;->c()Ljava/util/Map;
+    check-cast v6, Lojc;
 
-    move-result-object v0
+    iget-object v0, p0, Lmuq;->g:Lqkg;
 
-    invoke-interface {v0, p1}, Ljava/util/Map;->containsValue(Ljava/lang/Object;)Z
-
-    move-result p1
-
-    return p1
-.end method
-
-.method public entrySet()Ljava/util/Set;
-    .locals 1
-
-    invoke-virtual {p0}, Lmuq;->c()Ljava/util/Map;
+    invoke-interface {v0}, Lqkg;->get()Ljava/lang/Object;
 
     move-result-object v0
 
-    invoke-interface {v0}, Ljava/util/Map;->entrySet()Ljava/util/Set;
+    move-object v7, v0
 
-    move-result-object v0
+    check-cast v7, Loxk;
+
+    new-instance v0, Lmup;
+
+    const/4 v8, 0x0
+
+    const/4 v9, 0x0
+
+    move-object v1, v0
+
+    invoke-direct/range {v1 .. v9}, Lmup;-><init>(Lmuz;Lqkg;Lqkg;Lqkg;Lojc;Loxk;[B[B)V
 
     return-object v0
 .end method
 
-.method public final equals(Ljava/lang/Object;)Z
+.method public final bridge synthetic get()Ljava/lang/Object;
     .locals 1
 
-    if-eq p1, p0, :cond_1
-
-    invoke-virtual {p0}, Lmuq;->c()Ljava/util/Map;
-
-    move-result-object v0
-
-    invoke-virtual {v0, p1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
-
-    move-result p1
-
-    if-eqz p1, :cond_0
-
-    goto :goto_0
-
-    :cond_0
-    const/4 p1, 0x0
-
-    return p1
-
-    :cond_1
-    :goto_0
-    const/4 p1, 0x1
-
-    return p1
-.end method
-
-.method public final get(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 1
-
-    invoke-virtual {p0}, Lmuq;->c()Ljava/util/Map;
-
-    move-result-object v0
-
-    invoke-interface {v0, p1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object p1
-
-    return-object p1
-.end method
-
-.method public final hashCode()I
-    .locals 1
-
-    invoke-virtual {p0}, Lmuq;->c()Ljava/util/Map;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/Object;->hashCode()I
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public final isEmpty()Z
-    .locals 1
-
-    invoke-virtual {p0}, Lmuq;->c()Ljava/util/Map;
-
-    move-result-object v0
-
-    invoke-interface {v0}, Ljava/util/Map;->isEmpty()Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public keySet()Ljava/util/Set;
-    .locals 1
-
-    invoke-virtual {p0}, Lmuq;->c()Ljava/util/Map;
-
-    move-result-object v0
-
-    invoke-interface {v0}, Ljava/util/Map;->keySet()Ljava/util/Set;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 1
-
-    invoke-virtual {p0}, Lmuq;->c()Ljava/util/Map;
-
-    move-result-object v0
-
-    invoke-interface {v0, p1, p2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object p1
-
-    return-object p1
-.end method
-
-.method public putAll(Ljava/util/Map;)V
-    .locals 1
-
-    invoke-virtual {p0}, Lmuq;->c()Ljava/util/Map;
-
-    move-result-object v0
-
-    invoke-interface {v0, p1}, Ljava/util/Map;->putAll(Ljava/util/Map;)V
-
-    return-void
-.end method
-
-.method public remove(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 1
-
-    invoke-virtual {p0}, Lmuq;->c()Ljava/util/Map;
-
-    move-result-object v0
-
-    invoke-interface {v0, p1}, Ljava/util/Map;->remove(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object p1
-
-    return-object p1
-.end method
-
-.method public final size()I
-    .locals 1
-
-    invoke-virtual {p0}, Lmuq;->c()Ljava/util/Map;
-
-    move-result-object v0
-
-    invoke-interface {v0}, Ljava/util/Map;->size()I
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public values()Ljava/util/Collection;
-    .locals 1
-
-    invoke-virtual {p0}, Lmuq;->c()Ljava/util/Map;
-
-    move-result-object v0
-
-    invoke-interface {v0}, Ljava/util/Map;->values()Ljava/util/Collection;
+    invoke-virtual {p0}, Lmuq;->a()Lmup;
 
     move-result-object v0
 

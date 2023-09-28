@@ -1,60 +1,60 @@
-.class Lcyc;
-.super Lcys;
+.class public final synthetic Lcyc;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Ljava/util/concurrent/Callable;
 
 
 # instance fields
-.field final synthetic b:Lcyd;
+.field public final synthetic a:Lcye;
+
+.field public final synthetic b:Lcxy;
 
 
 # direct methods
-.method public constructor <init>(Lcyd;)V
+.method public synthetic constructor <init>(Lcye;Lcxy;)V
     .locals 0
 
-    iput-object p1, p0, Lcyc;->b:Lcyd;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0}, Lcys;-><init>()V
+    iput-object p1, p0, Lcyc;->a:Lcye;
+
+    iput-object p2, p0, Lcyc;->b:Lcxy;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public b()V
-    .locals 1
+.method public final call()Ljava/lang/Object;
+    .locals 3
 
-    iget-object v0, p0, Lcyc;->b:Lcyd;
+    iget-object v0, p0, Lcyc;->a:Lcye;
 
-    invoke-virtual {v0}, Lcyd;->k()V
+    iget-object v1, p0, Lcyc;->b:Lcxy;
 
-    return-void
-.end method
+    new-instance v2, Lcxs;
 
-.method public final bx()I
-    .locals 1
+    invoke-direct {v2, v1}, Lcxs;-><init>(Lcxy;)V
 
-    const/4 v0, 0x2
+    :try_start_0
+    iget-object v0, v0, Lcye;->b:Lcom/google/android/apps/camera/camerafatalerror/CameraFatalErrorTrackerDatabase;
 
-    return v0
-.end method
+    invoke-virtual {v0}, Lcom/google/android/apps/camera/camerafatalerror/CameraFatalErrorTrackerDatabase;->t()Lcxt;
 
-.method public d()V
-    .locals 1
+    move-result-object v0
 
-    iget-object v0, p0, Lcyc;->b:Lcyd;
+    invoke-virtual {v0, v1}, Lcxt;->a(Lcxy;)Lcxs;
 
-    iget-object v0, v0, Lcyd;->k:Ldfa;
+    move-result-object v2
+    :try_end_0
+    .catch Landroid/database/sqlite/SQLiteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    invoke-virtual {v0}, Ldfa;->g()V
+    goto :goto_0
 
-    return-void
-.end method
+    :catch_0
+    move-exception v0
 
-.method public final f()V
-    .locals 1
-
-    iget-object v0, p0, Lcyc;->b:Lcyd;
-
-    iput-object p0, v0, Lcyd;->j:Lcys;
-
-    return-void
+    :goto_0
+    return-object v2
 .end method

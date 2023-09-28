@@ -1,34 +1,49 @@
-.class public interface abstract Lklj;
+.class public final Lklj;
 .super Ljava/lang/Object;
 
 
-# virtual methods
-.method public abstract a(Lkll;)Lkli;
+# instance fields
+.field public final a:[Lkhk;
+
+.field public final b:Z
+
+.field public final c:I
+
+.field final synthetic d:Lkli;
+
+
+# direct methods
+.method public constructor <init>(Lkli;[Lkhk;ZI)V
+    .locals 0
+
+    iput-object p1, p0, Lklj;->d:Lkli;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p2, p0, Lklj;->a:[Lkhk;
+
+    const/4 p1, 0x0
+
+    if-eqz p2, :cond_0
+
+    if-eqz p3, :cond_0
+
+    const/4 p1, 0x1
+
+    :cond_0
+    iput-boolean p1, p0, Lklj;->b:Z
+
+    iput p4, p0, Lklj;->c:I
+
+    return-void
 .end method
 
-.method public abstract b()Lkll;
-.end method
+.method public static a()Lkli;
+    .locals 1
 
-.method public abstract c(I)Lkll;
-.end method
+    new-instance v0, Lkli;
 
-.method public abstract d(Ljava/lang/String;)Lkll;
-.end method
+    invoke-direct {v0}, Lkli;-><init>()V
 
-.method public abstract e(Lklv;)Lkll;
-.end method
-
-.method public abstract g()Ljava/util/List;
-.end method
-
-.method public abstract h(Lklv;)Ljava/util/List;
-.end method
-
-.method public abstract i()Z
-.end method
-
-.method public abstract j(Lklv;)Z
-.end method
-
-.method public abstract k()Z
+    return-object v0
 .end method

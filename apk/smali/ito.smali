@@ -1,36 +1,33 @@
-.class public final Lito;
-.super Lacl;
+.class public final synthetic Lito;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field final synthetic a:Lcom/google/android/apps/camera/zoomui/view/ZoomKnob;
+.field public final synthetic a:Litq;
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/apps/camera/zoomui/view/ZoomKnob;)V
+.method public synthetic constructor <init>(Litq;)V
     .locals 0
 
-    iput-object p1, p0, Lito;->a:Lcom/google/android/apps/camera/zoomui/view/ZoomKnob;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0}, Lacl;-><init>()V
+    iput-object p1, p0, Lito;->a:Litq;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Landroid/graphics/Typeface;)V
+.method public final run()V
     .locals 1
 
-    iget-object v0, p0, Lito;->a:Lcom/google/android/apps/camera/zoomui/view/ZoomKnob;
+    iget-object v0, p0, Lito;->a:Litq;
 
-    invoke-virtual {v0, p1}, Lcom/google/android/apps/camera/zoomui/view/ZoomKnob;->setTypeface(Landroid/graphics/Typeface;)V
-
-    return-void
-.end method
-
-.method public final b()V
-    .locals 0
+    invoke-interface {v0}, Litq;->close()V
 
     return-void
 .end method

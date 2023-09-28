@@ -1,129 +1,41 @@
-.class public final Likl;
+.class public final synthetic Likl;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Landroid/animation/TypeEvaluator;
+.implements Landroid/content/DialogInterface$OnClickListener;
 
 
-# static fields
-.field private static final a:Landroid/animation/IntEvaluator;
+# instance fields
+.field public final synthetic a:Likm;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
-
-    new-instance v0, Landroid/animation/IntEvaluator;
-
-    invoke-direct {v0}, Landroid/animation/IntEvaluator;-><init>()V
-
-    sput-object v0, Likl;->a:Landroid/animation/IntEvaluator;
-
-    return-void
-.end method
-
-.method public constructor <init>()V
+.method public synthetic constructor <init>(Likm;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Likl;->a:Likm;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final bridge synthetic evaluate(FLjava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 6
+.method public final onClick(Landroid/content/DialogInterface;I)V
+    .locals 1
 
-    check-cast p2, Landroid/graphics/Rect;
+    iget-object p1, p0, Likl;->a:Likm;
 
-    check-cast p3, Landroid/graphics/Rect;
+    new-instance p2, Landroid/content/Intent;
 
-    new-instance v0, Landroid/graphics/Rect;
+    const-string v0, "android.os.storage.action.MANAGE_STORAGE"
 
-    sget-object v1, Likl;->a:Landroid/animation/IntEvaluator;
+    invoke-direct {p2, v0}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    iget v2, p2, Landroid/graphics/Rect;->left:I
+    iget-object p1, p1, Likm;->a:Landroid/content/Context;
 
-    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-virtual {p1, p2}, Landroid/content/Context;->startActivity(Landroid/content/Intent;)V
 
-    move-result-object v2
-
-    iget v3, p3, Landroid/graphics/Rect;->left:I
-
-    invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v3
-
-    invoke-virtual {v1, p1, v2, v3}, Landroid/animation/IntEvaluator;->evaluate(FLjava/lang/Integer;Ljava/lang/Integer;)Ljava/lang/Integer;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/Integer;->intValue()I
-
-    move-result v2
-
-    iget v3, p2, Landroid/graphics/Rect;->top:I
-
-    invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v3
-
-    iget v4, p3, Landroid/graphics/Rect;->top:I
-
-    invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v4
-
-    invoke-virtual {v1, p1, v3, v4}, Landroid/animation/IntEvaluator;->evaluate(FLjava/lang/Integer;Ljava/lang/Integer;)Ljava/lang/Integer;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Ljava/lang/Integer;->intValue()I
-
-    move-result v3
-
-    iget v4, p2, Landroid/graphics/Rect;->right:I
-
-    invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v4
-
-    iget v5, p3, Landroid/graphics/Rect;->right:I
-
-    invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v5
-
-    invoke-virtual {v1, p1, v4, v5}, Landroid/animation/IntEvaluator;->evaluate(FLjava/lang/Integer;Ljava/lang/Integer;)Ljava/lang/Integer;
-
-    move-result-object v4
-
-    invoke-virtual {v4}, Ljava/lang/Integer;->intValue()I
-
-    move-result v4
-
-    iget p2, p2, Landroid/graphics/Rect;->bottom:I
-
-    invoke-static {p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object p2
-
-    iget p3, p3, Landroid/graphics/Rect;->bottom:I
-
-    invoke-static {p3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object p3
-
-    invoke-virtual {v1, p1, p2, p3}, Landroid/animation/IntEvaluator;->evaluate(FLjava/lang/Integer;Ljava/lang/Integer;)Ljava/lang/Integer;
-
-    move-result-object p1
-
-    invoke-virtual {p1}, Ljava/lang/Integer;->intValue()I
-
-    move-result p1
-
-    invoke-direct {v0, v2, v3, v4, p1}, Landroid/graphics/Rect;-><init>(IIII)V
-
-    return-object v0
+    return-void
 .end method

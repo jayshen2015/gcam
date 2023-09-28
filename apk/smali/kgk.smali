@@ -1,342 +1,548 @@
-.class public final synthetic Lkgk;
+.class public final Lkgk;
 .super Ljava/lang/Object;
 
-# interfaces
-.implements Ljava/lang/Runnable;
+
+# static fields
+.field private static final c:Ljava/util/concurrent/locks/Lock;
+
+.field private static d:Lkgk;
 
 
 # instance fields
-.field public final synthetic a:Z
+.field public final a:Ljava/util/concurrent/locks/Lock;
 
-.field public final synthetic b:Z
-
-.field public final synthetic c:Z
-
-.field public final synthetic d:Ljava/lang/Object;
-
-.field private final synthetic e:I
+.field public final b:Landroid/content/SharedPreferences;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lhwc;ZZZI)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 1
 
-    iput p5, p0, Lkgk;->e:I
+    new-instance v0, Ljava/util/concurrent/locks/ReentrantLock;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {v0}, Ljava/util/concurrent/locks/ReentrantLock;-><init>()V
 
-    iput-object p1, p0, Lkgk;->d:Ljava/lang/Object;
-
-    iput-boolean p2, p0, Lkgk;->a:Z
-
-    iput-boolean p3, p0, Lkgk;->b:Z
-
-    iput-boolean p4, p0, Lkgk;->c:Z
+    sput-object v0, Lkgk;->c:Ljava/util/concurrent/locks/Lock;
 
     return-void
 .end method
 
-.method public synthetic constructor <init>(Lkgl;ZZZI)V
-    .locals 0
-
-    iput p5, p0, Lkgk;->e:I
+.method public constructor <init>(Landroid/content/Context;)V
+    .locals 2
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lkgk;->d:Ljava/lang/Object;
+    new-instance v0, Ljava/util/concurrent/locks/ReentrantLock;
 
-    iput-boolean p2, p0, Lkgk;->a:Z
+    invoke-direct {v0}, Ljava/util/concurrent/locks/ReentrantLock;-><init>()V
 
-    iput-boolean p3, p0, Lkgk;->b:Z
+    iput-object v0, p0, Lkgk;->a:Ljava/util/concurrent/locks/Lock;
 
-    iput-boolean p4, p0, Lkgk;->c:Z
+    const-string v0, "com.google.android.gms.signin"
+
+    const/4 v1, 0x0
+
+    invoke-virtual {p1, v0, v1}, Landroid/content/Context;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
+
+    move-result-object p1
+
+    iput-object p1, p0, Lkgk;->b:Landroid/content/SharedPreferences;
 
     return-void
+.end method
+
+.method public static c(Landroid/content/Context;)Lkgk;
+    .locals 2
+
+    invoke-static {p0}, Lmip;->dk(Ljava/lang/Object;)Ljava/lang/Object;
+
+    sget-object v0, Lkgk;->c:Ljava/util/concurrent/locks/Lock;
+
+    invoke-interface {v0}, Ljava/util/concurrent/locks/Lock;->lock()V
+
+    :try_start_0
+    sget-object v1, Lkgk;->d:Lkgk;
+
+    if-nez v1, :cond_0
+
+    new-instance v1, Lkgk;
+
+    invoke-virtual {p0}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
+
+    move-result-object p0
+
+    invoke-direct {v1, p0}, Lkgk;-><init>(Landroid/content/Context;)V
+
+    sput-object v1, Lkgk;->d:Lkgk;
+
+    :cond_0
+    sget-object p0, Lkgk;->d:Lkgk;
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    invoke-interface {v0}, Ljava/util/concurrent/locks/Lock;->unlock()V
+
+    return-object p0
+
+    :catchall_0
+    move-exception p0
+
+    sget-object v0, Lkgk;->c:Ljava/util/concurrent/locks/Lock;
+
+    invoke-interface {v0}, Ljava/util/concurrent/locks/Lock;->unlock()V
+
+    throw p0
 .end method
 
 
 # virtual methods
-.method public final run()V
-    .locals 10
+.method public final a()Lcom/google/android/gms/auth/api/signin/GoogleSignInAccount;
+    .locals 24
 
-    iget v0, p0, Lkgk;->e:I
+    move-object/from16 v1, p0
 
-    packed-switch v0, :pswitch_data_0
+    const-string v0, "serverAuthCode"
 
-    iget-object v0, p0, Lkgk;->d:Ljava/lang/Object;
+    const-string v2, "familyName"
 
-    iget-boolean v1, p0, Lkgk;->a:Z
+    const-string v3, "givenName"
 
-    iget-boolean v2, p0, Lkgk;->b:Z
+    const-string v4, "displayName"
 
-    iget-boolean v3, p0, Lkgk;->c:Z
+    const-string v5, "email"
 
-    check-cast v0, Lhwc;
+    const-string v6, "tokenId"
 
-    iget-object v4, v0, Lhwc;->o:Lker;
+    const-string v7, "defaultGoogleSignInAccount"
 
-    invoke-virtual {v0, v1, v4, v2, v3}, Lhwc;->b(ZLker;ZZ)V
-
-    return-void
-
-    :pswitch_0
-    iget-object v0, p0, Lkgk;->d:Ljava/lang/Object;
-
-    iget-boolean v1, p0, Lkgk;->a:Z
-
-    iget-boolean v2, p0, Lkgk;->b:Z
-
-    iget-boolean v3, p0, Lkgk;->c:Z
-
-    :try_start_0
-    move-object v4, v0
-
-    check-cast v4, Lkgl;
-
-    iget-object v4, v4, Lkgl;->b:Lkgh;
-    :try_end_0
-    .catch Lkdf; {:try_start_0 .. :try_end_0} :catch_1
-    .catch Ljava/lang/InterruptedException; {:try_start_0 .. :try_end_0} :catch_0
-
-    const/4 v5, 0x0
-
-    :try_start_1
-    iget-object v6, v4, Lkgh;->b:Lkhf;
-
-    invoke-virtual {v6}, Lkhf;->a()Lkhd;
-
-    move-result-object v6
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_3
-
-    const/4 v7, 0x1
-
-    :try_start_2
-    invoke-virtual {v6, v1, v2, v3, v7}, Lkhd;->d(ZZZZ)Lnou;
-    :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_1
-
-    :try_start_3
-    invoke-virtual {v6}, Lkhd;->close()V
-    :try_end_3
-    .catchall {:try_start_3 .. :try_end_3} :catchall_3
-
-    :try_start_4
-    monitor-enter v4
-    :try_end_4
-    .catch Lkdf; {:try_start_4 .. :try_end_4} :catch_1
-    .catch Ljava/lang/InterruptedException; {:try_start_4 .. :try_end_4} :catch_0
-
-    :try_start_5
-    iget-object v6, v4, Lkgh;->a:Lkht;
-
-    invoke-static {v6}, Lkhs;->c(Lkht;)Lkhs;
-
-    move-result-object v6
-
-    iget-object v7, v4, Lkgh;->a:Lkht;
-
-    iget-object v8, v7, Lkht;->a:Ljava/lang/Boolean;
-
-    iput-object v8, v6, Lkhs;->f:Ljava/lang/Boolean;
-
-    iget-object v8, v7, Lkht;->b:Ljava/lang/Boolean;
-
-    iput-object v8, v6, Lkhs;->g:Ljava/lang/Boolean;
-
-    iget-object v7, v7, Lkht;->c:Ljava/lang/Boolean;
-
-    iput-object v7, v6, Lkhs;->h:Ljava/lang/Boolean;
-
-    if-eqz v1, :cond_0
-
-    invoke-static {v5}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
-
-    move-result-object v1
-
-    iput-object v1, v6, Lkhs;->f:Ljava/lang/Boolean;
-
-    :cond_0
-    if-eqz v2, :cond_1
-
-    invoke-static {v5}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
-
-    move-result-object v1
-
-    iput-object v1, v6, Lkhs;->g:Ljava/lang/Boolean;
-
-    :cond_1
-    if-eqz v3, :cond_2
-
-    invoke-static {v5}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
-
-    move-result-object v1
-
-    iput-object v1, v6, Lkhs;->h:Ljava/lang/Boolean;
-
-    :cond_2
-    invoke-virtual {v6}, Lkhs;->d()Lkht;
-
-    move-result-object v1
-
-    invoke-virtual {v4, v1}, Lkgh;->c(Lkht;)V
-
-    monitor-exit v4
-
-    return-void
-
-    :catchall_0
-    move-exception v1
-
-    monitor-exit v4
-    :try_end_5
-    .catchall {:try_start_5 .. :try_end_5} :catchall_0
-
-    :goto_0
-    :try_start_6
-    throw v1
-    :try_end_6
-    .catch Lkdf; {:try_start_6 .. :try_end_6} :catch_1
-    .catch Ljava/lang/InterruptedException; {:try_start_6 .. :try_end_6} :catch_0
-
-    :catchall_1
-    move-exception v7
-
-    :try_start_7
-    invoke-virtual {v6}, Lkhd;->close()V
-    :try_end_7
-    .catchall {:try_start_7 .. :try_end_7} :catchall_2
-
-    goto :goto_1
-
-    :catchall_2
-    move-exception v6
-
-    :try_start_8
-    invoke-static {v7, v6}, Lklg;->g(Ljava/lang/Throwable;Ljava/lang/Throwable;)V
-
-    :goto_1
-    throw v7
-    :try_end_8
-    .catchall {:try_start_8 .. :try_end_8} :catchall_3
-
-    :catchall_3
-    move-exception v6
-
-    :try_start_9
-    monitor-enter v4
-    :try_end_9
-    .catch Lkdf; {:try_start_9 .. :try_end_9} :catch_1
-    .catch Ljava/lang/InterruptedException; {:try_start_9 .. :try_end_9} :catch_0
-
-    :try_start_a
-    iget-object v7, v4, Lkgh;->a:Lkht;
-
-    invoke-static {v7}, Lkhs;->c(Lkht;)Lkhs;
+    invoke-virtual {v1, v7}, Lkgk;->d(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v7
 
-    iget-object v8, v4, Lkgh;->a:Lkht;
+    invoke-static {v7}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
-    iget-object v9, v8, Lkht;->a:Ljava/lang/Boolean;
+    move-result v8
 
-    iput-object v9, v7, Lkhs;->f:Ljava/lang/Boolean;
+    if-eqz v8, :cond_0
 
-    iget-object v9, v8, Lkht;->b:Ljava/lang/Boolean;
+    const/4 v9, 0x0
 
-    iput-object v9, v7, Lkhs;->g:Ljava/lang/Boolean;
+    goto/16 :goto_8
 
-    iget-object v8, v8, Lkht;->c:Ljava/lang/Boolean;
+    :cond_0
+    const-string v8, "googleSignInAccount"
 
-    iput-object v8, v7, Lkhs;->h:Ljava/lang/Boolean;
+    invoke-virtual {v1, v8, v7}, Lkgk;->e(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
-    if-eqz v1, :cond_3
+    move-result-object v7
 
-    invoke-static {v5}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+    invoke-virtual {v1, v7}, Lkgk;->d(Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v7
 
-    iput-object v1, v7, Lkhs;->f:Ljava/lang/Boolean;
+    if-eqz v7, :cond_a
+
+    :try_start_0
+    invoke-static {v7}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+
+    move-result v8
+
+    if-eqz v8, :cond_1
+
+    const/4 v9, 0x0
+
+    goto/16 :goto_8
+
+    :cond_1
+    new-instance v8, Lorg/json/JSONObject;
+
+    invoke-direct {v8, v7}, Lorg/json/JSONObject;-><init>(Ljava/lang/String;)V
+
+    const-string v7, "photoUrl"
+
+    invoke-virtual {v8, v7}, Lorg/json/JSONObject;->optString(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v7
+
+    invoke-static {v7}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+
+    move-result v10
+
+    if-nez v10, :cond_2
+
+    invoke-static {v7}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
+
+    move-result-object v7
+
+    move-object/from16 v16, v7
+
+    goto :goto_0
+
+    :cond_2
+    const/16 v16, 0x0
+
+    :goto_0
+    const-string v7, "expirationTime"
+
+    invoke-virtual {v8, v7}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v7
+
+    invoke-static {v7}, Ljava/lang/Long;->parseLong(Ljava/lang/String;)J
+
+    move-result-wide v10
+
+    new-instance v7, Ljava/util/HashSet;
+
+    invoke-direct {v7}, Ljava/util/HashSet;-><init>()V
+
+    const-string v12, "grantedScopes"
+
+    invoke-virtual {v8, v12}, Lorg/json/JSONObject;->getJSONArray(Ljava/lang/String;)Lorg/json/JSONArray;
+
+    move-result-object v12
+
+    invoke-virtual {v12}, Lorg/json/JSONArray;->length()I
+
+    move-result v13
+
+    const/4 v14, 0x0
+
+    :goto_1
+    if-ge v14, v13, :cond_3
+
+    new-instance v15, Lcom/google/android/gms/common/api/Scope;
+
+    invoke-virtual {v12, v14}, Lorg/json/JSONArray;->getString(I)Ljava/lang/String;
+
+    move-result-object v9
+
+    invoke-direct {v15, v9}, Lcom/google/android/gms/common/api/Scope;-><init>(Ljava/lang/String;)V
+
+    invoke-interface {v7, v15}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
+
+    add-int/lit8 v14, v14, 0x1
+
+    goto :goto_1
 
     :cond_3
-    if-eqz v2, :cond_4
+    const-string v9, "id"
 
-    invoke-static {v5}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+    invoke-virtual {v8, v9}, Lorg/json/JSONObject;->optString(Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v12
 
-    iput-object v1, v7, Lkhs;->g:Ljava/lang/Boolean;
+    invoke-virtual {v8, v6}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
+
+    move-result v9
+
+    if-eqz v9, :cond_4
+
+    invoke-virtual {v8, v6}, Lorg/json/JSONObject;->optString(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v6
+
+    move-object v13, v6
+
+    goto :goto_2
 
     :cond_4
-    if-eqz v3, :cond_5
+    const/4 v13, 0x0
 
-    invoke-static {v5}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+    :goto_2
+    invoke-virtual {v8, v5}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
 
-    move-result-object v1
+    move-result v6
 
-    iput-object v1, v7, Lkhs;->h:Ljava/lang/Boolean;
+    if-eqz v6, :cond_5
+
+    invoke-virtual {v8, v5}, Lorg/json/JSONObject;->optString(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v5
+
+    move-object v14, v5
+
+    goto :goto_3
 
     :cond_5
-    invoke-virtual {v7}, Lkhs;->d()Lkht;
+    const/4 v14, 0x0
 
-    move-result-object v1
+    :goto_3
+    invoke-virtual {v8, v4}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
 
-    invoke-virtual {v4, v1}, Lkgh;->c(Lkht;)V
+    move-result v5
 
-    monitor-exit v4
-    :try_end_a
-    .catchall {:try_start_a .. :try_end_a} :catchall_4
+    if-eqz v5, :cond_6
 
-    :try_start_b
-    throw v6
-    :try_end_b
-    .catch Lkdf; {:try_start_b .. :try_end_b} :catch_1
-    .catch Ljava/lang/InterruptedException; {:try_start_b .. :try_end_b} :catch_0
+    invoke-virtual {v8, v4}, Lorg/json/JSONObject;->optString(Ljava/lang/String;)Ljava/lang/String;
 
-    :catchall_4
-    move-exception v1
+    move-result-object v4
 
-    :try_start_c
-    monitor-exit v4
-    :try_end_c
-    .catchall {:try_start_c .. :try_end_c} :catchall_4
+    move-object v15, v4
+
+    goto :goto_4
+
+    :cond_6
+    const/4 v15, 0x0
+
+    :goto_4
+    invoke-virtual {v8, v3}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
+
+    move-result v4
+
+    if-eqz v4, :cond_7
+
+    invoke-virtual {v8, v3}, Lorg/json/JSONObject;->optString(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v3
+
+    move-object/from16 v22, v3
+
+    goto :goto_5
+
+    :cond_7
+    const/16 v22, 0x0
+
+    :goto_5
+    invoke-virtual {v8, v2}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
+
+    move-result v3
+
+    if-eqz v3, :cond_8
+
+    invoke-virtual {v8, v2}, Lorg/json/JSONObject;->optString(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v2
+
+    move-object/from16 v23, v2
+
+    goto :goto_6
+
+    :cond_8
+    const/16 v23, 0x0
+
+    :goto_6
+    invoke-static {v10, v11}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object v2
+
+    const-string v3, "obfuscatedIdentifier"
+
+    invoke-virtual {v8, v3}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v20
+
+    new-instance v3, Lcom/google/android/gms/auth/api/signin/GoogleSignInAccount;
+
+    invoke-virtual {v2}, Ljava/lang/Long;->longValue()J
+
+    move-result-wide v18
+
+    invoke-static/range {v20 .. v20}, Lmip;->ds(Ljava/lang/String;)V
+
+    new-instance v2, Ljava/util/ArrayList;
+
+    invoke-direct {v2, v7}, Ljava/util/ArrayList;-><init>(Ljava/util/Collection;)V
+
+    const/4 v11, 0x3
+
+    const/16 v17, 0x0
+
+    move-object v10, v3
+
+    move-object/from16 v21, v2
+
+    invoke-direct/range {v10 .. v23}, Lcom/google/android/gms/auth/api/signin/GoogleSignInAccount;-><init>(ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Landroid/net/Uri;Ljava/lang/String;JLjava/lang/String;Ljava/util/List;Ljava/lang/String;Ljava/lang/String;)V
+
+    invoke-virtual {v8, v0}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_9
+
+    invoke-virtual {v8, v0}, Lorg/json/JSONObject;->optString(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v0
+
+    goto :goto_7
+
+    :cond_9
+    const/4 v0, 0x0
+
+    :goto_7
+    iput-object v0, v3, Lcom/google/android/gms/auth/api/signin/GoogleSignInAccount;->g:Ljava/lang/String;
+    :try_end_0
+    .catch Lorg/json/JSONException; {:try_start_0 .. :try_end_0} :catch_0
+
+    move-object v9, v3
+
+    goto :goto_8
+
+    :catch_0
+    move-exception v0
+
+    :cond_a
+    const/4 v9, 0x0
+
+    :goto_8
+    return-object v9
+.end method
+
+.method public final b()Lcom/google/android/gms/auth/api/signin/GoogleSignInOptions;
+    .locals 3
+
+    const-string v0, "defaultGoogleSignInAccount"
+
+    invoke-virtual {p0, v0}, Lkgk;->d(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+
+    move-result v1
+
+    const/4 v2, 0x0
+
+    if-eqz v1, :cond_0
+
+    goto :goto_0
+
+    :cond_0
+    const-string v1, "googleSignInOptions"
+
+    invoke-virtual {p0, v1, v0}, Lkgk;->e(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {p0, v0}, Lkgk;->d(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_1
+
+    :try_start_0
+    invoke-static {v0}, Lcom/google/android/gms/auth/api/signin/GoogleSignInOptions;->a(Ljava/lang/String;)Lcom/google/android/gms/auth/api/signin/GoogleSignInOptions;
+
+    move-result-object v2
+    :try_end_0
+    .catch Lorg/json/JSONException; {:try_start_0 .. :try_end_0} :catch_0
 
     goto :goto_0
 
     :catch_0
-    move-exception v1
+    move-exception v0
 
-    invoke-static {}, Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
+    :cond_1
+    :goto_0
+    return-object v2
+.end method
 
-    move-result-object v2
+.method public final d(Ljava/lang/String;)Ljava/lang/String;
+    .locals 2
 
-    invoke-virtual {v2}, Ljava/lang/Thread;->interrupt()V
+    iget-object v0, p0, Lkgk;->a:Ljava/util/concurrent/locks/Lock;
 
-    check-cast v0, Lkgl;
+    invoke-interface {v0}, Ljava/util/concurrent/locks/Lock;->lock()V
 
-    iget-object v0, v0, Lkgl;->a:Lkaq;
+    :try_start_0
+    iget-object v0, p0, Lkgk;->b:Landroid/content/SharedPreferences;
 
-    const-string v2, "Interrupted when calling unlock3A."
+    const/4 v1, 0x0
 
-    invoke-interface {v0, v2, v1}, Lkaq;->c(Ljava/lang/String;Ljava/lang/Throwable;)V
+    invoke-interface {v0, p1, v1}, Landroid/content/SharedPreferences;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object p1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    iget-object v0, p0, Lkgk;->a:Ljava/util/concurrent/locks/Lock;
+
+    invoke-interface {v0}, Ljava/util/concurrent/locks/Lock;->unlock()V
+
+    return-object p1
+
+    :catchall_0
+    move-exception p1
+
+    iget-object v0, p0, Lkgk;->a:Ljava/util/concurrent/locks/Lock;
+
+    invoke-interface {v0}, Ljava/util/concurrent/locks/Lock;->unlock()V
+
+    throw p1
+.end method
+
+.method public final e(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    .locals 3
+
+    invoke-virtual {p1}, Ljava/lang/String;->length()I
+
+    move-result v0
+
+    invoke-static {p2}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/String;->length()I
+
+    move-result v1
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    add-int/lit8 v0, v0, 0x1
+
+    add-int/2addr v0, v1
+
+    invoke-direct {v2, v0}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    invoke-virtual {v2, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string p1, ":"
+
+    invoke-virtual {v2, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p1
+
+    return-object p1
+.end method
+
+.method protected final f(Ljava/lang/String;Ljava/lang/String;)V
+    .locals 1
+
+    iget-object v0, p0, Lkgk;->a:Ljava/util/concurrent/locks/Lock;
+
+    invoke-interface {v0}, Ljava/util/concurrent/locks/Lock;->lock()V
+
+    :try_start_0
+    iget-object v0, p0, Lkgk;->b:Landroid/content/SharedPreferences;
+
+    invoke-interface {v0}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
+
+    move-result-object v0
+
+    invoke-interface {v0, p1, p2}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
+
+    move-result-object p1
+
+    invoke-interface {p1}, Landroid/content/SharedPreferences$Editor;->apply()V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    iget-object p1, p0, Lkgk;->a:Ljava/util/concurrent/locks/Lock;
+
+    invoke-interface {p1}, Ljava/util/concurrent/locks/Lock;->unlock()V
 
     return-void
 
-    :catch_1
-    move-exception v1
+    :catchall_0
+    move-exception p1
 
-    check-cast v0, Lkgl;
+    iget-object p2, p0, Lkgk;->a:Ljava/util/concurrent/locks/Lock;
 
-    iget-object v0, v0, Lkgl;->a:Lkaq;
+    invoke-interface {p2}, Ljava/util/concurrent/locks/Lock;->unlock()V
 
-    const-string v2, "FrameServer was closed when calling unlock3A."
-
-    invoke-interface {v0, v2, v1}, Lkaq;->c(Ljava/lang/String;Ljava/lang/Throwable;)V
-
-    return-void
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+    throw p1
 .end method

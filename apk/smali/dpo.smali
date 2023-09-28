@@ -1,113 +1,76 @@
-.class public final Ldpo;
+.class public final synthetic Ldpo;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Logk;
+.implements Ljava/util/concurrent/Callable;
 
 
 # instance fields
-.field private final a:Loiw;
+.field public final synthetic a:Ldpt;
 
-.field private final b:Loiw;
-
-.field private final c:Loiw;
-
-.field private final d:Loiw;
+.field public final synthetic b:Landroid/hardware/HardwareBuffer;
 
 
 # direct methods
-.method public constructor <init>(Loiw;Loiw;Loiw;Loiw;)V
+.method public synthetic constructor <init>(Ldpt;Landroid/hardware/HardwareBuffer;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Ldpo;->a:Loiw;
+    iput-object p1, p0, Ldpo;->a:Ldpt;
 
-    iput-object p2, p0, Ldpo;->b:Loiw;
-
-    iput-object p3, p0, Ldpo;->c:Loiw;
-
-    iput-object p4, p0, Ldpo;->d:Loiw;
+    iput-object p2, p0, Ldpo;->b:Landroid/hardware/HardwareBuffer;
 
     return-void
 .end method
 
-.method public static b(Loiw;Loiw;Loiw;Loiw;)Ldpo;
-    .locals 1
-
-    new-instance v0, Ldpo;
-
-    invoke-direct {v0, p0, p1, p2, p3}, Ldpo;-><init>(Loiw;Loiw;Loiw;Loiw;)V
-
-    return-object v0
-.end method
-
 
 # virtual methods
-.method public final a()Ldpn;
-    .locals 7
+.method public final call()Ljava/lang/Object;
+    .locals 6
 
-    iget-object v0, p0, Ldpo;->a:Loiw;
+    iget-object v0, p0, Ldpo;->a:Ldpt;
 
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
+    iget-object v1, p0, Ldpo;->b:Landroid/hardware/HardwareBuffer;
 
-    move-result-object v0
+    iget-object v0, v0, Ldpt;->c:Ldps;
 
-    move-object v2, v0
+    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    check-cast v2, Lkog;
+    iget-object v2, v0, Ldps;->b:Lpih;
 
-    invoke-static {}, Ldnf;->c()Lfwx;
+    sget-object v3, Ljava/util/concurrent/TimeUnit;->MILLISECONDS:Ljava/util/concurrent/TimeUnit;
 
-    move-result-object v3
+    const-wide/16 v4, 0xbb8
 
-    iget-object v0, p0, Ldpo;->b:Loiw;
+    invoke-virtual {v2, v4, v5, v3}, Lpih;->get(JLjava/util/concurrent/TimeUnit;)Ljava/lang/Object;
 
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
+    iget-object v2, v0, Ldps;->d:Ljava/lang/Object;
 
-    move-result-object v0
+    monitor-enter v2
 
-    move-object v4, v0
+    :try_start_0
+    iget-object v0, v0, Ldps;->e:Landroid/hardware/HardwareBuffer;
 
-    check-cast v4, Ljava/util/concurrent/Executor;
+    monitor-exit v2
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    iget-object v0, p0, Ldpo;->c:Loiw;
+    new-instance v2, Ldpf;
 
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
+    const/4 v3, 0x0
 
-    move-result-object v0
+    invoke-direct {v2, v1, v0, v3}, Ldpf;-><init>(Landroid/hardware/HardwareBuffer;Landroid/hardware/HardwareBuffer;I)V
 
-    check-cast v0, Ljava/lang/Integer;
+    return-object v2
 
-    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
+    :catchall_0
+    move-exception v0
 
-    move-result v5
+    :try_start_1
+    monitor-exit v2
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    iget-object v0, p0, Ldpo;->d:Loiw;
-
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    move-object v6, v0
-
-    check-cast v6, Ldhi;
-
-    new-instance v0, Ldpn;
-
-    move-object v1, v0
-
-    invoke-direct/range {v1 .. v6}, Ldpn;-><init>(Lkog;Lfwx;Ljava/util/concurrent/Executor;ILdhi;)V
-
-    return-object v0
-.end method
-
-.method public final bridge synthetic get()Ljava/lang/Object;
-    .locals 1
-
-    invoke-virtual {p0}, Ldpo;->a()Ldpn;
-
-    move-result-object v0
-
-    return-object v0
+    throw v0
 .end method

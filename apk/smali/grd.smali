@@ -1,46 +1,59 @@
-.class public final Lgrd;
-.super Lgrh;
+.class public final synthetic Lgrd;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Llie;
+
+
+# instance fields
+.field public final synthetic a:Lgrg;
+
+.field public final synthetic b:Llmv;
 
 
 # direct methods
-.method public constructor <init>()V
+.method public synthetic constructor <init>(Lgrg;Llmv;)V
     .locals 0
 
-    invoke-direct {p0}, Lgrh;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lgrd;->a:Lgrg;
+
+    iput-object p2, p0, Lgrd;->b:Llmv;
 
     return-void
 .end method
 
 
 # virtual methods
-.method protected final bridge synthetic a(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 0
+.method public final close()V
+    .locals 3
 
-    check-cast p1, Ljava/lang/Integer;
+    iget-object v0, p0, Lgrd;->a:Lgrg;
 
-    invoke-virtual {p1}, Ljava/lang/Integer;->intValue()I
+    iget-object v1, p0, Lgrd;->b:Llmv;
 
-    move-result p1
+    iget-object v2, v0, Lgrg;->a:Ljava/lang/Object;
 
-    invoke-static {p1}, Ljava/nio/ByteBuffer;->allocateDirect(I)Ljava/nio/ByteBuffer;
+    monitor-enter v2
 
-    move-result-object p1
+    :try_start_0
+    invoke-interface {v1, v0}, Llmv;->l(Llmu;)V
 
-    return-object p1
-.end method
+    const/4 v1, 0x0
 
-.method protected final bridge synthetic b(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 1
+    iput-boolean v1, v0, Lgrg;->b:Z
 
-    check-cast p1, Ljava/nio/ByteBuffer;
+    monitor-exit v2
 
-    invoke-virtual {p1}, Ljava/nio/ByteBuffer;->rewind()Ljava/nio/Buffer;
+    return-void
 
-    invoke-virtual {p1}, Ljava/nio/ByteBuffer;->capacity()I
+    :catchall_0
+    move-exception v0
 
-    move-result v0
+    monitor-exit v2
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    invoke-virtual {p1, v0}, Ljava/nio/ByteBuffer;->limit(I)Ljava/nio/Buffer;
-
-    return-object p1
+    throw v0
 .end method

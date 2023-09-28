@@ -1,50 +1,63 @@
-.class public final Lewg;
-.super Lewl;
+.class public final synthetic Lewg;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Liho;
 
 
 # instance fields
-.field private m:Landroid/graphics/PointF;
+.field public final synthetic a:Lghw;
+
+.field public final synthetic b:Lghu;
+
+.field private final synthetic c:I
 
 
 # direct methods
-.method public constructor <init>()V
+.method public synthetic constructor <init>(Lghw;Lghu;I)V
     .locals 0
 
-    invoke-direct {p0}, Lewl;-><init>()V
+    iput p3, p0, Lewg;->c:I
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lewg;->a:Lghw;
+
+    iput-object p2, p0, Lewg;->b:Lghu;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a([F)V
-    .locals 3
+.method public final run()V
+    .locals 2
 
-    iget-object v0, p0, Lewg;->m:Landroid/graphics/PointF;
+    iget v0, p0, Lewg;->c:I
 
-    iget v0, v0, Landroid/graphics/PointF;->x:F
+    packed-switch v0, :pswitch_data_0
 
-    iget-object v1, p0, Lewg;->m:Landroid/graphics/PointF;
+    iget-object v0, p0, Lewg;->a:Lghw;
 
-    iget v1, v1, Landroid/graphics/PointF;->y:F
+    iget-object v1, p0, Lewg;->b:Lghu;
 
-    const/high16 v2, 0x3f800000    # 1.0f
-
-    invoke-virtual {p0, p1, v0, v1, v2}, Lewl;->f([FFFF)V
+    invoke-virtual {v0, v1}, Lghw;->a(Lghu;)V
 
     return-void
-.end method
 
-.method public final b(Landroid/graphics/PointF;)V
-    .locals 1
+    :pswitch_0
+    iget-object v0, p0, Lewg;->a:Lghw;
 
-    new-instance v0, Landroid/graphics/PointF;
+    iget-object v1, p0, Lewg;->b:Lghu;
 
-    invoke-direct {v0}, Landroid/graphics/PointF;-><init>()V
-
-    iput-object v0, p0, Lewg;->m:Landroid/graphics/PointF;
-
-    invoke-virtual {v0, p1}, Landroid/graphics/PointF;->set(Landroid/graphics/PointF;)V
+    invoke-virtual {v0, v1}, Lghw;->a(Lghu;)V
 
     return-void
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

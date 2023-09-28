@@ -1,19 +1,60 @@
-.class public interface abstract Lgvv;
+.class public final synthetic Lgvv;
 .super Ljava/lang/Object;
+
+# interfaces
+.implements Llnn;
+
+
+# instance fields
+.field public final synthetic a:Lojc;
+
+.field public final synthetic b:Lojc;
+
+
+# direct methods
+.method public synthetic constructor <init>(Lojc;Lojc;)V
+    .locals 0
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lgvv;->a:Lojc;
+
+    iput-object p2, p0, Lgvv;->b:Lojc;
+
+    return-void
+.end method
 
 
 # virtual methods
-.method public abstract a()I
-.end method
+.method public final a(Llmr;)V
+    .locals 2
 
-.method public abstract b(Z)Landroid/animation/Animator;
-.end method
+    iget-object v0, p0, Lgvv;->a:Lojc;
 
-.method public abstract c(Z)Landroid/animation/Animator;
-.end method
+    iget-object v1, p0, Lgvv;->b:Lojc;
 
-.method public abstract d()V
-.end method
+    invoke-virtual {v0}, Lojc;->c()Ljava/lang/Object;
 
-.method public abstract e(Z)V
+    move-result-object v0
+
+    check-cast v0, Llnx;
+
+    invoke-interface {p1, v0}, Llmr;->d(Llnx;)Lmad;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_0
+
+    invoke-virtual {v1}, Lojc;->c()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Litw;
+
+    invoke-interface {v1, v0}, Litw;->f(Lmad;)V
+
+    :cond_0
+    invoke-interface {p1}, Llmr;->close()V
+
+    return-void
 .end method

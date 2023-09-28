@@ -1,30 +1,33 @@
-.class public final Ldkd;
+.class public final synthetic Ldkd;
 .super Ljava/lang/Object;
 
+# interfaces
+.implements Ljava/lang/Runnable;
 
-# static fields
-.field public static final a:Lnak;
+
+# instance fields
+.field public final synthetic a:Ldke;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
+.method public synthetic constructor <init>(Ldke;)V
+    .locals 0
 
-    const-string v0, "com/google/android/apps/camera/debug/allocationtracker/LeakReporter"
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-static {v0}, Lnak;->h(Ljava/lang/String;)Lnak;
-
-    move-result-object v0
-
-    sput-object v0, Ldkd;->a:Lnak;
+    iput-object p1, p0, Ldkd;->a:Ldke;
 
     return-void
 .end method
 
-.method public constructor <init>()V
-    .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+# virtual methods
+.method public final run()V
+    .locals 1
+
+    iget-object v0, p0, Ldkd;->a:Ldke;
+
+    invoke-virtual {v0}, Ldke;->a()V
 
     return-void
 .end method

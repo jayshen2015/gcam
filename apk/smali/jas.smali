@@ -1,24 +1,31 @@
-.class abstract Ljas;
-.super Ljec;
-
-
-# direct methods
-.method public constructor <init>(Ljdh;)V
-    .locals 0
-
-    invoke-direct {p0, p1}, Ljec;-><init>(Ljdh;)V
-
-    return-void
-.end method
+.class public interface abstract Ljas;
+.super Ljava/lang/Object;
 
 
 # virtual methods
-.method public final bridge synthetic c(Ljava/lang/Object;)V
-    .locals 0
+.method public abstract a(Z)V
+.end method
 
-    check-cast p1, Ljdq;
+.method public abstract b()V
+.end method
 
-    invoke-super {p0, p1}, Ljec;->i(Ljdq;)V
+.method public abstract c()V
+.end method
 
-    return-void
+.method public abstract d(Ljar;)V
+.end method
+
+.method public abstract e()V
+.end method
+
+.method public abstract f()V
+.end method
+
+.method public abstract g(J)V
+.end method
+
+.method public abstract h(J)V
+.end method
+
+.method public abstract i(Landroid/widget/LinearLayout;)V
 .end method

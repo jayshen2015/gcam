@@ -1,124 +1,76 @@
-.class Lira;
-.super Liqw;
+.class public final Lira;
+.super Ljava/lang/Object;
+
+
+# static fields
+.field public static final a:Louj;
 
 
 # instance fields
-.field final synthetic b:Lirc;
+.field public final b:Ljava/util/concurrent/atomic/AtomicInteger;
+
+.field public final c:Ljava/util/concurrent/ExecutorService;
+
+.field public final d:Ljava/util/Queue;
+
+.field public final e:Ljava/util/Queue;
+
+.field public f:Liqr;
+
+.field public g:Lirc;
+
+.field public final h:Lmip;
 
 
 # direct methods
-.method public constructor <init>(Lirc;)V
-    .locals 0
-
-    iput-object p1, p0, Lira;->b:Lirc;
-
-    invoke-direct {p0}, Liqw;-><init>()V
-
-    return-void
-.end method
-
-
-# virtual methods
-.method public final a(Z)V
-    .locals 2
-
-    iget-object p1, p0, Lira;->b:Lirc;
-
-    const/4 v0, 0x0
-
-    const/4 v1, 0x1
-
-    invoke-virtual {p1, v0, v1}, Lirc;->n(ZZ)V
-
-    return-void
-.end method
-
-.method public final b(Z)V
+.method static constructor <clinit>()V
     .locals 1
 
-    iget-object p1, p0, Lira;->b:Lirc;
+    const-string v0, "com/google/android/apps/camera/timelapse/stabilization/EisProcessExecutor"
 
-    const/4 v0, 0x0
-
-    invoke-virtual {p1, v0, v0}, Lirc;->n(ZZ)V
-
-    return-void
-.end method
-
-.method public c(Z)V
-    .locals 2
-
-    iget-object v0, p0, Lira;->b:Lirc;
-
-    const/4 v1, 0x1
-
-    invoke-virtual {v0, p1, v1}, Lirc;->l(ZZ)V
-
-    return-void
-.end method
-
-.method public cp(Z)V
-    .locals 2
-
-    iget-object v0, p0, Lira;->b:Lirc;
-
-    const/4 v1, 0x0
-
-    invoke-virtual {v0, p1, v1}, Lirc;->l(ZZ)V
-
-    return-void
-.end method
-
-.method public d()V
-    .locals 0
-
-    return-void
-.end method
-
-.method public final f()V
-    .locals 3
-
-    sget-object v0, Lirc;->f:Lnak;
-
-    invoke-virtual {v0}, Lnaf;->c()Lnaz;
+    invoke-static {v0}, Louj;->h(Ljava/lang/String;)Louj;
 
     move-result-object v0
 
-    const-string v1, "Enter [Visible] state"
-
-    const/16 v2, 0x113e
-
-    invoke-static {v0, v1, v2}, Ld;->g(Lnaz;Ljava/lang/String;C)V
-
-    iget-object v0, p0, Lira;->b:Lirc;
-
-    iget-object v0, v0, Lirc;->n:Ligo;
-
-    iget-object v0, v0, Ligo;->a:Ljava/lang/Object;
-
-    const/4 v1, 0x1
-
-    invoke-static {v1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
-
-    move-result-object v1
-
-    invoke-interface {v0, v1}, Ljwb;->bn(Ljava/lang/Object;)V
+    sput-object v0, Lira;->a:Louj;
 
     return-void
 .end method
 
-.method public i()V
+.method public constructor <init>(Lmip;[B[B[B[B[B[B)V
     .locals 0
 
-    return-void
-.end method
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-.method public final j()V
-    .locals 1
+    new-instance p2, Ljava/util/concurrent/atomic/AtomicInteger;
 
-    iget-object v0, p0, Lira;->b:Lirc;
+    const/4 p3, 0x0
 
-    invoke-virtual {v0}, Lirc;->m()V
+    invoke-direct {p2, p3}, Ljava/util/concurrent/atomic/AtomicInteger;-><init>(I)V
+
+    iput-object p2, p0, Lira;->b:Ljava/util/concurrent/atomic/AtomicInteger;
+
+    new-instance p2, Ljava/util/ArrayDeque;
+
+    invoke-direct {p2}, Ljava/util/ArrayDeque;-><init>()V
+
+    iput-object p2, p0, Lira;->d:Ljava/util/Queue;
+
+    new-instance p2, Ljava/util/ArrayDeque;
+
+    invoke-direct {p2}, Ljava/util/ArrayDeque;-><init>()V
+
+    iput-object p2, p0, Lira;->e:Ljava/util/Queue;
+
+    iput-object p1, p0, Lira;->h:Lmip;
+
+    const-string p1, "Cheetah-eis-executor"
+
+    invoke-static {p1}, Lmip;->bM(Ljava/lang/String;)Ljava/util/concurrent/ExecutorService;
+
+    move-result-object p1
+
+    iput-object p1, p0, Lira;->c:Ljava/util/concurrent/ExecutorService;
 
     return-void
 .end method

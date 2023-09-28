@@ -1,56 +1,48 @@
-.class public final Lmnl;
-.super Lmnh;
+.class final Lmnl;
+.super Lmmh;
 
 
-# static fields
-.field public static final a:Lmnl;
+# instance fields
+.field final synthetic a:I
 
-.field private static final b:Ljava/util/UUID;
+.field final synthetic b:Lmnm;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
+.method public constructor <init>(Lmnm;I)V
+    .locals 0
 
-    new-instance v0, Lmnl;
+    iput-object p1, p0, Lmnl;->b:Lmnm;
 
-    invoke-direct {v0}, Lmnl;-><init>()V
+    iput p2, p0, Lmnl;->a:I
 
-    sput-object v0, Lmnl;->a:Lmnl;
-
-    invoke-static {}, Ljava/util/UUID;->randomUUID()Ljava/util/UUID;
-
-    move-result-object v0
-
-    sput-object v0, Lmnl;->b:Ljava/util/UUID;
-
-    return-void
-.end method
-
-.method public constructor <init>()V
-    .locals 3
-
-    sget-object v0, Lmnl;->b:Ljava/util/UUID;
-
-    sget-object v1, Lmnn;->a:Lmno;
-
-    const-string v2, ""
-
-    invoke-direct {p0, v2, v0, v1}, Lmnh;-><init>(Ljava/lang/String;Ljava/util/UUID;Lmno;)V
+    invoke-direct {p0}, Lmmh;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final g(Ljava/lang/String;Lmno;)Lmnt;
-    .locals 0
+.method public final bridge synthetic b(Ljava/lang/Object;)V
+    .locals 3
 
-    new-instance p1, Ljava/lang/IllegalStateException;
+    check-cast p1, Lmnc;
 
-    const-string p2, "Can\'t create child trace for no trace!"
+    iget-object v0, p0, Lmnl;->b:Lmnm;
 
-    invoke-direct {p1, p2}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+    iget-object v1, v0, Lmnm;->c:[Lmnc;
 
-    throw p1
+    iget v2, p0, Lmnl;->a:I
+
+    aput-object p1, v1, v2
+
+    const/4 p1, 0x1
+
+    iput-boolean p1, v0, Lmnm;->d:Z
+
+    iget-object p1, p0, Lmnl;->b:Lmnm;
+
+    invoke-virtual {p1}, Lmnm;->a()V
+
+    return-void
 .end method

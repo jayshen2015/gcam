@@ -1,56 +1,63 @@
 .class public final Lfsh;
 .super Ljava/lang/Object;
 
+# interfaces
+.implements Lpys;
+
 
 # instance fields
-.field public a:I
-
-.field public b:I
-
-.field public c:J
-
-.field public d:I
-
-.field public e:B
+.field private final a:Lqkg;
 
 
 # direct methods
-.method public constructor <init>()V
+.method public constructor <init>(Lqkg;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    iput-object p1, p0, Lfsh;->a:Lqkg;
+
     return-void
+.end method
+
+.method public static b(Lqkg;)Lfsh;
+    .locals 1
+
+    new-instance v0, Lfsh;
+
+    invoke-direct {v0, p0}, Lfsh;-><init>(Lqkg;)V
+
+    return-object v0
 .end method
 
 
 # virtual methods
-.method public final a()V
-    .locals 1
+.method public final a()Lfsg;
+    .locals 3
 
-    iget-byte v0, p0, Lfsh;->e:B
+    iget-object v0, p0, Lfsh;->a:Lqkg;
 
-    or-int/lit8 v0, v0, 0x4
+    check-cast v0, Ldjc;
 
-    int-to-byte v0, v0
+    invoke-virtual {v0}, Ldjc;->a()Lgxm;
 
-    iput-byte v0, p0, Lfsh;->e:B
+    move-result-object v0
 
-    return-void
+    new-instance v1, Lfsg;
+
+    const/4 v2, 0x0
+
+    invoke-direct {v1, v0, v2}, Lfsg;-><init>(Lgxm;[B)V
+
+    return-object v1
 .end method
 
-.method public final b(I)V
-    .locals 0
+.method public final bridge synthetic get()Ljava/lang/Object;
+    .locals 1
 
-    iput p1, p0, Lfsh;->b:I
+    invoke-virtual {p0}, Lfsh;->a()Lfsg;
 
-    iget-byte p1, p0, Lfsh;->e:B
+    move-result-object v0
 
-    or-int/lit8 p1, p1, 0x2
-
-    int-to-byte p1, p1
-
-    iput-byte p1, p0, Lfsh;->e:B
-
-    return-void
+    return-object v0
 .end method

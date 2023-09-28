@@ -1,188 +1,122 @@
-.class public final Liun;
-.super Lnws;
+.class public final synthetic Liun;
+.super Ljava/lang/Object;
 
 # interfaces
-.implements Lnxz;
-
-
-# static fields
-.field public static final f:Liun;
-
-.field private static volatile g:Lnyf;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field public a:I
+.field public final synthetic a:Lius;
 
-.field public b:I
+.field public final synthetic b:I
 
-.field public c:I
+.field public final synthetic c:Landroid/content/Context;
 
-.field public d:I
+.field public final synthetic d:Landroid/view/View;
 
-.field public e:I
+.field public final synthetic e:Landroid/content/DialogInterface$OnDismissListener;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
-
-    new-instance v0, Liun;
-
-    invoke-direct {v0}, Liun;-><init>()V
-
-    sput-object v0, Liun;->f:Liun;
-
-    const-class v1, Liun;
-
-    invoke-static {v1, v0}, Lnws;->aa(Ljava/lang/Class;Lnws;)V
-
-    return-void
-.end method
-
-.method private constructor <init>()V
+.method public synthetic constructor <init>(Lius;ILandroid/content/Context;Landroid/view/View;Landroid/content/DialogInterface$OnDismissListener;)V
     .locals 0
 
-    invoke-direct {p0}, Lnws;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Liun;->a:Lius;
+
+    iput p2, p0, Liun;->b:I
+
+    iput-object p3, p0, Liun;->c:Landroid/content/Context;
+
+    iput-object p4, p0, Liun;->d:Landroid/view/View;
+
+    iput-object p5, p0, Liun;->e:Landroid/content/DialogInterface$OnDismissListener;
 
     return-void
 .end method
 
 
 # virtual methods
-.method protected final a(ILjava/lang/Object;)Ljava/lang/Object;
-    .locals 3
+.method public final run()V
+    .locals 9
 
-    add-int/lit8 p1, p1, -0x1
+    iget-object v0, p0, Liun;->a:Lius;
 
-    const/4 p2, 0x1
+    iget v1, p0, Liun;->b:I
 
-    packed-switch p1, :pswitch_data_0
+    iget-object v2, p0, Liun;->c:Landroid/content/Context;
 
-    :pswitch_0
-    const/4 p1, 0x0
+    iget-object v3, p0, Liun;->d:Landroid/view/View;
 
-    return-object p1
+    iget-object v4, p0, Liun;->e:Landroid/content/DialogInterface$OnDismissListener;
 
-    :pswitch_1
-    sget-object p1, Liun;->g:Lnyf;
+    if-ltz v1, :cond_1
 
-    if-nez p1, :cond_1
+    new-instance v5, Landroid/widget/FrameLayout;
 
-    const-class p2, Liun;
+    invoke-direct {v5, v2}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
 
-    monitor-enter p2
+    const/4 v6, 0x1
 
-    :try_start_0
-    sget-object p1, Liun;->g:Lnyf;
+    iget-object v7, v0, Lius;->c:Lddf;
 
-    if-nez p1, :cond_0
+    sget-object v8, Lddl;->ay:Lddg;
 
-    new-instance p1, Lnwo;
+    invoke-interface {v7, v8}, Lddf;->k(Lddg;)Z
 
-    sget-object v0, Liun;->f:Liun;
+    move-result v7
 
-    invoke-direct {p1, v0}, Lnwo;-><init>(Lnws;)V
+    if-eq v6, v7, :cond_0
 
-    sput-object p1, Liun;->g:Lnyf;
-
-    :cond_0
-    monitor-exit p2
+    const v6, 0x7f0e00ff
 
     goto :goto_0
 
-    :catchall_0
-    move-exception p1
+    :cond_0
+    const v6, 0x7f0e00fe
 
-    monitor-exit p2
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    :goto_0
+    invoke-static {v2, v6, v5}, Landroid/view/View;->inflate(Landroid/content/Context;ILandroid/view/ViewGroup;)Landroid/view/View;
 
-    throw p1
+    const v6, 0x7f0b0299
+
+    invoke-virtual {v5, v6}, Landroid/widget/FrameLayout;->findViewById(I)Landroid/view/View;
+
+    move-result-object v6
+
+    check-cast v6, Landroid/widget/TextView;
+
+    invoke-virtual {v6, v1}, Landroid/widget/TextView;->setText(I)V
+
+    goto :goto_1
 
     :cond_1
-    :goto_0
-    return-object p1
+    const/4 v5, 0x0
 
-    :pswitch_2
-    sget-object p1, Liun;->f:Liun;
+    :goto_1
+    invoke-virtual {v0, v5, v2}, Lius;->a(Landroid/view/View;Landroid/content/Context;)Landroid/view/ViewGroup;
 
-    return-object p1
+    move-result-object v1
 
-    :pswitch_3
-    new-instance p1, Lnwn;
+    invoke-virtual {v1, v3}, Landroid/view/ViewGroup;->addView(Landroid/view/View;)V
 
-    sget-object p2, Liun;->f:Liun;
+    invoke-virtual {v0, v1}, Lius;->c(Landroid/view/ViewGroup;)V
 
-    invoke-direct {p1, p2}, Lnwn;-><init>(Lnws;)V
+    iget-object v1, v0, Lius;->d:Lnya;
 
-    return-object p1
+    if-eqz v1, :cond_2
 
-    :pswitch_4
-    new-instance p1, Liun;
+    new-instance v2, Liuj;
 
-    invoke-direct {p1}, Liun;-><init>()V
+    invoke-direct {v2, v0, v4}, Liuj;-><init>(Lius;Landroid/content/DialogInterface$OnDismissListener;)V
 
-    return-object p1
+    invoke-virtual {v1, v2}, Lnya;->setOnDismissListener(Landroid/content/DialogInterface$OnDismissListener;)V
 
-    :pswitch_5
-    const-string p1, "a"
+    iget-object v0, v0, Lius;->d:Lnya;
 
-    const-string v0, "\u0001\u0004\u0000\u0001\u0001\u0004\u0004\u0000\u0000\u0000\u0001\u1004\u0000\u0002\u1004\u0001\u0003\u1004\u0002\u0004\u1004\u0003"
+    invoke-virtual {v0}, Lnya;->show()V
 
-    const/4 v1, 0x5
-
-    new-array v1, v1, [Ljava/lang/Object;
-
-    const/4 v2, 0x0
-
-    aput-object p1, v1, v2
-
-    const-string p1, "b"
-
-    aput-object p1, v1, p2
-
-    const/4 p1, 0x2
-
-    const-string p2, "c"
-
-    aput-object p2, v1, p1
-
-    const/4 p1, 0x3
-
-    const-string p2, "d"
-
-    aput-object p2, v1, p1
-
-    const/4 p1, 0x4
-
-    const-string p2, "e"
-
-    aput-object p2, v1, p1
-
-    sget-object p1, Liun;->f:Liun;
-
-    invoke-static {p1, v0, v1}, Liun;->X(Lnxy;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object p1
-
-    return-object p1
-
-    :pswitch_6
-    invoke-static {p2}, Ljava/lang/Byte;->valueOf(B)Ljava/lang/Byte;
-
-    move-result-object p1
-
-    return-object p1
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_6
-        :pswitch_0
-        :pswitch_5
-        :pswitch_4
-        :pswitch_3
-        :pswitch_2
-        :pswitch_1
-    .end packed-switch
+    :cond_2
+    return-void
 .end method

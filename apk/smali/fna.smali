@@ -1,80 +1,43 @@
-.class public final Lfna;
+.class public final synthetic Lfna;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Ljzs;
+.implements Lj$/util/function/Supplier;
 
 
 # instance fields
-.field final synthetic a:Ljava/lang/String;
-
-.field final synthetic b:Lexl;
-
-.field final synthetic c:Lfxf;
+.field public final synthetic a:Lfnc;
 
 
 # direct methods
-.method public constructor <init>(Lfxf;Ljava/lang/String;Lexl;[B)V
+.method public synthetic constructor <init>(Lfnc;)V
     .locals 0
 
-    iput-object p1, p0, Lfna;->c:Lfxf;
-
-    iput-object p2, p0, Lfna;->a:Ljava/lang/String;
-
-    iput-object p3, p0, Lfna;->b:Lexl;
-
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lfna;->a:Lfnc;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final bridge synthetic a(Ljava/lang/Object;)V
-    .locals 2
+.method public final get()Ljava/lang/Object;
+    .locals 1
 
-    check-cast p1, Lgpx;
+    iget-object v0, p0, Lfna;->a:Lfnc;
 
-    iget-object p1, p0, Lfna;->c:Lfxf;
+    iget-object v0, v0, Lfnc;->b:Ljava/util/concurrent/atomic/AtomicBoolean;
 
-    iget-object p1, p1, Lfxf;->a:Ljava/lang/Object;
+    invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicBoolean;->get()Z
 
-    check-cast p1, Lfng;
+    move-result v0
 
-    iget-object p1, p1, Lfng;->E:Ljava/util/Set;
+    xor-int/lit8 v0, v0, 0x1
 
-    monitor-enter p1
+    invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
-    :try_start_0
-    iget-object v0, p0, Lfna;->c:Lfxf;
+    move-result-object v0
 
-    iget-object v0, v0, Lfxf;->a:Ljava/lang/Object;
-
-    check-cast v0, Lfng;
-
-    iget-object v0, v0, Lfng;->E:Ljava/util/Set;
-
-    iget-object v1, p0, Lfna;->a:Ljava/lang/String;
-
-    invoke-interface {v0, v1}, Ljava/util/Set;->remove(Ljava/lang/Object;)Z
-
-    monitor-exit p1
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    iget-object p1, p0, Lfna;->b:Lexl;
-
-    invoke-virtual {p1, p0}, Lexl;->e(Ljzs;)V
-
-    return-void
-
-    :catchall_0
-    move-exception v0
-
-    :try_start_1
-    monitor-exit p1
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    throw v0
+    return-object v0
 .end method

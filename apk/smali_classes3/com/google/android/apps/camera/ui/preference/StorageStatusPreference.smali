@@ -3,7 +3,7 @@
 
 
 # static fields
-.field private static final e:Landroid/graphics/Typeface;
+.field private static final h:Landroid/graphics/Typeface;
 
 
 # instance fields
@@ -15,11 +15,19 @@
 
 .field public d:I
 
-.field private f:Landroid/widget/TextView;
+.field public e:Z
 
-.field private g:Landroid/widget/TextView;
+.field public f:Z
 
-.field private h:Landroid/widget/ProgressBar;
+.field public g:Z
+
+.field private i:Landroid/view/View;
+
+.field private j:Landroid/widget/TextView;
+
+.field private k:Landroid/widget/TextView;
+
+.field private l:Landroid/widget/ProgressBar;
 
 
 # direct methods
@@ -34,7 +42,7 @@
 
     move-result-object v0
 
-    sput-object v0, Lcom/google/android/apps/camera/ui/preference/StorageStatusPreference;->e:Landroid/graphics/Typeface;
+    sput-object v0, Lcom/google/android/apps/camera/ui/preference/StorageStatusPreference;->h:Landroid/graphics/Typeface;
 
     return-void
 .end method
@@ -84,19 +92,19 @@
 
 # virtual methods
 .method public final a()V
-    .locals 9
+    .locals 10
 
-    iget-object v0, p0, Lcom/google/android/apps/camera/ui/preference/StorageStatusPreference;->f:Landroid/widget/TextView;
+    iget-object v0, p0, Lcom/google/android/apps/camera/ui/preference/StorageStatusPreference;->j:Landroid/widget/TextView;
 
-    if-eqz v0, :cond_3
+    if-eqz v0, :cond_5
 
-    iget-object v0, p0, Lcom/google/android/apps/camera/ui/preference/StorageStatusPreference;->g:Landroid/widget/TextView;
+    iget-object v0, p0, Lcom/google/android/apps/camera/ui/preference/StorageStatusPreference;->k:Landroid/widget/TextView;
 
-    if-eqz v0, :cond_3
+    if-eqz v0, :cond_5
 
-    iget-object v0, p0, Lcom/google/android/apps/camera/ui/preference/StorageStatusPreference;->h:Landroid/widget/ProgressBar;
+    iget-object v0, p0, Lcom/google/android/apps/camera/ui/preference/StorageStatusPreference;->l:Landroid/widget/ProgressBar;
 
-    if-eqz v0, :cond_3
+    if-eqz v0, :cond_5
 
     iget-wide v1, p0, Lcom/google/android/apps/camera/ui/preference/StorageStatusPreference;->b:J
 
@@ -140,7 +148,7 @@
 
     move-result-object v0
 
-    iget-object v1, p0, Lcom/google/android/apps/camera/ui/preference/StorageStatusPreference;->f:Landroid/widget/TextView;
+    iget-object v1, p0, Lcom/google/android/apps/camera/ui/preference/StorageStatusPreference;->j:Landroid/widget/TextView;
 
     const/4 v2, 0x1
 
@@ -160,7 +168,7 @@
 
     aput-object v4, v3, v5
 
-    const v4, 0x7f1404fa
+    const v4, 0x7f140488
 
     invoke-virtual {v0, v4, v3}, Landroid/content/res/Resources;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
 
@@ -198,7 +206,7 @@
 
     aput-object v3, v7, v5
 
-    const v8, 0x7f120005
+    const v8, 0x7f120004
 
     invoke-virtual {v0, v8, v6, v7}, Landroid/content/res/Resources;->getQuantityString(II[Ljava/lang/Object;)Ljava/lang/String;
 
@@ -212,7 +220,7 @@
 
     aput-object v1, v7, v5
 
-    const v5, 0x7f12000f
+    const v5, 0x7f12000e
 
     invoke-virtual {v0, v5, v6, v7}, Landroid/content/res/Resources;->getQuantityString(II[Ljava/lang/Object;)Ljava/lang/String;
 
@@ -220,67 +228,124 @@
 
     aput-object v5, v4, v2
 
-    const v2, 0x7f1404f8
+    const v2, 0x7f140486
 
     invoke-virtual {v0, v2, v4}, Landroid/content/res/Resources;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object v2
 
-    new-instance v2, Landroid/text/SpannableString;
+    new-instance v4, Landroid/text/SpannableString;
 
-    invoke-direct {v2, v0}, Landroid/text/SpannableString;-><init>(Ljava/lang/CharSequence;)V
+    invoke-direct {v4, v2}, Landroid/text/SpannableString;-><init>(Ljava/lang/CharSequence;)V
 
-    invoke-virtual {v0, v3}, Ljava/lang/String;->indexOf(Ljava/lang/String;)I
+    invoke-virtual {v2, v3}, Ljava/lang/String;->indexOf(Ljava/lang/String;)I
 
-    move-result v4
+    move-result v5
 
-    const/16 v5, 0x21
+    const/16 v6, 0x21
 
-    const/4 v6, -0x1
+    const/4 v7, -0x1
 
-    if-eq v4, v6, :cond_1
+    if-eq v5, v7, :cond_1
 
-    new-instance v7, Landroid/text/style/TypefaceSpan;
+    new-instance v8, Landroid/text/style/TypefaceSpan;
 
-    sget-object v8, Lcom/google/android/apps/camera/ui/preference/StorageStatusPreference;->e:Landroid/graphics/Typeface;
+    sget-object v9, Lcom/google/android/apps/camera/ui/preference/StorageStatusPreference;->h:Landroid/graphics/Typeface;
 
-    invoke-direct {v7, v8}, Landroid/text/style/TypefaceSpan;-><init>(Landroid/graphics/Typeface;)V
+    invoke-direct {v8, v9}, Landroid/text/style/TypefaceSpan;-><init>(Landroid/graphics/Typeface;)V
 
     invoke-virtual {v3}, Ljava/lang/String;->length()I
 
     move-result v3
 
-    add-int/2addr v3, v4
+    add-int/2addr v3, v5
 
-    invoke-virtual {v2, v7, v4, v3, v5}, Landroid/text/SpannableString;->setSpan(Ljava/lang/Object;III)V
+    invoke-virtual {v4, v8, v5, v3, v6}, Landroid/text/SpannableString;->setSpan(Ljava/lang/Object;III)V
 
     :cond_1
-    invoke-virtual {v0, v1}, Ljava/lang/String;->lastIndexOf(Ljava/lang/String;)I
+    invoke-virtual {v2, v1}, Ljava/lang/String;->lastIndexOf(Ljava/lang/String;)I
 
-    move-result v0
+    move-result v2
 
-    if-eq v0, v6, :cond_2
+    if-eq v2, v7, :cond_2
 
     new-instance v3, Landroid/text/style/TypefaceSpan;
 
-    sget-object v4, Lcom/google/android/apps/camera/ui/preference/StorageStatusPreference;->e:Landroid/graphics/Typeface;
+    sget-object v5, Lcom/google/android/apps/camera/ui/preference/StorageStatusPreference;->h:Landroid/graphics/Typeface;
 
-    invoke-direct {v3, v4}, Landroid/text/style/TypefaceSpan;-><init>(Landroid/graphics/Typeface;)V
+    invoke-direct {v3, v5}, Landroid/text/style/TypefaceSpan;-><init>(Landroid/graphics/Typeface;)V
 
     invoke-virtual {v1}, Ljava/lang/String;->length()I
 
     move-result v1
 
-    add-int/2addr v1, v0
+    add-int/2addr v1, v2
 
-    invoke-virtual {v2, v3, v0, v1, v5}, Landroid/text/SpannableString;->setSpan(Ljava/lang/Object;III)V
+    invoke-virtual {v4, v3, v2, v1, v6}, Landroid/text/SpannableString;->setSpan(Ljava/lang/Object;III)V
 
     :cond_2
-    iget-object v0, p0, Lcom/google/android/apps/camera/ui/preference/StorageStatusPreference;->g:Landroid/widget/TextView;
+    iget-object v1, p0, Lcom/google/android/apps/camera/ui/preference/StorageStatusPreference;->k:Landroid/widget/TextView;
 
-    invoke-virtual {v0, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+    invoke-virtual {v1, v4}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+
+    iget-boolean v1, p0, Lcom/google/android/apps/camera/ui/preference/StorageStatusPreference;->e:Z
+
+    if-nez v1, :cond_5
+
+    iget-boolean v1, p0, Lcom/google/android/apps/camera/ui/preference/StorageStatusPreference;->g:Z
+
+    if-eqz v1, :cond_3
+
+    const v1, 0x7f060826
+
+    const v2, 0x7f0806c7
+
+    goto :goto_1
 
     :cond_3
+    iget-boolean v1, p0, Lcom/google/android/apps/camera/ui/preference/StorageStatusPreference;->f:Z
+
+    if-eqz v1, :cond_4
+
+    const v1, 0x7f060824
+
+    const v2, 0x7f0806c5
+
+    goto :goto_1
+
+    :cond_4
+    const v1, 0x7f060825
+
+    const v2, 0x7f0806c6
+
+    :goto_1
+    iget-object v3, p0, Lcom/google/android/apps/camera/ui/preference/StorageStatusPreference;->i:Landroid/view/View;
+
+    invoke-virtual {p0}, Lcom/google/android/apps/camera/ui/preference/StorageStatusPreference;->getContext()Landroid/content/Context;
+
+    move-result-object v4
+
+    invoke-virtual {v4}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v4
+
+    const/4 v5, 0x0
+
+    invoke-virtual {v4, v1, v5}, Landroid/content/res/Resources;->getColor(ILandroid/content/res/Resources$Theme;)I
+
+    move-result v1
+
+    invoke-virtual {v3, v1}, Landroid/view/View;->setBackgroundColor(I)V
+
+    iget-object v1, p0, Lcom/google/android/apps/camera/ui/preference/StorageStatusPreference;->l:Landroid/widget/ProgressBar;
+
+    invoke-virtual {v0, v2, v5}, Landroid/content/res/Resources;->getDrawable(ILandroid/content/res/Resources$Theme;)Landroid/graphics/drawable/Drawable;
+
+    move-result-object v0
+
+    invoke-virtual {v1, v0}, Landroid/widget/ProgressBar;->setProgressDrawable(Landroid/graphics/drawable/Drawable;)V
+
+    :cond_5
     return-void
 .end method
 
@@ -289,7 +354,9 @@
 
     invoke-super {p0, p1}, Landroid/preference/Preference;->onBindView(Landroid/view/View;)V
 
-    const v0, 0x7f0b0367
+    iput-object p1, p0, Lcom/google/android/apps/camera/ui/preference/StorageStatusPreference;->i:Landroid/view/View;
+
+    const v0, 0x7f0b02f2
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -297,9 +364,9 @@
 
     check-cast v0, Landroid/widget/TextView;
 
-    iput-object v0, p0, Lcom/google/android/apps/camera/ui/preference/StorageStatusPreference;->f:Landroid/widget/TextView;
+    iput-object v0, p0, Lcom/google/android/apps/camera/ui/preference/StorageStatusPreference;->j:Landroid/widget/TextView;
 
-    const v0, 0x7f0b0366
+    const v0, 0x7f0b02f1
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -307,9 +374,9 @@
 
     check-cast v0, Landroid/widget/TextView;
 
-    iput-object v0, p0, Lcom/google/android/apps/camera/ui/preference/StorageStatusPreference;->g:Landroid/widget/TextView;
+    iput-object v0, p0, Lcom/google/android/apps/camera/ui/preference/StorageStatusPreference;->k:Landroid/widget/TextView;
 
-    const v0, 0x7f0b0365
+    const v0, 0x7f0b02f0
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -317,7 +384,7 @@
 
     check-cast p1, Landroid/widget/ProgressBar;
 
-    iput-object p1, p0, Lcom/google/android/apps/camera/ui/preference/StorageStatusPreference;->h:Landroid/widget/ProgressBar;
+    iput-object p1, p0, Lcom/google/android/apps/camera/ui/preference/StorageStatusPreference;->l:Landroid/widget/ProgressBar;
 
     invoke-virtual {p0}, Lcom/google/android/apps/camera/ui/preference/StorageStatusPreference;->a()V
 

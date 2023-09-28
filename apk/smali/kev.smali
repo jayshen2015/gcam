@@ -1,30 +1,26 @@
-.class final Lkev;
-.super Lkew;
+.class public final Lkev;
+.super Ljava/lang/Object;
+
+
+# instance fields
+.field public final a:Lkdx;
+
+.field public final b:Lkew;
 
 
 # direct methods
-.method public constructor <init>()V
+.method public constructor <init>(Lkdx;)V
     .locals 0
 
-    invoke-direct {p0}, Lkew;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    return-void
-.end method
+    iput-object p1, p0, Lkev;->a:Lkdx;
 
+    new-instance p1, Lkew;
 
-# virtual methods
-.method public final bj()V
-    .locals 0
+    invoke-direct {p1}, Lkew;-><init>()V
 
-    invoke-virtual {p0}, Lkew;->q()V
-
-    return-void
-.end method
-
-.method public final bk()V
-    .locals 0
-
-    invoke-virtual {p0}, Lkew;->q()V
+    iput-object p1, p0, Lkev;->b:Lkew;
 
     return-void
 .end method

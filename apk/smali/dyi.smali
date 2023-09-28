@@ -2,203 +2,139 @@
 .super Ljava/lang/Object;
 
 
+# static fields
+.field public static final a:[I
+
+
 # instance fields
-.field public final a:I
+.field public b:Ljavax/microedition/khronos/egl/EGLConfig;
 
-.field public final b:F
+.field public c:Ljavax/microedition/khronos/egl/EGLDisplay;
 
-.field public final c:Lmqp;
+.field public d:Ljavax/microedition/khronos/egl/EGLContext;
 
-.field public final d:F
+.field public e:Ljavax/microedition/khronos/egl/EGLSurface;
+
+.field public f:Ljavax/microedition/khronos/egl/EGL10;
+
+.field public g:Ljavax/microedition/khronos/opengles/GL10;
+
+.field public volatile h:Z
+
+.field public final i:Landroid/os/Handler;
+
+.field public final j:Ldyh;
+
+.field public final k:Ljava/lang/Object;
+
+.field public final l:Ljava/lang/Runnable;
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 1
+
+    const/16 v0, 0xf
+
+    new-array v0, v0, [I
+
+    fill-array-data v0, :array_0
+
+    sput-object v0, Ldyi;->a:[I
+
+    return-void
+
+    :array_0
+    .array-data 4
+        0x3040
+        0x4
+        0x3024
+        0x8
+        0x3023
+        0x8
+        0x3022
+        0x8
+        0x3021
+        0x0
+        0x3025
+        0x0
+        0x3026
+        0x0
+        0x3038
+    .end array-data
+.end method
+
+.method public constructor <init>(Landroid/graphics/SurfaceTexture;Landroid/os/Handler;Ldyh;)V
+    .locals 2
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    const/4 v0, 0x0
+
+    iput-boolean v0, p0, Ldyi;->h:Z
+
+    new-instance v0, Ljava/lang/Object;
+
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+
+    iput-object v0, p0, Ldyi;->k:Ljava/lang/Object;
+
+    new-instance v0, Ldye;
+
+    const/4 v1, 0x1
+
+    invoke-direct {v0, p0, v1}, Ldye;-><init>(Ldyi;I)V
+
+    iput-object v0, p0, Ldyi;->l:Ljava/lang/Runnable;
+
+    iput-object p2, p0, Ldyi;->i:Landroid/os/Handler;
+
+    iput-object p3, p0, Ldyi;->j:Ldyh;
+
+    new-instance p3, Ldyf;
+
+    invoke-direct {p3, p0, p1}, Ldyf;-><init>(Ldyi;Landroid/graphics/SurfaceTexture;)V
+
+    invoke-virtual {p2, p3}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
+
+    new-instance p1, Ljava/lang/Object;
+
+    invoke-direct {p1}, Ljava/lang/Object;-><init>()V
+
+    monitor-enter p1
+
+    :try_start_0
+    new-instance p3, Ldyg;
+
+    invoke-direct {p3, p1}, Ldyg;-><init>(Ljava/lang/Object;)V
+
+    invoke-virtual {p2, p3}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    :try_start_1
+    invoke-virtual {p1}, Ljava/lang/Object;->wait()V
+    :try_end_1
+    .catch Ljava/lang/InterruptedException; {:try_start_1 .. :try_end_1} :catch_0
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    goto :goto_0
+
+    :catch_0
+    move-exception p2
+
+    :goto_0
+    :try_start_2
+    monitor-exit p1
+
     return-void
-.end method
 
-.method public constructor <init>(IFLmqp;F)V
-    .locals 0
+    :catchall_0
+    move-exception p2
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    monitor-exit p1
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
-    iput p1, p0, Ldyi;->a:I
-
-    iput p2, p0, Ldyi;->b:F
-
-    iput-object p3, p0, Ldyi;->c:Lmqp;
-
-    iput p4, p0, Ldyi;->d:F
-
-    return-void
-.end method
-
-
-# virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 4
-
-    const/4 v0, 0x1
-
-    if-ne p1, p0, :cond_0
-
-    return v0
-
-    :cond_0
-    instance-of v1, p1, Ldyi;
-
-    const/4 v2, 0x0
-
-    if-eqz v1, :cond_1
-
-    check-cast p1, Ldyi;
-
-    iget v1, p0, Ldyi;->a:I
-
-    iget v3, p1, Ldyi;->a:I
-
-    if-ne v1, v3, :cond_1
-
-    iget v1, p0, Ldyi;->b:F
-
-    invoke-static {v1}, Ljava/lang/Float;->floatToIntBits(F)I
-
-    move-result v1
-
-    iget v3, p1, Ldyi;->b:F
-
-    invoke-static {v3}, Ljava/lang/Float;->floatToIntBits(F)I
-
-    move-result v3
-
-    if-ne v1, v3, :cond_1
-
-    iget-object v1, p0, Ldyi;->c:Lmqp;
-
-    iget-object v3, p1, Ldyi;->c:Lmqp;
-
-    invoke-virtual {v1, v3}, Lmqp;->equals(Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_1
-
-    iget v1, p0, Ldyi;->d:F
-
-    invoke-static {v1}, Ljava/lang/Float;->floatToIntBits(F)I
-
-    move-result v1
-
-    iget p1, p1, Ldyi;->d:F
-
-    invoke-static {p1}, Ljava/lang/Float;->floatToIntBits(F)I
-
-    move-result p1
-
-    if-ne v1, p1, :cond_1
-
-    return v0
-
-    :cond_1
-    return v2
-.end method
-
-.method public final hashCode()I
-    .locals 3
-
-    iget v0, p0, Ldyi;->a:I
-
-    const v1, 0xf4243
-
-    xor-int/2addr v0, v1
-
-    iget v2, p0, Ldyi;->b:F
-
-    invoke-static {v2}, Ljava/lang/Float;->floatToIntBits(F)I
-
-    move-result v2
-
-    mul-int v0, v0, v1
-
-    xor-int/2addr v0, v2
-
-    iget-object v2, p0, Ldyi;->c:Lmqp;
-
-    invoke-virtual {v2}, Lmqp;->hashCode()I
-
-    move-result v2
-
-    mul-int v0, v0, v1
-
-    xor-int/2addr v0, v2
-
-    iget v2, p0, Ldyi;->d:F
-
-    invoke-static {v2}, Ljava/lang/Float;->floatToIntBits(F)I
-
-    move-result v2
-
-    mul-int v0, v0, v1
-
-    xor-int/2addr v0, v2
-
-    return v0
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .locals 6
-
-    iget v0, p0, Ldyi;->a:I
-
-    iget v1, p0, Ldyi;->b:F
-
-    iget-object v2, p0, Ldyi;->c:Lmqp;
-
-    invoke-static {v2}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v2
-
-    iget v3, p0, Ldyi;->d:F
-
-    new-instance v4, Ljava/lang/StringBuilder;
-
-    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v5, "FrequentFaceTrueTone{id="
-
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    const-string v0, ", score="
-
-    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v4, v1}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
-
-    const-string v0, ", toneProbabilities="
-
-    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v4, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v0, ", toneConfidence="
-
-    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v4, v3}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
-
-    const-string v0, "}"
-
-    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    return-object v0
+    throw p2
 .end method

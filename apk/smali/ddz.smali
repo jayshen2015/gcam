@@ -1,50 +1,172 @@
-.class final Lddz;
-.super Lmdw;
+.class public final Lddz;
+.super Ljava/lang/Object;
 
 
-# instance fields
-.field final synthetic a:Ldea;
+# static fields
+.field public static final a:Lddg;
+
+.field public static final b:Lddg;
+
+.field public static final c:Lddg;
+
+.field public static final d:Lddg;
+
+.field public static final e:Lddg;
+
+.field public static final f:Lddg;
+
+.field public static final g:Lddg;
+
+.field public static final h:Lddg;
+
+.field public static final i:Lddg;
+
+.field public static final j:Lddg;
 
 
 # direct methods
-.method public constructor <init>(Ldea;Lmdx;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 2
 
-    iput-object p1, p0, Lddz;->a:Ldea;
+    new-instance v0, Lddh;
 
-    invoke-direct {p0, p2}, Lmdw;-><init>(Lmdx;)V
+    invoke-direct {v0}, Lddh;-><init>()V
 
-    return-void
-.end method
+    const-string v1, "simple_metering_bright_bmm_threshold_front"
 
+    iput-object v1, v0, Lddh;->a:Ljava/lang/String;
 
-# virtual methods
-.method public final a(J)V
-    .locals 1
+    invoke-virtual {v0}, Lddh;->e()Lddg;
 
-    iget-object v0, p0, Lddz;->a:Ldea;
+    move-result-object v0
 
-    iget-object v0, v0, Ldea;->c:Lddw;
+    sput-object v0, Lddz;->a:Lddg;
 
-    invoke-interface {v0, p1, p2}, Lddw;->c(J)V
+    new-instance v0, Lddh;
 
-    return-void
-.end method
+    invoke-direct {v0}, Lddh;-><init>()V
 
-.method public final b(Lmdz;)V
-    .locals 3
+    const-string v1, "simple_metering_bright_bmm_threshold_back"
 
-    iget-object v0, p0, Lddz;->a:Ldea;
+    iput-object v1, v0, Lddh;->a:Ljava/lang/String;
 
-    iget-object v0, v0, Ldea;->b:Ldes;
+    invoke-virtual {v0}, Lddh;->e()Lddg;
 
-    iget-object v1, v0, Ldes;->d:Lkbi;
+    move-result-object v0
 
-    new-instance v2, Ldeq;
+    sput-object v0, Lddz;->b:Lddg;
 
-    invoke-direct {v2, v0, p1}, Ldeq;-><init>(Ldes;Lmdz;)V
+    new-instance v0, Lddh;
 
-    invoke-virtual {v1, v2}, Lkbi;->execute(Ljava/lang/Runnable;)V
+    invoke-direct {v0}, Lddh;-><init>()V
+
+    const-string v1, "simple_metering_dark_bmm_threshold_front"
+
+    iput-object v1, v0, Lddh;->a:Ljava/lang/String;
+
+    invoke-virtual {v0}, Lddh;->e()Lddg;
+
+    move-result-object v0
+
+    sput-object v0, Lddz;->c:Lddg;
+
+    new-instance v0, Lddh;
+
+    invoke-direct {v0}, Lddh;-><init>()V
+
+    const-string v1, "simple_metering_dark_bmm_threshold_back"
+
+    iput-object v1, v0, Lddh;->a:Ljava/lang/String;
+
+    invoke-virtual {v0}, Lddh;->e()Lddg;
+
+    move-result-object v0
+
+    sput-object v0, Lddz;->d:Lddg;
+
+    new-instance v0, Lddh;
+
+    invoke-direct {v0}, Lddh;-><init>()V
+
+    const-string v1, "smart_metering_bright_logsb_threshold_front"
+
+    iput-object v1, v0, Lddh;->a:Ljava/lang/String;
+
+    invoke-virtual {v0}, Lddh;->e()Lddg;
+
+    move-result-object v0
+
+    sput-object v0, Lddz;->e:Lddg;
+
+    new-instance v0, Lddh;
+
+    invoke-direct {v0}, Lddh;-><init>()V
+
+    const-string v1, "smart_metering_bright_logsb_threshold_back"
+
+    iput-object v1, v0, Lddh;->a:Ljava/lang/String;
+
+    invoke-virtual {v0}, Lddh;->e()Lddg;
+
+    move-result-object v0
+
+    sput-object v0, Lddz;->f:Lddg;
+
+    new-instance v0, Lddh;
+
+    invoke-direct {v0}, Lddh;-><init>()V
+
+    const-string v1, "smart_metering_dark_logsb_threshold_front"
+
+    iput-object v1, v0, Lddh;->a:Ljava/lang/String;
+
+    invoke-virtual {v0}, Lddh;->e()Lddg;
+
+    move-result-object v0
+
+    sput-object v0, Lddz;->g:Lddg;
+
+    new-instance v0, Lddh;
+
+    invoke-direct {v0}, Lddh;-><init>()V
+
+    const-string v1, "smart_metering_dark_logsb_threshold_back"
+
+    iput-object v1, v0, Lddh;->a:Ljava/lang/String;
+
+    invoke-virtual {v0}, Lddh;->e()Lddg;
+
+    move-result-object v0
+
+    sput-object v0, Lddz;->h:Lddg;
+
+    new-instance v0, Lddh;
+
+    invoke-direct {v0}, Lddh;-><init>()V
+
+    const-string v1, "smart_metering_dark_pib_threshold_front"
+
+    iput-object v1, v0, Lddh;->a:Ljava/lang/String;
+
+    invoke-virtual {v0}, Lddh;->e()Lddg;
+
+    move-result-object v0
+
+    sput-object v0, Lddz;->i:Lddg;
+
+    new-instance v0, Lddh;
+
+    invoke-direct {v0}, Lddh;-><init>()V
+
+    const-string v1, "smart_metering_dark_pib_threshold_back"
+
+    iput-object v1, v0, Lddh;->a:Ljava/lang/String;
+
+    invoke-virtual {v0}, Lddh;->e()Lddg;
+
+    move-result-object v0
+
+    sput-object v0, Lddz;->j:Lddg;
 
     return-void
 .end method

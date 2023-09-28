@@ -1,127 +1,126 @@
-.class public final synthetic Lhzi;
+.class public final Lhzi;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Landroid/view/View$OnClickListener;
+.implements Lhxi;
+
+
+# static fields
+.field public static final a:Louj;
+
+.field public static final b:Lhzh;
 
 
 # instance fields
-.field public final synthetic a:Ljava/lang/Object;
+.field public final c:Lhxj;
 
-.field public final synthetic b:Ljava/lang/Object;
+.field public final d:Ljava/util/concurrent/Executor;
 
-.field public final synthetic c:Ljava/lang/Object;
+.field public final e:Ljava/lang/Object;
 
-.field private final synthetic d:I
+.field public f:I
+
+.field public g:Lhzh;
+
+.field private h:Llwd;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lcom/google/android/apps/camera/smarts/SmartsChipView;Lhdu;Ljava/lang/Runnable;I)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 1
 
-    iput p4, p0, Lhzi;->d:I
+    const-string v0, "com/google/android/apps/camera/smarts/SmartsFrameProvider"
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-static {v0}, Louj;->h(Ljava/lang/String;)Louj;
 
-    iput-object p1, p0, Lhzi;->b:Ljava/lang/Object;
+    move-result-object v0
 
-    iput-object p2, p0, Lhzi;->a:Ljava/lang/Object;
+    sput-object v0, Lhzi;->a:Louj;
 
-    iput-object p3, p0, Lhzi;->c:Ljava/lang/Object;
+    new-instance v0, Lhzg;
+
+    invoke-direct {v0}, Lhzg;-><init>()V
+
+    sput-object v0, Lhzi;->b:Lhzh;
 
     return-void
 .end method
 
-.method public synthetic constructor <init>(Llqh;Lgus;Loiw;I[B)V
-    .locals 0
-
-    iput p4, p0, Lhzi;->d:I
+.method public constructor <init>(Lhxj;Ljava/util/concurrent/Executor;)V
+    .locals 1
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lhzi;->a:Ljava/lang/Object;
+    new-instance v0, Ljava/lang/Object;
 
-    iput-object p2, p0, Lhzi;->b:Ljava/lang/Object;
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p3, p0, Lhzi;->c:Ljava/lang/Object;
+    iput-object v0, p0, Lhzi;->e:Ljava/lang/Object;
+
+    sget-object v0, Llwd;->b:Llwd;
+
+    iput-object v0, p0, Lhzi;->h:Llwd;
+
+    sget-object v0, Lhzi;->b:Lhzh;
+
+    iput-object v0, p0, Lhzi;->g:Lhzh;
+
+    iput-object p1, p0, Lhzi;->c:Lhxj;
+
+    iput-object p2, p0, Lhzi;->d:Ljava/util/concurrent/Executor;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onClick(Landroid/view/View;)V
-    .locals 4
+.method public final e(Llvp;)V
+    .locals 0
 
-    iget p1, p0, Lhzi;->d:I
+    invoke-interface {p1}, Llvp;->k()Llwd;
 
-    packed-switch p1, :pswitch_data_0
+    move-result-object p1
 
-    iget-object p1, p0, Lhzi;->b:Ljava/lang/Object;
+    iput-object p1, p0, Lhzi;->h:Llwd;
 
-    iget-object v0, p0, Lhzi;->a:Ljava/lang/Object;
+    iget-object p1, p0, Lhzi;->g:Lhzh;
 
-    iget-object v1, p0, Lhzi;->c:Ljava/lang/Object;
-
-    check-cast v0, Lhcr;
-
-    iget-object v2, v0, Lhcr;->d:Lfbz;
-
-    iget-object v0, v0, Lhcr;->a:Lhdz;
-
-    iget-object v0, v0, Lhdz;->a:Ljava/lang/String;
-
-    const/4 v3, 0x5
-
-    invoke-interface {v2, v3, v0}, Lfbz;->ae(ILjava/lang/String;)V
-
-    invoke-interface {v1}, Ljava/lang/Runnable;->run()V
-
-    check-cast p1, Lcom/google/android/apps/camera/smarts/SmartsChipView;
-
-    iget-boolean v0, p1, Lcom/google/android/apps/camera/smarts/SmartsChipView;->e:Z
-
-    if-eqz v0, :cond_1
-
-    invoke-virtual {p1}, Lcom/google/android/apps/camera/smarts/SmartsChipView;->b()V
+    invoke-interface {p1}, Lhzh;->j()V
 
     return-void
+.end method
 
-    :pswitch_0
-    iget-object p1, p0, Lhzi;->a:Ljava/lang/Object;
+.method public final f(Llzv;)V
+    .locals 0
 
-    iget-object v0, p0, Lhzi;->b:Ljava/lang/Object;
+    iget-object p1, p0, Lhzi;->g:Lhzh;
 
-    iget-object v1, p0, Lhzi;->c:Ljava/lang/Object;
+    invoke-interface {p1}, Lhzh;->l()V
 
-    check-cast p1, Llqh;
+    return-void
+.end method
 
-    iget-boolean p1, p1, Llqh;->a:Z
+.method public final g(Llrr;Llnx;)V
+    .locals 2
 
-    if-eqz p1, :cond_0
+    iget-object v0, p0, Lhzi;->h:Llwd;
 
-    invoke-interface {v0}, Lgus;->e()V
+    sget-object v1, Llwd;->b:Llwd;
+
+    invoke-virtual {v0, v1}, Llwd;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_0
 
     return-void
 
     :cond_0
-    invoke-interface {v1}, Loiw;->get()Ljava/lang/Object;
+    new-instance v0, Lhzd;
 
-    move-result-object p1
+    invoke-direct {v0, p0, p2}, Lhzd;-><init>(Lhzi;Llnx;)V
 
-    check-cast p1, Ldvk;
-
-    invoke-interface {p1}, Ldvk;->a()Lnou;
+    invoke-static {p1, v0}, Lmip;->bj(Llrr;Llnn;)V
 
     return-void
-
-    :cond_1
-    return-void
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
 .end method

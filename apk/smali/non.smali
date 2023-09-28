@@ -1,83 +1,95 @@
-.class public final Lnon;
-.super Lnmw;
+.class public final synthetic Lnon;
+.super Ljava/lang/Object;
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Lqcm;
+
+
+# static fields
+.field public static final a:Lnon;
+
+.field public static final b:Lnon;
 
 
 # instance fields
-.field private a:Lnou;
+.field private final synthetic c:I
 
 
 # direct methods
-.method public constructor <init>(Lnou;)V
+.method static constructor <clinit>()V
+    .locals 2
+
+    new-instance v0, Lnon;
+
+    const/4 v1, 0x1
+
+    invoke-direct {v0, v1}, Lnon;-><init>(I)V
+
+    sput-object v0, Lnon;->b:Lnon;
+
+    new-instance v0, Lnon;
+
+    const/4 v1, 0x0
+
+    invoke-direct {v0, v1}, Lnon;-><init>(I)V
+
+    sput-object v0, Lnon;->a:Lnon;
+
+    return-void
+.end method
+
+.method public constructor <init>(I)V
     .locals 0
 
-    invoke-direct {p0}, Lnmw;-><init>()V
+    iput p1, p0, Lnon;->c:I
 
-    iput-object p1, p0, Lnon;->a:Lnou;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method protected final bY()Ljava/lang/String;
-    .locals 3
+.method public final synthetic a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 1
 
-    iget-object v0, p0, Lnon;->a:Lnou;
+    iget v0, p0, Lnon;->c:I
 
-    if-eqz v0, :cond_0
+    packed-switch v0, :pswitch_data_0
 
-    invoke-virtual {v0}, Ljava/lang/Object;->toString()Ljava/lang/String;
+    check-cast p1, Lnqh;
 
-    move-result-object v0
+    check-cast p2, Lnpe;
 
-    new-instance v1, Ljava/lang/StringBuilder;
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    const-string v2, "delegate=["
+    new-instance v0, Lqkl;
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v0, "]"
-
-    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
+    invoke-direct {v0, p1, p2}, Lqkl;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
 
     return-object v0
 
-    :cond_0
-    const/4 v0, 0x0
+    :pswitch_0
+    check-cast p1, Lnqh;
+
+    check-cast p2, Ljava/util/List;
+
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    new-instance v0, Lnqi;
+
+    invoke-direct {v0, p1, p2}, Lnqi;-><init>(Lnqh;Ljava/util/List;)V
 
     return-object v0
-.end method
 
-.method protected final c()V
-    .locals 1
+    nop
 
-    const/4 v0, 0x0
-
-    iput-object v0, p0, Lnon;->a:Lnou;
-
-    return-void
-.end method
-
-.method public final run()V
-    .locals 1
-
-    iget-object v0, p0, Lnon;->a:Lnou;
-
-    if-eqz v0, :cond_0
-
-    invoke-virtual {p0, v0}, Lnnb;->f(Lnou;)Z
-
-    :cond_0
-    return-void
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

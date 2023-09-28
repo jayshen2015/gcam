@@ -1,374 +1,221 @@
 .class public final Lbny;
-.super Ljava/lang/Thread;
-
-
-# static fields
-.field private static final c:Lboc;
+.super Ljava/lang/Object;
 
 
 # instance fields
-.field public final a:Ljava/util/Queue;
+.field private final a:Lgsn;
 
-.field public b:Ljava/lang/Boolean;
+.field private final b:Llzh;
 
-.field private final d:Landroid/os/Handler;
+.field private final c:Lddf;
 
-.field private final e:Landroid/os/HandlerThread;
+.field private final d:Lghx;
+
+.field private final e:Lfcy;
 
 
 # direct methods
-.method static constructor <clinit>()V
+.method public constructor <init>(Lgsn;Lfcy;Lghx;Llzh;Lddf;[B[B[B[B)V
+    .locals 0
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lbny;->a:Lgsn;
+
+    iput-object p2, p0, Lbny;->e:Lfcy;
+
+    iput-object p3, p0, Lbny;->d:Lghx;
+
+    iput-object p4, p0, Lbny;->b:Llzh;
+
+    iput-object p5, p0, Lbny;->c:Lddf;
+
+    return-void
+.end method
+
+.method private final e(Lggy;)[Landroid/hardware/camera2/params/MeteringRectangle;
     .locals 2
 
-    new-instance v0, Lboc;
+    iget-object v0, p0, Lbny;->d:Lghx;
 
-    const-string v1, "DispatchThread"
+    iget-object v1, p0, Lbny;->c:Lddf;
 
-    invoke-direct {v0, v1}, Lboc;-><init>(Ljava/lang/String;)V
-
-    sput-object v0, Lbny;->c:Lboc;
-
-    return-void
-.end method
-
-.method public constructor <init>(Landroid/os/Handler;Landroid/os/HandlerThread;)V
-    .locals 2
-
-    const-string v0, "Camera Job Dispatch Thread"
-
-    invoke-direct {p0, v0}, Ljava/lang/Thread;-><init>(Ljava/lang/String;)V
-
-    new-instance v0, Ljava/util/LinkedList;
-
-    invoke-direct {v0}, Ljava/util/LinkedList;-><init>()V
-
-    iput-object v0, p0, Lbny;->a:Ljava/util/Queue;
-
-    new-instance v0, Ljava/lang/Boolean;
-
-    const/4 v1, 0x0
-
-    invoke-direct {v0, v1}, Ljava/lang/Boolean;-><init>(Z)V
-
-    iput-object v0, p0, Lbny;->b:Ljava/lang/Boolean;
-
-    iput-object p1, p0, Lbny;->d:Landroid/os/Handler;
-
-    iput-object p2, p0, Lbny;->e:Landroid/os/HandlerThread;
-
-    return-void
-.end method
-
-.method private final c()Z
-    .locals 2
-
-    iget-object v0, p0, Lbny;->b:Ljava/lang/Boolean;
-
-    monitor-enter v0
-
-    :try_start_0
-    iget-object v1, p0, Lbny;->b:Ljava/lang/Boolean;
-
-    invoke-virtual {v1}, Ljava/lang/Boolean;->booleanValue()Z
-
-    move-result v1
-
-    monitor-exit v0
-
-    return v1
-
-    :catchall_0
-    move-exception v1
-
-    monitor-exit v0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw v1
-.end method
-
-
-# virtual methods
-.method public final a(Ljava/lang/Runnable;)V
-    .locals 6
-
-    invoke-direct {p0}, Lbny;->c()Z
-
-    move-result v0
-
-    if-nez v0, :cond_1
-
-    iget-object v0, p0, Lbny;->a:Ljava/util/Queue;
-
-    monitor-enter v0
-
-    :try_start_0
-    iget-object v1, p0, Lbny;->a:Ljava/util/Queue;
-
-    invoke-interface {v1}, Ljava/util/Queue;->size()I
-
-    move-result v1
-
-    int-to-long v1, v1
-
-    const-wide/16 v3, 0x100
-
-    cmp-long v5, v1, v3
-
-    if-eqz v5, :cond_0
-
-    iget-object v1, p0, Lbny;->a:Ljava/util/Queue;
-
-    invoke-interface {v1, p1}, Ljava/util/Queue;->add(Ljava/lang/Object;)Z
-
-    iget-object p1, p0, Lbny;->a:Ljava/util/Queue;
-
-    invoke-virtual {p1}, Ljava/lang/Object;->notifyAll()V
-
-    monitor-exit v0
-
-    return-void
-
-    :cond_0
-    new-instance p1, Ljava/lang/RuntimeException;
-
-    const-string v1, "Camera master thread job queue full"
-
-    invoke-direct {p1, v1}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
-
-    throw p1
-
-    :catchall_0
-    move-exception p1
-
-    monitor-exit v0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw p1
-
-    :cond_1
-    new-instance p1, Ljava/lang/IllegalStateException;
-
-    const-string v0, "Trying to run job on interrupted dispatcher thread"
-
-    invoke-direct {p1, v0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw p1
-.end method
-
-.method public final b(Ljava/lang/Runnable;Ljava/lang/Object;Ljava/lang/String;)V
-    .locals 4
-
-    const-string v0, "Timeout waiting 3500ms for "
-
-    invoke-virtual {v0, p3}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object p3
-
-    monitor-enter p2
-
-    :try_start_0
-    invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
-
-    move-result-wide v0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    const-wide/16 v2, 0xdac
-
-    add-long/2addr v0, v2
-
-    :try_start_1
-    invoke-virtual {p0, p1}, Lbny;->a(Ljava/lang/Runnable;)V
-
-    invoke-virtual {p2, v2, v3}, Ljava/lang/Object;->wait(J)V
-
-    invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
-
-    move-result-wide v2
-
-    cmp-long p1, v2, v0
-
-    if-gtz p1, :cond_0
-
-    goto :goto_0
-
-    :cond_0
-    new-instance p1, Ljava/lang/IllegalStateException;
-
-    invoke-direct {p1, p3}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw p1
-    :try_end_1
-    .catch Ljava/lang/InterruptedException; {:try_start_1 .. :try_end_1} :catch_0
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    :catch_0
-    move-exception p1
-
-    :try_start_2
-    invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
-
-    move-result-wide v2
-
-    cmp-long p1, v2, v0
-
-    if-gtz p1, :cond_1
-
-    :goto_0
-    monitor-exit p2
-
-    return-void
-
-    :cond_1
-    new-instance p1, Ljava/lang/IllegalStateException;
-
-    invoke-direct {p1, p3}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw p1
-
-    :catchall_0
-    move-exception p1
-
-    monitor-exit p2
-    :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_0
-
-    throw p1
-.end method
-
-.method public final run()V
-    .locals 3
-
-    :cond_0
-    :goto_0
-    iget-object v0, p0, Lbny;->a:Ljava/util/Queue;
-
-    monitor-enter v0
-
-    :goto_1
-    :try_start_0
-    iget-object v1, p0, Lbny;->a:Ljava/util/Queue;
-
-    invoke-interface {v1}, Ljava/util/Queue;->size()I
-
-    move-result v1
-
-    if-nez v1, :cond_1
-
-    invoke-direct {p0}, Lbny;->c()Z
-
-    move-result v1
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_1
-
-    if-nez v1, :cond_1
-
-    :try_start_1
-    iget-object v1, p0, Lbny;->a:Ljava/util/Queue;
-
-    invoke-virtual {v1}, Ljava/lang/Object;->wait()V
-    :try_end_1
-    .catch Ljava/lang/InterruptedException; {:try_start_1 .. :try_end_1} :catch_0
-    .catchall {:try_start_1 .. :try_end_1} :catchall_1
-
-    goto :goto_1
-
-    :catch_0
-    move-exception v1
-
-    :try_start_2
-    sget-object v1, Lbny;->c:Lboc;
-
-    const-string v2, "Dispatcher thread wait() interrupted, exiting"
-
-    invoke-static {v1, v2}, Lbod;->c(Lboc;Ljava/lang/String;)V
-
-    :cond_1
-    iget-object v1, p0, Lbny;->a:Ljava/util/Queue;
-
-    invoke-interface {v1}, Ljava/util/Queue;->poll()Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Ljava/lang/Runnable;
-
-    monitor-exit v0
-    :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_1
-
-    if-nez v1, :cond_2
-
-    invoke-direct {p0}, Lbny;->c()Z
+    invoke-static {v0, v1}, Lgsn;->g(Llvp;Lddf;)Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    iget-object v0, p0, Lbny;->e:Landroid/os/HandlerThread;
+    iget-object v0, p0, Lbny;->b:Llzh;
 
-    invoke-virtual {v0}, Landroid/os/HandlerThread;->quitSafely()Z
+    iget-boolean v0, v0, Llzh;->g:Z
 
-    return-void
+    if-eqz v0, :cond_0
 
-    :cond_2
-    invoke-interface {v1}, Ljava/lang/Runnable;->run()V
+    iget-object v0, p0, Lbny;->a:Lgsn;
 
-    monitor-enter p0
+    invoke-virtual {v0}, Lgsn;->d()Lgsm;
 
-    :try_start_3
-    iget-object v0, p0, Lbny;->d:Landroid/os/Handler;
+    move-result-object v0
 
-    new-instance v1, Lazo;
+    iget-object v0, v0, Lgsm;->a:Landroid/graphics/Rect;
 
-    const/16 v2, 0xa
+    invoke-interface {p1, v0}, Lggy;->b(Landroid/graphics/Rect;)[Landroid/hardware/camera2/params/MeteringRectangle;
 
-    invoke-direct {v1, p0, v2}, Lazo;-><init>(Lbny;I)V
+    move-result-object p1
 
-    invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
-    :try_end_3
-    .catchall {:try_start_3 .. :try_end_3} :catchall_0
+    return-object p1
 
-    :try_start_4
-    invoke-virtual {p0}, Ljava/lang/Object;->wait()V
-    :try_end_4
-    .catch Ljava/lang/InterruptedException; {:try_start_4 .. :try_end_4} :catch_1
-    .catchall {:try_start_4 .. :try_end_4} :catchall_0
+    :cond_0
+    iget-object v0, p0, Lbny;->a:Lgsn;
 
-    goto :goto_2
+    invoke-virtual {v0}, Lldl;->fA()Ljava/lang/Object;
 
-    :catch_1
-    move-exception v0
+    move-result-object v0
 
-    :goto_2
-    :try_start_5
-    monitor-exit p0
+    check-cast v0, Lgsm;
+
+    iget-object v0, v0, Lgsm;->a:Landroid/graphics/Rect;
+
+    invoke-interface {p1, v0}, Lggy;->b(Landroid/graphics/Rect;)[Landroid/hardware/camera2/params/MeteringRectangle;
+
+    move-result-object p1
+
+    return-object p1
+.end method
+
+.method private final f(Landroid/graphics/PointF;I)[Landroid/hardware/camera2/params/MeteringRectangle;
+    .locals 10
+
+    iget-object v0, p0, Lbny;->d:Lghx;
+
+    invoke-virtual {v0}, Llwe;->f()I
+
+    move-result v0
+
+    rem-int/lit8 v1, v0, 0x5a
+
+    const/4 v2, 0x1
+
+    const/4 v3, 0x0
+
+    if-nez v1, :cond_0
+
+    const/4 v1, 0x1
 
     goto :goto_0
 
-    :catchall_0
-    move-exception v0
+    :cond_0
+    const/4 v1, 0x0
 
-    monitor-exit p0
-    :try_end_5
-    .catchall {:try_start_5 .. :try_end_5} :catchall_0
+    :goto_0
+    const-string v4, "sensorOrientation must be a multiple of 90"
 
-    throw v0
+    invoke-static {v1, v4}, Lobr;->aG(ZLjava/lang/Object;)V
 
-    :catchall_1
-    move-exception v1
+    if-ltz v0, :cond_1
 
-    :try_start_6
-    monitor-exit v0
-    :try_end_6
-    .catchall {:try_start_6 .. :try_end_6} :catchall_1
+    goto :goto_1
 
-    goto :goto_4
+    :cond_1
+    const/4 v2, 0x0
 
-    :goto_3
-    throw v1
+    :goto_1
+    const-string v1, "sensorOrientation must not be negative"
 
-    :goto_4
-    goto :goto_3
+    invoke-static {v2, v1}, Lobr;->aG(ZLjava/lang/Object;)V
+
+    new-instance v1, Lbnx;
+
+    new-instance v6, Lnle;
+
+    rem-int/lit16 v0, v0, 0x168
+
+    invoke-direct {v6, v0}, Lnle;-><init>(I)V
+
+    const/4 v8, 0x0
+
+    const/4 v9, 0x0
+
+    move-object v3, v1
+
+    move-object v4, p1
+
+    move-object v5, p1
+
+    move v7, p2
+
+    invoke-direct/range {v3 .. v9}, Lbnx;-><init>(Landroid/graphics/PointF;Landroid/graphics/PointF;Lnle;I[B[B)V
+
+    invoke-direct {p0, v1}, Lbny;->e(Lggy;)[Landroid/hardware/camera2/params/MeteringRectangle;
+
+    move-result-object p1
+
+    return-object p1
+.end method
+
+
+# virtual methods
+.method public final a()[Landroid/hardware/camera2/params/MeteringRectangle;
+    .locals 1
+
+    invoke-static {}, Lggw;->c()Lggy;
+
+    iget-object v0, p0, Lbny;->a:Lgsn;
+
+    invoke-virtual {v0}, Lldl;->fA()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lgsm;
+
+    iget-object v0, v0, Lgsm;->a:Landroid/graphics/Rect;
+
+    sget-object v0, Lggw;->a:[Landroid/hardware/camera2/params/MeteringRectangle;
+
+    return-object v0
+.end method
+
+.method public final b(Landroid/graphics/PointF;)[Landroid/hardware/camera2/params/MeteringRectangle;
+    .locals 1
+
+    iget-object v0, p0, Lbny;->d:Lghx;
+
+    invoke-virtual {v0}, Llwe;->f()I
+
+    move-result v0
+
+    invoke-static {p1, p1, v0}, Lbnx;->c(Landroid/graphics/PointF;Landroid/graphics/PointF;I)Lbnx;
+
+    move-result-object p1
+
+    invoke-direct {p0, p1}, Lbny;->e(Lggy;)[Landroid/hardware/camera2/params/MeteringRectangle;
+
+    move-result-object p1
+
+    return-object p1
+.end method
+
+.method public final c(Landroid/graphics/PointF;)[Landroid/hardware/camera2/params/MeteringRectangle;
+    .locals 1
+
+    const/4 v0, 0x2
+
+    invoke-direct {p0, p1, v0}, Lbny;->f(Landroid/graphics/PointF;I)[Landroid/hardware/camera2/params/MeteringRectangle;
+
+    move-result-object p1
+
+    return-object p1
+.end method
+
+.method public final d(Landroid/graphics/PointF;)[Landroid/hardware/camera2/params/MeteringRectangle;
+    .locals 1
+
+    const/4 v0, 0x1
+
+    invoke-direct {p0, p1, v0}, Lbny;->f(Landroid/graphics/PointF;I)[Landroid/hardware/camera2/params/MeteringRectangle;
+
+    move-result-object p1
+
+    return-object p1
 .end method

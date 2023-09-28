@@ -1,101 +1,55 @@
-.class public final Lcak;
-.super Lwy;
+.class public final synthetic Lcak;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field private e:I
+.field public final synthetic a:Lcal;
 
 
 # direct methods
-.method public constructor <init>()V
+.method public synthetic constructor <init>(Lcal;)V
     .locals 0
 
-    invoke-direct {p0}, Lwy;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lcak;->a:Lcal;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final clear()V
-    .locals 1
+.method public final run()V
+    .locals 3
 
-    const/4 v0, 0x0
+    iget-object v0, p0, Lcak;->a:Lcal;
 
-    iput v0, p0, Lcak;->e:I
+    :try_start_0
+    invoke-virtual {v0}, Lcal;->a()V
 
-    invoke-super {p0}, Lwy;->clear()V
+    iget-object v1, v0, Lcal;->h:Lpih;
 
-    return-void
-.end method
+    const/4 v2, 0x1
 
-.method public final e(I)Ljava/lang/Object;
-    .locals 1
+    invoke-static {v2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
-    const/4 v0, 0x0
+    move-result-object v2
 
-    iput v0, p0, Lcak;->e:I
-
-    invoke-super {p0, p1}, Lwy;->e(I)Ljava/lang/Object;
-
-    move-result-object p1
-
-    return-object p1
-.end method
-
-.method public final f(ILjava/lang/Object;)Ljava/lang/Object;
-    .locals 1
-
-    const/4 v0, 0x0
-
-    iput v0, p0, Lcak;->e:I
-
-    invoke-super {p0, p1, p2}, Lwy;->f(ILjava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object p1
-
-    return-object p1
-.end method
-
-.method public final hashCode()I
-    .locals 1
-
-    iget v0, p0, Lcak;->e:I
-
-    if-nez v0, :cond_0
-
-    invoke-super {p0}, Lwy;->hashCode()I
-
-    move-result v0
-
-    iput v0, p0, Lcak;->e:I
-
-    :cond_0
-    return v0
-.end method
-
-.method public final i(Lxf;)V
-    .locals 1
-
-    const/4 v0, 0x0
-
-    iput v0, p0, Lcak;->e:I
-
-    invoke-super {p0, p1}, Lwy;->i(Lxf;)V
+    invoke-virtual {v1, v2}, Lpih;->o(Ljava/lang/Object;)Z
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     return-void
-.end method
 
-.method public final put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 1
+    :catch_0
+    move-exception v1
 
-    const/4 v0, 0x0
+    iget-object v0, v0, Lcal;->h:Lpih;
 
-    iput v0, p0, Lcak;->e:I
+    invoke-virtual {v0, v1}, Lpih;->a(Ljava/lang/Throwable;)Z
 
-    invoke-super {p0, p1, p2}, Lwy;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object p1
-
-    return-object p1
+    return-void
 .end method

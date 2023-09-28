@@ -1,40 +1,45 @@
 .class public final Lte;
 .super Ljava/lang/Object;
 
+# interfaces
+.implements Landroid/graphics/drawable/Drawable$Callback;
 
-# static fields
-.field public static final a:Loon;
 
-.field public static final b:Looo;
-
-.field public static final c:Looo;
+# instance fields
+.field final synthetic a:Landroid/support/wearable/view/CircledImageView;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 3
+.method public constructor <init>(Landroid/support/wearable/view/CircledImageView;)V
+    .locals 0
 
-    const/4 v0, 0x0
+    iput-object p1, p0, Lte;->a:Landroid/support/wearable/view/CircledImageView;
 
-    invoke-static {v0}, Lolp;->i(I)Loon;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    move-result-object v0
+    return-void
+.end method
 
-    sput-object v0, Lte;->a:Loon;
 
-    const-wide/16 v0, 0x0
+# virtual methods
+.method public final invalidateDrawable(Landroid/graphics/drawable/Drawable;)V
+    .locals 0
 
-    invoke-static {v0, v1}, Lolp;->j(J)Looo;
+    iget-object p1, p0, Lte;->a:Landroid/support/wearable/view/CircledImageView;
 
-    move-result-object v2
+    invoke-virtual {p1}, Landroid/support/wearable/view/CircledImageView;->invalidate()V
 
-    sput-object v2, Lte;->b:Looo;
+    return-void
+.end method
 
-    invoke-static {v0, v1}, Lolp;->j(J)Looo;
+.method public final scheduleDrawable(Landroid/graphics/drawable/Drawable;Ljava/lang/Runnable;J)V
+    .locals 0
 
-    move-result-object v0
+    return-void
+.end method
 
-    sput-object v0, Lte;->c:Looo;
+.method public final unscheduleDrawable(Landroid/graphics/drawable/Drawable;Ljava/lang/Runnable;)V
+    .locals 0
 
     return-void
 .end method

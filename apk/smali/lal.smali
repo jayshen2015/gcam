@@ -2,58 +2,38 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Llad;
+.implements Llak;
+
+
+# instance fields
+.field private final a:Llhw;
 
 
 # direct methods
-.method public constructor <init>()V
+.method public constructor <init>(Llhw;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    return-void
-.end method
-
-.method public constructor <init>([B)V
-    .locals 0
-
-    invoke-direct {p0}, Llal;-><init>()V
+    iput-object p1, p0, Llal;->a:Llhw;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()I
+.method public final a(Ljava/lang/Object;Ljava/lang/Object;)Lpht;
     .locals 1
 
-    const/16 v0, 0x8
+    iget-object v0, p0, Llal;->a:Llhw;
 
-    return v0
-.end method
+    invoke-interface {v0, p1, p2}, Llhw;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-.method public final b()Ljava/lang/String;
-    .locals 1
+    move-result-object p1
 
-    const-string v0, "Norm8"
+    invoke-static {p1}, Lplk;->V(Ljava/lang/Object;)Lpht;
 
-    return-object v0
-.end method
+    move-result-object p1
 
-.method public final c()I
-    .locals 1
-
-    const/4 v0, 0x4
-
-    return v0
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .locals 1
-
-    invoke-virtual {p0}, Llal;->b()Ljava/lang/String;
-
-    move-result-object v0
-
-    return-object v0
+    return-object p1
 .end method

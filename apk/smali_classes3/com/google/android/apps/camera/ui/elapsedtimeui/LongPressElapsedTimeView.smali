@@ -18,11 +18,9 @@
 
     invoke-direct {p0, p1, p2}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
-    new-instance p1, Lhxc;
+    new-instance p1, Ljbc;
 
-    const/4 p2, 0x6
-
-    invoke-direct {p1, p0, p2}, Lhxc;-><init>(Lcom/google/android/apps/camera/ui/elapsedtimeui/LongPressElapsedTimeView;I)V
+    invoke-direct {p1, p0}, Ljbc;-><init>(Lcom/google/android/apps/camera/ui/elapsedtimeui/LongPressElapsedTimeView;)V
 
     iput-object p1, p0, Lcom/google/android/apps/camera/ui/elapsedtimeui/LongPressElapsedTimeView;->d:Ljava/lang/Runnable;
 
@@ -34,7 +32,7 @@
 .method public final a()Landroid/widget/TextView;
     .locals 1
 
-    const v0, 0x7f0b01ea
+    const v0, 0x7f0b01a2
 
     invoke-virtual {p0, v0}, Lcom/google/android/apps/camera/ui/elapsedtimeui/LongPressElapsedTimeView;->findViewById(I)Landroid/view/View;
 
@@ -48,7 +46,7 @@
 .method public final b()Landroid/widget/TextView;
     .locals 1
 
-    const v0, 0x7f0b01eb
+    const v0, 0x7f0b01a3
 
     invoke-virtual {p0, v0}, Lcom/google/android/apps/camera/ui/elapsedtimeui/LongPressElapsedTimeView;->findViewById(I)Landroid/view/View;
 
@@ -76,19 +74,23 @@
 
     check-cast v0, Landroid/view/LayoutInflater;
 
-    const v1, 0x7f0e0077
+    const v1, 0x7f0e0072
 
     invoke-virtual {v0, v1, p0}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;)Landroid/view/View;
+
+    const/4 v0, 0x1
+
+    const/4 v1, 0x0
+
+    invoke-virtual {p0, v0, v1}, Lcom/google/android/apps/camera/ui/elapsedtimeui/LongPressElapsedTimeView;->setLayerType(ILandroid/graphics/Paint;)V
 
     invoke-virtual {p0}, Lcom/google/android/apps/camera/ui/elapsedtimeui/LongPressElapsedTimeView;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
 
-    const v1, 0x7f08041d
+    const v2, 0x7f0806e1
 
-    const/4 v2, 0x0
-
-    invoke-virtual {v0, v1, v2}, Landroid/content/res/Resources;->getDrawable(ILandroid/content/res/Resources$Theme;)Landroid/graphics/drawable/Drawable;
+    invoke-virtual {v0, v2, v1}, Landroid/content/res/Resources;->getDrawable(ILandroid/content/res/Resources$Theme;)Landroid/graphics/drawable/Drawable;
 
     move-result-object v0
 
@@ -118,7 +120,7 @@
 
     iput-object v0, p0, Lcom/google/android/apps/camera/ui/elapsedtimeui/LongPressElapsedTimeView;->b:Landroid/view/animation/Animation;
 
-    const v0, 0x7f0b01a1
+    const v0, 0x7f0b0163
 
     invoke-virtual {p0, v0}, Lcom/google/android/apps/camera/ui/elapsedtimeui/LongPressElapsedTimeView;->findViewById(I)Landroid/view/View;
 

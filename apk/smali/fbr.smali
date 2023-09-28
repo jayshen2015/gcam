@@ -1,22 +1,43 @@
 .class public final Lfbr;
 .super Ljava/lang/Object;
 
+# interfaces
+.implements Lpys;
 
-# static fields
-.field public static final a:Lemu;
+
+# instance fields
+.field private final a:Lkhx;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
+.method public constructor <init>(Lkhx;[B[B)V
+    .locals 0
 
-    new-instance v0, Lemu;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const/16 v1, 0x12
-
-    invoke-direct {v0, v1}, Lemu;-><init>(I)V
-
-    sput-object v0, Lfbr;->a:Lemu;
+    iput-object p1, p0, Lfbr;->a:Lkhx;
 
     return-void
+.end method
+
+
+# virtual methods
+.method public final a()Landroid/content/Context;
+    .locals 1
+
+    iget-object v0, p0, Lfbr;->a:Lkhx;
+
+    iget-object v0, v0, Lkhx;->a:Landroid/content/Context;
+
+    return-object v0
+.end method
+
+.method public final bridge synthetic get()Ljava/lang/Object;
+    .locals 1
+
+    invoke-virtual {p0}, Lfbr;->a()Landroid/content/Context;
+
+    move-result-object v0
+
+    return-object v0
 .end method

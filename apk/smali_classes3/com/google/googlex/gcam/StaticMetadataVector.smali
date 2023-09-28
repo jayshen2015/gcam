@@ -34,7 +34,7 @@
 
     iget-wide v0, p0, Lcom/google/googlex/gcam/StaticMetadataVector;->a:J
 
-    invoke-static {p1}, Lcom/google/googlex/gcam/StaticMetadata;->a(Lcom/google/googlex/gcam/StaticMetadata;)J
+    invoke-static {p1}, Lcom/google/googlex/gcam/StaticMetadata;->c(Lcom/google/googlex/gcam/StaticMetadata;)J
 
     move-result-wide v3
 

@@ -1,18 +1,30 @@
 .class public final Lpav;
-.super Lnws;
+.super Lppd;
 
 # interfaces
-.implements Lnxz;
+.implements Lpqn;
 
 
 # static fields
-.field public static final b:Lpav;
+.field public static final h:Lpav;
 
-.field private static volatile c:Lnyf;
+.field private static volatile i:Lpqs;
 
 
 # instance fields
-.field public a:Lnwx;
+.field public a:I
+
+.field public b:I
+
+.field public c:I
+
+.field public d:J
+
+.field public e:J
+
+.field public f:I
+
+.field public g:Z
 
 
 # direct methods
@@ -23,23 +35,19 @@
 
     invoke-direct {v0}, Lpav;-><init>()V
 
-    sput-object v0, Lpav;->b:Lpav;
+    sput-object v0, Lpav;->h:Lpav;
 
     const-class v1, Lpav;
 
-    invoke-static {v1, v0}, Lnws;->aa(Ljava/lang/Class;Lnws;)V
+    invoke-static {v1, v0}, Lppd;->F(Ljava/lang/Class;Lppd;)V
 
     return-void
 .end method
 
 .method private constructor <init>()V
-    .locals 1
+    .locals 0
 
-    invoke-direct {p0}, Lnws;-><init>()V
-
-    sget-object v0, Lnwl;->b:Lnwl;
-
-    iput-object v0, p0, Lpav;->a:Lnwx;
+    invoke-direct {p0}, Lppd;-><init>()V
 
     return-void
 .end method
@@ -61,7 +69,7 @@
     return-object p1
 
     :pswitch_1
-    sget-object p1, Lpav;->c:Lnyf;
+    sget-object p1, Lpav;->i:Lpqs;
 
     if-nez p1, :cond_1
 
@@ -70,17 +78,17 @@
     monitor-enter p2
 
     :try_start_0
-    sget-object p1, Lpav;->c:Lnyf;
+    sget-object p1, Lpav;->i:Lpqs;
 
     if-nez p1, :cond_0
 
-    new-instance p1, Lnwo;
+    new-instance p1, Lpoz;
 
-    sget-object v0, Lpav;->b:Lpav;
+    sget-object v0, Lpav;->h:Lpav;
 
-    invoke-direct {p1, v0}, Lnwo;-><init>(Lnws;)V
+    invoke-direct {p1, v0}, Lpoz;-><init>(Lppd;)V
 
-    sput-object p1, Lpav;->c:Lnyf;
+    sput-object p1, Lpav;->i:Lpqs;
 
     :cond_0
     monitor-exit p2
@@ -101,16 +109,16 @@
     return-object p1
 
     :pswitch_2
-    sget-object p1, Lpav;->b:Lpav;
+    sget-object p1, Lpav;->h:Lpav;
 
     return-object p1
 
     :pswitch_3
-    new-instance p1, Lnwn;
+    new-instance p1, Lpoy;
 
-    sget-object p2, Lpav;->b:Lpav;
+    sget-object p2, Lpav;->h:Lpav;
 
-    invoke-direct {p1, p2}, Lnwn;-><init>(Lnws;)V
+    invoke-direct {p1, p2}, Lpoy;-><init>(Lppd;)V
 
     return-object p1
 
@@ -122,19 +130,73 @@
     return-object p1
 
     :pswitch_5
-    const-string p1, "\u0000\u0001\u0000\u0000\u0001\u0001\u0001\u0000\u0001\u0000\u0001$"
+    const/16 p1, 0xa
 
-    new-array p2, p2, [Ljava/lang/Object;
+    new-array p1, p1, [Ljava/lang/Object;
 
     const/4 v0, 0x0
 
     const-string v1, "a"
 
-    aput-object v1, p2, v0
+    aput-object v1, p1, v0
 
-    sget-object v0, Lpav;->b:Lpav;
+    const-string v0, "b"
 
-    invoke-static {v0, p1, p2}, Lpav;->X(Lnxy;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/Object;
+    aput-object v0, p1, p2
+
+    const/4 p2, 0x2
+
+    sget-object v0, Lpaf;->l:Lppi;
+
+    aput-object v0, p1, p2
+
+    const/4 p2, 0x3
+
+    const-string v0, "c"
+
+    aput-object v0, p1, p2
+
+    const/4 p2, 0x4
+
+    sget-object v0, Lpaf;->l:Lppi;
+
+    aput-object v0, p1, p2
+
+    const/4 p2, 0x5
+
+    const-string v0, "d"
+
+    aput-object v0, p1, p2
+
+    const/4 p2, 0x6
+
+    const-string v0, "e"
+
+    aput-object v0, p1, p2
+
+    const/4 p2, 0x7
+
+    const-string v0, "f"
+
+    aput-object v0, p1, p2
+
+    const/16 p2, 0x8
+
+    sget-object v0, Lpaf;->m:Lppi;
+
+    aput-object v0, p1, p2
+
+    const/16 p2, 0x9
+
+    const-string v0, "g"
+
+    aput-object v0, p1, p2
+
+    sget-object p2, Lpav;->h:Lpav;
+
+    const-string v0, "\u0001\u0006\u0000\u0001\u0001\u0006\u0006\u0000\u0000\u0000\u0001\u100c\u0000\u0002\u100c\u0001\u0003\u1002\u0002\u0004\u1002\u0003\u0005\u100c\u0004\u0006\u1007\u0005"
+
+    invoke-static {p2, v0, p1}, Lpav;->E(Lpqm;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p1
 
@@ -157,25 +219,4 @@
         :pswitch_2
         :pswitch_1
     .end packed-switch
-.end method
-
-.method public final c()V
-    .locals 2
-
-    iget-object v0, p0, Lpav;->a:Lnwx;
-
-    invoke-interface {v0}, Lnwx;->c()Z
-
-    move-result v1
-
-    if-nez v1, :cond_0
-
-    invoke-static {v0}, Lnws;->R(Lnwx;)Lnwx;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lpav;->a:Lnwx;
-
-    :cond_0
-    return-void
 .end method

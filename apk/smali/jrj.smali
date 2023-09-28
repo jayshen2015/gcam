@@ -1,66 +1,53 @@
 .class public final Ljrj;
-.super Ljhn;
+.super Ljava/lang/Object;
 
-
-# static fields
-.field public static final CREATOR:Landroid/os/Parcelable$Creator;
+# interfaces
+.implements Lpys;
 
 
 # instance fields
-.field public final a:I
-
-.field public final b:Lcom/google/android/gms/wearable/AppTheme;
+.field private final a:Lqkg;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
-
-    new-instance v0, Ljqn;
-
-    const/16 v1, 0x11
-
-    invoke-direct {v0, v1}, Ljqn;-><init>(I)V
-
-    sput-object v0, Ljrj;->CREATOR:Landroid/os/Parcelable$Creator;
-
-    return-void
-.end method
-
-.method public constructor <init>(ILcom/google/android/gms/wearable/AppTheme;)V
+.method public constructor <init>(Lqkg;)V
     .locals 0
 
-    invoke-direct {p0}, Ljhn;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput p1, p0, Ljrj;->a:I
-
-    iput-object p2, p0, Ljrj;->b:Lcom/google/android/gms/wearable/AppTheme;
+    iput-object p1, p0, Ljrj;->a:Lqkg;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final writeToParcel(Landroid/os/Parcel;I)V
-    .locals 3
+.method public final a()Ljrl;
+    .locals 1
 
-    invoke-static {p1}, Ljhp;->a(Landroid/os/Parcel;)I
+    iget-object v0, p0, Ljrj;->a:Lqkg;
 
-    move-result v0
+    check-cast v0, Lemj;
 
-    iget v1, p0, Ljrj;->a:I
+    invoke-virtual {v0}, Lemj;->a()Landroid/content/Intent;
 
-    const/4 v2, 0x2
+    move-result-object v0
 
-    invoke-static {p1, v2, v1}, Ljhp;->g(Landroid/os/Parcel;II)V
+    invoke-static {v0}, Lbqe;->d(Landroid/content/Intent;)Ljrl;
 
-    iget-object v1, p0, Ljrj;->b:Lcom/google/android/gms/wearable/AppTheme;
+    move-result-object v0
 
-    const/4 v2, 0x3
+    invoke-static {v0}, Lqmd;->ae(Ljava/lang/Object;)V
 
-    invoke-static {p1, v2, v1, p2}, Ljhp;->o(Landroid/os/Parcel;ILandroid/os/Parcelable;I)V
+    return-object v0
+.end method
 
-    invoke-static {p1, v0}, Ljhp;->c(Landroid/os/Parcel;I)V
+.method public final bridge synthetic get()Ljava/lang/Object;
+    .locals 1
 
-    return-void
+    invoke-virtual {p0}, Ljrj;->a()Ljrl;
+
+    move-result-object v0
+
+    return-object v0
 .end method

@@ -3,88 +3,106 @@
 
 
 # static fields
-.field private static final d:Ljava/lang/ThreadLocal;
+.field private static final instances:Ljava/lang/ThreadLocal;
 
-.field private static final e:Ljava/util/concurrent/atomic/AtomicInteger;
+.field private static final nextLocalGaussian:Ljava/lang/ThreadLocal;
 
-.field private static final f:Ljava/lang/ThreadLocal;
+.field private static final probeGenerator:Ljava/util/concurrent/atomic/AtomicInteger;
 
-.field private static final g:Ljava/util/concurrent/atomic/AtomicLong;
+.field private static final seeder:Ljava/util/concurrent/atomic/AtomicLong;
+
+.field private static final serialPersistentFields:[Ljava/io/ObjectStreamField;
+
+.field private static final serialVersionUID:J = -0x5135b0e98579898dL
 
 
 # instance fields
-.field a:J
+.field initialized:Z
 
-.field b:I
+.field threadLocalRandomProbe:I
 
-.field c:Z
+.field threadLocalRandomSeed:J
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 9
+    .locals 10
 
-    new-instance v0, Ljava/io/ObjectStreamField;
+    const/4 v0, 0x2
 
-    const-string v1, "rnd"
+    new-array v0, v0, [Ljava/io/ObjectStreamField;
+
+    new-instance v1, Ljava/io/ObjectStreamField;
 
     sget-object v2, Ljava/lang/Long;->TYPE:Ljava/lang/Class;
 
-    invoke-direct {v0, v1, v2}, Ljava/io/ObjectStreamField;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
+    const-string v3, "rnd"
 
-    new-instance v0, Ljava/io/ObjectStreamField;
+    invoke-direct {v1, v3, v2}, Ljava/io/ObjectStreamField;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
 
-    const-string v1, "initialized"
+    const/4 v2, 0x0
 
-    sget-object v2, Ljava/lang/Boolean;->TYPE:Ljava/lang/Class;
+    aput-object v1, v0, v2
 
-    invoke-direct {v0, v1, v2}, Ljava/io/ObjectStreamField;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
+    new-instance v1, Ljava/io/ObjectStreamField;
+
+    sget-object v3, Ljava/lang/Boolean;->TYPE:Ljava/lang/Class;
+
+    const-string v4, "initialized"
+
+    invoke-direct {v1, v4, v3}, Ljava/io/ObjectStreamField;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
+
+    const/4 v3, 0x1
+
+    aput-object v1, v0, v3
+
+    sput-object v0, Lj$/util/concurrent/ThreadLocalRandom;->serialPersistentFields:[Ljava/io/ObjectStreamField;
 
     new-instance v0, Ljava/lang/ThreadLocal;
 
     invoke-direct {v0}, Ljava/lang/ThreadLocal;-><init>()V
 
-    sput-object v0, Lj$/util/concurrent/ThreadLocalRandom;->d:Ljava/lang/ThreadLocal;
+    sput-object v0, Lj$/util/concurrent/ThreadLocalRandom;->nextLocalGaussian:Ljava/lang/ThreadLocal;
 
     new-instance v0, Ljava/util/concurrent/atomic/AtomicInteger;
 
     invoke-direct {v0}, Ljava/util/concurrent/atomic/AtomicInteger;-><init>()V
 
-    sput-object v0, Lj$/util/concurrent/ThreadLocalRandom;->e:Ljava/util/concurrent/atomic/AtomicInteger;
+    sput-object v0, Lj$/util/concurrent/ThreadLocalRandom;->probeGenerator:Ljava/util/concurrent/atomic/AtomicInteger;
 
-    new-instance v0, Lj$/util/concurrent/v;
+    new-instance v0, Lj$/util/concurrent/ThreadLocalRandom$1;
 
-    invoke-direct {v0}, Lj$/util/concurrent/v;-><init>()V
+    invoke-direct {v0}, Lj$/util/concurrent/ThreadLocalRandom$1;-><init>()V
 
-    sput-object v0, Lj$/util/concurrent/ThreadLocalRandom;->f:Ljava/lang/ThreadLocal;
+    sput-object v0, Lj$/util/concurrent/ThreadLocalRandom;->instances:Ljava/lang/ThreadLocal;
 
     new-instance v0, Ljava/util/concurrent/atomic/AtomicLong;
 
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
-    move-result-wide v1
+    move-result-wide v4
 
-    invoke-static {v1, v2}, Lj$/util/concurrent/ThreadLocalRandom;->e(J)J
+    invoke-static {v4, v5}, Lj$/util/concurrent/ThreadLocalRandom;->mix64(J)J
 
-    move-result-wide v1
+    move-result-wide v4
 
     invoke-static {}, Ljava/lang/System;->nanoTime()J
 
-    move-result-wide v3
+    move-result-wide v6
 
-    invoke-static {v3, v4}, Lj$/util/concurrent/ThreadLocalRandom;->e(J)J
+    invoke-static {v6, v7}, Lj$/util/concurrent/ThreadLocalRandom;->mix64(J)J
 
-    move-result-wide v3
+    move-result-wide v6
 
-    xor-long/2addr v1, v3
+    xor-long/2addr v4, v6
 
-    invoke-direct {v0, v1, v2}, Ljava/util/concurrent/atomic/AtomicLong;-><init>(J)V
+    invoke-direct {v0, v4, v5}, Ljava/util/concurrent/atomic/AtomicLong;-><init>(J)V
 
-    sput-object v0, Lj$/util/concurrent/ThreadLocalRandom;->g:Ljava/util/concurrent/atomic/AtomicLong;
+    sput-object v0, Lj$/util/concurrent/ThreadLocalRandom;->seeder:Ljava/util/concurrent/atomic/AtomicLong;
 
-    new-instance v0, Lj$/util/concurrent/w;
+    new-instance v0, Lj$/util/concurrent/ThreadLocalRandom$2;
 
-    invoke-direct {v0}, Lj$/util/concurrent/w;-><init>()V
+    invoke-direct {v0}, Lj$/util/concurrent/ThreadLocalRandom$2;-><init>()V
 
     invoke-static {v0}, Ljava/security/AccessController;->doPrivileged(Ljava/security/PrivilegedAction;)Ljava/lang/Object;
 
@@ -104,57 +122,61 @@
 
     move-result-object v1
 
-    const/4 v2, 0x0
-
     aget-byte v2, v1, v2
 
-    int-to-long v2, v2
+    int-to-long v4, v2
 
-    const-wide/16 v4, 0xff
+    const-wide/16 v6, 0xff
 
-    and-long/2addr v2, v4
-
-    const/4 v6, 0x1
+    and-long/2addr v4, v6
 
     :goto_0
-    if-ge v6, v0, :cond_0
+    if-ge v3, v0, :cond_0
 
-    shl-long/2addr v2, v0
+    shl-long/2addr v4, v0
 
-    aget-byte v7, v1, v6
+    aget-byte v2, v1, v3
 
-    int-to-long v7, v7
+    int-to-long v8, v2
 
-    and-long/2addr v7, v4
+    and-long/2addr v8, v6
 
-    or-long/2addr v2, v7
+    or-long/2addr v4, v8
 
-    add-int/lit8 v6, v6, 0x1
+    add-int/lit8 v3, v3, 0x1
 
     goto :goto_0
 
     :cond_0
-    sget-object v0, Lj$/util/concurrent/ThreadLocalRandom;->g:Ljava/util/concurrent/atomic/AtomicLong;
+    sget-object v0, Lj$/util/concurrent/ThreadLocalRandom;->seeder:Ljava/util/concurrent/atomic/AtomicLong;
 
-    invoke-virtual {v0, v2, v3}, Ljava/util/concurrent/atomic/AtomicLong;->set(J)V
+    invoke-virtual {v0, v4, v5}, Ljava/util/concurrent/atomic/AtomicLong;->set(J)V
 
     :cond_1
     return-void
 .end method
 
-.method constructor <init>()V
+.method private constructor <init>()V
     .locals 1
 
     invoke-direct {p0}, Ljava/util/Random;-><init>()V
 
     const/4 v0, 0x1
 
-    iput-boolean v0, p0, Lj$/util/concurrent/ThreadLocalRandom;->c:Z
+    iput-boolean v0, p0, Lj$/util/concurrent/ThreadLocalRandom;->initialized:Z
 
     return-void
 .end method
 
-.method static final a(I)I
+.method synthetic constructor <init>(Lj$/util/concurrent/ThreadLocalRandom-IA;)V
+    .locals 0
+
+    invoke-direct {p0}, Lj$/util/concurrent/ThreadLocalRandom;-><init>()V
+
+    return-void
+.end method
+
+.method static final advanceProbe(I)I
     .locals 1
 
     shl-int/lit8 v0, p0, 0xd
@@ -169,7 +191,7 @@
 
     xor-int/2addr p0, v0
 
-    sget-object v0, Lj$/util/concurrent/ThreadLocalRandom;->f:Ljava/lang/ThreadLocal;
+    sget-object v0, Lj$/util/concurrent/ThreadLocalRandom;->instances:Ljava/lang/ThreadLocal;
 
     invoke-virtual {v0}, Ljava/lang/ThreadLocal;->get()Ljava/lang/Object;
 
@@ -177,15 +199,15 @@
 
     check-cast v0, Lj$/util/concurrent/ThreadLocalRandom;
 
-    iput p0, v0, Lj$/util/concurrent/ThreadLocalRandom;->b:I
+    iput p0, v0, Lj$/util/concurrent/ThreadLocalRandom;->threadLocalRandomProbe:I
 
     return p0
 .end method
 
-.method static final b()I
-    .locals 1
+.method public static current()Lj$/util/concurrent/ThreadLocalRandom;
+    .locals 2
 
-    sget-object v0, Lj$/util/concurrent/ThreadLocalRandom;->f:Ljava/lang/ThreadLocal;
+    sget-object v0, Lj$/util/concurrent/ThreadLocalRandom;->instances:Ljava/lang/ThreadLocal;
 
     invoke-virtual {v0}, Ljava/lang/ThreadLocal;->get()Ljava/lang/Object;
 
@@ -193,15 +215,36 @@
 
     check-cast v0, Lj$/util/concurrent/ThreadLocalRandom;
 
-    iget v0, v0, Lj$/util/concurrent/ThreadLocalRandom;->b:I
+    iget v1, v0, Lj$/util/concurrent/ThreadLocalRandom;->threadLocalRandomProbe:I
+
+    if-nez v1, :cond_0
+
+    invoke-static {}, Lj$/util/concurrent/ThreadLocalRandom;->localInit()V
+
+    :cond_0
+    return-object v0
+.end method
+
+.method static final getProbe()I
+    .locals 1
+
+    sget-object v0, Lj$/util/concurrent/ThreadLocalRandom;->instances:Ljava/lang/ThreadLocal;
+
+    invoke-virtual {v0}, Ljava/lang/ThreadLocal;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lj$/util/concurrent/ThreadLocalRandom;
+
+    iget v0, v0, Lj$/util/concurrent/ThreadLocalRandom;->threadLocalRandomProbe:I
 
     return v0
 .end method
 
-.method static final c()V
+.method static final localInit()V
     .locals 4
 
-    sget-object v0, Lj$/util/concurrent/ThreadLocalRandom;->e:Ljava/util/concurrent/atomic/AtomicInteger;
+    sget-object v0, Lj$/util/concurrent/ThreadLocalRandom;->probeGenerator:Ljava/util/concurrent/atomic/AtomicInteger;
 
     const v1, -0x61c88647
 
@@ -214,7 +257,7 @@
     const/4 v0, 0x1
 
     :cond_0
-    sget-object v1, Lj$/util/concurrent/ThreadLocalRandom;->g:Ljava/util/concurrent/atomic/AtomicLong;
+    sget-object v1, Lj$/util/concurrent/ThreadLocalRandom;->seeder:Ljava/util/concurrent/atomic/AtomicLong;
 
     const-wide v2, -0x4498517a7b3558c5L    # -1.5671250923562117E-22
 
@@ -222,11 +265,11 @@
 
     move-result-wide v1
 
-    invoke-static {v1, v2}, Lj$/util/concurrent/ThreadLocalRandom;->e(J)J
+    invoke-static {v1, v2}, Lj$/util/concurrent/ThreadLocalRandom;->mix64(J)J
 
     move-result-wide v1
 
-    sget-object v3, Lj$/util/concurrent/ThreadLocalRandom;->f:Ljava/lang/ThreadLocal;
+    sget-object v3, Lj$/util/concurrent/ThreadLocalRandom;->instances:Ljava/lang/ThreadLocal;
 
     invoke-virtual {v3}, Ljava/lang/ThreadLocal;->get()Ljava/lang/Object;
 
@@ -234,35 +277,14 @@
 
     check-cast v3, Lj$/util/concurrent/ThreadLocalRandom;
 
-    iput-wide v1, v3, Lj$/util/concurrent/ThreadLocalRandom;->a:J
+    iput-wide v1, v3, Lj$/util/concurrent/ThreadLocalRandom;->threadLocalRandomSeed:J
 
-    iput v0, v3, Lj$/util/concurrent/ThreadLocalRandom;->b:I
+    iput v0, v3, Lj$/util/concurrent/ThreadLocalRandom;->threadLocalRandomProbe:I
 
     return-void
 .end method
 
-.method public static current()Lj$/util/concurrent/ThreadLocalRandom;
-    .locals 2
-
-    sget-object v0, Lj$/util/concurrent/ThreadLocalRandom;->f:Ljava/lang/ThreadLocal;
-
-    invoke-virtual {v0}, Ljava/lang/ThreadLocal;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lj$/util/concurrent/ThreadLocalRandom;
-
-    iget v1, v0, Lj$/util/concurrent/ThreadLocalRandom;->b:I
-
-    if-nez v1, :cond_0
-
-    invoke-static {}, Lj$/util/concurrent/ThreadLocalRandom;->c()V
-
-    :cond_0
-    return-object v0
-.end method
-
-.method private static d(J)I
+.method private static mix32(J)I
     .locals 3
 
     const/16 v0, 0x21
@@ -292,7 +314,7 @@
     return p1
 .end method
 
-.method private static e(J)J
+.method private static mix64(J)J
     .locals 3
 
     const/16 v0, 0x21
@@ -320,23 +342,43 @@
     return-wide p0
 .end method
 
+.method private readResolve()Ljava/lang/Object;
+    .locals 1
 
-# virtual methods
-.method final f()J
-    .locals 4
+    invoke-static {}, Lj$/util/concurrent/ThreadLocalRandom;->current()Lj$/util/concurrent/ThreadLocalRandom;
 
-    iget-wide v0, p0, Lj$/util/concurrent/ThreadLocalRandom;->a:J
+    move-result-object v0
 
-    const-wide v2, -0x61c8864680b583ebL
-
-    add-long/2addr v0, v2
-
-    iput-wide v0, p0, Lj$/util/concurrent/ThreadLocalRandom;->a:J
-
-    return-wide v0
+    return-object v0
 .end method
 
-.method protected final next(I)I
+.method private writeObject(Ljava/io/ObjectOutputStream;)V
+    .locals 4
+
+    invoke-virtual {p1}, Ljava/io/ObjectOutputStream;->putFields()Ljava/io/ObjectOutputStream$PutField;
+
+    move-result-object v0
+
+    iget-wide v1, p0, Lj$/util/concurrent/ThreadLocalRandom;->threadLocalRandomSeed:J
+
+    const-string v3, "rnd"
+
+    invoke-virtual {v0, v3, v1, v2}, Ljava/io/ObjectOutputStream$PutField;->put(Ljava/lang/String;J)V
+
+    const-string v1, "initialized"
+
+    const/4 v2, 0x1
+
+    invoke-virtual {v0, v1, v2}, Ljava/io/ObjectOutputStream$PutField;->put(Ljava/lang/String;Z)V
+
+    invoke-virtual {p1}, Ljava/io/ObjectOutputStream;->writeFields()V
+
+    return-void
+.end method
+
+
+# virtual methods
+.method protected next(I)I
     .locals 1
 
     invoke-virtual {p0}, Lj$/util/concurrent/ThreadLocalRandom;->nextInt()I
@@ -350,14 +392,14 @@
     return p1
 .end method
 
-.method public final nextBoolean()Z
+.method public nextBoolean()Z
     .locals 2
 
-    invoke-virtual {p0}, Lj$/util/concurrent/ThreadLocalRandom;->f()J
+    invoke-virtual {p0}, Lj$/util/concurrent/ThreadLocalRandom;->nextSeed()J
 
     move-result-wide v0
 
-    invoke-static {v0, v1}, Lj$/util/concurrent/ThreadLocalRandom;->d(J)I
+    invoke-static {v0, v1}, Lj$/util/concurrent/ThreadLocalRandom;->mix32(J)I
 
     move-result v0
 
@@ -374,14 +416,14 @@
     return v0
 .end method
 
-.method public final nextDouble()D
+.method public nextDouble()D
     .locals 4
 
-    invoke-virtual {p0}, Lj$/util/concurrent/ThreadLocalRandom;->f()J
+    invoke-virtual {p0}, Lj$/util/concurrent/ThreadLocalRandom;->nextSeed()J
 
     move-result-wide v0
 
-    invoke-static {v0, v1}, Lj$/util/concurrent/ThreadLocalRandom;->e(J)J
+    invoke-static {v0, v1}, Lj$/util/concurrent/ThreadLocalRandom;->mix64(J)J
 
     move-result-wide v0
 
@@ -400,14 +442,14 @@
     return-wide v0
 .end method
 
-.method public final nextFloat()F
+.method public nextFloat()F
     .locals 2
 
-    invoke-virtual {p0}, Lj$/util/concurrent/ThreadLocalRandom;->f()J
+    invoke-virtual {p0}, Lj$/util/concurrent/ThreadLocalRandom;->nextSeed()J
 
     move-result-wide v0
 
-    invoke-static {v0, v1}, Lj$/util/concurrent/ThreadLocalRandom;->d(J)I
+    invoke-static {v0, v1}, Lj$/util/concurrent/ThreadLocalRandom;->mix32(J)I
 
     move-result v0
 
@@ -422,10 +464,10 @@
     return v0
 .end method
 
-.method public final nextGaussian()D
-    .locals 11
+.method public nextGaussian()D
+    .locals 10
 
-    sget-object v0, Lj$/util/concurrent/ThreadLocalRandom;->d:Ljava/lang/ThreadLocal;
+    sget-object v0, Lj$/util/concurrent/ThreadLocalRandom;->nextLocalGaussian:Ljava/lang/ThreadLocal;
 
     invoke-virtual {v0}, Ljava/lang/ThreadLocal;->get()Ljava/lang/Object;
 
@@ -448,91 +490,93 @@
     :cond_0
     invoke-virtual {p0}, Lj$/util/concurrent/ThreadLocalRandom;->nextDouble()D
 
-    move-result-wide v1
+    move-result-wide v0
 
-    const-wide/high16 v3, 0x4000000000000000L    # 2.0
+    const-wide/high16 v2, 0x4000000000000000L    # 2.0
 
-    mul-double v1, v1, v3
+    mul-double v0, v0, v2
 
-    const-wide/high16 v5, 0x3ff0000000000000L    # 1.0
+    const-wide/high16 v4, 0x3ff0000000000000L    # 1.0
 
-    sub-double/2addr v1, v5
+    sub-double/2addr v0, v4
 
     invoke-virtual {p0}, Lj$/util/concurrent/ThreadLocalRandom;->nextDouble()D
 
-    move-result-wide v7
+    move-result-wide v6
 
-    mul-double v7, v7, v3
+    mul-double v6, v6, v2
 
-    sub-double/2addr v7, v5
+    sub-double/2addr v6, v4
 
-    mul-double v3, v1, v1
+    mul-double v2, v0, v0
 
-    mul-double v9, v7, v7
+    mul-double v8, v6, v6
 
-    add-double/2addr v9, v3
+    add-double/2addr v2, v8
 
-    cmpl-double v3, v9, v5
+    cmpl-double v8, v2, v4
 
-    if-gez v3, :cond_0
+    if-gez v8, :cond_0
 
-    const-wide/16 v3, 0x0
+    const-wide/16 v4, 0x0
 
-    cmpl-double v5, v9, v3
+    cmpl-double v8, v2, v4
 
-    if-eqz v5, :cond_0
+    if-eqz v8, :cond_0
 
-    const-wide/high16 v3, -0x4000000000000000L    # -2.0
+    const-wide/high16 v4, -0x4000000000000000L    # -2.0
 
-    invoke-static {v9, v10}, Ljava/lang/StrictMath;->log(D)D
+    invoke-static {v2, v3}, Ljava/lang/StrictMath;->log(D)D
 
-    move-result-wide v5
+    move-result-wide v8
 
-    mul-double v5, v5, v3
+    mul-double v8, v8, v4
 
-    div-double/2addr v5, v9
+    div-double/2addr v8, v2
 
-    invoke-static {v5, v6}, Ljava/lang/StrictMath;->sqrt(D)D
+    invoke-static {v8, v9}, Ljava/lang/StrictMath;->sqrt(D)D
 
-    move-result-wide v3
+    move-result-wide v2
 
-    mul-double v7, v7, v3
+    sget-object v4, Lj$/util/concurrent/ThreadLocalRandom;->nextLocalGaussian:Ljava/lang/ThreadLocal;
 
-    invoke-static {v7, v8}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
+    mul-double v6, v6, v2
+
+    invoke-static {v6, v7}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
 
     move-result-object v5
 
-    invoke-virtual {v0, v5}, Ljava/lang/ThreadLocal;->set(Ljava/lang/Object;)V
+    invoke-virtual {v4, v5}, Ljava/lang/ThreadLocal;->set(Ljava/lang/Object;)V
 
-    mul-double v1, v1, v3
+    mul-double v0, v0, v2
 
-    return-wide v1
+    return-wide v0
 .end method
 
-.method public final nextInt()I
+.method public nextInt()I
     .locals 2
 
-    invoke-virtual {p0}, Lj$/util/concurrent/ThreadLocalRandom;->f()J
+    invoke-virtual {p0}, Lj$/util/concurrent/ThreadLocalRandom;->nextSeed()J
 
     move-result-wide v0
 
-    invoke-static {v0, v1}, Lj$/util/concurrent/ThreadLocalRandom;->d(J)I
+    invoke-static {v0, v1}, Lj$/util/concurrent/ThreadLocalRandom;->mix32(J)I
 
     move-result v0
 
     return v0
 .end method
 
-.method public final nextInt(I)I
+.method public nextInt(I)I
     .locals 4
 
     if-lez p1, :cond_2
 
-    invoke-virtual {p0}, Lj$/util/concurrent/ThreadLocalRandom;->f()J
+    invoke-virtual {p0}, Lj$/util/concurrent/ThreadLocalRandom;->nextSeed()J
 
     move-result-wide v0
 
-    invoke-static {v0, v1}, Lj$/util/concurrent/ThreadLocalRandom;->d(J)I
+    invoke-static {v0, v1}, Lj$/util/concurrent/ThreadLocalRandom;->mix32(J)I
 
     move-result v0
 
@@ -558,11 +602,11 @@
 
     if-gez v2, :cond_1
 
-    invoke-virtual {p0}, Lj$/util/concurrent/ThreadLocalRandom;->f()J
+    invoke-virtual {p0}, Lj$/util/concurrent/ThreadLocalRandom;->nextSeed()J
 
     move-result-wide v2
 
-    invoke-static {v2, v3}, Lj$/util/concurrent/ThreadLocalRandom;->d(J)I
+    invoke-static {v2, v3}, Lj$/util/concurrent/ThreadLocalRandom;->mix32(J)I
 
     move-result v0
 
@@ -590,24 +634,38 @@
     goto :goto_2
 .end method
 
-.method public final nextLong()J
+.method public nextLong()J
     .locals 2
 
-    invoke-virtual {p0}, Lj$/util/concurrent/ThreadLocalRandom;->f()J
+    invoke-virtual {p0}, Lj$/util/concurrent/ThreadLocalRandom;->nextSeed()J
 
     move-result-wide v0
 
-    invoke-static {v0, v1}, Lj$/util/concurrent/ThreadLocalRandom;->e(J)J
+    invoke-static {v0, v1}, Lj$/util/concurrent/ThreadLocalRandom;->mix64(J)J
 
     move-result-wide v0
 
     return-wide v0
 .end method
 
-.method public final setSeed(J)V
+.method final nextSeed()J
+    .locals 4
+
+    iget-wide v0, p0, Lj$/util/concurrent/ThreadLocalRandom;->threadLocalRandomSeed:J
+
+    const-wide v2, -0x61c8864680b583ebL
+
+    add-long/2addr v0, v2
+
+    iput-wide v0, p0, Lj$/util/concurrent/ThreadLocalRandom;->threadLocalRandomSeed:J
+
+    return-wide v0
+.end method
+
+.method public setSeed(J)V
     .locals 0
 
-    iget-boolean p1, p0, Lj$/util/concurrent/ThreadLocalRandom;->c:Z
+    iget-boolean p1, p0, Lj$/util/concurrent/ThreadLocalRandom;->initialized:Z
 
     if-nez p1, :cond_0
 

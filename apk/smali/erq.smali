@@ -2,135 +2,66 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lchg;
+.implements Lpys;
 
 
 # instance fields
-.field final synthetic a:Ljava/lang/Object;
+.field private final a:Lqkg;
 
-.field private final synthetic b:I
+.field private final b:Lqkg;
+
+.field private final c:Lqkg;
+
+.field private final d:Lqkg;
 
 
 # direct methods
-.method public constructor <init>(Lcie;I)V
+.method public constructor <init>(Lqkg;Lqkg;Lqkg;Lqkg;)V
     .locals 0
-
-    iput p2, p0, Lerq;->b:I
-
-    iput-object p1, p0, Lerq;->a:Ljava/lang/Object;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    return-void
-.end method
+    iput-object p1, p0, Lerq;->a:Lqkg;
 
-.method public constructor <init>(Lert;I)V
-    .locals 0
+    iput-object p2, p0, Lerq;->b:Lqkg;
 
-    iput p2, p0, Lerq;->b:I
+    iput-object p3, p0, Lerq;->c:Lqkg;
 
-    iput-object p1, p0, Lerq;->a:Ljava/lang/Object;
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p4, p0, Lerq;->d:Lqkg;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()V
-    .locals 3
+.method public final a()Lhax;
+    .locals 7
 
-    iget v0, p0, Lerq;->b:I
+    iget-object v1, p0, Lerq;->a:Lqkg;
 
-    packed-switch v0, :pswitch_data_0
+    iget-object v2, p0, Lerq;->b:Lqkg;
 
-    iget-object v0, p0, Lerq;->a:Ljava/lang/Object;
+    iget-object v3, p0, Lerq;->c:Lqkg;
 
-    check-cast v0, Lcie;
+    iget-object v4, p0, Lerq;->d:Lqkg;
 
-    iget-boolean v1, v0, Lcie;->B:Z
+    new-instance v6, Lhax;
 
-    if-eqz v1, :cond_0
+    const/4 v5, 0x0
 
-    iget-object v0, v0, Lcie;->e:Lcom/google/android/apps/camera/ui/views/ViewfinderCover;
+    move-object v0, v6
 
-    invoke-virtual {v0}, Lcom/google/android/apps/camera/ui/views/ViewfinderCover;->k()V
+    invoke-direct/range {v0 .. v5}, Lhax;-><init>(Lqkg;Lqkg;Lqkg;Lqkg;[C)V
 
-    return-void
-
-    :pswitch_0
-    iget-object v0, p0, Lerq;->a:Ljava/lang/Object;
-
-    check-cast v0, Lert;
-
-    invoke-virtual {v0}, Lert;->D()V
-
-    iget-object v0, p0, Lerq;->a:Ljava/lang/Object;
-
-    check-cast v0, Lert;
-
-    iget-object v1, v0, Lert;->t:Lfbz;
-
-    invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    invoke-virtual {v0}, Lert;->E()I
-
-    move-result v0
-
-    const/4 v2, 0x2
-
-    invoke-interface {v1, v0, v2}, Lfbz;->Z(II)V
-
-    return-void
-
-    :cond_0
-    return-void
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+    return-object v6
 .end method
 
-.method public final b()V
-    .locals 3
+.method public final bridge synthetic get()Ljava/lang/Object;
+    .locals 1
 
-    iget v0, p0, Lerq;->b:I
+    invoke-virtual {p0}, Lerq;->a()Lhax;
 
-    packed-switch v0, :pswitch_data_0
+    move-result-object v0
 
-    iget-object v0, p0, Lerq;->a:Ljava/lang/Object;
-
-    check-cast v0, Lcie;
-
-    const/4 v1, 0x1
-
-    iput-boolean v1, v0, Lcie;->B:Z
-
-    return-void
-
-    :pswitch_0
-    iget-object v0, p0, Lerq;->a:Ljava/lang/Object;
-
-    check-cast v0, Lert;
-
-    iget-object v0, v0, Lert;->t:Lfbz;
-
-    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    const/4 v1, 0x3
-
-    const/4 v2, 0x2
-
-    invoke-interface {v0, v1, v2}, Lfbz;->Z(II)V
-
-    return-void
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+    return-object v0
 .end method

@@ -1,170 +1,125 @@
-.class public final Lnlg;
-.super Lnws;
+.class public final synthetic Lnlg;
+.super Ljava/lang/Object;
 
 # interfaces
-.implements Lnxz;
-
-
-# static fields
-.field public static final c:Lnlg;
-
-.field private static volatile d:Lnyf;
+.implements Ljava/util/Comparator;
 
 
 # instance fields
-.field public a:I
-
-.field public b:I
+.field public final synthetic a:Ljava/util/HashMap;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
-
-    new-instance v0, Lnlg;
-
-    invoke-direct {v0}, Lnlg;-><init>()V
-
-    sput-object v0, Lnlg;->c:Lnlg;
-
-    const-class v1, Lnlg;
-
-    invoke-static {v1, v0}, Lnws;->aa(Ljava/lang/Class;Lnws;)V
-
-    return-void
-.end method
-
-.method private constructor <init>()V
+.method public synthetic constructor <init>(Ljava/util/HashMap;)V
     .locals 0
 
-    invoke-direct {p0}, Lnws;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lnlg;->a:Ljava/util/HashMap;
 
     return-void
 .end method
 
 
 # virtual methods
-.method protected final a(ILjava/lang/Object;)Ljava/lang/Object;
-    .locals 3
+.method public final compare(Ljava/lang/Object;Ljava/lang/Object;)I
+    .locals 4
 
-    add-int/lit8 p1, p1, -0x1
+    iget-object v0, p0, Lnlg;->a:Ljava/util/HashMap;
 
-    const/4 p2, 0x1
+    check-cast p1, Lpnf;
 
-    packed-switch p1, :pswitch_data_0
+    check-cast p2, Lpnf;
 
-    :pswitch_0
-    const/4 p1, 0x0
+    iget v1, p1, Lpnf;->a:I
 
-    return-object p1
-
-    :pswitch_1
-    sget-object p1, Lnlg;->d:Lnyf;
-
-    if-nez p1, :cond_1
-
-    const-class p2, Lnlg;
-
-    monitor-enter p2
-
-    :try_start_0
-    sget-object p1, Lnlg;->d:Lnyf;
-
-    if-nez p1, :cond_0
-
-    new-instance p1, Lnwo;
-
-    sget-object v0, Lnlg;->c:Lnlg;
-
-    invoke-direct {p1, v0}, Lnwo;-><init>(Lnws;)V
-
-    sput-object p1, Lnlg;->d:Lnyf;
-
-    :cond_0
-    monitor-exit p2
-
-    goto :goto_0
-
-    :catchall_0
-    move-exception p1
-
-    monitor-exit p2
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw p1
-
-    :cond_1
-    :goto_0
-    return-object p1
-
-    :pswitch_2
-    sget-object p1, Lnlg;->c:Lnlg;
-
-    return-object p1
-
-    :pswitch_3
-    new-instance p1, Lnwn;
-
-    sget-object p2, Lnlg;->c:Lnlg;
-
-    invoke-direct {p1, p2}, Lnwn;-><init>(Lnws;)V
-
-    return-object p1
-
-    :pswitch_4
-    new-instance p1, Lnlg;
-
-    invoke-direct {p1}, Lnlg;-><init>()V
-
-    return-object p1
-
-    :pswitch_5
-    const-string p1, "a"
-
-    const-string v0, "\u0001\u0001\u0000\u0001\u0001\u0001\u0001\u0000\u0000\u0000\u0001\u100c\u0000"
-
-    const/4 v1, 0x3
-
-    new-array v1, v1, [Ljava/lang/Object;
+    and-int/lit16 v1, v1, 0x2000
 
     const/4 v2, 0x0
 
-    aput-object p1, v1, v2
+    if-eqz v1, :cond_0
 
-    const-string p1, "b"
+    iget v1, p1, Lpnf;->e:I
 
-    aput-object p1, v1, p2
+    goto :goto_0
 
-    const/4 p1, 0x2
+    :cond_0
+    const/4 v1, 0x0
 
-    sget-object p2, Lnkx;->i:Lnww;
+    :goto_0
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    aput-object p2, v1, p1
+    move-result-object v1
 
-    sget-object p1, Lnlg;->c:Lnlg;
+    invoke-virtual {v0, v1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
-    invoke-static {p1, v0, v1}, Lnlg;->X(Lnxy;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/Object;
+    move-result-object v1
 
-    move-result-object p1
+    check-cast v1, Ljava/lang/Integer;
 
-    return-object p1
+    iget v3, p2, Lpnf;->a:I
 
-    :pswitch_6
-    invoke-static {p2}, Ljava/lang/Byte;->valueOf(B)Ljava/lang/Byte;
+    and-int/lit16 v3, v3, 0x2000
 
-    move-result-object p1
+    if-eqz v3, :cond_1
 
-    return-object p1
+    iget v3, p2, Lpnf;->e:I
 
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_6
-        :pswitch_0
-        :pswitch_5
-        :pswitch_4
-        :pswitch_3
-        :pswitch_2
-        :pswitch_1
-    .end packed-switch
+    goto :goto_1
+
+    :cond_1
+    const/4 v3, 0x0
+
+    :goto_1
+    invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v3
+
+    invoke-virtual {v0, v3}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/Integer;
+
+    if-eqz v1, :cond_2
+
+    if-eqz v0, :cond_2
+
+    invoke-virtual {v1, v0}, Ljava/lang/Integer;->compareTo(Ljava/lang/Integer;)I
+
+    move-result v0
+
+    goto :goto_2
+
+    :cond_2
+    const/4 v0, 0x0
+
+    :goto_2
+    if-nez v0, :cond_5
+
+    iget p1, p1, Lpnf;->f:I
+
+    iget p2, p2, Lpnf;->f:I
+
+    if-ne p1, p2, :cond_3
+
+    goto :goto_3
+
+    :cond_3
+    if-ge p1, p2, :cond_4
+
+    const/4 v2, -0x1
+
+    goto :goto_3
+
+    :cond_4
+    const/4 v2, 0x1
+
+    goto :goto_3
+
+    :cond_5
+    move v2, v0
+
+    :goto_3
+    return v2
 .end method

@@ -1,14 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <plurals name="accessibility_timelapse_manual_record_speed_desc">
-        <item quantity="other">Ubrzani videozapis: brzina %d</item>
-        <item quantity="one">Ubrzani videozapis: brzina %d</item>
-        <item quantity="few">Ubrzani videozapis: brzina %d</item>
-    </plurals>
-    <plurals name="number_of_cropped_face">
-        <item quantity="other">Izrezivanje %d lica.</item>
-        <item quantity="one">Izrezivanje %d lica.</item>
-        <item quantity="few">Izrezivanje %d lica.</item>
+    <plurals name="number_of_faces_announcement">
+        <item quantity="other">%1$d lica.</item>
+        <item quantity="one">%1$d lice.</item>
+        <item quantity="few">%1$d lica.</item>
     </plurals>
     <plurals name="photos_remaining">
         <item quantity="other">Oko %s fotografija</item>
@@ -21,9 +16,9 @@
         <item quantity="few">(odabrane su %1$d aplikacije)</item>
     </plurals>
     <plurals name="social_share_info">
-        <item quantity="other">Brzo dijelite fotografije i videozapise na društvenim aplikacijama iz Kamere. Odaberite najviše %1$d aplikacija. Nije moguće dijeliti fotografije i videozapise sačuvane u zaključanom folderu.</item>
-        <item quantity="one">Brzo dijelite fotografije i videozapise na društvenim aplikacijama iz Kamere. Odaberite najviše %1$d aplikaciju. Nije moguće dijeliti fotografije i videozapise sačuvane u zaključanom folderu.</item>
-        <item quantity="few">Brzo dijelite fotografije i videozapise na društvenim aplikacijama iz Kamere. Odaberite najviše %1$d aplikacije. Nije moguće dijeliti fotografije i videozapise sačuvane u zaključanom folderu.</item>
+        <item quantity="other">Brzo dijelite fotografije i videozapise na društvenim aplikacijama direktno s Kamere. Odaberite najviše %1$d aplikacija. Fotografije i videozapisi pohranjeni u zaključanom folderu se ne mogu dijeliti.</item>
+        <item quantity="one">Brzo dijelite fotografije i videozapise na društvenim aplikacijama direktno s Kamere. Odaberite najviše %1$d aplikaciju. Fotografije i videozapisi pohranjeni u zaključanom folderu se ne mogu dijeliti.</item>
+        <item quantity="few">Brzo dijelite fotografije i videozapise na društvenim aplikacijama direktno s Kamere. Odaberite najviše %1$d aplikacije. Fotografije i videozapisi pohranjeni u zaključanom folderu se ne mogu dijeliti.</item>
     </plurals>
     <plurals name="social_share_select_error">
         <item quantity="other">Odaberite najviše %1$d aplikacija</item>

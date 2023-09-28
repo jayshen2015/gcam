@@ -1,104 +1,67 @@
-.class Lirb;
-.super Liqw;
+.class public final Lirb;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Lpys;
 
 
 # instance fields
-.field final synthetic b:Lirc;
+.field private final a:Lqkg;
 
 
 # direct methods
-.method public constructor <init>(Lirc;)V
+.method public constructor <init>(Lqkg;)V
     .locals 0
 
-    iput-object p1, p0, Lirb;->b:Lirc;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0}, Liqw;-><init>()V
+    iput-object p1, p0, Lirb;->a:Lqkg;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public a(Z)V
-    .locals 2
+.method public final a()Lira;
+    .locals 9
 
-    iget-object v0, p0, Lirb;->b:Lirc;
+    iget-object v0, p0, Lirb;->a:Lqkg;
 
-    const/4 v1, 0x1
-
-    invoke-virtual {v0, p1, v1}, Lirc;->n(ZZ)V
-
-    return-void
-.end method
-
-.method public c(Z)V
-    .locals 2
-
-    iget-object v0, p0, Lirb;->b:Lirc;
-
-    const/4 v1, 0x1
-
-    invoke-virtual {v0, p1, v1}, Lirc;->l(ZZ)V
-
-    return-void
-.end method
-
-.method public cp(Z)V
-    .locals 2
-
-    iget-object v0, p0, Lirb;->b:Lirc;
-
-    const/4 v1, 0x0
-
-    invoke-virtual {v0, p1, v1}, Lirc;->l(ZZ)V
-
-    return-void
-.end method
-
-.method public final f()V
-    .locals 3
-
-    sget-object v0, Lirc;->f:Lnak;
-
-    invoke-virtual {v0}, Lnaf;->c()Lnaz;
+    invoke-interface {v0}, Lqkg;->get()Ljava/lang/Object;
 
     move-result-object v0
 
-    const-string v1, "Enter [VisibleAndScrolled] state"
+    move-object v2, v0
 
-    const/16 v2, 0x113f
+    check-cast v2, Lmip;
 
-    invoke-static {v0, v1, v2}, Ld;->g(Lnaz;Ljava/lang/String;C)V
+    new-instance v0, Lira;
 
-    iget-object v0, p0, Lirb;->b:Lirc;
+    const/4 v3, 0x0
 
-    iget-object v0, v0, Lirc;->n:Ligo;
+    const/4 v4, 0x0
 
-    iget-object v0, v0, Ligo;->b:Ljava/lang/Object;
+    const/4 v5, 0x0
 
-    const/4 v1, 0x0
+    const/4 v6, 0x0
 
-    invoke-static {v1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+    const/4 v7, 0x0
 
-    move-result-object v1
+    const/4 v8, 0x0
 
-    invoke-interface {v0, v1}, Ljwb;->bn(Ljava/lang/Object;)V
+    move-object v1, v0
 
-    return-void
+    invoke-direct/range {v1 .. v8}, Lira;-><init>(Lmip;[B[B[B[B[B[B)V
+
+    return-object v0
 .end method
 
-.method public i()V
-    .locals 0
-
-    return-void
-.end method
-
-.method public j()V
+.method public final bridge synthetic get()Ljava/lang/Object;
     .locals 1
 
-    iget-object v0, p0, Lirb;->b:Lirc;
+    invoke-virtual {p0}, Lirb;->a()Lira;
 
-    invoke-virtual {v0}, Lirc;->m()V
+    move-result-object v0
 
-    return-void
+    return-object v0
 .end method

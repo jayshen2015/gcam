@@ -1,61 +1,43 @@
-.class public final Lfwy;
+.class public final synthetic Lfwy;
 .super Ljava/lang/Object;
+
+# interfaces
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field public final a:J
-
-.field public final b:[B
-
-.field public final c:I
-
-.field public final d:Lcom/google/android/libraries/camera/exif/ExifInterface;
-
-.field public final e:Lkaf;
+.field public final synthetic a:Lfxa;
 
 
 # direct methods
-.method private constructor <init>(J[BLkaf;ILcom/google/android/libraries/camera/exif/ExifInterface;)V
+.method public synthetic constructor <init>(Lfxa;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-wide p1, p0, Lfwy;->a:J
-
-    iput-object p3, p0, Lfwy;->b:[B
-
-    iput p5, p0, Lfwy;->c:I
-
-    iput-object p4, p0, Lfwy;->e:Lkaf;
-
-    iput-object p6, p0, Lfwy;->d:Lcom/google/android/libraries/camera/exif/ExifInterface;
+    iput-object p1, p0, Lfwy;->a:Lfxa;
 
     return-void
 .end method
 
-.method public static a(J[BLkaf;ILcom/google/android/libraries/camera/exif/ExifInterface;Ljew;)Lfwy;
-    .locals 7
 
-    if-eqz p6, :cond_0
+# virtual methods
+.method public final run()V
+    .locals 3
 
-    invoke-virtual {p6, p5}, Ljew;->n(Lcom/google/android/libraries/camera/exif/ExifInterface;)V
+    iget-object v0, p0, Lfwy;->a:Lfxa;
 
-    :cond_0
-    new-instance p6, Lfwy;
+    iget-object v1, v0, Lfxa;->b:Landroid/os/Handler;
 
-    move-object v0, p6
+    iget-object v0, v0, Lfxa;->a:Lfnj;
 
-    move-wide v1, p0
+    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    move-object v3, p2
+    new-instance v2, Lfwx;
 
-    move-object v4, p3
+    invoke-direct {v2, v0}, Lfwx;-><init>(Lfnj;)V
 
-    move v5, p4
+    invoke-virtual {v1, v2}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    move-object v6, p5
-
-    invoke-direct/range {v0 .. v6}, Lfwy;-><init>(J[BLkaf;ILcom/google/android/libraries/camera/exif/ExifInterface;)V
-
-    return-object p6
+    return-void
 .end method

@@ -1,32 +1,134 @@
-.class public final Llxj;
-.super Laqc;
+.class final Llxj;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Lmac;
+
+
+# instance fields
+.field final synthetic a:I
+
+.field final synthetic b:I
+
+.field final synthetic c:Lcom/google/android/libraries/camera/jni/graphics/HardwarePixels;
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 2
+.method public constructor <init>(Lcom/google/android/libraries/camera/jni/graphics/HardwarePixels;II)V
+    .locals 0
 
-    const/4 v0, 0x1
+    iput-object p1, p0, Llxj;->c:Lcom/google/android/libraries/camera/jni/graphics/HardwarePixels;
 
-    const/4 v1, 0x6
+    iput p2, p0, Llxj;->a:I
 
-    invoke-direct {p0, v0, v1}, Laqc;-><init>(II)V
+    iput p3, p0, Llxj;->b:I
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Laqp;)V
-    .locals 1
+.method public final getBuffer()Ljava/nio/ByteBuffer;
+    .locals 7
 
-    sget-object v0, Llya;->h:Laqc;
+    iget-object v0, p0, Llxj;->c:Lcom/google/android/libraries/camera/jni/graphics/HardwarePixels;
 
-    invoke-virtual {v0, p1}, Laqc;->a(Laqp;)V
+    iget-object v0, v0, Lcom/google/android/libraries/camera/jni/graphics/HardwarePixels;->c:Ljava/util/concurrent/atomic/AtomicBoolean;
 
-    sget-object v0, Llya;->k:Laqc;
+    invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicBoolean;->get()Z
 
-    invoke-virtual {v0, p1}, Laqc;->a(Laqp;)V
+    move-result v0
 
-    return-void
+    const/4 v1, 0x1
+
+    xor-int/2addr v0, v1
+
+    const-string v2, "Accessing data after close!"
+
+    invoke-static {v0, v2}, Lobr;->aR(ZLjava/lang/Object;)V
+
+    iget-object v0, p0, Llxj;->c:Lcom/google/android/libraries/camera/jni/graphics/HardwarePixels;
+
+    iget-wide v2, v0, Lcom/google/android/libraries/camera/jni/graphics/HardwarePixels;->b:J
+
+    iget v4, p0, Llxj;->a:I
+
+    iget v5, p0, Llxj;->b:I
+
+    iget-object v0, v0, Lcom/google/android/libraries/camera/jni/graphics/HardwarePixels;->a:Landroid/hardware/HardwareBuffer;
+
+    invoke-virtual {v0}, Landroid/hardware/HardwareBuffer;->getFormat()I
+
+    move-result v0
+
+    if-eqz v4, :cond_1
+
+    const/16 v6, 0x23
+
+    if-ne v0, v6, :cond_0
+
+    const/4 v0, 0x1
+
+    goto :goto_0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    goto :goto_0
+
+    :cond_1
+    const/4 v0, 0x1
+
+    :goto_0
+    const-string v6, "Internal error: Expect planes 1 and 2 to only appear in YUV420 formats"
+
+    invoke-static {v0, v6}, Lobr;->aR(ZLjava/lang/Object;)V
+
+    if-nez v4, :cond_2
+
+    goto :goto_1
+
+    :cond_2
+    const/4 v1, 0x2
+
+    :goto_1
+    invoke-static {v2, v3, v4, v5, v1}, Lcom/google/android/libraries/camera/jni/graphics/HardwarePixels;->nativeGetData(JIII)Ljava/nio/ByteBuffer;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public final getPixelStride()I
+    .locals 3
+
+    iget-object v0, p0, Llxj;->c:Lcom/google/android/libraries/camera/jni/graphics/HardwarePixels;
+
+    iget-wide v0, v0, Lcom/google/android/libraries/camera/jni/graphics/HardwarePixels;->b:J
+
+    iget v2, p0, Llxj;->a:I
+
+    invoke-static {v0, v1, v2}, Lcom/google/android/libraries/camera/jni/graphics/HardwarePixels;->nativePixelStride(JI)I
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public final getRowStride()I
+    .locals 3
+
+    iget-object v0, p0, Llxj;->c:Lcom/google/android/libraries/camera/jni/graphics/HardwarePixels;
+
+    iget-wide v0, v0, Lcom/google/android/libraries/camera/jni/graphics/HardwarePixels;->b:J
+
+    iget v2, p0, Llxj;->a:I
+
+    invoke-static {v0, v1, v2}, Lcom/google/android/libraries/camera/jni/graphics/HardwarePixels;->nativeRowStride(JI)I
+
+    move-result v0
+
+    return v0
 .end method

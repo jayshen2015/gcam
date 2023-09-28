@@ -1,67 +1,51 @@
-.class final Lmwj;
+.class public final Lmwj;
 .super Ljava/lang/Object;
-
-# interfaces
-.implements Ljava/io/Serializable;
-
-
-# instance fields
-.field private final a:Lmvv;
 
 
 # direct methods
-.method public constructor <init>(Lmvv;)V
+.method public static synthetic a(I)Ljava/lang/String;
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    packed-switch p0, :pswitch_data_0
 
-    iput-object p1, p0, Lmwj;->a:Lmvv;
+    const-string p0, "null"
 
-    return-void
+    return-object p0
+
+    :pswitch_0
+    const-string p0, "EXPLICITLY_ENABLED"
+
+    return-object p0
+
+    :pswitch_1
+    const-string p0, "EXPLICITLY_DISABLED"
+
+    return-object p0
+
+    :pswitch_2
+    const-string p0, "DEFAULT"
+
+    return-object p0
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x1
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method
 
+.method public static synthetic b(I)V
+    .locals 0
 
-# virtual methods
-.method readResolve()Ljava/lang/Object;
-    .locals 2
+    if-eqz p0, :cond_0
 
-    iget-object v0, p0, Lmwj;->a:Lmvv;
-
-    invoke-virtual {v0}, Lmvv;->isEmpty()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    sget-object v0, Lmwk;->a:Lmwk;
-
-    return-object v0
+    return-void
 
     :cond_0
-    iget-object v0, p0, Lmwj;->a:Lmvv;
+    const/4 p0, 0x0
 
-    sget-object v1, Lmym;->a:Lmym;
-
-    invoke-static {v1}, Lmvv;->l(Ljava/lang/Object;)Lmvv;
-
-    move-result-object v1
-
-    invoke-static {v0, v1}, Llyh;->I(Ljava/util/List;Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_1
-
-    sget-object v0, Lmwk;->b:Lmwk;
-
-    return-object v0
-
-    :cond_1
-    new-instance v0, Lmwk;
-
-    iget-object v1, p0, Lmwj;->a:Lmvv;
-
-    invoke-direct {v0, v1}, Lmwk;-><init>(Lmvv;)V
-
-    return-object v0
+    throw p0
 .end method

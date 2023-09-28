@@ -1,115 +1,70 @@
-.class Lfdq;
-.super Lfdn;
+.class public final Lfdq;
+.super Ljava/lang/Object;
 
 
 # instance fields
-.field final synthetic b:Lfdu;
+.field public final a:[F
+
+.field public b:[F
+
+.field public final c:Ljua;
+
+.field public final d:Ljua;
+
+.field public e:F
+
+.field public final f:Z
+
+.field public g:Z
+
+.field public h:I
+
+.field public i:Lkus;
+
+.field public j:Lkus;
 
 
 # direct methods
-.method public constructor <init>(Lfdu;)V
-    .locals 0
-
-    iput-object p1, p0, Lfdq;->b:Lfdu;
-
-    invoke-direct {p0}, Lfdn;-><init>()V
-
-    return-void
-.end method
-
-
-# virtual methods
-.method public b()V
-    .locals 0
-
-    return-void
-.end method
-
-.method public bW()V
-    .locals 0
-
-    return-void
-.end method
-
-.method public final c()V
-    .locals 0
-
-    return-void
-.end method
-
-.method public d()V
-    .locals 0
-
-    return-void
-.end method
-
-.method public final f()V
+.method public constructor <init>()V
     .locals 2
 
-    iget-object v0, p0, Lfdq;->b:Lfdu;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iget-object v0, v0, Lfdu;->l:Ljvs;
+    const/16 v0, 0x10
 
-    invoke-interface {v0}, Ljvs;->bm()Ljava/lang/Object;
+    new-array v0, v0, [F
 
-    move-result-object v0
+    iput-object v0, p0, Lfdq;->a:[F
 
-    check-cast v0, Lika;
+    const/4 v0, 0x0
 
-    sget-object v1, Lika;->m:Lika;
+    iput-object v0, p0, Lfdq;->b:[F
 
-    invoke-virtual {v0, v1}, Lika;->equals(Ljava/lang/Object;)Z
+    new-instance v0, Ljua;
 
-    move-result v0
+    invoke-direct {v0}, Ljua;-><init>()V
 
-    if-nez v0, :cond_0
+    iput-object v0, p0, Lfdq;->c:Ljua;
 
-    invoke-virtual {p0}, Lfdq;->b()V
+    new-instance v0, Ljua;
 
-    return-void
+    invoke-direct {v0}, Ljua;-><init>()V
 
-    :cond_0
-    iget-object v0, p0, Lfdq;->b:Lfdu;
+    iput-object v0, p0, Lfdq;->d:Ljua;
 
-    iget-object v0, v0, Lfdu;->l:Ljvs;
+    const/4 v0, 0x0
 
-    invoke-interface {v0}, Ljvs;->bm()Ljava/lang/Object;
+    iput v0, p0, Lfdq;->e:F
 
-    move-result-object v0
+    const/4 v0, 0x0
 
-    check-cast v0, Lika;
-
-    invoke-virtual {v0}, Lika;->name()Ljava/lang/String;
-
-    iget-object v0, p0, Lfdq;->b:Lfdu;
-
-    iget-object v0, v0, Lfdu;->i:Liec;
-
-    invoke-interface {v0}, Liec;->i()V
-
-    iget-object v0, p0, Lfdq;->b:Lfdu;
-
-    iget-object v0, v0, Lfdu;->i:Liec;
-
-    invoke-interface {v0}, Liec;->f()V
-
-    iget-object v0, p0, Lfdq;->b:Lfdu;
-
-    iget-object v0, v0, Lfdu;->h:Liff;
+    iput-boolean v0, p0, Lfdq;->f:Z
 
     const/4 v1, 0x1
 
-    invoke-interface {v0, v1}, Liff;->G(Z)V
+    iput-boolean v1, p0, Lfdq;->g:Z
 
-    iget-object v0, p0, Lfdq;->b:Lfdu;
-
-    invoke-virtual {v0}, Lfdu;->l()V
-
-    return-void
-.end method
-
-.method public j()V
-    .locals 0
+    iput v0, p0, Lfdq;->h:I
 
     return-void
 .end method

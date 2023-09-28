@@ -1,28 +1,19 @@
-.class public final Lrz;
+.class interface abstract Lrz;
 .super Ljava/lang/Object;
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 0
-
-    const/4 p1, 0x0
-
-    throw p1
+.method public abstract a(Landroid/view/View;)I
 .end method
 
-.method public final hashCode()I
-    .locals 1
-
-    const/4 v0, 0x0
-
-    throw v0
+.method public abstract b(Landroid/view/View;)I
 .end method
 
-.method public final toString()Ljava/lang/String;
-    .locals 1
+.method public abstract c()I
+.end method
 
-    const/4 v0, 0x0
+.method public abstract d()I
+.end method
 
-    throw v0
+.method public abstract e(I)Landroid/view/View;
 .end method

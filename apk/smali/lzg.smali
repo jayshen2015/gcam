@@ -1,256 +1,231 @@
-.class final Llzg;
-.super Lapn;
+.class public final Llzg;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Lpys;
+
+
+# instance fields
+.field private final synthetic a:I
 
 
 # direct methods
-.method public constructor <init>(Lapt;)V
+.method public constructor <init>(I)V
     .locals 0
 
-    invoke-direct {p0, p1}, Lapn;-><init>(Lapt;)V
+    iput p1, p0, Llzg;->a:I
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
+.end method
+
+.method public static a()Lmcu;
+    .locals 1
+
+    new-instance v0, Lmcu;
+
+    invoke-direct {v0}, Lmcu;-><init>()V
+
+    return-object v0
+.end method
+
+.method public static b()Lcom/google/android/libraries/performance/primes/transmitter/clearcut/ClearcutMetricSnapshotTransmitter;
+    .locals 1
+
+    new-instance v0, Lcom/google/android/libraries/performance/primes/transmitter/clearcut/ClearcutMetricSnapshotTransmitter;
+
+    invoke-direct {v0}, Lcom/google/android/libraries/performance/primes/transmitter/clearcut/ClearcutMetricSnapshotTransmitter;-><init>()V
+
+    return-object v0
+.end method
+
+.method public static c()Lpfg;
+    .locals 1
+
+    sget-object v0, Lpff;->a:Lpff;
+
+    invoke-static {v0}, Lqmd;->ae(Ljava/lang/Object;)V
+
+    return-object v0
+.end method
+
+.method public static d()Lmip;
+    .locals 1
+
+    new-instance v0, Lmip;
+
+    invoke-direct {v0}, Lmip;-><init>()V
+
+    return-object v0
 .end method
 
 
 # virtual methods
-.method public final bridge synthetic b(Larf;Ljava/lang/Object;)V
-    .locals 5
+.method public final synthetic get()Ljava/lang/Object;
+    .locals 3
 
-    check-cast p2, Llwq;
+    iget v0, p0, Llzg;->a:I
 
-    iget-wide v0, p2, Llwq;->a:J
+    const/4 v1, 0x2
 
-    const/4 v2, 0x1
+    const/4 v2, 0x0
 
-    invoke-virtual {p1, v2, v0, v1}, Lare;->e(IJ)V
+    packed-switch v0, :pswitch_data_0
 
-    iget-object v0, p2, Llwq;->b:Lluo;
+    throw v2
 
-    invoke-static {v0}, Llyc;->h(Lluo;)I
+    :pswitch_0
+    new-instance v0, Lplk;
+
+    invoke-direct {v0}, Lplk;-><init>()V
+
+    return-object v0
+
+    :pswitch_1
+    invoke-static {}, Ljava/lang/Runtime;->getRuntime()Ljava/lang/Runtime;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/Runtime;->availableProcessors()I
 
     move-result v0
 
-    int-to-long v0, v0
-
-    const/4 v2, 0x2
-
-    invoke-virtual {p1, v2, v0, v1}, Lare;->e(IJ)V
-
-    iget-object v0, p2, Llwq;->c:Llun;
-
-    invoke-static {v0}, Llyc;->b(Llun;)Ljava/lang/String;
+    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v0
-
-    const/4 v1, 0x3
-
-    if-nez v0, :cond_0
-
-    invoke-virtual {p1, v1}, Lare;->f(I)V
-
-    goto :goto_0
-
-    :cond_0
-    invoke-virtual {p1, v1, v0}, Lare;->g(ILjava/lang/String;)V
-
-    :goto_0
-    iget-object v0, p2, Llwq;->d:Ljava/lang/String;
-
-    const/4 v1, 0x4
-
-    if-nez v0, :cond_1
-
-    invoke-virtual {p1, v1}, Lare;->f(I)V
-
-    goto :goto_1
-
-    :cond_1
-    invoke-virtual {p1, v1, v0}, Lare;->g(ILjava/lang/String;)V
-
-    :goto_1
-    iget-object v0, p2, Llwq;->e:Lobn;
-
-    invoke-static {v0}, Llyc;->o(Lobn;)[B
-
-    move-result-object v0
-
-    const/4 v1, 0x5
-
-    if-nez v0, :cond_2
-
-    invoke-virtual {p1, v1}, Lare;->f(I)V
-
-    goto :goto_2
-
-    :cond_2
-    invoke-virtual {p1, v1, v0}, Lare;->c(I[B)V
-
-    :goto_2
-    iget-wide v0, p2, Llwq;->f:J
-
-    const/4 v2, 0x6
-
-    invoke-virtual {p1, v2, v0, v1}, Lare;->e(IJ)V
-
-    iget-object v0, p2, Llwq;->g:Ljava/lang/String;
-
-    const/4 v1, 0x7
-
-    if-nez v0, :cond_3
-
-    invoke-virtual {p1, v1}, Lare;->f(I)V
-
-    goto :goto_3
-
-    :cond_3
-    invoke-virtual {p1, v1, v0}, Lare;->g(ILjava/lang/String;)V
-
-    :goto_3
-    iget-object v0, p2, Llwq;->h:Ljava/lang/String;
-
-    const/16 v1, 0x8
-
-    if-nez v0, :cond_4
-
-    invoke-virtual {p1, v1}, Lare;->f(I)V
-
-    goto :goto_4
-
-    :cond_4
-    invoke-virtual {p1, v1, v0}, Lare;->g(ILjava/lang/String;)V
-
-    :goto_4
-    iget-object v0, p2, Llwq;->i:Ljava/lang/String;
-
-    const/16 v1, 0x9
-
-    if-nez v0, :cond_5
-
-    invoke-virtual {p1, v1}, Lare;->f(I)V
-
-    goto :goto_5
-
-    :cond_5
-    invoke-virtual {p1, v1, v0}, Lare;->g(ILjava/lang/String;)V
-
-    :goto_5
-    iget-wide v0, p2, Llwq;->k:J
-
-    const/16 v2, 0xa
-
-    invoke-virtual {p1, v2, v0, v1}, Lare;->e(IJ)V
-
-    iget-object v0, p2, Llwq;->j:Llwz;
-
-    iget-object v1, v0, Llwz;->a:Lnyy;
-
-    invoke-static {v1}, Llyc;->u(Lnyy;)Ljava/lang/Long;
-
-    move-result-object v1
-
-    const/16 v2, 0xb
-
-    if-nez v1, :cond_6
-
-    invoke-virtual {p1, v2}, Lare;->f(I)V
-
-    goto :goto_6
-
-    :cond_6
-    invoke-virtual {v1}, Ljava/lang/Long;->longValue()J
-
-    move-result-wide v3
-
-    invoke-virtual {p1, v2, v3, v4}, Lare;->e(IJ)V
-
-    :goto_6
-    iget-object v1, v0, Llwz;->b:Lnyy;
-
-    invoke-static {v1}, Llyc;->u(Lnyy;)Ljava/lang/Long;
-
-    move-result-object v1
-
-    const/16 v2, 0xc
-
-    if-nez v1, :cond_7
-
-    invoke-virtual {p1, v2}, Lare;->f(I)V
-
-    goto :goto_7
-
-    :cond_7
-    invoke-virtual {v1}, Ljava/lang/Long;->longValue()J
-
-    move-result-wide v3
-
-    invoke-virtual {p1, v2, v3, v4}, Lare;->e(IJ)V
-
-    :goto_7
-    iget-object v1, v0, Llwz;->c:Lnyy;
-
-    invoke-static {v1}, Llyc;->u(Lnyy;)Ljava/lang/Long;
-
-    move-result-object v1
-
-    const/16 v2, 0xd
-
-    if-nez v1, :cond_8
-
-    invoke-virtual {p1, v2}, Lare;->f(I)V
-
-    goto :goto_8
-
-    :cond_8
-    invoke-virtual {v1}, Ljava/lang/Long;->longValue()J
-
-    move-result-wide v3
-
-    invoke-virtual {p1, v2, v3, v4}, Lare;->e(IJ)V
-
-    :goto_8
-    iget-object v1, v0, Llwz;->d:Llul;
-
-    invoke-static {v1}, Llyc;->a(Llul;)I
-
-    move-result v1
-
-    int-to-long v1, v1
-
-    const/16 v3, 0xe
-
-    invoke-virtual {p1, v3, v1, v2}, Lare;->e(IJ)V
-
-    iget-object v1, v0, Llwz;->e:Llvk;
-
-    invoke-static {v1}, Llyc;->w(Llvk;)I
-
-    move-result v1
-
-    int-to-long v1, v1
-
-    const/16 v3, 0xf
-
-    invoke-virtual {p1, v3, v1, v2}, Lare;->e(IJ)V
-
-    iget-wide v0, v0, Llwz;->f:D
-
-    const/16 v2, 0x10
-
-    invoke-virtual {p1, v2, v0, v1}, Lare;->d(ID)V
-
-    iget-wide v0, p2, Llwq;->k:J
-
-    const/16 p2, 0x11
-
-    invoke-virtual {p1, p2, v0, v1}, Lare;->e(IJ)V
-
-    return-void
-.end method
-
-.method public final d()Ljava/lang/String;
-    .locals 1
-
-    const-string v0, "UPDATE OR ABORT `AnnotachmentEntity` SET `resourceOnDeviceId` = ?,`isAttachment` = ?,`id` = ?,`contentType` = ?,`provenance` = ?,`onDeviceSize` = ?,`uploadTransferHandle` = ?,`blobstoreId` = ?,`contentHash` = ?,`onDeviceId` = ?,`status_addedToAirlockEpochTimestamp` = ?,`status_uploadToF250RequestedEpochTimestamp` = ?,`status_uploadToF250CompletedEpochTimestamp` = ?,`status_airlockFileState` = ?,`status_uploadState` = ?,`status_uploadProgressPercent` = ? WHERE `onDeviceId` = ?"
 
     return-object v0
+
+    :pswitch_2
+    new-instance v0, Lnrm;
+
+    invoke-direct {v0}, Lnrm;-><init>()V
+
+    return-object v0
+
+    :pswitch_3
+    new-instance v0, Lkfr;
+
+    sget-object v1, Lcom/google/android/gms/auth/api/signin/GoogleSignInOptions;->f:Lcom/google/android/gms/auth/api/signin/GoogleSignInOptions;
+
+    invoke-direct {v0, v1}, Lkfr;-><init>(Lcom/google/android/gms/auth/api/signin/GoogleSignInOptions;)V
+
+    iget-object v1, v0, Lkfr;->a:Ljava/util/Set;
+
+    sget-object v2, Lcom/google/android/gms/auth/api/signin/GoogleSignInOptions;->b:Lcom/google/android/gms/common/api/Scope;
+
+    invoke-interface {v1, v2}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
+
+    invoke-virtual {v0}, Lkfr;->a()Lcom/google/android/gms/auth/api/signin/GoogleSignInOptions;
+
+    move-result-object v0
+
+    return-object v0
+
+    :pswitch_4
+    new-instance v0, Lohh;
+
+    invoke-direct {v0}, Lohh;-><init>()V
+
+    return-object v0
+
+    :pswitch_5
+    throw v2
+
+    :pswitch_6
+    const/4 v0, 0x1
+
+    invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    move-result-object v0
+
+    return-object v0
+
+    :pswitch_7
+    new-instance v0, Lmvq;
+
+    invoke-direct {v0}, Lmvq;-><init>()V
+
+    return-object v0
+
+    :pswitch_8
+    new-instance v0, Lmuz;
+
+    invoke-direct {v0}, Lmuz;-><init>()V
+
+    return-object v0
+
+    :pswitch_9
+    throw v2
+
+    :pswitch_a
+    new-instance v0, Lmdi;
+
+    invoke-direct {v0}, Lmdi;-><init>()V
+
+    return-object v0
+
+    :pswitch_b
+    invoke-static {}, Llzg;->a()Lmcu;
+
+    move-result-object v0
+
+    return-object v0
+
+    :pswitch_c
+    const-string v0, "MediaFS"
+
+    invoke-static {v0, v1}, Lmip;->bP(Ljava/lang/String;I)Ljava/util/concurrent/ScheduledExecutorService;
+
+    move-result-object v0
+
+    return-object v0
+
+    :pswitch_d
+    const-string v0, "MediaFS-IO"
+
+    invoke-static {v0, v1}, Lmip;->bL(Ljava/lang/String;I)Ljava/util/concurrent/ExecutorService;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lqmd;->ae(Ljava/lang/Object;)V
+
+    return-object v0
+
+    :pswitch_e
+    invoke-static {}, Llzi;->a()Llzi;
+
+    move-result-object v0
+
+    return-object v0
+
+    :pswitch_f
+    sget-object v0, Llzj;->a:Llzk;
+
+    invoke-static {v0}, Lqmd;->ae(Ljava/lang/Object;)V
+
+    return-object v0
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_f
+        :pswitch_e
+        :pswitch_d
+        :pswitch_c
+        :pswitch_b
+        :pswitch_a
+        :pswitch_9
+        :pswitch_8
+        :pswitch_7
+        :pswitch_6
+        :pswitch_5
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method

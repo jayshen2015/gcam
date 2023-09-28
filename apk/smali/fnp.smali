@@ -1,109 +1,61 @@
-.class public final Lfnp;
+.class public final synthetic Lfnp;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Logk;
+.implements Llht;
 
 
 # instance fields
-.field private final a:Loiw;
-
-.field private final b:Loiw;
-
-.field private final c:Loiw;
-
-.field private final d:Loiw;
-
-.field private final e:Loiw;
+.field public final synthetic a:Lfnq;
 
 
 # direct methods
-.method public constructor <init>(Loiw;Loiw;Loiw;Loiw;Loiw;)V
+.method public synthetic constructor <init>(Lfnq;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lfnp;->a:Loiw;
-
-    iput-object p2, p0, Lfnp;->b:Loiw;
-
-    iput-object p3, p0, Lfnp;->c:Loiw;
-
-    iput-object p4, p0, Lfnp;->d:Loiw;
-
-    iput-object p5, p0, Lfnp;->e:Loiw;
+    iput-object p1, p0, Lfnp;->a:Lfnq;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Ldqx;
-    .locals 7
+.method public final a(Ljava/lang/Object;)V
+    .locals 3
 
-    iget-object v0, p0, Lfnp;->a:Loiw;
+    iget-object v0, p0, Lfnp;->a:Lfnq;
 
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
+    check-cast p1, Lilv;
 
-    move-result-object v0
+    monitor-enter v0
 
-    move-object v2, v0
+    :try_start_0
+    iget-object v1, v0, Lfnq;->a:Lddf;
 
-    check-cast v2, Ldbf;
+    sget-object v2, Lddl;->a:Lddi;
 
-    iget-object v0, p0, Lfnp;->b:Loiw;
+    invoke-interface {v1}, Lddf;->b()V
 
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    move-result-object v0
+    invoke-virtual {p1}, Lilv;->c()Z
 
-    move-object v3, v0
+    move-result p1
 
-    check-cast v3, Ldna;
+    iput-boolean p1, v0, Lfnq;->b:Z
 
-    iget-object v0, p0, Lfnp;->c:Loiw;
+    monitor-exit v0
 
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
+    return-void
 
-    move-result-object v0
+    :catchall_0
+    move-exception p1
 
-    move-object v4, v0
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    check-cast v4, Ldhi;
-
-    iget-object v0, p0, Lfnp;->d:Loiw;
-
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    move-object v5, v0
-
-    check-cast v5, Lklx;
-
-    iget-object v0, p0, Lfnp;->e:Loiw;
-
-    check-cast v0, Lelq;
-
-    invoke-virtual {v0}, Lelq;->a()Landroid/view/WindowManager;
-
-    move-result-object v6
-
-    new-instance v0, Ldqx;
-
-    move-object v1, v0
-
-    invoke-direct/range {v1 .. v6}, Ldqx;-><init>(Ldbf;Ldna;Ldhi;Lklx;Landroid/view/WindowManager;)V
-
-    return-object v0
-.end method
-
-.method public final bridge synthetic get()Ljava/lang/Object;
-    .locals 1
-
-    invoke-virtual {p0}, Lfnp;->a()Ldqx;
-
-    move-result-object v0
-
-    return-object v0
+    throw p1
 .end method

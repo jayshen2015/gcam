@@ -1,14 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <plurals name="accessibility_timelapse_manual_record_speed_desc">
-        <item quantity="other">Убрзани видео са брзином %d</item>
-        <item quantity="one">Убрзани видео са брзином %d</item>
-        <item quantity="few">Убрзани видео са брзином %d</item>
-    </plurals>
-    <plurals name="number_of_cropped_face">
-        <item quantity="other">%d је опсечено.</item>
-        <item quantity="one">%d је опсечено.</item>
-        <item quantity="few">%d су опсечена.</item>
+    <plurals name="number_of_faces_announcement">
+        <item quantity="other">%1$d лица.</item>
+        <item quantity="one">%1$d лице.</item>
+        <item quantity="few">%1$d лица.</item>
     </plurals>
     <plurals name="photos_remaining">
         <item quantity="other">Отприлике %s слика</item>
@@ -21,9 +16,9 @@
         <item quantity="few">(изабране су %1$d апликације)</item>
     </plurals>
     <plurals name="social_share_info">
-        <item quantity="other">Брзо делите слике и видео снимке у друштвеним апликацијама из Камере. Одаберите максимално %1$d апликација. Слике и видео снимци сачувани у закључаном фолдеру не могу да се деле.</item>
-        <item quantity="one">Брзо делите слике и видео снимке у друштвеним апликацијама из Камере. Одаберите максимално %1$d апликацију. Слике и видео снимци сачувани у закључаном фолдеру не могу да се деле.</item>
-        <item quantity="few">Брзо делите слике и видео снимке у друштвеним апликацијама из Камере. Одаберите максимално %1$d апликације. Слике и видео снимци сачувани у закључаном фолдеру не могу да се деле.</item>
+        <item quantity="other">Брзо делите слике и видео снимке у друштвеним апликацијама директно из Камере. Одаберите максимално %1$d апликација. Слике и видео снимци сачувани у закључаном фолдеру не могу да се деле.</item>
+        <item quantity="one">Брзо делите слике и видео снимке у друштвеним апликацијама директно из Камере. Одаберите максимално %1$d апликацију. Слике и видео снимци сачувани у закључаном фолдеру не могу да се деле.</item>
+        <item quantity="few">Брзо делите слике и видео снимке у друштвеним апликацијама директно из Камере. Одаберите максимално %1$d апликације. Слике и видео снимци сачувани у закључаном фолдеру не могу да се деле.</item>
     </plurals>
     <plurals name="social_share_select_error">
         <item quantity="other">Одаберите највише %1$d апликација</item>

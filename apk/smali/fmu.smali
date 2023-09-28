@@ -1,99 +1,135 @@
-.class final Lfmu;
-.super Lifk;
+.class public final synthetic Lfmu;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Lojf;
 
 
 # instance fields
-.field final synthetic a:Lhvz;
+.field public final synthetic a:J
 
-.field final synthetic b:Lfng;
+.field private final synthetic b:I
 
 
 # direct methods
-.method public constructor <init>(Lfng;Lhvz;)V
+.method public synthetic constructor <init>(JI)V
     .locals 0
 
-    iput-object p1, p0, Lfmu;->b:Lfng;
+    iput p3, p0, Lfmu;->b:I
 
-    iput-object p2, p0, Lfmu;->a:Lhvz;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0}, Lifk;-><init>()V
+    iput-wide p1, p0, Lfmu;->a:J
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onShutterButtonClick()V
-    .locals 6
+.method public final a(Ljava/lang/Object;)Z
+    .locals 7
 
-    iget-object v0, p0, Lfmu;->b:Lfng;
+    iget v0, p0, Lfmu;->b:I
 
-    iget-boolean v1, v0, Lfng;->k:Z
-
-    if-eqz v1, :cond_3
-
-    iget-boolean v1, v0, Lfng;->j:Z
-
-    if-nez v1, :cond_0
-
-    goto :goto_0
-
-    :cond_0
-    iget-boolean v1, v0, Lfng;->l:Z
-
-    if-eqz v1, :cond_1
-
-    invoke-virtual {v0}, Lfng;->B()V
-
-    return-void
-
-    :cond_1
-    iget-object v0, p0, Lfmu;->a:Lhvz;
-
-    invoke-virtual {v0}, Lhvu;->d()V
-
-    iget-object v0, p0, Lfmu;->b:Lfng;
-
-    iget-object v0, v0, Lfng;->r:Leww;
-
-    new-instance v1, Lfmt;
+    const/4 v1, 0x1
 
     const/4 v2, 0x0
 
-    invoke-direct {v1, p0, v2}, Lfmt;-><init>(Lfmu;I)V
+    packed-switch v0, :pswitch_data_0
 
-    iget-object v3, v0, Leww;->b:Lewz;
+    iget-wide v3, p0, Lfmu;->a:J
 
-    if-eqz v3, :cond_2
+    check-cast p1, Llrr;
 
-    iget-boolean v3, v0, Leww;->d:Z
+    invoke-virtual {p1}, Llrr;->b()Llmw;
 
-    if-nez v3, :cond_2
+    move-result-object p1
 
-    iget v3, v0, Leww;->n:I
+    if-eqz p1, :cond_3
 
-    if-nez v3, :cond_2
+    iget-wide v5, p1, Llmw;->b:J
 
-    iget-boolean v3, v0, Leww;->u:Z
+    cmp-long p1, v5, v3
 
-    if-nez v3, :cond_2
+    if-nez p1, :cond_3
 
-    iget-object v3, v0, Leww;->c:Lewd;
+    return v1
 
-    iget-object v3, v3, Lewd;->b:Lbne;
+    :pswitch_0
+    iget-wide v3, p0, Lfmu;->a:J
 
-    iget-object v4, v0, Leww;->H:Landroid/os/Handler;
+    check-cast p1, Llrr;
 
-    new-instance v5, Lewv;
+    invoke-virtual {p1}, Llrr;->b()Llmw;
 
-    invoke-direct {v5, v0, v1, v2}, Lewv;-><init>(Leww;Lexz;I)V
+    move-result-object p1
 
-    invoke-virtual {v3, v4, v5}, Lbne;->j(Landroid/os/Handler;Lbmy;)V
+    if-eqz p1, :cond_0
+
+    iget-wide v5, p1, Llmw;->b:J
+
+    cmp-long p1, v5, v3
+
+    if-nez p1, :cond_0
+
+    return v1
+
+    :cond_0
+    return v2
+
+    :pswitch_1
+    iget-wide v3, p0, Lfmu;->a:J
+
+    check-cast p1, Llrr;
+
+    invoke-virtual {p1}, Llrr;->b()Llmw;
+
+    move-result-object p1
+
+    if-eqz p1, :cond_1
+
+    iget-wide v5, p1, Llmw;->b:J
+
+    cmp-long p1, v5, v3
+
+    if-lez p1, :cond_1
+
+    return v1
+
+    :cond_1
+    return v2
+
+    :pswitch_2
+    iget-wide v3, p0, Lfmu;->a:J
+
+    check-cast p1, Llrr;
+
+    invoke-virtual {p1}, Llrr;->b()Llmw;
+
+    move-result-object p1
+
+    if-eqz p1, :cond_2
+
+    iget-wide v5, p1, Llmw;->b:J
+
+    cmp-long p1, v5, v3
+
+    if-lez p1, :cond_2
+
+    return v1
 
     :cond_2
-    return-void
+    return v2
 
     :cond_3
-    :goto_0
-    return-void
+    return v2
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method

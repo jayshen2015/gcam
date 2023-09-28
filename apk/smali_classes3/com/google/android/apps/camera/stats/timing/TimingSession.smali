@@ -2,7 +2,7 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lkad;
+.implements Llie;
 
 
 # virtual methods

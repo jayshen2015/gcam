@@ -4,41 +4,57 @@
 
 # direct methods
 .method constructor <init>(I[B)V
-    .locals 2
+    .locals 4
 
     new-instance v0, Ljava/lang/String;
 
-    sget-object v1, Lmqg;->a:Ljava/nio/charset/Charset;
+    sget-object v1, Lois;->a:Ljava/nio/charset/Charset;
 
     invoke-direct {v0, p2, v1}, Ljava/lang/String;-><init>([BLjava/nio/charset/Charset;)V
 
-    invoke-static {}, Lnuv;->values()[Lnuv;
+    invoke-static {}, Lpmy;->values()[Lpmy;
 
     move-result-object p2
 
     aget-object p2, p2, p1
 
-    iget-object p2, p2, Lnuv;->r:Ljava/lang/String;
+    iget-object p2, p2, Lpmy;->r:Ljava/lang/String;
 
-    new-instance v1, Ljava/lang/StringBuilder;
+    invoke-static {p2}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+    move-result-object v1
 
-    invoke-virtual {v1, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1}, Ljava/lang/String;->length()I
+
+    move-result v1
+
+    invoke-virtual {v0}, Ljava/lang/String;->length()I
+
+    move-result v2
+
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    add-int/lit8 v1, v1, 0x2
+
+    add-int/2addr v1, v2
+
+    invoke-direct {v3, v1}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    invoke-virtual {v3, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     const-string p2, ": "
 
-    invoke-virtual {v1, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v3, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p2
 
     invoke-direct {p0, p2}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
 
-    invoke-static {}, Lnuv;->values()[Lnuv;
+    invoke-static {}, Lpmy;->values()[Lpmy;
 
     move-result-object p2
 

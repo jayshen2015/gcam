@@ -1,142 +1,96 @@
-.class public final Lieo;
-.super Landroid/os/Handler;
+.class public final synthetic Lieo;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Lj$/util/function/Consumer;
 
 
 # instance fields
-.field private final a:Ljava/lang/ref/WeakReference;
+.field public final synthetic a:Z
+
+.field private final synthetic b:I
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/apps/camera/ui/shutterbutton/ShutterButton;)V
-    .locals 1
+.method public synthetic constructor <init>(ZI)V
+    .locals 0
 
-    invoke-direct {p0}, Landroid/os/Handler;-><init>()V
+    iput p2, p0, Lieo;->b:I
 
-    new-instance v0, Ljava/lang/ref/WeakReference;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {v0, p1}, Ljava/lang/ref/WeakReference;-><init>(Ljava/lang/Object;)V
-
-    iput-object v0, p0, Lieo;->a:Ljava/lang/ref/WeakReference;
+    iput-boolean p1, p0, Lieo;->a:Z
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final handleMessage(Landroid/os/Message;)V
-    .locals 3
+.method public final accept(Ljava/lang/Object;)V
+    .locals 2
 
-    iget-object v0, p0, Lieo;->a:Ljava/lang/ref/WeakReference;
+    iget v0, p0, Lieo;->b:I
 
-    invoke-virtual {v0}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
+    packed-switch v0, :pswitch_data_0
 
-    move-result-object v0
+    iget-boolean v0, p0, Lieo;->a:Z
 
-    check-cast v0, Lcom/google/android/apps/camera/ui/shutterbutton/ShutterButton;
+    check-cast p1, Lfik;
 
-    if-nez v0, :cond_0
+    sget v1, Lfhv;->k:I
+
+    instance-of v1, p1, Lfgx;
+
+    if-eqz v1, :cond_0
+
+    check-cast p1, Lfgx;
+
+    invoke-interface {p1, v0}, Lfgx;->C(Z)V
+
+    return-void
+
+    :pswitch_0
+    iget-boolean v0, p0, Lieo;->a:Z
+
+    check-cast p1, Liek;
+
+    invoke-virtual {p1, v0}, Liek;->setEnabled(Z)V
 
     return-void
 
     :cond_0
-    iget v1, p1, Landroid/os/Message;->what:I
-
-    const/16 v2, 0x3e9
-
-    packed-switch v1, :pswitch_data_0
-
-    new-instance v0, Ljava/lang/IllegalArgumentException;
-
-    iget p1, p1, Landroid/os/Message;->what:I
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, "Not supported state msg: "
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p1
-
-    invoke-direct {v0, p1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-
-    :pswitch_0
-    sget-object p1, Liep;->e:Liep;
-
-    invoke-static {p1}, Lcom/google/android/apps/camera/ui/shutterbutton/ShutterButton;->-$$Nest$sfputprogressState(Liep;)V
-
-    invoke-virtual {p0, v2}, Lieo;->removeMessages(I)V
-
-    invoke-static {}, Lcom/google/android/apps/camera/ui/shutterbutton/ShutterButton;->-$$Nest$sfgetprogressState()Liep;
-
-    move-result-object p1
-
-    invoke-static {v0, p1}, Lcom/google/android/apps/camera/ui/shutterbutton/ShutterButton;->-$$Nest$mupdateAnimationProgressIndex(Lcom/google/android/apps/camera/ui/shutterbutton/ShutterButton;Liep;)V
-
-    return-void
-
-    :pswitch_1
-    const/16 p1, 0x3ea
-
-    invoke-virtual {p0, p1}, Lieo;->hasMessages(I)Z
-
-    move-result p1
-
-    if-eqz p1, :cond_1
-
-    invoke-virtual {p0, v2}, Lieo;->removeMessages(I)V
-
-    sget-object p1, Liep;->d:Liep;
-
-    invoke-static {p1}, Lcom/google/android/apps/camera/ui/shutterbutton/ShutterButton;->-$$Nest$sfputprogressState(Liep;)V
-
-    invoke-static {}, Lcom/google/android/apps/camera/ui/shutterbutton/ShutterButton;->-$$Nest$sfgetprogressState()Liep;
-
-    move-result-object p1
-
-    invoke-static {v0, p1}, Lcom/google/android/apps/camera/ui/shutterbutton/ShutterButton;->-$$Nest$mupdateAnimationProgressIndex(Lcom/google/android/apps/camera/ui/shutterbutton/ShutterButton;Liep;)V
-
-    return-void
-
-    :cond_1
-    sget-object p1, Liep;->d:Liep;
-
-    invoke-static {p1}, Lcom/google/android/apps/camera/ui/shutterbutton/ShutterButton;->-$$Nest$sfputprogressState(Liep;)V
-
-    invoke-static {}, Lcom/google/android/apps/camera/ui/shutterbutton/ShutterButton;->-$$Nest$sfgetprogressState()Liep;
-
-    move-result-object p1
-
-    invoke-static {v0, p1}, Lcom/google/android/apps/camera/ui/shutterbutton/ShutterButton;->-$$Nest$mupdateAnimationProgressIndex(Lcom/google/android/apps/camera/ui/shutterbutton/ShutterButton;Liep;)V
-
-    return-void
-
-    :pswitch_2
-    sget-object p1, Liep;->c:Liep;
-
-    invoke-static {p1}, Lcom/google/android/apps/camera/ui/shutterbutton/ShutterButton;->-$$Nest$sfputprogressState(Liep;)V
-
-    invoke-virtual {p0, v2}, Lieo;->removeMessages(I)V
-
-    invoke-static {}, Lcom/google/android/apps/camera/ui/shutterbutton/ShutterButton;->-$$Nest$sfgetprogressState()Liep;
-
-    move-result-object p1
-
-    invoke-static {v0, p1}, Lcom/google/android/apps/camera/ui/shutterbutton/ShutterButton;->-$$Nest$mupdateAnimationProgressIndex(Lcom/google/android/apps/camera/ui/shutterbutton/ShutterButton;Liep;)V
-
     return-void
 
     :pswitch_data_0
-    .packed-switch 0x3e8
-        :pswitch_2
-        :pswitch_1
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
+.end method
+
+.method public final synthetic andThen(Lj$/util/function/Consumer;)Lj$/util/function/Consumer;
+    .locals 1
+
+    iget v0, p0, Lieo;->b:I
+
+    packed-switch v0, :pswitch_data_0
+
+    invoke-static {p0, p1}, Lj$/util/function/Consumer$-CC;->$default$andThen(Lj$/util/function/Consumer;Lj$/util/function/Consumer;)Lj$/util/function/Consumer;
+
+    move-result-object p1
+
+    return-object p1
+
+    :pswitch_0
+    invoke-static {p0, p1}, Lj$/util/function/Consumer$-CC;->$default$andThen(Lj$/util/function/Consumer;Lj$/util/function/Consumer;)Lj$/util/function/Consumer;
+
+    move-result-object p1
+
+    return-object p1
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
         :pswitch_0
     .end packed-switch
 .end method

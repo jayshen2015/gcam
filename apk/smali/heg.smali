@@ -1,511 +1,523 @@
 .class public final Lheg;
-.super Ljava/lang/Object;
+.super Lhdu;
 
-# interfaces
-.implements Lhej;
+
+# instance fields
+.field private final e:Z
+
+.field private final f:Lbrg;
+
+.field private final g:Llig;
+
+.field private final h:Lhgm;
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 0
+.method public constructor <init>(Lhgm;Ldkq;Lcom/google/android/apps/camera/dynamicdepth/DynamicDepthUtils;Lhcg;Ldzv;Ljava/util/concurrent/Executor;Lhoh;Lbrg;Lgsf;Lhvj;Lljf;Lnvb;[B[B)V
+    .locals 14
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    move-object v13, p0
+
+    const/4 v11, 0x0
+
+    const/4 v12, 0x0
+
+    move-object v0, p0
+
+    move-object/from16 v1, p2
+
+    move-object/from16 v2, p3
+
+    move-object/from16 v3, p4
+
+    move-object/from16 v4, p5
+
+    move-object/from16 v5, p8
+
+    move-object/from16 v6, p9
+
+    move-object/from16 v7, p10
+
+    move-object/from16 v8, p6
+
+    move-object/from16 v9, p11
+
+    move-object/from16 v10, p12
+
+    invoke-direct/range {v0 .. v12}, Lhdu;-><init>(Ldkq;Lcom/google/android/apps/camera/dynamicdepth/DynamicDepthUtils;Lhcg;Ldzv;Lbrg;Lgsf;Lhvj;Ljava/util/concurrent/Executor;Lljf;Lnvb;[B[B)V
+
+    sget-object v0, Llwd;->a:Llwd;
+
+    move-object/from16 v1, p7
+
+    invoke-virtual {v1, v0}, Lhoh;->e(Llwd;)Z
+
+    move-result v0
+
+    iput-boolean v0, v13, Lheg;->e:Z
+
+    move-object/from16 v0, p8
+
+    iput-object v0, v13, Lheg;->f:Lbrg;
+
+    move-object/from16 v0, p9
+
+    iget-object v0, v0, Lgsf;->b:Llig;
+
+    iput-object v0, v13, Lheg;->g:Llig;
+
+    move-object v0, p1
+
+    iput-object v0, v13, Lheg;->h:Lhgm;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final declared-synchronized a(Lkpb;Lgrw;)Lmqp;
+.method protected final j(Lhcf;Lhdv;)Lcom/google/android/apps/camera/dynamicdepth/DynamicDepthResult;
     .locals 25
 
-    move-object/from16 v0, p2
+    move-object/from16 v1, p0
 
-    monitor-enter p0
+    move-object/from16 v0, p1
 
-    :try_start_0
-    new-instance v15, Lcom/google/android/apps/camera/jni/saliency/SaliencyPredictor;
+    move-object/from16 v2, p2
 
-    invoke-direct {v15}, Lcom/google/android/apps/camera/jni/saliency/SaliencyPredictor;-><init>()V
-
-    iget-object v1, v15, Lcom/google/android/apps/camera/jni/saliency/SaliencyPredictor;->b:Ljava/util/concurrent/atomic/AtomicBoolean;
-
-    const/4 v14, 0x0
-
-    invoke-virtual {v1, v14}, Ljava/util/concurrent/atomic/AtomicBoolean;->getAndSet(Z)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_0
-
-    invoke-static {v14}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
-
-    move-result-object v1
-
-    invoke-static {v1}, Lcom/google/android/apps/camera/jni/saliency/SaliencyPredictor;->nativeLoad(Ljava/lang/Boolean;)J
-
-    move-result-wide v1
-
-    iput-wide v1, v15, Lcom/google/android/apps/camera/jni/saliency/SaliencyPredictor;->a:J
-
-    :cond_0
-    invoke-interface/range {p1 .. p1}, Lkpb;->g()Ljava/util/List;
-
-    move-result-object v1
-
-    invoke-interface {v1, v14}, Ljava/util/List;->get(I)Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Lkpa;
-
-    const/4 v3, 0x1
-
-    invoke-interface {v1, v3}, Ljava/util/List;->get(I)Ljava/lang/Object;
+    invoke-virtual/range {p1 .. p1}, Lhcf;->g()Lmad;
 
     move-result-object v3
 
-    check-cast v3, Lkpa;
+    iget-object v4, v0, Lhcf;->b:Lhcg;
 
-    const/4 v13, 0x2
+    iget-object v4, v4, Lhcg;->f:Llnx;
 
-    invoke-interface {v1, v13}, Ljava/util/List;->get(I)Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Lkpa;
-
-    if-eqz v0, :cond_1
-
-    iget-object v4, v0, Lgrw;->a:Lkoq;
-
-    invoke-virtual {v4}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    sget-object v5, Landroid/hardware/camera2/CaptureResult;->STATISTICS_FACES:Landroid/hardware/camera2/CaptureResult$Key;
-
-    invoke-interface {v4, v5}, Lkoq;->d(Landroid/hardware/camera2/CaptureResult$Key;)Ljava/lang/Object;
+    invoke-virtual {v0, v4}, Lhcf;->c(Llnx;)Lmad;
 
     move-result-object v4
 
-    check-cast v4, [Landroid/hardware/camera2/params/Face;
-
-    move-object v12, v4
-
-    goto :goto_0
-
-    :cond_1
-    const/4 v4, 0x0
-
-    move-object v12, v4
-
-    :goto_0
-    new-array v4, v14, [F
-
-    const v17, 0x3f8ccccd    # 1.1f
-
-    if-eqz v12, :cond_3
-
-    array-length v5, v12
-
-    if-lez v5, :cond_3
-
-    mul-int/lit8 v5, v5, 0x4
-
-    new-array v4, v5, [F
+    invoke-virtual/range {p2 .. p2}, Lhdv;->d()V
 
     const/4 v5, 0x0
 
-    :goto_1
-    array-length v6, v12
+    if-eqz v4, :cond_a
 
-    if-ge v5, v6, :cond_2
+    if-nez v3, :cond_0
 
-    mul-int/lit8 v6, v5, 0x4
+    move-object/from16 v19, v3
 
-    aget-object v7, v12, v5
+    goto/16 :goto_9
 
-    invoke-virtual {v7}, Landroid/hardware/camera2/params/Face;->getBounds()Landroid/graphics/Rect;
+    :cond_0
+    iget-object v6, v1, Lheg;->b:Lhvj;
 
-    move-result-object v7
+    invoke-virtual {v6}, Lhvj;->a()Z
 
-    iget v7, v7, Landroid/graphics/Rect;->left:I
+    move-result v15
 
-    int-to-float v7, v7
+    const-wide/16 v6, 0x0
 
-    div-float v7, v7, v17
+    if-eqz v15, :cond_3
 
-    aput v7, v4, v6
+    iget-object v8, v1, Lheg;->h:Lhgm;
 
-    add-int/lit8 v7, v6, 0x1
+    if-nez v8, :cond_1
 
-    aget-object v8, v12, v5
+    return-object v5
 
-    invoke-virtual {v8}, Landroid/hardware/camera2/params/Face;->getBounds()Landroid/graphics/Rect;
+    :cond_1
+    invoke-interface {v8}, Lhgm;->a()J
 
-    move-result-object v8
+    move-result-wide v8
 
-    iget v8, v8, Landroid/graphics/Rect;->top:I
+    cmp-long v10, v8, v6
 
-    int-to-float v8, v8
+    if-nez v10, :cond_2
 
-    div-float v8, v8, v17
+    iget-object v6, v1, Lheg;->h:Lhgm;
 
-    aput v8, v4, v7
-
-    add-int/lit8 v7, v6, 0x2
-
-    aget-object v8, v12, v5
-
-    invoke-virtual {v8}, Landroid/hardware/camera2/params/Face;->getBounds()Landroid/graphics/Rect;
-
-    move-result-object v8
-
-    iget v8, v8, Landroid/graphics/Rect;->right:I
-
-    int-to-float v8, v8
-
-    mul-float v8, v8, v17
-
-    aput v8, v4, v7
-
-    aget-object v7, v12, v5
-
-    invoke-virtual {v7}, Landroid/hardware/camera2/params/Face;->getBounds()Landroid/graphics/Rect;
-
-    move-result-object v7
-
-    iget v7, v7, Landroid/graphics/Rect;->bottom:I
-
-    int-to-float v7, v7
-
-    add-int/lit8 v6, v6, 0x3
-
-    mul-float v7, v7, v17
-
-    aput v7, v4, v6
-
-    add-int/lit8 v5, v5, 0x1
-
-    goto :goto_1
+    invoke-interface {v6}, Lhgm;->b()V
 
     :cond_2
-    move-object/from16 v16, v4
+    iget-object v6, v1, Lheg;->h:Lhgm;
 
-    goto :goto_2
+    invoke-interface {v6}, Lhgm;->a()J
+
+    move-result-wide v6
+
+    move-wide v7, v6
+
+    goto :goto_0
 
     :cond_3
-    move-object/from16 v16, v4
+    move-wide v7, v6
 
-    :goto_2
-    invoke-interface/range {p1 .. p1}, Lkpb;->c()I
+    :goto_0
+    iget-object v6, v2, Lhdv;->b:Lgog;
 
-    move-result v4
+    iget-object v6, v6, Lgog;->b:Lhsa;
 
-    invoke-interface/range {p1 .. p1}, Lkpb;->b()I
+    invoke-interface {v6}, Lhsa;->h()Lhsp;
 
-    move-result v5
+    iget-object v6, v1, Lheg;->b:Lhvj;
 
-    invoke-interface {v2}, Lkpa;->getBuffer()Ljava/nio/ByteBuffer;
+    invoke-virtual {v6}, Lhvj;->c()V
+
+    :try_start_0
+    iget-object v6, v2, Lhdv;->e:Lpih;
+
+    invoke-virtual {v6}, Lpih;->get()Ljava/lang/Object;
 
     move-result-object v6
 
-    invoke-interface {v2}, Lkpa;->getPixelStride()I
+    check-cast v6, Lcom/google/googlex/gcam/ShotMetadata;
 
-    move-result v7
+    iget-object v9, v1, Lheg;->d:Lljf;
 
-    invoke-interface {v2}, Lkpa;->getRowStride()I
+    const-string v10, "udepth#process"
 
-    move-result v8
+    invoke-interface {v9, v10}, Lljf;->e(Ljava/lang/String;)V
 
-    invoke-interface {v3}, Lkpa;->getBuffer()Ljava/nio/ByteBuffer;
+    new-instance v13, Lcom/google/android/apps/camera/dynamicdepth/DynamicDepthResult;
+
+    iget-object v9, v1, Lheg;->g:Llig;
+
+    iget-object v10, v1, Lheg;->f:Lbrg;
+
+    invoke-virtual {v10}, Lbrg;->b()Llic;
+
+    move-result-object v10
+
+    invoke-virtual {v10}, Llic;->ordinal()I
+
+    move-result v18
+
+    iget-boolean v10, v1, Lheg;->e:Z
+
+    iget-object v2, v2, Lhdv;->c:Ldzu;
+
+    check-cast v2, Ldzt;
+
+    iget-boolean v2, v2, Ldzt;->f:Z
+
+    iget-object v0, v0, Lhcf;->a:Llmr;
+
+    invoke-interface {v0}, Llmr;->c()Llzv;
+
+    move-result-object v21
+
+    move-object/from16 v16, v13
+
+    move-object/from16 v17, v9
+
+    move/from16 v19, v10
+
+    move/from16 v20, v2
+
+    invoke-direct/range {v16 .. v21}, Lcom/google/android/apps/camera/dynamicdepth/DynamicDepthResult;-><init>(Llig;IZZLlzv;)V
+
+    new-instance v0, Lpko;
+
+    invoke-direct {v0}, Lpko;-><init>()V
+
+    invoke-interface {v4}, Lmad;->a()I
+
+    move-result v2
+
+    invoke-interface {v4}, Lmad;->g()Ljava/util/List;
 
     move-result-object v9
 
-    invoke-interface {v3}, Lkpa;->getPixelStride()I
+    invoke-interface {v9}, Ljava/util/List;->size()I
 
     move-result v10
 
-    invoke-interface {v3}, Lkpa;->getRowStride()I
+    const/4 v11, 0x1
+
+    const/4 v12, 0x0
+
+    if-ne v10, v11, :cond_4
+
+    const/4 v10, 0x1
+
+    goto :goto_1
+
+    :cond_4
+    const/4 v10, 0x0
+
+    :goto_1
+    const-string v14, "Should have a single depth plane, has: %s"
+
+    invoke-interface {v9}, Ljava/util/List;->size()I
 
     move-result v11
 
-    invoke-interface {v1}, Lkpa;->getBuffer()Ljava/nio/ByteBuffer;
+    invoke-static {v10, v14, v11}, Lobr;->aI(ZLjava/lang/String;I)V
 
-    move-result-object v18
+    const v10, 0x44363159
 
-    invoke-interface {v1}, Lkpa;->getPixelStride()I
+    if-ne v2, v10, :cond_5
 
-    move-result v19
+    const/4 v10, 0x1
 
-    invoke-interface {v1}, Lkpa;->getRowStride()I
+    goto :goto_2
 
-    move-result v20
+    :cond_5
+    const/4 v10, 0x0
 
-    const/16 v21, 0x0
+    :goto_2
+    const-string v11, "Unsupported format: %s"
 
-    if-eqz v0, :cond_4
+    invoke-static {v10, v11, v2}, Lobr;->aI(ZLjava/lang/String;I)V
 
-    iget-object v1, v0, Lgrw;->t:Landroid/graphics/Rect;
+    invoke-interface {v9, v12}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
-    iget v1, v1, Landroid/graphics/Rect;->right:I
+    move-result-object v2
 
-    int-to-float v1, v1
+    check-cast v2, Lmac;
 
-    move/from16 v22, v1
+    invoke-interface {v2}, Lmac;->getBuffer()Ljava/nio/ByteBuffer;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/nio/ByteBuffer;->remaining()I
+
+    move-result v10
+
+    invoke-interface {v9, v12}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v11
+
+    check-cast v11, Lmac;
+
+    invoke-interface {v11}, Lmac;->getPixelStride()I
+
+    move-result v11
+
+    const/4 v14, 0x2
+
+    if-ne v11, v14, :cond_6
+
+    const/4 v14, 0x1
 
     goto :goto_3
 
-    :cond_4
-    const/16 v22, 0x0
+    :cond_6
+    const/4 v14, 0x0
 
     :goto_3
-    if-eqz v0, :cond_5
+    const-string v5, "Pixel stride should be two bytes."
 
-    iget-object v0, v0, Lgrw;->t:Landroid/graphics/Rect;
+    invoke-static {v14, v5}, Lobr;->aG(ZLjava/lang/Object;)V
 
-    iget v0, v0, Landroid/graphics/Rect;->bottom:I
+    invoke-interface {v4}, Lmad;->c()I
 
-    int-to-float v0, v0
+    move-result v19
 
-    move/from16 v23, v0
+    invoke-interface {v4}, Lmad;->b()I
+
+    move-result v20
+
+    invoke-interface {v9, v12}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v5
+
+    check-cast v5, Lmac;
+
+    invoke-interface {v5}, Lmac;->getRowStride()I
+
+    move-result v5
+
+    div-int/lit8 v24, v5, 0x2
+
+    mul-int v11, v11, v19
+
+    if-lt v5, v11, :cond_7
+
+    const/4 v9, 0x1
 
     goto :goto_4
 
-    :cond_5
-    const/16 v23, 0x0
+    :cond_7
+    const/4 v9, 0x0
 
     :goto_4
-    iget-wide v1, v15, Lcom/google/android/apps/camera/jni/saliency/SaliencyPredictor;->a:J
+    const-string v14, "The row stride (%s bytes) should be greater than or equal to the width (%s bytes)"
 
-    move-object v0, v15
+    invoke-static {v9, v14, v5, v11}, Lobr;->aL(ZLjava/lang/String;II)V
 
-    move v3, v4
+    mul-int v9, v5, v20
 
-    move v4, v5
+    if-ne v10, v9, :cond_8
 
-    move-object v5, v6
-
-    move v6, v7
-
-    move v7, v8
-
-    move-object v8, v9
-
-    move v9, v10
-
-    move v10, v11
-
-    move-object/from16 v11, v18
-
-    move-object/from16 v24, v12
-
-    move/from16 v12, v19
-
-    move/from16 v13, v20
-
-    const/16 v18, 0x0
-
-    move/from16 v14, v22
-
-    move-object/from16 v19, v15
-
-    move/from16 v15, v23
-
-    invoke-virtual/range {v0 .. v16}, Lcom/google/android/apps/camera/jni/saliency/SaliencyPredictor;->nativeGetSaliencyHeatMap(JIILjava/nio/Buffer;IILjava/nio/Buffer;IILjava/nio/Buffer;IIFF[F)[F
-
-    move-result-object v0
-
-    array-length v1, v0
-
-    const/high16 v2, 0x3f800000    # 1.0f
-
-    if-eqz v1, :cond_7
-
-    and-int/lit8 v1, v1, 0x3
-
-    if-eqz v1, :cond_6
-
-    const/high16 v1, 0x3f800000    # 1.0f
-
-    const/4 v4, 0x2
-
-    goto :goto_6
-
-    :cond_6
-    const/high16 v1, 0x3f800000    # 1.0f
-
-    const/4 v14, 0x0
-
-    :goto_5
-    array-length v3, v0
-
-    const/4 v4, 0x2
-
-    shr-int/2addr v3, v4
-
-    if-ge v14, v3, :cond_8
-
-    mul-int/lit8 v3, v14, 0x4
-
-    aget v5, v0, v3
-
-    add-int/lit8 v6, v3, 0x1
-
-    aget v6, v0, v6
-
-    add-int/lit8 v7, v3, 0x2
-
-    aget v7, v0, v7
-
-    add-int/lit8 v3, v3, 0x3
-
-    aget v3, v0, v3
-
-    const/high16 v8, -0x41000000    # -0.5f
-
-    add-float/2addr v5, v8
-
-    add-float/2addr v7, v8
-
-    invoke-static {v5}, Ljava/lang/Math;->abs(F)F
-
-    move-result v5
-
-    invoke-static {v7}, Ljava/lang/Math;->abs(F)F
-
-    move-result v7
-
-    invoke-static {v5, v7}, Ljava/lang/Math;->max(FF)F
-
-    move-result v5
-
-    add-float/2addr v6, v8
-
-    add-float/2addr v3, v8
-
-    invoke-static {v6}, Ljava/lang/Math;->abs(F)F
-
-    move-result v6
-
-    invoke-static {v3}, Ljava/lang/Math;->abs(F)F
-
-    move-result v3
-
-    invoke-static {v6, v3}, Ljava/lang/Math;->max(FF)F
-
-    move-result v3
-
-    invoke-static {v5, v3}, Ljava/lang/Math;->max(FF)F
-
-    move-result v3
-
-    invoke-static {v1, v3}, Ljava/lang/Math;->min(FF)F
-
-    move-result v1
-
-    add-int/lit8 v14, v14, 0x1
+    const/4 v11, 0x1
 
     goto :goto_5
 
-    :cond_7
-    const/4 v4, 0x2
-
-    const/high16 v1, 0x3f800000    # 1.0f
-
     :cond_8
-    :goto_6
-    const/high16 v0, 0x3f000000    # 0.5f
+    const/4 v11, 0x0
 
-    mul-float v1, v1, v17
+    :goto_5
+    const-string v9, "The buffer capacity (%s) should be equal to the row stride in bytes (%s) multiplied by the height (%s)."
 
-    div-float/2addr v0, v1
+    invoke-static {v10}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    invoke-static {v0}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
+    move-result-object v10
+
+    invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v5
+
+    invoke-static/range {v20 .. v20}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v12
+
+    invoke-static {v11, v9, v10, v5, v12}, Lobr;->aO(ZLjava/lang/String;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V
+
+    invoke-static {v2}, Lcom/google/googlex/gcam/BufferUtils;->a(Ljava/nio/Buffer;)J
+
+    move-result-wide v22
+
+    new-instance v2, Lcom/google/googlex/gcam/GrayWriteViewU16;
+
+    const/16 v21, 0x1
+
+    invoke-static/range {v19 .. v24}, Lcom/google/googlex/gcam/GcamModuleJNI;->new_GrayWriteViewU16__SWIG_1(IIIJI)J
+
+    move-result-wide v9
+
+    invoke-direct {v2, v9, v10}, Lcom/google/googlex/gcam/GrayWriteViewU16;-><init>(J)V
+
+    invoke-static {v2}, Lojc;->i(Ljava/lang/Object;)Lojc;
+
+    move-result-object v2
+
+    check-cast v2, Lojj;
+
+    iget-object v2, v2, Lojj;->a:Ljava/lang/Object;
+
+    check-cast v2, Lcom/google/googlex/gcam/GrayWriteViewU16;
+
+    invoke-virtual {v0, v3}, Lpko;->c(Lmad;)Lcom/google/googlex/gcam/YuvWriteView;
 
     move-result-object v0
 
-    invoke-static {v0}, Lmqp;->i(Ljava/lang/Object;)Lmqp;
+    iget-wide v9, v2, Lcom/google/googlex/gcam/GrayWriteViewU16;->a:J
 
-    move-result-object v0
+    invoke-static {v0}, Lcom/google/googlex/gcam/YuvWriteView;->e(Lcom/google/googlex/gcam/YuvWriteView;)J
 
-    move-object v1, v0
+    move-result-wide v11
 
-    check-cast v1, Lmqt;
+    invoke-static {v6}, Lcom/google/googlex/gcam/ShotMetadata;->c(Lcom/google/googlex/gcam/ShotMetadata;)J
 
-    iget-object v1, v1, Lmqt;->a:Ljava/lang/Object;
-
-    check-cast v1, Ljava/lang/Float;
-
-    invoke-virtual {v1}, Ljava/lang/Float;->floatValue()F
-
-    move-result v1
-
-    const v3, 0x3f99999a    # 1.2f
-
-    cmpg-float v1, v1, v3
-
-    if-gez v1, :cond_9
-
-    invoke-static/range {v21 .. v21}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
-
-    move-result-object v0
-
-    invoke-static {v0}, Lmqp;->i(Ljava/lang/Object;)Lmqp;
-
-    move-result-object v0
-
-    :cond_9
-    move-object v1, v0
-
-    check-cast v1, Lmqt;
-
-    iget-object v1, v1, Lmqt;->a:Ljava/lang/Object;
-
-    check-cast v1, Ljava/lang/Float;
-
-    invoke-virtual {v1}, Ljava/lang/Float;->floatValue()F
-
-    move-result v1
-
-    cmpg-float v1, v1, v2
-
-    if-gez v1, :cond_a
-
-    move-object/from16 v1, v24
-
-    if-eqz v1, :cond_a
-
-    array-length v1, v1
-
-    if-lt v1, v4, :cond_a
-
-    sget-object v0, Lmpx;->a:Lmpx;
-
-    :cond_a
-    invoke-virtual/range {v19 .. v19}, Lcom/google/android/apps/camera/jni/saliency/SaliencyPredictor;->a()V
+    move-result-wide v5
     :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_1
+    .catchall {:try_start_0 .. :try_end_0} :catchall_1
 
-    monitor-exit p0
+    move-object/from16 v19, v3
+
+    :try_start_1
+    iget-wide v2, v13, Lcom/google/android/apps/camera/dynamicdepth/DynamicDepthResult;->a:J
+
+    move-object v0, v13
+
+    move-wide v13, v5
+
+    move-wide/from16 v16, v2
+
+    invoke-static/range {v7 .. v17}, Lcom/google/android/apps/camera/dynamicdepth/DynamicDepthUtils;->createDynamicDepthFromUltradepthImpl(JJJJZJ)Z
+
+    move-result v2
+    :try_end_1
+    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_0
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    if-eqz v2, :cond_9
+
+    iget-object v2, v1, Lheg;->d:Lljf;
+
+    invoke-interface {v2}, Lljf;->f()V
+
+    invoke-interface {v4}, Lmad;->close()V
+
+    invoke-interface/range {v19 .. v19}, Lmad;->close()V
 
     return-object v0
+
+    :cond_9
+    :try_start_2
+    invoke-virtual {v0}, Lcom/google/android/apps/camera/dynamicdepth/DynamicDepthResult;->close()V
+
+    invoke-interface/range {v19 .. v19}, Lmad;->close()V
+    :try_end_2
+    .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_0
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
+
+    iget-object v0, v1, Lheg;->d:Lljf;
+
+    goto :goto_8
 
     :catchall_0
     move-exception v0
 
-    monitor-exit p0
+    goto :goto_6
 
-    goto :goto_8
+    :catch_0
+    move-exception v0
 
-    :goto_7
+    goto :goto_7
+
+    :catchall_1
+    move-exception v0
+
+    move-object/from16 v19, v3
+
+    :goto_6
+    iget-object v2, v1, Lheg;->d:Lljf;
+
+    invoke-interface {v2}, Lljf;->f()V
+
+    invoke-interface {v4}, Lmad;->close()V
+
+    invoke-interface/range {v19 .. v19}, Lmad;->close()V
+
     throw v0
 
+    :catch_1
+    move-exception v0
+
+    move-object/from16 v19, v3
+
+    :goto_7
+    iget-object v0, v1, Lheg;->d:Lljf;
+
     :goto_8
-    goto :goto_7
-.end method
+    invoke-interface {v0}, Lljf;->f()V
 
-.method public final close()V
-    .locals 0
+    invoke-interface {v4}, Lmad;->close()V
 
-    return-void
+    invoke-interface/range {v19 .. v19}, Lmad;->close()V
+
+    const/4 v2, 0x0
+
+    return-object v2
+
+    :cond_a
+    move-object/from16 v19, v3
+
+    :goto_9
+    if-eqz v4, :cond_b
+
+    invoke-interface {v4}, Lmad;->close()V
+
+    :cond_b
+    if-eqz v19, :cond_c
+
+    invoke-interface/range {v19 .. v19}, Lmad;->close()V
+
+    :cond_c
+    const/4 v2, 0x0
+
+    return-object v2
 .end method

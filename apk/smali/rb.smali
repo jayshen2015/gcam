@@ -1,19 +1,63 @@
-.class public interface abstract Lrb;
+.class public final Lrb;
 .super Ljava/lang/Object;
 
-# interfaces
-.implements Ljava/lang/AutoCloseable;
+
+# instance fields
+.field public a:I
+
+.field public b:I
+
+.field public c:Z
+
+.field public d:Z
+
+.field public e:Z
+
+.field public f:[I
+
+.field public final synthetic g:Landroid/support/v7/widget/StaggeredGridLayoutManager;
+
+
+# direct methods
+.method public constructor <init>(Landroid/support/v7/widget/StaggeredGridLayoutManager;)V
+    .locals 0
+
+    iput-object p1, p0, Lrb;->g:Landroid/support/v7/widget/StaggeredGridLayoutManager;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    invoke-virtual {p0}, Lrb;->a()V
+
+    return-void
+.end method
 
 
 # virtual methods
-.method public abstract a()Lsb;
-.end method
+.method public final a()V
+    .locals 2
 
-.method public abstract b(Loku;)Ljava/lang/Object;
-.end method
+    const/4 v0, -0x1
 
-.method public abstract c(ILandroid/view/Surface;)V
-.end method
+    iput v0, p0, Lrb;->a:I
 
-.method public abstract d()V
+    const/high16 v1, -0x80000000
+
+    iput v1, p0, Lrb;->b:I
+
+    const/4 v1, 0x0
+
+    iput-boolean v1, p0, Lrb;->c:Z
+
+    iput-boolean v1, p0, Lrb;->d:Z
+
+    iput-boolean v1, p0, Lrb;->e:Z
+
+    iget-object v1, p0, Lrb;->f:[I
+
+    if-eqz v1, :cond_0
+
+    invoke-static {v1, v0}, Ljava/util/Arrays;->fill([II)V
+
+    :cond_0
+    return-void
 .end method

@@ -1,5 +1,5 @@
 .class public Lcom/google/android/gms/googlehelp/ND4CSettings;
-.super Ljhn;
+.super Lkno;
 
 # interfaces
 .implements Lcom/google/android/gms/common/internal/ReflectedParcelable;
@@ -19,11 +19,11 @@
 .method static constructor <clinit>()V
     .locals 2
 
-    new-instance v0, Ljhi;
+    new-instance v0, Lkpg;
 
-    const/16 v1, 0xa
+    const/4 v1, 0x3
 
-    invoke-direct {v0, v1}, Ljhi;-><init>(I)V
+    invoke-direct {v0, v1}, Lkpg;-><init>(I)V
 
     sput-object v0, Lcom/google/android/gms/googlehelp/ND4CSettings;->CREATOR:Landroid/os/Parcelable$Creator;
 
@@ -45,7 +45,7 @@
 .method public constructor <init>(ZLjava/lang/String;)V
     .locals 0
 
-    invoke-direct {p0}, Ljhn;-><init>()V
+    invoke-direct {p0}, Lkno;-><init>()V
 
     iput-boolean p1, p0, Lcom/google/android/gms/googlehelp/ND4CSettings;->a:Z
 
@@ -59,7 +59,7 @@
 .method public final writeToParcel(Landroid/os/Parcel;I)V
     .locals 2
 
-    invoke-static {p1}, Ljhp;->a(Landroid/os/Parcel;)I
+    invoke-static {p1}, Lmip;->ct(Landroid/os/Parcel;)I
 
     move-result p2
 
@@ -67,15 +67,15 @@
 
     const/4 v1, 0x2
 
-    invoke-static {p1, v1, v0}, Ljhp;->d(Landroid/os/Parcel;IZ)V
+    invoke-static {p1, v1, v0}, Lmip;->cw(Landroid/os/Parcel;IZ)V
 
     iget-object v0, p0, Lcom/google/android/gms/googlehelp/ND4CSettings;->b:Ljava/lang/String;
 
     const/4 v1, 0x3
 
-    invoke-static {p1, v1, v0}, Ljhp;->p(Landroid/os/Parcel;ILjava/lang/String;)V
+    invoke-static {p1, v1, v0}, Lmip;->cI(Landroid/os/Parcel;ILjava/lang/String;)V
 
-    invoke-static {p1, p2}, Ljhp;->c(Landroid/os/Parcel;I)V
+    invoke-static {p1, p2}, Lmip;->cv(Landroid/os/Parcel;I)V
 
     return-void
 .end method

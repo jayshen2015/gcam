@@ -3,9 +3,9 @@
 
 
 # instance fields
-.field public a:Lhbe;
+.field public a:Lhwm;
 
-.field public b:Lgzn;
+.field public b:Lhug;
 
 
 # direct methods
@@ -26,17 +26,17 @@
 
     move-result-object p1
 
-    check-cast p1, Lemj;
+    check-cast p1, Lenc;
 
-    const-class v0, Lhav;
+    const-class v0, Lhvt;
 
-    invoke-interface {p1, v0}, Lemj;->e(Ljava/lang/Class;)Leml;
+    invoke-interface {p1, v0}, Lenc;->c(Ljava/lang/Class;)Lene;
 
     move-result-object p1
 
-    check-cast p1, Lhav;
+    check-cast p1, Lhvt;
 
-    invoke-interface {p1, p0}, Lhav;->s(Lcom/google/android/apps/camera/sideline/SidelineBroadcastReceiver;)V
+    invoke-interface {p1, p0}, Lhvt;->s(Lcom/google/android/apps/camera/sideline/SidelineBroadcastReceiver;)V
 
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
@@ -88,24 +88,24 @@
     goto :goto_2
 
     :pswitch_0
-    iget-object p1, p0, Lcom/google/android/apps/camera/sideline/SidelineBroadcastReceiver;->b:Lgzn;
+    iget-object p1, p0, Lcom/google/android/apps/camera/sideline/SidelineBroadcastReceiver;->b:Lhug;
 
-    sget-object p2, Lgzd;->ak:Lgzs;
+    sget-object p2, Lhtu;->U:Lhul;
 
-    invoke-interface {p1, p2}, Lgzn;->d(Lgzb;)V
+    invoke-interface {p1, p2}, Lhug;->d(Lhts;)V
 
     :pswitch_1
-    iget-object p1, p0, Lcom/google/android/apps/camera/sideline/SidelineBroadcastReceiver;->a:Lhbe;
+    iget-object p1, p0, Lcom/google/android/apps/camera/sideline/SidelineBroadcastReceiver;->a:Lhwm;
 
-    invoke-virtual {p1}, Lhbe;->b()Z
+    invoke-virtual {p1}, Lhwm;->b()Z
 
     move-result p1
 
     if-eqz p1, :cond_1
 
-    iget-object p1, p0, Lcom/google/android/apps/camera/sideline/SidelineBroadcastReceiver;->a:Lhbe;
+    iget-object p1, p0, Lcom/google/android/apps/camera/sideline/SidelineBroadcastReceiver;->a:Lhwm;
 
-    invoke-virtual {p1}, Lhbe;->a()V
+    invoke-virtual {p1}, Lhwm;->a()V
 
     :cond_1
     :goto_2

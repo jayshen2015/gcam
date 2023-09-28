@@ -17,31 +17,31 @@
 
 .field public final e:F
 
-.field public final f:Lkwr;
+.field public final f:Lmit;
 
-.field public volatile g:Lkwq;
+.field public volatile g:Lmis;
 
-.field private final i:Landroid/content/res/Resources;
+.field private i:Landroid/content/res/Resources;
 
 .field private j:I
 
 .field private k:I
 
-.field private final l:Landroid/graphics/Paint;
+.field private l:Landroid/graphics/Paint;
 
-.field private final m:Landroid/graphics/Paint;
+.field private m:Landroid/graphics/Paint;
 
-.field private final n:Landroid/graphics/Paint;
+.field private n:Landroid/graphics/Paint;
 
 .field private o:F
 
-.field private final p:F
+.field private p:F
 
-.field private final q:F
+.field private q:F
 
 .field private final r:Landroid/view/GestureDetector;
 
-.field private final s:Lkwt;
+.field private final s:Lmiv;
 
 
 # direct methods
@@ -72,27 +72,27 @@
 .end method
 
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
-    .locals 5
+    .locals 4
 
     invoke-direct {p0, p1, p2}, Landroid/view/View;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
-    new-instance p2, Lkwr;
+    new-instance p2, Lmit;
 
-    invoke-direct {p2}, Lkwr;-><init>()V
+    invoke-direct {p2}, Lmit;-><init>()V
 
-    iput-object p2, p0, Lcom/google/android/libraries/memorymonitor/MemoryMonitorView;->f:Lkwr;
+    iput-object p2, p0, Lcom/google/android/libraries/memorymonitor/MemoryMonitorView;->f:Lmit;
 
-    new-instance p2, Lkwq;
+    new-instance p2, Lmis;
 
-    invoke-direct {p2}, Lkwq;-><init>()V
+    invoke-direct {p2}, Lmis;-><init>()V
 
-    iput-object p2, p0, Lcom/google/android/libraries/memorymonitor/MemoryMonitorView;->g:Lkwq;
+    iput-object p2, p0, Lcom/google/android/libraries/memorymonitor/MemoryMonitorView;->g:Lmis;
 
-    new-instance p2, Lkwt;
+    new-instance p2, Lmiv;
 
-    invoke-direct {p2, p0}, Lkwt;-><init>(Lcom/google/android/libraries/memorymonitor/MemoryMonitorView;)V
+    invoke-direct {p2, p0}, Lmiv;-><init>(Lcom/google/android/libraries/memorymonitor/MemoryMonitorView;)V
 
-    iput-object p2, p0, Lcom/google/android/libraries/memorymonitor/MemoryMonitorView;->s:Lkwt;
+    iput-object p2, p0, Lcom/google/android/libraries/memorymonitor/MemoryMonitorView;->s:Lmiv;
 
     invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
@@ -100,121 +100,127 @@
 
     iput-object v0, p0, Lcom/google/android/libraries/memorymonitor/MemoryMonitorView;->i:Landroid/content/res/Resources;
 
-    const/16 v1, 0x2d
+    const/16 v0, 0x2d
+
+    invoke-static {p1, v0}, Lcom/google/android/libraries/memorymonitor/MemoryMonitorView;->a(Landroid/content/Context;I)I
+
+    move-result v0
+
+    iput v0, p0, Lcom/google/android/libraries/memorymonitor/MemoryMonitorView;->j:I
+
+    const/16 v0, 0x8c
+
+    invoke-static {p1, v0}, Lcom/google/android/libraries/memorymonitor/MemoryMonitorView;->a(Landroid/content/Context;I)I
+
+    move-result v0
+
+    iput v0, p0, Lcom/google/android/libraries/memorymonitor/MemoryMonitorView;->k:I
+
+    new-instance v0, Landroid/graphics/Paint;
+
+    invoke-direct {v0}, Landroid/graphics/Paint;-><init>()V
+
+    iput-object v0, p0, Lcom/google/android/libraries/memorymonitor/MemoryMonitorView;->l:Landroid/graphics/Paint;
+
+    new-instance v0, Landroid/graphics/Paint;
+
+    invoke-direct {v0}, Landroid/graphics/Paint;-><init>()V
+
+    iput-object v0, p0, Lcom/google/android/libraries/memorymonitor/MemoryMonitorView;->m:Landroid/graphics/Paint;
+
+    const/4 v1, 0x1
 
     invoke-static {p1, v1}, Lcom/google/android/libraries/memorymonitor/MemoryMonitorView;->a(Landroid/content/Context;I)I
 
     move-result v1
 
-    iput v1, p0, Lcom/google/android/libraries/memorymonitor/MemoryMonitorView;->j:I
+    int-to-float v1, v1
 
-    const/16 v1, 0x8c
+    invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setStrokeWidth(F)V
+
+    const/4 v0, 0x2
+
+    invoke-static {p1, v0}, Lcom/google/android/libraries/memorymonitor/MemoryMonitorView;->a(Landroid/content/Context;I)I
+
+    move-result v1
+
+    int-to-float v1, v1
+
+    iput v1, p0, Lcom/google/android/libraries/memorymonitor/MemoryMonitorView;->p:F
+
+    const/4 v1, 0x7
 
     invoke-static {p1, v1}, Lcom/google/android/libraries/memorymonitor/MemoryMonitorView;->a(Landroid/content/Context;I)I
 
     move-result v1
 
-    iput v1, p0, Lcom/google/android/libraries/memorymonitor/MemoryMonitorView;->k:I
+    int-to-float v1, v1
+
+    iput v1, p0, Lcom/google/android/libraries/memorymonitor/MemoryMonitorView;->q:F
 
     new-instance v1, Landroid/graphics/Paint;
 
     invoke-direct {v1}, Landroid/graphics/Paint;-><init>()V
 
-    iput-object v1, p0, Lcom/google/android/libraries/memorymonitor/MemoryMonitorView;->l:Landroid/graphics/Paint;
+    iput-object v1, p0, Lcom/google/android/libraries/memorymonitor/MemoryMonitorView;->n:Landroid/graphics/Paint;
 
-    new-instance v1, Landroid/graphics/Paint;
+    const/high16 v2, -0x1000000
 
-    invoke-direct {v1}, Landroid/graphics/Paint;-><init>()V
+    invoke-virtual {v1, v2}, Landroid/graphics/Paint;->setColor(I)V
 
-    iput-object v1, p0, Lcom/google/android/libraries/memorymonitor/MemoryMonitorView;->m:Landroid/graphics/Paint;
+    iget-object v1, p0, Lcom/google/android/libraries/memorymonitor/MemoryMonitorView;->n:Landroid/graphics/Paint;
 
-    const/4 v2, 0x1
+    iget v2, p0, Lcom/google/android/libraries/memorymonitor/MemoryMonitorView;->q:F
 
-    invoke-static {p1, v2}, Lcom/google/android/libraries/memorymonitor/MemoryMonitorView;->a(Landroid/content/Context;I)I
-
-    move-result v2
-
-    int-to-float v2, v2
-
-    invoke-virtual {v1, v2}, Landroid/graphics/Paint;->setStrokeWidth(F)V
-
-    const/4 v1, 0x2
-
-    invoke-static {p1, v1}, Lcom/google/android/libraries/memorymonitor/MemoryMonitorView;->a(Landroid/content/Context;I)I
-
-    move-result v2
-
-    int-to-float v2, v2
-
-    iput v2, p0, Lcom/google/android/libraries/memorymonitor/MemoryMonitorView;->p:F
-
-    const/4 v2, 0x7
-
-    invoke-static {p1, v2}, Lcom/google/android/libraries/memorymonitor/MemoryMonitorView;->a(Landroid/content/Context;I)I
-
-    move-result v2
-
-    int-to-float v2, v2
-
-    iput v2, p0, Lcom/google/android/libraries/memorymonitor/MemoryMonitorView;->q:F
-
-    new-instance v3, Landroid/graphics/Paint;
-
-    invoke-direct {v3}, Landroid/graphics/Paint;-><init>()V
-
-    iput-object v3, p0, Lcom/google/android/libraries/memorymonitor/MemoryMonitorView;->n:Landroid/graphics/Paint;
-
-    const/high16 v4, -0x1000000
-
-    invoke-virtual {v3, v4}, Landroid/graphics/Paint;->setColor(I)V
-
-    invoke-virtual {v3, v2}, Landroid/graphics/Paint;->setTextSize(F)V
+    invoke-virtual {v1, v2}, Landroid/graphics/Paint;->setTextSize(F)V
 
     invoke-virtual {p0}, Lcom/google/android/libraries/memorymonitor/MemoryMonitorView;->getContext()Landroid/content/Context;
 
-    move-result-object v2
+    move-result-object v1
 
-    const-string v3, "activity"
+    const-string v2, "activity"
 
-    invoke-virtual {v2, v3}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+    invoke-virtual {v1, v2}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 
-    move-result-object v2
+    move-result-object v1
 
-    check-cast v2, Landroid/app/ActivityManager;
+    check-cast v1, Landroid/app/ActivityManager;
 
-    invoke-virtual {v2}, Landroid/app/ActivityManager;->getMemoryClass()I
-
-    move-result v3
-
-    int-to-long v3, v3
-
-    iput-wide v3, p0, Lcom/google/android/libraries/memorymonitor/MemoryMonitorView;->b:J
-
-    invoke-virtual {v2}, Landroid/app/ActivityManager;->getLargeMemoryClass()I
+    invoke-virtual {v1}, Landroid/app/ActivityManager;->getMemoryClass()I
 
     move-result v2
 
     int-to-long v2, v2
 
-    iput-wide v2, p0, Lcom/google/android/libraries/memorymonitor/MemoryMonitorView;->c:J
+    iput-wide v2, p0, Lcom/google/android/libraries/memorymonitor/MemoryMonitorView;->b:J
 
-    sget-object v2, Lcom/google/android/libraries/memorymonitor/MemoryMonitorView;->h:Ljava/lang/Runtime;
+    invoke-virtual {v1}, Landroid/app/ActivityManager;->getLargeMemoryClass()I
 
-    invoke-virtual {v2}, Ljava/lang/Runtime;->maxMemory()J
+    move-result v1
 
-    move-result-wide v2
+    int-to-long v1, v1
 
-    iput-wide v2, p0, Lcom/google/android/libraries/memorymonitor/MemoryMonitorView;->d:J
+    iput-wide v1, p0, Lcom/google/android/libraries/memorymonitor/MemoryMonitorView;->c:J
 
-    invoke-virtual {v0}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
+    sget-object v1, Lcom/google/android/libraries/memorymonitor/MemoryMonitorView;->h:Ljava/lang/Runtime;
 
-    move-result-object v0
+    invoke-virtual {v1}, Ljava/lang/Runtime;->maxMemory()J
 
-    iget v0, v0, Landroid/util/DisplayMetrics;->heightPixels:I
+    move-result-wide v1
 
-    div-int/2addr v0, v1
+    iput-wide v1, p0, Lcom/google/android/libraries/memorymonitor/MemoryMonitorView;->d:J
 
-    int-to-float v0, v0
+    iget-object v1, p0, Lcom/google/android/libraries/memorymonitor/MemoryMonitorView;->i:Landroid/content/res/Resources;
+
+    invoke-virtual {v1}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
+
+    move-result-object v1
+
+    iget v1, v1, Landroid/util/DisplayMetrics;->heightPixels:I
+
+    div-int/2addr v1, v0
+
+    int-to-float v0, v1
 
     iput v0, p0, Lcom/google/android/libraries/memorymonitor/MemoryMonitorView;->e:F
 
@@ -230,6 +236,8 @@
 .method public static a(Landroid/content/Context;I)I
     .locals 0
 
+    int-to-float p1, p1
+
     invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object p0
@@ -239,8 +247,6 @@
     move-result-object p0
 
     iget p0, p0, Landroid/util/DisplayMetrics;->density:F
-
-    int-to-float p1, p1
 
     mul-float p1, p1, p0
 
@@ -283,11 +289,11 @@
     :cond_0
     long-to-float p1, p1
 
+    long-to-float p2, v0
+
+    div-float/2addr p1, p2
+
     iget p2, p0, Lcom/google/android/libraries/memorymonitor/MemoryMonitorView;->o:F
-
-    long-to-float v0, v0
-
-    div-float/2addr p1, v0
 
     mul-float p1, p1, p2
 
@@ -311,63 +317,51 @@
 
     mul-int v0, v0, p4
 
+    int-to-float v0, v0
+
+    const/high16 v1, 0x40400000    # 3.0f
+
+    div-float/2addr v0, v1
+
     invoke-virtual {p0}, Lcom/google/android/libraries/memorymonitor/MemoryMonitorView;->getHeight()I
 
-    move-result v1
+    move-result v2
 
-    int-to-float v1, v1
+    int-to-float v2, v2
 
-    int-to-float v2, p3
+    int-to-float v3, p3
 
-    sub-float/2addr v1, v2
+    sub-float/2addr v2, v3
 
-    sub-float/2addr v1, p6
+    sub-float/2addr v2, p6
 
-    new-instance v2, Landroid/graphics/RectF;
+    new-instance v3, Landroid/graphics/RectF;
 
     invoke-virtual {p0}, Lcom/google/android/libraries/memorymonitor/MemoryMonitorView;->getWidth()I
 
-    move-result v3
+    move-result v4
 
-    int-to-float v3, v3
+    int-to-float v4, v4
 
-    add-float v4, v1, p6
+    div-float/2addr v4, v1
 
-    int-to-float v0, v0
+    add-float/2addr v4, v0
 
-    const/high16 v5, 0x40400000    # 3.0f
+    add-float v5, v2, p6
 
-    div-float/2addr v0, v5
-
-    div-float/2addr v3, v5
-
-    add-float/2addr v3, v0
-
-    invoke-direct {v2, v0, v1, v3, v4}, Landroid/graphics/RectF;-><init>(FFFF)V
+    invoke-direct {v3, v0, v2, v4, v5}, Landroid/graphics/RectF;-><init>(FFFF)V
 
     iget v0, p0, Lcom/google/android/libraries/memorymonitor/MemoryMonitorView;->p:F
 
-    iget-object v1, p0, Lcom/google/android/libraries/memorymonitor/MemoryMonitorView;->l:Landroid/graphics/Paint;
+    iget-object v2, p0, Lcom/google/android/libraries/memorymonitor/MemoryMonitorView;->l:Landroid/graphics/Paint;
 
-    invoke-virtual {p5, v2, v0, v0, v1}, Landroid/graphics/Canvas;->drawRoundRect(Landroid/graphics/RectF;FFLandroid/graphics/Paint;)V
+    invoke-virtual {p5, v3, v0, v0, v2}, Landroid/graphics/Canvas;->drawRoundRect(Landroid/graphics/RectF;FFLandroid/graphics/Paint;)V
 
     invoke-virtual {p0}, Lcom/google/android/libraries/memorymonitor/MemoryMonitorView;->getHeight()I
 
     move-result v0
 
-    sub-int/2addr v0, p3
-
-    int-to-float p3, v0
-
-    sub-float/2addr p3, p6
-
-    const/high16 v0, 0x40000000    # 2.0f
-
-    div-float v1, p6, v0
-
     iget v2, p0, Lcom/google/android/libraries/memorymonitor/MemoryMonitorView;->q:F
-
-    div-float/2addr v2, v0
 
     long-to-double p1, p1
 
@@ -375,17 +369,19 @@
 
     move-result-wide p1
 
-    new-instance v0, Ljava/lang/StringBuilder;
+    new-instance v3, Ljava/lang/StringBuilder;
 
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+    const/16 v4, 0x15
 
-    invoke-virtual {v0, p1, p2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+    invoke-direct {v3, v4}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    invoke-virtual {v3, p1, p2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
     const-string p1, "M"
 
-    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v3, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p1
 
@@ -397,13 +393,25 @@
 
     int-to-float p2, p4
 
-    add-float/2addr p3, v1
+    div-float/2addr p2, v1
+
+    sub-int/2addr v0, p3
+
+    int-to-float p3, v0
+
+    sub-float/2addr p3, p6
+
+    const/high16 p4, 0x40000000    # 2.0f
+
+    div-float v0, p6, p4
+
+    add-float/2addr p3, v0
+
+    div-float/2addr v2, p4
 
     add-float/2addr p3, v2
 
     iget-object p4, p0, Lcom/google/android/libraries/memorymonitor/MemoryMonitorView;->n:Landroid/graphics/Paint;
-
-    div-float/2addr p2, v5
 
     invoke-virtual {p5, p1, p2, p3, p4}, Landroid/graphics/Canvas;->drawText(Ljava/lang/String;FFLandroid/graphics/Paint;)V
 
@@ -521,13 +529,13 @@
 
     invoke-virtual {v8, v0, v1, v1, v2}, Landroid/graphics/Canvas;->drawRoundRect(Landroid/graphics/RectF;FFLandroid/graphics/Paint;)V
 
-    iget-object v10, v7, Lcom/google/android/libraries/memorymonitor/MemoryMonitorView;->g:Lkwq;
+    iget-object v10, v7, Lcom/google/android/libraries/memorymonitor/MemoryMonitorView;->g:Lmis;
 
-    iget-object v0, v7, Lcom/google/android/libraries/memorymonitor/MemoryMonitorView;->f:Lkwr;
+    iget-object v0, v7, Lcom/google/android/libraries/memorymonitor/MemoryMonitorView;->f:Lmit;
 
-    iget-wide v11, v0, Lkwr;->c:J
+    iget-wide v11, v0, Lmit;->c:J
 
-    iget-wide v0, v10, Lkwq;->c:J
+    iget-wide v0, v10, Lmis;->c:J
 
     neg-long v1, v11
 
@@ -547,13 +555,13 @@
 
     add-float/2addr v0, v9
 
+    float-to-int v3, v0
+
     const-wide/16 v13, 0x0
 
-    cmp-long v1, v11, v13
+    cmp-long v0, v11, v13
 
-    if-lez v1, :cond_0
-
-    float-to-int v3, v0
+    if-lez v0, :cond_0
 
     const/4 v4, 0x0
 
@@ -568,7 +576,7 @@
     invoke-direct/range {v0 .. v6}, Lcom/google/android/libraries/memorymonitor/MemoryMonitorView;->d(JIILandroid/graphics/Canvas;I)F
 
     :cond_0
-    iget-wide v0, v10, Lkwq;->a:J
+    iget-wide v0, v10, Lmis;->a:J
 
     const/4 v0, 0x1
 
@@ -576,7 +584,7 @@
 
     invoke-direct {p0, v0, v8, v1}, Lcom/google/android/libraries/memorymonitor/MemoryMonitorView;->e(ILandroid/graphics/Canvas;I)V
 
-    iget-wide v0, v10, Lkwq;->b:J
+    iget-wide v0, v10, Lmis;->b:J
 
     const/4 v0, 0x2
 
@@ -588,9 +596,9 @@
 
     move-result v0
 
-    int-to-float v0, v0
+    iget-wide v1, v10, Lmis;->d:J
 
-    iget-wide v1, v10, Lkwq;->d:J
+    int-to-float v0, v0
 
     invoke-direct {p0, v13, v14}, Lcom/google/android/libraries/memorymonitor/MemoryMonitorView;->c(J)F
 
@@ -612,11 +620,11 @@
 
     int-to-float v0, v0
 
-    iget-object v5, v7, Lcom/google/android/libraries/memorymonitor/MemoryMonitorView;->m:Landroid/graphics/Paint;
-
     const/high16 v6, 0x40400000    # 3.0f
 
     div-float v3, v0, v6
+
+    iget-object v5, v7, Lcom/google/android/libraries/memorymonitor/MemoryMonitorView;->m:Landroid/graphics/Paint;
 
     move-object/from16 v0, p1
 
@@ -628,9 +636,9 @@
 
     move-result v0
 
-    int-to-float v0, v0
+    iget-wide v1, v10, Lmis;->e:J
 
-    iget-wide v1, v10, Lkwq;->e:J
+    int-to-float v0, v0
 
     invoke-direct {p0, v13, v14}, Lcom/google/android/libraries/memorymonitor/MemoryMonitorView;->c(J)F
 
@@ -652,9 +660,9 @@
 
     int-to-float v0, v0
 
-    iget-object v5, v7, Lcom/google/android/libraries/memorymonitor/MemoryMonitorView;->m:Landroid/graphics/Paint;
-
     div-float v3, v0, v6
+
+    iget-object v5, v7, Lcom/google/android/libraries/memorymonitor/MemoryMonitorView;->m:Landroid/graphics/Paint;
 
     move-object/from16 v0, p1
 
@@ -742,13 +750,13 @@
 
     if-ne v0, v1, :cond_3
 
-    iget-object v0, p0, Lcom/google/android/libraries/memorymonitor/MemoryMonitorView;->s:Lkwt;
+    iget-object v0, p0, Lcom/google/android/libraries/memorymonitor/MemoryMonitorView;->s:Lmiv;
 
-    sget v2, Lkwt;->d:I
+    sget v2, Lmiv;->d:I
 
-    iget v2, v0, Lkwt;->b:F
+    iget v2, v0, Lmiv;->b:F
 
-    iget v3, v0, Lkwt;->a:F
+    iget v3, v0, Lmiv;->a:F
 
     const/4 v4, 0x0
 
@@ -756,13 +764,13 @@
 
     if-eqz v3, :cond_2
 
-    const/high16 v3, 0x42c80000    # 100.0f
-
-    mul-float v2, v2, v3
-
     const/4 v3, 0x2
 
     new-array v3, v3, [Ljava/lang/Object;
+
+    const/high16 v5, 0x42c80000    # 100.0f
+
+    mul-float v2, v2, v5
 
     invoke-static {v2}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
 
@@ -770,7 +778,7 @@
 
     aput-object v2, v3, v4
 
-    iget v2, v0, Lkwt;->b:F
+    iget v2, v0, Lmiv;->b:F
 
     sget v4, Lcom/google/android/libraries/memorymonitor/MemoryMonitorView;->a:F
 
@@ -784,23 +792,23 @@
 
     const-string v1, "Inflating heap utilization to %.2f%% (%.2f MB)"
 
-    invoke-virtual {v0, v1, v3}, Lkwt;->a(Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-virtual {v0, v1, v3}, Lmiv;->a(Ljava/lang/String;[Ljava/lang/Object;)V
 
-    iget-object v1, v0, Lkwt;->c:Lcom/google/android/libraries/memorymonitor/MemoryMonitorView;
+    iget-object v1, v0, Lmiv;->c:Lcom/google/android/libraries/memorymonitor/MemoryMonitorView;
 
-    iget-object v1, v1, Lcom/google/android/libraries/memorymonitor/MemoryMonitorView;->f:Lkwr;
+    iget-object v1, v1, Lcom/google/android/libraries/memorymonitor/MemoryMonitorView;->f:Lmit;
 
-    iget v0, v0, Lkwt;->b:F
+    iget v0, v0, Lmiv;->b:F
 
-    invoke-static {}, Lkwr;->a()F
+    invoke-static {}, Lmit;->a()F
 
     move-result v2
 
-    iget-wide v3, v1, Lkwr;->c:J
+    iget-wide v3, v1, Lmit;->c:J
 
     sub-float/2addr v0, v2
 
-    iget-wide v5, v1, Lkwr;->a:J
+    iget-wide v5, v1, Lmit;->a:J
 
     long-to-float v2, v5
 
@@ -811,7 +819,7 @@
     add-long/2addr v3, v5
 
     :goto_0
-    iget-wide v5, v1, Lkwr;->c:J
+    iget-wide v5, v1, Lmit;->c:J
 
     cmp-long v0, v5, v3
 
@@ -820,7 +828,7 @@
     goto :goto_1
 
     :cond_0
-    iget-object v0, v1, Lkwr;->b:Ljava/util/Stack;
+    iget-object v0, v1, Lmit;->b:Ljava/util/Stack;
 
     invoke-virtual {v0}, Ljava/util/Stack;->isEmpty()Z
 
@@ -828,9 +836,9 @@
 
     if-nez v0, :cond_1
 
-    iget-wide v5, v1, Lkwr;->c:J
+    iget-wide v5, v1, Lmit;->c:J
 
-    iget-object v0, v1, Lkwr;->b:Ljava/util/Stack;
+    iget-object v0, v1, Lmit;->b:Ljava/util/Stack;
 
     invoke-virtual {v0}, Ljava/util/Stack;->pop()Ljava/lang/Object;
 
@@ -844,13 +852,13 @@
 
     sub-long/2addr v5, v7
 
-    iput-wide v5, v1, Lkwr;->c:J
+    iput-wide v5, v1, Lmit;->c:J
 
     goto :goto_0
 
     :cond_1
     :goto_1
-    iget-wide v5, v1, Lkwr;->c:J
+    iget-wide v5, v1, Lmit;->c:J
 
     cmp-long v0, v5, v3
 
@@ -866,28 +874,28 @@
 
     long-to-int v0, v5
 
-    iget-object v2, v1, Lkwr;->b:Ljava/util/Stack;
+    iget-object v2, v1, Lmit;->b:Ljava/util/Stack;
 
     new-array v5, v0, [B
 
     invoke-virtual {v2, v5}, Ljava/util/Stack;->push(Ljava/lang/Object;)Ljava/lang/Object;
 
-    iget-wide v5, v1, Lkwr;->c:J
+    iget-wide v5, v1, Lmit;->c:J
 
     int-to-long v7, v0
 
     add-long/2addr v5, v7
 
-    iput-wide v5, v1, Lkwr;->c:J
+    iput-wide v5, v1, Lmit;->c:J
 
     goto :goto_1
 
     :cond_2
-    iget-object v1, v0, Lkwt;->c:Lcom/google/android/libraries/memorymonitor/MemoryMonitorView;
+    iget-object v1, v0, Lmiv;->c:Lcom/google/android/libraries/memorymonitor/MemoryMonitorView;
 
-    iget-object v1, v1, Lcom/google/android/libraries/memorymonitor/MemoryMonitorView;->g:Lkwq;
+    iget-object v1, v1, Lcom/google/android/libraries/memorymonitor/MemoryMonitorView;->g:Lmis;
 
-    iget-wide v2, v1, Lkwq;->d:J
+    iget-wide v2, v1, Lmis;->d:J
 
     const-wide/16 v2, 0x0
 
@@ -895,13 +903,13 @@
 
     move-result-wide v5
 
-    iget-wide v7, v1, Lkwq;->e:J
+    iget-wide v7, v1, Lmis;->e:J
 
     invoke-static {v2, v3}, Lcom/google/android/libraries/memorymonitor/MemoryMonitorView;->b(D)J
 
     move-result-wide v1
 
-    iget-object v3, v0, Lkwt;->c:Lcom/google/android/libraries/memorymonitor/MemoryMonitorView;
+    iget-object v3, v0, Lmiv;->c:Lcom/google/android/libraries/memorymonitor/MemoryMonitorView;
 
     iget-wide v7, v3, Lcom/google/android/libraries/memorymonitor/MemoryMonitorView;->d:J
 
@@ -911,7 +919,7 @@
 
     move-result-wide v7
 
-    iget-object v3, v0, Lkwt;->c:Lcom/google/android/libraries/memorymonitor/MemoryMonitorView;
+    iget-object v3, v0, Lmiv;->c:Lcom/google/android/libraries/memorymonitor/MemoryMonitorView;
 
     iget-wide v9, v3, Lcom/google/android/libraries/memorymonitor/MemoryMonitorView;->b:J
 
@@ -919,7 +927,9 @@
 
     new-instance v3, Ljava/lang/StringBuilder;
 
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+    const/16 v13, 0x1a2
+
+    invoke-direct {v3, v13}, Ljava/lang/StringBuilder;-><init>(I)V
 
     const-string v13, "Red: Artificially inflated Dalvik heap alloc.\nGreen: Dalvik heap alloc.\nYellow: Native heap alloc\nBlue: Other private dirty (GL RAM)\nBlack line: Dalvik heap size: "
 
@@ -961,7 +971,7 @@
 
     new-array v2, v4, [Ljava/lang/Object;
 
-    invoke-virtual {v0, v1, v2}, Lkwt;->a(Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-virtual {v0, v1, v2}, Lmiv;->a(Ljava/lang/String;[Ljava/lang/Object;)V
 
     :cond_3
     iget-object v0, p0, Lcom/google/android/libraries/memorymonitor/MemoryMonitorView;->r:Landroid/view/GestureDetector;

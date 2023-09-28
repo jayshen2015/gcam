@@ -1,30 +1,39 @@
 .class public final Llaf;
-.super Llag;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Ljava/lang/Runnable;
+
+
+# instance fields
+.field private final a:Ljava/lang/Runnable;
+
+.field private final b:Ljava/util/concurrent/Executor;
 
 
 # direct methods
-.method public constructor <init>()V
+.method public constructor <init>(Ljava/lang/Runnable;Ljava/util/concurrent/Executor;)V
     .locals 0
 
-    invoke-direct {p0}, Llag;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p2, p0, Llaf;->b:Ljava/util/concurrent/Executor;
+
+    iput-object p1, p0, Llaf;->a:Ljava/lang/Runnable;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()I
-    .locals 1
+.method public final run()V
+    .locals 2
 
-    const/16 v0, 0x20
+    iget-object v0, p0, Llaf;->b:Ljava/util/concurrent/Executor;
 
-    return v0
-.end method
+    iget-object v1, p0, Llaf;->a:Ljava/lang/Runnable;
 
-.method public final b()Ljava/lang/String;
-    .locals 1
+    invoke-interface {v0, v1}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
 
-    const-string v0, "Float32"
-
-    return-object v0
+    return-void
 .end method

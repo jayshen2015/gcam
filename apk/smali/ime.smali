@@ -1,51 +1,71 @@
-.class public final Lime;
+.class public final synthetic Lime;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Logk;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field private final a:Loiw;
+.field public final synthetic a:Limf;
+
+.field private final synthetic b:I
 
 
 # direct methods
-.method public constructor <init>(Loiw;)V
+.method public synthetic constructor <init>(Limf;I)V
     .locals 0
+
+    iput p2, p0, Lime;->b:I
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lime;->a:Loiw;
+    iput-object p1, p0, Lime;->a:Limf;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Ljew;
+.method public final run()V
     .locals 2
 
-    iget-object v0, p0, Lime;->a:Loiw;
+    iget v0, p0, Lime;->b:I
 
-    check-cast v0, Lemc;
+    packed-switch v0, :pswitch_data_0
 
-    invoke-virtual {v0}, Lemc;->a()Landroid/app/admin/DevicePolicyManager;
+    iget-object v0, p0, Lime;->a:Limf;
 
-    move-result-object v0
+    iget-object v0, v0, Limf;->a:Llce;
 
-    new-instance v1, Ljew;
+    const/4 v1, 0x1
 
-    invoke-direct {v1, v0}, Ljew;-><init>(Landroid/app/admin/DevicePolicyManager;)V
+    invoke-static {v1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
-    return-object v1
-.end method
+    move-result-object v1
 
-.method public final bridge synthetic get()Ljava/lang/Object;
-    .locals 1
+    invoke-virtual {v0, v1}, Llce;->fB(Ljava/lang/Object;)V
 
-    invoke-virtual {p0}, Lime;->a()Ljew;
+    return-void
 
-    move-result-object v0
+    :pswitch_0
+    iget-object v0, p0, Lime;->a:Limf;
 
-    return-object v0
+    iget-object v0, v0, Limf;->a:Llce;
+
+    const/4 v1, 0x0
+
+    invoke-static {v1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Llce;->fB(Ljava/lang/Object;)V
+
+    return-void
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

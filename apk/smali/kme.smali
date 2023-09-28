@@ -1,239 +1,185 @@
 .class public final Lkme;
-.super Lkoz;
-
-# interfaces
-.implements Lkpe;
+.super Ljava/lang/Object;
 
 
 # instance fields
-.field public final a:Ljava/lang/Object;
-
-.field public b:Z
-
-.field public c:I
-
-.field private d:Z
+.field public final a:Ljava/util/Set;
 
 
 # direct methods
-.method public constructor <init>(Lkpe;)V
+.method public constructor <init>(Liki;)V
     .locals 0
 
-    invoke-direct {p0, p1}, Lkoz;-><init>(Lkpe;)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    new-instance p1, Ljava/lang/Object;
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    invoke-direct {p1}, Ljava/lang/Object;-><init>()V
+    new-instance p1, Ljava/util/HashSet;
 
-    iput-object p1, p0, Lkme;->a:Ljava/lang/Object;
+    invoke-direct {p1}, Ljava/util/HashSet;-><init>()V
 
-    const/4 p1, 0x0
+    invoke-static {p1}, Ljava/util/Collections;->synchronizedSet(Ljava/util/Set;)Ljava/util/Set;
 
-    iput-boolean p1, p0, Lkme;->d:Z
+    move-result-object p1
 
-    iput p1, p0, Lkme;->c:I
+    iput-object p1, p0, Lkme;->a:Ljava/util/Set;
+
+    return-void
+.end method
+
+.method public constructor <init>(Ljava/util/Set;)V
+    .locals 0
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lkme;->a:Ljava/util/Set;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final close()V
-    .locals 2
-
-    iget-object v0, p0, Lkme;->a:Ljava/lang/Object;
-
-    monitor-enter v0
-
-    :try_start_0
-    iget-boolean v1, p0, Lkme;->d:Z
-
-    if-nez v1, :cond_1
-
-    iget-boolean v1, p0, Lkme;->b:Z
-
-    if-eqz v1, :cond_0
-
-    goto :goto_0
-
-    :cond_0
-    const/4 v1, 0x1
-
-    iput-boolean v1, p0, Lkme;->b:Z
-
-    invoke-virtual {p0}, Lkme;->j()V
-
-    monitor-exit v0
-
-    return-void
-
-    :cond_1
-    :goto_0
-    monitor-exit v0
-
-    return-void
-
-    :catchall_0
-    move-exception v1
-
-    monitor-exit v0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw v1
-.end method
-
-.method public final f()Lkpb;
+.method public final a(J)Ljava/lang/String;
     .locals 3
 
-    iget-object v0, p0, Lkme;->a:Ljava/lang/Object;
+    new-instance v0, Ljava/text/SimpleDateFormat;
 
-    monitor-enter v0
+    sget-object v1, Ljava/util/Locale;->US:Ljava/util/Locale;
 
-    :try_start_0
-    iget-boolean v1, p0, Lkme;->b:Z
+    const-string v2, "\'IMG\'_yyyyMMdd_HHmmss"
 
-    if-nez v1, :cond_0
+    invoke-direct {v0, v2, v1}, Ljava/text/SimpleDateFormat;-><init>(Ljava/lang/String;Ljava/util/Locale;)V
 
-    iget-boolean v1, p0, Lkme;->d:Z
+    invoke-virtual {p0, p1, p2, v0}, Lkme;->c(JLjava/text/DateFormat;)Ljava/lang/String;
 
-    if-nez v1, :cond_0
+    move-result-object p1
 
-    invoke-super {p0}, Lkoz;->f()Lkpb;
-
-    move-result-object v1
-
-    if-eqz v1, :cond_0
-
-    iget v2, p0, Lkme;->c:I
-
-    add-int/lit8 v2, v2, 0x1
-
-    iput v2, p0, Lkme;->c:I
-
-    new-instance v2, Lkmd;
-
-    invoke-direct {v2, p0, v1}, Lkmd;-><init>(Lkme;Lkpb;)V
-
-    monitor-exit v0
-
-    return-object v2
-
-    :cond_0
-    monitor-exit v0
-
-    const/4 v0, 0x0
-
-    return-object v0
-
-    :catchall_0
-    move-exception v1
-
-    monitor-exit v0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw v1
+    return-object p1
 .end method
 
-.method public final g()Lkpb;
+.method public final b(J)Ljava/lang/String;
     .locals 3
 
-    iget-object v0, p0, Lkme;->a:Ljava/lang/Object;
+    new-instance v0, Ljava/text/SimpleDateFormat;
 
-    monitor-enter v0
+    sget-object v1, Ljava/util/Locale;->US:Ljava/util/Locale;
+
+    const-string v2, "\'PANO\'_yyyyMMdd_HHmmss"
+
+    invoke-direct {v0, v2, v1}, Ljava/text/SimpleDateFormat;-><init>(Ljava/lang/String;Ljava/util/Locale;)V
+
+    invoke-virtual {p0, p1, p2, v0}, Lkme;->c(JLjava/text/DateFormat;)Ljava/lang/String;
+
+    move-result-object p1
+
+    return-object p1
+.end method
+
+.method public final c(JLjava/text/DateFormat;)Ljava/lang/String;
+    .locals 3
+
+    new-instance v0, Ljava/util/Date;
+
+    invoke-direct {v0, p1, p2}, Ljava/util/Date;-><init>(J)V
+
+    invoke-virtual {p3, v0}, Ljava/text/DateFormat;->format(Ljava/util/Date;)Ljava/lang/String;
+
+    move-result-object p1
+
+    iget-object p2, p0, Lkme;->a:Ljava/util/Set;
+
+    const-string p3, ""
+
+    monitor-enter p2
 
     :try_start_0
-    iget-boolean v1, p0, Lkme;->b:Z
-
-    if-nez v1, :cond_0
-
-    iget-boolean v1, p0, Lkme;->d:Z
-
-    if-nez v1, :cond_0
-
-    invoke-super {p0}, Lkoz;->g()Lkpb;
-
-    move-result-object v1
-
-    if-eqz v1, :cond_0
-
-    iget v2, p0, Lkme;->c:I
-
-    add-int/lit8 v2, v2, 0x1
-
-    iput v2, p0, Lkme;->c:I
-
-    new-instance v2, Lkmd;
-
-    invoke-direct {v2, p0, v1}, Lkmd;-><init>(Lkme;Lkpb;)V
-
-    monitor-exit v0
-
-    return-object v2
-
-    :cond_0
-    monitor-exit v0
-
-    const/4 v0, 0x0
-
-    return-object v0
-
-    :catchall_0
-    move-exception v1
-
-    monitor-exit v0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw v1
-.end method
-
-.method public final i(Lkpd;Landroid/os/Handler;)V
-    .locals 1
-
-    new-instance v0, Lkmc;
-
-    invoke-direct {v0, p0, p1}, Lkmc;-><init>(Lkme;Lkpd;)V
-
-    invoke-super {p0, v0, p2}, Lkoz;->i(Lkpd;Landroid/os/Handler;)V
-
-    return-void
-.end method
-
-.method public final j()V
-    .locals 1
-
-    iget-boolean v0, p0, Lkme;->d:Z
-
-    if-eqz v0, :cond_0
-
-    return-void
-
-    :cond_0
-    iget v0, p0, Lkme;->c:I
-
-    if-nez v0, :cond_1
-
-    const/4 v0, 0x1
-
-    iput-boolean v0, p0, Lkme;->d:Z
-
-    invoke-super {p0}, Lkoz;->close()V
-
-    return-void
-
-    :cond_1
-    invoke-super {p0}, Lkoz;->f()Lkpb;
+    invoke-static {p1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v0
 
-    if-eqz v0, :cond_2
+    new-instance v1, Ljava/lang/String;
 
-    invoke-interface {v0}, Lkpb;->close()V
+    invoke-direct {v1, v0}, Ljava/lang/String;-><init>(Ljava/lang/String;)V
 
-    :cond_2
-    invoke-virtual {p0}, Lkoz;->h()V
+    iget-object v0, p0, Lkme;->a:Ljava/util/Set;
 
-    return-void
+    invoke-interface {v0, v1}, Ljava/util/Set;->contains(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    const/4 v0, 0x0
+
+    :cond_0
+    add-int/lit8 v0, v0, 0x1
+
+    invoke-static {p1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/String;->length()I
+
+    move-result v1
+
+    add-int/lit8 v1, v1, 0xc
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2, v1}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    invoke-virtual {v2, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v1, "_"
+
+    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2, p3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    iget-object v2, p0, Lkme;->a:Ljava/util/Set;
+
+    invoke-interface {v2, v1}, Ljava/util/Set;->contains(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-nez v2, :cond_0
+
+    iget-object p1, p0, Lkme;->a:Ljava/util/Set;
+
+    invoke-interface {p1, v1}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
+
+    monitor-exit p2
+
+    goto :goto_0
+
+    :cond_1
+    iget-object p1, p0, Lkme;->a:Ljava/util/Set;
+
+    invoke-interface {p1, v1}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
+
+    monitor-exit p2
+
+    :goto_0
+    return-object v1
+
+    :catchall_0
+    move-exception p1
+
+    monitor-exit p2
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    goto :goto_2
+
+    :goto_1
+    throw p1
+
+    :goto_2
+    goto :goto_1
 .end method

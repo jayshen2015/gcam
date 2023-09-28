@@ -1,146 +1,92 @@
-.class public final Lnfz;
-.super Lnws;
+.class public final synthetic Lnfz;
+.super Ljava/lang/Object;
 
 # interfaces
-.implements Lnxz;
+.implements Lpgk;
 
 
-# static fields
-.field public static final a:Lnfz;
+# instance fields
+.field public final synthetic a:Ljava/lang/String;
 
-.field private static volatile b:Lnyf;
+.field public final synthetic b:Lnfn;
+
+.field public final synthetic c:Lnei;
+
+.field public final synthetic d:Lngu;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
-
-    new-instance v0, Lnfz;
-
-    invoke-direct {v0}, Lnfz;-><init>()V
-
-    sput-object v0, Lnfz;->a:Lnfz;
-
-    const-class v1, Lnfz;
-
-    invoke-static {v1, v0}, Lnws;->aa(Ljava/lang/Class;Lnws;)V
-
-    return-void
-.end method
-
-.method private constructor <init>()V
+.method public synthetic constructor <init>(Ljava/lang/String;Lnfn;Lnei;Lngu;)V
     .locals 0
 
-    invoke-direct {p0}, Lnws;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lnfz;->a:Ljava/lang/String;
+
+    iput-object p2, p0, Lnfz;->b:Lnfn;
+
+    iput-object p3, p0, Lnfz;->c:Lnei;
+
+    iput-object p4, p0, Lnfz;->d:Lngu;
 
     return-void
 .end method
 
 
 # virtual methods
-.method protected final a(ILjava/lang/Object;)Ljava/lang/Object;
-    .locals 1
+.method public final a(Ljava/lang/Object;)Lpht;
+    .locals 4
 
-    add-int/lit8 p1, p1, -0x1
+    iget-object v0, p0, Lnfz;->a:Ljava/lang/String;
 
-    const/4 p2, 0x0
+    iget-object v1, p0, Lnfz;->b:Lnfn;
 
-    packed-switch p1, :pswitch_data_0
+    iget-object v2, p0, Lnfz;->c:Lnei;
 
-    :pswitch_0
-    return-object p2
+    iget-object v3, p0, Lnfz;->d:Lngu;
 
-    :pswitch_1
-    sget-object p1, Lnfz;->b:Lnyf;
+    check-cast p1, Ljava/lang/String;
 
-    if-nez p1, :cond_1
+    invoke-virtual {p1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    const-class p2, Lnfz;
-
-    monitor-enter p2
-
-    :try_start_0
-    sget-object p1, Lnfz;->b:Lnyf;
+    move-result p1
 
     if-nez p1, :cond_0
 
-    new-instance p1, Lnwo;
-
-    sget-object v0, Lnfz;->a:Lnfz;
-
-    invoke-direct {p1, v0}, Lnwo;-><init>(Lnws;)V
-
-    sput-object p1, Lnfz;->b:Lnyf;
-
-    :cond_0
-    monitor-exit p2
+    sget-object p1, Lphq;->a:Lpht;
 
     goto :goto_0
 
-    :catchall_0
-    move-exception p1
+    :cond_0
+    sget-object p1, Lnge;->c:Lnes;
 
-    monitor-exit p2
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    iget-object v1, v1, Lnfn;->a:Ljava/lang/String;
 
-    throw p1
+    invoke-static {v1, v0}, Lojd;->a(Ljava/lang/Object;Ljava/lang/Object;)Lojd;
+
+    move-result-object v0
+
+    invoke-virtual {p1, v0}, Long;->containsKey(Ljava/lang/Object;)Z
+
+    move-result p1
+
+    if-eqz p1, :cond_1
+
+    sget-object p1, Lphq;->a:Lpht;
+
+    goto :goto_0
 
     :cond_1
+    invoke-virtual {v2}, Lnei;->d()Lney;
+
+    move-result-object p1
+
+    iget-object v0, v3, Lngu;->b:Ljava/lang/String;
+
+    invoke-virtual {p1, v0}, Lney;->a(Ljava/lang/String;)Lpht;
+
+    move-result-object p1
+
     :goto_0
     return-object p1
-
-    :pswitch_2
-    sget-object p1, Lnfz;->a:Lnfz;
-
-    return-object p1
-
-    :pswitch_3
-    new-instance p1, Lnwn;
-
-    sget-object p2, Lnfz;->a:Lnfz;
-
-    invoke-direct {p1, p2}, Lnwn;-><init>(Lnws;)V
-
-    return-object p1
-
-    :pswitch_4
-    new-instance p1, Lnfz;
-
-    invoke-direct {p1}, Lnfz;-><init>()V
-
-    return-object p1
-
-    :pswitch_5
-    sget-object p1, Lnfz;->a:Lnfz;
-
-    const-string v0, "\u0001\u0000"
-
-    invoke-static {p1, v0, p2}, Lnfz;->X(Lnxy;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object p1
-
-    return-object p1
-
-    :pswitch_6
-    const/4 p1, 0x1
-
-    invoke-static {p1}, Ljava/lang/Byte;->valueOf(B)Ljava/lang/Byte;
-
-    move-result-object p1
-
-    return-object p1
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_6
-        :pswitch_0
-        :pswitch_5
-        :pswitch_4
-        :pswitch_3
-        :pswitch_2
-        :pswitch_1
-    .end packed-switch
 .end method

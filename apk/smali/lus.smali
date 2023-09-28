@@ -1,28 +1,48 @@
-.class public final Llus;
-.super Lllj;
+.class public final synthetic Llus;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Llij;
+
+
+# instance fields
+.field public final synthetic a:Lmip;
+
+
+# direct methods
+.method public synthetic constructor <init>(Lmip;[B[B)V
+    .locals 0
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Llus;->a:Lmip;
+
+    return-void
+.end method
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 0
+.method public final fB(Ljava/lang/Object;)V
+    .locals 2
 
-    const/4 p1, 0x0
+    iget-object v0, p0, Llus;->a:Lmip;
 
-    throw p1
-.end method
+    check-cast p1, Llzr;
 
-.method public final hashCode()I
-    .locals 1
+    sget-object v1, Landroid/hardware/camera2/CaptureResult;->SCALER_CROP_REGION:Landroid/hardware/camera2/CaptureResult$Key;
 
-    const/4 v0, 0x0
+    invoke-interface {p1, v1}, Llzr;->d(Landroid/hardware/camera2/CaptureResult$Key;)Ljava/lang/Object;
 
-    throw v0
-.end method
+    move-result-object p1
 
-.method public final toString()Ljava/lang/String;
-    .locals 1
+    check-cast p1, Landroid/graphics/Rect;
 
-    const/4 v0, 0x0
+    if-nez p1, :cond_0
 
-    throw v0
+    return-void
+
+    :cond_0
+    invoke-virtual {v0}, Lmip;->aV()V
+
+    return-void
 .end method

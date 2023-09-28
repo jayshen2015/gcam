@@ -1,66 +1,115 @@
-.class final Loqm;
-.super Loqo;
+.class public final enum Loqm;
+.super Ljava/lang/Enum;
+
+# interfaces
+.implements Loiu;
 
 
-# instance fields
-.field final synthetic a:Loqq;
+# static fields
+.field public static final enum a:Loqm;
 
-.field private final c:Looz;
+.field public static final enum b:Loqm;
+
+.field private static final synthetic c:[Loqm;
 
 
 # direct methods
-.method public constructor <init>(Loqq;JLooz;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 5
 
-    iput-object p1, p0, Loqm;->a:Loqq;
+    new-instance v0, Loqm;
 
-    invoke-direct {p0, p2, p3}, Loqo;-><init>(J)V
+    const-string v1, "KEY"
 
-    iput-object p4, p0, Loqm;->c:Looz;
+    const/4 v2, 0x0
+
+    invoke-direct {v0, v1, v2}, Loqm;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, Loqm;->a:Loqm;
+
+    new-instance v1, Loqm;
+
+    const-string v3, "VALUE"
+
+    const/4 v4, 0x1
+
+    invoke-direct {v1, v3, v4}, Loqm;-><init>(Ljava/lang/String;I)V
+
+    sput-object v1, Loqm;->b:Loqm;
+
+    const/4 v3, 0x2
+
+    new-array v3, v3, [Loqm;
+
+    aput-object v0, v3, v2
+
+    aput-object v1, v3, v4
+
+    sput-object v3, Loqm;->c:[Loqm;
 
     return-void
+.end method
+
+.method private constructor <init>(Ljava/lang/String;I)V
+    .locals 0
+
+    invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    return-void
+.end method
+
+.method public static values()[Loqm;
+    .locals 1
+
+    sget-object v0, Loqm;->c:[Loqm;
+
+    invoke-virtual {v0}, [Loqm;->clone()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, [Loqm;
+
+    return-object v0
 .end method
 
 
 # virtual methods
-.method public final run()V
-    .locals 3
+.method public final synthetic a(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 1
 
-    iget-object v0, p0, Loqm;->c:Looz;
+    invoke-virtual {p0}, Ljava/lang/Enum;->ordinal()I
 
-    iget-object v1, p0, Loqm;->a:Loqq;
+    move-result v0
 
-    sget-object v2, Lojk;->a:Lojk;
+    packed-switch v0, :pswitch_data_0
 
-    invoke-interface {v0, v1, v2}, Looz;->c(Lopq;Ljava/lang/Object;)V
+    const/4 p1, 0x0
 
-    return-void
-.end method
+    throw p1
 
-.method public final toString()Ljava/lang/String;
-    .locals 3
+    :pswitch_0
+    check-cast p1, Ljava/util/Map$Entry;
 
-    invoke-super {p0}, Loqo;->toString()Ljava/lang/String;
+    invoke-interface {p1}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
-    move-result-object v0
+    move-result-object p1
 
-    iget-object v1, p0, Loqm;->c:Looz;
+    return-object p1
 
-    new-instance v2, Ljava/lang/StringBuilder;
+    :pswitch_1
+    check-cast p1, Ljava/util/Map$Entry;
 
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-interface {p1}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result-object p1
 
-    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    return-object p1
 
-    invoke-virtual {v1}, Ljava/lang/Object;->toString()Ljava/lang/String;
+    nop
 
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v0
-
-    return-object v0
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method

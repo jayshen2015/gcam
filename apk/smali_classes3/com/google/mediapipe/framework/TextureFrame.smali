@@ -23,9 +23,3 @@
 
 .method public abstract release(Lcom/google/mediapipe/framework/GlSyncToken;)V
 .end method
-
-.method public abstract retain()V
-.end method
-
-.method public abstract supportsRetain()Z
-.end method

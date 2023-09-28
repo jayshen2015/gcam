@@ -2,176 +2,120 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Logk;
+.implements Lgmu;
 
 
 # instance fields
-.field private final a:Loiw;
+.field public final a:Llis;
 
-.field private final b:Loiw;
+.field public final b:Lljf;
 
-.field private final c:Loiw;
+.field public final c:Lhia;
 
-.field private final d:Loiw;
+.field public final d:Ljava/util/concurrent/Executor;
 
-.field private final e:Loiw;
+.field public final e:Landroid/graphics/Rect;
 
-.field private final f:Loiw;
+.field private final f:Lbrg;
 
-.field private final g:Loiw;
+.field private final g:Lgmu;
 
-.field private final h:Loiw;
-
-.field private final i:Loiw;
-
-.field private final j:Loiw;
-
-.field private final k:Loiw;
-
-.field private final l:Loiw;
-
-.field private final m:Loiw;
-
-.field private final n:Loiw;
-
-.field private final o:Loiw;
+.field private final h:Lhiq;
 
 
 # direct methods
-.method public constructor <init>(Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;)V
-    .locals 0
+.method public constructor <init>(Llir;Lbrg;Lhia;Lgsf;Lhiq;Lgmu;Lljf;)V
+    .locals 1
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lgkg;->a:Loiw;
+    const-string v0, "LSRprcssngIS"
 
-    iput-object p2, p0, Lgkg;->b:Loiw;
+    invoke-interface {p1, v0}, Llir;->a(Ljava/lang/String;)Llis;
 
-    iput-object p3, p0, Lgkg;->c:Loiw;
+    move-result-object p1
 
-    iput-object p4, p0, Lgkg;->d:Loiw;
+    iput-object p1, p0, Lgkg;->a:Llis;
 
-    iput-object p5, p0, Lgkg;->e:Loiw;
+    iput-object p7, p0, Lgkg;->b:Lljf;
 
-    iput-object p6, p0, Lgkg;->f:Loiw;
+    iput-object p2, p0, Lgkg;->f:Lbrg;
 
-    iput-object p7, p0, Lgkg;->g:Loiw;
+    iput-object p6, p0, Lgkg;->g:Lgmu;
 
-    iput-object p8, p0, Lgkg;->h:Loiw;
+    iput-object p3, p0, Lgkg;->c:Lhia;
 
-    iput-object p9, p0, Lgkg;->i:Loiw;
+    const-string p1, "LuckyShotEx"
 
-    iput-object p10, p0, Lgkg;->j:Loiw;
+    invoke-static {p1}, Lmip;->bJ(Ljava/lang/String;)Ljava/util/concurrent/ExecutorService;
 
-    iput-object p11, p0, Lgkg;->k:Loiw;
+    move-result-object p1
 
-    iput-object p12, p0, Lgkg;->l:Loiw;
+    iput-object p1, p0, Lgkg;->d:Ljava/util/concurrent/Executor;
 
-    iput-object p13, p0, Lgkg;->m:Loiw;
+    iget-object p1, p4, Lgsf;->c:Landroid/graphics/Rect;
 
-    iput-object p14, p0, Lgkg;->n:Loiw;
+    iput-object p1, p0, Lgkg;->e:Landroid/graphics/Rect;
 
-    iput-object p15, p0, Lgkg;->o:Loiw;
+    iput-object p5, p0, Lgkg;->h:Lhiq;
 
     return-void
 .end method
 
-.method public static b(Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;)Lgkg;
-    .locals 17
-
-    new-instance v16, Lgkg;
-
-    move-object/from16 v0, v16
-
-    move-object/from16 v1, p0
-
-    move-object/from16 v2, p1
-
-    move-object/from16 v3, p2
-
-    move-object/from16 v4, p3
-
-    move-object/from16 v5, p4
-
-    move-object/from16 v6, p5
-
-    move-object/from16 v7, p6
-
-    move-object/from16 v8, p7
-
-    move-object/from16 v9, p8
-
-    move-object/from16 v10, p9
-
-    move-object/from16 v11, p10
-
-    move-object/from16 v12, p11
-
-    move-object/from16 v13, p12
-
-    move-object/from16 v14, p13
-
-    move-object/from16 v15, p14
-
-    invoke-direct/range {v0 .. v15}, Lgkg;-><init>(Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;)V
-
-    return-object v16
-.end method
-
 
 # virtual methods
-.method public final a()Lgkf;
-    .locals 18
+.method public final a(Lgog;)Lgmt;
+    .locals 7
 
-    move-object/from16 v0, p0
+    iget-object v0, p0, Lgkg;->g:Lgmu;
 
-    iget-object v2, v0, Lgkg;->a:Loiw;
+    invoke-interface {v0, p1}, Lgmu;->a(Lgog;)Lgmt;
 
-    iget-object v3, v0, Lgkg;->b:Loiw;
+    move-result-object v4
 
-    iget-object v4, v0, Lgkg;->c:Loiw;
+    invoke-virtual {v4}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    iget-object v5, v0, Lgkg;->d:Loiw;
+    new-instance v0, Lgkf;
 
-    iget-object v6, v0, Lgkg;->e:Loiw;
+    iget-object v5, p0, Lgkg;->f:Lbrg;
 
-    iget-object v7, v0, Lgkg;->f:Loiw;
+    iget-object v6, p0, Lgkg;->h:Lhiq;
 
-    iget-object v8, v0, Lgkg;->g:Loiw;
+    move-object v1, v0
 
-    iget-object v9, v0, Lgkg;->h:Loiw;
+    move-object v2, p0
 
-    iget-object v10, v0, Lgkg;->i:Loiw;
+    move-object v3, p1
 
-    iget-object v11, v0, Lgkg;->j:Loiw;
+    invoke-direct/range {v1 .. v6}, Lgkf;-><init>(Lgkg;Lgog;Lgmt;Lbrg;Lhiq;)V
 
-    iget-object v12, v0, Lgkg;->k:Loiw;
-
-    iget-object v13, v0, Lgkg;->l:Loiw;
-
-    iget-object v14, v0, Lgkg;->m:Loiw;
-
-    iget-object v15, v0, Lgkg;->n:Loiw;
-
-    iget-object v1, v0, Lgkg;->o:Loiw;
-
-    new-instance v17, Lgkf;
-
-    move-object/from16 v16, v1
-
-    move-object/from16 v1, v17
-
-    invoke-direct/range {v1 .. v16}, Lgkf;-><init>(Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;)V
-
-    return-object v17
+    return-object v0
 .end method
 
-.method public final bridge synthetic get()Ljava/lang/Object;
-    .locals 1
+.method public final b(Lgog;)Lgmt;
+    .locals 7
 
-    invoke-virtual {p0}, Lgkg;->a()Lgkf;
+    iget-object v0, p0, Lgkg;->g:Lgmu;
 
-    move-result-object v0
+    invoke-interface {v0, p1}, Lgmu;->b(Lgog;)Lgmt;
+
+    move-result-object v4
+
+    invoke-virtual {v4}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    new-instance v0, Lgkf;
+
+    iget-object v5, p0, Lgkg;->f:Lbrg;
+
+    iget-object v6, p0, Lgkg;->h:Lhiq;
+
+    move-object v1, v0
+
+    move-object v2, p0
+
+    move-object v3, p1
+
+    invoke-direct/range {v1 .. v6}, Lgkf;-><init>(Lgkg;Lgog;Lgmt;Lbrg;Lhiq;)V
 
     return-object v0
 .end method

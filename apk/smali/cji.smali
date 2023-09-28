@@ -1,41 +1,93 @@
-.class public final synthetic Lcji;
+.class public final Lcji;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Lcjg;
 
 
 # instance fields
-.field public final synthetic a:Lnph;
+.field private final a:Landroid/util/Range;
+
+.field private final b:Lojc;
+
+.field private final c:Z
 
 
 # direct methods
-.method public synthetic constructor <init>(Lnph;)V
+.method public constructor <init>(Landroid/util/Range;Lojc;Z)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lcji;->a:Lnph;
+    iput-object p1, p0, Lcji;->a:Landroid/util/Range;
+
+    iput-object p2, p0, Lcji;->b:Lojc;
+
+    iput-boolean p3, p0, Lcji;->c:Z
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final run()V
-    .locals 3
+.method public final a()Landroid/util/Range;
+    .locals 1
 
-    iget-object v0, p0, Lcji;->a:Lnph;
+    iget-boolean v0, p0, Lcji;->c:Z
 
-    invoke-static {}, Landroid/view/Choreographer;->getInstance()Landroid/view/Choreographer;
+    if-eqz v0, :cond_0
 
-    move-result-object v1
+    iget-object v0, p0, Lcji;->b:Lojc;
 
-    new-instance v2, Lcjj;
+    invoke-virtual {v0}, Lojc;->g()Z
 
-    invoke-direct {v2, v0}, Lcjj;-><init>(Lnph;)V
+    move-result v0
 
-    invoke-virtual {v1, v2}, Landroid/view/Choreographer;->postFrameCallback(Landroid/view/Choreographer$FrameCallback;)V
+    if-eqz v0, :cond_0
 
-    return-void
+    iget-object v0, p0, Lcji;->b:Lojc;
+
+    invoke-virtual {v0}, Lojc;->c()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/util/Range;
+
+    return-object v0
+
+    :cond_0
+    iget-object v0, p0, Lcji;->a:Landroid/util/Range;
+
+    return-object v0
+.end method
+
+.method public final b()Landroid/util/Range;
+    .locals 1
+
+    iget-boolean v0, p0, Lcji;->c:Z
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lcji;->b:Lojc;
+
+    invoke-virtual {v0}, Lojc;->g()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lcji;->b:Lojc;
+
+    invoke-virtual {v0}, Lojc;->c()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/util/Range;
+
+    return-object v0
+
+    :cond_0
+    iget-object v0, p0, Lcji;->a:Landroid/util/Range;
+
+    return-object v0
 .end method

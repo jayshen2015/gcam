@@ -1,12 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <plurals name="accessibility_timelapse_manual_record_speed_desc">
-        <item quantity="other">టైమ్ లాప్స్ %d టైమ్స్ స్పీడ్</item>
-        <item quantity="one">టైమ్ లాప్స్ %d టైమ్ స్పీడ్</item>
-    </plurals>
-    <plurals name="number_of_cropped_face">
-        <item quantity="other">%d కత్తిరించబడ్డాయి.</item>
-        <item quantity="one">ఒకటి కత్తిరించబడింది.</item>
+    <plurals name="number_of_faces_announcement">
+        <item quantity="other">%1$d ముఖాలు.</item>
+        <item quantity="one">%1$d ముఖం.</item>
     </plurals>
     <plurals name="photos_remaining">
         <item quantity="other">%s ఫోటోల గురించి</item>
@@ -17,8 +13,8 @@
         <item quantity="one">(%1$d యాప్ ఎంచుకోబడింది)</item>
     </plurals>
     <plurals name="social_share_info">
-        <item quantity="other">కెమెరా నుండి ఫోటోలు, వీడియోలను సోషల్ యాప్‌లలో త్వరగా షేర్ చేయండి. గరిష్ఠంగా %1$d యాప్ వరకు ఎంచుకోండి. లాక్ చేసిన ఫోల్డర్‌లో సేవ్ చేసిన ఫోటోలు, వీడియోలను షేర్ చేయడం సాధ్యం కాదు.</item>
-        <item quantity="one">కెమెరా నుండి ఫోటోలు, వీడియోలను సోషల్ యాప్‌లలో త్వరగా షేర్ చేయండి. %1$d యాప్‌ను ఎంచుకోండి. లాక్ చేసిన ఫోల్డర్‌లో సేవ్ చేసిన ఫోటోలు, వీడియోలను షేర్ చేయడం సాధ్యం కాదు.</item>
+        <item quantity="other">నేరుగా Camera నుండి ఫోటోలు, వీడియోలను సోషల్ యాప్‌లలో త్వరగా షేర్ చేయండి. %1$d యాప్‌ల వరకు ఎంచుకోండి. లాక్ చేసిన ఫోల్డర్‌లో సేవ్ చేసిన ఫోటోలను, వీడియోలను షేర్ చేయలేరు.</item>
+        <item quantity="one">నేరుగా Camera నుండి ఫోటోలు, వీడియోలను సోషల్ యాప్‌లలో త్వరగా షేర్ చేయండి. %1$d యాప్‌ను ఎంచుకోండి. లాక్ చేసిన ఫోల్డర్‌లో సేవ్ చేసిన ఫోటోలను, వీడియోలను షేర్ చేయలేరు.</item>
     </plurals>
     <plurals name="social_share_select_error">
         <item quantity="other">%1$d యాప్‌ల వరకు ఎంచుకోండి</item>

@@ -40,7 +40,7 @@
 
     iput v0, p0, Landroidx/preference/internal/PreferenceImageView;->b:I
 
-    sget-object v1, Laos;->j:[I
+    sget-object v1, Lahn;->j:[I
 
     const/4 v2, 0x0
 

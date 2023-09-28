@@ -7,7 +7,7 @@
 
 
 # instance fields
-.field dynamiteImpl:Ljlp;
+.field dynamiteImpl:Lkrv;
 
 
 # direct methods
@@ -24,12 +24,12 @@
 .method public onBind(Landroid/content/Intent;)Landroid/os/IBinder;
     .locals 2
 
-    iget-object v0, p0, Lcom/google/android/gms/learning/internal/training/InAppTrainingService;->dynamiteImpl:Ljlp;
+    iget-object v0, p0, Lcom/google/android/gms/learning/internal/training/InAppTrainingService;->dynamiteImpl:Lkrv;
 
     if-eqz v0, :cond_0
 
     :try_start_0
-    invoke-interface {v0, p1}, Ljlp;->f(Landroid/content/Intent;)Landroid/os/IBinder;
+    invoke-interface {v0, p1}, Lkrv;->f(Landroid/content/Intent;)Landroid/os/IBinder;
 
     move-result-object p1
     :try_end_0
@@ -55,17 +55,17 @@
     invoke-static {v1, v0, p1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
     :cond_0
-    new-instance p1, Ljlb;
+    new-instance p1, Lkrk;
 
     const-string v0, "No IInAppTrainingService implementation found"
 
-    invoke-direct {p1, v0}, Ljlb;-><init>(Ljava/lang/String;)V
+    invoke-direct {p1, v0}, Lkrk;-><init>(Ljava/lang/String;)V
 
     return-object p1
 .end method
 
 .method public onCreate()V
-    .locals 5
+    .locals 4
 
     const-string v0, "brella.InAppTrngSvc"
 
@@ -76,59 +76,47 @@
     :try_start_0
     const-string v2, "com.google.android.gms.learning.dynamite.training.InAppTrainingServiceImpl"
 
-    sget-object v3, Ljlq;->d:Ljlq;
+    sget-object v3, Lkrw;->d:Lkrw;
 
-    invoke-static {p0, v2, v3}, Ljlf;->a(Landroid/content/Context;Ljava/lang/String;Ljle;)Landroid/os/IInterface;
+    invoke-static {p0, v2, v3}, Lkrp;->a(Landroid/content/Context;Ljava/lang/String;Lkro;)Landroid/os/IInterface;
 
     move-result-object v2
 
-    check-cast v2, Ljlp;
+    check-cast v2, Lkrv;
+
+    iput-object v2, p0, Lcom/google/android/gms/learning/internal/training/InAppTrainingService;->dynamiteImpl:Lkrv;
     :try_end_0
-    .catch Ljld; {:try_start_0 .. :try_end_0} :catch_2
+    .catch Lkrn; {:try_start_0 .. :try_end_0} :catch_1
 
     :try_start_1
-    invoke-static {p0}, Ljif;->b(Ljava/lang/Object;)Ljig;
+    invoke-static {p0}, Lkog;->b(Ljava/lang/Object;)Lkoh;
 
     move-result-object v3
 
-    invoke-interface {v2, v3}, Ljlp;->g(Ljig;)V
+    invoke-interface {v2, v3}, Lkrv;->g(Lkoh;)V
     :try_end_1
     .catch Landroid/os/RemoteException; {:try_start_1 .. :try_end_1} :catch_0
 
-    goto :goto_0
+    return-void
 
     :catch_0
-    move-exception v3
+    move-exception v2
 
     invoke-static {v0, v1}, Landroid/util/Log;->isLoggable(Ljava/lang/String;I)Z
 
-    move-result v4
+    move-result v1
 
-    if-eqz v4, :cond_0
+    if-eqz v1, :cond_0
 
-    const-string v4, "RemoteException during onCreate"
+    const-string v1, "RemoteException during onCreate"
 
-    invoke-static {v0, v4, v3}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+    invoke-static {v0, v1, v2}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
     :cond_0
-    :goto_0
-    :try_start_2
-    new-instance v3, Ljlh;
-
-    invoke-virtual {p0}, Lcom/google/android/gms/learning/internal/training/InAppTrainingService;->getApplicationContext()Landroid/content/Context;
-
-    move-result-object v4
-
-    invoke-direct {v3, v4}, Ljlh;-><init>(Landroid/content/Context;)V
-
-    invoke-interface {v2, v3}, Ljlp;->l(Ljlk;)V
-    :try_end_2
-    .catch Landroid/os/RemoteException; {:try_start_2 .. :try_end_2} :catch_1
-
-    goto :goto_1
+    return-void
 
     :catch_1
-    move-exception v3
+    move-exception v2
 
     invoke-static {v0, v1}, Landroid/util/Log;->isLoggable(Ljava/lang/String;I)Z
 
@@ -136,44 +124,25 @@
 
     if-eqz v1, :cond_1
 
-    const-string v1, "RemoteException during addHttpUrlConnectionFactory"
-
-    invoke-static {v0, v1, v3}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
-
-    :cond_1
-    :goto_1
-    iput-object v2, p0, Lcom/google/android/gms/learning/internal/training/InAppTrainingService;->dynamiteImpl:Ljlp;
-
-    return-void
-
-    :catch_2
-    move-exception v2
-
-    invoke-static {v0, v1}, Landroid/util/Log;->isLoggable(Ljava/lang/String;I)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_2
-
     const-string v1, "LoadingException during onCreate"
 
     invoke-static {v0, v1, v2}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
     return-void
 
-    :cond_2
+    :cond_1
     return-void
 .end method
 
 .method public onDestroy()V
     .locals 3
 
-    iget-object v0, p0, Lcom/google/android/gms/learning/internal/training/InAppTrainingService;->dynamiteImpl:Ljlp;
+    iget-object v0, p0, Lcom/google/android/gms/learning/internal/training/InAppTrainingService;->dynamiteImpl:Lkrv;
 
     if-eqz v0, :cond_0
 
     :try_start_0
-    invoke-interface {v0}, Ljlp;->h()V
+    invoke-interface {v0}, Lkrv;->h()V
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
@@ -206,12 +175,12 @@
 .method public onRebind(Landroid/content/Intent;)V
     .locals 3
 
-    iget-object v0, p0, Lcom/google/android/gms/learning/internal/training/InAppTrainingService;->dynamiteImpl:Ljlp;
+    iget-object v0, p0, Lcom/google/android/gms/learning/internal/training/InAppTrainingService;->dynamiteImpl:Lkrv;
 
     if-eqz v0, :cond_0
 
     :try_start_0
-    invoke-interface {v0, p1}, Ljlp;->i(Landroid/content/Intent;)V
+    invoke-interface {v0, p1}, Lkrv;->i(Landroid/content/Intent;)V
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
@@ -243,12 +212,12 @@
 .method public onStartCommand(Landroid/content/Intent;II)I
     .locals 3
 
-    iget-object v0, p0, Lcom/google/android/gms/learning/internal/training/InAppTrainingService;->dynamiteImpl:Ljlp;
+    iget-object v0, p0, Lcom/google/android/gms/learning/internal/training/InAppTrainingService;->dynamiteImpl:Lkrv;
 
     if-eqz v0, :cond_0
 
     :try_start_0
-    invoke-interface {v0, p1, p2, p3}, Ljlp;->e(Landroid/content/Intent;II)I
+    invoke-interface {v0, p1, p2, p3}, Lkrv;->e(Landroid/content/Intent;II)I
 
     move-result p1
     :try_end_0
@@ -284,12 +253,12 @@
 .method public onTrimMemory(I)V
     .locals 2
 
-    iget-object v0, p0, Lcom/google/android/gms/learning/internal/training/InAppTrainingService;->dynamiteImpl:Ljlp;
+    iget-object v0, p0, Lcom/google/android/gms/learning/internal/training/InAppTrainingService;->dynamiteImpl:Lkrv;
 
     if-eqz v0, :cond_0
 
     :try_start_0
-    invoke-interface {v0, p1}, Ljlp;->j(I)V
+    invoke-interface {v0, p1}, Lkrv;->j(I)V
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
@@ -321,12 +290,12 @@
 .method public onUnbind(Landroid/content/Intent;)Z
     .locals 3
 
-    iget-object v0, p0, Lcom/google/android/gms/learning/internal/training/InAppTrainingService;->dynamiteImpl:Ljlp;
+    iget-object v0, p0, Lcom/google/android/gms/learning/internal/training/InAppTrainingService;->dynamiteImpl:Lkrv;
 
     if-eqz v0, :cond_0
 
     :try_start_0
-    invoke-interface {v0, p1}, Ljlp;->k(Landroid/content/Intent;)Z
+    invoke-interface {v0, p1}, Lkrv;->k(Landroid/content/Intent;)Z
 
     move-result p1
     :try_end_0

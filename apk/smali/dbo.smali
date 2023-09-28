@@ -1,197 +1,316 @@
-.class public final synthetic Ldbo;
+.class public final Ldbo;
 .super Ljava/lang/Object;
 
-# interfaces
-.implements Landroid/content/DialogInterface$OnClickListener;
+
+# static fields
+.field public static final a:Landroid/util/Range;
 
 
 # instance fields
-.field public final synthetic a:Ldbp;
+.field public final b:Ldcr;
 
-.field public final synthetic b:Lklv;
+.field public c:Lojc;
 
-.field public final synthetic c:I
+.field public d:Lojc;
 
-.field public final synthetic d:I
+.field private final e:Ldcq;
 
-.field private final synthetic e:I
+.field private final f:Ldcq;
+
+.field private final g:Ldbe;
+
+.field private final h:Z
+
+.field private i:Lojc;
+
+.field private j:Z
+
+.field private final k:Ljti;
 
 
 # direct methods
-.method public synthetic constructor <init>(Ldbp;Lklv;III)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 3
 
-    iput p5, p0, Ldbo;->e:I
+    const-wide/high16 v0, -0x3fcc000000000000L    # -20.0
+
+    invoke-static {v0, v1}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
+
+    move-result-object v0
+
+    const-wide/high16 v1, 0x403e000000000000L    # 30.0
+
+    invoke-static {v1, v2}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
+
+    move-result-object v1
+
+    invoke-static {v0, v1}, Landroid/util/Range;->create(Ljava/lang/Comparable;Ljava/lang/Comparable;)Landroid/util/Range;
+
+    move-result-object v0
+
+    sput-object v0, Ldbo;->a:Landroid/util/Range;
+
+    return-void
+.end method
+
+.method public constructor <init>(Ldbe;Lddf;)V
+    .locals 7
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Ldbo;->a:Ldbp;
+    new-instance v0, Ldbm;
 
-    iput-object p2, p0, Ldbo;->b:Lklv;
+    const/4 v1, 0x1
 
-    iput p3, p0, Ldbo;->c:I
+    invoke-direct {v0, p0, v1}, Ldbm;-><init>(Ldbo;I)V
 
-    iput p4, p0, Ldbo;->d:I
+    iput-object v0, p0, Ldbo;->e:Ldcq;
+
+    new-instance v1, Ldbm;
+
+    const/4 v2, 0x0
+
+    invoke-direct {v1, p0, v2}, Ldbm;-><init>(Ldbo;I)V
+
+    iput-object v1, p0, Ldbo;->f:Ldcq;
+
+    new-instance v3, Ldcr;
+
+    sget-object v4, Ljava/util/concurrent/TimeUnit;->SECONDS:Ljava/util/concurrent/TimeUnit;
+
+    const-wide/16 v5, 0x1
+
+    invoke-virtual {v4, v5, v6}, Ljava/util/concurrent/TimeUnit;->toMillis(J)J
+
+    move-result-wide v4
+
+    invoke-direct {v3, v0, v1, v4, v5}, Ldcr;-><init>(Ldcq;Ldcq;J)V
+
+    iput-object v3, p0, Ldbo;->b:Ldcr;
+
+    sget-object v0, Loih;->a:Loih;
+
+    iput-object v0, p0, Ldbo;->c:Lojc;
+
+    sget-object v0, Loih;->a:Loih;
+
+    iput-object v0, p0, Ldbo;->i:Lojc;
+
+    sget-object v0, Loih;->a:Loih;
+
+    iput-object v0, p0, Ldbo;->d:Lojc;
+
+    iput-boolean v2, p0, Ldbo;->j:Z
+
+    iput-object p1, p0, Ldbo;->g:Ldbe;
+
+    sget-object p1, Ldcv;->d:Lddg;
+
+    invoke-interface {p2, p1}, Lddf;->k(Lddg;)Z
+
+    move-result p1
+
+    iput-boolean p1, p0, Ldbo;->h:Z
+
+    new-instance p1, Ljti;
+
+    const v0, 0x3c75c28f    # 0.015f
+
+    const/4 v1, 0x0
+
+    invoke-direct {p1, v0, v1}, Ljti;-><init>(F[B)V
+
+    iput-object p1, p0, Ldbo;->k:Ljti;
+
+    invoke-interface {p2}, Lddf;->d()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onClick(Landroid/content/DialogInterface;I)V
+.method final declared-synchronized a(FFJ)V
     .locals 5
 
-    iget p2, p0, Ldbo;->e:I
+    monitor-enter p0
 
-    const/4 v0, 0x5
+    :try_start_0
+    iget-boolean v0, p0, Ldbo;->h:Z
 
-    const/4 v1, 0x4
+    if-nez v0, :cond_1
 
-    const-string v2, " camera not working. User decided to close the app instead of using the available camera"
+    :cond_0
+    goto/16 :goto_0
 
-    const/4 v3, 0x3
+    :cond_1
+    iget-object v0, p0, Ldbo;->g:Ldbe;
 
-    packed-switch p2, :pswitch_data_0
+    invoke-virtual {v0}, Ldbe;->a()Lojc;
 
-    iget-object p2, p0, Ldbo;->a:Ldbp;
+    move-result-object v0
 
-    iget-object v1, p0, Ldbo;->b:Lklv;
+    invoke-virtual {v0}, Lojc;->g()Z
 
-    iget v2, p0, Ldbo;->c:I
+    move-result v1
 
-    iget v3, p0, Ldbo;->d:I
+    if-eqz v1, :cond_0
 
-    invoke-virtual {p2, v1, v2, v3, v0}, Ldbp;->e(Lklv;III)V
+    invoke-virtual {v0}, Lojc;->c()Ljava/lang/Object;
 
-    invoke-interface {p1}, Landroid/content/DialogInterface;->dismiss()V
+    move-result-object v1
 
-    return-void
+    check-cast v1, Ldbd;
 
-    :pswitch_0
-    iget-object p2, p0, Ldbo;->a:Ldbp;
+    iget-object v1, v1, Ldbd;->a:Ldvp;
 
-    iget-object v1, p0, Ldbo;->b:Lklv;
+    invoke-virtual {v1}, Ldvp;->b()Lhjz;
 
-    iget v3, p0, Ldbo;->c:I
+    move-result-object v1
 
-    iget v4, p0, Ldbo;->d:I
+    if-eqz v1, :cond_4
 
-    invoke-virtual {p2, v1, v3, v4, v0}, Ldbp;->f(Lklv;III)V
+    iget-object v2, p0, Ldbo;->k:Ljti;
 
-    invoke-interface {p1}, Landroid/content/DialogInterface;->dismiss()V
+    iget-object v3, v1, Lhjz;->p:[Lhjy;
 
-    iget-object p1, p2, Ldbp;->b:Lcdx;
+    iget-object v4, v1, Lhjz;->n:Landroid/graphics/Rect;
 
-    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+    invoke-virtual {v2, v3, v4}, Ljti;->a([Lhjy;Landroid/graphics/Rect;)Z
 
-    move-result-object p2
+    move-result v2
 
-    invoke-static {p2}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+    iput-boolean v2, p0, Ldbo;->j:Z
 
-    move-result-object p2
+    iget-object v2, p0, Ldbo;->i:Lojc;
 
-    invoke-virtual {p2, v2}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
+    invoke-virtual {v2}, Lojc;->g()Z
 
-    move-result-object p2
+    move-result v2
 
-    invoke-virtual {p1, p2}, Lcdx;->a(Ljava/lang/String;)V
+    if-eqz v2, :cond_2
 
-    return-void
+    invoke-virtual {v0}, Lojc;->c()Ljava/lang/Object;
 
-    :pswitch_1
-    iget-object p2, p0, Ldbo;->a:Ldbp;
+    move-result-object v0
 
-    iget-object v0, p0, Ldbo;->b:Lklv;
+    check-cast v0, Ldbd;
 
-    iget v2, p0, Ldbo;->c:I
+    iget-object v0, v0, Ldbd;->b:Lfua;
 
-    iget v3, p0, Ldbo;->d:I
+    iget-object v2, p0, Ldbo;->i:Lojc;
 
-    invoke-virtual {p2, v0, v2, v3, v1}, Ldbp;->e(Lklv;III)V
+    invoke-virtual {v2}, Lojc;->c()Ljava/lang/Object;
 
-    invoke-interface {p1}, Landroid/content/DialogInterface;->dismiss()V
+    move-result-object v2
 
-    return-void
+    check-cast v2, Lhjz;
 
-    :pswitch_2
-    iget-object p1, p0, Ldbo;->a:Ldbp;
+    invoke-virtual {v0, v2, v1}, Lfua;->a(Lhjz;Lhjz;)F
 
-    iget-object p2, p0, Ldbo;->b:Lklv;
+    move-result v0
 
-    iget v0, p0, Ldbo;->c:I
+    invoke-static {v0}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
 
-    iget v2, p0, Ldbo;->d:I
+    move-result-object v0
 
-    invoke-virtual {p1, p2, v0, v2, v1}, Ldbp;->f(Lklv;III)V
+    invoke-static {v0}, Lojc;->i(Ljava/lang/Object;)Lojc;
 
-    iget-object p2, p1, Ldbp;->a:Landroid/content/Context;
+    move-result-object v0
 
-    iget-object p1, p1, Ldbp;->d:Lcvr;
+    iput-object v0, p0, Ldbo;->d:Lojc;
 
-    invoke-virtual {p1}, Lcvr;->h()Ljava/lang/String;
+    :cond_2
+    invoke-static {v1}, Lojc;->i(Ljava/lang/Object;)Lojc;
+
+    move-result-object v0
+
+    iput-object v0, p0, Ldbo;->i:Lojc;
+
+    new-instance v0, Ldbn;
+
+    iget-boolean v1, p0, Ldbo;->j:Z
+
+    invoke-direct {v0, p1, p2, v1}, Ldbn;-><init>(FFZ)V
+
+    invoke-static {v0}, Lojc;->i(Ljava/lang/Object;)Lojc;
 
     move-result-object p1
 
-    invoke-static {p1}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
+    iput-object p1, p0, Ldbo;->c:Lojc;
 
-    move-result-object p1
+    iget-object p1, p0, Ldbo;->b:Ldcr;
 
-    invoke-static {p2, p1}, Lbze;->ac(Landroid/content/Context;Landroid/net/Uri;)V
+    invoke-virtual {p1}, Ldcr;->c()Z
 
-    return-void
+    move-result p1
 
-    :pswitch_3
-    iget-object p2, p0, Ldbo;->a:Ldbp;
+    iget-object p2, p0, Ldbo;->b:Ldcr;
 
-    iget-object v0, p0, Ldbo;->b:Lklv;
+    invoke-virtual {p2, p3, p4}, Ldcr;->b(J)V
 
-    iget v1, p0, Ldbo;->c:I
+    iget-object p2, p0, Ldbo;->b:Ldcr;
 
-    iget v4, p0, Ldbo;->d:I
+    invoke-virtual {p2}, Ldcr;->c()Z
 
-    invoke-virtual {p2, v0, v1, v4, v3}, Ldbp;->f(Lklv;III)V
+    move-result p2
 
-    invoke-interface {p1}, Landroid/content/DialogInterface;->dismiss()V
+    if-eq p2, p1, :cond_3
 
-    iget-object p1, p2, Ldbp;->b:Lcdx;
+    iget-object p1, p0, Ldbo;->b:Ldcr;
 
-    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+    invoke-virtual {p1}, Ldcr;->c()Z
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    move-result-object p2
-
-    invoke-static {p2}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object p2
-
-    invoke-virtual {p2, v2}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object p2
-
-    invoke-virtual {p1, p2}, Lcdx;->a(Ljava/lang/String;)V
+    :cond_3
+    monitor-exit p0
 
     return-void
 
-    :pswitch_4
-    iget-object p2, p0, Ldbo;->a:Ldbp;
-
-    iget-object v0, p0, Ldbo;->b:Lklv;
-
-    iget v1, p0, Ldbo;->c:I
-
-    iget v2, p0, Ldbo;->d:I
-
-    invoke-virtual {p2, v0, v1, v2, v3}, Ldbp;->e(Lklv;III)V
-
-    invoke-interface {p1}, Landroid/content/DialogInterface;->dismiss()V
+    :cond_4
+    :goto_0
+    monitor-exit p0
 
     return-void
 
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_4
-        :pswitch_3
-        :pswitch_2
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
+    :catchall_0
+    move-exception p1
+
+    monitor-exit p0
+
+    goto :goto_2
+
+    :goto_1
+    throw p1
+
+    :goto_2
+    goto :goto_1
+.end method
+
+.method public final declared-synchronized b()V
+    .locals 1
+
+    monitor-enter p0
+
+    :try_start_0
+    sget-object v0, Loih;->a:Loih;
+
+    iput-object v0, p0, Ldbo;->c:Lojc;
+
+    iget-object v0, p0, Ldbo;->b:Ldcr;
+
+    invoke-virtual {v0}, Ldcr;->a()V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    monitor-exit p0
+
+    return-void
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit p0
+
+    throw v0
 .end method

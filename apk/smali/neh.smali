@@ -1,20 +1,7 @@
-.class public final Lneh;
+.class public interface abstract Lneh;
 .super Ljava/lang/Object;
 
 
-# static fields
-.field public static final a:Lneg;
-
-
-# direct methods
-.method static constructor <clinit>()V
-    .locals 1
-
-    new-instance v0, Lnel;
-
-    invoke-direct {v0}, Lnel;-><init>()V
-
-    sput-object v0, Lneh;->a:Lneg;
-
-    return-void
+# virtual methods
+.method public abstract a()Lojc;
 .end method

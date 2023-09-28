@@ -3,13 +3,13 @@
 
 
 # static fields
-.field public static final burst_overlay:I = 0x7f120001
+.field public static final burst_overlay:I = 0x7f120000
 
-.field public static final social_apps_selected:I = 0x7f120006
+.field public static final social_apps_selected:I = 0x7f120005
 
-.field public static final social_share_info:I = 0x7f120007
+.field public static final social_share_info:I = 0x7f120006
 
-.field public static final social_share_select_error:I = 0x7f120008
+.field public static final social_share_select_error:I = 0x7f120007
 
 
 # direct methods

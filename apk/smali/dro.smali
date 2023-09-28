@@ -1,51 +1,237 @@
-.class public final synthetic Ldro;
+.class final Ldro;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Ldrb;
 
 
 # instance fields
-.field public final synthetic a:Lnph;
-
-.field public final synthetic b:Llde;
+.field final synthetic a:Ldrp;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lnph;Llde;)V
+.method public constructor <init>(Ldrp;)V
     .locals 0
 
+    iput-object p1, p0, Ldro;->a:Ldrp;
+
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Ldro;->a:Lnph;
-
-    iput-object p2, p0, Ldro;->b:Llde;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final run()V
-    .locals 2
+.method public final f()Ljava/util/Set;
+    .locals 3
 
-    iget-object v0, p0, Ldro;->a:Lnph;
+    new-instance v0, Ljava/util/HashSet;
 
-    iget-object v1, p0, Ldro;->b:Llde;
+    invoke-direct {v0}, Ljava/util/HashSet;-><init>()V
 
-    invoke-virtual {v1}, Llbk;->c()Llcv;
+    iget-object v1, p0, Ldro;->a:Ldrp;
 
-    move-result-object v1
+    iget-object v1, v1, Ldrp;->d:Ljava/util/List;
 
-    check-cast v1, Llda;
-
-    iget v1, v1, Llcw;->b:I
-
-    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-interface {v1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object v1
 
-    invoke-virtual {v0, v1}, Lnph;->e(Ljava/lang/Object;)Z
+    :goto_0
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
+    move-result v2
+
+    if-eqz v2, :cond_0
+
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Ldrb;
+
+    invoke-interface {v2}, Ldrb;->f()Ljava/util/Set;
+
+    move-result-object v2
+
+    invoke-interface {v0, v2}, Ljava/util/Set;->addAll(Ljava/util/Collection;)Z
+
+    goto :goto_0
+
+    :cond_0
+    return-object v0
+.end method
+
+.method public final g(Landroid/hardware/Sensor;)V
+    .locals 3
+
+    iget-object v0, p0, Ldro;->a:Ldrp;
+
+    iget-object v0, v0, Ldrp;->d:Ljava/util/List;
+
+    invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+
+    move-result-object v0
+
+    :cond_0
+    :goto_0
+    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_1
+
+    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Ldrb;
+
+    invoke-interface {v1}, Ldrb;->f()Ljava/util/Set;
+
+    move-result-object v2
+
+    invoke-interface {v2, p1}, Ljava/util/Set;->contains(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_0
+
+    invoke-interface {v1, p1}, Ldrb;->g(Landroid/hardware/Sensor;)V
+
+    goto :goto_0
+
+    :cond_1
+    return-void
+.end method
+
+.method public final h(Landroid/hardware/Sensor;)V
+    .locals 3
+
+    iget-object v0, p0, Ldro;->a:Ldrp;
+
+    iget-object v0, v0, Ldrp;->d:Ljava/util/List;
+
+    invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+
+    move-result-object v0
+
+    :cond_0
+    :goto_0
+    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_1
+
+    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Ldrb;
+
+    invoke-interface {v1}, Ldrb;->f()Ljava/util/Set;
+
+    move-result-object v2
+
+    invoke-interface {v2, p1}, Ljava/util/Set;->contains(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_0
+
+    invoke-interface {v1, p1}, Ldrb;->h(Landroid/hardware/Sensor;)V
+
+    goto :goto_0
+
+    :cond_1
+    return-void
+.end method
+
+.method public final onAccuracyChanged(Landroid/hardware/Sensor;I)V
+    .locals 3
+
+    iget-object v0, p0, Ldro;->a:Ldrp;
+
+    iget-object v0, v0, Ldrp;->d:Ljava/util/List;
+
+    invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+
+    move-result-object v0
+
+    :cond_0
+    :goto_0
+    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_1
+
+    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Ldrb;
+
+    invoke-interface {v1}, Ldrb;->f()Ljava/util/Set;
+
+    move-result-object v2
+
+    invoke-interface {v2, p1}, Ljava/util/Set;->contains(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_0
+
+    invoke-interface {v1, p1, p2}, Ldrb;->onAccuracyChanged(Landroid/hardware/Sensor;I)V
+
+    goto :goto_0
+
+    :cond_1
+    return-void
+.end method
+
+.method public final onSensorChanged(Landroid/hardware/SensorEvent;)V
+    .locals 4
+
+    iget-object v0, p0, Ldro;->a:Ldrp;
+
+    iget-object v0, v0, Ldrp;->d:Ljava/util/List;
+
+    invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+
+    move-result-object v0
+
+    :cond_0
+    :goto_0
+    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_1
+
+    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Ldrb;
+
+    invoke-interface {v1}, Ldrb;->f()Ljava/util/Set;
+
+    move-result-object v2
+
+    iget-object v3, p1, Landroid/hardware/SensorEvent;->sensor:Landroid/hardware/Sensor;
+
+    invoke-interface {v2, v3}, Ljava/util/Set;->contains(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_0
+
+    invoke-interface {v1, p1}, Ldrb;->onSensorChanged(Landroid/hardware/SensorEvent;)V
+
+    goto :goto_0
+
+    :cond_1
     return-void
 .end method

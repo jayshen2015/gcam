@@ -71,19 +71,19 @@
 
 .field public static final ic_resume_pause_rectangle_path_4_animation:I = 0x7f010035
 
-.field public static final on_camera_exit:I = 0x7f010043
+.field public static final on_camera_exit:I = 0x7f010039
 
-.field public static final on_photos_enter:I = 0x7f010044
+.field public static final on_photos_enter:I = 0x7f01003a
 
-.field public static final photos_transition_noanim:I = 0x7f01004a
+.field public static final photos_transition_noanim:I = 0x7f010040
 
-.field public static final side_control_state_list:I = 0x7f010050
+.field public static final side_control_state_list:I = 0x7f010042
 
-.field public static final tooltip_animation_interpolator:I = 0x7f010051
+.field public static final tooltip_animation_interpolator:I = 0x7f010043
 
-.field public static final tooltip_popup_hide:I = 0x7f010052
+.field public static final tooltip_popup_hide:I = 0x7f010044
 
-.field public static final tooltip_popup_show:I = 0x7f010053
+.field public static final tooltip_popup_show:I = 0x7f010045
 
 
 # direct methods

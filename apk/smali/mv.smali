@@ -1,256 +1,397 @@
-.class public abstract Lmv;
-.super Llv;
+.class public final Lmv;
+.super Landroid/widget/EditText;
+
+
+# instance fields
+.field private final a:Lmp;
+
+.field private final b:Lnt;
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 0
+.method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
+    .locals 1
 
-    invoke-direct {p0}, Llv;-><init>()V
+    invoke-static {p1}, Lrk;->a(Landroid/content/Context;)V
+
+    const v0, 0x7f0401e1
+
+    invoke-direct {p0, p1, p2, v0}, Landroid/widget/EditText;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
+
+    invoke-virtual {p0}, Lmv;->getContext()Landroid/content/Context;
+
+    move-result-object p1
+
+    invoke-static {p0, p1}, Lri;->d(Landroid/view/View;Landroid/content/Context;)V
+
+    new-instance p1, Lmp;
+
+    invoke-direct {p1, p0}, Lmp;-><init>(Landroid/view/View;)V
+
+    iput-object p1, p0, Lmv;->a:Lmp;
+
+    invoke-virtual {p1, p2, v0}, Lmp;->d(Landroid/util/AttributeSet;I)V
+
+    new-instance p1, Lnt;
+
+    invoke-direct {p1, p0}, Lnt;-><init>(Landroid/widget/TextView;)V
+
+    iput-object p1, p0, Lmv;->b:Lnt;
+
+    invoke-virtual {p1, p2, v0}, Lnt;->b(Landroid/util/AttributeSet;I)V
+
+    invoke-virtual {p1}, Lnt;->a()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public abstract e(Lmo;Lmo;IIII)Z
-.end method
+.method protected final drawableStateChanged()V
+    .locals 1
 
-.method public abstract f(Lmo;IIII)Z
-.end method
+    invoke-super {p0}, Landroid/widget/EditText;->drawableStateChanged()V
 
-.method public abstract i(Lmo;)V
-.end method
-
-.method public abstract j(Lmo;)V
-.end method
-
-.method public final n(Lmo;)Z
-    .locals 0
-
-    invoke-virtual {p1}, Lmo;->s()Z
-
-    move-result p1
-
-    if-eqz p1, :cond_0
-
-    const/4 p1, 0x1
-
-    return p1
-
-    :cond_0
-    const/4 p1, 0x0
-
-    return p1
-.end method
-
-.method public final p(Lmo;Laev;Laev;)Z
-    .locals 6
-
-    if-eqz p2, :cond_1
-
-    iget v2, p2, Laev;->b:I
-
-    iget v4, p3, Laev;->b:I
-
-    if-ne v2, v4, :cond_0
-
-    iget v0, p2, Laev;->a:I
-
-    iget v1, p3, Laev;->a:I
-
-    if-eq v0, v1, :cond_1
-
-    :cond_0
-    iget v3, p2, Laev;->a:I
-
-    iget v5, p3, Laev;->a:I
-
-    move-object v0, p0
-
-    move-object v1, p1
-
-    invoke-virtual/range {v0 .. v5}, Lmv;->f(Lmo;IIII)Z
-
-    move-result p1
-
-    return p1
-
-    :cond_1
-    invoke-virtual {p0, p1}, Lmv;->i(Lmo;)V
-
-    const/4 p1, 0x1
-
-    return p1
-.end method
-
-.method public final q(Lmo;Lmo;Laev;Laev;)Z
-    .locals 7
-
-    iget v3, p3, Laev;->b:I
-
-    iget v4, p3, Laev;->a:I
-
-    invoke-virtual {p2}, Lmo;->z()Z
-
-    move-result v0
+    iget-object v0, p0, Lmv;->a:Lmp;
 
     if-eqz v0, :cond_0
 
-    iget p4, p3, Laev;->b:I
-
-    iget p3, p3, Laev;->a:I
-
-    move v6, p3
-
-    move v5, p4
-
-    goto :goto_0
+    invoke-virtual {v0}, Lmp;->c()V
 
     :cond_0
-    iget p3, p4, Laev;->b:I
+    iget-object v0, p0, Lmv;->b:Lnt;
 
-    iget p4, p4, Laev;->a:I
+    if-eqz v0, :cond_1
 
-    move v5, p3
+    invoke-virtual {v0}, Lnt;->a()V
 
-    move v6, p4
-
-    :goto_0
-    move-object v0, p0
-
-    move-object v1, p1
-
-    move-object v2, p2
-
-    invoke-virtual/range {v0 .. v6}, Lmv;->e(Lmo;Lmo;IIII)Z
-
-    move-result p1
-
-    return p1
+    :cond_1
+    return-void
 .end method
 
-.method public final r(Lmo;Laev;Laev;)Z
-    .locals 6
+.method public final bridge synthetic getText()Ljava/lang/CharSequence;
+    .locals 1
 
-    iget v2, p2, Laev;->b:I
+    invoke-virtual {p0}, Lmv;->getText()Landroid/text/Editable;
 
-    iget v3, p2, Laev;->a:I
+    move-result-object v0
 
-    iget-object p2, p1, Lmo;->a:Landroid/view/View;
+    return-object v0
+.end method
 
-    if-nez p3, :cond_0
+.method public final onCreateInputConnection(Landroid/view/inputmethod/EditorInfo;)Landroid/view/inputmethod/InputConnection;
+    .locals 3
 
-    invoke-virtual {p2}, Landroid/view/View;->getLeft()I
+    invoke-super {p0, p1}, Landroid/widget/EditText;->onCreateInputConnection(Landroid/view/inputmethod/EditorInfo;)Landroid/view/inputmethod/InputConnection;
 
-    move-result v0
+    move-result-object v0
 
-    move v4, v0
+    invoke-static {v0, p1, p0}, Lgb;->d(Landroid/view/inputmethod/InputConnection;Landroid/view/inputmethod/EditorInfo;Landroid/view/View;)V
 
-    goto :goto_0
+    invoke-static {p0}, Lgl;->Z(Landroid/view/View;)[Ljava/lang/String;
+
+    move-result-object v1
+
+    if-eqz v0, :cond_0
+
+    if-eqz v1, :cond_0
+
+    iput-object v1, p1, Landroid/view/inputmethod/EditorInfo;->contentMimeTypes:[Ljava/lang/String;
+
+    new-instance v1, Lnd;
+
+    invoke-direct {v1, p0}, Lnd;-><init>(Landroid/view/View;)V
+
+    const-string v2, "editorInfo must be non-null"
+
+    invoke-static {p1, v2}, Leu;->c(Ljava/lang/Object;Ljava/lang/String;)V
+
+    new-instance p1, Labt;
+
+    invoke-direct {p1, v0, v1}, Labt;-><init>(Landroid/view/inputmethod/InputConnection;Lnd;)V
+
+    return-object p1
 
     :cond_0
-    iget v0, p3, Laev;->b:I
+    return-object v0
+.end method
 
-    move v4, v0
+.method public final onDragEvent(Landroid/view/DragEvent;)Z
+    .locals 4
+
+    invoke-virtual {p1}, Landroid/view/DragEvent;->getLocalState()Ljava/lang/Object;
+
+    move-result-object v0
+
+    if-nez v0, :cond_4
+
+    invoke-static {p0}, Lgl;->Z(Landroid/view/View;)[Ljava/lang/String;
+
+    move-result-object v0
+
+    if-nez v0, :cond_0
+
+    goto :goto_2
+
+    :cond_0
+    invoke-virtual {p0}, Landroid/view/View;->getContext()Landroid/content/Context;
+
+    move-result-object v0
 
     :goto_0
-    if-nez p3, :cond_1
+    instance-of v1, v0, Landroid/content/ContextWrapper;
 
-    invoke-virtual {p2}, Landroid/view/View;->getTop()I
+    if-eqz v1, :cond_2
 
-    move-result p3
+    instance-of v1, v0, Landroid/app/Activity;
 
-    move v5, p3
+    if-eqz v1, :cond_1
+
+    check-cast v0, Landroid/app/Activity;
 
     goto :goto_1
 
     :cond_1
-    iget p3, p3, Laev;->a:I
+    check-cast v0, Landroid/content/ContextWrapper;
 
-    move v5, p3
+    invoke-virtual {v0}, Landroid/content/ContextWrapper;->getBaseContext()Landroid/content/Context;
 
-    :goto_1
-    invoke-virtual {p1}, Lmo;->u()Z
+    move-result-object v0
 
-    move-result p3
-
-    if-nez p3, :cond_3
-
-    if-ne v2, v4, :cond_2
-
-    if-eq v3, v5, :cond_3
+    goto :goto_0
 
     :cond_2
-    invoke-virtual {p2}, Landroid/view/View;->getWidth()I
+    const/4 v0, 0x0
 
-    move-result p3
+    :goto_1
+    if-nez v0, :cond_3
 
-    add-int/2addr p3, v4
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    invoke-virtual {p2}, Landroid/view/View;->getHeight()I
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v1, "Can\'t handle drop: no activity: view="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    goto :goto_2
+
+    :cond_3
+    invoke-virtual {p1}, Landroid/view/DragEvent;->getAction()I
+
+    move-result v1
+
+    const/4 v2, 0x1
+
+    if-eq v1, v2, :cond_4
+
+    invoke-virtual {p1}, Landroid/view/DragEvent;->getAction()I
+
+    move-result v1
+
+    const/4 v3, 0x3
+
+    if-ne v1, v3, :cond_4
+
+    invoke-virtual {v0, p1}, Landroid/app/Activity;->requestDragAndDropPermissions(Landroid/view/DragEvent;)Landroid/view/DragAndDropPermissions;
+
+    invoke-virtual {p1}, Landroid/view/DragEvent;->getX()F
 
     move-result v0
 
-    add-int/2addr v0, v5
+    invoke-virtual {p1}, Landroid/view/DragEvent;->getY()F
 
-    invoke-virtual {p2, v4, v5, p3, v0}, Landroid/view/View;->layout(IIII)V
+    move-result v1
 
-    move-object v0, p0
+    invoke-virtual {p0, v0, v1}, Landroid/widget/TextView;->getOffsetForPosition(FF)I
 
-    move-object v1, p1
+    move-result v0
 
-    invoke-virtual/range {v0 .. v5}, Lmv;->f(Lmo;IIII)Z
+    invoke-virtual {p0}, Landroid/widget/TextView;->beginBatchEdit()V
+
+    :try_start_0
+    invoke-virtual {p0}, Lmv;->getText()Landroid/text/Editable;
+
+    move-result-object v1
+
+    invoke-static {v1, v0}, Landroid/text/Selection;->setSelection(Landroid/text/Spannable;I)V
+
+    invoke-virtual {p1}, Landroid/view/DragEvent;->getClipData()Landroid/content/ClipData;
+
+    move-result-object p1
+
+    new-instance v0, Lfi;
+
+    invoke-direct {v0, p1, v3}, Lfi;-><init>(Landroid/content/ClipData;I)V
+
+    invoke-static {v0}, Leu;->e(Lfi;)Lfk;
+
+    move-result-object p1
+
+    invoke-static {p0, p1}, Lgl;->o(Landroid/view/View;Lfk;)Lfk;
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    invoke-virtual {p0}, Landroid/widget/TextView;->endBatchEdit()V
+
+    return v2
+
+    :catchall_0
+    move-exception p1
+
+    invoke-virtual {p0}, Landroid/widget/TextView;->endBatchEdit()V
+
+    throw p1
+
+    :cond_4
+    :goto_2
+    invoke-super {p0, p1}, Landroid/widget/EditText;->onDragEvent(Landroid/view/DragEvent;)Z
 
     move-result p1
-
-    return p1
-
-    :cond_3
-    invoke-virtual {p0, p1}, Lmv;->j(Lmo;)V
-
-    const/4 p1, 0x1
 
     return p1
 .end method
 
-.method public final s(Lmo;Laev;Laev;)Z
-    .locals 6
+.method public final onTextContextMenuItem(I)Z
+    .locals 4
 
-    iget v2, p2, Laev;->b:I
+    const v0, 0x1020022
 
-    iget v4, p3, Laev;->b:I
+    const v1, 0x1020031
 
-    if-ne v2, v4, :cond_1
+    if-eq p1, v0, :cond_0
 
-    iget v0, p2, Laev;->a:I
+    if-ne p1, v1, :cond_1
 
-    iget v1, p3, Laev;->a:I
-
-    if-eq v0, v1, :cond_0
+    const p1, 0x1020031
 
     goto :goto_0
 
     :cond_0
-    invoke-virtual {p0, p1}, Llv;->l(Lmo;)V
+    move v1, p1
 
-    const/4 p1, 0x0
+    :goto_0
+    invoke-static {p0}, Lgl;->Z(Landroid/view/View;)[Ljava/lang/String;
 
-    return p1
+    move-result-object v2
+
+    if-nez v2, :cond_2
 
     :cond_1
-    :goto_0
-    iget v3, p2, Laev;->a:I
-
-    iget v5, p3, Laev;->a:I
-
-    move-object v0, p0
-
-    move-object v1, p1
-
-    invoke-virtual/range {v0 .. v5}, Lmv;->f(Lmo;IIII)Z
+    invoke-super {p0, p1}, Landroid/widget/EditText;->onTextContextMenuItem(I)Z
 
     move-result p1
 
     return p1
+
+    :cond_2
+    invoke-virtual {p0}, Landroid/widget/TextView;->getContext()Landroid/content/Context;
+
+    move-result-object p1
+
+    const-string v2, "clipboard"
+
+    invoke-virtual {p1, v2}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object p1
+
+    check-cast p1, Landroid/content/ClipboardManager;
+
+    if-nez p1, :cond_3
+
+    const/4 p1, 0x0
+
+    goto :goto_1
+
+    :cond_3
+    invoke-virtual {p1}, Landroid/content/ClipboardManager;->getPrimaryClip()Landroid/content/ClipData;
+
+    move-result-object p1
+
+    :goto_1
+    const/4 v2, 0x1
+
+    if-eqz p1, :cond_5
+
+    invoke-virtual {p1}, Landroid/content/ClipData;->getItemCount()I
+
+    move-result v3
+
+    if-lez v3, :cond_5
+
+    new-instance v3, Lfi;
+
+    invoke-direct {v3, p1, v2}, Lfi;-><init>(Landroid/content/ClipData;I)V
+
+    if-ne v1, v0, :cond_4
+
+    const/4 p1, 0x0
+
+    goto :goto_2
+
+    :cond_4
+    const/4 p1, 0x1
+
+    :goto_2
+    iget-object v0, v3, Lfi;->a:Landroid/view/ContentInfo$Builder;
+
+    invoke-virtual {v0, p1}, Landroid/view/ContentInfo$Builder;->setFlags(I)Landroid/view/ContentInfo$Builder;
+
+    invoke-static {v3}, Leu;->e(Lfi;)Lfk;
+
+    move-result-object p1
+
+    invoke-static {p0, p1}, Lgl;->o(Landroid/view/View;Lfk;)Lfk;
+
+    :cond_5
+    return v2
+.end method
+
+.method public final setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
+    .locals 0
+
+    invoke-super {p0, p1}, Landroid/widget/EditText;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
+
+    iget-object p1, p0, Lmv;->a:Lmp;
+
+    if-eqz p1, :cond_0
+
+    invoke-virtual {p1}, Lmp;->i()V
+
+    :cond_0
+    return-void
+.end method
+
+.method public final setBackgroundResource(I)V
+    .locals 1
+
+    invoke-super {p0, p1}, Landroid/widget/EditText;->setBackgroundResource(I)V
+
+    iget-object v0, p0, Lmv;->a:Lmp;
+
+    if-eqz v0, :cond_0
+
+    invoke-virtual {v0, p1}, Lmp;->e(I)V
+
+    :cond_0
+    return-void
+.end method
+
+.method public final setTextAppearance(Landroid/content/Context;I)V
+    .locals 1
+
+    invoke-super {p0, p1, p2}, Landroid/widget/EditText;->setTextAppearance(Landroid/content/Context;I)V
+
+    iget-object v0, p0, Lmv;->b:Lnt;
+
+    if-eqz v0, :cond_0
+
+    invoke-virtual {v0, p1, p2}, Lnt;->c(Landroid/content/Context;I)V
+
+    :cond_0
+    return-void
 .end method

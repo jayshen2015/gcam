@@ -1,69 +1,163 @@
-.class final Louz;
-.super Lovf;
+.class public Louz;
+.super Ljava/lang/Object;
 
-
-# instance fields
-.field public final a:Loop;
+# interfaces
+.implements Lova;
 
 
 # direct methods
 .method public constructor <init>()V
-    .locals 1
+    .locals 0
 
-    invoke-direct {p0}, Lovf;-><init>()V
-
-    const/4 v0, 0x0
-
-    invoke-static {v0}, Lolp;->k(Ljava/lang/Object;)Loop;
-
-    move-result-object v0
-
-    iput-object v0, p0, Louz;->a:Loop;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final bridge synthetic a(Ljava/lang/Object;)Z
-    .locals 1
+.method public final A(Ljava/lang/String;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V
+    .locals 0
 
-    check-cast p1, Loux;
-
-    iget-object p1, p0, Louz;->a:Loop;
-
-    iget-object p1, p1, Loop;->a:Ljava/lang/Object;
-
-    if-eqz p1, :cond_0
-
-    const/4 p1, 0x0
-
-    return p1
-
-    :cond_0
-    iget-object p1, p0, Louz;->a:Loop;
-
-    sget-object v0, Louy;->a:Loxb;
-
-    invoke-virtual {p1, v0}, Loop;->c(Ljava/lang/Object;)V
-
-    const/4 p1, 0x1
-
-    return p1
+    return-void
 .end method
 
-.method public final bridge synthetic b(Ljava/lang/Object;)[Loku;
+.method public final B(Ljava/lang/String;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V
+    .locals 0
+
+    return-void
+.end method
+
+.method public final C(Ljava/lang/String;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V
+    .locals 0
+
+    return-void
+.end method
+
+.method public final F(FLjava/lang/Object;)V
+    .locals 0
+
+    return-void
+.end method
+
+.method public final G(I)Lova;
+    .locals 0
+
+    return-object p0
+.end method
+
+.method public final H(Ljava/util/concurrent/TimeUnit;)Lova;
     .locals 1
 
-    check-cast p1, Loux;
+    const-string v0, "time unit"
 
-    iget-object p1, p0, Louz;->a:Loop;
+    invoke-static {p1, v0}, Loxh;->x(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
-    const/4 v0, 0x0
+    return-object p0
+.end method
 
-    invoke-virtual {p1, v0}, Loop;->c(Ljava/lang/Object;)V
+.method public final I(FF)V
+    .locals 0
 
-    sget-object p1, Love;->a:[Loku;
+    return-void
+.end method
 
-    return-object p1
+.method public final J(IJ)V
+    .locals 0
+
+    return-void
+.end method
+
+.method public final g(Lovd;Ljava/lang/Object;)Lova;
+    .locals 0
+
+    return-object p0
+.end method
+
+.method public final h(Ljava/lang/Throwable;)Lova;
+    .locals 0
+
+    return-object p0
+.end method
+
+.method public final i(Lovf;)Lova;
+    .locals 1
+
+    const-string v0, "stack size"
+
+    invoke-static {p1, v0}, Loxh;->x(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+
+    return-object p0
+.end method
+
+.method public final o(Ljava/lang/String;)V
+    .locals 0
+
+    return-void
+.end method
+
+.method public final p(Ljava/lang/String;I)V
+    .locals 0
+
+    return-void
+.end method
+
+.method public final q(Ljava/lang/String;J)V
+    .locals 0
+
+    return-void
+.end method
+
+.method public final r(Ljava/lang/String;Ljava/lang/Object;)V
+    .locals 0
+
+    return-void
+.end method
+
+.method public final s(Ljava/lang/String;II)V
+    .locals 0
+
+    return-void
+.end method
+
+.method public final t(Ljava/lang/String;ILjava/lang/Object;)V
+    .locals 0
+
+    return-void
+.end method
+
+.method public final u(Ljava/lang/String;JJ)V
+    .locals 0
+
+    return-void
+.end method
+
+.method public final v(Ljava/lang/String;JLjava/lang/Object;)V
+    .locals 0
+
+    return-void
+.end method
+
+.method public final w(Ljava/lang/String;Ljava/lang/Object;I)V
+    .locals 0
+
+    return-void
+.end method
+
+.method public final x(Ljava/lang/String;Ljava/lang/Object;J)V
+    .locals 0
+
+    return-void
+.end method
+
+.method public final y(Ljava/lang/String;Ljava/lang/Object;Ljava/lang/Object;)V
+    .locals 0
+
+    return-void
+.end method
+
+.method public final z(Ljava/lang/String;Ljava/lang/Object;Z)V
+    .locals 0
+
+    return-void
 .end method

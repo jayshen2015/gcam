@@ -1,98 +1,46 @@
-.class public abstract Lmuu;
-.super Lmuo;
+.class public final synthetic Lmuu;
+.super Ljava/lang/Object;
 
 # interfaces
-.implements Ljava/util/Queue;
+.implements Ljava/lang/Runnable;
+
+
+# instance fields
+.field public final synthetic a:Lmuv;
+
+.field public final synthetic b:Ljava/lang/Runnable;
 
 
 # direct methods
-.method protected constructor <init>()V
+.method public synthetic constructor <init>(Lmuv;Ljava/lang/Runnable;)V
     .locals 0
 
-    invoke-direct {p0}, Lmuo;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lmuu;->a:Lmuv;
+
+    iput-object p2, p0, Lmuu;->b:Ljava/lang/Runnable;
 
     return-void
 .end method
 
 
 # virtual methods
-.method protected bridge synthetic b()Ljava/util/Collection;
-    .locals 1
+.method public final run()V
+    .locals 2
 
-    const/4 v0, 0x0
+    iget-object v0, p0, Lmuu;->a:Lmuv;
 
-    throw v0
-.end method
+    iget-object v1, p0, Lmuu;->b:Ljava/lang/Runnable;
 
-.method protected abstract d()Ljava/util/Queue;
-.end method
+    iget v0, v0, Lmuv;->a:I
 
-.method public final element()Ljava/lang/Object;
-    .locals 1
+    if-eqz v0, :cond_0
 
-    invoke-virtual {p0}, Lmuu;->d()Ljava/util/Queue;
+    invoke-static {v0}, Landroid/os/Process;->setThreadPriority(I)V
 
-    move-result-object v0
+    :cond_0
+    invoke-interface {v1}, Ljava/lang/Runnable;->run()V
 
-    invoke-interface {v0}, Ljava/util/Queue;->element()Ljava/lang/Object;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public offer(Ljava/lang/Object;)Z
-    .locals 1
-
-    invoke-virtual {p0}, Lmuu;->d()Ljava/util/Queue;
-
-    move-result-object v0
-
-    invoke-interface {v0, p1}, Ljava/util/Queue;->offer(Ljava/lang/Object;)Z
-
-    move-result p1
-
-    return p1
-.end method
-
-.method public final peek()Ljava/lang/Object;
-    .locals 1
-
-    invoke-virtual {p0}, Lmuu;->d()Ljava/util/Queue;
-
-    move-result-object v0
-
-    invoke-interface {v0}, Ljava/util/Queue;->peek()Ljava/lang/Object;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public final poll()Ljava/lang/Object;
-    .locals 1
-
-    invoke-virtual {p0}, Lmuu;->d()Ljava/util/Queue;
-
-    move-result-object v0
-
-    invoke-interface {v0}, Ljava/util/Queue;->poll()Ljava/lang/Object;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public final remove()Ljava/lang/Object;
-    .locals 1
-
-    invoke-virtual {p0}, Lmuu;->d()Ljava/util/Queue;
-
-    move-result-object v0
-
-    invoke-interface {v0}, Ljava/util/Queue;->remove()Ljava/lang/Object;
-
-    move-result-object v0
-
-    return-object v0
+    return-void
 .end method

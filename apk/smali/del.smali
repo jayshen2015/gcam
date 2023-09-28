@@ -1,51 +1,30 @@
 .class public final Ldel;
 .super Ljava/lang/Object;
 
-# interfaces
-.implements Logk;
 
-
-# instance fields
-.field private final a:Loiw;
+# static fields
+.field public static final a:Lnep;
 
 
 # direct methods
-.method public constructor <init>(Loiw;)V
-    .locals 0
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Ldel;->a:Loiw;
-
-    return-void
-.end method
-
-
-# virtual methods
-.method public final a()Ldek;
+.method static constructor <clinit>()V
     .locals 2
 
-    iget-object v0, p0, Ldel;->a:Loiw;
+    new-instance v0, Lnep;
 
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
+    const-string v1, "com.google.android.apps.camera"
 
-    move-result-object v0
+    invoke-static {v1}, Lneg;->a(Ljava/lang/String;)Landroid/net/Uri;
 
-    check-cast v0, Ljava/util/concurrent/ScheduledExecutorService;
+    move-result-object v1
 
-    new-instance v1, Ldek;
+    invoke-direct {v0, v1}, Lnep;-><init>(Landroid/net/Uri;)V
 
-    invoke-direct {v1, v0}, Ldek;-><init>(Ljava/util/concurrent/ScheduledExecutorService;)V
-
-    return-object v1
-.end method
-
-.method public final bridge synthetic get()Ljava/lang/Object;
-    .locals 1
-
-    invoke-virtual {p0}, Ldel;->a()Ldek;
+    invoke-virtual {v0}, Lnep;->a()Lnep;
 
     move-result-object v0
 
-    return-object v0
+    sput-object v0, Ldel;->a:Lnep;
+
+    return-void
 .end method

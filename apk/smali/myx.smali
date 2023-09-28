@@ -1,107 +1,41 @@
-.class final Lmyx;
-.super Lmwn;
+.class public final synthetic Lmyx;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Lojz;
 
 
 # instance fields
-.field private final transient a:Lmwa;
+.field public final synthetic a:Lmzd;
 
-.field private final transient b:Lmvv;
+.field public final synthetic b:Lqkg;
 
 
 # direct methods
-.method public constructor <init>(Lmwa;Lmvv;)V
+.method public synthetic constructor <init>(Lmzd;Lqkg;)V
     .locals 0
 
-    invoke-direct {p0}, Lmwn;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lmyx;->a:Lmwa;
+    iput-object p1, p0, Lmyx;->a:Lmzd;
 
-    iput-object p2, p0, Lmyx;->b:Lmvv;
+    iput-object p2, p0, Lmyx;->b:Lqkg;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final cA()Z
-    .locals 1
+.method public final a()Ljava/lang/Object;
+    .locals 2
 
-    const/4 v0, 0x1
+    iget-object v0, p0, Lmyx;->a:Lmzd;
 
-    return v0
-.end method
+    iget-object v1, p0, Lmyx;->b:Lqkg;
 
-.method public final contains(Ljava/lang/Object;)Z
-    .locals 1
-
-    iget-object v0, p0, Lmyx;->a:Lmwa;
-
-    invoke-virtual {v0, p1}, Lmwa;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object p1
-
-    if-eqz p1, :cond_0
-
-    const/4 p1, 0x1
-
-    return p1
-
-    :cond_0
-    const/4 p1, 0x0
-
-    return p1
-.end method
-
-.method public final cz()Lnac;
-    .locals 1
-
-    iget-object v0, p0, Lmyx;->b:Lmvv;
-
-    invoke-virtual {v0}, Lmvv;->s()Lnad;
+    invoke-virtual {v0, v1}, Lmzd;->b(Lqkg;)Ljava/lang/String;
 
     move-result-object v0
 
     return-object v0
-.end method
-
-.method public final bridge synthetic iterator()Ljava/util/Iterator;
-    .locals 1
-
-    invoke-virtual {p0}, Lmyx;->cz()Lnac;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public final size()I
-    .locals 1
-
-    iget-object v0, p0, Lmyx;->a:Lmwa;
-
-    invoke-virtual {v0}, Lmwa;->size()I
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public final v()Lmvv;
-    .locals 1
-
-    iget-object v0, p0, Lmyx;->b:Lmvv;
-
-    return-object v0
-.end method
-
-.method public final x([Ljava/lang/Object;I)I
-    .locals 1
-
-    iget-object v0, p0, Lmyx;->b:Lmvv;
-
-    invoke-virtual {v0, p1, p2}, Lmvm;->x([Ljava/lang/Object;I)I
-
-    move-result p1
-
-    return p1
 .end method

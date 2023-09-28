@@ -3,17 +3,17 @@
 
 
 # static fields
-.field public static final a:Lnak;
+.field public static final a:Louj;
 
 
 # instance fields
-.field public b:Lfbz;
+.field public b:Lfjs;
 
-.field public c:Lend;
+.field public c:Lenw;
 
 .field public d:Landroid/os/Handler;
 
-.field public e:Llas;
+.field public e:Lmos;
 
 .field private f:Z
 
@@ -24,11 +24,11 @@
 
     const-string v0, "com/google/android/apps/camera/keepalive/ProcessGcService"
 
-    invoke-static {v0}, Lnak;->h(Ljava/lang/String;)Lnak;
+    invoke-static {v0}, Louj;->h(Ljava/lang/String;)Louj;
 
     move-result-object v0
 
-    sput-object v0, Lcom/google/android/apps/camera/keepalive/ProcessGcService;->a:Lnak;
+    sput-object v0, Lcom/google/android/apps/camera/keepalive/ProcessGcService;->a:Louj;
 
     return-void
 .end method
@@ -48,81 +48,79 @@
 
 # virtual methods
 .method public final a(I)V
-    .locals 6
+    .locals 8
 
-    iget-object v0, p0, Lcom/google/android/apps/camera/keepalive/ProcessGcService;->b:Lfbz;
+    iget-object v0, p0, Lcom/google/android/apps/camera/keepalive/ProcessGcService;->b:Lfjs;
 
-    sget-object v1, Lnko;->d:Lnko;
+    sget-object v1, Lpdt;->d:Lpdt;
 
-    invoke-virtual {v1}, Lnws;->O()Lnwn;
+    invoke-virtual {v1}, Lppd;->m()Lpoy;
 
     move-result-object v1
 
-    iget-object v2, v1, Lnwn;->b:Lnws;
+    iget-boolean v2, v1, Lpoy;->c:Z
 
-    invoke-virtual {v2}, Lnws;->ac()Z
+    const/4 v3, 0x0
 
-    move-result v2
+    if-eqz v2, :cond_0
 
-    if-nez v2, :cond_0
+    invoke-virtual {v1}, Lpoy;->m()V
 
-    invoke-virtual {v1}, Lnwn;->p()V
+    iput-boolean v3, v1, Lpoy;->c:Z
 
     :cond_0
-    iget-object v2, v1, Lnwn;->b:Lnws;
+    iget-object v2, v1, Lpoy;->b:Lppd;
 
-    check-cast v2, Lnko;
+    check-cast v2, Lpdt;
 
     add-int/lit8 p1, p1, -0x1
 
-    iput p1, v2, Lnko;->b:I
+    iput p1, v2, Lpdt;->b:I
 
-    iget p1, v2, Lnko;->a:I
+    iget p1, v2, Lpdt;->a:I
 
     or-int/lit8 p1, p1, 0x1
 
-    iput p1, v2, Lnko;->a:I
+    iput p1, v2, Lpdt;->a:I
 
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
 
-    move-result-wide v2
+    move-result-wide v4
 
     invoke-static {}, Landroid/os/Process;->getStartUptimeMillis()J
 
-    move-result-wide v4
+    move-result-wide v6
 
-    sub-long/2addr v2, v4
+    sub-long/2addr v4, v6
 
-    iget-object p1, v1, Lnwn;->b:Lnws;
+    iget-boolean p1, v1, Lpoy;->c:Z
 
-    invoke-virtual {p1}, Lnws;->ac()Z
+    if-eqz p1, :cond_1
 
-    move-result p1
+    invoke-virtual {v1}, Lpoy;->m()V
 
-    if-nez p1, :cond_1
-
-    invoke-virtual {v1}, Lnwn;->p()V
+    iput-boolean v3, v1, Lpoy;->c:Z
 
     :cond_1
-    iget-object p1, v1, Lnwn;->b:Lnws;
+    iget-object p1, v1, Lpoy;->b:Lppd;
 
-    check-cast p1, Lnko;
+    check-cast p1, Lpdt;
 
-    iget v4, p1, Lnko;->a:I
+    iget v2, p1, Lpdt;->a:I
 
-    or-int/lit8 v4, v4, 0x2
+    or-int/lit8 v2, v2, 0x2
 
-    iput v4, p1, Lnko;->a:I
+    iput v2, p1, Lpdt;->a:I
 
-    iput-wide v2, p1, Lnko;->c:J
+    iput-wide v4, p1, Lpdt;->c:J
 
-    invoke-virtual {v1}, Lnwn;->i()Lnws;
+    invoke-virtual {v1}, Lpoy;->h()Lppd;
 
     move-result-object p1
 
-    check-cast p1, Lnko;
+    check-cast p1, Lpdt;
 
-    invoke-interface {v0, p1}, Lfbz;->J(Lnko;)V
+    invoke-interface {v0, p1}, Lfjs;->G(Lpdt;)V
 
     return-void
 .end method
@@ -140,17 +138,17 @@
 
     move-result-object v0
 
-    check-cast v0, Lemj;
+    check-cast v0, Lenc;
 
-    const-class v2, Leni;
+    const-class v2, Leoi;
 
-    invoke-interface {v0, v2}, Lemj;->e(Ljava/lang/Class;)Leml;
+    invoke-interface {v0, v2}, Lenc;->c(Ljava/lang/Class;)Lene;
 
     move-result-object v0
 
-    check-cast v0, Leni;
+    check-cast v0, Leoi;
 
-    invoke-interface {v0, p0}, Leni;->i(Lcom/google/android/apps/camera/keepalive/ProcessGcService;)V
+    invoke-interface {v0, p0}, Leoi;->i(Lcom/google/android/apps/camera/keepalive/ProcessGcService;)V
 
     iput-boolean v1, p0, Lcom/google/android/apps/camera/keepalive/ProcessGcService;->f:Z
 
@@ -159,17 +157,17 @@
 
     move-result-object v0
 
-    const-string v2, "keepalive_sig"
+    const-wide/16 v2, -0x1
 
-    const-wide/16 v3, -0x1
+    const-string v4, "keepalive_sig"
 
-    invoke-virtual {v0, v2, v3, v4}, Landroid/os/PersistableBundle;->getLong(Ljava/lang/String;J)J
+    invoke-virtual {v0, v4, v2, v3}, Landroid/os/PersistableBundle;->getLong(Ljava/lang/String;J)J
 
     move-result-wide v2
 
-    iget-object v0, p0, Lcom/google/android/apps/camera/keepalive/ProcessGcService;->e:Llas;
+    iget-object v0, p0, Lcom/google/android/apps/camera/keepalive/ProcessGcService;->e:Lmos;
 
-    iget-wide v4, v0, Llas;->a:J
+    iget-wide v4, v0, Lmos;->a:J
 
     cmp-long v0, v2, v4
 
@@ -179,7 +177,7 @@
 
     invoke-virtual {p0, p1}, Lcom/google/android/apps/camera/keepalive/ProcessGcService;->a(I)V
 
-    invoke-static {p0}, Lgxb;->o(Landroid/content/Context;)V
+    invoke-static {p0}, Leoc;->b(Landroid/content/Context;)V
 
     const/4 p1, 0x0
 
@@ -188,11 +186,9 @@
     :cond_1
     iget-object v0, p0, Lcom/google/android/apps/camera/keepalive/ProcessGcService;->d:Landroid/os/Handler;
 
-    new-instance v2, Lekf;
+    new-instance v2, Leoh;
 
-    const/16 v3, 0x8
-
-    invoke-direct {v2, p0, p1, v3}, Lekf;-><init>(Lcom/google/android/apps/camera/keepalive/ProcessGcService;Landroid/app/job/JobParameters;I)V
+    invoke-direct {v2, p0, p1}, Leoh;-><init>(Lcom/google/android/apps/camera/keepalive/ProcessGcService;Landroid/app/job/JobParameters;)V
 
     invoke-virtual {v0, v2}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 

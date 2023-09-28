@@ -1,160 +1,60 @@
-.class final Ljyt;
+.class public final Ljyt;
 .super Ljava/lang/Object;
-
-# interfaces
-.implements Lkmw;
 
 
 # instance fields
-.field private final a:Lldp;
+.field public final a:Lfjs;
+
+.field public final b:Llis;
+
+.field public final c:Ljys;
+
+.field public final d:Ljys;
+
+.field public e:I
+
+.field public f:J
+
+.field public g:J
+
+.field final h:Lpoy;
 
 
 # direct methods
-.method public constructor <init>(Lldp;)V
+.method public constructor <init>(Lfjs;Llis;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Ljyt;->a:Lldp;
+    iput-object p1, p0, Ljyt;->a:Lfjs;
 
-    return-void
-.end method
+    const-string p1, "WearSessionLogger"
 
-
-# virtual methods
-.method public final a()I
-    .locals 1
-
-    iget-object v0, p0, Ljyt;->a:Lldp;
-
-    check-cast v0, Lldq;
-
-    iget-object v0, v0, Lldq;->a:Landroid/media/AudioRecord;
-
-    invoke-virtual {v0}, Landroid/media/AudioRecord;->getRecordingState()I
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public final addOnRoutingChangedListener(Landroid/media/AudioRouting$OnRoutingChangedListener;Landroid/os/Handler;)V
-    .locals 1
-
-    iget-object v0, p0, Ljyt;->a:Lldp;
-
-    invoke-interface {v0, p1, p2}, Lldp;->addOnRoutingChangedListener(Landroid/media/AudioRouting$OnRoutingChangedListener;Landroid/os/Handler;)V
-
-    return-void
-.end method
-
-.method public final b()Landroid/media/AudioFormat;
-    .locals 1
-
-    iget-object v0, p0, Ljyt;->a:Lldp;
-
-    invoke-interface {v0}, Lldp;->a()Landroid/media/AudioFormat;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public final c()V
-    .locals 1
-
-    iget-object v0, p0, Ljyt;->a:Lldp;
-
-    invoke-interface {v0}, Lldp;->c()V
-
-    return-void
-.end method
-
-.method public final close()V
-    .locals 1
-
-    iget-object v0, p0, Ljyt;->a:Lldp;
-
-    invoke-interface {v0}, Lldp;->close()V
-
-    return-void
-.end method
-
-.method public final d()V
-    .locals 1
-
-    iget-object v0, p0, Ljyt;->a:Lldp;
-
-    invoke-interface {v0}, Lldp;->d()V
-
-    return-void
-.end method
-
-.method public final e(Ljava/nio/ByteBuffer;I)Lkgd;
-    .locals 1
-
-    iget-object v0, p0, Ljyt;->a:Lldp;
-
-    invoke-interface {v0, p1, p2}, Lldp;->b(Ljava/nio/ByteBuffer;I)Lldo;
+    invoke-interface {p2, p1}, Llis;->a(Ljava/lang/String;)Llis;
 
     move-result-object p1
 
-    if-nez p1, :cond_0
+    iput-object p1, p0, Ljyt;->b:Llis;
 
-    const/4 p1, 0x0
+    new-instance p2, Ljys;
 
-    return-object p1
+    invoke-direct {p2, p1}, Ljys;-><init>(Llis;)V
 
-    :cond_0
-    new-instance p2, Lkgd;
+    iput-object p2, p0, Ljyt;->c:Ljys;
 
-    invoke-direct {p2, p1}, Lkgd;-><init>(Lldo;)V
+    new-instance p2, Ljys;
 
-    return-object p2
-.end method
+    invoke-direct {p2, p1}, Ljys;-><init>(Llis;)V
 
-.method public final getPreferredDevice()Landroid/media/AudioDeviceInfo;
-    .locals 1
+    iput-object p2, p0, Ljyt;->d:Ljys;
 
-    iget-object v0, p0, Ljyt;->a:Lldp;
+    sget-object p1, Lpep;->g:Lpep;
 
-    invoke-interface {v0}, Lldp;->getPreferredDevice()Landroid/media/AudioDeviceInfo;
+    invoke-virtual {p1}, Lppd;->m()Lpoy;
 
-    move-result-object v0
+    move-result-object p1
 
-    return-object v0
-.end method
-
-.method public final getRoutedDevice()Landroid/media/AudioDeviceInfo;
-    .locals 1
-
-    iget-object v0, p0, Ljyt;->a:Lldp;
-
-    invoke-interface {v0}, Lldp;->getRoutedDevice()Landroid/media/AudioDeviceInfo;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public final removeOnRoutingChangedListener(Landroid/media/AudioRouting$OnRoutingChangedListener;)V
-    .locals 1
-
-    iget-object v0, p0, Ljyt;->a:Lldp;
-
-    invoke-interface {v0, p1}, Lldp;->removeOnRoutingChangedListener(Landroid/media/AudioRouting$OnRoutingChangedListener;)V
+    iput-object p1, p0, Ljyt;->h:Lpoy;
 
     return-void
-.end method
-
-.method public final setPreferredDevice(Landroid/media/AudioDeviceInfo;)Z
-    .locals 1
-
-    iget-object v0, p0, Ljyt;->a:Lldp;
-
-    invoke-interface {v0, p1}, Lldp;->setPreferredDevice(Landroid/media/AudioDeviceInfo;)Z
-
-    move-result p1
-
-    return p1
 .end method

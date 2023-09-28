@@ -2,41 +2,80 @@
 .super Ljtu;
 
 
+# instance fields
+.field public final a:Landroid/content/SharedPreferences;
+
+.field public final b:Ljava/lang/Object;
+
+
 # direct methods
-.method public constructor <init>(Ljava/lang/Integer;)V
-    .locals 1
+.method public constructor <init>(Landroid/app/DownloadManager;Landroid/content/Context;Landroid/content/SharedPreferences;)V
+    .locals 0
 
-    const-string v0, "gms:feedback_client:feedback_options_max_data_size"
+    invoke-direct {p0, p1, p2}, Ljtu;-><init>(Landroid/app/DownloadManager;Landroid/content/Context;)V
 
-    invoke-direct {p0, v0, p1}, Ljtu;-><init>(Ljava/lang/String;Ljava/lang/Object;)V
+    new-instance p1, Ljava/lang/Object;
+
+    invoke-direct {p1}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Ljtt;->b:Ljava/lang/Object;
+
+    iput-object p3, p0, Ljtt;->a:Landroid/content/SharedPreferences;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final bridge synthetic a()Ljava/lang/Object;
-    .locals 3
+.method protected final a(Landroid/net/Uri;)Ljava/lang/Long;
+    .locals 4
 
-    sget-object v0, Ljtu;->a:Landroid/content/ContentResolver;
+    iget-object v0, p0, Ljtt;->b:Ljava/lang/Object;
 
-    iget-object v1, p0, Ljtt;->b:Ljava/lang/String;
+    monitor-enter v0
 
-    iget-object v2, p0, Ljtt;->c:Ljava/lang/Object;
+    :try_start_0
+    invoke-virtual {p1}, Landroid/net/Uri;->toString()Ljava/lang/String;
 
-    check-cast v2, Ljava/lang/Integer;
+    move-result-object p1
 
-    invoke-virtual {v2}, Ljava/lang/Integer;->intValue()I
+    iget-object v1, p0, Ljtt;->a:Landroid/content/SharedPreferences;
 
-    move-result v2
+    invoke-interface {v1, p1}, Landroid/content/SharedPreferences;->contains(Ljava/lang/String;)Z
 
-    invoke-static {v0, v1, v2}, Ljtr;->a(Landroid/content/ContentResolver;Ljava/lang/String;I)I
+    move-result v1
 
-    move-result v0
+    if-eqz v1, :cond_0
 
-    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    iget-object v1, p0, Ljtt;->a:Landroid/content/SharedPreferences;
 
-    move-result-object v0
+    const-wide/16 v2, 0x0
 
-    return-object v0
+    invoke-interface {v1, p1, v2, v3}, Landroid/content/SharedPreferences;->getLong(Ljava/lang/String;J)J
+
+    move-result-wide v1
+
+    invoke-static {v1, v2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object p1
+
+    monitor-exit v0
+
+    return-object p1
+
+    :cond_0
+    monitor-exit v0
+
+    const/4 p1, 0x0
+
+    return-object p1
+
+    :catchall_0
+    move-exception p1
+
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw p1
 .end method

@@ -2,62 +2,80 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Logk;
+.implements Lgan;
 
 
 # instance fields
-.field private final a:Loiw;
-
-.field private final b:Loiw;
+.field public final synthetic a:Lhkn;
 
 
 # direct methods
-.method public constructor <init>(Loiw;Loiw;)V
+.method public constructor <init>(Lhkn;)V
     .locals 0
 
+    iput-object p1, p0, Lctc;->a:Lhkn;
+
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lctc;->a:Loiw;
-
-    iput-object p2, p0, Lctc;->b:Loiw;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Lctb;
-    .locals 3
-
-    iget-object v0, p0, Lctc;->a:Loiw;
-
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ldhi;
-
-    iget-object v1, p0, Lctc;->b:Loiw;
-
-    check-cast v1, Lkao;
-
-    invoke-virtual {v1}, Lkao;->a()Lkaq;
-
-    move-result-object v1
-
-    new-instance v2, Lctb;
-
-    invoke-direct {v2, v0, v1}, Lctb;-><init>(Ldhi;Lkaq;)V
-
-    return-object v2
-.end method
-
-.method public final bridge synthetic get()Ljava/lang/Object;
+.method public final a()F
     .locals 1
 
-    invoke-virtual {p0}, Lctc;->a()Lctb;
+    iget-object v0, p0, Lctc;->a:Lhkn;
 
-    move-result-object v0
+    iget v0, v0, Lhkn;->b:F
+
+    return v0
+.end method
+
+.method public final b()F
+    .locals 1
+
+    iget-object v0, p0, Lctc;->a:Lhkn;
+
+    iget v0, v0, Lhkn;->b:F
+
+    return v0
+.end method
+
+.method public final c()J
+    .locals 2
+
+    iget-object v0, p0, Lctc;->a:Lhkn;
+
+    iget-wide v0, v0, Lhkn;->a:J
+
+    return-wide v0
+.end method
+
+.method public final d()Lhkn;
+    .locals 1
+
+    iget-object v0, p0, Lctc;->a:Lhkn;
+
+    return-object v0
+.end method
+
+.method public final e()Lojc;
+    .locals 1
+
+    iget-object v0, p0, Lctc;->a:Lhkn;
+
+    iget-object v0, v0, Lhkn;->r:Lojc;
+
+    return-object v0
+.end method
+
+.method public final f()Lojc;
+    .locals 1
+
+    iget-object v0, p0, Lctc;->a:Lhkn;
+
+    iget-object v0, v0, Lhkn;->p:Lojc;
 
     return-object v0
 .end method

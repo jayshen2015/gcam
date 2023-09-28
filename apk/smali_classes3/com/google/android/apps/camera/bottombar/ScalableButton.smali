@@ -1,5 +1,5 @@
 .class public Lcom/google/android/apps/camera/bottombar/ScalableButton;
-.super Liq;
+.super Lmw;
 
 
 # static fields
@@ -12,7 +12,7 @@
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
     .locals 0
 
-    invoke-direct {p0, p1, p2}, Liq;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
+    invoke-direct {p0, p1, p2}, Lmw;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
     invoke-direct {p0}, Lcom/google/android/apps/camera/bottombar/ScalableButton;->initialize()V
 
@@ -24,7 +24,7 @@
 
     sget-object v0, Lcom/google/android/apps/camera/bottombar/ScalableButton$$ExternalSyntheticLambda0;->INSTANCE:Lcom/google/android/apps/camera/bottombar/ScalableButton$$ExternalSyntheticLambda0;
 
-    invoke-super {p0, v0}, Liq;->setOnTouchListener(Landroid/view/View$OnTouchListener;)V
+    invoke-super {p0, v0}, Lmw;->setOnTouchListener(Landroid/view/View$OnTouchListener;)V
 
     return-void
 .end method

@@ -1,117 +1,84 @@
-.class final Lijo;
-.super Ljava/lang/Object;
-
-# interfaces
-.implements Lipf;
+.class public final enum Lijo;
+.super Ljava/lang/Enum;
 
 
-# instance fields
-.field final synthetic a:Lipf;
+# static fields
+.field public static final enum a:Lijo;
 
-.field final synthetic b:Ldww;
+.field public static final enum b:Lijo;
+
+.field public static final enum c:Lijo;
+
+.field private static final synthetic d:[Lijo;
 
 
 # direct methods
-.method public constructor <init>(Lipf;Ldww;)V
+.method static constructor <clinit>()V
+    .locals 7
+
+    new-instance v0, Lijo;
+
+    const-string v1, "SHUTTER_BUTTON_DOWN"
+
+    const/4 v2, 0x0
+
+    invoke-direct {v0, v1, v2}, Lijo;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, Lijo;->a:Lijo;
+
+    new-instance v1, Lijo;
+
+    const-string v3, "SHUTTER_BUTTON_UP"
+
+    const/4 v4, 0x1
+
+    invoke-direct {v1, v3, v4}, Lijo;-><init>(Ljava/lang/String;I)V
+
+    sput-object v1, Lijo;->b:Lijo;
+
+    new-instance v3, Lijo;
+
+    const-string v5, "FRAMES_TAKEN"
+
+    const/4 v6, 0x2
+
+    invoke-direct {v3, v5, v6}, Lijo;-><init>(Ljava/lang/String;I)V
+
+    sput-object v3, Lijo;->c:Lijo;
+
+    const/4 v5, 0x3
+
+    new-array v5, v5, [Lijo;
+
+    aput-object v0, v5, v2
+
+    aput-object v1, v5, v4
+
+    aput-object v3, v5, v6
+
+    sput-object v5, Lijo;->d:[Lijo;
+
+    return-void
+.end method
+
+.method private constructor <init>(Ljava/lang/String;I)V
     .locals 0
 
-    iput-object p1, p0, Lijo;->a:Lipf;
-
-    iput-object p2, p0, Lijo;->b:Ldww;
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
 .end method
 
-
-# virtual methods
-.method public final a(Landroid/graphics/PointF;)Z
-    .locals 4
-
-    iget-object v0, p0, Lijo;->a:Lipf;
-
-    new-instance v1, Landroid/graphics/PointF;
-
-    iget v2, p1, Landroid/graphics/PointF;->x:F
-
-    iget-object v3, p0, Lijo;->b:Ldww;
-
-    invoke-interface {v3}, Ldww;->c()Landroid/graphics/PointF;
-
-    move-result-object v3
-
-    iget v3, v3, Landroid/graphics/PointF;->x:F
-
-    sub-float/2addr v2, v3
-
-    iget p1, p1, Landroid/graphics/PointF;->y:F
-
-    iget-object v3, p0, Lijo;->b:Ldww;
-
-    invoke-interface {v3}, Ldww;->c()Landroid/graphics/PointF;
-
-    move-result-object v3
-
-    iget v3, v3, Landroid/graphics/PointF;->y:F
-
-    sub-float/2addr p1, v3
-
-    invoke-direct {v1, v2, p1}, Landroid/graphics/PointF;-><init>(FF)V
-
-    invoke-interface {v0, v1}, Lipf;->a(Landroid/graphics/PointF;)Z
-
-    const/4 p1, 0x0
-
-    return p1
-.end method
-
-.method public final b()V
+.method public static values()[Lijo;
     .locals 1
 
-    iget-object v0, p0, Lijo;->a:Lipf;
+    sget-object v0, Lijo;->d:[Lijo;
 
-    invoke-interface {v0}, Lipf;->b()V
+    invoke-virtual {v0}, [Lijo;->clone()Ljava/lang/Object;
 
-    return-void
-.end method
+    move-result-object v0
 
-.method public final f(Landroid/graphics/PointF;)Z
-    .locals 4
+    check-cast v0, [Lijo;
 
-    iget-object v0, p0, Lijo;->a:Lipf;
-
-    new-instance v1, Landroid/graphics/PointF;
-
-    iget v2, p1, Landroid/graphics/PointF;->x:F
-
-    iget-object v3, p0, Lijo;->b:Ldww;
-
-    invoke-interface {v3}, Ldww;->c()Landroid/graphics/PointF;
-
-    move-result-object v3
-
-    iget v3, v3, Landroid/graphics/PointF;->x:F
-
-    sub-float/2addr v2, v3
-
-    iget p1, p1, Landroid/graphics/PointF;->y:F
-
-    iget-object v3, p0, Lijo;->b:Ldww;
-
-    invoke-interface {v3}, Ldww;->c()Landroid/graphics/PointF;
-
-    move-result-object v3
-
-    iget v3, v3, Landroid/graphics/PointF;->y:F
-
-    sub-float/2addr p1, v3
-
-    invoke-direct {v1, v2, p1}, Landroid/graphics/PointF;-><init>(FF)V
-
-    invoke-interface {v0, v1}, Lipf;->f(Landroid/graphics/PointF;)Z
-
-    const/4 p1, 0x0
-
-    return p1
+    return-object v0
 .end method

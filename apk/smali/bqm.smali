@@ -1,227 +1,112 @@
 .class public final Lbqm;
-.super Ljava/io/OutputStream;
+.super Ljava/lang/Object;
 
 
 # instance fields
-.field private final a:Ljava/io/OutputStream;
+.field public final a:Llvx;
 
-.field private b:[B
+.field public final b:Ljava/lang/Object;
 
-.field private final c:Lbsu;
+.field public c:Lpih;
 
-.field private d:I
+.field private final d:Ldkl;
+
+.field private final e:Ljava/util/concurrent/Executor;
 
 
 # direct methods
-.method public constructor <init>(Ljava/io/OutputStream;Lbsu;)V
-    .locals 1
+.method public constructor <init>(Ldkl;Llvx;Ljava/util/concurrent/Executor;)V
+    .locals 0
 
-    invoke-direct {p0}, Ljava/io/OutputStream;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lbqm;->a:Ljava/io/OutputStream;
+    iput-object p1, p0, Lbqm;->d:Ldkl;
 
-    iput-object p2, p0, Lbqm;->c:Lbsu;
+    iput-object p2, p0, Lbqm;->a:Llvx;
 
-    const/high16 p1, 0x10000
+    iput-object p3, p0, Lbqm;->e:Ljava/util/concurrent/Executor;
 
-    const-class v0, [B
+    new-instance p1, Ljava/lang/Object;
 
-    invoke-interface {p2, p1, v0}, Lbsu;->a(ILjava/lang/Class;)Ljava/lang/Object;
+    invoke-direct {p1}, Ljava/lang/Object;-><init>()V
 
-    move-result-object p1
+    iput-object p1, p0, Lbqm;->b:Ljava/lang/Object;
 
-    check-cast p1, [B
-
-    iput-object p1, p0, Lbqm;->b:[B
-
-    return-void
-.end method
-
-.method private final a()V
-    .locals 4
-
-    iget v0, p0, Lbqm;->d:I
-
-    if-lez v0, :cond_0
-
-    iget-object v1, p0, Lbqm;->a:Ljava/io/OutputStream;
-
-    iget-object v2, p0, Lbqm;->b:[B
-
-    const/4 v3, 0x0
-
-    invoke-virtual {v1, v2, v3, v0}, Ljava/io/OutputStream;->write([BII)V
-
-    iput v3, p0, Lbqm;->d:I
-
-    :cond_0
-    return-void
-.end method
-
-.method private final b()V
-    .locals 2
-
-    iget v0, p0, Lbqm;->d:I
-
-    iget-object v1, p0, Lbqm;->b:[B
-
-    array-length v1, v1
-
-    if-ne v0, v1, :cond_0
-
-    invoke-direct {p0}, Lbqm;->a()V
-
-    :cond_0
     return-void
 .end method
 
 
 # virtual methods
-.method public final close()V
-    .locals 2
+.method public final a()Lpht;
+    .locals 5
+
+    iget-object v0, p0, Lbqm;->b:Ljava/lang/Object;
+
+    monitor-enter v0
 
     :try_start_0
-    invoke-virtual {p0}, Lbqm;->flush()V
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    iget-object v1, p0, Lbqm;->c:Lpih;
 
-    iget-object v0, p0, Lbqm;->a:Ljava/io/OutputStream;
+    const/4 v2, 0x1
 
-    invoke-virtual {v0}, Ljava/io/OutputStream;->close()V
+    const/4 v3, 0x0
 
-    iget-object v0, p0, Lbqm;->b:[B
+    if-nez v1, :cond_0
 
-    if-eqz v0, :cond_0
+    invoke-static {}, Lpih;->f()Lpih;
 
-    iget-object v1, p0, Lbqm;->c:Lbsu;
+    move-result-object v1
 
-    invoke-interface {v1, v0}, Lbsu;->c(Ljava/lang/Object;)V
+    iput-object v1, p0, Lbqm;->c:Lpih;
 
-    const/4 v0, 0x0
-
-    iput-object v0, p0, Lbqm;->b:[B
-
-    return-void
-
-    :cond_0
-    return-void
-
-    :catchall_0
-    move-exception v0
-
-    iget-object v1, p0, Lbqm;->a:Ljava/io/OutputStream;
-
-    invoke-virtual {v1}, Ljava/io/OutputStream;->close()V
-
-    throw v0
-.end method
-
-.method public final flush()V
-    .locals 1
-
-    invoke-direct {p0}, Lbqm;->a()V
-
-    iget-object v0, p0, Lbqm;->a:Ljava/io/OutputStream;
-
-    invoke-virtual {v0}, Ljava/io/OutputStream;->flush()V
-
-    return-void
-.end method
-
-.method public final write(I)V
-    .locals 3
-
-    iget-object v0, p0, Lbqm;->b:[B
-
-    iget v1, p0, Lbqm;->d:I
-
-    add-int/lit8 v2, v1, 0x1
-
-    iput v2, p0, Lbqm;->d:I
-
-    int-to-byte p1, p1
-
-    aput-byte p1, v0, v1
-
-    invoke-direct {p0}, Lbqm;->b()V
-
-    return-void
-.end method
-
-.method public final write([B)V
-    .locals 2
-
-    const/4 v0, 0x0
-
-    array-length v1, p1
-
-    invoke-virtual {p0, p1, v0, v1}, Lbqm;->write([BII)V
-
-    return-void
-.end method
-
-.method public final write([BII)V
-    .locals 6
-
-    const/4 v0, 0x0
-
-    const/4 v1, 0x0
-
-    :cond_0
-    sub-int v2, p3, v1
-
-    add-int v3, p2, v1
-
-    iget v4, p0, Lbqm;->d:I
-
-    if-nez v4, :cond_2
-
-    iget-object v4, p0, Lbqm;->b:[B
-
-    array-length v4, v4
-
-    if-ge v2, v4, :cond_1
-
-    const/4 v4, 0x0
+    const/4 v1, 0x1
 
     goto :goto_0
 
-    :cond_1
-    iget-object p2, p0, Lbqm;->a:Ljava/io/OutputStream;
+    :cond_0
+    const/4 v1, 0x0
 
-    invoke-virtual {p2, p1, v3, v2}, Ljava/io/OutputStream;->write([BII)V
-
-    return-void
-
-    :cond_2
     :goto_0
-    iget-object v5, p0, Lbqm;->b:[B
+    iget-object v4, p0, Lbqm;->c:Lpih;
 
-    array-length v5, v5
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    sub-int/2addr v5, v4
+    if-eqz v1, :cond_1
 
-    invoke-static {v2, v5}, Ljava/lang/Math;->min(II)I
+    iget-object v0, p0, Lbqm;->d:Ldkl;
 
-    move-result v2
+    invoke-virtual {v0}, Ldkl;->b()Lpht;
 
-    iget-object v4, p0, Lbqm;->b:[B
+    move-result-object v0
 
-    iget v5, p0, Lbqm;->d:I
+    new-array v1, v2, [Lpht;
 
-    invoke-static {p1, v3, v4, v5, v2}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
+    aput-object v0, v1, v3
 
-    iget v3, p0, Lbqm;->d:I
+    invoke-static {v1}, Lplk;->P([Lpht;)Lphm;
 
-    add-int/2addr v3, v2
+    move-result-object v1
 
-    iput v3, p0, Lbqm;->d:I
+    new-instance v2, Lbqk;
 
-    add-int/2addr v1, v2
+    invoke-direct {v2, p0, v0}, Lbqk;-><init>(Lbqm;Lpht;)V
 
-    invoke-direct {p0}, Lbqm;->b()V
+    iget-object v0, p0, Lbqm;->e:Ljava/util/concurrent/Executor;
 
-    if-lt v1, p3, :cond_0
+    invoke-virtual {v1, v2, v0}, Lphm;->c(Ljava/lang/Runnable;Ljava/util/concurrent/Executor;)V
 
-    return-void
+    :cond_1
+    return-object v4
+
+    :catchall_0
+    move-exception v1
+
+    :try_start_1
+    monitor-exit v0
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    throw v1
 .end method

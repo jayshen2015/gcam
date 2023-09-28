@@ -1,45 +1,62 @@
-.class public final synthetic Lnsk;
-.super Ljava/lang/Object;
+.class public final Lnsk;
+.super Lqlu;
 
-# interfaces
-.implements Lcom/google/googlex/gcam/hdrplus/ManagedImageCallback;
+
+# annotations
+.annotation runtime Lqlw;
+    b = "com.google.android.libraries.vision.visionkit.f250.internal.uploader.work.F250Worker$uploadAllValidResources$lambda-5$$inlined$map$1$2"
+    c = "F250Worker.kt"
+    d = "emit"
+    e = {
+        0x89,
+        0x89
+    }
+.end annotation
 
 
 # instance fields
-.field public final synthetic a:Lnsl;
+.field synthetic a:Ljava/lang/Object;
+
+.field b:I
+
+.field c:Ljava/lang/Object;
+
+.field final synthetic d:Lnsl;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lnsl;)V
+.method public constructor <init>(Lnsl;Lqlh;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lnsk;->d:Lnsl;
 
-    iput-object p1, p0, Lnsk;->a:Lnsl;
+    invoke-direct {p0, p2}, Lqlu;-><init>(Lqlh;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final accept(IJJI)V
-    .locals 6
+.method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 1
 
-    iget-object v0, p0, Lnsk;->a:Lnsl;
+    iput-object p1, p0, Lnsk;->a:Ljava/lang/Object;
 
-    new-instance v4, Lcom/google/googlex/gcam/ShotMetadata;
+    iget p1, p0, Lnsk;->b:I
 
-    invoke-direct {v4, p4, p5}, Lcom/google/googlex/gcam/ShotMetadata;-><init>(J)V
+    const/high16 v0, -0x80000000
 
-    invoke-static {p6}, Lnqz;->a(I)Lnqz;
+    or-int/2addr p1, v0
 
-    move-result-object v5
+    iput p1, p0, Lnsk;->b:I
 
-    move v1, p1
+    iget-object p1, p0, Lnsk;->d:Lnsl;
 
-    move-wide v2, p2
+    const/4 v0, 0x0
 
-    invoke-interface/range {v0 .. v5}, Lnsl;->a(IJLcom/google/googlex/gcam/ShotMetadata;Lnqz;)V
+    invoke-virtual {p1, v0, p0}, Lnsl;->emit(Ljava/lang/Object;Lqlh;)Ljava/lang/Object;
 
-    return-void
+    move-result-object p1
+
+    return-object p1
 .end method

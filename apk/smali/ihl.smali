@@ -1,47 +1,44 @@
 .class public final Lihl;
 .super Ljava/lang/Object;
 
-# interfaces
-.implements Logk;
-
 
 # instance fields
-.field private final a:Lihi;
+.field public a:Ljava/nio/ByteBuffer;
+
+.field public b:Ljava/lang/Integer;
+
+.field public c:Ljava/lang/Integer;
+
+.field public d:Lohl;
+
+.field public e:Ljava/lang/Integer;
+
+.field public f:Lojc;
+
+.field public g:Lojc;
 
 
 # direct methods
-.method public constructor <init>(Lihi;)V
+.method public constructor <init>()V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lihl;->a:Lihi;
-
     return-void
 .end method
 
+.method public constructor <init>([B)V
+    .locals 0
 
-# virtual methods
-.method public final a()Lcom/google/android/apps/camera/ui/views/GradientBar;
-    .locals 1
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iget-object v0, p0, Lihl;->a:Lihi;
+    sget-object p1, Loih;->a:Loih;
 
-    iget-object v0, v0, Lihi;->b:Lihg;
+    iput-object p1, p0, Lihl;->f:Lojc;
 
-    iget-object v0, v0, Lihg;->n:Ljava/lang/Object;
+    sget-object p1, Loih;->a:Loih;
 
-    check-cast v0, Lcom/google/android/apps/camera/ui/views/GradientBar;
+    iput-object p1, p0, Lihl;->g:Lojc;
 
-    return-object v0
-.end method
-
-.method public final bridge synthetic get()Ljava/lang/Object;
-    .locals 1
-
-    invoke-virtual {p0}, Lihl;->a()Lcom/google/android/apps/camera/ui/views/GradientBar;
-
-    move-result-object v0
-
-    return-object v0
+    return-void
 .end method

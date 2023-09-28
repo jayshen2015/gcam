@@ -2,138 +2,153 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Logk;
+.implements Lgbp;
 
 
 # instance fields
-.field private final a:Loiw;
+.field private final a:Lgbp;
 
-.field private final b:Loiw;
+.field private b:Lmad;
 
-.field private final c:Loiw;
-
-.field private final d:Loiw;
+.field private c:Z
 
 
 # direct methods
-.method public constructor <init>(Loiw;Loiw;Loiw;Loiw;)V
-    .locals 0
+.method public constructor <init>(Lgbp;)V
+    .locals 1
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lgat;->a:Loiw;
+    const/4 v0, 0x0
 
-    iput-object p2, p0, Lgat;->b:Loiw;
+    iput-object v0, p0, Lgat;->b:Lmad;
 
-    iput-object p3, p0, Lgat;->c:Loiw;
+    const/4 v0, 0x0
 
-    iput-object p4, p0, Lgat;->d:Loiw;
+    iput-boolean v0, p0, Lgat;->c:Z
+
+    iput-object p1, p0, Lgat;->a:Lgbp;
 
     return-void
 .end method
 
-.method public static b(Loiw;Loiw;Loiw;Loiw;)Lgat;
-    .locals 1
-
-    new-instance v0, Lgat;
-
-    invoke-direct {v0, p0, p1, p2, p3}, Lgat;-><init>(Loiw;Loiw;Loiw;Loiw;)V
-
-    return-object v0
-.end method
-
 
 # virtual methods
-.method public final a()Lgam;
+.method public final declared-synchronized a(Lmad;)Z
     .locals 6
 
-    iget-object v0, p0, Lgat;->a:Loiw;
+    monitor-enter p0
 
-    check-cast v0, Ldjw;
+    :try_start_0
+    iget-boolean v0, p0, Lgat;->c:Z
 
-    invoke-virtual {v0}, Ldjw;->a()Lkap;
+    if-eqz v0, :cond_0
 
-    move-result-object v0
+    iget-object v0, p0, Lgat;->a:Lgbp;
 
-    iget-object v1, p0, Lgat;->b:Loiw;
+    invoke-interface {v0, p1}, Lgbp;->a(Lmad;)Z
 
-    invoke-interface {v1}, Loiw;->get()Ljava/lang/Object;
+    move-result p1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    move-result-object v1
+    monitor-exit p0
 
-    check-cast v1, Ljuf;
+    return p1
 
-    iget-object v2, p0, Lgat;->c:Loiw;
+    :cond_0
+    :try_start_1
+    new-instance v0, Llwk;
 
-    invoke-interface {v2}, Loiw;->get()Ljava/lang/Object;
+    invoke-direct {v0, p1}, Llwk;-><init>(Lmad;)V
 
-    move-result-object v2
+    iget-object p1, p0, Lgat;->b:Lmad;
 
-    check-cast v2, Lgam;
+    if-eqz p1, :cond_1
 
-    iget-object v3, p0, Lgat;->d:Loiw;
+    invoke-interface {p1}, Lmad;->close()V
 
-    invoke-interface {v3}, Loiw;->get()Ljava/lang/Object;
+    :cond_1
+    invoke-virtual {v0}, Llwk;->k()Lmad;
 
-    move-result-object v3
+    move-result-object p1
 
-    check-cast v3, Ljvk;
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    invoke-interface {v2}, Lgam;->b()Ljvs;
+    invoke-virtual {v0}, Lmaa;->d()J
 
-    move-result-object v4
+    move-result-wide v1
 
-    invoke-static {v4, v3}, Ljvw;->l(Ljvs;Lkai;)Lkad;
+    new-instance v3, Lged;
 
-    move-result-object v4
+    const-wide/32 v4, 0x186a0
 
-    invoke-virtual {v1, v4}, Ljuf;->d(Lkad;)V
+    add-long/2addr v1, v4
 
-    invoke-interface {v2}, Lgam;->b()Ljvs;
+    invoke-direct {v3, p1, v1, v2}, Lged;-><init>(Lmad;J)V
 
-    move-result-object v4
+    iput-object v3, p0, Lgat;->b:Lmad;
 
-    invoke-interface {v4}, Ljvs;->bm()Ljava/lang/Object;
+    iget-object p1, p0, Lgat;->a:Lgbp;
 
-    move-result-object v4
+    invoke-interface {p1, v0}, Lgbp;->a(Lmad;)Z
 
-    check-cast v4, Lfwn;
+    move-result p1
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    invoke-virtual {v3, v4}, Ljvk;->bn(Ljava/lang/Object;)V
+    monitor-exit p0
 
-    const-string v3, "ImgCptrCmdReady"
+    return p1
 
-    invoke-interface {v0, v3}, Lkap;->a(Ljava/lang/String;)Lkaq;
+    :catchall_0
+    move-exception p1
 
-    move-result-object v0
+    monitor-exit p0
 
-    invoke-interface {v2}, Lgam;->a()Ljvs;
-
-    move-result-object v3
-
-    new-instance v4, Lecf;
-
-    const/16 v5, 0xb
-
-    invoke-direct {v4, v0, v2, v5}, Lecf;-><init>(Lkaq;Lgam;I)V
-
-    invoke-static {v3, v4}, Ljvw;->l(Ljvs;Lkai;)Lkad;
-
-    move-result-object v0
-
-    invoke-virtual {v1, v0}, Ljuf;->d(Lkad;)V
-
-    invoke-virtual {v2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    return-object v2
+    throw p1
 .end method
 
-.method public final bridge synthetic get()Ljava/lang/Object;
-    .locals 1
+.method public final close()V
+    .locals 2
 
-    invoke-virtual {p0}, Lgat;->a()Lgam;
+    monitor-enter p0
 
-    move-result-object v0
+    const/4 v0, 0x1
 
-    return-object v0
+    :try_start_0
+    iput-boolean v0, p0, Lgat;->c:Z
+
+    iget-object v0, p0, Lgat;->b:Lmad;
+
+    if-eqz v0, :cond_0
+
+    iget-object v1, p0, Lgat;->a:Lgbp;
+
+    invoke-interface {v1, v0}, Lgbp;->a(Lmad;)Z
+
+    const/4 v0, 0x0
+
+    iput-object v0, p0, Lgat;->b:Lmad;
+
+    :cond_0
+    monitor-exit p0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    iget-object v0, p0, Lgat;->a:Lgbp;
+
+    invoke-interface {v0}, Lgbp;->close()V
+
+    return-void
+
+    :catchall_0
+    move-exception v0
+
+    :try_start_1
+    monitor-exit p0
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    throw v0
 .end method

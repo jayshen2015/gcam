@@ -1,98 +1,80 @@
-.class public final enum Lfyk;
-.super Ljava/lang/Enum;
+.class final Lfyk;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Llij;
 
 
-# static fields
-.field public static final enum a:Lfyk;
+# instance fields
+.field final synthetic a:Lfyr;
 
-.field public static final enum b:Lfyk;
-
-.field public static final enum c:Lfyk;
-
-.field public static final enum d:Lfyk;
-
-.field private static final synthetic e:[Lfyk;
+.field private final synthetic b:I
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 9
-
-    new-instance v0, Lfyk;
-
-    const-string v1, "HW_JPEG"
-
-    const/4 v2, 0x0
-
-    invoke-direct {v0, v1, v2}, Lfyk;-><init>(Ljava/lang/String;I)V
-
-    sput-object v0, Lfyk;->a:Lfyk;
-
-    new-instance v1, Lfyk;
-
-    const-string v3, "SW_JPEG"
-
-    const/4 v4, 0x1
-
-    invoke-direct {v1, v3, v4}, Lfyk;-><init>(Ljava/lang/String;I)V
-
-    sput-object v1, Lfyk;->b:Lfyk;
-
-    new-instance v3, Lfyk;
-
-    const-string v5, "NPF_REPROCESSING"
-
-    const/4 v6, 0x2
-
-    invoke-direct {v3, v5, v6}, Lfyk;-><init>(Ljava/lang/String;I)V
-
-    sput-object v3, Lfyk;->c:Lfyk;
-
-    new-instance v5, Lfyk;
-
-    const-string v7, "REPROCESSING"
-
-    const/4 v8, 0x3
-
-    invoke-direct {v5, v7, v8}, Lfyk;-><init>(Ljava/lang/String;I)V
-
-    sput-object v5, Lfyk;->d:Lfyk;
-
-    const/4 v7, 0x4
-
-    new-array v7, v7, [Lfyk;
-
-    aput-object v0, v7, v2
-
-    aput-object v1, v7, v4
-
-    aput-object v3, v7, v6
-
-    aput-object v5, v7, v8
-
-    sput-object v7, Lfyk;->e:[Lfyk;
-
-    return-void
-.end method
-
-.method private constructor <init>(Ljava/lang/String;I)V
+.method public constructor <init>(Lfyr;I)V
     .locals 0
 
-    invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+    iput p2, p0, Lfyk;->b:I
+
+    iput-object p1, p0, Lfyk;->a:Lfyr;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
-.method public static values()[Lfyk;
-    .locals 1
 
-    sget-object v0, Lfyk;->e:[Lfyk;
+# virtual methods
+.method public final synthetic fB(Ljava/lang/Object;)V
+    .locals 2
 
-    invoke-virtual {v0}, [Lfyk;->clone()Ljava/lang/Object;
+    iget v0, p0, Lfyk;->b:I
 
-    move-result-object v0
+    packed-switch v0, :pswitch_data_0
 
-    check-cast v0, [Lfyk;
+    check-cast p1, Ljava/lang/Boolean;
 
-    return-object v0
+    iget-object p1, p0, Lfyk;->a:Lfyr;
+
+    iget v0, p1, Lfyr;->p:I
+
+    const/4 v1, 0x1
+
+    if-ne v0, v1, :cond_0
+
+    iget v0, p1, Lfyr;->P:I
+
+    if-nez v0, :cond_0
+
+    iget-object p1, p1, Lfyr;->B:Landroid/os/Handler;
+
+    new-instance v0, Lfyi;
+
+    const/4 v1, 0x0
+
+    invoke-direct {v0, p0, v1}, Lfyi;-><init>(Lfyk;[B)V
+
+    invoke-virtual {p1, v0}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
+
+    return-void
+
+    :pswitch_0
+    check-cast p1, Ljava/lang/String;
+
+    iget-object v0, p0, Lfyk;->a:Lfyr;
+
+    invoke-virtual {v0, p1}, Lfyr;->B(Ljava/lang/String;)V
+
+    return-void
+
+    :cond_0
+    return-void
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

@@ -1,122 +1,188 @@
 .class public final Lkcr;
-.super Ljava/lang/Object;
+.super Lppd;
+
+# interfaces
+.implements Lpqn;
+
+
+# static fields
+.field public static final f:Lkcr;
+
+.field private static volatile g:Lpqs;
 
 
 # instance fields
-.field public final a:Z
+.field public a:I
+
+.field public b:I
+
+.field public c:I
+
+.field public d:I
+
+.field public e:I
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 0
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
-.end method
-
-.method public constructor <init>(Z)V
-    .locals 0
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-boolean p1, p0, Lkcr;->a:Z
-
-    return-void
-.end method
-
-.method public static a(Z)Lkcr;
-    .locals 1
+.method static constructor <clinit>()V
+    .locals 2
 
     new-instance v0, Lkcr;
 
-    invoke-direct {v0, p0}, Lkcr;-><init>(Z)V
+    invoke-direct {v0}, Lkcr;-><init>()V
 
-    return-object v0
+    sput-object v0, Lkcr;->f:Lkcr;
+
+    const-class v1, Lkcr;
+
+    invoke-static {v1, v0}, Lppd;->F(Ljava/lang/Class;Lppd;)V
+
+    return-void
+.end method
+
+.method private constructor <init>()V
+    .locals 0
+
+    invoke-direct {p0}, Lppd;-><init>()V
+
+    return-void
 .end method
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 3
-
-    const/4 v0, 0x1
-
-    if-ne p1, p0, :cond_0
-
-    return v0
-
-    :cond_0
-    instance-of v1, p1, Lkcr;
-
-    const/4 v2, 0x0
-
-    if-eqz v1, :cond_1
-
-    check-cast p1, Lkcr;
-
-    iget-boolean v1, p0, Lkcr;->a:Z
-
-    iget-boolean p1, p1, Lkcr;->a:Z
-
-    if-ne v1, p1, :cond_1
-
-    return v0
-
-    :cond_1
-    return v2
-.end method
-
-.method public final hashCode()I
+.method protected final a(ILjava/lang/Object;)Ljava/lang/Object;
     .locals 2
 
-    const/4 v0, 0x1
+    add-int/lit8 p1, p1, -0x1
 
-    iget-boolean v1, p0, Lkcr;->a:Z
+    const/4 p2, 0x1
 
-    if-eq v0, v1, :cond_0
+    packed-switch p1, :pswitch_data_0
 
-    const/16 v0, 0x4d5
+    :pswitch_0
+    const/4 p1, 0x0
+
+    return-object p1
+
+    :pswitch_1
+    sget-object p1, Lkcr;->g:Lpqs;
+
+    if-nez p1, :cond_1
+
+    const-class p2, Lkcr;
+
+    monitor-enter p2
+
+    :try_start_0
+    sget-object p1, Lkcr;->g:Lpqs;
+
+    if-nez p1, :cond_0
+
+    new-instance p1, Lpoz;
+
+    sget-object v0, Lkcr;->f:Lkcr;
+
+    invoke-direct {p1, v0}, Lpoz;-><init>(Lppd;)V
+
+    sput-object p1, Lkcr;->g:Lpqs;
+
+    :cond_0
+    monitor-exit p2
 
     goto :goto_0
 
-    :cond_0
-    const/16 v0, 0x4cf
+    :catchall_0
+    move-exception p1
 
+    monitor-exit p2
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw p1
+
+    :cond_1
     :goto_0
-    const v1, 0xf4243
+    return-object p1
 
-    xor-int/2addr v0, v1
+    :pswitch_2
+    sget-object p1, Lkcr;->f:Lkcr;
 
-    mul-int v0, v0, v1
+    return-object p1
 
-    xor-int/lit16 v0, v0, 0x3e8
+    :pswitch_3
+    new-instance p1, Lpoy;
 
-    return v0
-.end method
+    sget-object p2, Lkcr;->f:Lkcr;
 
-.method public final toString()Ljava/lang/String;
-    .locals 3
+    invoke-direct {p1, p2}, Lpoy;-><init>(Lppd;)V
 
-    iget-boolean v0, p0, Lkcr;->a:Z
+    return-object p1
 
-    new-instance v1, Ljava/lang/StringBuilder;
+    :pswitch_4
+    new-instance p1, Lkcr;
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {p1}, Lkcr;-><init>()V
 
-    const-string v2, "Config{closeImmediately="
+    return-object p1
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    :pswitch_5
+    const/4 p1, 0x5
 
-    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+    new-array p1, p1, [Ljava/lang/Object;
 
-    const-string v0, ", foregroundTimeoutMillis=1000}"
+    const/4 v0, 0x0
 
-    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    const-string v1, "a"
 
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    aput-object v1, p1, v0
 
-    move-result-object v0
+    const-string v0, "b"
 
-    return-object v0
+    aput-object v0, p1, p2
+
+    const/4 p2, 0x2
+
+    const-string v0, "c"
+
+    aput-object v0, p1, p2
+
+    const/4 p2, 0x3
+
+    const-string v0, "d"
+
+    aput-object v0, p1, p2
+
+    const/4 p2, 0x4
+
+    const-string v0, "e"
+
+    aput-object v0, p1, p2
+
+    sget-object p2, Lkcr;->f:Lkcr;
+
+    const-string v0, "\u0001\u0004\u0000\u0001\u0001\u0004\u0004\u0000\u0000\u0000\u0001\u1004\u0000\u0002\u1004\u0001\u0003\u1004\u0002\u0004\u1004\u0003"
+
+    invoke-static {p2, v0, p1}, Lkcr;->E(Lpqm;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p1
+
+    return-object p1
+
+    :pswitch_6
+    invoke-static {p2}, Ljava/lang/Byte;->valueOf(B)Ljava/lang/Byte;
+
+    move-result-object p1
+
+    return-object p1
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_6
+        :pswitch_0
+        :pswitch_5
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+    .end packed-switch
 .end method

@@ -1,53 +1,46 @@
-.class public final synthetic Lcpn;
-.super Ljava/lang/Object;
-
-# interfaces
-.implements Lmqi;
-
-
-# instance fields
-.field public final synthetic a:Lcpu;
-
-.field public final synthetic b:I
+.class public final Lcpn;
+.super Lldn;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lcpu;I)V
+.method public constructor <init>(Lhur;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lcpn;->a:Lcpu;
-
-    iput p2, p0, Lcpn;->b:I
+    invoke-direct {p0, p1}, Lldn;-><init>(Llda;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final apply(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 4
+.method protected final bridge synthetic b(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 0
 
-    iget-object v0, p0, Lcpn;->a:Lcpu;
+    check-cast p1, Lhtl;
 
-    iget v1, p0, Lcpn;->b:I
+    invoke-virtual {p1}, Lhtl;->name()Ljava/lang/String;
 
-    check-cast p1, Ljava/util/List;
+    move-result-object p1
 
-    new-instance v2, Lfsf;
+    invoke-static {p1}, Lleb;->b(Ljava/lang/String;)Lleb;
 
-    iget-object v3, v0, Lcpu;->e:Ljava/util/List;
+    move-result-object p1
 
-    iget-object v0, v0, Lcpu;->n:Ljava/util/concurrent/atomic/AtomicReference;
+    return-object p1
+.end method
 
-    invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicReference;->get()Ljava/lang/Object;
+.method protected final bridge synthetic c(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 0
 
-    move-result-object v0
+    check-cast p1, Lleb;
 
-    check-cast v0, Landroid/graphics/Bitmap;
+    invoke-virtual {p1}, Lleb;->name()Ljava/lang/String;
 
-    invoke-direct {v2, p1, v3, v0, v1}, Lfsf;-><init>(Ljava/util/List;Ljava/util/List;Landroid/graphics/Bitmap;I)V
+    move-result-object p1
 
-    return-object v2
+    invoke-static {p1}, Lhtl;->a(Ljava/lang/String;)Lhtl;
+
+    move-result-object p1
+
+    return-object p1
 .end method

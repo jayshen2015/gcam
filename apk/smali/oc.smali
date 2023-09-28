@@ -1,126 +1,74 @@
-.class public final synthetic Loc;
-.super Ljava/lang/Object;
+.class final Loc;
+.super Landroid/animation/AnimatorListenerAdapter;
 
 
-# static fields
-.field public static final synthetic a:[I
+# instance fields
+.field final synthetic a:Lqs;
+
+.field final synthetic b:Landroid/view/ViewPropertyAnimator;
+
+.field final synthetic c:Landroid/view/View;
+
+.field final synthetic d:Lpy;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 3
+.method public constructor <init>(Lpy;Lqs;Landroid/view/ViewPropertyAnimator;Landroid/view/View;)V
+    .locals 0
 
-    invoke-static {}, Ljava/util/concurrent/TimeUnit;->values()[Ljava/util/concurrent/TimeUnit;
+    iput-object p1, p0, Loc;->d:Lpy;
 
-    move-result-object v0
+    iput-object p2, p0, Loc;->a:Lqs;
 
-    array-length v0, v0
+    iput-object p3, p0, Loc;->b:Landroid/view/ViewPropertyAnimator;
 
-    new-array v0, v0, [I
+    iput-object p4, p0, Loc;->c:Landroid/view/View;
 
-    sput-object v0, Loc;->a:[I
-
-    :try_start_0
-    sget-object v1, Ljava/util/concurrent/TimeUnit;->MILLISECONDS:Ljava/util/concurrent/TimeUnit;
-
-    invoke-virtual {v1}, Ljava/util/concurrent/TimeUnit;->ordinal()I
-
-    move-result v1
-
-    const/4 v2, 0x1
-
-    aput v2, v0, v1
-    :try_end_0
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_0 .. :try_end_0} :catch_0
-
-    goto :goto_0
-
-    :catch_0
-    move-exception v0
-
-    :goto_0
-    :try_start_1
-    sget-object v0, Loc;->a:[I
-
-    sget-object v1, Ljava/util/concurrent/TimeUnit;->SECONDS:Ljava/util/concurrent/TimeUnit;
-
-    invoke-virtual {v1}, Ljava/util/concurrent/TimeUnit;->ordinal()I
-
-    move-result v1
-
-    const/4 v2, 0x2
-
-    aput v2, v0, v1
-    :try_end_1
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_1 .. :try_end_1} :catch_1
-
-    goto :goto_1
-
-    :catch_1
-    move-exception v0
-
-    :goto_1
-    :try_start_2
-    sget-object v0, Loc;->a:[I
-
-    sget-object v1, Ljava/util/concurrent/TimeUnit;->MINUTES:Ljava/util/concurrent/TimeUnit;
-
-    invoke-virtual {v1}, Ljava/util/concurrent/TimeUnit;->ordinal()I
-
-    move-result v1
-
-    const/4 v2, 0x3
-
-    aput v2, v0, v1
-    :try_end_2
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_2 .. :try_end_2} :catch_2
-
-    goto :goto_2
-
-    :catch_2
-    move-exception v0
-
-    :goto_2
-    :try_start_3
-    sget-object v0, Loc;->a:[I
-
-    sget-object v1, Ljava/util/concurrent/TimeUnit;->HOURS:Ljava/util/concurrent/TimeUnit;
-
-    invoke-virtual {v1}, Ljava/util/concurrent/TimeUnit;->ordinal()I
-
-    move-result v1
-
-    const/4 v2, 0x4
-
-    aput v2, v0, v1
-    :try_end_3
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_3 .. :try_end_3} :catch_3
-
-    goto :goto_3
-
-    :catch_3
-    move-exception v0
-
-    :goto_3
-    :try_start_4
-    sget-object v0, Loc;->a:[I
-
-    sget-object v1, Ljava/util/concurrent/TimeUnit;->DAYS:Ljava/util/concurrent/TimeUnit;
-
-    invoke-virtual {v1}, Ljava/util/concurrent/TimeUnit;->ordinal()I
-
-    move-result v1
-
-    const/4 v2, 0x5
-
-    aput v2, v0, v1
-    :try_end_4
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_4 .. :try_end_4} :catch_4
+    invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
 
     return-void
+.end method
 
-    :catch_4
-    move-exception v0
+
+# virtual methods
+.method public final onAnimationEnd(Landroid/animation/Animator;)V
+    .locals 1
+
+    iget-object p1, p0, Loc;->b:Landroid/view/ViewPropertyAnimator;
+
+    const/4 v0, 0x0
+
+    invoke-virtual {p1, v0}, Landroid/view/ViewPropertyAnimator;->setListener(Landroid/animation/Animator$AnimatorListener;)Landroid/view/ViewPropertyAnimator;
+
+    iget-object p1, p0, Loc;->c:Landroid/view/View;
+
+    const/high16 v0, 0x3f800000    # 1.0f
+
+    invoke-virtual {p1, v0}, Landroid/view/View;->setAlpha(F)V
+
+    iget-object p1, p0, Loc;->d:Lpy;
+
+    iget-object v0, p0, Loc;->a:Lqs;
+
+    invoke-virtual {p1, v0}, Lpy;->a(Lqs;)V
+
+    iget-object p1, p0, Loc;->d:Lpy;
+
+    iget-object p1, p1, Lpy;->k:Ljava/util/ArrayList;
+
+    iget-object v0, p0, Loc;->a:Lqs;
+
+    invoke-virtual {p1, v0}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
+
+    iget-object p1, p0, Loc;->d:Lpy;
+
+    invoke-virtual {p1}, Lpy;->g()V
+
+    return-void
+.end method
+
+.method public final onAnimationStart(Landroid/animation/Animator;)V
+    .locals 0
 
     return-void
 .end method

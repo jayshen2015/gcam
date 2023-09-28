@@ -2,72 +2,60 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Logk;
+.implements Lpys;
 
 
 # instance fields
-.field private final a:Loiw;
+.field private final a:Lqkg;
 
-.field private final b:Loiw;
-
-.field private final c:Loiw;
+.field private final b:Lqkg;
 
 
 # direct methods
-.method public constructor <init>(Loiw;Loiw;Loiw;)V
+.method public constructor <init>(Lqkg;Lqkg;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Ldat;->a:Loiw;
+    iput-object p1, p0, Ldat;->a:Lqkg;
 
-    iput-object p2, p0, Ldat;->b:Loiw;
-
-    iput-object p3, p0, Ldat;->c:Loiw;
+    iput-object p2, p0, Ldat;->b:Lqkg;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Ldas;
-    .locals 4
+.method public final a()Ldbr;
+    .locals 3
 
-    iget-object v0, p0, Ldat;->a:Loiw;
+    iget-object v0, p0, Ldat;->a:Lqkg;
 
-    check-cast v0, Ldwh;
-
-    invoke-virtual {v0}, Ldwh;->a()Landroid/content/Context;
+    invoke-interface {v0}, Lqkg;->get()Ljava/lang/Object;
 
     move-result-object v0
 
-    iget-object v1, p0, Ldat;->b:Loiw;
+    check-cast v0, Ljava/util/concurrent/Executor;
 
-    invoke-interface {v1}, Loiw;->get()Ljava/lang/Object;
+    iget-object v1, p0, Ldat;->b:Lqkg;
+
+    check-cast v1, Lpyw;
+
+    invoke-virtual {v1}, Lpyw;->a()Ljava/util/Set;
 
     move-result-object v1
 
-    check-cast v1, Ldhi;
+    new-instance v2, Ldap;
 
-    iget-object v2, p0, Ldat;->c:Loiw;
+    invoke-direct {v2, v0, v1}, Ldap;-><init>(Ljava/util/concurrent/Executor;Ljava/util/Set;)V
 
-    check-cast v2, Ldaq;
-
-    invoke-virtual {v2}, Ldaq;->a()Lict;
-
-    move-result-object v2
-
-    new-instance v3, Ldas;
-
-    invoke-direct {v3, v0, v1, v2}, Ldas;-><init>(Landroid/content/Context;Ldhi;Lict;)V
-
-    return-object v3
+    return-object v2
 .end method
 
 .method public final bridge synthetic get()Ljava/lang/Object;
     .locals 1
 
-    invoke-virtual {p0}, Ldat;->a()Ldas;
+    invoke-virtual {p0}, Ldat;->a()Ldbr;
 
     move-result-object v0
 

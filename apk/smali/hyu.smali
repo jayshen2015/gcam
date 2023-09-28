@@ -1,22 +1,48 @@
-.class public final Lhyu;
+.class final Lhyu;
 .super Ljava/lang/Object;
 
+# interfaces
+.implements Landroid/view/View$OnLayoutChangeListener;
 
-# static fields
-.field public static final a:Lhkr;
+
+# instance fields
+.field final synthetic a:Lhza;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
+.method public constructor <init>(Lhza;)V
+    .locals 0
 
-    new-instance v0, Lhkr;
+    iput-object p1, p0, Lhyu;->a:Lhza;
 
-    const/16 v1, 0x13
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {v0, v1}, Lhkr;-><init>(I)V
+    return-void
+.end method
 
-    sput-object v0, Lhyu;->a:Lhkr;
+
+# virtual methods
+.method public final onLayoutChange(Landroid/view/View;IIIIIIII)V
+    .locals 0
+
+    if-ne p2, p6, :cond_1
+
+    if-ne p3, p7, :cond_1
+
+    if-ne p4, p8, :cond_1
+
+    if-eq p5, p9, :cond_0
+
+    goto :goto_0
+
+    :cond_0
+    return-void
+
+    :cond_1
+    :goto_0
+    iget-object p1, p0, Lhyu;->a:Lhza;
+
+    invoke-virtual {p1}, Lhza;->j()V
 
     return-void
 .end method

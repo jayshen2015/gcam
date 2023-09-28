@@ -1,130 +1,233 @@
-.class final Lkmr;
+.class public final Lkmr;
 .super Ljava/lang/Object;
 
-# interfaces
-.implements Landroid/hardware/SensorEventListener;
+
+# static fields
+.field public static final a:Ljava/lang/Object;
+
+.field public static b:Landroid/os/HandlerThread;
+
+.field public static h:Lkmr;
 
 
 # instance fields
-.field final synthetic a:Lkms;
+.field public final c:Ljava/util/HashMap;
 
-.field private b:J
+.field public final d:Landroid/content/Context;
+
+.field public volatile e:Landroid/os/Handler;
+
+.field public final f:Lknx;
+
+.field public final g:J
+
+.field private final i:Lkmt;
+
+.field private final j:J
 
 
 # direct methods
-.method public constructor <init>(Lkms;)V
-    .locals 2
+.method static constructor <clinit>()V
+    .locals 1
 
-    iput-object p1, p0, Lkmr;->a:Lkms;
+    new-instance v0, Ljava/lang/Object;
+
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+
+    sput-object v0, Lkmr;->a:Ljava/lang/Object;
+
+    return-void
+.end method
+
+.method public constructor <init>()V
+    .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const-wide/16 v0, 0x1
+    return-void
+.end method
 
-    iput-wide v0, p0, Lkmr;->b:J
+.method public constructor <init>(Landroid/content/Context;Landroid/os/Looper;)V
+    .locals 1
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    new-instance v0, Ljava/util/HashMap;
+
+    invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
+
+    iput-object v0, p0, Lkmr;->c:Ljava/util/HashMap;
+
+    new-instance v0, Lkmt;
+
+    invoke-direct {v0, p0}, Lkmt;-><init>(Lkmr;)V
+
+    iput-object v0, p0, Lkmr;->i:Lkmt;
+
+    invoke-virtual {p1}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
+
+    move-result-object p1
+
+    iput-object p1, p0, Lkmr;->d:Landroid/content/Context;
+
+    new-instance p1, Lksg;
+
+    invoke-direct {p1, p2, v0}, Lksg;-><init>(Landroid/os/Looper;Landroid/os/Handler$Callback;)V
+
+    iput-object p1, p0, Lkmr;->e:Landroid/os/Handler;
+
+    invoke-static {}, Lknx;->a()Lknx;
+
+    move-result-object p1
+
+    iput-object p1, p0, Lkmr;->f:Lknx;
+
+    const-wide/16 p1, 0x1388
+
+    iput-wide p1, p0, Lkmr;->j:J
+
+    const-wide/32 p1, 0x493e0
+
+    iput-wide p1, p0, Lkmr;->g:J
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onAccuracyChanged(Landroid/hardware/Sensor;I)V
-    .locals 0
+.method public final a(Ljava/lang/String;Ljava/lang/String;Landroid/content/ServiceConnection;Z)V
+    .locals 2
 
-    return-void
-.end method
+    new-instance v0, Lkmq;
 
-.method public final onSensorChanged(Landroid/hardware/SensorEvent;)V
-    .locals 7
+    invoke-direct {v0, p1, p2, p4}, Lkmq;-><init>(Ljava/lang/String;Ljava/lang/String;Z)V
 
-    iget-object v0, p1, Landroid/hardware/SensorEvent;->sensor:Landroid/hardware/Sensor;
+    iget-object p1, p0, Lkmr;->c:Ljava/util/HashMap;
 
-    if-eqz v0, :cond_0
-
-    iget-object v0, p1, Landroid/hardware/SensorEvent;->sensor:Landroid/hardware/Sensor;
-
-    invoke-virtual {v0}, Landroid/hardware/Sensor;->getType()I
-
-    move-result v0
-
-    const/4 v1, 0x4
-
-    if-ne v0, v1, :cond_0
-
-    iget-object v0, p1, Landroid/hardware/SensorEvent;->values:[F
-
-    iget-object v1, p0, Lkmr;->a:Lkms;
-
-    monitor-enter v1
+    monitor-enter p1
 
     :try_start_0
-    iget-object v2, p0, Lkmr;->a:Lkms;
+    iget-object p2, p0, Lkmr;->c:Ljava/util/HashMap;
 
-    iget-object v3, v2, Lkms;->a:Ljava/util/List;
+    invoke-virtual {p2, v0}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
-    iget v2, v2, Lkms;->c:I
+    move-result-object p2
 
-    invoke-interface {v3, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
+    check-cast p2, Lkms;
 
-    move-result-object v2
+    if-eqz p2, :cond_2
 
-    check-cast v2, Lkmo;
+    invoke-virtual {p2, p3}, Lkms;->a(Landroid/content/ServiceConnection;)Z
 
-    iget-wide v3, p0, Lkmr;->b:J
+    move-result p4
 
-    const-wide/16 v5, 0x1
+    if-eqz p4, :cond_1
 
-    add-long/2addr v5, v3
+    iget-object p4, p2, Lkms;->a:Ljava/util/Map;
 
-    iput-wide v5, p0, Lkmr;->b:J
+    invoke-interface {p4, p3}, Ljava/util/Map;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
-    iput-wide v3, v2, Lkmo;->d:J
+    invoke-virtual {p2}, Lkms;->b()Z
 
-    iget-wide v3, p1, Landroid/hardware/SensorEvent;->timestamp:J
+    move-result p2
 
-    iput-wide v3, v2, Lkmo;->e:J
+    if-eqz p2, :cond_0
 
-    const/4 p1, 0x0
+    iget-object p2, p0, Lkmr;->e:Landroid/os/Handler;
 
-    aget p1, v0, p1
+    const/4 p3, 0x0
 
-    iput p1, v2, Lkmo;->f:F
+    invoke-virtual {p2, p3, v0}, Landroid/os/Handler;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
 
-    const/4 p1, 0x1
+    move-result-object p2
 
-    aget v3, v0, p1
+    iget-object p3, p0, Lkmr;->e:Landroid/os/Handler;
 
-    iput v3, v2, Lkmo;->g:F
+    iget-wide v0, p0, Lkmr;->j:J
 
-    const/4 v3, 0x2
+    invoke-virtual {p3, p2, v0, v1}, Landroid/os/Handler;->sendMessageDelayed(Landroid/os/Message;J)Z
 
-    aget v0, v0, v3
-
-    iput v0, v2, Lkmo;->h:F
-
-    iget-object v0, p0, Lkmr;->a:Lkms;
-
-    iget v2, v0, Lkms;->c:I
-
-    add-int/2addr v2, p1
-
-    rem-int/lit16 v2, v2, 0x1770
-
-    iput v2, v0, Lkms;->c:I
-
-    monitor-exit v1
+    :cond_0
+    monitor-exit p1
 
     return-void
 
-    :catchall_0
-    move-exception p1
+    :cond_1
+    new-instance p2, Ljava/lang/IllegalStateException;
 
-    monitor-exit v1
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object p3
+
+    invoke-static {p3}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object p4
+
+    invoke-virtual {p4}, Ljava/lang/String;->length()I
+
+    move-result p4
+
+    add-int/lit8 p4, p4, 0x4c
+
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    invoke-direct {v0, p4}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string p4, "Trying to unbind a GmsServiceConnection  that was not bound before.  config="
+
+    invoke-virtual {v0, p4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0, p3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p3
+
+    invoke-direct {p2, p3}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw p2
+
+    :cond_2
+    new-instance p2, Ljava/lang/IllegalStateException;
+
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object p3
+
+    invoke-static {p3}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object p4
+
+    invoke-virtual {p4}, Ljava/lang/String;->length()I
+
+    move-result p4
+
+    add-int/lit8 p4, p4, 0x32
+
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    invoke-direct {v0, p4}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string p4, "Nonexistent connection status for service config: "
+
+    invoke-virtual {v0, p4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0, p3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p3
+
+    invoke-direct {p2, p3}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw p2
+
+    :catchall_0
+    move-exception p2
+
+    monitor-exit p1
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    throw p1
-
-    :cond_0
-    return-void
+    throw p2
 .end method

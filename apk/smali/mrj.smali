@@ -3,134 +3,121 @@
 
 
 # instance fields
-.field public a:I
+.field public final a:I
 
-.field public final b:Ljava/lang/Object;
+.field public final b:Lmod;
+
+.field public final c:I
+
+.field final synthetic d:I
+
+.field final synthetic e:[F
 
 
 # direct methods
-.method public constructor <init>()V
+.method public constructor <init>(ILmod;II[F)V
+    .locals 0
+
+    iput p4, p0, Lmrj;->d:I
+
+    iput-object p5, p0, Lmrj;->e:[F
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput p1, p0, Lmrj;->a:I
+
+    iput-object p2, p0, Lmrj;->b:Lmod;
+
+    iput p3, p0, Lmrj;->c:I
+
+    return-void
+.end method
+
+.method public static varargs a([F)Lmrj;
     .locals 1
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const/4 v0, 0x2
 
-    const/4 v0, -0x1
+    invoke-static {p0, v0}, Lmrj;->d([FI)Lmrj;
 
-    iput v0, p0, Lmrj;->a:I
+    move-result-object p0
 
-    new-instance v0, Ljava/util/HashMap;
-
-    invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
-
-    iput-object v0, p0, Lmrj;->b:Ljava/lang/Object;
-
-    return-void
+    return-object p0
 .end method
 
-.method public constructor <init>([B)V
-    .locals 0
+.method public static varargs b([F)Lmrj;
+    .locals 1
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const/4 v0, 0x4
 
-    new-instance p1, Ljava/util/concurrent/locks/ReentrantLock;
+    invoke-static {p0, v0}, Lmrj;->d([FI)Lmrj;
 
-    invoke-direct {p1}, Ljava/util/concurrent/locks/ReentrantLock;-><init>()V
+    move-result-object p0
 
-    iput-object p1, p0, Lmrj;->b:Ljava/lang/Object;
-
-    return-void
+    return-object p0
 .end method
 
-.method public constructor <init>([B[B)V
-    .locals 0
+.method private static d([FI)Lmrj;
+    .locals 8
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    array-length v0, p0
 
-    const/16 p1, 0x100
+    rem-int v1, v0, p1
 
-    new-array p1, p1, [Ljava/lang/Object;
+    if-nez v1, :cond_0
 
-    iput-object p1, p0, Lmrj;->b:Ljava/lang/Object;
+    const/4 v1, 0x1
 
-    return-void
+    goto :goto_0
+
+    :cond_0
+    const/4 v1, 0x0
+
+    :goto_0
+    invoke-static {v1}, Lobr;->aF(Z)V
+
+    div-int v3, v0, p1
+
+    new-instance v0, Lmrj;
+
+    sget-object v4, Lmop;->h:Lmof;
+
+    move-object v2, v0
+
+    move v5, p1
+
+    move v6, p1
+
+    move-object v7, p0
+
+    invoke-direct/range {v2 .. v7}, Lmrj;-><init>(ILmod;II[F)V
+
+    return-object v0
 .end method
 
 
 # virtual methods
-.method public final a(CLjava/lang/String;)V
-    .locals 2
+.method public final c(ILjava/nio/ByteBuffer;)V
+    .locals 3
 
-    iget-object v0, p0, Lmrj;->b:Ljava/lang/Object;
-
-    invoke-static {p1}, Ljava/lang/Character;->valueOf(C)Ljava/lang/Character;
-
-    move-result-object v1
-
-    invoke-interface {v0, v1, p2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    iget p2, p0, Lmrj;->a:I
-
-    if-le p1, p2, :cond_0
-
-    iput p1, p0, Lmrj;->a:I
-
-    :cond_0
-    return-void
-.end method
-
-.method public final b()V
-    .locals 4
-
-    iget v0, p0, Lmrj;->a:I
-
-    add-int/lit8 v0, v0, 0x1
-
-    new-array v0, v0, [[C
-
-    iget-object v1, p0, Lmrj;->b:Ljava/lang/Object;
-
-    invoke-interface {v1}, Ljava/util/Map;->entrySet()Ljava/util/Set;
-
-    move-result-object v1
-
-    invoke-interface {v1}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
-
-    move-result-object v1
+    const/4 v0, 0x0
 
     :goto_0
-    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
+    iget v1, p0, Lmrj;->d:I
 
-    move-result v2
+    if-ge v0, v1, :cond_0
 
-    if-eqz v2, :cond_0
+    iget-object v2, p0, Lmrj;->e:[F
 
-    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    mul-int v1, v1, p1
 
-    move-result-object v2
+    add-int/2addr v1, v0
 
-    check-cast v2, Ljava/util/Map$Entry;
+    aget v1, v2, v1
 
-    invoke-interface {v2}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
+    invoke-virtual {p2, v1}, Ljava/nio/ByteBuffer;->putFloat(F)Ljava/nio/ByteBuffer;
 
-    move-result-object v3
-
-    check-cast v3, Ljava/lang/Character;
-
-    invoke-virtual {v3}, Ljava/lang/Character;->charValue()C
-
-    move-result v3
-
-    invoke-interface {v2}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Ljava/lang/String;
-
-    invoke-virtual {v2}, Ljava/lang/String;->toCharArray()[C
-
-    move-result-object v2
-
-    aput-object v2, v0, v3
+    add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
@@ -138,52 +125,38 @@
     return-void
 .end method
 
-.method public final c()Ljava/lang/Object;
+.method public final toString()Ljava/lang/String;
     .locals 4
 
     iget v0, p0, Lmrj;->a:I
 
-    const/4 v1, 0x0
+    iget v1, p0, Lmrj;->d:I
 
-    if-lez v0, :cond_0
+    new-instance v2, Ljava/lang/StringBuilder;
 
-    add-int/lit8 v0, v0, -0x1
+    const/16 v3, 0x40
 
-    iget-object v2, p0, Lmrj;->b:Ljava/lang/Object;
+    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(I)V
 
-    check-cast v2, [Ljava/lang/Object;
+    const-string v3, "GLVertexData{vertexCount="
 
-    aget-object v3, v2, v0
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    aput-object v1, v2, v0
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    iput v0, p0, Lmrj;->a:I
+    const-string v0, ", type="
 
-    return-object v3
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    :cond_0
-    return-object v1
-.end method
+    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-.method public final d(Ljava/lang/Object;)V
-    .locals 2
+    const-string v0, "D float32}"
 
-    iget v0, p0, Lmrj;->a:I
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const/16 v1, 0x100
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    if-ge v0, v1, :cond_0
+    move-result-object v0
 
-    iget-object v1, p0, Lmrj;->b:Ljava/lang/Object;
-
-    check-cast v1, [Ljava/lang/Object;
-
-    aput-object p1, v1, v0
-
-    add-int/lit8 v0, v0, 0x1
-
-    iput v0, p0, Lmrj;->a:I
-
-    :cond_0
-    return-void
+    return-object v0
 .end method

@@ -1,97 +1,87 @@
-.class Lcxe;
-.super Lcxc;
+.class public final Lcxe;
+.super Ljava/lang/Object;
 
 
 # instance fields
-.field final synthetic b:Lcxh;
+.field final a:I
+
+.field b:I
+
+.field c:I
+
+.field d:I
+
+.field e:J
 
 
 # direct methods
-.method public constructor <init>(Lcxh;)V
+.method public constructor <init>(I)V
     .locals 0
 
-    iput-object p1, p0, Lcxe;->b:Lcxh;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0}, Lcxc;-><init>()V
+    iput p1, p0, Lcxe;->a:I
 
     return-void
 .end method
 
 
 # virtual methods
-.method public b()V
-    .locals 0
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 7
 
-    return-void
-.end method
+    const/4 v0, 0x1
 
-.method public c()V
-    .locals 0
+    if-ne p1, p0, :cond_0
 
-    return-void
-.end method
-
-.method public d()V
-    .locals 0
-
-    return-void
-.end method
-
-.method public final f()V
-    .locals 2
-
-    iget-object v0, p0, Lcxe;->b:Lcxh;
-
-    iget-object v0, v0, Lcxh;->m:Lcvr;
-
-    sget-object v1, Lcwx;->c:Lcwx;
-
-    invoke-virtual {v0, v1}, Lcvr;->b(Lcwx;)F
-
-    move-result v0
-
-    iget-object v1, p0, Lcxe;->b:Lcxh;
-
-    iget-object v1, v1, Lcxh;->f:Litm;
-
-    invoke-interface {v1, v0}, Litm;->F(F)V
-
-    iget-object v1, p0, Lcxe;->b:Lcxh;
-
-    iget-object v1, v1, Lcxh;->g:Ljwb;
-
-    invoke-interface {v1}, Ljwb;->bm()Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Ljava/lang/Float;
-
-    invoke-virtual {v1}, Ljava/lang/Float;->floatValue()F
-
-    move-result v1
-
-    cmpg-float v1, v1, v0
-
-    if-gez v1, :cond_0
-
-    iget-object v1, p0, Lcxe;->b:Lcxh;
-
-    iget-object v1, v1, Lcxh;->f:Litm;
-
-    invoke-interface {v1, v0}, Litm;->D(F)V
+    return v0
 
     :cond_0
-    return-void
-.end method
+    instance-of v1, p1, Lcxe;
 
-.method public final g()V
-    .locals 1
+    const/4 v2, 0x0
 
-    iget-object v0, p0, Lcxe;->b:Lcxh;
+    if-nez v1, :cond_1
 
-    iget-object v0, v0, Lcxh;->f:Litm;
+    return v2
 
-    invoke-interface {v0}, Litm;->z()V
+    :cond_1
+    check-cast p1, Lcxe;
 
-    return-void
+    iget v1, p0, Lcxe;->a:I
+
+    iget v3, p1, Lcxe;->a:I
+
+    if-ne v1, v3, :cond_2
+
+    iget v1, p0, Lcxe;->b:I
+
+    iget v3, p1, Lcxe;->b:I
+
+    if-ne v1, v3, :cond_2
+
+    iget v1, p0, Lcxe;->c:I
+
+    iget v3, p1, Lcxe;->c:I
+
+    if-ne v1, v3, :cond_2
+
+    iget v1, p0, Lcxe;->d:I
+
+    iget v3, p1, Lcxe;->d:I
+
+    if-ne v1, v3, :cond_2
+
+    iget-wide v3, p0, Lcxe;->e:J
+
+    iget-wide v5, p1, Lcxe;->e:J
+
+    cmp-long p1, v3, v5
+
+    if-nez p1, :cond_2
+
+    return v0
+
+    :cond_2
+    return v2
 .end method

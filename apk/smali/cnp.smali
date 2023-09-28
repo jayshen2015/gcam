@@ -1,136 +1,399 @@
-.class public final synthetic Lcnp;
+.class public final Lcnp;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lmqi;
+.implements Llfl;
+
+
+# static fields
+.field private static final b:Louj;
 
 
 # instance fields
-.field public final synthetic a:Ljava/lang/String;
+.field public final a:Llco;
 
-.field public final synthetic b:J
+.field private final c:Lcnm;
 
-.field public final synthetic c:Ljava/util/Map;
+.field private final d:Llda;
 
-.field public final synthetic d:[B
+.field private final e:Llda;
+
+.field private f:Landroid/media/AudioRouting;
+
+.field private g:Z
+
+.field private final h:Ljava/lang/Object;
+
+.field private i:Llie;
 
 
 # direct methods
-.method public synthetic constructor <init>(Ljava/lang/String;JLjava/util/Map;[B)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 1
+
+    const-string v0, "com/google/android/apps/camera/camcorder/media/audio/AudioDeviceSelectorImpl"
+
+    invoke-static {v0}, Louj;->h(Ljava/lang/String;)Louj;
+
+    move-result-object v0
+
+    sput-object v0, Lcnp;->b:Louj;
+
+    return-void
+.end method
+
+.method public constructor <init>(Lcnm;Llda;Llda;Llda;)V
+    .locals 1
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lcnp;->a:Ljava/lang/String;
+    new-instance v0, Ljava/lang/Object;
 
-    iput-wide p2, p0, Lcnp;->b:J
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p4, p0, Lcnp;->c:Ljava/util/Map;
+    iput-object v0, p0, Lcnp;->h:Ljava/lang/Object;
 
-    iput-object p5, p0, Lcnp;->d:[B
+    iput-object p1, p0, Lcnp;->c:Lcnm;
+
+    iput-object p2, p0, Lcnp;->a:Llco;
+
+    iput-object p3, p0, Lcnp;->d:Llda;
+
+    iput-object p4, p0, Lcnp;->e:Llda;
+
+    const/4 p1, 0x0
+
+    iput-boolean p1, p0, Lcnp;->g:Z
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final apply(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 8
+.method public final a(Landroid/media/AudioRouting;)V
+    .locals 3
 
-    iget-object v0, p0, Lcnp;->a:Ljava/lang/String;
+    if-nez p1, :cond_0
 
-    iget-wide v1, p0, Lcnp;->b:J
-
-    iget-object v3, p0, Lcnp;->c:Ljava/util/Map;
-
-    iget-object v4, p0, Lcnp;->d:[B
-
-    check-cast p1, Ldja;
-
-    new-instance v5, Landroid/content/ContentValues;
-
-    invoke-direct {v5}, Landroid/content/ContentValues;-><init>()V
-
-    invoke-static {v1, v2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    move-result-object v1
-
-    const-string v2, "media_id"
-
-    invoke-virtual {v5, v2, v1}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Long;)V
-
-    iget-object v1, p1, Ldja;->a:Ljava/lang/Object;
-
-    invoke-interface {v1}, Lkrn;->a()J
-
-    move-result-wide v6
-
-    invoke-static {v6, v7}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    move-result-object v1
-
-    const-string v6, "time"
-
-    invoke-virtual {v5, v6, v1}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Long;)V
-
-    const-string v1, "value"
-
-    invoke-virtual {v5, v1, v4}, Landroid/content/ContentValues;->put(Ljava/lang/String;[B)V
-
-    move-object v1, v3
-
-    check-cast v1, Lmwa;
-
-    invoke-virtual {v1}, Lmwa;->s()Lmwn;
-
-    move-result-object v1
-
-    invoke-interface {v1}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
-
-    move-result-object v1
+    return-void
 
     :cond_0
-    :goto_0
-    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
+    iget-object v0, p0, Lcnp;->a:Llco;
 
-    move-result v4
+    invoke-interface {v0}, Llco;->fA()Ljava/lang/Object;
 
-    if-eqz v4, :cond_1
+    move-result-object v0
 
-    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    check-cast v0, Lhth;
 
-    move-result-object v4
+    sget-object v1, Lhth;->b:Lhth;
 
-    check-cast v4, Ljava/lang/String;
+    invoke-virtual {v0, v1}, Lhth;->equals(Ljava/lang/Object;)Z
 
-    invoke-interface {v3, v4}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    move-result v0
 
-    move-result-object v6
+    const/4 v1, 0x0
 
-    if-eqz v6, :cond_0
+    if-eqz v0, :cond_1
 
-    invoke-interface {v3, v4}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    iget-object v0, p0, Lcnp;->d:Llda;
 
-    move-result-object v6
+    invoke-interface {v0}, Llda;->fA()Ljava/lang/Object;
 
-    check-cast v6, Ljava/lang/Integer;
+    move-result-object v0
 
-    invoke-virtual {v5, v4, v6}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
+    check-cast v0, Ljava/lang/Boolean;
+
+    invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    iget-object v0, p0, Lcnp;->c:Lcnm;
+
+    invoke-virtual {v0}, Lcnm;->b()Landroid/media/AudioDeviceInfo;
+
+    move-result-object v0
 
     goto :goto_0
 
     :cond_1
-    iget-object v1, p1, Ldja;->c:Ljava/lang/Object;
+    iget-object v0, p0, Lcnp;->a:Llco;
 
-    check-cast v1, Landroid/database/sqlite/SQLiteDatabase;
+    invoke-interface {v0}, Llco;->fA()Ljava/lang/Object;
 
-    const/4 v3, 0x0
+    move-result-object v0
 
-    const/4 v4, 0x5
+    check-cast v0, Lhth;
 
-    invoke-virtual {v1, v0, v3, v5, v4}, Landroid/database/sqlite/SQLiteDatabase;->insertWithOnConflict(Ljava/lang/String;Ljava/lang/String;Landroid/content/ContentValues;I)J
+    sget-object v2, Lhth;->c:Lhth;
 
-    invoke-virtual {p1, v0, v2}, Ldja;->q(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-virtual {v0, v2}, Lhth;->equals(Ljava/lang/Object;)Z
 
-    return-object v3
+    move-result v0
+
+    if-eqz v0, :cond_2
+
+    iget-object v0, p0, Lcnp;->e:Llda;
+
+    invoke-interface {v0}, Llda;->fA()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/Boolean;
+
+    invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_2
+
+    iget-object v0, p0, Lcnp;->c:Lcnm;
+
+    invoke-virtual {v0}, Lcnm;->a()Landroid/media/AudioDeviceInfo;
+
+    move-result-object v0
+
+    goto :goto_0
+
+    :cond_2
+    move-object v0, v1
+
+    :goto_0
+    invoke-interface {p1, v0}, Landroid/media/AudioRouting;->setPreferredDevice(Landroid/media/AudioDeviceInfo;)Z
+
+    move-result v2
+
+    if-eqz v0, :cond_3
+
+    invoke-static {v0}, Lcnm;->c(Landroid/media/AudioDeviceInfo;)V
+
+    if-nez v2, :cond_3
+
+    invoke-interface {p1, v1}, Landroid/media/AudioRouting;->setPreferredDevice(Landroid/media/AudioDeviceInfo;)Z
+
+    :cond_3
+    return-void
+.end method
+
+.method public final b(Landroid/media/AudioRouting;)V
+    .locals 4
+
+    iget-object v0, p0, Lcnp;->h:Ljava/lang/Object;
+
+    monitor-enter v0
+
+    :try_start_0
+    iget-boolean v1, p0, Lcnp;->g:Z
+
+    if-eqz v1, :cond_0
+
+    sget-object p1, Lcnp;->b:Louj;
+
+    invoke-virtual {p1}, Loue;->c()Lova;
+
+    move-result-object p1
+
+    check-cast p1, Loug;
+
+    const/16 v1, 0x23d
+
+    invoke-interface {p1, v1}, Loug;->G(I)Lova;
+
+    move-result-object p1
+
+    check-cast p1, Loug;
+
+    const-string v1, "Ignore start. Already closed"
+
+    invoke-interface {p1, v1}, Loug;->o(Ljava/lang/String;)V
+
+    monitor-exit v0
+
+    return-void
+
+    :cond_0
+    iget-object v1, p0, Lcnp;->f:Landroid/media/AudioRouting;
+
+    if-eqz v1, :cond_1
+
+    invoke-virtual {p0}, Lcnp;->c()V
+
+    :cond_1
+    invoke-interface {p1}, Landroid/media/AudioRouting;->getRoutedDevice()Landroid/media/AudioDeviceInfo;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Landroid/media/AudioDeviceInfo;->getType()I
+
+    iput-object p1, p0, Lcnp;->f:Landroid/media/AudioRouting;
+
+    invoke-virtual {p0, p1}, Lcnp;->a(Landroid/media/AudioRouting;)V
+
+    const/4 v1, 0x2
+
+    new-array v1, v1, [Llco;
+
+    const/4 v2, 0x0
+
+    iget-object v3, p0, Lcnp;->d:Llda;
+
+    aput-object v3, v1, v2
+
+    const/4 v2, 0x1
+
+    iget-object v3, p0, Lcnp;->e:Llda;
+
+    aput-object v3, v1, v2
+
+    invoke-static {v1}, Llcv;->b([Llco;)Llco;
+
+    move-result-object v1
+
+    new-instance v2, Lcno;
+
+    invoke-direct {v2, p0, p1}, Lcno;-><init>(Lcnp;Landroid/media/AudioRouting;)V
+
+    sget-object p1, Lpgr;->a:Lpgr;
+
+    invoke-interface {v1, v2, p1}, Llco;->a(Llij;Ljava/util/concurrent/Executor;)Llie;
+
+    move-result-object p1
+
+    iput-object p1, p0, Lcnp;->i:Llie;
+
+    monitor-exit v0
+
+    return-void
+
+    :catchall_0
+    move-exception p1
+
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw p1
+.end method
+
+.method public final c()V
+    .locals 3
+
+    iget-object v0, p0, Lcnp;->h:Ljava/lang/Object;
+
+    monitor-enter v0
+
+    :try_start_0
+    iget-boolean v1, p0, Lcnp;->g:Z
+
+    if-eqz v1, :cond_0
+
+    sget-object v1, Lcnp;->b:Louj;
+
+    invoke-virtual {v1}, Loue;->c()Lova;
+
+    move-result-object v1
+
+    check-cast v1, Loug;
+
+    const/16 v2, 0x23f
+
+    invoke-interface {v1, v2}, Loug;->G(I)Lova;
+
+    move-result-object v1
+
+    check-cast v1, Loug;
+
+    const-string v2, "Ignore stop. Already closed"
+
+    invoke-interface {v1, v2}, Loug;->o(Ljava/lang/String;)V
+
+    monitor-exit v0
+
+    return-void
+
+    :cond_0
+    const/4 v1, 0x0
+
+    iput-object v1, p0, Lcnp;->f:Landroid/media/AudioRouting;
+
+    iget-object v2, p0, Lcnp;->i:Llie;
+
+    if-eqz v2, :cond_1
+
+    invoke-interface {v2}, Llie;->close()V
+
+    iput-object v1, p0, Lcnp;->i:Llie;
+
+    :cond_1
+    monitor-exit v0
+
+    return-void
+
+    :catchall_0
+    move-exception v1
+
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw v1
+.end method
+
+.method public final close()V
+    .locals 3
+
+    iget-object v0, p0, Lcnp;->h:Ljava/lang/Object;
+
+    monitor-enter v0
+
+    :try_start_0
+    iget-boolean v1, p0, Lcnp;->g:Z
+
+    if-eqz v1, :cond_0
+
+    sget-object v1, Lcnp;->b:Louj;
+
+    invoke-virtual {v1}, Loue;->c()Lova;
+
+    move-result-object v1
+
+    check-cast v1, Loug;
+
+    const/16 v2, 0x23b
+
+    invoke-interface {v1, v2}, Loug;->G(I)Lova;
+
+    move-result-object v1
+
+    check-cast v1, Loug;
+
+    const-string v2, "Already closed"
+
+    invoke-interface {v1, v2}, Loug;->o(Ljava/lang/String;)V
+
+    monitor-exit v0
+
+    return-void
+
+    :cond_0
+    invoke-virtual {p0}, Lcnp;->c()V
+
+    const/4 v1, 0x1
+
+    iput-boolean v1, p0, Lcnp;->g:Z
+
+    monitor-exit v0
+
+    return-void
+
+    :catchall_0
+    move-exception v1
+
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw v1
 .end method

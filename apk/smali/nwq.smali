@@ -1,73 +1,55 @@
-.class public abstract Lnwq;
-.super Lnws;
+.class public final Lnwq;
+.super Ljava/lang/Object;
 
 # interfaces
-.implements Lnxz;
+.implements Landroid/animation/ValueAnimator$AnimatorUpdateListener;
 
 
 # instance fields
-.field public l:Lnwj;
+.field final synthetic a:Landroidx/coordinatorlayout/widget/CoordinatorLayout;
+
+.field final synthetic b:Lcom/google/android/material/appbar/AppBarLayout;
+
+.field final synthetic c:Lcom/google/android/material/appbar/AppBarLayout$BaseBehavior;
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 1
+.method public constructor <init>(Lcom/google/android/material/appbar/AppBarLayout$BaseBehavior;Landroidx/coordinatorlayout/widget/CoordinatorLayout;Lcom/google/android/material/appbar/AppBarLayout;)V
+    .locals 0
 
-    invoke-direct {p0}, Lnws;-><init>()V
+    iput-object p1, p0, Lnwq;->c:Lcom/google/android/material/appbar/AppBarLayout$BaseBehavior;
 
-    sget-object v0, Lnwj;->a:Lnwj;
+    iput-object p2, p0, Lnwq;->a:Landroidx/coordinatorlayout/widget/CoordinatorLayout;
 
-    iput-object v0, p0, Lnwq;->l:Lnwj;
+    iput-object p3, p0, Lnwq;->b:Lcom/google/android/material/appbar/AppBarLayout;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final c()Lnwj;
-    .locals 2
+.method public final onAnimationUpdate(Landroid/animation/ValueAnimator;)V
+    .locals 3
 
-    iget-object v0, p0, Lnwq;->l:Lnwj;
+    iget-object v0, p0, Lnwq;->c:Lcom/google/android/material/appbar/AppBarLayout$BaseBehavior;
 
-    iget-boolean v1, v0, Lnwj;->c:Z
+    iget-object v1, p0, Lnwq;->a:Landroidx/coordinatorlayout/widget/CoordinatorLayout;
 
-    if-eqz v1, :cond_0
+    iget-object v2, p0, Lnwq;->b:Lcom/google/android/material/appbar/AppBarLayout;
 
-    invoke-virtual {v0}, Lnwj;->c()Lnwj;
+    invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
 
-    move-result-object v0
+    move-result-object p1
 
-    iput-object v0, p0, Lnwq;->l:Lnwj;
+    check-cast p1, Ljava/lang/Integer;
 
-    :cond_0
-    iget-object v0, p0, Lnwq;->l:Lnwj;
+    invoke-virtual {p1}, Ljava/lang/Integer;->intValue()I
 
-    return-object v0
-.end method
+    move-result p1
 
-.method public final e(Llhj;)V
-    .locals 1
-
-    iget-object p1, p1, Llhj;->a:Ljava/lang/Object;
-
-    const/4 v0, 0x6
-
-    invoke-virtual {p0, v0}, Lnws;->ad(I)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lnws;
-
-    if-ne p1, v0, :cond_0
+    invoke-virtual {v0, v1, v2, p1}, Lnxc;->F(Landroidx/coordinatorlayout/widget/CoordinatorLayout;Landroid/view/View;I)V
 
     return-void
-
-    :cond_0
-    new-instance p1, Ljava/lang/IllegalArgumentException;
-
-    const-string v0, "This extension is for a different message type.  Please make sure that you are not suppressing any generics type warnings."
-
-    invoke-direct {p1, v0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw p1
 .end method

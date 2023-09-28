@@ -1,213 +1,127 @@
-.class public final Ldjk;
+.class public final synthetic Ldjk;
 .super Ljava/lang/Object;
+
+# interfaces
+.implements Lagn;
 
 
 # instance fields
-.field public final a:Landroid/widget/ImageView;
+.field public final synthetic a:Ldjn;
 
-.field public final b:Landroid/widget/ImageView;
-
-.field public final c:Landroid/widget/ImageView;
+.field private final synthetic b:I
 
 
 # direct methods
-.method public constructor <init>()V
+.method public synthetic constructor <init>(Ldjn;I)V
     .locals 0
+
+    iput p2, p0, Ldjk;->b:I
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    return-void
-.end method
-
-.method public constructor <init>(Landroid/widget/ImageView;Landroid/widget/ImageView;Landroid/widget/ImageView;)V
-    .locals 0
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    if-eqz p1, :cond_2
-
-    iput-object p1, p0, Ldjk;->a:Landroid/widget/ImageView;
-
-    if-eqz p2, :cond_1
-
-    iput-object p2, p0, Ldjk;->b:Landroid/widget/ImageView;
-
-    if-eqz p3, :cond_0
-
-    iput-object p3, p0, Ldjk;->c:Landroid/widget/ImageView;
+    iput-object p1, p0, Ldjk;->a:Ldjn;
 
     return-void
-
-    :cond_0
-    new-instance p1, Ljava/lang/NullPointerException;
-
-    const-string p2, "Null photoSphereBadge"
-
-    invoke-direct {p1, p2}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
-
-    throw p1
-
-    :cond_1
-    new-instance p1, Ljava/lang/NullPointerException;
-
-    const-string p2, "Null playButton"
-
-    invoke-direct {p1, p2}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
-
-    throw p1
-
-    :cond_2
-    new-instance p1, Ljava/lang/NullPointerException;
-
-    const-string p2, "Null contentView"
-
-    invoke-direct {p1, p2}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
-
-    throw p1
 .end method
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 4
+.method public final a()Z
+    .locals 6
 
-    const/4 v0, 0x1
+    iget v0, p0, Ldjk;->b:I
 
-    if-ne p1, p0, :cond_0
+    const/4 v1, 0x1
 
-    return v0
+    packed-switch v0, :pswitch_data_0
+
+    iget-object v0, p0, Ldjk;->a:Ldjn;
+
+    iget-object v0, v0, Ldjn;->a:Landroid/content/Context;
+
+    invoke-static {v0}, Lmvc;->a(Landroid/content/Context;)V
+
+    return v1
+
+    :pswitch_0
+    iget-object v0, p0, Ldjk;->a:Ldjn;
+
+    iget-object v2, v0, Ldjn;->c:Landroidx/preference/PreferenceScreen;
+
+    invoke-virtual {v2}, Landroidx/preference/PreferenceGroup;->k()I
+
+    move-result v2
+
+    iget-object v3, v0, Ldjn;->b:Landroid/content/SharedPreferences;
+
+    invoke-interface {v3}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
+
+    move-result-object v3
+
+    iget-object v4, v0, Ldjn;->d:Ljava/util/List;
+
+    invoke-interface {v4}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+
+    move-result-object v4
+
+    :goto_0
+    invoke-interface {v4}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v5
+
+    if-eqz v5, :cond_0
+
+    invoke-interface {v4}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v5
+
+    check-cast v5, Ldjm;
+
+    iget-object v5, v5, Ldjm;->b:Landroidx/preference/Preference;
+
+    iget-object v5, v5, Landroidx/preference/Preference;->t:Ljava/lang/String;
+
+    invoke-interface {v3, v5}, Landroid/content/SharedPreferences$Editor;->remove(Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
+
+    goto :goto_0
 
     :cond_0
-    instance-of v1, p1, Ldjk;
+    const/4 v4, 0x0
 
-    const/4 v2, 0x0
+    :goto_1
+    if-ge v4, v2, :cond_1
 
-    if-eqz v1, :cond_1
+    iget-object v5, v0, Ldjn;->c:Landroidx/preference/PreferenceScreen;
 
-    check-cast p1, Ldjk;
+    invoke-virtual {v5, v4}, Landroidx/preference/PreferenceGroup;->o(I)Landroidx/preference/Preference;
 
-    iget-object v1, p0, Ldjk;->a:Landroid/widget/ImageView;
+    move-result-object v5
 
-    iget-object v3, p1, Ldjk;->a:Landroid/widget/ImageView;
+    iget-object v5, v5, Landroidx/preference/Preference;->t:Ljava/lang/String;
 
-    invoke-virtual {v1, v3}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+    invoke-interface {v3, v5}, Landroid/content/SharedPreferences$Editor;->remove(Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
 
-    move-result v1
+    add-int/lit8 v4, v4, 0x1
 
-    if-eqz v1, :cond_1
-
-    iget-object v1, p0, Ldjk;->b:Landroid/widget/ImageView;
-
-    iget-object v3, p1, Ldjk;->b:Landroid/widget/ImageView;
-
-    invoke-virtual {v1, v3}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_1
-
-    iget-object v1, p0, Ldjk;->c:Landroid/widget/ImageView;
-
-    iget-object p1, p1, Ldjk;->c:Landroid/widget/ImageView;
-
-    invoke-virtual {v1, p1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
-
-    move-result p1
-
-    if-eqz p1, :cond_1
-
-    return v0
+    goto :goto_1
 
     :cond_1
-    return v2
-.end method
+    invoke-interface {v3}, Landroid/content/SharedPreferences$Editor;->apply()V
 
-.method public final hashCode()I
-    .locals 3
+    iget-object v2, v0, Ldjn;->c:Landroidx/preference/PreferenceScreen;
 
-    iget-object v0, p0, Ldjk;->a:Landroid/widget/ImageView;
+    invoke-virtual {v2}, Landroidx/preference/PreferenceGroup;->ac()V
 
-    invoke-virtual {v0}, Ljava/lang/Object;->hashCode()I
+    iget-object v2, v0, Ldjn;->c:Landroidx/preference/PreferenceScreen;
 
-    move-result v0
+    invoke-virtual {v0, v2}, Ldjn;->a(Landroidx/preference/PreferenceScreen;)V
 
-    const v1, 0xf4243
+    return v1
 
-    xor-int/2addr v0, v1
+    nop
 
-    iget-object v2, p0, Ldjk;->b:Landroid/widget/ImageView;
-
-    invoke-virtual {v2}, Ljava/lang/Object;->hashCode()I
-
-    move-result v2
-
-    mul-int v0, v0, v1
-
-    xor-int/2addr v0, v2
-
-    iget-object v2, p0, Ldjk;->c:Landroid/widget/ImageView;
-
-    invoke-virtual {v2}, Ljava/lang/Object;->hashCode()I
-
-    move-result v2
-
-    mul-int v0, v0, v1
-
-    xor-int/2addr v0, v2
-
-    return v0
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .locals 5
-
-    iget-object v0, p0, Ldjk;->a:Landroid/widget/ImageView;
-
-    invoke-virtual {v0}, Ljava/lang/Object;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    iget-object v1, p0, Ldjk;->b:Landroid/widget/ImageView;
-
-    invoke-virtual {v1}, Ljava/lang/Object;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    iget-object v2, p0, Ldjk;->c:Landroid/widget/ImageView;
-
-    invoke-virtual {v2}, Ljava/lang/Object;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v4, "ContentViewHolder{contentView="
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v0, ", playButton="
-
-    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v0, ", photoSphereBadge="
-
-    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v0, "}"
-
-    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    return-object v0
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

@@ -1,22 +1,60 @@
-.class final Ldqe;
+.class public final Ldqe;
 .super Ljava/lang/Object;
 
 
-# static fields
-.field public static final a:Lnak;
+# instance fields
+.field public final a:Ldqh;
+
+.field public final b:Ljava/util/concurrent/atomic/AtomicReference;
+
+.field public final c:Ljava/util/concurrent/atomic/AtomicReference;
+
+.field private final d:Llco;
 
 
 # direct methods
-.method static constructor <clinit>()V
+.method public constructor <init>(Ldqh;Llco;)V
+    .locals 2
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    new-instance v0, Ljava/util/concurrent/atomic/AtomicReference;
+
+    invoke-direct {v0}, Ljava/util/concurrent/atomic/AtomicReference;-><init>()V
+
+    iput-object v0, p0, Ldqe;->b:Ljava/util/concurrent/atomic/AtomicReference;
+
+    new-instance v0, Ljava/util/concurrent/atomic/AtomicReference;
+
+    sget-object v1, Ljrl;->b:Ljrl;
+
+    invoke-direct {v0, v1}, Ljava/util/concurrent/atomic/AtomicReference;-><init>(Ljava/lang/Object;)V
+
+    iput-object v0, p0, Ldqe;->c:Ljava/util/concurrent/atomic/AtomicReference;
+
+    iput-object p1, p0, Ldqe;->a:Ldqh;
+
+    iput-object p2, p0, Ldqe;->d:Llco;
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public final a()F
     .locals 1
 
-    const-string v0, "com/google/android/apps/camera/facebeautification/FaceBeautificationControllerUtils"
+    iget-object v0, p0, Ldqe;->d:Llco;
 
-    invoke-static {v0}, Lnak;->h(Ljava/lang/String;)Lnak;
+    invoke-interface {v0}, Llco;->fA()Ljava/lang/Object;
 
     move-result-object v0
 
-    sput-object v0, Ldqe;->a:Lnak;
+    check-cast v0, Ljava/lang/Float;
 
-    return-void
+    invoke-virtual {v0}, Ljava/lang/Float;->floatValue()F
+
+    move-result v0
+
+    return v0
 .end method

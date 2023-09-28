@@ -1,202 +1,55 @@
-.class public final Lmug;
-.super Lmuh;
+.class public final synthetic Lmug;
+.super Ljava/lang/Object;
 
 # interfaces
-.implements Ljava/io/Serializable;
+.implements Ljava/util/concurrent/Callable;
 
 
-# static fields
-.field public static final a:Lmug;
+# instance fields
+.field public final synthetic a:Lmuh;
 
-.field private static final serialVersionUID:J
+.field private final synthetic b:I
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
-
-    new-instance v0, Lmug;
-
-    invoke-direct {v0}, Lmug;-><init>()V
-
-    sput-object v0, Lmug;->a:Lmug;
-
-    return-void
-.end method
-
-.method public constructor <init>()V
+.method public synthetic constructor <init>(Lmuh;I)V
     .locals 0
 
-    invoke-direct {p0}, Lmuh;-><init>()V
+    iput p2, p0, Lmug;->b:I
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lmug;->a:Lmuh;
 
     return-void
-.end method
-
-.method private readResolve()Ljava/lang/Object;
-    .locals 1
-
-    sget-object v0, Lmug;->a:Lmug;
-
-    return-object v0
 .end method
 
 
 # virtual methods
-.method public final bridge synthetic a(Ljava/lang/Comparable;Ljava/lang/Comparable;)J
+.method public final call()Ljava/lang/Object;
     .locals 2
 
-    check-cast p1, Ljava/lang/Integer;
+    iget v0, p0, Lmug;->b:I
 
-    check-cast p2, Ljava/lang/Integer;
+    const/4 v1, 0x0
 
-    invoke-virtual {p2}, Ljava/lang/Integer;->intValue()I
+    packed-switch v0, :pswitch_data_0
 
-    move-result p2
+    iget-object v0, p0, Lmug;->a:Lmuh;
 
-    int-to-long v0, p2
+    invoke-virtual {v0}, Lmuh;->a()V
 
-    invoke-virtual {p1}, Ljava/lang/Integer;->intValue()I
+    return-object v1
 
-    move-result p1
+    :pswitch_0
+    iget-object v0, p0, Lmug;->a:Lmuh;
 
-    int-to-long p1, p1
+    invoke-virtual {v0}, Lmuh;->a()V
 
-    sub-long/2addr v0, p1
+    return-object v1
 
-    return-wide v0
-.end method
-
-.method public final bridge synthetic b()Ljava/lang/Comparable;
-    .locals 1
-
-    const v0, 0x7fffffff
-
-    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public final bridge synthetic c()Ljava/lang/Comparable;
-    .locals 1
-
-    const/high16 v0, -0x80000000
-
-    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public final bridge synthetic d(Ljava/lang/Comparable;)Ljava/lang/Comparable;
-    .locals 1
-
-    check-cast p1, Ljava/lang/Integer;
-
-    invoke-virtual {p1}, Ljava/lang/Integer;->intValue()I
-
-    move-result p1
-
-    const v0, 0x7fffffff
-
-    if-ne p1, v0, :cond_0
-
-    const/4 p1, 0x0
-
-    return-object p1
-
-    :cond_0
-    add-int/lit8 p1, p1, 0x1
-
-    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object p1
-
-    return-object p1
-.end method
-
-.method public final bridge synthetic e(Ljava/lang/Comparable;J)Ljava/lang/Comparable;
-    .locals 3
-
-    const-wide/16 v0, 0x0
-
-    cmp-long v2, p2, v0
-
-    check-cast p1, Ljava/lang/Integer;
-
-    if-ltz v2, :cond_0
-
-    invoke-virtual {p1}, Ljava/lang/Integer;->longValue()J
-
-    move-result-wide v0
-
-    add-long/2addr v0, p2
-
-    invoke-static {v0, v1}, Lnsy;->N(J)I
-
-    move-result p1
-
-    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object p1
-
-    return-object p1
-
-    :cond_0
-    new-instance p1, Ljava/lang/IllegalArgumentException;
-
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v1, "distance cannot be negative but was: "
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0, p2, p3}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p2
-
-    invoke-direct {p1, p2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw p1
-.end method
-
-.method public final bridge synthetic f(Ljava/lang/Comparable;)Ljava/lang/Comparable;
-    .locals 1
-
-    check-cast p1, Ljava/lang/Integer;
-
-    invoke-virtual {p1}, Ljava/lang/Integer;->intValue()I
-
-    move-result p1
-
-    const/high16 v0, -0x80000000
-
-    if-ne p1, v0, :cond_0
-
-    const/4 p1, 0x0
-
-    return-object p1
-
-    :cond_0
-    add-int/lit8 p1, p1, -0x1
-
-    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object p1
-
-    return-object p1
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .locals 1
-
-    const-string v0, "DiscreteDomain.integers()"
-
-    return-object v0
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

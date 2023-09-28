@@ -1,57 +1,76 @@
 .class public final Lmaw;
-.super Lolh;
-
-
-# annotations
-.annotation runtime Lolj;
-    b = "com.google.android.libraries.vision.visionkit.f250.internal.uploader.work.F250Worker"
-    c = "F250Worker.kt"
-    d = "doWork"
-    e = {
-        0x3a
-    }
-.end annotation
+.super Ljava/lang/Object;
 
 
 # instance fields
-.field public synthetic a:Ljava/lang/Object;
+.field public a:Lmat;
 
-.field final synthetic b:Lcom/google/android/libraries/vision/visionkit/f250/internal/uploader/work/F250Worker;
+.field public b:Ljava/lang/Long;
 
-.field public c:I
+.field public c:Ljava/lang/Long;
+
+.field public d:Ljava/lang/String;
+
+.field public e:Lmam;
+
+.field public f:Lope;
+
+.field public g:Lope;
+
+.field public h:Lope;
+
+.field public i:Loom;
+
+.field public j:Lmcc;
+
+.field public k:I
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/libraries/vision/visionkit/f250/internal/uploader/work/F250Worker;Loku;)V
+.method public constructor <init>()V
     .locals 0
 
-    iput-object p1, p0, Lmaw;->b:Lcom/google/android/libraries/vision/visionkit/f250/internal/uploader/work/F250Worker;
-
-    invoke-direct {p0, p2}, Lolh;-><init>(Loku;)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final b(Ljava/lang/Object;)Ljava/lang/Object;
+.method public final a(Loom;)V
     .locals 1
 
-    iput-object p1, p0, Lmaw;->a:Ljava/lang/Object;
+    if-eqz p1, :cond_0
 
-    iget p1, p0, Lmaw;->c:I
+    iput-object p1, p0, Lmaw;->i:Loom;
 
-    const/high16 v0, -0x80000000
+    return-void
 
-    or-int/2addr p1, v0
+    :cond_0
+    new-instance p1, Ljava/lang/NullPointerException;
 
-    iput p1, p0, Lmaw;->c:I
+    const-string v0, "Null listeners"
 
-    iget-object p1, p0, Lmaw;->b:Lcom/google/android/libraries/vision/visionkit/f250/internal/uploader/work/F250Worker;
+    invoke-direct {p1, v0}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {p1, p0}, Lcom/google/android/libraries/vision/visionkit/f250/internal/uploader/work/F250Worker;->b(Loku;)Ljava/lang/Object;
+    throw p1
+.end method
 
-    move-result-object p1
+.method public final b(I)V
+    .locals 1
 
-    return-object p1
+    if-eqz p1, :cond_0
+
+    iput p1, p0, Lmaw;->k:I
+
+    return-void
+
+    :cond_0
+    new-instance p1, Ljava/lang/NullPointerException;
+
+    const-string v0, "Null publishIntent"
+
+    invoke-direct {p1, v0}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
+
+    throw p1
 .end method

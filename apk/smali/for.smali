@@ -1,752 +1,321 @@
-.class public final Lfor;
-.super Lchk;
+.class final Lfor;
+.super Ljava/lang/Object;
 
 # interfaces
-.implements Lcqs;
-.implements Lhrx;
+.implements Lphh;
 
 
 # instance fields
-.field public final b:Lcox;
+.field final synthetic a:Lfot;
 
-.field public final c:Ljava/lang/Object;
+.field final synthetic b:Lfos;
 
-.field public final d:Lcqa;
-
-.field private final e:Lcgy;
-
-.field private final f:Ljava/lang/String;
-
-.field private g:Ljuf;
-
-.field private final h:Lcom/google/android/apps/camera/bottombar/BottomBarListener;
-
-.field private final i:Lcom/google/android/apps/camera/bottombar/BottomBarController;
-
-.field private final j:Lczh;
-
-.field private final k:Lgzn;
-
-.field private final l:Ldhi;
-
-.field private final m:Lfou;
-
-.field private final n:Lhrz;
-
-.field private final o:Lfmf;
-
-.field private final p:Ljew;
+.field final synthetic c:Lfou;
 
 
 # direct methods
-.method public constructor <init>(Lcgy;Landroid/content/res/Resources;Lcqa;Lcom/google/android/apps/camera/bottombar/BottomBarController;Lcox;Lczh;Ljew;Lgzn;Ldhi;Lfou;Lhrz;Lfmf;[B[B[B[B)V
-    .locals 3
+.method public constructor <init>(Lfou;Lfot;Lfos;)V
+    .locals 0
 
-    move-object v0, p0
+    iput-object p1, p0, Lfor;->c:Lfou;
 
-    invoke-direct {p0}, Lchk;-><init>()V
+    iput-object p2, p0, Lfor;->a:Lfot;
 
-    new-instance v1, Ljava/lang/Object;
+    iput-object p3, p0, Lfor;->b:Lfos;
 
-    invoke-direct {v1}, Ljava/lang/Object;-><init>()V
-
-    iput-object v1, v0, Lfor;->c:Ljava/lang/Object;
-
-    move-object v1, p1
-
-    iput-object v1, v0, Lfor;->e:Lcgy;
-
-    const v1, 0x7f140584
-
-    move-object v2, p2
-
-    invoke-virtual {p2, v1}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
-
-    move-result-object v1
-
-    iput-object v1, v0, Lfor;->f:Ljava/lang/String;
-
-    move-object v1, p5
-
-    iput-object v1, v0, Lfor;->b:Lcox;
-
-    move-object v1, p4
-
-    iput-object v1, v0, Lfor;->i:Lcom/google/android/apps/camera/bottombar/BottomBarController;
-
-    move-object v1, p3
-
-    iput-object v1, v0, Lfor;->d:Lcqa;
-
-    move-object v1, p6
-
-    iput-object v1, v0, Lfor;->j:Lczh;
-
-    move-object v1, p7
-
-    iput-object v1, v0, Lfor;->p:Ljew;
-
-    move-object v1, p8
-
-    iput-object v1, v0, Lfor;->k:Lgzn;
-
-    move-object v1, p9
-
-    iput-object v1, v0, Lfor;->l:Ldhi;
-
-    move-object v1, p10
-
-    iput-object v1, v0, Lfor;->m:Lfou;
-
-    move-object v1, p11
-
-    iput-object v1, v0, Lfor;->n:Lhrz;
-
-    move-object v1, p12
-
-    iput-object v1, v0, Lfor;->o:Lfmf;
-
-    new-instance v1, Lfoq;
-
-    invoke-direct {v1, p0}, Lfoq;-><init>(Lfor;)V
-
-    iput-object v1, v0, Lfor;->h:Lcom/google/android/apps/camera/bottombar/BottomBarListener;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final bZ()V
-    .locals 2
+.method public final a(Ljava/lang/Throwable;)V
+    .locals 3
 
-    iget-object v0, p0, Lfor;->d:Lcqa;
+    iget-object v0, p0, Lfor;->a:Lfot;
 
-    const/4 v1, 0x1
+    iget-object v0, v0, Lfot;->o:Lmlk;
 
-    invoke-virtual {v0, v1}, Lcqa;->j(Z)V
+    invoke-interface {v0}, Lmlk;->b()Lpht;
 
-    return-void
-.end method
+    move-result-object v0
 
-.method public final c()Ljava/lang/String;
-    .locals 1
-
-    iget-object v0, p0, Lfor;->f:Ljava/lang/String;
-
-    return-object v0
-.end method
-
-.method public final ca(I)V
-    .locals 2
-
-    iget-object v0, p0, Lfor;->c:Ljava/lang/Object;
-
-    monitor-enter v0
-
-    :try_start_0
-    iget-object v1, p0, Lfor;->b:Lcox;
-
-    invoke-virtual {v1, p1}, Lcox;->f(I)V
-
-    monitor-exit v0
-
-    return-void
-
-    :catchall_0
-    move-exception p1
-
-    monitor-exit v0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw p1
-.end method
-
-.method public final cb(Z)V
-    .locals 2
-
-    iget-object v0, p0, Lfor;->c:Ljava/lang/Object;
-
-    monitor-enter v0
-
-    :try_start_0
-    iget-object v1, p0, Lfor;->b:Lcox;
-
-    invoke-virtual {v1, p1}, Lcox;->j(Z)V
-
-    monitor-exit v0
-
-    return-void
-
-    :catchall_0
-    move-exception p1
-
-    monitor-exit v0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw p1
-.end method
-
-.method public final cc()V
-    .locals 4
-
-    iget-object v0, p0, Lfor;->c:Ljava/lang/Object;
-
-    monitor-enter v0
-
-    :try_start_0
-    iget-object v1, p0, Lfor;->d:Lcqa;
-
-    iget-object v2, p0, Lfor;->e:Lcgy;
-
-    invoke-interface {v2}, Lcgy;->g()Lcha;
-
-    move-result-object v2
-
-    sget-object v3, Lika;->t:Lika;
-
-    invoke-virtual {v1, v2, v3}, Lcqa;->c(Lcha;Lika;)V
-
-    iget-object v1, p0, Lfor;->b:Lcox;
-
-    invoke-virtual {v1}, Lcox;->d()V
-
-    monitor-exit v0
-
-    return-void
-
-    :catchall_0
-    move-exception v1
-
-    monitor-exit v0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw v1
-.end method
-
-.method public final cd()V
-    .locals 2
-
-    iget-object v0, p0, Lfor;->c:Ljava/lang/Object;
-
-    monitor-enter v0
-
-    :try_start_0
-    iget-object v1, p0, Lfor;->d:Lcqa;
-
-    invoke-virtual {v1}, Lcqa;->e()V
-
-    monitor-exit v0
-
-    return-void
-
-    :catchall_0
-    move-exception v1
-
-    monitor-exit v0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw v1
-.end method
-
-.method public final close()V
-    .locals 2
-
-    iget-object v0, p0, Lfor;->c:Ljava/lang/Object;
-
-    monitor-enter v0
-
-    :try_start_0
-    iget-object v1, p0, Lfor;->b:Lcox;
-
-    invoke-virtual {v1}, Lcox;->m()V
-
-    monitor-exit v0
-
-    return-void
-
-    :catchall_0
-    move-exception v1
-
-    monitor-exit v0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw v1
-.end method
-
-.method public final f()V
-    .locals 0
-
-    return-void
-.end method
-
-.method public final g()V
-    .locals 0
-
-    return-void
-.end method
-
-.method public final h()V
-    .locals 0
-
-    return-void
-.end method
-
-.method public final i(Z)V
-    .locals 1
-
-    iget-object v0, p0, Lfor;->b:Lcox;
-
-    invoke-virtual {v0, p1}, Lcox;->g(Z)V
-
-    return-void
-.end method
-
-.method public final k()V
-    .locals 2
-
-    iget-boolean v0, p0, Lchk;->a:Z
-
-    if-eqz v0, :cond_0
-
-    iget-object v0, p0, Lfor;->b:Lcox;
-
-    const/4 v1, 0x5
-
-    invoke-virtual {v0, v1}, Lcox;->q(I)V
-
-    :cond_0
-    return-void
-.end method
-
-.method public final l()V
-    .locals 22
-
-    move-object/from16 v1, p0
-
-    iget-object v2, v1, Lfor;->c:Ljava/lang/Object;
-
-    monitor-enter v2
-
-    :try_start_0
-    iget-object v0, v1, Lfor;->b:Lcox;
-
-    const/4 v3, 0x1
-
-    invoke-virtual {v0, v3}, Lcox;->l(Z)V
-
-    iget-object v0, v1, Lfor;->l:Ldhi;
-
-    sget-object v4, Ldgu;->a:Ldhk;
-
-    invoke-interface {v0}, Ldhi;->d()V
-
-    iget-object v0, v1, Lfor;->p:Ljew;
-
-    const-string v4, "amber_edu"
-
-    invoke-virtual {v0, v4}, Ljew;->X(Ljava/lang/String;)I
+    invoke-interface {v0}, Lpht;->isCancelled()Z
 
     move-result v0
 
-    if-nez v0, :cond_2
+    if-eqz v0, :cond_0
 
-    iget-object v0, v1, Lfor;->j:Lczh;
+    iget-object v0, p0, Lfor;->a:Lfot;
 
-    iget-object v4, v0, Lczh;->k:Landroid/view/View;
+    iget-object v1, p0, Lfor;->b:Lfos;
 
-    if-nez v4, :cond_0
+    invoke-static {v0, p1, v1}, Lfou;->k(Lfot;Ljava/lang/Throwable;Lfos;)V
 
-    iget-object v4, v0, Lczh;->d:Landroid/content/Context;
+    iget-object v0, p0, Lfor;->a:Lfot;
 
-    const v5, 0x7f0e0033
+    iget-object v0, v0, Lfot;->k:Lhsa;
 
-    const/4 v6, 0x0
+    invoke-interface {v0, p1}, Lhsa;->w(Ljava/lang/Throwable;)V
 
-    invoke-static {v4, v5, v6}, Landroid/view/View;->inflate(Landroid/content/Context;ILandroid/view/ViewGroup;)Landroid/view/View;
-
-    move-result-object v4
-
-    iput-object v4, v0, Lczh;->k:Landroid/view/View;
+    goto :goto_0
 
     :cond_0
-    iget-object v4, v0, Lczh;->k:Landroid/view/View;
+    iget-object v0, p0, Lfor;->c:Lfou;
 
-    const v5, 0x7f0b00cf
+    iget-object v1, p0, Lfor;->a:Lfot;
 
-    invoke-virtual {v4, v5}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+    iget-object v2, p0, Lfor;->b:Lfos;
 
-    move-result-object v4
+    invoke-virtual {v0, v1, p1, v2}, Lfou;->d(Lfot;Ljava/lang/Throwable;Lfos;)V
 
-    check-cast v4, Lcom/google/android/apps/camera/ui/compositevideoview/CompositeVideoView;
+    iget-object v0, p0, Lfor;->a:Lfot;
 
-    iput-object v4, v0, Lczh;->g:Lcom/google/android/apps/camera/ui/compositevideoview/CompositeVideoView;
+    iget-object v0, v0, Lfot;->k:Lhsa;
 
-    iget-object v4, v0, Lczh;->k:Landroid/view/View;
+    sget-object v1, Ljmq;->a:Ljmo;
 
-    const v5, 0x7f0b00cc
+    invoke-interface {v0, v1, p1}, Lhsa;->C(Ljmo;Ljava/lang/Throwable;)V
 
-    invoke-virtual {v4, v5}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+    :goto_0
+    iget-object p1, p0, Lfor;->c:Lfou;
 
-    move-result-object v4
+    iget-object v0, p0, Lfor;->a:Lfot;
 
-    check-cast v4, Lcom/google/android/apps/camera/ui/compositevideoview/CompositeVideoView;
+    invoke-virtual {p1, v0}, Lfou;->c(Lfot;)V
 
-    iput-object v4, v0, Lczh;->i:Lcom/google/android/apps/camera/ui/compositevideoview/CompositeVideoView;
+    iget-object p1, p0, Lfor;->a:Lfot;
 
-    iget-object v4, v0, Lczh;->h:Lczj;
+    sget-object v0, Loih;->a:Loih;
 
-    if-nez v4, :cond_1
+    iput-object v0, p1, Lfot;->q:Lojc;
 
-    iget-object v4, v0, Lczh;->j:Lczj;
+    return-void
+.end method
 
-    if-nez v4, :cond_1
+.method public final b(Ljava/lang/Object;)V
+    .locals 8
 
-    new-instance v4, Lczj;
+    iget-object p1, p0, Lfor;->a:Lfot;
 
-    iget-object v15, v0, Lczh;->g:Lcom/google/android/apps/camera/ui/compositevideoview/CompositeVideoView;
+    iget-object p1, p1, Lfot;->d:Lfrf;
 
-    iget-object v14, v0, Lczh;->i:Lcom/google/android/apps/camera/ui/compositevideoview/CompositeVideoView;
+    invoke-virtual {p1}, Lfrf;->a()Lfrf;
 
-    iget-object v13, v0, Lczh;->n:Ligo;
+    move-result-object p1
 
-    iget-object v12, v0, Lczh;->d:Landroid/content/Context;
+    iget v0, p1, Lfrf;->a:I
 
-    iget-object v11, v0, Lczh;->e:Ljava/util/concurrent/Executor;
+    if-nez v0, :cond_4
 
-    sget-object v16, Lczh;->a:Landroid/net/Uri;
+    sget-object p1, Lfou;->a:Louj;
 
-    iget-object v10, v0, Lczh;->f:Ljava/util/concurrent/ScheduledExecutorService;
+    invoke-virtual {p1}, Loue;->b()Lova;
 
-    const/16 v17, 0x0
+    move-result-object p1
 
-    const/16 v18, 0x0
+    check-cast p1, Loug;
 
-    move-object v5, v4
+    const/16 v0, 0x700
 
-    move-object v6, v15
+    invoke-interface {p1, v0}, Loug;->G(I)Lova;
 
-    move-object v7, v14
+    move-result-object p1
 
-    move-object v8, v13
+    check-cast p1, Loug;
 
-    move-object v9, v12
+    iget-object v0, p0, Lfor;->a:Lfot;
 
-    move-object/from16 v19, v10
+    iget-object v0, v0, Lfot;->a:Lhsp;
 
-    move-object v10, v11
+    const-string v1, "No key video frames in long shot. Shot=%s"
 
-    move-object/from16 v20, v11
+    invoke-interface {p1, v1, v0}, Loug;->r(Ljava/lang/String;Ljava/lang/Object;)V
 
-    move-object/from16 v11, v16
+    iget-object p1, p0, Lfor;->c:Lfou;
 
-    move-object/from16 v16, v12
+    iget-object p1, p1, Lfou;->l:Lddf;
 
-    move-object/from16 v12, v19
+    sget-object v0, Lddr;->w:Lddg;
 
-    move-object/from16 v21, v13
+    invoke-interface {p1, v0}, Lddf;->k(Lddg;)Z
 
-    move-object/from16 v13, v17
+    move-result p1
 
-    move-object/from16 v17, v14
+    iget-object v0, p0, Lfor;->a:Lfot;
 
-    move-object/from16 v14, v18
+    iget-boolean v1, v0, Lfot;->p:Z
 
-    invoke-direct/range {v5 .. v14}, Lczj;-><init>(Lcom/google/android/apps/camera/ui/compositevideoview/CompositeVideoView;Lcom/google/android/apps/camera/ui/compositevideoview/CompositeVideoView;Ligo;Landroid/content/Context;Ljava/util/concurrent/Executor;Landroid/net/Uri;Ljava/util/concurrent/ScheduledExecutorService;[B[B)V
+    const/4 v2, 0x1
 
-    iput-object v4, v0, Lczh;->h:Lczj;
+    const/4 v3, 0x0
 
-    new-instance v4, Lczj;
+    if-eqz v1, :cond_0
 
-    sget-object v11, Lczh;->b:Landroid/net/Uri;
+    if-eqz p1, :cond_0
 
-    const/4 v13, 0x0
+    iget-object p1, v0, Lfot;->q:Lojc;
 
-    const/4 v14, 0x0
+    invoke-virtual {p1}, Lojc;->g()Z
 
-    move-object v5, v4
+    move-result p1
 
-    move-object/from16 v6, v17
+    if-eqz p1, :cond_0
 
-    move-object v7, v15
+    const/4 p1, 0x1
 
-    move-object/from16 v8, v21
+    goto :goto_0
 
-    move-object/from16 v9, v16
+    :cond_0
+    const/4 p1, 0x0
 
-    move-object/from16 v10, v20
+    :goto_0
+    const-string v0, "No video frames in long shot. Shot=%s"
 
-    move-object/from16 v12, v19
+    if-nez p1, :cond_1
 
-    invoke-direct/range {v5 .. v14}, Lczj;-><init>(Lcom/google/android/apps/camera/ui/compositevideoview/CompositeVideoView;Lcom/google/android/apps/camera/ui/compositevideoview/CompositeVideoView;Ligo;Landroid/content/Context;Ljava/util/concurrent/Executor;Landroid/net/Uri;Ljava/util/concurrent/ScheduledExecutorService;[B[B)V
+    iget-object v1, p0, Lfor;->c:Lfou;
 
-    iput-object v4, v0, Lczh;->j:Lczj;
+    iget-object v4, p0, Lfor;->a:Lfot;
+
+    new-instance v5, Ljava/lang/IllegalStateException;
+
+    new-array v6, v2, [Ljava/lang/Object;
+
+    iget-object v7, v4, Lfot;->a:Lhsp;
+
+    aput-object v7, v6, v3
+
+    invoke-static {v0, v6}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v6
+
+    invoke-direct {v5, v6}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    iget-object v6, p0, Lfor;->b:Lfos;
+
+    invoke-virtual {v1, v4, v5, v6}, Lfou;->d(Lfot;Ljava/lang/Throwable;Lfos;)V
 
     :cond_1
-    iget-object v4, v0, Lczh;->h:Lczj;
+    iget-object v1, p0, Lfor;->c:Lfou;
 
-    invoke-virtual {v4}, Lczj;->f()V
+    iget-object v4, p0, Lfor;->a:Lfot;
 
-    iget-object v4, v0, Lczh;->h:Lczj;
+    invoke-virtual {v1, v4}, Lfou;->c(Lfot;)V
 
-    new-instance v5, Lctw;
+    if-eqz p1, :cond_3
 
-    const/16 v6, 0xf
+    iget-object p1, p0, Lfor;->a:Lfot;
 
-    invoke-direct {v5, v0, v6}, Lctw;-><init>(Lczh;I)V
+    iget-object p1, p1, Lfot;->q:Lojc;
 
-    iput-object v5, v4, Lczj;->f:Ljava/lang/Runnable;
+    invoke-virtual {p1}, Lojc;->g()Z
 
-    invoke-virtual {v4}, Lczj;->b()V
+    move-result p1
 
-    iget-object v4, v0, Lczh;->j:Lczj;
+    if-eqz p1, :cond_2
 
-    invoke-virtual {v4}, Lczj;->f()V
+    iget-object p1, p0, Lfor;->c:Lfou;
 
-    iget-object v4, v0, Lczh;->j:Lczj;
+    iget-object p1, p1, Lfou;->t:Lfnm;
 
-    new-instance v5, Lctw;
+    iget-object v0, p0, Lfor;->a:Lfot;
 
-    const/16 v6, 0x10
+    iget-object v0, v0, Lfot;->q:Lojc;
 
-    invoke-direct {v5, v0, v6}, Lctw;-><init>(Lczh;I)V
+    invoke-virtual {v0}, Lojc;->c()Ljava/lang/Object;
 
-    iput-object v5, v4, Lczj;->f:Ljava/lang/Runnable;
+    move-result-object v0
 
-    invoke-virtual {v4}, Lczj;->b()V
+    check-cast v0, Lfmp;
 
-    iget-object v4, v0, Lczh;->g:Lcom/google/android/apps/camera/ui/compositevideoview/CompositeVideoView;
+    iget-object v0, v0, Lfmp;->a:Lfxh;
 
-    invoke-virtual {v4}, Lcom/google/android/apps/camera/ui/compositevideoview/CompositeVideoView;->g()V
+    invoke-virtual {p1, v0}, Lfnm;->a(Lfxh;)V
 
-    iget-object v4, v0, Lczh;->i:Lcom/google/android/apps/camera/ui/compositevideoview/CompositeVideoView;
+    const-string p1, "No video frames available. Trigger backup shot."
 
-    invoke-virtual {v4}, Lcom/google/android/apps/camera/ui/compositevideoview/CompositeVideoView;->h()V
-
-    iget-object v4, v0, Lczh;->c:Lhrz;
-
-    iget-object v5, v0, Lczh;->k:Landroid/view/View;
-
-    const/16 v6, 0xe
-
-    const v7, 0x7f140105
-
-    invoke-virtual {v4, v6, v7, v5, v0}, Lhrz;->m(IILandroid/view/View;Landroid/content/DialogInterface$OnDismissListener;)V
-
-    iget-object v0, v1, Lfor;->p:Ljew;
-
-    const-string v4, "amber_edu"
-
-    invoke-virtual {v0, v4}, Ljew;->Z(Ljava/lang/String;)I
+    goto :goto_1
 
     :cond_2
-    iget-object v0, v1, Lfor;->k:Lgzn;
+    sget-object p1, Lfou;->a:Louj;
 
-    sget-object v4, Lgzd;->M:Lgzr;
+    invoke-virtual {p1}, Loue;->c()Lova;
 
-    invoke-static {v3}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+    move-result-object p1
 
-    move-result-object v3
+    const/16 v0, 0x702
 
-    invoke-interface {v0, v4, v3}, Lgzn;->e(Lgzb;Ljava/lang/Object;)V
+    const-string v1, "Didn\'t take second shot since UI resources are missing"
 
-    monitor-exit v2
+    invoke-static {p1, v1, v0}, Ld;->v(Lova;Ljava/lang/String;C)V
 
-    return-void
+    const-string p1, "No video frames available. Unable to trigger backup shot."
 
-    :catchall_0
-    move-exception v0
+    :goto_1
+    iget-object v0, p0, Lfor;->a:Lfot;
 
-    monitor-exit v2
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    iget-object v0, v0, Lfot;->k:Lhsa;
 
-    throw v0
-.end method
+    new-instance v1, Ljava/lang/Throwable;
 
-.method public final n()V
-    .locals 4
+    invoke-direct {v1, p1}, Ljava/lang/Throwable;-><init>(Ljava/lang/String;)V
 
-    iget-object v0, p0, Lfor;->c:Ljava/lang/Object;
+    invoke-interface {v0, v1}, Lhsa;->w(Ljava/lang/Throwable;)V
 
-    monitor-enter v0
+    goto :goto_2
 
-    :try_start_0
-    new-instance v1, Ljuf;
+    :cond_3
+    iget-object p1, p0, Lfor;->a:Lfot;
 
-    invoke-direct {v1}, Ljuf;-><init>()V
+    iget-object v1, p1, Lfot;->a:Lhsp;
 
-    iput-object v1, p0, Lfor;->g:Ljuf;
+    iget-object p1, p1, Lfot;->k:Lhsa;
 
-    iget-object v1, p0, Lfor;->o:Lfmf;
+    sget-object v1, Ljmq;->a:Ljmo;
 
-    sget-object v2, Lika;->t:Lika;
+    new-instance v4, Ljava/lang/IllegalStateException;
 
-    iget-object v3, p0, Lfor;->g:Ljuf;
+    new-array v2, v2, [Ljava/lang/Object;
 
-    invoke-virtual {v1, p0, v2, v3}, Lfmf;->b(Lchk;Lika;Ljuf;)V
+    iget-object v5, p0, Lfor;->a:Lfot;
 
-    iget-object v1, p0, Lfor;->i:Lcom/google/android/apps/camera/bottombar/BottomBarController;
+    iget-object v5, v5, Lfot;->a:Lhsp;
 
-    iget-object v2, p0, Lfor;->h:Lcom/google/android/apps/camera/bottombar/BottomBarListener;
+    aput-object v5, v2, v3
 
-    invoke-virtual {v1, v2}, Lcom/google/android/apps/camera/bottombar/BottomBarController;->addListener(Lcom/google/android/apps/camera/bottombar/BottomBarListener;)V
+    invoke-static {v0, v2}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
-    iget-object v1, p0, Lfor;->n:Lhrz;
+    move-result-object v0
 
-    invoke-virtual {v1, p0}, Lhrz;->e(Lhrx;)V
+    invoke-direct {v4, v0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 
-    iget-object v1, p0, Lfor;->d:Lcqa;
+    invoke-interface {p1, v1, v4}, Lhsa;->C(Ljmo;Ljava/lang/Throwable;)V
 
-    invoke-virtual {v1}, Lcqa;->h()V
+    goto :goto_2
 
-    iget-object v1, p0, Lfor;->b:Lcox;
+    :cond_4
+    iget-wide v0, p1, Lfrf;->d:J
 
-    invoke-virtual {v1, p0}, Lcox;->b(Lcqs;)V
+    iget-wide v2, p1, Lfrf;->c:J
 
-    iget-object v1, p0, Lfor;->m:Lfou;
+    iget-object p1, p0, Lfor;->c:Lfou;
 
-    invoke-virtual {v1}, Lfou;->i()V
+    iget-object v4, p0, Lfor;->a:Lfot;
 
-    monitor-exit v0
+    iget-object v5, p0, Lfor;->b:Lfos;
 
-    return-void
+    sub-long/2addr v0, v2
 
-    :catchall_0
-    move-exception v1
+    invoke-virtual {p1, v4, v5, v0, v1}, Lfou;->h(Lfot;Lfos;J)V
 
-    monitor-exit v0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    :goto_2
+    iget-object p1, p0, Lfor;->a:Lfot;
 
-    throw v1
-.end method
+    sget-object v0, Loih;->a:Loih;
 
-.method public final o(Lfsf;)V
-    .locals 0
+    iput-object v0, p1, Lfot;->q:Lojc;
 
-    return-void
-.end method
-
-.method public final p()V
-    .locals 3
-
-    iget-object v0, p0, Lfor;->c:Ljava/lang/Object;
-
-    monitor-enter v0
-
-    :try_start_0
-    iget-object v1, p0, Lfor;->i:Lcom/google/android/apps/camera/bottombar/BottomBarController;
-
-    iget-object v2, p0, Lfor;->h:Lcom/google/android/apps/camera/bottombar/BottomBarListener;
-
-    invoke-virtual {v1, v2}, Lcom/google/android/apps/camera/bottombar/BottomBarController;->removeListener(Lcom/google/android/apps/camera/bottombar/BottomBarListener;)V
-
-    iget-object v1, p0, Lfor;->n:Lhrz;
-
-    invoke-virtual {v1, p0}, Lhrz;->i(Lhrx;)V
-
-    iget-object v1, p0, Lfor;->d:Lcqa;
-
-    invoke-virtual {v1}, Lcqa;->i()V
-
-    iget-object v1, p0, Lfor;->b:Lcox;
-
-    invoke-virtual {v1}, Lcox;->m()V
-
-    iget-object v1, p0, Lfor;->g:Ljuf;
-
-    invoke-virtual {v1}, Ljuf;->close()V
-
-    iget-object v1, p0, Lfor;->b:Lcox;
-
-    invoke-virtual {v1, p0}, Lcox;->k(Lcqs;)V
-
-    iget-object v1, p0, Lfor;->m:Lfou;
-
-    invoke-virtual {v1}, Lfou;->j()V
-
-    monitor-exit v0
-
-    return-void
-
-    :catchall_0
-    move-exception v1
-
-    monitor-exit v0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw v1
-.end method
-
-.method public final s(Ljava/lang/Runnable;)V
-    .locals 0
-
-    invoke-interface {p1}, Ljava/lang/Runnable;->run()V
-
-    return-void
-.end method
-
-.method public final t()Z
-    .locals 2
-
-    iget-object v0, p0, Lfor;->c:Ljava/lang/Object;
-
-    monitor-enter v0
-
-    :try_start_0
-    iget-object v1, p0, Lfor;->b:Lcox;
-
-    invoke-virtual {v1}, Lcox;->n()Z
-
-    move-result v1
-
-    monitor-exit v0
-
-    return v1
-
-    :catchall_0
-    move-exception v1
-
-    monitor-exit v0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw v1
-.end method
-
-.method public final x(I)V
-    .locals 1
-
-    const/16 v0, 0xe
-
-    if-ne p1, v0, :cond_0
-
-    iget-object p1, p0, Lfor;->m:Lfou;
-
-    invoke-virtual {p1}, Lfou;->i()V
-
-    :cond_0
-    return-void
-.end method
-
-.method public final y(I)V
-    .locals 1
-
-    const/16 v0, 0xe
-
-    if-ne p1, v0, :cond_0
-
-    iget-object p1, p0, Lfor;->m:Lfou;
-
-    invoke-virtual {p1}, Lfou;->j()V
-
-    :cond_0
     return-void
 .end method

@@ -1,51 +1,105 @@
-.class public final Lmnn;
-.super Lmno;
+.class final Lmnn;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Lmnf;
 
 
-# static fields
-.field public static final a:Lmno;
+# instance fields
+.field final synthetic a:Lmoa;
+
+.field final synthetic b:Lmtw;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 3
-
-    new-instance v0, Lmnn;
-
-    new-instance v1, Lxf;
-
-    const/4 v2, 0x0
-
-    invoke-direct {v1, v2}, Lxf;-><init>(I)V
-
-    invoke-direct {v0, v1}, Lmnn;-><init>(Lxf;)V
-
-    iget-boolean v1, v0, Lmno;->b:Z
-
-    if-nez v1, :cond_0
-
-    const/4 v1, 0x1
-
-    iput-boolean v1, v0, Lmno;->b:Z
-
-    sput-object v0, Lmnn;->a:Lmno;
-
-    return-void
-
-    :cond_0
-    new-instance v0, Ljava/lang/IllegalStateException;
-
-    const-string v1, "Already frozen"
-
-    invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-.end method
-
-.method private constructor <init>(Lxf;)V
+.method public constructor <init>(Lmoa;Lmtw;)V
     .locals 0
 
-    invoke-direct {p0, p1}, Lmno;-><init>(Lxf;)V
+    iput-object p1, p0, Lmnn;->a:Lmoa;
+
+    iput-object p2, p0, Lmnn;->b:Lmtw;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
+.end method
+
+
+# virtual methods
+.method public final a(Ljava/lang/Object;Ljava/util/concurrent/Executor;)Lmnb;
+    .locals 1
+
+    iget-object v0, p0, Lmnn;->b:Lmtw;
+
+    invoke-virtual {v0}, Lmtw;->a()Lmne;
+
+    move-result-object v0
+
+    invoke-static {p1}, Lmip;->ag(Ljava/lang/Object;)Lmlu;
+
+    move-result-object p1
+
+    invoke-virtual {v0, p2, p1}, Lmne;->a(Ljava/util/concurrent/Executor;Lmlu;)Lmnb;
+
+    move-result-object p1
+
+    return-object p1
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .locals 5
+
+    iget-object v0, p0, Lmnn;->a:Lmoa;
+
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lmnn;->b:Lmtw;
+
+    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/String;->length()I
+
+    move-result v2
+
+    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/lang/String;->length()I
+
+    move-result v3
+
+    new-instance v4, Ljava/lang/StringBuilder;
+
+    add-int/lit8 v2, v2, 0xc
+
+    add-int/2addr v2, v3
+
+    invoke-direct {v4, v2}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v0, "thenAlways["
+
+    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v4, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v0, "]"
+
+    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
 .end method

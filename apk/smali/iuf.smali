@@ -1,188 +1,109 @@
 .class public final Liuf;
-.super Lnwq;
-
-# interfaces
-.implements Lnxz;
-
-
-# static fields
-.field public static final c:Liuf;
-
-.field private static volatile e:Lnyf;
+.super Ljava/lang/Object;
 
 
 # instance fields
-.field public a:I
-
-.field public b:I
-
-.field private d:B
+.field private final a:Landroid/view/accessibility/AccessibilityManager;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
+.method public constructor <init>(Landroid/view/accessibility/AccessibilityManager;)V
+    .locals 0
 
-    new-instance v0, Liuf;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {v0}, Liuf;-><init>()V
-
-    sput-object v0, Liuf;->c:Liuf;
-
-    const-class v1, Liuf;
-
-    invoke-static {v1, v0}, Lnws;->aa(Ljava/lang/Class;Lnws;)V
-
-    return-void
-.end method
-
-.method private constructor <init>()V
-    .locals 1
-
-    invoke-direct {p0}, Lnwq;-><init>()V
-
-    const/4 v0, 0x2
-
-    iput-byte v0, p0, Liuf;->d:B
+    iput-object p1, p0, Liuf;->a:Landroid/view/accessibility/AccessibilityManager;
 
     return-void
 .end method
 
 
 # virtual methods
-.method protected final a(ILjava/lang/Object;)Ljava/lang/Object;
-    .locals 3
+.method public final a()Z
+    .locals 5
 
-    add-int/lit8 p1, p1, -0x1
+    iget-object v0, p0, Liuf;->a:Landroid/view/accessibility/AccessibilityManager;
 
-    const/4 v0, 0x1
+    invoke-virtual {v0}, Landroid/view/accessibility/AccessibilityManager;->isTouchExplorationEnabled()Z
 
-    const/4 v1, 0x0
+    move-result v0
 
-    packed-switch p1, :pswitch_data_0
+    const/4 v1, 0x1
 
-    :pswitch_0
-    if-nez p2, :cond_2
+    if-nez v0, :cond_3
 
-    const/4 v0, 0x0
+    iget-object v0, p0, Liuf;->a:Landroid/view/accessibility/AccessibilityManager;
 
-    goto :goto_1
+    const/4 v2, -0x1
 
-    :pswitch_1
-    sget-object p1, Liuf;->e:Lnyf;
+    invoke-virtual {v0, v2}, Landroid/view/accessibility/AccessibilityManager;->getEnabledAccessibilityServiceList(I)Ljava/util/List;
 
-    if-nez p1, :cond_1
+    move-result-object v0
 
-    const-class p2, Liuf;
+    if-eqz v0, :cond_2
 
-    monitor-enter p2
+    invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
-    :try_start_0
-    sget-object p1, Liuf;->e:Lnyf;
-
-    if-nez p1, :cond_0
-
-    new-instance p1, Lnwo;
-
-    sget-object v0, Liuf;->c:Liuf;
-
-    invoke-direct {p1, v0}, Lnwo;-><init>(Lnws;)V
-
-    sput-object p1, Liuf;->e:Lnyf;
+    move-result-object v2
 
     :cond_0
-    monitor-exit p2
+    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v3
+
+    if-eqz v3, :cond_2
+
+    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v3
+
+    check-cast v3, Landroid/accessibilityservice/AccessibilityServiceInfo;
+
+    invoke-virtual {v3}, Landroid/accessibilityservice/AccessibilityServiceInfo;->getId()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-interface {v0}, Ljava/util/List;->size()I
+
+    move-result v4
+
+    if-ne v4, v1, :cond_1
+
+    const-string v4, "com.google.android.accessibility.accessibilitymenu.AccessibilityMenuService"
+
+    invoke-virtual {v3, v4}, Ljava/lang/String;->endsWith(Ljava/lang/String;)Z
+
+    move-result v4
+
+    if-nez v4, :cond_2
+
+    :cond_1
+    if-eqz v3, :cond_0
+
+    const-string v4, "com.google.android.apps.userpanel"
+
+    invoke-virtual {v3, v4}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+
+    move-result v4
+
+    if-nez v4, :cond_0
+
+    const-string v4, "com.google"
+
+    invoke-virtual {v3, v4}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+
+    move-result v3
+
+    if-eqz v3, :cond_0
 
     goto :goto_0
 
-    :catchall_0
-    move-exception p1
-
-    monitor-exit p2
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw p1
-
-    :cond_1
-    :goto_0
-    return-object p1
-
-    :pswitch_2
-    sget-object p1, Liuf;->c:Liuf;
-
-    return-object p1
-
-    :pswitch_3
-    new-instance p1, Lnwp;
-
-    sget-object p2, Liuf;->c:Liuf;
-
-    invoke-direct {p1, p2}, Lnwp;-><init>(Lnwq;)V
-
-    return-object p1
-
-    :pswitch_4
-    new-instance p1, Liuf;
-
-    invoke-direct {p1}, Liuf;-><init>()V
-
-    return-object p1
-
-    :pswitch_5
-    const-string p1, "a"
-
-    const-string p2, "\u0001\u0001\u0000\u0001\u0001\u0001\u0001\u0000\u0000\u0000\u0001\u100c\u0000"
-
-    const/4 v2, 0x3
-
-    new-array v2, v2, [Ljava/lang/Object;
-
-    aput-object p1, v2, v1
-
-    const-string p1, "b"
-
-    aput-object p1, v2, v0
-
-    const/4 p1, 0x2
-
-    sget-object v0, Liue;->a:Lnww;
-
-    aput-object v0, v2, p1
-
-    sget-object p1, Liuf;->c:Liuf;
-
-    invoke-static {p1, p2, v2}, Liuf;->X(Lnxy;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object p1
-
-    return-object p1
-
-    :pswitch_6
-    iget-byte p1, p0, Liuf;->d:B
-
-    invoke-static {p1}, Ljava/lang/Byte;->valueOf(B)Ljava/lang/Byte;
-
-    move-result-object p1
-
-    return-object p1
-
     :cond_2
-    :goto_1
-    iput-byte v0, p0, Liuf;->d:B
+    const/4 v0, 0x0
 
-    const/4 p1, 0x0
+    return v0
 
-    return-object p1
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_6
-        :pswitch_0
-        :pswitch_5
-        :pswitch_4
-        :pswitch_3
-        :pswitch_2
-        :pswitch_1
-    .end packed-switch
+    :cond_3
+    :goto_0
+    return v1
 .end method

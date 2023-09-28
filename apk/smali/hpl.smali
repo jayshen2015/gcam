@@ -1,69 +1,122 @@
-.class final Lhpl;
-.super Lifk;
+.class public final Lhpl;
+.super Ljava/lang/Object;
 
 
 # instance fields
-.field final synthetic a:Lhpq;
+.field public final a:Landroid/hardware/SensorManager;
 
-.field final synthetic b:Ljew;
+.field public final b:Landroid/hardware/Sensor;
+
+.field private final c:Ljava/util/concurrent/Executor;
 
 
 # direct methods
-.method public constructor <init>(Lhpq;Ljew;[B)V
-    .locals 0
+.method public constructor <init>(Landroid/hardware/SensorManager;Ljava/util/concurrent/Executor;)V
+    .locals 2
 
-    iput-object p1, p0, Lhpl;->a:Lhpq;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p2, p0, Lhpl;->b:Ljew;
+    iput-object p1, p0, Lhpl;->a:Landroid/hardware/SensorManager;
 
-    invoke-direct {p0}, Lifk;-><init>()V
+    iput-object p2, p0, Lhpl;->c:Ljava/util/concurrent/Executor;
+
+    const/4 p2, -0x1
+
+    invoke-virtual {p1, p2}, Landroid/hardware/SensorManager;->getSensorList(I)Ljava/util/List;
+
+    move-result-object p1
+
+    invoke-interface {p1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+
+    move-result-object p1
+
+    :cond_0
+    invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result p2
+
+    if-eqz p2, :cond_1
+
+    invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object p2
+
+    check-cast p2, Landroid/hardware/Sensor;
+
+    invoke-virtual {p2}, Landroid/hardware/Sensor;->getStringType()Ljava/lang/String;
+
+    move-result-object v0
+
+    const-string v1, "com.google.sensor.double_twist"
+
+    invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    invoke-virtual {p2}, Landroid/hardware/Sensor;->getVendor()Ljava/lang/String;
+
+    move-result-object v0
+
+    const-string v1, "Google"
+
+    invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    goto :goto_0
+
+    :cond_1
+    const/4 p2, 0x0
+
+    :goto_0
+    iput-object p2, p0, Lhpl;->b:Landroid/hardware/Sensor;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onShutterButtonClick()V
-    .locals 1
+.method public final a(Landroid/hardware/SensorEventListener;)V
+    .locals 3
 
-    iget-object v0, p0, Lhpl;->b:Ljew;
-
-    invoke-virtual {v0}, Ljew;->M()Z
-
-    move-result v0
+    iget-object v0, p0, Lhpl;->b:Landroid/hardware/Sensor;
 
     if-eqz v0, :cond_0
 
-    iget-object v0, p0, Lhpl;->a:Lhpq;
+    iget-object v0, p0, Lhpl;->c:Ljava/util/concurrent/Executor;
 
-    iget-object v0, v0, Lhpq;->V:Ljes;
+    new-instance v1, Lhpk;
 
-    if-eqz v0, :cond_0
+    const/4 v2, 0x0
 
-    invoke-virtual {v0}, Ljes;->b()V
+    invoke-direct {v1, p0, p1, v2}, Lhpk;-><init>(Lhpl;Landroid/hardware/SensorEventListener;I)V
+
+    invoke-interface {v0, v1}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
 
     :cond_0
     return-void
 .end method
 
-.method public final onShutterButtonDown()V
-    .locals 1
+.method public final b(Landroid/hardware/SensorEventListener;)V
+    .locals 3
 
-    iget-object v0, p0, Lhpl;->b:Ljew;
-
-    invoke-virtual {v0}, Ljew;->M()Z
-
-    move-result v0
-
-    if-nez v0, :cond_0
-
-    iget-object v0, p0, Lhpl;->a:Lhpq;
-
-    iget-object v0, v0, Lhpq;->V:Ljes;
+    iget-object v0, p0, Lhpl;->b:Landroid/hardware/Sensor;
 
     if-eqz v0, :cond_0
 
-    invoke-virtual {v0}, Ljes;->b()V
+    iget-object v0, p0, Lhpl;->c:Ljava/util/concurrent/Executor;
+
+    new-instance v1, Lhpk;
+
+    const/4 v2, 0x1
+
+    invoke-direct {v1, p0, p1, v2}, Lhpk;-><init>(Lhpl;Landroid/hardware/SensorEventListener;I)V
+
+    invoke-interface {v0, v1}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
 
     :cond_0
     return-void

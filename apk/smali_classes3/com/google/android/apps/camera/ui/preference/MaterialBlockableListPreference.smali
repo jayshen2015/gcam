@@ -2,11 +2,11 @@
 .super Landroidx/preference/ListPreference;
 
 # interfaces
-.implements Lidh;
+.implements Ljib;
 
 
 # instance fields
-.field private F:Ljava/util/function/Function;
+.field private F:Lj$/util/function/Function;
 
 
 # direct methods
@@ -36,10 +36,10 @@
 
 
 # virtual methods
-.method public final ag(Ljava/util/function/Function;)V
+.method public final ac(Lj$/util/function/Function;)V
     .locals 0
 
-    iput-object p1, p0, Lcom/google/android/apps/camera/ui/preference/MaterialBlockableListPreference;->F:Ljava/util/function/Function;
+    iput-object p1, p0, Lcom/google/android/apps/camera/ui/preference/MaterialBlockableListPreference;->F:Lj$/util/function/Function;
 
     return-void
 .end method
@@ -47,11 +47,11 @@
 .method protected final c()V
     .locals 1
 
-    iget-object v0, p0, Lcom/google/android/apps/camera/ui/preference/MaterialBlockableListPreference;->F:Ljava/util/function/Function;
+    iget-object v0, p0, Lcom/google/android/apps/camera/ui/preference/MaterialBlockableListPreference;->F:Lj$/util/function/Function;
 
     if-eqz v0, :cond_1
 
-    invoke-interface {v0, p0}, Ljava/util/function/Function;->apply(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {v0, p0}, Lj$/util/function/Function;->apply(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 

@@ -1,30 +1,84 @@
-.class public final Lhsf;
-.super Ljava/lang/Object;
+.class final enum Lhsf;
+.super Ljava/lang/Enum;
 
 
-# instance fields
-.field public final a:Landroid/graphics/Paint;
+# static fields
+.field public static final enum a:Lhsf;
 
-.field public final b:F
+.field public static final enum b:Lhsf;
 
-.field public final synthetic c:Lcom/google/android/apps/camera/ui/captureframe/CaptureFrameUi;
+.field public static final enum c:Lhsf;
 
-.field public final d:I
+.field private static final synthetic d:[Lhsf;
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/apps/camera/ui/captureframe/CaptureFrameUi;Landroid/graphics/Paint;IF)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 7
 
-    iput-object p1, p0, Lhsf;->c:Lcom/google/android/apps/camera/ui/captureframe/CaptureFrameUi;
+    new-instance v0, Lhsf;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const-string v1, "PUBLISH"
 
-    iput-object p2, p0, Lhsf;->a:Landroid/graphics/Paint;
+    const/4 v2, 0x0
 
-    iput p3, p0, Lhsf;->d:I
+    invoke-direct {v0, v1, v2}, Lhsf;-><init>(Ljava/lang/String;I)V
 
-    iput p4, p0, Lhsf;->b:F
+    sput-object v0, Lhsf;->a:Lhsf;
+
+    new-instance v1, Lhsf;
+
+    const-string v3, "ABANDON"
+
+    const/4 v4, 0x1
+
+    invoke-direct {v1, v3, v4}, Lhsf;-><init>(Ljava/lang/String;I)V
+
+    sput-object v1, Lhsf;->b:Lhsf;
+
+    new-instance v3, Lhsf;
+
+    const-string v5, "PENDING"
+
+    const/4 v6, 0x2
+
+    invoke-direct {v3, v5, v6}, Lhsf;-><init>(Ljava/lang/String;I)V
+
+    sput-object v3, Lhsf;->c:Lhsf;
+
+    const/4 v5, 0x3
+
+    new-array v5, v5, [Lhsf;
+
+    aput-object v0, v5, v2
+
+    aput-object v1, v5, v4
+
+    aput-object v3, v5, v6
+
+    sput-object v5, Lhsf;->d:[Lhsf;
 
     return-void
+.end method
+
+.method private constructor <init>(Ljava/lang/String;I)V
+    .locals 0
+
+    invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    return-void
+.end method
+
+.method public static values()[Lhsf;
+    .locals 1
+
+    sget-object v0, Lhsf;->d:[Lhsf;
+
+    invoke-virtual {v0}, [Lhsf;->clone()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, [Lhsf;
+
+    return-object v0
 .end method

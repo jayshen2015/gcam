@@ -1,195 +1,179 @@
-.class public final Licr;
+.class Licr;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Logk;
+.implements Licl;
 
 
 # instance fields
-.field private final a:Loiw;
-
-.field private final b:Loiw;
-
-.field private final c:Loiw;
-
-.field private final d:Loiw;
-
-.field private final e:Loiw;
-
-.field private final f:Loiw;
-
-.field private final g:Loiw;
-
-.field private final h:Loiw;
-
-.field private final i:Loiw;
+.field final synthetic b:Licw;
 
 
 # direct methods
-.method public constructor <init>(Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;)V
+.method public constructor <init>(Licw;)V
     .locals 0
 
+    iput-object p1, p0, Licr;->b:Licw;
+
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Licr;->a:Loiw;
-
-    iput-object p2, p0, Licr;->b:Loiw;
-
-    iput-object p3, p0, Licr;->c:Loiw;
-
-    iput-object p4, p0, Licr;->d:Loiw;
-
-    iput-object p5, p0, Licr;->e:Loiw;
-
-    iput-object p6, p0, Licr;->f:Loiw;
-
-    iput-object p7, p0, Licr;->g:Loiw;
-
-    iput-object p8, p0, Licr;->h:Loiw;
-
-    iput-object p9, p0, Licr;->i:Loiw;
 
     return-void
 .end method
 
-.method public static a(Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;)Licr;
-    .locals 11
-
-    new-instance v10, Licr;
-
-    move-object v0, v10
-
-    move-object v1, p0
-
-    move-object v2, p1
-
-    move-object v3, p2
-
-    move-object v4, p3
-
-    move-object v5, p4
-
-    move-object/from16 v6, p5
-
-    move-object/from16 v7, p6
-
-    move-object/from16 v8, p7
-
-    move-object/from16 v9, p8
-
-    invoke-direct/range {v0 .. v9}, Licr;-><init>(Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;Loiw;)V
-
-    return-object v10
-.end method
-
 
 # virtual methods
-.method public final b()Lmbe;
-    .locals 14
+.method public a()V
+    .locals 3
 
-    iget-object v0, p0, Licr;->a:Loiw;
+    iget-object v0, p0, Licr;->b:Licw;
 
-    check-cast v0, Lelo;
+    const/4 v1, 0x0
 
-    invoke-virtual {v0}, Lelo;->a()Landroid/app/Activity;
+    const/4 v2, 0x1
+
+    invoke-virtual {v0, v1, v2}, Licw;->r(ZZ)V
+
+    return-void
+.end method
+
+.method public final synthetic b(Lbty;Z)V
+    .locals 0
+
+    return-void
+.end method
+
+.method public final synthetic d(Lbty;Z)V
+    .locals 0
+
+    return-void
+.end method
+
+.method public final f()V
+    .locals 3
+
+    iget-object v0, p0, Licr;->b:Licw;
+
+    invoke-static {v0}, Licw;->t(Licw;)V
+
+    iget-object v0, p0, Licr;->b:Licw;
+
+    iget-object v1, v0, Licw;->t:Lbty;
+
+    invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    invoke-virtual {v0, v1}, Licw;->q(Lbty;)Lpht;
+
+    move-result-object v0
+
+    new-instance v1, Licq;
+
+    invoke-direct {v1, p0}, Licq;-><init>(Licr;)V
+
+    invoke-static {}, Lmip;->bS()Ljava/util/concurrent/Executor;
 
     move-result-object v2
 
-    iget-object v0, p0, Licr;->b:Loiw;
+    invoke-static {v0, v1, v2}, Lmip;->ca(Lpht;Llht;Ljava/util/concurrent/Executor;)V
 
-    check-cast v0, Lerb;
+    iget-object v0, p0, Licr;->b:Licw;
 
-    invoke-virtual {v0}, Lerb;->a()Lbkc;
+    iget-object v1, v0, Licw;->l:Libm;
 
-    move-result-object v3
+    iget-object v0, v0, Licw;->t:Lbty;
 
-    iget-object v0, p0, Licr;->c:Loiw;
+    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
+    invoke-interface {v1, v0}, Libm;->g(Lbty;)V
 
-    move-result-object v0
+    iget-object v0, p0, Licr;->b:Licw;
 
-    move-object v4, v0
+    iget-object v0, v0, Licw;->r:Lidd;
 
-    check-cast v4, Lklx;
+    invoke-interface {v0}, Lidd;->c()V
 
-    iget-object v0, p0, Licr;->d:Loiw;
-
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    move-object v5, v0
-
-    check-cast v5, Lhal;
-
-    iget-object v0, p0, Licr;->e:Loiw;
-
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    move-object v6, v0
-
-    check-cast v6, Lgzm;
-
-    iget-object v0, p0, Licr;->f:Loiw;
-
-    check-cast v0, Lcwf;
-
-    invoke-virtual {v0}, Lcwf;->b()Ldja;
-
-    move-result-object v7
-
-    iget-object v0, p0, Licr;->g:Loiw;
-
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    move-object v8, v0
-
-    check-cast v8, Ljvs;
-
-    iget-object v0, p0, Licr;->h:Loiw;
-
-    check-cast v0, Lhas;
-
-    invoke-virtual {v0}, Lhas;->a()Lhar;
-
-    move-result-object v9
-
-    iget-object v0, p0, Licr;->i:Loiw;
-
-    invoke-interface {v0}, Loiw;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    move-object v10, v0
-
-    check-cast v10, Ldbx;
-
-    new-instance v0, Lmbe;
-
-    const/4 v11, 0x0
-
-    const/4 v12, 0x0
-
-    const/4 v13, 0x0
-
-    move-object v1, v0
-
-    invoke-direct/range {v1 .. v13}, Lmbe;-><init>(Landroid/app/Activity;Lbkc;Lklx;Lhal;Lgzm;Ldja;Ljvs;Lhar;Ldbx;[B[B[B)V
-
-    return-object v0
+    return-void
 .end method
 
-.method public final bridge synthetic get()Ljava/lang/Object;
+.method public final synthetic fV()V
+    .locals 0
+
+    return-void
+.end method
+
+.method public fX()Z
     .locals 1
 
-    invoke-virtual {p0}, Licr;->b()Lmbe;
+    const/4 v0, 0x1
 
-    move-result-object v0
+    return v0
+.end method
 
-    return-object v0
+.method public final synthetic g()V
+    .locals 0
+
+    return-void
+.end method
+
+.method public final synthetic gk()V
+    .locals 0
+
+    return-void
+.end method
+
+.method public final synthetic h()V
+    .locals 0
+
+    return-void
+.end method
+
+.method public final synthetic i()V
+    .locals 0
+
+    return-void
+.end method
+
+.method public final synthetic j()V
+    .locals 0
+
+    return-void
+.end method
+
+.method public k()V
+    .locals 0
+
+    return-void
+.end method
+
+.method public l(Landroid/content/pm/ResolveInfo;)V
+    .locals 1
+
+    iget-object v0, p0, Licr;->b:Licw;
+
+    iput-object p1, v0, Licw;->u:Landroid/content/pm/ResolveInfo;
+
+    return-void
+.end method
+
+.method public final synthetic m()V
+    .locals 0
+
+    return-void
+.end method
+
+.method public final synthetic n()V
+    .locals 0
+
+    return-void
+.end method
+
+.method public final synthetic o()V
+    .locals 0
+
+    return-void
+.end method
+
+.method public final synthetic p(J)V
+    .locals 0
+
+    return-void
 .end method

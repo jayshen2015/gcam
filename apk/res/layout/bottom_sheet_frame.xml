@@ -8,5 +8,5 @@
             <ImageView android:layout_gravity="right" android:id="@id/bottomsheet_close_cross" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/quantum_gm_ic_close_white_24" />
         </FrameLayout>
     </FrameLayout>
-    <androidx.core.widget.NestedScrollView android:id="@id/sheet_content" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+    <android.support.v4.widget.NestedScrollView android:id="@id/sheet_content" android:layout_width="fill_parent" android:layout_height="fill_parent" />
 </LinearLayout>

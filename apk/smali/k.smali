@@ -1,37 +1,24 @@
 .class final Lk;
 .super Ljava/lang/Object;
 
-# interfaces
-.implements Ln;
 
+# instance fields
+.field public final a:Ll;
 
-# static fields
-.field private static final serialVersionUID:J = 0x7f2b2ad155970a18L
+.field public b:Lx;
+
+.field public final c:I
 
 
 # direct methods
-.method public constructor <init>()V
+.method public constructor <init>(Ll;I)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    iput-object p1, p0, Lk;->a:Ll;
+
+    iput p2, p0, Lk;->c:I
+
     return-void
-.end method
-
-
-# virtual methods
-.method public final a(Lp;)Z
-    .locals 0
-
-    const/4 p1, 0x1
-
-    return p1
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .locals 1
-
-    const-string v0, ""
-
-    return-object v0
 .end method

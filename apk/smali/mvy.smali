@@ -1,47 +1,10 @@
-.class abstract Lmvy;
-.super Lmwa;
+.class public interface abstract Lmvy;
+.super Ljava/lang/Object;
 
-
-# direct methods
-.method public constructor <init>()V
-    .locals 0
-
-    invoke-direct {p0}, Lmwa;-><init>()V
-
-    return-void
-.end method
+# interfaces
+.implements Lmwd;
 
 
 # virtual methods
-.method public abstract a()Lnac;
-.end method
-
-.method public final cB()Lmwn;
-    .locals 1
-
-    new-instance v0, Lmvx;
-
-    invoke-direct {v0, p0}, Lmvx;-><init>(Lmvy;)V
-
-    return-object v0
-.end method
-
-.method public final cC()Lmwn;
-    .locals 1
-
-    new-instance v0, Lmwe;
-
-    invoke-direct {v0, p0}, Lmwe;-><init>(Lmwa;)V
-
-    return-object v0
-.end method
-
-.method public final d()Lmvm;
-    .locals 1
-
-    new-instance v0, Lmwi;
-
-    invoke-direct {v0, p0}, Lmwi;-><init>(Lmwa;)V
-
-    return-object v0
+.method public abstract b(Landroid/app/Activity;)V
 .end method

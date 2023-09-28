@@ -1,78 +1,170 @@
 .class public final Lpaj;
-.super Ljava/lang/Object;
+.super Lppd;
+
+# interfaces
+.implements Lpqn;
 
 
 # static fields
-.field public static final synthetic a:I
+.field public static final c:Lpaj;
+
+.field private static volatile d:Lpqs;
+
+
+# instance fields
+.field public a:I
+
+.field public b:I
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 1
+    .locals 2
 
-    const-string v0, "0123456789abcdef"
+    new-instance v0, Lpaj;
 
-    invoke-static {v0}, Lljz;->q(Ljava/lang/String;)[B
+    invoke-direct {v0}, Lpaj;-><init>()V
+
+    sput-object v0, Lpaj;->c:Lpaj;
+
+    const-class v1, Lpaj;
+
+    invoke-static {v1, v0}, Lppd;->F(Ljava/lang/Class;Lppd;)V
 
     return-void
 .end method
 
-.method public static final a(Lpaf;I[BI)Z
-    .locals 7
+.method private constructor <init>()V
+    .locals 0
 
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    invoke-direct {p0}, Lppd;-><init>()V
 
-    invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    return-void
+.end method
 
-    iget v0, p0, Lpaf;->c:I
 
-    iget-object v1, p0, Lpaf;->a:[B
+# virtual methods
+.method protected final a(ILjava/lang/Object;)Ljava/lang/Object;
+    .locals 2
 
-    const/4 v2, 0x1
+    add-int/lit8 p1, p1, -0x1
 
-    const/4 v3, 0x1
+    const/4 p2, 0x1
 
-    :goto_0
-    if-ge v3, p3, :cond_2
+    packed-switch p1, :pswitch_data_0
 
-    if-ne p1, v0, :cond_0
+    :pswitch_0
+    const/4 p1, 0x0
 
-    iget-object p0, p0, Lpaf;->f:Lpaf;
+    return-object p1
 
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    :pswitch_1
+    sget-object p1, Lpaj;->d:Lpqs;
 
-    iget-object p1, p0, Lpaf;->a:[B
+    if-nez p1, :cond_1
 
-    iget v0, p0, Lpaf;->b:I
+    const-class p2, Lpaj;
 
-    iget v1, p0, Lpaf;->c:I
+    monitor-enter p2
 
-    move v6, v1
+    :try_start_0
+    sget-object p1, Lpaj;->d:Lpqs;
 
-    move-object v1, p1
+    if-nez p1, :cond_0
 
-    move p1, v0
+    new-instance p1, Lpoz;
 
-    move v0, v6
+    sget-object v0, Lpaj;->c:Lpaj;
+
+    invoke-direct {p1, v0}, Lpoz;-><init>(Lppd;)V
+
+    sput-object p1, Lpaj;->d:Lpqs;
 
     :cond_0
-    aget-byte v4, v1, p1
-
-    aget-byte v5, p2, v3
-
-    if-eq v4, v5, :cond_1
-
-    const/4 p0, 0x0
-
-    return p0
-
-    :cond_1
-    add-int/lit8 p1, p1, 0x1
-
-    add-int/lit8 v3, v3, 0x1
+    monitor-exit p2
 
     goto :goto_0
 
-    :cond_2
-    return v2
+    :catchall_0
+    move-exception p1
+
+    monitor-exit p2
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw p1
+
+    :cond_1
+    :goto_0
+    return-object p1
+
+    :pswitch_2
+    sget-object p1, Lpaj;->c:Lpaj;
+
+    return-object p1
+
+    :pswitch_3
+    new-instance p1, Lpoy;
+
+    sget-object p2, Lpaj;->c:Lpaj;
+
+    invoke-direct {p1, p2}, Lpoy;-><init>(Lppd;)V
+
+    return-object p1
+
+    :pswitch_4
+    new-instance p1, Lpaj;
+
+    invoke-direct {p1}, Lpaj;-><init>()V
+
+    return-object p1
+
+    :pswitch_5
+    const/4 p1, 0x3
+
+    new-array p1, p1, [Ljava/lang/Object;
+
+    const/4 v0, 0x0
+
+    const-string v1, "a"
+
+    aput-object v1, p1, v0
+
+    const-string v0, "b"
+
+    aput-object v0, p1, p2
+
+    const/4 p2, 0x2
+
+    sget-object v0, Lpaf;->f:Lppi;
+
+    aput-object v0, p1, p2
+
+    sget-object p2, Lpaj;->c:Lpaj;
+
+    const-string v0, "\u0001\u0001\u0000\u0001\u0001\u0001\u0001\u0000\u0000\u0000\u0001\u100c\u0000"
+
+    invoke-static {p2, v0, p1}, Lpaj;->E(Lpqm;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p1
+
+    return-object p1
+
+    :pswitch_6
+    invoke-static {p2}, Ljava/lang/Byte;->valueOf(B)Ljava/lang/Byte;
+
+    move-result-object p1
+
+    return-object p1
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_6
+        :pswitch_0
+        :pswitch_5
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+    .end packed-switch
 .end method

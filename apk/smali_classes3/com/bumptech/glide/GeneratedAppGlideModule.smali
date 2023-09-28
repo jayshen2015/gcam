@@ -1,22 +1,17 @@
 .class public abstract Lcom/bumptech/glide/GeneratedAppGlideModule;
-.super Lbzd;
+.super Lbkg;
 
 
 # direct methods
 .method constructor <init>()V
     .locals 0
 
-    invoke-direct {p0}, Lbzd;-><init>()V
+    invoke-direct {p0}, Lbkg;-><init>()V
 
     return-void
 .end method
 
-.method public static final a()Ljava/util/Set;
-    .locals 1
 
-    new-instance v0, Ljava/util/HashSet;
-
-    invoke-direct {v0}, Ljava/util/HashSet;-><init>()V
-
-    return-object v0
+# virtual methods
+.method public abstract a()Ljava/util/Set;
 .end method

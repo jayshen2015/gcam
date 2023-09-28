@@ -1,109 +1,63 @@
 .class public final Lmlc;
 .super Ljava/lang/Object;
 
-# interfaces
-.implements Landroid/animation/ValueAnimator$AnimatorUpdateListener;
-
-
-# instance fields
-.field final synthetic a:Landroid/view/View;
-
-.field final synthetic b:Ljava/lang/Object;
-
-.field final synthetic c:Landroid/widget/LinearLayout;
-
-.field private final synthetic d:I
-
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/material/appbar/AppBarLayout$BaseBehavior;Landroidx/coordinatorlayout/widget/CoordinatorLayout;Lcom/google/android/material/appbar/AppBarLayout;I)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 1
 
-    iput p4, p0, Lmlc;->d:I
+    const-string v0, "Mp4BoxSlices"
 
-    iput-object p1, p0, Lmlc;->b:Ljava/lang/Object;
-
-    iput-object p2, p0, Lmlc;->a:Landroid/view/View;
-
-    iput-object p3, p0, Lmlc;->c:Landroid/widget/LinearLayout;
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-static {v0}, Lovk;->h(Ljava/lang/String;)Lovk;
 
     return-void
 .end method
 
-.method public constructor <init>(Lmld;Landroid/view/View;Landroid/view/View;I)V
-    .locals 0
-
-    iput p4, p0, Lmlc;->d:I
-
-    iput-object p1, p0, Lmlc;->c:Landroid/widget/LinearLayout;
-
-    iput-object p2, p0, Lmlc;->a:Landroid/view/View;
-
-    iput-object p3, p0, Lmlc;->b:Ljava/lang/Object;
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
-.end method
-
-
-# virtual methods
-.method public final onAnimationUpdate(Landroid/animation/ValueAnimator;)V
+.method public static a(Ljava/lang/String;)[B
     .locals 3
 
-    iget v0, p0, Lmlc;->d:I
+    sget-object v0, Lj$/nio/charset/StandardCharsets;->US_ASCII:Ljava/nio/charset/Charset;
 
-    packed-switch v0, :pswitch_data_0
+    invoke-virtual {p0, v0}, Ljava/lang/String;->getBytes(Ljava/nio/charset/Charset;)[B
 
-    iget-object v0, p0, Lmlc;->b:Ljava/lang/Object;
+    move-result-object v0
 
-    iget-object v1, p0, Lmlc;->a:Landroid/view/View;
+    array-length v1, v0
 
-    iget-object v2, p0, Lmlc;->c:Landroid/widget/LinearLayout;
+    const/4 v2, 0x4
 
-    invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
+    if-ne v1, v2, :cond_0
 
-    move-result-object p1
+    return-object v0
 
-    check-cast p1, Ljava/lang/Integer;
+    :cond_0
+    new-instance v0, Ljava/lang/IllegalArgumentException;
 
-    invoke-virtual {p1}, Ljava/lang/Integer;->intValue()I
+    invoke-virtual {p0}, Ljava/lang/String;->length()I
 
-    move-result p1
+    move-result v1
 
-    check-cast v1, Landroidx/coordinatorlayout/widget/CoordinatorLayout;
+    new-instance v2, Ljava/lang/StringBuilder;
 
-    check-cast v0, Lmfl;
+    add-int/lit8 v1, v1, 0x1b
 
-    invoke-virtual {v0, v1, v2, p1}, Lmfl;->E(Landroidx/coordinatorlayout/widget/CoordinatorLayout;Landroid/view/View;I)V
+    invoke-direct {v2, v1}, Ljava/lang/StringBuilder;-><init>(I)V
 
-    return-void
+    const-string v1, "Type \""
 
-    :pswitch_0
-    iget-object v0, p0, Lmlc;->c:Landroid/widget/LinearLayout;
+    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget-object v1, p0, Lmlc;->a:Landroid/view/View;
+    invoke-virtual {v2, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget-object v2, p0, Lmlc;->b:Ljava/lang/Object;
+    const-string p0, "\" is not 4 characters"
 
-    invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedFraction()F
+    invoke-virtual {v2, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result p1
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    check-cast v2, Landroid/view/View;
+    move-result-object p0
 
-    check-cast v0, Lmld;
+    invoke-direct {v0, p0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {v0, v1, v2, p1}, Lmld;->c(Landroid/view/View;Landroid/view/View;F)V
-
-    return-void
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+    throw v0
 .end method

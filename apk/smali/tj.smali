@@ -1,119 +1,50 @@
-.class public final Ltj;
-.super Ljava/lang/Object;
-
-# interfaces
-.implements Lsd;
-
-
-# instance fields
-.field public final a:Ljava/lang/Object;
-
-.field private final synthetic b:I
+.class final Ltj;
+.super Landroid/util/Property;
 
 
 # direct methods
-.method public constructor <init>(Landroid/hardware/camera2/TotalCaptureResult;I)V
-    .locals 3
+.method public constructor <init>(Ljava/lang/Class;)V
+    .locals 1
 
-    iput p2, p0, Ltj;->b:I
+    const-string v0, "level"
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Ltj;->a:Ljava/lang/Object;
-
-    move-object p2, p1
-
-    check-cast p2, Landroid/hardware/camera2/TotalCaptureResult;
-
-    invoke-static {p1}, Lst;->e(Landroid/hardware/camera2/TotalCaptureResult;)Ljava/util/Map;
-
-    move-result-object p1
-
-    if-eqz p1, :cond_0
-
-    invoke-interface {p1}, Ljava/util/Map;->isEmpty()Z
-
-    move-result p2
-
-    if-nez p2, :cond_0
-
-    new-instance p2, Landroid/util/ArrayMap;
-
-    invoke-interface {p1}, Ljava/util/Map;->size()I
-
-    move-result v0
-
-    invoke-direct {p2, v0}, Landroid/util/ArrayMap;-><init>(I)V
-
-    invoke-interface {p1}, Ljava/util/Map;->entrySet()Ljava/util/Set;
-
-    move-result-object p1
-
-    invoke-interface {p1}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
-
-    move-result-object p1
-
-    :goto_0
-    invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/util/Map$Entry;
-
-    invoke-interface {v0}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Ljava/lang/String;
-
-    invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    invoke-static {v1}, Lrc;->a(Ljava/lang/String;)Lrc;
-
-    move-result-object v1
-
-    new-instance v2, Lsm;
-
-    invoke-interface {v0}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/hardware/camera2/CaptureResult;
-
-    invoke-direct {v2}, Lsm;-><init>()V
-
-    invoke-interface {p2, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    goto :goto_0
-
-    :cond_0
-    return-void
-.end method
-
-.method public constructor <init>(Lrx;I)V
-    .locals 0
-
-    iput p2, p0, Ltj;->b:I
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Ltj;->a:Ljava/lang/Object;
+    invoke-direct {p0, p1, v0}, Landroid/util/Property;-><init>(Ljava/lang/Class;Ljava/lang/String;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final e(Lonx;)Ljava/lang/Object;
+.method public final bridge synthetic get(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    const/4 p1, 0x0
+    check-cast p1, Ltk;
 
-    throw p1
+    invoke-virtual {p1}, Ltk;->getLevel()I
+
+    move-result p1
+
+    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object p1
+
+    return-object p1
+.end method
+
+.method public final bridge synthetic set(Ljava/lang/Object;Ljava/lang/Object;)V
+    .locals 0
+
+    check-cast p1, Ltk;
+
+    check-cast p2, Ljava/lang/Integer;
+
+    invoke-virtual {p2}, Ljava/lang/Integer;->intValue()I
+
+    move-result p2
+
+    invoke-virtual {p1, p2}, Ltk;->setLevel(I)Z
+
+    invoke-virtual {p1}, Ltk;->invalidateSelf()V
+
+    return-void
 .end method

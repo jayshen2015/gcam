@@ -1,12 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <plurals name="accessibility_timelapse_manual_record_speed_desc">
-        <item quantity="other">Ταχύτητα Time Lapse %dx</item>
-        <item quantity="one">Ταχύτητα Time Lapse %dx</item>
-    </plurals>
-    <plurals name="number_of_cropped_face">
-        <item quantity="other">%d περικόπηκαν.</item>
-        <item quantity="one">Ένα περικόπηκε.</item>
+    <plurals name="number_of_faces_announcement">
+        <item quantity="other">%1$d πρόσωπα.</item>
+        <item quantity="one">%1$d πρόσωπο.</item>
     </plurals>
     <plurals name="photos_remaining">
         <item quantity="other">Περίπου %s φωτογραφίες</item>

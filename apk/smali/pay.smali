@@ -1,24 +1,20 @@
 .class public final Lpay;
-.super Lnws;
+.super Lppd;
 
 # interfaces
-.implements Lnxz;
+.implements Lpqn;
 
 
 # static fields
-.field public static final e:Lpay;
+.field public static final c:Lpay;
 
-.field private static volatile f:Lnyf;
+.field private static volatile d:Lpqs;
 
 
 # instance fields
 .field public a:I
 
-.field public b:Lpax;
-
-.field public c:Lpaz;
-
-.field public d:Lpba;
+.field public b:J
 
 
 # direct methods
@@ -29,11 +25,11 @@
 
     invoke-direct {v0}, Lpay;-><init>()V
 
-    sput-object v0, Lpay;->e:Lpay;
+    sput-object v0, Lpay;->c:Lpay;
 
     const-class v1, Lpay;
 
-    invoke-static {v1, v0}, Lnws;->aa(Ljava/lang/Class;Lnws;)V
+    invoke-static {v1, v0}, Lppd;->F(Ljava/lang/Class;Lppd;)V
 
     return-void
 .end method
@@ -41,7 +37,7 @@
 .method private constructor <init>()V
     .locals 0
 
-    invoke-direct {p0}, Lnws;-><init>()V
+    invoke-direct {p0}, Lppd;-><init>()V
 
     return-void
 .end method
@@ -49,7 +45,7 @@
 
 # virtual methods
 .method protected final a(ILjava/lang/Object;)Ljava/lang/Object;
-    .locals 3
+    .locals 2
 
     add-int/lit8 p1, p1, -0x1
 
@@ -63,7 +59,7 @@
     return-object p1
 
     :pswitch_1
-    sget-object p1, Lpay;->f:Lnyf;
+    sget-object p1, Lpay;->d:Lpqs;
 
     if-nez p1, :cond_1
 
@@ -72,17 +68,17 @@
     monitor-enter p2
 
     :try_start_0
-    sget-object p1, Lpay;->f:Lnyf;
+    sget-object p1, Lpay;->d:Lpqs;
 
     if-nez p1, :cond_0
 
-    new-instance p1, Lnwo;
+    new-instance p1, Lpoz;
 
-    sget-object v0, Lpay;->e:Lpay;
+    sget-object v0, Lpay;->c:Lpay;
 
-    invoke-direct {p1, v0}, Lnwo;-><init>(Lnws;)V
+    invoke-direct {p1, v0}, Lpoz;-><init>(Lppd;)V
 
-    sput-object p1, Lpay;->f:Lnyf;
+    sput-object p1, Lpay;->d:Lpqs;
 
     :cond_0
     monitor-exit p2
@@ -103,16 +99,16 @@
     return-object p1
 
     :pswitch_2
-    sget-object p1, Lpay;->e:Lpay;
+    sget-object p1, Lpay;->c:Lpay;
 
     return-object p1
 
     :pswitch_3
-    new-instance p1, Lnwn;
+    new-instance p1, Lpoy;
 
-    sget-object p2, Lpay;->e:Lpay;
+    sget-object p2, Lpay;->c:Lpay;
 
-    invoke-direct {p1, p2}, Lnwn;-><init>(Lnws;)V
+    invoke-direct {p1, p2}, Lpoy;-><init>(Lppd;)V
 
     return-object p1
 
@@ -124,37 +120,25 @@
     return-object p1
 
     :pswitch_5
-    const-string p1, "a"
-
-    const-string v0, "\u0001\u0003\u0000\u0001\u0001\u0003\u0003\u0000\u0000\u0000\u0001\u1009\u0000\u0002\u1009\u0001\u0003\u1009\u0002"
-
-    const/4 v1, 0x4
-
-    new-array v1, v1, [Ljava/lang/Object;
-
-    const/4 v2, 0x0
-
-    aput-object p1, v1, v2
-
-    const-string p1, "b"
-
-    aput-object p1, v1, p2
-
     const/4 p1, 0x2
 
-    const-string p2, "c"
+    new-array p1, p1, [Ljava/lang/Object;
 
-    aput-object p2, v1, p1
+    const/4 v0, 0x0
 
-    const/4 p1, 0x3
+    const-string v1, "a"
 
-    const-string p2, "d"
+    aput-object v1, p1, v0
 
-    aput-object p2, v1, p1
+    const-string v0, "b"
 
-    sget-object p1, Lpay;->e:Lpay;
+    aput-object v0, p1, p2
 
-    invoke-static {p1, v0, v1}, Lpay;->X(Lnxy;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/Object;
+    sget-object p2, Lpay;->c:Lpay;
+
+    const-string v0, "\u0001\u0001\u0000\u0001\u0001\u0001\u0001\u0000\u0000\u0000\u0001\u1002\u0000"
+
+    invoke-static {p2, v0, p1}, Lpay;->E(Lpqm;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p1
 

@@ -1,31 +1,39 @@
-.class public interface abstract Lgtd;
+.class public final synthetic Lgtd;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Ljava/lang/AutoCloseable;
+.implements Lgul;
+
+
+# static fields
+.field public static final synthetic a:Lgtd;
+
+
+# direct methods
+.method static synthetic constructor <clinit>()V
+    .locals 1
+
+    new-instance v0, Lgtd;
+
+    invoke-direct {v0}, Lgtd;-><init>()V
+
+    sput-object v0, Lgtd;->a:Lgtd;
+
+    return-void
+.end method
+
+.method private synthetic constructor <init>()V
+    .locals 0
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method
 
 
 # virtual methods
-.method public abstract a()Lgtk;
-.end method
+.method public final a()V
+    .locals 0
 
-.method public abstract b(Landroid/hardware/HardwareBuffer;Lcom/google/googlex/gcam/ShotMetadata;ZZLjava/lang/String;Lgtk;Lhjc;Lcom/google/android/apps/camera/rectiface/Rectiface$RectifaceCallback;Lcom/google/googlex/gcam/InterleavedWriteViewU8;)V
-.end method
-
-.method public abstract c(Lcom/google/googlex/gcam/InterleavedWriteViewU8;Lcom/google/googlex/gcam/ShotMetadata;ZZLjava/lang/String;Lgtk;Lhjc;Lcom/google/android/apps/camera/rectiface/Rectiface$RectifaceCallback;Lcom/google/googlex/gcam/InterleavedWriteViewU8;)V
-.end method
-
-.method public abstract d(Landroid/graphics/Bitmap;Lcom/google/googlex/gcam/ShotMetadata;)V
-.end method
-
-.method public abstract e()V
-.end method
-
-.method public abstract f(Landroid/hardware/HardwareBuffer;Landroid/hardware/HardwareBuffer;Lcom/google/googlex/gcam/ShotMetadata;)Z
-.end method
-
-.method public abstract g()Z
-.end method
-
-.method public abstract h(Landroid/hardware/HardwareBuffer;)Lcom/google/googlex/gcam/InterleavedImageU8;
+    return-void
 .end method

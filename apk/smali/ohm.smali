@@ -1,107 +1,24 @@
 .class public final Lohm;
 .super Ljava/lang/Object;
 
-# interfaces
-.implements Lohl;
 
+# instance fields
+.field private a:Ljava/lang/Integer;
 
-# static fields
-.field public static final a:Llqb;
+.field private b:Ljava/lang/Integer;
 
-.field public static final b:Llqb;
+.field private c:Lohl;
+
+.field private d:Ljava/lang/Integer;
+
+.field private e:Ljava/lang/Float;
+
+.field private f:Ljava/lang/Integer;
+
+.field private g:Ljava/lang/Integer;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 9
-
-    sget-object v0, Lmza;->a:Lmza;
-
-    const-string v0, "com.google.android.libraries.performance.primes"
-
-    const-string v1, "CLIENT_LOGGING_PROD"
-
-    invoke-static {v1}, Lmwn;->H(Ljava/lang/Object;)Lmwn;
-
-    move-result-object v7
-
-    const-string v1, "45352228"
-
-    const/4 v2, 0x1
-
-    const/4 v5, 0x1
-
-    const/4 v6, 0x1
-
-    move-object v3, v0
-
-    move-object v4, v7
-
-    invoke-static/range {v1 .. v6}, Llqf;->c(Ljava/lang/String;ZLjava/lang/String;Ljava/util/Set;ZZ)Llqb;
-
-    move-result-object v1
-
-    sput-object v1, Lohm;->a:Llqb;
-
-    :try_start_0
-    const-string v1, "45352241"
-
-    const-string v2, "CAYIBAgFCAM"
-
-    const/4 v3, 0x3
-
-    invoke-static {v2, v3}, Landroid/util/Base64;->decode(Ljava/lang/String;I)[B
-
-    move-result-object v2
-
-    sget-object v3, Loya;->b:Loya;
-
-    array-length v4, v2
-
-    sget-object v5, Lnwh;->a:Lnwh;
-
-    const/4 v6, 0x0
-
-    invoke-static {v3, v2, v6, v4, v5}, Lnws;->Q(Lnws;[BIILnwh;)Lnws;
-
-    move-result-object v2
-
-    invoke-static {v2}, Lnws;->ae(Lnws;)V
-
-    check-cast v2, Loya;
-
-    sget-object v3, Llqd;->f:Llqd;
-
-    const/4 v6, 0x1
-
-    const/4 v8, 0x1
-
-    move-object v4, v0
-
-    move-object v5, v7
-
-    move v7, v8
-
-    invoke-static/range {v1 .. v7}, Llqf;->d(Ljava/lang/String;Ljava/lang/Object;Llqe;Ljava/lang/String;Ljava/util/Set;ZZ)Llqb;
-
-    move-result-object v0
-
-    sput-object v0, Lohm;->b:Llqb;
-    :try_end_0
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
-
-    return-void
-
-    :catch_0
-    move-exception v0
-
-    new-instance v1, Ljava/lang/AssertionError;
-
-    invoke-direct {v1, v0}, Ljava/lang/AssertionError;-><init>(Ljava/lang/Object;)V
-
-    throw v1
-.end method
-
 .method public constructor <init>()V
     .locals 0
 
@@ -112,34 +29,275 @@
 
 
 # virtual methods
-.method public final a(Landroid/content/Context;)Loya;
-    .locals 1
+.method public final a()Lohn;
+    .locals 10
 
-    sget-object v0, Lohm;->b:Llqb;
+    iget-object v0, p0, Lohm;->a:Ljava/lang/Integer;
 
-    invoke-virtual {v0, p1}, Llqb;->b(Landroid/content/Context;)Ljava/lang/Object;
+    if-eqz v0, :cond_1
 
-    move-result-object p1
+    iget-object v1, p0, Lohm;->b:Ljava/lang/Integer;
 
-    check-cast p1, Loya;
+    if-eqz v1, :cond_1
 
-    return-object p1
+    iget-object v1, p0, Lohm;->c:Lohl;
+
+    if-eqz v1, :cond_1
+
+    iget-object v1, p0, Lohm;->d:Ljava/lang/Integer;
+
+    if-eqz v1, :cond_1
+
+    iget-object v1, p0, Lohm;->e:Ljava/lang/Float;
+
+    if-eqz v1, :cond_1
+
+    iget-object v1, p0, Lohm;->f:Ljava/lang/Integer;
+
+    if-eqz v1, :cond_1
+
+    iget-object v1, p0, Lohm;->g:Ljava/lang/Integer;
+
+    if-nez v1, :cond_0
+
+    goto :goto_0
+
+    :cond_0
+    new-instance v1, Lohn;
+
+    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
+
+    move-result v3
+
+    iget-object v0, p0, Lohm;->b:Ljava/lang/Integer;
+
+    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
+
+    move-result v4
+
+    iget-object v5, p0, Lohm;->c:Lohl;
+
+    iget-object v0, p0, Lohm;->d:Ljava/lang/Integer;
+
+    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
+
+    move-result v6
+
+    iget-object v0, p0, Lohm;->e:Ljava/lang/Float;
+
+    invoke-virtual {v0}, Ljava/lang/Float;->floatValue()F
+
+    move-result v7
+
+    iget-object v0, p0, Lohm;->f:Ljava/lang/Integer;
+
+    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
+
+    move-result v8
+
+    iget-object v0, p0, Lohm;->g:Ljava/lang/Integer;
+
+    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
+
+    move-result v9
+
+    move-object v2, v1
+
+    invoke-direct/range {v2 .. v9}, Lohn;-><init>(IILohl;IFII)V
+
+    return-object v1
+
+    :cond_1
+    :goto_0
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
+    iget-object v1, p0, Lohm;->a:Ljava/lang/Integer;
+
+    if-nez v1, :cond_2
+
+    const-string v1, " thumbnailImageWidthPixels"
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    :cond_2
+    iget-object v1, p0, Lohm;->b:Ljava/lang/Integer;
+
+    if-nez v1, :cond_3
+
+    const-string v1, " thumbnailImageHeightPixels"
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    :cond_3
+    iget-object v1, p0, Lohm;->c:Lohl;
+
+    if-nez v1, :cond_4
+
+    const-string v1, " thumbnailImageColorspace"
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    :cond_4
+    iget-object v1, p0, Lohm;->d:Ljava/lang/Integer;
+
+    if-nez v1, :cond_5
+
+    const-string v1, " videoFramesPerSecond"
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    :cond_5
+    iget-object v1, p0, Lohm;->e:Ljava/lang/Float;
+
+    if-nez v1, :cond_6
+
+    const-string v1, " audioSampleRateHz"
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    :cond_6
+    iget-object v1, p0, Lohm;->f:Ljava/lang/Integer;
+
+    if-nez v1, :cond_7
+
+    const-string v1, " audioBytesPerSample"
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    :cond_7
+    iget-object v1, p0, Lohm;->g:Ljava/lang/Integer;
+
+    if-nez v1, :cond_8
+
+    const-string v1, " audioNumChannels"
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    :cond_8
+    new-instance v1, Ljava/lang/IllegalStateException;
+
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/String;->length()I
+
+    move-result v2
+
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    add-int/lit8 v2, v2, 0x1c
+
+    invoke-direct {v3, v2}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string v2, "Missing required properties:"
+
+    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-direct {v1, v0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw v1
 .end method
 
-.method public final b(Landroid/content/Context;)Z
-    .locals 1
+.method public final b(I)V
+    .locals 0
 
-    sget-object v0, Lohm;->a:Llqb;
-
-    invoke-virtual {v0, p1}, Llqb;->b(Landroid/content/Context;)Ljava/lang/Object;
+    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object p1
 
-    check-cast p1, Ljava/lang/Boolean;
+    iput-object p1, p0, Lohm;->f:Ljava/lang/Integer;
 
-    invoke-virtual {p1}, Ljava/lang/Boolean;->booleanValue()Z
+    return-void
+.end method
 
-    move-result p1
+.method public final c(I)V
+    .locals 0
 
-    return p1
+    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object p1
+
+    iput-object p1, p0, Lohm;->g:Ljava/lang/Integer;
+
+    return-void
+.end method
+
+.method public final d(F)V
+    .locals 0
+
+    invoke-static {p1}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
+
+    move-result-object p1
+
+    iput-object p1, p0, Lohm;->e:Ljava/lang/Float;
+
+    return-void
+.end method
+
+.method public final e(Lohl;)V
+    .locals 1
+
+    if-eqz p1, :cond_0
+
+    iput-object p1, p0, Lohm;->c:Lohl;
+
+    return-void
+
+    :cond_0
+    new-instance p1, Ljava/lang/NullPointerException;
+
+    const-string v0, "Null thumbnailImageColorspace"
+
+    invoke-direct {p1, v0}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
+
+    throw p1
+.end method
+
+.method public final f(I)V
+    .locals 0
+
+    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object p1
+
+    iput-object p1, p0, Lohm;->b:Ljava/lang/Integer;
+
+    return-void
+.end method
+
+.method public final g(I)V
+    .locals 0
+
+    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object p1
+
+    iput-object p1, p0, Lohm;->a:Ljava/lang/Integer;
+
+    return-void
+.end method
+
+.method public final h(I)V
+    .locals 0
+
+    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object p1
+
+    iput-object p1, p0, Lohm;->d:Ljava/lang/Integer;
+
+    return-void
 .end method

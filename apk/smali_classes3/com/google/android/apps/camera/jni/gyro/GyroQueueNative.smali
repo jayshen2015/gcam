@@ -8,7 +8,7 @@
 
     const-class v0, Lcom/google/android/apps/camera/jni/gyro/GyroQueueNative;
 
-    invoke-static {v0}, Lkak;->a(Ljava/lang/Class;)V
+    invoke-static {v0}, Llil;->a(Ljava/lang/Class;)V
 
     return-void
 .end method

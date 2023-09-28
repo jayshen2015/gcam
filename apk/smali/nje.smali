@@ -1,216 +1,212 @@
 .class public final Lnje;
-.super Lnws;
-
-# interfaces
-.implements Lnxz;
+.super Ljava/lang/Object;
 
 
 # static fields
-.field public static final h:Lnje;
-
-.field private static volatile i:Lnyf;
-
-
-# instance fields
-.field public a:I
-
-.field public b:Lnjf;
-
-.field public c:I
-
-.field public d:I
-
-.field public e:J
-
-.field public f:J
-
-.field public g:J
+.field private static final a:Ljava/util/regex/Pattern;
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 2
+    .locals 1
 
-    new-instance v0, Lnje;
+    const-string v0, "(\\w+).*"
 
-    invoke-direct {v0}, Lnje;-><init>()V
+    invoke-static {v0}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;
 
-    sput-object v0, Lnje;->h:Lnje;
+    move-result-object v0
 
-    const-class v1, Lnje;
-
-    invoke-static {v1, v0}, Lnws;->aa(Ljava/lang/Class;Lnws;)V
+    sput-object v0, Lnje;->a:Ljava/util/regex/Pattern;
 
     return-void
 .end method
 
-.method private constructor <init>()V
-    .locals 0
+.method public static a(Landroid/net/Uri;)Loom;
+    .locals 6
 
-    invoke-direct {p0}, Lnws;-><init>()V
+    invoke-static {}, Loom;->e()Looh;
 
-    return-void
-.end method
+    move-result-object v0
 
+    invoke-virtual {p0}, Landroid/net/Uri;->getEncodedFragment()Ljava/lang/String;
 
-# virtual methods
-.method protected final a(ILjava/lang/Object;)Ljava/lang/Object;
-    .locals 3
+    move-result-object p0
 
-    add-int/lit8 p1, p1, -0x1
+    invoke-static {p0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
-    const/4 p2, 0x1
+    move-result v1
 
-    packed-switch p1, :pswitch_data_0
+    if-nez v1, :cond_1
 
-    :pswitch_0
-    const/4 p1, 0x0
+    const-string v1, "transform="
 
-    return-object p1
+    invoke-virtual {p0, v1}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
-    :pswitch_1
-    sget-object p1, Lnje;->i:Lnyf;
+    move-result v1
 
-    if-nez p1, :cond_1
-
-    const-class p2, Lnje;
-
-    monitor-enter p2
-
-    :try_start_0
-    sget-object p1, Lnje;->i:Lnyf;
-
-    if-nez p1, :cond_0
-
-    new-instance p1, Lnwo;
-
-    sget-object v0, Lnje;->h:Lnje;
-
-    invoke-direct {p1, v0}, Lnwo;-><init>(Lnws;)V
-
-    sput-object p1, Lnje;->i:Lnyf;
-
-    :cond_0
-    monitor-exit p2
+    if-nez v1, :cond_0
 
     goto :goto_0
 
-    :catchall_0
-    move-exception p1
+    :cond_0
+    const/16 v1, 0xa
 
-    monitor-exit p2
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    invoke-virtual {p0, v1}, Ljava/lang/String;->substring(I)Ljava/lang/String;
 
-    throw p1
+    move-result-object p0
+
+    const-string v1, "+"
+
+    invoke-static {v1}, Lojq;->d(Ljava/lang/String;)Lojq;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Lojq;->a()Lojq;
+
+    move-result-object v1
+
+    invoke-virtual {v1, p0}, Lojq;->e(Ljava/lang/CharSequence;)Ljava/lang/Iterable;
+
+    move-result-object p0
+
+    invoke-static {p0}, Loom;->i(Ljava/lang/Iterable;)Loom;
+
+    move-result-object p0
+
+    goto :goto_1
 
     :cond_1
     :goto_0
-    return-object p1
+    invoke-static {}, Loom;->l()Loom;
 
-    :pswitch_2
-    sget-object p1, Lnje;->h:Lnje;
+    move-result-object p0
 
-    return-object p1
+    :goto_1
+    invoke-interface {p0}, Ljava/util/List;->size()I
 
-    :pswitch_3
-    new-instance p1, Lnwn;
-
-    sget-object p2, Lnje;->h:Lnje;
-
-    invoke-direct {p1, p2}, Lnwn;-><init>(Lnws;)V
-
-    return-object p1
-
-    :pswitch_4
-    new-instance p1, Lnje;
-
-    invoke-direct {p1}, Lnje;-><init>()V
-
-    return-object p1
-
-    :pswitch_5
-    const-string p1, "a"
-
-    const-string v0, "\u0001\u0006\u0000\u0001\u0001\u0006\u0006\u0000\u0000\u0000\u0001\u1009\u0000\u0002\u100c\u0001\u0003\u100c\u0002\u0004\u1002\u0003\u0005\u1002\u0004\u0006\u1003\u0005"
-
-    const/16 v1, 0x9
-
-    new-array v1, v1, [Ljava/lang/Object;
+    move-result v1
 
     const/4 v2, 0x0
 
-    aput-object p1, v1, v2
+    :goto_2
+    if-ge v2, v1, :cond_4
 
-    const-string p1, "b"
+    invoke-interface {p0, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
-    aput-object p1, v1, p2
+    move-result-object v3
 
-    const/4 p1, 0x2
+    check-cast v3, Ljava/lang/String;
 
-    const-string p2, "c"
+    sget-object v4, Lnje;->a:Ljava/util/regex/Pattern;
 
-    aput-object p2, v1, p1
+    invoke-virtual {v4, v3}, Ljava/util/regex/Pattern;->matcher(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;
 
-    const/4 p1, 0x3
+    move-result-object v4
 
-    sget-object p2, Lnjb;->g:Lnww;
+    invoke-virtual {v4}, Ljava/util/regex/Matcher;->matches()Z
 
-    aput-object p2, v1, p1
+    move-result v5
 
-    const/4 p1, 0x4
+    if-nez v5, :cond_3
 
-    const-string p2, "d"
+    new-instance p0, Ljava/lang/IllegalArgumentException;
 
-    aput-object p2, v1, p1
+    invoke-static {v3}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
-    const/4 p1, 0x5
+    move-result-object v0
 
-    sget-object p2, Lnjb;->f:Lnww;
+    const-string v1, "Invalid fragment spec: "
 
-    aput-object p2, v1, p1
+    invoke-virtual {v0}, Ljava/lang/String;->length()I
 
-    const/4 p1, 0x6
+    move-result v2
 
-    const-string p2, "e"
+    if-eqz v2, :cond_2
 
-    aput-object p2, v1, p1
+    invoke-virtual {v1, v0}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
 
-    const/4 p1, 0x7
+    move-result-object v0
 
-    const-string p2, "f"
+    goto :goto_3
 
-    aput-object p2, v1, p1
+    :cond_2
+    new-instance v0, Ljava/lang/String;
 
-    const/16 p1, 0x8
+    invoke-direct {v0, v1}, Ljava/lang/String;-><init>(Ljava/lang/String;)V
 
-    const-string p2, "g"
+    :goto_3
+    invoke-direct {p0, v0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
-    aput-object p2, v1, p1
+    throw p0
 
-    sget-object p1, Lnje;->h:Lnje;
+    :cond_3
+    const/4 v3, 0x1
 
-    invoke-static {p1, v0, v1}, Lnje;->X(Lnxy;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v4, v3}, Ljava/util/regex/Matcher;->group(I)Ljava/lang/String;
 
-    move-result-object p1
+    move-result-object v3
 
-    return-object p1
+    invoke-virtual {v0, v3}, Looh;->g(Ljava/lang/Object;)V
 
-    :pswitch_6
-    invoke-static {p2}, Ljava/lang/Byte;->valueOf(B)Ljava/lang/Byte;
+    add-int/lit8 v2, v2, 0x1
 
-    move-result-object p1
+    goto :goto_2
 
-    return-object p1
+    :cond_4
+    invoke-virtual {v0}, Looh;->f()Loom;
 
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_6
-        :pswitch_0
-        :pswitch_5
-        :pswitch_4
-        :pswitch_3
-        :pswitch_2
-        :pswitch_1
-    .end packed-switch
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public static b(Ljava/util/List;)Ljava/lang/String;
+    .locals 2
+
+    invoke-interface {p0}, Ljava/util/List;->isEmpty()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    const/4 p0, 0x0
+
+    return-object p0
+
+    :cond_0
+    const-string v0, "+"
+
+    invoke-static {v0}, Loxk;->e(Ljava/lang/String;)Loxk;
+
+    move-result-object v0
+
+    invoke-virtual {v0, p0}, Loxk;->a(Ljava/lang/Iterable;)Ljava/lang/String;
+
+    move-result-object p0
+
+    invoke-static {p0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object p0
+
+    const-string v0, "transform="
+
+    invoke-virtual {p0}, Ljava/lang/String;->length()I
+
+    move-result v1
+
+    if-eqz v1, :cond_1
+
+    invoke-virtual {v0, p0}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object p0
+
+    goto :goto_0
+
+    :cond_1
+    new-instance p0, Ljava/lang/String;
+
+    invoke-direct {p0, v0}, Ljava/lang/String;-><init>(Ljava/lang/String;)V
+
+    :goto_0
+    return-object p0
 .end method

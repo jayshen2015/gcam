@@ -1,74 +1,55 @@
-.class public final Lmjx;
-.super Lmjy;
+.class public final synthetic Lmjx;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Ljava/lang/Runnable;
+
+
+# instance fields
+.field public final synthetic a:Lmka;
 
 
 # direct methods
-.method public constructor <init>()V
+.method public synthetic constructor <init>(Lmka;)V
     .locals 0
 
-    invoke-direct {p0}, Lmjy;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lmjx;->a:Lmka;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Lmkn;FF)V
-    .locals 6
+.method public final run()V
+    .locals 2
 
-    mul-float v0, p3, p2
+    iget-object v0, p0, Lmjx;->a:Lmka;
 
-    const/high16 v1, 0x43340000    # 180.0f
+    iget-object v1, v0, Lmka;->c:Lmkb;
 
-    const/high16 v2, 0x42b40000    # 90.0f
+    iget-object v1, v1, Lmkb;->d:Ljava/util/Set;
 
-    invoke-virtual {p1, v0, v1, v2}, Lmkn;->f(FFF)V
+    invoke-interface {v1, v0}, Ljava/util/Set;->remove(Ljava/lang/Object;)Z
 
-    const-wide v0, 0x4056800000000000L    # 90.0
+    :try_start_0
+    iget-object v1, v0, Lmka;->c:Lmkb;
 
-    invoke-static {v0, v1}, Ljava/lang/Math;->toRadians(D)D
+    invoke-virtual {v1}, Lmkb;->e()V
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
-    move-result-wide v0
+    return-void
 
-    invoke-static {v0, v1}, Ljava/lang/Math;->sin(D)D
+    :catch_0
+    move-exception v1
 
-    move-result-wide v0
+    iget-object v0, v0, Lmka;->c:Lmkb;
 
-    float-to-double v2, p3
+    iget-object v0, v0, Lmkb;->c:Lpih;
 
-    invoke-static {v2, v3}, Ljava/lang/Double;->isNaN(D)Z
-
-    mul-double v0, v0, v2
-
-    const-wide/16 v4, 0x0
-
-    invoke-static {v4, v5}, Ljava/lang/Math;->toRadians(D)D
-
-    move-result-wide v4
-
-    invoke-static {v4, v5}, Ljava/lang/Math;->sin(D)D
-
-    move-result-wide v4
-
-    invoke-static {v2, v3}, Ljava/lang/Double;->isNaN(D)Z
-
-    mul-double v4, v4, v2
-
-    float-to-double p2, p2
-
-    invoke-static {p2, p3}, Ljava/lang/Double;->isNaN(D)Z
-
-    mul-double v4, v4, p2
-
-    invoke-static {p2, p3}, Ljava/lang/Double;->isNaN(D)Z
-
-    mul-double v0, v0, p2
-
-    double-to-float p2, v0
-
-    double-to-float p3, v4
-
-    invoke-virtual {p1, p2, p3}, Lmkn;->d(FF)V
+    invoke-virtual {v0, v1}, Lpih;->a(Ljava/lang/Throwable;)Z
 
     return-void
 .end method

@@ -1,75 +1,90 @@
-.class public final synthetic Lhev;
+.class public final Lhev;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lcom/google/android/apps/camera/bottombar/BottomBar$OnContentVisibilityChangedListener;
+.implements Lheu;
 
 
 # instance fields
-.field public final synthetic a:Lhey;
+.field private final a:Ljava/util/Set;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lhey;)V
+.method public constructor <init>(Ljava/util/Set;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lhev;->a:Lhey;
+    invoke-static {p1}, Lope;->F(Ljava/util/Collection;)Lope;
+
+    move-result-object p1
+
+    iput-object p1, p0, Lhev;->a:Ljava/util/Set;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onContentVisibilityChanged(Landroid/view/View;I)V
-    .locals 2
+.method public final a(Llmr;)Z
+    .locals 3
 
-    iget-object v0, p0, Lhev;->a:Lhey;
+    const/4 v0, 0x0
 
-    iget-object v1, v0, Lhey;->j:Lcom/google/android/apps/camera/bottombar/BottomBar;
+    :try_start_0
+    invoke-static {p1}, Lmip;->bi(Llmr;)V
 
-    invoke-virtual {v1}, Lcom/google/android/apps/camera/bottombar/BottomBar;->getThumbnailButton()Lcom/google/android/apps/camera/bottombar/RoundedThumbnailView;
+    invoke-interface {p1}, Llmr;->c()Llzv;
 
-    move-result-object v1
-
-    invoke-virtual {p1, v1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
-
-    move-result p1
-
-    if-eqz p1, :cond_1
-
-    iput p2, v0, Lhey;->q:I
-
-    iget-object p1, v0, Lhey;->a:Landroid/app/Activity;
-
-    invoke-virtual {p1}, Landroid/app/Activity;->isFinishing()Z
-
-    move-result p1
-
-    iget-object v1, v0, Lhey;->a:Landroid/app/Activity;
-
-    invoke-virtual {v1}, Landroid/app/Activity;->isDestroyed()Z
-
-    move-result v1
-
-    if-nez p2, :cond_0
+    move-result-object p1
 
     if-nez p1, :cond_0
 
-    if-nez v1, :cond_0
-
-    sget-object p1, Lhft;->b:Lhft;
-
-    invoke-virtual {v0, p1}, Lhey;->k(Lhft;)V
-
-    return-void
+    return v0
 
     :cond_0
-    sget-object p1, Lhft;->b:Lhft;
+    iget-object v1, p0, Lhev;->a:Ljava/util/Set;
 
-    invoke-virtual {v0, p1}, Lhey;->j(Lhft;)V
+    invoke-interface {v1}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
+
+    move-result-object v1
 
     :cond_1
-    return-void
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_2
+
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Lgig;
+
+    invoke-interface {v2, p1}, Lgig;->a(Llzv;)Z
+
+    move-result v2
+    :try_end_0
+    .catch Ljava/lang/InterruptedException; {:try_start_0 .. :try_end_0} :catch_0
+
+    if-nez v2, :cond_1
+
+    return v0
+
+    :cond_2
+    const/4 p1, 0x1
+
+    return p1
+
+    :catch_0
+    move-exception p1
+
+    invoke-static {}, Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
+
+    move-result-object p1
+
+    invoke-virtual {p1}, Ljava/lang/Thread;->interrupt()V
+
+    return v0
 .end method

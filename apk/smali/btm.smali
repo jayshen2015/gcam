@@ -1,31 +1,43 @@
-.class public final Lbtm;
+.class public final synthetic Lbtm;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lbtl;
+.implements Ljava/lang/Runnable;
+
+
+# instance fields
+.field public final synthetic a:Lavw;
+
+.field public final synthetic b:Llvs;
 
 
 # direct methods
-.method public constructor <init>()V
+.method public synthetic constructor <init>(Lavw;Llvs;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lbtm;->a:Lavw;
+
+    iput-object p2, p0, Lbtm;->b:Llvs;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Lbqb;)Ljava/io/File;
-    .locals 0
+.method public final run()V
+    .locals 2
 
-    const/4 p1, 0x0
+    iget-object v0, p0, Lbtm;->a:Lavw;
 
-    return-object p1
-.end method
+    iget-object v1, p0, Lbtm;->b:Llvs;
 
-.method public final b(Lbqb;Lva;)V
-    .locals 0
+    invoke-virtual {v1}, Llvs;->a()I
+
+    move-result v1
+
+    invoke-interface {v0, v1}, Lavw;->a(I)V
 
     return-void
 .end method

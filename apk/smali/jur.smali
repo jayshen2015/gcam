@@ -3,266 +3,143 @@
 
 
 # static fields
-.field private static final e:Ljup;
+.field public static final a:Lj$/time/Duration;
 
+.field private static final b:Lj$/time/Duration;
 
-# instance fields
-.field public final a:I
-
-.field public final b:Ljava/lang/String;
-
-.field public final c:I
-
-.field public final d:Z
-
-.field private final f:Ljup;
+.field private static final c:Lj$/time/Duration;
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 1
-
-    sget-object v0, Ljup;->a:Ljup;
-
-    sput-object v0, Ljur;->e:Ljup;
-
-    return-void
-.end method
-
-.method public constructor <init>()V
-    .locals 0
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
-.end method
-
-.method public constructor <init>(ILjava/lang/String;IZLjup;)V
-    .locals 0
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput p1, p0, Ljur;->a:I
-
-    iput-object p2, p0, Ljur;->b:Ljava/lang/String;
-
-    iput p3, p0, Ljur;->c:I
-
-    iput-boolean p4, p0, Ljur;->d:Z
-
-    iput-object p5, p0, Ljur;->f:Ljup;
-
-    return-void
-.end method
-
-.method public static a()Ljuq;
     .locals 2
 
-    new-instance v0, Ljuq;
+    const-wide/16 v0, 0xc8
 
-    invoke-direct {v0}, Ljuq;-><init>()V
+    invoke-static {v0, v1}, Lj$/time/Duration;->ofMillis(J)Lj$/time/Duration;
 
-    sget-object v1, Ljur;->e:Ljup;
+    move-result-object v0
 
-    iput-object v1, v0, Ljuq;->d:Ljup;
+    sput-object v0, Ljur;->b:Lj$/time/Duration;
 
-    const/4 v1, 0x0
+    const-wide/16 v0, 0x64
 
-    invoke-virtual {v0, v1}, Ljuq;->b(I)V
+    invoke-static {v0, v1}, Lj$/time/Duration;->ofMillis(J)Lj$/time/Duration;
 
-    const/4 v1, 0x1
+    move-result-object v0
 
-    iput-boolean v1, v0, Ljuq;->b:Z
+    sput-object v0, Ljur;->c:Lj$/time/Duration;
 
-    iget-byte v1, v0, Ljuq;->c:B
+    const-wide/16 v0, 0x96
 
-    or-int/lit8 v1, v1, 0x4
+    invoke-static {v0, v1}, Lj$/time/Duration;->ofMillis(J)Lj$/time/Duration;
 
-    int-to-byte v1, v1
+    move-result-object v0
 
-    iput-byte v1, v0, Ljuq;->c:B
+    sput-object v0, Ljur;->a:Lj$/time/Duration;
 
-    return-object v0
+    return-void
 .end method
 
+.method public static a(ILandroid/view/View;)V
+    .locals 5
 
-# virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 4
+    if-nez p0, :cond_0
 
-    const/4 v0, 0x1
-
-    if-ne p1, p0, :cond_0
-
-    return v0
-
-    :cond_0
-    instance-of v1, p1, Ljur;
-
-    const/4 v2, 0x0
-
-    if-eqz v1, :cond_1
-
-    check-cast p1, Ljur;
-
-    iget v1, p0, Ljur;->a:I
-
-    iget v3, p1, Ljur;->a:I
-
-    if-ne v1, v3, :cond_1
-
-    iget-object v1, p0, Ljur;->b:Ljava/lang/String;
-
-    iget-object v3, p1, Ljur;->b:Ljava/lang/String;
-
-    invoke-virtual {v1, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_1
-
-    iget v1, p0, Ljur;->c:I
-
-    iget v3, p1, Ljur;->c:I
-
-    if-ne v1, v3, :cond_1
-
-    iget-boolean v1, p0, Ljur;->d:Z
-
-    iget-boolean v3, p1, Ljur;->d:Z
-
-    if-ne v1, v3, :cond_1
-
-    iget-object v1, p0, Ljur;->f:Ljup;
-
-    iget-object p1, p1, Ljur;->f:Ljup;
-
-    invoke-virtual {v1, p1}, Ljup;->equals(Ljava/lang/Object;)Z
-
-    move-result p1
-
-    if-eqz p1, :cond_1
-
-    return v0
-
-    :cond_1
-    return v2
-.end method
-
-.method public final hashCode()I
-    .locals 4
-
-    iget v0, p0, Ljur;->a:I
-
-    const v1, 0xf4243
-
-    xor-int/2addr v0, v1
-
-    iget-object v2, p0, Ljur;->b:Ljava/lang/String;
-
-    invoke-virtual {v2}, Ljava/lang/String;->hashCode()I
-
-    move-result v2
-
-    mul-int v0, v0, v1
-
-    xor-int/2addr v0, v2
-
-    mul-int v0, v0, v1
-
-    iget v2, p0, Ljur;->c:I
-
-    xor-int/2addr v0, v2
-
-    const/4 v2, 0x1
-
-    iget-boolean v3, p0, Ljur;->d:Z
-
-    if-eq v2, v3, :cond_0
-
-    const/16 v2, 0x4d5
+    const/high16 v0, 0x3f800000    # 1.0f
 
     goto :goto_0
 
     :cond_0
-    const/16 v2, 0x4cf
+    const/4 v0, 0x0
 
     :goto_0
-    iget-object v3, p0, Ljur;->f:Ljup;
+    invoke-virtual {p1}, Landroid/view/View;->animate()Landroid/view/ViewPropertyAnimator;
 
-    invoke-virtual {v3}, Ljup;->hashCode()I
+    move-result-object v1
 
-    move-result v3
+    invoke-virtual {v1}, Landroid/view/ViewPropertyAnimator;->cancel()V
 
-    mul-int v0, v0, v1
+    const/4 v1, 0x0
 
-    xor-int/2addr v0, v2
+    if-nez p0, :cond_1
 
-    mul-int v0, v0, v1
+    const/4 v2, 0x1
 
-    xor-int/2addr v0, v3
+    goto :goto_1
 
-    return v0
-.end method
+    :cond_1
+    const/4 v2, 0x0
 
-.method public final toString()Ljava/lang/String;
-    .locals 7
+    :goto_1
+    invoke-virtual {p1, v1}, Landroid/view/View;->setClickable(Z)V
 
-    iget v0, p0, Ljur;->a:I
+    if-eqz v2, :cond_2
 
-    iget-object v1, p0, Ljur;->b:Ljava/lang/String;
+    invoke-virtual {p1, v1}, Landroid/view/View;->setVisibility(I)V
 
-    iget v2, p0, Ljur;->c:I
+    :cond_2
+    invoke-virtual {p1}, Landroid/view/View;->animate()Landroid/view/ViewPropertyAnimator;
 
-    iget-boolean v3, p0, Ljur;->d:Z
+    move-result-object v1
 
-    iget-object v4, p0, Ljur;->f:Ljup;
-
-    invoke-static {v4}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v4
-
-    new-instance v5, Ljava/lang/StringBuilder;
-
-    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v6, "NamedExecutorOptions{threadCount="
-
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v5, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    const-string v0, ", name="
-
-    invoke-virtual {v5, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v5, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v0, ", androidThreadPriority="
-
-    invoke-virtual {v5, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v5, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    const-string v0, ", propagateErrors="
-
-    invoke-virtual {v5, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v5, v3}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    const-string v0, ", threadBodyDecorator="
-
-    invoke-virtual {v5, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v5, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v0, "}"
-
-    invoke-virtual {v5, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v1, v0}, Landroid/view/ViewPropertyAnimator;->alpha(F)Landroid/view/ViewPropertyAnimator;
 
     move-result-object v0
 
-    return-object v0
+    if-eqz v2, :cond_3
+
+    sget-object v1, Ljur;->b:Lj$/time/Duration;
+
+    goto :goto_2
+
+    :cond_3
+    sget-object v1, Ljur;->a:Lj$/time/Duration;
+
+    :goto_2
+    invoke-virtual {v1}, Lj$/time/Duration;->toMillis()J
+
+    move-result-wide v3
+
+    invoke-virtual {v0, v3, v4}, Landroid/view/ViewPropertyAnimator;->setDuration(J)Landroid/view/ViewPropertyAnimator;
+
+    move-result-object v0
+
+    if-eqz v2, :cond_4
+
+    sget-object v1, Ljur;->c:Lj$/time/Duration;
+
+    invoke-virtual {v1}, Lj$/time/Duration;->toMillis()J
+
+    move-result-wide v3
+
+    goto :goto_3
+
+    :cond_4
+    const-wide/16 v3, 0x0
+
+    :goto_3
+    invoke-virtual {v0, v3, v4}, Landroid/view/ViewPropertyAnimator;->setStartDelay(J)Landroid/view/ViewPropertyAnimator;
+
+    move-result-object v0
+
+    new-instance v1, Ladt;
+
+    invoke-direct {v1}, Ladt;-><init>()V
+
+    invoke-virtual {v0, v1}, Landroid/view/ViewPropertyAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)Landroid/view/ViewPropertyAnimator;
+
+    move-result-object v0
+
+    new-instance v1, Ljuq;
+
+    invoke-direct {v1, p1, v2, p0}, Ljuq;-><init>(Landroid/view/View;ZI)V
+
+    invoke-virtual {v0, v1}, Landroid/view/ViewPropertyAnimator;->withEndAction(Ljava/lang/Runnable;)Landroid/view/ViewPropertyAnimator;
+
+    move-result-object p0
+
+    invoke-virtual {p0}, Landroid/view/ViewPropertyAnimator;->start()V
+
+    return-void
 .end method

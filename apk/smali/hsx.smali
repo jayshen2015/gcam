@@ -1,40 +1,22 @@
-.class public interface abstract Lhsx;
+.class public final Lhsx;
 .super Ljava/lang/Object;
 
 
-# virtual methods
-.method public abstract a()V
-.end method
+# static fields
+.field public static final a:Lhrf;
 
-.method public abstract c()V
-.end method
 
-.method public abstract d(I)V
-.end method
+# direct methods
+.method static constructor <clinit>()V
+    .locals 2
 
-.method public abstract e(Lhsw;)V
-.end method
+    new-instance v0, Lhrf;
 
-.method public abstract f(F)V
-.end method
+    const/4 v1, 0x4
 
-.method public abstract i(Ljava/lang/String;)V
-.end method
+    invoke-direct {v0, v1}, Lhrf;-><init>(I)V
 
-.method public abstract j()V
-.end method
+    sput-object v0, Lhsx;->a:Lhrf;
 
-.method public abstract k()V
-.end method
-
-.method public abstract l()V
-.end method
-
-.method public abstract m()V
-.end method
-
-.method public abstract n()V
-.end method
-
-.method public abstract o()Z
+    return-void
 .end method

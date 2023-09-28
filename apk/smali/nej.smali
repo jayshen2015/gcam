@@ -1,56 +1,89 @@
-.class public final Lnej;
-.super Lnec;
-
-
-# instance fields
-.field public final b:Ljava/security/MessageDigest;
-
-.field public final c:I
-
-.field public d:Z
+.class final Lnej;
+.super Lner;
 
 
 # direct methods
-.method public constructor <init>(Ljava/security/MessageDigest;I)V
+.method public constructor <init>(Lnep;Ljava/lang/String;Ljava/lang/Long;Z)V
     .locals 0
 
-    invoke-direct {p0}, Lnec;-><init>()V
-
-    iput-object p1, p0, Lnej;->b:Ljava/security/MessageDigest;
-
-    iput p2, p0, Lnej;->c:I
+    invoke-direct {p0, p1, p2, p3, p4}, Lner;-><init>(Lnep;Ljava/lang/String;Ljava/lang/Object;Z)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final v([B)V
-    .locals 3
+.method public final bridge synthetic a(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 4
 
-    invoke-virtual {p0}, Lnej;->w()V
+    :try_start_0
+    move-object v0, p1
 
-    iget-object v0, p0, Lnej;->b:Ljava/security/MessageDigest;
+    check-cast v0, Ljava/lang/String;
 
-    const/4 v1, 0x0
+    invoke-static {v0}, Ljava/lang/Long;->parseLong(Ljava/lang/String;)J
 
-    const/4 v2, 0x2
+    move-result-wide v0
 
-    invoke-virtual {v0, p1, v1, v2}, Ljava/security/MessageDigest;->update([BII)V
+    invoke-static {v0, v1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
-    return-void
-.end method
+    move-result-object p1
+    :try_end_0
+    .catch Ljava/lang/NumberFormatException; {:try_start_0 .. :try_end_0} :catch_0
 
-.method public final w()V
-    .locals 2
+    goto :goto_0
 
-    iget-boolean v0, p0, Lnej;->d:Z
+    :catch_0
+    move-exception v0
 
-    xor-int/lit8 v0, v0, 0x1
+    invoke-super {p0}, Lner;->f()Ljava/lang/String;
 
-    const-string v1, "Cannot re-use a Hasher after calling hash() on it"
+    move-result-object v0
 
-    invoke-static {v0, v1}, Lmoz;->q(ZLjava/lang/Object;)V
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
-    return-void
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/String;->length()I
+
+    move-result v1
+
+    check-cast p1, Ljava/lang/String;
+
+    invoke-virtual {p1}, Ljava/lang/String;->length()I
+
+    move-result v2
+
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    add-int/lit8 v1, v1, 0x19
+
+    add-int/2addr v1, v2
+
+    invoke-direct {v3, v1}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string v1, "Invalid long value for "
+
+    invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v0, ": "
+
+    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v3, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p1
+
+    const-string v0, "PhenotypeFlag"
+
+    invoke-static {v0, p1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+
+    const/4 p1, 0x0
+
+    :goto_0
+    return-object p1
 .end method

@@ -1,112 +1,67 @@
-.class public final enum Lmpc;
-.super Ljava/lang/Enum;
+.class public final synthetic Lmpc;
+.super Ljava/lang/Object;
 
-
-# static fields
-.field public static final enum a:Lmpc;
-
-.field public static final enum b:Lmpc;
-
-.field public static final c:Ljava/util/Map;
-
-.field private static final synthetic e:[Lmpc;
+# interfaces
+.implements Lmqj;
 
 
 # instance fields
-.field public final d:I
+.field public final synthetic a:Lmtp;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 6
-
-    new-instance v0, Lmpc;
-
-    const-string v1, "MONOCHROME"
-
-    const/4 v2, 0x0
-
-    const/4 v3, 0x1
-
-    invoke-direct {v0, v1, v2, v3}, Lmpc;-><init>(Ljava/lang/String;II)V
-
-    sput-object v0, Lmpc;->a:Lmpc;
-
-    new-instance v1, Lmpc;
-
-    const-string v4, "RGB"
-
-    const/4 v5, 0x3
-
-    invoke-direct {v1, v4, v3, v5}, Lmpc;-><init>(Ljava/lang/String;II)V
-
-    sput-object v1, Lmpc;->b:Lmpc;
-
-    const/4 v4, 0x2
-
-    new-array v4, v4, [Lmpc;
-
-    aput-object v0, v4, v2
-
-    aput-object v1, v4, v3
-
-    sput-object v4, Lmpc;->e:[Lmpc;
-
-    new-instance v0, Ljava/util/HashMap;
-
-    invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
-
-    sput-object v0, Lmpc;->c:Ljava/util/Map;
-
-    invoke-static {}, Lmpc;->values()[Lmpc;
-
-    move-result-object v0
-
-    array-length v1, v0
-
-    :goto_0
-    if-ge v2, v1, :cond_0
-
-    aget-object v3, v0, v2
-
-    sget-object v4, Lmpc;->c:Ljava/util/Map;
-
-    iget v5, v3, Lmpc;->d:I
-
-    invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v5
-
-    invoke-interface {v4, v5, v3}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    add-int/lit8 v2, v2, 0x1
-
-    goto :goto_0
-
-    :cond_0
-    return-void
-.end method
-
-.method private constructor <init>(Ljava/lang/String;II)V
+.method public synthetic constructor <init>(Lmtp;)V
     .locals 0
 
-    invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput p3, p0, Lmpc;->d:I
+    iput-object p1, p0, Lmpc;->a:Lmtp;
 
     return-void
 .end method
 
-.method public static values()[Lmpc;
-    .locals 1
 
-    sget-object v0, Lmpc;->e:[Lmpc;
+# virtual methods
+.method public final a()Ljava/lang/String;
+    .locals 3
 
-    invoke-virtual {v0}, [Lmpc;->clone()Ljava/lang/Object;
+    iget-object v0, p0, Lmpc;->a:Lmtp;
+
+    check-cast v0, Lmtq;
+
+    iget-object v0, v0, Lmtq;->a:Lmoq;
+
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v0
 
-    check-cast v0, [Lmpc;
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/String;->length()I
+
+    move-result v1
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    add-int/lit8 v1, v1, 0x10
+
+    invoke-direct {v2, v1}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string v1, "readCanvasInto("
+
+    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v0, ")"
+
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
 
     return-object v0
 .end method

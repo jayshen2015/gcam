@@ -25,14 +25,14 @@
 
 
 # virtual methods
-.method public final a(Laor;)V
+.method public final a(Lahm;)V
     .locals 2
 
-    invoke-super {p0, p1}, Landroidx/preference/Preference;->a(Laor;)V
+    invoke-super {p0, p1}, Landroidx/preference/Preference;->a(Lahm;)V
 
-    iget-object p1, p1, Laor;->a:Landroid/view/View;
+    iget-object p1, p1, Lahm;->a:Landroid/view/View;
 
-    const v0, 0x7f0b02fc
+    const v0, 0x7f0b028b
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -42,11 +42,9 @@
 
     iput-object p1, p0, Lcom/google/android/apps/camera/debug/ui/MaterialSearchViewPreference;->a:Landroid/widget/SearchView;
 
-    new-instance v0, Ldmk;
+    new-instance v0, Ldjo;
 
-    const/4 v1, 0x2
-
-    invoke-direct {v0, p0, v1}, Ldmk;-><init>(Lcom/google/android/apps/camera/debug/ui/MaterialSearchViewPreference;I)V
+    invoke-direct {v0, p0}, Ldjo;-><init>(Lcom/google/android/apps/camera/debug/ui/MaterialSearchViewPreference;)V
 
     invoke-virtual {p1, v0}, Landroid/widget/SearchView;->setOnQueryTextListener(Landroid/widget/SearchView$OnQueryTextListener;)V
 

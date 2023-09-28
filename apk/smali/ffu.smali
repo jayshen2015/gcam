@@ -1,129 +1,164 @@
-.class public final Lffu;
+.class public final synthetic Lffu;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lfgd;
-
-
-# static fields
-.field private static final a:Lnak;
+.implements Llij;
 
 
 # instance fields
-.field private final b:Lgxy;
+.field public final synthetic a:Lfgb;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
-
-    const-string v0, "com/google/android/apps/camera/microvideo/NoOpMicrovideoSession"
-
-    invoke-static {v0}, Lnak;->h(Ljava/lang/String;)Lnak;
-
-    move-result-object v0
-
-    sput-object v0, Lffu;->a:Lnak;
-
-    return-void
-.end method
-
-.method public constructor <init>(Lgxy;)V
+.method public synthetic constructor <init>(Lfgb;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lffu;->b:Lgxy;
+    iput-object p1, p0, Lffu;->a:Lfgb;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Lhkt;Lgxn;Lmqp;JLhjc;)Lnou;
-    .locals 0
+.method public final fB(Ljava/lang/Object;)V
+    .locals 6
 
-    new-instance p1, Ljava/lang/RuntimeException;
+    iget-object v0, p0, Lffu;->a:Lfgb;
 
-    iget-object p2, p0, Lffu;->b:Lgxy;
+    check-cast p1, Ljava/lang/Boolean;
 
-    invoke-static {p2}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+    invoke-virtual {p1}, Ljava/lang/Boolean;->booleanValue()Z
 
-    move-result-object p2
+    move-result v1
 
-    invoke-static {p2}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+    const/4 v2, 0x0
 
-    move-result-object p2
+    if-eqz v1, :cond_0
 
-    const-string p3, "No in-flight session found for "
+    iget-object v1, v0, Lfgb;->d:Ljava/util/concurrent/Executor;
 
-    invoke-virtual {p3, p2}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
+    new-instance v3, Lffi;
 
-    move-result-object p2
+    const/4 v4, 0x2
 
-    invoke-direct {p1, p2}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
+    invoke-direct {v3, v0, v4}, Lffi;-><init>(Lfgb;I)V
 
-    invoke-static {p1}, Lnsy;->A(Ljava/lang/Throwable;)Lnou;
+    invoke-interface {v1, v3}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
+
+    goto :goto_0
+
+    :cond_0
+    iget-object v1, v0, Lfgb;->d:Ljava/util/concurrent/Executor;
+
+    new-instance v3, Lffi;
+
+    invoke-direct {v3, v0, v2}, Lffi;-><init>(Lfgb;I)V
+
+    invoke-interface {v1, v3}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
+
+    :goto_0
+    iget-object v1, v0, Lfgb;->l:Lfjs;
+
+    sget-object v3, Lpco;->f:Lpco;
+
+    invoke-virtual {v3}, Lppd;->m()Lpoy;
+
+    move-result-object v3
+
+    iget-object v0, v0, Lfgb;->v:Ljava/lang/String;
+
+    iget-boolean v4, v3, Lpoy;->c:Z
+
+    if-eqz v4, :cond_1
+
+    invoke-virtual {v3}, Lpoy;->m()V
+
+    iput-boolean v2, v3, Lpoy;->c:Z
+
+    :cond_1
+    iget-object v4, v3, Lpoy;->b:Lppd;
+
+    check-cast v4, Lpco;
+
+    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    iget v5, v4, Lpco;->a:I
+
+    or-int/lit8 v5, v5, 0x8
+
+    iput v5, v4, Lpco;->a:I
+
+    iput-object v0, v4, Lpco;->e:Ljava/lang/String;
+
+    sget-object v0, Lpcq;->c:Lpcq;
+
+    invoke-virtual {v0}, Lppd;->m()Lpoy;
+
+    move-result-object v0
+
+    invoke-virtual {p1}, Ljava/lang/Boolean;->booleanValue()Z
+
+    move-result p1
+
+    iget-boolean v4, v0, Lpoy;->c:Z
+
+    if-eqz v4, :cond_2
+
+    invoke-virtual {v0}, Lpoy;->m()V
+
+    iput-boolean v2, v0, Lpoy;->c:Z
+
+    :cond_2
+    iget-object v4, v0, Lpoy;->b:Lppd;
+
+    check-cast v4, Lpcq;
+
+    iget v5, v4, Lpcq;->a:I
+
+    or-int/lit8 v5, v5, 0x1
+
+    iput v5, v4, Lpcq;->a:I
+
+    iput-boolean p1, v4, Lpcq;->b:Z
+
+    invoke-virtual {v0}, Lpoy;->h()Lppd;
 
     move-result-object p1
 
-    return-object p1
-.end method
+    check-cast p1, Lpcq;
 
-.method public final b(Lhkt;Ljava/io/InputStream;Lgxn;Lmqp;JLjava/lang/String;Lhjc;)Lnou;
-    .locals 0
+    iget-boolean v0, v3, Lpoy;->c:Z
 
-    :try_start_0
-    invoke-virtual {p4}, Lmqp;->f()Ljava/lang/Object;
+    if-eqz v0, :cond_3
 
-    move-result-object p4
+    invoke-virtual {v3}, Lpoy;->m()V
 
-    check-cast p4, Lcom/google/android/libraries/camera/exif/ExifInterface;
+    iput-boolean v2, v3, Lpoy;->c:Z
 
-    iget-object p5, p3, Lgxn;->a:Lkph;
+    :cond_3
+    iget-object v0, v3, Lpoy;->b:Lppd;
 
-    invoke-static {p2, p4, p5}, Llho;->A(Ljava/io/InputStream;Lcom/google/android/libraries/camera/exif/ExifInterface;Lkph;)J
+    check-cast v0, Lpco;
 
-    move-result-wide p4
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    invoke-interface {p8, p4, p5}, Lhjc;->d(J)V
+    iput-object p1, v0, Lpco;->d:Lpcq;
 
-    invoke-virtual {p3}, Lgxn;->b()V
+    iget p1, v0, Lpco;->a:I
 
-    invoke-static {p1}, Lnsy;->B(Ljava/lang/Object;)Lnou;
+    or-int/lit8 p1, p1, 0x4
 
-    move-result-object p1
-    :try_end_0
-    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
+    iput p1, v0, Lpco;->a:I
 
-    return-object p1
-
-    :catch_0
-    move-exception p1
-
-    sget-object p2, Lffu;->a:Lnak;
-
-    invoke-virtual {p2}, Lnaf;->b()Lnaz;
-
-    move-result-object p2
-
-    const-string p4, "Error while saving jpeg in finishMicrovideo"
-
-    const/16 p5, 0x8ac
-
-    invoke-static {p2, p4, p5, p1}, Ld;->h(Lnaz;Ljava/lang/String;CLjava/lang/Throwable;)V
-
-    invoke-virtual {p3}, Lgxn;->a()V
-
-    invoke-static {p1}, Lnsy;->A(Ljava/lang/Throwable;)Lnou;
+    invoke-virtual {v3}, Lpoy;->h()Lppd;
 
     move-result-object p1
 
-    return-object p1
-.end method
+    check-cast p1, Lpco;
 
-.method public final c()V
-    .locals 0
+    invoke-interface {v1, p1}, Lfjs;->t(Lpco;)V
 
     return-void
 .end method

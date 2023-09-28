@@ -1,106 +1,96 @@
-.class public Lmmd;
-.super Lcbf;
+.class public final Lmmd;
+.super Lmma;
 
 # interfaces
-.implements Landroid/os/IInterface;
-
-
-# instance fields
-.field final synthetic b:Lmma;
-
-.field public final c:Lkgd;
+.implements Ljava/util/List;
+.implements Lmmc;
 
 
 # direct methods
-.method public constructor <init>(Lmma;Lkgd;[B[B)V
+.method public constructor <init>(Ljava/util/List;)V
     .locals 0
 
-    iput-object p1, p0, Lmmd;->b:Lmma;
-
-    const-string p1, "com.google.android.play.core.appupdate.protocol.IAppUpdateServiceCallback"
-
-    invoke-direct {p0, p1}, Lcbf;-><init>(Ljava/lang/String;)V
-
-    iput-object p2, p0, Lmmd;->c:Lkgd;
+    invoke-direct {p0, p1}, Lmma;-><init>(Ljava/util/List;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public b(Landroid/os/Bundle;)V
-    .locals 1
+.method public final close()V
+    .locals 3
 
-    iget-object p1, p0, Lmmd;->b:Lmma;
+    iget-object v0, p0, Lmma;->a:Ljava/util/List;
 
-    iget-object p1, p1, Lmma;->a:Lmmt;
+    invoke-interface {v0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
-    iget-object v0, p0, Lmmd;->c:Lkgd;
+    move-result-object v0
 
-    invoke-virtual {p1, v0}, Lmmt;->f(Lkgd;)V
-
-    return-void
-.end method
-
-.method public c(Landroid/os/Bundle;)V
-    .locals 1
-
-    iget-object p1, p0, Lmmd;->b:Lmma;
-
-    iget-object p1, p1, Lmma;->a:Lmmt;
-
-    iget-object v0, p0, Lmmd;->c:Lkgd;
-
-    invoke-virtual {p1, v0}, Lmmt;->f(Lkgd;)V
-
-    return-void
-.end method
-
-.method protected final x(ILandroid/os/Parcel;Landroid/os/Parcel;)Z
-    .locals 0
-
-    packed-switch p1, :pswitch_data_0
-
-    const/4 p1, 0x0
-
-    return p1
-
-    :pswitch_0
-    sget-object p1, Landroid/os/Bundle;->CREATOR:Landroid/os/Parcelable$Creator;
-
-    invoke-static {p2, p1}, Lcbg;->a(Landroid/os/Parcel;Landroid/os/Parcelable$Creator;)Landroid/os/Parcelable;
-
-    move-result-object p1
-
-    check-cast p1, Landroid/os/Bundle;
-
-    invoke-static {p2}, Lcbg;->b(Landroid/os/Parcel;)V
-
-    invoke-virtual {p0, p1}, Lmmd;->b(Landroid/os/Bundle;)V
-
-    goto :goto_0
-
-    :pswitch_1
-    sget-object p1, Landroid/os/Bundle;->CREATOR:Landroid/os/Parcelable$Creator;
-
-    invoke-static {p2, p1}, Lcbg;->a(Landroid/os/Parcel;Landroid/os/Parcelable$Creator;)Landroid/os/Parcelable;
-
-    move-result-object p1
-
-    check-cast p1, Landroid/os/Bundle;
-
-    invoke-static {p2}, Lcbg;->b(Landroid/os/Parcel;)V
-
-    invoke-virtual {p0, p1}, Lmmd;->c(Landroid/os/Bundle;)V
+    const/4 v1, 0x0
 
     :goto_0
-    const/4 p1, 0x1
+    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
-    return p1
+    move-result v2
 
-    :pswitch_data_0
-    .packed-switch 0x2
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
+    if-eqz v2, :cond_2
+
+    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Lmmc;
+
+    if-eqz v2, :cond_1
+
+    :try_start_0
+    invoke-interface {v2}, Lmmc;->close()V
+    :try_end_0
+    .catch Ljava/lang/RuntimeException; {:try_start_0 .. :try_end_0} :catch_0
+
+    goto :goto_1
+
+    :catch_0
+    move-exception v2
+
+    if-eqz v1, :cond_0
+
+    goto :goto_1
+
+    :cond_0
+    move-object v1, v2
+
+    goto :goto_1
+
+    :cond_1
+    :goto_1
+    goto :goto_0
+
+    :cond_2
+    if-nez v1, :cond_3
+
+    return-void
+
+    :cond_3
+    goto :goto_3
+
+    :goto_2
+    throw v1
+
+    :goto_3
+    goto :goto_2
+.end method
+
+.method public final bridge synthetic subList(II)Ljava/util/List;
+    .locals 1
+
+    new-instance v0, Lmmd;
+
+    invoke-super {p0, p1, p2}, Lmma;->subList(II)Ljava/util/List;
+
+    move-result-object p1
+
+    invoke-direct {v0, p1}, Lmmd;-><init>(Ljava/util/List;)V
+
+    return-object v0
 .end method

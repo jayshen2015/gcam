@@ -1,84 +1,67 @@
-.class public final synthetic Lnsi;
-.super Ljava/lang/Object;
+.class public final Lnsi;
+.super Lqlu;
 
-# interfaces
-.implements Lcom/google/googlex/gcam/base/function/IntConsumer;
+
+# annotations
+.annotation runtime Lqlw;
+    b = "com.google.android.libraries.vision.visionkit.f250.internal.uploader.work.F250Worker"
+    c = "F250Worker.kt"
+    d = "uploadAllValidResources"
+    e = {
+        0xcc
+    }
+.end annotation
 
 
 # instance fields
-.field public final synthetic a:Ledz;
+.field public a:Ljava/lang/Object;
+
+.field public b:Ljava/lang/Object;
+
+.field public c:Ljava/lang/Object;
+
+.field public d:Ljava/lang/Object;
+
+.field public synthetic e:Ljava/lang/Object;
+
+.field final synthetic f:Lcom/google/android/libraries/vision/visionkit/f250/internal/uploader/work/F250Worker;
+
+.field public g:I
 
 
 # direct methods
-.method public synthetic constructor <init>(Ledz;)V
+.method public constructor <init>(Lcom/google/android/libraries/vision/visionkit/f250/internal/uploader/work/F250Worker;Lqlh;)V
     .locals 0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lnsi;->f:Lcom/google/android/libraries/vision/visionkit/f250/internal/uploader/work/F250Worker;
 
-    iput-object p1, p0, Lnsi;->a:Ledz;
+    invoke-direct {p0, p2}, Lqlu;-><init>(Lqlh;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final accept(I)V
-    .locals 2
+.method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 1
 
-    iget-object p1, p0, Lnsi;->a:Ledz;
+    iput-object p1, p0, Lnsi;->e:Ljava/lang/Object;
 
-    sget-object v0, Leea;->a:Lnak;
+    iget p1, p0, Lnsi;->g:I
 
-    iget-object v0, p1, Ledz;->c:Leea;
+    const/high16 v0, -0x80000000
 
-    iget v0, v0, Leea;->s:I
+    or-int/2addr p1, v0
 
-    const/4 v1, 0x1
+    iput p1, p0, Lnsi;->g:I
 
-    if-ne v0, v1, :cond_0
+    iget-object p1, p0, Lnsi;->f:Lcom/google/android/libraries/vision/visionkit/f250/internal/uploader/work/F250Worker;
 
-    goto :goto_0
+    const/4 v0, 0x0
 
-    :cond_0
-    const/4 v1, 0x0
+    invoke-virtual {p1, v0, p0}, Lcom/google/android/libraries/vision/visionkit/f250/internal/uploader/work/F250Worker;->m(Lnrl;Lqlh;)Ljava/lang/Object;
 
-    :goto_0
-    invoke-static {v1}, Lmoz;->p(Z)V
+    move-result-object p1
 
-    iget-object v0, p1, Ledz;->c:Leea;
-
-    const/4 v1, 0x4
-
-    iput v1, v0, Leea;->s:I
-
-    iget-object v0, p1, Ledz;->a:Leec;
-
-    invoke-virtual {v0}, Leec;->m()Lmqp;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lmqp;->g()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_1
-
-    iget-object v0, p1, Ledz;->a:Leec;
-
-    invoke-virtual {v0}, Leec;->m()Lmqp;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lmqp;->c()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lecw;
-
-    iget-object p1, p1, Ledz;->c:Leea;
-
-    invoke-interface {v0, p1}, Lecw;->p(Leea;)V
-
-    :cond_1
-    return-void
+    return-object p1
 .end method

@@ -1,181 +1,71 @@
 .class public final Lgxn;
 .super Ljava/lang/Object;
 
-
-# static fields
-.field private static final d:Ljava/text/SimpleDateFormat;
+# interfaces
+.implements Lpys;
 
 
 # instance fields
-.field public final a:Lkph;
+.field private final a:Lqkg;
 
-.field public final b:Z
-
-.field public c:Ldyy;
-
-.field private final e:Lgxr;
+.field private final b:Lqkg;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 3
-
-    new-instance v0, Ljava/text/SimpleDateFormat;
-
-    const-string v1, "yyyyMMdd_HHmmssSSS"
-
-    sget-object v2, Ljava/util/Locale;->ROOT:Ljava/util/Locale;
-
-    invoke-direct {v0, v1, v2}, Ljava/text/SimpleDateFormat;-><init>(Ljava/lang/String;Ljava/util/Locale;)V
-
-    const-string v1, "UTC"
-
-    invoke-static {v1}, Lj$/util/DesugarTimeZone;->getTimeZone(Ljava/lang/String;)Ljava/util/TimeZone;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Ljava/text/SimpleDateFormat;->setTimeZone(Ljava/util/TimeZone;)V
-
-    sput-object v0, Lgxn;->d:Ljava/text/SimpleDateFormat;
-
-    return-void
-.end method
-
-.method public constructor <init>(Lgxr;Lkph;Ldyy;Z)V
+.method public constructor <init>(Lqkg;Lqkg;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lgxn;->e:Lgxr;
+    iput-object p1, p0, Lgxn;->a:Lqkg;
 
-    iput-object p2, p0, Lgxn;->a:Lkph;
+    iput-object p2, p0, Lgxn;->b:Lqkg;
 
-    iput-boolean p4, p0, Lgxn;->b:Z
-
-    iput-object p3, p0, Lgxn;->c:Ldyy;
-
-    if-eqz p4, :cond_0
-
-    invoke-virtual {p1}, Lgxr;->c()Lkpl;
-
-    move-result-object p1
-
-    invoke-interface {p1, p2}, Lkpl;->e(Lkph;)V
-
-    :cond_0
     return-void
+.end method
+
+.method public static b(Lqkg;Lqkg;)Lgxn;
+    .locals 1
+
+    new-instance v0, Lgxn;
+
+    invoke-direct {v0, p0, p1}, Lgxn;-><init>(Lqkg;Lqkg;)V
+
+    return-object v0
 .end method
 
 
 # virtual methods
-.method public final a()V
-    .locals 2
+.method public final a()Lgxm;
+    .locals 3
 
-    iget-object v0, p0, Lgxn;->e:Lgxr;
+    iget-object v0, p0, Lgxn;->a:Lqkg;
 
-    sget-object v1, Lgxq;->b:Lgxq;
-
-    invoke-virtual {v0, p0, v1}, Lgxr;->f(Lgxn;Lgxq;)V
-
-    return-void
-.end method
-
-.method public final b()V
-    .locals 2
-
-    iget-object v0, p0, Lgxn;->e:Lgxr;
-
-    sget-object v1, Lgxq;->a:Lgxq;
-
-    invoke-virtual {v0, p0, v1}, Lgxr;->f(Lgxn;Lgxq;)V
-
-    return-void
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .locals 6
-
-    iget-object v0, p0, Lgxn;->e:Lgxr;
-
-    iget-object v0, v0, Lgxr;->d:Ljava/lang/String;
-
-    invoke-static {v0}, Lmqr;->b(Ljava/lang/String;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    const-string v0, ""
-
-    goto :goto_0
-
-    :cond_0
-    iget-object v0, p0, Lgxn;->e:Lgxr;
-
-    iget-object v0, v0, Lgxr;->d:Ljava/lang/String;
-
-    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+    invoke-interface {v0}, Lqkg;->get()Ljava/lang/Object;
 
     move-result-object v0
 
-    const-string v1, "-"
+    check-cast v0, Llzi;
 
-    invoke-virtual {v1, v0}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
+    iget-object v1, p0, Lgxn;->b:Lqkg;
 
-    move-result-object v0
-
-    :goto_0
-    sget-object v1, Lgxn;->d:Ljava/text/SimpleDateFormat;
-
-    new-instance v2, Ljava/util/Date;
-
-    iget-object v3, p0, Lgxn;->e:Lgxr;
-
-    iget-wide v3, v3, Lgxr;->a:J
-
-    invoke-direct {v2, v3, v4}, Ljava/util/Date;-><init>(J)V
-
-    invoke-virtual {v1, v2}, Ljava/text/SimpleDateFormat;->format(Ljava/util/Date;)Ljava/lang/String;
+    invoke-interface {v1}, Lqkg;->get()Ljava/lang/Object;
 
     move-result-object v1
 
-    iget-object v2, p0, Lgxn;->a:Lkph;
+    check-cast v1, Lddf;
 
-    invoke-virtual {v2}, Ljava/lang/Object;->toString()Ljava/lang/String;
+    new-instance v2, Lgxm;
 
-    move-result-object v2
+    invoke-direct {v2, v0, v1}, Lgxm;-><init>(Llzi;Lddf;)V
 
-    iget-boolean v3, p0, Lgxn;->b:Z
+    return-object v2
+.end method
 
-    new-instance v4, Ljava/lang/StringBuilder;
+.method public final bridge synthetic get()Ljava/lang/Object;
+    .locals 1
 
-    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v5, "PXL_"
-
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v4, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v0, " ("
-
-    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v4, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v0, " isprimary="
-
-    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v4, v3}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    const-string v0, ")"
-
-    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {p0}, Lgxn;->a()Lgxm;
 
     move-result-object v0
 

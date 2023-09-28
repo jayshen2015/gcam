@@ -2,21 +2,21 @@
 .super Ljava/lang/Object;
 
 
-# static fields
-.field public static final a:Lnak;
+# instance fields
+.field public final a:Lcom/google/googlex/gcam/FrameRequest;
+
+.field public final b:Llpd;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
+.method public constructor <init>(Llpd;Lcom/google/googlex/gcam/FrameRequest;)V
+    .locals 0
 
-    const-string v0, "com/google/android/apps/camera/smarts/SmartsCameraModule$Pck"
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-static {v0}, Lnak;->h(Ljava/lang/String;)Lnak;
+    iput-object p1, p0, Lhcc;->b:Llpd;
 
-    move-result-object v0
-
-    sput-object v0, Lhcc;->a:Lnak;
+    iput-object p2, p0, Lhcc;->a:Lcom/google/googlex/gcam/FrameRequest;
 
     return-void
 .end method

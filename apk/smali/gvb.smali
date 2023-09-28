@@ -1,28 +1,31 @@
 .class public interface abstract Lgvb;
 .super Ljava/lang/Object;
 
+# interfaces
+.implements Lgva;
+
 
 # virtual methods
-.method public abstract a(Landroid/graphics/Bitmap;ILklv;)Landroid/graphics/Bitmap;
+.method public abstract c()Llic;
 .end method
 
-.method public abstract b(Landroid/graphics/Bitmap;ILklv;)Landroid/graphics/Bitmap;
+.method public abstract f()Llic;
 .end method
 
-.method public abstract c(Lcom/google/googlex/gcam/InterleavedImageU8;ILklv;)Lcom/google/googlex/gcam/InterleavedImageU8;
+.method public abstract g(Llyy;)V
 .end method
 
-.method public abstract d(Lkpb;Lkab;)V
+.method public abstract h(Llyy;)V
 .end method
 
-.method public abstract e(Lkpb;Lkpb;Lkab;)V
+.method public abstract i()Z
 .end method
 
-.method public abstract f(Lcom/google/android/libraries/camera/exif/ExifInterface;Lklv;I)V
+.method public abstract j()I
 .end method
 
-.method public abstract g(Lkab;)Z
+.method public abstract k(Lcub;)V
 .end method
 
-.method public abstract h(Lklv;)Z
+.method public abstract l(Lcub;)V
 .end method

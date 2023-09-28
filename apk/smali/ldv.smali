@@ -1,115 +1,122 @@
 .class public final Lldv;
 .super Ljava/lang/Object;
 
-# interfaces
-.implements Ljava/lang/AutoCloseable;
-
 
 # instance fields
-.field final synthetic a:Landroid/media/MediaCodec;
+.field public final a:Llfj;
 
-.field public final synthetic b:Ljava/nio/ByteBuffer;
+.field public final b:Ljava/util/concurrent/Executor;
 
-.field public final synthetic c:Landroid/media/MediaCodec$BufferInfo;
+.field public final c:Ljava/util/concurrent/ConcurrentLinkedQueue;
 
-.field final synthetic d:Landroid/media/MediaCodec$LinearBlock;
+.field public final d:Ljava/lang/Object;
 
-.field final synthetic e:I
+.field public e:Lldu;
 
-.field final synthetic f:Lldx;
+.field public f:Llff;
 
 
 # direct methods
-.method public constructor <init>(Lldx;Landroid/media/MediaCodec;Ljava/nio/ByteBuffer;Landroid/media/MediaCodec$BufferInfo;Landroid/media/MediaCodec$LinearBlock;I)V
-    .locals 0
-
-    iput-object p1, p0, Lldv;->f:Lldx;
-
-    iput-object p2, p0, Lldv;->a:Landroid/media/MediaCodec;
-
-    iput-object p3, p0, Lldv;->b:Ljava/nio/ByteBuffer;
-
-    iput-object p4, p0, Lldv;->c:Landroid/media/MediaCodec$BufferInfo;
-
-    iput-object p5, p0, Lldv;->d:Landroid/media/MediaCodec$LinearBlock;
-
-    iput p6, p0, Lldv;->e:I
+.method public constructor <init>(Llfj;Ljava/util/concurrent/Executor;Lojc;)V
+    .locals 1
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    new-instance v0, Ljava/lang/Object;
+
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+
+    iput-object v0, p0, Lldv;->d:Ljava/lang/Object;
+
+    new-instance v0, Lldp;
+
+    invoke-direct {v0, p0}, Lldp;-><init>(Lldv;)V
+
+    iput-object v0, p0, Lldv;->f:Llff;
+
+    iput-object p1, p0, Lldv;->a:Llfj;
+
+    iput-object p2, p0, Lldv;->b:Ljava/util/concurrent/Executor;
+
+    new-instance p1, Ljava/util/concurrent/ConcurrentLinkedQueue;
+
+    invoke-direct {p1}, Ljava/util/concurrent/ConcurrentLinkedQueue;-><init>()V
+
+    iput-object p1, p0, Lldv;->c:Ljava/util/concurrent/ConcurrentLinkedQueue;
+
+    sget-object p1, Lldu;->a:Lldu;
+
+    iput-object p1, p0, Lldv;->e:Lldu;
+
+    invoke-virtual {p3}, Lojc;->g()Z
+
+    move-result p1
+
+    if-eqz p1, :cond_0
+
+    invoke-virtual {p3}, Lojc;->c()Ljava/lang/Object;
+
+    move-result-object p1
+
+    check-cast p1, Llff;
+
+    iput-object p1, p0, Lldv;->f:Llff;
+
+    :cond_0
     return-void
 .end method
 
 
 # virtual methods
-.method public final close()V
+.method public final a()V
     .locals 6
 
-    iget-object v0, p0, Lldv;->f:Lldx;
+    iget-object v0, p0, Lldv;->d:Ljava/lang/Object;
 
     monitor-enter v0
 
     :try_start_0
-    iget-object v1, p0, Lldv;->f:Lldx;
+    iget-object v1, p0, Lldv;->e:Lldu;
 
-    iget-object v1, v1, Lldx;->l:Ljava/util/Set;
+    sget-object v2, Lldu;->b:Lldu;
 
-    invoke-interface {v1, p0}, Ljava/util/Set;->remove(Ljava/lang/Object;)Z
+    const/4 v3, 0x1
 
-    move-result v1
+    if-ne v1, v2, :cond_0
 
-    if-eqz v1, :cond_2
-
-    iget-object v1, p0, Lldv;->f:Lldx;
-
-    iget-object v1, v1, Lldx;->e:Lnph;
-
-    invoke-virtual {v1}, Lnph;->isDone()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_0
+    const/4 v1, 0x1
 
     goto :goto_0
 
     :cond_0
-    iget-object v1, p0, Lldv;->d:Landroid/media/MediaCodec$LinearBlock;
+    const/4 v1, 0x0
 
-    if-eqz v1, :cond_1
+    :goto_0
+    const-string v2, "%s is expected but we get %s"
 
-    invoke-virtual {v1}, Landroid/media/MediaCodec$LinearBlock;->recycle()V
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_1
+    sget-object v4, Lldu;->b:Lldu;
 
-    :cond_1
-    :try_start_1
-    iget-object v1, p0, Lldv;->a:Landroid/media/MediaCodec;
+    iget-object v5, p0, Lldv;->e:Lldu;
 
-    iget v2, p0, Lldv;->e:I
+    invoke-static {v1, v2, v4, v5}, Lobr;->aU(ZLjava/lang/String;Ljava/lang/Object;Ljava/lang/Object;)V
 
-    const/4 v3, 0x0
+    sget-object v1, Lldu;->c:Lldu;
 
-    invoke-virtual {v1, v2, v3}, Landroid/media/MediaCodec;->releaseOutputBuffer(IZ)V
-    :try_end_1
-    .catch Landroid/media/MediaCodec$CodecException; {:try_start_1 .. :try_end_1} :catch_0
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+    iput-object v1, p0, Lldv;->e:Lldu;
 
-    :try_start_2
-    iget-object v1, p0, Lldv;->f:Lldx;
+    iget-object v1, p0, Lldv;->a:Llfj;
 
-    iget-object v1, v1, Lldx;->o:Llel;
+    invoke-interface {v1}, Llfj;->g()Lpht;
 
-    iget-object v2, p0, Lldv;->c:Landroid/media/MediaCodec$BufferInfo;
+    move-result-object v1
 
-    iget-wide v2, v2, Landroid/media/MediaCodec$BufferInfo;->presentationTimeUs:J
+    new-instance v2, Lldr;
 
-    invoke-interface {v1, v2, v3}, Llel;->b(J)V
+    invoke-direct {v2, p0, v3}, Lldr;-><init>(Lldv;I)V
 
-    iget-object v1, p0, Lldv;->f:Lldx;
+    iget-object v3, p0, Lldv;->b:Ljava/util/concurrent/Executor;
 
-    iget-object v2, p0, Lldv;->c:Landroid/media/MediaCodec$BufferInfo;
-
-    invoke-virtual {v1, v2}, Lldx;->c(Landroid/media/MediaCodec$BufferInfo;)V
+    invoke-static {v1, v2, v3}, Lplk;->af(Lpht;Lphh;Ljava/util/concurrent/Executor;)V
 
     monitor-exit v0
 
@@ -118,69 +125,84 @@
     :catchall_0
     move-exception v1
 
-    const-string v2, "AsynchMediaCodec"
-
-    const-string v3, "Exception occurred while trying to release output buffer"
-
-    invoke-static {v2, v3, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
-
     monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    return-void
+    throw v1
+.end method
 
-    :catch_0
-    move-exception v1
+.method public final b()V
+    .locals 7
 
-    iget-object v2, p0, Lldv;->f:Lldx;
+    iget-object v0, p0, Lldv;->d:Ljava/lang/Object;
 
-    iget-object v3, v2, Lldx;->j:Lldw;
+    monitor-enter v0
 
-    iget-object v2, v2, Lldx;->a:Landroid/media/MediaCodec;
+    :try_start_0
+    iget-object v1, p0, Lldv;->e:Lldu;
 
-    invoke-virtual {v3, v2, v1}, Lldw;->onError(Landroid/media/MediaCodec;Landroid/media/MediaCodec$CodecException;)V
+    sget-object v2, Lldu;->b:Lldu;
 
-    monitor-exit v0
+    const/4 v3, 0x0
 
-    return-void
+    const/4 v4, 0x1
 
-    :cond_2
+    if-eq v1, v2, :cond_1
+
+    iget-object v1, p0, Lldv;->e:Lldu;
+
+    sget-object v2, Lldu;->c:Lldu;
+
+    if-ne v1, v2, :cond_0
+
+    goto :goto_0
+
+    :cond_0
+    const/4 v4, 0x0
+
+    goto :goto_0
+
+    :cond_1
     :goto_0
-    const-string v1, "AsynchMediaCodec"
+    const-string v1, "%s or %s is expected but we get %s"
 
-    iget-object v2, p0, Lldv;->c:Landroid/media/MediaCodec$BufferInfo;
+    sget-object v2, Lldu;->b:Lldu;
 
-    iget-wide v2, v2, Landroid/media/MediaCodec$BufferInfo;->presentationTimeUs:J
+    sget-object v5, Lldu;->c:Lldu;
 
-    new-instance v4, Ljava/lang/StringBuilder;
+    iget-object v6, p0, Lldv;->e:Lldu;
 
-    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-static {v4, v1, v2, v5, v6}, Lobr;->aV(ZLjava/lang/String;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V
 
-    const-string v5, "Trying to close output buffer at timestamp "
+    sget-object v1, Lldu;->d:Lldu;
 
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    iput-object v1, p0, Lldv;->e:Lldu;
 
-    invoke-virtual {v4, v2, v3}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+    iget-object v1, p0, Lldv;->a:Llfj;
 
-    const-string v2, " but it has been closed or the codec has been stopped already"
+    invoke-interface {v1}, Llfj;->k()Lpht;
 
-    invoke-virtual {v4, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result-object v1
 
-    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    new-instance v2, Lldq;
 
-    move-result-object v2
+    invoke-direct {v2, p0, v3}, Lldq;-><init>(Lldv;I)V
 
-    invoke-static {v1, v2}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
+    iget-object v3, p0, Lldv;->b:Ljava/util/concurrent/Executor;
+
+    invoke-static {v1, v2, v3}, Lplk;->af(Lpht;Lphh;Ljava/util/concurrent/Executor;)V
 
     monitor-exit v0
 
     return-void
 
-    :catchall_1
+    :catchall_0
     move-exception v1
 
     monitor-exit v0
-    :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw v1
 .end method

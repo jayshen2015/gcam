@@ -1,18 +1,18 @@
-.class public abstract Lnba;
+.class public final Lnba;
 .super Ljava/lang/Object;
 
 
-# virtual methods
-.method protected abstract a()V
-.end method
+# static fields
+.field public static volatile a:Lojc;
 
-.method protected abstract b()Lnau;
-.end method
 
-.method public final toString()Ljava/lang/String;
+# direct methods
+.method static constructor <clinit>()V
     .locals 1
 
     const/4 v0, 0x0
 
-    throw v0
+    sput-object v0, Lnba;->a:Lojc;
+
+    return-void
 .end method

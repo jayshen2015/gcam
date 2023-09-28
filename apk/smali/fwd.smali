@@ -1,43 +1,59 @@
-.class public final Lfwd;
+.class public final synthetic Lfwd;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Logk;
+.implements Llij;
 
 
 # instance fields
-.field private final a:Lfvx;
+.field public final synthetic a:Lfwg;
+
+.field private final synthetic b:I
 
 
 # direct methods
-.method public constructor <init>(Lfvx;)V
+.method public synthetic constructor <init>(Lfwg;I)V
     .locals 0
+
+    iput p2, p0, Lfwd;->b:I
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lfwd;->a:Lfvx;
+    iput-object p1, p0, Lfwd;->a:Lfwg;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Lgvu;
+.method public final fB(Ljava/lang/Object;)V
     .locals 1
 
-    iget-object v0, p0, Lfwd;->a:Lfvx;
+    iget v0, p0, Lfwd;->b:I
 
-    iget-object v0, v0, Lfvx;->d:Ljava/lang/Object;
+    packed-switch v0, :pswitch_data_0
 
-    return-object v0
-.end method
+    iget-object v0, p0, Lfwd;->a:Lfwg;
 
-.method public final bridge synthetic get()Ljava/lang/Object;
-    .locals 1
+    check-cast p1, Ljava/lang/Boolean;
 
-    invoke-virtual {p0}, Lfwd;->a()Lgvu;
+    invoke-virtual {v0}, Lfwg;->e()V
 
-    move-result-object v0
+    return-void
 
-    return-object v0
+    :pswitch_0
+    iget-object v0, p0, Lfwd;->a:Lfwg;
+
+    check-cast p1, Ljava/lang/Boolean;
+
+    invoke-virtual {v0}, Lfwg;->e()V
+
+    return-void
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

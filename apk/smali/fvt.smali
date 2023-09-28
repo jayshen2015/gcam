@@ -1,253 +1,200 @@
 .class public final Lfvt;
-.super Lkfg;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Lfvv;
+.implements Lfvy;
+
+
+# static fields
+.field private static final a:Louj;
+
+.field private static final b:Ljava/util/EnumSet;
 
 
 # instance fields
-.field public final a:Ljava/util/concurrent/locks/ReentrantLock;
-
-.field public final b:Ljava/util/concurrent/locks/Condition;
-
-.field public c:J
-
-.field private final d:Ljava/util/TreeMap;
-
-.field private e:J
-
-.field private final f:Ljava/util/Set;
+.field private c:Ljava/lang/ref/WeakReference;
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 2
+.method static constructor <clinit>()V
+    .locals 4
 
-    invoke-direct {p0}, Lkfg;-><init>()V
+    const-string v0, "com/google/android/apps/camera/modemanager/ModeManagerImpl"
 
-    new-instance v0, Ljava/util/concurrent/locks/ReentrantLock;
-
-    invoke-direct {v0}, Ljava/util/concurrent/locks/ReentrantLock;-><init>()V
-
-    iput-object v0, p0, Lfvt;->a:Ljava/util/concurrent/locks/ReentrantLock;
-
-    invoke-virtual {v0}, Ljava/util/concurrent/locks/ReentrantLock;->newCondition()Ljava/util/concurrent/locks/Condition;
+    invoke-static {v0}, Louj;->h(Ljava/lang/String;)Louj;
 
     move-result-object v0
 
-    iput-object v0, p0, Lfvt;->b:Ljava/util/concurrent/locks/Condition;
+    sput-object v0, Lfvt;->a:Louj;
 
-    new-instance v0, Ljava/util/TreeMap;
+    sget-object v0, Ljrl;->d:Ljrl;
 
-    invoke-direct {v0}, Ljava/util/TreeMap;-><init>()V
+    const/16 v1, 0x8
 
-    iput-object v0, p0, Lfvt;->d:Ljava/util/TreeMap;
+    new-array v1, v1, [Ljrl;
 
-    const-wide/16 v0, -0x1
+    sget-object v2, Ljrl;->k:Ljrl;
 
-    iput-wide v0, p0, Lfvt;->c:J
+    const/4 v3, 0x0
 
-    iput-wide v0, p0, Lfvt;->e:J
+    aput-object v2, v1, v3
 
-    new-instance v0, Ljava/util/HashSet;
+    sget-object v2, Ljrl;->m:Ljrl;
 
-    invoke-direct {v0}, Ljava/util/HashSet;-><init>()V
+    const/4 v3, 0x1
 
-    iput-object v0, p0, Lfvt;->f:Ljava/util/Set;
+    aput-object v2, v1, v3
+
+    sget-object v2, Ljrl;->g:Ljrl;
+
+    const/4 v3, 0x2
+
+    aput-object v2, v1, v3
+
+    sget-object v2, Ljrl;->r:Ljrl;
+
+    const/4 v3, 0x3
+
+    aput-object v2, v1, v3
+
+    sget-object v2, Ljrl;->l:Ljrl;
+
+    const/4 v3, 0x4
+
+    aput-object v2, v1, v3
+
+    sget-object v2, Ljrl;->f:Ljrl;
+
+    const/4 v3, 0x5
+
+    aput-object v2, v1, v3
+
+    sget-object v2, Ljrl;->n:Ljrl;
+
+    const/4 v3, 0x6
+
+    aput-object v2, v1, v3
+
+    sget-object v2, Ljrl;->c:Ljrl;
+
+    const/4 v3, 0x7
+
+    aput-object v2, v1, v3
+
+    invoke-static {v0, v1}, Ljava/util/EnumSet;->of(Ljava/lang/Enum;[Ljava/lang/Enum;)Ljava/util/EnumSet;
+
+    move-result-object v0
+
+    sput-object v0, Lfvt;->b:Ljava/util/EnumSet;
+
+    return-void
+.end method
+
+.method public constructor <init>()V
+    .locals 2
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    new-instance v0, Ljava/lang/ref/WeakReference;
+
+    const/4 v1, 0x0
+
+    invoke-direct {v0, v1}, Ljava/lang/ref/WeakReference;-><init>(Ljava/lang/Object;)V
+
+    iput-object v0, p0, Lfvt;->c:Ljava/lang/ref/WeakReference;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final bv(Lkeg;)V
-    .locals 6
+.method public final a(Ljfn;)V
+    .locals 1
 
-    iget-object v0, p0, Lfvt;->a:Ljava/util/concurrent/locks/ReentrantLock;
-
-    invoke-virtual {v0}, Ljava/util/concurrent/locks/ReentrantLock;->lock()V
+    monitor-enter p0
 
     :try_start_0
-    iget-wide v0, p1, Lkeg;->d:J
+    new-instance v0, Ljava/lang/ref/WeakReference;
 
-    iget-wide v2, p0, Lfvt;->c:J
+    invoke-direct {v0, p1}, Ljava/lang/ref/WeakReference;-><init>(Ljava/lang/Object;)V
 
-    cmp-long v4, v2, v0
+    iput-object v0, p0, Lfvt;->c:Ljava/lang/ref/WeakReference;
 
-    if-gez v4, :cond_2
-
-    iput-wide v0, p0, Lfvt;->c:J
-
-    iget-wide v0, p1, Lkeg;->b:J
-
-    iput-wide v0, p0, Lfvt;->e:J
-
-    iget-object p1, p0, Lfvt;->b:Ljava/util/concurrent/locks/Condition;
-
-    invoke-interface {p1}, Ljava/util/concurrent/locks/Condition;->signal()V
-
-    :goto_0
-    iget-object p1, p0, Lfvt;->d:Ljava/util/TreeMap;
-
-    invoke-virtual {p1}, Ljava/util/TreeMap;->isEmpty()Z
-
-    move-result p1
-
-    if-nez p1, :cond_0
-
-    iget-object p1, p0, Lfvt;->d:Ljava/util/TreeMap;
-
-    invoke-virtual {p1}, Ljava/util/TreeMap;->firstKey()Ljava/lang/Object;
-
-    move-result-object p1
-
-    check-cast p1, Ljava/lang/Long;
-
-    invoke-virtual {p1}, Ljava/lang/Long;->longValue()J
-
-    move-result-wide v0
-
-    iget-wide v2, p0, Lfvt;->c:J
-
-    cmp-long p1, v0, v2
-
-    if-ltz p1, :cond_0
-
-    iget-object p1, p0, Lfvt;->d:Ljava/util/TreeMap;
-
-    invoke-virtual {p1}, Ljava/util/TreeMap;->pollFirstEntry()Ljava/util/Map$Entry;
-
-    move-result-object p1
-
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    invoke-interface {p1}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
-
-    move-result-object p1
-
-    check-cast p1, Ljava/lang/Runnable;
-
-    invoke-interface {p1}, Ljava/lang/Runnable;->run()V
-
-    goto :goto_0
-
-    :cond_0
-    iget-object p1, p0, Lfvt;->f:Ljava/util/Set;
-
-    invoke-interface {p1}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
-
-    move-result-object p1
-
-    :goto_1
-    invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_2
-
-    invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lfvs;
-
-    iget-wide v1, p0, Lfvt;->c:J
-
-    iget-wide v3, v0, Lfvs;->a:J
-
-    iget-wide v3, v0, Lfvs;->b:J
-
-    const-wide/16 v3, 0x0
-
-    rem-long/2addr v1, v3
-
-    cmp-long v5, v1, v3
-
-    if-eqz v5, :cond_1
-
-    goto :goto_1
-
-    :cond_1
-    iget-object p1, v0, Lfvs;->c:Ljava/lang/Runnable;
-
-    const/4 p1, 0x0
-
-    throw p1
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    :cond_2
-    iget-object p1, p0, Lfvt;->a:Ljava/util/concurrent/locks/ReentrantLock;
-
-    invoke-virtual {p1}, Ljava/util/concurrent/locks/ReentrantLock;->unlock()V
+    monitor-exit p0
 
     return-void
 
     :catchall_0
     move-exception p1
 
-    iget-object v0, p0, Lfvt;->a:Ljava/util/concurrent/locks/ReentrantLock;
+    monitor-exit p0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    invoke-virtual {v0}, Ljava/util/concurrent/locks/ReentrantLock;->unlock()V
-
-    goto :goto_3
-
-    :goto_2
     throw p1
-
-    :goto_3
-    goto :goto_2
 .end method
 
-.method public final i()J
+.method public final b(Ljrl;)Z
     .locals 3
 
-    iget-object v0, p0, Lfvt;->a:Ljava/util/concurrent/locks/ReentrantLock;
+    sget-object v0, Lfvt;->b:Ljava/util/EnumSet;
 
-    invoke-virtual {v0}, Ljava/util/concurrent/locks/ReentrantLock;->lock()V
+    invoke-virtual {v0, p1}, Ljava/util/EnumSet;->contains(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    const-string v1, "switchToMode %s is not supported; see JavaDoc comments"
+
+    invoke-static {v0, v1}, Lobr;->aG(ZLjava/lang/Object;)V
+
+    monitor-enter p0
 
     :try_start_0
-    iget-wide v0, p0, Lfvt;->c:J
+    iget-object v0, p0, Lfvt;->c:Ljava/lang/ref/WeakReference;
+
+    invoke-virtual {v0}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljfn;
+
+    monitor-exit p0
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    iget-object v2, p0, Lfvt;->a:Ljava/util/concurrent/locks/ReentrantLock;
+    if-nez v0, :cond_0
 
-    invoke-virtual {v2}, Ljava/util/concurrent/locks/ReentrantLock;->unlock()V
+    sget-object v0, Lfvt;->a:Louj;
 
-    return-wide v0
+    invoke-virtual {v0}, Loue;->c()Lova;
 
-    :catchall_0
-    move-exception v0
+    move-result-object v0
 
-    iget-object v1, p0, Lfvt;->a:Ljava/util/concurrent/locks/ReentrantLock;
+    const-string v1, "switchToMode has no ModeSwitchController, so NOT switching to %s"
 
-    invoke-virtual {v1}, Ljava/util/concurrent/locks/ReentrantLock;->unlock()V
+    const/16 v2, 0x7b1
 
-    throw v0
-.end method
+    invoke-static {v0, v1, p1, v2}, Ld;->u(Lova;Ljava/lang/String;Ljava/lang/Object;C)V
 
-.method public final j()J
-    .locals 3
+    const/4 p1, 0x0
 
-    iget-object v0, p0, Lfvt;->a:Ljava/util/concurrent/locks/ReentrantLock;
+    return p1
 
-    invoke-virtual {v0}, Ljava/util/concurrent/locks/ReentrantLock;->lock()V
+    :cond_0
+    invoke-interface {v0, p1}, Ljfn;->t(Ljrl;)Z
 
-    :try_start_0
-    iget-wide v0, p0, Lfvt;->e:J
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    move-result p1
 
-    iget-object v2, p0, Lfvt;->a:Ljava/util/concurrent/locks/ReentrantLock;
-
-    invoke-virtual {v2}, Ljava/util/concurrent/locks/ReentrantLock;->unlock()V
-
-    return-wide v0
+    return p1
 
     :catchall_0
-    move-exception v0
+    move-exception p1
 
-    iget-object v1, p0, Lfvt;->a:Ljava/util/concurrent/locks/ReentrantLock;
+    :try_start_1
+    monitor-exit p0
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    invoke-virtual {v1}, Ljava/util/concurrent/locks/ReentrantLock;->unlock()V
-
-    throw v0
+    throw p1
 .end method

@@ -1,190 +1,193 @@
-.class public final enum Lgyu;
-.super Ljava/lang/Enum;
+.class public final Lgyu;
+.super Ljava/lang/Object;
 
-
-# static fields
-.field public static final enum a:Lgyu;
-
-.field public static final enum b:Lgyu;
-
-.field public static final enum c:Lgyu;
-
-.field public static final enum d:Lgyu;
-
-.field public static final e:Lgyu;
-
-.field public static final f:[I
-
-.field private static final synthetic h:[Lgyu;
+# interfaces
+.implements Lhen;
 
 
 # instance fields
-.field public final g:I
+.field private final a:Lgza;
+
+.field private final b:Lhen;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 10
+.method public constructor <init>(Lmbg;Lgzf;Llap;JILojz;[B[B)V
+    .locals 6
 
-    new-instance v0, Lgyu;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const-string v1, "OFF"
+    invoke-virtual {p1, p6}, Lmbg;->b(I)Lgza;
 
-    const/4 v2, 0x0
+    move-result-object v3
 
-    invoke-direct {v0, v1, v2, v2}, Lgyu;-><init>(Ljava/lang/String;II)V
+    invoke-virtual {p3, v3}, Llap;->c(Llie;)V
 
-    sput-object v0, Lgyu;->a:Lgyu;
+    iput-object v3, p0, Lgyu;->a:Lgza;
 
-    new-instance v1, Lgyu;
+    const/4 v5, 0x2
 
-    const-string v3, "THREE"
+    move-object v0, p2
 
-    const/4 v4, 0x1
+    move-wide v1, p4
 
-    const/4 v5, 0x3
+    move-object v4, p7
 
-    invoke-direct {v1, v3, v4, v5}, Lgyu;-><init>(Ljava/lang/String;II)V
+    invoke-virtual/range {v0 .. v5}, Lgzf;->a(JLlmv;Lojz;I)Lgze;
 
-    sput-object v1, Lgyu;->b:Lgyu;
+    move-result-object p1
 
-    new-instance v3, Lgyu;
-
-    const-string v6, "TEN"
-
-    const/4 v7, 0x2
-
-    const/16 v8, 0xa
-
-    invoke-direct {v3, v6, v7, v8}, Lgyu;-><init>(Ljava/lang/String;II)V
-
-    sput-object v3, Lgyu;->c:Lgyu;
-
-    new-instance v6, Lgyu;
-
-    const-string v8, "AUTO"
-
-    const/4 v9, -0x1
-
-    invoke-direct {v6, v8, v5, v9}, Lgyu;-><init>(Ljava/lang/String;II)V
-
-    sput-object v6, Lgyu;->d:Lgyu;
-
-    const/4 v8, 0x4
-
-    new-array v8, v8, [Lgyu;
-
-    aput-object v0, v8, v2
-
-    aput-object v1, v8, v4
-
-    aput-object v3, v8, v7
-
-    aput-object v6, v8, v5
-
-    sput-object v8, Lgyu;->h:[Lgyu;
-
-    sput-object v0, Lgyu;->e:Lgyu;
-
-    invoke-static {}, Lgyu;->values()[Lgyu;
-
-    move-result-object v0
-
-    array-length v0, v0
-
-    new-array v0, v0, [I
-
-    sput-object v0, Lgyu;->f:[I
-
-    invoke-static {}, Lgyu;->values()[Lgyu;
-
-    move-result-object v0
-
-    array-length v1, v0
-
-    const/4 v3, 0x0
-
-    :goto_0
-    if-ge v2, v1, :cond_0
-
-    aget-object v4, v0, v2
-
-    add-int/lit8 v5, v3, 0x1
-
-    sget-object v6, Lgyu;->f:[I
-
-    iget v4, v4, Lgyu;->g:I
-
-    aput v4, v6, v3
-
-    add-int/lit8 v2, v2, 0x1
-
-    move v3, v5
-
-    goto :goto_0
-
-    :cond_0
-    return-void
-.end method
-
-.method private constructor <init>(Ljava/lang/String;II)V
-    .locals 0
-
-    invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
-    iput p3, p0, Lgyu;->g:I
+    iput-object p1, p0, Lgyu;->b:Lhen;
 
     return-void
 .end method
 
-.method public static a(I)Lgyu;
-    .locals 0
 
-    sparse-switch p0, :sswitch_data_0
+# virtual methods
+.method public final a()Lhem;
+    .locals 2
 
-    sget-object p0, Lgyu;->e:Lgyu;
+    iget-object v0, p0, Lgyu;->a:Lgza;
 
-    return-object p0
+    invoke-virtual {v0}, Lgza;->r()Llie;
 
-    :sswitch_0
-    sget-object p0, Lgyu;->c:Lgyu;
+    move-result-object v0
 
-    return-object p0
+    new-instance v1, Lgyt;
 
-    :sswitch_1
-    sget-object p0, Lgyu;->b:Lgyu;
+    invoke-direct {v1, v0}, Lgyt;-><init>(Llie;)V
 
-    return-object p0
-
-    :sswitch_2
-    sget-object p0, Lgyu;->a:Lgyu;
-
-    return-object p0
-
-    :sswitch_3
-    sget-object p0, Lgyu;->d:Lgyu;
-
-    return-object p0
-
-    :sswitch_data_0
-    .sparse-switch
-        -0x1 -> :sswitch_3
-        0x0 -> :sswitch_2
-        0x3 -> :sswitch_1
-        0xa -> :sswitch_0
-    .end sparse-switch
+    return-object v1
 .end method
 
-.method public static values()[Lgyu;
+.method public final b(J)Llmr;
     .locals 1
 
-    sget-object v0, Lgyu;->h:[Lgyu;
+    iget-object v0, p0, Lgyu;->b:Lhen;
 
-    invoke-virtual {v0}, [Lgyu;->clone()Ljava/lang/Object;
+    invoke-interface {v0, p1, p2}, Lhen;->b(J)Llmr;
+
+    move-result-object p1
+
+    return-object p1
+.end method
+
+.method public final c()Llmr;
+    .locals 1
+
+    iget-object v0, p0, Lgyu;->b:Lhen;
+
+    invoke-interface {v0}, Lhen;->c()Llmr;
 
     move-result-object v0
 
-    check-cast v0, [Lgyu;
+    return-object v0
+.end method
+
+.method public final d()Llmr;
+    .locals 1
+
+    iget-object v0, p0, Lgyu;->b:Lhen;
+
+    invoke-interface {v0}, Lhen;->d()Llmr;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public final e()Llmr;
+    .locals 1
+
+    iget-object v0, p0, Lgyu;->b:Lhen;
+
+    invoke-interface {v0}, Lhen;->e()Llmr;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public final f()Llmv;
+    .locals 1
+
+    iget-object v0, p0, Lgyu;->b:Lhen;
+
+    check-cast v0, Lgze;
+
+    iget-object v0, v0, Lgze;->c:Llmv;
+
+    return-object v0
+.end method
+
+.method public final g(Ljava/util/List;)Loom;
+    .locals 1
+
+    iget-object v0, p0, Lgyu;->b:Lhen;
+
+    invoke-interface {v0, p1}, Lhen;->g(Ljava/util/List;)Loom;
+
+    move-result-object p1
+
+    return-object p1
+.end method
+
+.method public final h(Ljava/util/List;)Loom;
+    .locals 1
+
+    iget-object v0, p0, Lgyu;->b:Lhen;
+
+    invoke-interface {v0, p1}, Lhen;->h(Ljava/util/List;)Loom;
+
+    move-result-object p1
+
+    return-object p1
+.end method
+
+.method public final i()Ljava/util/List;
+    .locals 1
+
+    iget-object v0, p0, Lgyu;->b:Lhen;
+
+    check-cast v0, Lgze;
+
+    invoke-virtual {v0}, Lgze;->m()Ljava/util/List;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public final j()Ljava/util/List;
+    .locals 1
+
+    iget-object v0, p0, Lgyu;->b:Lhen;
+
+    invoke-interface {v0}, Lhen;->j()Ljava/util/List;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public final k(I)V
+    .locals 1
+
+    iget-object v0, p0, Lgyu;->b:Lhen;
+
+    invoke-interface {v0, p1}, Lhen;->k(I)V
+
+    return-void
+.end method
+
+.method public final l()Llqd;
+    .locals 1
+
+    iget-object v0, p0, Lgyu;->b:Lhen;
+
+    invoke-interface {v0}, Lhen;->l()Llqd;
+
+    move-result-object v0
 
     return-object v0
 .end method

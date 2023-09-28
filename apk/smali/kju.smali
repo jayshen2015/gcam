@@ -1,159 +1,134 @@
 .class public final Lkju;
-.super Lkkb;
+.super Lkjm;
 
 
 # instance fields
-.field public final a:Ljvk;
+.field public final e:Lxa;
 
-.field public final b:J
+.field private final g:Lkkg;
 
 
 # direct methods
-.method public constructor <init>(Lkfl;Lkll;Lkaf;IZ)V
-    .locals 0
+.method public constructor <init>(Lkkn;Lkkg;)V
+    .locals 1
 
-    invoke-direct {p0, p1, p2, p5}, Lkkb;-><init>(Lkfl;Lkll;Z)V
+    sget-object v0, Lkhm;->a:Lkhm;
 
-    new-instance p2, Ljvk;
+    invoke-direct {p0, p1, v0}, Lkjm;-><init>(Lkkn;Lkhm;)V
 
-    sget-object p5, Lmpx;->a:Lmpx;
+    new-instance p1, Lxa;
 
-    invoke-direct {p2, p5}, Ljvk;-><init>(Ljava/lang/Object;)V
+    invoke-direct {p1}, Lxa;-><init>()V
 
-    iput-object p2, p0, Lkju;->a:Ljvk;
+    iput-object p1, p0, Lkju;->e:Lxa;
 
-    invoke-static {p4, p3}, Llho;->D(ILkaf;)J
+    iput-object p2, p0, Lkju;->g:Lkkg;
 
-    move-result-wide p3
+    iget-object p1, p0, Lkju;->f:Lkkn;
 
-    iput-wide p3, p0, Lkju;->b:J
+    invoke-interface {p1, p0}, Lkkn;->b(Lcom/google/android/gms/common/api/internal/LifecycleCallback;)V
 
-    iget-object p1, p1, Lkfl;->c:Lmqp;
-
-    invoke-virtual {p1}, Lmqp;->g()Z
-
-    move-result p3
-
-    if-eqz p3, :cond_0
-
-    invoke-virtual {p2, p1}, Ljvk;->bn(Ljava/lang/Object;)V
-
-    :cond_0
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()I
+.method protected final e(Lkhi;I)V
     .locals 1
 
-    iget-object v0, p0, Lkju;->h:Lkfl;
+    iget-object v0, p0, Lkju;->g:Lkkg;
 
-    iget v0, v0, Lkfl;->e:I
-
-    return v0
-.end method
-
-.method public final b()Lkaf;
-    .locals 1
-
-    iget-object v0, p0, Lkju;->h:Lkfl;
-
-    iget-object v0, v0, Lkfl;->d:Lkaf;
-
-    return-object v0
-.end method
-
-.method public final d(Landroid/view/Surface;)V
-    .locals 2
-
-    if-nez p1, :cond_0
-
-    iget-object p1, p0, Lkju;->a:Ljvk;
-
-    sget-object v0, Lmpx;->a:Lmpx;
-
-    invoke-virtual {p1, v0}, Ljvk;->bn(Ljava/lang/Object;)V
-
-    return-void
-
-    :cond_0
-    iget-object v0, p0, Lkju;->a:Ljvk;
-
-    iget-object v0, v0, Ljvk;->d:Ljava/lang/Object;
-
-    check-cast v0, Lmqp;
-
-    invoke-virtual {v0}, Lmqp;->g()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_2
-
-    invoke-virtual {v0}, Lmqp;->c()Ljava/lang/Object;
-
-    move-result-object v0
-
-    if-eq p1, v0, :cond_1
-
-    goto :goto_0
-
-    :cond_1
-    return-void
-
-    :cond_2
-    :goto_0
-    iget-object v0, p0, Lkju;->a:Ljvk;
-
-    invoke-static {p1}, Lmqp;->i(Ljava/lang/Object;)Lmqp;
-
-    move-result-object p1
-
-    invoke-virtual {v0, p1}, Ljvk;->bn(Ljava/lang/Object;)V
+    invoke-virtual {v0, p1, p2}, Lkkg;->e(Lkhi;I)V
 
     return-void
 .end method
 
-.method public final f()J
-    .locals 2
-
-    iget-wide v0, p0, Lkju;->b:J
-
-    return-wide v0
-.end method
-
-.method public final g()Landroid/view/Surface;
+.method protected final f()V
     .locals 1
 
-    iget-object v0, p0, Lkju;->a:Ljvk;
+    iget-object v0, p0, Lkju;->g:Lkkg;
 
-    iget-object v0, v0, Ljvk;->d:Ljava/lang/Object;
+    invoke-virtual {v0}, Lkkg;->f()V
 
-    check-cast v0, Lmqp;
-
-    invoke-virtual {v0}, Lmqp;->f()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/view/Surface;
-
-    return-object v0
+    return-void
 .end method
 
-.method public final h()Lkfm;
-    .locals 1
+.method public final h()V
+    .locals 0
 
-    iget-object v0, p0, Lkju;->h:Lkfl;
+    invoke-virtual {p0}, Lkju;->k()V
 
-    iget-object v0, v0, Lkfl;->a:Lkfm;
-
-    return-object v0
+    return-void
 .end method
 
-.method public final i()Z
+.method public final i()V
     .locals 1
 
     const/4 v0, 0x1
 
-    return v0
+    iput-boolean v0, p0, Lkjm;->a:Z
+
+    invoke-virtual {p0}, Lkju;->k()V
+
+    return-void
+.end method
+
+.method public final j()V
+    .locals 3
+
+    const/4 v0, 0x0
+
+    iput-boolean v0, p0, Lkjm;->a:Z
+
+    iget-object v0, p0, Lkju;->g:Lkkg;
+
+    sget-object v1, Lkkg;->c:Ljava/lang/Object;
+
+    monitor-enter v1
+
+    :try_start_0
+    iget-object v2, v0, Lkkg;->m:Lkju;
+
+    if-ne v2, p0, :cond_0
+
+    const/4 v2, 0x0
+
+    iput-object v2, v0, Lkkg;->m:Lkju;
+
+    iget-object v0, v0, Lkkg;->n:Ljava/util/Set;
+
+    invoke-interface {v0}, Ljava/util/Set;->clear()V
+
+    :cond_0
+    monitor-exit v1
+
+    return-void
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw v0
+.end method
+
+.method public final k()V
+    .locals 1
+
+    iget-object v0, p0, Lkju;->e:Lxa;
+
+    invoke-virtual {v0}, Lxa;->isEmpty()Z
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    iget-object v0, p0, Lkju;->g:Lkkg;
+
+    invoke-virtual {v0, p0}, Lkkg;->g(Lkju;)V
+
+    :cond_0
+    return-void
 .end method

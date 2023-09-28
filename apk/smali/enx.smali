@@ -1,103 +1,125 @@
-.class public final synthetic Lenx;
+.class public final Lenx;
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lkad;
+.implements Liho;
 
 
 # instance fields
-.field public final synthetic a:I
+.field private final a:Landroid/app/Application;
 
-.field public final synthetic b:Ljava/lang/Object;
+.field private final b:Landroid/app/job/JobScheduler;
 
-.field private final synthetic c:I
+.field private final c:I
+
+.field private final d:Lmos;
 
 
 # direct methods
-.method public synthetic constructor <init>(ILjad;I[B[B[B)V
+.method public constructor <init>(Landroid/app/Application;Landroid/app/job/JobScheduler;Lddf;Lmos;[B[B)V
     .locals 0
-
-    iput p3, p0, Lenx;->c:I
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput p1, p0, Lenx;->a:I
+    iput-object p1, p0, Lenx;->a:Landroid/app/Application;
 
-    iput-object p2, p0, Lenx;->b:Ljava/lang/Object;
+    iput-object p2, p0, Lenx;->b:Landroid/app/job/JobScheduler;
 
-    return-void
-.end method
+    sget-object p1, Lddl;->j:Lddi;
 
-.method public synthetic constructor <init>(Leoa;II)V
-    .locals 0
+    invoke-interface {p3, p1}, Lddf;->a(Lddi;)Lojc;
 
-    iput p3, p0, Lenx;->c:I
+    move-result-object p1
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-virtual {p1}, Lojc;->c()Ljava/lang/Object;
 
-    iput-object p1, p0, Lenx;->b:Ljava/lang/Object;
+    move-result-object p1
 
-    iput p2, p0, Lenx;->a:I
+    check-cast p1, Ljava/lang/Integer;
+
+    invoke-virtual {p1}, Ljava/lang/Integer;->intValue()I
+
+    move-result p1
+
+    iput p1, p0, Lenx;->c:I
+
+    iput-object p4, p0, Lenx;->d:Lmos;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final close()V
-    .locals 7
+.method public final run()V
+    .locals 6
 
-    iget v0, p0, Lenx;->c:I
+    new-instance v0, Landroid/app/job/JobInfo$Builder;
 
-    packed-switch v0, :pswitch_data_0
+    new-instance v1, Landroid/content/ComponentName;
 
-    iget v0, p0, Lenx;->a:I
+    iget-object v2, p0, Lenx;->a:Landroid/app/Application;
 
-    iget-object v1, p0, Lenx;->b:Ljava/lang/Object;
+    const-class v3, Lcom/google/android/apps/camera/keepalive/ProcessGcService;
 
-    check-cast v1, Ljad;
+    invoke-direct {v1, v2, v3}, Landroid/content/ComponentName;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
 
-    iget-wide v2, v1, Ljad;->a:J
+    const v2, 0x35b4065b
 
-    const-wide/16 v4, 0x0
+    invoke-direct {v0, v2, v1}, Landroid/app/job/JobInfo$Builder;-><init>(ILandroid/content/ComponentName;)V
 
-    cmp-long v6, v2, v4
+    const-wide/16 v3, 0x0
 
-    if-eqz v6, :cond_0
+    invoke-virtual {v0, v3, v4, v3, v4}, Landroid/app/job/JobInfo$Builder;->setEstimatedNetworkBytes(JJ)Landroid/app/job/JobInfo$Builder;
 
-    const/4 v2, 0x1
+    move-result-object v0
 
-    goto :goto_0
+    const/4 v1, 0x1
 
-    :pswitch_0
-    iget-object v0, p0, Lenx;->b:Ljava/lang/Object;
+    invoke-virtual {v0, v1}, Landroid/app/job/JobInfo$Builder;->setRequiresDeviceIdle(Z)Landroid/app/job/JobInfo$Builder;
 
-    iget v1, p0, Lenx;->a:I
+    move-result-object v0
 
-    check-cast v0, Leoa;
+    iget-object v1, p0, Lenx;->d:Lmos;
 
-    invoke-virtual {v0, v1}, Leoa;->g(I)V
+    new-instance v3, Landroid/os/PersistableBundle;
+
+    invoke-direct {v3}, Landroid/os/PersistableBundle;-><init>()V
+
+    iget-wide v4, v1, Lmos;->a:J
+
+    const-string v1, "keepalive_sig"
+
+    invoke-virtual {v3, v1, v4, v5}, Landroid/os/PersistableBundle;->putLong(Ljava/lang/String;J)V
+
+    invoke-virtual {v0, v3}, Landroid/app/job/JobInfo$Builder;->setExtras(Landroid/os/PersistableBundle;)Landroid/app/job/JobInfo$Builder;
+
+    move-result-object v0
+
+    sget-object v1, Ljava/util/concurrent/TimeUnit;->SECONDS:Ljava/util/concurrent/TimeUnit;
+
+    iget v3, p0, Lenx;->c:I
+
+    int-to-long v3, v3
+
+    invoke-virtual {v1, v3, v4}, Ljava/util/concurrent/TimeUnit;->toMillis(J)J
+
+    move-result-wide v3
+
+    invoke-virtual {v0, v3, v4}, Landroid/app/job/JobInfo$Builder;->setMinimumLatency(J)Landroid/app/job/JobInfo$Builder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroid/app/job/JobInfo$Builder;->build()Landroid/app/job/JobInfo;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lenx;->b:Landroid/app/job/JobScheduler;
+
+    invoke-virtual {v1, v2}, Landroid/app/job/JobScheduler;->cancel(I)V
+
+    iget-object v1, p0, Lenx;->b:Landroid/app/job/JobScheduler;
+
+    invoke-virtual {v1, v0}, Landroid/app/job/JobScheduler;->schedule(Landroid/app/job/JobInfo;)I
 
     return-void
-
-    :cond_0
-    const/4 v2, 0x0
-
-    :goto_0
-    invoke-static {v2}, Llkj;->x(Z)V
-
-    iget-wide v2, v1, Ljad;->a:J
-
-    iput-wide v4, v1, Ljad;->a:J
-
-    invoke-static {v0, v2, v3}, Lcom/google/android/apps/camera/async/tt/CpuSets;->nativeRestoreCpuSet(IJ)V
-
-    invoke-static {}, Landroid/os/Trace;->endSection()V
-
-    return-void
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
 .end method

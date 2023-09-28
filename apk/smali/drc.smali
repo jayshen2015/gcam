@@ -3,5 +3,5 @@
 
 
 # virtual methods
-.method public abstract b(Lcom/google/googlex/gcam/ShotMetadata;Lkpb;)Lmqp;
+.method public abstract a(J)Ldrf;
 .end method
